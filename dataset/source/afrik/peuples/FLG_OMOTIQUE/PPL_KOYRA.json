@@ -1,0 +1,96 @@
+{
+  "id": "PPL_KOYRA",
+  "nameMain": "Koyra",
+  "languageFamilyId": "FLG_OMOTIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Koyra",
+      "selfAppellation": "Koyra",
+      "exonyms": [
+        "Koyra (terme utilise dans la linguistique comparative ometo)",
+        "Koyre",
+        "Koira"
+      ],
+      "originOfExonyms": "Le nom Koyra est utilise comme autonym par les locuteurs. Dans la litterature linguistique, Koyra designe un groupe de langues ometo distinctes de la zone Gamo Gofa. Le terme Koyra est egalement utilise comme exonyme pour les Koorete (Koore) d'Amaro dans certaines sources, mais le Koyra de la zone Gamo et le Koorete sont des varietes linguistiques distinctes bien que proches.",
+      "whyProblematic": "Le terme Koyra peut creer une confusion avec les Koorete (aussi appeles Koyra dans certaines sources), peuple de la zone Amaro, et avec le Koyra Chiini (khq), langue songhai du Mali sans lien. Dans le contexte omotique du sud de l'Ethiopie, Koyra designe un groupe distinct mais tres proche du continuum dialectal Gamo-Gofa-Dawro.",
+      "contemporaryUsage": "Le terme Koyra est utilise dans la litterature linguistique pour designer un groupe ometo distinct de la zone Gamo. Le groupe est peu documente dans les recensements officiels ethiopiens et souvent regroupe avec les Gamo dans les statistiques administratives.",
+      "linguisticFamily": "FLG_OMOTIQUE",
+      "ethnoLinguisticGroup": "Omotique central, groupe Ometo (tres proche du continuum Gamo-Gofa-Dawro)",
+      "historicalRegion": "Zone Gamo Gofa (devenue zones Gamo et Gofa en 2019), SNNPR, sud-ouest de l'Ethiopie",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Koyra du Nord — sous-groupe regional dans la zone Gamo Gofa",
+      "Koyra du Sud — sous-groupe regional",
+      "Groupes villageois locaux lies aux communautes Gamo environnantes"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Koyra sont un groupe omotique du sud-ouest de l'Ethiopie, etroitement lies aux Gamo dont ils partagent l'histoire et les hauts plateaux. Ils font partie du continuum culturel et linguistique de la zone Gamo Gofa. Leur langue, le Koyra, est une variete ometo qui se distingue linguistiquement par un systeme d'accent de hauteur (pitch accent), contrairement a d'autres langues ometo qui utilisent des distinctions tonales. Cette caracteristique unique a ete notee par les linguistes comparatifs.",
+      "formationPeriod": "Le groupe Koyra s'est forme comme entite distincte au sein du continuum Ometo de la zone Gamo Gofa. Leur identite culturelle et linguistique est etroitement imbriquee avec celle des Gamo. Les similarites lexicales confirmees entre le Koyra et les dialectes Gofa (46%), Koorete (45%), Gamo (44%), Wolaytta et Dawro (43%) situent le Koyra dans le sous-groupe Ometo sans position clairement etablie entre Ometo central et oriental.",
+      "migrationRoutes": [
+        "Population autochtone des hauts plateaux du sud-ouest ethiopien, partageant l'histoire migratoire des peuples Gamo",
+        "Contacts historiques avec les Gamo, Gofa et Dawro voisins dans la zone Gamo Gofa"
+      ],
+      "historicalSettlementZones": [
+        "Zone Gamo Gofa (devenue zones Gamo et Gofa en 2019), hauts plateaux du sud de l'Ethiopie",
+        "Principalement dans des communautes villageoises des hauts plateaux proches des populations Gamo"
+      ],
+      "unificationsOrDivisions": "Les Koyra ont partage l'histoire administrative des peuples de la zone Gamo Gofa. Ils furent integres dans l'Empire ethiopien avec les autres peuples de la region a la fin du 19e siecle. La reorganisation administrative de 2019, qui separa la zone Gamo Gofa en zones Gamo et Gofa, a affecte leur zone d'habitation.",
+      "externalInfluences": "Incorporation dans l'Empire ethiopien sous Menelik II a la fin du 19e siecle. Influence croissante des Eglises chretiennes (orthodoxe et protestante) au 20e siecle. Pression de l'administration centrale ethiopienne et de l'amharisation. Influence des peuples Gamo voisins sur les pratiques culturelles et linguistiques.",
+      "majorHistoricalEvents": "Incorporation dans l'ancienne province de Gamo Gofa. Integration dans la SNNPR apres 1991. Reorganisation administrative de 2019 avec creation des zones Gamo et Gofa distinctes. Les Koyra sont peu documentes dans les grandes archives historiques ethiopiennes, etant souvent compris dans les populations Gamo ou Gamo Gofa."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Koyra partagent le systeme d'organisation traditionnelle des peuples Gamo, fonde sur des unites territoriales (Derie) avec des leaders locaux (Haleka, Huduga). Les assemblees communautaires reglent les affaires locales. Les structures politiques modernes de l'Etat ethiopien coexistent avec ces institutions traditionnelles.",
+      "clanOrganization": "Structure clanique patrilineaire similaire a celle des peuples Gamo voisins. Les clans regulent les mariages, les droits fonciers et les obligations communautaires. Des groupes artisanaux de statut inferieur existent, comme chez les Gamo.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent l'appartenance clanique, les droits fonciers et les alliances matrimoniales. L'identite de lignage determine les roles rituels et les obligations communautaires.",
+      "religiousAuthority": "Autorite des pretres et devins traditionnels pour les rituels et la mediation spirituelle. Influence croissante des Eglises protestantes et de l'Eglise orthodoxe ethiopienne Tewahedo depuis le 20e siecle."
+    },
+    "languages": {
+      "mainLanguage": "Koyra (variete ometo)",
+      "isoCodes": [],
+      "dialects": [
+        "Varietes regionales liees au continuum dialectal Gamo-Gofa-Dawro",
+        "Proximite lexicale avec le Gofa (46%), le Koorete (45%), le Gamo (44%), le Wolaytta et le Dawro (43%)"
+      ],
+      "vehicularRole": "Le koyra est une variete ometo minoritaire du sud-ouest ethiopien, parlee par un petit nombre de locuteurs dans la zone Gamo Gofa. Il se distingue linguistiquement par un systeme d'accent de hauteur (pitch accent) plutot que tonal. Il n'a pas de code ISO 639-3 distinct attribue dans les sources de reference (Ethnologue, Glottolog) et est parfois traite comme un dialect du continuum Gamo-Gofa-Dawro. L'amharique est la langue d'administration et d'education. Le gamo est utilise comme langue vehiculaire regionale."
+    },
+    "culture": {
+      "majorRites": "Les Koyra partagent les pratiques rituelles des peuples Gamo, incluant des rites de passage a la naissance, la puberte, le mariage et la mort. Les ceremonies agraires liees aux cycles de semailles et de recoltes sont importantes. Les rites de reconciliation communautaire et les assemblees de dialogue au sein des Derie sont pratiques. Les celebrations chretiennes comme le Meskel (fete de la Vraie Croix) sont celebrees par la majorite desormais chretienne.",
+      "symbols": "Les symboles identitaires koyra sont etroitement lies a ceux des peuples Gamo voisins : le metier a tisser, les etoffes tissees, et les assemblees communautaires (Derie). La relation avec les hauts plateaux de la zone Gamo Gofa constitue le cadre identitaire fondamental.",
+      "artsAndMusic": "La tradition du tissage manuel, caracteristique des peuples des hauts plateaux de Gamo Gofa, est presente chez les Koyra. La poterie, la vannerie et le travail du bois constituent des pratiques artisanales. La tradition orale — narration de mythes, genealogies, recits historiques — est un patrimoine immatériel important. La musique traditionnelle avec percussions et chants collectifs accompagne les ceremonies de mariage et les rites de passage.",
+      "spiritualities": "Traditionnellement, les Koyra pratiquaient une religion ancestrale centree sur la nature et les esprits ancestraux. Des pretres-devins assuraient la mediation avec les forces spirituelles. Aujourd'hui, la majorite des Koyra est chretienne, avec une presence des deux grandes confessions ethiopiennes : Eglise orthodoxe ethiopienne Tewahedo et Eglises protestantes evangeliques. Des pratiques synchretiques persistent notamment dans les rituels agraires et familiaux."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Koyra etaient organises en chefferies territoriales (Derie) similaires a celles des Gamo voisins, sans monarchie centralisee unique. Leur gouvernance etait assuree par des leaders locaux (Haleka, Huduga) dans le cadre de l'organisation traditionnelle des hauts plateaux de Gamo Gofa.",
+      "relationsWithNeighbors": "Les Koyra entretiennent des relations etroites avec les Gamo voisins dont ils partagent la culture et l'histoire. Ils sont egalement en contact avec les Gofa et les Dawro au sein du continuum culturel de la zone Gamo Gofa. Les similarites linguistiques avec le Koorete (Amaro) suggerent des contacts historiques anciens entre ces groupes ometo.",
+      "conflictsOrAlliances": "Les Koyra ont partage les experiences historiques des peuples de la zone Gamo Gofa : incorporation dans l'Empire ethiopien a la fin du 19e siecle, integration dans la SNNPR apres 1991, et reorganisation administrative en 2019. Aucun conflit majeur specifique aux Koyra n'est documente dans les sources disponibles.",
+      "diaspora": "La mobilite koyra est principalement interne a l'Ethiopie, vers les villes de la region (Arba Minch) et la capitale Addis-Abeba. Leur presence en diaspora internationale est negligeable du fait de leur petit nombre."
+    },
+    "demography": {
+      "totalPopulation": 20000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur les donnees disponibles dans SIL Ethnologue et les etudes linguistiques comparatives des langues ometo. Les Koyra ne sont pas distingues comme groupe ethnique separe dans le recensement ethiopien de 2007 (CSA), etant generalement inclus dans les populations Gamo ou Gamo Gofa. La population de 20 000 est une estimation prudente.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 20000,
+          "note": "Zone Gamo (anciennement zone Gamo Gofa), SNNPR / South Ethiopia State, hauts plateaux du sud-ouest ethiopien."
+        }
+      ]
+    },
+    "sources": [
+      "Britannica — Omotic Languages (mention du Koyra comme langue a systeme d'accent de hauteur). https://www.britannica.com/topic/Omotic-languages",
+      "Wikipedia EN — Omotic languages (table comparative Koyra). https://en.wikipedia.org/wiki/Omotic_languages",
+      "Wikipedia EN — Gamo people. https://en.wikipedia.org/wiki/Gamo_people",
+      "SIL Ethnologue — Gamo-Gofa-Dawro language [gmv] (similarites lexicales avec Koyra mentionnees).",
+      "Day Translations / Ethnologue — Ethiopia Profile: Koorete alternate names including Koyra. https://www.daytranslations.com/blog/guide/ethiopia/4/",
+      "Ethiopian Central Statistical Agency — Summary and Statistical Report of the 2007 Population and Housing Census. Addis Ababa, 2008.",
+      "Wikipedia EN — Koore language (Koyra liste comme nom alternatif). https://en.wikipedia.org/wiki/Koore_language",
+      "Wikipedia EN — Gamo-Gofa-Dawro language (continuum dialectal incluant les varietes Koyra). https://en.wikipedia.org/wiki/Gamo-Gofa-Dawro_language",
+      "Glottolog — Ometo languages (classification des varietes ometo incluant le Koyra). https://glottolog.org/resource/languoid/id/omet1241",
+      "Cambridge University Press — The Omotic Language Family, Cambridge Handbook of Linguistic Typology. https://www.cambridge.org/core/books/cambridge-handbook-of-linguistic-typology/omotic-language-family/376C86AD112F0E4C5F5677AE4F3DB5FA"
+    ]
+  }
+}

@@ -95,12 +95,6 @@ export async function GET(request: NextRequest) {
 
     const results = await searchHandler(filters);
     const response = jsonWithCors({ data: results });
-    if (response instanceof Response) {
-      response.headers.set(
-        "Cache-Control",
-        "public, max-age=86400, s-maxage=86400"
-      );
-    }
 
     const duration = Date.now() - startTime;
     logger.info("GET /api/v2/search completed", {

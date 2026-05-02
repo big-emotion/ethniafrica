@@ -1,0 +1,101 @@
+{
+  "id": "PPL_DAGOMBA",
+  "nameMain": "Dagomba",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["GHA", "TGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Dagomba",
+      "selfAppellation": "Dagbamba",
+      "exonyms": ["Dagomba", "Dagbani", "Mole-Dagbani"],
+      "originOfExonyms": "Le terme Dagomba est un exonyme d'origine externe popularisé par les administrations coloniales européennes. Le terme autochtone est Dagbamba (singulier : Dagbana), qui désigne le peuple, tandis que Dagbon désigne leur territoire traditionnel et Dagbanli leur langue. Mole-Dagbani est une appellation académique regroupant les Dagomba, Mamprusi, Nanumba et peuples apparentés dans un ensemble ethno-linguistique.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Dagbamba est l'appellation préférée par les membres de ce peuple eux-mêmes. Dagomba reste courant dans la littérature anglophone et les médias ghanéens. Dagbani ou Dagbanli désigne spécifiquement la langue. Le terme Mole-Dagbani est utilisé dans les recensements officiels du Ghana.",
+      "linguisticFamily": "FLG_GUR",
+      "ethnoLinguisticGroup": "Gur central, sous-groupe Mole-Dagbani (Mabia)",
+      "historicalRegion": "Dagbon — environ 20 000 km2 dans la région du nord du Ghana, centré sur Yendi et Tamale ; s'étendait jadis sur toute la partie nord du bassin de la Volta",
+      "currentCountries": ["GHA", "TGO"]
+    },
+    "ethnicities": [
+      "Dagbamba proprement dits (noyau du royaume de Dagbon, descendants de Naa Gbewaa)",
+      "Nanima (chefs du lignage royal, descendants de Gbewaa, gouvernants des chefferies)",
+      "Tindaamba (chefs traditionnels aborigènes, élus par oracle, gardiens des pratiques anciennes)",
+      "Lunsi (lignage héréditaire des griots-tambourinaires, descendants de Bizung)",
+      "Pelbas (lignage héréditaire des forgerons, spécialistes du fer et de l'artisanat métallique)",
+      "Nakohi (lignage héréditaire des bouchers, gérant l'abattage et la distribution de viande)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Dagomba habitent le nord du Ghana depuis des millénaires. Avant la fondation du royaume centralisé, les populations vivaient en États décentralisés sous l'autorité des Tindaamba, gardiens de la terre. Les membres de la classe dirigeante descendent de Naa Gbewaa, dont les ancêtres migrèrent depuis la région du lac Tchad à la suite de la désintégration de l'empire du Ghana à la fin du XIIIe siècle. La tradition orale fait remonter les origines à la figure légendaire de Tohazie (le Chasseur rouge), ancêtre mythique.",
+      "formationPeriod": "Le royaume de Dagbon a été fondé par Naa Gbewaa et ses descendants qui centralisèrent les territoires Dagomba à partir du XIVe-XVe siècle. Le territoire de Dagbon couvre environ 20 000 km2. Au XVIIe siècle, le roi Naa Zanjina fut le premier souverain à embrasser l'islam, ouvrant une ère de prosperité et de centres d'apprentissage. L'université Moliyili, fondée en 1700, fonctionnait selon un système hiérarchique comparable aux universités modernes avant d'être abandonnée lors de la colonisation européenne.",
+      "migrationRoutes": [
+        "Migration depuis la région du lac Tchad vers le bassin de la Volta après la désintégration de l'empire du Ghana (fin XIIIe siècle)",
+        "Expansion du royaume de Dagbon vers le sud (Black Volta) et l'est jusqu'au XVIIe siècle",
+        "Fondation par des princes Dagomba de l'État de Bouna en Côte d'Ivoire et d'États dans l'Upper West du Ghana"
+      ],
+      "historicalSettlementZones": [
+        "Dagbon (nord Ghana) : districts de Tamale Metropolitan, Yendi, Savelugu, Sagnerigu, Tolon, Kumbungu, Nanton, Gushegu, Karaga, Zabzugu, Saboba, Cheriponi",
+        "Capitales historiques : Yendi (siège du Yaa Naa), Tamale (capitale administrative actuelle)",
+        "Petite communauté au Togo (environ 15 000 personnes)"
+      ],
+      "unificationsOrDivisions": "Les territoires de Dagbon étaient décentralisés avant la Grande Unification par les Nanima. Le royaume fut réunifié sous l'autorité du Yaa Naa (roi de Dagbon). Au XIVe siècle, Naa Gbewaa unifia les peuples apparentés (Mamprusi, Nanumba). Des disputes de succession à la chefferie ont périodiquement déchiré le royaume, notamment la crise de succession de 2002 (assassinat du Yaa Naa Yakubu Andani II) et les conflits qui en découlèrent, résolus partiellement avec l'installation du Yaa Naa Gariba II en 2019.",
+      "externalInfluences": "Islam introduit par des marchands Soninke/Wangara (XIIe-XVe siècle) ; officiellement adopté sous Naa Zanjina (XVIIe siècle). Contacts avec l'empire Songhai (extension Dagomba jusqu'au lac Débo vers 1400 ; freinée par la restauration de l'empire Songhai à la fin du XVe siècle). Colonisation allemande (Yendi brulée et occupée). Intégration dans le Gold Coast britannique comme protectorat (non colonie), préservant une autonomie relative. Présence de missionnaires chrétiens auxquels des terres furent gracieusement octroyées.",
+      "majorHistoricalEvents": "Au XIIe siècle, début de l'expansion des royaumes Mossi-Dagomba sur le bassin de la Volta. Vers 1400, deuxième expansion vers l'est et le lac Débo (Mali). En 1700, fondation de l'université Moliyili à Yendi. Au XIXe siècle, résistance à la colonisation européenne. En 1902, intégration dans le Gold Coast britannique. En 2002, assassinat du Yaa Naa Yakubu Andani II, entraînant une longue crise de succession. En 2019, installation du Yaa Naa Gariba II, restaurant la paix dans le royaume."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Dagbon est un royaume hiérarchique centralisé, gouverné par le Yaa Naa (litt. Roi du Pouvoir Absolu), dont la cour et la capitale administrative sont à Yendi. Le trône est symbolisé par un empilement de peaux de lion et de vache (Yendi Skin). Le système politique est divisé en chefferies territoriales hiérarchisées : le Yaa Naa au sommet, des chefs intermédiaires, des sous-chefs locaux. Des titres royaux sont également réservés aux femmes : la Gundo Naa dirige toutes les chefs et royales féminines, la Zosimli Naa favorise la coopération entre les villes, la Kpatu Naa exerce une autorité complémentaire.",
+      "clanOrganization": "La société est organisée en lignages héréditaires spécialisés : les Nanima (aristocratie royale), les Tindaamba (chefs de terre, élus par oracle, non nommés par le Yaa Naa), les Lunsi (tambourinaires-griots), les Pelbas (forgerons), les Nakohi (bouchers). Les charges sont généralement héréditaires dans ces lignages. La population se divise entre familles communes (commoners) et familles cheffales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La filiation est à la fois patrilinéaire (pour les biens matériels et les charges politiques) et matrilinéaire (pour les attributs spirituels). L'expression Mabia (enfant de la mère) est fondamentale dans la culture Dagomba : les liens les plus étroits sont avec la famille maternelle. Les lignages des Lunsi (griots tambourinaires) remontent tous à un ancêtre commun nommé Bizung, qui aurait renoncé à la chefferie pour devenir musicien.",
+      "religiousAuthority": "La religion traditionnelle Dagomba reconnaît plusieurs dieux (wuna, singulier wuni) avec le dieu suprême Naawuni. Chaque ville possède un sanctuaire (buguli). Des devins (baga) guident les décisions importantes. L'islam sunnite est la religion d'État depuis le XVIIe siècle (règne de Naa Zanjina) et est dominant parmi les Dagomba. Les Lunsi commencent chaque performance par des invocations (Nawuni Mali Kpam Pam pour les lunga, Jebo pour les gung-gong) alignant les musiciens avec leurs ancêtres et les forces spirituelles."
+    },
+    "languages": {
+      "mainLanguage": "Dagbanli (Dagbani, Dagbane)",
+      "isoCodes": ["dag"],
+      "dialects": [
+        "Dagbani du nord-est (dialecte de Yendi et des zones orientales)",
+        "Dagbani du nord-ouest (dialecte de Tamale et des zones occidentales)",
+        "Nanuni — dialecte parfois considéré comme distinct, parlé par les Nanumba"
+      ],
+      "vehicularRole": "Le Dagbanli est la langue la plus largement parlée dans le nord du Ghana et sert de langue véhiculaire régionale majeure. Il bénéficie d'une Bible complète et est enseigné dans les écoles du nord du Ghana. Avec une écriture traditionnelle en alphabet arabe modifié (manuscrits en partie transférés au Danemark lors de la colonisation) et une romanisation moderne, la langue est bien documentée. Le Dagbani est reconnu comme langue nationale du Ghana."
+    },
+    "culture": {
+      "majorRites": "Le Festival Damba (ou Damba Chuɣu) est le rituel le plus important des Dagomba, célébrant la naissance et la dénomination du Prophète Mahomet. Il se déroule sur dix-huit jours comprenant : le Damba Yila Bohimbu (apprentissage des chants par les épouses des chefs), le Binchera Damba (répétitions de danse), le Shinkafa Gahimbu (cueillette du riz), le Somo Damba (récitation du Coran, sacrifice d'un boeuf, danses), le Naa Damba (grande procession royale, glorification des chefs) et le Bieli Kulisi (clôture du festival). Le Festival Bugum (fête du feu, Buɣim Chuɣu) est le plus ancien festival Dagomba, précédant même le royaume ; il implique des torches de paille, des rituels pour les ancêtres et des célébrations communautaires. Les cérémonies funèbres, de nomination et d'intronisation des chefs complètent le calendrier rituel.",
+      "symbols": "Le lunga (tambour parlant en sablier) est le symbole culturel par excellence de Dagbon, vecteur de l'histoire orale et de l'identité collective. Le Gbewaa Palace à Yendi est le symbole du pouvoir royal. La peau de lion et de vache empilées (Yendi Skin) symbolisent le trône du Yaa Naa. Le smock (boubou tissé à la main, en coton rayé) est le vêtement traditionnel des Dagomba lors des cérémonies.",
+      "artsAndMusic": "La tradition musicale Dagomba est centrée sur les Lunsi, griots-tambourinaires héréditaires, gardiens de la mémoire collective. L'instrument central est le lunga (tambour à tension en sablier), dont les variations de pression des cordes produisent des tons correspondant aux tons de la langue Dagbani, permettant au tambour de parler. Il est accompagné du gung-gong (tambour cylindrique basse) et parfois du gonje (vielle monocorde) et de cloches en fer. Les genres musicaux incluent : les Praise Name Dances (danses de louanges aux grands chefs passés), les Occupational Lineage Dances (danses des lineages professionnels : forgerons Dikala, bouchers Nakohi-waa), les Festival Dances (Damba Sochendi, Baamaaya, Takai). La récitation épique Sambanglunga, exécutée par les Lunsi lors de performances toute la nuit, narre l'histoire du royaume de Dagbon et la généalogie des familles royales. La tradition du tissage de smocks (boubous rayés) est une forme artisanale importante.",
+      "spiritualities": "La religion traditionnelle Dagomba reconnaît Naawuni (dieu suprême), plusieurs dieux (wuna) et des esprits locaux logés dans des sanctuaires (buguli) présents dans chaque ville. Les Tindaamba président aux rituels de la terre. Les devins (baga) consultent les oracles pour les grandes décisions. L'islam sunnite est la religion dominante depuis le XVIIe siècle, influencé par les réseaux commerciaux Mali et Haoussa. Les deux systèmes coexistent : les festivals islamiques (Eid, Mawlid) et les festivals traditionnels (Bugum, Damba) sont tous célébrés, illustrant un syncrétisme culturel profond."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume de Dagbon est l'un des plus anciens royaumes organisés d'Afrique de l'Ouest, fondé au XIVe-XVe siècle. Il est fondé par Naa Gbewaa et ses descendants. Les Mossi et Dagomba sont parmi les grandes puissances médiévales d'Afrique de l'Ouest, ayant dominé le bassin de la Volta du nord du Ghana et du Burkina Faso à partir du XIIe siècle. Des princes Dagomba ont fondé l'État de Bouna en Côte d'Ivoire et les États Dagaaba dans l'Upper West du Ghana. La princesse Yennenga, fille de Naa Gbewaa, est considérée comme la mère fondatrice des royaumes Mossi (qui regroupent aujourd'hui environ la moitié de la population du Burkina Faso). L'université Moliyili (1700) fut un centre d'apprentissage islamique de premier plan.",
+      "relationsWithNeighbors": "Les Dagomba entretiennent des relations historiques complexes avec les Mossi (cousins culturels, rivalité frontalière historique), les Mamprusi et Nanumba (peuples frères, issus de la même ascendance Naa Gbewaa), les Gonja (Guang, qui réduisirent le territoire de Dagbon au XVIIe siècle en conquérant le sud), et les Konkomba (groupe acéphale sous autorité administrative de Dagbon). Les Dagomba ont fourni des terres aux missionnaires chrétiens malgré leur tradition islamique.",
+      "conflictsOrAlliances": "Expansion militaire vers l'est et l'ouest à partir du XIIe siècle. Deuxième expansion vers l'est (lac Débo, 1400), Benka (1433), Walata (1477-1483). Résistance à la colonisation européenne, même après l'incendie et l'occupation de Yendi par les Allemands. Intégration dans le Gold Coast britannique comme protectorat (pas colonie). Crisis de succession au XXe et XXIe siècles (notamment 2002-2019) ayant entraîné des violences intercommunautaires.",
+      "diaspora": "La diaspora Dagomba au sein du Ghana est significative, notamment à Accra, Kumasi et dans les villes du sud du pays, où des marchés et des communautés organisées maintiennent leur identité culturelle. Une diaspora internationale existe au Royaume-Uni, aux États-Unis et en Allemagne, notamment des musiciens Lunsi qui enseignent dans les universités occidentales et se produisent à l'international."
+    },
+    "demography": {
+      "totalPopulation": 3200000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur le recensement Ghana 2021 (Ghana Statistical Service : 1,16 million dans la seule région nord du Ghana), Joshua Project (total monde 1 536 000 en 2024, dont 1 521 000 au Ghana et 15 000 au Togo), Wikipedia Dagomba people (plus de 3,1 millions). Population projetée 2025 intégrant taux de croissance ghanéen (2,2%).",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 3185000,
+          "note": "Principalement région du nord du Ghana : Tamale Metropolitan, Yendi, Savelugu, Sagnerigu, Tolon, Kumbungu, Nanton, Gushegu, Karaga, Zabzugu, Saboba, Cheriponi"
+        },
+        {
+          "country": "TGO",
+          "population": 15000,
+          "note": "Petite communauté dans le nord du Togo, à la frontière avec le Ghana"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Dagomba people. https://en.wikipedia.org/wiki/Dagomba_people",
+      "Britannica — Dagomba. https://www.britannica.com/topic/Dagomba",
+      "Joshua Project — Dagomba in Ghana. https://joshuaproject.net/people_groups/11470/GH",
+      "Tufts University — About the Dagomba. https://sites.tufts.edu/dagomba/about-the-dagomba/",
+      "Tufts University — Dagomba Dance Drumming (Lunsi). https://sites.tufts.edu/dagomba/",
+      "Melodigging — Dagomba Music. https://www.melodigging.com/genre/dagomba-music",
+      "Dagbon Kingdom — Damba Festival. https://dagbonkingdom.com/damba-festival/",
+      "Joshua Project — Dagomba in Togo. https://joshuaproject.net/people_groups/print/11470/TO"
+    ]
+  }
+}

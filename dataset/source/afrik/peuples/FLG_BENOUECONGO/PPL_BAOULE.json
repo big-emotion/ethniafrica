@@ -1,0 +1,77 @@
+{
+  "id": "PPL_BAOULE",
+  "nameMain": "Baoulé",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Baoulé",
+      "selfAppellation": "Baule",
+      "exonyms": ["Baoulé", "Bawule", "Baule"],
+      "originOfExonyms": "Le nom Baoulé proviendrait d'une expression associee au sacrifice de la reine Abla Pokou: selon la tradition orale, elle aurait sacrifie son fils unique pour permettre a son peuple de traverser le fleuve Bandama lors de la migration depuis l'Ashanti. La phrase prononcee serait Baouli (l'enfant est mort). Baoulé est la forme francisee du nom.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Baoulé est utilise dans les contextes officiels en Cote d'Ivoire. Baule est la forme autochtone. Le groupe est reconnu comme l'une des plus grandes ethnies de Cote d'Ivoire et joue un role politique majeur, notamment via le premier president ivoirien Felix Houphouet-Boigny (Baoulé).",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan",
+      "historicalRegion": "Centre de la Cote d'Ivoire, entre les fleuves Bandama et N'Zi",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": ["Baoulé", "Baule"],
+    "origins": {
+      "ancientOrigins": "Peuple akan issu d'une migration depuis le royaume Ashanti du Ghana actuel. La reine Abla Pokou (aussi connue sous le nom d'Aura Poku) mena une partie des Ashanti vers l'ouest apres une succession disputee au sein de l'empire Ashanti au debut du XVIIIe siecle. Le groupe s'installa dans la zone centrale de la Cote d'Ivoire entre les rivieres Bandama et N'Zi.",
+      "formationPeriod": "Royaume Baoulé fonde vers 1730 par la reine Abla Pokou (regne c.1730-c.1760). Le groupe s'est progressivement constitue en entite distincte tout au long du XVIIIe siecle, assimilant des populations locales et developpant ses propres institutions.",
+      "migrationRoutes": [
+        "Depart du royaume Ashanti (Ghana actuel) vers l'ouest, probablement a la suite de la succession apres Opoku Ware I vers 1720-1730",
+        "Traversee du fleuve Bandama (selon la legende, au prix du sacrifice du fils de la reine Pokou)",
+        "Installation dans la region centrale de la Cote d'Ivoire entre le Bandama et le N'Zi"
+      ],
+      "historicalSettlementZones": [
+        "Region centrale de la Cote d'Ivoire: le V Baoulé, zone en forme de tresse francaise entre le Bandama et le N'Zi",
+        "Villes de Bouake, Yamoussoukro et leurs environs",
+        "Expansion vers les forets du sud lors du boom cacaoyer (1960-1990)"
+      ],
+      "unificationsOrDivisions": "Le peuple Baoulé est constitue de plusieurs groupes integres sous l'autorite de la reine Pokou: Aitu, Fari, Nzikpli, Saafwe, Sahu, Sahwe, Nanafwe, Agba et Ngban. Chaque village maintient son chef local, les cantons etant regroupes sous des rois ou reines.",
+      "externalInfluences": "Heritage culturel akan (matrilinearite, gouvernance par tabourets, systeme de nommage par jour de naissance). Contact avec les peuples Guro, Bete et Dioula lors de l'installation en Cote d'Ivoire. Colonisation francaise (XIXe-XXe siecles). Essor economique lie au boom du cacao, du cafe et du caoutchouc depuis l'independance.",
+      "majorHistoricalEvents": "c.1730: Migration depuis l'Ashanti et fondation du royaume sous la reine Abla Pokou. 1760-1895: Succession de monarques baoulé (voir liste des souverains). 1895-1911: Resistance prolongee contre la conquete coloniale francaise. 1902-1925: Regne de Kouadio N'Dri sous occupation coloniale. 1960: Felix Houphouet-Boigny (Baoulé) devient le premier president de la Cote d'Ivoire independante."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme politique simple et decentralise: plusieurs chefs de village anciens discutent des affaires communautaires. Les petits villages sont diriges par un chef de village; les grands villages et les cantons par un roi ou une reine assiste(e) de notables et de conseillers. Les souverains s'expriment rarement en public directement, passant par un porte-parole. Chaque canton est independant, reuni en confederation informelle. Le peuple Baoulé est une monarchie subetatique qui existe encore de nos jours.",
+      "clanOrganization": "Societe matriarcale: les droits des femmes sont sacres. Les villages dependent les uns des autres pour former des cantons ou tribus. La lignee maternelle prime pour la transmission des droits et des titres.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages matrilineaires determinant la succession et l'heritage. La reine mere joue un role central dans la nomination et la legitimation des chefs.",
+      "religiousAuthority": "Trois domaines de realite: le domaine de Nyamien (Dieu supreme), le monde terrestre (humains, animaux, plantes, etres surnaturels des montagnes, rochers, fleuves et forets), et le blolo (au-dela, monde des ancetres). Des pretres et maitres rituels assurent la mediation entre ces mondes par l'intermediaire des masques et sculptures sacres."
+    },
+    "languages": {
+      "mainLanguage": "Baoulé (wawle)",
+      "isoCodes": ["bci"],
+      "dialects": ["Baule du nord", "Baule du sud", "Baule de l'est"],
+      "vehicularRole": "Le baoulé est la langue maternelle de l'ethnie, parlee a la maison et dans les communautes. Les enfants apprennent le francais a l'ecole des la premiere annee. Le baoulé est parle par environ 5,3 millions de locuteurs en Cote d'Ivoire et sert de vehicule inter-ethnique dans la region centrale. Le systeme de nommage baoulé differe de celui des autres groupes akan: les enfants sont nommes selon le jour de la semaine de leur naissance (calendrier baoulé propre)."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation masculins et feminins. Ceremonies funeraires elaborees avec masques et danses. Fete de l'igname. Rites de protection du village (masque bo nu amuin). Jeu de l'Atte (similaire aux billes, utilisant des noix d'une essence specifique, pratique en equipes de deux cotes a 30 metres de distance).",
+      "symbols": "Masques sacres en bois (rouge pour les femmes, noir pour les hommes): goli glin (masque animal, femmes exclues la nuit), kple kple (masque joyeux pour enfants), bo nu amuin (dieu sorti de la brousse, masque masculin sacre pour funerailles et protection du village), gbagba/mblo (masque de divertissement et de beaute). Sculptures: blolo bla et blolo bian (epoux spirituels), bo usu (esprits forestiers des chasseurs). Les esprits protecteurs zulu sont loges dans des waka sran (etres en bois).",
+      "artsAndMusic": "Sculptures et masques renommés mondialement pour leur finesse et leur diversite formelle. Materiaux: or, bronze, bois, ivoire. Tissage de kente (pagne traditionnel), tissu appele Sakiare (village a 95% de tisserands qualifies a la main). Danses des masques: goli glin, kple kple, gbagba/mblo, bo nu amuin. Musique percussive lors des ceremonies. L'art baoulé est l'un des plus collectionnees au monde parmi les arts africains.",
+      "spiritualities": "Cosmologie en trois domaines: Nyamien (divinite supreme), monde terrestre et blolo (au-dela des ancetres). Les sculptures et masques servent de liens entre le monde physique et le monde spirituel. Les zulu (esprits protecteurs) habitent les waka sran. Les blolo bla et blolo bian (partenaires spirituels de l'autre monde) font l'objet d'offrandes pour ameliorer les relations terrestres. Coexistence avec le christianisme (catholique et protestant)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume Baoulé (fonde c.1730 par la reine Abla Pokou). Sequence monarchique documentee: Abla Pokou (c.1730-c.1760), Akoua Bony (c.1760-c.1790), Kouakou Djie I (c.1790-c.1820), Nanan Kouame Toto (c.1820-c.1840), Kouakou Anougble I (c.1840-c.1870), Nanan Toto Diby (c.1870-c.1880), Anougble Dieke (c.1880-c.1890), Kouame Tchecke I (c.1890-1902), Kouadio N'Dri (1902-1925), Nanan Kouakou Anougble II (1925-1958), Nanan Kouakou Djie II (1959-1978), Nanan Kouakou Anougble III (1995-2016), Nanan N'Ga Tanou Monique (2016-present).",
+      "relationsWithNeighbors": "Relations avec les peuples Guro, Bete, Dioula et Senufo lors de l'installation en Cote d'Ivoire. Separation symbolique et culturelle vis-a-vis de l'Ashanti (calendrier propre pour marquer l'independance). Le Baoulé V est un carrefour entre les zones forestieres du sud et les savanes du nord.",
+      "conflictsOrAlliances": "Resistance prolongee contre la penetration coloniale francaise (1895-1911). Guerres intervillageoises locales lors de la periode de formation. Role politique dominant apres l'independance de 1960 grace a la presidence Houphouet-Boigny.",
+      "diaspora": "Forte presence dans les grandes villes ivoiriennes (Abidjan, Bouake, Yamoussoukro). Expansion vers les zones forestieres du sud (Low Coast) comme planteurs de cacao, de caoutchouc et de cafe, parfois en situation de minorite numerique dans leurs zones d'installation. Presence dans la diaspora africaine en France et en Europe."
+    },
+    "demography": {
+      "totalPopulation": 5000000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN Baoulé people (5 millions); certaines estimations recentes evoquent jusqu'a 8 millions (Facebook Mey3asanteni, aout 2025) sur une population ivoirienne de 31,5 millions (2024)",
+      "distributionByCountry": [{ "country": "CIV", "population": 5000000 }]
+    },
+    "sources": [
+      "Baoulé people – Wikipedia EN (https://en.wikipedia.org/wiki/Baoul%C3%A9_people)",
+      "Baoulé language – Wikipedia EN (https://en.wikipedia.org/wiki/Baoul%C3%A9_language)",
+      "Ethnologue – Baoulé Language (BCI) (https://www.ethnologue.com/language/bci/)",
+      "ISO 639-3 code bci – SIL International / CEDS (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)",
+      "Ivory Coast – Wikipedia EN (https://en.wikipedia.org/wiki/Ivory_Coast)",
+      "Vogel, Susan M. – Baule: African Art, Western Eyes, Yale University Press, 1997"
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "id": "PPL_DAWRO",
+  "nameMain": "Dawro",
+  "languageFamilyId": "FLG_OMOTIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Dawro",
+      "selfAppellation": "Dawuro",
+      "exonyms": [
+        "Omete",
+        "Kullo",
+        "Dauro",
+        "Dawragna",
+        "Dawrogna",
+        "Dawrotsuwa",
+        "Konta",
+        "Koysha",
+        "Kucha"
+      ],
+      "originOfExonyms": "Le terme Kullo est un exonyme amhara utilisé par les conquérants du nord, souvent considéré comme péjoratif. Omete est un autre exonyme régional. Le nom Dawuro (ou Dawuro) signifie en langue dawro 'fort, courageux, brave et sans peur'. Le terme Dawragna désigne la langue parlée par le peuple.",
+      "whyProblematic": "L'exonyme Kullo a été imposé par l'administration amhara après la conquête éthiopienne de 1889 et reste associé à la période de domination étrangère. La multiplicité des noms reflète la diversité des perspectives extérieures sur ce peuple.",
+      "contemporaryUsage": "Le terme Dawro est officiellement reconnu par l'administration éthiopienne (Dawro Zone). Dawuro est la forme auto-désignée utilisée par le peuple lui-même. Le nom a une double signification : il désigne à la fois le peuple et son territoire.",
+      "linguisticFamily": "FLG_OMOTIQUE",
+      "ethnoLinguisticGroup": "Omotique central (sous-groupe Ometo)",
+      "historicalRegion": "Dawro Zone (anciennement dans la Semien Omo Zone du SNNPR), South West Ethiopia Peoples' Regional State — situé entre les rivières Gojeb et Omo dans le sud-ouest de l'Éthiopie, à environ 500 km au sud-ouest d'Addis-Abeba",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Malla — clan dominant, propriétaires terriens et administrateurs traditionnels",
+      "Dogalla — clan à vocation spirituelle (Sharechos, prêtres traditionnels)",
+      "Amara — clan à vocation économique",
+      "Kawuka — sous-clan Malla, clan royal dont est issue la lignée des Kawo (rois)",
+      "Hillancha — groupes artisanaux marginalisés : Wogachee (forgerons), Degella (tanneurs), Mana (potiers), Manja (chasseurs/menuisiers)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Dawro font partie des premiers peuples omotiques du sud-ouest de l'Éthiopie, installés entre les rivières Gojeb et Omo. Ils se revendiquent comme les premiers habitants de la région et affirment avoir donné naissance aux Wolayta voisins via les clans Malla. Leur histoire précoloniale est caractérisée par la formation d'un puissant État omotique, le Royaume de Dawro, dont l'influence s'étendait jusqu'aux frontières orientales du Kaffa.",
+      "formationPeriod": "Le Royaume de Dawro s'est consolidé autour de la dynastie Kawuka, dont l'origine est traditionnellement rapportée à Gondar (Dembiya) au nord de l'Éthiopie. Depuis environ 1700, la dynastie Kawuka a fondé un État puissant qui a connu son apogée sous le roi Halala (1782-1822), connu pour la construction du grand mur défensif (Halala Kella). Quatorze rois (Kawo) de la lignée Kawuka ont gouverné pendant environ 350 ans jusqu'à la conquête éthiopienne de 1889.",
+      "migrationRoutes": [
+        "Populations omotiques autochtones dans la région entre les rivières Gojeb et Omo",
+        "Migrants du nord (Gondar, Gojjam, Shewa, Tigray) assimilés à la société dawro",
+        "Migrations de peuples voisins (Kambata, Tambaro, Yem, Wolayta, Gamo, Gofa, Qucha, Malo, Kaffa) intégrés dans le royaume"
+      ],
+      "historicalSettlementZones": [
+        "Dawro Zone (South West Ethiopia Peoples' Regional State), capitale Tarcha",
+        "Entre les rivières Omo (Umma) et Gojeb",
+        "Altitude variant de 550 à 2900 m",
+        "Districts (woredas) de Mareka, Gena/Bosa, Loma, Tocha, Essera, Kechi, Disa, Mareka, Zaba Gazo"
+      ],
+      "unificationsOrDivisions": "Le Royaume de Dawro était un État centralisé avec une hiérarchie administrative élaborée sous l'autorité du Kawo. La conquête éthiopienne de 1889 a mis fin à l'État indépendant. La zone Dawro a été créée en 2000 lors de la division de la Semien Omo Zone, reconnaissant l'identité distincte des Dawro. Tensions historiques avec les Wolayta (accusés d'hégémonisme ethnique) qui ont précipité la scission administrative.",
+      "externalInfluences": "Relations commerciales et culturelles avec les royaumes voisins (Kaffa, Wolayta, Gamo Gofa, Kambata-Tambaro). Conquête par Ras Welde Giorgis en 1889 pour le compte de Menelik II. Système du naftagna-gabbar imposé après la conquête. Occupation italienne (1936-1941). Derg (1974-1991) avec réforme agraire. Modernisation post-1991 dans le cadre de l'État fédéral éthiopien.",
+      "majorHistoricalEvents": "Construction du grand mur défensif Halala Kella (150-200 km de long, 3 m de profondeur, 7 portes/mitasas) sous le roi Halala (1782-1822). Conquête par Ras Welde Giorgis en 1889 : le roi Kantsa (7 ans) est capturé à la montagne Embuti et converti au christianisme (renommé Haile Tsiyon). Fin du système royal Kawo. Période d'exploitation coloniale interne (naftagna-gabbar). Création de la zone Dawro en 2000 E.C. Inauguration du barrage hydroélectrique Gilgel Gibe III sur le fleuve Omo dans la zone Dawro."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le Royaume de Dawro possédait une structure administrative élaborée à plusieurs niveaux. Au sommet, le Kawo (roi héréditaire) de la lignée Kawuka. Sous lui, les Woraba (8 chefs de district, nommés par le roi), les Erasha (12 par Woraba, environ 700 ménages chacun), les Dana (7 par Erasha), les Guda/Huduga (village et famille). Des fonctions spécialisées existaient : Torarasha (commandant militaire), Shiwarasha (juge/procureur), Hatarasha (sécurité commerciale), Acheerasha (contrôle de la qualité artisanale), Agarasha (conseiller en médiation), Dinkarasha (responsable musique et culture). La justice coutumière (assemblées Dubusha sous les arbres) utilisait le serment (feu/lance).",
+      "clanOrganization": "Trois grands clans patrilinéaires structurent la société Dawro, chacun subdivisé en plus de 150 sous-clans : Malla (propriétaires terriens, administration), Dogalla (vocation spirituelle), Amara (vocation économique). Le clan royal Kawuka est une subdivision du Malla. Les groupes artisanaux (Hillancha) — forgerons (Wogachee), tanneurs (Degella), potiers (Mana), chasseurs/menuisiers (Manja) — sont marginalisés socialement, sans droits fonciers, avec des tabous de mariage avec les Malla.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires (Malla, Dogalla, Amara et leurs sous-clans) structurent l'ensemble de la vie sociale dawro : accès à la terre, alliances matrimoniales, obligations rituelles et politiques. L'exogamie clanique régit le mariage. Les Malla évitent les mariages internes au clan.",
+      "religiousAuthority": "Les Sharechos (prêtres/sorciers héréditaires) étaient les intermédiaires spirituels traditionnels, avec deux catégories : Worka tsossa (dieu d'or) et Birra tsossa (dieu d'argent). Plusieurs cultes liés à des divinités clanique (Adama/Bodoso, Yafaro, Hawzula/Hambaza). Aujourd'hui, le protestantisme domine (57,71%), suivi du christianisme orthodoxe éthiopien (31,86%), du catholicisme (4,61%) et des religions traditionnelles (4,9%)."
+    },
+    "languages": {
+      "mainLanguage": "Dawragna (Dawrotsuwa / Dawurothuwa)",
+      "isoCodes": ["dwr"],
+      "dialects": [
+        "Dawragna central — parlé dans la zone de Tarcha et les woredas principaux",
+        "Variétés frontalières avec affinités au Konta (région de Konta) et au Wolayta (zone orientale)"
+      ],
+      "vehicularRole": "Le Dawragna est la langue d'instruction dans les écoles primaires de la zone Dawro. Il est parlé par 97,44% des habitants de la zone (recensement 2007). La langue présente des similitudes avec le Wolayta, le Gamo et le Gofa, langues de la même famille ometo. Elle est également parlée dans des zones frontalières de Konta, Jimma, Kaffa et Kambata-Tambaro. Le Dawro possède son propre jeu de caractères spécifiques dans le syllabaire éthiopique (Ethiopic), ce qui est rare parmi les langues régionales éthiopiennes. L'amharique est utilisé pour l'administration centrale et l'enseignement secondaire."
+    },
+    "culture": {
+      "majorRites": "Mariage (types multiples) : Laazantta (mariage formel avec négociateurs), Bulachaa (fête de mariage), Makuwa (mariage informel), Horuwaa (mariage par enlèvement, disparu), Lata (lévirat), Mishechachuwa (sororat), Satsa (mariage révélé en songe). Deuil et funérailles : messagers portant des bâtons blancs, soutien communautaire (Idir), instruments funèbres (Locuwa, Dinka, Hitsitsiya, Darbiya), discours (Zilalisa), lamentations (Bosha), danses (Lutha), encouragements (Zuryane). Rituels d'expiation et de purification liés aux cultes ancestraux des Sharechos. Cérémonies agricoles liées au calendrier lunaire propre aux Dawro (Tokibe'a/Laytha Lamiya, 12 mois, avec saisons nommées : Adilliya automne, Bonniya hiver, Asura printemps, Balguwa été).",
+      "symbols": "Le grand mur défensif Halala Kella (Kawo Halala Kela) est le principal symbole du patrimoine historique Dawro. Le Dinka, la plus longue flûte en bambou du monde, est le symbole musical emblématique du peuple. Le Kawo (roi) constitue le symbole central de l'identité politique historique. L'Enset et les cultures agricoles diversifiées symbolisent la relation à la terre.",
+      "artsAndMusic": "Musique : le Dinka est l'instrument emblématique Dawro, une flûte en bambou décrite comme la plus longue du monde avec quatre types (Mara 2,73m, Hisya 3,08m, Oytsiya 3,60m, Zoohaa/Lamiyaa au-delà de 4m). Trois rythmes musicaux principaux : Yedda, Gadiliya/Shilela, Goosha. Artisanat : poterie (Mana), travail du fer (Wogachee : couteaux adaa et masha), tannage (Degella : nattes, sacs), travail du bois (Manja : mobilier), vannerie et gourdes décoratives. Commerce traditionnel : le Dawro exportait du bétail, des textiles, du musc, des peaux, des épices, de l'ivoire et du miel. Instruments de mesure et monnaies : Shallo (fil de coton), Marchuwa (barre de fer), Yamaa (barre de sel), pièces Tamuni et Maria Theresa.",
+      "spiritualities": "La religion traditionnelle Dawro reconnaît plusieurs niveaux de puissances spirituelles. Au niveau du foyer : Medhtsossa (esprit domestique). Au niveau des exclus/jeunes/femmes : Satsatossa. Au niveau supérieur : Tillotossa (dieu de la vérité). Les Sharechos (prêtres héréditaires) médiaient entre humains et divinités (Worka tsossa, dieu d'or ; Birra tsossa, dieu d'argent). Cultes claniques liés à des divinités comme Adama/Bodoso, Yafaro, Yejjo/Yero, Wombo, Hawzula/Hambaza. Le christianisme a pénétré très tôt (prêtre Sebhat via Kambata au Moyen Âge, église Saint-Michel à Ofawati). Aujourd'hui : protestantisme 57,71%, orthodoxie éthiopienne 31,86%, catholicisme 4,61%, religions traditionnelles 4,9%, islam 0,98%."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume de Dawro était l'un des États omotiques les plus puissants du sud-ouest de l'Éthiopie. Gouverné par une lignée de 14 Kawo (rois) de la dynastie Kawuka pendant environ 350 ans, il disposait d'une administration élaborée, d'une armée organisée, d'un système judiciaire et d'une économie commerciale active. Son apogée sous le roi Halala (1782-1822) est marqué par la construction du grand mur défensif Halala Kella. Les Dawro affirmaient leur supériorité sur les peuples voisins en se proclamant les premiers habitants de la région.",
+      "relationsWithNeighbors": "Relations complexes avec les royaumes omotiques voisins : Wolayta (à l'est), Gamo Gofa (au sud), Kambata-Tambaro (au nord-est), Kaffa (à l'ouest). Le Dawro disputait la suprématie régionale dans le titre Ometo de Kawo (roi). Expansion territoriale vers le Kaffa au début du XIXe siècle. Relations commerciales avec les marchands de la région (exportation de bétail, épices, musc, ivoire). Des migrants de Gondar, Gojjam, Shewa, Tigray, Kambata, Tambaro, Yem, Wolayta, Gamo, Gofa, Qucha, Malo et Kaffa se sont installés dans le royaume.",
+      "conflictsOrAlliances": "Conflits répétés avec les Wolayta pour la domination régionale. Construction du mur Halala Kella (protection contre Wolayta, Gamo Gofa). Défaite face aux troupes de Ras Welde Giorgis (1889) lors de la campagne de Menelik II. Résistance à la domination éthiopienne post-conquête. Tensions post-1991 avec les Wolayta dans le cadre de la Semien Omo Zone, menant à la division administrative de 2000.",
+      "diaspora": "La grande majorité des Dawro (97,32% selon le recensement 2007) réside dans la zone Dawro. La diaspora urbaine est présente à Addis-Abeba et dans d'autres centres régionaux. Quelques communautés Dawro sont établies dans les zones frontalières de Konta et Jimma."
+    },
+    "demography": {
+      "totalPopulation": 700000,
+      "referenceYear": 2025,
+      "source": "Recensement éthiopien 2007 (CSA) : zone Dawro 489 577 habitants (97,32% Dawro). Population éthiopienne 2007 : Dawro représentait 3,28% du SNNPR. Document de recherche de l'Université de Jimma (repository.ju.edu.et) : 600 121 dans la zone Dawro selon le recensement 2007 élargi. Projection 2025 estimée à environ 700 000 en tenant compte du taux de croissance démographique éthiopien.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 700000,
+          "note": "Dawro Zone (South West Ethiopia Peoples' Regional State), capitale Tarcha. Districts principaux : Mareka, Gena/Bosa, Loma, Tocha, Essera, Kechi, Disa, Zaba Gazo. Minorités dans les zones frontalières de Konta et Jimma."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Dawro people. https://en.wikipedia.org/wiki/Dawro_people",
+      "Wikipedia EN — Dawro Zone. https://en.wikipedia.org/wiki/Dawro_Zone",
+      "Ethnologue — Dawro language (dwr). https://www.ethnologue.com/language/dwr/",
+      "Histoire de l'interaction entre le Dawuro et les communautés environnantes (1800-1991). Universite de Jimma. https://repository.ju.edu.et/bitstream/handle/123456789/825/",
+      "Swordshare — Dawro language info. https://map.swordshare.com/dwr",
+      "Facebook — Dawro Dinka world's longest woodwind. https://www.facebook.com/NewdawuroMedia/posts/",
+      "Recensement national de la population et du logement de l'Éthiopie 2007 (CSA). Données Dawro Zone."
+    ]
+  }
+}

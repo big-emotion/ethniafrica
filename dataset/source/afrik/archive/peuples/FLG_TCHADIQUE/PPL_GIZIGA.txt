@@ -1,0 +1,37 @@
+# Nom du peuple
+- Nom principal : Giziga
+- Auto-appellation : Giziga / Ghiziga
+- Famille linguistique : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
+- Région historique : Cameroun (Maroua, Méri)
+- ID peuple : PPL_GIZIGA
+
+# 1. Ethnies incluses
+- Giziga Nord
+- Giziga Sud
+
+# 2. Origines
+- Population de piémonts et plaines sahéliennes.
+- Relations anciennes avec Musgum, Mafa et Mandara.
+
+# 3. Organisation interne
+- Autorités villageoises.
+- Organisation lignagère.
+
+# 4. Langue
+- Giziga (ISO : giz)
+
+# 5. Culture
+- Tissage, poterie.
+- Rites saisonniers et fêtes agropastorales.
+
+# 6. Histoire
+- Conflits et alliances régionales.
+- Influence des chefferies du Mandara.
+
+# 7. Démographie
+- Population : 340 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (giz)
+- Cameroun – Ministère de la Culture

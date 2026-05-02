@@ -1,0 +1,83 @@
+{
+  "id": "PPL_MATUMBI",
+  "nameMain": "Matumbi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Matumbi",
+      "selfAppellation": "Matumbi",
+      "exonyms": ["Kimatumbi", "Matuumbi", "Kimatuumbi"],
+      "originOfExonyms": "Le nom Matumbi vient du mot de leur langue signifiant 'montagne' ou 'colline', faisant reference aux collines Matumbi (Matumbi Hills) sur lesquelles le peuple s'est installe dans le sud de la Tanzanie.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Matumbi est le terme standard utilise dans toutes les sources scientifiques et officielles tanzaniennes. Kimatumbi designe specifiquement la langue.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu du groupe P (P13 selon la classification Guthrie), cluster Matumbi-Ndengereko",
+      "historicalRegion": "Collines Matumbi, district de Kilwa, region de Lindi ; sud de la region de Pwani, district de Rufiji ; archipel de Songosongo",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Matumbi"],
+    "origins": {
+      "ancientOrigins": "Peuple bantou installe dans les collines Matumbi et les plaines cotieres du sud de la Tanzanie actuelle. Linguistiquement apparente aux peuples Ndengereko, Rufiji, Ngindo et Mbunga, ils partagent une origine migratoire commune depuis l'interieur de l'Afrique centrale bantoue. La similitude avec le Ndengereko-Rufiji suggere des migrations communes depuis le centre-ouest de l'Afrique.",
+      "formationPeriod": "L'identite Matumbi se forme lors de l'etablissement des groupes migrants dans les collines du sud de la Tanzanie. Le nom meme (collines/montagnes) indique que l'installation sur ce relief specifique a donne naissance a l'identite ethnique, distinguant ce groupe de ceux qui se sont etablis pres des rivieres (Rufiji) ou des plaines cotieres (Ndengereko).",
+      "migrationRoutes": [
+        "Migration bantoue depuis l'Afrique centrale vers la cote est-africaine",
+        "Installation dans les collines Matumbi au sud du delta du Rufiji"
+      ],
+      "historicalSettlementZones": [
+        "Collines Matumbi, district de Kilwa, region de Lindi",
+        "Cote sud de la region de Pwani, district de Rufiji (sud du delta du Rufiji)",
+        "Archipel des iles Songosongo"
+      ],
+      "unificationsOrDivisions": "Les Matumbi constituent le groupe ethnique le plus important du district de Kilwa. Ils sont linguistiquement proches des Ndengereko et Rufiji, avec lesquels ils partagent une origine migratoire. Certaines classifications les regroupent dans le cluster linguistique plus large dit 'Matumbi group' (Ethnologue) comprenant aussi Mbunga, Ndendeule, Ndengereko, Ngindo, Nindi et Rufiji.",
+      "externalInfluences": "Influence arabe via le commerce de l'ocean Indien depuis le Xe siecle (islamisation). Domination omanaise/zanzibarie sur la cote tanzanienne aux XVIIIe-XIXe siecles. Colonisation allemande (1885-1919) conduisant a la revolte Maji Maji. Colonisation britannique (1919-1961).",
+      "majorHistoricalEvents": "Le 31 juillet 1905, des guerriers Matumbi marchent sur Samanga et detruisent les recoltes de coton forcees ainsi qu'un comptoir commercial, declenchant la revolte Maji Maji, le souleverment anticolonial le plus important de l'histoire du Tanganyika (Tanzanie actuelle). Ce souleverment initie par les Matumbi s'etend ensuite a de nombreux autres peuples du sud du Tanganyika jusqu'en 1907. L'independance de la Tanzanie est acquise en 1961."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe patrilineaire sans structure politique centralise verifiable. Organisation par villages et clans. La revolte Maji Maji de 1905 a montre une capacite de coordination inter-ethnique sous l'influence de la religion (prophete Kinjikitile Ngwale).",
+      "clanOrganization": "Organisation clanique patrilineaire. Les lignages patrilateraux structurent l'organisation sociale et la transmission des terres.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le systeme patrilineaire determine la filiation, l'heritage et l'appartenance clanique. Les Matumbi sont une societe patrilineaire (confirmed by Wikipedia EN).",
+      "religiousAuthority": "Islam sunnite : religion principale (environ 95% de la population). Le culte des esprits ancestraux et le culte de la caverne Nangoma, reputee abriter une divinite associee a la danse et au culte, sont des elements spirituels preislamiques. La caverne Nangoma est une reference spirituelle importante pour les Matumbi."
+    },
+    "languages": {
+      "mainLanguage": "Kimatumbi (Matuumbi)",
+      "isoCodes": ["mgw"],
+      "dialects": ["Kichi", "Kuchi"],
+      "vehicularRole": "Le kimatumbi est parle par environ 70 000 a 224 000 locuteurs selon les sources. Il est classe P13 dans la classification Guthrie des langues bantoues. Closely related to Ngindo, Rufiji and Ndengereko. Le swahili est utilise comme langue vehiculaire nationale en Tanzanie."
+    },
+    "culture": {
+      "majorRites": "Le culte de la caverne Nangoma, site sacre abritant une divinite associee a la danse et au culte, est central dans la spiritualite matumbi preislamique. Rites de passage et ceremonies islamiques (mariages, funerailles selon les rites sunnites). L'ancestralite et les esprits des forets font partie des pratiques religieuses traditionnelles.",
+      "symbols": "Les collines Matumbi (Matumbi Hills) constituent le symbole identitaire central du peuple, donnant leur nom au groupe. La caverne Nangoma est un lieu sacre symbolique. La riviere Rufiji et ses affluents bordent leur territoire.",
+      "artsAndMusic": "Culture principalement orale. Connaissance approfondie des plantes medicinales : les Matumbi connaissent les usages de plus de 200 plantes medicinales natives. Pecheurs de l'archipel Songosongo. Agriculture vivriere (riz, noix de coco, patates douces).",
+      "spiritualities": "Islam sunnite majoritaire (environ 95%). Syntherese avec le culte des ancetres et des esprits, notamment autour de la caverne Nangoma. Fierte et independance d'esprit sont des valeurs culturelles marquees, illustrees par leur role d'initiateurs de la revolte Maji Maji de 1905."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise connu. Organisation en villages et chefferies locales dans les collines Matumbi.",
+      "relationsWithNeighbors": "Proches linguistiquement et culturellement des Ndengereko, Rufiji, Ngindo et Mbunga. Voisins des peuples Yao (lies au Mozambique) dont la langue est d'une branche bantoue differente.",
+      "conflictsOrAlliances": "Role fondateur dans la revolte Maji Maji (1905-1907) contre la domination coloniale allemande au Tanganyika. Le 31 juillet 1905, des guerriers Matumbi detruisent les champs de coton de Samanga, declenchant la plus grande revolte anticoloniale de l'histoire tanzanienne. Cette revolte, soutenue spirituellement par le prophete Kinjikitile Ngwale (promettant l'immunite aux balles grace a l'eau sacree, maji), s'etend a de nombreux peuples du sud du pays.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 224000,
+      "referenceYear": 2025,
+      "source": "Global Prayer Resource Network (estimation contemporaine 224 000) ; Wikipedia EN (estimation 1978 : 72 000) ; Ethnologue (environ 70 000 locuteurs de la langue)",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 224000,
+          "note": "Principalement district de Kilwa (region de Lindi), sud region de Pwani (district de Rufiji), archipel Songosongo"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Matumbi people (https://en.wikipedia.org/wiki/Matumbi_people)",
+      "Wikipedia EN – Maji Maji Rebellion (https://en.wikipedia.org/wiki/Maji_Maji_Rebellion)",
+      "Wikipedia EN – Matumbi language (https://en.wikipedia.org/wiki/Matumbi_language)",
+      "PeopleGroups.org – Matumbi of Tanzania (https://peoplegroups.org/people_groups/pg014986/)",
+      "Global Prayer Resource Network – Matumbi People of Tanzania (http://www.globalprn.com/wp-content/uploads/Jan-Day-11-20.pdf)",
+      "Orville Jenkins – Language, Tribe and Ethnic Clusters: Analyzing the Ndengereko (http://orvillejenkins.com/ethnicity/langtribendengereko.html)",
+      "Ethnologue – Matuumbi (mgw) (https://www.ethnologue.com/language/mgw/)"
+    ]
+  }
+}

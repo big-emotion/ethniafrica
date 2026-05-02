@@ -1,0 +1,116 @@
+{
+  "id": "PPL_YALUNKA",
+  "nameMain": "Yalunka",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["GIN", "SLE", "MLI", "SEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Yalunka",
+      "selfAppellation": "Yalunka / Jalunga",
+      "exonyms": [
+        "Dialonke",
+        "Djallonke",
+        "Djalonka",
+        "Jalonke",
+        "Jallonke",
+        "Jalunka",
+        "Dialonka",
+        "Dyalonke"
+      ],
+      "originOfExonyms": "Le terme Dialonke ou Jalonke derive de Jalon (montagne en yalunka), suivi du suffixe -ke signifiant habitants de. Il signifie donc habitants des montagnes du Jallon (Fouta Djalon). Ce nom refere directement au territoire montagneux du Fouta Djallon en Guinee, berceau historique du peuple.",
+      "whyProblematic": "La multiplicite des graphies (Djallonke, Dialonke, Yalunka, Jalunka) reflete les translitera-tions differentes des explorateurs et administrateurs coloniaux francais et britanniques. Le terme peut aussi preter a confusion avec Djalonke, qui designe parfois l'ensemble des peuples pre-fulanis du Fouta Djallon.",
+      "contemporaryUsage": "Yalunka est la forme standardisee en anglais. Dialonke est prefere en contexte francophone (Guinee). Les deux formes coexistent dans la litterature academique.",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "ethnoLinguisticGroup": "Mandingue (branche Mande du Niger-Congo)",
+      "historicalRegion": "Fouta Djallon (Futa Jallon) : massif montagneux du centre de la Guinee, source des fleuves Gambie, Niger et Senegal",
+      "currentCountries": ["GIN", "SLE", "MLI", "SEN"]
+    },
+    "ethnicities": [
+      "Solima Yalunka : groupe etabli dans le nord-est de la Sierra Leone, fonde la ville de Falaba au XIXe siecle",
+      "Yalunka de Faranah : communaute principale en Guinee, region de Faranah",
+      "Yalunka de Kouroussa : communaute secondaire en Guinee",
+      "Yalunka du Mali : petite communaute du sud-ouest du Mali",
+      "Yalunka du Senegal du Sud-Est : communaute minoritaire en Casamance"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Yalunka sont une branche des peuples Mande. Selon les traditions orales soussou, ils s'identifient a l'Empire medieval Sosso de Soumaoro Kante. Les premieres traces de leur presence dans le plateau du Fouta Djallon remontent au XIe siecle, apres la desintegration de l'Empire Sosso. Ils etaient des animistes agriculteurs et constituent les premiers habitants de la region appelee Jallonkadu, nom originel du Fouta Djallon avant la domination peule. Leur origine geographique precise est situee dans la region de Koulikoro, dans la vallee du Niger.",
+      "formationPeriod": "XIe-XVIIe siecle : periode d'etablissement au Fouta Djallon. XVIIIe siecle : dispersion forcee et reorganisation en nouveaux territoires suite aux jihads peuls.",
+      "migrationRoutes": [
+        "Migration depuis la vallee du Niger (Koulikoro, Mali) vers le Fouta Djallon (Guinee) au XIe siecle",
+        "Dispersion vers le sud (foothills de Mamou), l'est (Haute-Guinee mandingue) et le nord-est de la Sierra Leone (Falaba) au XVIIIe siecle",
+        "Installation parmi les Kuranko, Limba et Kissi dans les montagnes de Sierra Leone"
+      ],
+      "historicalSettlementZones": [
+        "Fouta Djallon (Guinee centrale) : territoire d'origine, aujourd'hui regions de Faranah et Kouroussa",
+        "Falaba (Sierra Leone du Nord) : capitale de l'Etat Solima Yalunka au XIXe siecle",
+        "Sud-ouest du Mali",
+        "Sud-est du Senegal (Casamance)"
+      ],
+      "unificationsOrDivisions": "L'Etat Solima Yalunka, cree au XIXe siecle le long de la frontiere Guinee-Sierra Leone, a constitue la principale entite politique yalunka post-jihad. Cet Etat a ete attaque par Almamy Samori Toure et finalement absorbe par les puissances coloniales europeennes.",
+      "externalInfluences": "Jihads peuls de Karamokho Alfa et Ibrahima Sori au XVIIIe siecle : les Yalunka ont d'abord accepte l'islam, puis l'ont rejete, avant d'etre contraints de le readopter en 1778 apres leur defaite militaire. Pression de l'Empire Wassoulou de Samori Toure au XIXe siecle. Colonisation francaise (Guinee) et britannique (Sierra Leone) au XIXe-XXe siecles.",
+      "majorHistoricalEvents": "XIe siecle : installation au Fouta Djallon. XVIIIe siecle : jihads peuls de Karamokho Alfa et Ibrahima Sori forçant la dispersion des Yalunka. 1778 : defaite des Yalunka et retour force a l'islam. XIXe siecle : creation de l'Etat Solima Yalunka a Falaba, attaques repetees de Samori Toure, incorporation dans les empires coloniaux."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe patriarcale organisee en villages (settlements) etablis depuis le XVIIIe siecle dans les vallees entre les collines. Chaque village est dirige par un chef de lignage. L'Etat Solima Yalunka (XIXe siecle) avait une structure politique centralisee avec un souverain (almamy) a Falaba.",
+      "clanOrganization": "Organisation en lignages patrilineaires. Principaux patronymes (clans) : Niakhasso (var. Nyakhasso), Keira ou Keyra (var. Keran), Samoura. Les menages etendus regroupent plusieurs hommes maries de meme pere et leurs familles, chacun dans une case distincte, formant un compound familial.",
+      "ageClassSystems": "Societe d'initiation feminine : la societe secrete Bondo (ou Sande) joue un role central dans la transition des filles vers l'age adulte, enseignant la fertilite, la morale et la conduite sexuelle appropriee. Elle maintient un interet continu pour le bien-etre de ses membres.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'heritage, les alliances matrimoniales et la legitimite politique. La dot (bride-price) est payee en animaux (bovins, ovins, caprins) par la famille du gars a la famille de la fille avant le mariage. Le mariage polygyne est commun : jusqu'a quatre epouses selon la loi islamique, la premiere epouse ayant autorite sur les suivantes.",
+      "religiousAuthority": "Autorite des imams et clercs musulmans dans les questions religieuses courantes. Persistance d'autorites traditionnelles : devins et guerisseurs pour les pratiques pre-islamiques (Barinkiina, sacrifices aux N'iena). Les deux spheres coexistent en pratique."
+    },
+    "languages": {
+      "mainLanguage": "Yalunka (yal)",
+      "isoCodes": ["yal"],
+      "dialects": [
+        "Yalunka de Guinee (Faranah) : dialecte de reference, le plus documente",
+        "Yalunka de Sierra Leone (Solima) : variante parlée dans le nord-est de la Sierra Leone",
+        "Yalunka du Mali : variante minoritaire du sud-ouest malien"
+      ],
+      "vehicularRole": "Le yalunka est mutellement intelligible avec le soussou (susu), au point que certains locuteurs yalunka se qualifient eux-memes de Soussou. Cette proximite linguistique facilite les echanges entre les deux communautes. Le yalunka n'est pas une langue vehiculaire au-dela de ses locuteurs natifs ; le francais et le soussou servent de langues de communication plus larges en Guinee."
+    },
+    "culture": {
+      "majorRites": "Barinkiina : sacrifices en memoire des ancetres pour acquerir protection et pouvoir. Sacrifices aux Suxurena et Nyinanna (esprits de la nature) pour obtenir des pouvoirs positifs. Ceremonies d'initiation feminine via la societe secrete Bondo, marquant le passage a l'age adulte pour les filles. Rites de mariage : negociation de dot en animaux, ceremonies communautaires. Rites funeraires islamiques : inhumation rapide, prieres, commemoration.",
+      "symbols": "Les montagnes du Fouta Djallon comme territoire ancestral sacre. Le riz et le mil, cultures fondamentales de subsistance et de l'identite agricole. Le betail (bovins) comme marqueur de richesse et instrument de bride-price. Les insignes des chefs de lignage et du pouvoir politique de l'Etat Solima.",
+      "artsAndMusic": "Tradition orale riche incluant recits historiques, contes et chants. Artisanat textile : vetements confectionnes par les femmes. Architecture rurale en cases rondes a murs de briques et toits coniques en chaume. Musique et chants lors des ceremonies d'initiation Bondo et des mariages. La tradition orale des griots (dans la sphere mandingue plus large) influence l'expression culturelle yalunka. En 2013, le Nouveau Testament a ete traduit en yalunka par le traducteur Greg Pruett (Pioneer Bible Translators).",
+      "spiritualities": "Islam sunnite predominant, adopte de force apres 1778 mais avec une relation ambivalente a la religion. Les Yalunka de Guinee sont presque tous musulmans tout en conservant de nombreuses croyances pre-islamiques. Croyance en N'iena (esprits de la nature) : certains bienfaisants (aide a la production de riz, fertilite feminine), d'autres malveillants (vivant dans la brousse, volant les enfants). Pratique du Barinkiina (sacrifices aux ancetres). Croyance en la sorcellerie : les sorciers peuvent se transformer en animaux et jeter des maledictions. Divinateurs et guerisseurs (sorciers blancs) pratiquent des rituels pour proteger les fermes et menages."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Jallonkadu : territoire pre-islamique du Fouta Djallon gouverne par les Yalunka avant les jihads peuls. Etat Solima Yalunka (XIXe siecle) : entite politique centree a Falaba (nord-est Sierra Leone), creee par les Yalunka apres leur expulsion du Fouta Djallon, dissoute par la colonisation.",
+      "relationsWithNeighbors": "Relations ancestrales avec les Soussou (Susu), proches linguistiquement et culturellement. Relations conflictuelles avec les Peuls (Fula) de l'Imamat du Fouta Djallon, qui les ont chasses de leur territoire au XVIIIe siecle. Coexistence avec les Kuranko, Limba et Kissi dans les montagnes de Sierra Leone. Tensions avec l'Empire de Samori Toure au XIXe siecle.",
+      "conflictsOrAlliances": "XVIIIe siecle : jihads de Karamokho Alfa et Ibrahima Sori contre les Yalunka, conduisant a leur defaite et conversion forcee a l'islam en 1778. XIXe siecle : attaques repetees de Samori Toure (Empire Wassoulou) soutenu par des allies fulanis, français et toucouleurs. Collaboration temporaire avec certains groupes voisins pour resister aux jihads.",
+      "diaspora": "Depuis les annees 1950, de nombreux Yalunka ont migre vers les villes (Conakry, Freetown, Bamako) pour chercher du travail. La diaspora reste liee aux villages d'origine par des transferts financiers et le maintien des pratiques culturelles."
+    },
+    "demography": {
+      "totalPopulation": 220000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur Joshua Project (2025) : Guinee 136 000, Sierra Leone 52 000, Mali 20 000. Chiffres Ethnologue (yal) : 181 000 locuteurs natifs (donnees 2002-2017, projection 2025 avec croissance demographique). Distribution incomplete en raison du manque de recensements ethniques detailles.",
+      "distributionByCountry": [
+        {
+          "country": "GIN",
+          "population": 150000,
+          "note": "Majorite a Faranah et Kouroussa"
+        },
+        {
+          "country": "SLE",
+          "population": 52000,
+          "note": "Nord-est, district de Koinadugu, ville de Falaba"
+        },
+        { "country": "MLI", "population": 20000, "note": "Sud-ouest du Mali" },
+        {
+          "country": "SEN",
+          "population": 5000,
+          "note": "Sud-est du Senegal, Casamance"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Yalunka people : https://en.wikipedia.org/wiki/Yalunka_people",
+      "Wikipedia EN – Yalunka language : https://en.wikipedia.org/wiki/Yalunka_language",
+      "Wikipedia EN – Ethnic groups in Sierra Leone : https://en.wikipedia.org/wiki/Ethnic_groups_in_Sierra_Leone",
+      "Joshua Project – Yalunka in Guinea : https://joshuaproject.net/people_groups/15967/GV",
+      "Joshua Project – Yalunka in Sierra Leone : https://joshuaproject.net/people_groups/15967/SL",
+      "Ethnologue – Yalunka (yal) : https://www.ethnologue.com/language/yal/",
+      "University of Missouri DICE – Yalunka ethnographic profile : https://dice.missouri.edu/assets/docs/niger-congo/Yalunka.pdf",
+      "Encyclopaedia Britannica – Yalunka : https://www.britannica.com/topic/Yalunka"
+    ]
+  }
+}

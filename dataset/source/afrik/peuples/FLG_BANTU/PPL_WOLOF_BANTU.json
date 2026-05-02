@@ -1,0 +1,113 @@
+{
+  "id": "PPL_WOLOF_BANTU",
+  "nameMain": "Wolof",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["SEN", "GMB", "MRT"],
+  "content": {
+    "appellations": {
+      "mainName": "Wolof",
+      "selfAppellation": "Wolof",
+      "exonyms": ["Wollof", "Woloff", "Jolof", "Djolof"],
+      "originOfExonyms": "Le terme Jolof ou Djolof renvoie a l'Empire Jolof medieval. Les formes Wollof et Woloff sont usitees par les locuteurs anglophones, notamment en Gambie. Les explorateurs portugais du XVe siecle (Cadamosto) ont ete parmi les premiers a transcrire le nom.",
+      "whyProblematic": "ERREUR DE CLASSIFICATION : Ce fichier est classe sous FLG_BANTU, ce qui est incorrect. Les Wolof et leur langue appartiennent a la branche atlantique (senegambienne) de la famille Niger-Congo (FLG_ATLANTIQUE), et non au groupe bantou. Un fichier PPL_WOLOF existe deja dans FLG_ATLANTIQUE. Cette fiche est conservee pour signaler et documenter l'anomalie de classification.",
+      "contemporaryUsage": "Le terme Wolof est universellement accepte et utilise par le peuple lui-meme. Jolof est reserve aux references historiques (Empire Jolof). Wollof est courant en Gambie.",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "ethnoLinguisticGroup": "Atlantique occidental (branche senegambienne), Niger-Congo",
+      "historicalRegion": "Senegambie — entre le fleuve Senegal et la Gambie, nord-ouest du Senegal actuel",
+      "currentCountries": ["SEN", "GMB", "MRT"]
+    },
+    "ethnicities": [
+      "Lebu — sous-groupe cotier, originateurs de la langue wolof, etablis pres de Dakar",
+      "Wolof du Cayor — province historique du Kayor, nord-ouest du Senegal",
+      "Wolof du Baol — province du Baol, centre du Senegal",
+      "Wolof du Walo — province du Walo, vallee du fleuve Senegal",
+      "Wolof de Gambie — environ 16% de la population gambienne, concentres a Banjul",
+      "Wolof de Mauritanie — environ 8% de la population mauritanienne, cote sud-ouest"
+    ],
+    "origins": {
+      "ancientOrigins": "Les origines des Wolof sont mal documentees. Des artefacts archeologiques (poteries prehistoriques, pierres du VIIIe siecle, tumulus funeraires du XIVe siecle) ont ete retrouves au Senegal et en Gambie. Selon une theorie, les conquetes arabes en Afrique de l'Ouest (fin du 1er millenaire) auraient pousse les Wolof vers le nord et l'est du Senegal, ou ils formerent des etats autonomes (Baol, Kayor, Saloum, Dimar, Walo, Sine) federes sous Jolof. Une tradition orale du Walo evoque un personnage legendaire Ndyadyane Ndyaye, ancetre des familles royales wolof.",
+      "formationPeriod": "XIe-XIVe siecle. Les Wolof entrent dans l'histoire ecrite au XVe siecle. La federation Jolof (Empire Wolof) s'est constituee vers 1350. Apres la bataille de Danki en 1549, l'empire se fragmente en royaumes independants (Cayor, Baol, Walo, Sine, Saloum, Jolof residuel).",
+      "migrationRoutes": [
+        "Migration vers le nord-est du Senegal apres la chute de l'Empire du Ghana (vers 1076)",
+        "Etablissement progressif dans la vallee du fleuve Senegal (Walo)",
+        "Expansion vers les plateaux du Cayor et du Baol",
+        "Diffusion en Gambie le long du fleuve Gambie",
+        "Urbanisation moderne vers Dakar, Banjul et les villes ouest-africaines"
+      ],
+      "historicalSettlementZones": [
+        "Vallee du fleuve Senegal (Walo)",
+        "Plateau du Cayor (nord-ouest Senegal)",
+        "Region du Baol (centre Senegal)",
+        "Bassins du Sine et du Saloum",
+        "Plaines cotales senegalaises et gambiennes"
+      ],
+      "unificationsOrDivisions": "L'Empire Jolof (vers 1350-1549) constitua la premiere grande unite politique wolof. La defaite du Burba Jolof a la bataille de Danki (1549) contre le seigneur du Cayor provoqua la desintegration rapide de l'empire en royaumes tributaires independants. Au XIXe siecle, les jihads islamiques et la pression coloniale francaise fragmenterent davantage les structures politiques traditionnelles.",
+      "externalInfluences": "Commerce avec les empires soudanais (Mali, Songhai) et les marchands arabes et berberes d'Afrique du Nord. Contacts portugais des le XVe siecle (traite negriere). Penetration francaise au XVIIe siecle via les comptoirs du fleuve Senegal. Jihads islamiques des XVIIIe-XIXe siecles (influence des marabouts Torodbe de Futa Toro). Islamisation massive au XIXe siecle en reaction a la conquete francaise.",
+      "majorHistoricalEvents": "Bataille de Danki (1549) : fin de l'unite Jolof. Commerce transatlantique d'esclaves (XVIe-XIXe s.). Jihad de Nasir al-Din (1673-1677). Guerres de resistance contre les forces coloniales francaises (1850s-1890s). Independance du Senegal (4 avril 1960). Les Wolof dominent depuis lors la politique et l'economie senegalaises."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme monarchique structure en royaumes (Cayor, Baol, Walo, Sine, Saloum, Jolof) diriges par un roi (buur ou burba). Chaque village est administre par un chef hereditaire (borom dekk), collecteur de tributs et intermediaire avec le royaume. Les grands villages disposent aussi d'un imam (yelimaan) et d'un chef de guerre (saltige), tous de castes hereditaires. Les litiges sont traites par des intermediaires ou des tribunaux islamiques (qadi).",
+      "clanOrganization": "Stratification sociale rigide et endogame fondee sur la naissance. Trois grandes categories : les hommes libres (geer), les castes d'artisans et de griots (nyeenyo ou neeno), et les esclaves (jaam ou kaals). La categorie geer inclut la noblesse royale, les lignages nobles regionaux, et les hommes libres ordinaires (baadoolo, sans pouvoir). Les castes nyeenyo sont hierarchisees selon des criteres de purete rituelle (les travailleurs du cuir sont au bas de l'echelle). L'endogamie de caste est plus contraignante que l'ethnicite ou la religion pour les mariages.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Heritage bilateral : les biens et positions (nombo) passent d'abord au frere, puis au fils du frere du pere, avant de passer au fils. La terre, les epouses et les positions sociales (chef de lignage, de village) suivent ce principe patrilineaire. Les Wolof utilisent une terminologie de parente de type bifurquant-fusionnant.",
+      "religiousAuthority": "Autorite preponderante des marabouts (seriñ), chefs religieux soufis dont l'influence politique et sociale est centrale. Les deux principales confreries soufies sont la Mouridiyya (fondee par Cheikh Ahmadou Bamba, 1850-1927) et la Tijaniyya. Les marabouts sont veneres et suivis inconditionnellement par de nombreux Wolof, qui leur offrent dons et travail en echange de guidance spirituelle."
+    },
+    "languages": {
+      "mainLanguage": "Wolof (wol)",
+      "isoCodes": ["wol"],
+      "dialects": [
+        "Dakar-Wolof : dialecte urbain melant wolof, francais et arabe, parle dans la capitale",
+        "Wolof rural du Cayor et du Baol : dialecte de reference, plus conservateur",
+        "Wolof de Gambie (Banjul-Wolof) : variante gambienne, legere influence anglaise",
+        "Lebu : dialecte distinct parle par les Lebu de la peninsule du Cap-Vert"
+      ],
+      "vehicularRole": "Le wolof est la langue vehiculaire dominante du Senegal : environ 40% le parlent comme langue maternelle, mais pres de 80% de la population senegalaise le comprend et l'utilise comme lingua franca. Langue nationale (non officielle) du Senegal, le francais restant la langue officielle. En Gambie, le wolof est majoritaire a Banjul et repandu comme langue de commerce."
+    },
+    "culture": {
+      "majorRites": "Ceremonies islamiques centrales : Ramadan, Aid al-Fitr, Aid al-Adha, Mawlid (anniversaire du Prophete). Rites de passage : circoncision des garcons (marque d'entree dans l'age adulte), ceremonies de naissance (bapteme islamique le 7e jour, ndawtal). Mariages traditionnels impliquant la dot (bride wealth), benedictions familiales et festins. Pelerinage a La Mecque (Hajj) tres valorise. Visites aux tombeaux des marabouts (ziara). Magal de Touba : pelerinage annuel mouride rassemblant des millions de fideles.",
+      "symbols": "Symboles islamiques (croissant, versets coraniques sur les gris-gris et les tablettes) ; symboles du pouvoir maraboutique (chapelet, turban, baton) ; le baobab comme arbre sacre de la savane senegambienne ; couleurs vives dans les tissus et broderies (grand boubou).",
+      "artsAndMusic": "Tradition du griot (gewel) : historien, musicien, genealogiste et praise-singer hereditaire. Instruments : xalam (luth a 5 cordes), sabar (tambour vertical frappe a la main et au baton), tama (tambour d'aisselle), kora. Danse sabar : danse feminine energique sur rythmes de tambours sabar, centrale dans les ceremonies et fetes. Musique mbalax : genre moderne fusionne par Youssou N'Dour (artiste wolof mondialement connu), melant sabar, jazz et soul. Artisanat : tissage de boubous brodes, bijouterie en or et argent, poterie, maroquinerie.",
+      "spiritualities": "Islam sunnite a quasi-totalite (99%). Appartenance aux confreries soufies Mouridiyya et Tijaniyya dominant la vie religieuse et sociale. Culte des marabouts et des saints (barakah). Persistance de croyances en esprits (rab), en magie protectrice (gris-gris, talisman coranique), et en sorciers. Les Wolof croient que des esprits malveillants vivent dans les arbres et les zones herbeuses."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Empire Jolof (vers 1350-1549) : premier grand etat wolof, federant les royaumes de Cayor, Baol, Walo, Sine et Saloum sous autorite du Burba Wolof. Royaume du Cayor (XVIe-XIXe s.) : le plus puissant des royaumes successeurs. Royaume du Baol, Royaume du Walo, Royaume de Sine et Royaume du Saloum ont coexiste jusqu'a la conquete francaise (1850s-1890s).",
+      "relationsWithNeighbors": "Commerce et conflits avec les Sereer, Peul (Toucouleur) de Futa Toro, Mandingues et Maures. Alliance et rivalite avec les states voisins dans la traite negriere. Integration des Lebu, originellement un groupe distinct, dans la sphere culturelle wolof. Influence culturelle wolof s'etendant au-dela du Senegal comme langue vehiculaire regionale.",
+      "conflictsOrAlliances": "Jihad de Nasir al-Din (1673-1677) : guerres religieuses des marabouts maures contre les royaumes wolof. Resistance des ceddo (guerriers traditionnels) contre l'islamisation forcee. Guerres coloniales contre la France (1850s-1890s) : resistants celebres tels que Lat Dior Diop (damel du Cayor, mort 1886), figures heroiques de la memoire nationale senegalaise. Alliance strategique ulterieure avec l'administration coloniale francaise (les Wolof ont largement integre l'administration coloniale).",
+      "diaspora": "Importante diaspora dans les grandes villes africaines (Dakar, Banjul, Abidjan, Bamako). Expansion vers Cote d'Ivoire et Mali liee a la culture de l'arachide et a l'urbanisation. Diaspora en Europe (France, Italie, Espagne), en Turquie et aux Etats-Unis. Les Mourides constituent un reseau commercial transnational tres actif (commerce de rue, import-export)."
+    },
+    "demography": {
+      "totalPopulation": 6500000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 6 250 000 au Senegal ; Wikipedia : total superieur a 6 millions dans les trois pays ; estimations demographiques croissantes pour 2025. Senegal (~39,7% d'une population de ~18 millions), Gambie (~16%), Mauritanie (~8%). Projection 2025 : environ 6,5 millions.",
+      "distributionByCountry": [
+        {
+          "country": "SEN",
+          "population": 5500000,
+          "note": "Plus grand groupe ethnique du Senegal, environ 39-40% de la population"
+        },
+        {
+          "country": "GMB",
+          "population": 650000,
+          "note": "Environ 16% de la population gambienne, majoritaires a Banjul"
+        },
+        {
+          "country": "MRT",
+          "population": 350000,
+          "note": "Environ 8% de la population mauritanienne, cote sud-ouest"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Wolof people : https://en.wikipedia.org/wiki/Wolof_people",
+      "Wikipedia EN — Wolof Empire : https://en.wikipedia.org/wiki/Wolof_Empire",
+      "SIL Ethnologue — Wolof language (wol) : https://www.ethnologue.com/language/wol/",
+      "Joshua Project — Wolof in Senegal (2025) : https://joshuaproject.net/people_groups/15414/SG",
+      "World History Encyclopedia — Wolof Empire (2019) : https://www.worldhistory.org/Wolof_Empire/",
+      "Wolof Resources — The Wolof of Senegal : http://wolofresources.org/wolof.htm",
+      "CIA World Factbook — Senegal : https://www.cia.gov/the-world-factbook/countries/senegal/",
+      "Qiraat Africa — Wolof, a West African ethnic group (2025) : https://qiraatafrican.com/en/14992/wolof-a-west-african-ethnic-group/",
+      "Kingdom of Jolof — Wikipedia : https://en.wikipedia.org/wiki/Kingdom_of_Jolof",
+      "Wikipedia EN — Wolof language : https://en.wikipedia.org/wiki/Wolof_language"
+    ]
+  }
+}

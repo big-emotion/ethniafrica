@@ -1,0 +1,38 @@
+# Nom du peuple
+- Nom principal : Jukun
+- Auto-appellation : Jukun / Juku
+- Famille linguistique : Niger-Congo – Bénoué-Congo (FLG_BENOUECONGO)
+- Région historique : Nigeria (Taraba State), CMR
+- Identifiant peuple : PPL_JUKUN
+
+# 1. Ethnies incluses
+- Jukun Wapan
+- Jukun Takum
+- Sous-groupes du fleuve Benue
+
+# 2. Origines
+- Héritiers de l’ancien royaume de Kwararafa (État médiéval important).
+
+# 3. Organisation
+- Monarchie traditionnelle : Aku Uka
+- Noblesse rituelle
+
+# 4. Langue
+- Jukun Takum / Jukun Wapa
+- ISO : jbu / jwi (selon variétés)
+
+# 5. Culture
+- Masques guerriers
+- Rituels royaux
+- Divination et forgerie
+
+# 6. Histoire
+- Royaume de Kwararafa : influence majeure sur le Nigeria central.
+- Ancienne puissance régionale (XVIe–XVIIIe siècles).
+
+# 7. Démographie
+- Population : 450 000 (2025)
+
+# 8. Sources
+- Kwararafa Historical Studies
+- Ethnologue (jbu, jwi)

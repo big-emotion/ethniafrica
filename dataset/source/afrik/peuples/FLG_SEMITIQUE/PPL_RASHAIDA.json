@@ -1,0 +1,86 @@
+{
+  "id": "PPL_RASHAIDA",
+  "nameMain": "Rashaida",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": ["ERI", "SDN", "EGY"],
+  "content": {
+    "appellations": {
+      "mainName": "Rashaida",
+      "selfAppellation": "Bani Rasheed",
+      "exonyms": ["Rashaida", "Rashad", "Bani Rashid"],
+      "originOfExonyms": "Le nom Rashaida derive du terme arabe signifiant refugie ou exile, en reference a la fuite de la peninsule arabique au XIXe siecle. L'auto-appellation Bani Rasheed designe les descendants de Rasheed, ancetre eponyme de la tribu.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Rashaida est aujourd'hui universellement utilise dans les contextes administratifs en Erythree et au Soudan, ainsi que dans les sources academiques et les organisations humanitaires.",
+      "linguisticFamily": "FLG_SEMITIQUE",
+      "ethnoLinguisticGroup": "Arabe bedevin, tribu de la branche Banu Abs du Hijaz",
+      "historicalRegion": "Plaine cotiere de la mer Rouge, entre Port-Soudan et Massaoua",
+      "currentCountries": ["ERI", "SDN", "EGY"]
+    },
+    "ethnicities": ["Rashaida"],
+    "origins": {
+      "ancientOrigins": "Les Rashaida sont les descendants de tribus arabes beduines originaires du Hijaz et du Najd (actuelle Arabie saoudite), plus precisement de la tribu Banu Abs. Une etude genetique publiee en 2022 a revele que les Rashaida presentent le taux le plus eleve d'ascendance proche-orientale de toutes les populations etudiees (95,1%), superieur a celui du Yemen (75,8%) ou du Liban (57,3%), confirmant l'absence quasi totale d'admixture avec les populations africaines voisines.",
+      "formationPeriod": "Milieu du XIXe siecle : migration depuis la peninsule Arabique vers l'Afrique de l'Est (1846-1870).",
+      "migrationRoutes": [
+        "Fuite de la peninsule Arabique en 1846 lors de la montee en puissance des Saoudiens",
+        "Traversee de la mer Rouge dans les annees 1860 pour s'etablir dans les gouvernorats de Suakin (Soudan) et de Massaoua (Erythree)",
+        "Mouvement transfrontalier libre entre le Soudan et l'Erythree de 1866 a 1895",
+        "Fuites successives : 1885 (jihad mahdiste au Soudan), 1892 (percepteurs fiscaux italiens en Erythree), 1935 (saisie du betail par l'Italie), fin des annees 1990 (combats dans l'est du Soudan)"
+      ],
+      "historicalSettlementZones": [
+        "Plaine cotiere de la mer Rouge entre Port-Soudan et Massaoua",
+        "Region de Kassala (est du Soudan)",
+        "Basse-Atbara (Soudan)",
+        "Peninsula du Sinai nord (Egypte)"
+      ],
+      "unificationsOrDivisions": "La communaute Rashaida distingue deux sous-groupes internes : les Rouges (teint plus clair, statut genealogique pur) et les Noirs (anciens esclaves liberes eleves au sein de la tribu, appeles muwalladin). Des regles d'exogamie strictes encadrent les mariages entre ces deux groupes.",
+      "externalInfluences": "L'administration egyptienne ottomane puis les colonisations italienne (Erythree) et britannique (Soudan) ont modifie les dynamiques migratoires des Rashaida. Leur statut de minorite en Erythree (le plus petit des neuf groupes ethniques reconnus) les a exposes a des pressions politiques recurrentes.",
+      "majorHistoricalEvents": "Arrivee en Erythree et au Soudan au XIXe siecle depuis l'Arabie saoudite. Constitution du groupe arme Rashaida Free Lions au Soudan en reponse aux neglects gouvernementaux. Implication dans le Front oriental (alliance rebelle) dans l'est du Soudan dans les annees 2000. Implication documentee dans des reseaux de traite d'etres humains et de trafic d'armes en mer Rouge et dans le Sinai."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation tribale beduine patrilineaire, sans Etat centralise. Les decisions importantes sont prises par les anciens de la tribu. La chefferie repose sur la lignee genealogique masculine.",
+      "clanOrganization": "La tribu est divisee en deux groupes genealogiques principaux (Rouges et Noirs/muwalladin), avec des regles strictes de mariage. Les Rashaida privilegient l'endogamie pour preserver la purete genealogique, bien que les hommes rashaida puissent epouser des femmes tigre.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La lignee paternelle determine le statut social et les droits matrimoniaux. La memoire genealogique des troupeaux (retracer la pedigree des animaux sur 7 a 8 generations en privilegiant les lignes femelles) est au coeur de la culture pastorale.",
+      "religiousAuthority": "Islam sunnite pratique de maniere devote. La priere familiale a la maison constitue le coeur de la pratique religieuse. Absence de clerge islamique formel propre au groupe, mais respect strict des preceptes coraniques."
+    },
+    "languages": {
+      "mainLanguage": "Arabe du Golfe (dialecte bedevin hijazi)",
+      "isoCodes": ["afb", "ara"],
+      "dialects": [
+        "dialecte arabe hijazi bedevin",
+        "quelques locuteurs parlent aussi le tigre"
+      ],
+      "vehicularRole": "L'arabe est a la fois langue maternelle exclusive et langue de communication avec les pays du Golfe et les administrations regionales. Certains Rashaida parlent egalement le tigre pour les echanges avec les populations eritreennes voisines."
+    },
+    "culture": {
+      "majorRites": "Mariage traditionnel sur sept jours avec tambours, danses et courses de chameaux. La mariee reste voilee et isolee les six premiers jours, puis rejoint son epoux le septieme jour portant le burqa de mariage offert par sa mere, brode de fils metalliques et de pendentifs. Le marie porte une tunique en coton brodee avec un gilet et un turban lors des ceremonies festives. Le gros prix de la mariee inclut traditionnellement 100 chameaux.",
+      "symbols": "Le voile feminin finement brode de fils d'argent metalliques, de perles et de perles de rocaille est le symbole culturel le plus emblematique. Les robes a motifs geometriques noirs et rouges des femmes distinguent visuellement les Rashaida. Le chameau, au coeur de l'economie et de l'identite, est un symbole central.",
+      "artsAndMusic": "Artisanat de la bijouterie en argent fabrique par les femmes et vendu sur les marches locaux. Broderie elaborate sur vetements et voiles. Danses ceremoniales lors des mariages accompagnees de percussions. Architecture de tentes en peau de chevre, poil de chameau, de mouton ou de chevre.",
+      "spiritualities": "Islam sunnite, pratique avec une grande piete. La maison de priere familiale est centrale. Absence de pratiques animistes documentees. La culture tourne entierement autour des preceptes islamiques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de sultanat ou de royaume formalise. Organisation en confederation tribale beduine sans structures etatiques fixes.",
+      "relationsWithNeighbors": "Relations tendues historiquement avec les Hadendoa et autres peuples sedentaires du Soudan oriental en raison de la competition pour les paturages. Mariages occasionnels avec les populations tigre d'Erythree. Commerce avec les pays du Golfe (vente de chameaux de course et de viande aux Egyptiens).",
+      "conflictsOrAlliances": "Participation au Front oriental soudanais (alliance rebelle contre Khartoum). Constitution du groupe arme Rashaida Free Lions. Implication documentee dans des reseaux de trafic d'armes, de personnes et de refugees eritreens vers le Sinai depuis les annees 2000.",
+      "diaspora": "Presence en Arabie saoudite, en Egypte (peninsule du Sinai nord) et dans les pays du Golfe. Liens commerciaux et culturels etroits maintenus avec la peninsule Arabique."
+    },
+    "demography": {
+      "totalPopulation": 300000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2024 (52 000 en Erythree), Wikipedia EN (187 500 en Erythree, 68 000 au Soudan selon 2005), PeopleGroups.org (151 000 au Soudan), estimation globale consolidee ~300 000",
+      "distributionByCountry": [
+        { "country": "ERI", "population": 80000 },
+        { "country": "SDN", "population": 200000 },
+        { "country": "EGY", "population": 20000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN, Rashaida people – Wikimedia Foundation (https://en.wikipedia.org/wiki/Rashaida_people)",
+      "Joshua Project, Rashaida in Eritrea – Joshua Project 2024 (https://joshuaproject.net/people_groups/14523/ER)",
+      "PeopleGroups.org, Rashaida of Sudan – PeopleGroups.org 2025 (https://peoplegroups.org/people_groups/pg012130/)",
+      "Last Places, The Rashaida tribe, the most conservative tribe in Eritrea – Last Places 2024 (https://lastplaces.com/en/travel-is-knowledge/rashaida-tribe-eritrea-sudan/)",
+      "Tishkoff et al., The Genetic Structure and History of Africans and African Americans – Science, 2009",
+      "Ethnologue, Arabic, Gulf (afb) – SIL International 2024 (https://www.ethnologue.com/language/afb/)"
+    ]
+  }
+}

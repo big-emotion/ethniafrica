@@ -1,0 +1,111 @@
+{
+  "id": "PPL_BEMBE",
+  "nameMain": "Bembe",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["COD", "TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Bembe",
+      "selfAppellation": "Babembe",
+      "exonyms": [
+        "Wabembe",
+        "Kibembe (designation de la langue)",
+        "Ebembe",
+        "Ibembe"
+      ],
+      "originOfExonyms": "Le terme Wabembe est le nom bantu en forme plurielle (wa- = prefixe de peuple). Le terme Kibembe designe la langue. Les explorateurs et missionnaires europeens du XIXe siecle ont adopte ces appellations locales dans leurs ecrits.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Babembe (avec le prefixe Ba- de pluralite bantu) est couramment utilise en RDC. Bembe reste la forme francaise et anglaise la plus repandue dans la litterature academique.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone D, sous-groupe Lega-Binja, D.54)",
+      "historicalRegion": "Ubembe — territoire de Fizi, hauts plateaux de l'Itombwe, rive ouest du lac Tanganyika (Sud-Kivu, RDC)",
+      "currentCountries": ["COD", "TZA"]
+    },
+    "ethnicities": [
+      "Clan Ashilu (chefferie de Kalembelembe)",
+      "Clan Bungwe (chefferies de Ngalula, Ilinda, Mboko)",
+      "Clan Tombwe (chefferie de Yambayamba)",
+      "Clan Basikasingo (chefferie de Kasangala)",
+      "Clan Mnyaka (chefferies de Penge, Lisasi)",
+      "Clan Membe (chefferie de Yahonda)",
+      "Clan M'mindje (chefferies de Mukuku, Abonga)",
+      "Clan Lala (chefferie de Sibacwa)",
+      "Clan M'muma (chefferie de Mwezi)",
+      "Wabembe du lac (populations des rives du Tanganyika)",
+      "Wabembe de la montagne (populations des hauts plateaux d'Itombwe)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Babembe tracent leur origine a un ancetre commun nomme Mbondo (M'mbondo), selon les traditions orales conservees par les griots. Ils auraient cohabite avec les Barega (Balega) au nord-est avant de migrer vers la region d'Itombwe. Leka, frere de Mbondo, retourna en Ulega et devint le progeniteur des Balega actuels, tandis que M'mbondo resta dans l'Itombwe. Bangu, frere de Leka, s'etablit au Maniema et donna naissance aux Bangubangu. Les Babembe sont de souche bantoue et partagent une ascendance commune avec les peuples lega et d'autres bantous voisins.",
+      "formationPeriod": "La consolidation de l'identite bembe dans la region d'Ubembe est attestee au moins depuis le XVIIe siecle. Le territoire d'Ubembe (Fizi-Itombwe) a constitue une entite politique distincte jusqu'en 1899, date a laquelle l'Etat Independant du Congo etablit le poste de Kalembelembe. En 1926, le territoire fut officiellement designe Territoire des Babembe, puis Territoire de Fizi en 1935.",
+      "migrationRoutes": [
+        "Migration nord-sud suivant le couloir bantou classique depuis les regions nord-est (Ulega/Maniema)",
+        "Descente progressive depuis les hauts plateaux de l'Itombwe vers les rives du lac Tanganyika"
+      ],
+      "historicalSettlementZones": [
+        "Hauts plateaux de l'Itombwe (coeur historique d'Ubembe)",
+        "Territoire de Fizi, province du Sud-Kivu, RDC",
+        "Region de Kalemie, province du Tanganyika, RDC",
+        "Region de Kigoma, Tanzania occidentale (rive est du lac Tanganyika)"
+      ],
+      "unificationsOrDivisions": "Les Babembe etaient divises en 21 chefferies en 1910 (Babuyu, Kabalaka, Kabonga, Kilenge, Kilozo, Kisaoko, Lisase, Lukandamiza, Mwenelubanda, Mangilwa, Milingita, Mulamba, Mshingelwa, Mkuku, Mvano, Mwezi, Nundu, Pole, Shibatchwa, Sumahili, Tembele). La partition coloniale de 1947 qui integra l'Itombwe dans le Territoire de Mwenga genere des sentiments irredentistes persistants parmi les Babembe, divises entre les Lega de Mwenga et les Zoba de Fizi.",
+      "externalInfluences": "Raids arabo-swahilis du XIXe siecle (esclavage, depopulation). Arrivee des missionnaires catholiques (Pere Moinet, mission de Kibanga, 1883). Colonisation belge a partir de 1899. Evangelisation chretienne ayant entraine un syncretisme avec les croyances animistes traditionnelles. Contacts culturels anciens avec le Royaume Kongo (pour les Beembe de Brazzaville).",
+      "majorHistoricalEvents": "En 1881, les raids de l'Arabo-Swahili Mwinyi Waziri devastent Ubembe en represailles a la mort d'un commercant. En 1883, le Pere Moinet fonde la mission de Kibanga. En 1885, vaccination de plus de 300 personnes contre la variole. En 1899, l'Etat Independant du Congo etablit le poste de Kalembelembe. En 1926, le territoire est officiellement nomme Territoire des Babembe. En 1935, redenomination en Territoire de Fizi."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies claniques (wakoma). Chaque chefferie est dirigee par un chef issu d'un clan specifique. La tradition orale rapporte que le nom Kalembelembe (signifiant paix abondante) resulte de la declaration de Sawasawa (frere du chef Esale) lors de sa soumission aux Belges. Le systeme politique repose sur les lignages comme unite de base de la gouvernance territoriale.",
+      "clanOrganization": "Structure clanique patrilineaire organisee en neuf clans principaux (Ashilu, Bungwe, Tombwe, Basikasingo, Mnyaka, Membe, M'mindje, Lala, M'muma). Chaque clan controle un territoire et des chefferies specifiques. Organisation en familles etendues avec trois generations cohabitant dans un meme espace.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite clanique, la succession aux chefferies, les alliances matrimoniales et la transmission du patrimoine foncier. L'endogamie clanique traditionnelle a evolue sous l'influence coloniale et post-coloniale.",
+      "religiousAuthority": "Autorite des chefs spirituels traditionnels maintenant un lien avec les ancetres. Culte des ancetres (ancetre fondateur Mbondo venere). Presence d'un Nzambi (dieu createur) ainsi que de ndoki (sorciers). Syncretisme avec le christianisme catholique et protestant introduit par les missionnaires blancs des la fin du XIXe siecle."
+    },
+    "languages": {
+      "mainLanguage": "Kibembe (Bembe)",
+      "isoCodes": ["bmb"],
+      "dialects": [
+        "Bembe du Nord (hauts plateaux de l'Itombwe)",
+        "Bembe du Sud (territoire de Fizi, region du lac)",
+        "Variete de Kigoma (communautes bembe de Tanzanie occidentale)"
+      ],
+      "vehicularRole": "Le kibembe (ISO 639-3 : bmb) est la langue maternelle de la grande majorite des Babembe. Il forme un continuum dialectal avec le lega via le mwenga-lega selon l'Ethnologue. Le swahili est largement utilise comme langue vehiculaire pour le commerce et les relations interethniques dans toute la region du lac Tanganyika. Le francais est la langue officielle en RDC."
+    },
+    "culture": {
+      "majorRites": "Ceremonie Uhulana : rite feminin de purification et de passage avec participation communautaire des femmes, documente par l'anthropologue Daniel P. Biebuyck vers 1950. Ceremonies de mariage impliquant le versement de la dot entre clans. Rites funeraires integrant invocations aux ancetres via des statuettes kitebi ou bimbi. Initiations masculines marquant le passage a l'age adulte. Rites agricoles avant la saison des semailles avec invocations aux ancetres pour la protection des cultures.",
+      "symbols": "Statuettes kitebi et bimbi : figures idealisees des ancetres en position de chasseur agenouille, consacrees par le sorcerer (ndoki), servant d'intermediaires avec les ancetres. Nkisi (statues-medicaments) issues de l'influence kongolaise. Symbolique du chasseur comme figure heroique et protectrice. Tambours sacres utilises dans les celebrations et la danse esuba.",
+      "artsAndMusic": "Musique traditionnelle rythmee par des tambours a six temps, accompagnant la danse esuba caracterisee par des mouvements des epaules et des hanches. Sculptures sur bois dont des pieces sont conservees au Museum of Art de l'Universite du Michigan, au Stanley Museum de l'Universite de l'Iowa et au Metropolitan Museum of Art. Artisanat de bois representant des scenes de chasse et des figures ancestrales. Poterie et tissage traditionnels assures principalement par les femmes. Poesie orale transmise par les griots preservant les genealogies claniques.",
+      "spiritualities": "Croyance en un dieu createur Nzambi, non represente figurativement, maitre de la vie et de la mort. Culte des ancetres (ancestres traces a Mbondo) comme fondement de la vie spirituelle et sociale. Croyance aux ndoki (sorciers) pouvant consumer magiquement la force vitale des membres du clan. Les ancetres maintiennent des liens etroits avec les vivants et recoivent des offrandes via le pretre-chef utilisant les statuettes bimbi/kitebi. Syncretisme progressif avec le christianisme catholique et protestant depuis la fin du XIXe siecle. Presence de guerisseurs spirituels (wanganga) dans les communautes rurales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le territoire d'Ubembe constituait une entite politique distincte reconnaissant neuf clans principaux avec leurs chefferies respectives. Avant la colonisation belge (1899), Ubembe etait gouverne par un systeme de chefferies autonomes. En 1908-1909, les chefs principaux etaient Kalembelembe (Ashilu), Ngalula et Ilinda (Bungwe), Yambayamba (Tombwe), Kasangala (Basikasingo), Penge et Lisasi (Mnyaka), Yahonda (Membe), Mukuku et Abonga (M'mindje), Sibacwa (Lala), Mboko (Bungwe), Mwezi (M'muma).",
+      "relationsWithNeighbors": "Relations historiques avec les Barega (Balega) dont les Bembe sont ethniquement proches, partageant un ancetre mythique commun. Contact avec les Wavira (peuple de la rive lacustre), les Wasanze, les Wagoma, les Wabuyu. Les Babembe ont progressivement evince les populations de pecheurs Sanza et Bwari des rives du lac Tanganyika lors de leur expansion vers le sud. Relations commerciales avec les Wangwana (marchands arabo-swahilis) devenues conflictuelles avec l'essor de la traite negriere.",
+      "conflictsOrAlliances": "Ravages des raids arabo-swahilis sous l'egide de Rumaliza (fin XIXe siecle) : villages detruits, habitants reduits en esclavage. Guerres Bingya ayant deplace la communaute Basi'm'mindje depuis la vallee de Mutambala. Resistances recurrentes contre l'expansion des commercants arabo-swahilis soutenues par les missionnaires des Peres Blancs. Conflits irredentistes post-1947 lies a la partition administrative coloniale separant Fizi et Mwenga.",
+      "diaspora": "Diaspora bembe presente dans les grandes villes de la RDC (Kinshasa, Bukavu, Lubumbashi). Communautes bembe en Tanzanie (region de Kigoma), certaines integrees culturellement dans les populations manyema et swahili. Migration economique vers les centres urbains congolais depuis la periode coloniale."
+    },
+    "demography": {
+      "totalPopulation": 900000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : population mondiale estimee a 768 000 (dont 35 000 en Tanzanie). En tenant compte des projections demographiques 2024-2025 et des communautes non recensees, estimation globale retenue a environ 900 000. Wikipedia (2005) citait 1,5 million pour la RDC seule, chiffre probablement surestimant le groupe stricto sensu.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 860000,
+          "note": "Territoire de Fizi (Sud-Kivu), secteur de l'Itombwe (Mwenga), province du Tanganyika (Kalemie)"
+        },
+        {
+          "country": "TZA",
+          "population": 40000,
+          "note": "Region de Kigoma, rive est du lac Tanganyika"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bembe people. https://en.wikipedia.org/wiki/Bembe_people",
+      "Wikipedia EN — Bembe language (Ibembe). https://en.wikipedia.org/wiki/Bembe_language_(Ibembe)",
+      "SIL Ethnologue — Bembe (bmb). https://www.ethnologue.com/language/bmb/",
+      "Joshua Project — Bembe in Congo DRC. https://joshuaproject.net/people_groups/10783/CG",
+      "Joshua Project — Bembe in Tanzania. https://joshuaproject.net/people_groups/print/10783/TZ",
+      "101 Last Tribes — Bembe people. https://www.101lasttribes.com/tribes/bembe.html",
+      "Glottolog — bemb1255. https://glottolog.org/resource/languoid/id/bemb1255",
+      "The GOAT PoL — Once upon a Bembe tradition. https://thegoatpol.org/story/once-upon-a-bembe-tradition/"
+    ]
+  }
+}

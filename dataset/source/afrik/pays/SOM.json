@@ -1,0 +1,196 @@
+{
+  "id": "SOM",
+  "nameFr": "République fédérale de Somalie (Federal Republic of Somalia, Jamhuuriyadda Federaalka Soomaaliya)",
+  "nameOfficial": "République fédérale de Somalie (Federal Republic of Somalia, Jamhuuriyadda Federaalka Soomaaliya)",
+  "etymology": "Le nom \"Somalie\" provient du peuple Somali (Soomaali), majoritaire dans le pays. Le terme \"Somali\" est utilisé par ce peuple pour se désigner lui-même. Le nom \"Somalie\" a été officialisé lors de l'indépendance en 1960, fusionnant les territoires britannique (Somaliland britannique) et italien (Somalie italienne). Le nom \"Somaliland\" (terre des Somalis) était utilisé par les Britanniques.",
+  "nameOriginActor": "Le peuple Somali (Soomaali) est à l'origine du nom. Le nom \"Somalie\" a été officialisé lors de l'indépendance en 1960 par le gouvernement somalien, fusionnant les territoires britannique et italien.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Présence de peuples couchitiques dans la région. Contacts avec les civilisations égyptiennes et nubiennes. Développement de royaumes et de sultanats locaux.",
+      "middleAges": "Présence de peuples couchitiques (Somali) dans la région. Développement de sultanats (Ajuran, Ifat, Adal, Mogadiscio). Contacts avec les commerçants arabes et persans. La région était connue sous le nom de \"Bilad al-Barbar\" (pays des Berbères) par les Arabes, mais les Somali se désignaient comme \"Soomaali\".",
+      "precolonial": "Présence de peuples couchitiques (Somali) dans la région. Développement de sultanats (Ajuran, Ifat, Adal, Mogadiscio). Contacts avec les commerçants arabes, persans et européens. La région était connue sous le nom de \"Somalie\" par les Européens, mais les Somali se désignaient comme \"Soomaali\".",
+      "colonization": "1884-1960 : Somaliland britannique (nord). 1889-1941 : Somalie italienne (sud). 1941-1950 : Administration britannique (toute la Somalie). 1950-1960 : Territoire sous tutelle italienne (Somalie italienne). Développement de l'économie de plantation (bananes, canne à sucre), exploitation minière, mouvements nationalistes (XXe siècle). Le nom \"Somalie\" est officialisé par les colonisateurs.",
+      "contemporary": "1960 : Indépendance (1er juillet 1960), fusion des territoires britannique et italien, proclamation de la République de Somalie. 2012 : Proclamation de la République fédérale de Somalie. Le nom \"Somalie\" est officiel."
+    },
+    "kingdoms": [
+      {
+        "name": "Sultanat d'Ajuran",
+        "period": "XIIIe siècle - XVIIe siècle",
+        "dominantPeoples": ["Somali (clans Hawiye", "Darod)"],
+        "politicalCenters": ["Mogadiscio", "Merca", "Barawa"],
+        "historicalRole": "Sultanat somali puissant, contrôle du commerce dans la Corne de l'Afrique, résistance aux Portugais, développement de l'islam."
+      },
+      {
+        "name": "Sultanat d'Ifat",
+        "period": "XIIIe siècle - XVe siècle",
+        "dominantPeoples": ["Somali (clans Dir", "Hawiye)"],
+        "politicalCenters": ["Ifat (Éthiopie actuelle)"],
+        "historicalRole": "Sultanat somali, expansion vers l'Éthiopie, conflits avec l'empire d'Éthiopie, développement de l'islam."
+      },
+      {
+        "name": "Sultanat d'Adal",
+        "period": "XVe siècle - XVIe siècle",
+        "dominantPeoples": ["Somali (clans Dir", "Hawiye", "Darod)"],
+        "politicalCenters": ["Zeila", "Harar"],
+        "historicalRole": "Sultanat somali puissant, expansion vers l'Éthiopie, guerre avec l'empire d'Éthiopie, développement de l'islam."
+      },
+      {
+        "name": "Sultanat de Mogadiscio",
+        "period": "Xe siècle - XIXe siècle",
+        "dominantPeoples": ["Somali (clans Hawiye)", "Arabes", "Persans"],
+        "politicalCenters": ["Mogadiscio"],
+        "historicalRole": "Sultanat somali, centre commercial important, contacts avec les commerçants arabes et persans, développement de l'islam."
+      },
+      {
+        "name": "Somaliland britannique",
+        "period": "1884 - 1960",
+        "dominantPeoples": [
+          "Britanniques",
+          "Somali (clans Isaaq",
+          "Dir",
+          "Darod)"
+        ],
+        "politicalCenters": ["Hargeisa (capitale coloniale)"],
+        "historicalRole": "Colonisation britannique, développement de l'économie pastorale, mouvements nationalistes (XXe siècle)."
+      },
+      {
+        "name": "Somalie italienne",
+        "period": "1889 - 1960",
+        "dominantPeoples": [
+          "Italiens",
+          "Somali (clans Hawiye",
+          "Darod",
+          "Rahanweyn)"
+        ],
+        "politicalCenters": ["Mogadiscio (capitale coloniale)"],
+        "historicalRole": "Colonisation italienne, développement de l'économie de plantation (bananes, canne à sucre), exploitation minière, mouvements nationalistes (XXe siècle)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Somali",
+        "selfAppellation": "Soomaali",
+        "exonyms": [
+          "\"Somalies\" (forme coloniale française",
+          "connotation réductrice)",
+          "\"Somali\" (terme utilisé par les Européens)"
+        ],
+        "peopleId": "PPL_SOMALI",
+        "mainRegion": "Toute la Somalie",
+        "languages": [
+          "Somali (som",
+          "ISO 639-3)",
+          "arabe",
+          "anglais",
+          "italien"
+        ],
+        "languageFamily": "FLG_COUCHITIQUE",
+        "appellationRemarks": "\"Soomaali\" est l'auto-appellation. Le terme \"Somalies\" est une forme coloniale française qui peut être considérée comme réductrice. Le terme \"Somali\" est utilisé par les Européens et est généralement accepté. Groupe couchitique majoritaire, originaire de la Corne de l'Afrique. Organisation en clans (Darod, Hawiye, Dir, Isaaq, Rahanweyn)."
+      },
+      {
+        "name": "Bantous somaliens",
+        "selfAppellation": "Variées selon les groupes (Bantu, Jareer, Gosha)",
+        "exonyms": [
+          "\"Bantous\" (terme générique)",
+          "\"Jareer\" (terme somali",
+          "peut être péjoratif)",
+          "\"Gosha\" (terme historique)"
+        ],
+        "peopleId": "PPL_BANTOUS_SOMALIENS",
+        "mainRegion": "Sud de la Somalie (vallée du Juba, vallée du Shabelle)",
+        "languages": ["Langues bantoues (swh", "ISO 639-3)", "somali", "arabe"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Les Bantous somaliens sont descendants d'esclaves bantous importés d'Afrique de l'Est. Le terme \"Jareer\" (cheveux crépus) peut être considéré comme péjoratif. Le terme \"Gosha\" (forêt) est historique. Chaque groupe a sa propre auto-appellation. Groupe bantou minoritaire, historiquement marginalisé."
+      },
+      {
+        "name": "Arabes somaliens",
+        "selfAppellation": "Variées selon les groupes (Arabes somaliens)",
+        "exonyms": ["\"Arabes\" (terme générique)"],
+        "peopleId": "PPL_ARABES_SOMALIENS",
+        "mainRegion": "Zones côtières (Mogadiscio, Merca, Barawa)",
+        "languages": ["Arabe (arb", "ISO 639-3)", "somali"],
+        "languageFamily": "FLG_SEMITIQUE",
+        "appellationRemarks": "Les Arabes somaliens sont descendants d'immigrants arabes arrivés au Moyen Âge. Pas de terme péjoratif connu. Groupe sémitique minoritaire, historiquement commerçants."
+      },
+      {
+        "name": "Autres groupes",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_AUTRES_GROUPES",
+        "mainRegion": "Toutes les régions de la Somalie",
+        "languages": ["Langues diverses", "somali", "arabe"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Somali",
+          "isoCode": "som",
+          "isPrimary": true
+        },
+        {
+          "name": "arabe",
+          "isoCode": "arb",
+          "isPrimary": true
+        },
+        {
+          "name": "anglais",
+          "isoCode": "eng"
+        },
+        {
+          "name": "italien",
+          "isoCode": "ita"
+        }
+      ],
+      "culturalTraditions": "Traditions couchitiques (Somali) : poésie orale (gabay), musiques traditionnelles, danse traditionnelle, artisanat (tissage, poterie), élevage pastoral de chameaux, rituels liés aux pluies et à la mobilité pastorale. Traditions bantoues (Bantous somaliens) : musiques traditionnelles, danse traditionnelle, artisanat, agriculture. Traditions arabes (Arabes somaliens) : musiques traditionnelles, danse traditionnelle, artisanat, commerce. Festivals traditionnels variés. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture somalienne est riche et préservée, avec une forte tradition orale (poésie).",
+      "dominantReligions": "Islam sunnite (quasi-totalité de la population, environ 99%), religions traditionnelles africaines (syncrétisme rare, moins de 1%)",
+      "lifestyles": "Élevage pastoral (chameaux, bovins, caprins, ovins, mode de vie nomade), agriculture (maïs, sorgho, bananes, canne à sucre, cultures vivrières), pêche (océan Indien, importante source de protéines), commerce et activités urbaines (zones urbaines, Mogadiscio). Urbanisation importante. Économie basée sur l'élevage pastoral (secteur majeur), l'agriculture (bananes, canne à sucre), la pêche, et les envois de fonds de la diaspora. La Somalie est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante de l'élevage et de l'agriculture.",
+      "socialOrganization": "Société clanique très structurée (clans Somali : Darod, Hawiye, Dir, Isaaq, Rahanweyn). Structures familiales traditionnelles (patrilinéaires). Organisation communautaire (assemblées shir, chefs traditionnels : ugaas, suldaan). Structures étatiques modernes (république fédérale, mais instabilité politique et conflits récents). Système politique fédéral, mais instabilité politique et conflits récents (guerre civile depuis 1991, État fragile).",
+      "regionalRelations": "Relations avec l'Afrique de l'Est (IGAD, Union africaine), relations avec le Moyen-Orient (Ligue arabe, pays du Golfe), relations avec l'Europe (Union européenne, Italie, Royaume-Uni), relations avec les États-Unis. La Somalie est membre de l'IGAD, de l'Union africaine et de la Ligue arabe."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Présence de peuples couchitiques dans la région. Contacts avec les civilisations égyptiennes et nubiennes. Développement de royaumes et de sultanats locaux.",
+      "middleAges": "Présence de peuples couchitiques (Somali) dans la région. Développement de sultanats (Ajuran, Ifat, Adal, Mogadiscio). Contacts avec les commerçants arabes et persans. La région était connue sous le nom de \"Bilad al-Barbar\" (pays des Berbères) par les Arabes, mais les Somali se désignaient comme \"Soomaali\".",
+      "precolonial": "Présence de peuples couchitiques (Somali) dans la région. Développement de sultanats (Ajuran, Ifat, Adal, Mogadiscio). Contacts avec les commerçants arabes, persans et européens. La région était connue sous le nom de \"Somalie\" par les Européens, mais les Somali se désignaient comme \"Soomaali\".",
+      "colonization": "1884-1960 : Somaliland britannique (nord), développement de l'économie pastorale. 1889-1941 : Somalie italienne (sud), développement de l'économie de plantation (bananes, canne à sucre), exploitation minière. 1941-1950 : Administration britannique (toute la Somalie). 1950-1960 : Territoire sous tutelle italienne (Somalie italienne), mouvements nationalistes (XXe siècle).",
+      "independenceStruggle": "1950s-1960 : Mouvements nationalistes, SYL (Somali Youth League), indépendance (1er juillet 1960), fusion des territoires britannique et italien, proclamation de la République de Somalie. Aden Abdullah Osman Daar devient premier président.",
+      "postIndependence": "République de Somalie (1960), présidence d'Aden Abdullah Osman Daar (1960-1967), Abdirashid Ali Shermarke (1967-1969), coup d'État (1969), présidence de Siad Barre (1969-1991, régime socialiste, guerre avec l'Éthiopie, 1977-1978), guerre civile (depuis 1991, État effondré, conflits claniques, famine, interventions internationales), transition fédérale (2012), proclamation de la République fédérale de Somalie, Hassan Sheikh Mohamud (2012-2017, 2022-), Mohamed Abdullahi Mohamed (2017-2022). Stabilité politique fragile, État fédéral, reconstruction post-conflit, développement économique (élevage, agriculture, pêche). La Somalie est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante de l'élevage et de l'agriculture."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Somalia",
+      "SIL Ethnologue – Languages of Somalia",
+      "Recensements somaliens",
+      "Études anthropologiques sur les peuples de Somalie",
+      "Études historiques sur la colonisation britannique et italienne"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Somali",
+          "population": 15300000,
+          "percentageInCountry": 85,
+          "peopleId": "PPL_SOMALI",
+          "region": "Toute la Somalie",
+          "languageFamily": "FLG_COUCHITIQUE"
+        },
+        {
+          "name": "Bantous somaliens",
+          "population": 900000,
+          "percentageInCountry": 5,
+          "peopleId": "PPL_BANTOUS_SOMALIENS",
+          "region": "Sud de la Somalie (vallée du Juba, vallée du Shabelle)",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Arabes somaliens",
+          "population": 450000,
+          "percentageInCountry": 2.5,
+          "peopleId": "PPL_ARABES_SOMALIENS",
+          "region": ""
+        }
+      ]
+    }
+  }
+}

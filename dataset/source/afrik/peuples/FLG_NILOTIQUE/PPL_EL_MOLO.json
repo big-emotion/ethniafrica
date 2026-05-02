@@ -1,0 +1,88 @@
+{
+  "id": "PPL_EL_MOLO",
+  "nameMain": "El Molo",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["KEN"],
+  "content": {
+    "appellations": {
+      "mainName": "El Molo",
+      "selfAppellation": "El Molo",
+      "exonyms": ["Elmolo", "Dehes", "Fura-Pawa", "Ldes", "Ndorobo"],
+      "originOfExonyms": "Le terme El Molo est le nom le plus courant, utilisé par les populations voisines et les administrations coloniales et post-coloniales. Fura-Pawa et Ldes sont des désignations anciennes utilisées par les peuples cushitiques voisins. Ndorobo est un terme générique parfois appliqué aux peuples de chasseurs-cueilleurs ou de pêcheurs en Afrique de l'Est.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme El Molo est couramment utilisé en anglais et en swahili. Le peuple lui-même se désigne par le même nom. La langue el molo est aujourd'hui quasi éteinte ; la majorité des membres de la communauté parle le samburu, langue nilotique des voisins Samburu.",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Cushitique oriental (langue originelle) ; intégration croissante dans l'espace nilotique oriental par assimilation",
+      "historicalRegion": "Rive sud-est du lac Turkana (anciennement lac Rodolphe), district de Marsabit, Kenya septentrional",
+      "currentCountries": ["KEN"]
+    },
+    "ethnicities": [
+      "El Molo de la baie d'El Molo (village de Loiyangalani, rive sud-est du lac Turkana)",
+      "El Molo de l'ile Moite (île volcanique du lac Turkana)",
+      "El Molo de Komote (second village principal sur la rive du lac)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les El Molo sont un peuple cushitique oriental dont les origines remontent à une migration depuis les hautes terres éthiopiennes vers le bassin du Turkana, estimée autour de 1000 av. J.-C. La tradition orale les présente comme un rameau du peuple Arbore d'Ethiopie méridionale, ce que confirme la proximité linguistique entre la langue el molo et l'arboré. Leur langue appartient au sous-groupe Arboroïde du cushitique, avec l'arboré et le dhaasanac comme langues les plus proches. Contrairement à leurs voisins nilotiques et bantous, les El Molo ont développé une économie exclusivement fondée sur la pêche dans le lac Turkana, abandonnant le pastoralisme en raison des conditions arides de la rive orientale du lac.",
+      "formationPeriod": "Identité distincte documentée depuis au moins le 19e siècle par les explorateurs européens. La communauté était déjà très réduite lors des premiers contacts avec les Européens au début du 20e siècle (84 personnes recensées en 1934). Le processus d'assimilation linguistique vers le samburu s'est accéléré au cours du 20e siècle, la transmission native de la langue el molo ayant pratiquement cessé dans la première moitié du siècle.",
+      "migrationRoutes": [
+        "Migration depuis les hautes terres éthiopiennes vers le bassin du Turkana, estimée vers 1000 av. J.-C.",
+        "Séparation probable du peuple Arbore d'Ethiopie méridionale à une période indéterminée, puis descente vers le delta de l'Omo et la rive du lac Turkana"
+      ],
+      "historicalSettlementZones": [
+        "Rive sud-est du lac Turkana, entre la baie d'El Molo et le mont Kulal, district de Marsabit",
+        "Îles volcaniques du lac Turkana (ile Moite en particulier)",
+        "Zones riveraines du lac dans le Northern Frontier District (Kenya)"
+      ],
+      "unificationsOrDivisions": "Le peuple El Molo est toujours resté un groupe très réduit, concentré en deux ou trois villages sur la rive du lac Turkana. Il n'y a pas eu de division politique notable, mais un processus d'assimilation progressive par les Samburu voisins, notamment par les mariages mixtes, qui a conduit à une perte accélérée de la langue et des traits culturels originels.",
+      "externalInfluences": "Contacts anciens avec les peuples cushitiques voisins (Dhaasanac, Arbore). Influence croissante des Samburu nilotiques depuis le 19e siècle, conduisant à l'adoption du samburu comme langue principale. Contacts avec les Turkana (nilotiques de l'ouest du lac). Influence du christianisme à partir de l'époque coloniale. Présence de chercheurs et de touristes au 20e siècle attirés par le caractère unique et la petite taille de ce peuple.",
+      "majorHistoricalEvents": "1934 : recensement de 84 El Molo, signalant déjà une population en danger critique. 1962 : enquête archéologique de Susan Brodribb Pughe dans le Northern Frontier District, découverte de tombeaux avec hiéroglyphes, attestant d'une ancienne pratique funéraire distincte. 1976 : seulement huit locuteurs courants de la langue el molo recensés. 1999 : mort de Kaayo, considéré comme le dernier bon locuteur de la langue. 2009 : recensement national kenyan enregistrant 2840 personnes se déclarant El Molo. 2019 : recensement kenyan recensant 1104 El Molo résidents."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation traditionnelle fondée sur un conseil d'anciens sans chef centralisé. Les décisions communautaires sont prises collectivement par les anciens (wazeé en swahili). L'absence d'organisation politique centralisée est liée à la très petite taille de la communauté et à son économie de pêche en milieu lacustre.",
+      "clanOrganization": "Structure de lignages patrilinéaires, commune aux peuples cushitiques d'Afrique orientale. La communauté est si réduite que les clans distincts ne sont plus guère fonctionnels ; les mariages mixtes avec les Samburu ont progressivement dilué les structures claniques originelles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité, les droits sur les ressources de pêche et les alliances matrimoniales. La patrilinéarité est commune aux peuples cushitiques de la région.",
+      "religiousAuthority": "Pratique d'une religion traditionnelle centrée sur le culte de Waaq (ou Wakh), divinité suprême et unique des peuples cushitiques d'Afrique orientale, associée au culte du ciel et de la pluie. Certains El Molo ont adopté le christianisme à l'époque contemporaine. Les anciens détiennent l'autorité religieuse traditionnelle."
+    },
+    "languages": {
+      "mainLanguage": "El Molo (langue cushitique, quasi-éteinte) ; samburu (langue d'usage courant actuel)",
+      "isoCodes": ["elo"],
+      "dialects": [],
+      "vehicularRole": "La langue el molo (ISO 639-3 : elo) appartient au sous-groupe Arboroïde du cushitique oriental (famille afro-asiatique). Elle est aujourd'hui quasi-éteinte ou dormante : ses derniers locuteurs courants ont disparu dans les années 1990-2000. La population el molo parle aujourd'hui quasi-exclusivement le samburu, dialecte masai de la famille nilotique. Quelques anciens conservent des bribes de vocabulaire et des formules cérémonielles en el molo, utilisées lors de prières et de cérémonies. Le swahili et l'anglais sont utilisés comme langues de communication avec l'extérieur."
+    },
+    "culture": {
+      "majorRites": "Rites liés à la pêche : prières et offrandes à Waaq avant les grandes sorties de pêche sur le lac Turkana, demandant protection et bonnes prises. Rites funéraires : les El Molo érigeaient historiquement des tombeaux caractéristiques (relevés lors de l'enquête archéologique de 1962), certains portant des signes gravés, à proximité de sources et de points d'eau. Cérémonies de mariage traditionnelles incluant échanges de dots en poissons séchés et objets artisanaux. Rites de naissance. L'adoption de pratiques chrétiennes est venue se superposer aux rites traditionnels chez une partie de la communauté.",
+      "symbols": "La pirogue de pêche (embarcation traditionnelle en bois flotté ou en roseaux du lac) est le symbole central de l'identité el molo. Le crocodile, l'hippopotame et la tortue géante du lac Turkana sont des animaux symboliquement importants, chassés et consommés par les El Molo contrairement à leurs voisins. Les perles et ornements de coquillage du lac sont des symboles de statut et d'identité.",
+      "artsAndMusic": "Artisanat lié à la pêche : fabrication de pirogues, de harpons et de lances de pêche en bois et en os. Confection de filets et d'hameçons artisanaux. Vannerie et tressage. Musique vocale et chants traditionnels en langue el molo, encore utilisés lors de cérémonies et de prières. Poésie orale transmise par les anciens. Ornements corporels : perles, bracelets et colliers en coquillage et en os de poisson, caractéristiques de l'identité el molo.",
+      "spiritualities": "Religion traditionnelle fondée sur le culte de Waaq (ou Wakh), divinité suprême unique du monde cushitique oriental, associée au ciel et à la pluie. Cette foi monothéiste pré-abrahamique est partagée avec les peuples Oromo, Somali et Afar. Les El Molo croient également en des esprits du lac et de la nature qui influencent la pêche et la vie communautaire. Le rôle des ancêtres est important : ils sont invoqués pour leur bénédiction et leur protection. Syncrétisme avec le christianisme chez une partie de la communauté contemporaine."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les El Molo n'ont jamais développé de structure politique centralisée sous forme de royaume ou de chefferie. Leur organisation repose sur des conseils d'anciens à l'échelle villageoise. Ils représentent l'un des très rares peuples d'Afrique orientale à avoir maintenu une économie exclusivement fondée sur la pêche lacustre.",
+      "relationsWithNeighbors": "Relations historiquement complexes avec les Turkana (à l'ouest du lac) et les Samburu (au sud et à l'est) : tensions liées aux ressources, mais aussi échanges commerciaux (poisson contre bétail et céréales). L'assimilation progressive par les Samburu au 20e siècle a conduit à l'adoption du samburu comme langue principale. Relations également avec les Dhaasanac (au nord, en Ethiopie), peuple cushitique linguistiquement proche.",
+      "conflictsOrAlliances": "Les El Molo ont historiquement évité les conflits armés en raison de leur très petite taille et de leur isolement sur les rives du lac. Leur principal mécanisme de survie a été l'assimilation culturelle et matrimoniale avec les Samburu voisins, permettant une protection par association. Des tensions avec les Turkana pour les droits de pêche ont été documentées.",
+      "diaspora": "La dispersion des El Molo est très limitée compte tenu de la petitesse de la communauté. Quelques individus ont migré vers des centres urbains comme Marsabit ou Nairobi pour l'éducation ou le travail. La communauté reste essentiellement concentrée dans les villages riverains du lac Turkana."
+    },
+    "demography": {
+      "totalPopulation": 1200,
+      "referenceYear": 2025,
+      "source": "Recensement national du Kenya 2019 (1104 personnes se déclarant El Molo) ; estimations de terrain de chercheurs (613 en 2008, environ 700 en 2012) ; projections 2025 basées sur la croissance démographique lente observée. Note : les données sont contradictoires selon les sources et les méthodes de comptage utilisées.",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 1200,
+          "note": "Concentrés principalement dans les villages de Loiyangalani et Komote sur la rive sud-est du lac Turkana, district de Marsabit, Kenya septentrional"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — El Molo people. https://en.wikipedia.org/wiki/El_Molo_people",
+      "Wikipedia EN — El Molo language. https://en.wikipedia.org/wiki/El_Molo_language",
+      "Glottolog — El Molo (elmo1238). https://glottolog.org/resource/languoid/id/elmo1238",
+      "Endangered Languages Project — El Molo. https://endangeredlanguages.com/elp-language/4124",
+      "Dyson, W.S. and Fuchs, V.E. (1937). The Elmolo. Journal of the Royal Anthropological Institute of Great Britain and Ireland, 67, 327-338.",
+      "Heine, Bernd (1980). Elmolo. In The Non-Bantu Languages of Kenya, 173-218. Berlin: Dietrich Reimer.",
+      "Pawankafund — On the trail of the vanishing El-Molo language. https://pawankafund.org/ano/2017/on-the-trail-of-the-vanishing-el-molo-language/",
+      "Kenya National Bureau of Statistics — Population and Housing Census 2019."
+    ]
+  }
+}

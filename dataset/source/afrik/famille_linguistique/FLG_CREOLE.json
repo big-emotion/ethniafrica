@@ -1,0 +1,62 @@
+{
+  "id": "FLG_CREOLE",
+  "nameFr": "Créole (familles créoles d'Afrique)",
+  "nameEn": "Creole (African Creoles)",
+  "content": {
+    "decolonialHeader": {
+      "whyProblematic": " Termes coloniaux péjoratifs appliqués aux créoles africains : - Les langues créoles africaines ont longtemps été dévalorisées par les autorités coloniales, exclues de l'éducation formelle et considérées comme des \"baragouins\" ou \"jargons\", niant leur statut de langues à part entière avec leurs propres structures grammaticales. - L'usage du terme \"créole\" lui-même, issu d'un contexte colonial (criollo/crioulo désignant initialement les personnes nées dans les colonies), peut être perçu comme portant l'héritage de classifications raciales coloniales.",
+      "selfAppellation": "Creole (African Creoles)",
+      "contemporaryUsage": " Les créoles d'Afrique sont des langues de contact afro-européennes, devenues langues maternelles et nationales dans plusieurs pays. Plusieurs créoles sont langues officielles (Cap-Vert, Seychelles) ou co-officielles (Maurice).",
+      "historicalAppellations": "Creole (African Creoles)",
+      "originOfHistoricalTerm": " Le terme \"créole\" provient de l'espagnol *criollo* et du portugais *crioulo*, eux-mêmes dérivés du latin *creare* signifiant « élever » ou « nourrir ». Application aux langues créoles d'Afrique : En Afrique, le terme \"créole\" est utilisé principalement pour désigner des langues nées du contact entre langues européennes (portugais, français, anglais) et langues africaines dans des contextes de commerce, de comptoirs coloniaux et de traite transatlantique. Les créoles africains les plus anciens sont les créoles à base portugaise, attestés dès le XVIIe siècle dans les comptoirs portugais d'Afrique de l'Ouest (Cap-Vert, Guinée-Bissau). Le terme *Kriolu* / *Kriol* (du portugais *crioulo*) est l'auto-appellation des locuteurs cap-verdiens et bissau-guinéens depuis cette époque. Contexte historique africain : Les familles linguistiques créoles d'Afrique sont nées dans des contextes : - d'esclavage transatlantique (XVIe-XIXe siècle), - de domination coloniale portugaise, française et britannique, - de contacts forcés entre langues africaines (bantoues, mandé, atlantiques) et langues européennes (portugais, français, anglais)."
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Afrique de l’Ouest, Afrique centrale côtière, Afrique australe côtière, Océan Indien",
+      "numberOfLanguages": 15,
+      "totalSpeakers": 10000000
+    },
+    "associatedPeoples": [
+      {
+        "name": "Cap-Verdiens",
+        "peopleId": "PPL_CAP_VERDIEN"
+      },
+      {
+        "name": "Sierra-Léonais (Krio)",
+        "peopleId": "PPL_KRIO"
+      },
+      {
+        "name": "Mauriciens / Seychellois (PPL_MAURICIEN, PPL_SEYCHELLOIS)",
+        "peopleId": null
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " Langues isolantes à morphologie analytique. Structure SVO (Sujet-Verbe-Objet) dominante. Exemples concrets (créole cap-verdien / Kriolu) : - *N ka kume funchi* « Je mange du funchi » – structure SVO, *ka* marque l'aspect progressif",
+      "phonologicalFeatures": " Détails précis :",
+      "relationsWithNeighbors": " Exemples concrets d'emprunts :",
+      "keyInnovations": " Traits spécifiques avec exemples :"
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " QUI a classé les créoles ? Théorie 1 : Hypothèse de la monogenèse (Hugo Schuchardt, 1882-1914)",
+      "emergencePeriod": " (1) Émergence historique des créoles africains :",
+      "diffusion": " Afficher l'ensemble des avis disponibles : Théorie 1 : Diffusion par les réseaux commerciaux portugais (Schuchardt, 1882)",
+      "contactZones": " Répondre à \"OÙ\" – Localisation géographique précise :"
+    },
+    "distribution": {
+      "totalSpeakers": 10000000,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "Telusma, Henri-Claude (2017) – *Thèse doctorale, Université de Strasbourg* – Origine et évolution du terme \"créole\"",
+      "Turner, Lorenzo Dow (1949) – *Africanisms in the Gullah Dialect* – Démonstration des liens linguistiques entre créoles américains et langues africaines (Sierra Leone)",
+      "Toepke, Alvaro & Serrano, Angel (1998) – *The Language You Cry In* (documentaire) – Retrace l'histoire d'une chanson Gullah enregistrée par Turner en 1933 et son utilisation pour retrouver les origines sierra-léonaises",
+      "Université Laval (Axl.cefan) – *Aménagement linguistique dans le monde* – Créoles africains et usage historique du terme",
+      "Trésor de la langue française – Étymologie et évolution sémantique du terme \"créole\"",
+      "Sorbonne Université – *Les langues créoles* – Histoire sociolinguistique des créoles d'Afrique",
+      "Holm, J. – *Pidgins and Creoles*",
+      "Michaelis et al. – *Atlas of Pidgin and Creole Language Structures (APiCS)*",
+      "SIL Ethnologue – Creole languages",
+      "UNESCO – langues de contact d'Afrique et de l'océan Indien"
+    ]
+  }
+}

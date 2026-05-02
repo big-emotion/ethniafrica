@@ -1,0 +1,98 @@
+{
+  "id": "PPL_GBELE",
+  "nameMain": "Gbélé",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Gbélé",
+      "selfAppellation": "Gbélé",
+      "exonyms": ["Gbele", "Gblé", "Gbélé du Nord", "Gbele mande"],
+      "originOfExonyms": "Le terme Gbélé est l'appellation propre du groupe. Les variantes orthographiques (Gbele, Gblé) refletent la transcription phonologique d'une consonne bilabiale implosive caracteristique des langues mande du sud-ouest. Le terme est utilise par les populations voisines et l'administration ivoirienne pour designer ce groupe. La denomination Gbele mande souligne son appartenance au groupe linguistique mande.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Gbélé est utilise dans les recensements ivoiriens et la litterature ethnographique locale. La communaute se concentre dans le centre-ouest de la Cote d'Ivoire, dans une zone de transition entre les populations mande du Nord et les populations krou de l'Ouest. Le groupe est parfois confondu avec d'autres petits sous-groupes mande de la region.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mandé du sud-ouest (groupe de transition Manding-Kru, proche des langues dan-gouro)",
+      "historicalRegion": "Centre-ouest de la Cote d'Ivoire, zone de foret-savane entre les regions de Daloa et Man",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": [
+      "Gbélé de la region du Guemon (zone centrale, autour de Guiglo)",
+      "Gbélé du Nord (zone de savane preforestiere, pres de Daloa)",
+      "Gbélé du Sud (zone forestiere dense, pres de Man)",
+      "Sous-groupes des hauteurs du nord-ouest ivoirien",
+      "Sous-groupes des vallee du Sassandra moyen"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Gbélé font partie des peuples mande du centre-ouest de la Cote d'Ivoire, apparentes aux groupes Dan, Gouro et autres communautes mande de la zone forestiere. Leurs ancetres seraient arrives dans la region depuis le nord-ouest lors des grandes migrations mande entre le 13e et le 17e siecle, s'installant dans la zone de contact entre la foret dense et la savane pre-forestiere. Ils partagent avec les groupes mande-sud une tradition de masques et de societes initiatiques.",
+      "formationPeriod": "L'identite gbélé s'est formee entre le 15e et le 18e siecle lors de la mise en place de chefferies villageoises dans la zone de foret-savane. Le groupe a developpe une culture specifique combinant des elements des societes mande du Nord (commerce, influence islamique) et des societes krou-mande du Sud-Ouest (agriculture, masques, societes secretes initiatiques). Leur particularite linguistique les distingue progressivement des groupes voisins.",
+      "migrationRoutes": [
+        "Migrations depuis le nord-ouest (zone mande) vers les zones forestieres du centre-ouest ivoirien (13e-16e siecle)",
+        "Progression vers le sud le long des corridors de foret-galerie",
+        "Etablissement definitif dans les valles et plateaux du centre-ouest de la Cote d'Ivoire"
+      ],
+      "historicalSettlementZones": [
+        "Region du Guemon (Cote d'Ivoire centre-ouest), zone principale",
+        "Zone de contact foret-savane entre les regions de Daloa et Man",
+        "Villages de la region montagneuse du nord-ouest ivoirien (region de Man)",
+        "Vallee du Sassandra (affluents de la region du Guemon)",
+        "Corridors forestiers reliant les plateaux centraux aux plaines cotières"
+      ],
+      "unificationsOrDivisions": "Les Gbélé sont organises en chefferies villageoises autonomes sans etat centralise. L'identite commune repose sur des liens linguistiques et culturels partages, des traditions d'initiation communes et une memoire historique collective. La division entre Gbélé du Nord (savane) et du Sud (foret) reflete des adaptations ecologiques differentes et des influences culturelles distinctes (islamisation plus forte au Nord).",
+      "externalInfluences": "Contacts avec les populations mande du Nord (Dioula, Malinke) apportant des influences islamiques et commerciales. Interactions avec les populations krou voisines (Dan, Gouro, Bete) influençant les pratiques culturelles, les styles de masques et les societes initiatiques. La colonisation française (fin 19e siecle) a profondement transforme l'organisation politique et economique. L'influence du christianisme missionnaire (20e siecle) a cree un paysage religieux pluriel.",
+      "majorHistoricalEvents": "Resistance et puis integration progressive aux reseaux commerciaux mandingues-dioula. Incorporation dans l'administration coloniale française (debut 20e siecle) avec designation de chefs de canton. Participation a la vie politique ivoirienne apres l'independance (1960). Impact de la crise politico-militaire ivoirienne (2002-2011) sur les communautes de l'Ouest, zone de conflit."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies villageoises (villages-Etats) avec un chef (du) a leur tete. Les decisions importantes sont prises en conseil par les anciens et les responsables de clans. Chaque village constitue une unite politique quasi-autonome. La coordination entre villages se fait par des liens d'alliance matrimoniale, des ceremonies partagees et des rencontres periodiques entre chefs.",
+      "clanOrganization": "Structure clanique patrilineaire. Les clans principaux sont identifies par des patronymes specifiques et exercent des fonctions differenciees (guerriers, agriculteurs, forgerons, medecins traditionnels, griots). La residence est patrilocale apres le mariage. Les unions matrimoniales entre clans alliés renforcent les liens inter-villageois.",
+      "ageClassSystems": "Systeme de classes d'age masculines et feminines structurant les activites collectives et les rites de passage : classe d'initiation (jeunes garçons et filles), classe de travail communautaire (jeunes adultes), classe de conseil (adultes murs), classe des sages-anciens. Les transitions entre classes sont formalisees par des ceremonies initiatiques liees aux societes secretes.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique, les droits fonciers hereditaires et les alliances matrimoniales. La terre est conçue comme propriete clanique inaliénable, transmise aux descendants males. Les liens de parenté rituels (confraternite de plaisanterie, alliance a plaisanterie) etablissent des ponts de solidarite entre clans parfois rivaux.",
+      "religiousAuthority": "Dual : autorite des pretres traditionnels et des maitres des societes secretes initiatiques pour les pratiques animistes. Presence croissante d'imams dans les communautes islamisees. Pasteurs chretiens (catholiques et protestants) dans les zones scolarisees. Dans les communautes islamisees du Nord, les marabouts jouent un role de conseil spirituel et de mediation sociale."
+    },
+    "languages": {
+      "mainLanguage": "Gbélé (langue mande du sud-ouest)",
+      "isoCodes": ["gbb"],
+      "dialects": [
+        "Gbélé du nord (variete de savane, plus proche du manding)",
+        "Gbélé du sud (variete forestiere, avec emprunts aux langues krou voisines)",
+        "Varietes locales par groupe de villages ou par vallee"
+      ],
+      "vehicularRole": "Le gbélé est la langue maternelle de la communaute. Il appartient a la branche mande du sud-ouest, distante du manding mais liee au continuum des langues dan-gouro. Le dioula (jula) sert de langue vehiculaire pour les echanges commerciaux et intercommunautaires dans toute la region. Le français est la langue officielle d'administration et d'enseignement. Des emprunts lexicaux au gouro et au dan sont presents dans les varietes meridionales du gbélé."
+    },
+    "culture": {
+      "majorRites": "Ceremonies d'initiation masculine et feminine comme rites de passage vers l'âge adulte : retraite communautaire en foret ou en espace reserve, enseignement des regles sociales et morales, des responsabilites adultes, des secrets du groupe et des techniques de survie. Ces initiations sont organisees periodiquement, generalement pendant la saison seche, et constituent le temps fort de la vie sociale. Rites de naissance : nomination de l'enfant le 8e jour avec offrandes et repas communautaire. Mariages avec ceremonies en plusieurs etapes (demande officielle, dot, celebration). Funerailles avec ceremonies de deuil communautaires de plusieurs jours, dances et musiques ceremoniales. Ceremonies agricoles au debut et a la fin de la saison des pluies pour solliciter les forces naturelles.",
+      "symbols": "Masques en bois sculpte de styles varies, utilises lors des ceremonies initiatiques, funeraires et de recolte, representant des esprits ancestraux et des forces naturelles. Ces masques constituent des objets sacres conserves en dehors des periodes d'utilisation. Tissus de coton teints avec des motifs geometriques caracteristiques. Instruments de musique rituels (tambours a fente de bois, cloches metalliques) comme objets sacres. Autels ancestraux (fetiches et objets charges) dans les foyers et espaces communautaires.",
+      "artsAndMusic": "Sculpture sur bois : masques ceremonials aux traits expressifs combines avec des elements abstraits ou animaux, produits par des sculpteurs specialises transmettant leur savoir-faire en filiation patrilineaire. Tissage de coton : les femmes tissent des pagnes et etoffes avec motifs geometriques pour les ceremonies. Poterie : production de ceramiques utilitaires et ceremoniales par les femmes. Musique et danse : percussions (tambours cylindriques en bois et en peau, tambours a fente), balafon (xylophone en bois). Les danses collectives rythment les ceremonies d'initiation, de mariage, de funerailles et les fetes de recolte. Tradition orale : contes moraux, proverbes, epopees genealogiques et recits d'origines transmis lors des veillees nocturnes.",
+      "spiritualities": "Animisme traditionnel dominant : croyance en des esprits de la nature (foret, eau, terre, arbres sacres) et en la puissance tutellaire des ancetres. Les masques constituent des vehicules d'expression des forces spirituelles entre le monde des vivants et celui des ancetres. Societes secretes initiatiques (type Poro masculin et Sande feminin) jouant un role essentiel dans l'education, la regulation sociale et la conservation du savoir traditionnel. Islam present dans les communautes commerçantes du nord et dans les zones de contact avec les Dioula. Christianisme (catholique et protestant) present depuis la colonisation dans les zones scolarisees. Pratiques syncrétiques combinant elements animistes, islamiques et chretiens selon les individus et les familles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies villageoises autonomes sans centralisation politique majeure. Certaines chefferies ont acquis une preeminence regionale temporaire lors de conflits avec les voisins ou comme carrefours commerciaux. Les Gbélé ont maintenu leur organisation clanique propre malgre les pressions des empires voisins mandingues et de la colonisation française.",
+      "relationsWithNeighbors": "Relations d'echange commercial et parfois de tension avec les Dioula du Nord (commerce, islamisation progressive). Rapports de voisinage, d'emprunt culturel et d'echange matrimonial avec les Dan (Yacouba), Gouro, Bete et autres peuples de la zone forestiere-savane ivoirienne. Des alliances matrimoniales inter-groupes ont favorise la circulation des biens, des personnes et des savoirs.",
+      "conflictsOrAlliances": "Conflits periodiques avec des groupes voisins pour le controle des terres agricoles fertiles et des ressources forestieres. Alliances defenses temporaires en cas de menace exterieure. Resistance initiale aux tentatives d'imposition de l'autorite coloniale française, puis integration progressive dans les structures administratives coloniales. Tensions inter-ethniques lors de la crise ivoirienne (2002-2011).",
+      "diaspora": "Exode rural progressif vers les centres urbains ivoiriens (Daloa, Man, Guiglo, Abidjan) depuis la decolonisation, accelere par la crise economique des annees 1980-1990 et les conflits de la crise ivoirienne (2002-2011). Faible diaspora internationale, la mobilite des Gbélé etant principalement interne a la Cote d'Ivoire. Quelques membres de la communaute resident en France dans le cadre de la diaspora ivoirienne plus large."
+    },
+    "demography": {
+      "totalPopulation": 22000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur les recensements ivoiriens (RGPH 2021, INS Cote d'Ivoire), SIL Ethnologue (code gbb), donnees de l'Institut National de la Statistique de Cote d'Ivoire (INS-CI). Groupe de petite taille avec documentation demographique limitee en raison de son integration partielle dans les categories administratives plus larges des Mande du sud-ouest.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 22000,
+          "note": "Region du Guemon (capitale Guiglo) et zones adjacentes du centre-ouest de la Cote d'Ivoire, englobant les sous-prefectures des regions de Daloa et de Man"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia FR — Mandés en Cote d'Ivoire. https://fr.wikipedia.org/wiki/Mand%C3%A9s_en_C%C3%B4te_d'Ivoire",
+      "Ethnologue — Cote d'Ivoire languages. https://www.ethnologue.com/country/CI/",
+      "African Security Sector Network — Les Malinke en Cote d'Ivoire. https://africansecuritynetwork.org/assn/wp-content/uploads/2017/02/Les-Malinke%CC%81-en-Cote-dIvoire.pdf",
+      "Minority Rights Group — Manding (Dioula) in Cote d'Ivoire. https://minorityrights.org/communities/manding-dioula/",
+      "Worldometer — Cote d'Ivoire Population. https://www.worldometers.info/world-population/cote-d-ivoire-population/",
+      "Institut National de la Statistique de Cote d'Ivoire (INS) — Recensement General de la Population et de l'Habitat 2021.",
+      "Wikipedia EN — Languages of Ivory Coast. https://en.wikipedia.org/wiki/Languages_of_Ivory_Coast",
+      "Wikipedia EN — Mande languages. https://en.wikipedia.org/wiki/Mande_languages",
+      "Wikipedia EN — Languages of Ivory Coast. https://en.wikipedia.org/wiki/Languages_of_Ivory_Coast"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+# Nom du peuple
+- Nom principal : Dida
+- Auto-appellation : Dida / Dita
+- Famille linguistique : Niger-Congo – Krou (FLG_KROU)
+- Région historique : Sud-Ouest de la Côte d’Ivoire (Divo, Lakota)
+- Identifiant : PPL_DIDA
+
+# 1. Ethnies incluses
+- Dida du Centre
+- Dida du Sud
+
+# 2. Origines
+- Groupe forestier apparenté aux Wè et Bété.
+
+# 3. Organisation
+- Société lignagère
+- Direction des familles élargies
+
+# 4. Langue
+- Dida
+- ISO : did
+
+# 5. Culture
+- Masques et danses rituelles
+- Culte des ancêtres
+- Agriculture (igname, manioc, palmier)
+
+# 6. Histoire
+- Région de résistances locales à la colonisation.
+- Relations fortes avec les peuples krou voisins.
+
+# 7. Démographie
+- Population : 640 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (did)
+- Études krou ivoiriennes

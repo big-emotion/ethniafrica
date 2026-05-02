@@ -1,0 +1,80 @@
+{
+  "id": "PPL_EKET",
+  "nameMain": "Eket",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Eket",
+      "selfAppellation": "Ekid (nom que le peuple se donne a lui-meme, designe egalement leur langue)",
+      "exonyms": ["Eket", "Ekit"],
+      "originOfExonyms": "Eket est la transcription phonetique europeenne de Ekid, utilisee par les administrations coloniales britanniques et reprise dans les decoupages administratifs. Ekit est une autre variante orthographique presente dans la litterature linguistique.",
+      "whyProblematic": "L'appellation Eket designe a la fois le peuple, leur territoire et une zone de gouvernement local (Eket LGA) dans l'Etat d'Akwa Ibom, ce qui peut preter a confusion. Le groupe est souvent classe comme sous-groupe des Ibibio mais maintient une identite propre.",
+      "contemporaryUsage": "Eket est le terme officiel utilise par l'administration nigeriane (Eket Local Government Area). Ekid est prefere par les membres du groupe dans leurs contextes culturels et communautaires.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Ibibio-Efik (branche Cross River, Niger-Congo)",
+      "historicalRegion": "Sud de l'Ibibioland, Etat d'Akwa Ibom, Nigeria",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": ["Ekid Afaha", "Ekid Offiong", "Idua", "Okon"],
+    "origins": {
+      "ancientOrigins": "Les Ekid appartiennent au groupe ethnique Ibibio de l'Etat d'Akwa Ibom. Les Ibibio sont consideres comme les autochtones dont la plupart des petites tribus de la region de la Qua Iboe et du Calabar sont issues. Des traditions orales evoquent la presence d'habitants de petite taille (Nnung Amama Isim, possiblement des pygmees) avant leur arrivee, et des eruptions volcaniques sur le mont Cameroun mentionnees dans les recits d'Hannon le Carthaginois (vers 450 av. J.-C.), ce qui suggere une anciennete considerable de leur presence sur la cote atlantique.",
+      "formationPeriod": "Les Ekid se sont probablement constitues en groupe distinct entre le XVe et le XVIIe siecle dans la region cotiere du golfe de Guinee. Les explorateurs portugais de la fin du XVe siecle trouverent les Ekid deja installes dans la region.",
+      "migrationRoutes": [
+        "Migration depuis Usak Edet (Isangele) au Cameroun a travers diverses routes vers les emplacements actuels (clans Eket Afaha et Ekid Offiong)",
+        "Migration des Idua depuis le Cameroun vers Calabar, puis via le nord du Cross River, vers Esit Eket, Eket, Oniong Nung Ndem Awa (Onna) et Oron"
+      ],
+      "historicalSettlementZones": [
+        "Cote atlantique du golfe de Guinee, Etat d'Akwa Ibom (Nigeria)",
+        "Zone de l'Eket Local Government Area (LGA) et Esit Eket LGA",
+        "Sud de l'Ibibioland"
+      ],
+      "unificationsOrDivisions": "Les Ekid etaient divises en 11 clans selon le Rapport Jones de 1956. L'administration de l'Etat d'Akwa Ibom reconnait aujourd'hui officiellement trois clans Ekid (Ekid Afaha, Ekid Offiong, Idua) plus le clan Okon. Ekid Offiong regroupe les neuf clans restants issus des 11 d'origine.",
+      "externalInfluences": "Contact avec les explorateurs portugais a la fin du XVe siecle. Signature d'un traite d'amitie et de protection avec les Britanniques le 8 septembre 1884 a la plage d'Eket (Atabong). Incorporation dans le District de la Qua Iboe (1894), puis dans la Division d'Eket (1922) sous administration coloniale britannique. Impact de la guerre de Jaja-Ibeno de 1881 dans la region.",
+      "majorHistoricalEvents": "Traite de 1884 signe entre les chefs ekid (Ackpun/Akpan Udoimuk, Userturo/Uso Etukudo, Uko, Ito, Esiet) et le consul britannique R.W. Craigie representant E.H. Hewett, ouvrant la region a l'influence coloniale britannique. Guerre de Jaja-Ibeno (1881) impactant la region. Incorporation administrative dans l'Etat d'Akwa Ibom lors de la creation de l'etat en 1987."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe a structure de castes ou de classes. Les Amama constituent la classe superieure et organisent des banquets communautaires a grande echelle (semblables a un potlatch) en nourrissant les membres plus pauvres de la communaute. L'Ekpenim Isong (Ekpo Ndem Isong en Ibibio) est la classe dirigeante des villages et des villes.",
+      "clanOrganization": "Quatre clans officiellement reconnus par l'Etat d'Akwa Ibom : Ekid Afaha (le plus grand), Ekid Offiong (regroupant 9 sous-clans), Idua et Okon. Les 11 clans du Rapport Jones de 1956 etaient : Afaha, Etebi, Abighe, Idua, Ibeye, Uda, Aniogh, Abikpi, Nnama, Assang et Akiki.",
+      "ageClassSystems": null,
+      "roleOfLineages": "L'organisation en lignages et en familles etendues structure la vie sociale et determine les droits fonciers. Des chefs de famille et de village (dont les temoins du traite de 1884 etaient des representants) exercaient l'autorite locale.",
+      "religiousAuthority": "La classe Ikan (police masquee traditionnelle) fait respecter les regles communautaires. L'acces a cette classe est meritocratique (non hereditaire). Les rites masques et les ceremonies tradicionnelles jouent un role religieux et social central."
+    },
+    "languages": {
+      "mainLanguage": "Ekid (Eket)",
+      "isoCodes": ["eki"],
+      "dialects": [
+        "Dialecte Ekid Afaha",
+        "Dialecte Ekid Offiong",
+        "Dialecte Idua"
+      ],
+      "vehicularRole": "L'Ekid est la langue maternelle des Ekid d'Akwa Ibom. L'Ibibio, la langue parente, joue un role vehiculaire dans la region. Le pidgin nigerian (anglais) et l'anglais sont utilises pour les communications inter-ethniques et officielles."
+    },
+    "culture": {
+      "majorRites": "Les banquets Amama sont des feasts communautaires ritualises qui alimentent les membres les plus pauvres de la communaute et renforcent la hierarchie sociale. Les masques traditionnels de l'Ikan servent dans les ceremonies de maintien de l'ordre et de justice communautaire. Les histoires orales claniques preservent la memoire des origines et des migrations de chaque clan.",
+      "symbols": "Les masques en bois Eket (documentés dans la litterature artistique africaine) sont emblematiques de la culture Ekid. La plage d'Atabong (Eket Beach) est un site historique lie au traite de 1884. Les traditions de peche et d'agriculture representent l'identite economique.",
+      "artsAndMusic": "La sculpture sur bois Eket est reconnue dans le contexte de l'art africain, notamment les masques Eket (Ekid) utilises dans les ceremonies rituelles. La tradition orale est riche en recits fondateurs des differents clans. La peche, la chasse et l'agriculture de subsistance sont les activites economiques traditionnelles.",
+      "spiritualities": "Systeme de castes rituelles (Amama, Ekpenim Isong, Ikan) structurant la societe et la vie religieuse. La societe masquee Ikan cumule fonctions de police et de puissance spirituelle. Les Ekid pratiquent des rites ancestraux et entretiennent une relation avec les esprits des ancetres. Contact et memoire des Nnung Amama Isim (petits hommes poilus, possiblement des pygmees) selon les traditions orales. L'influence du christianisme (principalement les Eglises pentecotistes et anglicanes) est aujourd'hui preponderante."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Ekid n'ont pas developpe de royaume centralise mais une organisation en clans et villages avec des chefs reconnus. Les chefs signataires du traite de 1884 (dont Akpan Udoimuk, chef de Nung Akpan a Atabong) temoignent de l'existence d'autorites locales etablies. Les Ekid font partie du sud de l'Ibibioland, zone qui n'a pas connu de structures royales a large echelle comparable aux royaumes du Nigeria du Nord.",
+      "relationsWithNeighbors": "Les Ekid sont un sous-groupe de l'ensemble Ibibio ; ils partagent des liens linguistiques et culturels avec les Ibibio proprement dits, les Efik, les Oron et les Ibeno. Ils coexistent avec les habitants de la region de la Qua Iboe et du Calabar, dont la plupart seraient issus du stock ibibio selon certains chercheurs. Relations commerciales historiques avec les populations cotieres voisines.",
+      "conflictsOrAlliances": "La Guerre de Jaja-Ibeno de 1881 a impacte la region. La signature du traite de 1884 avec les Britanniques marqua une alliance formelle avec la puissance coloniale, ouvrant la region au protectorat britannique. La constitution de l'Etat d'Akwa Ibom en 1987 a redessine les cadres politiques locaux.",
+      "diaspora": "Les Ekid sont principalement concentres dans l'Etat d'Akwa Ibom. La diaspora nigeriane a l'etranger inclut des membres de la communaute Ekid, notamment au Royaume-Uni et aux Etats-Unis, mais ils ne constituent pas un groupe diasporique distinct identifie dans la litterature."
+    },
+    "demography": {
+      "totalPopulation": 505000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (505 000 pour le Nigeria) ; Eket LGA : 172 856 (recensement 2006), 218 438 (estimation 2013, Akwa Ibom Ministry of Economic Development)",
+      "distributionByCountry": [{ "country": "NGA", "population": 505000 }]
+    },
+    "sources": [
+      "Eket people – Wikipedia EN (https://en.wikipedia.org/wiki/Eket_people)",
+      "Eket in Nigeria – Joshua Project (https://joshuaproject.net/people_groups/11731)",
+      "Ekit – Glottolog (https://glottolog.org/resource/languoid/id/ekit1246)",
+      "Ibibio language – Wikipedia EN (https://en.wikipedia.org/wiki/Ibibio_language)",
+      "City Facts – Eket, Akwa Ibom, Nigeria (https://www.city-facts.com/eket/population)",
+      "Abasiattai, M.B. – History of the Cross River Region of Nigeria, Unical Press, 1988"
+    ]
+  }
+}

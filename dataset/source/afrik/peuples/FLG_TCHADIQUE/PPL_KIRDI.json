@@ -1,0 +1,129 @@
+{
+  "id": "PPL_KIRDI",
+  "nameMain": "Kirdi",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["CMR", "NGA", "TCD"],
+  "content": {
+    "appellations": {
+      "mainName": "Kirdi",
+      "selfAppellation": null,
+      "exonyms": [
+        "Kirdi (terme kanouri/haoussa signifiant paiyen, utilise par les Peuls et Mandaras)",
+        "Haabe (terme peul, singulier Kaado)",
+        "Matchoubé (terme fulfulde en Adamaoua, signifiant esclave ou serviteur)",
+        "Kerdies (terme anglophone du major Denham, 1826)"
+      ],
+      "originOfExonyms": "Le terme Kirdi est une deformation locale du mot kurdes, utilise de maniere pejorative par les populations islamisees (Peuls, Mandaras, Kotokos) pour designer les populations non musulmanes. Certains auteurs le derivent de l'arabe pour singe. D'autres etymologies le relient au terme signifiant paiyen par opposition aux fideles de l'islam. La premiere mention dans la litterature occidentale date du recit de voyage du major Denham en 1826 sous la forme Kerdies.",
+      "whyProblematic": "Le terme Kirdi est fondamentalement exonyme et pejoratif, impose par les vainqueurs islamisateurs. Il recouvre une realite composite : plus de 40 ethnies differentes sans lien linguistique ou culturel commun entre elles, dont la seule unite est d'avoir resiste a l'islam. Depuis les annees 1990, le mouvement politique Kirditude a reapproprie le terme pour en faire un outil de mobilisation politique face a la domination peule.",
+      "contemporaryUsage": "Le terme Kirdi est utilise dans les contextes administratifs et academiques camerounais. Il designe collectivement les peuples non islamises du Nord-Cameroun et du nord-est du Nigeria. Le CIA World Factbook estime les Kirdi a 11% de la population du Cameroun. Le mouvement Kirditude utilise le terme comme identite politique revendicatrice depuis 1991.",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Ensemble composite : principalement langues tchadiques (Afro-asiatique) et langues Adamawa (Niger-Congo)",
+      "historicalRegion": "Extrême-Nord du Cameroun (Mandara, Mandara, monts Mandara), nord-est du Nigeria, nord du Tchad",
+      "currentCountries": ["CMR", "NGA", "TCD"]
+    },
+    "ethnicities": [
+      "Mafa",
+      "Mofu",
+      "Kapsiki",
+      "Fali",
+      "Mada",
+      "Massa",
+      "Toupouri",
+      "Guidar",
+      "Giziga",
+      "Bata",
+      "Ouldeme",
+      "Muyang",
+      "Podoko",
+      "Mouktele",
+      "Guiziga",
+      "Zulgo",
+      "Moundang",
+      "Dowayo",
+      "Gemjek",
+      "Hurza",
+      "Fata",
+      "Vame",
+      "Mora",
+      "Matakam"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples Kirdi sont les populations sedentaires pre-islamiques historiques de la region Extrême-Nord du Cameroun et du nord-est du Nigeria. Certains auteurs les rapprochent des populations montagnardes paleonegritiques de la ceinture sub-sahelienne s'etendant du Togo a l'Ethiopie. Les Fali revendiquent une origine dans le peuple Ngomma qui fonda l'ancienne capitale Timpil. Ces peuples habitaient la region bien avant les migrations peules et les campagnes de conversion forcee du XIXe siecle.",
+      "formationPeriod": "Le terme Kirdi comme categorie collective emerge au XIXe siecle avec les djihads peuls. Les peuples eux-memes sont presents dans la region depuis plusieurs millenaires.",
+      "migrationRoutes": [
+        "Repli vers les zones montagneuses (monts Mandara) et reculees comme refuge contre les conquetes peules aux XVIIIe-XIXe siecles",
+        "Certains groupes (Toupouri) s'etendent du nord du Cameroun jusqu'au Tchad"
+      ],
+      "historicalSettlementZones": [
+        "Monts Mandara (region frontaliere Cameroun-Nigeria)",
+        "Extreme-Nord du Cameroun, entre Garoua et Mora",
+        "Province du Far North (Cameroun)",
+        "Nord-est du Nigeria (Kapsiki, Bata, Fali)",
+        "Kaele, Mayo-Danay, Far North Province (Toupouri)"
+      ],
+      "unificationsOrDivisions": "Pas de structure politique unifiee entre les groupes Kirdi. Le mouvement Kirditude a tente depuis 1991 de federer ces peuples en un bloc politique, en opposition a la domination peule au Cameroun. Les groupes Kirdi votent massivement pour le Social Democratic Front (SDF) en opposition au parti UNDP (Union Nationale pour la Democratie et le Progres) a base peule.",
+      "externalInfluences": "Au XIe siecle, la conversion des Peuls a l'islam et leur migration en Afrique de l'Ouest a crée des pressions converties sur les peuples indigenes. Fin XVIIIe-debut XIXe siecle : conquete de la majeure partie du nord du Cameroun par les Peuls de l'Adamaoua sous Modibbo Adama (1806-1847), disciple d'Usman dan Fodio. Colonisation francaise et allemande : premiere inclusion dans des troupes coloniales et protection partielle. Independence (1960) : domination politique par le president Ahmadou Ahidjo (Peul musulman) jusqu'en 1989.",
+      "majorHistoricalEvents": "XIe siecle : conversion des Peuls a l'islam et debut de leur expansion. XVIIIe-XIXe siecles : jihad de Modibbo Adama, conquete de l'Adamaoua, asservissement des groupes Kirdi resistants. 1826 : premiere mention dans la litterature occidentale (major Denham). XXe siecle : colonisation franco-britannique, resistance Kirdi dans les vingt premieres annees du mandat francais. 1960 : independance du Cameroun, domination peule sous Ahidjo. 1972 : constitution d'un Etat a parti unique. 1991 : emergence du mouvement Kirditude lors de la campagne electorale contre le UNDP. 2000s : participation croissante au systeme electoral camerounais via le SDF."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisations politiques tres variees selon les ethnies. La plupart fonctionnent sans chefferie centralisee forte : decision par les anciens du village et les conseils de clan. Les Kapsiki vivent en villages de 2 000 a 6 000 habitants bases sur l'agriculture et l'elevage. Les Fali maintiennent une organisation clanique liee aux ancetres du peuple Ngomma.",
+      "clanOrganization": "Chaque ethnie Kirdi possede sa propre structure clanique. Les Fali revendiquent une origine dans le peuple Ngomma. La resistance a l'islam et au systeme peul a maintenu des structures claniques independantes et segmentees, sans federation inter-ethnique formelle.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignees ancestrales determinent l'appartenance ethnique, les droits fonciers sur les terrasses agricoles et les responsabilites ceremoniales. Chez les Fali, la genealogie lie le groupe aux ancetres Ngomma et a l'ancienne capitale Timpil.",
+      "religiousAuthority": "Traditions religieuses propres a chaque groupe, oscillant entre monotheisme, animisme et pratiques synretiques. Les Mafa pratiquent un monotheisme teinte d'animisme avec un dieu createur unique cohabitant avec des esprits. Les Fali reconnaissent Muttaf (dieu omnipotent et invisible) et Ona (mere-terre). Presence croissante de clerges catholiques et protestants depuis le XXe siecle."
+    },
+    "languages": {
+      "mainLanguage": "Langues tchadiques et Adamawa (variees selon l'ethnie)",
+      "isoCodes": ["maf", "mfh", "ksp", "fli", "mxu", "tui", "bta"],
+      "dialects": [
+        "Mafa (maf)",
+        "Mofu (mfh)",
+        "Kapsiki/Kamwe (ksp)",
+        "Fali (fli)",
+        "Mada (mxu)",
+        "Toupouri (tui)",
+        "Bata (bta)",
+        "Giziga",
+        "Guidar",
+        "Massa",
+        "Ouldeme",
+        "Podoko",
+        "Mouktele",
+        "Muyang",
+        "Zulgo-Gezmek"
+      ],
+      "vehicularRole": "Chaque ethnie Kirdi parle sa propre langue. Le fulfulde est utilise comme lingua franca dans les interactions avec les Peuls. L'arabe des marches et le francais (Cameroun) sont utilises dans les echanges commerciaux et administratifs. Aucune langue commune ne sert de vehiculaire entre tous les groupes Kirdi."
+    },
+    "culture": {
+      "majorRites": "Agriculture du mil/sorgho sur terrasses montagnards avec entretien annuel des murets (pratique remarquable d'architecture du sol). Pratiques medicinales a base de plantes : decoctions, extractions, fermentations (ex. Cissus quadrangularis utilisee par les Fali pour laver les morts). Ceremonies de transition marquees par les rites propres a chaque ethnie. Les Kapsiki accueillent des touristes a Rumsiki avec demonstrations artisanales.",
+      "symbols": "Les terrasses agricoles des monts Mandara sont le symbole le plus emblematique des peuples Kirdi (agriculture en terrasse precisement entretenue). Un timbre de la Republique unie du Cameroun de 1973 (15 F) intitule Village Kirdi Nord-Cameroun a marque la reconnaissance culturelle nationale. Les textiles ornes des Fali sont particulierement reconnus.",
+      "artsAndMusic": "Textiles vivement decores et ornements Fali. Agriculture sophistiquee des Mafa : petite irrigation, canalisation, drainage, rotation des cultures, agroforesterie. Agriculture des Mousgoum : arachides et coton cultives commercialement. Artisanat et tourisme Kapsiki (village de Rumsiki). Cultures alimentaires locales : fufu, ignames, cassave, millet, sorgho.",
+      "spiritualities": "Variete de traditions spirituelles : monotheisme (Mafa, Fali), animisme, pratiques mixtes. Les Fali reconnaissent Muttaf (dieu invisible interdit de representation) et Ona (mere-terre) avec trois plans : humain, divin et intermediaire (genies, crocodiles sacres, serpent noir). Conversion croissante au christianisme (catholique, baptiste, EYN, pentecotiste) depuis le XXe siecle : les Fali sont a 99% chretiens en 2009. Certains groupes Bata ont opte pour l'islam. Mouvement de conversion en ordre disperse depuis 60 ans."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaumes ou sultanats proprement kirdi. Les peuples Kirdi sont historiquement definis par leur resistance a la soumission aux emirats peuls (emirat d'Adamaoua notamment). L'isolement geographique dans les monts Mandara et les zones arides a constitue leur principale defense politique.",
+      "relationsWithNeighbors": "Relations conflictuelles historiques avec les Peuls et les Haoussa islamisateurs. Les peuples des plaines (Kotoko, Baguirmiens) ont applique le terme Kirdi a tous les non-musulmans de la region. Sous la colonisation peule, les Kirdi resistants devenaient esclaves ; les soumis devenaient tributaires. Les Peuls ont introduit l'alphabetisation arabe et le Coran dans la region, modifiant l'equilibre culturel.",
+      "conflictsOrAlliances": "XIXe siecle : jihad de Modibbo Adama (1806-1847), conquete de l'Adamaoua, asservissement des Kirdi resistants. Debut du XXe siecle : rebellions Kirdi contre le mandat francais dans les 20 premieres annees. 1991 : emergence du mouvement Kirditude contre la domination politique Peul (UNDP de Maigari Bello Bouba). Personnalites politiques Kirdi : Luc Ayang, Etienne Hollong.",
+      "diaspora": "Peu de diaspora Kirdi au sens traditionnel. Mouvements de population internes au Cameroun vers les villes du sud (Yaoundé, Douala) depuis le XXe siecle. Communautes Toupouri debordant sur le Tchad. Kapsiki et Fali present aussi en territoire nigerien."
+    },
+    "demography": {
+      "totalPopulation": 3500000,
+      "referenceYear": 2025,
+      "source": "CIA World Factbook : 11% de la population du Cameroun (~30 millions en 2025, soit environ 3,3 millions) ; Wikipedia EN : Fali plus de 250 000, Mafa quelques centaines de milliers, Bata 13 500. Estimation globale consolidee incluant Nigeria et Tchad.",
+      "distributionByCountry": [
+        { "country": "CMR", "population": 3000000 },
+        { "country": "NGA", "population": 350000 },
+        { "country": "TCD", "population": 150000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia FR, Kirdi – Wikimedia Foundation (https://fr.wikipedia.org/wiki/Kirdi)",
+      "Wikipedia EN, Kirdi – Wikimedia Foundation (https://en.wikipedia.org/wiki/Kirdi)",
+      "Qiraat Africa, The Kirdi People of West and Central Africa – Qiraat Africa, aout 2024 (https://qiraatafrican.com/en/12847/the-kirdi-people-of-west-central-africa/)",
+      "CIA World Factbook, Cameroon – CIA 2024 (https://www.cia.gov/the-world-factbook/countries/cameroon/)",
+      "Jean Hurault, Quelques aspects de la structure sociale des montagnards kirdi du nord Cameroun – Bulletin de l'IFAN, Dakar, serie B, 1958, p.111-122",
+      "Jeanne-Francoise Vincent, Sur les traces du major Denham : le Nord-Cameroun il y a cent cinquante ans – Cahiers d'etudes africaines, Paris, 1978, vol.18(4), n.72, p.575-606",
+      "Ethnologue, Mafa (maf) – SIL International 2024 (https://www.ethnologue.com/language/maf/)"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "PPL_NABT",
+  "nameMain": "",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Nabit",
+      "linguisticFamily": "FLG_GUR",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ghana Upper East Studies", "Ethnographic Reports"]
+  }
+}

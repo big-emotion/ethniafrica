@@ -1,0 +1,74 @@
+{
+  "id": "PPL_KWANDI",
+  "nameMain": "Kwandi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Kwandi",
+      "selfAppellation": "Kwandi",
+      "exonyms": ["Bakwandi", "BaKwandi"],
+      "originOfExonyms": "Le prefixe bantu Ba- est utilise pour designer le peuple collectivement (BaKwandi). Le nom provient du fondateur Mwanabinyi qui etablit sa chefferie dans les terres precedemment occupees par les Subiya et Mbukushu.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les Kwandi sont reconnus comme l'un des groupes proto-Lozi de la Province Occidentale de Zambie. Ils sont aujourd'hui integres dans le grand ensemble Lozi-Barotse tout en maintenant une identite distincte.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Groupe Luyana-Lozi, sous-groupe proto-Lozi, Bantu occidental",
+      "historicalRegion": "Province Occidentale de Zambie, plaine du Barotseland",
+      "currentCountries": ["ZMB"]
+    },
+    "ethnicities": ["Kwandi", "BaKwandi"],
+    "origins": {
+      "ancientOrigins": "Les Kwandi sont une ramification directe du peuple Luyi (ancetres des Lozi). Les Luyi arriverent autour de Mongu sur la plaine d'inondation du Barotseland vers le milieu du XVIIe siecle sous la conduite d'une femme nommee Mwambwa. Sa fille lui succeda avant d'etre contestee par son fils Mboo qui prit la direction. C'est lors du regne de Mboo que son parent Mwanabinyi fut envoye fonder une nouvelle chefferie au sud.",
+      "formationPeriod": "Milieu du XVIIe siecle, lors du reign de Mboo, premier roi etabli des Luyi. Mwanabinyi s'installa au sud, prenant possession des terres des Subiya et Mbukushu. Pendant plus d'un siecle, les Kwandi se developperent de facon independante sous l'autorite nominale du chef Luyi.",
+      "migrationRoutes": [
+        "Du bassin du Congo vers la plaine du Barotseland (XVIIe siecle)",
+        "De Mongu vers le sud de la plaine d'inondation du Zambezi superieur sous Mwanabinyi"
+      ],
+      "historicalSettlementZones": [
+        "Zone sud de la plaine du Barotseland, Province Occidentale de Zambie",
+        "Terres anciennement occupees par les Subiya (qui restent presentes) et les Mbukushu (maintenant au Caprivi et nord du Botswana)"
+      ],
+      "unificationsOrDivisions": "Apres leur fondation au XVIIe siecle, les Kwandi vecurent independants jusqu'a l'arrivee des Kololo en 1830. Les Kololo, fuyant les guerres Zulu depuis l'Afrique du Sud, conquirent l'empire Luyi en 4 ans de combats. Durant la domination kololo (1830-1864), le Kwandi soutint un candidat rival (Mbua) pour la succession Kololo sans succes. Apres la restauration Luyi sous Sipopa, les Kwandi qui avaient soutenu la cause rivale furent persecutes et beaucoup fuirent vers le nord (Lukwakwa). Les Luyi restaures devinrent les Lozi.",
+      "externalInfluences": "Conquete Kololo dans les annees 1830 avec imposition du Sotho (kololo) comme lingua franca. Les Kwandi maintinrent leur version de la langue Luyi durant cette periode. Colonisation britannique apres 1890. L'administration britannique integra le Barotseland comme protectorat en 1900.",
+      "majorHistoricalEvents": "Fondation par Mwanabinyi au XVIIe siecle. Conquete Kololo vers 1830. Tentative echouee de soutenir Mbua contre la succession Kololo. Exil de nombreux Kwandi a Lukwakwa. Restauration Lozi sous Sipopa. Persecutions par Sipopa des Kwandi qui l'avaient conteste. Integration dans l'empire Lozi-Barotse sous administration britannique."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferie fondee par Mwanabinyi, sans chef independant apres le fondateur : les Kwandi payaient tribut au chef Luyi et etaient consideres comme proto-Lozi, c'est-a-dire appartenant au noyau de l'aristocratie du Barotseland. Dans la hierarchie tribale Lozi, les Kwangwa et les Kwandi occupaient le rang le plus eleve apres les Lozi proprement dits.",
+      "clanOrganization": "Organisation clanique liee a la descendance du fondateur Mwanabinyi. Les Kwandi forment un groupe de parenté avec des liens forts aux Kwangwa (issus de Mange, autre parent de Mboo).",
+      "roleOfLineages": "Les lignages assurent la transmission des droits fonciers et des privileges dans la hierarchie du Barotseland. La connexion a Mwanabinyi est le marqueur principal de l'identite Kwandi.",
+      "religiousAuthority": "Autorite spirituelle liee aux rites royaux Lozi, notamment la grande ceremonie Kuomboka. Les croyances traditionnelles animistes coexistent avec le christianisme introduit par les missionnaires au XIXe siecle."
+    },
+    "languages": {
+      "mainLanguage": "Kwandi (dialecte Luyana)",
+      "isoCodes": [],
+      "dialects": ["Kwanga (apparente, aussi note K.721 selon Maho 2009)"],
+      "vehicularRole": "Le Kwandi est un dialecte de la langue Luyana, apparente au Kwangwa. Pendant la domination Kololo, le Sotho (Kololo) devint la lingua franca et finit par donner naissance au Lozi moderne. Les Kwandi utiliserent l'ancien Luyi en parallele avec le Lozi. Aujourd'hui le Lozi est la langue vehiculaire dominante de la Province Occidentale."
+    },
+    "culture": {
+      "majorRites": "Participation aux ceremonies royales Lozi, notamment Kuomboka (migration annuelle du roi Lozi des plaines inondees vers les terres hautes) et Kathanga. Ces ceremonies reunissent tous les peuples du Barotseland, incluant les Kwandi.",
+      "symbols": "Appartenance au noyau proto-Lozi confere aux Kwandi un statut de prestige dans la societe du Barotseland.",
+      "artsAndMusic": "Traditions musicales et de danse communes avec les autres peuples du Barotseland. Chants et percussions lors des ceremonies royales.",
+      "spiritualities": "Croyances animistes traditionnelles centrees sur les esprits ancestraux et les forces de la nature. Introduction du christianisme par les missionnaires Paris Evangelical Missionary Society au XIXe siecle. Aujourd'hui, christianisme (protestantisme, catholicisme) et pratiques traditionnelles coexistent."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferie Kwandi fondee par Mwanabinyi au XVIIe siecle, integree a l'empire Luyi-Lozi. Le Kwandi ne possedait pas de chef propre apres le fondateur mais jouissait d'un statut privilegié dans la hierarchie du Barotseland comme groupe proto-Lozi.",
+      "relationsWithNeighbors": "Liens etroits avec les Kwangwa (autre groupe proto-Lozi fonde par Mange). Relations avec les Subiya (dont ils occupaient les terres) et les Mbukushu. Integration dans l'ensemble Lozi-Barotse qui comprend plus de 25 groupes Bantu de la Province Occidentale.",
+      "conflictsOrAlliances": "Alliance nominale avec les chefs Luyi. Opposition partielle a l'hegemonie Kololo dans les annees 1830-1864. Conflit avec Sipopa lors de la restauration Lozi dans les annees 1860. Reunification progressive sous l'empire Lozi-Barotse.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 15000,
+      "referenceYear": 2025,
+      "source": "Estimation. Les Kwandi sont un petit groupe de la Province Occidentale de Zambie, integres dans le recensement Lozi. Donnees specifiques non disponibles dans les sources officielles. La langue Kwangwa/Kwandi compte 2 400 locuteurs selon le recensement zambien de 2010 (source Wikipedia Kwangwa language).",
+      "distributionByCountry": [{ "country": "ZMB", "population": 15000 }]
+    },
+    "sources": [
+      "Kwangwa – Zambia's Traditional History, 2020 (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/lozi/kwangwa/)",
+      "History of the Kwangwa people – Facebook/Barotsenetwork, 2023 (https://www.facebook.com/groups/759153900821468/posts/10082861068450658/)",
+      "Kwangwa language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kwangwa_language)",
+      "About Zambia – Western Province Provincial Administration (https://www.wes.gov.zm/?page_id=1186)",
+      "Languages of Zambia – Wikipedia (https://en.wikipedia.org/wiki/Languages_of_Zambia)",
+      "Understanding the history of Lozi people – Facebook, 2022 (https://www.facebook.com/groups/759153900821468/posts/8230979013638882/)"
+    ]
+  }
+}

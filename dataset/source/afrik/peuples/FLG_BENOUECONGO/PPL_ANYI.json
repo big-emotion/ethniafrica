@@ -1,0 +1,105 @@
+{
+  "id": "PPL_ANYI",
+  "nameMain": "Anyi",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["CIV", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Anyi",
+      "selfAppellation": "Anyi",
+      "exonyms": ["Agni", "Aowin (sens large)", "Agni-Anyi"],
+      "originOfExonyms": "La forme Agni est la transcription française courante du nom Anyi, utilisee tout au long de la période coloniale et encore aujourd'hui dans les documents administratifs français et ivoiriens. Historiquement, le terme Aowin (ou Agni en sens large) designait l'ensemble du groupe avant que les differentes sous-branches ne se distinguent. La forme Anyi est privilegiee dans les travaux anglophones recents.",
+      "whyProblematic": null,
+      "contemporaryUsage": "En Cote d'Ivoire, les formes Agni et Anyi coexistent dans les usages officiels et populaires. Le nom Anyi est de plus en plus adopte dans les travaux linguistiques et ethnographiques. Au Ghana (district municipal Aowin), la population apparentee est souvent designee comme Aowin ou Agni.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan (branche Central Tano, sous-groupe Anyi-Baule)",
+      "historicalRegion": "Sud-est de la Cote d'Ivoire, Sud-ouest du Ghana",
+      "currentCountries": ["CIV", "GHA"]
+    },
+    "ethnicities": [
+      "Anyi Indenie",
+      "Anyi Sanwi",
+      "Anyi Moronou",
+      "Anyi Djuablin",
+      "Anyi Bettie",
+      "Anyi Assonvon"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Anyi tracent leurs origines a l'ancien etat akan de Bonoman (Brong), dans la zone de transition foret-savane de l'actuel Ghana. Ils font partie du grand mouvement migratoire akan qui a peuple la foret ouest-africaine. Ils sont considers comme le premier peuple de la region a avoir entame des relations avec les Europeens, des le XVIIe siecle. La tradition orale rattache les Anyi aux groupes de l'Aowin (dans l'ancienne Gold Coast), dont ils sont une branche qui a migre vers l'ouest au XVIIIe siecle.",
+      "formationPeriod": "Au debut du XVIIIe siecle, fuyant les pressions expansionnistes des empires Denkyira et Asante, les groupes anyi traversent la frontiere orientale de l'actuelle Cote d'Ivoire en provenance de l'Aowin (Ghana). Ils s'etablissent dans les forets du sud-est ivoirien et fondent successivement les royaumes du Sanwi, de l'Indenie, du Moronou et du Djuablin.",
+      "migrationRoutes": [
+        "Migration depuis l'Aowin (actuel Ghana) vers le sud-est de la Cote d'Ivoire, debut XVIIIe siecle",
+        "Traversee de la frontiere orientale ivoirienne avec les Assabou (qui formeront le peuple Baule)",
+        "Progression jusqu'aux abords de la lagune Aby (zone de Songon, Mrôfo)",
+        "Etablissement sur les bords de la Comoé (Indenie) et dans le Moronou"
+      ],
+      "historicalSettlementZones": [
+        "Abengourou, Agnibilekrou, Koun Fao (region Indenie-Djuablin)",
+        "Krindjabo et region du Sud-Comoe (royaume Sanwi)",
+        "Arrah, Bongouanou, Ande, M'batto (region Moronou)",
+        "Tiassale (region Agneby-Tiassa)",
+        "Mafere, Aboisso, Adiaké, Assouakro, Assinie (region Sud-Comoe)",
+        "District Aowin Municipal, Western North Region (Ghana)"
+      ],
+      "unificationsOrDivisions": "Les Anyi ne forment pas un etat unitaire mais une nebuleuse de royaumes confederes : Sanwi (le plus structure, fonde par Amalaman Ano), Indenie (sur les bords de la Comoé), Moronou (Agnis Mrôfo), Djuablin et Bettie. Chaque royaume a son propre souverain mais partage la langue, la culture matrilineaire et les traditions politiques akan.",
+      "externalInfluences": "Pression des empires Denkyira et Asante a l'origine de la migration. Contact precoce avec les Europeens (XVIIe siecle). Integration dans la sphere coloniale française (fin XIXe siecle), incorporation dans l'Afrique occidentale française. Influence des pasteurs evangeliques togolais de la Church of Pentecost a partir des annees 1950. Tensions sociales post-independance a partir de 1990 entre populations forestieres (dont Anyi) et immigrants du nord.",
+      "majorHistoricalEvents": "Debut XVIIIe siecle : migration depuis l'Aowin et fondation des royaumes anyi. 1701 : premieres relations diplomatiques du Sanwi avec les Français. XIXe siecle : declin de l'empire Asante, montee de Samori Ture, avancee coloniale europeenne. Fin XIXe : incorporation dans la colonie française de Cote d'Ivoire. 1998 : affrontements pres d'Ayamé entre Agnis et pecheurs Bozo maliens. Depuis 1990 : fracture sociale dans les villes du sud entre populations forestieres et migrants du nord."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme monarchique de type akan : le souverain (roi ou chef paramount) est assiste par un conseil d'anciens. La succession est hereditaire et limitee aux membres de la famille regnante. La societe est historiquement stratifiee en nobles, hommes libres et serviteurs. Chaque royaume (Sanwi, Indenie, Moronou, Djuablin) dispose de son propre chef entouré de titulaires aux fonctions politiques, ceremoniales et militaires. Le Sanwi est particulierement centralise avec des roles militaires asafo (sahinnan).",
+      "clanOrganization": "Organisation matrilineaire : la filiation, l'heritage et la succession passent par la ligne maternelle. Forte identite royale et clanique maintenue jusqu'a aujourd'hui, notamment dans le royaume de Sanwi. Chaque royaume possede ses propres lignages royaux.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le lignage maternel determine l'appartenance clanique, la succession au trone et l'heritage foncier. Les femmes exercent une autorite considerable dans la vie economique et influencent les decisions politiques locales et regionales.",
+      "religiousAuthority": "Les Komian (feticheurs, specialistes du savoir occulte) jouent un role central : conseillers des rois, devins, mediateurs entre le monde des vivants et des esprits. Ils sont organises en societes secretes et exercent leurs fonctions via des transes magico-religieuses. A cote de ces autorites traditionnelles, le christianisme (catholique, presbyterien, pentecotiste) est tres repandu."
+    },
+    "languages": {
+      "mainLanguage": "Anyi (Agni)",
+      "isoCodes": ["any"],
+      "dialects": [
+        "Anyi Indenie",
+        "Anyi Sanwi",
+        "Anyi Moronou",
+        "Anyi Djuablin",
+        "Anyi Bettie"
+      ],
+      "vehicularRole": "La langue anyi (code ISO 639-3 : any) appartient a la branche Central Tano des langues Niger-Congo (famille Kwa). Elle est mutuellement intelligible avec les autres dialectes akan. Elle est principalement parlee dans la region du Sud-Comoé en Cote d'Ivoire, avec environ 250 000 locuteurs dans cette region. Joshua Project recense 1 970 000 locuteurs Anyi au niveau mondial (Ghana et Cote d'Ivoire). Un Nouveau Testament est disponible en anyi."
+    },
+    "culture": {
+      "majorRites": "Funerailles : ceremonies centrales dans la culture anyi, avec rituel de purete du corps du defunt, deuil public, ornementation et transition symbolique vers le monde spirituel. Funerary art tres developpe avec monuments elabores comme manifestation de la richesse familiale et de la reverence aux morts. Marches periodiques tous les quatre jours, operes principalement par les femmes, pour l'echange de produits agricoles et artisanaux. Ceremonies de mariage en trois etapes : Bla-o-kale (aide financiere), Adyia-tila (trousseau) et Be-ti-sika (lien symbolique).",
+      "symbols": "L'art funeraire et les monuments funeraires comme symboles du statut social et de la reverence aux ancetres. Les statues dites Anyi de Krinjabo (statues funeraires royales du royaume Sanwi). Les tissus imprimes dont les noms sont des proverbes anyi (Wearing proverbs). Le tabouret sacre, symbole de l'autorite royale.",
+      "artsAndMusic": "Art funeraire prominent : elaboration de monuments et de sculptures pour les chefs et les personnalites. Traditions textiles (tissus imprimes avec proverbes). Musique ceremonielle avec percussions. Economie artisanale : palmier a huile, agriculture (banane, igname, manioc, mais, arachides, tomates), elevage de petits ruminants et volaille, exploitation forestiere et cacao (notamment au Ghana).",
+      "spiritualities": "Religion traditionnelle akan : veneration des ancetres, cosmologie rituelle, Komian (feticheur) comme intermediaire entre vivants et esprits. Christianisme largement repandu (catholique, presbyterien, pentecotiste). Influence des pasteurs togolais de la Church of Pentecost des les annees 1950 chez les Anyi du Ghana puis de Cote d'Ivoire."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume du Sanwi (fonde par Amalaman Ano, pres de Krindjabo, maintient des institutions royales symboliques a l'epoque moderne). Royaume de l'Indenie (Abengourou, sur les bords de la Comoé). Royaume du Moronou (fonde par Mrôfo Agni). Royaume de Djuablin. Royaume de Bettie. L'Etat Aowin (ancetre direct des Anyi, centre de production et de commerce d'or).",
+      "relationsWithNeighbors": "Stratification sociopolitique dans les centres urbains du sud de la Cote d'Ivoire : populations forestieres (dont Anyi) dans les quartiers anciens des villes, communautes d'origine savane (migrants) dans les zones peri-urbaines. Relations historiques avec les Ashanti (pression migratoire), les Baule (groupe cousins issu de la meme migration), les Avikam et autres peuples lagunaires. Tensions ponctuelles avec migrants economiques au XXe siecle.",
+      "conflictsOrAlliances": "Fuite devant les pressions des empires Denkyira et Asante (debut XVIIIe siecle). Fondation diplomatique du Sanwi avec les Français (1701). Integration dans le cadre colonial français (fin XIXe siecle). Tensions post-independance entre Anyi et migrants internes (a partir des annees 1990). Affrontements locaux a Ayame en 1998.",
+      "diaspora": "Presence anyi significative dans les grandes villes du sud de la Cote d'Ivoire (Abidjan, Abengourou, Aboisso). Au Ghana, communaute concentree dans le district Aowin Municipal, Western North Region (population 2021 : 157 159)."
+    },
+    "demography": {
+      "totalPopulation": 1970000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Anyi global : 1 970 000 ; dont 91 000 au Ghana et majoritairement en Cote d'Ivoire). Wikipedia FR estime environ 1 200 000 en Cote d'Ivoire.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 1879000,
+          "note": "Sud-est principalement : Abengourou (11% de concentration), Agnibilekrou, Koun Fao, Aboisso, Adiaké, Tiassale, Bongouanou"
+        },
+        {
+          "country": "GHA",
+          "population": 91000,
+          "note": "District Aowin Municipal, Western North Region"
+        }
+      ]
+    },
+    "sources": [
+      "Anyi people – Wikipedia EN (https://en.wikipedia.org/wiki/Anyi_people)",
+      "Agnis – Wikipedia FR (https://fr.wikipedia.org/wiki/Anyi_(peuple))",
+      "Kingdom of Aowin – Wikipedia EN (https://en.wikipedia.org/wiki/Aowin)",
+      "Joshua Project – Anyi in Ghana (https://joshuaproject.net/people_groups/10362/GH)",
+      "Joshua Project – Ghana people groups (https://joshuaproject.net/countries/gh)",
+      "Culture of Ivory Coast – Wikipedia EN (https://en.wikipedia.org/wiki/Culture_of_Ivory_Coast)"
+    ]
+  }
+}

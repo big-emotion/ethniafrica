@@ -1,0 +1,146 @@
+{
+  "id": "PPL_KHOE_MACRO",
+  "nameMain": "Peuples Khoe (macro-groupe)",
+  "languageFamilyId": "FLG_KHOE",
+  "currentCountries": ["NAM", "BWA", "ZAF", "ZWE", "AGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Peuples Khoe (macro-groupe)",
+      "selfAppellation": "Variee selon les groupes : Khoekhoe (Khoikhoi), Nama (Namakhoen), Damara (ǂNukhoen), Haiǁom (Haiǁomkhoen), Gǀwi, Gǁana, Naro, Kxoe, Shua, Tsoa, Kwadi (eteinte)",
+      "exonyms": [
+        "Khoi",
+        "Khoikhoi",
+        "Hottentots (pejoratif, colonial)",
+        "Central Khoisan (classification linguistique ancienne)"
+      ],
+      "originOfExonyms": "Le terme Khoikhoi ou Khoekhoe signifie 'hommes des hommes' ou 'les vrais hommes' en langue khoekhoe. L'appellation coloniale pejorative 'Hottentot' fut utilisee par les colons neerlandais des 17e-18e siecles pour imiter les sons clics de la langue, percus comme incomprehensibles. Central Khoisan est une classification linguistique obsolete remplacee par Khoe-Kwadi.",
+      "whyProblematic": "Le terme 'Khoisan' regroupe des peuples genetiquement et culturellement distincts (Khoekhoe pastoraux et San chasseurs-cueilleurs) sous une seule etiquette. La famille linguistique Khoe-Kwadi n'est plus consideree comme faisant partie d'un macro-groupe 'Khoisan' unifie : Khoe-Kwadi, Kx'a (Ju) et Tuu sont trois familles independantes sans lien genetique etabli.",
+      "contemporaryUsage": "Khoe ou Khoi est la designation generique adoptee dans la litterature scientifique et officielle depuis les annees 1990. En Namibie, Khoekhoe est une langue nationale. En Afrique du Sud, Khoekhoe (ou Khoikhoi) est une identite revendiquee par les groupes Nama et Griqua.",
+      "linguisticFamily": "FLG_KHOE",
+      "ethnoLinguisticGroup": "Khoe-Kwadi (macro-groupe linguistique indigene d'Afrique australe)",
+      "historicalRegion": "Afrique australe : Namibie, Botswana, Afrique du Sud (Cap), Zimbabwe occidental, Angola sud-occidental",
+      "currentCountries": ["NAM", "BWA", "ZAF", "ZWE", "AGO"]
+    },
+    "ethnicities": [
+      "Nama (Namakhoen) — pasteurs nomades de Namibie et du Cap-Nord (Afrique du Sud), langue : Khoekhoegowab (naq)",
+      "Damara (ǂNukhoen) — groupe de Namibie centrale, ont adopte la langue khoekhoe",
+      "Haiǁom — anciens chasseurs-cueilleurs de la region d'Etosha (Namibie), langue : hgm",
+      "Gǀwi (Gwi) — San du Kalahari central (Botswana), langue : gwj",
+      "Gǁana (Gana) — San du Kalahari central (Botswana), langue : gnk",
+      "Naro — San du Kalahari occidental (Botswana-Namibie), langue : nhr",
+      "Kxoe (Khwe) — San du delta de l'Okavango et Caprivi (NAM, BWA, ZWE), langue : xuu",
+      "Shua — San de l'est du Botswana, cluster dialectal incluant Deti, Ts'ixa, llXaise",
+      "Tsoa — San incluant Cire Cire et Kua (Botswana oriental)",
+      "ǁAni (Ani) — San de l'Okavango septentrional",
+      "Kwadi (Kwepe) — groupe eteint d'Angola, langue : kwz (eteinte)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples Khoe-Kwadi constituent la plus grande famille linguistique non-bantoue d'Afrique australe. Selon les travaux de Tom Guldemann et d'autres linguistes, les ancetres des locuteurs Khoe-Kwadi ont penetre le Botswana actuel il y a environ 2 000 ans depuis le nord-est (direction du Sandawe de Tanzanie actuelle), apportant avec eux un mode de vie agro-pastoral acquis au contact des Bantous. Les Khoikhoi (Khoekhoe) resultent de groupes pastoraux qui continuerent vers le sud-ouest et s'enrichirent genetiquement d'un apport est-africain significant (migrations maternelles et paternelles depuis l'Afrique de l'Est il y a ~2 000 ans).",
+      "formationPeriod": "Formation des differents sous-groupes Khoe entre 2000 av. J.-C. et 1000 ap. J.-C. Les Khoekhoe atteignent le Cap (Afrique du Sud meridionale) vers 1000 ap. J.-C. Le proto-Khoe-Kwadi se serait forme en Afrique de l'Est, dans la region ou vivait le peuple Sandawe de Tanzanie, avant la migration vers le sud. Les branches Kalahari Khoe (Tshu-Khwe) et Khoekhoe divergerent lors de ces migrations vers l'Afrique australe.",
+      "migrationRoutes": [
+        "Migration depuis l'Afrique de l'Est vers le Botswana septentrional il y a ~2 000 ans (proto-Khoe-Kwadi)",
+        "Bifurcation : branche Khoekhoe vers le sud-ouest (Namibie puis Cap) ; branche Kalahari Khoe (Tshu-Khwe) etablie dans le Kalahari",
+        "Branche Kwadi continuant vers l'Angola sud-occidental (cote namibienne, embouchure du Coroca)",
+        "Expansion Nama au sud de la Namibie et au Cap-Nord (Afrique du Sud) a partir du 16e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Namibie : plaines centrales et meridionales (Nama, Damara), nord autour d'Etosha (Haiǁom)",
+        "Botswana : Kalahari central (Gǀwi, Gǁana), Kalahari occidental (Naro), delta de l'Okavango (Kxoe, ǁAni)",
+        "Afrique du Sud : Cap-Occidental et Cap-Septentrional (anciens peuples khoekhoe du Cap, Griqua, Nama du Richtersveld)",
+        "Angola : cote du Namibe, embouchure du Coroca (Kwadi/Kwepe, aujourd'hui disperses)"
+      ],
+      "unificationsOrDivisions": "La famille Khoe-Kwadi n'a jamais forme d'unite politique. Elle regroupe des peuples allant des pastoraux nomades (Khoekhoe) aux chasseurs-cueilleurs du Kalahari (Tshu-Khwe). La colonisation europeenne et les migrations bantoues ont fragmente les groupes Khoekhoe du Cap et mis en peril les groupes Kalahari. Plusieurs langues sont desormais eteintes (Kwadi, Korana, Xiri) ou menacees.",
+      "externalInfluences": "Contact avec les peuples bantous lors de l'expansion bantoue (dernier millenaire avant J.-C. au premier millenaire ap. J.-C.) : echanges linguistiques (clics adoptes par Xhosa, Zulu, Sotho), commerciaux et matrimoniaux. Contact avec les explorateurs et colons europeens a partir du 17e siecle au Cap (premiers conflits avec les Neerlandais de la VOC). Colonisation allemande en Namibie (1884-1915) : genocide des Herero et Nama (1904-1908). Apartheid en Afrique du Sud et SWA-Namibie. Independances postcoloniales.",
+      "majorHistoricalEvents": "Vers 2300 BP : acquisition du betail par des groupes Khoe (debut de la pastoralisation). Vers 1000 ap. J.-C. : arrivee des Khoekhoe dans la region du Cap. 1652 : premier contact des Khoekhoe du Cap avec les colons neerlandais (Jan van Riebeeck). 1713 et 1755 : epidemies de variole devastent les Khoekhoe du Cap. 1904-1908 : genocide Herero et Nama par les troupes coloniales allemandes en Namibie (80 000 a 100 000 morts). 1961 : creation du CKGR comme reserve pour les San. 2000 : creation du Kgalagadi Transfrontier Park (Botswana-Afrique du Sud). 2006 : jugement de la Haute Cour botswanaise reconnaissant les droits des San du CKGR."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Tres variable selon les groupes. Les Khoekhoe (Nama, Damara) avaient des structures de chefferies (kaptein) avec des conseils d'anciens pour les decisions collectives et les disputes. Les groupes San du Kalahari (Gǀwi, Gǁana, Naro) ont des structures egalitaires et acephales sans chef hereditaire, governant par consensus. Toutes les communautes Khoe utilisaient des assemblees communautaires analogues a la Kgotla (Batswana) ou tajmaat (Kabyle) pour les decisions collectives.",
+      "clanOrganization": "Variable : les Khoekhoe ont des clans (kapteynskap) a transmission patrilineaire, avec des totems animaux. Les San du Kalahari ont des bandes locales bilaterales sans clans formalises. Chez les Nama, les patriclans (||haos) regroupent plusieurs familles sous l'autorite d'un chef.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Chez les Khoekhoe : lignages patrilineaires determinant l'heritage du betail (principale richesse), les alliances matrimoniales et le statut. Chez les San du Kalahari : bilateralite des droits sur les territoires de chasse et les ressources. Le partage des ressources alimentaires (gibier, tubercules) est une norme sociale forte dans tous les groupes San.",
+      "religiousAuthority": "Guerisseurs-chamanes (medicine men, n/om-kxaosi chez les San) capables d'entrer en transe lors des danses de guerison. Chez les Khoekhoe : croyance en Tsui'Goab (divinite bienveillante) et //Gamab (divinite malefique). Les chamanes et tradipraticiens ont une autorite spirituelle transversale. Influence croissante du christianisme (lutherien, catholique, independant africain) dans l'ensemble des communautes Khoe depuis le 19e siecle."
+    },
+    "languages": {
+      "mainLanguage": "Famille Khoe-Kwadi : Khoekhoegowab (Nama/Damara), Haiǁom, Naro, Gǀwi, Gǁana, Kxoe, Shua, Tsoa, ǁAni — et Kwadi (eteinte)",
+      "isoCodes": [
+        "naq",
+        "hgm",
+        "nhr",
+        "gwj",
+        "gnk",
+        "xuu",
+        "shg",
+        "tyu",
+        "hnh",
+        "kwz"
+      ],
+      "dialects": [
+        "Khoekhoegowab : dialectes Nama, Damara, Sesfontein Damara (NAM, ZAF)",
+        "Haiǁom : dialecte central et ǂAakhoe septentrional (NAM)",
+        "Naro : plusieurs sous-dialectes (BWA, NAM)",
+        "Gǀwi et Gǁana : dialectes du Kalahari central (BWA)",
+        "Kxoe/Khwe : sous-dialectes ǁAni et Buga (BWA, NAM, ZWE)",
+        "Shua : cluster Deti, Ts'ixa, llXaise, Gana (est-Botswana)",
+        "Tsoa : Cire Cire, Kua (Botswana)"
+      ],
+      "vehicularRole": "Le Khoekhoegowab (Nama) est la seule langue Khoe avec statut officiel : langue nationale en Namibie, avec plus de 230 000 locuteurs. Les autres langues Khoe du Kalahari comptent de 1 000 a 50 000 locuteurs chacune et sont toutes menacees a des degres divers. Le Kwadi (kwz) est eteint depuis les annees 1960-1980. Le Setswana (Botswana), l'Afrikaans et l'Anglais (Namibie, Afrique du Sud) sont les langues dominantes dans les contacts modernes."
+    },
+    "culture": {
+      "majorRites": "La danse de transe (healing dance, |gaisa, |khoeba) est le rite central commun a tous les groupes San : nuit autour d'un feu, femmes chantant en cercle, guerisseurs dansant jusqu'a la transe (!kia), activation de l'energie n/um, guerison par imposition des mains. Chez les Khoekhoe : rites de passage lie au betail (imposition de l'omentum animal lors des transitions de statut), ceremonies de naissance (seclusion maternelle 7 jours), mariage impliquant transfert de betail, funerailles avec cessation du nomadisme temporaire. Rites agricoles et pastoraux : ceremonies de bonne saison, invocations pour la pluie.",
+      "symbols": "L'eland (Taurotragus oryx) est l'animal sacre par excellence pour les San : associe au n/um des guerisseurs et aux visions de transe dans les peintures rupestres. La lune est une divinite ou manifestation de l'etre supreme chez les Khoekhoe (Tsui'Goab). Le betail (bovins, moutons, chevres) est le symbole central de richesse et de statut social pour les Khoekhoe. Les pierres ostrich-shell beads (perles de coquilles d'autruche) sont des ornements rituels et matrimoniaux communs a tous les groupes.",
+      "artsAndMusic": "Art rupestre : les peintures et gravures rupestres du Kalahari et du Cap (site de Twyfelfontein, classe UNESCO en Namibie) sont attribuees aux ancetres san et representent les visions de transe, animaux et figures mi-humaines mi-animales. Musique : chants polyphoniques feminins lors des danses de guerison ; arc musical (//xom), flute nasale, hochets de cheville, pluriarc. Chez les Khoekhoe : chants narratifs historiques (//hunis) conservant la memoire des clans. Artisanat : poterie, vannerie, confection d'arcs et fleches, perles d'autruche (universelles), vetements en peau d'eland ou de springbok.",
+      "spiritualities": "Cosmologie commune aux groupes San : divinite superieure bienveillante (//Gauwa, Hishe, Nladima selon les groupes) et divinite trickster malefique (egalement nommee //Gauwa en milieu kalahari). Les esprits des ancetres (//gauwasi) sont actifs. Le n/um est l'energie spirituelle centrale, activee dans les danses de guerison. Chez les Khoekhoe : Tsui'Goab (createur et gardien de la sante) et //Gamab (cause de la maladie et de la mort). La lune occupe une place cosmologique centrale. Les Nama du Richtersveld preservent des pratiques de transhumance pastorales reconnues patrimoine UNESCO. Le christianisme est adopte par la majorite des Khoekhoe depuis le 19e siecle. Des muslmans Nama constituent une proportion notable des musulmans de Namibie."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Khoekhoe du Cap avaient des chefferies importantes : les Cochoqua, Chainouqua, Hessequa, Guriqua et autres clans controlaient les paturages du Cap au 17e siecle. La Namibie coloniale connut les grandes chefferies Nama (Witbooi, Afrikaner, Berseba). Les Nama du Namaqualand resisterent a la colonisation jusqu'au genocide de 1904-1908. Les peuples San du Kalahari n'ont pas forme de royaumes centralises, maintenant des structures acephales autonomes.",
+      "relationsWithNeighbors": "Relations complexes et multisiecoulaires avec les peuples bantous (echanges commerciaux, conflits pour les paturages, absorption de populations San dans les groupes Khoekhoe). Relations avec les colons europeens : le premier contact VOC-Khoekhoe en 1652 initia un cycle de conflits, epidemies et depossession fonciere. En Namibie, les peuples Khoe (Nama, Damara) ont conclu des alliances et des conflits avec les Herero, les Ovambo et les colons allemands.",
+      "conflictsOrAlliances": "1713 et 1755 : epidemies de variole deteiment les Khoekhoe du Cap (perte de 90% de la population dans certaines regions). 1904-1908 : genocide Herero et Nama en Namibie allemande (80 000 a 100 000 morts, dont le chef Nama Hendrik Witbooi). San du Kalahari : evictions du CKGR par le Botswana (1997, 2002) ; victoire judiciaire partielle en 2006. Lutte des Haiǁom pour leurs droits fonciers dans l'ENP (action en justice de 2015, toujours en cours). Reconnaissance de la culture Khoe par l'UNESCO (Richtersveld).",
+      "diaspora": "Nombreux Nama et Griqua disperses en Afrique du Sud et en Namibie depuis les guerres coloniales. Les descendants des Khoekhoe du Cap sont souvent integres dans la population dite 'Coloured' d'Afrique du Sud. Les San urbains migrent vers les villes de Namibie, Botswana et Zimbabwe. La diaspora Kwadi (Angola) a pratiquement disparu apres l'extinction de la langue dans les annees 1960."
+    },
+    "demography": {
+      "totalPopulation": 430000,
+      "referenceYear": 2025,
+      "source": "Estimation agregee : Khoekhoegowab/Nama Namibie (~167 000 locuteurs Ethnologue) + Haiǁom (~55 000) + Gǀwi-Gǁana-Naro-Kxoe-Shua-Tsoa Botswana (~66 000 selon Britannica) + Nama Afrique du Sud (~100 000) + autres groupes San Khoe. Sources : Ethnologue SIL International 2024 ; Britannica Khoisan languages ; Joshua Project ; Statistics Namibia 2023.",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 280000,
+          "note": "Nama, Damara, Haiǁom, Naro (NAM-BWA), Kxoe — principales concentrations dans les regions du sud, centre et nord de la Namibie"
+        },
+        {
+          "country": "BWA",
+          "population": 100000,
+          "note": "Gǀwi, Gǁana, Naro, Kxoe, Shua, Tsoa, ǁAni — Kalahari central, occidental et delta de l'Okavango"
+        },
+        {
+          "country": "ZAF",
+          "population": 40000,
+          "note": "Nama du Richtersveld (Cap-Nord), descendants Griqua, Khoekhoe integres dans la population Coloured"
+        },
+        {
+          "country": "ZWE",
+          "population": 5000,
+          "note": "Kxoe (Khwe) de la region du Caprivi/Okavango"
+        },
+        {
+          "country": "AGO",
+          "population": 500,
+          "note": "Descendants Kwepe de la region du Namibe/Coroca, langue Kwadi eteinte, partiellement assimiles aux Bantous Kuvale"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Khoe languages. https://en.wikipedia.org/wiki/Khoe_languages",
+      "Wikipedia EN — Khoekhoe people. https://en.wikipedia.org/wiki/Khoekhoe",
+      "Wikipedia EN — Khoisan languages. https://en.wikipedia.org/wiki/Khoisan_languages",
+      "Ethnologue SIL International — Khoe-Kwadi language family. https://www.ethnologue.com/",
+      "Britannica — Khoisan languages, Classification. https://www.britannica.com/topic/Khoisan-languages/Classification-of-the-Khoisan-languages",
+      "EBSCO Research Starters — Khoekhoen. https://www.ebsco.com/research-starters/history/khoekhoen",
+      "South African History Online — The Khoisan. https://sahistory.org.za/article/khoisan",
+      "BMC Biology — Male-biased migration from East Africa introduced pastoralism into southern Africa. https://pmc.ncbi.nlm.nih.gov/articles/PMC8650298/",
+      "Google Arts & Culture — How we heal: The trance dance of San. https://artsandculture.google.com/story/how-we-heal-the-trance-dance-of-san-project-fuel/",
+      "Joshua Project — Botswana people groups. https://joshuaproject.net/countries/bc",
+      "Wikipedia EN — San peoples. https://en.wikipedia.org/wiki/San_peoples"
+    ]
+  }
+}

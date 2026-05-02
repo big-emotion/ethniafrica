@@ -1,0 +1,95 @@
+{
+  "id": "PPL_ANGOLAR",
+  "nameMain": "Angolar",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["STP"],
+  "content": {
+    "appellations": {
+      "mainName": "Angolar",
+      "selfAppellation": "N'golá",
+      "exonyms": [
+        "Angolares (portugais, pluriel officiel)",
+        "Angolar (français et anglais)",
+        "Ngola (terme endogène alternatif)"
+      ],
+      "originOfExonyms": "Le terme Angolar (Angolares en portugais) désigne les descendants d'esclaves angolais qui, selon la tradition, survécurent au naufrage d'un navire négrier au large des côtes sud de São Tomé vers 1540 et fondèrent une communauté de marrons dans les forêts intérieures de l'île. L'ethnonyme renvoie directement à l'Angola, région d'origine de la majorité de leurs ancêtres.",
+      "whyProblematic": "L'appellation Angolares est parfois utilisée de manière générique pour désigner tous les créolophones de São Tomé, alors qu'elle désigne spécifiquement cette communauté distincte de descendants de marrons. Les Angolares souffrent historiquement d'une stigmatisation sociale, étant perçus comme le groupe au bas de l'échelle sociale de l'île selon des études ethnographiques récentes.",
+      "contemporaryUsage": "Le terme Angolar est l'ethnonyme standard utilisé en portugais, français et anglais. Les locuteurs se désignent par N'golá dans leur propre langue. La communauté est concentrée dans le sud de l'île de São Tomé, particulièrement dans les villes côtières de Santana, Porto Alegre et Santa Cruz.",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Créole afro-portugais de basse Guinée (à substrat kimbundu-kikongo)",
+      "historicalRegion": "Côte sud et forêts intérieures de l'île de São Tomé (São Tomé-et-Príncipe)",
+      "currentCountries": ["STP"]
+    },
+    "ethnicities": [
+      "Angolares de Santana (communauté principale, sud de l'île)",
+      "Angolares de Porto Alegre (côte sud-est)",
+      "Angolares de Santa Cruz (côte est)"
+    ],
+    "origins": {
+      "ancientOrigins": "Deux hypothèses principales débattues par les historiens : la première, ancrée dans le folklore angolar, raconte que des esclaves angolais (principalement Kimbundu et Kikongo) survécurent au naufrage d'un navire négrier au large des îlots rocheux au sud de São Tomé vers 1540 et s'établirent comme pêcheurs libres sur la côte. La seconde hypothèse, plus largement acceptée par les historiens, soutient que les Angolares sont les descendants d'une communauté de marrons formée par des esclaves fugitifs des plantations portugaises ayant trouvé refuge dans les forêts montagneuses de l'île à partir de la fin du XVe siècle. Les analyses génétiques (2021) confirment qu'ils sont un isolat admixte, fortement différencié génétiquement des autres groupes de l'île, avec une forte contribution bantoue d'Angola.",
+      "formationPeriod": "Formation de la communauté marron entre la fin du XVe siècle et le milieu du XVIe siècle. Une grande révolte d'esclaves en 1595 est documentée et pourrait être liée à la consolidation de la communauté angolar. La communauté vécut dans l'isolement dans les forêts du sud de l'île pendant plusieurs siècles avant d'être progressivement intégrée à la société santoméenne à l'époque coloniale tardive.",
+      "migrationRoutes": [
+        "Angola (régions de Kimbundu et Kikongo) vers São Tomé via la traite négrière portugaise, XVe-XVIe siècles",
+        "Fuite des plantations côtières vers les forêts intérieures et montagneuses du sud de l'île"
+      ],
+      "historicalSettlementZones": [
+        "Forêts intérieures du sud de São Tomé (refuge marron historique)",
+        "Côte sud de São Tomé (Santana, Porto Alegre, Santa Cruz) — établissements de pêcheurs",
+        "Îlots rocheux (Ilhéus das Rolas et environs) mentionnés dans les traditions orales"
+      ],
+      "unificationsOrDivisions": "La communauté angolar est restée relativement homogène du fait de son isolement historique, ce qui a favorisé un fort degré d'endogamie et une différenciation génétique notable par rapport aux autres groupes de l'île (Forros, Mestiços). Les Angolares étaient traditionnellement divisés en communautés de pêcheurs côtiers distinctes par village.",
+      "externalInfluences": "Contact progressif avec la société coloniale portugaise à partir du XVIIIe-XIXe siècles. Influence catholique imposée lors de l'intégration coloniale. Le portugais est devenu la langue de l'administration et de l'éducation. Les Angolares ont maintenu leur langue distincte (N'golá) bien que sous pression. Influence des Forros, groupe dominant de l'île, qui constitue la référence sociale valorisée."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation traditionnelle autour de communautés de pêcheurs avec des chefs (régulos ou mores) de village gérant les affaires locales et les droits de pêche. La pêche est l'activité économique centrale et structurante de la société angolar. Après l'indépendance (1975), intégration dans les structures politiques de la République démocratique de São Tomé-et-Príncipe.",
+      "clanOrganization": "Structure familiale étendue organisée autour de la pêche. Les droits de pêche sont transmis de façon patrilinéaire. La forte endogamie historique a créé des réseaux de parenté très resserrés dans les villages angolars.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilinéaires transmettant les droits de pêche et l'identité angolar. L'endogamie marquée, documentée génétiquement, a maintenu une forte cohésion communautaire et une identité distincte malgré la pression sociale de la société santoméenne dominante.",
+      "religiousAuthority": "Catholicisme romain imposé lors de l'intégration coloniale, qui est la religion officielle de São Tomé. Coexistence de croyances traditionnelles africaines (d'origine bantoue) maintenues dans certaines pratiques rituelles. Syncrétisme afro-catholique observable dans les cérémonies communautaires."
+    },
+    "languages": {
+      "mainLanguage": "Angolar (N'golá)",
+      "isoCodes": ["aoa"],
+      "dialects": [
+        "N'golá de Santana (variété principale)",
+        "N'golá de Porto Alegre",
+        "N'golá de Santa Cruz"
+      ],
+      "vehicularRole": "L'angolar est une langue en danger (Ethnologue 2022 : entre 8 000 locuteurs selon la Wikipedia, 6,6% de la population selon les données démographiques de São Tomé). Le portugais est utilisé dans l'éducation, l'administration et les médias. Le santomense (Forro) est la langue créole dominante de l'île. L'angolar se distingue des autres créoles de l'île par sa forte composante lexicale kimbundu (jusqu'à 20% du vocabulaire d'origine africaine), héritage de ses origines angolaises. La transmission intergénérationnelle est incertaine selon certaines études."
+    },
+    "culture": {
+      "majorRites": "Rites catholiques du cycle de vie : baptême, mariage, funérailles. Cérémonies communautaires de pêcheurs : bénédiction des pirogues et des filets avant la saison de pêche. Fêtes patronales catholiques avec pratiques musicales et rituelles spécifiques aux Angolares. Rituels liés aux ancêtres conservés dans la tradition orale et les cérémonies nocturnes. Célébrations communautaires lors des grandes prises de poisson.",
+      "symbols": "La pirogue de pêche est le symbole central de l'identité angolar, représentant à la fois le mode de vie et l'héritage des ancêtres marrons pêcheurs. La forêt intérieure du sud de São Tomé est un symbole de l'histoire de résistance et de liberté. Le terme N'golá (nom de la langue et de l'identité) renvoie directement à Angola, ancêtre géographique du groupe.",
+      "artsAndMusic": "Musique : danço-congo et ússua, danses rituelles et festives propres aux Angolares, mêlant percussions bantoues et éléments catholiques. La danse danço-congo reconstitue symboliquement les conflits historiques entre esclaves et colonisateurs. Tradition de contes oraux en N'golá, transmettant l'histoire de la fondation par naufrage ou marronnage. Artisanat de pêche : fabrication de pirogues, de filets et d'instruments de pêche. Sculpture sur bois et tissage. Poésie orale en N'golá lors des fêtes communautaires.",
+      "spiritualities": "Catholicisme romain, religion officielle pratiquée par la communauté. Syncrétisme afro-catholique : croyances en esprits (irene) et en ancêtres présents dans certaines pratiques rituelles nocturnes, héritage des traditions bantoues kimbundu et kikongo. Culte des ancêtres fondateurs de la communauté marron, transmis par la tradition orale. Certains rituels de guérison et de protection font appel à des praticiens traditionnels."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume formel mais une communauté autonome de marrons (quilombo) maintenant son indépendance de facto pendant plusieurs siècles dans les forêts du sud de São Tomé. Cette résistance prolongée face au pouvoir colonial portugais est analogue à celle des quilombos d'Amérique latine et constitue l'une des plus anciennes sociétés de marrons de l'histoire de l'esclavage atlantique.",
+      "relationsWithNeighbors": "Relations historiquement tendues avec les Forros (descendants d'esclaves affranchis, groupe dominant de l'île) qui marginalisaient les Angolares socialement. Relations d'échange économique avec les Mestiços et les Forros pour la vente du poisson. Relations dépendantes vis-à-vis du pouvoir colonial portugais après l'intégration au XIXe siècle. Depuis l'indépendance (1975), intégration progressive dans la société nationale santoméenne.",
+      "conflictsOrAlliances": "Résistance prolongée à la domination coloniale portugaise dans les forêts du sud de l'île, du XVIe au XIXe siècle. Grande révolte d'esclaves documentée en 1595, possiblement liée à la communauté angolar en formation. Incorporation forcée dans la société coloniale à l'époque moderne. Marginalisation sociale post-coloniale, les Angolares occupant le bas de la hiérarchie sociale de l'île selon les études de 2022.",
+      "diaspora": "Pas de diaspora significative documentée hors de São Tomé. Quelques migrations internes vers la capitale São Tomé. La communauté reste essentiellement localisée dans les villages de pêche du sud de l'île."
+    },
+    "demography": {
+      "totalPopulation": 16000,
+      "referenceYear": 2025,
+      "source": "Données démographiques de São Tomé-et-Príncipe : Angolares représentent 6,6% de la population totale (Wikipedia, Demographics of Sao Tome and Principe). Population totale de São Tomé en 2025 estimée à 238 684 (saotomeexpert.pt 2025). 6,6% = environ 15 750, arrondi à 16 000. Ethnologue (aoa) : 8 000 locuteurs de l'angolar (2019).",
+      "distributionByCountry": [
+        {
+          "country": "STP",
+          "population": 16000,
+          "note": "Concentrés dans les villages de pêche du sud de l'île de São Tomé : Santana, Porto Alegre, Santa Cruz. Population estimée à 6,6% de 238 684 habitants (2025)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Angolar Creole. https://en.wikipedia.org/wiki/Angolar_Creole",
+      "Wikipedia EN — Demographics of Sao Tome and Principe. https://en.wikipedia.org/wiki/Demographics_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+      "Wikipedia EN — Sao Tome and Principe. https://en.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+      "SaoTomeExpert — The Creole Population of Sao Tome and Principe (2025). https://www.saotomeexpert.pt/en/sao-tome-and-principe-creole-population/",
+      "PMC/NIH — The Genes of Freedom: Genome-Wide Insights into Marronage (Bouyer et al., 2021). https://pmc.ncbi.nlm.nih.gov/articles/PMC8229774/",
+      "John Benjamins — The vitality of Angolar (2022). https://www.jbe-platform.com/content/journals/10.1075/jpcl.00089.bou",
+      "Gale Academic — Linguistic, historical and ethnographic evidence on Angolar. https://go.gale.com/ps/i.do?id=GALE%7CA472005176",
+      "Ethnologue — Angolar language (aoa). https://www.ethnologue.com/language/aoa/"
+    ]
+  }
+}

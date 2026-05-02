@@ -1,0 +1,111 @@
+{
+  "id": "PPL_HERERO",
+  "nameMain": "Herero",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["NAM", "BWA", "AGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Herero",
+      "selfAppellation": "Ovaherero",
+      "exonyms": ["Herero (terme colonial européen)"],
+      "originOfExonyms": "Le terme Herero est d'origine incertaine, parfois associé à l'otjiherero signifiant possesseur de bétail. Les Européens ont adopté ce terme au XIXe siècle pour désigner ce peuple pastoraliste de Namibie.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Ovaherero est l'appellation endonymique standard. Herero reste en usage courant dans les contextes anglophones et internationaux.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Zone R (groupe R30)",
+      "historicalRegion": "Hereroland (Ehi rOvaherero) — plateaux centraux de Namibie, Kaokoveld, nord-ouest de l'Angola, est du Botswana",
+      "currentCountries": ["NAM", "BWA", "AGO"]
+    },
+    "ethnicities": [
+      "Ovaherero proprement dits (Herero du centre de la Namibie)",
+      "Ovambanderu (Mbanderu, Herero du sud-est)",
+      "OvaHimba (Herero du Kaokoveld)",
+      "OvaTjimba (Tjimba, chasseurs-cueilleurs parlant otjiherero)",
+      "OvaKuvale (Kuvale, Angola)",
+      "OvaZemba (Zemba, Angola)",
+      "OvaHakawona (Angola)",
+      "OvaKwandu (Kwandu)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ovaherero sont un peuple bantou originaire d'Afrique de l'Est. Ils ont acquis leur mode de vie pastoral et leurs traditions d'élevage après contact avec des peuples coushitiques en Afrique orientale, d'où ils ont hérité la pratique de la traite des vaches. Ils ont migré vers le sud-ouest africain au cours du XVe-XVIe siècle, s'établissant dans les plateaux centraux de l'actuelle Namibie.",
+      "formationPeriod": "L'identité ovaherero distincte s'est consolidée entre le XVe et le XIXe siècle. L'unification politique sous un chef suprême (paramount chief) fut réalisée le 15 juin 1863 à Otjizingue (Otjimbingwe), quand Maharero ka Tjamuaha fut élu commandant en chef de tous les clans herero face à la menace Nama.",
+      "migrationRoutes": [
+        "Migration depuis l'Afrique de l'Est vers le sud-ouest africain, XVe-XVIe siècle",
+        "Établissement dans les plateaux centraux de Namibie (Hereroland)",
+        "Extension des groupes pastoraux vers le Kaokoveld et l'Angola (OvaHimba)",
+        "Déplacements forcés vers le Botswana et l'Afrique du Sud après le génocide de 1904-1908"
+      ],
+      "historicalSettlementZones": [
+        "Plateaux centraux de Namibie (Hereroland)",
+        "Kaokoveld, nord-ouest de Namibie (OvaHimba)",
+        "Province de Kunene, Angola (OvaKuvale, OvaZemba)",
+        "Est du Botswana (descendants des survivants du génocide)"
+      ],
+      "unificationsOrDivisions": "Les Herero sont organisés en maisons royales distinctes, unifiées en 1863 sous un chef suprême face aux raids Nama. Après le génocide de 1904-1908 (premier génocide du XXe siècle), la population fut réduite d'environ 80 000 à 15 000 personnes. La direction est aujourd'hui distribuée entre plusieurs maisons royales : Autorité traditionnelle Ovaherero, Maharero Royal Traditional Authority, Zeraeua Royal Traditional Authority à Omaruru, Ovambanderu Royal Traditional Authority, Onguatjindu Royal Traditional Authority à Okakarara.",
+      "externalInfluences": "Contacts anciens avec les peuples Khoisan (Nama). Guerres contre les Nama aux XVIIIe-XIXe siècles. Arrivée des missionnaires allemands et influence du protestantisme luthérien. Colonisation allemande (1884) aboutissant au génocide de 1904-1908. Colonisation sud-africaine (1915-1990). Indépendance de la Namibie (1990).",
+      "majorHistoricalEvents": "En 1863, unification des clans sous Maharero ka Tjamuaha contre les Nama. En 1904, le chef Samuel Maharero déclenche une rébellion contre les colons allemands. La bataille de Waterberg (11 août 1904) aboutit à une défaite et à une fuite dans le désert d'Omaheke. Le général Lothar von Trotha émet l'Vernichtungsbefehl (ordre d'extermination). Entre 1904 et 1908, 40 000 à 80 000 Ovaherero (environ 80 % de la population) sont exterminés. L'Allemagne a officiellement reconnu le génocide en mai 2021 et promis 1,1 milliard d'euros de réparations."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en clans patrilinéaires dirigés par des chefs de maison royale (royal house). Depuis 1863, un chef suprême (paramount chief) est élu pour représenter l'ensemble des Ovaherero, bien que cette institution soit contestée au regard de la Traditional Authorities Act de 2000. Le pouvoir traditionnel repose sur des conseils d'anciens au sein de chaque clan.",
+      "clanOrganization": "Double système de filiation : chaque individu appartient à la fois à un clan matrilinéaire (eanda, pluriel omaanda) transmettant l'identité et à un clan patrilinéaire (oruzo, pluriel otuzo) transmettant la direction clanique. Ce système de double descente est caractéristique des Ovaherero et les distingue de la plupart des autres peuples bantous.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilinéaires (omaanda) déterminent l'appartenance sociale et l'identité. Les lignages patrilinéaires (otuzo) transmettent le leadership et l'autorité clanique. Le feu sacré (okuruuo) est lié aux deux lignages et constitue le lien avec les ancêtres.",
+      "religiousAuthority": "Les gardiens du feu sacré (okuruuo) jouent un rôle religieux central comme intermédiaires entre les vivants et les ancêtres. La croyance en Njambi (Ndjambi Karunga), être suprême céleste bienveillant, coexiste avec un syncrétisme chrétien (luthéranisme notamment). Les chefs religieux traditionnels et les pasteurs chrétiens partagent l'autorité spirituelle."
+    },
+    "languages": {
+      "mainLanguage": "Otjiherero",
+      "isoCodes": ["her"],
+      "dialects": [
+        "Otjiherero standard (Namibie centrale, médias et écoles)",
+        "Otjihimba (dialecte des OvaHimba, Kaokoveld)",
+        "Oluthimba ou Otjizemba (dialecte le plus courant en Angola)",
+        "Otjikuvale (OvaKuvale, Angola)",
+        "Otjimbanderu (OvaMbanderu)"
+      ],
+      "vehicularRole": "L'otjiherero est la langue maternelle de l'ensemble des groupes Ovaherero. Il est enseigné dans les écoles namibiennes et utilisé dans les médias publics namibiens. L'anglais (Namibie), le tswana (Botswana) et le portugais (Angola) sont utilisés dans l'administration et l'éducation. Le kuvale, le zemba et le hakaona sont parfois classifiés comme langues distinctes."
+    },
+    "culture": {
+      "majorRites": "Le feu sacré okuruuo est au coeur de la vie rituelle : il brule en permanence dans chaque foyer comme lien entre les vivants et les ancêtres, intermédiaire vers Njambi. Il ne doit jamais s'éteindre. Les cérémonies d'inhumation incluent des sacrifices de bétail et des festivités funèbres. Les mariages traditionnels impliquent des transactions de bétail et des célébrations communautaires. L'Herero Day est une commémoration annuelle des victimes du génocide de 1904-1908, célébrée à Okahandja avec défilés en tenue traditionnelle. Des rites de passage marquent la naissance, la puberté et le mariage.",
+      "symbols": "Le bétail (bovins) est le symbole central de la richesse et de l'identité herero. La robe traditionnelle féminine ohorokova (robe victorienne adaptée, longue, colorée, à large jupe) est devenue le symbole culturel le plus reconnaissable des Herero : adoptée des missionnaires allemands au XIXe siècle, elle fut réappropriée comme affirmation identitaire. La coiffe otjikaiva en forme de cornes de vache symbolise le respect pour le bétail. Les hommes portent des uniformes militaires lors des cérémonies, en hommage aux guerriers tombés lors de la résistance de 1904.",
+      "artsAndMusic": "La tradition orale (poésie épique, récits ancestraux) est centrale. La musique traditionnelle inclut chants collectifs, percussions et instruments à vent. L'artisanat comprend la confection de bijoux (cuivre, os), d'armes et d'objets en cuir. La mode herero contemporaine, notamment les robes ohorokova, a connu un renouveau avec des créateurs comme McBright Kavari, plusieurs fois primé. La danse est présente lors des cérémonies de mariage et des commémorations.",
+      "spiritualities": "La religion traditionnelle ovaherero est centrée sur Njambi Karunga (ou Ndjambi), être suprême céleste créateur, bienveillant et omniscient. Le culte des ancêtres est primordial : les ancêtres défunts intercèdent entre les vivants et Njambi via le feu sacré okuruuo. Le syncrétisme avec le christianisme (principalement luthérien et catholique) est très répandu depuis la colonisation. Les guérisseurs traditionnels (medicine men) conservent un rôle dans certaines communautés, notamment OvaHimba."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Ovaherero ne formaient pas d'État centralisé avant le XIXe siècle, mais s'organisaient en chefferies claniques. L'unification politique eut lieu en 1863 sous Maharero ka Tjamuaha, premier chef suprême (paramount chief). Les chefs suprêmes successifs furent : Samuel Maharero (1890-1917, leader de la rébellion de 1904), Hosea Kutako (1917-1970, résistant à l'apartheid et pionnier de l'indépendance namibienne), Clemens Kapuuo (1970-1978), Kuaima Riruako (1978-2014, membre du Parlement namibien), Vekuii Rukoro (2014-2021).",
+      "relationsWithNeighbors": "Relations conflictuelles avec les Nama (Khoïkhoï) tout au long du XIXe siècle, marquées par des guerres pour les pâturages et l'eau. Relations commerciales et diplomatiques avec les marchands européens à partir des années 1840. Contacts avec les Ovambo au nord, avec qui coexistaient des relations de voisinage. Depuis l'indépendance (1990), les Ovaherero participent à la vie politique namibienne.",
+      "conflictsOrAlliances": "Guerres contre les Nama au XIXe siècle (1850-1870). Alliance circonstancielle avec les Allemands contre les Nama, avant que les conditions coloniales ne rendent inévitable l'affrontement. Rébellion herero de 1904-1907 contre l'Empire allemand. Génocide de 1904-1908 : extermination de 75-80 % de la population. Résistance passive sous la colonisation sud-africaine. Participation à la lutte pour l'indépendance namibienne (SWAPO). Depuis 2015, contentieux juridique international demandant réparation à l'Allemagne.",
+      "diaspora": "Les descendants des survivants du génocide de 1904-1908 constituent des communautés au Botswana (environ 20 000 personnes, principalement les Mbanderu) et en Afrique du Sud. Les Ovaherero de Namibie sont concentrés dans les régions d'Otjozondjupa, Kunene, Omaheke et Khomas. Une petite diaspora existe dans les pays occidentaux (Allemagne, Royaume-Uni, États-Unis)."
+    },
+    "demography": {
+      "totalPopulation": 250000,
+      "referenceYear": 2025,
+      "source": "Recensement namibien 2023 (178 987 Ovaherero en Namibie), estimations pour le Botswana et l'Angola (Joshua Project, SIL Ethnologue 2024, CIA World Factbook)",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 200000,
+          "note": "Regions d'Otjozondjupa, Kunene, Omaheke, Khomas; recensement 2023 : 178 987"
+        },
+        {
+          "country": "BWA",
+          "population": 35000,
+          "note": "Principalement les OvaMbanderu, est du Botswana"
+        },
+        {
+          "country": "AGO",
+          "population": 15000,
+          "note": "OvaKuvale, OvaZemba, OvaHakawona dans les provinces du sud de l'Angola"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Herero people. https://en.wikipedia.org/wiki/Herero_people",
+      "Wikipedia EN — Herero and Nama genocide. https://en.wikipedia.org/wiki/Herero_and_Nama_genocide",
+      "SIL Ethnologue — Herero (her). https://www.ethnologue.com/language/her/",
+      "African Budget Safaris — The Herero people of Namibia. https://www.africanbudgetsafaris.com/blog/namibia-people-culture-the-herero/",
+      "Living Culture Foundation Namibia — Ethnology of the Ovahimba. https://www.lcfn.info/ovahimba/information/ethnology",
+      "BBC News — Germany officially recognises colonial-era Namibia genocide (2021). https://www.bbc.com/news/world-europe-57279008",
+      "Immigration and Refugee Board Canada — Herero minority in Namibia (2012). https://www.irb-cisr.gc.ca/en/country-information/rir/Pages/index.aspx?doc=454132"
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "id": "PPL_KATIA",
+  "nameMain": "Katia",
+  "languageFamilyId": "FLG_TUU",
+  "currentCountries": ["BWA", "ZAF"],
+  "content": {
+    "appellations": {
+      "mainName": "Katia",
+      "selfAppellation": "Katia",
+      "exonyms": ["Xaitia", "Khatia", "Kattea", "Vaalpens", "ǀKusi", "ǀEikusi"],
+      "originOfExonyms": "Les multiples noms de ce groupe reflètent les transcriptions variées de linguistes du 19e et du début du 20e siecle. Dorothea Bleek a catalogué ce dialecte sous le code S4a dans ses travaux de terrain. Westphal (1971) l'a classé comme dialecte Nǀamani, tandis que Köhler le rattachait à la branche ǃKwi. Le nom Vaalpens (afrikaans : ventres gris) est une désignation péjorative attribuée par les colons boers. ǀKusi et ǀEikusi sont des variantes du même terme en notation phonétique.",
+      "whyProblematic": "La dénomination est problématique pour plusieurs raisons. D'abord, le statut de ce groupe comme langue distincte ou dialecte d'une autre variété Tuu est débattu dans la littérature : Westphal le classe parmi les dialectes Nǀamani, alors que Köhler l'inclut dans le groupe ǃKwi. Ensuite, les transcriptions multiples (Xaitia, Khatia, Katia, Kattea) témoignent d'une collecte documentaire limitée et irrégulière. Enfin, la langue est aujourd'hui considérée éteinte, ce qui rend impossible toute vérification auprès de locuteurs natifs.",
+      "contemporaryUsage": "La langue katia est éteinte. Les descendants des locuteurs originels de la region du Nossop (Botswana) ont adopté le tswana, l'afrikaans ou l'anglais comme langues courantes. Seules quelques rares traces lexicales et phonologiques subsistent dans les notes de Dorothea Bleek et dans les travaux de Westphal.",
+      "linguisticFamily": "FLG_TUU",
+      "ethnoLinguisticGroup": "Tuu, branche ǃKwi (ǃUi) ou Taa selon les classifications",
+      "historicalRegion": "Vallée du Nossop, désert du Kalahari méridional (Botswana/Afrique du Sud)",
+      "currentCountries": ["BWA", "ZAF"]
+    },
+    "ethnicities": [
+      "Locuteurs de la vallée du Nossop (S4a, selon Bleek)",
+      "Vaalpens (groupe désigné par les colons boers dans la région du Nossop)",
+      "Groupes apparentés aux Nǀamani selon Westphal (1971)"
+    ],
+    "origins": {
+      "ancientOrigins": "Le groupe Katia fait partie des populations San les plus anciennes du sud de l'Afrique, dont la présence dans la région du Kalahari méridional et de la vallée du Nossop remonte à plusieurs dizaines de millénaires. Les peuples San, dont descendent les locuteurs katia, sont considérés parmi les populations humaines génétiquement les plus anciennes, avec des lignages mitochondriaux pouvant remonter à 100 000 à 200 000 ans. L'ancêtre commun des langues Tuu (Proto-Tuu) était vraisemblablement déjà parlé dans la région du Kalahari, comme en témoigne le terme reconstructible pour l'oryx (gemsbok) : *hai.",
+      "formationPeriod": "Le groupe Katia s'est constitué comme communauté linguistique distincte dans la région du Nossop, au sud-est du Botswana et aux confins de l'Afrique du Sud. Sa documentation est limitée aux collectes de Dorothea Bleek au début du 20e siecle. L'extinction du groupe comme communauté linguistique active s'est probablement produite dans la première moitié du 20e siecle, sous l'effet conjugué de la colonisation, de la dispossession foncière et de la marginalisation des peuples San.",
+      "migrationRoutes": [
+        "Populations autochtones du Kalahari méridional, sans migration fondatrice documentée",
+        "Dispersion progressive vers les villes et les fermes sous la pression coloniale et post-coloniale"
+      ],
+      "historicalSettlementZones": [
+        "Vallée du Nossop (zone S4a, désert du Kalahari méridional, Botswana)",
+        "Régions frontalières entre le Botswana et l'Afrique du Sud le long du fleuve Nossop"
+      ],
+      "unificationsOrDivisions": "Le groupe Katia était organisé en petites bandes de chasseurs-cueilleurs nomades, sans hiérarchie politique formelle. Sa relation avec les groupes apparentés Nǀamani et avec les variétés ǃKwi n'est pas entièrement éclaircie dans la littérature : certains linguistes le classent comme dialecte Nǀamani, d'autres comme une variété ǃKwi distincte.",
+      "externalInfluences": "Le groupe Katia a subi des pressions croissantes de la part des populations tswana (Batswana) voisines à partir du 19e siecle. La colonisation britannique puis l'administration sud-africaine du Bechuanaland ont accéléré la marginalisation des San de la région. Les politiques de sédentarisation forcée et d'éviction des terres ancestrales ont conduit à la dissolution des communautés linguistiques. L'apartheid en Afrique du Sud et les politiques botswanaises de déplacement des San (notamment vers les réserves) ont achevé le processus.",
+      "majorHistoricalEvents": "La documentation linguistique de Dorothea Bleek au début du 20e siecle constitue la principale trace historique de ce groupe. Comme les autres peuples San de la région, les Katia ont subi des dépossessions foncières massives lors de la colonisation britannique du Bechuanaland (protectorat 1885-1966). Les Bushman hunting (chasses aux San) par des commandos boers au 19e siecle ont décimé de nombreux groupes San dans les régions frontalières. La déclaration d'extinction linguistique de nombreuses variétés Tuu au cours du 20e siecle a scellé la disparition du katia comme langue vivante."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation égalitaire sans chef permanent ni hiérarchie formelle, typique des sociétés San chasseurs-cueilleurs. Les décisions étaient prises par consensus au sein de la bande (groupe de 10 à 30 personnes). Les anciens et les guérisseurs-chamanes (n/om-kxaosi) jouaient un rôle consultatif reconnu. Aucune institution politique supra-locale documentée.",
+      "clanOrganization": "Structure basée sur des groupes de parenté bilatérale et des liens de réciprocité (hxaro). Partage obligatoire des ressources alimentaires au sein du groupe. Organisation en bandes semi-nomades suivant les cycles saisonniers de ressources en eau et en gibier dans la vallée du Nossop.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages bilatéraux sans primauté de la patrilinéarité ou de la matrilinéarité. Les droits d'usage des territoires de chasse et de cueillette étaient transmis par les deux lignes parentales. L'appartenance à un groupe était définie par les liens de parenté, d'affinité et de réciprocité plutôt que par une généalogie stricte.",
+      "religiousAuthority": "Autorité des guérisseurs-chamanes (n/om-kxaosi), dont les pouvoirs thérapeutiques étaient activés lors des danses de transe (healing dances). Ces spécialistes rituels jouaient un rôle central dans la médiation avec les puissances spirituelles et dans la cohésion sociale du groupe."
+    },
+    "languages": {
+      "mainLanguage": "Katia (variante Tuu, dialecte S4a selon Bleek)",
+      "isoCodes": [],
+      "dialects": [
+        "Xaitia / Khatia — transcription principale dans la littérature linguistique",
+        "Vaalpens — variante associée aux dénominations coloniales"
+      ],
+      "vehicularRole": "Le katia est éteint. Aucun locuteur natif n'est documenté au 21e siecle. Avant son extinction, il était parlé exclusivement dans la région du Nossop. Le groupe a progressivement adopté le tswana et l'afrikaans comme langues principales. La langue n'a pas de code ISO 639-3 attribué. Elle appartient à la famille Tuu, dont la seule variété encore vivante est le taa (ǃXóõ, ISO nmn), avec environ 2 500 à 3 000 locuteurs."
+    },
+    "culture": {
+      "majorRites": "Comme l'ensemble des peuples San, les Katia pratiquaient la danse de transe (healing dance), rituel central de guérison et de communication avec le monde spirituel. Les femmes chantaient et frappaient dans leurs mains pour créer une énergie rythmique tandis que les guérisseurs dansaient en cercle autour d'elles, entrant progressivement en état de transe (kia). Les rites de passage comprenaient des initiations à la puberté pour les jeunes hommes (incluant un isolement, un jeune et la transmission des savoirs de chasse) et des cérémonies marquant la première menstruation des filles. Les cérémonies de chasse comportaient des rituels de propitiation avant le départ et de partage après le retour.",
+      "symbols": "Art rupestre (peintures et gravures) dans la région du Kalahari méridional, représentant des scènes de chasse, des animaux totémiques (notamment l'éland, animal par excellence des visions chamaniques) et des visions de transe. Le feu central lors des rites était considéré comme point de communication avec le monde spirituel.",
+      "artsAndMusic": "Musique vocale polyphonique avec technique de chant en canon et battements de mains rythmiques lors des cérémonies de guérison. Utilisation de l'arc musical (pluriarc ou arc à bouche) comme instrument à cordes. Percussions corporelles (frappes de mains, battements de pieds avec des coques de noix de mongongo ou de cocons de chrysalides remplis de graines attachés aux chevilles). Contes et récits oraux transmettant les mythes d'origine, les règles sociales et les savoirs écologiques. L'art rupestre du Kalahari méridional est attribué aux ancêtres des peuples San de la region.",
+      "spiritualities": "Croyances centrées sur un dieu créateur suprême (Kaang ou Kauha selon les groupes, avec des variantes locales), associé à la voie lactée, et un dieu inférieur malveillant. L'énergie spirituelle (n/om) est conçue comme une force qui circule entre les vivants, les morts et les animaux. Les guérisseurs (n/om-kxaosi) activent cette énergie lors de la danse de transe pour soigner les malades et protéger la communauté. Les ancêtres défunts jouent un rôle de médiateurs entre le monde des vivants et celui des esprits. Croyances en des esprits de la nature associés aux points d'eau, aux arbres anciens et aux rochers gravés."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas d'organisation étatique ni de chefferie formelle. Structure sociale égalitaire typique des chasseurs-cueilleurs San, sans accumulation de biens ni de pouvoir politique institutionnalisé.",
+      "relationsWithNeighbors": "Relations d'échange et de voisinage avec d'autres groupes San parlant des variétés Tuu apparentées (Nǀamani, ǃXóõ) dans le Kalahari méridional. Contacts commerciaux et conflictuels avec les éleveurs tswana (Batswana) qui s'étendaient vers le sud-ouest. Les San de la région étaient souvent recrutés comme traqueurs et serviteurs par les fermiers tswana et boers, parfois dans des conditions proches du servage.",
+      "conflictsOrAlliances": "Le groupe Katia a subi les mêmes persécutions que l'ensemble des San : Bushman hunting par les commandos boers aux 18e et 19e siecles, dépossession des terres ancestrales lors de l'installation des fermes et des réserves de chasse dans la region du Nossop, évictions forcées vers les réserves pendant la période coloniale et post-coloniale.",
+      "diaspora": "Les descendants des locuteurs katia sont dispersés dans les villes et les villages du Botswana méridional et de la province du Northern Cape (Afrique du Sud). Ils constituent une partie de la communauté San (Basarwa) plus large, dont environ 63 500 personnes vivaient au Botswana et 12 000 en Afrique du Sud en 2017."
+    },
+    "demography": {
+      "totalPopulation": 0,
+      "referenceYear": 2025,
+      "source": "La langue katia est éteinte ; aucun locuteur documenté au 21e siecle. Les estimations de population pour les descendants de la communauté d'origine sont impossibles à isoler des statistiques San générales. Sources : Tuu languages Wikipedia (en.wikipedia.org/wiki/Tuu_languages) ; Bleek, Dorothea — notes de terrain sur les langues S4a, début 20e siecle ; Westphal (1971) ; Güldemann, Tom et Fehn, Anne-Maria (eds.), lineage classification of Tuu languages.",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 0,
+          "note": "Groupe linguistique éteint ; descendants inclus dans la population San du Botswana méridional (estimée à ~63 500 San total en Botswana en 2017)"
+        },
+        {
+          "country": "ZAF",
+          "population": 0,
+          "note": "Groupe linguistique éteint ; éventuels descendants dans la province du Northern Cape, inclus dans la communauté ǂKhomani San"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Tuu languages. https://en.wikipedia.org/wiki/Tuu_languages",
+      "Bleek, Dorothea F. — notes de terrain sur les langues Tuu de la region du Nossop, début 20e siecle. Classification S4a.",
+      "Westphal, E.O.J. (1971). Observations on current Bushman and Hottentot linguistic studies. In: D. Dalby (ed.), Language and History in Africa. Cass, London.",
+      "Güldemann, Tom (2014). Khoisan Languages. In: Encylopedia of Language and Linguistics, 2nd ed.",
+      "Glottolog 5.3 — Tuu family. https://glottolog.org/resource/languoid/id/tuuu1241",
+      "UNESCO Atlas of the World's Languages in Danger. https://en.unesco.org/",
+      "Cultural Survival Quarterly (2010). Foragers to First Peoples: The Kalahari San Today. https://www.culturalsurvival.org/publications/cultural-survival-quarterly/foragers-first-peoples-kalahari-san-today"
+    ]
+  }
+}

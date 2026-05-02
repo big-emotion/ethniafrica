@@ -1,0 +1,41 @@
+# Nom du peuple
+- Nom principal : Sidama
+- Auto-appellation : Sidaama
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Groupe : Couchitique oriental
+- Région historique : Sidama (Éthiopie sud)
+- Pays actuels : ETH
+- ID : PPL_SIDAMA
+
+# 1. Ethnies incluses
+- Sidaama du Sud
+- Sous-groupes ruraux
+
+# 2. Origines
+- Héritiers des populations couchitiques de la vallée du Rift.
+- Longue histoire agropastorale.
+
+# 3. Organisation
+- Systèmes claniques.
+- Chefferies locales (moote).
+
+# 4. Langue
+- Sidama
+- ISO : sid
+
+# 5. Culture
+- Culture de l’enset (faux bananier).
+- Musiques traditionnelles (fiddle *krar*).
+- Cérémonies saisonnières.
+
+# 6. Histoire
+- Intégration tardive dans l’État éthiopien.
+- Importants mouvements régionaux modernes (État régional Sidama 2019).
+
+# 7. Démographie
+- Population : 3 900 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (sid)
+- Sidama Region Archives

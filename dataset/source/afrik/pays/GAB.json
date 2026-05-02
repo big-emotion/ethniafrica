@@ -1,0 +1,219 @@
+{
+  "id": "GAB",
+  "nameFr": "République gabonaise",
+  "nameOfficial": "République gabonaise (République gabonaise)",
+  "etymology": "Le nom \"Gabon\" provient du portugais \"Gabão\" (gabardine, manteau), donné par les navigateurs portugais au XVe siècle en référence à l'estuaire du fleuve Komo qui ressemble à une gabardine. Le terme a été adapté en \"Gabon\" par les Français.",
+  "nameOriginActor": "Le nom \"Gabon\" a été donné par les navigateurs portugais au XVe siècle en référence à l'estuaire du fleuve Komo. Les Français ont adapté ce nom lors de la colonisation. Le nom a été officialisé lors de l'indépendance en 1960.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel du Gabon était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Migrations bantoues vers la région. Développement de chefferies et royaumes locaux dans les forêts équatoriales. Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de chefferies et royaumes autonomes : chefferies Fang, Punu, Nzebi, Teke, Myene, Mbete, et autres peuples bantous forestiers. Les Portugais utilisaient le terme \"Gabão\" pour désigner la région de l'estuaire du Komo.",
+      "colonization": "1885-1960 : Colonie française du Gabon (partie de l'Afrique-Équatoriale française, AEF). Les Français ont créé la colonie du Gabon en 1885. Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1960.",
+      "contemporary": "1960 : Indépendance du Gabon (17 août 1960), proclamation de la République gabonaise. Le nom \"Gabon\" est officialisé."
+    },
+    "kingdoms": [
+      {
+        "name": "Chefferies Fang",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Fang"],
+        "politicalCenters": ["Chefferies lignagères traditionnelles"],
+        "historicalRole": "Chefferies Fang puissantes, système lignager, traditions forestières, masques fang (notamment ngil), boîtes à reliques (byeri). Migration nord-sud depuis le Cameroun septentrional. Rôle politique majeur dans le Gabon contemporain."
+      },
+      {
+        "name": "Chefferies Punu",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Punu"],
+        "politicalCenters": ["Chefferies traditionnelles"],
+        "historicalRole": "Chefferies Punu, traditions artistiques réputées (masques blancs punu), structures lignagères. Traditions forestières."
+      },
+      {
+        "name": "Chefferies Nzebi",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Nzebi"],
+        "politicalCenters": ["Chefferies traditionnelles"],
+        "historicalRole": "Chefferies Nzebi, traditions forestières, structures lignagères."
+      },
+      {
+        "name": "Chefferies Teke",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Teke"],
+        "politicalCenters": ["Chefferies traditionnelles"],
+        "historicalRole": "Chefferies Teke, traditions forestières, structures lignagères. Relations avec les Teke du Congo."
+      },
+      {
+        "name": "Chefferies Myene",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Myene"],
+        "politicalCenters": ["Chefferies traditionnelles côtières"],
+        "historicalRole": "Chefferies Myene côtières, traditions maritimes, commerce côtier. Contacts avec les Européens."
+      },
+      {
+        "name": "Colonie française du Gabon",
+        "period": "1885 - 1960",
+        "dominantPeoples": [
+          "Tous les peuples gabonais sous domination française"
+        ],
+        "politicalCenters": ["Libreville (capitale coloniale)"],
+        "historicalRole": "Colonie française, intégration dans l'AEF. Exploitation économique (bois, caoutchouc, puis pétrole), développement de l'administration coloniale, résistance des peuples autochtones. Développement du mouvement indépendantiste au XXe siècle."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Fang",
+        "selfAppellation": "Fan / Pangwe",
+        "exonyms": [
+          "Fang (terme utilisé par les Européens)",
+          "\"Pahouins\" (ancienne étiquette coloniale",
+          "terme problématique)"
+        ],
+        "peopleId": "PPL_FANG",
+        "mainRegion": "Nord du Gabon (forêts équatoriales)",
+        "languages": ["Fang (fan", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Fan\" ou \"Pangwe\" est l'auto-appellation. \"Fang\" est l'exonyme le plus courant. \"Pahouins\" est une ancienne étiquette coloniale qui peut avoir une connotation péjorative et doit être évitée."
+      },
+      {
+        "name": "Punu",
+        "selfAppellation": "Punu",
+        "exonyms": ["Punu (terme utilisé par les Européens)"],
+        "peopleId": "PPL_PUNU",
+        "mainRegion": "Sud du Gabon",
+        "languages": ["Punu (puu", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Punu\" est l'auto-appellation. Pas de terme péjoratif connu. Traditions artistiques réputées (masques blancs punu)."
+      },
+      {
+        "name": "Nzebi",
+        "selfAppellation": "Nzebi",
+        "exonyms": ["Nzebi (terme utilisé par les Européens)"],
+        "peopleId": "PPL_NZEBI",
+        "mainRegion": "Centre et Sud du Gabon",
+        "languages": ["Nzebi (nzb", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Nzebi\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Teke",
+        "selfAppellation": "Teke",
+        "exonyms": ["Teke (terme utilisé par les Européens)"],
+        "peopleId": "PPL_TEKE",
+        "mainRegion": "Est du Gabon",
+        "languages": ["Teke (teg", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Teke\" est l'auto-appellation. Pas de terme péjoratif connu. Relations avec les Teke du Congo."
+      },
+      {
+        "name": "Myene",
+        "selfAppellation": "Myene",
+        "exonyms": ["Myene (terme utilisé par les Européens)"],
+        "peopleId": "PPL_MYENE",
+        "mainRegion": "Côte du Gabon (Libreville, Port-Gentil)",
+        "languages": ["Myene (mye", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Myene\" est l'auto-appellation. Pas de terme péjoratif connu. Traditions maritimes et côtières."
+      },
+      {
+        "name": "Mbete",
+        "selfAppellation": "Mbete",
+        "exonyms": ["Mbete (terme utilisé par les Européens)"],
+        "peopleId": "PPL_MBETE",
+        "mainRegion": "Centre du Gabon",
+        "languages": ["Mbete (zmt", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Mbete\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Autres peuples bantous",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_AUTRES_PEUPLES_BANTOUS",
+        "mainRegion": "Diverses régions du Gabon",
+        "languages": ["Langues bantoues diverses", "français"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "Fang",
+          "isoCode": "fan"
+        },
+        {
+          "name": "Punu",
+          "isoCode": "puu"
+        },
+        {
+          "name": "Nzebi",
+          "isoCode": "nzb"
+        },
+        {
+          "name": "Teke",
+          "isoCode": "teg"
+        },
+        {
+          "name": "Myene",
+          "isoCode": "mye"
+        },
+        {
+          "name": "Mbete",
+          "isoCode": "zmt"
+        },
+        {
+          "name": "langues bantoues diverses"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique du Gabon (plus de 40 ethnies). Traditions bantoues forestières : masques fang (notamment ngil), masques blancs punu, boîtes à reliques (byeri), traditions d'initiation. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Art gabonais réputé (masques, sculptures, reliquaires).",
+      "dominantReligions": "Christianisme (catholicisme majoritaire, protestantisme en croissance), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques, byeri)",
+      "lifestyles": "Agriculture (cultures vivrières, cacao, café), exploitation forestière (bois précieux), pêche (côtière), commerce et activités urbaines (zones urbaines, Libreville, Port-Gentil). Urbanisation importante. Économie basée sur l'exploitation pétrolière (première source de revenus), l'exploitation forestière, et les services. Le Gabon est l'un des pays les plus riches d'Afrique subsaharienne.",
+      "socialOrganization": "Organisation en chefferies lignagères traditionnelles (Fang, Punu, Nzebi, Teke, Myene, Mbete), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte. Clanisme fort (Fang).",
+      "regionalRelations": "Relations historiques avec le Cameroun (Fang, commerce, frontière), le Congo (Teke, commerce, frontière), la Guinée équatoriale (Fang, commerce, frontière). Intégration dans la CEMAC (Communauté économique et monétaire de l'Afrique centrale). Relations commerciales et culturelles transfrontalières. Immigration importante de travailleurs (Cameroun, Congo, autres pays d'Afrique centrale)."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par les peuples bantous. Migrations bantoues vers la région. Développement de chefferies locales dans les forêts équatoriales.",
+      "middleAges": "Migrations bantoues continues. Développement de structures politiques locales. Contacts avec les peuples voisins.",
+      "precolonial": "Consolidation des chefferies Fang, Punu, Nzebi, Teke, Myene, Mbete. Migration des Fang depuis le Cameroun septentrional. Développement des traditions artistiques (masques, sculptures). Commerce régional. Contacts avec les Européens (Portugais, puis Français).",
+      "colonization": "1885 : Création de la colonie française du Gabon, intégration dans l'AEF. Période coloniale française (1885-1960), exploitation économique (bois, caoutchouc, puis pétrole), développement de l'administration coloniale, résistance des peuples autochtones. XXe siècle : Développement du mouvement indépendantiste.",
+      "independenceStruggle": "1950s-1960s : Mouvement pour l'indépendance mené par les dirigeants gabonais. 1960 : Indépendance du Gabon (17 août 1960), proclamation de la République gabonaise. Léon M'ba devient premier président.",
+      "postIndependence": "1960-1967 : Présidence de Léon M'ba. 1967-2009 : Présidence d'Omar Bongo (1967-2009), période de stabilité politique et de développement économique basé sur le pétrole. 2009-présent : Présidence d'Ali Bongo Ondimba (fils d'Omar Bongo). Défis : dépendance au pétrole, inégalités sociales, corruption. Le Gabon est l'un des pays les plus riches d'Afrique subsaharienne grâce à ses ressources pétrolières et forestières."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Gabon",
+      "CIA World Factbook – Gabon",
+      "ONU / UNFPA – Démographie Gabon 2025",
+      "Recensements gabonais",
+      "Études anthropologiques sur les peuples du Gabon",
+      "Études sur l'art gabonais (masques, sculptures)"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Fang",
+          "population": 1200000,
+          "percentageInCountry": 50,
+          "peopleId": "PPL_FANG",
+          "region": "Nord du Gabon (forêts équatoriales)",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Punu",
+          "population": 240000,
+          "percentageInCountry": 10,
+          "peopleId": "PPL_PUNU",
+          "region": "Sud du Gabon",
+          "languageFamily": "FLG_BANTU"
+        },
+        {
+          "name": "Nzebi",
+          "peopleId": "PPL_N"
+        }
+      ]
+    }
+  }
+}

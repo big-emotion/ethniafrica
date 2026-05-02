@@ -1,0 +1,106 @@
+{
+  "id": "PPL_BULU",
+  "nameMain": "Bulu",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Bulu",
+      "selfAppellation": "Bulu",
+      "exonyms": [
+        "Bulu-Fong (utilise pour certains sous-groupes)",
+        "Ekang (terme generique englobant les Beti, Bulu et Fang)"
+      ],
+      "originOfExonyms": "Bulu est le nom propre du peuple et de la langue. Le terme Ekang (ou Ekang, Pahouin) est un terme generique utilise par les groupes eux-memes pour designer l'ensemble Beti-Bulu-Fang partageant une origine et une culture communes. Pahouin fut utilise par les colonisateurs europeens. Le terme Ekang derive d'une racine commune signifiant litteralement les hommes libres ou les gens.",
+      "whyProblematic": "Le terme Pahouin, d'usage colonial et pejoratif, est aujourd'hui rejete. La denomination Ekang accentue l'unite du continuum Beti-Bulu-Fang, ce qui peut effacer les specificites du sous-groupe Bulu. La frontiere entre Bulu et Beti etant linguistiquement et culturellement permeeable, les classifications varient selon les sources.",
+      "contemporaryUsage": "Bulu est le terme courant pour designer ce peuple au Cameroun. Le bulu (langue, ISO bum) est enseigne et utilise dans les eglises protestantes, le commerce et l'education dans le sud du Cameroun. Le terme Ekang est utilise dans les contextes identitaires panculturels.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantu (zone A, groupe Beti, sous-groupe A.70)",
+      "historicalRegion": "Sud du Cameroun : departments de Mvila et Dja-et-Lobo (region du Sud), Ebolowa, Sangmelima",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Bulu proprement dit (Sangmelima, Kribi, Ebolowa)",
+      "Fong (sous-groupe bulu)",
+      "Zaman (vallee de la Dja)",
+      "Yengono (sous-groupe regional)",
+      "Yembama (sous-groupe regional)",
+      "Yelinda (vallee du Nyong)",
+      "Yesum (sous-groupe regional)",
+      "Yebekanga (sous-groupe regional)",
+      "Yebekolo (sous-groupe regional)",
+      "Mvele (sous-groupe regional)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bulu font partie du continuum ethno-linguistique Beti-Bulu-Fang (Bantu du groupe A70), dont l'ancetre mythique commun est Nanga, ne selon les chercheurs entre 1260 et 1340. L'origine commune de ce continuum est situee dans la region de l'Adamaoua (Cameroun septentrional). Des excavations archeologiques ont mis au jour des vestiges bantu dans la zone Haute-Sanaga et le Centre-Sud du Cameroun depuis le XVIe siecle.",
+      "formationPeriod": "La separation linguistique du Bulu d'avec le Beti et le Fang est datee par la glottochronologie autour du XVIIe siecle. Les Bulu ont effectue la traversee du fleuve Sanaga (appele Yom dans les traditions orales) entre 1640 et 1750, migrant vers le sud en direction de la foret equatoriale. La penetration definitive dans la foret et l'installation dans le Sud-Cameroun actuel se situe autour de 1840-1883, sous l'impulsion du commerce avec les comptoirs europeens de la cote de Kribi.",
+      "migrationRoutes": [
+        "Depuis l'Adamaoua meridional (region de Ngaoundal-Tibati, departement de Djerem)",
+        "Vers le sud le long de la Haute-Sanaga, traversee du fleuve Sanaga (Yom) entre 1640 et 1750",
+        "Penetration dans la foret equatoriale vers Sangmelima, Ebolowa, Kribi entre 1840 et 1883",
+        "Extension le long de la route de l'ivoire reliant l'Adamaoua a la cote de Kribi"
+      ],
+      "historicalSettlementZones": [
+        "Region du Sud du Cameroun : departments de Mvila (Ebolowa) et Dja-et-Lobo (Sangmelima)",
+        "Partie sud du departement de Haute-Sanaga (region du Centre)",
+        "Departement de Nyong-et-Mfoumou (Centre) et Haut-Nyong (Est)",
+        "Region cotiere autour de Kribi"
+      ],
+      "unificationsOrDivisions": "Les Bulu s'organisent en une constellation de clans patrilineaires sans structure politique centralisee supraclanique. Les clans sont regrouppables par l'ancetre commun Nanga via les branches Bulu-Beti, distinctes de la branche Fang separee vers 1665. La relation fraternelle avec les Beti (Ewondo, Bane, Eton) et les Fang est reconnue par tous.",
+      "externalInfluences": "Pression islamique et invasions fulani (Osman Dan Fodio, jehad a partir de 1805) poussant les Beti-Bulu hors de l'Adamaoua. Invasion des Baare-Tchamba au XIXe siecle. Etablissement du commerce de l'ivoire avec les Europeens sur la cote de Kribi (1840-1842). Colonisation allemande (1884-1916) puis francaise (1916-1960) : creation de villes et routes coloniales. Christianisation massive : la majorite des Bulu sont chretiens depuis 1939. Mission presbyterienne americaine (American Presbyterian Mission) et missions catholiques tres actives dans le Sud-Cameroun.",
+      "majorHistoricalEvents": "1665 : separation linguistique du Fang d'avec le continuum Bulu-Beti (glottochronologie). 1840-1883 : migration des Bulu vers la foret du Sud-Cameroun sous la conduite de Nsim Biyo'o. 1884 : debut de la colonisation allemande du Cameroun. 1916 : prise de controle francaise apres la Premiere Guerre mondiale. 1939 : la majorite des Betu-Pahuin est christianisee. 1960 : independance du Cameroun. Paul Biya, president du Cameroun depuis 1982, est issu des Bulu (clan Mvondo, Sangmelima)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe patrilineaire organisee en villages autonomes. Le village (mvog ou ayong, terme desginant une unite de lignage) est l'unite politique fondamentale, avec des frontieres fortifiees et des tours de guet pour la protection. Plusieurs familles d'une meme lignee vivent ensemble dans le village. Plusieurs villages lies forment un clan. Les clans sont sous la gouvernance nominale d'un chef (aussi autorite religieuse traditionnelle). Absence de royaumes centralises : organisation horizontale autour du lignage.",
+      "clanOrganization": "Organisation en clans patrilineaires portant le prefixe Ye- (fils de) suivi du nom d'un ancetre eponyme. Principaux clans : Yesum, Yebekolo, Yengono, Yelinda, Yembana, Yekaba, Mvele, Omvang, Yangafek. Double exogamie pratiquee : mariage hors du lignage du pere et de la mere.",
+      "ageClassSystems": "Les garcons subissent des ceremonies de passage a l'age adulte incluant autrefois des societes secretes d'initiation comme la societe Ngi (Ngui, Ngil). Les rites de passage sont marques par l'apprentissage de l'histoire du peuple et des traditions ancestrales.",
+      "roleOfLineages": "La famille (un homme, sa ou ses epouses et ses enfants) constitue l'unite de base. Le lignage patrilineaire (mvog) determine l'identite, les droits fonciers et les alliances. Bien que la filiation soit patrilineaire, un lien fort entre l'oncle maternel et son neveu persiste. Les reliquaires ancestraux (byeri) conservent les os des ancetres et sont utilises dans les rites de passage.",
+      "religiousAuthority": "Le chef du clan est traditionnellement aussi autorite religieuse. La societe secrete Ngi (ou Ngui, Ngil) — culte du feu purificateur symbolise par le gorille — jouait un role central dans la regulation sociale et la justice. Les byeri (reliquaires ancestraux gardes par des figures sculpturales) etaient au centre de la veneration des ancetres jusqu'a l'interdiction coloniale."
+    },
+    "languages": {
+      "mainLanguage": "Bulu",
+      "isoCodes": ["bum"],
+      "dialects": [
+        "Bene",
+        "Yelinda",
+        "Yembana",
+        "Yengono",
+        "Zaman (vallee de la Dja)"
+      ],
+      "vehicularRole": "Le bulu (ISO bum) est une langue bantu du groupe Beti (A70), mutuellement intelligible avec l'ewondo, l'eton et le fang. En 1982, on comptait 174 000 locuteurs natifs et environ 800 000 locuteurs en langue seconde (1991). Le bulu est classe 3 dans l'echelle EGIDS (Wider communication) : utilise dans l'eglise, le commerce et l'education dans le Sud-Cameroun. Il a ete diffuse au XIXe siecle par les missions protestantes (bulu schools). Le francais est la langue officielle du Cameroun utilisee dans l'administration et l'enseignement superieur."
+    },
+    "culture": {
+      "majorRites": "Initiation : ceremonies de passage de l'enfance a l'age adulte encadrees autrefois par la societe secrete Ngi (Ngui), culte du feu purificateur symbolise par un gorille. Les inities apprenaient l'histoire et les traditions du peuple lors de longues retraites. Byeri : culte des reliquaires ancestraux — les os des ancetres (fondateurs de lignee, chefs de clan, femmes a pouvoirs extraordinaires) etaient conserves dans des contenants en ecorce ou en fibres, surmontes de figures sculptees protectrices. Ce culte etait au centre de la societe jusqu'a son interdiction par les autorites coloniales francaises au debut du XXe siecle. Rites funeraires : les funerailles sont des occasions sociales majeures, accompagnees de veillees, repas collectifs, danses et musiques. Ceremonies agricoles liees au calendrier de la chasse et de l'agriculture vivriere.",
+      "symbols": "Le byeri (reliquaire ancestral avec figure sculpturale guardienne) est le symbole artistique et spirituel le plus emblematique des Bulu-Beti. La societe Ngi est symbolisee par le gorille (Ngui en langue fang), incarnation du feu purificateur. Le masque So (face animale) et le masque Ngil (face humaine) sont des symboles du pouvoir rituel. Zambe est le nom de Dieu en langue bulu (Zamba en ewondo, Zame en fang), temoignant de l'unite spirituelle du continuum Ekang.",
+      "artsAndMusic": "Sculpture sur bois, ivoire et steatite : les Beti-Pahuin sont reconnus pour leurs masques expressifs et leurs figures de reliquaires (byeri). Metallurgie du fer : les fourneaux ewondo et bene ont les memes caracteristiques que ceux des Matakam du nord du Cameroun, attestant d'une origine commune dans la savane. Musique : flutes (role social important dans les peuples de la savane du nord du Cameroun, instrument connu des Bulu-Beti mais apparemment absent chez les Fang). Bikutsi : style musical des Ewondo, florissant depuis l'ere postcoloniale. Instruments a percussion (tambours). Poesie orale (Mvett) : epopee des griots contant l'histoire et la mythologie du peuple Ekang.",
+      "spiritualities": "Culte des ancetres (byeri) : les ancetres fondateurs de lignee et les personnages extraordinaires sont veneres ; leurs reliques (os, objets) sont conserves dans des byeri et consultes lors des rites de passage et des crises collectives. Zambe (Dieu createur) : dieu supreme. Societe Ngi (Ngui) : culte du feu purificateur et de la justice sociale, symbolise par le gorille, qui assure l'ordre moral dans les communautes. Religion bwiti : pratiquee par certains groupes Beti-Pahuin, notamment les Fang, en relation avec les Mitsogo. Christianisme : la grande majorite des Bulu sont chretiens (protestantisme et catholicisme), christianises pour l'essentiel avant 1939 grace aux missions europeennes et americaines. Syncrétisme : les pratiques chretiennes coexistent avec des visites aux guerisseurs traditionnels et des references a la cosmologie ancestrale."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Bulu n'ont pas constitue de royaumes centralises. Leur organisation en clans patrilineaires autonomes les a rendus resistants aux conquetes exterieures. Ils forment la composante meridionale du continuum Beti-Pahuin, qui represente environ un cinquieme de la population du Cameroun. Paul Biya, president du Cameroun depuis 1982, est issu de la communaute bulu (sous-groupe Mvondo, origine Sangmelima).",
+      "relationsWithNeighbors": "Relations d'assimilation ou de pahuinisation avec les peuples voisins absorbes progressivement : Manguissa, Yekaba, Bamvele, Evuzok, Batchanga, Omvang, Yetude, et dans une certaine mesure les Baka (pygmees). Les Bulu ont des liens fraternels avec les Beti (Ewondo, Bane, Eton) et les Fang, partageant une origine, une mythologie et une structure sociale communes. En periode pre-coloniale, ils etaient aussi bien allie que concurrent des peuples voisins dans la competition pour les ressources et les routes commerciales de l'ivoire.",
+      "conflictsOrAlliances": "Fuite de l'Adamaoua sous la pression des Baare-Tchamba et des jihads fulani (XIXe siecle). Conflits anciens avec certains peuples de la foret lors de la migration vers le sud. Resistance initiale a la colonisation allemande, puis integration dans les structures coloniales. Apres l'independance du Cameroun en 1960, les Bulu ont contribue a la vie politique nationale, leur region abritant le president actuel.",
+      "diaspora": "Migration vers les grandes villes camerounaises : Yaounde (ou les Beti forment le groupe dominant de l'agglomeration), Douala et autres centres urbains. Diaspora camerounaise en Europe (France principalement), en Amerique du Nord et dans d'autres pays africains."
+    },
+    "demography": {
+      "totalPopulation": 900000,
+      "referenceYear": 2025,
+      "source": "Les Bulu representent environ un tiers de l'ensemble Beti-Pahuin du Cameroun. L'ensemble Beti-Pahuin est estime entre 6 et 8 millions au debut du XXIe siecle (Yengafrica, 2023). La population bulu proprement dite est estimee a environ 900 000 personnes en 2025, en tenant compte de la croissance demographique depuis les 174 000 locuteurs natifs de 1982 (SIL Ethnologue). Sources : SIL Ethnologue [bum], recensements camerounais, Yengafrica, Wikipedia EN.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 900000,
+          "note": "Sud-Cameroun : Ebolowa, Sangmelima (region du Sud) ; parties du Centre et de l'Est"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Beti-Pahuin peoples. https://en.wikipedia.org/wiki/Beti-Pahuin_peoples",
+      "Wikipedia EN — Bulu language. https://en.wikipedia.org/wiki/Bulu_language",
+      "Glottolog — Bulu (Cameroon) [bum]. https://glottolog.org/resource/languoid/id/bulu1251",
+      "Yengafrica — Who Are the Bulu Beti-Fang or Ekang. https://yengafrica.com/who-are-the-bulu-beti-fang-or-ekang/",
+      "Medcrave — The Fang-Bulu-Beti (1665-1850): origin and migrations in Central Africa. https://medcraveonline.com/SIJ/the-fang-bulu-beti-1665-1850-origin-and-migrations-in-central-africa.html",
+      "101 Last Tribes — Beti-Pahuin. https://www.101lasttribes.com/tribes/beti-pahuin.html",
+      "Bulu-Fong.info — Ngui Secret Society. https://bulu-fong.info"
+    ]
+  }
+}

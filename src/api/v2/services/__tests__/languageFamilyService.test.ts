@@ -9,19 +9,11 @@ vi.mock("@/lib/supabase/queries/afrik/languageFamilies", () => ({
   getAfrikLanguageFamilyById: vi.fn(),
 }));
 
-vi.mock("next/cache", () => ({
-  unstable_cache: vi.fn((fn) => fn),
-}));
-
 import {
   getAllAfrikLanguageFamilies,
   getAfrikLanguageFamilyById,
 } from "@/lib/supabase/queries/afrik/languageFamilies";
 
-/**
- * TDD Phase: RED
- * Test: Language Family Service - business logic for language families
- */
 describe("Language Family Service", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -35,7 +27,7 @@ describe("Language Family Service", () => {
         content: {},
       }));
 
-      (getAllAfrikLanguageFamilies as any).mockResolvedValue(mockFamilies);
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
 
       const result = await getLanguageFamilies(1, 5);
 
@@ -43,6 +35,7 @@ describe("Language Family Service", () => {
       expect(Array.isArray(result.data)).toBe(true);
       expect(result.data.length).toBe(5);
       expect(result.total).toBe(10);
+      expect(getAllAfrikLanguageFamilies).toHaveBeenCalled();
     });
 
     it("should handle pagination correctly", async () => {
@@ -52,9 +45,9 @@ describe("Language Family Service", () => {
         content: {},
       }));
 
-      (getAllAfrikLanguageFamilies as any).mockResolvedValue(mockFamilies);
-
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
       const page1 = await getLanguageFamilies(1, 2);
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
       const page2 = await getLanguageFamilies(2, 2);
 
       expect(page1.data.length).toBe(2);
@@ -71,7 +64,7 @@ describe("Language Family Service", () => {
         content: {},
       };
 
-      (getAfrikLanguageFamilyById as any).mockResolvedValue(mockFamily);
+      vi.mocked(getAfrikLanguageFamilyById).mockResolvedValue(mockFamily);
 
       const family = await getLanguageFamilyById("FLG_BANTU");
 
@@ -81,7 +74,7 @@ describe("Language Family Service", () => {
     });
 
     it("should return null for non-existent language family", async () => {
-      (getAfrikLanguageFamilyById as any).mockResolvedValue(null);
+      vi.mocked(getAfrikLanguageFamilyById).mockResolvedValue(null);
 
       const family = await getLanguageFamilyById("FLG_NONEXISTENT");
 

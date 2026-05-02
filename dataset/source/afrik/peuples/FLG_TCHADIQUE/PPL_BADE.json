@@ -1,0 +1,100 @@
+{
+  "id": "PPL_BADE",
+  "nameMain": "Bade",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Bade",
+      "selfAppellation": "Bade",
+      "exonyms": [
+        "Bede",
+        "Bedde",
+        "Bode",
+        "Mazgarwa (dialecte Gashua)",
+        "Amshi (dialecte occidental)"
+      ],
+      "originOfExonyms": "Le terme Bedde (ou Bedde Emirate) est la forme utilisee dans les documents coloniaux britanniques et dans les textes officiels nigeriants pour designer l'emirat Bade. Mazgarwa designe les locuteurs du dialecte Gashua Bade. Le nom Bade lui-meme est l'appellation principale utilisee en anglais, en haoussa et en bade.",
+      "whyProblematic": "La variation orthographique (Bade, Bede, Bedde, Bode) cree parfois des confusions dans les sources documentaires. Le terme Bedde fait reference a l'emirat colonial tandis que Bade designe le groupe ethnolinguistique. La frontiere entre le groupe Bade et le groupe Ngizim voisin est parfois floue dans les sources, les deux etant classes dans la meme subdivision Bade Proper du West Chadic.",
+      "contemporaryUsage": "Le terme Bade est utilise par le groupe lui-meme et dans les references academiques. L'emirat traditionnel s'appelle officiellement Bedde Emirate, dont la cour est situee a Gashua, dans le nord du Yobe State. La langue est repertoriee sous le code bde (ISO 639-3). Les locuteurs sont en forte transition vers le haoussa.",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique occidental (West Chadic), branche B, sous-groupe B.1 Bade Proper",
+      "historicalRegion": "Nord du Yobe State (region de Gashua et environs), nord-est du Nigeria",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Bade du Nord (region de Gashua, dialecte Gashua Bade / Mazgarwa)",
+      "Bade du Sud (Bade-Kado, dialecte meridional)",
+      "Bade de l'Ouest (Amshi, Maagwaram, Shirawa, dialecte occidental)",
+      "Bade de Jigawa State (presence mineure dans le nord du Jigawa)"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale bade, le groupe descend du Badr du Yemen, dont les ancetres furent chasses par le prophete Mohammed apres avoir refuse de prier. Cette tradition d'origine yemenite est partagee par plusieurs peuples tchadiques du nord-est du Nigeria. Les Bade font partie du groupe Bade Proper (West Chadic, branche B.1), linguistiquement proches des Ngizim et Duwai. Leur presence dans la region de Gashua est attestee depuis au moins le 14e siecle.",
+      "formationPeriod": "Les Bade sont etablis dans la region de Tagali, pres de Gashua, depuis au moins le 14e siecle. La formation de l'identite bade distincte s'est consolidee autour du controle de la region de Gashua. La creation d'un emirat Bade (Bedde) sous influence de l'empire Kanem-Bornu a structure politiquement le groupe. L'islamisation progressive, associee a l'influence haoussa, a modifie profondement la culture traditionnelle.",
+      "migrationRoutes": [
+        "Migration legendaire depuis le Yemen vers le bassin du lac Tchad (tradition orale)",
+        "Deplacement depuis l'est vers la region de Gashua/Tagali (Yobe State actuel)",
+        "Expansion vers le nord du Jigawa State"
+      ],
+      "historicalSettlementZones": [
+        "Region de Gashua (Bade LGA, Yobe State) : zone centrale, siege de la cour de l'Emir de Bade",
+        "Region de Tagali (village d'origine documentee)",
+        "Nord du Yobe State (LGAs de Bade, Karasuwa, Jakusko, Nguru)",
+        "Nord du Jigawa State (presence minoritaire)"
+      ],
+      "unificationsOrDivisions": "Les Bade sont unifies sous l'autorite de l'Emir de Bade (Bedde Emirate), dont la cour est a Gashua. Les trois dialectes principaux (Gashua Bade, Southern Bade, Western Bade) correspondent a des zones geographiques distinctes mais partagent une identite commune. L'empire Kanem-Bornu a historiquement exerce une domination politique sur les Bade via un galadima (gouverneur) base a Nguru.",
+      "externalInfluences": "Domination historique de l'empire Kanem-Bornu (Borno Kingdom). Influence haoussa croissante, au point que la plupart des villages bade sont devenus majoritairement haoussaphones. Le Jihad Fulani du 19e siecle a accentue l'islamisation. La colonisation britannique a structure l'emirat Bedde. Depuis l'independance, le haoussa continue de supplanter le bade comme langue principale.",
+      "majorHistoricalEvents": "Installation dans la region de Tagali, pres de Gashua, avant le 14e siecle. Soumission au galadima de l'empire Bornu base a Nguru. Islamisation progressive a partir du 18e-19e siecle. Creation de l'emirat Bedde sous administration coloniale britannique. Apres 1960, integration dans l'Etat de Borno, puis dans le Yobe State (cree en 1991). La langue bade est aujourd'hui classee comme vulnerabe (endangered) par Ethnologue, avec un fort decrochage generationnel vers le haoussa."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le systeme politique traditionnel des Bade est structure autour de l'emirat Bedde, dirige par l'Emir de Bade (dont la cour est a Gashua). L'emir detient l'autorite politique, judiciaire et en partie religieuse sur le groupe. Sous l'emir, des chefs de district et de village (hakimi et mai-gida) administrent les communautes locales. Le systeme est influence par le modele haoussa-fulani d'administration emirale.",
+      "clanOrganization": "Organisation patrilineaire en clans et familles etendues. Les Bade de Gashua forment le noyau de l'elite dirigeante, lies historiquement a l'emirat. Les groupes dialectaux (Gashua Bade, Southern Bade, Western Bade) ont des loyautes claniques distinctes tout en reconnaissant l'autorite de l'emir.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite, le statut social et les droits fonciers. L'acces aux postes de chefferie est hereditaire et suit les lignages nobles lies a l'emirat. Les litiges fonciers sont arbitres par les chefs de lignage et, en dernier recours, par l'emir.",
+      "religiousAuthority": "L'islam sunnite (ecole malekite, influence par le modele haoussa) est la religion dominante. Les oulemas et imams jouent un role central dans la vie sociale et juridique. La cour de l'emir integre des conseillers religieux. Avant l'islamisation, les Bade pratiquaient des religions traditionnelles animistes, dont il ne reste que des traces dans les pratiques syncrétiques minoritaires."
+    },
+    "languages": {
+      "mainLanguage": "Bade (Bede)",
+      "isoCodes": ["bde"],
+      "dialects": [
+        "Gashua Bade (Mazgarwa) - dialecte du nord, autour de Gashua",
+        "Southern Bade (Bade-Kado) - dialecte meridional",
+        "Western Bade (Amshi, Maagwaram, Shirawa) - dialecte occidental"
+      ],
+      "vehicularRole": "Le bade est parle comme langue maternelle par environ 356 000 locuteurs (Ethnologue 2022), principalement dans le nord du Yobe State. Cependant, la langue est consideree comme vulnerabe : la plupart des villages bade ont adopte le haoussa comme langue principale, et les jeunes generations abandonnent de plus en plus le bade. Le haoussa sert de lingua franca dans toute la region. L'anglais est la langue officielle de l'education. Le bade n'est pas enseigne dans les ecoles. La langue est classee West Chadic, branche B.1 Bade Proper, apparentee au Ngizim et au Duwai."
+    },
+    "culture": {
+      "majorRites": "Rites islamiques : celebrations du Ramadan, des deux Aïd (Aïd al-Fitr et Aïd al-Adha), pelerinage a La Mecque (Hajj). Mariages : ceremonies de mariage traditionnelles incluant le paiement de la dot, les benedictions familiales et les festivites communautaires. Rites de naissance : celebrations a la naissance, notamment lors du 7e jour (Tonsure et attribution du nom selon la tradition islamique). Funerailles : enterrement dans les 24 heures selon le rite islamique, ceremonies de condoleances de trois jours. Circoncision masculine : rite de passage a l'age adulte, associe a des festivites familiales.",
+      "symbols": "Les symboles islamiques (croissant et etoile) sont les plus repandus. Les objets d'artisanat traditionnels (nattes, poteries, tissus) portent des motifs geometriques caracteristiques de la region. Le titre d'Emir de Bade et la cour de Gashua sont les symboles de l'identite politique bade.",
+      "artsAndMusic": "Artisanat : poterie traditionnelle, tissage de nattes et d'etoffes, maroquinerie, broderie sur vetements. Musique : percussions traditionnelles (tambours de differentes tailles), flutes, musique de cour lors des ceremonies royales. Danse : danses traditionnelles lors des celebrations islamiques et des mariages. Poesie orale : traditions de recits historiques et de genealogies transmises oralement en bade et en haoussa. Peche saisonniere dans les rivieres Hadejia et Katagum, activite qui genere ses propres rituels et chants de travail.",
+      "spiritualities": "L'islam sunnite (ecole malekite, avec des influences du modele haoussa) est la religion pratiquement universelle parmi les Bade. Les pratiques incluent la priere quotidienne (salat), le jeune du Ramadan, l'aumone (zakat), et le pelerinage. Un syncrétisme leger avec des croyances animistes anterieures persiste dans certaines zones rurales, notamment les croyances aux esprits et les rites de protection. Les traditions orales mentionnent des origines legendaires liees au prophetisme islamique (tradition de Badr du Yemen)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "L'emirat Bedde (Bade Emirate) est le principal heritage politique des Bade. Cree sous l'influence de l'empire Kanem-Bornu, l'emirat a ete formellement structure sous la colonisation britannique. La cour de l'Emir de Bade est situee a Gashua depuis des siecles. L'emirat faisait partie du vaste systeme politique haoussa-fulani du nord du Nigeria. Historiquement, un galadima (gouverneur nomme par le roi de Bornu) administrait les Bade depuis Nguru avant la creation de l'emirat.",
+      "relationsWithNeighbors": "Les Bade ont entretenu des relations etroites et parfois conflictuelles avec l'empire Kanem-Bornu. Ils voisinent linguistiquement les Ngizim (au sud) et les Duwai (a l'est), avec qui ils partagent une appartenance au West Chadic. Les interactions avec les Haoussa ont conduit a une assimilation culturelle et linguistique progressive. L'aridite du climat sahelo-soudanien contraint les Bade a une agriculture de subsistance complementee par la peche saisonniere, ce qui structure leurs echanges avec les peuples voisins.",
+      "conflictsOrAlliances": "Soumission historique au galadima de Bornu base a Nguru (avant le 14e siecle). Incorporation dans l'emirat Bedde sous influence du systeme politique Bornu. Resistance partielle au Jihad Fulani du 19e siecle. Administration coloniale britannique ayant structure l'emirat Bedde. Les decennies recentes ont vu des tensions liees aux activites de Boko Haram dans le nord-est du Nigeria, affectant la region du Yobe State.",
+      "diaspora": "Des membres de la communaute Bade se sont installes dans les grandes villes nigerianes (Kano, Lagos, Abuja, Maiduguri, Damaturu) pour des raisons economiques et educatives. Une diaspora plus modeste existe dans les pays occidentaux (Royaume-Uni, etats-Unis, Canada)."
+    },
+    "demography": {
+      "totalPopulation": 380000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue (2025) : 356 000 locuteurs. UCLA African Languages — Bade (2018) : environ 250 000 en incluant tous les dialectes et le Duwai. Joshua Project (2026). Estimations tenant compte de la croissance demographique nigeriane. Recensement national nigerian 2006 (sans distinction ethnolinguistique fine).",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 380000,
+          "note": "Principalement nord du Yobe State (LGAs de Bade, Karasuwa, Jakusko, Nguru, Machina) et nord du Jigawa State"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bade language. https://en.wikipedia.org/wiki/Bade_language",
+      "SIL Ethnologue — Bade (bde). https://www.ethnologue.com/subgroup/2040/",
+      "UCLA African Languages — Bade. https://aflang.humanities.ucla.edu/language-materials/chadic-languages/yobe/bade/",
+      "Joshua Project — Bade in Nigeria. https://joshuaproject.net/people_groups/10548/NI",
+      "Britannica — Bedde Emirate. https://www.britannica.com/place/Bedde",
+      "Glottolog 5.3 — Bade (bade1248). https://glottolog.org/glottolog?search=bade",
+      "Wiktionary ISO 639-3 codes/Africa — bde Bade. https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa"
+    ]
+  }
+}

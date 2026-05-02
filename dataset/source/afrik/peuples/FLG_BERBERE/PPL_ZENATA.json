@@ -1,0 +1,117 @@
+{
+  "id": "PPL_ZENATA",
+  "nameMain": "Zenata",
+  "languageFamilyId": "FLG_BERBERE",
+  "currentCountries": ["DZA", "MAR", "TUN", "LBY"],
+  "content": {
+    "appellations": {
+      "mainName": "Zenata",
+      "selfAppellation": "Iznaten",
+      "exonyms": ["Zanata", "Zenete", "Zenata Berbers", "Zineta", "Genete"],
+      "originOfExonyms": "Le terme Zenata (arabe : زناتة, Zanata) est d'origine arabe medievale, utilise par les geographes et historiens arabes comme Ibn Khaldun pour designer cette confederation berbere. L'endonyme berbere est Iznaten (en tifinagh : ⵉⵣⵏⴰⵜⵏ). Le terme Zenete a donne en espagnol jinete (cavalier), en raison du role militaire des cavaliers zenata dans les armees de l'emirat de Grenade.",
+      "whyProblematic": "Le terme Zenata est un macro-groupe historique dont les limites sont contestees par les historiens. L'historien Yves Modéran souligne que le terme est relativement tardif et sans racines claires dans l'Antiquite : les mentions de factions zenata dans les sources medievales sont incertaines quant a leur histoire reelle ou a une simple affiliation nominale. La notion de Zenata comme groupe unifie est surtout une construction des sources arabes medievales.",
+      "contemporaryUsage": "Le terme Zenata est aujourd'hui principalement utilise dans un sens historique et linguistique. Dans la linguistique berbere, il designe un sous-groupe dialectal (les langues zenati) incluant le rifain du Maroc et le chaoui d'Algerie. Les Berberes du Rif marocain sont consideres comme les principaux descendants des Zenata actuels. Le terme n'est pas couramment utilise comme identifiant ethnique contemporain.",
+      "linguisticFamily": "FLG_BERBERE",
+      "ethnoLinguisticGroup": "Berbere septentrional (groupe zenati / nord-berbere)",
+      "historicalRegion": "Maghreb central et occidental : Tripolitaine (Libye actuelle), Tunisie meridionale, Algerie centrale et occidentale (Tlemcen, Tiaret), Maroc oriental et septentrional (Rif, Fes, Sijilmasa)",
+      "currentCountries": ["DZA", "MAR", "TUN", "LBY"]
+    },
+    "ethnicities": [
+      "Jarawa — l'une des trois grandes tribus zenata identifiees par Ibn Khaldun, presente en Tunisie et Algerie orientale",
+      "Maghrawa — tribu zenata ayant controle Fes, Sijilmasa et Aghmat au 11e siecle (Maroc)",
+      "Banu Ifran — tribu zenata ayant domine Tlemcen, Sale (Chellah) et la region de Tadla",
+      "Miknasa — tribu zenata de l'est marocain, fondatrice de Sijilmasa, allies successifs des Fatimides puis des Omeyyades de Cordoue",
+      "Banu Marin (Marinides) — tribu zenata du Maroc, fondatrice de la dynastie marinide (1245-1465)",
+      "Wattasides — tribu zenata apparentee aux Marinides, regnant sur le Maroc (1465-1554)",
+      "Abd al-Wadides (Zayyanides) — tribu zenata d'Algerie, fondatrice du Royaume de Tlemcen (1235-1556)",
+      "Berberes du Rif (Irifiyyen) — descendants consideres comme les principaux heritiers zenata contemporains, nord du Maroc"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Zenata sont une confederation de tribus berberes dont l'histoire avant les conquetes musulmanes est peu documentee, essentiellement connue via les sources arabes medievales. Selon l'historien Hsain Ilahiane, les premiers groupes zenata connus occupaient la Tripolitaine (Libye actuelle) et le sud de la Tunisie actuelle au moment des conquetes arabes. Leurs origines plus anciennes sont controversees : les theories de migrations anterieures manquent de bases fiables selon l'historien Yves Modéran. Comme tous les Berberes, ils descendent des populations autochtones d'Afrique du Nord presentees dans les sources antiques comme Numides et Maures.",
+      "formationPeriod": "La confederation zenata emerge comme acteur politique majeur a la fin du 7e siecle, lors de l'integration rapide des premiers groupes zenata de Tripolitaine dans les forces militaires arabes. Les Zenata se distinguent par leur islamisation rapide, contrairement a d'autres Berberes qui resisterent jusqu'au 8e siecle a la conquete Umayyade. C'est aux 8e-10e siecles que des groupes zenata migrent vers l'Algerie occidentale (Tiaret, Tlemcen) et le Maroc oriental. Leur apogee politique se situe aux 10e-11e siecles (comme mandataires des Fatimides et Omeyyades) et aux 13e-16e siecles (dynasties marinide, zayyanide et wattaside).",
+      "migrationRoutes": [
+        "Depuis la Tripolitaine (Libye) vers l'ouest a travers l'actuelle Tunisie et Algerie (8e-10e siecles)",
+        "Depuis l'Algerie centrale (Tiaret) vers le Maroc oriental et septentrional sous pression des Kutama et Houara",
+        "Penetration dans l'Emirat de Grenade (al-Andalus) comme cavaliers mercenaires zenata (13e-14e siecles)"
+      ],
+      "historicalSettlementZones": [
+        "Tripolitaine (Libye occidentale actuelle) — zone de formation originelle",
+        "Algerie centrale et occidentale : Tiaret, Tlemcen, chelif",
+        "Maroc oriental et du nord : Oujda, Taza, Sijilmasa (Tafilalt), Rif",
+        "Maroc atlantique : Fes, Sale (Chellah), Tadla, Aghmat",
+        "Al-Andalus (Grenade) : cavaliers zenata mercenaires (13e-14e siecles)"
+      ],
+      "unificationsOrDivisions": "Les Zenata n'ont jamais forme un Etat unifie ; ils constituaient une confederation de tribus parfois rivales, souvent au service de dynasties exterieures (Fatimides, Omeyyades de Cordoue). Trois grandes tribus sont identifiees par Ibn Khaldun : les Jarawa, les Maghrawa et les Banu Ifran. Les dynasties zenata (Marinides, Zayyanides, Wattasides) ont ete concurrentes et se sont combattues. Les Zenata ont ete progressivement supplantes politiquement par les Almohades puis les dynasties cherifo-arabes (Saadiens, Alaouites).",
+      "externalInfluences": "Islamisation rapide et integration dans les forces militaires arabes des le 7e siecle. Role de mandataires (proxies) alternativement pour les Fatimides et les Omeyyades de Cordoue aux 10e-11e siecles. Pression des Kutama et Houara qui les deplacerent vers l'ouest. Conquete almohade au 12e siecle. Pression ottomane sur les Zayyanides de Tlemcen (1556). Expulsion des Marinides de la Peninsule iberique apres la bataille de Rio Salado (1340).",
+      "majorHistoricalEvents": "En 740, Khalid ibn Hamid al-Zanati conduit la grande revolte berbere contre les Omeyyades et remporte les batailles des Nobles et de Bagdoura. En 931, la tribu miknasa des Zenata prend le controle de Fes au nom des Omeyyades de Cordoue. En 1245, les Banu Marin (Marinides) lancent leur expansion depuis le nord du Maroc et renversent les Almohades. A son apogee au milieu du 14e siecle, le sultan marinide Abu al-Hasan controle la majeure partie du Maghreb. En 1235, les Zayyanides etablissent le Royaume de Tlemcen. En 1465, les Wattasides renversent le dernier sultan marinide Abd al-Haqq II. En 1556, les Ottomans mettent fin au Royaume de Tlemcen."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Zenata etaient organises en confederations tribales nomades ou semi-nomades, dirigees par des chefs (shuyukh) hereditaires. Lorsqu'ils accedaient au pouvoir dynastique (Marinides, Zayyanides), ils adoptaient les structures politiques islamiques (sultanat, makhzen) tout en maintenant la legitimite tribale berbere. Le droit coutumier berbere (azerf) coexistait avec la charia islamique dans leurs territoires.",
+      "clanOrganization": "Les trois grandes tribus identifiees par Ibn Khaldun (Jarawa, Maghrawa, Banu Ifran) se subdivisaient en clans et familles etendues. L'organisation clanique permettait de mobiliser rapidement des contingents militaires (notamment la cavalerie legere, la gineteria, reputee dans tout l'Occident). Les alliances entre clans etaient scellees par des mariages et des pactes guerriers.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La legitimite dynastique des grandes maisons zenata (Marinides, Zayyanides) reposait sur la genealogie tribale berbere. Les Marinides revendiquaient une ascendance commune zenata pour justifier leur domination sur d'autres tribus. La transmission du pouvoir suivait des regles de succession complexes, parfois source de guerres civiles entre branches de la meme maison.",
+      "religiousAuthority": "Les Zenata embrasserent rapidement l'islam sunnite, d'abord dans sa version kharidjite (8e siecle : la revolte de 740 fut conduite par des Zenata kharijites soufris) puis dans sa version sunnite malekite, promue activement par les Marinides qui parrainerent la construction de madrasas a Fes. Les sultans marinides Abou al-Hasan et Abou Inan furent de grands mecenes du malikisme. Les conferies soufies etaient predominantes dans les campagnes de leur empire."
+    },
+    "languages": {
+      "mainLanguage": "Berbere zenati (groupe dialectal nord-berbere)",
+      "isoCodes": ["rif", "shy"],
+      "dialects": [
+        "Rifain (tarifit) — parle par les Berberes du Rif marocain, consideres comme principaux heritiers zenata actuels (ISO : rif)",
+        "Chaoui (tachawit) — parle dans les Aures (Algerie nord-est), appartenant au groupe zenati (ISO : shy)",
+        "Tlemceni (dialecte araboize) — les Zenata de la region de Tlemcen ont largement adopte l'arabe maghrebin",
+        "Langues zenati medievales — aujourd'hui eteintes en dehors du rifain et du chaoui ; le siwi (Egypte) presente des affinites avec le groupe zenati"
+      ],
+      "vehicularRole": "Les langues zenati sont aujourd'hui representees principalement par le rifain (tarifit) au nord du Maroc et le chaoui (tachawit) en Algerie. Historiquement, le berbere zenati servait de langue vehiculaire dans les routes commerciales du Maghreb central. Apres les dynasties zenata, l'arabe maghrebin s'est impose progressivement comme langue dominante dans leurs anciens territoires."
+    },
+    "culture": {
+      "majorRites": "En tant que macro-groupe historique, les Zenata n'ont pas de rites uniformes documentees. Les populations de descendance zenata (Rifains, Chaouis) pratiquent l'islam sunnite malekite avec des elements de culture berbere : ceremonies de mariage berberes (ahidus/ahwach selon les regions), fetes agricoles saisonnieres, célébration du Yennayer (Nouvel An berbere, 13 janvier), pratiques de benediction des recoltes et des troupeaux. Les traditions du henné lors des mariages et les rites de circoncision sont partagés avec l'ensemble du Maghreb berbere.",
+      "symbols": "Le cheval et la cavalerie legere (gineteria) sont les symboles historiques de la puissance militaire zenata ; le terme espagnol jinete (cavalier) leur est etymologiquement attribue. Les dynasties zenata (notamment les Marinides) ont laisse un patrimoine architectural majeur : madrasa Bou Inania de Fes, medina de Fes el-Bali (UNESCO). La capitale Tlemcen (Zayyanides) est un symbole de l'heritage zenata en Algerie.",
+      "artsAndMusic": "Les Zenata ont contribue au developpement de la civilisation urbaine marocaine et algerienne via leurs dynasties. Les Marinides sont les grands batisseurs de medersas et mosquees de Fes, dont la medersa Bou Inania, chef-d'oeuvre de l'architecture hispano-mauresque. La musique des Berberes du Rif (ahidus, musique de flute et de tambour) et des Chaouis d'Algerie (musique a base de bendir et de gasba) representent les traditions musicales des descendants zenata. La poesie orale berbere (izlan) est une forme artistique importante dans ces communautes.",
+      "spiritualities": "Les Zenata furent parmi les premiers Berberes a adopter l'islam (7e siecle), d'abord dans la version kharidjite soufrite, puis sunnite malekite a partir du 10e siecle. Les dynasties zenata (notamment les Marinides) furent de grands patrons du malikisme et du soufisme. Le maraboutisme (culte des saints locaux) etait repandu dans leurs territoires. Les survivances de croyances pre-islamiques berberes (culte des sources, des montagnes sacrées, du feu lors du Yennayer) persistent dans les communautes de descendance zenata du Rif et des Aures."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Zenata ont fonde ou dirige plusieurs royaumes et dynasties majeurs du Maghreb medieval. L'Emirat des Midrarides (Miknasa zenata, 8e-10e siecles) fondait Sijilmasa dans le Tafilalt marocain, carrefour du commerce trans-saharien. La Dynastie marinide (Banu Marin, 1245-1465) renversa les Almohades et porta son empire a son apogee sous Abu al-Hasan (milieu 14e siecle) en controlant la majeure partie du Maghreb. La Dynastie wattaside (1420-1554) succeda aux Marinides au Maroc. La Dynastie zayyanide (Abd al-Wadides, 1235-1556) regna sur le Royaume de Tlemcen en Algerie actuelle pendant plus de trois siecles.",
+      "relationsWithNeighbors": "Les Zenata entretinrent des relations complexes avec les autres confederations berberes : deplaces par les Kutama et Houara, en competition constante avec les Sanhaja. Ils servirent alternativement les Fatimides et les Omeyyades de Cordoue comme mandataires au 10e siecle. Les Marinides soutinrent l'Emirat de Grenade (13e-14e siecles) et envoye-rent des troupes en Espagne. Les Zayyanides de Tlemcen furent constamment sous la pression des Marinides a l'ouest, des Hafsides a l'est, puis des Ottomans.",
+      "conflictsOrAlliances": "La revolte berbere de 740 contre les Omeyyades, menee par le zenata Khalid ibn Hamid al-Zanati, est l'un des evenements les plus importants de l'histoire du Maghreb islamique. Les guerres entre Marinides et Zayyanides pour le controle de Tlemcen jalonnent les 13e-15e siecles. Les Marinides furent vaincus par les chretiens castillans et portugais a la bataille de Rio Salado (1340) et perdent Algeciras (1344). Les Zayyanides succombent aux Ottomans en 1556. Les Wattasides sont renverses par les Saadiens (champs chretien allie aux Saadiens).",
+      "diaspora": "Les cavaliers zenata (gineteria) integres dans les armees de l'Emirat de Grenade constituent la diaspora medievale zenata la plus documentee. Des nobles marinides exiles s'etablissent a Grenade apres la chute de leur dynastie. Au niveau contemporain, les Berberes du Rif marocain (principaux descendants zenata) ont une diaspora importante en Europe, notamment aux Pays-Bas, en Belgique et en Espagne."
+    },
+    "demography": {
+      "totalPopulation": 5000000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur la population berbere du Rif marocain (environ 4 millions de locuteurs du rifain, ISO rif, selon Ethnologue) et les Chaouis d'Algerie (environ 2 millions, mais chevauchement partiel avec d'autres groupes zenati). Le terme Zenata comme identifiant contemporain n'est pas utilise dans les recensements : ce chiffre represente les populations de descendance zenata principalement identifiee via leurs langues. Source : Ethnologue (rifain, chaoui), Wikipedia EN Zenata.",
+      "distributionByCountry": [
+        {
+          "country": "MAR",
+          "population": 4000000,
+          "note": "Principalement les Berberes du Rif (tarifit), nord du Maroc ; descendants zenata les mieux identifies contemporains"
+        },
+        {
+          "country": "DZA",
+          "population": 2000000,
+          "note": "Chaouis des Aures (tachawit) et populations berberophones de Tlemcen et du Chelif, d'ascendance zenata"
+        },
+        {
+          "country": "TUN",
+          "population": 50000,
+          "note": "Populations berberes residuelles de Tunisie meridionale (Djerba, Matmata) d'ascendance en partie zenata"
+        },
+        {
+          "country": "LBY",
+          "population": 30000,
+          "note": "Berberes de Tripolitaine (region de formation originelle des Zenata)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Zenata. https://en.wikipedia.org/wiki/Zenata",
+      "Ibn Khaldun. Kitab al-Ibar (Histoire des Berberes). Trad. de Slane. Alger, 1852-1856.",
+      "Modéran, Yves. Les Maures et l'Afrique romaine (4e-7e siecle). Rome: Ecole francaise de Rome, 2003.",
+      "Ilahiane, Hsain. Historical Dictionary of the Berbers (Imazighen). Lanham: Scarecrow Press, 2006.",
+      "Encyclopaedie Berbere — articles sur Zenata, Marinides, Zayyanides. https://journals.openedition.org/encyclopedieberbere/",
+      "Ethnologue — Tarifit (rif). https://www.ethnologue.com/language/rif/",
+      "Ethnologue — Chaoui (shy). https://www.ethnologue.com/language/shy/",
+      "Wikipedia EN — Marinid dynasty. https://en.wikipedia.org/wiki/Marinid_dynasty",
+      "Wikipedia EN — Zayyanid dynasty. https://en.wikipedia.org/wiki/Zayyanid_dynasty"
+    ]
+  }
+}

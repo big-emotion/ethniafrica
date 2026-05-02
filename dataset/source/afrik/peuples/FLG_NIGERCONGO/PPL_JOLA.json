@@ -1,0 +1,122 @@
+{
+  "id": "PPL_JOLA",
+  "nameMain": "Jola",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["SEN", "GMB", "GNB"],
+  "content": {
+    "appellations": {
+      "mainName": "Jola",
+      "selfAppellation": "Jola / Ajamat (endonyme)",
+      "exonyms": [
+        "Diola (terme français colonial, encore courant en Casamance et en Guinee-Bissau)",
+        "Jola (forme anglaise standardisee, utilisee en Gambie et dans la litterature academique anglophone)"
+      ],
+      "originOfExonyms": "L'endonyme Ajamat (sing. ajoola) designe la personne qui parle joola. Le terme Diola est l'adaptation française de Jola, utilise par l'administration coloniale senegalaise. Le terme Jola s'est impose dans la litterature anglophone via la Gambie coloniale britannique. Les deux formes coexistent aujourd'hui.",
+      "whyProblematic": "Les Jola sont un groupe extremement heterogene, divise en nombreuses sous-communautes parlant des dialectes parfois mutuellement inintelligibles. L'appellation generique Jola ou Diola peut masquer cette diversite interne. Le terme Diola fut employe par l'administration coloniale française pour designer un ensemble de peuples qui ne se pensaient pas forcement comme une unite.",
+      "contemporaryUsage": "Jola est l'appellation standard dans les contextes academiques internationaux et au Senegal, Gambie et Guinee-Bissau. Le dialecte principal Fogni (Jola-Fonyi) est l'une des six langues nationales officielles du Senegal. En Gambie, 10% de la population est jola. Le mouvement independantiste de la Casamance (MFDC, depuis 1982) est largement a base jola.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Atlantique-Bak (branche Bak du groupe Atlantique du Niger-Congo) ; classifie dans la famille Niger-Congo, sous-groupe Atlantic-Congo",
+      "historicalRegion": "Basse-Casamance (Senegal meridional), basse Gambie et Guinee-Bissau ; premiers habitants documentees des berges inferieures de la Casamance et de la Gambie",
+      "currentCountries": ["SEN", "GMB", "GNB"]
+    },
+    "ethnicities": [
+      "Jola-Fonyi (Kujamaat) — groupe principal, region de Bignona, dialecte officiel national au Senegal",
+      "Jola-Banjaal — petite zone sud du fleuve Casamance",
+      "Jola-Bayot — region de Ziguinchor, grammaire jola avec fort vocabulaire non-jola",
+      "Jola-Karon — cote de Casamance sud de Diouloulou",
+      "Jola-Mlomp — village de Mlomp",
+      "Jola-Gusilay — village de Thionck Essyl, riche tradition musicale",
+      "Jola-Kasa — region d'Oussouye, siege du royaume jola le plus connu",
+      "Jola-Kuwaataay — cote sud du fleuve Casamance",
+      "Jola-Felupe (Ediamat) — quelques villages au sud d'Oussouye, Guinee-Bissau",
+      "Jola-Foni et Jola-Brin — Gambie et Casamance nord",
+      "Jola-Huluf, Jola-Jamat, Jola-Joheyt, Jola-Seleky, Jola-Kabrouse, Jola-Jiwat — sous-groupes communautaires"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Jola sont largement consideres comme les premiers habitants des berges inferieures du fleuve Casamance et de la Gambie. Les megalithes et cercles de pierre de la region peuvent avoir ete erigees par leurs ancetres ou ceux des Serer. La tradition orale jola-serer, rapportee dans la legende de Jamboon et Againe, evoque une ancetre commune : deux soeurs separeees par une pirogue brisee au cap Sangomar, dont les descendants respectifs devinrent les Jola (sud) et les Serer (nord). Les Jola ont probablement atteint la Basse-Casamance au XIVe siecle, assimilant les Bainuk anterieurs et leur tradition rizicole.",
+      "formationPeriod": "Vers le XIe siecle, en reponse a un climat de plus en plus sec, les agriculteurs jola creerent un systeme de riziculture en casiers (padis), retenant les eaux de pluie et de ruissellement lors de la saison humide. Ce systeme, qualifie par des chercheurs d'une des plus importantes civilisations agraires d'Afrique de l'Ouest, definit l'identite jola pendant un millenaire. La periode coloniale (XIXe-XXe siecles) introduisit la culture de l'arachide et une integration partielle aux economies monetaires. La resistance a l'islamisation et a la christianisation fut une caracteristique durable, beaucoup de communautes conservant leur religion animiste jusqu'au XXe siecle.",
+      "migrationRoutes": [
+        "Occupation initiale de la Basse-Casamance et des berges de la Gambie ; provenance ulterieure incertaine, possiblement du nord ou de l'est face aux pressions climatiques et migratoires du XIe au XIVe siecle",
+        "Presence en Guinee-Bissau, notamment les Jola-Felupe, par extension du peuplement casamançais vers le sud"
+      ],
+      "historicalSettlementZones": [
+        "Basse-Casamance (Senegal) : region d'Oussouye, Bignona, Ziguinchor — zone de concentration principale",
+        "Gambie : berges de la Gambie, surtout partie ouest et centrale du pays",
+        "Guinee-Bissau : nord du pays, region de Bafata et Gabu",
+        "Villages ruraux disperses en communautes de taille modeste, sans grandes villes historiques"
+      ],
+      "unificationsOrDivisions": "Les Jola n'ont jamais forme de structure politique unifiee depassant le niveau villageois. Leur organisation egalitaire et l'absence d'hierarchie centralisee furent des caracteristiques conscientes, notamment liees a leurs croyances en Bakin (esprits protecteurs). La seule exception est le royaume d'Oussouye, dont le roi (Oyei ou Sila) assume davantage un role de pretres que de chef politique. Le mouvement separatiste casamançais (MFDC depuis 1982) a cree une identite politique jola moderne mais divise.",
+      "externalInfluences": "Pression islamique des Mandinka voisins (Guerre des Marabouts, XIXe siecle) ; islamisation partielle de nombreuses communautes jola, notamment en Gambie (90% de musulmans). Influence du christianisme via la colonisation française et portugaise. Colonisation française (Senegal) et britannique (Gambie). Maintien de pratiques animistes traditionnelles meme apres l'adoption de l'islam ou du christianisme.",
+      "majorHistoricalEvents": "Creation du systeme de padis rizicoles (XIe siecle). Arrivee probable en Basse-Casamance (XIVe siecle), assimilation des Bainuk. Pression de la Guerre Soninke-Marabout (XIXe siecle) et islamisation partielle. Colonisation française de la Casamance (fin XIXe siecle). Independance du Senegal (1960). Conflit de la Casamance : creation du MFDC (1982) avec une forte base jola, revendiquant l'independance de la Casamance du Senegal."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La vaste majorite des communautes jola n'a aucune stratification sociale ou politique, etant organisee en familles et quartiers. Dans certaines communautes, une autorite centrale existe : le roi (Oyei ou Sila), dont le role ressemble plus a celui d'un pretre que d'un chef politique seculier. Le Oyei du royaume d'Oussouye est l'exemple le plus connu. Chez les Jola musulmans, le marabout (almaami) joue un role de guide religieux et social. Les anciens forment des conseils villageois qui prennent les decisions quotidiennes et sont censes posseder des pouvoirs occultes.",
+      "clanOrganization": "La structure de base est la famille et le quartier (esulawe), organises autour de lignages patrilineaires. Les sanctuaires de lignage (appeles buneeti a Thionck-Essyl, sineeti ou ukiin dans d'autres communautes) constituent des points de reference spirituels et genealogiques. Certains clans sont associes a des fonctions rituelles ou artisanales specifiques.",
+      "ageClassSystems": "Les classes d'age structurent la vie sociale jola. Les initiés du bukut forment une classe d'age solidaire (tous les males de 12 a 35 ans inities ensemble tous les 20-25 ans). La lutte traditionnelle est organisee par tranche d'age, marquant le passage des garçons et filles vers l'age adulte.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'acces aux terres de riziculture, aux droits de culte aux sanctuaires ancestraux et aux alliances matrimoniales. Les femmes jouent des roles importants malgre la patrilinearite : elles participent aux conseils villageois, peuvent etre chefs religieuses et controlent les marches. La riziculture est tied etroitement aux droits lignagers sur les casiers a riz.",
+      "religiousAuthority": "Dans les communautes animistes, les anciens (qui presidant les rites) et le Oyei (roi-pretre) constituent les autorites religieuses. Les esprits Bakin ou Eneerti protegent les familles, villages et champs, et les anciens assurent la communication avec eux. Dans les communautes islamisees (majorite en Gambie et une part au Senegal), le marabout tient l'autorite religieuse. Les deux systemes coexistent souvent, avec maintien des rites ancestraux comme le bukut meme dans les villages musulmans."
+    },
+    "languages": {
+      "mainLanguage": "Jola-Fonyi (Kujamatay), dialecte standard",
+      "isoCodes": ["dyo", "bda", "csk", "dyi"],
+      "dialects": [
+        "Jola-Fonyi (dyo) : dialecte principal, langue nationale senegalaise, region de Bignona",
+        "Bayot (bda) : parle autour de Ziguinchor, possiblement un isolat avec emprunt jola massif",
+        "Jola-Kasa : parle a Oussouye",
+        "Jola-Banjaal : petite zone sud du fleuve Casamance",
+        "Jola-Gusilay : village de Thionck Essyl",
+        "Jola-Karon : cote casamançaise sud",
+        "Jola-Mlomp : village de Mlomp",
+        "Jola-Kuwaataay : cote sud Casamance",
+        "Jola-Felupe (Ediamat) : villages d'Oussouye et Guinee-Bissau"
+      ],
+      "vehicularRole": "Le jola-fonyi est l'une des six langues nationales officielles du Senegal et la principale lingua franca du groupe jola. La famille linguistique jola (groupe Bak) appartient a l'Atlantic-Congo du Niger-Congo. De nombreux Jola ne parlent plus leur langue maternelle, en raison de l'urbanisation et du contact avec le wolof, le mandinka et le français. Le jola-fonyi est parle par environ 500 000 personnes au Senegal et en Gambie. En Gambie, 10% de la population est jola."
+    },
+    "culture": {
+      "majorRites": "Bukut : ceremonie d'initiation masculine la plus importante des Jola, se deroulant tous les 20 a 25 ans dans chaque village. Tous les males de 12 a 35 ans partent dans la foret sacree pendant plus de trois semaines. Le bukut comprend la circoncision, des sacrifices animaux, des libations et des enseignements secrets. Commence par trois jours de fetes (Garuur) ou les hommes deja inities dansent. Les garçons s'y rendent avec une chanson personnelle, composee pour eux par leur mere lors du Buyeet (rituel de remise de tissu par la mere). Apres la foret, les inities sont reintegres a la societe comme hommes adultes et constituent une classe d'age solidaire. Masque cornu d'initiation (Ejumba) : porte par les inities lors des danses de reintegration. Lutte traditionnelle (fode) : pour garçons et filles atteignant l'age adulte, chargee de signification spirituelle, liee a la fertilite et a la preparation des guerriers. Ceremonies funeraires : rites indispensables pour que l'ame rejoigne les ancetres aupres du Createur (Ata Emit) ; le defunt qui a mal vecu est condamne au statut d'esprit exile (Holowa, chez les Jola-Kasa). Festivals annuels : Samay, Kumpo, Niasse.",
+      "symbols": "Masque cornu Ejumba : cylindre de fibres de palme tresse surmonte de cornes d'antilope (ou de boeuf), porte par les inities lors du bukut, symbole majeur de la transition vers l'age adulte. Padis (casiers a riz) : symbole de la civilisation jola, lie a leur religion et organisation sociale. Kajando : outil agricole local symbolisant le travail de la terre. Sanctuaires Bakin (buneeti, ukiin, sineeti) : espaces sacres protegeant villages et familles. Le vin de palme : boisson rituelle maintenue meme apres islamisation.",
+      "artsAndMusic": "Bugaar : danse seculaire mixte avec tambours a peau animale (graves a aigus), rattles de fer aux poignets du percussionniste, choeur masculin et claquettes de bois chez les femmes. Siling : chants communautaires masculins lors de la recolte du riz et des ceremonies funeraires. Ekonting : luth a trois cordes avec corps en gourde, chevalet mobile, col en bamboo ; ancetre probable du banjo americain. Esimben (Furaaka) : instrument a quatre cordes avec calebasse, joue en alternance par deux performeurs. Galire : instrument a une corde en bois de mangrove, joue en tenant une extremite dans la bouche, decline en raison de l'exode des jeunes. Bougarabou : tambour de prestige. Fouindoum, Ewang, Emombi, Ediando : instruments specifiques aux ceremonies d'initiation. Fabrication de masques (Ejumba) en fibres de feuilles de palmier. Vannerie, poterie, construction. Medecine herborisee : les Jola sont reputes herboristes.",
+      "spiritualities": "Les Jola croient en un Dieu unique, Emit ou Ata Emit (Maitre-Proprietaire de l'Univers), associe au ciel, a la pluie et aux saisons. Les esprits Bakin ou Eneerti (equivalent au Jalang mandinka) protegent les familles, les villages et les champs de riz. Ces entites ne sont pas adorees mais honorees et communiquees par les anciens. Les Ammahl sont des esprits d'eau auxquels on fait appel lors des guerres justifiees. Le sanctuaire Katapf protege des objets en metal, le Houpoombene contre les balles. La mauvaise vie condamne l'ame a l'errance (Holowa) sans repos. Environ 91% des Jola sont aujourd'hui musulmans (selon Wikipedia) mais les pratiques animistes persistent largement, notamment le bukut et le culte des ancetres. Les Jola de Guinee-Bissau et certaines communautes du Senegal restent animistes ou pratiquent un syncretisme fort. Une minorite est chretienne (catholicisme en Guinee-Bissau)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume d'Oussouye est la seule structure monarchique documentee chez les Jola, avec un Oyei (roi-pretre) dont le role est avant tout religieux. Les autres communautes jola n'ont pas developpe de structures politiques depassant le niveau villageois, ce qui constitua une resistance effective contre la suzerainete des royaumes mandinka et wolof voisins. L'organisation politique egalitaire fondee sur le controle collectif des padis rizicoles constitue un modele unique d'Afrique de l'Ouest.",
+      "relationsWithNeighbors": "Relations de voisinage avec les Mandinka (pression islamique, Guerre des Marabouts au XIXe siecle), les Wolof (influence culturelle au Senegal), les Serer (ancestre mythique commun). Les Jola assimilerent les Bainuk anterieurs dans la region de la Casamance. Tensions contemporaines liees au conflit casamançais (depuis 1982) avec l'Etat senegalais, la Gambie jouant parfois un role de mediateur.",
+      "conflictsOrAlliances": "Resistance historique a l'islamisation forcee lors des jihads et guerres maraboutiques du XIXe siecle. Resistance a la colonisation française en Casamance. Conflict arme en Casamance : le MFDC (Mouvement des Forces Democratiques de Casamance), fonde en 1982 avec une forte composante jola, reclame l'independance ou l'autonomie de la Casamance vis-a-vis du Senegal. Des accords de paix ont ete signes periodiquement (2004, 2012) mais la situation reste instable.",
+      "diaspora": "Emigration vers Dakar et les autres grandes villes senegalaises, particulierement en lien avec les conflits casamançais. Communautes jola en Gambie (10% de la population nationale), consideres comme le deuxieme groupe ethnique. Jola en Guinee-Bissau, surtout les Jola-Felupe. Emigration vers la France et le Royaume-Uni depuis la periode coloniale."
+    },
+    "demography": {
+      "totalPopulation": 900000,
+      "referenceYear": 2025,
+      "source": "Wikipedia Jola people (total 900 000 mentionne dans l'infobox). Public Intelligence — Senegal Cultural Field Guide : environ 600 000 au Senegal (5% de la population). The Gambia : 10% de la population (environ 250 000 sur 2,5 millions). Guinee-Bissau : presence minoritaire. Sources : Wikipedia Jola people, Minority Rights Group Senegal, US Government Senegal Cultural Field Guide.",
+      "distributionByCountry": [
+        {
+          "country": "SEN",
+          "population": 600000,
+          "note": "Basse-Casamance (region d'Oussouye, Bignona, Ziguinchor) ; 5% de la population senegalaise, premier groupe en Casamance"
+        },
+        {
+          "country": "GMB",
+          "population": 270000,
+          "note": "10% de la population gambienne, deuxieme groupe ethnique du pays"
+        },
+        {
+          "country": "GNB",
+          "population": 30000,
+          "note": "Nord de la Guinee-Bissau, principalement Jola-Felupe (Ediamat)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Jola people. https://en.wikipedia.org/wiki/Jola_people",
+      "Wikipedia EN — Jola languages. https://en.wikipedia.org/wiki/Jola_languages",
+      "Ethnologue SIL — Jola-Fonyi (dyo). https://www.ethnologue.com/subgroup/1247/",
+      "Minority Rights Group — Diola (Jola) in Senegal. https://minorityrights.org/communities/diola-jola/",
+      "Sage Reference — Encyclopedia of African Religion: Diola. https://sk.sagepub.com/ency/edvol/africanreligion/chpt/diola",
+      "Academia.edu — Ritual and Masking Traditions in Jola Men's Initiation. https://www.academia.edu/63748523/Ritual_and_Masking_Traditions_in_Jola_Mens_Initiation",
+      "Public Intelligence — Senegal Cultural Field Guide. https://info.publicintelligence.net/MCIA-SenegalCultureGuide.pdf",
+      "Glottolog — Jola. https://glottolog.org/resource/languoid/id/jola1264",
+      "Baum, Robert M. — Shrines of the Slave Trade: Diola Religion and Society in Precolonial Senegambia. Oxford University Press, 1999.",
+      "Mark, Peter — A Cultural, Economic and Religious History of the Basse Casamance since 1500. Franz Steiner Verlag, 1985."
+    ]
+  }
+}

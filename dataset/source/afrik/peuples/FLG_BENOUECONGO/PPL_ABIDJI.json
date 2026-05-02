@@ -1,0 +1,76 @@
+{
+  "id": "PPL_ABIDJI",
+  "nameMain": "Abidji",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Abidji",
+      "selfAppellation": "Enyembe / Ogbru",
+      "exonyms": ["Abidji"],
+      "originOfExonyms": "Le nom Abidji est un exonyme donne par les ethnies voisines. Les membres de ce groupe se designent eux-memes par les noms de leurs deux dialectes constitutifs : Enyembe (groupe occidental, issu du courant alladien) et Ogbru (groupe oriental, issu du courant ashanti).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Abidji est officiellement utilise en Cote d'Ivoire et dans la litterature academique. Les denominationsenyembe et ogbru sont utilisees au sein de la communaute.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan lagunaire interieur, groupe Kwa (Niger-Congo)",
+      "historicalRegion": "Departement de Sikensi, region de l'Agneeby-Tiassa, sud de la Cote d'Ivoire",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": ["Abidji Enyembe", "Abidji Ogbru"],
+    "origins": {
+      "ancientOrigins": "Le peuple Abidji s'est forme par la rencontre et la fusion de deux courants migratoires distincts dans une region forestiere dense du sud de la Cote d'Ivoire. Le territoire actuel des Abidji etait vierge de peuplement permanent avant leur arrivee, situee il y a 150 a 200 ans au plus.",
+      "formationPeriod": "Formation du peuple Abidji au XVIIIe-XIXe siecle par fusion progressive des courants alladien et ashanti. Le departement de Sikensi constitue le berceau de ce peuple nouvellement constitue.",
+      "migrationRoutes": [
+        "Premier courant : depuis le peuple alladien au sud de la lagune Ebrié vers l'ouest du pays abidji actuel",
+        "Second courant : depuis l'est, groupe ashanti comprenant des Agni-N'denie (originaires du village d'Agoua), des M'batto et des Ebrié, vers l'est du pays abidji"
+      ],
+      "historicalSettlementZones": [
+        "Departement de Sikensi (environ 100 km au nord-est d'Abidjan)",
+        "Villages Enyembe (ouest) : Katadji, Sikensi A et B, Braffoueby (Braf-Obou), Becedi, Bakanou A et B, Ay-Mabo, Soukou-Obou, Abieou",
+        "Villages Ogbru (est) : Yaobou, Gomon, Sahouye, Agouaye (Badasso), Elibou, N'Doumi-Obou, Aka-Obou"
+      ],
+      "unificationsOrDivisions": "Le peuple Abidji resulte de la fusion de deux courants migratoires (alladien et ashanti) qui se sont rencontres sur un territoire forestier vierge et ont progressivement fusionne culturellement. Cette double origine persiste dans la distinction entre Abidji Enyembe (ouest) et Abidji Ogbru (est).",
+      "externalInfluences": "Influence culturelle et linguistique du peuple adioukrou voisin (systeme des classes d'age tikpe calque sur les classes adioukrou, referant vraisemblablement au systeme ebrié). Influence ashanti dans le courant Ogbru.",
+      "majorHistoricalEvents": "Formation progressive du peuple par fusion culturelle de deux courants migratoires distincts. Preservation du rite du Dipri comme marqueur identitaire central. Reconnaissance academique par les travaux de G.N. Bouah (1969), F. Lafargue (1976), P.G. Adou (1989)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation politique basee sur le systeme des classes d'age (tikpe) et la fonction de maitre de la terre (obou nyane). Le chef de terre (obou nyane) est traditionnellement le descendant patrilineaire du fondateur du village ; il est l'intermediaire entre la communaute et les divinites chthoniennes, offre des sacrifices periodiques et preside la fete du Dipri.",
+      "clanOrganization": "Organisation clanique patrilineaire (boso) : tous les clans abidji sont des patrilignages. Si le boso est tres nombreux dans un village, il se divise en sous-clans portant le nom de l'ancetre fondateur. Les chefs de clan sont les plus ages des descendants patrilineaires directs. Quand le clan est subdivise, il n'y a pas de chef de clan global mais seulement des chefs de sous-clans.",
+      "ageClassSystems": "Sept classes d'age (tikpe) : ningbesi, bodjoro, sete, n'dyroman, abroman, m'bedie, m'boruman. Chaque classe est subdivisee en trois sous-classes : odyungba, bago, kata. Ces classes unissent les individus de chaque generation independamment de leur clan et remplissent des fonctions sociales, economiques et militaires.",
+      "roleOfLineages": "Les patrilignages structurent la vie sociale, la transmission des droits fonciers et la legitimite politique. Le chef de terre est toujours le descendant patrilineaire direct du fondateur du village.",
+      "religiousAuthority": "Le maitre de la terre (obou nyane) assure la mediation avec les divinites chthoniennes et preside les rituels agricoles et le Dipri. Les pratiques animistes traditionnelles coexistent avec le christianisme."
+    },
+    "languages": {
+      "mainLanguage": "Abidji",
+      "isoCodes": ["abi"],
+      "dialects": ["Enyembe", "Ogbru"],
+      "vehicularRole": "L'abidji appartient a la famille des langues kwa, sous-groupe lagunaire interieur. Le francais sert de langue officielle et vehiculaire en Cote d'Ivoire. Un Nouveau Testament est disponible en abidji. La langue est qualifiee de stable par Ethnologue."
+    },
+    "culture": {
+      "majorRites": "Dipri : fete traditionnelle annuelle celebree en avril, presidee par le chef de terre (obou nyane). Elle marque la fin de l'annee et le debut de la nouvelle annee chez les Abidji. Durant sa celebration, des initiates ayant recu le bain purificateur peuvent se tailler ou s'enfoncer des lames dans la peau sans en mourir, demontrant des pouvoirs mystiques. Le Dipri est a la fois une arene de guerison mystique, de renouveau communautaire et de demostration de force spirituelle.",
+      "symbols": "Le chef de terre (obou nyane) est le symbole vivant du lien entre la communaute et ses ancetres fondateurs. La fete du Dipri est le principal marqueur identitaire du peuple Abidji.",
+      "artsAndMusic": "Traditions de chants et de danses associees aux ceremonies du Dipri et aux rites de passage. Artisanat lie a l'economie agricole et forestiere du departement de Sikensi.",
+      "spiritualities": "Culte des divinites chthoniennes (esprit de la terre) : la communaute, via le chef de terre, offre des sacrifices periodiques pour obtenir le droit de cultiver et de se nourrir. Croyances animistes structurees autour des ancetres fondateurs et des divinites de la terre. Le christianisme est aujourd'hui predominant, mais les pratiques traditionnelles (Dipri) sont maintenues comme patrimoine identitaire."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Absence de royaume centralise ; organisation en chefferies villageoises patrilineaires structurees par les classes d'age. Le chef de terre (obou nyane) est la figure d'autorite traditionnelle centrale.",
+      "relationsWithNeighbors": "Liens d'origine avec les Alladiens (courant Enyembe) et les Ashantis/Agni-N'denie/M'batto/Ebrié (courant Ogbru). Systeme des classes d'age calque sur le modele adioukrou. Villages Ogbru jouxtant le territoire adioukrou au sud.",
+      "conflictsOrAlliances": "Constitution historique par fusion pacifique de deux courants migratoires. Relations de voisinage avec les Adioukrou dont le systeme socio-politique a influence les Abidji.",
+      "diaspora": "Quelques communautes Abidji en dehors du departement de Sikensi, notamment a Braffoueby et dans d'autres localites du sud ivoirien."
+    },
+    "demography": {
+      "totalPopulation": 111000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (111 000)",
+      "distributionByCountry": [{ "country": "CIV", "population": 111000 }]
+    },
+    "sources": [
+      "Abidji – Wikipedia FR, 2025 (https://fr.wikipedia.org/wiki/Abidji)",
+      "Abidji – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10127/IV)",
+      "Le peuple Abidji – Rezo-Ivoire, 2011 (https://rezoivoire.net/ivoire/patrimoine/3811/le-peuple-abidji.html)",
+      "Le Dipri chez les Abidji de Cote d'Ivoire – Revue du GRALIFAH, J.J. Essoh et M. Yeo, 2024 (https://www.revuedugralifah.com/wp-content/uploads/2024/12/13-J-J-ESSOH-et-M-YEO-_170-180.pdf)",
+      "Abidji Language (ABI) – Ethnologue / SIL International (https://www.ethnologue.com/language/abi/)",
+      "Abidji – Glottolog, abid1235 (https://glottolog.org/resource/languoid/id/abid1235)"
+    ]
+  }
+}

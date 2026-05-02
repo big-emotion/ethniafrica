@@ -1,0 +1,115 @@
+{
+  "id": "PPL_NAMA",
+  "nameMain": "Nama",
+  "languageFamilyId": "FLG_KHOE",
+  "currentCountries": ["NAM", "ZAF"],
+  "content": {
+    "appellations": {
+      "mainName": "Nama",
+      "selfAppellation": "Nama / Namakhoen",
+      "exonyms": ["Namaqua", "Hottentots", "Khoikhoi du sud"],
+      "originOfExonyms": "Le terme Namaqua derive du nom khoekhoe auquel est ajoute le suffixe -qua/kwa signifiant gens de ou lieu de. Hottentot est un terme colonial neerlandais aujourd'hui considere comme offensant, utilise par les colons europeens pour designer les peuples Khoekhoe en reference a leurs clics linguistiques. Le terme Khoikhoi (ou Khoekhoe) signifie litteralement hommes des hommes ou vrais hommes dans la langue nama.",
+      "whyProblematic": "Le terme Hottentot est pejoratif et rejete par les Nama. L'identite Nama a ete profondement affectee par le genocide de 1904-1908 perpetue par l'Allemagne imperiale, qui a detruit plus de la moitie de la population. L'assimilation des Oorlam (metis Khoekhoe-europeens) au XIXe siecle a aussi complique les frontieres identitaires du groupe.",
+      "contemporaryUsage": "Le terme Nama est officiellement reconnu en Namibie, ou la langue Khoekhoegowab (Nama-Damara) a le statut de langue nationale. Les Nama se nomment eux-memes Namakhoen. La Namibie reconnait les chefferies traditionnelles nama comme autorites coutumières.",
+      "linguisticFamily": "FLG_KHOE",
+      "ethnoLinguisticGroup": "Khoekhoe septentrional (branche Khoekhoe, famille Khoe-Kwadi)",
+      "historicalRegion": "Namaqualand (sud de la Namibie et nord-ouest de l'Afrique du Sud), rives de l'Orange (Gariep), Namaland et region de //Karas (Namibie meridionale)",
+      "currentCountries": ["NAM", "ZAF"]
+    },
+    "ethnicities": [
+      "Khaiǁkhaun (Red Nation / Nation rouge) — clan le plus ancien, base a Hoachanas en Namibie",
+      "ǀKhowesen (Witbooi Nama) — descendants du capitaine Hendrik Witbooi, bases a Gibeon",
+      "ǃGamiǂnun (Bondelswarts) — bases a Warmbad (extreme sud namibien)",
+      "ǂAonin (Topnaars du sud) — bases a Rooibank, pres de Walvis Bay",
+      "ǃGomen (Topnaars du nord) — bases a Sesfontein",
+      "ǃKharakhoen (Fransman Nama) — bases a Gochas, fraction refugiee a Lokgwabe (Botswana) depuis 1905",
+      "ǁHawoben (Veldschoendragers) — bases a Koes",
+      "ǃAman (Bethanie Nama) — bases a Bethanien",
+      "Kharoǃoan (Keetmanshoop Nama) — issus de la Red Nation, bases a Keetmanshoop depuis 1850",
+      "Nama du Richtersveld (Afrique du Sud) — gardiens des traditions dans le parc transfrontalier du Richtersveld"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Nama descendent des Khoekhoe, l'une des populations les plus anciennes d'Afrique australe. Les Khoekhoe ont diverge d'autres populations humaines il y a 100 000 a 200 000 ans. Le proto-Khoe aurait emerge entre 400 av. J.-C. et 100 apr. J.-C. dans le sud du Zimbabwe, dans le contexte d'une interaction entre les peuples San (Tshua, Khwe) et des communautes d'eleveurs venus d'Afrique orientale. Les Nama se sont formes en tant que groupe distinct dans la region de Namaqualand (sud de la Namibie et nord-ouest de l'Afrique du Sud), sur les rives de l'Orange (Gariep).",
+      "formationPeriod": "L'identite Nama s'est consolidee progressivement du premier millenaire a la periode moderne. Les Nama etaient a l'origine des pasteurs nomades pratiquant l'elevage de bovins, ovins et caprins dans les regions arides de Namaqualand. Au XIXe siecle, l'arrivee des Oorlam depuis la colonie du Cap (metis Khoekhoe-europeens fuyant l'expansion coloniale neerlandaise) a entraine leur absorption progressive dans le groupe Nama, effacant progressivement les distinctions entre Nama et Oorlam.",
+      "migrationRoutes": [
+        "Migration ancestrale vers le sud depuis les savanes d'Afrique australe, avec expansion pastorale vers Namaqualand",
+        "Migration des Oorlam depuis la colonie du Cap (fin XVIIIe siecle) vers le nord a travers le fleuve Orange pour rejoindre Namaqualand et le Namaland",
+        "Certains ǃKharakhoen ont fui en 1905 vers Lokgwabe au Botswana apres la defaite de Swartfontein"
+      ],
+      "historicalSettlementZones": [
+        "Namaqualand (sud de la Namibie et nord-ouest de l'Afrique du Sud) — territoire ancestral",
+        "Rives du fleuve Orange (Gariep) — zone de peuplement original documentee",
+        "Region de //Karas (extreme sud de la Namibie) : Keetmanshoop, Warmbad, Gochas, Gibeon",
+        "Richtersveld (Afrique du Sud, province du Cap-Nord) — territoire retrocede en 2002",
+        "Lokgwabe (Botswana) — diaspora de ǃKharakhoen depuis 1905"
+      ],
+      "unificationsOrDivisions": "Les Nama sont organises en clans (chefferies) autonomes avec des capitaines (gaob) hereditaires. La Red Nation (Khaiǁkhaun) est historiquement le clan le plus ancien et le plus influent. Au XIXe siecle, les luttes entre clans Nama pour les paturages et le betail ont affaibli leur resistance collective contre les Allemands. Le chef Hendrik Witbooi a constitue la figure d'unite la plus marquante, mais sa defaite en 1894 puis sa mort au combat en 1905 a fracture le mouvement de resistance.",
+      "externalInfluences": "Contact avec des explorateurs portugais (XVe-XVIe siecles). Colonisation neerlandaise puis britannique au Cap (XVIIe-XIXe siecles) avec spoliation des terres et du betail. Missions de la Rhenish Mission Society (RMG) et conversion au christianisme (XIXe siecle). Colonisation allemande du Sud-Ouest africain (1884-1919) avec genocide de 1904-1908. Apartheid sud-africain (1948-1994) affectant les Nama d'Afrique du Sud.",
+      "majorHistoricalEvents": "La surprise de Hoornkrans (12 avril 1893) : l'attaque du capitaine Curt von Francois tua pres de 100 femmes et enfants Nama. Le genocides Herero-Nama (1904-1908) : plus de 10 000 Nama, soit plus de la moitie de la population totale, perirent. La bataille de Swartfontein (15 janvier 1905) : defaite des ǃKharakhoen. La mort du capitaine Hendrik Witbooi au combat le 29 octobre 1905 symbolise la fin de la resistance armee. En 2002, le parc du Richtersveld a ete retrocede a la communaute Nama d'Afrique du Sud par le gouvernement post-apartheid. En 2020, l'Allemagne a reconnu officiellement le genocide Herero-Nama."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Nama sont organises en chefferies (chaque clan ayant son propre chef ou gaob/kaptein a autorite hereditaire). Le gaob est assiste d'un conseil d'anciens. Les terres sont detenues communalement. L'institution du kgotla (khoekhoegowab : kapteinskraale) permet des deliberations collectives. Les chefferies traditionnelles nama sont reconnues officiellement par la Namibie.",
+      "clanOrganization": "La societe Nama est divisee en clans territoriaux distincts (voir ethnicites), chacun avec son propre kaptein, ses terres de paturage et ses traditions orales. Les clans sont patrilineaires. L'assimilation des Oorlam au XIXe siecle a cree des fusions claniques. Le mariage interclaniques est pratique pour renforcer les alliances.",
+      "ageClassSystems": "L'age joue un role structurant dans la societe Nama. Les anciens (elder) sont depositaires du savoir traditionnel, des recits et des droits coutumiers. La transition rituelle entre etapes de vie (naissance, puberte, mariage, mort) structure le rapport au statut social.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance au clan, les droits sur les terres de paturage et les regles d'alliance matrimoniale. Les femmes construisent et possedent la maison (haru oms) dans la tradition nama, ce qui leur confere un statut particulier au sein du foyer.",
+      "religiousAuthority": "Les prêtres et les leaders spirituels jouent un role dans les ceremonies de transition. La Rhenish Mission Society a introduit le christianisme au XIXe siecle, et la majorite des Nama sont aujourd'hui chretiens (protestants, principalement luthériens et reformes). Les Nama musulmans constituent une proportion significative des musulmans de Namibie. Des leaders religieux communautaires animent les ceremonies traditionnelles et les fetes culturelles."
+    },
+    "languages": {
+      "mainLanguage": "Nama (Khoekhoegowab, Namagowab)",
+      "isoCodes": ["naq"],
+      "dialects": [
+        "Nama-Damara (Namagowab) — dialecte principal, Namibie meridionale et centrale",
+        "Haiǁom — dialecte du nord de la Namibie, parle par les Haiǁom (parfois classe comme langue separee)",
+        "ǂAkhoe — dialecte intermediaire entre Haiǁom et les langues Khoe du Kalahari",
+        "Sesfontein Damara — sous-dialecte du Nama-Damara"
+      ],
+      "vehicularRole": "Le khoekhoegowab (nom officiel de la langue Nama-Damara) est une langue nationale de Namibie et est enseigne dans les ecoles comme langue d'instruction dans les regions de //Karas et Hardap. Environ 167 000 locuteurs au total selon SIL (Ethnologue). L'afrikaans est largement parle comme deuxieme langue par les Nama de Namibie et d'Afrique du Sud. En Afrique du Sud, la langue est en recul serieux. La BBC, la NBC Namibia et la SWR produisent des emissions en khoekhoegowab."
+    },
+    "culture": {
+      "majorRites": "La centralite rituelle Nama repose sur l'idee de transition (passage d'un etat a un autre). A la naissance, la mere est recluse pendant au moins sept jours dans une hutte speciale ; ni elle ni l'enfant ne peuvent avoir de contact inutile avec l'eau ; un feu special est allume. Apres cette seclusion, tous deux sont reintegres socialement dans une fete communautaire avec enduit de bouse de vache, graisse et buchu (plante parfumee). A la puberte des filles, le rite de passage est marque par une seclusion et une cérémonie de reintegration. Le mariage (ritual de grande importance) implique des negociations inter-claniques, l'echange de betail (dot) et une cérémonie de purification de la porte pour les fiancees qui ont deja eu des enfants (sacrifice d'une chevre blanche). Le deuil dure trois jours avant l'inhumation, avec hymnes, prieres et discours. Lors des ceremonies d'initiation, l'omentum (intestin de l'animal sacrifice) est place autour du cou du participant pour symboliser le passage.",
+      "symbols": "La hutte traditionnelle (haru oms ou matjieshuis) est le symbole emblematique de la culture Nama : dome en nates de jones sur squelette de baguettes, entierement construite par les femmes, demontable en moins d'une heure et reutilisable. Elle symbolise la mobilite pastorale et le role central des femmes. Le betail (bovins, ovins, caprins) est charge d'une valeur symbolique et sociale bien au-dela de la valeur marchande. Les vetements formels des femmes Nama, inspirés de la mode victorienne introduite par les missionnaires du XIXe siecle, sont devenus un symbole identitaire fort. La musique ancestrale Eichan Tanang inscrite en 2020 sur la liste UNESCO du patrimoine culturel immateriel en peril est le symbole musical supreme du peuple Nama.",
+      "artsAndMusic": "La musique ancestrale Nama (Aixan/Gana/Ob#ANS TSI //Khasigu, litteralement sons, savoirs et savoir-faire musicaux ancestraux) a ete inscrite en 2020 sur la Liste de l'UNESCO du patrimoine culturel immateriel en peril de sauvegarde urgente. Cette musique polyphonique combine une melodie principale et un rythme accompagnes d'une harmonie systematique. Les instruments traditionnels comprennent : le ramkie (luth en peau), le reed flute (flute en roseau), et le fleece (harmonica a bouche, joue par les femmes). La danse Nama-stap est la danse ceremonielle associee a cette musique, avec des mouvements distincts pour les hommes et les femmes. L'artisanat traditionnel include le travail du cuir (karosses, sandales, sacs), la poterie, les nattes, les contenants en ecaille de tortue et les bijoux. La litterature orale (poesie, proverbes, contes) est transmise de generation en generation.",
+      "spiritualities": "La religion traditionnelle Nama est centree sur Tsui-Goab (ou Thiǁoab), divinite creatrice et gardienne de la sante, associee au ciel et a la pluie. Son adversaire ǁGaunab est une force malefique causant maladie et mort. La lune occupe une place privilegiee dans la mythologie religieuse Khoekhoe, potentiellement consideree comme manifestation physique de la divinite supreme. La majorite des Nama sont aujourd'hui chretiens (luthériens, reformes, et membres d'Eglises independantes africaines). Les Nama musulmans constituent une proportion significative des musulmans namibiens. Un syncrétisme entre pratiques chretiennes et croyances ancestrales persiste dans de nombreuses communautes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Nama ne se sont pas unifies en un royaume centralise mais en confederations de chefferies. La Red Nation (Khaiǁkhaun) d'Hoachanas est la plus ancienne et la plus influente. Au XIXe siecle, le chef David Witbooi a etabli la premiere installation Nama permanente au nord de l'Orange (Gibeon, 1863), developpant une societe communautaire fondee sur l'elevage, le commerce et le christianisme. Son petit-fils Hendrik Witbooi (1830-1905) est devenu la figure de resistance la plus emblematique contre la colonisation allemande.",
+      "relationsWithNeighbors": "Les Nama ont entretenu des relations conflictuelles avec les Herero pour les paturages au XIXe siecle. Ils ont commerce avec les colons europeens du Cap puis avec les Allemands. Les Oorlam (Khoekhoe du Cap, d'ascendance mixte) ont progressivement ete assimiles dans la sphere Nama. Les Damara, bien que parlant la meme langue (khoekhoegowab), maintiennent une identite distincte. Des liens commerciaux ont existe avec les nations Tswana au nord.",
+      "conflictsOrAlliances": "La resistance au colonialisme neerlandais au Cap (XVIIe-XVIIIe siecles) a contraint une partie des Nama a fuir vers le nord. La guerre Nama-allemande : apres le genocide des Herero (1904), les Nama sous Hendrik Witbooi se sont soulevent en octobre 1904. La guerre de guerilla a dure jusqu'en 1907-1908. Plus de 10 000 Nama ont peri, emprisonnes dans les camps de concentration (notamment l'ile Shark Island). Apres l'independance namibienne (1990), les chefferies Nama ont ete reconnues. En 2020, l'Allemagne a formellement reconnu le genocide Herero-Nama et engage un processus de reparations.",
+      "diaspora": "Une diaspora Nama de moindre ampleur existe en Afrique du Sud (Richtersveld, Northern Cape), ou vivent des descendants des Nama qui n'ont jamais traverse le fleuve Orange vers la Namibie. Des Nama se trouvent aussi dans les grandes villes namibiennes (Windhoek, Keetmanshoop, Luderitz). La fraction ǃKharakhoen refugiee a Lokgwabe (Botswana) depuis 1905 constitue une diaspora historique."
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2025,
+      "source": "Encyclopaedia Britannica estime environ 230 000 Nama. Namibia 2023 Census : population totale 3 022 401 ; les Nama representent 3,7% soit environ 112 000 personnes en Namibie. World Population Review (2026) estime les Nama a 4,8% de la population namibienne (environ 152 000 en 2025). Avec les Nama d'Afrique du Sud (Richtersveld, Northern Cape), l'effectif global depasse 200 000. SIL Ethnologue : 167 000 locuteurs du khoekhoegowab.",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 155000,
+          "note": "Regions de //Karas et Hardap (Namibie meridionale), Windhoek et autres centres urbains"
+        },
+        {
+          "country": "ZAF",
+          "population": 45000,
+          "note": "Richtersveld (Cap-Nord), Namaqualand, villes du Northern Cape"
+        },
+        {
+          "country": "BWA",
+          "population": 1000,
+          "note": "Lokgwabe et quelques autres localites, diaspora historique des ǃKharakhoen depuis 1905"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Nama people. https://en.wikipedia.org/wiki/Nama_people",
+      "Wikipedia EN — Khoekhoe. https://en.wikipedia.org/wiki/Khoekhoe",
+      "Glottolog 5.3 — Nama (Namibia) (nama1264), ISO 639-3 : naq. https://glottolog.org/resource/languoid/id/nama1264",
+      "Encyclopaedia Britannica — Nama. https://www.britannica.com/topic/Nama-people",
+      "Joshua Project — Nama, Khoekhoe in Namibia. https://joshuaproject.net/people_groups/13931/WA",
+      "UNESCO — Intangible Cultural Heritage : Aixan/Gana/Ob#ANS TSI //Khasigu ancestral musical sound (Namibia, 2020). https://ich.unesco.org/en/USL/01544",
+      "Namibia Statistics Agency — 2023 Population and Housing Census. https://nsa.org.na/census/",
+      "khoisan.org — Ritual: The Khoikhoi and the San. http://khoisan.org/ritual.htm",
+      "IWGIA — The Indigenous World 2025 : Namibia. https://iwgia.org/en/namibia/5634-iw-2025-namibia.html",
+      "Wikipedia EN — Khoekhoe language. https://en.wikipedia.org/wiki/Khoekhoe_language"
+    ]
+  }
+}

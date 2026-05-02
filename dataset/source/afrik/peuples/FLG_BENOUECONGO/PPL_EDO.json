@@ -1,0 +1,98 @@
+{
+  "id": "PPL_EDO",
+  "nameMain": "Edo",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Edo",
+      "selfAppellation": "Edo",
+      "exonyms": ["Bini", "Beni", "Benin people"],
+      "originOfExonyms": "Le terme Bini (ou Beni) est une contraction de Ubini, mot edo signifiant lieu habitable, utilise par Pa Idu (progeniteur mythique du peuple) pour decrire la region. Les Portugais, premiers Europeens a etablir des relations diplomatiques avec le royaume vers 1485, corrompirent Ubini en Bini puis en Benin. Le terme Benin people (peuple du Benin) est l'exonyme anglais colonial.",
+      "whyProblematic": "Le terme Benin people peut preter a confusion avec le pays du Benin (Republique du Benin), qui est un Etat independant sans lien direct avec le Royaume de Benin. Les Edo preferent leur propre ethnononyme Edo pour eviter l'amalgame.",
+      "contemporaryUsage": "Edo est l'ethnononyme universel en usage. Bini subsiste dans les contextes historiques et linguistiques (langue Bini = langue edo, code ISO bin). Benin City reste le nom officiel de la capitale de l'Etat d'Edo.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Edoid (branche Benue-Congo, Niger-Congo)",
+      "historicalRegion": "Edo State (anciennement region du Bendel State) — Benin City et le district sud de l'Etat d'Edo, sud du Nigeria",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Edo proprement dits (Binis) — occupent sept LGA du district senatorial d'Edo South, soit 57,54 % de la population de l'Etat d'Edo",
+      "Owan — groupe edoid dans le nord-ouest de l'Etat d'Edo",
+      "Esan (Ishan) — groupe edoid dans le district central, ancien vassal du Royaume de Benin",
+      "Etsako (Afemai) — groupes du nord de l'Etat d'Edo, dont les Etsako et les Akoko-Edo",
+      "Isoko — groupe edoid partiellement lie au Royaume de Benin, presente dans le Delta State",
+      "Urhobo — groupe edoid ayant des liens historiques avec le Royaume de Benin",
+      "Clans des Ogiso — descendants des premiers rois mythiques de l'Igodomigodo (pre-Benin)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Edo sont consideres comme largement autochtones de leur region. Des preuves archeologiques montrent que vers 500 apr. J.-C. les habitants de la region de Benin pratiquaient l'agriculture et utilisaient des outils en fer. La tradition orale la plus repandue, recueillie par Jacob Egharevba (premier historien du Benin), evoque une migration depuis l'Egypte, avec un sejour au Soudan et a Ile-Ife vers 900 apr. J.-C. D'autres chercheurs contestent cette origine et la qualifient d'emprunt aux recits fondateurs yoruba.",
+      "formationPeriod": "Le premier Etat pre-benin, Igodomigodo, fut dirige par les Ogiso (rois-dieux du ciel). Vers le XIe-XIIe siecle, un interregne mit fin a la dynastie des Ogiso. Le peuple demanda a Ile-Ife d'envoyer un prince : Oranmiyan, fils d'Oduduwa, vint et eut un fils edo nomme Eweka I, qui devint le premier Oba (XIIe-XIIIe siecle), inaugurant la lignee royale toujours en place.",
+      "migrationRoutes": [
+        "Implantation autochtone dans la region de Benin City (confirmation archeologique vers 500 apr. J.-C.)",
+        "Recit mythologique de migration depuis l'Egypte via le Soudan vers Ile-Ife (tradition orale Egharevba)",
+        "Retour de la branche royale Oranmiyan depuis Ile-Ife vers Igodomigodo (XIIe-XIIIe siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Benin City et les sept LGA du district senatorial d'Edo South",
+        "Plaine forestiere du sud du Nigeria",
+        "Zones cotenieres et fluviales du Delta du Niger (rayonnement historique)"
+      ],
+      "unificationsOrDivisions": "Le Royaume de Benin connut son apogee sous Oba Ewuare Ier (vers 1440-1473), qui reorganisa l'Etat, crea le systeme des chefs (Uzama, Eghaevbo n'Ore, Eghaevbo n'Ogbe), et etendit le territoire. Ses successeurs Ozolua, Esigie et Orhogbua poursuivirent cette expansion aux XVe-XVIe siecles. L'invasion britannique de 1897 detruisit le royaume et envoya l'Oba en exil, avant la restauration progressive de l'institution royale au XXe siecle.",
+      "externalInfluences": "Relations diplomatiques et commerciales avec le Portugal des 1485 (sous Oba Ewuare) : echanges de corail, d'ivoire, de poivre et esclaves contre armes a feu et biens manufactures. Influence europeenne croissante aux XVIIe-XIXe siecles. Colonisation britannique (Expedition punitive de 1897 sous l'amiral Harry Rawson). Les Benin Bronzes (plus de 3 000 pieces) furent pilles et disperses dans les musees europeens.",
+      "majorHistoricalEvents": "Fondation de l'Igodomigodo par les Ogiso (periodes pre-historiques). Avenement de la dynastie Oba (XIIe-XIIIe s.). Apogee du Royaume sous Ewuare Ier (XVe s.). Premiers contacts europeens (1485). Expedition punitive britannique et pillage (1897). Restauration de l'Obaship au XXe siecle. Oba Erediauwa (39e Oba, 1979-2016). Oba Ewuare II (40e Oba, depuis 2016)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie sacree dont le chef est l'Oba de Benin, considere comme semi-divin et detenteur du pouvoir politique, judiciaire et spirituel supreme. L'Oba est assiste par trois ordres de chefs : les Uzama n'Ihinron (nobles hereditaires de rang supreme, dont le Oliha, Edohen, Ezomo, Ero, Eholo n'Ire), les Eghaevbo n'Ore (chefs des villages) et les Eghaevbo n'Ogbe (chefs du palais). Le systeme garantissait une gouvernance structuree de l'empire.",
+      "clanOrganization": "Organisation en guildes specialisees hereditaires au sein du palais royal : Igun Eronmwon (fondeurs de bronze), Igbesanmwan (sculpteurs d'ivoire et de bois), Owina (tisserands), etc. Chaque guilde relevait de l'autorite directe de l'Oba et transmettait ses techniques de generation en generation.",
+      "ageClassSystems": "Systeme d'associations d'age (Ighele) structurant l'organisation sociale des hommes selon des tranches d'age. Chaque classe d'age avait des responsabilites specifiques dans la vie communautaire et les services du royaume.",
+      "roleOfLineages": "Les lignages patrilineaires (Oha) constituaient la cellule de base de l'organisation sociale. La succession au titre d'Oba etait strictement patrilineaire et primogeniture. Les chefs des villages et des quartiers etaient issues de lignages nobles reconnus par l'Oba.",
+      "religiousAuthority": "L'Oba etait a la fois chef politique et supreme autorite religieuse. Il presidait les ceremonies aux autels royaux (Igun Eronmwon), intercedait aupres du dieu supreme Osanobua, de Olokun (dieu de la mer et de la prosperite) et d'Ogun (patron des metalurges). Le culte des ancetres royaux (tetes commemoratives en bronze) etait central dans les pratiques rituelles."
+    },
+    "languages": {
+      "mainLanguage": "Edo (Bini)",
+      "isoCodes": ["bin"],
+      "dialects": [
+        "Edo standard (Bini) — parle a Benin City et dans les sept LGA d'Edo South",
+        "Varietes dialectales au sein de l'Etat d'Edo selon la distance par rapport a Benin City",
+        "Langues edoides apparentees : Esan (ish), Urhobo (urh), Isoko (iso), Owan (owan)"
+      ],
+      "vehicularRole": "L'edo (bini) fut la langue officielle du Royaume de Benin et de l'Empire de Benin pendant plusieurs siecles. Il reste la principale langue regionale de l'Etat d'Edo, notamment dans la partie sud. L'anglais est la langue officielle du Nigeria. Le pidgin nigerien est largement utilise comme vehiculaire."
+    },
+    "culture": {
+      "majorRites": "Le festival Igue (renouvellement des pouvoirs de l'Oba, fin decembre) est le plus important. Il comprend des sacrifices, des prieres, des danses et des mascarades au palais royal. L'Ugie Erha Oba (festival des ancetres royaux) celebre les predecesseurs de l'Oba par des ceremonies aux autels de tetes commemoratives. L'Ovia festival et le Otoe N'Oba (anniversaire de l'Oba) sont egalement majeurs. Les rites de passage (circoncision, Igue Ovia pour les jeunes femmes) structurent le cycle de vie individuel.",
+      "symbols": "Les Benin Bronzes (plaques, tetes commemoratives, statuettes) sont le symbole le plus reconnu mondialement de la civilisation edo. Le masque d'Idia (reine mere, XVIe siecle) est l'embleme de l'identite edo et logo des FESTAC 77. Le python sacre (Osun) est gardien du palais royal de Benin. Les perles de corail (Ivie) symbolisent le statut royal et aristocratique. L'oiseau de cour (Eben) apparait sur de nombreux bronzes.",
+      "artsAndMusic": "Les Edo sont mondialement celebres pour leur tradition de fonte du bronze a la cire perdue (procede influence par Ile-Ife au XIIIe siecle), produisant les Benin Bronzes : plus de 3 000 plaques, tetes et statuettes depouillees par les Britanniques en 1897, dispersees dans des musees du monde entier (British Museum : 900 pieces, Metropolitan Museum of Art, Ethnologisches Museum de Berlin, etc.). La sculpture sur ivoire, le travail du bois (Igbesanmwan) et le tissage (Owina) sont egalement des arts royaux. La musique de cour utilise les tambours Ukhure, la cloche Egogo, les flutes et les trompettes d'ivoire. Les danses Uko, Ogua et mascarades Ekpo et Olokun animent les festivals.",
+      "spiritualities": "Religion traditionnelle centree sur Osanobua (dieu supreme createur, Osanobua Noghodua — Dieu Tout-Puissant), Olokun (divinite des eaux et de la prosperite), Ogun (patron des metaux et de la guerre), et de nombreuses divinites mineures. Le culte des ancetres royaux (Igun Eronmwon) est fondamental : des tetes commemoratives en bronze representant chaque Oba defunt sont conservees sur des autels. Le christianisme est desormais tres repandu dans l'Etat d'Edo."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume de Benin (Edo) fut l'un des Etats precoloniaux les plus puissants et les plus sophistiques d'Afrique de l'Ouest. A son apogee (XVe-XVIe siecles sous Ewuare Ier, Ozolua et Esigie), il controlait un territoire allant du Delta du Niger au pays yoruba et jusqu'au Ghana actuel. Premier Etat africain a etablir des relations diplomatiques avec l'Europe (Portugal, 1485). Le 40e Oba actuel, Ewuare II, est en fonction depuis 2016.",
+      "relationsWithNeighbors": "Relations diplomatiques precoces avec les Portugais (1485), puis les Hollandais et les Britanniques. Influence culturelle et politique sur les peuples edoids voisins (Esan, Urhobo, Isoko, Itsekiri). Tensions historiques avec les Yoruba (Ife, Oyo). Contacts commerciaux intenses avec les peuples du Delta (Ijaw, Itsekiri) dans le commerce de l'huile de palme et des esclaves.",
+      "conflictsOrAlliances": "Conflits d'expansion contre les voisins yoruba et delta aux XVe-XVIe siecles. Alliances diplomatiques avec le Portugal (armement contre, echanges commerciaux). Expedition punitive britannique de 1897 (amiral Rawson) : destruction de Benin City, pillage du palais royal, exil de l'Oba Ovonramwen. Restauration progressive de la royaute sous la colonisation puis l'independance.",
+      "diaspora": "Forte diaspora nigeriane dans les pays anglophones (Royaume-Uni, Etats-Unis, Canada). La question du retour des Benin Bronzes est un enjeu diplomatique majeur : l'Allemagne a restitue des centaines de bronzes (2022), le Royaume-Uni est sous pression pour rapatrier la collection du British Museum."
+    },
+    "demography": {
+      "totalPopulation": 2500000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 2 340 000 Edo (Bini) au Nigeria. Les Edo (Binis) occupent 57,54 % de la population de l'Etat d'Edo, dont la population totale est d'environ 5 250 000 (2024). Projection 2025 estimee a 2 500 000 pour les Edo proprement dits (Binis du district senatorial sud). La communaute Facebook citant 10 millions inclut probablement tous les peuples edoids confondus.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 2500000,
+          "note": "Principalement Edo State (7 LGA du district sud), avec presence dans Delta State, Ondo State et autres Etats nigerians"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia — Edo people. https://en.wikipedia.org/wiki/Edo_people",
+      "Wikipedia — Kingdom of Benin. https://en.wikipedia.org/wiki/Kingdom_of_Benin",
+      "Wikipedia — Edo language. https://en.wikipedia.org/wiki/Edo_language",
+      "Joshua Project — Edo, Bini in Nigeria (2025). https://joshuaproject.net/people_groups/11714",
+      "British Museum — Benin Bronzes. https://www.britishmuseum.org/about-us/british-museum-story/contested-objects-collection/benin-bronzes",
+      "Benin History — Who Are Edo People? https://beninhistory.org/origins/f/who-are-edo-people",
+      "Kumakonda — Benin City and Edo culture. https://kumakonda.com/benin-city-culture-and-masks-edo-nigeria/",
+      "Ethnologue (SIL International) — Edo language, code bin. https://www.ethnologue.com/language/bin/",
+      "Wikipedia — Edo State demographics. https://en.wikipedia.org/wiki/Edo_State"
+    ]
+  }
+}

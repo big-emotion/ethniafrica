@@ -1,0 +1,89 @@
+{
+  "id": "PPL_SHEKO",
+  "nameMain": "Sheko",
+  "languageFamilyId": "FLG_OMOTIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Sheko",
+      "selfAppellation": "Shekkocc / Shekka",
+      "exonyms": ["Sheko", "Shekko", "Shecca"],
+      "originOfExonyms": "Le terme Sheko ou Shekko est à la fois l'endonyme et l'exonyme couramment utilisé. Le terme Shekkocc est la forme endonymique nominative en sheko. La zone administrative Bench Sheko (anciennement Bench Maji) tire son nom des Sheko. Les archives éthiopiennes utilisent parfois la variante She pour la langue (code ISO she).",
+      "whyProblematic": "Le terme She, code ISO de la langue sheko, peut être confondu avec d'autres langues codées de façon similaire. La zone Bench Sheko prend son nom des Bench et des Sheko, deux peuples distincts. Les Sheko sont parfois regroupés avec les Dizi et les Nayi sous le terme Dizoid ou Maji (du nom de la ville de Maji), car les Sheko et les Nayi affirment que leurs ancêtres ont émigré depuis la région de Maji.",
+      "contemporaryUsage": "Le terme Sheko est utilisé dans la littérature académique (Aklilu Yilma 1988, 2003), dans les recensements éthiopiens, et dans le nom de la zone administrative Bench Sheko. Les Sheko parlent leur propre langue mais utilisent également l'amharique et le gimira (Bench) comme langues secondes.",
+      "linguisticFamily": "FLG_OMOTIQUE",
+      "ethnoLinguisticGroup": "Omotique Dizoïde (branche Maji/Dizoid) — famille afro-asiatique",
+      "historicalRegion": "Zone entre Tepi et Mizan Teferi, district Sheko, zone Bench Sheko (ex-Bench Maji), Etat régional du Sud-Ouest de l'Ethiopie",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Sheko de la zone de Tepi (zone ouest)",
+      "Sheko de la zone de Mizan Teferi (zone est)",
+      "Sous-groupes locaux organisés autour de chefferies territoriales"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Sheko sont un peuple omotique du sud-ouest de l'Ethiopie dont la langue, le sheko (ISO she), appartient à la branche Dizoïde (Dizoid ou Maji) de la famille omotique afro-asiatique. Avec le dizi (dizin) et le nayi, le sheko forme le sous-groupe dizoïde des langues omotiques. Les Sheko affirment que leurs ancêtres ont migré depuis la région de Maji — la même tradition que les Nayi, ce qui a conduit certains linguistes (Aklilu Yilma 2003) à utiliser le terme Maji plutôt que Dizoid pour désigner ce sous-groupe. Le sheko est linguistiquement notable pour ses consonnes rétroflexes (caractéristique partagée avec le dizi et, de façon areale, avec le bench bien que non apparenté) et son système de quatre tons phonémiques distincts.",
+      "formationPeriod": "La présence des Sheko dans la zone entre Tepi et Mizan Teferi est ancienne et bien documentée dans les archives coloniales et post-coloniales éthiopiennes. Les Sheko représentaient 4,21% de la population totale de la zone Bench Sheko selon le recensement de 1994, et 4,31% des locuteurs de première langue. La zone Bench Sheko (anciennement Bench Maji) a été rebaptisée en leur honneur (avec les Bench) dans la réorganisation administrative de l'Ethiopie.",
+      "migrationRoutes": [
+        "Migration ancestrale depuis la région de Maji (tradition orale partagée avec les Nayi)",
+        "Peuplement de la zone entre Tepi et Mizan Teferi depuis plusieurs siècles"
+      ],
+      "historicalSettlementZones": [
+        "District Sheko, zone entre Tepi et Mizan Teferi, Etat régional du Sud-Ouest de l'Ethiopie",
+        "Zone Bench Sheko, partagée avec les Bench (55% de la population), les Me'en, les Dizi, les Suri"
+      ],
+      "unificationsOrDivisions": "Les Sheko sont une communauté relativement cohésive par leur langue et leur territoire, mais sans organisation politique centralisée forte. Ils sont organisés en chefferies locales. Leurs voisins les Bench constituent le groupe dominant de la zone (55% de la population), et les échanges culturels entre les deux peuples sont intenses — les Sheko sont polygames et s'intermarient fréquemment avec les Bench.",
+      "externalInfluences": "Contacts historiques avec les Dizi (Maji) et les Nayi, peuples dizoïdes apparentés. Voisinage avec les Bench, peuple omotique dominant de la zone. Présence de missions évangéliques protestantes depuis le 20e siècle. Administration éthiopienne depuis la fin du 19e siècle. L'amharique et le bench (gimira) sont utilisés comme langues secondes. Les traditions orales sheko mentionnent des contacts avec les Tigréens du nord (via des missionnaires orthodoxes ayant visité la région de Maji il y a plusieurs siècles).",
+      "majorHistoricalEvents": "Incorporation dans l'empire éthiopien sous Menelik II (fin 19e siècle). Documentation linguistique de la phonologie sheko par Aklilu Yilma (1988) révélant les consonnes rétroflexes uniques. Recensement de 1998 : 23 785 locuteurs (13 611 monolingues). Recensement de 2007 : 37 573 Sheko dans le census ethnique, 38 911 locuteurs du sheko. Rebaptisation de la zone Bench Maji en Bench Sheko, reconnaissant officiellement la présence sheko dans l'administration régionale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Sheko sont organisés en chefferies locales sans roi sacré centralisé. Les décisions communautaires sont prises par un conseil des anciens. Les chefs locaux exercent des fonctions politiques et arbitrent les conflits. La polygamie est pratiquée et les alliances matrimoniales avec les Bench renforcent les liens inter-ethniques. Le chef dirige les rituels agraires et préside les réunions communautaires.",
+      "clanOrganization": "Structure clanique patrilinéaire. Les clans déterminent les droits fonciers, les alliances et les obligations rituelles. L'exogamie clanique est de règle. Les familles étendues constituent l'unité économique de base.",
+      "ageClassSystems": "Rites de passage lors de la naissance, de la puberté et du mariage. L'accès aux ressources communautaires et aux fonctions dans le conseil des anciens est lié au statut d'âge.",
+      "roleOfLineages": "Les lignages patrilinéaires transmettent les droits sur la terre, les animaux domestiques et les connaissances rituelles. Les ancêtres sont honorés lors des cérémonies agricoles.",
+      "religiousAuthority": "La majorité des Sheko pratiquent officiellement le christianisme (évangélisme protestant majoritaire) tout en maintenant des pratiques religieuses traditionnelles (culte des ancêtres, rites agraires). L'influence des missions évangéliques est importante dans la zone Bench Sheko depuis le milieu du 20e siècle."
+    },
+    "languages": {
+      "mainLanguage": "Sheko",
+      "isoCodes": ["she"],
+      "dialects": [
+        "Sheko occidental (zone de Tepi)",
+        "Sheko oriental (zone de Mizan Teferi)"
+      ],
+      "vehicularRole": "Le sheko (ISO she) est parlé par environ 38 911 personnes selon le recensement 2007, dont 13 611 monolingues en 1998. La langue est considérée stable par Ethnologue. Le sheko présente des traits phonologiques remarquables : 28 phonèmes consonantiques, dont des rétroflexes distinctives ; cinq voyelles longues et six voyelles courtes ; quatre niveaux tonémiques phonémiques — l'un des rares systèmes à quatre tons d'Afrique. Le sheko appartient à la branche Dizoïde avec le dizi et le nayi. La plupart des locuteurs parlent également l'amharique (administratif) et le bench/gimira (marché régional). La morphosyntaxe sheko est de type SOV avec postpositions, caractéristique commune aux langues omotiques."
+    },
+    "culture": {
+      "majorRites": "Agriculture de subsistance centree sur l'ensète et le cafe, avec des rituels collectifs lors de la preparation du sol, des semailles et de la recolte. Les ancetres sont invoques lors des grands moments agricoles par le chef ou le doyen de la famille. Ceremonies de mariage impliquant la dot en bétail et des festivites communautaires. Rites de passage masculins marquant l'acces au statut d'adulte. Les Sheko sont polygames, pratique consideree comme un marqueur de statut et de richesse.",
+      "symbols": "La houe est l'outil symbolique central de la culture sheko, peuple essentiellement agricole. L'ensète et le café sont des cultures symboliques de la zone. La polygamie est un marqueur de statut social masculin. Les intermarriages avec les Bench sont un signe d'alliance et d'intégration régionale.",
+      "artsAndMusic": "Chants et danses lors des cérémonies communautaires (mariages, funérailles, rites agricoles). Poésie orale transmettant les traditions et généalogies. Artisanat : vannerie, poterie, travail du bois. La production de miel est une activité importante dans la zone Bench Sheko, et le miel entre dans plusieurs rituels. Les Sheko produisent de l'ensète fermenté (kocho) et du café, deux produits à forte valeur culturelle dans la region.",
+      "spiritualities": "Le christianisme évangélique est la religion déclarée dominante chez les Sheko, bien que des pratiques traditionnelles subsistent. Les Sheko pratiquaient traditionnellement un animisme axé sur les esprits de la nature et des ancêtres. La grande majorité de la population est officiellement chrétienne mais maintient en parallèle des cultes ancestraux et des pratiques rituelles agricoles traditionnelles (rites de fertilité, invocations des ancêtres lors des semailles). Selon Joshua Project, les Sheko ont une majorité évangélique mais ont besoin d'une Bible complète et de matériaux évangéliques dans leur langue."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Sheko n'ont pas eu de royaume centralisé à grande échelle. Leur organisation en chefferies locales les a maintenus dans une relative autonomie jusqu'à l'incorporation dans l'empire éthiopien. La zone Bench Sheko (rebaptisée depuis Bench Maji) porte leur nom en reconnaissance de leur ancienneté dans la région.",
+      "relationsWithNeighbors": "Relations étroites avec les Bench (Nao), peuple dominant de la zone (55% de la population), incluant des mariages mixtes fréquents. Relations linguistiques et culturelles avec les Dizi et les Nayi (peuples dizoïdes apparentés). Contacts historiques avec les Suri et les Me'en (peuples surmiques de la même zone administrative). La tradition orale sheko rapporte des liens ancestraux avec la région de Maji.",
+      "conflictsOrAlliances": "Incorporation dans l'empire éthiopien à la fin du 19e siècle. La ville de Mizan Teferi, chef-lieu de la zone Bench Sheko, est proche du territoire sheko et constitue le principal centre commercial et administratif de la région. Le rebaptême de la zone en Bench Sheko est un signe de reconnaissance politique de la communauté sheko dans le système fédéral éthiopien.",
+      "diaspora": "Très faible diaspora externe. Quelques Sheko se sont installés dans les villes éthiopiennes (Mizan Teferi, Jimma, Addis-Abeba) pour des raisons d'éducation et de commerce. La communauté reste très majoritairement rurale."
+    },
+    "demography": {
+      "totalPopulation": 55000,
+      "referenceYear": 2025,
+      "source": "Recensement éthiopien 1998 : 23 785 Sheko (locuteurs). Recensement éthiopien 2007 : 38 911 locuteurs du sheko (ethnique : 37 573). Ethnologue (she) : langue stable. Projection 2025 estimée à ~55 000 en appliquant un taux de croissance de 2,3% par an sur la base 2007. Wikipedia — Bench Sheko Zone (4,21% de la zone Bench Sheko selon le recensement de 1994).",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 55000,
+          "note": "District Sheko, zone entre Tepi et Mizan Teferi, zone Bench Sheko, Etat regional du Sud-Ouest de l'Ethiopie"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Sheko language. https://en.wikipedia.org/wiki/Sheko_language",
+      "Wikipedia EN — Bench Sheko Zone. https://en.wikipedia.org/wiki/Bench_Sheko",
+      "Glottolog — Sheko, glottocode shek1245, ISO 639-3: she. https://glottolog.org/resource/languoid/id/shek1245",
+      "Ethnologue — Sheko language (SHE). https://www.ethnologue.com/language/she/",
+      "Aklilu Yilma. The Sheko Language. SIL/Addis Ababa University, 1988.",
+      "Joshua Project — Sheko in Ethiopia. https://joshuaproject.net/people_groups/14902",
+      "Recensement éthiopien 2007 — Sheko : 37 573 individus."
+    ]
+  }
+}

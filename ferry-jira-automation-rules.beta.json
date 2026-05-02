@@ -1,0 +1,277 @@
+{
+  "cloud": true,
+  "rules": [
+    {
+      "id": 1,
+      "name": "Ferry — Refine (column trigger)",
+      "state": "DISABLED",
+      "ruleScope": {
+        "resources": [
+          "ari:cloud:jira:75eb33f5-5dd0-4328-b0e6-8bb3f4e0af91:project/10134"
+        ]
+      },
+      "trigger": {
+        "component": "TRIGGER",
+        "type": "jira.issue.event.trigger:transitioned",
+        "value": {
+          "eventFilters": [
+            "ari:cloud:jira:75eb33f5-5dd0-4328-b0e6-8bb3f4e0af91:project/10134"
+          ],
+          "fromStatus": [],
+          "toStatus": [
+            {
+              "type": "NAME",
+              "value": "Refinement"
+            }
+          ],
+          "eventKey": "jira:issue_updated",
+          "issueEvent": "issue_generic"
+        },
+        "schemaVersion": 1
+      },
+      "components": [
+        {
+          "component": "ACTION",
+          "type": "jira.issue.outgoing.webhook",
+          "value": {
+            "url": "https://api.github.com/repos/big-emotion/ethniafrica/dispatches",
+            "method": "POST",
+            "contentType": "custom",
+            "customBody": "{\"event_type\":\"ferry-refine\",\"client_payload\":{\"phase\":\"refine\",\"ticket_key\":\"{{issue.key}}\",\"issue_type\":\"{{issue.issuetype.name}}\",\"actor\":\"{{initiator.displayName}}\",\"source\":\"jira-column\",\"ts\":\"{{now.format(\\\"yyyy-MM-dd'T'HH:mm:ssXXX\\\")}}\"}}",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/vnd.github+json",
+                "headerSecure": false
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE",
+                "headerSecure": true
+              },
+              {
+                "name": "X-GitHub-Api-Version",
+                "value": "2022-11-28",
+                "headerSecure": false
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "headerSecure": false
+              }
+            ]
+          },
+          "schemaVersion": 1
+        }
+      ],
+      "labels": [],
+      "tags": [],
+      "canOtherRuleTrigger": false,
+      "notifyOnError": "FIRSTERROR"
+    },
+    {
+      "id": 2,
+      "name": "Ferry — Dev (column trigger)",
+      "state": "DISABLED",
+      "ruleScope": {
+        "resources": [
+          "ari:cloud:jira:75eb33f5-5dd0-4328-b0e6-8bb3f4e0af91:project/10134"
+        ]
+      },
+      "trigger": {
+        "component": "TRIGGER",
+        "type": "jira.issue.event.trigger:transitioned",
+        "value": {
+          "eventFilters": [
+            "ari:cloud:jira:75eb33f5-5dd0-4328-b0e6-8bb3f4e0af91:project/10134"
+          ],
+          "fromStatus": [],
+          "toStatus": [
+            {
+              "type": "NAME",
+              "value": "In Development"
+            }
+          ],
+          "eventKey": "jira:issue_updated",
+          "issueEvent": "issue_generic"
+        },
+        "schemaVersion": 1
+      },
+      "components": [
+        {
+          "component": "ACTION",
+          "type": "jira.issue.outgoing.webhook",
+          "value": {
+            "url": "https://api.github.com/repos/big-emotion/ethniafrica/dispatches",
+            "method": "POST",
+            "contentType": "custom",
+            "customBody": "{\"event_type\":\"ferry-dev\",\"client_payload\":{\"phase\":\"dev\",\"ticket_key\":\"{{issue.key}}\",\"issue_type\":\"{{issue.issuetype.name}}\",\"actor\":\"{{initiator.displayName}}\",\"source\":\"jira-column\",\"ts\":\"{{now.format(\\\"yyyy-MM-dd'T'HH:mm:ssXXX\\\")}}\"}}",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/vnd.github+json",
+                "headerSecure": false
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE",
+                "headerSecure": true
+              },
+              {
+                "name": "X-GitHub-Api-Version",
+                "value": "2022-11-28",
+                "headerSecure": false
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "headerSecure": false
+              }
+            ]
+          },
+          "schemaVersion": 1
+        }
+      ],
+      "labels": [],
+      "tags": [],
+      "canOtherRuleTrigger": false,
+      "notifyOnError": "FIRSTERROR"
+    },
+    {
+      "id": 3,
+      "name": "Ferry — Review (column trigger)",
+      "state": "DISABLED",
+      "ruleScope": {
+        "resources": [
+          "ari:cloud:jira:75eb33f5-5dd0-4328-b0e6-8bb3f4e0af91:project/10134"
+        ]
+      },
+      "trigger": {
+        "component": "TRIGGER",
+        "type": "jira.issue.event.trigger:transitioned",
+        "value": {
+          "eventFilters": [
+            "ari:cloud:jira:75eb33f5-5dd0-4328-b0e6-8bb3f4e0af91:project/10134"
+          ],
+          "fromStatus": [],
+          "toStatus": [
+            {
+              "type": "NAME",
+              "value": "In Review"
+            }
+          ],
+          "eventKey": "jira:issue_updated",
+          "issueEvent": "issue_generic"
+        },
+        "schemaVersion": 1
+      },
+      "components": [
+        {
+          "component": "ACTION",
+          "type": "jira.issue.outgoing.webhook",
+          "value": {
+            "url": "https://api.github.com/repos/big-emotion/ethniafrica/dispatches",
+            "method": "POST",
+            "contentType": "custom",
+            "customBody": "{\"event_type\":\"ferry-review\",\"client_payload\":{\"phase\":\"review\",\"ticket_key\":\"{{issue.key}}\",\"issue_type\":\"{{issue.issuetype.name}}\",\"actor\":\"{{initiator.displayName}}\",\"source\":\"jira-column\",\"ts\":\"{{now.format(\\\"yyyy-MM-dd'T'HH:mm:ssXXX\\\")}}\"}}",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/vnd.github+json",
+                "headerSecure": false
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE",
+                "headerSecure": true
+              },
+              {
+                "name": "X-GitHub-Api-Version",
+                "value": "2022-11-28",
+                "headerSecure": false
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "headerSecure": false
+              }
+            ]
+          },
+          "schemaVersion": 1
+        }
+      ],
+      "labels": [],
+      "tags": [],
+      "canOtherRuleTrigger": false,
+      "notifyOnError": "FIRSTERROR"
+    },
+    {
+      "id": 4,
+      "name": "Ferry — Iterate (column trigger)",
+      "state": "DISABLED",
+      "ruleScope": {
+        "resources": [
+          "ari:cloud:jira:75eb33f5-5dd0-4328-b0e6-8bb3f4e0af91:project/10134"
+        ]
+      },
+      "trigger": {
+        "component": "TRIGGER",
+        "type": "jira.issue.event.trigger:transitioned",
+        "value": {
+          "eventFilters": [
+            "ari:cloud:jira:75eb33f5-5dd0-4328-b0e6-8bb3f4e0af91:project/10134"
+          ],
+          "fromStatus": [],
+          "toStatus": [
+            {
+              "type": "NAME",
+              "value": "Changes Requested"
+            }
+          ],
+          "eventKey": "jira:issue_updated",
+          "issueEvent": "issue_generic"
+        },
+        "schemaVersion": 1
+      },
+      "components": [
+        {
+          "component": "ACTION",
+          "type": "jira.issue.outgoing.webhook",
+          "value": {
+            "url": "https://api.github.com/repos/big-emotion/ethniafrica/dispatches",
+            "method": "POST",
+            "contentType": "custom",
+            "customBody": "{\"event_type\":\"ferry-iterate\",\"client_payload\":{\"phase\":\"iterate\",\"ticket_key\":\"{{issue.key}}\",\"issue_type\":\"{{issue.issuetype.name}}\",\"actor\":\"{{initiator.displayName}}\",\"source\":\"jira-column\",\"ts\":\"{{now.format(\\\"yyyy-MM-dd'T'HH:mm:ssXXX\\\")}}\"}}",
+            "headers": [
+              {
+                "name": "Accept",
+                "value": "application/vnd.github+json",
+                "headerSecure": false
+              },
+              {
+                "name": "Authorization",
+                "value": "Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE",
+                "headerSecure": true
+              },
+              {
+                "name": "X-GitHub-Api-Version",
+                "value": "2022-11-28",
+                "headerSecure": false
+              },
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "headerSecure": false
+              }
+            ]
+          },
+          "schemaVersion": 1
+        }
+      ],
+      "labels": [],
+      "tags": [],
+      "canOtherRuleTrigger": false,
+      "notifyOnError": "FIRSTERROR"
+    }
+  ]
+}

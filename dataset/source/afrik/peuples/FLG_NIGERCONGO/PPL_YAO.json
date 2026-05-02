@@ -1,0 +1,118 @@
+{
+  "id": "PPL_YAO",
+  "nameMain": "Yao",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MWI", "MOZ", "TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Yao",
+      "selfAppellation": "Wayao (pluriel) / Muyao (singulier)",
+      "exonyms": [
+        "Ajawa",
+        "Adsawa",
+        "Djao",
+        "Haiao",
+        "Wajao",
+        "Achawa",
+        "Chichawa"
+      ],
+      "originOfExonyms": "Le terme Yao est l'endonyme du peuple. La variante Ajawa (ou Adsawa) fut utilisee par les voyageurs et missionnaires europeens du 19e siecle, notamment David Livingstone. Les nombreuses variantes orthographiques (Djao, Haiao, Wajao, Hyao) reflètent les transcriptions phonetiques differentes par des locuteurs anglais, portugais et arabes. La langue s'appelle ChiYao ou CiYao.",
+      "whyProblematic": "Le terme Yao est generalement non problematique dans son usage contemporain. Cependant, l'histoire de la participation des Yao au commerce des esclaves aux 18e et 19e siecles (echangeant des esclaves et de l'ivoire contre des armes a feu avec les Arabes et Swahilis de la cote) reste un sujet delicat qui necessite une contextualisation historique. La denomination est parfois confondue avec d'autres peuples Yao d'Asie du Sud-Est (Chine, Laos, Vietnam).",
+      "contemporaryUsage": "Wayao (pluriel) est l'appellation auto-designee officielle. Les Yao sont un groupe ethnique reconnu au Malawi, au Mozambique et en Tanzanie. Ils constituent environ 13 % de la population du Malawi (troisieme groupe apres les Chewa et Lomwe) et sont fortement represents dans le sud du Malawi (district de Mangochi, rive sud-est du lac Malawi). Leur identite islamique est un marqueur identitaire fort.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou meridional (Zone P, groupe P.21) — proche des langues Makonde, Mwera et Matengo",
+      "historicalRegion": "Collines du Yao Mountain (nord du Mozambique, province de Niassa) — berceau original ; expansion vers le lac Malawi (rive sud-est), la partie meridionale du Malawi, et le sud de la Tanzanie (region de Ruvuma)",
+      "currentCountries": ["MWI", "MOZ", "TZA"]
+    },
+    "ethnicities": [
+      "Yao du Malawi (Wayao a Malawi) — majorite au district de Mangochi, partie meridionale du lac Malawi",
+      "Yao de Mozambique (Wayao ku Msumbiji) — province de Niassa, zone du lac Niassa (Malawi) et riviere Lugenda",
+      "Yao de Tanzanie (Wayao ku Tanzania) — region de Ruvuma, est du lac Malawi le long de la frontiere mozambicaine",
+      "Chikulamayembe — titre du chef supreme Yao du Malawi, lignee dirigeante historique de la region de Mangochi",
+      "Mataka — grande chefferie Yao du nord du Mozambique, resistance a l'occupation portugaise"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Yao sont originaires des collines du mont Yao (Yao Mountain) dans le nord-ouest du Mozambique actuel (province de Niassa). Selon le Joshua Project et les traditions orales, leur centre ethno-geographique est un village de cette region. L'histoire yao documentee remonte au 15e siecle, quand des royaumes yao influents emergèrent dans la region, participant aux reseaux commerciaux arabes de la cote est-africaine. Des famines severes ou des divisions internes tribales au cours du 19e siecle déclenchèrent une grande migration vers le Malawi et la Tanzanie.",
+      "formationPeriod": "L'identite yao distincte se consolide entre le 15e et le 18e siecle, renforcee par leur role central dans le commerce de l'ivoire et des esclaves avec les marchands arabes et swahilis de Kilwa et Mozambique Island. L'acquisition d'armes a feu via ce commerce renforça le pouvoir politique et militaire des chefferies yao. La conversion massive a l'islam (initiee au 18e siecle, acceleree au 19e) crea un puissant marqueur identitaire distinguant les Yao de leurs voisins animistes ou chretiens (Chewa, Nyanja).",
+      "migrationRoutes": [
+        "Migration originelle depuis les collines du mont Yao (nord Mozambique) vers le lac Malawi, probablement due a une famine ou a des pressions demographiques, debut 19e siecle",
+        "Expansion vers le nord du Malawi (region de Mangochi) et le sud de la Tanzanie (Ruvuma)",
+        "Routes commerciales vers la cote de l'ocean Indien (Kilwa, Ibo, Mozambique Island) pour l'ivoire et les esclaves, 18e-19e siecles"
+      ],
+      "historicalSettlementZones": [
+        "Province de Niassa (Mozambique) — territoire ancestral autour du lac Niassa et de la riviere Lugenda",
+        "District de Mangochi (Malawi) — principale zone de peuplement au Malawi, rive sud-est du lac Malawi",
+        "Region de Ruvuma (Tanzanie sud) — long de la frontiere mozambicaine, est du lac Malawi",
+        "Blantyre et Lilongwe (Malawi) — centres urbains avec communautes yao",
+        "Zomba (Malawi) — ancienne capitale coloniale, forte presence yao"
+      ],
+      "unificationsOrDivisions": "Les Yao n'ont jamais forme un etat centralise unique mais une constellation de chefferies independantes unies par une identite culturelle et linguistique commune. Au Malawi, la chefferie de Chikulamayembe est la plus importante. Au Mozambique, le chef Mataka maintint une chefferie puissante et resista a l'occupation portugaise jusqu'a la fin du 19e siecle. La conversion a l'islam servit de ciment identitaire commun. La partition coloniale du territoire yao entre le Malawi britannique, le Mozambique portugais et la Tanzanie allemande/britannique divisa la nation en trois Etats distincts.",
+      "externalInfluences": "Commerce arabe et swahili (14e-19e siecles) : acquisition d'armes, conversion progressive a l'islam. Commerce des esclaves et de l'ivoire avec Kilwa (18e-19e siecles) : enrichissement et puissance militaire. Missions chretiennes (David Livingstone 1859, missions de la UMCA) : evangelisation partielle, resistance yao. Colonisation britannique du Nyassaland (actuel Malawi) et tanzanienne, colonisation portugaise du Mozambique (19e-20e siecles). Independance du Malawi (1964), du Mozambique (1975), de la Tanzanie (1961). Guerre civile mozambicaine (FRELIMO vs RENAMO, 1977-1992) : impact sur les Yao du Mozambique.",
+      "majorHistoricalEvents": "Participation aux reseaux commerciaux arabes de la cote (15e-17e siecles). Expansion des chefferies yao vers le lac Malawi (debut 19e siecle). Raid sur les Chewa et autres voisins pour capturer des esclaves (1860s). Arrivee de David Livingstone au lac Malawi (1859) et debut des missions anglicanes. Resistance du chef Mataka a l'occupation portugaise (1890s). Interdiction de la traite negriere (1897). Reprise des initiations jando et likumbi apres la colonisation. Independances nationales (Malawi 1964, Mozambique 1975). Persistance des initiations yao reconnues comme patrimoine culturel intangible."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe Yao est organisee en chefferies matrilineaires independantes. Chaque chefferie est dirigee par un chef hereditaire (mwini wandu ou mfumu) dont le titre se transmet en ligne matrilineaire (au fils de la soeur plutot qu'au fils biologique). Le chef Chikulamayembe du Malawi est le chef superieur le plus reconnu. Les decisions importantes sont prises en conseil avec les anciens. L'islam a renforce l'autorite des oulémas et des sheikhs islamiques qui jouent un role de conseillers spirituels et juridiques aux cotes des chefs coutumiers.",
+      "clanOrganization": "La societe Yao est strictement matrilineaire : l'appartenance au clan (likolo, pluriel makolo), l'heritage, la succession aux chefferies et la residence se transmettent par la mere. Le mari s'installe generalement chez sa femme (residence uxorilocale). Les clans principaux incluent les Amadu, Mwale, Kamanga, Tembo, Chisi. Les clans servent de cadre aux alliances matrimoniales (mariage entre clans distincts obligatoire) et aux soutiens mutuels.",
+      "ageClassSystems": "Les classes d'age sont structurees par les rites d'initiation : garcons non-initie, initiés du jando (garcons circoncis), adultes. Pour les filles, les ceremonies nsondo (premiere initiation pre-pubertaire, 6-13 ans) et chindakula ou ndakula (seconde initiation post-menarcheale) determinent les etapes de la feminite.",
+      "roleOfLineages": "La matrilinearity est fondamentale : le neveu uterin (fils de la soeur) herite du titre, des terres et de l'autorite de son oncle maternel. Cette organisation garantit la coherence du lignage. En milieu urbain et sous l'influence islamique, une tendance vers le patrilinearisme partiel est observee. Les femmes Yao jouent un role economique et social important, notamment dans l'agriculture de subsistance.",
+      "religiousAuthority": "Les Yao sont a environ 80-90 % musulmans sunnites au Malawi, au Mozambique et en Tanzanie, ce qui constitue une proportion exceptionnellement elevee pour l'Afrique de l'Est interieure. L'islam yao est generalement soufi, avec une forte influence de la confrerie Qadiriyya. Les oulémas, imams de mosquees et sheikhs exercent une forte autorite morale et sociale. Les madrasa (ecoles coraniques) assurent l'education islamique. Des pratiques animistes et l'usage de medecines traditionnelles (asing'anga) coexistent avec l'islam."
+    },
+    "languages": {
+      "mainLanguage": "ChiYao (ou CiYao, Yao)",
+      "isoCodes": ["yao"],
+      "dialects": [
+        "Mangochi (Malawi) — dialecte principal du Malawi, parle autour du district de Mangochi",
+        "Makale (Mozambique) — dialecte de la province de Niassa, Mozambique",
+        "Massaninga (Mozambique) — second dialecte mozambicain",
+        "Niassa — variante de la zone du lac Niassa",
+        "Machinga — variante du district de Machinga au Malawi"
+      ],
+      "vehicularRole": "Le chiYao est parle par environ 2-3 millions de personnes au Malawi, Mozambique, Tanzanie et en petite communaute en Zambie. Il appartient au groupe bantou Zone P (P.21), proche du makonde, mwera et matengo. Il s'ecrit avec l'alphabet latin etendu marquant les consonnes prenasalisees et les voyelles nasales. La morphologie verbale est hautement agglutinante. La langue contient de nombreux emprunts au swahili et a l'arabe dus aux siecles de contact avec les marchands cotiers. En dehors du chiyao, les langues officielles du Malawi (chichewa et anglais), du Mozambique (portugais) et de la Tanzanie (swahili et anglais) sont utilisees dans l'education et l'administration."
+    },
+    "culture": {
+      "majorRites": "Le jando est le rite d'initiation masculine central des Yao : les garcons sont circoncis a la puberte, puis sequestres dans un camp d'initiation sous la supervision d'instructeurs (majando). Durant l'isolement (plusieurs semaines), ils recoivent un enseignement moral, islamique et pratique sur les responsabilites de l'homme adulte. La graduation (sokosoko) est celebree par une fete communautaire avec chants, danses et dons d'argent verses a l'initie. Le likumbi est une ceremonie connexe de reconnaissance publique du nouvel adulte. Pour les filles, l'initiation nsondo (premiere initiation pre-pubertaire, 6-13 ans) et le ndakula ou chindakula (initiation post-pubertaire) marquent les etapes de la feminite : seclusion, enseignement sur le role de femme, prescriptions sur la sexualite, danse. Les mariages Yao suivent le protocole islamique (nikah) combine avec des ceremonies coutumières (dot, fetes villageoises). Les deces donnent lieu a des prieres islamiques et a des ceremonies de deuil aux 3e, 7e et 40e jours.",
+      "symbols": "Le croissant islamique (symbole de la foi musulmane dominante) est omnipresent. Les tambours (ngoma) rythment les ceremonies et les danses. Le tissu imprime (kitenge) orne les fetes et les ceremonies. La mosquee est le centre symbolique et social de tout village yao. Les rites d'initiation et leurs paraphernalia (instruments, vetements de seclusion) sont charges de signification symbolique. La pioche agricole (dula) symbolise le labeur et la subsistance agricole.",
+      "artsAndMusic": "La tradition orale des Yao est riche : contes (ngano), chants epiques accompagnes de tambours. La danse Likumbi (ceremonie de graduation post-jando) implique des chants et danses communautaires. La musique de cour (chants de louange pour les chefs) est une forme d'art oral specialise. Les Yao sont habiles sculpteurs sur bois et potiers. L'artisanat inclut le tissage, la broderie et la fabrication d'instruments de musique (tambours ngoma, flutes). La pratique islamique a enrichi la culture musicale de chants religieux en arabe et swahili (qasidas, marsiya). Les grandes mosquees construites dans les villages yao sont des oeuvres architecturales integrant des elements est-africains.",
+      "spiritualities": "Les Yao sont a tres grande majorite musulmans sunnites (environ 80-90 %). L'islam yao est caracterise par une dimension soufie (confrerie Qadiriyya influente, pratique du dhikr, veneration de saints). La conversion massive a l'islam s'est effectuee au 19e siecle sous l'influence des marchands arabes et swahilis, precedee par une islamisation graduelle depuis le 16e siecle. Des elements de la religion traditionnelle persistent en syncrétisme : culte des ancetres (mizimu), pratiques de guerison traditionnelle par les asing'anga (guerisseurs), croyance en les esprits de la nature. Les rites d'initiation (jando, nsondo) melent prescriptions islamiques et pratiques coutumières ancestrales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Plusieurs chefferies yao puissantes ont marque l'histoire de l'Afrique orientale. La chefferie de Chikulamayembe (Malawi) est la plus ancienne et la plus respectee ; elle controla les routes commerciales du lac Malawi a la cote. La chefferie de Mataka (nord du Mozambique, region de Niassa) fut l'une des plus puissantes : le chef Mataka II construisit une vaste cite fortifiee et resista aux Portugais jusqu'en 1899. La chefferie de Mponda controlait la rive sud du lac Malawi. Au 19e siecle, l'accès aux armes a feu (obtenues en echange d'esclaves) permit aux chefferies yao de dominer militairement leurs voisins.",
+      "relationsWithNeighbors": "Les Yao entretinrent des relations commerciales durables avec les marchands arabes et swahilis de Kilwa et de la cote mozabicaine (ivoire, esclaves). Ils raiderent leurs voisins Chewa, Nyanja et Lomwe pour capturer des esclaves, creant des relations de conflit intense au 19e siecle. Avec les missionnaires chretiens (David Livingstone, Scottich Mission), les relations furent hostiles car les missions s'opposaient au commerce d'esclaves. Les Britanniques du Nyassaland allies aux missions bornerent et finalement interdirent la traite (1897). La mission de Livingstonia (UMCA) et les relations avec les Yao illustrent une histoire complexe de resistance et d'accommodation.",
+      "conflictsOrAlliances": "Raids pour la capture d'esclaves contre les Chewa et autres (1860s-1890s) : le chef Jumbe de Nkhota-Kota et plusieurs chefs yao furent les principaux pourvoyeurs d'esclaves de la region. Resistance aux Britanniques au Nyassaland : guerre contre les forces coloniales britanniques (1895-1897) ; les chefs Zarafi et Kawinga résistèrent avant d'etre soumis. Resistance du chef Mataka II aux Portugais (nord Mozambique, 1895-1899). Participation a la resistance anti-coloniale sous Mponda et d'autres chefs. Engagement dans les deux guerres mondiales (tirailleurs dans les armies coloniales).",
+      "diaspora": "Les Yao sont presents dans toutes les villes du Malawi (Blantyre, Lilongwe, Mzuzu) et au-dela de leurs zones d'origine. En Zambie, une petite communaute yao existe dans les regions proches du lac Malawi. Des emigres yao sont presents en Afrique du Sud (mines, travail), en Grande-Bretagne et dans la diaspora africaine de l'ocean Indien. La diaspora islamique yao maintient des liens avec les reseaux soufis est-africains et arabes."
+    },
+    "demography": {
+      "totalPopulation": 3000000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue (2024) : 2,8 millions de locuteurs au Malawi, Mozambique et Tanzanie. Joshua Project (2024) : 2,86 millions. CIA World Factbook : Yao 13,5 % de la population malawienne (20 millions en 2025 = 2,7 millions). Estimations Mozambique et Tanzanie ajoutees. Total 2025 estime a 3 millions.",
+      "distributionByCountry": [
+        {
+          "country": "MWI",
+          "population": 2200000,
+          "note": "Majorite au district de Mangochi (rive sud-est du lac Malawi), districts de Machinga, Balaka, Zomba, Chiradzulu. Environ 13-14 % de la population malawienne."
+        },
+        {
+          "country": "MOZ",
+          "population": 600000,
+          "note": "Province de Niassa : rive orientale du lac Niassa (Malawi) jusqu'a la riviere Lugenda et le Rovuma. Territoire ancestral."
+        },
+        {
+          "country": "TZA",
+          "population": 200000,
+          "note": "Region de Ruvuma (sud), le long de la frontiere mozambicaine et a l'est du lac Malawi."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Yao people. https://en.wikipedia.org/wiki/Yao_people",
+      "Wikipedia EN — Yao language. https://en.wikipedia.org/wiki/Yao_language",
+      "SIL Ethnologue — Yao (yao). https://www.ethnologue.com/language/yao/",
+      "Joshua Project — Yao in Malawi. https://joshuaproject.net/people_groups/15988/MI",
+      "Glottolog — Yao (yaoo1241). https://glottolog.org/resource/languoid/id/yaoo1241",
+      "101 Last Tribes — Yao people. https://www.101lasttribes.com/tribes/yao.html",
+      "AfriGO — People groups: the Yao. https://afrigo.org/articles/people-groups-the-yao/",
+      "KIT Royal Tropical Institute — YES I DO: Initiation ceremonies in Traditional Africa. https://www.kit.nl/wp-content/uploads/2019/03/Study-report-initiation-ceremonies-YID-FINAL.pdf",
+      "CIA World Factbook — Malawi. https://www.cia.gov/the-world-factbook/countries/malawi/"
+    ]
+  }
+}

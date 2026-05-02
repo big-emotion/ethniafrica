@@ -1,0 +1,107 @@
+{
+  "id": "PPL_MAMPRUSI",
+  "nameMain": "Mamprusi",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["GHA", "TGO", "BFA"],
+  "content": {
+    "appellations": {
+      "mainName": "Mamprusi",
+      "selfAppellation": "Mamprugu / Mamprusi",
+      "exonyms": ["Mamprule", "Manpelle", "Mampurugu"],
+      "originOfExonyms": "Le terme Mamprusi derive du nom du royaume Mamprugu, fonde par Naa Gbanwaah. Le terme Mamprule designe la langue, tandis que Mamprusi designe le peuple.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Mamprusi est accepte et utilise couramment en anglais comme en langues locales. Les locuteurs se designent comme les gens de Mamprugu.",
+      "linguisticFamily": "FLG_GUR",
+      "ethnoLinguisticGroup": "Mole-Dagbani (More-Gurma), branche Gur",
+      "historicalRegion": "Mamprugu, nord-est du Ghana (entre le fleuve White Volta et la riviere Nasia), nord du Togo",
+      "currentCountries": ["GHA", "TGO", "BFA"]
+    },
+    "ethnicities": [
+      "Mamprusi du Nord-Est du Ghana, province de Mamprugu proprement dite (Nalerigu, Gambaga)",
+      "Mamprusi de Walewale et des environs",
+      "Mamprusi de Nakpayili et de la region de Gushiegu",
+      "Mamprusi residant dans les zones frontalieres du nord du Togo",
+      "Communautes diasporiques dans les grandes villes du Ghana (Accra, Kumasi, Tamale)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Mamprusi font partie du groupe ethno-linguistique Mole-Dagbani, dont l'origine orale remonte a Tohazie, le Chasseur Rouge, un guerrier d'origine septentrionale dont la complexion claire lui valut ce surnom. La tradition orale situe des origines dans la region du lac Tchad. Le petit-fils de Tohazie, Naa Gbanwaah, s'installa a Pusiga (pres de Bawku) et y fonda le royaume de Mamprugu au 13e siecle. Les Mamprusi se considerent l'aine des royaumes Mole-Dagbani, anterieurs aux Dagomba, Nanumba et Mossi.",
+      "formationPeriod": "Le royaume de Mamprugu fut fonde vers le 13e siecle par Naa Gbanwaah a Pusiga. La capitale traditionnelle Nalerigu centralisa progressivement l'autorite. La succession repose sur la primogeniture cognative (fils aines prioritaires, mais le fondateur designa un fils cadet). L'identite mamprusi s'est consolidee autour de la royaute et de la langue Mampruli.",
+      "migrationRoutes": [
+        "Migration depuis la region du lac Tchad vers le nord de l'actuel Ghana selon la tradition orale",
+        "Etablissement a Pusiga (Upper East Region) comme berceau ancestral",
+        "Extension vers Nalerigu (capitale) et Gambaga, Walewale",
+        "Diffusion de l'influence politique vers le nord du Togo et le sud du Burkina Faso"
+      ],
+      "historicalSettlementZones": [
+        "Pusiga (berceau ancestral, tombeau de Naa Gbanwaah)",
+        "Nalerigu (capitale traditionnelle)",
+        "Gambaga, Walewale (centres administratifs)",
+        "Nord-Est Region du Ghana (entre White Volta et riviere Nasia)",
+        "Zones frontalieres nord du Togo"
+      ],
+      "unificationsOrDivisions": "Le royaume de Mamprugu comprend historiquement cinq paramountcies : Nalerigu (siege du Nayiri), Kpasenkpe, Janga, Wungu, Yungoo et Kurugu. Le Nayiri exerce une autorite symbolique de sacre sur plusieurs chefferies du nord du Ghana, dont certaines des Frafra et Gurunsi. Des conflits internes de succession ont periodiquement fragilise l'unite du royaume.",
+      "externalInfluences": "Conversion a l'islam au 17e siecle via les marchands Dyula. Colonisation britannique (fin 19e - debut 20e siecle) : integration dans la Gold Coast sous administration indirecte. La periode coloniale et post-independance a maintenu le Nayiri comme figure d'autorite traditionnelle dans le cadre etatique ghaneen.",
+      "majorHistoricalEvents": "Fondation de Mamprugu au 13e siecle par Naa Gbanwaah a Pusiga. Le roi des Mossi (Moro Naaba) du Burkina Faso est symboliquement enskinne par le Nayiri, chef supremes de Mamprugu. Au 17e siecle, islamisation progressive par influence des marchands Dyula. Periode coloniale britannique : integration dans la Northern Territories. Le Nayiri conserve un role politique et symbolique actif dans la Ghana contemporaine, notamment dans les ceriminies d'enskinment dans le nord du pays."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe mamprusi est organisee en Etat centralise sous l'autorite du Nayiri (chef suprême, dont le titre signifie maison de la royaute). Le Nayiri reside a Nalerigu et exerce des fonctions executives, judiciaires et spirituelles. Sous lui, des chefs provinciaux (Naaba) gouvernent les cinq paramountcies et les subdivisions. La succession au skin (trone) est hereditaire et reservee aux descendants males directs de Naa Gbanwaah. Le Nayiri joue un role de roi-faiseur (kingmaker) pour plusieurs chefferies du nord du Ghana.",
+      "clanOrganization": "La societe est structuree en lignages patrilineaires. Les nobles (Nakomse) descendent du fondateur et ont droit aux chefferies. Les gens du commun forment la masse productive. Les chefs de lignagebdetiennent des droits fonciers sur les terres ancestrales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent l'acces aux chefferies, a la terre et aux fonctions rituelles. Les ainés de lignage servent de mediateurs dans les conflits familiaux et communautaires. Seuls les descendants males directs de Naa Gbanwaah peuvent pretendre a la chefferie principale.",
+      "religiousAuthority": "Naa-wuni est le dieu suprême traditionnel mamprusi. La terre est percue a la fois pratiquement et spirituellement, et le culte de la terre (earth cult) entretient des sanctuaires sur les lieux sacres. Les ancetres jouent un role central, honores par des sanctuaires et des rituels. Beaucoup de Mamprusi ont adopte l'islam, mais les pratiques religieuses traditionnelles persistent. L'imam joue un role important dans les ceremonies officielles du Nayiri."
+    },
+    "languages": {
+      "mainLanguage": "Mampruli",
+      "isoCodes": ["maw"],
+      "dialects": [
+        "Dialecte de Nalerigu-Gambaga (variete centrale de reference)",
+        "Dialecte de Walewale (variete ouest)",
+        "Dialecte de Nakpayili (variete est)"
+      ],
+      "vehicularRole": "Le Mampruli est la langue du groupe Mole-Dagbani au nord-est du Ghana, parle dans une zone allant de Yizeesi a Nakpanduri. Il est enseigne dans les ecoles locales. Il constitue une langue de communication inter-ethnique dans la North East Region ghanéenne. Apparente aux langues dagbani, nanuni et more."
+    },
+    "culture": {
+      "majorRites": "Le festival Damba est la celebration culturelle et religieuse la plus importante des Mamprusi. Il se deroule en trois phases : Somo Damba (10e jour du mois lunaire de Damba, prières et sacrifices pour les ancetres), Naa Damba (17e jour, pompe et apparat, les chefs paradent en tenue d'apparat et demontrent leurs talents equestres), Belkulsi (18e jour, festins et danses). Les funerailles sont elaborees, avec des rites de deuil communautaires. La circoncision marque le passage a l'age adulte chez les garcons. Les ceremonies d'enskinment d'un nouveau chef incluent des rites specifiques sous la supervision du Nayiri.",
+      "symbols": "Le chapeau noir orne d'un bracelet metallique, insigne du Nayiri, symbolise la continuite de l'autorite depuis Naa Gbanwaah. Le cheval est un symbole de prestige et de noblesse, rappelant les origines guerrieres equestres. Les tambours royaux (tamtams de cour) sont des symboles d'autorite transmis de generation en generation.",
+      "artsAndMusic": "La musique mamprusi est dominee par les percussions (tamtams, balafon) et les instruments a vent. Les griots (chanteurs de cour) conservent les traditions orales genealogiques des chefs. La danse du Damba, pratiquee durant les celebrations royales, est tres elaboree. L'artisanat comprend le tissage de smocks (tuniques brodees), la poterie et le travail du cuir. La sculpture sur bois et la fabrication d'instruments de musique font partie du patrimoine artisanal.",
+      "spiritualities": "La religion traditionnelle mamprusi reconnait Naa-wuni comme dieu suprême. Les ancetres (les morts) sont honores par des sanctuaires et des offrandes, et communiquent avec les vivants a travers des sacrifices. Le culte de la terre entretient des lieux sacres. La divinisation coexiste avec une pratique islamique largement repandue (conversion au 17e siecle). Les pratiques animistes traditionnelles persistent malgre l'islamisation."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume de Mamprugu est l'un des plus anciens du Ghana actuel, fonde au 13e siecle par Naa Gbanwaah a Pusiga. Il est considere comme le royaume aine du groupe Mole-Dagbani, precedant la fondation des royaumes dagomba, nanumba et mossi. A son apogee, le royaume s'etendait sur la majeure partie du nord-est du Ghana, des portions du nord du Togo et du Burkina Faso. Le Nayiri exerce encore aujourd'hui un droit symbolique d'enskinment sur de nombreuses chefferies du nord du Ghana.",
+      "relationsWithNeighbors": "Le roi des Mossi (Moro Naaba) du Burkina Faso est symboliquement installe par le Nayiri, temoignant des liens fraternels entre Mamprugu et le royaume mossi. Les Mamprusi ont entretenu des relations d'autorite symbolique sur les Frafra, Gurunsi, Kassena, Talensi et Builsa du nord du Ghana. Des relations commerciales existaient avec les marchands dyula et hausa qui transitaient par la region.",
+      "conflictsOrAlliances": "Conflits internes de succession au trone ont periodiquement marque l'histoire du royaume. Pendant la periode coloniale britannique, le Nayiri a parfois coopere avec l'administration coloniale, lui permettant d'etendre son influence. Des tensions persistent autour des droits d'enskinment dans les zones d'Upper East Region, comme en temoignent des conflits de chefferies a Bolgatanga et Bawku.",
+      "diaspora": "De petites communautes mamprusi resident dans les villes du sud du Ghana (Accra, Kumasi) suite aux migrations de travail. La diaspora mamprusi au Togo et au Burkina Faso maintient des liens avec la chefferie de Nalerigu."
+    },
+    "demography": {
+      "totalPopulation": 454000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024-2025), population totale estimee a 454 000 toutes zones confondues ; modernghana.com (2025) estime a 434 000 au Ghana seul. Britannica (2021) signalait environ 220 000 locuteurs de Mampruli.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 431000,
+          "note": "Principalement dans la North East Region (Nalerigu, Gambaga, Walewale) et la Northern Region"
+        },
+        {
+          "country": "TGO",
+          "population": 20000,
+          "note": "Zones frontalieres nord du Togo"
+        },
+        {
+          "country": "BFA",
+          "population": 3000,
+          "note": "Petites communautes au sud du Burkina Faso"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Mamprusi people. https://en.wikipedia.org/wiki/Mamprusi_people",
+      "Wikipedia EN - Mampruli language. https://en.wikipedia.org/wiki/Mampruli_language",
+      "Ethnologue - Mampruli (maw). https://www.ethnologue.com/language/maw/",
+      "Joshua Project - Mamprusi in Ghana. https://joshuaproject.net/people_groups/13471/GH",
+      "Britannica - Mamprusi. https://www.britannica.com/topic/Mamprusi",
+      "Modern Ghana - The Mamprugu Kingdom: Historical Evolution and the Role of the Nayiri (2024). https://www.modernghana.com/news/1351745/the-mamprugu-kingdom-historical-evolution-and.html",
+      "Akolgo, Joseph Octavius - Investiture of Chiefs, a Relic of Colonialism? ASC-TUFS Working Papers (2024). https://www.jstage.jst.go.jp/article/ascwp/4/0/4_39/_pdf/-char/ja"
+    ]
+  }
+}

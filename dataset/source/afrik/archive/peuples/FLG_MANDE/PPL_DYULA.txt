@@ -1,0 +1,40 @@
+# Nom du peuple
+- Nom principal : Dyula
+- Auto-appellation : Jula / Dyula
+- Famille linguistique : Niger-Congo – Mandé (occidental) (FLG_MANDE)
+- Région historique : Côte d’Ivoire, BFA, MLI
+- Identifiant : PPL_DYULA
+
+# 1. Ethnies incluses
+- Dyula commerçants
+- Dyula de Kong
+- Dyula du Worodougou
+
+# 2. Origines
+- Marchands mandé islamisés dès le Moyen Âge.
+- Diffusion le long des routes commerciales transsahariennes.
+
+# 3. Organisation
+- Structure marchande.
+- Leadership religieux (imams dyula).
+
+# 4. Langue
+- Dyula
+- ISO : dyu
+
+# 5. Culture
+- Islam ancien.
+- Musiques mandingues.
+- Artisanat.
+
+# 6. Histoire
+- Fondation du royaume de Kong.
+- Rôle crucial dans le commerce sahélien.
+
+# 7. Démographie
+- Population : 1 900 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (dyu)
+- Manding Historical Archives

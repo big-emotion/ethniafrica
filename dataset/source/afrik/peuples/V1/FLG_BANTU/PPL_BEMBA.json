@@ -1,0 +1,27 @@
+{
+  "id": "PPL_BEMBA",
+  "nameMain": "Bemba",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB", "COD", "TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Bemba",
+      "selfAppellation": "Aɓemba",
+      "linguisticFamily": "FLG_BANTU",
+      "historicalRegion": "Nord de la Zambie",
+      "currentCountries": ["ZMB", "COD", "TZA"]
+    },
+    "ethnicities": [
+      "Bemba du Nord",
+      "Sous-groupes ruraux",
+      "Groupes apparentés Luba-Bemba"
+    ],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Zambia Ethnographic Studies", "Ethnologue (bem)"]
+  }
+}

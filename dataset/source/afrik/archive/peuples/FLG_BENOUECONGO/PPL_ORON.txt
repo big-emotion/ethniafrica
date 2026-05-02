@@ -1,0 +1,37 @@
+# Nom du peuple
+- Nom principal : Oron
+- Auto-appellation : Oron / Oro
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Cross-River / Ibibioïde) (FLG_BENOUECONGO)
+- Région historique : Nigeria (Akwa Ibom State)
+- Identifiant peuple : PPL_ORON
+
+# 1. Ethnies incluses
+- Oron côtier
+- Oron insulaire (zone de la presqu’île)
+
+# 2. Origines
+- Peuple ibibioïde ancien du sud-est nigérian.
+
+# 3. Organisation
+- Chefferies coutumières
+- Lignages maritimes
+
+# 4. Langue
+- Oro / Oron
+- ISO : orx
+
+# 5. Culture
+- Masques *Ekpo*
+- Rituels d’initiation
+- Pêche et navigation côtières
+
+# 6. Histoire
+- Ancien partenaire commercial des Ibibio et Efik.
+- Région stratégique avant la colonisation.
+
+# 7. Démographie
+- Population : 300 000 (2025)
+
+# 8. Sources
+- Ethnologue (orx)
+- Akwa Ibom Cultural Records

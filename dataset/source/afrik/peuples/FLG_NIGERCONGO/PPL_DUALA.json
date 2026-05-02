@@ -1,0 +1,98 @@
+{
+  "id": "PPL_DUALA",
+  "nameMain": "Duala",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Duala",
+      "selfAppellation": "Duàlá",
+      "exonyms": [
+        "Douala (orthographe francisée utilisée en français)",
+        "Jalla (ancienne graphie étrangère du XIXe siècle)",
+        "Uli (terme alternatif documenté par Joshua Project)"
+      ],
+      "originOfExonyms": "Le terme Douala est une francisation de Duàlá, adopté par l'administration coloniale française et devenu le nom officiel de la ville. Le terme Jalla reflète une transcription ancienne par des explorateurs et missionnaires européens.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Duala désigne à la fois le peuple et sa langue. En français courant on utilise Douala, nom repris pour la ville. Le peuple se distingue des habitants de la ville de Douala au sens large, qui est aujourd'hui une métropole multiethnique.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantous côtiers (Sawa)",
+      "historicalRegion": "Estuaire du Wouri, région du Littoral camerounais",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Bonanjo (lignage Njo, dont Bonapriso)",
+      "Bonaku (lignage Priso)",
+      "Bonabela (lignage Akwa)",
+      "Bonaberi (lignage Ebele-Deido, Bell)",
+      "Groupes Sawa apparentés : Ewodi, Bodiman, Pongo, Isubu, Limba (Malimba), Wovea, Bakole, Bamboko, Mungo, Oroko",
+      "Batanga (Kribi, qui revendiquent une ascendance commune depuis Mbedi)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Duala tracent leur ascendance à Mbedi, figure fondatrice originaire de la région Bakota (Gabon ou Congo). Son fils Ewale migra vers le nord jusqu'à l'estuaire du Wouri (ancêtre des Duala), tandis que son frère Dibombo remonta vers la Sanaga (ancêtre des Limba). Les Duala s'installèrent sur les rives de l'estuaire du Wouri à la fin du XVIIe ou au début du XVIIIe siècle, déplaçant les Bakoko et les Bassa vers l'intérieur des terres.",
+      "formationPeriod": "Les Duala émergèrent au XVIe siècle comme groupe commercial dominant sur la côte camerounaise. Dès le XVIIe siècle, ils contrôlaient le commerce maritime de la région. Au XIXe siècle se constituèrent deux royaumes politico-commerciaux distincts : Bell (Ndumb'a Lobe) et Akwa (Ngando Mpondo), auxquels s'ajouta la chefferie de Deido.",
+      "migrationRoutes": [
+        "Migration depuis la région Bakota (Gabon/Congo) vers le nord, le long du littoral camerounais",
+        "Installation progressive sur les rives de l'estuaire du Wouri (Pitti sur la Dibamba, puis Wouri)"
+      ],
+      "historicalSettlementZones": [
+        "Estuaire du Wouri (centre du pays Duala, confluent des rivières Wouri, Mungo et Dibamba)",
+        "Ville de Douala (capitale traditionnelle et métropole actuelle)",
+        "Côte et régions intérieures du Littoral camerounais (Moungo, Nkam, Wouri)"
+      ],
+      "unificationsOrDivisions": "Formation progressive de lignages marchands dominants autour des familles Bell, Akwa et Deido. Ces chefferies rivalisèrent pour le contrôle du commerce avec les Européens. La rivalité entre Bell et Akwa s'exacerba sous la période allemande. Le roi Rudolf Duala Manga Bell tenta de fédérer la résistance anticoloniale avant d'être exécuté par les Allemands en 1914.",
+      "externalInfluences": "Contacts avec les navigateurs portugais dès le XVe siècle. Commerce atlantique intense avec les Européens (Néerlandais, Britanniques, Allemands, Français) du XVIe au XIXe siècle. Protectorat allemand signé en juillet 1884 (rois Akwa, Bell, Deido). Mandat français après 1918. Christianisation dès 1845 (missions baptistes d'Alfred Saker). Influences bamiléké liées à l'immigration vers Douala au XXe siècle.",
+      "majorHistoricalEvents": "En 1884, les chefs Duala signèrent les traités de protectorat allemand. Le prince Lock Priso mena une rébellion pro-britannique en décembre 1884. En 1910, une résistance coordonnée s'organisa contre la taxe de capitation et les spoliations foncières allemandes. Le roi Rudolf Duala Manga Bell fut exécuté par les Allemands en août 1914 pour haute trahison. En 1929, quatre chefs suprêmes adressèrent une pétition à la Société des Nations pour l'indépendance et la restitution des terres. Les Duala soutinrent les partis indépendantistes (UPC, BDC, AN) dans la période postcoloniale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferies notables organisées autour de familles nobles (Bell, Akwa, Deido, Bonaberi). L'institution Ngondo est l'assemblée des chefs et notables Sawa, instance suprême de délibération collective. Les conseils d'anciens et les sociétés secrètes (Ekongolo, Losango, Munji) constituent les mécanismes de contrôle social et de gouvernance communautaire.",
+      "clanOrganization": "Organisation en lignages patrilinéaires (bonn-, du préfixe bona-, signifiant enfants de). Trois strates sociales historiques : les Wonja (Duala de souche, droits fonciers complets), les Wajili (non-Duala ou descendants d'esclaves), et les Wakomi (esclaves). Les groupes d'âge et de clan (muemba/miemba) servent à l'établissement de réseaux sociaux et commerciaux.",
+      "ageClassSystems": "Les muemba (groupes d'âge et de clan) structurent les solidarités sociales et permettent la mise en réseau entre individus d'un même lignage ou d'une même génération.",
+      "roleOfLineages": "Les lignages patrilinéaires déterminent les droits fonciers, les alliances commerciales et la transmission des chefferies. La propriété est transmise aux héritiers mâles. Le chef de famille administre les affaires du ménage en lien avec les anciens du lignage.",
+      "religiousAuthority": "Mélange historique de cultes ancestraux et de christianisme. Les croyances pré-chrétiennes accordaient une place centrale aux ancêtres (dont les esprits habitent la mer) et aux Miengu (esprits de l'eau, intercesseurs entre les vivants et Dieu). Les sociétés secrètes (Jengu, Ekongolo) exercent une autorité rituelle. La majorité des Duala est chrétienne (protestantisme évangélique et baptiste) depuis les années 1930."
+    },
+    "languages": {
+      "mainLanguage": "Duala",
+      "isoCodes": ["dua"],
+      "dialects": [
+        "Malimba (Limba), dialecte étroitement apparenté formant un continuum avec le Duala",
+        "Variétés oroko (Kundu, Lue, Mbonge, Ekombe, Londo ba Nanga, Londo ba Diko, Ngolo, Bima, Tanga, Koko) parfois classées comme dialectes Duala",
+        "Bakweri (Mokpwe), langue sawa linguistiquement proche"
+      ],
+      "vehicularRole": "Le duala est une langue de communication élargie sur la côte camerounaise. Il a servi de langue du commerce maritime et des échanges avec les Européens du XVe au XIXe siècle. La Bible fut traduite en duala dès 1872 (Alfred Saker). Plusieurs groupes sawa voisins (Wovea, Isubu, Bakoko) utilisent le duala comme langue véhiculaire. L'ethnologue le classe comme langue institutionnelle stable."
+    },
+    "culture": {
+      "majorRites": "Le festival Ngondo est le rite annuel le plus important des Sawa, inscrit au patrimoine immatériel de l'UNESCO en 2024. Il se déroule de septembre au premier dimanche de décembre. Une caravane itinérante traverse les quartiers Sawa avec spectacles artistiques, lutte traditionnelle, foire artisanale et concours de beauté. Le point culminant est la plongée d'un prêtre depuis une pirogue sacrée dans les eaux du Wouri, portant une jarre contenant les voeux et griefs de la communauté. Le message rapporté des oracles est décrypté en case sacrée, puis transmis aux chefs de quartier et rendu public. Il gouverne la vie communautaire jusqu'à la célébration suivante. Les rites funéraires sont élaborés, avec des cérémonies de deuil collectives. Les rites de passage marquent les étapes de la vie (naissance, initiation). Les courses de pirogues (pirogues de 20 à 28 m, 40 à 50 pagayeurs) sont une tradition cérémonielle ancienne.",
+      "symbols": "L'estuaire du Wouri, abode des divinités ancestrales et mère nourricière des Sawa, est le symbole central de l'identité Duala. La pirogue sacrée du Ngondo, la jarre oraculaire, les totems lignagers, les emblèmes des chefferies (Bell, Akwa, Deido). Les biens européens historiques (textiles, miroirs, outils) symbolisaient le statut social et la réussite commerciale des élites Duala.",
+      "artsAndMusic": "Tradition des chants collectifs Sawa et des danses cérémonielles lors du Ngondo et des fêtes de lignage. La sculpture maritime (pirogues ornées, totems) est un art ancestral. Le langage des tambours (tam-tam codé à longue distance) était pratiqué par les hommes jusqu'à la période allemande. Les performances artistiques du Ngondo intègrent chants, danses, lutte traditionnelle et artisanat. La musique contemporaine camerounaise puise dans les traditions Sawa.",
+      "spiritualities": "Croyances en les Miengu (singulier Jengu) : esprits semi-humains aquatiques qui servent d'intercesseurs entre les fidèles et Dieu, et dont les ancêtres habitent la mer. Culte des ancêtres (les esprits des défunts résident dans l'estuaire du Wouri). Culte des oracles aquatiques pratiqué lors du Ngondo. Sociétés secrètes initiatiques (Ekongolo, Jengu, Losango, Munji). La majorité des Duala est aujourd'hui chrétienne (protestantisme évangélique baptiste depuis les années 1930), tout en maintenant des pratiques ancestrales syncrétiques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume unifié, mais deux royaumes politico-commerciaux rivaux au XIXe siècle : le royaume Bell (Ndumb'a Lobe, puis Rudolf Duala Manga Bell) et le royaume Akwa (Ngando Mpondo dès 1814). La chefferie de Deido (Jim Ekwalla, branche dissidente d'Akwa) et la chefferie de Bonaberi (Prince Lock Priso, Kum'a Mbape) complétaient la constellation politique. L'assemblée Ngondo fédérait l'ensemble des chefs Sawa.",
+      "relationsWithNeighbors": "Intenses échanges commerciaux avec les Bakweri, Bassa, Bakoko, Mabea et Mungo de l'intérieur, dont les Duala achetaient marchandises et esclaves pour les revendre aux Européens. Influence culturelle sur les Balong, Bakossi et Bakoko voisins. Les Isubu et Wovea entretenaient des relations bilingues étroites avec les Duala. Déplacement des Bakoko et Bassa vers l'intérieur lors de l'installation des Duala sur l'estuaire.",
+      "conflictsOrAlliances": "Déplacement des Bakoko et Bassa (fin XVIIe-début XVIIIe siècle). Rébellion du prince Lock Priso contre la domination allemande (décembre 1884). Guerre Duala (période allemande) entre le roi Bell et d'autres chefs autour du contrôle de Bonaberi. Résistance aux spoliations foncières allemandes (pétition de 1910). Exécution du roi Rudolf Duala Manga Bell par les Allemands en 1914. Pétition de quatre chefs suprêmes à la SDN en 1929 pour l'indépendance.",
+      "diaspora": "Présence Duala significative à Douala et Yaoundé. Une diaspora camerounaise incluant des Duala est présente en France, en Europe et en Amérique du Nord. Au XIXe-XXe siècle, l'immigration bamiléké et des populations de l'intérieur fit des Duala une minorité dans leur propre ville de Douala dès les années 1930."
+    },
+    "demography": {
+      "totalPopulation": 400000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (SIL International, 2024, code dua), Joshua Project (PG012579), peuple_demographie_globale.csv (PPL_DUALA). Note : les Duala proprement dits représentent environ 400 000 personnes, à distinguer des habitants de la ville de Douala (4,1 millions en 2025 selon Worldometer).",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 400000,
+          "note": "Littoral camerounais, principalement Douala (Moungo, Nkam, Wouri), avec diaspora à Yaoundé"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Duala people. https://en.wikipedia.org/wiki/Duala_people",
+      "Ethnologue (SIL International) — Duala language (dua). https://www.ethnologue.com/language/dua/",
+      "UNESCO — Ngondo, worship of water oracles and associated cultural traditions among the Sawa (2024). https://ich.unesco.org/en/RL/ngondo-worship-of-water-oracles-and-associated-cultural-traditions-among-the-sawa-02140",
+      "Britannica — Duala. https://www.britannica.com/topic/Duala",
+      "Qiraat Africa — The Duala people of Cameroon (2024). https://qiraatafrican.com/en/13435/the-duala-people-of-cameroon/",
+      "Joshua Project — Duala of Cameroon (PG012579). https://peoplegroups.org/people_groups/pg012579/",
+      "African Counter — Ngondo Festival, the Sawa celebration by the Wouri river. https://african-counter.com/ngondo-festival-sawa-celebration-wouri-river/"
+    ]
+  }
+}

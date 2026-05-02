@@ -1,0 +1,124 @@
+{
+  "id": "PPL_MOSSI",
+  "nameMain": "Mossi",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["BFA", "CIV", "GHA", "MLI", "TGO", "BEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Mossi",
+      "selfAppellation": "Moaga (singulier) / Moose (pluriel)",
+      "exonyms": ["Mosi", "Moshi", "Moors", "Mossi"],
+      "originOfExonyms": "Le terme Mossi est la transcription française du nom Moose (pluriel de Moaga). Les Europeens et les administrateurs coloniaux ont utilise la forme Mossi, desormais standard dans les langues europeennes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Mossi est universellement accepte en français comme en anglais. Les locuteurs se designent eux-mêmes comme Moose (pluriel) et leur langue comme Moore ou Mòoré.",
+      "linguisticFamily": "FLG_GUR",
+      "ethnoLinguisticGroup": "Oti-Volta occidental, groupe Gur (Niger-Congo)",
+      "historicalRegion": "Plateau mossi (Moogho), centre du Burkina Faso actuel, bassin du fleuve Volta",
+      "currentCountries": ["BFA", "CIV", "GHA", "MLI", "TGO", "BEN"]
+    },
+    "ethnicities": [
+      "Nakomse (nobles, descendants des cavaliers conquerants, classe politique)",
+      "Tengabisi (gens de la terre, classe spirituelle, descendants des peuples agricoles preexistants)",
+      "Nyonyose (agriculteurs, sous-groupe des Tengabisi, principaux fabricants et utilisateurs des masques)",
+      "Yarse (tisserands et marchands, sous-groupe des Tengabisi)",
+      "Saya (forgerons, sous-groupe des Tengabisi)",
+      "Nyon-nyonse (anciens habitants des zones controlees par les Mossi avant leur arrivee)"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale et les archives mossi en ecriture Ajami, les Mossi sont issus du mariage entre la princesse guerriere yennenga, fille du roi Naa Gbewaa de l'actuel nord Ghana (Dagomba), et un chasseur Mande nomme Riale. Leur fils Ouedraogo est considere comme le pere fondateur du peuple mossi. L'histoire recense leur existence en tant qu'etat des le 11e siecle. Ils conquirent un vaste territoire en maitisant le cheval.",
+      "formationPeriod": "Les differents clans mossi se constituerent en ethnie unifiee vers 1500 lorsque les cavaliers conquerants Nakomse creerent une classe dirigeante sur les peuples locaux (Tengabisi). L'empire mossi se consolida avec Ouagadougou comme capitale. La colonisation française (protectorat accepte en 1896) freina l'expansion mais ne detruisit pas l'organisation politique.",
+      "migrationRoutes": [
+        "Origines au nord de l'actuel Ghana (region de Pusiga, berceau de Naa Gbewaa)",
+        "Migration vers le nord et le centre de l'actuel Burkina Faso (Volta basin)",
+        "Expansion du plateau mossi vers les regions peripheriques sous les royaumes de Ouagadougou et Yatenga",
+        "Migration economique vers le sud (Cote d'Ivoire, Ghana) au 20e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Plateau mossi (Moogho), centre du Burkina Faso",
+        "Ouagadougou (capitale du Mogho Naaba)",
+        "Yatenga (Ouahigouya, second grand royaume mossi)",
+        "Tenkodogo (ancien foyer royal)",
+        "Zones de migration en Cote d'Ivoire (region d'Abidjan, Bouake)"
+      ],
+      "unificationsOrDivisions": "Les Mossi forment une entite plurielle composee de plusieurs royaumes (Ouagadougou, Yatenga, Tenkodogo, Zandoma, Bulkiemdé). Le Mogho Naaba de Ouagadougou est reconnu comme autorite morale supremes. La scission entre les royaumes de Ouagadougou et Yatenga, liee a une dispute de succession ou la soeur du Moro Naaba s'enfuit vers Yatenga avec les amulettes de pouvoir (nam), est fondatrice de la dualite politique mossi.",
+      "externalInfluences": "Islamisation partielle depuis le 18e siecle par les marchands musulmans, mais la population generale resista longtemps a la conversion. Colonisation française (1896-1960) : le Mogho Naaba fut reconnu comme autorite secondaire. Incorporation dans la Haute-Volta puis le Burkina Faso (independance 1960). Influence de l'emigration vers la Cote d'Ivoire depuis les annees 1950.",
+      "majorHistoricalEvents": "11e siecle : formation du premier etat mossi. 1495 : fondation du royaume de Yatenga. 1737 : tentative repoussee d'invasion de Tombouctou. 1896 : acceptation du protectorat français par le Mogho Naaba apres la bataille de Ouagadougou. Seconde Guerre mondiale : engagement massif des Mossi dans les Tirailleurs Senegalais. 1960 : independance de la Haute-Volta (future Burkina Faso). Aujourd'hui, le Mogho Naaba reste une figure morale de premier plan."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "L'organisation politique mossi est hierarchique, avec le Mogho Naaba (roi suprême du Moogho) residant a Ouagadougou. Il exerce un pouvoir executif, et est consulte pour les decisions importantes. Les Nakomse (nobles) de la famille du Mogho Naaba gouvernent les provinces (chefs de villages ou de cantons appeles Naaba) en son nom. Le systeme distingue une classe politique (Nakomse, conquerants) et une classe spirituelle (Tengabisi, proprietaires de la terre par droit d'occupation premiere).",
+      "clanOrganization": "La societe mossi est divisee en clans patrilineaires. Les Nakomse detiennent le pouvoir politique ; les Tengabisi detiennent les droits spirituels sur la terre (via les teng-sodba, pretres de la terre). Les Yarse (tisserands-marchands) et les Saya (forgerons) constituent des sous-groupes endogames specifiques.",
+      "ageClassSystems": null,
+      "roleOfLineages": "L'heritage patrilineaire structure l'acces au pouvoir et a la terre. Les peres transmettent la chefferie a leurs fils. Les femmes peuvent heriter si aucun fils n'existe. La hierarchie familiale est le modele de toute organisation sociale : le pere est roi, la mere conseillere, les enfants sujets.",
+      "religiousAuthority": "Les Tengabisi detiennent l'autorite spirituelle sur la terre via les teng-sodba (pretres de la terre). Les ancetres (yaaba) influencent la vie depuis un meilleur monde, recompensant ou punissant leurs descendants. Le yaaba soore (chemin des ancetres) est la voie morale. La pratique islamique est repandue (55% selon Joshua Project), mais les rites traditionnels ancestraux perdurent. Le Mogho Naaba combine autorite politique et spirituelle."
+    },
+    "languages": {
+      "mainLanguage": "Moore (Mòoré)",
+      "isoCodes": ["mos"],
+      "dialects": [
+        "Dialecte de Yatenga (Ouahigouya), variete nord",
+        "Dialecte de la region sud-est (Koupela)",
+        "Dialecte de Tenkodogo (sud-est)",
+        "Varietes des zones d'emigration (Cote d'Ivoire, Ghana)"
+      ],
+      "vehicularRole": "Le Moore est l'une des quatre langues officielles du Burkina Faso et la langue maternelle de plus de 50% de la population burkinabe. Environ 6,46 millions de locuteurs natifs dans plusieurs pays d'Afrique de l'Ouest (Burkina Faso, Ghana, Cote d'Ivoire, Benin, Mali, Togo, Niger, Senegal). Langue nationale de facto du Burkina Faso et principale langue parlée dans la capitale Ouagadougou."
+    },
+    "culture": {
+      "majorRites": "Les funerailles et ceremonies d'initiation scandent la vie rituelle mossi. Les masques (utilises uniquement par les Nyonyose-Tengabisi) apparaissent lors des funerailles pour verifier que les rites ont ete correctement accomplis et pour faciliter l'admission de l'esprit du defunt aupres des ancetres. Le na possum est le festival royal annuel pendant lequel des figures en bois sculptees representent les ancetres royaux et les foyers reaffirment leur allegiance au chef. La ceremonie du vendredi matin a la cour du Mogho Naaba simule une departure vers Yatenga (rappel de la scission historique), et le Mogho Naaba renonce symboliquement a ce voyage.",
+      "symbols": "Les masques Nyonyose sont les symboles culturels les plus emblematiques des Mossi. Sculpes dans le Ceiba pentandra, ils se presentent en trois styles regionaux : planches verticales au nord, animaux au sud-ouest, hautes colonnes a l'est. Les objets equestres (brides, selles, etriers sculptes) symbolisent le prestige guerrier des Nakomse. Les figures en bois des ancetres royaux (utilisees au na possum) sont les symboles du pouvoir dynastique.",
+      "artsAndMusic": "L'art mossi se divise clairement entre les deux classes sociales : les Nyonyose (Tengabisi) fabriquent et utilisent les masques, symboles du lien avec les ancetres et la nature ; les Nakomse (nobles) utilisent des figures et des objets equestres dans les celebrations politiques. Les instruments de musique comprennent le luth-calebasse (kologo), les tambours royaux et les balafons. La danse du Mogho Naaba et les danses masquees sont tres elaborees. La confection du pagne teint (faso dan fani) est un art textile renomme.",
+      "spiritualities": "La spiritualite mossi est centree sur les ancetres (yaaba), la terre et le yaaba soore (chemin des ancetres). Les ancetres influencent le monde des vivants et servent de juges pour l'admission au pantheon. La terre est a la fois ressource pratique et dimension spirituelle essentielle. Le collectivisme familial et communautaire est valorise par opposition a l'individualisme. L'islam est largement pratique (env. 55%) mais coexiste avec les croyances et pratiques animistes traditionnelles heritees."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les royaumes mossi (empire mossi) se formerent au 11e siecle et s'etendirent jusqu'a leur conquete française en 1896. Principaux royaumes : Ouagadougou (capitale historique, aujourd'hui capitale du Burkina Faso), Yatenga (Ouahigouya), Tenkodogo, Zandoma, Bulkimdé. L'empire repoussa plusieurs attaques de l'empire malien et de l'empire songhai aux 14e-15e siecles, conservant son independance jusqu'a la colonisation.",
+      "relationsWithNeighbors": "Les Mossi entretinrent des relations ambivalentes avec leurs voisins : guerre contre les Dogon et les Kurumba du nord (incorpores comme Tengabisi), integration des peuples Lela, Nuna, Sisala. Tradition de partage des masques avec les peuples voltaiques voisins (Lela, Winiama, Nouna, Bwaba, Dogon). Relations fraternelles avec le royaume mamprusi du Ghana (le Moro Naaba etait symboliquement installe par le Nayiri).",
+      "conflictsOrAlliances": "Les Mossi resisterent aux tentatives d'invasion de l'empire Songhai et de l'empire du Mali au 14e siecle. Ils tenterent infructueusement de piller Tombouctou en 1329 et 1477. En 1896, le Mogho Naaba accepta le protectorat français apres une bataille decisive pour Ouagadougou. Les Mossi contribuerent massivement aux Tirailleurs Senegalais pendant les deux guerres mondiales.",
+      "diaspora": "Plus de 2 millions de Mossi vivent en Cote d'Ivoire (deuxieme plus grand groupe ethnique du pays apres les Baoulé). Une diaspora de plusieurs centaines de milliers de Mossi est presente au Ghana, Mali, Togo et Benin. Des migrations de travail vers l'Europe (France principalement) ont cree des communautes en diaspora au 20e siecle."
+    },
+    "demography": {
+      "totalPopulation": 14000000,
+      "referenceYear": 2025,
+      "source": "EBSCO Research Starters (2025) : les Mossi representent environ 53,7% de la population du Burkina Faso selon le CIA World Factbook 2025. Joshua Project (2025) : 11 494 000 au Burkina Faso seul. CIA World Factbook 2025 : Burkina Faso estimee a environ 23 millions d'habitants. Population totale estimee a plus de 14 millions (Mossi BFA + CIV + diaspora).",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 12300000,
+          "note": "52-54% de la population burkinabe, plateau mossi, Ouagadougou et environs"
+        },
+        {
+          "country": "CIV",
+          "population": 1600000,
+          "note": "Deuxième grand groupe ethnique de Cote d'Ivoire, principalement diaspora economique"
+        },
+        {
+          "country": "GHA",
+          "population": 50000,
+          "note": "Nord du Ghana, zones frontalieres"
+        },
+        {
+          "country": "MLI",
+          "population": 30000,
+          "note": "Sud-est du Mali"
+        },
+        {
+          "country": "TGO",
+          "population": 15000,
+          "note": "Nord du Togo"
+        },
+        {
+          "country": "BEN",
+          "population": 5000,
+          "note": "Nord du Benin"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Mossi people. https://en.wikipedia.org/wiki/Mossi_people",
+      "Wikipedia EN - Moore language. https://en.wikipedia.org/wiki/Moor%C3%A9_language",
+      "Ethnologue - Moore (mos). https://www.ethnologue.com/language/mos/",
+      "Joshua Project - Mossi in Burkina Faso. https://joshuaproject.net/people_groups/13802/uv",
+      "EBSCO Research Starters - Mossi (people). https://www.ebsco.com/research-starters/language-and-linguistics/mossi-people",
+      "Glottolog - Mossi. https://glottolog.org/resource/languoid/id/moss1236",
+      "CIA World Factbook - Burkina Faso. https://www.cia.gov/the-world-factbook/countries/burkina-faso/"
+    ]
+  }
+}

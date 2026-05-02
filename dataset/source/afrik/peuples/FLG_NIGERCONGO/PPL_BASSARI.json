@@ -1,0 +1,104 @@
+{
+  "id": "PPL_BASSARI",
+  "nameMain": "Bassari",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["SEN", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Bassari",
+      "selfAppellation": "a-liyan (singulier), be-liyan (pluriel, signifiant ceux de la laterite)",
+      "exonyms": [
+        "Bassari",
+        "Basari",
+        "Biyan",
+        "Wo",
+        "Oniyan (appellation linguistique)"
+      ],
+      "originOfExonyms": "Le terme Bassari est un exonyme d'origine exterieure (probablement mandingue ou peul) utilise par les administrateurs coloniaux et repris en français. L'auto-designation be-liyan (ceux de la laterite) refere aux sols ferralitiques de leur territoire dans le pays de Kedougou.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Bassari est utilise en français et en anglais. Au Senegal, les Bassari sont associes au Pays Bassari (region de Kedougou). En Guinee, ils habitent le groupe de villages appele Bokore (ceux du Kore, societe d'initiation).",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Tenda (branche Fula-Tenda, famille Niger-Congo, sous-groupe Atlantique-Congo)",
+      "historicalRegion": "Pays Bassari (liyan), region de Kedougou au Senegal et zone frontaliere Guinee-Senegal au sud-ouest de Kedougou",
+      "currentCountries": ["SEN", "GIN"]
+    },
+    "ethnicities": [
+      "Bassari de Salemata (district de Kedougou, Senegal)",
+      "Bassari de Bokore (groupe de villages en Guinee, ceux du Kore)",
+      "Bassari de la zone frontaliere Senegal-Guinee",
+      "Groupes d'age co-éducatifs (strates sociales selon l'age, base de l'organisation sociale)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bassari sont un peuple ancien de la famille Tenda, etabli dans la region de Kedougou (Senegal meridional) et la zone frontaliere guineenne. Selon les sources, ils sont arrives dans la region entre le XIe et le XIXe siecle, s'installant dans des villages perches en colline offrant des positions defensives sur les plaines. Ils font partie des peuples Tenda avec les Bedik, Coniagui et Badyara, tous appartenant au sous-groupe Fula-Tenda de la famille Niger-Congo Atlantique-Congo.",
+      "formationPeriod": "Presence documentee dans la region depuis au moins le XIe siecle. La societe d'initiation Kore est un element fondateur de l'identite bassari documentee en Guinee comme au Senegal. La metallurgie bassari est attestee dans les sources europeennes depuis la fin du XIXe siecle.",
+      "migrationRoutes": [
+        "Etablissement dans les collines de la region de Kedougou (Senegal)",
+        "Implantation dans les villages de Bokore en Guinee",
+        "Migrations saisonnieres vers les villes du Senegal et de Guinee en saison seche pour le travail salarie"
+      ],
+      "historicalSettlementZones": [
+        "Pays Bassari (liyan) : region de Kedougou, Senegal meridional",
+        "Villages en colline de la zone frontaliere Senegal-Guinee au sud-ouest de Kedougou",
+        "Bokore (Guinee) : groupe de villages collectivement designes comme ceux du Kore",
+        "Trois paysages culturels de la region de Kedougou partages avec les Bedik et les Peul"
+      ],
+      "unificationsOrDivisions": "La societe bassari est matrilineaire et organisee en groupes d'age mixtes. Il n'existe pas de structure politique centralisee (chefferie ou royaume). L'unite est assuree par la societe d'initiation Kore. Durant le regime de Sekou Toure en Guinee (1960s), les milices procederent au devoilement public des masques d'initiation, brulerent des objets rituels et battirent des membres, manquant presque de detruire la tradition Kore. Celle-ci survit cependant.",
+      "externalInfluences": "Contacts avec les Peul (Fula) voisins, fournisseurs de cuivre. Contacts avec les Coniagui, fournisseurs de minerai de fer. Influences de l'administration coloniale française (Senegal) et de la Guinee post-independance (Sekou Toure). Christianisme (catholique et protestant) chez une minorite. Tres faible islamisation.",
+      "majorHistoricalEvents": "Fin XIXe siecle : premier enregistrement europeen de la metallurgie bassari. Annees 1960, Guinee : quasi-destruction de la tradition Kore par les milices de Sekou Toure (devoilement public des masques, destructions rituelles). Inscription du Pays Bassari au patrimoine UNESCO (paysage culturel Bassari-Bedik-Peul, 2012). Developpement du Festival du Fonio comme outil de valorisation culturelle et climatique."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe acephale (sans chef centralisé). Organisation sociale fondee sur des groupes d'age co-educatifs mixtes (strates sociales par tranche d'age). L'autorite est distribuee entre les ainés et les responsables de la societe d'initiation Kore. Pas de royaute ni de chefferie formelle. Les decisions sont prises collectivement par les ainés.",
+      "clanOrganization": "Societe matrilineaire. Les groupes d'age (strates co-educatives) structurent la societe plutot que des clans patrilineaires. La societe Kore (societe d'initiation masculine) est l'institution organisatrice principale.",
+      "ageClassSystems": "Systeme de classes d'age rigoureux : les hommes progressent a travers trois niveaux distincts d'age adulte, chacun d'une duree de six ans avec son propre processus d'initiation. Le premier niveau d'initiation intervient vers l'age de 15 ans. Chaque niveau donne acces a des roles specifiques de masques et du Kore, creant six modes d'entites simulees.",
+      "roleOfLineages": "Filiation matrilineaire determinant l'identite et la transmission des biens. Les femmes jouent un role crucial dans la transmission du statut social. Les hommes integrent la societe Kore comme principale structure de lignage masculin.",
+      "religiousAuthority": "Animisme majoritaire. Prêtres et responsables de la societe Kore. Dieu createur : Unumbotte (mythologie bassari). Croyance aux esprits de la nature (forets, sources, sites sacres). Initiation Kore comme porte d'entree a l'autorite spirituelle masculine. Minorite chretienne (catholique et protestante). Tres peu de musulmans."
+    },
+    "languages": {
+      "mainLanguage": "Oniyan (Bassari, Basari, o-niyan)",
+      "isoCodes": ["bsc"],
+      "dialects": [
+        "Dialecte de Salemata (Senegal, variante principale)",
+        "Dialecte de Bokore (Guinee)"
+      ],
+      "vehicularRole": "L'oniyan est la langue maternelle des Bassari au Senegal et en Guinee. Il appartient a la famille Tenda (Fula-Tenda, branche Atlantique-Congo du Niger-Congo). La population de Kedougou est fluente en wolof comme vehiculaire regional. Le français est langue officielle mais seuls les hommes instruits le maitrisent couramment. Certaines femmes l'apprennent via des formations."
+    },
+    "culture": {
+      "majorRites": "Kore (societe d'initiation masculine) : institution centrale de la vie bassari. L'acces a la virilite est defini par l'entree dans le Kore, avec trois niveaux distincts d'age adulte, chacun de six ans avec initiation propre. Premier niveau vers 15 ans : separation temporaire de la famille, renaissance symbolique via l'entite endaw (etre informe/sans forme, representé comme masse feuillue ou cameleon, exprimé par un son guttural). Chaque niveau donne acces aux roles de masques. Rituels de mariage et de naissance. Festival du Fonio : evenement annuel de valorisation culturelle et climatique organise par un Groupement d'Interet Economique dirige par Adja Aissatou Aya Ndiaye (la Reine du fonio), incluant discours politiques, chants et danses traditionnelles, offrandes.",
+      "symbols": "Endaw : entite initiatique representee comme masse feuillue ou cameleon (son guttural). Masque d'initiation Kore : anneaux d'hexagones autour d'un centre circulaire (signification secrete liee a la hierarchie du savoir, au chiffre six, au calendrier precolonial, aux rites de divination). Bamboyo : hochet de danseur compose de vingt capsules tressees a partir d'une seule feuille de palmier, plie en antiprisme. Fonio (cereale) : symbole de resilience climatique et culturelle.",
+      "artsAndMusic": "Metallurgie : tradition principale pour la decoration cosmetique et les insignes de la societe d'initiation. Importation de minerai de fer des Coniagui et de cuivre des Peul, transformation par des forgerons bassari en outils et bijoux. Bamboyo : hochets de danse (vingt capsules tressees d'une seule feuille de palmier en antiprisme) utilises par les danseurs. Danses rituelles liees aux niveaux d'initiation. Chants et danses du Festival du Fonio. Poterie et tissage.",
+      "spiritualities": "Animisme majoritaire : les Bassari croient que les esprits habitent les elements naturels (arbres, rivieres, forets sacrees, grottes). Les ancetres sont veneres avec offrandes et ceremonies pour solliciter leur guidance. Dieu createur Unumbotte (mythologie bassari). L'initiation Kore est le cadre principal de la vie spirituelle masculine. Guichet minoritaire chretien (catholique et protestant). Tres peu de musulmans malgre la pression peule voisine."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaute ni de chefferie centralisee. Les Bassari ont maintenu leur organisation acephale et leur independance culturelle face aux pressions des royaumes voisins (Peul du Fouta Djallon, royaumes mandingues). Leur resistance a l'islamisation est notable dans un environnement majoritairement musulman.",
+      "relationsWithNeighbors": "Voisins des Bedik et des Peul dans la region de Kedougou (les trois peuples se partagent les paysages culturels classes par l'UNESCO). Echanges commerciaux avec les Coniagui (fournisseurs de minerai de fer) et les Peul (fournisseurs de cuivre). Resistance culturelle a l'islamisation imposee par les Peul du Fouta Djallon.",
+      "conflictsOrAlliances": "Resistance a la penetration coloniale française. Destruction quasi-totale de la tradition Kore en Guinee par les milices de Sekou Toure (annees 1960) : devoilement public des masques devant les femmes et les enfants, battures d'hommes, brulures d'objets rituels. La tradition survit au Senegal et s'est reconstitue partiellement en Guinee.",
+      "diaspora": "Migrations saisonnieres vers les villes du Senegal (Dakar, Kedougou, Tambacounda) et de Guinee en saison seche pour le travail salarie. Retour au village en saison des pluies. Pas de grande diaspora internationale documentee."
+    },
+    "demography": {
+      "totalPopulation": 22000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : Bassari en Guinee + Bassari au Senegal. Wikipedia EN estime la population totale a environ 15 000. Joshua Project (Bassari in Senegal) : 22 000. Population principalement concentree de part et d'autre de la frontiere Senegal-Guinee au sud-ouest de Kedougou.",
+      "distributionByCountry": [
+        {
+          "country": "SEN",
+          "population": 15000,
+          "note": "Region de Kedougou, Pays Bassari (liyan), district de Salemata"
+        },
+        {
+          "country": "GIN",
+          "population": 7000,
+          "note": "Groupe de villages Bokore en Guinee, zone frontaliere avec le Senegal"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bassari people. https://en.wikipedia.org/wiki/Bassari_people",
+      "Wikipedia EN — Bassari language. https://en.wikipedia.org/wiki/Bassari_language",
+      "Joshua Project — Bassari in Senegal. https://joshuaproject.net/people_groups/10711/SG",
+      "Joshua Project — Bassari in Guinea. https://joshuaproject.net/people_groups/10711/GV",
+      "UNESCO — Bassari Country and the Cultural Landscape of Bassari, Fula and Bedik Communities (Senegal). https://whc.unesco.org/en/list/1369",
+      "ISO 639-3 : code bsc (Bassari). https://localizely.com/iso-639-3-list/",
+      "ISO 639-3 codes Africa list. https://ceds.ed.gov/iso639-3LanguageCodev7.aspx"
+    ]
+  }
+}

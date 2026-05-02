@@ -1,0 +1,93 @@
+{
+  "id": "PPL_DIGO",
+  "nameMain": "Digo",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA", "KEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Digo",
+      "selfAppellation": "Wadigo",
+      "exonyms": [
+        "Wadigo",
+        "Chidigo (pour la langue)",
+        "Nyika (terme pejoratif ancien)"
+      ],
+      "originOfExonyms": "Wadigo est la forme swahilie du nom du peuple. Le terme Nyika (signifiant \"gens de la brousse\") etait utilise de maniere pejorative par les etrangers pour designer les Digo et autres peuples Mijikenda, faisant reference aux terres arbustives et seches de l'arriere-pays cotier. Ce terme est aujourd'hui rejete par le peuple lui-meme.",
+      "whyProblematic": "Le terme Nyika est considere comme offensant et devalorisant, car il associe le peuple a un environnement marginal et sauvage. Les Digo preferent leur autodesignation ou l'appartenance au groupe Mijikenda.",
+      "contemporaryUsage": "Le nom Digo est universellement utilise au Kenya et en Tanzanie. Les Digo se definissent egalement comme membres du groupe Mijikenda. Au Kenya, ils sont souvent designes Digo ou Mijikenda Digo.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu de la cote est, sous-groupe Mijikenda (Sud-Mijikenda)",
+      "historicalRegion": "Bande cotiere de l'ocean Indien entre Mombasa (Kenya) et Tanga (Tanzanie), plaines et collines de l'arriere-pays cotier",
+      "currentCountries": ["TZA", "KEN"]
+    },
+    "ethnicities": ["Digo"],
+    "origins": {
+      "ancientOrigins": "Les Digo font partie du groupe Mijikenda (les Neuf Cites), un ensemble de neuf peuples Bantu partageant des traits culturels et des langues mutuellement comprehensibles. Les traditions orales indiquent que les Mijikenda venaient plus au nord (certains historiens evoquent une origine somalienne ou une migration depuis l'Afrique australe) et furent repousses vers le sud par des guerres. La tradition la plus repandue associe les Mijikenda a la legendaire Singwaya (region cotiere somalienne). Les Digo sont le seul sous-groupe Mijikenda a s'etendre de part et d'autre de la frontiere Kenya-Tanzanie.",
+      "formationPeriod": "Les Digo se sont etablis dans leur territoire actuel aux XVe et XVIe siecles. Leur identite distincte au sein des Mijikenda s'est renforcee par leur conversion a l'islam (debut XIXe siecle, generalisation dans les annees 1920-1940), les differenciant des autres sous-groupes Mijikenda majoritairement animistes.",
+      "migrationRoutes": [
+        "Migration depuis le nord (region de Singwaya, cote somalienne) vers le sud le long de la cote de l'ocean Indien",
+        "Etablissement dans les plaines et collines de l'arriere-pays cotier sud du Kenya (district de Kwale) et nord de la Tanzanie (districts de Mkinga et Tanga) entre les XVe et XVIe siecles"
+      ],
+      "historicalSettlementZones": [
+        "Bande cotiere sud du Kenya entre Mombasa et la frontiere tanzanienne (district de Kwale)",
+        "Districts de Mkinga et Tanga de la region de Tanga, nord-est de la Tanzanie",
+        "Plaines de la riviere Pangani et collines de l'arriere-pays cotier"
+      ],
+      "unificationsOrDivisions": "Les Digo sont integres dans le cadre politique Mijikenda, qui forma la Mijikenda Union dans les annees 1940 pour s'opposer a la domination coloniale. La frontiere Kenya-Tanzanie a divise la population Digo en deux entites administratives distinctes depuis la colonisation. Les tensions entre la tradition matrilineaire Digo et les pratiques patrilineaires de l'islam ont genere des conflits dans les structures familiales et successorales.",
+      "externalInfluences": "Les contacts avec les marchands arabes et swahilis de la cote (des le Xe siecle) introduisirent l'islam. La colonisation portugaise (XVIe siecle) puis britannique influencerent les structures politiques et economiques. La montee du sultanat de Zanzibar au XIXe siecle et l'expansion commerciale swahilie firent perdre aux Digo leur role d'intermediaires commerciaux entre la cote et l'interieur. La colonisation britannique imposa la taxation, les restrictions foncieres et un travail force, modifiant profondement les structures familiales.",
+      "majorHistoricalEvents": "Etablissement sur la cote swahili aux XVe-XVIe siecles. Guerre avec les Bondei aux XVIIe-XVIIIe siecles (Milonge war) : les Digo repousserent les Bondei de la cote vers l'interieur. Contacts avec les marchands arabes et islamisation progressive (XIXe-XXe siecles). Implication dans la traite des esclaves durant les famines du XIXe-XXe siecles (les Digo donnaient leurs enfants comme collateral contre de la nourriture). Mobilisation forcee par les Britanniques contre les Allemands en Tanzanie durant la Premiere Guerre mondiale. Constitution de la Mijikenda Union dans les annees 1940."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La gouvernance traditionnelle Digo reposait sur un conseil d'anciens du village (ngambi). Ces anciens etaient les gardiens des traditions, administraient les affaires villageoises, appliquaient la loi coutumiere et presidaient les rituels. Il n'existait pas de structure politique centralisee au-dela du village. Les structures modernes de gouvernance (administrateurs gouvernementaux, elus) coexistent aujourd'hui avec les conseils d'anciens.",
+      "clanOrganization": "La societe Digo est organisee autour d'un systeme de clans matrilineaires nommes fuko. L'appartenance au fuko se transmet par la mere. Les femmes sont considerees comme essentielles a la continuite du fuko : \"avoir des filles rend le fuko riche\". L'oncle maternel (mjomba) joue un role central dans l'education et la representation des neveux, un role que la colonisation et l'islam ont progressivement erodet.",
+      "ageClassSystems": "Des classes d'age existaient traditionnellement, les jeunes hommes passant ensemble par differentes etapes de la vie, formant des liens forts et remplissant des roles specifiques dans la communaute. Ces pratiques sont aujourd'hui moins prominentes.",
+      "roleOfLineages": "La matrilinearite est le principe fondateur de l'organisation sociale Digo, unique parmi les Bantu de la region et reforcee par la pratique islamique. L'appartenance au fuko (clan matrilineaire) est determinante pour l'identite, l'heritage foncier et les alliances matrimoniales. Les hommes sont consideres comme des \"impasses\" dans la propagation du fuko. La question \"de qui es-tu le peuple?\" est la premiere posee lors d'une rencontre entre Digo.",
+      "religiousAuthority": "L'islam sunnite est la religion quasi-universelle des Digo, les distinguant des autres peuples Mijikenda majoritairement animistes. Cependant, les traditions animistes (croyance aux esprits, sacrifices de sang, consultations des guerisseurs traditionnels) exercent toujours une influence profonde, notamment chez les personnes agees. Les Digo pratiquent un islam populaire (folk Islam) melant pratiques islamiques et traditions ancestrales. Les esprits sont centraux : leur exorcisme par des sacrifices de sang est une pratique importante."
+    },
+    "languages": {
+      "mainLanguage": "Chidigo (Digo)",
+      "isoCodes": ["dig"],
+      "dialects": [],
+      "vehicularRole": "Le Chidigo (code ISO 639-3 : dig) est une langue Bantu de la famille Mijikenda (sous-groupe Sud-Mijikenda), proche du Segeju. Des clics vocaux ont ete documentes dans certains ideophonemes Digo, phenomene rare parmi les langues Bantu, possiblement lie au contact historique avec des langues cushitiques. Une traduction complete de la Bible en Chidigo est disponible. Le swahili est utilise comme lingua franca au Kenya et en Tanzanie."
+    },
+    "culture": {
+      "majorRites": "Les sacrifices de sang sont fondamentaux, notamment pour l'exorcisme des mauvais esprits. Le mariage (avec paiement de la dot en betail, chevres et vin de palme) integre le jeune epoux dans la famille de la femme. Les mariages islamiques confèrent le prestige le plus eleve aux femmes. La circoncision masculine est pratiquee. Les rites funeraires combinent pratiques islamiques et traditions animistes ancestrales.",
+      "symbols": "Le kaya (village fortifie ancestral, foret sacree) est le symbole identitaire Mijikenda par excellence. Le palmier a vin (mnazi) est central dans la vie quotidienne et symbolique Digo. Les maisons en makuti (feuilles de cocotier) a toit de palme sont l'architecture traditionnelle. Les formes des maisons signalent le statut social : maisons rondes pour les anciens, rectangulaires pour les autres.",
+      "artsAndMusic": "La vannerie et la poterie (principalement feminines) sont les arts traditionnels. Les Digo construisent des bateaux a voile traditionnels (dhow) pour la peche. La musique et la danse sont presentes lors des ceremonies. Les tresses de nattes et les vetements teints constituent une expression artistique traditionnelle.",
+      "spiritualities": "Malgre une conversion quasi-totale a l'islam sunnite (principalement au XXe siecle), les Digo maintiennent des croyances et pratiques animistes : veneration des ancetres, consultation des guerisseurs-sorciers (waganga), sacrifices de sang, croyance aux esprits malefiques necessitant exorcisme. La conversion a l'islam a transforme le systeme de prestige social et les pratiques matrimoniales, en valorisant notamment les femmes voilees et non-travailleuses aux champs comme signe de prosperite."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Digo, comme les autres Mijikenda, n'avaient pas de royaumes centralises mais des villages semi-independants gouvernes par des conseils d'anciens. Les kaya (villages fortes ancestraux etablis dans les forets sacrees) constituaient le coeur de leur organisation politique et religieuse. Les Digo formerent la Mijikenda Union dans les annees 1940 avec les huit autres peuples pour s'opposer politiquement a la domination coloniale britannique.",
+      "relationsWithNeighbors": "Les Digo entretenaient historiquement des relations commerciales avec les communautes swahilies et arabes de la cote. La relation d'Utani (joking relationship) avec les Bondei, nee de la guerre de Milonge (XVIIe-XVIIIe siecles), constitue un lien intercommunautaire important. Les Digo etaient les plus proches des villes swahilies parmi les Mijikenda, s'islamisant ainsi davantage que leurs cousins.",
+      "conflictsOrAlliances": "La guerre de Milonge avec les Bondei (XVIIe-XVIIIe siecles) vit les Digo repousser les Bondei des zones cotieres vers les plaines de l'interieur. Durant la Premiere Guerre mondiale, les Digo du Kenya furent forces par les Britanniques de fournir des combattants contre les Allemands en Tanzanie. Les tensions sur l'acces a la terre et les ressources avec les communautes settlers et le gouvernement colonial genererent des conflits au XXe siecle.",
+      "diaspora": "Une partie des Digo a migre vers les villes cotieres (Mombasa, Tanga) et participe a l'economie informelle. Le tourisme cotier kenyan et tanzanien a cree des opportunites mais aussi des pertes foncieres. Une diaspora urbaine modeste existe dans les centres urbains de la region."
+    },
+    "demography": {
+      "totalPopulation": 500000,
+      "referenceYear": 2025,
+      "source": "Estimation : Pray Africa (https://prayafrica.org/project/digo-kenya-tanzania/) et Joshua Project ; population en croissance depuis les 305 000 de 1994",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 420000,
+          "note": "Cote sud du Kenya entre Mombasa et la frontiere tanzanienne (district de Kwale), estimation 2025"
+        },
+        {
+          "country": "TZA",
+          "population": 80000,
+          "note": "Districts de Mkinga et Tanga, region de Tanga, nord-est de la Tanzanie, estimation 2025"
+        }
+      ]
+    },
+    "sources": [
+      "Digo people – Wikipedia (https://en.wikipedia.org/wiki/Digo_people)",
+      "Mijikenda language – Wikipedia (https://en.wikipedia.org/wiki/Mijikenda_language)",
+      "Mijikenda, Digo in Kenya – Joshua Project (https://joshuaproject.net/people_groups/11557/KE)",
+      "Mijikenda, Digo in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/11557/tz)",
+      "Digo people – 101 Last Tribes (https://www.101lasttribes.com/tribes/digo.html)",
+      "Digo of Kenya and Tanzania – Pray Africa (https://prayafrica.org/project/digo-kenya-tanzania/)",
+      "The Digo people of Kenya and Tanzania – Qiraat Africa (https://qiraatafrican.com/en/17360/the-digo-people-of-kenya-and-tanzania/)",
+      "Islamization and ethnic primacy in Digo oral traditions – JSTOR (https://www.jstor.org/stable/42005282)"
+    ]
+  }
+}

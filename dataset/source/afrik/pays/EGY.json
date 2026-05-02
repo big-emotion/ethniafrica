@@ -1,0 +1,231 @@
+{
+  "id": "EGY",
+  "nameFr": "République arabe d'Égypte (Jumhūriyyat Miṣr al-ʻArabiyyah)",
+  "nameOfficial": "République arabe d'Égypte (Jumhūriyyat Miṣr al-ʻArabiyyah)",
+  "etymology": "Le nom \"Égypte\" vient du grec \"Aigyptos\", lui-même dérivé de \"Hikuptah\" (nom d'un temple de Memphis). Le nom arabe \"Miṣr\" (مصر) signifie \"pays\" ou \"frontière\" et est utilisé depuis l'Antiquité. L'ancien nom égyptien était \"Kemet\" (terre noire).",
+  "nameOriginActor": "Le nom \"Égypte\" a été donné par les Grecs. Le nom arabe \"Miṣr\" est utilisé depuis la conquête arabe (VIIe siècle).",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Kemet (terre noire, ancien nom égyptien), Aigyptos (grec), Aegyptus (latin). Civilisation pharaonique (vers 3100 av. J.-C. - 30 av. J.-C.).",
+      "middleAges": "Miṣr (arabe), Égypte (français). Domination arabe (VIIe siècle), puis turque (XVIe siècle).",
+      "precolonial": "Miṣr (nom arabe), Égypte ottomane (1517-1882), État semi-autonome sous les Mamelouks puis les Ottomans.",
+      "colonization": "1882-1922 : Protectorat britannique, puis royaume d'Égypte (1922-1953). Le nom \"Égypte\" est officialisé.",
+      "contemporary": "1953 : République d'Égypte, puis République arabe d'Égypte (1958). Le nom officiel en arabe est \"Jumhūriyyat Miṣr al-ʻArabiyyah\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Ancien Empire égyptien",
+        "period": "2686-2181 av. J.-C.",
+        "dominantPeoples": ["Égyptiens anciens"],
+        "politicalCenters": ["Memphis"],
+        "historicalRole": "Construction des pyramides, développement de l'écriture hiéroglyphique, centralisation du pouvoir pharaonique."
+      },
+      {
+        "name": "Moyen Empire égyptien",
+        "period": "2055-1650 av. J.-C.",
+        "dominantPeoples": ["Égyptiens anciens"],
+        "politicalCenters": ["Thèbes"],
+        "historicalRole": "Expansion territoriale, développement de la littérature et des arts, période de prospérité."
+      },
+      {
+        "name": "Nouvel Empire égyptien",
+        "period": "1550-1069 av. J.-C.",
+        "dominantPeoples": ["Égyptiens anciens"],
+        "politicalCenters": ["Thèbes", "Memphis"],
+        "historicalRole": "Apogée de la puissance égyptienne, expansion en Nubie et au Levant, règnes de Thoutmosis III, Akhenaton, Ramsès II."
+      },
+      {
+        "name": "Royaume ptolémaïque",
+        "period": "305-30 av. J.-C.",
+        "dominantPeoples": ["Grecs", "Égyptiens"],
+        "politicalCenters": ["Alexandrie"],
+        "historicalRole": "Dynastie grecque, hellénisation de l'Égypte, développement d'Alexandrie comme centre culturel."
+      },
+      {
+        "name": "Égypte romaine et byzantine",
+        "period": "30 av. J.-C. - 641 apr. J.-C.",
+        "dominantPeoples": ["Romains", "Grecs", "Égyptiens", "Coptes"],
+        "politicalCenters": ["Alexandrie"],
+        "historicalRole": "Province romaine puis byzantine, christianisation, développement du copte."
+      },
+      {
+        "name": "Califat omeyyade et abbasside",
+        "period": "641-969",
+        "dominantPeoples": ["Arabes", "Égyptiens", "Coptes"],
+        "politicalCenters": ["Fostat (Le Caire)"],
+        "historicalRole": "Conquête arabe, islamisation progressive, arabisation linguistique."
+      },
+      {
+        "name": "Califat fatimide",
+        "period": "969-1171",
+        "dominantPeoples": ["Arabes", "Berbères", "Égyptiens", "Coptes"],
+        "politicalCenters": ["Le Caire"],
+        "historicalRole": "Dynastie chiite ismaélienne, fondation du Caire, développement culturel et commercial."
+      },
+      {
+        "name": "Sultanat mamelouk",
+        "period": "1250-1517",
+        "dominantPeoples": [
+          "Mamelouks (Turcs",
+          "Circassiens)",
+          "Arabes",
+          "Égyptiens",
+          "Coptes"
+        ],
+        "politicalCenters": ["Le Caire"],
+        "historicalRole": "État mamelouk puissant, résistance aux Mongols et aux Croisés, développement économique et culturel."
+      },
+      {
+        "name": "Égypte ottomane",
+        "period": "1517-1882",
+        "dominantPeoples": ["Turcs ottomans", "Arabes", "Égyptiens", "Coptes"],
+        "politicalCenters": ["Le Caire"],
+        "historicalRole": "Province ottomane, autonomie croissante sous les Mamelouks, modernisation sous Méhémet Ali (1805-1848)."
+      },
+      {
+        "name": "Protectorat britannique",
+        "period": "1882-1922",
+        "dominantPeoples": [
+          "Tous les peuples égyptiens sous domination britannique"
+        ],
+        "politicalCenters": ["Le Caire"],
+        "historicalRole": "Occupation britannique, développement du canal de Suez, mouvements nationalistes."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Arabes d'Égypte",
+        "selfAppellation": "Al-'Arab (العرب), Miṣriyyūn (مصريون, Égyptiens)",
+        "exonyms": ["Arabes", "Arabophones", "Égyptiens"],
+        "peopleId": "PPL_ARABES_AFRIQUE",
+        "mainRegion": "Toutes les régions d'Égypte, majoritaires dans la vallée du Nil et le delta",
+        "languages": ["Arabe égyptien (darija)", "arabe standard"],
+        "languageFamily": "FLG_SEMITIQUE",
+        "appellationRemarks": "Les Arabes d'Égypte sont majoritairement arabisés (descendants des anciens Égyptiens arabisés). Le terme \"Égyptien\" (Miṣriyyūn) est également utilisé."
+      },
+      {
+        "name": "Coptes",
+        "selfAppellation": "Aqbaṭ (أقباط), Copte (ⲟⲩⲣⲉⲙⲛ̀ⲭⲏⲙⲓ)",
+        "exonyms": ["Coptes (du grec \"Aigyptios\")", "Égyptiens chrétiens"],
+        "mainRegion": "Toutes les régions d'Égypte, concentrés dans la Haute-Égypte et les grandes villes",
+        "languages": ["Arabe égyptien", "copte (langue liturgique)"],
+        "appellationRemarks": "Les Coptes sont les descendants des anciens Égyptiens qui ont conservé le christianisme. Le terme \"Copte\" vient du grec \"Aigyptios\" (Égyptien). Ils représentent environ 10-15% de la population égyptienne."
+      },
+      {
+        "name": "Siwi",
+        "selfAppellation": "Isiwan",
+        "exonyms": [
+          "« Berbères de Siwa » (ancien ethnonyme européen",
+          "non péjoratif)"
+        ],
+        "peopleId": "PPL_SIWI",
+        "mainRegion": "Oasis de Siwa (désert occidental)",
+        "languages": ["Siwi (swh)"],
+        "languageFamily": "FLG_BERBERE",
+        "appellationRemarks": "Petit peuple amazigh isolé dans l'oasis de Siwa. Le terme \"Berbère\" est considéré comme problématique, l'auto-appellation est \"Isiwan\"."
+      },
+      {
+        "name": "Beja",
+        "selfAppellation": "Bega / Hadendowa",
+        "exonyms": ["Beja", "Bédouins de la mer Rouge"],
+        "peopleId": "PPL_BEJA",
+        "mainRegion": "Sud-est de l'Égypte (région frontalière avec le Soudan)",
+        "languages": ["Beja (bedawiyet)"],
+        "languageFamily": "FLG_COUCHITIQUE",
+        "appellationRemarks": "Peuple ancien de la mer Rouge, présent principalement au Soudan et en Érythrée, minorité en Égypte."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Arabe égyptien",
+          "isoCode": "arz"
+        },
+        {
+          "name": "arabe standard",
+          "isoCode": "ara"
+        },
+        {
+          "name": "copte"
+        },
+        {
+          "name": "siwi",
+          "isoCode": "swh"
+        },
+        {
+          "name": "beja",
+          "isoCode": "bej"
+        },
+        {
+          "name": "nubien",
+          "isoCode": "ken"
+        },
+        {
+          "name": "anglais",
+          "isoCode": "eng"
+        }
+      ],
+      "culturalTraditions": "Musique égyptienne classique et populaire, cinéma égyptien, littérature arabe, calligraphie, architecture islamique et copte, fêtes religieuses (musulmanes et coptes)",
+      "dominantReligions": "Islam sunnite (école chaféite majoritaire), christianisme copte orthodoxe (10-15%), autres confessions chrétiennes (minorités)",
+      "lifestyles": "Urbanisation importante (Le Caire, Alexandrie), agriculture dans la vallée du Nil et le delta, industrie, tourisme, commerce",
+      "socialOrganization": "Structures familiales traditionnelles, organisation communautaire (quartiers, villages), structures étatiques modernes, rôle important de l'armée",
+      "regionalRelations": "Relations avec le monde arabe (Ligue arabe), relations avec l'Afrique (Union africaine), relations avec l'Europe et les États-Unis, rôle dans la paix au Moyen-Orient"
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Civilisation pharaonique (vers 3100 av. J.-C. - 30 av. J.-C.), construction des pyramides, développement de l'écriture, expansion territoriale, conquête par Alexandre le Grand (332 av. J.-C.).",
+      "middleAges": "Conquête arabe (641), islamisation progressive, dynasties arabes et turques (Omeyyades, Abbassides, Fatimides, Mamelouks), développement du commerce et de la culture.",
+      "precolonial": "Domination ottomane (1517-1882), autonomie sous Méhémet Ali, modernisation de l'État, construction du canal de Suez (1869).",
+      "colonization": "Occupation britannique (1882), protectorat britannique, développement économique, mouvements nationalistes (début XXe siècle).",
+      "independenceStruggle": "Révolution de 1919, indépendance formelle (1922), révolution de 1952, proclamation de la république (1953), nationalisation du canal de Suez (1956).",
+      "postIndependence": "République arabe d'Égypte (1958), union avec la Syrie (1958-1961), guerre des Six Jours (1967), guerre du Kippour (1973), paix avec Israël (1979), printemps arabe (2011), transition politique."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Egypt",
+      "Ethnologue – Languages of Egypt",
+      "Joshua Project – Coptic in Egypt",
+      "Encyclopaedia of Islam – Egypt",
+      "Wikipedia – Egypt, Copts, Siwa Oasis",
+      "Recensements égyptiens",
+      "Siwa Heritage Foundation"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Arabes d'Égypte",
+          "population": 94500000,
+          "percentageInCountry": 90,
+          "percentageInAfrica": 52.5,
+          "peopleId": "PPL_ARABES_AFRIQUE",
+          "region": "Toutes les régions",
+          "languageFamily": "FLG_SEMITIQUE"
+        },
+        {
+          "name": "Coptes",
+          "population": 10500000,
+          "percentageInCountry": 10,
+          "percentageInAfrica": 5.8,
+          "region": "Toutes les régions (concentrés en Haute-Égypte)"
+        },
+        {
+          "name": "Siwi",
+          "population": 30000,
+          "percentageInCountry": 0.03,
+          "percentageInAfrica": 0.02,
+          "peopleId": "PPL_SIWI",
+          "region": "Oasis de Siwa",
+          "languageFamily": "FLG_BERBERE"
+        },
+        {
+          "name": "Beja",
+          "population": 50000,
+          "percentageInCountry": 0.05,
+          "percentageInAfrica": 0.03,
+          "peopleId": "PPL_BEJA",
+          "region": "Sud-est (frontière avec le Soudan)",
+          "languageFamily": "FLG_COUCHITIQUE"
+        }
+      ]
+    }
+  }
+}

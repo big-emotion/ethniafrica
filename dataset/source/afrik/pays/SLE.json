@@ -1,0 +1,244 @@
+{
+  "id": "SLE",
+  "nameFr": "République de Sierra Leone (Republic of Sierra Leone)",
+  "nameOfficial": "République de Sierra Leone (Republic of Sierra Leone)",
+  "etymology": "Le nom \"Sierra Leone\" vient de l'espagnol \"Sierra Leona\" (montagnes du lion), donné par l'explorateur portugais Pedro de Sintra en 1462. Il aurait vu des montagnes qui ressemblaient à des lions rugissants, d'où le nom \"Serra Lyoa\" (montagnes du lion) en portugais, qui est devenu \"Sierra Leone\" en espagnol puis en anglais. Le nom a été conservé par les Britanniques lors de la colonisation.",
+  "nameOriginActor": "L'explorateur portugais Pedro de Sintra a nommé la région \"Serra Lyoa\" (montagnes du lion) en 1462, en référence aux montagnes qui ressemblaient à des lions rugissants. Le nom a été anglicisé en \"Sierra Leone\" par les Britanniques.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Pas de présence humaine documentée dans la région avant l'arrivée des peuples atlantiques et mandé.",
+      "middleAges": "Présence de peuples atlantiques (Temne, Limba) et mandé (Mende, Kuranko, Yalunka) dans la région. Développement de chefferies et de royaumes locaux.",
+      "precolonial": "Présence de peuples atlantiques (Temne, Limba) et mandé (Mende, Kuranko, Yalunka) dans la région. Développement de chefferies et de royaumes locaux. Contacts avec les commerçants européens (Portugais, Britanniques) à partir du XVe siècle. La région était connue sous le nom de \"Serra Lyoa\" (montagnes du lion) par les Portugais.",
+      "colonization": "1787-1808 : Colonie de Freetown (établissement pour esclaves libérés). 1808-1961 : Colonie britannique de Sierra Leone. Développement de la colonie de Freetown pour les esclaves libérés (Nova Scotians, Maroons de Jamaïque), formation du peuple Krio, expansion coloniale britannique, développement de l'économie de plantation (palmier à huile, café, cacao), exploitation minière (diamants, or). Le nom \"Sierra Leone\" est officialisé par les Britanniques.",
+      "contemporary": "1961 : Indépendance (27 avril 1961), proclamation de la République de Sierra Leone. Le nom \"Sierra Leone\" est officiel."
+    },
+    "kingdoms": [
+      {
+        "name": "Chefferies Temne",
+        "period": "XVe siècle - XIXe siècle",
+        "dominantPeoples": ["Temne"],
+        "politicalCenters": [
+          "Chefferies indépendantes (Rokel",
+          "Port Loko",
+          "etc.)"
+        ],
+        "historicalRole": "Organisation politique traditionnelle des Temne, chefferies indépendantes, résistance à la colonisation britannique."
+      },
+      {
+        "name": "Chefferies Mende",
+        "period": "XVIe siècle - XIXe siècle",
+        "dominantPeoples": ["Mende"],
+        "politicalCenters": ["Chefferies indépendantes (Bo", "Kenema", "etc.)"],
+        "historicalRole": "Organisation politique traditionnelle des Mende, chefferies indépendantes, sociétés initiatiques (Poro, Sande/Bundu), résistance à la colonisation britannique."
+      },
+      {
+        "name": "Colonie de Freetown",
+        "period": "1787 - 1808",
+        "dominantPeoples": ["Krio (esclaves libérés)", "Britanniques"],
+        "politicalCenters": ["Freetown (capitale coloniale)"],
+        "historicalRole": "Établissement de la colonie de Freetown pour les esclaves libérés (Nova Scotians, Maroons de Jamaïque), formation du peuple Krio, développement de la société créole."
+      },
+      {
+        "name": "Colonie britannique de Sierra Leone",
+        "period": "1808 - 1961",
+        "dominantPeoples": [
+          "Britanniques",
+          "Krio",
+          "Temne",
+          "Mende",
+          "Limba",
+          "autres peuples"
+        ],
+        "politicalCenters": ["Freetown (capitale coloniale)"],
+        "historicalRole": "Colonisation britannique, expansion coloniale, développement de l'économie de plantation (palmier à huile, café, cacao), exploitation minière (diamants, or), mouvements nationalistes (XXe siècle)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Temne",
+        "selfAppellation": "Temne",
+        "exonyms": ["Temne (terme utilisé par les Européens)"],
+        "peopleId": "PPL_TEMNE",
+        "mainRegion": "Nord et centre de la Sierra Leone",
+        "languages": ["Temne (tem", "ISO 639-3)", "anglais", "krio"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "\"Temne\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe atlantique majoritaire, originaire de la région de la Sierra Leone."
+      },
+      {
+        "name": "Mende",
+        "selfAppellation": "Mende",
+        "exonyms": ["Mende (terme utilisé par les Européens)"],
+        "peopleId": "PPL_MENDE",
+        "mainRegion": "Sud-Est de la Sierra Leone",
+        "languages": ["Mende (men", "ISO 639-3)", "anglais", "krio"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Mende\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe mandé majoritaire, lié aux peuplements forestiers guinéens."
+      },
+      {
+        "name": "Limba",
+        "selfAppellation": "Limba",
+        "exonyms": ["Limba (terme utilisé par les Européens)"],
+        "peopleId": "PPL_LIMBA",
+        "mainRegion": "Nord de la Sierra Leone",
+        "languages": ["Limba (lia", "ISO 639-3)", "anglais", "krio", "temne"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "\"Limba\" est l'auto-appellation. Pas de terme péjoratif connu. Probablement l'un des peuples autochtones les plus anciens de Sierra Leone."
+      },
+      {
+        "name": "Krio",
+        "selfAppellation": "Krio",
+        "exonyms": [
+          "Krio (terme utilisé pour les créoles de Sierra Leone)",
+          "\"Creole\" (terme générique)"
+        ],
+        "peopleId": "PPL_KRIO",
+        "mainRegion": "Freetown et zones côtières",
+        "languages": ["Krio (kri", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_CREOLE",
+        "appellationRemarks": "\"Krio\" est l'auto-appellation. Pas de terme péjoratif connu. Peuple créole formé à partir du contact entre les populations africaines libérées (Nova Scotians, Maroons de Jamaïque) et les colons britanniques à partir du XVIIIe siècle."
+      },
+      {
+        "name": "Kuranko",
+        "selfAppellation": "Kuranko",
+        "exonyms": ["Kuranko (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KURANKO",
+        "mainRegion": "Nord de la Sierra Leone",
+        "languages": ["Kuranko (knk", "ISO 639-3)", "anglais", "krio"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Kuranko\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe mandé, lié aux peuplements forestiers guinéens."
+      },
+      {
+        "name": "Yalunka",
+        "selfAppellation": "Yalunka",
+        "exonyms": ["Yalunka (terme utilisé par les Européens)"],
+        "peopleId": "PPL_YALUNKA",
+        "mainRegion": "Nord de la Sierra Leone",
+        "languages": ["Yalunka (yal", "ISO 639-3)", "anglais", "krio"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Yalunka\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe mandé, lié aux peuplements forestiers guinéens."
+      },
+      {
+        "name": "Autres groupes",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_AUTRES_GROUPES",
+        "mainRegion": "Toutes les régions de la Sierra Leone",
+        "languages": ["Langues diverses", "anglais", "krio"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Anglais",
+          "isoCode": "eng",
+          "isPrimary": true
+        },
+        {
+          "name": "krio",
+          "isoCode": "kri"
+        },
+        {
+          "name": "temne",
+          "isoCode": "tem"
+        },
+        {
+          "name": "mende",
+          "isoCode": "men"
+        },
+        {
+          "name": "limba",
+          "isoCode": "lia"
+        },
+        {
+          "name": "kuranko",
+          "isoCode": "knk"
+        },
+        {
+          "name": "yalunka",
+          "isoCode": "yal"
+        }
+      ],
+      "culturalTraditions": "Traditions atlantiques (Temne, Limba) : masques Ragbenle, musiques polyphoniques, récoltes rituelles, sociétés initiatiques. Traditions mandé (Mende, Kuranko, Yalunka) : masques Sowei (Sande), musiques polyrythmiques, artisanat de la forêt, sociétés initiatiques (Poro, Sande/Bundu). Traditions créoles (Krio) : musique traditionnelle créole, danse traditionnelle, poésie orale, artisanat. Festivals traditionnels variés. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture sierra-léonaise est riche et préservée.",
+      "dominantReligions": "Islam (majoritaire, environ 60%), christianisme (environ 30%, protestantisme majoritaire), religions traditionnelles africaines (syncrétisme fréquent, environ 10%)",
+      "lifestyles": "Agriculture (riz, sorgho, palmier à huile, café, cacao, cultures vivrières), élevage (bovins, caprins, ovins), pêche (océan Atlantique, importante source de protéines), exploitation minière (diamants, or, bauxite, rutile), commerce et activités urbaines (zones urbaines, Freetown). Urbanisation importante. Économie basée sur l'exploitation minière (diamants, or), l'agriculture (palmier à huile, café, cacao), et les services. La Sierra Leone est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles.",
+      "socialOrganization": "Société multiethnique et multiculturelle. Structures familiales traditionnelles (patrilinéaires, matrilinéaires). Organisation communautaire (chefferies, communautés créoles). Structures étatiques modernes (république démocratique). Sociétés initiatiques (Poro, Sande/Bundu, Ragbenle). Système politique démocratique, mais instabilité politique et conflits récents (guerre civile 1991-2002).",
+      "regionalRelations": "Relations avec l'Afrique de l'Ouest (CEDEAO, Union du fleuve Mano), relations avec l'Europe (Union européenne, Royaume-Uni), relations avec les États-Unis. La Sierra Leone est membre de la CEDEAO et de l'Union africaine."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Présence de peuples atlantiques (Temne, Limba) et mandé (Mende, Kuranko, Yalunka) dans la région. Développement de chefferies et de royaumes locaux.",
+      "middleAges": "Présence de peuples atlantiques (Temne, Limba) et mandé (Mende, Kuranko, Yalunka) dans la région. Développement de chefferies et de royaumes locaux. Contacts avec les commerçants européens (Portugais, Britanniques) à partir du XVe siècle.",
+      "precolonial": "Présence de peuples atlantiques (Temne, Limba) et mandé (Mende, Kuranko, Yalunka) dans la région. Développement de chefferies et de royaumes locaux. Contacts avec les commerçants européens (Portugais, Britanniques) à partir du XVe siècle. La région était connue sous le nom de \"Serra Lyoa\" (montagnes du lion) par les Portugais.",
+      "colonization": "1787-1808 : Colonie de Freetown (établissement pour esclaves libérés), formation du peuple Krio. 1808-1961 : Colonie britannique de Sierra Leone, expansion coloniale, développement de l'économie de plantation (palmier à huile, café, cacao), exploitation minière (diamants, or), mouvements nationalistes (XXe siècle).",
+      "independenceStruggle": "1950s-1961 : Mouvements nationalistes, SLPP (Sierra Leone People's Party), APC (All People's Congress), indépendance (27 avril 1961), proclamation de la République de Sierra Leone. Milton Margai devient premier Premier ministre.",
+      "postIndependence": "République de Sierra Leone (1961), présidence de Siaka Stevens (1968-1985, régime autoritaire, parti unique), présidence de Joseph Momoh (1985-1992), coup d'État (1992), guerre civile (1991-2002, conflit sanglant, diamants de sang, crimes de guerre), transition démocratique (2002), élections multipartites, présidence d'Ahmed Tejan Kabbah (1996-1997, 1998-2007), Ernest Bai Koroma (2007-2018), Julius Maada Bio (depuis 2018). Stabilité politique fragile, démocratie multipartite, reconstruction post-conflit, développement économique (exploitation minière, agriculture). La Sierra Leone est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Sierra Leone",
+      "SIL Ethnologue – Languages of Sierra Leone",
+      "Recensements sierra-léonais",
+      "Études anthropologiques sur les peuples de Sierra Leone",
+      "Études historiques sur la colonisation britannique"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Temne",
+          "population": 2250000,
+          "percentageInCountry": 30,
+          "peopleId": "PPL_TEMNE",
+          "region": "Nord et centre de la Sierra Leone",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Mende",
+          "population": 1800000,
+          "percentageInCountry": 24,
+          "peopleId": "PPL_MENDE",
+          "region": "Sud-Est de la Sierra Leone",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Limba",
+          "population": 540000,
+          "percentageInCountry": 7.2,
+          "peopleId": "PPL_LIMBA",
+          "region": "Nord de la Sierra Leone",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Krio",
+          "population": 600000,
+          "percentageInCountry": 8,
+          "peopleId": "PPL_KRIO",
+          "region": "Freetown et zones côtières",
+          "languageFamily": "FLG_CREOLE"
+        },
+        {
+          "name": "Kuranko",
+          "population": 450000,
+          "percentageInCountry": 6,
+          "peopleId": "PPL_KURANKO",
+          "region": "Nord de la Sierra Leone",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Yalunka",
+          "population": 300000,
+          "percentageInCountry": 4,
+          "peopleId": "PPL_YALUNKA",
+          "region": "Nord de la Sierra Leone",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Autres groupes",
+          "population": 1560000,
+          "percentageInCountry": 20.8,
+          "peopleId": "PPL_AUTRES_GROUPES",
+          "region": "Toutes les régions de la Sierra Leone"
+        }
+      ]
+    }
+  }
+}

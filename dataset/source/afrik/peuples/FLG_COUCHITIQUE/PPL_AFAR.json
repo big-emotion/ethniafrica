@@ -1,0 +1,110 @@
+{
+  "id": "PPL_AFAR",
+  "nameMain": "Afar",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH", "DJI", "ERI"],
+  "content": {
+    "appellations": {
+      "mainName": "Afar",
+      "selfAppellation": "Qafar",
+      "exonyms": ["Danakil", "Dankali", "Adali", "Odali", "Afar-Saho"],
+      "originOfExonyms": "Le terme Danakil (ou Dankali) est d'origine arabe et etait utilise par les geographes et voyageurs medievaux (dont Ibn Sad au 13e siecle) pour designer ce peuple. Il est aujourd'hui considere comme offensant par les Afar eux-memes. Le terme Adal ou Adali provient du nom de leur territoire historique, le pays d'Adal (region du bas Awash). L'endonyme Qafar est le terme que le peuple utilise pour se designer lui-meme.",
+      "whyProblematic": "Le terme Danakil est rejete par les Afar car il est percu comme pejoratif. Les explorateurs europeens du 19e siecle ont contribue a leur reputation de peuple violent et difficile, biaisant les representations academiques. La fragmentation du peuple afar entre trois Etats (Ethiopie, Erythree, Djibouti) complique la collecte de donnees demographiques coherentes.",
+      "contemporaryUsage": "Le terme Afar est le nom officiel utilise dans les constitutions ethiopienne et djiboutienne. La region administrative d'Ethiopie est appelee Region Afar (l'une des neuf divisions ethniques reconnues). Au Djibouti, les Afar constituent l'un des deux principaux groupes ethniques. Le terme Qafar est utilise comme endonyme dans la langue afar.",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "Couchitique oriental bas (groupe Afar-Saho)",
+      "historicalRegion": "Desert du Danakil (depression de l'Afar) : region Afar d'Ethiopie, cote sud d'Erythree, nord de Djibouti et triangle afar",
+      "currentCountries": ["ETH", "DJI", "ERI"]
+    },
+    "ethnicities": [
+      "Asaimara (les Rouges) — classe noble dominante politiquement, dont la tribu principale est celle des Mudaito (sultan d'Aussa)",
+      "Adoimara (les Blancs) — classe inferieure, populations de travail dans les montagnes Mabla",
+      "Mudaito — tribu principale des Asaimara, au pouvoir dans le Sultanat d'Aussa (bas Awash)",
+      "Modaito — branche des Mudaito du bas Awash, les plus puissants historiquement",
+      "Sultanat de Tadjourah — groupe afar controlant le port de Tadjourah (Djibouti actuel)",
+      "Sultanat de Rahaito — sultanat afar du sud-est",
+      "Sultanat de Gobaad — sultanat afar de l'interieur",
+      "Clan Issa — clan afar particulier, fluide, pouvant inclure des membres exterieurs"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Afar sont une population couchitique ancienne de la Corne de l'Afrique. La tradition orale afar revendique une descendance de Ham, fils de Noe. Les linguistes situent leur presence dans la Corne de l'Afrique parmi les plus anciennes populations de la region. La plus ancienne mention ecrite connue date du 13e siecle : l'ecrivain andalou Ibn Sad mentionne un peuple appele Dankal habitant la region du port de Suakin jusqu'a Mandeb pres de Zeila. Les chroniques royales ethiopiennes de l'empereur Amda Seyon (14e siecle) mentionnent le pays afar sous le nom d'Adal, une region forestiere permanente le long du bas Awash.",
+      "formationPeriod": "Le peuple afar prend sa configuration actuelle au cours du premier millenaire de l'ere commune, avec la consolidation de royaumes et de sultanats organises dans la Depression de l'Afar et le long du Rift. Au 16e siecle, le chef de l'Adal, l'imam Muhammed Jasa, transfere sa capitale de Harar a Aussa (Ethiopie actuelle). En 1647, les imams de l'Emirat de Harar se separent ; les dynasties locales afar (notamment les Mudaito) s'etablissent dans le Sultanat d'Aussa au 18e siecle.",
+      "migrationRoutes": [
+        "Population autochtone de la Depression de l'Afar, sans migration fondatrice externe documentee",
+        "Expansion historique le long du Rift ethiopien du nord au sud, suivant les routes du sel et du commerce",
+        "Nomadisme pastoral dans le desert du Danakil, entre la plaine cotiere de la mer Rouge et le plateau ethiopien"
+      ],
+      "historicalSettlementZones": [
+        "Depression de l'Afar (triangle afar) : l'une des zones les plus basses et les plus chaudes du monde (depression de Dallol, 155 m sous le niveau de la mer)",
+        "Desert du Danakil (Ethiopie, Erythree)",
+        "Region du bas Awash (Ethiopie centrale orientale)",
+        "Cote meridionale de la mer Rouge (Erythree meridionale)",
+        "Nord de Djibouti (triangle afar djiboutien)"
+      ],
+      "unificationsOrDivisions": "Les Afar etaient historiquement divises en plusieurs sultanats independants (Aussa, Girrifo/Biru, Tadjourah, Rahaito, Gobaad) et en deux grandes classes sociales (Asaimara et Adoimara). La colonisation a divise le territoire afar entre l'Erythree italienne, la Somalie francaise (Djibouti) et l'Ethiopie. Apres les independances, les Afar se retrouvent repartis entre trois Etats. Des tentatives de reunification politique ont echoue : le Front de Liberation Afar (1975) et l'ARDUF (1993) ont essaye sans succes de feder les Afar transfrontaliers.",
+      "externalInfluences": "Commerce lucratif du sel avec l'Abyssinie depuis l'Antiquite (les blocs de sel danakil etaient precieux dans les hauts plateaux ethiopiens). Contact avec l'islam des le 9e siecle via les routes commerciales de la mer Rouge. Colonisation de la cote par l'Italie (Erythree : Assab, Massaoua) et la France (Djibouti) a la fin du 19e siecle. Intégration dans l'empire ethiopien sous Menelik II (1895-1896). Regime Derg et troubles politiques (1974-1991). Independance de l'Erythree (1993).",
+      "majorHistoricalEvents": "En 1577, l'imam Muhammed Jasa transfere la capitale de l'Adal de Harar a Aussa. Le massacre de la mission de Werner Munzinger (force egyptienne de 350 soldats, 2 canons) par les Afar du Sultanat d'Aussa marque la puissance de resistance de ce peuple. En 1895-1896, le sultan Mahammad Hanfare accepte la domination indirecte de l'empereur Menelik Ier d'Ethiopie en echange de l'autonomie du Sultanat d'Aussa. En 1975, le sultan Alimirah Hanfare fonde le Front de Liberation Afar (ALF) et est exile en Arabie Saoudite par le regime Derg. En 1991, l'Insurgency afar eclate a Djibouti. En 1993, le Front Democratique Revolutionnaire Afar (ARDUF) est fonde pour defendre les interets afar en Ethiopie."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Afar etaient organises en sultanats independants diriges par des sultans hereditaires (l'amenokal). Le sultan d'Aussa, issu de la tribu Mudaito, etait le plus puissant. Le symbole du pouvoir du sultan etait un baton en argent aux proprietes magiques. Les families de clans etaient dirigees par des anciens (elders) qui reglaient les conflits internes selon le droit coutumier afar.",
+      "clanOrganization": "La societe afar est divisee en deux grandes classes : les Asaimara (les Rouges, classe noble dominant politiquement) et les Adoimara (les Blancs, classe inferieure, dans les montagnes Mabla). Ces deux classes se subdivisent en plus de 150 sous-tribus. La tribu Mudaito est la plus puissante des Asaimara ; c'est a elle qu'appartient le sultan d'Aussa. Les clans afar sont relativement fluides et peuvent inclure des membres de l'exterieur (comme c'est le cas du clan Issa).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le statut social est herite par la naissance dans la classe Asaimara ou Adoimara. Le prestige individuel est lie aux performances guerrieres : chez les Afar, un homme gagne du prestige en tuant ses ennemis au combat. La richesse est mesuree a la taille des troupeaux de chameaux, chevres, moutons et bovins.",
+      "religiousAuthority": "Les Afar sont musulmans sunnites depuis environ le 9e siecle (ils furent exposes a l'islam via les routes commerciales de la mer Rouge des 800 apres J.-C.). Leur pratique religieuse est syncretique : elle mele les concepts islamiques a des pratiques pre-islamiques telles que les sacrifices de pluie sur des sites sacres, la divination et la guerison par des pratiques traditionnelles. Les imams et chefs religieux jouent un role consultatif aupres des sultans."
+    },
+    "languages": {
+      "mainLanguage": "Afar (Qafar af)",
+      "isoCodes": ["aar"],
+      "dialects": [
+        "Afar septentrional — parle en Erythree meridionale et au nord de la Region Afar d'Ethiopie",
+        "Afar central — parle dans la Region Afar d'Ethiopie (partie centrale)",
+        "Afar meridional — parle dans le bas Awash et la region de la Corne"
+      ],
+      "vehicularRole": "L'afar est la langue maternelle de plus de 2,6 millions de locuteurs selon Ethnologue. C'est une langue officielle en Ethiopie dans les regions ou elle est parlee, et une langue nationale a Djibouti et en Erythree. L'afar est ecrit en alphabet latin officiel (depuis l'independance erythreenne). L'amharique et le tigrinya sont utilises comme langues vehiculaires avec les communautes voisines en Ethiopie et en Erythree. Le somalien est parle comme langue de contact a Djibouti."
+    },
+    "culture": {
+      "majorRites": "La bravoure guerriere est au coeur des rites masculins afar : un homme demontre sa valeur en tuant ses ennemis et en portant le jile (couteau courbe) comme signe de virilite. Un vaste repertoire de chants de guerre accompagne les expeditions militaires. Le mariage est un rite social majeur, assorti d'une compensation matrimoniale (bride price) ; les epouses bedouines commandent un prix plus eleve que les femmes siwi dans les zones frontieres. Les rituels liés au sel (exploitation et commerce de sel dans la Depression de Dallol) structurent les cycles economiques et rituels des Afar pasteurs nomades.",
+      "symbols": "Le jile (couteau courbe) est le symbole de la virilite et de la bravoure afar, porte par les hommes en permanence. Le chameau est le symbole de la richesse et du statut social (la richesse se mesure en troupeaux). Le baton en argent du sultan d'Aussa est le symbole supreme du pouvoir politique afar. La maison nomade (aele), une hutte portable en bois et nates, est le symbole de la vie pastorale nomade.",
+      "artsAndMusic": "Les Afar ont une tradition orale riche incluant des chants de guerre, des poemes epiques et des recits genealogiques. La musique est intimement liee a la vie pastorale et guerriere. Les instruments traditionnels comprennent des percussions (tambours utilises lors des ceremonies). L'artisanat afar comprend la confection de nattes et de paniers employes dans la construction des huttes nomades (aele), ainsi que des cuirs travailles pour les harnachements et les sandales. La joaillerie en argent marque le statut social des femmes.",
+      "spiritualities": "Les Afar sont musulmans sunnites a 99% (99,7% a Djibouti). Islamises depuis environ le 9e siecle, leur pratique est syncrethique : ils combinent les croyances islamiques avec des pratiques pre-islamiques heritees, notamment les sacrifices propitiatoires sur des sites sacres pour attirer la pluie, des pratiques de divination, et des rites de guerison traditionnels. Le respect des ancetres et la veneration des lieux sacres naturels (sources, volcans) jouent un role spirituel important dans la vie pastorale nomade."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Afar etaient organises en cinq sultanats independants : le Sultanat d'Aussa (le plus puissant, dirige par la dynastie Mudaito depuis le 18e siecle), le Sultanat de Girrifo/Biru, le Sultanat de Tadjourah, le Sultanat de Rahaito et le Sultanat de Gobaad. L'Aussa maintenait son independance face aux emirs de Harar (jusqu'au 18e siecle) et a l'Ethiopie (relative autonomie obtenue en 1895). Le Royaume de Dankali est mentionne par l'explorateur portugais Francisco Alvares au 16e siecle comme confine entre l'Abyssinie et le Sultanat d'Adal.",
+      "relationsWithNeighbors": "Les Afar entretenaient des relations complexes avec les Amhara et Tigrayens des hautes terres ethiopiennes : commerce du sel (extrait de la depression de Dallol et vendu sur les hauts plateaux) et tensions frontieres. Les Afar etaient en concurrence avec les Somalis (notamment les Issa) pour les paturages. Les sultanats cotiers (Tadjourah, Rahaito) avaient des relations commerciales avec la peninsule arabique via la mer Rouge. Les Afar participaient activement au commerce des esclaves vers l'Arabie comme guides (jusque dans les annees 1920).",
+      "conflictsOrAlliances": "Les campagnes de l'empereur ethiopien Amda Seyon au-dela de la riviere Awash (14e siecle) touchent le territoire afar. Les Afar massacrerent la force egyptienne de Werner Munzinger lors de son expedition (14 novembre, region d'Aussa). La Premiere Guerre italo-ethiopienne (1895-1896) affecte indirectement le Sultanat d'Aussa. Le sultan Alimirah Hanfare conduit une rebellion infructueuse contre le regime Derg et fonde le Front de Liberation Afar en 1975. L'Insurgence afar eclate a Djibouti en 1991 (conflit avec les Issa-Somalis). Des affrontements Afar-Somali sont documentes dans les zones frontalieres.",
+      "diaspora": "Les migrations afar hors de leur territoire traditionnel sont limitees en raison de leur culture pastorale nomade. On trouve des communautes afar dans les capitales regionales (Semera, capitale de la Region Afar) et a Addis-Abeba (Ethiopie). Certains Afar se sont tournes vers le travail agricole ou le commerce dans les villes de la Corne de l'Afrique. La migration vers les centres urbains s'est acceleree en raison des secheresses recurrentes."
+    },
+    "demography": {
+      "totalPopulation": 3350000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN Afar people (Ethiopie : 2 700 000 en 2022 ; Djibouti : 342 000 en 2019 ; Erythree : 304 000 en 2022). Joshua Project 2025 (2 307 000 pour l'Ethiopie seule). AfriGO Magazine 2024 (environ 300 000 a Djibouti). Total estime 2025 : environ 3 350 000 personnes.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 2700000,
+          "note": "Region Afar d'Ethiopie (l'une des neuf divisions ethniques reconnues) ; population 2022 selon Wikipedia"
+        },
+        {
+          "country": "DJI",
+          "population": 350000,
+          "note": "Plus d'un tiers de la population djiboutienne ; nord de Djibouti (triangle afar)"
+        },
+        {
+          "country": "ERI",
+          "population": 300000,
+          "note": "Cote meridionale de l'Erythree ; estimation 2022"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Afar people. https://en.wikipedia.org/wiki/Afar_people",
+      "Wikipedia EN — Afar language. https://en.wikipedia.org/wiki/Afar_language",
+      "Ethnologue — Afar (aar). https://www.ethnologue.com/language/aar/",
+      "Joshua Project — Afar in Ethiopia. https://joshuaproject.net/people_groups/11486/et",
+      "AfriGO Magazine — People Groups: the Afar of Djibouti. https://afrigo.org/articles/people-groups-the-afar-of-djibouti/",
+      "Wiktionary — ISO 639-3 codes Africa (confirmation code aar). https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+      "Nesbitt, L.M. Desert and Forest: Exploration of Abyssinian Danakil. London: Jonathan Cape, 1934.",
+      "Trimingham, J. Spencer. Islam in Ethiopia. Oxford: Oxford University Press, 1952."
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "PPL_TONGAS",
+  "nameMain": "Tongas",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["STP"],
+  "content": {
+    "appellations": {
+      "mainName": "Tongas",
+      "selfAppellation": "Tongas (terme adopté comme auto-désignation communautaire à São Tomé-et-Príncipe)",
+      "exonyms": [
+        "Tongas (terme officiel désignant les enfants de serviçais nés sur les îles)",
+        "Serviçais (terme appliqué aux parents contractuels, parfois utilisé abusivement pour les Tongas)",
+        "Filhos da terra (terme informel parfois appliqué aux enfants nés localement)"
+      ],
+      "originOfExonyms": "Le terme Tongas est d'origine portugaise et désigne spécifiquement les enfants nés sur les îles de São Tomé-et-Príncipe de parents serviçais (travailleurs contractuels venus d'Angola, du Mozambique et du Cap-Vert). Il est apparu comme catégorie démographique officielle lors des recensements coloniaux portugais du XXe siecle pour distinguer les enfants localement nés de leurs parents contractuels temporaires.",
+      "whyProblematic": "Le terme Serviçais appliqué aux parents des Tongas est problématique car il désignait officiellement des travailleurs sous contrat théoriquement libres, mais en réalité soumis à des conditions proches du travail forcé, avec des contrats automatiquement renouvelés et transmissibles aux enfants. Le terme Tongas lui-même peut porter une connotation de statut social inférieur, héritage de la hiérarchie coloniale des plantations.",
+      "contemporaryUsage": "Les Tongas constituent l'une des six catégories ethniques officielles de São Tomé-et-Príncipe, avec les Métis (Luso-Africains), les Angolares, les Forros, les Serviçais (parents contractuels) et les Européens. Ils sont recensés comme groupe distinct dans les documents officiels de l'État santoméen.",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Créolophone de langue portugaise (multilingue selon les origines parentales)",
+      "historicalRegion": "Plantations (roças) de São Tomé-et-Príncipe, ensemble des deux îles",
+      "currentCountries": ["STP"]
+    },
+    "ethnicities": [
+      "Tongas (enfants de serviçais angolais)",
+      "Tongas (enfants de serviçais mozambicains)",
+      "Tongas (enfants de serviçais cap-verdiens)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Tongas sont les descendants de deuxième génération et plus des serviçais, travailleurs contractuels africains amenés à São Tomé-et-Príncipe depuis les autres colonies portugaises d'Afrique (principalement Angola, Mozambique et Cap-Vert) pour travailler dans les plantations de café et de cacao, après l'abolition officielle de l'esclavage en 1876. Les premiers serviçais angolais arrivèrent dans les premières décennies du XIXe siecle sous un système de travail forcé déguisé.",
+      "formationPeriod": "La catégorie Tongas se constitua progressivement à partir de la fin du XIXe siecle et tout au long du XXe siecle, notamment après l'arrivée massive de serviçais capverdiens au début du XXe siecle (fuyant la famine) et mozambicains sous des contrats à court terme. São Tomé était devenu le premier producteur mondial de cacao en 1905, nécessitant une main-d'oeuvre contractuelle massive.",
+      "migrationRoutes": [
+        "Angola vers São Tomé, depuis les années 1820 (premiers serviçais angolais sous contrat forcé)",
+        "Cap-Vert vers São Tomé, début XXe siecle (fuyant la famine, contrats courts avec option de rapatriement)",
+        "Mozambique vers São Tomé, XXe siecle (contrats courts)"
+      ],
+      "historicalSettlementZones": [
+        "Roças (plantations) de toute l'île de São Tomé",
+        "Île de Príncipe",
+        "Zones péri-urbaines autour de São Tomé ville"
+      ],
+      "unificationsOrDivisions": "Les Tongas se distinguent des autres groupes de São Tomé-et-Príncipe par leur statut de nés localement, contrairement à leurs parents serviçais (temporairement contractuels). Ils partagent certaines caractéristiques culturelles avec les Forros (descendants d'esclaves libérés) mais s'en distinguent par leurs origines familiales récentes en Afrique continentale. Les sous-groupes varient selon l'origine des parents (angolais, mozambicains, cap-verdiens) et les créoles parlés.",
+      "externalInfluences": "Le système des roças portugais, avec son organisation hiérarchique de plantation, a structuré l'existence des Tongas. La controverse internationale de 1905-1909 sur le travail forcé à São Tomé (boycott du chocolat anglais, articles dans Scientific American) a mis en lumière les conditions de vie des serviçais et de leurs enfants. L'indépendance en 1975 a transformé le statut des Tongas en citoyens à égalité formelle.",
+      "majorHistoricalEvents": "La période de l'abolition officielle de l'esclavage en 1876 ne mit pas fin au travail forcé sur l'archipel. Scientific American documenta en 1897 le maintien de pratiques esclavagistes à São Tomé. Le massacre de Batepá en 1953, où plusieurs centaines de travailleurs africains furent tués dans un affrontement avec les colons portugais, toucha directement la communauté des serviçais et leurs enfants Tongas. L'indépendance le 12 juillet 1975 intégra les Tongas comme citoyens santoméens."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Absence de système politique traditionnel propre. Les Tongas étaient intégrés dans la structure hiérarchique des roças (plantations), sans représentation politique distincte. Après l'indépendance, ils participent pleinement au système démocratique santoméen.",
+      "clanOrganization": "Organisation communautaire informelle autour des villages de plantation (anciens quartiers des roças). Les liens familiaux avec les pays d'origine des parents (Angola, Mozambique, Cap-Vert) varient selon les générations et la durée d'établissement sur les îles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les liens de lignage sont partiellement maintenus avec les communautés d'origine des parents (angolaises, mozambicaines, cap-verdiennes), mais s'estompent avec les générations nées sur l'île. Les Tongas développent une identité proprement santoméenne tout en conservant des traces culturelles de leurs origines parentales.",
+      "religiousAuthority": "Christianisme catholique dominant, hérité de la colonisation portugaise, pratiqué par l'ensemble de la population santoméenne y compris les Tongas."
+    },
+    "languages": {
+      "mainLanguage": "Portugais (por)",
+      "isoCodes": ["por", "kea", "cri", "ccl"],
+      "dialects": [
+        "Créole capverdien (Cabo Verdian Creole, kea) : hérité des parents capverdiens, parlé par 8,5 % de la population selon le recensement",
+        "Forro (cri) : créole de São Tomé, parlé par 36,2 % de la population, compris par de nombreux Tongas",
+        "Angolar (ccl) : créole des descendants d'esclaves angolais, parlé par 6,6 % de la population"
+      ],
+      "vehicularRole": "Le portugais est la langue officielle parlée par ~98,4 % de la population de São Tomé-et-Príncipe. Les Tongas dont les parents sont capverdiens peuvent parler le créole capverdien (kea). Le forro, créole local à base portugaise, est compris et souvent parlé. L'intégration linguistique dans la société santoméenne est généralement rapide dès la deuxième génération."
+    },
+    "culture": {
+      "majorRites": "Pratiques catholiques partagées avec l'ensemble de la société santoméenne (messes, baptêmes, mariages, funérailles). Célébrations de l'indépendance nationale (12 juillet). Maintien de certaines pratiques culturelles héritées des pays d'origine parentale (angolaises, mozambicaines, cap-verdiennes) dans les familles.",
+      "symbols": "Les roças (plantations coloniales transformées en patrimoines culturels) constituent un symbole ambigu de l'histoire des Tongas, à la fois lieu d'exploitation et de formation identitaire. La date du 12 juillet 1975 (indépendance) marque l'égalité citoyenne formelle.",
+      "artsAndMusic": "Les Tongas participent à la culture musicale syncrétique de São Tomé-et-Príncipe, influencée par les musiques africaines continentales (angolaise, cap-verdienne) et portugaise. Le Puxa (musique de travail des roças) et d'autres formes musicales locales sont partagés entre les groupes ethniques de l'archipel. La danse Ússua et le Socopé sont pratiqués sur l'île.",
+      "spiritualities": "Catholicisme majoritaire (55,7 % de la population totale). Présence adventiste (4,1 %), assemblée de Dieu (3,4 %) et autres confessions protestantes. Une proportion notable (21,2 %) se déclare sans religion selon le recensement de 2012."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Les Tongas occupent une position intermédiaire dans la société santoméenne : nés sur l'île comme les Forros et les Angolares, mais d'ascendance continentale récente comme les Serviçais. Leurs relations avec les Forros (groupe dominant politiquement après l'indépendance) ont parfois été tendues, les Forros se percevant comme les véritables autochtones de l'archipel.",
+      "conflictsOrAlliances": "Le massacre de Batepá en février 1953 toucha directement les communautés de travailleurs contractuels et leurs enfants Tongas. L'anniversaire de cet événement reste officiellement commémoré comme Dia dos Mártires da Liberdade. Après l'indépendance de 1975, la redistribution des roças a marginalement amélioré la situation économique des anciens travailleurs et de leurs descendants.",
+      "diaspora": "Présence limitée à São Tomé-et-Príncipe. Des liens familiaux subsistent avec les pays d'origine des parents (Angola, Mozambique, Cap-Vert), facilitant une certaine mobilité entre ces pays et l'archipel."
+    },
+    "demography": {
+      "totalPopulation": 15000,
+      "referenceYear": 2025,
+      "source": "Population totale STP estimée à ~234 000-242 000 en 2025 (SaoTomeExpert) ; les Tongas constituent une fraction des groupes ethniques locaux, proportions non chiffrées séparément dans les recensements récents ; estimation basée sur les proportions historiques",
+      "distributionByCountry": [{ "country": "STP", "population": 15000 }]
+    },
+    "sources": [
+      "São Tomé and Príncipe – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe)",
+      "Demographics of São Tomé and Príncipe – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Demographics_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe)",
+      "São Tomé and Príncipe – Minority Rights Group, 2024 (https://minorityrights.org/country/sao-tome-and-principe/)",
+      "Population and Demographics – SaoTomeExpert, 2022 (https://www.saotomeexpert.pt/en/sao-tome-and-principe-factsheet-population-demographics/)",
+      "People and Culture of Príncipe Island – SaoTomeExpert (https://www.saotomeexpert.pt/en/sao-tome-people-culture-of-principe-island/)",
+      "Sao Tome and Principe Demographics Profile – IndexMundi (https://www.indexmundi.com/sao_tome_and_principe/demographics_profile.html)"
+    ]
+  }
+}

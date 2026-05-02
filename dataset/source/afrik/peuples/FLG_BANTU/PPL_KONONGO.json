@@ -1,0 +1,76 @@
+{
+  "id": "PPL_KONONGO",
+  "nameMain": "Konongo",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Konongo",
+      "selfAppellation": "Konongo",
+      "exonyms": ["Konogo"],
+      "originOfExonyms": "Konogo est une orthographe alternative du nom Konongo utilisee dans certaines sources. Les deux formes designent le meme groupe ethno-linguistique de l'ouest de la Tanzanie.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Konongo est utilise dans les sources academiques, administratives et missionnaires pour designer ce groupe bantou de la region de Katavi en Tanzanie occidentale.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou de la Tanzanie centrale-occidentale",
+      "historicalRegion": "Tanzanie occidentale, region de Katavi",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Konongo"],
+    "origins": {
+      "ancientOrigins": "Les Konongo sont un groupe ethno-linguistique bantou etabli dans le district de Mpanda de la region de Katavi en Tanzanie occidentale. Leurs origines s'inscrivent dans les migrations bantoues qui ont peuple la Tanzanie centrale et occidentale.",
+      "formationPeriod": "Installation ancienne dans la region de Katavi (ex-Rukwa). La langue konongo est apparentee au nyamwezi, ce qui suggere une origine commune ou des contacts anciens avec les groupes bantous de Tanzanie centrale.",
+      "migrationRoutes": [
+        "Migration bantoue vers la Tanzanie centrale et occidentale",
+        "Installation dans le district de Mpanda, region de Katavi"
+      ],
+      "historicalSettlementZones": [
+        "District de Mpanda, Region de Katavi",
+        "Tanzanie occidentale"
+      ],
+      "unificationsOrDivisions": "Groupe compact de la region de Katavi. La langue konongo forme un continuum avec le ruwila (ou rwira), les deux etant parfois regroupes sous l'appellation Konongo-Ruwila.",
+      "externalInfluences": "Influence du nyamwezi, langue apparentee. Contact avec les missionnaires catholiques et moraves. Influence du swahili comme langue nationale.",
+      "majorHistoricalEvents": "Presence de l'Eglise morave comme institution missionnaire historique dans la region. Les Konongo ont ete classes comme groupe 'non encore atteint' par l'International Mission Board, indiquant un contact missionnaire relativement recent."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation decentralisee typique des societes bantoues de petite taille en Tanzanie occidentale. Chefferies locales sans structure etatique centralisee documentee.",
+      "clanOrganization": "Organisation clanique propre aux societes bantoues avec des structures familiales etendues formant la base de l'organisation sociale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role dans la transmission des terres et des traditions culturelles au sein des communautes Konongo.",
+      "religiousAuthority": "Religion traditionnelle africaine predominante historiquement. Presence catholique et morave dans la region. L'Eglise morave a une presence de longue date dans leur territoire mais sans eglise indigene Konongo etablie."
+    },
+    "languages": {
+      "mainLanguage": "Konongo",
+      "isoCodes": ["kcz"],
+      "dialects": [],
+      "vehicularRole": "Le konongo est la langue maternelle utilisee au sein de la communaute. Il est suffisamment proche du nyamwezi pour etre parfois considere comme une variete de cette langue. Le konongo forme un continuum avec le ruwila. Le swahili est utilise comme langue vehiculaire nationale."
+    },
+    "culture": {
+      "majorRites": "Pratiques traditionnelles africaines liees aux cycles de vie (naissance, initiation, mariage, mort) et aux saisons agricoles. Ceremonies d'invocation des ancetres.",
+      "symbols": null,
+      "artsAndMusic": "Traditions orales et musicales propres aux peuples bantous de la Tanzanie occidentale. Chants et celebrations communautaires.",
+      "spiritualities": "Religion traditionnelle africaine majoritaire, axee sur la veneration des ancetres et les croyances en des forces spirituelles. Presence catholique et morave croissante dans la region."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise documente. Organisation par chefferies locales.",
+      "relationsWithNeighbors": "Relations avec les peuples voisins de la region de Katavi, notamment les Rungwa et d'autres groupes bantous de Tanzanie occidentale. Proximite linguistique avec les Nyamwezi.",
+      "conflictsOrAlliances": null,
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 167000,
+      "referenceYear": 2025,
+      "source": "Joshua Project / PeopleGroups.org (2025)",
+      "distributionByCountry": [{ "country": "TZA", "population": 167000 }]
+    },
+    "sources": [
+      "Konongo people – Wikipedia (https://en.wikipedia.org/wiki/Konongo_people)",
+      "Konongo-Ruwila language – Wikipedia (https://en.wikipedia.org/wiki/Konongo%E2%80%93Ruwila_language)",
+      "Konongo in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12785)",
+      "Konongo of Tanzania – IMB International Mission Board (https://www.imb.org/55-in-5-resource/konongo-of-tanzania/)",
+      "Konongo of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg014967/)",
+      "ISO 639-3 Language Code List – Wiktionary / Ethnologue (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
+      "Bantu, Central-Tanzania People Cluster – Joshua Project (https://www.joshuaproject.net/clusters/341)"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+# Nom du peuple
+- Nom principal du peuple : Baga
+- Auto-appellation : Baga
+- Exonymes historiques : aucune connotation coloniale péjorative majeure identifiée
+- Famille linguistique principale : Niger-Congo – Atlantique (Sénégambien) (FLG_ATLANTIQUE)
+- Région historique : Littoral de Guinée (Basse Guinée), îles et mangroves
+- Pays actuels : GIN (principal)
+- Identifiant peuple : PPL_BAGA
+
+# 1. Ethnies incluses dans le peuple
+- Baga Sitemu
+- Baga Kalum
+- Baga Koba
+- Baga Mandori
+
+# 2. Origines, migrations et formation du peuple
+- Peuple ancien du littoral guinéen.
+- Installations dans les mangroves et zones côtières depuis des siècles.
+- Histoire marquée par les dynamiques régionales de la côte ouest-africaine.
+
+# 3. Organisation et structure interne
+- Organisation communautaire autour de villages littoraux.
+- Autorité des anciens et des lignages.
+
+# 4. Langues et sous-familles
+- Langue : Baga (plusieurs variétés)
+- Code ISO : bqg / bsp (selon variétés)
+- Sous-famille : Atlantique nord
+
+# 5. Culture, rites et traditions
+- Célèbres masques **Nimba**, symboles de fertilité.
+- Cérémonies liées à la mer et à l’agriculture.
+- Architecture traditionnelle en matériaux locaux.
+
+# 6. Rôle historique et interactions régionales
+- Relations anciennes avec Soussou, Nalou et Temne.
+- Région d’intenses interactions maritimes.
+
+# 7. Démographie globale
+- Population : 160 000
+- Année : 2025
+- Source : peuple_demographie_globale.csv (2025)
+
+# 8. Sources
+- Ethnologue
+- Côte Ouest–Guinée ethnographic records

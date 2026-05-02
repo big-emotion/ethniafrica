@@ -1,0 +1,98 @@
+{
+  "id": "PPL_NUBIENS",
+  "nameMain": "Nubiens",
+  "languageFamilyId": "FLG_NILOSAHARIENNE",
+  "currentCountries": ["SDN", "EGY"],
+  "content": {
+    "appellations": {
+      "mainName": "Nubiens",
+      "selfAppellation": "Noba",
+      "exonyms": [
+        "Nubians (anglais)",
+        "Nuba (terme historique arabe et latin)",
+        "Nobiin (nom de la branche septentrionale)"
+      ],
+      "originOfExonyms": "Le terme Nubia derive du mot noba (peuple nomade venu du sud-ouest qui conquit la region au IVe siecle apres J.-C.). Le terme arabe Nuba s'imposa ensuite dans la litterature medievale pour designer les habitants de la vallee du Nil meridionale.",
+      "whyProblematic": "Le nom Nubiens recouvre en realite plusieurs groupes linguistiques distincts (Nobiin, Andaandi/Dongolawi, Mattokki/Kenzi, Hill Nubians, Midob). L'assimilation de ces groupes sous une seule etiquette occulte leur diversite interne.",
+      "contemporaryUsage": "Le terme Nubiens est largement utilise en Egypte et au Soudan pour designer les populations de la vallee du Nil entre Assouan et Khartoum. Des communautes nubiennes actives au Caire, a Khartoum et dans la diaspora europeenne revendiquent cette identite collective.",
+      "linguisticFamily": "FLG_NILOSAHARIENNE",
+      "ethnoLinguisticGroup": "Nilosahariens orientaux, branche nubienne",
+      "historicalRegion": "Nubie (vallee du Nil entre la premiere et la sixieme cataracte, nord du Soudan et sud de l'Egypte)",
+      "currentCountries": ["SDN", "EGY"]
+    },
+    "ethnicities": [
+      "Nobiin (Mahas et Fadija)",
+      "Danagla (Andaandi/Dongolawi)",
+      "Kenzi (Mattokki)",
+      "Hill Nubians (Nuba Mountains)",
+      "Midob"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Nubiens descendent des populations neolithiques de la vallee du Nil central, attestees des 7000 avant J.-C. a Wadi Halfa. Ils sont les heritiers des cultures A-Group (3700-2800 av. J.-C.), C-Group (2300-1600 av. J.-C.) et Kerma (2500-1500 av. J.-C.). Les ancetres des Nubiens modernes, les Noba, migrerent du sud-ouest et s'etablirent dans la vallee du Nil il y a environ 2500 ans, introduisant les langues nubiennes actuelles.",
+      "formationPeriod": "La conscience identitaire nubienne se cristallise entre le IVe et le VIIe siecle apres J.-C., lors de la conversion au christianisme et de la formation des royaumes de Nobatia, Makuria et Alodia. L'islamisation progressive du XIIe au XVIe siecle marque une nouvelle phase d'unification culturelle.",
+      "migrationRoutes": [
+        "Migration originelle du sud-ouest de la vallee du Nil vers le nord (IVe siecle av. J.-C.)",
+        "Deplacements forces vers le nord et vers les villes lors de la construction du barrage d'Assouan (1960-1964)",
+        "Emigration vers Le Caire, Khartoum et la diaspora europeenne (XXe-XXIe siecles)"
+      ],
+      "historicalSettlementZones": [
+        "Vallee du Nil entre Assouan (Egypte) et Khartoum (Soudan)",
+        "Region de Wadi Halfa",
+        "Region du Dongola",
+        "Montagnes Nuba (Kordofan du Nord et Sud)"
+      ],
+      "unificationsOrDivisions": "Apres l'independance du Soudan en 1956, la communaute nubienne fut divisee entre deux Etats. La construction du barrage d'Assouan (1960-1964) et du lac Nasser submergea les terres ancestrales et deplaca plus de 100 000 Nubiens, fragmentant durablement la communaute.",
+      "externalInfluences": "L'Egypte antique influenca profondement la culture kushite (religion d'Amon, hieroglyphes). L'hellenisme et Rome laisserent des traces dans l'art. Le christianisme copte domina du VIe au XIIIe siecle. L'Islam s'imposa progressivement a partir du XIVe siecle via les marchands arabes et les predicateurs soufis.",
+      "majorHistoricalEvents": "XXVe dynastie egyptienne (744-656 av. J.-C.) : les rois nubiens gouvernerent toute l'Egypte. Royaume de Meroe (275 av. J.-C.-300 apr. J.-C.) : civilisation independante dotee de son propre alphabet. Traite de Baqt (651 apr. J.-C.) avec le califat rashidun : 600 ans de coexistence. Chute de la Nubie chretienne (debut XVIe siecle). Deplacements causes par le barrage d'Assouan (1964)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Royautes et chieftaineries dans l'Antiquite. Dans les royaumes chretiens (Nobatia, Makuria, Alodia), le pouvoir royal etait sacre et hereditaire, influence par le modele byzantin. Dans la periode moderne, les Nubiens sont organises en conseils de village diriges par des anciens (cheikhs) et des notables.",
+      "clanOrganization": "Organisation clanique et lignagere. Dans l'Antiquite, les rois etaient issus de clans controlant les mines d'or. La filiation est patrilineaire. Les communautes sont organisees en familles elargies autour du foyer (hosch), grande maison a cour interieure.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires definissent l'acces a la terre, les alliances matrimoniales et les droits sur les ressources. La transmission des terres agricoles et des maisons se fait par heritage patrilineal.",
+      "religiousAuthority": "Islam sunnite dominant (majoritairement malekite et soufie). Les confreries soufies (tariqas) jouent un role social important depuis le XIVe siecle. Persistence de pratiques syncrétiques liees aux croyances kushites et chretiennes (culte des saints, mausolees, amulettes)."
+    },
+    "languages": {
+      "mainLanguage": "Nobiin",
+      "isoCodes": ["fia", "dgl", "ktb"],
+      "dialects": [
+        "Nobiin (Mahas et Fadija) — ISO 639-3 : fia",
+        "Andaandi (Dongolawi) — ISO 639-3 : dgl",
+        "Mattokki (Kenzi) — ISO 639-3 : ktb",
+        "Hill Nubian (Nuba Mountains)",
+        "Midob (nord du Darfour)"
+      ],
+      "vehicularRole": "L'arabe soudanais et l'arabe egyptien sont les langues vehiculaires dans leurs pays respectifs. Le Nobiin est langue maternelle pour environ 500 000 locuteurs. Le bilinguisme arabe-nubien est generalise. Les langues nubiennes sont en recul face a l'arabe dans les communautes urbaines et diasporiques."
+    },
+    "culture": {
+      "majorRites": "Sebu : ceremonie de naissance ; le nouveau-ne recoit un nom lors d'une fete communautaire. Scarification traditionnelle (trois cicatrices sur la joue chez les Mahas, sur les tempes chez les Danagla), pratique en recul chez les jeunes generations. Ceremonies de mariage elaborees incluant chants, danses et processions sur le Nil.",
+      "symbols": "La pirogue sur le Nil, symbole de l'identite nubienne. Les portes de maisons ornees de motifs geometriques et d'amulettes en faience. Les pyramides de Jebel Barkal, Nuri, El Kurru et Meroe comme symboles de la grandeur passee. La couleur indigo des tenues feminines traditionnelles.",
+      "artsAndMusic": "Architecture caracteristique : grandes maisons a cour interieure, murs hauts, portes sculptees tournees vers le Nil, stucs colores aux motifs geometriques et vegetaux. Fresque religieuses chretiennes (VIIIe-XIIe siecle, site de Faras). Musique nubienne contemporaine : artistes celebres tels Mohamed Wardi, Hamza El Din, Ali Hassan Kuban et Mohamed Mounir. Poesie orale transmise de generation en generation. Le rap nubien est un vecteur moderne de preservation identitaire.",
+      "spiritualities": "Islam sunnite avec forte coloration soufie. Veneration des saints locaux et pelerinage aux mausolees. Persistance de traditions pre-islamiques : croyances en esprits locaux, utilisation d'amulettes, commemorations liees au calendrier agricole du Nil. Dans l'Antiquite : culte d'Amon (Jebel Barkal), puis christianisme copte (VIe-XIIIe siecle)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Culture de Kerma (2500-1500 av. J.-C.). Royaume de Koush et Napata (1000-275 av. J.-C.) : controle des mines d'or et du commerce transsaharien. XXVe dynastie (pharaons nubiens, 744-656 av. J.-C.). Royaume de Meroe (275 av. J.-C.-350 apr. J.-C.) : centre urbain majeur, alphabet meroitique propre, gouvernement par des reines (Kandakes). Royaumes chretiens : Nobatia, Makuria (340-1317), Alodia (600-1504). Dotawo (dernier royaume chretien, jusqu'au XVIe siecle).",
+      "relationsWithNeighbors": "Alliance et rivalite millenaire avec l'Egypte. Traite de Baqt avec les Arabes (651 apr. J.-C.) : paix durable pendant 600 ans. Commerce avec les peuples de la mer Rouge (Blemmyes/Beja). Resistance aux invasions romaines (victoire et traite de paix). Aux cotes des Axoumites lors de la chute de Meroe.",
+      "conflictsOrAlliances": "Conquete par l'Egypte pharaonique (Nouvel Empire, 1550-1069 av. J.-C.). Contre-conquete par les Nubiens (XXVe dynastie). Invasion perse, puis contact avec Alexandre le Grand. Victoire sur les expeditions romaines (Ier siecle av. J.-C.). Repulsion des invasions arabes par traite de Baqt (651). Chute progressive sous pression mameluke et arabe (XIIIe-XVIe siecle).",
+      "diaspora": "Suite aux deplacements dus au barrage d'Assouan (1964), environ 50 000 Nubiens soudanais furent reinstalles a Khashm el Girba (Nouvelle Halfa). Des Nubiens egyptiens furent deplaces vers Kom Ombo et la region d'Assouan. Des communautes nubiennes importantes existent au Caire (quartier Ain al-Sira), a Khartoum et dans des villes europeennes (notamment en Suede). La Minority Rights Group estime entre 3 et 5 millions le nombre de Nubiens en Egypte."
+    },
+    "demography": {
+      "totalPopulation": 5000000,
+      "referenceYear": 2025,
+      "source": "Minority Rights Group (2024) : 3 a 5 millions en Egypte ; Wikipedia Nubians (2024) : entre 3,5 et 5 millions pour l'Egypte seule ; estimation totale (Egypte + Soudan) : environ 5 millions",
+      "distributionByCountry": [
+        { "country": "EGY", "population": 4000000 },
+        { "country": "SDN", "population": 1000000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia – Nubians, 2024 (https://en.wikipedia.org/wiki/Nubians)",
+      "Wikipedia – Nubian languages, 2024 (https://en.wikipedia.org/wiki/Nubian_languages)",
+      "Wikipedia – Kingdom of Kush, 2024 (https://en.wikipedia.org/wiki/Kingdom_of_Kush)",
+      "Minority Rights Group – Nubians in Egypt, 2024 (https://minorityrights.org/communities/nubians/)",
+      "Rilly, C. & de Voogt, A. – The Meroitic Language and Writing System, 2012",
+      "Language Documentation and Description – Nobiin language snapshot (https://www.lddjournal.org/article/1214/galley/2458/download/)",
+      "National Geographic – The Nubian kingdom of Kush, 2025 (https://www.nationalgeographic.com/history/history-magazine/article/ancient-egypt-nubian-kingdom-pyramids-sudan)"
+    ]
+  }
+}

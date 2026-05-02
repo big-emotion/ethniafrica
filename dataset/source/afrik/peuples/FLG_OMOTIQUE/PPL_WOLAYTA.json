@@ -1,0 +1,100 @@
+{
+  "id": "PPL_WOLAYTA",
+  "nameMain": "Wolayta",
+  "languageFamilyId": "FLG_OMOTIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Wolayta",
+      "selfAppellation": "Wolaytta / Wolaita",
+      "exonyms": [
+        "Welamo (anciennement utilise par les Ethiopiens du nord, aujourd'hui considere derogratoire)",
+        "Wolamo (appellation coloniale, desuete)",
+        "Welayta (forme officielle ethiopienne)"
+      ],
+      "originOfExonyms": "Le terme Wolamo ou Welamo etait utilise par les populations chretiennes amhara et tigrinya du nord pour designer ce peuple du sud de l'Ethiopie. Il est desormais considere pejoratif et rejete par la communaute. La forme Wolayta ou Wolaytta est l'appellation endonymique reprise par l'Etat ethiopien depuis 1991.",
+      "whyProblematic": "L'exonyme Wolamo a ete impose par les conquerants du nord lors de l'annexion de 1896 et perpetue par l'administration ethiopienne. Il efface la dimension royale et l'autonomie historique du peuple. La question des frontieres linguistiques avec les peuples Melo, Oyda et Gamo-Gofa-Dawro a aussi suscite des tensions politiques lors de l'episode Wegagoda de 1998.",
+      "contemporaryUsage": "Le terme Wolayta ou Wolaytta est aujourd'hui officiellement reconnu en Ethiopie. La zone administrative creee en novembre 2000 porte le nom de Wolayta Zone. Le peuple revendique cette denomination comme marque de son identite distincte, de sa langue et de son heritage royal.",
+      "linguisticFamily": "FLG_OMOTIQUE",
+      "ethnoLinguisticGroup": "Groupe omotique nord (Ometo)",
+      "historicalRegion": "Wolayta Zone, sud de l'Ethiopie; anciennement royaume de Wolayta (ou Damot), vaste territoire s'etendant jusqu'au centre et au nord de l'Ethiopie actuelle",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Malla (premiere grande tribu royale, liee aux dynasties des rois Kawo)",
+      "Dogala (seconde grande tribu, distincte des Malla; les deux forment les fondements sociaux wolayta)",
+      "Tigre Malla (dynastie qui remplaqa les Wolayta Malla lors de l'expansion Oromo)",
+      "Clans du Mont Damot (territoire ancestral d'origine)",
+      "Kindo (sous-groupe de Kindo Didaye, zone d'origine du royaume)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Wolayta sont d'origine multi-ethnique, produit de migrations et de fusions continues de nombreux groupes sur plusieurs siecles. Leurs ancetres sont associes au royaume de Damot, entite politique qui precede l'Etat aksumite et dont certains chercheurs font remonter les origines a environ 1000 av. J.-C. Le Mont Damot, dans la Wolayta Zone actuelle, est considere comme le centre politique originel. La tradition orale et les sources medievales placent le peuple Wolayta parmi les fondateurs de la civilisation omotique du sud ethiopien.",
+      "formationPeriod": "Le royaume de Wolayta, connu sous le titre Kawo (roi), est atteste depuis le 13e siecle. La tradition locale fait remonter l'origine du royaume a 1251. Le roi (Kawo) Motolomi est cite dans le texte religieux Gedle Teklehaimanot comme un conquete puissant du nord de l'Ethiopie aux 12e-13e siecles. La reine Yodit-Gudit (vers 945-985 ap. J.-C.), figure controversee et puissante, est liee par certaines sources orales au royaume de Wolayta, dont elle aurait ete dirigeante pendant quarante ans avant d'attaquer le royaume aksumite.",
+      "migrationRoutes": [
+        "Occupation ancestrale du Mont Damot et de ses environs dans le sud de l'Ethiopie actuelle",
+        "Expansion vers le nord jusqu'a la region de Shewa aux 12e-13e siecles sous le roi Motolomi",
+        "Repli progressif vers le sud apres les conquetes d'Amde Tsion au 14e siecle et l'expansion oromo aux 16e-17e siecles"
+      ],
+      "historicalSettlementZones": [
+        "Mont Damot et region de Kindo Didaye (centre ancestral)",
+        "Wolayta Zone actuelle (entre la riviere Bilate a l'est, l'Omo a l'ouest, le lac Abaya au sud)",
+        "Territories du nord ethiopien (Shewa) jusqu'au 14e siecle"
+      ],
+      "unificationsOrDivisions": "Le peuple Wolayta est organise en deux grandes tribus, Malla et Dogala, comptant plus de 200 clans au total. Le royaume fut unifie sous la dynastie Wolayta Malla, puis la Tigre Malla. En 1830, il devint tributaire du royaume de Kaffa. La conquete par Menelik II en 1896 mit fin a l'independance politique. La tentative d'imposer la langue artificielle Wegagoda en 1998 provoqua de violentes protestations, demontrant la forte cohesion identitaire du peuple.",
+      "externalInfluences": "Pression et expansion du royaume Oromo aux 16e-17e siecles (reduction du territoire). Rivalites avec les royaumes voisins de Kaffa et de Konta. Conquete par l'Empire ethiopien sous Menelik II en 1896, l'une des campagnes les plus sanglantes de l'expansion imperiale. Influence chretienne orthodoxe ethiopienne puis protestante (Sudan Interior Mission depuis les annees 1940). Reorganisation administrative sous le Derg (1974-1991), puis systeme federal ethnique depuis 1991.",
+      "majorHistoricalEvents": "Vers 945-985 : regne presume de la reine Yodit-Gudit sur le Wolayta et attaque du royaume aksumite. 13e siecle : expansion du roi Motolomi vers le nord jusqu'en Shewa. 17e siecle : victoires du roi Gazenja sur les Oromo. 1830 : le Wolayta devient tributaire du royaume de Kaffa. 1894-1896 : campagne de conquete de Menelik II; le dernier Kawo Tona Gaga est capture apres une resistance farouche. 1974 : fin du statut semi-autonome apres la chute de Haile Selassie. 1998 : revolte contre la langue Wegagoda. Novembre 2000 : creation de la Wolayta Zone."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le systeme politique traditionnel wolayta est une monarchie hereditaire dirigee par le Kawo (roi). Le Kawo est a la fois chef politique, juge supreme et figure spirituelle. La cour royale comprend des fonctionnaires specialises (ministres, gardiens des frontieres, chefs militaires). Le conseil des anciens joue un role consultatif important. Les clans sont organises en hierarchie, les clans Malla occupant historiquement les positions dominantes.",
+      "clanOrganization": "Les Wolayta comptent plus de 200 clans repartis en deux grandes tribus : Malla (associee a la royaute) et Dogala. Chaque clan a un ancetre eponyme et des droits specifiques sur les terres, les ressources et les fonctions ceremoniales. Les forgerons et potiers constituent des castes endogames distinctes, traditionnellement marginalisees.",
+      "ageClassSystems": "Les classes d'age (gada-like) jouent un role dans l'organisation des travaux collectifs, des ceremonies et de la defense communautaire, bien que moins formalises que chez les peuples cushitiques voisins.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite clanique, les droits fonciers et les alliances matrimoniales. Le foyer patrilocal est l'unite de base. L'exogamie clanique est la regle. Les sanctions sociales (exclusion, amendes) sont administrees par les anciens du clan.",
+      "religiousAuthority": "Historiquement, le Kawo avait une autorite religieuse en plus du pouvoir politique. La religion traditionnelle (primal religion) wolayta, appelee Eqqa, est centree sur Tossa (Dieu createur supreme), les esprits ancestraux des clans (Ayana) et les pratiques divinatoires (Mala/Sharechua). Depuis le 20e siecle, le protestantisme chretien (introduit par la Sudan Interior Mission) est tres repandu et a largement supplante les pratiques traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Wolaytta (Wolayttatto Doonaa)",
+      "isoCodes": ["wal"],
+      "dialects": [
+        "Dialecte de la Wolayta Zone centrale (variete de reference)",
+        "Varietes de transition avec le Melo et l'Oyda (langues soeurs classees separement par Ethnologue)",
+        "Varietes de transition avec le Gamo-Gofa-Dawro (langue soeur distincte selon la majorite des sources)"
+      ],
+      "vehicularRole": "Le wolaytta est la langue officielle de la Wolayta Zone et est utilise comme langue d'enseignement dans les ecoles de la zone depuis 2000. L'Ethnologue le classe comme langue a diffusion plus large (wider communication) en Ethiopie. Le nombre de locuteurs est estime a 1 800 000 (UBS 1991) et vraisemblablement plus de 3 millions en 2025 compte tenu de la croissance demographique. La Bible a ete traduite en wolaytta (Nouveau Testament 1981, Bible complete 2002). L'amharique est utilise comme langue de l'administration nationale."
+    },
+    "culture": {
+      "majorRites": "Meskel (Fete de l'Exaltation de la Sainte-Croix, celebree le 27 septembre) : fete majeure marquee par des feux de joie (damera), des repas collectifs et la consommation de kurt (boeuf cru) et de kitfo (boeuf hache cru). Rites de mariage elabores avec dot en betail et ceremonies sur plusieurs jours. Ceremonies de naissance et circoncision. Yarishuwa (sacrifice rituel offert aux esprits ancestraux Ayana) dans la religion traditionnelle Eqqa. Rites agricoles lies aux semailles et aux recoltes de l'enset. Funerailles avec repas communautaires et periodes de deuil codifiees.",
+      "symbols": "L'enset (fausse banane, Ensete ventricosum) est le symbole central de l'identite et de la subsistance wolayta; sa culture structure la vie sociale et ceremoniale. Le mont Damot est le symbole du territoire ancestral et du pouvoir royal. Le titre Kawo (roi) symbolise la souverainete et l'heritage royal du peuple. Les instruments de monnaie traditionnels (Karetta Sinna, Shalluwa en coton, Marchuwa en metal) temoignent d'une economie organisee.",
+      "artsAndMusic": "La musique et la danse wolayta ont fortement influence la scene artistique nationale ethiopienne. La danse traditionnelle wolayta, caracterisee par des mouvements rapides des hanches et des epaules, est l'une des plus populaires d'Ethiopie et est executee lors des fetes nationales et religieuses. Les instruments traditionnels comprennent le masinqo (violon monocorde), le krar (lyre a cinq cordes) et diverses percussions. La poesie orale (proverbes) est tres developpee : une grande collection a ete publiee en 1987 en ecriture ethiopienne par l'Academie des langues ethiopiennes. Des artistes comme Tibebu Workeye et Tsehaye Yohannes ont integre les rythmes wolayta dans la musique populaire ethiopienne.",
+      "spiritualities": "La religion traditionnelle wolayta, Eqqa (pratique ou foi), est un systeme monotheiste avec Tossa (ou Medha, le Createur) comme etre supreme residant au-dela du ciel bleu (Degara-Saluwa). Les esprits ancestraux des clans (Ayana) jouent un role de mediateur entre les humains et Tossa. Les pratiques divinatoires (Mala, Sharechua/sorcellerie) et les sacrifices (Yarishuwa) sont des composantes essentielles. Chaque clan venere un esprit ancestral particulier (ex. Awa pour le soleil chez certains, Mizziyo pour la vache chez d'autres, Worqa pour l'or chez d'autres). Depuis le 20e siecle, le protestantisme evangelique (issu du travail missionnaire de la Sudan Interior Mission depuis les annees 1940) domine largement. L'islam est minoritaire dans la zone."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume de Wolayta, fonde selon la tradition en 1251, fut l'un des royaumes les plus puissants et durables du sud de l'Ethiopie. Il etait dirige par des rois (Kawo) de la dynastie Malla. A son apogee sous le roi Motolomi (12e-13e siecles), le royaume controlee un vaste territoire incluant des parties du Shewa actuel. Trois dynasties se sont succede : premiere Wolayta Malla, deuxieme Wolayta Malla, et Tigre Malla. Le dernier Kawo, Tona Gaga, fut capture en 1896 apres une resistance acharnee contre les forces de Menelik II.",
+      "relationsWithNeighbors": "Le royaume de Wolayta a entretenu des rapports conflictuels avec l'expansion Oromo aux 16e-17e siecles, perdant progressivement des territoires au nord. Au 17e siecle, le roi Gazenja remporta plusieurs victoires importantes contre les Oromo. Le royaume fut en relation commerciale et tributaire avec le royaume de Kaffa a partir de 1830. Les monnaies traditionnelles (shalluwa, marchuwa) temoignent d'echanges commerciaux avec les societes voisines le long des routes de commerce.",
+      "conflictsOrAlliances": "La conquete de 1894-1896 par l'empire de Menelik II est decrite comme l'une des campagnes les plus sanglantes de l'expansion imperiale ethiopienne : selon la tradition orale wolayta, 118 000 Wolayta et 90 000 soldats shewans perirent. Le Kawo Tona Gaga avait refuse toute negociation, eleve des fortifications et leve une armee composee de castes destituees et d'esclaves royaux. Il fut finalement encercle entre les forces de Menelik et les auxiliaires Oromo d'Abba Jifar II et capture au pied du mont Damota. En 1998, les violentes protestations contre la langue Wegagoda illustrent la resistance continue du peuple face aux tentatives d'assimilation.",
+      "diaspora": "La diaspora wolayta est principalement interne a l'Ethiopie, avec une forte presence a Addis-Abeba et dans d'autres villes ethiopiennes. La pression demographique dans la Wolayta Zone (densite parmi les plus elevees d'Ethiopie) pousse de nombreux Wolayta vers d'autres regions. Une diaspora internationale s'est developpee aux Etats-Unis, en Europe et dans les pays du Golfe."
+    },
+    "demography": {
+      "totalPopulation": 6500000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur le recensement ethiopien de 2007 (CSA : 1 501 112 pour la Wolayta Zone), le chiffre de 5,83 millions pour 2017 (Wikipedia, Wolayta Zone), et la projection 2021 de Data Commons (6 142 063). La croissance demographique ethiopienne (environ 2,5 % par an) suggere une population d'environ 6,5 millions en 2025. Ethnologue (WAL) estime 1,8 millions de locuteurs (1991 UBS), mais la population ethnique est plus large que les seuls locuteurs de wolaytta.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 6500000,
+          "note": "Principalement dans la Wolayta Zone (chef-lieu : Sodo), avec des communautes dans les villes ethiopiennes notamment Addis-Abeba"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Wolaytta people. https://en.wikipedia.org/wiki/Wolaytta_people",
+      "Wikipedia EN — Kingdom of Wolaita. https://en.wikipedia.org/wiki/Kingdom_of_Wolaita",
+      "Wikipedia EN — Wolaytta language. https://en.wikipedia.org/wiki/Wolaytta_language",
+      "Ethnologue — Wolaytta (WAL). https://www.ethnologue.com/language/wal/",
+      "Joshua Project — Wolaitta in Ethiopia. https://joshuaproject.net/people_groups/15835",
+      "Data Commons — Wolayita Zone population 2021. https://datacommons.org/place/wikidataId/Q8029709",
+      "Primal Religion of Wolaitta in African Context. International Journal of Innovative Technology and Exploring Engineering, 2019. https://www.ijitee.org/wp-content/uploads/papers/v8i7c/G10120587C19.pdf",
+      "Qiraat Africa — Welayta, People of southern Ethiopia. https://qiraatafrican.com/en/19027/welayta-people-of-southern-ethiopia/",
+      "Bahru Zewde — A History of Modern Ethiopia. Ohio University Press, 2001."
+    ]
+  }
+}

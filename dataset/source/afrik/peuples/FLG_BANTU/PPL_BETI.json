@@ -1,0 +1,111 @@
+{
+  "id": "PPL_BETI",
+  "nameMain": "Béti",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CMR", "GNQ"],
+  "content": {
+    "appellations": {
+      "mainName": "Béti",
+      "selfAppellation": "Béti (ou Beti be Nanga, les gens de la foret)",
+      "exonyms": [
+        "Beti-Pahouin (categorie coloniale englobante)",
+        "Pangwe (terme allemand utilise pendant la colonisation de Kamerun)",
+        "Beti-Ekang (appellation regroupant Beti, Fang et Bulu)"
+      ],
+      "originOfExonyms": "Le terme Pahouin est une deformation coloniale francaise du terme local Pahuin ou Pangwe, utilise par les Allemands. Ces appellations regroupaient sous une meme etiquette administrative un ensemble de populations aux identites distinctes mais culturellement apparentees. Ekang est le terme d'auto-identification utilise notamment par les Fang.",
+      "whyProblematic": "La categorisation Beti-Pahouin est reductrice car elle amalgame des peuples distincts (Ewondo, Bulu, Fang, Eton, Bane, etc.) qui se distinguent eux-memes culturellement et linguistiquement. La these de cannibalisme attribuee aux Beti (depuis Paul Du Chaillu en 1856) etait erronee : les cranes observes pres des villages etaient ceux des ancetres, non des victimes. Cette calomnie a ete utilisee pour justifier la violence coloniale.",
+      "contemporaryUsage": "Béti est utilise dans les contextes culturels et academiques pour designer le groupe septentrional des Beti-Pahuin. Les sous-groupes (Ewondo, Bulu, Fang, Eton) maintiennent leurs identites propres. En Guinee Equatoriale, les Fang (sous-groupe Beti) preferent leur denomination propre.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantous forestiers du centre-sud Cameroun et de Guinee Equatoriale (groupe A70, zone A selon Guthrie)",
+      "historicalRegion": "Plateau du Centre-Sud Cameroun (foret equatoriale entre la Sanaga au nord et la frontiere avec la Guinee Equatoriale et le Gabon au sud)",
+      "currentCountries": ["CMR", "GNQ"]
+    },
+    "ethnicities": [
+      "Ewondo (ou Kolo, ou Yaunde) — groupe central autour de Yaounde, Cameroun",
+      "Bane — sous-groupe Beti du centre du Cameroun",
+      "Eton (ou Iton) — divise en Eton-Beti, Eton-Beloua et Beloua-Eton, province du Centre (Sa'a, Obala)",
+      "Fang (ou Mfang) — groupe meridional, Cameroun sud, toute la Guinee Equatoriale (Rio Muni) et Gabon",
+      "Ntumu, Mvae, Okak — sous-groupes Fang",
+      "Bulu — troisieme grand groupe, environ un tiers des Beti-Pahuin (Sangmelima, Kribi, Ebolowa)",
+      "Fong, Zaman, Yengono, Yembama, Yelinda, Yesum, Yebekanga, Yebekolo, Mvele — sous-groupes Bulu",
+      "Mbida-Mbane, Mvog-Nyenge, Bran (Brang ou Brong) — sous-groupes Beti du centre",
+      "Manguissa, Evuzok, Bamvele — peuples en cours d'assimilation par les Beti-Pahuin"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Beti sont un peuple bantou ayant viecu dans les parties septentrionales de l'Afrique centrale, avec une prehistoire complexe et debattue. Ils ont probablement penetre l'Afrique equatoriale aux VIIe ou VIIIe siecle. Leur installation dans le centre et le sud du Cameroun s'est etalee du XVIIe au XIXe siecle, sous la pression des guerres et des razzias esclavagistes menees par les Fula (Peuls) depuis le nord.",
+      "formationPeriod": "Du XVIIe au XIXe siecle, en trois vagues migratoires successives depuis les hautes terres et les regions forestieres a l'est de la riviere Sanaga. La premiere vague comprenait les Bulu et les Fang, qui se sont separes pres de l'actuelle Ebolowa. Les Bulu ont suivi le Nyong vers l'ouest, les Fang ont suivi le Dja vers le sud. La troisieme vague a amene les Beti (dont les Ewondo) qui se sont installes au nord de leurs cousins Bulu et Fang.",
+      "migrationRoutes": [
+        "Depuis les hautes terres a l'est de la Sanaga vers le sud et le sud-ouest du Cameroun (XVIIe-XIXe siecle)",
+        "Migration du groupe Bulu le long du Nyong vers Sangmelima, Kribi et Ebolowa",
+        "Migration du groupe Fang le long du Dja vers le sud du Cameroun, Rio Muni (Guinee Equatoriale) et le Gabon",
+        "Installation des Ewondo et Eton dans le centre du Cameroun (region de Yaounde)"
+      ],
+      "historicalSettlementZones": [
+        "Plateau du Centre-Sud Cameroun (region de Yaounde pour les Ewondo, de Mbalmayo, Obala, Sa'a pour les Eton)",
+        "Regions du Sud Cameroun (Ebolowa, Sangmelima, Kribi pour les Bulu)",
+        "Rio Muni (Guinee Equatoriale) pour les Fang",
+        "Nord du Gabon pour les Fang meridionaux"
+      ],
+      "unificationsOrDivisions": "Les Beti ne se sont jamais constitues en un etat centralise. Leur organisation est fondamentalement villageoise et lignagere. L'identite Beti est une categorie supra-lignagere reconnaissant une origine, une langue et une culture communes. Les Beti-Pahuin dans leur ensemble formeraient plus de 8 millions d'individus au debut du XXIe siecle, constituant le groupe ethnique le plus nombreux du Cameroun central et de sa capitale Yaounde.",
+      "externalInfluences": "Pression des Peuls (Fula) du nord, qui ont chasse les Beti de leurs etablissements initiaux et force leurs migrations vers le sud. Premier contact colonial avec l'Allemagne (colonie de Kamerun en 1884). Colonisation francaise (1916-1960). Influence des missions catholiques (Peres oblats, Benedictins) et protestantes, amenant une christianisation quasi-totale des Beti-Pahuin avant 1939.",
+      "majorHistoricalEvents": "Colonisation allemande de Kamerun (1884) et construction du chemin de fer vers Yaounde. Partage franco-britannique apres la Premiere Guerre mondiale (1916). Independance du Cameroun (1960). Yaounde, baptisee d'apres les Yaunde (Ewondo), est devenue capitale du Cameroun. La resistance Bulu a la colonisation (chef Akoa bi Mbarga). Premiere Guerre mondiale et conscription forcee."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe Beti est organisee a l'echelle du village, dont les bordures etaient fortifiees avec des tours de guet. Les villages sont generalement politiquement independants les uns des autres, centres sur un lignage (Ayon ou Mvog). Les differends sont regles par le chef (mbom mvog) selon un processus coutumier. Pas de royaute centralisee.",
+      "clanOrganization": "Organisation patrilineaire en clans (mvog) dont le chef est egalement l'autorite religieuse traditionnelle. Plusieurs families du meme lignage cohabitent dans un village. Plusieurs villages forment un clan sous la direction nominale d'un chef. Pratique de la double exogamie : le mariage en dehors des lignages du pere ET de la mere est la norme.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages (Mvog, prefixe Nkukuma, Nkol, etc.) sont les gardiens des terres, du patrimoine rituel et des traditions. La filiation patrilineaire determine l'appartenance clanique, les droits fonciers et les obligations matrimoniales. Le lien entre neveu maternal et oncle maternel est culturellement fort.",
+      "religiousAuthority": "Le chef de lignage (mbom mvog) est aussi l'autorite religieuse : il presid aux ceremonies ancestrales, aux rites de passage et aux sacrifices. Les reliquaires Byeri (boites contenant des os d'ancetres veneres, accompagnees de masques et de statues) etaient utilisés lors des rites de passage. Des specialistes rituels (nganga) interviennent pour les guerisons et les exorcismes. Christianisation massive depuis le XXe siecle."
+    },
+    "languages": {
+      "mainLanguage": "Ewondo (appele aussi Beti ou Cameroonian ; dialecte principal des Beti du nord)",
+      "isoCodes": ["ewo", "bum", "fan"],
+      "dialects": [
+        "Ewondo (ewo) — parle par les Ewondo/Yaunde, centre du Cameroun ; dialectes : Badjia, Bafeuk, Bemvele, Bane, Enoah, Evouzom, Mbida-Bani, Omvang, Yabekolo",
+        "Eton (dialcete Beti) — parle par les Eton de la province du Centre (Sa'a, Obala)",
+        "Bulu (bum) — parle par les Bulu du sud Cameroun",
+        "Fang (fan) — parle par les Fang du sud Cameroun, de toute la Guinee Equatoriale (Rio Muni) et du nord Gabon",
+        "Bane — variante Beti du centre Cameroun"
+      ],
+      "vehicularRole": "L'Ewondo est une langue de commerce (lingua franca) dans le centre et le sud du Cameroun, au-dela de la communaute Beti. Les langues Beti sont mutuellement intelligibles entre elles. L'Ewondo est reconnu comme langue de radio-diffusion et d'enseignement au Cameroun. Le Fang est langue officielle ou vehiculaire en Guinee Equatoriale (Rio Muni). Ces langues coexistent avec le francais (langue officielle du Cameroun et de la Guinee Equatoriale)."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation des garcons (ceremonies de passage a l'age adulte, incluant des epreuves physiques et l'enseignement des secrets du lignage). Rites funeraires Byeri : les os des ancetres vénérés etaient conserves dans des reliquaires sculptés, accompagnes de masques So (a face animale) et Ngil (a face humaine), utilises lors des rites de passage. Le Mebala est un rite potlatch specifique aux Beti : les families prosperes se reunissent cérémoniellement pour distribuer leurs richesses aux familles pauvres. Ceremonies agricoles (benediction des recoltes de manioc, d'igname et de plantain). Ceremonies de mariage impliquant la negociation de la dot.",
+      "symbols": "Les reliquaires Byeri (boites sculptees contenant les restes osseux des ancetres veneres) sont les symboles culturels et religieux les plus importants. Les masques So (a tete animale, symbole de la force) et Ngil (a tete humaine, symbole de la justice) incarnent les valeurs fondamentales de la societe Beti. Les idoles en bois (sculptures figuratives), aujourd'hui largement disparues, ornaient les maisons de chefs de lignage.",
+      "artsAndMusic": "Les Beti sont reconnus pour leur maitrise du travail du fer et du bois (artisans qualifies). Les reliquaires Byeri sont des oeuvres sculpturales majeures. Les masques Ngil et So sont des exemples remarquables de l'art rituel d'Afrique centrale. Le Bikutsi est un genre musical issu des Ewondo, caracterise par un tempo rapide (6/8) et des rythmes de tambour mvet ; il est aujourd'hui un genre populaire camerounais. La harpe-cithare Mvet (instrument a cordes chez les Fang et Beti) accompagne les epopees orales du meme nom. Les chants polyphoniques de foret et les percussions de tambour-tronc (tam-tam) sont centraux dans les ceremonies. La tradition orale inclut des recits epiques transmis par des specialistes (nvet ou conteurs Mvet).",
+      "spiritualities": "La croyance ancestrale Beti repose sur le culte des ancetres (via les reliquaires Byeri), la communication avec les esprits de la foret et des ancetres, et la pratique de la divination. La foret equatoriale est consideree comme un espace sacré. Les Beti ont ete christianises massivement avant 1939 (missions catholiques oblates et benedictines, protestantes presbyteriennes). Le Bwiti, une religion syncrétique issue des Mitsogo (Gabon), a ete adopte par certains groupes Fang-Beti comme tradition de remplacement spirituel apres la colonisation. Le syncrétisme entre christianisme et pratiques traditionnelles est courant."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Beti n'ont pas developpe de royaume centralise. Leur organisation politique etait villageoise et lignagere. Pendant la colonisation allemande, des chefferies administratives ont ete reconnues ou imposees. Yaounde (Nkolndongo) est devenu le berceau des Ewondo (Yaunde) avant de devenir la capitale du Cameroun. Des chefs comme Akoa bi Mbarga (Bulu) ont resiste aux Allemands.",
+      "relationsWithNeighbors": "Relations commerciales et culturelles avec les Bassa (voisins du nord-ouest) et les Baka (pygmees de la foret). Tensions avec les Bamileke et les Douala lors de l'extension coloniale. Les Beti ont longtemps ete vises par les Hausa comme source d'esclaves et d'ivoire, ce qui a renforce leurs fortifications villageoises.",
+      "conflictsOrAlliances": "Resistance aux razzias esclavagistes Hausa. Resistance a la colonisation allemande (Kamerunkrieg). Implication dans la politique camerounaise post-independance : la communaute Beti/Ewondo a joue un role politique important, Yaounde etant la capitale et le siege du pouvoir depuis l'independance.",
+      "diaspora": "Forte presence urbaine a Yaounde et dans les grandes villes camerounaises. Communautes Fang en Guinee Equatoriale (Rio Muni, capitale Bata), dans le nord du Gabon et dans le Congo-Brazzaville. Diaspora internationale liee a la migration camerounaise contemporaine (France, Belgique, USA)."
+    },
+    "demography": {
+      "totalPopulation": 8000000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur Wikipedia EN/Beti-Pahuin peoples (plus de 8 millions au debut du XXIe siecle pour l'ensemble des Beti-Pahuin), Joshua Project (2 299 000 pour les Ewondo/Beti seuls en 2025), Ethnologue (SIL International 2024). Le chiffre de 5 millions cite dans le fichier original se referait probablement aux seuls sous-groupes Fang/Ewondo/Bulu ; le total Beti-Pahuin est nettement plus eleve.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 7200000,
+          "note": "Regions du Centre, du Sud, du Littoral; Yaounde et environs pour les Ewondo/Eton; Ebolowa et Kribi pour les Bulu; extrême-sud pour les Fang camerounais"
+        },
+        {
+          "country": "GNQ",
+          "population": 700000,
+          "note": "Rio Muni (Guinee Equatoriale continentale) : population Fang majoritaire, estimee a 80% de la population totale de la Guinee Equatoriale continentale"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Beti people : https://en.wikipedia.org/wiki/Beti_people",
+      "Wikipedia EN — Beti-Pahuin peoples : https://en.wikipedia.org/wiki/Beti-Pahuin_peoples",
+      "Wikipedia EN — Ewondo language : https://en.wikipedia.org/wiki/Ewondo_language",
+      "SIL Ethnologue — Ewondo language (ewo) : https://www.ethnologue.com/language/ewo/",
+      "SIL Ethnologue — Fang language (fan) : https://www.ethnologue.com/language/fan/",
+      "Joshua Project — Ewondo, Beti in Cameroon : https://joshuaproject.net/people_groups/11170",
+      "101 Last Tribes — Ewondo people : https://www.101lasttribes.com/tribes/ewondo.html"
+    ]
+  }
+}

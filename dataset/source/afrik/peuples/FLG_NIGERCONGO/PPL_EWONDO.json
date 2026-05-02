@@ -1,0 +1,112 @@
+{
+  "id": "PPL_EWONDO",
+  "nameMain": "Ewondo",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Ewondo",
+      "selfAppellation": "Kolo (appellation interne du groupe Ewondo au sein du macrogroupe Beti)",
+      "exonyms": [
+        "Yaunde / Yaoundé (denomination allemande coloniale, donnee aussi a la capitale)",
+        "Beti (appellation englobante du macrogroupe)"
+      ],
+      "originOfExonyms": "L'appellation Yaunde (germanisation de Ewondo) fut utilisee par les colonisateurs allemands apres leur penetration en 1887. Elle est a l'origine du nom de la capitale Yaounde, etablie sur le territoire ewondo. Le terme Beti est une appellation englobante pour le macrogroupe Beti-Pahuin auquel les Ewondo appartiennent.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Ewondo est l'appellation standard en francais camerounais et dans les medias nationaux. Kolo est utilise en contexte intracommunautaire. La langue ewondo est designee sous le code ewo par SIL Ethnologue.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou forestier — macrogroupe Beti-Pahuin (zone A, sous-groupe A70 Beti-Fang)",
+      "historicalRegion": "Centre du Cameroun, region de Yaounde (departements de Mfoundi, Mefou-et-Afamba, Mefou-et-Akono, Nyong-et-So'o, Nyong-et-Mfoumou)",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Ewondo Kolo (groupe central autour de Yaounde)",
+      "Bane (sous-groupe Beti proche des Ewondo, region de Sangmelima)",
+      "Mvog Betsi (clan historique important de Yaounde)",
+      "Mvog Atemenge (sous-lignage du clan Mvog Betsi, d'ou provient le chef Charles Atangana)",
+      "Mbida-Mbane (groupe en voie d'assimilation par les Beti)",
+      "Mvog-Nyenge (autre groupe du noyau Beti)",
+      "Manguissa, Yekaba, Bamvele, Evuzok (groupes voisins en cours d'assimilation par les Ewondo/Beti)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ewondo font partie du grand ensemble Beti-Pahuin ou Beti-Ekang, un groupe bantou dont les origines sont localisees dans les forets au sud du fleuve Sanaga (Cameroun), non loin de leur territoire actuel. Des preuves linguistiques et archeologiques suggèrent que les proto-locuteurs du A70 (Beti-Fang, incluant Ewondo) etaient presents dans la foret du sud Cameroun depuis plus de 4 000 ans. L'identite ewondo specifique se forma a la suite des grandes migrations Beti du 18e-19e siecle.",
+      "formationPeriod": "Apres avoir traverse le Sanaga vers le nord en direction du haut Kadei, les ancetres ewondo furent repousses par les Vute/Mbum vers le plateau Adamawa oriental, puis redescendirent vers le sud au debut du 19e siecle sous la pression des conquetes fulbe (jihad d'Usman Dan Fodio). Les Ewondo constituerent la derniere vague southward du mouvement Beti, s'installant au nord de leurs cousins Bulu et Fang. La colonisation allemande (1887) figea ces mouvements.",
+      "migrationRoutes": [
+        "Forets au sud du Sanaga (territoire originel) vers le nord en traversant le Sanaga",
+        "Vers le haut Kadei (attaque des Vute/Mbum)",
+        "Fuite vers le plateau Adamawa oriental",
+        "Retour vers le sud-ouest au debut du 19e siecle sous pression fulbe",
+        "Installation finale dans la region de Yaounde (vague Beti/Ewondo, derniere des trois vagues Beti-Pahuin)"
+      ],
+      "historicalSettlementZones": [
+        "Region de Yaounde et environs (departements de Mfoundi, Mefou-et-Afamba)",
+        "Division de Mefou-et-Akono et Nyong-et-So'o (Centre)",
+        "Partie nord de la division Oceane (Region du Sud)"
+      ],
+      "unificationsOrDivisions": "Les Ewondo font partie du premier sous-groupe Beti au sein du macrogroupe Beti-Pahuin, aux cotes des Bane, Fang (M'fang), Mbida-Mbane, Mvog-Nyenge et Eton. Chaque clan (plus de 20 au total) est independant mais partage culture, histoire et langue commune. La colonisation allemande imposa un chef paramount unique (Charles Atangana, 1911) sur les Ewondo et Bane, une centralisation artificielle.",
+      "externalInfluences": "Pression fulbe du nord (jihad du 19e siecle) declencha la migration finale vers le sud. Contacts commerciaux avec les reseaux europeens cotiers (ivoire, kola, esclaves). Colonisation allemande (1887-1916) : esclavage, suppression du rite sso, installation de chefs puppets. Colonisation française (1916-1960) : plantations de cacao, travail force. L'eglise catholique (missionnaires) transforma profondement la societe ewondo ; Monseigneur Vogt evangelisa activement la region de Yaounde.",
+      "majorHistoricalEvents": "1887 : penetration des colonisateurs allemands dans le territoire Beti-Pahuin. 1891-1895 : revolte bulu (perte du role de commercants intermediaires). 1895 : rebellion ewondo des chefs Mvog Betsi (represailles apres coups de fouet), rapidement reprimee. 1911 : les Allemands nomment Charles Atangana (sous-lignage Mvog Atemenge) chef paramount des Ewondo et Bane. 1912 : soulèvement de Martin-Paul Samba (Bulu), ecrase. 1916 : passage sous administration française. 1960 : independance du Cameroun."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe organisee selon une serie de parenteles patrilineaires (certains sous-groupes pratiquèrent la matrilinearite par le passe). La famille (un homme, ses epouses et enfants) forme la cellule de base. Plusieurs familles d'une meme lignee vivent ensemble dans un village. Plusieurs villages apparentes forment un clan. Les clans sont sous l'autorite nominale d'un chef (nkukuma) qui est aussi autorite religieuse. Le lien fort entre oncle maternel et neveu (heritage de la matrilinearite ancienne) est caracteristique. Sous la colonisation, les Allemands puis les Français instituerent des chefs paramount artificiels.",
+      "clanOrganization": "Plus de 20 clans distincts (mvog) chez les Ewondo, portant le prefixe mvog (gens de). Parmi les plus connus : Mvog Betsi, Mvog Atemenge, Mvog Ada, Mvog Ebanda. Chaque clan trace son ascendance a un ancetre masculin eponyme. L'exogamie clanique est obligatoire. Le clanisme structure la propriete fonciere, les alliances matrimoniales et la solidarite communautaire.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires (mvog) determinent l'appartenance identitaire, l'acces a la terre et les alliances politiques. L'oncle maternel (nga) joue un role important dans l'education du neveu, vestige d'une organisation matrilineaire anterieure. La transmission du nom, des richesses et des droits suit la lignee patrilineaire.",
+      "religiousAuthority": "L'autorite religieuse etait exercee par les anciens du clan et les pretres du culte Bwiti (religion syncrétique incorporant des elements chretiens, animistes et initiatiques, popularisee par les Fang mais pratiquee aussi par les Ewondo). Le rite sso (rite d'initiation) fut supprime par les Allemands. Les missionnaires catholiques prirenten charge une large part de l'education ; aujourd'hui le catholicisme est majoritaire, coexistant avec des pratiques traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Ewondo (aussi appele Beti ou Kolo)",
+      "isoCodes": ["ewo"],
+      "dialects": [
+        "Badjia / Bakjo",
+        "Bafeuk",
+        "Bemvele / Mvele / Yezum / Yesoum",
+        "Bane",
+        "Enoah",
+        "Evouzom",
+        "Mbida-Bani",
+        "Mvete",
+        "Mvog-Niengue",
+        "Omvang",
+        "Yabekolo / Yebekolo",
+        "Yabeka",
+        "Yabekanga"
+      ],
+      "vehicularRole": "L'ewondo est une langue vehiculaire importante a Yaounde et dans la region Centre du Cameroun. Il est utilise comme lingua franca entre groupes bantous du Centre et du Sud. La langue est enseignée dans certaines ecoles primaires. Le français est la langue officielle dominante, mais l'ewondo reste vivant dans les medias locaux et les pratiques culturelles. Une inquietude de displacement au profit du français fut signalee en 2011."
+    },
+    "culture": {
+      "majorRites": "Le rite d'initiation sso (supprime par les colonisateurs allemands) etait le passage majeur vers l'age adulte masculin chez les Ewondo et Beti-Pahuin. Les rites de naissance incluent des ceremonies familiales et l'attribution du nom selon les ancetres. Le mariage implique des dot et ceremonies lignageres. Les funerailles sont des evenements communautaires importants avec veillees, danses et offrandes aux ancetres. Le Bwiti (religion initiatique syncrétique, incorporant l'iboga, substance psychoactive) connait une renaissance depuis l'independance ; ses ceremonies nocturnes de chant, danse et états modifies de conscience constituent des rites majeurs.",
+      "symbols": "Les masques pahouin (sculptes dans le bois, a visage concave stylise) sont les symboles artistiques les plus reconnus des Beti-Pahuin. Le nkul (tambour a fente en bois, 'tambour de Dieu') est le symbole sonore central des Ewondo : son battement resume autour des arbres et des maisons a l'aube. L'ivoire sculpte et la soapstone travaillee sont aussi des elements symboliques importants.",
+      "artsAndMusic": "Les Ewondo (Beti-Pahuin) sont reconnus comme artisans hautement qualifies du bois, de l'ivoire et de la soapstone. Leurs masques vivants (lively masks) sont exposes dans des musees du monde entier. La musique est dominee par le nkul (tambour a fente en bois) et le bikutsi, genre musical propre aux Ewondo. Le bikutsi (signifie 'battons la terre' : bi- pluriel, -kut- 'battre', -si 'terre') est une danse aux pieds qui frappent le sol, nee dans les ceremonies traditionnelles. Il apparut dans sa forme enregistree dans les annees 1940 avec Anne-Marie Nzie. Electrifie dans les annees 1960 par Messi Me Nkonda Martin (Los Camaroes), il connut une reconnaissance internationale en 1987 avec Les Tetes Brulees. Artistes contemporains majeurs : Jimmy Mvondo Mvele, Lady Ponce, K-Tino, Racine Sagath. Le bikutsi rivalise avec le makossa comme genre phare du Cameroun. Poesie orale et contes (mbom, recits gnomiques) sont aussi une tradition importante.",
+      "spiritualities": "La religion traditionnelle ewondo est animiste, centree sur la communication avec les ancetres et les esprits de la foret. Le Bwiti est un systeme initiatique syncrétique (animisme + elements chretiens + iboga) tres repandu chez les Fang et Ewondo depuis l'independance. Le catholicisme est la religion majoritaire (introduit par les missionnaires palotins et les Peres Blancs des le 19e siecle), coexistant avec les pratiques traditionnelles. Les eglises evangeliques se sont multipliees depuis les annees 1990."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Ewondo n'ont pas developpe de royaume centralise. L'organisation en clans independants les protegea de la centralisation du pouvoir. Sous la colonisation allemande, la nomination de Charles Atangana comme chef paramount (1911) imposa une structure artificielle. Historiquement, les chefs (nkukuma) de chaque clan coordonnaient defenses et decisions locales. L'influence ewondo se mesure a ce que la capitale nationale du Cameroun, Yaounde, fut fondee sur leur territoire.",
+      "relationsWithNeighbors": "Relations avec les groupes Beti voisins (Bane, Fang, Bulu, Eton) dans le cadre du macrogroupe Beti-Pahuin, partageant langue et culture. Assimilation progressive de groupes voisins (Manguissa, Yekaba, Bamvele, Evuzok, Batchanga, Omvang, Yetude, Baka). Role de middlemen dans le commerce cotier europeen (ivoire, kola, esclaves, puis palmier a huile). Contacts avec les Vute/Mbum (conflits dans les periodes de migration ancienne).",
+      "conflictsOrAlliances": "Migration du 18e-19e siecle face a la pression fulbe. Revolte des chefs Mvog Betsi (1895) contre le colonisateur allemand, rapidement reprimee. Resistance a l'imposition de chefs puppets allemands. Alliance forcee avec l'administration allemande via Charles Atangana (1911-1916). Participation a la lutte pour l'independance du Cameroun (1940-1960) par des figures intellectuelles ewondo.",
+      "diaspora": "La diaspora ewondo est principalement interne au Cameroun : les grandes villes comme Douala, Bafoussam et d'autres accueillent des communautes importantes. Une diaspora internationale (France, Belgique, Canada, Etats-Unis) s'est developpee depuis les annees 1960 dans le cadre de l'emigration camerounaise en general."
+    },
+    "demography": {
+      "totalPopulation": 2299000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (Ewondo, Beti in Cameroon, 2025) : 2 299 000. Corrobore par Ethnologue (EWO) et estimations basees sur la population de la region Centre du Cameroun (5,5 millions en 2025 selon INS Cameroun). Note : les chiffres incluent les locuteurs de l'ewondo comme premiere langue, qui debordent largement la seule identite ethnique stricte.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 2299000,
+          "note": "Region Centre (departements Mfoundi, Mefou-et-Afamba, Mefou-et-Akono, Nyong-et-So'o) et nord de la Region du Sud (Oceane)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Beti-Pahuin peoples. https://en.wikipedia.org/wiki/Beti-Pahuin_peoples",
+      "Wikipedia EN — Ewondo language. https://en.wikipedia.org/wiki/Ewondo_language",
+      "SIL Ethnologue — Ewondo language (ewo). https://www.ethnologue.com/language/ewo/",
+      "101 Last Tribes — Ewondo people. https://www.101lasttribes.com/tribes/ewondo.html",
+      "Joshua Project — Ewondo, Beti in Cameroon. https://joshuaproject.net/people_groups/11170",
+      "Omniglot — Fang language and culture. https://www.omniglot.com/writing/fang.htm",
+      "CityPopulation — Cameroun regions 2025. https://www.citypopulation.de/en/cameroon/cities/",
+      "Facebook / Cameroon culture page — 10 facts about the Ewondo people. https://www.facebook.com/61551443070007/posts/122152489202048102/"
+    ]
+  }
+}

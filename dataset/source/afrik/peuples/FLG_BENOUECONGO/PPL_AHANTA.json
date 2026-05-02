@@ -1,0 +1,74 @@
+{
+  "id": "PPL_AHANTA",
+  "nameMain": "Ahanta",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Ahanta",
+      "selfAppellation": "Ahanta (ou Ayinda)",
+      "exonyms": ["Ayinda"],
+      "originOfExonyms": "Le nom Ahanta serait derive du mot Akan nta signifiant les jumeaux, en reference a la fertilite reputed des femmes Ahanta et la frequence des naissances multiples sur leurs terres. L'interpretation Ahanta comme pays des jumeaux (land of twins) est la plus acceptee. La forme Ayinda est une variante de l'appellation originale.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Ahanta est le nom officiel utilise au Ghana pour designer ce peuple et son territoire (Ahanta West Municipal District, Region Ouest). Le terme est aussi attache au nom de l'ecole secondaire royale (Ahantaman Girls' Senior High School).",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan (Tano central)",
+      "historicalRegion": "Cote ouest du Ghana actuel, de Beposo a Ankobra (Western Region)",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Ahanta"],
+    "origins": {
+      "ancientOrigins": "Les Ahanta sont un peuple Akan dont les ancetres seraient des Guan ayant migre depuis le Royaume Bono et d'autres Etats vassaux. Avant l'arrivee des Ahanta proprement dits, le territoire etait deja habite par des indigenes probablement d'origine Guan. La legende fondatrice raconte que Nana Badu Bonso et ses descendants sortirent de la bouche d'une baleine, se frayant un chemin depuis la riviere Pra jusqu'a la mer a Busua, lieu alors peuple de puissantes baleines. Le titre royal Ahantahene serait derive de beduru bonso (avoir atteint les baleines), corrompu en Badu Bonso.",
+      "formationPeriod": "Entre 1300 et 1400 apres J.-C., les Ahanta s'installent dans leur territoire actuel, particulierement le groupe Bono. Leur experience du Royaume Bono leur permettait de s'organiser facilement en royaumes et chefferies.",
+      "migrationRoutes": [
+        "Royaume Bono (centre Ghana) -> traverse vers le sud-ouest",
+        "Riviere Pra -> etablissement cotier a Busua et la cote entre Takoradi et Ankobra (14e-15e siecles)"
+      ],
+      "historicalSettlementZones": [
+        "Cote atlantique entre les rivieres Pra et Ankobra (Western Region, Ghana)",
+        "Villes historiques : Busua, Axim, Apowa, Agona Nkwanta, Dixcove, Princess Town (Pokesu), Esiama, Sekondi-Takoradi"
+      ],
+      "unificationsOrDivisions": "Nana Badu Bonso etablit l'autorite sur toutes les terres conquises et forme le Royaume Ahanta, confederation de chefferies le long de la cote atlantique. Le traite de Butre (27 aout 1656) place l'Ahanta sous protectorat neerlandais contre d'autres puissances europeennes. En 1871, les Pays-Bas cedent leurs possessions a l'Empire britannique.",
+      "externalInfluences": "L'Ahanta est historiquement l'une des regions les plus riches de la cote de la Gold Coast, attirant Portugais, Neerlandais et Britanniques. Les Portugais arrivent les premiers en 1471 (construction du Fort St. Anthony a Axim en 1515, Fort Sebastian a Shama en 1626). Les Neerlandais (arrives en 1591) supplantent les Portugais a partir de 1637-1642. L'Ahanta devient le principal terrain de commerce hollandais en Gold Coast.",
+      "majorHistoricalEvents": "Arrivee des Portugais en 1471 sur la cote de la Gold Coast ; Fort Sebastian (Shama) construit en 1626 ; traite de Butre entre les chefs Ahanta et les Neerlandais (27 aout 1656, protectorat de 213 ans) ; massacre des villes de Takoradi et Busua le 30 juin 1838 par les forces du general neerlandais Jan Verveer ; capture et execution du roi Badu Bonso II (pendu le 27 juillet 1838, tete envoyee aux Pays-Bas et conservee dans du formol a l'Universite de Leiden pendant 170 ans, restituee au Ghana en 2009 apres ceremonie a La Haye) ; cession a la Grande-Bretagne en 1871 ; independence du Ghana en 1957."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Confederation de chefferies organisee en un puissant royaume le long de la cote atlantique, de la riviere Pra a la riviere Ankobra. Le systeme politique est de type Akan : organisation en chefferies sous l'autorite de l'Ahantahene (roi), avec des sous-chefs pour chaque localite. La connaissance du systeme politique Bono facilitait cette organisation.",
+      "clanOrganization": "Organisation en clans matrilineaires de type Akan. La tradition orale distingue les clans selon leur territoire et leur role dans le royaume. L'appartenance au clan royal Badu Bonso confere le droit a la royaute.",
+      "roleOfLineages": "La succession royale suit la ligne maternelle selon le modele Akan. Les chefferies locales maintiennent leur autonomie interne tout en reconnaissant l'autorite superieure de l'Ahantahene.",
+      "religiousAuthority": "Religion traditionnelle africaine avec culte des ancetres. La legende des baleines et le titre Otumfour (le puissant) attribue a Badu Bonso temoignent de croyances en des pouvoirs surnaturels du souverain. Pratiques religieuses autochtones coexistant avec le christianisme et, dans une moindre mesure, l'islam."
+    },
+    "languages": {
+      "mainLanguage": "Ahanta",
+      "isoCodes": ["aha"],
+      "dialects": [],
+      "vehicularRole": "L'ahanta est une langue Tano central (Niger-Congo, Kwa), apparentee aux autres langues Akan. Elle est parlee le long de la cote sud-ouest du Ghana entre Takoradi et Kasoa. La langue est menacee d'extinction a moyen terme : une etude de l'Universite de Cape Coast montre que les locuteurs de Sekondi-Takoradi parlent et enseignent rarement l'ahanta. L'anglais est la langue officielle du Ghana et predomine dans les contextes formels."
+    },
+    "culture": {
+      "majorRites": "Festival Kundum : festival des recoltes celebrant la gratitude envers Dieu pour l'abondance alimentaire, d'une duree originellement d'un mois (reduite a huit jours aujourd'hui). Le Kundum est aussi un festival religieux pour chasser les mauvais esprits de la ville. La tradition du festival est attribute au chasseur Akpoley qui aurait observe des nains (dwarfs) executer une danse unique et l'aurait introduite aupres de son peuple. Festival celebre conjointement avec les Nzema voisins, entre aout et septembre.",
+      "symbols": "Baleines (dans la mythologie fondatrice). Tabourets royaux de type Akan. Le titre Badu Bonso (designe ceux qui ont atteint les baleines) est le symbole de la royaute. Otumfour (le puissant) comme titre de pouvoir.",
+      "artsAndMusic": "Musique et danses du festival Kundum avec tambours et chants rituels. Arts et performances ceremoniales de la Royal Cultural Troupe d'Ahantaman Girls' Senior High School. Tradition de John Canoe, festival attribue au chef Ahanta John Canoe, qui s'est propage en Jamaique et dans les Caraibes.",
+      "spiritualities": "Religion traditionnelle africaine dominante, avec croyances en des entites surnaturelles (pouvoirs magiques du roi Badu Bonso, genies). Christianisme tres repandu. Islam present dans une moindre mesure. La naissance de jumeaux, autrefois consideree comme tabou dans certaines pratiques locales, est consideree positivement par les Ahanta (lie a l'etymologie du nom du peuple)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume Ahanta : confederation de chefferies s'etendant de la riviere Pra a la riviere Ankobra, le long de la cote atlantique de la Western Region du Ghana. Le royaume jouissait de puissance, gloire et suprematie jusqu'a l'arrivee massive des puissances europeennes (Portugais, Neerlandais, puis Britanniques).",
+      "relationsWithNeighbors": "Alliance celebre avec les Neerlandais formalisee par le traite de Butre en 1656 (protection contre les autres nations europeennes, duree 213 ans jusqu'en 1871). Relations avec les Nzema voisins (festival Kundum commun). L'Asantehene aurait offert 30 000 troupes pour aider les Ahanta contre les Neerlandais en 1838 mais l'offre fut declinee.",
+      "conflictsOrAlliances": "Resistance militaire aux expeditions neerlandaises punitives (1838) sous Badu Bonso II. Massacre de Takoradi et Busua le 30 juin 1838. Capture, jugement et execution du roi Badu Bonso II (27 juillet 1838). Restitution de la tete du roi depuis les Pays-Bas en 2009.",
+      "diaspora": "John Canoe, chef Ahanta, est a l'origine du festival John Canoe qui s'est repandu en Jamaique, dans les Caraibes et en Caroline du Nord. Nana Kobina Nketsia IV, d'origine Ahanta, est devenu le premier vice-chancelier africain de l'Universite du Ghana."
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2025,
+      "source": "Ghana Statistical Service, recensement 2021 : Ahanta West Municipal District = 153 140 habitants (dont Akan 140 413 soit ~91%). Population Ahanta estimee a environ 200 000 en incluant les zones de Sekondi-Takoradi et autres districts de Western Region (2025).",
+      "distributionByCountry": [{ "country": "GHA", "population": 200000 }]
+    },
+    "sources": [
+      "Wikipedia EN - Ahanta people (https://en.wikipedia.org/wiki/Ahanta_people)",
+      "Wikipedia EN - Ahanta language (https://en.wikipedia.org/wiki/Ahanta_language)",
+      "Ethnologue - Ahanta (AHA) (https://www.ethnologue.com/language/aha/)",
+      "Wikipedia EN - Kundum Festival (https://en.wikipedia.org/wiki/Kundum_Festival)",
+      "Ghana Statistical Service - 2021 Population and Housing Census, Ahanta West Municipal District (https://datacommons.org/place/wikidataId/Q399949)",
+      "Wikipedia EN - Ahanta West Municipal District (https://en.wikipedia.org/wiki/Ahanta_West_Municipal_District)"
+    ]
+  }
+}

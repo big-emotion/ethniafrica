@@ -1,0 +1,102 @@
+{
+  "id": "PPL_DAFING",
+  "nameMain": "Dafing",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["BFA", "MLI"],
+  "content": {
+    "appellations": {
+      "mainName": "Dafing",
+      "selfAppellation": "Dafing",
+      "exonyms": ["Marka", "Marka-Dafing", "Meka", "Maraka", "Dafin"],
+      "originOfExonyms": "Le terme Marka ou Maraka est d'origine bambara et signifie litteralement hommes qui gouvernent ou hommes de la colonie. Il peut aussi etre issu du mot designant les colons venus de Wagadu. Le terme Dafing est utilise comme autonym au Burkina Faso, tandis que Maraka est plus frequent au Mali.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Dafing est utilise au Burkina Faso, notamment dans la region de la Boucle du Mouhoun. Au Mali, le terme Maraka est plus courant. Les deux termes sont utilises en ethnologie et en linguistique pour designer le meme groupe ethnique.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mandingue occidental (Manding)",
+      "historicalRegion": "Region de la Boucle du Mouhoun (Burkina Faso), region de Mopti et Segou (Mali)",
+      "currentCountries": ["BFA", "MLI"]
+    },
+    "ethnicities": [
+      "Marka-Dafing de la Boucle du Mouhoun (Burkina Faso occidental)",
+      "Maraka de la region de Segou (Mali, environs de Nyamina et Sansanding)",
+      "Dafing de la region de Dedougou",
+      "Dafing de la region de Nouna",
+      "Marka de Baroüeli et Banamba (Mali, fondations du 19e siecle)",
+      "Dafing de la region de Solenzo (Burkina Faso)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Dafing-Marka sont originaires de l'empire de Wagadu (Ghana ancien), dont ils constituent une des branches migratoires. Leurs ancetres soninke ont quitte le Wagadu entre le 11e et le 13e siecle pour s'etablir dans la vallee du Niger moyen et dans la region de l'actuel Burkina Faso. Ils font partie de la grande famille mandingue issue du foyer du Mande.",
+      "formationPeriod": "La formation de l'identite Dafing distincte s'est produite entre le 13e et le 16e siecle, lors de l'etablissement des communautes marchandes et agricoles le long des routes commerciales entre le Sahel et les forets. Leur identite s'est consolidee sous l'empire du Mali et pendant l'empire bambara de Segou.",
+      "migrationRoutes": [
+        "Wagadu (ancien empire Ghana) vers la vallee du Niger moyen (11e-13e siecle)",
+        "Niger moyen vers la Boucle du Mouhoun (Burkina Faso actuel)",
+        "Etablissement de comptoirs commerciaux a Nyamina, Sansanding, Baroüeli et Banamba"
+      ],
+      "historicalSettlementZones": [
+        "Vallee du Niger moyen (Mali): Nyamina, Sansanding",
+        "Boucle du Mouhoun (Burkina Faso): Dedougou, Nouna, Solenzo",
+        "Region de Mopti (Mali)"
+      ],
+      "unificationsOrDivisions": "Les Dafing-Marka se distinguent des Maraka du Mali par leur implantation geographique et certaines specificites culturelles. Au Burkina Faso, ils constituent un groupe relativement homogene autour de la Boucle du Mouhoun. Au Mali, les Maraka sont plus disperses et plus integres aux populations bambara et soninke voisines.",
+      "externalInfluences": "L'islamisation a ete un facteur unificateur majeur. Les Dafing-Marka etaient une communaute marchande musulmane sous l'empire bambara de Segou (18e-19e siecle). L'empire bambara a integre les comptoirs Marka dans sa structure politique. L'empire toucouleur d'Omar Tall (1850s) a transforme les structures economiques heritees.",
+      "majorHistoricalEvents": "Fondation des villes commerciales de Nyamina et Sansanding. Creation des comptoirs de Baroüeli et Banamba au 19e siecle, qui devinrent des centres de commerce et de religion importants. Sous l'empire bambara de Segou, les Marka controlaient le commerce transsaharien entre le Sahel et les Berberes du Sahara. La defaite de l'empire bambara face a Omar Tall en 1861 a perturbe leur systeme economique base sur l'agriculture de plantation esclavagiste."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme hierarchique strict comprenant un chef supreme (roi), des chefs de contentieux, des chefs de guerre, des chefs de clans et de familles. Chaque village beneficie d'une certaine autonomie interne tout en etant soumis a une autorite centrale. Les decisions importantes sont prises en conseil par les anciens et les chefs.",
+      "clanOrganization": "Organisation clanique patrilineaire. Les clans principaux portent des patronymes comme Coulibaly, Traore, Dembele et Diabate. La structure sociale comprend une noblesse marchande et religieuse, une classe d'artisans (forgerons, tisserands) et une classe paysanne.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite sociale, les droits fonciers et les alliances matrimoniales. L'heritage se transmet de pere en fils. Les familles etendues constituent les unites economiques de base, notamment pour l'agriculture et le commerce.",
+      "religiousAuthority": "Autorite des oulémas et des chefs religieux islamiques. L'islam sunnite de rite malekite structure la vie sociale depuis le 14e-15e siecle. Les marabouts jouent un role d'enseignants coraniques et de conseillers spirituels. Des ecoles coraniques (karanta) sont presentes dans les villages."
+    },
+    "languages": {
+      "mainLanguage": "Marka (dafing)",
+      "isoCodes": ["rkm"],
+      "dialects": [
+        "Dafing du Burkina Faso (region de la Boucle du Mouhoun)",
+        "Marka du Mali (varietes de Segou et Mopti)",
+        "Dialectes locaux de Dedougou et Nouna"
+      ],
+      "vehicularRole": "Le marka-dafing est parle dans 60 villages du Burkina Faso occidental et par plusieurs milliers de personnes au Mali. Il appartient au continuum des langues mandingues et est proche du bambara et du dioula. Le francais est utilise dans l'administration et l'education. Le dioula sert de langue vehiculaire regionale au Burkina Faso."
+    },
+    "culture": {
+      "majorRites": "Circoncision masculine comme rite de passage vers l'age adulte, accompagnee de festivites communautaires. Ceremonies de mariage avec echanges de cadeaux et prestations matrimoniales. Celebrations islamiques du Ramadan (Korité) et de la Tabaski (Aïd el-Kebir) constituant les principales fetes annuelles. Ceremonies funeraires islamiques avec recitation du Coran et repas collectifs les 3e, 7e et 40e jours apres le deces. Pelerinage a La Mecque (Hajj) marque par une fete communautaire au retour du pelerin.",
+      "symbols": "Masques en bois sculpte a formes geometriques et animalieres (antilopes), produits par les Marka-Daffing du Burkina Faso. Symboles islamiques (croissant de lune, etoile). Tissus de coton teint a l'indigo, caracteristiques de l'artisanat local. Les griots (djelis) portent des instruments symboliques de leur fonction.",
+      "artsAndMusic": "Tissage et teinture de coton a l'indigo : les Marka-Daffing du Burkina Faso sont producteurs renommes de tissus de coton teint main avec des colorants naturels, notamment l'indigo, commercialises dans toute la region. Sculpture sur bois : production de masques a caractere abstrait et geometrique combinant formes animalieres (antilopes) et humaines, utilises dans certaines ceremonies communautaires. Poterie feminine. Tradition orale transmise par les griots (djelis) : recits genealogiques, poesie chansoniere, histoires epiques de l'empire du Mali. Musique instrumentale : balafon (xylophone), kora (harpe-luth), ngoni (luth traditionnel) utilises lors des ceremonies.",
+      "spiritualities": "Islam sunnite de rite malekite, pratique majoritaire depuis le 14e siecle. La communaute Dafing-Marka a joue un role actif dans la diffusion de l'islam en Afrique de l'Ouest, servant de marchands-ambassadeurs de la foi. Des pratiques animistes preislamiques subsistent dans certaines communautes rurales, notamment les croyances aux esprits de la nature et les societes secretes educatives. Les marabouts jouent un role de mediation entre le monde spirituel et les vivants, en produisant des gris-gris (amulettes coraniques) pour la protection."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Marka ont fonde et controle plusieurs importantes villes commerciales et religieuses : Nyamina et Sansanding (fondees tot), Baroüeli et Banamba (19e siecle). Ces centres etaient a la fois des postes de commerce et des lieux d'enseignement islamique. Sous l'empire bambara de Segou (18e-19e siecle), les Marka etaient integres comme communautes marchandes privilegiees, controlant le commerce entre le Sahel et le Sahara.",
+      "relationsWithNeighbors": "Relations commerciales etroites avec les Bambara du Mali et les Mossi du Burkina Faso. Reciprocite economique avec les Soninke et les Mandinka. Liens de voisinage avec les Fulani (Peul) le long des routes sahiliennes. Rapports ambivalents avec les empires bambara : integration economique mais tensions liees a la difference religieuse (Marka musulmans vs Bambara animistes initialement).",
+      "conflictsOrAlliances": "Alliance historique avec les communautes islamiques mandingues dans le cadre du reseau commercial transsaharien. Soumission formelle a l'empire bambara de Segou tout en maintenant une autonomie religieuse et economique. Perturbation majeure lors de la conquete de Umar Tall (1850s) qui detruisit l'empire bambara : les concessions commerciales et les plantations Marka en subirent les consequences. Integration progressive dans les structures coloniales francaises apres 1890.",
+      "diaspora": "Migration de jeunes Marka vers les plantations de cacao et de cafe en Cote d'Ivoire (mouvement economique saisonnier et definitif). Presence dans les grandes villes de Ouagadougou et Bamako. Communautes dans d'autres pays d'Afrique de l'Ouest, notamment en Cote d'Ivoire."
+    },
+    "demography": {
+      "totalPopulation": 120000,
+      "referenceYear": 2025,
+      "source": "SIL International (Ethnologue, rkm), enquete sociolinguistique SIL Harrison & Harrison, Joshua Project, estimations recensements Burkina Faso et Mali. La population exacte est difficile a etablir en raison de l'integration croissante aux populations voisines bambara et soninke.",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 90000,
+          "note": "Region de la Boucle du Mouhoun, principalement autour de Dedougou, Nouna et Solenzo (environ 60 villages)"
+        },
+        {
+          "country": "MLI",
+          "population": 30000,
+          "note": "Region de Segou et Mopti, descendants des comptoirs marchands de Nyamina, Sansanding et Banamba"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Marka people. https://en.wikipedia.org/wiki/Marka_people",
+      "Wikipedia FR — Marka (langue). https://fr.wikipedia.org/wiki/Marka_(langue)",
+      "Qiraat Africa — Marka, people of Mali and Burkina Faso. https://qiraatafrican.com/en/18720/marka-people-of-mali-and-burkina-faso/",
+      "Joshua Project — Marka, Dafing in Burkina Faso. https://joshuaproject.net/people_groups/13550/UV",
+      "SIL International — Ethnologue, Marka-Dafin subgroup. https://www.ethnologue.com/subgroup/497/",
+      "ScriptSource — Burkina Faso languages, code rkm (Dafing). https://www.scriptsource.org/cms/scripts/page.php?item_id=country_detail&key=BF",
+      "Roberts, Richard L. Warriors, Merchants and Slaves: The State and the Economy in the Middle Niger Valley 1700-1914. Stanford University Press, 1987.",
+      "SIL International — Harrison, Byron & Anette, Sociolinguistic survey report for the Marka-Dafin language. https://www.sil.org",
+      "Wikipedia EN — Marka people. https://en.wikipedia.org/wiki/Marka_people"
+    ]
+  }
+}

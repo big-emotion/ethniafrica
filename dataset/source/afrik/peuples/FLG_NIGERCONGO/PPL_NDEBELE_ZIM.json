@@ -1,0 +1,111 @@
+{
+  "id": "PPL_NDEBELE_ZIM",
+  "nameMain": "Ndebele du Zimbabwe (Matabele)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["ZWE"],
+  "content": {
+    "appellations": {
+      "mainName": "Ndebele du Zimbabwe (Matabele)",
+      "selfAppellation": "AmaNdebele / Mthwakazi",
+      "exonyms": [
+        "Matabele (terme historique anglais et boer)",
+        "Tabele",
+        "Northern Ndebele"
+      ],
+      "originOfExonyms": "Matabele est une déformation afrikaans/anglaise du terme sotho Matebele (ceux qui disparaissent derrière leurs grands boucliers nguni). Mthwakazi est le nom indigène du royaume et de la nation Ndebele du Zimbabwe. Northern Ndebele (ou isiNdebele saseNyakatho) distingue la langue de la variante du Sud parlée en Afrique du Sud.",
+      "whyProblematic": "Les Ndebele du Zimbabwe sont souvent confondus avec les Ndebele d'Afrique du Sud, mais les deux groupes sont historiquement distincts depuis le XIXe siècle. Les Zimbabwéens descendent des suivants de Mzilikazi qui quittèrent la sphère zoulou vers 1823, tandis que les Ndebele d'Afrique du Sud sont une branche plus ancienne (XVIIe siècle).",
+      "contemporaryUsage": "Le terme Ndebele est d'usage courant au Zimbabwe. Mthwakazi est privilégié dans les discours politiques et culturels nationaux zimbabwéens. Matabeleland désigne toujours la région historique de Bulawayo et du sud-ouest du Zimbabwe.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Nguni (Zone S)",
+      "historicalRegion": "Matabeleland (Bulawayo, Zimbabwe occidental et méridional) ; historiquement : Mosega (Transvaal), puis migrations via le Limpopo vers le Matabeleland (1839)",
+      "currentCountries": ["ZWE"]
+    },
+    "ethnicities": [
+      "Zansi (descendants directs des Zulu/Khumalo de Mzilikazi, aristocratie guerrière, rang supérieur)",
+      "Enhla (peuples absorbés lors de la migration : Sotho, Tswana, Pedi, rang intermédiaire)",
+      "Lozwi / Holi (Shona et Kalanga locaux assimilés après l'arrivée au Zimbabwe, rang inférieur)",
+      "Amaveni (descendants de captifs et d'esclaves intégrés à la nation Ndebele)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ndebele du Zimbabwe descendent des followers de Mzilikazi ka Matshobana Khumalo, chef guerrier zoulou qui rompit avec Shaka vers 1823 pendant le Mfecane (diaspora de l'ère zoulou). Mzilikazi était issu du clan Khumalo et fut d'abord un général de Shaka. Après sa rupture avec le roi zoulou, il forma une nouvelle nation en incorporant des éléments nguni, sotho, tswana, et plus tard shona.",
+      "formationPeriod": "La nation Ndebele (Mthwakazi) se forme entre 1823 et 1839 lors de la migration vers le nord. Mzilikazi établit plusieurs capitales successives dans le Transvaal (Mosega), avant d'être chassé par les Boers (1837) et par des raids zoulou. En 1839-1840, il conduisit ses followers au-delà du Limpopo et s'établit dans l'actuel Matabeleland (Zimbabwe). La capitale Bulawayo (abrégé de KoBulawayo, lieu du massacre) fut fondée vers 1840.",
+      "migrationRoutes": [
+        "Natal (départ de la sphère zoulou, vers 1823, après rupture avec Shaka)",
+        "Highveld (Transvaal) : plusieurs capitales successives, dont Mosega (actuelle province du Nord-Ouest, ZAF)",
+        "Raids et contre-raids avec les Boers et les Zoulou (1832-1837) : défaites à Vegkop (1836) et Mosega (1837)",
+        "Traversée du Limpopo vers le nord (1838-1839)",
+        "Établissement final dans le Matabeleland (Zimbabwe méridional et occidental, 1839-1840)"
+      ],
+      "historicalSettlementZones": [
+        "Mosega (actuelle province du Nord-Ouest, Afrique du Sud) : première capitale du Transvaal",
+        "KoBulawayo (Bulawayo, Zimbabwe) : capitale du royaume Ndebele fondée vers 1840",
+        "Matabeleland Nord (région de Bulawayo, Hwange, Victoria Falls)",
+        "Matabeleland Sud (Gwanda, Beitbridge)"
+      ],
+      "unificationsOrDivisions": "Mzilikazi maintint une structure sociale tripartite (Zansi supérieur, Enhla intermédiaire, Lozwi/Holi inférieur) intégrant les peuples conquis. Après la mort de Mzilikazi (1868), une crise de succession opposa les clans (interrègne 1868-1870). Lobengula fut finalement couronné en 1870. L'État Ndebele fut détruit par la Compagnie britannique d'Afrique du Sud (BSAC) lors des guerres matabeleland (1893, 1896-1897). Les Ndebele résistèrent aussi lors du premier soulèvement Chimurenga (1896-97).",
+      "externalInfluences": "Mfecane (1820s) : point de départ de la migration. Raids et guerres avec les Boers (1836-1837). Traités et conflits avec les commerçants portugais et britanniques sous Lobengula (1870-1893). Colonisation par la Compagnie britannique d'Afrique du Sud (BSAC) de Cecil Rhodes : guerre de Matabeleland (1893), soulèvement Matabele (1896-1897). Christianisme introduit par les missions (London Missionary Society). Indépendance du Zimbabwe (1980) : tensions politiques Ndebele-Shona exacerbées par les opérations Gukurahundi (1983-1987).",
+      "majorHistoricalEvents": "1823 : rupture de Mzilikazi avec Shaka. 1836 : bataille de Vegkop contre les Boers. 1837 : Boers détruisent Mosega, Mzilikazi migre vers le nord. 1839-1840 : fondation du royaume Mthwakazi au Zimbabwe, capital Bulawayo. 1868 : mort de Mzilikazi. 1870 : couronnement de Lobengula. 1888 : traité Rudd (cession de droits miniers à la BSAC de Cecil Rhodes). 1893 : guerre de Matabeleland, défaite de Lobengula, mort de Lobengula vers 1894. 1896-1897 : premier Chimurenga (soulèvement Matabele et Shona). 1980 : indépendance du Zimbabwe (Robert Mugabe, ZANU-PF). 1983-1987 : massacres Gukurahundi au Matabeleland (estimations de 10 000 à 20 000 morts Ndebele)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le royaume Ndebele (Mthwakazi) était une monarchie absolue centralisée autour du roi (iNkosi ou uMlimo). L'armée (amabutho) était organisée en régiments ayant chacun leur propre kraal royal. Le roi était assisté d'un conseil de chefs (izinduna). Après la conquête coloniale (1893), la monarchie fut supprimée mais les structures de chefferies locales persistèrent. Aujourd'hui, des chefs traditionnels (izinduna) maintiennent leur autorité culturelle.",
+      "clanOrganization": "Structure patrilinéaire stricte héritée de la tradition nguni-zoulou. Hiérarchie sociale tripartite : Zansi (aristocratie), Enhla (alliés assimilés), Lozwi/Holi (populations locales incorporées). Les clans (izibongo/isibongo) définissent l'identité et les alliances. Le clan Khumalo, descendant de Mzilikazi, conserve le prestige royal.",
+      "ageClassSystems": "Système de régiments militaires (amabutho) hérité de la tradition zoulou : chaque classe d'âge formait un régiment résidant dans un kraal particulier du roi. Les hommes n'avaient le droit de se marier qu'après permission royale accordée au régiment dans son ensemble. Ce système a progressivement disparu après la défaite coloniale de 1893.",
+      "roleOfLineages": "Les lignages patrilinéaires (izibongo) déterminent le rang social, les alliances matrimoniales et les droits. Le mariage est exogame (clans différents). L'héritage est patrilinéaire. Le clan Khumalo reste le clan royal le plus prestigieux.",
+      "religiousAuthority": "Croyance aux esprits ancestraux (amadlozi) et au créateur suprême (uMlimu). Les devins-guérisseurs (izangoma) servent d'intermédiaires avec les ancêtres. Le christianisme (London Missionary Society dès les années 1850-1860) s'est superposé aux croyances traditionnelles. Syncrétisme avec les Églises africaines indépendantes (zioniste, apostolique)."
+    },
+    "languages": {
+      "mainLanguage": "isiNdebele (Northern Ndebele / isiNdebele saseNyakatho)",
+      "isoCodes": ["nde"],
+      "dialects": [
+        "isiNdebele saseNyakatho (Northern Ndebele proprement dit, Zimbabwe)",
+        "Variantes de Matabeleland Nord (plus proches du zoulou originel)",
+        "Variantes de Matabeleland Sud (influences kalanga et shona plus marquées)"
+      ],
+      "vehicularRole": "L'isiNdebele (Northern Ndebele, ISO 639-3 : nde) est l'une des 16 langues officielles du Zimbabwe depuis 2013. Il comptait environ 2,6 millions de locuteurs natifs en 2023. Proche du zoulou, il en diffère par les emprunts aux langues Sotho, Kalanga et Shona. Il est enseigné dans les écoles du Matabeleland et utilisé dans les médias locaux (radio, télévision). Le Botswana compte aussi des locuteurs (Francistownand district Nord-Est)."
+    },
+    "culture": {
+      "majorRites": "Inhlambelo (cérémonie annuelle de purification du roi et de la nation, analogue aux premières récoltes). Ukuqomisa (initiation féminine, à la puberté). Ceremonies de mariage avec lobola (dot en bétail). Rites funèbres avec sacrifices de bœufs et invocation des ancêtres. L'ingoma est une danse de guerre héritée des Zoulou, pratiquée lors des cérémonies importantes. La fête de la moisson (umhlanga ou likumbi) célèbre les bonnes récoltes.",
+      "symbols": "Le bouclier nguni (isihlangu) à longues bandes blanches et noires est le symbole guerrier ancestral des amaNdebele, référencé dans le nom même (les hommes aux longs boucliers). Le bœuf est central comme richesse, monnaie de lobola et offrande sacrificielle. Les ornements de perles (ubuhlalu) et la tenue guerrière traditionnelle (amaqhiya, inkunzi) symbolisent la fierté culturelle Ndebele.",
+      "artsAndMusic": "Musique et danse : l'ingoma est la danse guerrière héritée des Zoulou, exécutée lors des célébrations nationales, mariages et rites de passage, accompagnée de tambours (izigubhu) et de chants polyphoniques. Les izibongo (louanges poétiques) célèbrent les rois et les héros. Artisanat : poterie traditionnelle, tressage de nattes et paniers. Travail du cuir (boucliers, vêtements). Sculptures en bois et en corne. La tradition orale (inganekwane) préserve les récits des rois Mzilikazi et Lobengula.",
+      "spiritualities": "Croyance en uMlimu ou uNkulunkulu (Être suprême), et aux esprits ancestraux (amadlozi) comme intermédiaires entre Dieu et les vivants. Les izangoma (devins-guérisseurs) et izinyanga (herboristes-guérisseurs) maintiennent les pratiques spirituelles traditionnelles. Le christianisme (London Missionary Society, Église adventiste, Églises zionistes) s'est répandu depuis la fin du XIXe siècle. Syncrétisme entre ancestralité nguni et christianisme très répandu dans le Matabeleland contemporain."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume de Mthwakazi (Matabeleland), fondé par Mzilikazi vers 1840 et dirigé après lui par Lobengula (1870-1894), fut l'un des États les plus puissants d'Afrique australe au XIXe siècle. L'armée comptait 15 000 guerriers en 40 régiments. Le royaume contrôlait une vaste zone allant de l'actuel Bulawayo jusqu'aux frontières avec la Zambie et le Botswana. Il fut détruit en 1893 par les forces de la British South Africa Company (BSAC).",
+      "relationsWithNeighbors": "Domination des Shona (Rozvi, Karanga, Korekore) qui durent payer tribut ou fuir vers le nord. Relations complexes avec les Tswana (frontières à l'ouest). Contacts commerciaux avec les Portugais du Mozambique et les marchands européens. Rivalité avec les Boers (Voortrekkers) dès les années 1830. Alliance initiale avec les missionnaires de la London Missionary Society (Robert Moffat rencontra Mzilikazi à plusieurs reprises). Le ressentiment shona envers la domination Ndebele reste une donnée politique au Zimbabwe contemporain.",
+      "conflictsOrAlliances": "1836 : bataille de Vegkop (Boers). 1837 : destruction de Mosega par les Boers (Potgieter). 1893 : guerre de Matabeleland, défaite des Ndebele face aux forces de la BSAC armées de mitrailleuses Maxim. 1896-1897 : premier Chimurenga (soulèvement conjoint Ndebele-Shona). 1983-1987 : opérations Gukurahundi menées par la 5e Brigade de l'armée zimbabwéenne contre les dissidents Ndebele (estimations : 10 000 à 20 000 victimes civiles Ndebele au Matabeleland).",
+      "diaspora": "Des Ndebele du Zimbabwe résident au Botswana voisin (notamment dans le district Nord-Est, Francistown), en Zambie et en Afrique du Sud. Une diaspora économique s'est développée en Grande-Bretagne, aux États-Unis et en Australie, notamment après la crise économique zimbabwéenne des années 2000-2010."
+    },
+    "demography": {
+      "totalPopulation": 2600000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN — Northern Ndebele language (2,6 millions de locuteurs natifs en 2023). Recensements zimbabwéens (2012 : Ndebele représentaient environ 15-20% des 13 millions de Zimbabwéens). Joshua Project — Ndebele, Tabele in Zimbabwe.",
+      "distributionByCountry": [
+        {
+          "country": "ZWE",
+          "population": 2400000,
+          "note": "Principalement Matabeleland Nord (Bulawayo, Hwange, Victoria Falls) et Matabeleland Sud (Gwanda)"
+        },
+        {
+          "country": "BWA",
+          "population": 150000,
+          "note": "District Nord-Est (Francistown), locuteurs isiNdebele du Botswana"
+        },
+        {
+          "country": "ZAF",
+          "population": 50000,
+          "note": "Province de Limpopo, communautés transfrontalières"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Northern Ndebele language. https://en.wikipedia.org/wiki/Northern_Ndebele_language",
+      "Wikipedia EN — Mzilikazi. https://en.wikipedia.org/wiki/Mzilikazi",
+      "Wikipedia EN — Lobengula. https://en.wikipedia.org/wiki/Lobengula",
+      "Wikipedia EN — Mfecane. https://en.wikipedia.org/wiki/Mfecane",
+      "South African History Online — Mfecane. https://sahistory.org.za/article/mfecane-understanding-period-transformation-southern-africa",
+      "Britannica — Lobengula. https://www.britannica.com/biography/Lobengula",
+      "Joshua Project — Ndebele, Tabele in Zimbabwe. https://joshuaproject.net/people_groups/13275/ZI",
+      "Ethnologue (SIL) — isiNdebele [nde]. https://www.ethnologue.com/language/nde"
+    ]
+  }
+}

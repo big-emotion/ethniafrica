@@ -1,0 +1,93 @@
+{
+  "id": "PPL_AIT_HDZ",
+  "nameMain": "Ait Hadiddou",
+  "languageFamilyId": "FLG_BERBERE",
+  "currentCountries": ["MAR"],
+  "content": {
+    "appellations": {
+      "mainName": "Ait Hadiddou",
+      "selfAppellation": "Ayt Yeflman, Ayt Wrirra",
+      "exonyms": ["Ait Haddidou", "Ait Hdiddou", "Ayt Hdiddou", "Ait Addidou"],
+      "originOfExonyms": "Le nom Hadiddou signifie petit ou fort selon la tradition orale berbere. L'exonyme francais Ait Haddidou a ete fixe par l'administration coloniale.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Ait Hadiddou est utilise officiellement au Maroc pour designer cette confederation tribale du Haut Atlas central, surtout dans la region d'Imilchil.",
+      "linguisticFamily": "FLG_BERBERE",
+      "ethnoLinguisticGroup": "Berbere du Moyen Atlas (Tamazight central)",
+      "historicalRegion": "Haut Atlas central (region d'Imilchil, vallee du Ziz superieur, plateau des Lacs, massif du Midoul)",
+      "currentCountries": ["MAR"]
+    },
+    "ethnicities": [
+      "Ait Hdiddou n-Midoul (branche noble, detenteurs du carrefour strategique d'Imilchil)",
+      "Ait Hdiddou n-Zoulit (branche deplacee par Moulay Ismail, remplacee par les Ait Izdeg)",
+      "Ait Yaazza (fraction de la confederation Ait Yafelman)",
+      "Ait Brahim (fraction associee aux Ait Haddidou dans les festivals)",
+      "Ait Youb, Ait Mhammad, Irbiben (clans internes historiques)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ait Hadiddou sont une composante de la grande confederation Ait Yafelman du Haut Atlas meridional. Selon la tradition orale, ils descendent de Hadiddu, l'un des cinq fils de Midul, ancetre eponyme de la region du Midoul. Les Ait Yafelman et les Ait Hadiddou appartiennent aux populations berberes qui occupent le Haut Atlas depuis l'Antiquite.",
+      "formationPeriod": "La confederation Ait Yafelman, dont les Ait Hadiddou font partie, a ete formee au 17e siecle pour contrer l'expansion des Ait Atta voisins. Les Ait Hadiddou ont elargi leur territoire en deux etapes : d'abord aux depens des Igerwan (deportes vers Meknes par Moulay Ismail), puis par eviction progressive des Ait Atta.",
+      "migrationRoutes": [
+        "Extension vers le Ziz superieur et la vallee de l'Asif Melloul",
+        "Deplacement vers le plateau des Lacs"
+      ],
+      "historicalSettlementZones": [
+        "Haut Atlas central entre Tounfite, Midelt et Tizi N'Telghoumt au nord",
+        "Msemrir, Goulmima, Errachidia et Boudnib au sud",
+        "Vallee de l'Oued Ait Aissa a l'est",
+        "Haut Oued El Abid, Assif Melloul et Dades a l'ouest"
+      ],
+      "unificationsOrDivisions": "Les Ait Hadiddou font partie de la confederation Ait Yafelman aux cotes des Ait Morghad, Ait Izdeg et Ait Yehia. La branche Ait Hdiddou n-Midoul a acquis le passage strategique d'Imilchil (imi Isil, la porte du ble). Le village d'Agoudal fut construit apres la celebre bataille ou les 'cinquante d'Agoudal' se distinguerent.",
+      "externalInfluences": "Pression des Ait Atta voisins, interventions des sultans alaouis (Moulay Ismail, Moulay Slimane). Influence coloniale francaise au 20e siecle.",
+      "majorHistoricalEvents": "Formation de la confederation Ait Yafelman au 17e siecle. Bataille d'Agoudal, acquisition d'Imilchil. Institutionnalisation du festival du mariage d'Imilchil sur plusieurs siecles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation tribale en confederation (taqbilt). Les Ait Yafelman dont les Ait Hadiddou forment une alliance tribale gouvernee par un conseil (jmaa) regroupant les anciens et les chefs de fraction. Les villages du Haut Atlas sont occupes principalement l'ete lors des cycles de transhumance.",
+      "clanOrganization": "Division en fractions (tikhsiwin) : Ait Hdiddou n-Midoul et Ait Hdiddou n-Zoulit principalement. Chaque fraction se subdivise en clans patrilineaires portant le prefixe Ait (fils de).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Societe patrilineaire : la descendance, l'heritage et l'appartenance tribale se transmettent par le pere. Les lignages (ighs) structurent les alliances matrimoniales et les droits pastoraux.",
+      "religiousAuthority": "Islam sunnite malekite avec une forte tradition maraboutique. Les saints locaux (imrabdhen) jouent un role d'arbitres lors des conflits et president aux ceremonies collectives."
+    },
+    "languages": {
+      "mainLanguage": "Tamazight du Moyen Atlas (Tamazight central)",
+      "isoCodes": ["tzm"],
+      "dialects": [
+        "dialecte du Haut Atlas oriental (Imilchil)",
+        "dialecte du Midoul",
+        "dialecte de l'Asif Melloul"
+      ],
+      "vehicularRole": "Le tamazight central est la langue maternelle des Ait Hadiddou. L'arabe marocain (darija) et le francais sont utilises dans les echanges commerciaux et administratifs."
+    },
+    "culture": {
+      "majorRites": "Le festival du mariage d'Imilchil (Moussem des fiances) est le rite collectif le plus connu : celebre chaque septembre depuis environ 500 ans, il permet aux jeunes gens de contracter des fiancailles librement, les femmes ayant traditionnellement le droit de choisir et de divorcer. Les femmes Ait Hadiddou portent un chapeau distinctif a pompons rouges (azekkif) marquant leur statut marital. Les rites agricoles et de transhumance (prieres avant les semailles, fetes du Yennayer/An Amazigh) sont celebres collectivement.",
+      "symbols": "Le chapeau traditionnel a pompons rouges des femmes Ait Hadiddou est un symbole identitaire fort. Le tifinagh est utilise comme script identitaire. Le mouflons (aoud) et l'aigle symbolisent la noblesse tribale dans les recits oraux.",
+      "artsAndMusic": "Musique de mariage jouee au bendir et au lotar (luth berbere a cordes). Chants collectifs (izlan) lors du festival d'Imilchil. Broderies et bijoux en argent fabriques par les femmes, ornementes de motifs geometriques berberes. Tapis de laine aux motifs du Moyen Atlas. Poterie utilitaire faite a la main.",
+      "spiritualities": "Islam sunnite malekite avec persistence de pratiques pre-islamiques : culte des saints (ziara aux tombeaux), croyances en la baraka (benediction divine), invocations aux esprits de la nature lors des periodes de secheresse. Celebration du Yennayer (Nouvel An amazigh, 13 janvier)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Ait Hadiddou ont fait partie de la confederation Ait Yafelman formee au 17e siecle. Ils ont controle le passage strategique d'Imilchil, carrefour commercial entre le nord et le sud du Haut Atlas.",
+      "relationsWithNeighbors": "Relations d'alliance et de rivalite avec les Ait Atta (puissante confederation du sud-est marocain), les Ait Morghad, les Ait Izdeg et les Ait Yehia au sein de l'Ait Yafelman. Echanges commerciaux avec les populations de la vallee du Dades et d'Errachidia.",
+      "conflictsOrAlliances": "Formation de la confederation Ait Yafelman au 17e siecle pour contrer les Ait Atta. Bataille d'Agoudal : victoire celebree par la memoire collective. Resistance partielle a la penetration coloniale francaise dans le Haut Atlas au debut du 20e siecle.",
+      "diaspora": "Emigration economique vers les villes marocaines (Errachidia, Meknes, Casablanca) et vers la France depuis les annees 1960-1970."
+    },
+    "demography": {
+      "totalPopulation": 50000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur David Hart (Ait Yafelman : environ 200 000 personnes en 1960 selon le recensement marocain de 1960, les Ait Hadiddou representant une fraction de cet ensemble). Projections 2025 tenant compte de la croissance demographique marocaine. Recensement du Maroc 2014 et 2024 (HCP). IRCAM, Institut Royal de la Culture Amazighe.",
+      "distributionByCountry": [
+        {
+          "country": "MAR",
+          "population": 50000
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Ait Yafelman : https://en.wikipedia.org/wiki/Ait_Yafelman",
+      "Morocco World News - Imilchil Marriage Festival : https://www.moroccoworldnews.com/2020/07/67795/moroccos-imilchil-wedding-festival-a-treasured-amazigh-tradition/",
+      "IRCAM (Institut Royal de la Culture Amazighe, Rabat) : https://www.ircam.ma/",
+      "Journal of Tourism and Leisure - Two Days in Ait Hadiddou : https://journal.lasigo.org/index.php/IJTL/article/viewFile/128/77",
+      "Ethnologue - Tamazight Central Atlas (tzm) : https://www.ethnologue.com/language/tzm/",
+      "IWGIA - The Indigenous World 2025: Morocco : https://iwgia.org/en/morocco/5632-iw-2025-morocco.html",
+      "Encyclopedie berbere (CNRS/INALCO) : https://journals.openedition.org/encyclopedieberbere/"
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "id": "PPL_NYAMWEZI",
+  "nameMain": "Nyamwezi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Nyamwezi",
+      "selfAppellation": "Wanyamwezi (Banyamwezi)",
+      "exonyms": ["Nyamwezi", "Wanyamwezi", "Banyamwezi"],
+      "originOfExonyms": "Le terme Nyamwezi est d'origine swahilie et peut se traduire par peuple de la lune ou peuple de l'ouest (nyamwezi signifiant a la fois lune et ouest en swahili ancien). La deuxieme interpretation — peuple de l'ouest — est plus pertinente geographiquement, designant les populations venant de l'ouest du Tanganyika a l'epoque de la traite caravaniere.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Nyamwezi est le terme utilise dans la litterature scientifique, les recensements tanzaniens et les medias. Wanyamwezi est la forme grammaticale correcte avec le prefixe de classe en kiswahili.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou (Zone F, groupe Sukuma-Nyamwezi, F.23)",
+      "historicalRegion": "Centre-ouest de la Tanzanie : regions de Tabora, Singida, Shinyanga et Katavi (Unyamwezi, territoire d'environ 91 000 km2 a une altitude moyenne de 1 200 m)",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": [
+      "Nyanyembe (groupe dominant de la region de Tabora, leaders du commerce caravanier)",
+      "Konongo (groupe de la region de Sikonge, parfois considere comme dialecte distinct)",
+      "Sumbwa (groupe apparente, region de Kahama et Nzega)",
+      "Kimbu (groupe du sud de l'Unyamwezi, region de Mpanda-Katavi)",
+      "Rungwa (sous-groupe du centre-sud)",
+      "Galanganza (sous-groupe du nord-est de l'Unyamwezi)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Nyamwezi sont consideres comme l'un des groupes bantous d'Afrique de l'Est. Selon les traditions orales et les recherches historiques, ils seraient arrives dans leur region actuelle au cours du XVIe ou XVIIe siecle. Les premieres preuves attestees de leur presence remontent a la localite de Galahansa a la fin du XVIIe siecle. Comme de nombreux peuples bantous, ils sont issus des vagues migratoires depuis la region des Grands Lacs.",
+      "formationPeriod": "17e-18e siecle : installation dans le plateau central de l'Unyamwezi. 19e siecle : apogee de leur role commercial sous des chefs forts comme Mirambo (royaume d'Urambo) et Isike (Unyanyembe-Tabora). La region de Tabora devint le grand nexus caravanier de l'Afrique de l'Est, connectant la cote de Zanzibar aux rives du lac Tanganyika et au Congo.",
+      "migrationRoutes": [
+        "Descente depuis la region des Grands Lacs vers le plateau central",
+        "Expansion commerciale vers la cote de Zanzibar via la route caravaniere centrale (Bagamoyo-Tabora-Ujiji)"
+      ],
+      "historicalSettlementZones": [
+        "Region de Tabora (Unyanyembe, chefferie principale)",
+        "Region de Shinyanga et Singida (Galanganza)",
+        "Region de Katavi-Rukwa (Kimbu)",
+        "Region de Kahama-Nzega (Sumbwa)"
+      ],
+      "unificationsOrDivisions": "Les Nyamwezi n'ont jamais forme un royaume unifie. L'Unyamwezi comprenait plus de 150 petites chefferies independantes. Au XIXe siecle, trois royaumes principaux emergerent : Unyanyembe (le plus puissant, base a Tabora), Ulyankhulu et Urambo. Le chef Mirambo d'Urambo crea un Etat militarise qui domina la region de 1871 a sa mort en 1884.",
+      "externalInfluences": "Contacts croissants avec les marchands arabes et indiens de Zanzibar a partir de 1825 (introduction des armes a feu, de l'islam). Commerce de l'ivoire et des esclaves. Colonisation allemande (Deutsch-Ostafrika, fin XIXe s.) : pax germanica, redessin des itineraires commerciaux. Colonisation britannique (1919-1961) : administration indirecte via les chefs. Independance de la Tanzanie (1961).",
+      "majorHistoricalEvents": "Essor du commerce caravanier (XVIIIe-XIXe s.). Guerre entre Unyanyembe et Urambo (Mirambo, 1871-1884). Blocus de l'ivoire de Tabora par Mirambo (1873) qui fit grimper les prix de l'ivoire sur les marches mondiaux. Resistance d'Isike aux Allemands (forteresse d'Itetemia, 1890-1893) ; suicide d'Isike en 1893 a l'aide de poudre a canon. Pacification de l'Unyamwezi en 1893. WWI : prise de Tabora par les Belges et les Britanniques (1916)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en plus de 150 chefferies independantes, chacune dirigee par un ntemi (chef) cumul figure politique, religieuse et rituelle. Le ntemi est le grand pretredu territoire : il presside les ceremonies, garantit la fertilite de la terre, possede nominalement toutes les terres et expulse les sorciers. Sa sante est liee a celle de la communaute (les chefs gravement malades etaient traditionnellement etrangles pour preserver le bien-etre collectif). Des niveaux hierarchiques intermediaires comprenaient des sous-chefs, des chefs assistants, des chefs de village (nfumu) et des anciens.",
+      "clanOrganization": "Les villages ne sont pas des unites de parente : les parents sont disperses geographiquement. Le groupe domestique de base est le mari, ses epouses et leurs enfants. Les Nyamwezi sont patrilineaires. La veuvage entrainent la devolution de la femme au frere cadet du mari ou au fils de la soeur du mari.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilineaires determinant l'heritage et le statut. Les eleveurs Tutsi recrutes comme professionnels constituaient un groupe special sans statut lineaire integre. Le mariage est exogame, tout adulte devant etre marie.",
+      "religiousAuthority": "Le ntemi est le premier meditateur entre la communaute et le monde spirituel. Les mfumu (devins-guerisseurs) jouent un role de conseillers medicaux et judiciaires. La societe Baswezi rassemble ceux possedes par les esprits Swezi. Depuis le XIXe siecle, l'islam sunnite (introduit par les marchands arabes) et le christianisme protestant (Eglise Morave, MCWT) sont fortement repandus."
+    },
+    "languages": {
+      "mainLanguage": "Kinyamwezi (Nyamwezi)",
+      "isoCodes": ["nym"],
+      "dialects": [
+        "Tabora (dialecte de reference, region de Tabora)",
+        "Sikonge (dialecte central)",
+        "Urambo-Usoke (dialecte nord-ouest)",
+        "Konongo (parfois distingue comme langue separee)",
+        "Nyanyembe",
+        "Takama",
+        "Mweri",
+        "Galanganza",
+        "Nangwila",
+        "Rambo"
+      ],
+      "vehicularRole": "Le kinyamwezi est parle par environ 1,47 million de personnes dans les regions de Kigoma, Rukwa et Tabora, selon Omniglot (2022). Il forme un continuum dialectal avec le sukuma mais en demeure distinct. Le kiswahili est la lingua franca nationale tanzanienne et la langue d'enseignement primaire. L'anglais est la langue officielle de l'administration superieure et de l'enseignement secondaire et universitaire."
+    },
+    "culture": {
+      "majorRites": "Le ntemi preside les ceremonies agraires et de prosperite : invocation du dieu Likube et offrandes d'animaux (moutons, chevres) aux ancetres. Sacrifices aux ancetres lors de maladies, de secheresse ou de conflits (formule rituelle impliquant Likube, Limatunda, Limi et Liwelolo). Ceremonies d'installation des chefs (chants enregistres par le Smithsonian Global Sound, district de Tabora). Initiation des chasseurs d'elephants : apprentissage des techniques de chasse, medicaments de chasse et poisons specifiques. Rites de mariage avec paiement de la dot et veuvage sous contrats de succession. Ceremonies funeraires : Enterrement suivi d'un festin communautaire.",
+      "symbols": "Le ntemi (chef-pretre) comme incarnation de la prosperite communautaire. La lune (nyamwezi) comme symbole identitaire et embleme de navigation commerciale. Le tambour (ngoma) comme symbole d'autorite politique et de celebration. L'elephant comme animal totemique, lie au prestige des chasseurs d'ivoire. La route caravaniere comme symbole de mobilite et d'audace commerciale.",
+      "artsAndMusic": "Artisanat traditionnel de qualite : fabrication de tambours (ngoma), de louches et ustensiles en bois, de tabourets sculptes, de caisses a cereales, de tabatieres en corne. Travail du fer (fers de lance, fleches, haches, houes) produit avec des rituels par les forgerons. Chants polyphoniques lors des ceremonies d'installation des chefs (installement and greeting songs). Poesie orale et contes moraux transmis par les anciens. Musique a percussions (tambours). Brassage de biere traditionnelle (bia ya mahindi, sorgho, millet) pour les ceremonies et la vie sociale.",
+      "spiritualities": "Le systeme religieux traditionnel nyamwezi est theiste et ancestraliste. Le pantheon comprend Likube (Dieu supreme, Dieu Haut), Limatunda (le Createur), Limi (le Soleil) et Liwelolo (l'Univers). Le culte des ancetres est quotidien : des offrandes de moutons et de chevres sont faites avec invocation de Likube. Les esprits des ancetres sont actifs et interviennent dans la vie des vivants. Les mfumu (sorciers-devins) servent de conseillers et de guerisseurs. La societe Baswezi s'occupe des personnes possedees par les esprits Swezi. Au XIXe siecle, nombreux Nyamwezi ont embrasse l'islam sunnite (influence de la mode et du commerce zanzibarien) ; d'autres le christianisme protestant (Eglise Morave, env. 80 000 fideles). Les pratiques traditionnelles se maintiennent en parallele."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Unyanyembe (royaume le plus puissant du XIXe siecle, base a Tabora, connections etroites avec les marchands arabes de Zanzibar, gouverne par la lignee des Mirambo et Mkasiwa). Urambo (royaume de Mirambo, slaver et commercant d'ivoire, grand chef militaire ; bloqua le commerce de l'ivoire de Tabora en 1873 jusqu'a sa mort en 1884). Ulyankhulu (troisieme royaume important). Isike (chef de l'Unyanyembe, construisit la forteresse d'Itetemia, resista aux Allemands jusqu'en 1893).",
+      "relationsWithNeighbors": "Relations commerciales intensives avec les marchands arabes et indiens de Zanzibar et de la cote est-africaine. Commerce de l'ivoire, du cuivre, de la cire et des esclaves. Cooperation (et tension) avec les Sukuma voisins. Recrutement de bergers Tutsi comme professionnels. Relations tendues avec les Hehe (allies d'Isike par mariage) lors de la resistance a la colonisation allemande.",
+      "conflictsOrAlliances": "Guerre entre Unyanyembe et Urambo (Mirambo, 1871-1884). Blocus commercial de Tabora par Mirambo (1873). Resistance d'Isike aux Allemands (1890-1893). Suicide d'Isike avec de la poudre a canon le 2 janvier 1893 lors de la chute de sa forteresse d'Itetemia. Guerrilla de Swetu (frere d'Isike) pendant environ deux ans apres la defaite.",
+      "diaspora": "Environ 30% des Nyamwezi vivaient et travaillaient hors de leur territoire traditionnel au XIXe siecle. Diaspora nyamwezi dans les centres commerciaux et agricoles de Tanzanie (Dar es Salaam, Mwanza, Dodoma). Mobilite historiquement tres valorisee : la valeur du voyage (kwa safari) etait un attribut masculin culturellement prestige."
+    },
+    "demography": {
+      "totalPopulation": 2000000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN (Nyamwezi people) : deuxieme plus grand groupe ethnique de Tanzanie ; environ 926 000 locuteurs du kinyamwezi. Pray Africa (2024) : 1,5 million. Omniglot (2022) : environ 1,47 million de locuteurs dans les regions de Kigoma, Rukwa et Tabora. Projection 2025 avec le taux de croissance tanzanien (2,9%/an) : environ 2 millions.",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 2000000,
+          "note": "Regions de Tabora, Shinyanga, Singida et Katavi ; 30% vivent hors de la region ancestrale"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Nyamwezi people : https://en.wikipedia.org/wiki/Nyamwezi_people",
+      "Wikipedia EN – Nyamwezi language : https://en.wikipedia.org/wiki/Nyamwezi_language",
+      "SIL Ethnologue – Nyamwezi (nym) : https://www.ethnologue.com/subgroup/3292/",
+      "Omniglot – Nyamwezi language and alphabet : https://www.omniglot.com/writing/nyamwezi.htm",
+      "Pray Africa – Nyamwezi of Tanzania (2024) : https://prayafrica.org/project/nyamwezi-of-tanzania/",
+      "Cambridge Core – The Major Dialects of Nyamwezi and Their Relationship to Sukuma (2014) : https://www.cambridge.org/core/journals/journal-of-linguistic-geography/article/major-dialects-of-nyamwezi-and-their-relationship-to-sukuma-a-timebased-perspective/9A1872A4C2E9A1BB915492E359F3586D",
+      "ASJP Database – Nyamwezi (nym) : https://asjp.clld.org/languages/NYAMWEZI",
+      "kwekudee-tripdownmemorylane – Nyamwezi People: Africa's Bantu People of the Moon (2014) : https://kwekudee-tripdownmemorylane.blogspot.com/2014/05/nyamwezi-people-africas-bantu-people-of.html"
+    ]
+  }
+}

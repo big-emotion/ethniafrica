@@ -1,0 +1,97 @@
+{
+  "id": "PPL_KIMBUNDU",
+  "nameMain": "Ambundu",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["AGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Ambundu",
+      "selfAppellation": "Ambundu",
+      "exonyms": ["Mbundu", "Kimbundu", "Mbundu du Nord", "Ambakista"],
+      "originOfExonyms": "Le nom Mbundu a ete utilise pour la premiere fois par les Bakongo, voisins du nord, et a ensuite ete adopte par le peuple lui-meme. Kimbundu designe la langue et est souvent utilise par extension pour le peuple. Le terme Ambakista provient du nom du poste commercial d'Ambacca, designe les locuteurs du dialecte oriental de Kimbundu.",
+      "whyProblematic": "Il existe une confusion frequente avec les Ovimbundu (aussi appeles Mbundu, mais au centre-sud de l'Angola), dont les Ambundu sont clairement distincts. La denomination Kimbundu (nom de la langue) est parfois appliquee au peuple, ce qui peut induire en erreur.",
+      "contemporaryUsage": "Ambundu et Mbundu sont les termes ethmiques officiels. Kimbundu designe la langue. Les Ambundu se distinguent des Ovimbundu par leur region d'implantation (nord-ouest de l'Angola) et leur langue.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantu occidental (Zone H)",
+      "historicalRegion": "Nord-ouest de l'Angola, de Luanda jusqu'a Malanje et au bassin du Kwanza",
+      "currentCountries": ["AGO"]
+    },
+    "ethnicities": [
+      "Ambundu",
+      "Mbundu",
+      "Ndongo",
+      "Mbondo",
+      "Pende",
+      "Hungu",
+      "Lenge",
+      "Imbangala",
+      "Songo",
+      "Libolo"
+    ],
+    "origins": {
+      "ancientOrigins": "Peuple bantou arrive en Angola depuis le nord a partir du Haut Moyen Age, avec la principale vague migratoire entre le XIIIe et le XVIe siecle. Contrairement aux autres Bantous venus de l'est, les Ambundu viendraient du nord selon leurs traditions orales. Deux principales traditions d'origine : la premiere evoque une venue depuis la grande eau (Ocean Atlantique ou ile de Luanda) avec cinq grands ancetres fondateurs des peuples Ndongo, Mbondo, Pende et Hungu. La seconde tradition relate un ancetre nomme Mussuri devenu roi, dont les descendants donnent naissance aux differents sous-groupes ambundu. La tradition des Pende decrit un ancetre Ngola Kilanji qui mena son peuple depuis Tandji, pres du fleuve Zambeze, vers la cote de Luanda.",
+      "formationPeriod": "Societes locales independantes jusqu'au XIVe siecle. Emergence du Royaume de Ndongo au XIVe-XVe siecle. Le titre ngola (chef supreme du Ndongo) donne son nom a l'Angola. Consolidation de l'identite ambundu entre le XVIe et le XVIIe siecle sous les pressions conjointes des Bakongo au nord et des Portugais a l'ouest.",
+      "migrationRoutes": [
+        "Migrations depuis le nord (probablement la region du Congo actuel) vers le nord-ouest de l'Angola",
+        "Deplacement de Ngola Kilanji depuis la region du Zambeze vers Luanda selon la tradition pende",
+        "Expansion vers l'est le long des rivières Dande, Kwanza et Lukala"
+      ],
+      "historicalSettlementZones": [
+        "Province de Luanda",
+        "Province du Bengo",
+        "Province du Malanje",
+        "Province du Cuanza Norte",
+        "Province du Cuanza Sul (peripherie nord)"
+      ],
+      "unificationsOrDivisions": "Le Royaume de Ndongo, principal Etat ambundu, devient independant des Bakongo en 1556 apres une victoire militaire. Il s'allie au Matamba contre les Portugais en 1590. Defaite de 1614 face aux Portugais. La reine Njinga (vers 1583-1663) unifie Matamba et Ndongo en une resistance majeure contre la colonisation portugaise. Chute du Matamba en 1836, annexion progressive par les Portugais jusqu'en 1917.",
+      "externalInfluences": "Contact avec les Bakongo (voisins du nord) et le commerce de la Kongo depuis le XVe siecle. Relations avec les negociants et missionnaires portugais a partir de 1482. Traite negriere intensive des XVIe-XIXe siecles. Influence portugaise culturelle et linguistique a Luanda et Ambacca (emergence du dialecte Ambakista). Influences des Pygmees et Khoi-San anterieures aux migrations bantoues.",
+      "majorHistoricalEvents": "1482 : monopole commercial du Kongo avec le Portugal; 1556 : independance du Ndongo; 1590 : alliance Ndongo-Matamba contre le Portugal; 1614 : defaite face aux Portugais; 1624-1663 : regne de la reine Njinga, grande figure de resistance; 1836 : defaite du Matamba par les Portugais; 1910 : revolte des NDembo; 1917 : derniere conquete militaire portugaise du territoire ambundu; 1975 : independance de l'Angola."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation monarchique avec a la tete le ngola (roi de Ndongo), titre a l'origine du nom Angola. Le systeme politique Ambundu est matrilineaire : la terre et la descendance se transmettent par la mere. La flexibilite du systeme (le statut s'applique aux lignages, non aux individus) distingue les Ambundu de leurs voisins Ovimbundu et Bakongo.",
+      "clanOrganization": "Clans matrilineaires. Les garcons vivent dans le village des oncles maternels pour preserver le noyau matrilineaire. Les differents sous-groupes ambundu (Ndongo, Mbondo, Pende, Hungu, Lenge, Imbangala, Songo, Libolo) conservent une identite clanique distincte.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Systeme matrilineaire : la terre est heritee par la lignee maternelle, ce qui confere une grande flexibilite sociale permettant aux individus de changer de statut plus facilement que dans les systemes patrilineaires voisins. Les garcons quittent leur village natal pour rejoindre le village de l'oncle maternel.",
+      "religiousAuthority": "Blend de croyances animistes traditionnelles et de christianisme, introduit par les Portugais des le XVIe siecle. Le catholicisme puis le protestantisme sont predominants chez les Ambundu urbains. Elements de veneration des ancetres et de culte des esprits persistent en milieu rural."
+    },
+    "languages": {
+      "mainLanguage": "Kimbundu",
+      "isoCodes": ["kmb"],
+      "dialects": [
+        "Akwaluanda (Ambundu occidental, parle a Luanda et a l'ouest)",
+        "Ambakista (parle a l'est, autour d'Ambacca, influence par le portugais)"
+      ],
+      "vehicularRole": "Langue bantoue occidentale, deuxieme langue indigene d'Angola par le nombre de locuteurs. Parlee de Luanda vers l'est jusqu'a Malanje, entre les rivieres Dande (nord) et Kwanza (sud). La majorite des Ambundu parlent egalement le portugais, langue officielle de l'Angola. En milieu urbain (Luanda, Malanje), le kimbundu coexiste avec le portugais et le lingala."
+    },
+    "culture": {
+      "majorRites": "Ceremonies d'intronisation et de legitimation royale. Rites de passage traditionnels. Pratiques funeraires incluant l'enterrement dans les habitations familiales. Ceremonies agricoles liees aux cycles des pluies et des recoltes de manioc et mais.",
+      "symbols": "Le symbole du fer (ngola) reste utilise aujourd'hui; il est a l'origine du nom de la reine Ngola Inene et du titre royal ngola. Construction de villages permanents comme marque de la sedentarisation bantoue.",
+      "artsAndMusic": "Agriculture diversifiee : manioc, mais, haricots (cultures principales). Peche et chasse dans les zones rurales. Activites d'artisanat et de metallurgie du fer. Traditions orales et musicales transmises de generation en generation. Zones urbaines comme Luanda ont integre des elements de style de vie portugais depuis le XVIIe siecle.",
+      "spiritualities": "Croyances animistes traditionnelles : veneration des ancetres, culte des esprits. Christianisme (catholicisme romain et protestantisme) dominant chez la population contemporaine, notamment urbaine. Les pratiques traditionnelles persistent en milieu rural, souvent integrees aux pratiques chretiennes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume de Ndongo : principal etat ambundu, gouverne par le ngola; independant des Bakongo des 1556. Royaume de Mbondo. Royaume de Matamba : traditionnellement dirige par des femmes; la reine Njinga (1624-1663) en fait l'Etat le plus puissant de la region et un grand exportateur d'esclaves. Kasanje voisin : monopole du commerce d'esclaves au XVIIIe siecle. Royaume de Libolo. Territoire NDembo : dernier a resister a la conquete portugaise (capitulation en 1917).",
+      "relationsWithNeighbors": "Relations complexes avec les Bakongo du nord (d'abord suzerains, puis rivaux). Commerce et conflits avec les Pygmees et Khoi-San anterieurement. Resistance et negociation avec les Portugais de l'Atlantique. Relations avec les Ovimbundu au sud (peuples distincts a ne pas confondre).",
+      "conflictsOrAlliances": "1556 : Ndongo bat les Bakongo et obtient l'independance. 1590 : alliance Ndongo-Matamba contre le Portugal. 1614 : defaite face aux Portugais; fuite de la population vers les Etats voisins. Guerre de Njinga (1624-1663) contre l'expansion portugaise. Revolte des NDembo (1910-1913). Participation a la guerre d'independance de l'Angola (1961-1975) au sein du MPLA, parti historiquement base a Luanda.",
+      "diaspora": "Presence d'Ambundu dans la diaspora angolaise en Europe (Portugal, France, Belgique) et aux Etats-Unis. Genealogie retracee chez des personnalites afro-americaines : Chris Tucker et Isaiah Washington ont des liens ADN avec les Mbundu d'Angola (PBS African American Lives)."
+    },
+    "demography": {
+      "totalPopulation": 9200000,
+      "referenceYear": 2025,
+      "source": "Peoplegroups.org (2024) : 9 200 000 Kimbundu Mbundu en Angola. Estimation corroboree par Britannica (2 420 000 fin XXe siecle) et les taux de croissance angolais (3,2%/an). Les Ambundu representent environ 25% de la population angolaise (39 millions en 2025 selon UNFPA).",
+      "distributionByCountry": [
+        { "country": "AGO", "population": 9200000 },
+        { "country": "COD", "population": 30000 }
+      ]
+    },
+    "sources": [
+      "Ambundu – Wikipedia EN (https://en.wikipedia.org/wiki/Ambundu)",
+      "Mbundu – Encyclopaedia Britannica (https://www.britannica.com/topic/Mbundu)",
+      "Mbundu people – Africa 101 Last Tribes (https://www.101lasttribes.com/tribes/mbundu.html)",
+      "Kimbundu in Angola – Joshua Project (https://m.joshuaproject.net/people_groups/print/13154/AO)",
+      "Kimbundu languages – Wikipedia EN (https://en.wikipedia.org/wiki/Kimbundu_languages)",
+      "ISO 639-3 : kmb (Kimbundu) – SIL International / Ethnologue",
+      "UNFPA Angola Population 2025 (https://www.unfpa.org/data/world-population/AO)"
+    ]
+  }
+}

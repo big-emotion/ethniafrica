@@ -1,0 +1,98 @@
+{
+  "id": "PPL_BAFUTA",
+  "nameMain": "Bafut",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Bafut",
+      "selfAppellation": "Bɨfɨɨ (autonym en langue fut)",
+      "exonyms": [
+        "Bafut (forme utilisee par les administrateurs coloniaux britanniques et dans la litterature academique)",
+        "Fut (denomination de la langue)",
+        "Bufe ou Afughe (dialecte alternatif)"
+      ],
+      "originOfExonyms": "Le terme Bafut est la forme anglicisee utilisee depuis l'epoque coloniale allemande et britannique pour designer ce peuple et son territoire dans le Nord-Ouest Cameroun. L'autonym en langue locale est Bɨfɨɨ. Le terme Fut designe specifiquement la langue parlee par ce peuple.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Bafut est le terme courant utilise en anglais et en français dans le contexte camerounais. Le terme est officialise dans la denomination administrative de la Bafut Subdivision (sous-prefecture). Les locuteurs utilisent Bɨfɨɨ en langue vernaculaire.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantoid meridional — Grassfields de l'Est",
+      "historicalRegion": "Plateau de Bafut, Mezam Division, Region du Nord-Ouest (Cameroun) ; Grassfields occidentaux de la Vallee du Menchum",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Bafut du Plateau central (zone du palais du Fon, coeur dynastique)",
+      "Bafut de Tuba (sous-division de Tuba, dialecte Bufe)",
+      "Habitants de la Vallee du Menchum (26 quartiers le long de la Ring Road)",
+      "Nobles de la cour (fon, epouses royales, princes et princesses)",
+      "Roturiers (familles commoner assurant contrepoids au pouvoir du fon)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bafut tracent leurs origines dynastiques aux groupes Tikar ou Ndobo, venus des regions septentrionales du Cameroun actuel. Ces populations auraient migre vers le sud-ouest via les Grassfields orientaux, poussees notamment par les effets de la desertification du Sahara. Selon la tradition orale, le fondateur du royaume fut le premier Fon de Bafut (Firloo), qui etablit la chefferie sur le Plateau de Bafut. Certains historiens considerent que les Bafut sont une communaute composite formee de plusieurs groupes d'origines differentes.",
+      "formationPeriod": "La chefferie de Bafut s'est constituee il y a environ 300 a 700 ans, selon les traditions ethnohistoriques collectees par les administrateurs coloniaux britanniques. La dynaste en place a Bafut represente plus de 700 ans de succession. Le fondom (royaume) est organise en 26 quartiers (wards) repartis le long de la Ring Road sur une dizaine de kilometres.",
+      "migrationRoutes": [
+        "Migration depuis les regions nord du Cameroun (zones Tikar/Ndobo) vers le Plateau de Bafut via les Grassfields orientaux",
+        "Installation sur le Plateau de Bafut en raison de la fertilite des terres et du climat tempere favorable a l'agriculture"
+      ],
+      "historicalSettlementZones": [
+        "Plateau de Bafut (zone centrale du fondom, siege du palais)",
+        "Mezam Division, Tuba Subdivision (Nord-Ouest Cameroun)",
+        "Division de Metchum (region d'expansion)"
+      ],
+      "unificationsOrDivisions": "Le royaume de Bafut est l'un des plus puissants des Grassfields. Il est organise en fondom (chefferie-royaume) centralise sous l'autorite du Fon. La societe se divise entre la cour royale (Fon, epouses, princes et princesses concentres dans le quartier du Fon) et les roturiers. Les 26 quartiers sont des subdivisions administratives et communautaires. Des conflits internes entre le Fon et des sous-chefs ont periodiquement fragilise l'unite politique, notamment a l'epoque coloniale (crise de la peau de leopard, annees 1940-1950).",
+      "externalInfluences": "Guerres contre les Allemands et leurs allies a la fin du 19e siecle (Bafut Wars). Administration britannique (periode inter-guerre et post-1916) qui institutionnalisa le fon comme agent de l'administration indirecte. Introduction du christianisme (74 a 95% de chretiens aujourd'hui). Colonisation linguistique par l'anglais et le pidgin camerounais.",
+      "majorHistoricalEvents": "Fin 19e siecle : guerres contre les Allemands (Bafut Wars, 1891 et 1906-1907). 1916 : passage sous mandat britannique. Annees 1940-1950 : crise politique liee aux droits sur les animaux royaux (crise du leopard) entre le Fon et le sous-chef Talah. Post-independance : le Fon de Bafut est nomme par le Premier ministre camerounais et a le statut de fonctionnaire."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le fondom de Bafut est dirige par le Fon (chef suprême), dont les fonctions sont politiques, judiciaires, religieuses et sociales. Le Fon controle les relations exterieures, legifere, rend la justice en dernier ressort et offre des sacrifices aux ancetres. Il est considere comme la manifestation visible de l'autorite collective du peuple bafut. Son pouvoir est cependant tempere par le Kwifor, conseil des anciens non-royaux qui fonctionne comme executif et judiciaire en l'absence du Fon, verifiant ses decisions et assurant la transmission des ordres royaux. Le Kwifor est compose de membres hierarchises ayant atteint le rang bukum par ceremonies et paiements de droits eleves. La Takumbeng est une puissante association feminine qui intervient dans les crises politiques et sociales pour proteger la communaute.",
+      "clanOrganization": "La societe bafut est divisee en quartiers (wards) correspondant a des unites residentielles et administratives. Les lignages patrilineaires structurent l'organisation sociale et l'acces aux terres. La cour royale constitue un groupe distinct et privilegie, concentre autour du palais du Fon.",
+      "ageClassSystems": "Des societes secretes et des associations liees au rang (bukum, nkum) structurent la hierarchie sociale et l'acces au pouvoir. L'elevation dans ces hierarchies implique des ceremonies elaborate et des paiements importants. Les guerriers recevaient des titres symbolises par des plumes de porc-epic.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite et les droits sur la terre. La succession au trone suit un principe patrilineaire : seuls peuvent prendre la succession ceux nes sur la peau de leopard du Fon. Les grandes familles de roturiers participent a la gouvernance pour equilibrer le pouvoir absolu potentiel du Fon.",
+      "religiousAuthority": "Le Fon est le grand-pretre du fondom : il offre des sacrifices aux ancetres et intercede pour le bien-etre du peuple. Le Kwifor organise les rites et sacrifices communautaires. La Takumbeng joue un role rituel important dans les moments de crise. Le christianisme (catholique, protestant, eglises independantes) est aujourd'hui dominant (74-95% de la population)."
+    },
+    "languages": {
+      "mainLanguage": "Fut (Bafut)",
+      "isoCodes": ["bfd"],
+      "dialects": [
+        "Bafut (dialecte principal du Plateau de Bafut et Mezam Division)",
+        "Bufe / Afughe (dialecte de Tuba Subdivision)"
+      ],
+      "vehicularRole": "Le fut est parle par environ 100 000 a 151 000 personnes comme langue maternelle (Ethnologue 2009, Joshua Project 2025). Trente pour cent de la population lisant et ecrivant en fut. Dix ecoles et trente eglises soutiennent l'alphabetisation en fut. La plupart des locuteurs parlent egalement le pidgin camerounais et peuvent comprendre le Mankon, le Meta' ou le Mungaka. L'anglais est la langue officielle de la region."
+    },
+    "culture": {
+      "majorRites": "Abine-Mfor (festival annuel) : le plus grand festival de Bafut, celebrant la fin des recoltes et renouvelant l'allegeance au Fon. Il dure une semaine, centree sur la place du palais (Sani-Abin-Fo'o), commence le soir du marche Lika et inclut des danses traditionnelles en costumes elabores, musique de tambours et instruments a vent. Les societes secretes et le Kwifor defilent rituellement. Danse Mandele : creee par le guerrier Bukari, dansee en juin (de Yijong a Mumita'a) pour animer les guerriers lors des guerres d'expansion, puis reprise lors des festivites de coupe des herbes (renovation du toit de l'Achum sacre). Des libations sont versees aux ancetres pour une bonne recolte. Rites de mariage : les coupes a boire en corne d'animaux jouent un role central dans les libations et benedictions familiales lors des mariages traditionnels. Rites funeraires : honneur rendu aux ancetres par offrandes, sacrifices, festins et reunions familiales lors des deces de membres importants.",
+      "symbols": "Lion : symbole supreme de l'autorite du Fon, inscrit a l'entree des chambres interieures du palais. Python : animal royal, sa peau et sa bile sont remises au Fon et au Kwifor ; personne ne peut utiliser un python sans le presenter d'abord au palais. Leopard : animal royal par excellence ; sa peau est utilisee pour le lit de naissance des successeurs legaux (ne sur la peau de leopard), pour les ceintures royales (koo-mbuutee) et comme natte de pied pour le Fon. Elephant : sa queue sert de toque ceremonielle du Fon, sa defense de repose-pied lors des grandes ceremonies. Porcupic (porc-epic) : les epines sont le symbole du titre nobiliaire le plus eleve (nkum), seul le Fon peut les octroyer. Corne a boire : symbole de pouvoir familial et politique, utilisee dans tous les rites importants.",
+      "artsAndMusic": "Danse Abin-fo'o (ou Mbinfo'o, danse du Fon) : danse royale executee au festival annuel par la cour. Danse Mandele : danse guerriere accompagnee de flutes et tambours, dominee par les melodies inspirees des chants d'oiseaux du fleuve Muchwine. Tambours et instruments a vent traditionnels accompagnant toutes les ceremonies. Artisanat : poterie, tissage, travail du cuir. Architecture traditionnelle : le palais royal de Bafut avec ses batiments sacres (Achum), ses pierres tombales de nobles et ses espaces rituels est classe au patrimoine historique et culturel. Le palais represente une dynaste de plus de 700 ans.",
+      "spiritualities": "Avant la christianisation, les Bafut pratiquaient un systeme de croyances ancetral centre sur le culte des ancetres royaux et des esprits de la nature. Le Fon agissait comme grand-pretre intercedant aupres des ancetres. Aujourd'hui le christianisme est majoritaire (74-95% de la population, divise entre catholiques, protestants et eglises independantes). Le Nouveau Testament a ete traduit en langue bafut. Des croyances animistes et ancestrales perdurent dans les rituels royaux et communautaires, notamment lors du festival Abine-Mfor et des ceremonies du Kwifor."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le fondom de Bafut est historiquement l'un des royaumes les plus puissants des Grassfields camerounais. La dynaste remonte a plus de 700 ans et le Fon est qualifie de lion de toutes les generations. Bafut est divise en 26 wards sur un axe de 10 km le long de la Ring Road, avec des forets royales reservees (koohmfor) dans l'ensemble du territoire.",
+      "relationsWithNeighbors": "Les Bafut ont entretenu des relations commerciales, diplomatiques et conflictuelles avec les peuples voisins des Grassfields (Mankon, Meta', Mungaka notamment). Le fondom de Bafut etait l'un des plus redoutables de la region, controlant d'importants axes commerciaux. Sous l'administration britannique, le Fon de Bafut fut integre comme agent de la politique d'administration indirecte.",
+      "conflictsOrAlliances": "Guerres contre les Allemands a la fin du 19e siecle (campagnes de 1891 et 1906-1907, Bafut Wars). Incorporation sous mandat britannique en 1916. Crises internes liees aux prerogatives royales sur les animaux sauvages (leopard, python, buffle, elephant) au cours des annees 1940-1950. Ces conflits ont destabilise le systeme politique du fondom.",
+      "diaspora": "Des communautes bafut sont presentes dans les grandes villes camerounaises (Douala, Yaounde, Bafoussam) ainsi que dans la diaspora camerounaise en Europe et en Amerique du Nord. Les Bafut de la diaspora maintiennent des liens avec le palais royal et participent aux celebrations du festival Abine-Mfor, dont certaines editions attirent des membres de la communaute revenus du monde entier."
+    },
+    "demography": {
+      "totalPopulation": 151000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 151 000 locuteurs bafut au Cameroun. Webonary (SIL) : 100 000 locuteurs en 2009. Ethnologue (bfd) : 100 000 locuteurs en 2009. Les chiffres recents de Joshua Project (2025) constituent la meilleure estimation disponible pour 2025. La Bafut Subdivision (sous-prefecture administrative) correspond grossierement au territoire ethnique.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 151000,
+          "note": "Principalement Mezam Division (Bafut Subdivision, Tuba), Division de Metchum, Region du Nord-Ouest Cameroun"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bafut people. https://en.wikipedia.org/wiki/Bafut_people",
+      "Wikipedia EN — Fut language. https://en.wikipedia.org/wiki/Fut_language",
+      "SIL Webonary — Bafut Dictionary Introduction. https://www.webonary.org/bafut/overview/introduction/",
+      "Joshua Project — Fut, Bafut in Cameroon. https://joshuaproject.net/people_groups/11781",
+      "Ethnologue — Bafut language (bfd). https://www.ethnologue.com/language/bfd/",
+      "Suh Hillary Sama — The Abin-fo'o and the Mandele Dances in the Bafut Kingdom. African Way, 2021. https://africanway.world/bwc/wp-content/uploads/2022/03/Sama_2021_The-Abin-foo-and-The-Mandele-Dances-in-the-Bafut-Kingdom.pdf",
+      "Qiraat Africa — The Bafut Chiefdom, Cameroon. https://qiraatafrican.com/en/19438/the-bafut-chiefdom-cameroon/",
+      "SCIRP — Power, Symbolism and Conflict in Bafut, Cameroon. https://www.scirp.org/journal/paperinformation?paperid=120176",
+      "DiCarlo & Neba — The So-Called Royal Register of Bafut within the Bafut Language. University of Buffalo. https://www.acsu.buffalo.edu/~pierpaol/RL_03_DiCarloNeba-RoyalBafut.pdf"
+    ]
+  }
+}

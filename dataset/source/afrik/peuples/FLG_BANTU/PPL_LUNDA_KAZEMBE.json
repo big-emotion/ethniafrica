@@ -1,0 +1,106 @@
+{
+  "id": "PPL_LUNDA_KAZEMBE",
+  "nameMain": "Lunda-Kazembe",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB", "COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Lunda-Kazembe",
+      "selfAppellation": "Luba-Lunda (ou Lunda de l'Est / Eastern Lunda)",
+      "exonyms": [
+        "Kazembe-Lunda",
+        "Eastern Lunda",
+        "Lunda Luapula",
+        "Luba-Lunda-Kazembe",
+        "Casembe (forme portugaise)",
+        "Kasembe"
+      ],
+      "originOfExonyms": "Le nom Kazembe est a la fois le titre du roi (Mwata Kazembe, equivalent de 'Paramount Chief' ou 'Roi') et le nom du royaume. Mwata etait initialement un titre militaire equivalent a 'General'. Les explorateurs et comercants portugais du XVIIIe-XIXe siecle l'ecrivirent Casembe ou Kasembe. Le terme 'Lunda de l'Est' (Eastern Lunda) distingue ce groupe du Lunda de l'Ouest (Lunda, Northwest) base en Zambie nord-occidentale et en Angola.",
+      "whyProblematic": "La designation Lunda-Kazembe peut etre confondue avec les Lunda de l'Ouest (Kanongesha-Lunda, Ishindi-Lunda). Bien que partageant des origines Luba-Lunda communes, le Kazembe constitue un royaume distinct, adopta la langue Bemba et developpa une culture propre. Sur le plan linguistique, les habitants parlent le Bemba, non le Lunda.",
+      "contemporaryUsage": "Le terme Lunda-Kazembe ou Kazembe-Lunda est utilise dans les documents officiels zambiens, dans le recensement et les etudes ethnographiques. Le Mwata Kazembe demeure Paramount Chief de la vallee de Luapula. Le festival annuel Mutomboko (fin juillet) perpetue l'identite culturelle.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu du Centre-Sud, branche Luba-Lunda orientale",
+      "historicalRegion": "Vallee de la Luapula et rive sud du Lac Mweru, Province de Luapula (Zambie nord-est) et Katanga meridional (RDC)",
+      "currentCountries": ["ZMB", "COD"]
+    },
+    "ethnicities": [
+      "Luba-Lunda (noblesse fondatrice)",
+      "Shila (peuple autochtone assimile)",
+      "Bwile (groupe assimile)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Lunda-Kazembe descendent d'une aristocratie Luba-Lunda venue du royaume central de Mwata Yamvo (Mwaant Yav), situe a environ 300 km a l'ouest de la Luapula dans l'actuelle RDC. Vers 1740, le premier Mwata Ng'anga Bilonda quitta le royaume Luba-Lunda en poursuite d'un meurtrier (Mutanda), accompagne de guerriers. Apres avoir traverse vers l'est, Mwata Kazembe II Kanyembo Mpemba traversa la riviere Luapula et conquit les Shila indigenes de la vallee.",
+      "formationPeriod": "Vers 1740 (fondation) - 1805 (apogee). Le royaume fut etabli rapidement grace a la superiorite militaire (armes a feu importees via les Portugais d'Angola) et a une politique d'assimilation des populations conquises, permettant aux autochtones de continuer leur mode de vie sous reserves du paiement de tributs.",
+      "migrationRoutes": [
+        "Royaume Luba-Lunda de Mwata Yamvo (Katanga, RDC) vers l'est",
+        "Traversee de la riviere Mukelweji",
+        "Migration sous Mwata Kazembe II vers la vallee de la Luapula (traversee de la riviere Luapula au niveau de Matanda)",
+        "Extension vers le Katanga occidental (riviere Lualaba) et vers l'est (pays Luba-Bemba)"
+      ],
+      "historicalSettlementZones": [
+        "Vallee de la riviere Luapula (Province de Luapula, Zambie)",
+        "Rive sud du Lac Mweru et Lagon de Mofwe",
+        "Mwansabombwe (ancien Kazembe Village, capitale actuelle du Mwata Kazembe)",
+        "Kanyembo (ancienne capitale visitee par Livingstone en 1867-1868)",
+        "Region du Katanga meridional, RDC (rive occidentale de la Luapula)"
+      ],
+      "unificationsOrDivisions": "Le royaume de Kazembe integra par assimilation les Shila (peuple de peche autochtone de la vallee de la Luapula) et d'autres groupes. Les aristocrates Lunda et Luba furent etablis comme chefs sur les populations conquises. En 1894, la vallee de la Luapula fut divisee entre la Rhodesie du Nord-Est britannique (rive est de la Luapula et du Lac Mweru) et l'Etat Independant du Congo de Leopold II (rive ouest), separant ainsi le royaume traditionnel.",
+      "externalInfluences": "Influence Luba sur les structures politiques et ceremoniales (modele luba de chefferie ceremonielle). Contacts avec les Portugais: expedition de Francisco de Lacerda (1798) et d'Antonio Gamitto (1831). Commerce d'ivoire et d'esclaves avec les Portugais d'Angola et les marchands arabes et swahili de la cote est. Infiltration des Yeke sous Chef Msiri qui s'empara des regions cupriferes du Katanga, coupant le lien avec le royaume Lunda de l'Ouest. Colonisation britannique (BSAC) a partir de 1894. Missions chretiennes etablissant ecoles et hopitaux dans la vallee de la Luapula.",
+      "majorHistoricalEvents": "Vers 1740: fondation par Ng'anga Bilonda (Mwata Kazembe I). Vers 1740-1760: conquete du territoire sous Mwata Kazembe II Kaniembo, extension la plus grande. 1798: visite de l'explorateur portugais Francisco de Lacerda. 1805: apogee du pouvoir sous Mwata Kazembe IV Kibangu Keleka (reigne 1805-1850), qui encourage les contacts avec les commercants portugais. 1831: visite d'Antonio Gamitto. 1867-1868: visite de David Livingstone. Annees 1880-1890: affaiblissement par les conflits de succession et les attaques yeke et swahili. 1890: destruction du royaume par les tribus orientales. 1894: division coloniale de la vallee. 1971: inauguration du festival Mutomboko dans sa forme actuelle par Mwata Kazembe XVII Paul Kanyembo Lutaba."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie traditionnelle hierarchisee suivant le modele Luba. Le Mwata Kazembe est le Paramount Chief (equivalent de roi). Sous lui, quatre Senior Chiefs: Lukwesa, Kashiba, Kambwali et Kanyembo, nommes dans la famille royale. Des chefs subordonnes et des chefs de village constituent les echelons inferieurs. En periode coloniale, le Mwata dirigeait une 'Superior Native Authority' (Lunda Native Authority / LNA), la plus grande et dominante autorite native de la vallee Luapula-Mweru. Le Mwata gouverne avec un conseil de conseillers appeles 'cabinet'.",
+      "clanOrganization": "La noblesse Luba-Lunda constitue le clan dominant. Le systeme de succession suit a la fois des elements matrilineaires (pour la royaute, tradition luba) et patrilineaires dans certaines branches. Les populations Shila assimilees conserverent leurs structures claniques sous autorite Lunda. La succession au titre de Mwata se fait parmi les Senior Chiefs, l'un d'eux pouvant etre promu au titre supreme apres la mort du roi.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages royaux Luba-Lunda determinent l'acces aux positions de pouvoir. Les lignages des Senior Chiefs fournissent les candidats au titre de Mwata Kazembe. Les populations autochtones assimilees (Shila) maintiennent leurs propres structures lignageres mais sous autorite du Mwata.",
+      "religiousAuthority": "Le Mwata Kazembe detient une autorite spirituelle et ceremoniale. Le festival Mutomboko est la principale manifestation de cette autorite: il commemore les migrations Luba-Lunda et la conquete de la vallee de la Luapula, incluant des danses symboliques. Des rituels ancestraux Luba sont preserves. La tradition Luba de chefferie ceremonielle est maintenue."
+    },
+    "languages": {
+      "mainLanguage": "Bemba (Chibemba)",
+      "isoCodes": ["bem"],
+      "dialects": [
+        "Chibemba dialecte de la vallee de la Luapula",
+        "Kiluba-Chibemba (forme mixte historique)"
+      ],
+      "vehicularRole": "Bien que d'origine Luba-Lunda, les Kazembe adoprerent la langue Bemba, a laquelle ils etaient allies lors de leur migration depuis le Congo. Le chibemba est aujourd'hui la langue de la communaute Lunda-Kazembe et sert de vehiculaire majeur dans toute la Province de Luapula et une grande partie de la Zambie. L'anglais est la langue officielle. Le terme 'Kiluba-Chibemba' est utilise historiquement pour decrire la langue des Lunda-Kazembe."
+    },
+    "culture": {
+      "majorRites": "Le festival Mutomboko est la principale ceremonie culturelle annuelle, tenu fin juillet a Mwansabombwe. Il attire jusqu'a 20,000 visiteurs, y compris le president de la Zambie. Le festival commemore les migrations des Luba-Lunda et la conquete de la vallee de la Luapula par les premiers chefs, incluant des danses traditionnelles symboliques. Des rituels d'installation du Mwata Kazembe maintiennent les traditions de succession royale.",
+      "symbols": "Les regalia royaux du Mwata Kazembe (trone, insignes de commandement). Les danses du Mutomboko symbolisant les migrations. La riviere Luapula et le Lac Mweru sont des elements identitaires centraux.",
+      "artsAndMusic": "Danses ceremoniales du Mutomboko transmettant l'histoire de la migration et de la conquete. Tradition orale et epique royale (griots de cour). Peche artisanale traditionnelle sur la Luapula et le Lac Mweru (heritage Shila integre). Artisanat du cuivre (territoire historiquement riche en ressources cupriferes).",
+      "spiritualities": "Croyances ancestrales Luba preservees dans les ceremonies royales. Influence musulmane via les routes commerciales arabes et swahili (XIXe siecle). Christianisation progressive via les missions protestantes et catholiques etablies dans la vallee de la Luapula au XXe siecle. La majorite des Lunda-Kazembe est chretienne aujourd'hui (environ 93% selon Joshua Project)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume de Kazembe fut le plus grand et le mieux organise des royaumes Luba-Lunda en Afrique centrale. A son apogee (vers 1800), il couvrait presque tout le Katanga (RDC actuelle) et le nord de la Zambie. Il controla un reseau complexe de tributs et de commerce inter-regional. Il y eut neuf rois portant le titre Kazembe. Le plus grand fut Kazembe II (vers 1740-1760) qui conquit l'essentiel du territoire. Kazembe IV (1805-1850) developpa le commerce avec les Portugais.",
+      "relationsWithNeighbors": "Commerce intense avec les Portugais d'Angola (via Mwata Yamvo) a l'ouest, et avec les Portugais et Arabes de la cote est (via le peuple Bisa comme intermediaires). Les cours du Mwata Kazembe etaient reconnues par les Luba-Lunda du Congo comme autorite juridique superieure. Relations de tribut avec les chefs de districts voisins. Tensions avec les Swahili et les Yeke qui affaiblirent le royaume dans les annees 1880.",
+      "conflictsOrAlliances": "Alliance avec les Portugais d'Angola pour l'acces aux armes a feu (facilitant les conquetes initiales). Commerce d'ivoire et d'esclaves avec les negociants portugais et arabes. Penetration des Yeke sous Msiri coupant le lien cuprifere avec le Lunda de l'Ouest. Affaiblissement du royaume par des conflits de succession internes et les attaques des tribus orientales (vers 1890). Division coloniale en 1894 entre la Grande-Bretagne et la Belgique.",
+      "diaspora": "Populations Luba-Lunda en RDC (rive ouest de la Luapula et Lac Mweru) qui demandaient au XIXe siecle a etre jugees par les tribunaux du Mwata Kazembe, reconnaissant son autorite au-dela des frontieres coloniales."
+    },
+    "demography": {
+      "totalPopulation": 262000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Lunda, Luapula in Zambia: 262,000, utilisant le Bemba comme langue principale). La ville de Mwansabombwe compte environ 50,000 habitants (capitale ceremonielle). Province de Luapula: environ 1,520,000 habitants (Joshua Project, 2025).",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 255000,
+          "note": "Province de Luapula, district de Mwansabombwe; vallee de la Luapula et Lac Mweru"
+        },
+        {
+          "country": "COD",
+          "population": 7000,
+          "note": "Rive occidentale de la Luapula, Katanga meridional"
+        }
+      ]
+    },
+    "sources": [
+      "Kazembe – Wikipedia EN (https://en.wikipedia.org/wiki/Kazembe)",
+      "Kazembe (Mwansabombwe) – Wikipedia EN (https://en.wikipedia.org/wiki/Kazembe_(Mwansabombwe))",
+      "Kazembe – Encyclopaedia Britannica (https://www.britannica.com/place/Kazembe)",
+      "Lunda Empire – Wikipedia EN (https://en.wikipedia.org/wiki/Lunda_Empire)",
+      "Luba-Lunda states – Encyclopaedia Britannica (https://www.britannica.com/place/Luba-Lunda-states)",
+      "Kazembe Lunda – Zambia's Traditional History (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/lunda/kazembe-lunda/)",
+      "Joshua Project – Lunda, Luapula in Zambia, 2025 (https://joshuaproject.net/countries/ZA)"
+    ]
+  }
+}

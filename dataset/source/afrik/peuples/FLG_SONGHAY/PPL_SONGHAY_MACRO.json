@@ -1,0 +1,128 @@
+{
+  "id": "PPL_SONGHAY_MACRO",
+  "nameMain": "Peuples Songhay (macro-groupe)",
+  "languageFamilyId": "FLG_SONGHAY",
+  "currentCountries": ["MLI", "NER", "BEN", "BFA", "NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Peuples Songhay (macro-groupe)",
+      "selfAppellation": "Ayneha (terme collectif natif, litteralement le peuple ou les gens)",
+      "exonyms": ["Songhai", "Songhay", "Sonrhai", "Songoy", "Songhoy"],
+      "originOfExonyms": "Le terme Songhay ou Songhai est un exonyme d'origine incertaine. Certains etymologistes le rattachent a la dynaste fondatrice Za (ou Zuwa), dont les descendants sont appeles Songhai (les descendants de Za). Les chronicqueurs arabes et berberes des 11e-16e siecles utilisaient diverses transcriptions (Sungay, Songhay, Sonrai). Les colons europeens ont adopte Songhai ou Songhay. Le terme natif est Ayneha.",
+      "whyProblematic": "Le terme Songhay designe a la fois un peuple, un empire historique et un ensemble linguistique. Il peut exclure les Zarma, qui constituent le plus grand sous-groupe mais se designent eux-memes differemment. Certains chercheurs utilisent Zarma-Songhay ou Zarma-Djerma pour le sous-groupe nigerian. La categorisation comme macro-groupe recouvre une diversite linguistique et historique importante.",
+      "contemporaryUsage": "Le terme Songhay est utilise en francais et en anglais pour designer l'ensemble des peuples parlant des langues songhay. Les sous-groupes les plus importants sont les Zarma (Niger occidental), les Songhay de Gao et Tombouctou (Mali), les Dendi (Benin, Niger, Nigeria) et les Humburi Senni (Mali, Burkina Faso). La population totale est estimee a plus de 6 millions de personnes.",
+      "linguisticFamily": "FLG_SONGHAY",
+      "ethnoLinguisticGroup": "Songhay (macro-groupe — famille linguistique Nilo-Saharienne contestee ou independante selon les linguistes)",
+      "historicalRegion": "Boucle du Niger : Gao, Tombouctou, Djenne (Mali actuel) ; Niger occidental (Niamey, Dosso, Tillabery) ; Benin septentrional ; nord Burkina Faso ; nord-ouest Nigeria",
+      "currentCountries": ["MLI", "NER", "BEN", "BFA", "NGA"]
+    },
+    "ethnicities": [
+      "Zarma (Djerma) — plus grand sous-groupe, Niger occidental, plus de 4 millions de personnes",
+      "Koyraboro Senni — Songhay de Gao et de la boucle du Niger au Mali, environ 400 000 locuteurs",
+      "Koyra Chiini — Songhay de Tombouctou et de l'ouest de la boucle du Niger (Mali), environ 250 000 locuteurs",
+      "Dendi — au sud-est du Niger, nord du Benin et nord-ouest du Nigeria",
+      "Humburi Senni — Songhay central de Hombori (Mali) et du Seno (Burkina Faso), environ 81 000 locuteurs",
+      "Wogo — sous-groupe des iles du Niger (Tillabery, Niger et Boura, Mali), quelques milliers",
+      "Kurtey — sous-groupe du Niger occidental, lies aux Zarma",
+      "Sorko — pecheurs songhay du fleuve Niger, surtout au Mali et au Niger"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples Songhay sont l'un des groupes les plus anciennement attestes de la boucle du Niger. Selon la chronique medievale Tarikh al-Sudan d'Al-Sadi (17e siecle), leur origine legendaire remonte a Za Alayaman (ou Dialliaman), qui aurait emigre du Yemen pour s'installer a Kukiya sur le Niger. Des recherches modernes attribuent leur presence dans la region au moins au 7e siecle de notre ere, quand Gao etait deja une cite commerciale importante. La dynastie Za (ou Zuwa) etait etablie a Kukiya et Gao avant l'an 800. Le roi Kossoi se convertit a l'islam au debut du 11e siecle, faisant de Gao la premiere capitale islamique de la region.",
+      "formationPeriod": "L'identite songhay comme entite politique majeure s'est formee avec l'emergence de la dynastie Sunni (ou Sonni) vers 1375, quand les Songhay se liberent de la tutelle de l'empire du Mali. Sous Sunni Ali Ber (r. 1464-1492), les Songhay fondent leur grand empire, absorbant Tombouctou (1468) et Djenne (1473). La victoire de Muhammad Ture (Askia Muhammad) sur Sunni Baru en 1493 inaugure la dynastie Askia, apogee de l'empire.",
+      "migrationRoutes": [
+        "Implantation ancienne dans la vallee du Niger moyen (Kukiya, Gao) — presence documentee avant le 7e siecle",
+        "Expansion vers l'ouest (Tombouctou, Djenne) sous Sunni Ali (1464-1492)",
+        "Expansion vers le nord (mines de sel de Taghaza) et vers l'est (Kano, Hausaland) sous Askia Muhammad",
+        "Dispersion apres 1591 : migrations vers le sud (Dendi au Benin) et vers le Niger actuel"
+      ],
+      "historicalSettlementZones": [
+        "Gao (Mali) — capitale historique de l'empire Songhay, fondee vers 800 CE",
+        "Tombouctou (Mali) — capitale intellectuelle et commerciale de l'empire",
+        "Djenne (Mali) — capitale commerciale du delta interieur du Niger",
+        "Niamey et Niger occidental (Niger) — zone des Zarma et Songhay nigeriens",
+        "Dosso et Dallol Bosso (Niger) — zone zarma historique",
+        "Nord du Benin (Malanville, Kandi) — zone dendi",
+        "Kebbi et Yobe (Nigeria) — zone des Zabermawa (Zarma du Nigeria)"
+      ],
+      "unificationsOrDivisions": "L'empire Songhay fut la grande unite politique de ce peuple. Apres sa chute en 1591, les Songhay se fragmenterent en de nombreuses chefferies autonomes. Les sous-groupes (Zarma, Dendi, Koyraboro, Humburi Senni) ont des histoires distinctes et parlent des dialectes partiellement intelligibles entre eux. La colonisation francaise (fin 19e siecle) les repartit entre le Soudan francais (Mali), le Niger et le Dahomey (Benin).",
+      "externalInfluences": "Contacts avec l'empire du Mali (domination 13e-14e siecles). Islamisation progressive depuis le 11e siecle. Contacts avec les Berberes et les caravanes trans-sahariennes. Invasion marocaine (1591) qui detruisit l'empire. Jihads du 19e siecle (Sokoto, Macina, Al-Hajj Umar). Colonisation francaise (1890s-1960). Independances du Mali et du Niger en 1960.",
+      "majorHistoricalEvents": "Vers 800 CE : fondation de Gao par la dynastie Za. 11e siecle : conversion a l'islam du roi Kossoi. 13e-14e siecles : domination de l'empire du Mali sur Gao. 1464-1492 : regne de Sunni Ali, fondation de l'empire Songhay, conquete de Tombouctou (1468) et de Djenne (1473). 1493 : prise du pouvoir par Askia Muhammad (Muhammad Ture), apogee de l'empire. 1497 : pelerinage celebre d'Askia Muhammad a La Mecque. 1591 : bataille de Tondibi (13 mars) — l'armee marocaine de Judar Pacha ecrase les troupes du dernier Askia Ishaq II grace a l'arme a feu. Pillage de Gao, Tombouctou et Djenne. Fin de l'empire Songhay en tant que puissance dominante. 18e-19e siecles : chefferies songhay fragmentees. 1890s : conquete coloniale francaise. 1960 : independances du Mali et du Niger."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "L'empire Songhay etait gouverne par un souverain absolu (Askia ou Sunni) assiste d'une administration centrale hierarchisee. Sous Askia Muhammad, l'empire fut divise en provinces (farima) dirigees par des gouverneurs nommes. Des ministres specialises gererent les finances, la justice, l'armee et le commerce. Les villes de Gao, Tombouctou et Djenne avaient leurs propres gouverneurs (mondyo). Apres 1591, les Songhay se reorganiserent en chefferies locales (koy) hereditaires, structures qui perdurent sous forme ceremonielle.",
+      "clanOrganization": "La societe songhay est structuree en castes hereditaires : les nobles (songhaiborai, classe dirigeante), les agriculteurs libres (gabey), les artisans (gabibi — forgerons, griots, tisserands, bouchers), et les captifs (horso). Les griots (jesere) sont les conservateurs de la memoire historique. Cette stratification etait particulierement developpee sous l'empire. Les artisans sont endogames.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent l'heritage des terres, des titres et des alliances matrimoniales. Les mariages entre cousins croises sont frequents. Le chef de famille (koy) gere le patrimoine collectif et represente le lignage dans les conseils. La transmission du pouvoir dans les chefferies est patrilineaire.",
+      "religiousAuthority": "L'imam dirige les prieres et arbitre en droit islamique (charia malekite). Les marabouts (alfa) jouent un role de mediateur et de guerisseur. Les zima sont des pretres des esprits holey, figures importantes de la religion syncreti practiquee par les Songhay depuis des siecles avant et apres l'islamisation. Tombouctou abrita l'universite islamique de Sankore, un centre majeur de la pensee islamique medievale."
+    },
+    "languages": {
+      "mainLanguage": "Langues songhay (famille linguistique, branche nilo-saharienne contestee ou independante)",
+      "isoCodes": ["dje", "ses", "khq", "hmb", "son"],
+      "dialects": [
+        "Zarma (dje) — le plus parle, plus de 6 millions de locuteurs, Niger occidental et Niamey",
+        "Koyraboro Senni (ses) — Songhay de Gao, environ 400 000 locuteurs, standard du songhay malien",
+        "Koyra Chiini (khq) — Songhay de Tombouctou, environ 250 000 locuteurs",
+        "Humburi Senni (hmb) — Songhay central de Hombori, environ 81 000 locuteurs",
+        "Dendi — dialecte du sud (Benin, Niger, Nigeria)",
+        "Wogo — dialecte des iles du Niger (Tillabery)"
+      ],
+      "vehicularRole": "Le zarma est la principale lingua franca du Niger occidental et de Niamey. Le koyraboro senni est le standard du songhay malien dans la region de Gao. Les langues songhay sont nationales (non officielles) au Niger et au Mali. Le francais reste la langue officielle dans les deux pays. L'ensemble des langues songhay est classe comme Nilo-Saharien par la majorite des linguistes, bien que la classification reste debattue."
+    },
+    "culture": {
+      "majorRites": "Ceremonies islamiques : Aid el-Kebir (Tabaski), Ramadan, Mawlid (Gamou). Rites de passage : circoncision masculine (ceremonie communautaire et festive), ceremonies de nommage (7e jour), mariage en plusieurs etapes. Ceremonies des esprits holey : yenendi (ceremonie de rafraichissement pour appeler la pluie), pratiquee surtout par les Zarma. Funerailles : inhumation rapide selon le rite islamique, condoleances collectives de trois jours avec repas communautaires. Fetes agricoles liees au calendrier de la saison des pluies (juin-novembre).",
+      "symbols": "L'empire Songhay et la ville de Gao sont les symboles historiques fondateurs. Le Tomb of Askia (Tombeau d'Askia Muhammad) a Gao, classe au patrimoine mondial de l'UNESCO, est le symbole architectural majeur. Le fleuve Niger (Issa Ber — le grand fleuve en songhay) est le symbole geographique et cosmologique central. Les pirogues de peche et les instruments des griots (gooje, garaya) symbolisent la culture materielle.",
+      "artsAndMusic": "Musique des griots (jesere) : epopees et genealogies accompagnees du gooje (violon monocorde), du garaya (luth a deux cordes) et du kuunde (calebasse renversee servant de tambour). Danse ceremoniale en cercle lors des fetes. Chants de possession (holey hori) lors des ceremonies des esprits. Architecture en banco (terre crue) des mosquees dans le style soudano-sahelien (Djenne, Tombouctou, Gao). Tissage de couvertures en bandes (blankets) a motifs geometriques. Broderie et artisanat du cuir. Poterie feminine.",
+      "spiritualities": "Islam sunnite malekite dominant dans tout le macro-groupe depuis l'empire (11e-16e siecles). Persistance de la religion des esprits holey : panteon d'esprits associes aux forces naturelles (Dongo — dieu du tonnerre, Harakoy — maitresse du fleuve, Moussa Gourma — esprit de la brousse). Les zima (pretres) et les jesere (griots rituels) animent les ceremonies de possession (holey hori). Croyance au mauvais oeil, aux amulettes coraniques, aux pouvoirs des marabouts. Syncretisme entre islam et pratiques ancestrales bien documente par les ethnologues Jean Rouch et Paul Stoller."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "L'empire Songhay (ca. 1375-1591) fut l'un des plus grands etats d'Afrique subsaharienne, s'etendant de l'embouchure du Senegal a l'est du Nigeria actuel. Fonde sur la domination de la boucle du Niger, il controlait les routes trans-sahariennes du sel, de l'or et des esclaves. Sous Sunni Ali (1464-1492) puis Askia Muhammad (1493-1528), il surpassa les empires du Ghana et du Mali en superficie et en richesse. Les villes de Gao, Tombouctou et Djenne etaient des centres de commerce et d'enseignement islamique de renommee mondiale, avec l'universite de Sankore accueillant des milliers d'etudiants venus du monde musulman.",
+      "relationsWithNeighbors": "L'empire entretint des relations diplomatiiques et commerciales avec le Maroc, l'Egypte et les cites-etats haoussa. Les Touareg furent alternativement allies et adversaires. Les Mossi du Burkina Faso menerent des raids reguliers sur les frontieres meridionales de l'empire. Les peuples peuls (Fulani) coexistaient comme eleveurs dans l'orbite de l'empire. Askia Muhammad fit la guerre aux Mossi, aux Touareg et aux sultanats haoussa pour etendre son empire.",
+      "conflictsOrAlliances": "Guerres de liberation contre l'empire du Mali (14e siecle). Conquetes de Sunni Ali : prise de Tombouctou (1468), siege de 7 ans de Djenne (1466-1473). Jihad d'Askia Muhammad contre les Mossi non-musulmans (1498). Bataille de Tondibi (13 mars 1591) : defaite decisive face aux arquebusiers marocains de Judar Pacha (force de 4 000 soldats avec 2 000 pistolets et 8 canons contre une armee songhay estimee a 30 000-80 000 hommes mais sans armes a feu). Pillage de Gao, Tombouctou et Djenne. Resistance du dernier Askia Nuh dans le Dendi jusqu'en 1610. Colonisation francaise (1890s).",
+      "diaspora": "Forte migration de travail vers les villes cotieres d'Afrique de l'Ouest depuis le 19e siecle : Ghana (Accra), Cote d'Ivoire (Abidjan), Nigeria (Lagos, Kano). Les Zarma du Niger sont particulierement connus pour leurs migrations commerciales saisonnieres vers la cote. Communautes significatives de la diaspora en France (region parisienne) et aux Etats-Unis."
+    },
+    "demography": {
+      "totalPopulation": 7000000,
+      "referenceYear": 2025,
+      "source": "Britannica 2026 : plus de 3 millions (estimation basse, excluant certains sous-groupes). Crystal Clear Translation 2024 : environ 4,92 millions de Zarma au Niger seuls. SIL Ethnologue : locuteurs de toutes les langues songhay combines (dje, ses, khq, hmb, dendi et autres) depasse 6 millions. Estimation totale macro-groupe 2025 : 6 a 7 millions incluant les communautes de diaspora.",
+      "distributionByCountry": [
+        {
+          "country": "NER",
+          "population": 5500000,
+          "note": "Majoritairement Zarma (21,2% de la population du Niger) et Songhay nigeriens dans les regions de Niamey, Dosso, Tillabery, Agadez"
+        },
+        {
+          "country": "MLI",
+          "population": 1000000,
+          "note": "Songhay de Gao, Tombouctou, Djenne, Koyra Chiini, Humburi Senni"
+        },
+        {
+          "country": "BEN",
+          "population": 200000,
+          "note": "Dendi dans le nord du Benin (Malanville, Kandi, Banikoara)"
+        },
+        {
+          "country": "NGA",
+          "population": 200000,
+          "note": "Zabermawa (Zarma du Nigeria) dans les Etats de Kebbi et Yobe"
+        },
+        {
+          "country": "BFA",
+          "population": 100000,
+          "note": "Humburi Senni (Songhay Gurma) dans la province du Seno et Zarma dans le nord"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Songhai Empire. https://en.wikipedia.org/wiki/Songhai_Empire",
+      "Wikipedia EN – Songhai people. https://en.wikipedia.org/wiki/Songhai_people",
+      "Wikipedia EN – Battle of Tondibi. https://en.wikipedia.org/wiki/Battle_of_Tondibi",
+      "Britannica – Songhai Empire. https://www.britannica.com/place/Songhai-empire",
+      "Hunwick, John O. Timbuktu and the Songhay Empire : Al-Sa'di's Ta'rikh al-Sudan down to 1613. Brill, 1999.",
+      "Kati, Mahmoud. Tarikh al-Fattash (Chronique du chercheur). Traduit par O. Houdas et M. Delafosse. Paris, 1913.",
+      "Stoller, Paul. Fusion of the Worlds : An Ethnography of Possession among the Songhay of Niger. University of Chicago Press, 1989.",
+      "SIL Ethnologue – Songhay languages. https://www.ethnologue.com/subgroup/300/",
+      "CIA World Factbook – Niger. https://www.cia.gov/the-world-factbook/countries/niger/",
+      "OpenStax World History Volume 2 – The Songhai Empire. https://openstax.org/books/world-history-volume-2/pages/3-2-the-songhai-empire"
+    ]
+  }
+}

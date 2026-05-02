@@ -1,0 +1,47 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="EthniAfrica / Introduction" />
+
+# EthniAfrica Design System
+
+Bienvenue dans le design system de **EthniAfrica**, l'atlas numérique des peuples africains.
+
+## Philosophie AFRIK
+
+Le design system reflète la méthodologie **AFRIK** — une approche décoloniale pour documenter les peuples, langues et familles linguistiques d'Afrique.
+
+La hiérarchie de données :
+
+```
+Famille Linguistique (FLG_xxxxx)
+  └── Langue (ISO 639-3)
+        └── Peuple (PPL_xxxxx)
+              └── Pays (ISO 3166-1 alpha-3)
+```
+
+## Identifiants AFRIK
+
+| Type | Format | Exemple |
+|------|--------|---------|
+| Familles linguistiques | `FLG_xxxxx` | `FLG_BANTU` |
+| Langues | ISO 639-3 | `swa`, `lin` |
+| Peuples | `PPL_xxxxx` | `PPL_YORUBA` |
+| Pays | ISO 3166-1 alpha-3 | `COM`, `ZAF` |
+
+## Palette Africaine
+
+Les couleurs du design system s'inspirent des terres et cultures africaines :
+
+- **Terracotta** — couleur principale, ocre rouge des terres africaines
+- **Gold** — accent, or des traditions et ornements
+- **Earth** — tons sombres, la profondeur des sols
+- **Ochre** — variante chaleureuse, cuivre et argile
+- **Sand** — backgrounds doux, sable du Sahara
+
+## Composants
+
+Naviguez dans la barre latérale pour explorer :
+
+- **UI** — composants de base (Button, Badge, Card, Input...)
+- **Charts** — graphiques démographiques (DemographicsChart)
+- **Design Tokens** — palette de couleurs et tokens système

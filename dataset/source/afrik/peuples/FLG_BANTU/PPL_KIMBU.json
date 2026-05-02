@@ -1,0 +1,75 @@
+{
+  "id": "PPL_KIMBU",
+  "nameMain": "Kimbu",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Kimbu",
+      "selfAppellation": "Akimbu",
+      "exonyms": ["Yanzi", "Kikimbu", "Ikibungu"],
+      "originOfExonyms": "Le terme Yanzi est utilise dans certaines sources anglophones comme nom alternatif. Kikimbu designe la langue, Ikibungu est une autre variante orthographique du nom du groupe.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Kimbu est utilise dans les sources academiques et missionnaires modernes pour designer ce groupe bantou de Tanzanie centrale. Akimbu est l'auto-designation du peuple.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou de Tanzanie centrale",
+      "historicalRegion": "Centre-Ouest de la Tanzanie",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Kimbu"],
+    "origins": {
+      "ancientOrigins": "Le peuple Kimbu est un groupe ethnolinguistique bantou originaire du district de Chunya dans la region de Mbeya, en Tanzanie. Comme la plupart des peuples bantous d'Afrique orientale, leurs ancetres font partie du grand mouvement de migration bantoue depuis l'Afrique centrale-occidentale vers l'est et le sud du continent.",
+      "formationPeriod": "La formation du groupe Kimbu en tant qu'entite distincte remonte probablement au premier millenaire de notre ere, dans le cadre des migrations bantoues vers la Tanzanie actuelle.",
+      "migrationRoutes": [
+        "Migration bantoue depuis l'Afrique centrale vers la Tanzanie centrale",
+        "Installation progressive dans les districts de Chunya (Mbeya), Manyoni (Singida) et Sikonge (Tabora)"
+      ],
+      "historicalSettlementZones": [
+        "District de Chunya, Region de Mbeya",
+        "District de Manyoni, Region de Singida",
+        "District de Sikonge, Region de Tabora"
+      ],
+      "unificationsOrDivisions": "Historiquement, les Kimbu ont eu un mode de vie semi-nomade, avec des communautes dispersees sur un vaste territoire et des liens laches plutot qu'une organisation politique centralisee.",
+      "externalInfluences": "Influence croissante du swahili comme langue vehiculaire depuis la periode coloniale. Presence de missions chretiennes ayant contribue a la christianisation du groupe.",
+      "majorHistoricalEvents": "Au cours du temps, de nombreux Kimbu ont adopte un mode de vie plus sedentaire base sur l'agriculture, abandonnant progressivement les anciens schemas de mobilite saisonniere."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation decentralisee, sans chefferie ou royaume centralise. Les communautes sont lachement connectees et dispersees sur de grands espaces.",
+      "clanOrganization": "Organisation clanique propre aux societes bantoues de Tanzanie centrale, avec des structures familiales etendues formant la base de l'organisation sociale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role important dans la transmission des terres, des traditions et de l'identite culturelle au sein des communautes Kimbu.",
+      "religiousAuthority": "Croyances traditionnelles melant le respect des ancetres et la croyance en des esprits pouvant influer sur la vie quotidienne. Aujourd'hui, autorites religieuses chretiennes coexistant avec les pratiques traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Kimbu",
+      "isoCodes": ["kiv"],
+      "dialects": [],
+      "vehicularRole": "Le kimbu est la langue maternelle utilisee au sein de la communaute. Le swahili sert de langue vehiculaire pour les communications exterieures. La transmission intergenerationnelle du kimbu s'affaiblit, de nombreux jeunes apprenant le swahili comme premiere langue."
+    },
+    "culture": {
+      "majorRites": "Traditions orales et vie communautaire fortes, particulierement chez les personnes agees. Rites de passage lies aux cycles de vie (naissance, initiation, mariage, mort). Pratiques rituelles liees aux ancetres et au monde des esprits.",
+      "symbols": null,
+      "artsAndMusic": "Traditions de contes oraux transmises de generation en generation. Chants et celebrations communautaires lors des moments importants de la vie sociale.",
+      "spiritualities": "Croyances traditionnelles fondees sur le respect des ancetres et la croyance en des esprits pouvant causer maladies et malheurs. Utilisation de talismans et pratiques de guerison traditionnelle. Le christianisme est la religion principale (75% de chretiens), mais de nombreux Kimbu integrent les croyances spirituelles locales dans leur pratique chretienne."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise documente. Organisation politique decentralisee avec des chefs locaux.",
+      "relationsWithNeighbors": "Relations avec les peuples voisins de la region de Mbeya, notamment les Bungu et d'autres groupes bantous de Tanzanie centrale-occidentale.",
+      "conflictsOrAlliances": null,
+      "diaspora": "Des Kimbu vivent dans les villes tanzaniennes, notamment du fait de la migration des jeunes vers les centres urbains pour l'education et l'emploi."
+    },
+    "demography": {
+      "totalPopulation": 256000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025), estimation basee sur les donnees de recensement tanzanien",
+      "distributionByCountry": [{ "country": "TZA", "population": 256000 }]
+    },
+    "sources": [
+      "Kimbu people – Wikipedia, 2006 (https://en.wikipedia.org/wiki/Kimbu_people)",
+      "Kimbu language – Wikipedia, 2011 (https://en.wikipedia.org/wiki/Kimbu_language)",
+      "Kimbu, Yanzi in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12691)",
+      "ISO 639-3 Language Code List – Wiktionary / Ethnologue (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
+      "Tribes of Tanzania – Tuko.co.ke, 2024 (https://www.tuko.co.ke/facts-lifehacks/guides/543850-list-tribes-tanzania-languages-home-regions/)"
+    ]
+  }
+}

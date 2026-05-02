@@ -1,0 +1,88 @@
+{
+  "id": "PPL_MASHI",
+  "nameMain": "Mashi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB", "AGO", "NAM"],
+  "content": {
+    "appellations": {
+      "mainName": "Mashi",
+      "selfAppellation": "Kwamashi",
+      "exonyms": ["Masi", "Kwamashi", "Mashi (Zambia)"],
+      "originOfExonyms": "Le terme Kwamashi est l'auto-designation du peuple (kwa signifiant 'le peuple de' en de nombreuses langues bantoues). Masi est la forme abregee utilisee dans les sources anglophones et les classifications ethnologiques.",
+      "whyProblematic": "A ne pas confondre avec Mashi (Nigeria), langue distincte de la famille Afro-Asiatique (code iso msh). Le Mashi de Zambie (code iso mho) est une langue bantoue.",
+      "contemporaryUsage": "Kwamashi est le terme utilise par la communaute elle-meme. Mashi est utilise dans les classifications officielles zambiennes et les sources academiqu.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu du Zambeze moyen, cluster Khoisan",
+      "historicalRegion": "Mashiland, district de Shang'ombo, Province Occidentale de Zambie ; province de Cuando Cubango (Angola)",
+      "currentCountries": ["ZMB", "AGO", "NAM"]
+    },
+    "ethnicities": ["Mashi", "Kwamashi"],
+    "origins": {
+      "ancientOrigins": "Peuple bantou du Zambeze moyen, indigene de la zone frontaliere entre le sud-ouest de la Zambie et le sud-est de l'Angola. Les Kwamashi sont des descendants des vagues de migration bantou parties du bassin du Congo il y a plusieurs siecles, qui ont suivi les vallees des rivieres Kuandu et Zambeze vers le sud-ouest.",
+      "formationPeriod": "L'identite ethnique Kwamashi se consolide probablement entre le XVIIe et le XIXe siecle dans la region appelee Mashiland, chevauchant la frontiere actuelle Zambie-Angola.",
+      "migrationRoutes": [
+        "Du bassin du Congo vers le sud-ouest en suivant la riviere Kuandu",
+        "Installation dans les plaines d'inondation du Kuandu et du Zambeze"
+      ],
+      "historicalSettlementZones": [
+        "District de Shang'ombo, Province Occidentale de Zambie",
+        "Province de Cuando Cubango, Angola (districts de Rivungu, Siumi, Mavinga)",
+        "Region du Caprivi, Namibie"
+      ],
+      "unificationsOrDivisions": "Le peuple Kwamashi est organise autour d'un systeme de chefferies multiples. Le chef paramount est Kaputungu, dont le palais Mbumba se trouve a Hekeviya, a 5 km au nord de la ville de Rivungu. D'autres chefferies sont : Masinda (seule au cote zambien), Mboma, Dishovi (Lishovi), Sandongo, Sikote et Kakumba ainsi que la cheftaine Manderena (toutes en Angola).",
+      "externalInfluences": "Influence des migrations saisonnieres dues aux crues de la riviere Kuandu qui modifient periodiquement les zones d'habitation. Influence coloniale britannique cote zambien, coloniale portugaise cote angolais. Influence chretienne contemporaine (missionnaires evangeliques notamment).",
+      "majorHistoricalEvents": "Etablissement dans Mashiland sous la conduite de chefs ancestraux. Partition de leur territoire par la frontiere coloniale Zambie-Angola. Traduction du Nouveau Testament en langue Mashi, connu sous le nom de Kwamashi New Testament Bible, evenement majeur pour la communaute."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies traditionnelles. Le chef paramount Kaputungu est la plus haute autorite. La gouvernance est repartie entre plusieurs chefs et cheftaines sur les territoires zambien et angolais. Les Kwamashi ont ete diriges par leurs propres chefs depuis leur installation dans Mashiland jusqu'a aujourd'hui.",
+      "clanOrganization": "Organisation clanique bantoue typique. Les familles sont regroupees en clans places sous l'autorite de chefs.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role central dans la transmission du pouvoir chiefly et dans l'organisation sociale. La chefferie se transmet selon les regles lignageres.",
+      "religiousAuthority": "Religion traditionnelle animiste encore presente, surtout en Angola. Presence chretienne importante en Zambie et en Namibie (Evangeliques). La religion catholique est presente en Angola (missionnaires)."
+    },
+    "languages": {
+      "mainLanguage": "Mashi (Kwamashi)",
+      "isoCodes": ["mho"],
+      "dialects": [],
+      "vehicularRole": "Langue vernaculaire utilisee principalement dans le district de Shang'ombo. L'anglais est la langue officielle de Zambie. Le mashi est aussi parle en Angola et en Namibie. Un Nouveau Testament a ete traduit en mashi, contribuant a la codification ecrite de la langue."
+    },
+    "culture": {
+      "majorRites": "Ceremonies liees au cycle des crues de la riviere Kuandu, qui determinent les migrations saisonnieres. Rites de passage et ceremonies traditionelles perpetuees par les communautes rurales.",
+      "symbols": "La riviere Kuandu et ses plaines d'inondation sont au coeur de l'identite culturelle Kwamashi, structurant leur economie et leurs modes de vie.",
+      "artsAndMusic": "La musique traditionnelle, les tambours et la danse jouent un role vital dans l'identite culturelle Kwamashi. Le peuple est egalement habile dans la vannerie, la poterie et la fabrication d'outils avec des materiaux locaux.",
+      "spiritualities": "Religion traditionnelle animiste (principale en Angola). Christianisme (Evangeliques en Zambie et Namibie, Catholiques en Angola). Traditions orales ancestrales preservees."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Systeme de chefferies traditionnelles dans le Mashiland. Chefferie principale : Kaputungu (chef paramount, Zambie). Chefferies subsidiaires en Angola : Mboma, Dishovi, Sandongo, Sikote, Kakumba, Manderena.",
+      "relationsWithNeighbors": "Peuple du Zambeze moyen en contact avec d'autres groupes bantoues de la province occidentale de Zambie (Lozi, Totela, Shanjo). Influence du Royaume Lozi historiquement dominant dans la region de Barotseland.",
+      "conflictsOrAlliances": "Partition du territoire Kwamashi par la frontiere coloniale Angola-Zambie, separant des communautes d'un meme peuple sous deux administrations coloniales differentes (britannique et portugaise). Cette division persiste aujourd'hui.",
+      "diaspora": "Presence en Namibie (environ 400 personnes, Joshua Project 2025) liee aux migrations de la region frontaliere du Caprivi."
+    },
+    "demography": {
+      "totalPopulation": 47300,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Zambie : 41 000, Angola : 5 900, Namibie : 400)",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 41000,
+          "note": "District de Shang'ombo, Province Occidentale"
+        },
+        {
+          "country": "AGO",
+          "population": 5900,
+          "note": "Provinces de Cuando Cubango (Rivungu, Siumi, Mavinga)"
+        },
+        { "country": "NAM", "population": 400, "note": "Region du Caprivi" }
+      ]
+    },
+    "sources": [
+      "Joshua Project – Masi in Zambia, 2025 (https://joshuaproject.net/people_groups/13569/ZA)",
+      "Joshua Project – Mashi (Zambia) language resources (https://joshuaproject.net/languages/mho)",
+      "Kwamashi Community – mashibible.com (https://mashibible.com)",
+      "PeopleGroups.org – Mashi of Zambia (https://peoplegroups.org/people_groups/pg015606/)",
+      "Lughayangu – Mashi language dictionary (https://lughayangu.com/mashi)",
+      "ISO 639-3 – Mashi (Zambia) code mho (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)"
+    ]
+  }
+}

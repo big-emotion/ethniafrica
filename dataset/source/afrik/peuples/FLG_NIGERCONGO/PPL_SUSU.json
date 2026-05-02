@@ -1,0 +1,117 @@
+{
+  "id": "PPL_SUSU",
+  "nameMain": "Susu",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GIN", "SLE", "GNB"],
+  "content": {
+    "appellations": {
+      "mainName": "Susu",
+      "selfAppellation": "Soso (auto-désignation) / Susu",
+      "exonyms": [
+        "Soussou (français, utilisé en Guinée)",
+        "Soso (variante orthographique courante)",
+        "Sosso (ancienne orthographe, référence à l'Empire Sosso médiéval)",
+        "Sousou (variante francophone)",
+        "Susso (Sierra Leone)"
+      ],
+      "originOfExonyms": "Le terme Susu/Soso est l'auto-désignation du peuple. Les variantes orthographiques reflètent les différences entre les traditions coloniales française (Soussou, Soso) et britannique (Susu, Susso) de transcription. Le lien avec l'Empire Sosso médiéval (capitale Soso, région de Koulikoro, Mali actuel) est historiquement revendiqué.",
+      "whyProblematic": null,
+      "contemporaryUsage": "En Guinée, Soussou et Soso sont tous deux utilisés. En Sierra Leone, Susu et Susso sont préférés. Le terme Susu est la forme internationale standardisée utilisée par l'Ethnologue (code sus) et la plupart des références académiques.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Mandé occidental (sous-groupe Soninke-Bozo de la famille Mandé)",
+      "historicalRegion": "Côte de Guinée (Conakry, Coyah, Forécariah, Kindia, Dubréka) et Fouta Djallon (Guinée Moyenne)",
+      "currentCountries": ["GIN", "SLE", "GNB"]
+    },
+    "ethnicities": [
+      "Susu de la côte guinéenne (Conakry, Dubréka, Coyah, Forécariah)",
+      "Susu de Kindia (région de Kindia, intérieur de la Guinée)",
+      "Susu du Fouta Djallon (présence ancienne dans le plateau)",
+      "Susu de la Sierra Leone (district de Kambia, nord-ouest)",
+      "Susu de la Guinée-Bissau (petites communautés frontalières)",
+      "Yalunka (peuple étroitement apparenté, parfois considéré comme branche susu)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Susu sont d'origine manding, descendants d'une section du peuple soninke qui migra hors de l'empire de Wagadou (Ghana antique). Ils étaient initialement un clan de forgerons qui refusèrent de se convertir à l'islam lors du déclin de l'empire du Ghana. Ils sont étroitement liés à l'Empire Sosso médiéval (XIIe-XIIIe siècle) dont le roi le plus célèbre fut Sumanguru Kanté (Soumaoro Kanté), qui domina les Mandé avant d'être vaincu par Soundiata Keïta à la bataille de Kirina (1235).",
+      "formationPeriod": "Au XIIe siècle, lors du déclin de l'empire du Ghana, les Susu migrèrent vers le sud et établirent leur capitale à Soso dans la région montagneuse de Koulikoro (Mali actuel). Après la domination de l'empire du Mali (XIIIe siècle), ils continuèrent à migrer vers l'ouest au XVe siècle, à mesure que l'empire du Mali se désintégrait, s'installant dans le Fouta Djallon (plateau central de la Guinée). Au XVIIIe siècle, l'invasion des Fula (Peul) qui imposèrent un État théocratique islamique (Imamat du Fouta Djallon, à partir de 1727) chassa les Susu vers les plaines côtières où ils assimilèrent des peuples nalu, baga et landouma.",
+      "migrationRoutes": [
+        "Migration hors de Wagadou (empire du Ghana antique) vers le sud (XIe-XIIe siècle)",
+        "Établissement dans la région de Soso / Koulikoro (Mali actuel, XIIe siècle)",
+        "Migration vers le Fouta Djallon (plateau de Guinée, XVe siècle)",
+        "Expulsion vers les plaines côtières de Guinée sous la pression des Fula (XVIIIe siècle)",
+        "Extension vers le nord de la Sierra Leone (district de Kambia)"
+      ],
+      "historicalSettlementZones": [
+        "Fouta Djallon (plateau central de la Guinée, ancienne zone)",
+        "Basse-Guinée côtière (Conakry, Dubréka, Coyah, Forécariah, Kindia)",
+        "Région de Kindia (intérieur guinéen)",
+        "District de Kambia (Sierra Leone septentrionale)",
+        "Petites communautés en Guinée-Bissau et au Sénégal"
+      ],
+      "unificationsOrDivisions": "Les Susu n'ont jamais formé un État unifié mais des chefferies indépendantes. Les chefferies historiques de Dubréka et Kindia étaient les plus importantes. Le manga (chef) Balé Demba de Dubréka, descendant de Soumba Toumany (fondateur du Royaume de Dubréka), signa un accord de protectorat avec la France en 1880. La séparation entre Susu et Yalunka (peuple cousin) fut causée par l'invasion fula du XVIIIe siècle.",
+      "externalInfluences": "Empire du Mali (XIIIe siècle) : domination après la défaite de Sumanguru Kanté. Invasion fula et création de l'Imamat du Fouta Djallon (à partir de 1727) : jihads et raids d'esclaves conduisant à la conversion des Susu à l'islam et à leur migration côtière. Contact avec les explorateurs portugais (XVe-XVIe siècles). Colonisation française : protectorat de Guinée (1880), puis colonie (1898). Indépendance de la Guinée (1958) sous Sékou Touré (lui-même d'origine mandingue).",
+      "majorHistoricalEvents": "XIIe siècle : empire Sosso fondé à Soso. 1235 : défaite de Sumanguru Kanté à Kirina par Soundiata Keïta ; fin de l'empire Sosso. XVe siècle : migration vers le Fouta Djallon. 1727 : début de l'Imamat du Fouta Djallon par les Fula (Alfa Ibrahim Sambegou). XVIIIe siècle : conversion progressive des Susu à l'islam sous pression fula. 1880 : accord de protectorat avec la France (Dubréka). 1898 : colonie française de Guinée. 1958 : indépendance de la Guinée sous Sékou Touré."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies patrilinéaires dirigées par un manga (chef). Les chefferies de Dubréka et Kindia étaient les plus influentes. Le manga exerçait une autorité politique et religieuse. La société est structurée par un système de castes (nyamakala/naxamala) similaire aux autres peuples mandé : nobles/paysans libres, artisans spécialisés (forgerons, cordonniers, bijoutiers, griots/yeliba), et anciennement des captifs.",
+      "clanOrganization": "Société patrilinéaire avec des patronymes claniques. Les grands patronymes incluent : Conté, Yansané, Fofana, Sylla/Sillah, Soumah, Kouyaté, Bangoura/Bangura, Kanté, Samoura/Samura, Touré, Camara/Kamara. Les mariages sont arrangés au sein des familles étendues, avec préférence pour les cousins croisés.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires (kabila) structurent l'identité sociale, les droits fonciers et les alliances matrimoniales. La polygynie (jusqu'à 4 épouses selon la tradition islamique) est pratiquée. Les femmes ont leur propre case/pièce près de celle du mari.",
+      "religiousAuthority": "L'autorité religieuse est exercée par les imams et les oulémas islamiques. L'islam sunnite (malékite) domine : plus de 99% des Susu se déclarent musulmans. Les marabouts jouent un rôle important dans la vie spirituelle quotidienne. La société secrète Bondo (ou Sande) pour les femmes reste influente dans l'initiation féminine."
+    },
+    "languages": {
+      "mainLanguage": "Susu (Sosso)",
+      "isoCodes": ["sus"],
+      "dialects": [
+        "Susu de la côte (dialecte de Conakry et de la Basse-Guinée)",
+        "Susu de Kindia (variété de l'intérieur)",
+        "Yalunka (langue cousine, parfois considérée comme dialecte susu)"
+      ],
+      "vehicularRole": "Le susu est la troisième grande langue de Guinée après le fula (pular) et le malinké. Il sert de langue commerciale majeure dans la région de Conakry et sur la côte guinéenne depuis des siècles. L'Ethnologue (SIL) lui attribue le code sus. Il est l'une des langues nationales de Guinée. En Sierra Leone, il est parlé dans le district de Kambia. La population de locuteurs susu est estimée à environ 2,5 millions en Guinée (Joshua Project, 2025)."
+    },
+    "culture": {
+      "majorRites": "Initiation féminine par la société secrète Bondo (aussi appelée Sande) : les jeunes filles sont initiées aux responsabilités de l'âge adulte, à la fertilité, à la morale et à la sexualité ; elles restent membres à vie de la société. Cérémonies islamiques : Eid al-Fitr (Tabaski) et Eid al-Adha, célébrées avec habits traditionnels de bazin, prières collectives et festins. Cérémonie du mariage traditionnel : arrangements familiaux, dot (bride price), cérémonies de plusieurs jours avec musique, danse et festins. Rites funéraires islamiques : lavage et inhumation rapide, prière funéraire collective, condoléances. Cérémonies de bénédiction des rizières avant les semailles.",
+      "symbols": "Balafon (xylophone à calebasses, instrument emblématique de la culture mandé occidental lié aux griots susu/malinké ; la Guinée avec la communauté susu est l'un des principaux espaces du balafon en Afrique de l'Ouest). Kora et djembé (instruments présents dans les cérémonies). Bazin (tissu brodé porté lors des grandes occasions islamiques). Tissu bogolan teint à l'argile. Le fer (héritage historique du clan de forgerons originels).",
+      "artsAndMusic": "Balafon : xylophone à calebasses résonantes, instrument central de la musique traditionnelle mandé, joué par les griots (yeliba) susu lors de cérémonies, mariages et fêtes. Djembé et dunun (tambours de bassin) : présents dans toutes les cérémonies. Kora (harpe-luth à 21 cordes). Griotisme (yeliba) : tradition orale des griots qui conservent les généalogies, l'histoire et les chants de louange ; les griots forment une caste héréditaire. Danse traditionnelle : danses collectives lors des mariages, initiations, fêtes islamiques. Artisanat : tissage de coton (bazin), poterie, forge, tressage de paniers, sculpture. Cuisine : riz (aliment de base), ragout d'arachides, fruits tropicaux (mangues, ananas, noix de coco).",
+      "spiritualities": "Islam sunnite malékite dominant : plus de 99% des Susu sont musulmans, convertis sous la pression de l'imamat fula du Fouta Djallon aux XVIIe-XVIIIe siècles. Pratiques islamiques localisées : maraboutisme, port d'amulettes coraniques, recours aux talismans pour protection. Syncrétisme résiduel : croyances animistes pré-islamiques persistent dans les rituels de la terre, le culte des ancêtres et la société Bondo. Les masques Bondo (société secrète féminine) représentent l'autorité féminine sacrée et la fertilité."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Empire Sosso (XIIe-XIIIe siècle) : le plus grand état historique associé aux Susu, fondé vers 1180 et dirigé par Sumanguru Kanté (Soumaoro Kanté). Il domina les Mandé après le déclin du Ghana jusqu'à sa défaite à Kirina (1235) face à Soundiata Keïta. Chefferies côtières : Royaume de Dubréka (chef Soumba Toumany puis Balé Demba, protectorat français 1880), Chefferie de Kindia (chef Morlaye Sylla, fin XIXe siècle). Domination du littoral nord de la Sierra Leone.",
+      "relationsWithNeighbors": "Relations tendues et conflictuelles avec les Fula (Peul) du Fouta Djallon qui imposèrent leurs jihads et raids d'esclaves (XVIIIe siècle), forçant la conversion et la migration des Susu. Parenté historique avec les Yalunka (séparés par les Fula). Relations commerciales avec les Malinké/Mandingue voisins. Contacts avec les Temne et Baga de Sierra Leone. Commerce côtier avec les Portugais et Britanniques (XVe-XIXe siècles).",
+      "conflictsOrAlliances": "1235 : défaite de l'Empire Sosso à Kirina. XVIIIe siècle : résistance puis soumission aux jihads fula de l'Imamat du Fouta Djallon. XIXe siècle : les Susu cherchèrent le soutien français pendant les guerres Temne en Sierra Leone. 1880-1882 : protectorats français signés (Dubréka, Kindia). Résistance à la colonisation française dans les années 1890.",
+      "diaspora": "Communautés susu présentes à Conakry (capitale guinéenne, où ils constituent la population urbaine majoritaire), dans les grandes villes guinéennes. Diaspora internationale en France (Île-de-France, communauté guinéenne), en Espagne, au Portugal et en Amérique du Nord."
+    },
+    "demography": {
+      "totalPopulation": 2700000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 2 585 000 en Guinée. Guinée représente environ 15% de la population nationale (estimation ISS Africa 2023 : population totale Guinée 14,4 millions). Estimation complémentaire Sierra Leone + Guinée-Bissau.",
+      "distributionByCountry": [
+        {
+          "country": "GIN",
+          "population": 2585000,
+          "note": "Troisième groupe ethnique de Guinée (~15% de la population), majoritaires sur la côte et à Conakry"
+        },
+        {
+          "country": "SLE",
+          "population": 100000,
+          "note": "Principalement dans le district de Kambia (nord-ouest de la Sierra Leone)"
+        },
+        {
+          "country": "GNB",
+          "population": 20000,
+          "note": "Petites communautés dans les régions frontalières avec la Guinée"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Susu people. https://en.wikipedia.org/wiki/Susu_people",
+      "101 Last Tribes — Susu people. https://www.101lasttribes.com/tribes/susu.html",
+      "Joshua Project — Susu in Guinea. https://www.joshuaproject.net/people-profile.php?rog3=GV&peo3=15141",
+      "SIL Ethnologue — Susu (sus). https://www.ethnologue.com/language/sus/",
+      "Glottolog — Susu. https://glottolog.org/resource/languoid/id/susu1250",
+      "PrayWay — The Susu of Guinea. https://www.prayway.com/unreached/peoplegroups3/1401.html",
+      "ISS Africa — Guinea Futures. https://futures.issafrica.org/geographic/guide.pdf?geography=GN",
+      "Wikipedia EN — Sosso Empire. https://en.wikipedia.org/wiki/Sosso_Empire",
+      "Wikipedia EN — Sumanguru Kante. https://en.wikipedia.org/wiki/Sumanguru_Kant%C3%A9"
+    ]
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "id": "PPL_NZEMA",
+  "nameMain": "Nzema",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["GHA", "CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Nzema",
+      "selfAppellation": "Nzema",
+      "exonyms": ["Nzima", "Appolo", "Apollo"],
+      "originOfExonyms": "Le nom Nzima est la variante orthographique utilisée au Ghana. Appolo (ou Apollo) est le nom colonial donné par les Européens à la région nzema, probablement en référence à la sainte Apollonie (Apollonia) : un explorateur portugais ayant aperçu la côte le 9 février (fête de sainte Apollonie) lui donna ce nom. Ce nom se retrouve dans l'appellation Apollonia pour le royaume nzema du XVIIe siècle, et dans le Fort Apollonia à Beyin. L'ISO 639 utilise nzi pour la langue.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Nzema est la forme standard au Ghana et en Côte d'Ivoire. Nzima est couramment utilisé au Ghana. Apollonia est un terme historique et touristique. Le Fort Apollonia de Beyin abrite le Musée de la Culture et de l'Histoire Nzema depuis 2010.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan (Kwa, Potou-Tano, Bia occidental)",
+      "historicalRegion": "Côte sud-ouest du Ghana et sud-est de la Côte d'Ivoire",
+      "currentCountries": ["GHA", "CIV"]
+    },
+    "ethnicities": ["Nzema", "Nzima"],
+    "origins": {
+      "ancientOrigins": "Les Nzema sont un peuple Akan dont les anthropologues tracent les origines jusqu'à l'Adanse (région du nord du Ghana actuel). Ils se seraient installés sur leur territoire actuel à partir du XVe siècle. La tradition orale est transmise à travers le calendrier et le festival annuel (Valsecchi, 1999 : Calendar and the annual festival in Nzema). Le mouvement Kundum, célébré depuis le XVIe siècle, est la trace la plus ancienne documentée par des observateurs européens (Bossman, explorateur hollandais, XVIIe siècle).",
+      "formationPeriod": "A partir du XVe siècle, installation sur la côte sud-ouest du Ghana. Le royaume d'Apolonia est fondé à la fin du XVIIe siècle.",
+      "migrationRoutes": [
+        "Depuis l'Adanse (nord du Ghana actuel) vers la côte sud-ouest du Ghana",
+        "Expansion vers le sud-est de la Côte d'Ivoire"
+      ],
+      "historicalSettlementZones": [
+        "Côte sud-ouest du Ghana : districts de Jomoro (capitale Half Assini/Awiane), Ellembelle (capitale Nkroful) et Nzema East Municipality (anciennes Evalue Gwira)",
+        "Sud-est de la Côte d'Ivoire (région d'Aboisso)"
+      ],
+      "unificationsOrDivisions": "Le royaume d'Apolonia (Apollonia), fondé à la fin du XVIIe siècle, constitua une puissance culturelle dominant la côte sud-ouest de la Gold Coast tout au long du XVIIIe siècle. Une guerre civile de trois ans conduisit à son effondrement en 1871. Les descendants de l'Apollonia constituent l'actuel Etat Nzema. Les Evaloes (à l'est de la rivière Ankobra) se considèrent membres de la communauté nzema bien que leur dialecte diffère légèrement.",
+      "externalInfluences": "Les Portugais arrivent en Gold Coast au XVe siècle et nomment la région Apollonia. Les Suédois établissent un comptoir commercial à Apollona entre 1655 et 1657. En 1691, les Britanniques y construisent un avant-poste, puis un fort entre 1768 et 1770 (Fort Apollonia). Le fort passa aux Néerlandais en 1868 (renommé Fort Willem III), avant d'être transféré aux Britanniques en 1872. Les Britanniques bombardèrent le fort en 1873 suite à l'alliance nzema avec les Ashanti.",
+      "majorHistoricalEvents": "Fondation du royaume d'Apolonia (fin XVIIe siècle) ; apogée au XVIIIe siècle ; guerre civile et effondrement en 1871. Fort Apollonia de Beyin (1691-1870) : inscrit au patrimoine mondial UNESCO en 1979 avec les autres forts coloniaux du Ghana. Rôle de résistance à la traite des esclaves (Cape Coast Castle). Kwame Nkrumah (1909-1972), père de l'indépendance du Ghana et figure panafricaine majeure, est nzema."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Gouvernance traditionnelle à quatre niveaux hiérarchiques selon le modèle akan standard : chef (omanhene/paramount chief), Pbahema, abusua kpanyinli (chef de lignage maternel), et une cour de dignitaires. Parmi ceux-ci : le kpomavoli (linguiste) qui parle pour le chef et fait ses courses. D'autres fonctions d'origine militaire (tufuhene, chef militaire principal) complètent la cour.",
+      "clanOrganization": "Organisation en lignages matrilinéaires (abusua). Les Evaloes à l'est du fleuve Ankobra constituent un sous-groupe avec un dialecte légèrement différent. Le territoire nzema du Ghana est divisé en trois districts : Nzema East Municipal (Evalue Gwira), Ellembele et Nzema West (Jomoro). Cinq zones traditionnelles dans Nzema East : Upper et Lower Axim, Apateim, Edwira et Nsein.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Système matrilinéaire strict : la descendance et le patrimoine sont transmis par les lignes maternelles. L'abusua kpanyinli (chef de lignage maternel mâle) est le chef de famille. Ce système est commun à l'ensemble des peuples Akan.",
+      "religiousAuthority": "Le festival Kundum est à la fois une cérémonie religieuse et une institution de gouvernance : il permet d'expulser les démons et de protéger la fortune collective. Il commence dans la partie orientale des terres Ahanta et avance vers le sud-ouest en suivant la période des récoltes. Des chants satiriques avudewene sont chantés par les jeunes hommes comme forme de critique sociale."
+    },
+    "languages": {
+      "mainLanguage": "Nzema (nzi)",
+      "isoCodes": ["nzi"],
+      "dialects": [
+        "Nzima (Ghana)",
+        "Apollon (dialecte côtier)",
+        "Evaloe (est du fleuve Ankobra, légèrement différent)"
+      ],
+      "vehicularRole": "Langue vernaculaire des Nzema du Ghana et de Côte d'Ivoire. Environ 658 000 locuteurs (Peoplegroups.org, 2023). Appartient au groupe Kwa (sous-groupe Bia occidental) de la famille Niger-Congo. Code ISO 639-3 : nzi. La langue nzema figure parmi les langues locales d'enseignement au Ghana."
+    },
+    "culture": {
+      "majorRites": "Festival Kundum : cérémonie annuelle d'actions de grâces pour la récolte, célébrée dans toute la zone Ahanta et Nzema (région occidentale du Ghana). Le festival commence à l'est du territoire Ahanta et progresse vers le sud-ouest en suivant la saison des récoltes locale. Il dure quatre semaines avec chants, danses et percussions rituelles. Origine : un chasseur nommé Akpoley découvrit des gnomes dansant en cercle dans la forêt, apprit leur danse et la rapporta à sa communauté. Cette danse devint le moyen de chasser les mauvais esprits. Célébré depuis au moins le XVIe siècle (première trace écrite par Bossman, XVIIe siècle).",
+      "symbols": "Le Fort Apollonia de Beyin (inscrit au patrimoine mondial UNESCO en 1979) est devenu un symbole patrimonial. Il abrite le Musée de la Culture et de l'Histoire Nzema depuis 2010. Le nom Apollonia (Apolonia), donné par les Portugais, symbolise le contact entre monde nzema et monde européen.",
+      "artsAndMusic": "Percussions rituelles, chant et danse pendant quatre semaines lors du Kundum. Chants satiriques avudewene interprétés par de jeunes hommes lors du festival. Calendrier traditionnel avec jours ordonnés en cycles de sept suivant un cycle de trois semaines.",
+      "spiritualities": "Croyance à la possibilité de chasser les mauvais esprits par la danse et la musique (Kundum). Spiritualité liée aux cycles agricoles et à la protection de la fortune collective. Système chrétien important : Kwame Nkrumah lui-même, personnage le plus célèbre des Nzema, était catholique. Les religions abrahamiques coexistent avec les pratiques traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume d'Apolonia (Apollonia) : fondé à la fin du XVIIe siècle, apogée au XVIIIe siècle comme puissance culturelle et commerciale dominant la côte sud-ouest de la Gold Coast. Effondrement en 1871 après une guerre civile de trois ans. L'actuel Etat Nzema est le successeur du royaume d'Apolonia.",
+      "relationsWithNeighbors": "Relations culturelles et rituelles étroites avec les Ahanta (Kundum partagé). Alliance historique avec les Ashanti (ce qui valut le bombardement du Fort Apollonia par les Britanniques en 1873). Les Evaloes (est du fleuve Ankobra) se considèrent nzema malgré un dialecte légèrement différent.",
+      "conflictsOrAlliances": "Alliance avec les Ashanti contre les Britanniques (XIXe siècle). Guerre civile interne de trois ans (vers 1868-1871) ayant conduit à l'effondrement du royaume d'Apolonia. Le Fort Apollonia était utilisé pour la traite des esclaves, jusqu'à l'abolition de cette dernière (fort abandonné en 1819, réoccupé en 1836).",
+      "diaspora": "Diaspora nzema présente dans les grandes villes ghanéennes (Accra, Kumasi) et dans la diaspora africaine globale. Kwame Nkrumah, figure nzema, symbolise le rayonnement de ce peuple sur la scène africaine et internationale."
+    },
+    "demography": {
+      "totalPopulation": 658000,
+      "referenceYear": 2025,
+      "source": "Peoplegroups.org (2023) : 658 000 Nzema dans le monde. Wikipedia Nzema people : environ 328 700 (estimation antérieure) dont 262 000 au Ghana et 66 700 en Côte d'Ivoire.",
+      "distributionByCountry": [
+        { "country": "GHA", "population": 570000 },
+        { "country": "CIV", "population": 88000 }
+      ]
+    },
+    "sources": [
+      "Nzema people – Wikipedia (https://en.wikipedia.org/wiki/Nzema_people)",
+      "Nzema – 101 Last Tribes (https://www.101lasttribes.com/tribes/nzema.html)",
+      "Fort Apollonia – Wikipedia (https://en.wikipedia.org/wiki/Fort_Apollonia)",
+      "Nzema Language (NZI) – Ethnologue (https://www.ethnologue.com/language/nzi/)",
+      "Valsecchi, Pierluigi – Calendar and the annual festival in Nzema: notes on time and history, 1999",
+      "Valsecchi, Pierluigi – Power and State Formation in West Africa: Appolonia from the Sixteenth to the Eighteenth Century, trans. Allan Cameron, Palgrave (https://www.jstor.org/stable/43305147)",
+      "Shores of Slaves: Apollonia in the Akan World – Journal of West African History (https://scholarlypublishingcollective.org/msup/jwah/article/10/2/140/399385/Shores-of-Slaves-Apollonia-in-the-Akan-World)"
+    ]
+  }
+}

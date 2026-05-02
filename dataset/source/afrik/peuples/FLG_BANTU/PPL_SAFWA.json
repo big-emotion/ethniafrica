@@ -1,0 +1,76 @@
+{
+  "id": "PPL_SAFWA",
+  "nameMain": "Safwa",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Safwa",
+      "selfAppellation": "Wasafwa",
+      "exonyms": ["Kisafwa", "Ishisafwa", "Cisafwa", "Poroto", "Songwe"],
+      "originOfExonyms": "Wasafwa est le nom pluriel en swahili. Kisafwa et Shisafwa renvoient a la langue. Poroto et Songwe correspondent aux dialectes regionaux et aux zones de residence.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Safwa est utilise dans les recensements tanzaniens et les publications academiques. Wasafwa est la forme courante dans la region de Mbeya.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu, Hautes Terres du Sud de la Tanzanie, groupe Nyiha-Safwa",
+      "historicalRegion": "Region de Mbeya, hautes terres du sud-ouest de la Tanzanie",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Safwa"],
+    "origins": {
+      "ancientOrigins": "Les Safwa sont un peuple bantou dont les traditions orales indiquent une migration depuis la Zambie vers les montagnes de la region de Mbeya en Tanzanie. Ils font partie du complexe culturel des hautes terres du corridor entre les lacs Nyasa, Rukwa et Tanganyika.",
+      "formationPeriod": "Leur identite distincte s'est constituee avant le XVIIe siecle dans les montagnes de Mbeya. En 1893, ils sont conquis par les Wasangu sous le chef Merere, evenement qui marque profondement leur histoire.",
+      "migrationRoutes": [
+        "Zambie vers les hautes terres de Mbeya (Tanzanie)",
+        "Corridor entre les lacs Nyasa, Rukwa et Tanganyika"
+      ],
+      "historicalSettlementZones": [
+        "Montagnes de la region de Mbeya",
+        "Districts de Mbeya Urban, Rungwe, Kyela",
+        "Villages autour de la ville de Mbeya dans un rayon de 50 km"
+      ],
+      "unificationsOrDivisions": "Le peuple safwa etait divise en de nombreuses petites chefferies independantes avant la conquete sangu de 1893. Apres le depart des Allemands qui ont contraint les Wasangu a retourner en territoire wahehe, la population safwa a rapidement augmente: de 9 000 en 1910 a 15 000 dans les annees 1920.",
+      "externalInfluences": "Domination des Wasangu (Sangu) sous le chef Merere a partir de 1893. Occupation allemande a partir de la fin du XIXe siecle. Influence missionnaire moravienne, catholique et adventiste au XXe siecle.",
+      "majorHistoricalEvents": "Conquete par les Wasangu en 1893 qui reduisit les Safwa a un statut de sujets. Sous l'occupation allemande (1900-1916), les Safwa developperent une resistance passive. Les Allemands renvoyerent les Wasangu en territoire wahehe, liberant les Safwa de cette domination. Au debut des annees 1850, les Ngoni avaient deja frappe la region lors de leur migration vers le nord."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en petites chefferies autonomes, chaque chef portant le titre de Mwene. Le peuple safwa etait considere comme quasi-acephale avant la conquete sangu, hostile a toute centralisation. Le clan Mwashinga est le plus puissant et a detenu le mweneship pendant de nombreuses annees, avec son centre a Igawilo, dans le district urbain de Mbeya.",
+      "clanOrganization": "Organisation clanique avec le clan Mwashinga comme clan dirigeant traditionnel. La succession du chef est traditionnellement designee par le chef mourant a ses conseillers anciens, dans le plus grand secret, le corps etant enterre de nuit.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent l'appartenance clanique et les droits fonciers. La societe safwa exprime un fort attachement a l'egalite entre membres de la communaute.",
+      "religiousAuthority": "Autorite religieuse traditionnelle liee au culte des ancetres et aux bosquets sacres. Les anciens (pretres) menent des ceremonies propitiaires dans les bosquets sacres lors des calamites (secheresse, epidemies). Le site d'Iganjo a Igawilo est un lieu de culte ancestral important."
+    },
+    "languages": {
+      "mainLanguage": "Safwa (Kisafwa / Shisafwa)",
+      "isoCodes": ["sbk"],
+      "dialects": ["Guruka", "Mbwila", "Poroto", "Songwe"],
+      "vehicularRole": "Le swahili est la langue nationale et vehiculaire en Tanzanie. Le safwa est parle comme premiere langue par l'ensemble de la communaute ethnique mais n'est pas enseigne dans les ecoles. Selon Ethnologue, la langue est stable."
+    },
+    "culture": {
+      "majorRites": "Rites de propitiation des ancetres dans les bosquets sacres lors de secheresses ou d'epidemies. Les ceremonies post-natales incluent l'alimentation forcee au mil trois jours apres la naissance. Rites complexes lies aux naissances de jumeaux (ceremonie de purification durant deux ans minimum). Chasses communautaires rituelles precedees d'inoculations contre la sorcellerie et suivies de chants et danses.",
+      "symbols": "Le bosquet sacre (lieu de rencontre avec les esprits ancestraux) est un symbole central. Le titre de Mwene incarne l'autorite chiefly. La pluie est associee au pouvoir du chef: il est responsable des bonnes pluies.",
+      "artsAndMusic": "Chants et danses lors des chasses communautaires. Traditions de tissage de tissu (abandonnees avec l'importation de tissu europeen). Artisanat local.",
+      "spiritualities": "Culte traditionnel des ancetres avec visites aux bosquets sacres, offrandes et prieres pour la pluie et l'eloignement des maladies. Adoption progressive du christianisme (environ 22 % de chretiens selon des sources recentes, principalement Assemblees de Dieu, Catholiques romains, Adventistes du Septieme Jour, Temoins de Jehovah, Moraviens). Une large proportion de la communaute, notamment les anciens, demeure attachee aux traditions animistes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Multiples petites chefferies independantes dirigees chacune par un Mwene. Absence de royaume unifie. Le clan Mwashinga a historiquement fourni le chef le plus respecte de la region de Mbeya.",
+      "relationsWithNeighbors": "Relations conflictuelles avec les Wasangu (Sangu) qui les ont conquis en 1893. Relations de parenté culturelle avec les Nyika et les Wanda. Les Wasafwa ont egalement interagi avec les Wangoni lors de la periode de terreur du debut des annees 1850.",
+      "conflictsOrAlliances": "Conquete et soumission aux Wasangu sous Merere (1893). Resistance passive et culturelle. Liberation lors de l'expulsion des Wasangu par les Allemands. Les Safwa ont brule tous leurs animaux males en reponse a un message messianique d'un ancetre reincarne, esperant chasser les Europeens.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 518000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025",
+      "distributionByCountry": [{ "country": "TZA", "population": 518000 }]
+    },
+    "sources": [
+      "Safwa people – Wikipedia, 2006 (https://en.wikipedia.org/wiki/Safwa_people)",
+      "Safwa language – Wikipedia (https://en.wikipedia.org/wiki/Safwa_language)",
+      "Safwa in Tanzania Profile – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14634/TZ)",
+      "Safwa Language (SBK) – Ethnologue, SIL International (https://www.ethnologue.com/language/sbk/)",
+      "Roth, Tim – Master Wungu Thesis – Canada Institute of Linguistics, 2012 (https://www.canil.ca/wordpress/wp-content/uploads/2016/09/2012-Roth-Tim.pdf)",
+      "Safwa of Tanzania (PGID: PG015031) – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg015031/)"
+    ]
+  }
+}

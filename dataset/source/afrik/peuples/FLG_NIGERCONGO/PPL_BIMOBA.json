@@ -1,0 +1,87 @@
+{
+  "id": "PPL_BIMOBA",
+  "nameMain": "Bimoba",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA", "TGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Bimoba",
+      "selfAppellation": "Bimoba",
+      "exonyms": ["Moba", "Bimawba", "B'Moba", "Moar"],
+      "originOfExonyms": "Le terme Moba est utilise par les Togolais et les sources francophones pour designer le meme groupe. Moar est le nom de la langue selon certaines classifications linguistiques. Bimawba et B'Moba sont des variantes orthographiques attestees dans les documents missionaires et coloniaux.",
+      "whyProblematic": "La frontiere Ghana-Togo tracee a l'epoque coloniale a divise artificiellement la communaute Bimoba, cree deux designations administratives distinctes (Bimoba au Ghana, Moba au Togo) et fragmente les structures politiques et familiales traditionnelles.",
+      "contemporaryUsage": "Bimoba est le terme utilise au Ghana ; Moba predomine au Togo. Les deux formes sont acceptees dans la litterature ethnographique contemporaine.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Gur (Gurma)",
+      "historicalRegion": "Nord-Est du Ghana, Nord-Ouest du Togo",
+      "currentCountries": ["GHA", "TGO"]
+    },
+    "ethnicities": ["Bimoba", "Moba"],
+    "origins": {
+      "ancientOrigins": "Les Bimoba sont un peuple de langue Gur appartenant au groupe Gurma. Ils sont etroitement apparentes aux Moba du nord-ouest du Togo, dont ils forment la branche ghaneenne. L'incertitude demeure quant a leur relation avec les Gourma de l'actuel Burkina Faso lors des migrations fondatrices.",
+      "formationPeriod": "La migration fondatrice est situee vers 1420, consecutivement a l'effondrement du Royaume de Fada-Gurma dans l'actuel Burkina Faso. Les Bimoba auraient migre vers le sud avec les migrations Gourma.",
+      "migrationRoutes": [
+        "Migration depuis l'actuel Burkina Faso vers le sud, suite a l'effondrement du Royaume de Fada-Gurma (vers 1420)",
+        "Installation dans la zone de Dapaon (nord Togo) et nord-est du Ghana"
+      ],
+      "historicalSettlementZones": [
+        "Nord-Est du Ghana (district de Bunkpurugu-Yunyoo et zones limitrophes)",
+        "Nord-ouest du Togo (region des Savanes, autour de Dapaon)"
+      ],
+      "unificationsOrDivisions": "La frontiere coloniale Ghana-Togo, etablie a la fin du XIXe siecle et confirmee apres la Premiere Guerre mondiale, a divise le peuple Bimoba en deux entites nationales distinctes, rompant l'unite politique et familiale traditionnelle.",
+      "externalInfluences": "L'effondrement du Royaume de Fada-Gurma (vers 1420) declencha les migrations fondatrices. La colonisation europeenne (britannique au Ghana, allemande puis francaise au Togo) fragmenta la communaute et imposa des structures administratives etrangeres.",
+      "majorHistoricalEvents": "Effondrement du Royaume de Fada-Gurma (vers 1420) et migrations vers le sud. Partition de la communaute Bimoba par la frontiere coloniale Ghana-Togo. Conflits fonciers et de chefferie dans le nord-est du Ghana au XXe siecle."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe patriarcale structuree autour de chefs de clan et de chefs de famille. Les chefs ou rois de clan detiennent le pouvoir de reunir les differents clans. Le systeme de chefferie assure la cohesion politique et la gestion des conflits intra et intercommunautaires.",
+      "clanOrganization": "Seize clans principaux identifies : Luok, Gnadaung, Dikperu, Puri, Tanmung, Gbong, Labsiak, Kunduek, Buok, Baakpang, Turinwe, Nabakib, Naniik, Poukpera, Maab, Kanyakib. Les clans peuvent etre disperses sur plusieurs localites en fonction de leur puissance et de leur nombre.",
+      "ageClassSystems": "Initiation Kondi : rite de passage de l'enfance a l'age adulte. Les garcons sont isoles en foret, les filles pres du domicile. Tetes rasees, scarifications symbolisant la renaissance. Regles strictes : tenues speciales, restrictions alimentaires, langue secrete, ornements symboliques pour la protection et la purete. L'initiation se cloture par le Kondaak (le marche du Kondi) : visite des maisons pour des cadeaux, port de bijoux metalliques, vetements rouges, coquillages cauris.",
+      "roleOfLineages": "Les groupes lignagers paternels assurent les rituels ceremonials refletant leur filiation spirituelle. La societe est organisee autour des relations avec les ancetres. La dette matrimoniale (Puoton/Taalon) est geree au niveau des lignages.",
+      "religiousAuthority": "Autorite religieuse traditionnelle centree sur le culte d'ancetres et la divinite Yennu. Les devins determinent la creation des figurines Tchitcheri et guident les rituals. Les autels (patir, mier, tingban) sont geres par les chefs de famille et les chefs de village."
+    },
+    "languages": {
+      "mainLanguage": "Bimoba (Moar)",
+      "isoCodes": ["bim"],
+      "dialects": [
+        "Dialectes multiples signales, tres differencies les uns des autres selon Webonary/SIL"
+      ],
+      "vehicularRole": "Langue maternelle exclusive de la communaute Bimoba au Ghana. Au Togo, le moba (variante) est parle dans la region des Savanes. Le moore et le haoussa servent de langues vehiculaires regionales."
+    },
+    "culture": {
+      "majorRites": "Rituel du sang (sacrifice annuel avec enfants et femmes pour resoudre les conflits de terre, de leadership et de relations) : trou creuse, sang animal verse, armes et objets symboliques ajoutes, symbolisant un pacte de paix hereditaire qui purifie l'espace et reformer les liens communautaires. Initiation Kondi (passage enfance-adulte). Sacrifices aux autels (patir, mier, tingban). Rituels de possession avec percussions, chants et danses.",
+      "symbols": "Figurines Tchitcheri (sculptees par les tikpierroa, hommes formés a la sculpture sur bois avec une herminette, figures anthropomorphes a traits etendus). Autels Bawoong (contre les murs exterieurs ou au sol, pres d'un cercle de pierres sacrificielles). Wari : motif decoratif de lignes gravees sur objets et surfaces. Poterie feminine de style distinctif.",
+      "artsAndMusic": "Sculpture sur bois (hommes) : figures Tchitcheri aux traits etendus et style anthropomorphe, transmise de famille en famille via l'adze. Poterie feminine : construction a la main sur moule convexe, designs colors, production en saison seche pour la biere et le commerce ; les hommes utilisent un moule concave et produisent 20 a 30 pots de biere par jour en saison. Decoration murale et decoration d'espaces interieurs (femmes). Dances et chants lors des rituels de possession.",
+      "spiritualities": "Religion traditionnelle predominante. Divinite supreme collective : Yennu (Dieu). Les ancetres servent d'intermediaires entre les vivants et Yennu. Trois types d'autels : patir (construction en argile dans une case fermee nakouk, sacrifices, accessible aux femmes) ; mier (autel personnel par membre de la famille) ; tingban (sanctuaire communautaire pour les problemes collectifs comme la secheresse ou les maladies). Figurines Tchitcheri : Yendu tchitcheri (lien direct avec Dieu) ; Bawoong tchitcheri (sanctuaire familial pour la sante, prosperite, fertilite du betail, recolte) ; Tchitcherii sakab (pour le village entier, figures les plus anciennes et les plus grandes)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "L'origine des Bimoba est liee a l'effondrement du Royaume de Fada-Gurma (vers 1420). Chefferies clanique locales sans royaume centralise identifie dans les sources disponibles. La chefferie est structuree autour des chefs de clan.",
+      "relationsWithNeighbors": "Apparentes aux Moba du nord-ouest du Togo, dont ils sont la branche ghaneenne. Coexistence dans la zone de Dapaon (nord Togo). Conflits fonciers signales dans le nord-est du Ghana avec d'autres groupes ethniques de la region.",
+      "conflictsOrAlliances": "La division artificielle imposee par la frontiere coloniale Ghana-Togo a ete source de tensions et de ruptures sociales. Des conflits intercommunautaires liees aux terres et aux chefferies ont marque le nord-est du Ghana au XXe siecle.",
+      "diaspora": "Presence des Bimoba/Moba dans les villes du Ghana (Accra, Tamale) par migration economique. La diaspora togolaise Moba est presente a Lome et dans les centres urbains du Togo."
+    },
+    "demography": {
+      "totalPopulation": 756000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2024 : 275 000 au Ghana (joshuaproject.net/people_groups/10854) ; Wikipedia : environ 481 500 au nord du Togo ; Webonary/SIL : estimations 200 000 a 310 000 au Ghana",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 275000,
+          "note": "Nord-est du Ghana, district de Bunkpurugu-Yunyoo"
+        },
+        {
+          "country": "TGO",
+          "population": 481000,
+          "note": "Nord du Togo, region des Savanes, autour de Dapaon"
+        }
+      ]
+    },
+    "sources": [
+      "Moba people (Bimoba) – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Moba_people)",
+      "Bimoba, Moba in Ghana – Joshua Project, 2024 (https://joshuaproject.net/people_groups/10854)",
+      "Bimoba Dictionary Introduction – Webonary/SIL, 2014 (https://www.webonary.org/bimoba/introduction/)",
+      "Bimoba ISO 639-3 bim – CEDS/ISO, 2024 (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)",
+      "Bimoba – ScriptSource/Ethnologue (https://www.scriptsource.org/cms/scripts/page.php?item_id=language_detail&key=bim)"
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+# Nom du peuple
+- Nom principal du peuple : Hausa
+- Auto-appellation : Hausawa
+- Exonymes / appellations historiques :
+  - « Haoussa » (transcription coloniale française)
+  - « Al-Sūdān » (ancienne appellation arabo-islamique large, non spécifique)
+- Famille linguistique principale : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
+- Groupe ethno-linguistique : Tchadique occidental
+- Région historique : Sahel central (Kano, Katsina, Zaria)
+- Pays actuels : NGA, NER, CMR, GHA, TCD, SDN
+- Identifiant peuple : PPL_HAUSA
+
+# 1. Ethnies incluses dans le peuple
+- Kano
+- Katsina
+- Zaria (Zazzau)
+
+# 2. Origines, migrations et formation du peuple
+- Formation des **cités-États hausa** dès le premier millénaire.
+- Islamisation ancienne par les routes transsahariennes.
+- Influence importante des pèlerinages et des réseaux marchands.
+
+# 3. Organisation et structure interne
+- Système politique basé sur les émirats.
+- Noblesses lettrées (mallamai).
+- Structures urbaines sophistiquées.
+
+# 4. Langues et sous-familles
+- Langue principale : Hausa
+- Code ISO : hau
+- Sous-famille : Tchadique occidental
+
+# 5. Culture, rites et traditions
+- Musique griotique (mawaka).
+- Architecture en banco.
+- Marchés urbains historiques (Kano Kurmi).
+- Poésie et littérature en ajami (hausa en écriture arabe).
+
+# 6. Rôle historique et interactions régionales
+- Califat de Sokoto au XIXe siècle.
+- Réseaux transsahariens.
+- Relations avec Touaregs, Kanuri, Fulani.
+
+# 7. Démographie globale
+- Population : 86 000 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (hau)
+- Sokoto Studies
+- UNFPA Sahara

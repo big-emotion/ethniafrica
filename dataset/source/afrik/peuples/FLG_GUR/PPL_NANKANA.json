@@ -1,0 +1,109 @@
+{
+  "id": "PPL_NANKANA",
+  "nameMain": "Nankana",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["GHA", "BFA"],
+  "content": {
+    "appellations": {
+      "mainName": "Nankana",
+      "selfAppellation": "Nankana",
+      "exonyms": [
+        "Nankani",
+        "Nankanse",
+        "Naani",
+        "Ninkare",
+        "Gorse",
+        "Gurune",
+        "Frafra"
+      ],
+      "originOfExonyms": "Le terme Nankane ou Nankani est le nom propre du groupe dans sa langue. Ninkare est la forme utilisee au Burkina Faso. Le terme Frafra, impose par les colonisateurs britanniques, est une corruption du salut Gurune Ya fara fara? (Comment va votre souffrance/travail?). Le terme Gurune/Gorse designe l'ensemble du groupe dont les Nankana font partie. Le terme Nankanse a ete utilise par R.S. Rattray pour designer l'ensemble des Frafra dans son ouvrage Tribes of the Ashanti Hinterland.",
+      "whyProblematic": "Le terme Frafra est percu comme inapproprie car il derive d'un malentendu colonial sur une salutation locale. Le terme Nankana et ses variantes peuvent cree des confusions avec d'autres sous-groupes Frafra.",
+      "contemporaryUsage": "Les Nankana se designent eux-mêmes comme Nankana ou Nankani. Le terme Frafra reste largement utilise dans les communications officielles et populaires ghanéennes. Le groupe se considere partie du grand ensemble Frafra-Gurunsi.",
+      "linguisticFamily": "FLG_GUR",
+      "ethnoLinguisticGroup": "Frafra (Gurunsi), branche Gur (Oti-Volta), Niger-Congo",
+      "historicalRegion": "Upper East Region du Ghana (region de Navrongo, Bolgatanga, district de Kassena-Nankana) ; sud du Burkina Faso (province de Nahouri, region de Po et Tiébélé)",
+      "currentCountries": ["GHA", "BFA"]
+    },
+    "ethnicities": [
+      "Gurune (Gurensi), sous-groupe central des Frafra, principale concentration dans le district de Bolgatanga",
+      "Nankana de Navrongo (localises a l'est de Navrongo dans le district de Kassena-Nankana)",
+      "Nankana de Sirigu (village connu pour sa peinture murale)",
+      "Nankana de Kandiga, Mirigo et Nabango",
+      "Paalse (Nankana du secteur sud, ville principale de Pwalugu)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Nankana font partie des peuples Frafra (Gurunsi), dont l'origine orale remonte a des migrations depuis l'Afrique australe (legendes Dagomba connexes) puis depuis le Burkina Faso actuel. Selon la legende Atarebore, les Dagomba, Gurune et Dagao etaient freres ou cousins, originaires d'Afrique australe, migrant vers le nord puis vers l'ouest, a travers le Nigeria septentrional pour atteindre le Ghana. Les Nankana de Navrongo partagent une origine culturelle et linguistique avec les Gurunsi du Burkina Faso (Wuarungu).",
+      "formationPeriod": "L'identite Nankana s'est precisee dans le contexte des structures politiques du nord du Ghana, notamment sous l'influence du royaume mamprusi dont certains chefs Frafra tracent leur origine. Sous la colonisation britannique, les Kassena et Nankana furent regroupes administrativement pour former le Kassena-Nankana administrative district en 1936. La chefferie de Nangodi (Nabdam) et les communautes Nankana ont des origines et traditions communes.",
+      "migrationRoutes": [
+        "Migrations depuis le Burkina Faso (legendes reliant Zuarungu-Ghana a Wuarungu-BFA)",
+        "Migration depuis des zones de savane d'Afrique de l'Ouest (connexions Dagomba-Gurune dans la tradition orale)",
+        "Installation dans l'Upper East Region le long des axes Bolgatanga-Navrongo"
+      ],
+      "historicalSettlementZones": [
+        "Bolgatanga et environs (centre commercial et administratif du groupe Frafra)",
+        "Navrongo (capitale du district de Kassena-Nankana)",
+        "Sirigu, Kandiga, Mirigo, Nabango, Kulgo, Naaga (villages Nankana a l'est de Navrongo)",
+        "Pwalugu (village des Paalse, Nankana du sud)",
+        "Sud du Burkina Faso (Nahouri, Tiébélé, Po)"
+      ],
+      "unificationsOrDivisions": "Les Nankana partagent avec les autres groupes Frafra (Gurune, Nabdam, Boone, Talensi) une culture et une langue communes, tout en ayant des differences rituelles et linguistiques. L'unite administrative creee en 1936 entre Kassena et Nankana ne reflete pas une fusion ethnique mais une proximite culturelle. Les Nankana de Navrongo sont politiquement sous le district de Kassena-Nankana mais se considerent culturellement Frafra.",
+      "externalInfluences": "Influence du royaume de Mamprugu sur certains chefs Frafra-Nankana (tradition d'enskinment). Contact avec les Kasena (langue kasem, differente) dans le district de Kassena-Nankana. Colonisation britannique (integration dans les structures administratives de la Northern Territories). Influence croissante du christianisme et de l'islam sur les pratiques traditionnelles.",
+      "majorHistoricalEvents": "Creation du Kassena-Nankana administrative district en 1936 sous la colonisation britannique. Migrations de travail saisonnieres vers le sud du Ghana depuis la periode coloniale. Le village de Sirigu est devenu un site touristique reconnu pour ses peintures murales et son patrimoine artisanal féminin. Les Nankana maintiennent des liens traditionnels avec des communautes au Burkina Faso (Ninkare, province de Nahouri)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "L'organisation Nankana distingue les chefs (Naba/Naaba) qui sont les autorites politiques, et les Tindana (Tigatu au pluriel dans la tradition locale) qui sont les custodes de la terre et des affaires spirituelles. Les chefs assurent la paix et la gouvernance ; le Tindana supervise les droits fonciers et les sacrifices rituels. Historiquement, les Frafra (dont les Nankana) n'avaient pas de chefs mais des chefs de clans et des pretres de la terre ; les Mamprusi leur ont impose des chefs apres leur conquete.",
+      "clanOrganization": "La societe Nankana est organisee en clans patrilineaires. Les chefs de famille (heads of households) dirigent les compounds etendus. Les terres ne s'appartiennent pas a des individus mais aux familles, sous la supervision du Tindana. L'artisanat est une activite specifiquement feminine (peinture murale, poterie).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'heritage (fils herient des peres ; les filles n'heritent pas des actifs familiaux). La hierarchie familiale est le modele de base de l'organisation sociale. Les Kimma (anciens) maintiennent l'ordre social dans les villages.",
+      "religiousAuthority": "Le Tindana (Tindamba au pluriel) est le custode du sanctuaire de la terre. Il fait des sacrifices periodiques a l'earth shrine pour le bien-être du village, apaise la terre en cas de transgression. Le Supreme Being est Na-a Yine (le Seul Chef) ou Naayine. Les ancetres medient entre les vivants et le Supreme Being. Les sanctuaires ancestraux masculins sont devant la maison, les feminins a l'interieur. Le culte de la divination est central dans la resolution des crises familiales."
+    },
+    "languages": {
+      "mainLanguage": "Nankani (Farefare, dialecte Nankani)",
+      "isoCodes": ["gur"],
+      "dialects": [
+        "Nankani / Naane / Ninkare (dialecte de Navrongo, variete au Burkina Faso)",
+        "Gurene / Gurensi / Gudeni (dialecte central, region de Bolgatanga)",
+        "Boone (dialecte nord, frontiere burkinabe)"
+      ],
+      "vehicularRole": "Le Nankani est un dialecte du Farefare (ISO gur), langue nationale du Ghana parlee par plus de 600 000 personnes dans l'Upper East Region et le sud du Burkina Faso. Au Burkina Faso, les locuteurs sont appeles Ninkare. Le Farefare est etroitement apparente au Moore (mossi) et au Dagbani. Il constitue une langue vehiculaire regionale dans les districts de Bolgatanga, Bongo et Kassena-Nankana."
+    },
+    "culture": {
+      "majorRites": "Le festival Adaakoya (celebre a Bolgatanga et Zuarungu) est une celebration annuelle de remerciement aux dieux pour la bonne recolte, celebre entre janvier et fevrier. Il comprend des sacrifices, des danses et un durbar (rassemblement) de chefs et de la population. Les funerailles sont des evenements majeurs, organises generalement apres les recoltes en saison seche. Elles combinent rites de passage vers le monde des esprits, danses, chants et sacrifices. Le mariage implique plusieurs etapes : la visite initiale avec cola, tabac (limisiko, ceremonie de frappe), puis apport d'animaux comme dot. La ceremonie du chinchelinga (ululation feminine) annonce officiellement le mariage dans la communaute de Naaga.",
+      "symbols": "Les peintures murales geometriques colorees des compounds (rouge, blanc, noir), tradition feminine de Sirigu et des villages Nankana, sont le symbole le plus reconnaissable du groupe. Les objets rituels du Tindana (sanctuaires de la terre) sont les symboles de l'autorite spirituelle. Les paniers tresses (Tehei) de Bolgatanga sont un embleme artisanal reconnu nationalement.",
+      "artsAndMusic": "Les femmes Nankana de Sirigu sont internationalement reconnues pour leurs peintures murales geometriques (tradition Gurunsi). Les paniers et chapeaux en paille de Bolgatanga sont des produits artisanaux phares du nord du Ghana, vendus dans tout le pays. La poterie feminine fait partie des arts traditionnels. Les percussions (tambours, balafons) accompagnent les fetes. Les danseurs en costume et masques participent aux festivals communautaires. Le chant rituel et les griots locaux perpetuent les traditions orales.",
+      "spiritualities": "La religiosite Nankana est centree sur la triade : Na-a Yine (Supreme Being, le Seul Chef), les ancetres (mediateurs), et les divinites de la terre et de la nature (supervises par le Tindana). Les libations de farine d'eau sont versees sur les sanctuaires lors des prieres. Les sacrifices animaux (poulets, moutons) sont realises aux moments cles du cycle agricole et lors des rites de passage. Le culte ancestral comprend des sanctuaires sexues (masculins devant la maison, feminins a l'interieur). La divination est pratiquee pour identifier les causes des malheurs et des maladies. Les religions chretiennes et musulmanes coexistent avec les pratiques animistes traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Historiquement, les Frafra (dont les Nankana) etaient des societes acephales sans chef central, organisees en clans et villages autonomes avec pretres de la terre. L'institution de la chefferie a ete imposee ou adoptee sous influence mamprusi et coloniale. Les Nankana de Navrongo appartiennent administrativement au Kassena-Nankana District (regroupe avec les Kassena sous les Britanniques en 1936). Certains chefs Nankana tracent une tradition de liens avec Mamprugu.",
+      "relationsWithNeighbors": "Les Nankana cohabitent avec les Kasena (groupe culturellement proche mais lingua differente, Kasem) dans le district de Kassena-Nankana. Ils maintiennent des liens etroits avec les autres sous-groupes Frafra (Gurune, Nabdam, Boone, Talensi). Des liens transfrontaliers persistent avec les Ninkare du Burkina Faso (province de Nahouri, region de Po et Tiébélé).",
+      "conflictsOrAlliances": "Sous la colonisation britannique, la pression du royaume de Mamprugu s'est exercee a travers les droits d'enskinment. Les societes Frafra-Nankana ont resiste a la domination Mamprusi, et depuis l'independance ont installe leurs propres chefs (Bolga Naba, Bongo Na). Des conflits fonciers et de chefferie persistent localement dans l'Upper East Region.",
+      "diaspora": "Migration saisonniere et economique vers les villes du Ghana meridional (Accra, Kumasi, Tamale) caracteristique de tout le groupe Frafra depuis la periode coloniale. Communautes frontieres au Burkina Faso (Ninkare) maintenant une identite culturelle commune transfrontière."
+    },
+    "demography": {
+      "totalPopulation": 994500,
+      "referenceYear": 2025,
+      "source": "Peoplegroups.org (2023) via 101lasttribes.com : le groupe Frafra total (dont Nankana) compte 994 500 personnes dans 2 pays (Ghana et Burkina Faso). Joshua Project - Nankansi in Ghana. Le sous-groupe Nankana est estime a environ 200 000 personnes, les Gurune constituant la majorite du groupe Frafra.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 850000,
+          "note": "Upper East Region, principalement districts de Bolgatanga, Bongo, Kassena-Nankana (Navrongo), Nabdam"
+        },
+        {
+          "country": "BFA",
+          "population": 144500,
+          "note": "Province de Nahouri (Tiébélé, Po), locuteurs Ninkare du groupe Gurune-Nankana"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Farefare language. https://en.wikipedia.org/wiki/Farefare_language",
+      "101 Last Tribes - Frafra / Nankana people. https://www.101lasttribes.com/tribes/nankana.html",
+      "Modern Ghana - The History And Facts Of The Nankana/Frafra Culture. https://www.modernghana.com/news/1186377/the-history-and-facts-of-the-nankanafrafra-cultur.html",
+      "Ethnologue - Farefare (gur). https://www.ethnologue.com/language/gur/",
+      "Glottolog - Farefare. https://glottolog.org/resource/languoid/id/fare1241",
+      "Joshua Project - Nankansi in Ghana. https://joshuaproject.net/people_groups/15214",
+      "Wikipedia EN - Frafra people. https://en.wikipedia.org/wiki/Frafra_people"
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "id": "PPL_MANJA",
+  "nameMain": "Manja",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CAF"],
+  "content": {
+    "appellations": {
+      "mainName": "Manja",
+      "selfAppellation": "",
+      "exonyms": ["Manja (terme utilisé par les Européens)"],
+      "originOfExonyms": "N/A",
+      "whyProblematic": "N/A",
+      "contemporaryUsage": "N/A",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "N/A",
+      "historicalRegion": "Centre de la RCA",
+      "currentCountries": ["CAF"]
+    },
+    "ethnicities": ["Manja"],
+    "origins": {
+      "ancientOrigins": "N/A",
+      "formationPeriod": "N/A",
+      "migrationRoutes": ["N/A"],
+      "historicalSettlementZones": ["Centre de la RCA"],
+      "unificationsOrDivisions": "N/A",
+      "externalInfluences": "N/A",
+      "majorHistoricalEvents": "N/A"
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "N/A",
+      "clanOrganization": "N/A",
+      "roleOfLineages": "N/A",
+      "religiousAuthority": "N/A"
+    },
+    "languages": {
+      "mainLanguage": "Manja (mzv)",
+      "isoCodes": ["mzv"],
+      "dialects": ["N/A"],
+      "vehicularRole": "N/A"
+    },
+    "culture": {
+      "Rites majeurs": "N/A",
+      "Symboles": "N/A",
+      "Arts et musique": "N/A",
+      "Spiritualités": "N/A"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "N/A",
+      "relationsWithNeighbors": "N/A",
+      "conflictsOrAlliances": "N/A",
+      "diaspora": "N/A"
+    },
+    "demography": {
+      "totalPopulation": 300,
+      "referenceYear": 2025,
+      "source": "N/A"
+    },
+    "sources": []
+  }
+}

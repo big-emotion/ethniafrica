@@ -1,0 +1,101 @@
+{
+  "id": "PPL_HAIOM",
+  "nameMain": "Haiǁom",
+  "languageFamilyId": "FLG_KHOE",
+  "currentCountries": ["NAM"],
+  "content": {
+    "appellations": {
+      "mainName": "Haiǁom",
+      "selfAppellation": "Haiǁom",
+      "exonyms": ["Heikum", "Hai//om", "ǂAakhoe"],
+      "originOfExonyms": "Le terme Heikum est une appellation coloniale d'origine afrikaans. ǂAakhoe designe une variante dialectale septentrionale du parler haiǁom, parfois traitee comme synonyme, parfois comme sous-dialecte distinct. Le nom Haiǁom contient le clic lateral (ǁ) caracteristique de la famille Khoekhoe.",
+      "whyProblematic": "Les Haiǁom sont souvent classes parmi les San (Bushmen), terme generique que certains membres rejettent. Leur langue, qu'ils partageaient initialement avec les groupes Ju voisins, s'est progressivement converge vers le Khoekhoe sous influence des Nama expansionnistes aux 16e-17e siecles, rendant leur classification ambigue.",
+      "contemporaryUsage": "Le terme Haiǁom est aujourd'hui le plus courant dans les publications academiques et officielles namibiennes. Le nom Heikum reste utilise dans la litterature missionnaire ancienne et au Botswana par les groupes voisins.",
+      "linguisticFamily": "FLG_KHOE",
+      "ethnoLinguisticGroup": "Khoekhoe (branche Khoekhoe-Haiǁom de la famille Khoe-Kwadi)",
+      "historicalRegion": "Namibie centrale-nord : region d'Etosha, Grootfontein, Tsumeb, Otavi, Outjo, Otjiwarongo",
+      "currentCountries": ["NAM"]
+    },
+    "ethnicities": [
+      "Haiǁom d'Etosha et environs immédiats (groupe territorial principal, anciens habitants du parc)",
+      "Haiǁom de Grootfontein et Tsumeb (groupe septentrional, contacts commerciaux avec Ovambo et Herero)",
+      "Haiǁom d'Outjo et Otjiwarongo (groupe meridional, contacts avec Nama)",
+      "ǂAakhoe (sous-groupe dialectal septentrionale, frontiere namibiano-angolaise)",
+      "Haiǁom de Mangetti West (groupe oriental, droits historiques dans les fermes Mangetti)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Haiǁom sont l'un des peuples les plus anciens de Namibie, appartenant au vaste complexe culturel San. Leurs ancetres occupaient le nord-centre de la Namibie actuelle depuis des millenaires. Genetiquement, ils s'inscrivent dans la continuite des populations chasseurs-cueilleurs du sud de l'Afrique dont les origines remontent a plus de 100 000 ans. Historiquement, ils parlaient un dialecte Ju (proche du !Kung) avant de basculer vers le Khoekhoe sous la pression linguistique des Nama expansionnistes, probablement entre le 16e et le 18e siecle.",
+      "formationPeriod": "L'identite haiǁom distincte s'est consolidee durant le premier millenaire de notre ere, avec une periode de transition linguistique majeure vers le Khoekhoe entre le 16e et le 18e siecle. Le nom Haiǁom signifie litteralement 'ceux qui dorment dans les arbres' ou 'habitants de la foret', referant a leur mode de vie forestier et de savane dans le nord namibien.",
+      "migrationRoutes": [
+        "Populations autochtones occupant la savane et la foret du nord-centre namibien sans migration fondatrice documentee",
+        "Mouvements saisonniers en suivant le gibier et les ressources vegetales autour du pan d'Etosha",
+        "Repli progressif vers les peripheries d'Etosha et de Mangetti sous la pression coloniale a partir des annees 1890"
+      ],
+      "historicalSettlementZones": [
+        "Region autour du pan d'Etosha (700 000 ha, dont la majeure partie correspond aux terres du groupe meridional)",
+        "Corridor Grootfontein-Tsumeb-Otavi au nord-est",
+        "Region d'Outjo et Otjiwarongo au sud",
+        "Frontiere nord vers l'ancien Ovamboland (Namibie septentrionale)"
+      ],
+      "unificationsOrDivisions": "Les Haiǁom ne forment pas une unite politique centralisee : ils sont organises en petits groupes locaux autonomes de chasse-cueillette partageant une identite linguistique et culturelle commune. La colonisation allemande (1890) puis sud-africaine (1915) a fragmente leurs territoires. L'eviction forcee d'Etosha en 1954 a disperse les communautes sur des fermes commerciales bordant le parc, creant une diaspora interieure.",
+      "externalInfluences": "Influence des peuples Ovambo (nord, relations commerciales), Herero (est, contacts pastoraux), et Nama (sud, influence linguistique majeure). La colonisation allemande a procede a l'annexion territoriale des annees 1890. L'administration sud-africaine de l'apartheid a impose l'eviction d'Etosha en 1954. A l'independance namibienne (1990), les Haiǁom sont restes sans terres communales officielles.",
+      "majorHistoricalEvents": "1907 : proclamation de la reserve de chasse No. 2 (future Etosha National Park) sur une partie du territoire haiǁom, avec maintien initial de leur presence. 1954 : eviction violente par l'administration de l'apartheid sud-africain de l'ensemble des Haiǁom d'Etosha. 1990 : independance de la Namibie ; les Haiǁom restent sans reserve communale, disperses sur des fermes commerciales. 2004 : reconnaissance d'une Autorite Traditionnelle Haiǁom (chef David ǁKhamuxab). 2008 : achat par le gouvernement des premieres fermes de reinstallation (Excelsior, Oerwoud). 2015 : lancement d'une action en justice par l'Etosha Haiǁom Association pour la restitution des droits fonciers ancestraux dans l'ENP et les fermes Mangetti Ouest."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme egalitaire sans hierarchie centralisee : les decisions sont prises par consensus au sein de groupes locaux de chasse-cueillette (groupes de bandes). Pas de chefferie hereditaire traditionnelle. Un chef (kaptein ou headman) pouvait etre reconnu pour ses qualites de negociateur avec l'exterieur, mais sans pouvoir coercitif. La Loi sur les Autorites Traditionnelles de Namibie (2000) a impose une structure de chefferie formelle, reconnue en 2004, mais contestee par une partie de la communaute pour son deficit de legitimite.",
+      "clanOrganization": "Organisation en bandes (groupes locaux) de 10 a 50 individus, mobiles selon les ressources. Les bandes sont liees par des liens de parente et de mariage exogame. La transmission des droits sur les zones de chasse se fait par filiation bilaterale. Des groupements regionaux plus larges se forment pour des ceremonies ou des echanges.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages bilateraux structurent l'acces aux ressources et aux territoires de chasse-cueillette. Les droits sur certaines zones et points d'eau sont transmis au sein de groupes de parente. Le systeme de denomination khoekhoe (transmission de noms entre generations alternees) renforce les liens intergenerationnels.",
+      "religiousAuthority": "Autorite religieuse exercee par les guerisseurs-chamanes (medicine men ou n/om-kxaosi en terminologie san) capables d'entrer en transe lors des danses de guerison. Apres l'eviction d'Etosha et la sedentarisation forcee, influence croissante du christianisme lutherien (missions finlandaises et lutheriennes actives en Namibie du Nord)."
+    },
+    "languages": {
+      "mainLanguage": "Haiǁom (dialecte de la langue Khoekhoe, famille Khoe-Kwadi)",
+      "isoCodes": ["hgm"],
+      "dialects": [
+        "Haiǁom proprement dit (dialecte central, region d'Etosha)",
+        "ǂAakhoe (dialecte septentrional, frontiere nord de Namibie, parfois classe comme langue distincte)"
+      ],
+      "vehicularRole": "Le haiǁom est classe par Ethnologue comme dialecte du Khoekhoe (code hgm). Il compte environ 52 000 locuteurs selon Ethnologue (2016), dont une partie au Botswana (Heikum San, 42 000 selon Joshua Project). L'afrikaans et l'anglais sont utilises dans les contacts avec l'administration et l'economie moderne. Le khoekhoegowab (langue nationale namibienne) est compris par la plupart des locuteurs."
+    },
+    "culture": {
+      "majorRites": "La danse de transe (healing dance, ou |gaisa en termes san) est le rite central de la vie spirituelle et communautaire. Elle se deroule de nuit autour d'un feu : les femmes s'assoient en cercle, chantent et frappent dans les mains, tandis que les hommes dansent en cercle concentrique, portant des hochets faits de cocons de chrysalides attaches aux jambes. L'energie spirituelle (n/um) accumulee dans le corps du guerisseur lui permet d'entrer en etat de transe (!kia), au cours duquel il identifie et guerit les malades par imposition des mains, expulsant la maladie. Les rites de passage comprennent : circoncision masculine (rite de puberte masculin), ceremonies d'initiation feminine marquant les premieres menstruations (seclusion rituelle, application de matiere grasse animale), rites funeraires avec inhumation rapide et abandon du campement.",
+      "symbols": "Le pan d'Etosha est le symbole territorial et spirituel central des Haiǁom ; le point d'eau de !Gobaub (dans l'ENP) est un lieu saint. L'eland (grand koudou) est l'animal symbolique majeur, associe aux pouvoirs du guerisseur dans les traditions san. Les peintures rupestres de la region (art rupestre san) representent les visions de transe et les animaux spirituels.",
+      "artsAndMusic": "Musique : chants polyphoniques feminins lors des danses de guerison, accompagnes de percussions corporelles (frappes dans les mains, sur les cuisses). Hochets de cheville (cocons de chrysalides sur cordes de nerfs). Flute nasale (//guashi) et arc musical (//xom). Narration orale : tradition riche de contes (ou |kabo) transmettant savoirs ecologiques, mythes d'origine et normes sociales. Arts visuels : perles (tressage et colliers de perles ostrich, offrandes matrimoniales), gravures et peintures rupestres attribuees aux ancetres. Artisanat : arcs de chasse, pointes de fleches en os et metal, sacs en cuir de springbok.",
+      "spiritualities": "Cosmologie san centree sur deux divinites : une divinite superieure bienveillante (parfois nommee //Gauwa ou Hishe) creatrice du monde, et une divinite inferieure trickster et malefique (egalement //Gauwa selon les groupes, associee a la mort). Les esprits des ancetres (//gauwasi) sont presents et peuvent etre contactes lors des danses de transe. Le n/um (energie spirituelle, force de vie) reside dans le bas du ventre et le sternum des guerisseurs, s'active par la danse et peut guerir la maladie. Le christianisme lutherien est adopte par une partie de la communaute depuis l'epoque coloniale, en syncretisme avec les croyances traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Haiǁom n'ont jamais forme de royaumes centralises. Leur organisation politique traditionnelle est acephale (sans chef hereditaire). Sous la colonisation, des headmen locaux servaient d'intermediaires avec l'administration. La Namibie independante a reconnu une Autorite Traditionnelle Haiǁom en 2004 (chef David ǁKhamuxab), structure formelle sans precedent dans la tradition.",
+      "relationsWithNeighbors": "Avant la colonisation, les Haiǁom entretenaient des reseaux commerciaux elabores avec leurs voisins Ovambo (echange de miel, peaux, objets de chasse contre outils en metal et cereales), Herero (services de guidage et de chasse), et Nama (influence linguistique majeure). Sous la colonisation, ils ont ete employes comme traceurs, guides, ouvriers agricoles et miniers par les colons blancs. Leurs relations avec les autres groupes San (Ju|'hoan du Tsumkwe) etaient generalement pacifiques avec des territoires delimites.",
+      "conflictsOrAlliances": "Resistance passive a la colonisation allemande (1884-1915) par retrait dans les zones forestieres inaccessibles. Resistance a l'eviction d'Etosha (1950s) sous la pression de l'administration sud-africaine. Action en justice lancee en 2015 par l'Etosha Haiǁom Association pour la recuperation de leurs droits fonciers ancestraux dans le parc national. Ce cas constitue un precedent juridique majeur pour les droits fonciers des peuples autochtones en Namibie.",
+      "diaspora": "Suite aux evictions successives depuis 1907, les Haiǁom sont disperses dans les regions de Kunene et Oshikoto (majorite), Ohangwena et Oshana (minorite). Une partie vit dans des campements informels autour d'Outjo, Otjiwarongo et Tsumeb. Des communautes haiǁom sont egalement presentes au Botswana (Heikum San). Une diaspora urbaine modeste existe dans les villes namibiennes, notamment a Windhoek."
+    },
+    "demography": {
+      "totalPopulation": 55000,
+      "referenceYear": 2025,
+      "source": "Ethnologue SIL International (52 000 locuteurs haiǁom en 2016, code hgm) ; Joshua Project (42 000 Heikum San au Botswana utilisant le haiǁom comme langue principale) ; Open Book Publishers, Dieckmann 2019 (environ 10 000 Haiǁom en Namibie selon les estimations basses) ; Namibia Sun 2026 (communaute active de plusieurs milliers dans l'ENP et peripherie)",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 50000,
+          "note": "Regions Kunene et Oshikoto (majorite), Ohangwena, Oshana, peripherie du parc national d'Etosha, fermes de reinstallation"
+        },
+        {
+          "country": "BWA",
+          "population": 5000,
+          "note": "Communautes Heikum San au Botswana, nord-ouest du pays"
+        }
+      ]
+    },
+    "sources": [
+      "Ethnologue SIL International — Haiǁom language (hgm). https://www.ethnologue.com/language/hgm/",
+      "Dieckmann, Ute (ed.) — Hai//om in the Etosha Region: A History of Colonial Settlement, Ethnicity and Nature Conservation. Open Book Publishers, 2019. https://books.openbookpublishers.com/10.11647/obp.0402/ch4.xhtml",
+      "Xoms Omis — The Hai//om and their history in the Etosha National Park. https://www.xoms-omis.org/knowledge-base/the-hai-om/history-in-etosha",
+      "Namibian Sun — Hai//om fight for recognition of Etosha land rights, mars 2026. https://www.namibiansun.com/nmh-hub/haiom-fight-for-recognition-of-etosha-land-rights",
+      "Joshua Project — Heikum San in Botswana. https://joshuaproject.net/countries/bc",
+      "Wikipedia EN — ǂAakhoe dialect (Haiǁom). https://en.wikipedia.org/wiki/%C7%82Aakhoe_dialect",
+      "Wikipedia EN — San healing practices. https://en.wikipedia.org/wiki/San_healing_practices",
+      "Glottolog — Hainum subgroup, code haio1238. https://glottolog.org/resource/languoid/id/haio1238",
+      "Cultural Survival — The Hunter-Gatherer Myth in Southern Africa. https://www.culturalsurvival.org/publications/cultural-survival-quarterly/hunter-gatherer-myth-southern-africa"
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "id": "PPL_FORROS",
+  "nameMain": "Forros",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["STP"],
+  "content": {
+    "appellations": {
+      "mainName": "Forros",
+      "selfAppellation": "Forros",
+      "exonyms": [
+        "Forro",
+        "Filhos da terra (enfants de la terre)",
+        "Sãotomenses (au sens large)",
+        "Crioulos de São Tomé"
+      ],
+      "originOfExonyms": "Le terme forro vient du portugais forro, signifiant libre ou affranchi, désignant les esclaves libérés ou leurs descendants nés libres. La désignation filhos da terra (enfants de la terre) était utilisée par les élites forros pour affirmer leur enracinement sur l'île par opposition aux travailleurs migrants. Le terme Sãotomense désigne parfois l'ensemble de la population créole de São Tomé, mais les Forros s'en distinguent comme groupe spécifique.",
+      "whyProblematic": "L'identité forro est complexe et stratifiée : elle désigne à la fois les descendants d'esclaves affranchis et une élite créole luso-africaine qui revendiquait une proximité avec les Portugais. La frontière entre Forros de souche africaine et Mestiços (métis luso-africains) est floue et contestée. Par ailleurs, la langue forro (cri) est aujourd'hui menacée d'extinction au profit du portugais.",
+      "contemporaryUsage": "Les Forros se définissent comme le groupe fondateur de la nation santoméenne. Malgré la marginalisation de la langue forro, l'identité forro reste revendiquée. La diaspora santoméenne aux Pays-Bas et au Portugal réinvestit le forro comme marqueur identitaire distinctif.",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Créole afro-portugais (São Tomé-et-Príncipe)",
+      "historicalRegion": "Île de São Tomé, île de Príncipe (São Tomé-et-Príncipe)",
+      "currentCountries": ["STP"]
+    },
+    "ethnicities": [
+      "Forros de São Tomé (groupe principal, île de São Tomé)",
+      "Angolares (descendants de naufragés angolais vers 1540, groupe distinct mais parfois assimilé aux Forros dans les classifications)",
+      "Mestiços ou Grand-Blancos (élite métisse luso-africaine)",
+      "Tongas (enfants de serviçais nés sur l'île, intégrés progressivement à la société forro)"
+    ],
+    "origins": {
+      "ancientOrigins": "L'île de São Tomé était inhabitée lors de sa découverte par les Portugais vers 1469-1470. Les premiers colons portugais arrivèrent à partir de 1485-1493. La couronne portugaise encouragea le peuplement en accordant des terres et en permettant aux colons d'affranchir les enfants nés de leurs unions avec des esclaves africaines. Les premiers esclaves venaient principalement du Congo, d'Angola et du Bénin (côte du Bight of Benin). Ces enfants affranchis (les premiers Forros) bénéficiaient d'un statut de libres mais restaient distincts des colons européens. Au XVIe siècle, São Tomé devint le premier grand centre mondial de la traite atlantique, avec des centaines de milliers d'esclaves transitant par ses ports en route vers les Amériques.",
+      "formationPeriod": "Le groupe forro se constitua entre le XVe et le XVIIe siècle. La langue forro (Sãotomense) se forma comme pidgin puis se créolisa dès la première génération de locuteurs natifs, avec environ 93% de lexique d'origine portugaise et 7% d'origine africaine (substrats bantoues du groupe kwa et bantou). Au XVIIe siècle, la pression hollandaise et française força de nombreux colons portugais à quitter l'île, renforçant l'autonomie de la communauté forro qui administra de fait l'île pendant plusieurs décennies.",
+      "migrationRoutes": [
+        "Traite atlantique : Congo, Angola (Bantoues du groupe kikongo), côte du Bénin (Kwa, Yoruba, Fon) vers São Tomé comme île esclavagiste centrale (XVe-XVIIe siècles)",
+        "Émigration contemporaine : São Tomé vers le Portugal (Lisbonne) et les Pays-Bas"
+      ],
+      "historicalSettlementZones": [
+        "Île de São Tomé (île principale, concentration dans la ville de São Tomé et ses environs)",
+        "Nord et centre de l'île de São Tomé (zones de plantation historiques)",
+        "Ville de São Tomé (capitale, centre historique de la communauté forro)"
+      ],
+      "unificationsOrDivisions": "Les Forros se sont historiquement distingués des Angolares (descendants de naufragés angolais du XVIe siècle, vivant séparément dans le sud de l'île) et des Serviçais (travailleurs sous contrat venus d'Angola, du Mozambique et du Cap-Vert au XIXe-XXe siècles). Cette stratification sociale héritée de la colonisation crée des tensions persistantes. L'élite forro a tendance à valoriser sa proximité avec la culture portugaise pour se distinguer des autres groupes.",
+      "externalInfluences": "Colonisation portugaise (XVe-XXe siècles) : catholicisme, langue portugaise et culture luso-africaine. Pression néerlandaise au XVIIe siècle : plusieurs invasions et occupations temporaires. Esclavage et traite transatlantique : São Tomé fut le premier grand hub mondial de la traite (XVIe siècle), puis reçut des vagues successives de travailleurs forcés. Indépendance (1975) sous le MLSTP (Mouvement de libération) : influence marxiste et regroupements politiques des différentes communautés santoméennes.",
+      "majorHistoricalEvents": "1469-1485 : découverte et premières explorations portugaises. 1493 : premier établissement permanent par Álvaro de Caminha. XVIe siècle : São Tomé, premier grand centre mondial de la traite transatlantique. XVIIe siècle : attaques et occupations hollandaises répétées, quasi-autonomie de la communauté forro. 1836 : abolition officielle de l'esclavage par le Portugal (application lente). 1953 : massacre de Batepá — les autorités coloniales portugaises tuèrent des centaines de Forros soupçonnés de révolte, événement traumatique fondateur de la conscience nationale santoméenne. 1975 : indépendance de São Tomé-et-Príncipe."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Pas de chefferie précoloniale autochtone (île inhabitée). Sous la colonisation, les Forros formèrent une élite foncière intermédiaire (filhos da terra) entre les colons européens et les esclaves nouvellement arrivés. Aux XVIIe-XVIIIe siècles, des conseils de notables forros exercèrent une administration locale semi-autonome. Après l'indépendance (1975), les Forros, particulièrement l'élite instruite, dominèrent les premières années de la République dans le cadre du parti unique MLSTP.",
+      "clanOrganization": "Organisation en familles étendues patrilinéaires. Les grandes familles forros portent des patronymes d'origine portugaise (Trovoada, Espírito Santo, Vera Cruz). La stratification sociale interne distingue les Forros aisés (grands propriétaires terriens) des Forros pauvres (petits paysans et pêcheurs). Les réseaux familiaux structurent l'accès aux ressources économiques et politiques.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignées familiales déterminent le statut social et l'accès aux réseaux de pouvoir. Être reconnu comme forro de souche (ancestralité sur l'île) confère une légitimité sociale dans la société santoméenne. La transmission du statut forro s'effectue par la reconnaissance de l'appartenance familiale et la pratique de la langue forro.",
+      "religiousAuthority": "Catholicisme romain dominant (environ 80% de la population selon le recensement 2012 : catholiques romains, évangéliques, adventistes). L'Église catholique a joué un rôle d'intégration culturelle des Forros depuis le XVe siècle. Des pratiques syncrétiques afro-catholiques persistent discrètement, notamment le culte des ancêtres mêlé aux célébrations catholiques. La croix catholique et les processions sont des marqueurs identitaires forts de la communauté forro."
+    },
+    "languages": {
+      "mainLanguage": "Forro (Sãotomense, créole de São Tomé)",
+      "isoCodes": ["cri"],
+      "dialects": [
+        "Forro standard (São Tomé ville et alentours, variété de référence)",
+        "Principense ou Lungwa Ngola (île de Príncipe, créole apparenté, ISO 639-3 : pre)",
+        "Fa d'Ambu ou Annobonais (Guinée équatoriale, créole dérivé du forro, ISO 639-3 : fab)"
+      ],
+      "vehicularRole": "Le forro est historiquement la lingua franca de l'île de São Tomé. Selon les statistiques officielles, seulement 36,2% de la population le parle encore en 2012 (contre une estimation traditionnelle de 81,7%). La langue est considérée comme menacée par l'UNESCO. Le portugais, langue officielle du pays, est parlé par 95% de la population et a supplanté le forro dans les usages formels et urbains. Le forro reste cependant un marqueur identitaire fort, particulièrement valorisé dans la diaspora (Pays-Bas, Portugal). Glottolog : sont1304. SIL Ethnologue code : cri."
+    },
+    "culture": {
+      "majorRites": "Rites catholiques : baptême, mariage, funérailles avec veillées communautaires et prières. Tchiloli (txiloli) : spectacle de théâtre, musique et danse inspiré du cycle de Charlemagne (Auto du marquis de Mantoue, pièce portugaise du XVIe siècle), interpreté depuis des siècles par les Forros lors des fêtes de São Tomé. Le Tchiloli est joué uniquement par des hommes, en vêtements d'époque européens, avec dialogues en portugais archaïque et moderne. Il est inscrit au patrimoine immatériel. Danço Congo : spectacle similaire au Tchiloli, combinant musique, danse et théâtre, avec thématique de résistance africaine. Auto de Floripes : performance théâtrale de l'île de Príncipe (groupe principense). Commémoration du massacre de Batepá (3 février 1953) : mémoire nationale santoméenne.",
+      "symbols": "La croix catholique comme symbole de l'identité luso-africaine forro. Le drapeau national de São Tomé-et-Príncipe intègre la couleur verte (végétation), rouge (sang des martyrs de Batepá) et noire (peuple africain). Le ussua et le socopé sont des rythmes musicaux emblématiques de São Tomé. La forêt tropicale humide (Obô) est le paysage identitaire de l'île.",
+      "artsAndMusic": "Ussua et socopé : rythmes musicaux et danses populaires caractéristiques de l'île de São Tomé. Le dêxa est le rythme emblématique de l'île de Príncipe. Tchiloli : spectacle théâtral unique au monde mêlant théâtre médiéval portugais, masques, costumes d'époque et percussions africaines. Danço Congo : danse-théâtre à thématique africaine. Auto de Floripes : spectacle de l'île de Príncipe. Instruments : tambours divers, flûtes, percussions à l'africaine. La musique santoméenne est influencée par la morna capverdienne et les rythmes angolais. La littérature orale en langue forro (contes, proverbes, devinettes) constitue un patrimoine culturel en voie de revitalisation par des associations culturelles.",
+      "spiritualities": "Catholicisme romain dominant et profondément ancré depuis le XVe siècle. Protestantisme évangélique en expansion depuis les années 1980 (environ 10-15% de la population). Adventisme présent. Syncrétisme catholique-africain : culte des ancêtres intégré aux pratiques catholiques, recours à des guérisseurs traditionnels (curandeiros). Pas de pratiques animistes formalisées mais croyances en esprits protecteurs (ndegue) persistantes dans les zones rurales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royauté précoloniale autochtone. Aux XVIIe-XVIIIe siècles, des notables forros (filhos da terra) exercèrent une autorité quasi-seigneuriale sur les terres de l'île après le départ de nombreux colons portugais face aux attaques hollandaises. Cette période d'autonomie relative est considérée comme l'âge d'or de la domination forro sur l'île. Des chefs de communauté (sobas) maintinrent une autorité locale reconnue par l'administration coloniale.",
+      "relationsWithNeighbors": "Relations de domination des Forros sur les Angolares (groupe distinct vivant dans le sud de l'île, historiquement méprisé par les Forros) et sur les Serviçais (travailleurs sous contrat). Relations de tension-collaboration avec les colons portugais : les Forros élites cherchèrent à être reconnus comme Portugais, adoptant langue, religion et culture européennes tout en maintenant leur position d'intermédiaires. Relations économiques avec le Portugal (principal partenaire commercial), le Cap-Vert et le Nigeria.",
+      "conflictsOrAlliances": "Massacre de Batepá (3 février 1953) : événement traumatique central de la conscience nationale santoméenne. Les autorités coloniales portugaises tuèrent des centaines de Forros en réponse à une résistance au travail forcé et à la rumeur d'une rébellion. Cet événement galvanisa le mouvement nationaliste et mena à l'indépendance en 1975. Après l'indépendance, tensions politiques internes entre factions du MLSTP représentant différents groupes sociaux.",
+      "diaspora": "Diaspora santoméenne estimée à 30 000-40 000 personnes, principalement au Portugal (Lisbonne) et aux Pays-Bas. La communauté santoméenne aux Pays-Bas valorise particulièrement la langue forro comme marqueur identitaire distinctif (études académiques à l'université de Leiden). La diaspora portugaise maintient des associations culturelles et des publications en langue créole."
+    },
+    "demography": {
+      "totalPopulation": 86000,
+      "referenceYear": 2025,
+      "source": "Estimation basée sur la population totale de São Tomé-et-Príncipe (238 684 en 2025 selon SaoTomeExpert) et la proportion de locuteurs forro (36,2% selon le recensement officiel, soit environ 86 000 personnes). Note : les frontières entre groupes Forros, Mestiços et Tongas sont floues dans les statistiques officielles. Britannica estime que la population de São Tomé est composée principalement de Forros. Source complémentaire : CIA World Factbook — São Tomé and Príncipe 2024 ; Navetur — Our Population 2024.",
+      "distributionByCountry": [
+        {
+          "country": "STP",
+          "population": 80000,
+          "note": "Île de São Tomé principalement (environ 93% de la population totale du pays vit sur cette île). Les Forros se concentrent dans la ville de São Tomé et le nord de l'île."
+        },
+        {
+          "country": "PRT",
+          "population": 3000,
+          "note": "Diaspora santoméenne à Lisbonne, avec proportion significative de Forros (estimation)"
+        },
+        {
+          "country": "NLD",
+          "population": 1500,
+          "note": "Communauté santoméenne aux Pays-Bas, connue pour la valorisation de la langue forro (estimation)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Forro Creole (langue). https://en.wikipedia.org/wiki/Forro_Creole",
+      "Wikipedia EN — Demographics of São Tomé and Príncipe. https://en.wikipedia.org/wiki/Demographics_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+      "SaoTomeExpert — The Forro Population of São Tomé and Príncipe. https://www.saotomeexpert.pt/en/sao-tome-and-principe-forro-population/",
+      "SaoTomeExpert — Creole Society and Forros. https://www.saotomeexpert.pt/en/sao-tome-and-principe-creole-society-and-forros/",
+      "Britannica — Forros, people of São Tomé and Príncipe. https://www.britannica.com/topic/Forros",
+      "Navetur — Our Population. https://navetur.st/index.php/guide/population",
+      "Wikipedia FR/EN — São Tomé-et-Príncipe (culture, Tchiloli, Danço Congo). https://en.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe",
+      "SOAS — Forro in the European Diaspora. https://glocal.soas.ac.uk/comela2020-5/"
+    ]
+  }
+}

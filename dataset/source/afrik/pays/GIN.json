@@ -1,0 +1,282 @@
+{
+  "id": "GIN",
+  "nameFr": "République de Guinée",
+  "nameOfficial": "République de Guinée (République de Guinée)",
+  "etymology": "Le nom \"Guinée\" provient du portugais \"Guiné\", terme utilisé par les navigateurs portugais au XVe siècle pour désigner la côte ouest-africaine au sud du Sénégal. L'origine du terme \"Guiné\" est incertaine, mais pourrait dériver du berbère \"Akal n-Iguinawen\" (terre des Noirs) ou d'un terme local. Les Français ont adapté ce nom pour leur colonie.",
+  "nameOriginActor": "Le nom \"Guinée\" a été donné par les navigateurs portugais au XVe siècle pour désigner la côte ouest-africaine. Les Français ont officialisé ce nom lors de la création de la colonie de Guinée française en 1891. Le nom a été officialisé à l'indépendance en 1958.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel de la Guinée était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Développement de royaumes et empires : empire du Mali (XIIIe-XVIe siècle), empire Songhai, influence de l'empire du Ghana. Le territoire était au cœur du Mandé médiéval. Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de royaumes et entités politiques : empire du Mali (centre historique du Mandé), théocratie peule du Fouta Djallon (XVIIIe-XIXe siècle), royaumes Malinké, peuples forestiers (Kissi, Toma, Guerzé), Soussou (côte). Les Européens utilisaient le terme \"Guinée\" pour désigner la région côtière.",
+      "colonization": "1891-1958 : Colonie française de Guinée (Guinée française). Les Français ont créé la colonie de Guinée en 1891. Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1958.",
+      "contemporary": "1958 : Indépendance de la Guinée (2 octobre 1958), proclamation de la République de Guinée. La Guinée est la seule colonie française à avoir voté \"NON\" au référendum de 1958 sur la Communauté française, obtenant ainsi l'indépendance immédiate sous la direction de Sékou Touré."
+    },
+    "kingdoms": [
+      {
+        "name": "Empire du Mali",
+        "period": "XIIIe siècle - XVIe siècle",
+        "dominantPeoples": ["Malinké", "autres peuples mandé"],
+        "politicalCenters": [
+          "Niani (capitale historique",
+          "aujourd'hui en Guinée)",
+          "autres centres"
+        ],
+        "historicalRole": "Empire du Mali puissant, centre historique du Mandé, berceau de la culture mandé. La Guinée était au cœur de l'empire du Mali. Développement de l'islam, commerce transsaharien, épopée de Soundiata. Rôle majeur dans la diffusion culturelle mandé."
+      },
+      {
+        "name": "Théocratie peule du Fouta Djallon",
+        "period": "XVIIIe siècle - XIXe siècle",
+        "dominantPeoples": ["Peul / Fula"],
+        "politicalCenters": ["Fouta Djallon (hauts plateaux)"],
+        "historicalRole": "Théocratie peule du Fouta Djallon, l'un des plus importants États peuls d'Afrique de l'Ouest. État islamique structuré, système d'émirats, résistance à la colonisation française. Traditions peules et islamiques."
+      },
+      {
+        "name": "Royaumes Malinké",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Malinké"],
+        "politicalCenters": [
+          "Chefferies traditionnelles malinké (Haute-Guinée)"
+        ],
+        "historicalRole": "Royaumes Malinké, héritiers du Mandé, traditions de l'empire du Mali, système lignager, castes artisanales (numu, djeli), importance des griots. Rôle majeur dans la diffusion culturelle mandé."
+      },
+      {
+        "name": "Peuples forestiers",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Kissi", "Toma", "Guerzé / Kpelle"],
+        "politicalCenters": ["Chefferies traditionnelles (Guinée forestière)"],
+        "historicalRole": "Peuples forestiers de Guinée forestière, culturellement distincts du nord mandé et du Fouta Djallon. Traditions forestières, structures lignagères. Résistance à la colonisation."
+      },
+      {
+        "name": "Peuples Soussou",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Soussou"],
+        "politicalCenters": [
+          "Chefferies traditionnelles (Basse-Guinée",
+          "côte)"
+        ],
+        "historicalRole": "Peuples Soussou de la côte, rôle commercial important, traditions maritimes. Conakry et la Basse-Guinée sont dominées par les Soussou."
+      },
+      {
+        "name": "Colonie française de Guinée",
+        "period": "1891 - 1958",
+        "dominantPeoples": [
+          "Tous les peuples guinéens sous domination française"
+        ],
+        "politicalCenters": ["Conakry (capitale coloniale)"],
+        "historicalRole": "Colonie française, exploitation économique, développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance du Fouta Djallon). Développement du mouvement indépendantiste au XXe siècle, leadership de Sékou Touré."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Peul / Fula",
+        "selfAppellation": "Fulɓe (pluriel), Pullo (singulier)",
+        "exonyms": [
+          "Peul (terme français)",
+          "Fulani (terme haoussa)",
+          "Fula (terme anglophone)",
+          "\"Fellata\" (terme haoussa parfois péjoratif",
+          "à éviter)"
+        ],
+        "peopleId": "PPL_FULA",
+        "mainRegion": "Fouta Djallon (hauts plateaux, centre)",
+        "languages": ["Fulfulde (ful", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Fulɓe\" est l'auto-appellation. \"Peul\" et \"Fulani\" sont des exonymes acceptés. \"Fellata\" peut avoir une connotation péjorative dans certains contextes et doit être évité. Le Fouta Djallon fut l'un des plus importants États peuls d'Afrique de l'Ouest."
+      },
+      {
+        "name": "Malinké",
+        "selfAppellation": "Maninka / Mandinka",
+        "exonyms": [
+          "Malinké (terme français)",
+          "Mandinka (terme anglophone)",
+          "\"Mandingo\" (terme historique",
+          "parfois péjoratif)"
+        ],
+        "peopleId": "PPL_MALINKE",
+        "mainRegion": "Haute-Guinée (nord-est)",
+        "languages": ["Malinké / Mandinka (mlq", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Maninka\" ou \"Mandinka\" est l'auto-appellation. \"Malinké\" est l'exonyme français accepté. \"Mandingo\" est un terme historique qui peut avoir une connotation péjorative dans certains contextes et doit être évité. Les Malinké sont héritiers du Mandé et de l'empire du Mali."
+      },
+      {
+        "name": "Soussou",
+        "selfAppellation": "Soussou",
+        "exonyms": ["Soussou (terme utilisé par les Européens)"],
+        "peopleId": "PPL_SOUSSOU",
+        "mainRegion": "Basse-Guinée (côte, Conakry)",
+        "languages": ["Soussou (sus", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Soussou\" est l'auto-appellation. Pas de terme péjoratif connu. Population littorale et urbaine de Basse-Guinée. Conakry et la Basse-Guinée sont dominées par les Soussou."
+      },
+      {
+        "name": "Kissi",
+        "selfAppellation": "Kissi",
+        "exonyms": ["Kissi (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KISSI",
+        "mainRegion": "Guinée forestière (sud)",
+        "languages": ["Kissi (kqs", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Kissi\" est l'auto-appellation. Pas de terme péjoratif connu. Peuple forestier du sud."
+      },
+      {
+        "name": "Guerzé / Kpelle",
+        "selfAppellation": "Kpelle",
+        "exonyms": [
+          "Kpelle (terme utilisé par les Européens)",
+          "Guerzé (terme alternatif)"
+        ],
+        "peopleId": "PPL_KPELLE",
+        "mainRegion": "Guinée forestière (sud)",
+        "languages": ["Kpelle (kpe", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Kpelle\" est l'auto-appellation. \"Guerzé\" est un terme alternatif accepté. Pas de terme péjoratif connu. Groupe de Guinée forestière."
+      },
+      {
+        "name": "Toma / Loma",
+        "selfAppellation": "Toma, Loma",
+        "exonyms": ["Toma", "Loma (termes utilisés par les Européens)"],
+        "peopleId": "PPL_TOMA_LOMA",
+        "mainRegion": "Guinée forestière (montagnes)",
+        "languages": [
+          "Toma (tod",
+          "ISO 639-3)",
+          "Loma (lom",
+          "ISO 639-3)",
+          "français"
+        ],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Toma\" et \"Loma\" sont les auto-appellations respectives. Pas de terme péjoratif connu. Populations montagnardes de Guinée forestière."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes (Bagha, Yalunka, Manon, Bassari)",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Diverses régions de la Guinée",
+        "languages": ["Langues diverses", "français"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation (Bagha, Yalunka, Manon, Bassari, etc.). Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "Fulfulde",
+          "isoCode": "ful"
+        },
+        {
+          "name": "Malinké / Mandinka",
+          "isoCode": "mlq"
+        },
+        {
+          "name": "Soussou",
+          "isoCode": "sus"
+        },
+        {
+          "name": "Kissi",
+          "isoCode": "kqs"
+        },
+        {
+          "name": "Kpelle",
+          "isoCode": "kpe"
+        },
+        {
+          "name": "Toma",
+          "isoCode": "tod"
+        },
+        {
+          "name": "Loma",
+          "isoCode": "lom"
+        },
+        {
+          "name": "langues diverses"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique de la Guinée. Traditions mandé (Malinké, Soussou, Kpelle, Toma, Loma, griots, kora, musique mandingue, épopée de Soundiata). Traditions peules (Fouta Djallon, poésie peule, traditions islamiques). Traditions forestières (Kissi, Toma, Loma, Guerzé, masques, traditions d'initiation). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La Guinée forestière est culturellement distincte du nord mandé et du Fouta Djallon.",
+      "dominantReligions": "Islam sunnite (majoritaire, 85%+), christianisme (minorité), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques)",
+      "lifestyles": "Agriculture (riz, mil, arachides, cultures vivrières), élevage (Peuls, bovins), exploitation minière (bauxite, or, diamants), commerce et activités urbaines (zones urbaines, Conakry). Urbanisation modérée. Économie basée sur l'exploitation minière (bauxite, première source de revenus), l'agriculture, et les services. La Guinée possède d'importantes ressources minières.",
+      "socialOrganization": "Organisation en empires historiques (empire du Mali, centre du Mandé), théocraties (Fouta Djallon, système d'émirats), chefferies traditionnelles (Malinké, Soussou, peuples forestiers), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Système de castes (Malinké, numu, djeli, griots). Traditions d'initiation et de passage à l'âge adulte.",
+      "regionalRelations": "Relations historiques avec le Mali (Malinké, héritage de l'empire du Mali), le Sénégal (Peuls, commerce), la Sierra Leone (peuples forestiers, frontière), le Liberia (Kpelle, frontière), la Côte d'Ivoire (Malinké, commerce, frontière). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest) et l'UEMOA (Union économique et monétaire ouest-africaine). Relations commerciales et culturelles transfrontalières."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par les peuples mandé, atlantiques et forestiers. Développement de chefferies et royaumes locaux.",
+      "middleAges": "XIIIe-XVIe siècle : Empire du Mali, centre historique du Mandé, berceau de la culture mandé. La Guinée était au cœur de l'empire du Mali. Développement de l'islam, commerce transsaharien, épopée de Soundiata. Rôle majeur dans la diffusion culturelle mandé. Influence de l'empire Songhai et de l'empire du Ghana.",
+      "precolonial": "XVIIIe-XIXe siècle : Théocratie peule du Fouta Djallon, l'un des plus importants États peuls d'Afrique de l'Ouest. Consolidation des royaumes Malinké (Haute-Guinée). Développement des peuples Soussou (Basse-Guinée, côte). Peuples forestiers (Guinée forestière). Commerce régional et transsaharien. Résistance aux pressions extérieures.",
+      "colonization": "1891 : Création de la colonie française de Guinée. Période coloniale française (1891-1958), exploitation économique, développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance du Fouta Djallon). XXe siècle : Développement du mouvement indépendantiste, leadership de Sékou Touré.",
+      "independenceStruggle": "1950s-1958 : Mouvement pour l'indépendance mené par Sékou Touré et le Parti démocratique de Guinée (PDG). 1958 : Référendum sur la Communauté française, la Guinée vote \"NON\" (seule colonie à voter NON). Indépendance de la Guinée (2 octobre 1958), proclamation de la République de Guinée. Sékou Touré devient président.",
+      "postIndependence": "1958-1984 : Présidence de Sékou Touré, régime socialiste, politique d'isolement, répression politique. 1984-2008 : Régime militaire, présidence de Lansana Conté. 2008-2010 : Régime militaire, présidence de Moussa Dadis Camara puis Sékouba Konaté. 2010-présent : Transition démocratique, élection d'Alpha Condé (2010-2021) puis de Mamady Doumbouya (depuis 2021, coup d'État). Défis : pauvreté, instabilité politique, développement économique, gestion des ressources minières. La Guinée possède d'importantes ressources minières (bauxite, or, diamants)."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Guinea",
+      "CIA World Factbook – Guinea",
+      "ONU / UNFPA – Démographie Guinée 2025",
+      "Niane, Djibril Tamsir – \"Soundjata ou l'épopée mandingue\"",
+      "Levtzion, Nehemia – \"Ancient Ghana and Mali\"",
+      "Recensements guinéens",
+      "Études anthropologiques sur les peuples de la Guinée",
+      "Études historiques sur l'empire du Mali et le Fouta Djallon"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Peul / Fula",
+          "population": 4950000,
+          "percentageInCountry": 33,
+          "peopleId": "PPL_FULA",
+          "region": "Fouta Djallon (hauts plateaux, centre)",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Malinké",
+          "population": 4350000,
+          "percentageInCountry": 29,
+          "peopleId": "PPL_MALINKE",
+          "region": "Haute-Guinée (nord-est)",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Soussou",
+          "population": 3150000,
+          "percentageInCountry": 21,
+          "peopleId": "PPL_SOUSSOU",
+          "region": "Basse-Guinée (côte, Conakry)",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Kissi",
+          "population": 750000,
+          "percentageInCountry": 5,
+          "peopleId": "PPL_KISSI",
+          "region": "Guinée forestière (sud)",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Guerzé / Kpelle",
+          "population": 750000,
+          "percentageInCountry": 5,
+          "peopleId": "PPL_KPELLE",
+          "region": "Guinée forestière (sud)",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Toma / Loma",
+          "population": 450000,
+          "percentageInCountry": 3,
+          "peopleId": "PPL_TOMA_LOMA",
+          "region": "Guinée forestière (montagnes)",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Autres peuples",
+          "population": 600000,
+          "percentageInCountry": 4,
+          "region": "Diverses régions de la Guinée"
+        }
+      ]
+    }
+  }
+}

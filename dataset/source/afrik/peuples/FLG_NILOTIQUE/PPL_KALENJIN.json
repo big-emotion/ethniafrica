@@ -1,0 +1,140 @@
+{
+  "id": "PPL_KALENJIN",
+  "nameMain": "Kalenjin",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["KEN", "UGA", "TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Kalenjin",
+      "selfAppellation": "Kalenjin (signifie litteralement Je te dis en langue nandi)",
+      "exonyms": [
+        "Nandi",
+        "Kipsigis",
+        "Pokot",
+        "Tugen",
+        "Marakwet",
+        "Keiyo",
+        "Sabaot",
+        "Endorois",
+        "Sengwer",
+        "Terik"
+      ],
+      "originOfExonyms": "Le terme collectif Kalenjin a ete adopte dans les annees 1940-1950, popularise par le journaliste et animateur radio de la Seconde Guerre mondiale John Arap Chemallan qui utilisait cette formule pour s'adresser aux auditeurs. La Kalenjin Union fut fondee en 1948 a Eldoret pour federer les sous-groupes.",
+      "whyProblematic": "Le terme Kalenjin regroupe plus de 25 sous-groupes distincts aux dialectes parfois peu mutuellement intelligibles. Avant les annees 1950, chaque sous-groupe se definissait par son propre ethnonyme (Nandi, Kipsigis, etc.) et le terme Kalenjin etait peu utilise.",
+      "contemporaryUsage": "Utilise officiellement au Kenya pour designer le troisieme groupe ethnique du pays (recensement KNBS 2019 : 6 358 113 personnes). Terme accepte par les membres du groupe comme identite collective politique et culturelle.",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique meridional (Southern Nilotic)",
+      "historicalRegion": "Rift Valley, Kenya",
+      "currentCountries": ["KEN", "UGA", "TZA"]
+    },
+    "ethnicities": [
+      "Kipsigis",
+      "Nandi",
+      "Pokot",
+      "Keiyo",
+      "Tugen",
+      "Marakwet",
+      "Sabaot",
+      "Endorois",
+      "Ogiek",
+      "Terik",
+      "Sengwer",
+      "Datooga",
+      "Sebei"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kalenjin sont des Nilotiques meridionaux dont les ancetres les plus anciens sont associes aux populations pastorales de la vallee du Nil superieur et du Wadi Howar (Nil Jaune), vers 10 000-6000 av. J.-C. Leurs traditions orales lient leurs origines a l'Egypte ancienne (appelee Misiri dans leurs recits), certains recits evoquant une migration depuis l'epoque pharaonique. Les linguistes rattachent leur proto-langue au berceau nilotique oriente dans le bassin du Nil moyen oriental, au sud du Nil Bleu (Abbai), des le troisieme millenaire av. J.-C., avec des sites comme Kadero au nord de Khartoum. Ils partagent des ancetres communs avec les Murle, Didinga et Laarim des hauts plateaux ethiopiens pres de la riviere Omo.",
+      "formationPeriod": "La culture de Sirikwa, ancetre directe de la civilisation kalenjin, se developpe entre 1200 et 1600 ap. J.-C. dans la region du Mau et jusqu'au mont Elgon, caracterisee par des habitations fortifiees en enclos (sirikwa holes). Le nom collectif Kalenjin n'est adopte qu'entre 1940 et 1950 sous l'impulsion de la Kalenjin Union fondee a Eldoret en 1948.",
+      "migrationRoutes": [
+        "Migration vers le sud depuis le bassin du Nil superieur et les hautes terres ethiopiennes, environ 500 av. J.-C.",
+        "Penetration dans les regions du Soudan du Sud et de l'Ouganda vers le Ve siecle ap. J.-C. lors de l'effondrement de l'empire kushite",
+        "Expansion vers l'Ouganda occidental et le Kenya occidental aux XIe-XIIe siecles, en lien avec la diffusion des commercants arabes dans le Soudan central",
+        "Etablissement dans les escarpements de la Rift Valley kenyane (Nandi, Kipsigis, Keiyo, Marakwet) et autour du mont Elgon (Sabaot) entre le XIIe et le XVIIe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Rift Valley (Kenya)",
+        "Escarpement de l'Elgeyo",
+        "Plateau de l'Uasin Gishu",
+        "Mont Elgon",
+        "Massif du Mau",
+        "Baringo",
+        "West Pokot",
+        "Comtes de Nandi et Kericho",
+        "Bomet",
+        "Elgeyo-Marakwet",
+        "Est de l'Ouganda (Sebei)",
+        "Region du lac Eyasi en Tanzanie (Datooga)"
+      ],
+      "unificationsOrDivisions": "Plusieurs sous-groupes se sont formes a partir d'un tronc proto-nilotique commun en se separant progressivement. Les Kipsigis ont migre vers le sud au detriment des Luo, Gusii et Maasai. Les Sabaot (Sebei) se sont installes en Ouganda oriental. Une premiere unite politique moderne emerge avec la Kalenjin Union en 1948, renforcee apres l'independance sous la presidence de Daniel arap Moi (1978-2002).",
+      "externalInfluences": "Emprunts culturels significatifs aux populations cushitiques meridionales et orientales : systeme de classes d'age, pratique de la circoncision, certains elements lexicaux. Influence genetique et culturelle des Omotic, des Iraqw et des Maasai. Contacts anciens avec les populations Ogiek (Dorobo) et Agumba de la foret du Mau et du mont Kenya.",
+      "majorHistoricalEvents": "Resistance coloniale : l'orkoiyot (leader spirituel et militaire) Koitalel Arap Samoei dirige la resistance nandi contre la construction du chemin de fer ougandais (1895-1905) ; il est tue en 1905. Famines et epizooties devastatrices au XIXe siecle : Laparanat (vers 1785), Aoyate (1800-1830), famine du Mutai (1836). Violence post-electorale de 2007-2008 dans la Rift Valley. Presidence de Daniel arap Moi (1978-2002) et de William Ruto (depuis 2022), deux presidents kalenjin du Kenya."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe sans chefferie hereditaire centralisee, organisee autour d'un systeme de classes d'age (ipinda) qui structure les roles sociaux, militaires et politiques. Les decisions collectives relevent du conseil des anciens (Myoot Council of Elders). L'autorite spirituelle et militaire etait incarnee par l'orkoiyot chez les Nandi et Kipsigis, un leader rituel non hereditaire. Apres l'independance, la Lango Cultural Foundation joue un role analogue pour les Kalenjin en general.",
+      "clanOrganization": "Organisation clanique patrilineaire en sous-groupes territoriaux. Le clan Long'ole est mentionne dans la tradition orale kalenjin. Les sous-groupes (Kipsigis, Nandi, Keiyo, etc.) constituent des unites clano-territoriales distinctes avec leurs propres sous-clans.",
+      "ageClassSystems": "Systeme de classes d'age (ipinda) central dans l'organisation sociale et militaire. L'initiation masculine (yatitaet) par la circoncision (tumdo) marque le passage a l'age adulte et l'entree dans une classe d'age. Ce systeme, emprunte aux populations cushitiques voisines, regit les responsabilites militaires, les droits sociaux et les obligations rituelles.",
+      "roleOfLineages": "Lignages patrilineaires determines l'appartenance clanique, l'acces a la terre et aux troupeaux, la transmission du statut social. L'aîne de la famille joue un role de mediateur et d'autorite dans les litiges.",
+      "religiousAuthority": "Spiritualite traditionnelle centree sur Asis (soleil, divinite supreme assimilee a Isis/Aten dans les interpretations contemporaines) ; croyance monotheiste avec des paralleles revendiques avec les pratiques hebraiques et egyptiennes anciennes. Aujourd'hui, la tres grande majorite des Kalenjin est chretienne (catholiques, protestants). Petite minorite musulmane."
+    },
+    "languages": {
+      "mainLanguage": "Kalenjin (macrolangue)",
+      "isoCodes": ["kln"],
+      "dialects": [
+        "Kipsigis",
+        "Nandi",
+        "Keiyo",
+        "Tugen",
+        "Marakwet",
+        "Pokot",
+        "Sabaot",
+        "Terik",
+        "Sengwer",
+        "Ogiek"
+      ],
+      "vehicularRole": "Le kalenjin sert de langue identitaire commune entre les sous-groupes. Le swahili et l'anglais sont utilises comme langues vehiculaires nationales au Kenya. Kass Media Group et Chamgei FM diffusent en kalenjin, renforçant l'usage de la macrolangue dans les medias."
+    },
+    "culture": {
+      "majorRites": "Initiation masculine par la circoncision (yatitaet + tumdo), generalement pratiquee en septembre-octobre par la tradition (desormais souvent en decembre) ; elle marque l'entree dans la classe d'age adulte. La circoncision feminine (FGM) existe mais est combattue par des campagnes locales. Ceremonies de mariage en trois etapes : demande (kaayaaet ap koito), fiancailles formelles (koito) avec dot en betail, puis mariage (tunisiet). Rites funeraires et celebrations agropastorales.",
+      "symbols": "La calabasse decoree (sotet) utilisee pour le lait fermente (mursik) est un symbole culturel fort. Les perles et bijoux constituent des marqueurs identitaires. L'elevage bovin reste au coeur de l'identite sociale et economique.",
+      "artsAndMusic": "Tradition orale riche (contes sur le Chemosit, le Cheptalel, la legende du clan Long'ole, le mythe de Misiri). Artistes musicaux contemporains notables comme Emmy Kosgei et Pastor Joel Kimetto. Medias en langue kalenjin : Kass Media Group, Chamgei FM, Kitwek FM. Artisanat : perles, decoration de calabasses. Cinema local emergent (film Ngebe Gaa, 2019).",
+      "spiritualities": "Croyance traditionnelle en Asis (dieu solaire supreme), medecine traditionnelle, divination. Aujourd'hui predominance du christianisme (catholiques, adventistes, evangeliques). La spiritualite Asiisian revendique des liens avec les croyances egyptiennes et hebraiques antiques (Asis/Isis, rites de circumcision a Gilgil rapproches de ceux de Gilgal biblique)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation en chefferies de clan et autorite de l'orkoiyot (leader rituel/militaire) chez les Nandi et Kipsigis. Culture de Sirikwa (XIIe-XVIIe siecle) : enclos fortifies du Mau au mont Elgon, ancetres des Kalenjin modernes.",
+      "relationsWithNeighbors": "Expansion territoriale au detriment des Luo, Gusii et Maasai, notamment par les Kipsigis qui utilisaient des boucliers en peau de buffle. Guerres Iloikop au XIXe siecle. Echanges culturels avec les Maasai (emprunt du systeme d'age et de certains elements lexicaux). Conflits post-electoraux de 2007-2008 dans la Rift Valley avec d'autres groupes ethniques kenyans.",
+      "conflictsOrAlliances": "Resistance des Nandi contre la construction du chemin de fer ougandais sous Koitalel Arap Samoei (1895-1905). Guerres Iloikop (XIXe siecle) contre les Maasai. Alliance politique dominante au Kenya sous Daniel arap Moi (1978-2002) et William Ruto (depuis 2022). Represailles post-electorales en 2007-2008.",
+      "diaspora": "Environ 20 000 Kalenjin en Amerique du Nord (USA/Canada, association Gotabgaa International). Plus de 15 000 en Australie (Perth, Melbourne, Sydney, Brisbane, Adelaide, association Kitwek). Presence diasporique en Europe occidentale. Les athletes kalenjin (Eliud Kipchoge, Faith Kipyegon, Kelvin Kiptum, Brigid Kosgei, etc.) constituent une vitrine mondiale du groupe."
+    },
+    "demography": {
+      "totalPopulation": 7000000,
+      "referenceYear": 2025,
+      "source": "Recensement national kenyan KNBS 2019 (6 358 113 au Kenya) + estimations 2025 Uganda/Tanzanie/diaspora",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 6500000,
+          "note": "Troisieme groupe ethnique du Kenya, concentre dans les comtes de Kericho, Nandi, Bomet, Baringo, Elgeyo-Marakwet, West Pokot, Trans Nzoia, Uasin Gishu, Nakuru"
+        },
+        {
+          "country": "UGA",
+          "population": 350000,
+          "note": "Principalement Sebei/Sabiny (mont Elgon) et Pokot (Karamoja)"
+        },
+        {
+          "country": "TZA",
+          "population": 210000,
+          "note": "Datooga (Barabaig et autres sous-groupes) dans les regions de Manyara, Singida et autour du lac Eyasi"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Kalenjin people (https://en.wikipedia.org/wiki/Kalenjin_people)",
+      "Wikipedia EN – Kalenjin languages (https://en.wikipedia.org/wiki/Kalenjin_languages)",
+      "Ethnologue – Kalenjin macrolanguage [kln] (https://www.ethnologue.com/language/kln/)",
+      "Kenya National Bureau of Statistics – 2019 Kenya Population and Housing Census, Volume IV",
+      "Anderson D. – Mau Mau and the Kalenjin (histoire coloniale et resistance nandi)",
+      "Kipkorir B.E. – The Marakwet of Kenya, East African Literature Bureau, 1973",
+      "Were G.S. & Wilson D.A. – East Africa through a Thousand Years, Evans Brothers, 1968"
+    ]
+  }
+}

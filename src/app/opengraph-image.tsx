@@ -36,8 +36,7 @@ function Footer() {
 }
 
 export default async function OgImage() {
-  // Use English translations as default for OG images
-  const t = getTranslation("en");
+  const t = getTranslation("fr");
   const title = t.title;
   const subtitle = t.subtitle;
 

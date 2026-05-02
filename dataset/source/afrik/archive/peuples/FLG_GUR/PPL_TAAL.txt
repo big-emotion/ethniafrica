@@ -1,0 +1,36 @@
+# Nom du peuple
+- Nom principal : Talom / Talomsi
+- Auto-appellation : Talomsi
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Région historique : Burkina Faso
+- Identifiant peuple : PPL_TAAL
+
+# 1. Ethnies incluses
+- Groupes Talomsi ruraux
+
+# 2. Origines
+- Petit groupe gur ancien du centre burkinabè.
+- Relations ancestrales avec les villages Bwa et Mossi.
+
+# 3. Organisation
+- Lignages familiaux
+- Leadership coutumier
+
+# 4. Langue
+- Talomsi (non codée ISO)
+- Langue fortement minoritaire
+
+# 5. Culture
+- Rituels communautaires
+- Traditions agropastorales
+
+# 6. Histoire
+- Peu documenté dans les sources coloniales
+- Maintien d’une forte identité locale
+
+# 7. Démographie
+- Population : 15 000
+- Année : 2025
+
+# 8. Sources
+- Études régionales Burkina Faso

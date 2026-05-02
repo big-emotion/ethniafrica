@@ -1,0 +1,77 @@
+{
+  "id": "PPL_MANDA",
+  "nameMain": "Manda",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Manda",
+      "selfAppellation": "Manda",
+      "exonyms": ["Manda-Matumba"],
+      "originOfExonyms": "Manda-Matumba est une denomination linguistique designant la langue et le groupe dans la litterature academique. Matumba est parfois associe a un sous-groupe ou a une variante dialectale.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Manda est utilise aujourd'hui en Tanzanie pour ce sous-groupe du peuple Tumbuka. Ils resident principalement dans le district de Ludewa (region de Njombe) et dans le nord de la region de Ruvuma, le long de la rive est du lac Malawi.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu, sous-groupe Tumbuka, Tanzanie meridionale",
+      "historicalRegion": "District de Ludewa, region de Njombe (anciennement region d'Iringa), Tanzanie meridionale",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Manda"],
+    "origins": {
+      "ancientOrigins": "Les Manda se sont separes du groupe Tumbuka principal il y a plusieurs siecles, issus du segment de Mulonga Mbulalubilo des Tumbuka. Les Tumbuka eux-memes font partie des premiers peuples bantous ayant penetre la region entre la vallee de la Luangwa et le nord du lac Malawi au XVe siecle. La tradition orale mentionne une origine liee aux Ngoni, peuple migrateur sud-africain qui envahit la region au XIXe siecle.",
+      "formationPeriod": "La separation des Manda du groupe Tumbuka principal remonte a plusieurs siecles. L'invasion Ngoni des annees 1850 impacta fortement les groupes Tumbuka de la region, avec melange culturel et linguistique entre Tumbuka et Ngoni.",
+      "migrationRoutes": [
+        "Depuis le nord-ouest (regions Tumbuka, entre la Luangwa et le lac Malawi) vers le sud de la Tanzanie",
+        "Certains Manda sont aussi presents dans le district de Chunya (region de Mbeya) a Gua et Mkwajuni",
+        "Presence dans les zones de peche : reservoir de Mtera, Nyumba ya Mungu, Mlimba"
+      ],
+      "historicalSettlementZones": [
+        "District de Ludewa, region de Njombe, Tanzanie meridionale",
+        "Nord de la region de Ruvuma, Tanzanie",
+        "Rive orientale du lac Malawi"
+      ],
+      "unificationsOrDivisions": "La separation du groupe Tumbuka principal constitue l'evenement fondateur de l'identite Manda. L'invasion Ngoni au XIXe siecle provoqua des destructions et des relocalisations, mais aussi un metissage culturel entre Tumbuka (dont les Manda) et Ngoni : les Tumbuka adopterent les villages compacts, la descendance patrilineaire et les coutumes de danse et de mariage des Ngoni, tandis que les Ngoni adopterent l'agriculture Tumbuka et leur langue.",
+      "externalInfluences": "L'invasion Ngoni (annees 1850) fut l'evenement externe le plus determinant : destruction des communautes, captures, refuges dans les montagnes et les iles, puis metissage progressif. Le commerce swahili-arabe aux XVIIIe et XIXe siecles affecta les groupes Tumbuka via des chefferies commerciales creees pour controler le commerce d'ivoire. Les missions chretiennes du XIXe-XXe siecle eurent une influence majeure, notamment les missions ecossaises. La colonisation britannique (protectorat sur le Nyassaland et le Tanganyika) transforma les structures politiques.",
+      "majorHistoricalEvents": "Separation du groupe Tumbuka, il y a plusieurs siecles. Invasion Ngoni des annees 1850 : devastations, captures et metissage. Etablissement de la domination coloniale britannique (fin XIXe). Independance de la Tanzanie en 1961."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation decentralisee en petites communautes independantes sous des chefs de village autonomes, caracteristique du groupe Tumbuka avant les invasions Ngoni. Apres le melange avec les Ngoni, une organisation plus compacte en villages fut adoptee.",
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": "Passage d'une descendance matrilineaire (originale chez les Tumbuka) a une descendance patrilineaire sous influence Ngoni. La tenure fonciere patrilineaire Ngoni s'est imposee progressivement.",
+      "religiousAuthority": "Les autorites religieuses traditionnelles venererent le dieu supreme Chiuta (symbolisant le soleil, auto-cree et omniscient selon la foi Tumbuka). Le culte des ancetres, la possession par les esprits et la sorcellerie font partie des pratiques traditionnelles Tumbuka. Les missionnaires chretiens (principalement protestants ecossais) introduisirent le christianisme a partir du XIXe siecle."
+    },
+    "languages": {
+      "mainLanguage": "Kimanda (Manda)",
+      "isoCodes": ["mgs"],
+      "dialects": [],
+      "vehicularRole": "Le kimanda (ISO 639-3 : mgs) est une langue bantoue stable de Tanzanie, classee dans la famille Niger-Congo (branche Manda, sous-groupe des langues des Highlands du sud de la Tanzanie). Elle est utilisee comme premiere langue par tous les membres de la communaute. Elle n'est pas enseignee dans les ecoles. Le swahili est la langue vehiculaire nationale. La langue mgs est distincte de la langue mande (d'Afrique de l'Ouest)."
+    },
+    "culture": {
+      "majorRites": "Les rites Tumbuka incluent Vimbuza, une danse de transe et de guerison, ainsi que des ceremonies de possession par les esprits. Parmi les ceremonies du cycle de vie, des rites de pubertes existent pour les garcons et les filles. Le christianisme (protestantisme, catholicisme) a superposes des pratiques religieuses a ces traditions, si bien que la majorite se dit chretienne tout en conservant des elements de la religion traditionnelle.",
+      "symbols": "Le dieu Chiuta symbolisant le soleil est la representation spirituelle supreme des Tumbuka. Le lac Malawi (rive orientale) constitue un element geographique identitaire fort pour les Manda.",
+      "artsAndMusic": "Les danses traditionnelles Tumbuka incluent ingoma, vimbuza, muganda et chiwoda. La danse mganda, inspiree des pratiques militaires des soldats Tumbuka ayant servi dans l'armee britannique, est particulierement connue lors des ceremonies comme le Kwenje. La musique vocale accompagne les ceremonies religieuses et communautaires.",
+      "spiritualities": "La religion traditionnelle Tumbuka-Manda inclut la croyance en Chiuta (dieu supreme, auto-cree et omniscient). Les pratiques comprennent la veneration des ancetres, la possession par les esprits (notamment la danse-transe vimbuza), la sorcellerie et des pratiques similaires a celles des peuples voisins d'Afrique centrale et orientale. Aujourd'hui, la grande majorite des Manda est chretienne (catholiques romains principalement), mais les croyances animistes persistent en parallele."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Manda, en tant que sous-groupe Tumbuka, n'ont pas constitue de royaume independant. Le groupe Tumbuka plus large forma le royaume de Nkhamanga, mais les Manda sont l'un des petits groupes subsidiaires issus du segment Kalonga wa Nkhonde du lignage Mulonga Mbulalubilo.",
+      "relationsWithNeighbors": "En tant que sous-groupe Tumbuka, les Manda partagent une histoire avec les Senga, Nyika, Henga, Yombe, Phoka, Tonga et d'autres sous-groupes Tumbuka. L'interaction historique avec les Ngoni (invasion, puis metissage) est la plus determinante. Les Tumbuka et les Ngoni s'influencerent mutuellement : les Tumbuka adopterent les pratiques Ngoni et les Ngoni adopterent la langue Tumbuka (langue Ngoni abandonnee vers 1900).",
+      "conflictsOrAlliances": "L'invasion Ngoni (Mbelwa, branche de Zwangendaba) dans les annees 1850 : devastations des communautes Tumbuka, prise de captifs, incorporation dans les regiments Ngoni. Certains soldats Henga (apparentes Tumbuka) se revolterent et fuirent vers le nord vers 1881. Les missionnaires ecossais et les Britanniques mirent fin a l'esclavage Swahili a Karonga en 1895.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 28000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur 22 000 personnes en 2002 (Wikipedia Manda people) avec croissance demographique tanzanienne.",
+      "distributionByCountry": [{ "country": "TZA", "population": 28000 }]
+    },
+    "sources": [
+      "Manda people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Manda_people)",
+      "Manda language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Manda-Matumba_language)",
+      "Manda Language (MGS) – Ethnologue, SIL International (https://www.ethnologue.com/language/mgs/)",
+      "Manda in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13482)",
+      "Tumbuka people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Tumbuka_people)",
+      "Tumbuka – Encyclopaedia Britannica, 1998 (https://www.britannica.com/topic/Tumbuka)"
+    ]
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "id": "SDN",
+  "nameFr": "République du Soudan (Republic of the Sudan, جمهورية السودان)",
+  "nameOfficial": "République du Soudan (Republic of the Sudan, جمهورية السودان)",
+  "etymology": "Le nom \"Soudan\" provient de l'arabe \"Bilād as-Sūdān\" (بلاد السودان), signifiant \"pays des Noirs\". Ce terme était historiquement utilisé par les géographes arabes pour désigner la région subsaharienne habitée par des populations noires africaines, par opposition au \"Bilād al-Bayḍā\" (pays des Blancs) qui désignait l'Afrique du Nord. Le nom \"Soudan\" a été officialisé par les colonisateurs britanniques et égyptiens au XIXe siècle.",
+  "nameOriginActor": "Les géographes arabes médiévaux ont utilisé le terme \"Bilād as-Sūdān\" (pays des Noirs) pour désigner la région. Le nom \"Soudan\" a été officialisé par les colonisateurs britanniques et égyptiens au XIXe siècle lors de la création du Soudan anglo-égyptien.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Présence de royaumes nubiens (Koush, Méroé) dans la région. Contacts avec les civilisations égyptiennes. La région était connue sous le nom de \"Nubie\" par les Égyptiens et les Grecs.",
+      "middleAges": "Présence de royaumes chrétiens nubiens (Makurie, Nobatie, Alodie). Expansion de l'islam à partir du VIIe siècle. La région était connue sous le nom de \"Bilād as-Sūdān\" (pays des Noirs) par les géographes arabes.",
+      "precolonial": "Présence de royaumes et de sultanats (Sultanat de Sennar, Sultanat de Darfour). Expansion de l'islam et de l'arabisation. La région était connue sous le nom de \"Bilād as-Sūdān\" (pays des Noirs) par les géographes arabes, mais les populations locales avaient leurs propres appellations.",
+      "colonization": "1821-1885 : Conquête égyptienne du Soudan. 1899-1956 : Condominium anglo-égyptien (Soudan anglo-égyptien). Développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle). Le nom \"Soudan\" est officialisé par les colonisateurs britanniques et égyptiens.",
+      "contemporary": "1956 : Indépendance (1er janvier 1956), proclamation de la République du Soudan. 2011 : Sécession du Soudan du Sud. Le nom \"Soudan\" est officiel."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume de Koush",
+        "period": "VIIIe siècle av. J.-C. - IVe siècle apr. J.-C.",
+        "dominantPeoples": ["Nubiens"],
+        "politicalCenters": ["Napata", "Méroé"],
+        "historicalRole": "Royaume nubien puissant, rival de l'Égypte, développement de la civilisation méroïtique, contacts avec les civilisations méditerranéennes."
+      },
+      {
+        "name": "Royaume de Méroé",
+        "period": "IVe siècle av. J.-C. - IVe siècle apr. J.-C.",
+        "dominantPeoples": ["Nubiens"],
+        "politicalCenters": ["Méroé"],
+        "historicalRole": "Royaume nubien puissant, développement de la civilisation méroïtique, contacts avec les civilisations méditerranéennes, déclin au IVe siècle."
+      },
+      {
+        "name": "Royaumes chrétiens nubiens",
+        "period": "VIe siècle - XVe siècle",
+        "dominantPeoples": ["Nubiens"],
+        "politicalCenters": [
+          "Dongola (Makurie)",
+          "Faras (Nobatie)",
+          "Soba (Alodie)"
+        ],
+        "historicalRole": "Royaumes chrétiens nubiens, résistance à l'islam, déclin au XVe siècle, conversion progressive à l'islam."
+      },
+      {
+        "name": "Sultanat de Sennar",
+        "period": "XVIe siècle - 1821",
+        "dominantPeoples": ["Arabes soudanais", "Nubiens", "Beja"],
+        "politicalCenters": ["Sennar"],
+        "historicalRole": "Sultanat islamique puissant, contrôle du commerce dans la vallée du Nil, résistance aux Ottomans, conquête égyptienne (1821)."
+      },
+      {
+        "name": "Sultanat de Darfour",
+        "period": "XVIIe siècle - 1916",
+        "dominantPeoples": ["Four", "Arabes soudanais", "autres groupes"],
+        "politicalCenters": ["El Fasher"],
+        "historicalRole": "Sultanat islamique, contrôle du commerce transsaharien, résistance à la colonisation britannique, conquête britannique (1916)."
+      },
+      {
+        "name": "Condominium anglo-égyptien",
+        "period": "1899 - 1956",
+        "dominantPeoples": [
+          "Britanniques",
+          "Égyptiens",
+          "Arabes soudanais",
+          "Nubiens",
+          "Beja",
+          "autres groupes"
+        ],
+        "politicalCenters": ["Khartoum (capitale coloniale)"],
+        "historicalRole": "Colonisation britannique et égyptienne, développement de l'économie de plantation (coton, arachides), exploitation minière, mouvements nationalistes (XXe siècle)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Arabes soudanais",
+        "selfAppellation": "Al-'Arab (العرب)",
+        "exonyms": [
+          "\"Arabes\" (terme générique)",
+          "\"Arabophones\" (terme descriptif)",
+          "\"Maures\" (terme historique pour certains groupes sahariens)"
+        ],
+        "peopleId": "PPL_ARABES_AFRIQUE",
+        "mainRegion": "Toute la vallée du Nil, zones urbaines",
+        "languages": [
+          "Arabe soudanais (arb",
+          "ISO 639-3)",
+          "arabe standard",
+          "anglais"
+        ],
+        "languageFamily": "FLG_SEMITIQUE",
+        "appellationRemarks": "\"Al-'Arab\" (العرب) est l'auto-appellation. Le terme \"Maures\" est historique et peut être considéré comme réducteur. Le terme \"Arabophones\" est descriptif. Groupe sémitique majoritaire, descendants d'immigrants arabes arrivés à partir du VIIe siècle, métissages avec les populations nubiennes et africaines."
+      },
+      {
+        "name": "Beja",
+        "selfAppellation": "Bidhaawyeet / Hadendoa",
+        "exonyms": [
+          "\"Bedja\" (forme européenne)",
+          "\"Blemmyes\" (Antiquité",
+          "terme grec)"
+        ],
+        "peopleId": "PPL_BEJA",
+        "mainRegion": "Est du Soudan (mer Rouge), zones désertiques",
+        "languages": ["Beja (bej", "ISO 639-3)", "arabe soudanais"],
+        "languageFamily": "FLG_COUCHITIQUE",
+        "appellationRemarks": "\"Bidhaawyeet\" / \"Hadendoa\" sont les auto-appellations. Le terme \"Bedja\" est une forme européenne. Le terme \"Blemmyes\" est un terme grec antique. Groupe couchitique, probable descendance des Blemmyes antiques, pastoralisme semi-nomade."
+      },
+      {
+        "name": "Nubiens",
+        "selfAppellation": "Variées selon les groupes (Nubiens, Noba)",
+        "exonyms": [
+          "\"Nubiens\" (terme utilisé par les Européens)",
+          "\"Noba\" (terme historique)"
+        ],
+        "peopleId": "PPL_NUBIENS",
+        "mainRegion": "Nord du Soudan (vallée du Nil, Nubie)",
+        "languages": ["Nubien (kdi", "fia", "ISO 639-3)", "arabe soudanais"],
+        "languageFamily": "FLG_NILOSAHARIEN",
+        "appellationRemarks": "\"Nubiens\" / \"Noba\" sont les auto-appellations. Pas de terme péjoratif connu. Groupe nilo-saharien, descendants des anciens royaumes nubiens (Koush, Méroé), christianisation puis islamisation."
+      },
+      {
+        "name": "Four",
+        "selfAppellation": "Four",
+        "exonyms": [
+          "\"Four\" (terme utilisé par les Européens)",
+          "\"Fur\" (terme alternatif)"
+        ],
+        "peopleId": "PPL_FOUR",
+        "mainRegion": "Ouest du Soudan (Darfour)",
+        "languages": ["Four (fvr", "ISO 639-3)", "arabe soudanais"],
+        "languageFamily": "FLG_SOUDANIQUECENTRAL",
+        "appellationRemarks": "\"Four\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe soudanique central, originaire du Darfour, sultanat de Darfour (XVIIe siècle - 1916)."
+      },
+      {
+        "name": "Autres groupes",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_AUTRES_GROUPES",
+        "mainRegion": "Toutes les régions du Soudan",
+        "languages": ["Langues diverses", "arabe soudanais"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Arabe soudanais",
+          "isoCode": "arb",
+          "isPrimary": true
+        },
+        {
+          "name": "anglais",
+          "isoCode": "eng",
+          "isPrimary": true
+        },
+        {
+          "name": "beja",
+          "isoCode": "bej"
+        },
+        {
+          "name": "nubien",
+          "isoCode": "fia"
+        },
+        {
+          "name": "four",
+          "isoCode": "fvr"
+        }
+      ],
+      "culturalTraditions": "Traditions arabes (Arabes soudanais) : musiques traditionnelles, danse traditionnelle, poésie orale, artisanat, architecture islamique. Traditions couchitiques (Beja) : poésie orale, coiffure traditionnelle hadendoa, pastoralisme semi-nomade. Traditions nilo-sahariennes (Nubiens, Four) : musiques traditionnelles, danse traditionnelle, artisanat, architecture traditionnelle. Festivals traditionnels variés. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture soudanaise est riche et préservée, avec une forte tradition orale (poésie).",
+      "dominantReligions": "Islam sunnite (majoritaire, environ 97%), christianisme (environ 3%, principalement orthodoxe copte), religions traditionnelles africaines (syncrétisme rare, moins de 1%)",
+      "lifestyles": "Agriculture (coton, arachides, sorgho, millet, cultures vivrières), élevage (bovins, caprins, ovins, chameaux, mode de vie nomade et semi-nomade), pêche (Nil, importante source de protéines), exploitation minière (or, pétrole), commerce et activités urbaines (zones urbaines, Khartoum). Urbanisation importante. Économie basée sur l'agriculture (coton, arachides), l'exploitation minière (or, pétrole), et les services. Le Soudan est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles.",
+      "socialOrganization": "Société multiethnique et multiculturelle. Structures familiales traditionnelles (patrilinéaires). Organisation communautaire (tribus, clans). Structures étatiques modernes (république, mais instabilité politique et conflits récents). Système politique démocratique, mais instabilité politique et conflits récents (guerre civile, Darfour, sécession du Soudan du Sud en 2011).",
+      "regionalRelations": "Relations avec l'Afrique de l'Est (IGAD, Union africaine), relations avec le Moyen-Orient (Ligue arabe, pays du Golfe), relations avec l'Europe (Union européenne), relations avec les États-Unis. Le Soudan est membre de l'IGAD, de l'Union africaine et de la Ligue arabe."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Présence de royaumes nubiens (Koush, Méroé) dans la région. Contacts avec les civilisations égyptiennes. La région était connue sous le nom de \"Nubie\" par les Égyptiens et les Grecs.",
+      "middleAges": "Présence de royaumes chrétiens nubiens (Makurie, Nobatie, Alodie). Expansion de l'islam à partir du VIIe siècle. La région était connue sous le nom de \"Bilād as-Sūdān\" (pays des Noirs) par les géographes arabes.",
+      "precolonial": "Présence de royaumes et de sultanats (Sultanat de Sennar, Sultanat de Darfour). Expansion de l'islam et de l'arabisation. La région était connue sous le nom de \"Bilād as-Sūdān\" (pays des Noirs) par les géographes arabes, mais les populations locales avaient leurs propres appellations.",
+      "colonization": "1821-1885 : Conquête égyptienne du Soudan, développement de l'économie de plantation (coton, arachides). 1899-1956 : Condominium anglo-égyptien (Soudan anglo-égyptien), développement de l'économie de plantation, exploitation minière, mouvements nationalistes (XXe siècle).",
+      "independenceStruggle": "1950s-1956 : Mouvements nationalistes, Umma Party, National Unionist Party, indépendance (1er janvier 1956), proclamation de la République du Soudan. Ismail al-Azhari devient premier Premier ministre.",
+      "postIndependence": "République du Soudan (1956), présidence d'Ismail al-Azhari (1956-1958), coups d'État (1958, 1969), présidence de Gaafar Nimeiry (1969-1985, régime socialiste, guerre civile avec le Soudan du Sud, 1955-1972, 1983-2005), présidence d'Omar el-Béchir (1989-2019, régime islamiste, guerre civile, Darfour, 2003-2020), révolution (2019), transition démocratique (2019-2021), coup d'État (2021), guerre civile (depuis 2023, conflit entre forces armées et paramilitaires). Stabilité politique fragile, État en transition, conflits récents (guerre civile, Darfour, sécession du Soudan du Sud en 2011), développement économique (agriculture, exploitation minière). Le Soudan est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Sudan",
+      "SIL Ethnologue – Languages of Sudan",
+      "Recensements soudanais",
+      "Études anthropologiques sur les peuples du Soudan",
+      "Études historiques sur la colonisation britannique et égyptienne"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Arabes soudanais",
+          "population": 35000000,
+          "percentageInCountry": 70,
+          "peopleId": "PPL_ARABES_AFRIQUE",
+          "region": "Toute la vallée du Nil, zones urbaines",
+          "languageFamily": "FLG_SEMITIQUE"
+        },
+        {
+          "name": "Beja",
+          "population": 2250000,
+          "percentageInCountry": 4.5,
+          "peopleId": "PPL_BEJA",
+          "region": "Est du Soudan (mer Rouge), zones désertiques",
+          "languageFamily": "FLG_COUCHITIQUE"
+        },
+        {
+          "name": "Nubiens",
+          "population": 2500000,
+          "percentageInCountry": 5,
+          "peopleId": "PPL_NUBIENS",
+          "region": "Nord du Soudan (vallée du Nil, Nubie)",
+          "languageFamily": "FLG_NILOSAHARIEN"
+        },
+        {
+          "name": "Four",
+          "population": 2000000,
+          "percentageInCountry": 4,
+          "peopleId": "PPL_FOUR",
+          "region": "Ouest du Soudan (Darfour)",
+          "languageFamily": "FLG_SOUDANIQUECENTRAL"
+        },
+        {
+          "name": "Autres groupes",
+          "population": 8250000,
+          "percentageInCountry": 16.5,
+          "peopleId": "PPL_AUTRES_GROUPES",
+          "region": "Toutes les régions du Soudan"
+        }
+      ]
+    }
+  }
+}

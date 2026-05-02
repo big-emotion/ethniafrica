@@ -1,0 +1,92 @@
+{
+  "id": "PPL_KROBO",
+  "nameMain": "Krobo",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Krobo",
+      "selfAppellation": "Klo",
+      "exonyms": [
+        "Krobo",
+        "Krobos",
+        "Manya Krobo",
+        "Yilo Krobo",
+        "Nowe",
+        "Nyewe"
+      ],
+      "originOfExonyms": "Le nom Krobo est d'origine akan, derive de Kro-obo-so-Foo signifiant ville des habitants de la montagne ou montagnards. Klo yo signifie Montagne Krobo dans la langue dangme. Les deux divisions historiques portent les noms Nowe (Manya, signifiant notre chez-soi) et Nyewe (Yilo, de wa yilo signifiant on ne mange pas ca, reference aux tabous alimentaires acquis lors du retour de la branche yilo depuis Krobo Denkyera).",
+      "whyProblematic": "Les deux divisions Manya Krobo et Yilo Krobo sont parfois traitees comme deux groupes distincts alors qu'ils constituent un seul peuple. L'usage colonial des termes Eastern Krobo (Manya) et Western Krobo (Yilo) a cree des confusions administratives.",
+      "contemporaryUsage": "Krobo est la denomination officielle dans l'administration ghaneenne et la litterature academique. Klo est l'endonyme utilise par les membres du groupe eux-memes. Les deux divisions sont aujourd'hui administrees comme districts distincts : Lower Manya Krobo, Upper Manya Krobo et Yilo Krobo (Region orientale du Ghana).",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Ga-Dangme (Kwa, Niger-Congo)",
+      "historicalRegion": "Region orientale du Ghana, plaines d'Accra, montagnes d'Akuapem, bassin de l'Afram",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Krobo", "Manya Krobo", "Yilo Krobo"],
+    "origins": {
+      "ancientOrigins": "Les Krobo font partie du groupe ethnolinguistique Ga-Dangme, lui-meme le plus grand des sept groupes dangme du sud-est du Ghana. Selon la tradition orale, le peuple dangme voyagea initialement en un seul groupe et se divisa en sept sous-groupes distincts a Lolovo (Tagologo Plains), un terme ewe signifiant l'amour est fini, apres leur arrivee au Ghana. Les sept groupes dangme sont : Krobo, Ada, Prampram, Shai, Ningo, Osu-Doku, Kpone. Apres la separation, les Krobo continuerent vers l'ouest jusqu'a une montagne de 338 metres (1 108 pieds) divisee par un ravin en deux sections inegales.",
+      "formationPeriod": "Etablissement sur la Montagne Krobo (Klo yo) comme centre culturel et rituel central. Periode de formation identitaire entre le XVIe et le XIXe siecle. Division en Manya Krobo et Yilo Krobo a une date inconnue. Au XIXe siecle, les Krobo etaient l'un des petits Etats de la Gold Coast en plein developpement politique et culturel.",
+      "migrationRoutes": [
+        "Migration depuis le nord-est (possiblement Nigeria ou Togo) avec le groupe dangme unifie",
+        "Arrivee au Ghana et division a Lolovo (Tagologo Plains) en sept sous-groupes",
+        "Les Krobo progressent vers l'ouest jusqu'a la montagne Klo yo",
+        "Expansion subsequente dans les plaines environnantes via le systeme Huza"
+      ],
+      "historicalSettlementZones": [
+        "Montagne Krobo (Klo yo) : centre cultural et ritual historique",
+        "Plaines d'Accra",
+        "Montagnes Akuapem",
+        "Bassin de l'Afram",
+        "Districts de Lower Manya Krobo (Odumasi-Krobo), Upper Manya Krobo (Asesewa), Yilo Krobo (Somanya)"
+      ],
+      "unificationsOrDivisions": "Les Krobo forment un peuple unique divise en deux grands Etats traditionnels : Manya Krobo (aussi appele Eastern Krobo ou Nowe) et Yilo Krobo (Western Krobo ou Nyewe). La date exacte de cette division est inconnue. La tradition yilo raconte leur retour depuis Krobo Denkyera ayant perdu leurs coutumes krobo originelles, et leur reintegration via des rites d'acculturation. Les deux Etats sont administres separement mais partagent la meme identite culturelle de base.",
+      "externalInfluences": "Guerres avec des tribus envahissantes depuis le XVIIe siecle, remportees par les Krobo jusqu'a l'introduction des fusees et fusils par les Britanniques. 1892 : le Gouverneur Griffiths enact la Native Customs Ordinance et ordonne l'evacuation de la montagne Krobo en 3 jours; les soldats coloniaux detruisent maisons, sanctuaires, poteries et arbres ancestraux. Influence culturelle akan (twi) persistante, notamment dans les tabous alimentaires des Yilo.",
+      "majorHistoricalEvents": "XVIIe-XIXe siecle : attaques repetees contre la montagne Krobo, repoussees jusqu'a l'artillerie britannique; croissance demographique et expansion via le systeme Huza (conquete pacifique des terres basses); milieu XIXe siecle : role dominant dans la production agricole d'exportation et la fabrication de perles; 1892 : expulsion de la montagne Krobo par le gouverneur colonial Griffiths; pelerinages annuels sur la montagne lors des festivals Ngmayem et Kloyosikplem en commemoration de l'expulsion."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Deux Etats traditionnels : Manya Krobo et Yilo Krobo, chacun dirige par son propre chef paramount. Administration a plusieurs niveaux : chef paramount, chefs divisionnaires, Adikrofo (chefs de village) et anciens. Le systeme Huza d'acquisition de terres permis aux Krobo d'etendre leur territoire de maniere pacifique et organisee (bloodless conquest selon l'anthropologue Field).",
+      "clanOrganization": "Organisation en clans dont les ancetres sont enterres dans les maisons familiales sur la montagne Krobo. Les paires de chasseurs mythiques (Aklo Muase / Aklo Natebi et Madja) ont reconne la montagne et initie la colonisation du site. Les Djemli (pretres) avaient interdiction de quitter la montagne pour la nuit.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent l'appartenance aux clans et les droits fonciers issus du systeme Huza. La residence patrilocale et les enterrements dans les maisons familiales renforcent le role des lignages comme garde-fous de la memoire collective et de la propriete.",
+      "religiousAuthority": "Les Djemli (pretres de la montagne) jouent un role central dans la vie spirituelle krobo. La montagne Krobo est le foyer spirituel du peuple; les rites et les sacrifices y sont effectues. Les pretres sont astreints a des restrictions strictes (pas de nuitee hors de la montagne). Le christianisme est largement adopte dans la communaute contemporaine."
+    },
+    "languages": {
+      "mainLanguage": "Dangme (Klogbi)",
+      "isoCodes": ["ada"],
+      "dialects": [
+        "Klogbi (variante Krobo du Dangme)",
+        "Dangme standard (Ada, Prampram, Shai)"
+      ],
+      "vehicularRole": "Le Klogbi est la variante dangme parlee par les Klo (Krobo). Le Dangme (ada) est une langue Kwa du groupe Ga-Dangme, parlee dans le sud-est du Ghana, ainsi qu'au Togo et au Benin. Reconnu comme langue vernaculaire depuis 1951 (Laws of the Gold Coast, Vernacular Literature Board Ordinance). L'anglais est la langue officielle et d'education. Le twi (akan) est compris par de nombreux Krobo en raison des contacts historiques."
+    },
+    "culture": {
+      "majorRites": "Dipo : rite de passage des jeunes filles; historiquement les filles passaient un a trois ans sur la montagne Krobo pour accomplir les coutumes traditionnelles, avant de rejoindre la communaute adulte. Festival Ngmayem : commemoration annuelle de l'expulsion de la montagne en 1892 et celebration de la recolte. Festival Kloyosikplem : pelerinage annuel sur la montagne Krobo.",
+      "symbols": "Perles Krobo : l'art de la fabrication de perles en verre fusionne est une tradition distinctive des Krobo, reconnue internationalement. La montagne Krobo (Klo yo) est le symbole identitaire supreme du peuple. Architecture de pierre multi-etages sur la montagne (maisons de 20 a 30 pieces), sans equivalent note par les missionnaires de l'epoque.",
+      "artsAndMusic": "Fabrication de perles (poudre de verre, verre fusionne, fragments de verre) : artisanat traditionnel et source de revenus contemporain. Agriculture comme activite principale (plaines d'Accra, montagnes Akuapem, bassin de l'Afram). Traditions orales transmises lors des festivals.",
+      "spiritualities": "La montagne Krobo est le centre spirituel et rituel du peuple. Culte des ancetres (enterrements dans les maisons familiales). Role central des Djemli (pretres) dans les rituels de la montagne. Christianisme largement repandu dans la communaute contemporaine, coexistant souvent avec des pratiques traditionnelles lors des festivals."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Deux Etats traditionnels Krobo : Manya Krobo (Odumasi-Krobo / Lower Manya Krobo) et Yilo Krobo (Somanya). Quatrieme plus grand groupe ethnique du Ghana. Premier groupe Ga-Dangme par la taille de population. Apres le milieu du XIXe siecle, l'un des groupes les plus influents economiquement et politiquement du pays.",
+      "relationsWithNeighbors": "Liens avec les six autres groupes dangme (Ada, Prampram, Shai, Ningo, Osu-Doku, Kpone). Contacts historiques avec les Akan (Akyem, Ashanti) : influence culturelle, tabous alimentaires des Yilo, expansion via le systeme Huza dans les terres akan adjacentes. Relations commerciales avec les colonisateurs britanniques.",
+      "conflictsOrAlliances": "Resistance aux tribus envahissantes depuis le XVIIe siecle jusqu'a l'introduction de l'artillerie britannique. Soumission partielle aux Britanniques, culminant avec l'expulsion de la montagne en 1892. Expansion pacifique du territoire via le systeme Huza (bloodless conquest).",
+      "diaspora": "Presence krobo dans les principales villes ghaneennes (Accra, Tema, Koforidua) par migration interne. L'artisanat des perles krobo est vendu sur les marches internationaux et participe a la visibilite de la culture krobo dans la diaspora africaine."
+    },
+    "demography": {
+      "totalPopulation": 400000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur les recensements ghaneens 2021 : Lower Manya Krobo 79 647, Upper Manya Krobo 70 676, Yilo Krobo Municipal 91 456 (donnees citypopulation.de et globalpopulations.com). Population totale Krobo estimee a environ 380 000-400 000 en 2025 apres projection avec taux de croissance ghanen 2,2%/an.",
+      "distributionByCountry": [{ "country": "GHA", "population": 400000 }]
+    },
+    "sources": [
+      "Krobo people – Wikipedia EN (https://en.wikipedia.org/wiki/Krobo_people)",
+      "Dangme language – Wikipedia EN (https://en.wikipedia.org/wiki/Dangme_language)",
+      "Upper Manya Krobo District – Wikipedia EN (https://en.wikipedia.org/wiki/Upper_Manya_Krobo_District)",
+      "Adangme (Dangme) – Glottolog 5.3, ISO 639-3 : ada (https://glottolog.org/resource/languoid/id/adan1247)",
+      "Lower Manya Krobo population – CityPopulation.de (https://www.citypopulation.de)",
+      "Yilo Krobo Municipal population 2021 – Ghana Statistical Service (https://microdata.statsghana.gov.gh)",
+      "Krobo People Migration from Klo Mountains – Facebook / Groupes communautaires (https://www.facebook.com/groups/924725521287406/posts/2143468266079786/)",
+      "Lower Manya Krobo Ghana statistics 2025 – Global Populations (https://globalpopulations.com/gh/2840258-lower-manya-krobo/)"
+    ]
+  }
+}

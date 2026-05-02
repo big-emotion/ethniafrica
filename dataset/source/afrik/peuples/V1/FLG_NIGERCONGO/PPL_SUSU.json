@@ -1,0 +1,68 @@
+{
+  "id": "PPL_SUSU",
+  "nameMain": "Susu",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GIN", "SLE"],
+  "content": {
+    "appellations": {
+      "mainName": "Susu",
+      "selfAppellation": "Susu",
+      "exonyms": ["Susu (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Atlantique (sous-groupe du Niger-Congo)",
+      "historicalRegion": "GIN, SLE",
+      "currentCountries": ["GIN", "SLE"]
+    },
+    "ethnicities": [
+      "Susu de Guinée",
+      "Susu de Sierra Leone",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Susu sont originaires de la région de la Guinée et de la Sierra Leone. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe atlantique.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les commerçants européens, influence de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des oulémas musulmans. Islam majoritaire."
+    },
+    "languages": {
+      "mainLanguage": "Susu",
+      "vehicularRole": "Le susu est parlé par la majorité des Susu. Le français, l'anglais et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies d'initiation",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Festivals traditionnels",
+      "source_3": "Cérémonies religieuses islamiques",
+      "Symboles": "Symboles culturels susu, symboles islamiques",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle (tambours, flûtes)",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Artisanat (tissage, poterie)",
+      "source_7": "Littérature orale",
+      "Spiritualités": "Islam majoritaire. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies indépendantes.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora susu dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 1500000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Susu language (sus)",
+      "CIA World Factbook – Country profiles",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples atlantiques"
+    ]
+  }
+}

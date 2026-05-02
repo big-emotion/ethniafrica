@@ -1,0 +1,76 @@
+{
+  "id": "PPL_IGEDE",
+  "nameMain": "Igede",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Igede",
+      "selfAppellation": "Igede",
+      "exonyms": ["Egedde", "Egede", "Igedde", "Oju"],
+      "originOfExonyms": "Les variantes Egedde, Egede et Igedde sont des formes dialectales ou orthographiques alternatives du même ethnonyme. Oju est le nom du territoire principal des Igede (Local Government Area d'Oju, Benue State). La lettre i dans le terme IDOMA (amalgame colonial) représente les Igede.",
+      "whyProblematic": "Le terme IDOMA, créé par l'administration coloniale britannique pour regrouper plusieurs ethnies (Igede, Doma, Akpoto, Agatu, Akpa), efface les identités distinctes. Les Igede se sont progressivement détachés de cet amalgame et revendiquent leur identité propre.",
+      "contemporaryUsage": "Le terme Igede est universellement utilisé au Nigeria pour désigner ce peuple. Les deux Local Government Areas d'Oju et Obi (Benue State) correspondent à leur territoire traditionnel.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Benue-Congo (Niger-Congo)",
+      "historicalRegion": "Benue State, Nigeria (Oju et Obi LGA)",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": ["Igede"],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale, les Igede tracent leur origine à Sabon Gida Ora dans l'actuel Benue State. Ils se considèrent descendants d'Agba, un grand chef de Sabon Gida Ora. Une querelle entre les Igede et les autochtones d'Ora entraîna leur migration depuis cette région.",
+      "formationPeriod": "Indéterminé ; migration depuis Sabon Gida Ora (Edo State) vers le Benue State via Nsukka (Enugu State) à une période précoloniale non datée avec précision.",
+      "migrationRoutes": [
+        "De Sabon Gida Ora (Edo State) vers Nsukka (Enugu State)",
+        "De Nsukka vers l'actuel Benue State (territoire Oju et Obi)"
+      ],
+      "historicalSettlementZones": [
+        "Oju Local Government Area, Benue State",
+        "Obi Local Government Area, Benue State",
+        "Cross River State (diaspora linguistique)"
+      ],
+      "unificationsOrDivisions": "Les Igede furent regroupés administrativement avec les Doma, Akpoto, Agatu et Akpa sous le label IDOMA par l'administration coloniale britannique pour faciliter l'administration. La langue Akpoto fut adoptée comme langue commune de l'Idoma. Les Igede se sont progressivement détachés de cet amalgame colonial.",
+      "externalInfluences": "La colonisation britannique a créé le regroupement Idoma, modifiant les structures politiques et administratives traditionnelles. La création de l'LGA d'Oju en 1976 et de l'LGA d'Obi en 1996 ont consacré administrativement les deux entités territoriales igede.",
+      "majorHistoricalEvents": "Création de l'LGA d'Oju en 1976 (siège : Anyuwogbu/Ibilla) ; création de l'LGA d'Obi en 1996 (siège : Obarike-Ito). Cet événement historique des origines est commémoré dans le morceau et drama Ego ny'Igede. Population estimée à 267 198 personnes en 2006."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Société à chefferies traditionnelles. Les Igede relèvent politiquement du district sénatorial du Benue Sud. L'organisation traditionnelle est fondée sur des structures villageoises avec des chefs coutumiers.",
+      "clanOrganization": "Organisation clanique structurée autour des villages des deux LGA (Oju et Obi). Les dialectes Gabu, Itoo et Uwookwu correspondent à des sous-groupes géographiques distincts.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un rôle central dans la célébration du festival Igede Agba : les enfants mâles mangent avec leur père dans sa hutte, les épouses et filles se réunissent dans la hutte de l'épouse senior, signifiant la structure familiale lignagère.",
+      "religiousAuthority": "L'Akpang (dieux de la terre) gouverne le calendrier rituel de la récolte de l'igname. Aucune récolte d'igname nouvelle ne peut précéder la déclaration officielle de l'Akpang. Les anciennes croyances animistes coexistent avec les religions abrahamiques introduites à l'époque coloniale."
+    },
+    "languages": {
+      "mainLanguage": "Igede (ige)",
+      "isoCodes": ["ige"],
+      "dialects": ["Gabu", "Itoo", "Uwookwu (dialecte principal)"],
+      "vehicularRole": "Langue vernaculaire des Igede du Benue State et du Cross River State (Nigeria). Environ 526 000 locuteurs (Joshua Project). Classée comme langue stable (Ethnologue) : elle est encore la norme dans le foyer et la communauté, tous les enfants l'apprennent. La Bible a été traduite en igede (2013). Appartient au sous-groupe Benue-Congo de la famille Niger-Congo."
+    },
+    "culture": {
+      "majorRites": "Festival Igede Agba (festival du Nouvel Igname) : célébration annuelle de la récolte, le premier jour du marché Ihigile (Ihigile market day) de septembre, reconnu comme le septième mois (Oya) dans le calendrier igede. Sert de cérémonie d'actions de grâces à Ohe Oluhye (Dieu du Ciel) et à Ohe Oleji (Dieu de la Terre) pour la récolte. L'igname (Iju) est le symbole royal de la fête. Interdit de récolter les nouvelles ignames avant la déclaration rituelle de l'Akpang. La cérémonie préalable (août) purifie la terre et protège la communauté.",
+      "symbols": "L'igname (Iju) est le symbole central, désigné roi des produits agricoles. Les vêtements traditionnels igede sont à rayures bleues, noires et blanches. Le chemin entre les maisons est nettoyé rituellement comme geste d'hospitalité lors des fêtes.",
+      "artsAndMusic": "Groupes de musique et de danse traditionnelles lors du festival Igede Agba. Mascarades, défilés de mode, concours de beauté Adiya. Musique et danse indigènes racontent l'histoire et les valeurs igede. La pièce dramatique Ego ny'Igede retrace les origines du peuple. L'Igede Agba Fiesta, fondée par le musicien et ambassadeur culturel Mr. Yukay (Ogbaji Daniel Ukenya), promeut le patrimoine igede.",
+      "spiritualities": "Croyance au dieu du ciel Ohe Oluhye et au dieu de la terre Ohe Oleji. Respect des dieux de la terre Akpang qui gouvernent le calendrier agricole. Animisme traditionnel coexistant avec le christianisme. La récolte ne peut commencer qu'après la sanction rituelle des Akpang."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de grand royaume centralisé ; organisation en communautés villageoises avec chefferies locales. Les Igede constituent la troisième plus grande ethnie du Benue State actuel.",
+      "relationsWithNeighbors": "L'LGA d'Oju partage ses frontières avec les LGA d'Obi, Ado, Konshisha, Gwer East (Benue State), ainsi qu'avec l'Ebonyi State (LGA Ebonyi et Izzi) et le Cross River State (LGA Yala). L'LGA d'Obi est limitrophe des LGA d'Ado, Otukpo et Oju (Benue State). Relations historiques avec les peuples d'Ora (Edo State) et avec les groupes amalgamés sous le label Idoma (Doma, Akpoto, Agatu, Akpa).",
+      "conflictsOrAlliances": "Querelle initiale avec les autochtones d'Ora (Edo State) ayant provoqué la migration. Regroupement forcé avec d'autres ethnies sous le label colonial Idoma. Détachement progressif de cet amalgame depuis l'indépendance.",
+      "diaspora": "Présence igede dans l'Osun State, l'Ogun State et le Cross River State du Nigeria. La langue igede est parlée dans le Cross River State en plus du Benue State d'origine."
+    },
+    "demography": {
+      "totalPopulation": 526000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (526 000 locuteurs de l'igede) ; estimation 267 198 pour les deux LGA en 2006 (recensement nigérian)",
+      "distributionByCountry": [{ "country": "NGA", "population": 526000 }]
+    },
+    "sources": [
+      "Igede people – Wikipedia (https://en.wikipedia.org/wiki/Igede_people)",
+      "Igede Agba – Wikipedia (https://en.wikipedia.org/wiki/Igede_Agba)",
+      "Igede Language (IGE) – Ethnologue (https://www.ethnologue.com/language/ige/)",
+      "Igede in Nigeria – Joshua Project (https://joshuaproject.net/people_groups/12190)",
+      "The Igede language (ISO 639-3 code: ige) – Notion (https://rural-aerosteon-31a.notion.site/the-igede-language-601a47d228634a3085b7d6c926ed8604)",
+      "Igede – Swordshare Map (https://map.swordshare.com/ige)"
+    ]
+  }
+}

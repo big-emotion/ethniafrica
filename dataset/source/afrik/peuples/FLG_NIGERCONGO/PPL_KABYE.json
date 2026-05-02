@@ -1,0 +1,103 @@
+{
+  "id": "PPL_KABYE",
+  "nameMain": "Kabye",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["TGO", "BEN", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Kabye",
+      "selfAppellation": "Kabiye",
+      "exonyms": [
+        "Kabye",
+        "Kabre",
+        "Cabrai'",
+        "Kabure",
+        "Kabrais",
+        "Lokpa",
+        "Lukpa"
+      ],
+      "originOfExonyms": "Kabiye est l'orthographe officielle dans les documents togolais. Kabre et Cabrai sont des variantes phonetiques utilisees dans la litterature coloniale française et britannique. Lokpa ou Lukpa est le nom utilise au Benin pour les communautes Kabiye etablies dans le nord-ouest du Benin (aussi appeles Logba ou Lugba). Ces variantes refletent les differences de transcription entre langues coloniales.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Kabiye est le terme officiel utilise au Togo dans les documents administratifs et scolaires. Le kabiye est enseigne comme matiere dans certaines ecoles togolaises. La langue et le peuple sont reconnus officiellement par l'Etat togolais.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Gur (Voltaique), famille Niger-Congo",
+      "historicalRegion": "Nord du Togo (massif Kabre, vallee de Kara, prefectures de Kozah et Binah)",
+      "currentCountries": ["TGO", "BEN", "GHA"]
+    },
+    "ethnicities": ["Kabiye", "Lokpa"],
+    "origins": {
+      "ancientOrigins": "La mythologie kabiye raconte que le premier etre humain Kumberito (etre androgyne) descendit du ciel (male) sur la Terre (femelle), se posa entre deux petites chaines de montagnes, erra dans les grottes et les plaines puis se refugia dans les montagnes du massif nord (actuel Farang). Il bâtit une maison au-dessus du sol et engendra des enfants qui fonderent d'autres communautes. A sa mort, il retourna a la Terre et fut enterre dans des grottes. Le premier Kabiye descendit directement du ciel dans le village de Lama Dessi (lieu sacre appele EYU nahori: le pied de l'homme), envoye par Eso le Dieu createur; ce lieu est un centre de pelerinage.",
+      "formationPeriod": "17e et 18e siecles. L'accumulation de population dans la zone montagneuse du nord du Togo survint en reponse aux razzias d'esclaves des royaumes du nord (Mamprussi, Dagomba, Mossi, Gonja, Bariba). Les Kabiye se refugierent dans les montagnes pour se defendre. L'invasion Dagomba eut lieu au debut du 16e siecle sous le chef (Na) Sitobu.",
+      "migrationRoutes": [
+        "Migration probable dans la region pendant la traite atlantique (1700-1850), villages razzie, repli dans les montagnes",
+        "Selon la tradition orale Konkomba: les Kabiye et Konkomba (Bekwom) ont une origine commune au Ghana (Yaa/Yendi); leurs ancetres cederent des terres aux Dagomba et traverserent le fleuve",
+        "Etablissement definitif dans les massifs montagneux du nord du Togo (massifs Kabre, vallee de Kara)"
+      ],
+      "historicalSettlementZones": [
+        "Montagnes et plaines nord-centrales du Togo (massifs Kabre, prefectures de Kozah et Binah)",
+        "Nord-ouest du Benin (sous le nom Lokpa/Lukpa, pres de la frontiere togolaise)",
+        "Petite communaute au Ghana (nord du pays)"
+      ],
+      "unificationsOrDivisions": "Les Kabiye constituent le deuxieme groupe ethnique du Togo apres les Ewe (23% de la population). Sous Gnassingbe Eyadema (Kabiye, dictateur pendant 38 ans), le groupe Kabiye consolida sa domination de l'armee et de l'administration togolaise. Faure Gnassingbe (fils d'Eyadema) leur a succede a la presidence.",
+      "externalInfluences": "Pression des razzias d'esclaves des royaumes voisins (Dagomba, Mossi, Gonja) aux 17e-18e siecles. Colonisation allemande puis française au 19e-20e siecles. Christianisme et islam introduits par les missions et les contacts commerciaux. Influence politique considerable sous le regime Eyadema.",
+      "majorHistoricalEvents": "Invasion Dagomba au debut du 16e siecle. Razzias d'esclaves aux 17e-18e siecles entrainant le repli dans les montagnes. Colonisation allemande du Togo (Togoland, 1884). Colonisation française apres la Premiere Guerre mondiale. Independance du Togo en 1960. Prise du pouvoir par Gnassingbe Eyadema (Kabiye) en 1967; regne jusqu'en 2005. Succession dynastique de Faure Gnassingbe."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe hierarchique et acephale basee sur les groupes d'age masculins et feminins et les rites d'initiation. Le clan est l'unite de base. Pas de chef unique: decisions collectives par les anciens. Aujourd'hui, les Kabiye dominent l'appareil d'Etat togolais (gouvernement et armee).",
+      "clanOrganization": "Les familles possedent les terres mais les pretent frequemment pour creer des liens de reciprocite. Les produits sur les terres en jachere ne sont pas consideres comme appartenant au proprietaire. Les etablissements comprennent une maison ancestrale avec des sanctuaires (monticules de terre). Les clans sont organises en groupes masculins et feminins avec des roles rituels distincts.",
+      "ageClassSystems": "Systeme de classes d'age structurant la vie sociale et rituelle. Ceremonies basees sur la classe d'age et le calendrier (saison des pluies feminine, saison seche masculine). Les individus peuvent tenir des roles du genre oppose selon leurs performances rituelles. Les initiations (Evala, Akpema, Kondona) marquent le passage d'une classe d'age a l'autre.",
+      "roleOfLineages": "Les lignages determinent l'appartenance clanique et la transmission des terres. Le genre est defini apres l'initiation (perte de la nature androgyne initiale). L'enfant n'est pas pleinement membre de la famille avant d'etre lie a un ancetre par les rites.",
+      "religiousAuthority": "Pretre Coco (Sonsi, descendant du premier homme, representant de Dieu Eso sur terre): responsable de l'equilibre social et de la fertilite. Tchodjo (grand pretre feticheur): fixe les dates des ceremonies selon les oracles. Mediateurs ancestraux (Akoloma): temoins des paroles divines. Lieux saints appeles Diweri (lieux de presence), sanctuaires des grands ancetres."
+    },
+    "languages": {
+      "mainLanguage": "Kabiye (Kabɩyɛ)",
+      "isoCodes": ["kbp"],
+      "dialects": ["Kabiye", "Lokpa (Benin)"],
+      "vehicularRole": "Le kabiye est la langue maternelle de tous les membres de la communaute ethnique. Il est stable et vivant, appartenant au sous-groupe Gur (voltaique) de la famille Niger-Congo. Il est enseigne comme matiere dans certaines ecoles du Togo et du Benin. Au Benin, sous le nom Lokpa, il est parle par environ 30 000 locuteurs pres de la frontiere togolaise."
+    },
+    "culture": {
+      "majorRites": "Evala: rituel d'initiation masculine (lutte traditionnelle); organise annuellement en juillet dans la region de Kara; pour les jeunes de 18-20 ans; combats en groupes de 5 contre 5; entraine physiquement et psychologiquement; comprend jeune, abstinence sexuelle, scarification; supervise par des sages; dates fixees par oracle et le Tchodjo; suivi de remerciements aux ancetres; semaine complete: isolement en huttes, entrainement mental, pelerinage obligatoire sur 3 montagnes, lutte, circoncision. Akpema: initiation feminine glorifiant la maturite des jeunes femmes pour la maternite et le mariage. Kondona: complete l'initiation masculine tous les 5 ans; integre les jeunes hommes comme membres adultes de la communaute. Habye: fete religieuse du Kabye Kozah; danse magique; demonstrant la force des sorciers; controle des forces de la nature; tous les 5 ans en novembre (triennal dans certains cantons de Kozah). Sinkaring: fete d'initiation et de moisson du Kabye de Binah; teste l'endurance et la force; annual le premier samedi de decembre en rotation entre cantons.",
+      "symbols": "La lutte Evala est le symbole culturel le plus connu des Kabiye, reconnue internationalement. Les montagnes du nord du Togo sont le berceau identitaire. Les sanctuaires ancestraux (monticules de terre dans les maisons familiales). Objets en terre cuite (Siwkpelasi: figures ancestrales, poupees de fertilite, Sukpele pour les jumeaux decedes).",
+      "artsAndMusic": "Forge du fer: tradition ancienne; ruines de hauts fourneaux a Nangbani Bandjeli (Bassar); forgerons a Tchare, Pya, Yade (Kozah) utilisent des blocs de pierre comme enclume et marteau. Artisanat feminin: poterie (sans outil, a mains nues; ornement de sol unique a Pya avec mosaiques de tesson d'une seule couleur), tissage, teinture, vannerie; marche de Ketao vend des pots pour biere de mil, pipes en argile, paniers. Architecture (sokala): enclos familiaux avec murs attaches formant une cloture; entree par vestibule donnant sur cour; maisons pour mari et epouses, greniers, cuisine. Sculpture sur bois: pieces remplacant les jumeaux decedes; grande sculpture ancestrale (attribuee aux Kabiye-Tem). Chants et danses lors des ceremonies Sinkaring.",
+      "spiritualities": "Etre supreme: Eso (Dieu createur, Pere de l'humanite; possede la terre et tout; ordonne le monde par sa parole Esotom; gouverne via son messager Esotisa). Pretre Coco (descendant du premier homme, representant de Dieu). Esprits: Akoloma (temoins des paroles divines, mediateurs humain-divin), Alewa (malveillants), Waynima (fertilite), Kaliza/Wayiyu (parties spirituelles immortelles en chaque personne). Ancetres (Atetena, dans la tombe): veillent sur les vivants; la mort est passage vers une autre existence; autel dans la maison familiale; remerciements annuels aux ancetres pour la terre et l'agriculture. Enterrement dans des grottes (ateto, personne souterraine). Balance cosmique ciel (male)/terre (femelle)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise traditionnel: societe acephale. Organisation par clans et classes d'age. Sous le regime Eyadema (1967-2005), les Kabiye ont occupe une position de premier plan dans l'administration et l'armee togolaise, dominant de facto le pouvoir politique.",
+      "relationsWithNeighbors": "Relations historiquement tendues avec les royaumes voisins esclavagistes (Dagomba, Mossi, Gonja, Bariba, Mamprussi) qui razziaient leurs villages aux 17e-18e siecles. Tradition orale partagee avec les Konkomba (origine commune). Opposition politique avec le groupe Ewe (principal rival, opposition menee principalement par les Ewe sous Eyadema).",
+      "conflictsOrAlliances": "Repli dans les montagnes aux 17e-18e siecles pour echapper aux razzias esclavagistes. Invasion Dagomba au 16e siecle. Resistance a la colonisation allemande. Sous Eyadema, les Kabiye constituerent la principale base de soutien du regime militaire togolais.",
+      "diaspora": "Environ 30 000 locuteurs au Benin (sous le nom Lokpa ou Lukpa) pres de la frontiere togolaise. Petite communaute au Ghana (nord du pays). Quelques Kabiye dans le centre et le sud du Togo comme travailleurs agricoles."
+    },
+    "demography": {
+      "totalPopulation": 800000,
+      "referenceYear": 2025,
+      "source": "101 Last Tribes: 730 000 Kabiye au Togo (23% de la population togolaise); Togo First / ONU: population totale du Togo 8,499 millions en 2025; Joshua Project: 700 000 au Togo, 30 000 au Benin; estimation 2025 ajustee",
+      "distributionByCountry": [
+        {
+          "country": "TGO",
+          "population": 760000,
+          "note": "Nord du Togo, region de Kara (Kozah, Binah, Bassar); deuxieme groupe ethnique apres les Ewe"
+        },
+        {
+          "country": "BEN",
+          "population": 30000,
+          "note": "Nord-ouest du Benin pres de la frontiere togolaise, sous le nom Lokpa"
+        },
+        {
+          "country": "GHA",
+          "population": 10000,
+          "note": "Nord du Ghana, communaute minoritaire"
+        }
+      ]
+    },
+    "sources": [
+      "Kabye people – 101 Last Tribes, www.101lasttribes.com/tribes/kabye.html (consulte 2025)",
+      "Kabiye in Togo – Joshua Project, joshuaproject.net/people_groups/12396/TO (2024)",
+      "Kabiyè Language (KBP) – Ethnologue, www.ethnologue.com/language/kbp/ (2022)",
+      "Kabiye language – Simple English Wikipedia, simple.wikipedia.org/wiki/Kabiye_language (consulte 2025)",
+      "Evala: Wrestling as a rite of passage in Togo – Africanews, www.africanews.com/2024/07/17/evala-wrestling-as-a-rite-of-passage-in-togo/ (2024)",
+      "EVALA wrestling: a journey to the heart of the Kabye tradition – Right For Education, rightforeducation.org/2025/02/21/evala-wrestling-a-journey-to-the-heart-of-the-kabye-tradition/ (2025)",
+      "The Kabye People of West Africa – Qiraat Africa, qiraatafrican.com/en/16348/the-kabye-people-of-west-africa/ (2025)",
+      "Togo Population 2025 – UN / Togo First, www.togofirst.com (2026)"
+    ]
+  }
+}

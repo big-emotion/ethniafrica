@@ -1,0 +1,83 @@
+{
+  "id": "PPL_DINKA",
+  "nameMain": "Dinka",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["SDN", "UGA", "KEN", "ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Dinka",
+      "selfAppellation": "Jieng (singulier) / Muonyjang (pluriel)",
+      "exonyms": [
+        "Dinka (terme utilisé par les Arabes et les colonisateurs), Denka (variante)"
+      ],
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotiques centraux",
+      "historicalRegion": "Sud-Soudan (région du Nil Blanc, marais du Sudd)",
+      "currentCountries": ["SDN", "UGA", "KEN", "ETH"]
+    },
+    "ethnicities": [
+      "Dinka Rek (Rek Dinka)",
+      "Dinka Ngok (Ngok Dinka)",
+      "Dinka Padang (Padang Dinka)",
+      "Dinka Bor (Bor Dinka)",
+      "Dinka Agar (Agar Dinka)",
+      "Dinka Ciec (Ciec Dinka)",
+      "Dinka Twic (Twic Dinka)",
+      "Dinka Malual (Malual Dinka)",
+      "Dinka Luac (Luac Dinka)",
+      "Dinka Gok (Gok Dinka)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Dinka sont originaires de la région du Sudd (marais du Nil Blanc) dans l'actuel Soudan du Sud. Leur présence dans cette région remonte à plusieurs millénaires.",
+      "migrationRoutes": [
+        "Migrations depuis les zones marécageuses du Sudd vers les terres plus élevées et fertiles le long du Nil Blanc et de ses affluents. Expansion vers le sud et l'est du Soudan du Sud."
+      ],
+      "unificationsOrDivisions": "Organisation en groupes territoriaux (cieng) et sous-groupes dialectaux. Les différents groupes Dinka partagent une identité culturelle commune mais maintiennent des distinctions régionales.",
+      "externalInfluences": "Contacts historiques avec les peuples nilotiques voisins (Nuer, Shilluk), les Arabes du Nord-SDN, et plus récemment avec les colonisateurs britanniques et égyptiens."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies (bany de bith) dirigées par des chefs spirituels et politiques (bany de bith). Système de conseils d'anciens (jok) pour la résolution des conflits.",
+      "clanOrganization": "Structure clanique patrilinéaire. Les clans (thok) sont organisés en lignages (cieng) qui déterminent l'identité et les droits fonciers.",
+      "roleOfLineages": "Les lignages sont fondamentaux pour l'organisation sociale, la propriété du bétail, et les alliances matrimoniales. Transmission patrilinéaire des biens et du statut.",
+      "religiousAuthority": "Les chefs spirituels (bany de bith) jouent un rôle central dans les rituels, la médiation avec les esprits (jok), et la résolution des conflits. Le bétail a une dimension sacrée."
+    },
+    "languages": {
+      "mainLanguage": "Dinka (Thong Muonyjang)",
+      "vehicularRole": "Le dinka est la langue maternelle des Dinka et est largement utilisé dans les régions du Soudan du Sud où ils sont majoritaires. L'anglais et l'arabe sont également utilisés comme langues officielles."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Rites d'initiation des jeunes hommes (gar) marquant le passage à l'âge adulte",
+      "source_1": "Cérémonies de mariage impliquant le paiement de dots en bétail",
+      "source_2": "Rituels funéraires et commémoration des ancêtres",
+      "source_3": "Cérémonies de réconciliation (cieng) pour résoudre les conflits",
+      "Symboles": "Le bétail (bovins) est le symbole central de la richesse, du statut social et de l'identité culturelle. Les marques de bétail (gär) identifient les propriétaires et les clans.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle avec tambours, flûtes et chants",
+      "source_5": "Danses rituelles lors des cérémonies",
+      "source_6": "Poésie orale et récits épiques",
+      "source_7": "Artisanat lié au bétail (colliers, bracelets)",
+      "Spiritualités": "Croyances traditionnelles centrées sur le culte des esprits (jok) et des ancêtres. Le bétail joue un rôle central dans les pratiques religieuses. Influence croissante du christianisme (catholicisme, anglicanisme) depuis le XXe siècle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies territoriales plutôt qu'en royaumes centralisés. Les différents groupes Dinka ont maintenu une autonomie relative tout en partageant une identité culturelle commune.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora importante dans les pays voisins (UGA, KEN, ETH) due aux conflits et déplacements. Communautés Dinka dans les pays occidentaux (États-Unis, Canada, Australie) suite aux migrations de réfugiés."
+    },
+    "demography": {
+      "totalPopulation": 4500000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur CIA World Factbook, UNFPA, recensements soudanais, et études démographiques régionales"
+    },
+    "sources": [
+      "The Religion of the Dinka*",
+      "Deng, Francis Mading – *The Dinka of the Sudan*",
+      "SIL Ethnologue – Dinka language (din)",
+      "CIA World Factbook – South Sudan demographics",
+      "UNFPA – South Sudan population data",
+      "Coping with Money, War, and the State*",
+      "Johnson, Douglas H. – *The Root Causes of Sudan's Civil Wars*"
+    ]
+  }
+}

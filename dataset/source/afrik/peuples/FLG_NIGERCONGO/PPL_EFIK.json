@@ -1,0 +1,104 @@
+{
+  "id": "PPL_EFIK",
+  "nameMain": "Efik",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Efik",
+      "selfAppellation": "Efik Eburutu",
+      "exonyms": [
+        "Calabar (terme géographique et commercial utilisé par les Européens pour désigner les établissements Efik et la région)",
+        "Old Calabar (dénomination européenne distinguant les comptoirs Efik de New Calabar, pays Kalabari Ijaw)",
+        "Ifa Ibom, Eburutu, Iboku (autres auto-désignations historiques selon les lignages)"
+      ],
+      "originOfExonyms": "Le terme Calabar fut utilisé par les commerçants européens par erreur, confondant le territoire Efik avec celui des Kalabari Ijaw (connus comme New Calabar). Le mot Efik signifie oppresseurs en langue efik, dérivé du verbe Fik (opprimer) avec le préfixe d'appartenance plurielle. Certaines sources suggèrent qu'il s'agirait d'un surnom donné par les Ibibio voisins ou d'une auto-désignation de défi adoptée après l'installation à Creek Town.",
+      "whyProblematic": "La confusion entre Old Calabar (Efik) et New Calabar (Kalabari Ijaw) a induit des erreurs dans la cartographie et la documentation coloniales. Le terme Calabar désigne aujourd'hui la capitale de l'État Cross River et une réalité multiethnique, ce qui peut occulter la spécificité culturelle Efik.",
+      "contemporaryUsage": "Efik est le terme courant dans la littérature académique et dans l'auto-désignation. Efik Eburutu est la forme solennelle. Les Efik sont parfois désignés comme peuples de Calabar dans le discours populaire nigérian.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Cross River (Bénoué-Congo)",
+      "historicalRegion": "Old Calabar (embouchure de la Cross River), actuel État Cross River, Nigeria du sud-est",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Iboku (lignage originel incluant Duke Town, Henshaw Town, Creek Town, Cobham Town)",
+      "Obutong (Old Town, fondé au XVIe siècle à la suite d'un conflit avec les Biakpan)",
+      "Ito (lignage historique)",
+      "Adiabo (lignage incluant parfois le clan Efut Ibonda)",
+      "Mbiabo (trois sous-groupes : Mbiabo Edere, Mbiabo Ikot Offiong, Mbiabo Ikoneto, actuellement dans l'État d'Akwa Ibom)",
+      "Enwang (anciens souverains de Duke Town avant la migration, maintenant État d'Akwa Ibom)",
+      "Usukakpa (lignage dwindlé, État d'Akwa Ibom)",
+      "Abayen (lignage dwindlé, dispersé par métissage)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les analyses génétiques situent les ancêtres des Efik dans le groupe haploïde paternel E1b1a1-M2, populations venues du nord-est africain qui se déplacèrent lors du verdissement du Sahara, puis migrèrent vers la région Cross River lors de l'expansion de l'agriculture néolithique sahélienne (environ 3500 av. J.-C., après l'assèchement du Sahara). Les théories d'origine incluent : une origine ibibio (la plus acceptée académiquement), une origine igbo (proposée par Baikie et Horton au XIXe siècle), et une origine orientale ou levantine (tradition orale indigène, Aye et Akak).",
+      "formationPeriod": "L'identité Efik se cristallisa lors de leurs migrations successives depuis Ibom (Arochukwu) vers Uruan, puis vers Ikpa Ene (île Efik ancienne), Ndodoghi, Creek Town et enfin Duke Town (Atakpa, XVIIe siècle). Cette trajectoire migratoire, estimée entre le XIVe et le début du XVIIIe siècle selon les sources, forgea la cohésion sociale et politique Efik autour de la langue, des clans, de la société secrète Ekpe et de l'autorité des rois-prêtres (Ndidem puis Obong).",
+      "migrationRoutes": [
+        "Depuis Ibom (Arochukwu, actuel État d'Abia) vers Uruan (État d'Akwa Ibom)",
+        "D'Uruan vers Ikpa Ene (Akani Obio Efik, ancienne île Efik)",
+        "D'Ikpa Ene vers Ndodoghi",
+        "De Ndodoghi vers Creek Town (Edidem Eyo Ema Atai, XIVe-XVIIIe siècle selon les estimations)",
+        "De Creek Town vers Obutong (XVIe siècle, suite au conflit Biakpan) et Atakpa/Duke Town (XVIIe siècle)"
+      ],
+      "historicalSettlementZones": [
+        "Old Calabar : Duke Town (Atakpa), Creek Town, Old Town (Obutong), Cobham Town, Henshaw Town, Adiabo, Mbiabo",
+        "Cross River State (État Cross River, État d'Akwa Ibom, Nigeria du sud-est)",
+        "Nord-ouest du Cameroun (13 villes efik, environ 22 000 personnes en 1877)",
+        "Bioko (Guinée équatoriale) via la diaspora historique"
+      ],
+      "unificationsOrDivisions": "Les Efik s'organisèrent en cités-États semi-autonomes (Duke Town, Creek Town, Old Town, Cobham Town, Henshaw Town, Adiabo, Mbiabo) reliées par la langue commune, les clans et la société secrète Ekpe. L'Obong de Calabar servait d'autorité ultime. Des tensions internes existaient entre cités-États (guerre Ekọñ Abasi-Anwan, Obutong contre Duke Town). L'arrivée des missionnaires britanniques (1846) et le traité anti-esclavagiste de 1841 (signé par Eyo Honesty II et Eyamba V) marquèrent une transition majeure.",
+      "externalInfluences": "Contacts avec les Portugais depuis la fin du XVe siècle. Commerce avec les Néerlandais, Anglais et Français (XVIIe-XIXe siècles) comme intermédiaires dans la traite négrière puis le commerce d'huile de palme. Arrivée des missionnaires britanniques (Hope Waddell et autres, 1846), abolition des pratiques jugées non chrétiennes (meurtre de jumeaux, ordalie à la fève de Calabar, sacrifices humains). Annexion britannique partielle (1851 pour Old Calabar). Création de la colonie de Southern Nigeria (1885). Christianisation profonde du XXe siècle."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Double structure d'autorité : l'Obong de Calabar (roi de Calabar) comme autorité politique suprême, et la société secrète Ekpe (ou Ngbe) comme institution judiciaire, économique et politique parallèle. Ekpe (introduite au XVIIIe siècle depuis Usahadet) avait le pouvoir de prendre ou donner la vie, d'amender des villes entières et de passer outre les décisions des rois et des Obong. Ses grades hiérarchiques (Nkanda, Oku akama, Nyamkpe, Okpoho, Ebonko) structuraient la classe dirigeante.",
+      "clanOrganization": "Organisation en sept clans fondateurs (Esien Efik itiaba), portée à douze (Esien Efik Duopeba). Lignages patrilinéaires (père, fils et hommes affiliés). Le statut social dépend du clan et du rang dans Ekpe. La société accepte les descendants maternels Efik dans la communauté. Des groupes de métissage (Sierra Léonais, Libanais, Camerounais, Jamaïcains) ont intégré la société Efik via Calabar comme centre commercial.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent le statut, les droits politiques, l'accès aux grades d'Ekpe et la transmission des titres (Obong, Etubom). Les princes-prêtres (Ndidem) gouvernaient les communautés dans la période pré-historique. Les enfants de descendance maternelle efik sont reconnus comme membres de la communauté.",
+      "religiousAuthority": "Autorité du prêtre-roi Ndidem (période des migrations) et de l'Obong (ère de Calabar). Autorité de l'Ekpe comme institution judiciaire et spirituelle (Ekpe représente l'esprit de la forêt, Idem Iquo, un léopard). Société Nsibidi (écriture idéographique sacrée et société secrète). Société Obon. Pasteurs chrétiens depuis 1846 (mission presbytérienne du Calabar de Hope Waddell, Eglise presbytérienne du Nigeria)."
+    },
+    "languages": {
+      "mainLanguage": "Efik",
+      "isoCodes": ["efi"],
+      "dialects": [
+        "Efik de Creek Town (dialecte originel principal)",
+        "Efik de Duke Town (Atakpa, variété légèrement différenciée)",
+        "Efik de Calabar (forme standardisée contemporaine)",
+        "Efik du Cameroun (13 villes du nord-ouest camerounais)"
+      ],
+      "vehicularRole": "L'efik est la langue du commerce dans la basse Cross River et une lingua franca comprise par les Efut, Kiong, Qua, Biakpan, Umon et Biase/Akamkpa. Il fut la langue de l'évangélisation chrétienne dans les États de Cross River et Akwa Ibom (traduction de la Bible, école coloniale). La langue survécut dans la diaspora (West Indies) et une forme créolisée est utilisée dans la société secrète Abakuá à Cuba, dérivant directement de l'Ekpe efik. Des mots d'origine efik existent dans le vocabulaire des Gullah Geechee des États-Unis."
+    },
+    "culture": {
+      "majorRites": "L'Ekpe est le rite institutionnel central : société secrète initiatique à plusieurs grades (Nkanda, Oku akama, Nyamkpe, Okpoho, Ebonko), chaque grade ayant son propre Obong (chef). L'initiation à Ekpe marque l'accession à l'autorité sociale et politique. L'Idem Iquo (mascarade du Léopard en costume Esịk) est l'incarnation de l'esprit Ekpe. La cérémonie d'installation du prêtre-roi (Enañ Efịk : sacrifice d'un boeuf) est le rite de fondation politique. Les rites funéraires historiques incluaient des pratiques aujourd'hui abolies (sacrifices de serviteurs lors des enterrements importants, ordalie à la fève de Calabar). Les rites de passage marquent la naissance (imposition du prénom), la puberté et le mariage. Le meurtre de jumeaux (anciennement pratiqué) fut aboli en 1846 sous l'influence de Mary Slessor et de la mission presbytérienne.",
+      "symbols": "Le Nsibidi est le système d'idéogrammes sacrés appartenant à la société secrète Nsibidi, l'un des plus anciens systèmes d'écriture documentés en Afrique de l'Ouest. Les masques et costumes Ekpe (Idem Iquo, Esịk) symbolisent l'esprit du Léopard et l'autorité judiciaire. Les emblèmes royaux (Ikpaya, tunique royale en raphia ; Akata, trône ; Ayang, balai) symbolisent l'autorité des rois-prêtres Ndidem. Les perles de corail, bracelets en ivoire (Mme) et anneaux en laiton marquent le statut social.",
+      "artsAndMusic": "La poésie chantée de la barde Adiaha Etim Anua (ballade de 1910 Mkpana Ndodoghi Edik) témoigne d'une tradition de chant narratif historique. Les chants trado-religieux en l'honneur d'Atakpor Uruan Inyang sont transmis oralement. La danse Abakuya (Guinée équatoriale continentale) dérive directement des traditions Efik-Ekpe exportées via la diaspora esclavagiste. L'artisanat Efik comprend la vannerie, la poterie et le travail de perles. La gastronomie Efik est réputée : Ekpang nkukwo, Edikang Ikong, Afia efere, Afang soup, Anyan Ekpang sont des plats emblématiques. Le mode vestimentaire cérémonielle Efik est distinctif (femmes : Ọnyọnyọ, robe victorienne adaptée aux perles de corail ; hommes : chemise blanche, foulard Ọkpọmkpọm, wrapper Usobo).",
+      "spiritualities": "Culte des divinités ancestrales : Atakpor Uruan Inyang (divinité des eaux d'Uruan vénérée par les rois-prêtres Ndidem), Ndem Efik Iboku (divinité tutélaire des Efik d'Iboku). La société Ekpe incarne l'esprit de la forêt (Ekpe = Léopard, représentation de la puissance naturelle et de la justice impartiale). La mythologie Efik comprend un corpus de récits sur les migrations, les conflits et les fondations (transmis oralement et parfois écrits en efik depuis le XIXe siècle). Christianisme protestantisant depuis 1846 (mission presbytérienne) : la grande majorité des Efik contemporains se déclarent chrétiens. La société Nsibidi maintient une dimension mystique propre à l'initiation."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Old Calabar fut une confédération de cités-États Efik (Duke Town, Creek Town, Old Town/Obutong, Cobham Town, Henshaw Town, Adiabo, Mbiabo) reliées par la société Ekpe et l'autorité de l'Obong de Calabar. Chaque cité-État avait son propre souverain (Obong local, Ndidem historique), mais l'Obong de Calabar (titre en cours : Ekpo Okon Abasi Otu V depuis 2008) exerce une autorité supra-locale. Creek Town (Eyo Honesty II) et Duke Town (Eyamba V) signèrent les traités antiesclavagistes de 1841.",
+      "relationsWithNeighbors": "Les Efik entretinrent des relations commerciales avec les Ibibio (parents linguistiques, relations complexes d'origine et de conflit), les Efut (voisins et co-résidents à Calabar), les Aro (Arochukwu, fournisseurs d'esclaves de l'intérieur), et les peuples de la Cross River (Biakpan, Umon, Biase). Comme intermédiaires dans la traite négrière, ils achetèrent des esclaves aux Eniong, Ndokki et Arochukwu pour les revendre aux Européens. Après 1841, ils se convertirent au commerce d'huile de palme, caoutchouc, ivoire, bois de teinture avec les Britanniques.",
+      "conflictsOrAlliances": "Guerre Ekọñ Abasi-Anwan (conflit ancestral contre les Uruan ayant conduit aux migrations). Massacre d'Obutong en 1765 (conflit interne Efik). Bombardement d'Obutong par les Britanniques en 1854 (réaction aux pratiques funéraires impliquant des sacrifices humains). Luttes internes entre Creek Town et Duke Town pour la prééminence commerciale. Traité anti-esclavagiste de 1841 (alliance stratégique avec les Britanniques). L'influence Efik/Ekpe traversa l'Atlantique via la traite : la société Abakuá (Cuba) et le culte Bonkó (Bioko) dérivent directement de l'Ekpe Efik.",
+      "diaspora": "Présence Efik dans l'État de Cross River, l'État d'Akwa Ibom, Lagos et d'autres villes nigérianes. Communautés Efik historiques en Guinée équatoriale (Bioko) issues des migrations du XVIIIe siècle. Diaspora culturelle significative dans les Antilles (la traite négrière depuis Old Calabar exporta des locuteurs efik vers Cuba, la Jamaïque et les États-Unis). À Cuba, la société secrète Abakuá (fondée à La Havane en 1836) conserve des éléments rituels, linguistiques et symboliques directement hérités de l'Ekpe Efik. Des mots efik subsistent dans le vocabulaire des Gullah Geechee des États-Unis."
+    },
+    "demography": {
+      "totalPopulation": 350000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (SIL International, 2024, code efi), Britannica, Calabar Historical Records, peuple_demographie_globale.csv (PPL_EFIK). Note : les Efik proprement dits (locuteurs natifs) sont estimés à 350 000 personnes; la population de l'État de Cross River était de 4,2 millions en 2025, dont les Efik ne constituent qu'un sous-groupe.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 340000,
+          "note": "Principalement dans l'État de Cross River (Calabar, sud) et l'État d'Akwa Ibom (communautés Mbiabo, Enwang, Usukakpa)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Efik people. https://en.wikipedia.org/wiki/Efik_people",
+      "Wikipedia EN — Efik language. https://en.wikipedia.org/wiki/Efik_language",
+      "Ethnologue (SIL International) — Efik language (efi). https://www.ethnologue.com/language/efi/",
+      "Britannica — Efik. https://www.britannica.com/topic/Efik",
+      "Study.com — Efik People, History, Culture and Language. https://study.com/academy/lesson/efik-history-language-culture-people.html",
+      "Ethnologue Free — Efik subgroup. https://www.ethnologue.com/subgroup/2022/",
+      "Wikipedia EN — Efik language (Abakuá Cuba). https://en.wikipedia.org/wiki/Efik_language"
+    ]
+  }
+}

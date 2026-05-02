@@ -1,0 +1,101 @@
+{
+  "id": "PPL_MAKONDE_TANZ",
+  "nameMain": "Makonde (Tanzanie)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Makonde (Tanzanie)",
+      "selfAppellation": "Makonde / WaMakonde",
+      "exonyms": [
+        "Kimakonde (désigne à la fois le peuple et la langue en swahili)",
+        "Makonde (usage anglophone et officiel tanzanien)"
+      ],
+      "originOfExonyms": "En Tanzanie, le terme Kimakonde est utilisé en swahili pour désigner à la fois le peuple et leur langue. Le préfixe Ki- (langue) ou Wa- (peuple) suit la convention grammaticale bantou-swahili. Le terme Makonde sans préfixe est employé en anglais et dans les contextes internatioanux.",
+      "whyProblematic": "La distinction entre Makonde de Tanzanie et Makonde du Mozambique (Maconde) est importante : bien que partageant une origine commune sur le plateau de Mueda, les deux populations ont développé des langues distinctes, des expériences coloniales différentes (colonisation allemande puis britannique en Tanzanie, portugaise au Mozambique) et des trajectoires culturelles spécifiques. Les Makonde tanzaniens sont notamment reconnus pour avoir développé les styles artistiques modernes (shetani, ujamaa) à Dar es Salaam dans les années 1960.",
+      "contemporaryUsage": "Les Makonde de Tanzanie sont reconnus comme l'un des cinq groupes ethniques les plus importants du pays. Ils sont principalement concentrés dans les régions de Mtwara et Lindi (Tanzanie du Sud-Est). Leur art sculptural est célèbre internationalement et contribue à l'image culturelle de la Tanzanie.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (zone P, groupe P.30)",
+      "historicalRegion": "Plateau de Makonde (Mtwara et Lindi), Tanzanie du Sud-Est, rive nord de la rivière Ruvuma",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": [
+      "Makonde du plateau de Mtwara (groupe principal de Tanzanie du Sud-Est)",
+      "Makonde de Lindi (groupe côtier et intérieur, région de Lindi)",
+      "Makonde installés à Dar es Salaam (artisans et sculpteurs depuis les années 1950-1960)",
+      "Groupe Matambwe/Matembwe (dialecte divergent, zone frontalière Tanzanie-Mozambique)",
+      "Makonde de la vallée du Rovuma (groupe de la rive nord de la rivière frontière)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Makonde de Tanzanie descendent de populations bantous qui ont développé leur culture sur le plateau de Mueda au Mozambique, puis ont traversé la rivière Ruvuma vers le nord dans les siècles passés. En Tanzanie, leur territoire s'étend sur le plateau côtier de Mtwara et Lindi. Ils font partie des peuples bantous de la zone P, étroitement apparentés aux Yao et aux Makua. Les Makonde ont réussi à résister aux razzias esclavagistes africaines, arabes et européennes pendant des siècles grâce à leur isolement géographique.",
+      "formationPeriod": "L'identité distincte des Makonde tanzaniens s'est affirmée progressivement, surtout à partir du 20e siècle, sous la colonisation allemande (jusqu'en 1919) puis britannique (1919-1961). La migration de sculpteurs makonde vers Dar es Salaam dans les années 1950-1960, encouragée par le marchand indien Peera, a été un moment clé dans la transformation et la diffusion internationale de leur art. L'indépendance de la Tanzanie (1961) a intégré les Makonde dans le nouveau cadre national sous Julius Nyerere.",
+      "migrationRoutes": [
+        "Migration origielle bantou depuis le nord-est vers le plateau de Mueda (Mozambique)",
+        "Traversée de la rivière Ruvuma vers le plateau de Mtwara et Lindi (Tanzanie) au cours des siècles passés",
+        "Migration économique vers Dar es Salaam (artisans-sculpteurs, à partir des années 1950)",
+        "Migration vers Mtwara (ville portuaire) et d'autres centres urbains tanzaniens"
+      ],
+      "historicalSettlementZones": [
+        "Plateau de Makonde (Mtwara, Tanzanie du Sud-Est)",
+        "Région de Lindi (Tanzanie du Sud-Est, littoral de Lindi jusqu'à la rivière Ruvuma)",
+        "Mtwara (ville portuaire, principale ville de la région)",
+        "Dar es Salaam (communauté artistique et diaspora urbaine depuis les années 1950)"
+      ],
+      "unificationsOrDivisions": "Les Makonde tanzaniens sont organisés en unités villageoises matrilinéaires. Bien que partageant une origine et une culture commune avec les Maconde du Mozambique, les deux groupes ont développé des langues et des identités distinctes. En Tanzanie, les Makonde n'ont pas constitué un royaume centralisé : leur cohésion est culturelle, linguistique et rituelle plutôt que politique.",
+      "externalInfluences": "Contacts anciens avec les commerçants arabes swahili de la côte (islamisation partielle, majoritaire en Tanzanie). Colonisation allemande (jusqu'en 1919, résistance des Maji Maji 1905-1907 dans la région). Mandat britannique puis indépendance tanzanienne (1961). Influence du commerce d'art international à partir des années 1950 : le marchand indien Peera à Dar es Salaam a encouragé l'innovation stylistique et l'émergence des styles shetani et ujamaa. Soutien de la Tanzanie au FRELIMO mozambicain pendant la guerre d'indépendance du Mozambique (1964-1975).",
+      "majorHistoricalEvents": "La rébellion Maji Maji (1905-1907) contre les Allemands a touché les régions où vivent les Makonde. Sous la colonisation britannique (après 1919), les Makonde ont été intégrés dans le Tanganyika Territory. L'indépendance de la Tanzanie (1961) sous Julius Nyerere leur a offert un cadre national stable. Dans les années 1960, les sculpteurs makonde de Dar es Salaam ont révolutionné l'art africain en développant les styles binadamu, ujamaa et shetani, qui ont acquis une renommée internationale. La Tanzanie a servi de base arrière pour les combattants makonde du FRELIMO mozambicain pendant la guerre d'indépendance (1964-1975)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La société makonde tanzanienne est organisée en chefferies villageoises matrilinéaires sans chef suprême centralisé. L'autorité repose sur les conseils d'anciens (wazee). Les décisions importantes sont prises collectivement. Cette structure décentralisée contraste avec les royaumes voisins swahili et a constitué une protection naturelle contre la prédation esclavagiste.",
+      "clanOrganization": "La société makonde tanzanienne est matrilinéaire : la filiation, l'héritage et l'identité clanique passent par la lignée maternelle. La résidence est matrilocale. Les clans (mitaa) regroupent les familles partageant une ancêtre maternelle commune. L'oncle maternel (mjomba) joue un rôle clé dans l'éducation des enfants.",
+      "ageClassSystems": "Les rites d'initiation (mapiko pour les garçons, unyago pour les filles) structurent le passage entre les générations. Les jeunes initiés rejoignent le groupe des adultes après avoir subi les épreuves rituelles et reçu l'enseignement des aînés.",
+      "roleOfLineages": "Les lignages matrilinéaires structurent l'organisation sociale, les droits fonciers, les alliances matrimoniales et l'accès aux fonctions de leadership communautaire. Le choix du conjoint est soumis aux règles claniques qui interdisent les mariages entre proches du même lignage maternel.",
+      "religiousAuthority": "L'autorité spirituelle est exercée par les guérisseurs-médecins (waganga) et les chefs de rites. Le culte des ancêtres (mizimu) est central. La grande majorité des Makonde tanzaniens sont nominalement musulmans (islam sunnite, héritage des contacts commerciaux avec les marchands arabes swahili), mais les pratiques animistes ancestrales persistent en syncrétisme avec l'islam."
+    },
+    "languages": {
+      "mainLanguage": "Makonde (Kimakonde)",
+      "isoCodes": ["kde"],
+      "dialects": [
+        "Kimakonde du plateau de Mtwara (dialecte central tanzanien)",
+        "Kimakonde de Lindi (variante côtière)",
+        "Matambwe / Matembwe (dialecte divergent de la zone frontalière, faiblement intelligible avec le dialecte central)",
+        "Mabiha / Maviha (dialecte considéré divergent, proximité avec le côté mozambicain)"
+      ],
+      "vehicularRole": "Le kimakonde est la langue première de l'ensemble de la communauté ethnique tanzanienne. Le swahili est la langue nationale tanzanienne et est parlé couramment par les Makonde comme deuxième langue dans les contextes publics, scolaires et commerciaux. L'anglais est utilisé dans l'administration et l'enseignement supérieur. La langue makonde tanzanienne a divergé du chimakonde mozambicain au point que certains linguistes les considèrent comme deux langues proches mais distinctes."
+    },
+    "culture": {
+      "majorRites": "L'initiation masculine (mapiko) implique une période de réclusion, la circoncision, et l'instruction sur les responsabilités adultes. La danse des masques mapiko, portée par des danseurs masqués au visage couvert de masques en bois peints figurant des esprits ancestraux, est la pratique rituelle la plus emblématique. L'initiation féminine (unyago, du swahili désignant les danses et cérémonies de puberté) marque la transition vers l'âge adulte pour les filles : réclusion de plusieurs jours, instruction par les femmes aînées, cérémonies de chant et de danse à la sortie de la réclusion, avec bain rituel et parure de nouveaux vêtements. Les rites funéraires impliquent des veillées et des pratiques de commémoration des ancêtres.",
+      "symbols": "Le masque mapiko est le symbole culturel central des Makonde tanzaniens. Ces masques en bois noir (mpingo), portés lors des danses rituelles d'initiation, représentent des esprits ancestraux. La sculpture ujamaa (colonne humaine représentant l'interdépendance communautaire) est un emblème de l'art makonde tanzanien. L'arbre mpingo (ébène africaine, Dalbergia melanoxylon) est à la fois la matière première de l'art makonde et un symbole de permanence et de solidité.",
+      "artsAndMusic": "Les Makonde de Tanzanie sont internationalement reconnus pour leurs sculptures en ébène noire (mpingo). Les artistes makonde de Dar es Salaam ont développé trois styles distinctifs dans les années 1960 : le binadamu (représentations réalistes d'humains et d'animaux), l'ujamaa (colonnes figurant des familles entrelacées, inspirées par la philosophie tanzanienne d'ujamaa de Nyerere), et le shetani (sculptures abstraites et surréalistes représentant des esprits du monde invisible, inspirées de rêves et de visions). Le style mawingu (représentations éthérées de nuages et de formes abstraites naturelles) est une variante du shetani créée par l'artiste Clements Ngala. Les artistes pionniers incluent Samaki Linkakoa (créateur du shetani), John Fundi, Felix Mali et Christiano Madanguo. La musique traditionnelle repose sur les percussions (tambours de différentes tailles) et les chants collectifs lors des cérémonies.",
+      "spiritualities": "La religion traditionnelle makonde tanzanienne est une forme d'animisme centré sur le culte des ancêtres. Les esprits des défunts (mizimu) restent présents dans le monde des vivants. Les shetani (esprits du monde invisible) peuvent être bénéfiques ou maléfiques et influencent la vie des humains. Comme l'exprime un sculpteur : le shetani vient des rêves, lorsque l'âme quitte le corps pendant le sommeil. La majorité des Makonde tanzaniens se déclarent musulmans (islam sunnite) tout en maintenant leurs pratiques animistes ancestrales en syncrétisme. Le veneration des ancêtres reste au coeur de leur vision du monde spirituel, illustrée dans leurs sculptures d'arbres généalogiques où les ancêtres soutiennent les générations futures."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Makonde de Tanzanie n'ont pas développé de royaumes centralisés. Leur organisation politique est fondée sur des chefferies villageoises matrilinéaires décentralisées. Ce système leur a permis de maintenir une grande autonomie face aux différents pouvoirs coloniaux (allemand, britannique). La région de Mtwara-Lindi est reconnue comme le territoire ancestral des Makonde tanzaniens.",
+      "relationsWithNeighbors": "Les Makonde tanzaniens entretiennent des relations complexes avec les peuples voisins : relations commerciales avec les Makua à l'ouest, contacts historiques avec les commerçants swahili de la côte (qui ont introduit l'islam), et liens culturels forts avec les Maconde du Mozambique de l'autre côté de la rivière Ruvuma. La Tanzanie a accueilli des réfugiés et combattants makonde mozambicains pendant la guerre d'indépendance du Mozambique (1964-1975), renforçant les liens transfrontaliers.",
+      "conflictsOrAlliances": "Les Makonde tanzaniens ont participé à la résistance contre la colonisation allemande, notamment lors de la rébellion Maji Maji (1905-1907). Sous la colonisation britannique, leur région (Tanganyika) était périphérique et sous-développée. Après l'indépendance tanzanienne (1961), les Makonde ont bénéficié du soutien du gouvernement de Julius Nyerere. La Tanzanie a servi de base pour les opérations du FRELIMO mozambicain (dont beaucoup de membres étaient des Makonde mozambicains en exil), créant une solidarité transfrontalière. Le commerce des sculptures a permis de financer partiellement la lutte pour l'indépendance du Mozambique.",
+      "diaspora": "Une importante communauté makonde s'est installée à Dar es Salaam à partir des années 1950, attirée par le commerce des sculptures encouragé par le marchand Peera. Ces sculpteurs makonde ont transformé Dar es Salaam en centre mondial de l'art africain contemporain. Des Makonde tanzaniens vivent également dans d'autres grandes villes tanzaniennes (Mtwara, Lindi). Une petite diaspora existe en Europe et en Amérique du Nord, composée principalement d'artistes et de migrants économiques."
+    },
+    "demography": {
+      "totalPopulation": 1200000,
+      "referenceYear": 2025,
+      "source": "Estimation 2001 : 1 140 000 Makonde en Tanzanie (source Ethnologue/Wikipedia). Estimation 2025 actualisée basée sur SIL Ethnologue (kde), Joshua Project Tanzanie, CIA World Factbook – Tanzanie. Les Makonde constituent l'un des cinq plus grands groupes ethniques de Tanzanie.",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 1200000,
+          "note": "Principalement dans les régions de Mtwara et Lindi (Tanzanie du Sud-Est). Communauté artistique importante à Dar es Salaam."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Makonde people. https://en.wikipedia.org/wiki/Makonde_people",
+      "Wikipedia EN — Makonde language. https://en.wikipedia.org/wiki/Makonde_language",
+      "SIL Ethnologue — Makonde (kde). https://www.ethnologue.com/language/kde/",
+      "Joshua Project — Makonde in Tanzania. https://joshuaproject.net/people_groups/13427/TZ",
+      "African Blackwood Conservation Project — Makonde Art. https://www.blackwoodconservation.org/makonde-art/",
+      "Smithsonian Institution Libraries — Makonde Sculpture bibliography. https://www.sil.si.edu/silpublications/modernafricanart/maadetail.cfm?subCategory=Tanzania+--+Makonde+Sculpture",
+      "Safaris Rwanda Safari — Cultural Heritage of the Makonde People. https://www.safarisrwandasafari.com/information/the-cultural-heritage-of-the-makonde-people/",
+      "CIA World Factbook — Tanzania. https://www.cia.gov/the-world-factbook/countries/tanzania/"
+    ]
+  }
+}

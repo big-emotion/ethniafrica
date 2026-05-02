@@ -1,0 +1,89 @@
+{
+  "id": "PPL_OTAMARI_SOMBA",
+  "nameMain": "Otamari / Somba",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["BEN", "TGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Otamari / Somba",
+      "selfAppellation": "Batammariba",
+      "exonyms": [
+        "Somba",
+        "Otamari",
+        "Ottamari",
+        "Tamberma",
+        "Tammari",
+        "Ta(m)berma (nom officiel au Togo)"
+      ],
+      "originOfExonyms": "Le terme Somba est un exonyme pejoratif introduit par les colonisateurs europeens et les Bariba voisins pour designer ce peuple. Tamberma est le nom officiel utilise au Togo depuis la periode coloniale. Otamari est une variante orthographique francaise.",
+      "whyProblematic": "Le terme Somba est aujourd'hui considere offensant car impose de l'exterieur et porteur de connotations depreciatives. Le nom correct est Batammariba pour les populations du Benin (Pays Betammaribe) et Tamberma pour celles du Togo (Pays Tamberma).",
+      "contemporaryUsage": "Dans les contextes touristiques et patrimoniaux, le terme tata somba est reste en usage pour designer l'architecture fortifiee, classee au patrimoine mondial de l'UNESCO en 2004 (Koutammakou, Togo). Les membres du groupe se designent eux-memes comme Batammariba.",
+      "linguisticFamily": "FLG_GUR",
+      "ethnoLinguisticGroup": "Oti-Volta, branche Gur de la famille Niger-Congo",
+      "historicalRegion": "Massif de l'Atacora (nord-ouest du Benin) et region de Koutammakou (nord du Togo)",
+      "currentCountries": ["BEN", "TGO"]
+    },
+    "ethnicities": ["Batammariba", "Tamberma (Togo)", "Otamari (Benin)"],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale, les Batammariba sont les descendants de la Mere-Serpent souterraine, etre fondateur invisible qui pondit les premiers oeufs ancestraux. Le premier village mythique est Linaba, ou le dieu Kuiye crea les humains et les divinites. Les premiers occupants du territoire furent les Babietiba, un groupe de chasseurs-cueilleurs culturellement evolues qui initierent les Batammariba aux forces souterraines et aux esprits de la terre.",
+      "formationPeriod": "La formation du groupe en tant qu'entite distincte est mal datee. Les migrations vers les vallees de l'Atacora se sont produites au cours des XVIe-XVIIIe siecles, sous la pression des royaumes guerriers Bariba et des razzias esclavagistes du royaume du Dahomey.",
+      "migrationRoutes": [
+        "Migration depuis le Burkina Faso actuel vers le sud",
+        "Traversee du massif de l'Atacora pour echapper aux royaumes guerriers voisins",
+        "Installation dans les vallees de Boukombe et de Koutammakou, a cheval sur le Benin et le Togo actuels"
+      ],
+      "historicalSettlementZones": [
+        "Departement de l'Atacora, nord-ouest du Benin (region de Natitingou, Boukombe)",
+        "Region de Koutammakou, nord du Togo (region de Kande, Kandé)"
+      ],
+      "unificationsOrDivisions": "La division politique entre Benin et Togo, heritee de la Conference de Berlin (1885), a scinde le territoire Batammariba en deux entites distinctes designees par des noms differents. Il n'existe pas de chefferie centralisee : la societe est organisee en groupements territoriaux de 2, 4 ou 6 clans.",
+      "externalInfluences": "Pression constante des royaumes Bariba (Nikki, Kandi) et du Dahomey qui cherchaient a capturer des esclaves. La montagne de l'Atacora servait de refuge naturel. Influences commerciales et culturelles limitees grace a l'isolement volontaire du groupe.",
+      "majorHistoricalEvents": "Classement du site de Koutammakou au patrimoine mondial de l'UNESCO en 2004 comme exemple exceptionnel d'occupation territoriale en harmonie avec la nature. Mission d'urgence de l'UNESCO en octobre 2018 apres les pluies devastatrices d'aout 2018."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe acephale refusant tout pouvoir centralise et toute chefferie hereditaire. L'autorite repose sur une hierarchie strictement fondee sur l'age entre les anciens et les jeunes. Les decisions sont prises collectivement au sein du clan.",
+      "clanOrganization": "Un village ou groupement territorial reunit 2, 4 ou 6 clans partageant des liens de filiation communs remontant aux memes peres fondateurs. Chaque clan est responsable de rituels specifiques qui fondent la legitimite de son existence au sein du groupement.",
+      "ageClassSystems": "Hierarchie d'age stricte regissant les relations entre anciens et cadets. Les responsables rituels sont choisis selon des criteres ethiques rigoureux : discretion, maitrise de soi (capacite a accepter la mort plutot que de tuer si menace). Les jeunes, meme scolarises en ville, participent aux cycles initiatiques.",
+      "roleOfLineages": "Les lignages descendent des memes peres fondateurs. La cohesion clanique repose sur la langue partagee et l'allegiance au mythe des Enfants-du-Serpent. Les disparites de pratiques ceremoniales existent entre clans mais n'empechent pas la solidarite.",
+      "religiousAuthority": "Les responsables rituels de chaque clan sont les veritables depositaires de l'autorite. Le centre rituel de chaque village est organise autour du cimetiere, de la grande maison d'initiation des jeunes et du sanctuaire du serpent fondateur."
+    },
+    "languages": {
+      "mainLanguage": "Ditamari (Ditammari)",
+      "isoCodes": ["dtm"],
+      "dialects": [
+        "Ditamari du Benin (Boukombe, Natitingou)",
+        "Ditamari du Togo (variante Tamberma, Koutammakou)"
+      ],
+      "vehicularRole": "Le ditamari est la langue maternelle et vehiculaire interne du groupe. Le francais est utilise dans les administrations au Benin et au Togo. Le ditamari est enseigne dans la tradition orale ; des etudes linguistiques ont ete menees par Rigobert Kouagou et Theophile Nata (these descriptive, 1974)."
+    },
+    "culture": {
+      "majorRites": "Scarifications rituelles commencees des l'age de 2-3 ans comme marqueur identitaire permanent ; elles se poursuivent a la puberte, au mariage et apres la naissance d'un enfant (visage, ventre, dos). Initiations en foret avec les pretres (passage a l'age adulte incluant des combats a la cravache en public). Rites funeraires elabores conserves avec fidelite. Ceremonies de rencontre avec les forces souterraines.",
+      "symbols": "Les tata somba (Benin) ou tekyete (Togo), maisons-forteresses a deux etages en argile, sont le symbole identitaire par excellence. Les tours cylindriques evoquant des citadelles medievales servent a la fois de greniers, d'espaces de vie et de lieux de protection. Les motifs geometriques graves sur les murs exterieurs des tatas du Benin reproduisent les scarifications faciales des habitants.",
+      "artsAndMusic": "Architecture de terre mondialement reconnue (UNESCO 2004). Les forgerons occupent une place sociale eminente car associes a la divinite solaire Kuiye, qui apporta le feu. Traditions guerrieres et de chasse revivifiees lors des ceremonies.",
+      "spiritualities": "Animisme avec pantheon structure. Kuiye est le dieu supreme (soleil, createur, masculin et feminin a la fois : Le Soleil, Notre Pere et Notre Mere). Butan est la deesse de la Terre et du Monde Souterrain. Oyinkakwata est le dieu du ciel, du tonnerre et de l'orage. Les divinites initiatiques incluent Fawafa (python, initiations masculines), Fakuntifa (lezard, initiations feminines), Fayenfe (guerre et mort), Litakon (jumeaux et fertilite) et Kupon (divination). Les ames ancestrales resident dans des autels coniques en terre."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Absence de royaumes ou chefferies centralises. La resistance a toute forme de domination hierarchique est un trait fondamental de l'identite Batammariba. Le groupe s'est toujours organise en groupements clanique autonomes.",
+      "relationsWithNeighbors": "Relations complexes avec les royaumes Bariba de Nikki et Kandi, qui cherchaient a imposer leur autorite et a capturer des esclaves. Les Batammariba se refugierent dans les vallees et les montagnes de l'Atacora pour echapper a ces pressions. Echanges de divinites avec les peuples voisins.",
+      "conflictsOrAlliances": "Resistance permanente contre les razzias esclavagistes du royaume du Dahomey et les royaumes guerriers Bariba aux XVIIe-XIXe siecles. La topographie montagneuse de l'Atacora a permis au groupe de maintenir son independance culturelle et sociale.",
+      "diaspora": "Une partie de la population a migre vers les villes du Benin (Parakou, Kandi, Nikki) tout en maintenant des liens avec les traditions initiatiques. La tradition est preservee meme par les jeunes scolarises et urbanises."
+    },
+    "demography": {
+      "totalPopulation": 220000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 180 000 au Benin ; 101 Last Tribes : 176 000 dont 140 000 au Benin et 36 000 au Togo ; estimation combinee 2025 tenant compte de la croissance demographique",
+      "distributionByCountry": [
+        { "country": "BEN", "population": 180000 },
+        { "country": "TGO", "population": 40000 }
+      ]
+    },
+    "sources": [
+      "Tammari people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Betammaribe)",
+      "Otammari in Benin – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14985/BN)",
+      "Koutammakou, the Land of the Batammariba – UNESCO World Heritage, 2004 (https://whc.unesco.org/en/list/1140)",
+      "Pays Betammaribe and Pays Tamberma – African Landers, 2024 (https://africanlanders.com/en/benin-en/benin-and-togo-pays-betammaribe-and-pays-tamberma-a-tribal-group-with-unique-constructions/)",
+      "101 Last Tribes – Tammari people (https://www.101lasttribes.com/tribes/tammari.html)",
+      "Etude descriptive du ditammari – Theophile Nata, 1974"
+    ]
+  }
+}

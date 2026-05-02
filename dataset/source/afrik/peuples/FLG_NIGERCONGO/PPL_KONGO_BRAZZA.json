@@ -1,0 +1,110 @@
+{
+  "id": "PPL_KONGO_BRAZZA",
+  "nameMain": "Kongo (Brazzaville)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["COG"],
+  "content": {
+    "appellations": {
+      "mainName": "Kongo (Brazzaville)",
+      "selfAppellation": "Bakongo (pluriel), Mukongo (singulier)",
+      "exonyms": [
+        "Bacongo",
+        "Kongo du Congo",
+        "Kongo du Sud (dans le contexte congolais)"
+      ],
+      "originOfExonyms": "Le terme Kongo derive du Royaume du Kongo, dont le territoire historique englobait l'actuel sud de la Republique du Congo. Les Europeens ont generalise ce terme pour designer l'ensemble des populations parlant le kikongo. L'appellation Kongo de Brazzaville distingue ce sous-groupe regional des autres Bakongo en Angola et en RDC.",
+      "whyProblematic": "L'appellation recouvre plusieurs sous-groupes distincts (Lari, Vili, Sundi, Beembe, Dondo, Kunyi, Yombe) qui ont des identites propres parfois concurrentes. La politique coloniale francaise a amplifie les differences entre les sous-groupes en favorisant les Lari et les Vili comme agents de l'administration, creant des tensions durables avec les peuples du nord.",
+      "contemporaryUsage": "Les termes Bakongo ou Kongo sont utilises dans les contextes officiels et academiques. Dans la vie quotidienne, les individus s'identifient d'abord par leur sous-groupe (Lari, Vili, Sundi, etc.). La tension politique entre les Lari du Pool et le gouvernement Sassou-Nguesso (d'origine Mbochi du nord) a renforce l'identite collective bakongo dans le sud du pays.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Zone H (groupe H.10-H.16)",
+      "historicalRegion": "Sud de la Republique du Congo : regions du Pool, Kouilou, Niari, Bouenza, Lekoumou; anciennement Moyen-Congo (colonie francaise)",
+      "currentCountries": ["COG"]
+    },
+    "ethnicities": [
+      "Lari / Laari (region du Pool, autour de Brazzaville) : sous-groupe le plus numerique et le plus influence politiquement",
+      "Vili / Bavili (littoral, autour de Pointe-Noire et Kouilou) : marins et commerçants traditionnels",
+      "Sundi (region de la Soyo et du Niari) : anciens habitants du royaume provincial de Nsundi",
+      "Beembe / Keenge (departement de la Bouenza) : sous-groupe distinct avec langue propre (beq)",
+      "Dondo (region de Boko, Nord du Pool) : petit sous-groupe distinct (dde)",
+      "Kunyi (departement du Niari) : sous-groupe avec dialecte specifique",
+      "Kamba / Hangala (region du Niari) : sous-groupes kongo de la region interieure",
+      "Yombe (foret du Mayombe) : presence dans le sud-ouest du pays"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bakongo de Brazzaville descendent des populations bantoues qui ont migre dans la region du Bas-Congo il y a environ 2 000 ans. Leur territoire historique faisait partie du Royaume du Kongo, qui a une sa fondation vers 1380 dans l'actuel nord de l'Angola. Par le 13e siecle, des federations d'Etats existaient deja dans la region, notamment la confederation de Vungu (ancetre de Loango), Kakongo et Ngoyo au nord du fleuve Congo. Ces populations ont forme le substrat des futurs sous-groupes kongo du Moyen-Congo.",
+      "formationPeriod": "Les sous-groupes actuels se sont constitues entre le 14e et le 19e siecle. Le Laari, le sous-groupe le plus numerique autour de Brazzaville, s'est forme au 19e siecle comme langue vehiculaire entre les branches Sundi, Manianga et Kongo ba Nseke, facilitee par l'expansion commerciale liee au chemin de fer Congo-Ocean. La region du Pool, historiquement important comme carrefour commercial et lieu de marche (nsona), a favorise l'emergence de cette identite lari.",
+      "migrationRoutes": [
+        "Etablissement ancien dans la region du Pool et du littoral atlantique (premiers siecles ap. J.-C.)",
+        "Expansion vers le nord et le nord-est depuis le coeur du Royaume du Kongo (14e-16e siecles)",
+        "Migrations de groupes Sundi depuis la province de Nsundi (actuel Angola) vers l'actuel Congo (15e-17e siecles)",
+        "Migration des Vili depuis la region cotiere vers l'interieur sous la pression des royaumes voisins"
+      ],
+      "historicalSettlementZones": [
+        "Region du Pool (autour de Brazzaville et du lac Malebo) : zone principale des Lari",
+        "Littoral du Kouilou (autour de Pointe-Noire) : zone principale des Vili",
+        "Vallee du Niari : zone des Sundi, Kunyi et Kamba",
+        "Departement de la Bouenza : zone des Beembe",
+        "Foret du Mayombe : zone des Yombe"
+      ],
+      "unificationsOrDivisions": "Les Bakongo du Congo-Brazzaville sont divises en sous-groupes qui partagent une identite commune d'appartenance au monde kongo, mais conservent des specificites culturelles et linguistiques propres. La politique coloniale francaise (1880-1960) a cree des divisions en favorisant les sous-groupes du Sud (Lari, Vili) dans l'administration. Apres l'independance, les conflits entre le nord (Mbochi, militaires) et le sud (Lari, pool) ont enracine des identites politiques ethno-regionales. Les guerres du Pool (1997-2003) ont gravement affecte les communautes Lari.",
+      "externalInfluences": "Contacts avec les royaumes de Loango et Kakongo avant la colonisation. Premier contact europeen via les Portugais (15e siecle), puis commerce francais et hollandais (17e-18e siecles). Colonisation francaise (1880-1960) : le Moyen-Congo devient territoire de l'Afrique-Equatoriale Francaise (AEF). Construction du chemin de fer Congo-Ocean (1921-1934), utilisant la main-d'oeuvre forcee et causant des dizaines de milliers de morts. Influence du kimbanguisme (origine RDC, implantation importante dans le Pool). Independance en 1960.",
+      "majorHistoricalEvents": "15e siecle : contacts avec les marchands europeens via le royaume de Loango. 1880 : le chef Teke Makoko signe le traite Makoko avec Pierre Savorgnan de Brazza, base de la colonisation francaise. 1921-1934 : construction du chemin de fer Congo-Ocean, exploitation coloniale massive. 1958-1960 : independance du Congo sous Abbe Fulbert Youlou (lui-meme Lari). 1963-1997 : instabilite politique, massacres ethniques. 1997-2003 : guerres du Pool, affrontements entre Cobras (Sassou) et Ninjas (Lari, milice du Pool). 2006 : accord de paix dans le Pool."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles (nsi) dirigees par un chef (fumu nsi ou nkazi a nsi), garant de l'ordre et des terres ancestrales. Le conseil des anciens (mputu a bilumbu) assiste le chef dans ses decisions. Dans la region du Pool, les structures politiques lari etaient liees au systeme de marche nsona. Les lineages matrilineaires (makanda) constituent la base de l'organisation sociale et politique. La chefferie de Linzolo, pres de Brazzaville, est historiquement l'une des plus importantes chez les Lari.",
+      "clanOrganization": "La societe bakongo du Congo-Brazzaville est organisee en clans matrilineaires (makanda). Chaque clan a un ancetre feminin commun, un chef de clan (mfumu makanda), des terres ancestrales et des interdits alimentaires propres (zinzila). Les Lari reconnaissent notamment les clans Ntsieti, Nzali, et d'autres groupes d'appartenance fondamentaux pour l'identite sociale, l'acces a la terre et les alliances matrimoniales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le lignage matrilineaire (kanda) determine l'identite sociale, les droits fonciers, les alliances matrimoniales et les successions. Un homme herite de son oncle maternel (yaya) et non de son pere. Ce systeme matrilineaire est source de tensions avec le christianisme et la modernite, qui tendent a favoriser la famille nucleaire patriarcale. Les lineages jouent un role crucial dans l'organisation des rites funeraires et dans la resolution des conflits familiaux.",
+      "religiousAuthority": "Le kimbanguisme (Eglise de Jesus-Christ sur la Terre par son Prophete Simon Kimbangu, EJCSK) est extremement present dans le Pool et autour de Brazzaville. Les nganga (guerisseurs-pretres) continuent de jouer un role dans la sante et la resolution des conflits au sein des communautes rurales. Le catholicisme est solidement implante depuis la colonisation. Des eglises evangeliques et pentecotistes ont connu un fort developpement depuis les annees 1990."
+    },
+    "languages": {
+      "mainLanguage": "Laari / Ladi (dialecte principal dans le Pool) et Kikongo en general",
+      "isoCodes": ["ldi", "kng", "vif"],
+      "dialects": [
+        "Laari / Ladi (ldi) : dialecte H16f, principal dans la region du Pool et de Brazzaville, environ 1,2 million de locuteurs",
+        "Civili / Vili (vif) : dialecte du littoral, parle autour de Pointe-Noire et Kouilou",
+        "Koongo (kng) : dialecte central, parle dans certaines zones proches de l'Angola",
+        "Sundi : dialecte de la region du Niari, proche du koongo",
+        "Beembe (beq) : variete distincte, region de la Bouenza",
+        "Kituba / Monokutuba : creole a base kikongo, langue vehiculaire nationale du Congo"
+      ],
+      "vehicularRole": "Le Laari (ldi) est la principale langue vernaculaire des Bakongo autour de Brazzaville et dans la region du Pool. Le Kituba (Monokutuba, mkw) est l'une des deux langues nationales du Congo-Brazzaville (avec le Lingala) et sert de lingua franca dans tout le sud du pays. Il est parle par environ 2,2 millions de personnes comme langue premiere (Joshua Project 2025). Le francais est la langue officielle et d'enseignement."
+    },
+    "culture": {
+      "majorRites": "Rites funeraires : les ceremonies de deuil (matanga) sont particulierement elaborees chez les Bakongo du Congo. Elles durent plusieurs jours, avec veillees, banquets, chants et danses rituels. La levee du deuil (kizunguka ou debut du deuil) est un moment social tres important. Les morts sont enteres dans les villages ancestraux lorsque c'est possible. Rites de mariage : le mariage traditionnel (longo) implique la negociation d'une dot (bobolo ou lukumbu) entre les families. Les ceremonies chretiennes coexistent avec les pratiques traditionnelles. Rites de naissance : ceremonies de presentation du nouveau-ne (lukumbu) au clan, choix du nom en lien avec un ancetre.",
+      "symbols": "Le dikenga (cosmogramme kongo) reste un symbole culturel fondamental. La croix de Loango (croix kongo a bras egaux) est un symbole ancien associe aux quatre moments du soleil et aux stades de la vie. Le kaolin blanc (mpemba) symbolise la purete, la communication avec les ancetres et le monde des morts. Les figures de nkisi (charmes), bien que moins visibles publiquement depuis la christianisation, restent presentes dans les pratiques de guerison et de protection.",
+      "artsAndMusic": "Musique : la rumba congolaise (ou soukous), derivee en partie des rythmes kongo, est nee a Brazzaville et Kinshasa. Des artistes comme Franklin Boukaka (Kongo-Brazzaville) ont porte la musique kongo a une audience internationale. La musique traditionnelle inclut le ngoma (tambours), le likembe (sanza) et les chants choraux (misambu). Artisanat : la poterie feminine, le tissage de raphia (paniers, nattes), la sculpture sur bois et la taille de l'ivoire font partie du patrimoine artisanal. Danse : les danses de mariage et de deuil conservent des choreographies codifiees. La danse ngoyi (Pool) est particulierement connue.",
+      "spiritualities": "Christianisme majoritaire, avec une forte presence du kimbanguisme dans le Pool et autour de Brazzaville. L'Eglise kimbanguiste (EJCSK) est la troisieme plus grande eglise chretienne d'Afrique. Les croyances traditionnelles kongo persistent en syncrétisme : culte des ancetres (bakulu), croyance aux esprits de l'eau (simbi), utilisation des minkisi par les nganga pour la protection et la guerison. Le prophete Simon Kimbangu, Bakongo de RDC, est venere comme figure fondatrice en Republique du Congo egalement. Les eglises de Reveil (evangeliques, pentecotistes) connaissent une forte expansion depuis les annees 2000."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le territoire de l'actuel Congo-Brazzaville relevait historiquement de la sphere d'influence du Royaume du Kongo et, au nord du fleuve, du Royaume de Loango (17e-19e siecles). Le Loango, gouverne par le Maloango, etait un centre commercial majeur entre les royaumes interieurs et les negociants europeens, exportant principalement cuivre, ivoire et esclaves. La chefferie de Linzolo, dans la region du Pool, est l'une des structures politiques lari les plus anciennes et les mieux documentees.",
+      "relationsWithNeighbors": "Les Bakongo du Congo-Brazzaville ont entretenu des relations commerciales avec les Teke (au nord du Pool) via les marches de la region. Les Teke controlaient les routes commerciales interieures. La frontiere avec la RDC (fleuve Congo, largeur de 4 km a Brazzaville-Kinshasa) separe deux sous-groupes kongo (Lari et Kongo Central) qui maintiennent des liens familiaux et commerciaux intenses. Les tensions avec les groupes ethniques du nord (Mbochi, M'Boshi) sont un element structurant de la politique congolaise.",
+      "conflictsOrAlliances": "1880 : traite Makoko (Savorgnan de Brazza et le roi teke Illo Makoko), base de la colonisation francaise. 1921-1934 : revoltes contre la construction forcee du chemin de fer Congo-Ocean. 1963 : revolution congolaise (renversement de l'abbe Youlou, lari). Guerres civiles de 1993-1994 et 1997 : affrontements entre Cobras (Sassou-Nguesso), Cocoyes (Lissouba) et Ninjas (milice du Pool, representant les Lari). 1997-2003 : guerre du Pool avec atrocites documentees contre les civils lari.",
+      "diaspora": "Importante diaspora bakongo a Kinshasa (de l'autre cote du fleuve Congo), ou les echanges familiaux et commerciaux sont intenses malgre les frontieres. Communautes en France (Paris, Ile-de-France), en Belgique et en d'autres pays europeens. Des Bakongo congolais sont presents dans plusieurs pays africains voisins. Des tensions identitaires existent dans la diaspora, notamment entre Bakongo de differents pays (Congo, RDC, Angola)."
+    },
+    "demography": {
+      "totalPopulation": 2600000,
+      "referenceYear": 2025,
+      "source": "Minority Rights Group International (2024) : Bakongo = 41% de la population du Congo-Brazzaville. Population du Congo-Brazzaville estimee a 6,45 millions en 2025 (Trading Economics / Banque mondiale). La population lari seule est estimee a 1,2 million (Wikipedia EN). Environ 2,6 millions de Bakongo au total (toutes branches : Lari, Vili, Sundi, Beembe, Dondo, Kunyi).",
+      "distributionByCountry": [
+        {
+          "country": "COG",
+          "population": 2600000,
+          "note": "Principalement dans les departements du Pool (autour de Brazzaville), Kouilou (Pointe-Noire), Niari, Bouenza et Lekoumou. Sous-groupe lari : environ 1,2 million. Vili : concentres a Pointe-Noire et Kouilou. Total Bakongo: environ 41% d'une population nationale estimee a 6,45 millions en 2025."
+        }
+      ]
+    },
+    "sources": [
+      "Minority Rights Group International — Republic of Congo. https://minorityrights.org/country/republic-of-congo/",
+      "Wikipedia EN — Lari people (Congo). https://en.wikipedia.org/wiki/Lari_people_(Congo)",
+      "Wikipedia EN — Kongo people. https://en.wikipedia.org/wiki/Kongo_people",
+      "Wikipedia EN — Kongo language. https://en.wikipedia.org/wiki/Kongo_language",
+      "Joshua Project — Kongo in Congo Republic. https://joshuaproject.net/people_groups/12774/CF",
+      "Joshua Project — Kituba (Monokutuba) in Congo Republic. https://joshuaproject.net/countries/cf",
+      "SIL Ethnologue — Laari (ldi). https://www.ethnologue.com/language/ldi/",
+      "Trading Economics — Republic of Congo Population 2025. https://tradingeconomics.com/republic-of-the-congo/population",
+      "TribeGuess — Bakongo (Congo-Brazzaville). https://www.tribeguess.com/learn/bakongo",
+      "101 Last Tribes — Kongo People. https://www.101lasttribes.com/tribes/kongo.html"
+    ]
+  }
+}

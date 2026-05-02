@@ -1,0 +1,104 @@
+{
+  "id": "PPL_BANTOUS_SOMALIENS",
+  "nameMain": "Bantous somaliens",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["SOM", "KEN", "USA"],
+  "content": {
+    "appellations": {
+      "mainName": "Bantous somaliens",
+      "selfAppellation": "Bantu (terme generique adopt depuis les annees 1990) ; Wagosha ou Reer Goleed (gens de la foret) pour les groupes de la vallee du Juba ; Mushunguli (par les Somaliens) ; Shanbara ou Shangama pour ceux d'origine tanzanienne",
+      "exonyms": [
+        "Jareerweyne (terme somali signifiant 'a cheveux tres frise', largement utilise mais percu comme discriminatoire)",
+        "Jareer (abreviation de Jareerweyne, autrefois pejoratif, reapproprie positivement dans les annees 1980)",
+        "Gosha (terme historique designant les groupes de la vallee du Juba, du mot somali 'foret mariecageuse')",
+        "Mushunguli (terme employe par les Somaliens du nord, du mot Zigua 'mzigula', signifiant 'personne/travailleur/etranger')",
+        "Addoon (terme pejoratif somali signifiant 'esclave')"
+      ],
+      "originOfExonyms": "Le terme 'Jareer' (cheveux durs) oppose les Bantous somaliens aux Somaliens a cheveux souples (Jilec). 'Gosha' vient du somali reer goleed (gens de la foret marecageuse). 'Mushunguli' est une deformation du Zigua mzigula (personne). Le terme 'Somali Bantu' est apparu en 1993 lors de la guerre civile, utilise par les agences humanitaires pour designer l'alliance des groupes d'origine bantoue en Somalie.",
+      "whyProblematic": "Le terme 'Jareer' et surtout 'Addoon' (esclave) sont des termes discriminatoires refletant la position sociale marginalisee des Bantous en Somalie. Historiquement associes a l'esclavage, ces appellations perpetuent la stigmatisation. Les Bantous ont reapproprie 'Jareer' dans les annees 1980 comme terme positif d'auto-identification.",
+      "contemporaryUsage": "Depuis 1993, 'Somali Bantu' et 'Jareerweyne' sont les designations les plus courantes dans la litterature internationale. 'Bantu' est utilise en auto-designation. 'Gosha' reste employe pour les groupes de la vallee du Juba. La Minority Rights Group utilise 'Bantous' dans ses rapports officiels.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou de la zone E (langues de l'Afrique de l'Est) pour les locuteurs du Mushunguli ; groupes couchitiques assimiles pour ceux ayant adopte le maay",
+      "historicalRegion": "Vallee du Juba (Jubaland) et vallee du Shabelle, sud de la Somalie",
+      "currentCountries": ["SOM", "KEN", "USA"]
+    },
+    "ethnicities": [
+      "Mushunguli (Zigula)",
+      "Makua",
+      "Yao",
+      "Nyasa (Nyassa)",
+      "Zaramo",
+      "Majindo",
+      "Ngindo",
+      "Nyamwezi",
+      "Mwera",
+      "Shanta Shambara",
+      "Boni"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bantous somaliens ont deux origines distinctes. Premierement, certains groupes seraient des descendants d'agriculteurs bantous installes dans le sud de la Somalie avant l'arrivee des pasteurs couchitiques somaliens, constituant les communautes indigenes bantoues de la vallee du Shabelle. Deuxiemement, la majorite des Bantous de la vallee du Juba descendent d'esclaves africains de l'Afrique du Sud-Est (Mozambique, Malawi, Tanzanie) importes via la traite arabo-swahilie aux XVIIIe et XIXe siecles. Les ancetres proto-bantous etaient originaires du foyer Nigeria-Cameroun, d'ou ils emigrerent il y a 2 500 a 3 000 ans vers l'Afrique centrale, australe et orientale.",
+      "formationPeriod": "Formation du groupe Gosha dans la vallee du Juba a partir des annees 1840, quand des esclaves fugitifs du Shabelle s'y etablirent. En 1900, environ 40 000 anciens esclaves s'y etaient installes. Le terme 'Somali Bantu' comme identite collective date de 1993.",
+      "migrationRoutes": [
+        "Traite arabo-swahilie : deportation d'Afrique du Sud-Est (Tanzanie, Mozambique, Malawi) vers la cote somalienne via Zanzibar, XVIIIe-XIXe siecles",
+        "Fuite des esclaves de la vallee du Shabelle vers la vallee du Juba a partir des annees 1840",
+        "Deportation vers les camps de refugies du Kenya (Dadaab, Kakuma) depuis 1991",
+        "Reinstallation aux Etats-Unis a partir de 2003 (environ 13 000 personnes)"
+      ],
+      "historicalSettlementZones": [
+        "Vallee du Juba (Jubaland, sud de la Somalie)",
+        "Vallee du Shabelle (sud de la Somalie)",
+        "Cote de Benadir (Mogadiscio et environs)",
+        "Camps de refugies de Dadaab et Kakuma (Kenya)"
+      ],
+      "unificationsOrDivisions": "Alliance de groupes Bantous en Somalie en 1993 sous le terme 'Somali Bantu' pour presenter un front politique unifie. Les groupes restent divises selon leur origine ethnique (Zigula, Makua, Yao, etc.) et leur implantation geographique (vallee du Juba vs vallee du Shabelle). L'assimilation linguistique et culturelle est plus avancee dans la vallee du Shabelle et en milieu urbain.",
+      "externalInfluences": "Traite arabo-swahilie du XIXe siecle : entre 25 000 et 50 000 esclaves achetes a Zanzibar pour la cote somalienne entre 1800 et 1890. Fin de l'esclavage par l'administration coloniale italienne en 1903. Nationalisation des terres sous Siad Barre (1975) : spoliation fonciere massive des Bantous. Guerre civile somalienne (1991) : deplacements massifs.",
+      "majorHistoricalEvents": "1800-1890 : traite esclavagiste intensive. Vers 1840-1900 : constitution de la communaute Gosha dans la vallee du Juba. 1895 : liberation des premiers esclaves par les autorites coloniales italiennes (Filonardi). 1903 : abolition legale de l'esclavage en Somalie italienne. 1975 : loi de nationalisation des terres de Siad Barre, spoliations massives. 1991 : effondrement de l'Etat somalien, violences contre les Bantous. 2003-2007 : reinstallation de 13 000 personnes aux Etats-Unis. 2010 : milices Al-Shabaab ciblent les communautes bantous pour leurs pratiques culturelles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Bantous somaliens sont traditionnellement organises en villages agricoles avec des structures de leadership communautaires. Pas de royaume centralise. Dans certaines regions, les villages etaient proteges par des alliances avec des clans somaliens Digil ou Rahanwiin (relation patron-client, abban).",
+      "clanOrganization": "Organisation en groupes ethniques d'origine (Zigula, Yao, Makua, etc.) comme unite principale de stratification sociale. Des sous-unites matrilineaires de parente constituent des groupements ceremonials de danse. Certains se sont affilies aux clans somaliens (sheegad, 'pretendants') pour des raisons de securite.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires structurent les groupes de parente et les associations de danse ceremonielle. L'appartenance au groupe ethnique d'origine reste le principal marqueur identitaire, bien que l'assimilation au systeme clanique somalien soit frequente en milieu urbain.",
+      "religiousAuthority": "Islam sunnite adopte majoritairement au debut du XXe siecle. Pratiques animistes ancestrales maintenues en parallele : danses de possession (lumbe), usage de medecines traditionnelles, pratiques magiques proches de celles de Tanzanie. Les chefs religieux islamiques coexistent avec les detenteurs du savoir traditionnel animiste."
+    },
+    "languages": {
+      "mainLanguage": "Mushunguli (chiZigula somalien)",
+      "isoCodes": ["xma"],
+      "dialects": [
+        "Maay (Maay-Maay, langue couchitique adoptee par de nombreux Bantous)",
+        "Somali (maxaa)"
+      ],
+      "vehicularRole": "Le Mushunguli (code ISO : xma) est la seule langue bantoue survivante en Somalie, mutuellement intelligible avec le Zigula de Tanzanie. Ses langues soeurs les plus proches sont le Shambala, le Bondei et le Ngulu (Tanzanie). La majorite des Bantous somaliens a adopte le Maay (langue couchitique) ou le Somali standard comme langue principale. Le Maay est la principale lingua franca interethnique du sud de la Somalie."
+    },
+    "culture": {
+      "majorRites": "Danses de possession (lumbe et similaires) resssemblant aux pratiques tanzaniennes. La 'Grande Danse' (Gulu Nkulu) d'origine Yao (Mozambique/Malawi) est observee par certains Bantous somaliens. Ceremonies de mariage et de passage maintenant des elements ancestraux bantous.",
+      "symbols": "Le tissage de paniers est un art et un symbole culturel important. Usage de couleurs vives et de textiles dans les arts. Les danses ceremoniales constituent le principal vecteur d'identite collective.",
+      "artsAndMusic": "Musique et danse traditionnelles proches des pratiques tanzaniennes. Chants rituels des danses de possession. Artisanat : tissage de paniers (vannerie). Arts avec couleurs vives et textiles.",
+      "spiritualities": "Islam sunnite majoritaire depuis le XXe siecle. Pratiques animistes preservees (possession, magie, medicines ancestrales). Syncretisme entre Islam et animisme bantou. Certains groupes sont catholiques (descendants convertis pendant la periode coloniale italienne). Al-Shabaab a persecute les Bantous pour ces pratiques culturelles a partir de 2010."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume ou chefferie formalisee. Des etablissements semi-autonomes (Gosha) dans la vallee du Juba au XIXe siecle constituaient la forme la plus avancee d'organisation politique. Alliance politique Bantou en 1993 (National Somali Bantu Project, NSBP).",
+      "relationsWithNeighbors": "Relations historiques de marginalisation et d'exploitation avec les Somaliens. Relation patron-client (abban) avec les clans Digil et Rahanwiin pour la protection. Commerce avec les communautes swahilies de Kismaayo et Brava. Depuis 1991, reinstallation dans les camps de Kenya avec d'autres groupes de refugies somaliens.",
+      "conflictsOrAlliances": "Cibles pendant la guerre civile somalienne (1991) par des milices de clans. Spoliations foncières, viols, meurtres documentes. Cibles par Al-Shabaab (2010) pour pratiques culturelles. Alliance politique inter-bantoue (1993) comme strategie de survie.",
+      "diaspora": "Importante diaspora aux Etats-Unis (environ 13 000 personnes reinstallees entre 2003 et 2007) dans des villes telles que Salt Lake City, Minneapolis-Saint Paul, Atlanta, Boston, Seattle. Refugies au Kenya (Dadaab, Kakuma). Retours limites en Tanzanie (debut 2000s) et en Somalie. En 2024, la Somalie a rejoint la Communaute est-africaine, ouvrant des perspectives de libre circulation."
+    },
+    "demography": {
+      "totalPopulation": 1200000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN – Somali Bantus (estimation 1 000 000 a 1 500 000 en Somalie) ; Minority Rights Group – Bantu in Somalia (2024)",
+      "distributionByCountry": [
+        { "country": "SOM", "population": 1170000 },
+        { "country": "KEN", "population": 20000 },
+        { "country": "USA", "population": 13000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Somali Bantus (https://en.wikipedia.org/wiki/Somali_Bantus)",
+      "Minority Rights Group – Bantu in Somalia, 2024 (https://minorityrights.org/communities/bantu/)",
+      "Gosha people – 101 Last Tribes (https://www.101lasttribes.com/tribes/gosha.html)",
+      "The Somali Bantu: Their History and Culture – Cultural Orientation Resource Exchange (http://www.culturalorientation.net/content/download/1359/7917/version/2/file/The+Somali+Bantu.pdf)",
+      "Orville Jenkins – Who are the 'Somali Bantu'?, 2015 (http://orvillejenkins.com/peoples/somalibantu.html)",
+      "Refworld – World Directory of Minorities and Indigenous Peoples – Somalia (https://www.refworld.org/reference/countryrep/mrgi/2018/121768)"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "PPL_FANTE",
+  "nameMain": "Fante",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Fante",
+      "selfAppellation": "Fante / Mfantse",
+      "exonyms": ["Fante (terme utilisé par les Européens), Fanti (variante)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Kwa (sous-groupe Akan)",
+      "historicalRegion": "Côte du Ghana (Central, Western)",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": [
+      "Fante du Central",
+      "Fante du Western",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Fante sont un sous-groupe akan originaire de la côte du Ghana. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Kwa de la famille Niger-Congo.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les autres Akan.",
+      "externalInfluences": "Contacts avec les commerçants européens (XVIIe-XIXe siècles), influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique matrilinéaire (comme les autres Akan). Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Fante",
+      "vehicularRole": "Le fante est parlé par la majorité des Fante. L'anglais et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies royales",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (initiation, fêtes de naissance)",
+      "source_3": "Cérémonies liées à l'agriculture et à la pêche",
+      "Symboles": "Symboles akan, symboles maritimes",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Croyances traditionnelles, syncrétisme avec le christianisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora fante dans les grandes villes ghanéennes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 3000000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (fat), CIA World Factbook – Ghana"
+    },
+    "sources": [
+      "SIL Ethnologue – Fante language (fat)",
+      "CIA World Factbook – Ghana",
+      "Recensements nationaux",
+      "Études sur les peuples akan"
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "id": "PPL_NKOYA",
+  "nameMain": "Nkoya",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Nkoya",
+      "selfAppellation": "Bankoya",
+      "exonyms": ["Lambya", "Mashasha", "Mbowela", "Mbwera", "Shimbwera"],
+      "originOfExonyms": "Mbowela (aussi Ba Mbowela ou Mbwera) est un sous-groupe dialectal Nkoya. Mashasha et Lambya designent des sous-groupes ou groupes apparentes. Ces noms proviennent des designations coloniales britanniques utilisant les divisions dialectales locales.",
+      "whyProblematic": "Le terme Lambya est parfois confondu avec un groupe distinct de meme nom du nord de la Zambie/Malawi. Les sources coloniales et modernes utilisent indifferemment Nkoya, Mbwela ou Mashasha selon les sous-groupes.",
+      "contemporaryUsage": "Nkoya est le terme officiel utilise en Zambie. Les Bankoya utilisent Shinkoya pour designer leur langue. L'Association Kazanga a contribue a reunifier l'identite Nkoya depuis les annees 1980.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Groupe Luba-Lunda de l'ouest zambien (sous-groupe bantou central-sud)",
+      "historicalRegion": "Province Occidentale de Zambie (Mankoya, district de Kaoma)",
+      "currentCountries": ["ZMB"]
+    },
+    "ethnicities": ["Nkoya", "Mbowela", "Lushange", "Lukolwe", "Mashasha"],
+    "origins": {
+      "ancientOrigins": "Peuple bantou originaire de la region Luba-Lunda d'Afrique centrale. Installe historiquement dans la province Occidentale de Zambie, dans la region de Mankoya (actuel district de Kaoma). Les Nkoya sont consideres comme les habitants autochtones de cette partie de la Zambie.",
+      "formationPeriod": "Identite Nkoya consolidee avant la periode coloniale. Presence documentee dans l'ouest zambien avant l'expansion du royaume Lozi au XIXe siecle. La formation d'une ethnicite Nkoya distincte s'est renforcee sous la pression de la domination Lozi et de la politique coloniale britannique d'indirect rule.",
+      "migrationRoutes": [
+        "Migration depuis la zone Luba-Lunda (Congo/Angola) vers l'ouest de l'actuelle Zambie",
+        "Mouvements vers le sud-ouest sous pression Lozi au XIXe siecle"
+      ],
+      "historicalSettlementZones": [
+        "District de Kaoma (anciennement Mankoya), province Occidentale de Zambie",
+        "Province du Sud de Zambie (presence secondaire)"
+      ],
+      "unificationsOrDivisions": "Plusieurs sous-groupes Nkoya (Mbowela, Lushange, Lukolwe, Mashasha) avec leurs propres chefs royaux (Mwene). Sous domination Lozi au XIXe siecle, les Nkoya furent soumis a la chefferie lozi du Barotseland. La politique coloniale britannique d'indirect rule favorisa l'aristocratie Lozi au detriment des Nkoya, renforçant une opposition ethnique Nkoya-Lozi.",
+      "externalInfluences": "Domination du royaume Lozi (Barotse) au XIXe siecle : les Nkoya furent vassalises par les Lozi. Sous la colonisation britannique, la politique d'indirect rule renforça la suprematie Lozi sur les Nkoya dans la Rhodesie du Nord (Zambie coloniale). Ces tensions historiques ont contribue a la formation d'une identite Nkoya affirmee au XXe siecle.",
+      "majorHistoricalEvents": "XIXe siecle : souumission au royaume Lozi du Barotseland. Colonisation britannique : politique d'indirect rule favorisant les Lozi. Annees 1980 : formation de l'Association Kazanga a Lusaka par des employes Nkoya de la classe moyenne comme reponse culturelle a la domination Lozi. 1988 : premiere ceremonie Kazanga moderne au palais du chef Mwene Mutondo."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie clanique : chaque sous-groupe Nkoya est dirige par un roi (Mwene). Les quatre chefs principaux sont Mwene Mutondo, Mwene Kahare, Mwene Momba et Mwene Kabulwebulwe. Le pouvoir royal est sacralise ; le roi possede un sanctuaire royal (shihanda) ou sont rendus les hommages aux ancetres.",
+      "clanOrganization": "Organisation clanique sous l'autorite des chefs royaux (Mwene). Le systeme clanique determine l'acces aux terres et aux ressources. Les liens claniques sont renforces lors des ceremonies communautaires.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages royaux (ceux des Mwene) occupent le sommet de la hierarchie. Les sujets doivent hommage et tribut au chef de leur chefferie. La transmission du pouvoir suit la lignee royale.",
+      "religiousAuthority": "Le roi (Mwene) exerce une autorite religieuse : il preside les rituels de premices (Kazanga), les offrandes aux ancetres et les prieres pour les recoltes. Presence du sanctuaire royal (kara) comme lieu sacre central."
+    },
+    "languages": {
+      "mainLanguage": "Shinkoya (Nkoya)",
+      "isoCodes": ["nka"],
+      "dialects": [
+        "Ba Mbowela (Mbwera, Shimbwera)",
+        "Ba Lushange",
+        "Ba Lukolwe",
+        "Mashasha"
+      ],
+      "vehicularRole": "Le Shinkoya est la langue de communication intra-communautaire Nkoya. L'anglais est langue officielle de Zambie. Le Lozi (silozi) est tres utilise dans la Province Occidentale comme langue regionale vehiculaire. Le bemba joue un role vehiculaire national."
+    },
+    "culture": {
+      "majorRites": "La ceremonie Kazanga est le rite culturel central des Nkoya : festival annuel de premices et d'action de grace, reunissant les quatre chefs royaux et des participants de toute la Zambie. Origines au XIXe siecle comme rite des premices a la cour royale ; revivifiee en 1988 sous forme de festival culturel moderne. Lors du Kazanga traditionnel : offrandes aux ancetres dans un trou pres du sanctuaire royal, brassage de biere sacree, danse royale du Mwene en regalia brandissant sa hache d'executeur.",
+      "symbols": "La hache royale et la queue-de-vache (flyswitch) du Mwene symbolisent l'autorite royale. Le sanctuaire royal (shihanda/kara) est le lieu sacre central. Les uniformes imprimes du Kazanga sont devenus un symbole de l'identite Nkoya contemporaine.",
+      "artsAndMusic": "Riche patrimoine musical et chorégraphique : musiques et danses royales de ceremonie, musiques de chasse, musiques de cultes de guerison. Le Kazanga est un inventaire vivant de toutes les formes d'expression musicale et dansee Nkoya. Instruments a percussion et a corde traditionnels.",
+      "spiritualities": "Religion traditionnelle : culte des ancetres royaux rendu au sanctuaire shihanda. Croyances en la communication avec les ancetres par les rituels royaux. Christianisme present (majorite de la population) : presbyteriens, adventistes et catholiques. Cultes d'affliction (cults of affliction) populaires depuis vers 1900 integrant des rites de premices."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Systeme de chefferies royales multiples (Mwene Mutondo, Mwene Kahare, Mwene Momba, Mwene Kabulwebulwe) sans autorite centrale unique. Les Nkoya etaient les maitres autochtones de l'ouest zambien avant la domination Lozi.",
+      "relationsWithNeighbors": "Opposition historique avec les Lozi (Barotse) qui les dominerent au XIXe siecle. Relations avec les Luvale et Mbunda dans la region. Tensions post-coloniales avec l'aristocratie Lozi dans le cadre de l'indirect rule britannique. La creation de l'Association Kazanga reflete la volonte d'emulation et de distinction vis-a-vis de la ceremonie Kuomboka des Lozi.",
+      "conflictsOrAlliances": "Vassalisation par le royaume Lozi au XIXe siecle. Sous la colonisation britannique : marginalisation au profit des Lozi dans l'administration de la Rhodesie du Nord. Antagonisme Nkoya-Lozi documente par l'anthropologue Wim van Binsbergen.",
+      "diaspora": "Presence de Nkoya urbanises a Lusaka (classe moyenne Nkoya fondatrice de l'Association Kazanga dans les annees 1980). Communautes Nkoya dans les provinces Occidentale et du Sud de Zambie."
+    },
+    "demography": {
+      "totalPopulation": 77000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Nkoya, Lambya in Zambia : 77 000)",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 77000,
+          "note": "Province Occidentale (district de Kaoma/Mankoya) et Province du Sud"
+        }
+      ]
+    },
+    "sources": [
+      "Nkoya people – Wikipedia EN (https://en.wikipedia.org/wiki/Nkoya_people)",
+      "Nkoya Language (NKA) – Ethnologue (https://www.ethnologue.com/language/nka/)",
+      "Nkoya, Lambya in Zambia – Joshua Project (https://joshuaproject.net/people_groups/13954)",
+      "The Kazanga Ceremony, Kaoma district – Wim van Binsbergen, Quest Journal (https://www.quest-journal.net/shikanda/topicalities/kazanga4/kazanga4.htm)",
+      "The Kazanga Festival – Scholarly Publications Leiden University (https://scholarlypublications.universiteitleiden.nl/access/item:2870800/download)",
+      "Nkoya of Zambia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015618/)",
+      "Languages of Zambia – Wikipedia EN (https://en.wikipedia.org/wiki/Languages_of_Zambia)"
+    ]
+  }
+}

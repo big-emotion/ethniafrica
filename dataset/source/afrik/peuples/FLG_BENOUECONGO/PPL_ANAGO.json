@@ -1,0 +1,98 @@
+{
+  "id": "PPL_ANAGO",
+  "nameMain": "Anago",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["BEN", "TGO", "NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Anago",
+      "selfAppellation": "Anagó / Nago",
+      "exonyms": ["Nago", "Nagot", "Ana-Ife", "Ana", "Lucumi", "Aku"],
+      "originOfExonyms": "Anago ou Nago : terme utilisé par les peuples Fon (du Dahomey/Bénin) pour désigner les Yoruba voisins, particulièrement ceux du royaume de Kétou. Le terme Nago est devenu le nom le plus courant au Bénin et au Togo. Dans le centre du Togo, les Yoruba sont appelés Ana-Ife ou Ana. Lucumi ou Olukumi (signifiant mon confident, ma famille) est un autre exonyme historique, popularisé pendant la traite atlantique. Aku est utilisé en Sierra Leone et en Gambie pour désigner les Yoruba libérés.",
+      "whyProblematic": "Le terme Nago, bien qu'encore largement utilisé, est techniquement un exonyme Fon et non un nom propre au groupe. La communauté se désigne elle-même comme Anago ou simplement Yoruba.",
+      "contemporaryUsage": "Anago et Nago sont utilisés indifféremment au Bénin et au Togo pour désigner ce sous-groupe yoruba. Le terme Nagot est la forme francophone officielle utilisée dans les documents administratifs et la littérature ethnographique française.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Yoruba (branche Yoruboide-Edekiri, famille Niger-Congo)",
+      "historicalRegion": "Yorubaland occidental — Porto-Novo et région de Kétou (Bénin), zones frontalières du Togo (centre-est), Ogun State et zones frontalières du Nigeria",
+      "currentCountries": ["BEN", "TGO", "NGA"]
+    },
+    "ethnicities": [
+      "Kétou (Ketu) — sous-groupe yoruba fondateur de la ville de Kétou au Bénin, noyau historique des Anago",
+      "Porto-Novo (Ajachè / Gun) — communauté yoruba fondatrice de Porto-Novo, mêlée aux Aja",
+      "Adjara — communauté anago du sud-Bénin, entre Porto-Novo et la frontière togolaise",
+      "Ogu (Gun) — sous-groupe yoruba de la région de Porto-Novo, fortement métissé avec les Fon et Aja",
+      "Idaasha — sous-groupe yoruba du Bénin, proche de la frontière nigériane",
+      "Ana-Ife — désignation des Yoruba du centre-Togo, autour de Tchamba et Sokodé"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Anago sont une composante du peuple yoruba dont les origines remontent à Ile-Ife (Nigeria), berceau mythique des Yoruba. Selon les traditions yoruba, tous les Yoruba descendent d'Odùduwà, ancêtre fondateur d'Ile-Ife. Les ancêtres des Yoruba occupaient le Nigeria méridional dès les années 1200 après J.-C. et constituaient l'un des peuples les plus urbanisés d'Afrique de l'Ouest.",
+      "formationPeriod": "Le sous-groupe anago se constitue progressivement entre le XVe et le XVIIe siècle, lorsque des communautés yoruba s'installent à l'ouest de l'actuel Nigeria, fondant notamment le royaume de Kétou (Bénin actuel). Ces groupes sont désignés collectivement Nago/Anago par leurs voisins Fon à partir du XVIIe siècle.",
+      "migrationRoutes": [
+        "Migration depuis Ile-Ife (Ife, Nigeria) vers l'ouest à partir du XIIe-XIIIe siècle",
+        "Installation à Kétou (Bénin) comme centre politique majeur",
+        "Dispersion vers Porto-Novo (Ajachè), fondée par un prince yoruba issu d'Allada",
+        "Présence dans le centre du Togo (Ana-Ife autour de Tchamba et Sokodé)",
+        "Maintien de liens avec Oyo, Ibadan, Abeokuta et d'autres centres yoruba au Nigeria"
+      ],
+      "historicalSettlementZones": [
+        "Kétou et sa région (département du Plateau, Bénin)",
+        "Porto-Novo et sa région côtière (département de l'Ouémé, Bénin)",
+        "Adjara, Pobè, Ifangni (Bénin)",
+        "Centre du Togo (zone de Tchamba, Sokodé)",
+        "Nord et nord-est du Togo (Nadoba, Alédjo)"
+      ],
+      "unificationsOrDivisions": "L'identité anago/nago est liée à l'hégémonie du royaume d'Oyo (XVIIe-XIXe siècles), dont les ambassadeurs et vice-rois étaient des communautés Anago à la frontière Bénin-Nigeria. La chute d'Oyo (vers 1835) et les guerres civiles yoruba du XIXe siècle ont fragmenté le territoire et généré de nouvelles diaspora (y compris vers les Amériques).",
+      "externalInfluences": "Influence dominante du royaume d'Oyo sur la politique, la langue et la culture des Anago. Contacts intenses avec les Fon du Dahomey (dont la pression a souvent été conflictuelle). Influence de l'islam depuis le XVIIIe siècle. Traite atlantique des esclaves : les Yoruba/Nago constituent le groupe ethnique le plus exporté vers le Brésil à la fin du XVIIIe et au XIXe siècle.",
+      "majorHistoricalEvents": "Fondation du royaume de Kétou (XVe-XVIe siècle); période d'hégémonie de l'empire d'Oyo (XVIIe-XVIIIe siècles); guerres dahoméennes contre Kétou et sac de la ville (1880 et 1893); traite transatlantique (des millions de Yoruba/Nago vendus aux Amériques entre 1650 et 1880); colonisation française du Bénin et du Togo (fin XIXe siècle); indépendances du Bénin (1960) et du Togo (1960)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie héréditaire : l'Alaketu (roi de Kétou) est le chef politique et spirituel traditionnel du noyau anago. Les Yoruba sont organisés en cités-États dirigées chacune par un oba (roi) assisté de conseils d'anciens et de titulaires de grades (chefs de chieftaincy). A Porto-Novo, le roi (Toffa, puis ses successeurs) a combiné héritage adja et yoruba.",
+      "clanOrganization": "Organisation en lignages patrilinéaires (idile ou ebi), structurant l'appartenance clanique, la succession royale et les droits fonciers. Les lignages fondateurs de Kétou, Adjara, Pobè et Ifangni ont des généalogies remontant à Ile-Ife.",
+      "ageClassSystems": "Système de grades et titres (chieftaincy titles) structurant la hiérarchie sociale et politique dans les communautés yoruba de la région.",
+      "roleOfLineages": "Les lignages royaux (Oba) détiennent le pouvoir politique. Les lignages de chefs (Baale, Olori) constituent des échelons intermédiaires. La mémoire lignagère préserve la connexion avec Ile-Ife et les royaumes fondateurs.",
+      "religiousAuthority": "Les prêtres de l'Ifa (babalawo) disposent d'une autorité divinatoire et spirituelle considérable. Le culte des Orisha (divinités yoruba : Sango, Ogun, Osun, Oya, etc.) est central. L'islam est présent depuis le XVIIIe siècle; le christianisme depuis le XIXe. Au Bénin, le culte vodun se mêle aux pratiques yoruba traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Yoruba (dialecte anago / nago)",
+      "isoCodes": ["yor"],
+      "dialects": [
+        "Kétou — dialecte yoruba du Bénin (Ketu Yoruba), base du standard acadio",
+        "Nago de Porto-Novo — variante influencée par le contact avec le fon et l'aja",
+        "Ana-Ife — variante du Togo central, parfois listée comme langue distincte dans Ethnologue",
+        "Idaasha — variante du nord-est du Bénin"
+      ],
+      "vehicularRole": "Le yoruba (sous sa forme anago/nago) est langue maternelle des communautés anago. Le français est la langue officielle au Bénin et au Togo. Le fon sert de lingua franca dans le sud du Bénin. L'anglais est utilisé au Nigeria. Le yoruba dispose d'une présence médiatique forte et d'une littérature écrite développée."
+    },
+    "culture": {
+      "majorRites": "Culte de l'Ifa (divination) : rite central dans la vie yoruba/anago, pratiqué par les babalawo. Fête des Orisha : Sango (dieu du tonnerre), Ogun (dieu du fer), Osun (déesse des eaux). Egúngún (mascarades des ancêtres, présentes dans les communautés anago de Kétou et Porto-Novo). Rites d'initiation aux sociétés secrètes (Ogboni, Gelede). Cérémonies de mariage et de funérailles selon la coutume yoruba.",
+      "symbols": "La couronne (ade) en perles avec franges voilant le visage du roi est le symbole royal yoruba par excellence. Le tambour parlant (dundun) est le symbole culturel de la communication yoruba. La sculpture en bois (Ere ibeji, poupées des jumeaux) est un art symbolique majeur.",
+      "artsAndMusic": "Musique yoruba traditionnelle : tambour dundun (parlant), bata (percussion sacrée pour Sango), sekere (hochet). Masques Gelede (inscrits au patrimoine immatériel de l'UNESCO) pratiqués à Kétou et dans les communautés anago du Bénin. Sculpture sur bois (masques, statues Ere Ibeji). Broderie et tissage (agbada, aso-oke). Tradition orale de poésie Ifa (corpus divinatoire inscrit au patrimoine de l'UNESCO).",
+      "spiritualities": "Religion yoruba traditionnelle centrée sur Olodumare (dieu suprême), les Orisha (divinités intermédiaires) et les ancêtres (Egúngún). Ifa, système divinatoire inscrit au patrimoine immatériel de l'UNESCO en 2005. Islam sunnite pratiqué par une partie des Anago, notamment dans le nord du Bénin et du Togo. Christianisme (protestantisme et catholicisme) introduit par les missionnaires du XIXe siècle. Syncrétisme vodun-yoruba au Bénin (Orisha assimilés aux vodun)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume de Kétou : l'un des royaumes yoruba les plus anciens à l'ouest, fondé au XVe-XVIe siècle, dirigé par l'Alaketu. Porto-Novo (Ajachè) : cité-État fondée par des princes yoruba, capitale actuelle du Bénin. Adjara, Pobè et Ifangni : chefferies yoruba du Bénin méridional. Participation à la sphère d'influence de l'empire d'Oyo.",
+      "relationsWithNeighbors": "Relations complexes avec le Dahomey (Fon) : guerres de Kétou avec le Dahomey (sac de Kétou en 1880 et 1893). Relations étroites avec les Aja et Adja (voisins Gbe à l'ouest). Rôle de vice-rois et d'ambassadeurs de l'empire d'Oyo dans les communautés frontalières. Coexistence avec les Bariba au nord du Bénin.",
+      "conflictsOrAlliances": "Guerres répétées entre le Dahomey et le royaume de Kétou, culminant avec deux destructions de Kétou (1880 et 1893). Résistance yoruba à l'expansionnisme dahoméen. Milliers de Yoruba/Nago vendus comme esclaves, notamment au Brésil (Nago : groupe le plus importé au Brésil à la fin de la traite dans les années 1880).",
+      "diaspora": "Diaspora afro-brésilienne : les Nagos constituent le groupe africain le plus importé au Brésil à la fin de la traite (années 1880). Leur influence est majeure dans le candomblé, la cuisine, la musique et la culture populaire brésilienne. Diaspora haïtienne (via la traite de Saint-Domingue). Présence yoruba diasporique en Europe, aux États-Unis et au Canada."
+    },
+    "demography": {
+      "totalPopulation": 950000,
+      "referenceYear": 2025,
+      "source": "Estimation basée sur Joshua Project (Yoruba in Togo : 148 000; Yoruba in Benin : population significative) et les données agrégées sur la population yoruba dans l'espace Bénin-Togo-Nigeria. Wikipedia Yoruba people indique des estimations de 500 000 à 600 000 Yoruba au Togo. La population anago au Bénin (Kétou, Porto-Novo, Adjara) est estimée à environ 300 000-400 000 personnes, avec environ 200 000 à la frontière nigériane.",
+      "distributionByCountry": [
+        { "country": "BEN", "population": 400000 },
+        { "country": "TGO", "population": 350000 },
+        { "country": "NGA", "population": 200000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia, Yoruba people (en). https://en.wikipedia.org/wiki/Yoruba_people (consulté 2025)",
+      "Wikipedia, Nagos (en). https://en.wikipedia.org/wiki/Nagos (consulté 2025)",
+      "Ethnologue, Yoruba (YOR). https://www.ethnologue.com/language/yor/ (consulté 2025)",
+      "Joshua Project, Yoruba in Togo. https://joshuaproject.net/people_groups/16057/TO (consulté 2025)",
+      "Joshua Project, Yoruba in Benin. https://joshuaproject.net/people_groups/16057/BN (consulté 2025)",
+      "Anago Adventures Blog, The Anago in Benin Republic, Togo and Nigeria (2016). https://anagoadventures.blogspot.com/2016/04/the-anago-in-benin-republic-and-nigeria.html",
+      "Law, Robin. The Slave Coast of West Africa 1550-1750. Oxford: Clarendon Press, 1991."
+    ]
+  }
+}

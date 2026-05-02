@@ -1,0 +1,41 @@
+# Nom du peuple
+- Nom principal : Chleuhs
+- Auto-appellation : Išelḥiyen
+- Appellations historiques : « Chleuh » (terme français ; pas péjoratif mais d’origine extérieure)
+- Famille linguistique principale : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+- Région historique : Sud-Ouest marocain (Souss, Haut Atlas, Anti-Atlas)
+- ID peuple : PPL_CHLEUH
+
+# 1. Ethnies incluses
+- Chleuhs du Souss
+- Chleuhs de l’Anti-Atlas
+- Chleuhs du Haut-Atlas occidental
+
+# 2. Origines
+- Ancienne population amazighe des montagnes.
+- Héritiers des tribus masmouda historiques.
+
+# 3. Organisation
+- Systèmes tribaux (Aït Sokham, Aït Baamran…).
+- Organisation villageoise (aghruy).
+
+# 4. Langue
+- Tachelhit
+- ISO : shi
+
+# 5. Culture
+- Musique ahwach, ahidous.
+- Artisanat : argan, tissage, bijoux.
+- Cuisine : amlou, berkoukes.
+
+# 6. Histoire
+- Dynasties almohades (origine masmouda).
+- Rôle dans la résistance à la pénétration coloniale française.
+
+# 7. Démographie
+- Population : 8 000 000
+- Année : 2025
+
+# 8. Sources
+- IRCAM (Maroc)
+- Ethnologue (shi)

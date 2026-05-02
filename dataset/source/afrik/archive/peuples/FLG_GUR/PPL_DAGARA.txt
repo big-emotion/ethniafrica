@@ -1,0 +1,38 @@
+# Nom du peuple
+- Nom principal : Dagara / Dagaaba
+- Auto-appellation : Dagara / Dagao
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Région : BFA, GHA
+- Identifiant : PPL_DAGARA
+
+# 1. Ethnies incluses
+- Dagara du Burkina
+- Dagaaba du Ghana
+
+# 2. Origines
+- Parenté historique avec Lobi et Birifor.
+- Culture voltaïque ancienne.
+
+# 3. Organisation
+- Structures initiatiques
+- Lignages claniques
+
+# 4. Langue
+- Dagaare / Dagara
+- ISO : dgi / dga
+
+# 5. Culture
+- Xylophone *gyil*
+- Rituels funéraires réputés
+- Artisanat du fer
+
+# 6. Histoire
+- Zones de migration saisonnière vers le Ghana
+
+# 7. Démographie
+- Population : 2 600 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (dga)
+- Upper West Ghana cultural studies

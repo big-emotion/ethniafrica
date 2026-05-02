@@ -1,0 +1,101 @@
+{
+  "id": "PPL_GURAGE",
+  "nameMain": "Gurage",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Gurage",
+      "selfAppellation": "Gurage (ጉራጌ)",
+      "exonyms": ["Guraginya (terme designant aussi le groupe de langues)"],
+      "originOfExonyms": "L'etymologie du terme Gurage est disputee. Certaines traditions orales le derivent de gura (gauche) et ge (de), signifiant ceux qui viennent de la gauche (c'est-a-dire de l'ouest), faisant reference a leur migration depuis le nord-ouest. D'autres l'associent a un ancetre eponyme mythique. Le terme Guraginya designe collectivement les langues parlees par les Gurage.",
+      "whyProblematic": "Le terme Gurage est avant tout culturel et geographique plutot que strictement linguistique : les langues gurage ne sont pas toujours mutuellement intelligibles et couvrent au moins trois groupes distincts (Nord, Est, Ouest). Les Silte ont rejete l'identite gurage lors d'un referendum en 2000 et ont obtenu leur propre zone administrative. L'identite gurage englobe des communautes chretiennes orthodoxes, musulmanes et animistes.",
+      "contemporaryUsage": "Le terme Gurage est couramment utilise en ethiopien (amharique), dans la litterature academique et par les membres du groupe eux-memes. Les Gurage d'Addis-Abeba sont reconnus pour leur dynamisme economique et leur identite culturelle distinctive au sein de la capitale ethiopienne.",
+      "linguisticFamily": "FLG_SEMITIQUE",
+      "ethnoLinguisticGroup": "Semitique ethiopien meridional (Ethio-semitique du Sud, groupe Gurage)",
+      "historicalRegion": "Zone Gurage et Zone Gurage de l'Est (Ethiopie centrale du Sud), environ 125 km au sud-ouest d'Addis-Abeba",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Sebat Bet Gurage (Sept Maisons) — groupe occidental, le plus nombreux, comprenant les dialectes Chaha, Ezha, Muher, Geta, Gumer, Endegegn, Inor",
+      "Soddo Gurage (Kistane) — groupe du Nord, exclusivement chretiens orthodoxes, s'identifient comme Kistane (chretien)",
+      "Siltʼe (Silte) — groupe de l'Est, majoritairement musulmans, ont obtenu leur propre zone en 2000 apres un referendum",
+      "Wolane — groupe de l'Est, proche du Silte, souvent considere comme un dialecte siltien",
+      "Zay (Zway) — groupe de l'Est, vivant sur les iles du lac Zway, linguistiquement proche du Harari",
+      "Masqan — groupe de l'Ouest, proche des Sebat Bet",
+      "Dobi (Gogot) — sous-groupe central de la zone Gurage",
+      "Meskan (Mareqo) — groupe du centre-est de la zone Gurage"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Gurage descendent des populations semitiques ethiopiennes qui se sont etendues vers le sud depuis l'Aksum a partir du premier millenaire apr. J.-C. Selon les traditions orales des Soddo, un ancetre mythique nomme Azmach Sebhat, envoye par l'empereur Amda Seyon au debut du 14e siecle, aurait colonise la region de Gurageland. Les Gurage de l'Est (Silte, Wolane, Zay) ont probablement des liens avec les Harla, peuple cushitique qui peuplait anterieurement le Hararghe et la region de Harar. La formation des differents groupes gurage resulte d'un melange de migrations semitiques, de populations cushitiques autochtones et d'influences oromo.",
+      "formationPeriod": "L'identite gurage s'est consolidee au fil des siecles de cohabitation et de resistance aux pressions exterieures — principalement les migrations oromo du 16e siecle et les incursions hadiya. Les groupes gurage se sont organises en systemes communautaires de gouvernance (Yejoka Kicha chez les Sebat Bet, Ye Gordena Sera chez les Kistane) pour faire face aux menaces exterieures. La denomination Gurage s'est fixee comme identite commune a partir de l'epoque medievale.",
+      "migrationRoutes": [
+        "Migration depuis le nord (hautes terres de l'Aksum et Amhara) vers le Gurageland actuel, a partir du 7e-10e siecle",
+        "Expansion vers le sud depuis l'ancienne zone de contact entre l'Amhara et les peuples cushitiques du sud",
+        "Migrations economiques massives des Gurage vers Addis-Abeba depuis la fin du 19e siecle — les Gurage sont la plus grande communaute regionale de la capitale ethiopienne"
+      ],
+      "historicalSettlementZones": [
+        "Zone Gurage (Gurageland) — region semi-montagneuse d'environ 593 km2, chef-lieu Wolkite",
+        "Zone Gurage de l'Est — sous-zones Silte et Wolane",
+        "Iles du lac Zway (Ziway) — population Zay",
+        "Addis-Abeba — forte presence gurage (la plus importante communaute regionale de la ville)"
+      ],
+      "unificationsOrDivisions": "Les Gurage ne forment pas un groupe linguistiquement homogene : trois groupes principaux (Nord, Est, Ouest) avec des langues parfois non mutuellement intelligibles. La secession des Silte en 2000 (referendum) a cree une division administrative. Les Gurage sont cependant unitaires dans leur culture de l'enset et dans leur reputation de commercants habiles. Le systeme de gouvernance Yejoka Kicha (Sebat Bet) assure une coherence sociale interne.",
+      "externalInfluences": "Invasion de l'imam Ahmad ibn Ibrahim al-Ghazi (Ahmed Gragn, 1529-1543) : devastation de nombreuses zones gurage. Migrations oromo (16e-17e siecles) : encerclement du Gurageland et assimilation partielle de certains sous-groupes peripheriques. Influence de l'Eglise orthodoxe ethiopienne Tewahedo chez les groupes du Nord (Soddo/Kistane) et de l'Ouest. Influence de l'islam chez les groupes de l'Est (Silte, Wolane). Incorporation dans l'empire ethiopien sous Menelik II a la fin du 19e siecle.",
+      "majorHistoricalEvents": "Evangelisation de la region par saint Gebre Menfes Kidus (11e siecle environ), fondateur du monastere de Medre Kebd Abo. Invasion d'Ahmed Gragn (1529-1543) : destruction des eglises et islamisation forcee de certains groupes. Migrations oromo (16e-17e siecles) : les Gurage resistent mais sont coupes du reste de l'Habesha. Appels des Gurage a Negus Sahle Selassie (19e siecle) pour protection contre les raids oromo. Incorporation dans l'empire de Menelik II (1890s). Referendum de 2000 : les Silte forment leur propre zone administrative distincte du Gurageland."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Gurage s'organisent en systemes communautaires de gouvernance sans monarchie centralisee. Les Sebat Bet pratiquent le Yejoka Kicha (ou Yajoka Kicha), une assemblee de chefs locaux et d'anciens qui deliberent sur les affaires de la communaute. Les Soddo Kistane pratiquent le Ye Gordena Sera (ou Ye Enjeri Sera), systeme base sur des unites territoriales (Ager) subdivisees en Sebuggnets. Ces systemes sont similaires au Sera des Wolayta, Sidama et Gamo — tous partageant la culture de l'enset.",
+      "clanOrganization": "Les Sebat Bet sont organises en groupes de descendance agnatique (plus de 280 unites clanique documentees). Les Kistane sont bases sur la territorialite (Ager) plutot que sur les lignages, contrairement aux Sebat Bet. Chaque sous-groupe gurage possede sa propre organisation interne. Les Equb (associations d'epargne rotative) et les Eddir (associations funeraires mutuelles) sont des institutions sociales fondamentales, transferees dans les migrations vers Addis-Abeba.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Chez les Sebat Bet, les lignages agnatiques jouent un role dans l'organisation sociale et fonciere. Chez les Kistane, l'appartenance territoriale au sein des Ager prime sur la genealogie lignagere. Les deux systemes integrent les obligations de solidarite communautaire, notamment dans les ceremonies de mariage, les funerailles et les travaux agricoles collectifs.",
+      "religiousAuthority": "Les Gurage de l'Ouest (Sebat Bet) et du Nord (Kistane) sont majoritairement chretiens orthodoxes ; l'Eglise Tewahedo joue un role central dans la vie communautaire. Le monastere de Medre Kebd Abo est un centre religieux important pour les Kistane. Les Gurage de l'Est (Silte, Wolane) sont majoritairement musulmans sunnites. Des pratiques animistes et des croyances prechreriennes persistent dans certaines zones, notamment le culte d'un dieu traditionnel appele Waq chez certains groupes."
+    },
+    "languages": {
+      "mainLanguage": "Langues gurage (groupe linguistique collectif) — principales varietes : Sebat Bet (sgw), Soddo/Kistane (gru), Silte (stv)",
+      "isoCodes": ["sgw", "gru", "stv", "zay", "msq"],
+      "dialects": [
+        "Sebat Bet Gurage (sgw) — groupe occidental : Chaha, Ezha, Muher, Geta, Gumer, Endegegn, Inor — plus de 1 million de locuteurs",
+        "Soddo / Kistanigna (gru) — groupe du Nord, proche de l'amharique, environ 314 000 locuteurs",
+        "Silte (stv) — groupe de l'Est, le plus parle avec le Sebat Bet, environ 1,1 million de locuteurs",
+        "Zay (zwa) — groupe de l'Est, iles du lac Zway, locuteurs peu nombreux (environ 5 000)",
+        "Masqan (msq) — groupe de l'Ouest, quelques milliers de locuteurs"
+      ],
+      "vehicularRole": "Il n'existe pas de langue gurage commune mutuellement intelligible entre tous les sous-groupes. L'amharique (langue officielle de l'Ethiopie) sert de langue vehiculaire pour les Gurage entre eux et avec les autres Ethiopiens. Les Gurage d'Addis-Abeba sont generalement bilingues ou trilingues (langue gurage maternelle, amharique, parfois oromo). L'ecriture utilise le script ge'ez (fidal), commun a toutes les langues ethio-semitiques."
+    },
+    "culture": {
+      "majorRites": "L'enset est au centre de la vie rituelle gurage : sa preparation (kocho, bulla, amicho) est une activite communautaire et sa presence est obligatoire dans les ceremonies de mariage, de naissance et de funerailles. Le mariage est un evenement social majeur impliquant des semaines de preparation communautaire et la preparation collective de nourriture a base d'enset. La circoncision masculine est pratiquee comme rite de passage. Les Sebat Bet celebrent Fuga (fetes saisonnieres liees aux cycles agricoles). Les chretiens orthodoxes observent Timkat (Epiphanie) et Meskel, tandis que les musulmans celebrent l'Eid al-Fitr et l'Eid al-Adha.",
+      "symbols": "L'enset (Ensete ventricosum), appele Asset en gurage, est le symbole culturel le plus puissant du peuple gurage — plante vivace qui nourrit, soigne et structure la vie sociale. La maison gurage traditionnelle (circulaire, avec une section laterale pour les animaux domestiques) est un autre symbole identitaire. La reputation des Gurage comme commercants et entrepreneurs (identite marchande fortement developpee a Addis-Abeba) est un marqueur identitaire reconnu par tous les Ethiopiens.",
+      "artsAndMusic": "L'artisanat gurage inclut le travail du bois (sculptures, ustensiles), la fabrication de cuir, le tissage et la poterie. La musique traditionnelle gurage comprend des chants collectifs lors des mariages, des ceremonies de recolte et des funerailles. Le genre musical gurage se distingue par ses rythmes complexes et ses chants polyphoniques. La cuisine gurage est reconnue dans tout le pays : le kocho (galette fermentee a base d'enset), le bulla (farine d'enset) et le kitfo (viande hachee crue epice) sont des plats emblematiques, ce dernier etant devenu un mets populaire dans toute l'Ethiopie.",
+      "spiritualities": "Les Gurage pratiquent trois religions principales selon les sous-groupes : christianisme orthodoxe ethiopien (Tewahedo) chez les Sebat Bet et les Kistane, islam sunnite chez les Silte et Wolane, avec des minorites dans les autres groupes. Des croyances animistes prechreriennes persistent, notamment la veneration d'esprits associes aux arbres d'enset et aux ancestors. Le Waq, dieu supreme de certains groupes cushitiques voisins, a partiellement influence les croyances des groupes gurage frontaliers. L'Eglise Tewahedo joue un role central dans la vie des groupes chretiens, avec des saints locaux tres veneres dont Gebre Menfes Kidus."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Gurage n'ont pas forme de royaume centralise mais ont ete integres dans l'empire ethiopien. Les groupes gurage de l'est ont ete inclus dans le sultanat d'Adal aux 13e-16e siecles. Les milices harari (malassay) qui se sont installees dans les territoires gurage apres la guerre ethiopo-adalie ont fonde les Silte. Sous Menelik II, le Gurageland a ete integre dans l'empire ethiopien recentralise (fin 19e siecle). Les Gurage ont fourni des combattants pendant la resistance a l'occupation italienne (1935-1941).",
+      "relationsWithNeighbors": "Relations complexes avec les Oromo : conflits et raids historiques, mais aussi echanges culturels et mariages mixtes (notamment entre Kistane et Oromo). Relations ethniques avec les Hadiya, Sidama et les Kambata, notamment par les systemes de gouvernance Sera partages. Relations linguistiques et historiques avec les Harari (les Gurage de l'Est partagent des similarites linguistiques avec le harari). Liens avec les Amhara par la religion orthodoxe et la langue (notamment les Kistane). Les Gurage d'Addis-Abeba ont des relations commerciales et professionnelles avec toutes les communautes ethiopiennes.",
+      "conflictsOrAlliances": "Devastation par Ahmad ibn Ibrahim al-Ghazi (Ahmed Gragn, 1529-1543) : invasion et islamisation forcee de certains groupes. Migrations oromo (16e-17e siecles) : encerclement et raids persistants, notamment contre les Kistane. Appels a la protection aupres du negus Sahle Selassie (19e siecle). Resistance a l'occupation italienne (1935-1941). Referendum de 2000 : tension entre identite gurage et identite siltee se terminant par la separation administrative des Silte.",
+      "diaspora": "Les Gurage representent l'une des communautes diasporas internes les plus importantes d'Ethiopie. Ils sont la plus grande communaute regionale d'Addis-Abeba, estimee a plusieurs centaines de milliers de personnes. Cette migration urbaine, commencee au 19e siecle et acceleree au 20e siecle, a permis aux Gurage de dominer plusieurs secteurs economiques de la capitale : restauration (kitfo est un plat gurage), transports, commerce de detail. Les Equb et Eddir gurage sont des institutions financieres communautaires influentes a Addis-Abeba. Une diaspora gurage existe egalement en Europe, en Amerique du Nord et dans les pays du Golfe."
+    },
+    "demography": {
+      "totalPopulation": 4000000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur le recensement ethiopien CSA 2007 (population de la Zone Gurage : 1 340 376 ; population gurage totale estimee a 2,5-3 millions), Ethnologue (SIL International 2024), Joshua Project 2023, et projections de croissance demographique ethiopienne. Le chiffre inclut les Gurage des zones Gurage et Gurage de l'Est, d'Addis-Abeba et des autres regions.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 4000000,
+          "note": "Zone Gurage (SNNPRS/Region Ethiopie centrale) — chef-lieu Wolkite ; Zone Gurage de l'Est ; forte communaute a Addis-Abeba ; presences dans les regions Oromia, Harari, Dire Dawa, Amhara et Tigray"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Gurage people. https://en.wikipedia.org/wiki/Gurage_people",
+      "Wikipedia EN — Soddo Gurage people. https://en.wikipedia.org/wiki/Soddo_Gurage_people",
+      "Ethnologue — Sebat Bet Gurage (sgw), Soddo (gru), Silte (stv). https://www.ethnologue.com/language/sgw",
+      "Nature — Cultural and symbolic value of enset crop in Sebat Bet Gurage. https://www.nature.com/articles/s41599-022-01179-4",
+      "PMC/Frontiers in Pharmacology — Enset landraces knowledge in Gurage community. https://pmc.ncbi.nlm.nih.gov/articles/PMC12075952/",
+      "Joshua Project — Gurage Kistane in Ethiopia. https://joshuaproject.net/people_groups/18863",
+      "Ethiopian Central Statistical Agency (CSA) — Population and Housing Census 2007. https://www.csa.gov.et",
+      "Encyclopaedia Aethiopica, vol. 2 (Uhlig ed.), Harrassowitz Verlag, 2005"
+    ]
+  }
+}

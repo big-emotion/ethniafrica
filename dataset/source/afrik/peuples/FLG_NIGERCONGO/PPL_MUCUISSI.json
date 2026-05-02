@@ -1,0 +1,76 @@
+{
+  "id": "PPL_MUCUISSI",
+  "nameMain": "Mucuissi",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["AGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Mucuissi",
+      "selfAppellation": "Mucuis",
+      "exonyms": ["Mucuis", "Kwisi", "Cuis"],
+      "originOfExonyms": "Le terme Mucuissi est la forme portugaise du nom propre du groupe, dont la forme autochtone est Mucuis ou Cuis. Dans la litterature academique anglophone, on retrouve Kwisi (romanisation phonetique). Ces denominations designent un meme groupe marginalise vivant dans la region de Virei (province de Namibe).",
+      "whyProblematic": "La terminologie est source de confusion car le terme Mucuissi/Kwisi est utilise pour designer un groupe de statut socio-economique peripatetique (marginalise), distinct des groupes pastoraux dominants. Certaines sources les classent parmi les pre-Bantous, d'autres parmi les Bantous les plus anciennement arrives.",
+      "contemporaryUsage": "Le terme Mucuissi reste d'usage local dans la region de Virei-Namibe. Dans la litterature scientifique recente (genetique, linguistique), la forme Kwisi est privilegiee. Le groupe est souvent decrit en relation avec les Cubal (Mucubal) dont ils parlent le dialecte.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Herero / Kuvale (peripatetique)",
+      "historicalRegion": "Sud-Ouest Angola (region de Virei, province de Namibe)",
+      "currentCountries": ["AGO"]
+    },
+    "ethnicities": ["Mucuis", "Kwisi"],
+    "origins": {
+      "ancientOrigins": "Les Mucuissi sont considers comme l'un des groupes les plus anciennement etablis dans le desert angolais. La tradition orale et les sources ethnographiques les decrivent comme descendants des premiers groupes bantous arrives dans le desert du Namibe, anterieurement a l'arrivee des grands groupes pastoraux Herero. Des etudes genetiques recentes (2023) les classent parmi les communautes peripatetiques du Namib angolais, partageant avec les Kwepe et les Twa une ancestralite pre-bantoue unique dans la region.",
+      "formationPeriod": "Epoque pre-coloniale, possiblement anterieure au XVIe siecle pour leur installation dans le desert du Namibe.",
+      "migrationRoutes": [
+        "Installation probable depuis la cote atlantique (peche et collecte de mollusques) vers l'interieur des terres (oases de Curoca) lors de l'arrivee des colons europeens"
+      ],
+      "historicalSettlementZones": [
+        "Lits de rivieres seches et rochers entre Virei et l'oasis de Curoca (province de Namibe)",
+        "Region rocheuse autour de Virei"
+      ],
+      "unificationsOrDivisions": "Les Mucuissi (Kwisi) sont souvent etudies conjointement avec les Twa et les Kwepe (Cuepe) comme groupes peripatetiques marginalisés du Namib angolais. Ces groupes partagent un profil genetique distinct de leurs voisins pastoraux Kuvale et Himba.",
+      "externalInfluences": "Forte influence culturelle des Cubal (Mucubal) voisins dominants. La langue originale Mucuis s'est eteinte dans les annees 1960, remplacee par un dialecte Cubal (Herero). Pression de sedentarisation exercee par l'administration coloniale puis angolaise.",
+      "majorHistoricalEvents": "Avant l'arrivee des colons europeens, les Mucuissi pratiquaient la peche cotiere et la collecte de mollusques sur la cote de Namibe. L'etablissement colonial portugais les a contraints a migrer vers l'interieur des terres. Perte de leur langue originale dans les annees 1960. Penetration du christianisme via les missions, bien que des elements animistes subsistent."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe egalitraire fondee sur des groupes de familles elargies, sans chefferie formelle. Les decisions collectives sont prises par les anciens du groupe. Dependance sociale et economique vis-a-vis des groupes pastoraux Cubal dominants.",
+      "clanOrganization": "Organisation clanique simple, sans hierarchie complexe. Les membres du groupe travaillent frequemment pour les eleveurs Cubal en echange de biens et de protection.",
+      "ageClassSystems": "Rites de passage lies a la puberté pour les garcons et les filles, marques par des coiffures et des vetements specifiques (feuilles d'acacia). Les jeunes couvrent leur sexe de feuilles de brousse lors des initiations.",
+      "roleOfLineages": "Les lignages determinent l'appartenance au groupe et les droits aux territoires de chasse et de collecte. Pas de transmission formelle de betail en raison du mode de vie semi-nomade de chasse-collecte.",
+      "religiousAuthority": "Croyance dans les esprits de la montagne qui protegent le groupe et leur fournissent nourriture et eau. Les guerisseurs (nganga) jouent un role central dans la mediation spirituelle."
+    },
+    "languages": {
+      "mainLanguage": "Dialecte Cubal (Kuvale/Herero)",
+      "isoCodes": ["her"],
+      "dialects": [
+        "Dialecte Cubal parle par les Mucuissi (langue maternelle depuis les annees 1960)"
+      ],
+      "vehicularRole": "Les Mucuissi ont abandonne leur langue originale (Cuis) dont les derniers locuteurs sont morts dans les annees 1960. Ils parlent desormais un dialecte de la langue Cubal (variante du Herero/Kuvale). Le portugais est utilise pour les contacts avec l'administration."
+    },
+    "culture": {
+      "majorRites": "Rites de passage a la puberte pour garcons et filles, incluant des coiffures rituelles specifiques et la couverture du sexe avec des feuilles de brousse ou d'acacia. Les feuilles symbolisent la foret originelle d'ou vient le groupe. Rites de guerison conduits dans les cimetieres familiaux, avec des os d'animaux et de la fumee de plantes sacrees.",
+      "symbols": "Grandes roches granitiques utilisees comme abri et comme lieux de culte des esprits de la montagne. Pipes en bois sculptees par les hommes. Porte-bebes en peau d'antilope confectionnes par les femmes. Colliers de perles portes en couronne sur la tete.",
+      "artsAndMusic": "Artisanat minimal adapte au mode de vie nomade. Les hommes sculptent des pipes en bois. Les femmes fabriquent des porte-bebes en peau d'antilope et des colliers. Confection de paniers a partir de plantes sauvages (pratique anterieure a la colonisation). Tradition orale preservee par les guerisseurs.",
+      "spiritualities": "Animisme centre sur les esprits de la montagne (protecteurs du groupe). Pratiques de guerison ancestrales maintenues dans les cimetieres familiaux. Penetration du christianisme via les missions, en syncrétisme avec les pratiques animistes traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Aucune chefferie formelle. Groupe sans structure politique centralisee, organise autour de familles elargies.",
+      "relationsWithNeighbors": "Relations de dependance et de service vis-a-vis des Cubal (Mucubal): les Mucuissi travaillent pour les eleveurs Cubal en echange de biens. Ils obtiennent des paniers et ustensiles des Cubal en echange de gibier. Les Mucuroca (sous-groupe Mucubal) auraient interagi et s'etaient meles avec les ancetres des Mucuissi lors de leur arrivee dans le desert du Namibe au XVIIIe siecle.",
+      "conflictsOrAlliances": "Marginalisation sociale chronique due au statut peripatetique du groupe. Competition pour l'eau avec les groupes pastoraux Cubal et Himba dans un contexte de secheresse recurrente. Menace de disparition culturelle par assimilation progressive aux Cubal.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 600,
+      "referenceYear": 2025,
+      "source": "101lasttribes.com – Cuis people (estimation ethnographique, Joan Riera)",
+      "distributionByCountry": [{ "country": "AGO", "population": 600 }]
+    },
+    "sources": [
+      "Cuis people – AFRICA 101 Last Tribes (https://www.101lasttribes.com/tribes/cuis.html)",
+      "Rull et al. – Genome-wide variation in the Angolan Namib Desert reveals unique Pre-Bantu ancestry, Science Advances (2023) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10516492/)",
+      "Barbieri et al. – The maternal genetic history of the Angolan Namib Desert, bioRxiv (2017) (https://www.biorxiv.org/content/10.1101/162230v1.full)",
+      "Responsible Travel – Angola's tribal groups: The Mucuroca and Mucuis (https://www.responsiblevacation.com/vacations/angola/travel-guide/angolas-tribal-groups)",
+      "World Directory of Minorities and Indigenous Peoples – Angola, UNHCR/Refworld (https://www.refworld.org/country,COI,,COUNTRYREP,ago,,49749d6232,0.html)",
+      "Kwadi language – Wikipedia, The Free Encyclopedia (https://en.wikipedia.org/wiki/Kwadi_language)"
+    ]
+  }
+}

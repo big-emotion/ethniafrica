@@ -1,0 +1,60 @@
+{
+  "id": "PPL_TOMA_LOMA",
+  "nameMain": "Toma / Loma",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Toma / Loma",
+      "selfAppellation": "",
+      "exonyms": ["Toma, Loma (termes utilisés par les Européens)"],
+      "originOfExonyms": "N/A",
+      "whyProblematic": "N/A",
+      "contemporaryUsage": "N/A",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "N/A",
+      "historicalRegion": "Guinée forestière (montagnes)",
+      "currentCountries": ["GIN"]
+    },
+    "ethnicities": ["Toma / Loma"],
+    "origins": {
+      "ancientOrigins": "N/A",
+      "formationPeriod": "N/A",
+      "migrationRoutes": ["N/A"],
+      "historicalSettlementZones": ["Guinée forestière (montagnes)"],
+      "unificationsOrDivisions": "N/A",
+      "externalInfluences": "N/A",
+      "majorHistoricalEvents": "N/A"
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "N/A",
+      "clanOrganization": "N/A",
+      "roleOfLineages": "N/A",
+      "religiousAuthority": "N/A"
+    },
+    "languages": {
+      "mainLanguage": "Toma / Loma (tod)",
+      "isoCodes": ["tod"],
+      "dialects": ["N/A"],
+      "vehicularRole": "N/A"
+    },
+    "culture": {
+      "Rites majeurs": "N/A",
+      "Symboles": "N/A",
+      "Arts et musique": "N/A",
+      "Spiritualités": "N/A"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "N/A",
+      "relationsWithNeighbors": "N/A",
+      "conflictsOrAlliances": "N/A",
+      "diaspora": "N/A"
+    },
+    "demography": {
+      "totalPopulation": 450,
+      "referenceYear": 2025,
+      "source": "N/A"
+    },
+    "sources": []
+  }
+}

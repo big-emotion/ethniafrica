@@ -1,0 +1,110 @@
+{
+  "id": "PPL_NYASA",
+  "nameMain": "Nyasa",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MWI", "MOZ", "TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Nyasa",
+      "selfAppellation": "Kimanda / Kinyasa / Manda",
+      "exonyms": [
+        "Nyasa (du terme yao nyasa signifiant lac)",
+        "Kimanda",
+        "Manda"
+      ],
+      "originOfExonyms": "Le terme Nyasa derive du mot yao signifiant lac. Lorsque les explorateurs europeens arriverent dans la region, les populations locales vivant sur les rives du lac repondirent nyasa (lac) a la question sur le nom du lieu, d'ou le nom Nyasaland donne au pays et Nyasa aux populations du bord du lac.",
+      "whyProblematic": "Le terme Nyasa est ambigu car il peut designer a la fois les habitants des rives du lac Malawi (lac Nyasa) et, par extension, plusieurs peuples differents de la region. Il ne correspond pas a un groupe ethnolinguistique unique et homogene.",
+      "contemporaryUsage": "En usage courant pour designer les populations des rives nord-est du lac Malawi, notamment en Malawi, au Mozambique et en Tanzanie. Certains Nyanja du Malawi se designent eux-memes comme Nyasa.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone N), groupe Nyasa",
+      "historicalRegion": "Rives du lac Malawi (lac Nyasa), notamment la rive nord-est — Malawi septentrional, Mozambique nord, Tanzanie sud-ouest",
+      "currentCountries": ["MWI", "MOZ", "TZA"]
+    },
+    "ethnicities": [
+      "Nyasa du Malawi septentrional, rives nord-est du lac Malawi",
+      "Nyasa de Tanzanie (region de Mbamba Bay, est du lac)",
+      "Nyasa du Mozambique nord (province de Niassa)",
+      "Mwera (Nyasa), populations de Mbamba Bay classees N201",
+      "Communautes Nyanja se designant comme Nyasa dans le Malawi central"
+    ],
+    "origins": {
+      "ancientOrigins": "Les populations designees comme Nyasa sont des Bantous de Zone N installes depuis plusieurs siecles sur les rives du lac Malawi. Leurs ancetres appartiennent aux vagues migratoires bantoues venues du nord entre le 1er et le 4e siecle de l'ere commune, puis reinforcees entre le 13e et le 15e siecle. Certains groupes comme les Mwera de Mbamba Bay presentent des caracteristiques linguistiques les rattachant au groupe North Mozambique Bantu (N201), distinct des autres langues de Zone N.",
+      "formationPeriod": "L'identite Nyasa en tant que groupe distinct s'est consolidee autour du lac entre le 15e et le 18e siecle, en lien avec la Confederation Maravi (fondee vers 1480) et les royaumes qui lui ont sucede. La denomination Nyasaland fut fixee par les Britanniques lors de la creation du protectorat en 1891.",
+      "migrationRoutes": [
+        "Migrations bantoues depuis le nord (region des Grands Lacs) entre le 1er et le 4e siecle CE",
+        "Deuxieme vague migratoire venue du nord entre le 13e et le 15e siecle",
+        "Mouvement des Ngoni, Yao et Swahili depuis le sud et l'est (1830-1860), ayant interagi avec les populations lacustres"
+      ],
+      "historicalSettlementZones": [
+        "Rives nord-est du lac Malawi (Malawi septentrional)",
+        "Region de Mbamba Bay sur la rive est du lac (Tanzanie)",
+        "Province de Niassa (Mozambique nord)",
+        "Bassins fluviaux alimentant le lac Malawi"
+      ],
+      "unificationsOrDivisions": "Les peuples des rives du lac Malawi ont connu une integration progressive sous la Confederation Maravi (15e-17e siecles), avant la fragmentation liee aux raids ngoni et au commerce swahili-arabe au 19e siecle. La colonisation britannique (protectorat du Nyasaland, 1891-1964) a unifie administrativement ces populations sous un meme cadre territorial.",
+      "externalInfluences": "Commerce swahili-arabe en ivoire et en esclaves (18e-19e siecles). Presence missionnaire chretienne a partir de David Livingstone (1859). Colonisation britannique (protectorat du Nyasaland, 1891). Contacts avec les Ngoni et les Yao. Influence islamique via les reseaux commerciaux yao.",
+      "majorHistoricalEvents": "Fondation de la Confederation Maravi vers 1480 impliquant les Chewa-Nyanja. Arrivee de David Livingstone au lac Malawi (1859), qui publia ses explorations et attira missionnaires et colons. Etablissement du protectorat britannique de Nyasaland en 1891. Independence du Malawi en 1964 sous Hastings Banda. Le lac Malawi (Nyasa) a ete au coeur des disputes de souverainete entre le Malawi et la Tanzanie aux 20e-21e siecles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies (mfumu) hereditaires, exercant autorite sur des villages et territoires definis. Systeme de conseils d'anciens (akulu a mzinda) pour la deliberation collective. Les chefs traditionnels jouent encore un role important dans la gestion des conflits fonciers et la preservation des coutumes.",
+      "clanOrganization": "Structure clanique matrilineaire. L'appartenance clanique se transmet par la mere. Les clans (mbumba) regroupent des familles partageant une ancetre commune feminine et determinent les droits d'heritage, les alliances matrimoniales et les devoirs coutumiers.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires (mbumba) constituent la base de l'organisation sociale et determinent l'identite, les droits fonciers et les obligations rituelles. L'oncle maternel (malume) joue un role central dans l'education des enfants et la transmission du patrimoine.",
+      "religiousAuthority": "Autorite des guerisseurs traditionnels (sing'anga) et des devins dans les rituels de protection et de guerison. Presence significant des Eglises chretiennes (protestantes et catholiques) et, dans certaines zones, de l'islam. Veneration des ancetres (mizimu) centrale dans la vie spirituelle."
+    },
+    "languages": {
+      "mainLanguage": "Mwera (Nyasa) / dialectes Nyanja de Zone N",
+      "isoCodes": ["mjh", "nya"],
+      "dialects": [
+        "Mwera (Nyasa) — parle a Mbamba Bay, rive est du lac Malawi (Tanzanie), classe N201",
+        "Nyanja lacustre — varietes parlees sur les rives nord-est du lac Malawi",
+        "Tonga du Malawi (N15) — langue du groupe Nyasa, rives du lac",
+        "Tumbuka (N21) — parle dans le nord du Malawi, associe aux peuples lacustres"
+      ],
+      "vehicularRole": "Le chichewa (nyanja) est la langue nationale du Malawi et sert de langue vehiculaire pour la majorite des populations du pays. L'anglais est langue officielle au Malawi. Le swahili est utilise en Tanzanie. Le portugais et le makhuwa sont employes au nord du Mozambique. Les varietes linguistiques Nyasa de Zone N sont majoritairement des langues locales sans usage vehiculaire etendu."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation feminins chinamwali marquant l'entree dans l'age adulte, avec instruction sur les roles sociaux et les responsabilites matrimoniales. Ceremonies funebres incluant veillees collectives (maliro) et commemorations aux 3e et 40e jours. Rituels agricoles de benediction des semailles et actions de grace apres les recoltes. Ceremonies de propitiation des ancetres (mizimu) en cas de maladie ou d'adversite.",
+      "symbols": "Le lac Malawi (lac Nyasa) constitue le symbole identitaire central des peuples Nyasa. Pirogues de peche traditionnelles (bwato) symboles de la vie lacustre. Motifs geometriques dans la poterie et le tissage. Offrandes aux ancetres (nsembe) comme symboles du lien entre vivants et morts.",
+      "artsAndMusic": "Musique percussive avec tambours (ng'oma) et hochets. Chants polyphoniques lors des ceremonies d'initiation et des veillees funebres. Danse vimbuza, pratique therapeutique et spirituelle associee aux guerisseurs. Artisanat de peche (filets, pirogues sculptees). Poterie traditionnelle et vannerie. Poesie orale et contes (nthano) transmis par les anciens.",
+      "spiritualities": "Systeme de croyances centre sur la veneration des ancetres (mizimu / zimu) comme intercesseurs entre le monde des vivants et le monde invisible. Croyance en un dieu supreme (Mulungu ou Chauta). Pratiques de divination et recours aux guerisseurs (sing'anga) pour identifier les causes des maladies et malheurs. Syncrétisme marque entre croyances traditionnelles, christianisme (protestants et catholiques) et islam dans certaines zones."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les peuples des rives du lac Malawi ont participe a la Confederation Maravi (fondee vers 1480), qui comprenait plusieurs dynasties Chewa-Nyanja controlant le centre et le sud du Malawi actuel, ainsi que des parties du Mozambique et de la Zambie. Le royaume Ngonde (fonde vers 1600) et l'Etat Chikulamayembe (18e siecle) etaient etablis au nord de la region du lac. Les chefferies lacustres controlaient le commerce et la peche sur le lac.",
+      "relationsWithNeighbors": "Relations commerciales avec les Yao, intermediaires du commerce swahili-arabe en ivoire et en esclaves au 18e-19e siecles. Interactions avec les Tonga du lac Malawi et les Tumbuka du nord. Conflits avec les Ngoni apres leur arrivee dans la region (1830-1860). Echanges culturels et linguistiques avec les Chewa, groupe dominant du Malawi.",
+      "conflictsOrAlliances": "Invasions ngoni devastatrices au milieu du 19e siecle, perturbant les structures politiques traditionnelles. Raids des trafiquants d'esclaves yao et swahili affectant les populations lacustres. Resistance a la penetration coloniale britannique. Role actif des populations du lac Nyasa dans le mouvement nationaliste qui mena a l'independance du Malawi en 1964.",
+      "diaspora": "Diaspora nyasa dans les grandes villes du Malawi (Lilongwe, Blantyre), de Tanzanie (Mbeya, Dar es-Salaam) et du Mozambique (Lichinga). Emigration economique vers l'Afrique du Sud, le Zimbabwe et les pays du Golfe. Communautes nyasa en Europe (Royaume-Uni principalement) et en Amerique du Nord."
+    },
+    "demography": {
+      "totalPopulation": 600000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur Wikipedia (Nyasa people, 2012 : ~500 000 au Malawi en 2010), SIL Ethnologue (Mwera-Nyasa, mjh), recensements nationaux du Malawi (2018), de Tanzanie (2022) et du Mozambique (2017), et projections demographiques 2025.",
+      "distributionByCountry": [
+        {
+          "country": "MWI",
+          "population": 450000,
+          "note": "Populations des rives nord-est du lac Malawi et Nyanja se designant comme Nyasa"
+        },
+        {
+          "country": "TZA",
+          "population": 100000,
+          "note": "Region de Mbamba Bay et rives tanzaniennes du lac"
+        },
+        {
+          "country": "MOZ",
+          "population": 50000,
+          "note": "Province de Niassa, nord du Mozambique"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Nyasa people. https://en.wikipedia.org/wiki/Nyasa_people",
+      "Wikipedia EN — Nyasa languages. https://en.wikipedia.org/wiki/Nyasa_languages",
+      "SIL Ethnologue — Mwera (Nyasa), code mjh. https://www.ethnologue.com/language/mjh/",
+      "Glottolog — Mwera (Nyasa), N201. https://glottolog.org/resource/languoid/id/mwer1247",
+      "Britannica — Malawi: History and People. https://www.britannica.com/place/Malawi/People",
+      "Wikipedia EN — Chewa people (groupe Maravi). https://en.wikipedia.org/wiki/Chewa_people",
+      "Joshua Project — Nyanja, Chewa in Malawi. https://joshuaproject.net/people_groups/14091/MI"
+    ]
+  }
+}

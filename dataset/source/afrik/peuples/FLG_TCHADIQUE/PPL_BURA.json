@@ -1,0 +1,111 @@
+{
+  "id": "PPL_BURA",
+  "nameMain": "Bura",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Bura",
+      "selfAppellation": "Bura / Mya Bura",
+      "exonyms": [
+        "Bura-Pabir (designation combinee avec les Pabir)",
+        "Burah",
+        "Burra",
+        "Bourrah",
+        "Babir",
+        "Babur (exonyme haoussa)",
+        "Barburr",
+        "Kwojeffa",
+        "Huve",
+        "Huviya"
+      ],
+      "originOfExonyms": "Le terme Bura designe le peuple autochtone de la region de Biu (Borno State) dont les Haoussa ont fait Babur ou Baburawa. Le terme Bura-Pabir combine les Bura (population originelle) avec les Pabir (descendants du conquerant Yamta-ra-Wala venu au 15e siecle). Mya Bura signifie 'langue Bura'. Les noms Kwojeffa, Huve et Huviya sont des appellations regionales pour la meme langue.",
+      "whyProblematic": "Les Bura et les Bura-Pabir (Babur) sont souvent traites comme un meme groupe dans les sources academiques, car ils parlent la meme langue (ISO 639-3 : bwr) et partagent la plupart de leurs traditions culturelles. La distinction porte essentiellement sur le statut politique : les Pabir (nobles descendants de Yamta-ra-Wala) gouvernent les Bura, qui leur en veulent historiquement. La fiche PPL_BURA documente specifiquement le groupe Bura (population autochtone du plateau de Biu) distinct des Pabir nobles, bien que les deux soient souvent amalgames sous le terme Bura-Pabir.",
+      "contemporaryUsage": "Le terme Bura est utilise dans la vie quotidienne par les membres du groupe pour se distinguer des Pabir. Les Bura forment la masse de la population, tandis que les Pabir (Babur) detiennent le pouvoir politique. Les deux groupes partagent la langue bura-pabir (code bwr) mais maintiennent une conscience identitaire distincte. L'administration nigeriane les designe generalement ensemble comme 'Bura-Pabir'.",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique central (Biu-Mandara), sous-groupe Bura (branche A.2)",
+      "historicalRegion": "Plateau de Biu et environs, nord-est du Nigeria (principalement Borno State, avec extensions en Adamawa et Yobe)",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Bura de Biu LGA (groupe central, plateau de Biu, Borno State)",
+      "Bura de Shani LGA (Borno State)",
+      "Bura de Hawul LGA (Borno State)",
+      "Bura de Kwaya Kusar LGA (Borno State)",
+      "Bura Pela (Bura des collines, dialecte Hill Bura)",
+      "Bura Hyil Hawul (Bura des plaines, dialecte Plains Bura)",
+      "Bura de Garkida, Gombi LGA (Adamawa State)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bura sont les habitants autochtones du plateau de Biu, dans le nord-est du Nigeria. Ils s'y trouvaient avant l'arrivee du conquerant Yamta-ra-Wala au 14e-15e siecle. Selon la tradition orale commune aux Bura-Pabir, les ancetres du groupe (incluant les Luguda apparentes) migrerent du Yemen a travers le Soudan et le bassin du lac Tchad pour atteindre leur emplacement actuel. Les Bura font partie de la branche Biu-Mandara du Tchadique, linguistiquement proches du kilba, du chibok, du margi et d'autres langues du nord-est du Nigeria.",
+      "formationPeriod": "L'identite bura distinctive s'est cristallisee en opposition a la domination pabir apres la conquete de Yamta-ra-Wala (15e-16e siecle). Avant cette conquete, les Bura vivaient en societe independante sur le plateau de Biu. La coexistence forcee avec les Pabir nobles, et les intermarriages subsequents, ont cree la culture Bura-Pabir tout en maintenant une tension identitaire. L'emirat de Biu, formalise par les Britanniques en 1915, a institue les Pabir comme dirigeants officiels des Bura.",
+      "migrationRoutes": [
+        "Peuplement originel du plateau de Biu (avant le 15e siecle)",
+        "Migration legendaire pre-historique depuis le Yemen via le Soudan et le bassin du lac Tchad",
+        "Repli des Bura vers le nord de Biu lors de l'invasion de Yamta-ra-Wala"
+      ],
+      "historicalSettlementZones": [
+        "Plateau de Biu (LGA de Biu, Borno State) : zone historique centrale",
+        "LGAs de Hawul, Kwaya Kusar, Shani, Bayo (Borno State)",
+        "Ngulde, Askira/Uba et parties de Damboa LGA (Borno State)",
+        "Garkida, Gombi LGA (Adamawa State)",
+        "Bularafa, Gulani LGA et Gujba LGA (Yobe State)"
+      ],
+      "unificationsOrDivisions": "Les Bura autochtones sont distincts des Pabir (nobles conquerants), bien qu'ils partagent aujourd'hui la meme langue et de nombreuses pratiques culturelles. Les Bura resident principalement dans les villages autour de Biu, tandis que les Pabir controlent la chefferie de l'emirat. La tension historique entre les deux groupes (les Bura ressentent encore l'autorite Pabir) est documentee dans plusieurs sources. Le site archeologique de Dlimbur marque le point de fondation du royaume par Yamta-ra-Wala.",
+      "externalInfluences": "Conquete par Yamta-ra-Wala et imposition de la domination Pabir (15e-16e siecle). Integration dans l'empire Kanem-Bornu comme centre commercial. Pressions du Jihad Fulani (18e siecle). Colonisation britannique (1904), creation de l'emirat de Biu en 1915. Arrivee de l'islam vers 1920 et du christianisme peu apres via des missionnaires. Depuis 2009, menace de Boko Haram dans le Borno State.",
+      "majorHistoricalEvents": "Defaite des Bura par Yamta-ra-Wala et creation du royaume de Biu (15e-16e siecle). Etablissement officiel du royaume vers 1670 sous Mari Watila Tampta. Fortification de Biu au 18e siecle. En 1878, Mari Biya devient le premier roi a gouverner depuis Biu. Resistance partielle au Jihad Fulani. Colonisation britannique etablie en 1904. Creation de l'emirat de Biu en 1915, avec l'intronisation de Mai Ari Dogo en 1920. Extension de la Biu Federation en 1957. Developpement des sites archeologiques de Dlimbur documentes recemment, révélant des jarres en terracotta, des arrowheads en fer et des objets en argile et en pierre."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Historiquement, avant la conquete Pabir, les Bura vivaient en communautes independantes dirigees par des conseils d'anciens et des chefs locaux. Depuis la creation de l'emirat, ils sont soumis a l'autorite de l'Emir de Biu (issu de la classe Pabir, portant le titre Kuthli ou Emir). Les chefs de village (mai-gida) administrent les communautes bura et rendent compte a l'emir. Tous les villages Bura paient traditionellement un tribut a l'Emir de Biu.",
+      "clanOrganization": "Structure patrilineaire. Les Bura sont organises en clans familiaux ayant des droits sur des terres specifiques du plateau de Biu. L'identite clanique Bura est distincte de la noblesse Pabir. Les alliances matrimoniales inter-clans sont frequentes.",
+      "ageClassSystems": "Les hommes passent par des etapes de vie marquees par des rites de passage, notamment la circoncision. L'organisation informelle des jeunes hommes autour de la defense du village et des travaux agricoles collectifs existait avant l'islamisation.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'acces aux terres ancestrales, les obligations rituelles et les alliances familiales. Les disputs fonciers sont soumis au chef de village et, si necessaire, a l'emir. Les genealogies des lignages Bura (comme des Pabir) sont soigneusement preservees oralement.",
+      "religiousAuthority": "La religion traditionnelle Bura (Hyel-taku) etait presidee par le Haptu (Mythmaker), grand pretre effectuant les sacrifices le samedi, jour sacre. Dieu est appele Hyel ou Hyel-mtaku ('Dieu mon maitre'). Naptu est un dieu personnel veillant sur chaque individu. Les dieux sont represents par des elements naturels (eau, fer, pierres, montagnes, forets). Avec l'islamisation vers 1920 et l'arrivee du christianisme dans les annees 1920, l'autorite religieuse s'est divisee entre oulemas/imams (islam), pasteurs/pretres (christianisme) et quelques chefs coutumiers maintenant des pratiques traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Bura-Pabir (Mya Bura)",
+      "isoCodes": ["bwr"],
+      "dialects": [
+        "Bura Pela / Hill Bura (dialecte des zones de collines du plateau de Biu)",
+        "Bura Hyilhawul / Plain Bura (dialecte des plaines)",
+        "Dialecte de Biu LGA",
+        "Dialecte de Shani LGA"
+      ],
+      "vehicularRole": "La langue Bura-Pabir (code ISO 639-3 : bwr) est parlee par l'ensemble du groupe comme premiere langue. Elle est classee dans la branche Biu-Mandara du Chadic (Afro-Asiatique), sous-groupe A.2. La langue est etroitement apparentee au kilba, au chibok, au margi et d'autres langues du nord-est du Nigeria. Elle est classee comme menacee (statut 6b Threatened par Ethnologue 2025) : utilisee par tous les adultes de la communaute, mais non transmise systematiquement a tous les jeunes et non enseignee dans les ecoles. Selon les sources, entre 72 200 (1952) et 507 000 (estimation maximale selon study.com) locuteurs. Le haoussa est la langue vehiculaire regionale ; l'anglais est la langue de l'administration et de l'education."
+    },
+    "culture": {
+      "majorRites": "Rites de naissance : lors de la naissance d'une fille, un pretendant peut faire connaitre son interet en lancant une branche feuillee dans la hutte de la mere. Si la famille accepte, le prétendant effectue des travaux agricoles et domestiques pour la belle-famille pendant des annees. La virginite de la mariee est publiquement verifiee et celebree. Rites funeraires : les personnes agees sont enterrees le deuxieme jour apres rassemblement de la communaute. Le corps d'un chef est enterre en position assise ; les autres personnes sont etendues. Des danses traditionnelles ont lieu pendant sept jours consecutifs (ou quatorze pour les personnages importants). Festivals agricoles : toutes les celebrations majeures Bura sont liees au cycle agricole (sorgho, mil, arachides, mais, riz). Des sacrifices sont effectues avant la consommation de la premiere recolte. La religion traditionnelle Hyel-taku reservait le samedi aux offrandes aux dieux. Circoncision : rite de passage masculin, aujourd'hui pratique principalement dans un contexte islamique.",
+      "symbols": "Les sites archeologiques du plateau de Biu (Dlimbur et environs) ont produit des jarres en terracotta, des pointes de fleches en fer et des objets en argile et pierre associes aux rites sacrificiels Bura. Les perles et cauris ornent les vetements des hommes et des femmes (cou, taille, poignets). Les nattes de zana (sorgho tresse) sont un produit artisanal emblematique des Bura. Le titre Kuthli (Emir de Biu) est le symbole politique supreme de la chefferie.",
+      "artsAndMusic": "Artisanat : poterie, forge (pointes de fleches, outils en fer), tressage de nattes de zana. La forge est une tradition artisanale ancienne documentee sur le plateau de Biu. Musique et danse : danses collectives lors des ceremonies funeraires et culturelles, avec percussions. Traditions orales : transmission des genealogies royales, de l'histoire du royaume de Biu et des mythes d'origine. Langue des signes : le Bura Sign Language s'est developpe de maniere independante dans le village de Kukurpu (sud-est de Biu) en raison d'un taux eleve de surdi-mutite congenitale ; documente par le linguiste Roger Blench en 2003, il est distinct de la langue des signes nigeriane standard.",
+      "spiritualities": "Religion traditionnelle Hyel-taku : Dieu supreme Hyel ou Hyel-mtaku ('Dieu mon maitre'). Naptu est un dieu personnel gardien de l'individu. Les dieux sont represents par les elements naturels : eau, fer, pierres, montagnes, forets. Le grand pretre (Haptu/Mythmaker) presidait les sacrifices, principalement le samedi, jour sacre. La peur des esprits et les rites d'apaisement constituaient le coeur de la pratique. L'islam sunnite, arrive vers 1920, est aujourd'hui majoritaire (environ 78% des Bura). Le christianisme, arrive dans les annees 1920 via des missionnaires, compte environ 20% de fideles. Les pratiques traditionnelles (Hyel-taku) persistent chez une minorite (environ 2%). Le Bura Sign Language a genere ses propres systemes de communication non-verbale relies a la vie rituelle et quotidienne."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Avant l'arrivee de Yamta-ra-Wala, les Bura vivaient en chefferies locales autonomes sur le plateau de Biu. Apres la conquete (15e siecle), le Royaume de Biu fut etabli par les Pabir sur les terres bura. Le site de Dlimbur (fondation du royaume) est un site archeologique important. Sous la domination Pabir, les Bura payaient tribut a l'Emir de Biu (Kuthli). L'emirat de Biu, formalise en 1915 par les Britanniques, est dirige par un descendant Pabir. La Biu Federation (creee en 1957) integra les districts de Shani et Askira.",
+      "relationsWithNeighbors": "Les Bura voisinent les Margi, Kilba, Chibok et Higi (groupe Biu-Mandara), avec lesquels ils ont des relations d'echanges et parfois de tensions. Ils ont aussi des contacts frequents avec les Kanuri (empire Borno), les Haoussa (langue vehiculaire et commerce) et les Fulani (islamisation). Les Bura et les Tera (de la branche A.1 du Biu-Mandara) sont des voisins proches dans le LGA de Biu.",
+      "conflictsOrAlliances": "Conquete de Yamta-ra-Wala et soumission des Bura (15e-16e siecle). Resistance periodique a l'autorite Pabir documentee dans les sources : les Bura de Hawul et Biu ont tente de reprendre leurs terres dans les decennies suivant l'invasion. Pression du Jihad Fulani (18e siecle). Resistance a la colonisation britannique (1904). Depuis l'independance nigeriane (1960) : integration dans le systeme federal. Depuis 2009 : attaques recurrentes de Boko Haram dans le Borno State, affectant durement les communautes Bura.",
+      "diaspora": "Des membres de la communaute Bura se sont installes dans les grandes villes nigerianes (Lagos, Abuja, Kano, Maiduguri) pour des raisons economiques et educatives. L'Universite de l'Armee (Nigerian Army University Biu) etablie a Biu represente un facteur d'attraction recente. Une petite diaspora existe dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 500000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue (2025) — Bura-Pabir (bwr) : classé entre 10 000 et 1 million de locuteurs. Joshua Project (2025). study.com cite 507 000 locuteurs (estimation haute). Precedentes estimations : 72 200 (1952, Wolff & Benader), 250 000 (1987, UBS). Recensement national nigerian 2006 (sans distinction ethnolinguistique fine). Estimation 2025 intégrant la croissance demographique nigeriane.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 500000,
+          "note": "LGAs de Biu, Hawul, Kwaya Kusar, Shani, Bayo, Askira/Uba, Damboa (Borno State) ; Gombi LGA (Adamawa State) ; Gulani et Gujba LGA (Yobe State)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Babur and Bura people. https://en.wikipedia.org/wiki/Babur_and_Bura_people",
+      "101 Last Tribes — Bura people. https://www.101lasttribes.com/tribes/bura.html",
+      "Blueprint Newspapers — Bura Babur nation in perspective. https://blueprint.ng/bura-babur-nation-in-perspective-their-tradition-culture-and-language/",
+      "SIL Ethnologue — Bura-Pabir (bwr). https://www.ethnologue.com/language/bwr/",
+      "Glottolog 5.3 — Bura-Pabir (bura1292). https://glottolog.org/resource/languoid/id/bura1292",
+      "Joshua Project — Bura, Pabir in Nigeria. https://joshuaproject.net/people_groups/11022",
+      "Wikipedia EN — Biu-Mandara languages. https://en.wikipedia.org/wiki/Biu%E2%80%93Mandara_languages",
+      "Newman, Paul. The Chadic Language Family: Classification and Name Index. CNRS, 2013. https://megatchad.cepam.cnrs.fr/publications/Newman-2013-Chadic-Classification-and-Index.pdf"
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "PPL_BUSANSI",
+  "nameMain": "Busansi",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["BFA", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Busansi",
+      "selfAppellation": "Busansi",
+      "exonyms": ["Busansi (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Gur",
+      "historicalRegion": "BFA, GHA",
+      "currentCountries": ["BFA", "GHA"]
+    },
+    "ethnicities": [
+      "Busansi du Burkina Faso",
+      "Busansi du Ghana",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Busansi sont originaires du Burkina Faso et du Ghana. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe Gur de la famille Niger-Congo.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples gur voisins, influence de l'islam et du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans, et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Busansi",
+      "vehicularRole": "Le busansi est parlé par la majorité des Busansi. Le français, l'anglais et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de mariage traditionnelles",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à l'agriculture",
+      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels busansi, symboles islamiques et chrétiens.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora busansi dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Busansi language",
+      "CIA World Factbook – BFA, GHA",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples gur"
+    ]
+  }
+}

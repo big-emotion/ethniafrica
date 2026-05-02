@@ -1,0 +1,110 @@
+{
+  "id": "PPL_PUNU",
+  "nameMain": "Punu",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GAB", "COG"],
+  "content": {
+    "appellations": {
+      "mainName": "Punu",
+      "selfAppellation": "Bapunu / Bapounou",
+      "exonyms": [
+        "Punu (terme occidental issu de l'administration coloniale francaise du 19e siecle)",
+        "Bapounou (variante orthographique francaise)",
+        "Sira / Ban Sira (denomination liee a la langue Yisira / Yipunu)",
+        "Ipunu (nom de la langue dans la denomination interne)"
+      ],
+      "originOfExonyms": "Le nom 'Punu' est apparu dans l'administration coloniale francaise du Gabon au 19e siecle. Le premier contact documente avec un Europeen date de juin 1865. La denomination Sira ou Ban Sira se rapporte a la langue Yipunu (aussi appelee Yisira), et englobe des groupes apparentes dont les Ghisir. L'ethnonyme Bapunu utilise le prefixe bantu Ba- signifiant 'peuple de'.",
+      "whyProblematic": "Le terme Punu recouvre une realite de meta-ethnie plutot que d'un groupe homogene. Il englobe plusieurs clans distincts (neuf clans symbolises par les neufs points sur le front des masques blancs) vivant dans le sud du Gabon et le nord du Congo, unis par la langue et une culture commune mais pas par une organisation politique centralisee.",
+      "contemporaryUsage": "Punu et Bapunu sont les termes courants en francais et en yipunu. La langue Yipunu est officiellement reconnue au Gabon. Le groupe Shira-Punu constitue l'un des quatre grands groupes ethniques du Gabon, representant environ 18,9% de la population selon le recensement de 2012.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone B, B.43, sous-groupe Shira-Punu)",
+      "historicalRegion": "Bassin de la Ngounie et province de Nyanga au Gabon meridional ; departement du Niari en Republique du Congo. Centres historiques : Mouila, Ndende, Tchibanga (Gabon).",
+      "currentCountries": ["GAB", "COG"]
+    },
+    "ethnicities": [
+      "Bapunu proprement dits — groupe principal du sud du Gabon (provinces de Ngounie et Nyanga)",
+      "Ghisir (Bughisir) — groupe apparente parlant le Yipunu / Yisira, considere comme frere des Punu",
+      "Varama — clan punu du bassin de la Ngounie",
+      "Bavarama — sous-groupe regional",
+      "Bapindji — groupe rattache au complexe Shira-Punu",
+      "Bavungu — clan du littoral congolais",
+      "Membres des neuf clans symbolises par les neuf points sur les masques okuyi (mukudj)"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale et les travaux de Magang-Ma-Mbuju et Mbumb Bwass, les Punu descendent d'un peuple appele 'Jagas', originaire du Kasai et du bassin du Zambeze. Ces ancetres auraient envahi le royaume du Kongo en 1568. Les historiens Batsikama et Ipari ont toutefois conteste cette these en concluant que les envahisseurs de 1568 etaient plutot d'origine kongo. En tout etat de cause, les etudes montrent que les ancetres punu ont migre depuis le Congo vers le sud-Gabon, en fuyant les guerres et l'influence portugaise, pendant plusieurs siecles. La tradition orale decrit une longue serie de migrations depuis le Congo.",
+      "formationPeriod": "Les Punu ont migre vers la Republique du Congo au 16e siecle, puis vers le sud du Gabon au 18e siecle. Le nom Punu s'est fixe avec l'administration coloniale francaise au 19e siecle. Les Europeens ont eu leur premier contact avec la societe punu en juin 1865 ; un acces plus large n'a ete obtenu qu'entre 1925 et 1930 avec l'affaiblissement du secret des societes.",
+      "migrationRoutes": [
+        "Bassin du Congo (Kasai, Zambeze) — point d'origine selon la tradition orale",
+        "Migration vers le bassin du Congo meridional au 16e siecle",
+        "Migration vers le sud du Gabon (Ngounie, Nyanga) au 18e siecle",
+        "Installation definitive dans le couloir de la Ngounie et les provinces meridionales du Gabon"
+      ],
+      "historicalSettlementZones": [
+        "Province de la Ngounie (Gabon) — coeur du territoire Punu, avec Mouila et Fougamou",
+        "Province de la Nyanga (Gabon) — Tchibanga et le bassin de la Nyanga",
+        "Departement du Niari (Republique du Congo) — environ 16 500 locuteurs",
+        "Bassin de la riviere Ngounie — corridor de migration et habitat historique"
+      ],
+      "unificationsOrDivisions": "La societe Punu n'a jamais forme un Etat centralise : elle est organisee en chefferies autonomes et en grands groupes claniques decentralises. Neuf clans principaux structurent l'identite collective, symbolises par les neuf points sur le front des masques rituels. La societe secrete Okuyi (et la societe feminine Ndjembe) joue un role unificateur a travers les villages et les clans.",
+      "externalInfluences": "Colonisation francaise du Gabon (a partir de 1839, effective au 19e siecle) : reorganisation administrative, christianisation, suppression partielle des societes secretes. Commerce precolonial de l'ivoire et de l'huile de palme avec les negociants cotieres. L'influence du christianisme catholique et protestant est aujourd'hui dominante : environ les trois quarts des Punu sont chretiens. Contact avec les groupes voisins Fang, Nzebi et Teke par le commerce et les mariages interethniques."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe Punu est organisee en chefferies autonomes decentralisees. Il n'existe pas de structure politique englobante. La chefferie (nganga nkosi) est detenue par un homme age, chef de lignage, dont l'autorite repose sur la seniority et le controle des rites. Les villages sont des portions temporaires de groupes de parente qui cohabitent. Les grands groupes de parente et de clans s'etendent sur tout le sud du Gabon, transcendant les limites villageoises.",
+      "clanOrganization": "La societe Punu est structuree en neuf clans principaux (symbolises par les neuf points sur le front des masques okuyi), chacun ayant ses propres totems alimentaires et ses tabous specifiques. Les clans sont patrilineaires. L'habitat est patrilocal (la femme rejoint la famille du mari apres le mariage). Les grandes unites de parente (ibadu = clan en yipunu) regissent les droits fonciers, les mariages et les obligations rituelles. La societe secrete feminine Ndjembe organise l'agriculture et renforce le pouvoir des femmes dans le domaine spirituel.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires (ibadu) constituent le cadre de la vie sociale, economique et rituelle. Les droits sur la terre sont communaux et geres par les anciens du lignage. Les reliques ancestrales (os conserves dans des paniers en rotin plaques de cuivre) sont les symboles les plus sacres des lignages ; elles sont utilisees dans les rituels pour invoquer la protection et la puissance des ancetres. Les hommes ages deviennent pretres (nganga), maitres des forces occultes.",
+      "religiousAuthority": "La religion traditionnelle Punu est centree sur le culte du dieu supreme Nyambye et des esprits ancestraux. Les nganga (pretres-guerisseurs, generalement des anciens) sont les intermediaires entre le monde des vivants et celui des esprits. Les maladies sont attribuees a l'action d'esprits malefiques (mulosi, sorcier du cercle familial). Les rites de guerison visent a chasser l'esprit mauvais. Les societes secretes masculines (notamment l'Okuyi, associe aux masques et aux danses) et feminines (Ndjembe) structurent la vie spirituelle. Le christianisme (catholicisme et protestantisme) est aujourd'hui majoritaire, mais coexiste avec les pratiques traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Yipunu / Yisira (Punu)",
+      "isoCodes": ["puu"],
+      "dialects": [
+        "Yipunu proprement dit — dialecte du groupe Punu du Gabon (Ngounie, Nyanga)",
+        "Yisira — variante liee aux Ghisir, tres proche du Yipunu et souvent considere comme un dialecte du meme continuum",
+        "Variante du Niari — parlee par les environ 16 500 locuteurs de la Republique du Congo"
+      ],
+      "vehicularRole": "Le Yipunu compte environ 152 000 locuteurs au Gabon (principalement dans les provinces de Ngounie et Nyanga) et environ 16 500 au Congo (departement du Niari), soit environ 168 500 locuteurs au total selon Omniglot (2022). C'est l'une des principales langues du Gabon meridional. Il est classe B.43 dans la classification de Guthrie. La langue Yipunu est utilisee dans l'enseignement primaire et les medias regionaux du Gabon. Le francais est la langue officielle et vehiculaire nationale."
+    },
+    "culture": {
+      "majorRites": "Le rite le plus emblematique est la danse de l'Okuyi, performed par des danseurs masculins portant les masques mukudj (blancs) sur des echasses lors des funerailles et des ceremonies d'initiation. Des masques noirs (masques d'entrainement) sont utilises d'abord pour annoncer l'arrivee du porteur de masque blanc. Les funerailles comprennent des operations rituelles pour determiner la cause du deces : si la cause reste inconnue, un mulosi (sorcier) de la famille est designé responsable. Les rites de guerison visent a chasser les esprits malefiques par des ceremonies specifiques. La scarification des femmes (motifs en losanges sur le front et les tempes) est un rite de beaute et de passage qui marque l'appartenance au groupe et atteste du courage. Les reliques ancestrales (os dans des paniers en rotin plaques de cuivre) sont utilisees lors des rituels de lignage.",
+      "symbols": "Le masque mukudj (okuyi) blanc est le symbole le plus iconique de la culture Punu : il represente une femme ancestrale idealisee, avec les neufs points sur le front symbolisant les neuf clans punu. La couleur blanche (kaolin) symbolise la paix, l'au-dela et les esprits des morts. Les motifs de scarification en losanges (diamonds) sur le front et les tempes des femmes sont a la fois un rite de beaute et un marqueur identitaire. La calebasse de vin de palme (malamu) est associee aux ceremonies collectives. Les reliques ancestrales (paniers plaques de cuivre) representent le lien entre les vivants et les ancetres.",
+      "artsAndMusic": "La sculpture sur bois est l'art majeur des Punu, principalement sous forme de masques. Les masques mukudj (okuyi) sont sculptes en bois et recouverts de kaolin blanc ; leurs traits representent une femme consideree comme idealement belle dans le village. Les sculpteurs punu integrent les motifs de scarification (losanges sur le front et les tempes) dans leurs masques, temoignant d'une esthetique de la beaute feminine liee au courage. Ces masques ont exerce une influence decisive sur l'art occidental : Pablo Picasso possedait un masque Punu des 1910 (visible dans son atelier au 11 boulevard de Clichy), et Matisse s'en est inspire pour son Portrait de Madame Matisse (1913). Les masques noirs (mukudj noirs) sont plus rares car caches comme dangereux. La musique de danse Punu accompagne les ceremonies de l'Okuyi avec des percussions et des chants collectifs. La poterie (jugs, assiettes en terre) et la joaillerie sont pratiques par les femmes. La sculpture fetiche (bois, metal, reliques) est associee aux societes secretes.",
+      "spiritualities": "La cosmologie Punu est animiste : Nyambye est le dieu supreme createur, mais l'interaction quotidienne se fait principalement avec les esprits des ancetres et les esprits de la nature. Les esprits des morts (inyunyi = ame/esprit en yipunu) continuent d'agir sur le monde des vivants. Les maladies et malheurs sont interpretes comme l'oeuvre d'esprits malefiques, souvent envoyes par un mulosi (sorcier jaloux dans le cercle familial). Les nganga (pretres-guerisseurs-anciens) channelisent les esprits feminins anciens a travers les grands masques mukudj lors des ceremonies de l'Okuyi, maintenant ainsi l'ordre social et spirituel. La societe Ndjembe (feminine) organise l'agriculture et detient un pouvoir spirituel parallele. Le fétiche Mbumba (richesse, commerce) est l'un des reliques cultuels notables. Le christianisme (catholique et protestant, environ trois quarts de la population) coexiste avec ces pratiques dans un syncretisme courant."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Punu n'ont pas forme de royaume centralise. Leur organisation traditionnelle est celle de chefferies claniques autonomes. Les plus importantes se situaient dans le bassin de la Ngounie et de la Nyanga au sud du Gabon. La societe secrete de l'Okuyi jouait un role unificateur au-dela des frontieres des chefferies. Sous la colonisation francaise, les chefferies ont ete reorganisees dans les cadres administratifs des cercles coloniaux.",
+      "relationsWithNeighbors": "Les Punu ont entretenu des relations commerciales avec les Fang (ivoire, esclaves, sel), les Nzebi et les Teke. Des mariages interethniques ont favorise des echanges culturels. La societe Punu etait historiquement impliquee dans la traite des esclaves et le commerce du sel comme activites economiques masculines principales. Les contacts avec les missionnaires protestants (Mission romande suisse) et catholiques ont commence au 19e siecle.",
+      "conflictsOrAlliances": "Les migrations historiques des Punu depuis le Congo vers le Gabon ont ete en partie motivees par la fuite de guerres et de l'influence portugaise. En 1568, des groupes ancetres potentiels (dits Jagas dans les sources europeennes) ont participe a des conflits dans le royaume du Kongo. La colonisation francaise du Gabon (19e-20e siecles) a mis fin aux structures politiques independantes des chefferies Punu. La diaspora esclavagiste a touche les Punu : un document de 1706 a Londres decrit une jeune femme punu (identifiee par ses scarifications en losanges) en situation d'esclavage qui a reussi a s'echapper.",
+      "diaspora": "La diaspora punu dans les grandes villes gabonaises (Libreville, Port-Gentil) est significative depuis l'independance (1960). Une communaute punu existe aussi a Brazzaville et Pointe-Noire en Republique du Congo. La traite atlantique a emmene des Punu jusqu'en Europe des le 18e siecle, comme en temoigne le document londonien de 1706. Aujourd'hui, la diaspora gabonaise en France (notamment a Paris) comprend des personnes d'origine punu."
+    },
+    "demography": {
+      "totalPopulation": 450000,
+      "referenceYear": 2025,
+      "source": "Omniglot (2022) : 168 500 locuteurs de Yipunu ; Gabon recensement 2012 (Shira-Punu/Vili representent 18,9% de la population gabonaise). La population Punu au sens ethnique (groupe Shira-Punu dans son ensemble, dont les Ghisir et groupes apparentes) est estimee a 450 000 personnes en 2025, en tenant compte de la croissance demographique gabonaise (3,5% par an) et congolaise.",
+      "distributionByCountry": [
+        {
+          "country": "GAB",
+          "population": 430000,
+          "note": "Principalement dans les provinces de Ngounie (Mouila, Fougamou) et Nyanga (Tchibanga, Ndende) ; presence a Libreville et Port-Gentil"
+        },
+        {
+          "country": "COG",
+          "population": 20000,
+          "note": "Departement du Niari (sud de la Republique du Congo), region de Dolisie"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Punu people. https://en.wikipedia.org/wiki/Punu_people",
+      "Wikipedia EN — Punu language. https://en.wikipedia.org/wiki/Punu_language",
+      "SIL Ethnologue — Punu (puu). https://www.ethnologue.com/language/puu/",
+      "Omniglot — Punu language and alphabet. https://www.omniglot.com/writing/punu.htm",
+      "Smithsonian Institution — Face mask (mukudj). https://www.si.edu/object/face-mask:nmafa_90-6-1",
+      "Saint Louis Art Museum — Mask (mukudj) for the Okuyi Society. https://www.slam.org/collection/objects/2383/",
+      "Christie's — Punu Mask, Gabon, Okuyi/Mukuyi. https://www.christies.com/en/lot/lot-5556854",
+      "DICE Missouri — Punu cultural database. https://dice.missouri.edu/assets/docs/niger-congo/Punu.pdf",
+      "Joshua Project — Punu in Gabon. https://joshuaproject.net/people_groups/14484/GB",
+      "Wikipedia EN — Demographics of Gabon. https://en.wikipedia.org/wiki/Demographics_of_Gabon"
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "id": "PPL_PARE",
+  "nameMain": "Pare",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Pare",
+      "selfAppellation": "Vaasu (pour les Pare du Sud) / Vaghonu (pour les Pare du Nord)",
+      "exonyms": ["Wapare (en swahili)", "Asu", "Chasu", "Gweno", "Vughonu"],
+      "originOfExonyms": "Le terme Pare (prononce Pahray) est le nom donne par les voisins et repris dans la litterature coloniale et contemporaine. Le terme Asu (racine du nom Vaasu) designe le peuple du Sud-Pare et sa langue (Chasu ou Athu). Le terme Gweno (ou Kighonu) designe le peuple et la langue du Nord-Pare. L'explorateur allemand J.L. Krapf, lors de sa visite en Usambara en 1848, a appris l'existence des Pare et des Gweno. Wapare est la forme swahilie courante.",
+      "whyProblematic": "Le nom Pare recouvre deux sous-groupes linguistiquement distincts : le Sud-Pare (Asu/Chasu) et le Nord-Pare (Gweno/Kighonu). Le processus historique de glissement du Nord-Pare vers la culture Asu a engendre une unite progressive mais incomplete.",
+      "contemporaryUsage": "Le terme Pare est universellement utilise dans les contextes tanzaniens contemporains. Les autochtones s'identifient aussi comme Wapare en swahili. La langue Chasu (Asu) est la designation linguistique standard.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou du Nord-Est, groupe Shambaa-Pare",
+      "historicalRegion": "Monts Pare (district de Same et district de Mwanga), region de Kilimanjaro, nord-est de la Tanzanie",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": [
+      "Vaasu (Pare du Sud)",
+      "Vaghonu / Wagweno (Pare du Nord)",
+      "Wasangi (sous-groupe de Usangi)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les donnees archeologiques indiquent la presence de communautes bantoues dans les monts Pare bien avant l'an 1000 apr. J.-C. (poterie typique bantou datee par radiocarbone). Les Pare actuels ne sont pas les premiers locuteurs bantous a occuper les monts Pare. Des groupes cushitiques (notamment les Mbugu/Va-ma'a) ont ete progressivement assimiles. La presence des Pare est documentee au moins depuis 600 ans.",
+      "formationPeriod": "Formation progressive entre le XIIIe et le XVIIe siecle, avec consolidation des identites du Nord-Pare (Ugweno/Vughonu) et du Sud-Pare (Vuasu) distinctes.",
+      "migrationRoutes": [
+        "Migration en provenance de la region de Taita (Kenya actuel) vers les monts Pare",
+        "Afflux depuis les monts Nguu et l'Usambara au sud",
+        "Mouvements depuis le plateau masai a l'ouest (groupes Mbugu majoritairement relocalisés vers l'Usambara)",
+        "Echanges de population entre Nord-Pare et Sud-Pare a travers les generations"
+      ],
+      "historicalSettlementZones": [
+        "Ugweno (Nord-Pare) : plateau septentrional des monts Pare, district de Mwanga",
+        "Vuasu (Sud-Pare) : plateau meridional et moyen-Pare, district de Same",
+        "Plaines du Kilimanjaro (etablissements secondaires depuis le XIXe siecle)"
+      ],
+      "unificationsOrDivisions": "Le Nord-Pare a connu une centralisation politique forte sous la dynastie Suya (apres le XVIe siecle), qui a instaure un systeme d'initiation etatique et d'administration hierarchisee. Le Sud-Pare est reste politiquement fragmente avec plusieurs chefferies independantes (au moins six petits Etats). Le Moyen-Pare constitue une transition socioculturelle entre les deux.",
+      "externalInfluences": "Contacts commerciaux precoloniaux avec les Chaga (nord), les Shambaa et les Zigua (sud), et les Maasai (ouest) via les marches de fer. L'expansion swahilie et arabe (annees 1860-1880) a introduit la traite des esclaves et des armes. La colonisation allemande (depuis 1891) puis britannique (depuis 1918) a profondement restructure le systeme politique. Les missions lutheriennes (debut du XXe siecle) ont introduit le christianisme et l'education moderne.",
+      "majorHistoricalEvents": "Les forgerons Pare etaient les principaux fournisseurs de fer des Chaga et des Maasai pendant plusieurs siecles. La traite des esclaves (vers 1810-1880) a declenche des rivalites politiques internes. La repression de l'expedition de von Wissmann en 1891 a signale l'avenement de la domination allemande en Upare. La resistanceaux taxes coloniales (revolte Mbiru, menee par Paulo Kajiru de Mamba) a abouti au retablissement du taux forfaitaire en 1947. Ce fait reste un evenement historique marquant en Tanzanie."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le Nord-Pare a developpe l'un des grands systemes d'administration centralises de Tanzanie precoloniale (royaume d'Ugweno sous la dynastie Suya). Ce systeme comprenait un chef supreme, une hierarchie de conseils, des administrateurs subordonnes envoyes gouverner les districts, et un systeme d'initiation etatique coercitif. Le Sud-Pare etait govern par plusieurs chefferies independantes (systeme decentralise a clans multiples). Le gouvernement tanzanien a aboli les chefferies traditionnelles depuis l'independance.",
+      "clanOrganization": "Organisation clanique forte ; les sites sacres (mpungi pour les lignages, mshitu/mtiru pour les clans, kwa mrigha pour les ancetres) permettent de retracer l'origine d'un clan. Le clan des forgerons Shana (shana signifie forgeron) maintient sa tradition jusqu'a aujourd'hui meme apres migration hors d'Ugweno.",
+      "ageClassSystems": "Systeme d'initiation elaborate utilise comme institution d'Etat dans le Nord-Pare sous la reforme de Mranga (fondateur de la centralisation d'Ugweno). Les ceremonies d'initiation definissent l'appartenance sociale et l'acces aux responsabilites collectives.",
+      "roleOfLineages": "La filiation patrilineaire gouverne l'heritage, l'acces a la terre irriguee et les obligations rituelles. Les lignees royales et clanique maintiennent les sites sacres comme points d'ancrage identitaire.",
+      "religiousAuthority": "Les chefs etaient aussi des faiseurs de pluie (rainmakers) importants : Mfumwa Muhammad Kibacha Singo, chef local de Same, decede en janvier 1981, en est l'un des derniers exemples documentés. Les guerisseurs traditionnels (waganga) utilisaient des figurines sculptees en argile ou en bois enveloppees de tissu ou de cuir. Aujourd'hui, le christianisme (lutherien et catholique) et l'islam coexistent avec des pratiques spirituelles traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Chasu (Asu, Athu, Langue Pare)",
+      "isoCodes": ["asa"],
+      "dialects": [
+        "Chasu (Sud-Pare et Moyen-Pare)",
+        "Kighonu / Gweno (Nord-Pare, Ugweno)"
+      ],
+      "vehicularRole": "Le chasu (asa) est la langue principale des Pare du Sud et une reference pour l'ensemble du groupe. Le kighonu (gweno) est la langue du Nord-Pare. Le contact avec les Mbugu (Va-ma'a) a genere l'une des rares langues mixtes documentees, combinant la grammaire chasu (bantou) avec le vocabulaire cushitique (Kimbugu). Le swahili est utilise comme langue vehiculaire regionale."
+    },
+    "culture": {
+      "majorRites": "Le msaragambo est la philosophie centrale de la vie communautaire pare : systeme de travail communautaire obligatoire visant le developpement inclusif et durable. Ce systeme est largement adopte dans le district de Mwanga et a inspire d'autres communautes tanzaniennes. Les rites de passage (initiation) incluent des ceremonies a caracterees politiques sous le systeme Suya. Les soins medicaux traditionnels utilisent des plantes : le jus de mwore (plante) traitait les infections oculaires du nouveau-ne ; la cendre de racine de bananier sauvage etait administree pour les diarrhees. La cuisine traditionnelle makande (ragout de mais, haricots rouges, oignons, ail, tomates et bouillon de poulet) est un plat emblematique popular dans toute la Tanzanie.",
+      "symbols": "Les monts Pare et leur paysage en terrasses irriguees sont le symbole identitaire central. Les figurines rituelles (sculptees en argile ou bois, enveloppees de tissu/cuir) associees aux ceremonies de guerison, d'initiation et de propitiation constituent un heritage artistique rare.",
+      "artsAndMusic": "La danse Ijanja est une performance traditionnelle incorporant des mouvements rythmiques caracteristiques. Les artisans Pare fabriquent des ornements en fil de fer (spirales bras/jambes), des boucles d'oreilles de perles, des colliers epais en laiton et des etireurs d'oreilles en bois decore de fer. Les femmes portaient traditionnellement un vetement de peau attache a la taille. Les deux types de maisons rondes (musonge) sont des elements architecturaux distinctifs.",
+      "spiritualities": "Religion traditionnelle animiste avec culte des ancetres, faiseurs de pluie et guerisseurs rituels. Les sites sacres (mpungi, mshitu, kwa mrigha) structurent la geographie spirituelle. Le christianisme (lutherien, catholique) est aujourd'hui dominant. L'islam est present dans certaines communautes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume d'Ugweno (Nord-Pare) : fonde sous la dynastie Shana (pre-XVIe siecle) et reorganise par la dynastie Suya (post-XVIe siecle) qui en fit un systeme politique centralise avance. Le reformateur Mranga est considere comme l'un des grands reformateurs precoloniaux de Tanzanie. Sud-Pare : confederation de plusieurs petites chefferies independantes (dont Mamba, Gonja, Vumari, Kizungo).",
+      "relationsWithNeighbors": "Les Pare etaient les principaux fournisseurs de fer des Chaga (nord) et des Maasai (ouest). Echanges commerciaux reguliers avec les Shambaa (peaux et elevage) et les Chaga (fer contre betail). Les Shambaa ont introduit les maisons de style swahili et le modele de village. Les Zigua ont etabli une chefferie secondaire sous leur nom a Vumari.",
+      "conflictsOrAlliances": "Alliance tactique avec les colonisateurs allemands par certains chefs pour obtenir des certificats de legitimite (periode 1891-1893). Resistance aux taxes coloniales (revolte Mbiru, 1940s). Les rivalites inter-chefferies du Sud-Pare ont facilite la penetration coloniale.",
+      "diaspora": "Migration de travail vers les centres urbains tanzaniens depuis la periode coloniale. Le gouvernement tanzanien (programme ujamaa depuis les annees 1970) a regroupe les hameaux en villages, integrant les Pare dans la politique nationale."
+    },
+    "demography": {
+      "totalPopulation": 800000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur diverses sources : population de 240 000 en 1996 (Olson), 750 000 estimes (source Afrimine Tours 2025), avec projections 2025",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 800000,
+          "notes": "Districts de Same et Mwanga, region de Kilimanjaro ; migration secondaire dans les zones urbaines tanzaniennes"
+        }
+      ]
+    },
+    "sources": [
+      "Pare people – Wikipedia (https://en.wikipedia.org/wiki/Pare_people)",
+      "Pare, Asu in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/14319)",
+      "Pare People – Africa Direct (https://africadirect.com/blogs/people/african-peoples-art-pare)",
+      "The proud Tribes of Tanzania – Afrimine Tours (https://afriminetours.com/the-proud-tribes-of-tanzania/)",
+      "List of ethnic groups in Tanzania – Wikipedia (https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_Tanzania)",
+      "101 Last Tribes – Pare people (http://www.101lasttribes.com/tribes/pare.html)",
+      "Chasu language – Ethnologue, SIL International, ISO 639-3: asa"
+    ]
+  }
+}

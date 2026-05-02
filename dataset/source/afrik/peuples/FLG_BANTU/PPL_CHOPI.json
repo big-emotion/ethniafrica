@@ -1,0 +1,84 @@
+{
+  "id": "PPL_CHOPI",
+  "nameMain": "Chopi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["MOZ"],
+  "content": {
+    "appellations": {
+      "mainName": "Chopi",
+      "selfAppellation": "Vacopi",
+      "exonyms": ["Bacopi", "Chopi", "Tschopi", "Txopi", "Copi", "Ba-Chopi"],
+      "originOfExonyms": "Le nom Chopi (aussi ecrit Bacopi ou Vacopi dans leur propre langue) viendrait de l'utilisation d'arcs et de fleches, adoptee des peuples San avec lesquels ils furent les premiers Bantu a entrer en contact. Certaines sources indiquent que le nom est tres proche du xitsonga, refletant leur parente avec les Thonga. Les orthographes Tschopi et Txopi sont des transcriptions portugaises et allemandes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Chopi est aujourd'hui universel et utilise officiellement au Mozambique. Le terme Vacopi est employe dans la langue interne. La designation Ba-Chopi est une forme bantoue classique avec prefixe de classe.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu du Sud-Est (groupe Thonga/Tsonga), sous-groupe Chopi",
+      "historicalRegion": "Province d'Inhambane, principalement district de Zavala, cote sud du Mozambique",
+      "currentCountries": ["MOZ"]
+    },
+    "ethnicities": ["Chopi"],
+    "origins": {
+      "ancientOrigins": "Les Chopi font partie des premiers peuples Bantu a avoir migre depuis l'Afrique centrale, s'etablissant dans la region entre 100 et 200 apres J.-C. dans des zones couvrant la Tanzanie, le Malawi, la Zambie septentrionale et le Mozambique. Ils sont reputes avoir ete les premiers peuples Bantu a entrer en contact avec les San d'Afrique du Sud-Est, adopter leur arc et fleche, et fusionner certains elements culturels. Ils constituent une branche des premiers Thonga (Tonga) qui formerent diverses colonies en Afrique australe.",
+      "formationPeriod": "L'identite Chopi distincte des autres groupes Thonga se consolida entre le XVe et le XVIIe siecle dans la region de Zavala, province d'Inhambane. Le contact avec les explorateurs portugais (XVe-XVIe siecle) et les chocs des invasions nguni au XIXe siecle accentuerent la cohesion identitaire Chopi.",
+      "migrationRoutes": [
+        "Migration depuis l'Afrique centrale (bassin du lac Tanganyika-Nyasa) vers le Mozambique meridional entre 100 et 200 ap. J.-C.",
+        "Expansion graduelle le long de la cote orientale vers la province d'Inhambane",
+        "Groupes dissidents migrant vers l'Afrique du Sud dans les annees 1640 (fondation du royaume de N'wanati sous le roi Gunyule)"
+      ],
+      "historicalSettlementZones": [
+        "Province d'Inhambane, district de Zavala (centre historique, ville de Quissico)",
+        "Zone cotiere entre Chidenguele (province de Gaza) et Inharimme (province d'Inhambane)",
+        "Territoire jusqu'au fleuve Limpopo (Mapai) pour les chefferies maintenues"
+      ],
+      "unificationsOrDivisions": "Les Chopi etaient organises en tribus distinctes sous des chefferies independantes. Les principales tribus incluent les Mondlane, Chivambu, Mbande, Mavila, Masingisa, Chirinda, Makwakwa et d'autres. Les invasions nguni des annees 1820 fragmenterent les structures traditionnelles. La chefferie traditionnelle survit encore aujourd'hui a Inhambane, Bileni et jusqu'au territoire de Mapai.",
+      "externalInfluences": "Les Portugais etablirent des relations commerciales sur le territoire Chopi des le XVe-XVIe siecle ; le Pere Andre Fernandes (XVIe siecle) fut l'un des premiers Europeens a documenter leur musique. De nombreux Chopi furent enroles dans l'armee portugaise. Les invasions nguni (Mfecane, 1820s) sous Manukosi Soshangane (chef Gaza) soumirent une partie des Chopi. En 1888-1895, le Gaza-Nguni sous Nghunghunyana envahit leur territoire ; une alliance Chopi-Portugaise vainquit finalement Nghunghunyana en 1895. La guerre civile mozambicaine (1977-1992) devastha les orchestres de timbila.",
+      "majorHistoricalEvents": "Contact avec les explorateurs portugais (XVe siecle) et integration dans les reseaux commerciaux portugais. Migrations de groupes Chopi vers l'Afrique du Sud dans les annees 1640 (fondation du royaume N'wanati). Commerce avec les royaumes du Zimbabwe au XVIIIe siecle, contribuant a l'empire Rozwi-Kalanga. Invasions nguni (Mfecane, 1820s-1830s). Guerre contre Nghunghunyana (1889-1895), victoire avec l'aide portugaise. Independence du Mozambique (1975). Guerre civile (1977-1992) : quasi-disparition des orchestres de timbila. Proclamation des timbila Chopi Chefs-d'oeuvre du patrimoine oral et immateriel de l'UNESCO (2005)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe Chopi etait organisee en chefferies sous des chefs heredit\u00e9s. Chaque chef (le chef de district ou du village) etait le seul patron des orchestres de timbila, dont il finançait l'entretien. Le systeme de chefferie est maintenu aujourd'hui dans les provinces d'Inhambane et de Gaza. Depuis l'independance, les gouvernements ont partiellement remplace les chefs comme mecenes des orchestres.",
+      "clanOrganization": "La societe Chopi est organisee en clans patrilineaires. Les grandes tribus-clans comprennent les Mondlane, Chivambu, Mbande, Mavila, Masingisa, Chirinda et Makwakwa. La filiation patrilineaire determine l'appartenance clanique et les droits sur la terre.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La transmission musicale suivait la ligne patrilineaire : les garçons apprenaient a jouer du timbila assis entre les jambes de leur pere, guidant leurs mains sur les mailloches. L'autorite des anciens dans la communaute s'exprimait notamment a travers leur patronage des orchestres de timbila.",
+      "religiousAuthority": "La religion traditionnelle Chopi est animiste : les guerisseurs-sorciers locaux (n'angas) detiennent l'autorite spirituelle dans les communautes. Le culte des ancetres est central. Des sacrifices d'animaux sont pratiques pour obtenir la faveur des esprits (bonnes recoltes, sante, paix). Des cordes et cordons sont portes sur le corps (cou, taille, poignets des bebes) comme protection spirituelle. Des elements catholiques et protestants coexistent avec les croyances traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Chichopi (Chopi)",
+      "isoCodes": ["cce"],
+      "dialects": ["Lenge (dialecte possiblement eteint selon Maho, 2009)"],
+      "vehicularRole": "Le Chichopi (code ISO 639-3 : cce) est une langue Bantu tonale, proche du chiTonga. La Bible complete est disponible en Chopi. De nombreux locuteurs, surtout les jeunes, parlent egalement le portugais (langue officielle du Mozambique) et parfois le chiTonga. Environ 1,1 million de locuteurs natifs (recensement 2017)."
+    },
+    "culture": {
+      "majorRites": "Les rites animes par les n'angas (guerisseurs-sorciers) sont centraux : sacrifices animaux, pratiques de guerison, ceremonies de propitiation des esprits. Le mariage et les funerailles donnent lieu a des performances de timbila. Les textes des Migodo (suites orchestrales) servent de commentaire social et de critique du pouvoir local lors des fetes communautaires.",
+      "symbols": "Les Chopi s'identifient symboliquement a l'elephant. Le timbila (xylophone) est le symbole culturel majeur du peuple. Le mwenje (arbre a eternuer) dont le bois tres resonant sert a fabriquer les lames de timbila est un symbole identitaire fort, menace par la deforestation.",
+      "artsAndMusic": "La musique de timbila est le patrimoine culturel le plus celebre des Chopi. Les orchestres de timbila comprennent de 5 a 30 xylophones en bois de mwenje de differentes tailles et tessitures (cilanzane/treble, sange/alto, dole/tenor, debiinda/basse, gulu/contrebasse). Ces orchestres interpretent les Migodo (suites orchestrales dramatiques), genres musicaux divises en mouvements programmes alliant musique, danse et textes poetiques. Les textes des Migodo contiennent des commentaires sociaux humoristiques sur les dirigeants locaux et la vie quotidienne. La musique de timbila a ete inscrite sur la Liste representative du patrimoine culturel immateriel de l'UNESCO en 2008 (initialement proclamee Chef-d'oeuvre en 2005). Les Chopi utilisent egalement des flutes panpipes, des sifflets, des cornes d'animaux, des hochets, des tambours et des arcs musicaux.",
+      "spiritualities": "La cosmovision Chopi est animiste, centree sur le culte des ancetres et la propitiation des esprits. Les n'angas (guerisseurs-sorciers) medient entre le monde des vivants et celui des esprits. L'animisme coexiste avec des pratiques catholiques et protestantes introduites par les missionnaires, mais de nombreux chretiens conservent un systeme de croyance animiste parallele."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Chopi n'avaient pas un empire centralise mais des chefferies tribales independantes. Des groupes Chopi dissidents fondeèrent le royaume N'wanati sous le roi Gunyule en Afrique du Sud dans les annees 1640. Les chefferies Chopi resisterent aux invasions nguni (Gaza Empire) au XIXe siecle. La chefferie traditionnelle subsiste dans les provinces d'Inhambane et de Gaza.",
+      "relationsWithNeighbors": "Les Chopi sont culturellement proches des Tsonga (dont les danses Xibelani et les instruments a cordes derives du timbila Chopi). Leurs voisins a l'ouest, les Shangaan (Tsonga de la province de Gaza), envahirent leur territoire au XIXe siecle. Les Chopi firent alliance avec les Portugais contre les troupes de Nghunghunyana (1889-1895). Des ouvriers mineurs Chopi emigrerent massivement vers les mines d'Afrique du Sud, formant des communautes musicales dans les camps miniers.",
+      "conflictsOrAlliances": "Invasions nguni par Manukosi Soshangane (des annees 1820) : soumission partielle des Chopi. Guerre contre Nghunghunyana (Gaza Empire, 1889-1895) : les Chopi, armes par les Portugais, resisterent et contribuerent a la defaite de Nghunghunyana. Alliance Chopi-Portugaise qui resulta en la capture de Nghunghunyana en 1895.",
+      "diaspora": "Une importante communaute de travailleurs migrants Chopi s'etablit historiquement dans les mines d'or et de diamants d'Afrique du Sud. Ces mineurs reproduisirent des orchestres de timbila dans les camps miniers avec des instruments improvises. Cette diaspora miniere joua un role important dans la diffusion et l'adaptation de la musique Chopi."
+    },
+    "demography": {
+      "totalPopulation": 1521000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (https://joshuaproject.net/people_groups/11368), estimation 2025",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 1521000,
+          "note": "Principalement province d'Inhambane (district de Zavala, ville de Quissico) et province de Gaza (entre Chidenguele et Inharimme)"
+        }
+      ]
+    },
+    "sources": [
+      "Chopi people – Wikipedia (https://en.wikipedia.org/wiki/Chopi_people)",
+      "Chopi language – Wikipedia (https://en.wikipedia.org/wiki/Chopi_language)",
+      "Chopi in Mozambique – Joshua Project (https://joshuaproject.net/people_groups/11368)",
+      "UNESCO – Chopi Timbila (Representative List of the Intangible Cultural Heritage of Humanity, 2008) (https://www.youtube.com/watch?v=IgZV9nR-m2o)",
+      "Tracey, Hugh (1948, reprint 1970). Chopi Musicians: Their Music, Poetry, and Instruments. Oxford University Press. ISBN 0-19-724182-4",
+      "Locating the Chopi Xylophone Ensembles of Southern Mozambique – Ethnomusicology Review, UCLA (https://ethnomusicologyreview.ucla.edu/journal/volume/11/piece/513)",
+      "Smithsonian Folkways – Music from Mozambique Vol. 2: Chopi Timbila (https://folkways.si.edu/music-from-mozambique-vol-2-chopi-timbila-two-orchestral-performances/world/album/smithsonian)"
+    ]
+  }
+}

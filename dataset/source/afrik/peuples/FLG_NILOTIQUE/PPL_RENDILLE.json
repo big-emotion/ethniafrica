@@ -1,0 +1,112 @@
+{
+  "id": "PPL_RENDILLE",
+  "nameMain": "Rendille",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["KEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Rendille",
+      "selfAppellation": "Rendille (Holders of the Stick of God — porteurs du baton de Dieu)",
+      "exonyms": [
+        "Rendile",
+        "Reendile",
+        "Rendili",
+        "Randali",
+        "Randile",
+        "Randille",
+        "Rertit (terme somali signifiant ceux qui ont refuse)"
+      ],
+      "originOfExonyms": "L'ethnonyme Rendille est traduit par les porteurs du baton de Dieu, faisant reference a un baton sacre de chef. Le terme somali Rertit (ou Reer Til, les rejetes) designe les Rendille comme ceux qui ont refuse le territoire somali et sont restes a Marsabit. Les Somalis distinguent les vrais Rendille (asil, authentiques) des Rendille assimiles (ceux qui parlent samburu). Randile est le nom utilise par les Samburu voisins.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Rendille est le terme universellement employe dans les publications academiques, les recensements kenyans et les organisations de developpement. La distinction entre Rendille du Nord (vrais Rendille) et Rendille du Sud (Ariaal, melanges cushitiques-nilotiques) est importante dans les etudes anthropologiques.",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Cushitique de l'Est (branche afro-asiatique) — note : le fichier est classe FLG_NILOTIQUE mais les Rendille sont linguistiquement cushitiques; leur territoire et leurs alliances les incluent dans l'espace nilotique oriental",
+      "historicalRegion": "Desert de Kaisut, district de Marsabit, Province du Nord-Est du Kenya; entre le lac Turkana (nord-ouest) et les montagnes de Marsabit (est)",
+      "currentCountries": ["KEN"]
+    },
+    "ethnicities": [
+      "Urowen : l'un des neuf clans rendille authentiques du Rendille du Nord",
+      "Dispahai (Dubsahay) : clan authentique du Rendille du Nord",
+      "Rongumo : clan authentique du Rendille du Nord",
+      "Lukumai (Nahgan) : clan authentique du Rendille du Nord",
+      "Tupsha : clan authentique du Rendille du Nord",
+      "Garteilan : clan authentique du Rendille du Nord",
+      "Matarbah : clan authentique du Rendille du Nord",
+      "Otola : clan authentique du Rendille du Nord",
+      "Saale : clan authentique du Rendille du Nord — ces neuf clans forment la moitie traditionnelle (belesi)",
+      "Ariaal (ou Ilturia) : Rendille du Sud, cinq clans de descendance mixte rendille-samburu, parlent le samburu"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Rendille sont un peuple cushitique de l'Est, linguistiquement tres proche des Somalis, appartenant a la grande famille afro-asiatique. Ils descendent de populations cushitiques de la Corne de l'Afrique (Ethiopie, Somalie). Selon la tradition orale, leurs ancetres voyagerent depuis la region du Suez a travers l'Ethiopie : les Somalis partirent vers la Somalie pour les paturages; les Rendille refuserent ce territoire et s'etablirent autour de Marsabit (d'ou leur nom somali Rertit). Les etudes linguistiques confirment leur parente etroite avec les Somalis.",
+      "formationPeriod": "La formation de l'identite rendille distincte s'est operee lors de la separation d'avec les Somalis et de leur etablissement dans le desert de Kaisut. Les contacts seculaires avec les Samburu nilotiques ont engendre le sous-groupe hybride Ariaal. L'arrivee des colonisateurs britanniques au tournant du 20e siecle a ete documentee par l'ethnologue William A. Chanler. L'aridite extreme de leur territoire les a proteges de la colonisation agraire.",
+      "migrationRoutes": [
+        "Origine cushitique dans la Corne de l'Afrique (Ethiopie, zone somali)",
+        "Migration vers le sud le long du Grand Rift suivant l'expansion des Oromo puis des Somalis",
+        "Separation d'avec les proto-Somalis : les Rendille restent a Marsabit, les Somalis continuent vers la Somalie",
+        "Stabilisation dans le desert de Kaisut entre le lac Turkana et les montagnes de Marsabit"
+      ],
+      "historicalSettlementZones": [
+        "Desert de Kaisut (22 000 km2) : territoire pastoral principal de l'ensemble du groupe",
+        "Montagnes de Marsabit : refuge en periode de secheresse",
+        "Zone entre la riviere Merille/Serolivi (sud) et Loyangalani (nord)",
+        "De Marsabit/Merti (est) a Lontolio (ouest)",
+        "Villes principales : Marsabit, Laisamis, Merille, Logologo, Loyangalani, Korr, Kamboi, Ngurunit, Kargi"
+      ],
+      "unificationsOrDivisions": "Les Rendille sont organises en quinze clans, dont neuf sont consideres comme authentiques (formant la moitie belesi) et six comme hybrides (Ariaal, descendance mixte rendille-samburu). Les clans vivent dans des etablissements temporaires (gob) nommes d'apres le clan, le sous-clan ou l'ancien de la famille. La distinction entre Belisi Bahai et Belisi Beri est la division fondamentale en deux groupes de clans.",
+      "externalInfluences": "Contacts profonds avec les Samburu (engendrant le groupe Ariaal), les Gabra (partageant des rituels comme le sorio et l'almado), les Borana, les Turkana (raids violents) et les Somalis. La religion traditionnelle (Waaq) a ete progressivement supplantee par le christianisme (missions du 20e siecle) puis l'islam (en augmentation). L'administration coloniale britannique fut minimale en raison de l'aridite du territoire. ONG et gouvernement kenyan ont modernise partiellement le mode de vie.",
+      "majorHistoricalEvents": "Premiere etude ethnologique par William A. Chanler (debut 20e siecle). Periode coloniale britannique : quasi-absence d'impact direct (territoire trop aride). Fin 19e siecle : epidemie de rinderpest decimant le betail; les Rendille aiderent les Samburu a survivre et reciproquement. Alliance avec les Samburu contre les raids des Turkana. Conflits periodiques avec les Turkana (raids de betail). Integration progressive dans l'Etat kenyan post-independance (1963)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de gouvernance par consensus des anciens (elders). Les elders et maries se reunissent dans le nabo (enclos sacre) pour prier, discuter des problemes tribaux, accueillir les hotes et effectuer les ceremonies. Decision collective par consensus. Autorite basee sur l'age (classes d'age) et le statut matrimonial. Absence de chef hereditaire centralise. Le systeme de classes d'age masculines (galgulumi) structure l'ensemble de la vie sociale et politique.",
+      "clanOrganization": "Organisation en 15 clans (group) bases sur des groupes de lignage patrilineaire (keiya). Seuls neuf clans (les neuf clans authentiques) sont integres dans la moitie traditionnelle (belesi). Les clans vivent dans des gob (etablissements temporaires) qui se deplacent selon les saisons et les ressources pastorales. Mariage exogame entre sous-clans ou clans principaux. Le clan est l'unite sociale de base.",
+      "ageClassSystems": "Systeme de classes d'age masculines fonde sur un calendrier luni-solaire de cycles de 7 ou 14 ans. Etapes principales : enfance (garcon dans le gob), initiation par la circoncision (galgulumi — ceremonie publique tous les 14 ans environ), classe des guerriers (warriors, 11 ans de guerrierdom), puis elderhood (naapo — ceremonie d'acces a l'enclos sacre, vers 30 ans). Les guerriers vivent en dehors du gob, gardent le betail, le deplacent vers les paturages et assurent la defense. Mariage apres la classe des guerriers, confirme le statut d'elder. Le calendrier regule aussi les deplacements des clans pour eviter les conflits sur les paturages.",
+      "roleOfLineages": "Les lignages patrilineaires (keiya) determinent l'appartenance clanique, les droits sur les chameaux, les obligations matrimoniales et les postes d'autorite. La filiation patrilineaire est le fondement de l'organisation sociale rendille. L'institution sabade designe les femmes qui retardent leur mariage jusqu'a un age avance (40-45 ans) pour correspondre a la classe d'age de leur mari potentiel — mecanisme de regulation demographique dans un territoire marginal.",
+      "religiousAuthority": "Religion traditionnelle cushitique centree sur le culte de Waaq (Ngai), divinite monotheiste archetypal des Cushites, aussi venere par les Somalis, Borana, Gabra et Oromo. Rites mensuels : usage d'une amulette en ivoire sortie d'un coffre sacre; le chef de famille signe les membres et les hotes avec cette amulette, offre des prieres de gratitude et de petition, puis oint les fronts avec de la graisse et de l'ocre rouge. Sooriyyo : sacrifice trimestriel (4 fois par an), similaire a la Paque; animal sans defaut sacrifie, sang applique sur les fronts des males et les bosses des chameaux. Le christianisme (missions du 20e siecle) et l'islam (croissant) modifient progressivement le paysage religieux."
+    },
+    "languages": {
+      "mainLanguage": "Rendille (aussi Rendile, Randile)",
+      "isoCodes": ["rel"],
+      "dialects": [
+        "Rendille du Nord (Rendille authentique) : variete cushitique proche du somali, parlee par les neuf clans authentiques",
+        "Ariaal (Rendille du Sud) : locuteurs du samburu (nilotique oriental, ISO 639-3 : saq), variete hybride"
+      ],
+      "vehicularRole": "Le rendille est parle comme langue maternelle par environ 62 000 a 94 700 personnes au Kenya (Ethnologue 2006 : 94 700 locuteurs). Langue cushitique de l'Est, tres proche du somali. Le sous-groupe Ariaal parle le samburu. L'anglais et le swahili sont utilises comme langues de communication avec les autres populations kenyanes. Le rendille n'a pas de role vehiculaire regional important."
+    },
+    "culture": {
+      "majorRites": "Galgulumi (circoncision et initiation) : ceremonie publique marquant l'entree dans la classe des guerriers; organisee tous les 7 a 14 ans environ; les inities recoivent un nom collectif de leur classe d'age; honte indelebile pour celui qui manifeste douleur ou peur lors des neuf incisions; apres la circoncision, deux mois de reclusion, peintures blanches sur la tete rasee, couronne de peau de chevre noire, visites des peres avec conseils. Naapo (rite d'acces a l'enclos sacre) : vers 30 ans, apres la classe des guerriers, les hommes deviennent elders avec droit d'entrer dans le nabo, lieu de priere et de decision collective; le feu rituel du nabo est maintenu nuit et jour, symbolisant la continuite communautaire. Sorio (grand sacrifice du chameau) : ceremonie lors des premieres pluies; sang de chameau verse sur la tete de chaque animal du gob; les elders s'aspergent de ce sang comme une benediction. Sooriyyo : sacrifice trimestriel analogue a la Paque (4 fois par an); animal sans tache sacrifie; sang applique sur les fronts. Tatouage ombilical : le pere incise le nombril du garcon avant l'age de 10 ans en creux avec un halo de rayons; l'absence de ce signe rend le garcon bajo (unmarriable). Mariage : confirme le statut d'elder; la femme reçoit une nouvelle maison (le terme mariage signifie construction de maison); dot en betail.",
+      "symbols": "Le chameau est le symbole central de la culture rendille : source de vie (lait, sang, viande, peau, transport), symbol de richesse, medium rituel (le sang du chameau est utilise dans les ceremonies). Le baton sacre des chefs (dont le nom donne leur ethnonyme) est un symbole d'autorite. Le feu rituel du nabo symbolise la continuite et la vie collective. Le calendrier luni-solaire de 7/14 ans est le symbole de l'ordre cosmique. L'amulette en ivoire du coffre sacre est utilisee lors des rites mensuels.",
+      "artsAndMusic": "Parures et ornements : predilection pour tous types de bijoux; les femmes portent 30 a 40 colliers de perles, tablier en cuir brode de perles sur les epaules, longues robes en cuir ornees de perles et coquillages pour les ceremonies et danses. Collier de fertilite du mariage (empooro engorio) : fibres de palmier, crins de girafe et d'elephant, perles, pierres de montagne sacree. Coiffure des guerriers : cheveux tisses/tresses avec fibres vegetales, pate d'ocre rouge et graisse, formant une visiere; nattes et queues dans le dos. Decoration de la mariee : bijoux de verre et metal, bandeau en perles, grandes boucles circulaires. Artisanat : forgeron (armes, outils, ornements). Construction de maisons : maisons hautes et rondes (comme les Gabra), poles courbes couverts de nattes et peaux. Musique : chants des classes d'age; musique de mariage.",
+      "spiritualities": "Religion traditionnelle cushitique basee sur le culte de Waaq (Ngai chez les Maasai et Samburu), divinite supreme monotheiste representant le ciel, la pluie et la vie. Partage avec les Gabra des rituels sorio et almado. Rites mensuels d'offrande et de petition avec une amulette en ivoire tiree d'un coffre sacre, utilisant graisse et ocre rouge comme sacrement. Le sorio (sacrifice du chameau aux premieres pluies) est le grand rite collectif. La facon dont un chameau mâle approche un nouveau campement est interpretee comme un omen. Le christianisme (introduit par les missions) est pratique par une partie croissante de la population. L'islam est en progression parmi les Rendille."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume ou chefferie formelle centralise. Gouvernance par consensus des elders dans le cadre du systeme des classes d'age. Le systeme des gob (etablissements claniques) et des classes d'age assure l'organisation politique sans recours a un chef hereditaire. Autorite basee sur l'age et le statut matrimonial dans une gerontocratie collective.",
+      "relationsWithNeighbors": "Alliance profonde avec les Samburu : aide reciproque lors des epidemies (fin 19e siecle — les Rendille aiderent les Samburu apres la rinderpest, les Samburu aiderent les Rendille apres la variole); mariage interethnique produisant le groupe hybride Ariaal. Voisinage pacifique et partage de rituels (sorio, almado) avec les Gabra, consideres comme les voisins les plus proches culturellement. Relations antagonistes avec les Turkana (raids de betail violents : ennemis qu'on ne peut pas amadouer). Relations tendues avec les Borana et les Somalis. Non affectes par la colonisation britannique directe en raison de l'aridite extreme de leur territoire.",
+      "conflictsOrAlliances": "Conflits periodiques avec les Turkana pour le betail et les paturages. Alliance avec les Samburu contre les ennemis communs. Relations pacifiques avec les Gabra (partage de rituels et ceremonies). Conflits et paix cycliques avec les Borana. Integration dans l'Etat kenyan apres l'independance (1963) avec des tensions sur la gestion des ressources en eau et des paturages.",
+      "diaspora": "Diaspora rendille limitee; quelques individus dans les grandes villes kenyanes (Nairobi, Marsabit). La majorite de la population demeure sur le territoire traditionnel du desert de Kaisut en raison de l'attachement a l'economie pastorale cameliere."
+    },
+    "demography": {
+      "totalPopulation": 65000,
+      "referenceYear": 2025,
+      "source": "Peoplegroups.org (2024) : 62 000 Rendille au Kenya. Ethnologue (2006) : 94 700 locuteurs (inclut probablement l'Ariaal). 101 Last Tribes : 22 000 dans le seul desert de Kaisut (environ 10 000 Rendille authentiques du Nord). Projection 2025 tenant compte de la croissance demographique.",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 65000,
+          "note": "Desert de Kaisut, comte de Marsabit, province du Nord-Est du Kenya — totalite de la population"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Rendille people. https://en.wikipedia.org/wiki/Rendille_people",
+      "101 Last Tribes — Rendille. https://www.101lasttribes.com/tribes/rendille.html",
+      "Blue Gecko — Rendille stages of life, Traditional Music and Cultures of Kenya. http://www.bluegecko.org/kenya/tribes/rendille/lifestages.htm",
+      "Wiktionary ISO 639-3 codes Africa : rel — Rendille. https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+      "Ethnologue — Rendille (REL). https://www.ethnologue.com/language/rel/",
+      "Media North Kenya — Rendille Age-set. https://medianorthkenya.wordpress.com/2016/03/20/rendille-age-set-period-events/",
+      "Paukwa — Rendille Initiation Ceremony. https://www.paukwa.or.ke/story-series/kerites/rites-of-passage/rendille-initiation-ceremony/",
+      "Chanler, William A. Through Jungle and Desert: Travels in Eastern Africa. New York: Macmillan, 1896.",
+      "Schlee, Gunther. Identities on the Move: Clanship and Pastoralism in Northern Kenya. Manchester: Manchester University Press, 1989.",
+      "Joshua Project — Rendille in Kenya. https://joshuaproject.net/"
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "id": "PPL_MUSGU",
+  "nameMain": "Musgu",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["CMR", "TCD"],
+  "content": {
+    "appellations": {
+      "mainName": "Musgu",
+      "selfAppellation": "Mulwi (endonyme : signifie 'ceux du fleuve' ou 'les gens')",
+      "exonyms": [
+        "Mousgoum (orthographe francaise courante, utilisee dans la litterature francophone et coloniale)",
+        "Musgum (orthographe anglophone, utilisee dans la litterature anglophone)",
+        "Muzuk / Muzgu (variante dialectale)",
+        "Munjuk (nom utilise dans la region de Maga pour les habitants et leur langue)"
+      ],
+      "originOfExonyms": "Le terme Musgu/Mousgoum est un exonyme d'origine incertaine, probablement transmis par les Peuls ou les Arabes voisins. L'endonyme Mulwi est le nom que les membres du groupe se donnent eux-memes. Le nom de lieu Waza (parc national) derive du mot musgu signifiant 'ma maison' ou 'ma patrie'. Mindif signifie 'la bouche de l'homme' en musgu. Bogo (ville) derive d'un mot musgu signifiant 'bruit', rappelant la bataille decisive contre les Peuls.",
+      "whyProblematic": "Le terme Mousgoum recouvre plusieurs varietes dialectales proches (Beege, Mpus, Vulum) qui ne sont pas toujours mutuellement intelligibles. Les distinctions entre Musgu proper, Munjuk et Muzuk peuvent etre considerees comme des langues separees par certains linguistes.",
+      "contemporaryUsage": "Le terme Musgu est utilise dans les publications scientifiques, administratives camerounaises et tchadiennes. Mousgoum reste courant dans la litterature francophone. Mulwi est utilise par les locuteurs dans les contextes intimes et communautaires. Le terme est desormais associe internationalement a l'architecture exceptionnelle de leurs maisons en boue (cases obus / teleukakay).",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique Biu-Mandara (branche B, sous-groupe B.2)",
+      "historicalRegion": "Bassin du Logone inferieur et du Chari (entre les fleuves Logone et Chari), region de l'Extreme-Nord du Cameroun et prefecture de Chari-Baguirmi (Tchad)",
+      "currentCountries": ["CMR", "TCD"]
+    },
+    "ethnicities": [
+      "Musgu / Mulwi proprement dit (region de Pouss, Maga, Guirvidig — Cameroun)",
+      "Munjuk (region de Maga, sous-division Maga, division Mayo-Danay — variete distincte)",
+      "Beege (plaines inondables du Logone, district de Zina, departement Logone-et-Chari, et Djafga au sud)",
+      "Mpus (Pouss et nord de la region) — variete nord du musgu",
+      "Vulum (principalement au Tchad, regions frontieres)",
+      "Musgu de Bogo (region de Diamare, ayant integre des elements peuls apres le XIXe siecle)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Musgu sont d'origine afro-asiatique et font partie des peuples neo-soudanais qui ont deplace les Paleo-Soudanais dans leur territoire actuel, entre les fleuves Logone et Chari. Selon une tradition orale rapportee par les Musgu, ils sont issus d'un mariage entre un prince Kotoko et une femme Massa sur les rives du Logone. Les Musgu et les Kotoko sont tous deux consideres comme des descendants des SAO, la civilisation pionniere autour du lac Tchad, dont les vestiges archeologiques sont nombreux dans la region. Dans les sources nigerianes, ils vivaient en contact avec les Kanuri et contribuerent a la formation de l'Empire du Bornou.",
+      "formationPeriod": "L'identite musgu distincte se consolida au cours du premier millenaire de l'ere commune dans le bassin du Logone. Les Musgu et les Kotoko partagerent une histoire commune au sein de l'Empire du Baguirmi (Bagirmi), avec lequel ils entretinrent des relations conflictuelles durant les XVIIe-XIXe siecles. La periode peule du XIXe siecle (sheik Hayatu ibn Said, mouvement mahdiste) pressa les Musgu occidentaux, tandis que les Musgu orientaux commencerent a payer tribut au Baguirmi. Les chefs musgu comme Zigla et Awersing menerent leurs troupes contre les Peuls.",
+      "migrationRoutes": [
+        "Etablissement originel dans le bassin du Logone inferieur, dans la zone inondable entre les fleuves Logone et Chari",
+        "Extension vers le nord en direction de Kousseri (augmentation des implantations musgu au nord depuis le XXe siecle)",
+        "Presence historique en territoire nigerian (Etat de Borno : Bama, Banki, Gambaru, villages voisins de Darak et Blangoua)"
+      ],
+      "historicalSettlementZones": [
+        "Sous-division de Maga, division Mayo-Danay, province de l'Extreme-Nord (Cameroun) — zone principale",
+        "Region de Pouss, sultanat de Pouss (Cameroun)",
+        "Region de Guirvidig, lamidat de Guirvidig (Cameroun)",
+        "Region de Zina, sultanat de Zina (Cameroun)",
+        "Region de Bogo, lamidat de Bogo (Cameroun, departement Diamare)",
+        "Prefecture de Chari-Baguirmi (Tchad) — entre les fleuves Chari et Logone"
+      ],
+      "unificationsOrDivisions": "Les Musgu ne forment pas un Etat centralise. Ils sont organises en plusieurs chefferies independantes, chacune dirigee par un chef musgu natif. Les sultanats de Pouss et de Zina, les lamidat de Guirvidig et de Bogo constituent les principales entites politiques. Un principe important est que les chefferies musgu sont toujours dirigees par un chef musgu autochtone, meme au Cameroun qu'au Tchad. La fusion avec des elements peuls s'est produite par mariage (notamment a Bogo), creant des communautes mixtes.",
+      "externalInfluences": "Empire du Baguirmi (XVIIe-XIXe siecles) : conflits recurrents avec les troupes du Baguirmi. Jihad peul du XIXe siecle (Hayatu ibn Said) : pression militaire et tribute impose aux Musgu orientaux. Victoire decisive des Musgu a Bogo (dont le nom vient du mot musgu pour 'bruit') qui chassa les Peuls vers l'Adamawa. Colonisation francaise et allemande (fin XIXe-debut XXe siecles). Islam progressivement adopte, mais traditions animistes maintenues.",
+      "majorHistoricalEvents": "Bataille de Bogo : les troupes musgu sous la conduite de chefs comme Zigla et Awersing repoussent les envahisseurs peuls ; les Peuls vaincus fuient vers l'Adamawa avant de revenir progressivement se melanger par mariage. Waza, territoire musgu, devient parc national au XXe siecle (le nom derive du musgu 'ma maison'). La ville de Moulvoudaye (signifiant 'j'achete des gens' en musgu) fut un centre du commerce d'esclaves. En 1960, le teleuk (case obus) devient symbole de la culture camerounaise nationale, apparaissant sur des billets de banque et des timbres-poste."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Musgu sont organises en sultanats et lamidat diriges par des chefs autochtones musgu. Le Sultanat de Pouss, le Lamidat de Guirvidig, le Sultanat de Zina et le Lamidat de Bogo sont les principales entites politiques. Un principe fondamental est que les chefs musgu sont toujours des Musgu de naissance, qu'il s'agisse du Cameroun ou du Tchad. Les chefs ont des fonctions politiques, judiciaires et religieuses. Le Musgu sont reconnus comme un peuple guerrier ayant consacre une grande partie des trois derniers siecles a des conflits avec leurs voisins.",
+      "clanOrganization": "La societe musgu est organisee en groupes patrilineaires. L'organisation en lignages determine les droits fonciers, les alliances matrimoniales et les responsabilites rituelles. Des variantes dialectales (Beege, Mpus, Vulum, Munjuk) correspondent a des subdivisions geographiques et identitaires distinctes.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent la societe musgu : les droits sur les terres, les pecheries et les zones de culture sont transmis par voie patrilineaire. L'identite clanique determine egalement les droits a l'exercice des chefferies. Les femmes jouent un role important dans la gestion de l'espace domestique, chaque epouse occupant une unite separee du teleuk.",
+      "religiousAuthority": "La majorite des Musgu professent l'islam. Le chef traditionnel est souvent aussi l'autorite religieuse principale. Les traditions animistes restent influentes : des esprits locaux comme Yaye (esprit protecteur du village de Pouss, garant de la recolte) sont veneres. La peche rituelle pendant les crues du Logone est accompagnee d'invocations aux esprits des eaux. L'islam et les croyances traditionnelles coexistent dans de nombreuses communautes."
+    },
+    "languages": {
+      "mainLanguage": "Musgu (endonyme : Mulwi), langue tchadique Biu-Mandara",
+      "isoCodes": ["mug"],
+      "dialects": [
+        "Beege (plaines inondables du Logone, district de Zina, departement Logone-et-Chari ; sous-variete Djafga au sud)",
+        "Mpus (Pouss et nord de la region de Maga)",
+        "Vulum (principalement au Tchad, regions frontieres)",
+        "Munjuk (region de Maga — parfois considere comme une langue separee)"
+      ],
+      "vehicularRole": "Le musgu (mug) comptait environ 61 500 locuteurs au Cameroun en 1982 et 24 408 locuteurs au Tchad en 1993 (Ethnologue). Population totale estimee a 164 400 en 2025 (Wikipedia). Le fulfude est utilise comme langue vehiculaire dans les echanges inter-ethniques dans la region. Le francais est la langue officielle au Cameroun et au Tchad. Les Musgu du Nigeria (Etat de Borno) utilisaient egalement le kanouri comme langue de contact."
+    },
+    "culture": {
+      "majorRites": "Le rite Laba (ou Labana) est le rite guerrier et initiatique traditionnel musgu : un rite de combat qui reflète l'identite guerriere du peuple. Les ceremonies de peche collective sur le Logone lors des crues saisonnieres sont accompagnees d'invocations aux esprits des eaux pour assurer de bonnes prises. Les rites de mariage impliquent des negociations entre familles et des echanges de prestations. Les ceremonies funebres comprennent des sacrifices et des rites de commemorations pour proteger les vivants. Les rites agraires accompagnent les cycles de plantation du coton et des arachides. L'invocation de l'esprit Yaye, protecteur du village de Pouss et garant des recoltes, constitue une pratique religieuse locale importante.",
+      "symbols": "Le teleuk (case obus, cases en forme d'obus) est le symbole culturel majeur des Musgu — si emblematique qu'il figura sur les billets de banque et timbres-poste camerounais apres l'independance de 1960. La forme parabolique du dome, inspiree des termitieres selon la tradition orale, symbolise la puissance, la protection et l'ingeniosite. Le Logone (fleuve) est central dans l'identite musgu : il est source de vie, de nourriture (peche) et de territoire. Le taureau et le cheval symbolisent le statut guerrier. Le motif geometrique en V ou en lignes droites decorant les teleukakay est a la fois fonctionnel (drainage des eaux) et symbolique.",
+      "artsAndMusic": "L'architecture en boue seche (teleuk / tolek / cases obus / teleukakay) est la realisation artistique majeure des Musgu. Ces habitations a dome parabolique atteignent jusqu'a 9 metres de hauteur. Elles sont construites par la technique du montage en spirale (mud coil pottery technique) en couches de 0,5 m laissees a secher successivement. Les murs, plus epais a la base, s'affinent vers le sommet. Des motifs en relief geometriques (lignes en V, lignes droites) decorent l'exterieur, servant de systeme de drainage de la pluie et d'echafaudage permanent pour les reparations. L'entree en forme de trou de serrure (etroite en bas, s'elargissant aux epaules) est inspiree du corps de la vache. Un orifice circulaire au sommet sert de prise d'air et d'issue de secours en cas d'inondation. Les interieurs comprennent des lits chauffants et des etageres sculptees. Les Musgu pratiquent egalement la poterie, le tissage et la fabrication d'outils. La musique traditionnelle accompagne les rites guerriers (Laba) et les ceremonies de peche et d'agriculture.",
+      "spiritualities": "La religion predominante est l'islam sunnite, adopte progressivement depuis le XVIIIe siecle. Les croyances animistes traditionnelles coexistent : veneration des esprits locaux (Yaye, esprit protecteur du village de Pouss ; esprits des eaux du Logone). Les deux tribes Musgu et Kotoko sont consideres comme descendants des SAO, civilisation pre-islamique dont les pratiques religieuses influencent encore certains rituels. La peche sur le Logone est rituellement encadree. Les ancetres jouent un role de protection et de guidance pour les vivants."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Sultanat de Pouss est la chefferie musgu la plus importante au Cameroun. Le Lamidat de Guirvidig, le Sultanat de Zina et le Lamidat de Bogo constituent les autres entites politiques majeures. La ville de Bogo (aujourd'hui a dominante peule) fut a l'origine un royaume musgu. Le parc national de Waza est fonde sur le territoire ancestral musgu. Historiquement, les Musgu et les Kotoko co-dominerent la zone du bassin du Logone-Chari, partageant une ascendance commune SAO et une histoire liee a l'Empire du Baguirmi.",
+      "relationsWithNeighbors": "Relations complexes avec les Kotoko voisins : rivalite pour les ressources de peche du Logone, tensions ethniques recurrentes liees au controle des zones de peche. Relations historiques avec les Kanuri de l'Empire du Bornou (Nigeria oriental). Conflits recurrents avec l'Empire du Baguirmi aux XVIIe-XIXe siecles. Relations ambivalentes avec les Peuls : opposition militaire au XIXe siecle (victoire a Bogo), suivie d'une coexistence et de metissages par mariage dans certaines regions comme Bogo.",
+      "conflictsOrAlliances": "Les Musgu sont reconnus comme un peuple guerrier ayant consacre la majeure partie des trois derniers siecles a des conflits. Conflits majeurs avec le Baguirmi (XVIIe-XIXe siecles). Resistance au jihad peul de Hayatu ibn Said (XIXe siecle) : les chefs Zigla et Awersing menerent les troupes musgu, remportant la bataille decisive de Bogo et chassant les Peuls vers l'Adamawa. Cette victoire est commemoree dans la toponymie : Bogo signifie 'bruit' en musgu. La colonisation franco-allemande reorganisa les structures politiques sans eliminer les chefferies musgu autochtones.",
+      "diaspora": "Les Musgu vivent principalement dans leur territoire d'origine. Un mouvement de migration vers le nord (Kousseri) est observe depuis le milieu du XXe siecle. Des communautes musgu existent dans l'Etat de Borno (Nigeria) — villages de Bama, Banki, Gambaru. La diaspora urbaine (Maroua, N'Djamena) reste modeste."
+    },
+    "demography": {
+      "totalPopulation": 164400,
+      "referenceYear": 2025,
+      "source": "Wikipedia — Musgum people (donnees 2024) : 164 400 total (140 000 au Cameroun, 24 400 au Tchad). Ethnologue (SIL) : 61 500 locuteurs au Cameroun (1982), 24 408 au Tchad (1993). Projections 2025 basees sur la croissance demographique regionale.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 140000,
+          "note": "Sous-division Maga (Mayo-Danay), Pouss, Guirvidig, Zina, Bogo (departement Diamare), region de l'Extreme-Nord"
+        },
+        {
+          "country": "TCD",
+          "population": 24400,
+          "note": "Prefecture de Chari-Baguirmi, zone entre les fleuves Chari et Logone"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Musgum people. https://en.wikipedia.org/wiki/Musgum_people",
+      "Wikipedia EN — Musgum mud hut. https://en.wikipedia.org/wiki/Musgum_mud_hut",
+      "Academia.edu — Mousgoum architecture (Oxford University Press, 2014). https://www.academia.edu/71511192/Mousgoum_architecture",
+      "Architecture in Development — Mousgoum dwellings. https://architectureindevelopment.org/project/68",
+      "101lasttribes.com — Musgum people. http://www.101lasttribes.com/tribes/musgum.html",
+      "SIL Ethnologue — Musgu (mug). https://www.ethnologue.com/language/mug/",
+      "The African History Channel — The tolekakay of the Musgum. https://www.facebook.com/TheAfricanHistoryChannelFB/posts/the-tolekakay-of-the-musgum-traditional-architecture-between-the-lower-logone-an/394568216210204/",
+      "Wikipedia EN — Musgu language. https://en.wikipedia.org/wiki/Musgu_language"
+    ]
+  }
+}

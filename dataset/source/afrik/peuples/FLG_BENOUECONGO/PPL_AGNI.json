@@ -1,0 +1,94 @@
+{
+  "id": "PPL_AGNI",
+  "nameMain": "Agni",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["CIV", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Agni",
+      "selfAppellation": "Anyi",
+      "exonyms": ["Agnis", "Ani", "Anya", "Anyi", "Anyis", "Ndenie", "Sanwi"],
+      "originOfExonyms": "Anyi (aussi ecrit Agni ou Agny) est la forme endonyme predominante. Les formes Agni et Agny sont des transcriptions europeennes (francaises) de l'endonyme Anyi. Ndenie et Sanwi designent specifiquement les sous-groupes royaux et sont parfois utilises comme exonymes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Agni est le terme officiel utilise en Cote d'Ivoire. Anyi est utilise dans les publications linguistiques et dans les contextes ghaneens. Les noms des royaumes (Sanwi, Indenie, Moronou) servent souvent d'appellations pour les sous-groupes.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan (branche Bia/Tano central)",
+      "historicalRegion": "Sud-est et centre-est de la Cote d'Ivoire (regions du Moronou, Indenie-Djuablin, Sud-Comoe)",
+      "currentCountries": ["CIV", "GHA"]
+    },
+    "ethnicities": [
+      "Agni-Assonvon",
+      "Agni Mrofo",
+      "Agni-Ndenye",
+      "Agni-Ndeneam",
+      "Agnis Morophos",
+      "Agni-Diabe"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Agni sont un peuple Akan originaires de la region de l'Aowin (ancienne Gold Coast, Ghana actuel), issus du sous-groupe Ashanti. Ils constituent le premier peuple de l'actuelle Cote d'Ivoire a etre entre en contact avec les Europeens au 17e siecle. Leurs ancetres etaient installes au Ghana et ont joue un role historique dans la region depuis la fin du 17e siecle.",
+      "formationPeriod": "Au debut du 18e siecle, les premiers Agni traversent la frontiere est de l'actuelle Cote d'Ivoire, accompagnes des Assabou (futurs Baoulé). Ils fondent le Royaume du Sanwi sous la direction d'Amalaman Ano, puis se dispersent vers les lagunes Aby et les regions interieures.",
+      "migrationRoutes": [
+        "Ashanti/Aowin (Gold Coast, Ghana) -> frontiere est de la CIV (debut 18e siecle)",
+        "Sanwi (cote) -> region de Songon (lagune Aby) pour les futurs Agni Mrofo",
+        "Progression vers la vallee de la Comoe (royaume de l'Indenie)",
+        "Etablissement dans le Moronou (Agni Mrofo et Djuablin)"
+      ],
+      "historicalSettlementZones": [
+        "Region du Sanwi (Aboisso, Adiaké, Assinie, Maféré, Sud-Comoé)",
+        "Indenie-Djuablin (Abengourou, Agnibilekrou, Koun Fao)",
+        "Moronou (Arrah, Bongouanou, Ande, Mbatto)",
+        "Region de l'Ifou et Zanzan",
+        "Tiassale (Agneby-Tiassa)",
+        "Ghana occidental (298 000 environ)"
+      ],
+      "unificationsOrDivisions": "Les Agni forment plusieurs royaumes distincts, parfois en competition : Sanwi (le plus ancien et le plus puissant), Indenie sur les bords de la Comoé, et Moronou (avec les Agni Mrofo et le Djuablin). Sous la colonisation francaise, le roi du Sanwi Amon Ndouffou III tente une resistance politique jusqu'en 1969.",
+      "externalInfluences": "Heritage culturel Ashanti profond (politique, religion, arts). Influence des pasteurs togolais de la Church of Pentecost sur la christianisation des Agni du Ghana puis de Cote d'Ivoire dans les annees 1950. Colonisation francaise a partir de la fin du 19e siecle. Immigration massive de travailleurs Mossi integres comme metayers dans les plantations agricoles.",
+      "majorHistoricalEvents": "Migration fondatrice depuis l'Ashanti au debut du 18e siecle ; fondation du Royaume du Sanwi sous Amalaman Ano ; contacts europeens des le 17e siecle ; resistance du roi du Sanwi a la colonisation francaise (1969) ; crise politico-fonciere liee a l'immigration dans les grandes villes a partir de 1990."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie de type Akan avec systeme de chefferie hereditaire : le choix du roi (et des chefs) decoule d'un mecanisme de succession qui limite l'exercice du pouvoir aux membres d'une seule famille. Avant la colonisation, le souverain etait assiste de son conseil. La societe etait composee de trois castes : nobles, hommes libres et serviteurs. Le systeme reste influence par le modele Ashanti.",
+      "clanOrganization": "Organisation matrilineaire Akan en clans (abusua). Le systeme de succession des royaumes suit la ligne maternelle (de l'oncle au neveu ou de frere en frere selon les royaumes). Les sous-groupes Agni maintiennent leur identite clanique propre.",
+      "roleOfLineages": "La filiation matrilineaire determine la succession au trone et l'heritage des biens. Les droits fonciers sont importants : les Agni sont historiquement proprietaires forestiers, qui integrent les emigres (ex. Mossi) comme metayers avec partage de recoltes en faveur du proprietaire.",
+      "religiousAuthority": "Les Komian (feticheurs) detiennent le savoir occulte : ils enseignent aux rois, donnent des predictions et entrent en transes magico-religieuses. Ils sont regroupes en societes secretes. La religion traditionnelle Akan coexiste avec le christianisme et l'animisme."
+    },
+    "languages": {
+      "mainLanguage": "Anyi (Agni)",
+      "isoCodes": ["any"],
+      "dialects": [
+        "Agni-Ndenye",
+        "Agni-Sanwi",
+        "Agni-Moronou",
+        "Anyin du Ghana"
+      ],
+      "vehicularRole": "L'anyi est une langue du rameau Bia (Tano central) formant un continuum dialectal avec le Baoulé et apparentee au Nzema et au Sehwi. Il est parle par environ 1,5 million de locuteurs en Cote d'Ivoire et au Ghana (2017). Le francais est la langue officielle et d'administration en Cote d'Ivoire."
+    },
+    "culture": {
+      "majorRites": "Dot matrimoniale en trois parties : Bla-o-kale (aide financiere pour l'entretien de la future epouse), Adyia-tila (achat du trousseau) et Be-ti-sika (lien formel de la jeune femme a ses parents et promesse). Ceremonies d'accouchement difficile : la femme doit confesser ses infidelites pour sauver enfant et vie, avec pardon du mari requis. Festival de l'igname (Yam Festival) comme dans les autres royaumes Akan.",
+      "symbols": "Regalia royaux Akan : parasols, tabourets sacres, bijoux en or, epees et emblemes de chefferie. La soie et les pagnes traditionnels sont signes de statut noble.",
+      "artsAndMusic": "Artisanat royal en or (bijoux, regalia). Agriculture intensive : plantation de cacao, cafe, igname, plantain, manioc. Les Agni sont propriétaires de grandes exploitations forestières. Musique et danses ceremoniales Akan (Kete, Fontomfrom).",
+      "spiritualities": "Religion traditionnelle Akan avec culte des ancetres, veneration des tabourets sacres et pratiques divinatoires par les Komian. Animisme et croyances dans les forces naturelles. Christianisme repandu depuis les annees 1950 avec l'influence des Eglises evangeliques et pentecotistes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume du Sanwi (le plus puissant, fond depuis l'arrivee d'Amalaman Ano, centre sur Aboisso/Assinie). Royaume de l'Indenie (sur les bords de la Comoe, Abengourou). Royaume du Moronou (avec les Agni Mrofo et le Djuablin, Arrah/Bongouanou). Ces trois royaumes constituent le coeur territorial et politique des Agni en Cote d'Ivoire.",
+      "relationsWithNeighbors": "Contact avec les Europeens des le 17e siecle, les Agni etant le premier peuple ivoirien a commercer avec eux. Relations avec les Ashanti (heritage culture commun). Tensions foncières avec les communautes immigrees (Mossi, Dyula) integrees comme metayers. A partir de 1990, fracture sociale dans les grandes villes entre peuples forestiers et peuples de la savane emigres.",
+      "conflictsOrAlliances": "Migration depuis l'Ashanti au debut du 18e siecle apres tensions avec le royaume Ashanti. Resistance du Sanwi a la colonisation francaise jusqu'en 1969. Conflits fonciers contemporains lies a l'immigration.",
+      "diaspora": "Presence significative au Ghana (298 000 environ), ou les Agni/Anyin sont etablis en continuite ethnique et linguistique avec leurs voisins ivoiriens. Communautes agni dans les grandes villes ivoiriennes (Abidjan, Tiassale)."
+    },
+    "demography": {
+      "totalPopulation": 1280000,
+      "referenceYear": 2025,
+      "source": "Wikipedia FR (Agni) : 953 339 en Cote d'Ivoire, 298 000 au Ghana. Total environ 1 251 339. Estimation 2025 : environ 1 280 000.",
+      "distributionByCountry": [
+        { "country": "CIV", "population": 980000 },
+        { "country": "GHA", "population": 300000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia FR - Agnis (https://fr.wikipedia.org/wiki/Agni_(peuple))",
+      "Wikipedia EN - Anyin language (https://en.wikipedia.org/wiki/Anyin_language)",
+      "Ethnologue - Anyin (ANY) (https://www.ethnologue.com/language/any/)",
+      "DICE Missouri - Agni (Anyin) database (https://dice.missouri.edu/assets/docs/niger-congo/Agni.pdf)",
+      "Wikipedia EN - Kingdom of Gyaman - relations Anyi (https://en.wikipedia.org/wiki/Kingdom_of_Gyaman)"
+    ]
+  }
+}

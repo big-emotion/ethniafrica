@@ -1,0 +1,112 @@
+{
+  "id": "PPL_OROMO",
+  "nameMain": "Oromo",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH", "KEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Oromo",
+      "selfAppellation": "Oromoo",
+      "exonyms": [
+        "Galla (terme pejoratif colonial, abandonne)",
+        "Ilm Orma",
+        "Orma"
+      ],
+      "originOfExonyms": "Le terme Galla etait un exonyme pejoratif utilise par les populations ethiopiennes voisines et les colonisateurs europeens ; il est desormais abandonne. Le nom Oromo viendrait de Ilm Orma signifiant enfants d'Orma ou fils des hommes. Le terme Orma designe egalement un sous-groupe etabli au Kenya.",
+      "whyProblematic": "Le terme Galla etait insulant et a ete utilise pour minoriser le peuple oromo. Les Oromo preferent leur auto-designation Oromoo. L'appellation Galla a ete officiellement abandonnee apres la revolution de 1974.",
+      "contemporaryUsage": "Oromo est l'appellation officielle dans tous les contextes. La langue est appelee Afaan Oromoo (bouche des Oromo). La region qui leur est dediee s'appelle Oromia.",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "Couchitique oriental",
+      "historicalRegion": "Oromia (centre, est et sud de l'Ethiopie) ; nord du Kenya (comte de Marsabit, Isiolo, Tana River)",
+      "currentCountries": ["ETH", "KEN"]
+    },
+    "ethnicities": [
+      "Borana (Booranaa) : semi-pasteurs du sud de l'Oromia et du nord du Kenya",
+      "Barentu (Barentoo / Baraytuma) : est de l'Oromia, Hararghe, Arsi, Bale",
+      "Arsi : hautes terres du centre-est",
+      "Guji : sud de l'Oromia",
+      "Mecha (Wollega) : ouest de l'Oromia",
+      "Tulama (Shewa) : centre de l'Oromia",
+      "Raya Oromo : nord, frontiere Tigray-Amhara",
+      "Orma : Kenya, vallee du Tana River",
+      "Gabra : nord du Kenya, zone de Marsabit",
+      "Sakuye : nord du Kenya"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Oromo sont un peuple couchitique originaire du sud de l'Ethiopie, entre le lac Chew Bahir et le lac Chamo, ainsi que du nord du Kenya. Les premieres mentions historiques documentees remontent a la carte mappemonde de Fra Mauro (1460), qui cite une riviere Galla au sud de l'Awash. Des preuves historiques temoignent de leur presence dans les hautes terres meridionales des le XVe siecle, avec des interactions avec des groupes nilo-sahariens.",
+      "formationPeriod": "L'identite oromo s'est affirmee lors des grandes migrations du XVIe siecle (appelees la Grande Expansion Oromo), qui les ont conduits des plaines du sud vers les hautes terres centrales d'Ethiopie. La division fondatrice en deux branches, Borana (Booranaa) et Barentu (Baraytuma), structurait deja le groupe avant les migrations.",
+      "migrationRoutes": [
+        "Expansion depuis les plaines du sud (lac Chew Bahir, lac Chamo) vers les hautes terres centrales d'Ethiopie (XVIe siecle)",
+        "Borana vers l'ouest du Rift (Shewa, Illubabor, Welega)",
+        "Barentu vers l'est (Arsi, Bale, Hararghe, Wollo)",
+        "Dispersion vers le nord du Kenya (Borana, Orma, Gabra, Sakuye)"
+      ],
+      "historicalSettlementZones": [
+        "Region Oromia (Ethiopie) : hautes terres centrales, est et sud",
+        "Nord du Kenya : comte de Marsabit, Isiolo, Tana River",
+        "Harar et ses environs (est de l'Ethiopie)",
+        "Zone de transition avec la region Amhara (Raya, Wollo)"
+      ],
+      "unificationsOrDivisions": "Les Oromo sont divises en deux grandes branches fondatrices : Borana (ouest du Rift) et Barentu (est). Ces branches se subdivisent en nombreux clans. Des royaumes Oromo se sont formes dans la region Gibe a partir du XVIe siecle (Gera, Gomma, Gumma, Jimma, Limmu-Ennarea) en abandonnant le systeme gadaa pastoral au profit d'une monarchie. La dynastie Yejju (1784-1853) a exerce un controle quasi total sur l'Ethiopie de l'epoque.",
+      "externalInfluences": "Guerre ethiopo-adalienne (1529-1543) qui a cree un vide de pouvoir propice a l'expansion oromo. Islamisation progressive de certains groupes (Oromo du Wollo, Jimma). Christianisation (Oromo de Shewa). Conquete par Menelik II (annees 1880). Regime Haile Selassie (centralisation, expulsions). Revolution de 1974. Regime EPRDF (1991-2019) et politique de federation ethnique. Sous le Premier ministre Abiy Ahmed (Oromo), l'Oromia connait une affirmation culturelle et politique nouvelle.",
+      "majorHistoricalEvents": "Grandes migrations du XVIe siecle. Formation des royaumes Gibe (Jimma Abba Jifar, 1830-1932). Hegemonie de la dynastie Yejju (1784-1853). Conquete par Menelik II et installation de garnisons neftenya dans les regions resistantes (Arsi). Fondation de l'Association Mecha et Tulama (1963, organisation identitaire oromo). Creation de la region Oromia dans le cadre de la constitution federale (1995). Inscription du systeme Gadaa au patrimoine immateriel de l'UNESCO (2016). Arrivee au pouvoir d'Abiy Ahmed, Premier ministre oromo (2018). Assassinat du chanteur Hachalu Hundessa et soulèvement de 2020."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le systeme Gadaa est le fondement de la gouvernance oromo traditionnelle : systeme democratique egalitaire bases sur des classes d'age (luba), regulant la vie politique, economique, sociale et religieuse. Le chef elu (Abbaa Gadaa) gouverne pour une periode de 8 ans. Inscrit au patrimoine immateriel de l'UNESCO en 2016. Les organes du Gadaa comprennent le Conseil Gadaa (coordonne l'Irreecha), l'Assemblee generale Gadaa (gumi gayo, fonction legislative) et l'Assemblee Qallu (fonction religieuse).",
+      "clanOrganization": "Organisation clanique elaboree avec stratification sociale : nobles (Borana), Gabbaro/dhalatta (producteurs), artisans (forgerons/Tumtu, potiers/Fuga, tanneurs/Faqi, tisserands/Semmano, apiculteurs/Gagurtu) et chasseurs (Watta). Les clans islamises de Jimma connaissent une stratification professionnelle similaire.",
+      "ageClassSystems": "Le systeme Gadaa est organise en cinq classes d'age (luba), chaque classe ayant 8 ans. Les hommes dont les peres sont membres progressent a travers une serie de grades avant d'acceder au pouvoir. Le calendrier lunisolaire oromo (sans semaines, bases sur les etoiles et la lune, nouvel an en octobre) est intrinsequement lie aux cycles du Gadaa.",
+      "roleOfLineages": "Les lignages determinent l'appartenance aux classes du Gadaa, les droits politiques et la succession. Le bokkuu (symbole du pouvoir de l'Abbaa Gadaa) passe a son epouse en cas de deces, soulignant l'importance de la famille lignagere.",
+      "religiousAuthority": "Le Qallu est le chef religieux supreme dans la tradition Waaqeffannaa. L'Abbaa Muuda etait le grand pretre de Waaqeffannaa, residant a Madda Walaabuu. Les pelerinages au muuda maintenaient l'unite morale de la nation oromo jusqu'en 1900 (interdiction par Menelik II)."
+    },
+    "languages": {
+      "mainLanguage": "Afaan Oromoo (oromo)",
+      "isoCodes": ["orm", "gaz", "gax", "hae", "orc"],
+      "dialects": [
+        "West Central Oromo (Mecha/Wollega, Raya, Wello, Tulema/Shewa) — ISO gaz",
+        "Boranaa-Arsii-Gujii Oromo (sud) — ISO gax",
+        "Eastern Oromo (Harar) — ISO hae",
+        "Orma (Munyo, Waata/Sanye, Kenya) — ISO orc"
+      ],
+      "vehicularRole": "L'oromo est la langue la plus parlee d'Ethiopie (plus de 35% de locuteurs natifs, environ 40 millions en Ethiopie) et la quatrieme langue la plus parlee d'Afrique. Langue officielle de la region Oromia et langue d'enseignement primaire dans plusieurs regions. Ecrit en alphabet latin (Qubee) depuis 1991. Environ 500 000 locuteurs dans le nord du Kenya."
+    },
+    "culture": {
+      "majorRites": "Irreecha : festival de thanksgiving annuel celebre sur les rives des lacs (notamment lac Arsadi a Bishoftu) pour remercier Waaqa (Dieu) de ses bienfaits et prier pour la paix. Inscrit au patrimoine culturel national. Le Muuda : ancien pelerinage pan-oromo tous les 8 ans au sanctuaire d'Abbaa Muuda a Madda Walaabuu. Rites de passage lies au systeme Gadaa : passage entre classes d'age marque par des ceremonies collectives. Circumcision masculine. Mariages organises selon les regles claniques. Rites funeraires specifiques selon les traditions locales.",
+      "symbols": "Bokkuu : baton de commandement symbolisant le pouvoir de l'Abbaa Gadaa, porte par les hommes. Siqqee : baton porte par les femmes, symbole de la dignite feminine et de la justice. Odaa : arbre sacre (ficus) sous lequel se tenaient les assemblees gadaa et les elections. Cafe : les Oromo sont les premiers cultivateurs du cafe (Coffea arabica), symbole de leur heritage culturel.",
+      "artsAndMusic": "Musique traditionnelle : chants azmari (poetes-musiciens itinerants), chants rituels de l'Irreecha (Galaanee Bulbulaa, entre autres artistes modernes engages). Instruments : krar (lyre a cinq cordes), masinko (violon monocorde), tambours, flutes. Danse collective lors de l'Irreecha et des ceremonies gadaa. Poesie orale des hayyuu (sages-orateurs) transmettant l'histoire et les lois. Art de la poterie, du cuir et du tissage. Gastronomie : foon akaawwii (viande hachee rotie), maarqaa (bouillie), kocho (galette d'ensete), dadhii (hydromel), buna (cafe).",
+      "spiritualities": "Waaqeffannaa : religion traditionnelle monotheiste oromo, centrée sur Waaqa (Dieu createur, Ciel noir, Ciel blanc). Environ 3% de pratiquants declares (recensement 2007 : 887 773). Liee au systeme Gadaa et au calendrier lunisolaire. Environ 40-45% de chretiens (orthodoxe ethiopien 30%, protestant 18%, catholique minoritaire) et 50-55% de musulmans sunnites selon les estimations 2016. Syncrétisme frequent entre pratiques waaqeffannaa et religions abrahamiques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaumes de la region Gibe (XVIe siecle) : Gera, Gomma, Gumma, Jimma Abba Jifar (1830-1932), Limmu-Ennarea. Dynasties oromo dans l'empire ethiopien : Yejju (1784-1853, regents de facto sur Begemder et Gojjam), Warra Himano (1580-1916, Wollo islamise). Royaume d'Illubabor. Les Oromo ont occupe de hautes fonctions dans l'empire ethiopien ; l'oromo fut brievement langue officielle sous Iyoas Ier.",
+      "relationsWithNeighbors": "Relations complexes avec les Amhara et Tigray (integration progressive par alliance et conquete). Commerce et alliances avec les Somali, Afar et Sidama. Tensions avec les Somali dans la region Ogaden-Harar. Relations avec les Nuer et Anuak dans l'ouest (Gambela). Au Kenya, coexistence avec les Somali, Turkana et Samburu dans les zones pastorales du nord.",
+      "conflictsOrAlliances": "Grande Expansion du XVIe siecle : conquete par les cavaliers gadaa des hautes terres centrales. Alliance de certains groupes avec Susenyos Ier. Resistance a la conquete de Menelik II (Arsi, Bale, annees 1880). Repression sous Haile Selassie. Creation de l'OLF (Front de Liberation Oromo, 1973). Insurrection de 2014-2018 contre le plan directeur d'Addis-Abeba. Crise politique de 2020 apres l'assassinat de Hachalu Hundessa.",
+      "diaspora": "Diaspora oromo en croissance dans les pays occidentaux (Etats-Unis, Canada, Europe) et en Afrique du Sud. L'OLF avait sa direction en exil pendant plusieurs decennies. Communautes oromo significatives en Egypte, Libye et Soudan. La diaspora a joue un role important dans la preservation de l'identite culturelle et politique oromo."
+    },
+    "demography": {
+      "totalPopulation": 42000000,
+      "referenceYear": 2025,
+      "source": "Recensement ethiopien CSA 2007 (25 488 344 ; 34,5% de la population). Estimations recentes : 41,5 millions soit 35,8% d'une population ethiopienne de 116 millions. Projection 2025 basee sur une croissance demographique d'environ 2,5% par an. Kenya : 656 636 (recensement kenyan, Borana, Gabra, Orma, Sakuye, Waata, Munyo Yaya).",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 41500000,
+          "note": "Region Oromia (principale), Harari, Dire Dawa, Zone Oromo d'Amhara, regions Afar et Benishangul"
+        },
+        {
+          "country": "KEN",
+          "population": 700000,
+          "note": "Comtes de Marsabit, Isiolo et Tana River ; groupes Borana, Gabra, Orma, Sakuye, Waata"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Oromo people. https://en.wikipedia.org/wiki/Oromo_people",
+      "Wikipedia EN — Oromo language. https://en.wikipedia.org/wiki/Oromo_language",
+      "Wikipedia EN — Waaqeffanna. https://en.wikipedia.org/wiki/Waaqeffanna",
+      "UNESCO — Gadaa System, inscribed 2016. https://www.unesco.org/archives/multimedia/document-4375",
+      "UNESCO ICH — Fichee-Chambalaalla (contexte Cushitique regional). https://ich.unesco.org/en/RL/fichee-chambalaalla-new-year-festival-of-the-sidama-people-01054",
+      "SIL Ethnologue — Oromo (orm). https://www.ethnologue.com/language/orm/",
+      "Mekuria Bulcha — Oromia Irreecha Festival, Advocacy for Oromia, 2015. https://advocacy4oromia.org/irreechaa/oromias-irreecha-festival-a-revival-of-an-ancient-african-culture-an-attempt-to-understand-and-explain/",
+      "Joshua Project — Oromo, Borana in Ethiopia. https://joshuaproject.net"
+    ]
+  }
+}

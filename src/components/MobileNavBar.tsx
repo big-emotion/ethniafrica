@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { MobileMenu } from "./MobileMenu";
-import { Language } from "@/types/ethnicity";
+import { MobileMenu } from "@/components/layout/MobileMenu";
+import { Language } from "@/types/shared";
 import { getTranslation } from "@/lib/translations";
 import Image from "next/image";
 import Link from "next/link";

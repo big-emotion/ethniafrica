@@ -1,0 +1,84 @@
+{
+  "id": "PPL_RANGI",
+  "nameMain": "Rangi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Rangi",
+      "selfAppellation": "Valangi",
+      "exonyms": ["Warangi (forme swahili)", "Irangi", "Langi", "Wairangi"],
+      "originOfExonyms": "Warangi est la forme swahili avec le prefixe Wa- (peuple). En anglais les prefixes sont omis, donnant Rangi. Irangi designe aussi la region historique (Kondoa Irangi). Le nom Langi est utilise dans certaines sources linguistiques.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Rangi et Warangi sont les termes courants en Tanzanie. Valangi est la forme en langue propre. Le terme Irangi persiste pour designer la region et les peintures rupestres de Kondoa Irangi.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu a heritage mixte Bantu-Couchitique, branche F (Guthrie F.33), groupe Kati",
+      "historicalRegion": "District de Kondoa, region de Dodoma, centre de la Tanzanie",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Valangi", "Rangi"],
+    "origins": {
+      "ancientOrigins": "Les Rangi sont un peuple bantu a heritage mixte : ils ont integre des elements des populations couchitiques (Alagwa, Burunge) deja presentes dans la region de Kondoa avant leur arrivee. La plupart des traditions orales rangi affirment que leurs ancetres venaient du nord (Ethiopie, Soudan), refletant l'heritage couchitique. D'autres traditions bantu evoquent une origine occidentale. Cette dualite correspond a la fusion d'immigrants bantu de l'ouest et de populations couchitiques locales.",
+      "formationPeriod": "Formation comme groupe ethnique distinct debattue : certaines sources suggerent environ 300 apr. J.-C., d'autres situent la formation entre 1500 et 1700. La fusion Bantu-Couchitique semble s'etre consolidee entre le XIVe et le XVIIe siecle dans la vallee de Haubi.",
+      "migrationRoutes": [
+        "Ethiopie-Soudan vers le sud (tradition orale dominante)",
+        "Migrations bantu de l'ouest (tradition orale secondaire)",
+        "Etablissement progressif dans la region de Kondoa via le district de Bahi"
+      ],
+      "historicalSettlementZones": [
+        "District de Kondoa, region de Dodoma (territoire central)",
+        "Haubi (lieu d'origine selon la tradition orale, ou l'eau ne tarit pas)",
+        "Vallee de Haubi dans les hauts plateaux",
+        "Villages de Kidoka, Bereko, Kolo, Mondo, Pahi (le long de la route principale Dodoma-Arusha)"
+      ],
+      "unificationsOrDivisions": "Assimilation progressive des Alagwa et Burunge (peuples couchitiques) et des Nyaturu (bantu voisins) par les Rangi. Les Rangi sont devenus le groupe dominant du district de Kondoa, au point que les Alagwa ont souvent ete assimiles a eux dans les recits coloniaux. Les Rangi ont aussi fonde des colonies au nord (ancetres des Wabugwe actuels en cherchant du sel vers Magugu).",
+      "externalInfluences": "Influences islamiques a partir du milieu du XIXe siecle via les chasseurs d'ivoire et les marchands d'esclaves arabes transitant par Kondoa. Premiere mosquee en 1885 a Kondoa. Arrivee des premiers pretres catholiques (italiens) en 1907. En 1935-1940, conversion collective au catholicisme des Rangi des hauts plateaux de Haubi. Influence coloniale allemande (Baumann, 1895) puis britannique.",
+      "majorHistoricalEvents": "Kondoa est devenu un centre administratif majeur depuis 1889. Le chef paramount Salim (probablement bilingue rangi-alagwa) s'est converti a l'islam et a collabore avec les Britanniques pendant la Premiere Guerre mondiale. Le site de peintures rupestres de Kondoa Irangi (Kolo) est classe au Patrimoine mondial de l'UNESCO (2006). La region fut un noeud de la Grande Route du Nord (Cape Town-Le Caire)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Gouvernance par les anciens (elders) et organisation clanique. Des chefs locaux (chefferies) ont emerge, comme le chef paramount Salim au debut du XXe siecle. Les anciens jouent un role cle dans le leadership et la resolution des conflits.",
+      "clanOrganization": "Organisation en clans dont les origines refletent la diversite : clans d'origine couchitique (anciens Alagwa et Burunge assimiles), clans d'origine bantu (Nyamwezi, Nyaturu) et clans autochtonement rangi. Cette diversite est refletee par les origines variees des personnes s'identifiant comme Rangi.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignes de descendance (patrilineaires predominantes) organisent la transmission des terres et des roles claniques. La multilinearite est presente du fait de l'assimilation de groupes matrilineaires alagwa.",
+      "religiousAuthority": "Anciens et rituels de la foret sacree de Haubi (lieu d'initiation traditionnel, tres redoute et protege). Les chefs religieux dirigent des ceremonies melant islam, catholicisme et croyances traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Kilangi (Rangi)",
+      "isoCodes": ["lag"],
+      "dialects": [
+        "Irangi ya Juu (Rangi des Hauts Plateaux)",
+        "Irangi ya Chini (Rangi des Basses Terres)",
+        "variantes de Bereko, Kolo, Haubi, Mondo, Kondoa"
+      ],
+      "vehicularRole": "Le swahili est la langue nationale vehiculaire, utilisee a l'ecole, au commerce et dans les echanges inter-communautaires. Le rangi est utilise presque exclusivement dans les villages. Environ 90% des Rangi parlent le swahili avec divers niveaux de maitrise."
+    },
+    "culture": {
+      "majorRites": "Ceremonies d'initiation dans la foret sacree de Haubi (lieu tres redoute). Sacrifices et propiciations ancestrales (tambiko, terme partage avec d'autres peuples Ruvu). Syncrethisme marque : pratiques islamiques ou catholiques combinant avec les croyances traditionnelles (veneration des ancetres, sorcellerie, divination). Fabrication de poteries en argile, artisanat caracteristique des femmes rangi.",
+      "symbols": "La foret sacree de Haubi et la source d'eau perenne (sens du nom Haubi : l'endroit ou l'eau ne tarit pas) sont les symboles fondateurs de l'identite rangi. Le calendrier traditionnel est associe aux cycles agricoles et aux observations astronomiques.",
+      "artsAndMusic": "Poteries en argile (specialite des femmes rangi, vendues sur les marches locaux). Le systeme de calendrier rangi est unique en Tanzanie centrale : le Kilangi possede un systeme de denomination du temps propre integrant le passe proche, le passe distant, le futur immediat et le futur general, refletant une perception sophistiquee du temps. Les Rangi sont reconnus pour leur architecture traditionnelle en terre.",
+      "spiritualities": "Islam sunnite (rite Shafi) est la religion de plus de 80% des Rangi, introduit par les marchands arabes au XIXe siecle. Catholicisme chez 7% (principalement a Haubi et Kondoa). Croyances traditionnelles persistantes : monde surnaturel influencant toutes les activites, sacrifices, sorcellerie, et initiation dans la foret sacree de Haubi. Syncrethisme tres repandu."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies locales sans royaume centralise. Chef paramount Salim au debut du XXe siecle, figure billingue (rangi-alagwa), fut un acteur politique majeur sous la colonisation britannique.",
+      "relationsWithNeighbors": "Assimilation progressive des Alagwa et Burunge. Relations avec les Nyaturu (bantu, frontieres a l'ouest). Contacts commerciaux avec les marchands arabes-swahili de Kondoa depuis le XIXe siecle. Les Rangi etaient le groupe le plus nombreux de la region de Kondoa a l'arrivee des Europeens.",
+      "conflictsOrAlliances": "Premiere mention europeenne par Baumann (1895). Les Alagwa etaient consideres inamicaux par les Europeens du XIXe siecle, contrairement aux Rangi. Les peintures rupestres de Kolo (site de Kondoa Irangi) ont attire des explorateurs et chercheurs depuis le XIXe siecle.",
+      "diaspora": "Communautes rangi importantes a Arusha et Dar es Salaam, resultant de migrations economiques rurales-urbaines."
+    },
+    "demography": {
+      "totalPopulation": 880000,
+      "referenceYear": 2022,
+      "source": "Wikipedia – Rangi people, 2022 (estimation 880 000) ; Joshua Project estime 463 000 locuteurs Rangi en 2025 ; Rangi language Wikipedia : 270 000 a 410 000 locuteurs",
+      "distributionByCountry": [{ "country": "TZA", "population": 880000 }]
+    },
+    "sources": [
+      "Rangi people – Wikipedia (https://en.wikipedia.org/wiki/Rangi_people)",
+      "Rangi language – Wikipedia (https://en.wikipedia.org/wiki/Rangi_language)",
+      "Rangi in Tanzania – Joshua Project (https://www.joshuaproject.net/people_groups/14519)",
+      "Exploring contact in Rangi- and Alagwa-speaking communities – Gibson & Mous, LHEAF 2024 (https://lheaf.org/wp-content/uploads/2024/04/gibsonmous_exploring-contact-in-rangi-and-alagwa_lheaf.pdf)",
+      "Why Rangi Christians Continue to Practice African Traditional Religion – Cox, DIU 2007 (https://diu.edu/documents/gialens/Vol2-3/Cox-Why-Rangi-Christians-Practice-ATR.pdf)",
+      "Rangi of Tanzania – Pray Africa (https://prayafrica.org/project/rangi-of-tanzania/)",
+      "Rangi language and alphabet – Omniglot (https://www.omniglot.com/writing/rangi.htm)",
+      "Tanzania and the Rangi – Africa Inland Mission Europe, 2023 (https://eu.aimint.org/resources/tanzania-and-the-rangi/)"
+    ]
+  }
+}

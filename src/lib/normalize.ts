@@ -2,7 +2,8 @@
  * Normalise une chaîne de caractères en enlevant les accents
  * pour permettre les comparaisons insensibles aux accents
  */
-export const normalizeString = (str: string): string => {
+export const normalizeString = (str: string | undefined | null): string => {
+  if (!str) return "";
   return str
     .toLowerCase()
     .normalize("NFD")
@@ -13,7 +14,10 @@ export const normalizeString = (str: string): string => {
  * Obtient la première lettre normalisée d'une chaîne
  * (sans accent, en majuscule)
  */
-export const getNormalizedFirstLetter = (str: string): string => {
+export const getNormalizedFirstLetter = (
+  str: string | undefined | null
+): string => {
+  if (!str) return "";
   // Gérer les noms qui commencent par des guillemets ou caractères spéciaux
   let firstChar = str.trim().charAt(0);
   if (firstChar === '"') {

@@ -1,0 +1,82 @@
+{
+  "id": "PPL_SUMBWA",
+  "nameMain": "Sumbwa",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Sumbwa",
+      "selfAppellation": "Wasumbwa",
+      "exonyms": ["Sisumbwa", "Lusumbwa", "Kisumbwa"],
+      "originOfExonyms": "Sisumbwa et Lusumbwa sont les formes bantoues prefixees de l'ethnonyme; Kisumbwa est le nom swahili de la langue. Ces variantes designent la meme communaute selon le contexte linguistique.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Sumbwa est utilise officiellement en Tanzanie pour designer ce groupe ethnique et sa langue. Kisumbwa est employe par les locuteurs swahili pour nommer la langue.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu du Centre-Tanzanie",
+      "historicalRegion": "Nord-Ouest de la Tanzanie (region de Shinyanga, Geita, Kagera)",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Sumbwa"],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale, les Sumbwa sont originaires de la partie occidentale de la Tanzanie. Ils auraient migre vers le nord-centre du pays ou ils ont conquis les populations locales et etabli leur propre chefferie. Comme groupe bantou, leurs ancetres font partie de la grande migration bantoue depuis le Bassin du Congo.",
+      "formationPeriod": "Periode precoloniale, formation de chefferies autonomes avant le XIXe siecle",
+      "migrationRoutes": [
+        "Depuis l'ouest de la Tanzanie vers les districts de Bukombe, Kahama et Geita (nord-centre du pays)"
+      ],
+      "historicalSettlementZones": [
+        "District de Bukombe (region de Geita)",
+        "District de Kahama (region de Shinyanga)",
+        "District de Biharamulo (region de Kagera)",
+        "District d'Urambo (region de Tabora)"
+      ],
+      "unificationsOrDivisions": "Organisation en chefferies independantes. Le chef principal detient l'autorite politique, relayee par des chefs de district et des chefs de village.",
+      "externalInfluences": "Contacts avec les Nyamwezi et les Sukuma voisins. Influence arabe et swahili au XIXe siecle via les routes caravanieres. Influence missionnaire catholique a partir de 1891 avec les Peres Blancs (mission d'Ushirombo).",
+      "majorHistoricalEvents": "En 1891, les Peres Blancs fondent une mission a Ushirombo, introduisant le christianisme catholique dans la region. Au XXe siecle, les Sumbwa s'integrent progressivement a l'economie coloniale via la culture du coton."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies. Le chef (mwene) est l'autorite supreme; le titre peut etre achete ou est reserve aux membres de la famille chiefficale. Les chefs de district relaient le pouvoir, supervises par les chefs de village (wanyapara). Le successeur est choisi parmi les fils du chef par les favoris de celui-ci.",
+      "clanOrganization": "Organisation clanique avec systeme de rang. Les biens considerables trouves appartiennent au chef; lors d'une chasse a l'elephant, une defense revient au chef.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Transmission patrilineaire de l'heritage; l'aine agit comme administrateur pour ses freres cadets mineurs. La parente la plus proche assure la vengeance en cas de meurtre.",
+      "religiousAuthority": "L'autorite religieuse est liee au chef, qui effectue des sacrifices aux ancetres lors de periodes rituelles (mois de Kwera). Les Sumbwa pratiquent le culte des ancetres avec des autels simples formes de poteaux en bois."
+    },
+    "languages": {
+      "mainLanguage": "Kisumbwa (Sumbwa)",
+      "isoCodes": ["suw"],
+      "dialects": [],
+      "vehicularRole": "Le swahili est la langue vehiculaire nationale utilisee dans les echanges entre groupes. Le kisumbwa est classe 25e sur 150 langues tanzaniennes (Tanzania Language Atlas, 2009). Il coexiste avec le nyamwezi langue voisine."
+    },
+    "culture": {
+      "majorRites": "Culte des ancetres avec offrandes regulieres aux esprits des defunts. Ceremonies de naissance avec peinture corporelle sur le bebe et les parents. Vengeance de sang comme pratique traditionnelle de justice. Celebrations agricoles liees aux recoltes de sorgho, mil et coton.",
+      "symbols": "Le chef porte des insignes distinctifs: un coquillage rond dans les cheveux, un bracelet en tendons de lion et deux bracelets de cuivre. Les autels des ancetres sont des poteaux de bois plantes dans la terre.",
+      "artsAndMusic": "La danse traditionnelle mulekule est la danse emblematique des Sumbwa. Le tambour est l'instrument principal de musique dans toute la region d'Unyamwezi dont les Sumbwa font partie.",
+      "spiritualities": "Religion traditionnelle centree sur le culte des ancetres: les esprits influencent uniquement leurs propres descendants. Syncretisme notable entre la religion traditionnelle, le christianisme catholique (majoritaire depuis plus d'un siecle) et l'islam (minoritaire). Les esprits ancestraux peuvent punir les vivants en rendant le betail malade ou en les rendant fous s'ils ne sont pas honores."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies autonomes. La chefferie principale est centree sur le district de Bukombe. Les Sumbwa ont conquis les populations locales lors de leur migration et etabli leurs propres chefferies.",
+      "relationsWithNeighbors": "Relations avec les Nyamwezi (langue parente), les Sukuma (groupe dominant de la region de Shinyanga) et les Haya (region de Kagera). Coexistence pacifique decrite par les sources missionnaires.",
+      "conflictsOrAlliances": "Les Sumbwa ont conquis les populations locales lors de leur etablissement selon la tradition orale. Integres dans les reseaux commerciaux regionaux relies aux routes caravanieres vers la cote.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 626000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 626000,
+          "note": "Tanzanie - districts de Bukombe, Kahama, Geita, Biharamulo, Urambo"
+        }
+      ]
+    },
+    "sources": [
+      "Sumbwa people – Wikipedia EN (https://en.wikipedia.org/wiki/Sumbwa_people)",
+      "Sumbwa language – Wikipedia EN (https://en.wikipedia.org/wiki/Sumbwa_language)",
+      "Sumbwa in Tanzania – Joshua Project 2025 (https://joshuaproject.net/people_groups/15120)",
+      "Sumbwa – University of Missouri Ethnographic Survey (https://dice.missouri.edu/assets/docs/niger-congo/Sumbwa.pdf)",
+      "Sumbwa – Glottolog 5.3, code sumb1240 (https://glottolog.org/resource/languoid/id/sumb1240)",
+      "Bantu, Central-Tanzania People Cluster – Joshua Project 2025 (https://www.joshuaproject.net/clusters/341)"
+    ]
+  }
+}

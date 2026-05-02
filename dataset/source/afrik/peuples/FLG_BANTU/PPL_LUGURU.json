@@ -1,0 +1,94 @@
+{
+  "id": "PPL_LUGURU",
+  "nameMain": "Luguru",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Luguru",
+      "selfAppellation": "Waluguru",
+      "exonyms": [
+        "Ruguru",
+        "Waluguru",
+        "Lugulu",
+        "Rugulu",
+        "Kami (sous-groupe oriental)"
+      ],
+      "originOfExonyms": "Waluguru signifie en swahili 'gens des montagnes' (uluguru: les montagnes). Ce nom derive directement de leur territoire ancestral, les monts Uluguru. Le terme Kami designe historiquement la branche orientale des Waluguru des plaines cotales, aujourd'hui consideree comme un sous-groupe Luguru plutot qu'un groupe independant.",
+      "whyProblematic": "La designation Kami (et le territoire Ukami sur les plus anciennes cartes publiees) peut preter a confusion avec un groupe distinct. Les Kami des plaines orientales possedent leur propre dialecte mais sont desormais integres ethniquement dans l'identite Waluguru.",
+      "contemporaryUsage": "Le terme Waluguru (pluriel swahili) est l'autodesignation courante. Luguru designe a la fois le peuple et leur langue (aussi appelee Kiluguru, Ikiruguru ou Kiruguru). Le terme est officiel en Tanzanie et utilise dans le recensement national.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu de la cote nord-est, sous-groupe Ruvu/Coastal Northeast",
+      "historicalRegion": "Monts Uluguru et plaines environnantes, Region de Morogoro, Tanzanie",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Waluguru", "Kami (sous-groupe)"],
+    "origins": {
+      "ancientOrigins": "Les Luguru sont un groupe Bantu composite forme de populations venues du sud de la region de Morogoro et d'autres zones cotieres. La region des monts Uluguru constitue leur territoire ancestral depuis environ 300 ans (vers 1700). Les premieres zones de peuplement continu se trouvent dans les secteurs occidentaux des monts Uluguru: Bunduki et Mgeta.",
+      "formationPeriod": "Environ 1700-1800 (XVIIIe siecle). Le groupe s'est constitue par la fusion de populations Bantu dispersees venues de differentes regions, adoptant progressivement une langue et une culture communes autour des monts Uluguru. Les contraintes geographiques (terrain montagneux, fortes pluies) ont favorise le developpement d'une identite culturelle partagee.",
+      "migrationRoutes": [
+        "Populations Bantu du sud de la region de Morogoro vers les monts Uluguru",
+        "Populations Bantu des plaines cotieres vers les versants montagneux",
+        "Expansion secondaire vers les plaines de Morogoro et la region de Pwani (Kibaha)"
+      ],
+      "historicalSettlementZones": [
+        "Monts Uluguru (secteurs de Bunduki et Mgeta, versants occidentaux, occupation la plus ancienne)",
+        "Versants nord et sud des monts Uluguru",
+        "District de Morogoro et district de Mvomero (Region de Morogoro)",
+        "District de Kilosa (Region de Morogoro)",
+        "District de Kibaha (Region de Pwani)"
+      ],
+      "unificationsOrDivisions": "La structure politique des Luguru n'a jamais connu d'unification centrale forte. Chaque matrilignage constituait une entite politique autonome. Occasionnellement, de grands faiseurs de pluie (comme Kingalu) ont etendu leur influence sur plusieurs groupes. Les Britanniques ont impose une Native Authority unifiee dans les annees 1920, regroupant deux sultans sous un seul sultan en 1936, structure abolie en 1962 apres l'independance tanzanienne.",
+      "externalInfluences": "Au milieu du XIXe siecle, des raiders armes conduits par un roi Zigula nomme Kisabengo fond un camp fortifie (Simbamwene) a l'emplacement actuel de Morogoro, esclavagisant des populations des plaines voisines. Les routes caravannieres nord-est vers les grands lacs (Victoria et Tanganyika) longent les versants nord et sud des monts Uluguru, apportant des contacts commerciaux et des perturbations. La colonisation allemande dans les annees 1890 reconnut Kisabengo et restructura l'autorite locale. La colonisation britannique etablit la Native Authority en 1920.",
+      "majorHistoricalEvents": "XIXe siecle (milieu): fondation de Simbamwene par Kisabengo (roi Zigula) pres de Morogoro, traite d'esclaves et de caravanes. 1890s: conquete allemande, introduction d'akidas (administrateurs). 1920: creation de la Native Authority britannique sous deux sultans. 1936: unification sous un seul sultan avec un sous-sultan. 1961-1962: independance tanzanienne, suppression de toute chefferie traditionnelle."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation politique decentralisee basee sur le matrilignage. Chaque lignage local constituait une entite politique autonome. Il n'existait pas d'organisation politique depassant le niveau du lignage, a l'exception de rares faiseurs de pluie influents (Chamilandege ou Sengwa) qui etendaient leur autorite supra-lignagere. La Native Authority coloniale britannique (1920-1962) a impose une structure centralisee temporaire.",
+      "clanOrganization": "Plus de 50 clans matrilineaires exogames parmi les Luguru, appeles Lukolo, Lukero et Kungugo. Ces clans ne sont pas des entites proprieteraires de terres, mais leurs histoires et coutumes les associent a des regions generales des monts Uluguru. Certains clans sont lies par des relations rituelles et de plaisanterie (watani). Environ 800 lignages matrilineaires identifies, chacun associe a une zone fonciere specifique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le matrilignage est l'unite fondamentale politique, sociale et fonciere. Chaque lignage a des droits inalienables sur des terres specifiques. Le chef de lignage (mwenye mlunga) supervise la distribution des terres, organise les ceremonies propitiatoires, gere les conflits fonciers et detient les insignes du lignage (stool/mkunga, hache/mambaza, chapeau/fia, bracelet/mhande, baton/tenge, tambour). Les lignages sont classes par senioritie en trois niveaux: tombo dwkuru (grand sein), tombo dukati (sein moyen), tombo dudogo (petit sein).",
+      "religiousAuthority": "Le chef de lignage matrilineaire dirige les rituels de propitiation des esprits ancestraux (kutambika). Des faiseurs de pluie (dont le plus renomme portait le nom de Kingalu) exercaient une autorite religieuse reconnue au-dela de leur propre groupe, parfois par des peuples voisins."
+    },
+    "languages": {
+      "mainLanguage": "Luguru (Kiluguru)",
+      "isoCodes": ["ruf"],
+      "dialects": [
+        "Chileya (variante orientale, parfois associee aux Kami)",
+        "variantes dialectales regionales entre versants nord, sud, est et ouest des monts Uluguru"
+      ],
+      "vehicularRole": "Le Luguru (aussi appele Ikiruguru, Kiluguru, Kiruguru, Ruguru, Lugulu) est la langue maternelle d'environ 1,500,000 locuteurs. Il appartient au sous-groupe Ruvu (Bantu de la cote nord-est), linguistiquement proche du Zaramo mais non pleinement intercomprehensible. La langue est vigoureuse et transmise entre generations. Le swahili sert de vehiculaire national, l'anglais dans les contextes officiels."
+    },
+    "culture": {
+      "majorRites": "Initiation feminine (kumbi): confinement d'un an ou plus apres la premiere menstruation, enseignement de savoirs rituels et sexuels, ceremonies de sortie (ngoma ya tumi ou kuvunja ungo, puis ngoma mwikiro). Initiation masculine: rasage, confinement, enseignement par un specialiste (muhanga), emerge sous un nouveau nom (konghongo, kukula, lusona). Naissance (kulawa kunzi): ceremonie du septieme jour, rasage, onction, attribution du nom de l'enfant. Rites de premiere recolte (kuzirula ou kulimbua): le chef de lignage offre les premiers fruits aux ancetres. Rites funeraires sur sept jours, pombe ya tanga (huitieme jour) et pombe ya kihanza (quinzieme jour).",
+      "symbols": "Les insignes de lignage (mlunga) sont les symboles du pouvoir: stool (mkunga), hache (mambaza), chapeau (fia) et son bandeau (kilemba), bracelet de poignet (mhande), baton (tenge), tambour. Les bracelets lugenge portes apres les ceremonies. Les huts sakrees pour les ancetres (kibanda cha mizimu). Les bosquets sacres (lieux d'inhumation des ancetres et de propitiation).",
+      "artsAndMusic": "Les femmes Luguru fabriquent la poterie, tissent des nattes de sommeil et des paniers de graminee sauvage. Les deux sexes construisent les maisons. La maison traditionnelle est la msowge (ronde, en forme de ruche). Les mortiers et pilons en bois sont utilises pour preparer les cereales. La ngoma (musique/danse ceremoniale) accompagne les initiations et rituels importants.",
+      "spiritualities": "Croyance en un dieu supreme (Mulungu) peu immanent. La vie rituelle est centree sur la propitiation des esprits ancestraux (wazimu ou mizimu), notamment pour les pluies, la fertilite des cultures et la protection contre le malheur. Divination pour identifier les problemes et trouver des solutions. Exorcisme quand des esprits possedent des proches (en leur donnant leur nom). Amulettes (achetes chez les devins) contre la mauvaise chance et la sorcellerie. Medecines (kago) dans les champs contre le vol. Influence islamique dans les plaines (shetani: esprits malins). Les Luguru des montagnes sont majoritairement catholiques romains, ceux des plaines sont majoritairement musulmans."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaumes centralises dans la tradition Luguru. Les matrilignages constituaient des unites politiques independantes. Quelques faiseurs de pluie influents (Kingalu, le plus renomme) ont exerce une autorite informelle sur de larges zones. La Native Authority britannique (1920-1962) crea une structure politique centralisee temporaire sous deux sultans puis un seul, abolie a l'independance tanzanienne.",
+      "relationsWithNeighbors": "Relations tensionnees avec les peuples du sud qui raidaient les montagnes avant la colonisation europeenne. Commerce avec les populations des plaines environnantes (vente de produits agricoles). Contacts avec les caravanes commerciales longeant les versants nord et sud des monts Uluguru vers les Grands Lacs. Les Zigula (sous Kisabengo) envahirent les plaines de Morogoro au XIXe siecle. Les Zaramo sont des voisins linguistiquement proches (sous-groupe Ruvu).",
+      "conflictsOrAlliances": "Razzias regulieres par les peuples du sud avant la colonisation. Tentative de Kisabengo (roi Zigula) de s'emparer des monts Uluguru au XIXe siecle, sembla echouer. Integration de certains groupes sous l'influence de Kisabengo via les routes caravannieres. Resistance passive a la centralisation coloniale britannique jusqu'a la reorganisation de 1936.",
+      "diaspora": "Presence Luguru a Dar es Salaam et dans d'autres centres urbains tanzaniens, notamment pour le travail saisonnier et la vente de produits agricoles (legumes, fruits, cafe). Les grandes exploitations de sisal dans les plaines autour des terres Luguru attirent des non-Luguru comme travailleurs."
+    },
+    "demography": {
+      "totalPopulation": 1542000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Luguru, Ruguru in Tanzania: 1,542,000). Wikipedia EN estime 692,000 en 2001. Britannica indique environ 1,2 million a la fin du XXe siecle. Lugha Yangu (2023): environ 1,500,000 locuteurs natifs.",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 1542000,
+          "note": "Principalement dans les districts de Morogoro, Mvomero, Kilosa (Region de Morogoro) et Kibaha (Region de Pwani)"
+        }
+      ]
+    },
+    "sources": [
+      "Luguru people – Wikipedia EN (https://en.wikipedia.org/wiki/Luguru_people)",
+      "Luguru – Encyclopaedia Britannica (https://www.britannica.com/topic/Luguru)",
+      "Joshua Project – Luguru, Ruguru in Tanzania, 2025 (https://joshuaproject.net/people_groups/print/13143/TZ)",
+      "Beidelman, T.O. – The Matrilineal Peoples of Eastern Tanzania (Zaramo, Luguru, Kaguru, Ngulu), Routledge/IAI, 1967 (https://www.taylorfrancis.com/books/mono/10.4324/9781315309613)",
+      "Luguru Language – Lugha Yangu, 2023 (https://lughayangu.com/luguru)",
+      "Luguru – Database of Religious History, 2022 (https://religiondatabase.org/browse/1323)"
+    ]
+  }
+}

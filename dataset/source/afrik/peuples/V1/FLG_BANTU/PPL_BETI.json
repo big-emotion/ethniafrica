@@ -1,0 +1,58 @@
+{
+  "id": "PPL_BETI",
+  "nameMain": "Béti",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CMR", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Béti",
+      "selfAppellation": "Béti",
+      "exonyms": ["« Beti-Pahouin » (catégorie coloniale englobante)"],
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantous forestiers du Cameroun",
+      "historicalRegion": "Plateau du Centre-Sud Cameroun",
+      "currentCountries": ["CMR", "GIN"]
+    },
+    "ethnicities": [
+      "Ewondo",
+      "Bulu",
+      "Fang du sud (éléments culturels)",
+      "Sous-groupes beti à préciser (Mvog, Essomba, etc.)"
+    ],
+    "origins": {
+      "ancientOrigins": "Expansion bantoue venue du sud-est camerounais.",
+      "migrationRoutes": ["Déplacements forestiers vers le centre et le sud."],
+      "unificationsOrDivisions": "Identité béti fédérant de multiples sous-groupes.",
+      "externalInfluences": "Contacts avec missions chrétiennes et colons allemands."
+    },
+    "organization": {
+      "clanOrganization": "Clans totémiques ; structures familiales étendues.",
+      "roleOfLineages": "Gardiens des terres et du patrimoine rituel.",
+      "religiousAuthority": "Spécialistes du culte aux ancêtres."
+    },
+    "languages": {
+      "dialects": ["Variantes beti et pahouin."],
+      "vehicularRole": "Langues importantes dans le sud du Cameroun."
+    },
+    "culture": {
+      "Rites": "Initiations et cultes des ancêtres.",
+      "Symboles": "Masques, sculptures, symboles lignagers.",
+      "Musiques": "Chants polyphoniques, tambours forêt.",
+      "Spiritualités": "Ancestralité, forêts sacrées."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies traditionnelles beti.",
+      "conflictsOrAlliances": "Alliances commerciales, tensions coloniales.",
+      "diaspora": "Présente dans les villes du Cameroun."
+    },
+    "demography": {
+      "totalPopulation": 5000000,
+      "source": "regroupement Beti dans peuple_demographie_globale.csv (à partir des sous-groupes Fang, Ewondo, Bulu)"
+    },
+    "sources": [
+      "Ethnologue",
+      "Études sur les Beti-Pahouin",
+      "Archives camerounaises"
+    ]
+  }
+}

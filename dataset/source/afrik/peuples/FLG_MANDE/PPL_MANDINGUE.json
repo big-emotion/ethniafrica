@@ -1,0 +1,160 @@
+{
+  "id": "PPL_MANDINGUE",
+  "nameMain": "Mandingue",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": [
+    "MLI",
+    "SEN",
+    "GMB",
+    "GIN",
+    "GNB",
+    "SLE",
+    "CIV",
+    "GHA",
+    "BFA"
+  ],
+  "content": {
+    "appellations": {
+      "mainName": "Mandingue",
+      "selfAppellation": "Mandinka / Mandiŋka / Malinke",
+      "exonyms": ["Mandingo", "Malinke", "Mandinka", "Manding", "Mandinko"],
+      "originOfExonyms": "Le terme Mandingo est une deformation europeenne de Mandinka, utilise par les Portugais des le 15e siecle pour designer ce peuple de la vallee du Gambie. Malinke designe principalement les Mandingues de Guinee et de Cote d'Ivoire. Manding est le terme generique utilise par les linguistes pour designer le groupe de langues apparentees.",
+      "whyProblematic": "Les termes Mandinka, Mandingo, Malinke et Manding sont parfois confondus. Mandingo a des connotations negatives dans certains contextes en raison de son usage pejoration dans la litterature coloniale et les sources liees a la traite des esclaves.",
+      "contemporaryUsage": "Mandinka est le terme courant en Gambie, au Senegal et en Guinee-Bissau. Malinke est prefere en Guinee et au Mali occidental. Manding est l'usage linguistique generalise. La communaute se designe elle-meme comme Mandinka ou Mandiŋka dans sa langue.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Manding occidental (branche Mande)",
+      "historicalRegion": "Manden (berceau du Mali entre Niger et Senegal, actuels Mali, Guinee, Gambie)",
+      "currentCountries": [
+        "MLI",
+        "SEN",
+        "GMB",
+        "GIN",
+        "GNB",
+        "SLE",
+        "CIV",
+        "GHA",
+        "BFA"
+      ]
+    },
+    "ethnicities": [
+      "Mandinka de Gambie (vallee du Gambie, groupe le plus nombreux en proportion nationale)",
+      "Mandinka du Senegal (Casamance et est du Senegal)",
+      "Malinke de Guinee (Haute-Guinee, Fouta-Djalon occidental)",
+      "Mandinka de Guinee-Bissau (nord du pays, presqu'ile de Bissau)",
+      "Jakhanke (sous-groupe clerical et lettré islamique, 13e siecle)",
+      "Donso (confrerie de chasseurs traditionnels, role spirituel et protecteur)",
+      "Jali / Griot (jalolu, caste des bardes et genealogistes, gardiens de la memoire orale)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Mandingues descendent des peuples mande qui vivaient dans le Manden, region situee entre le haut Niger et la vallee du Senegal. Leurs ancetres les plus anciens sont lies au Ghana Empire (Wagadu), fonde vers le 3e-8e siecle. La famille Camara (Kamara) est consideree comme la plus ancienne du Manden. Selon la tradition orale, les ancetres mythiques des Malinke et Bambara sont Kontron et Sanin, fondateurs de la confrairie des chasseurs.",
+      "formationPeriod": "L'identite mandingue distincte s'est forgee avec l'essor de l'Empire du Mali fonde par Soundiata Keita au 13e siecle. La tradition orale rapporte: Nous sommes originaires de Tombouctou... Tous les Mandinka vinrent du Mali au Kaabu. L'expansion vers l'ouest, menee par le general Tiramakhan Traore, consolida l'identite mandingue en Senegambie au 13e-14e siecle.",
+      "migrationRoutes": [
+        "Du Manden (Mali interieur) vers l'ouest: vallee du Gambie et Casamance (13e-14e siecle, sous Tiramakhan Traore)",
+        "Du Manden vers le sud-est: Guinee-Conakry et cotes atlantiques (Faran Kamara, fils du roi de Tabou)",
+        "Expansion commerciale vers la Cote d'Ivoire, le Ghana et le Burkina Faso via les reseaux dyula/dioula",
+        "Diaspora transatlantique: Senegambie vers Bresil, Caraibes, Amerique du Nord (traite negriere, 15e-19e siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Manden originel (Mali occidental, entre Niger et Senegal: Kangaba, Siby, Kita, Krina)",
+        "Vallee du Gambie (Gambie et Casamance senegalaise)",
+        "Kaabu (Guinee-Bissau actuelle et nord-ouest de la Guinee, 13e-19e siecle)",
+        "Haute-Guinee (Kankan, Siguiri, Mandiana)",
+        "Fouta-Djalon occidental (Guinee)"
+      ],
+      "unificationsOrDivisions": "L'Empire du Mali (13e-15e siecle) unifia les peuples mande sous une autorite centrale. L'effondrement de l'empire au 15e siecle fragmenta les Mandingues en de nombreux royaumes independants (Kaabu, etats de Senegambie, royaumes de Haute-Guinee). Les jihads peuls du 18e-19e siecle (Imamat du Fouta-Djalon, Empire de Samori Toure) provisirent de nouvelles conversions et reconfigurations politiques.",
+      "externalInfluences": "Introduction de l'islam via le commerce transsaharien (11e-14e siecle). Hajj de Mansa Musa (1324) qui consolida l'islam sunnite malikite. Guerres jihad des Peuls (Imamat du Fouta-Djalon, 18e siecle). Colonisation portugaise (15e siecle), puis britannique et francaise (19e-20e siecle). La traite atlantique des esclaves affecta massivement la Senegambie du 15e au 19e siecle.",
+      "majorHistoricalEvents": "Fondation de l'Empire du Mali par Soundiata Keita (vers 1235, bataille de Kirina). Expansion de l'empire vers l'ouest par Tiramakhan Traore (13e siecle). Hajj de Mansa Musa a La Mecque avec un immense cortege (1324), marquant l'apogee de l'empire. Fondation du Kaabu en Guinee-Bissau. Jihads peuls du Fouta-Djalon (18e siecle). Empire de Samori Toure (1878-1898). Incident de l'Amistad: des Mandingues parmi les captifs (1839). Independances du Mali (1960), Senegal (1960) et Gambie (1965)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe mandingue est organisee en villages (dugu) regroupes en confederations (kafu). Chaque village est dirige par le chef du lignage fondateur (dugu-tigi). Le conseil des anciens et du chef forme l'autorite locale. La cellule de base est le lu (famille etendue), dirige par son aine male (fa). Les confusions (kafu) regroupaient plusieurs villages sous un kafu-tigi. Societe fortement hierarchisee avec des castes hereditaires endogames.",
+      "clanOrganization": "Societe divisee en trois strates principales: les hommes libres (foro, agriculteurs et guerriers), les artisans et bardes (nyamolo: forgerons, cordonniers, potiers, griots), et les esclaves (jongo). Les castes sont strictement endogames: les mariages entre castes sont interdits. Les griots (jalolu) constituent une caste de bardes et genealogistes gardiens de la memoire historique.",
+      "ageClassSystems": "Rites de passage collectifs (kuyangwoo) pour les jeunes garcons entre 4 et 14 ans, incluant plusieurs semaines en brousse pour apprendre les responsabilites sociales. Les initie forment des classes d'age soudees par l'experience commune.",
+      "roleOfLineages": "Les lignages patrilineaires (kabiila) determinent l'appartenance sociale, les alliances matrimoniales et l'acces a la terre. Les families Keita (lignage royal de Soundiata) et Camara (plus ancienne famille du Manden) jouissent d'un prestige particulier. Le mariage est arrange et la polygynie est pratiquee (jusqu'a 4 epouses selon la loi islamique).",
+      "religiousAuthority": "Islam sunnite malikite predominant depuis le 14e-15e siecle. Les marabouts jouent un role central: ils fabriquent des amulettes (gris-gris) contenant des versets coraniques, consultent pour les decisions importantes, et assurent l'education religieuse. La confrairie des donso (chasseurs) maintient des pratiques animistes anterieures a l'islam (ceremonies liees aux esprits de la foret). Syncretisme islam-pratiques traditionnelles tres repandu."
+    },
+    "languages": {
+      "mainLanguage": "Mandinka (Mandinka kango)",
+      "isoCodes": ["mnk"],
+      "dialects": [
+        "Mandinka occidental (Gambie et Casamance): dialecte non-tonal sous influence wolof, usage majoritaire en Gambie",
+        "Mandinka oriental (Tilibo, Guinee-Bissau, Guinee, est du Senegal): system tonal plus conservateur, proche du Maninka et du Bambara",
+        "Mandinka du nord de la Gambie (rive nord): variante avec accent de hauteur au contact du wolof"
+      ],
+      "vehicularRole": "Le mandinka est l'une des principales langues de la Gambie (langue nationale et vehiculaire). En Guinee-Bissau, il est parle dans le nord du pays. Le manding (groupe dialectal incluant mandinka, bambara, dioula) est une des grandes langues vehiculaires d'Afrique de l'Ouest. Le mandinka s'ecrit en caracteres latins (officiel), arabes (ajami, usage traditionnel) et N'Ko (Guinee du nord-est). Plus de 15 millions de locuteurs de l'ensemble manding."
+    },
+    "culture": {
+      "majorRites": "Kuyangwoo (rite de passage masculin, age 4-14 ans): circoncision suivie de plusieurs semaines en brousse sous l'autorite des anciens; apprentissage des responsabilites et des valeurs communautaires; fete du village au retour. Niaka / Kuyungo (excision feminine, tres repandue, plus de 96% en Gambie selon l'UNICEF). Ceremonie de nomination du nouveau-ne au 8e jour de vie (taya), nomme en l'honneur d'un membre important de la famille. Mariage: remise de noix de kola aux anciens de la mariee, dot (bride-wealth), polygynie autorisee. Rites de pluie: sacrifice du taureau noir pour solliciter les pluies. Ceremonies de marabout pour les decisions importantes (guerison, voyages, protection).",
+      "symbols": "La kora (harpe-luth a 21 cordes, calebasse fendue tendue de peau de vache, cordes de fil de peche) est le symbole musical emblematique des Mandingues et de leurs griots. Les amulettes en cuir (gris-gris) contenant des versets coraniques sont des symboles de protection omniprésents. Les chaines en or evoquent la memoire des ancetres reduits en esclavage. Les masques et costumes des societes d'initiation symbolisent le lien avec les esprits.",
+      "artsAndMusic": "Les griots (jalolu, singulier jali) sont les gardiens de la tradition musicale et orale: ils chantent l'histoire des lignages, accompagnent les evenements importants (mariages, couronnements, funérailles) et jouent de la kora. La kora est l'instrument emblematique: 21 cordes, son resonateur est une calebasse coupee en deux et tendue de peau. Autres instruments: balafon (xylophone a calebasses), tambour djembe et ngoni (luth ancestral). La tradition du griot inclut l'epopee de Soundiata Keita, recitee et chantee lors des grandes occasions. L'artisanat comprend la sculpture sur bois, la poterie, le travail du cuir et la bijouterie en or et argent. Tissue (boubou, grand bou) teint a l'indigo.",
+      "spiritualities": "Islam sunnite malikite predominant (plus de 90% des Mandingues sont musulmans). Forte presence du maraboutisme: les marabouts fabriquent des amulettes (gris-gris) contenant des versets coraniques inscrits sur papier enferme dans des etuis en cuir. Ces amulettes protegent contre le mauvais oeil, la maladie, les accidents et les esprits malveillants. Le culte des esprits de la foret et de la nature (controles par les griots et les donso-chasseurs) coexiste avec l'islam. Ceremonies de pluie et sacrifices d'animaux. Le syncrétisme entre islam et pratiques animistes ancestrales est marque et socialement accepte."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Empire du Mali (13e-15e siecle), fonde par Soundiata Keita apres la bataille de Kirina (vers 1235): l'un des plus grands empires de l'histoire africaine, s'etendant de l'ocean Atlantique a Tombouctou et Gao. Mansa Musa (1312-1337), le souverain le plus celebre, effectua un hajj legendaire en 1324 avec 60 000 personnes et 12 tonnes d'or. Kaabu (Gabu): royaume fonde par les Mandingues en Guinee-Bissau actuelle (13e-19e siecle), decrit comme une federation de chefferies. Quatorze royaumes mandingues le long de la vallee du Gambie au debut du 19e siecle. Wassoulou: confederation de chefferies fondee par Samori Toure (1878-1898), dernier grand empire mandingue, defiant la colonisation francaise.",
+      "relationsWithNeighbors": "Relations complexes avec les Peuls (Fulani): conflits lors des jihads du Fouta-Djalon (18e-19e siecle), mais aussi metissages et alliances. Rivalite avec les Wolofs (Empire jolof) dans la vallee du Senegal. Integration et domination progressive des Soninkes, Toucouleurs et autres peuples mande dans les structures imperiales. Contacts commerciaux avec les Arabes et Berberes du Sahara via les routes transsahariennes. Relations avec les Portugais (15e siecle) puis Anglais et Francais lors de la colonisation.",
+      "conflictsOrAlliances": "Bataille de Kirina (vers 1235): victoire de Soundiata sur le roi Soumaoro Kante du Sosso. Jihads peuls du Fouta-Djalon (18e siecle): conversions forcees et conflits avec Kaabu. Guerres de Soninke-Marabout (Senegambie, 19e siecle): conflits entre Mandingues musulmans et traditionalistes. Resistance de Samori Toure a la colonisation francaise (1882-1898). Impact de la traite transatlantique: environ 33% des esclaves de Senegambie et de la cote guinéenne au 18e-19e siecle etaient Mandingues.",
+      "diaspora": "Diaspora transatlantique historique: des centaines de milliers de Mandingues deportes comme esclaves aux Ameriques (Bresil, Caraibes, sud des Etats-Unis) entre le 15e et le 19e siecle. Kunta Kinte (capture dans l'actuel Gambie, recit d'Alex Haley, Racines) est le symbole de cette diaspora. En Amerique, les Mandingues ont contribue aux cultures creoles du Bresil, des Antilles et du sud americain. Diaspora contemporaine dans les grandes villes d'Afrique de l'Ouest (Dakar, Abidjan, Conakry) et en Europe (France, Portugal, Espagne, Royaume-Uni) et en Amerique du Nord."
+    },
+    "demography": {
+      "totalPopulation": 15000000,
+      "referenceYear": 2025,
+      "source": "Wikipedia (Mandinka people, 2024): environ 15 millions. Joshua Project (2025): 2 473 600 pour la seule denomination Mandinka stricte (Gambie 1 157 000, Senegal 1 080 000, Guinee-Bissau 205 000, Benin 15 000, Ghana 6 600, USA 10 000). La population totale de 15 millions inclut les Malinke de Guinee et du Mali qui se considerent Mandingues au sens large. Recensement gambien 2024: 34,4% de la population.",
+      "distributionByCountry": [
+        {
+          "country": "MLI",
+          "population": 5000000,
+          "note": "Malinke du Mali occidental (Kangaba, Kita) et Mandingues du sud"
+        },
+        {
+          "country": "GIN",
+          "population": 4500000,
+          "note": "Malinke de Haute-Guinee (Kankan, Siguiri, Mandiana), premier groupe ethnique de Guinee"
+        },
+        {
+          "country": "GMB",
+          "population": 1157000,
+          "note": "Groupe ethnique majoritaire (34,4% selon recensement 2024), vallee du Gambie"
+        },
+        {
+          "country": "SEN",
+          "population": 1080000,
+          "note": "Casamance et Senegal oriental (Tambacounda, Kedougou)"
+        },
+        {
+          "country": "GNB",
+          "population": 205000,
+          "note": "Nord du pays, presqu'ile de Cacheu, zone de Farim"
+        },
+        {
+          "country": "SLE",
+          "population": 200000,
+          "note": "Nord de la Sierra Leone, district de Koinadugu"
+        },
+        {
+          "country": "CIV",
+          "population": 500000,
+          "note": "Ouest et nord-ouest de la Cote d'Ivoire (Kong, Odienne)"
+        },
+        {
+          "country": "BFA",
+          "population": 150000,
+          "note": "Quest du Burkina Faso"
+        },
+        {
+          "country": "GHA",
+          "population": 6600,
+          "note": "Communautes dans le nord du Ghana"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Mandinka people. https://en.wikipedia.org/wiki/Mandinka_people",
+      "Wikipedia EN — Mandinka language. https://en.wikipedia.org/wiki/Mandinka_language",
+      "Joshua Project — Mandinka people group all countries (2025). https://joshuaproject.net/people_groups/13491",
+      "Britannica — Malinke. https://www.britannica.com/topic/Malinke",
+      "Peoples of the World Foundation — Mandinka. https://www.peoplesoftheworld.org/text?people=Mandinka",
+      "SIL Ethnologue — Mandinka language (mnk). https://www.ethnologue.com/language/mnk/",
+      "Recensement gambien 2024, resumes sur Facebook/groupes diaspora (septembre 2024). https://www.facebook.com/groups/458799334153950/posts/8860859697281163/",
+      "Glottolog — Mandinka mand1436. https://glottolog.org/resource/languoid/id/mand1436"
+    ]
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "PPL_TONGU",
+  "nameMain": "Tongu",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Tongu",
+      "selfAppellation": "Tonu ou Tonu Ewe (en ewe : Tonu signifie bord d'un cours d'eau ; tor = riviere, ngu = pres de)",
+      "exonyms": ["Tongu Ewe", "Tonu", "Tonguland"],
+      "originOfExonyms": "Le terme Tongu vient du ewe tor-ngu, signifiant pres de la riviere. Il designe les communautes Ewe etablies le long du fleuve Volta et du lac Volta dans la region des Volta au Ghana. Appellation geographique devenue identite communautaire.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Tongu est utilise officiellement dans les decoupages administratifs ghanéens (North Tongu District, Central Tongu District, South Tongu District). Il designe un sous-groupe Ewe distinct des Anlo (cote) et des Ewedome (interieur des terres). En 2024, les chefs traditionnels des 13 aires traditionnelles Tongu ont cree l'Union des Chefs Tongu.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Ewe (sous-famille Gbe, branche Kwa)",
+      "historicalRegion": "Region du Volta, Ghana (rive du lac Volta)",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Tongu Ewe"],
+    "origins": {
+      "ancientOrigins": "Les Tongu sont un sous-groupe du peuple Ewe. Les Ewe descendent d'ancetres qui vivaient a Notsie (ou Nuatja), ville fortifiee du Togo actuel. Selon la tradition orale, c'est la tyrannie du roi Agokoli (Ago Akoli) au XVIIe siecle qui provoqua leur fuite et leur dispersion vers leurs territoires actuels. Les Ewe se designaient eux-memes sous le nom de Dogbo avant leur installation dans la region. Les Tongu constituent le groupe s'etant installe le long du fleuve Volta.",
+      "formationPeriod": "XVIIe siecle (migration depuis Notsie). L'identite Tongu comme sous-groupe distinct emerge avec l'etablissement durable le long du Volta. Les 13 etats Tongu etaient a l'origine independants les uns des autres.",
+      "migrationRoutes": [
+        "Depart de la region de Ketu (Benin-Nigeria) vers Notsie (Togo)",
+        "Dispersion depuis Notsie vers le sud-est du Ghana apres la chute du roi Agokoli (XVIIe siecle)",
+        "Etablissement le long du fleuve Volta dans la region du Volta au Ghana"
+      ],
+      "historicalSettlementZones": [
+        "Rive du fleuve Volta et du lac Volta (region du Volta, Ghana)",
+        "Districts de North Tongu, Central Tongu et South Tongu"
+      ],
+      "unificationsOrDivisions": "Les 13 etats Tongu etaient historiquement independants, soumis aux influences concurrentes des Anlo, des Ada et des Akwamu. En 2024, une Union des Chefs Tongu a ete inauguree a Juapong pour unifier les 13 aires traditionnelles sous une entite commune.",
+      "externalInfluences": "Influence de l'empire Akwamu au XVIIe-XVIIIe siecle. Presence europeenne (commercants et missionnaires allemands lutheriens a partir de 1847, puis francais et britanniques). Impact du commerce de l'esclavage sur la region cotiere. Les Denkyera se sont installes parmi les Tongu le long du Volta.",
+      "majorHistoricalEvents": "XVIIe siecle : fuite de Notsie et installation au Ghana. 1847 : arrivee des missionnaires lutheriens allemands dans la region Ewe. 1914-1918 : perte de l'influence allemande au Togoland (Premiere Guerre mondiale). Partage colonial du pays Ewe entre Ghana (britannique) et Togo (francais). 2024 : inauguration de l'Union des Chefs Tongu a Juapong."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies decentralise. Les Ewe, dont les Tongu, valorisent historiquement l'independance et la decentralisation du pouvoir. Chaque village ou aire traditionnelle est dirigee par un chef (Torgbe) et une reine-mere. La prise de decision se fait par deliberation collective des anciens. En 2024, les 13 aires traditionnelles Tongu ont ete unifiees au sein de l'Union des Chefs Tongu.",
+      "clanOrganization": "Organisation patrilineaire. Les Tongu ont des clans (gates) qui se transmettent les sceptres de chefferie. Les lignages patrilineaires determinent l'appartenance clanique, l'acces a la terre et la succession.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent l'organisation sociale, la succession a la chefferie et la propriete fonciere. La terre est consideree comme un bien ancestral inalienable.",
+      "religiousAuthority": "L'autorite religieuse est detenue par les pretres et pretresses des divinites traditionnelles. La religion Ewe reconnait Mawu comme divinite supreme, et plusieurs divinites intermediaires (trowo). Le culte de Yewe (dieu du tonnerre) est repandu dans la region du Volta."
+    },
+    "languages": {
+      "mainLanguage": "Ewe (dialecte Tongu, dit Tonu)",
+      "isoCodes": ["ee"],
+      "dialects": ["Tongu (Tonu)", "Anlo", "Ewedome"],
+      "vehicularRole": "Le dialecte Tongu (Tonu) est l'une des trois variantes principales du ewe parle au Ghana. La langue ewe (ISO 639-1 : ee ; ISO 639-3 : ewe) appartient a la famille Gbe (Niger-Congo, Kwa). L'anglais est utilise comme langue officielle et vehiculaire nationale."
+    },
+    "culture": {
+      "majorRites": "Festival Asafotu, celebre annuellement en decembre par les Tongu, commemore les victoires et la bravoure des ancetres guerriers. Le Gbedzimido est une danse de guerre transformee en danse ceremonielle, executee lors de l'Asafotu et aux funerailles de personages importants. Le festival Afenorto de Mepe est une celebration annuelle de la zone Tongu. Rites funeraires elabores avec percussions.",
+      "symbols": "Le fleuve et le lac Volta sont des symboles identitaires centraux pour les Tongu (le nom meme signifie pres de la riviere). Le Gbedzimido (danse de guerre) est un symbole de bravoure ancestrale.",
+      "artsAndMusic": "Musique de percussion complexe : tambour atsimevu (grand-pere), sogo (pere), kidi (mere), kagan (petit frere). Tissage en bandes (strip weaving) avec motifs bleus et blancs, tradition commune a l'ensemble des Ewe. Chants et danses ceremoniales varies : Agbekor (guerre), Agbadza (sociale), Atsiagbekor (formation militaire transformee). Le culte de Yewe possede une musique sacree tres developpee.",
+      "spiritualities": "Religion traditionnelle Ewe (Vodun) centree sur Mawu (dieu createur) et des divinites intermediaires (trowo). Culte des ancetres fondamental. Yewe, dieu du tonnerre, est venere dans la region du Volta par un culte exclusif a initiation. Environ 89% des Ewe se sont convertis au christianisme (missions protestantes puis catholiques), tout en maintenant des pratiques traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les 13 etats Tongu etaient des entites politiques autonomes, sans souverain unique. Les principales aires traditionnelles incluent Agave, Vume, Sokpoe, Mafi et Fiervier. Ces etats etaient soumis aux influences des grands royaumes voisins Anlo, Ada et Akwamu mais maintenaient leur independance.",
+      "relationsWithNeighbors": "Influence politique des royaumes Anlo (cote), Ada et Akwamu sur les 13 etats Tongu. Relations commerciales avec les Ga de la cote. Coexistence avec les Denkyera qui s'etaient installes parmi les Tongu le long du Volta.",
+      "conflictsOrAlliances": "Les Tongu etaient sujets aux influences concurrentes d'Anlo, d'Ada et d'Akwamu. L'alliance Anlo-Akwamu a genere des conflits regionaux impliquant indirectement les Tongu. L'esclavage a touche les communautes Ewe de la region au XVIIIe siecle.",
+      "diaspora": "Presence d'Ewe diasporiques en Amerique du Nord, au Royaume-Uni et dans d'autres pays europeens. L'organisation CEANA (Council of Ewe Associations of North America) soutient les projets de developpement en pays Ewe (Ghana, Togo, Benin)."
+    },
+    "demography": {
+      "totalPopulation": 350000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur les donnees du recensement ghaneen 2021 (Ghana Statistical Service) : North Tongu District (110 891 hab.), Central et South Tongu Districts inclus ; population Ewe totale au Ghana 6 millions (Wikipedia), sous-groupe Tongu estime a environ 350 000",
+      "distributionByCountry": [{ "country": "GHA", "population": 350000 }]
+    },
+    "sources": [
+      "Wikipedia EN – Ewe people (https://en.wikipedia.org/wiki/Ewe_people)",
+      "Wikipedia EN – Anlo Ewe (https://en.wikipedia.org/wiki/Anlo_Ewe)",
+      "Ewe Association of Georgia – History of the Ewes (https://ewaga.org/about-us/history-of-the-ewes/)",
+      "GhanaWeb – Volta Region: Tongu chiefs create a unitary traditional state, 2024 (https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Volta-Region-Tongu-chiefs-create-a-unitary-traditional-state-1947608)",
+      "Ghana Statistical Service – 2021 Population and Housing Census (https://census2021.statsghana.gov.gh/)",
+      "CityPopulation – North Tongu District (https://www.citypopulation.de/en/ghana/admin/volta/0412__north_tongu/)",
+      "Localizely – Ewe language code (https://localizely.com/language-code/ewe/)"
+    ]
+  }
+}

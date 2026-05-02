@@ -1,0 +1,94 @@
+{
+  "id": "PPL_BEZANOZANO",
+  "nameMain": "Bezanozano",
+  "languageFamilyId": "FLG_AUSTRONESIENNE",
+  "currentCountries": ["MDG"],
+  "content": {
+    "appellations": {
+      "mainName": "Bezanozano",
+      "selfAppellation": "Bezanozano",
+      "exonyms": [
+        "Antankay (nom ancien désignant les habitants de la région de l'Ankay)"
+      ],
+      "originOfExonyms": "Le nom Bezanozano signifie ceux aux nombreuses petites tresses en référence à leur coiffure traditionnelle caractéristique en petites tresses multiples. Le terme Antankay (ceux de l'Ankay) est l'ancien ethnonyme géographique référant à leur territoire historique. Le nom Bezanozano est devenu péjoratif sous la domination merina, associé à l'esclavage et au portage forcé.",
+      "whyProblematic": "Le terme Bezanozano a été historiquement stigmatisé sous la domination Merina, où il est devenu synonyme d'andevo (esclave). Après l'indépendance en 1960, un mouvement social local a cherché à le revendiquer positivement.",
+      "contemporaryUsage": "Le terme est aujourd'hui réhabilité et revendiqué comme identité ethnique, notamment grâce aux mouvements associatifs et politiques post-indépendance qui ont encouragé l'égalité et la fierté identitaire bezanozano.",
+      "linguisticFamily": "FLG_AUSTRONESIENNE",
+      "ethnoLinguisticGroup": "Malayo-polynésien — groupe central-oriental des plateaux malgaches (dialecte bezanozano, proche du merina et du betsimisaraka)",
+      "historicalRegion": "Centre-est de Madagascar — région historique de l'Ankay (forêt intérieure entre les plaines d'Imerina à l'ouest et la forêt pluviale côtière à l'est), district de Moramanga, région d'Alaotra-Mangoro",
+      "currentCountries": ["MDG"]
+    },
+    "ethnicities": [
+      "Bezanozano de l'Ankay — groupes historiques des forêts du centre-est autour de Moramanga",
+      "Bezanozano d'Ambatondrazaka — ancienne capitale du groupe à son apogée (XVIIIe siècle)",
+      "Descendants des andriana (nobles) bezanozano — élite traditionnelle héritière des droits coutumiers",
+      "Descendants d'esclaves bezanozano (andevo) — stigmatisation historique sous la domination merina",
+      "Communautés de la forêt orientale (pratique de l'apiculture traditionnelle et de la chasse)",
+      "Communautés riziculteurs des terrasses de l'Ankay"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bezanozano sont considérés comme l'un des plus anciens groupes ethniques malgaches à s'être établis en territoire intérieur. Ils sont associés aux Vazimba, les habitants légendaires les plus anciens de Madagascar, dont ils vénèrent les tombeaux comme lieux de pèlerinage, de sacrifice et de rituel. Bien que leurs origines austronésiennes (depuis le sud de Bornéo, Ve-VIIe siècle ap. J.-C.) et bantoues soient établies, ils se perçoivent comme les gardiens de la mémoire des premiers habitants de l'île. Les nombreux tertres et tombeaux anciens de leur territoire sont considérés comme des sépultures vazimba.",
+      "formationPeriod": "La société bezanozano s'est structurée autour de villages fortifiés gouvernés par des anciens et des chefs locaux dans la région fertile de l'Ankay, entre les plaines d'Imerina et la forêt pluviale côtière. Au XVIIe siècle, la tradition orale mentionne le roi Andriamalazabe, premier souverain attesté. La période dorée du groupe se situe au XVIIIe siècle, quand ils étaient des intermédiaires commerciaux prospères entre les Merina des hautes terres et les commerçants européens et arabes de la côte est.",
+      "migrationRoutes": [
+        "Migration austronésienne depuis le sud de Bornéo via les côtes est-africaines vers Madagascar (Ve-VIIe siècle)",
+        "Installation dans la zone intérieure de l'Ankay, entre les plaines d'Imerina et la forêt côtière betsimisaraka",
+        "Extension territoriale au XVIIIe siècle — le territoire bezanozano était alors deux fois plus grand qu'aujourd'hui, d'Angavokely à l'ouest jusqu'aux falaises betsimisaraka à l'est, et au sud jusqu'à Beparasy"
+      ],
+      "historicalSettlementZones": [
+        "Région de l'Ankay (centre-est de Madagascar) — territoire forestier historique",
+        "Moramanga — ville principale et hub commercial historique (XVIIIe siècle)",
+        "Ambatondrazaka — ancienne capitale du groupe bezanozano",
+        "Corridor entre Antananarivo et Toamasina (axe du portage et du commerce merina)",
+        "Forêts de la région d'Alaotra-Mangoro"
+      ],
+      "unificationsOrDivisions": "Le peuple bezanozano n'a jamais constitué une entité politique fortement centralisée. Leur seul roi connu, Randrianjomoina (fin XVIIIe siècle), a tenté d'unifier les chefferies mais n'a pu résister à la pression merina. Après la vassalisation par Andrianampoinimerina (fin XVIIIe siècle) et la colonisation par Radama I (1817), les structures politiques bezanozano ont été démantelées. Après l'indépendance (1960), un mouvement local a cherché à reconstruire une identité collective positive.",
+      "externalInfluences": "Influence des pirates et commerçants européens le long de la côte est (XVIIIe siècle), avec lesquels les Bezanozano commerçaient directement. Vassalisation par le roi merina Andrianampoinimerina (fin XVIIIe siècle). Colonisation totale par Radama I (1817) imposant le fanampoana (portage forcé non rémunéré). Installation de missions protestantes et d'une colonie merina à partir des années 1920. Colonisation française (1896-1960) : introduction des terrasses irriguées merina, des chars à bœufs, des outils métalliques.",
+      "majorHistoricalEvents": "Age d'or commercial du XVIIIe siècle (intermédiation entre Merina et côte est). Rébellion des esclaves bezanozano (1768). Alliance avec le royaume betsimisaraka de Ratsimilaho. Vassalisation par Andrianampoinimerina (fin XVIIIe siècle). Refus de respecter le deuil à la mort d'Andrianampoinimerina (protestation symbolique). Colonisation par Radama I (1817) avec destruction d'une ville majeure et massacre de ses habitants. Fanampoana (travail forcé) et dépopulation massive de l'Ankay. Rébellion de 1830 contre le travail forcé. Insurrection nationale de 1947 initiée à Moramanga (territoire bezanozano). Indépendance en 1960 et mouvement de réhabilitation identitaire."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Gouvernance par des anciens de village (Ray amandreny) prenant des décisions par délibération collective et consensus public — tradition d'indirection, de discrétion et d'évitement des conflits. Chefferies locales sous des filohany. Le seul roi bezanozano connu, Randrianjomoina, n'a exercé qu'une autorité limitée à la fin du XVIIIe siècle. Le fokonolona (assemblée villageoise) reste le cadre de gouvernance de base.",
+      "clanOrganization": "Organisation clanique patrilinéaire avec des droits fonciers hérités. Les clans se revendiquent d'ancêtres fondateurs et maintiennent des fady (tabous) lignagers. L'identité unitaire originelle s'articulait autour de 11 sampy (idoles protectrices) rapportés du territoire sakalava, qui constituaient le lien sacré entre les différentes communautés bezanozano.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires définissent l'identité, les droits fonciers et les obligations rituelles envers les razana (ancêtres). Les tompontany (maîtres de la terre) — terme désignant les Vazimba, les plus anciens habitants — sont distincts des razana ordinaires et représentent une dimension spirituelle territoriale. La stigmatisation liée au statut d'andevo (esclave) dans les lignages a persisté après l'abolition de l'esclavage par les Français en 1896.",
+      "religiousAuthority": "Culte des ancêtres (razana) et des Vazimba (entités des plus anciens tombeaux). Les mpisikidy (devins) jouent un rôle central. Pratique discrète du christianisme protestant (introduit par les missionnaires au XIXe siècle) principalement par les Merina installés dans la région — peu de Bezanozano de souche se sont convertis. Syncrétisme modéré : croyance en la sorcellerie (mpamosavy) et aux esprits de la forêt."
+    },
+    "languages": {
+      "mainLanguage": "Dialecte bezanozano du malgache (variété intermédiaire entre le merina et le betsimisaraka)",
+      "isoCodes": ["plt", "mlg"],
+      "dialects": [
+        "Bezanozano — dialecte du malgache classé dans la branche Plateau (plt), Glottolog beza1235, parlé dans la région d'Alaotra-Mangoro autour de Moramanga",
+        "Malgache standard (merina-plt) — dominant à Moramanga en raison de l'installation massive de locuteurs merina depuis les années 1920",
+        "Français — langue d'enseignement et de l'administration nationale"
+      ],
+      "vehicularRole": "Le dialecte bezanozano (classé sous plt, Glottolog beza1235) est intermédiaire entre le merina et le betsimisaraka voisin. Selon Joshua Project, ce dialecte est de moins en moins pratiqué, supplanté par le malgache merina dominant à Moramanga où la majorité des résidents actuels vient d'autres régions. Le bezanozano est en situation de recul dialectal face à la pression linguistique merina."
+    },
+    "culture": {
+      "majorRites": "Famadihana (retournement des ancêtres) : pratiqué par les Bezanozano, comme les Merina leurs voisins des hautes terres. Cérémonies de pèlerinage et de sacrifice aux tombeaux vazimba (sites de pilgrimage, ritual et sacrifice pour apaiser les esprits des ancêtres les plus anciens). Funérailles accompagnées de consommation collective de grandes quantités de rhum (toaka). Betatoato : danse traditionnelle unique aux Bezanozano. Rites liés à la récolte du miel (activité économique et rituelle importante). Rites de circoncision et de mariage selon les coutumes malgaches.",
+      "symbols": "Les tombeaux et tertres vazimba sont les symboles sacrés les plus importants — tout ancien tombeau ou monticule est considéré comme une sépulture vazimba et devient un site de pèlerinage et de rituel. Le miel symbolise à la fois la richesse matérielle et le lien aux ancêtres (les Bezanozano étaient réputés les meilleurs collecteurs de miel dans les rituels royaux merina). L'indri (lémurien protégé par le fady) symbolise la relation entre les humains et la forêt sacrée. Les tresses multiples (bezanozano) sont l'emblème identitaire du groupe.",
+      "artsAndMusic": "Betatoato : danse traditionnelle propre aux Bezanozano, pratiquée lors des cérémonies. Artisanat du miel : collecte et vente du miel de forêt aux marchés locaux, activité économique et culturelle. Artisanat du riz en terrasse irriguée (introduit sous influence merina au XIXe siècle). Vannerie et tissage de fibres végétales. Poésie orale (hainteny). Architecture en bois ou en matériaux végétaux, avec des tombes en pierre (construction en pierre introduite sous domination merina au XIXe siècle).",
+      "spiritualities": "Culte des Vazimba : les ancêtres les plus anciens, dont les tombeaux sont des lieux de pèlerinage. Croyance aux zanahary (dieux-ancêtres) masculins et féminins, invoqués collectivement et anonymement pour ne pas offenser un ancêtre en particulier. Distinction entre razana (ancêtres identifiables du lignage) et Vazimba (ancêtres fondateurs dont les descendants ne peuvent être identifiés). Croyance à la sorcellerie. Fady spécifiques : interdiction de consommer du porc pour certaines communautés d'Ambatondrazaka. Protection de l'indri (lémur à la voix puissante) par le fady — la forêt contenant des tombes vazimba ne doit pas être défrichée (contrairement à la pratique des Betsimisaraka voisins, source de tensions frontalières)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le peuple bezanozano a constitué une entité politique cohérente surtout au XVIIIe siècle sous des chefferies locales. Le seul roi connu, Randrianjomoina, a émergé à la fin du XVIIIe siècle. La tradition orale mentionne également le roi Andriamalazabe (seconde moitié du XVIIe siècle) comme successeur de Ranantoana. Ces entités politiques n'ont jamais atteint le niveau d'organisation des royaumes merina ou sakalava.",
+      "relationsWithNeighbors": "Alliance avec le royaume Betsimisaraka de Ratsimilaho (XVIIIe siècle) pour le commerce et la protection. Commerce intense avec les Merina des hautes terres (bétail, esclaves, miel, produits forestiers). Tensions frontalières avec les Betsimisaraka pour l'accès aux forêts. Raid d'esclaves dans le royaume d'Imerina lors de sa guerre civile au XVIIIe siècle. Vassalisation par Andrianampoinimerina et soumission à Radama I.",
+      "conflictsOrAlliances": "Rébellion des esclaves bezanozano (1768) — ils ont dû faire appel à des Européens pour la réprimer. Alliance commerciale et politique avec Ratsimilaho des Betsimisaraka (XVIIIe siècle). Résistance à Andrianampoinimerina (fin XVIIIe siècle) — refus des obligations de deuil à sa mort. Colonisation par Radama I (1817) — destruction d'une ville, massacre d'habitants, imposition du fanampoana. Rébellion de 1830 contre le travail forcé merina. Insurrection nationale de 1947 initiée à Moramanga (territoire bezanozano). Mouvement de réhabilitation identitaire post-indépendance (1960) avec rejet des hiérarchies de classe héritées.",
+      "diaspora": "Forte dépopulation historique de l'Ankay sous la domination merina (portage forcé, travail non rémunéré sur les routes royales). Migration vers Moramanga et Ambatondrazaka. La majorité des résidents actuels de Moramanga ne sont pas d'origine bezanozano mais merina ou d'autres régions. Faible présence dans la diaspora malgache internationale."
+    },
+    "demography": {
+      "totalPopulation": 270000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur Joshua Project (271 000 personnes, profil 2025), Wikipedia (environ 100 000 en 2013), projections démographiques INSTAT Madagascar et UNFPA. Le chiffre de Joshua Project intègre la population bezanozano au sens large incluant les résidents de l'Ankay d'origine bezanozano.",
+      "distributionByCountry": [{ "country": "MDG", "population": 270000 }]
+    },
+    "sources": [
+      "Wikipedia — Bezanozano, https://en.wikipedia.org/wiki/Bezanozano (consulté 2025)",
+      "Joshua Project — Bezanozano in Madagascar, https://joshuaproject.net/people_groups/print/10822/MA (consulté 2025)",
+      "PeopleGroups.org — Bezanozano of Madagascar, https://peoplegroups.org/people_groups/pg015296/ (consulté 2025)",
+      "101 Last Tribes — Bezanozano, https://www.101lasttribes.com/tribes/bezanozano.html (consulté 2025)",
+      "Wikipedia — Bezanozano dialect, https://en.wikipedia.org/wiki/Bezanozano_dialect (consulté 2025)",
+      "Wikipedia — Malagasy language (dialecte bezanozano sous plt), https://en.wikipedia.org/wiki/Malagasy_language (consulté 2025)",
+      "CIA World Factbook — Madagascar, https://www.cia.gov/the-world-factbook/countries/madagascar/ (consulté 2025)",
+      "Beaujard, Philippe. Les mondes de l'océan Indien. Paris : Armand Colin, 2012."
+    ]
+  }
+}

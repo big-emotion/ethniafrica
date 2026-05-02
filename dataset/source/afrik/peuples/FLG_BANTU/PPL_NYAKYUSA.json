@@ -1,0 +1,109 @@
+{
+  "id": "PPL_NYAKYUSA",
+  "nameMain": "Nyakyusa",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA", "MWI"],
+  "content": {
+    "appellations": {
+      "mainName": "Nyakyusa",
+      "selfAppellation": "Wanyakyusa",
+      "exonyms": [
+        "Sokile",
+        "Ngone",
+        "Nkone",
+        "Konde",
+        "Nyekyosa",
+        "Nyikyusa",
+        "Sochile",
+        "Sokili"
+      ],
+      "originOfExonyms": "Sokile est le nom propre utilise par les Nyakyusa eux-memes pour se designer. Ngone et Nkone designaient les Nyakyusa au sud du fleuve Songwe sous administration britannique du Nyasaland. Les Allemands les appelaient Kone jusqu'en 1935. Nyekyosa et Nyikyusa sont des variantes orthographiques.",
+      "whyProblematic": "La denomination Ngonde ou Nkonde, utilisee pour le sous-groupe vivant au Malawi, est parfois confondue avec les Nyakyusa de Tanzanie alors qu'il s'agit du meme peuple separe par une frontiere coloniale. La partition colonialeadministrative a cree une distinction artificielle entre Nyakyusa (Tanganyika allemand puis britannique) et Ngonde/Nkonde (Nyasaland britannique, Malawi).",
+      "contemporaryUsage": "Nyakyusa est le nom officiel en Tanzanie. Wanyakyusa est la forme swahilie plurielle. Ngonde et Nkhonde sont utilises au Malawi. L'anthropologue Monica Wilson a contribue a standardiser l'usage academique de Nyakyusa.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Groupe Rukwa (bantou du sud-ouest tanzanien)",
+      "historicalRegion": "Montagnes du sud de la region Mbeya (Tanzanie) et plaine nord du lac Malawi",
+      "currentCountries": ["TZA", "MWI"]
+    },
+    "ethnicities": ["Nyakyusa", "Ngonde", "Sokile"],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale, les Nyakyusa tracent leurs origines a une reine nubienne legendaire appelee Nyanseba, enlevee par un guerrier et un berger ; ce dernier transforma la royaute femelle en royaute masculine. Le pouvoir des femmes reste visible dans les traditions : les garcons portent le nom de clan de leur mere, les filles celui de leur pere. Les ancetres commoners etaient des chasseurs et cueilleurs de miel venus des montagnes du Rift Valley. Les nobles (chefs) arriverent il y a environ dix generations, apportant le betail, les plantes cultivees, le feu et le fer ; ils sont decrits comme etant paleurs tandis que les commoners etaient noirs.",
+      "formationPeriod": "Presence documentee des le debut des contacts europeens avec l'interieur de l'Afrique orientale dans les annees 1870. Etudes ethnographiques systematiques menees par Godfrey et Monica Wilson entre 1934 et 1938 sous les auspices de la Rockefeller Foundation et de l'Institut africain international.",
+      "migrationRoutes": [
+        "Migration des ancetres nobles depuis une region indeterminee au nord (tradition d'origine nubienne)",
+        "Installation dans les montagnes au nord du lac Malawi (lac Nyasa)",
+        "Expansion vers les plaines alluviales du lac et les contreforts du mont Rungwe"
+      ],
+      "historicalSettlementZones": [
+        "Montagnes meridionales de la region Mbeya, Tanzanie",
+        "Plaines nord-ouest du lac Malawi (Karonga, Malawi)",
+        "Contreforts du mont Rungwe (Tanzanie)"
+      ],
+      "unificationsOrDivisions": "Les Nyakyusa etaient organises en de nombreuses petites chefferies autonomes, sans autorite centrale. Etat de guerre potentielle ou reelle entre chefferies. En 1933, les Britanniques etablirent un conseil des chefs comme systeme tribal. En 1942, l'Union Nyakyusa fut fondee pour preserver les bonnes coutumes. La partition coloniale divisa le peuple entre Tanganyika (Nyakyusa) et Nyasaland (Ngonde).",
+      "externalInfluences": "XIXe siecle : commerce avec les caravanes arabes et swahilies. Contacts avec les missionnaires ecossais des 1875 (fondation de Karonga). Domination coloniale allemande (Tanganyika) et britannique (Nyasaland) depuis les annees 1890. Revolte de Kone en 1897 : une coalition de chefs Nyakyusa et Kinga tenta de chasser les missionnaires et les Europeens ; reprimee par les Allemands avec de lourdes pertes Kone. Evangelisation protestante et catholique profonde depuis la fin du XIXe siecle.",
+      "majorHistoricalEvents": "1875 : fondation de Karonga par des missionnaires ecossais. 1889 : traites de Harry Johnston mettant fin aux conflits avec les marchands d'esclaves arabes. 1895 : pendaison de Mlozi (negrier) ; incorporation au Protectorat britannique de l'Afrique centrale. 1897 : Revolte de Kone contre les Allemands, reprimee militairement. 1913 : derniere ceremonie de passation de pouvoir (coming out) enregistree chez les Ngonde. 1933 : Conseil de chefs cree par les Britanniques. 1942 : fondation de l'Union Nyakyusa. 1934-1938 : terrain anthropologique de Godfrey et Monica Wilson. 1951 : publication de Good Company par Monica Wilson. 1953 : dernier coming out enregistre chez les Nyakyusa. 1969 : le systeme de villages d'age cesse d'etre etabli."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de petites chefferies divines : le chef (prince/noble) gouvernait avec des pouvoirs sacres sur la pluie et la fertilite. Particularite unique au monde : le systeme de villages d'age (age villages) - les garcons a partir de 10-11 ans quittaient le foyer paternel pour former leurs propres villages avec leurs contemporains, separes de ceux de leurs peres pour eviter l'inceste et les tensions intergenerationnelles. Ce systeme organisait la vie entiere des hommes.",
+      "clanOrganization": "Absence de clans nommes ou de groupes de descendance formels : les liens de parente s'effacaient a la troisieme generation. La vie communautaire s'organisait autour des contemporains (age-mates) plutot que des parents. Les femmes vivaient avec leur mari et mangeaient separement.",
+      "ageClassSystems": "Systeme de villages d'age unique : les garcons (~10-11 ans) formaient des villages separement de leurs peres. Chaque village avait un chef (great commoner) nomme par le chef sureme. Les hommes mangeaient avec leurs contemporains (obligation morale) et non avec leurs parents ou inferieurs. Chaque generation passait par une ceremonie collective de transition (coming out) : extinction des anciens feux, allumage de nouveaux feux par friction, redistribution des terres, nomination de nouveaux chefs. Dernier coming out : Nyakyusa 1953, Ngonde 1913. Le systeme a cesse d'etre forme en 1969.",
+      "roleOfLineages": "Le lignage maternel determinait le nom de clan des garcons (et le lignage paternel celui des filles). Le chef successeur etait les fils aines des deux grandes epouses du chef, partageant le territoire lors du coming out a environ 33-35 ans. Les anciens n'avaient pas de pouvoir d'execution : l'arbitrage se faisait par les contemporains, la pression du groupe social et l'opinion collective.",
+      "religiousAuthority": "Le chef (prince) possedait des pouvoirs religieux sacres sur la pluie, la fertilite et la sante. Rituel annuel de demande de pluie a Chikungu : interdiction d'allumer le feu le matin, distribution du feu sacre (moto ufya) depuis le sanctuaire. Les defenseurs (headmen) avaient le pouvoir de voir et combattre les sorciers en reve."
+    },
+    "languages": {
+      "mainLanguage": "Kinyakyusa (Nyakyusa-Ngonde)",
+      "isoCodes": ["nyy"],
+      "dialects": [
+        "Nyakyusa (Tanzania)",
+        "Ngonde (Konde)",
+        "Nkhonde (Malawi)",
+        "Kukwe",
+        "Mwamba (Lungulu)",
+        "Selya (Salya, Seria)"
+      ],
+      "vehicularRole": "Langue maternelle des Nyakyusa et Ngonde. Langue en developpement (niveau 5 selon Ethnologue) ; non mise en danger. Le swahili est la langue vehiculaire nationale en Tanzanie. Le chichewa en Malawi. Presence de la Bible et de litterature chretienne en Kinyakyusa."
+    },
+    "culture": {
+      "majorRites": "Ceremonie du coming out (passage generationnel) : rite le plus impressionnant et important, impliquant la passation des pouvoirs des chefs, redistribution des terres, allumage du feu nouveau. Sacrifices aux tombeaux des chefs en temps de malheur. Rituels funeraires elabores (rites de kinship). Rituels de puberete et de mariage. Ceremonies de naissance normale et anormale (naissance de jumeaux). Rituel annuel de demande de pluie a Chikungu presidepar le Kyungu.",
+      "symbols": "Le feu sacre (moto ufya) symbolise le renouveau et la continuite du pouvoir. Les plantations de bananiers sur des miles sont le paysage identitaire Nyakyusa. Le betail (vaches) a une importance symbolique et economique exceptionnelle : les Nyakyusa accumulaient des richesses via le commerce et l'agriculture plus que tout autre peuple de Tanzanie selon les sources du XIXe siecle.",
+      "artsAndMusic": "Agriculture intensive (rotation des cultures) valorisee comme excellence culturelle. Tradition orale riche et tres bien documentee par les Wilson. Danses et chants lors des ceremonies communautaires. Artisanat : les femmes fabriquaient des nattes mais n'avaient pas de poterie, de tissu, de fer ni de sel propres (echanges avec les Kinga contre des outils et armes).",
+      "spiritualities": "Religion traditionnelle : theologie this-worldly (centree sur la fertilite et la prosperite terrestre, sans recompense ni punition dans l'au-dela avant le christianisme). Dieu appele Kyala (nom Nyakyusa) ou Mungu (swahili). Croyances en la sorcellerie : les sorciers (amafumu) volaient sur des pythons et nuisaient aux gens et au betail la nuit. Les defenseurs (headmen) combattaient les sorciers en reve. Ordalie de l'umwafi (dernier cas 1932). Culte des ancetres. Le christianisme (protestant ecossais, catholique, autres denominations) est devenu majoritaire depuis les missions du XIXe siecle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Systeme de petites chefferies multiples et autonomes sans autorite centrale. Le chef (Kyungu chez les Ngonde, nombreux princes/nobles chez les Nyakyusa) gouvernait un territoire de quelques milliers de personnes. Les chefs etaient elus parmi les descendants nobles et recevaient leurs pouvoirs lors du coming out. Deux fils du chef se partageaient le territoire a sa retraite.",
+      "relationsWithNeighbors": "Commerce avec les Kinga des montagnes de Livingston (echange de surplus alimentaires contre outils et armes). Contacts avec les caravanes arabes et swahilies du lac Malawi. Relations avec les missionnaires ecossais des 1875. Voisinage avec les Safwa, Lambya, Fipa, Malila. Resistance aux marchands d'esclaves arabes fin XIXe siecle. Les Nyakyusa etaient consideres comme des agriculteurs remarquablement prosperes par tous les visiteurs europeens du XIXe siecle.",
+      "conflictsOrAlliances": "Guerres civiles recurrentes avant l'invasion Ngoni. Revolte de Kone (1897) contre la domination allemande. Alliance avec les Britanniques contre les negriers arabes (300-500 guerriers Nyakyusa soutinrent les Britanniques a Karonga). Union Nyakyusa fondee en 1942.",
+      "diaspora": "Migration de travail (wage migration) vers les centres urbains depuis le milieu du XXe siecle, avec preponderance des femmes restant au village. Presence dans les villes de Tanzanie et Malawi."
+    },
+    "demography": {
+      "totalPopulation": 1923000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Nyakyusa, Ngonde in Tanzania : 1 695 000 ; in Malawi : 228 000 ; total mondial : 1 923 000)",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 1695000,
+          "note": "Region Mbeya (montagnes meridionales), mont Rungwe"
+        },
+        {
+          "country": "MWI",
+          "population": 228000,
+          "note": "Nord du Malawi : district de Karonga, region nord"
+        }
+      ]
+    },
+    "sources": [
+      "Nyakyusa people – Wikipedia EN (https://en.wikipedia.org/wiki/Nyakyusa_people)",
+      "Nyakyusa language – Wikipedia EN (https://en.wikipedia.org/wiki/Nyakyusa_language)",
+      "Nyakyusa, Ngonde in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/print/14078/TZ)",
+      "Nyakyusa, Ngonde in Malawi – Joshua Project (https://joshuaproject.net/people_groups/14078/MI)",
+      "Nyakyusa And Ngonde – eHRAF World Cultures, Yale University (https://ehrafworldcultures.yale.edu/cultures/fn17/summary)",
+      "Nyakyusa people – 101lasttribes.com (https://www.101lasttribes.com/tribes/nyakyusa.html)",
+      "Nyakyusa – Encyclopaedia Britannica (https://www.britannica.com/topic/Nyakyusa)",
+      "Wilson, Monica – Good Company: A Study of Nyakyusa Age-Villages, Oxford University Press, 1951",
+      "Wilson, Monica – Communal Rituals of the Nyakyusa, Oxford University Press / International African Institute, 1959",
+      "Wilson, Godfrey – An Introduction to Nyakyusa Society, Bantu Studies 10, 1936, pp. 253-291 (https://ehrafworldcultures.yale.edu/cultures/fn17/documents/008)",
+      "Nyakyusa-Ngonde – Glottolog (https://glottolog.org/resource/languoid/id/nyak1260)"
+    ]
+  }
+}

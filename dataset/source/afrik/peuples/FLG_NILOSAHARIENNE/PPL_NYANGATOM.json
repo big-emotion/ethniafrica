@@ -1,0 +1,84 @@
+{
+  "id": "PPL_NYANGATOM",
+  "nameMain": "Nyangatom",
+  "languageFamilyId": "FLG_NILOSAHARIENNE",
+  "currentCountries": ["ETH", "SSD"],
+  "content": {
+    "appellations": {
+      "mainName": "Nyangatom",
+      "selfAppellation": "Nyangatom",
+      "exonyms": [
+        "Bume (nom ethiopien, pejoratif : ceux qui sentent mauvais)",
+        "Donyiro (ou Dongiro : peuple du boeuf gris, utilise en Ouganda et Kenya)",
+        "Nyam-etom (ancien sobriquet : mangeurs d'elephants)"
+      ],
+      "originOfExonyms": "Nyangatom signifie pistolets jaunes, surnom militaire que le groupe adopta lors de sa migration depuis l'Ouganda au milieu du XIXe siecle pour remplacer le sobriquet Nyam-etom (mangeurs d'elephants). Bume est le nom ethiopien, considere pejoratif par les interesses.",
+      "whyProblematic": "Le terme Bume, encore officielement utilise en Ethiopie, est rejete par le peuple lui-meme comme insultant. Donyiro est utilise dans les pays voisins mais n'est pas non plus l'autodesignation preferee.",
+      "contemporaryUsage": "Nyangatom est la denomination officielle adoptee dans les publications ethnographiques et par les organisations de developpement operant dans la zone de l'Omo. L'administration ethiopienne utilise progressivement ce terme.",
+      "linguisticFamily": "FLG_NILOSAHARIENNE",
+      "ethnoLinguisticGroup": "Cluster Ateker-Karamojong, branche nilotique orientale (groupe Teso-Turkana)",
+      "historicalRegion": "Basse vallee de l'Omo (sud-ouest de l'Ethiopie), Triangle d'Ilemi, frontiere ethio-sud-soudanaise",
+      "currentCountries": ["ETH", "SSD"]
+    },
+    "ethnicities": ["Nyangatom"],
+    "origins": {
+      "ancientOrigins": "Les Nyangatom sont membres du cluster Ateker ou Karamojong, qui inclut les Turkana (Kenya), les Toposa (Soudan du Sud), les Karamojong (Ouganda), les Jie et les Iteso. Les traditions ethno-historiques indiquent une origine commune dans la region de Koten-Magos (Karamoja, Ouganda), ou les ancetres de ce groupe vivaient comme pasteurs.",
+      "formationPeriod": "La separation des Nyangatom du stock commun Toposa-Nyangatom remonte a la fin du XVIIIe siecle. Lors de leur migration depuis l'Ouganda vers la fin du XVIIIe et au debut du XIXe siecle, les ancetres des Nyangatom furent railles comme mangeurs d'elephants, ce qui les amena a adopter le nom de guerre Nyangatom (pistolets jaunes) soulignant leurs intentions martiales.",
+      "migrationRoutes": [
+        "Koten-Magos (Karamoja, Ouganda) vers la vallee de l'Omo (milieu XIXe siecle)",
+        "Deplacements saisonniers entre l'Ethiopie et le Triangle d'Ilemi au Soudan du Sud"
+      ],
+      "historicalSettlementZones": [
+        "Basse vallee de l'Omo (sud-ouest de l'Ethiopie, zone de Jinka)",
+        "Triangle d'Ilemi (frontiere Ethiopie-Soudan du Sud-Kenya)",
+        "Region de Mount Naita (frontiere ethio-sud-soudanaise)"
+      ],
+      "unificationsOrDivisions": "Une alliance strategique lie les Nyangatom et les Toposa, qu'ils considerent comme freres (grand-mere commune). Cette solidarite inclut un partage de ressources pastorales : une cuisse de l'animal abattu est offerte aux membres de l'autre tribu. Les Nyangatom comprennent deux sous-groupes : les residents semi-permanents du bord de l'Omo et les pasteurs nomades.",
+      "externalInfluences": "Conquete nominale de la vallee de l'Omo par l'Empereur Menelik II en 1899, sans colonisation reelle. Mission de l'Eglise de Philadelphie de Suede (SPCM, 1972-2002) : aide sanitaire ayant contribue a la croissance demographique. Arrivee des armes automatiques dans les annees 1980 (liees a la guerre civile soudanaise), modifiant les equilibres de pouvoir regionaux.",
+      "majorHistoricalEvents": "Decimation par les Dassanetch dans les annees 1970. Rearmement et expansion aux depens des Surma a partir de 1980 grace aux fusils automatiques. Construction du barrage Gibe III (2016) : perturbation du regime de crue de l'Omo, menace pour l'agriculture de decrue. Interdiction de la ceremonie asapan par le regime Mengistu (1974-1991)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe sans Etat centralise ni chefferie permanente. L'autorite repose sur des anciens charismatiques et sur le systeme de generations. Les sections territoriales (ekitala) organisent les droits d'acces aux paturages, mais sans frontieres fixes. Les Nyangatom adherent a la fois a la communaute regionale ethiopienne (autour de Jinka) et a la communaute de Mount Naita (cote sud-soudanais).",
+      "clanOrganization": "Environ 20 clans patrilineaires (sing. ateker, pl. ngatekerea). La taille des clans varie de quelques individus a plusieurs centaines. Les clans ne sont pas des unites politiques ; ils partagent des noms avec d'autres peuples du cluster Karamojong. Les sections territoriales portent des noms d'oiseaux migrateurs (cigognes, flamants roses, ibis) ou des noms ethniques.",
+      "ageClassSystems": "Systeme original de generations (sing. auriunet, pl. ngauriuneta) englobant hommes et femmes, qui permit aux Nyangatom de se separer de leur stock parental. Chaque generation recoit l'identite d'une espece animale : fondateurs, chiens sauvages, zebres, tortues, montagnes (generations eteintes), puis elephants, autruches, antilopes, buffles (generations vivantes). Les generations alternent entre deux statuts : Peres et Fils du Pays. La ceremonie asapan marque le transfert de souverainete des Peres aux Fils, tous les 50-55 ans.",
+      "roleOfLineages": "Les lignages patrilineaires definissent l'appartenance clanique, les droits matrimoniaux et la succession. Les clans sont des reseaux de solidarite et d'entraide. Le parrain de clan donne au jeune guerrier sa lance, un tabouret et des sandales.",
+      "religiousAuthority": "Religion traditionnelle centree sur les ancetres et les esprits. Le guerisseur-oracle (asapan-man) joue un role central dans la regeneration de la societe lors de la grande ceremonie generationnelle. Depuis les annees 1990, le pentecotisme se repand chez les Nyangatom."
+    },
+    "languages": {
+      "mainLanguage": "Nyangatom",
+      "isoCodes": ["nnj"],
+      "dialects": [],
+      "vehicularRole": "La langue nyangatom est le principal lien culturel du groupe. Elle est proche des langues toposa et turkana (intelligibilite partielle). Les Nyangatom parlent aussi le daasanach et, dans les zones frontieres, des notions de toposa. L'amharique est utilise dans les contacts avec l'administration ethiopienne. La langue est exclusivement orale, sans orthographe standardisee etablie."
+    },
+    "culture": {
+      "majorRites": "Initiation guerriere : les jeunes hommes de 16 a 20 ans sacrifient un animal, prerequis a la prise de vie. Apres son premier combat, le guerrier se fait faire une entaille cicatricielle sur l'epaule ou la poitrine droite. La ceremonie asapan (transmission de souverainete entre generations, tous les 50-55 ans) est le rite le plus important ; elle etait interdite sous Mengistu. Rites funeraires : l'ancien est enterre dans l'enclos a zebus sous un monticule de bouse seche ; les endeuilles se blanchissent le corps a la farine de sorgho.",
+      "symbols": "Le betail (zebu) est la valeur centrale : richesse, statut social et moyen d'echange pour la dot. Les ornements corporels expriment le statut : les femmes portent de 6 a 8 kg de perles au cou, accumulees depuis l'enfance. Labrets (lèvre inferieure percee) pour hommes (ivoire, metal, bois) et femmes (cuivre). Bracelets metalliques a bords tranchants portes par les hommes comme armes de defensa. Scarifications comme marqueurs d'identite et de bravoure.",
+      "artsAndMusic": "Chants de bovins (cattle songs) : les Nyangatom sont celebres pour leurs talents oratoires et leurs chants dedies au betail, appris par les peuples voisins d'autres familles linguistiques. Traditions orales riches transmettant l'ethno-histoire. Corps peint lors des ceremonies. Les femmes fabriquent de nombreux objets en perles mais n'ont pas la tradition de la poterie (les poteries sont obtenues par echange avec les femmes Mursi et Karo).",
+      "spiritualities": "Religion traditionnelle, animisme et culte des ancetres. Croyance en esprits associes aux elements naturels. Le systeme de generations est en lui-meme un cadre cosmologique et spirituel. Le pentecotisme protestant se repand depuis les annees 1990, modifiant progressivement les pratiques. Tres peu de convertis a l'islam ou au catholicisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Societe segmentaire sans royaume centralise. Autonomie politique acquise au milieu du XIXe siecle lors de la separation d'avec les Toposa.",
+      "relationsWithNeighbors": "Alliance fraternelle avec les Toposa (partage de paturages et assistance mutuelle). Conflicts recurrents avec les Turkana, les Dassanetch et les Surma-Suri. Des amities transethniques individuelles (bond friends) existent malgre les tensions collectives. Echanges commerciaux de poteries (Mursi, Karo) contre betail et produits agricoles.",
+      "conflictsOrAlliances": "Decimation par les Dassanetch dans les annees 1970. Renouveau militaire apres 1980 grace aux armes legeres issues de la guerre civile soudanaise. Expansion aux depens des Suri, qui furent repousses vers le nord. Etablissement commun avec les Toposa d'une implantation pastorale et militaire a Mount Naita sur le territoire Suri.",
+      "diaspora": "Mobilite saisonniere entre l'Ethiopie et le Triangle d'Ilemi (Soudan du Sud). Pas de diaspora etablie hors de leur territoire ancestral. Presence croissante dans les bourgs de la region de l'Omo (Jinka, Omo Rate) due aux projets agricoles qui reduisent les terres pastorales."
+    },
+    "demography": {
+      "totalPopulation": 46500,
+      "referenceYear": 2025,
+      "source": "Peoplegroups.org 2024 : 40 500 en Ethiopie ; 101 Last Tribes : 6 000 au Soudan du Sud ; total estime 2025 : environ 46 500",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 40500 },
+        { "country": "SSD", "population": 6000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia – Nyangatom people, 2024 (https://en.wikipedia.org/wiki/Nyangatom_people)",
+      "101 Last Tribes – Nyangatom, 2024 (https://www.101lasttribes.com/tribes/nyangatom.html)",
+      "Joshua Project – Nyangatom in Ethiopia, 2024 (https://joshuaproject.net/people_groups/11610/et)",
+      "Peoplegroups.org – Nyangatom of Ethiopia PG011628 (https://peoplegroups.org/people_groups/pg011628/)",
+      "Ethnologue – Nyangatom (NNJ), ISO 639-3 : nnj (https://www.ethnologue.com/language/nnj/)",
+      "Intercontinental Cry – The Nyangatom: Pastoral Nations of Ethiopia's Omo Valley (https://icmagazine.org/indigenous-peoples/nyangatom/)",
+      "Aisha Tours Ethiopia – The Nyangatom people (https://www.aishatoursethiopia.com/en/ethnicity/the-nyangatom-people)"
+    ]
+  }
+}

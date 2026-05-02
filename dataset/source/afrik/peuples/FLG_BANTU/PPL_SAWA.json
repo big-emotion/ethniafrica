@@ -1,0 +1,110 @@
+{
+  "id": "PPL_SAWA",
+  "nameMain": "Sawa",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Sawa",
+      "selfAppellation": "Sawa — du duala : rive, rivage, cote, berge ; designe les peuples de l'eau ou peuples de la cote",
+      "exonyms": [
+        "Peuples de l'eau",
+        "Peuples cotiers du Cameroun",
+        "Sawabantu (terme linguistique)"
+      ],
+      "originOfExonyms": "Peuples de l'eau fait reference a leur culture maritime et leur relation etroite avec l'eau (ocean, fleuves, lagunes). Sawabantu est une classification linguistique combinant Sawa et Bantu.",
+      "whyProblematic": "Le terme Bantou a ete detourne a l'epoque coloniale pour creer des hierarchies raciales, utilise pour justifier des politiques segregationnistes. Aujourd'hui, bantou est strictement linguistique, pas racial.",
+      "contemporaryUsage": "Sawa est universellement accepte et utilise. Les Sawa se reconnaissent comme un ensemble de peuples cotiers partageant une culture maritime commune.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou occidental, sous-groupe Sawabantu (Guthrie A.20, A.30) et langues manenguba",
+      "historicalRegion": "Littoral atlantique du Cameroun, estuaire du Wouri, bassin du fleuve Sanaga, piedmonts du mont Cameroun",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Douala (Wouri) — principal groupe, estuaire du Wouri",
+      "Bassa (Wouri, Sanaga-Maritime) — groupe important du littoral",
+      "Bakoko (Wouri, Sanaga-Maritime) — anciens occupants de l'estuaire du Wouri",
+      "Malimba (Sanaga-Maritime) — groupe Limba du bas Sanaga",
+      "Ewodi (Nkam) — groupe apparente aux Douala",
+      "Bakweri (Fako) — peuples des pentes du mont Cameroun",
+      "Isubu (Bimbian, Fako) — peuple d'Ambas Bay",
+      "Bamboko (Fako) — groupe du Mungo meridional",
+      "Bakole (Koupe-Manengouba) — groupe apparente aux Douala",
+      "Oroko (Balondo, Ndian) — groupe du Ndian",
+      "Batanga (Ocean) — groupe cotier du sud",
+      "Bafaw, Balong, Barombi (Meme) — groupes du Meme",
+      "Bakossi (Fako) — groupe des hautes terres",
+      "Pongo, Bodiman, Mungo, Wovea — groupes secondaires de l'estuaire",
+      "Mbo, Bakaka, Baneka (Moungo) — groupes manenguba"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale sawa, les ancetres des Sawa sont originaires du nord de l'Afrique (Nubie, Egypte, Soudan), d'ou ils migrerent progressivement vers l'Afrique subsaharienne. Le terme Bantou derive du duala bato signifiant hommes. Apres un sejour dans l'ancien Congo francais, les groupes ancestraux se diviserent et migrerent vers le Gabon et la Guinee equatoriale avant de rejoindre le Cameroun.",
+      "formationPeriod": "L'ancetre eponyme Mbongo MBE et ses descendants arriverent dans l'estuaire du Wouri vers 1578, ou ils rencontrerent les Bassa et les Bakoko. Les groupes Douala se differentierent des autres Sawa lors de migrations aux XVIe-XVIIIe siecles. Les Douala emergerent comme principaux intermediaires commerciaux des le XVIe siecle.",
+      "migrationRoutes": [
+        "De l'Afrique du Nord (Nubie, Egypte) vers le sud (tradition orale)",
+        "Transit par l'ancien Congo francais (actuelle RDC ou Congo Brazzaville)",
+        "Arrivee au Cameroun via le Gabon et la Guinee equatoriale",
+        "Division a Pitti (ancetres Douala, Ewodi, Malimba, Pongo-Songo) et a Limbe (ancetres Bakundu)",
+        "L'ancetre Ewale s'installa a l'estuaire du Dibamba puis du Wouri, Dibongo se dirigea vers la Sanaga"
+      ],
+      "historicalSettlementZones": [
+        "Estuaire du Wouri et region de Douala (region Littoral)",
+        "Rives du bas Sanaga (Sanaga-Maritime, region Edea)",
+        "Piedmonts et cotes du mont Cameroun (region Sud-Ouest, Fako)",
+        "Cote de Kribi et region de l'Ocean",
+        "Basse vallee du Mungo et du Nkam"
+      ],
+      "unificationsOrDivisions": "Les Sawa forment un ensemble culturel reconnu malgre des identites ethniques distinctes. Leur unite s'exprime lors du festival annuel Ngondo (decembre, Wouri, Douala) qui reunit les chefs de clans depuis le XIXe siecle. L'hegemonie commerciale et militaire passee des Douala leur permit d'imposer la langue duala comme vehiculaire parmi les Sawa.",
+      "externalInfluences": "Premier contact europeen au XVe siecle avec les Portugais (nom du fleuve Wouri : Rio dos Camaroes, crevettes, donnant le nom Cameroun). Les Douala devinrent les intermediaires privilegies du commerce europeen (esclaves, huile de palme, ivoire) du XVIe au XIXe siecle. Colonisation allemande (1884-1916) puis franco-britannique. Influence chretienne profonde (missions baptistes, presbyteriennes, catholiques) depuis le XIXe siecle.",
+      "majorHistoricalEvents": "XVIe siecle : emergence des Douala comme commercants dominants de la cote. 1578 : arrivee de Mbongo MBE dans l'estuaire du Wouri selon la tradition orale. Fin XVIIe-debut XVIIIe siecle : les Douala refoulent les Bassa et Bakoko vers l'interieur. 1884 : traite de protectorat avec l'Allemagne signe par les chefs Douala (Bell, Akwa). 1884-1916 : colonisation allemande (Kamerun). 1914 : execution du chef Douala Rudolf Manga Bell, qui avait proteste contre l'expropriation des terres. 1916-1960 : administration franco-britannique. 1960 : independance du Cameroun."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe sawa est organisee selon une pyramide feodale. A la tete se trouve le Kinge (roi ou chef superieur, aussi appele Mwanedi a Boso), chef de premier ou deuxieme degre. Le Janea la mundi (Mwanedi a Mbusa) est le chef de village ou de groupement. Viennent ensuite le Sango a Mboa (Sangwa Mboa, chef de famille) et le Sango a Eboko (chef de la famille nucleaire), puis les Masoso (petits foyers autour du grand foyer).",
+      "clanOrganization": "Organisation en lignages (mulalo, ligne maternelle sacree) et en clans patrilineaires. Un proverbe duala illustre l'importance du lien maternel : Mulalo a si ma wo o bila — Un descendant maternel ne doit jamais perir a la guerre. Les noms de clans chez les Douala incluent Jongo, Ewale, Pongo, Bakwedi, Ewodi, issus des unions entre l'ancetre et les filles des Bakoko d'accueil. Chez les Bakweri et les Isubu, les sous-lignages suivent les lignes de village.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le lignage (mulalo, lien maternel) est sacre et determine les alliances militaires et matrimoniales. Le lignage paternel determine la transmission des biens et du statut. Les chefs de famille (sango a mboa) sont designes par consensus familial, generalement l'aine ou un membre capable reconnu par l'unanimite.",
+      "religiousAuthority": "Culte du genie de l'eau Jengu (pl. Miengu), aussi appele Ndimsi : etre invisible de l'eau, de forme humaine androgene, a la peau claire (m'bongo), cheveux jusqu'au sol et pieds retournes (talon vers l'avant). Il peut etre favorable (protection des pecheurs) ou defavorable. Les chefs spirituels maintiennent les relations avec les esprits ancestraux et le Jengu. Christianisme (protestantisme, catholicisme) tres present depuis le XIXe siecle."
+    },
+    "languages": {
+      "mainLanguage": "Duala (langue vehiculaire des Sawa)",
+      "isoCodes": ["dua", "bas", "bkh", "bqz"],
+      "dialects": [
+        "Duala (dua) — vehiculaire des Sawa, ISO 639-3 : dua",
+        "Bassa (bas) — langue des Bassa, ISO 639-3 : bas",
+        "Bakweri/Kwe (bkh) — langue des Bakweri, ISO 639-3 : bkh",
+        "Bakoko (bqz) — langue des Bakoko, ISO 639-3 : bqz",
+        "Isubu, Oroko (A.11), Malimba, Pongo, Ewodi — autres langues sawabantu"
+      ],
+      "vehicularRole": "Le duala est la langue vehiculaire historique des Sawa, impose par l'hegemonie economique et militaire passee des Douala, par l'evangelisation en duala (missions baptistes du XIXe siecle) et par leur role d'intermediaire dans le commerce europeen. Aujourd'hui, le francais est la langue officielle dans la region Littoral. Le makossa, genre musical en duala, est repandu dans tout le Cameroun."
+    },
+    "culture": {
+      "majorRites": "Ngondo : grande assemblee traditionnelle annuelle des peuples Sawa, celebree le premier dimanche de decembre sur les rives du Wouri a Douala. Fondee au XIXe siecle, elle reunit les chefs de clans pour honorer les ancetres et consulter les esprits de l'eau. Comprend des courses de pirogues, des danses traditionnelles, des concours de lutte sawa, des offrandes et consultations spirituelles. Jengu (culte du genie de l'eau) : initiation et ceremonies d'alliance avec les esprits de l'eau, pratiquees par des initie(e)s. Ceremonies de mariage avec dot. Rites de naissance et de nomination. Funerailles avec veillees et ceremonies commemoratives.",
+      "symbols": "Le Jengu (genie de l'eau) est le symbole central de la spiritualite sawa. La pirogue symbolise la maitrise de l'eau et la tradition maritime. Le ndole (plat a base de feuilles ameres, viande ou poisson et crevettes) est le symbole culinaire des Sawa, connu dans tout le Cameroun. La robe Kaba portee lors du Ngondo et le vetement traditionnel sanja. Nyambe, Loba, Njambe : nom du dieu createur suprême.",
+      "artsAndMusic": "Musique makossa (generalement chantee en duala) : genre musical urbain cree par les artistes douala, celebre dans tout le Cameroun et l'Afrique centrale (artiste emblematique : Manu Dibango). Danses traditionnelles : essewè, sekele. Danse des peuples Sawa avec accessoires de danse traditionnels. Instruments de musique traditionnels (balafon, tam-tam, hochets). Artisanat : sculpture, pirogue, objets en bois. Cuisine traditionnelle : ndole, poisson fume, crustaces. Architecture traditionnelle en torchis avec toits de chaume le long des rives.",
+      "spiritualities": "Culte du dieu createur supreme Nyambe (aussi Loba, Njambe) : createur du monde, de l'ocean, des fleuves et des hommes, source de fertilite et de prosperite, juge supreme. Culte du Jengu (genie de l'eau, Ndimsi) : etre invisible intervenant dans la vie humaine, protecteur des pecheurs et des navigateurs quand propice. Autels domestiques avec offrandes regulieres aux ancetres (libations de vin de palme, d'eau, sang animal). Fetes commemoratives annuelles pour les defunts. Noms ancestraux portes par les enfants (reinvarnation partielle). Christianisme protestant et catholique dominant depuis le XIXe siecle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Douala (principale composante sawa) emergerent comme chefferie commercante dominante des le XVIe siecle. Principales chefferies superieures (Kinge de premier degre) : Akwa, Bell, Belle Belle, Deido (Douala), Bakoko Wouri, Bankon (Abo), Bakweri, Pongo. Les chefs Douala signerent le traite de protectorat avec l'Allemagne en 1884 (chefs Bell et Akwa). Le chef Rudolf Manga Bell fut pendu par les Allemands en 1914 pour avoir proteste contre les expropriations.",
+      "relationsWithNeighbors": "Les Douala repousserent les Bassa et Bakoko vers l'interieur des terres a leur arrivee (fin XVIIe-debut XVIIIe siecle). Ils s'etablirent comme intermediaires commerciaux entre les peuples de l'interieur (Bakweri, Mungo, Bassa, Bakoko) et les navires europeens. Relations complexes avec les Bamileke et les Beti de l'interieur dans le cadre du commerce. Les esclaves etaient achetes a l'interieur et revendus aux Europeens.",
+      "conflictsOrAlliances": "XVIe-XVIIIe siecle : competition commerciale entre les differents groupes cotiers (Douala, Isubu, Malimba). XIXe siecle : commerce d'esclaves, puis d'huile de palme avec les Europeens. 1884 : traite de protectorat avec l'Allemagne. 1914 : execution de Rudolf Manga Bell. Participation a la resistance contre la colonisation. Apres l'independance, les Sawa restent un groupe influent dans la vie politique et culturelle camerounaise.",
+      "diaspora": "Diaspora sawa dans les grandes villes du Cameroun (Yaounde, Bafoussam). Communautes en Europe (France, Belgique, Allemagne) et en Amerique du Nord (Etats-Unis, Canada), notamment au sein de la Sawa Convention North America. La diaspora maintient les liens culturels via des associations et le festival Ngondo."
+    },
+    "demography": {
+      "totalPopulation": 3204840,
+      "referenceYear": 2025,
+      "source": "Estimations AFRIK basees sur Wikipedia FR (article Sawa, peuple, 2025) : 3 204 840 habitants soit 12% de la population camerounaise de 26 707 000. Donnees demographiques camerounaises (BUCREP, Banque Mondiale). Ethnologue (SIL International) pour les langues Sawa (duala : 300 000 locuteurs natifs). Joshua Project (donnees ethnographiques). La region Littoral compte environ 3,5 millions d'habitants (2021).",
+      "distributionByCountry": [{ "country": "CMR", "population": 3204840 }]
+    },
+    "sources": [
+      "Wikipedia FR — Sawa (peuple) : https://fr.wikipedia.org/wiki/Sawa_(peuple)",
+      "Wikipedia EN — Duala people : https://en.wikipedia.org/wiki/Duala_people",
+      "Sawa Convention North America — History of Sawa : https://www.sawaconna.org/historyofsawa",
+      "Sawa Convention North America — Histoire des Sawa (FR) : https://www.sawaconna.org/fr/historyofsawa",
+      "Le Tamtam du Mboa — L'organisation traditionnelle de la societe Sawa : https://tamtamdumboa.com/lorganisation-traditionnelle-de-la-societe-sawa/",
+      "Peuple Sawa — The Duala peoples (PDF) : https://www.peuplesawa.com/downloads/56.pdf",
+      "101 Last Tribes — Duala people : https://www.101lasttribes.com/tribes/duala.html",
+      "SIL Ethnologue — Duala (dua) : https://www.ethnologue.com/language/dua",
+      "VertigO — Le Ngondo chez les peuples Sawa du Cameroun : https://journals.openedition.org/vertigo/2685"
+    ]
+  }
+}

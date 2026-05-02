@@ -1,0 +1,123 @@
+{
+  "id": "PPL_MOSSI",
+  "nameMain": "Mossi",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["BFA", "GHA", "CIV", "MLI", "BEN", "TGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Mossi",
+      "selfAppellation": "Mossi / Mòoré",
+      "exonyms": ["Mosi", "Mosse", "More"],
+      "originOfExonyms": "Le terme Mossi est l'ethnyme historique généralement accepté, identique à l'endonyme. Mosi est une variante orthographique rencontrée dans les écrits coloniaux français.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Mossi est universellement utilisé en français, anglais et en mooré. Les locuteurs se désignent eux-mêmes par le terme Mossi au singulier et Mosse au pluriel. L'identité mossi est fortement liée à la langue mooré.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Gur (Oti-Volta occidental)",
+      "historicalRegion": "Bassin du Volta — Haute-Volta (actuel Burkina Faso), avec présence historique au Ghana septentrional, en Côte d'Ivoire et au Mali",
+      "currentCountries": ["BFA", "GHA", "CIV", "MLI", "BEN", "TGO"]
+    },
+    "ethnicities": [
+      "Nakomse (classe politique et royale, descendants des cavaliers conquérants, ancêtres de la princesse Yennenga)",
+      "Tengabisi (classe spirituelle et paysanne, descendants des peuples cultivateurs autochtones)",
+      "Nyonyose (sous-classe des Tengabisi, principaux porteurs et utilisateurs des masques rituels)",
+      "Yarse (marchands et tisserands islamisés, sous-classe des Tengabisi)",
+      "Saya (forgerons rituels, caste spécialisée des Tengabisi)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Mossi descendent de l'union légendaire de la princesse Yennenga, fille du roi Naa Gbewaa de Mamprugu (actuel Ghana septentrional), et du chasseur mandé Rialé. Leur fils Ouédraogo est considéré comme le père fondateur du peuple mossi. Les conquérants équestres (Nakomse) venus du sud ont soumis les populations cultivatrices autochtones (Tengabisi, dont les ancêtres sont les Dogon, Kurumba, Lela, Nuna, Sisala et Gurmantche) pour former la société mossi syncrétique.",
+      "formationPeriod": "L'identité mossi distincte se cristallise entre le 11e et le 15e siècle. La dynasty de Ouagadougou fut fondée par Oubri vers 1050-1090 apr. J.-C. La consolidation politique intervient autour du 13e siècle avec l'établissement des royaumes. Le terme Mossi dans son acception moderne se fixe sous l'ère coloniale française.",
+      "migrationRoutes": [
+        "Cavaliers Nakomse migrant depuis le Mamprugu (nord de l'actuel Ghana) vers le bassin du Volta aux 11e-13e siècles",
+        "Expansion vers le nord avec fondation du royaume de Yatenga (vers 1170) par un fils de la lignée de Ouagadougou",
+        "Migrations économiques vers le sud (Côte d'Ivoire, Ghana) depuis le 19e siècle, intensifiées pendant la colonisation française"
+      ],
+      "historicalSettlementZones": [
+        "Plateau central du Burkina Faso (bassin du Volta Blanc et du Volta Rouge)",
+        "Ouagadougou — capitale historique et actuelle du Burkina Faso",
+        "Yatenga (Ouahigouya) au nord",
+        "Tenkodogo au sud-est",
+        "Fada N'Gourma à l'est",
+        "Ghana septentrional (région Brong-Ahafo et Nord)"
+      ],
+      "unificationsOrDivisions": "Les Mossi étaient organisés en cinq royaumes principaux : Ouagadougou, Tenkodogo, Fada N'Gourma, Zondoma (remplacé par Yatenga vers 1170), et Boussouma, avec jusqu'à 19 royaumes secondaires. Chaque royaume conservait une autonomie domestique significative tout en partageant des liens de parenté, militaires et rituels. Des rivalités persistaient, notamment entre Yatenga et Ouagadougou.",
+      "externalInfluences": "Résistance à l'imposition de l'islam par le djihad de l'Askia Mohammad I de Songhai (1497). Développement d'un système mixte reconnaissant partiellement l'autorité islamique. Conquête française en 1896 et création de la colonie de la Haute-Volta. La France a maintenu la structure administrative mossi en nommant le Mogho Naaba de Ouagadougou chef principal de la région.",
+      "majorHistoricalEvents": "Au 15e siècle, les Mossi prirent Tombouctou et pillèrent le comptoir de Oualata. En 1497, l'Askia Muhammad I de Songhai mena un djihad contre les Mossi, qui furent défaits mais résistèrent à l'islamisation forcée. En 1896, les Français conquirent les royaumes mossi, ignorant le traité de protection britannique signé en 1894 ; le roi Wobgo (Wubri) s'exila sur la Gold Coast. En 1991, le Mogho Naaba Baongo II joua un rôle de médiateur lors de la transition politique au Burkina Faso."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les royaumes mossi reposaient sur une hiérarchie pyramidale. Le Mogho Naaba (litt. roi du monde) de Ouagadougou était l'empereur suprême de tous les Mossi. Il était entouré de ministres représentant chacun un territoire. Chaque royaume avait ses propres rois (Naba, pl. Nanamse), ministres et fonctionnaires, avec un haut degré de centralisation administrative. La cérémonie du vendredi (Nabayiri) perpétue la légende fondatrice de la fuite de la soeur du Mogho Naaba vers Yatenga. Aujourd'hui, Naba Baongo II règne comme Mogho Naaba de Wogodogo (Ouagadougou) ; les royaumes de Boussouma, Fada N'Gourma, Tenkodogo et Yatenga subsistent comme monarchies constitutives du Burkina Faso.",
+      "clanOrganization": "La société mossi est divisée verticalement en deux classes : les Nakomse (classe politique, descendants des cavaliers conquérants) et les Tengabisi (classe spirituelle et foncière). Les Nakomse se voient attribuer des territoires comme gouvernorats au nom du Mogho Naaba. Les Tengabisi, propriétaires fonciers par droit d'occupation première, regroupent les Nyonyose (cultivateurs et porteurs de masques), les Yarse (marchands islamisés) et les Saya (forgerons).",
+      "ageClassSystems": null,
+      "roleOfLineages": "La famille est l'unité centrale de la société mossi, organisée sur le modèle patrilinéaire (héritage du père vers les fils, avec exception pour les filles en l'absence de fils). La famille fonctionne comme un royaume en miniature : le père est roi, la mère est conseillère, les enfants sont le peuple. Les actions de chacun rejaillissent sur l'ensemble de la famille. L'oncle et la tante participent à l'éducation. Le collectivisme prime sur l'individualisme.",
+      "religiousAuthority": "Le Mogho Naaba participe à deux festivals : l'un sur la généalogie royale pour renforcer le naam (force vitale de commandement), l'autre de sacrifices à la tenga (terre). À Ouagadougou, le Mogho Naaba nommait un imam chargé des lectures coraniques à la cour en échange de la reconnaissance du pouvoir généalogique royal. Le maraboutisme islamique et les croyances animistes traditionnelles coexistent. Les Nyonyose maîtrisent les rites des masques lors des initiations, funérailles et commémorations."
+    },
+    "languages": {
+      "mainLanguage": "Mooré (Mòoré)",
+      "isoCodes": ["mos"],
+      "dialects": [
+        "Yatenga (Ouahigouya) — dialecte du nord",
+        "Ouagadougou — dialecte central, prestige et lingua franca",
+        "Koupela — dialecte du sud-est",
+        "Tenkodogo — dialecte du sud"
+      ],
+      "vehicularRole": "Le mooré est la langue du groupe Oti-Volta occidental (famille gur, Niger-Congo). Parlé comme langue maternelle par environ 6,46 millions de personnes au Burkina Faso, Ghana, Côte d'Ivoire, Bénin, Niger, Mali, Togo et Sénégal, avec beaucoup plus de locuteurs secondaires. Plus de 50% de la population burkinabè parle le mooré comme première ou deuxième langue. Le mooré est l'une des quatre langues officielles du Burkina Faso et la principale langue de la capitale Ouagadougou."
+    },
+    "culture": {
+      "majorRites": "Cérémonies des masques (nyonyose uniquement) : portés lors des initiations, funérailles, enterrements et commémorations pour vérifier les procédures correctes et faciliter l'admission des esprits chez les ancêtres. Masques sculptés dans le bois de Ceiba pentandra, portés avec des costumes en fibres d'Hibiscus cannabinus. La cérémonie royale du vendredi (Nabayiri) perpétue la légende de la fuite de la soeur du Mogho Naaba vers Yatenga. Le Na possum est un festival royal annuel où les Nakomse exposent des figures sculptées et les ménages renouvellent leur allégeance au chef. Festival Basega (action de grâces après la récolte du mil en décembre).",
+      "symbols": "Les masques mossi constituent le symbole culturel central. Styles régionaux distincts : au nord, planches verticales avec visage concave ou convexe ; au sud-ouest, animaux (antilope, buffle des savanes) peints en rouge, blanc et noir ; à l'est (Boulsa), hauts poteaux avec fibres. Les figures sculptées des Nakomse symbolisent le pouvoir royal et l'hommage aux ancêtres. Le cheval est emblème de la classe royale. Le naam (force de commandement) est le concept symbolique central de la royauté.",
+      "artsAndMusic": "Masques sculptés des Nyonyose, représentant des personnages : Balinga (femme fula), katre (hyène), nyaka (petite antilope), Wan pelega (grande antilope). Figures en bois des Nakomse pour les cérémonies royales et politiques. Musique de cour avec tambours royaux (bendré). Littérature orale et tradition du griots. Les Mossi participent au SIAO (Salon international de l'Artisanat de Ouagadougou), à la Semaine de la Culture et aux Nuits Atypiques de Koudougou. Artisanat : tissage (les Yarse), broderie, maroquinerie.",
+      "spiritualities": "Croyances traditionnelles centrées sur le nam (force vitale et de commandement), la tenga (terre, dimension spirituelle) et le culte des ancêtres. Les ancêtres influencent la vie des vivants, aident ou punissent, et servent de juges pour l'entrée dans le panthéon. On jure par les ancêtres et la terre pour rendre justice. Parallèlement, l'islam sunnite est largement répandu (env. 60% de la population mossi) ainsi que le christianisme (env. 25%) ; le syncrétisme est courant. Les Mossi résistèrent historiquement à l'islamisation forcée tout en intégrant des pratiques islamiques à leur cour."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les royaumes mossi (Mossi Kingdoms) dominèrent la région du Volta supérieur pendant plusieurs siècles (env. 11e-19e s.). Le plus grand était le royaume de Ouagadougou, dirigé par le Mogho Naaba (Roi du monde), véritable capitale morale de l'ensemble mossi. Les cinq royaumes principaux étaient : Ouagadougou (fondé par Oubri, 1050-1090), Tenkodogo (fondé par Ouédraogo), Fada N'Gourma (fondé par Diaba Lompo, fils aîné d'Ouédraogo), Yatenga (fondé vers 1170 par révolution interne), et Boussouma. Ces royaumes subsistent aujourd'hui comme monarchies constitutives au sein du Burkina Faso.",
+      "relationsWithNeighbors": "Relations complexes avec l'Empire du Mali, l'Empire Songhai et les États Haoussa. Au 15e siècle, les cavaliers mossi pillèrent Tombouctou et Oualata. Résistance aux djihads islamiques des empires Massina et du Califat de Sokoto aux 18e-19e siècles. Commerce avec les royaumes fula et l'Empire du Mali. En 1894, les chefs mossi signèrent un traité de protection avec les Britanniques (expédition George Ekem Ferguson) que les Français ignorèrent lors de leur conquête en 1896.",
+      "conflictsOrAlliances": "Défaite militaire face à l'Askia Muhammad I de Songhai (1497) mais maintien de l'indépendance politique. Rivalité structurelle entre Yatenga et Ouagadougou. Conquête française de 1896 : le roi Wobgo s'exila sur la Gold Coast, son frère Kouka s'allia aux Français. Rôle des Mossi dans les tirailleurs sénégalais pendant la Seconde Guerre mondiale. Indépendance de la Haute-Volta en 1960, renommée Burkina Faso en 1984.",
+      "diaspora": "Environ 2 millions de Mossi en Côte d'Ivoire (migration économique vers les plantations de cacao et café). Présences significatives au Ghana (Nord), au Mali, au Bénin et au Togo. Dans la diaspora occidentale : Cheick Kongo (combattant MMA français), Élodie Ouédraogo et Anne Zagré (athlètes belges), Fulgence Ouedraogo (rugbyman français), Angèle Bassolé-Ouédraogo (poète canadienne), Hubert Maga (premier président du Bénin, d'origine mossi)."
+    },
+    "demography": {
+      "totalPopulation": 14000000,
+      "referenceYear": 2025,
+      "source": "Estimations 2025 basées sur : Wikipedia Mossi people (11,1 millions au Burkina Faso, 52% de ~21,4M habitants en 2025) ; Ethnologue SIL (6,46M locuteurs L1 de mooré en 2019, projection 2025) ; CIA World Factbook Burkina Faso ; 2 millions estimés en Côte d'Ivoire (Wikipedia) ; diasporas Ghana, Mali, Bénin, Togo",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 11500000,
+          "note": "52% de la population totale du Burkina Faso ; plateau central, Ouagadougou et région de Yatenga"
+        },
+        {
+          "country": "CIV",
+          "population": 2000000,
+          "note": "Migration économique historique vers les plantations de cacao, café et les villes"
+        },
+        {
+          "country": "GHA",
+          "population": 300000,
+          "note": "Régions nord et Brong-Ahafo du Ghana"
+        },
+        {
+          "country": "MLI",
+          "population": 120000,
+          "note": "Sud du Mali, zones frontalières"
+        },
+        {
+          "country": "BEN",
+          "population": 50000,
+          "note": "Nord du Bénin"
+        },
+        {
+          "country": "TGO",
+          "population": 30000,
+          "note": "Nord du Togo, zones frontalières"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Mossi people. https://en.wikipedia.org/wiki/Mossi_people",
+      "Wikipedia EN — Mossi Kingdoms. https://en.wikipedia.org/wiki/Mossi_Kingdoms",
+      "Wikipedia EN — Mooré language. https://en.wikipedia.org/wiki/Moor%C3%A9",
+      "Ethnologue SIL — Mooré (mos). https://www.ethnologue.com/language/mos/",
+      "BBC News — Mogho Naba: Burkina Faso's mediator monarch. https://www.bbc.com/news/world-africa-34340704",
+      "Britannica — Mossi states. https://www.britannica.com/place/Mossi-states",
+      "Skinner, Elliott P. The Mossi of the Upper Volta: The Political Development of a Sudanese People. Stanford University Press, 1964."
+    ]
+  }
+}

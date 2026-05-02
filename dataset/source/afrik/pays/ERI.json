@@ -1,0 +1,296 @@
+{
+  "id": "ERI",
+  "nameFr": "État d'Érythrée (State of Eritrea, Hagere Ertra)",
+  "nameOfficial": "État d'Érythrée (State of Eritrea, Hagere Ertra)",
+  "etymology": "Le nom \"Érythrée\" vient du grec \"Erythraia\" (Ἐρυθραία), dérivé de \"Mare Erythraeum\" (mer Érythrée), nom donné par les Grecs à la mer Rouge. Le terme signifie \"rouge\" en grec, en référence à la couleur de la mer Rouge. Les Italiens ont adopté ce nom pour leur colonie en 1890.",
+  "nameOriginActor": "Le nom \"Érythrée\" a été donné par les Italiens lors de la création de la colonie italienne en 1890, en référence à la \"mer Érythrée\" (mer Rouge) mentionnée par les Grecs anciens. Le nom a été officialisé à l'indépendance en 1993.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Partie du royaume d'Aksoum (Axumite Empire). Le territoire était intégré dans l'empire aksoumite, centre de la civilisation éthiopienne ancienne.",
+      "middleAges": "Provinces tigrigna et afar liées à l'Éthiopie historique. Développement des royaumes et chefferies du haut plateau (Tigrinya), zones Beja (Bilen, Hedareb), et peuples Afar du littoral.",
+      "precolonial": "XVe-XVIIIe siècle : entités Beja (Beni Amer, Hadarib). Mosaïque de royaumes et chefferies : royaumes tigrigna (haut plateau), chefferies Beja (centre), peuples Afar (littoral). Pas de nom unifié pour l'ensemble du territoire.",
+      "colonization": "1890-1941 : Colonie italienne \"Eritrea\" (nom dérivé de Mare Erythraeum : \"mer Érythrée\" / mer Rouge). Les Italiens ont créé la colonie d'Érythrée en 1890. 1941-1952 : Administration britannique (après la défaite italienne). 1952-1962 : Fédération Éthiopie-Érythrée (autonomie sous l'Éthiopie). 1962-1991 : Annexion par l'Éthiopie, province éthiopienne.",
+      "contemporary": "1991 : Libération de l'Érythrée par le Front populaire de libération de l'Érythrée (FPLE). 1993 : Indépendance de l'Érythrée (24 mai 1993), proclamation de l'État d'Érythrée (State of Eritrea)."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume d'Aksoum",
+        "period": "Antiquité - VIIe siècle",
+        "dominantPeoples": ["Tigrinya", "Tigré", "autres peuples érythréens"],
+        "politicalCenters": [
+          "Aksoum (capitale historique",
+          "aujourd'hui en Éthiopie)"
+        ],
+        "historicalRole": "Royaume d'Aksoum puissant, centre de la civilisation éthiopienne ancienne, christianisation précoce, commerce avec l'Inde et la Méditerranée. L'Érythrée était partie intégrante de l'empire aksoumite."
+      },
+      {
+        "name": "Royaumes et chefferies tigrigna",
+        "period": "Moyen Âge - présent",
+        "dominantPeoples": ["Tigrinya"],
+        "politicalCenters": ["Hauts plateaux (Asmara", "Mendefera)"],
+        "historicalRole": "Royaumes et chefferies tigrigna sur les hauts plateaux, héritiers d'Aksoum, christianisme orthodoxe, structures villageoises lignagères. Rôle central de l'Église Tewahedo."
+      },
+      {
+        "name": "Chefferies Beja",
+        "period": "XVe siècle - présent",
+        "dominantPeoples": ["Beja (Bilen", "Hedareb", "Beni Amer)"],
+        "politicalCenters": ["Keren", "régions centrales"],
+        "historicalRole": "Chefferies Beja, organisation tribale, islam et christianisme mixte (Bilen). Relations avec le Soudan."
+      },
+      {
+        "name": "Peuples Afar",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Afar"],
+        "politicalCenters": ["Littoral et sud-est"],
+        "historicalRole": "Peuples Afar nomades pastoraux, sultanat d'Aussa, traditions couchitiques, pastoralisme de dromadaires."
+      },
+      {
+        "name": "Colonie italienne d'Érythrée",
+        "period": "1890 - 1941",
+        "dominantPeoples": [
+          "Tous les peuples érythréens sous domination italienne"
+        ],
+        "politicalCenters": ["Asmara (capitale coloniale)"],
+        "historicalRole": "Colonie italienne, développement d'Asmara comme ville coloniale, exploitation économique, résistance des peuples autochtones. Défaite italienne en 1941."
+      },
+      {
+        "name": "Fédération Éthiopie-Érythrée",
+        "period": "1952 - 1962",
+        "dominantPeoples": [
+          "Tous les peuples érythréens sous fédération éthiopienne"
+        ],
+        "politicalCenters": ["Asmara (capitale fédérale)"],
+        "historicalRole": "Fédération avec l'Éthiopie, autonomie limitée, développement du mouvement indépendantiste."
+      },
+      {
+        "name": "Province éthiopienne",
+        "period": "1962 - 1991",
+        "dominantPeoples": [
+          "Tous les peuples érythréens sous domination éthiopienne"
+        ],
+        "politicalCenters": ["Asmara (capitale provinciale)"],
+        "historicalRole": "Annexion par l'Éthiopie, guerre d'indépendance (1961-1991), lutte menée par le Front populaire de libération de l'Érythrée (FPLE)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Tigrinya",
+        "selfAppellation": "ትግራይ (Təgray)",
+        "exonyms": [
+          "Tigrinya (terme utilisé par les Européens)",
+          "Tigréens (terme parfois utilisé",
+          "mais à distinguer de Tigré)",
+          "\"Abyssins\" (terme oriental/colonial englobant",
+          "imprécis",
+          "à éviter)"
+        ],
+        "peopleId": "PPL_TIGRAY",
+        "mainRegion": "Hauts plateaux (Asmara, Mendefera)",
+        "languages": ["Tigrinya (tir", "ISO 639-3)", "anglais", "arabe"],
+        "languageFamily": "FLG_SEMITIQUE",
+        "appellationRemarks": "\"Təgray\" est l'auto-appellation. \"Tigrinya\" est l'exonyme le plus courant. \"Abyssins\" est un terme oriental/colonial englobant et imprécis qui doit être évité. Distinction importante avec les Tigré (musulmans) qui parlent une langue distincte."
+      },
+      {
+        "name": "Tigré",
+        "selfAppellation": "Tigré (ትግረ) / Tigrayit",
+        "exonyms": [
+          "Tigré (terme utilisé par les Européens)",
+          "parfois confondu avec Tigréens (Tigray)"
+        ],
+        "peopleId": "PPL_TIGRE",
+        "mainRegion": "Nord-ouest, Sahel (régions côtières et basses terres)",
+        "languages": ["Tigré (tig", "ISO 639-3)", "arabe", "tigrinya"],
+        "languageFamily": "FLG_SEMITIQUE",
+        "appellationRemarks": "\"Tigré\" ou \"Tigrayit\" est l'auto-appellation. \"Tigré\" est l'exonyme le plus courant. Distinction importante avec les Tigréens (Tigray) qui parlent le tigrinya et habitent les hauts plateaux. Les Tigré sont majoritairement musulmans, contrairement aux Tigréens chrétiens."
+      },
+      {
+        "name": "Afar",
+        "selfAppellation": "Qafár",
+        "exonyms": [
+          "Afar (terme utilisé par les Européens)",
+          "\"Danakil\" (terme européen et arabe ancien",
+          "connotation péjorative",
+          "à éviter)"
+        ],
+        "peopleId": "PPL_AFAR",
+        "mainRegion": "Littoral et sud-est",
+        "languages": ["Afar (aar", "ISO 639-3)", "arabe"],
+        "languageFamily": "FLG_COUCHITIQUE",
+        "appellationRemarks": "\"Qafár\" est l'auto-appellation. \"Afar\" est l'exonyme le plus courant et accepté. \"Danakil\" est un terme européen et arabe ancien qui peut avoir une connotation péjorative et doit être évité."
+      },
+      {
+        "name": "Saho",
+        "selfAppellation": "Saho",
+        "exonyms": ["Saho (terme utilisé par les Européens)"],
+        "peopleId": "PPL_SAHO",
+        "mainRegion": "Centre-sud et côtes",
+        "languages": ["Saho (ssy", "ISO 639-3)", "arabe", "tigrinya"],
+        "languageFamily": "FLG_COUCHITIQUE",
+        "appellationRemarks": "\"Saho\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Bilen",
+        "selfAppellation": "Bilen",
+        "exonyms": ["Bilen (terme utilisé par les Européens)"],
+        "peopleId": "PPL_BILEN",
+        "mainRegion": "Keren (centre)",
+        "languages": ["Bilen (znl", "ISO 639-3)", "tigrinya", "arabe"],
+        "languageFamily": "FLG_COUCHITIQUE",
+        "appellationRemarks": "\"Bilen\" est l'auto-appellation. Pas de terme péjoratif connu. Peuple agaw d'Érythrée, bilinguisme bilen/tigrinya."
+      },
+      {
+        "name": "Hedareb / Beja",
+        "selfAppellation": "Bega / Hadendowa",
+        "exonyms": ["Beja", "Hedareb (terme utilisé pour les Beja d'Érythrée)"],
+        "peopleId": "PPL_BEJA",
+        "mainRegion": "Régions frontalières avec le Soudan",
+        "languages": ["Beja (bej", "ISO 639-3)", "tigré", "arabe"],
+        "languageFamily": "FLG_COUCHITIQUE",
+        "appellationRemarks": "\"Bega\" ou \"Hadendowa\" est l'auto-appellation. \"Beja\" est l'exonyme le plus courant. \"Hedareb\" est un terme spécifique pour les Beja d'Érythrée. Pas de terme péjoratif connu. Peuple beja transfrontalier (Soudan-Érythrée)."
+      },
+      {
+        "name": "Rashaida",
+        "selfAppellation": "Rashaida",
+        "exonyms": ["Rashaida (terme utilisé par les Européens)"],
+        "peopleId": "PPL_RASHAIDA",
+        "mainRegion": "Désert, régions frontalières",
+        "languages": ["Arabe bedawi (arabe dialectal)", "arabe standard"],
+        "languageFamily": "FLG_SEMITIQUE",
+        "appellationRemarks": "\"Rashaida\" est l'auto-appellation. Arabes venus d'Arabie au XIXe siècle. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes (Nara, Kunama)",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Diverses régions d'Érythrée",
+        "languages": ["Langues diverses (Nara", "Kunama)", "tigrinya", "arabe"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation (Nara, Kunama, etc.). Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Tigrinya"
+        },
+        {
+          "name": "Tigré",
+          "isoCode": "tig"
+        },
+        {
+          "name": "Afar",
+          "isoCode": "aar"
+        },
+        {
+          "name": "Saho",
+          "isoCode": "ssy"
+        },
+        {
+          "name": "Bilen",
+          "isoCode": "znl"
+        },
+        {
+          "name": "Beja",
+          "isoCode": "bej"
+        },
+        {
+          "name": "Arabe",
+          "isoCode": "arb"
+        },
+        {
+          "name": "Anglais",
+          "isPrimary": true
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique de l'Érythrée. Traditions tigrigna (hauts plateaux, christianisme orthodoxe, héritage d'Aksoum). Traditions tigré (basses terres, islam, organisation tribale). Traditions couchitiques (Afar, Saho, Bilen, Beja, pastoralisme nomade). Traditions arabes (Rashaida, commerce). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Architecture rupestre (Tigrinya). Poésie orale (Afar, Tigré).",
+      "dominantReligions": "Christianisme orthodoxe (Tigrinya, majoritaire), islam sunnite (Tigré, Afar, Saho, Rashaida, Beja), christianisme catholique et protestant (minorités)",
+      "lifestyles": "Agriculture (hauts plateaux, Tigrinya, cultures vivrières), pastoralisme nomade (Afar, Beja, élevage de dromadaires et bovins), commerce et activités urbaines (zones urbaines, Asmara). Urbanisation modérée. Économie basée sur l'agriculture, l'élevage pastoral, les services, et les transferts de la diaspora.",
+      "socialOrganization": "Organisation en royaumes historiques (Tigrinya, héritage d'Aksoum), chefferies traditionnelles (Tigré, Beja, organisation tribale), sultanats (Afar, sultanat d'Aussa), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Rôle central de l'Église Tewahedo (Tigrinya).",
+      "regionalRelations": "Relations historiques avec l'Éthiopie (Tigrinya, Tigray, commerce, conflits), le Soudan (Beja, Tigré, frontière, réfugiés), Djibouti (Afar, frontière). Intégration dans l'IGAD (Autorité intergouvernementale pour le développement). Relations commerciales et culturelles transfrontalières. Diaspora importante (États-Unis, Europe, Moyen-Orient)."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Partie du royaume d'Aksoum (Antiquité - VIIe siècle), centre de la civilisation éthiopienne ancienne, christianisation précoce, commerce avec l'Inde et la Méditerranée. Développement des royaumes et chefferies tigrigna sur les hauts plateaux.",
+      "middleAges": "Provinces tigrigna et afar liées à l'Éthiopie historique. Développement des chefferies Beja (XVe-XVIIIe siècle). Relations avec les empires éthiopiens et les sultanats de la Corne de l'Afrique.",
+      "precolonial": "Consolidation des royaumes tigrigna, chefferies Beja, peuples Afar nomades. Commerce régional et transsaharien. Contacts avec les Européens (Italiens, Britanniques).",
+      "colonization": "1890 : Création de la colonie italienne d'Érythrée. Période coloniale italienne (1890-1941), développement d'Asmara comme ville coloniale, exploitation économique, résistance des peuples autochtones. 1941 : Défaite italienne, administration britannique. 1952 : Fédération Éthiopie-Érythrée (autonomie limitée). 1962 : Annexion par l'Éthiopie, province éthiopienne.",
+      "independenceStruggle": "1961-1991 : Guerre d'indépendance de l'Érythrée, lutte menée par le Front populaire de libération de l'Érythrée (FPLE). Résistance armée contre l'Éthiopie. 1991 : Libération de l'Érythrée par le FPLE. 1993 : Indépendance de l'Érythrée (24 mai 1993), proclamation de l'État d'Érythrée (State of Eritrea).",
+      "postIndependence": "1993-présent : État d'Érythrée, présidence d'Isaias Afwerki (depuis 1993). Guerre frontalière avec l'Éthiopie (1998-2000). Défis : pauvreté, développement économique, relations avec l'Éthiopie, diaspora importante. L'Érythrée est un État autoritaire avec un service militaire obligatoire prolongé."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Eritrea",
+      "CIA World Factbook – Eritrea",
+      "ONU / UNFPA – Démographie Érythrée 2025",
+      "A Chronicle of the Eritrean Revolution\"",
+      "The Eritrean People's Liberation Front\"",
+      "The Making of a Nation\"",
+      "Recensements érythréens",
+      "Études anthropologiques sur les peuples de l'Érythrée",
+      "Encyclopaedia Aethiopica"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Tigrinya",
+          "population": 3900000,
+          "percentageInCountry": 55,
+          "peopleId": "PPL_TIGRAY",
+          "region": "Hauts plateaux (Asmara, Mendefera)",
+          "languageFamily": "FLG_SEMITIQUE"
+        },
+        {
+          "name": "Tigré",
+          "population": 2100000,
+          "percentageInCountry": 30,
+          "peopleId": "PPL_TIGRE",
+          "region": "Nord-ouest, Sahel (régions côtières et basses terres)",
+          "languageFamily": "FLG_SEMITIQUE"
+        },
+        {
+          "name": "Afar",
+          "population": 350000,
+          "percentageInCountry": 5,
+          "peopleId": "PPL_AFAR",
+          "region": "Littoral et sud-est",
+          "languageFamily": "FLG_COUCHITIQUE"
+        },
+        {
+          "name": "Saho",
+          "population": 280000,
+          "percentageInCountry": 4,
+          "peopleId": "PPL_SAHO",
+          "region": "Centre-sud et côtes",
+          "languageFamily": "FLG_COUCHITIQUE"
+        },
+        {
+          "name": "Bilen",
+          "population": 140000,
+          "percentageInCountry": 2,
+          "peopleId": "PPL_BILEN",
+          "region": "Keren (centre)",
+          "languageFamily": "FLG_COUCHITIQUE"
+        },
+        {
+          "name": "Hedareb / Beja",
+          "population": 140000,
+          "percentageInCountry": 2,
+          "peopleId": "PPL_BEJA",
+          "region": "Régions frontalières avec le Soudan",
+          "languageFamily": "FLG_COUCHITIQUE"
+        },
+        {
+          "name": "Rashaida",
+          "population": 70000,
+          "percentageInCountry": 1,
+          "peopleId": "PPL_RASHAIDA",
+          "region": "Désert, régions frontalières",
+          "languageFamily": "FLG_SEMITIQUE"
+        },
+        {
+          "name": "Autres peuples",
+          "population": 70000,
+          "percentageInCountry": 1,
+          "region": "Diverses régions d'Érythrée"
+        }
+      ]
+    }
+  }
+}

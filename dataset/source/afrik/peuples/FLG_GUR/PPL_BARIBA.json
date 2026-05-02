@@ -1,0 +1,95 @@
+{
+  "id": "PPL_BARIBA",
+  "nameMain": "Bariba",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["BEN", "NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Bariba",
+      "selfAppellation": "Baatonu (singulier) / Baatombu (pluriel) ; leur langue : Baatonum",
+      "exonyms": [
+        "Bariba (exonyme utilisé par les Yoruba et les Européens, sens inconnu en Baatonum)",
+        "Baruba (variante du terme Bariba en usage chez les Yoruba du Nigeria)",
+        "Borgawa (exonyme haoussa, de Borgu, region historique du peuple)",
+        "Borgu ou Borgunya (termes en langues Busa et Boko)",
+        "Baatonu, Batonu, Batonum (variantes orthographiques)"
+      ],
+      "originOfExonyms": "Le terme Bariba est un exonyme d'origine yoruba, utilisé pour désigner le peuple et sa langue ; il ne signifie rien en Baatonum et est parfois considéré comme offensant par le peuple lui-même. Le terme Borgawa vient du haoussa et fait référence à Borgu, la région historique du peuple. Les termes Baatonu et Baatombu sont les seuls endonyms authentiques.",
+      "whyProblematic": "Le terme Bariba, d'origine yoruba, est celui sous lequel le peuple est universellement connu dans les sources coloniales françaises et dans la littérature internationale. Il efface l'autoappellation Baatonu/Baatombu et peut être perçu comme stigmatisant. L'usage académique contemporain recommande d'utiliser Baatonu ou Baatombu.",
+      "contemporaryUsage": "Bariba reste le terme dominant dans les sources officielles béninoises, les médias et la littérature internationale. Baatonu/Baatombu est utilisé dans les contextes académiques et locaux. Les deux termes coexistent. La langue est officiellement désignée Baatonum par Ethnologue (code bba).",
+      "linguisticFamily": "FLG_GUR",
+      "ethnoLinguisticGroup": "Gur (Niger-Congo, Voltaïque)",
+      "historicalRegion": "Borgou (Bénin nord-est), Alibori, royaume de Nikki ; Baruten LGA (Kwara State, Nigeria), Borgu LGA (Niger State, Nigeria)",
+      "currentCountries": ["BEN", "NGA"]
+    },
+    "ethnicities": [
+      "Baatonu (Baatombu natifs)",
+      "Wasangari (aristocratie fondatrice)",
+      "Gando (troisième composante sociale)"
+    ],
+    "origins": {
+      "ancientOrigins": "La region de Nikki-Wenu est occupée par les Baatonu natifs depuis environ 1350. Selon la tradition orale, les Wasangari, cavaliers migrants venant de l'Est (Bussa, actuel Nigeria), arrivèrent vers 1480. Leur ancêtre légendaire Kisra, présenté comme un cavalier perse, noua une alliance avec Mansa Doro. Le fils de Kisra, Sero (éduqué par Mansa Doro), fut établi comme Sounon Sero, roi de Nikki-Wenu, fondant la dynasty royale.",
+      "formationPeriod": "Le royaume de Nikki fut consolidé par Sabi Sime (Sime Dobidia), fils cadet de Sounon Sero, qui s'unit aux clans natifs Baatonu, Boko et Hausa pour fonder les dynasties de l'Empire de Nikki. Les cinq dynasties royales issues de ses fils (Karawe, Gbassi, Makararou, Lafiarou, Korakou) structurèrent le pouvoir politique bariba jusqu'à la colonisation française.",
+      "migrationRoutes": [
+        "Bussa (Nigeria actuel) vers Nikki-Wenu (Bénin actuel), vers 1480, par les Wasangari cavaliers",
+        "Sahel vers Borgou, dès les premiers siecles de l'ère commune, par les Baatonu autochtones"
+      ],
+      "historicalSettlementZones": [
+        "Borgou (Bénin nord-est) : zone principale, autour de Nikki (capitale traditionnelle)",
+        "Alibori (Bénin nord) : peuplement substantiel",
+        "Baruten LGA, Kwara State (Nigeria) : population significative",
+        "Borgu LGA, Niger State (Nigeria) : présence ancienne",
+        "Pehunko : environ 200 000 Baatombu sur 365 000 habitants"
+      ],
+      "unificationsOrDivisions": "L'Empire de Nikki a intégré les populations autochtones Baatonu, les Wasangari conquérants et les Gando (enfants nés anormalement, confiés aux Peuls et formant une troisième composante sociale) en un système de castes cohérent. La colonisation française (fin XIXe siecle) et la frontière anglo-française artificielle ont mis fin au commerce régional bariba et fragmenté le territoire entre Bénin, Nigeria et Niger.",
+      "externalInfluences": "Les relations avec les Yoruba de l'empire d'Oyo ont structuré l'histoire bariba : les Baatombu obtinrent leur indépendance d'Oyo en 1782. Les influences haoussa et Peul ont marqué l'organisation sociale (élevage transhumant, turbans, trompettes, islam). La colonisation française (annexion du Dahomey en 1894) mit fin à l'autonomie politique et au commerce caravanier dans le Borgou.",
+      "majorHistoricalEvents": "Vers 1350 : installation des Baatonu à Nikki-Wenu. Vers 1480 : arrivée des Wasangari et fondation de l'Empire de Nikki. 1782 : indépendance des Baatombu vis-à-vis de l'empire Yoruba d'Oyo. Fin XIXe siecle : états indépendants bariba (Nikki, Kandi) sous domination régionale. 1894-1900 : colonisation française du Dahomey et imposition de la frontière anglo-française mettant fin au commerce caravanier du Borgou."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie à structure impériale centrée sur l'empire de Nikki. L'Empereur (Sinaboko) et la Reine-mère (Gnon Kogui) sont issus de la caste Wasangari. Les chefs provinciaux (Bouay, Kika, Sandiro) rendent allégeance à l'Empereur lors du festival annuel Gaani. Les chefs de terre (issus des Baatonu natifs), les Ministres et le Sinadunwiru (chargé de la régence à la mort du roi) constituent le Conseil des ministres.",
+      "clanOrganization": "Société à quatre composantes : (1) Wasangari (aristocratie cavaliere fondatrice, détenteurs du pouvoir politique) ; (2) Baatonu natifs (paysans, artisans, chefs de terre, griots, forgerons, musiciens) ; (3) Gando (enfants nés de naissance anormale, confiés aux Peuls, vivant en quartiers séparés, parlant le fulfuldé) ; (4) Peuls (Fulbe, semi-nomades, éleveurs, hôtes protégés, représentés à la cour).",
+      "ageClassSystems": "Le Gbangba (danse guerrière) est réservé aux jeunes Wasangari de 18 à 25 ans, constituant une forme de classe d'âge cérémonielle. Les rites de passage impliquent le port de coiffures spécifiques selon le statut social.",
+      "roleOfLineages": "Les lignages déterminent l'appartenance aux dynasties royales (Karawe, Gbassi, Makararou, Lafiarou, Korakou) et la transmission des privilèges symboliques (trompettes sacrées, éperons blancs). Les instruments sacrés (tambours Barabakaru et Barapiibu, trompettes Kankangi) sont propriété du roi et hérités par les initiés.",
+      "religiousAuthority": "Islam majoritaire, introduit progressivement par les contacts avec les Haoussa et les Dendi. Les chefs baatombu portent des turbans dawani et prient le vendredi. Coexistence avec un fond animiste structurant les grands rituels : le festival Gaani est d'origine animiste, incorporé dans le calendrier islamique (Mawlid). Les instruments sacrés sont joués par des initiés lors de l'intronisation, des prieres du vendredi et des cérémonies royales."
+    },
+    "languages": {
+      "mainLanguage": "Baatonum (bba)",
+      "isoCodes": ["bba"],
+      "dialects": [
+        "Goro (commune de Tchaourou, Borgou, Bénin)",
+        "Dialecte du Baruten LGA (Kwara State, Nigeria)",
+        "Dialecte du Borgu LGA (Niger State, Nigeria)"
+      ],
+      "vehicularRole": "Le Baatonum est la langue principale de la vie quotidienne dans les départements du Borgou et de l'Alibori au Bénin, et dans le Baruten LGA (Kwara State, Nigeria). Il fonctionne comme langue véhiculaire régionale dans le nord-est du Bénin. Le français est la langue officielle au Bénin. L'anglais est utilisé au Nigeria. Le fulfuldé (peul) est parlé par les Gando. Le Baatonum appartient à la famille Niger-Congo, branche Gur (Voltaïque)."
+    },
+    "culture": {
+      "majorRites": "Le festival Gaani est le principal rite culturel annuel bariba : présidé par l'Empereur de Nikki ou les chefs de provinces, il rassemble plus de 150 000 personnes venues renouveler leur allégeance et célébrer la culture Baatonu. Il suit le Donkonru (festival du feu, Nouvel An bariba). La Fantasia équestre (simulation de charge de cavalerie avec tirs de poudre noire) en constitue le point culminant. Le Gaani coïncide avec le Mawlid islamique et mêle dimensions animiste et musulmane. Les grandes cérémonies (intronisation, mariage, naissance) s'accompagnent de la Fantasia.",
+      "symbols": "Le cheval est le symbole central de la culture Baatonu, emblème de l'Empire de Nikki depuis Sounon Sero. Les tambours sacrés Barabakaru (mâle) et Barapiibu (femelle), de 125-127 cm en bois de baobab et peau de boeuf, sont les symboles du pouvoir impérial. Les trompettes sacrées Kankangi (mâle : 171 cm, femelle : 158 cm) sont directement associées à l'autorité royale. Les tenues Tako-gonna (couleur pintade) et les chapeaux Furogomba et Furogona distinguent princes et dignitaires.",
+      "artsAndMusic": "Chants Wuru (vie des chasseurs, scenes quotidiennes, parfois érotiques) et Teke (valeurs humaines : générosité, bravoure, fidélité). Danses : Wuru (funérailles et célébrations, costumes de peaux animales avec cauries et amulettes), Teke (hommes mûrs avec bâtons), Sinsennu (jeunes hommes avec chaines de palme, flûte, tam-tam), Gbangba (jeunes Wasangari 18-25 ans, danse de guerre et de deuil royal). Instruments sacrés : tambours (Barabakaru, Barapiibu, Bara Kaaru), trompettes (Kankangi). Tenues élaborées préparées des mois à l'avance pour la Fantasia.",
+      "spiritualities": "Islam sunnite majoritaire, adopté progressivement sous influence haoussa et Dendi. Fond animiste maintenu dans les grands rituels (Gaani, Donkonru). Culte des instruments sacrés (tambours et trompettes propriétés du roi, joués par des initiés). Croyances relatives aux naissances anormales (les enfants nés par le siège ou les pieds, ou dont les dents supérieures percent en premier, sont considérés de mauvais augure et confiés aux Peuls)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Empire de Nikki (fondé vers 1480 par les Wasangari, consolidé par Sime Dobidia) ; cofondation du royaume de Borgu (s'étendant sur l'actuel nord-est du Bénin et le centre-ouest du Nigeria) ; royaume de Kwande ; cités-états de Nikki et Kandi (états indépendants à la fin du XIXe siecle). Nikki reste la capitale traditionnelle Baatonu.",
+      "relationsWithNeighbors": "Relations de complémentarité harmonieuse avec les Peuls (Fulbe) : les Baatombu leur accordent l'accès aux pâturages en échange de viande et de lait ; les Peuls sont représentés à la cour et protégés. Mariage inter-ethnique entre les Wasangari et les Baatonu, Boko et Hausa a fondé les dynasties royales. Commerce caravanier avec les Dendi et les Haoussa. Indépendance obtenue face aux Yoruba d'Oyo en 1782.",
+      "conflictsOrAlliances": "Alliance fondatrice entre Kisra (Wasangari) et Mansa Doro. Indépendance des Baatombu vis-à-vis de l'empire Yoruba d'Oyo en 1782. Résistance à la colonisation française à la fin du XIXe siecle. La frontière artificielle anglo-française a séparé la communauté bariba entre Bénin et Nigeria, mettant fin au commerce caravanier du Borgou.",
+      "diaspora": "La population bariba est concentrée dans le Borgou et l'Alibori au Bénin (70 % du total), avec des communautés significatives au Nigeria (Baruten LGA, Kwara State ; Borgu LGA, Niger State). Des Baatombu sont également présents au Togo, au Burkina Faso et au Niger."
+    },
+    "demography": {
+      "totalPopulation": 1100000,
+      "referenceYear": 2025,
+      "source": "Bariba people – Wikipedia EN, 2024 (environ 1 million, 70 % au Bénin = ~700 000, 4e groupe ethnique, 9,2 % de la population béninoise) ; population du Bénin estimée à ~14,5 millions en 2025",
+      "distributionByCountry": [
+        { "country": "BEN", "population": 770000 },
+        { "country": "NGA", "population": 330000 }
+      ]
+    },
+    "sources": [
+      "Bariba people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Bariba_people)",
+      "Bariba language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Bariba_language)",
+      "Baatonum (BBA) – Ethnologue (SIL International) (https://www.ethnologue.com/language/bba/)",
+      "The Bariba people of West Africa – Qiraat Africa, 2025 (https://qiraatafrican.com/en/16491/the-bariba-people-of-west-africa/)",
+      "Binary personal naming system of the Baatombu people in Nigeria – Onoma Journal, Williams A., 2023 (https://onomajournal.org/wp-content/uploads/2024/01/Onoma-58-3.03-Williams-final.pdf)",
+      "Bariba – Sage Reference, Encyclopedia of African Religion (https://sk.sagepub.com/ency/edvol/africanreligion/chpt/bariba)"
+    ]
+  }
+}

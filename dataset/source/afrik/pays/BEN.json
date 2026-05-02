@@ -1,0 +1,314 @@
+{
+  "id": "BEN",
+  "nameFr": "République du Bénin",
+  "nameOfficial": "République du Bénin (République du Bénin)",
+  "etymology": "Le nom \"Bénin\" provient de l'ancien royaume du Bénin (actuel Nigeria), mais a été choisi pour le pays en 1975 pour remplacer \"Dahomey\". Le nom \"Dahomey\" venait du royaume du Dahomey (XVIIe-XIXe siècles), lui-même nommé d'après \"Danhomé\" (dans le ventre de Dan), fondé par le roi Houegbadja. Le choix de \"Bénin\" en 1975 visait à créer une identité nationale neutre, sans référence à un groupe ethnique spécifique.",
+  "nameOriginActor": "Le nom \"Bénin\" a été choisi par le gouvernement de la République populaire du Bénin en 1975, sous la présidence de Mathieu Kérékou. Il remplace \"Dahomey\", nom colonial français dérivé du royaume du Dahomey (fondé par les Fon). Le nom \"Bénin\" fait référence à l'ancien royaume du Bénin (actuel Nigeria), mais a été adopté pour sa neutralité ethnique.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel du Bénin était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (Dahomey, Nikki, Kétou, etc.).",
+      "middleAges": "Développement de royaumes et chefferies : royaume du Dahomey (Fon, XVIIe-XIXe siècles), royaume de Nikki (Bariba), royaume de Kétou (Yoruba/Nago), royaumes Adja-Ewe. Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaume du Dahomey (puissant État militarisé, célèbre pour ses Amazones), royaume de Nikki (Bariba), royaume de Kétou (Yoruba), chefferies Adja-Ewe, peuples Somba/Otamari de l'Atacora. Les Français utilisaient le terme \"Dahomey\" pour désigner la région.",
+      "colonization": "1894-1960 : Colonie du Dahomey (partie de l'Afrique-Occidentale française, AOF). Les Français ont conquis le royaume du Dahomey en 1894 et ont établi la colonie du Dahomey. Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1960.",
+      "contemporary": "1960-1975 : République du Dahomey (indépendance le 1er août 1960). 1975-1990 : République populaire du Bénin (changement de nom le 30 novembre 1975, régime marxiste-léniniste sous Mathieu Kérékou). Depuis 1990 : République du Bénin (retour à la démocratie multipartite, nouvelle constitution en 1990)."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume du Dahomey",
+        "period": "XVIIe siècle - 1894",
+        "dominantPeoples": ["Fon"],
+        "politicalCenters": ["Abomey (capitale)", "Allada", "Ouidah"],
+        "historicalRole": "Royaume du Dahomey puissant et militarisé, célèbre pour son armée et ses Amazones (guerrières). Expansion territoriale, commerce avec les Européens (traite des esclaves), résistance à la colonisation française. Influence culturelle majeure (vodun, art royal). Conquête française en 1894."
+      },
+      {
+        "name": "Royaume de Nikki",
+        "period": "Précolonial - XIXe siècle",
+        "dominantPeoples": ["Bariba (Baatonu)"],
+        "politicalCenters": ["Nikki (capitale)", "Parakou"],
+        "historicalRole": "Royaume de Nikki, État bariba puissant dans le Borgou. Tradition de cavalerie, organisation politique centralisée. Résistance à la colonisation française."
+      },
+      {
+        "name": "Royaume de Kétou",
+        "period": "Précolonial - XIXe siècle",
+        "dominantPeoples": ["Yoruba (Nago)"],
+        "politicalCenters": ["Kétou (capitale)"],
+        "historicalRole": "Royaume de Kétou, État yoruba lié culturellement au Nigeria. Relations avec le royaume d'Oyo. Influence culturelle yoruba (Ifá, masques Gẹ̀lẹ̀dẹ́)."
+      },
+      {
+        "name": "Royaumes Adja-Ewe",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Adja", "Ewe"],
+        "politicalCenters": ["Tado (centre historique)", "chefferies locales"],
+        "historicalRole": "Royaumes et chefferies Adja-Ewe, centre originel des migrations Gbe vers Abomey et le sud Togo. Traditions culturelles Gbe (masques, rites agraires)."
+      },
+      {
+        "name": "Colonie du Dahomey",
+        "period": "1894 - 1960",
+        "dominantPeoples": [
+          "Tous les peuples béninois sous domination française"
+        ],
+        "politicalCenters": [
+          "Porto-Novo (capitale administrative)",
+          "Cotonou (port principal)"
+        ],
+        "historicalRole": "Colonie française, intégration dans l'AOF (Afrique-Occidentale française). Exploitation économique (huile de palme, coton), développement de l'administration coloniale, résistance des peuples autochtones, développement du mouvement indépendantiste au XXe siècle."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Fon",
+        "selfAppellation": "Fɔ̀ngbè / Fon",
+        "exonyms": [
+          "Fon (terme français accepté)",
+          "Dahoméens (lié à l'ancien royaume du Dahomey)"
+        ],
+        "peopleId": "PPL_FON",
+        "mainRegion": "Sud du Bénin (Abomey, Porto-Novo, Cotonou)",
+        "languages": ["Fon (fon", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_BENOUECONGO",
+        "appellationRemarks": "Le terme \"Fon\" est l'auto-appellation et est utilisé de manière respectueuse. \"Dahoméens\" fait référence au royaume historique et n'est pas péjoratif, mais est moins utilisé aujourd'hui."
+      },
+      {
+        "name": "Adja-Ewe",
+        "selfAppellation": "Adja / Adyá, Ewe",
+        "exonyms": ["Adja", "Ewe (termes utilisés par les Européens)"],
+        "peopleId": "PPL_ADJA",
+        "mainRegion": "Sud-ouest du Bénin (Mono, Couffo), frontière avec le Togo",
+        "languages": [
+          "Adja (ajg",
+          "ISO 639-3)",
+          "Ewe (ewe",
+          "ISO 639-3)",
+          "français"
+        ],
+        "languageFamily": "FLG_BENOUECONGO",
+        "appellationRemarks": "\"Adja\" et \"Ewe\" sont les auto-appellations respectives. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Yoruba / Nago",
+        "selfAppellation": "Yoruba, Anagó / Nago",
+        "exonyms": [
+          "Yoruba",
+          "Nago (termes utilisés par les Européens)",
+          "\"Nago\" peut avoir une connotation réductrice dans certains contextes mais est accepté comme auto-appellation par les Anago"
+        ],
+        "peopleId": "PPL_YORUBA",
+        "mainRegion": "Sud-est du Bénin (Porto-Novo, Kétou), frontière avec le Nigeria",
+        "languages": ["Yoruba (yor", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_BENOUECONGO",
+        "appellationRemarks": "\"Yoruba\" et \"Anagó\" sont les auto-appellations. \"Nago\" est une variante exonyme qui peut avoir une connotation réductrice dans certains contextes historiques, mais est accepté comme auto-appellation par les Anago du Bénin et du Togo."
+      },
+      {
+        "name": "Bariba",
+        "selfAppellation": "Baatonu",
+        "exonyms": [
+          "Bariba (terme utilisé par les Européens et les Français)",
+          "Baatonu (auto-appellation)"
+        ],
+        "peopleId": "PPL_BARIBA",
+        "mainRegion": "Nord du Bénin (Borgou, Alibori), royaume de Nikki",
+        "languages": ["Baatonu (bci", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "\"Baatonu\" est l'auto-appellation, \"Bariba\" est l'exonyme le plus courant. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Dendi",
+        "selfAppellation": "Dendi",
+        "exonyms": ["Dendi (terme utilisé par les Européens)"],
+        "peopleId": "PPL_DENDI",
+        "mainRegion": "Nord du Bénin, frontière avec le Niger et le Nigeria",
+        "languages": ["Dendi (ddn", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_SONGHAY",
+        "appellationRemarks": "Le terme \"Dendi\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Peul / Fulani",
+        "selfAppellation": "Fulɓe (pluriel), Pullo (singulier)",
+        "exonyms": [
+          "Peul (terme français)",
+          "Fulani (terme haoussa)",
+          "Fula (terme anglophone)",
+          "\"Fellata\" (terme haoussa parfois péjoratif",
+          "à éviter)"
+        ],
+        "peopleId": "PPL_FULA",
+        "mainRegion": "Nord du Bénin (pasteurs nomades et sédentaires)",
+        "languages": ["Fulfulde (ful", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Fulɓe\" est l'auto-appellation. \"Peul\" et \"Fulani\" sont des exonymes acceptés. \"Fellata\" peut avoir une connotation péjorative dans certains contextes et doit être évité."
+      },
+      {
+        "name": "Otamari / Somba",
+        "selfAppellation": "Otamari, Somba",
+        "exonyms": [
+          "Otamari",
+          "Somba (termes utilisés par les Européens et les Français)"
+        ],
+        "peopleId": "PPL_OTAMARI_SOMBA",
+        "mainRegion": "Nord-ouest du Bénin (Atacora), célèbres pour leurs tatas somba (habitations fortifiées)",
+        "languages": ["Otamari (otm", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "\"Otamari\" et \"Somba\" sont les auto-appellations. Les tatas somba (habitations fortifiées) sont classés au patrimoine mondial de l'UNESCO. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Lamba",
+        "selfAppellation": "Lamba",
+        "exonyms": ["Lamba (terme utilisé par les Européens)"],
+        "peopleId": "PPL_LAMBA",
+        "mainRegion": "Nord-ouest du Bénin (sociétés montagnardes)",
+        "languages": ["Lamba (lam", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "Le terme \"Lamba\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "Fon",
+          "isoCode": "fon"
+        },
+        {
+          "name": "Yoruba",
+          "isoCode": "yor"
+        },
+        {
+          "name": "Adja",
+          "isoCode": "ajg"
+        },
+        {
+          "name": "Ewe",
+          "isoCode": "ewe"
+        },
+        {
+          "name": "Baatonu",
+          "isoCode": "bci"
+        },
+        {
+          "name": "Dendi",
+          "isoCode": "ddn"
+        },
+        {
+          "name": "Fulfulde",
+          "isoCode": "ful"
+        },
+        {
+          "name": "Otamari",
+          "isoCode": "otm"
+        },
+        {
+          "name": "Lamba",
+          "isoCode": "lam"
+        },
+        {
+          "name": "Gurma",
+          "isoCode": "gux"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique du Bénin. Traditions Gbe (Fon, Adja, Ewe) avec vodun, divination Ifá, masques. Traditions yoruba (Ifá, masques Gẹ̀lẹ̀dẹ́). Traditions bariba (cavalerie, royaume de Nikki). Traditions somba (tatas fortifiées, architecture unique). Art royal du Dahomey (bronzes, sculptures sur bois). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles.",
+      "dominantReligions": "Religions traditionnelles africaines (vodun très présent, surtout chez les Fon), christianisme (catholicisme majoritaire, protestantisme en croissance), islam (minoritaire, surtout dans le nord)",
+      "lifestyles": "Agriculture (sud, cultures vivrières, palmiers à huile, coton), élevage (nord, Peuls), commerce et activités urbaines (zones côtières, Cotonou, Porto-Novo). Urbanisation croissante. Économie basée sur l'agriculture (coton, ananas, noix de cajou), le commerce transfrontalier, et les services.",
+      "socialOrganization": "Organisation en royaumes historiques (Dahomey, Nikki, Kétou), chefferies traditionnelles, structures claniques patrilinéaires et matrilinéaires selon les groupes. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions monarchiques (royaume du Dahomey, royaume de Nikki).",
+      "regionalRelations": "Relations historiques avec le Nigeria (Yoruba, commerce), le Togo (Adja-Ewe, frontière), le Niger (Dendi, commerce transsaharien), le Burkina Faso (Gurma, commerce). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest). Relations commerciales et culturelles transfrontalières. Influence culturelle majeure du vodun dans la diaspora afro-atlantique."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par diverses sociétés sans nom unifié. Développement de chefferies et royaumes locaux. Arrivée et expansion des peuples Gbe (Adja, Fon, Ewe) dans le sud.",
+      "middleAges": "Formation et développement du royaume du Dahomey (XVIIe siècle), royaume de Nikki (Bariba), royaume de Kétou (Yoruba). Développement de réseaux commerciaux régionaux et transatlantiques. Expansion du royaume du Dahomey, développement de l'armée et des Amazones.",
+      "precolonial": "Apogée du royaume du Dahomey (XVIIe-XIXe siècles), État militarisé puissant, commerce avec les Européens (traite des esclaves, huile de palme). Résistance à la colonisation européenne. Relations avec le royaume d'Oyo (Nigeria). Développement de l'art royal (bronzes, sculptures).",
+      "colonization": "1894 : Conquête du royaume du Dahomey par les Français, établissement de la colonie du Dahomey. Période coloniale française (1894-1960), intégration dans l'AOF. Exploitation économique (huile de palme, coton), développement de l'administration coloniale, résistance des peuples autochtones. XXe siècle : Développement du mouvement indépendantiste, formation de partis politiques.",
+      "independenceStruggle": "1958 : Référendum sur l'autonomie, le Dahomey vote \"oui\" à la Communauté française. 1960 : Indépendance du Dahomey (1er août 1960), proclamation de la République du Dahomey. Période d'instabilité politique (1960-1972), plusieurs coups d'État.",
+      "postIndependence": "1972-1990 : Régime marxiste-léniniste sous Mathieu Kérékou, changement de nom pour \"République populaire du Bénin\" (1975). 1990 : Retour à la démocratie multipartite, nouvelle constitution, changement de nom pour \"République du Bénin\". Période de démocratisation et de développement économique. Défis de développement, pauvreté, inégalités sociales. Le Bénin est considéré comme un modèle de démocratie en Afrique de l'Ouest."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Benin",
+      "CIA World Factbook – Benin",
+      "ONU / UNFPA – Démographie Bénin 2025",
+      "Law, Robin – \"The Kingdom of Allada\"",
+      "Gender, Politics, and Culture in the Kingdom of Dahomey\"",
+      "Archives du Royaume d'Abomey",
+      "UNESCO – Tatas somba du Bénin (patrimoine mondial)",
+      "Recensements béninois",
+      "Études anthropologiques sur les peuples du Bénin"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Fon",
+          "population": 5320000,
+          "percentageInCountry": 38,
+          "peopleId": "PPL_FON",
+          "region": "Sud du Bénin (Abomey, Porto-Novo, Cotonou)",
+          "languageFamily": "FLG_BENOUECONGO"
+        },
+        {
+          "name": "Adja-Ewe",
+          "population": 2240000,
+          "percentageInCountry": 16,
+          "peopleId": "PPL_ADJA",
+          "region": "Sud-ouest du Bénin (Mono, Couffo), frontière avec le Togo",
+          "languageFamily": "FLG_BENOUECONGO"
+        },
+        {
+          "name": "Yoruba / Nago",
+          "population": 1680000,
+          "percentageInCountry": 12,
+          "peopleId": "PPL_YORUBA",
+          "region": "Sud-est du Bénin (Porto-Novo, Kétou), frontière avec le Nigeria",
+          "languageFamily": "FLG_BENOUECONGO"
+        },
+        {
+          "name": "Bariba",
+          "population": 1260000,
+          "percentageInCountry": 9,
+          "peopleId": "PPL_BARIBA",
+          "region": "Nord du Bénin (Borgou, Alibori), royaume de Nikki",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Dendi",
+          "population": 840000,
+          "percentageInCountry": 6,
+          "peopleId": "PPL_DENDI",
+          "region": "Nord du Bénin, frontière avec le Niger et le Nigeria",
+          "languageFamily": "FLG_SONGHAY"
+        },
+        {
+          "name": "Peul / Fulani",
+          "population": 980000,
+          "percentageInCountry": 7,
+          "peopleId": "PPL_FULA",
+          "region": "Nord du Bénin (pasteurs nomades et sédentaires)",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Otamari / Somba",
+          "population": 700000,
+          "percentageInCountry": 5,
+          "peopleId": "PPL_OTAMARI_SOMBA",
+          "region": "Nord-ouest du Bénin (Atacora), tatas somba",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Lamba",
+          "population": 280000,
+          "percentageInCountry": 2,
+          "peopleId": "PPL_LAMBA",
+          "region": "Nord-ouest du Bénin (sociétés montagnardes)",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Autres peuples",
+          "population": 700000,
+          "percentageInCountry": 5,
+          "peopleId": "PPL_GURMA",
+          "region": "Diverses régions du Bénin",
+          "languageFamily": "FLG_GUR"
+        }
+      ]
+    }
+  }
+}

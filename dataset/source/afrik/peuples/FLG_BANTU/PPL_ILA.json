@@ -1,0 +1,75 @@
+{
+  "id": "PPL_ILA",
+  "nameMain": "Ila",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Ila",
+      "selfAppellation": "Ba-ila",
+      "exonyms": ["Ila", "Ba-Ila"],
+      "originOfExonyms": "Le terme Ila est derive de la racine bantoue zhila signifiant etre tabou ou mis a part. On retrouve des equivalents dans d'autres langues bantoues : ila en Suto, zila en Zoulou.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Ba-ila est utilise en Zambie pour designer ce peuple vivant principalement dans le district de Namwala. Le nom Ila est aussi repandu dans la litterature ethnographique anglophone.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu de l'Est, sous-groupe Ila-Tonga",
+      "historicalRegion": "Province du Sud et Province centrale, Zambie",
+      "currentCountries": ["ZMB"]
+    },
+    "ethnicities": ["Ila", "Ba-ila"],
+    "origins": {
+      "ancientOrigins": "Les Ba-ila appartiennent a la subdivision bantoue des Africains. Leurs ancetres sont arrives dans leur domaine actuel en vague de migration depuis le nord-est, depuis la region situee autour de l'extremite sud du lac Tanganyika. Selon la tradition orale, Dieu deposa les premiers hommes sur un rocher situe dans le coeur de leur territoire, au bord de la riviere Kafue.",
+      "formationPeriod": "Les migrations des ancetres Ba-ila sont estimees il y a plusieurs siecles avant le XVIIe siecle, dans le cadre de l'expansion bantoue orientale.",
+      "migrationRoutes": [
+        "Depuis le nord-est (region du lac Tanganyika meridional) vers le plateau du Kafue",
+        "Une branche via le territoire du Congo en direction de la cote ouest, avant de remonter vers le centre du continent en direction sud-est"
+      ],
+      "historicalSettlementZones": [
+        "Bord de la riviere Kafue, district de Namwala (Province du Sud, Zambie)",
+        "Districts d'Itezhi-Tezhi et de Mumbwa (Province centrale, Zambie)"
+      ],
+      "unificationsOrDivisions": "Les Ba-ila font partie du cluster linguistique Ila-Tonga qui regroupe environ 12 groupes dialectaux dont les Lozi, Koba, Lenje, Tonga, Totela et Ila. Ce cluster constitue une unite culturelle et linguistique souple plutot qu'une entite politique centralisee.",
+      "externalInfluences": "Intermixtion avec des peuples venant d'une autre section ayant transit par le territoire du Congo. Influences linguistiques du ouest africain bantou (mots tonda, ifuka).",
+      "majorHistoricalEvents": "Presence europeenne et coloniale britannique a partir du XIXe siecle. Integration dans la colonie britannique de Rhodesie du Nord (aujourd'hui Zambie). Evangelisation chretienne aux XIXe-XXe siecles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le peuple Ba-ila est reparti sur dix-sept chefferies dans le district de Namwala, ainsi que dans les districts d'Itezhi-Tezhi et Mumbwa. Chaque chefferie est dirigee par un chef traditionnel. Il n'existe pas d'autorite politique centralisee unique.",
+      "clanOrganization": "Organisation clanique fondee sur la parentele au sein du groupe ethnolinguistique Ila-Tonga. Les clans jouent un role dans la regulation des mariages et la transmission des droits fonciers.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires organisent la societe. La possession de betail (bovins) est un marqueur de statut social et de richesse transmis par le lignage.",
+      "religiousAuthority": "Croyance en Leza, l'Etre supreme. Les rites de passage (chisungu, rites de puberte) sont supervises par des anciens et des specialistes rituels. Depuis le XIXe siecle, le christianisme est fortement present."
+    },
+    "languages": {
+      "mainLanguage": "Ila (Chiila)",
+      "isoCodes": ["ilb"],
+      "dialects": ["Chiila", "dialectes du cluster Ila-Tonga"],
+      "vehicularRole": "L'Ila (code ISO ilb) est parle principalement dans les districts de Namwala, Itezhi-Tezhi et Mumbwa. L'anglais est la langue officielle de la Zambie et le kiswahili est utilise comme vehiculaire regional. Le Nouveau Testament en Ila a ete traduit."
+    },
+    "culture": {
+      "majorRites": "La ceremonie funeraire dure plusieurs jours : le septieme jour apres l'inhumation, des boeufs sont abattus (le nombre de betes temoigne de la valeur du defunt au sein de la communaute). La viande est partagee entre tous les presents. Les rites chisungu (puberte feminine) sont pratiques. La ceremonie traditionnelle Shimunenga est celebree a Maala, dans le district de Namwala.",
+      "symbols": "Le boeuf est le symbole par excellence de la richesse, du prestige et du statut social chez les Ba-ila. Le rocher portant l'empreinte de toutes les creatures (dont l'homme), situe au coeur du territoire traditionnel sur la riviere Kafue, est un lieu sacre fondateur.",
+      "artsAndMusic": "Les Ba-ila pratiquent l'artisanat en rapport avec l'elevage et l'agriculture. La tradition orale (contes, proverbes, genealogies) est un vecteur majeur de transmission culturelle.",
+      "spiritualities": "Croyance en Leza, l'Etre supreme createur. Le concept de tonda (tabou, mis a part) structure de nombreuses pratiques sociales. Les ancetres jouent un role d'intermediaires. Syncretisme progressif avec le christianisme depuis la colonisation."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Dix-sept chefferies reparties dans les districts de Namwala, Itezhi-Tezhi et Mumbwa (Province du Sud et Province centrale de Zambie).",
+      "relationsWithNeighbors": "Les Ba-ila sont etroitement lies en langue et culture a leurs voisins Tonga (plus nombreux) de la Province du Sud. Ils font partie du vaste cluster Ila-Tonga qui comprend egalement les Lenje, Koba, Lozi, Totela et d'autres groupes de Zambie meridionale.",
+      "conflictsOrAlliances": "Au sein du cluster Ila-Tonga, des relations d'alliance et de complementarite economique ont historiquement prevalu. Les Ba-ila ont ete integres dans le systeme colonial britannique de Rhodesie du Nord au XIXe siecle.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 215000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (https://joshuaproject.net/people_groups/12208)",
+      "distributionByCountry": [{ "country": "ZMB", "population": 215000 }]
+    },
+    "sources": [
+      "Ila people – Wikipedia (https://en.wikipedia.org/wiki/Ila_people)",
+      "Ila language – Wikipedia (https://en.wikipedia.org/wiki/Ila_language)",
+      "Ila in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12208)",
+      "Ila – Encyclopaedia Britannica, 1998 (https://www.britannica.com/topic/Ila-people)",
+      "Ila – eHRAF World Cultures, Yale University (https://ehrafworldcultures.yale.edu/cultures/fq06/summary)",
+      "Zambia Languages – Ethnologue (https://www.ethnologue.com/country/ZM/)"
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "id": "PPL_YOMBE",
+  "nameMain": "Yombe",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["COD", "COG", "AGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Yombe",
+      "selfAppellation": "Yombe",
+      "exonyms": ["Yombe (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone H)",
+      "historicalRegion": "COD, COG, AGO",
+      "currentCountries": ["COD", "COG", "AGO"]
+    },
+    "ethnicities": [
+      "Yombe de RDC",
+      "Yombe du Congo",
+      "Yombe d'Angola",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Yombe sont originaires de la région de la COD, du Congo et de l'Angola. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone H).",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Yombe",
+      "vehicularRole": "Le yombe est parlé par la majorité des Yombe. Le français, le portugais et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de mariage traditionnelles",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à l'agriculture",
+      "source_3": "Cérémonies religieuses chrétiennes",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels yombe, symboles chrétiens",
+      "Arts et musique": "",
+      "source_4": "Sculpture sur bois (masques, statues)",
+      "source_5": "Musique traditionnelle",
+      "source_6": "Danse traditionnelle",
+      "source_7": "Poésie orale",
+      "source_8": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora yombe dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 1000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Yombe language (yom)",
+      "CIA World Factbook – Country profiles",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples bantous"
+    ]
+  }
+}

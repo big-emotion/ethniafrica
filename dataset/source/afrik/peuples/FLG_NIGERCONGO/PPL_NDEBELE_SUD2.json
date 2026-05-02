@@ -1,0 +1,99 @@
+{
+  "id": "PPL_NDEBELE_SUD2",
+  "nameMain": "Ndebele du Sud (Manala)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["ZAF"],
+  "content": {
+    "appellations": {
+      "mainName": "Ndebele du Sud (Manala)",
+      "selfAppellation": "AmaNdebele / abakwaManala",
+      "exonyms": [
+        "Manala Ndebele",
+        "Northern Transvaal Ndebele (sous l'apartheid)",
+        "Ndebele (terme européen)"
+      ],
+      "originOfExonyms": "Le terme Manala désigne les descendants du prince Manala, fils aîné légitime du roi Musi. Northern Transvaal Ndebele fut un terme administratif de l'apartheid regroupant les Manala avec d'autres sous-groupes nordiques. Le terme Ndebele est un exonyme d'origine sotho.",
+      "whyProblematic": "Le fichier PPL_NDEBELE_SUD couvre les Ndzundza (branche culturellement la plus visible, célèbre pour les peintures murales). PPL_NDEBELE_SUD2 couvre les Manala, sous-groupe historiquement senior (maison royale reconnue par les tribunaux en 2017) mais moins connu du grand public. Les deux sous-groupes furent regroupés dans le bantoustan KwaNdebele sous l'apartheid, masquant leurs différences.",
+      "contemporaryUsage": "Les Manala se reconnaissent comme amaNdebele et revendiquent la séniorité royale sur l'ensemble du peuple Ndebele d'Afrique du Sud. En 2017, la Haute Cour a confirmé le roi Makhosoke II (Enoch Mabhena) comme roi Manala et chef suprême senior des Ndebele.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Nguni (Zone S)",
+      "historicalRegion": "Gauteng (Pretoria/Tshwane, Wonderboom, Wallmansthal) et Limpopo, Afrique du Sud",
+      "currentCountries": ["ZAF"]
+    },
+    "ethnicities": [
+      "abakwaManala (Manala Ndebele, maison royale senior, région de Pretoria/Wonderboom)",
+      "BagaLanga (Ndebele du Nord, Limpopo, Mokopane/Polokwane, fortement sothoïsés)",
+      "BagaSeleka (Ndebele du Nord, Limpopo, culturellement proches des Sotho du Nord)",
+      "Kekana (sous-groupe nordique, région de Zebediela, assimilé aux groupes Sotho voisins)",
+      "Tshwane (sous-groupe de la région de Hennops/Thaba Tshwane)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Manala Ndebele descendent du prince Manala, fils aîné légitime de la grande épouse du roi Musi. Musi s'était établi vers 1610 à KwaMnyamana (actuelle Wonderboom, nord de Pretoria), après une migration depuis KwaZulu-Natal tracée à travers le Drakensberg et le Highveld. Après la mort de Musi vers 1630, Manala hérita de la capitale KwaMnyamana et de la séniorité royale.",
+      "formationPeriod": "L'identité Manala se distingue à la suite de la scission avec les Ndzundza (vers 1630). Les Manala restèrent à KwaMnyamana et ses environs. En 1873, le chiefdom Manala s'établit sur terres fournies par la Mission de Berlin à KoMjekejeke (Wallmansthal), environ 30 km au nord de Pretoria. Contrairement aux Ndzundza, les Manala ne participèrent pas à la guerre de 1883 contre la Zuid-Afrikaansche Republiek.",
+      "migrationRoutes": [
+        "Migration depuis KwaZulu-Natal à travers le Drakensberg (Hlubi/Bhaca : eLundini, Jononokop, Butiswini)",
+        "Traversée du Drakensberg vers le Highveld (Mafana périt dans la traversée du Vaal selon la tradition)",
+        "eMhlangeni (Randfontein/Mehlakeng) puis nord vers l'Apies River (KwaMnyamana, actuelle Wonderboom, Pretoria)"
+      ],
+      "historicalSettlementZones": [
+        "KwaMnyamana (Wonderboom, nord de Pretoria) : capitale royale Manala depuis Musi",
+        "eMaruleni (Lieu des marulaiers), eZotjaneni, KoNonduna : zones annexes autour de KwaMnyamana",
+        "KoMjekejeke (Wallmansthal) : établissement missionnaire depuis 1873, base Manala moderne",
+        "Jakkelsdans, LoDini (Klipkoppies/Klipruit) : établissements secondaires Manala"
+      ],
+      "unificationsOrDivisions": "La paix de Noqoli (isiVumelano sakoNoQoli) après la scission fixa la rivière Olifants comme frontière entre Manala (ouest, nord) et Ndzundza (est). Les Manala ne participèrent pas à la guerre de 1883, préservant leurs liens avec les missions berlinoises. Sous l'apartheid, les deux groupes furent assignés au KwaNdebele (1977-1994), les Ndzundza étant majoritaires. La Haute Cour entérina en 2017 la séniorité royale des Manala (roi Makhosoke II).",
+      "externalInfluences": "Influence des missions luthériennes berlinoises (depuis les années 1870, Wallmansthal). Contact avec les Boers (Voortrekkers) dès les années 1840 : les Manala maintinrent généralement des relations moins conflictuelles que les Ndzundza. Apartheid : intégration forcée dans le bantoustan KwaNdebele (1977-1994). Influence du christianisme (surtout luthéranisme évangélique). Sothoïsation partielle des sous-groupes nordiques (BagaLanga, BagaSeleka, Kekana).",
+      "majorHistoricalEvents": "Vers 1630 : scission Manala-Ndzundza, Manala garde la capitale KwaMnyamana. 1873 : installation à KoMjekejeke (Wallmansthal) sur terres berlinoises. 1883 : les Manala ne participent pas à la guerre Ndzundza-ZAR. 1977 : création du KwaNdebele (bantoustan), Manala minoritaires derrière les Ndzundza. 1994 : dissolution du bantoustan. 2010 : Commission Nhlapo reconnaît la séniorité Manala. 2017 : Haute Cour confirme Makhosoke II (Enoch Mabhena) comme roi Manala senior."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "L'autorité suprême est le roi (iKosi / iNgwenyama), actuellement Makhosoke II (Enoch Mabhena, depuis 1986), reconnu en 2017 par la Haute Cour comme roi senior des Ndebele d'Afrique du Sud. Il est assisté d'un conseil interne (iimphakathi) et des chefs de ward (izinduna). Les assemblées (imbizo) délibèrent sur les affaires communautaires.",
+      "clanOrganization": "Organisation patrilinéaire en clans (izibongo) remontant à un ancêtre commun. Le régime est patrilocal : les épouses s'installent dans le clan du mari. Mariage exogame (clans différents obligatoires). Cycle de 13 noms de régiments d'initiation masculine (iintanga) propre aux Manala.",
+      "ageClassSystems": "Les régiments d'initiation masculine (iintanga) structurent la société, avec un cycle de 13 noms propre aux Manala (cycle Ndzundza en a 15). L'initiation (ukuwela) se tient tous les 4 ans : circoncision, isolement de 3 mois en brousse, formation aux traditions et lois par les anciens.",
+      "roleOfLineages": "Les lignages patrilinéaires (izibongo) déterminent l'identité et les droits. L'aîné hérite du titre et d'une plus grande part du patrimoine ; il peut hériter des épouses de son père. Les femmes gardent le nom du clan paternel, mais les enfants suivent le clan du père.",
+      "religiousAuthority": "Croyance aux esprits ancestraux (amadlozi) combinée au christianisme luthérien (missions berlinoises). Les guérisseurs traditionnels (izangoma) maintiennent leur rôle. Syncrétisme entre traditions ancestrales et Église évangélique luthérienne d'Afrique du Sud (ELCSA), présente dans la région depuis les années 1870."
+    },
+    "languages": {
+      "mainLanguage": "isiNdebele (Ndebele du Sud)",
+      "isoCodes": ["nbl"],
+      "dialects": [
+        "isiNdebele Manala (variante nord, autour de Pretoria/Wonderboom et Wallmansthal)",
+        "isiNdebele Ndzundza (variante sud-est, plus proche du zoulou, seule forme écrite codifiée)",
+        "Variantes sothoïsées (BagaLanga, BagaSeleka, Kekana : fortement influencées par le sotho du Nord)"
+      ],
+      "vehicularRole": "L'isiNdebele est l'une des 11 langues officielles d'Afrique du Sud depuis 1994 (code ISO 639-3 : nbl). Les sous-groupes nordiques (BagaLanga, BagaSeleka) ont largement adopté le sotho du Nord au cours des siècles. La variante Manala, parlée autour de Pretoria, est distincte de la variante Ndzundza de Mpumalanga, mais les deux sont mutuellement intelligibles."
+    },
+    "culture": {
+      "majorRites": "Ukuwela (initiation masculine, cycle de 13 régiments pour les Manala, contre 15 pour les Ndzundza) : circoncision, 3 mois d'isolement en brousse, transmission des traditions et lois ancestrales, réintégration cérémonielle. Ukuthombisa (initiation féminine, à la puberté) : isolement d'un mois, formation aux savoir-faire domestiques par les grands-mères. Mariage exogame avec dot (lobola), port de la couverture de mariage (nguba) décorée de perles. Cérémonies funèbres avec prières aux ancêtres.",
+      "symbols": "Les peintures murales géométriques (imithelela) sont partagées avec les Ndzundza mais moins développées chez les Manala très proches de Pretoria et des missions. Les perles (iziqaza) codifient le statut et les étapes de vie. L'iNamrhali (perles et sceptre magiques hérités par les Ndzundza lors de la scission) reste un symbole de la légitimité royale contestée. La peau de chacal (iporiyane) est portée par l'hôte d'une cérémonie pour signifier son statut.",
+      "artsAndMusic": "Travail de perles : tabliers, hoops (iinrholwani), couvertures de mariage codifiant les événements de vie (mariages, initiations, deuils). Les peintures murales géométriques sont pratiquées par les femmes Manala, notamment à KoMjekejeke (Wallmansthal), avec des motifs géométriques inspirés du répertoire ancestral. Artisanat : poterie, confection de nattes tressées, poupées de perles. Poésie orale (izibongo) et chants d'initiation constituent le patrimoine musical.",
+      "spiritualities": "Croyance aux esprits ancestraux (amadlozi) : les ancêtres protègent ou punissent ; communication via les guérisseurs (izangoma) ou les rêves. Christianisme luthérien (Église évangélique luthérienne d'Afrique du Sud, ELCSA) très présent depuis les missions berlinoises de Wallmansthal. Syncrétisme entre pratiques ancestrales et christianisme : offrandes aux ancêtres maintenues parallèlement aux rites chrétiens."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le chiefdom Manala est la maison royale senior des Ndebele d'Afrique du Sud selon la tradition et les décisions judiciaires de 2017. Les rois Manala successifs maintenèrent leur autorité à KwaMnyamana (Wonderboom) et, à partir de 1873, à KoMjekejeke (Wallmansthal). Le roi actuel Makhosoke II (Enoch Mabhena) dirige la communauté Manala avec le soutien d'institutions gouvernementales postapartheid.",
+      "relationsWithNeighbors": "Relations pacifiques avec les missions luthériennes berlinoises (fournisseurs de terres et de soutien depuis les années 1870). Contacts avec les Boers et les autorités coloniales britanniques, moins conflictuels que les Ndzundza. Relations complexes avec les BaPedi et les Sotho du Nord (influences mutuelles sur les sous-groupes nordiques). Rivalité historique mais coexistence aujourd'hui avec les Ndzundza dans les structures du KwaNdebele dissous.",
+      "conflictsOrAlliances": "Alliance de fait avec les missions berlinoises dès 1873 (Wallmansthal), permettant aux Manala d'éviter les conflits les plus graves avec les Boers. Non-participation à la guerre de 1883 (Ndzundza-ZAR) : les Manala préservèrent ainsi leur assise territoriale. Conflits juridiques contemporains avec les Ndzundza sur la séniorité royale (Commission Nhlapo 2010, Haute Cour 2017).",
+      "diaspora": "Sous l'apartheid, des Manala travaillèrent dans les zones industrielles de Pretoria et Johannesburg tout en résidant à Wallmansthal. Aujourd'hui, les Manala sont présents principalement à Pretoria (Tshwane) et dans les environs de Wonderboom et Wallmansthal. Une diaspora urbaine s'est formée dans les provinces de Gauteng et Limpopo."
+    },
+    "demography": {
+      "totalPopulation": 250000,
+      "referenceYear": 2025,
+      "source": "Estimations dérivées des données du recensement sud-africain 2011 (Statistics South Africa, total isiNdebele 1 090 223 locuteurs natifs). Les Manala représentent une minorité parmi les locuteurs isiNdebele, la grande majorité étant Ndzundza. Données Joshua Project et études anthropologiques.",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 250000,
+          "note": "Principalement Gauteng (Pretoria/Tshwane, Wonderboom, Wallmansthal) et Limpopo (BagaLanga, BagaSeleka, Kekana)"
+        }
+      ]
+    },
+    "sources": [
+      "South African History Online — Ndebele. https://sahistory.org.za/article/ndebele",
+      "Wikipedia EN — Southern Ndebele people. https://en.wikipedia.org/wiki/Southern_Ndebele_people",
+      "Wikipedia EN — Southern Ndebele language. https://en.wikipedia.org/wiki/Southern_Ndebele_language",
+      "Kruger Park Africa — The Southern Ndebele tribe. https://www.krugerpark.co.za/africa_ndebele.html",
+      "Kwekudee — Ndebele (Manala and Ndzundza). https://kwekudee-tripdownmemorylane.blogspot.com/2013/12/ndebele-manala-ndebele-and-ndzundza.html",
+      "Ethnologue (SIL) — isiNdebele [nbl]. https://www.ethnologue.com/language/nbl",
+      "Statistics South Africa — Census 2011. http://www.statssa.gov.za/"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "id": "PPL_MAKONDE",
+  "nameMain": "Makonde",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA", "MOZ"],
+  "content": {
+    "appellations": {
+      "mainName": "Makonde",
+      "selfAppellation": "Makonde",
+      "exonyms": [
+        "Maconde (appellation utilisee au Mozambique et dans les sources portugaises)",
+        "Chimakonde (designation swahili de la langue)",
+        "Wamakonde (pluriel swahili)"
+      ],
+      "originOfExonyms": "Maconde est la transcription portugaise du nom Makonde, utilisee au Mozambique colonial et post-colonial. Chimakonde ou Kimakonde est le nom swahili de la langue. La distinction Makonde (Tanzanie) / Maconde (Mozambique) reflete la separation administrative coloniale et une evolution linguistique differenciee des deux groupes de part et d'autre de la riviere Ruvuma.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Makonde est le terme courant en Tanzanie et dans la litterature anglophone et francophone. Maconde est prefere au Mozambique. Les deux communautes reconnaissent leur origine commune et leur patrimoine culturel partage, notamment la sculpture sur bois.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou central (Zone P), proche du Yao",
+      "historicalRegion": "Plateau de Mueda (nord du Mozambique) et region de Mtwara-Lindi (sud-est de la Tanzanie), de part et d'autre de la riviere Ruvuma",
+      "currentCountries": ["TZA", "MOZ"]
+    },
+    "ethnicities": [
+      "Makonde de Tanzanie — installes dans la region de Mtwara et Lindi (Tanzanie meridionale), au nord de la Ruvuma",
+      "Maconde du Mozambique — installes sur le plateau de Mueda (province de Cabo Delgado), au sud de la Ruvuma",
+      "Makonde du Kenya — petit groupe issu d'une migration des annees 1950 depuis le Mozambique, etabli dans le comte de Kwale"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Makonde ont developpe leur culture sur le plateau de Mueda (nord du Mozambique, Cabo Delgado), un territoire eleve et boise qui leur a permis de resister avec succes aux razzias des esclavagistes africains, arabes et europeens pendant des siecles. Leur isolement geographique volontaire est une caracteristique fondatrice de leur identite. La riviere Ruvuma, frontiere naturelle, a progressivement divise le groupe en deux communautes distinctes (tanzanienne et mozambicaine) qui ont developpe des variantes linguistiques differentes tout en conservant une origine et une culture communes.",
+      "formationPeriod": "Plusieurs siecles d'implantation sur le plateau de Mueda ; societe structuree autour de la filiation matrilineaire, de la residence uxorilocale (le mari rejoint le village de sa femme) et d'une forte tradition de sculpture rituelle. La resistance a la domination coloniale portugaise ne s'est completement defaite qu'en 1920.",
+      "migrationRoutes": [
+        "Implantation ancienne sur le plateau de Mueda (Mozambique nord)",
+        "Extension vers le sud-est de la Tanzanie, au nord de la Ruvuma",
+        "Migration partielle vers le Kenya (annees 1950, comte de Kwale)"
+      ],
+      "historicalSettlementZones": [
+        "Plateau de Mueda, province de Cabo Delgado (Mozambique)",
+        "Regions de Mtwara et Lindi (Tanzanie meridionale)",
+        "Comte de Kwale (Kenya, presence limitee)"
+      ],
+      "unificationsOrDivisions": "La riviere Ruvuma a scinde le groupe Makonde en deux communautes nationales distinctes lors de la delimitation des frontieres coloniales (frontiere Tanganyika-Mozambique portugais). Au fil du temps, les deux communautes ont developpe des langues partiellement differentes. En 2016, un groupe de 300 Makonde du Kenya (descendants de Mozambicains installes dans les annees 1950) a marche de Kwale a Nairobi pour reclamer la citoyennete kenyane ; le president Kenyatta a ordonne la delivrance de cartes d'identite avant decembre 2016.",
+      "externalInfluences": "Resistance prolongee aux esclavagistes (africains, arabes, europeens) grace a l'isolement du plateau de Mueda. Domination coloniale portugaise sur le Mozambique (resistance jusqu'aux annees 1920). Pendant la lutte anticoloniale mozambicaine (1960s), le FRELIMO fut lance depuis le plateau de Mueda, qui etait le foyer makonde : les Makonde constituerent l'epine dorsale du mouvement de liberation, financement une partie par la vente de sculptures.",
+      "majorHistoricalEvents": "Jusqu'aux annees 1920 : resistance reussie aux puissances coloniales. 1960s : le plateau de Mueda est le berceau de la revolution FRELIMO ; les Maconde du Mozambique soutiennent massivement la lutte anticoloniale. Post-independance (1975) : influence politique importante des Maconde du Mozambique, role de premier plan dans la politique nationale. 2016 : reconnaissance de la citoyennete kenyane pour 300 Makonde du Kenya par le president Kenyatta."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe traditionnellement organisee en chefferies decentralisees, sans grand Etat centralise. L'autorite est partagee entre les chefs de lignage matrilineaire et les chefs de village. La prise de decision est collective, avec un fort role des anciens et des specialistes rituels (guerisseurs, sorciers).",
+      "clanOrganization": "Societe matrilineaire : les enfants et les heritages appartiennent a la lignee de la mere. Le mari rejoint le village de sa femme (residence uxorilocale). Les lignages matrilineaires determinent l'identite, l'appartenance clanique et les droits territoriaux.",
+      "ageClassSystems": "Les rites d'initiation (shiputu pour les garcons, ciputu pour les filles) marquent la transition entre les classes d'age. Ces rites sont organises par les anciens de la communaute et impliquent une periode de reclusion, d'instruction et (pour les garcons) de circoncision.",
+      "roleOfLineages": "Les lignages matrilineaires sont au fondement de l'organisation sociale makonde. L'heritage, la succession des chefferies et les droits sur la terre suivent la ligne maternelle. Les femmes jouent un role structurant dans la transmission de l'identite culturelle.",
+      "religiousAuthority": "La religion traditionnelle est un animisme ancestre-centrique : la vision du monde makonde place la vie comme une force continue reliant les vivants aux morts. Les sorciers (waganga) sont des leaders communautaires, craints et respectes comme guerisseurs et protecteurs. Les pretres rituels supervisent les ceremonies d'initiation. Selon les zones, les Makonde de Tanzanie sont nominalement musulmans, ceux du Mozambique catholiques ou musulmans."
+    },
+    "languages": {
+      "mainLanguage": "Makonde (Chimakonde, Kimakonde)",
+      "isoCodes": ["kde"],
+      "dialects": [
+        "Makonde tanzanien (nord de la Ruvuma) — variante principale en Tanzanie",
+        "Maconde mozambicain (plateau de Mueda) — variante du Mozambique, differences phonologiques et lexicales notables apres des siecles de separation",
+        "Matambwe (Matembwe) — dialecte potentiellement divergent",
+        "Mabiha (Maviha) — dialecte divergent, possiblement distinct"
+      ],
+      "vehicularRole": "Le makonde/chimakonde est la langue maternelle de tous les membres du groupe ethnique. Le swahili est la langue vehiculaire nationale en Tanzanie et sert de langue de communication interethnique dans le sud du pays. Le portugais est la langue officielle au Mozambique. L'anglais est utilise en Tanzanie."
+    },
+    "culture": {
+      "majorRites": "Le shiputu est le rite d'initiation masculin : il comprend une periode de reclusion (de plusieurs semaines), l'instruction sur les normes sociales (respect des anciens, protection des enfants), la circoncision symbolisant une nouvelle naissance et l'acces aux responsabilites adultes. Il est planifie par les anciens, les peres et les hommes-medecins (autorite spirituelle). Des figurines en argile et en bois servent a transmettre des proverbes et des enseignements moraux. Le rite se conclut par un retour ceremoniel avec de nouveaux noms, de nouveaux habits et des celebrations collectives. Le ciputu est l'initiation feminine : les filles passent plusieurs jours en reclusion dans une maison fermee, instruites sur les devoirs d'epouse et la biologie sexuelle de base par les femmes de la famille. La ceremonie se termine par un bain rituel, l'onction a l'huile, de nouveaux vetements et la danse mdimu exécutee par des danseurs mapiko en masques de bois elabores. Traditionnellement, des tatouages etaient appliques apres les rites.",
+      "symbols": "Le bois est au centre de la vision du monde makonde : il est conceptualise comme un medium vivant, incarne de vie spirituelle, lien entre le monde physique et le monde spirituel. Les masques mapiko (utilises lors des rites d'initiation masculins et feminins) sont des symboles identitaires fondamentaux. L'arbre de vie (Ujamaa en sculpture) symbolise la famille, l'unite et les relations reciproques. Les figures shetani (esprits) illustrent le monde invisible et surnaturel.",
+      "artsAndMusic": "Les Makonde sont celebres mondialement pour leur sculpture sur bois, principalement realisee en bois de blackwood (Dalbergia melanoxylon, ou mpingo) et en ebene. Quatre grands genres sculpturaux se distinguent : Binadamu (formes humaines realistes, scenes de la vie quotidienne), Ujamaa (arbre de vie communautaire, formes humaines imbriquees), Shetani (figures d'esprits abstraites ou semi-abstraites, imaginatives et grotesques, representant le monde surnaturel) et Mapiko (masques rituels en bois scultes de facon monoxyle depuis un seul bloc). L'artiste makonde le plus internationalement reconnu est George Lilanga (1946-2005). La technique sculpturale inclut l'adze et le ciseau pour l'ebauche, le couteau et la rape pour les details, le ponçage et l'application d'huiles ou de cires. La danse mapiko accompagne les ceremonies d'initiation. La musique traditionnelle inclut des tambours, des chants communautaires et des danses collectives. La poterie et le tissage completent l'artisanat.",
+      "spiritualities": "La spiritualite makonde est animiste et ancestre-centrique : la vie est une force continue reliant les vivants aux morts. Les ancetres interviennent dans les affaires des vivants et sont invoques lors des ceremonies. Les sorciers-guerisseurs (waganga) sont a la fois craints (accusations de meurtre, cannibalisme, trafic d'organes dans les representations populaires) et respectes comme protecteurs et mediateurs avec le monde invisible. Les Makonde de Tanzanie pratiquent majoritairement l'islam sunnite. Ceux du Mozambique sont catholiques ou musulmans selon les zones, avec maintien de pratiques animistes traditionnelles. Le syncrctisme est courant."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Makonde n'ont pas developpe de grand royaume centralise. Leur organisation politique traditionnelle est basee sur des chefferies de lignage decentralisees et des conseils d'anciens. L'isolement du plateau de Mueda a constitue leur principale protection contre les dominations exterieures. Leur influence politique post-coloniale au Mozambique est notable en raison de leur role dans la lutte de liberation.",
+      "relationsWithNeighbors": "Voisins des Yao (langue apparentee), des Makua (nord du Mozambique), des Mwera et des Ndonde en Tanzanie. Les relations inter-ethniques dans le sud de la Tanzanie et le nord du Mozambique ont ete marquees par le commerce, les alliances matrimoniales et parfois des conflits. La resistance aux razzias esclavagistes arabeset africaines est un element fondateur de l'identite makonde.",
+      "conflictsOrAlliances": "Resistance seculaire aux esclavagistes (africains, arabes, europeens). Resistance a la colonisation portugaise jusqu'aux annees 1920. Role central dans la lutte anticoloniale du FRELIMO (1960s-1975) : le plateau de Mueda, berceau du mouvement, et les Maconde comme epine dorsale militaire et financiere (vente de sculptures). Influence politique importante dans le Mozambique post-independance.",
+      "diaspora": "Diaspora makonde dans les grandes villes tanzaniennes (Dar es Salam, Mtwara) et mozambicaines (Maputo, Pemba). Presence au Kenya (comte de Kwale). Quelques artistes makonde (notamment sculpteurs) se sont etablis en Europe et en Amerique du Nord."
+    },
+    "demography": {
+      "totalPopulation": 1800000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN (donnees 2001) : 1 140 000 en Tanzanie, 233 358 au Mozambique (recensement 1997). SIL Ethnologue — Makonde (kde). Estimations 2025 tenant compte de la croissance demographique : environ 1 500 000 en Tanzanie, 300 000 au Mozambique, total approximatif 1 800 000.",
+      "distributionByCountry": [
+        { "country": "TZA", "population": 1500000 },
+        { "country": "MOZ", "population": 300000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Makonde people : https://en.wikipedia.org/wiki/Makonde_people",
+      "Wikipedia EN — Makonde language : https://en.wikipedia.org/wiki/Makonde_language",
+      "SIL Ethnologue — Makonde (kde) : https://www.ethnologue.com/language/kde/",
+      "Ethnologue Free — Makonde central group : https://www.ethnologue.com/subgroup/54/",
+      "CIA World Factbook — Tanzania : https://www.cia.gov/the-world-factbook/countries/tanzania/",
+      "CIA World Factbook — Mozambique : https://www.cia.gov/the-world-factbook/countries/mozambique/",
+      "George Lilanga — artiste makonde : https://en.wikipedia.org/wiki/George_Lilanga",
+      "UNESCO — Patrimoine culturel de l'Afrique de l'Est : https://en.unesco.org/"
+    ]
+  }
+}

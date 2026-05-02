@@ -1,0 +1,102 @@
+{
+  "id": "PPL_INDO_MAURICIENS",
+  "nameMain": "Indo-Mauriciens",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["MUS"],
+  "content": {
+    "appellations": {
+      "mainName": "Indo-Mauriciens",
+      "selfAppellation": "Indo-Mauriciens",
+      "exonyms": [
+        "Coolies (terme colonial péjoratif pour les travailleurs engagés indiens, abandonné)",
+        "Indiens (terme générique courant à Maurice)",
+        "Indo-Mauritians (anglais)"
+      ],
+      "originOfExonyms": "Le terme Coolies était utilisé par les autorités britanniques et les planteurs pour désigner les travailleurs indiens sous contrat d'engagement (indenture). Il est aujourd'hui considéré péjoratif et n'est plus employé. Indiens est le terme courant dans la vie quotidienne mauricienne, bien que les personnes concernées soient Mauriciennes depuis plusieurs générations.",
+      "whyProblematic": "Coolies est intrinsèquement péjoratif car il rappelle le système d'exploitation des travailleurs engagés, quasi-similaire à l'esclavage. Le terme Indiens peut sembler réducteur pour des personnes dont les familles sont mauriciennes depuis 4 à 7 générations.",
+      "contemporaryUsage": "Indo-Mauricien est le terme officiel et académique utilisé au Maurice contemporain et dans la littérature scientifique. À Maurice, Indiens est utilisé de façon courante dans la conversation quotidienne par l'ensemble des communautés.",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Groupe indo-mauricien issu de l'engagisme colonial (Hindi, Tamil, Telugu, Marathi, Urdu, Gujarati)",
+      "historicalRegion": "Île Maurice, toutes les régions, avec forte présence dans les zones rurales et dans les districts de Flacq, Grand Port, Rivière du Rempart et Pamplemousses",
+      "currentCountries": ["MUS"]
+    },
+    "ethnicities": [
+      "Hindous bhojpuris (descendants de travailleurs engagés du Bihar et de l'Uttar Pradesh)",
+      "Tamouls (descendants de travailleurs engagés de l'Inde du Sud)",
+      "Télougous (Andhra Pradesh)",
+      "Marathis (Maharashtra)",
+      "Musulmans indo-mauriciens (Mémons, Surtis, Calcuttiyas, Gujaratis)",
+      "Gujaratis et Sindis (commerçants libres)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Indo-Mauriciens descendent principalement de travailleurs sous contrat d'engagement (indenture) envoyés à Maurice après l'abolition de l'esclavage en 1835 pour pallier le manque de main-d'oeuvre dans les plantations sucrières. Une première vague de travailleurs indiens (au moins 12 000 personnes) était arrivée entre 1721 et 1810 pendant la période française, principalement depuis Pondichéry, Karikal, Yanaon et Chandernagor.",
+      "formationPeriod": "1834-1920 : arrivée de la quasi-totalité des travailleurs engagés. La vague principale concerne la période 1834-1900, avec près de 700 000 arrivées enregistrées à l'Aapravasi Ghat de Port-Louis. La formation d'une identité indo-mauricienne distincte s'accéléra à partir du début du XXe siècle avec la constitution d'associations communautaires, religieuses et politiques.",
+      "migrationRoutes": [
+        "Régions Bhojpuri (Bihar, Uttar Pradesh) vers Maurice via l'Aapravasi Ghat de Port-Louis (1834-1920)",
+        "Inde du Sud (Tamil Nadu, Andhra Pradesh, Maharashtra) vers Maurice (1834-1920)",
+        "Gujarat et Sindh vers Maurice (commerçants libres, XIXe-XXe siècles)",
+        "Pondichéry, Karikal, Yanaon, Chandernagor vers Maurice (période française, 1721-1810)"
+      ],
+      "historicalSettlementZones": [
+        "Toutes les régions de l'île Maurice",
+        "Districts ruraux : Flacq, Grand Port, Rivière du Rempart, Pamplemousses (plantations sucrières)",
+        "Port-Louis (capital et zone commerciale)",
+        "Île Rodrigues (proportion moindre)"
+      ],
+      "unificationsOrDivisions": "Les Indo-Mauriciens ne constituent pas un groupe homogène : ils sont divisés selon la religion (hindous, environ 48 % de la population totale ; musulmans, environ 18 %), l'origine régionale indienne (Bhojpuris, Tamouls, Télougous, Marathis, Gujaratis), la caste et la génération. Ces divisions internes ont structuré la vie politique mauricienne (partis ethniques, associations communautaires). L'unité politique a néanmoins émergé au moment de l'indépendance sous la direction de Sir Seewoosagur Ramgoolam.",
+      "externalInfluences": "La colonisation britannique a fourni le cadre juridique du système d'engagement (indenture) qui amena les travailleurs indiens à Maurice. L'Inde indépendante entretient des liens culturels, politiques et économiques forts avec la communauté indo-mauricienne. Les pratiques religieuses hindoues et islamiques maintiennent des liens avec les pays d'origine.",
+      "majorHistoricalEvents": "1721-1810 : arrivée de premiers travailleurs indiens sous domination française. 1835 : abolition de l'esclavage ; début massif du recrutement de travailleurs engagés indiens. 1834-1920 : arrivée de près de 700 000 engagés à l'Aapravasi Ghat. 1907-1910 : fin progressive du système d'indenture. 1936 : fondation du Labour Party par Sir Emmanuel Anquetil et Maurice Curé, suivi par Seewoosagur Ramgoolam. 1968 : indépendance de Maurice ; Sir Seewoosagur Ramgoolam (indo-mauricien) devient premier ministre. 1992 : Maurice devient république. 2003 : l'Aapravasi Ghat est inscrit au patrimoine mondial de l'UNESCO. 2022 : recensement confirmant 47,9 % de hindous et 18,2 % de musulmans dans la population mauricienne."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation politique via des partis communautaires (Labour Party, Militant Socialist Movement, Alliance Lepep). Le Mahatma Gandhi Institute (fondé en 1970) est une institution culturelle centrale pour la communauté. Les conseils religieux (Hindustan, Bissoondoyal, etc.) et les associations régionales (Bihari, Tamil, Telugu, Marathi) structurent la vie communautaire.",
+      "clanOrganization": "Le système de castes indien ne fut pas directement transposé à Maurice en raison de la composition démographique particulière (majorité Vaish, absence de majorité religieuse absolue) et du système de plantation. Une hiérarchie informelle basée sur la caste d'origine subsiste dans certaines communautés, notamment au sein des Hindous. Les Chamars (caste de maroquiniers) adoptèrent l'identité Ravived au Mauritius pour se distancer de leur dénomination traditionnelle.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les familles indo-mauriciennes transmettent les pratiques religieuses, les langues ancestrales et les affiliations politiques. Les grandes familles politique (Ramgoolam, Jugnauth) ont joué un rôle dynastique dans la politique mauricienne.",
+      "religiousAuthority": "Les pandit (prêtres hindous), les mollahs et imams (communauté musulmane) exercent une autorité religieuse et morale forte. Les temples hindous, les mosquées et le Mahatma Gandhi Institute sont les institutions centrales de la vie culturelle et spirituelle."
+    },
+    "languages": {
+      "mainLanguage": "Créole mauricien (Morisyen)",
+      "isoCodes": ["mfe", "bho", "tam", "hin", "mar", "tel", "urd"],
+      "dialects": [
+        "Bhojpuri mauricien (parlé par 5,1 % de la population en 2022, en déclin)",
+        "Tamil mauricien",
+        "Hindi standard (utilisé dans les contextes religieux et scolaires)",
+        "Marathi",
+        "Telugu",
+        "Urdu (communauté musulmane)"
+      ],
+      "vehicularRole": "Le créole mauricien (Morisyen, code ISO mfe) est la langue maternelle de facto de l'ensemble de la population mauricienne, y compris les Indo-Mauriciens. Les langues ancestrales indiennes (bhojpuri, tamil, hindi, marathi, télougou, ourdou) sont utilisées principalement dans les contextes religieux et culturels. L'anglais est la langue administrative officielle. Le français est la langue des médias et de l'éducation. Depuis l'âge de six ans, les enfants mauriciens choisissent une langue orientale comme troisième langue (hindi, tamoul, télougou, marathi ou ourdou selon l'appartenance ethno-religieuse)."
+    },
+    "culture": {
+      "majorRites": "Festivals hindous majeurs : Diwali (fête des lumières, jour férié national), Holi (fête des couleurs), Mahashivaratri (pèlerinage nocturne vers le lac sacré de Grand Bassin, le plus grand rassemblement religieux d'Afrique), Thaipusam Cavadee (procession de mortification). Fêtes islamiques : Eid ul-Fitr, Eid ul-Adha, Diwali est célébré par toutes les communautés. Mariages hinduistes élaborés avec cérémonies de plusieurs jours, échanges de dots, rituels védiques.",
+      "symbols": "L'Aapravasi Ghat à Port-Louis (site UNESCO) est le symbole principal de l'arrivée des engagés indiens et de la mémoire de l'indenture. Le lac de Grand Bassin (Ganga Talao) est le site de pèlerinage hindou le plus sacré hors d'Inde. La canne à sucre représente l'héritage du travail des engagés.",
+      "artsAndMusic": "Musique bhojpuri locale (chants de travail des champs de canne, modernisés en pop bhojpuri). Musique et danse de séga (d'origine afro-créole, partagé avec toutes les communautés). Danse bharatanatyam et kathak pratiquées par les familles tamoules et hindoues. Cuisine: carry mauricien (influencé par la cuisine indienne), dholl puri (crêpe aux lentilles, plat populaire), biryani, roti. Cinéma bollywoodien très populaire.",
+      "spiritualities": "Hindouisme pratiqué par environ 48 % de la population mauricienne (presque exclusivement des Indo-Mauriciens). Islam pratiqué par 18 % de la population (Indo-Mauriciens musulmans). Maurice est le seul pays d'Afrique où l'hindouisme est la religion majoritaire. Les cinq fêtes hindoues sont des jours fériés nationaux."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de structure royale ou chefferiale traditionnelle. La communauté indo-mauricienne a bâti son influence politique via le système démocratique mauritien dès l'ère des réformes constitutionnelles des années 1940-1960. Depuis l'indépendance en 1968, tous les premiers ministres (sauf Paul Bérenger) et tous les présidents (sauf Karl Offmann) sont indo-mauriciens.",
+      "relationsWithNeighbors": "Relations complexes avec les Franco-Mauriciens (concurrence économique et politique, mais coexistence généralement pacifique). Relations parfois tendues avec la communauté créole afro-mauricienne lors des périodes de compétition politique. Liens culturels et économiques forts avec l'Inde.",
+      "conflictsOrAlliances": "Tensions intercommunautaires lors des émeutes de 1999 (assassinat du chanteur créole Kaya). Période de violence intercommunautaire en 1968 à la veille de l'indépendance. Alliance politique historique entre le Labour Party indo-mauricien et les Créoles catholiques pour obtenir l'indépendance face aux Franco-Mauriciens et aux Britanniques.",
+      "diaspora": "Communauté indo-mauricienne diasporique en Australie, au Royaume-Uni (surtout Angleterre), au Canada et en France. Des liens importants sont maintenus avec l'Inde, notamment pour les pèlerinages religieux, les mariages et les investissements économiques."
+    },
+    "demography": {
+      "totalPopulation": 850000,
+      "referenceYear": 2025,
+      "source": "Wikipedia – Mauritians of Indian origin (812 769 lors du recensement de 2011, soit 65,7 % de la population) ; estimation 2025 basée sur 67 % d'une population totale de 1 268 000 (Worldometer 2025)",
+      "distributionByCountry": [
+        { "country": "MUS", "population": 840000 },
+        { "country": "AUS", "population": 5000 },
+        { "country": "GBR", "population": 5000 }
+      ]
+    },
+    "sources": [
+      "Mauritians of Indian origin – Wikipedia (anglais), 2024 (https://en.wikipedia.org/wiki/Mauritians_of_Indian_origin)",
+      "Demographics of Mauritius – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Demographics_of_Mauritius)",
+      "Religion in Mauritius – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Religion_in_Mauritius)",
+      "Mauritius – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Mauritius)",
+      "Mauritius Population 2025 – Worldometer (https://www.worldometers.info/world-population/mauritius-population/)",
+      "Population Île Maurice : 1,3 million d'habitants – FairMoove, 2026 (https://www.fairmoove.fr/guide-voyage/maurice/decouvrir/population-langues)",
+      "Aapravasi Ghat – UNESCO World Heritage (https://whc.unesco.org/en/list/1227)"
+    ]
+  }
+}

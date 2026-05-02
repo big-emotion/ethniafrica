@@ -1,0 +1,40 @@
+# Nom du peuple
+- Nom principal : Bassa (Nigeria)
+- Auto-appellation : Bassa / Basa
+- Famille linguistique : Niger-Congo – Bénoué-Congo (FLG_BENOUECONGO)
+- Région historique : Nigeria (Plateau State, Kogi State)
+- Identifiant peuple : PPL_BASSA_NIGERIA
+
+# 1. Ethnies incluses
+- Bassa Nge
+- Bassa Kwomu
+- Bassa Komo
+
+# 2. Origines
+- Groupe originel du centre-nord nigérian.
+- Parenté avec les peuples Igala et Ebira.
+
+# 3. Organisation
+- Chefferies régionales
+- Lignages familiaux
+
+# 4. Langue
+- Basa-Benue (groupe de langues)
+- ISO : bsn / bzw (selon variétés)
+
+# 5. Culture
+- Masques et danses
+- Agriculture sur plateau
+- Rituels lignagers
+
+# 6. Histoire
+- Interactions historiques avec Igala, Ebira et Nupe.
+- Région sensible durant la période précoloniale.
+
+# 7. Démographie
+- Population : 350 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue
+- Nigeria Middle Belt studies

@@ -1,0 +1,101 @@
+{
+  "id": "PPL_BIJAGO_BIDYOGO",
+  "nameMain": "Bijago / Bidyogo",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["GNB"],
+  "content": {
+    "appellations": {
+      "mainName": "Bijago",
+      "selfAppellation": "Bijago (ou Bidyogo selon les dialectes)",
+      "exonyms": [
+        "Bijago",
+        "Bidyogo",
+        "Bissagos",
+        "Bojagos",
+        "Bidjogo",
+        "Bujagos",
+        "Anaki"
+      ],
+      "originOfExonyms": "Le nom Bissagos, donne par les premiers navigateurs europeens (Anglais, Allemands, puis Portugais) au XVe-XVIe siecle, vient probablement du nom de l'archipel lui-meme. Certains auteurs soutiennent que le nom du pays Guinee-Bissau derive de la corruption du terme Bissagos. Anaki est un nom utilise dans certaines iles specifiques.",
+      "whyProblematic": "Les formes Bijago et Bidyogo sont toutes deux usitees et renvoient a des dialectes differents. La litterature portugaise privilegiait la forme Bijago ; les linguistes modernes utilisent Bidyogo pour designer la langue. L'orthographe et la prononciation varient selon les iles et les dialectes.",
+      "contemporaryUsage": "Bijago est la denomination officielle utilisee en Guinee-Bissau et dans les publications internationales. Le terme Bissagos est utilise pour designer l'archipel. La denomination Bidyogo prevaut dans les travaux linguistiques.",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "ethnoLinguisticGroup": "Langues bak (groupe atlantique-ouest), famille Niger-Congo. Sapir (1971) classait le Bijago comme isolat au sein du groupe atlantique-ouest, mais des etudes recentes (Segerer) montrent sa proximite avec les langues bak.",
+      "historicalRegion": "Archipel des Bijagos (Arquipelago dos Bijagos), forme de 88 iles et ilots dans l'ocean Atlantique au large des cotes de Guinee-Bissau",
+      "currentCountries": ["GNB"]
+    },
+    "ethnicities": [
+      "Bijago",
+      "Sous-groupes insulaires : Anhaki (Canhabaque), Kagbaaga (Bubaque), Kajoko (Orango, Uno), Kamona (Caravela, Carache)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les origines des Bijago sont peu documentees. Les traits linguistiques les relient clairement aux habitants de la cote continentale voisine, et il est probable qu'ils viennent de la region de Buba sur le continent. Leur mythologie fondatrice mentionne un ancetre primordial dont les filles ont recu les domaines de la terre, de la mer, de la nature et de la pluie (Orakuma, Ominka, Orage, Ogubane).",
+      "formationPeriod": "Periode pre-europeenne non determinee. Les premiers contacts documentés avec des Europeens remontent au milieu du XVe siecle (1447, tentative de conquete par le navigateur portugais Nuno Tristao, tue par les Bijago).",
+      "migrationRoutes": [
+        "Depuis la cote continentale de Guinee-Bissau (region de Buba) vers l'archipel insulaire, selon les hypotheses linguistiques",
+        "Circulation interinsulaire ancienne par pirogue, base du systeme politique et economique insulaire"
+      ],
+      "historicalSettlementZones": [
+        "Ile de Canhabaque (Roxa) : bastion traditionnel de la culture Bijago, seule ile maintenant le systeme de chef par village",
+        "Ile de Bubaque : ile la plus peuplee, centre administratif",
+        "Iles Orango et Uno (dialecte Kajoko)",
+        "Iles Caravela et Carache au nord (dialecte Kamona)",
+        "Ile Orango Grande : connue pour la societe matriarcale"
+      ],
+      "unificationsOrDivisions": "Les Bijago n'ont jamais forme d'Etat centralise. Chaque village (tabanca) de 100 a 300 habitants constitue l'unite politique et economique de base, autonome et autosuffisante. La resistance aux autorites exterieures, qu'elles soient portugaises, coloniales ou nationales, est une constante historique.",
+      "externalInfluences": "Arrivee des Europeens (Anglais, Allemands, puis Portugais) a partir du XVe siecle. La colonisation portugaise a mis fin aux pratiques seculaires de l'agriculture cyclique. L'islam a une influence culturelle plus que purement religieuse chez environ 30% des Bijago. L'independance de la Guinee-Bissau en 1974 a integre l'archipel dans un Etat national tout en preservant une grande autonomie de fait.",
+      "majorHistoricalEvents": "1447 : mort du navigateur portugais Nuno Tristao tente de conquerer l'archipel. Resistances armees contre le Portugal : 1900, 1913-1915, 1917, 1918, 1924, 1936 (le Portugal ne considera les Bijago comme pacifies qu'en 1936). Classement de l'archipel en Reserve de biosphere de l'UNESCO en 1996. Les Bijago sont le seul groupe ethnique de Guinee-Bissau qui ne pratique ni la circumcision des garçons ni l'excision des filles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme matriarcal ou les femmes detiennent un pouvoir considerable : elles organisent l'economie, la loi et les affaires sociales. Elles choisissent leurs maris et detiennent le droit de divorce. Le pouvoir politique est exerce par un chef de village (dont la legitimite est fondee sur la descendance matrilineaire avec les ancetres) assiste d'un conseil d'anciens. Sur l'ile de Canhabaque, chaque village conserve un chef ; sur Bubaque, en raison des influences exterieures, le systeme chefdom est affaibli.",
+      "clanOrganization": "Quatre clans matrilineaires presents dans toutes les iles. La descendance matrilineaire determine l'appartenance clanique et les droits sur la terre. Ce systeme unitaire renforce la cohesion de la societe Bijago a l'echelle de l'archipel et empeche la division de la propriete fonciere villageoise.",
+      "roleOfLineages": "La descendance matrilineaire (matrilinearite) est le principe fondateur de la societe Bijago. La terre appartient au village et son chef provient toujours du clan fondateur du village. La residence est virilocale (la femme rejoint le domicile de l'epoux), mais tous les enfants appartiennent au clan de la mere.",
+      "religiousAuthority": "Systeme religieux base sur le culte des Orebok (intermediaires entre le dieu supreme Nindo et les humains), les Iran (statues rituelles habitees par des divinites) et les baloba (sanctuaires). Les formes islamiques sont presentes comme influences culturelles plutot que religieuses chez environ 30% de la population. Moins de 10% de chretiens. Les 60% restants maintiennent les croyances animistes traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Bijago (Bidyogo)",
+      "isoCodes": ["bjg"],
+      "dialects": [
+        "Anhaki (ile de Canhabaque/Roxa)",
+        "Kagbaaga (ile de Bubaque)",
+        "Kajoko (iles Orango et Uno)",
+        "Kamona (iles Caravela et Carache, inintelligible avec les autres dialectes)"
+      ],
+      "vehicularRole": "Le bidyogo est la langue maternelle dominante de l'archipel. Le kriolu guineen (kriol guinensi) est la langue vehiculaire interethnique, surtout en ville depuis les annees 1990. Le portugais est la langue officielle mais peu utilisee, meme a l'ecole et parmi les enseignants selon les etudes recentes (Feytor Pinto, 2024). L'enseignement en kriolu a ete introduit au lycee en 2008."
+    },
+    "culture": {
+      "majorRites": "Cycles d'initiation (fanado/fonado) pour les hommes et les femmes, marquant le passage entre les differentes etapes de la vie. Ces initiations conferent la paternite aux hommes et la maternite aux femmes. Les ceremonies se deroulent principalement en foret. Les Bijago sont le seul groupe de Guinee-Bissau a ne pratiquer ni la circumcision ni l'excision. Croyance forte en la reincarnation : les ames retournent aupres de leur famille apres la mort. Agriculture collective : en fevrier, toutes les familles du village se reunissent pour decider des terres a cultiver.",
+      "symbols": "Masques representant des animaux marins et terrestres (vache, taureau, hippopotame, requin, espadon, requin) portes lors des ceremonies d'initiation. Le masque dugn'be (boeuf du village) symbolise la force a discipliner. Les statues Iran (figurines anthropomorphes a visage aplati, menton pointe, yeux ronds) comme foyers de divination et protection spirituelle. Le pirogue (canoe de guerre traditionnel) symbole de la puissance maritime Bijago.",
+      "artsAndMusic": "Sculpture sur bois : masques d'initiation, statuettes Iran, recipients cerimonials. Le sculpteur est un artisan engage volontairement, associe aux ceremonies d'initiation. Danses rituelles mimant le comportement des animaux representes par les masques. Chants d'amour et de seduction. La danse du feu est une expression artistique notable. L'artisanat Bijago (bois sculpte, vannerie) est reconnu dans toute la Guinee-Bissau.",
+      "spiritualities": "Cosmologie centree sur le dieu supreme Nindo et son intermediaire Orebok (qui peut etre une femme en initiation, une statue du dieu du village, ou l'esprit habitant le corps). Culte des Iran (statues rituelles) comme interfaces avec les divinites et les ancetres. Croyance forte en la reincarnation : les âmes retournent dans la famille d'origine. Les offrandes et libations creent une patine sur les statues Iran. La foret est l'espace sacre par excellence pour les rituels d'initiation."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas d'Etat centralise mais un systeme de chefferies villageoises autonomes tres bien organise. Les Bijago etaient connus des chroniqueurs europeens pour leurs raids maritimes audacieux sur les navires et les cotes africaines, utilisant de grandes pirogues de guerre. Ils ont constitue une puissance maritime redoutee pendant plusieurs siecles.",
+      "relationsWithNeighbors": "Relations historiquement conflictuelles avec les autorites coloniales portugaises. Raids sur les navires et les peuplements cotiers du continent. Isolement culturel qui a permis de preserver les traditions. Tensions contemporaines avec les pecheurs senegalais qui viennent pecher dans les eaux de l'archipel.",
+      "conflictsOrAlliances": "Six guerres de resistance contre le Portugal entre 1900 et 1936. En 1447, les Bijago ont tue le navigateur Nuno Tristao qui tentait de les conquerir. Les Bijago ont toujours refuse la domination des puissances exterieures. Depuis 1996, l'archipel beneficie du statut de Reserve de biosphere de l'UNESCO, ce qui contribue a preserver leur territoire.",
+      "diaspora": "Les Bijago restent tres attaches a leur archipel. La diaspora est limitee et principalement interne a la Guinee-Bissau (ville de Bissau). La croyance en la reincarnation dans la famille d'origine renforce l'attachement territorial."
+    },
+    "demography": {
+      "totalPopulation": 43000,
+      "referenceYear": 2025,
+      "source": "Joshua Project – Bijogo in Guinea-Bissau (43000 en 2025) ; demographiques historiques : 9200 (1950), 25000 (1935, Landerset Simoes), 50590 (1889, gouverneur Lanca)",
+      "distributionByCountry": [
+        {
+          "country": "GNB",
+          "population": 43000,
+          "note": "Exclusivement en Guinee-Bissau (archipel des Bijagos). Les Bijago representent 2.1% de la population nationale (2008). Population estimee entre 15000 et 20000 dans l'archipel, dont 90% de Bijago (estimation recente)."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia – Bijago language (https://en.wikipedia.org/wiki/Bijago_language)",
+      "Wikipedia – Bijagos Islands (https://en.wikipedia.org/wiki/Bijag%C3%B3s_Islands)",
+      "Joshua Project – Bijogo in Guinea-Bissau (https://joshuaproject.net/people_groups/10838)",
+      "101 Last Tribes – Bijago people, Africa (https://www.101lasttribes.com/tribes/bijago.html)",
+      "Trip Down Memory Lane Blog – Bijago People : Guinea Bissau Matriarchal Tribe, 2013 (https://kwekudee-tripdownmemorylane.blogspot.com/2012/12/bijago-people-guinea-bissau-african.html)",
+      "Minority Rights Group – Guinea-Bissau country profile, 2024 (https://minorityrights.org/country/guinea-bissau/)",
+      "Wikipedia – Demographics of Guinea-Bissau (https://en.wikipedia.org/wiki/Demographics_of_Guinea-Bissau)",
+      "Crushing Colonialism – Preserving tradition and culture of Guinea Bissau's vibrant Bijagos Islands, 2024 (https://crushingcolonialism.org/preserving-tradition-and-culture-of-guinea-bissaus-vibrant-bijagos-islands/)"
+    ]
+  }
+}

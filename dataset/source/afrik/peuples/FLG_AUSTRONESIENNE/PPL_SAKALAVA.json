@@ -1,0 +1,98 @@
+{
+  "id": "PPL_SAKALAVA",
+  "nameMain": "Sakalava",
+  "languageFamilyId": "FLG_AUSTRONESIENNE",
+  "currentCountries": ["MDG"],
+  "content": {
+    "appellations": {
+      "mainName": "Sakalava",
+      "selfAppellation": "Sakalava",
+      "exonyms": [
+        "Sakalava (terme signifiant le plus couramment ceux des longues vallees, faisant reference a la topographie plate de l'ouest malgache)",
+        "Saqaliba (hypothese etymologique arabe, du latin sclavus, esclave, en reference au commerce d'esclaves)"
+      ],
+      "originOfExonyms": "L'etymologie la plus repandue derive du malgache moderne et signifie ceux qui habitent les longues vallees ou ravins (saka : vallee/ravin, lava : long). Une theorie alternative, moins etablie, le fait remonter a l'arabe saqaliba.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Sakalava est l'appellation officielle et courante utilisee par le groupe lui-meme et par les autorites malgaches.",
+      "linguisticFamily": "FLG_AUSTRONESIENNE",
+      "ethnoLinguisticGroup": "Malayo-polynesien, sous-groupe des dialectes malgaches occidental (nord et sud)",
+      "historicalRegion": "Cote ouest de Madagascar, de la riviere Onilahy (sud) jusqu'a Nosy Be (nord), incluant les provinces actuelles de Mahajanga et de Toliara (regions Atsimo-Andrefana, Menabe, Boeny, Melaky, Sophia septentrionale)",
+      "currentCountries": ["MDG"]
+    },
+    "ethnicities": [
+      "Sakalava du Menabe (cote ouest-centre, capitale historique Andakabe/Morondava, dynasties Zafimbolamena Belihisafra)",
+      "Sakalava du Boina (cote ouest-nord, capitale Mahajanga, royaute Maroserana, fort contact avec l'islam omanais)",
+      "Sakalava Anjoaty (sous-groupe cotier, peche et navigation)",
+      "Sakalava Sahavoay (sous-groupe meridional)",
+      "Makoa (descendants d'esclaves africains integres a la societe sakalava)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Sakalava resultent du metissage entre les premiers colons austronesiens arrives a Madagascar entre 400 et 900 apres J.-C. et des agriculteurs bantouphones d'Afrique centrale et orientale arrives au IXe siecle. Les premiers etablissements confirmes de leur territoire se trouvent sur l'ile de Nosy Mangabe et dans la vallee de la Mananara, datant du VIIIe siecle. Les princes Maroserana (ceux qui possedaient de nombreux ports), originaires de la region de Fiherenana (actuelle Toliara), sont consideres comme les fondateurs de la lignee royale Sakalava. Une possible ascendance des clans Zafiraminia (fils de Ramini, d'origine arabo-malgache) est egalement evoquee.",
+      "formationPeriod": "Les premiers royaumes Sakalava significatifs se forment vers 1650. Sous le prince Andriandahifotsy (1600-1680), descendant d'Andriamisara, le territoire s'etend au nord au-dela de la riviere Mangoky grace au commerce des esclaves et a l'acquisition d'armes europeennes. Son fils Andriamandisoarivo etend les conquetes jusqu'a la region de Tsongay (actuelle Mahajanga). Le royaume atteint son expansion maximale entre 1730 et 1760 sous Andrianinevenarivo.",
+      "migrationRoutes": [
+        "Migration austronesienne depuis le Sud-Est asiatique (400-900 ap. J.-C.)",
+        "Arrivee de Bantous depuis l'Afrique centrale et orientale (IXe siecle)",
+        "Expansion depuis la region de Fiherenana (Toliara) vers le nord le long de la cote ouest"
+      ],
+      "historicalSettlementZones": [
+        "Region de Morondava (capitale du Menabe)",
+        "Region de Mahajanga (capitale du Boina)",
+        "Cote ouest de Madagascar : de l'Onilahy (sud) a Nosy Be (nord)",
+        "Iles cotieres : Nosy Be, Nosy Komba"
+      ],
+      "unificationsOrDivisions": "Apres le regne d'Andriantonkafo (1712-1722), le royaume se divise en deux entites : le Menabe (centre-sud) et le Boina (nord). Ces deux royaumes ne seront jamais annexes par les Merina malgre les conquetes de Radama I. Le roi Andriantsoly, exile a Mayotte en 1832-1843, signe l'acte d'annexion de Mayotte par la France en 1841 et introduit le tromba dans les Comores. Madagascar devient colonie francaise en 1896 sous le regne de la reine Binao du Boina.",
+      "externalInfluences": "Fort contact avec les marchands omanais et arabes ayant conduit a l'adoption de l'islam sunnite par les souverains sakalava du Boina au XVIIIe siecle en echange d'un soutien militaire. Commerce d'esclaves avec les Europeens, les Arabes et les marins swahilis constituant la base economique du pouvoir royal. Introduction du christianisme catholique et protestant par les missionnaires europeens (faible penetration en raison de la resistance des traditions).",
+      "majorHistoricalEvents": "Raids d'esclaves annuels contre les Merina et les Comores jusqu'a la fin du XVIIIe siecle. Fin de l'hegemonie sakalava quand le roi Radama I achete des armes et met fin aux raids (debut XIXe siecle). Chute de Mahajanga en 1824 (Radama I). Exil d'Andriantsoly a Mayotte (1832-1843) et signature de l'annexion de Mayotte par la France (1841). Etablissement de Madagascar comme colonie francaise (1896). Le tromba sakalava se diffuse jusqu'a Mayotte, aux Comores et a Zanzibar."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Royauté monarchique fortement hierarchisee. Le roi (mpanjaka) est considere comme sacre et doit manier le hasina (force vitale sacree) pour assurer la fertilite du sol et la prosperite du royaume. Strates sociales : Ampanzaka (caste royale), nobles, hommes libres, Makoa (descendants d'esclaves africains). Les pretres Dady preservent les reliques des souverains defunts. Systeme de fokonolona (assemblee villageoise) pour la gouvernance locale.",
+      "clanOrganization": "Deux ensembles claniques principaux : les Maroserana (princes fondateurs, ceux qui possedaient de nombreux ports) et les clans Zafiraminia d'origine. Organisation patrilineaire en lignages. La purete de la lignee royale (purity of blood) determine le statut au sein du systeme hierarchique.",
+      "ageClassSystems": "Pas de systeme de classes d'age strictement formalise. Les rites de passage incluent la circoncision (savatsy) et le mariage. Les ceremonies tromba structurent la vie communautaire autour du calendrier rituel.",
+      "roleOfLineages": "Les lignages royaux Maroserana sont les garants de la legitimite politique et rituelle. Apres la mort d'un roi, son esprit devient un ancetre possedant les mediums saha lors des ceremonies tromba. Les pretres Dady (lignage noble) conservent les restes des souverains dans des doany (sanctuaires royaux) et organisent les ceremonies d'entretien.",
+      "religiousAuthority": "Autorite du mpitoka (pretre des ceremonies ancestrales), des Dady (gardiens des reliques royales), et des ombiasy (devins-guerisseurs). Forte influence de l'islam sunnite (notamment au Boina). Presence de chefs religieux catholiques (Nosy Be) et protestants. Syncretisme marque entre le culte royal ancestral (fomba gasy), l'islam et le christianisme."
+    },
+    "languages": {
+      "mainLanguage": "Malgache sakalava (dialectes nord et sud)",
+      "isoCodes": ["skg", "mlg"],
+      "dialects": [
+        "Sakalava du Boina (dialecte nord, skg, partage des traits avec le tsimihety, influence swahilie et arabe, region de Mahajanga)",
+        "Sakalava du Menabe (dialecte sud, plus proche du masikoro et des dialectes meridionaux, region de Morondava)",
+        "Sakalava Anjoaty (parler cotier)"
+      ],
+      "vehicularRole": "Le sakalava (skg) est l'une des onze varietes reconnues du malgache (macrolangue mlg) par l'ISO 639-3. Le dialecte du Boina (nord) partage des caracteristiques avec le tsimihety, tandis que le Menabe (sud) est plus proche du masikoro. L'Ethnologue recense environ 1 210 000 locuteurs du sakalava. Le malgache officiel (plateau, plt) et le francais sont utilises pour les communications avec l'administration nationale."
+    },
+    "culture": {
+      "majorRites": "Tromba : ceremonies de possession par les esprits des souverains defunts ; les mediums saha communiquent les messages des ancetres royaux lors de rassemblements communautaires. Doany : visites aux sanctuaires des ancetres royaux pour nettoyage et entretien (communication avec les esprits). Ceremonie de savatsy (circoncision). Funerailles avec rites specifiques selon le statut social. Le famadihana (retournement des morts) est moins central chez les Sakalava que chez les Merina, mais la veneration des ancetres reste fondamentale.",
+      "symbols": "Doany Andriamisara de Mahajanga (Tsararano) : sanctuaire des Quatre Freres Benis Andriamisara, lieu de pelerinage central. Toñy (arbre ou pierre assignes en l'honneur d'un esprit). Le zebu comme richesse, monnaie d'echange et animal sacrificiel. Tanifoty (petit morceau de calcaire offert par le gardien du doany comme manifestation materielle de la benediction ancestrale). Symboles royaux des dynasties Maroserana.",
+      "artsAndMusic": "Musique traditionnelle jouee lors des ceremonies tromba et des rassemblements communautaires. Instruments : valiha (cithare en bambou), marovany (cithare de caisse), djembe, langoro, percussions diverses. Danse communautaire lors des ceremonies. Artisanat textile (tissage de lambas en soie et raphia). Pirogue et techniques de navigation (communautes Anjoaty et cotieres). Poterie traditionnelle.",
+      "spiritualities": "Religion traditionnelle fomba gasy suivie par environ 60% des Sakalava (source : Wikipedia). Culte royal des ancetres : le roi defunt devient esprit ancestral intervenant dans les affaires des vivants via les mediums saha. Doany (sanctuaires royaux) comme lieux de culte et de pelerinage. Islam sunnite adopte par les souverains du Boina au XVIIIe siecle pour des raisons d'alliance militaire (soutien omanais) ; le tromba continue en parallele. Christianisme present (environ 35% selon Wikipedia) mais faible penetration historique due a la resistance des traditions. Croyance en le hasina (force sacree) du roi et dans les esprits de la nature."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Deux grands royaumes : le Menabe (centre-sud, capitale Andakabe/Morondava, fonde vers 1650, jamais annexe par les Merina) et le Boina (nord, capitale Mahajanga, fort contact avec l'islam omanais). Influence etendue sur 128 000 km2 de cotes, couvrant les provinces d'Antsiranana, Mahajanga et Toliara. Sous le roi Andrianinevenarivo (1730-1760), le royaume atteint son expansion maximale. Dynasties royales : Zafimbolamena Belihisafra. La famille royale Boina continue d'exister, le roi actuel Soulaimana Andriantsoly ayant accede au trone en 1993.",
+      "relationsWithNeighbors": "Relations complexes : raids d'esclaves annuels contre les Merina, les Comores et les villages de la cote swahilie jusqu'a la fin du XVIIIe siecle (armes arabes donnant un avantage militaire). Soumission des Mahafaly meridionaux. Monopole sur le commerce d'esclaves jusqu'a la fin du XVIIIe siecle. Fin de l'hegemonie quand Radama I acquiert des armes. Les deux royaumes Menabe et Boina restent les seuls grands royaumes malgaches jamais annexes par les Merina. Diffusion du tromba sakalava a Mayotte et a Zanzibar via la diaspora.",
+      "conflictsOrAlliances": "Alliance avec les marchands omanais et arabes (armes contre esclaves, adoption de l'islam). Raid d'esclaves contre les Merina (XVIIIe siecle). Chute de Mahajanga face a Radama I (1824). Exile d'Andriantsoly a Mayotte (1832-1843) : signature de l'annexion de Mayotte par la France (1841). Reigne de la reine Binao lors de la colonisation francaise (1896).",
+      "diaspora": "Diffusion du culte tromba a Mayotte (Comores) par Andriantsoly lors de son exil (1832-1843), ou son lieu de sepulture est le principal centre de pratique. Propagation du tromba jusqu'a Zanzibar (Tanzanie) via la communaute comorienne. Presence de Sakalava dans les grandes villes malgaches (Mahajanga, Antananarivo, Toliara)."
+    },
+    "demography": {
+      "totalPopulation": 2200000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN (donnees 2018) : 6,2% de la population totale de Madagascar, soit environ 2 079 000 personnes en 2018. Ethnologue : environ 1 210 000 locuteurs du dialecte sakalava (skg). Population totale Madagascar 2025 : environ 30 millions (Banque mondiale). Estimation Sakalava 2025 : 2,0-2,3 millions.",
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 2200000,
+          "notes": "Repartis sur 128 000 km2 de cotes occidentales, de la riviere Onilahy (sud) a Nosy Be (nord), avec concentrations a Mahajanga (Boina) et Morondava (Menabe)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Sakalava people : https://en.wikipedia.org/wiki/Sakalava_people",
+      "Wikipedia EN - Malagasy language : https://en.wikipedia.org/wiki/Malagasy_language",
+      "SIL Ethnologue - Sakalava Malagasy (skg) : https://www.ethnologue.com/language/skg/",
+      "SIL Ethnologue - Malagasy macrolanguage (mlg) : https://www.ethnologue.com/language/mlg/",
+      "CIA World Factbook - Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/",
+      "Banque mondiale - Madagascar : https://data.worldbank.org/country/madagascar",
+      "Joshua Project - Sakalava in Madagascar : https://joshuaproject.net/people_groups/15284"
+    ]
+  }
+}

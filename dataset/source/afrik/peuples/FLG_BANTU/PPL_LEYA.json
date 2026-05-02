@@ -1,0 +1,93 @@
+{
+  "id": "PPL_LEYA",
+  "nameMain": "Leya",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB", "ZWE"],
+  "content": {
+    "appellations": {
+      "mainName": "Leya",
+      "selfAppellation": "Baleya",
+      "exonyms": ["Toka-Leya", "Tokaleya"],
+      "originOfExonyms": "Le terme Toka-Leya est apparu sur des cartes coloniales britanniques, resultant d'une confusion administrative entre les Toka (Batoka) et les Leya (Baleya). Toka serait une deformation du mot Tonga par un administrateur colonial. Les habitants du chiefdom Mukuni se designent exclusivement comme Baleya et leur langue comme Chileya.",
+      "whyProblematic": "Le terme compose Toka-Leya amalgame deux groupes distincts. Les Leya du chiefdom Mukuni refusent le terme Toka et s'identifient uniquement comme Baleya. Cette confusion persiste dans la litterature coloniale et certains documents administratifs modernes.",
+      "contemporaryUsage": "Dans l'usage contemporain, les habitants du chiefdom Mukuni (district de Livingstone) se designent comme Baleya. Les chiefdoms de Sekute et Musukotwani utilisent le terme compose Batoka-Leya. Le nom Leya est reconnu officiellement en Zambie.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu du Centre-Sud, sous-groupe Tonga-Zambezi",
+      "historicalRegion": "Province du Sud, Zambie; region des chutes Victoria (Mosi-oa-Tunya)",
+      "currentCountries": ["ZMB", "ZWE"]
+    },
+    "ethnicities": ["Leya (Baleya)", "Toka-Leya"],
+    "origins": {
+      "ancientOrigins": "Les Leya sont originaires du bassin meridional du Congo. Selon la tradition orale, la dynastic royale Mukuni descend du Mulopwe, un titre royal issu du Congo (RDC actuelle). Le site actuel des Leya connait une occupation humaine depuis le XIIIe siecle (dynastie Chireya). Les premiers ancetres Bantu des Leya auraient migre depuis ce qui est aujourd'hui le district de Kabwe en Zambie centrale.",
+      "formationPeriod": "Fin du XVIIe siecle - debut du XVIIIe siecle. Deux fils du Chef Mulopwe, Mukuni et Mwanza, migrerent vers les marais de Lukanga, puis vers le pays Lenje. Paramount Chief Mukuni s'etablit ensuite en pays Leya, fondant la capitale ceremonielle de Chundu, qui rassemblait les Lenje, Soli, Tonga, Ila et Leya.",
+      "migrationRoutes": [
+        "Bassin du Congo (RDC) vers Kabwe (Zambie centrale)",
+        "Marais de Lukanga vers le pays Lenje",
+        "Pays Lenje vers les rives du Zambeze (region de Livingstone)"
+      ],
+      "historicalSettlementZones": [
+        "Rives du Zambeze autour des chutes Victoria (Mosi-oa-Tunya)",
+        "District de Livingstone (Province du Sud, Zambie)",
+        "District de Kazungula",
+        "Parties des districts de Zimba et Kalomo",
+        "Ile de Kalai (Zambeze)"
+      ],
+      "unificationsOrDivisions": "Les Leya font partie de la nation Bene Mukuni qui regroupe neuf groupes linguistiques: Leya, Lenje, Sala, Soli/Kaka/Goba, Tonga, Lala, Nsenga, Kunda (Zambie) et Nambia/Nanzwa/Leya (district de Hwange, Zimbabwe). La chefferie Sekute, initialement distincte, fut integree dans l'espace Leya apres la defaite militaire et le mariage du chef Sekute avec une princesse Leya.",
+      "externalInfluences": "Au XVIIe-XVIIIe siecle, les Lozi (Litunga Ngombala) conquirent les Leya sous Sekute. Vers 1836, les Kololo sous Sebitwane envahirent et disperserent les Leya de Sekute avant que la domination Lozi ne soit retablie dans les annees 1860. La colonisation britannique (Rhodesie du Nord) fragmente les territoires traditionnels a partir de la fin du XIXe siecle.",
+      "majorHistoricalEvents": "1836: invasion Kololo sous Sebitwane, dispersion temporaire des Leya. 1853: David Livingstone cartographie la presence Leya sur la rive nord du Zambeze. 1855: Livingstone observe les tombes des chefs Sekute sur l'ile de Kalai. 1889-1890: incorporation dans le protectorat britannique de Rhodesie du Nord-Est. 1964: independance de la Zambie, maintien des structures chiefly sous Paramount Chief Mukuni."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie traditionnelle sous Paramount Chief Mukuni (titre Munokalya, signifiant Chef des Chefs). Le systeme politique Bene Mukuni englobe neuf groupes linguistiques sous autorite centrale. Les chefferies de Sekute et Musukotwani sont subordonnees a Mukuni. Le titre Namutitima (Roi Lion des chutes Victoria) est egalement confere au Paramount Chief.",
+      "clanOrganization": "Organisation clanique fondee sur la descendance matrilineaire pour la royaute (clan Bene Mukuni) et patrilineaire pour les roturiers dans certaines chefferies. Le clan royal porte le totem du Lion. La succession au pouvoir suit la ligne maternelle dans la famille royale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages royaux determinent la succession et l'autorite politique. Le Paramount Chief Mukuni nomme les sous-chefs (Sekute, Musukotwani) et un Premier Ministre (Mukuluma). L'appartenance a la nation Bene Mukuni confere des droits politiques et fonciers specifiques.",
+      "religiousAuthority": "Le Paramount Chief detient une autorite spirituelle liee aux ancetres fondateurs et aux esprits de la nature (notamment les esprits des chutes Victoria). Les rituels d'installation du chef et les ceremonies aux chutes sont sous son autorite ceremonielle."
+    },
+    "languages": {
+      "mainLanguage": "Chileya (Toka-Leya)",
+      "isoCodes": ["tok"],
+      "dialects": [
+        "Chileya (chiefdom Mukuni, forme la plus pure)",
+        "Chitoka-Leya (chiefdoms Sekute et Musukotwani)",
+        "Chitoka"
+      ],
+      "vehicularRole": "Le Chileya est la langue maternelle des Leya du chiefdom Mukuni. Il partage 62% de similitude lexicale avec le Tonga et seulement 17% avec le Lozi. La langue montre des signes de perte au profit du Chewa et de l'anglais. Le Tonga sert de vehiculaire regional dans la Province du Sud, l'anglais dans les contextes officiels."
+    },
+    "culture": {
+      "majorRites": "Les ceremonies royales d'installation de Paramount Chief Mukuni constituent l'evenement rituel majeur. Les rituels lies aux chutes Victoria (Mosi-oa-Tunya) ont une importance spirituelle centrale. Les Leya pratiquent des rituels de propitiation des ancetres et de demande de pluie. Le culte des tambours royaux (symboles de chefferie) est fondamental: la perte des tambours royaux par Sekute devant les Leya symbolisa la soumission et l'acceptation de la paix.",
+      "symbols": "Les tambours royaux sont les symboles les plus puissants de la chefferie Leya. Les defenses d'elephant (70 defenses observees sur les tombes des chefs Sekute par Livingstone en 1855) symbolisent le pouvoir et la richesse. Les chutes Victoria (Mosi-oa-Tunya, la Fumee qui Tonne) sont au coeur de l'identite territoriale et spirituelle.",
+      "artsAndMusic": "Les Leya pratiquent des danses ceremoniales lors des installations de chefs et des ceremonies commemoratives. La culture de peche et de chasse a l'hippopotame est traditionnellement associee aux Sekute Leya, qui sont reputes pour leur habilete. La tradition orale et la poesie epique transmettent l'histoire dynastique.",
+      "spiritualities": "Les Leya combinent des croyances animistes traditionnelles avec l'influence du christianisme (majoritairement 20% de chretiens selon Joshua Project). La cosmologie traditionnelle reconnait des esprits des ancetres et des esprits de la nature associes aux chutes Victoria et au Zambeze. Le Paramount Chief joue un role de mediateur entre les vivants et les ancetres fondateurs."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La chefferie de Mukuni est la principale entite politique Leya, avec le titre de Paramount Chief Munokalya. Elle est la capitale ceremonielle de la nation Bene Mukuni. La chefferie de Sekute, historiquement distincte, est aujourd'hui integree dans l'espace politique Leya. La chefferie de Musukotwani complete la structure politique Toka-Leya dans les districts de Livingstone et Kazungula.",
+      "relationsWithNeighbors": "Relations complexes avec les Lozi (conquerants au XVIIe-XVIIIe siecle), les Tonga (voisins linguistiquement proches, 62% de similitude lexicale), les Kololo (envahisseurs vers 1836), les Subiya et les Nanzwa. Les Leya ont maintenu leur identite distincte malgre ces pressions exterieures.",
+      "conflictsOrAlliances": "Conquete par les Lozi (XVIIe-XVIIIe siecle). Invasion et dispersion par les Kololo sous Sebitwane (vers 1836). Retablissement de la domination Lozi dans les annees 1860. Integration du chef Sekute dans l'alliance Leya apres sa defaite militaire et un mariage diplomatique. Alliance avec les Britanniques lors de l'epoque coloniale.",
+      "diaspora": "Presence Leya/Nanzwa dans le district de Hwange (Zimbabwe), faisant partie de la nation Bene Mukuni. Migration vers les centres urbains de la Province du Sud, notamment Livingstone."
+    },
+    "demography": {
+      "totalPopulation": 21000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Leya in Zambia: 21,000). Recensement Zambie 2010: population Toka-Leya dans les districts de Livingstone et Kazungula estimee a plus de 55,000 locuteurs (Partners in Bible Translation Survey 2015).",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 20000,
+          "note": "Province du Sud, districts de Livingstone, Kazungula, Zimba, Kalomo"
+        },
+        {
+          "country": "ZWE",
+          "population": 1000,
+          "note": "District de Hwange, groupe Nanzwa/Leya"
+        }
+      ]
+    },
+    "sources": [
+      "Tokaleya – Wikipedia EN (https://en.wikipedia.org/wiki/Tokaleya)",
+      "Sawka, Mbewe, Josephat, Schwertfeger – The Toka-Leya of Zambia: Linguistic Survey Report, Partners in Bible Translation, 2015 (https://partnersinbibletranslation.org/wp-content/uploads/2018/03/Toka-Leya_Survey_2015.pdf)",
+      "Joshua Project – Leya in Zambia, 2025 (https://joshuaproject.net/people_groups/13048)",
+      "A Short History Of The Leya – Mukuni Royal Dynasty, Calameo, 2019 (https://www.calameo.com/books/005916510ee1bd9d9abeb)",
+      "Victoria Falls – Wikipedia EN (https://en.wikipedia.org/wiki/Victoria_Falls)"
+    ]
+  }
+}

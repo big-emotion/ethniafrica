@@ -1,0 +1,57 @@
+# Nom du peuple
+- Nom principal du peuple : Yoruba
+- Auto-appellation : Yorùbá (Yorùbá ènìyàn)
+- Exonymes / appellations historiques : « Nago » (terme colonial, connotation réductrice) ; « Aku » (diaspora, SLE)
+- Famille linguistique principale : Bénoué-Congo (Nigéro-Congo) (FLG_BENOUECONGO)
+- Groupe ethno-linguistique : Volta-Congo → Yoruboïde
+- Région historique : Sud-Ouest du Nigeria (Forêt–Savane)
+- Pays actuels : NGA, BEN, TGO, GHA, diaspora afro-atlantique
+- Identifiant peuple (ID) : PPL_YORUBA
+
+# 1. Ethnies incluses dans le peuple
+- Ọ̀yọ́
+- Èkìtì
+- Ìjẹ̀ṣà
+
+# 2. Origines, migrations et formation du peuple
+- Origine à Ilé-Ifẹ̀.
+- Expansion historique via le royaume d’Oyo.
+- Consolidation par réseaux marchands et cultuels orisha.
+
+# 3. Organisation et structure interne
+- Royaumes (Oyo, Ife), cités-États.
+- Lignages patrilinéaires (ídìlé).
+- Conseils de notables.
+
+# 4. Langues et sous-familles
+- Langue principale : Yorùbá (ISO 639-3 : yor)
+- Dialectes : Oyo, Ijebu, Ekiti, Ife, Egba, etc.
+
+# 5. Culture, rites et traditions
+- Culte des orisha.
+- Divination Ifá.
+- Masques Gẹ̀lẹ̀dẹ̀, tambours dùndún.
+
+# 6. Rôle historique et interactions régionales
+- Royaume d'Oyo.
+- Relations : Edo, Fon, Nupe, Igbo.
+- Diaspora atlantique : candomblé, santería. Diaspora yoruba dans les grandes villes et dans les pays occidentaux. Déportations de populations yoruba (XVIIe–XIXe siècles). Migrations modernes (XXe–XXIe siècles). Diaspora culturelle importante : descendants Yoruba du Brésil (Nagô), Lucumí (Cuba), Aguda (retour du Brésil au XIXe siècle), diaspora récente en Europe et Amérique du Nord. Communautés religieuses (candomblé, santería), associations culturelles Yoruba. Héritage Yoruba fort dans les Amériques. Renaissance culturelle dans les années 1960–2020.
+
+# 7. Démographie globale
+- Population totale (tous pays) : 48 482 000 - 53 000 000
+- Répartition par pays : 
+  - Nigeria : 35 000 000 - 45 000 000
+  - Bénin : 1 500 000 - 2 000 000
+  - Togo : 500 000 - 1 000 000
+  - Ghana : présence significative
+  - Diaspora : 4 500 000 - 5 000 000 (diaspora culturelle)
+- Distribution géographique :
+  - Population rurale : 25 000 000 - 30 000 000
+  - Population urbaine : 15 000 000 - 20 000 000
+  - Diaspora : 4 500 000 - 5 000 000 (Amérique du Nord : 1 500 000 - 2 000 000, Europe : 800 000 - 1 200 000, Amérique du Sud : 500 000 - 600 000, autres : 200 000+)
+- Année de référence : 2025
+- Source : peuple_demographie_globale.csv, estimations basées sur recensements, SIL Ethnologue, études démographiques, Yoruba Diaspora Studies
+
+# 8. Sources
+- Encyclopedia Africana ; Ifé studies
+- Ethnologue ; Glottolog

@@ -1,0 +1,56 @@
+# Nom du peuple
+- Nom principal du peuple : Mofu
+- Auto-appellation : Mofu / Mofu-Gudur (variante principale)
+- Exonymes / appellations historiques : « Matakam » (ancien exonyme colonial impropre et péjoratif, utilisé par l’administration française ; rejeté aujourd’hui)
+- Pourquoi le terme « Matakam » pose problème :
+  - terme imposé par les premiers administrateurs coloniaux
+  - utilisé comme catégorie généralisante pour divers groupes montagnards
+  - dénominations internes préférées : Mofu, Mofu-Gudur, Mofu-Duvangar
+- Famille linguistique principale : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
+- Région historique : Montagnes du Mandara (Extrême-Nord Cameroun)
+- Pays actuels : CMR (principal)
+- Identifiant peuple : PPL_MOFU
+
+# 1. Ethnies incluses dans le peuple
+- Mofu-Gudur
+- Mofu-Duvangar
+- Mofu-Meri
+- Mofu-Mokyo
+*(Les variantes correspondent à des villages ou massifs distincts.)*
+
+# 2. Origines, migrations et formation du peuple
+- Population montagnarde anciennement installée sur les hauteurs du Mandara.
+- Développement de systèmes agricoles sophistiqués basés sur les terrasses.
+- Relations anciennes avec Mafa, Giziga, Mandara, Musgum.
+
+# 3. Organisation et structure interne
+- Système lignager, familles étendues.
+- Autorité des chefs de massif (« chefs traditionnels »).
+- Organisation villageoise adaptée à la topographie.
+
+# 4. Langues et sous-familles
+- Langue principale : Mofu-Gudur
+- Code ISO : mfg
+- Sous-famille : Tchadique central
+- Variantes dialectales : Mofu-Duvangar, Mofu-Meri
+
+# 5. Culture, rites et traditions
+- Agriculture en terrasse, élevage de chèvres.
+- Rituels montagnards, cultes ancestraux.
+- Fêtes liées aux saisons agricoles.
+- Artisanat : poterie, vannerie, fabrication d’outils.
+
+# 6. Rôle historique et interactions régionales
+- Relations d’échange avec Giziga et Musgum.
+- Populations historiquement prises entre chefferies mandara et frontières coloniales.
+
+# 7. Démographie globale
+- Population totale : 420 000
+- Pays principaux : Cameroun
+- Année : 2025
+- Source : peuple_demographie_globale.csv
+
+# 8. Sources
+- Ethnologue (mfg)
+- Études ethnographiques du massif Mandara
+- Archives Cameroun – Ministère de la Culture

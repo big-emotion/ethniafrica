@@ -1,0 +1,86 @@
+{
+  "id": "PPL_CHUMBURUNG",
+  "nameMain": "Chumburung",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Chumburung",
+      "selfAppellation": "Chumburu",
+      "exonyms": ["Kyongborong", "Nchimburu", "Nchummuru", "Nchumburung"],
+      "originOfExonyms": "Kyongborong est la forme dialectale du nom utilise par le sous-groupe meridional. Nchimburu, Nchummuru et Nchumburung sont des variantes orthographiques attestees dans les sources missionaires (Wycliffe Bible Translators, Basel Mission) et coloniales britanniques. Nchumburu est la forme utilisee par Joshua Project.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Chumburung est la forme standard dans la litterature linguistique (Glottolog, ISO 639-3). Nchumburu est utilisee dans certains documents ecclesiastiques et administratifs ghanéens. Kyongborong est employe localement dans la zone de Yeji.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Kwa (North Guang / Guan)",
+      "historicalRegion": "Centre du Ghana, bassin de la Volta",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Chumburu"],
+    "origins": {
+      "ancientOrigins": "Les Chumburung sont un peuple de langue North Guang (sous-famille Kwa, Niger-Congo), apparentes aux autres peuples Guan du Ghana. Deux theories d'origine existent : la premiere les fait venir de la region Fante (Region Centrale du Ghana), migrer vers Tafo (nord de Kumasi) puis rejoindre les Gonja de Ndewura Jakpa dans les annees 1600 depuis la Cote d'Ivoire, traverser Brong-Ahafo et le fleuve Volta jusqu'a la riviere Daka ; la seconde les fait venir de la region Larteh (Region Orientale) et migrer vers le nord via les plaines d'Afram.",
+      "formationPeriod": "Presence attestee dans la region actuelle avant 1700. En 1832, les Chumburung rejoignirent la Confédération de Dente (alliance avec Bassa et Krachi), qui vainquit une force Ashanti et tua des marchands Ashanti et Haoussa.",
+      "migrationRoutes": [
+        "Selon la theorie 1 : depuis la region Fante vers Tafo puis vers le nord avec les Gonja (vers 1600), traversee de Brong-Ahafo et du fleuve Volta jusqu'a la riviere Daka",
+        "Selon la theorie 2 : depuis la region Larteh vers le nord via les plaines d'Afram"
+      ],
+      "historicalSettlementZones": [
+        "Les deux rives du bras sud-ouest du lac Volta, district de Kpandai (Region Nord du Ghana)",
+        "Ville de Yeji, district de Pru East (Region Bono East du Ghana)",
+        "Dambai et Tokuroano sur la rive est de l'estuaire de l'Oti (district de Krachi East, Region Volta)"
+      ],
+      "unificationsOrDivisions": "La creation du lac Volta suite a la construction du barrage d'Akosombo (1965) a divise physiquement les communautes Chumburung en cinq districts isoles, rompant les liens territoriaux et sociaux anciens. La colonisation britannique soumit les Chumburung a la chefferie Gonja de Salaga, bien que les Chumburung du nord aient conteste cette sujétion.",
+      "externalInfluences": "Alliance avec les Gonja sous Ndewura Jakpa (vers 1600). Confederation de Dente avec les Bassa et Krachi (1832) contre les Ashanti. Tentative de sujétion par la colonisation britannique au profit des Gonja. Construction du barrage d'Akosombo (1965), inondant des terres et divisant les communautes. Activite des missions catholiques (Basel Mission, 1907 ; missionnaires catholiques, 1932-1937), de la WEC (1940), des Adventistes (1966) et de Wycliffe Bible Translators (1972-1989).",
+      "majorHistoricalEvents": "Alliance avec les Gonja de Ndewura Jakpa (vers 1600). Victoire de la Confederation de Dente contre l'armee Ashanti (1832). Dans les annees 1930, les Chumburung tenterent de s'affirmer independants ; les Gonja razzièrent des villages, provoquant des exodes vers la Region Volta. Inondation de terres par le lac Volta (1965). Publication du Nouveau Testament en langue chumburung (1989), declenchant une croissance rapide du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Paramountcy de Chumburung, dont le siege est le chef de Nanjiro (reconnu par les Britanniques au debut du XXe siecle). La paramountcy fonctionne par respect mutuel plutot que par controle rigide. Le chef de village est l'autorite locale principale. L'acquisition de terres requiert l'accord du chef de village et du roi. Pas de double chefferie (l'une Gonja, l'autre autochtone) dans les villes Chumburung, a la difference des autres zones sous influence Gonja.",
+      "clanOrganization": "Organisation en clans dont les chefs de clan sont gardiens du culte ancestral (akyengangpo kaaba, bol des esprits des ancetres). Le chef de clan offre des libations et sacrifices en certains jours propices pour la prosperite du clan.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent la participation aux rituels de purification et aux ceremonies matrimoniales. La wurekyee (femme-chef, ni epouse ni mere du chef mais reine mere de plein droit) accompagne le chef partout et dirige la participation des femmes aux ceremonies.",
+      "religiousAuthority": "Dieu supreme traditionnel : Wuribware (associe a la bonte, a la pluie fertilisante). Autorite rituelle du chef et des anciens de clan. La wurekyee est impliquee dans les ceremonies de purification et de libation. Depuis les annees 1930-1989, montee en puissance de l'autorite ecclesiastique chretienne (catholiques, evangeliques, pentecotistes, adventistes)."
+    },
+    "languages": {
+      "mainLanguage": "Chumburung (Nchumburung)",
+      "isoCodes": ["ncu"],
+      "dialects": [
+        "North Chumburung",
+        "South Chumburung",
+        "Yeji (Yedji) – divergent, parle par environ 3 000 personnes dans la ville de Yeji"
+      ],
+      "vehicularRole": "Langue maternelle de la communaute Chumburu au Ghana. Tradition orale principale. Depuis 1989, Nouveau Testament publie en chumburung, declenchant une alphabetisation et une utilisation ecrite croissantes. Le twi (akan) et l'anglais servent de vehicules regionaux et administratifs."
+    },
+    "culture": {
+      "majorRites": "Purification annuelle avant la saison des semailles (sacrifice a la deesse-Terre Osweer pour purifier le territoire de tout mbuseŋ/evenement sinistre survenu dans l'annee). Libations aux ancetres (lors de mariages, construction de maisons, installation de marches, installation de chefs). Arbitrage des conflits par invocation des esprits ancestraux au palais du chef. Rites funeraires (eŋaŋpo, esprits des morts apres enterrement).",
+      "symbols": "Wuribware, dieu supreme createur. Osweer, la Terre (divinite bisexuee, aspect feminin predominant, recoit des sacrifices annuels). Nana Brukuŋ, divinite de la colline de Shiare (fils direct de Wuribware). Nana Krakyi Dente, dieu du Krachi (associe a la victoire de 1832 contre les Ashanti, honore par des sanctuaires coniques en terre aux abords des villages Chumburung). Akyengangpo kaaba (bol ancestral de clan). La riviere et la foret sont des espaces sacres soumis a des tabous (arbres intouchables pour le bois de chauffage, interdiction de laver les marmites dans la riviere).",
+      "artsAndMusic": "Agriculture (ignames, manioc, haricots, mais). Transmission orale de recits historiques et mythiques. Chants et danses lors des ceremonies rituelles et des celebrations chretiennes. Constructions de sanctuaires coniques en terre aux abords des villages.",
+      "spiritualities": "Religion traditionnelle avec dieu supreme Wuribware. Culte de la Terre (Osweer/Yaa). Culte des ancetres (eŋaŋpo). Sanctuaires a Nana Brukuŋ (Shiare) et Nana Krakyi Dente. Tabous fonciers et fluviaux. Forte croissance chretienne depuis 1989 : en 2006, 55 % de la population se declare chretienne (contre 4 % en 1986). Denominations presentes : catholiques, Eglise evangelique du Ghana, Eglise evangelique presbyterienne, Eglise du Pentecote, Adventistes. Moins de 1 % de musulmans."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume de Chumburung, dont le siege paramountcy est Nanjiro (district de Kpandai, Region Nord). La paramountcy est reconnue par l'Etat ghaneen. Le chef est designe Nana Bonyiŋŋi II selon les sources actuelles.",
+      "relationsWithNeighbors": "Alliance avec les Gonja de Ndewura Jakpa (vers 1600), sans avoir ete jamais soumis a la chefferie Gonja selon la tradition chumburung. Alliance avec Bassa et Krachi dans la Confederation de Dente (1832) contre les Ashanti. Coexistence avec Bassari, Gonja, Kokomba et Nawuri, tous indigenes dans la zone de Chumburung. Resistance aux tentatives d'hegemonie Gonja dans les annees 1930.",
+      "conflictsOrAlliances": "Victoire de la Confederation de Dente (Chumburung, Bassa, Krachi) contre les forces Ashanti en 1832. Dans les annees 1930, tentatives de s'affirmer independants des Gonja : raids gonja sur des villages, exode de populations chumburung vers la Region Volta. Construction du barrage d'Akosombo (1965) : inondation de terres et fragmentation de la communaute en cinq zones isolees.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 69000,
+      "referenceYear": 2025,
+      "source": "Wikipedia / Glottolog / Omniglot : 69 000 locuteurs de chumburung dont 3 000 dialecte Yeji (Wikipedia EN Chumburung language) ; Joshua Project : territoire de 2 200 km²",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 69000,
+          "note": "District de Kpandai (Region Nord), ville de Yeji (Region Bono East), Dambai et Tokuroano (Region Volta)"
+        }
+      ]
+    },
+    "sources": [
+      "Chumburung language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Chumburung_language)",
+      "Chumburung – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Chumburung)",
+      "Nchumburu, Kyombaron in Ghana – Joshua Project, 2024 (https://joshuaproject.net/people_groups/13266)",
+      "Chumburung – Glottolog 5.3, ISO 639-3 ncu (https://glottolog.org/resource/languoid/id/chum1261)",
+      "Chumburung language and alphabet – Omniglot, 2023 (https://www.omniglot.com/writing/chumburung.htm)",
+      "Chumburung history and religion – Open Book / Northern Ghana Peoples (http://www.northernghanapeoples.co.uk/CHUMBURUNG%20MASTER.doc)"
+    ]
+  }
+}

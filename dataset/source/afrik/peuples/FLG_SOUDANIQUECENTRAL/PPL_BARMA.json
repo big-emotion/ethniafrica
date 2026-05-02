@@ -1,0 +1,92 @@
+{
+  "id": "PPL_BARMA",
+  "nameMain": "Barma",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["TCD"],
+  "content": {
+    "appellations": {
+      "mainName": "Barma",
+      "selfAppellation": "Barma",
+      "exonyms": ["Bagirmi", "Baguirmi", "Baghermi"],
+      "originOfExonyms": "Le terme Bagirmi (ou Baguirmi, Baghermi) est l'exonyme le plus repandu dans les sources coloniales françaises et arabes pour designer les Barma et leur sultanat. Il derive du nom du territoire et du royaume : le Sultanat de Bagirmi (ou Baguirmi), fonde en 1522 au sud-est du lac Tchad. Le terme Barma est l'endonyme utilise par le peuple lui-meme.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les deux termes Barma et Bagirmi sont utilises dans la litterature scientifique et par les sources officielles tchadiennes. Barma est prefere dans les travaux d'anthropologie pour designer le peuple, tandis que Bagirmi designe le sultanat historique et la langue (code ISO bmi). Le titre royal traditionnel de Mbang est toujours maintenu par la monarchie non souveraine du Sultanat de Bagirmi, reinstalle en 2010.",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Bongo-Bagirmi (langues soudaniques centrales, Nilo-Saharien)",
+      "historicalRegion": "Region Chari-Baguirmi (Tchad), au sud-est du lac Tchad, region de Massenya sur la rive nord de la riviere Chari",
+      "currentCountries": ["TCD"]
+    },
+    "ethnicities": [
+      "Barma proprement dits (peuple fondateur du sultanat, locuteurs du bagirmi comme langue maternelle)",
+      "Populations fula (Peul) integrees au sultanat de Bagirmi par vassalite",
+      "Populations Kanuri assimilees (contacts avec l'empire du Bornou voisin)",
+      "Shuwa Arabes (groupes arabes intégres dans la sphere culturelle du Bagirmi)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Barma sont le peuple fondateur du Sultanat de Bagirmi, fonde en 1522 au sud-est du lac Tchad. Certaines sources considerent Abd al-Mahmud Begli (r. 1493-1503) comme le fondateur veritable, ayant construit le palais et le tribunal de Massenya, tandis que d'autres attribuent la fondation a Birni Besse (r. 1522). Les origines ethniques des Barma restent debattues ; ils appartiennent au groupe des langues Bongo-Bagirmi (soudaniques centrales, classees tentativement dans le Nilo-Saharien). Le Sultanat de Bagirmi est la premiere mention dans les sources exterieures dans une chronique du Bornou de 1578 sous le nom Bakarmi.",
+      "formationPeriod": "Le Sultanat de Bagirmi emerge d'un ensemble de chefferies vers 1522. L'identite barma distincte est liee a la formation de cet Etat islamique. Sous le Mbang Abdullah (1568-1608), le sultanat se convertit officiellement a l'islam, mais la majorite de la population resta attachee aux croyances traditionnelles. Le sultanat atteignit son apogee sous le Mbang Burkumanda (1635-1665) qui etendit l'influence jusqu'au lac Tchad et lança des raids en territoire bornouan.",
+      "migrationRoutes": [
+        "Zone de formation : region de Massenya, au sud-est du lac Tchad, rive nord de la riviere Chari",
+        "Expansion vers le nord jusqu'au lac Tchad (sous Burkumanda, 1635-1665)",
+        "Expansion vers l'est le long de la riviere Chari"
+      ],
+      "historicalSettlementZones": [
+        "Massenya (capitale historique du Sultanat, nord de la riviere Chari, region Chari-Baguirmi)",
+        "Region Chari-Baguirmi (Tchad central)",
+        "Sous-prefecture de Mokofi (region du Guera, seconde zone de presence de la langue)"
+      ],
+      "unificationsOrDivisions": "Le Sultanat de Bagirmi est passe par des periodes d'expansion et de declin. Il fut tributaire du Bornou pour une grande partie de son histoire. Sous le Mbang Muhammad al-Amin (1751-1785), il regagna son independance du Bornou. En 1805, Wadai saccagea Massenya, fit 20 000 prisonniers reduits en esclavage et plaça un mbang vassal sur le trone. En 1870, nouvelle invasion de Wadai. En 1893, Rabih az-Zubayr brula la capitale. En 1897, le Mbang Abd ar-Rahman Gaourang II fit appel aux Français, obtenant le statut de protectorat.",
+      "externalInfluences": "Tributaire de l'Empire du Bornou (Idris Alooma conquit le Bagirmi vers 1602-1603 apres la rebellion du Mbang Abdullah). Pression de l'emirat du Wadai a partir du 17e siecle. Conquete par Rabih az-Zubayr (1893). Protectorat français (1897-1902) puis integration dans l'AEF (Afrique Equatoriale Française, 1902). Independance du Tchad (1960). Le regime de Tombalbaye abolit les monarchies non souveraines en 1960, mais cette decision fut reversee en 1970 sur recommandation francaise.",
+      "majorHistoricalEvents": "1522 : fondation du Sultanat de Bagirmi. 1568-1608 : sous le Mbang Abdullah, conversion officielle a l'islam ; rebellion contre le Bornou ; invasion d'Idris Alooma (mort d'Abdullah en 1602 ou 1603). 1635-1665 : apogee sous Burkumanda, extension au lac Tchad. 1751-1785 : independance du Bornou sous Muhammad al-Amin. 1805 : sac de Massenya par Wadai, 20 000 personnes reduites en esclavage. 1870 : deuxieme invasion de Wadai. 1893 : prise et incendie de Massenya par Rabih az-Zubayr. 1897 : traite de protectorat avec la France. 1900 : les forces françaises et bagirmiennes tuent Rabih az-Zubayr. 1902 : transformation en colonie française. 2003 : Mbang Hadji Woli Mahamat accede au trone. 2010 : reinstallation officielle du sultan par le ministre tchadien de l'Interieur."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le Sultanat de Bagirmi etait dirige par un roi au titre de Mbang, autorite supreme politique, militaire et — formellement — spirituelle. Les tributaires sous domination directe etaient gouvernes par des ngars (gouverneurs). Les tributaires plus lointains adoptaient la culture bagirmi et envoyaient leurs fils a la cour de Massenya pour leur education. La cour de Massenya etait le centre de la vie politique, culturelle et economique.",
+      "clanOrganization": "L'organisation sociale du Sultanat reposait sur une noblesse dirigeante (famille mbang et clans allies) et une population de roturiers. Des groupes specialises — commerçants fula, Arabes shuwa — etaient integres dans la sphere culturelle bagirmi. L'islam etait le ciment ideologique de l'elite dirigeante.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages de la famille royale (famille mbang) determinaient la succession au trone. Les conflits de succession etaient frequents et menaient parfois a des guerres civiles ou des scissions. Les lignages nobles allies partageaient le pouvoir et les revenus du sultanat.",
+      "religiousAuthority": "L'islam est introduit officiellement sous le Mbang Abdullah (1568-1608). La religion islamique ne remplaça jamais entierement les croyances traditionnelles dans la population generale. Les Barma pratiquent un islam populaire (folk islam) syncrétique, melant elements islamiques et pratiques superstitieuses traditionnelles. Les oulémas (clercs islamiques) avaient une influence a la cour. L'imam etait une figure de prestige."
+    },
+    "languages": {
+      "mainLanguage": "Bagirmi (Barma)",
+      "isoCodes": ["bmi"],
+      "dialects": [
+        "Bagirmi de la region de Massenya (dialecte de reference, Chari-Baguirmi)",
+        "Bagirmi de Mokofi (sous-prefecture de Guera, variete peripherique)"
+      ],
+      "vehicularRole": "Le bagirmi (ISO 639-3 : bmi) est la langue maternelle des Barma. Selon Glottolog, il est classe au niveau 3 (communication plus large) dans la region. La langue etait utilisee au-dela du peuple barma par les peuples vassaux qui adoptaient la culture bagirmi. Le recensement de 1993 indiquait 44 761 locuteurs au Tchad. L'arabe tchadien et le français sont utilises comme langues vehiculaires et officielles."
+    },
+    "culture": {
+      "majorRites": "Les Barma pratiquent les rites islamiques fondamentaux : les cinq prieres quotidiennes (salat), le lavage rituel, le jeune du Ramadan. Peu portent la tenue arabe traditionnelle et pratiquement aucune femme ne porte le voile. Les ceremonies de mariage combinent rites islamiques (nikah) et traditions locales. Les funerailles suivent le protocole islamique. Les ceremonies agricoles marquant les semailles et les recoltes preservent des elements de spiritualite traditionnelle.",
+      "symbols": "Les symboles de la royaute bagirmi (etendards, tambours royaux, regalia du mbang) etaient centraux dans la representation du pouvoir. La mosquee et le palais de pierre de Massenya etaient des symboles architecturaux du sultanat. Les symboles islamiques (croissant, arabesques) se sont integres a l'art decoratif barma.",
+      "artsAndMusic": "Les Barma sont connus pour la poterie traditionnelle, le tissage et l'artisanat du cuir. La musique de cour (griot, instruments a percussion) etait pratiquee lors des ceremonies royales et des festivites. La poesie orale et les genealogies royales constituaient un patrimoine litteraire important. Les arts de la cour de Massenya ont influence les traditions musicales de la region Chari-Baguirmi. Les danses traditionnelles sont pratiquees lors des ceremonies de mariage et des fetes communautaires.",
+      "spiritualities": "L'islam est la religion principale des Barma, adopte officiellement par le sultanat au 16e siecle. Cependant, l'islam n'a jamais entierement remplace les croyances traditionnelles. Les Barma pratiquent un islam syncrétique (folk islam) qui integre des pratiques superstitieuses locales, le culte des ancetres, et des croyances en des forces spirituelles pre-islamiques. Les esprits ancestraux jouent un role dans les croyances populaires. Les pratiques de protection spirituelle et de divination persistent en marge de l'orthodoxie islamique."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Sultanat de Bagirmi (1522-1897), aussi appele Royaume du Baguirmi, fut l'un des grands sultanats islamiques de l'Afrique centrale soudanienne, au meme titre que le Bornou et le Wadai. A son apogee sous Burkumanda (1635-1665), il controlait le lac Tchad au nord et la haute vallee de la riviere Chari. Sa capitale Massenya comptait 15 000 habitants en 1850. La mosquee et le palais de pierre de Massenya en etaient les symboles architecturaux. Le sultanat continue d'exister comme monarchie non souveraine dans le Tchad independant. Le Mbang Hadji Woli Mahamat (sultan depuis 2003) a ete reinstalle officiellement en 2010.",
+      "relationsWithNeighbors": "Le Bagirmi fut pendant longtemps tributaire de l'Empire du Bornou, le plus puissant Etat de la region soudano-sahelienne. Les relations oscillaient entre vassalite, rebellion et cooperation. L'emirat du Wadai, emerge au 17e siecle, devint le principal rival et finit par dominer le Bagirmi. Des populations fula, kanuri et shuwa arabes s'integrerent dans la sphere culturelle bagirmi.",
+      "conflictsOrAlliances": "Rebellion contre le Bornou sous Mbang Abdullah (1568-1608), suivie d'une invasion d'Idris Alooma. Raids contre le Bornou sous Burkumanda (1635-1665). Regain d'independance sous Muhammad al-Amin (1751-1785). Defaite devastatrice contre Wadai en 1805 (sac de Massenya, 20 000 prisonniers). Nouvelle invasion de Wadai en 1870. Prise et incendie de Massenya par Rabih az-Zubayr en 1893. Alliance avec la France en 1897, dont les troupes et les Bagirmi tuerent Rabih en 1900, restaurant temporairement l'autorite du Mbang.",
+      "diaspora": "Les Barma sont essentiellement concentres dans leur region historique de la Chari-Baguirmi au Tchad. Une diaspora urbaine est presente a N'Djamena (capitale du Tchad, proche de Massenya). Des Barma sont presents dans d'autres pays francophones africains et en France dans la diaspora tchadienne."
+    },
+    "demography": {
+      "totalPopulation": 90000,
+      "referenceYear": 2025,
+      "source": "Recensement tchadien de 1993 : 44 761 locuteurs de bagirmi (bmi). Projection 2025 estimee en tenant compte d'un taux de croissance de ~2,8% par an. SIL Ethnologue — Bagirmi (bmi). Glottolog (bagi1246). La population barma est relativement reduite au sein du Tchad multiethnic.",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 90000,
+          "note": "Region Chari-Baguirmi (autour de Massenya) et sous-prefecture de Mokofi (region du Guera)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Sultanate of Bagirmi. https://en.wikipedia.org/wiki/Bagirmi_Kingdom",
+      "Wikipedia EN — Bagirmi people (Barma). https://en.wikipedia.org/wiki/Barma_people",
+      "Wikipedia EN — Bagirmi language. https://en.wikipedia.org/wiki/Barma_language",
+      "Glottolog — Bagirmi (bagi1246). https://glottolog.org/resource/languoid/id/bagi1246",
+      "SIL Ethnologue — Bagirmi language (bmi). https://www.ethnologue.com/language/bmi/",
+      "101 Last Tribes — Bagirmi people. https://www.101lasttribes.com/tribes/bagirmi.html",
+      "CIA World Factbook — Chad. https://www.cia.gov/the-world-factbook/countries/chad/"
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "PPL_HOBA",
+  "nameMain": "Hoba",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["COG"],
+  "content": {
+    "appellations": {
+      "mainName": "Hoba",
+      "selfAppellation": "Hoba",
+      "exonyms": ["Hoba (denomination administrative congolaise)"],
+      "originOfExonyms": null,
+      "whyProblematic": "Le peuple Hoba de la Republique du Congo est un groupe peu documente dans la litterature anthropologique internationale. Il ne faut pas le confondre avec le Nya Huba (code hbb), langue tchadique du Nigeria. Le groupe Hoba de la Republique du Congo est un sous-groupe bantou de la region sud-occidentale.",
+      "contemporaryUsage": "Hoba est le terme utilise dans le contexte administratif et ethnographique congolais.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou (groupe Kongo ou apparente, Afrique centrale occidentale)",
+      "historicalRegion": "Sud-ouest de la Republique du Congo, regions du Niari et de la Bouenza",
+      "currentCountries": ["COG"]
+    },
+    "ethnicities": [
+      "Hoba de la vallee du Niari",
+      "Hoba de la region de la Bouenza",
+      "Sous-groupes clanique de la region forestiere sud-occidentale du Congo"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Hoba font partie du vaste ensemble bantou qui peupla l'Afrique centrale entre le 1er millenaire avant J.-C. et le 1er millenaire apres J.-C., a partir du bassin du Congo. Leurs ancetres pratiquaient la metallurgie du fer et l'agriculture, et peuplerent progressivement les regions forestieres et de savane du sud-ouest de l'actuelle Republique du Congo.",
+      "formationPeriod": "La formation du groupe Hoba comme entite distincte remonte probablement a plusieurs siecles, dans le cadre des mouvements de populations bantou dans la region qui constitue aujourd'hui le sud-ouest congolais (departements du Niari et de la Bouenza). Ces groupes s'organiserent en petites chefferies villageoises.",
+      "migrationRoutes": [
+        "Migrations bantou du bassin du Congo vers la region sud-occidentale du Congo actuel"
+      ],
+      "historicalSettlementZones": [
+        "Region de la vallee du Niari (departement du Niari)",
+        "Region de la Bouenza (departement de la Bouenza)",
+        "Zones forestieres et de savane du sud-ouest de la Republique du Congo"
+      ],
+      "unificationsOrDivisions": "Organisation traditionnelle en petites chefferies villageoises independantes partageant des liens linguistiques et culturels. La colonisation francaise puis l'independance (1960) ont modifie l'organisation administrative sans effacer les structures claniques.",
+      "externalInfluences": "Contacts avec les peuples Kongo au sud, les Teke au nord et les Mbochi a l'est. Influence du colonialisme francais (a partir de 1880, traite de Brazza). Christianisation progressive depuis le debut du XXe siecle. L'economie de concession coloniale a profondement perturbe les societes locales du Congo-Brazzaville."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies villageoises (groupements) dirigees par des chefs (chefs de village ou de clan) dont l'autorite est a la fois politique et spirituelle. Systeme de conseil des anciens pour la prise de decisions collectives. Ce modele est commun aux groupes bantou du sud-ouest congolais.",
+      "clanOrganization": "Structure clanique matrilineaire ou patrilineaire selon les sous-groupes (les groupes kongo et apparentes presentent souvent une organisation matrilineaire). Chaque clan possede un totem et des interdits alimentaires specifiques.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent la succession aux chefferies, la transmission du patrimoine foncier et les alliances matrimoniales. La memoire genealogique est conservee par les anciens.",
+      "religiousAuthority": "Autorite des chefs de village qui cumulent fonctions politiques et religieuses (mediation avec les ancetres). Role des guerisseurs et des faiseurs de pluie. Syncrétisme avec le christianisme (catholique et protestant) tres repandu depuis le milieu du XXe siecle."
+    },
+    "languages": {
+      "mainLanguage": "Hoba (langue bantou du groupe sud-occidental congolais)",
+      "isoCodes": [],
+      "dialects": [],
+      "vehicularRole": "La langue hoba est la langue communautaire de ce groupe. Le lingala est la grande langue vehiculaire du nord et de Brazzaville. Le kituba (munukutuba) est la langue nationale vehiculaire du sud de la Republique du Congo. Le francais est la langue officielle. Note : le code ISO hbb dans certaines bases de donnees designe le 'Nya Huba', langue tchadique du Nigeria, qui est sans lien avec les Hoba de la Republique du Congo. La langue hoba de la Republique du Congo n'a pas de code ISO 639-3 reference dans Ethnologue."
+    },
+    "culture": {
+      "majorRites": "Ceremonies d'initiation marquant le passage a l'age adulte, pratiquees par les ethnies bantou du sud-ouest congolais. Ceremonies de mariage traditionnelles incluant la dot (brideprice). Ceremonies funeraires avec veille, chants et rites de separation de l'ame du defunt. Rites agricoles avant les semailles et a la recolte. Ceremonies propitiatoires pour la fecondite et la sante.",
+      "symbols": "Les masques et figures d'ancetres sculpts en bois, caracteristiques des groupes bantou du Bassin du Congo. Les tambours rituels. Les symboles de fecondite et de protection. Le raphia utilise dans les ceremonies et la confection de vetements rituels.",
+      "artsAndMusic": "Sculpture sur bois (figures d'ancetres, masques ceremonials). Poterie traditionnelle feminine. Tissage du raphia pour la confection de vetements et d'objets ceremonials. Musique vocale et instrumentale : tambours, sanza (lamellophone a doigts), chants polyphoniques lors des ceremonies. Danse ceremonielle lors des rites d'initiation et des funerailles. Tradition de contes et de recits oraux transmis par les anciens.",
+      "spiritualities": "Croyance en un etre supreme et en des esprits intermediaires (esprits de la nature, esprits des ancetres). Les ancetres occupent une place centrale : ils veillent sur les vivants, peuvent les proteger ou les punir. Consultation des devins et guerisseurs. Syncrétisme important avec le christianisme : la moitie de la population congolaise suit des croyances traditionnelles, l'autre etant chretienne (35% catholique, 15% autres chretiens selon diverses estimations). Islam tres minoritaire."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation historique en chefferies villageoises (groupements). La region fut sous l'influence des royaumes Kongo et Teke avoisinants, mais les Hoba ne constituerent pas eux-memes un grand royaume centralise. Durant la colonisation francaise, ces chefferies furent integrees dans la structure administrative des secteurs et des districts.",
+      "relationsWithNeighbors": "Relations commerciales et culturelles avec les peuples Kongo au sud (dominants dans la region), les Teke au nord et le long des plateaux, et les groupes Mbochi au nord. Echanges de produits de la foret (viande de gibier, produits forestiers) contre des produits artisanaux.",
+      "conflictsOrAlliances": "Implication dans les guerres civiles congolaises (1993-1999) qui ont profondement affecte le sud du pays, notamment entre les milices cobras (nord, Sassou-Nguesso), ninjas (centre-ouest, Lissouba) et la region du Pool.",
+      "diaspora": "Exode rural vers Brazzaville (la capitale regroupe environ 35% de la population nationale) et Pointe-Noire. Emigration limitee vers la France (ex-metropole coloniale) et d'autres pays europeens."
+    },
+    "demography": {
+      "totalPopulation": 80000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur la taille relative des groupes ethniques mineurs de la Republique du Congo. La population totale du Congo-Brazzaville etait d'environ 5,8 millions en 2022 (Banque mondiale). Les 'Autres ethnies' de la liste demographique representent environ 3,4% de la population totale (soit environ 197 000 personnes en 2014), incluant les Hoba et de nombreux autres sous-groupes. Estimation 2025.",
+      "distributionByCountry": [
+        {
+          "country": "COG",
+          "population": 80000,
+          "note": "Principalement dans les departements du Niari et de la Bouenza, avec presence a Brazzaville"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia FR - Liste des peuples de la Republique du Congo : https://fr.wikipedia.org/wiki/Liste_des_peuples_de_la_r%C3%A9publique_du_Congo",
+      "Axl CEFAN - Congo-Brazzaville, donnees demographiques et linguistiques : https://www.axl.cefan.ulaval.ca/afrique/congo.htm",
+      "Revue SLC - Contribution a l'identification des peuples du Congo Brazzaville : https://www.revue-slc.org/wp-content/uploads/2023/11/12-EKONDI-Fulbert_RISLC-n%C2%B015-Decembre-2021-1.pdf",
+      "Ethnologue - Langues du Congo (COG) : https://www.ethnologue.com/country/CG/",
+      "Ambassade du Congo aux Etats-Unis - Peoples and Culture : http://www.ambacongo-us.org/en/about-congo/people-culture/people",
+      "Britannica - Republic of the Congo Cultural Life : https://www.britannica.com/place/Republic-of-the-Congo/Cultural-life"
+    ]
+  }
+}

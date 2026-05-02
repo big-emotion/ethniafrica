@@ -1,0 +1,39 @@
+# Nom du peuple
+- Nom principal : Temne
+- Auto-appellation : Themne / Timni
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Région historique : Sierra Leone (Nord et centre)
+- Identifiant : PPL_TEMNE
+
+# 1. Ethnies incluses
+- Temne du Nord
+- Temne du Centre
+
+# 2. Origines
+- Peuple ancien de la plaine de Sierra Leone.
+- Relations historiques avec Limba, Yalunka et Soso.
+
+# 3. Organisation
+- Chefferies locales.
+- Sociétés initiatiques (Poro, Ragbenle).
+
+# 4. Langue
+- Temne
+- ISO : tem
+
+# 5. Culture
+- Masques *Ragbenle*.
+- Style musical propre.
+- Cultures céréalières (riz, sorgho).
+
+# 6. Histoire
+- Contacts anciens avec les Portugais (XVe siècle).
+- Rôle important dans la Sierra Leone moderne.
+
+# 7. Démographie
+- Population : 2 350 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (tem)
+- Sierra Leone Bureau of Statistics

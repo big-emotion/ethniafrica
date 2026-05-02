@@ -1,0 +1,76 @@
+{
+  "id": "PPL_RUNGWA",
+  "nameMain": "Rungwa",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Rungwa",
+      "selfAppellation": "Icilungwa",
+      "exonyms": ["Lungwa", "Runga", "Ichirungwa", "Kirungwa", "Nyalungwa"],
+      "originOfExonyms": "Les formes alternatives du nom renvoient toutes a la langue et au groupe ethnique; Icilungwa est l'autonym utilise par les locuteurs eux-memes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Rungwa est utilise dans les sources administratives tanzaniennes et les recensements officiels. Les locuteurs se designent eux-memes par Icilungwa.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu, Centre-Tanzanie",
+      "historicalRegion": "Region de Rukwa / Katavi, ouest de la Tanzanie",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Rungwa"],
+    "origins": {
+      "ancientOrigins": "Les Rungwa sont un groupe bantou dont les origines remontent aux grandes migrations bantoues a travers l'Afrique centrale et orientale. Leur territoire se situe dans la plaine de Rukwa, au pied du plateau de Fipa, dans l'ouest de la Tanzanie.",
+      "formationPeriod": "Le groupe s'est constitue progressivement au cours du premier millenaire de l'ere commune, lors des migrations bantoues vers l'est de l'Afrique. Leur identite distincte s'est affermie dans la region de Rukwa.",
+      "migrationRoutes": [
+        "Afrique centrale vers l'ouest de la Tanzanie",
+        "Bassin du lac Rukwa"
+      ],
+      "historicalSettlementZones": [
+        "District de Mpanda, region de Rukwa",
+        "Region de Katavi, ouest de la Tanzanie",
+        "Plaines au nord du lac Rukwa"
+      ],
+      "unificationsOrDivisions": "La region de Rukwa a connu au XIXe siecle des bouleversements importants dus aux raids ngoni, au commerce arabe en ivoire et esclaves, et a l'arrivee des colonisateurs allemands puis britanniques.",
+      "externalInfluences": "Presence des traders arabes zanzibaris au XIXe siecle; domination coloniale allemande a partir des annees 1880, puis britannique. Raids ngoni dans la region de Rukwa dans les annees 1840-1850.",
+      "majorHistoricalEvents": "La region de Rukwa a ete profondement perturbee au XIXe siecle par les raids ngoni (annees 1840) et le commerce de l'ivoire et des esclaves organise depuis Zanzibar, creant une ecologie de la peur qui a remodele les structures sociales locales."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en communautes villageoises etendues autour de familles elargies. Les Rungwa s'organisent en unites familiales rurales, le statut social etant lie a la participation a l'agriculture, a l'elevage et aux echanges avec les groupes voisins.",
+      "clanOrganization": "Organisation clanique propre au groupe, dans le cadre des structures bantoues de la region de Rukwa.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role central dans l'organisation sociale et l'acces a la terre.",
+      "religiousAuthority": "Pratiques spirituelles traditionnelles syncretisees avec le christianisme, majoritairement catholique romain."
+    },
+    "languages": {
+      "mainLanguage": "Rungwa (Icilungwa)",
+      "isoCodes": ["rnw"],
+      "dialects": [],
+      "vehicularRole": "Le swahili est la langue vehiculaire et nationale de Tanzanie, utilise dans l'enseignement et l'administration. La langue rungwa est consideree comme menacee par Ethnologue."
+    },
+    "culture": {
+      "majorRites": "Rites lies aux cycles agricoles, a la chasse et a la peche, activites traditionnelles centrales a l'identite culturelle rungwa. Pratiques spirituelles syncrétiques melant croyances ancestrales et christianisme.",
+      "symbols": "La chasse, la peche et l'elevage du betail constituent les piliers de l'identite culturelle rungwa. La foret et les plaines du lac Rukwa sont des espaces symboliques importants.",
+      "artsAndMusic": "Traditions orales, chants et pratiques culturelles communautaires propres a la region de Rukwa.",
+      "spiritualities": "Majorite chretienne (environ 74 % selon Joshua Project, principalement catholiques romains). Les pratiques spirituelles traditionnelles coexistent avec le christianisme, creant un syncrétisme caracteristique."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies locales dans le cadre des structures politiques de la region de Rukwa, sans royaume centralise independant.",
+      "relationsWithNeighbors": "Les Rungwa cohabitent avec d'autres groupes bantous de la region de Rukwa et Katavi, notamment les Fipa, Pimbwe, Bende, Kimbu et Konongo. Les contacts avec les traders zanzibaris au XIXe siecle ont influence leur economie.",
+      "conflictsOrAlliances": "La region de Rukwa a subi les raids ngoni dans les annees 1840-1850 et la pression des traders arabes. L'arrivee des missionnaires catholiques (Peres Blancs) a la fin du XIXe siecle a marque l'histoire regionale.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 59000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025",
+      "distributionByCountry": [{ "country": "TZA", "population": 59000 }]
+    },
+    "sources": [
+      "Rungwa people – Wikipedia, 2023 (https://en.wikipedia.org/wiki/Rungwa_people)",
+      "Rungwa language – Wikipedia, 2012 (https://en.wikipedia.org/wiki/Rungwa_language)",
+      "Rungwa in Tanzania Profile – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14594/TZ)",
+      "Rungwa Language (RNW) – Ethnologue, SIL International (https://www.ethnologue.com/language/rnw/)",
+      "Waters, Tony – Social Organization and Social Status in Nineteenth and Twentieth Century Rukwa, Tanzania – African Studies Quarterly, Vol. 11, No. 1, 2009 (https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf)",
+      "Roth, Tim – Master Wungu Thesis – Canada Institute of Linguistics, 2012 (https://www.canil.ca/wordpress/wp-content/uploads/2016/09/2012-Roth-Tim.pdf)"
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_GOFA",
+  "nameMain": "Gofa",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Gofa",
+      "selfAppellation": "Gofa",
+      "exonyms": ["Goffa", "Goffa people"],
+      "originOfExonyms": "Le nom Gofa (ou Goffa) a trois origines possibles selon les anciens : il dériverait du nom de la mère de Gosha, appelée Goffe, associée au roi héroïque Goba ; ou du nom du chef militaire Kawo Gooba (graduellement transformé en Gofa) ; ou encore du nom originel du peuple dans son premier territoire, Gibe, transmis par lignée ancestrale.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Gofa (ou Goffa) est le nom officiel reconnu par l'administration éthiopienne. La zone de Gofa constitue une entité administrative distincte au sein de la South Ethiopia Regional State depuis les réformes de décentralisation ethnique. Le terme est utilisé sans connotation péjorative."
+    },
+    "ethnicities": ["Gofa", "Goffa"],
+    "origins": {
+      "ancientOrigins": "Les Gofa sont un peuple omotique de la vallée de l'Omo dans le sud-ouest de l'Éthiopie. Leur langue, le gofa (ISO : gof), appartient à la branche omotique nord de l'Afroasiatique, sous-groupe Ometo central, apparentée au gamo et au dawro. Deux lignées ancestrales fondatrices sont reconnues : Maala et Dogala, elles-mêmes subdivisées en nombreux clans (qommo).",
+      "formationPeriod": "Historiquement, du XVIe siècle à la fin du XIXe siècle, les Gofa étaient administrés sous le système royal du Kawo, une monarchie hiérarchisée et centralisée dans laquelle le roi cumulait pouvoir politique et autorité spirituelle. Ce système a pris fin avec l'annexion par l'Empire éthiopien sous Menelik II.",
+      "migrationRoutes": [
+        "Depuis Bubula et Gibe, dans la haute vallée de la rivière Omo, vers le sud le long du bassin de l'Omo jusqu'à Wurki (nord-ouest actuel de Demba Gofa)",
+        "De Wurki vers les zones de Shasha, Kolta, Zulu Kalacha, Waysara, Woide Dargintha, Woide Yallo, Layma et Tsanga Darara",
+        "Migration finale sous la conduite des Kawo jusqu'à Kencho Gerera (woreda de Geze Gofa, entre Berza et Kencho)"
+      ],
+      "historicalSettlementZones": [
+        "Haute vallée de l'Omo (Bubula, Gibe)",
+        "Vallée de Demba Gofa (nord-ouest actuel)",
+        "Massif montagneux de la zone de Gofa, South Ethiopia Regional State"
+      ],
+      "unificationsOrDivisions": "La migration sudiste des Gofa n'a pas été pacifique ; des conflits avec les populations précédentes ont conduit à l'éviction de ces dernières. La direction unifiée sous le Kawo a permis la cohésion du groupe. Le successeur de Buraqa, Kawo Gaamo Buraqa, est l'une des figures historiques les plus puissantes citées dans les traditions orales.",
+      "externalInfluences": "Des clans venus de groupes voisins (Walayta, Gamo) se sont intégrés aux Gofa et ont formé des qommo spécifiques tels que Galo-Malla, Walayta Malla et Boroda-Malla. L'État impérial éthiopien a imposé l'amharisation des noms à partir de la fin du XIXe siècle, effaçant partiellement les noms indigènes gofa.",
+      "majorHistoricalEvents": "Annexion par l'Empire éthiopien sous Menelik II à la fin du XIXe siècle, mettant fin au système royal du Kawo. Résistance culturelle et préservation partielle des structures claniques et de la langue gofa. Création d'une zone administrative Gofa distincte après 1991 dans le cadre du fédéralisme ethnique."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie hiérarchisée sous le Kawo (roi), cumul de l'autorité politique et spirituelle. Le roi était issu du clan royal Goshana ; son titre de couronnement (Kawotetha sunthi) remplaçait son nom personnel. La masse populaire pouvait destituer le Kawo en cas d'abus de pouvoir, de corruption ou d'adultère. Le système s'est maintenu du XVIe au XIXe siècle.",
+      "clanOrganization": "Deux grandes lignées : Maala et Dogala. Sous Maala : Goshana, Ayka, Maka, Kalata, Borodamaala, Golomala, Buyla, Gaamo-maala, Sili-maala, Lontso-maala. Sous Dogala : Zutuma, Worze, Gawuraro, Ayfarso, Amari, Gudarti, Muquriti, Sachi, Sawa, Ganji. Le mariage au sein de la patrilinéarité est interdit ; dans la matrilinéarité, il est permis après sept générations.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Cinq niveaux d'organisation de parenté : famille nucléaire (aawa soo), famille élargie (aawa aawa soo), groupe de familles nucleaires cohabitantes (mayza soo), lignage (kochche) et clan (qommo). La stratification sociale comprend des agriculteurs (tsomma) et des groupes marginaux comme les potiers (ottomana), tanneurs (gittamana), forgerons (wogacce) et anciens esclaves (aylle).",
+      "religiousAuthority": "Le Kawo et les saga qommo (clans à fonction rituelle héréditaire) exercent l'autorité religieuse dans les sanctuaires sacrés appelés koora. La légitimité spirituelle est attribuée par tsossa (le dieu céleste). Le christianisme évangélique est aujourd'hui majoritaire, suivi par la religion orthodoxe éthiopienne."
+    },
+    "languages": {
+      "mainLanguage": "Gofa (gof)",
+      "isoCodes": ["gof"],
+      "dialects": [],
+      "vehicularRole": "L'amharique est la langue d'instruction et d'administration. Le gofa est parlé comme première langue par la majorité des Gofa ; il est aussi utilisé dans les interactions locales avec les Gamo, groupe voisin dominant. Le swahili n'est pas utilisé dans cette région."
+    },
+    "culture": {
+      "majorRites": "Les noms personnels constituent une institution culturelle centrale : noms royaux de couronnement (Kawotetha sunthi), noms de naissance (So'o As'a Sunthi) accordés en cérémonie par le roi après offrande d'un taureau. Les noms de famille changent après huit générations successives pour marquer une nouvelle ligne de descendance. La religion traditionnelle coexiste avec le christianisme.",
+      "symbols": "Le taureau est un symbole central dans les cérémonies d'attribution des noms de famille. Le Kawo incarne l'union du pouvoir politique et cosmique. Les trois zones écologiques (gezze : highland, doollo : midland, gadha : lowland) structurent l'économie et l'identité territoriale des Gofa.",
+      "artsAndMusic": "La tradition orale est le principal vecteur de transmission culturelle, incluant généalogies, récits de migration et appellations claniques. La langue gofa, bien qu'en contact avec l'amharique depuis plusieurs siècles, maintient une forme rurale préservée.",
+      "spiritualities": "Culte de tsossa (dieu céleste). Rituels conduits dans les koora (sanctuaires sacrés) par le Kawo et les saga qommo. La religion traditionnelle, bien qu'affaiblie par la christianisation, persiste dans les zones rurales reculées, notamment dans les pratiques de nomination et les cérémonies agraires."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume des Kawo, monarchie centralisée du XVIe au XIXe siècle. Les Kawo avaient une autorité politique et spirituelle sur les différents clans gofa. Plusieurs Kawo régionaux existaient, dont le plus puissant cité est Kawo Gaamo Buraqa. Le système a pris fin avec la conquête de Menelik II.",
+      "relationsWithNeighbors": "Relations anciennes avec les Gamo (groupe dominant de la zone de Gamo, représentant 22 % des Gofa dans la zone de Gamo selon le recensement), les Walayta, les Dawro et les Oyda. Des clans d'origine walayta et gamo ont été intégrés dans la structure clanale gofa.",
+      "conflictsOrAlliances": "Conflits de colonisation lors de la migration sudiste avec les populations locales antérieures, vaincues sous la direction unifiée des Kawo. Incorporation conflictuelle dans l'Empire éthiopien chrétien sous Menelik II à la fin du XIXe siècle.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 430000,
+      "referenceYear": 2025,
+      "source": "Estimation 2025 basée sur le recensement CSA 2007 (363 009 Gofa en Éthiopie, 0,49 % de la population nationale) avec projection de croissance démographique éthiopienne – Wikipedia Gofa people / CSA Ethiopia",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 430000, "percentage": 100 }
+      ]
+    },
+    "sources": [
+      "Gofa people – Wikipedia, 2015 (https://en.wikipedia.org/wiki/Gofa_people)",
+      "Gofa in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11916)",
+      "The Advent of Modern State in Ethiopia and the Dynamics of Personal Names among the Gofa – Zekareas Y.H., Nordic Journal of African Studies, 2019 (https://www.njas.fi/njas/article/download/402/361/769)",
+      "Gamo-Gofa-Dawro language – Wikipedia (https://en.wikipedia.org/wiki/Gamo-Gofa-Dawro_language)",
+      "Appendix ISO 639-3 codes Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
+      "Local history of Ethiopia: Gof-Gomu – Bernhard Lindahl, Nordic Africa Institute, 2005 (https://nai.uu.se/download/18.39fca04516faedec8b248de6/1580829011897/ORTGOF05.pdf)"
+    ]
+  }
+}

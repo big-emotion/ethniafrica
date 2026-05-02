@@ -1,0 +1,149 @@
+{
+  "id": "PPL_NILOTIQUE_MACRO",
+  "nameMain": "Peuples Nilotiques (macro-groupe)",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["SSD", "SDN", "ETH", "UGA", "KEN", "TZA", "COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Peuples Nilotiques",
+      "selfAppellation": "Designations propres a chaque groupe : Naath (Nuer), Jieng (Dinka), Cøllo (Shilluk), Lokop (Samburu), Ilmaasai (Maasai), etc.",
+      "exonyms": [
+        "Nilotes",
+        "Nilo-Sahariens (usage imprecis)",
+        "Nilotiques",
+        "Gens du Nil"
+      ],
+      "originOfExonyms": "Le terme nilotique fut employe par les anthropologues et linguistes europeens du 19e siecle pour designer les populations du bassin du Haut-Nil parlant des langues apparentees. Il derive du latin Nilus (Nil). Le regroupement sous cette appellation repose desormais sur des criteres linguistiques (famille de langues nilotiques) plutot que raciaux ou geographiques.",
+      "whyProblematic": "Le terme nilotique est anthropologiquement contestable car il regroupe des peuples tres divers sur les plans culturel, historique et meme linguistique. Les classifications raciales historiques (grande taille, peau tres sombre, membres longs) ont ete abandonnees au profit de la linguistique. Certains groupes classes comme nilotiques (ex: Kalenjin) sont linguistiquement nilotiques mais culturellement tres differents des Dinka ou Nuer.",
+      "contemporaryUsage": "Le terme peuples nilotiques est utilise dans la litterature academique, les classifications ethnolinguistiques (SIL Ethnologue, Glottolog) et les etudes demographiques pour designer l'ensemble des locuteurs de langues nilotiques. Il est courant dans les contextes politique et journalistique en Afrique de l'Est et au Soudan du Sud.",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique (macro-groupe) — trois branches : nilotique occidental, nilotique central, nilotique oriental et meridional",
+      "historicalRegion": "Bassin du Nil superieur (Soudan du Sud, Soudan), Rift est-africain (Kenya, Ouganda, Tanzanie, Ethiopie occidentale)",
+      "currentCountries": ["SSD", "SDN", "ETH", "UGA", "KEN", "TZA", "COD"]
+    },
+    "ethnicities": [
+      "Nilotiques occidentaux (Dinka-Nuer) : Dinka (Jieng), Nuer (Naath), Shilluk (Cøllo), Anuak, Maban, Burun — Soudan du Sud, Ethiopie",
+      "Nilotiques occidentaux (Luo) : Acholi, Alur, Langi, Padhola (Jopadhola), Luo du Kenya (Joluo) — Ouganda, Kenya",
+      "Nilotiques orientaux (Teso-Lotuko-Maa) : Maasai, Samburu, Turkana, Karamojong, Iteso, Kumam, Bari, Toposa — Kenya, Ouganda, Tanzanie, Soudan du Sud",
+      "Nilotiques meridionaux : Kalenjin (Nandi, Kipsigis, Tugen, Pokot, Marakwet, Elgeyo, Sabaot), Datoga (Barabaig) — Kenya, Tanzanie",
+      "Ateker (nilotiques orientaux) : Karamojong, Iteso, Lango, Kumam, Jie, Dodoth, Toposa — Ouganda, Kenya, Soudan du Sud",
+      "Murle, Didinga, Longarim, Surma — Soudan du Sud, Ethiopie (branche surmique apparentee)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les ancetres des peuples nilotiques etaient des pasteurs nomades du Holocene moyen (vers 6000-4000 av. J.-C.) dans le bas Wadi Howar (a l'ouest du Nil), pratiquant l'elevage bovin, la peche et une agriculture limitee. Ils sont lies aux cultures pre-Kerma de la vallee nubienne du Nil. Apres l'aridification du Sahara (apres 4000 av. J.-C.), ils ont migre vers l'est et le sud dans la vallee du Nil et le bassin du Nil Blanc. Les Egyptiens les designaient comme Nehesy (gens du sud), les Grecs comme Aithiopes, les Israelites comme Koush (Cushites/Kushites). Le site de Kadero (vers 3000 av. J.-C., 48 km au nord de Khartoum) atteste leur presence ancienne dans la region.",
+      "formationPeriod": "Le proto-nilotique s'est constitue au troisieme millenaire av. J.-C. a l'est du Nil (actuel Soudan du Sud). La differentiation en branches occidentale, orientale et meridionale s'est operee progressivement. L'expansion vers l'Afrique de l'Est a commence au premier millenaire de l'ere commune (Age du Fer pastoral, depuis le 13e siecle : culture Sirikwa vers 1200-1800). L'identite propre de chaque groupe (Dinka, Nuer, Maasai, etc.) s'est cristallisee au cours du premier et du second millenaire.",
+      "migrationRoutes": [
+        "Du bas Wadi Howar (Sahara) vers la vallee du Nil superieur, migration est puis sud (apres 4000 av. J.-C.)",
+        "Du Soudan central vers le Soudan du Sud (5e-11e siecles ap. J.-C.), acceleree au 11e siecle (Age du Fer, contacts arabes)",
+        "Vers l'Afrique orientale : Kenya, Ouganda, Tanzanie (premier millenaire ap. J.-C., Age du Fer pastoral depuis le 13e siecle)",
+        "Expansion maasai vers le sud (milieu 19e siecle, plus grande territory dans la vallee du Rift)",
+        "Migration des Luo depuis le Soudan du Sud vers l'Ouganda et le Kenya occidental (15e-18e siecles)"
+      ],
+      "historicalSettlementZones": [
+        "Soudan du Sud : region du Haut-Nil superieur, Sudd, Etat de l'Equatoria (Dinka, Nuer, Shilluk, Anuak, Bari)",
+        "Ethiopie : region de Gambela (Nuer, Anuak, Mursi), frontiere sud-ouest",
+        "Ouganda : nord (Acholi, Langi, Alur), est (Iteso, Karamojong)",
+        "Kenya occidental : region de Nyanza (Luo), vallee du Rift (Kalenjin, Maasai, Samburu, Turkana)",
+        "Tanzanie septentrionale : Maasai, Datoga (Barabaig)",
+        "Nord-est du Congo (RDC) : Alur, Lugbara"
+      ],
+      "unificationsOrDivisions": "Les peuples nilotiques ne forment pas une unite politique. Ils se sont divises en centaines de groupes distincts au fil des migrations et adaptations ecologiques. Des unifications partielles existent : le royaume Shilluk (reth sacre), les confederations Maasai, les sections Nuer/Dinka. La categorisation nilotique est academique, non politique.",
+      "externalInfluences": "Influences cushitiques (systeme de classes d'age, pratique de la circoncision, vocabulaire) adoptees par les nilotiques orientaux. Islam via les Arabes baggara et commerçants swahili. Christianisme via les missions europeennes (19e-20e siecles). Colonisation britannique et allemande ayant fixe des frontieres arbitraires. Independances nationales post-1960 redessinant les identites."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Grande diversite des systemes politiques selon les branches. Nilotiques occidentaux (Dinka, Nuer) : societes acephales ou semi-acephales fondees sur des lignages segmentaires, des conseils d'anciens et des chefs de leopard (Dinka) ou de terre (Nuer); Nuer : absence de chef central, organisation par sections. Shilluk : royaute sacree unique avec le reth (roi divin). Maasai : gerontocratie et classe des guerriers (moran/ilmurran). Kalenjin : systeme de classes d'age (kokwet, assemblees de village). Turkana : societe acephale pastorale.",
+      "clanOrganization": "Structure clanique patrilineaire commune a la majorite des groupes nilotiques. Clans exogames formant la base de l'organisation sociale et des alliances matrimoniales. Chez les Nuer, les clans sont organises en sections territoriales. Chez les Dinka, 25 groupes ethniques distincts. Chez les Maasai, les sections (iloshon) sont les unites politiques.",
+      "ageClassSystems": "Les systemes de classes d'age sont une caracteristique partagee par la majorite des peuples nilotiques, particulierement developpes chez les nilotiques orientaux (Maasai, Samburu, Turkana, Karamojong) et adoptes des populations cushitiques voisines. Fonctions : initiation a l'age adulte, organisation militaire (classe des guerriers/moran), transmission du pouvoir aux anciens, cohesion sociale transgenerationnelle.",
+      "roleOfLineages": "Les lignages patrilineaires structurent l'organisation sociale, politique, economique et religieuse. Ils determinent les droits fonciers, les obligations de mariage (exogamie clanique), la transmission du betail (dot) et l'acces aux ressources. La distance genealogique entre lignages regule les alliances et les conflits.",
+      "religiousAuthority": "Chaque groupe possede ses specialistes religieux : prophetes (laibon maasai, loibonok samburu), maitres de la pluie (bany bith dinka), pretres de leopard (Dinka), chefs de terre (Nuer), devins. La royaute sacree du Shilluk incarne une theologie politique unique. Les missionnaires chretiens ont transforme profondement le paysage spirituel depuis le 19e siecle."
+    },
+    "languages": {
+      "mainLanguage": "Famille des langues nilotiques (Nilo-Saharienne) : dinka (dip), nuer (nus), shilluk (shk), luo/dholuo (luo), acholi (ach), maasai (mas), samburu (saq), turkana (tuv), kalenjin (kln), et nombreuses autres",
+      "isoCodes": [
+        "dip",
+        "nus",
+        "shk",
+        "luo",
+        "ach",
+        "mas",
+        "saq",
+        "tuv",
+        "kln",
+        "mur",
+        "rel"
+      ],
+      "dialects": [
+        "Nilotique occidental (branche Dinka-Nuer) : dinka, nuer, atuot — tres similaires",
+        "Nilotique occidental (branche Luo) : acholi, alur, langi, luo du Kenya, shilluk — continuum dialectal",
+        "Nilotique oriental (branche Teso-Lotuko-Maa) : maasai, samburu, turkana, karamojong, teso — divergences importantes",
+        "Nilotique meridional : kalenjin (nandi, kipsigis, tugen, pokot), datoga — tres differents des autres branches"
+      ],
+      "vehicularRole": "Les langues nilotiques sont les langues maternelles de leurs locuteurs respectifs. Le swahili est la lingua franca en Afrique de l'Est (Kenya, Tanzanie, Ouganda). L'arabe soudanais est vehiculaire au Soudan du Sud. L'anglais est langue officielle au Kenya, Ouganda, Tanzanie et Soudan du Sud."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation a l'age adulte universellement pratiques : circoncision masculine (adoptee de voisins cushitiques par les nilotiques orientaux), scarification (gar nuer, scarifications maasai). Rites de passage marques par les classes d'age (guerriers, anciens). Ceremonies liees au betail : sacrifices bovins lors des mariages, funerailles, guerisons et reconciliations. Mariage par transfert de betail (dot). Funerailles : rites varies selon les groupes (inhumation, exposition, ceremonies de deuil). Ceremonies agricoles et pastorales (debut des pluies, premiere recolte).",
+      "symbols": "Le betail (principalement les bovins) est le symbole central commun : richesse, statut social, lien entre vivants et ancetres, monnaie des alliances matrimoniales. La lance est le symbole du guerrier. Le sorgho est la culture ancestrale. Les scarifications corporelles marquent l'identite tribale et les rites de passage. La perle et les ornements en cuir symbolisent le statut. Le Nil et les grands fleuves sont des symboles cosmologiques fondateurs.",
+      "artsAndMusic": "Tradition de poesie orale tres developpee : epopees genealogiques, chants de betail (Dinka, Nuer), poesie guerriere. Musique instrumentale : tambours, cornes (trompes), lyres (thum chez les Luo), flutes. Polyphonie vocale et chants collectifs. Danse : danses guerrieres (moran maasai), danses de cour, danses rituelles. Artisanat : beadwork et parures (colliers, bracelets en perles), poterie, sculpture sur bois, vannerie, tissage, travail du cuir. Architecture : cases circulaires en terre et chaume (Dinka, Nuer), villages mobiles (nomades).",
+      "spiritualities": "Religion traditionnelle commune : croyance en un dieu supreme du ciel et de la pluie (Nhialic/Jaak chez les Dinka, Kwoth chez les Nuer, Ngai chez les Maasai, Nkai chez les Samburu, Ajok chez les Lotuko). Esprits de la nature, ancetres et esprits intermediaires. Prophetes, devins et maitres de la pluie comme specialistes du sacre. Royaute sacree (Shilluk : reth divin). Le christianisme (catholique, protestant) est majoritaire dans la plupart des groupes depuis le 20e siecle. L'islam est present parmi les Nilotiques du nord du Soudan du Sud et du Soudan."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume Shilluk (Cøllo) : fonde vers 1490-1517 par Nyikang; royaute sacree avec le reth; controle de la rive ouest du Nil jusqu'a Kosti; guerres avec le Sultanat Funj. Royaumes chretiens nubiens (Makuria, Nobatia, Alodia) : contribution probable des communautes nilotiques. Royaume de Koush (Kerma, Napata, Meroe). Expansion Maasai (milieu 19e siecle) : plus grand territoire de la vallee du Rift. Confederation Karamojong. Systeme politique Dinka de chefferies de leopard.",
+      "relationsWithNeighbors": "Relations complexes avec les peuples bantous voisins (integration, conflits, echanges culturels). Adoption selective d'elements cushitiques (systemes de classes d'age, vocabulaire, pratiques agricoles). Relations historiques avec les royaumes arabes et islamiques du nord (Funj, Sennar). Conflicts avec les colonisateurs europeens (resistance Nuer au 19e s., resistance Dinka). Tensions recurrentes avec les etats postcoloniaux pour les droits fonciers et l'autonomie politique.",
+      "conflictsOrAlliances": "Conflits Nuer-Dinka seculaires pour les paturages et le betail. Guerres civiles soudanaises (1955-1972, 1983-2005, 2013-2020) ayant profondement affecte les Nilotiques du Soudan du Sud. Resistance Nuer/Dinka a l'exploitation petroliere des annees 1980-1990. Conflits Maasai-Kikuyu au Kenya. Conflits inter-nilotiques (Samburu-Pokot, Karamojong-Turkana) lies aux ressources en eau et paturages.",
+      "diaspora": "Diaspora nilotique significative depuis les guerres civiles soudanaises : communautes importantes aux Etats-Unis (Minnesotta, Dakota du Sud, Tennessee — Lost Boys of Sudan), en Australie, au Canada, au Royaume-Uni, en Suede et dans les pays frontaliers (Kenya, Ouganda, Ethiopie). Les Luo du Kenya forment une diaspora urbaine importante a Nairobi. Les Maasai ont une diaspora dans les grandes villes kenyanes et tanzaniennes."
+    },
+    "demography": {
+      "totalPopulation": 50000000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN — Nilotic peoples : estimation de 50 millions au 21e siecle. Estimations croisees a partir de CIA World Factbook, Joshua Project, recensements nationaux du Kenya, Ouganda, Tanzanie, Ethiopie et Soudan du Sud (projections 2025). Chiffre global indicatif incluant toutes les branches nilotiques.",
+      "distributionByCountry": [
+        {
+          "country": "SSD",
+          "population": 10000000,
+          "note": "Dinka, Nuer, Shilluk, Anuak, Bari, Murle et autres — majorite de la population"
+        },
+        {
+          "country": "KEN",
+          "population": 13000000,
+          "note": "Luo (Joluo), Kalenjin, Maasai, Samburu, Turkana, Rendille et autres"
+        },
+        {
+          "country": "UGA",
+          "population": 12000000,
+          "note": "Acholi, Langi, Alur, Iteso, Karamojong, Kumam et autres"
+        },
+        {
+          "country": "TZA",
+          "population": 8000000,
+          "note": "Maasai, Datoga (Barabaig), Luo du lac Victoria et autres"
+        },
+        {
+          "country": "ETH",
+          "population": 5000000,
+          "note": "Nuer (Gambella), Anuak, Mursi, Surma et autres groupes de la region de Gambella"
+        },
+        {
+          "country": "SDN",
+          "population": 2000000,
+          "note": "Dinka, Nuer et autres groupes du Haut-Nil soudanais"
+        },
+        {
+          "country": "COD",
+          "population": 2000000,
+          "note": "Alur, Lugbara et autres dans le nord-est du Congo"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Nilotic peoples. https://en.wikipedia.org/wiki/Nilotic_peoples",
+      "SIL Ethnologue — Nilotic language family. https://www.ethnologue.com/",
+      "Glottolog — Nilotic. https://glottolog.org/",
+      "Ehret, Christopher. A Historical-Comparative Reconstruction of Nilo-Saharan. Cologne: Rudiger Koppe Verlag, 2001.",
+      "Evans-Pritchard, E. E. The Nuer. Oxford: Clarendon Press, 1940.",
+      "Spear, T. & Waller, R. (eds.). Being Maasai. London: James Currey, 1993.",
+      "Lienhardt, G. Divinity and Experience: The Religion of the Dinka. Oxford: Clarendon Press, 1961.",
+      "CIA World Factbook — South Sudan, Kenya, Uganda, Tanzania, Ethiopia. https://www.cia.gov/the-world-factbook/",
+      "Joshua Project — Nilotic peoples profiles. https://joshuaproject.net/"
+    ]
+  }
+}

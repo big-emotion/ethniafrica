@@ -1,0 +1,37 @@
+# Nom du peuple
+- Nom principal : Jahanka
+- Auto-appellation : Jahanka
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Région : MLI, GIN
+- Identifiant : PPL_JAHANKA
+
+# 1. Ethnies incluses
+- Communautés jahanka savantes
+- Familles lignagères islamiques
+
+# 2. Origines
+- Groupes mandé spécialisés historiquement dans l’enseignement religieux islamique.
+
+# 3. Organisation
+- Confréries religieuses.
+- Autorité des lignages savants.
+
+# 4. Langue
+- Variétés mandingues (non codées séparément)
+- Généralement proche du malinké
+
+# 5. Culture
+- Haute tradition islamique.
+- Manuscrits anciens.
+
+# 6. Histoire
+- Présents dans les réseaux de savants du Sahel.
+- Rôle éducatif majeur dans le Mali précolonial.
+
+# 7. Démographie
+- Population : 145 000
+- Année : 2025
+
+# 8. Sources
+- Manding Studies
+- Ethnographic Islamic Networks (Sahel)

@@ -1,0 +1,94 @@
+{
+  "id": "PPL_GOURMANTCHE",
+  "nameMain": "Gourmantché",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["BFA", "TGO", "NER", "BEN", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Gourmantché",
+      "selfAppellation": "Gulmanceba",
+      "exonyms": [
+        "Gurma",
+        "Gourma",
+        "Gorma",
+        "Gourmantche",
+        "Gulimancema",
+        "Bigulimanceba",
+        "Migulimancema"
+      ],
+      "originOfExonyms": "Le terme Gourmantché est la transcription française du nom que les voisins Mossi donnaient à ce peuple. Les locuteurs se désignent eux-mêmes par le terme Gulmanceba (singulier : Gulimance), qui désigne à la fois le peuple et sa langue. Le nom dérive du royaume du Gulma (Gulmu), territoire historique centré sur Fada N'Gourma.",
+      "whyProblematic": "Le terme Gourmantché est parfois confondu avec Gurma (forme anglophone) ou Gourma (forme administrative burkinabè). Ces différentes graphies reflètent les transcriptions coloniales françaises et britanniques plutôt qu'un endonyme stable.",
+      "contemporaryUsage": "En usage officiel au Burkina Faso, au Togo et au Bénin sous la forme Gourmantché ou Gourma. La langue est désignée Gourmanchéma ou Gulmancema dans les publications linguistiques et éducatives. L'appellation Gurma est courante dans la littérature anglophone."
+    },
+    "ethnicities": ["Gourmantché", "Gurma"],
+    "origins": {
+      "ancientOrigins": "Le peuple Gourmantché est associé au royaume du Gulma (Gulmu), dont la fondation légendaire remonte à plusieurs siècles avant la colonisation européenne. La tradition orale rapporte que le fondateur de Fada N'Gourma (Bengu) fut Yendabri, quatorzième souverain Gourmantché. Fada N'Gourma est appelée Bengu par les Mossi, signifiant 'terre des Bemba'.",
+      "formationPeriod": "Le royaume du Gulma se consolide entre le XVe et le XVIIe siècle comme confédération de royaumes (Diema) dans l'est de l'actuel Burkina Faso. La succession au trône impliquait un collège électoral composé de Kombali (chefs de cantons), choisi parmi les descendants de Diaba Lompo.",
+      "migrationRoutes": [
+        "Peuplement originel du bassin du fleuve Volta dans l'est du Burkina Faso",
+        "Extension progressive vers le nord du Togo (région des Savanes), le nord-ouest du Bénin (Atakora et Alibori) et le sud-ouest du Niger (Tillabéri)"
+      ],
+      "historicalSettlementZones": [
+        "Est du Burkina Faso, région de Fada N'Gourma (centre historique du Gulma)",
+        "Région des Savanes, nord du Togo",
+        "Départements de l'Atakora et de l'Alibori, nord du Bénin",
+        "Région de Tillabéri, sud-ouest du Niger",
+        "Nord-est du Ghana"
+      ],
+      "unificationsOrDivisions": "Le Gulmu n'était pas un État centralisé mais une confédération de Diema (provinces), chacune dirigée par un Bado. Le Nunbado, autorité suprême résidant à Nungu (Fada N'Gourma), était le primus inter pares sans pouvoir absolu. Des guerres de succession, comme celle de Bacandi en 1892, affaiblirent le royaume à la veille de la colonisation. La partition coloniale franco-britannique de 1898 divisa le territoire Gourmantché entre la Haute-Volta (Burkina Faso), le Togo et le Bénin.",
+      "externalInfluences": "L'expansion des royaumes Mossi à partir du XVe siècle exerça une pression constante sur les Gourmantché, qui maintinrent leur indépendance politique. La conquête coloniale française s'appuya sur les conflits de succession internes pour s'implanter dans le Gulma à la fin du XIXe siècle.",
+      "majorHistoricalEvents": "1892 : guerre de succession entre Bacandi et Yentugri, exploitée par la France. 1897-1898 : pénétration coloniale française dans le Gulma. 1898 : convention franco-britannique fixant les frontières actuelles du Burkina Faso. Résistance armée prolongée des communautés Gourmantché contre l'administration coloniale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Confédération de royaumes (Diema), chacun dirigé par un Bado. La confédération était placée sous l'autorité nominale du Nunbado, résidant à Nungu (Fada N'Gourma), désigné par un collège électoral parmi les descendants de Diaba Lompo. Le Nunbado n'avait pas de pouvoir absolu : chaque Diema gardait son indépendance administrative. Le système comportait des titres spécialisés : Kombali (chef de canton, intermédiaire), Teidano, Odano et Diebado (membres du collège électoral).",
+      "clanOrganization": "La société est organisée en lignages patrilinéaires au sein de Diema (provinces). Les Kombali constituaient les familles nobles chargées de l'élection du Bado et de l'exercice collégial du pouvoir.",
+      "roleOfLineages": "Les lignages descendants de Diaba Lompo, ancêtre mythique des chefs Gourmantché, détenaient le droit à la chefferie. La légitimité du Nunbado reposait sur son appartenance à ces lignages royaux et sur la validation du collège électoral.",
+      "religiousAuthority": "La tradition religieuse Gourmantché est centrée sur le culte du soleil et les sacrifices aux esprits ancestraux. SIM International (Société Internationale Missionnaire) est présente dans la région depuis 1930 et a traduit le Nouveau Testament en Gourmanchéma. La religion traditionnelle demeure prépondérante au Burkina Faso et au Togo, tandis que l'islam est majoritaire chez les Gourmantché du Niger."
+    },
+    "languages": {
+      "mainLanguage": "Gourmanchéma",
+      "isoCodes": ["gux"],
+      "dialects": [
+        "Parler de Fada N'Gourma (Burkina Faso, centre historique)",
+        "Parler des Savanes (Togo)",
+        "Parler du Niger (Tillabéri)",
+        "Parler du Bénin (Atakora-Alibori)"
+      ],
+      "vehicularRole": "Le Gourmanchéma est la langue véhiculaire principale de l'est du Burkina Faso. Classée comme langue institutionnelle et stable par SIL, elle est utilisée dans certaines écoles et fait l'objet de publications (pamphlets de santé, journal mensuel). Elle appartient au sous-groupe Gurma des langues Oti-Volta (branche Gur, Niger-Congo). C'est la plus grande langue du sous-groupe Gurma en nombre de locuteurs."
+    },
+    "culture": {
+      "majorRites": "Rituels d'intronisation des chefs (Bado) : le candidat suit une retraite de sept jours après avoir visité les forgerons et effectué des pronostics sur son règne. Culte du soleil et sacrifices aux esprits. Initiations rythmées par les cycles agricoles et les saisons.",
+      "symbols": "Le fleuve Volta et les collines de l'est burkinabè sont des repères symboliques forts. La tabatière joue un rôle rituel lors des élections des chefs. Les arcs et flèches renvoient à l'identité guerrière historique.",
+      "artsAndMusic": "Musique liée aux cérémonies d'intronisation et aux fêtes rituelles. Art de la parole et tradition orale très développés : récits généalogiques des Bado, contes et proverbes. Publications en Gourmanchéma : journal mensuel et littérature de santé publique développés depuis les années 1980.",
+      "spiritualities": "Religion traditionnelle centrée sur le culte du soleil (Otienu, être suprême), les sacrifices aux esprits et la communication avec les ancêtres. La cosmogonie Gourmantché inclut des concepts distincts : Otienu (Dieu), licabili (destin), gbannandi (corps), limiali (vie), mikuuma (mort). Présence croissante du christianisme (SIM depuis 1930, Bible complète traduite) et de l'islam, notamment au Niger."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume du Gulma (Gulmu) est l'une des entités politiques majeures de la région sahélienne précoloniale. Fondé autour de Fada N'Gourma, il constituait une confédération de Diema sous la direction nominale du Nunbado. Le Gulma a résisté à l'expansion Mossi et maintenu son indépendance jusqu'à la colonisation française à la fin du XIXe siècle.",
+      "relationsWithNeighbors": "Relations historiquement complexes avec les Mossi à l'ouest (conflits récurrents, indépendance maintenue). Coexistence avec les Bariba au sud-est et les Peuls nomades à l'est. Voisinage avec les Dagomba et Konkomba au Ghana.",
+      "conflictsOrAlliances": "Guerres de succession intra-dynastiques (ex. Bacandi contre Yentugri, 1892). Résistance collective aux raids Mossi. Soumission progressive à l'administration coloniale française après 1897, malgré des résistances locales.",
+      "diaspora": "Présence significative dans les capitales régionales du Burkina Faso (Ouagadougou), du Togo (Lomé) et du Bénin (Cotonou), issues des migrations économiques internes. Diaspora internationale dans les pays d'Afrique de l'Ouest et en Europe (France principalement)."
+    },
+    "demography": {
+      "totalPopulation": 1805000,
+      "referenceYear": 2025,
+      "source": "Joshua Project – Gourma people group in all countries (2025)",
+      "distributionByCountry": [
+        { "country": "BFA", "population": 1248000 },
+        { "country": "TGO", "population": 351000 },
+        { "country": "NER", "population": 86000 },
+        { "country": "BEN", "population": 74000 },
+        { "country": "NGA", "population": 46000 }
+      ]
+    },
+    "sources": [
+      "Gourma people group in all countries – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12004)",
+      "Gourma in Burkina Faso – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12004/UV)",
+      "Gurmantche language (gux) – Ethnologue / SIL Global, 2026 (https://www.ethnologue.com/language/gux/)",
+      "Gourmanchéma – Omniglot, 2022 (https://www.omniglot.com/writing/gourmanchema.htm)",
+      "L'organisation politique dans le Gulma avant la pénétration coloniale – LeFaso.net, 2024 (https://lefaso.net/spip.php?article132239)",
+      "Gurma people – Wikipedia EN, 2005, mis à jour 2024 (https://en.wikipedia.org/wiki/Gourmantche_people)",
+      "Histoire et organisation du royaume Gourmantché – Scribd / auteur non précisé, 2026 (https://fr.scribd.com/document/846146509/le-royaume-de-Gourmantche)",
+      "Gourmantché Ethnoanthropology: A Theory of Human Being – Swanson R. A., 1985"
+    ]
+  }
+}

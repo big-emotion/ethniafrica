@@ -1,0 +1,48 @@
+# Nom du peuple
+- Nom principal du peuple : Vai
+- Auto-appellation : Vai / Vy
+- Exonymes historiques : Vey (ancienne forme anglophone, non péjorative)
+- Famille linguistique principale : Niger-Congo – Mandé (occidental) (FLG_MANDE)
+- Région historique : Côte ouest du Liberia et Sierra Leone (région littorale)
+- Pays actuels : LBR (principal), SLE
+- Identifiant peuple : PPL_VAI
+
+# 1. Ethnies incluses dans le peuple
+- Vai de Liberia (Grand Cape Mount)
+- Vai de Sierra Leone (Pujehun / Zimmi)
+
+# 2. Origines, migrations et formation du peuple
+- Peuple mandé ancien, installé entre forêt et littoral.
+- Connu pour avoir créé un **système d’écriture syllabaire** au XIXᵉ siècle (écriture vai).
+- Contacts prémodernes avec réseaux commerciaux côtiers.
+
+# 3. Organisation et structure interne
+- Chefferies lignagères.
+- Systèmes d’initiation (Poro).
+- Notables lettrés spécialisés dans le syllabaire vai.
+
+# 4. Langues et sous-familles
+- Langue : Vai
+- Code ISO : vai
+- Sous-famille : Mandé occidental
+
+# 5. Culture, rites et traditions
+- Tradition littéraire écrite (syllabaire vai).
+- Masques et sociétés initiatiques.
+- Cérémonies rituelles forestières.
+- Artisanat du bois, tissage.
+
+# 6. Rôle historique et interactions régionales
+- Invention du syllabaire vers 1830 par Momolu Duwalu Bukele.
+- Importante influence religieuse musulmane.
+- Interactions culturelles avec Mende, Gola, Kissi.
+
+# 7. Démographie globale
+- Population : 215 000
+- Année : 2025
+- Source : peuple_demographie_globale.csv
+
+# 8. Sources
+- Ethnologue (vai)
+- Liberia National Cultural Archives
+- Studies on Vai Syllabary (1820–1900)

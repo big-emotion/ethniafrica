@@ -1,0 +1,101 @@
+{
+  "id": "PPL_NSENGA",
+  "nameMain": "Nsenga",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB", "MOZ", "ZWE"],
+  "content": {
+    "appellations": {
+      "mainName": "Nsenga",
+      "selfAppellation": "Ansenga",
+      "exonyms": ["Senga", "Nsemga", "Chinsenga", "Cingoni-Nsenga"],
+      "originOfExonyms": "Senga est une forme abregee utilisee notamment au Mozambique et parfois en Zambie. Nsemga est une variante orthographique. Chinsenga designe la langue Nsenga. Cingoni-Nsenga est le titre d'une grammaire acadmique. Attention : les Senga (groupe Tumbuka) de Zambie/Malawi sont un groupe distinct ne pas confondre avec les Nsenga.",
+      "whyProblematic": "Confusion frequente entre les Nsenga et les Senga, ces derniers etant en realite une partie du groupe Tumbuka. Certains dialectes Nsenga en Zambie sont en realite des dialectes de Tumbuka appeles localement Nsenga.",
+      "contemporaryUsage": "Nsenga est le nom officiel en Zambie et au Mozambique. Le terme Ansenga est l'autodesignation. La langue Chinsenga est largement parlee dans la Province de l'Est zambienne et a ete adoptee par des groupes voisins.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Groupe Luba-Lunda (bantou central), apparente aux Lala, Bemba, Bisa, Lamba",
+      "historicalRegion": "Vallee du Luangwa (province de l'Est, Zambie), districts de Petauke et Nyimba",
+      "currentCountries": ["ZMB", "MOZ", "ZWE"]
+    },
+    "ethnicities": ["Nsenga", "Nsenga Luzi", "Chikunda"],
+    "origins": {
+      "ancientOrigins": "Peuple bantou originaire du royaume Luba-Lunda du Congo (actuelle RDC). Le nom Nsenga signifie voyage ou terre de sable, en reference a leur longue migration depuis le Luba-Lunda.",
+      "formationPeriod": "Migration vers la Zambie actuelle vers le XIVe siecle. Parmi les premiers peuples a s'installer en Zambie apres les Tonga. Identite consolidee avant la colonisation europeenne.",
+      "migrationRoutes": [
+        "Depart du royaume Luba-Lunda (Congo, actuelle RDC)",
+        "Migration vers le sud-est avec les Bemba, Bisa, Lala au meme moment",
+        "Installation dans la vallee du Luangwa (province de l'Est de Zambie)",
+        "Presence dans l'ouest du Mozambique (pres de la frontiere zambienne, au nord du Zambeze)"
+      ],
+      "historicalSettlementZones": [
+        "Districts de Petauke et Nyimba, Province de l'Est (Zambie)",
+        "Vallee du Luangwa (Zambie)",
+        "Ouest du Mozambique (province de Tete)",
+        "Zone frontiere Zimbabwe-Zambie"
+      ],
+      "unificationsOrDivisions": "Lors de la migration, les Nsenga etaient organises sous un systeme clanique sans chefs (Tumvi = chefs de famille/clans). Des chefs (chiefs) furent institu plus tard. Plusieurs sous-groupes : Nsenga du Luangwa oriental, Nsenga Luzi de la vallee du Luangwa (sous chefs Nyalugwe, Mboloma, Lwembe), Chikunda de Luangwa Boma.",
+      "externalInfluences": "Relations ambivalentes avec les Bemba lors de la migration : les combattants Bemba sous Chitimukulu capturerent une femme Nsenga (Lumbwe) ; en represaille les chasseurs Nsenga capturerent des femmes Bemba, creant des liens familiaux entre les deux peuples. Influence chewa et Ngoni apres leur etablissement en Zambie orientale.",
+      "majorHistoricalEvents": "XIVe siecle : migration depuis le royaume Luba-Lunda vers la Zambie. Incident des captives Bemba-Nsenga lors de la migration qui crea des liens inter-ethniques. Colonisation britannique (Rhodesie du Nord) : administration par indirect rule. Independance de la Zambie (1964) : le Nsenga devient une des langues nationales reconnues."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies sous autorite du Senior Chief Kalindawalo M'ndikula (residence a Merwe, a 10 km de Petauke Boma). Plusieurs chefs traditionnels : Mwape, Nyamphande, Nyanje, Mumbi, Sandwe, Nyalugwe, Ndake, Senior Chief Lwembe, Senior Chief Mboloma, Mwanjaw'anthu.",
+      "clanOrganization": "A l'origine, organisation en clans sans chefs formels, dirigee par des Tumvi (chefs de famille ou de clan). Les clans Nsenga portent des noms specifiques : enetembo, enemwanza, eneng'oma, enelungu, enemumba, enemvula. Ces structures claniques perdurent dans l'organisation sociale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages claniques determinaient l'acces a la terre, les alliances matrimoniales et les obligations de solidarite. Les Tumvi (chefs de lignage) etaient les autorites de decision avant l'institution des chefferies formelles.",
+      "religiousAuthority": "Croyances animistes traditionnelles avec culte des ancetres. Le christianisme est aujourd'hui majoritaire (environ 89% de chretiens selon Joshua Project). Certaines pratiques spirituelles traditionnelles perdurent dans les communautes rurales."
+    },
+    "languages": {
+      "mainLanguage": "Chinsenga (Nsenga)",
+      "isoCodes": ["nse"],
+      "dialects": [
+        "Nsenga standard (Petauke, Nyimba)",
+        "Nsenga Luzi (vallee du Luangwa)",
+        "Chikunda (Luangwa Boma)",
+        "Nsenga du Mozambique"
+      ],
+      "vehicularRole": "Le Chinsenga est l'une des langues nationales reconnues de Zambie. Tres proche du Chinyanja (Nyanja), il a ete adopte par plusieurs groupes voisins. Le Nsenga represente 2,9% des locuteurs zambiens comme premiere langue (recensement 2010). En recul au profit du Nyanja/Chichewa et de l'anglais dans les centres urbains."
+    },
+    "culture": {
+      "majorRites": "Ceremonies d'initiation a l'age adulte (pour filles : chinamwali). Rites agricoles lies aux cycles de cultures (maïs, arachides, millet, sorgho, coton). Ceremonies de mariage avec prix de la fiancee (lobola). Rituels funeraires impliquant le lignage etendu.",
+      "symbols": "Le travail du sol et la production agricole comme valeurs centrales. L'artisanat (perles, vannerie) comme expression culturelle distinctive.",
+      "artsAndMusic": "Le peuple Nsenga est connu pour son artisanat : travail des perles (bead work) et vannerie (basketry). Musique et danses traditionnelles lors des ceremonies. La tradition orale preservee par les anciens.",
+      "spiritualities": "Religion traditionnelle : culte des ancetres, croyances animistes. Le christianisme est aujourd'hui dominant (environ 89% : catholiques, anglicans, adventistes, pentecotistes). La formule de salutation traditionnelle mulityani (comparable au Bemba mulishani) reflete les liens culturels inter-ethniques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Systeme de chefferies multiples sous autorite du Senior Chief Kalindawalo. Les Nsenga n'ont pas forme de royaume centralise mais un ensemble de chefferies autonomes dans la vallee du Luangwa.",
+      "relationsWithNeighbors": "Liens historiques avec les Lala, Bemba, Bisa, Lamba (meme origine Luba-Lunda). Relations matrimoniales et culturelles avec les Bemba issues des captives historiques. Partage de nombreuses coutumes avec les Chewa et Ngoni voisins a l'est. La langue Chinsenga s'est diffusee chez plusieurs groupes voisins. Relations avec les Chikunda de la vallee du Luangwa.",
+      "conflictsOrAlliances": "Episode de conflit-alliance avec les Bemba lors de la migration (capture mutuelle de femmes). Sous la colonisation britannique, marginalisation relative au profit des chefferies plus structurees.",
+      "diaspora": "Communautes Nsenga au Mozambique occidental (province de Tete) et au Zimbabwe (pres de la frontiere zambienne). Population mondiale estimee a 1 179 000 personnes (Joshua Project 2025)."
+    },
+    "demography": {
+      "totalPopulation": 1179000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Nsenga in Zambia : 892 000 ; total mondial : 1 179 000)",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 892000,
+          "note": "Province de l'Est : districts de Petauke et Nyimba principalement"
+        },
+        {
+          "country": "MOZ",
+          "population": 250000,
+          "note": "Ouest du Mozambique, province de Tete"
+        },
+        {
+          "country": "ZWE",
+          "population": 37000,
+          "note": "Zone frontiere Zimbabwe"
+        }
+      ]
+    },
+    "sources": [
+      "Nsenga people – Wikipedia EN (https://en.wikipedia.org/wiki/Nsenga_people)",
+      "Nsenga – Encyclopaedia Britannica (https://www.britannica.com/topic/Nsenga)",
+      "Nsenga in Zambia – Joshua Project (https://joshuaproject.net/people_groups/print/14047/ZA)",
+      "The Nsenga People – Nsenga Bible Community (https://www.nsengabiblecommunity.org/en/culture/our-history)",
+      "Nsenga people – 101lasttribes.com (https://www.101lasttribes.com/tribes/nsenga.html)",
+      "Nsenga – Glottolog (https://glottolog.org/resource/languoid/id/nsen1242)",
+      "Demographics of Zambia – Wikipedia EN (https://en.wikipedia.org/wiki/Demographics_of_Zambia)"
+    ]
+  }
+}

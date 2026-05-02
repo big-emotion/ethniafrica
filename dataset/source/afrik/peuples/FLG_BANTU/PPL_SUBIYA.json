@@ -1,0 +1,110 @@
+{
+  "id": "PPL_SUBIYA",
+  "nameMain": "Subiya",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["NAM", "ZMB", "BWA"],
+  "content": {
+    "appellations": {
+      "mainName": "Subiya",
+      "selfAppellation": "Baikuhane (pluriel), Muikuhane (singulier). Le terme designe les 'suiveurs du roi Ikuhane' ou 'les gens de la riviere Chobe'.",
+      "exonyms": [
+        "Subia",
+        "Ikuhane",
+        "Kuhane",
+        "Vekuhane (en Namibie et Botswana)",
+        "Masubia"
+      ],
+      "originOfExonyms": "Le nom Subiya aurait ete donne par les Luyi (Lozi) en raison de la peau pale des membres du groupe ('Subira' signifiant 'pale' en lozi), peut-etre parce qu'ils peignaient leur peau a l'ocre. Le nom Ikuhane ou Kuhane derive du roi Ikuhane (1575-1600), fils du premier chef Itenge, qui migra vers la riviere Chobe et lui donna son nom (Ikuhane River).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Subiya est utilise en Zambie, Subia ou Kuhane en Namibie et Vekuhane au Botswana. La langue (Chikuhane ou Chisubia) reste la langue maternelle du groupe mais est menacee par la langue Silozi (lozi) qui est la langue officielle dans la region de Caprivi/Zambezi en Namibie et dans l'ouest de la Zambie.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu Botatwe (groupe sud-central)",
+      "historicalRegion": "Bande de Caprivi (Namibie), district de Chobe (Botswana), Province Occidentale (Zambie)",
+      "currentCountries": ["NAM", "ZMB", "BWA"]
+    },
+    "ethnicities": ["Subiya", "Baikuhane", "Masubia"],
+    "origins": {
+      "ancientOrigins": "Les Subiya sont un peuple bantou qui migra vers le sud depuis les regions septentrionales de l'Afrique. Selon les traditions orales, leurs origines les plus lointaines remontent a l'actuelle region nord de l'Afrique centrale. Avant leur migration vers la bande de Caprivi, ils s'installerent pres des plaines d'inondation du Kafue (actuelle Zambie). Le premier chef connu, Itenge, mena la migration depuis le nord et s'installa aux plaines du Kafue (regna jusqu'aux annees 1570).",
+      "formationPeriod": "XVe-XVIe siecles. L'identite Subiya se cristallise sous le roi Ikuhane (1575-1600) qui migra depuis le Kafue vers la vallee du Zambeze puis vers la riviere Chobe. La confederation Itenge (du nom du premier roi) connut son apogee aux XVIIe-XVIIIe siecles avant d'etre affaiblie par les guerres contre les Luyi et ensuite par les Kololo.",
+      "migrationRoutes": [
+        "Depuis des regions septentrionales vers les plaines du Kafue (avant les annees 1570)",
+        "Du Kafue vers la vallee du Zambeze (sous Ikuhane, 1575-1600)",
+        "Du Zambeze vers la riviere Chobe (sous Lilundu Lituu, 1640-1665)",
+        "Vers le Botswana (Goha Hills, Mababe) sous Lilundu Lituu",
+        "Retour vers la bande de Caprivi (Luchindo) sous Nsundano (1700-1750)",
+        "Scissions: groupe de Cheete vers les chutes Victoria; groupe de Mwanamwale vers Sesheke (Zambie) en 1876"
+      ],
+      "historicalSettlementZones": [
+        "Plaines du Kafue (actuelle province de Lusaka, Zambie)",
+        "Vallee du Zambeze (actuelle province de l'Ouest, Zambie)",
+        "Riviere Chobe et ses abords (Botswana septentrional, district de Chobe)",
+        "Bande de Caprivi (actuelle region du Zambezi, Namibie)",
+        "Ile d'Impalila (point de confluence Zambie-Zimbabwe-Botswana-Namibie)",
+        "Sesheke (province de l'Ouest, Zambie)"
+      ],
+      "unificationsOrDivisions": "La confederation Itenge connut plusieurs periodes d'unification et de scission. Sous la reine Mwaale Ikuhane (1665-1700), des dissidences menerent a deux groupes separatistes (sous Cheete vers les chutes Victoria, et sous Sikute qui emporta les tambours royaux Makuwakuwa). L'arrivee des Kololo (vers 1835) desintegra la confederation: le chef Liswani fut execute par Sebitwane. Depuis le XIXe siecle, la chefferie Subiya est divisee selon les frontieres coloniales entre Namibie, Zambie et Botswana.",
+      "externalInfluences": "Les guerres frequentes avec les Luyi (predecesseurs des Lozi) du XVIIe au XVIIIe siecles. La conquete Kololo (annees 1830-1840) qui soumit les Subiya a l'empire Lozi. L'arrivee des Europeens: la bande de Caprivi fut cedee a l'Allemagne en 1885, puis administree par l'Afrique du Sud sous mandat de la Ligue des Nations, generant une periode d'oubli historique. La Zambie et le Botswana accueillirent d'autres fractions Subiya.",
+      "majorHistoricalEvents": "Fondation de la confederation Itenge par Itenge (avant les annees 1570). Migration vers la riviere Chobe sous Ikuhane (1575-1600). Mort du chef Nsandano en combat contre les Luyi et etablissement de Luchindo comme lieu sacre. Conquete Kololo et execution du chef Liswani (vers 1835). Division de la chefferie selon les frontieres coloniales. Etablissement du quartier general a Bukalo (Namibie) par Liswani II (1965-1996)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chiefdom avec des chefs appeles Munitenge (en bande de Caprivi et Botswana) ou Mwanamwale (a Sesheke, Zambie), ou Moraliswani (dans certaines zones). La succession est dynastique et patrilineaire. La chefferie est divisee entre plusieurs branches correspondant aux differentes zones geographiques (Namibie, Botswana, Zambie). Le siege principal est a Bukalo (Namibie).",
+      "clanOrganization": "Organisation clanique avec des lignages royaux bien documentes remontant a Itenge et Ikuhane. La lignee royale centrale inclut: Itenge, Ikuhane, Lilundu Lituu, la reine Mwaale Ikuhane (premiere femme chef), Saanjo, Nsundano, Nkonkwena, Maiba, Liswani II. Les branches laterales gouvernent les differentes zones (Chobe, Sesheke, Caprivi).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages royaux determinent la succession au pouvoir. Les tambours royaux (Makuwakuwa) etaient le symbole supreme de l'autorite et auraient eu des pouvoirs magiques. Selon la legende, quand le chef Mukuni des Leya captura les Subiya de Sikute et leurs tambours royaux, les tambours s'echapperent dans le Zambeze ou leur son continua d'etre entendu pendant des annees.",
+      "religiousAuthority": "Les croyances traditionnelles (Ethnic Religions) sont predominantes chez les Subiya (environ 60% selon Joshua Project). Le site de Luchindo en bande de Caprivi est un lieu sacre (chidino) de toute la tribu Basubiya depuis la mort du chef Nsandano. Les pratiques ancestrales incluent la veneration des esprits des ancetres et des rituels agricoles et de peche."
+    },
+    "languages": {
+      "mainLanguage": "Chikuhane (Chisubia)",
+      "isoCodes": ["sbs"],
+      "dialects": [
+        "Subiya de Caprivi (Namibie)",
+        "Chikwahane (Botswana)",
+        "Chisubia (Zambie)"
+      ],
+      "vehicularRole": "Le silozi (lozi) est la lingua franca officielle de la region de Caprivi/Zambezi en Namibie et est utilise dans l'education, les eglises et les medias. Le chikuhane est en danger: les jeunes generations tendent a utiliser le silozi ou l'anglais. En Zambie, l'anglais est officiel. Le chikuhane appartient au groupe Bantu Botatwe et est classe comme langue de traduction en cours (niveau 2 selon Joshua Project)."
+    },
+    "culture": {
+      "majorRites": "Ceremonies de veneration des ancetres au site sacre de Luchindo (bande de Caprivi). Rituels de peche et de navigation (les Subiya sont reputes pour leur maitrise des bateaux sur le Zambeze et le Chobe). Ceremonies liees aux cycles agricoles. Les tambours royaux Makuwakuwa avaient une dimension rituelle et politique centrale.",
+      "symbols": "Les pirogues (bateaux sculptes): les Subiya etaient reputes pour leur art de la construction navale. Chaque bateau avait un nom refletant ses caracteristiques: Mbakisa ('tu m'as aide'), Munteenteke ('je-tu-moi perchoir', car le bateau est tres petit), Mapopota ('trop bavard', pour le bruit de l'eau). Les tambours royaux Makuwakuwa symbolisaient l'autorite supreme.",
+      "artsAndMusic": "Art de la sculpture navale (pirogues tres elaborees). Les bateaux Subiya etaient consideres comme des oeuvres d'art. Traditions orales preservant l'histoire des chefs et des migrations. Chants et danses communautaires lies aux ceremonies agricoles et de peche.",
+      "spiritualities": "Croyances ancestrales (Ethnic Religions) predominantes: veneration des ancetres, pouvoirs magiques associes aux objets royaux (tambours Makuwakuwa). Le site de Luchindo est un lieu de pelerinage spirituel. Le christianisme (environ 40%) est present depuis les missions coloniales. Les pratiques traditionnelles coexistent avec le christianisme dans la vie quotidienne."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Confederation d'Itenge (XV-XIXe siecles), centree sur la riviere Chobe et ses environs. A son apogee sous le chef Nsundano, elle s'etendait le long des rivieres Chobe et Zambeze. Contrairement aux grands empires voisins (Lozi/Barotse), la confederation Itenge ne chercha pas l'expansion militaire et le commerce exterieur. Elle eclipsa historiquement par la documentation abondante des Lozi. Aujourd'hui, trois chefferies Subiya distinctes existent selon les frontieres coloniales: en Namibie (siege a Bukalo), en Zambie (siege a Sesheke, titre Mwanamwale) et au Botswana (siege a Kavimba).",
+      "relationsWithNeighbors": "Conflits recurrents avec les Luyi (Lozi) du XVIIe au XIXe siecles. Alliance eventuellement forcee avec les Kololo (annees 1830). Contact avec les Fwe et Mbukushu sur le Zambeze. Relations avec les Leya des chutes Victoria (une faction Subiya fut integree par le chef Mukuni des Leya). Soumission progressive a l'empire Lozi restaure apres la chute des Kololo (1860s).",
+      "conflictsOrAlliances": "Guerres contre les Luyi (y compris la mort du chef Nsandano). Conquete par les Kololo (vers 1835), execution du chef Liswani. Fuite de Nkonkwena au Botswana sous la protection du chef Khama. Division entre partisans de differents chefs lors des crises de succession. La partition coloniale (bande de Caprivi cedee a l'Allemagne en 1885) divisa definitivement la communaute Subiya selon trois juridictions nationales.",
+      "diaspora": "Du fait de la partition coloniale, les Subiya forment une communaute transnationale repartie entre Namibie, Zambie et Botswana. Des populations Subiya sont aussi presentes a Livingstone (Zambie) depuis le XIXe siecle. La langue chikuhane est en voie d'extinction, ce qui constitue une menace majeure pour la continuite culturelle."
+    },
+    "demography": {
+      "totalPopulation": 44800,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025): 44 800 au total (Namibie + Zambie + Botswana)",
+      "distributionByCountry": [
+        {
+          "countryCode": "NAM",
+          "population": 39000,
+          "notes": "Region du Zambezi (ex-Caprivi), principalement autour de Bukalo, Katima Mulilo et Kasika"
+        },
+        {
+          "countryCode": "BWA",
+          "population": 7900,
+          "notes": "District de Chobe, Kavimba et abords du parc national de Chobe"
+        },
+        {
+          "countryCode": "ZMB",
+          "population": 2900,
+          "notes": "Province Occidentale, region de Sesheke"
+        }
+      ]
+    },
+    "sources": [
+      "Subia people – Wikipedia (https://en.wikipedia.org/wiki/Subia_people)",
+      "Subiya – Zambia's Traditional History (https://traditionalzambia.home.blog/tribes-of-zambia/early-bantu-settlers/subiya/)",
+      "Subia people group in all countries – Joshua Project (https://joshuaproject.net/people_groups/15102)",
+      "Caprivi Strip – Wikipedia (https://en.wikipedia.org/wiki/Caprivi_Strip)",
+      "Subia in Zambia – Joshua Project (https://joshuaproject.net/people_groups/15102/ZA)",
+      "Ramsey, Jeff – Document sur les Bekuhane, Botswana Government (cite dans Zambia's Traditional History)",
+      "Subia – Justapedia (https://justapedia.org/wiki/Subia_people)"
+    ]
+  }
+}

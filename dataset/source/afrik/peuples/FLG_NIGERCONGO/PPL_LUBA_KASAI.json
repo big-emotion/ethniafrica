@@ -1,0 +1,102 @@
+{
+  "id": "PPL_LUBA_KASAI",
+  "nameMain": "Luba (Kasai)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Luba-Kasai",
+      "selfAppellation": "Baluba (Kasai) / Bena-Lulua",
+      "exonyms": [
+        "Luba du Kasai (terme francophone courant)",
+        "Western Luba (anglophone)",
+        "Bena-Lulua (appellation donnee par l'Ethnologue SIL, de la riviere Lulua)",
+        "Luba-Lulua (designation linguistique alternative)",
+        "Kikasai (terme utilise par les populations du Katanga pour designer les migrants du Kasai)"
+      ],
+      "originOfExonyms": "Le nom Bena-Lulua fait reference a la riviere Lulua qui traverse la region du Kasai-Occidental. Kikasai est le nom donne par les Luba-Katanga aux locuteurs de tshiluba venant du Kasai. Luba-Lulua est l'appellation normalisee ISO 639 pour la langue. Le terme Baluba (Kasai) distingue ce sous-groupe de ses cousins du Katanga.",
+      "contemporaryUsage": "Les Luba du Kasai s'identifient principalement comme Baluba ou comme membres de sous-groupes particuliers (Bena-Lulua, Bena-Kanyok, etc.). Le terme Tshiluba ou Ciluba est l'appellation de leur langue, qui est aussi le nom le plus courant en contexte linguistique. Ils representent la majorite de la population des provinces du Kasai.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone L, L31 — groupe luban occidental)",
+      "historicalRegion": "Kasai-Central, Kasai-Oriental, Kasai et Sankuru — sud-centre de la Republique democratique du Congo",
+      "currentCountries": ["COD"]
+    },
+    "ethnicities": [
+      "Bena-Lulua — groupe central du Kasai-Occidental, parle le dialecte Cena-Luluwa (L31b)",
+      "Baluba-Kasai Oriental (Buluba) — groupe oriental du Kasai-Oriental, parle le dialecte Cikwa-diishi (L31a)",
+      "Bena-Kanyok — sous-groupe du Kasai, langue Kanyok apparentee au tshiluba",
+      "Lulua proprement dits — groupe de la vallee de la Lulua (Kasai-Occidental)",
+      "Bena-Mpuka — sous-groupe du Kasai, dont le dialecte a servi de base au tshiluba standard"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Luba-Kasai font partie du grand complexe bantou luban qui s'etablit dans le bassin du Kasai a partir du 15e siecle environ, par migration progressive depuis la Depression de l'Upemba (Katanga) ou depuis les savanes du Congo-Kasai. Ils sont lies historiquement aux Luba-Katanga dont ils se distinguerent progressivement par leur langue, leurs structures sociales et leur territoire. Les Bena-Lulua de la riviere Lulua et les Baluba de l'Oriental sont les deux principales branches.",
+      "formationPeriod": "L'identite distincte des Luba-Kasai se consolida entre le 15e et le 18e siecle. La region du Kasai attira les missionnaires chretiens environ vingt ans avant le Katanga, ce qui donna aux Luba-Kasai un acces precoce a l'education coloniale europeenne. Cette avance educative les rendit tres mobiles economiquement, notamment lors de la decouverte du cuivre au Katanga (fin 19e siecle) : ils emigrerent massivement vers les mines katangaises.",
+      "migrationRoutes": [
+        "Peuplement progressif du bassin du Kasai depuis le Katanga-Upemba (15e-17e siecles)",
+        "Migrations de travail massives des Luba-Kasai vers les mines de cuivre du Katanga (fin 19e - debut 20e siecle)",
+        "Retours forces vers le Kasai lors des expulsions ethniques au Katanga (1992-1994, 2014-2016)",
+        "Migration vers Mbuji-Mayi (centre diamantifere) et Kinshasa aux 20e-21e siecles"
+      ],
+      "historicalSettlementZones": [
+        "Province du Kasai-Central (Kananga, vallee de la Lulua) — coeur du territoire Bena-Lulua",
+        "Province du Kasai-Oriental (Kabinda, Gandajika) — territoire Baluba-Kasai oriental",
+        "Province du Kasai (Mbuji-Mayi, capitale diamantifere)",
+        "Province du Sankuru (nord-est du Kasai) — peuplement luba-kasai septentrionale",
+        "Province du Haut-Katanga (Lubumbashi, Likasi) — migration historique de travail"
+      ],
+      "unificationsOrDivisions": "Les Luba-Kasai ne formerent pas un empire centralise comme leurs cousins katangais, mais s'organiserent en chefferies autonomes. L'influence missionnaire protestante et catholique crea une elite educative (les 'Kasaiens') qui domina la fonction publique coloniale et postcoloniale. Cette domination suscita des tensions, notamment au Katanga (expulsions de 1992-1994). Au Kasai, les tensions entre Luba et Lulua eclaterent en violences inter-ethniques dans les annees 1959-1960 (conflit Luba-Lulua), puis de nouveau lors du conflit du Kasai (2016-2018).",
+      "externalInfluences": "Presence missionnaire protestante (Baptist Missionary Society, American Presbyterian Congo Mission) et catholique depuis la fin du 19e siecle — impact educatif majeur. Colonisation belge et travail force dans les mines de diamants (Kasai) et de cuivre (Katanga). Crise postcoloniale congolaise : expulsions massives du Katanga (1992-1994) sous Mobutu. Conflit du Kasai (2016-2018) impliquant la chefferie Kamuina Nsapu."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Luba-Kasai sont organises en chefferies (dirigees par un mfumu ou chef traditionnel) regroupees en grandes confederations claniques. Contrairement aux Luba-Katanga qui maintinrent une royaute sacree centralisee, les Luba-Kasai avaient une organisation politique plus decentralisee. La chefferie Kamuina Nsapu (Kasai-Central) est l'une des plus reconnues ; son chef heredite Bajila Kasanga fut au coeur du conflit de 2016-2018.",
+      "clanOrganization": "La societe Luba-Kasai est organisee en clans (bena, signifiant 'les gens de') patrilineaires. Le clan est nomme d'apres un ancetre fondateur ou un lieu. L'appartenance clanique determine les droits fonciers, les obligations matrimoniales (exogamie clanique) et les solidarites economiques. Les lineages (dikanda) constituent les sous-unites claniques.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le lignage patrilineaire (dikanda) est l'unite fondamentale de l'organisation sociale. Le chef de lignage (mfumu wa dikanda) supervise les affaires matrimoniales, foncières et rituelles. Les solidarites de lignage furent essentielles lors des migrations de travail vers le Katanga, ou les Luba-Kasai se regroupaient entre compatriotes. Les relations inter-lignages sont regulees par des alliances matrimoniales.",
+      "religiousAuthority": "Les guerisseurs-devins (Nganga) et les pretres de culte (Nsengha) detiennent une autorite spirituelle traditionnelle. Le christianisme catholique (via les Peres Oblats de Marie Immaculee) et protestant (American Presbyterian Congo Mission, Baptist Missionary Society) est predominant chez les Luba-Kasai. L'Eglise catholique congolaise a fortement inculturee la liturgie dans les expressions artistiques luba (cf. Missa Luba). Des Eglises independantes africaines sont aussi presents."
+    },
+    "languages": {
+      "mainLanguage": "Tshiluba (Ciluba / Luba-Kasai)",
+      "isoCodes": ["lua"],
+      "dialects": [
+        "Cikwa-diishi (Buluba) — dialecte oriental, Kasai-Oriental (L31a), base du tshiluba standard catholique",
+        "Cena-Luluwa (Lulua) — dialecte occidental, Kasai-Occidental/Kasai-Central (L31b)",
+        "Cena-Kananga — variante de la region de Kananga",
+        "Cena-Mpuka — dialecte ayant fourni une base au standard missionnnaire classique"
+      ],
+      "vehicularRole": "Le tshiluba (Ciluba) est l'une des quatre langues nationales de la RDC aux cotes du lingala, du swahili et du kikongo. Il est la principale langue vehiculaire des provinces du Kasai-Central, Kasai-Oriental, Kasai et Sankuru. L'Ethnologue SIL (1991) comptait environ 6,3 millions de locuteurs natifs et 700 000 locuteurs secondaires. Il est langue d'enseignement dans les ecoles primaires des provinces du Kasai. Son alphabet Latin utilise les digraphes ng, ny et sh, sans les lettres q, r et x."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation masculine (circoncision) et feminine. Ceremonies de mariage avec dot (lobola). Consultations de devination (Lubuko) aupres du Nganga pour diagnostiquer et resoudre problemes de sante, conflits et decisions de vie. Ceremonies de deuil et d'inhumation avec periodes de condoleances. Installation ceremonielle des chefs de lignage et de chefferie. Rites agricoles de debut et de fin de saison. Rites de guerison dans les traditions medicales luba.",
+      "symbols": "La langue tshiluba elle-meme comme symbole identitaire central des Luba-Kasai. La riviere Lulua comme symbole geographique d'origine. La ville de Mbuji-Mayi (capitale du diamant) comme symbole economique et demographique. Les sculptures d'appuie-tetes et statues anthropomorphes luba. Les haches fermees en fer forge comme symboles d'autorite chiefly.",
+      "artsAndMusic": "Sculpture sur bois : statues anthropomorphes, appuie-tetes (milongo), masques, haches ceremonielles. Poterie traditionnelle. Chants polyphoniques. La Missa Luba (1958), chef-d'oeuvre musical compose par le Frere Guido Haazen avec des chanteurs luba-kasai, inculturee la messe catholique latine dans les rythmes et melodie luba et fut une sensation internationale. Danses traditionnelles et chants de mariage. Artisanat : vannerie, tissage. Tradition orale de contes et proverbes (bisamba).",
+      "spiritualities": "Religion traditionnelle axee sur Shakapanga (Createur) et Leza (Etre supreme), venerations des ancetres (Bankambo) et des esprits (Bavidye). La divination (Lubuko) par le Nganga est pratiquee pour toutes decisions importantes. Le christianisme catholique (majoritaire) et protestant est profondement ancre depuis l'ere missionnaire. La Missa Luba illustre la synthese entre foi chretienne et expression culturelle luba. Des Eglises de reveil et pentecotistes sont tres actives dans les provinces du Kasai."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Luba-Kasai etaient organises en chefferies autonomes plutot qu'en empire centralise. La chefferie Kamuina Nsapu (chefferie Bajila Kasanga au Kasai-Central) est une des plus importantes. Historiquement, le territoire luba-kasai servit de base arriere a l'Empire luba du Katanga. La ville de Kabinda (Kasai-Oriental) fut un centre politique important. Sous la colonisation belge, les Luba-Kasai furent particulierement integres dans la structure administrative et educative coloniale.",
+      "relationsWithNeighbors": "Relations historiquement complexes avec les Lulua (Bena-Lulua) : conflits intercommunautaires violents en 1959-1960 et durant le conflit du Kasai (2016-2018). Relations avec les Kuba (nord), Chokwe et Pende (ouest). Tensions avec les populations katangaises (Luba-Katanga, Lamba, etc.) autour des migrations de travail. Concurrence avec les Lunda dans certaines regions frontieres du Kasai.",
+      "conflictsOrAlliances": "Conflit Luba-Lulua (1959-1960) : violences pre-independance entre Luba et Lulua du Kasai, precurseur de l'instabilite postcoloniale. Expulsions des Luba-Kasai du Katanga (1992-1994) : environ 6 000 morts, 400 000 deplaces forces vers le Kasai, provoquees par des discours ethniques anti-Kasaiens sous Mobutu. Conflit du Kasai (2016-2018) : insurrection Kamuina Nsapu suite au refus de reconnaitre la chefferie luba Bajila Kasanga, avec massacres documentés et deplacements de masse (plus de 1,4 million de deplaces).",
+      "diaspora": "Forte presence diasporique dans les villes minieres du Haut-Katanga (avant les expulsions). Communautes luba-kasai a Kinshasa, Lubumbashi et dans les capitales provinciales. Diaspora internationale en Belgique, France, Canada et Etats-Unis, composee surtout de refugies des conflits recents et d'emigres economiques. Mbuji-Mayi, capitale du Kasai-Oriental, est le principal centre demographique luba-kasai avec plusieurs millions d'habitants."
+    },
+    "demography": {
+      "totalPopulation": 7500000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue — Tshiluba (lua) : 6,3 millions de locuteurs natifs (1991) ; projection 2025 avec croissance demographique. Columbia Academic Commons — Luba-Kasai Working Bibliography. CIA World Factbook — RDC. Estimation 2025 : environ 7,5 millions en incluant toutes les branches Luba-Kasai.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 7500000,
+          "note": "Provinces du Kasai-Central (Kananga), Kasai-Oriental (Mbuji-Mayi, Kabinda), Kasai et Sankuru — principale aire de peuplement ; diaspora interne dans le Haut-Katanga"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Luba-Kasai language. https://en.wikipedia.org/wiki/Luba-Kasai_language",
+      "SIL Ethnologue — Luba-Kasai (lua). https://www.ethnologue.com/language/lua/",
+      "Minority Rights Group — Kasaians of Luba origin. https://minorityrights.org/communities/kasaians-of-luba-origin/",
+      "Columbia Academic Commons — Luba-Kasai: A Working Bibliography. https://academiccommons.columbia.edu/doi/10.7916/q2kx-9m66/download",
+      "101 Last Tribes — Luba people. http://www.101lasttribes.com/tribes/luba.html",
+      "Encyclopaedia Britannica — Luba. https://www.britannica.com/topic/Luba-people",
+      "IJREHC — Luba People and Politeness in their Everyday Speeches. https://ijrehc.com/uploads2024/ijrehc05_55.pdf"
+    ]
+  }
+}

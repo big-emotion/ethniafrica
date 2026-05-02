@@ -1,0 +1,95 @@
+{
+  "id": "PPL_BAGANDA",
+  "nameMain": "Baganda / Ganda",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["UGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Baganda / Ganda",
+      "selfAppellation": "Baganda (sg. Muganda, pl. Abaganda)",
+      "exonyms": [
+        "Ganda (forme abrégée utilisée en linguistique)",
+        "Buganda tribe (terme colonial administratif britannique)",
+        "Waganda (graphie swahili ancienne)"
+      ],
+      "originOfExonyms": "Le terme Baganda vient de obuganda (solidarité, fraternité), souvent traduit par des fagots de tiges liées ensemble, image de l'unité. Le préfixe Ba- désigne les personnes (les gens du Buganda). En linguistique, Ganda est la racine utilisée pour nommer la langue (Luganda) et les habitants (Baganda). L'ethnonyme Waganda fut employé par les explorateurs arabes et swahilis avant d'être repris par les Européens.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Baganda reste l'appellation standard en ougandais et en anglais. Muganda est la forme singulière courante ; l'adjectif culturel est kiganda. Le terme Ganda est utilisé dans les contextes académiques et linguistiques.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantous des Grands Lacs (Zone J, sous-groupe Ganda-Soga)",
+      "historicalRegion": "Royaume du Buganda, rive nord et nord-ouest du lac Victoria (Ouganda central)",
+      "currentCountries": ["UGA"]
+    },
+    "ethnicities": [
+      "Clans de la Grande Kabylie fondateurs (Nansangwa) : Lugave (Pangolin), Mmamba (Poisson-poumon), Ngeye (Colobe), Njaza (Redunque), Ennyange (Héron garde-boeufs), Fumbe (Civette), Ngonge (Loutre)",
+      "Clan Mmamba Gabunga (Poisson-poumon) : clan de l'amiral (Gabunga), gardien de la flotte royale sur le lac Victoria",
+      "Clan Mbogo (Buffle) : l'un des grands clans guerriers du Buganda",
+      "Clan Lugave (Pangolin) : l'un des sept clans fondateurs, lié aux fonctions rituelles royales",
+      "Clan Ffumbe (Civette) : clan fondateur, associé aux fonctions judiciaires et à la médiation",
+      "Clan Kasimba (Genette) : clan lié aux fonctions artisanales et militaires",
+      "Plus de 52 clans reconnus au total, chacun avec son totem animal ou végétal, son histoire propre et ses responsabilités spécifiques dans le royaume"
+    ],
+    "origins": {
+      "ancientOrigins": "Formation progressive autour des rives nord du lac Victoria (Ennyanja Nnalubaale) à partir de populations bantoues venues du nord-ouest des Grands Lacs, probablement dès le 13e-14e siècle. Le mythe fondateur évoque Kintu, premier homme et premier Kabaka (roi), qui épousa Nnambi, fille du dieu céleste Ggulu. Leurs descendants constituent les Baganda. Selon une tradition historique, Rukidi Mpuga (fondateur du Bunyoro) envoya son jumeau Kato vers le sud-est, qui établit indépendamment le Buganda. Les plus anciens clans (Nansangwa) tracent leur lignée jusqu'à Bakiranze Kivebulaya, souverain présumé de la région vers 400-1300 de notre ère.",
+      "formationPeriod": "Constitution du royaume centralisé du Buganda entre le 14e et le 16e siècle, avec consolidation progressive sous une monarchie héréditaire (Kabaka). Par le 18e siècle, le Buganda avait éclipsé le Bunyoro comme puissance régionale dominante.",
+      "migrationRoutes": [
+        "Mouvements bantu internes depuis le nord-ouest des Grands Lacs vers le bassin lacustre du lac Victoria",
+        "Expansion progressive vers l'est et le sud à partir du noyau central de Buganda (région de Kampala actuelle)",
+        "Intégration de clans et groupes locaux absorbés lors de l'expansion du royaume aux 17e-19e siècles"
+      ],
+      "historicalSettlementZones": [
+        "Rive nord du lac Victoria (districts de Kampala, Mukono, Wakiso)",
+        "Régions centrales du Buganda : Kyaddondo, Kyadondo, Busiro, Mawokota, Buddu",
+        "Territoires conquis de l'ouest : Kooki, Bulingugwe, Sese Islands (archipel du lac Victoria)"
+      ],
+      "unificationsOrDivisions": "Unification progressive de plus de 52 clans sous la monarchie du Kabaka, qui les intègre dans une structure politique centralisée. Le Lukiiko (parlement ou conseil de chefs) constitue l'organe consultatif du roi. L'intégration de chefferies et de groupes voisins par alliance ou conquête a renforcé la cohérence du royaume. Tensions internes lors des guerres de succession (bagoleza) entre prétendants au trône.",
+      "externalInfluences": "Contacts commerciaux avec les marchands swahili et arabes à partir du 18e siècle (commerce de l'ivoire, des esclaves, introduction de l'islam). Visite de John Hanning Speke en 1862 et Henry Morton Stanley en 1875. Arrivée des missionnaires chrétiens en 1876. Protectorat britannique établi en 1894. Alliance stratégique avec la Grande-Bretagne contre le Bunyoro, qui valut aux Baganda des avantages administratifs et territoriaux sous le régime colonial.",
+      "majorHistoricalEvents": "Fondation légendaire du royaume par Kintu (ancêtre mythique) ; expansion conquérante sous Mutesa I (milieu 19e s., capitale de 80 000 habitants) ; guerres de religion (Martyrs de l'Ouganda, 1886) ; protectorat britannique (1894) ; accord de 1900 (Buganda Agreement) fixant le statut du royaume sous tutelle ; restauration du Kabaka par l'indépendance de l'Ouganda (1962) ; abolition des royaumes par Obote (1967) ; restauration du Buganda en 1993."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie héréditaire dirigée par le Kabaka (roi), chef suprême des chefs de clans (Ssaabataka). La cour royale (ekibuga) constitue le centre politique, administratif et symbolique du royaume. Le Lukiiko (parlement traditionnel) regroupe les représentants des clans et les chefs territoriaux nommés par le roi. Un réseau de chefs (Bakungu, Bataka, Abalangira) administre les territoires. Les positions sont attribuées au mérite et à la loyauté, offrant une mobilité sociale aux hommes capables.",
+      "clanOrganization": "Plus de 52 clans (ebika, sing. ekika) reconnus, chacun portant un totem animal ou végétal dont il est interdit de consommer ou de nuire. La structure hiérarchique interne des clans comprend six niveaux : Akasolya (faîte), Amasiga (piliers), Ennyiriri, Emituba, Enzigya (niveau du grand-père paternel), Ennyumba (maison-famille nucléaire). Le Kabaka est le chef suprême des chefs de clan (Abataka).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages (obusika) structurent la parenté, l'héritage, les alliances matrimoniales et la transmission des fonctions. L'exogamie clanique est obligatoire : il est interdit de se marier dans son propre clan. Les enfants appartiennent au clan paternel. Les veuves peuvent être héritées par le frère aîné du défunt. La nomination des enfants est codifiée selon le clan, les naissances gémellaires donnant lieu à des noms spécifiques (Wasswa/Babirye pour les aînés, Kato/Nnakato pour les cadets).",
+      "religiousAuthority": "Tradition des lubaale (esprits ou dieux intermédiaires) : Kibuka (dieu de la guerre), Mukasa (dieu du lac Victoria), Musisi (dieu des tremblements de terre), Wamala, Ddungu. Des sanctuaires (emisambwa) gardés par des prêtres spécialisés structurent la vie religieuse traditionnelle. Depuis le 19e siècle, le christianisme (catholicisme et anglicanisme) et l'islam coexistent avec les pratiques traditionnelles ; le recensement de 2002 indiquait 42,7 % de catholiques, 27,4 % d'anglicans, 23 % de musulmans."
+    },
+    "languages": {
+      "mainLanguage": "Luganda (Oluganda)",
+      "isoCodes": ["lug"],
+      "dialects": [
+        "Kibuga (langue de la cour royale, registre soutenu de Kampala)",
+        "Variétés rurales des différentes régions du Buganda (dialectes des îles Sese, de Buddu, de Mawokota)",
+        "Lusoga (langue soeur, lexicale à 82-86 %, parlée en Busoga à l'est du Buganda)"
+      ],
+      "vehicularRole": "Langue majeure de communication en Ouganda central et dans les zones urbaines (Kampala, Jinja, Mbale, Mbarara). Seconde langue véhiculaire de l'Ouganda après l'anglais, devançant le swahili dans une grande partie du pays. Langue d'enseignement dans les écoles primaires du Buganda. Plus de 5,6 millions de locuteurs natifs et 5,4 millions de locuteurs secondaires selon Ethnologue (2024)."
+    },
+    "culture": {
+      "majorRites": "Okwalula abaana : cérémonie d'intégration du nouveau-né dans le clan paternel par présentation du cordon ombilical. Rites du mariage (Embaga) très codifiés : Okukyala (première visite des parents), Okwanjula (cérémonie d'introduction avec la remise de la dot omutwalo), Akasiki (fête des célibataires), Embaga (réception de mariage), Okugenda mu kisenge (lune de miel de six jours). Rites funéraires (Okubika, annonce du décès ; veillée autour d'un feu okukuma olumbe ; préparation du corps okuzinga ; Okwabya Olumbe, fin du deuil). Okuzina abalongo : rituel des jumeaux incluant chants, noms spéciaux et invoations aux lubaale. Circoncision pratiquée dans les familles musulmanes.",
+      "symbols": "Le barkcloth (lubugo, tissu d'écorce du mutuba Ficus natalensis) est l'emblème matériel le plus distinctif du Buganda, inscrit au patrimoine culturel immatériel de l'UNESCO en 2005. Les tambours royaux (engoma) sont le symbole du pouvoir du Kabaka. Les totems de clans (animaux et plantes sacrés) structurent l'identité. Le Kasubi (tombeaux royaux de Kampala) est inscrit au patrimoine mondial de l'UNESCO. La flotte de pirogues à outrigger sur le lac Victoria symbolisait la puissance navale royale.",
+      "artsAndMusic": "Fabrication du barkcloth (lubugo) : art artisanal majeur inscrit à l'UNESCO, tissu produit par battage de l'écorce du mûrier figuier mutuba. Harpe royale (ennanga) et flûte (endere) accompagnent les chants de cour. Tambour engoma, omulondo et autres percussions structurent les cérémonies royales. Danse royale (amakondere) exécutée lors des fêtes du palais. Riche tradition de chants de louange (ibicuba) dédiés au Kabaka. Tradition orale abondante : mythes de Kintu, légendes des lubaale, proverbes (emigano), devinettes. Pirogues à outrigger pour la flotte royale sur le lac Victoria.",
+      "spiritualities": "Religion traditionnelle kiganda fondée sur le culte des lubaale (esprits-dieux intermédiaires) et des ancêtres. Les bazimu (esprits des morts) influencent les vivants et peuvent causer maladies et malheurs si négligés. Les balubaale (dieux) ont chacun un sanctuaire gardé par un prêtre héréditaire (Omulamuzi). La création du monde est attribuée à Ggulu (dieu céleste), dont la fille Nnambi épousa Kintu. L'Islam s'est implanté dès le milieu du 19e siècle via les commerçants arabes. Le christianisme (anglican et catholique) domine depuis la fin du 19e siècle. Les martyrs de l'Ouganda (1886) ont profondément marqué l'identité catholique baganda."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume du Buganda (Kibuga) fut l'un des États les plus puissants et les plus sophistiqués d'Afrique précoloniale. A son apogée sous Mutesa I (1856-1884), il comptait une capitale de 80 000 habitants, un réseau de routes et de ponts, une flotte de guerre sur le lac Victoria commandée par un amiral (Gabunga), un système fiscal structuré et une armée permanente. Le Buganda est aujourd'hui l'un des cinq royaumes reconnus par la constitution ougandaise de 1995.",
+      "relationsWithNeighbors": "Rivalité historique séculaire avec le Bunyoro, puissance dominante jusqu'au 17e siècle que le Buganda finit par éclipser. Alliances avec les royaumes d'Ankole et de Tooro. Commerce de l'ivoire, du sel, du barkcloth et des esclaves avec les marchands swahili et arabes. Collaboration avec la puissance coloniale britannique contre le Bunyoro, qui valut au Buganda des territoires (comtés perdus du Bunyoro) et des privilèges administratifs. Relations complexes avec les peuples nilotiques voisins (Acholi, Langi) impliquant à la fois échanges et conflits.",
+      "conflictsOrAlliances": "Guerres répétées contre le Bunyoro du 17e au 19e siècle, culminant avec la victoire baganda à la bataille de Rwangabi (1886) et la domination sur les comtés du Bunyoro occidental. Alliance stratégique avec le protectorat britannique (1894-1962) : le Buganda Agreement de 1900 garantissait un régime semi-autonome et la propriété foncière des chefs. Guerres de religion entre catholiques, protestants et musulmans (1888-1892). Résistance du Kabaka Mwanga II à la colonisation britannique (1897), menant à son exil aux Seychelles.",
+      "diaspora": "Diaspora baganda significative dans les grandes villes d'Afrique de l'Est (Nairobi, Dar es Salaam) et dans les pays d'immigration d'Europe, d'Amérique du Nord et d'Australie. Migration interne vers Kampala, la capitale ougandaise, où les Baganda représentent la majorité de la population urbaine."
+    },
+    "demography": {
+      "totalPopulation": 7000000,
+      "referenceYear": 2025,
+      "source": "Uganda Bureau of Statistics (UBOS), National Population and Housing Census 2024 : 15,3 % de la population ougandaise (45,9 millions) = environ 7 millions. Estimation Facebook/sources communautaires 2025 : 7 millions. Note : la fiche demographie_globale indiquait 8 499 000 (estimation antérieure).",
+      "distributionByCountry": [{ "country": "UGA", "population": 7000000 }]
+    },
+    "sources": [
+      "Wikipedia EN – Baganda : https://en.wikipedia.org/wiki/Baganda",
+      "Wikipedia EN – Clans of Baganda : https://en.wikipedia.org/wiki/Clans_of_Baganda",
+      "Wikipedia EN – Luganda language : https://en.wikipedia.org/wiki/Luganda",
+      "Wikipedia EN – Buganda kingdom : https://en.wikipedia.org/wiki/Buganda",
+      "Uganda Bureau of Statistics (UBOS) – National Population and Housing Census 2024 : https://www.ubos.org/wp-content/uploads/2025/06/Buganda-Sub-Region-Census-2024-Profile.pdf",
+      "SIL Ethnologue – Luganda (lug) : https://www.ethnologue.com/language/lug/",
+      "Roscoe, John (1911). The Baganda: An Account of Their Native Customs and Beliefs. Macmillan.",
+      "UNESCO – Barkcloth making in Uganda (patrimoine immatériel) : https://ich.unesco.org/en/RL/the-making-and-cultural-practices-of-the-kasubi-tombs-00027"
+    ]
+  }
+}

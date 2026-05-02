@@ -1,0 +1,83 @@
+{
+  "id": "PPL_NAMWANGA",
+  "nameMain": "Namwanga",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB", "TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Namwanga",
+      "selfAppellation": "Winamwanga",
+      "exonyms": ["Nyamwanga", "Chinamwanga", "Mwanga"],
+      "originOfExonyms": "Winamwanga est l'auto-designation avec le prefixe wi- de pluriel. Nyamwanga est la forme utilisee en Tanzanie (prefixe nya-). Chinamwanga designe la langue. Mwanga est le nom abrege utilise en Tanzanie et dans les sources academiques.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Namwanga et Winamwanga sont les appellations courantes en Zambie. Nyamwanga est prefere en Tanzanie. Le terme Mwanga apparait dans les classifications ethnographiques et linguistiques internationales.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Groupe Corridor Bantu, sous-groupe Mbozi, proche des Mambwe, Lungu et Fipa",
+      "historicalRegion": "Province du Muchinga et province du Nord (Zambie) ; region de Songwe (Tanzanie)",
+      "currentCountries": ["ZMB", "TZA"]
+    },
+    "ethnicities": ["Namwanga", "Winamwanga"],
+    "origins": {
+      "ancientOrigins": "Les Namwanga sont consideres comme appartenant au mouvement migratoire bantou venu du bassin du Congo. Selon certaines traditions, ils seraient arrives d'Afrique du Nord-Est vers 900 avant notre ere, conjointement avec les Tonga-Ila du sud de la Zambie, avec qui ils partagent certains patronymes (Siame chez les Namwanga, Sianjunza chez les Tonga).",
+      "formationPeriod": "Formation identitaire affirmee avant la colonisation europeenne. La subdivision entre Namwanga de Tanzanie (sous le roi Mukoma) et Namwanga de Zambie remonte a la partitionnement colonial des frontieres.",
+      "migrationRoutes": [
+        "Bassin du Congo vers le nord-est de la Zambie actuelle",
+        "Diffusion vers la region de Mbeya en Tanzanie",
+        "Branche Iwa (Kafwimbi) vers le district d'Isoka (Zambie)"
+      ],
+      "historicalSettlementZones": [
+        "District de Nakonde, province de Muchinga (Zambie)",
+        "District d'Isoka, province de Muchinga (Zambie)",
+        "District de Momba, region de Songwe (Tanzanie)",
+        "Region de Mbeya (Tanzanie)",
+        "Nord du district de Chitipa (Malawi)"
+      ],
+      "unificationsOrDivisions": "Apres la colonisation, le siege du pouvoir supreme est reste en Tanzanie sous le roi Mukoma. La branche zambienne est dirigee par la reine Nawaitwika (Nakonde) pour la sous-chefferie principale, et par les rois Kafwimbi, Muyombe et Mwenechifungwe dans le district d'Isoka. La chefferie Kafwimbi est nee d'une scission : le frere du roi Nawaitwika vola le tambour royal et s'installa en Zambie, donnant naissance aux Iwa ou Awiwa.",
+      "externalInfluences": "Missions protestantes de l'Eglise libre d'Ecosse (United Church of Zambia) depuis le XIXe siecle, notamment au poste missionnaire de Mwenzo. Influence coloniale britannique en Rhodesie du Nord (Zambie) et allemande puis britannique en Tanganyika (Tanzanie).",
+      "majorHistoricalEvents": "En 1912, Donald Robert Mengo Siwale (Namwanga de Mwenzo, forme a l'Overtoun Institute du Malawi) fonde la premiere association welfare de Rhodesie du Nord, avec le Rev. David Kaunda, Hezekiya Nkonjera Kawosa et Peter Sinkala. Cet acte marque une des premieres formes d'organisation politique africaine en Zambie coloniale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme patrilineaire hierarchise avec un roi supreme base en Tanzanie (roi Mukoma). La chefferie zambienne est subordonnee a la couronne tanzanienne. Le roi nomme les chefs pour le cote zambien. Organisation en royaumes et chefferies distinctes (Nawaitwika, Kafwimbi, Muyombe, Mwenechifungwe).",
+      "clanOrganization": "Clans patrilineaires. Les noms de famille sont genrees : les noms masculins commencent par Si- (ex. : Sikombe, Siyame, Simwanza), les noms feminins par Na- (ex. : Nakaponda, Nakamba, Nakawala). Le clan royal masculin porte le nom Sikombe, feminin Nakaponda.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Transmission du patrimoine, des titres et des noms par la ligne paternelle (patriliniearite). L'heritage et la succession a la chefferie suivent l'ordre des males par age.",
+      "religiousAuthority": "Majorite chretienne : Eglise unie de Zambie (UCZ, anciennement Eglise libre d'Ecosse), Eglise catholique, Eglise methodiste africaine, Temoins de Jehovah, Adventistes du Septieme Jour."
+    },
+    "languages": {
+      "mainLanguage": "Chinamwanga (Nyamwanga)",
+      "isoCodes": ["mwn"],
+      "dialects": ["Chinamwanga de Zambie", "Nyamwanga de Tanzanie"],
+      "vehicularRole": "Le chinamwanga est la langue maternelle du groupe. Le swahili est vehiculaire en Tanzanie, le bemba et l'anglais en Zambie. La langue est similaire au mambwe parle par les Mambwe de Mbala et Mpulungu, et au lungu des regions d'Isoka."
+    },
+    "culture": {
+      "majorRites": "Ceremonies traditionnelles : Vikamkanimba, Ng'ondo, Chambo Chalutanga, Mulasa. Coutumes de mariage : le pretendant presente l'insalamu (argent ou perles) pour declarer son interet, puis envoie un intermediaire (kateya wa mpango) aupres des parents pour negocier la dot (betail ou argent). La grossesse premaritale entraine le versement de dommages-interets en plus de la dot.",
+      "symbols": "Le tambour royal (instrument de pouvoir) occupe une place centrale dans la symbolique politique : la legende de la scission Kafwimbi est directement liee au vol du tambour royal.",
+      "artsAndMusic": "Traditions musicales autour du tambour. Cuisine caracteristique : le nshima (bouillie de mais epaisse) accompagne de kumbi ou pupwe (legume visqueux comme le gombo), prepare avec du bicarbonate de soude ou des cendres de charbon, melange a des haricots.",
+      "spiritualities": "Majorite chretienne (UCZ, catholiques, methodistes, adventistes, Temoins de Jehovah). Persistance de certaines pratiques de religion traditionnelle africaine en marge des pratiques chretiennes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume Namwanga avec siege en Tanzanie (roi Mukoma). Chefferies en Zambie : Nawaitwika (Nakonde), Kafwimbi (Isoka), Muyombe, Mwenechifungwe. Un autre chef de la dynastie Mukoma s'est installe au Malawi (chef Kameme Siame).",
+      "relationsWithNeighbors": "Relations etroites avec les Mambwe et les Lungu (groupes linguistiquement proches). Liens historiques avec les Tonga-Ila. Interactions avec les Fipa et les Nyiha dans la region de Mbeya.",
+      "conflictsOrAlliances": "La scission entre la lignee principale (Mukoma) et la lignee Kafwimbi constitue le principal evenement d'instabilite interne. Relations complexes avec les administrations coloniales britannique et allemande.",
+      "diaspora": "Presence en Zambie, Tanzanie et dans le nord du Malawi. La frontiere coloniale a divise le groupe en deux communautes nationales distinctes mais partageant la meme autorite royale supreme en Tanzanie."
+    },
+    "demography": {
+      "totalPopulation": 502000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 217 000 en Zambie + 285 000 en Tanzanie",
+      "distributionByCountry": [
+        { "country": "ZMB", "population": 217000 },
+        { "country": "TZA", "population": 285000 }
+      ]
+    },
+    "sources": [
+      "Mwanga people – Wikipedia EN (https://en.wikipedia.org/wiki/Mwanga_people)",
+      "Mwanga language – Wikipedia EN, ISO 639-3: mwn (https://en.wikipedia.org/wiki/Mwanga_language)",
+      "Namwanga people – Chalo Chatu, Zambia encyclopedia (https://chalochatu.org/Namwanga_people)",
+      "History of the Namwanga people of Nakonde – ICUTVZM (https://icutvzm.com/articles/history-of-the-namwanga-people-of-nakonde)",
+      "Nyamwanga in Zambia – Joshua Project, population 217 000 (https://joshuaproject.net/people_groups/13901/ZA)",
+      "Nyamwanga language resources – Joshua Project (https://joshuaproject.net/languages/mwn)",
+      "Nyamwanga – Glottolog 5.3, code nyam1275 (https://glottolog.org/resource/languoid/id/nyam1275)"
+    ]
+  }
+}

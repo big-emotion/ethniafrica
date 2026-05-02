@@ -1,0 +1,28 @@
+# Managed by ferry-init. Re-run `npx -p @big-emotion/ferry ferry-init` to update.
+# Required secrets: FERRY_JIRA_BASE_URL, FERRY_JIRA_EMAIL, FERRY_JIRA_API_TOKEN,
+#                   ANTHROPIC_API_KEY, FERRY_ITER_TRANSITION_ID
+# Required variables: FERRY_AUDIT_ISSUE (GitHub Issue number for the audit log)
+# Optional variables: FERRY_REVIEW_MODEL (default: claude-sonnet-4-6)
+
+name: Ferry — Review
+
+on:
+  repository_dispatch:
+    types: [ferry-review]
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+  checks: read
+
+# Concurrency is managed by the reusable workflow. Adding a block here would deadlock.
+
+jobs:
+  review:
+    uses: big-emotion/ferry/.github/workflows/review.yml@v0.5.0
+    with:
+      ticket_key: ${{ github.event.client_payload.ticket_key }}
+      event_id: ${{ github.event.client_payload.event_id }}
+      payload: ${{ toJson(github.event.client_payload) }}
+    secrets: inherit

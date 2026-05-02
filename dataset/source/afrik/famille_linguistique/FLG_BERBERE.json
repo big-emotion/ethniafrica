@@ -1,0 +1,45 @@
+{
+  "id": "FLG_BERBERE",
+  "nameFr": "Berbère / Amazighe",
+  "nameEn": "Berber / Amazigh",
+  "content": {
+    "decolonialHeader": {
+      "selfAppellation": "Berber / Amazigh",
+      "contemporaryUsage": " - Terme \"Amazigh/Imazighen\" officialisé dans les constitutions marocaine (2011, article 5) et algérienne (2016, article 4).",
+      "historicalAppellations": "Berber / Amazigh"
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "- Afrique du Nord (Tamazgha) et zone sahélo-saharienne.",
+      "numberOfLanguages": 25,
+      "totalSpeakers": 35000000
+    },
+    "associatedPeoples": [
+      {
+        "name": "Imazighen du Nord (Kabyles, Rifains, Chleuhs)",
+        "peopleId": "PPL_AMAZIGH_MACRO"
+      },
+      {
+        "name": "Touaregs (Kel Tamasheq)",
+        "peopleId": "PPL_TUAREG"
+      },
+      {
+        "name": "Zenaga (Mauritanie)",
+        "peopleId": "PPL_ZENAGA"
+      }
+    ],
+    "linguisticCharacteristics": {},
+    "historyAndOrigins": {},
+    "distribution": {
+      "totalSpeakers": 35000000,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "[Chaker] ([1995]) – *Textes en linguistique berbère*. [CNRS Éditions]",
+      "[Camps] ([1987]) – *Les Berbères : mémoire et identité*. [Errance]",
+      "[Basset] ([1952]) – *La langue berbère*. [Oxford University Press]",
+      "[Galand] ([2010]) – *Regards sur le berbère*. [Bouchène]",
+      "[UNESCO] ([2011]) – *Atlas des langues en danger dans le monde*. [UNESCO]"
+    ]
+  }
+}

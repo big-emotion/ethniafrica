@@ -1,0 +1,108 @@
+{
+  "id": "PPL_LAGWAN",
+  "nameMain": "Lagwan",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["CMR", "TCD", "NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Lagwan",
+      "selfAppellation": "Kotoko (nom ethnique adopt par les locuteurs lagwan)",
+      "exonyms": [
+        "Logone",
+        "Kotoko-Logone",
+        "Lagwane",
+        "Lagouane",
+        "Logone-Birni Kotoko"
+      ],
+      "originOfExonyms": "Le terme Logone vient du fleuve Logone sur les rives duquel vit ce peuple, et a ete largement utilise dans les sources coloniales francaises et les classifications linguistiques europeennes. Kotoko est le nom ethnique general adopte par plusieurs groupes riverains dont les Lagwan font partie. Lagwan designe plus specifiquement la langue et le sous-groupe linguistique Kotoko du sud.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les locuteurs lagwan se designent eux-memes ethniquement comme Kotoko. Le terme Lagwan est utilise dans les classifications linguistiques (Glottolog, Ethnologue). Logone-Birni est le nom de la ville principale de leur territoire au Cameroun.",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique biu-mandara, groupe Kotoko (Biu-Mandara B.1, Kotoko du sud)",
+      "historicalRegion": "Fleuve Logone, entre Bongor et Kusseri; Logone-Birni (Cameroun) et Logone-Gana; departement du Logone-et-Chari, region Extreme-Nord du Cameroun",
+      "currentCountries": ["CMR", "TCD", "NGA"]
+    },
+    "ethnicities": [
+      "Kotoko de Logone-Birni (capitale historique du sultanat Lagwan)",
+      "Kotoko de Logone-Gana",
+      "Communautes Lagwan au Tchad (rive est du Logone)",
+      "Groupes Lagwan au Nigeria (zone frontaliere)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Lagwan-Kotoko se considerent descendants de la civilisation Sao, ancienne culture de l'Afrique centrale etablie dans le bassin du lac Tchad et sur les rives du Logone et du Chari. La civilization Sao, connue pour ses villes fortifiees et sa ceramique distinctive, precede l'emergence du royaume Kotoko. Tous les clans Kotoko reconnaient le Sao legendaire comme ancetre commun. Les Lagwan sont etroitement apparentes aux Budumas du lac Tchad.",
+      "formationPeriod": "L'essor du royaume Kotoko (dont les Lagwan font partie) coincide avec le declin de la civilisation Sao au nord du Cameroun, vers le XVe siecle. Logone-Birni emerge comme le royaume client le plus influent du Kotoko, maintenant une certaine autonomie sous l'autorite du Bornou.",
+      "migrationRoutes": [
+        "Descendance in situ depuis la civilization Sao, sans migration fondatrice eloignee documentee",
+        "Extension le long du fleuve Logone entre Bongor (Tchad) et Kusseri (Cameroun-Nigeria)"
+      ],
+      "historicalSettlementZones": [
+        "Rive ouest du fleuve Logone (Cameroun) : ville de Logone-Birni, chef-lieu du sultanat",
+        "Rive est du fleuve Logone (Tchad) : zone de Logone-Gana",
+        "Corridor fluvial du Logone et du Chari jusqu'au lac Tchad",
+        "Zone frontaliere Nigeria-Cameroun pres de Kusseri"
+      ],
+      "unificationsOrDivisions": "Le royaume Kotoko du XVe siecle assimile plusieurs petits royaumes dont Kouseri, Logone-Birni, Makari et Mara. Les Bornou divisent ensuite le territoire en deux moities nord et sud, Logone-Birni dans le sud conservant une certaine autonomie sous un chef paramount, lui-meme organisant son territoire en provinces sous-chefferies.",
+      "externalInfluences": "L'empire du Kanem exerce une influence precoce sur le nord du Kotoko. Les Kotoko sont des vassaux des Kanouri du Bornou pendant des siecles. Le Bornou commence a les islamisr au XVIIIe siecle. Au XIXe siecle, le Kotoko est pleinement integre dans l'Empire du Bornou. La colonisation europeenne divise ensuite le territoire Kotoko entre les puissances coloniales (France, Angleterre, Allemagne). En epoque moderne, des tensions entre Kotoko et Arabes Shuwa ont ete signalees.",
+      "majorHistoricalEvents": "XVe siecle : fondation et expansion du royaume Kotoko, Logone-Birni emerge comme royaume client dominant. XVIIIe-XIXe siecle : islamisation progressive sous l'influence du Bornou. XIXe siecle : integration complete dans l'empire du Bornou. Periode coloniale : partage du territoire Kotoko entre France, Angleterre et Allemagne. Independances : les Lagwan-Kotoko se retrouvent repartis entre le Cameroun, le Tchad et le Nigeria."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Sultanat hereditaire dont la capitale est Logone-Birni. Les dirigeants traditionnels portent le titre de sultan. Le sultan dispose d'une autorite religieuse et politique sur la communaute. Le territoire est organise en provinces sous-chefferies dirigees par des chefs nommes par le sultan.",
+      "clanOrganization": "Organisation clanique, tous les clans reconnaissant le Sao legendaire comme ancetre commun. Les familles sont organisees en groupes parentaux avec des droits et des obligations definis.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent l'acces aux fonctions politiques et religieuses. La succession au sultanat suit des regles dynastiques etablies. La croissance de l'economie commerciale erode progressivement les groupes de parente traditionnels.",
+      "religiousAuthority": "Islam synchretique (folk islam) dominant : l'islam se melange aux pratiques animistes heritees du passe pre-islamique, notamment la croyance aux esprits de l'eau et des rivieres. La mosquee du sultan se trouve au centre des villages. Des amulettes et incantations coexistent avec les pratiques islamiques."
+    },
+    "languages": {
+      "mainLanguage": "Lagwan",
+      "isoCodes": ["kot"],
+      "dialects": [
+        "Lagwan de Logone-Birni (dialecte nord, rive camerounaise)",
+        "Lagwan de Logone-Gana (variete de la rive tchadienne)"
+      ],
+      "vehicularRole": "Le lagwan (ISO 639-3 : kot, Glottolog : lagw1237) est une langue tchadique biu-mandara (Kotoko du sud), parlee dans le nord du Logone-et-Chari (Cameroun) et au sud-ouest du Tchad. Il compte environ 38 500 locuteurs au Cameroun et des locuteurs supplementaires au Tchad et au Nigeria. La population totale mondiale est estimee a environ 10 600 (Lagwan stricto sensu) a 90 000 (ensemble Kotoko). L'arabe tchadien et le francais servent de langues vehiculaires. Un systeme d'ecriture en alphabet latin a ete developpe pour le lagwan mais n'est pas encore en usage courant. La langue est classifiee comme vulnerable (AES status) par le projet Endangered Languages."
+    },
+    "culture": {
+      "majorRites": "Celebrations islamiques (Ramadan, Aïd el-Kebir, Aïd el-Fitr) dans un cadre synchretique mele de pratiques animistes. Rites de mariage impliquant une dot en betail ou en argent. Rites de passage : circoncision. Ceremonies liees a la peche et aux cycles du fleuve, activite centrale de l'identite Lagwan-Kotoko. Propitiation des esprits de l'eau et des rivieres, heritage pre-islamique persistant.",
+      "symbols": "Le fleuve Logone est le symbole central de l'identite lagwan : il structure l'economie, la geographie et la vie rituelle. Les filets papillons utilises pour la peche sont emblematiques des Kotoko riverains. Logone-Birni, ville fortifiee de murs de terre, est le coeur historique et politique.",
+      "artsAndMusic": "Peche traditionnelle avec de grandes pirogues et des filets papillons, technique emblematique transmise de generation en generation. Architecture fortifiee de Logone-Birni, avec ses murs en terre haute entourant la ville. Ceramique traditionnelle. Poesie orale et chants collectifs. Artisanat de pirogue et d'equipement de peche. Des rites musicaux et des danses accompagnent les ceremonies islamiques et les fetes villageoises.",
+      "spiritualities": "Islam populaire synchretique dominant, melant pratiques islamiques sunnites malekites et croyances pre-islamiques en des esprits de l'eau et des rivieres. Les Lagwan-Kotoko recitent des versets coraniques pour des guerisons miraculeuses et utilisent des amulettes contre les mauvais esprits, tout en priant Allah. Les croyances pre-islamiques en des esprits gardiens des cours d'eau survivent dans la pratique populaire. Minorite chretienne estimee a environ 10% de la population camerounaise."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le sultanat de Logone-Birni est la principale structure politique historique des Lagwan. Il fait partie du royaume Kotoko fonde au XVe siecle, qui s'etend sur le nord du Cameroun, du Nigeria et du sud-ouest du Tchad. Logone-Birni emerge comme le royaume client le plus influent du complexe Kotoko. Sous le Bornou, il conserve une autonomie relative sous un chef paramount.",
+      "relationsWithNeighbors": "Vassaux des Kanouri du Bornou pendant des siecles. Relations tributaires avec l'empire du Kanem au nord. Contacts commerciaux et religieux avec les Arabes Shuwa voisins (relations parfois conflictuelles en epoque moderne). Relations avec les autres groupes Kotoko (Mser, Moria, Bara, Makari). Peche commerciale et echanges avec les populations des plaines environnantes.",
+      "conflictsOrAlliances": "Vassalite du Bornou (XVIIIe-XIXe siecles). Partage colonial du territoire Kotoko entre les puissances europeennes. Conflits modernes avec les Arabes Shuwa. Alliance historique avec le Bornou contre les tentatives de centralisation regionale.",
+      "diaspora": "Des locuteurs lagwan resident dans les grandes villes du Cameroun, du Nigeria et du Tchad. Les migrations economiques vers les centres urbains ont augmente depuis l'independance."
+    },
+    "demography": {
+      "totalPopulation": 90000,
+      "referenceYear": 2025,
+      "source": "101 Last Tribes : environ 90 000 Kotoko dans 2 pays (majorite au Cameroun, 22 500). Kotoko-Logone (Lagwan stricto sensu) au Tchad : environ 38 000 (Peoplegroups.org). Lagwan au Cameroun : 8 800 (Joshua Project). Total estime 2025 pour l'ensemble des Kotoko-Lagwan : environ 90 000 personnes.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 38500,
+          "note": "Logone-Birni et villages environnants, departement du Logone-et-Chari, region Extreme-Nord"
+        },
+        {
+          "country": "TCD",
+          "population": 38000,
+          "note": "Rive est du Logone, Logone-Gana, zone frontiere"
+        },
+        {
+          "country": "NGA",
+          "population": 13500,
+          "note": "Zone frontiere pres de Kusseri"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Lagwan language. https://en.wikipedia.org/wiki/Lagwan_language",
+      "Glottolog — Lagwan (lagw1237). https://glottolog.org/resource/languoid/id/lagw1237",
+      "Joshua Project — Kotoko, Lagwan in Cameroon. https://joshuaproject.net/people_groups/print/12816/CM",
+      "Peoplegroups.org — Kotoko-Logone of Chad. https://peoplegroups.org/people_groups/pg011389/",
+      "101 Last Tribes — Kotoko people. https://www.101lasttribes.com/tribes/kotoko.html",
+      "SIL Ethnologue — Lagwan (kot). https://www.ethnologue.com/language/kot",
+      "Wiktionary — ISO 639-3 codes Africa (kot classification). https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa"
+    ]
+  }
+}

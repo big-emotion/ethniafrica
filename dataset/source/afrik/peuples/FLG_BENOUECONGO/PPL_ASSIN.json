@@ -1,0 +1,75 @@
+{
+  "id": "PPL_ASSIN",
+  "nameMain": "Assin",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Assin",
+      "selfAppellation": "Assin",
+      "exonyms": ["Asin", "Asen", "Acanes Pequenos", "Little Akani"],
+      "originOfExonyms": "Asen et Asin sont des variantes orthographiques du meme nom. Les Europeens (Portugais, Neerlandais, Britanniques) designaient ce peuple sous les noms Acanes Pequenos (Petit Akani en portugais) ou Little Akani, en reference a leur role de marchands intermediaires dans le reseau commercial akan de l'interieur.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Assin est utilise dans la denomination officielle des districts administratifs du Ghana: Assin North, Assin South, Assin Central (capital Assin Fosu). Les Assin sont reconnus comme sous-groupe akan distinct au sein du Ghana contemporain.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan",
+      "historicalRegion": "Region centrale du Ghana, bassin du Pra et de l'Ofin",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Assin", "Asen"],
+    "origins": {
+      "ancientOrigins": "Les Assin font partie des cinq premiers grands Etats akan (Akanman Piesie Num): Adanse, Akyem Abuakwa, Assin, Denkyira et Asante. Leurs origines remontent a la region d'Adanse-Amansie, consideree dans la cosmogonie akan comme la patrie ancestrale des peuples de langue twi. Les clans dirigeants des divisions Apemanim et Atandasu retracent leurs origines dans les terres entre la riviere Pra et la chaine du Kusa.",
+      "formationPeriod": "XVIe-XVIIe siecles. Les Assin emergent comme acteur commercial majeur des le XVIe siecle, controlant les routes caravannieres entre les ports de la cote du Ghana et les regions auriferes de l'interieur. Leur royaume connait son apogee au XVIIe siecle avant sa conquete par le Denkyira en 1698.",
+      "migrationRoutes": [
+        "Migrations initiales depuis la zone d'Adanse-Amansie vers le bassin du Pra et de l'Ofin",
+        "Etablissement dans la zone de transition foret-savane du centre du Ghana actuel"
+      ],
+      "historicalSettlementZones": [
+        "Region centrale du Ghana actuel (ancien Gold Coast)",
+        "Assin Manso et Assin Fosu (capitales historiques et modernes)",
+        "Zone entre le Pra et la cote, corridor commercial Cape Coast-Kumase"
+      ],
+      "unificationsOrDivisions": "Le royaume est divise en deux grandes provinces: Assin Apemanim (ou Cocoritee, a l'est de la route Cape Coast-Kumase, avec centre historique a Assin Manso) et Assin Atandasu (ou Crijsakee, a l'ouest, capitale Nyankumasi). Les deux divisions partagent les memes institutions akan mais maintiennent des chefferies distinctes.",
+      "externalInfluences": "Contacts precoces avec les marchands europeens (Portugais, Neerlandais, Britanniques, Danois) des le XVIe siecle via le commerce de l'or et des esclaves. Soumis successivement au Denkyira (1698), puis a l'Asante (1710). Assin Manso devient l'un des plus grands marches d'esclaves de la cote, etape finale avant les forts cotiers d'Anomabo, Cape Coast et Elmina.",
+      "majorHistoricalEvents": "1618: Conflit avec l'Abrem. 1639-1641: Expansion vers le sud (Etsi/Kabes Terra). 1657-1659: Guerre prolongee contre le Twifo. 1676: L'armee assin (estimee a 20 000 hommes) envahit l'Afutu. 1698: Conquete par le Denkyira sous Boa Amponsem. 1699-1701: Le chef assin Agyensam se refugie a Kumase, poussant Osei Tutu a defier le Denkyira. 1706: Intervention fante pour sauver l'Assin. 1710: Conquete par l'Asante. 1868: Alliance avec la Confederation fante sous protection britannique contre l'Asante."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie basee sur la chefferie matrilineaire (chieftaincy). Un conseil de chefs (ahenfo) issus des deux grandes divisions gouverne le royaume. Le pouvoir est represente par le tabouret sacre (dwa). Gouvernance decentralisee en cantons et villages sous autorite de chefs locaux.",
+      "clanOrganization": "Plusieurs clans matrilineaires dirigeants: le clan Asona d'Apemanim, l'Afutuakwa de Fosu, l'Aboabo de Nyankomase (tous originaires du territoire entre le Pra et la chaine du Kusa), et le clan Atandasu qui identifie Nimiaso et Apagya comme sites d'origine.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La descent matrilineaire determine l'heritage, l'acces aux charges politiques et la composition des groupes domestiques. Les chefs heritent de leur position via la lignee maternelle, conformement aux coutumes akan.",
+      "religiousAuthority": "Religion akan traditionnelle centree sur la veneration des ancetres et le systeme des tabourets sacres (dwa) comme supports de l'autorite ancestrale. Le christianisme est aujourd'hui majoritaire dans la region."
+    },
+    "languages": {
+      "mainLanguage": "Twi (dialecte assin)",
+      "isoCodes": ["twi"],
+      "dialects": ["Assin Twi", "Fante"],
+      "vehicularRole": "Les Assin parlent une variante locale du Twi, langue centrale du groupe akan. Le Fante est egalement compris et pratique dans les zones frontieres avec les communautes fante. Le ghaneeen officiel (anglais) est utilise dans l'administration et l'education."
+    },
+    "culture": {
+      "majorRites": "Rites de passage akan: puberte, mariage, funerailles avec veille et ceremonies communautaires. Chieftaincy investiture avec tabouret sacre. Festival de la riviere Donko Nsuo a Assin Manso, lieu de commemoration de la traite transatlantique des esclaves, centre de pelerinage pour la diaspora africaine-americaine.",
+      "symbols": "Tabouret sacre (dwa) comme symbole de l'autorite chiefly. Insignes royaux kan communs: umbrellas cerimoniales, sceptres. Le site d'Assin Manso (Donko Nsuo, riviere des esclaves) est devenu un symbole de memoire et de deuil pour la diaspora africaine.",
+      "artsAndMusic": "Artisanat akan: tissage, poterie, travail du metal. Danse et musique lors des ceremonies de chefferie et des funerailles. Kente traditionnel porte lors des occasions cerimoniales.",
+      "spiritualities": "Religion akan traditionnelle: croyance en Nyame (dieu supreme), veneration des ancetres (nsamanfo), pratiques divinatoires. Le christianisme (protestantisme et catholicisme) est aujourd'hui predominant dans la region Assin."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume d'Assin (XVIe-XVIIe siecles): l'un des cinq premiers Etats akan, connu sous le nom de Akani ou Accanists par les Europeens. Plaque tournante du commerce interieur akan, controlant les routes entre les regions auriferes et les forts cotiers. Deux zones traditionnelles actuelles: Assin Apemanim Traditional Area et Assin Atandasu Traditional Area.",
+      "relationsWithNeighbors": "Role central d'intermediaires commerciaux entre les Etats de l'interieur producteurs d'or et les forts europeens de la cote. Relations complexes avec le Denkyira (soumis 1698), l'Asante (soumis 1710), les Fante (allies periodiques), le Twifo et l'Akyem.",
+      "conflictsOrAlliances": "Soumission au Denkyira (1698), puis a l'Asante (1710). Alliance decisives: le chef assin Agyensam convainc Osei Tutu I d'attaquer le Denkyira, contribuant directement a la bataille de Feyiase (1701) qui fonda la suprematie asante. Assin Manso: etape et principal marche du commerce d'esclaves vers la cote (XVIIe-XIXe siecles).",
+      "diaspora": "La ville d'Assin Manso est un lieu de pelerinage pour les membres de la diaspora africaine cherchant a retrouver leurs origines. Deux depouilles de membres de la diaspora (Crystal de Jamaique et Carson de New York) ont ete reenterrees symboliquement a Assin Manso."
+    },
+    "demography": {
+      "totalPopulation": 350000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Wikipedia EN (135 000 en 1995) et recensement Ghana 2021: Assin North 174 545, Assin South, Assin Central (Fosu Municipal), total districts assin environ 300 000-350 000",
+      "distributionByCountry": [{ "country": "GHA", "population": 350000 }]
+    },
+    "sources": [
+      "Assin People – Wikipedia EN (https://en.wikipedia.org/wiki/Assin_People)",
+      "Kingdom of Assin – Wikipedia EN (https://en.wikipedia.org/wiki/Kingdom_of_Assin)",
+      "Ghana Statistical Service, Population and Housing Census 2021 (https://census2021.statsghana.gov.gh)",
+      "Daaku, Kwame – Oral Traditions of Assin, in The Akan People: A Documentary History, Markus Wiener Publishers",
+      "Modern Ghana – Discover the historic colonial treasures in Assin area, 2021 (https://www.modernghana.com/news/1110502/discover-the-historic-colonial-treasures-in-assin.html)"
+    ]
+  }
+}

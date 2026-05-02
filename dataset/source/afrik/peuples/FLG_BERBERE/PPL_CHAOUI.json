@@ -1,0 +1,97 @@
+{
+  "id": "PPL_CHAOUI",
+  "nameMain": "Chaoui",
+  "languageFamilyId": "FLG_BERBERE",
+  "currentCountries": ["DZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Chaoui",
+      "selfAppellation": "Ishawiyen / Icawiyen",
+      "exonyms": ["Shawiya", "Chaouia", "Shawia", "Shawi"],
+      "originOfExonyms": "Le terme Chaoui ou Chaouia vient de l'arabe et signifie berger ou gardien de troupeaux. Selon le traducteur de Ibn Khaldoun (de Slane), le nom designe les Berberes Zenata et renvoie a la pratique ancestrale du pastoralisme. L'orthographe francaise Chaouia a ete fixee par l'administration coloniale.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Chaoui et Shawiya sont tous deux en usage courant en Algerie et dans la litterature scientifique. Les locuteurs utilisent le terme Icawiyen pour se designer eux-memes.",
+      "linguisticFamily": "FLG_BERBERE",
+      "ethnoLinguisticGroup": "Berbere oriental (branche zenetique / chaouie)",
+      "historicalRegion": "Massif de l'Aures (Awras en tamazight) — Algerie orientale, encompassing the provinces de Batna, Khenchela, Sétif, Oum El Bouaghi, Souk Ahras, Tébessa et Biskra nord",
+      "currentCountries": ["DZA"]
+    },
+    "ethnicities": [
+      "Ifren (clan historique mentionne par Ibn Khaldoun)",
+      "Maghrawa (clan historique, Zenata)",
+      "Djerawa (clan historique, Aures)",
+      "Abdalwadides (branche historique)",
+      "Howara (clan historique, Aures)",
+      "Awarba (clan historique, Zenata)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Chaouis sont les descendants des anciennes populations berberes qui occupaient le massif de l'Aures depuis l'Antiquite. Les historiens modernes les associent aux Numides et aux Getules, ainsi qu'aux Meshwesh, Maesuliens et Mazaxes, dont les Zenata seraient issus. Ils sont les principaux habitants de l'Aures au Moyen Age selon Ibn Khaldoun. Leur ancetre mythique commun est Madghacen, dont le mausolee (2e ou 3e siecle av. J.-C.) se trouve pres de Batna.",
+      "formationPeriod": "Le massif de l'Aures a servi de bastion de resistance aux Berberes contre l'Empire romain, les Vandales, l'Empire byzantin et les Arabes. Les Chaouis ont conserve leur identite et leur langue grace a l'isolement geographique des montagnes. Apres l'independance de l'Algerie (1962), ils se sont maintenus principalement dans la region aureesienne.",
+      "migrationRoutes": [
+        "Restes majoritairement sedentaires dans les Aures",
+        "Transhumance saisonniere entre les hauteurs et les plaines desertiques",
+        "Emigration vers les villes algeriennes (Batna, Constantine, Alger) depuis les annees 1970"
+      ],
+      "historicalSettlementZones": [
+        "Massif des Aures (wilayas de Batna et Khenchela principalement)",
+        "Provinces de Sétif, Souk Ahras, Tébessa, Oum El Bouaghi",
+        "Nord de la wilaya de Biskra",
+        "Quelques villages frontaliers en Tunisie"
+      ],
+      "unificationsOrDivisions": "Les clans chaouis connus par Ibn Khaldoun sont les Ifren, Maghrawa, Djerawa, Abdalwadides, Howara et Awarba. Organisation en villages (tikhsiwin) semi-autonomes regis par des conseils d'anciens (jmaa). Pas de structure politique centralisee historiquement.",
+      "externalInfluences": "Contacts avec l'Empire romain (resistance et parfois integration : saint Augustin, natif de la region, est d'origine berbere). Islamisation progressive aux 7e-8e siecles. Domination ottomane puis colonisation francaise (1830-1962). Les Chaouis ont joue un role important dans la guerre d'independance algerienne.",
+      "majorHistoricalEvents": "Resistance aux Romains depuis le massif des Aures. Role de la Kahina (Dihya), reine berbere des Aures, dans la resistance aux conquetes arabes (vers 703 ap. J.-C.). Participation active a la revolution algerienne (1954-1962). Massacre du Sétif (1945) dans leur region."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de villages en confederation tribale. Chaque village est gere par un conseil (jmaa) regroupant tous les hommes adultes, qui deliberent selon le droit coutumier local. Des sanctions sont imposees a ceux qui violent les decisions collectives. Ce systeme a co-existe avec l'administration civile coloniale puis nationale.",
+      "clanOrganization": "Organisation en clans patrilineaires (icherkan) traces depuis des ancetres masculins communs. Les villages des hautes terres sont occupes principalement l'ete lors de la transhumance.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Societe patrilineaire : la descendance et l'heritage se transmettent par le pere. Les lignages structurent les alliances matrimoniales, les droits pastoraux et les obligations de solidarite (twiza).",
+      "religiousAuthority": "Islam sunnite malekite nominaliste. La connaissance du Coran et des pratiques islamiques orthodoques est limitee dans les zones rurales isolees. Les marabouts locaux (imrabdhen) ont historiquement joue un role spirituel et arbitral. Rites pre-islamiques persistent : culte des saints, croyances en la baraka."
+    },
+    "languages": {
+      "mainLanguage": "Tachawit (Chaouia, Shawiya)",
+      "isoCodes": ["shy"],
+      "dialects": [
+        "dialecte de Batna (Chaouia proprement dit)",
+        "dialecte de Khenchela",
+        "dialecte de Tébessa",
+        "dialecte d'Oum El Bouaghi",
+        "dialecte de Sétif (Chaouia du nord)"
+      ],
+      "vehicularRole": "La tachawit est la langue maternelle des Ishawiyen. L'arabe algerien (darija) est utilise dans les echanges commerciaux et administratifs. Le francais reste present dans l'enseignement superieur et les milieux urbains. Estimations : 1,4 a 3 millions de locuteurs."
+    },
+    "culture": {
+      "majorRites": "Mariage (rahaba) : danse mixte lors des ceremonies nuptiales, hommes et femmes dansant ensemble, pratique distinctive par rapport a d'autres groupes berberes. Circoncision (rite de passage masculin). Yennayer (Nouvel An amazigh, 13 janvier). Fantasia : exhibition traditionnelle d'equitation pendant les festivals culturels de l'Aures. Funerailles islamiques avec prieres collectives.",
+      "symbols": "La reine Kahina / Dihya est le symbole historique par excellence de la resistance chaouie et berbere en general. Les bijoux en argent (bagues, colliers, fibules) a motifs geometriques berberes sont des marqueurs identitaires forts.",
+      "artsAndMusic": "Musique chaouia : style specifique de musique berbere. Chanteurs du 20e siecle : Aissa Djermouni, Ali Khencheli, Massinissa, Ishem Boumaraf, Djamel Sabri, Groupe Iwal, Houria Aichi. Instruments : bendir, gasba (flute), lotar. Peintres et sculpteurs : Cherif Merzouki, Abdelkhader Houamel, Hassane Amraoui, Adel Abdessemed, Mohamed Demagh. Poterie traditionnelle et tapis de laine aux motifs geometriques.",
+      "spiritualities": "Islam sunnite malekite avec persistance de pratiques pre-islamiques. Culte des saints locaux (ziara aux mausolees). Croyances en la baraka (benediction divine), au mauvais oeil (l'ain) et aux djinns. Celebration de Yennayer et d'autres fetes agricoles saisonnieres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le massif de l'Aures etait le coeur de l'ancienne Numidie orientale. Le mausolee de Madghacen (pres de Batna, 2e s. av. J.-C.) est un monument royal berbere majeur. La reine Dihya (Kahina, vers 703) a dirige la resistance des tribus berberes de l'Aures contre les conquetes arabes.",
+      "relationsWithNeighbors": "Echanges commerciaux et pastoraux avec les Kabyles (dialecte proche, relations traditionnelles de troc). Commerce saisonnier avec les populations arabophones des plaines. Relations frontalières avec les Berberes de Tunisie.",
+      "conflictsOrAlliances": "Resistance farouche a toutes les vagues de conquete : Romains, Vandales, Byzantins, Arabes. La kahina Dihya s'opposa aux Omeyyades vers 703. Resistance partielle aux Ottomans. Opposition significative a la colonisation francaise, notamment lors de la revolte de 1871 et pendant la guerre d'independance (1954-1962) : les Chaouis de l'Aures furent parmi les premiers a prendre les armes.",
+      "diaspora": "Emigration economique importante vers Batna, Constantine, Alger et les villes du nord de l'Algerie depuis les annees 1970. Diaspora en France (region lyonnaise, Paris) et dans d'autres pays europeens."
+    },
+    "demography": {
+      "totalPopulation": 2870000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN - Berbers (tableau ethnique : 2 870 000 dont 2 130 000 locuteurs de Shawiya). Ethnologue SIL International (estimation 1,4 a 3 millions de locuteurs). Joshua Project - Berber Shawiya in Algeria. Britannica - Shawiya. Algeria.com - The Chaouis of Algeria.",
+      "distributionByCountry": [
+        {
+          "country": "DZA",
+          "population": 2870000
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Chaoui people : https://en.wikipedia.org/wiki/Chaoui_people",
+      "Wikipedia EN - Shawiya language : https://en.wikipedia.org/wiki/Shawiya_language",
+      "Encyclopaedia Britannica - Shawiya : https://www.britannica.com/topic/Shawiya",
+      "Joshua Project - Berber Shawiya in Algeria : https://joshuaproject.net/people_groups/14899/AG",
+      "Algeria.com - The Chaouis of Algeria : https://www.algeria.com/blog/the-chaouis-of-algeria/",
+      "Ethnologue SIL International - Tachawit (shy) : https://www.ethnologue.com/language/shy/",
+      "Wikipedia EN - Berbers (tableau demographique) : https://en.wikipedia.org/wiki/Berbers"
+    ]
+  }
+}

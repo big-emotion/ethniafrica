@@ -1,0 +1,107 @@
+{
+  "id": "PPL_YOMBE",
+  "nameMain": "Yombe",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["COD", "COG", "AGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Yombe",
+      "selfAppellation": "Bayombe",
+      "exonyms": ["Yombe", "Kiyombe", "Kiombi", "Bayombe"],
+      "originOfExonyms": "Le terme Yombe est a la fois l'ethnyme et le nom de la langue (Kiyombe). Le prefixe Ba- designe les personnes (Bayombe = les gens du Yombe), Ki- designe la langue (Kiyombe). L'ethnyme est utilise en francais, en portugais et dans les langues bantou voisines sans modification majeure. Le terme Kiombi est une variante locale.",
+      "whyProblematic": "Deux groupes distincts portent le nom Yombe : d'une part les Yombe-Kongo (COD, COG, AGO), sous-groupe Kongo de la region du Chiloango et du bas-Congo, qui ont produit les nkisi nkondi et phemba celebres ; d'autre part, un groupe distinct de Zambie dont la langue est une variante du Tumbuka (ciyombe, ISO : yom). Cette fiche concerne les Yombe-Kongo d'Afrique centrale.",
+      "contemporaryUsage": "Le terme Bayombe et Kiyombe sont utilises par les locuteurs. Ils se situent dans la region du Chiloango (Bas-Congo, RDC), du Congo-Brazzaville meridional et du Cabinda (Angola). Leur art, notamment les nkisi nkondi (figures a clous) et les phemba (figures de maternite), est mondialement connu et conserve dans les grands musees internationaux (Metropolitan Museum of Art, British Museum, Musee du quai Branly).",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone H, kongo, groupe H16)",
+      "historicalRegion": "Vallee du Chiloango et region de Mayombe (entre le bas-Congo, le Congo-Brazzaville meridional et le Cabinda angolais)",
+      "currentCountries": ["COD", "COG", "AGO"]
+    },
+    "ethnicities": [
+      "Yombe du bas-Congo (RDC) — groupe principal autour de la vallee du Chiloango et des forets de Mayombe",
+      "Yombe du Congo-Brazzaville — implantes dans le sud du Congo, region du Niari",
+      "Yombe du Cabinda (Angola) — dans l'enclave de Cabinda, au nord de l'Angola",
+      "Mbanza — sous-groupe des chefferies de la region de Mayombe",
+      "Descendance des neuf clans de Mbaangala — tradition orale de neuf filles fondatrices de clan",
+      "Solongo — groupe absorbe par les Yombe suite aux migrations des 17e-18e siecles"
+    ],
+    "origins": {
+      "ancientOrigins": "L'histoire yombe indique une migration vers le sud depuis le Gabon actuel (clan Mbenza) avant le 15e siecle. Des sources orales et ecrites les connectent au royaume historique de Mayomba, florissant au 16e siecle. Les Yombe font partie de la grande famille Kongo, dont le royaume puissant (Kongo) a ete fonde au 14e siecle et s'est etendu sur ce qui est aujourd'hui la RDC, l'Angola et le Congo-Brazzaville. Leur centre ancestral est la region de Mayombe, zone forestiere dense traversee par la riviere Chiloango.",
+      "formationPeriod": "L'identite yombe distincte s'est consolidee entre le 15e et le 17e siecle. Aux 16e-17e siecles, des migrations de peuples Manyanga puis Bwende dans la region ont apporte des elements qui ont ete progressivement assimiles aux communautes yombe. A la fin du 17e siecle, les expansions Kongo et Solongo ont force les Yombe a se retirer des rives du fleuve Congo vers les forets de Mayombe. Le contact europeen est reste limite jusqu'a la fin du 19e siecle, bien que des representations de Portugais dans l'art yombe du 16e siecle attestent d'une influence indirecte.",
+      "migrationRoutes": [
+        "Migration ancestrale depuis le Gabon actuel (clan Mbenza) vers le sud, avant le 15e siecle",
+        "Retrait vers les forets de Mayombe suite aux pressions Kongo et Solongo a la fin du 17e siecle",
+        "Migrations internes des peuples Manyanga et Bwende qui ont fusionne avec les Yombe aux 16e-17e siecles"
+      ],
+      "historicalSettlementZones": [
+        "Region de Mayombe — forets denses du bas-Congo (RDC) entre Matadi et la frontiere du Congo",
+        "Vallee du Chiloango — riviere transfrontaliere entre la RDC et le Cabinda angolais",
+        "Sud du Congo-Brazzaville — region du Niari et frontieres avec la RDC",
+        "Enclave de Cabinda (Angola) — Yombe d'Angola dans l'enclave septentrionale angolaise"
+      ],
+      "unificationsOrDivisions": "Les Yombe reconnurent historiquement un chef supreme, mais la structure actuelle repose sur des chefs de terre localises (mfumu makanda), elus par leurs pairs sur la base de leur richesse et de leurs capacites oratoires. Neuf clans traces a Mbaangala (ou Mbangala), ancetre mythique ayant eu neuf filles fondatrices, constituent le cadre de l'organisation sociale. L'affiliation clanique prime sur l'identite politique.",
+      "externalInfluences": "Contact precoce (indirect) avec les Portugais au 16e siecle, visible dans les representations de figures europeennes dans l'art yombe. Colonisation belge de la RDC (Etat independant du Congo de Leopold II, puis Congo belge, 1908-1960), qui a interdit les pratiques spirituelles traditionnelles et brule les figures nkisi jugees superstitieuses. Evangelisation catholique romaine intense (la majorite des Yombe sont aujourd'hui catholiques). Colonisation francaise du Congo-Brazzaville et colonisation portugaise de l'Angola.",
+      "majorHistoricalEvents": "Au 16e siecle, le royaume de Mayomba atteint son apogee. Aux 16e-17e siecles, les Manyanga et les Bwende migrent et s'assimilent. A la fin du 17e siecle, les pressions Kongo et Solongo forcent le retrait yombe vers les forets. A partir du 15e siecle, les Portugais atteignent la region Kongo et commencent a collecter les figures nkisi comme curiosites (fetishes). Au 19e siecle, les missionnaires chretiens brulent systematiquement les minkisi. La colonisation belge (1908-1960) marginalise les pratiques spirituelles traditionnelles. L'independance de la RDC (1960), du Congo (1960) et de l'Angola (1975) ont reconstitue les communautes yombe dans des etats distincts."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Yombe sont gouvernes par des chefs de terre localises (mfumu makanda), qui exercent aussi une grande autorite religieuse et judiciaire. Le mfumu makanda est elu par ses pairs au sein du clan sur la base de sa richesse et de ses capacites oratoires. Il gere les conflits fonciers et les questions communautaires. Historiquement, un chef supreme etait reconnu, mais ce systeme centralise a ete fragmente par la colonisation.",
+      "clanOrganization": "La societe yombe est matrilineaire : la filiation, les droits fonciers et le statut social passent par la ligne maternelle. Les neuf clans originels sont traces a Mbaangala (ou Mbangala), dont les neuf filles ont fonde chacune un clan. Chaque clan (kanda ou mvila) a ses propres regles sociales et morales. Les individus s'affilient prioritairement a leurs co-claniques. La structure sociale comporte trois niveaux de segmentation du lignage : mvila (clan), dikanda (lignage), mvumu (sous-lignage). Des distinctions historiques existaient entre lignages libres (peres) et lignages asservis.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires (kanda) determinent l'appartenance clanique, les droits sur les terres et les alliances matrimoniales. Le mfumu makanda (chef supreme du clan) est le gardien des droits fonciers collectifs. Les lignages regissent aussi l'acces aux ressources agricoles et forestieres. La maison (nzo) et le groupe de maisons (dikanda) constituent les unites de base de la gestion du patrimoine.",
+      "religiousAuthority": "L'autorite religieuse traditionnelle est exercee par le nganga, specialiste rituel qui active et manipule les minkisi (objets sacres contenant des medicines spirituelles). Le nganga sert d'intermediaire entre les vivants et les esprits. La divinite supreme est Ngoma Bunzi, qui reside dans un domaine inaccessible (Yulu) et est contacte via les Nzambi a Tsi (esprits terrestres) et les Simbi (esprits fluviaux). Les ancetres importants sont honores par des sanctuaires (shrines). La colonisation catholique a superpose une autorite chretienne : aujourd'hui la majorite des Yombe est catholique romaine, avec un syncrétisme persistant."
+    },
+    "languages": {
+      "mainLanguage": "Kiyombe (Yombe)",
+      "isoCodes": ["yom"],
+      "dialects": [
+        "Kiyombe du bas-Congo (RDC) — variante principale parlée dans la vallée du Chiloango",
+        "Kiyombe du Congo-Brazzaville — variante du sud Congo, region de Pointe-Noire et Niari",
+        "Kiyombe du Cabinda — variante angolaise de l'enclave"
+      ],
+      "vehicularRole": "Le kiyombe (ISO 639-3 : yom) est un dialecte de la langue kongo (groupe bantou H16), parle par les Yombe d'Angola, de la RDC et de la Republique du Congo. Les locuteurs parlent aussi le francais (Congo-Brazzaville, RDC) et le portugais (Angola) comme langues officielles, ainsi que le lingala ou le kituba comme langues vehiculaires regionales. La langue kongo, dont le kiyombe est un dialecte, a ete la premiere langue africaine bantoue a avoir une Bible traduite (debut 17e siecle) et a avoir des grammaires europeennes etablies."
+    },
+    "culture": {
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"Les rites d'initiation masculins comprennent une periode de retraite et d'enseignement des valeurs claniques et spirituelles. La circoncision n'est pas systematique (contrairement aux Yao). Les initiations sont liees aux transitions vers les roles adultes de chasseur, agriculteur et guerrier.\", \"femaleInitiation\": \"Les rites feminins celebrent la puberte et preparent les filles au mariage et a la maternite. La figure phemba (figure de maternite) joue un role symbolique central dans la fertilite et le lignage. Des membres de confrederies feminines liees a la fertilite commandaient des phemba a des sculpteurs.\"}, \"funeraryRites\": {\"burial\": \"Les figures funeraires yombe sont renommees pour leur realisme. Les personnages importants (chefs de village ayant des pouvoirs speciaux) etaient honores par des sanctuaires et des figures commemoratives placees sur leurs tombes. Les Yombe croient que les personnes ont trois identites : biologique, sociale et spirituelle ; le statut social determine le type de funerailles recues.\", \"memorialFigures\": \"Des statuettes funeraires realistes sont sculptees pour commémorer les chefs ou ancetres importants. Des pierres iconiques representant une mere et un enfant etaient parfois placees sur les tombes de femmes honorees, acte considere dangereux car il introduit la source de vie dans le monde des morts.\"}, \"ritualRites\": {\"nkisiActivation\": \"Le nganga active les figures nkisi nkondi en y inserant des clous, lames ou pieux lors de chaque contrat, serment ou resolution de litige (mambu). Les clients lechent les lames avant insertion pour sceller la fonction via la salive. Une corde ou tissu noue symbolise un accord lie et engage. La figure devient ainsi un temoignage materiel de tous les pactes conclus. Le ngoma Bunzi est invoque via les esprits Nzambi a Tsi et Simbi.\"}}",
+      "symbols": "Le nkisi nkondi (figure a clous) est le symbole le plus caracteristique de l'art et de la spiritualite yombe-kongo : chaque clou ou lame insere represente un serment, un contrat ou une resolution de conflit. La figure phemba (mere et enfant) symbolise la fertilite, la maternite clanique et le lignage maternel : elle represente aussi la mere ancestrale fondatrice du clan. Le mpu (chapeau rond a motifs kongo) est un insigne de statut et d'identite. Les bracelets nlunga portés par les membres des confrederies feminines signalent leur appartenance. Le miroir ou verre couvrant le ventre du nkisi represente le monde des esprits des morts.",
+      "artsAndMusic": "{\"sculpture\": \"L'art yombe est parmi les plus celebres d'Afrique centrale. Deux types majeurs : 1) Nkisi nkondi (figure a clous) — figures en bois representant des hommes ou des animaux (notamment des chiens, nkisi kozo), couvertes de clous, lames et pieux inseres lors de ceremonies rituelles par le nganga. Les figures portent un abdomen creux (mooyo, centre spirituel) contenant des bilongo (medicines sacrees : pierres, herbes, terre de cimetiere mpemba, griffes, dents de chien, graines). Elles servent a resoudre des litiges, sceller des contrats, guerir des maladies et punir les malfaiteurs. 2) Phemba — figures de maternite representant une mere tenant ou allaitant un enfant. Les phemba symbolisent la fertilite, le lignage maternel et la fondatrice ancestrale du clan (Mbaangala et ses filles). Decores de scarifications, portant le mpu et des bracelets nlunga. Deux categories : meres tenant/berçant un enfant, et meres allaitant.\", \"masks\": \"Masques cerimonials en bois utilises lors des initiations et celebrations communautaires.\", \"musicalInstruments\": \"Ngoma (tambour), cloches en metal (sonnees pour invoquer le nkisi), instruments de percussion lors des ceremonies.\", \"crafts\": \"Poterie feminine (jarres et recipients domestiques). Tissage masculin (nattes, paniers). Forge et fonte metallique (objets ceremonials et domestiques). Les hommes sont adeptes du tissage, de la sculpture et de la metallurgie; les femmes creent la ceramique.\", \"gastronomy\": \"Agriculture de subsistance : plantains, manioc, mais, haricots, arachides, ignames. Elevage de chevres, porcs, poules. Peche sur le fleuve Congo et ses affluents. La foret de Mayombe fournit des ressources en fruits, plantes medicinales et gibier.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Ngoma Bunzi\", \"attributes\": \"Divinite supreme yombe habitant un domaine inaccessible appele Yulu. Ngoma Bunzi ne peut etre contacte directement par les humains ; il est approche via les esprits intermediaires terrestres (Nzambi a Tsi) et fluviaux (Simbi). Des sanctuaires lui sont dedies dans les villages.\"}, \"intermediateEntities\": [{\"name\": \"Nzambi a Tsi\", \"description\": \"Esprits terrestres intermediaires entre les humains et Ngoma Bunzi. Invoques par le nganga lors des ceremonies nkisi.\"}, {\"name\": \"Simbi\", \"description\": \"Esprits des rivieres et sources, puissances de l'eau qui servent d'intermediaires spirituels et de gardiens.\"}, {\"name\": \"Minkisi (sing. nkisi)\", \"description\": \"Objets sacres (recipients, figures en bois) contenant des medicines spirituelles (bilongo) activees par le nganga. Premiere nkisi apportee par le grand dieu Ne Kongo depuis le ciel. Permettent de contenir et liberer des forces spirituelles avec des consequences positives ou negatives pour la communaute.\"}], \"cosmology\": \"Selon la cosmologie kongo-yombe, les vivants et les morts coexistent dans deux mondes separes par l'eau. Les esprits des morts perent a travers des surfaces reflechissantes (miroir, eau, verre) — d'ou la presence d'un miroir dans le ventre des figures nkisi. Les humains ont trois dimensions : biologique, sociale et spirituelle. Le statut social influence le type de rite funeraire recu.\", \"traditionalReligion\": {\"practices\": \"Le nganga (specialiste rituel) active les minkisi, guerit les malades, scelle les contrats et pourchasse les malfaiteurs. Des sanctuaires aux ancetres chefs sont construits. Les bilongo (medicines : terre de cimetiere mpemba, herbes, griffes, graines) sont essentiels. Les clients lechent les clous/lames pour sceller leurs serments via la salive.\"}, \"christianity\": {\"specificPractices\": \"Catholicisme romain adopte massivement sous la colonisation belge et portugaise. La majorite des Yombe est aujourd'hui catholique romaine. Un syncrétisme persiste entre les croyances kongo traditionnelles et la pratique chretienne.\"}}"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Yombe sont un sous-groupe du grand royaume Kongo (14e-19e siecles), l'un des plus puissants Etats precoloniaux d'Afrique subsaharienne. Le royaume de Mayomba, localise dans la region forestiere du Mayombe, a fleuri au 16e siecle. Les Yombe ont maintenu une autonomie relative au sein de la sphere kongo grace a leur position dans les forets denses de Mayombe. Les chefferies locales (mfumu makanda) ont preserve leur autorite rituelle et politique jusqu'a la colonisation.",
+      "relationsWithNeighbors": "Les Yombe appartiennent a la sphere culturelle kongo et partagent des elements culturels avec les Kongo, Vili, Woyo, Bembe et autres peuples de la region du bas-Congo. Les expansions Kongo et Solongo a la fin du 17e siecle ont force les Yombe a se retirer des rives du fleuve Congo vers les forets de Mayombe. Des contacts commerciaux avec les Portugais depuis le 16e siecle (representes dans l'art yombe) ont introduit des influences europeennes malgre l'eloignement geographique.",
+      "conflictsOrAlliances": "Les Yombe ont maintenu leur independance face aux pressions des puissants royaumes Kongo et Solongo en se retirant dans les forets de Mayombe difficilement penetrables. Durant la colonisation, les pratiques spirituelles yombe (nkisi nkondi) ont ete la cible des missionnaires catholiques qui les brulaient systematiquement comme preuves de sorcellerie. La colonisation belge du Congo (1908-1960) sous Leopold II, connue pour ses atrocites, a profondement affecte toutes les communautes du bas-Congo, y compris les Yombe.",
+      "diaspora": "Des Yombe ont migre vers les grandes villes de la RDC (Kinshasa), du Congo-Brazzaville (Brazzaville, Pointe-Noire) et de l'Angola (Luanda) pour des raisons economiques. La colonisation et les guerres civiles (RDC, Angola) ont provoque des deplacements de population. Les figures nkisi nkondi et phemba des Yombe constituent un patrimoine artistique international present dans les grands musees mondiaux."
+    },
+    "demography": {
+      "totalPopulation": 1000000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (SIL International, 2024) — langue kiyombe (yom). Joshua Project 2024 — Yombe en RDC, Congo et Angola. 101 Last Tribes — profil Yombe. Estimations croisees a partir des donnees de recensements de la RDC, du Congo et de l'Angola, en l'absence de chiffres officiels distincts pour les Yombe.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 600000,
+          "note": "RDC — region de Mayombe (province du Bas-Congo / Kongo Central), vallee du Chiloango"
+        },
+        {
+          "country": "COG",
+          "population": 250000,
+          "note": "Congo-Brazzaville — region meridionale (Niari, Kouilou), frontieres avec la RDC"
+        },
+        {
+          "country": "AGO",
+          "population": 150000,
+          "note": "Angola — enclave de Cabinda, nord de l'Angola"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Yombe maternity figures. https://en.wikipedia.org/wiki/Yombe_maternity_figures",
+      "Smarthistory — Power Figure (Nkisi Nkondi), Kongo peoples. https://smarthistory.org/nkisi-nkondi-kongo-people/",
+      "Metropolitan Museum of Art — Mangaaka Power Figure (Nkisi N'Kondi). https://www.metmuseum.org/art/collection/search/320053",
+      "101 Last Tribes — Yombe people. https://www.101lasttribes.com/tribes/yombe.html",
+      "Joshua Project — Yombe in Congo, Democratic Republic of. https://joshuaproject.net/people_groups/16051/CG",
+      "University of Michigan Museum of Art — Maternity Figure (Phemba). https://umma.umich.edu/objects/maternity-figure-1984-1-257/",
+      "Antique African Art — Phemba, the nurturing mother in Yombe society. https://antiqueafricanart.com/2794-2/",
+      "University of Missouri — Yombe ethnographic profile. https://dice.missouri.edu/assets/docs/niger-congo/Yombe.pdf"
+    ]
+  }
+}

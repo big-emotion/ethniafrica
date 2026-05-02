@@ -1,0 +1,39 @@
+# Nom du peuple
+- Nom principal : Konkomba
+- Auto-appellation : Bikpakpaam
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Région historique : Ghana (Nord-Est), TGO
+- Identifiant peuple : PPL_KONKOMBA
+
+# 1. Ethnies incluses
+- Konkomba du Ghana
+- Konkomba du Togo
+
+# 2. Origines
+- Peuple gur ancien transfrontalier.
+- Parenté culturelle avec Nankana et Frafra.
+
+# 3. Organisation
+- Société lignagère
+- Chefferies locales influentes
+
+# 4. Langue
+- Likpakpaln
+- ISO : nak
+
+# 5. Culture
+- Danses traditionnelles
+- Instruments à corde
+- Rituels familiaux
+
+# 6. Histoire
+- Conflits et alliances historiques avec les Dagomba
+- Rôle dans le Nord-Est du Ghana
+
+# 7. Démographie
+- Population : 2 000 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (nak)
+- Ghana Northern Region Archives

@@ -1,0 +1,87 @@
+{
+  "id": "PPL_AKUAPEM",
+  "nameMain": "Akuapem",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Akuapem",
+      "selfAppellation": "Akuapem",
+      "exonyms": ["Akwapim", "Akwapem", "Akuapim"],
+      "originOfExonyms": "Le nom Akuapem derive du twi Nkuu apem signifiant mille groupes, nom donne par le guerrier akan Nana Ansa Sasraku I d'Akwamu apres que sa force d'invasion eut ete repoussee par la confederation de peuples de la crete.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Akuapem (ou Akwapim) est utilise officiellement dans les denominations administratives du Ghana, notamment dans les municipalites d'Akwapim Nord et Akwapim Sud de la region orientale. Il designe aujourd'hui l'ensemble de la population de la crete, qu'elle soit d'origine guan ou akan.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan (sous-groupe Twi)",
+      "historicalRegion": "Crete de l'Akuapem, Region orientale du Ghana",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Akuapem", "Guan", "Akan"],
+    "origins": {
+      "ancientOrigins": "Les Akuapem sont une confederation multiethnique composee de Guans patrilineaires parlant le volta-comoe, peuples autochtones de la crete, et d'Akan matrilineaires parlant le kwa, notamment des immigrants venus d'Akyem et de Mampong (egalement de Mampong ashanti). Ces groupes coexistaient sur la crete de l'Akuapem avant que le terme ne soit formalise.",
+      "formationPeriod": "La confederation akuapem prend forme au debut du XVIIIe siecle, vers 1730, apres que des guerriers akyem et leurs allies eurent chasse les Akwamu de la region de la crete. La ville d'Akropong devint la capitale et le premier Akuapemhene fut Nana Owusu Akyem (egalement appele Ofori Dua).",
+      "migrationRoutes": [
+        "Immigrants akan venus d'Akyem vers les localites d'Akropong, Pokrom Nsabaa et Amanokurom",
+        "Immigrants akan venus de Mampong (Ashanti Region) s'installant sur la crete"
+      ],
+      "historicalSettlementZones": [
+        "Crete de l'Akuapem, Region orientale du Ghana",
+        "Akropong (capitale)",
+        "Larteh, Abiriw, Dawu, Awukugua, Adukrom, Apirede (blocs guan Kyerepong)"
+      ],
+      "unificationsOrDivisions": "La confederation reunit des blocs guan (Anum, Boso, Larteh, Mamfe, Abotakyi, Mampong, Obosomase, Tutu) et des blocs kyerepong guan (Abiriw, Dawu, Awukugua, Adukrom, Apirede, Abonse-Asesieso) ainsi que les localites akan twi d'Akropong, Pokrom Nsabaa et Amanokurom. La confederation couvre 1 519 km2.",
+      "externalInfluences": "Domination de l'empire Akwamu avant 1730. Arrivee de la Basel Mission en 1835 sous la conduite d'Andreas Riis, transformant Akropong en foyer du christianisme protestant et de l'education missionnaire au Ghana. La mission de Bale donna naissance a l'Eglise presbyterienne du Ghana.",
+      "majorHistoricalEvents": "En 1730, les Akyem et leurs allies defont l'empire Akwamu et etablissent l'Etat akuapem sur les anciennes terres akwamu. En 1835, le missionnaire Andreas Riis s'installe a Akropong. En 1870-1872, le linguiste de la Basel Mission Johann Gottlieb Christaller traduit la Bible complete en twi d'Akuapem a Akropong, faisant du dialecte akuapem la norme litteraire et liturgique du twi pour tout le Ghana. En 1826, bataille de Katamanso contre les Ashanti."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Confederation de chefferies independantes placees sous l'autorite supreme de l'Akuapemhene (chef paramount) resisant a Akropong. Chaque ville ou village conserve son propre chef, les blocs guan etant patrilineaires et les blocs akan matrilineaires. La confederation est l'une des rares de ce type au Ghana.",
+      "clanOrganization": "Organisation duale : les peuples guan (Anum, Boso, Larteh, Mamfe, Abotakyi, Mampong, Obosomase, Tutu et les blocs Kyerepong) suivent une organisation patrilineaire, tandis que les Akan d'Akropong et localites adjacentes suivent une organisation matrilineaire avec des clans (abusua) herites par la mere.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Chez les Akan d'Akuapem, la lignee maternelle (abusua) determine l'heritage, la succession au trone et l'appartenance clanique. Chez les Guan, c'est la ligne paternelle qui prime.",
+      "religiousAuthority": "Avant la christianisation, les pratiques religieuses traditionnelles akan et guan coexistaient, avec veneration des ancetres et des entites spirituelles locales. Depuis la Basel Mission (1835), le christianisme presbyterien est dominant a Akropong et dans les communautes akan de la confederation."
+    },
+    "languages": {
+      "mainLanguage": "Akan (Twi, dialecte akuapem)",
+      "isoCodes": ["aka", "tw"],
+      "dialects": [
+        "Akuapem Twi (dialecte akan standard)",
+        "Kyerepong (Okere, parle a Abiriw, Dawu, Awukugua, Adukrom, Apirede)",
+        "Larteh (Guan)",
+        "Anum-Boso (Guan)"
+      ],
+      "vehicularRole": "Le dialecte akuapem twi est l'un des trois standards litteraires de l'akan au Ghana (avec l'asante et le fante). Il est la premiere variete akan a avoir ete utilisee pour la traduction de la Bible (1870-1872) et a constitue la base de l'orthographe commune akan de 1978. Il est utilise dans les eglises presbyteriennes et dans l'education au Ghana."
+    },
+    "culture": {
+      "majorRites": "Festival Odwira (festival annuel de purete et d'action de grace reunissant les 17 villes de la confederation, celebration de la recolte et purification spirituelle). Funerailles elaborees avec ceremonies de deuil communautaire. Pratiques ancestrales de veneration des esprits fondateurs.",
+      "symbols": "Le tabouret royal (siège sacre symbolisant l'autorite du chef), les regalia de la chefferie, les drapeaux de clan. La crete de l'Akuapem elle-meme constitue un territoire symbolique fort, associe a la resistance contre l'Akwamu.",
+      "artsAndMusic": "Artisanat akan : tissage de kente, sculpture sur bois (tabourets, statues), orfevrerie. Musique percussive ceremonielle, chants d'eglise presbyteriens heriters de la tradition de la Basel Mission. La mission de Bale a contribue a developper une tradition d'imprimerie et d'edition en twi akuapem.",
+      "spiritualities": "Animisme traditionnel akan (veneration des ancetres, croyance aux obosom, esprits de la nature et des rivieres). Depuis 1835, le christianisme presbyterien est predominant, issu de la Basel Mission. La presence de l'Eglise presbyterienne du Ghana reste forte sur la crete."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Etat akuapem (confederation), l'un des rares etats confederaux du Ghana. Capital a Akropong. Cree apres 1730 sur les terres prises a l'empire Akwamu. L'Akuapemhene est le chef paramount de la confederation.",
+      "relationsWithNeighbors": "Allies des Akyem pour chasser les Akwamu en 1730. Relations complexes avec les Asante : resistances repetees contre les tentatives d'expansion ashanti. Alliance avec d'autres etats akan contre Asante. Relations commerciales et culturelles avec Accra (Ga) et les comptoirs cotieres.",
+      "conflictsOrAlliances": "Alliance Akyem-Akuapem contre l'Akwamu (vers 1730), victoire decisive. Bataille de Katamanso (1826) contre les Ashanti, victoire alliee. Resistance aux pressions asante au cours du XVIIIe et XIXe siecle. Accueil de la Basel Mission a partir de 1835, creant un lien fort avec le protestantisme suisse et allemand.",
+      "diaspora": "Presence akuapem significative a Accra et dans d'autres villes du Ghana. La reputation d'Akropong comme centre d'education et de christianisme a attire des convertis et etudiants de toute l'Afrique de l'Ouest au XIXe siecle."
+    },
+    "demography": {
+      "totalPopulation": 860000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Akan-Akwapem : 860 000 au Ghana)",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 860000,
+          "note": "Region orientale, principalement municipalites d'Akwapim Nord et Akwapim Sud"
+        }
+      ]
+    },
+    "sources": [
+      "Akuapem people – Wikipedia EN (https://en.wikipedia.org/wiki/Akuapem_people)",
+      "Joshua Project – Akan-Akwapem in Ghana, 2025 (https://joshuaproject.net/countries/gh)",
+      "Akan language – Wikipedia EN (https://en.wikipedia.org/wiki/Akan_language)",
+      "AkanArchives – Christaller Bible Translation 1870-1872 (https://x.com/AkanArchives/status/1948756016897597836)",
+      "Trip Down Memory Lane – The Akuapem People, 2013 (https://kwekudee-tripdownmemorylane.blogspot.com/2013/09/the-akuapem-people-are-amalgamation-of.html)",
+      "Visit Akuapem – Cultural Heritage (https://visitakuapem.com/heritage)"
+    ]
+  }
+}

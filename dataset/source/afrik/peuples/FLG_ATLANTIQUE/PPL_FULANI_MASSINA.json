@@ -1,0 +1,101 @@
+{
+  "id": "PPL_FULANI_MASSINA",
+  "nameMain": "Fulbe du Massina (Peuls du Massina / Macina)",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["MLI", "CIV", "GHA", "BFA"],
+  "content": {
+    "appellations": {
+      "mainName": "Fulbe du Massina (Peuls du Massina / Macina)",
+      "selfAppellation": "Fulbe Maasina (pluriel), Pullo Maasina (singulier)",
+      "exonyms": [
+        "Peul (terme français, exonyme colonial derive du wolof Pel)",
+        "Fula (forme anglophone)",
+        "Fulani (terme haoussa, largement utilise en anglais)",
+        "Fellata (terme arabe, parfois pejoratif — a eviter)"
+      ],
+      "originOfExonyms": "Peul : derive du wolof Pel, utilise par les colonisateurs français. Fula : anglicisation du terme mandingue. Fulani : forme haoussa devenue courante au Nigeria et dans le monde anglophone. Fellata : terme arabe (Soudan, Tchad) designant les Peuls installes sur les routes du pelerinage de La Mecque, associe a des stereotypes negatifs.",
+      "whyProblematic": "Fellata est considere comme pejoratif, associe a des stereotypes de migrants indesirables (etrangers nomades). Les exonymes Peul et Fula sont des classifications externes ne reflétant pas l'auto-identification Fulbe. Massina ou Macina designe specifiquement les Fulbe du delta interieur du Niger, les distinguant des autres Fulbe.",
+      "contemporaryUsage": "Fulbe Maasina est prefere dans les contextes academiques et communautaires pour ce sous-groupe. Peul du Massina ou Peul du Macina restent largement utilises en français. Massina Fulani est l'usage anglais. Macina designe aussi bien la region geographique que le groupe ethnique specifique.",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "ethnoLinguisticGroup": "Atlantique Nord (groupe Fula-Wolof)",
+      "historicalRegion": "Delta interieur du Niger (Massina / Macina), Mali central, regions de Mopti et Segou",
+      "currentCountries": ["MLI", "CIV", "GHA", "BFA"]
+    },
+    "ethnicities": [
+      "Fulbe Maasina (Peuls sedentarises du Massina) — groupe dominant, agriculteurs et eleveurs du delta interieur",
+      "Fulbe Jelgooji (Peuls des savanes) — pasteurs semi-nomades eleveurs de bovins, entre Mali, Burkina et Niger",
+      "Fulbe Sebbe (Peuls blancs) — groupe de pasteurs nomades du Massina",
+      "Fulbe Torobe (Peuls lettrés) — classe clericale islamique, erudits, fondateurs de l'empire du Massina",
+      "Fulbe Rimaaybe (anciens captifs integres) — descendants d'esclaves affranchis, agriculteurs",
+      "Fulbe Wuro (Peuls des villages) — sedentaires, agriculteurs et pecheurs du delta"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Fulbe du Massina descendent de groupes fulbe originaires du Fouta Toro (vallee du Senegal) qui ont migre vers le delta interieur du Niger a partir de la fin du XIVe siecle. Leur presence dans la region du Massina est attestee avant le XVIe siecle. Ils s'y sont installes comme eleveurs et ont progressivement domine le delta interieur du Niger.",
+      "formationPeriod": "La distinction des Fulbe du Massina comme sous-groupe specifique emerge entre le XIVe et le XVIe siecle avec leur installation dans le delta interieur du Niger. Le groupe prend une identite politique propre avec la creation de la Diina en 1818 sous Sekou Amadou. L'empire theocratique du Macina (1818-1862) constitue l'apogee de leur structuration politique.",
+      "migrationRoutes": [
+        "Depuis le Fouta Toro (Senegal/Mauritanie) vers le Mali central, fin XIVe-debut XVe siecle",
+        "Progression le long du fleuve Niger jusqu'au delta interieur (Mopti, Djenné, Ségou)",
+        "Expansion vers le nord du Massina sous l'Empire de la Diina (1818-1862) jusqu'a Tombouctou"
+      ],
+      "historicalSettlementZones": [
+        "Delta interieur du Niger — zone de crue saisonniere entre Mopti, Ténenkou et Youwarou",
+        "Region de Djenné — centre commercial et religieux",
+        "Region de Mopti — carrefour commercial du Mali central",
+        "Nord de la region de Ségou — extension meridionale",
+        "Zone de Tombouctou — sous autorite de l'Empire du Macina"
+      ],
+      "unificationsOrDivisions": "L'Empire du Macina (Diina, 1818-1862) fonde par Sekou Amadou du clan Barry (Qadiriyya) a unifie les Fulbe du Massina sous une theocracie islamique rigoureuse. Sa chute en 1862 face a l'Empire toucouleur d'El Hadj Oumar Tall a mis fin a cette unite politique. Les Fulbe Maasina sont restes presents dans la region apres la colonisation française.",
+      "externalInfluences": "Influence decisive de l'islam : l'Empire du Macina est une theocracie islamique appliquant la charia malekite. Contacts avec l'Empire bambara de Ségou (conflits). Influence du jihad de Sokoto d'Usman dan Fodio (modele inspire Sekou Amadou). Colonisation française (fin XIXe-debut XXe siecle). Presence bozo (pecheurs) et bambara (agriculteurs) dans le delta avec lesquels les Fulbe ont des relations de complementarite et de tension.",
+      "majorHistoricalEvents": "Installation dans le delta interieur du Niger (XIVe-XVe s.). Jihad de Sekou Amadou et fondation de la Diina (1818). Conquete de Djenné (1819). Construction de la nouvelle capitale Hamdallaye. Mort de Sekou Amadou (1844). Succession par Amadou Sekou (1845-1852) puis Ahmadou Ahmadou (1852-1862). Chute de l'empire sous El Hadj Oumar Tall (1862). Colonisation française (fin XIXe siecle)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "L'Empire du Macina etait une theocracie (Diina, 'la religion'). Sekou Amadou a divise le territoire en cinq regions dirigees chacune par un amiru (gouverneur). Le village etait dirige par un Jooro (si Fulbe noble), un Jom Saare (si Fulbe rimaaybe), un amiru daaka (si Bozo), ou un amiru saare (pour les autres. Plusieurs villages formaient un canton, plusieurs cantons une province (leydi). A Hamdallaye, un conseil de quarante chefs religieux et militaires sous l'autorite de Sekou Amadou formait le gouvernement central.",
+      "clanOrganization": "Organisation clanique patrilineaire structuree en groupes nobles (Torobe — clercs lettrés, fondateurs de la Diina), pasteurs libres (Sebbe, Jelgooji), agriculteurs (Wuro), et anciens captifs integres (Rimaaybe). Les clans Dicko (Satigué Ardos) controlaient la region avant la Diina. Le clan Barry (Sekou Amadou) a pris le leadership politique avec la revolution islamique.",
+      "ageClassSystems": "Les classes d'age encadrent les activites pastorales et agricoles. Les festivals de transhumance annuels (Yaral et Degal) dans le delta interieur datent de la periode de la Diina et structurent encore le calendrier pastoral contemporain.",
+      "roleOfLineages": "Les lignages determinent les droits d'acces aux paturages (geres par les Jooro, 'cadastres vivants') et aux terres agricoles. La hierarchie entre Torobe (lettrés), pasteurs libres et Rimaaybe (ex-captifs) definit le statut social. La rotation des charges religieuses et militaires etait controlee par les lignages fondateurs de la Diina.",
+      "religiousAuthority": "Theocracie islamique rigoureuse sous l'empire. Les Torobe (erudits islamiques) constituaient la classe dirigeante. Application stricte de la charia malekite. Influence de la confrerie Qadiriyya (Sekou Amadou etait membre). L'enseignement coranique etait central et developpe dans tout l'empire. Aujourd'hui : islam sunnite fortement ancre, ecoles coraniques nombreuses."
+    },
+    "languages": {
+      "mainLanguage": "Fulfulde (variante Maasina / Massinakoore)",
+      "isoCodes": ["ffm"],
+      "dialects": [
+        "Fulfulde Maasina (ffm) — dialecte principal du Massina, Mali central",
+        "Fulfulde Jelgoore — dialecte des pasteurs nomades (frontiere Mali/Burkina/Niger)",
+        "Variations regionales : Mopti, Djenné, Ségou"
+      ],
+      "vehicularRole": "Langue de commerce dans le delta interieur du Niger. Langue liturgique pour l'enseignement coranique. Utilisee dans les ecoles coraniques comme langue d'instruction. Lingua franca inter-ethnique dans la region du Massina (avec Bozo, Bambara, Dogon, Songhai)."
+    },
+    "culture": {
+      "majorRites": "Ceremonies islamiques centrales : Ramadan, Aid el-Fitr, Aid el-Adha, Mawlid (naissance du Prophete). Festivals pastoraux : Yaral (festival annuel de transhumance a l'entree dans le delta) et Degal (retour des troupeaux), institu es par l'Empire du Macina et classes au patrimoine culturel immatériel. Ceremonies de naissance et de mariage suivant les prescriptions islamiques malekites. Rites funeraires islamiques (inhumation rapide, priere collective).",
+      "symbols": "Le betail bovin est le symbole premier de richesse et de statut social. La mosquee et la calligraphie arabe symbolisent l'identite islamique profonde. Hamdallaye (capitale de la Diina, dont le nom signifie 'Louange a Dieu') reste un symbole fort de l'apogee politique. Les Jooro (gestionnaires des paturages) sont le symbole de l'ordre social et economique du delta.",
+      "artsAndMusic": "Poesie pastorale en fulfulde : tradition des chants de louange du betail (baldiri) et de la nature du delta. Instruments : Hoddu (luth), Riti (violon monocorde), flutes en bois ou bambou, tambours. Griots (Awlube) transmettent les genealogies et chants epiques. Architecture de terre (maisons rondes a murs en banco et toits de chaume). Artisanat : calebasses gravees par les femmes, tissage de couvertures (khassa), travail du cuir.",
+      "spiritualities": "Islam sunnite malekite fortement ancre, heritage de la theocracie de la Diina. L'identite des Fulbe Maasina est intimement liee a l'islam depuis le XIVe siecle et renforcee par la revolution de Sekou Amadou. Confreries soufies (Qadiriyya, Tijaniyya) influentes. Pratiques syncretiques residuelles liees au pastoralisme (rituels de protection des troupeaux). Culte de saints locaux (marabouts)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Empire theocratique du Macina (Diina, 1818-1862) fonde par Sekou Amadou du clan Barry. Premier grand Etat islamique independant d'Afrique subsaharienne au XIXe siecle. Capitale : Hamdallaye. Division en cinq provinces. Precede par l'autorite des Satigué Ardos (chefs claniques Dicko). Sucede par l'Empire toucouleur d'El Hadj Oumar Tall.",
+      "relationsWithNeighbors": "Conflits avec le Royaume bambara de Ségou (1818 : premier jihad). Conquete de Djenné (1819). Relations tendues avec les Bambara, Soninke, Bwa et Dogon (non-musulmans reduits en servitude). Voisinage avec les Bozo (pecheurs) et les Songhai geres dans un systeme de complementarite economique. Rapports complexes avec l'etat theocratique de Tombouctou (cheikh al-Bakkay).",
+      "conflictsOrAlliances": "Jihad fondateur de Sekou Amadou (1818) contre les Ardos allies du fama de Ségou. Conquete et remodelisation de Djenné. Resistance des Royaumes bambara de Segou et Kaarta. Chute de l'empire face a El Hadj Oumar Tall (Empire toucouleur, 1862). Integration subsequente dans la colonie française du Haut-Senegal-Niger (fin XIXe siecle).",
+      "diaspora": "Presence de Fulbe Maasina au-dela du Mali : nord de la Cote d'Ivoire, regions nord et centrale du Ghana, Burkina Faso (Sahel, Est). Migration saisonniere des eleveurs vers les zones de paturage du Sahel. Communautes urbaines a Bamako, Mopti, Segou. La tradition de l'enseignement coranique itinerant a diffuse l'influence religieuse et culturelle des Torobe du Massina dans toute l'Afrique de l'Ouest."
+    },
+    "demography": {
+      "totalPopulation": 2000000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur Ethnologue (ffm : Fulfulde Maasina), Joshua Project (Fulani Maasina dans plusieurs pays : Mali, Cote d'Ivoire, Ghana, Burkina Faso), recensements maliens et projections AFRIK. Le chiffre inclut les locuteurs du fulfulde maasina et les Fulbe sedentarises du delta interieur du Niger.",
+      "distributionByCountry": [
+        { "country": "MLI", "population": 1600000 },
+        { "country": "CIV", "population": 200000 },
+        { "country": "GHA", "population": 120000 },
+        { "country": "BFA", "population": 80000 }
+      ]
+    },
+    "sources": [
+      "Ba, Amadou Hampâté & Daget, Jacques — L'Empire peul du Macina (1818-1853). IFAN/Mouton, 1962.",
+      "Wikipedia FR — Empire du Macina. https://fr.wikipedia.org/wiki/Empire_peul_du_Macina",
+      "Wikipedia EN — Fula people (Fulbe Massina section). https://en.wikipedia.org/wiki/Fula_people",
+      "Joshua Project — Fulani, Maasina in Mali. https://joshuaproject.net/people_groups/11773/ml",
+      "SIL Ethnologue — Fulfulde, Maasina (ffm). https://www.ethnologue.com/language/ffm/",
+      "Seydou, Christiane — La poesie pastorale peule. Karthala, 1977.",
+      "Ba, Amadou Hampâté — Aspects de la civilisation africaine. Presence Africaine, 1972."
+    ]
+  }
+}

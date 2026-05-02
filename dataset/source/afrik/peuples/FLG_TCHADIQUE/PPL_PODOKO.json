@@ -1,0 +1,103 @@
+{
+  "id": "PPL_PODOKO",
+  "nameMain": "Podoko",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Podoko",
+      "selfAppellation": "Podokwa / Parekwa (les noms que les locuteurs utilisent pour se designer eux-memes)",
+      "exonyms": [
+        "Podokwo (forme preferee par Lembezat 1952, Boulet et al 1984, Barreteau 1984)",
+        "Podogo (orthographe de la carte ethnique de Lembezat 1950)",
+        "Parkwa (denomination SIL/Ethnologue, du mot parekwa — donne aussi le nom de la langue)",
+        "Gwadi Parekwa / Padakwa / Padogo / Padoko / Padokwa / Paduko / Pawdawkwa (autres noms alternatifs documentes)",
+        "Kudala (autre appellation documentee par SIL)"
+      ],
+      "originOfExonyms": "L'etymologie du nom Podokwa est inconnue selon toutes les sources disponibles (Lembezat 1952, Muller-Kosack 1999). Muller-Kosack (1999) propose que la terminaison 'kwa' se refere a la pierre ou au rocher (kwa = pierre/rocher en mafa ; kwire = pierre/rocher en dughwede), le nom designant ainsi les 'gens des pierres' ou 'gens des montagnes'. Le nom administratif francais 'Podoko' a ete adopte dans les publications officielles (Hallaire 1991). Les traditions orales des Dughwede et des Guduf (massifs de Gwoza, Nigeria) evoquent que les 'Padakwa' vecurent autrefois sur leur territoire — lien historique qui n'a pas encore ete pleinement etudie.",
+      "whyProblematic": "Le nom Podoko/Podokwa designe a la fois un peuple et sa langue (Parkwa, ISO pbi), ce qui cree une confusion dans les sources. La grande variete des orthographes europeennes (Podogo, Podokwo, Parekwa, Parkwa) reflete les difficultes des transcriptions coloniales.",
+      "contemporaryUsage": "Podoko est l'appellation administrative officielle au Cameroun. Les linguistes utilisent Parkwa ou Parekwa pour designer la langue (ISO 639-3 : pbi). Les habitants se designent comme Podokwa ou Parekwa. Le chieftancy d'Oudjila (l'une des quatre sections principales) est connu dans la region de Mora.",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique Biu-Mandara (branche A, sous-groupe A.4 — Mandara Proper, sous-groupe Podoko)",
+      "historicalRegion": "Massif nord-occidental de Mora, region du Mandara septentrional (Extreme-Nord du Cameroun)",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Mukulehe (Moukoulehe) : quatre clans principaux, douze lignages dont quatre venus de Waza (inselberg situe a 60 km au nord de Mora) ; le lignage Skoula (Skula) est le plus important, venu de l'ouest (territoire matakam selon Lembezat 1952)",
+      "Oudjila (Ujila) : clan de douze lignages, dont certains venus de Mada, d'autres de Uldeme, d'autres encore de Waza",
+      "Tala Dabara : troisieme section principale (Lembezat 1950)",
+      "Tala Sale : quatrieme section principale (Lembezat 1950)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Podokwa sont des montagnards autochtones du massif du Mandara septentrional, dans la zone de Mora (Extreme-Nord Cameroun). Les clans sont d'origines diverses : une partie vient du nord (inselberg de Waza, 60 km au nord de Mora), d'autres du territoire matakam (ouest), d'autres encore de Mada et d'Uldeme. Les traditions orales des Dughwede et des Guduf (massifs de Gwoza, Nigeria voisin) affirment que les Padakwa vecurent autrefois sur leur territoire avant de migrer vers les massifs de Mora — lien qui reste a etudier (Muller-Kosack 1999, R. Lukas 1973). En raison de leur installation dans la grotte de Grea et dans les massifs rocheux du Mandara lors de leurs migrations vers le sud, les Podokwa partagerent les lieux de memoire avec les peuples Mafa et Mada voisins.",
+      "formationPeriod": "L'identite podokwa distincte s'est consolidee dans les massifs de Mora au cours des derniers siecles. Lembezat (1939-1952), chef de subdivision de Mora, fournit la premiere description ethnographique detaillee. Les quatre sections (Mukulehe, Oudjila, Tala Dabara, Tala Sale) se sont regroupees sur le plateau de 600-700 m d'altitude a l'ouest de Mora. La chefferie d'Oudjilla (fondee il y a environ 200 ans selon les sources toponomiques) est caracterisee par la multiplicite des epouses du chef.",
+      "migrationRoutes": [
+        "Migration depuis le nord (inselberg de Waza, 60 km au nord de Mora) pour les quatre lignages Mukulehe venus de Waza",
+        "Migration depuis le territoire matakam (ouest) pour le lignage Skoula (Skula), le plus important du clan Mukulehe",
+        "Migration depuis les regions de Mada et Uldeme pour une partie du clan Oudjila",
+        "Liens historiques possible avec les Gwoza Hills (Nigeria) selon les traditions des Dughwede et Guduf"
+      ],
+      "historicalSettlementZones": [
+        "Massif Podokwa, plateau de 600-700 m d'altitude, a l'ouest et au sud-ouest de Mora",
+        "Canton de Gouvaka (Mora commune, departement Mayo-Sava, region Extreme-Nord)",
+        "Canton de Godigong (Mora commune, departement Mayo-Sava)",
+        "Canton d'Oudjila (Mora commune, departement Mayo-Sava)",
+        "Trois cantons administratifs : Podoko-Nord, Podoko-Centre, Podoko-Sud (arrondissement Mora)"
+      ],
+      "unificationsOrDivisions": "Les Podokwa sont organises en quatre clans (Mukulehe, Oudjila, Tala Dabara, Tala Sale) avec des territoires de lignage distincts. Ces sections sont regroupees dans trois cantons administratifs (Podoko-Nord, Podoko-Centre, Podoko-Sud). Des pratiques architecturales et domestiques distinctes par rapport aux peuples voisins (Muktele, Mura) servent a marquer les frontieres ethniques : les recherches de Cambridge Archaeological Journal (2018) montrent que les Podokwo utilisent les pratiques liees aux maisons pour etablir des parametres sociaux differentiateurs.",
+      "externalInfluences": "Pression de l'Etat Wandala (Mandara) depuis les plaines orientales. Jihad peul et expansion de la Confedration de Sokoto (XIXe siecle) : les peuples montagnards du Mandara, dont les Podokwa, furent soumis a des pressions, certains reduits en esclavage. La colonisation franco-allemande reorganisa les structures politiques au debut du XXe siecle. Christianisation progressive (ethnoreligion = religion principale selon les sources contemporaines).",
+      "majorHistoricalEvents": "Occupation du massif de Mora avec sa tradition d'accueil d'inselbergs comme refuges (grotte de Grea utilisee comme lieu de refuge lors des migrations). La chefferie d'Oudjilla (fondee il y a environ 200 ans) est caracterisee par un nombre eleve d'epouses du chef — trait mentionne dans la toponymie culturelle de Mora. Premiere description ethnographique par Lembezat (1939-1952), chef de sub-division Mora. Etude architecturale par Cambridge (2018) demontrant le role des pratiques architecturales podokwa dans la construction de l'identite ethnique."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Podokwa sont organises en quatre sections claniques (Mukulehe, Oudjila, Tala Dabara, Tala Sale), chacune avec ses propres lignages et territoires. Le chef (chieftancy) est l'institution politique centrale : la chefferie d'Oudjilla est notamment connue dans toute la region de Mora. L'organisation politique est segmentaire, les decisions importantes etant prises en consultation avec les chefs de lignage. Les cantons administratifs (Podoko-Nord, Podoko-Centre, Podoko-Sud) sont l'organisation administrative moderne.",
+      "clanOrganization": "La societe podokwa est organisee selon des lignages patrilineaires. Le clan Mukulehe comprend douze lignages, chacun avec son propre territoire de lignage. Le lignage Skoula est le plus important du Mukulehe. Le clan Oudjila comprend egalement douze lignages d'origines diverses (Mada, Uldeme, Waza). L'appartenance clanique determine les droits fonciers, les alliances matrimoniales et les responsabilites rituelles. Les pratiques architecturales (construction des maisons) different selon les clans et sont utilisees pour marquer les distinctions ethniques et les relations matrimoniales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent les droits sur les terres, les responsabilites rituelles et les alliances. Le clan Mukulehe, dont les douze lignages comprennent quatre groupes venus de Waza integres plus tardivement, illustre la construction progressive de l'identite podokwa par integration de populations d'origines diverses. Les lignages Oudjila de Mada, Uldeme et Waza refletent une histoire similaire. La memoire des origines des lignages est transmise oralement.",
+      "religiousAuthority": "L'ethnoreligion (animisme) est la religion principale des Podokwa selon les sources contemporaines (101lasttribes, PeopleGroups.org). Lembezat (1952) a decrit les croyances religieuses du clan Mukulehe en detail. Les pratiques religieuses traditionnelles sont fortement liees a l'identite ethnique : la conversion equivaut en grande partie a une assimilation culturelle. Des rites de sacrifice, de veneration des ancetres et de protection des lieux sont pratiques."
+    },
+    "languages": {
+      "mainLanguage": "Parkwa (Parekwa / Podoko), langue tchadique Biu-Mandara Mandara Proper",
+      "isoCodes": ["pbi"],
+      "dialects": [
+        "Selon Barreteau (1984), le parekwa (podokwa) est un dialecte du wandala-est, apparente au gelvaxdaxa (Glavda) et au wandala (wandala, mura, malgwa)",
+        "Muller-Kosack (1999) suggere une affiliation linguistique reliant les Podokwa aux Dughwede et Guduf des Gwoza Hills (Nigeria)"
+      ],
+      "vehicularRole": "Le parkwa (pbi) est parle par les Podokwa dans les massifs de Mora. Le SIL (1993) parlait de 30 000 locuteurs (jugees comme surestimation ; estimations precedentes : 9 600 a 12 862 selon Boulet, Hallaire). Les estimations recentes (101lasttribes.com) avancent 65 000 locuteurs. Le fulfude (peul) est la langue vehiculaire regionale utilisee dans les marches et les echanges interethniques. Le francais est la langue d'instruction scolaire et la langue officielle du Cameroun. Un dictionnaire Podoko a ete publie (Jarvis, 1992) et est disponible via webonary.org/parkwa ; une application Android contenant plus de 4 900 entrees a ete lancee."
+    },
+    "culture": {
+      "majorRites": "La religion traditionnelle (ethnoreligion) structure les rites podokwa. Les rites d'initiation marquent les passages de l'age adulte. Les ceremonies funebres incluent la mise en terre des defunts dans des peaux de boeuf, des sacrifices et des rites de protection des vivants — pratique documentee pour les peuples du Mandara montagnard en general. Le Maray (festival du taureau) est celebre par les peuples montagnards du Mandara, dont les Podokwa font partie (mentionne dans les sources toponymiques comme fete de convivialite, sacrifice aux pouvoirs rituels et aux divinites, hommage aux ancetres eponymes). Des rites agraires accompagnent les cycles des recoltes sur les terrasses. Des ceremonies de liberation et de purification impliquent des sacrifices. Les rites de mariage et de naissance suivent des procedures precisement codifiees.",
+      "symbols": "Les maisons (pratiques architecturales) sont le principal marqueur de l'identite ethnique podokwa selon les etudes ethnographiques recentes (Cambridge Archaeological Journal, 2018) : les Podokwo utilisent les maisons pour etablir des parametres sociaux, se differencier d'autres groupes (comme les Muktele et les Mura voisins) et reguler les relations matrimoniales. Les terrasses agricoles sur les flancs des massifs sont le symbole du travail ancestral et de la maitrise des montagnes. La grotte de Grea joue un role dans la memoire collective des migrations des peuples du Mandara. Le massif de Mora et ses pierres (kwa = pierre en mafa, composante probable du nom Podokwa) symbolisent l'identite montagnarde.",
+      "artsAndMusic": "Les Podokwa pratiquent la poterie, le tissage, la fabrication d'outils en fer et d'objets domestiques. La litterature orale est riche : des contes (recueillis par Zela et al. 1985), de la poesie orale (Dagwedza et al. 1979) et des recits historiques constituent le patrimoine immatériel. La musique instrumentale inclut des percussions et des instruments a vent utilises lors des ceremonies. La danse (dont le hudok, fete de convivialite des montagnards du Mandara, melant danse, chants d'invocation et de conjuration) fait partie de la vie culturelle. La construction des maisons elle-meme est consideree comme un art : les maisons podokwa different de celles des groupes voisins et servent de marqueur identitaire. L'artisanat (nattes, chapeaux, paniers, cordes, rideaux) produit selon des motifs et couleurs locaux est vendu dans les marches de Mora.",
+      "spiritualities": "La religion principale des Podokwa est l'ethnoreligion (animisme) — profondement enracinee dans leur identite ethnique. La conversion a une autre religion equivaut en grande partie a une assimilation culturelle. Les croyances incluent la veneration des ancetres, des esprits de la terre et des lieux sacres (grottes, sites rupestres). Des sacrifices sont offerts aux ancetres pour obtenir protection et fertilite. Lembezat (1952) a decrit en detail les croyances du clan Mukulehe. Les contacts avec l'islam (via les Peuls et les Wandala des plaines) et le christianisme (missions coloniales) ont introduit des elements de syncretisme religieux dans certaines communautes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Podokwa sont organises en chefferies segmentaires sans Etat centralise. La chefferie d'Oudjilla est la plus connue regionalement — fondee il y a environ 200 ans, elle est caracterisee par la multiplicite des epouses du chef, trait culturel fort dans la region de Mora. Les quatre cantons (Mukulehe, Oudjila, Tala Dabara, Tala Sale) ont chacun leur propre chef de section. Le contexte regional est celui des 'montagnes de Mora', zone de haute densite demographique (plus de 140 habitants au km2) ayant servi de refuge pour les populations chassees des plaines par les Etats peuls et wandala.",
+      "relationsWithNeighbors": "Les Podokwa entretiennent des relations complexes avec les groupes voisins du Mandara : les Muktele et les Mura sont les voisins les plus proches, avec qui ils se differencient par des pratiques architecturales distinctes. Des liens claniques historiques existent avec les Mafa (le lignage Skoula vient du territoire matakam), les Mada et les Uldeme. Des traditions orales des Dughwede et des Guduf (Nigeria) etablissent un lien historique avec les Podokwa. Les relations avec les Peuls des plaines et le Sultanat de Wandala etaient marquees par la mefiance et les conflits periodiques.",
+      "conflictsOrAlliances": "Les peuples montagnards du Mandara, dont les Podokwa, vecurent des XIXe-XXe siecles dans l'ombre de l'esclavage impose par les Etats musulmans voisins (Wandala, emirats peuls). Leur installation en altitude constituait une strategie defensive. La colonisation franco-allemande mit fin aux raids esclavagistes. La migration des Podokwa de Waza (nord) vers les massifs de Mora reflète probablement des pressions historiques exercees par les populations des plaines. Des alliances inter-claniques (Skoula venu du territoire matakam integre dans le Mukulehe) marquent l'histoire des regroupements.",
+      "diaspora": "Les Podokwa vivent essentiellement dans leurs massifs d'origine autour de Mora. Un exode rural progressif dirige les jeunes vers les villes de Mora, Maroua et d'autres centres urbains du Cameroun depuis les annees 1970-1980. Des migrations vers les plaines voisines pour la culture agricole constituent un mouvement saisonnier. La diaspora internationale reste negligeable."
+    },
+    "demography": {
+      "totalPopulation": 65000,
+      "referenceYear": 2025,
+      "source": "101lasttribes.com : 65 000 locuteurs. SIL Ethnologue (1993) : 30 000 'Parkwa'. Hallaire (1991) : 12 862 Podokwa. Boulet et al. (1984) : 9 600 Podokwa. L'estimation de 65 000 (101lasttribes) reflète probablement la croissance demographique depuis les recensements des annees 1980-1990. Zone de forte densite : plus de 140 hab./km2 selon Hallaire & Barral (1967).",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 65000,
+          "note": "Massif Podokwa, cantons Gouvaka, Godigong, Oudjila, arrondissement Mora, departement Mayo-Sava, region Extreme-Nord"
+        }
+      ]
+    },
+    "sources": [
+      "mandaras.info — The Podokwa. https://www.mandaras.info/Podokwa.html",
+      "101lasttribes.com — Podoko people. http://www.101lasttribes.com/tribes/podoko.html",
+      "Wikipedia EN — Parkwa language. https://en.wikipedia.org/wiki/Parkwa_language",
+      "SIL Ethnologue — Parkwa (pbi). https://www.ethnologue.com/language/pbi/",
+      "Lembezat, B. (1952). Les populations paiennes du Nord-Cameroun et de l'Adamaoua. Paris : ORSTOM.",
+      "Barreteau, D. (1984). Classification des langues tchadiques. Paris : ORSTOM.",
+      "Cambridge Archaeological Journal (2018). Beyond Ethnic Boundaries: Architectural Practices and Social Identity in the Mandara Highlands, Cameroon. https://www.cambridge.org/core/journals/cambridge-archaeological-journal/article/beyond-ethnic-boundaries/3FA1B2133D3B97A18E448749F0FB37EF",
+      "Podoko Dictionary Android App — webonary.org/parkwa. https://play.google.com/store/apps/details?id=org.ipsapps.cameroon.pbi.dictionary.parkwa",
+      "Maura, D. (2022). Socio-Cultural Heritage, Identity and Political Affirmation through Toponyms in Far-North Cameroon. SCIRP. https://www.scirp.org/journal/paperinformation?paperid=119428"
+    ]
+  }
+}

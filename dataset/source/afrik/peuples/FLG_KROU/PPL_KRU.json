@@ -1,0 +1,110 @@
+{
+  "id": "PPL_KRU",
+  "nameMain": "Kru",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": ["LBR", "CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Kru",
+      "selfAppellation": "Klao",
+      "exonyms": ["Krao", "Kroo", "Krou", "Kuru", "Krumen (pour les marins)"],
+      "originOfExonyms": "Le terme Kru est une anglicisation du mot klao, nom par lequel ce peuple se designe lui-meme. Les marins kru recrutes sur les navires europeens etaient appeles Krumen, terme dont la ressemblance avec l'anglais crew a entretenu une confusion durable chez les observateurs europeens.",
+      "whyProblematic": "Le terme Kru designe a la fois le groupe specifique Klao et l'ensemble des peuples de la famille linguistique krou (incluant Bete, Grebo, Dida, etc.), ce qui cree une ambiguite persistante dans la litterature. Les 48 sous-sections du groupe en font une entite composite aux frontieres floues.",
+      "contemporaryUsage": "Kru est l'appellation courante en anglais et en francais. Le terme Klao est prefere par les locuteurs natifs. Au Liberia, le groupe represente 7 % de la population et joue un role sociopolitique important.",
+      "linguisticFamily": "FLG_KROU",
+      "ethnoLinguisticGroup": "Krou occidental",
+      "historicalRegion": "Cote du Liberia (de Monrovia a Sassandra, Cote d'Ivoire) — Grain Coast historique",
+      "currentCountries": ["LBR", "CIV"]
+    },
+    "ethnicities": [
+      "Klao (Krao) — groupe cotier central, sud du Liberia, origine du nom Kru",
+      "Jlao Kru — sous-groupe cotier du Liberia",
+      "Settra Kru (Welteh) — ville-mere historique sur la cote liberienne",
+      "Nana Kru — l'une des cinq villes fondatrices cotieres",
+      "King Will's Town — ville fondatrice historique",
+      "Kroo-Bar — l'une des villes fondatrices cotieres",
+      "Little Kroo — premiere ville cotieres historique",
+      "Bete — sous-groupe est, principalement en Cote d'Ivoire",
+      "Grebo — sous-groupe cotier proche de Cape Palmas",
+      "Sapo — sous-groupe de l'interieur liberien",
+      "Bassa — sous-groupe cotier liberien",
+      "Krumen — marins cotiers, nom generique pour les Kru en activite maritime"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kru sont originaires de l'interieur du territoire liberien actuel. Leurs traditions orales, recueillies au milieu du XIXe siecle par James Connelly, rapportent qu'ils descendirent vers la cote depuis un lieu appele Claho, en empruntant la vallee de la Poor River. Ils apprirent la valeur du sel a leur arrivee sur la cote et fonderent la ville de Bassa avant de s'etablir a Little Kroo. Selon Britannica, ils penetrerent la region depuis le nord-est entre le XVe et le XVIIe siecle, sous la pression des royaumes mandingues et des guerres regionales.",
+      "formationPeriod": "La presence kru sur la cote liberienne est documentee depuis le XVIe siecle. Les premiers contacts europeens avec les Kru (alors appeles Krumen) sont attestes des le XVe siecle avec les Portugais sur ce qui etait nomme la Pepper Coast. L'identite klu distincte se consolide au cours des XVIIe-XVIIIe siecles, liee a l'intensification du commerce europeen le long de la cote.",
+      "migrationRoutes": [
+        "Depuis l'interieur du Liberia (region de Claho) vers la cote via la vallee de la Poor River",
+        "Expansion cotiere depuis la cote est du Liberia vers le sud-ouest de la Cote d'Ivoire",
+        "Diasporas maritimes le long de toute la cote ouest-africaine, de Dakar a Douala"
+      ],
+      "historicalSettlementZones": [
+        "Cote sud-est du Liberia, entre Monrovia et Harper (comtes de Sinoe, Grand Kru, Maryland)",
+        "Cote sud-ouest de la Cote d'Ivoire, entre Tabou et San Pedro",
+        "Ports west-africains : Freetown (Sierra Leone), Lagos (Nigeria), Douala (Cameroun)",
+        "Etablissements diasporiques a Liverpool (Royaume-Uni) et dans les Ameriques"
+      ],
+      "unificationsOrDivisions": "Les Kru n'ont jamais constitue un Etat centralise. Ils sont organises en 48 sous-sections independantes au Liberia. Ces groupes maintiennent des liens bases sur une ascendance commune presumee, renforces par des echanges cerimonials et des dons. Chaque village est historiquement une republique autonome sans chef hereditaire central.",
+      "externalInfluences": "Contacts avec les commerçants portugais des le XVe siecle sur la Pepper Coast. Relations commerciales avec les negociants europeens (XVIIe-XIXe s.) dans le cadre de la traite esclavagiste puis du commerce legitime. Influence du mouvement harriste (protestantisme indigene) au debut du XXe siecle. Contacts avec l'administration americo-liberienne depuis 1847, menantaux conflits tels que la revolte kru de 1915.",
+      "majorHistoricalEvents": "En 1856, les Kru et les Grebo resisterent aux efforts des colons du Maryland pour controler leur commerce. La revolte kru de 1915 fut reprimee par des represailles americaines et liberiennes. Pendant les guerres civiles liberiennes (1989-2003), les Kru subirent des deplacements importants. Le president George Weah (elu 2017) est issu du peuple kru, symbolisant leur role dans la vie politique nationale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation acephale et decentralisee : chaque sous-groupe habite des villes autonomes. Le chef de ville (Dako) agit comme porte-parole plutot que dirigeant autocratique. Les anciens selectionnent un chef de village pour un mandat limite de cinq ans maximum, renouvelable selon ses performances. Le pouvoir est base sur les competences, le caractere et les realisations, non sur la lignee. Les Kru resistent culturellement a l'autorite arbitraire. Avec la centralisation gouvernementale liberienne depuis 1920, certaines fonctions traditionnelles ont evolue.",
+      "clanOrganization": "Organisation sociale fondee sur des clans patrilineaires exogames (Dako). Les Grebo appellent cette structure Dakwe. Chaque Dako peut englober plusieurs chefferies liees par le sang ou l'histoire. Les villages se maintiennent en reseau base sur la descendance commune presumee, renforcee par des echanges cerimonials.",
+      "ageClassSystems": "Classes militaires d'age (age grades) associees a certains titres. Ces titres ne sont pas hereditaires mais associes a des clans ou grades militaires specifiques.",
+      "roleOfLineages": "Les lignages patrilineaires (familles etendues) determinent l'appartenance clanique et les alliances. La propriete personnelle etait historiquement detenue en commun par chaque famille. La terre etait communautaire, les droits du cultivateur cessant s'il ne la travaillait plus.",
+      "religiousAuthority": "Les entites spirituelles etaient contactees par une classe de specialistes appeles deya, qui suivaient une formation longue et specialisee. Le deya traite les problemes medicaux et spirituels par des remedes pharmaceutiques et spirituels. Le chef de ville exerce egalement une autorite religieuse : il garde les symboles nationaux et sa maison est un sanctuaire pour les accuses jusqu'a la preuve de culpabilite."
+    },
+    "languages": {
+      "mainLanguage": "Klao (Kru)",
+      "isoCodes": ["klu"],
+      "dialects": [
+        "Klao occidental",
+        "Klao centre-ouest",
+        "Klao central",
+        "Klao oriental"
+      ],
+      "vehicularRole": "Le klao (kru) est parle principalement au Liberia avec quelques locuteurs en Sierra Leone, au Ghana et en Guinee. L'anglais est utilise dans l'education, l'administration et les contextes interethniques au Liberia. Un pidgin anglais a forte influence krou, le Kru English Pidgin ou kreyol, est repandu comme lingua franca au Liberia. La traduction de la Bible en klao fut publiee en 2000 par la missionnaire Nancy Lightfoot."
+    },
+    "culture": {
+      "majorRites": "Circoncision masculine comme rite de passage marque par des ceremonies collectives. Rites funeraires comportant des chants et danses specifiques, avec commemoration aux jours 3, 7 et 40. Ceremonies de reconciliation et de mediation pour la resolution des conflits entre clans. Rite de tatouage frontal : les Kru se tatouaient le front et l'arête du nez a l'encre d'indigo pour affirmer leur statut d'hommes libres et se distinguer des esclaves pendant la traite atlantique. Sacrifices aux esprits territoriaux avant chaque expedition en mer ou travaux agricoles importants.",
+      "symbols": "Le tatouage frontal a l'indigo est le symbole identitaire par excellence des Kru, marque de liberte et resistance a l'esclavage. Les pirogues de haute mer symbolisent la maitrise maritime. Les titres portes par les elders (anneaux de fer aux jambes) marquent le statut social. Les cinq villes fondatrices (Nana Kru, Settra Kru, King Will's Town, Kroo-Bar, Little Kroo) constituent des symboles d'origine collective.",
+      "artsAndMusic": "Musique zouglou : courant musical populaire d'Abidjan ne dans les annees 1990, largement influence par la culture krou (notamment les Wes et les Bete). Musique bolo : style cotier krou melangeant instruments africains et occidentaux, sur lequel des danses de couples similaires aux danses caraibeennes sont executees. Poesie orale et proverbes collectes des les annees 1930 (Sie Tagbwe, Melville Herskovits). Artisanat de pirogue et d'objet maritime. Sculpture sur bois. Le chant et la danse sont lies aux ceremonies initiatiques et funeraires, avec voix responsorial (soliste et choeur).",
+      "spiritualities": "La spiritualite kru est centree sur un dieu createur supreme appele Nyesoa, bon et tout-puissant. Un dieu malefique lui est oppose, symbolisant la dualite du bien et du mal dans l'existence humaine. Des esprits territoriaux (esprits de la foret, des rivieres, de la mer) sont associes a des lieux specifiques. Les gardiens spirituels familiaux sont appeles ku ; les ames des defunts proches restes pres des vivants sont les kwi. Le Harrissisme (mouvement religieux protestant fonde par William Harris en Cote d'Ivoire au debut du XXe siecle) est tres repandu parmi les Kru, cumulant avec les croyances animistes. Le protestantisme baptiste est present depuis le XIXe siecle au Liberia. Le catholicisme touche les Kru francophones de Cote d'Ivoire. Tres peu de Kru sont musulmans."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Kru n'ont jamais forme de royaume centralise. Ils sont organises en confedrations laches de clans autonomes. L'exception est la presence de chefferies reconnues par le gouvernement liberien depuis le XIXe siecle. Certains Kru accederent a des postes d'importance : le president George Weah, d'ascendance kru, fut elu en 2017.",
+      "relationsWithNeighbors": "Relations commerciales et maritimes avec les Grebo de Cape Palmas (groupe linguistiquement et culturellement proche). Relations complexes avec les colons americo-liberiens depuis 1847, marquees par des tensions sur le commerce et l'autorite. Liens avec les Bassa et les Sapo (groupes interieurs allies). Presence dans les ports de toute l'Afrique de l'Ouest cree des relations cosmopolites avec de nombreux groupes ethniques.",
+      "conflictsOrAlliances": "Resistance farouche aux negriers europeens, les Kru etant reputes infatigables dans leur refus de l'esclavage (tatouage comme marqueur de liberte). En 1856, les Kru et Grebo resisterent aux colons du Maryland. La revolte kru de 1915 fut severement reprimee par les forces americo-liberiennes avec appui americain. Pendant les guerres civiles liberiennes (1989-1997 et 1999-2003), les Kru furent affectes par les violences intercommunautaires.",
+      "diaspora": "Diaspora kru presente dans tous les grands ports west-africains depuis le XVIIIe siecle : Freetown (Sierra Leone), Accra (Ghana), Lagos (Nigeria), Douala (Cameroun), et plus loin encore en Jamaique, en Inde, en Malaisie. Une communaute de marins kru s'etablit a Liverpool (Kru Town). A la fin du XXe siecle, plus de Kru vivaient en dehors de leur territoire traditionnel qu'a l'interieur, la plus grande communaute kru se trouvant a Monrovia. La diaspora moderne aux Etats-Unis s'est renforcee suite aux guerres civiles liberiennes."
+    },
+    "demography": {
+      "totalPopulation": 447000,
+      "referenceYear": 2025,
+      "source": "PeopleGroups.org (2025) : 447 000 Kru au Liberia. Liberia comprend 7 % de Kru selon CIA World Factbook. Kru du Liberia selon Ethnologue (SIL). Estimations incluant les Kru de Cote d'Ivoire et diaspora.",
+      "distributionByCountry": [
+        {
+          "country": "LBR",
+          "population": 420000,
+          "note": "Population principale, comtes de Grand Kru, Sinoe, Maryland et Monrovia"
+        },
+        {
+          "country": "CIV",
+          "population": 27000,
+          "note": "Region cotieres du sud-ouest ivoirien, entre Tabou et San Pedro"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kru people. https://en.wikipedia.org/wiki/Kru_people",
+      "Britannica — Kru ethnic group. https://www.britannica.com/topic/Kru",
+      "PeopleGroups.org — Kru of Liberia (PGID: PG013510). https://peoplegroups.org/people_groups/pg013510/",
+      "101 Last Tribes — Kru people. https://www.101lasttribes.com/tribes/kru.html",
+      "SIL Ethnologue — Klao language (klu). https://www.ethnologue.com/language/klu/",
+      "Wikipedia EN — Klao language. https://en.wikipedia.org/wiki/Klao_language",
+      "Wikipedia FR — Krou (peuple). https://fr.wikipedia.org/wiki/Krou_(peuple)",
+      "CIA World Factbook — Liberia. https://www.cia.gov/the-world-factbook/countries/liberia/",
+      "Zogbo, Lynell Marchese — Kru revisited, Kru revealed (LLACAN/CNRS). https://llacan.cnrs.fr/fichiers/nigercongo/fichiers/Zogbo_Kru.pdf"
+    ]
+  }
+}

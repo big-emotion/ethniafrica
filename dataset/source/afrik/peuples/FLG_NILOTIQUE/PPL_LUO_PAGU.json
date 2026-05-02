@@ -1,0 +1,104 @@
+{
+  "id": "PPL_LUO_PAGU",
+  "nameMain": "Luo (Kenya et Tanzanie)",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["KEN", "TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Luo (Kenya et Tanzanie)",
+      "selfAppellation": "Joluo (au pluriel) ou Jaluo (au singulier)",
+      "exonyms": ["Jaluo", "Joramogi", "Nyikwaramogi", "Jonagi", "Onagi"],
+      "originOfExonyms": "Joluo signifie litteralement les gens de Luo. Joramogi ou Nyikwaramogi signifie heritiers de Ramogi, du nom du guerrier legendaire Ramogi Ajwang qui aurait conduit les Luo au Kenya il y a environ 500 ans. Jonagi ou Onagi designe ceux dont six dents inferieures ont ete arrachees, un rite de passage pubertaire distinctif. Le terme Pagu (Paguot) present dans l'identifiant du fichier renvoie a la branche des Luo meridionaux qui constituent le groupe au Kenya et en Tanzanie.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Luo est l'appellation officielle au Kenya. Joluo est couramment utilise dans les discours identitaires. Barack Obama Sr., pere de l'ancien president americain, etait un Luo de la region de Siaya, Nyanza Province. Cette notoriete mondiale a renforce la visibilite internationale du peuple luo.",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique occidental, sous-groupe Luo meridional (Southern Luo, River-Lake Nilotes)",
+      "historicalRegion": "Bassin oriental du lac Victoria (ancienne province de Nyanza, Kenya occidental ; region de Mara, Tanzanie du nord-ouest)",
+      "currentCountries": ["KEN", "TZA"]
+    },
+    "ethnicities": [
+      "Jo-Alego (clan de Siaya, Alego sub-county, region de Kogelo, village ancestral d'Obama Sr.)",
+      "Jo-Ugenya (clan de Siaya, descendants d'Omolo)",
+      "Jo-Gem (clan de Siaya, puissant regroupement clanique de Gem sub-county)",
+      "Jo-Kager (branche de Joka-Omolo, installee a Ukwala et Uranga)",
+      "Jo-Kisumo (clan originel de Kisumu)",
+      "Jo-Karachuonyo (clan du Golfe de Winam)",
+      "Jo-Sakwa (clan de Siaya)",
+      "Jo-Asembo (Siaya, rive du lac Victoria)",
+      "Suba (Bantous assimiles, parlent le dholuo comme premiere langue)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Luo du Kenya et de Tanzanie (Joluo) sont des Nilotiques meridionaux (Southern Luo) dont les ancetres provenaient de la region du Bahr el-Ghazal et d'Equatoria oriental, au Soudan du Sud actuel. Leur migration vers le Kenya et la Tanzanie s'est faite en quatre vagues successives entre environ 1490 et le debut du 20e siecle, traversant l'Ouganda avant de s'installer sur les rives du lac Victoria. Selon la tradition orale, le guerrier chef Ramogi Ajwang les aurait conduits au Kenya il y a environ 500 ans. Ils sont les seuls River-Lake Nilotes a avoir migre et vecu le long du Nil avant de s'installer sur le lac Victoria.",
+      "formationPeriod": "Consolidation progressive de l'identite joluo entre le 15e et le 19e siecle sur les rives du lac Victoria (Nam Lolwe). Quatre vagues migratoires : Joka Jok (vers 1490-1517, installes a Ramogi Hill), Joka Owiny et Joka Omolo (1598-1625), puis un groupe miscellane (Suba, Sakwa, Asembo, Uyoma, Kano). Les Luo de Tanzanie ont traverse le Golfe Winam depuis le nord Nyanza a partir du debut du 17e siecle. En 1947, Jaramogi Oginga Odinga cree le titre de Ker (chef supreme des Luo) lors de la fondation du Luo Union.",
+      "migrationRoutes": [
+        "Bahr el-Ghazal et Equatoria oriental (Soudan du Sud) — point de depart ancestral",
+        "Traversee de l'Ouganda via les regions Acholi et Padhola",
+        "Installation a Ramogi Hill (Siaya, Kenya) — premier etablissement au Kenya",
+        "Expansion vers le sud : traversee du Golfe Winam vers le sud Nyanza (Kenya) et region Mara (Tanzanie)"
+      ],
+      "historicalSettlementZones": [
+        "Ramogi Hill (Alego, Siaya County) — site de la premiere installation au Kenya",
+        "Ancien Nyanza Province (Kenya occidental) : Siaya, Kisumu, Homabay, Migori, Kisii",
+        "Region Mara (nord-ouest de la Tanzanie)",
+        "Rives du lac Victoria (Nam Lolwe) et ses affluents"
+      ],
+      "unificationsOrDivisions": "Les Luo du Kenya etaient organises en 27 tribus (sous-groupes), chacune composee de clans (ororo) et sous-clans. La federation inter-tribale etait ad hoc, en reponse aux crises, guerres et catastrophes naturelles. Le titre de Ker (chef supreme) a ete cree en 1947. Les relations entre sous-tribus etaient parfois conflictuelles (rivalites pour les terres et le betail). Les Suba bantous ont ete largement assimiles culturellement et linguistiquement.",
+      "externalInfluences": "Contacts et conflits avec les Bantous (Luhya, Gusii, Kipsigis, Nandi) lors des migrations. Assimilation culturelle des Suba. Colonisation britannique et traite des esclaves. Programme de bourses Kennedy Airlift (1959-1963) : plus de 800 Kenyans beneficierent, dont Barack Obama Sr., permettant une formation universitaire aux Etats-Unis. Independance du Kenya (1963) et role politique majeur des Luo (Tom Mboya, Oginga Odinga, Raila Odinga).",
+      "majorHistoricalEvents": "Migration fondatrice conduite par Ramogi Ajwang (vers 1490-1517). Installation dans la province de Nyanza (15e-20e siecle). Tom Mboya, militant luo, organise le Kennedy Airlift (1959) et lance Barack Obama Sr. vers Harvard. Independance du Kenya (1963). Assassinat de Tom Mboya (1969) : crise politique majeure. Barack Obama (fils de Barack Obama Sr., Luo de Kogelo) devient le 44e president des Etats-Unis (2009-2017). Les Luo sont le 4e groupe ethnique du Kenya (5 066 966 selon le recensement 2019, soit environ 10,6% de la population)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe patriarcale a gouvernement decentralise. La cellule de base est la famille (ot), dirigee par le pere ou la premiere epouse (mikayi). Plusieurs familles forment un clan (anyuola). Plusieurs clans forment un village (gweng), dirige par un ancien (dodo ou jaduong gweng). Plusieurs villages forment une sous-tribu (piny), dirigee par un chef hereditaire meritocratique (ruoth), couronne par un devin (jabilo). Le ruoth est assiste d'un conseil d'anciens (galamoro mar jodongo), avec un porte-parole. Un commandant militaire (osumba mirwayi) complete la structure. Il n'existe pas de chef unique des Luo.",
+      "clanOrganization": "Vingt-sept tribus composant l'ensemble joluo du Kenya, chacune divisee en clans (ororo) et sous-clans. L'appartenance clanique (anyuola) determine l'identite, les alliances matrimoniales (exogamie clanique) et l'heritage. Parmi les grands regroupements : Jo-Alego, Jo-Gem, Jo-Ugenya, Jo-Kager, Jo-Kisumo, Jo-Karachuonyo, Jo-Sakwa, Jo-Asembo. Le clan de Kogelo (Alego) est celui de Barack Obama Sr.",
+      "ageClassSystems": "Classe d'age des jeunes garcons pratiquant la lutte (dhao kwath ou yii) entre 13 et 18 ans, documentee dans la tradition culturelle luo.",
+      "roleOfLineages": "Le lignage patrilineaire (anyuola) structure l'acces a la terre, l'heritage et les alliances. Le dala (homestead) est l'espace residentiel familial, organise selon une hierarchie spatiale : la premiere epouse (mikayi) occupe la place la plus proche de l'entree, le fils aine herite des terres devant ou a droite de l'entree, le cadet a gauche, le fils cadet reste dans le village paternel (heritage Mondo). La propriete fonciere est transmise par les hommes.",
+      "religiousAuthority": "Le devin jabilo jouait le role d'assistant spirituel et militaire du ruoth. Rituel de chasse des mauvais esprits (nyawawa) la nuit. Ceremonies de conjuration de pluie et guerison. Depuis la colonisation, les eglises chretiennes (catholiques, anglicanes, protestantes) sont dominantes. La Foi Akorino (mouvement prophetique indigene) est presente dans la region."
+    },
+    "languages": {
+      "mainLanguage": "Dholuo (ou Luo)",
+      "isoCodes": ["luo"],
+      "dialects": [
+        "Trans-Yala (dialecte de la region Alego-Ugenya-Gem, Siaya County)",
+        "Dholuo standard (dialecte majoritaire, parle par la plupart des Luo du Kenya et de Tanzanie)"
+      ],
+      "vehicularRole": "Le dholuo (code ISO 639-3 : luo) est parle par environ 5 a 6 millions de personnes au Kenya et environ 1 98 000 en Tanzanie (2010). Mutellement intelligible (a des degres divers) avec les langues des Alur, Acholi et Padhola d'Ouganda. Plus de mots bantous que les autres varietes luo, fruit de l'integration avec les populations bantoues du lac Victoria. Le swahili et l'anglais sont les langues vehiculaires nationales au Kenya. Le dholuo est enseigne dans les ecoles primaires de l'ancienne Province de Nyanza."
+    },
+    "culture": {
+      "majorRites": "Extraction des six dents inferieures (rite de passage pubertaire, pratique a l'origine pour prevenir le tetanos, d'ou le nom Jonagi/Onagi). Mariage en deux etapes : cermonie Ayie (paiement d'argent a la mere de la mariee), puis cermonie d'echange de betail avec le pere. Tero buru et Sigweya : musique funeraire pour honorer le defunt, consoler les endeuilles et veiller la nuit. Lutte traditionnelle (yii ou dhao) pour les jeunes garcons (13-18 ans). Sumo : partage communautaire de la recolte avec les victimes de famine. Ceremonies de conjuration des esprits mauvais (nyawawa) la nuit.",
+      "symbols": "Le lac Victoria (Nam Lolwe) est le symbole central de l'identite et de la subsistance joluo : peche traditionnelle. Ramogi Hill (Alego, Siaya) est le site ancestral fondateur. La nyatiti (lyre a 8 cordes) est l'instrument symbolique par excellence. Barack Obama Sr. (1934-1982), fils de Onyango Obama, originaire de Nyang'oma Kogelo (Siaya), est la personnalite luo la plus connue mondialement comme pere du 44e president americain.",
+      "artsAndMusic": "Nyatiti : lyre a 5 a 8 cordes pincees du Kenya, jouee par les hommes luo en position assise sur un tabouret (orindi ou then). Le joueur utilise un anneau metallique (oduongo) sur le gros orteil droit et des hochets (gara) a la cheville pour creer un rythme constant. La nyatiti etait jouee lors des naissances, mariages et deuils. Orutu : fidule (violon) traditionnel luo. Ohangla : genre musical populaire contemporain d'origine luo, mariant percussions et chant, joue lors des celebrations. Benga : genre de musique populaire kenyane originaire de la communaute luo (guitare electrique, rythmes luo). Chants de travail communal (construction, desherbage, pilage), chants de chasse et de guerre, poesie orale.",
+      "spiritualities": "Croyance traditionnelle en des esprits (juogi) pouvant posseder les vivants et causer maladies et malheurs. Ceremonies de guerison et divination par le jabilo (devin-guerisseur). Conjuration des esprits nocturnes malfaisants (nyawawa). Respect des ancetres et consultation de leurs esprits lors des decisions importantes. Syncrétisme aujourd'hui dominant avec le christianisme (eglises catholiques, anglicanes, protestantes, adventistes). Des mouvements religieux indigenes (Legio Maria, Akorino) melent elements chretiens et traditions luo."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Luo du Kenya n'ont pas developpe de royaume centralise. Leur gouvernement etait decentralise en piny (sous-tribu) diriges par des ruoth. En 1947, le titre de Ker (chef supreme) a ete cree par Jaramogi Oginga Odinga lors de la fondation du Luo Union. Le Ker n'interfere pas dans la politique nationale. Le Ker actuel est Jaduong Odungi Randa, couronne le 22 decembre 2023.",
+      "relationsWithNeighbors": "Conflits et assimilations avec les peuples bantous (Luhya, Gusii, Kipsigis) lors des migrations (15e-18e siecle). Assimilation culturelle et linguistique des Suba (Bantous) qui adoptent le dholuo. Luttes territoriales historiques avec les Nandi et Kipsigis pour les plaines de Nyabondo. Relations economiques avec les Maasai et Kikuyu dans le Kenya colonial et independant. Rivalites politiques post-independance entre Luo et Kikuyu (tension entre Oginga Odinga et Jomo Kenyatta). Rapprochements avec les Luo d'Ouganda (Acholi, Padhola) et du Soudan du Sud (Shilluk, Anuak).",
+      "conflictsOrAlliances": "Raids inter-tribaux pre-coloniaux pour le betail et les terres avec les Bantous et Nilotiques voisins. Alliance puis tension avec la couronne britannique (colonisation, chemin de fer de Mombasa a Kampala). Role majeur dans le mouvement nationaliste kenyan : Tom Mboya (1925-1969) et Jaramogi Oginga Odinga (1911-1994) furent des figures cles de l'independance du Kenya. Tensions politiques post-independance entre la communaute luo et les gouvernements Kikuyu (Kenyatta, puis Kibaki). Violence post-electorale de 2007-2008 avec un impact fort sur les Luo (parti Orange Democratic Movement de Raila Odinga). Raila Odinga, fils de Jaramogi, a ete quatre fois candidat a la presidence.",
+      "diaspora": "Diaspora luo importante dans les villes kenyanes (Nairobi, Kisumu, Mombasa) et en Tanzanie (Dar es Salaam, Mwanza). Emigration internationale via le programme Kennedy Airlift (1959-1963) et les bourses universitaires (plus de 800 Kenyans). Communautes luo en Amerique du Nord (notamment aux Etats-Unis), en Europe et en Australie. Barack Obama Sr. etait l'un des premiers etudiants luo a l'Universite Harvard. La mort de Tom Mboya en 1969 a provoque une fuite des cerveaux luo hors du Kenya."
+    },
+    "demography": {
+      "totalPopulation": 6500000,
+      "referenceYear": 2025,
+      "source": "Recensement kenyan 2019 : 5 066 966 (10,6% de la population kenyane, 4e groupe ethnique). Estimation Luo peoples Wikipedia 2017 : 6,1 millions au Kenya. Tanzanie 2010 : environ 1 980 000 (Luo peoples Wikipedia). Estimation 2025 : 6,5 millions au Kenya et en Tanzanie en tenant compte de la croissance demographique.",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 5500000,
+          "note": "Ancien Nyanza Province (Kenya occidental) : Siaya, Kisumu, Homabay, Migori, Kisii. 4e groupe ethnique du Kenya (recensement 2019 : 5 066 966)."
+        },
+        {
+          "country": "TZA",
+          "population": 1000000,
+          "note": "Region Mara (nord-ouest de la Tanzanie). Estimation basee sur les donnees 2010 (environ 1 980 000) et la croissance demographique."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Luo people (Kenya and Tanzania). https://en.wikipedia.org/wiki/Luo_people_(Kenya_and_Tanzania)",
+      "Wikipedia EN — Luo peoples. https://en.wikipedia.org/wiki/Luo_peoples",
+      "Wikipedia EN — Barack Obama Sr. https://en.wikipedia.org/wiki/Barack_Obama_Sr.",
+      "SIL Ethnologue — Luo language (luo). https://www.ethnologue.com/language/luo/",
+      "YouTube — NYATITI The Queen of the Clan (feat. Ayub Ogada). https://www.youtube.com/watch?v=mAW1JIIufgE",
+      "UNESCO — Patrimoine immateriel (Kenya). https://ich.unesco.org/en/state/kenya-KE",
+      "RSIS International — Population Movements and the Gem Community in Western Kenya. https://rsisinternational.org/journals/ijriss/articles/population-movements-and-the-consolidation-of-authority-in-the-inter-lacustrine-region-of-western-kenya-a-political-transformation-of-gem-community-in-pre-colonial-times/"
+    ]
+  }
+}

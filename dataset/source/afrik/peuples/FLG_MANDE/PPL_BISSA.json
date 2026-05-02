@@ -1,0 +1,96 @@
+{
+  "id": "PPL_BISSA",
+  "nameMain": "Bissa",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["BFA", "GHA", "TGO", "CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Bissa",
+      "selfAppellation": "Bissa ou Bisa (forme utilisee par le peuple pour se designer en langue propre)",
+      "exonyms": [
+        "Busansi (terme utilise par les Mossi)",
+        "Busanga (terme utilise par les Mossi, repris par le Joshua Project)",
+        "Bisan ou Bissanno (pluriel en usage regional)",
+        "Bussawa (terme haoussa)"
+      ],
+      "originOfExonyms": "Busansi et Busanga sont les termes employes par les Mossi voisins pour designer les Bissa. La forme Bissa est l'appellation europeenne et francophone officielle adoptee au Burkina Faso. Bussawa est le terme en langue haoussa.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Bissa est l'appellation officielle au Burkina Faso. Busanga est employe dans la litterature anglophone et par les bases de donnees missionnaires (Joshua Project). Les deux termes sont acceptes et utilises sans connotation negative.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mande oriental (groupe linguistique Bissa, proche du Busa, Boko et Kyenga de l'ancien royaume de Borgu)",
+      "historicalRegion": "Centre-sud du Burkina Faso, vallee de la Volta Blanche en dessous de Tenkodogo ; Province du Boulgou",
+      "currentCountries": ["BFA", "GHA", "TGO", "CIV"]
+    },
+    "ethnicities": [
+      "Bissa (Barka, Lebir, Lere)",
+      "Busa (sous-groupe, nord-ouest Nigeria)",
+      "Boko ou Boo (sous-groupe, nord Benin)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bissa sont un groupe mande qualifie d'intrusif dans la region par l'historien Daniel McFarland, qui les decrit comme des Mande migres et installes le long de la Volta Blanche en dessous de Tenkodogo vers 1300. Leur ancetre fondateur Barso etait un chasseur. Le clan Lingani est considere comme le clan fondateur detenteur du pouvoir politique et mystique.",
+      "formationPeriod": "Vers 1300 de l'ere commune, d'apres les sources historiques (Daniel McFarland, Historical Dictionary of Upper Volta).",
+      "migrationRoutes": [
+        "Migration depuis une region origine mandee (probablement Sahel occidental) vers le centre-sud de l'actuel Burkina Faso vers le XIVe siecle",
+        "Installation dans la vallee de la Volta Blanche au sud de Tenkodogo",
+        "Extension vers le nord-est du Ghana (Busanga) et l'extreme nord du Togo"
+      ],
+      "historicalSettlementZones": [
+        "Province du Boulgou et ville de Garango, Burkina Faso (centre historique)",
+        "Tenkodogo et ses environs, Burkina Faso",
+        "Ghane septentrional (North Kaneshie, Town Council Line, Shukura, Nima a Accra)",
+        "Extreme nord du Togo"
+      ],
+      "unificationsOrDivisions": "Les Bissa sont divises en trois groupes linguistiques principaux : Barka, Lebir et Lere. Chaque groupe est lui-meme subdivise en de nombreux clans portant un nom propre et une appellation (dedaa), aujourd'hui devenue nom de famille au Burkina Faso. Garango est reste independant ; les districts nord-ouest relevaient du royaume mossi de Ouagadougou, les districts nord-est du royaume mossi de Tenkodogo.",
+      "externalInfluences": "Voisinage avec les Mossi qui ont exerce une influence politique sur certains districts bissa. Le fondateur de la lignee royale Nakomse des Mossi, Rialle, etait d'origine Bissa selon les traditions orales. Islam introduit progressivement, majorite de la population pratiquant les religions traditionnelles.",
+      "majorHistoricalEvents": "Installation vers 1300 dans la vallee de la Volta Blanche ; independance partielle de Garango face aux royaumes mossi de Ouagadougou et Tenkodogo ; colonisation francaise de la Haute-Volta (actuel Burkina Faso) au XIXe siecle ; independance du Burkina Faso en 1960."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation clanique decentralisee. Le pouvoir politique et mystique est detenu par le clan Lingani, seul habilite a conferer la couronne apres une preparation mystique au village de Tangare (province du Boulgou). Les Lingani sont traditionnellement des chasseurs.",
+      "clanOrganization": "Plus de cinquante clans identifies, chacun portant un nom (ex. Pagou, Gassuogou, Tangari, Garango, Tunugu, Bussim, Sandugu) et une appellation hereditaire (dedaa) devenue patronyme en usage contemporain (ex. Nombre/Ziginni, Yaalah, Lengani, Bambara, Saare, Guerm, Zeba).",
+      "ageClassSystems": null,
+      "roleOfLineages": "La lignee du clan Lingani detient l'autorite coutumiere supremement. Les decisions dans les villages sont prises par les anciens de clan. La transmission du pouvoir suit des regles de preparation mystique a Tangare.",
+      "religiousAuthority": "Un arbre sacre (figuier ceremoniel) et une lance de chasse ancestrale sont conserves pres de la montagne Tangare, face a la residence de la famille Lingani. Ces objets sacres sont au centre des rites de legitimation du pouvoir."
+    },
+    "languages": {
+      "mainLanguage": "Bissa (bib)",
+      "isoCodes": ["bib"],
+      "dialects": [
+        "Barka (groupe nord)",
+        "Lebir (groupe central)",
+        "Lere (groupe sud)"
+      ],
+      "vehicularRole": "La langue bissa n'est pas vehiculaire hors de la communaute. Le mooré (langue mossi) et le francais sont utilises comme langues de contact au Burkina Faso. La Bible complete a ete traduite en bissa."
+    },
+    "culture": {
+      "majorRites": "Rites de preparation mystique du Lingani pour la prise de pouvoir ou le port de la couronne a Tangare. Pratiques funeraires specifiques : les defunts sont enterres devant les maisons, dans des tombes souterraines en forme de demeure traditionnelle, avec une petite ouverture laterale pour deposer le corps. La tombe accueille plusieurs membres de la famille et est scellée par un vase en argile amovible.",
+      "symbols": "Lance de chasse ancestrale (lignani, symbole du pouvoir du clan Lingani) ; figuier ceremoniel pres de la montagne Tangare ; la cacahuete (arachide) comme aliment et symbole de courtship : un homme fait la cour a une fille en travaillant dans le champ d'arachides de sa mere, et doit lui offrir son propre champ lors du mariage.",
+      "artsAndMusic": null,
+      "spiritualities": "Majorite de la population pratiquant les religions traditionnelles (animisme). Pratiques islamiques importantes, les Bissa etant majoritairement musulmans selon Wikipedia EN. Culte des ancetres et de la terre. Pouvoir mystique du clan Lingani lie a la legitimite politique."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise propre aux Bissa. Garango est reste independant par rapport aux royaumes mossi voisins. Les districts nord-ouest etaient sous la suzerainete du royaume mossi de Ouagadougou, les districts nord-est sous celle du royaume de Tenkodogo.",
+      "relationsWithNeighbors": "Relations ambivalentes avec les Mossi : le fondateur de la lignee royale Nakomse des Mossi etait d'origine Bissa, mais les Bissa furent en partie places sous tutelle des royaumes mossi. Contacts avec les Haoussa (nord Nigeria) expliquant le terme Bussawa. Presence au Ghana (zone Nord Kaneshie) en lien avec les migrations commerciales.",
+      "conflictsOrAlliances": "Alliance politique ancienne avec les royaumes mossi (dependance partielle). Independence maintenue de Garango. Colonisation francaise absorbant le territoire bissa dans la Haute-Volta.",
+      "diaspora": "Communautes bissa au Ghana (Accra : quartiers North Kaneshie, Town Council Line, Shukura, Nima) et en Cote d'Ivoire. Au Nigeria et Benin, les sous-groupes Busa et Boko sont assimiles aux Bissa."
+    },
+    "demography": {
+      "totalPopulation": 1206000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Busanga : Burkina Faso 721 000, Cote d'Ivoire 173 000) ; Wikipedia EN Bissa people (total estime 1,7 million)",
+      "distributionByCountry": [
+        { "country": "BFA", "population": 721000 },
+        { "country": "CIV", "population": 173000 },
+        { "country": "GHA", "population": 280000 },
+        { "country": "TGO", "population": 17000 },
+        { "country": "NGA", "population": 15000 }
+      ]
+    },
+    "sources": [
+      "Bissa people – Wikipedia EN (https://en.wikipedia.org/wiki/Bissa_people)",
+      "Busanga in Burkina Faso – Joshua Project 2025 (https://joshuaproject.net/people_groups/11042/UV)",
+      "Busanga people group in all countries – Joshua Project 2025 (https://joshuaproject.net/people_groups/11042)",
+      "Daniel McFarland, Historical Dictionary of Upper Volta, Metuchen, Scarecrow Press, 1978",
+      "Ethnologue, Bissa [bib] – SIL International (https://www.ethnologue.com/language/bib/)"
+    ]
+  }
+}

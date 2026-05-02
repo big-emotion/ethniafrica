@@ -1,0 +1,38 @@
+# Nom du peuple
+- Nom principal : Susu / Soussou
+- Auto-appellation : Sosoxui / Susu
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Région historique : Guinée côtière, SLE
+- Identifiant : PPL_SUSU
+
+# 1. Ethnies incluses
+- Susu du littoral
+- Sous-groupes ruraux forestiers
+
+# 2. Origines
+- Probable ancien groupe mandé issu de la région du Fouta-Djallon.
+
+# 3. Organisation
+- Lignages matrilinéaires (rare chez les Mandé).
+- Forte présence de chefferies locales.
+
+# 4. Langue
+- Susu
+- ISO : sus
+
+# 5. Culture
+- Musiques côtières.
+- Artisanat du bois et du cuir.
+- Gastronomie (riz-sauce arachide).
+
+# 6. Histoire
+- Conversion précoce à l’islam.
+- Influence forte sur la côte guinéenne.
+
+# 7. Démographie
+- Population : 2 600 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (sus)
+- Coastal Guinea Anthropological Reports

@@ -1,0 +1,118 @@
+{
+  "id": "PPL_AZANDE_SUD",
+  "nameMain": "Azande du Sud",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["SSD", "COD", "CAF"],
+  "content": {
+    "appellations": {
+      "mainName": "Azande",
+      "selfAppellation": "Azande (singulier : Zande)",
+      "exonyms": [
+        "Zande",
+        "Azandeh",
+        "Azende",
+        "Bazende",
+        "Niam-Niam (pejoratif, suggere le cannibalisme, employe par les Arabes et les Occidentaux aux 18e-19e siecles)",
+        "Nyam nyam",
+        "Neam Nam"
+      ],
+      "originOfExonyms": "Le nom Azande signifie en langue zande les gens qui possedent beaucoup de terre, refletant leur histoire de conquerants. Le terme pejoratif Niam-Niam (et ses variantes Nyam-Nyam, Neam Nam) fut employe par les peuples arabes voisins et les explorateurs europeens des 18e-19e siecles, evoquant une reputation de cannibalisme. Le turc yamyam en derive. La plante Impatiens niamniamensis a ete nommee d'apres eux.",
+      "whyProblematic": "Le terme Niam-Niam est pejoratif et stigmatisant. Il associe les Azande au cannibalisme, une pratique qui concernait uniquement certains clans et non l'ensemble du peuple. L'ethnonyme Azande (pluriel) vs Zande (singulier et nom de langue) peut preter a confusion dans les sources.",
+      "contemporaryUsage": "Le terme Azande (pluriel) ou Zande (singulier) est l'appellation standard dans les sources scientifiques et officielles. Les Azande du Soudan du Sud vivent principalement dans les Etats de l'Equatoria central, de l'Equatoria occidental et du Bahr el Ghazal occidental, dans les villes de Yambio, Tombura, Deim Zubeir et Wau.",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Langues zande-nzakara (Ubangien, Niger-Congo)",
+      "historicalRegion": "Savanes de la RCA sud-orientale, nord-est de la RDC, Equatoria occidental (Soudan du Sud)",
+      "currentCountries": ["SSD", "COD", "CAF"]
+    },
+    "ethnicities": [
+      "Avongara (clan royal, noblesse hereditaire qui constitua le noyau politique et culturel azande)",
+      "Vungara (dynasties aristocratiques ayant cree les royaumes azande par conquete au 18e siecle)",
+      "Bandia (dynasty non-zande d'origine, ayant adopte la culture azande et etendu le royaume vers le nord du Congo)",
+      "Makaraka (sous-groupe azande du Soudan du Sud, cite parmi les noms alternatifs)",
+      "Mbomu (sous-groupe azande de la region de la riviere Mbomu, entre RCA et RDC)",
+      "Adio (peuple apparente aux Azande, langue proche)",
+      "Nzakara (peuple apparente, partageant des structures politiques similaires en RCA)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Azande se sont formes par conquete militaire dans la premiere moitie du 18e siecle. Le clan Avongara (Vungara) constitua le noyau conquérant qui assimila de nombreux peuples voisins et leur imposa la langue et la culture zande. Ils ne sont pas originaires du Soudan du Sud — leur arrivee tardive dans cette region provoqua des tensions avec les groupes deja installes. La dynasty Bandia, d'origine non-zande, adopta la culture azande en se developpant vers le nord du Congo actuel.",
+      "formationPeriod": "Premiere moitie du 18e siecle pour la formation du premier noyau azande. Expansion maximale dans la premiere moitie du 19e siecle sous les dynasties Avongara et Bandia. La colonisation europeenne (belge, francaise, anglo-egyptienne) a la fin du 19e siecle fragmenta le territoire azande entre trois puissances coloniales.",
+      "migrationRoutes": [
+        "Origine dans les savanes de la RCA sud-orientale (Mbomou)",
+        "Expansion vers l'est par conquete militaire jusqu'en Equatoria occidental (Soudan du Sud actuel)",
+        "Expansion vers le sud dans le nord de la RDC (dynasty Bandia)",
+        "Migrations de populations liees aux raids soudanais et aux perturbations coloniales du 19e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Equatoria occidental (Soudan du Sud) : Yambio, Tombura, Deim Zubeir, Maridi",
+        "Equatoria central (Soudan du Sud) : Yei, Momoi",
+        "Bahr el Ghazal occidental (Soudan du Sud) : Wau Town",
+        "Nord-est de la RDC (provinces de l'Uele)",
+        "Sud-est de la RCA (prefecture du Haut-Mbomou)"
+      ],
+      "unificationsOrDivisions": "La formation des Azande resulte de l'unification de nombreux peuples par conquete militaire autour des clans Avongara/Vungara. Apres la mort d'un roi, les fils se disputaient la succession et le perdant etablissait son propre royaume dans une region voisine, provoquant l'expansion du territoire azande. La colonisation europeenne divisa ensuite ce territoire entre la Belgique (Congo belge), la France (Oubangui-Chari) et l'Anglo-Egypte (Soudan).",
+      "externalInfluences": "Raids soudanais (Khartoumers) au 19e siecle qui stopperent l'expansion vers le nord. Colonisation europeenne (belgique, francaise, britannique/egyptienne) a partir de la fin du 19e siecle. Le Zande Scheme britannique (1938) : programme agricole visant l'autosuffisance au Soudan du Sud, qui reinstalla 60 000 Azande en colonies (gbaria) de 50 familles. Missions chretiennes qui convertirent la majeure partie de la population aux 19e-20e siecles.",
+      "majorHistoricalEvents": "Formation par conquete au debut du 18e siecle. Au 19e siecle, raids soudanais freinent l'expansion et destabilisent les royaumes. Fin du 19e siecle : division du territoire azande entre trois puissances coloniales europeennes. 1938 : lancement du Zande Scheme par les Britanniques. 1937 : publication de Witchcraft, Oracles and Magic Among the Azande par E.E. Evans-Pritchard, ouvrage fondateur de l'anthropologie africaine. 2015 : affrontements a Yambio entre Azande et Dinka. 2021 : Amnesty International documente des crimes de guerre contre les Azande et les Balanda. 2022 : intronisation d'un roi azande au Soudan du Sud."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Azande etaient organises en royaumes et chefferies hereditaires. La noblesse Avongara (chefs) exerçait des fonctions militaires, economiques et politiques. Les chefs (princes) etaient a la tete de royaumes. Les jeunes guerriers celibataires (20-30 ans) formaient les compagnies militaires et vivaient a la cour du chef. Les groupes locaux fonctionnaient comme des organisations politiques de base, distincts des clans.",
+      "clanOrganization": "L'appartenance clanique n'etait pas mise en avant localement par les Azande, a l'inverse de nombreuses autres societes africaines. L'organisation reposait sur des groupes locaux plutot que sur des clans nommes. La distinction majeure etait celle entre la noblesse Avongara et le reste de la population.",
+      "ageClassSystems": "Les classes d'age etaient structurees notamment par le systeme militaire : les jeunes hommes (12-20 ans) servaient a la cour des chefs, puis devenaient guerriers (20-30 ans). Ce systeme militaire structurait la vie sociale masculine.",
+      "roleOfLineages": "Les lignages patrilineaires determinent la transmission de la sorcellerie (mangu) selon la croyance azande : elle se transmet du pere aux fils et de la mere aux filles. Ce fait culturel donne aux lignages une dimension spirituelle et judiciaire importante.",
+      "religiousAuthority": "Avant la christianisation, les princes Avongara etaient aussi des autorites spirituelles. Les specialistes en oracles (notamment l'oracle du poison benge, reserve aux hommes) avaient une autorite judiciaire. Aujourd'hui, les pasteurs et prêtres chretiens exercent une influence preponderante."
+    },
+    "languages": {
+      "mainLanguage": "Zande (Pa-Zande)",
+      "isoCodes": ["zne"],
+      "dialects": [
+        "Dio (dialecte principal, parle au Soudan du Sud et en RDC)",
+        "Makaraka (dialecte du sous-groupe Makaraka au Soudan du Sud)",
+        "Pa-Zande (variete centrale, environ 1,1 million de locuteurs globalement)"
+      ],
+      "vehicularRole": "Le zande (ISO 639-3 : zne) est la langue maternelle de l'ensemble des Azande. Il appartient aux langues zande-nzakara du groupe Ubangien (Niger-Congo). Il est enseigne dans certaines ecoles du Soudan du Sud. La Bible et le film JESUS sont disponibles en zande. Le francais est utilise en RCA, le kiswahili et le francais en RDC, l'anglais au Soudan du Sud comme langues officielles."
+    },
+    "culture": {
+      "majorRites": "Les Azande pratiquent des rites quotidiens de protection contre la sorcellerie (mangu) : consultations d'oracles, rituels preventifs. L'oracle du poison (benge), reserve aux hommes adultes, est le plus puissant et son verdict est sans appel — il constitue l'autorite judiciaire supreme. L'oracle de la termitiere (consulte par tous) et l'oracle du plateau de frottement (le moins fiable, portable) completent le systeme. Les ceremonies de mariage incluent des festivites communautaires. Les funerailles donnent lieu a des enquetes sur la cause de la mort par sorcellerie.",
+      "symbols": "Le couteau de jet (shongo, arme courbe a plusieurs lames) est le symbole le plus iconique de la culture materielle azande, refletant leur maitrise de la metallurgie. Les tambours et les pianos a pouces (sansa) sont des symboles musicaux. La figure de Ture (le trickster, metaphore des mauvaises decisions) est centrale dans la tradition orale.",
+      "artsAndMusic": "Les Azande sont reconnus pour leur maitrise de la metallurgie pre-coloniale : fabrication de couteaux de jet (shongo) a lames multiples courbes. Les sculptures en bois et en argile representent des animaux et des ancetres. Les instruments de musique incluent les tambours (ngoma) et les pianos a pouces (sansa, en forme humaine, animale ou abstraite). La musique et la litterature orale sont centrales lors des mariages et des danses communautaires. La poterie et le tissage sont pratiquer par les femmes. L'architecture traditionnelle comprend des maisons en boue et en herbe sur charpente de bois, avec toits en chaume, disposees autour de cours avec jardins potagers (ananas, mangues).",
+      "spiritualities": "La religion traditionnelle azande repose sur la croyance en Mbori, dieu omnipotent createur de l'univers. Le systeme de la sorcellerie (mangu) est central : le mangu est un fluide noir hereditaire dans le ventre qui agit de facon autonome contre les ennemis. Les oracles determinent les cas de sorcellerie et constituent l'autorite legale supreme. La figure de Ture (trickster) sert de mise en garde morale. Aujourd'hui, environ 85% des Azande se declaren chretiens (plus de la moitie catholiques, ainsi qu'anglicans et pentecotistes). Les croyances traditionnelles en mangu, les oracles et les specialistes rituels coexistent avec le christianisme, surtout en zone rurale."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Azande ont developpe plusieurs royaumes et chefferies hereditaires gouvernes par la noblesse Avongara. Ces royaumes se formerent par conquete militaire a partir du 18e siecle, chaque prince vaincu dans une succession etablissant son propre royaume dans une region voisine, ce qui expliqua l'expansion continue du territoire azande vers l'est et le nord. Les chefs Avongara recevaient tribut des populations soumises qui adoptaient la langue et la culture zande.",
+      "relationsWithNeighbors": "Les Azande entretinrent des relations conflictuelles avec les peuples arabes soudanais (raids du 19e siecle). Leurs arrivee tardive au Soudan du Sud crea des tensions avec les groupes locaux preexistants (Dinka, Balanda). En RDC et en RCA, ils assimilerent ou dominerent de nombreux groupes voisins. En periode coloniale, ils eurent des contacts avec les administrations belge, francaise et britannique.",
+      "conflictsOrAlliances": "Raids soudanais au 19e siecle qui stopperent l'expansion vers le nord. Conflits avec les Dinka a Yambio en 2015 (Equatoria occidental). En 2021, Amnesty International documenta des crimes de guerre commis contre les Azande et les Balanda Bviri. La colonisation europeenne divisa leur territoire entre trois puissances, fragilisant leurs structures politiques.",
+      "diaspora": "Des communautes azande sont presentes dans les capitales et grandes villes du Soudan du Sud (Djouba), de la RDC (Kisangani) et de la RCA (Bangui). Une petite diaspora existe dans des pays occidentaux (Etats-Unis notamment). Les deplacements de populations lies aux conflits du Soudan du Sud (depuis 2013) ont affecte les Azande."
+    },
+    "demography": {
+      "totalPopulation": 1200000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue (2024) : 730 000 en RDC, 350 000 au Soudan du Sud, 62 000 en RCA. Joshua Project (2026) : 915 000 au Soudan du Sud (estimation revisee). Total estime 1,2 million en combinant differentes sources.",
+      "distributionByCountry": [
+        {
+          "country": "SSD",
+          "population": 600000,
+          "note": "Principalement en Equatoria occidental (Yambio, Tombura), Equatoria central (Yei), Bahr el Ghazal occidental (Wau)"
+        },
+        {
+          "country": "COD",
+          "population": 500000,
+          "note": "Nord-est de la RDC (provinces de l'Uele, Haut-Uele)"
+        },
+        {
+          "country": "CAF",
+          "population": 100000,
+          "note": "Sud-est de la RCA (prefecture du Haut-Mbomou)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Azande people. https://en.wikipedia.org/wiki/Azande_people",
+      "Wikipedia EN — Zande language. https://en.wikipedia.org/wiki/Zande_language",
+      "Evans-Pritchard, E.E. — Witchcraft, Oracles and Magic Among the Azande. Oxford University Press, 1937 (abrege 1976). ISBN 0-19-874029-8",
+      "SIL Ethnologue — Zande language (zne). https://www.ethnologue.com/language/zne/",
+      "Joshua Project — Azande in South Sudan. https://joshuaproject.net/people_groups/10526/od",
+      "Wikipedia EN — Sultanate of Bagirmi (contexte regional). https://en.wikipedia.org/wiki/Sultanate_of_Bagirmi",
+      "Conflict Sensitivity Resource Facility — Ezo County, Western Equatoria. https://csrf-southsudan.org/county_profile/ezo/",
+      "CIA World Factbook — South Sudan. https://www.cia.gov/the-world-factbook/countries/south-sudan/"
+    ]
+  }
+}

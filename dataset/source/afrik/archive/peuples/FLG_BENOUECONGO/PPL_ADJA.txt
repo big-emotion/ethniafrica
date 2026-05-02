@@ -1,0 +1,39 @@
+# Nom du peuple
+- Nom principal : Adja
+- Auto-appellation : Adja / Adyá
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe) (FLG_BENOUECONGO)
+- Région historique : TGO, BEN
+- Identifiant peuple : PPL_ADJA
+
+# 1. Ethnies incluses
+- Adja du Togo (Plateaux)
+- Adja du Bénin (Mono, Couffo)
+- Sous-groupes : Dogbo, Tado, etc.
+
+# 2. Origines
+- Ancêtres des royaumes Gbe (Fon, Ewe).
+- Centre ancien : Tado, cité historique fondatrice.
+
+# 3. Organisation
+- Lignages familiaux
+- Chefferies locales
+
+# 4. Langue
+- Adja
+- ISO : ajg (groupe Gbe)
+
+# 5. Culture
+- Masques Gbe
+- Rites agraires
+- Culte des ancêtres
+
+# 6. Histoire
+- Centre originel des migrations Gbe vers Abomey et le sud Togo.
+
+# 7. Démographie
+- Population : 1 600 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (ajg)
+- Archives du royaume de Tado

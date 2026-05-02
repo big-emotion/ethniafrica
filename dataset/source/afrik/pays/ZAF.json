@@ -1,0 +1,214 @@
+{
+  "id": "ZAF",
+  "nameFr": "République d'Afrique du Sud (Republic of South Africa)",
+  "nameOfficial": "République d'Afrique du Sud (Republic of South Africa)",
+  "etymology": "Le nom \"Afrique du Sud\" est géographique, désignant la position du pays à l'extrémité australe du continent africain. Le nom a été officialisé en 1961 lors de la proclamation de la République. Avant cela, le territoire était appelé \"Union sud-africaine\" (1910-1961).",
+  "nameOriginActor": "Le nom \"Afrique du Sud\" est géographique et a été officialisé par les autorités sud-africaines en 1961. Les navigateurs portugais utilisaient \"Cabo da Boa Esperança\" (Cap de Bonne-Espérance) pour désigner la région du Cap.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire était peuplé de peuples Khoisan (San et Khoikhoi), Nguni, Sotho-Tswana, Venda et Tsonga sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Développement de royaumes Nguni (proto-Zoulou, Xhosa, Swazi, Ndebele), chefferies Sotho-Tswana, royaumes Venda et Tsonga. Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de sociétés autonomes : Khoisan (San et Khoikhoi), royaumes Nguni, chefferies Sotho-Tswana, royaumes Venda et Tsonga. Pas d'unification politique.",
+      "colonization": "1488 : Découverte du Cap de Bonne-Espérance par les Portugais. 1652-1795 : Colonie hollandaise du Cap (Dutch Cape Colony). 1795-1910 : Colonie britannique du Cap (British Cape Colony). XIXe siècle : États boers (Transvaal, Orange Free State, Natal).",
+      "contemporary": "1910-1961 : Union sud-africaine (Union of South Africa). 1961 : République d'Afrique du Sud (Republic of South Africa). Le nom officiel en anglais est \"Republic of South Africa\" et en afrikaans \"Republiek van Suid-Afrika\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaumes Nguni",
+        "period": "Précolonial - XIXe siècle",
+        "dominantPeoples": ["Zulu", "Xhosa", "Swazi", "Ndebele"],
+        "politicalCenters": ["KwaZulu-Natal", "Eastern Cape"],
+        "historicalRole": "Royaumes Nguni puissants, expansion zouloue sous Shaka (début XIXe siècle), résistance à la colonisation."
+      },
+      {
+        "name": "Royaume zoulou",
+        "period": "Début XIXe - fin XIXe siècles",
+        "dominantPeoples": ["Zulu"],
+        "politicalCenters": ["KwaZulu-Natal"],
+        "historicalRole": "Royaume zoulou puissant fondé par Shaka, expansion territoriale, résistance aux Britanniques (guerres anglo-zouloues, 1879)."
+      },
+      {
+        "name": "Chefferies Sotho-Tswana",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Sotho", "Tswana", "Pedi"],
+        "politicalCenters": ["Lesotho", "provinces du nord"],
+        "historicalRole": "Chefferies Sotho-Tswana, organisation politique traditionnelle, résistance à la colonisation."
+      },
+      {
+        "name": "Colonie du Cap",
+        "period": "1652 - 1910",
+        "dominantPeoples": ["Khoisan", "colons européens", "esclaves"],
+        "politicalCenters": ["Le Cap (capitale coloniale)"],
+        "historicalRole": "Colonie hollandaise puis britannique, développement de l'apartheid, résistance des peuples autochtones."
+      },
+      {
+        "name": "États boers",
+        "period": "XIXe siècle",
+        "dominantPeoples": ["Boers (Afrikaners)", "peuples autochtones"],
+        "politicalCenters": ["Transvaal", "Orange Free State"],
+        "historicalRole": "Républiques boers indépendantes, guerres anglo-boers (1880-1881, 1899-1902)."
+      },
+      {
+        "name": "Union sud-africaine",
+        "period": "1910 - 1961",
+        "dominantPeoples": [
+          "Tous les peuples sud-africains sous régime ségrégationniste"
+        ],
+        "politicalCenters": ["Pretoria", "Le Cap (capitale législative)"],
+        "historicalRole": "Unification des colonies britanniques et républiques boers, développement de l'apartheid (1948-1994)."
+      },
+      {
+        "name": "République d'Afrique du Sud",
+        "period": "1961 - présent",
+        "dominantPeoples": ["Tous les peuples sud-africains"],
+        "politicalCenters": [
+          "Pretoria (capitale administrative)",
+          "Le Cap (capitale législative)",
+          "Bloemfontein (capitale judiciaire)"
+        ],
+        "historicalRole": "Apartheid (1948-1994), résistance (ANC, etc.), transition démocratique (1994), développement économique, défis de réconciliation et d'égalité."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Zulu",
+        "selfAppellation": "Zulu",
+        "exonyms": ["Zulu (terme utilisé par les Européens)"],
+        "peopleId": "PPL_ZULU",
+        "mainRegion": "KwaZulu-Natal",
+        "languages": ["Zulu", "anglais", "afrikaans"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Zulu\" est neutre et accepté."
+      },
+      {
+        "name": "Xhosa",
+        "selfAppellation": "AmaXhosa",
+        "exonyms": ["Xhosa (terme utilisé par les Européens)"],
+        "peopleId": "PPL_XHOSA",
+        "mainRegion": "Eastern Cape",
+        "languages": ["Xhosa", "anglais", "afrikaans"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Xhosa\" est neutre et accepté. L'auto-appellation \"AmaXhosa\" est préférée."
+      },
+      {
+        "name": "Pedi",
+        "selfAppellation": "Pedi",
+        "exonyms": [
+          "Pedi (terme utilisé par les Européens)",
+          "parfois appelés \"Northern Sotho\""
+        ],
+        "peopleId": "PPL_PEDI",
+        "mainRegion": "Limpopo",
+        "languages": ["Pedi", "anglais", "afrikaans"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Pedi\" est neutre et accepté."
+      },
+      {
+        "name": "Sotho (Sud)",
+        "selfAppellation": "Basotho",
+        "exonyms": [
+          "Sotho (terme utilisé par les Européens)",
+          "\"Southern Sotho\""
+        ],
+        "peopleId": "PPL_SOTHO",
+        "mainRegion": "Free State, Gauteng",
+        "languages": ["Sesotho", "anglais", "afrikaans"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Sotho\" est neutre et accepté. L'auto-appellation \"Basotho\" est préférée."
+      },
+      {
+        "name": "Tswana",
+        "selfAppellation": "Tswana",
+        "exonyms": [
+          "Tswana (terme utilisé par les Européens)",
+          "parfois appelés \"Setswana\" (terme alternatif)"
+        ],
+        "peopleId": "PPL_TSWANA",
+        "mainRegion": "North West",
+        "languages": ["Setswana", "anglais", "afrikaans"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Tswana\" est neutre et accepté."
+      },
+      {
+        "name": "Tsonga",
+        "selfAppellation": "Tsonga",
+        "exonyms": [
+          "Tsonga (terme utilisé par les Européens)",
+          "parfois appelés \"Shangaan\" (terme alternatif)"
+        ],
+        "peopleId": "PPL_TSONGA",
+        "mainRegion": "Limpopo, Mpumalanga",
+        "languages": ["Tsonga", "anglais", "afrikaans"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Tsonga\" est neutre et accepté."
+      },
+      {
+        "name": "Venda",
+        "selfAppellation": "Venda",
+        "exonyms": ["Venda (terme utilisé par les Européens)"],
+        "peopleId": "PPL_VENDA",
+        "mainRegion": "Limpopo",
+        "languages": ["Venda", "anglais", "afrikaans"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Venda\" est neutre et accepté."
+      },
+      {
+        "name": "Swazi",
+        "selfAppellation": "Swazi",
+        "exonyms": [
+          "Swazi (terme utilisé par les Européens)",
+          "parfois appelés \"Swati\" (terme alternatif)"
+        ],
+        "peopleId": "PPL_SWAZI",
+        "mainRegion": "Mpumalanga",
+        "languages": ["Swazi", "anglais", "afrikaans"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Swazi\" est neutre et accepté."
+      },
+      {
+        "name": "Ndebele",
+        "selfAppellation": "Ndebele",
+        "exonyms": [
+          "Ndebele (terme utilisé par les Européens)",
+          "parfois appelés \"Matabele\" (terme historique)"
+        ],
+        "peopleId": "PPL_NDEBELE",
+        "mainRegion": "Mpumalanga, Limpopo",
+        "languages": ["Ndebele", "anglais", "afrikaans"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Ndebele\" est neutre et accepté."
+      }
+    ],
+    "culture": {
+      "culturalTraditions": "Musique traditionnelle (maskandi, mbaqanga), danse traditionnelle, poésie orale, artisanat (perles, poterie, vannerie), architecture traditionnelle, lutte traditionnelle",
+      "dominantReligions": "Christianisme (protestant majoritaire, catholique), croyances traditionnelles (syncrétisme), islam (minorité), hindouisme (minorité)",
+      "lifestyles": "Vie principalement rurale et urbaine, agriculture (maïs, blé, canne à sucre), élevage (bovins, ovins), pêche (côtes), exploitation minière (or, diamants, platine), industrie, services, urbanisation importante",
+      "socialOrganization": "Système de chefferies traditionnelles, structure clanique patrilinéaire, organisation en familles étendues et lignages, importance des ancêtres, système de conseils d'anciens",
+      "regionalRelations": "Relations historiques avec les peuples du Lesotho, du Botswana, du Zimbabwe, du Mozambique, de l'Eswatini, de la Namibie. Diaspora importante au Royaume-Uni, aux États-Unis, et dans les pays occidentaux."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement du territoire par des peuples Khoisan (San et Khoikhoi), puis migrations bantoues (Nguni, Sotho-Tswana). Développement de royaumes et chefferies indépendants.",
+      "middleAges": "Développement de royaumes Nguni (proto-Zoulou, Xhosa, Swazi, Ndebele), chefferies Sotho-Tswana, royaumes Venda et Tsonga. Pas d'unification politique.",
+      "precolonial": "Expansion zouloue sous Shaka (début XIXe siècle). Royaumes Nguni puissants. Résistance à la colonisation européenne.",
+      "colonization": "1488 : Découverte du Cap par les Portugais. 1652 : Installation hollandaise au Cap. 1795 : Colonie britannique. XIXe siècle : États boers (Transvaal, Orange Free State). Guerres anglo-boers (1880-1881, 1899-1902). 1910 : Union sud-africaine.",
+      "independenceStruggle": "L'Afrique du Sud était déjà indépendante (1910), mais sous régime ségrégationniste. Apartheid (1948-1994) : système de ségrégation raciale. Résistance (ANC, etc.). Transition démocratique (1994).",
+      "postIndependence": "Apartheid (1948-1994) : système de ségrégation raciale, résistance, sanctions internationales. Transition démocratique (1994) : élection de Nelson Mandela, réconciliation nationale. République démocratique depuis 1994 : développement économique, défis de réconciliation et d'égalité."
+    },
+    "sources": [
+      "CIA World Factbook – South Africa",
+      "SIL Ethnologue – Languages of South Africa",
+      "Recensements nationaux sud-africains",
+      "ONU – Données démographiques 2025",
+      "UNFPA – Projections démographiques 2025",
+      "Études anthropologiques sur les peuples sud-africains",
+      "Études historiques sur l'apartheid et la transition démocratique"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Autres peuples"
+        }
+      ]
+    }
+  }
+}

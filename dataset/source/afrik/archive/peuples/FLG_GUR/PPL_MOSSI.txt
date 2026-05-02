@@ -1,0 +1,41 @@
+# Nom du peuple
+- Nom principal : Mossi
+- Auto-appellation : Moaga (pluriel : Moose)
+- Appellations historiques : Mossé (forme ancienne)
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Région historique : Plateau mossi, BFA
+- Identifiant : PPL_MOSSI
+
+# 1. Ethnies incluses
+- Moose du plateau central
+- Sous-groupes régionaux (Yatenga, Ouagadougou, Tenkodogo)
+
+# 2. Origines
+- Légende fondatrice de Yennenga et Naaba Wedraogo.
+- Création des grands royaumes mossi au XVe siècle.
+
+# 3. Organisation
+- Chefferies centrales (naaba).
+- Système monarchique encore actif.
+- Autorité coutumière puissante.
+
+# 4. Langue
+- Mooré
+- ISO : mos
+
+# 5. Culture
+- Masques et rituels des bois sacrés.
+- Culte des ancêtres.
+- Artisanat (cuivre, cuir).
+
+# 6. Histoire
+- Anciens royaumes : Ouagadougou, Yatenga, Tenkodogo.
+- Forte résistance contre l'empire Songhay et les Français.
+
+# 7. Démographie
+- Population : 14 391 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (mos)
+- Archives royales du Moogho Naaba

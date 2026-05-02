@@ -1,0 +1,105 @@
+{
+  "id": "PPL_MADI",
+  "nameMain": "Madi",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["UGA", "SSD"],
+  "content": {
+    "appellations": {
+      "mainName": "Madi",
+      "selfAppellation": "Ma'di (signifie 'une personne' ou 'ici je suis enfin')",
+      "exonyms": ["Madi", "Madi-Moru (classement linguistique)"],
+      "originOfExonyms": "Le terme Ma'di viendrait d'une réponse donnée par les ancêtres lors d'une rencontre avec des étrangers leur demandant qui ils étaient : la réponse 'madi' signifiant 'une personne'. Une autre version rattache le nom à l'expression 'ma di' (ici je suis enfin), prononcée lors de leur établissement définitif sur les rives du Nil.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Ma'di est utilisé couramment en anglais, en arabe et dans la langue elle-même. Les Ma'di sont parfois confondus avec les Moru, dont ils partageaient initialement une identité commune avant leur séparation au bord du Nil.",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Soudanique central, branche Moru-Madi",
+      "historicalRegion": "Rives du Nil Blanc entre Nimule (Soudan du Sud) et le district de Moyo (Ouganda) ; région de l'Enclave du Lado",
+      "currentCountries": ["UGA", "SSD"]
+    },
+    "ethnicities": [
+      "Bori (groupe principal du Soudan du Sud, autour d'Opari)",
+      "Lukai (groupe de Mugali, chef Odrupee)",
+      "Kerepi (groupes de Kerepi-Tedire et Kerepi-Gonyapi)",
+      "Padika (premiers établis dans les monts Metu, Ouganda)",
+      "Pacara (chef fondateur Lumara, Metu)",
+      "Vura (groupe de Moyo, chef Aliku)",
+      "Ma'di Agai / Okollo / Indri (groupe périphérique, sud-ouest de Moyo)",
+      "Arapi, Logopi, Logili, Mugi, Okei, Ngaya, Pandikeri, Patibi (sous-clans historiques)"
+    ],
+    "origins": {
+      "ancientOrigins": "La tradition orale ma'di fait remonter leur origine au Nigeria, d'où ils auraient migré vers le sud jusqu'à Amadi (Ouganda, signifiant 'ici nous sommes'). À cette époque, Ma'di et Moru formaient un seul groupe. La séparation survint au bord du Nil à l'occasion d'une querelle liée à des arachides : les Moru partirent vers l'ouest, les Ma'di s'établirent sur la rive du fleuve. Des chercheurs estiment leur arrivée dans le sud de l'Ouganda entre 1400 et 1700 apr. J.-C., coïncidant avec les grandes migrations nilotiques vers le sud.",
+      "formationPeriod": "L'identité ma'di distincte se consolida lors de leur établissement sur les rives du Nil Blanc et des monts environnants. Le système de chefferies héréditaires (opi) s'organisa pendant la période de résistance aux razzias esclavagistes turco-égyptiennes (Tukutuku) dès les années 1820-1860. La colonisation britannique (annexion de 1912) divisa les Ma'di entre l'Ouganda et le Soudan, créant deux communautés distinctes mais culturellement liées.",
+      "migrationRoutes": [
+        "Du Nigeria vers le sud jusqu'à Amadi (Ouganda actuel)",
+        "De Mount Rajaf (près du Nil) et de Nyarabanga vers diverses zones de l'Équatoria",
+        "Migration de groupes fuyant les Tukutuku (esclaves turco-égyptiens) vers les monts Metu en Ouganda (fin 19e s.)",
+        "Retours partiels au Soudan après 1910-1912 et après l'Accord de paix de 2005"
+      ],
+      "historicalSettlementZones": [
+        "Magwi County, Équatoria Oriental, Soudan du Sud (Nimule, Opari, Moli, Pageri, Loa)",
+        "Districts d'Adjumani et Moyo, nord de l'Ouganda",
+        "Monts Metu (groupes Kerepi, Padika, Pacara, Vura)",
+        "Mugali (groupe Lukai, région frontalière Ouganda-Soudan du Sud)",
+        "Rives du Nil Blanc entre Nimule et la rivière Nyolo"
+      ],
+      "unificationsOrDivisions": "Les Ma'di sont organisés en groupes territoriaux (suru = tribu, pa = clan) exogames. Les clans se mariaient hors de leur groupe mais au sein de la communauté ma'di. Les chefs héréditaires (opi) assuraient l'unité politique et religieuse. La division entre Ma'di du Soudan (majoritairement à Magwi County) et Ma'di d'Ouganda (Adjumani, Moyo) est le résultat de l'annexion britannique de 1912. La guerre civile soudanaise (1983-2005) accentua ces divisions.",
+      "externalInfluences": "Invasions turco-égyptiennes (Tukutuku, razzias esclavagistes, 1820-1880). Enclave du Lado belgo-britannique (1894-1910). Annexion britannique du sud du pays ma'di à l'Ouganda (1912). Missions chrétiennes catholiques via l'Ouganda (conversion massive depuis le 20e s.). Guerre civile soudanaise (SPLA, 1983-2005), déplacements massifs. Indépendance du Soudan du Sud (2011).",
+      "majorHistoricalEvents": "1841-1865 : explorations de Baker, Speke et Grant dans le pays ma'di (baptisé 'Maʼdi Country'). 1879 : construction du Fort Dufile par Emin Pasha avec des travailleurs ma'di. 1910 : fin de l'Enclave du Lado. 1912 : annexion du sud de la région ma'di à l'Ouganda par les Britanniques, séparant définitivement les deux communautés. 1985-1988 : incursions de la SPLA dans la zone ma'di, formation d'une milice locale, polarisation communautaire. 2005 : Accord de paix global (CPA) ; retours partiels au Soudan du Sud. 2011 : indépendance du Soudan du Sud."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferies héréditaires (opi) : le chef (opi) dispose de pouvoirs politiques et religieux et est toujours de sexe masculin. Au-dessus des chefs ordinaires se trouvent des chefs suprêmes (paramount chief). La hiérarchie comprend des anciens (règlement des conflits), des faiseurs de pluie (ori di ka) et des chefs de terre (vudipi). Les colonies britanniques imposèrent un paramount chief unifié, mettant fin à l'ancienne organisation multi-chefferies.",
+      "clanOrganization": "La société ma'di est organisée en clans (pa) patrilinéaires et exogames : on se marie en dehors de son clan, mais au sein du groupe linguistique ma'di. Les mariages nécessitent le paiement d'un prix de la mariée (notamment en houes hoc fabriquées par les forgerons eremu). Les forgerons (eremugo) constituent une caste à statut social inférieur, traditionnellement associés à la malchance et au stéréotype de la paresse.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'appartenance clanique, les droits fonciers et les alliances matrimoniales. Les naissances de jumeaux revêtent une signification particulière : le premier jumeau (opt/opia) est considéré comme un chef, le second (eremugo/muja) comme un forgeron. Les funérailles des chefs héréditaires et de leurs épouses se déroulent dans des sanctuaires sacrés (rudu).",
+      "religiousAuthority": "Le système religieux traditionnel est centré sur les ori (esprits des ancêtres réincarnés) qui interviennent dans les affaires humaines. Les médiums (odzo/odzogo) sont consultés en cas de malheur. Des autels miniatures (kidori) accueillent les offrandes, notamment de la première récolte. Le dieu suprême s'appelle Rubanga, terme introduit avec le christianisme. Le christianisme (catholicisme romain majoritairement) s'est largement implanté depuis la colonisation britannique de l'Ouganda."
+    },
+    "languages": {
+      "mainLanguage": "Ma'di (ma'di ti, 'bouche ma'di')",
+      "isoCodes": ["mhi"],
+      "dialects": [
+        "Ma'di du Soudan du Sud (influences de l'arabe de Juba et de l'arabe nubi)",
+        "Ma'di d'Ouganda (influences de l'anglais et du swahili)",
+        "Ma'di Okollo (dialecte périphérique, sud-ouest de Moyo, légèrement divergent)"
+      ],
+      "vehicularRole": "Le ma'di est parlé par environ 390 000 personnes (dont 90 000 au Soudan du Sud). Il est mutuellement intelligible avec l'olu'bo, le lugbara, le moru, l'avokaya, le kaliko et le logo, toutes langues de la branche Moru-Madi du soudanique central. En Ouganda, les Ma'di instruits parlent anglais comme seconde langue ; au Soudan du Sud, ils utilisent l'anglais et l'arabe de Juba."
+    },
+    "culture": {
+      "majorRites": "Rites funéraires : les chefs et leurs épouses sont inhumés dans des sanctuaires sacrés (rudu). Rites de première récolte : offrandes aux esprits ori aux autels kidori. Mariage : paiement d'un prix de la mariée en houes (ma'di hoc) fabriquées par les forgerons. Jumeaux : rite spécial, le premier est traité comme un chef (opia), le second comme un forgeron. Culte des ori : sacrifices et consultations de médiums (odzo) lors de maladies ou de malheurs. Activités communautaires ritualisées : travaux agricoles collectifs, chasses, funérailles collectives.",
+      "symbols": "La houe ma'di hoc (monnaie matrimoniale forgée par les eremu) est un symbole central de l'identité ma'di et des alliances. Les tombeaux sacrés (rudu) des chefs symbolisent l'autorité héréditaire. Les pierres de pluie (ayi oni) utilisées par les faiseurs de pluie (Pamangra) représentent le lien entre les ancêtres et la fertilité. La tortue Jomboloko, esprit sacré de la colline Moli Tokuru, est un esprit protecteur.",
+      "artsAndMusic": "Danse Mure : danse de célébration et de deuil (victoire, naissance ou mort d'un roi, perte de territoire) ; instruments : trompettes en bois (ture/odiri), cornes (pkere/bila), clochettes (mgbiri), tambours (leri) ; les hommes crient 'sira soka' (code d'identification), les femmes chantent 'Gbilili', chants de guerre 'jenyi'. Danse Gayi : danse de flirt des jeunes, comparée au flamenco. Danse Kore : gracieuse. Danse Kejua : spécifique aux femmes. Artisanat : houes en fer (ma'di hoc / kweri ma'di) fabriquées par les forgerons (eremu), monnaie traditionnelle pour les mariages. Poterie et tissage traditionnels.",
+      "spiritualities": "Religion traditionnelle centrée sur les ori : esprits des ancêtres réincarnés qui se manifestent dans les arbres, serpents, rivières, collines et âmes des défunts. Les esprits reproduisent la hiérarchie humaine et conservent leurs pouvoirs après la mort. Médiums (odzo/odzogo) consultés pour les misfortunes. Autels miniatures kidori pour les offrandes de première récolte. Dieu suprême : Rubanga (terme adopté avec la christianisation, équivalent d'Allah dans l'islam ma'di). Depuis la colonisation britannique, le catholicisme romain domine (87,9 % en Ouganda en 2002), suivi de l'anglicanisme (5,9 %), de l'islam (4,1 %) et du pentecôtisme (1 %)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La société ma'di était organisée en chefferies héréditaires distinctes, jamais unifiées en un seul royaume. Les principales lignées cheffales incluent : la famille Odrupee de Lukai (Mugali), les chefs de Bori (Andruga, Milla Akeri, Kanyara Draru), les chefs de Kerepi-Tedire (Kicere, Eberu), les chefs des monts Metu (Kutulungu au sud, Lukere au nord). Le dernier roi suprême reconnu fut Alimu Dengu avant l'introduction du paramount chief britannique.",
+      "relationsWithNeighbors": "Les Ma'di ont entretenu des relations complexes avec leurs voisins. Ils se sont mêlés aux Bari (dont certains sous-clans sont d'origine bari : Mugi, Arapi, Logopi). Ils furent en conflit répété avec les Acholi (dispute de l'Owinykibul, attaques de la KAR dans les années 1920, antagonismes durant la guerre civile). Ils partagent une origine commune avec les Moru (séparation mythique au Nil). Relations commerciales avec les Kuku (clans Beka, Kiloloro). Proches culturellement des Lugbara, Lolubo et Avukaya.",
+      "conflictsOrAlliances": "Résistance aux razzias turco-égyptiennes (Tukutuku, 1820-1880) : dispersion, fuite en Ouganda, conscription forcée. Collaborations tactiques avec Emin Pasha (construction du Fort Dufile, 1879). Résistance à la SPLA lors de la Seconde guerre civile soudanaise (1983-2005) : formation d'une milice ma'di en 1986 sous Poliodoro Draru ; Accord de paix (1988) entre anciens et SPLA ; nombreux réfugiés en Ouganda. Après l'Accord de paix global (CPA, 2005), retours progressifs au Soudan du Sud.",
+      "diaspora": "La diaspora ma'di comprend les Ma'di d'Ouganda établis à Adjumani et Moyo depuis 1912 (désormais considérés comme une communauté à part entière), des réfugiés établis à Kampala, Nairobi, Juba et Khartoum. Des Ma'di vivant en Occident (Europe, Amérique du Nord) constituent une diaspora récente issue des déplacements liés aux guerres civiles soudanaises."
+    },
+    "demography": {
+      "totalPopulation": 450000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (SIL International) : environ 390 000 locuteurs (300 000 en Ouganda, 90 000 au Soudan du Sud) ; projection 2025 incluant croissance démographique et diaspora (PeopleGroups.org : 349 000 en Ouganda seul en 2025 ; FSI Language Courses : environ 475 000 locuteurs mondiaux).",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 350000,
+          "note": "Districts d'Adjumani et Moyo, nord de l'Ouganda ; majorité catholique romaine (87,9 % selon recensement 2002)"
+        },
+        {
+          "country": "SSD",
+          "population": 100000,
+          "note": "Magwi County, Équatoria Oriental ; population diminuée par les guerres civiles (1983-2005)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Madi people. https://en.wikipedia.org/wiki/Madi_people",
+      "Wikipedia EN — Ma'di language. https://en.wikipedia.org/wiki/Ma%CA%BCdi_language",
+      "Ethnologue (SIL International) — Ma'di (mhi). https://www.ethnologue.com/language/mhi/",
+      "PeopleGroups.org — Madi of Uganda. https://peoplegroups.org/people_groups/pg015114/",
+      "Joshua Project — Ma'adi in South Sudan. https://joshuaproject.net/people_groups/13196/OD",
+      "Uganda Bureau of Statistics — Madi Sub Region Census 2024 Report. https://www.ubos.org/wp-content/uploads/2025/06/Madi-Sub-Region-Census-2024-Report.pdf",
+      "CIA World Factbook — Uganda, South Sudan."
+    ]
+  }
+}

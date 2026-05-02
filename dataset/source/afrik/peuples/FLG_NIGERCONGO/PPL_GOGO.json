@@ -1,0 +1,94 @@
+{
+  "id": "PPL_GOGO",
+  "nameMain": "Gogo",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Gogo",
+      "selfAppellation": "Wagogo",
+      "exonyms": ["Wagogo (swahili collectif)", "Gongwe (ancien)"],
+      "originOfExonyms": "Le nom Gogo fut invente au XIXe siecle par les caravanes nyamwezi traversant la region, alors encore une zone frontiere peu peuplee. Le terme collectif swahili Wagogo s'est ensuite generalise.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Wagogo est employe couramment en swahili et en anglais. Les locuteurs se designent eux-memes comme Wagogo. Le terme Gogo est utilise en anglais et dans les contextes academiques internationaux.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantous de Tanzanie centrale",
+      "historicalRegion": "Ugogo — plateau central de Tanzanie, regions de Dodoma, Manyoni et Mpwapwa",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": [
+      "Wagogo du Nord (region de Mpwapwa)",
+      "Wagogo du Centre (environs de Dodoma, Cinyaugogo)",
+      "Wagogo de l'Ouest (Manyoni, Cinyambwa)",
+      "Wagogo de l'Est (Citumba)",
+      "Sous-groupes pastoraux des plaines"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Wagogo sont des populations bantoues etablies sur le plateau central de Tanzanie. Selon les sources historiques, leurs ancetres etaient en partie des colonisateurs pionniers venus du Soudan du Sud, puis d'Unyamwezi et d'Uhehe au XVIIIe siecle. La moitie du groupe dirigeant serait d'origine uhehe. Leur territoire, Ugogo, est un plateau a plus de 900 m d'altitude, caracterise par une pluviometrie erratique et des secheresses frequentes.",
+      "formationPeriod": "La denomination Gogo et l'identite specifique du groupe se consoliderent au XIXe siecle, au moment de l'intensification des routes caravannieres traversant Ugogo. Les clans wagogo se reorganisaient frequemment, adoptant de nouveaux noms, liens familiaux et fonctions rituelles selon les migrations internes.",
+      "migrationRoutes": [
+        "Migrations depuis le Soudan du Sud via Unyamwezi vers le plateau central tanzanien",
+        "Colonisation progressive du plateau de Dodoma et des plaines adjacentes"
+      ],
+      "historicalSettlementZones": [
+        "Plateau d'Ugogo (region de Dodoma)",
+        "Plaines de Manyoni (Wagogo de l'Ouest)",
+        "Region de Mpwapwa (Wagogo du Nord)",
+        "Zone de Kongwa"
+      ],
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identite culturelle et linguistique commune. Les clans wagogo se deplacaient beaucoup, abandonnant les liens aux anciens groupes pour adopter de nouvelles affiliations, noms claniques et fonctions rituelles. Les chefs rituels (et non seulement politiques) representaient l'autorite centrale dans chaque territoire.",
+      "externalInfluences": "Relations anciennes avec les Nyamwezi, dont les caravanes traversaient Ugogo du XIXe siecle. Contact avec les Hehe au sud et les Maasai/Kisongo a l'est. La periode coloniale allemande (annees 1880) et britannique (apres 1919) transforma profondement la societe wagogo. Les missions catholiques romaines (Peres du Saint-Esprit, 1910) et protestantes (CMS) s'installerent a Ugogo.",
+      "majorHistoricalEvents": "Zone strategique des caravanes est-africaines au XIXe siecle, les Wagogo prelevaient des taxes (hongo) sur les caravanes nyamwezi transportant l'ivoire. En avril 1890, l'expedition allemande d'Emin Pacha traversa Ugogo en rasant 19 villages et volant environ 2 000 animaux. La serie de famines de 1881, 1885, 1888-89, 1894-95 et 1913-14 marqua gravement la societe wagogo. La Premiere Guerre mondiale aggrava encore les famines dans la region centrale de Tanzanie."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le systeme politique wagogo reposait principalement sur les chefs rituels (mutemi), qui influencaient tout le territoire. Responsables de la pluie et de la fertilite, de la protection contre les catastrophes, des ceremonies de circoncision et d'initiation, et arbitres en cas d'homicide ou d'accusation de sorcellerie. Les premiers observateurs europeens appelaients ces chefs sultans. De nombreux chefs gogo avaient des conseillers nyamwezi.",
+      "clanOrganization": "Lignages familiaux organises autour du betail. Les clans wagogo se deplacaient frequemment, abandonnant les liens aux anciens groupements pour adopter de nouveaux noms claniques, affiliations et fonctions rituelles selon les configurations territoriales.",
+      "ageClassSystems": "Systeme de classes d'age guerrieres comparable a celui des Maasai, utilise principalement pour la defense locale et les raids de betail contre les voisins (Kisongo, Maasai, Wahehe). Les jeunes hommes etaient organises en groupes de guerriers par classe d'age.",
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite, les alliances pastorales et les droits sur le betail. L'unite du foyer etait fondamentale : les personnes decedees dans des circonstances anormales (foudre, maladie contagieuse) etaient abandonnees dans la brousse ou dans un tronc de baobab, car elles n'avaient plus de foyer et risquaient de devenir des esprits malefiques.",
+      "religiousAuthority": "Autorite des chefs rituels traditionnels (mutemi) controlant la pluie et la fertilite. Syncrétisme progressif avec le christianisme depuis les missions du debut du XXe siecle. Les missionnaires catholiques etablirent 91 ecoles avec 4 000 eleves en moins de cinq ans a Ugogo apres 1910."
+    },
+    "languages": {
+      "mainLanguage": "Cigogo (aussi appele Chigogo, Kigogo ou Gogo)",
+      "isoCodes": ["gog"],
+      "dialects": [
+        "Cinyambwa (Nyambwa ou West Gogo) — parle a l'ouest de Dodoma et a Manyoni",
+        "Cinyaugogo (Nyaugogo ou Central Gogo) — parle dans les environs de Dodoma",
+        "Citumba (Tumba ou East Gogo) — parle a l'est"
+      ],
+      "vehicularRole": "Le cigogo est la langue maternelle des Wagogo, parlee par environ 1,44 million de personnes en Tanzanie centrale. Le swahili est utilise comme langue vehiculaire nationale et dans les ecoles, tandis que l'anglais est employe dans l'administration. Le cigogo presente une similitude lexicale de 56% avec le kagulu et 50% avec le hehe."
+    },
+    "culture": {
+      "majorRites": "Les rites d'initiation occupent une place centrale dans la culture wagogo. Le rite d'initiation feminine (makumbigawadala) implique la circoncision des filles (cigotogoto), marquant leur passage de l'enfance a l'age adulte. Les filles sont conduites au makumbi (maison d'initiation) apres la circoncision et y suivent un enseignement culturel approfondi via les chants muheme, qui leur inculquent le respect des aines et les comportements sociaux attendus. Le rite masculin correspondant utilise la musique cipande, les hommes entourant le garcon circoncis pour couvrir ses cris de leur chant polyphonique. Des rites funebres distincts existaient : les personnes decedees normalement recevaient des sepultures dans le homestead, tandis que ceux frappes par la foudre ou une maladie contagieuse etaient abandonnes dans la brousse. Des ceremonies liees a l'elevage et a la pluie etaient organisees par les chefs rituels.",
+      "symbols": "Le betail occupe une place centrale dans la symbolique wagogo, representant la richesse, le statut social et les alliances. Le baobab est un arbre symbolique important : les personnes decedees anormalement y etaient deposees. Les tambours (ngoma) sont des symboles de l'autorite rituelle et de la celebration. Le plateau d'Ugogo lui-meme constitue un espace identitaire fort pour les Wagogo.",
+      "artsAndMusic": "La musique wagogo jouit d'une reputation internationale. Hukwe Zawose (1938-2003), musicien legendaire du Dodoma, est le tresor musical le plus renomme de Tanzanie, ayant performe au WOMADelaide en 1995 et diffuse la musique gogo dans le monde entier. La tradition musicale muheme, associee aux ceremonies d'initiation feminine, comprend des chants polyphoniques accompagnes de tambours frapes a fort volume. Les instruments traditionnels comprennent le limba (piano a pouce), le zeze (cordophone), le ndono, le filimbi (flute) et le ngoma (tambour), fabriques artisanalement. La musique cipande accompagne les circoncisions masculines. La famille Zawose (Msafiri, Pendo, Leah Zawose) perpetue aujourd'hui cette tradition. La poterie et le tissage constituent les principales formes d'artisanat.",
+      "spiritualities": "La spiritualite wagogo traditionnelle repose sur la croyance aux esprits des ancetres et au role des chefs rituels (mutemi) comme intermediaires avec le monde surnaturel. Ces chefs controlaient la pluie, la fertilite des terres et la protection contre les calamites naturelles. La sorcellerie (uchawi) etait une preoccupation majeure : les diviners etaient consultes pour les conflits et les maladies. Les personnes decedees anormalement risquaient de devenir des esprits malefiques associes aux sorciers. Le christianisme, introduit par les missions au debut du XXe siecle (catholiques en 1910, anglicans du diocese de Central Tanganyika), est aujourd'hui largement pratique. Un syncretisme vivant existe entre croyances traditionnelles et christianisme, illustre par l'integration de la musique muheme dans les offices anglicans du diocese de Central Tanganyika depuis les annees 1990."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Wagogo n'ont pas forme un royaume centralise unifie. Leur organisation reposait sur des territoires geres par des chefs rituels (mutemi) jouissant d'une autorite religieuse et politique locale. Ugogo etait divise en plusieurs zones dirigees par ces chefs territoriaux, souvent de lignages distincts. Certains chefs avaient des conseillers nyamwezi et prelevaient des taxes sur les caravanes commerciales (hongo).",
+      "relationsWithNeighbors": "Les Wagogo entretenaient des relations commerciales et conflictuelles avec les Nyamwezi, dont les caravanes d'ivoire traversaient Ugogo au XIXe siecle. Ils pratiquaient des raids de betail contre les Kisongo (Maasai) et les Wahehe, contre lesquels une organisation militaire par classes d'age avait ete developpee. Les Kimbu et Nyamwezi coloniserent progressivement les plaines seches a l'ouest et a l'est d'Ugogo. Le swahili etait deja parle couramment par les Wagogo et les Sagara des les annees 1850, selon Richard Francis Burton.",
+      "conflictsOrAlliances": "Resistance aux expeditions allemandes (1890) : Emin Pacha rasa 19 villages et vola 2 000 animaux wagogo en traversant Ugogo. Durant la Premiere Guerre mondiale, les Wagogo subirent des requisitions massives de betail et de grain par les deux parties belligerantes, aggravant les famines structurelles de la region. La famine de 1917-1918 fut la plus grave jamais enregistree dans la region de Dodoma, causant environ 30 000 morts dans le seul district de Dodoma.",
+      "diaspora": "Des Wagogo se sont installes dans les grandes villes tanzaniennes, notamment Dar es Salaam et Dodoma (capitale nationale). Une diaspora wagogo existe dans les pays occidentaux, en particulier en Europe et en Amerique du Nord, souvent liee a des musiciens et artistes de la tradition Zawose."
+    },
+    "demography": {
+      "totalPopulation": 2000000,
+      "referenceYear": 2025,
+      "source": "Recensements tanzaniens (Tanzania National Bureau of Statistics), SIL Ethnologue (gog), estimation 2025 ; Omniglot cite 1,44 million de locuteurs cigogo ; les Wagogo representent environ 3% de la population tanzanienne",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 2000000,
+          "note": "Region de Dodoma (Ugogo) principalement — plateau central de Tanzanie"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Gogo people. https://en.wikipedia.org/wiki/Gogo_people",
+      "Wikipedia EN — Gogo language. https://en.wikipedia.org/wiki/Gogo_language",
+      "SIL Ethnologue — Gogo language (gog). https://www.ethnologue.com/language/gog/",
+      "Omniglot — Gogo language and alphabet. https://www.omniglot.com/writing/gogo.htm",
+      "Kwekudee — Trip Down Memory Lane : Wagogo (Gogo) People. https://kwekudee-tripdownmemorylane.blogspot.com/2013/12/wagogo-gogo-people-tanzanian-dancing.html",
+      "Tanzania National Bureau of Statistics. https://www.nbs.go.tz/",
+      "CIA World Factbook — Tanzania. https://www.cia.gov/the-world-factbook/countries/tanzania/"
+    ]
+  }
+}

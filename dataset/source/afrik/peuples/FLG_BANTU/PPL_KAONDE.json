@@ -1,0 +1,85 @@
+{
+  "id": "PPL_KAONDE",
+  "nameMain": "Kaonde",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB", "COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Kaonde",
+      "selfAppellation": "BaKaonde",
+      "exonyms": ["Kahonde", "BaKahonde", "Luba-Kaonde"],
+      "originOfExonyms": "Le nom Kaonde derive d'une riviere appelee Kaonde (ou Kaondi), un affluent de la Mukwizhi dans le bassin du Congo. Quand le chef lunda Musokantanda vainquit le chef Mushima (ancetre des Kaonde), il le surnomma Mushima wa Kaonde (Mushima de la riviere Kaonde). Une etymologie populaire traduit Kaonde par le mince ou le petit nombre, en reference a la defaite de Mushima. La langue est appelee kiiKaonde en auto-denomination.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Kaonde est officiel en Zambie ou la langue kiiKaonde est reconnue comme l'une des sept langues vernaculaires nationales et utilisee dans les emissions de Radio Zambia.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu du centre, branche luba-katanga",
+      "historicalRegion": "Province Nord-Ouest de la Zambie (Solwezi, Kasempa, Mufumbwe), region de Katanga (RDC)",
+      "currentCountries": ["ZMB", "COD"]
+    },
+    "ethnicities": ["Kaonde", "BaKaonde"],
+    "origins": {
+      "ancientOrigins": "Les Kaonde sont issus de l'Empire Luba du Katanga (RDC actuelle), ou ils appartenaient au groupe Basanga. Leur separation de l'empire Luba a commence vers le XVIe siecle sous l'impulsion de conflits de succession et de raids intra-luba. Ils constituent une confederation de trois clans distincts partageant une origine commune dans le Katanga meridional.",
+      "formationPeriod": "XVIe-XVIIe siecles : trois groupes de migrants Luba arrivent en Zambie actuelle a des periodes differentes, se reunissant sous l'identite commune Kaonde.",
+      "migrationRoutes": [
+        "Depart du Katanga (RDC) vers le XVIe siecle",
+        "Traversee de la riviere Kafue (Luenge) vers le nord-ouest",
+        "Etablissement entre les bassins Congo-Zambezi",
+        "Migration vers le sud depuis les tributaires du Lualaba sous la pression Lunda",
+        "Etablissement final dans la region de Solwezi-Kasempa (Zambie nord-ouest)"
+      ],
+      "historicalSettlementZones": [
+        "Region Solwezi (clan de la Riviere, chef Kasongo)",
+        "Region Kasempa (clan du Champignon, chef Kasempa)",
+        "Ouest du Kaondeland (clan du Singe, chef Ntambo)",
+        "Mumbwa (province Centrale, Zambie)"
+      ],
+      "unificationsOrDivisions": "Les trois clans fondateurs (clan de la Riviere sous Kasongo, clan du Champignon sous Kasempa, clan du Singe sous Ntambo) se sont federes sous l'identite Kaonde en raison d'une conscience d'origine commune et de similarites dialectales et coutumières, sans former un royaume centralise. Domination lunda au XVIIIe siecle, resistance et evasion vers le sud pour echapper au tribut.",
+      "externalInfluences": "Dominance Lunda (chef Musokantanda) aux XVIIe-XVIIIe siecles imposant le tribut. Raids des Yeke de Katanga (Congo) forçant des deplacements au XIXe siecle. Traite des esclaves : les Kaonde ont d'abord subi des raids, puis ont eux-memes fait des incursions contre les Ila, Nkoya et autres pour acquerir des armes. Arrivee des missionnaires chretiens et colonisation britannique (fin XIXe siecle).",
+      "majorHistoricalEvents": "Separation de l'Empire Luba (vers 1600). Soumission au chef lunda Musokantanda (vers 1700). Raids des Yeke de Katanga au XIXe siecle provoquant de nouvelles migrations. Etablissement colonial britannique en Rhodesie du Nord (fin XIXe siecle). Independance de la Zambie (1964) et reconnaissance officielle du kiiKaonde comme langue nationale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Confederation de chefferies matrilineaires sans hierarchie supreme reconnue. Chaque clan a son chef hereditaire. La plus petite unite est la famille, puis le village sous un chef de village nomme par les anciens, puis le clan sous un chef (mutwe). Le chef de village est responsable devant le chef de clan. La succession au chieftainship passe par le neveu uterin (fils de la soeur).",
+      "clanOrganization": "Organisation en clans matrilineaires. Principaux clans fondateurs : Balonga (clan de la Riviere, chef Kasongo), Bena Kyulu (clan du Champignon, chef Kasempa), Bena Luo (clan du Singe, chef Ntambo). Les clans sont souvent nommes d'apres leur totem, un etre qui sert d'embleme.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Systeme strictement matrilineaire : l'enfant appartient au clan de sa mere. La femme et son mari s'installent dans le village maternel apres le mariage. Un chef ne peut etre succede par son fils, mais par le fils de sa soeur la plus proche. L'identite familiale se trace par la lignee maternelle.",
+      "religiousAuthority": "Croyance traditionnelle en Lesa, dieu supreme habitant le ciel (marie a Chandashi sur la Terre). Les esprits des morts (Chimvule) demeurent sur terre et doivent etre apaises via le chipanda (baton plante devant la maison, lieu de priere masculin). Les missionnaires chretiens ont introduit le christianisme des le XIXe siecle, aujourd'hui predominant."
+    },
+    "languages": {
+      "mainLanguage": "kiiKaonde (Kaonde)",
+      "isoCodes": ["kqn"],
+      "dialects": [],
+      "vehicularRole": "Le kiiKaonde est l'une des sept langues vernaculaires officielles de la Zambie, utilisee dans les emissions de Radio Zambia. Il est parle principalement dans la province Nord-Ouest, notamment a Solwezi, Mufumbwe, Kasempa, Kalumbila et Mushindamo, ainsi que dans le district de Mumbwa (province Centrale)."
+    },
+    "culture": {
+      "majorRites": "Juba ja Nsomo : ceremonie principale celebree en juin a Kasempa (capitale traditionnelle), marquant la nouvelle recolte, honorant les ancetres et partageant le patrimoine culturel. Kunyanta Ntanda (juillet, Solwezi), Ntongo (septembre, Mufumbwe), Lubinda (aout, Solwezi), Musaka/Jikubi (septembre, Mumbwa). Kubelula : rite de passage a l'age adulte.",
+      "symbols": "Le chipanda (baton plante devant la maison) symbolise la presence du Chimvule (esprit des morts) et sert de lieu de priere. Les totems claniques (riviere, champignon, singe) sont des emblemes identitaires forts. Le sel, produit par les femmes via la combustion de terre du gisement Kaimbwe, est un symbole economique et culturel.",
+      "artsAndMusic": "Tradition de danse lors des grandes ceremonies. Fabrication du sel artisanale par les femmes (sol calcine, filtrage via cendre). Chasse traditionnelle dans les forets humides des bassins versants. Elevage de betail, agriculture de subsistance (manioc, mais, millet).",
+      "spiritualities": "Croyance en Lesa (dieu supreme du ciel) et Chandashi (son epouse sur terre, manifeste par les tremblements de terre). Lesa se manifeste par le tonnerre et les eclairs. Culte des esprits des ancetres Chimvule, apaises par des prieres aupres du chipanda. Adoption progressive du christianisme depuis le XIXe siecle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Confederation de trois chefferies principales (Kasongo/Riviere, Kasempa/Champignon, Ntambo/Singe) sans royaume centralise. Les Kaonde ont maintenu leur autonomie sous la domination lunda en payant tribut, evitant un conflit direct. Le chef Kasongo Kibana (ne vers 1814, mort 1873) a reuni les clans Balonga, Bena Kyulu et Bena Lozi sous sa chefferie.",
+      "relationsWithNeighbors": "Tensions avec les Ila, Nkoya et Mbwela au XVIIIe-XIXe siecles (raids pour obtenir des esclaves/armes). Soumission au chef lunda Musokantanda. Raids subis des Yeke de Katanga. Contacts avec les Lozi de la plaine de Barotse pour le clan du Singe. Apres l'independance, integration dans l'Etat zambien multiculturel.",
+      "conflictsOrAlliances": "Soumission forcee aux Lunda (vers 1700). Raids et contre-raids avec les Ila et d'autres groupes. Resistance a l'expansion yeke (XIXe siecle). Opposition periodique a la colonisation britannique. Maintien de l'identite culturelle face aux pressions assimilationnistes.",
+      "diaspora": "Petite communaute en RDC, non identifiee sous le nom Kaonde mais sous le nom Luba. Estimations a environ 900 000 locuteurs au total, dont plus de 40% en Zambie."
+    },
+    "demography": {
+      "totalPopulation": 454000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Kaonde en Zambie : 454 000 locuteurs primaires)",
+      "distributionByCountry": [
+        { "country": "ZMB", "population": 454000 },
+        { "country": "COD", "population": 50000 }
+      ]
+    },
+    "sources": [
+      "Kaonde – Britannica (https://www.britannica.com/topic/Kaonde)",
+      "Kaonde language – Wikipedia (https://en.wikipedia.org/wiki/Kaonde_language)",
+      "The Kaonde People – Lugha Yangu, 2022 (https://lughayangu.com/post/the-kaonde-people)",
+      "History – Kaonde Archives (https://kaondewordpress.wordpress.com/history/)",
+      "Culture – Kaonde Archives (https://kaondewordpress.wordpress.com/culture/)",
+      "Kaonde – DICE Database, University of Missouri (https://dice.missouri.edu/assets/docs/niger-congo/Kaonde.pdf)",
+      "A general survey of the historical migration of the Kaonde clans – University of Amsterdam (https://pure.uva.nl/ws/files/1687596/168316_ARTICLE_A_general_survey_of_the_historical_migration_of_the_Kaonde_clans_from_southern_Congo_into_Zambia_2_.pdf)",
+      "Kaonde in Zambia – Joshua Project (https://joshuaproject.net/people_groups/12511/ZA)"
+    ]
+  }
+}

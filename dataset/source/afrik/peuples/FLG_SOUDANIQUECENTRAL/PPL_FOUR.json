@@ -1,0 +1,94 @@
+{
+  "id": "PPL_FOUR",
+  "nameMain": "Four",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["SDN", "TCD", "EGY"],
+  "content": {
+    "appellations": {
+      "mainName": "Four",
+      "selfAppellation": "Fora",
+      "exonyms": [
+        "Fur",
+        "Forawa",
+        "Fordunga",
+        "Furawi",
+        "Furr",
+        "Furs",
+        "Konjara",
+        "Kungara",
+        "Keira",
+        "Kondjara",
+        "Fota",
+        "Fot"
+      ],
+      "originOfExonyms": "Le terme Four (ou Fur) est l'ethnonym principal en usage dans les sources francaises et arabes. Le nom Darfour (arabe : dar Four, maison des Four) derive directement de ce peuple et nomme la region qu'ils habitent. Les variantes Konjara et Keira designent la dynastye royale au pouvoir dans le sultanat du Darfour. Forawa est le pluriel en langue four.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Fur (anglais) ou Four (francais) est utilise dans les contextes administratifs, juridiques (CPI, enquetes ONU) et academiques. Dans le contexte du conflit du Darfour, les Four sont identifies comme l'une des principales ethnies cibles. Le nom Darfour reste le nom officiel de la region.",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Nilo-saharien, branche Four-Masalit-Tama",
+      "historicalRegion": "Darfour (ouest du Soudan), region des monts Djebel Si et Djebel Marra",
+      "currentCountries": ["SDN", "TCD", "EGY"]
+    },
+    "ethnicities": ["Four"],
+    "origins": {
+      "ancientOrigins": "Les Four sont originaires d'Afrique centrale, venant de la region de l'actuelle Republique centrafricaine et du Tchad, d'ou ils ont migre vers le nord-ouest du Soudan pour s'etablir au Darfour. Ils sont considerees comme apparentes aux Kanouri du royaume du Kanem-Bornou (lac Tchad), avec lesquels ils ont maintenu des contacts au fil des siecles. Leur region historique etait connue au XVIe siecle sous le nom de Nubie du Sud.",
+      "formationPeriod": "XVIIe siecle : consolidation du sultanat du Darfour sous la dynastye Keira (Four). Le royaume a persiste jusqu'en 1874.",
+      "migrationRoutes": [
+        "Migration depuis l'Afrique centrale (actuelle RCA et Tchad) vers le nord-ouest du Soudan",
+        "Installation dans la region montagneuse du Djebel Marra et Djebel Si"
+      ],
+      "historicalSettlementZones": [
+        "Region montagneuse du Djebel Si et Djebel Marra (coeur historique)",
+        "Plaines a l'ouest et au sud-ouest de ces montagnes (entre 11-14 degres N et 23-26 degres E)",
+        "Darfour occidental, central et meridional (Soudan)",
+        "Region frontiere du Tchad (refugees depuis le conflit 2003)"
+      ],
+      "unificationsOrDivisions": "La dynastye Keira (branche royale des Four) a unifie le Darfour sous un sultanat. Le sultanat du Darfour a connu jusqu'a 36 sultans. La conquete egyptienne en 1874 a mis fin au premier sultanat, restaure brievement de 1897 a 1916 sous Ali Dinar avant l'annexion britannique definitivo.",
+      "externalInfluences": "Influence de l'empire Kanem-Bornou qui a apporte l'islam au Darfour au Moyen-Age. Conquete par l'Egypte ottomane de Rabih az-Zubayr en 1874. Episode mahdiste soudanais. Colonisation britannique (1916-1956). Conflit arabe-africain contemporain au Darfour (depuis 2003).",
+      "majorHistoricalEvents": "Fondation du sultanat du Darfour (dynastye Keira, XVIIe siecle). Maintien de 36 sultans successifs. Conquete egyptienne en 1874. Restauration du sultanat de 1897 a 1916. Allliance avec l'Empire ottoman lors de la Premiere Guerre mondiale, defaite et annexion britannique en 1916. Deuxieme guerre civile soudanaise (1983-2005). Conflit du Darfour a partir de 2003 : campagne de violences par les Janjawid allie a l'armee soudanaise, 200 000 a 300 000 morts civils (2003-2005). Creation de la Sudan Liberation Movement/Army (SLM/A) par Abdul Wahid al-Nur, leader four. Guerre civile soudanaise depuis 2023 : nouvelles violences des RSF (heritiers des Janjawid) contre les Four a Al-Fashir."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme monarchique sultanal : le sultanat du Darfour (dynastye Keira) dirigeait l'ensemble de la region. La societe est gouvernee aujourd'hui par des anciens de village. Les hommes sont responsables des decisions importantes liees aux finances et aux mariages.",
+      "clanOrganization": "Organisation en lignages patrilineaires. Les Baqqara (arabes nomades) constituent un groupe distinct avec lequel les Four ont historiquement eu des tensions liees aux paturages. Certains Four eleveurs de betail ayant adopte un mode de vie nomade sont culturellement assimiles aux Baqqara.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La famille nucleaire (Porundia) est l'unite de base. La belle-famille des deux cotes est prise en charge jusqu'a la mort. Le nom de famille est transmis par le pere. Les decisions matrimoniales impliquent l'ensemble du village et les familles des deux epoux.",
+      "religiousAuthority": "Islam sunnite, ecole Maliki. Les imams jouent un role de mediation dans les ceremonies (mariage, funerailles). L'adoption de l'islam remonte a la conquete de la region par l'empire Kanem-Bornou au Moyen-Age."
+    },
+    "languages": {
+      "mainLanguage": "Four (fvr)",
+      "isoCodes": ["fvr"],
+      "dialects": [],
+      "vehicularRole": "Le four est la langue maternelle de la quasi-totalite de la communaute. L'arabe soudanais est utilise comme lingua franca pour les echanges avec l'administration soudanaise et les groupes arabophones voisins. La langue four n'a pas d'ecriture traditionnelle propre ; l'alphabet latin et l'alphabet arabe sont utilises pour la transcription moderne."
+    },
+    "culture": {
+      "majorRites": "Mariage : le pere du marie demande la permission au pere de la mariee ; le village entier est consulte avant l'acceptation ; la ceremonie se deroule dans la maison du marie avec lecture coranique par un imam, suivi d'un repas collectif et d'une danse appelee firalubia. Les histoires orales transmises aux enfants constituent un outil educatif et protecteur.",
+      "symbols": "Le drapeau du Darfour et du mouvement national four est un symbole identitaire contemporain fort. L'architecture en boue seche (mud architecture) est emblematique du patrimoine bati four. Les instruments talak (eponge de nettoyage), birish (tapis de sol) et gada (plat en bois ceremoniel) representent l'artisanat traditionnel.",
+      "artsAndMusic": "Musique dominee par les percussions lourdes (tambours) qui accompagnent les celebrations. Artistes four renommes : Abdalla Kioka, Marium Amo et Tour Baree'ng Kwee. Architecture en brique de boue : argile excavee, melangee a de l'eau et de la paille, moulee en briques ou appliquee sur des echafaudages en bois.",
+      "spiritualities": "Islam sunnite (ecole Maliki) constitue la religion officielle. Pratiques synretiques melangeant islam et religion populaire (folk Islam) persistantes selon le Joshua Project. Certains rituels de la tradition africaine ancienne ont ete maintenus sous des formes islamises."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Sultanat du Darfour (dynastye Keira) : l'une des entites politiques les plus durables d'Afrique subsaharienne, avec 36 sultans successifs du XVIIe siecle a 1916. Restaure brievement sous Ali Dinar (1897-1916). Les gouverneurs du Darfour comme Deriage et Tegani Seisei sont des membres four. Contribution aux travaux de construction autour de la Kaaba a La Mecque documentee historiquement.",
+      "relationsWithNeighbors": "Contacts historiques avec les Kanouri du Kanem-Bornou. Relations tendues avec les nomades arabes Baqqara (concurrence pour l'eau et les paturages, particulierement au Djebel Marra central). Relations avec les Masalit et autres groupes sedentaires non arabes du Darfour. Alliance partielle avec les forces gouvernementales soudanaises lors de la deuxieme guerre civile (1983).",
+      "conflictsOrAlliances": "Conflit du Darfour (depuis 2003) : violences massives par les Janjawid et l'armee soudanaise contre les Four et autres groupes non arabes ; 200 000 a 300 000 morts civils (2003-2005). Creation du Mouvement pour la justice et l'egalite (JEM) et du Mouvement/Armee de liberation du Soudan (SLA/SLM). Conflit en cours depuis 2023 (Forces de soutien rapide/RSF contre armees soudanaises) avec nouvelles atrocites contre les Four a Al-Fashir.",
+      "diaspora": "Plusieurs millions de deplaces internes au Soudan et refugies au Tchad depuis le conflit du Darfour en 2003. Diaspora four present en Egypte et dans d'autres pays africains. Soutien financier de la diaspora aux combattants four documente."
+    },
+    "demography": {
+      "totalPopulation": 6500000,
+      "referenceYear": 2025,
+      "source": "Wikipedia FR (6 500 000 au Soudan, 20 000 au Tchad, 3 500 en Egypte) ; Joshua Project (1 392 000 pour le sous-groupe Fur/Forok au Soudan) ; estimation globale integrant deplacement interne lie au conflit",
+      "distributionByCountry": [
+        { "country": "SDN", "population": 6450000 },
+        { "country": "TCD", "population": 40000 },
+        { "country": "EGY", "population": 10000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia FR, Fours (peuple) – Wikimedia Foundation (https://fr.wikipedia.org/wiki/Fours_(peuple))",
+      "Wikipedia EN, Fur people – Wikimedia Foundation (https://en.wikipedia.org/wiki/Fur_people)",
+      "Joshua Project, Fur/Forok in Sudan – Joshua Project 2024 (https://joshuaproject.net/people_groups/11779/SU)",
+      "Ethnologue, Fur (fvr) – SIL International 2024 (https://www.ethnologue.com/language/fvr/)",
+      "UK Government, Country policy and information note: non-Arab Darfuris – GOV.UK, aout 2024 (https://www.gov.uk/government/publications/sudan-country-policy-and-information-notes/country-policy-and-information-note-non-arab-darfuri-august-2024-accessible)",
+      "Jorg Adelberger, Vom Sultanat zur Republik : Veranderungen in der Sozialorganisation der Fur (Sudan) – F. Steiner, Stuttgart, 1990 (ISBN 3515055126)"
+    ]
+  }
+}

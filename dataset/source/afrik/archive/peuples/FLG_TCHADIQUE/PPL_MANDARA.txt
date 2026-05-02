@@ -1,0 +1,39 @@
+# Nom du peuple
+- Nom principal : Mandara
+- Auto-appellation : Wandala
+- Appellations historiques : « Mandara » (terme arabe et colonial)
+- Famille linguistique : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
+- Région historique : Montagnes du Mandara (Cameroun / Nigeria)
+- Pays actuels : CMR, NGA
+- Identifiant peuple : PPL_MANDARA
+
+# 1. Ethnies incluses
+- Wandala du Cameroun
+- Mandara du Nigeria
+
+# 2. Origines
+- Royaume du Mandara connu depuis le XVe siècle.
+- Influences sahéliennes et tchadiques anciennes.
+
+# 3. Organisation
+- Chefferies centralisées.
+- Systèmes politico-militaires historiques puissants.
+
+# 4. Langue
+- Wandala (ISO : mfi)
+
+# 5. Culture
+- Architecture en pierre, greniers circulaires.
+- Artisanat en fer.
+
+# 6. Histoire
+- Royaume Mandara résistant aux Kanem-Bornou.
+- Interactions avec Peuls, Giziga, Mafa.
+
+# 7. Démographie
+- Population : 310 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (mfi)
+- Historical Mandara Studies

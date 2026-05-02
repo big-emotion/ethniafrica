@@ -75,12 +75,6 @@ export async function GET(request: NextRequest) {
 
     const response = await listLanguageFamiliesHandler(page, perPage);
     const corsResponse = jsonWithCors(response);
-    if (corsResponse instanceof Response) {
-      corsResponse.headers.set(
-        "Cache-Control",
-        "public, max-age=86400, s-maxage=86400"
-      );
-    }
 
     const duration = Date.now() - startTime;
     logger.info("GET /api/v2/language-families completed", {

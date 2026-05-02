@@ -1,0 +1,66 @@
+{
+  "id": "PPL_BATOORO",
+  "nameMain": "Batooro",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["UGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Batooro",
+      "selfAppellation": "",
+      "exonyms": ["Toro"],
+      "originOfExonyms": "Le terme 'Toro' vient du nom du royaume historique du Toro",
+      "whyProblematic": "N/A",
+      "contemporaryUsage": "N/A",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou (Zone J)",
+      "historicalRegion": "Ouest de l'Ouganda",
+      "currentCountries": ["UGA"]
+    },
+    "ethnicities": ["Batooro"],
+    "origins": {
+      "ancientOrigins": "Les Batooro sont originaires de l'ouest de l'Ouganda. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone J). Formation du royaume du Toro, scission du Bunyoro au XIXe siècle.",
+      "formationPeriod": "N/A",
+      "migrationRoutes": [
+        "Migrations depuis les régions des Grands Lacs. Expansion vers l'ouest de l'Ouganda. Déplacements vers les zones urbaines."
+      ],
+      "historicalSettlementZones": ["Ouest de l'Ouganda"],
+      "unificationsOrDivisions": "N/A",
+      "externalInfluences": "N/A",
+      "majorHistoricalEvents": "N/A"
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (Toro). Système de conseils d'anciens pour la gouvernance. Structure clanique patrilinéaire.",
+      "clanOrganization": "N/A",
+      "roleOfLineages": "N/A",
+      "religiousAuthority": "N/A"
+    },
+    "languages": {
+      "mainLanguage": "Rutooro (ttj)",
+      "isoCodes": ["ttj"],
+      "dialects": ["N/A"],
+      "vehicularRole": "N/A"
+    },
+    "culture": {
+      "Rites majeurs": "Traditions royales. Cérémonies royales. Cérémonies de mariage traditionnelles. Rites de passage. Cérémonies liées à l'agriculture.",
+      "Symboles": "N/A",
+      "Arts et musique": "N/A",
+      "Spiritualités": "N/A"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume du Toro (XIXe siècle - présent). Scission du Bunyoro au XIXe siècle. Traditions royales.",
+      "relationsWithNeighbors": "N/A",
+      "conflictsOrAlliances": "N/A",
+      "diaspora": "N/A"
+    },
+    "demography": {
+      "totalPopulation": 1,
+      "referenceYear": 2025,
+      "source": "Fiche pays UGA, estimations ONU"
+    },
+    "sources": [
+      "Fiche pays UGA",
+      "SIL Ethnologue – Rutooro language (ttj)",
+      "CIA World Factbook – Uganda"
+    ]
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "id": "GNB",
+  "nameFr": "République de Guinée-Bissau (República da Guiné-Bissau)",
+  "nameOfficial": "République de Guinée-Bissau (República da Guiné-Bissau)",
+  "etymology": "Le nom \"Guinée-Bissau\" combine \"Guinée\" (du portugais \"Guiné\", terme utilisé pour désigner la côte ouest-africaine) et \"Bissau\" (nom de la capitale, dérivé du nom d'un chef local ou d'un terme local). Le nom \"Bissau\" a été ajouté en 1973 lors de l'indépendance pour différencier le pays de la Guinée-Conakry (Guinée).",
+  "nameOriginActor": "Le nom \"Guinée\" a été donné par les navigateurs portugais au XVe siècle. Le nom \"Guiné Portuguesa\" (Guinée portugaise) a été utilisé pendant la colonisation. Le nom \"Guinée-Bissau\" a été officialisé lors de l'indépendance en 1973 par le PAIGC (Parti africain pour l'indépendance de la Guinée et du Cap-Vert) pour différencier le pays de la Guinée-Conakry.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel de la Guinée-Bissau était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "XIIe-XVIe siècle : Zones d'influence des royaumes mandé (Mali, Kaabu). Développement du royaume mandinka de Kaabu (grand royaume mandinka installé en Casamance et Guinée-Bissau). Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de royaumes et peuples autonomes : royaume mandinka de Kaabu (dominant), peuples côtiers (Papel, Manjak), peuples forestiers et insulaires (Bijagó), Balante, Fula, Mandinka. Les Portugais utilisaient le terme \"Guiné\" pour désigner la région.",
+      "colonization": "1446-1879 : Arrivée des Portugais (1446), la région est nommée \"Guiné de Cabo Verde\" (Guinée du Cap-Vert). Les Portugais implantent des comptoirs dès le XVe siècle mais ne contrôlent l'intérieur qu'au XIXe siècle. 1879 : Colonie distincte du Cap-Vert, nommée \"Guiné Portuguesa\" (Guinée portugaise). Le territoire était administré comme une colonie portugaise jusqu'à l'indépendance en 1973.",
+      "contemporary": "1973 : Indépendance de la Guinée-Bissau (24 septembre 1973), proclamation de la République de Guinée-Bissau. Le nom \"Bissau\" a été ajouté pour différencier le pays de la Guinée-Conakry. Indépendance obtenue après la lutte du PAIGC (Parti africain pour l'indépendance de la Guinée et du Cap-Vert)."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume mandinka de Kaabu",
+        "period": "XIIe siècle - XIXe siècle",
+        "dominantPeoples": ["Mandinka"],
+        "politicalCenters": ["Kaabu (capitale historique)"],
+        "historicalRole": "Grand royaume mandinka installé en Casamance et Guinée-Bissau, héritier de l'empire du Mali. État puissant et structuré, système monarchique, traditions mandé. Domination de la région jusqu'au XIXe siècle. Résistance à la colonisation portugaise."
+      },
+      {
+        "name": "Peuples côtiers",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Papel", "Manjak", "Mancanha"],
+        "politicalCenters": ["Chefferies traditionnelles côtières"],
+        "historicalRole": "Peuples côtiers et forestiers, rôle commercial important, traditions maritimes. Relations avec la Casamance (Sénégal). Résistance à la colonisation portugaise."
+      },
+      {
+        "name": "Peuples Bijagó",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Bijagó / Bidyogo"],
+        "politicalCenters": ["Îles Bijagó (archipel)"],
+        "historicalRole": "Peuple insulaire, société matrilinéaire, traditions maritimes, résistance à la colonisation portugaise. Organisation sociale unique (matrilinéaire)."
+      },
+      {
+        "name": "Colonie portugaise de Guinée",
+        "period": "1879 - 1973",
+        "dominantPeoples": [
+          "Tous les peuples guinéens-bissau sous domination portugaise"
+        ],
+        "politicalCenters": ["Bissau (capitale coloniale)"],
+        "historicalRole": "Colonie portugaise, exploitation économique, développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance des Balante). Développement du mouvement indépendantiste au XXe siècle, formation du PAIGC (Parti africain pour l'indépendance de la Guinée et du Cap-Vert) en 1956."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Balante",
+        "selfAppellation": "Balanta",
+        "exonyms": ["Balante (terme utilisé par les Européens)"],
+        "peopleId": "PPL_BALANTA",
+        "mainRegion": "Centre et littoral de la Guinée-Bissau",
+        "languages": ["Balanta (ble", "ISO 639-3)", "portugais", "créole"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Balanta\" est l'auto-appellation. Pas de terme péjoratif connu. Peuple agro-forestier et égalitaire, très présent au centre et littoral. Rôle central dans l'histoire de Guinée-Bissau. Résistance notable au colonialisme portugais."
+      },
+      {
+        "name": "Fula / Peul",
+        "selfAppellation": "Fulɓe (pluriel), Pullo (singulier)",
+        "exonyms": [
+          "Peul (terme français)",
+          "Fulani (terme haoussa)",
+          "Fula (terme anglophone)",
+          "\"Fellata\" (terme haoussa parfois péjoratif",
+          "à éviter)"
+        ],
+        "peopleId": "PPL_FULA",
+        "mainRegion": "Toutes les régions de la Guinée-Bissau",
+        "languages": ["Fulfulde (ful", "ISO 639-3)", "portugais", "créole"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Fulɓe\" est l'auto-appellation. \"Peul\" et \"Fulani\" sont des exonymes acceptés. \"Fellata\" peut avoir une connotation péjorative dans certains contextes et doit être évité. Pasteurs et commerçants musulmans."
+      },
+      {
+        "name": "Mandinka",
+        "selfAppellation": "Mandinka / Mandiŋka",
+        "exonyms": [
+          "Mandinka (terme utilisé par les Européens)",
+          "Mandingue (forme française)",
+          "\"Mandingo\" (terme historique",
+          "parfois péjoratif)"
+        ],
+        "peopleId": "PPL_MANDINKA",
+        "mainRegion": "Toutes les régions de la Guinée-Bissau",
+        "languages": ["Mandinka (mnk", "ISO 639-3)", "portugais", "créole"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Mandinka\" ou \"Mandiŋka\" est l'auto-appellation. \"Mandingue\" est l'exonyme français accepté. \"Mandingo\" est un terme historique qui peut avoir une connotation péjorative dans certains contextes et doit être évité. Héritiers du royaume de Kaabu."
+      },
+      {
+        "name": "Papel",
+        "selfAppellation": "Papel",
+        "exonyms": ["Papel (terme utilisé par les Européens)"],
+        "peopleId": "PPL_PAPEL",
+        "mainRegion": "Zone de Bissau (littoral)",
+        "languages": ["Papel (pbo", "ISO 639-3)", "portugais", "créole"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Papel\" est l'auto-appellation. Pas de terme péjoratif connu. Peuple autochtone de la zone de Bissau."
+      },
+      {
+        "name": "Manjak",
+        "selfAppellation": "Manjak",
+        "exonyms": ["Manjak (terme utilisé par les Européens)"],
+        "peopleId": "PPL_MANJAK",
+        "mainRegion": "Littoral et zones côtières",
+        "languages": ["Manjak (mfv", "ISO 639-3)", "portugais", "créole"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Manjak\" est l'auto-appellation. Pas de terme péjoratif connu. Peuple côtier et forestier lié à la Casamance."
+      },
+      {
+        "name": "Mancanha",
+        "selfAppellation": "Mancanha",
+        "exonyms": ["Mancanha (terme utilisé par les Européens)"],
+        "peopleId": "PPL_MANCANHA",
+        "mainRegion": "Littoral et zones côtières",
+        "languages": ["Mancanha (mcs", "ISO 639-3)", "portugais", "créole"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Mancanha\" est l'auto-appellation. Pas de terme péjoratif connu. Famille proche des Manjak."
+      },
+      {
+        "name": "Bijagó / Bidyogo",
+        "selfAppellation": "Bijagó / Bidyogo",
+        "exonyms": ["Bijagó", "Bidyogo (termes utilisés par les Européens)"],
+        "peopleId": "PPL_BIJAGO_BIDYOGO",
+        "mainRegion": "Îles Bijagó (archipel)",
+        "languages": ["Bijagó (bjg", "ISO 639-3)", "portugais", "créole"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Bijagó\" ou \"Bidyogo\" est l'auto-appellation. Pas de terme péjoratif connu. Peuple insulaire, société matrilinéaire."
+      },
+      {
+        "name": "Nalu",
+        "selfAppellation": "Nalu",
+        "exonyms": ["Nalu (terme utilisé par les Européens)"],
+        "peopleId": "PPL_NALU",
+        "mainRegion": "Sud du pays",
+        "languages": ["Nalu (naj", "ISO 639-3)", "portugais", "créole"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Nalu\" est l'auto-appellation. Pas de terme péjoratif connu. Sud du pays, sociétés anciennes."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes (Beafada, Felupe, Tanda, Soussou)",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Diverses régions de la Guinée-Bissau",
+        "languages": ["Langues diverses", "portugais", "créole"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation (Beafada, Felupe, Tanda, Soussou, etc.). Pas de terme péjoratif connu. Minorités transfrontalières."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Portugais",
+          "isoCode": "por",
+          "isPrimary": true
+        },
+        {
+          "name": "Créole guinéen-bissau"
+        },
+        {
+          "name": "Balanta",
+          "isoCode": "ble"
+        },
+        {
+          "name": "Fulfulde",
+          "isoCode": "ful"
+        },
+        {
+          "name": "Mandinka",
+          "isoCode": "mnk"
+        },
+        {
+          "name": "Papel",
+          "isoCode": "pbo"
+        },
+        {
+          "name": "Manjak",
+          "isoCode": "mfv"
+        },
+        {
+          "name": "Mancanha",
+          "isoCode": "mcs"
+        },
+        {
+          "name": "Bijagó",
+          "isoCode": "bjg"
+        },
+        {
+          "name": "Nalu",
+          "isoCode": "naj"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique de la Guinée-Bissau. Traditions atlantiques (Balante, Papel, Manjak, Mancanha, Bijagó, Nalu, rites d'initiation, musiques polyrythmiques, cérémonies agricoles). Traditions mandé (Mandinka, héritiers du royaume de Kaabu, griots, kora). Traditions peules (Fula, poésie peule, traditions islamiques). Traditions insulaires (Bijagó, société matrilinéaire, traditions maritimes). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles.",
+      "dominantReligions": "Islam sunnite (majoritaire, 45%+), christianisme (minorité), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, rites d'initiation)",
+      "lifestyles": "Agriculture (riz, arachides, cultures vivrières), élevage (Fula, bovins), pêche (côtière et fluviale), commerce et activités urbaines (zones urbaines, Bissau). Urbanisation modérée. Économie basée sur l'agriculture (arachides, riz, principale exportation), la pêche, et les services. Dépendance économique importante.",
+      "socialOrganization": "Organisation en royaumes historiques (Kaabu, système monarchique mandé), chefferies traditionnelles (Balante, société égalitaire sans chefferie héréditaire, décisions prises collectivement par les anciens), structures claniques patrilinéaires et matrilinéaires (Bijagó, société matrilinéaire). Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte.",
+      "regionalRelations": "Relations historiques avec le Sénégal (Casamance, Manjak, commerce, frontière), la Guinée (Fula, Mandinka, commerce, frontière), le Cap-Vert (PAIGC, lutte commune pour l'indépendance). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest) et l'UEMOA (Union économique et monétaire ouest-africaine). Relations commerciales et culturelles transfrontalières. Relations avec le Cap-Vert (lutte commune pour l'indépendance, PAIGC)."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par les peuples atlantiques, mandé et forestiers. Développement de chefferies et royaumes locaux.",
+      "middleAges": "XIIe-XVIe siècle : Zones d'influence des royaumes mandé (Mali, Kaabu). Développement du royaume mandinka de Kaabu, grand royaume mandinka installé en Casamance et Guinée-Bissau, héritier de l'empire du Mali. Domination de la région. Commerce régional et transsaharien.",
+      "precolonial": "Consolidation du royaume mandinka de Kaabu, peuples côtiers (Papel, Manjak), peuples forestiers et insulaires (Bijagó), Balante, Fula. Commerce régional et côtier. Contacts avec les Européens (Portugais, dès 1446).",
+      "colonization": "1446 : Arrivée des Portugais, la région est nommée \"Guiné de Cabo Verde\". Les Portugais implantent des comptoirs dès le XVe siècle mais ne contrôlent l'intérieur qu'au XIXe siècle. 1879 : Colonie distincte du Cap-Vert, nommée \"Guiné Portuguesa\". Période coloniale portugaise (1879-1973), exploitation économique, développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance des Balante). XXe siècle : Développement du mouvement indépendantiste, formation du PAIGC (Parti africain pour l'indépendance de la Guinée et du Cap-Vert) en 1956.",
+      "independenceStruggle": "1956-1973 : Lutte pour l'indépendance menée par le PAIGC (Parti africain pour l'indépendance de la Guinée et du Cap-Vert), dirigé par Amílcar Cabral. Lutte armée contre le Portugal. 1973 : Indépendance de la Guinée-Bissau (24 septembre 1973), proclamation de la République de Guinée-Bissau. Assassinat d'Amílcar Cabral en 1973. Le nom \"Bissau\" a été ajouté pour différencier le pays de la Guinée-Conakry.",
+      "postIndependence": "1973-1980 : Présidence de Luís Cabral (frère d'Amílcar Cabral). 1980-présent : Coup d'État, présidence de João Bernardo Vieira (1980-1999, 2005-2009), puis périodes d'instabilité politique, coups d'État récurrents. Défis : pauvreté, instabilité politique, développement économique, trafic de drogue. La Guinée-Bissau est l'un des pays les plus pauvres d'Afrique."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Guinea-Bissau",
+      "CIA World Factbook – Guinea-Bissau",
+      "ONU / UNFPA – Démographie Guinée-Bissau 2025",
+      "Speeches and Writings\"",
+      "Recensements guinéens-bissau",
+      "Études anthropologiques sur les peuples de la Guinée-Bissau",
+      "Études historiques sur le royaume de Kaabu"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Balante",
+          "population": 540000,
+          "percentageInCountry": 26,
+          "peopleId": "PPL_BALANTA",
+          "region": "Centre et littoral de la Guinée-Bissau",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Fula / Peul",
+          "population": 375000,
+          "percentageInCountry": 18,
+          "peopleId": "PPL_FULA",
+          "region": "Toutes les régions de la Guinée-Bissau",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Mandinka",
+          "population": 290000,
+          "percentageInCountry": 14,
+          "peopleId": "PPL_MANDINKA",
+          "region": "Toutes les régions de la Guinée-Bissau",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Papel",
+          "population": 210000,
+          "percentageInCountry": 10,
+          "peopleId": "PPL_PAPEL",
+          "region": ""
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "id": "PPL_KALANGA",
+  "nameMain": "Kalanga",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["BWA", "ZWE", "ZAF"],
+  "content": {
+    "appellations": {
+      "mainName": "Kalanga",
+      "selfAppellation": "BaKalanga",
+      "exonyms": ["Bakalanga", "Karanga"],
+      "originOfExonyms": "BaKalanga est l'auto-designation officielle du peuple. Le terme Karanga est employe au Zimbabwe ou les Kalanga sont parfois confondus avec les Karanga, un sous-groupe shona, bien qu'ils s'en distinguent nettement. Le nom Kalanga lui-meme signifie selon une etymologie traditionnelle ceux de l'est, en reference a leur origine depuis le nord-est de l'Afrique.",
+      "whyProblematic": "Les Kalanga ont souvent ete absorbes culturellement par leurs voisins : au Zimbabwe, assimiles aux Ndebele ou aux Shona ; au Botswana, aux Tswana. Cette pression a entraine un brouillage identitaire et des recensements sous-estimant leur nombre.",
+      "contemporaryUsage": "Le terme BaKalanga est aujourd'hui revendicque avec fierte dans un contexte de revitalisation culturelle. TjiKalanga (Zimbabwe) et Ikalanga (Botswana) sont les deux formes officielles du nom de la langue.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu meridionaux, branche occidentale du groupe shona (Guthrie S.10)",
+      "historicalRegion": "Matebeleland (Zimbabwe), nord-est du Botswana, province du Limpopo (Afrique du Sud)",
+      "currentCountries": ["BWA", "ZWE", "ZAF"]
+    },
+    "ethnicities": [
+      "Kalanga",
+      "BaLozwi",
+      "BaLilima",
+      "BaNambya",
+      "BaTalawunda",
+      "BaLemba",
+      "BaTswapong"
+    ],
+    "origins": {
+      "ancientOrigins": "Les BaKalanga descendent des fermiers Leopard's Kopje etablis vers 1050 ap. J.-C. dans le bassin Shashe-Limpopo (tripoint Zimbabwe-Botswana-Afrique du Sud). Des etudes genetiques (1996, 2000) indiquent un metissage avec des populations de souche semitique arrivees comme commercants. Certaines traditions orales font remonter leurs ancetres au nord-est de l'Afrique (Soudan, Egypte, Ethiopie).",
+      "formationPeriod": "Vers 900-1050 ap. J.-C. sur le plateau zimbabween, avec des echanges commerciaux avec la cote de l'ocean Indien documentes des le VIe siecle (Cosmas Indicopleustes d'Alexandrie).",
+      "migrationRoutes": [
+        "Migration depuis le nord-est africain vers le plateau zimbabween avant 900 ap. J.-C.",
+        "Expansion depuis le bassin Shashe-Limpopo vers le Grand Zimbabwe (XIIe siecle)",
+        "Deplacement vers Khami (Matebeleland, XVe siecle)",
+        "Etablissement dans le nord-est du Botswana actuel"
+      ],
+      "historicalSettlementZones": [
+        "Bassin Shashe-Limpopo (Botswana/Zimbabwe/Afrique du Sud)",
+        "Plateau du Zimbabwe (Grand Zimbabwe, Masvingo)",
+        "Matebeleland sud-ouest (Zimbabgwe)",
+        "Districts Tutume, Tonota, Nord-Est (Botswana)"
+      ],
+      "unificationsOrDivisions": "Les Kalanga ont fonde et uni successivement plusieurs etats : Mapungubwe (vers 1220), Grand Zimbabwe (XIVe siecle), Khami (XVe siecle) et l'Empire Rozvi/Lozwi (XVIIe siecle). La chute du royaume de Butua (1683) marque la dispersion finale sous les assauts des Rozvi dissidens, des Bangwato (vers 1828) et des Amandebele de Mzilikazi.",
+      "externalInfluences": "Commerce caravanier intensif avec la cote de l'ocean Indien via Sofala (or, ivoire, cuivre). Contacts avec les Shona et les Venda via les cultures Gumanye et Zhizo-Leokwe. Colonisation ndebele au XIXe siecle, puis colonisation europeenne. Pression assimilationniste tswana au Botswana et ndebele/shona au Zimbabwe au XXe siecle.",
+      "majorHistoricalEvents": "Fondation de Mapungubwe (premier royaume unifie d'Afrique meridionale, vers 1220). Construction du Grand Zimbabwe (XIVe siecle). Etablissement du Royaume Rozvi qui repousse les Portugais de leurs postes interieurs. Invasion et soumission par les Amandebele de Mzilikazi (XIXe siecle). Reconnaissance de la langue TjiKalanga comme langue officielle au Zimbabwe (Constitution de 2013)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de royaumes et de chefferies hierarchises, avec un roi (mambo) a la tete de l'etat. Les Hosanna (Wosana) jouaient le role de grands pretres du culte de Mwali. Les clans avaient leurs propres chefs hereditaires.",
+      "clanOrganization": "Organisation en clans avec totems distincts. Principaux clans : BoSungwasha (le plus grand, present dans chaque village kalanga), BoMndambeli (dominant dans le district de Boteti), BoNtombo/Baperi (troisieme en importance), BoKumbudzi (gardiens spirituels du sanctuaire de Njelele), BoNeswimbo, BoKadzasha.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La transmission du pouvoir et de l'identite clanique passe par la patrilinearity dans la structure monarchique, mais les clans maintiennent leurs propres regles d'appartenance. Le chef ne peut etre succede que par un membre eligible du clan.",
+      "religiousAuthority": "Les BoKumbudzi sont les gardiens du sanctuaire de Njelele (Zimbabwe) et les intermediaires privilegies aupres de Mwali (Ngwali), dieu supreme. Les Hosanna (Wosana) sont les grands pretres du culte de Mwali, responsables des rituels de demande de pluie."
+    },
+    "languages": {
+      "mainLanguage": "Kalanga (TjiKalanga / Ikalanga)",
+      "isoCodes": ["kck"],
+      "dialects": [
+        "TjiLilima (Botswana)",
+        "TjiGwizi (Botswana)",
+        "TjiTalaunda (Botswana/Zimbabwe)",
+        "TjiNanzwa (Hwange, Zimbabwe)",
+        "Tjindodondo (Bulilimamangwe, Zimbabwe)"
+      ],
+      "vehicularRole": "La langue est reconnue comme officielle au Zimbabwe depuis la Constitution de 2013 et est enseignee dans les ecoles. Au Botswana, c'est la deuxieme langue la plus parlee. Autrefois repandue sur plus d'un million de locuteurs, la langue a subi une erosion au profit du ndebele et du shona (Zimbabwe) et du tswana (Botswana)."
+    },
+    "culture": {
+      "majorRites": "Ceremonies de demande de pluie au sanctuaire de Njelele (Zimbabwe) : port d'une chemise blanche (pluie) et d'une jupe noire (nuages). Festival annuel de Domboshaba (environ 75 km au nord de Francistown, Botswana) pour celebrer la culture et l'identite kalanga. Ceremonies de premiers fruits et rites d'ancestralite.",
+      "symbols": "Le sanctuaire de Njelele (Zimbabwe) est le centre spirituel le plus sacre. Les sites archaeologiques (Leopard's Kopje, Mapungubwe, Grand Zimbabwe, Khami) sont des symboles identitaires majeurs. L'or et le cuivre, lies a leur heritage d'artisans miniers, sont des emblemes culturels.",
+      "artsAndMusic": "Culture reconnue pour sa musique et ses danses (Ndazula, Hosanna). Poterie geometrique caracteristique. Sites archaeologiques extensifs temoignant d'une architecture en pierre (maconnerie a sec). Tradition de smithing (forgeage) du fer, du cuivre et de l'or.",
+      "spiritualities": "Culte de Mwali/Ngwali, dieu supreme, accessible via le sanctuaire de Njelele. Les Hosanna servent d'intermediaires entre les vivants et le dieu. Croyances en les ancetres (mizimu) et leur influence sur les affaires des vivants. L'islam et le christianisme sont aussi pratiques, notamment la Kalanga Church au Botswana."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Succession de royaumes fondateurs : Mapungubwe (vers 1220, premier royaume unifie d'Afrique meridionale), Grand Zimbabwe (XIVe siecle), Khami/Nkami (XVe siecle), Royaume de Butua et Empire Rozvi/Lozwi (XVIIe siecle). Les Rozvi ont repousse militairement les Portugais de leurs postes interieurs.",
+      "relationsWithNeighbors": "Commerce intensif avec les Shona, les Venda et les cotes de l'ocean Indien. Conflits avec les Bangwato (Kgosi Kgari, vers 1828). Soumission aux Amandebele de Mzilikazi au XIXe siecle, entrainant une forte pression assimilationniste. Liens de parente avec les VhaVenda et les BaLobedu (Afrique du Sud).",
+      "conflictsOrAlliances": "Alliance et puis conflit avec les Rozvi (dissidents kalanga). Resistance aux Portugais (XVIIe siecle). Subjugation par les Amandebele (XIXe siecle). Soumission culturelle progressive aux Tswana au Botswana. Mouvement de revitalisation culturelle depuis la fin du XXe siecle.",
+      "diaspora": "Presence kalanga au Zimbabwe (Matebeleland, environ 700 000), au Botswana (environ 850 000, deuxieme groupe ethnique), en Afrique du Sud (province du Limpopo) et ponctuellement jusqu'en Zambie et en Tanzanie."
+    },
+    "demography": {
+      "totalPopulation": 1550000,
+      "referenceYear": 2025,
+      "source": "Kalanga language – Wikipedia 2015 (700 000 Zimbabwe, 850 000 Botswana) ; PeopleGroups.org 2025",
+      "distributionByCountry": [
+        { "country": "ZWE", "population": 700000 },
+        { "country": "BWA", "population": 850000 },
+        { "country": "ZAF", "population": 80000 }
+      ]
+    },
+    "sources": [
+      "Kalanga people – Wikipedia (https://en.wikipedia.org/wiki/Kalanga_people)",
+      "Kalanga language – Wikipedia (https://en.wikipedia.org/wiki/Kalanga_language)",
+      "The History of Kalanga People – TG Silundika Cultural Community Centre, 2025 (https://tgsilundikaculturalcommunitycentre.org/the-history-of-kalanga-people/)",
+      "Kalanga in Botswana – Joshua Project, 2026 (https://joshuaproject.net/people_groups/12446/BC)",
+      "Kalanga – DICE Database, University of Missouri (https://dice.missouri.edu/assets/docs/niger-congo/Kalanga.pdf)",
+      "Culture and Travel – Kalanga.org, 2020 (https://kalanga.org/culture-and-travel/)"
+    ]
+  }
+}

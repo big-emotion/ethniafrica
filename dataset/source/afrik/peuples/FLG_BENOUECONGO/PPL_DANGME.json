@@ -1,0 +1,108 @@
+{
+  "id": "PPL_DANGME",
+  "nameMain": "Dangme",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Dangme",
+      "selfAppellation": "Dangmeli (pluriel : locuteurs du dangme ; le peuple se désigne lui-même comme La li, signifiant les gens de La)",
+      "exonyms": [
+        "Dangbe",
+        "Adangme",
+        "Adaŋme",
+        "Adangbe",
+        "Adaŋgbi",
+        "Adampe"
+      ],
+      "originOfExonyms": "La forme Adangme reflète une translittération ancienne. Le terme Dangbe est la prononciation locale attestée dans les sources coloniales. Les formes Adaŋme et Adaŋgbi correspondent à l'orthographe scientifique avec des voyelles spéciales. Adawogbe est un terme éwé signifiant la voix des guerriers, appliqué aux Dangme par leurs voisins en référence à leur réputation militaire. La self-appellation La li (gens de La) fait référence à leur lieu d'origine mythique et à la langue sacrée Klama.",
+      "whyProblematic": "Les variantes orthographiques nombreuses (Adangme, Dangbe, Adangbe) peuvent prêter à confusion dans les bases de données. Il ne faut pas confondre le peuple Dangme (Kwa, Ghana) avec d'autres groupes portant des noms similaires. Le terme Adawogbe utilisé par les Éwé était parfois perçu comme condescendant.",
+      "contemporaryUsage": "Dangme et Adangme sont toutes deux acceptées et utilisées officiellement au Ghana. La désignation Ga-Dangme (ou Ga-Adangbe) est utilisée pour désigner l'ensemble ethno-linguistique regroupant les Ga et les Dangme. Dans les contextes académiques et administratifs ghanéens, Dangme est la forme standard.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Ga-Dangme (branche Kwa du phylum Niger-Congo ; langue proche du Ga, formant ensemble la branche Ga-Dangme au sein du Kwa)",
+      "historicalRegion": "Côte sud-est du Ghana : de Kpone à Ada (côte atlantique sur le golfe de Guinée), fleuve Volta, plaines d'Accra, collines Shai et montagnes Akwapim. Régions historiques : Greater Accra Region, Eastern Region.",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": [
+      "Krobo (Klo) : le plus grand sous-groupe dangme, divisé en Manya Krobo et Yilo Krobo (Eastern Region, collines Krobo et Shai)",
+      "Ada (Adaa) : sous-groupe côtier établi à l'est de la région d'Accra, à l'embouchure du Volta (Dangme East District)",
+      "Prampram (Gbugbla) : communauté côtière au sud-est d'Accra",
+      "Shai (Sɛ) : sous-groupe des collines Shai, à l'intérieur des terres",
+      "Ningo (Nugo) : communauté côtière entre Prampram et l'embouchure du Volta",
+      "Osudoku : sous-groupe intérieur des collines d'Osudoku",
+      "Kpone (Kpom) : communauté côtière à l'est de Tema"
+    ],
+    "origins": {
+      "ancientOrigins": "Les traditions orales et les recherches académiques s'accordent à placer les origines des Dangme à l'est, probablement dans la région du Nigeria occidental (zone de Sameh, Seme ou pays yoruba autour d'Abeokuta et d'Oyo) ou au Bénin/Dahomey. Selon la tradition, les proto-Dangme se dénommaient La li (gens de La). Après leur départ de l'est, ils traversèrent le Soudan occidental, le Dahomey (Bénin actuel), le Togo (Ngotsie), en contact avec les groupes éwé. La tradition Klama (chant ancestral sacré) conserve la mémoire de ces migrations. Certains chercheurs évoquent une origine encore plus lointaine au nord-est (Palestine du Nord ou Soudan), mais cette thèse reste débattue.",
+      "formationPeriod": "XIVe siècle : les proto-Dangme, migrant en un seul groupe, arrivent dans les plaines d'Accra (Ghana actuel). La séparation en sept sous-groupes (Krobo, Ada, Prampram, Shai, Ningo, Osudoku, Kpone) intervient au lieu dit Lɔlɔvɔ (Tagologo Plains), signifiant l'amour est fini en éwé, en référence à des querelles internes pour les terres agricoles.",
+      "migrationRoutes": [
+        "Zone d'origine orientale (Sameh/Nigeria/Dahomey) → traversée vers l'ouest de la savane subsaharienne",
+        "Dahomey (Bénin actuel) et Ngotsie (Togo) → migration avec des groupes éwé",
+        "Traversée du fleuve Volta à Asutsuare (crocodile mystique selon la tradition)",
+        "Installation aux plaines de Togologo/Lɔlɔvɔ (plaines d'Accra) → point de dispersion des sept sous-groupes",
+        "Krobo : vers les montagnes de Krobo Hill (338 m, protection naturelle militaire), XIVe-XVIe siècles",
+        "Ada : vers la côte orientale et l'embouchure du Volta",
+        "Autres sous-groupes : dispersés dans les collines Shai, la côte et les vallées"
+      ],
+      "historicalSettlementZones": [
+        "Plaines de Lɔlɔvɔ (Accra Plains, Dangme East et West Districts) : zone de dispersion et d'installation initiale",
+        "Krobo Mountain (338 m, Eastern Region) : forteresse naturelle des Krobo, habitée pendant plus de 400 ans, abandonnée sous pression coloniale britannique",
+        "Côte de Kpone à Ada (Gulf of Guinea) : zones de Ada, Ningo, Prampram, Kpone",
+        "Dangme East District et Dangme West District (Greater Accra Region) : environ 70% des terres de la région appartiennent aux Dangme",
+        "Manya Krobo et Yilo Krobo Districts (Eastern Region) : 15% des terres",
+        "Zone Agotime (Volta Region) et sud du Togo : présence mineure transfrontalière"
+      ],
+      "unificationsOrDivisions": "Les sept sous-groupes dangme (Krobo, Ada, Prampram, Shai, Ningo, Osudoku, Kpone) forment une nation culturelle et linguistique distincte, tout en maintenant des entités politiques autonomes sous leurs chefs et rois respectifs (Konor pour les Krobo, Awulae pour Ada, etc.). Le système Huza (acquisition collective de terres) a permis une expansion pacifique du territoire dangme sans hégémonie d'un sous-groupe sur les autres.",
+      "externalInfluences": "Contact avec les Éwé (migration commune depuis Ngotsie, Togo). Guerres akan (Ashanti) : pression militaire qui força les Krobo à se fortifier sur leur montagne. Incorporation de groupes akan (Denkyera) dans les structures krobo. Contact avec les Ga (voisinage à l'ouest, langues proches). Colonisation britannique : éviction des Krobo de leur montagne, introduction de l'économie de plantation (cacao, palmier à huile, commerce de perles). Christianisme : forte présence missionnaire depuis le XIXe siècle.",
+      "majorHistoricalEvents": "Séparation des sept sous-groupes à Lɔlɔvɔ (XIVe s.). Installation des Krobo sur Krobo Mountain (XIVe-XVIe s.). Développement du système Huza d'expansion pacifique des terres. Résistance aux raids ashanti (XVIII-XIXe s.). Révolte contre le poll tax colonial (Krobo, 1858). Éviction des Krobo de leur montagne par les Britanniques. Développement du commerce de perles krobo (XIXe-XXe s.). Ghana indépendant (1957) : intégration des Dangme dans la République du Ghana. Croissance économique de la région de Greater Accra (Tema Port, zone industrielle), transformant profondément les terres dangme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Théocratie traditionnelle originelle : la primordiale gouvernance dangme était exercée par des prêtres-rois (Nô ou Gã) alliant pouvoirs spirituels et politiques. Avec le temps, la chefferie s'est institutionnalisée sous des titres comme Konor (chef suprême des Krobo), Awulae (chef suprême d'Ada) et Mantse (chef de ville). Le Konor préside des conseils de chefs divisionnaires et d'anciens. Le système Huza (gestion collective des terres) constitue une institution unique de gestion foncière et économique.",
+      "clanOrganization": "Organisation patrilinéaire : les clans (We ou Bihi) sont basés sur la descendance patrilinéaire et forment les unités de base de la société. Chaque clan possède ses propres terres, ses rites et son chef de clan (Asafoatse). La hiérarchie va du ménage (We) au Kasi (groupe de ménages partageant un ancêtre commun) puis au clan divisionnaire. La société Asafo (compagnies militaires) structure la mobilisation collective.",
+      "ageClassSystems": "Système de classes d'âge chez les Krobo et certains autres sous-groupes : le rite Dipo initie les jeunes filles à la vie adulte par un processus de plusieurs étapes sur plusieurs jours (purification, transmission des savoirs, ornementation de perles, danses Klama publiques). Il n'existe pas de rite équivalent formalisé pour les hommes, mais la circoncision masculine est pratiquée comme rite de passage.",
+      "roleOfLineages": "Les lignages patrilinéaires déterminent la propriété foncière via le système Huza, la succession aux titres de chefferie et l'appartenance aux sociétés cérémonielles. Les ancêtres sont régulièrement honorés lors des festivals annuels (Ngmayem, Asafotu, Dipo) avec retour aux maisons ancestrales du lignage.",
+      "religiousAuthority": "Prêtres et prêtresses (Djemli chez les Krobo) : gardiens des autels ancestraux et des sites sacrés (Krobo Mountain reste le centre spirituel même après l'éviction physique). Le Konor (chez les Krobo) et le Gã (chez d'autres sous-groupes) détiennent un rôle de médiation spirituelle hérité de la tradition théocratique. Coexistence avec le christianisme dominant (majorité de chrétiens aujourd'hui)."
+    },
+    "languages": {
+      "mainLanguage": "Dangme (Adangme, Adaŋgbi)",
+      "isoCodes": ["ada"],
+      "dialects": [
+        "Ada (Adaa) : dialecte côtier oriental, reference de l'écrit dangme",
+        "Ningo (Nugo) : dialecte côtier",
+        "Prampram (Gbugbla) : dialecte côtier",
+        "Shai (Sɛ) : dialecte intérieur des collines",
+        "Krobo (Klo / Klogbi) : le plus grand dialecte, légèrement distinct des dialectes côtiers, parlé par Manya Krobo et Yilo Krobo",
+        "Osudoku : dialecte intérieur"
+      ],
+      "vehicularRole": "Le dangme est la langue maternelle de tous les sous-groupes (environ 800 000 locuteurs en 2004 selon Ethnologue ; 1,4 million selon Joshua Project en 2025). La langue est partiellement intelligible avec le ga (langue voisine). L'anglais est la langue officielle et véhiculaire nationale au Ghana. Le twi akan sert de langue de commerce régionale. Klama est la langue sacrée ancestrale (chants rituels) à partir de laquelle a évolué le dangme moderne."
+    },
+    "culture": {
+      "majorRites": "Dipo : rite de passage majeur des jeunes filles dangme (surtout Krobo, Shai), consistant en une initiation à la vie adulte sur plusieurs jours en avril, incluant purification rituelle, transmission des savoirs féminins, ornementation de perles colorées, danses Klama publiques et reconnaissance sociale comme femme. Le rite Dipo est à la fois une formation vocationnelle pour les rôles féminins et une cérémonie spirituelle de purification pré-matrimoniale. Festival Asafotu (ou Asafotufiam) : festival guerrier annuel d'Ada (du dernier jeudi de juillet au premier week-end d'août), commémorant les victoires militaires, avec reconstitution en costume de guerre traditionnel, procession de chefs en palanquins, Asafo Companies, danses, libations et déclarations d'allégeance. Festival Ngmayem : festival annuel des récoltes du Krobo (dernier week-end d'octobre), avec pèlerinage au Krobo Mountain ancestral, réunion du Konor et des sous-chefs. Rites funéraires patrilinéaires avec retour des membres du lignage à la maison ancestrale.",
+      "symbols": "Perles krobo (Krobo beads) : perles en poudre de verre fabriquées selon une technique ancestrale unique, portées lors du Dipo et comme marqueurs sociaux et spirituels ; exportées dans toute l'Afrique de l'Ouest. Krobo Mountain : montagne sacrée des Krobo (338 m), centre spirituel et ancestral même après l'éviction coloniale. Stool (trône) : symbole de l'autorité du chef, hérité par le système cheffal. Klama : langue et musique sacrée, gardienne de l'histoire du peuple.",
+      "artsAndMusic": "Klama : musique et danse folklorique ancestrale, fondement de l'identité culturelle dangme. La danse Klama suit un modèle de call-and-response, avec accompagnement musical guidant le rythme. Elle est exécutée lors des rites de puberté, des funérailles, des festivals et des cérémonies communautaires. Kpatsa : autre danse traditionnelle des femmes ga-dangme. Fabrication de perles (Krobo beads) : artisanat de renommée internationale, technique de fusion de poudre de verre en moule d'argile, produisant des perles polychromes utilisées dans l'ornementation et le commerce. Poterie, tissage de pagnes, agriculture (culture de l'igname, du manioc, de la canne à sucre, du cacao).",
+      "spiritualities": "Tradition animiste originelle : culte des ancêtres patrilinéaires (libations, retour aux maisons ancestrales lors des festivals), culte de divinités des cours d'eau et des forêts, système de dieux des lignages (fêtes des dieux du lignage plusieurs fois par an). La montagne Krobo est un site sacré toujours vénéré. Le Dipo rite intègre des invocations spirituelles et des rites de purification religieuse. La grande majorité des Dangme sont aujourd'hui chrétiens (Joshua Project indique 10-50% d'évangéliques et 50-100% d'adhérents chrétiens en 2025). La religion traditionnelle subsiste en syncrétisme avec le christianisme. L'islam est minoritaire."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralisé unique : chacun des sept sous-groupes dangme constitue une entité politique propre sous son chef suprême (Konor chez les Krobo, Awulae à Ada, Mantse dans d'autres communautés). Les Krobo ont été l'un des États les plus économiquement et politiquement significatifs de la Côte-de-l'Or britannique au XIXe siècle, grâce à leur rôle dans la production de cultures commerciales d'exportation (cacao, palmiste) et la fabrication de perles.",
+      "relationsWithNeighbors": "Relations historiques avec les Ga (proximité géographique, langues apparentées, cohabitation dans la région d'Accra). Relations avec les Éwé (migration commune depuis Ngotsie, Togo ; Ewe clans assimilés dans certains groupes Ada). Tensions avec les Akan/Ashanti (raids militaires obligeant les Krobo à se fortifier sur leur montagne). Relations commerciales avec les Européens (Britanniques) dès la période coloniale. Relations avec les communautés de pêcheurs voisins (Keta, Anloga).",
+      "conflictsOrAlliances": "Raids ashanti (XIXe s.) : pression militaire sur les Krobo dans les plaines. Résistance dangme contre le poll tax colonial britannique (1858). Éviction militaire des Krobo de Krobo Mountain par les Britanniques (XIXe s., après résistance armée). Querelles internes à Lɔlɔvɔ à l'origine de la séparation des sept sous-groupes. Conflits fonciers contemporains autour de Tema et Greater Accra, zone rapidement urbanisée sur des terres dangme.",
+      "diaspora": "Communauté dangme en Togo (Agotime et environs) : présence historique liée aux migrations. Diaspora dans les grandes villes ghanéennes (Accra, Tema, Kumasi). Diaspora internationale (Europe, Amérique du Nord) dans le cadre de la migration ghanéenne contemporaine. Les Dangme (notamment les Krobo) sont très présents dans les réseaux commerciaux de perles artisanales à travers l'Afrique de l'Ouest."
+    },
+    "demography": {
+      "totalPopulation": 1401000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 1 401 000 individus au Ghana. Ethnologue/SIL International (2004) : environ 800 000 locuteurs de la langue dangme. Estimation de certaines sources communautaires : environ 2 000 000 de Dangme (sous-groupes inclus). Le chiffre Joshua Project 2025 (1 401 000) est retenu comme estimation de référence.",
+      "distributionByCountry": [{ "country": "GHA", "population": 1401000 }]
+    },
+    "sources": [
+      "Wikipedia EN : Ga-Adangbe https://en.wikipedia.org/wiki/Ga-Adangbe",
+      "Wikipedia EN : Dangme language https://en.wikipedia.org/wiki/Dangme_language",
+      "Wikipedia EN : Krobo people https://en.wikipedia.org/wiki/Krobo_people",
+      "Joshua Project : Dangme in Ghana https://joshuaproject.net/countries/GH",
+      "Ethnologue : Dangme (ADA) https://www.ethnologue.com/language/ada/",
+      "Bureau of Ghana Languages : The Krobo People - Beads and Dipo Initiation Rite https://www.bgl.gov.gh/wp-content/uploads/Krobo_People_Beads_Dipo_Initiation_Rite.pdf",
+      "Noyam Publishers : The Exodus of a West African People: Dangme in Perspective https://noyam.org/?sdm_process_download=1&download_id=3355",
+      "Accent Network : Dangme language and culture https://accentnetwork.com/dangme/"
+    ]
+  }
+}

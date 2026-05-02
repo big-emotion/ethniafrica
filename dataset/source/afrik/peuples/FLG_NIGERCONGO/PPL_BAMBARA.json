@@ -1,0 +1,129 @@
+{
+  "id": "PPL_BAMBARA",
+  "nameMain": "Bambara",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MLI", "BFA", "SEN", "CIV", "GIN", "GMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Bambara",
+      "selfAppellation": "Bamana",
+      "exonyms": [
+        "Bambara (terme colonial et vehiculaire francais)",
+        "Banmana",
+        "Bamanankan (nom de la langue)"
+      ],
+      "originOfExonyms": "Le terme Bambara est atteste des le debut du 18e siecle dans les sources europeennes. Il est derive de Banmana, nom interne du groupe. Certains savants l interpretent comme signifiant celui qui refuse le maitre (en bambara : bama-na = caiman + na = fils, ou ba = refus + mana = maitre), en reference a la resistance a l islamisation. D autres sources le relient simplement au nom propre du groupe. Sous la colonisation francaise, Bambara designait parfois tout esclave d Afrique de l Ouest embarque via la Senegambie.",
+      "whyProblematic": "Le terme Bambara a ete utilise de maniere pejorative par les Mandingues islamises pour designer les non-musulmans pris comme esclaves. A Goree des 1730, il servait a identifier des captifs d origines diverses mis au service des elites locales ou francaises, brouillant la specificite ethnique.",
+      "contemporaryUsage": "Bamana est le nom que le groupe se donne. Bambara est la denomination officielle au Mali et dans les pays voisins. La langue bamanankan (bambara) est l une des langues nationales et vehiculaires officielles du Mali, utilisee par environ 80% de la population malienne comme premiere ou deuxieme langue.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Mande occidental (sous-branche Manding, groupe East Manding-Bambara-Dyula)",
+      "historicalRegion": "Vallee du Moyen Niger, region de Segou, Mali meridional et central",
+      "currentCountries": ["MLI", "BFA", "SEN", "CIV", "GIN", "GMB"]
+    },
+    "ethnicities": [
+      "Bamana de Segou (groupe central, berceau de l Empire Bambara)",
+      "Bamana de Kaarta (royaume bambara independant de Segou, Mali nord-occidental)",
+      "Bamana de Beledugu (plateau au nord de Bamako)",
+      "Bamana de Wasulu (Ouassoulou, region entre Sikasso et Cote d Ivoire)",
+      "Bamana de Ganadugu",
+      "Bamana du Burkina Faso",
+      "Bamana du Senegal",
+      "Bamana de Cote d Ivoire"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bambara sont originaires en tant que section royale de la famille Mandinka (Manding), dont la divergence linguistique et culturelle remonte a environ 7000 ans. Les Mande sont associes aux sites urbains du Tichitt (Mauritanie meridionale actuelle, submerge par le Sahara) ou des centres urbains emergerent des 2500 av. J.-C. Les Mande-Bozo fonderent la cite de Djenne vers 250 av. J.-C. Entre 300 et 1100 de l ere commune, les Mande soninke dominerent l empire du Ghana en Afrique occidentale. Apres la dissolution de l empire Songhai post-1600, les groupes Mande de la haute vallee du Niger se replierent sur eux-memes, donnant naissance a la singularite bambara.",
+      "formationPeriod": "L identite bambara distincte s est formee a partir du 17e siecle, quand les communautes agricoles de Wasulu-Ouassoulou organiserent leurs confréries de chasse et de jeunesse (Tons) en structures guerrieres et etatiques. L Empire Bambara de Segou se constitua vers 1740 sous Mamari Coulibaly (Bitòn Coulibaly), apres le declin de l empire du Mali amorcé vers 1559. Le royaume de Kaarta, second Etat bambara independant, se constitua parallelement.",
+      "migrationRoutes": [
+        "Peuplement autochtone du Moyen Niger (pas de migration fondatrice documentee)",
+        "Expansion militaire et politique depuis Segou sous l Empire Bambara (1740-1861) vers le nord (Tombouctou) et le sud"
+      ],
+      "historicalSettlementZones": [
+        "Segou et sa region (berceau et capitale de l Empire Bambara)",
+        "Kaarta (Mali nord-occidental, second royaume bambara)",
+        "Beledugu (plateau au nord de Bamako)",
+        "Moyen Niger entre Bamako et Mopti",
+        "Wasulu (Ouassoulou, entre Sikasso et Cote d Ivoire)",
+        "Diaspora urbaine a Bamako, Dakar, Abidjan, Ouagadougou"
+      ],
+      "unificationsOrDivisions": "L Empire Bambara de Segou (1740-1861) constitua la premiere unite politique majeure. Il etait divise en grandes provinces administrees par des generaux du Jonton (caste de guerriers-esclaves). La conquete de Segou par El-Hadj Oumar Tall (toucouleur islamise) en 1861 mit fin a l empire. Le royaume de Kaarta, independant de Segou, representa une division politique permanente. Aujourd hui les Bambara sont disposes sur plusieurs Etats independants.",
+      "externalInfluences": "Interaction seculaire avec les Mandingues islamises (Soninke, Malinke), tensions religieuses et guerres de captifs. Conquete par El-Hadj Oumar Tall et les Toucouleurs en 1861 (islamisation forcee). Colonisation francaise (fin 19e siecle) et integration du Mali dans l AOF. L islam, introduit progressivement, est aujourd hui majoritaire chez les Bambara, tout en coexistant avec les pratiques traditionnelles.",
+      "majorHistoricalEvents": "Constitution de l Empire Bambara de Segou vers 1740 sous Mamari Coulibaly (Bitòn). Le Jonton (caste guerriere d esclaves) fut l institution militaire cle de l expansion. En 1861, El-Hadj Oumar Tall et ses soldats toucouleurs s emparerent de Segou, mettant fin a l empire en pratiquant une islamisation forcee. La presence bambara dans la diaspora de la traite des esclaves est documentee a Haiti et en Louisiane des le 18e siecle, ou le terme Bambara designait des captifs d Afrique de l Ouest. La langue bamanankan devint langue vehiculaire officielle du Mali independant (1960)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "L organisation sociale bambara s articule autour des Tons (confréries ou societes de co-fraternitee). Les Tons etaient initialement des associations de chasse et de jeunesse qui, avec l Empire de Segou, se transformerent en structures etatiques et militaires. Le Ton principal etait le Jonton (confrérie des guerriers-esclaves de guerre), qui forma le coeur armee de l empire. L Etat bambara de Segou etait dirige par un fama (roi) assiste de chefs militaires et de notables. Les castes professionnelles (griots, forgerons, bouchersm marchands Jula, pecheurs Bozo) structuraient la societe autour de fonctions vocatoires hereditaires.",
+      "clanOrganization": "La societe bambara est patrilineaire et patriarcale. Les castes endogames (nobles, griots [jeliw], forgerons [numuw], cordonniers [garankeew], tisseurs) coexistaient avec les groupes ethniques satellites integres dans la structure etatique (Bozo pecheurs, Fula eleveurs, Jula marchands). Les Maraka se specialiserent dans le commerce saharien et la production agricole esclavagiste.",
+      "ageClassSystems": "Les Tons fonctionnent a plusieurs niveaux : par sexe (initiation des jeunes hommes et femmes separement), par age (Soli Ton pour les jeunes hommes vivant a l ecart avant le mariage, fournissant de la main-d oeuvre agricole collective), et par vocation (Chi Wara Ton pour les agriculteurs, Donzo Ton pour les chasseurs). Ces societes transmettent les traditions et socialisent les nouvelles generations.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l appartenance clanique, les droits fonciers et les heritages. Le chef de famille (fa) exerce une autorite patriarcale sur le foyer etendu. Les petits-fils d esclaves (anciens Jonw) ont progressivement integre les lignages libres apres l effondrement de l empire.",
+      "religiousAuthority": "Historiquement, le pouvoir spirituel etait exerce par les pretres des societes initiatiques (Komo, N tomo, Nama, Dyo, Kore), chaque Ton ayant sa propre hierarchie religiose. Les griots (jeliya) assurent la transmission memorielle et spirituelle. Aujourd hui, les imams et oulémas islamiques ont pris le role d autorite religieuse principale dans la majorite des communautes."
+    },
+    "languages": {
+      "mainLanguage": "Bamanankan (bambara)",
+      "isoCodes": ["bam"],
+      "dialects": [
+        "Segou (dialecte standard, influence principale sur la forme vehiculaire)",
+        "Kaarta (Mali nord-occidental)",
+        "Beledugu (nord de Bamako)",
+        "Wasulu (sud, entre Sikasso et Cote d Ivoire)",
+        "San",
+        "Ganadugu",
+        "Tambacounda (variete de l ouest, Senegal)",
+        "Dioula (Jula) — variete vehiculaire de Cote d Ivoire et du Burkina Faso"
+      ],
+      "vehicularRole": "Le bamanankan est la premiere langue vehiculaire du Mali : environ 80% de la population malienne le parle comme premiere ou deuxieme langue. C est l une des langues nationales officielles du Mali (avec le francais). Il est utilise dans les radios, la presse, l enseignement primaire et les marches. La variete dioula (jula) joue un role vehiculaire similaire en Cote d Ivoire et au Burkina Faso. Le bambara est ecrit en alphabet latin (avec caracteres supplementaires) et en alphabet N Ko (depuis les annees 1940)."
+    },
+    "culture": {
+      "majorRites": "Les rites initiatiques sont organises par les Tons (confréries d age). Le N tomo (Ntomo) est la confrérie des jeunes garcons non circumcis : les initiés portent des masques stylistiques lors des ceremonies publiques. La circumcision marque le passage vers le Komo. Le Komo est la sociéte initiatique masculine la plus puissante, dont les ceremonies sont strictement secretes et s adressent aux hommes maries. Le Dyo (Diò) et le Kore sont les dernieres etapes initiatiques masculines. La Chi Wara (Ciwara) est la ceremonie agricole principale : des hommes portant les legendaires coiffes antelopes sculptees (Tyi Wara) dansent pour invoquer la fertilite des terres et honorer le genie agriculteur mythique. Les ceremonies de mariage bambara impliquent des etapes elaborees de dot, de preparation de la mariee et de festivites collectives. Les funerailles sont marquees par des ceremonies dont le Ton des guerriers et des griots.",
+      "symbols": "La coiffe Tyi Wara (Ciwara, antilope stylisee) est le symbole artistique et culturel le plus celebre des Bambara : elle represente le genie mythique qui enseigna l agriculture aux humains. Les masques N tomo (a plusieurs comes, symbolisant les etapes de connaissance) sont les symboles des confréries jeunes. Le Faro est la divinite de l eau et de la creation dans la cosmologie bambara traditionnelle. Le N Ko (script) est devenu un symbole identitaire mande moderne depuis son invention par Souleymane Kante en 1949.",
+      "artsAndMusic": "L art bambara est l un des plus celebres d Afrique de l Ouest. Les statuettes de fertilite (gynomorphes et andromorphes) etaient conservees par les femmes pour favoriser la grossesse. Les masques des confréries (Komo, N tomo, Kore) sont les pieces maitresses de l art rituel. La sculpture sur bois et le travail du fer (figures en fer forge) sont des arts specifiques aux forgerons (numuw) artisans. La poterie est un art féminin traditionnel. Le tissage produit des bogolanfini (tissus teints a la boue, motifs geometriques a valeur symbolique et rituels). La musique bambara s appuie sur les griots (jeliy), depositaires de l histoire orale, chantants et jouant la kora, le balafon et le ngoni (luth). La tradition musicale du Wassoulou (sud du Mali) est une forme musicale feminine influente. Des musiciens contemporains comme Salif Keita ou Oumou Sangare s enracinent dans ces traditions.",
+      "spiritualities": "La cosmologie bambara traditionnelle est polythéiste et animiste : le Faro est le dieu supreme createur de l eau et de l univers, Pemba est la divinite de la terre. Les confréries initiatiques (Komo, Kore, Nama, Dyo) maintiennent les rituels secrets de communication avec les forces spirituelles. Les ancetres jouent un role de mediateur entre vivants et puissances. L islam sunnite est desormais majoritaire chez les Bambara, adopte progressivement depuis le 19e siecle, mais un syncrétisme profond persiste : les pratiques initiatiques et les croyances en les esprits coexistent avec les devoirs islamiques. Les confréries de chasseurs (Donzo) maintiennent des rituels de protection pre-islamiques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "L Empire Bambara de Segou (Biton-si, 1740-1861) fut l un des grands empires de l Afrique occidentale precoloniale. Fonde par Mamari Coulibaly (Bitòn Coulibaly), il s etendit sur une grande partie du Mali actuel et controla les routes commerciales du Niger. Sa particularite etait d etre un Etat explicitement non-islamique, en contraste avec ses voisins. Le Royaume de Kaarta fut un second etat bambara independant, fonde par la branche Kulibaly rivale. L un comme l autre furent absorbes par l empire toucouleur d El-Hadj Oumar Tall en 1861.",
+      "relationsWithNeighbors": "Les Bambara eurent des relations a la fois conflictuelles et commerciales avec les Mandingues islamises (dont ils vendirent et acheterent des captifs), les Fula (Peul), les Soninke, les Dogon et les peuples du sud (Senufo, Minianka). Les Jula bambara etaient des partenaires commerciaux majeurs des reseaux marchands west-africains. Les Bambara etaient a la fois clients et fournisseurs du marche d esclaves transatlantique via la Senegambie.",
+      "conflictsOrAlliances": "Conflits permanents avec les voisins pour l acquisition de captifs alimentant l economie de l empire. Guerre contre El-Hadj Oumar Tall et sa confrerie toucouleur Tijaniyya (1861) : prise de Segou et islamisation forcee du royaume. Sous la colonisation francaise, les Bambara furent des allies precieux comme tirailleurs (soldats auxiliaires) dans les armee coloniales. Participation a la Premiere et Deuxieme Guerre mondiale comme tirailleurs senegalais.",
+      "diaspora": "Les esclaves bambara furent deportes en masse via la Senegambie vers les Ameriques : presence documentee en Louisiane et a Haiti depuis le 18e siecle. La diaspora contemporaine bambara est presente en France (ancienne metropole coloniale), en Cote d Ivoire, au Senegal et dans toute l Afrique de l Ouest urbaine. La diffusion de la langue vehiculaire bambara bien au-dela de l ethnie elle-meme (80% des Maliens la parlent) constitue une forme de diaspora culturelle et linguistique."
+    },
+    "demography": {
+      "totalPopulation": 7000000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur le recensement du Mali (Bambara 33,3% d une population de 22,4 millions en 2025, selon CIA World Factbook), SIL Ethnologue (bam, 4,2 millions de locuteurs natifs), Joshua Project, et Minority Rights Group Mali. La population ethnique stricto sensu (locuteurs natifs) est estimee a 4-5 millions ; en incluant les Bambara du Burkina Faso, du Senegal et de la Cote d Ivoire, le total atteint 6-8 millions.",
+      "distributionByCountry": [
+        {
+          "country": "MLI",
+          "population": 6000000,
+          "note": "Groupe ethnique le plus important du Mali (33,3% de la population), concentres dans le Moyen Niger (Segou, Bamako, Beledugu, Kaarta, Wasulu)"
+        },
+        {
+          "country": "BFA",
+          "population": 500000,
+          "note": "Communautes bambara dans le nord du Burkina Faso, surtout dans les zones frontieres avec le Mali"
+        },
+        {
+          "country": "SEN",
+          "population": 200000,
+          "note": "Communautes bambara et locuteurs vehiculaires dans la region de Tambacounda et les zones frontalieres"
+        },
+        {
+          "country": "CIV",
+          "population": 200000,
+          "note": "Communautes bambara et dioula (proche du bambara) dans le nord de la Cote d Ivoire"
+        },
+        {
+          "country": "GIN",
+          "population": 100000,
+          "note": "Presence bambara dans les regions frontalieres de Guinee avec le Mali"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bambara people. https://en.wikipedia.org/wiki/Bambara_people",
+      "Wikipedia EN — Bambara language. https://en.wikipedia.org/wiki/Bambara_language",
+      "SIL Ethnologue — Bambara (bam). https://www.ethnologue.com/language/bam/",
+      "Britannica — Bambara. https://www.britannica.com/topic/Bambara",
+      "Minority Rights Group — Mali. https://minorityrights.org/country/mali/",
+      "eHRAF World Cultures — Bambara. https://ehrafworldcultures.yale.edu/cultures/fa08/summary",
+      "CIA World Factbook — Mali. https://www.cia.gov/the-world-factbook/countries/mali/",
+      "DimProject — Bambara Language Profile. https://www.dimproject.net/2019/07/12/bam-profile/"
+    ]
+  }
+}

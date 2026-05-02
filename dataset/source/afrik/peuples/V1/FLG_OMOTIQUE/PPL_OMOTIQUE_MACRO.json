@@ -1,0 +1,73 @@
+{
+  "id": "PPL_OMOTIQUE_MACRO",
+  "nameMain": "Peuples Omotiques (macro-groupe)",
+  "languageFamilyId": "FLG_OMOTIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Peuples Omotiques (macro-groupe)",
+      "selfAppellation": "Variées selon les groupes (Bench, Dizi, Me'en, etc.)",
+      "linguisticFamily": "FLG_OMOTIQUE",
+      "ethnoLinguisticGroup": "Omotique (macro-groupe)",
+      "historicalRegion": "Sud-ouest de l'Éthiopie",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Bench",
+      "Dizi",
+      "Me'en",
+      "Dimme",
+      "Koyra",
+      "Maats",
+      "Malle",
+      "Autres groupes omotiques"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples omotiques sont originaires du sud-ouest de l'ETH, dans la région des nations, nationalités et peuples du Sud. Leur présence dans la région remonte à plusieurs millénaires.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant des caractéristiques linguistiques et culturelles communes. Diversité linguistique importante.",
+      "externalInfluences": "Contacts avec les peuples couchitiques et sémitiques voisins, influence du christianisme et de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence du christianisme et des croyances traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Langues omotiques (Bench, Dizi, Me'en, etc.)",
+      "vehicularRole": "Les langues omotiques sont parlées par les peuples omotiques. L'amharique est utilisé dans l'éducation et l'administration. L'anglais est également utilisé."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies d'initiation",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Festivals traditionnels",
+      "source_3": "Cérémonies de réconciliation",
+      "Symboles": "Symboles culturels omotiques, art traditionnel.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Croyances traditionnelles. Influence croissante du christianisme (protestantisme majoritaire) et de l'islam."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans les structures politiques éthiopiennes.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora omotique dans les grandes villes éthiopiennes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 1000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements éthiopiens, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Omotic languages",
+      "CIA World Factbook – Ethiopia",
+      "Bender, M. Lionel – *The Omotic Languages*",
+      "Recensements éthiopiens",
+      "Études anthropologiques sur les peuples omotiques"
+    ]
+  }
+}

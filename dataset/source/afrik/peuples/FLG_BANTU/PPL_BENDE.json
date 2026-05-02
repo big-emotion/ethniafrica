@@ -1,0 +1,83 @@
+{
+  "id": "PPL_BENDE",
+  "nameMain": "Bende",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Bende",
+      "selfAppellation": "Bende",
+      "exonyms": ["Wabende"],
+      "originOfExonyms": "Wabende est la forme plurielle swahili du nom du groupe. Le nom Bende est la designation propre du groupe et de sa langue.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Bende est utilise dans les documents administratifs tanzaniens et dans les bases de donnees ethnolinguistiques internationales (Ethnologue, Glottolog, Joshua Project) avec le code ISO 639-3 bdp.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou (zone F, groupe Bende-Tongwe)",
+      "historicalRegion": "Ouest de la Tanzanie, district de Mpanda, region de Katavi",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Bende"],
+    "origins": {
+      "ancientOrigins": "Les Bende sont un peuple bantou etabli dans le district de Mpanda (region de Katavi) dans l'ouest de la Tanzanie. Selon les donnees linguistiques, le groupe Bende est lie aux peuples Tongwe et Holoholo dans la zone nord de Rukwa, formant le groupe linguistique Bende. Les recherches historiques situent leurs origines au Cameroun, d'ou ils auraient migre vers l'est pour s'etablir dans l'ouest tanzanien. Leur territoire est l'une des zones les plus peu peuplees de Tanzanie, et la seule qui ne fut jamais organisee en chefferies formelles ni en etats naissants.",
+      "formationPeriod": "L'identite Bende s'est constituee dans la region de Rukwa occidental avant le XIXe siecle. Le groupe se distingue par une organisation dispersee en clans sans chefferie centralisee formelle.",
+      "migrationRoutes": [
+        "Origine lointaine au Cameroun selon les traditions orales et les recherches linguistiques",
+        "Migration vers l'Afrique orientale via la region de l'Afrique centrale",
+        "Etablissement dans le district de Mpanda, region de Katavi (nord de Rukwa)",
+        "Relations avec les Tongwe et Holoholo dans la region lacustre de Kigoma/Katavi"
+      ],
+      "historicalSettlementZones": [
+        "District de Mpanda, region de Katavi (Tanzanie occidentale)",
+        "Nord de la region de Rukwa"
+      ],
+      "unificationsOrDivisions": "Le peuple Bende n'a jamais ete organise en chefferies formelles ni en etats centralises. Il etait compose de clans disperses parlant la langue Bende. La zone Bende etait la seule partie de la region de Rukwa qui n'ait pas ete organisee en chefferies.",
+      "externalInfluences": "Au XIXe siecle, les Bende subirent des incursions de guerriers Ngoni (annees 1830, puis 1850) et de commercants arabes de Zanzibar qui traversaient leur territoire. La strategie defensive Bende consistait a se retirer dans la foret miombo en abandonnant les champs aux pillards. Les Peres Blancs (missions catholiques) s'installerent dans la region vers 1890, constituant la presence europeenne la plus stable avant la colonisation allemande officielle.",
+      "majorHistoricalEvents": "Invasion des Ngoni dans le sud de la Tanzanie (annees 1830 et 1850), affectant indirectement la region. Arrivee des commercants arabes zanzibaris (milieu XIXe siecle). Installation des Peres Blancs (1890) qui forntirent protection contre les attaques. Periode coloniale allemande puis britannique. Independance de la Tanzanie (1961). Creation de la region de Katavi separee de Rukwa (2012)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Absence de chefferies formelles et d'etats centralises. Organisation en clans disperses independants. Pas de villages palissades comme strategie de defense (a la difference des peuples voisins); les Bende utilisaient plutot la retraite dans la foret miombo comme strategie defensive. Les anciens de chaque clan assuraient la regulation sociale.",
+      "clanOrganization": "Organisation en clans disperses. Le peuple Bende etait constitue de groupes clans independants partageant la meme langue et des coutumes communes, sans autorite centralisee reunissant l'ensemble des clans.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages claniques organisaient la vie sociale locale, les droits d'usage du territoire et les ceremonies rituelles. L'appartenance lignagere determinait les alliances matrimoniales et les obligations de solidarite.",
+      "religiousAuthority": "Presence de specialistes rituels (devins, guerisseurs) au niveau clanique pour les ceremonies de guerison et de passage. Les Peres Blancs (catholiques) introduisirent le christianisme a partir des annees 1890 et jouerent un role important dans la region."
+    },
+    "languages": {
+      "mainLanguage": "Bende",
+      "isoCodes": ["bdp"],
+      "dialects": [],
+      "vehicularRole": "Le Bende est la langue maternelle de la communaute. Il appartient au groupe linguistique bantou et est lie au Tongwe et au Holoholo (zone F). Le swahili est la langue nationale tanzanienne et le vehiculaire interethnique. Les ressources bibliques disponibles sont limitees: portions de la Bible seulement (pas de Nouveau Testament ni de Bible complete). L'Ethnologue classe le Bende comme langue stable avec 10 000 a 1 million de locuteurs."
+    },
+    "culture": {
+      "majorRites": "Ceremonies importantes liees au cycle de vie: naissance, mariage (considere comme une obligation sociale majeure, le celibat etant mal vu), mort. Musique rituellement fonctionnelle: chants pour la purification de l'ame et pour chasser les mauvais esprits. Autrefois, port de peaux d'animaux comme vetements traditionnels.",
+      "symbols": "Les forets miombo constituent un refuge traditionnel et un espace symbolique de protection collective. Les ceremonies musicales de guerison et d'expulsion des esprits forment un element distinctif de la culture spirituelle Bende.",
+      "artsAndMusic": "Musique traditionnelle a vocation rituelle et therapeutique: chants et instruments pour purifier l'ame et chasser les esprits. Traditions vestimentaires anciennes en peaux d'animaux, aujourd'hui remplacees par des vetements occidentaux. Artisanat de subsistance adapte a l'environnement forestier et lacustre.",
+      "spiritualities": "Croyances animistes et en les esprits: ceremonies musicales specifiques pour purifier l'ame ou chasser les esprits malveillants. Pratiques de divination et de guerison. Presence de l'islam (environ la moitie de la communaute) et du christianisme (environ la moitie), introduits a partir du XIXe siecle par les missions catholiques (Peres Blancs) et les commercants arabes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Aucune chefferie formelle ni royaume centralise dans l'histoire Bende. Organisation clanique decentralisee sans paramountcy. La zone Bende est historiquement la seule partie de la region de Rukwa a ne pas avoir developpe de structures politiques centralisees.",
+      "relationsWithNeighbors": "Voisins: Tongwe et Holoholo (meme zone linguistique au nord de Rukwa). Pimbwe, Fipa et Konongo (autres groupes de la region de Rukwa/Katavi). Relations de multilinguisme: les Bende parlent souvent le Fipa ou le Konongo. Multilinguisme frequent, mariages inter-ethniques, forte identite tanzanienne nationale superposee aux identites ethniques.",
+      "conflictsOrAlliances": "Au XIXe siecle, le territoire Bende etait traverse par des routes commerciales arabo-zanzibaristes et subit les incursions des guerriers Ngoni. La strategie Bende etait le repli dans la foret miombo plutot que la resistance militaire. Les Peres Blancs (1890) apporterent une certaine protection via leur influence et leurs armes heritees des expeditions precedentes.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 63000,
+      "referenceYear": 2025,
+      "source": "Joshua Project, 2025; estimation 41 290 en 2009 (Wikipedia), 63 000 en 2025 (Joshua Project via PeopleGroups.org)",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 63000,
+          "note": "District de Mpanda, region de Katavi, ouest de la Tanzanie"
+        }
+      ]
+    },
+    "sources": [
+      "Bende people – Wikipedia (https://en.wikipedia.org/wiki/Bende_people)",
+      "Bende in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10787)",
+      "Bende Language (BDP) – Ethnologue SIL (https://www.ethnologue.com/language/bdp/)",
+      "Social Organization and Social Status in Nineteenth and Twentieth Century Tanzania – Waters, African Studies Quarterly, Univ. of Florida (https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf)",
+      "The Bende of Tanzania (PG014912) – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg014912/)",
+      "A Bende Vocabulary – Yuko Abe, ILCAA, Tokyo University of Foreign Studies, 2006"
+    ]
+  }
+}

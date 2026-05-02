@@ -1,0 +1,101 @@
+{
+  "id": "PPL_YEYI",
+  "nameMain": "Yeyi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["BWA", "NAM"],
+  "content": {
+    "appellations": {
+      "mainName": "Yeyi",
+      "selfAppellation": "MaYeyi",
+      "exonyms": [
+        "Wayeyi",
+        "Bayeyi",
+        "Bayei",
+        "Koba",
+        "Bakoba",
+        "Bajei",
+        "Hajo",
+        "Tjaube"
+      ],
+      "originOfExonyms": "MaYeyi est l'auto-designation du groupe (Ma- prefixe plural). Bayeyi est la forme avec le prefixe bantou Ba-. Wayeyi est la forme tswana. Bakoba et Koba sont des noms anciens utilises par les voisins San, signifiant probablement 'gens de l'eau' ou 'rameurs'. Le terme Yeyi est la forme anglicisee la plus repandue dans les sources academiques et administratives.",
+      "whyProblematic": "Le nom Bakoba, parfois utilise par les voisins, a une connotation de subalternite liee a la periode de servage sous les Batawana. Les Wayeyi preferent leurs propres noms MaYeyi ou Wayeyi.",
+      "contemporaryUsage": "Wayeyi et Yeyi sont les formes les plus utilisees en anglais. Au Botswana, le peuple revendique sa reconnaissance comme groupe distinct, notamment via l'Association Kamanakao fondee en 1995 pour defendre ses droits linguistiques et culturels.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu zone K, groupe Yeyi; liee aux langues Bantu de l'Okavango",
+      "historicalRegion": "Delta de l'Okavango et panhandle (nord-ouest du Botswana), region du Caprivi/Zambezi (nord-est de la Namibie)",
+      "currentCountries": ["BWA", "NAM"]
+    },
+    "ethnicities": ["Wayeyi", "MaYeyi", "Bayeyi"],
+    "origins": {
+      "ancientOrigins": "Les Yeyi sont consideres comme les premiers locuteurs bantoues a s'installer dans le delta de l'Okavango, en provenance d'Afrique centrale. Ils font partie du groupe Lozi elargi et ont migre depuis le nord. La tradition orale evoque une migration guidee par le chasseur et pecheur habile Hankuzi, qui aurait conduit son peuple depuis le royaume Lozi vers le Ngamiland.",
+      "formationPeriod": "Migration et installation dans la region de l'Okavango au XVIIIe siecle (debut vers 1700). Au debut du XVIIIe siecle, les Yeyi avaient explore la zone entre la Linyanti et le delta de l'Okavango.",
+      "migrationRoutes": [
+        "Royaume Lozi (nord, actuelle Zambie/Zimbabwe) vers le delta de l'Okavango via le Caprivi/Zambezi",
+        "Etablissement dans le panhandle et le long de la riviere Jao (delta nord-ouest)"
+      ],
+      "historicalSettlementZones": [
+        "Delta de l'Okavango et panhandle, district du Nord-Ouest, Botswana (Ngamiland)",
+        "Bande de Caprivi / Region du Zambezi (nord-est de la Namibie), environs de Linyanti et Sangwali",
+        "Districts de Ghanzi et Central (Botswana) pour les communautes dispersees"
+      ],
+      "unificationsOrDivisions": "Les MaYeyi forment un groupe ethnique coherent mais ont ete soumis a la domination des Batawana (Tswana) au XIXe siecle, ce qui a conduit a une fragmentation culturelle et linguistique. La reconnaissance comme tribu independante en Namibie en 1992 a marque une reunification symbolique.",
+      "externalInfluences": "Influence majeure des San (Xanikhwe/Maghumaahi), aupres desquels les Yeyi ont appris des techniques de peche. Absorption de mots a clic San dans la langue Shiyeyi (le Shiyeyi est le seul Bantu connu avec le plus grand inventaire de consonnes clics, avec des articulations dentales, alveolaires, palatales et laterales). Domination par les Batawana (Tswana) au XIXe siecle, entraisant une periode de servitude. Influence de l'explorateur David Livingstone (visite en 1857).",
+      "majorHistoricalEvents": "Arrivee des Batawana (Tswana) en Ngamiland au debut du XIXe siecle : les Yeyi subissent une servitude forcee (batlhanka). Interdiction de parler le Shiyeyi sous peine de punition. Visite de David Livingstone en 1857, qui observe les Yeyi soumis comme serfs des Batawana. Fondation de l'Association Kamanakao en 1995 pour la defense des droits linguistiques et culturels. Reconnaissance comme tribu independante en Namibie en 1992. Mort suspecte d'un chef Yeyi signalee par Survival International."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Structure politique traditionnelle de type chefferie (khuta, palais royal). Le siege du khuta est le village de Sangwali, dans la constituency de Judea Lyaboloma, region du Zambezi (Namibie). Le chef actuel (depuis 1993) est Chief Boniface Sifu. Au Botswana, les Yeyi n'ont pas le droit d'elire un chef de leur propre communaute selon la constitution de 1966, qui ne reconnait que huit tribus principales.",
+      "clanOrganization": "Organisation clanique avec descendance matrilineaire. La succession au pouvoir suit egalement la ligne matrilineaire (le successeur d'un roi est le fils de sa soeur).",
+      "ageClassSystems": null,
+      "roleOfLineages": "La matrilinaite structure la succession politique et l'heritage. Les alliances avec les San (mariage de Hankuzi avec une femme Khakwe) constituent un evenement fondateur de la cosmologie Yeyi.",
+      "religiousAuthority": "Croyance en un dieu createur qui vivait parmi les humains avant de monter au ciel, coexistant avec la veneration des esprits ancestraux. Presence de missions chretiennes dans la region."
+    },
+    "languages": {
+      "mainLanguage": "Shiyeyi (Yeyi)",
+      "isoCodes": ["yey"],
+      "dialects": [
+        "Shirwanga (dialecte principal)",
+        "Variete du Caprivi/Namibie (mieux preservee)",
+        "Variete du Botswana (plus menacee, avec passage vers le setswana)"
+      ],
+      "vehicularRole": "Le Shiyeyi est en danger au Botswana, progressivement remplace par le setswana (langue nationale). Au Botswana, il est interdit d'utilisation a la radio et dans l'education officielle. En Namibie, il est mieux maintenu dans les villages. Le Silozi est la langue formelle d'education et des medias dans la region namibienne. Une standardisation de l'ecriture du Shiyeyi a ete adoptee lors d'une conference en 1997."
+    },
+    "culture": {
+      "majorRites": "Le festival Batsara Batsapi est la celebration culturelle annuelle des MaYeyi, organisee a Sangwali (Namibie). Il celebre l'identite et le patrimoine culturel du peuple. L'initiation est liee aux cycles de vie traditionnels. La culture du canot est centrale : les Yeyi sont credites d'avoir apporte la technologie de construction de pirogues au Ngamiland.",
+      "symbols": "Le canot (mokoro) symbolise l'identite et le mode de vie des Yeyi du delta. Le mot kamanakao ('restes', 'vestiges') designe a la fois l'association de defense culturelle et la conscience de la menace culturelle. La riviere Okavango et le delta sont au coeur de l'identite territoriale.",
+      "artsAndMusic": "Artisanat sophistique : construction de pirogues et canots (tres estimes regionalement), fabrication de tambours, meubles et bijoux. Les femmes fabriquent et vendent des paniers tisses et des objets perlés. Musique traditionnelle accompagnant les ceremonies.",
+      "spiritualities": "Croyance en un dieu createur (qui monte au ciel apres avoir ete irrite par les hommes et ne s'implique plus que par des eclairs). Veneration des esprits ancestraux. Cultures vivrières importantes pour la spiritualite : le sorgho et le tabac (cultive et echange avec les Lozi du nord contre du fer pour les pointes de lances et les outils). Influence chretienne croissante."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferie traditionnelle avec siège royal (khuta) a Sangwali, Namibie. Les Yeyi ont ete les premiers Bantous du delta et ont joue un role de pionniers dans l'occupation et la mise en valeur du delta de l'Okavango. Ils ont transmis les techniques de canot aux populations subsequentes.",
+      "relationsWithNeighbors": "Relations etroites avec les San Xanikhwe (apprentissage des techniques de peche, mariage intercommunautaire). Commerce avec les Lozi du nord (tabac contre fer). Soumission aux Batawana (Tswana) au XIXe siecle. Relations avec les Hambukushu et les Dxeriku (autres peuples Bantous du delta). Tension contemporaine avec l'etat Botswanais pour la reconnaissance de leurs droits.",
+      "conflictsOrAlliances": "Conquete et servitude par les Batawana au XIXe siecle (periode de servage batlhanka). Combat juridique et politique contemporain pour la reconnaissance constitutionnelle au Botswana. Reconnaissance comme tribu independante en Namibie en 1992.",
+      "diaspora": "Presence dans les districts de Ghanzi et Central du Botswana en dehors du Ngamiland, notamment chez les communautes dispersees suite aux deplacements historiques."
+    },
+    "demography": {
+      "totalPopulation": 68400,
+      "referenceYear": 2025,
+      "source": "Wikipedia – Yeyi people (68 400); Omniglot estime 55 000 locuteurs du Shiyeyi; sources Wayeyi campaigners estiment plus de 100 000",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 50000,
+          "notes": "District du Nord-Ouest (Ngamiland), districts de Ghanzi et Central"
+        },
+        {
+          "country": "NAM",
+          "population": 18400,
+          "notes": "Region du Zambezi (ex-Caprivi), environ de Linyanti et Sangwali"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia – Yeyi people (https://en.wikipedia.org/wiki/Yeyi_people)",
+      "Wikipedia – Yeyi language (https://en.wikipedia.org/wiki/Yeyi_language)",
+      "Omniglot – Yeyi language and alphabet (https://www.omniglot.com/writing/yeyi.htm)",
+      "US Department of Justice – Wayeyi profile (https://www.justice.gov/eoir/file/876336/dl)",
+      "Minority Rights Group – Wayeyi in Botswana (https://minorityrights.org/communities/wayeyi/)",
+      "Survival International – Wayeyi related material (https://www.survivalinternational.org/materials/95)",
+      "Africa 101 Last Tribes – The Okavango Delta Peoples of Botswana (https://www.101lasttribes.com/tribes/okavango.pdf)"
+    ]
+  }
+}

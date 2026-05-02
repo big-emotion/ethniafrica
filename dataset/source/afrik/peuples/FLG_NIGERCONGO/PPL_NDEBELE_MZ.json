@@ -1,0 +1,93 @@
+{
+  "id": "PPL_NDEBELE_MZ",
+  "nameMain": "Ndebele (Mozambique)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MOZ"],
+  "content": {
+    "appellations": {
+      "mainName": "Ndebele (Mozambique)",
+      "selfAppellation": "AmaNdebele / VaNdebele",
+      "exonyms": ["Nguni du Mozambique", "Ndebele de Sofala"],
+      "originOfExonyms": "Le terme Ndebele au Mozambique désigne les descendants des groupes nguni (dont des Ndebele et Khumalo d'Afrique du Sud) qui ont migré vers le Mozambique lors du Mfecane (années 1820). Ils se distinguent des Ndau, des Tsonga et des autres populations mozambicaines par leur origine nguni. Le terme est utilisé par les communautés locales pour désigner ces descendants.",
+      "whyProblematic": "La présence d'un groupe se réclamant spécifiquement de l'identité Ndebele au Mozambique est peu documentée dans les sources primaires. Les migrants Nguni du Mfecane (années 1820) au Mozambique ont formé l'Empire Gaza de Soshangane, avec lequel les Ndebele étaient associés. Les descendants de ces groupes nguni ont été en grande partie assimilés par les populations locales (Tsonga, Ndau, Shangaan). La frontière entre identité Ndebele proprement dite et identité Shangaan-Nguni plus large est floue.",
+      "contemporaryUsage": "Le terme Ndebele est peu utilisé au Mozambique dans le sens ethnique distinctif. Les populations d'origine nguni se désignent souvent comme Shangaan ou par leur appartenance à des clans spécifiques. La province de Sofala et la région de Manica sont les zones où des traces d'identité nguni-ndebele sont le mieux documentées.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone S) — groupe Nguni (descendants de migrants Khumalo et autres Nguni)",
+      "historicalRegion": "Province de Sofala et province de Manica (Mozambique central), zone côtière autour de Beira et Sofala",
+      "currentCountries": ["MOZ"]
+    },
+    "ethnicities": [
+      "Descendants des Khumalo (branche de Mzilikazi restée au Mozambique lors des migrations du Mfecane)",
+      "Groupes nguni-ndebele assimilés dans l'Empire Gaza (Shangaan)",
+      "Communautés d'identité nguni résiduelle en province de Sofala"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ndebele du Mozambique descendent de groupes Nguni (dont des Ndebele, Khumalo et autres) qui ont migré vers le Mozambique lors du Mfecane (période de grande perturbation militaire en Afrique australe, années 1820-1840). Contrairement aux armées de Mzilikazi qui ont continué vers le Zimbabwe, une partie de ces groupes nguni s'est installée dans le Mozambique central (province de Sofala). Certains rejoignirent les forces de Soshangane, qui établit l'Empire Gaza (1824-1895) couvrant les provinces actuelles de Sofala, Manica, Inhambane, Gaza et Maputo.",
+      "formationPeriod": "Les migrations nguni au Mozambique ont eu lieu principalement entre 1820 et 1840. Nxaba Msane établit d'abord un bref royaume à l'intérieur de Sofala (vers 1820-1837). En 1837, Soshangane (Ndwandwe-Nguni) défait Nxaba et étend l'Empire Gaza, incorporant de nombreux groupes Ndebele, Khumalo et autres Nguni. Ces groupes furent ensuite appelés Shangaan (ou Shangaan-Tsonga). L'Empire Gaza s'effondra en 1895 avec la défaite de Ngungunyane face aux Portugais.",
+      "migrationRoutes": [
+        "Migration depuis le KwaZulu-Natal (Afrique du Sud) vers le nord en raison des guerres du Mfecane (années 1820)",
+        "Traversée de la frontière sud du Mozambique sous la pression des armées zouloues de Shaka",
+        "Installation dans les provinces de Sofala et Manica (Mozambique central) — zone côtière et intérieure",
+        "Certains groupes atteignirent le Zimbabwe (Matabeleland) sous Mzilikazi, d'autres restèrent au Mozambique"
+      ],
+      "historicalSettlementZones": [
+        "Province de Sofala (Beira, Dondo, Nhamatanda, Chibabava, Machanga — Mozambique central)",
+        "Province de Manica (Chimoio, Mossurize — Mozambique central-ouest)",
+        "Province d'Inhambane (Mambone — Mozambique méridional)",
+        "Ancienne zone d'influence de l'Empire Gaza (couvrant le Mozambique méridional)"
+      ],
+      "unificationsOrDivisions": "Les groupes Nguni-Ndebele du Mozambique n'ont jamais formé une entité politique unifiée distincte après la chute de l'Empire Gaza (1895). Ils ont été progressivement assimilés dans l'ensemble Shangaan (Tsonga-Shangaan) qui constitue le principal groupe ethnique du sud et du centre du Mozambique. L'identité nguni-ndebele spécifique est maintenue par certaines familles de clans mais n'a pas de structure politique contemporaine autonome.",
+      "externalInfluences": "L'Empire Gaza (Soshangane puis ses successeurs) a profondément marqué ces populations : culture militaire nguni, organisation sociale, langue. La colonisation portugaise (installation progressive dès le 16e siècle, domination totale après 1895) a imposé le portugais et partiellement le catholicisme. L'influence des peuples voisins (Ndau, Tsonga, Chopi, Maravi) a conduit à une assimilation culturelle et linguistique progressive. La guerre civile mozambicaine (1977-1992) a également entraîné des déplacements supplémentaires.",
+      "majorHistoricalEvents": "Années 1820 : arrivée des armées Nguni (dont Nxaba Msane, puis Soshangane) au Mozambique. 1824 : fondation de l'Empire Gaza par Soshangane (dont les Nguni-Ndebele font partie). 1895 : défaite de Ngungunyane par les Portugais, fin de l'Empire Gaza. Post-1895 : assimilation progressive dans l'ensemble Shangaan-Tsonga. 1975 : indépendance du Mozambique, politique nationale unitaire favorisant l'intégration des groupes ethniques."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "L'organisation traditionnelle des Ndebele du Mozambique reposait sur le modèle des régiments (amabutho) hérité de la tradition nguni et du modèle de l'Empire Gaza. Après la chute de l'Empire Gaza (1895), l'organisation s'est adaptée aux structures coloniales portugaises puis post-indépendance. Les structures claniques et les conseils d'anciens constituent encore les formes de gouvernance communautaire, au sein du système politique mozambicain (Frelimo).",
+      "clanOrganization": "Organisation clanique patrilinéaire d'origine nguni. Les clans portent des noms d'origine nguni (Khumalo, Mthethwa, Nxumalo, Ndlovu, etc.). Certains clans ont maintenu leurs généalogies et leur identité nguni-ndebele distincte au fil des générations, même après l'assimilation dans l'ensemble Shangaan.",
+      "ageClassSystems": "Le système de régiments d'âge (amabutho) hérité de la tradition nguni existait sous l'Empire Gaza. Il a été largement abandonné après la chute de l'empire et n'est plus pratiqué dans sa forme traditionnelle.",
+      "roleOfLineages": "Les lignages patrilinéaires structurent l'identité clanique et les droits de succession. La transmission de l'identité nguni-ndebele passe par les généalogies masculines et les noms de famille. Le mariage exogame (entre clans différents) est la règle traditionnelle.",
+      "religiousAuthority": "Culte des ancêtres nguni (amadlozi) maintenu au niveau familial et clanique. Les guérisseurs traditionnels (izangoma/izinyanga) jouent un rôle d'intermédiaires avec les ancêtres. Le catholicisme (introduit par les missionnaires portugais dès le 16e siècle) est largement répandu, ainsi que les Églises de Sion et mouvements prophétiques africains, en syncrétisme avec les pratiques ancestrales."
+    },
+    "languages": {
+      "mainLanguage": "Langue nguni (variété proche de l'isiNdebele et du zoulou), portugais (langue nationale du Mozambique)",
+      "isoCodes": ["nde", "por"],
+      "dialects": [
+        "Variété nguni mozambicaine (fortement influencée par le Tsonga-Changana, le Ndau et le portugais)",
+        "Le changana/xichangana (langue tsonga-shangaan, variété principale du Mozambique méridional et central) est souvent utilisé par ces communautés"
+      ],
+      "vehicularRole": "Le portugais est la langue officielle du Mozambique et est utilisé dans l'éducation, l'administration et les contextes formels. Les langues bantoues locales (xichangana/tsonga dans le sud, chiNdau dans le centre) sont utilisées dans les contextes familiaux et communautaires. La variété nguni proprement dite est peu maintenue : les communautés d'origine Ndebele au Mozambique ont largement adopté le xichangana ou le chiNdau selon leur zone géographique."
+    },
+    "culture": {
+      "majorRites": "{\"initiationRites\": {\"description\": \"Rites d'initiation d'origine nguni, largement assimilés aux pratiques locales mozambicaines. Les cérémonies de passage à l'âge adulte et les rites de mariage maintiennent des éléments d'origine nguni dans certaines familles.\"}, \"funeraryRites\": {\"description\": \"Rites funéraires combinant les pratiques nguni (vénération des ancêtres, amadlozi) et les influences catholiques ou des Églises africaines indépendantes. Les cérémonies commémoratives pour les ancêtres (amadlozi) sont maintenues dans les familles d'identité nguni.\"}, \"marriageRites\": {\"description\": \"La dot (lobola/bridewealth) en bétail ou équivalent est maintenue dans les familles d'origine nguni. Les cérémonies de mariage intègrent des éléments d'origine nguni et des pratiques locales mozambicaines.\"}}",
+      "symbols": "Le bétail (symbole de prestige et de richesse dans la tradition nguni). Les noms de famille d'origine nguni (Khumalo, Nxumalo, Ndlovu, Mthethwa) comme marqueurs identitaires. Les izibongo (chants de louange claniques) comme expression de l'identité ancestrale nguni.",
+      "artsAndMusic": "{\"music\": {\"description\": \"Musique d'origine nguni (chants de louange, izibongo) maintenue dans les cérémonies claniques. Les instruments à percussion (tambours) accompagnent les cérémonies traditionnelles. La musique a subi l'influence des styles locaux mozambicains (marrabenta, musique tsonga-shangaan).\"}, \"crafts\": {\"description\": \"Artisanat traditionnel nguni (travail du cuir, poterie, vannerie) combiné avec des techniques locales mozambicaines. La perle et les ornements d'origine nguni ont largement disparu au profit des styles locaux.\"}, \"oralTraditions\": {\"description\": \"Traditions orales maintenant les récits des migrations du Mfecane et des généalogies claniques. Les izibongo (chants de louange pour les ancêtres et les chefs) sont encore récités dans certaines cérémonies familiales.\"}}",
+      "spiritualities": "{\"ancestorWorship\": {\"description\": \"Le culte des ancêtres nguni (amadlozi) reste central dans les pratiques spirituelles des familles d'origine Ndebele au Mozambique. Les ancêtres sont invoqués lors des cérémonies familiales et des rites de passage.\"}, \"syncretism\": {\"description\": \"Syncrétisme entre pratiques ancestrales nguni et christianisme (catholicisme introduit par les Portugais, Églises de Sion, mouvements prophétiques africains). Les guérisseurs traditionnels (izangoma) coexistent avec les leaders religieux chrétiens.\"}, \"localInfluences\": {\"description\": \"Les croyances en les esprits locaux mozambicains (ngozi, mashave des pratiques ndau et shona voisines) ont influencé les pratiques spirituelles des communautés nguni-ndebele du Mozambique central (province de Sofala).\"}}"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les groupes Nguni-Ndebele du Mozambique ont participé à l'Empire Gaza (1824-1895), fondé par Soshangane (Ndwandwe-Nguni) et couvrant les provinces actuelles de Sofala, Manica, Inhambane, Gaza et Maputo. Avant la création de l'Empire Gaza, Nxaba Msane (Nguni, dont des éléments Ndebele) établit un bref royaume à l'intérieur de Sofala (vers 1820-1837). L'Empire Gaza fut détruit par les Portugais en 1895 (capitulation de Ngungunyane à Chaimite). Il n'existe pas de chefferie distinctement ndebele au Mozambique après 1895.",
+      "relationsWithNeighbors": "Les Nguni-Ndebele du Mozambique ont entretenu des relations complexes avec les peuples voisins : antagonisme initial avec les Ndau (subjugués et assimilés dans le Gaza Empire), relations avec les Tsonga-Shangaan (dans lesquels ils furent largement absorbés), contacts avec les Chopi (résistants armés de fusils portugais). Les Portugais (présence coloniale depuis le 16e siècle) ont progressivement étendu leur contrôle sur la région après la défaite de l'Empire Gaza.",
+      "conflictsOrAlliances": "Années 1820 : migrations nguni (dont des Ndebele) depuis l'Afrique du Sud vers le Mozambique lors du Mfecane. 1820-1837 : Nxaba Msane établit un bref royaume à Sofala, défait par Soshangane en 1837. 1824-1895 : Empire Gaza (Soshangane puis successeurs). 1895 : défaite de Ngungunyane à Chaimite par les Portugais ; fin de l'Empire Gaza. Post-1895 : assimilation des populations nguni dans l'ensemble Shangaan-Tsonga sous l'autorité coloniale portugaise. 1977-1992 : guerre civile mozambicaine (Frelimo vs Renamo), entraînant des déplacements supplémentaires.",
+      "diaspora": "Les descendants de migrants Nguni-Ndebele au Mozambique ont connu une dispersion progressive dans les grandes villes mozambicaines (Beira, Chimoio, Maputo) et au-delà, notamment vers l'Afrique du Sud (travailleurs migrants dans les mines d'or et de diamants depuis la fin du 19e siècle). Certaines familles d'identité nguni-ndebele maintiennent des liens avec leurs homologues zimbabwéens et sud-africains."
+    },
+    "demography": {
+      "totalPopulation": 50000,
+      "referenceYear": 2025,
+      "source": "Estimation très approximative. Aucun recensement mozambicain ne compte séparément une catégorie 'Ndebele'. Les populations d'origine nguni-ndebele au Mozambique sont partiellement comptabilisées dans l'ensemble Shangaan-Tsonga (groupe dominant du Mozambique méridional et central). L'identification spécifique comme Ndebele est maintenue par un petit nombre de familles dans la province de Sofala. Chiffre basé sur des estimations anthropologiques et historiques.",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 50000,
+          "note": "Province de Sofala (zone de Beira, Dondo, Chibabava) et province de Manica (Mossurize, Chimoio). Dispersés et largement assimilés dans l'ensemble Shangaan-Tsonga."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Northern Ndebele people. https://en.wikipedia.org/wiki/Northern_Ndebele_people",
+      "Wikipedia EN — Gaza Empire. https://en.wikipedia.org/wiki/Gaza_Empire",
+      "Wikipedia EN — Mfecane. https://en.wikipedia.org/wiki/Mfecane",
+      "Wikipedia EN — Ndau people (section historique sur l'Empire Gaza). https://en.wikipedia.org/wiki/Ndau_people",
+      "South African History Online — Mfecane. https://sahistory.org.za/article/mfecane-understanding-period-transformation-southern-africa",
+      "Wikipedia EN — Nguni peoples. https://en.wikipedia.org/wiki/Nguni_peoples",
+      "SIL Ethnologue — Northern Ndebele (nde). https://www.ethnologue.com/language/nde/"
+    ]
+  }
+}

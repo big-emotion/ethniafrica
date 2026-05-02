@@ -1,0 +1,89 @@
+{
+  "id": "PPL_IRAMBA",
+  "nameMain": "Iramba",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Iramba",
+      "selfAppellation": "Anyilamba",
+      "exonyms": [
+        "Nyilamba",
+        "Nyiramba",
+        "Waniramba",
+        "Nilamba",
+        "Niramba",
+        "Lambi",
+        "Irambas"
+      ],
+      "originOfExonyms": "Le nom Nyilamba (ou Nilamba) est la forme la plus courante en swahili et dans la litterature ethnographique. Le prefixe Wa- (Waniramba) est le prefixe bantou du pluriel humain. La forme Iramba designe a la fois le peuple et le district administratif de la region de Singida.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Iramba designe officiellement le district administratif (Iramba District) de la region de Singida en Tanzanie centrale. Le nom Nyiramba ou Nyilamba est utilise pour le peuple et sa langue dans les contextes ethnolinguistiques et religieux.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu de Tanzanie centrale",
+      "historicalRegion": "Tanzanie centrale (regions de Singida et Shinyanga)",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Iramba", "Anyilamba"],
+    "origins": {
+      "ancientOrigins": "Un groupe de clans bantouphones appeles Anilyamba aurait migre depuis la zone frontiere entre le Rwanda et l'Ouganda (region appelee Bahima, a l'ouest du lac Victoria). Ils auraient longe les rives meridionales du lac Victoria avant de s'etablir dans l'actuelle region de Mara, puis de se disperser vers la Tanzanie centrale.",
+      "formationPeriod": "La migration fondatrice est estimee il y a 100 a 200 ans avant le XXe siecle, soit approximativement entre les XVIIIe et XIXe siecles.",
+      "migrationRoutes": [
+        "Depuis les zones frontalieres Rwanda-Ouganda (Bahima, ouest du lac Victoria)",
+        "Le long des rives meridionales du lac Victoria (appele Nanza)",
+        "Etablissement dans la cote orientale du lac Victoria (region de Mara, Musoma)",
+        "Dispersion progressive vers la Tanzanie centrale (district d'Iramba, region de Singida)"
+      ],
+      "historicalSettlementZones": [
+        "District d'Iramba, region de Singida, Tanzanie centrale",
+        "District de Kishapu, region de Shinyanga, Tanzanie",
+        "Region de Mara (Musoma) pour des groupes proches"
+      ],
+      "unificationsOrDivisions": "La communaute Iramba comprend plusieurs clans dont le groupe principal (Anyilamba) et un sous-groupe proche, les Iambi, qui parlent un dialecte legerement divergent parfois classe comme langue distincte. Le groupe Isanzu est egalement considere dans certaines classifications comme appartenant au meme ensemble.",
+      "externalInfluences": "Au XIXe siecle, les negriers arabes et swahilis penetrent en Tanzanie centrale, introduisant l'islam parmi les Iramba. En 1974, la politique ujamaa de Julius Nyerere regroupe les Iramba en villages collectifs pour faciliter l'education, l'agriculture commerciale et le controle politique.",
+      "majorHistoricalEvents": "Penetration de l'islam au XIXe siecle via les routes commerciales arabess. Colonisation allemande de la Tanzanie (Tanganyika) fin XIXe siecle. Politique ujamaa tanzanienne de 1974 : regroupement force en villages."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe Iramba est organisee autour de conseils d'anciens independants dans chaque village ou zone d'etablissement. Il n'existe pas d'autorite politique centralisee. Les anciens guident la vie communautaire, arbitrent les conflits et preservent les traditions.",
+      "clanOrganization": "La societe est structuree en clans. Plusieurs clans majeurs composent la communaute Nyiramba. Le systeme clanique regule les mariages, la propriete fonciere et les rituels communautaires.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages organisent la vie sociale et economique. La propriete du betail (bovins, chevres) et des terres agricoles est transmise par les lignages. La memoire ancestrale est preservee par la tradition orale.",
+      "religiousAuthority": "Veneration des ancetres et apaisement des esprits (animisme traditionnel). Presence de sanctuaires de pluie (rain shrines) comme lieux rituels importants. Syncretisme marqué entre islam (Sunni, ecole Shafii) et croyances animistes traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Nilamba (Kiniramba)",
+      "isoCodes": ["nim"],
+      "dialects": [
+        "Kiniramba",
+        "Iambi (dialecte proche, parfois classe comme langue distincte)"
+      ],
+      "vehicularRole": "Le nilamba (ISO nim, code Guthrie F.31) est parle dans les districts d'Iramba (Singida) et de Kishapu (Shinyanga). Le swahili est la lingua franca nationale tanzanienne utilisee pour l'administration et le commerce. Le nilamba dispose d'un Nouveau Testament traduit."
+    },
+    "culture": {
+      "majorRites": "Veneration des ancetres par des rituels periodiques. Ceremonies au niveau des sanctuaires de pluie. Rituels de passage marques par des ceremonies communautaires. La tradition orale (contes, genealogies, proverbes) est le principal vecteur de transmission culturelle.",
+      "symbols": "Les sanctuaires de pluie (rain shrines) sont des lieux sacres majeurs pour la communaute. Le betail est un symbole de richesse et de statut social.",
+      "artsAndMusic": "La majorite des Iramba vivant en milieu rural pratique l'agriculture de subsistance (sorgho, mil, mais) et l'elevage (bovins, ovins, caprins). L'artisanat traditionnel comprend la poterie et le travail du cuir. La musique et les chants accompagnent les ceremonies communautaires.",
+      "spiritualities": "Animisme traditionnel avec veneration des ancetres et apaisement des esprits. Pratique de l'islam (Sunni, majorite Shafi) depuis le XIXe siecle. Christianisme present en minorite. Syncretisme frequent entre islam et croyances animistes, notamment autour des rituels de pluie et du culte des ancetres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Les Iramba entretiennent des relations historiques avec les Isanzu (groupe proche inclus dans le cluster Iramba), les Nyaturu (Turu), les Sukuma et les Nyamwezi. La proximite linguistique avec les groupes de Tanzanie centrale temoigne d'une longue coexistence.",
+      "conflictsOrAlliances": "Contacts commerciaux avec les marchands arabes et swahilis au XIXe siecle (routes de l'ivoire et des esclaves traversant la Tanzanie centrale). Integration dans le systeme colonial allemand puis britannique.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 955000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (https://joshuaproject.net/clusters/341)",
+      "distributionByCountry": [{ "country": "TZA", "population": 955000 }]
+    },
+    "sources": [
+      "Iramba people – Wikipedia (https://en.wikipedia.org/wiki/Iramba_people)",
+      "Iramba language – Wikipedia (https://en.wikipedia.org/wiki/Iramba_language)",
+      "Iramba, Nyilamba in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12245)",
+      "Iramba – 101lasttribes.com (https://www.101lasttribes.com/tribes/iramba.html)",
+      "Nilamba Language – Ethnologue (https://www.ethnologue.com/language/nim/)",
+      "Bantu, Central-Tanzania People Cluster – Joshua Project, 2025 (https://www.joshuaproject.net/clusters/341)"
+    ]
+  }
+}

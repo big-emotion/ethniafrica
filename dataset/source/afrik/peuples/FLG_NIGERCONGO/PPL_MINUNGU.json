@@ -1,0 +1,79 @@
+{
+  "id": "PPL_MINUNGU",
+  "nameMain": "Minungu",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["AGO", "COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Minungu",
+      "selfAppellation": "Nyinungu",
+      "exonyms": ["Nyinungu", "Minoungu", "Shinji"],
+      "originOfExonyms": "Le nom Minungu est la forme exonymique consacree dans la litterature ethnographique et coloniale portugaise. La forme endonymique est Nyinungu. Certains auteurs portugais regroupaient les Minungu avec les Shinji dans une meme categorie ethno-linguistique liee aux Mbundu.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Minungu reste en usage dans la litterature academique et les recensements angolais pour designer ce peuple du nord-est. La forme Nyinungu est privilegiee par les linguistes.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Lunda-Chokwe",
+      "historicalRegion": "Nord-Est Angola / bordure Angola-RDC",
+      "currentCountries": ["AGO", "COD"]
+    },
+    "ethnicities": ["Minungu", "Nyinungu"],
+    "origins": {
+      "ancientOrigins": "Les Minungu sont un peuple bantu etabli de part et d'autre de la frontiere entre l'Angola et la Republique democratique du Congo. Leur langue, le nyinungu (aussi appele minungu), est classee dans le groupe Cokwe-Lunda (Bantu L50), avec des similitudes avec le Chokwe (K11) et le Shinji (H33). Des etudes socio-historiques les rattachent au vaste ensemble Lunda, tandis que certains anthropologues portugais les situaient dans la sphere d'influence Mbundu (Kimbundu).",
+      "formationPeriod": "Periode precoloniale, probablement entre le XVe et XVIIe siecle dans le contexte des grandes migrations Lunda-Chokwe.",
+      "migrationRoutes": [
+        "Migrations depuis le bassin du Congo vers le nord-est de l'Angola actuel",
+        "Implantation de part et d'autre de la frontiere Angola-RDC"
+      ],
+      "historicalSettlementZones": [
+        "Nord-est de l'Angola (province du Lunda Norte)",
+        "Zone frontaliere Angola-RDC",
+        "Region de Dilolo (RDC)"
+      ],
+      "unificationsOrDivisions": "Les Minungu sont souvent associes aux Shinji dans les classifications ethnographiques coloniales. Leur langue est consideree comme transitionnelle entre le Kimbundu et le Chokwe, ce qui reflete des contacts historiques importants avec ces deux groupes.",
+      "externalInfluences": "Influence mbundu (kimbundu) signalee par les anthropologues portugais. Influence Lunda et Chokwe selon les linguistes. Presence coloniale portugaise a partir du XIXe siecle dans la region.",
+      "majorHistoricalEvents": "Pendant la periode coloniale, les Minungu ont ete soumis a l'administration portugaise. Pendant la guerre civile angolaise (1975-2002), leurs zones d'implantation ont ete affectees par les conflits entre MPLA et UNITA dans l'est angolais. Des familles ont fui vers le Shaba (Katanga) en RDC."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation clanique sous l'autorite de chefs locaux (sobas). Systeme politique comparable aux peuples voisins Chokwe et Lunda, avec des chefferies locales liees par des liens de parente et d'alliance.",
+      "clanOrganization": "Organisation en clans patrilineaires ou bilineaires selon les influences Lunda et Chokwe. La chefferie locale est hereditaire.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role central dans l'organisation sociale, la transmission des droits fonciers et la regulation des mariages.",
+      "religiousAuthority": "Autorite religieuse exercee par des devins-guerisseurs (nganga) et par les anciens. Les ancetres occupent une place centrale dans le systeme de croyances."
+    },
+    "languages": {
+      "mainLanguage": "Nyinungu (Minungu)",
+      "isoCodes": [],
+      "dialects": ["Variante de Kakumbi (Angola)", "Variante de Dilolo (RDC)"],
+      "vehicularRole": "Le nyinungu est une langue de communication interne au groupe. Le portugais est utilise comme langue officielle en Angola, le français et le lingala en RDC. Des locuteurs utilisent aussi le chokwe comme langue de contact regional."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation des jeunes (mukanda) communs aux peuples Lunda-Chokwe. Rites funeraires impliquant les ancetres. Ceremonies propitiatoires liees aux activites agricoles.",
+      "symbols": "Masques et sculptures en bois lies aux rites d'initiation, dans la tradition Lunda-Chokwe. Motifs geometriques decorant les objets artisanaux.",
+      "artsAndMusic": "Artisanat en bois, vannerie. Musique percussive liee aux ceremonies d'initiation et aux rites de guerison. Transmission orale de la culture et de l'histoire.",
+      "spiritualities": "Croyances animistes centrees sur le culte des ancetres. Les esprits des ancetres (mikisi) intercedent entre les vivants et le monde spirituel. Recours aux devins-guerisseurs (nganga) pour les questions de sante, de fertilite et de protection."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies locales inserees dans la sphere d'influence de l'empire Lunda. Les Minungu ont ete soumis a l'autorite des grandes chefferies Lunda et, partiellement, Chokwe lors de l'expansion de ce dernier groupe au XIXe siecle.",
+      "relationsWithNeighbors": "Voisinage historique avec les Chokwe, les Lunda, les Shinji et les Mbundu. Les Chokwe ont exerce une influence culturelle et linguistique importante sur les Minungu. Des emprunts lexicaux et des similitudes grammaticales attestent ces contacts.",
+      "conflictsOrAlliances": "Les Minungu ont ete pris dans les recompositions politiques liees a l'expansion Chokwe au XIXe siecle, puis aux conflits entre MPLA et UNITA pendant la guerre civile angolaise.",
+      "diaspora": "Presence de communautes Minungu en RDC, notamment dans la region de Dilolo (Katanga/Lualaba), suite aux migrations transfrontalieres."
+    },
+    "demography": {
+      "totalPopulation": 15000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur les donnees linguistiques de Maniacky (2008) et les classifications ethnographiques coloniales; population exacte non recensee separement.",
+      "distributionByCountry": [
+        { "country": "AGO", "population": 10000 },
+        { "country": "COD", "population": 5000 }
+      ]
+    },
+    "sources": [
+      "Maniacky, Jacky – Nyinungu (better known in the literature as Minungu): a Bantu language spoken on both sides of the border between Angola and DRC, WOCAL 6, Cologne (2008) (https://www.uni-koeln.de/phil-fak/afrikanistik/wocal/schedule/abstracts/6-4-2%20Jacky%20Maniacky.pdf)",
+      "Angola Country Study – Lunda-Chokwe, Library of Congress Federal Research Division (https://countrystudies.us/angola/62.htm)",
+      "Chokwe people – Wikipedia, The Free Encyclopedia (https://en.wikipedia.org/wiki/Chokwe_people)",
+      "Languages of Angola – Wikipedia, The Free Encyclopedia (https://en.wikipedia.org/wiki/Languages_of_Angola)",
+      "Royal Museum for Central Africa – Annual Report 2011, Tervuren (https://www.africamuseum.be/sites/default/files/media/about-us/annual-reports/doc/annualreport2011nl.pdf)",
+      "Angolan Language Ecologies: Contacts in Northeastern Angola, CIBIO University of Porto (2025) (https://www.cibio.up.pt/en/events/angolan-language-ecologies-contexts-of-contact-change-and-normalization/)"
+    ]
+  }
+}

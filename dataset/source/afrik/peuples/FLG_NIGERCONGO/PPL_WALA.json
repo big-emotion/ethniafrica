@@ -1,0 +1,81 @@
+{
+  "id": "PPL_WALA",
+  "nameMain": "Wala",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Wala",
+      "selfAppellation": "Waala",
+      "exonyms": ["Lobi-Wala", "Waale"],
+      "originOfExonyms": "Le nom Wala designe les habitants de la cite de Wa dans le nord-ouest du Ghana. Le terme Waale ou Waali est le nom de la langue et de l'ethnie. Les chercheurs regroupent souvent les Wala avec les Lobi voisins sous l'appellation Lobi-Wala en raison de leurs similarites linguistiques et culturelles.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Wala est utilise officiellement au Ghana pour designer ce peuple de la region Upper West. Waala est l'auto-denomination courante. Lobi-Wala est parfois employe dans la litterature academique.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Groupe Gur (Voltaique), sous-groupe Mole-Dagbon",
+      "historicalRegion": "Nord-Ouest du Ghana, region de l'Upper West",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Wala", "Lobi-Wala"],
+    "origins": {
+      "ancientOrigins": "Les Wala sont une amalgamation de plusieurs groupes Gur-parlants (Waali, Dagaaba, Mande) qui se sont installes dans la region de Wa. Selon la tradition orale, un prince Musi nomme Salia ou Sulle Mana, apres avoir ete defait dans une lutte de succession au trone de Mugu, migra vers le sud depuis Nalun-Gambaga vers la region de Wa au debut du XVIIe siecle. Il etablit son controle sur les peuples Dagaari et Lobi autochtones et fonda l'etat de Wa. Les peuples qui reconnaissaient l'autorite du Wa-Naa etaient appeles Wala. Les Wala avaient cependant un imam mentionne des 1317, ce qui indique une presence anterieure dans la region.",
+      "formationPeriod": "XVe-XVIIe siecle; le Royaume de Wala est etabli au debut du XVIIe siecle. Au XVIIIe siecle, des commercants jula (dioula) musulmans sont integres dans l'etat wala, renforçant l'islamisation.",
+      "migrationRoutes": [
+        "Migration depuis le royaume de Mamprusi vers le nord du Ghana actuel au XVIe siecle",
+        "Migration depuis l'ancien empire du Ghana et les zones sahelo-soudaniennes"
+      ],
+      "historicalSettlementZones": [
+        "Wa (chef-lieu, Upper West Region, Ghana)",
+        "Region de la Volta Noire, a la frontiere Ghana-Cote d'Ivoire-Burkina Faso"
+      ],
+      "unificationsOrDivisions": "En 1894, une rebellion eclate dans la partie nord du Royaume de Wala : ceux qui soutiennent le Wa-Naa deviennent les Wala, ceux qui se rebellent sont assimiles aux Dagarti. La frontiere du Royaume de Wala est imposee comme frontiere du District de Wa par les Britanniques.",
+      "externalInfluences": "Influence islamique majeure depuis le XVIIIe siecle via les commercants dioula. Colonisation britannique a partir de 1894 avec l'integration au protectorat du Nord-Ghana. Influence sudano-sahelienne dans l'architecture (mosquees et palais en banco).",
+      "majorHistoricalEvents": "Fondation du Royaume de Wala au XVIIe siecle par Salia. En 1894, rebellion et redefinition des frontieres ethniques. Recensement de 1921 : 16 905 Wala dans le District de Wa (sous-estimation probable). Construction du palais du Wa-Naa en briques de banco dans le style soudano-sahelien."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie traditionnelle dirigee par le Wa-Naa (chef supreme). La succession au trone implique quatre portes royales traditionnelles : Nigila, Nagaha, Joa et Nigera. Le palais du Wa-Naa en briques de banco est la residence officielle du chef a Wa. L'institution cheffale est tres ancienne et integre a la fois le pouvoir politique et religieux (islamique).",
+      "clanOrganization": "Organisation en lineages et clans patrilineaires. Les Tindamba (gardiens de la terre) occupent une fonction rituelle distincte de celle des chefs politiques.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lineages patrilineaires structurent l'acces a la terre et la succession politique. Les ancetres sont veneres et considered comme protecteurs des lignages. Les morts ont besoin d'etre nourris et honores pour ne pas devenir des esprits malefiques.",
+      "religiousAuthority": "Presence d'un imam depuis au moins 1317 selon les traditions orales. L'autorite islamique est centrale dans la vie politique et sociale wala. Les Tindamba maintiennent parallelement les pratiques animistes traditionnelles centrees sur les ancetres et les forces de la nature."
+    },
+    "languages": {
+      "mainLanguage": "Wali (Waali)",
+      "isoCodes": ["wlx"],
+      "dialects": ["Wali du Nord", "Wali du Sud"],
+      "vehicularRole": "Le wali est la langue vernaculaire principale des Wala. L'anglais est la langue officielle du Ghana. Le dioula (jula) a ete historiquement parle par les commercants musulmans integres dans la societe wala."
+    },
+    "culture": {
+      "majorRites": "Ceremonies aux sanctuaires familiaux pour les naissances, mariages et deces. La ceremonie de fin de saison agricole celebre l'abondance des grains par des danses collectives. Initiations dans des societes secretes, evenement le plus important du calendrier rituel. Le Wa-Naa accomplit des rites spirituels prives avant d'apparaitre publiquement en tenue traditionnelle et de sauter par-dessus une vache, symbolisant sa force et sa determination.",
+      "symbols": "La mosquee et le palais du Wa-Naa en style soudano-sahelien (briques de banco) sont les symboles architecturaux majeurs de Wa. Le xylophone (balafon) est un symbole culturel fort, consider comme une invention de la region Upper West du Ghana.",
+      "artsAndMusic": "Les Wala sont reconnus comme d'excellents joueurs de xylophone, qui performent lors des funerailles et des danses. Les Lobi voisins sont notes pour la fabrication de masques. Les deux groupes sculptent des sanctuaires ancestraux, des animaux, des dieux et des tabourets. La musique vocale et instrumentale accompagne tous les grands evenements sociaux.",
+      "spiritualities": "Majorite musulmane depuis le XVIIIe siecle. Les Wala non musulmans maintiennent des croyances animistes centrees sur les ancetres (qui veillent sur le lineage et le foyer) et les objets de la nature (la terre assure la fertilite du sol, des esprits resident dans les animaux et objets). Des sanctuaires familiaux sont construits et entretenus pour les ancetres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume de Wala fonde au XVIIe siecle, centre sur la cite de Wa dans l'Upper West Region du Ghana actuel. Le Wa-Naa est le chef supreme traditionnel. Au debut des annees 1890, le Royaume de Wala s'etendait largement a l'ouest de la riviere Kulpon, avec des frontieres allant de Dimma (nord-est) a Tantama (sud-ouest) et Kumasa au sud.",
+      "relationsWithNeighbors": "Relations historiques avec les Dagaaba (Dagarti), les Birifor, les Vagla et les Sissala. Les Wala ont etabli leur controle sur les Dagaari et les Lobi lors de leur installation. Les commercants dioula ont ete integres dans la societe wala au XVIIIe siecle. Rivalites et tensions avec les Dagarti lors de la rebellion de 1894.",
+      "conflictsOrAlliances": "Rebellion de 1894 qui a divise la population entre pro-Wa-Naa (Wala) et rebelles (assimiles aux Dagarti). Tensions coloniales entre interets britanniques et français autour du territoire de Wa a la fin du XIXe siecle. Des disputes de succession au trone du Wa-Naa perdurent et restent une source de conflits cheffaux.",
+      "diaspora": "Migration interne vers le sud du Ghana et la Cote d'Ivoire pour l'emploi salarie. Les Lobi-Wala continuent de migrer pour de meilleures terres agricoles ou des opportunites economiques en ville."
+    },
+    "demography": {
+      "totalPopulation": 120000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Ethnologue (84 800 locuteurs wali en 2013) et Joshua Project 2024, avec projection de croissance demographique",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 120000,
+          "note": "Principalement dans l'Upper West Region, autour de Wa"
+        }
+      ]
+    },
+    "sources": [
+      "Wala people – Wikipedia (https://en.wikipedia.org/wiki/Wala_people)",
+      "Wali language (Gur) – Wikipedia (https://en.wikipedia.org/wiki/Wali_language_(Gur))",
+      "Wali Language (WLX) – Ethnologue, SIL International (https://www.ethnologue.com/language/wlx/)",
+      "Wala in Ghana – Joshua Project, 2024 (https://joshuaproject.net/people_groups/15833)",
+      "The Waala Chieftaincy Institution: Its Origin and the Emergence of Disputes – Academia.edu, 2021 (https://www.academia.edu/51545519)",
+      "Wa and the Wala: Islam and Polity in Northwestern Ghana – Levtzion, Nehemia, Cambridge University Press (https://assets.cambridge.org/97805213/62108/sample/9780521362108ws.pdf)"
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "id": "PPL_SONGHAY_NIGERIEN",
+  "nameMain": "Songhay Nigerien",
+  "languageFamilyId": "FLG_SONGHAY",
+  "currentCountries": ["NER"],
+  "content": {
+    "appellations": {
+      "mainName": "Songhay Nigerien",
+      "selfAppellation": "Songhaiborai / Ayneha",
+      "exonyms": [
+        "Songhay de Gao du Niger",
+        "Koyraboro Senni nigerien",
+        "Songhay oriental"
+      ],
+      "originOfExonyms": "Le terme Songhaiborai designe en songhay les membres de la classe aristocratique originaire de Gao, consideres comme les vrais Songhay. Ce terme s'oppose aux Zarma, qui bien que parents linguistiques, ont une histoire et une identite distinctes. Au Niger, les Songhay nigeriens sont distincts des Zarma et vivent principalement dans les regions de Tillabery et Dosso le long du fleuve Niger.",
+      "whyProblematic": "Il existe une confusion frequente entre Songhay et Zarma au Niger, certains auteurs les regroupant sous le label Zarma-Songhay. Les Songhay du Niger se distinguent des Zarma par leurs origines historiques (lies directement a Gao et a l'empire Songhay) et par des dialectes differents. L'appellation Songhay Nigerien peut couvrir differents groupes : les Songhay stricto sensu de Tillabery et les Songhaiborai de la Sohance.",
+      "contemporaryUsage": "Les Songhay du Niger vivent principalement dans la region de Tillabery le long du fleuve Niger, et dans certaines parties des regions de Niamey et de Dosso. Ils constituent avec les Zarma le quatrieme groupe ethnique du Niger. Le terme Songhay est utilise en francais et en haoussa. En anglais, Songhai est frequent.",
+      "linguisticFamily": "FLG_SONGHAY",
+      "ethnoLinguisticGroup": "Songhay meridional (Songhoyboro Ciine / Koyraboro Senni oriental)",
+      "historicalRegion": "Vallee du Niger au Niger : regions de Tillabery, Say, Ayorou, Gothey, Karma — entre la frontiere malienne et Niamey",
+      "currentCountries": ["NER"]
+    },
+    "ethnicities": [
+      "Sohance (Songhaiborai) — groupe nobles originaires de Gao, principalement dans la region de Tillabery",
+      "Sorko — pecheurs songhay des rives du Niger, specialises dans la peche et la navigation fluviale",
+      "Kurtey — sous-groupe distinct entre Zarma et Songhay, dans le departement de Tillabery",
+      "Wanzarbe — communaute songhay renommee pour les Sohanci (practiciens de la magie songhay) pres de Tillabery",
+      "Ayerou — communaute songhay de la ville fluviale d'Ayerou, frontiere Mali-Niger",
+      "Gothey — chefferie songhay ancienne dans la vallee du Niger nigerien"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Songhay du Niger descendent des populations qui suivirent les Askia dans leur retrait vers le sud apres la chute de l'empire en 1591. Des membres de la noblesse songhay (Songhaiborai) et des communautes liees a l'empire s'etablirent dans la vallee du Niger entre Say et la frontiere malienne, fondant des chefferies comme Wanzarbe, Ayerou, Gothey, Karma, Namaro. Ces communautes maintinrent la culture et les traditions de l'empire Songhay, dont les pratiques magico-religieuses des Sohanci (maitres de la magie songhay).",
+      "formationPeriod": "La formation des chefferies songhay du Niger actuel se situe entre la fin du 16e et le debut du 17e siecle, apres la dislocation de l'empire. Des fragments de la noblesse de Gao s'etablirent dans ce qui est aujourd'hui la region de Tillabery, maintenant des structures politiques et rituelles songhay. Le village de Wanzarbe devint un centre majeur des pratiques Sohanci.",
+      "migrationRoutes": [
+        "Retrait de Gao vers le sud-ouest apres la bataille de Tondibi (1591), le long du fleuve Niger",
+        "Etablissement dans la vallee du Niger nigerien entre Ayerou et Say (16e-17e siecles)",
+        "Fondation de chefferies : Wanzarbe, Ayerou, Gothey, Karma, Namaro, Kokorou, Gorouol, Dargol, Tera"
+      ],
+      "historicalSettlementZones": [
+        "Region de Tillabery : zone historique de peuplement songhay du Niger, de Say a Ayerou",
+        "Wanzarbe — village-sanctuaire des Sohanci pres de Tillabery",
+        "Ayerou — ville fluviale a la frontiere malienne",
+        "Vallee du Gorouol (affluent du Niger) dans le nord-ouest du Niger",
+        "Regions de Say et Niamey (expansion au 19e siecle)"
+      ],
+      "unificationsOrDivisions": "Les Songhay du Niger sont organises en chefferies independantes sans unite politique centralisee. Les liens culturels avec les Zarma sont forts (langue proche, culture islamique partagee) mais les deux groupes maintiennent une identite distincte. La region de Tillabery est le principal terroir identitaire des Songhay nigeriens.",
+      "externalInfluences": "Heritage de l'empire Songhay comme reference identitaire majeure. Contacts avec les Touareg au nord (conflits et echanges commerciaux). Coexistence avec les Zarma au sud. Islamisation profonde depuis l'empire. Colonisation francaise (fin 19e siecle) et integration dans la colonie du Niger (1900). Jihads peuls du 19e siecle (empire de Macina, califat de Sokoto) affectant les regions voisines.",
+      "majorHistoricalEvents": "1591 : chute de l'empire Songhay a la bataille de Tondibi. Fondation des chefferies de la vallee du Niger nigerien (17e siecle). 1890s : arrivee des Francais et integration dans l'AOF. 1960 : independance du Niger. Les Songhay nigeriens, avec les Zarma, ont fourni une large part des elites politiques nigeriennes post-independance."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les chefferies songhay du Niger sont gouvernees par des chefs hereditaires (koy) issus des lignages nobles (songhaiborai). Les chefs exercent des fonctions de mediation, de regulation sociale et de representation des communautes aupres de l'Etat nigerian. Les conseils d'anciens (longoyandi) deliberent collectivement sur les affaires communautaires. La chefferie cantonale s'articule avec l'administration locale du Niger.",
+      "clanOrganization": "Societe hierarchisee en castes : nobles (songhaiborai), agriculteurs libres, artisans (gabibi — forgerons, griots, tisserands), pecheurs Sorko, et anciens captifs (horso). Les Sorko sont une caste specialisee dans la peche et la propitiation du fleuve Niger, associes au culte de l'esprit Harakoy (maitresse du fleuve). Les griots (jesere) conservent la memoire genealogique et jouent lors des ceremonies.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent le statut social, l'acces au pouvoir et l'heritage foncier. Les unions endogames au sein des castes sont la norme. Le chef de lignage represente sa communaute dans les instances coutamieres.",
+      "religiousAuthority": "L'imam et le marabout (alfa) exercent l'autorite islamique (ecole malekite). Les zima sont des pretres-shamans des esprits holey, figures importantes de la religion syncreti songhay. Les Sohanci de Wanzarbe sont des praticiens d'une forme de magie et de medecine rituelle specifique aux Songhay, attribuant des pouvoirs de guerison et de protection. Les deux spheres (islam et religion traditionelle) coexistent."
+    },
+    "languages": {
+      "mainLanguage": "Songhoyboro Ciine (Songhay du Niger, variete proche du Koyraboro Senni)",
+      "isoCodes": ["ses"],
+      "dialects": [
+        "Songhoyboro Ciine — parle le long du Niger nigerien (Tillabery), haute intelligibilite avec le zarma et le dendi",
+        "Koyraboro Senni oriental — variete du songhay de Gao s'etendant sur la frontiere Mali-Niger (Ansongo, Ayerou)",
+        "Sorko ciine — argot specialise des pecheurs Sorko, utilise dans les ceremonies"
+      ],
+      "vehicularRole": "Le songhay nigerien est parle par environ 700 000 personnes dans la region de Tillabery et le long du Niger. Il entretient une forte intelligibilite avec le zarma et le koyraboro senni. Le zarma est souvent utilise comme lingua franca dans la communication inter-communautaire en Afrique de l'Ouest. Le francais reste la langue officielle du Niger."
+    },
+    "culture": {
+      "majorRites": "Ceremonies islamiques : Aid el-Kebir (Tabaski), Ramadan, Mawlid (Gamou). Rites de passage : circoncision (laasu), ceremonies de nomination (sununte au 7e jour). Rites Sohanci : pratiques rituelles des maitres de la magie songhay (Sohance) a Wanzarbe, impliquant des invocations specifiques pour la protection, la guerison et la propitiation. Ceremonies de possession holey hori animees par les zima pour le traitement des maladies attribuees aux esprits. Ceremonies agraires au debut de la saison des pluies.",
+      "symbols": "Le fleuve Niger (Issa Ber) est le symbole cosmologique central des Songhay du Niger. Le village de Wanzarbe est un lieu sacre associe aux Sohanci. Les pirogues de peche, l'hampe de flechettes, le karambou (bracelet de cuivre) des guerisseurs sont des objets symboliques. Le Tombeau d'Askia a Gao (Mali) est le monument historique de reference.",
+      "artsAndMusic": "Musique des griots (jesere) : gooje (violon monocorde), garaya (luth), kuunde (calebasse-tambour). Chants de guerison et de possession lors des ceremonies holey hori. Peche comme art et technique transmis dans les castes Sorko avec connaissance des esprits du fleuve. Tissage de couvertures en bandes. Broderie sur boubous. Poterie feminine a decors geometriques. Architecture en banco (terre battue) des mosquees rurales.",
+      "spiritualities": "Islam sunnite malekite dominant. Culte des esprits holey : panteon complexe incluant Dongo (dieu du tonnerre et de la pluie), Harakoy Dikko (maitresse du fleuve Niger), Moussa Nyori (esprit de la brousse), Genji Kwari (esprits blancs associes aux Touareg). Les zima et les Sohanci sont les specialists rituels de ces traditions. Ceremonies de possession et de guerison. Syncretisme marque : pratiques islamiques et animistes coexistent dans le meme foyer. Les Sorko maintiennent des traditions propitiatoires envers les esprits du fleuve avant chaque peche importante."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Apres 1591, les Songhay du Niger formerent des chefferies autonomes dans la vallee du Niger : Wanzarbe, Ayerou, Gothey, Karma, Namaro, Kokorou, Gorouol, Dargol, Tera, Sikye. Ces entites maintinrent l'heritage politique et culturel de l'empire Songhay dans un contexte de fragmentation. La chefferie d'Ayerou connut une importance particuliere en tant que point de passage fluvial entre Mali et Niger.",
+      "relationsWithNeighbors": "Relations complexes avec les Zarma au sud (identite partagee mais distincte), les Touareg au nord (tensions recurrentes pour les ressources, commerce), les Peuls/Fulani (eleveurs nomades dans la region). Les Sorko entretiennent des relations privilegiees avec toutes les communautes riveraines du Niger via la peche et le transport fluvial.",
+      "conflictsOrAlliances": "Resistance a la domination marocaine (Arma) apres 1591 dans la zone nigerienne. Conflits avec les Touareg Kel Antessar au 18e-19e siecles. Pression des jihads peuls du Macina (Hamadou Bari, 1818-1862) dans les regions limitrophes. Alliance avec les Francais a partir des annees 1890-1900. Les Songhay nigeriens, avec les Zarma, ont fourni des cadres importants de l'administration coloniale puis de l'Etat nigerian post-independance.",
+      "diaspora": "Migration de travail saisonniere vers Niamey, puis vers les villes cotieres (Accra, Abidjan). Emigration vers la France depuis les annees 1970. Communautes a Paris (notamment dans les foyers de travailleurs migrants saheliens). Retours saisonniers importants pour les fetes et les ceremonies."
+    },
+    "demography": {
+      "totalPopulation": 700000,
+      "referenceYear": 2025,
+      "source": "eHRAF World Cultures (Yale) : les Songhay sont le quatrieme groupe ethnique du Niger. CIA World Factbook Niger 2024 : Zarma-Songhay 21,2% de la population totale (27,9 millions). Les Songhay stricto sensu (hors Zarma) representent environ 2,5% soit environ 700 000 personnes. SIL Ethnologue (ses) et donnees demographiques nigeriennes.",
+      "distributionByCountry": [
+        {
+          "country": "NER",
+          "population": 700000,
+          "note": "Region de Tillabery (vallee du Niger, Say, Ayerou, Gothey, Wanzarbe) et communautes a Niamey"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Songhai people. https://en.wikipedia.org/wiki/Songhai_people",
+      "eHRAF World Cultures – Songhai (Yale). https://ehrafworldcultures.yale.edu/cultures/MS20/summary",
+      "Stoller, Paul. Fusion of the Worlds : An Ethnography of Possession among the Songhay of Niger. University of Chicago Press, 1989.",
+      "Stoller, Paul & Olkes, Cheryl. In Sorcery's Shadow. University of Chicago Press, 1987.",
+      "SIL Ethnologue – Koyraboro Senni (ses). https://www.ethnologue.com/language/ses/",
+      "CIA World Factbook – Niger. https://www.cia.gov/the-world-factbook/countries/niger/",
+      "Wikipedia EN – Koyraboro Senni. https://en.wikipedia.org/wiki/Koyraboro_Senni",
+      "African Spiritualities – Holle Hori : Songhay spirit possession. https://afrospiritualities.com/2021/11/12/spirit-possession-a-return-to-wholeness-strong/"
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "id": "PPL_KXA_MACRO",
+  "nameMain": "Peuples Kx'a (macro-groupe)",
+  "languageFamilyId": "FLG_KXA",
+  "currentCountries": ["NAM", "BWA", "AGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Peuples Kx'a (macro-groupe)",
+      "selfAppellation": "Variees selon les groupes : Ju|'hoansi (vrais gens), !Kung / !Xun (gens), ǂHoan (nom propre du groupe), Bugakhoe (nom du groupe Bugakwe)",
+      "exonyms": [
+        "Ju–ǂHoan",
+        "Northern Khoisan (terme obsolete)",
+        "San septentrional",
+        "Bushmen du Kalahari septentrional"
+      ],
+      "originOfExonyms": "Le terme Kx'a fut cree en 2010 par Heine et Honken pour remplacer le compose Ju-ǂHoan (facilement confondu avec la langue Ju|'hoan) en choisissant le mot proto-Kx'a reconstruit signifiant terre, sol. Northern Khoisan est une denomination obsolete issue de la classification de Greenberg (1963) qui regroupait ces langues dans un hypothetique macro-ensemble Khoisan desormais rejete. San est un terme khoekhoegowab utilise comme terme collectif politiquement correct pour les populations autochtones de chasseurs-cueilleurs d'Afrique australe.",
+      "whyProblematic": "La designation macro-groupe Kx'a est avant tout une categorie linguistique et non un groupe ethnique unifie. Les peuples qui parlent des langues Kx'a n'ont pas de conscience collective commune ni d'organisation politique partagee. La notion de groupe Khoisan, jadis utilisee, est scientifiquement invalide car les trois familles linguistiques concernees (Kx'a, Tuu, Khoe-Kwadi) ne sont pas genealogiquement liees.",
+      "contemporaryUsage": "Kx'a est un terme strictement academique (linguistique et genetique). Dans les contextes politiques et associatifs, les termes San ou Bushmen sont preferes comme denominateurs communs. Chaque groupe prefere son endonyme specifique pour l'usage courant.",
+      "linguisticFamily": "FLG_KXA",
+      "ethnoLinguisticGroup": "Kx'a (famille linguistique comprenant les branches Ju et ǂ'Amkoe)",
+      "historicalRegion": "Kalahari septentrional et central (Namibie, Botswana, Angola meridional)",
+      "currentCountries": ["NAM", "BWA", "AGO"]
+    },
+    "ethnicities": [
+      "Ju|'hoansi (branche Ju, variete sud-orientale — voir PPL_JUHOANSI)",
+      "!Kung / !Xun (branche Ju, varietes septentrionales et centrales — voir PPL_KUNG)",
+      "Ekoka !Kung (branche Ju, Namibie centrale)",
+      "ǂHoan / ǂ'Amkoe (branche ǂ'Amkoe, Botswana central — voir PPL_HOA)",
+      "Bugakwe / Bugakhoe (groupe aparente historiquement associe au Kalahari septentrional — voir PPL_BUGAKWE)",
+      "Groupes !Xun angolais (provinces de Cuando Cubango et Cunene)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples parlant des langues Kx'a sont parmi les populations humaines genetiquement les plus anciennes. Les analyses d'ADN mitochondrial (haplogroupe L0) et d'ADN chromosomique Y montrent que les San septentrionaux (Ju|'hoansi, !Xun) divergent des autres lignees humaines depuis 100 000 a 200 000 ans selon les estimations. Leur presence dans le Kalahari septentrional et les savanes adjacentes est attestee depuis des dizaines de milliers d'annees. La famille Kx'a fut formellement etablie en 2010 par Heine et Honken, qui demonstrerent la parente genetique entre les langues Ju (auparavant classees Northern Khoisan) et la langue ǂ'Amkoe (ǂHoan), auparavant mal classee dans la famille Tuu.",
+      "formationPeriod": "La differentiation interne de la famille Kx'a est ancienne. La branche Ju se diversifia progressivement en un continuum de 11-15 dialectes couvrant le Kalahari septentrional de l'Angola au Botswana. La branche ǂ'Amkoe se developpa de facon independante dans le Kalahari central botswanais, a l'ecart de ses parents linguistiques Ju, ce qui explique la grande divergence structurelle entre les deux branches malgre leur parente genetique.",
+      "migrationRoutes": [
+        "Populations autochtones de longue date du Kalahari et des savanes d'Afrique australe",
+        "Flux de refugies des !Xun angolais vers la Namibie pendant la guerre civile angolaise (1975-2002)",
+        "Reinstallation forcee de milliers de !Xun et Khwe en Afrique du Sud (Schmidtsdrift 1990, Platfontein 2003)"
+      ],
+      "historicalSettlementZones": [
+        "Kalahari septentrional (Namibie nord-est : Nyae Nyae, Tsumkwe, Kavango)",
+        "Kalahari central botswanais (districts de Ghanzi et Ngamiland)",
+        "Angola meridional (provinces de Cuando Cubango, Cunene, Cubango)",
+        "District de Kweneng, Botswana (branche ǂ'Amkoe exclusivement)",
+        "Northern Cape, Afrique du Sud (Platfontein, diaspora recente)"
+      ],
+      "unificationsOrDivisions": "Les groupes Kx'a ne forment pas d'unite politique. Leur parente est avant tout linguistique et genetique. La diversite dialectale au sein de la branche Ju est telle que les locuteurs des varietes les plus eloignees ne se comprennent pas mutuellement. La branche ǂ'Amkoe (ǂHoan) est structurellement tres differente des langues Ju malgre leur parente. Les conflits armes regionaux (guerre angolaise, guerre de Namibie) ont fragmenté les communautes trans-frontalieres.",
+      "externalInfluences": "Contacts anciens avec les peuples Bantu voisins (Herero, Tswana, Ovambo, Mbukushu) et les peuples Khoekhoegowab. Colonisation europeenne (allemande puis sud-africaine en Namibie, portugaise en Angola, britannique au Botswana) avec effets dévastateurs sur les populations San (persecutions, depossession fonciere, recrutement militaire). Politiques post-coloniales de sedentarisation et de developpement affectant toutes les communautes. Programmes d'ONG internationales (IWGIA, Survival International, First People of the Kalahari).",
+      "majorHistoricalEvents": "Classification historique de Greenberg (1963) regroupant les langues Kx'a dans un Northern Khoisan. Expeditions Marshall (1950-1960) et Harvard Kalahari Project (1963+) apportant une visibilite academique mondiale aux !Kung de Nyae Nyae et Dobe. Persecutions coloniales allemandes en Namibie (1911-1913). Guerre d'independance namibienne (1966-1990) avec recrutement de !Xun dans la SADF. Etablissement scientifique de la famille Kx'a par Heine et Honken (2010). Creation du Nyae Nyae Conservancy (1998)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Toutes les societes Kx'a partagent une organisation fondamentalement egalisatrice : pas de chefs permanents, decisions par consensus, mecanismes actifs de prevention de l'accumulation et du commandement. La bande de chasseurs-cueilleurs (10-50 personnes) est l'unite politique de base. Les leaders sont des personnes d'influence morale et non d'autorite coercitive.",
+      "clanOrganization": "Organisation commune en groupes de parenté fluides occupant des territoires de chasse (n!ore chez les Ju). Systeme d'echange de reciprocite (hxaro chez les Ju) creant des reseaux d'alliance inter-groupes. Adoption partielle de clans totemiques par certains groupes sous influence bantoue (notamment les Bugakwe).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages bilatéraux communs a tous les groupes Kx'a. Les droits territoriaux et les affiliations de groupe sont transmis par les deux lignes de parente. Systemes de denomination propre complexes (notamment le systeme ko des Ju) liant les individus partageant le meme prenom dans des relations rituelles particulieres.",
+      "religiousAuthority": "Les guerisseurs (n/om kxao, maitres du n/um chez les Ju) exercent l'autorite spirituelle dans toutes les communautes. L'acces au pouvoir de guerison est theoriquement ouvert a tous adultes. La transmission se fait lors de la danse de transe par contact avec un guerisseur entraine."
+    },
+    "languages": {
+      "mainLanguage": "Langues Kx'a (famille comprenant les branches Ju et ǂ'Amkoe)",
+      "isoCodes": ["ktz", "knw", "kxu", "huc"],
+      "dialects": [
+        "Ju|'hoan / Kung-Tsumkwe (ktz) — variete meridionale Ju, Namibie et Botswana",
+        "Kung-Ekoka (knw) — variete centrale Ju, Namibie",
+        "!Xun / Ju septentrional (kxu) — varietes Ju angolaises et nord-namibiennes",
+        "ǂ'Amkoe / ǂHoan (huc) — unique representant de la branche ǂ'Amkoe, Botswana central, moribonde"
+      ],
+      "vehicularRole": "Les langues Kx'a sont parlees par environ 45 000 personnes (branche Ju) et moins de 300 personnes (branche ǂ'Amkoe). Elles n'ont aucun role vehiculaire inter-communautaire : chaque groupe utilise la langue coloniale dominante de son pays (anglais, afrikaans, setswana, portugais) comme langue de communication plus large. La langue Ju|'hoan (ktz) est classee stable par SIL Ethnologue et est utilisee comme langue d'instruction dans les ecoles communautaires du Nyae Nyae Conservancy en Namibie."
+    },
+    "culture": {
+      "majorRites": "La danse de transe (ǃkia ou n/um tchai) est le rite central commun a tous les groupes Kx'a : elle reagrege la communaute, soigne les malades, previent les conflits et maintient l'equilibre avec le monde des esprits. Les guerisseurs en transe mobilisent une energie spirituelle (n/um) et combattent les esprits des morts responsables des maladies. Ce rite constitue selon les anthropologues (Marshall Sahlins, Richard Lee) l'institution culturelle fondamentale des societes San. Rites de passage partagés : premiers menstruations (rite de l'eland), premier gibier du jeune chasseur (partage rituel, scarifications symboliques), mariage (arrangements parentaux, cohabitation progressive), mort (enterrement rapide et periodes de tabou sur le nom). Systeme hxaro : echange ceremoniel de cadeaux non-alimentaires entre partenaires de differentes bandes creant des reseaux d'obligations mutuelles et des droits d'hospitalite trans-territoriaux.",
+      "symbols": "L'eland (grande antilope, Taurotragus oryx) est l'animal sacre central commun a tous les groupes Kx'a, associe au pouvoir de guerison, aux ceremonies de puberte et aux representations de l'art rupestre. Le n/um (energie de guerison) comme concept cosmologique central. L'art rupestre du Kalahari (figures therianthropes, representations d'etats de transe) comme heritage symbolique collectif. Les arcs et fleches empoisonnees comme symboles de l'identite masculine et de la competence dans l'environnement du Kalahari.",
+      "artsAndMusic": "Les chants de medicine (n/om songs) constituent le coeur de la vie musicale : reveles en reve par les esprits, ils servent a activer l'energie de guerison lors de la danse de transe. Polyphonie vocale dense avec isorythmie et vocalisations complexes incluant des clicks phonemiques. Instruments traditionnels : arc musical (instrument a corde monocorde), tambour de danse, rasles et crecelles. Tradition de conte oral tres riche : mythes du trickster (Mantis / Kaggen chez les Ju), recits de creation, contes animaliers transmettant normes sociales et connaissances ecologiques. Art rupestre ancestral (peintures et gravures du Kalahari) constituant un patrimoine historique majeur d'Afrique australe. Artisanat : confection de colliers d'oeuf d'autruche (ethe), tannerie de peaux, taille d'armes et d'outils en pierre et os.",
+      "spiritualities": "Cosmologie duale partagee par les groupes Ju : un grand dieu createur bienfaisant (!Xu, Gao Na) et un dieu inferieur malveillant (Khaudum, !Gara) responsable de la souffrance. Les esprits des morts (!gangwasi) causent les maladies en tentant d'emporter les ames des vivants. Les guerisseurs combattent ces esprits en transe. Le n/um est le lien energetique entre les mondes humain et spirituel. Influence variable du christianisme selon les groupes. La branche ǂ'Amkoe partage la structure generale animiste mais avec des variations specifiques peu documentees avant l'extinction du groupe."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Aucune organisation etatique ou chefferie chez aucun des groupes Kx'a. Ils constituent l'exemple canonique des societes de chasseurs-cueilleurs egalisataires etudiees par l'anthropologie du 20e siecle (Marshall Sahlins, Richard Lee, Megan Biesele). La richesse des etudes sur ces groupes en a fait des references incontournables des sciences sociales mondiales.",
+      "relationsWithNeighbors": "Relations d'echange et de dependance asymetrique avec les peuples Bantu et Khoekhoegowab voisins depuis des siecles. Fourniture de services de chasse, de guidage et de connaissance ecologique contre acces a des produits metalliques et agricoles. Sous la colonisation europeenne, exploitation comme main-d'oeuvre et trackers militaires. Aujourd'hui, marginalisation economique et fonciere dans les trois pays, avec des progres variables en Namibie (conservancies) et des struggles plus aigus au Botswana (expulsions du CKGR).",
+      "conflictsOrAlliances": "Persecutions coloniales allemandes en Namibie (1911-1913) reduisant drastiquement la population. Recrutement de !Xun dans la SADF pendant la guerre d'independance namibienne (1970s-1980s). Evacuation et reinstallation de milliers de !Xun angolais en Afrique du Sud (1990-2003). Luttes pour les droits fonciers en Namibie (Nyae Nyae Conservancy) et au Botswana (CKGR, Roy Sesana v. Attorney General 2006). Constitution du Nyae Nyae Conservancy (1998) comme avancee significative en Namibie.",
+      "diaspora": "Comunaute de !Xun reinstallee a Platfontein (Northern Cape, Afrique du Sud) — diaspora forcee coupee de ses terres ancestrales. San urbanises dans les villes namibiennes et botswanaises, souvent dans des conditions precaires. Absence de diaspora volontaire significative a l'echelle mondiale."
+    },
+    "demography": {
+      "totalPopulation": 50000,
+      "referenceYear": 2025,
+      "source": "Khoisan languages Wikipedia (~45 000 pour la branche Ju seule). UNESCO Tentative List San Living Cultural Landscape (Namibie 30 000-35 000 San totaux, Botswana 50 000-60 000 San totaux). Joshua Project (Kung-Tsumkwe ktz : 72 100 en 2025 toutes varietes). La population de 50 000 est une estimation de la population Kx'a au sens strict (branche Ju + ǂ'Amkoe), sans inclure les groupes Khoe-Kwadi parfois associes dans l'ancien cadre Khoisan.",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 32000,
+          "note": "Otjozondjupa (Nyae Nyae, Tsumkwe), Omaheke, Kavango, Ohangwena"
+        },
+        {
+          "country": "BWA",
+          "population": 17000,
+          "note": "Ghanzi (Dobe, |Xai|xai), Ngamiland, Kweneng (ǂHoan)"
+        },
+        {
+          "country": "AGO",
+          "population": 1000,
+          "note": "Angola meridional (Cuando Cubango), populations residuelles apres deplacements"
+        }
+      ]
+    },
+    "sources": [
+      "Heine, Bernd & Honken, Henry (2010). The Kx'a Family: A New Khoisan Genealogy. Journal of Asian and African Studies 79: 5-36.",
+      "Wikipedia EN — Kx'a languages. https://en.wikipedia.org/wiki/Kx%CA%BCa_languages",
+      "Wikipedia EN — Khoisan languages. https://en.wikipedia.org/wiki/Khoisan_languages",
+      "Wikipedia EN — San peoples. https://en.wikipedia.org/wiki/San_peoples",
+      "Glottolog — Kxa language family. https://glottolog.org/resource/languoid/id/kxaa1236",
+      "SIL Ethnologue — Kx'a language subgroup. https://www.ethnologue.com/subgroup/4285/",
+      "UNESCO Tentative List — San Living Cultural Landscape. https://whc.unesco.org/en/tentativelists/6096/",
+      "Complex Ancient Genetic Structure and Cultural Transitions in Southern African Populations. PMC5223510. https://pmc.ncbi.nlm.nih.gov/articles/PMC5223510/",
+      "The Genomic Prehistory of Peoples Speaking Khoisan Languages. PMC8117426. https://pmc.ncbi.nlm.nih.gov/articles/PMC8117426/"
+    ]
+  }
+}

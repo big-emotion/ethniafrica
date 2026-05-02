@@ -1,0 +1,96 @@
+{
+  "id": "PPL_NYIKA",
+  "nameMain": "Nyika",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB", "MWI", "TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Nyika",
+      "selfAppellation": "Wenya",
+      "exonyms": ["Wenya", "Nyiha", "Nyika (Malawi et Zambie)"],
+      "originOfExonyms": "Le terme Nyika designe un groupe de peuples aux identites multiples. Il existe en fait deux groupes distincts portant ce nom : (1) les Nyika (Wenya), sous-groupe des Tumbuka du nord Malawi et nord-est Zambie ; (2) les Nyika ou Nyiha de Tanzanie (Mbozi District), issus des Nyiha tanzaniens ayant migre vers le sud. La denomination Wenya est l'endonyme utilise par le groupe Tumbuka-Nyika.",
+      "whyProblematic": "Le nom Nyika est ambigu car il designe plusieurs peuples distincts : les Nyika-Tumbuka du nord Malawi/Zambie, les Nyiha de Tanzanie, et en Afrique de l'Est cotiere les peuples Mijikenda (Digo, Giryama, etc.) parfois appeles collectivement Nyika dans la litterature ancienne. La fiche presente se concentre sur le groupe Nyika (Wenya) de la Zambie du nord.",
+      "contemporaryUsage": "En Zambie du nord, le terme Nyika designe le groupe Wenya, sous-ensemble culturel et linguistique des Tumbuka. Le terme est utilise dans les recensements zambiens et malawites.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Tumbuka-Nyika (Bantou de la zone Corridor)",
+      "historicalRegion": "Plateau du Nyika (nord Malawi) et corridor Isoka-Nakonde (nord-est Zambie)",
+      "currentCountries": ["ZMB", "MWI", "TZA"]
+    },
+    "ethnicities": ["Nyika (Wenya)", "Tumbuka-Nyika"],
+    "origins": {
+      "ancientOrigins": "Les Nyika (Wenya) descendent du groupe Kalonga wa Nkhonde des Tumbuka, qui a quitte ses etablissements d'origine avant 1800. Ils font partie des vestiges du peuple Khamanga et appartiennent au stock ancestral commun qui a donne naissance aux peuples Tambo, Wandya, Fungwe, Lambya et Yombe, tous classes comme peuples tumbuka-speaking par l'ethnographe W.V. Brelsford.",
+      "formationPeriod": "Avant 1800 ; la distinction des Nyika comme groupe separable des autres Tumbuka s'est operee progressivement suite a leur isolement geographique dans les zones montagneuses.",
+      "migrationRoutes": [
+        "Depuis le royaume de Nkhamanga vers l'ouest, occupant les zones montagneuses entre Kalonga et le corridor Isoka-Nakonde dans l'actuel nord Malawi et nord-est Zambie",
+        "Les Nyiha issus du district de Mbozi en Tanzanie ont migre vers le sud vers le debut du XXe siecle pour s'etablir en Zambie"
+      ],
+      "historicalSettlementZones": [
+        "Plateau du Nyika (nord Malawi, region de Rumphi)",
+        "Corridor Isoka-Nakonde (Province de Muchinga, Zambie du nord)",
+        "District de Mbozi, region de Mbeya, Tanzanie (pour la branche Nyiha/Nyika tanzanienne)"
+      ],
+      "unificationsOrDivisions": "Le groupe Nyika est demeure relativement isole geographiquement dans les zones montagneuses, ce qui a contribue a preserver une identite distincte tout en s'integrant progressivement a la culture tumbuka dominante. Le degre d'assimilation est plus eleve dans les zones frontalieres.",
+      "externalInfluences": "L'expansion ngoni au XIXe siecle a perturbe les societes tumbuka et apparentees ; les Tumbuka ont adopte certaines pratiques ngoni (villages compacts, descendance patrilineaire, danses) tandis que les Ngoni adoptaient la langue tumbuka. Les missions chretiennes du XIXe siecle (Church of Scotland, CCAP) ont transforme les pratiques religieuses et educatives.",
+      "majorHistoricalEvents": "En 1895, les forces britanniques ont defait le negrier Mlozi a Karonga, mettant fin a la traite des esclaves dans la region. Le Protectorat britannique du Nyasaland (1891) a integre ces populations dans un cadre colonial. Depuis l'independance du Malawi (1964) et de la Zambie (1964), les Nyika sont reconnus comme sous-groupe ethnique dans les recensements nationaux."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Structures de chefferie traditionnelle partageees avec les voisins tumbuka. Autorite exercee par des chefs de village et de clan autonomes, sans centralisation politique forte.",
+      "clanOrganization": "Organisation clanique basee sur la descendance commune depuis les Khamanga. Les clans determinent l'appartenance sociale et les regles d'exogamie.",
+      "ageClassSystems": "Pratiques d'initiation communes avec les groupes tumbuka voisins, comprenant des ceremonies de passage a l'age adulte.",
+      "roleOfLineages": "Lignages determinant les droits fonciers, les obligations matrimoniales et la participation aux ceremonies rituelles.",
+      "religiousAuthority": "Tradition animiste d'origine, largement transformee par les missions protestantes (CCAP – Eglise presbyterienne). Les structures de chefferie traditionnelle maintiennent certaines fonctions rituelles."
+    },
+    "languages": {
+      "mainLanguage": "Nyika (Nyika de Malawi et Zambie)",
+      "isoCodes": ["nkv"],
+      "dialects": [
+        "Wenya (dialecte principal du groupe Nyika-Tumbuka)",
+        "Dialectes intelligibles avec le Chitumbuka"
+      ],
+      "vehicularRole": "Le chitumbuka est utilise comme langue vehiculaire avec les autres groupes tumbuka. L'anglais est langue officielle au Malawi et en Zambie. Le chinyanja/chichewa est aussi vehiculaire en zones urbaines."
+    },
+    "culture": {
+      "majorRites": "Ceremonies d'initiation a l'age adulte. Rites funeraires ancrant l'individu dans la lignee des ancetres. La ceremonie Vimbuza est caracteristique des peuples tumbuka du nord Malawi et de l'est Zambie : c'est un rituel de guerison associant possession par les esprits, musique et danse therapeutiques.",
+      "symbols": "Le plateau du Nyika (zone montagneuse) est intimement lie a l'identite du groupe. Les symboles de la chefferie traditionnelle (regalia) marquent l'autorite clanique.",
+      "artsAndMusic": "La danse Vimbuza (rituel de possession et de guerison) est partagee avec les Tumbuka. La danse Mganda (danse militaire issue de la periode coloniale) est pratiquee lors des ceremonies. Instruments : tambours, calebasses a pierres.",
+      "spiritualities": "Croyances animistes originelles centrees sur les esprits des ancetres (vimbuza) et les esprits possesseurs. Le Vimbuza est un systeme elabore associant classe d'esprits, etats de maladie et guerison rituelle par la musique et la danse. Aujourd'hui, la majorite est chretienne protestante (CCAP)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Sous-groupe du royaume de Nkhamanga des Tumbuka. Pas de royaume independant ; chefferies locales autonomes dans les zones montagneuses.",
+      "relationsWithNeighbors": "Relations etroites avec les autres sous-groupes tumbuka (Senga, Henga, Yombe, Lambya, Tambo, Wandya, Fungwe). Interactions avec les Ngoni qui ont conquis et vassalise les Tumbuka au XIXe siecle. Les Nyika ont egalement des contacts avec les Ngonde au nord.",
+      "conflictsOrAlliances": "Au XIXe siecle, les Ngoni de Mbelwa ont soumis les peuples tumbuka, exigeant des tributs et capturant des esclaves agricoles. Certains combattants henga ont fui vers le territoire ngonde vers 1881. Les conflits autour de la traite des esclaves arabe ont marque la region jusqu'a 1895.",
+      "diaspora": "Une fraction des Nyiha de Tanzanie (Mbozi) a migre vers la Zambie au debut du XXe siecle, constituant la branche zambienne parfois appelee Nyika (Tanzania) ou Nyiha en Zambie."
+    },
+    "demography": {
+      "totalPopulation": 80000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur les donnees de Glottolog (Nyika nkv = 6b Threatened) et Joshua Project pour la Zambie",
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 50000,
+          "notes": "Province de Muchinga, corridor Isoka-Nakonde"
+        },
+        {
+          "country": "MWI",
+          "population": 25000,
+          "notes": "Region Nord, district de Rumphi, plateau du Nyika"
+        },
+        {
+          "country": "TZA",
+          "population": 5000,
+          "notes": "Branche Nyiha/Nyika, district de Mbozi, region de Mbeya"
+        }
+      ]
+    },
+    "sources": [
+      "Nyika people – Wikipedia (https://en.wikipedia.org/wiki/Nyika_people)",
+      "Nyika language – Wikipedia (https://en.wikipedia.org/wiki/Nyika_language)",
+      "Tumbuka people – Wikipedia (https://en.wikipedia.org/wiki/Tumbuka_people)",
+      "Nyika (Malawi and Zambia) – Glottolog 5.3, ISO 639-3: nkv (https://glottolog.org/resource/languoid/id/nyik1246)",
+      "Nyika in Zambia – Joshua Project (https://joshuaproject.net/people_groups/18985/ZA)",
+      "Tumbuka – Encyclopaedia Britannica (https://www.britannica.com/topic/Tumbuka)",
+      "Nyiha, Tanzania in Zambia – Joshua Project (https://joshuaproject.net/people_groups/14096/ZA)"
+    ]
+  }
+}

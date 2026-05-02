@@ -1,0 +1,107 @@
+{
+  "id": "PPL_KOYRA_CHIINI",
+  "nameMain": "Koyra Chiini",
+  "languageFamilyId": "FLG_SONGHAY",
+  "currentCountries": ["MLI"],
+  "content": {
+    "appellations": {
+      "mainName": "Koyra Chiini",
+      "selfAppellation": "Koyra Chiini",
+      "exonyms": [
+        "Western Songhay (désignation linguistique anglophone)",
+        "Songhay occidental (désignation francophone)",
+        "Songhay de Tombouctou (désignation géographique)",
+        "Djenné Chiini (pour la variété parlée à Djenné)"
+      ],
+      "originOfExonyms": "L'expression koyra chiini signifie littéralement langue de la ville en songhay occidental (koyra = ville, chiini = langue dans ce dialecte). La désignation Western Songhay utilisée par les linguistes fait référence à sa position géographique à l'ouest des autres dialectes songhay du Mali. Djenné Chiini est le nom de la variante dialectale parlée dans la ville historique de Djenné. Le terme Chiini est la forme que prend le mot songhay senni (langue) dans ce dialecte où le z/s original s'est transformé en j/ch.",
+      "whyProblematic": "Le koyra chiini est linguistiquement atypique parmi les langues songhay : il est la seule variété songhay sans tons phonémiques et utilise l'ordre syntaxique sujet-verbe-objet (SVO) plutôt que l'ordre sujet-objet-verbe (SOV) typique du groupe. Ces particularités ont conduit certains linguistes à s'interroger sur le statut de cette variété. Par ailleurs, la frontière entre koyra chiini (Tombouctou) et koyraboro senni (Gao) est abrupte à l'est de Tombouctou, créant une zone de transition complexe.",
+      "contemporaryUsage": "Le koyra chiini est la langue principale de la ville de Tombouctou et des centres urbains voisins (Diré, Tonka, Goundam, Niafunké) ainsi que de la ville saharienne d'Araouane. En 1999, on comptait environ 200 000 locuteurs ; la croissance démographique malienne suggère un nombre sensiblement plus élevé en 2025. La crise de 2012 a perturbé la vie à Tombouctou mais n'a pas fondamentalement altéré la composition ethnolinguistique.",
+      "linguisticFamily": "FLG_SONGHAY",
+      "ethnoLinguisticGroup": "Songhay occidental — dialecte de Tombouctou",
+      "historicalRegion": "Tombouctou et région du Niger supérieur (boucle du Niger, Mali) — carrefour historique des routes transsahariennes",
+      "currentCountries": ["MLI"]
+    },
+    "ethnicities": [
+      "Songhaï sédentaires de Tombouctou — communauté principale, habitants de la cité historique, héritiers d'une longue tradition urbaine et marchande",
+      "Songhaï de Diré — communauté sur le Niger à l'ouest de Tombouctou",
+      "Songhaï de Tonka — village sur le bras septentrional du delta intérieur",
+      "Songhaï de Goundam — communauté sur le lac Faguibine, région de Tombouctou",
+      "Songhaï de Niafunké — à la jonction entre le delta intérieur et la zone de Tombouctou",
+      "Songhaï d'Araouane — communauté saharienne au nord de Tombouctou",
+      "Arma — descendants des soldats marocains et de leurs unions avec des femmes songhaï locales après 1591 ; locuteurs koyra chiini ; groupe distinct mais intégré",
+      "Koyra Chiini de Djenné — locuteurs du dialecte de Djenné (Djenné Chiini), ville plus au sud"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Koyra Chiini sont les habitants sédentaires de la région de Tombouctou et du delta intérieur du Niger occidental, descendants des populations songhay qui se sont établies dans ces zones à partir du 1er millénaire de notre ère. Tombouctou, fondée vers le 12e siècle par des nomades Touaregs comme camp saisonnier, a rapidement été investie par les marchands songhaï, mandingues et arabes qui en ont fait l'un des plus grands centres commerciaux et intellectuels d'Afrique subsaharienne. Les locuteurs du koyra chiini descendent de cette population urbaine cosmopolite qui a forgé son identité autour du commerce transsaharien et de l'enseignement islamique.",
+      "formationPeriod": "L'identité Koyra Chiini s'est consolidée sous l'Empire songhaï (15e-16e siècles) lorsque Tombouctou était un des joyaux de l'empire, avec ses universités islamiques (Sankore, Djinguereber, Sidi Yahia) attirant des savants de toute l'Afrique musulmane. Après la chute de l'empire (1591), les descendants des soldats marocains (Arma) se sont installés à Tombouctou et ont adopté le koyra chiini tout en formant un groupe distinct. La particularité linguistique du koyra chiini (pas de tons, ordre SVO) par rapport aux autres langues songhay s'explique par des siècles de contacts intensifs avec l'arabe et le berbère via les routes commerciales transsahariennes.",
+      "migrationRoutes": [
+        "Population autochtone du Niger supérieur avec sédentarisation progressive autour de Tombouctou",
+        "Intégration de marchands arabes, berbères et mandingues dans la société songhaï locale",
+        "Arrivée des Arma (soldats marocains et leurs descendants) après la conquête de 1591, qui ont adopté le koyra chiini"
+      ],
+      "historicalSettlementZones": [
+        "Tombouctou — centre principal ; ville historique classée au Patrimoine mondial de l'UNESCO",
+        "Diré — sur le Niger, à l'ouest de Tombouctou",
+        "Tonka — sur le bras septentrional du delta intérieur",
+        "Goundam — sur le lac Faguibine, région de Tombouctou",
+        "Niafunké — à l'entrée du delta intérieur depuis l'est",
+        "Araouane — ville saharienne au nord de Tombouctou sur les routes caravanières",
+        "Djenné — au sud du delta, locuteurs du dialecte Djenné Chiini"
+      ],
+      "unificationsOrDivisions": "La communauté Koyra Chiini est unie par sa langue et son attachement à Tombouctou comme centre symbolique. La frontière avec le koyraboro senni de Gao, à l'est de Tombouctou, est linguistiquement nette et abrupte. Le dialecte de Djenné (Djenné Chiini) est une variante distincte mais mutuellement intelligible. Les Arma (descendants des soldats marocains) constituent un sous-groupe distinct au sein de la communauté koyra chiini, maintenant historiquement des guildes spécialisées.",
+      "externalInfluences": "Islamisation profonde depuis le 11e-12e siècles via les routes commerciales transsahariennes ; Tombouctou est devenu l'une des grandes cités islamiques d'Afrique. Influence arabe majeure sur la langue (le koyra chiini a notamment changé le z/s original du songhay en j, comme en arabe dialectal). Domination marocaine (1591-17e siècle) : les Arma se sont installés et ont adopté le koyra chiini tout en maintenant leur identité. Colonisation française (19e-20e siècles). Crise malienne depuis 2012 : occupation de Tombouctou par des groupes islamistes armés qui ont détruit des mausolées et des manuscrits historiques ; libération lors de l'opération Serval (2013).",
+      "majorHistoricalEvents": "12e siècle : fondation de Tombouctou par des Touaregs Imaghad ; investissement rapide par les marchands songhaï et mandingues. 1325 : Tombouctou sous contrôle de l'Empire du Mali (Mansa Musa passe par Tombouctou lors de son célèbre pèlerinage). 1468 : Sunni Ali Ber intègre Tombouctou dans l'Empire songhaï (relations difficiles avec les oulémas). 1493-1528 : Askia Mohammed patronne les universités islamiques de Tombouctou (Sankore, Djinguereber, Sidi Yahia). 1591 : conquête marocaine ; fuite d'Ahmad Baba vers le Maroc. 2012 : occupation par des groupes armés ; destruction de mausolées de saints classés UNESCO. 2013 : libération par l'opération Serval."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Tombouctou a historiquement été gouvernée par un système mixte : gouverneurs nommés par l'Empire songhaï, puis par les Arma après 1591, puis par les Touaregs et les Peuls avant la colonisation française. La ville était organisée autour de ses trois grandes mosquées-universités (Sankore, Djinguereber, Sidi Yahia) dont les oulémas exerçaient une autorité morale et intellectuelle considérable. Les guildes marchandes (avec des familles comme les Kati et les Aqit) constituaient un pouvoir économique parallèle. Aujourd'hui, la ville relève de l'administration malienne (région de Tombouctou, cercle de Tombouctou).",
+      "clanOrganization": "Société patrilinéaire avec plusieurs couches sociales historiques : familles nobles d'oulémas et de marchands (Kati, Aqit, Baghayogho, Wangara), familles Arma (descendants des soldats marocains), artisans spécialisés héréditaires (forgerons, tisserands, cordonniers), et anciens esclaves. Les Arma ont maintenu pendant des siècles des guildes de soldats spécialisés à Tombouctou. Les grandes familles d'oulémas ont constitué une aristocratie intellectuelle islamique transmettant leur savoir de génération en génération.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent le statut social, les droits sur les propriétés et les boutiques commerciales, et l'appartenance aux guildes professionnelles. Les familles d'oulémas possèdent des milliers de manuscrits islamiques transmis comme héritage familial (les fonds manuscrits de Tombouctou, dont l'Institut Ahmed Baba). Les alliances matrimoniales entre familles d'oulémas, de marchands et d'Arma ont façonné la société de Tombouctou pendant des siècles.",
+      "religiousAuthority": "Tombouctou a été l'un des grands centres islamiques d'Afrique subsaharienne depuis le 12e siècle. Les oulémas des trois universités (Sankore, Djinguereber, Sidi Yahia) étaient les autorités intellectuelles et morales suprêmes. Ahmad Baba al-Massufi (1556-1627), natif de Tombouctou, était l'un des savants islamiques les plus érudits de son temps. Aujourd'hui, les imams et les marabouts maintiennent cette tradition islamique, coexistant avec des pratiques syncrétiques liées aux esprits du fleuve (holey) et au culte des saints."
+    },
+    "languages": {
+      "mainLanguage": "Koyra Chiini (Songhay occidental / langue de la ville)",
+      "isoCodes": ["khq"],
+      "dialects": [
+        "Koyra Chiini de Tombouctou — variété de référence, parlée dans la ville de Tombouctou et ses environs",
+        "Djenné Chiini — dialecte de Djenné, ville au sud du delta intérieur ; variété distincte mais intelligible",
+        "Variétés de Diré, Tonka, Goundam et Niafunké — continuum dialectal entre Tombouctou et le delta"
+      ],
+      "vehicularRole": "Le koyra chiini est parlé par environ 200 000 personnes (1999 ; probablement davantage en 2025) dans la zone de Tombouctou et du delta intérieur occidental. C'est la langue de communication inter-ethnique principale à Tombouctou, ville historiquement cosmopolite (Touaregs, Arabes, Songhaï, Peuls, Berbères). Sa particularité typologique (langue songhay non tonale, ordre SVO) le distingue nettement des autres variétés songhay. Le français est la langue administrative du Mali. L'arabe est utilisé dans l'enseignement islamique (écoles coraniques, universités islamiques)."
+    },
+    "culture": {
+      "majorRites": "Fêtes islamiques du calendrier hégérien : Ramadan, Aïd el-Fitr, Aïd el-Adha, Mawlid du Prophète. Tombouctou est célèbre pour ses ziara (visites aux mausolées des saints) : pèlerinages aux tombeaux des saints musulmans vénérés comme intermédiaires (Sidi Yahia, Alpha Moya, etc.) ; pratique combattue par les islamistes en 2012 mais résistante. Mariages : cérémonies longues étalées sur plusieurs jours avec chants de femmes (alboras), danses, festins et dot. Circoncision masculine : rite de passage célébré en communauté, souvent en groupe d'âge. Fêtes liées au cycle agricole et de pêche : début des pluies, montée des eaux du Niger, récoltes. Cérémonies de possession des holey (esprits du Niger) maintenues en parallèle avec les pratiques islamiques.",
+      "symbols": "Les trois mosquées-universités de Tombouctou (Djinguereber, Sankore, Sidi Yahia), classées au Patrimoine mondial de l'UNESCO depuis 1988, constituent le symbole majeur de l'identité Koyra Chiini — elles incarnent la tradition islamique et intellectuelle de la cité. Les manuscrits de Tombouctou (plus de 300 000 manuscrits arabes et en langues africaines conservés dans des bibliothèques privées et publiques) symbolisent l'héritage intellectuel. Le désert et le fleuve Niger définissent l'espace identitaire. Les caravanes de sel venant de Taoudeni représentent le lien historique avec les routes transsahariennes.",
+      "artsAndMusic": "Musique : tradition du griot (jesere) chantant les épopées historiques des rois songhaï et des savants de Tombouctou. Instruments : ngoni (luth à 4-5 cordes), goje (vielle à archet), tambours rituels (djembé, tama). Festival au désert (désormais suspendu par les crises de sécurité) : rassemblement musical annuel à Essakane (près de Tombouctou) qui célébrait les cultures touarègue et songhaï. Tradition de poésie orale et de chants des femmes lors des mariages (alboras). Architecture en banco : mosquées construites en terre crue, réparées annuellement avant les pluies — technique architecturale unique inscrite au patrimoine de l'humanité. Artisanat : poterie de Djenné (terranga), bijoux en argent des Touaregs échangés avec les Songhaï, tissage de boubous en coton brodés.",
+      "spiritualities": "Islam sunnite malékite (pratique dominante et ancienne depuis le 12e siècle) : Tombouctou a été une capitale intellectuelle de l'islam subsaharien, avec des universités formant des savants de toute l'Afrique musulmane. Culte des saints (maraboutisme) : vénération des mausolées de saints (Sidi Yahia, etc.) — pratique soufie répandue à Tombouctou, violemment attaquée par Ansar Dine en 2012. Syncrétisme animiste : croyances en les holey (esprits du Niger et de la nature), pratiques de divination, recours aux amulettes coraniques, cérémonies de possession. Les manuscrits islamiques de Tombouctou représentent un trésor spirituel et intellectuel unique témoignant d'une tradition savante islamique africaine autonome."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Tombouctou a été l'une des villes les plus importantes d'Afrique de l'Ouest médiévale. Successivement sous le contrôle de l'Empire du Mali (14e siècle), de l'Empire songhaï (1468-1591), des Arma marocains (1591-17e siècle), puis des Peuls (Dina de Hamdallaye, 19e siècle), des Touaregs et enfin de la France coloniale. Durant l'apogée de l'Empire songhaï, Tombouctou était la capitale intellectuelle et le principal marché de l'empire, avec une population estimée à 100 000 habitants au 16e siècle.",
+      "relationsWithNeighbors": "Relations millénaires et souvent complexes avec les Touaregs (Kel Tamasheq) : partenaires commerciaux pour les routes du sel (Taoudeni) mais aussi maîtres politiques récurrents de Tombouctou. Relations commerciales intenses avec les marchands arabes et berbères des routes transsahariennes. Relations avec les Peuls (Fulbé) de la région : les Peuls de Hamdallaye ont brièvement contrôlé Tombouctou au 19e siècle. Relations avec les Bambara, les Bozo et les Dogon des régions voisines, structurées par le commerce et l'échange agricole-artisanal.",
+      "conflictsOrAlliances": "1468 : prise de Tombouctou par Sunni Ali Ber (relations tendues avec les oulémas). 1591 : conquête par les troupes marocaines de Judar Pacha ; déportation d'Ahmad Baba vers le Maroc. Périodes d'instabilité sous les Arma (17e-18e siècles). 19e siècle : prise par les Toucouleurs d'El-Hadj Oumar, puis par les Peuls, avant la colonisation française (1894). 2012-2013 : occupation par Ansar Dine (groupe islamiste) ; destruction de 14 des 16 mausolées de saints classés UNESCO ; pillage de manuscrits ; libération par l'opération Serval (janvier 2013).",
+      "diaspora": "La crise de 2012 a provoqué un exode massif de la population de Tombouctou, dont beaucoup ont fui vers Bamako, le Sénégal ou la Mauritanie. Des communautés de Tombouctou existent à Bamako et en France (communauté malienne de Paris). Les familles d'oulémas gardant des manuscrits ont parfois fui avec leurs trésors intellectuels pour les mettre à l'abri. Une partie de la diaspora est revenue après la stabilisation relative de 2013."
+    },
+    "demography": {
+      "totalPopulation": 250000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN — Koyra Chiini language (environ 200 000 locuteurs en 1999, croissance démographique estimée depuis) ; Glottolog — Koyra Chiini Songhay (khq) ; SIL Ethnologue — Koyra Chiini (khq). Note : La crise malienne de 2012-2015 a perturbé les données démographiques de la région de Tombouctou ; les estimations récentes sont incertaines.",
+      "distributionByCountry": [
+        {
+          "country": "MLI",
+          "population": 250000,
+          "note": "Tombouctou (ville principale) et région : Diré, Tonka, Goundam, Niafunké ; ville saharienne d'Araouane ; Djenné (dialecte Djenné Chiini)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Koyra Chiini language. https://en.wikipedia.org/wiki/Koyra_Chiini_language",
+      "Wikipedia EN — Songhay languages. https://en.wikipedia.org/wiki/Songhay_languages",
+      "Wikipedia EN — Timbuktu. https://en.wikipedia.org/wiki/Timbuktu",
+      "Glottolog — Koyra Chiini Songhay (khq). https://glottolog.org/resource/languoid/id/koyr1240",
+      "Wikipedia EN — Arma people (Timbuktu). https://en.wikipedia.org/wiki/Arma_people",
+      "UNESCO — Tombouctou (patrimoine mondial). https://whc.unesco.org/fr/list/119",
+      "Wikipedia EN — Manuscripts of Timbuktu. https://en.wikipedia.org/wiki/Manuscripts_of_Timbuktu",
+      "CIA World Factbook — Mali"
+    ]
+  }
+}

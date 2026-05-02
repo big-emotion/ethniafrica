@@ -9,12 +9,12 @@ interface CacheEntry<T> {
   version?: number; // Version des données au moment de la mise en cache
 }
 
-// Cache keys
+// Cache keys - API v2 only
 export const CACHE_KEYS = {
-  REGIONS: "app:regions",
-  COUNTRIES: "app:countries",
-  ETHNICITIES: "app:ethnicities",
-  TOTAL_POPULATION: "app:totalPopulation",
+  LANGUAGE_FAMILIES: "app:v2:language-families",
+  PEOPLES: "app:v2:peoples",
+  COUNTRIES_V2: "app:v2:countries",
+  STATS_V2: "app:v2:stats",
 } as const;
 
 /**

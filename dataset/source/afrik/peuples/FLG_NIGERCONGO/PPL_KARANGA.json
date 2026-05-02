@@ -1,0 +1,104 @@
+{
+  "id": "PPL_KARANGA",
+  "nameMain": "Karanga",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["ZWE"],
+  "content": {
+    "appellations": {
+      "mainName": "Karanga",
+      "selfAppellation": "Karanga",
+      "exonyms": ["vaKaranga", "Shona-Karanga"],
+      "originOfExonyms": "Le terme Karanga derive selon les traditions orales du mot khalanga signifiant 'les gens du Sud'. Le terme Shona est une appellation coloniale du 19e siecle utilisee par les Britanniques pour regrouper les multiples sous-groupes dialectaux (Karanga, Zezuru, Korekore, Manyika, Ndau). Les Karanga se distinguent comme groupe dialectal et culturel distinct au sein de l'ensemble shona.",
+      "whyProblematic": "La denomination 'Shona' imposee par le colon amalgame des groupes distincts. Les Karanga ont une identite historique forte liee a la civilisation du Grand Zimbabwe et a l'Empire Mutapa, distincte des autres sous-groupes shona. La fusion administrative sous l'etiquette 'Shona' a parfois dilue cette specificite.",
+      "contemporaryUsage": "Les Karanga se designent eux-memes comme vaKaranga. Le terme est employe dans les contextes culturels, historiques et identitaires au Zimbabwe. La langue est appelee chiKaranga.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone S, groupe Shona S14)",
+      "historicalRegion": "Zimbabwe meridional et central : province de Masvingo (ancienne Fort Victoria) et province des Midlands ; berceau de la civilisation du Grand Zimbabwe",
+      "currentCountries": ["ZWE"]
+    },
+    "ethnicities": [
+      "Duma — sous-groupe karanga de la province de Masvingo",
+      "Jena — sous-groupe etabli dans le district de Gutu",
+      "Mari (Mhari) — sous-groupe de la region centrale",
+      "Govera (Ngova) — sous-groupe meridional",
+      "Nogoua (Nogova) — sous-groupe etabli",
+      "Nyubi — sous-groupe distinct",
+      "Chieftaincy Chirumhanzu — lignage royal etabli dans le district de Chirumhanzu (Midlands)",
+      "Chieftaincy Chivi — chefferie ancienne et respectee de Masvingo",
+      "Chieftaincy Nhema — chefferie etablie dans les Midlands et Masvingo",
+      "Chieftaincy Mapanzure — chefferie de la region de Masvingo"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Karanga descendent des peuples bantous ayant migre depuis le bassin du Congo vers le plateau du Zimbabwe. Leurs ancetres s'installent sur le plateau zimbabween des les premiers siecles de l'ere commune. Au 11e siecle, les Karanga forment des royaumes sur le plateau zimbabween et entreprennent la construction du Grand Zimbabwe, capital du royaume de Zimbabwe. Ils sont les batisseurs et dirigeants de la plus grande civilisation d'Afrique sub-saharienne medievale au sud du Sahara.",
+      "formationPeriod": "L'identite karanga distincte emerge entre le 10e et le 15e siecle, liee a la construction et a l'essor du Grand Zimbabwe (11e-15e siecles) et a la montee de la dynastie Mutapa. Apres le declin du Grand Zimbabwe, les Karanga migrent vers les provinces de Masvingo et des Midlands, etablissant de nouvelles chefferies.",
+      "migrationRoutes": [
+        "Migration bantou generale depuis le bassin du Congo, premier millenaire de l'ere commune",
+        "Premier etablissement dans la vallee de l'Ambir (vallee du Zambeze), puis vers le Zimbabwe central",
+        "Expansion vers le plateau zimbabween (Gurusa), fondation du Grand Zimbabwe comme centre politique et economique",
+        "Apres le declin du Grand Zimbabwe (15e siecle), migration vers le sud du Zimbabwe : provinces de Masvingo et Midlands"
+      ],
+      "historicalSettlementZones": [
+        "Grand Zimbabwe (Masvingo) — capital et centre de la civilisation karanga medievale",
+        "Province de Masvingo — zone principale de peuplement actuel (districts Gutu, Masvingo, Bikita)",
+        "Province des Midlands — etablissements dans les districts de Zvishavane, Mvuma, Chirumanzu",
+        "Harare et autres provinces — presence minoritaire en dehors des zones historiques"
+      ],
+      "unificationsOrDivisions": "L'unite karanga est fondee sur la langue chiKaranga (dialecte shona S14) et les traditions culturelles communes plutot que sur une chefferie unique. Les chefferies traditionnelles (Chirumhanzu, Chivi, Nhema, Mapanzure) ont maintenu leur autonomie tout au long de l'histoire. La domination coloniale britannique (BSAC, 1890) a affaibli ces structures mais ne les a pas efface. Depuis 1980, les chefs traditionnels maintiennent un role dans la gouvernance locale.",
+      "externalInfluences": "Commerce avec les marchands arabes et swahili des cotes de l'ocean Indien depuis le 10e siecle (echange d'or, d'ivoire et de perles). Contact avec les Portugais depuis le 16e siecle, qui ont tente de controler l'Empire Mutapa. Invasion ndebele au 19e siecle, qui a detruit l'Empire Rozvi. Colonisation britannique (1890-1980) sous la British South Africa Company de Cecil Rhodes. Independance du Zimbabwe en 1980."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles (chieftaincy) dirigees par un chef (mambo ou ishe) hereditaire. Le chef est a la fois dirigeant politique, juge et chef religieux responsable des ceremonies pluviales (mukwerera). Il est assiste de sous-chefs et de chefs de village (headmen). Les assemblees d'anciens conseillent le chef. Le systeme de mitupo (totems claniques) structure les relations sociales et interdit les mariages intraclaniques.",
+      "clanOrganization": "La societe karanga est organisee autour du systeme de mitupo (totem clanique pluriel). Chaque clan est identifie par un totem animal ou vegetal herite de la lignee paternelle. Les principaux clans karanga comprennent les Duma, Jena, Mari, Govera et d'autres groupes identifiant leur appartenance par leur mutupo. Les clans regissent les droits fonciers, les alliances matrimoniales et les obligations rituelles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires transmettent le statut, les droits fonciers et les obligations rituelles. Les esprits des ancetres (midzimu) sont censes continuer a influencer la vie des descendants vivants. Le systeme de succession au sein des chefferies suit la lignee male, mais parfois le principe du frere succedant au frere avant que le fils succede au pere.",
+      "religiousAuthority": "Les mediums spirituels (svikiro) jouent un role central comme intermediaires entre le monde des vivants et les esprits des ancetres (midzimu) et la divinite supreme Mwari. Les chefs traditionnels presidaient les ceremonies pluviales (mukwerera) et les ceremonies bira (invocation des esprits ancestraux). L'Oracle de Mwari au Zimbabwe meridional etait un centre spirituel important. Les Eglises chretiennes apostoliques et traditionelles sont tres repandues dans la region karanga."
+    },
+    "languages": {
+      "mainLanguage": "chiKaranga (dialecte Shona S14)",
+      "isoCodes": ["sna"],
+      "dialects": [
+        "Duma — sous-dialecte du district de Gutu et Mberengwa",
+        "Jena — sous-dialecte du district de Gutu",
+        "Mhari (Mari) — sous-dialecte de la region centrale",
+        "Ngova — sous-dialecte meridional",
+        "Venda (forme locale, distincte de la langue Venda d'Afrique du Sud) — sous-dialecte",
+        "Govera — sous-dialecte etabli"
+      ],
+      "vehicularRole": "Le chiKaranga est parle principalement dans les provinces de Masvingo et des Midlands au Zimbabwe. Il est mutuellement comprehensible avec les autres dialectes shona (Zezuru, Manyika, Korekore). Le shona standard (base sur le Zezuru) est la langue officielle d'enseignement. L'anglais est la langue officielle du Zimbabwe. Le chiKaranga a influence la musique et les traditions culturelles zimbabweennes."
+    },
+    "culture": {
+      "majorRites": "Mukwerera : ceremonie pluviale traditionnelle presidee par le chef et les anciens pour invoquer les pluies. Comprend des prieres, chants, libations de biere de sorgho et offrandes aux esprits ancestraux et a Mwari. Bira : ceremonie nocturne d'invocation des esprits ancestraux (midzimu) pour guidance, guerison ou intercession. La musique mbira dzavadzimu joue toute la nuit pour convoquer les esprits. Rites de passage : ceremonies de naissance, de puberte, de mariage et de deuil conformes aux traditions karanga. Kurova guva : ceremonie post-funeraire (un an apres le deces) pour ramener l'esprit du defunt dans la maison familiale.",
+      "symbols": "Le Grand Zimbabwe (ruines de pierre seche, 11e-15e siecles) est le symbole fondateur par excellence de la civilisation karanga. L'oiseau Zimbabwe (Zimbabwe Bird, sculpte dans le steatite/soapstone) est un embleme national represente sur le drapeau du Zimbabwe et derive des sculptures karanga trouvees au Grand Zimbabwe. Les mitupo (totems claniques) sont des symboles d'identite clanique forts. La mbira (lamellophone) est un symbole culturel et spirituel majeur.",
+      "artsAndMusic": "Musique : la mbira dzavadzimu (22-24 lamelles) est l'instrument ceremoniel central, jouee lors des ceremonies bira pour convoquer les esprits ancestraux. Le marimba (xylophone), les tambours ngoma, les hochets hosho et les clappers en bois makwa accompagnent chants et danses. Arts visuels : sculpture sur pierre, en particulier sculpture traditionnelle sur steatite (soapstone) et serpentinite representant des oiseaux et des esprits en transformation en animaux. Poterie traditionnelle (hari — jarres en argile). Sculpture sur bois. La sculpture shona contemporaine, issue de la tradition karanga, est presentee dans les musees du monde entier depuis les annees 1950.",
+      "spiritualities": "La religion traditionnelle karanga est centree sur Mwari (Dieu supreme), aussi nomme Musikavanhu (Createur du peuple) ou Nyadenga (Celui qui habite les hauteurs). Mwari communique avec son peuple directement ou par l'intermediaire de personnalites choisies dotees du pouvoir de prophetiser, guerir et benir. Les esprits ancestraux (midzimu) ou Dzavadzimu servent d'intermediaires entre les vivants et Dieu ; ils interviennent dans la vie quotidienne, les maladies et la prosperite. Les mediums spirituels (svikiro) sont possedes par les esprits ancestraux lors des ceremonies bira. L'Oracle de Mwari, situe dans les collines de Matopo, etait un important centre spirituel. Le christianisme (eglises apostoliques et evangeliques) est tres repandu et se melange aux pratiques traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume du Grand Zimbabwe (11e-15e siecles) : centre politique, commercial et spirituel de la civilisation karanga medievale ; ses ruines sont le plus grand complexe de pierre seche d'Afrique subsaharienne. Royaume de Mutapa (Munhumutapa, 15e-17e siecles) : empire fonde par Mutota, dont l'economie reposait sur l'or, l'ivoire et le commerce avec les cotes de l'ocean Indien ; affaibli par les Portugais et les dissidences internes. Royaume de Butua (Torwa dynasty). Empire Rozvi (17e-19e siecles) : fonde par Changamire Dombo qui vainquit les Portugais en 1684, unifiant plusieurs groupes shona sous une administration centralisee ; detruit par les Ndebele dans les annees 1830.",
+      "relationsWithNeighbors": "Commerce intensif avec les marchands arabes et swahili de la cote de l'ocean Indien (echange d'or, d'ivoire et de perles). Relations conflictuelles et diplomatiques avec les Portugais (16e-18e siecles). Invasion et destruction de l'Empire Rozvi par les Ndebele dans les annees 1830. Relations complexes avec les autres sous-groupes shona (Zezuru, Manyika, Korekore). Resistance a la colonisation britannique lors des soulèvements Chimurenga (1896-1897 et 1966-1979).",
+      "conflictsOrAlliances": "Changamire Dombo (Rozvi Empire) : victoire decisive contre les Portugais a Dambarare en 1684, chassant les colons du plateau zimbabween. Premier Chimurenga (1896-1897) : resistance armee des chefs karanga contre la British South Africa Company. Deuxieme Chimurenga (1966-1979) : participation active a la guerre de liberation (ZANU-PF base en partie dans les provinces karanga). Independance du Zimbabwe en 1980 sous Robert Mugabe (lui-meme d'origine karanga du clan Zezuru selon certaines sources).",
+      "diaspora": "Diaspora karanga dans les grandes villes zimbabweennes (Harare, Bulawayo). Emigration significative vers l'Afrique du Sud, le Royaume-Uni et d'autres pays occidentaux notamment apres la crise economique du Zimbabwe des annees 2000. La diaspora maintient des liens avec les chefferies traditionnelles et les pratiques culturelles."
+    },
+    "demography": {
+      "totalPopulation": 4105000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Shona-Karanga au Zimbabwe : 4 105 000) ; PeopleGroups.org 2025 (2 425 000 pour l'estimation restrictive) ; SIL Ethnologue 2024 ; recensements du Zimbabwe",
+      "distributionByCountry": [
+        {
+          "country": "ZWE",
+          "population": 4105000,
+          "note": "Principalement dans les provinces de Masvingo et des Midlands ; presence dans les villes de Harare et Bulawayo"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Shona people. https://en.wikipedia.org/wiki/Shona_people",
+      "Wikipedia EN — Shona language. https://en.wikipedia.org/wiki/Shona_language",
+      "Joshua Project — Shona-Karanga in Zimbabwe. https://joshuaproject.net/people_groups/12530",
+      "PeopleGroups.org — Shona-Karanga of Zimbabwe. https://peoplegroups.org/people_groups/pg015659/",
+      "SIL Ethnologue — Shona language (sna). https://www.ethnologue.com/language/sna/",
+      "Britannica — Karanga people. https://www.britannica.com/topic/Karanga-people",
+      "HTS Theological Studies — Karanga people in Masvingo. http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S0259-94222016000400109",
+      "Chigwedere, Aeneas. The Karanga Empire. Books for Africa, Harare, 1986. https://michaelharrison.org.uk/wp-content/uploads/2021/04/The-Karanga-Empire-Aeneas-Chigwedere-Books-for-Africa-Harare-1986.pdf"
+    ]
+  }
+}

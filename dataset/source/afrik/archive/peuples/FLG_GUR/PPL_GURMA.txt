@@ -1,0 +1,40 @@
+# Nom du peuple
+- Nom principal : Gurma / Gourma
+- Auto-appellation : Gulimanceba / Gourmantché
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Région historique : BFA, NER, BEN, TGO
+- Identifiant peuple : PPL_GURMA
+
+# 1. Ethnies incluses
+- Gourmantché du Burkina
+- Gulmanceba du Niger
+- Sous-groupes du nord Bénin et Togo
+
+# 2. Origines
+- Peuple gur ancien occupant la zone de l’Est burkinabè.
+- Forte cohésion culturelle malgré la dispersion.
+
+# 3. Organisation
+- Villages autonomes
+- Chefferies locales (*Tengsobas*)
+
+# 4. Langue
+- Gourmanchéma / Gulmancema
+- ISO : gux
+
+# 5. Culture
+- Masques et bois sacrés
+- Chasse et agriculture
+- Importance des mythes fondateurs
+
+# 6. Histoire
+- Région de contact entre Mossi, Peul et Haoussa
+- Part importante dans l'histoire de l'Est du Burkina
+
+# 7. Démographie
+- Population : 1 200 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (gux)
+- Burkina Faso Est — Archives culturelles

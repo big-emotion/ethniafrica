@@ -1,0 +1,99 @@
+{
+  "id": "PPL_TANOSY",
+  "nameMain": "Tanosy (Antanosy)",
+  "languageFamilyId": "FLG_AUSTRONESIENNE",
+  "currentCountries": ["MDG"],
+  "content": {
+    "appellations": {
+      "mainName": "Tanosy (Antanosy)",
+      "selfAppellation": "Antanosy",
+      "exonyms": [
+        "Antanosy (le prefixe An-/Anta- signifie ceux de, Tanosy designe la region d'Anosy)",
+        "Tanosy (forme abregee courante)",
+        "Gens de l'ile ou Gens de la region de l'ile (traduction du terme Anosy qui designe une ile ou une region insulaire)"
+      ],
+      "originOfExonyms": "Le nom Antanosy signifie literalement les gens d'Anosy. Anosy designe une ile (terme malgache) et par extension la region du sud-est de Madagascar bordee par l'ocean Indien. Fort Dauphin (Taolagnaro ou Faradofay) en est la ville principale. Le prefixe An- ou Anta- est commun a de nombreuses ethnies malgaches.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Antanosy est l'appellation officielle reconnue. La forme abregee Tanosy est employee notamment dans les classifications linguistiques (dialecte tanosy, code ISO : txy).",
+      "linguisticFamily": "FLG_AUSTRONESIENNE",
+      "ethnoLinguisticGroup": "Malayo-polynesien, sous-groupe des dialectes malgaches meridionaux",
+      "historicalRegion": "Region d'Anosy, sud-est de Madagascar, entre les rivieres Mandrare (ouest) et Manantenina (nord), avec pour ville principale Fort Dauphin (Taolagnaro ou Faradofay, province de Toliara)",
+      "currentCountries": ["MDG"]
+    },
+    "ethnicities": [
+      "Tavaratra (Antanosy du Nord, region de Manantenina, ou de la zone entre Manantenina et Tambato selon les sources)",
+      "Tambolo (ou Antambolo, region de Ranomafana et Enaniliha, vallee de l'Antambolo)",
+      "Tambato (region de Mahatalaky et Manafiafy)",
+      "Tanosy (de Fanjahira, coeur historique de la region d'Anosy)",
+      "Tatsimo (Antanosy du Sud, region de Ranopiso, de Ranopiso jusqu'a la riviere Mandrare)",
+      "Alliance Antavaratra (alliance Antanosy-Antaisaka dans la region de Manantenina)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Antanosy habitent la region d'Anosy depuis au moins le IXe siecle. La phase Maliovola (IXe-XIIe siecles) temoigne d'une economie mixte associant elevage bovin, peche, jardinage et chasse. Au XIIIe siecle (phase Ambinanibe), l'introduction du travail du fer et des connexions avec les reseaux d'echange de l'ocean Indien (ceramiques chinoises celadon importees jusqu'au XVe siecle) transforme la societe. La phase Tranovato (XVe-XVIe siecles) voit l'emergence de chefferies supremes fortifiees, de campagnes militaires et de l'agriculture irriguee du riz.",
+      "formationPeriod": "L'arrive des Zafiraminia (fils de Ramini), princes d'origine arabomalgache, au XIVe siecle (selon Racoube, l'ancetre fondateur) et leur conquete de la region au XVIe siecle donne naissance a la dynaste regnante d'Anosy. En 1613, le roi Andriantsiambany recoit les Portugais a Manafiafy avec 500 soldats. Au milieu du XVIIe siecle, les Zafiraminia etablissent leur capitale a Fanjahira sous le roi Andriambahoaka Andriandramaka.",
+      "migrationRoutes": [
+        "Migration austronesienne depuis l'Asie du Sud-Est maritime (avant le VIe siecle)",
+        "Arrivee des Zafiraminia d'origine arabomalgache (XIVe siecle selon la tradition orale)",
+        "Migration westward de 80 000 Antanosy vers la vallee de l'Onilahy (Betioky, Bezaha) pour fuir la domination Merina (1840s-1860s)"
+      ],
+      "historicalSettlementZones": [
+        "Region d'Anosy (sud-est, entre les rivieres Mandrare et Manantenina)",
+        "Vallee de l'Efaho (zone centrale d'Anosy, siege de Fanjahira, capitale historique)",
+        "Fort Dauphin / Taolagnaro (principal centre urbain)",
+        "Vallee de l'Onilahy (zone de migration post-conquete merina, Betioky et Bezaha)"
+      ],
+      "unificationsOrDivisions": "Chefferies suzeraines au XVe siecle, puis domination des Zafiraminia au XVIIe siecle. La region est divisee en 30 clans villageois pour la seule Anosy centrale. En 1825, l'Anosy est conquise par les Merina (sous Ramananolona, envoye par Radama I), entrainant une grande migration d'environ 80 000 Antanosy vers l'ouest (principalement en 1845). Certains Antanosy s'integrent dans le systeme de portage de l'empire Merina.",
+      "externalInfluences": "Premiers contacts europeens : le marin francais Jean Parmentier decrit la cote est en 1529. Les Portugais debarquent a Manafiafy en 1613. La France etablit Fort Dauphin en 1643, suivi de trente ans de conflits (1643-1673) : pillage de centaines de villages, mort de milliers d'Antanosy, esclavage, vol de zebus. Fort Dauphin est abandonne en 1674. Presence britannique (1811, 1942). Missions catholiques romaines (Diocese de Tolanaro) et protestantes (LMS). Resistance historique au christianisme vu comme religion Merina oppresseur."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies suzeraines (paramount chiefdoms) a partir du XVe siecle, avec un roi tenant un pouvoir absolu (selon la tradition Zafiraminia). Systeme de castes historique : la caste noble (Zafi-Raminia, descendants de la dynastie du XIIIe siecle, d'origine proche-orientale selon certaines sources) dominant les autres. Avec le temps, les distinctions de castes se sont attenuees. Fokonolona (assemblees villageoises) assurant la gouvernance locale. Organisation actuelle en trois sous-groupes geographiques (MAEP 2003) : Antavaratra (nord, Manantenina), Antambolo (vallee centrale) et Antatsimo (sud-ouest, de Ranopiso au Mandrare).",
+      "clanOrganization": "30 clans villageois pour la seule Anosy centrale. Cinq sous-groupes ethniques identifies : Tesak, Ivondro, Tevatomalama et Terara Temanalo (selon une source). Les anciennes frontieres du territoire Zafiraminia sont demarcquees par trois cimetieres dynastiques : Enosiavaratse (Manarivo), Enosy atsimo (Andromira) et Samby Anosy (Ifarantsa).",
+      "ageClassSystems": "Famorana (circoncision) : rite de passage masculin organise tous les sept ans (source : Joshua Project), centre structurant de la vie rituelle. Mariage, naissance et funerailles marques par des ceremonies specifiques.",
+      "roleOfLineages": "Importance des lignages nobles Zafiraminia comme source de legitimite politique historique. Les lignages determinent le statut social, les alliances matrimoniales et l'acces aux terres. Importance des ancetres (razana) : priere aux ancetres et a Zañahary (divinite creatrice) comme pratique centrale.",
+      "religiousAuthority": "Autorite des devins-guerisseurs (ombiasy) et des leaders communautaires traditionnels. Les Antanosy prient Zañahary (dieu createur) et leurs ancetres. Environ 40% pratiquent le christianisme aujourd'hui (principalement catholique romain et lutherien), mais il existe une resistance historique au christianisme identifie comme religion des Merina conquerants. Missions catholiques (Diocese de Tolanaro) et protestantes (LMS)."
+    },
+    "languages": {
+      "mainLanguage": "Malgache tanosy (dialecte meridional, proche des dialectes conservateurs du sud)",
+      "isoCodes": ["txy", "mlg"],
+      "dialects": [
+        "Tanosy Malagasy (txy, dialecte meridional conservateur, environ 639 000 locuteurs selon l'Ethnologue)",
+        "Parlers du Nord-Anosy (Manantenina, Tavaratra, avec influence antaisaka)",
+        "Parlers du Sud-Anosy (Tatsimo, Ranopiso, Mandrare)"
+      ],
+      "vehicularRole": "Le tanosy (txy) est l'une des onze varietes officiellement reconnues du malgache (macrolangue mlg) selon ISO 639-3. Les dialectes meridionaux tanosy, bara, tandroy et sakalava meridional partagent une phonologie conservatrice proche des langues polynessiennes. Le malgache officiel (plateau, plt) et le francais sont utilises pour les communications administratives. Taux d'alphabetisation estime a moins de 30% dans la region."
+    },
+    "culture": {
+      "majorRites": "Famorana (circoncision) : tenu tous les sept ans, cest le rite de passage masculin central structurant la vie communautaire des Antanosy. Ceremonies de mariage, naissance, guerison, possession (tromba) et funerailles, chacune avec ses propres rituels specifiques. Pratique des ceremonies ancestrales avec priere a Zañahary et aux razana (ancetres). Tromba (possession par des esprits ancestraux). Celebrations annuelles du cycle agricole (riz et elevage bovin). Ceremonies royales de la tradition Zafiraminia.",
+      "symbols": "La region d'Anosy (l'ile ou la region insulaire) comme symbole identitaire central. Fort Dauphin (Taolagnaro) comme centre urbain et historique. Le zebu comme symbole de richesse, de statut et d'offrande ceremonielle. Les cimetieres dynastiques Zafiraminia (Enosiavaratse, Enosy atsimo, Samby Anosy) comme marques des frontieres ancestrales. L'ocean Indien et la peche comme elements identitaires des communautes cotieres.",
+      "artsAndMusic": "Musique vocale et instrumentale lors des ceremonies (tromba, famorana, funerailles). Instruments traditionnels malgaches : valiha (cithare en bambou), marovany (cithare de caisse), percussions. Poesie orale et kabary (discours formel). Artisanat : tissage (lamba, nattes), poterie, travail du cuir (introduction par la LMS dans les annees 1850 lors de la fuite des artisans Merina). Peche et construction de pirogues pour les communautes cotieres.",
+      "spiritualities": "La plupart des Antanosy pratiquent une religion traditionnelle centree sur la priere a Zañahary (dieu createur) et a leurs ancetres (razana). Nombreuses ceremonies rituelles pour chaque domaine de la vie : mariage, naissance, guerison, possession (tromba) et mort. Environ 40% pratiquent le christianisme (principalement catholique romain et lutherien) selon le Joshua Project. Resistance historique a la religion chretienne vue comme outil de la domination Merina. Systeme de castes historique (Zafi-Raminia comme nobles) s'est progressivement attenue."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies suzeraines fortifiees (Tranovato, XVe siecle) precedant la domination Zafiraminia. Royaute Zafiraminia (XVIe-XIXe siecles) avec capitale a Fanjahira, dans la vallee de l'Efaho. Andriambahoaka Andriandramaka (milieu XVIIe siecle) tient la capitale et controle les echanges avec les Francais. Le Gouverneur Jean Rene, fils d'un colon francais et d'une mere Antanosy, est allie puissant de Radama I (alliance par serment de sang en 1817). La region est conquise par les Merina en 1825.",
+      "relationsWithNeighbors": "Conflits et relations commerciales avec les Portugais (1613), les Francais de Fort Dauphin (1643-1674), les Britanniques (1811, 1942). Alliance Antanosy-Antaisaka dans la region Antavaratra de Manantenina. Soumission a l'empire Merina apres 1825. Participation comme porteurs dans le systeme imperial Merina apres la conquete. Migration westward apres la conquete : installation sur des terres prises aux Bara et Mahafaly.",
+      "conflictsOrAlliances": "Trente ans de conflits avec les Gouverneurs francais de Fort Dauphin (1643-1673) : pillage de centaines de villages, mort de milliers d'Antanosy, esclavage, vol de zebus. Abandon de Fort Dauphin par les Francais en 1674 apres la mort de plus de la moitie de la garnison. Conquete merina de l'Anosy en 1825. Grande migration de 80 000 Antanosy vers l'ouest (notamment 30 000 en 1845) pour fuir la domination Merina et le fanompoana (travail force). Programme de reponse a la malnutrition du World Hunger Program en 2005 suite a une combinaison de secheresse et d'inondations.",
+      "diaspora": "Migration importante de 80 000 Antanosy vers la vallee de l'Onilahy (region de Betioky et Bezaha) pour fuir la conquete Merina dans les annees 1840-1860. Installation sur des terres appartenant aux Bara et Mahafaly. Infiltration progressive dans le territoire Tandroy voisin. Reputation de travailleurs hardis : de nombreux Antanosy ont ete employes dans les plantations des Mascareignes (Reunion, Maurice)."
+    },
+    "demography": {
+      "totalPopulation": 700000,
+      "referenceYear": 2025,
+      "source": "360 000 personnes s'identifiant comme Antanosy en 2013 (Wikipedia EN). Ethnologue : 639 000 locuteurs du tanosy (txy). Population totale Madagascar 2025 : environ 30 millions (Banque mondiale). Environ 2% de la population malgache totale (Britannica). Estimation 2025 : 600 000-800 000.",
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 700000,
+          "notes": "Concentres dans la region d'Anosy (Fort Dauphin/Taolagnaro), avec une diaspora interne dans la vallee de l'Onilahy (Betioky, Bezaha) et infiltration dans les territoires Tandroy"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Antanosy people : https://en.wikipedia.org/wiki/Antanosy_people",
+      "Wikipedia EN - Malagasy language : https://en.wikipedia.org/wiki/Malagasy_language",
+      "Joshua Project - Antanosy in Madagascar : https://joshuaproject.net/people_groups/10346",
+      "SIL Ethnologue - Tanosy Malagasy (txy) : https://www.ethnologue.com/language/txy/",
+      "SIL Ethnologue - Malagasy macrolanguage (mlg) : https://www.ethnologue.com/language/mlg/",
+      "CIA World Factbook - Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/",
+      "Britannica - Madagascar Ethnic Groups : https://www.britannica.com/place/Madagascar/Ethnic-groups"
+    ]
+  }
+}

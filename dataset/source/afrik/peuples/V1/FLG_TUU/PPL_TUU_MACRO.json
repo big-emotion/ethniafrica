@@ -1,0 +1,70 @@
+{
+  "id": "PPL_TUU_MACRO",
+  "nameMain": "Peuples Tuu (macro-groupe)",
+  "languageFamilyId": "FLG_TUU",
+  "currentCountries": ["BWA", "NAM"],
+  "content": {
+    "appellations": {
+      "mainName": "Peuples Tuu (macro-groupe)",
+      "selfAppellation": "Variées selon les groupes (ǃXóõ, Nǀuu, ǀXam, etc.)",
+      "linguisticFamily": "FLG_TUU",
+      "ethnoLinguisticGroup": "Tuu (macro-groupe)",
+      "historicalRegion": "Désert du Kalahari (BWA, Afrique du Sud, NAM)",
+      "currentCountries": ["BWA", "NAM"]
+    },
+    "ethnicities": [
+      "ǃXóõ (Taa) - vivant",
+      "Nǀuu - en danger critique",
+      "ǀXam - éteint",
+      "Autres groupes Tuu"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples Tuu sont parmi les peuples les plus anciens d'Afrique, originaires du désert du Kalahari. Leur présence dans la région remonte à des dizaines de milliers d'années.",
+      "unificationsOrDivisions": "Organisation en groupes de chasseurs-cueilleurs nomades. Structure sociale égalitaire basée sur le partage. Diversité linguistique et culturelle importante. Certains groupes éteints.",
+      "externalInfluences": "Contacts limités avec les peuples bantous. Influence croissante de la modernisation et de la sédentarisation forcée. Extermination par les colons européens pour certains groupes."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation égalitaire sans hiérarchie formelle. Décisions prises par consensus. Pas de chefs permanents.",
+      "clanOrganization": "Structure basée sur les groupes de parenté et les liens de réciprocité. Organisation en bandes de chasseurs-cueilleurs.",
+      "roleOfLineages": "Lignages bilatéraux. Importance des liens de parenté et de réciprocité.",
+      "religiousAuthority": "Autorité des guérisseurs traditionnels. Croyances animistes centrées sur les esprits et les forces naturelles."
+    },
+    "languages": {
+      "mainLanguage": "Langues Tuu (Taa/ǃXóõ, Nǀuu, ǀXam éteinte)",
+      "vehicularRole": "Les langues Tuu sont parlées par les peuples Tuu survivants. L'afrikaans, l'anglais et le tswana sont également utilisés. La langue ǀXam est éteinte."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de guérison (trance dances)",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Cérémonies de chasse",
+      "source_3": "Rituels de partage",
+      "Symboles": "Art rupestre, symboles de chasse, motifs de réciprocité.",
+      "Arts et musique": "",
+      "source_4": "Art rupestre (peintures et gravures, patrimoine mondial pour ǀXam)",
+      "source_5": "Musique traditionnelle (instruments à cordes, chants)",
+      "source_6": "Danse de transe",
+      "source_7": "Contes et récits oraux (documentés pour ǀXam par Bleek et Lloyd)",
+      "Spiritualités": "Croyances animistes centrées sur les esprits et les forces naturelles. Rôle important des guérisseurs et des cérémonies de transe. Influence croissante du christianisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas d'organisation étatique. Structure sociale égalitaire de chasseurs-cueilleurs.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Déplacements forcés vers les réserves et les zones urbaines. Communautés dispersées dans les villes botswanaises, sud-africaines et namibiennes. Peuple ǀXam éteint."
+    },
+    "demography": {
+      "totalPopulation": 2000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Tuu languages",
+      "Traill, Anthony – *Phonetic and Phonological Studies of ǃXóõ Bushman*",
+      "Güldemann, Tom – *Studies in Tuu (Southern Khoisan) Linguistics*",
+      "Bleek, Wilhelm H.I. & Lloyd, Lucy – *Specimens of Bushman Folklore*",
+      "UNESCO – Atlas des langues en danger",
+      "IWGIA – Indigenous Peoples in Africa"
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "PPL_MPOTO",
+  "nameMain": "Mpoto",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Mpoto",
+      "selfAppellation": "WaMpoto",
+      "exonyms": ["Nyasa", "ChiNyasa", "Wampoto"],
+      "originOfExonyms": "Le nom Mpoto signifie 'nord' dans leur propre langue, designant leur position geographique par rapport au groupe Matengo dont ils sont issus. Ils furent ainsi nommes parce qu'ils s'installerent sur les collines au nord de Songea. L'exonyme Nyasa ou ChiNyasa fait reference au lac Malawi (lac Nyasa) pres duquel ils resident.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme WaMpoto est utilise localement en Tanzanie. L'appellation Mpoto, Nyasa est utilisee dans les bases de donnees ethnographiques internationales (Joshua Project). La langue est aussi appelee Chimpoto ou Kimpoto.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu du sud de la Tanzanie, proche des Matengo",
+      "historicalRegion": "District de Mbinga, region de Ruvuma, sud de la Tanzanie, le long de la rive nord-est du lac Malawi",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["WaMpoto", "Mpoto"],
+    "origins": {
+      "ancientOrigins": "Les WaMpoto sont une branche des Matengo, peuple bantou du sud de la Tanzanie. Leur nom meme signifie 'nord', indiquant qu'ils constituent la faction septentrionale des Matengo.",
+      "formationPeriod": "XIXe siecle. La separation des Mpoto des Matengo survint lors de l'invasion Ngoni qui bouleversa les structures politiques du sud de la Tanzanie.",
+      "migrationRoutes": [
+        "Depuis les terres Matengo vers les collines au nord de Songea lors de l'invasion Ngoni (XIXe s.)"
+      ],
+      "historicalSettlementZones": [
+        "Collines au nord de Songea (region de Ruvuma)",
+        "District de Mbinga, le long de la rive nord-est du lac Malawi (lac Nyasa)"
+      ],
+      "unificationsOrDivisions": "Separation des Matengo lors de l'invasion Ngoni. Les Mpoto conserverent une langue tres proche du Matengo en raison de leur origine commune.",
+      "externalInfluences": "Invasion Ngoni (XIXe s.) ayant force leur deplacement vers les collines du nord. Colonisation allemande puis britannique de la Tanzanie (Tanganyika). Influence missionnaire catholique importante ayant entraine une conversion majoritaire au catholicisme.",
+      "majorHistoricalEvents": "Invasion Ngoni au XIXe siecle provoquant la migration et la separation d'avec les Matengo. Periode coloniale : les chefs locaux (jumbes) furent nommes par l'administration coloniale plutot que par les communautes. Evangelisation catholique faisant du christianisme la religion principale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation villageoise sous autorite de chefs (jumbes). A l'epoque precoloniale, ces chefs etaient elus par la communaute. Durant la colonisation, ils etaient nommes par l'administration gouvernementale. Organisation sociale communautaire forte : travail collectif, solidarite de village.",
+      "clanOrganization": "Organisation clanique bantou classique. La vie sociale est centree sur le village comme unite de base.",
+      "roleOfLineages": "Les lignages structurent les relations sociales et les droits fonciers dans les communautes rurales.",
+      "religiousAuthority": "Anciennement : culte des esprits sur les sites de sepulture (ancestral), pratique encore marginalement aujourd'hui. Actuellement : majorite catholique romaine sous autorite de l'Eglise."
+    },
+    "languages": {
+      "mainLanguage": "Mpoto (Chimpoto)",
+      "isoCodes": ["mpa"],
+      "dialects": ["Chimpoto", "ChiNyasa", "Kimpoto", "Kinyasa", "Cimpoto"],
+      "vehicularRole": "Langue tres proche du Matengo (mgv) en raison de leur origine commune. Le swahili sert de lingua franca avec le reste de la Tanzanie. Le Mpoto (ISO 639-3 : mpa, Guthrie N.14) est classe dans la zone N des langues bantoues."
+    },
+    "culture": {
+      "majorRites": "Anciennement : veneration des esprits sur les tombes des ancetres, pratique tres ancrée qui rendit les Mpoto resistants a l'evangelisation initiale. Ceremonies communautaires autour des activites agricoles. Aujourd'hui : rites catholiques dominants avec maintien residuel des pratiques ancestrales.",
+      "symbols": "Les collines au nord de Songea comme espace identitaire de refuge et de recomposition apres l'invasion Ngoni.",
+      "artsAndMusic": "Traditions orales transmises de generation en generation. Agriculture de subsistance comme element central de la vie culturelle. Chants et danses communautaires lors des ceremonies.",
+      "spiritualities": "Croyance ancienne en les esprits des ancetres veneres sur les tombes. Cette pratique etait si ancree qu'elle constituait un frein a l'evangelisation. Aujourd'hui : christianisme majoritairement catholique romain, avec une pratique syncretique residuelle des croyances ancestrales dans certaines zones rurales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies villageoises (jumbes) sans royaume centralise. Historiquement sous influence politique des Matengo dont ils sont une branche.",
+      "relationsWithNeighbors": "Relations etroites avec les Matengo en raison de l'origine et de la proximite linguistique communes. Relations avec les autres peuples du sud de la Tanzanie (Ruvuma). Confrontation avec les Ngoni au XIXe siecle.",
+      "conflictsOrAlliances": "Fuite lors de l'invasion Ngoni au XIXe siecle, qui constitue l'evenement fondateur de leur separation des Matengo et de leur identite distincte.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 104000,
+      "referenceYear": 2025,
+      "source": "Joshua Project / Swordshare Map 2025 (estimation basee sur les donnees Joshua Project)",
+      "distributionByCountry": [{ "country": "TZA", "population": 104000 }]
+    },
+    "sources": [
+      "Mpoto people – Wikipedia EN (https://en.wikipedia.org/wiki/Mpoto_people)",
+      "Mpoto language – Wikipedia EN (https://en.wikipedia.org/wiki/Mpoto_language)",
+      "Mpoto, Nyasa in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13846)",
+      "Mpoto language ISO mpa – Swordshare Map (https://map.swordshare.com/mpa)",
+      "Bantu, Central-Tanzania People Cluster – Joshua Project (https://www.joshuaproject.net/clusters/341)"
+    ]
+  }
+}

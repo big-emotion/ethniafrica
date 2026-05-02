@@ -1,0 +1,36 @@
+# Nom du peuple
+- Nom principal : Dagomba / Dagbamba
+- Auto-appellation : Dagbamba
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Région : Ghana (Nord)
+- Identifiant : PPL_DAGOMBA
+
+# 1. Ethnies incluses
+- Dagomba de Tamale
+- Dagbamba ruraux
+
+# 2. Origines
+- Créateurs du royaume du Dagbon (État historique majeur).
+
+# 3. Organisation
+- Monarchie (Na Gbewaa → Yaa Naa)
+- Systèmes lignagers complexes
+
+# 4. Langue
+- Dagbani
+- ISO : dag
+
+# 5. Culture
+- Musique royale
+- Ensembles de tambours
+- Funérailles traditionnelles
+
+# 6. Histoire
+- Un des royaumes précoloniaux les plus importants du Ghana
+
+# 7. Démographie
+- Population : 3 500 000 (2025 estimate)
+
+# 8. Sources
+- Ethnologue (dag)
+- Dagbon Kingdom Archives

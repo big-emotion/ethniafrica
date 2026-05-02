@@ -1,0 +1,98 @@
+{
+  "id": "PPL_CREOLE_SEYCHELLES",
+  "nameMain": "Créoles Seychellois",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["SYC"],
+  "content": {
+    "appellations": {
+      "mainName": "Créoles Seychellois",
+      "selfAppellation": "Kreol Seselwa",
+      "exonyms": ["Seychellois Creole people", "Seychellois Creoles"],
+      "originOfExonyms": "Le terme Kreol Seselwa désigne à la fois la langue et l'identité ethno-culturelle de la majorité de la population seychelloise. Contrairement à Maurice, le terme créole aux Seychelles n'oppose pas les descendants d'esclaves africains à d'autres groupes : il désigne l'ensemble de la population locale de souche, quel que soit le mélange d'origines africaines, malgaches, indiennes, chinoises ou françaises.",
+      "whyProblematic": "La définition créole aux Seychelles est plus inclusive qu'à Maurice mais peut néanmoins marginaliser les Indo-Seychellois et Sino-Seychellois qui ne sont pas toujours identifiés comme créoles malgré leur enracinement sur l'archipel.",
+      "contemporaryUsage": "Le Kreol Seselwa est langue officielle des Seychelles aux côtés du français et de l'anglais depuis 1978. Le Festival Kreol (festival international créole) est organisé annuellement en octobre-novembre à Mahé. L'Institut créole seychellois (Lenstiti Kreol) valorise activement la culture et la langue créoles.",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Créole afro-français (archipel des Seychelles)",
+      "historicalRegion": "Archipel des Seychelles (îles Mahé, Praslin, La Digue et îles intérieures et extérieures)",
+      "currentCountries": ["SYC"]
+    },
+    "ethnicities": [
+      "Seychellois Créoles (population majoritaire d'ascendance africaine, malgache et française mixte)",
+      "Indo-Seychellois (minorité d'ascendance indienne, environ 6% de la population, principalement hindous tamouls)",
+      "Sino-Seychellois (minorité d'ascendance chinoise, immigrants venus de Maurice au XIXe siècle)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Seychelles étaient inhabitées avant l'arrivée des Français en 1742 (expédition Lazare Picault). Le premier établissement permanent fut fondé en 1770 par des colons français venant de l'île Bourbon (Réunion) et des esclaves africains qu'ils amenaient avec eux. Les premiers esclaves introduits dans l'archipel venaient de l'île Maurice, puis directement de Mozambique et d'autres régions d'Afrique de l'Est. Les archives indiquent que les Seychelles reçurent les derniers esclaves introduits dans l'océan Indien. Les ancêtres des Créoles seychellois sont principalement des esclaves bantous d'Afrique de l'Est et des Malgaches, avec des mélanges de sang français, indien et chinois selon les familles.",
+      "formationPeriod": "La population créole seychelloise se constitua entre 1770 et l'abolition de l'esclavage par les Britanniques en 1835. La langue créole seychelloise se forma en parallèle, très proche du créole mauricien et réunionnais (base lexicale française, avec substrats africains, malgaches et quelques emprunts anglais). Après 1835, des travailleurs sous contrat indiens (Tamouls) et plus tard des Chinois rejoignirent l'archipel.",
+      "migrationRoutes": [
+        "Esclavage transocéanique : Mozambique, côte swahilie, Madagascar vers les Seychelles (1770-1835)",
+        "Migration interne : esclaves de Maurice transférés aux Seychelles lors des premières années de colonisation",
+        "Engagement indenturé : Inde du Sud (Tamouls) vers les Seychelles après 1835",
+        "Migration commerciale : Chine (province du Guangdong) via Maurice vers les Seychelles au XIXe siècle"
+      ],
+      "historicalSettlementZones": [
+        "Île Mahé (principale île, capitale Victoria, majorité de la population)",
+        "Île Praslin (deuxième île en importance)",
+        "Île La Digue (communauté créole aux traditions préservées)",
+        "Îles extérieures (Aldabra, Cosmoledo) — populations créoles de pêcheurs"
+      ],
+      "unificationsOrDivisions": "La société seychelloise est historiquement plus homogène ethniquement que celle de Maurice, avec une majorité créole nette (90% de la population). La stratification sociale héritée de la plantation (Blancs propriétaires, Colorés, Noirs) s'est atténuée après l'indépendance (1976) et la révolution socialiste menée par France-Albert René (1977-2004). La politique officielle valorise l'unité nationale créole.",
+      "externalInfluences": "Colonisation française (1742-1814) : apport du catholicisme, de la langue française et des structures de plantation. Colonisation britannique (1814-1976) : introduction de l'anglais comme langue administrative. Indépendance (1976) et coup d'État socialiste (1977) : nationalisation des terres et politiques d'égalitarisme social. Réouverture au multipartisme (1993). Influence culturelle indienne et chinoise marginale mais persistante.",
+      "majorHistoricalEvents": "1742 : expédition Picault, premières explorations françaises. 1770 : premier établissement permanent avec esclaves africains. 1835 : abolition de l'esclavage. 1903 : les Seychelles deviennent une colonie britannique distincte de Maurice. 1976 : indépendance. 1977 : coup d'État de France-Albert René, instauration du parti unique socialiste. 1993 : retour au multipartisme. 2021 : inscription de la Moutya au patrimoine immatériel de l'UNESCO."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Pas de chefferie ou royauté précoloniale (îles inhabitées). Organisation en communautés de villages et de paroisses catholiques sous la colonisation. Depuis l'indépendance, système présidentiel. Le Parti Lepep (People's Party) de France-Albert René gouverna de 1977 à 2004, dans un cadre de parti unique puis de multipartisme controlé. La société seychelloise est caractérisée par un fort rôle de l'État dans la redistribution économique.",
+      "clanOrganization": "Organisation en familles étendues. Le foyer seychellois est souvent matrifocal dans les milieux populaires créoles : la femme joue un rôle économique central. Les familles élargies constituent des réseaux de solidarité essentiels pour le logement, la garde des enfants et l'entraide économique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignées familiales sont importantes pour l'identité sociale, mais la société seychelloise est relativement fluide ethniquement du fait des métissages continus. Les patronymes d'origine française (hérités des maîtres esclavagistes) dominent, côtoyant des noms d'origine africaine, malgache, indienne ou chinoise.",
+      "religiousAuthority": "Catholicisme romain dominant (61,3% de la population selon le recensement 2022). L'Église catholique joue un rôle éducatif et social important. Protestantisme (anglicans, adventistes) chez une minorité. Hindouisme pratiqué par les Indo-Seychellois (5,4%). Islam présent chez 1,6% de la population. Syncrétisme afro-créole discret : pratiques de gris-gris et de sorcellerie héritées de la tradition africaine."
+    },
+    "languages": {
+      "mainLanguage": "Kreol Seselwa (créole seychellois)",
+      "isoCodes": ["crs"],
+      "dialects": [
+        "Seselwa standard (variété de Mahé, lingua franca nationale)",
+        "Parler de La Digue (variété légèrement distincte avec archaïsmes)"
+      ],
+      "vehicularRole": "Le Kreol Seselwa est langue officielle des Seychelles depuis 1978, aux côtés du français et de l'anglais. C'est la langue maternelle de 91% de la population (environ 91 000 locuteurs). Il est utilisé au Parlement national (l'Assemblée nationale conduit ses débats en créole), dans les médias et dans la vie quotidienne. L'Assemblée nationale seychelloise est la seule institution parlementaire africaine à conduire ses débats officiellement en créole. Code ISO 639-3 : crs. Glottocode : sese1246."
+    },
+    "culture": {
+      "majorRites": "Rites catholiques prédominants : baptême, confirmation, mariage à l'église, funérailles avec veillées communautaires. Moutya : musique et danse rituelle héritée des esclaves, pratiquée lors de rassemblements nocturnes au bord de la mer (bazars de plage). Historiquement associée à la résistance à l'esclavage, elle était pratiquée secrètement la nuit dans les plantations. Festival Kreol (festival international créole, octobre-novembre à Mahé) : grand rassemblement culturel annuel valorisant les danses, la musique, la gastronomie et l'artisanat créoles seychellois et des autres nations créoles de l'océan Indien. Fête de l'Indépendance (29 juin) : célébrations nationales avec spectacles de musique et de danse traditionnelle.",
+      "symbols": "La tortue géante des Aldabra (Aldabrachelys gigantea) est l'animal emblématique des Seychelles. Le coco de mer (Lodoicea maldivica), palmier endémique de Praslin, est le symbole naturel et culturel le plus connu de l'archipel. Le tambour (tam-tam, tambour en peau de chèvre) est l'instrument central de la moutia. L'architecture créole traditionnelle (maisons en bois sur pilotis, toits en tôle colorée, vérandas en dentelle de bois) est un symbole visuel de l'identité seychelloise.",
+      "artsAndMusic": "Moutia : danse et musique d'origine esclavagiste, accompagnée de grands tambours en peau de chèvre. Inscrite au patrimoine immatériel de l'UNESCO en 2021. La moutia est un dialogue chanté entre un meneur et le chœur, thèmes de douleur, résistance et amour. Le terme vient du bantou mutcira, danse de la province de Nampula (Mozambique). Séga seychellois : forme de séga propre à l'archipel, influencée par la moutia. Kontredans : danse dérivée de la contredanse européenne, très populaire dans les fêtes villageoises et scolaires. Musique tambour : percussions traditionnelles avec tambour et tam-tam. Instruments : tambour (tam-tam en peau de chèvre), triangle, zez (cithare monochorde). Groupes musicaux emblématiques : Waves, Nouvelles Seychelles. Artisanat : sculpture sur coco de mer, vannerie, peinture naïve représentant la vie maritime et rurale.",
+      "spiritualities": "Catholicisme romain dominant (61,3% selon recensement 2022). Pratiques syncrétiques afro-créoles discrètes : gris-gris (magie de protection et envoûtement), pratiques héritées des traditions africaines bantou. Hindouisme des Indo-Seychellois avec temples tamouls. Islam de la minorité musulmane d'origine indienne. Syncrétisme généralisé dans la pratique quotidienne, où prières catholiques et gris-gris coexistent dans de nombreuses familles créoles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de structure politique précoloniale (îles inhabitées). Les Seychelles créoles développèrent une identité nationale forte après l'indépendance (1976). La révolution socialiste de France-Albert René (1977) s'appuya sur la mobilisation de la majorité créole pauvre contre l'élite franco-seychelloise propriétaire terrienne. Cette dynamique politique nationale distingue les Seychelles de Maurice, où les tensions ethniques ont une autre configuration.",
+      "relationsWithNeighbors": "Relations culturelles étroites avec Maurice (langue créole apparentée, maloya-séga, histoire commune de la plantation). Liens avec les Comores, Madagascar et l'Afrique de l'Est via les origines ethniques et les routes de pêche. Participation active aux organisations régionales de l'océan Indien : Commission de l'océan Indien, Organisation internationale de la Francophonie. Hôte du Festival Kreol international, rassemblement annuel des nations créoles (Maurice, Réunion, Martinique, Guadeloupe, Haïti, Cap-Vert, São Tomé).",
+      "conflictsOrAlliances": "Résistances des esclaves à la colonisation française et britannique (rébellions isolées, marronnage limité du fait de la petite taille des îles). Coup d'État de France-Albert René en 1977 : mouvement révolutionnaire socialiste. Tentative de coup d'État soutenue par des mercenaires sud-africains en 1981 (affaire Mike Hoare, avortée). Retour au multipartisme en 1993. Les Seychelles maintiennent une politique étrangère de neutralité et de non-alignement.",
+      "diaspora": "Diaspora seychelloise estimée à 15 000-20 000 personnes, principalement au Royaume-Uni, en France, en Australie et à Maurice. Relativement modeste du fait de la petite taille du pays. Des communautés seychelloises créoles maintiennent la langue et les pratiques culturelles créoles dans ces diasporas."
+    },
+    "demography": {
+      "totalPopulation": 100600,
+      "referenceYear": 2025,
+      "source": "CIA World Factbook — Seychelles 2024 (population estimée : 100 600 en 2022). Les Créoles seychellois représentent environ 90% de la population totale, soit environ 90 000 personnes. Source complémentaire : Wikipedia EN — Seychellois Creole people (environ 76 000 en 2010, chiffre sous-estimé par rapport aux données actuelles) ; Seychelles National Bureau of Statistics.",
+      "distributionByCountry": [
+        {
+          "country": "SYC",
+          "population": 90000,
+          "note": "Environ 90% de la population totale de 100 600 habitants (CIA World Factbook 2022). Concentration sur Mahé (90% de la population), Praslin et La Digue."
+        },
+        {
+          "country": "GBR",
+          "population": 5000,
+          "note": "Diaspora seychelloise au Royaume-Uni (estimation)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Seychellois Creole people. https://en.wikipedia.org/wiki/Seychellois_Creole_people",
+      "Wikipedia EN — Seychellois Creole (langue). https://en.wikipedia.org/wiki/Seychellois_Creole",
+      "SIL Ethnologue — Seychelles French Creole (crs). https://www.ethnologue.com/language/crs/",
+      "UNESCO — Moutya, patrimoine immatériel (2021). https://ich.unesco.org/en/RL/moutya-01559",
+      "Seychelles.com — The People of Seychelles: A Melting Pot of Cultures. https://www.seychelles.com/blog-details/2589/highlights/people-seychelles-melting-pot-cultures",
+      "The Creole Melting Pot — The Moutya in Seychelles: a Brief History. https://www.thecreolemeltingpot.com/the-moutya-in-seychelles-a-brief-history/",
+      "CIA World Factbook — Seychelles. https://www.cia.gov/the-world-factbook/countries/seychelles/"
+    ]
+  }
+}

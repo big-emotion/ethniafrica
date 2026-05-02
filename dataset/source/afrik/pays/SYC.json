@@ -1,0 +1,217 @@
+{
+  "id": "SYC",
+  "nameFr": "République des Seychelles (Republic of Seychelles, Repiblik Sesel)",
+  "nameOfficial": "République des Seychelles (Republic of Seychelles, Repiblik Sesel)",
+  "etymology": "Le nom \"Seychelles\" vient de Jean Moreau de Séchelles, contrôleur général des finances de Louis XV, roi de France. Les îles ont été nommées \"Seychelles\" par les Français en 1756 en son honneur. Le nom créole \"Sesel\" est dérivé de \"Seychelles\". Auparavant, les îles étaient appelées \"Îles de la Ligne\" ou \"Îles de la Soif\" par les navigateurs.",
+  "nameOriginActor": "Les Français ont nommé les îles \"Seychelles\" en l'honneur de Jean Moreau de Séchelles, contrôleur général des finances de Louis XV (1756). Le nom a été conservé par les Britanniques puis officialisé lors de l'indépendance (1976).",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Les îles des Seychelles étaient inhabitée. Pas de présence humaine avant l'arrivée des Européens.",
+      "middleAges": "Les îles restent inhabitée. Pas de présence humaine permanente.",
+      "precolonial": "Les îles restent inhabitée jusqu'à l'arrivée des Européens. Les navigateurs utilisaient les termes \"Îles de la Ligne\" ou \"Îles de la Soif\". Pas de structures politiques ou sociales.",
+      "colonization": "1756-1814 : Colonie française des Seychelles. 1814-1976 : Colonie britannique des Seychelles. Les Français ont nommé les îles \"Seychelles\" en 1756. Colonisation française puis britannique, développement de l'économie de plantation (coco, vanille, épices), importation d'esclaves africains et malgaches, développement du peuple créole seychellois. Le nom \"Seychelles\" est officialisé par les Français puis conservé par les Britanniques.",
+      "contemporary": "1976 : Indépendance (29 juin 1976), proclamation de la République des Seychelles. Le nom \"Seychelles\" est officiel."
+    },
+    "kingdoms": [
+      {
+        "name": "Îles déserte",
+        "period": "Avant 1756",
+        "dominantPeoples": ["Aucun (îles inhabitée)"],
+        "politicalCenters": ["Aucun"],
+        "historicalRole": "Les îles des Seychelles étaient inhabitée avant l'arrivée des Européens en 1756."
+      },
+      {
+        "name": "Colonie française des Seychelles",
+        "period": "1756 - 1814",
+        "dominantPeoples": [
+          "Français",
+          "esclaves africains et malgaches",
+          "créoles seychellois"
+        ],
+        "politicalCenters": ["Mahé (capitale coloniale)"],
+        "historicalRole": "Colonisation française, développement de l'économie de plantation (coco, vanille, épices), importation d'esclaves africains et malgaches, développement du peuple créole seychellois."
+      },
+      {
+        "name": "Colonie britannique des Seychelles",
+        "period": "1814 - 1976",
+        "dominantPeoples": [
+          "Britanniques",
+          "créoles seychellois",
+          "immigrants indiens",
+          "immigrants chinois"
+        ],
+        "politicalCenters": ["Victoria (capitale coloniale)"],
+        "historicalRole": "Colonisation britannique, abolition de l'esclavage (1835), immigration indienne et chinoise (commerce), développement de la société multiethnique, mouvements nationalistes (XXe siècle)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Créoles seychellois",
+        "selfAppellation": "Kreol Seselwa",
+        "exonyms": [
+          "Créole seychellois (terme utilisé pour les créoles des Seychelles)"
+        ],
+        "peopleId": "PPL_CREOLE_SEYCHELLES",
+        "mainRegion": "Toutes les îles des Seychelles",
+        "languages": [
+          "Créole seychellois (Kreol Seselwa",
+          "crs",
+          "ISO 639-3)",
+          "français",
+          "anglais"
+        ],
+        "languageFamily": "FLG_CREOLE",
+        "appellationRemarks": "\"Kreol Seselwa\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe créole majoritaire, formé à partir du contact entre les populations africaines (notamment de Madagascar et d'Afrique de l'Est), malgaches, indiennes et les colons français à partir du XVIIIe siècle."
+      },
+      {
+        "name": "Indo-Seychellois",
+        "selfAppellation": "Variées selon les groupes (Indiens seychellois)",
+        "exonyms": [
+          "\"Indiens\" (terme générique)",
+          "\"Indo-Seychellois\" (terme descriptif)"
+        ],
+        "peopleId": "PPL_INDO_SEYCHELLOIS",
+        "mainRegion": "Toutes les îles des Seychelles, majoritairement urbains",
+        "languages": [
+          "Créole seychellois",
+          "français",
+          "anglais",
+          "hindi",
+          "gujarati",
+          "tamoul"
+        ],
+        "languageFamily": "FLG_CREOLE",
+        "appellationRemarks": "Les Indo-Seychellois sont descendants d'immigrants indiens arrivés au XIXe et XXe siècles, principalement pour le commerce. Ils sont majoritairement hindous ou musulmans."
+      },
+      {
+        "name": "Sino-Seychellois",
+        "selfAppellation": "Variées selon les groupes (Chinois seychellois)",
+        "exonyms": [
+          "\"Chinois\" (terme générique)",
+          "\"Sino-Seychellois\" (terme descriptif)"
+        ],
+        "peopleId": "PPL_SINO_SEYCHELLOIS",
+        "mainRegion": "Toutes les îles des Seychelles, majoritairement urbains",
+        "languages": [
+          "Créole seychellois",
+          "français",
+          "anglais",
+          "hakka",
+          "cantonais",
+          "mandarin"
+        ],
+        "languageFamily": "FLG_CREOLE",
+        "appellationRemarks": "Les Sino-Seychellois sont descendants d'immigrants chinois arrivés au XIXe et XXe siècles, principalement pour le commerce. Ils sont majoritairement chrétiens (catholicisme) ou bouddhistes."
+      },
+      {
+        "name": "Franco-Seychellois",
+        "selfAppellation": "Variées selon les groupes (Français seychellois)",
+        "exonyms": [
+          "\"Français\" (terme générique)",
+          "\"Colons\" (terme historique)"
+        ],
+        "peopleId": "PPL_FRANCO_SEYCHELLOIS",
+        "mainRegion": "Toutes les îles des Seychelles, majoritairement urbains",
+        "languages": ["Français", "créole seychellois", "anglais"],
+        "languageFamily": "FLG_CREOLE",
+        "appellationRemarks": "Les Franco-Seychellois sont descendants de colons français. Le terme \"Colon\" est historique et doit être contextualisé. Ils sont majoritairement catholiques."
+      },
+      {
+        "name": "Autres groupes",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_AUTRES_GROUPES",
+        "mainRegion": "Toutes les îles des Seychelles",
+        "languages": [
+          "Langues diverses",
+          "créole seychellois",
+          "français",
+          "anglais"
+        ],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Créole seychellois",
+          "isoCode": "crs"
+        },
+        {
+          "name": "français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "anglais",
+          "isoCode": "eng",
+          "isPrimary": true
+        }
+      ],
+      "culturalTraditions": "Culture créole seychelloise unique, résultat du métissage afro-européen-asiatique. Traditions créoles : musique traditionnelle créole (séga, moutia), danse traditionnelle, poésie orale, artisanat. Festivals traditionnels créoles (Carnaval, etc.). Traditions culinaires créoles. Traditions indiennes (hindouisme, fêtes indiennes, Diwali). Traditions chinoises (fêtes chinoises, Nouvel An chinois). Traditions françaises (influence culturelle française). Identité créole forte et distincte. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture créole seychelloise est riche et préservée.",
+      "dominantReligions": "Christianisme (catholicisme majoritaire), hindouisme (minorité, Indo-Seychellois), islam (minorité, Indo-Seychellois), bouddhisme (minorité, Sino-Seychellois), religions traditionnelles africaines (syncrétisme fréquent)",
+      "lifestyles": "Agriculture (coco, vanille, épices, cultures vivrières), pêche (océan Indien, importante source de protéines), commerce et activités urbaines (zones urbaines, Victoria). Urbanisation importante. Économie basée sur le tourisme (secteur majeur), la pêche, l'agriculture (coco, vanille, épices), et les services financiers. Les Seychelles sont l'un des pays les plus développés d'Afrique, avec un IDH élevé et une économie diversifiée.",
+      "socialOrganization": "Société créole multiethnique et multiculturelle. Structures familiales traditionnelles créoles. Organisation communautaire (communautés créoles, indiennes, chinoises, françaises). Structures étatiques modernes (république démocratique). Cohabitation pacifique des différentes communautés. Système politique démocratique stable.",
+      "regionalRelations": "Relations avec l'Afrique (membre de l'Union africaine, SADC), relations avec l'Asie (relations avec l'Inde, la Chine), relations avec l'Europe (Union européenne, France, Royaume-Uni), relations avec les îles de l'océan Indien (Maurice, Réunion, Madagascar). Les Seychelles sont un centre touristique régional."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Les îles des Seychelles étaient inhabitée. Pas de présence humaine avant l'arrivée des Européens.",
+      "middleAges": "Les îles restent inhabitée. Pas de présence humaine permanente.",
+      "precolonial": "Les îles restent inhabitée jusqu'à l'arrivée des Européens. Les navigateurs utilisaient les termes \"Îles de la Ligne\" ou \"Îles de la Soif\". Pas de structures politiques ou sociales.",
+      "colonization": "1756-1814 : Colonie française des Seychelles, développement de l'économie de plantation (coco, vanille, épices), importation d'esclaves africains et malgaches, développement du peuple créole seychellois. 1814-1976 : Colonie britannique des Seychelles, abolition de l'esclavage (1835), immigration indienne et chinoise (commerce), développement de la société multiethnique.",
+      "independenceStruggle": "1960s-1976 : Mouvements nationalistes, SPUP (Seychelles People's United Party), SDP (Seychelles Democratic Party), indépendance (29 juin 1976), proclamation de la République des Seychelles. James Mancham devient premier président.",
+      "postIndependence": "République des Seychelles (1976), présidence de James Mancham (1976-1977), coup d'État (1977), présidence de France-Albert René (1977-2004, régime socialiste, parti unique jusqu'en 1991), transition démocratique (1991), élections multipartites, présidence de James Michel (2004-2016), Danny Faure (2016-2020), Wavel Ramkalawan (depuis 2020). Stabilité politique, démocratie multipartite, développement économique (tourisme, pêche, services financiers). Les Seychelles sont l'un des pays les plus développés d'Afrique, avec un IDH élevé et une économie diversifiée."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Seychelles",
+      "SIL Ethnologue – Languages of Seychelles",
+      "Recensements seychellois",
+      "Études anthropologiques sur les peuples des Seychelles",
+      "Études historiques sur la colonisation française et britannique"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Créoles seychellois",
+          "population": 90000,
+          "percentageInCountry": 90,
+          "peopleId": "PPL_CREOLE_SEYCHELLES",
+          "region": "Toutes les îles des Seychelles",
+          "languageFamily": "FLG_CREOLE"
+        },
+        {
+          "name": "Indo-Seychellois",
+          "population": 5000,
+          "percentageInCountry": 5,
+          "peopleId": "PPL_INDO_SEYCHELLOIS",
+          "region": "Toutes les îles des Seychelles, majoritairement urbains",
+          "languageFamily": "FLG_CREOLE"
+        },
+        {
+          "name": "Sino-Seychellois",
+          "population": 2000,
+          "percentageInCountry": 2,
+          "peopleId": "PPL_SINO_SEYCHELLOIS",
+          "region": "Toutes les îles des Seychelles, majoritairement urbains",
+          "languageFamily": "FLG_CREOLE"
+        },
+        {
+          "name": "Franco-Seychellois",
+          "population": 1000,
+          "percentageInCountry": 1,
+          "peopleId": "PPL_FRANCO_SEYCHELLOIS",
+          "region": "Toutes les îles des Seychelles, majoritairement urbains",
+          "languageFamily": "FLG_CREOLE"
+        },
+        {
+          "name": "Autres groupes",
+          "population": 2000,
+          "percentageInCountry": 2,
+          "peopleId": "PPL_AUTRES_GROUPES",
+          "region": "Toutes les îles des Seychelles"
+        }
+      ]
+    }
+  }
+}

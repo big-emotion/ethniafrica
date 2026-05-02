@@ -1,0 +1,99 @@
+{
+  "id": "PPL_BONGO",
+  "nameMain": "Bongo",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["SSD", "UGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Bongo",
+      "selfAppellation": "Bongo",
+      "exonyms": ["Bungu", "Dor"],
+      "originOfExonyms": "Le terme Bungu est une variante phonetique du nom Bongo utilisee dans certaines sources coloniales et linguistiques. Dor est un exonyme employe par des voisins; Georg Schweinfurth, botaniste allemand qui vecut parmi eux en 1869, les designa sous le nom Bongo dans ses recits.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Bongo est utilise en anglais et dans les langues regionales du Soudan du Sud. La communaute est dispersee en petits villages au sud et a l'est de Wau et est souvent confondue avec d'autres minorites de la region.",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Soudanique central (Bongo-Baka)",
+      "historicalRegion": "Bahr el Ghazal occidental (Soudan du Sud), district de Tonj, region de Wau",
+      "currentCountries": ["SSD", "UGA"]
+    },
+    "ethnicities": [
+      "Bongo de Tonj (Tonj District, Bahr el Ghazal occidental)",
+      "Bongo de la region de Wau (petits etablissements disperses au sud et a l'est de Wau)",
+      "Bongo du nord-ouest de l'Ouganda (rive est du Nil Albert)",
+      "Groupe des sculpteurs de Tonj (specialistes hereditaires des ngya, poteaux funeraires sculptes)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bongo sont un peuple soudanique central originaire de la region occidentale du Soudan du Sud actuel. Avant les raids d'esclaves du milieu du 19e siecle, leur population etait estimee a au moins 300 000 personnes par l'explorateur Georg Schweinfurth (1869). Ils faisaient partie de la vaste famille linguistique Bongo-Baka (Nilo-Saharienne, soudanique central). Leurs anciens territoires couvraient une grande partie du Bahr el Ghazal occidental, depuis la region de Wau jusqu'au Nil Albert.",
+      "formationPeriod": "L'identite bongo s'est consolidee plusieurs siecles avant la colonisation. Leurs structures sociales, leur langue et leurs pratiques artistiques funeraires distinctives (poteaux ngya) sont attestees des le debut du 19e siecle par les premiers explorateurs europeens, notamment John Petherick (1855) qui observa des poteaux funeraires sculptes.",
+      "migrationRoutes": [
+        "Implantation ancestrale dans le Bahr el Ghazal occidental, sans migration fondatrice documentee vers l'exterieur",
+        "Repli progressif vers des etablissements disperses suite aux raids d'esclaves arabes et mahdistes (18e-19e siecles)",
+        "Presence documentee en Ouganda du nord-ouest sur la rive est du Nil Albert"
+      ],
+      "historicalSettlementZones": [
+        "Bahr el Ghazal occidental, Soudan du Sud (region de Wau, district de Tonj)",
+        "Rive est du Nil Albert, Ouganda du nord-ouest",
+        "Petits etablissements disperses le long des routes rurales du Bahr el Ghazal"
+      ],
+      "unificationsOrDivisions": "Les differents sous-groupes bongo etaient separes par des miles de brousse et n'avaient qu'une affiliation lache entre eux. Cette absence de cooperation fut decisive dans leur decimation face aux vagues d'envahisseurs. Les chefs avaient peu d'autorite formelle; leur influence reposait sur la richesse et la connaissance magique plutot que sur le pouvoir coercitif.",
+      "externalInfluences": "Raids d'esclaves arabes et mahdistes depuis le 18e siecle, qui reduisirent drastiquement leur population. Colonisation britannique du Soudan a partir de 1904-1906, qui permit une recuperation demographique. Influence du christianisme depuis les missions catholiques (Verona Fathers). Contacts commerciaux avec les Nuer dans la ville de Tonj.",
+      "majorHistoricalEvents": "Avant 1850, population estimee a 300 000 personnes. Decimation par les raids d'esclaves arabes et les partisans mahdistes a partir du milieu du 19e siecle. Georg August Schweinfurth vecut parmi eux en 1869 et decrivit leurs coutumes et l'art funeraire. Etablissement du controle colonial britannique en 1904-1906, permettant une reprise demographique. En 1917, l'anthropologue Charles G. Seligman publia la premiere photographie d'une sculpture funeraire bongo. Andreas et Waltraud Kronenberg menerent une etude detaillee des tombes bongo en 1958-1959. Le pere catholique Stefano Santandrea publia en 1963 une grammaire du bongo."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en villages autonomes diriges par des chefs (loma) dont l'autorite reposait sur la richesse personnelle et la connaissance magique plutot que sur une structure hierarchique formelle. Les chefs etaient consultes pour les affaires juridiques et sociales importantes mais ne disposaient pas d'un pouvoir executif fort. La societe etait politiquement decentralisee, chaque village gerant ses propres affaires.",
+      "clanOrganization": "Structure clanique patrilineaire. Les lignages patrilleaires determinaient l'appartenance sociale et l'acces aux ressources. Les sculpteurs de poteaux funeraires (ngya) constituaient un sous-groupe specialise, typiquement originaire du groupe de Tonj.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires organisaient la vie sociale et determinaient les alliances. Le statut social d'un homme etait renforce par ses reussites a la chasse (elephants, lions, leopards, buffles) et au combat, commemorees apres sa mort par des poteaux funeraires ngya ornes d'encoches comptabilisant ses exploits. Les parents erigeaient ces sculptures environ un an apres le deces lors d'une fete commemorative.",
+      "religiousAuthority": "Autorite des chefs traditionnels possedant des connaissances magiques (loma). Syncrétisme progressif avec le christianisme catholique (mission des Peres de Verone). Les sculptures funeraires ngya jouaient un role rituel: elles honoraient les defunts, soulignaient leur statut, et pouvaient servir a identifier un meurtrier lors de jugements."
+    },
+    "languages": {
+      "mainLanguage": "Bongo (Bungu)",
+      "isoCodes": ["bot"],
+      "dialects": [
+        "Bongo de Tonj (dialecte de reference, parle par les sculpteurs traditionnels)",
+        "Bongo de Wau (parle dans les etablissements pres de Wau)",
+        "Langues apparentees: Baka, Mittu, Beli, Sopi, Namusa, Moro Kodo, Moro Wadi, Biti, Wira (meme famille Bongo-Baka, non intelligibles)"
+      ],
+      "vehicularRole": "Le bongo est la langue maternelle de tous les membres de la communaute ethnique. Il n'est pas enseigne dans les ecoles. L'anglais est utilise comme langue officielle au Soudan du Sud. Le bongo est classe comme langue stable mais parlee par une petite communaute. Le pere Santandrea publia en 1963 une grammaire de la langue bongo (Concise grammar outline of the Bongo language)."
+    },
+    "culture": {
+      "majorRites": "Rites funeraires: les Bongo pratiquent un enterrement dans un puits vertical avec une chambre laterale pour le corps en position contractee, ferme par des pieux en bois et recouvert de pierres. Environ un an apres le deces d'un homme important, ses parents organisent une fete commemorative et dressent des poteaux funeraires anthropomorphes (ngya) sculptes ainsi que des poteaux a encoches enregistrant le nombre d'animaux tues (elephant, lion, leopard, buffle) et d'ennemis vaincus. Rites de mariage avec dot. Rites agricoles lies au cycle de l'igname, du sorgho et du sesame.",
+      "symbols": "Poteaux funeraires ngya (statues anthropomorphes en bois, grandeur nature, representant les defunts importants). Encoches sur poteaux commemorant les exploits de chasse. Bracelets en fer et scarifications comme marqueurs identitaires representes sur les sculptures. Tatouages faciaux (representés sur les sculptures par des incrustations metalliques).",
+      "artsAndMusic": "Sculpture sur bois: tradition unique de poteaux funeraires ngya, sculptures anthropomorphes grandeur nature erigees sur les tombes des hommes importants. Realisees par des specialistes hereditaires du groupe de Tonj, ces oeuvres representent le defunt suivi de sa femme, ses enfants, et parfois ses victimes. La plus grande mesurait 240 cm (exposee au Musee du quai Branly, Paris). Le Metropolitan Museum of Art (New York) et l'Universite lutherienne du Pacifique (Washington) conservent des exemples. Artisanat du fer: les Bongo etaient reputes pour leur metallurgie et fournissaient leurs voisins en outils en fer jusqu'a ce que le fer importe remplace le fer forge localement. Vannerie, poterie. Musique traditionnelle vocale et instrumentale. Poesie orale.",
+      "spiritualities": "Religion traditionnelle centree sur le culte des ancetres et la propitiation des forces spirituelles. Les sculptures funeraires ngya jouaient un role spiritual: elles representaient le defunt, maintenaient son statut dans l'au-dela, et pouvaient epouvanter les sorciers. En contexte judiciaire, une sculpture representant un homme tue pouvait etre utilisee pour effrayer le coupable et lui faire avouer son crime (d'apres Schweinfurth, 1869). Syncrétisme progressif avec le christianisme catholique depuis les missions des Peres de Verone. En 1990, environ 40% de la communaute etait musulmane. Les croyances sur les ancetres coexistent avec les pratiques chretiennes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Bongo n'ont pas forme de royaumes centralises. Leur organisation etait fondee sur des chefferies villageoises autonomes. Les chefs (loma) avaient une autorite morale et magique plutot que politique. Cette decentralisation, si elle preservait l'autonomie locale, les rendit vulnerables face aux invasions coordonnees des raiders d'esclaves arabes et mahdistes.",
+      "relationsWithNeighbors": "Relations commerciales avec les Nuer: une sculpture funeraire bongo fut installee avant 1914 dans un marche de la ville de Tonj pour faciliter les echanges commerciaux entre Bongo et Nuer. Relations de voisinage avec les Belanda (Moru), Dinka et autres peuples du Bahr el Ghazal. Contrairement aux Dinka et autres groupes nilotiques, les Bongo ne sont pas des eleveurs de betail et n'utilisent pas les bovins comme dot.",
+      "conflictsOrAlliances": "Decimation par les raids d'esclaves arabes a partir du 18e siecle: leur population passa d'au moins 300 000 (avant 1850) a une fraction de ce nombre. Les partisans mahdistes du nord du Soudan accelererent ce declin. L'etablissement du controle colonial britannique en 1904-1906 mit fin aux raids et permit une recuperation demographique partielle. Les guerres civiles soudanaises (1955-1972, 1983-2005) et le conflit au Soudan du Sud ont continue d'affecter les communautes bongo.",
+      "diaspora": "La diaspora bongo est limitee, consequence de leur petit nombre et de leur isolement geographique. Quelques membres de la communaute se trouvent dans les grandes villes du Soudan du Sud (Wau, Djouba) et en Ouganda du nord-ouest. Des sculptures bongo ont ete collectees par des voyageurs europeens a partir des annees 1970 et se trouvent dans des musees en Europe et en Amerique du Nord."
+    },
+    "demography": {
+      "totalPopulation": 21000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (population 21 000 au Soudan du Sud). Estimation debut des annees 1990: 200 000 personnes (Wikipedia). PeopleGroups.org estime environ 16 000 personnes. Ecarts importants selon les sources; la population a ete drastiquement reduite par les raids d'esclaves et les conflits. SIL Ethnologue code bot.",
+      "distributionByCountry": [
+        {
+          "country": "SSD",
+          "population": 20000,
+          "note": "Bahr el Ghazal occidental (district de Tonj, region de Wau), petits etablissements disperses"
+        },
+        {
+          "country": "UGA",
+          "population": 1000,
+          "note": "Nord-ouest de l'Ouganda, rive est du Nil Albert"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bongo people (South Sudan). https://en.wikipedia.org/wiki/Bongo_people_(South_Sudan)",
+      "Britannica — Bongo people. https://www.britannica.com/topic/Bongo-people",
+      "Metropolitan Museum of Art — Reclaiming the Histories of The Met's Bongo Ngya (2018). https://www.metmuseum.org/perspectives/bongo-commemorative-post-ngya",
+      "SIL Ethnologue — Bongo language (bot). https://www.ethnologue.com/language/bot/",
+      "Joshua Project — Bongo in South Sudan. https://joshuaproject.net/people_groups/10939",
+      "Pacific Lutheran University — Bongo Grave Post. https://www.plu.edu/africanartcollection/figures/bongo-grave-post/learn-more-bongo-grave-post/",
+      "Santandrea, Stefano. Concise grammar outline of the Bongo language. 1963.",
+      "Schweinfurth, Georg. Au Coeur de l'Afrique 1868-1871. Paris, 1875."
+    ]
+  }
+}

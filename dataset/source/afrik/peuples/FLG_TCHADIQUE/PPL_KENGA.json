@@ -1,0 +1,93 @@
+{
+  "id": "PPL_KENGA",
+  "nameMain": "Kenga",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["TCD"],
+  "content": {
+    "appellations": {
+      "mainName": "Kenga",
+      "selfAppellation": "Kenga",
+      "exonyms": ["Kinga", "Kenge", "Cenge"],
+      "originOfExonyms": "Le terme Kenga est le nom usuel adopte par les explorateurs et administrations coloniales europeennes. Les variantes Kinga, Kenge et Cenge sont des transcriptions phonetiques alternatives utilisees dans les litteratures anthropologiques francophones et anglophones.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Kenga est utilise de maniere courante en francais et en arabe tchadien. Les locuteurs se designent eux-memes par ce meme nom. Le peuple est aussi designe Kinga dans certaines sources anglophones.",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Sara-Bongo-Baguirmi (branche Nilo-saharienne)",
+      "historicalRegion": "Region de Guera (Hadjeray), centre-sud du Tchad, pres de Mongo et Melfi",
+      "currentCountries": ["TCD"]
+    },
+    "ethnicities": [
+      "Kenga proprement dits (Bitkini Kenga), canton de Bitkine, sous-prefecture de Bitkine : groupe fondateur associe a la creation du royaume de Baguirmi",
+      "Kinga proprement dits, groupe central de la confederation kenga dans les collines de Guera",
+      "Kenga des plaines (proches de Mongo et Melfi) : agriculteurs specialises dans la culture du mil et l'exploitation de l'acacia pour la gomme arabique",
+      "Kenga de N'Djamena : diaspora urbaine ayant integre l'economie moderne tchadienne",
+      "Communautes mixtes dans les quelque 70 villages Hadjeray cohabitant avec des groupes arabes ou arabises et de petites communautes Bonuan"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kenga sont originaires de l'est, de la region du Darfour au Soudan, dont ils auraient migre vers l'ouest au XVe siecle pour s'installer dans les collines de la region Hadjeray, en territoire tchadien. Leur presence ancienne dans ces massifs montagneux leur a permis d'adapter progressivement leurs techniques agricoles aux conditions difficiles de cette zone situee en bordure meridionale du Sahara.",
+      "formationPeriod": "L'identite kenga s'est consolidee au XVe et XVIe siecles lors de l'implantation dans les collines Hadjeray et de la participation au fondement du royaume de Baguirmi vers 1522. La communaute Bitkini Kenga est associee a la migration fondatrice menee par Dala Birni vers Massenya.",
+      "migrationRoutes": [
+        "Migration depuis la region du Darfour (Soudan) vers l'ouest au XVe siecle",
+        "Installation dans les collines Hadjeray, pres de Mongo et Melfi, region de Guera"
+      ],
+      "historicalSettlementZones": [
+        "Canton de Kenga, sous-prefecture de Bitkine, region de Guera",
+        "Collines Hadjeray, centre-sud du Tchad",
+        "Diaspora a N'Djamena, capitale du Tchad"
+      ],
+      "unificationsOrDivisions": "Les Kenga font partie du complexe ethnique Hadjeray, qui rassemble aussi les Dajus, Junkunes, Dangaleats, Mogums, Sokoros, Sabas, Baraines, Bidios, Yalnas, Bolgos et autres groupes montagnardspartageant une proximite geographique et linguistique sans former une unite politique centrale.",
+      "externalInfluences": "Influence islamique depuis le XVIe siecle via le royaume de Baguirmi. Contacts reguliers avec les Arabes des plaines voisines (echanges de mil contre lait, viande et objets). Vassalite tributaire vis-a-vis du sultanat de Baguirmi du XVIIe au XIXe siecle. Influence missionnaire chretienne au XXe siecle.",
+      "majorHistoricalEvents": "Vers 1522, les Kenga Bitkini participent a la fondation du royaume de Baguirmi, dont Dala Birni serait le chef fondateur installe a Massenya. Du XVIIe au XIXe siecle (1608-1806), le Baguirmi islamise pratique la traite des esclaves, capturant notamment des populations Sara voisines. Les Kenga et les Sokoro font partie des peuples soumis a tribut par le Baguirmi. En 1960, les peuples Hadjeray, dont les Kenga, jouent un role prominent dans la rebellion contre le gouvernement national tchadien nouvellement independant."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies villageoises. Chaque village est dirige par un chef ou homme de tete charge principalement du reglement des conflits internes. Il existe parallelement un chef de la terre, detenteur du pouvoir religieux du village, distinct du chef politique. Les villages sont regroupes dans le canton de Kenga, sous-prefecture de Bitkine.",
+      "clanOrganization": "Structure clanique patrilineaire. Les villages comportent plusieurs clans, chacun occupant son propre quartier au sein du village. La societe est organisee en familles etendues et lignages.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite sociale, les alliances matrimoniales et l'acces aux terres agricoles. Chaque compound regroupe les cases d'une famille etendue patrilineaire.",
+      "religiousAuthority": "Islam sunnite majoritaire depuis le XVIe siecle, mais des pratiques pre-islamiques subsistent, notamment le culte des esprits margal. Les leaders religieux islamiques (imams) coexistent avec les chefs de la terre, detenteurs des rites traditionnels de protection des recoltes et du territoire."
+    },
+    "languages": {
+      "mainLanguage": "Kenga",
+      "isoCodes": ["kyq"],
+      "dialects": [
+        "Kenga proprement dit (variete du canton de Bitkine)",
+        "Varietes regionales des collines Hadjeray"
+      ],
+      "vehicularRole": "Le kenga (ISO 639-3 : kyq) appartient a la famille Sara-Bongo-Baguirmi (branche nilo-saharienne), contrairement aux autres langues hadjeray qui sont tchadiques. Il est parle par la communaute kenga dans la sous-prefecture de Bitkine. L'arabe tchadien et le francais sont utilises comme langues vehiculaires avec les voisins et dans les villes. Un Nouveau Testament a ete traduit en kenga."
+    },
+    "culture": {
+      "majorRites": "Celebrations islamiques principales (Ramadan, Aïd el-Kebir, Aïd el-Fitr). Rites de passage : circoncision masculine (rite de passage vers l'age adulte), ceremonies de naissance et de mariage. Cult des esprits margal : rites pre-islamiques de propitiation des esprits protecteurs du terroir, impliquant des sacrifices animaux et des offrandes. Ceremonies agricoles liees au cycle du mil (semailles, recolte). Ces pratiques synchretiques coexistent avec l'islam.",
+      "symbols": "Le mil (sorgho et millet perle) est l'element central de l'identite kenga, base de l'alimentation et de l'economie. Les collines Hadjeray representent le refuge historique et l'identite montagnarde du peuple. La gomme arabique, issue de l'exploitation des acacias, est un symbole de l'activite economique traditionnelle.",
+      "artsAndMusic": "Musique traditionnelle avec percussions et chants collectifs lors des ceremonies. Danse traditionnelle pratiquee lors des fetes et des rites. Tradition de poesie orale transmettant l'histoire et les valeurs. Artisanat : poterie feminine (jarres en argile pour le transport et la conservation de l'eau et du grain), nattage (nattes en feuilles de palmier tressees), tissage du coton. La plupart des objets artisanaux sont produits pour usage domestique.",
+      "spiritualities": "Islam sunnite majoritaire pratique depuis le XVIe siecle. Syncretisme marque : malgre l'adhesion formelle a l'islam, les Kenga restent tres attaches aux rites pre-islamiques, notamment le culte des esprits margal (esprits protecteurs du territoire et des recoltes). Petite minorite chretienne apparue sous l'influence missionnaire du milieu du XXe siecle. Les pratiques religieuses ethniques survivent dans la culture populaire selon les etudes ethno-religieuses."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Kenga Bitkini sont associes a la fondation du royaume de Baguirmi vers 1522, dont Dala Birni est le chef fondateur. Le Baguirmi devint un sultanat islamise au XVIe siecle, rassemblant des groupes sub-sahariens, berberes et arabes, et connut son apogee entre 1608 et 1806 base sur la capture et la vente d'esclaves. Les Kenga forment une chefferie autonome dans le complex Hadjeray-Naba.",
+      "relationsWithNeighbors": "Relations commerciales regulieres avec les Arabes des plaines voisines : echange de mil contre lait, viande et produits forges. Relations complexes avec le sultanat de Baguirmi (vassalite tributaire par intermittence). Integration dans le complexe Hadjeray avec les Dajus, Dangaleats, Bidios, Jongor et autres peuples des collines de Guera, avec qui ils maintiennent des relations generalement pacifiques tout en preservant des identites distinctes et en evitant les mariages mixtes.",
+      "conflictsOrAlliances": "Soumis par intermittence a la tribute du sultanat de Baguirmi (XVIIe-XIXe siecle), aux cotes des Sokoro. En 1960, les Kenga participent avec d'autres groupes Hadjeray a la rebellion contre le gouvernement tchadien independant, affirmant leur resistance aux velleites de centralisation de l'Etat moderne.",
+      "diaspora": "Diaspora kenga dans les grandes villes tchadiennes, notamment N'Djamena, ou certains ont adopte un mode de vie urbain avec des emplois dans les secteurs public et prive, la construction et le commerce. Presence plus modeste dans d'autres pays africains ou occidentaux. Les Kenga de la capitale maintiennent generalement des liens avec leur village d'origine dans la region de Guera."
+    },
+    "demography": {
+      "totalPopulation": 139000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (139 000), Peoplegroups.org 2023 (101 000 a 112 000). Estimation 2025 : environ 139 000 personnes, exclusivement au Tchad.",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 139000,
+          "note": "Canton de Kenga, sous-prefecture de Bitkine, region de Guera; diaspora a N'Djamena"
+        }
+      ]
+    },
+    "sources": [
+      "101 Last Tribes — Kenga people. https://www.101lasttribes.com/tribes/kenga.html",
+      "Joshua Project — Kenga in Chad (profil complet). https://joshuaproject.net/people_groups/12620/CD",
+      "Joshua Project — Kenga in Chad (fiche imprimable). https://joshuaproject.net/people_groups/print/12620/CD",
+      "SIL Ethnologue — Kenga language (kyq). https://www.ethnologue.com/language/kyq",
+      "Wikipedia EN — Kenga language. https://en.wikipedia.org/wiki/Kenga_language",
+      "Peoplegroups.org — Kenga of Chad. https://peoplegroups.org/",
+      "CIA World Factbook — Chad. https://www.cia.gov/the-world-factbook/countries/chad/",
+      "Joshua Project — Chad people groups (vue generale). https://joshuaproject.net/countries/CD"
+    ]
+  }
+}

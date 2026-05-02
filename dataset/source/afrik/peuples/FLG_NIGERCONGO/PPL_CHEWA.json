@@ -1,0 +1,113 @@
+{
+  "id": "PPL_CHEWA",
+  "nameMain": "Chewa",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MOZ", "MWI", "ZMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Chewa",
+      "selfAppellation": "Achewa",
+      "exonyms": [
+        "Cewa (variante orthographique coloniale britannique et portugaise)",
+        "Nyanja (denomination utilisee en Zambie et au Zimbabwe pour le meme peuple/langue)",
+        "Maravi (denomination historique du royaume fondateur)"
+      ],
+      "originOfExonyms": "Le nom Chewa (ou Achewa au pluriel) est l'endonyme du peuple. Nyanja, signifiant lac en langue bantoue, est utilise en Zambie et au Zimbabwe pour designer la meme communaute linguistique, probablement en reference au lac Malawi. Maravi est le nom du grand royaume confedere dont les Chewa sont les descendants directs, encore utilise dans les sources historiques du 17e au 19e siecle.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Chewa est le terme officiel au Malawi. Nyanja est prefere en Zambie et au Zimbabwe. La langue est officiellement appelee Chichewa au Malawi (depuis 1968, anciennement Chinyanja) et Nyanja en Zambie.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone N, groupe N.31)",
+      "historicalRegion": "Malawi central (region de Lilongwe, Kasungu, Ntchisi), Mozambique occidental (province de Tete), Zambie orientale (province de l'Est)",
+      "currentCountries": ["MOZ", "MWI", "ZMB"]
+    },
+    "ethnicities": [
+      "Phiri — clan royal associe aux chefs et a l'aristocratie du royaume Maravi",
+      "Banda — clan des guerisseurs et des mystiques, gardiens des traditions",
+      "Achewa du Malawi central — population majoritaire autour de Lilongwe et Kasungu",
+      "Achewa du Mozambique — province de Tete et province de Niassa",
+      "Achewa de Zambie — province de l'Est (Eastern Province), region de Chipata",
+      "Achewa du Zimbabwe — province de Mashonaland, presence minoritaire"
+    ],
+    "origins": {
+      "ancientOrigins": "Les traditions orales chewa font remonter leurs origines a Malambo, region situee dans le pays Luba de la Republique democratique du Congo actuelle. A partir de la, ils ont migre vers le nord de la Zambie, puis vers le sud et l'est dans les hauts plateaux du Malawi. La fondation du premier royaume chewa est datee aux alentours de 1480. Les Chewa sont les descendants directs du peuple Maravi, qui a fonde l'un des plus grands empires de l'Afrique centre-meridionale aux 16e et 17e siecles.",
+      "formationPeriod": "Au 16e siecle, deux systemes politiques coexistent : le clan Banda a Mankhamba (pres de Nthakataka) et le clan Phiri a Manthimba. Au 17e siecle, l'etat Malawi (Maravi) est unifie. Les contacts avec les Portugais sont attestes entre 1608 et 1667. Vers 1750, plusieurs dynasties Malawi sont consolidees dans le Malawi central. La colonisation britannique au 19e siecle fragmente politiquement le groupe.",
+      "migrationRoutes": [
+        "Migration depuis le pays Luba (DRC) vers le nord de la Zambie",
+        "Descente vers le sud et l'est jusqu'aux hauts plateaux du Malawi",
+        "Expansion vers le Mozambique occidental (Tete) et la Zambie orientale"
+      ],
+      "historicalSettlementZones": [
+        "Region centrale du Malawi (Lilongwe, Kasungu, Ntchisi, Dowa)",
+        "Province de Tete et province de Niassa au Mozambique",
+        "Province de l'Est de la Zambie (Chipata, Petauke)",
+        "Mashonaland au Zimbabwe (minorite)"
+      ],
+      "unificationsOrDivisions": "Le royaume Maravi, fonde avant 1480, constitua une confederation etendue sous l'autorite de chefs supremes (Kalonga, Undi, Lundu). La Paramount Chief Undi (Zambie) et le Kalonga (Malawi) etaient les deux piliers du systeme. L'arrivee des guerriers Ngoni au 19e siecle et la colonisation europeenne ont fragmente le territoire traditionnel en trois Etats modernes (Malawi, Zambie, Mozambique).",
+      "externalInfluences": "Contacts portugais des le 17e siecle (traite de caravanes d'esclaves et d'ivoire). Invasion Ngoni au 19e siecle depuis l'Afrique du Sud (Mfecane), qui a soumis une partie des Chewa. Missions chretiennes britanniques (David Livingstone, UMCA, Church of Scotland) transformant profondement la culture a partir du 19e siecle. Administration coloniale britannique (Nyasaland, 1891-1964).",
+      "majorHistoricalEvents": "Fondation du royaume Maravi avant 1480. Contacts avec les Portugais (1608-1667). Apogee de l'empire Maravi au 17e siecle, controlant le commerce de l'ivoire vers la cote. Invasion Ngoni (19e siecle). Etablissement du protectorat britannique du Nyasaland en 1891. Independance du Malawi en 1964 sous Hastings Banda (lui-meme Chewa). Le Gule Wamkulu est inscrit au patrimoine culturel immateriel de l'UNESCO en 2005 (confirme en 2008)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme matrilineaire et hierarchique de chefferies. Le village est dirige par un headman (Mfumu), ouvert a tout villageois de bonne moralite. Les headmen de village sont subordonnes a des chefs regionaux (Mwini Dziko). Les chefs regionaux rendent compte aux chefs supremes (Paramount Chiefs), dont le plus important est le Paramount Chief Undi en Zambie, reconnu comme chef supreme de tous les Chewa. La subordination implique le versement d'un tribut regulier et la fourniture de guerriers en temps de guerre.",
+      "clanOrganization": "Deux grands clans structurent la societe : le clan Phiri (associe aux chefs et a l'aristocratie) et le clan Banda (associe aux guerisseurs et mystiques). La societe est matrilineaire : les biens, les terres et les identites se transmettent par la ligne maternelle (Bele = famille de la meme ancetre feminine). L'unite familiale elargie (Mbumba) regroupe les enfants d'une meme mere ou ancetre feminine.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Dans la societe matrilineaire chewa, les freres aines des meres (Nkhoswe) sont les tuteurs et mentors des fils de leurs soeurs. Les revenus des ventes agricoles appartiennent a la femme du foyer. Les droits sur la terre et les biens immobiliers se transmettent par la ligne maternelle (Bele). Le mariage implique generalement la residence dans le village de l'epouse (virilocal chez certains groupes, uxorilocal chez d'autres).",
+      "religiousAuthority": "Les membres de la societe secrete Nyau sont les principaux gardiens de l'autorite religieuse et initiatique traditionnelle. Les chefs (Mfumu) ont un role rituel dans les ceremonies liees a la terre et aux ancetres. Depuis la colonisation, le christianisme (protestantisme et catholicisme) est tres repandu, mais environ 20% des Chewa pratiquent l'islam. De nombreux hommes Chewa sont simultanément membres d'une eglise chretienne et de la societe Nyau, illustrant un syncretisme profond."
+    },
+    "languages": {
+      "mainLanguage": "Chichewa (au Malawi) / Chinyanja (en Zambie et Mozambique)",
+      "isoCodes": ["nya"],
+      "dialects": [
+        "Kasungu — dialecte du Malawi central, reference pour le chichewa standard",
+        "Town Nyanja (Lusaka) — dialecte urbain de Lusaka, fortement influence par le bemba, le nsenga et l'anglais, sert de lingua franca a Lusaka",
+        "Likoma Island — dialecte insulaire du lac Malawi",
+        "Kimaravi — dialecte meridional plus archaisant",
+        "Lilongwe region (Kikamtunda) — dialecte des plateaux centraux"
+      ],
+      "vehicularRole": "Le chichewa est la langue nationale officielle du Malawi (aux cotes de l'anglais), parlee par la grande majorite de la population malawite. En Zambie, le nyanja est la langue officielle de la Province de l'Est et l'une des huit langues nationales reconnues. Il sert de lingua franca dans la capitale Lusaka (Town Nyanja). Au Mozambique, reconnu comme langue minoritaire dans les provinces de Tete et Niassa."
+    },
+    "culture": {
+      "majorRites": "Gule Wamkulu (Grande Danse) : rituel initiatique majeur execute par les membres de la societe secrete Nyau lors des ceremonies d'initiation des jeunes hommes a l'age adulte, mais aussi aux mariages, aux funerailles et a l'intronisation ou au deces d'un chef. Les danseurs portent des costumes et des masques de bois et de paille representant des animaux sauvages, des esprits des morts et des personnages historiques. Chaque figure incarne un comportement particulier, souvent negatif, enseignant des valeurs morales et sociales. Inscrit en 2005 et en 2008 sur la Liste representative du patrimoine culturel immateriel de l'UNESCO. Initiation masculine (chinamwali cha amuna) : seclusion et instruction dans la foret, transmission du savoir Nyau. Initiation feminine (chinamwali cha amayi) : puberte marquee par une seclusion et l'instruction aux roles feminins et a la procreation.",
+      "symbols": "Les masques Nyau du Gule Wamkulu sont les symboles identitaires les plus emblematiques des Chewa, representer la frontiere entre le monde des vivants et celui des esprits. Les tatouages faciaux (mphini) distinguaient historiquement les Chewa de leurs voisins. Le lac Malawi (Nyanja), que l'on dit origine du nom Nyanja/Chewa, est un symbole geographique fondateur. Le clan Phiri (feu, royaute) et le clan Banda (eau, medecine) incarnent la dualite complementaire de la societe.",
+      "artsAndMusic": "Le Gule Wamkulu est la forme artistique centrale : masques sculptes en bois d'une grande diversite, costumes de paille et d'ecorce, danses d'une energie extraordinaire. Musique : percussions (tambours de differentes tailles), xylophones, chants polyphoniques lors des ceremonies. Artisanat : poterie, tissage de nattes et de paniers, sculpture de masques (activite masculine reservee aux membres Nyau). Poesie orale (ndakatulo) et proverbes transmis par les anciens. Architecture traditionnelle en adobe et chaume. Les femmes pratiquent la broderie et la confection de vetements.",
+      "spiritualities": "Systeme religieux organise autour de la societe secrete Nyau, gardienne des liens entre le monde des vivants et le monde des esprits. Les ancetres (mizimu) jouent un role central : ils sont invoques et propicies par des offrandes et des ceremonies. La figure de Chauta (ou Chiuta) designe le dieu supreme, createur et omniscient. Le Gule Wamkulu est la manifestation publique de ce systeme spirituel, permettant aux esprits de revenir temporairement dans le monde des vivants sous forme de masques. Syncretisme prononce : la majorite des Chewa sont aujourd'hui chretiens (protestants ou catholiques) tout en maintenant la societe Nyau, environ 20% sont musulmans."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume Maravi, fonde avant 1480, fut l'un des plus grands empires d'Afrique centre-meridionale. A son apogee au 17e siecle, il controlait le commerce de l'ivoire depuis le lac Malawi jusqu'a la cote de Mozambique. Le systeme politique etait une confederation de chefferies sous trois grands chefs supremes : Kalonga (chef suzerain, region de Nthakataka au Malawi), Undi (Province de l'Est, Zambie — titre encore actif aujourd'hui) et Lundu (region de Nsanje au Malawi meridional). Le Paramount Chief Undi reste aujourd'hui le chef traditionnel suprême reconnu de tous les Chewa.",
+      "relationsWithNeighbors": "Relations commerciales avec les marchands arabes et swahilis de la cote du Mozambique (ivoire, esclaves). Alliance et tensions avec les Tumbuka au nord. Conflicts avec les Ngoni au 19e siecle. Relations proches avec les Nsenga a l'est. Les Chewa partageaient des traits culturels avec leurs voisins Bemba (Zambie) et Yao (Malawi meridional).",
+      "conflictsOrAlliances": "Contacts commerciaux et diplomatiques avec les Portugais entre 1608 et 1667. Resistance partielle puis adaptation face aux invasions Ngoni au 19e siecle. Certains chefs chewa accepterent l'autorite Ngoni tandis que d'autres se refugierent dans les montagnes. Role actif dans la resistance au colonialisme britannique. Hastings Kamuzu Banda, premier president du Malawi independant (1966-1994), etait lui-meme Chewa et a promu la langue chichewa comme embleme national.",
+      "diaspora": "Les Chewa forment la plus grande ethnicite du Malawi (environ 35% de la population nationale). Des communautes chewa significatives existent en Zambie orientale (Province de l'Est) et dans les grandes villes zambiennes. Une diaspora malawite en Grande-Bretagne, en Afrique du Sud et dans d'autres pays inclut une proportion importante de Chewa."
+    },
+    "demography": {
+      "totalPopulation": 10500000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN 2024 : 7,9 millions pour le groupe ethnique Chewa. Projection 2025 integrant les populations du Malawi (env. 8 millions), Zambie (env. 1,5 million) et Mozambique (env. 1 million). Source base : Ethnologue (SIL), recensements nationaux du Malawi 2018, de Zambie 2022 et du Mozambique 2017.",
+      "distributionByCountry": [
+        {
+          "country": "MWI",
+          "population": 8000000,
+          "note": "Malawi central (regions de Lilongwe, Kasungu, Ntchisi, Dowa) — environ 35% de la population totale du pays"
+        },
+        {
+          "country": "ZMB",
+          "population": 1500000,
+          "note": "Province de l'Est (Chipata, Petauke) et diaspora urbaine a Lusaka"
+        },
+        {
+          "country": "MOZ",
+          "population": 1000000,
+          "note": "Province de Tete et province de Niassa (nord-ouest du Mozambique)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Chewa people. https://en.wikipedia.org/wiki/Chewa_people",
+      "UNESCO — Gule Wamkulu, patrimoine immateriel. https://ich.unesco.org/en/RL/gule-wamkulu-00142",
+      "Ethnologue (SIL) — Chichewa/Nyanja (nya). https://www.ethnologue.com/language/nya/",
+      "Wikipedia EN — Chewa language. https://en.wikipedia.org/wiki/Chewa_language",
+      "Britannica — Chewa. https://www.britannica.com/topic/Chewa-people",
+      "CIA World Factbook — Malawi. https://www.cia.gov/the-world-factbook/countries/malawi/",
+      "CIA World Factbook — Zambia. https://www.cia.gov/the-world-factbook/countries/zambia/",
+      "Joshua Project — Chewa people group. https://joshuaproject.net/people_groups/11243"
+    ]
+  }
+}

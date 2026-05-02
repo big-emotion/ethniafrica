@@ -1,0 +1,78 @@
+{
+  "id": "PPL_KINGA",
+  "nameMain": "Kinga",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Kinga",
+      "selfAppellation": "Kinga",
+      "exonyms": ["Ekikinga", "Kikinga"],
+      "originOfExonyms": "Ekikinga et Kikinga sont des variantes du nom de la langue et du peuple, utilises respectivement avec les prefixes de classe nominale bantoue. Ces noms sont employes dans les documents linguistiques et missionnaires.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Kinga designe a la fois le peuple et leur langue dans les sources contemporaines. Les Kinga se distinguent des groupes voisins Magoma et Mahanji, avec lesquels ils partagent des similitudes linguistiques mais des traditions culturelles distinctes.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou des hauts plateaux du sud de la Tanzanie",
+      "historicalRegion": "Hauts plateaux du sud de la Tanzanie, montagnes Kipengere et Livingstone",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Kinga", "Mahanji", "Magoma"],
+    "origins": {
+      "ancientOrigins": "Le peuple Kinga s'inscrit dans la grande migration bantoue depuis l'Afrique centrale-occidentale. Leurs ancetres se sont installes dans les montagnes Kipengere et les hauts plateaux du nord-est du lac Malawi, ou l'isolement geographique a favorise le developpement d'une identite culturelle et linguistique distincte.",
+      "formationPeriod": "La communaute Kinga s'est formee au fil des siecles de migration et d'adaptation au milieu montagnard de la Tanzanie meridionale. Le contact avec les missionnaires lutheriens remonte a plus d'un siecle.",
+      "migrationRoutes": [
+        "Migration bantoue depuis l'Afrique centrale",
+        "Installation dans les montagnes Kipengere et les hauts plateaux nord-est du lac Malawi (region de Makete, Njombe)"
+      ],
+      "historicalSettlementZones": [
+        "District de Makete, Region de Njombe",
+        "Chaine montagneuse Kipengere",
+        "Hauts plateaux du nord-est du lac Malawi",
+        "Quatre divisions: Lupalilo, Ukwama, Bulongwa et Magoma, 11 quartiers, 77 villages"
+      ],
+      "unificationsOrDivisions": "Les Kinga sont en fait un groupe comprenant trois langues proches: Kinga, Mahanji et Magoma. Ces groupes se distinguent entre eux par leurs traditions, notamment les sacrifices, le mariage, l'agriculture et les salutations. Historiquement, les Kinga se tenaient a l'ecart, probablement apres avoir ete repousses par les Magwangwara Ngoni, les Wasangu et les Hehe.",
+      "externalInfluences": "Contact avec les missionnaires lutheriens depuis plus d'un siecle. Influence du Dr T.C. Schadeberg (Universite de Leiden) qui a etudie la langue kinga en 1970. Influence de l'economie de marche (sucre, tissus imprimes comme dot en complement des chevres, boeufs et houes traditionnels). Contact avec les colons allemands.",
+      "majorHistoricalEvents": "Atteint par les missionnaires lutheriens il y a plus d'un siecle. Etude anthropologique par Mari Koizumi (Yale) sur le district de Makete. Publication d'un Nouveau Testament en kinga en 1961. Enquete sociolinguistique menee en 2003 par SIL International."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation traditionnelle fondee sur des chefs locaux. Pretres kinga revendiquant une heritage ancestral plus ancien que celui des chefs. Relatif isolement et repli dans les zones montagneuses comme strategie de survie face aux groupes voisins plus puissants.",
+      "clanOrganization": "Structure clanique bantoue avec reseaux de familles etendues. Les coutumes liees aux sacrifices traditionnels, au mariage et a l'agriculture varient selon les sous-groupes (Kinga, Mahanji, Magoma).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages sont au coeur de la vie sociale, determinant les responsabilites partagees, l'acces aux terres et la transmission des pratiques culturelles.",
+      "religiousAuthority": "Pretres traditionnels Kinga revendiquant une anciennete superieure a celle des chefs. Aujourd'hui, les eglises lutheriennes, baptistes et pentecotistes jouent un role important dans la vie communautaire."
+    },
+    "languages": {
+      "mainLanguage": "Kinga",
+      "isoCodes": ["zga"],
+      "dialects": [],
+      "vehicularRole": "Le kinga est la langue maternelle transmise aux enfants comme seule langue jusqu'a l'entree a l'ecole. Il est utilise dans de nombreux contextes de la vie communautaire bien que les jeunes empruntent de nombreux mots au swahili. Le swahili est la langue d'instruction scolaire et de communication nationale. La langue kinga n'a pas de dialectes formels, seulement de legeres differences selon les villages."
+    },
+    "culture": {
+      "majorRites": "Ceremonies de naissance, mariage, recolte et changement de saison comportant des chants, incantations et benedictions en langue kinga. Traditions sacrificielles differentes selon les sous-groupes. Dot traditionnelle en chevres, boeufs et houes, supplementee par des biens commerciaux modernes.",
+      "symbols": "Les maisons de forme cylindrique et conique a toit de chaume sont un element caracteristique de l'habitat traditionnel Kinga.",
+      "artsAndMusic": "Traditions de contes oraux, chants rituels et danses communautaires. Musique vocale lors des ceremonies de clan et des rassemblements communautaires. Artisanat local.",
+      "spiritualities": "Pratiques traditionnelles liees aux ancetres et a la nature, integrees dans les ceremonies de semailles et de recolte. Christianisme majoritaire (lutheriens, baptistes, pentecotistes) coexistant avec des elements de religion traditionnelle africaine."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies locales traditionnelles sans royaume centralise. Les Kinga servaient de poste d'alerte avance contre les invasions du territoire Nyakyusa depuis le sud et l'est.",
+      "relationsWithNeighbors": "Peu d'interactions avec les voisins en raison de l'isolement montagnard. Les Nyakyusa les tenaient generalement en pietres estime. Pression historique des Magwangwara Ngoni, Wasangu et Hehe. Contact commercial avec les villes tanzaniennes car les Kinga sont reputes pour leurs aptitudes commerciales.",
+      "conflictsOrAlliances": "Repousses dans les zones montagneuses isolees par les groupes voisins plus puissants (Ngoni, Hehe). Isolement comme strategie de survie.",
+      "diaspora": "Les Kinga voyagent extensivement et se trouvent dans toutes les grandes villes de Tanzanie, reconnus pour leurs aptitudes commerciales."
+    },
+    "demography": {
+      "totalPopulation": 296000,
+      "referenceYear": 2025,
+      "source": "Joshua Project / PeopleGroups.org (2025)",
+      "distributionByCountry": [{ "country": "TZA", "population": 296000 }]
+    },
+    "sources": [
+      "Kinga language – Wikipedia (https://en.wikipedia.org/wiki/Kinga_language)",
+      "Kinga in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12699)",
+      "Kinga – TanzaniaScripture.com, 2021 (https://tanzaniascripture.com/languages/kinga/)",
+      "Kinga people – Tanzania Tourist Board / Facebook, 2024 (https://www.facebook.com/TanzaniaTouristBoard/posts/811743427661675/)",
+      "Kinga Language: Unearthing Tanzania's Forgotten Bantu Heritage – Language Learners Hub, 2025 (https://languagelearnershub.com/blog/kinga-language/)",
+      "Kinga of Tanzania – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg014963/)",
+      "Kinga – University of Missouri DICE (https://dice.missouri.edu/assets/docs/niger-congo/Kinga.pdf)"
+    ]
+  }
+}

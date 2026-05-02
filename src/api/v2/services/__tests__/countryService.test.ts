@@ -6,19 +6,11 @@ vi.mock("@/lib/supabase/queries/afrik/countries", () => ({
   getAfrikCountryById: vi.fn(),
 }));
 
-vi.mock("next/cache", () => ({
-  unstable_cache: vi.fn((fn) => fn),
-}));
-
 import {
   getAllAfrikCountries,
   getAfrikCountryById,
 } from "@/lib/supabase/queries/afrik/countries";
 
-/**
- * TDD Phase: RED
- * Test: Country Service - business logic for countries
- */
 describe("Country Service", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -32,7 +24,7 @@ describe("Country Service", () => {
         content: {},
       }));
 
-      (getAllAfrikCountries as any).mockResolvedValue(mockCountries);
+      vi.mocked(getAllAfrikCountries).mockResolvedValue(mockCountries);
 
       const result = await getCountries(1, 5);
 
@@ -40,6 +32,7 @@ describe("Country Service", () => {
       expect(Array.isArray(result.data)).toBe(true);
       expect(result.data.length).toBe(5);
       expect(result.total).toBe(10);
+      expect(getAllAfrikCountries).toHaveBeenCalled();
     });
 
     it("should handle pagination correctly", async () => {
@@ -49,9 +42,10 @@ describe("Country Service", () => {
         content: {},
       }));
 
-      (getAllAfrikCountries as any).mockResolvedValue(mockCountries);
+      vi.mocked(getAllAfrikCountries).mockResolvedValue(mockCountries);
 
       const page1 = await getCountries(1, 2);
+      vi.mocked(getAllAfrikCountries).mockResolvedValue(mockCountries);
       const page2 = await getCountries(2, 2);
 
       expect(page1.data.length).toBe(2);
@@ -66,7 +60,7 @@ describe("Country Service", () => {
         content: {},
       }));
 
-      (getAllAfrikCountries as any).mockResolvedValue(mockCountries);
+      vi.mocked(getAllAfrikCountries).mockResolvedValue(mockCountries);
 
       const result = await getCountries(1, 1000);
 
@@ -82,7 +76,7 @@ describe("Country Service", () => {
         content: {},
       };
 
-      (getAfrikCountryById as any).mockResolvedValue(mockCountry);
+      vi.mocked(getAfrikCountryById).mockResolvedValue(mockCountry);
 
       const country = await getCountryById("ZWE");
 
@@ -92,7 +86,7 @@ describe("Country Service", () => {
     });
 
     it("should return null for non-existent country", async () => {
-      (getAfrikCountryById as any).mockResolvedValue(null);
+      vi.mocked(getAfrikCountryById).mockResolvedValue(null);
 
       const country = await getCountryById("XXX");
 

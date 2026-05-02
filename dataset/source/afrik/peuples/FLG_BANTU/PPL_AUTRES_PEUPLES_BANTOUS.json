@@ -1,0 +1,102 @@
+{
+  "id": "PPL_AUTRES_PEUPLES_BANTOUS",
+  "nameMain": "Autres peuples bantous du Gabon",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["GAB"],
+  "content": {
+    "appellations": {
+      "mainName": "Autres peuples bantous du Gabon",
+      "selfAppellation": "Chaque groupe possede sa propre auto-appellation (ex : Omyene pour les Myene, Lipunu pour les Punu, Ikota pour les Kota)",
+      "exonyms": [
+        "Bantous du Gabon",
+        "peuples de l'Ogooue",
+        "groupes ethniques gabonais secondaires"
+      ],
+      "originOfExonyms": "La denomination 'autres peuples bantous' est une categorie residuelle regroupant les groupes ethniques du Gabon qui ne font pas partie des ethnies majoritaires (Fang, Sira-Punu, Nzebi, Mbete). Elle couvre une dizaine de familles linguistiques bantoues distinctes.",
+      "whyProblematic": "La categorisation 'autres' efface les identites specifiques de chaque groupe. Le Gabon compte une quarantaine de peuples aux langues et cultures distinctes, tous classe dans dix grands groupes linguistiques bantous.",
+      "contemporaryUsage": "Dans les recensements gabonais, les groupes mineurs sont souvent regroupes sous des etiquettes agregees. La Britannica denombre une quarantaine de peuples au Gabon, tous de langue bantoue sauf quelques milliers de Pygmees.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou occidental (zones A et B de la classification Guthrie)",
+      "historicalRegion": "Ensemble du territoire gabonais, avec des foyers specifiques le long de l'Ogooue et de ses affluents",
+      "currentCountries": ["GAB"]
+    },
+    "ethnicities": [
+      "Myene (Mpongwe, Orungu, Galoa)",
+      "Kota (Bakota)",
+      "Teke (Bateke)",
+      "Benga",
+      "Seke",
+      "Vili",
+      "Tsogo (Mitsogo)",
+      "Bubi (ile Bioko/Gabon)",
+      "Nkomi",
+      "Shake"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples bantous du Gabon descendent de vagues migratoires parties du foyer proto-bantou situe entre le Cameroun et le Nigeria il y a environ 4 000 a 5 000 ans. Selon les travaux genomiques de l'Institut Pasteur (2017), les Bantous ont d'abord traverse la foret equatoriale — l'actuel Gabon — avant de se diviser en deux flux : l'un vers le sud, l'autre vers l'Afrique de l'Est. Au centre du Gabon, autour des savanes de la Lope, emergerent les ancetres des Myene et des Tsogo (groupe Ogooue-Estuaire). Des groupes tels que les Kota et les Teke se sont installes dans les regions orientales, tandis que les Vili occupaient la cote meridionale.",
+      "formationPeriod": "Implantation progressive des differents groupes entre 1000 av. J.-C. et 1500 ap. J.-C. Les Myene etaient les partenaires commerciaux exclusifs des Europeens sur la cote gabonaise avant l'arrivee des Fang au XIXe siecle.",
+      "migrationRoutes": [
+        "Expansion depuis le foyer camerounais-nigerien vers le sud a travers la foret equatoriale",
+        "Installation le long de l'Ogooue et de ses affluents (axe est-ouest)",
+        "Peuplement des zones cotieres (Myene, Vili, Benga)",
+        "Occupation des plateaux interieurs orientaux (Kota, Teke)"
+      ],
+      "historicalSettlementZones": [
+        "Estuaire du Gabon et cote nord (Myene, Mpongwe, Benga)",
+        "Vallee de l'Ogooue et affluents (Tsogo, Galoa)",
+        "Plateaux orientaux (Kota, Teke)",
+        "Cote meridionale (Vili)",
+        "Region du Woleu-Ntem (groupes mineurs nordiques)"
+      ],
+      "unificationsOrDivisions": "Chaque groupe constitue une entite ethnique distincte avec sa propre langue et organisation. L'arrivee des Fang au XIXe siecle perturba l'equilibre : des groupes comme les Kota et les Teke furent pousses hors de leurs territoires, tandis que des peuples tels que les Osyeba (Makina/Shiwa) subirent une assimilation culturelle et linguistique progressive.",
+      "externalInfluences": "Commerce maritime europeen a partir du XVe siecle via les Myene et Mpongwe comme intermediaires. Penetration coloniale francaise a partir de 1839 (traite avec le roi Mpongwe). Influence du Bwiti (culte initiatique originaire des Punu et Mitsogo, puis adopte par les Fang) sur l'ensemble de la societe gabonaise.",
+      "majorHistoricalEvents": "XVe-XIXe siecles : les Myene (Mpongwe, Orungu) dominent le commerce cotier avec les Europeens. XIXe siecle : arrivee des Fang depuis le nord, reconfigurant le paysage ethnique gabonais. 1839 : traite franco-mpongwe a l'origine du Gabon colonial. 1960 : independance du Gabon."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Variable selon les groupes. Les Myene etaient organises en royaumes marchands cotieres. Les Kota et les Tsogo avaient des chefferies villageoises. Les Teke avaient un systeme de royaumes a caractere semi-theocratique. La plupart des groupes ont des systemes de conseils d'anciens.",
+      "clanOrganization": "Organisation clanique patrilineaire pour la majorite des groupes (ex : Fang, Kota). Certains groupes (ex : Punu) ont des elements matrilineaires. Les clans constituent la base de l'organisation sociale, du mariage exogamique et de l'heritage.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrimoniaux determinent l'appartenance clanique, les droits fonciers et les alliances matrimoniales. Les ancetres fondateurs sont honores par des masques rituels (ex : masques Kota, masques Punu blanc).",
+      "religiousAuthority": "Le Bwiti (culte initiatique utilisant l'iboga) est l'une des trois religions officiellement reconnues au Gabon. Originaire des Mitsogo et des Punu, il s'est diffuse a l'ensemble des peuples gabonais. Les gardiens du Bwiti (nima ou nganga bwiti) exercent une autorite religieuse et sociale considerable."
+    },
+    "languages": {
+      "mainLanguage": "Langues bantoues variees (zones A et B de Guthrie)",
+      "isoCodes": ["mye", "ikb", "teg", "bvx", "puu"],
+      "dialects": [
+        "Omyene (Myene, Mpongwe, Orungu, Galoa, Nkomi)",
+        "Ikota (Kota)",
+        "Ibwisi (Tsogo/Mitsogo)",
+        "Lipunu (Punu)",
+        "Irungu/Bateke (Teke)"
+      ],
+      "vehicularRole": "Le francais est la langue officielle du Gabon et la principale langue vehiculaire. Le Fang et l'Omyene jouent un role regional important. Chacun des quarante peuples environ possede sa propre langue bantoue, classee dans dix grands groupes linguistiques."
+    },
+    "culture": {
+      "majorRites": "Le Bwiti est le rite initiatique majeur du Gabon, utilisant la racine d'iboga (Tabernanthe iboga) pour provoquer des visions. Il est pratique par les Mitsogo, Punu, Fang et d'autres groupes. Rites de passage masculins et feminins. Le Mwiri est une societe d'initiees masquee chez les Punu et certains groupes voisins.",
+      "symbols": "Les masques sont des symboles culturels centraux : masques reliquaires Kota (mbulu ngulu en cuivre et laiton, protecteurs des ossements ancestraux), masques blancs Punu (okuyi, represantant les esprits des ancetres feminins). L'iboga est le symbole spirituel du Bwiti.",
+      "artsAndMusic": "Arts plastiques reconnus mondialement : sculptures Fang (byeri), masques reliquaires Kota (influences le cubisme europeen). Musique rituelle du Bwiti avec arpe-cithare (ngombi). Traditions de musique polyphonique et de danse dans tous les groupes ethniques.",
+      "spiritualities": "Animisme et culte des ancetres predominant. Le Bwiti (religon officielle gabonaise) est une discipline spirituelle de la foret. Syncretisme entre animisme, culte ancestral et christianisme. Islam pratique par une minorite (environ 10% de la population gabonaise)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaumes marchands cotieres des Myene (Mpongwe, Orungu, Nkomi) dominant le commerce pre-colonial. Chefferies Kota et Teke dans l'interieur. Royaumes Teke semi-theocratiques sur les plateaux. Apres la colonisation francaise, la plupart de ces structures furent reduites a des roles coutumiers symboliques.",
+      "relationsWithNeighbors": "Les Myene-Mpongwe furent les intermediaires exclusifs du commerce europeen jusqu'a l'arrivee des Fang. Les Kota et d'autres groupes interieurs commercaient avec les negociants cotieres via des reseaux d'echange de caoutchouc, d'ivoire et d'esclaves. Tensions historiques entre les Fang (expansionnistes au XIXe siecle) et les peuples anterieurement installes.",
+      "conflictsOrAlliances": "Le XIXe siecle vit l'expansion agressive des Fang perturber les equilibres ethniques : les Kota et d'autres groupes furent deplaces vers l'est. Des peuples comme les Osyeba furent progressivement assimiles par les Fang.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 800000,
+      "referenceYear": 2025,
+      "source": "Britannica – Gabon ethnic groups ; CIA World Factbook – Gabon (estimation des groupes minoritaires hors Fang, Sira-Punu, Nzebi, Mbete)",
+      "distributionByCountry": [{ "country": "GAB", "population": 800000 }]
+    },
+    "sources": [
+      "Britannica – Gabon (https://www.britannica.com/place/Gabon)",
+      "Bantu peoples – Wikipedia EN (https://en.wikipedia.org/wiki/Bantu_peoples)",
+      "Fang people – 101 Last Tribes (https://www.101lasttribes.com/tribes/fang.html)",
+      "Joshua Project – Fang in Gabon (https://joshuaproject.net/people_groups/11187/GB)",
+      "Institut Pasteur – Histoire migratoire des peuples Bantous, 2017 (https://www.pasteur.fr/fr/espace-presse/documents-presse/histoire-migratoire-peuples-bantous)",
+      "CNRS Editions – Langue et histoire des Bantu (https://books.openedition.org/editionscnrs/3955)",
+      "Wikipedia FR – Bantous (https://fr.wikipedia.org/wiki/Bantous)"
+    ]
+  }
+}

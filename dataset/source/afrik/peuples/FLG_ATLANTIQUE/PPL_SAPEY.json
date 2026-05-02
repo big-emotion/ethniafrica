@@ -1,0 +1,97 @@
+{
+  "id": "PPL_SAPEY",
+  "nameMain": "Sape",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["SLE", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Sape",
+      "selfAppellation": "Sape / Sapey / Zape",
+      "exonyms": ["Sapi", "Zape", "Sapes", "Capes", "Çapes"],
+      "originOfExonyms": "Le terme Sape (ou Sapi, Zape) est une denomination collective utilisee par les navigateurs et marchands portugais des XVe-XVIe siecles pour designer les peuples autochtones de la cote de la Sierra Leone actuelle et des zones adjacentes. Almada (1594) mentionne un vaste ensemble politique appele le Royaume des Sapes, englobant plusieurs groupes ethniques cotiers parlant des langues apparentees. Le terme designe ainsi une confederation culturelle plus qu'un groupe unique.",
+      "whyProblematic": "Le terme Sape est une denomination exogene portugaise. Il n'existe pas de groupe ethnique se nommant lui-meme Sape de maniere homogene aujourd'hui. Il s'agit d'un terme historique designant les populations pre-mane de la cote de Sierra Leone (ancetres des Temne, Bullom, Kissi et groupes apparentes), ainsi qu'une tradition artistique en ivoire. Son usage contemporain est principalement historique et artistique.",
+      "contemporaryUsage": "Le terme Sape est employe principalement dans les contextes de l'histoire de l'art pour designer les ivoires afro-portugais produits en Sierra Leone aux XVe-XVIe siecles (Sapi saltcellars, Sapi ivories). Il designe aussi un ensemble ethno-historique pre-mane de Sierra Leone et des zones cotieres de Guinee.",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "ethnoLinguisticGroup": "Groupe atlantique-mel, branche cotiere de Sierra Leone ; ancetres et predecesseurs des Temne, Bullom (Sherbro), Kissi et groupes apparentes",
+      "historicalRegion": "Cote de Sierra Leone et ses environs immediats (du Rio das Piedras au cap Sherbro), ainsi que les zones cotieres de Guinee meridionale. Les Portugais designaient leur territoire depuis le Rio Caceu (Guinee-Bissau) jusqu'au cap Mount (Liberia actuel) sous le nom de Royaume des Sapes.",
+      "currentCountries": ["SLE", "GIN"]
+    },
+    "ethnicities": [
+      "Ancetres des Temne (nord et centre de Sierra Leone), qui partiellement resisterent a la conquete mane du XVIe siecle",
+      "Ancetres des Bullom (Sherbro), groupe cotier de Sierra Leone meridionale, maintenant distinct",
+      "Ancetres des Kissi (zone frontiere Sierra Leone, Guinee, Liberia)",
+      "Groupes Nalu, Baga et Landuma de la Guinee cotiere, inclus dans la confederation sape selon certaines sources portugaises",
+      "Dialonke (Jalonke), mentionnes dans la confederation selon Almada (1594)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Sapes sont les populations autochtones de la cote de Sierra Leone documentees par les Portugais a partir de 1462. Ils parlaient des langues de la branche atlantique du Niger-Congo, pratiquaient des activites similaires (agriculture rizicole, sel, commerce d'ivoire), et s'organisaient autour d'unites sociopolitiques semblables. Ils partageaient egalement des systemes de croyances communs et veneraient des idoles, etant principalement animistes selon les chroniqueurs portugais.",
+      "formationPeriod": "Presence documentee au XVe siecle par les premiers navigateurs portugais. La confederation Sape semble avoir ete une realite politique et culturelle du XIVe au milieu du XVIe siecle, avant sa disruption par les invasions mane (vers 1545-1565).",
+      "migrationRoutes": [
+        "Installation ancienne sur la cote atlantique de Sierra Leone et des zones cotieres de Guinee",
+        "Implantation le long du systeme fluvial cote (riviere Rokel, Scarcies, riviere Jong) et sur les zones lagunaires",
+        "Contacts avec les peuples de l'interieur via les reseaux commerciaux biafada-sapi"
+      ],
+      "historicalSettlementZones": [
+        "Cote de Sierra Leone entre le Rio das Piedras et le cap Sherbro",
+        "Zones lagunaires et estuariennes de la Guinee meridionale",
+        "Archipels cotiers et zones de mangroves de la Sierra Leone actuelle"
+      ],
+      "unificationsOrDivisions": "La confederation Sape, bien que evoquee par les sources portugaises comme un ensemble politique, etait probablement une unite culturelle et linguistique plus que politique. L'invasion mane (Mani) vers 1545-1565 provoqua la conquete et la dispersion des peuples Sapes : les Temne furent partiellement soumis mais conserverent leur langue ; les Bullom furent repousses vers le sud ; d'autres groupes furent totalement assimiles.",
+      "externalInfluences": "Contact intensif avec les navigateurs portugais des 1462 : commerce d'ivoire, noix de kola, riz et sel. Les Sapes furent les premiers producteurs d'ivoires afro-portugais, travaillant a la demande des nobles europeens. L'invasion mane (XVIe siecle), venue de l'est, bouleversa profondement l'organisation politique et culturelle Sape. Thousands de Sapes furent vendus comme esclaves aux Europeens.",
+      "majorHistoricalEvents": "1462 : premiere documentation par Pedro de Sintra ; commerce d'ivoire avec les Portugais. Fin XVe-debut XVIe siecle : production des ivoires afro-portugais (saltcellars, cuilleres, cornes) commandes par les Portugais. Vers 1545-1565 : invasion et conquete par les Mane (Mani), dissolution de la confederation Sape, des milliers de Sapes reduits en esclavage et vendus aux Europeens. Post-XVIe siecle : les populations sapes se fragmentent et evoluent vers les identites ethniques actuelles (Temne, Bullom, etc.)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en royaumes et chefferies avec des cours de justice. Le Royaume des Sapes etait une entite politique confederale dont l'etendue exacte reste debattue par les historiens. Les villages avaient leurs propres cours, avec des avocats portant des masques grotesques et un chef presidant, selon le temoignage de De Almada (1594). Le Poro, societe secrete masculine multietnique, assurait la cohesion entre differents royaumes et groupes.",
+      "clanOrganization": "Organisation clanique basee sur les lignages villageois. La succession a la chefferie impliquait des rituels specifiques (sang de chevre et farine de riz selon De Almada). Les artisans ivoires etaient organises en ateliers (moins de quarante ateliers en Sierra Leone, selon les etudes recentes) avec transmission du savoir par apprentissage.",
+      "ageClassSystems": "Le Poro (societe secrete masculine) et des societes equivalentes assuraient les rites de passage et la transmission des savoirs rituels, guerriers et artisanaux entre les differents groupes Sapes.",
+      "roleOfLineages": "Les lignages fondateurs de villages determinaient le pouvoir local. La succession impliquait des rites specifiques et la legitimite des lignees dirigeantes.",
+      "religiousAuthority": "Animisme : veneration d'idoles, croyances en des esprits de l'eau (Niniganné) associes aux richesses, aux vetements et aux metaux. Les Portugais etaient perçus comme des etres puissants aux capacites mystiques, comparables aux esprits de l'eau. Pratiques magiques liees a la nature et aux ancetres. Figures de pierre (nomoli) et de bois (pomtan/pombo) utilisees pour le culte des ancetres ou des rites de fertilite, anterieures au XVIe siecle."
+    },
+    "languages": {
+      "mainLanguage": "Langues atlantiques-mel de la branche cotiere (ancetres du temne, bullom et langues apparentees ; aucune langue unique n'est identifiee comme 'sape' car il s'agit d'une denomination collective)",
+      "isoCodes": ["tem", "bom"],
+      "dialects": [
+        "Dialectes cotiers de la Sierra Leone pre-mane, dont l'ancetre commun du temne (ISO : tem)",
+        "Dialectes apparentes au bullom-sherbro (ISO : bom)"
+      ],
+      "vehicularRole": "Les langues sapes partageaient suffisamment de traits communs pour permettre une communication inter-groupe selon les sources portugaises, qui notaient une 'langue commune' entre ces populations cotieres. Ces langues vehiculaires facilitaient le commerce de l'ivoire, du riz et du sel le long de la cote."
+    },
+    "culture": {
+      "majorRites": "Rites de succession a la chefferie avec immolation de chevre et utilisation de farine de riz. Danses de mariage documentees par De Almada. Funerailles avec inhumation dans la maison du defunt, accompagnee d'ornements en or. Le Poro comme cadre initiatique central commun a plusieurs groupes Sapes et leurs successeurs.",
+      "symbols": "Les ivoires afro-portugais (saltcellars, cuilleres, cornes) constituent le corpus artistique le plus celebre des Sapes. Les figures en pierre (nomoli) et en bois (pomtan) sont associees au culte des ancetres et aux rites de fertilite. Les serpents, crocodiles, leopards et chiens figurent frequemment dans les sculptures ivoire Sapes. Les esprits de l'eau (Niniganné) symbolisent richesse, danger et pouvoir surnaturel.",
+      "artsAndMusic": "Les Sapes sont celebres pour leur maitrise de la sculpture sur ivoire. Valentim Fernandes (debut XVIe siecle) note que les artisans ivoires de Sierra Leone etaient les plus habiles de la region et pouvaient reproduire tout motif dessine. Production de colliers d'ivoire finement sculptes, de nattes de feuilles de palmier (bicas), de saltcellars, de cuilleres et de cornes de chasse avec motifs hybrides afro-portugais. Les artisans travaillaient en ateliers avec un systeme de patronage et d'apprentissage similaire aux guildes europeennes. Poterie, vannerie et tissage faisaient aussi partie du repertoire artisanal.",
+      "spiritualities": "Animisme avec culte des idoles, des esprits de la nature et des ancetres. Croyance aux esprits de l'eau (Niniganné) pouvant couvrir deux mondes (terrestre et spirituel), associes aux eaux, richesses et dangers. Les Portugais etaient assimiles a ces esprits de l'eau par les Sapes. Utilisation de figures nomoli (pierre) pour le culte des ancetres et les rites de fertilite, anterieures au contact europeen."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume des Sapes, confederation politique qui aurait inclus selon certaines sources les Baga, Nalu, Landuma, Limba et Temne. Les Portugais documentent plusieurs royaumes cotiers : Bulom (des iles de Los au cap Tagrin), Loko (autour de Port-Loko), royaumes Sapes de Sierra Leone. Robaga, pres de Freetown actuelle, fut la capitale du roi Temne sous influence Mane apres la conquete.",
+      "relationsWithNeighbors": "Reseau commercial Biafada-Sape actif du Rio Cacheu au cap Mount, connectant les Sapes aux reseaux interieurs. Relations commerciales avec les Portugais des 1462 via le commerce d'ivoire, de noix de kola, de riz et de sel. Les Sapes etaient de nature relativement pacifique selon les sources portugaises, en contraste avec les Mane qui les soumis.",
+      "conflictsOrAlliances": "Invasion et conquete mane (vers 1545-1565) : evenement central qui dissout la confederation Sape et etablit une nouvelle elite politique. Les Temne resistent partiellement et conservent leur langue. Des milliers de Sapes sont reduits en esclavage et vendus aux Europeens. Le Poro, societe secrete multi-ethnique, assurait la coherence inter-clanique avant et apres les invasions.",
+      "diaspora": "Les populations issues des Sapes (Temne, Bullom, Kissi et autres) sont aujourd'hui repandues en Sierra Leone et dans les zones frontieres de Guinee. Certains Sapes furent deportes vers l'Amerique comme esclaves au XVIe et XVIIe siecles."
+    },
+    "demography": {
+      "totalPopulation": 0,
+      "referenceYear": 2025,
+      "source": "Les Sapes en tant que groupe distinct n'existent plus comme entite demographique autonome. Il s'agit d'une denomination historique et artistique. Les populations directement issues de la confederation Sape constituent aujourd'hui les groupes Temne (environ 3 millions en Sierra Leone), Bullom-Sherbro et Kissi. Aucune population ne se designe elle-meme comme Sape en 2025.",
+      "distributionByCountry": [
+        {
+          "country": "SLE",
+          "population": 0,
+          "note": "Les descendants des Sapes constituent la majeure partie de la population de Sierra Leone sous d'autres identites ethniques (Temne, Bullom, etc.)"
+        },
+        {
+          "country": "GIN",
+          "population": 0,
+          "note": "Les groupes cotiers guinéens (Nalu, Baga, Landuma) sont parfois inclus dans l'espace sape historique"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN, Sapi Saltceller : https://en.wikipedia.org/wiki/Sapi_Saltceller",
+      "Wikipedia EN, History of Sierra Leone : https://en.wikipedia.org/wiki/History_of_Sierra_Leone",
+      "Smarthistory, Lidded Saltcellar (Sapi peoples) : https://smarthistory.org/lidded-saltcellar/",
+      "Metropolitan Museum of Art, African Ivories : https://resources.metmuseum.org/resources/metpublications/pdf/African_Ivories.pdf",
+      "Bouju, Stephane. Historique sur les populations cotieres de Guinee et de Sierra Leone. IRD Editions, 2013 : https://books.openedition.org/irdeditions/3745",
+      "Afar Journal, Afro-Portuguese Ivories from Sierra Leone (2020) : https://direct.mit.edu/afar/article/53/4/24/93194/"
+    ]
+  }
+}

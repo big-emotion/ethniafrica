@@ -1,0 +1,114 @@
+{
+  "id": "PPL_RWANDAIS_HUTU",
+  "nameMain": "Rwandais (Hutu)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["RWA", "COD", "UGA", "BDI"],
+  "content": {
+    "appellations": {
+      "mainName": "Rwandais (Hutu)",
+      "selfAppellation": "Hutu / Abahutu",
+      "exonyms": ["Bahutu", "Wahutu"],
+      "originOfExonyms": "Le terme Hutu, d'origine bantoue, désigne historiquement ceux qui cultivaient la terre par opposition aux pasteurs (Tutsi). Sa signification exacte est débattue : certains linguistes le rattachent au terme désignant un vassal ou sujet dans la hiérarchie sociale rwandaise traditionnelle.",
+      "whyProblematic": "Le terme Hutu a été cristallisé en catégorie ethnique rigide par l'administration coloniale belge dans les années 1930. Depuis le génocide de 1994, son usage en tant qu'identifiant ethnique est politiquement sensible au Rwanda, le gouvernement promouvant une identité nationale unifiée Banyarwanda.",
+      "contemporaryUsage": "Le gouvernement rwandais post-génocide a supprimé la mention de l'appartenance ethnique sur les cartes d'identité et promeut le programme Ndi Umunyarwanda (Je suis Rwandais). La distinction Hutu reste en usage en Burundi et dans la diaspora, mais les autorités rwandaises découragent son emploi comme marqueur identitaire premier.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone J, sous-groupe Rwanda-Rundi)",
+      "historicalRegion": "Région des Grands Lacs africains, principalement Rwanda et Burundi actuels",
+      "currentCountries": ["RWA", "COD", "UGA", "BDI"]
+    },
+    "ethnicities": [
+      "Abahutu du Rwanda central (anciens agriculteurs des collines)",
+      "Hutu du Burundi (Abahutu ba Burundi)",
+      "Banyarwanda Hutu de RDC (provinces du Nord-Kivu et Sud-Kivu)",
+      "Hutu d'Ouganda (Bafumbira, région de Kisoro)",
+      "Hutu Kiga du nord-ouest (région historiquement à majorité hutu)",
+      "Hutu exilés post-1994 (camps FDLR en RDC)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Hutu font partie du grand groupe bantou qui a peuplé la région des Grands Lacs lors des migrations bantoues entre 3000 et 1000 av. J.-C. environ. Les premiers Hutu documentés étaient des agriculteurs sédentaires organisés en clans (inzu) et en lignages (umuryango). Les distinctions entre Hutu et Tutsi n'étaient pas initialement des catégories ethniques biologiques mais des différences de statut socio-économique : les éleveurs de bétail (plus de dix vaches) tendaient à être classés Tutsi, les cultivateurs Hutu. La mobilité sociale était possible : un Hutu prospère pouvait accéder au statut Tutsi (kwihutura) et inversement (gucupira).",
+      "formationPeriod": "La stratification Hutu-Tutsi s'est renforcée à partir du 15e siècle avec l'expansion du Royaume du Rwanda (Nyiginya). Les catégories sont devenues progressivement plus rigides sous la monarchie tutsi jusqu'au 19e siècle, puis ont été radicalement transformées par la colonisation belge.",
+      "migrationRoutes": [
+        "Migration bantoue depuis l'Afrique centrale (bassin du Congo) vers la région des Grands Lacs, environ 1000-500 av. J.-C.",
+        "Dispersion régionale au Rwanda, Burundi, Ouganda occidental et est du Congo lors de l'expansion du Royaume de Rwanda"
+      ],
+      "historicalSettlementZones": [
+        "Rwanda central et méridional (collines de culture vivrière)",
+        "Burundi (nord et centre)",
+        "Nord-Kivu et Sud-Kivu (RDC), surtout Masisi et Rutshuru",
+        "Ouganda occidental, district de Kisoro (Bafumbira)"
+      ],
+      "unificationsOrDivisions": "La Révolution rwandaise de 1959-1962, soutenue par la Belgique, a renversé la monarchie tutsi et porté les Hutu au pouvoir au Rwanda. Des massacres de Tutsi ont suivi. Au Burundi, les Tutsi ont conservé le pouvoir militaire, conduisant au génocide de Hutu en 1972 (100 000 morts estimés). Ces trajectoires opposées ont entretenu des tensions régionales persistantes jusqu'au génocide de 1994.",
+      "externalInfluences": "L'administration coloniale allemande (1897-1916) puis belge (1916-1962) a joué un rôle décisif : en 1933, la Belgique a introduit des cartes d'identité ethniques obligatoires (Tutsi, Hutu, Twa) et une classification basée sur le nombre de bétail possédé et les mensurations physiques, transformant des catégories sociales perméables en identités raciales figées. Cette rigidification a fourni la base administrative aux discriminations puis au génocide.",
+      "majorHistoricalEvents": "1933 : Introduction des cartes d'identité ethniques belges. 1959 : Révolution rwandaise, accession des Hutu au pouvoir, exil de masse des Tutsi. 1962 : Indépendance du Rwanda. 1972 : Génocide des Hutu au Burundi. 7 avril-19 juillet 1994 : Génocide contre les Tutsi au Rwanda perpétré par des extrémistes hutu (Hutu Power) ; entre 500 000 et 800 000 victimes tutsi selon Human Rights Watch. Le Front Patriotique Rwandais (FPR) met fin au génocide le 19 juillet 1994 et prend le pouvoir."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Dans le Rwanda précolonial, les Hutu étaient organisés en clans (inzu) regroupés en lignages (umuryango). Avant l'expansion du Royaume Nyiginya, des petits royaumes locaux (chefferies bahinza) étaient dirigés par des chefs hutu appelés bahinza, dotés d'un pouvoir rituel sur la pluie et les récoltes. Sous la monarchie tutsi, les Hutu cultivateurs étaient intégrés à un système de clientélisme (ubuhake) dans lequel ils obtenaient protection en échange de travail et de loyauté.",
+      "clanOrganization": "La société hutu est organisée en dix-huit clans (inzu) principaux, communs à tous les Banyarwanda (Hutu, Tutsi et Twa partagent les mêmes clans, indice de leur origine commune). Parmi les clans importants : Abanyiginya, Abagesera, Abazigaba, Abasindi, Abasinga. L'appartenance clanique est patrilinéaire.",
+      "ageClassSystems": "Des associations de jeunes guerriers (intore) existaient dans le royaume, regroupant des Hutu et Tutsi. La société précoloniale connaissait des classes d'âge mais celles-ci n'étaient pas aussi formalisées que chez certains peuples voisins nilotiques.",
+      "roleOfLineages": "Les lignages patrilinéaires (umuryango) structurent l'héritage foncier, les alliances matrimoniales et la résolution des conflits. La terre (ubutaka) se transmet de père en fils. L'exogamie clanique est une règle traditionnelle : on ne se marie pas dans son propre clan.",
+      "religiousAuthority": "La religion traditionnelle rwandaise (Kubandwa) était partagée par Hutu, Tutsi et Twa. Elle comprend le culte de Ryangombe (ou Kiranga au Burundi), héros mythique et intermédiaire entre les hommes et le créateur Imana. Les muhizi (prêtres) et les initiés au culte de Ryangombe constituaient une autorité spirituelle transversale aux catégories sociales. Le christianisme catholique s'est largement implanté sous la colonisation belge."
+    },
+    "languages": {
+      "mainLanguage": "Kinyarwanda",
+      "isoCodes": ["kin"],
+      "dialects": [
+        "Kinyarwanda du Rwanda central",
+        "Kirundi (Burundi) — variété très proche, officiellement distinct",
+        "Rufumbira (Ouganda, district de Kisoro) — dialecte kinyarwanda",
+        "Ikinyabwishya (nord-ouest Rwanda)"
+      ],
+      "vehicularRole": "Le kinyarwanda (ISO 639-3 : kin) est la langue maternelle de la quasi-totalité des Hutu, Tutsi et Twa du Rwanda, démontrant que ces groupes forment une seule communauté linguistique (Banyarwanda). C'est l'une des quatre langues officielles du Rwanda avec le français, l'anglais et le swahili. Le kirundi, mutuellement intelligible, est la langue nationale du Burundi. Le français reste largement utilisé dans l'administration et l'éducation dans les pays francophones."
+    },
+    "culture": {
+      "majorRites": "Mariage (gukwa) : rite essentiel comportant la dot (inkwano) remise par la famille du marié à celle de la mariée, suivi de cérémonies collectives et de danses. Naissance : cérémonies marquant la venue au monde (kwezwa), donnant un nom à l'enfant après plusieurs jours. Funérailles (gutabara) : enterrement dans un délai court, suivi de périodes de deuil et de rites de purification (gupfukirana). Initiation agricole : rites liés aux cycles de plantation et de récolte, invocations à Imana pour la prospérité. Kubandwa : culte de possession initiatique partagé avec les Tutsi, centré sur Ryangombe, avec chants, danses et états de transe.",
+      "symbols": "Le bœuf (inka) reste un symbole de richesse et de prestige même pour des agriculteurs. La houe (iseryo) symbolise le travail de la terre et l'identité agricole hutu. Le sorgho et le haricot sont des cultures symboliques identitaires. Le tambour royal (ingoma) et ses dérivés communautaires sont des symboles d'autorité politique et culturelle partagés avec l'ensemble des Banyarwanda.",
+      "artsAndMusic": "Musique : tambours (ingoma, amenya, inyahura), chants polyphoniques, chants d'ibyivugo (poésie épique autolouangeuse), chants de travail aux champs. Danse : l'intore est la danse traditionnelle emblématique du Rwanda, d'origine royale, partagée par Hutu et Tutsi ; les femmes pratiquent une danse aux mouvements lents et gracieux. Artisanat : poterie (imiseke), vannerie (agaseke — corbeilles tressées décoratives), tissage de nattes. Oralité : contes (ibiteeekerezo), proverbes (imigani), poésie de génération (ibyivugo). L'agaseke, panier tressé à couvercle, est devenu un symbole national rwandais.",
+      "spiritualities": "Imana est la divinité créatrice suprême dans la cosmologie rwandaise, concept partagé par tous les Banyarwanda. Le culte de Kubandwa/Ryangombe constituait la religion initiatique traditionnelle, organisée autour de prêtres (muhizi) et d'une mythologie complexe. L'animisme et le culte des ancêtres (imitimanama) complétaient ce système. Aujourd'hui, le christianisme catholique et protestant domine : le Rwanda est l'un des pays les plus christianisés d'Afrique subsaharienne. Des pratiques syncrétiques mêlent croyances traditionnelles et foi chrétienne."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Avant l'expansion du Royaume Nyiginya, les Hutu étaient organisés en chefferies locales dirigées par des bahinza (rois de la pluie) dotés de pouvoirs rituels agricoles. Ces royaumes locaux ont été progressivement absorbés par la monarchie tutsi à partir du 15e siècle. Les Hutu constituaient la majorité de la population rurale et productive du Royaume de Rwanda, intégrés au système ubuhake (clientélisme). Après la Révolution de 1959, des présidents hutu ont gouverné le Rwanda : Grégoire Kayibanda (1962-1973) et Juvénal Habyarimana (1973-1994).",
+      "relationsWithNeighbors": "Les Hutu du Rwanda et du Burundi partagent langue et culture avec les Tutsi, illustrant l'imbrication profonde des deux groupes. Les relations avec les Twa (minorité pygmée) sont historiquement hiérarchiques. Les Hutu de RDC (Banyarwanda) ont des relations complexes avec les Banyamulenge (Tutsi de RDC) et les populations congolaises locales, source de conflits armés persistants dans l'est du Congo depuis les années 1990.",
+      "conflictsOrAlliances": "Révolution rwandaise (1959-1962) : renversement de la monarchie tutsi, massacres et exil de masse. Génocide des Hutus au Burundi (1972). Guerre civile rwandaise (1990-1994) : invasion du FPR depuis l'Ouganda. Génocide contre les Tutsi (7 avril-19 juillet 1994) : perpétré par des milices Interahamwe et forces gouvernementales hutu sous l'idéologie Hutu Power ; estimé entre 500 000 et 800 000 victimes. Post-1994 : deux millions de Hutu fuient vers le Zaïre (RDC), déclenchant la Première Guerre du Congo (1996-1997). Les FDLR (Forces Démocratiques de Libération du Rwanda), composées d'anciens génocidaires hutu, restent actifs en RDC.",
+      "diaspora": "Après le génocide de 1994, environ deux millions de Hutu (dont de nombreux génocidaires mêlés à des civils innocents) ont fui vers le Zaïre (RDC), le Tanzania et d'autres pays voisins. Une diaspora hutu existe en Europe (France, Belgique), en Amérique du Nord et en Afrique centrale. Les réfugiés des camps de RDC ont été impliqués dans des conflits armés continus. Une partie de la diaspora soutient les FDLR depuis l'étranger."
+    },
+    "demography": {
+      "totalPopulation": 12000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur : CIA World Factbook (Hutu = 84% Rwanda, 85% Burundi, données 2009 avant retrait officiel des statistiques ethniques en 2017) ; Rwanda NISR recensement 2022 (population totale 14,6 millions) ; UNFPA Burundi ; projections démographiques régionales. Note : depuis 2017, les gouvernements rwandais et burundais ne publient plus de données ethniques officielles conformément aux politiques de réconciliation nationale.",
+      "distributionByCountry": [
+        {
+          "country": "RWA",
+          "population": 7500000,
+          "note": "Environ 84% de la population rwandaise (14,6 millions en 2025) selon les estimations pré-2017"
+        },
+        {
+          "country": "BDI",
+          "population": 10000000,
+          "note": "Environ 85% de la population burundaise (12,9 millions en 2025)"
+        },
+        {
+          "country": "COD",
+          "population": 1500000,
+          "note": "Banyarwanda Hutu dans les provinces du Nord-Kivu et Sud-Kivu, notamment Masisi et Rutshuru"
+        },
+        {
+          "country": "UGA",
+          "population": 500000,
+          "note": "Bafumbira et Banyarwanda hutu dans le sud-ouest ougandais, district de Kisoro"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Hutu. https://en.wikipedia.org/wiki/Hutu",
+      "Wikipedia EN — Rwandan genocide. https://en.wikipedia.org/wiki/Rwandan_genocide",
+      "Wikipedia EN — Kingdom of Rwanda. https://en.wikipedia.org/wiki/Kingdom_of_Rwanda",
+      "Wikipedia EN — Kinyarwanda. https://en.wikipedia.org/wiki/Kinyarwanda",
+      "Human Rights Watch — Leave None to Tell the Story: Genocide in Rwanda (1999). https://www.hrw.org/reports/1999/rwanda/",
+      "CIA World Factbook — Rwanda. https://www.cia.gov/the-world-factbook/countries/rwanda/",
+      "NISR (Institut National de la Statistique du Rwanda) — Recensement 2022. https://www.statistics.gov.rw/",
+      "Jonathan Beloff, The Conversation — 30 years after genocide: Rwanda's older generations. https://jonathanrbeloff.com/2024/04/03/",
+      "USF Digital Commons — I am Rwandan: Unity and Reconciliation in Post-Genocide Rwanda. https://digitalcommons.usf.edu/cgi/viewcontent.cgi?article=1480&context=gsp",
+      "Berkeley Law — Teaching of History of Rwanda resource book. https://www.law.berkeley.edu/files/HRC/Rwanda_resource_book_for_teachers_version_10._rwandan_history_book.pdf"
+    ]
+  }
+}

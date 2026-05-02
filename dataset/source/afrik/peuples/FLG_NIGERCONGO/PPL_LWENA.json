@@ -1,0 +1,80 @@
+{
+  "id": "PPL_LWENA",
+  "nameMain": "Lwena",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["AGO", "ZMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Lwena",
+      "selfAppellation": "Balovale",
+      "exonyms": ["Luvale", "Lovale", "Lubale", "Luena", "Lwena"],
+      "originOfExonyms": "Le terme Luvale (ou Lovale) est l'appellation principale utilisee en Zambie, ou la ville de Zambezi s'appelait autrefois Balovale. Lwena et Luena sont les formes utilisees en Angola, notamment dans la province de Moxico. Lubale est une variante phonetique ancienne. L'autonymo Balovale designe le peuple dans son ensemble.",
+      "whyProblematic": "La pluralite des appellations (Luvale/Lovale/Lubale/Luena/Lwena) peut preter a confusion dans les bases de donnees ethnographiques. En Angola, Lwena/Luena predomine ; en Zambie, Luvale ou Lovale est la forme consacree. Certaines sources confondent les Lwena avec d'autres groupes Ganguela apparentes.",
+      "contemporaryUsage": "Lwena est l'appellation officielle angolaise ; Luvale est l'appellation zambienne reconnue comme langue regionale par le gouvernement. Les deux termes coexistent dans les sources academiques. Le terme Ganguela est parfois employe de maniere generique par les Portugais pour l'ensemble des peuples apparentes.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantu central-occidental, sous-groupe Chokwe-Luchazi (Ganguela)",
+      "historicalRegion": "Province de Moxico (Angola), Province nord-occidentale de Zambie (district de Zambezi/Balovale)",
+      "currentCountries": ["AGO", "ZMB"]
+    },
+    "ethnicities": ["Lwena", "Luvale", "Balovale"],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale, les Lwena/Luvale descendent d'un ancetre commun nomme Konde Mateti, dont la premiere dirigeante migrante etait Kenga Naweji. Ces ancetres venaient d'une region au nord du lac Tanganyika, entre les montagnes du Rift oriental et le lac Victoria. Ils traverserent l'actuelle Republique democratique du Congo avant de s'etablir dans la region du Haut-Zambeze. La dynastie Luvale naquit de Chinyama cha Mukwamayi, deuxieme enfant de Konde Mateti.",
+      "formationPeriod": "Entre 1600 et 1850, les Lwena/Luvale etaient sous l'influence considerable des etats Lunda et se trouvaient au centre de l'Angola. Ils furent les premiers habitants du Haut-Zambeze a recevoir les marchands Ovimbundu au 18e siecle. C'est au cours de cette periode qu'ils developperent leur identite distincte, distincte des Lunda dont ils s'etaient progressivement eloignes.",
+      "migrationRoutes": [
+        "Du nord du lac Tanganyika vers le Congo-Kinshasa",
+        "Du Congo vers le Haut-Zambeze (Angola orientale et Zambie nord-occidentale)",
+        "Migration economique secondaire vers Lusaka et d'autres centres urbains zambiens"
+      ],
+      "historicalSettlementZones": [
+        "Province de Moxico (Angola orientale)",
+        "District de Zambezi, Province nord-occidentale de Zambie",
+        "Region du Lukanga Swamp (Zambie, migrante)"
+      ],
+      "unificationsOrDivisions": "Les Lwena/Luvale ne reconnaissent pas de chef paramount unique mais pledgent allegeance a des chefs locaux heritant leur position de leur oncle maternel. Les Etats d'urgence durent etre declares dans le district de Zambezi dans les annees 1940 et 1950 en raison de conflits ethniques Luvale-Lunda. Le 27 aout 1998, de nouveaux affrontements entre Luvale et Lunda eclaterent dans le nord-ouest zambien.",
+      "externalInfluences": "De 1600 a 1850, sous influence importante des etats Lunda. Au 18e siecle, premiers contacts avec les marchands Ovimbundu qui cherchaient des esclaves pour les Portugais. Contacts avec les Chokwe (tres apparentes culturellement et linguistiquement). Sous administration coloniale portugaise en Angola et britannique en Zambie. Guerre civile angolaise (1975-2002) ayant provoque des deplacements de population majeurs.",
+      "majorHistoricalEvents": "18e siecle : premiers contacts avec les marchands Ovimbundu (commerce d'esclaves et d'ivoire). Annees 1940-1950 : conflits avec les Lunda en Zambie (Etats d'urgence). 1964 : independance de la Zambie. 1975-2002 : guerre civile angolaise provoquant des deplacements massifs. 1998 : regain de violence inter-ethnique en Zambie nord-occidentale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Absence de chef paramount unique : allegiance a des chefs locaux (mwana nganga) qui heritent leur position matrilineairement de leur oncle maternel. Les chefs consultent un comite d'anciens et de specialistes rituels avant de prendre des decisions. Les villages sont divises en sections gerees par des chefs de famille.",
+      "clanOrganization": "Societe matrilineaire et uxorilocale : la descendance et l'appartenance clanique passent par la mere. La societe Luvale se divise en deux categories : ceux qui descendent des lignes matrilineaires fondatrices, et ceux qui descendent d'anciennes populations d'esclaves. La preference va au mariage avec le cousin croise.",
+      "ageClassSystems": "Rite d'initiation masculine (Mukanda) : circoncision et retraite au camp d'initiation. Masques Makishi utilises lors des ceremonies d'initiation pour eduquer les inities et marquer le territoire ceremoniel. Initiation feminine liee a la puberte.",
+      "roleOfLineages": "Les groupes de lignage des roturiers jouent un role plus important que dans d'autres peuples du nord-ouest zambien et sont relativement independants des chefs. Les liens familiaux etendus sont forts, et le respect des anciens ainsi que la cooperation communautaire restent significatifs.",
+      "religiousAuthority": "Specialistes rituels consultant aux cotes des chefs. Tradition du masque Makishi (mascarade) liee aux rites d'initiation et aux festivites culturelles. Le christianisme a progresse notamment en Zambie ; en Angola de nombreux Luvale se declarent chretiens tout en maintenant des pratiques traditionnelles en syncretisme."
+    },
+    "languages": {
+      "mainLanguage": "Luvale (Chiluvale)",
+      "isoCodes": ["lue"],
+      "dialects": ["Lwena (forme angolaise)", "Lovale (forme zambienne)"],
+      "vehicularRole": "Le Luvale est reconnu comme langue regionale pour les usages educatifs et administratifs en Zambie, ou environ 168 000 personnes le parlent (2006). En Angola il est utilise dans les foyers et entre communautes. Total des locuteurs estime a environ 2 015 000 dans les deux pays. En milieu formel, le portugais (Angola) et l'anglais (Zambie) servent de langues officielles. Langue tonale de la famille Bantu, apparentee au Chokwe."
+    },
+    "culture": {
+      "majorRites": "Mukanda : rite d'initiation masculine impliquant la circoncision et une longue retraite au camp, avec apprentissage des lois communautaires et des rites. Mascarade Makishi : danses de masques lors des ceremonies d'initiation et des festivites, avec des masques utilisés pour eduquer les inities et marquer les territoires ceremoniels. Cette tradition des masques Makishi est classee au patrimoine culturel immatariel de l'UNESCO.",
+      "symbols": "Masques Makishi represantant differents esprits et personnages ancestraux, utilises dans les ceremonies d'initiation. Paniers tresses, nattes, poteries et tabourets en bois comme formes d'art utilitaires et identitaires.",
+      "artsAndMusic": "Riches traditions artistiques : fabrication de paniers, tissage de nattes, travail du metal, poterie, sculpture de tabourets en bois, masques ceriomoniels. La mascarade Makishi est une tradition culturelle majeure celebree lors des festivals. Instruments a percussion. L'art est profondement lie a l'identite spirituelle, sociale et morale.",
+      "spiritualities": "Religion traditionnelle animiste avec croyance en des esprits et des ancetres. Specialistes rituels (nganga) jouant un role central dans les ceremonies. Syncretisme courant entre pratiques chretiennes et traditions ancestrales. En Zambie, le christianisme est majoritaire chez les Luvale ; en Angola, coexistence fréquente des deux systemes de croyances."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies locales independantes sans chef paramount unique. Les Luvale/Lwena etaient sous influence Lunda entre 1600 et 1850. Leurs chefs locaux (mwana nganga) maintiennent leur autorite dans leurs regions respectives en Zambie et en Angola.",
+      "relationsWithNeighbors": "Etroitement lies aux Chokwe (relations culturelles et linguistiques tres proches). Historiquement sous influence Lunda. Conflits recurrents avec les Lunda en Zambie (annees 1940-1950, 1998). Contacts avec les Ovimbundu au 18e siecle dans le cadre du commerce d'esclaves et d'ivoire. Apparentes aux Luchazi, Ndembu et Mbunda.",
+      "conflictsOrAlliances": "Commerce d'esclaves avec les Ovimbundu au 18e siecle. Conflits periodiques avec les Lunda en Zambie nord-occidentale (Etats d'urgence dans les annees 1940-1950, violences en 1998). Tensions de basse intensite persistantes avec les Lunda pour le controle territorial.",
+      "diaspora": "Migration economique vers Lusaka et d'autres centres urbains zambiens. Presence dans le nord-ouest de la Namibie et dans d'autres provinces de Zambie (Lukanga Swamp). Refugees en Zambie et en Namibie pendant et apres la guerre civile angolaise (1975-2002)."
+    },
+    "demography": {
+      "totalPopulation": 560000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : 398 000 en Angola, environ 160 000 en Zambie. Peoplegroups.org 2023 estime 1 593 000 au total dans 3 pays (incluant les diasporas urbaines).",
+      "distributionByCountry": [
+        { "country": "AGO", "population": 398000 },
+        { "country": "ZMB", "population": 162000 }
+      ]
+    },
+    "sources": [
+      "Joshua Project – Luvale, Lwena in Angola, 2025 (https://joshuaproject.net/people_groups/13168/AO)",
+      "Wikipedia – Luvale people (https://en.wikipedia.org/wiki/Luvale_people)",
+      "101 Last Tribes – Luvale people (https://www.101lasttribes.com/tribes/luvale.html)",
+      "Gateway Africa Safaris – Luvale Tribe (https://www.gateway-africa.com/tribe/luvale_tribe.html)",
+      "Wikipedia – Ganguela (https://en.wikipedia.org/wiki/Ganguela)",
+      "Wikipedia – Culture of Angola (https://en.wikipedia.org/wiki/Culture_of_Angola)"
+    ]
+  }
+}

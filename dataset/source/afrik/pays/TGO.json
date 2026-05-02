@@ -1,0 +1,167 @@
+{
+  "id": "TGO",
+  "nameFr": "République togolaise (Republic of Togo)",
+  "nameOfficial": "République togolaise (Republic of Togo)",
+  "etymology": "Le nom \"Togo\" vient de \"Togoville\" (anciennement \"Togodo\"), un village situé sur les rives du lac Togo. Le terme \"Togo\" signifie \"au-delà de la rivière\" ou \"au-delà de l'eau\" en langue ewe. Le nom \"Togo\" a été officialisé par les colonisateurs allemands à la fin du XIXe siècle lors de la création de la colonie du Togoland.",
+  "nameOriginActor": "Le nom \"Togo\" vient de \"Togoville\" (anciennement \"Togodo\"), nommé par les peuples locaux (Ewe). Le nom \"Togo\" a été officialisé par les colonisateurs allemands à la fin du XIXe siècle lors de la création de la colonie du Togoland.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Présence de peuples Gbe (Ewe, Fon, Adja) dans la région. Contacts avec les civilisations voisines. La région était connue sous le nom de \"Côte des Esclaves\" par les Européens.",
+      "middleAges": "Présence de peuples Gbe (Ewe, Fon, Adja) dans la région. Développement de royaumes et de chefferies locaux (royaume de Notsé). La région était connue sous le nom de \"Côte des Esclaves\" par les Européens.",
+      "precolonial": "Présence de peuples Gbe (Ewe, Fon, Adja) et autres groupes dans la région. Développement de royaumes et de chefferies locaux (royaume de Notsé). La région était connue sous le nom de \"Côte des Esclaves\" par les Européens, mais les populations locales avaient leurs propres appellations.",
+      "colonization": "1884-1914 : Protectorat allemand du Togoland. 1914-1960 : Mandat puis tutelle française du Togo. Développement de l'économie de plantation (café, cacao, coton), exploitation minière (phosphates), mouvements nationalistes (XXe siècle). Le nom \"Togo\" est officialisé par les colonisateurs allemands.",
+      "contemporary": "1960 : Indépendance (27 avril 1960), proclamation de la République togolaise. Le nom \"Togo\" est officiel."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume de Notsé",
+        "period": "XVe siècle - XVIIIe siècle",
+        "dominantPeoples": ["Ewe"],
+        "politicalCenters": ["Notsé"],
+        "historicalRole": "Royaume ewe puissant, centre de migration des Ewe, développement de la civilisation ewe, résistance aux colonisateurs."
+      },
+      {
+        "name": "Chefferies Ewe",
+        "period": "Depuis plusieurs siècles",
+        "dominantPeoples": ["Ewe"],
+        "politicalCenters": ["Chefferies locales"],
+        "historicalRole": "Organisation politique traditionnelle des Ewe, chefferies territoriales, résistance aux colonisateurs."
+      },
+      {
+        "name": "Protectorat allemand du Togoland",
+        "period": "1884 - 1914",
+        "dominantPeoples": ["Allemands", "Ewe", "autres groupes"],
+        "politicalCenters": ["Lomé (capitale coloniale)"],
+        "historicalRole": "Colonisation allemande, développement de l'économie de plantation (café, cacao, coton), exploitation minière (phosphates), mouvements nationalistes (XXe siècle)."
+      },
+      {
+        "name": "Mandat puis tutelle française du Togo",
+        "period": "1914 - 1960",
+        "dominantPeoples": ["Français", "Ewe", "autres groupes"],
+        "politicalCenters": ["Lomé (capitale coloniale)"],
+        "historicalRole": "Colonisation française, développement de l'économie de plantation (café, cacao, coton), exploitation minière (phosphates), mouvements nationalistes (XXe siècle)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Ewe",
+        "selfAppellation": "Eʋe / Eʋegbe",
+        "exonyms": ["\"Ewe\" (terme utilisé par les Européens)"],
+        "peopleId": "PPL_EWE",
+        "mainRegion": "Sud du Togo",
+        "languages": ["Ewe (ewe", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "\"Eʋe\" / \"Eʋegbe\" sont les auto-appellations. Le terme \"Ewe\" est utilisé par les Européens. Pas de terme péjoratif connu. Groupe Gbe majoritaire, migration depuis Notsé (Togo) selon tradition orale."
+      },
+      {
+        "name": "Kabye",
+        "selfAppellation": "Kabye",
+        "exonyms": [
+          "\"Kabye\" (terme utilisé par les Européens)",
+          "\"Kabiyè\" (variante)"
+        ],
+        "peopleId": "PPL_KABYE",
+        "mainRegion": "Nord du Togo",
+        "languages": ["Kabye (kbp", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "\"Kabye\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe bénoué-congo, originaire du nord du Togo."
+      },
+      {
+        "name": "Mina",
+        "selfAppellation": "Mina",
+        "exonyms": ["\"Mina\" (terme utilisé par les Européens)"],
+        "peopleId": "PPL_MINA",
+        "mainRegion": "Sud du Togo (zones côtières)",
+        "languages": ["Mina (gej", "ISO 639-3)", "français", "ewe"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "\"Mina\" est l'auto-appellation. Pas de terme péjoratif connu. Groupe Gbe, originaire des zones côtières du Togo."
+      },
+      {
+        "name": "Autres groupes",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_AUTRES_GROUPES",
+        "mainRegion": "Toutes les régions du Togo",
+        "languages": ["Langues diverses", "français"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "ewe",
+          "isoCode": "ewe"
+        },
+        {
+          "name": "kabye",
+          "isoCode": "kbp"
+        },
+        {
+          "name": "mina",
+          "isoCode": "gej"
+        }
+      ],
+      "culturalTraditions": "Traditions Gbe (Ewe, Mina) : musique Agbadza, rituels vodun, tissage kente (variante ewe), musiques traditionnelles, danse traditionnelle, poésie orale, artisanat (poterie, tissage). Traditions bénoué-congo (Kabye) : musiques traditionnelles, danse traditionnelle, poésie orale, artisanat. Festivals traditionnels variés. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La culture togolaise est riche et préservée, avec une forte tradition orale (poésie).",
+      "dominantReligions": "Christianisme (majoritaire, environ 50%, principalement catholicisme et protestantisme), religions traditionnelles africaines (syncrétisme fréquent, environ 30%, vodun), islam (minorité, environ 20%)",
+      "lifestyles": "Agriculture (café, cacao, coton, maïs, sorgho, millet, cultures vivrières), élevage (bovins, caprins, ovins), pêche (océan Atlantique, importante source de protéines), exploitation minière (phosphates, or), commerce et activités urbaines (zones urbaines, Lomé). Urbanisation importante. Économie basée sur l'agriculture (café, cacao, coton), l'exploitation minière (phosphates, or), et les services. Le Togo est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles.",
+      "socialOrganization": "Société multiethnique et multiculturelle. Structures familiales traditionnelles (patrilinéaires). Organisation communautaire (chefferies, clans). Structures étatiques modernes (république, mais instabilité politique et conflits récents). Système politique démocratique, mais instabilité politique et conflits récents (régime autoritaire, coups d'État).",
+      "regionalRelations": "Relations avec l'Afrique de l'Ouest (CEDEAO, Union africaine), relations avec l'Europe (Union européenne, France, Allemagne), relations avec les États-Unis. Le Togo est membre de la CEDEAO et de l'Union africaine."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Présence de peuples Gbe (Ewe, Fon, Adja) dans la région. Contacts avec les civilisations voisines. La région était connue sous le nom de \"Côte des Esclaves\" par les Européens.",
+      "middleAges": "Présence de peuples Gbe (Ewe, Fon, Adja) dans la région. Développement de royaumes et de chefferies locaux (royaume de Notsé). La région était connue sous le nom de \"Côte des Esclaves\" par les Européens.",
+      "precolonial": "Présence de peuples Gbe (Ewe, Fon, Adja) et autres groupes dans la région. Développement de royaumes et de chefferies locaux (royaume de Notsé). La région était connue sous le nom de \"Côte des Esclaves\" par les Européens, mais les populations locales avaient leurs propres appellations.",
+      "colonization": "1884-1914 : Protectorat allemand du Togoland, développement de l'économie de plantation (café, cacao, coton), exploitation minière (phosphates). 1914-1960 : Mandat puis tutelle française du Togo, développement de l'économie de plantation, exploitation minière, mouvements nationalistes (XXe siècle).",
+      "independenceStruggle": "1950s-1960 : Mouvements nationalistes, CUT (Comité de l'unité togolaise), indépendance (27 avril 1960), proclamation de la République togolaise. Sylvanus Olympio devient premier président.",
+      "postIndependence": "République togolaise (1960), présidence de Sylvanus Olympio (1960-1963, assassinat), coup d'État (1963), présidence de Nicolas Grunitzky (1963-1967), coup d'État (1967), présidence de Gnassingbé Eyadéma (1967-2005, régime autoritaire, parti unique jusqu'en 1991), transition démocratique (1991), élections multipartites, présidence de Faure Gnassingbé (depuis 2005, fils de Gnassingbé Eyadéma). Stabilité politique fragile, démocratie multipartite, développement économique (agriculture, exploitation minière). Le Togo est l'un des pays les plus pauvres d'Afrique, avec un IDH faible et une économie dépendante des ressources naturelles."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Togo",
+      "SIL Ethnologue – Languages of Togo",
+      "Recensements togolais",
+      "Études anthropologiques sur les peuples du Togo",
+      "Études historiques sur la colonisation allemande et française"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Ewe",
+          "population": 3500000,
+          "percentageInCountry": 42,
+          "peopleId": "PPL_EWE",
+          "region": "Sud du Togo",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Kabye",
+          "population": 1200000,
+          "percentageInCountry": 14.4,
+          "peopleId": "PPL_KABYE",
+          "region": "Nord du Togo",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Mina",
+          "population": 800000,
+          "percentageInCountry": 9.6,
+          "peopleId": "PPL_MINA",
+          "region": "Sud du Togo (zones côtières)",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Autres groupes",
+          "population": 2800000,
+          "percentageInCountry": 34,
+          "peopleId": "PPL_AUTRES_GROUPES",
+          "region": "Toutes les régions du Togo"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "id": "PPL_NDEBELE_SUD",
+  "nameMain": "Ndebele du Sud (Ndzundza)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["ZAF"],
+  "content": {
+    "appellations": {
+      "mainName": "Ndebele du Sud (Ndzundza)",
+      "selfAppellation": "AmaNdebele / abakwaNdzundza",
+      "exonyms": [
+        "Transvaal Ndebele",
+        "Southern Ndebele",
+        "Ndebele (terme européen)",
+        "isiKhethu (nom interne)"
+      ],
+      "originOfExonyms": "Le terme Ndebele est un exonyme d'origine incertaine, associé au terme sotho Matebele désignant ceux qui disparaissent derrière leurs grands boucliers. Southern Ndebele ou Transvaal Ndebele distingue ce groupe des Ndebele du Zimbabwe (Matabele de Mzilikazi). isiKhethu, signifiant ce qui est le nôtre, est l'appellation interne valorisée.",
+      "whyProblematic": "La désignation Ndebele englobe des groupes distincts. Les Ndzundza (Ndebele du Sud proprement dit) se distinguent des Manala (Ndebele du Nord intérieur) et des Ndebele du Zimbabwe. Sous l'apartheid, les deux groupes furent regroupés dans le bantoustan KwaNdebele (1977-1994), ce qui masqua leurs différences internes.",
+      "contemporaryUsage": "Le terme isiNdebele désigne aujourd'hui la langue officielle (l'une des 11 langues officielles d'Afrique du Sud). Les Ndzundza sont reconnus comme le sous-groupe le plus emblématique culturellement, porteurs des peintures murales géométriques et du travail de perles célébrés mondialement.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Nguni (Zone S)",
+      "historicalRegion": "Mpumalanga et Gauteng (ex-Transvaal), Afrique du Sud ; anciennement KwaSimkhulu (Steelport River basin), KoNomtjarhelo (Roossenekal)",
+      "currentCountries": ["ZAF"]
+    },
+    "ethnicities": [
+      "abakwaNdzundza (Ndzundza Ndebele, groupe dominant, Mpumalanga/Gauteng)",
+      "abakwaManala (Manala Ndebele, autour de Pretoria/Wonderboom, considérés comme la maison royale senior)",
+      "BagaLanga (Ndebele du Nord, province de Limpopo, Mokopane/Polokwane, fortement sothoïsés)",
+      "BagaSeleka (Ndebele du Nord, Limpopo, culturellement proches des Sotho)",
+      "Kekana (sous-groupe nordique, région de Zebediela, assimilé aux groupes Sotho environnants)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ndebele du Sud descendent des Nguni de KwaZulu-Natal. Leur histoire est retracée à Mafana, premier chef identifiable, suivi de Mhlanga puis de Musi. Vers 1600, Musi conduisit son groupe depuis le Natal au nord, traversant le Vaal, pour s'établir près de l'actuelle Pretoria (KwaMnyamana). Les Ndebele font partie du grand groupe bantou nguni et partagent des traits linguistiques avec les Zulu et les Xhosa.",
+      "formationPeriod": "L'identité Ndzundza se consolide à la mort du roi Musi vers 1630 : son fils Ndzundza, battu dans la lutte successorale par Manala, migra vers l'est pour s'établir dans le bassin de la Steelport River (KwaSimkhulu). Les deux groupes maintinrent une paix formelle après la médiation de Noqoli (accord isiVumelano sakoNoQoli), reconnaissant la rivière Olifants comme frontière.",
+      "migrationRoutes": [
+        "Migration depuis KwaZulu-Natal à travers le Drakensberg vers le Highveld (vers 1552-1600 selon les sources)",
+        "Traversée du Vaal River (Mafana y périt selon la tradition orale)",
+        "Établissement à eMhlangeni (Randfontein) puis KwaMnyamana (rive de l'Apies River, Pretoria)",
+        "Après la scission : Ndzundza migre est vers KwaSimkhulu (Steelport River basin, actuel Belfast, Mpumalanga)"
+      ],
+      "historicalSettlementZones": [
+        "KwaMnyamana (Wonderboom, Pretoria) : capitale originelle commune, résidence des Manala",
+        "KwaSimkhulu (Steelport River basin, Mpumalanga) : fief historique Ndzundza",
+        "KoNomtjarhelo / Mapoch's Caves (Roossenekal, Mpumalanga) : forteresse du siège de 1883",
+        "KwaMhlanga (Welgelegen, Mpumalanga) : capitale administrative KwaNdebele après 1977",
+        "KoMjekejeke (Wallmansthal) : établissement Manala sur terre missionnaire berlinoise dès 1873"
+      ],
+      "unificationsOrDivisions": "La scission entre Ndzundza et Manala (vers 1630) est le moment fondateur. Sous l'apartheid, le bantoustan KwaNdebele (1977-1994) regroupa les deux sous-groupes. Les Ndzundza, majoritaires dans KwaNdebele, conservèrent une identité culturelle plus marquée. La Commission Nhlapo (2010) puis les tribunaux (2017) reconnurent finalement les Manala comme la maison royale senior (Makhosoke II), mais les Ndzundza (sous Mabhoko III) contestent encore cette reconnaissance.",
+      "externalInfluences": "Raids de Mzilikazi dans les années 1820. Pression des Boers (Voortrekkers) dès les années 1840. Guerre Ndzundza-République sud-africaine de 1883 : défaite, expropriation des terres, dispersion comme travailleurs sous contrat (5 ans) chez les fermiers blancs. Apartheid : assignation au bantoustan KwaNdebele (1977-1994). Influence du christianisme (missions berlinoises dès les années 1870). Dissolution du bantoustan en 1994.",
+      "majorHistoricalEvents": "Vers 1600 : installation de Musi près de Pretoria. Vers 1630 : scission Manala-Ndzundza. 1820s : raids de Mzilikazi dévastent les homesteads Ndzundza. 1854 : massacre à Makapansgat (grottes de Gwasa), 1 000 à 3 000 morts lors du siège boer. 1883 : guerre avec la Zuid-Afrikaansche Republiek, siège de 8 mois à KoNomtjarhelo, défaite du chef Nyabela, emprisonné à vie ; dispersions comme laboureurs sous contrat 1883-1888. 1976 : création du South Ndebele Language Board. 1977 : bantoustan KwaNdebele instauré. 1994 : dissolution du bantoustan, intégration à la province du Mpumalanga."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "L'autorité suprême est le chef tribal (iKosi ou iNgwenyama), assisté d'un conseil interne (iimphakathi). Les wards (izilindi) sont administrés par des chefs de ward (izinduna). L'unité de base est le homestead (umuzi), dirigé par le chef de famille (umnumzana). Le roi Ndzundza actuel est Mabhoko III (Mbusi Mahlangu, depuis 2006) ; le roi Manala est Makhosoke II (Enoch Mabhena). Les assemblées royales (imbizo) règlent les affaires communautaires.",
+      "clanOrganization": "Organisation patrilinéaire en clans (izibongo) partageant un ancêtre paternel commun. La société est divisée entre les deux grandes branches Ndzundza et Manala, elles-mêmes subdivisées en régiments d'initiation (iintanga). Les Ndzundza ont un cycle de 15 noms de régiments, les Manala de 13.",
+      "ageClassSystems": "Les régiments d'initiation masculine (iintanga) structurent la société. L'initiation masculine (ukuwela) se tient tous les 4 ans environ, regroupant des jeunes d'environ 18 ans sous la supervision des anciens. Les garçons sont circoncis et passent 3 mois en isolement dans la brousse, avant de réintégrer la communauté lors d'une cérémonie.",
+      "roleOfLineages": "Les lignages patrilinéaires (izibongo) déterminent l'identité, les droits fonciers et les alliances matrimoniales. Le mariage est exogame (clans différents obligatoires). L'aîné hérite du titre et d'une plus grande part du patrimoine. La femme conserve le nom de clan paternel mais les enfants prennent le clan du père.",
+      "religiousAuthority": "Les guérisseurs traditionnels (izangoma) servent d'intermédiaires avec les esprits ancestraux. Syncrétisme entre croyances ancestrales traditionnelles et christianisme (surtout Église évangélique luthérienne, missionnaires berlinois). Les esprits ancestraux peuvent se manifester en rêves ou sous forme de serpents. Les maladies sont traditionnellement attribuées à des forces extérieures (sortilèges)."
+    },
+    "languages": {
+      "mainLanguage": "isiNdebele (Ndebele du Sud)",
+      "isoCodes": ["nbl"],
+      "dialects": [
+        "isiNdebele Ndzundza (forme la plus pure, Mpumalanga/Gauteng, seule forme écrite codifiée)",
+        "isiNdebele Manala (variante nord, autour de Pretoria)",
+        "Variantes Limpopo (BagaLanga, BagaSeleka, fortement influencées par le sotho du Nord)"
+      ],
+      "vehicularRole": "L'isiNdebele est l'une des 11 langues officielles d'Afrique du Sud depuis 1994. Environ 1,1 million de locuteurs natifs selon le recensement de 2011 (1,4 million de locuteurs L2 en 2002). Proche du zoulou, la langue a été codifiée formellement à partir de 1976 (South Ndebele Language Board) ; la Bible y fut traduite en 1986. Enseigné dans les écoles de Mpumalanga depuis 1984."
+    },
+    "culture": {
+      "majorRites": "Ukuwela (initiation masculine, vers 18 ans, tous les 4 ans) : circoncision, 3 mois d'isolement en brousse, transmission des lois et traditions, retour cérémoniel marqué par des offrandes et bénédictions. Ukuthombisa (initiation féminine, à la puberté) : isolement d'environ un mois, enseignement des savoir-faire domestiques, de la confection de perles et des peintures murales par les grands-mères, sortie marquée par le port des tabliers isiphephetu. Mariage : la fiancée porte des tabliers et colliers de perles, une couverture de mariage (nguba) décorée ; le mariage est consommé hors du clan paternel (exogamie). Cérémonies funèbres : offrandes aux ancêtres, vêtements portés à l'envers (ukulhanukela). Le rite de consécration du homestead implique des prières et sacrifices aux ancêtres.",
+      "symbols": "Les peintures murales géométriques (imithelela) sont le symbole identitaire le plus visible : réalisées par les femmes sur les façades des maisons, en couleurs primaires vives (bleu, rouge, jaune, vert) avec des contours noirs, sans gabarits. Les perles (iziqaza) codifient le statut social, l'âge, la situation matrimoniale. Les anneaux de cuivre et de laiton (idzila) portés par les femmes mariées aux bras, jambes et cou symbolisent le lien conjugal. L'iNamrhali (perles et sceptre magiques) est l'insigne de légitimité royale Ndzundza.",
+      "artsAndMusic": "Peinture murale géométrique : art féminin transmis de mère en fille, utilisant des motifs issus d'un répertoire symbolique ancestral (triangles, losanges, lignes brisées). Esther Mahlangu (née en 1935) a porté cet art sur la scène mondiale : BMW Art Car (1991), British Airways (1997), expositions au Centre Pompidou (Paris), au Guggenheim (Bilbao) et au Smithsonian (Washington). Travail de perles : bijoux, tabliers, couvertures de mariage, hoops (izigolwan et iinrholwani) codifiant statut et événements de vie. Poterie, tissage de nattes, confection de poupées de perles. Musique : chants de loange (izibongo), chants d'initiation, percussions. La culture orale (poésie épique) est transmise lors des cérémonies.",
+      "spiritualities": "Croyance aux esprits ancestraux (amadlozi) qui protègent ou punissent les vivants ; les ancêtres peuvent se manifester en rêves ou sous forme de serpents. Les maladies et malheurs sont attribués à des forces extérieures (sorcellerie). Les guérisseurs traditionnels (izangoma) sont des médiums capables de communiquer avec les ancêtres et de prescrire des remèdes à base de plantes. Syncrétisme répandu avec le christianisme, notamment les Églises africaines indépendantes (zioniste) et les missions luthériennes berlinoises depuis les années 1870."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le chiefdom Ndzundza, fondé vers 1630 à la suite de la scission avec les Manala, atteignit son apogée politique sous Mabhoko I (1840-1865) et Nyabela (régent 1879-1902), résistant aux Boers pendant 8 mois (siège de KoNomtjarhelo, 1883). Le KwaNdebele, bantoustan créé en 1977, fut l'entité administrative la plus récente avant sa dissolution en 1994. La famille royale Mahlangu (Ndzundza) et Mabhena (Manala) maintiennent des structures royales reconnues aujourd'hui.",
+      "relationsWithNeighbors": "Relations de commerce et de conflit avec les Sotho du Nord (BaPedi) et les Tswana. Alliance ou client-relation ponctuelle avec les Boers avant la rupture de 1883. Rivalité historique avec les Manala (scission de Musi). Relations avec les missions luthériennes berlinoises (Wallmansthal, Botshabelo) qui fournirent terres et soutien aux Manala en échange de conversions.",
+      "conflictsOrAlliances": "1854 : alliance Ndebele-Mokopane contre les Boers (massacre de 28 Boers, suivi du siège des grottes de Makapansgat, 3 semaines, 1 000 à 3 000 Ndebele morts). 1883 : guerre Ndzundza-ZAR : siège de 8 mois de KoNomtjarhelo sous le commandant boer Piet Joubert ; défaite et dispersion comme laboureurs sous contrat (1883-1888) ; chef Nyabela emprisonné à vie, terres expropriées. Opposition à l'indépendance du bantoustan KwaNdebele (mouvement de résistance des Ndzundza dans les années 1980).",
+      "diaspora": "Après la dispersion de 1883-1888, les Ndzundza furent éparpillés comme laboureurs dans les districts de Lydenburg, Middelburg, Standerton et Wakkerstroom. Sous l'apartheid, des centaines de milliers de Ndebele travaillèrent dans les zones industrielles de Pretoria et Johannesburg (navettes quotidiennes depuis KwaNdebele). Aujourd'hui, des communautés Ndebele sont présentes dans les grandes villes d'Afrique du Sud (Gauteng, Mpumalanga) et une diaspora plus réduite existe en Europe et dans les pays anglo-saxons."
+    },
+    "demography": {
+      "totalPopulation": 1348000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : 1 348 000 Southern Ndebele en Afrique du Sud. Recensement sud-africain 2011 (Statistics South Africa) : 1 090 223 locuteurs isiNdebele comme langue maternelle. Kabirasafaris.com estime 700 000 Southern Ndebele stricts dans les provinces de Mpumalanga et Limpopo.",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 1348000,
+          "note": "Principalement Mpumalanga (KwaMhlanga, Siyabuswa), Gauteng (Pretoria/Tshwane, Bronkhorstspruit) et Limpopo"
+        }
+      ]
+    },
+    "sources": [
+      "South African History Online — Ndebele. https://sahistory.org.za/article/ndebele",
+      "Wikipedia EN — Southern Ndebele people. https://en.wikipedia.org/wiki/Southern_Ndebele_people",
+      "Wikipedia EN — Southern Ndebele language. https://en.wikipedia.org/wiki/Southern_Ndebele_language",
+      "Joshua Project — Ndebele, Southern in South Africa. https://joshuaproject.net/people_groups/15054",
+      "My Modern Met — Esther Mahlangu: Time in Color. https://mymodernmet.com/esther-mahlangu-time-in-color/",
+      "Kruger Park — Southern Ndebele tribe of South Africa. https://kabirasafaris.com/southern-ndebele/",
+      "Statistics South Africa — Census 2011 (langue isiNdebele). http://www.statssa.gov.za/",
+      "Ethnologue (SIL) — isiNdebele [nbl]. https://www.ethnologue.com/language/nbl"
+    ]
+  }
+}

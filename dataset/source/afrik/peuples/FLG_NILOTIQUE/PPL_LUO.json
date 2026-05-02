@@ -1,0 +1,98 @@
+{
+  "id": "PPL_LUO",
+  "nameMain": "Luo",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["KEN", "TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Luo",
+      "selfAppellation": "Joluo (pluriel) ; Jaluo (singulier) ; Joramogi ou Nyikwaramogi (heritiers de Ramogi, ancetre mythique fondateur)",
+      "exonyms": [
+        "Jonagi",
+        "Jaonagi",
+        "Kavirondo (terme colonial britannique, perçu comme pejoratif)"
+      ],
+      "originOfExonyms": "Le terme Jonagi/Jaonagi derive du mot onagi, designant l'ablation des six incisives inferieures, rite de puberete distinctif des Luo. Kavirondo est un terme colonial britannique qui designait les populations du golfe de Kavirondo (actuel golfe de Winam sur le lac Victoria) ; il est considere pejoratif et n'est plus utilise officiellement. Joluo et Jaluo sont les termes endogenes usuels.",
+      "whyProblematic": "Le terme Luo est generique et designe un ensemble de peuples nilotiques de l'ouest (Luo du Nil Blanc en Ouganda, Acholi, Alur, Adhola, Padhola, Shilluk du Soudan du Sud, etc.). Les Luo du Kenya et de Tanzanie se distinguent comme les seuls river-lake Nilotes (Nilotiques de riviere et de lac) du groupe. Il convient de preciser Luo du Kenya ou Dholuo pour eviter la confusion.",
+      "contemporaryUsage": "Le terme Joluo est utilise en auto-identification. En anglais kenyan courant, Luo designe exclusivement ce peuple. Quatrieme groupe ethnique du Kenya avec 5 066 966 personnes (recensement 2019, soit 10,6% de la population). En Tanzanie, ils habitent la region de Mara.",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique occidental, sous-groupe Luo meridionaux (River-Lake Nilotes)",
+      "historicalRegion": "Nyanza (Kenya), region de Mara (Tanzanie)",
+      "currentCountries": ["KEN", "TZA"]
+    },
+    "ethnicities": ["Luo"],
+    "origins": {
+      "ancientOrigins": "Les Luo du Kenya et de Tanzanie sont un peuple nilotique occidental dont les origines remontent au berceau commun des Nilotiques, entre le Bahr-el-Ghazal et l'Equatoria oriental au Soudan du Sud. Les donnees archeologiques les plus anciennes associees aux ancetres nilotiques proviennent du site de Kadero (48 km au nord de Khartoum, Soudan), date d'environ 3000 av. J.-C. : culture pastorale bovine, cimetiere a phenotypes subsahariens, commerce a longue distance, agriculture et peche. Les recherches genetiques et linguistiques rattachent les Nubiens du Soudan du Nord et du sud de l'Egypte a une population melangee issue des Nilotiques et de flux genetiques moyen-orientaux et est-africains, descendants des habitants precoces de la vallee du Nil (royaume de Koush : Kerma, Meroe ; royaumes chretiens medievaux : Makuria, Nobatia, Alodia).",
+      "formationPeriod": "Migration lente sur plusieurs generations depuis le Soudan du Sud vers l'Ouganda et l'ouest du Kenya, approximativement de 1000 ap. J.-C. jusqu'au debut du XXe siecle. L'identite specifique des Luo du Kenya se consolide lors des quatre grandes vagues migratoires dans l'ancienne province de Nyanza entre le XVe et le XXe siecle.",
+      "migrationRoutes": [
+        "Premiere vague Joka Jok (vers 1490-1517) : la plus grande ; installation sur la colline Ramogi, expansion dans le Nord-Nyanza",
+        "Deuxieme vague Jok'Owiny / Jok'Omolo (vers 1598-1625) : groupes supplementaires depuis l'Ouganda",
+        "Troisieme vague (divers groupes : Suba, Sakwa, Asembo, Uyoma, Kano)",
+        "Quatrieme vague des Suba (mi-XVIIIe siecle) : originellement Bantous fuyant le royaume de Buganda apres le meurtre du 24e Kabaka ; installes dans le Sud-Nyanza (iles Rusinga et Mfangano) ; assimiles progressivement dans la culture luo",
+        "Au XVe siecle, entree dans le royaume Bunyoro-Kitara (Ouganda) et fondation de la dynastie Babiito (assimilation dans la culture bantoue)",
+        "Traversee du golfe de Winam depuis le Nord vers le Sud-Nyanza au debut du XVIIe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Golfe de Winam (lac Victoria), ancienne province de Nyanza (Kenya)",
+        "Region de Mara (nord de la Tanzanie)",
+        "Colline Ramogi (North Nyanza)",
+        "Thimlich Ohinga (fortifications en pierre, datees de la periode d'expansion luo)",
+        "Iles Rusinga et Mfangano (lac Victoria)"
+      ],
+      "unificationsOrDivisions": "Organisation en 27 tribus au Kenya, chacune subdivisee en clans et sous-clans avec le prefixe Jo- (peuple de). Pas d'unite politique centralisee traditionnellement. La Luo Union est fondee en 1947 (Oginga Odinga, premier Ker). Le titre de Ker (chef culturel supreme) cree en 1947 n'est pas un titre politique national. Le neuvieme Ker Jaduong Odungi Randa est intronise le 22 decembre 2023.",
+      "externalInfluences": "Contacts avec la culture de Kanysore (ceramique ancienne, Gogo Falls, Migori), les Twa (art rupestre de Mfangano), les Bantous (forgerons et agriculteurs, culture Urewe 650-550 av. J.-C.), les Luhya, Suba, Kunta, Kuria, Kisii et Nilotiques meridionaux (Nandi, Kipsigis, Maasai). Les Bantous ont adopte certaines pratiques luo (ablation des dents) pour faciliter les mariages interethniques ; les Luo ont adopte des elements architecturaux locaux.",
+      "majorHistoricalEvents": "Expeditions punitives coloniales britanniques (1896 : massacre du clan Kager sous Ochieng Ger III, plus de 200 tues). Mouvement Mumboism (1913, Onyango Dunde) : culte millenariste anti-colonial. Piny Owacho (1921) : plateforme politique contre les taxes et le systeme de laissez-passer. Tom Mboya (federaliste, KANU, airlift Kennedy vers USA). Oginga Odinga (premier vice-president du Kenya). Robert Ouko (ministre des affaires etrangeres, assassine 1990). Raila Odinga (premier ministre 2008, accord de partage du pouvoir apres la crise post-electorale 2007). Barack Obama Sr., pere du 44e president americain."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe patriarcale decentralisee organisee en niveaux croissants : famille (chef de famille), clan (anyuola : familles apparentees), village (gweng : dirige par un ancien dodo/jaduong gweng et un conseil d'anciens), sous-tribu (piny : chef hereditaire ruoth, elu par merite, couronne par un devin jabilo). Le commandant militaire est l'osumba mirwayi, le porte-parole joue un role de mediateur. Les sous-tribus s'unissaient en cas de catastrophe pour partager des ressources (sumo) et exploiter des marches collectifs (Kisumo, actuelle Kisumu).",
+      "clanOrganization": "27 tribus (sub-tribus) au Kenya, chacune composee de plusieurs clans et sous-clans identifies par le prefixe Jo- (peuple de). Les clans sont exogames : le mariage entre membres d'un meme clan est interdit. Les clans sont appeles Ororo chez les Luo, Liel chez les Nuer, Jur-Chol chez les Dinka (peuples nilotiques partageant des structures similaires).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Organisation par seniorite : le fils aine recoit la plus grande part (terrain median), avec alternance droite/gauche pour les suivants. Le fils aine dirige les sacrifices et les recoltes. Le fils cadet peut prendre soin du pere vieillissant et herite du jardin mondo. Polygamie organisee par ordre d'epouses (mikayi : premiere, nyachira : deuxieme, reru : troisieme).",
+      "religiousAuthority": "Devins (jabilo) avec role spirituel et militaire. Cultes d'ancetres, sacrifices, chasse aux esprits (nyawawa), fabricants de pluie. Eglises locales originales : Legio Maria, Roho, Nomiya, Fweny. Communautes musulmanes (notamment a Kisumu). Aujourd'hui, majorite de chretiens (protestants, catholiques)."
+    },
+    "languages": {
+      "mainLanguage": "Dholuo",
+      "isoCodes": ["luo"],
+      "dialects": [],
+      "vehicularRole": "Le dholuo est la langue maternelle des Luo du Kenya et de Tanzanie. Il appartient a la branche nilotique occidentale de la famille nilo-saharienne. Les premieres transcriptions sont dues au missionnaire adventiste Arthur Carscallen (1906-1921, colline Gendia). Il presente une similarite lexicale de 90% avec le lep Alur, 83% avec le lep Achol et 93% avec le dhopadhola. Swahili et anglais sont utilises comme langues vehiculaires au Kenya et en Tanzanie."
+    },
+    "culture": {
+      "majorRites": "Ablation des six incisives inferieures (rite de puberete, lie historiquement a la prevention du tetanos/lockjaw) : marque identitaire fondamentale, a l'origine du terme Jonagi. Pas de circoncision masculine (trait distinctif des Luo par rapport aux voisins). Mariage exogame : dot en betail et argent (ayie) a la mere de la mariee et au pere ; mariage civil ou coutumier souvent complete par une ceremonie religieuse. Rites funeraires elabores (tero buru/sigweya).",
+      "symbols": "Le lac Victoria (Nam Lolwe en dholuo) est le coeur geographique et symbolique de l'identite luo. L'architecture defensive traditionnelle (Thimlich Ohinga : enclos de pierre classes au patrimoine mondial de l'UNESCO ; Gunda Bur : fortifications en terre) temoigne du genie luo. Les instruments nyatiti (luth) et orutu (violon) sont des emblemes musicaux.",
+      "artsAndMusic": "Musique fonctionnelle : chants funeraires (tero buru/sigweya), chants de biere (dudu/ohangla), chants de lutte (olengo), musique rituelle (nyawawa). Melodies lyriques, syncopation, chant-reponse, pakruok (auto-louange), sigalagala (ululement). Danse avec mouvements des jambes, hanches et epaules (nyatiti). Costumes traditionnels : jupes en sisal (owalo), perles (ombulu/tigo), argile, peaux. Instruments : percussions (tambours, ongeng'o/gara), cordes (nyatiti, orutu), vents (tung, asili). Genre moderne Benga (annees 1950, George Ramogi, Ochieng Kabaselle), ohangla. Artistes contemporains : Suzanna Owiyo, Tony Nyadundo, Gidi Gidi Maji Maji. Film, litterature : Lupita Nyong'o (actrice, Oscar 2014), Yvonne Adhiambo Owuor (Prix Caine 2003).",
+      "spiritualities": "Croyances traditionnelles : devins (jabilo), fabricants de pluie, culte des ancetres, sacrifices. Eglises independantes d'inspiration luo : Legio Maria (fusion catholico-traditionnelle), Nomiya, Roho. Islam (communautes Luo musulmanes a Kisumu). Christianisme mainstream (majorite). Hussein Onyango Obama, grand-pere de Barack Obama, est cite parmi les supporteurs de l'independance emprisonnes par les Britanniques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation en sous-tribus independantes avec chefs (ruoth) hereditaires elus au merite. Participation a la fondation de la dynastie Babiito dans le royaume de Bunyoro-Kitara (Ouganda, XVe siecle). Construction de fortifications en pierre (Thimlich Ohinga, patrimoine UNESCO) et en terre (Gunda Bur).",
+      "relationsWithNeighbors": "Deplacement des Luhya vers les terres plus elevees, des Kuria vers la frontiere Kenya-Tanzanie, des Nandi et Kipsigis vers l'est et le nord-est lors de l'expansion luo. Commerce, conflits, conquetes et mariages interethniques avec Bantous, Nilotiques meridionaux et populations Twa. Resistance aux expeditions punitives britanniques (1896). Voisinage contemporain avec Luhya (nord), Kisii/Gusii (est), Kipsigis (nord-est), Kuria et Maasai (sud-est).",
+      "conflictsOrAlliances": "Expeditions punitives coloniales (1896 : Kager, Uyoma). Cooperation selective avec les Britanniques (chef Odera fournit 1500 porteurs contre les Nandi en 1900). Nationalisme pacifique pour l'independance (Tom Mboya, Oginga Odinga). Marginalisation politique post-independance sous Kenyatta puis Moi. Crise post-electorale 2007-2008 (Raila Odinga, accord de partage du pouvoir 2008). Contribution decisive au mouvement de l'airlift Kennedy (bourses d'etudes vers les USA pour les Africains, 1959-1963).",
+      "diaspora": "Communaute luo presente dans les grandes villes kenyanes (Nairobi, Mombasa, Kisumu) et en Tanzanie (Mara Region). Diaspora internationale en Europe, en Amerique du Nord et en Asie. Barack Obama (44e president des Etats-Unis, dont le pere est kenyan luo) est la personnalite d'origine luo la plus connue mondialement. Lupita Nyong'o (actrice, premiere Africaine noire a remporter l'Oscar)."
+    },
+    "demography": {
+      "totalPopulation": 5500000,
+      "referenceYear": 2025,
+      "source": "Recensement national kenyan KNBS 2019 (5 066 966 au Kenya, 10,6% de la population) + estimations Tanzanie 2025 (region Mara)",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 5200000,
+          "note": "Quatrieme groupe ethnique du Kenya ; concentres dans les comtes de Siaya, Kisumu, Homa Bay, Migori et Kisii (ancienne province de Nyanza)"
+        },
+        {
+          "country": "TZA",
+          "population": 300000,
+          "note": "Region de Mara (nord-ouest de la Tanzanie, rive sud du lac Victoria), district de Rorya et environs"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Luo people (Kenya and Tanzania) (https://en.wikipedia.org/wiki/Luo_people_(Kenya_and_Tanzania))",
+      "Kenya National Bureau of Statistics – 2019 Kenya Population and Housing Census, Volume IV",
+      "Ogot B.A. – History of the Southern Luo, East African Publishing House, 1967",
+      "Cohen D.W. & Atieno Odhiambo E.S. – Siaya: The Historical Anthropology of an African Landscape, James Currey, 1989",
+      "Tishkoff S.A. et al. – The Genetic Structure and History of Africans and African Americans, Science, 2009",
+      "SIL Ethnologue – Dholuo language [luo] (https://www.ethnologue.com/language/luo/)",
+      "UNESCO World Heritage – Thimlich Ohinga Archaeological Site (https://whc.unesco.org/en/list/1450/)"
+    ]
+  }
+}

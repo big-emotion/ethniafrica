@@ -1,0 +1,104 @@
+{
+  "id": "PPL_SONGHAY_GURMA",
+  "nameMain": "Songhay Gurma",
+  "languageFamilyId": "FLG_SONGHAY",
+  "currentCountries": ["BFA", "MLI"],
+  "content": {
+    "appellations": {
+      "mainName": "Songhay Gurma",
+      "selfAppellation": "Songhay Humburi / Ayneha",
+      "exonyms": [
+        "Humburi Senni Songhay",
+        "Songhay de Hombori",
+        "Central Songhay"
+      ],
+      "originOfExonyms": "Le terme Humburi Senni signifie litteralement la langue de Hombori en songhay. Hombori est la ville principale de la region de residence de ce groupe au sud-est du Mali. L'appellation Songhay Gurma designe les locuteurs de ce dialecte qui vivent aussi dans le nord-est du Burkina Faso, dans la province du Seno.",
+      "whyProblematic": "Le terme Gurma peut etre source de confusion car il designe egalement les Gourmantche, peuple de langue gur sans lien avec les Songhay. L'appellation correcte dans la litterature linguistique est Humburi Senni (ISO 639-3 : hmb). La denomination Songhay Gurma est un terme geographique qui designe les Songhay vivant dans la zone du Gurma, region a cheval entre le Burkina Faso, le Mali et le Niger.",
+      "contemporaryUsage": "Ces locuteurs du songhay central sont environ 81 000, repartis principalement au sud du Mali (region de Hombori, cercle de Douentza, region de Mopti) et dans le nord-est du Burkina Faso (region du Sahel, province du Seno, environs de Dori). Ils se designent eux-memes comme Ayneha, terme collectif songhay. Le francais est la langue d'administration et d'education dans les deux pays.",
+      "linguisticFamily": "FLG_SONGHAY",
+      "ethnoLinguisticGroup": "Songhay central (Humburi Senni)",
+      "historicalRegion": "Region de Hombori (Mali) et province du Seno (Burkina Faso), dans la boucle du Niger et la zone du Gurma sahelien",
+      "currentCountries": ["BFA", "MLI"]
+    },
+    "ethnicities": [
+      "Songhay de Hombori (Mali) — groupe principal autour de la ville de Hombori, cercle de Douentza",
+      "Songhay de Dori (Burkina Faso) — communautes dans la province du Seno, region du Sahel burkinabe",
+      "Songhay de Bamba — localites le long du Niger entre Gao et Hombori",
+      "Songhay de Tessit — communautes au nord-est du Mali pres de la frontiere nigerienne",
+      "Songhay du Liptako — zone trinationale entre Mali, Niger et Burkina Faso"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Songhay Gurma (Humburi Senni) descendent des populations songhay qui ont rayonne a partir de Gao, capitale de l'empire Songhay, le long des rives du Niger et de ses affluents. Leur installation dans la region de Hombori et du Gurma remonte probablement aux periodes de consolidation de l'empire Songhay (15e-16e siecles), quand les Songhay etendirent leur influence vers le sud dans le bassin de la Volta. La region de Hombori etait une zone de contact entre le monde songhay et les peuples gur (Gourmantche, Mossi).",
+      "formationPeriod": "L'identite specifique des Songhay Gurma s'est cristallisee durant et apres la chute de l'empire Songhay (1591), quand des populations songhay se retirerent vers le sud, hors de portee des armees marocaines, formant des communautes autonomes dans la region de Hombori. Ce dialecte central s'est developpe avec des influences des langues gur voisines.",
+      "migrationRoutes": [
+        "Migration depuis Gao le long du fleuve Niger vers le sud-ouest, vers la region de Hombori",
+        "Expansion secondaire vers le nord-est du Burkina Faso (Dori, Seno) suivant les routes caravanieres saheliennes"
+      ],
+      "historicalSettlementZones": [
+        "Region de Hombori et cercle de Douentza (Mopti, Mali)",
+        "Province du Seno, Dori (region du Sahel, Burkina Faso)",
+        "Region de Tessit et de Bamba (est du Mali, pres de la frontiere nigerienne)",
+        "Zone du Liptako, au carrefour des trois frontieres Mali-Niger-Burkina Faso"
+      ],
+      "unificationsOrDivisions": "Les Songhay Gurma forment un ensemble dialectal coherent (Humburi Senni), partage entre Mali et Burkina Faso, sans unite politique centralisee. Ils entretiennent des liens culturels forts avec les Songhay de Gao (Koyraboro Senni) tout en ayant integre des elements culturels des Gourmantche et des Mossi voisins. La frontiere coloniale franco-britannique, puis les frontieres nationales actuelles, ont coupe leurs reseaux de relations.",
+      "externalInfluences": "Contacts avec les peuples gur (Gourmantche, Mossi) au sud et a l'est. Influence touaregue au nord. Islamisation progressive depuis l'empire Songhay. Colonisation francaise a partir de la fin du 19e siecle unissant les deux rives sous administration coloniale. Les jihads du 19e siecle (Sokoto, Macina) ont affecte la region.",
+      "majorHistoricalEvents": "Incorporation dans l'empire Songhay sous Askia Muhammad (1493-1528). Dislocation de l'empire apres la bataille de Tondibi (1591) et repli des populations vers le sud. Raids esclavagistes du 18e-19e siecles. Resistance a la conquete francaise dans la zone de Hombori (1890s). Independance du Mali (1960) et du Burkina Faso (1960)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies villageoises (koy) hereditaires dans les lignages nobles. La chefferie de Hombori a joue un role central de regulation des conflits entre agriculteurs sedentaires songhay et eleveurs nomades touaregs et peuls. Les conseils d'anciens (longoyandi) deliberent sur les affaires communautaires, la gestion des terres et le reglement des differends. L'islam guide l'autorite morale et judiciaire.",
+      "clanOrganization": "Structure patrilineaire. Les lignages nobles (songhaiborai) se distinguent des artisans (gabibi — forgerons, tisserands) et des descendants de captifs (horso). Les griots (jesere) constituent une caste specialisee dans la preservation de la memoire orale. L'organisation est endogame pour les castes.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent le statut social, l'acces a la terre et les alliances matrimoniales. Les unions entre cousins croises sont frequentes. Le chef de lignage (koy) mediatise les relations avec les autorites administratives et les communautes voisines.",
+      "religiousAuthority": "L'imam et le marabout (alfa) exercent une autorite religieuse et judiciaire fondee sur la charia malekite. Les zima (pretres traditionnels), bien que moins visibles, conservent un role dans les ceremonies d'invocation des esprits holey. L'islam sunnite malekite est dominant mais syncreti avec des pratiques animistes residuelles."
+    },
+    "languages": {
+      "mainLanguage": "Humburi Senni (Songhay central de Hombori)",
+      "isoCodes": ["hmb"],
+      "dialects": [
+        "Humburi Senni proprement dit — dialecte de Hombori et du Mali",
+        "Variete de Dori (Burkina Faso) — parfois consideree comme un dialecte proche mais distinct",
+        "Kaado — dialecte apparent parle dans certaines zones du Burkina Faso"
+      ],
+      "vehicularRole": "Le Humburi Senni est parle par environ 81 000 personnes (SIL Ethnologue 2024) principalement au sud du Mali et dans le nord-est du Burkina Faso. Il est mutuel lement intelligible avec les autres varietes songhay du sud mais presente des differences phonologiques et lexicales notables avec le zarma ou le koyraboro senni. Le francais est langue d'enseignement et d'administration dans les deux pays."
+    },
+    "culture": {
+      "majorRites": "Ceremonies islamiques : Tabaski (Aid el-Kebir), Ramadan et rupture du jeune (Kolande), Mawlid (naissance du Prophete). Rites de passage : circoncision masculine (laasu) entre 7 et 12 ans, ceremonies de nomination (sununte) au septieme jour apres la naissance. Ceremonies de mariage en plusieurs etapes sur plusieurs jours. Rites agraires lies au debut et a la fin de la saison des pluies impliquant des sacrifices propitiateurs aux esprits holey. Funerailles : inhumation rapide (moins de 24h), prieres collectives, condoleances pendant trois jours.",
+      "symbols": "Le fleuve Niger et la roche de Hombori (Hombori Tondo), plus haute colline du Mali a 1155 metres, constituent des reperes identitaires forts. Les instruments du griot (jesere) — le violon monocorde (gooje) et le luth (garaya) — symbolisent la memoire collective. Les turbans et boubous indigo ou blanc sont les tenues ceremoniales.",
+      "artsAndMusic": "Musique des griots (jesere) : chants epiques et genealogiques accompagnes du gooje (violon monocorde), du garaya (luth), du kuunde (calebasse-tambour). Danse du cercle (kalangu) lors des ceremonies. Tissage de couvertures en bandes a motifs geometriques. Poterie feminine pour usage domestique. Artisanat du cuir et du metal par les artisans specialises (gabibi). Tradition orale riche : epopees, proverbes, contes (gaawo).",
+      "spiritualities": "Islam sunnite malekite dominant. Persistance de la religion des esprits (holey) : les holey sont des forces spirituelles associees aux phenomenes naturels (fleuve, tonnerre, esprits anciens). Les zima sont des pretres-mediums capables d'entrer en transe et de communiquer avec les esprits lors de ceremonies d'invocation (holey hori). Ces ceremonies syncretiques coexistent avec l'islam. Croyance au mauvais oeil (windi) et recours aux amulettes coraniques (gris-gris)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La chefferie de Hombori a ete une entite politique importante dans la region de la boucle du Niger, controlant les routes caravanieres entre Gao et les plateaux Dogon. Apres la chute de l'empire Songhay (1591), les Songhay de Hombori maintinrent une autonomie relative. Au 19e siecle, la region fut l'objet de convoitises entre les Touareg Kel Antessar, les Peuls du Macina et les royaumes mossi voisins.",
+      "relationsWithNeighbors": "Relations complexes avec les Gourmantche (peuple gur voisin au Burkina Faso), les Touareg (relations d'echange et de conflit), les Peuls (eleveurs nomades louant les paturages), les Dogon (commerce et echanges). Liens commerciaux avec Gao et Niamey via le fleuve Niger.",
+      "conflictsOrAlliances": "Conflits avec les Touareg Kel Antessar au 18e-19e siecles pour le controle des puits et des paturages. Incorporation dans la colonie francaise du Soudan (Mali actuel) et de la Haute-Volta (Burkina Faso actuel) dans les annees 1890-1900. Resistance locale a la pacification francaise documentee dans la region de Hombori.",
+      "diaspora": "Migrations de travail vers Bamako, Mopti (Mali) et Ouagadougou (Burkina Faso). Emigration de jeunes hommes vers Abidjan (Cote d'Ivoire) et Accra (Ghana) depuis les annees 1970. Communautes songhay de la diaspora sahelienne en France (region parisienne)."
+    },
+    "demography": {
+      "totalPopulation": 90000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue 2024 (ISO 639-3 : hmb) : environ 81 000 locuteurs en 2014 avec croissance demographique estimee. CIA World Factbook, recensements du Mali et du Burkina Faso. Glottolog humb1243.",
+      "distributionByCountry": [
+        {
+          "country": "MLI",
+          "population": 60000,
+          "note": "Region de Mopti (cercle de Douentza, Hombori), zone nord du Mali le long du fleuve Niger"
+        },
+        {
+          "country": "BFA",
+          "population": 30000,
+          "note": "Region du Sahel (province du Seno, environs de Dori)"
+        }
+      ]
+    },
+    "sources": [
+      "SIL Ethnologue – Humburi Senni Songhay (hmb). https://www.ethnologue.com/language/hmb/",
+      "Glottolog – Humburi Senni. https://glottolog.org/resource/languoid/id/humb1243",
+      "Omniglot – Humburi Senni language and alphabet. https://www.omniglot.com/writing/humburisenni.htm",
+      "Wikipedia EN – Humburi Senni language. https://en.wikipedia.org/wiki/Humburi_Senni_language",
+      "Wikipedia EN – Songhai people. https://en.wikipedia.org/wiki/Songhai_people",
+      "Wikipedia EN – Songhay languages. https://en.wikipedia.org/wiki/Songhay_languages",
+      "Stoller, Paul. The Taste of Ethnographic Things : The Senses in Anthropology. University of Pennsylvania Press, 1989.",
+      "Hunwick, John O. Timbuktu and the Songhay Empire. Brill, 1999."
+    ]
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "id": "PPL_NAFUSI",
+  "nameMain": "Nafusi",
+  "languageFamilyId": "FLG_BERBERE",
+  "currentCountries": ["LBY"],
+  "content": {
+    "appellations": {
+      "mainName": "Nafusi",
+      "selfAppellation": "Inafusen",
+      "exonyms": [
+        "Nefusa",
+        "Nefusi",
+        "Berbères du Djebel Nefusa",
+        "Amazigh du Djebel Nafusa"
+      ],
+      "originOfExonyms": "Le nom Nafusi dérive du nom de la tribu des Nafousa (Banu Nafousa), mentionnée par Ibn Khaldoun parmi les tribus berbères zénètes de Tripolitaine. Le terme Djebel Nefusa (Adrar n Infusen en berbère) désigne la chaîne montagneuse où ils résident. Le terme Nefusa ou Nafusa sont les formes arabisées du nom.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Nafusi est utilisé dans la littérature académique et par les locuteurs eux-mêmes (Inafusen). Sous le régime de Kadhafi (1969-2011), les Berbères libyens furent contraints d'adopter des identités arabes ; leur langue et leurs noms berbères furent interdits. Depuis 2011, une renaissance identitaire est en cours.",
+      "linguisticFamily": "FLG_BERBERE",
+      "ethnoLinguisticGroup": "Berbère oriental (Djebel Nafusa, Tripolitaine occidentale)",
+      "historicalRegion": "Djebel Nafusa (Adrar n Infusen) — plateau calcaire de Tripolitaine nord-occidentale, Libye",
+      "currentCountries": ["LBY"]
+    },
+    "ethnicities": [
+      "Communauté de Jadu (Yado) — l'une des principales villes du Djebel Nafusa, dialecte occidental, centre politique et culturel ibadite",
+      "Communauté de Nalut (Lalut) — ville berbère à l'ouest du Djebel, dialecte occidental, site du château fortifié de Nalut (800 ans)",
+      "Communauté de Yefren (Ifren) — à l'est du Djebel, dialecte oriental distinct, région de grandes plantations d'oliviers",
+      "Communauté de Zintan — ville à dominante amazighe du Djebel Nafusa, connue pour son rôle dans la révolution de 2011",
+      "Communauté de Kabaw — village berbère traditionnel du plateau, connue pour ses maisons troglodytes berbères",
+      "Communauté de Tarmeisa (Etermessn) — ancien village de pierre berbère, inscriptions tifinagh et arabes dans les murs",
+      "Communauté de Qasr al-Haj — groupe autour du grenier collectif fortifié du 12e siècle (114 chambres)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Nafusi sont les descendants des Berbères autochtones de la Tripolitaine, présents dans la région depuis l'Antiquité. Les experts considèrent qu'ils sont liés aux populations berbères qui peuplaient le littoral méditerranéen de l'Afrique du Nord bien avant les conquêtes phéniciennes, grecques et romaines. Les Banu Nafousa font partie des tribus berbères zénètes documentées par Ibn Khaldoun.",
+      "formationPeriod": "La présence des Nafusi dans le Djebel est attestée depuis l'Antiquité. Leur identité ibadite distinctive se forma après la grande révolte berbère (740) et la conversion massive à l'islam ibadite au 8e siècle. Le Djebel Nafusa devint un bastion ibadite autonome dès le milieu du 8e siècle.",
+      "migrationRoutes": [
+        "Ancêtres berbères autochtones de Tripolitaine, sans migration documentée majeure",
+        "Refuge dans les hauteurs du Djebel face aux pressions des conquérants successifs (Arabes, Ottomans)"
+      ],
+      "historicalSettlementZones": [
+        "Plateau du Djebel Nafusa (Adrar n Infusen), nord-ouest de la Libye actuelle",
+        "Villes fortifiées de Jadu, Nalut, Yefren, Zintan, Kabaw",
+        "Oasis de Fezzan (groupes connexes) au sud-ouest"
+      ],
+      "unificationsOrDivisions": "Les Nafusi formèrent l'Imamat du Nafusa (8e-9e siècle), entité politique ibadite autonome. Cette entité fut détruite par Ibrahim II des Aghlabides en 909, mais l'ibadisme survécut clandestinement. Les différentes communautés sont unifiées par la foi ibadite mais divisées en deux dialectes (ouest : Jadu/Nalut, est : Yefren).",
+      "externalInfluences": "Conquête arabe et conversion à l'ibadisme (8e siècle). Pression aghlabide (9e siècle). Domination ottomane (16e-20e siècles). Colonisation italienne (1911-1943). Arabisation forcée sous Kadhafi (1969-2011). Renaissance amazighe depuis la révolution de 2011.",
+      "majorHistoricalEvents": "En 740, la grande révolte berbère contre le califat omeyyade. Vers 757, les Nafusi sous l'imam Abu al-Khattab al-Ma'afari descendirent du Djebel et conquirent Tripoli puis Kairouan (758). Tout au long du 9e siècle, l'Imamat nafusi maintint une république ibadite indépendante dans les montagnes. En 909, Ibrahim II des Aghlabides écrasa l'Imamat et exécuta tous les prisonniers nafusi. Sous Kadhafi, le nom berbère de la chaîne montagneuse fut interdit : les cartes ne mentionnaient que Montagnes de l'Ouest. En 2011, le Djebel Nafusa devint un front majeur de la guerre civile ; les Nafusi jouèrent un rôle décisif dans la chute du régime."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation tribale patrilinéaire. La tribu (qabila) constituait la base de la société libyenne : neuf personnes sur dix vivaient dans des domaines tribaux. L'organisation tribale a persisté malgré trois siècles de règles étrangères variées. Les villages ibadites sont organisés autour de la mosquée et du conseil des anciens.",
+      "clanOrganization": "Chaque communauté du Djebel (Jadu, Nalut, Yefren, Zintan, Kabaw, etc.) constitue une entité tribale distincte avec sa propre structure clanique. La propriété des terres agricoles est fragmentée : certains arbres individuels appartiennent à plusieurs familles, ou à une famille pour l'arbre et à une autre pour le sol.",
+      "ageClassSystems": null,
+      "collectiveInstitutions": "Le qasr (grenier collectif fortifié) est l'institution économique et sociale centrale : les familles y déposent leurs récoltes sous garde communautaire. Le qasr al-Haj à Nalut (12e siècle, 114 chambres) illustre ce système : chaque chambre correspond à une famille contributrice, le surplus servant à l'enseignement coranique local. Ce système de stockage mutualisé permet la solidarité face aux famines et aux invasions.",
+      "roleOfLineages": "Société patrilinéaire et patrilocale. L'agriculture constitue l'activité économique principale, avec une économie basée non sur la superficie mais sur le nombre d'arbres (oliviers, figuiers, palmiers). L'héritage agricole est très subdivisé entre lignages.",
+      "religiousAuthority": "Islam ibadite (branche du kharijisme), hérité des missionnaires ibadites du 8e siècle. Les mosquées ibadites du Djebel Nafusa ne font pas face à La Mecque, contrairement à la tradition sunnite. La foi ibadite constitue le principal marqueur d'identité collective et a été un vecteur de résistance face à l'arabisation. L'ibadisme a maintenu une présence clandestine pendant des siècles malgré les persécutions."
+    },
+    "languages": {
+      "mainLanguage": "Nafusi (Ažbali / Tanfust) — langue berbère orientale",
+      "isoCodes": ["jbn"],
+      "dialects": [
+        "Dialecte occidental (Jadu, Nalut) — Ažbali",
+        "Dialecte oriental (Yefren) — distinct du dialecte occidental"
+      ],
+      "vehicularRole": "Le nafusi est la langue maternelle des Ibadis musulmans du Djebel Nafusa, communautés de Jadu, Nalut et Yefren notamment. La plupart des locuteurs sont bilingues (nafusi et arabe libyen). Le nafusi est une langue stable (non menacée selon Ethnologue). On comptait environ 184 000 locuteurs en 2006. Des phrases nafusies anciennes apparaissent dans des manuscrits ibadites dès le 12e siècle. La langue se distingue des langues zénètes par le maintien des voyelles préfixales avant les syllabes ouvertes, et est particulièrement proche du sokni et du siwa."
+    },
+    "culture": {
+      "majorRites": "Pratiques ibadites : prières quotidiennes, jeûne du Ramadan, fêtes religieuses ibadites. Rites agricoles liés aux cycles de l'olivier, du figuier et du dattier. Le granary fortifié (qasr) comme Qasr al-Haj (12e siècle, 114 chambres) est un symbole central de la culture nafusi : il servait de grenier communautaire et de lieu d'enseignement coranique. Architecture berbère des villages perchés sur les falaises, stratégiquement inattaquables. Célébration du Nouvel An berbère (Yennayer, 13 janvier) maintenu par les Nafusi comme marqueur identitaire amazigh, notamment depuis la renaissance post-2011.",
+      "artsAndMusic": "Architecture berbère de pierre — villages fortifiés (igherm), greniers collectifs (qasr). La tradition de l'artisanat en pierre. Les presses à huile d'olive (petites et primitives, actives quelques mois par an) sont un art technique traditionnel. Oralité forte : poésie, contes et chants transmis dans la langue nafusie. Tissage traditionnel de laines et tapis. Gastronomie : Cuisine de montagne: couscous d'orge et de blé, huile d'olive produite localement, figues séchées, dattes, fromage de chèvre. L'élevage de moutons et de chèvres complète l'agriculture sèche. Les plats de viande (agneau ou chevreau) sont réservés aux fêtes.",
+      "symbols": "Les villages perchés sur les escarpements calcaires du Djebel constituent le symbole architectural fort. Qasr al-Haj, grenier fortifié du 12e siècle à Nalut, est un symbole patrimonial majeur. Le signe universel berbère (tifinagh) inscrit dans les murs anciens. L'olivier et le figuier sont les symboles économiques et culturels de base.",
+      "spiritualities": "Islam ibadite ancré dans la région depuis le 8e siècle. L'ibadisme nafusi est une forme distincte de l'islam, parfois qualifiée d'hétérodoxe par les sunnites : les mosquées n'orientent pas leur mihrab vers La Mecque. Cette foi a été maintenue clandestinement pendant des siècles. Depuis 2011, renaissance culturelle et religieuse : expositions berbères, ateliers tamazight, revendication publique de l'identité amazighe après quatre décennies de répression sous Kadhafi."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "L'Imamat du Nafusa (8e-9e siècles) fut une entité politique ibadite indépendante qui constitua une république puritaine dans les montagnes tout au long du 9e siècle, alliée avec les Rustamides de Tiaret. Sous l'imam Abu al-Khattab al-Ma'afari, les Nafusi conquirent Tripoli (757) et Kairouan (758), brisant l'émirat fihrids d'Ifriqiya. L'imamat fut détruit par les Aghlabides en 909.",
+      "relationsWithNeighbors": "Alliance ibadite avec les Rustamides de Tiaret (Algérie) au 9e siècle, les deux entités communiquant à travers les hautes terres nord-africaines. Relations commerciales avec la Tunisie voisine. Méfiance vis-à-vis des populations arabes sunnites des plaines (Jefara). Conflits récurrents avec le pouvoir central libyen.",
+      "conflictsOrAlliances": "Révolte ibadite contre le califat omeyyade (740). Conquête de Tripoli et Kairouan (757-758) sous Abu al-Khattab. Résistance aux Aghlabides au 9e siècle, destruction de l'Imamat (909). Résistance aux Ottomans (16e-18e siècles). Résistance à la colonisation italienne (1911-1943). Oppression sous Kadhafi (langue interdite, noms arabisés). Rôle militaire décisif dans la révolution de 2011 : le Djebel Nafusa devint un front rebelle majeur.",
+      "diaspora": "Petite communauté nafusie dans les villes libyennes (Tripoli notamment). Migration économique vers la Tunisie voisine. Pas de diaspora internationale significative documentée, contrairement aux Berbères du Maroc et d'Algérie. Depuis 2011, retour de certains exilés politiques et effervescence de la société civile amazighe libyenne : création d'associations culturelles, d'écoles de tamazight, de chaînes de télévision en langue nafusie. Le Congrès mondial amazigh soutient la revendication de droits culturels officiels pour les Nafusi en Libye."
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2025,
+      "source": "Demographics of Libya (Wikipedia EN) : 184 000 locuteurs nafusi en 2006. Estimations 2025 basées sur la croissance démographique libyenne. Les Berbères représentent officiellement 5% de la population libyenne (~350 000), dont les Nafusi constituent le groupe le plus important. Ethnologue (jbn).",
+      "distributionByCountry": [
+        {
+          "country": "LBY",
+          "population": 200000,
+          "note": "Principalement Djebel Nafusa (Jadu, Nalut, Yefren, Zintan, Kabaw) et Tripoli"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Nafusi language. https://en.wikipedia.org/wiki/Nafusi_language",
+      "Wikipedia EN — Nafusa Mountains. https://en.wikipedia.org/wiki/Nafusa_Mountains",
+      "Wikipedia EN — Demographics of Libya. https://en.wikipedia.org/wiki/Demographics_of_Libya",
+      "Ethnologue — Nafusi (jbn). https://www.ethnologue.com/language/jbn/",
+      "Joshua Project — Berber, Jabal Nafusah in Libya. https://joshuaproject.net/people_groups/12306",
+      "Britannica — Libya : People. https://www.britannica.com/place/Libya/People",
+      "Reuters — Berber culture reborn in Libya revolt. https://www.reuters.com/article/libya-berber-idAFLDE76A1HS20110711",
+      "CEDS — ISO 639-3 code jbn (Nafusi). https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+      "The Monsoon Diaries — The Jebel Alliance Take the Nafusa Mountains. https://monsoondiaries.com/2024/04/17/jebel-nafusa/",
+      "Ibadica.org — The Role of Amazigh Libyan Civil Society in the Tamazgha Spring. https://ibadica.org/s/bibliographie/item/46983",
+      "Ibn Khaldoun, Abd ar-Rahman. Kitab al-Ibar (Histoire des Berbères). 14e siècle.",
+      "Beguinot, Francesco. Il berbero nefusi di Fassato. Roma, 1931."
+    ]
+  }
+}

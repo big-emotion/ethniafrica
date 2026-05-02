@@ -1,0 +1,58 @@
+{
+  "id": "PPL_EFIK",
+  "nameMain": "",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "",
+      "exonyms": [
+        "\"Calabar people\" (terme colonial anglais), \"Carabali\" (terme utilisé à Cuba pour désigner les esclaves d'origine efik et ibibio)"
+      ],
+      "originOfExonyms": "\"Calabar\" provient du nom portugais du port (Calabar), devenu synonyme du peuple. \"Carabali\" est une déformation espagnole de \"Calabar\", utilisée dans le contexte de la traite atlantique.",
+      "whyProblematic": "\"Calabar people\" est réducteur car il amalgame les Efik avec d'autres groupes de la région (Efut, Qua). \"Carabali\" est un terme colonial lié à l'esclavage, porteur d'un traumatisme historique.",
+      "contemporaryUsage": "Le terme \"Efik\" est universellement préféré. \"Calabar\" reste utilisé géographiquement mais non ethniquement.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Cross River (groupe Efik-Ibibio)",
+      "historicalRegion": "Calabar (embouchure de la Cross River), sud-est du Nigeria",
+      "currentCountries": []
+    },
+    "ethnicities": [
+      "Efik du littoral (Calabar proprement dit) – groupe dominant, fondateurs de Creek Town et Duke Town",
+      "Efik d'Atakpa – communauté historique de Calabar",
+      "Efik d'Henshaw Town – l'un des quartiers historiques de Calabar",
+      "Efik d'Obutong – communauté riveraine",
+      "Efik de Creek Town – l'une des principales divisions historiques",
+      "Efik de Duke Town – l'autre principale division historique, rivale de Creek Town",
+      "Efik d'Ikot Nakanda – communauté périphérique",
+      "Efik d'Ikot Offiong – communauté périphérique"
+    ],
+    "origins": {},
+    "organization": {},
+    "languages": {
+      "mainLanguage": "Efik",
+      "dialects": [
+        "* Efik de Calabar (dialecte standard) * Efik d'Uruan (dialecte archaïque, proche de l'ibibio) * Variations mineures entre Creek Town et Duke Town"
+      ],
+      "vehicularRole": "* Langue de commerce dans la région de Calabar (XVIIIe-XIXe siècles) * Langue liturgique : traduction de la Bible par les missionnaires presbytériens (1862) * Langue d'éducation : utilisée dans les écoles missionnaires * Système d'écriture Nsibidi : écriture idéographique ancienne, partagée avec les Igbo et les Ibibio, utilisée par les sociétés secrètes"
+    },
+    "culture": {},
+    "historicalRole": {},
+    "demography": {
+      "referenceYear": 2025,
+      "source": "Ethnologue (efi), Calabar Historical Records, estimations AFRIK"
+    },
+    "sources": [
+      "Talbot, P. Amaury. *In the Shadow of the Bush* (1912)",
+      "Simmons, Donald C. \"Efik Divination, Ordeals and Omens\" (1956)",
+      "Aye, Ekei Essien. *Old Calabar Through the Centuries* (2000)",
+      "The City States and the Europeans 1800-1885* (1980)",
+      "African Secret Societies and Cuba* (2009)",
+      "The Impact of the International Economy upon a Traditional Society* (1973)",
+      "Ethnologue (SIL International) – données linguistiques (code efi)",
+      "Calabar Historical Records – archives historiques de Calabar",
+      "Recherches web (2025) – sources académiques et historiques diverses"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+# Nom du peuple
+- Nom principal : Hadiya
+- Auto-appellation : Hadiyya
+- Exonymes historiques : Hadiyo (formes anciennes)
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Groupe : Couchitique oriental
+- Région historique : Région Hadiya (Éthiopie)
+- Pays actuels : ETH
+- Identifiant : PPL_HADIYA
+
+# 1. Ethnies incluses
+- Hadiya du centre
+- Hadiya du sud
+- Sous-groupes de la zone Gurage–Hadiya
+
+# 2. Origines
+- Un des anciens royaumes couchitiques médiévaux du sud.
+- Héritage linguistique lié aux Sidama et Kambata.
+
+# 3. Organisation
+- Structure clanique.
+- Autorité des anciens.
+- Pratiques agricoles intensives.
+
+# 4. Langue
+- Hadiyya
+- ISO : hdy
+
+# 5. Culture
+- Musiques *shafaa*.
+- Fêtes agricoles.
+- Gastronomie à base d’enset et de céréales.
+
+# 6. Histoire
+- Ancien royaume médiéval influent.
+- Interactions avec Oromo, Sidama, Amhara.
+
+# 7. Démographie
+- Population : 2 200 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (hdy)
+- Hadiya Cultural Bureau

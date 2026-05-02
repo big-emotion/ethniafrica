@@ -1,0 +1,88 @@
+{
+  "id": "PPL_SILTE",
+  "nameMain": "Silt'e",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Silt'e",
+      "selfAppellation": "Silt'e",
+      "exonyms": [
+        "East Gurage",
+        "Islam Gurage",
+        "Adiyya",
+        "Hadiyya (par les Sebat Bet Gurage)"
+      ],
+      "originOfExonyms": "Le nom Silt'e derive de l'ancetre legendaire Gen Silt'i, eponyme du sous-groupe Silt'i. L'ethnonym moderne Silt'e a ete choisi apres 1991 en memoire de cet ancetre et en reference au sultanat islamique de Hadiyya auquel le peuple revendique un lien historique. Le terme East Gurage etait utilise avant 2001 pour designer la langue et le groupe au sein de la classification Gurage.",
+      "whyProblematic": "L'etiquette Gurage leur etait imposee malgre leur rejet de cette appartenance. Le referendum de 2001 a officiellement etabli leur identite distincte. L'appellation Islam Gurage etait reductrice et confondue avec la religion plutot que l'ethnie.",
+      "contemporaryUsage": "Le nom Silt'e est officiellement reconnu depuis la creation de la Zone Silt'e en 2001 dans la region des Nations, nationalites et peuples du Sud (SNNPR, aujourd'hui Etat regional d'Ethiopie centrale). C'est l'ethnonyme administratif et academique en usage.",
+      "linguisticFamily": "FLG_SEMITIQUE",
+      "ethnoLinguisticGroup": "Ethiopien semitique du sud, sous-groupe Gurage oriental",
+      "historicalRegion": "Centre-Sud de l'Ethiopie (Hadiyya, Zone Silt'e actuelle)",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": ["Silt'e"],
+    "origins": {
+      "ancientOrigins": "Le peuple Silt'e revendique une origine dans la cite de Harar et une relation avec le peuple harari ancien et les Harla. Ils se considerent comme les fondateurs du sultanat de Hadiyya. Certains clans font remonter leurs ancetres au saint Aw Barkhadle et au reside harari Kabir Hamid. D'autres clans descendent d'Hajji Aliye, compagnon de Ahmed ibn Ibrahim al-Ghazi (Gragn) durant la guerre ethio-adalie du XVIe siecle. Les Silt'e sont consideres comme une extension ancienne des Harari des Harla aux cotes des Wolane, avant les expansions oromo du XVIe siecle.",
+      "formationPeriod": "Periode medievale (XIVe-XVIe siecles), avec consolidation de l'identite propre au XVIIe siecle. Premier apparition documentee sous le nom Silt'e-Ge dans des textes du XIVe siecle.",
+      "migrationRoutes": [
+        "Expansion depuis Harar vers le centre-sud de l'Ethiopie",
+        "Influence des expansions oromo au XVIe siecle ayant pousse les Silt'e vers leurs zones actuelles"
+      ],
+      "historicalSettlementZones": [
+        "Zone Silt'e actuelle (Ethiopie centrale, ex-SNNPR)",
+        "Harar (zone d'origine revendiquee)",
+        "Addis-Abeba et centres urbains du sud de l'Ethiopie (diaspora interne)"
+      ],
+      "unificationsOrDivisions": "Les Silt'e comprennent aujourd'hui six sous-groupes historiques principaux : Azernet, Berbere, Alichcho, Wuriro, Melga (ou Ulbareg) et Silt'i (ou Summusilt'i). Le referendum de 2000 a vu un vote unanime pour se separer de la Zone Gurage, aboutissant a la creation de la Zone Silt'e en 2001.",
+      "externalInfluences": "La guerre ethio-adalie (XVIe siecle) a marque profondement l'identite islamique Silt'e. La conquete abyssinienne de la fin du XIXe siecle par Gobana Dacche, representant de Menelik II, a ravage les terres silt'e et divise le territoire entre les Neftenya (colons amhara). L'incorporation forcee dans la zone Gurage sous le regime Derg a declenche le mouvement d'affirmation identitaire des annees 1990.",
+      "majorHistoricalEvents": "XIVe siecle : premiere mention du nom Silt'e-Ge dans des textes. XVIIe siecle : le Garad de Seba-Hadiyya Sidi Mohammed defait les troupes de l'empereur Susneyos Ier a la bataille de Hadiyya. XIXe siecle : invasion de Gobana Dacche et division des terres. Fin XIXe : defaite du chef Hassan Enjamo, incorporation dans la region Gurage. 1991 : chute du Derg, emergence du mouvement d'affirmation identitaire. 2000 : referendum, vote unanime pour la separation d'avec la Zone Gurage. 2001 : creation officielle de la Zone Silt'e."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le systeme politique traditionnel reposait sur la figure du Garad (chef/sultan), titre associe a la dynastye Gan-Silte. Ce systeme remontait au sultanat de Hadiyya et garantissait l'independance vis-a-vis de l'empire abyssinien durant trois siecles. Le dernier Garad de la dynastye Gan-Silte fut Sediso K'albo avant l'invasion de Menelik.",
+      "clanOrganization": "La societe Silt'e est organisee en plusieurs clans reconnus, dont certains revendiquent une descendance commune par Hajji Aliye, compagnon du conquerant Ahmed ibn Ibrahim al-Ghazi. Les six sous-groupes (Azernet, Berbere, Alichcho, Wuriro, Melga/Ulbareg, Silt'i/Summusilt'i) constituent les unites claniques principales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignees patrilineaires determinent l'appartenance aux sous-groupes et les droits fonciers. La memoire genealogique est preservee oralement et liee aux revendications historiques d'origine hararie et hadiyya.",
+      "religiousAuthority": "Islam sunnite majoritaire. Les imams et savants islamiques jouent un role d'autorite morale et communautaire important. L'appartenance a l'islam est au coeur de l'identite silt'e et la distingue des groupes gurage non musulmans voisins."
+    },
+    "languages": {
+      "mainLanguage": "Silt'e (stv)",
+      "isoCodes": ["stv"],
+      "dialects": [
+        "Azernet-Berbere",
+        "Silti",
+        "Wuriro",
+        "Ulbareg",
+        "Wolane (wle, langue soeur separee)"
+      ],
+      "vehicularRole": "Le silt'e est la langue maternelle de la quasi-totalite de la population de la Zone Silt'e (96,95% selon le recensement 2007). L'amharique est utilise comme langue nationale administrative et vehiculaire avec les autres communautes ethiopiennes. Le silt'e n'a pas de role vehiculaire au-dela de la communaute."
+    },
+    "culture": {
+      "majorRites": "L'islam structure les rites de passage (naissance, mariage, deuil). L'agriculture mixte et la culture de l'ensete (fausse banane) structurent le calendrier agricole et ceremoniel. Les jeunes se retrouvent en groupes recreatifs, pratique documentee comme occasion de socialisation communautaire.",
+      "symbols": "L'identite islamique et le lien historique avec le sultanat de Hadiyya sont les elements symboliques centraux. Le nom Silt'e lui-meme, choisi lors du mouvement d'affirmation identitaire des annees 1990, est devenu un symbole de resistance et de fierté culturelle.",
+      "artsAndMusic": "Culture materielle liee a l'agriculture de l'ensete, aux marches commerciaux (Addis-Abeba, Adama). Les Silt'e sont reconnus comme marchands et commergants actifs dans les centres urbains ethiopiens.",
+      "spiritualities": "Islam sunnite pratique par la grande majorite de la population. Des elements de spiritualite locale pre-islamique persistent marginalement dans certaines pratiques. La religion est un marqueur d'identite communautaire fort face aux groupes chretiens voisins."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le sultanat de Hadiyya (lie a la dynastye Gan-Silte avec la figure du Garad) constitue la principale entite politique historique revendiquee. Ce sultanat a resiste a l'annexion abyssinienne pendant trois siecles (XVIIe-XIXe siecles). Le nom Silt'e Zone a ete choisi en memoire de ce sultanat.",
+      "relationsWithNeighbors": "Relations historiques avec les Harari et Harla (peuples d'origine). Tensions avec les Oromo lors des expansions du XVIe siecle. Incorporation dans l'espace gurage sous les regimes successifs ethiopiens. Relations commerciales actives avec d'autres communautes ethiopiennes, notamment via les marches d'Addis-Abeba.",
+      "conflictsOrAlliances": "Resistance a l'empire abyssinien pendant trois siecles. Defaite militaire face aux troupes de Menelik II a la fin du XIXe siecle. Mouvement d'affirmation identitaire pacifique mene entre 1991 et 2001 pour obtenir une zone administrative autonome.",
+      "diaspora": "Importante communaute silt'e installees a Addis-Abeba, Adama et dans d'autres villes du sud de l'Ethiopie, exercant des activites commerciales et de petit commerce."
+    },
+    "demography": {
+      "totalPopulation": 1100000,
+      "referenceYear": 2025,
+      "source": "Recensement CSA Ethiopie 2007 : 940 000 locuteurs silt'e natifs ; Zone Silt'e 2007 : 750 398 habitants dont 97,35% Silt'e ; estimation 2025 avec croissance demographique",
+      "distributionByCountry": [{ "country": "ETH", "population": 1100000 }]
+    },
+    "sources": [
+      "Wikipedia EN, Silt'e people – Wikimedia Foundation (https://en.wikipedia.org/wiki/Silt%27e_people)",
+      "Wikipedia EN, Silt'e language – Wikimedia Foundation (https://en.wikipedia.org/wiki/Silt%27e_language)",
+      "Wikipedia EN, Silt'e Zone – Wikimedia Foundation (https://en.wikipedia.org/wiki/Silt%CA%BCe_Zone)",
+      "Joshua Project, Silt'e in Ethiopia – Joshua Project 2024 (https://joshuaproject.net/people_groups/11677)",
+      "Ethnologue, Silt'e (stv) – SIL International 2024 (https://www.ethnologue.com/language/stv/)",
+      "Glottolog, Silt'e – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/silt1241)",
+      "Recensement CSA Ethiopie 2007 – Central Statistical Agency of Ethiopia, 2008"
+    ]
+  }
+}

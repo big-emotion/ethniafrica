@@ -1,0 +1,95 @@
+{
+  "id": "PPL_DIZI",
+  "nameMain": "Dizi",
+  "languageFamilyId": "FLG_OMOTIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Dizi",
+      "selfAppellation": "Dizi",
+      "exonyms": ["Maji", "Dizi-Maji"],
+      "originOfExonyms": "L'exonyme Maji vient du nom de la ville principale du territoire Dizi, Maji, qui est aussi un avant-poste administratif éthiopien historique depuis l'époque de Menelik II. Le terme est souvent utilisé dans la littérature ethnographique ancienne pour désigner le peuple et sa langue (Dizin est aussi appelée Maji dans certaines sources). Les Dizi eux-mêmes se désignent comme Dizi.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Dizi est officiellement utilisé dans les recensements éthiopiens et les sources académiques récentes. Maji est parfois encore utilisé dans la littérature plus ancienne. Le woreda de Maji est le principal territoire habité par les Dizi.",
+      "linguisticFamily": "FLG_OMOTIQUE",
+      "ethnoLinguisticGroup": "Omotique (cluster Dizoid / Majoid, avec Sheko et Nayi)",
+      "historicalRegion": "Woreda de Maji, zone Bench Maji (anciennement partie du SNNPR), South West Ethiopia Peoples' Regional State — hautes terres bien arrosées autour de la ville de Maji, à environ 100 km au sud de Mizan Teferi, à une altitude d'environ 2800 m",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Kolu, Adi, Muy, Tsiski — chefferies historiques du sud-est du territoire Dizi",
+      "Maji (Kyerts, Gelkamo, Kuri) — chefferies centrales autour de la ville de Maji",
+      "Wor, Say, Mash, Gobi, Aro, Duku, Dami — chefferies du centre",
+      "Kanta, Ezkolu, Kasi, Beru, Gay, Garo, Jabba, Bay — chefferies du nord-ouest",
+      "Adiktyasu — sous-groupe de l'Adikas avec chefferie propre",
+      "Kwaygi — sous-groupe de chasseurs avec fonctions rituelles spécifiques"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Dizi sont un peuple autochtone du sud-ouest de l'Éthiopie qui, selon leur propre tradition orale, n'est jamais venu d'ailleurs. Haberland les classe parmi les anciens peuples du sud de l'Éthiopie aux côtés des Sheko, des Nao, des Gimira (Bench et apparentés), des Dime et de certains sous-groupes Basketo. Avant leur incorporation forcée à l'empire éthiopien dans les années 1890, les terrasses agricoles abandonnées témoignent d'une population bien plus importante dans le passé. La tradition orale Dizi évoque un lien avec les peuples Tigré du nord de l'Éthiopie via des missionnaires orthodoxes venus dans la région il y a plusieurs siècles.",
+      "formationPeriod": "La société Dizi s'est organisée en plus de vingt chefferies (clans) aux frontières mouvantes et aux allégeances changeantes. Cette fragmentation politique a été documentée par Haberland. L'incorporation forcée à l'empire éthiopien dans les années 1890 et le système du gebbar imposé ensuite ont provoqué une dépopulation massive et déstabilisé profondément la culture traditionnelle.",
+      "migrationRoutes": [
+        "Population autochtone des hautes terres de Maji sans migration fondatrice documentée",
+        "Les terrasses agricoles abandonnées témoignent d'une occupation dense ancienne du territoire"
+      ],
+      "historicalSettlementZones": [
+        "Woreda de Maji (zone Bench Maji, South West Ethiopia Peoples' Regional State) — majorité de la population Dizi",
+        "Minorités dans les woredas voisins de Meinit et Surma",
+        "Hautes terres bien arrosées autour de la ville de Maji (altitude env. 2800 m)"
+      ],
+      "unificationsOrDivisions": "La société Dizi était divisée en plus de vingt chefferies (clans) autonomes aux frontières et alliances mouvantes, organisées du sud-est au nord-ouest. Le système de castes Dizi, qualifié par Haberland de hypertrophique même pour les standards éthiopiens, structurait la hiérarchie sociale en groupes aux statuts très différenciés (geima, kaaltyab, kwaygi, etc.). L'incorporation à l'empire éthiopien a progressivement remplacé les structures traditionnelles.",
+      "externalInfluences": "Incorporation forcée à l'empire de Menelik II dans les années 1890. Système du gebbar et traite des esclaves ayant provoqué une dépopulation catastrophique (de 50 000-100 000 à environ 20 000 en 1974, puis 36 380 en 2007). La ville de Maji est un avant-poste gouvernemental depuis l'époque de Menelik. Les caravanes de mulets reliant Maji à Jimma et Addis-Abeba ont intégré le territoire dans les réseaux commerciaux éthiopiens. Contacts avec les voisins : Me'en au nord, Surma (Tirmaga-Chai) au sud et à l'ouest.",
+      "majorHistoricalEvents": "Incorporation forcée à l'empire éthiopien dans les années 1890. Publication de 'Slaves and Ivory' par le major Henry Darley (1926) documentant la traite des esclaves dans la région Maji au début du XXe siècle. Estimation Fernyhough : au moins 300 000 morts ou déportés dans les zones Kaffa, Gimira et Maji entre les débuts du XXe siècle et les années 1920. Recensement de 2007 : 36 380 Dizi, dont 98,9% dans le SNNPR. Les Dizi représentent 0,05% de la population éthiopienne."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Avant la conquête éthiopienne, les Dizi étaient divisés en plus de vingt chefferies (clans) aux frontières et alliances mouvantes. Les dirigeants traditionnels portaient les titres de burji, kiam et kiaz. Le chef (geima ou koichiezi dans certains clans, baabaishi dans d'autres) avait un rôle essentiellement cérémoniel et rituel : contrôle de la pluie par offrandes sacrificielles, supervision rituelle des récoltes et de la santé communautaire. Les rituels d'élimination des maladies contagieuses impliquaient des sacrifices de chèvres et des rites de purification.",
+      "clanOrganization": "Système de castes hypertrophique selon Haberland : groupes aux statuts très différenciés (geima, kaaltyab, kwaygi et autres). Les kwaygi (chasseurs) exercent des fonctions rituelles en l'absence du geima. Rituel de quasi-parenté (naali) permettant la création de liens entre individus non apparentés, même de rangs différents. Le naali interdit le mariage entre les descendants des partenaires du rituel.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages et clans structurent l'organisation sociale et politique Dizi. L'appartenance clanique détermine le statut social, les obligations rituelles et les règles matrimoniales. La hiérarchie de caste impose des règles strictes sur les contacts entre les différents groupes, y compris dans la façon de serrer la main (la prise de main devait respecter des règles précises selon le rang de chaque interlocuteur).",
+      "religiousAuthority": "Dans la cosmologie traditionnelle Dizi, le dieu suprême créateur est Saagu, à qui les anciens offrent des libations et des prières en cas de besoin. Saagu est le dieu au-dessus de tous les dieux et divinités du monde Dizi. La tradition orale rapporte qu'au début, le ciel et la terre étaient proches l'un de l'autre et qu'il n'y avait pas de mort. La mort serait apparue quand le ciel et la terre se sont séparés. Des missionnaires chrétiens orthodoxes tigré seraient venus dans la région il y a plusieurs siècles, laissant aux chefs de Maji et d'Adikas des objets sacrés (tissu bleu, morceau de bois, chasse-mouche) toujours conservés."
+    },
+    "languages": {
+      "mainLanguage": "Dizin (Dizi / Maji)",
+      "isoCodes": ["mdx"],
+      "dialects": [
+        "Dizin central — parlé autour de Maji (Beachy 2005)",
+        "Dizin occidental — présentant des consonnes rétroflexes phonémiques distinctives selon Beachy (2005)"
+      ],
+      "vehicularRole": "Le dizin est parlé par environ 33 927 personnes selon le recensement éthiopien de 2007 (17 583 monolingues en 1994). La langue appartient au cluster Dizoid (avec le sheko et le nayi), qui est distinct du reste des langues omotiques. Le dizin présente des consonnes glottalisées, des nasales syllabiques, des voyelles longues et trois niveaux tonaux phonémiques, ainsi que des tons contours. La variété occidentale a des consonnes rétroflexes phonémiques. La langue s'écrit en syllabaire éthiopique (Ethiopic). L'amharique est utilisé pour l'administration et l'éducation secondaire. Le bilinguisme est courant, les Dizi parlant souvent des langues voisines."
+    },
+    "culture": {
+      "majorRites": "Rituel de contrôle de la pluie par le chef (geima ou baabaishi) : offrandes sacrificielles pour assurer les précipitations et la santé de la communauté. Rituels d'élimination des maladies contagieuses : sacrifices de chèvres, rites de purification avec aspersion de sang par le Saiktyasu (prêtre). Rituel de quasi-parenté (naali) : processus en deux étapes sur plusieurs mois, créant des liens indissolubles entre individus non apparentés. Rites funéraires et de deuil communautaires. Rites de mariage avec règles strictes sur le prix de la fiancée (environ cinq bovins pour une femme Dizi, soit le quart du prix pour une femme Tirmaga-Chai). Cérémonies agricoles liées aux semailles et aux récoltes.",
+      "symbols": "Les trois objets sacrés confiés par les missionnaires chrétiens Tigré aux chefs de Maji et d'Adikas (tissu bleu, morceau de bois, chasse-mouche) sont des symboles de l'autorité rituelle des chefs. Les terrasses agricoles abandonnées sont un symbole tangible de la grandeur passée du peuple. Le dieu suprême Saagu incarne le principe créateur fondamental de la cosmologie Dizi.",
+      "artsAndMusic": "Agriculture de montagne : maïs, orge, teff, sorgho et autres cultures. Élevage de bovins, moutons et poulets. Apiculture pour la production de miel. Les forgerons (probablement invités de l'extérieur par les chefs Dizi selon Kurtz) produisaient des outils en acier de haute qualité. Artisanat traditionnel incluant la poterie et la vannerie. Musique et danse accompagnant les cérémonies rituelles et les festivités communautaires. Tradition de la bière locale (argi) partagée lors des rituels sociaux (naali, fêtes). Récits mythologiques et tradition orale constituant le patrimoine culturel.",
+      "spiritualities": "Le panthéon Dizi est centré sur Saagu, dieu suprême créateur de toutes choses. Les anciens (elders) versent des libations et offrent des prières à Saagu en temps de crise. La cosmologie Dizi décrit un temps originel où le ciel et la terre étaient proches, sans mort, qui ont été séparés lors de l'arrivée de comportements négatifs. Les chefs ont un rôle rituel central dans le contrôle de la pluie et la santé communautaire. La tradition orale évoque des missionnaires chrétiens orthodoxes Tigré ayant visité la région il y a plusieurs siècles, laissant une influence religieuse diffuse. Aujourd'hui, le christianisme évangélique et orthodoxe est présent, mais des pratiques traditionnelles persistent."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Dizi étaient organisés en plus de vingt chefferies (clans) autonomes aux frontières et alliances mouvantes. Ces chefferies sont listées par Haberland du sud-est au nord-ouest : Kolu, Adi, Muy, Tsiski, Maji (Kyerts, Gelkamo, Kuri), Wor, Say, Mash, Gobi, Aro, Duku, Dami, Kanta, Ezkolu, Kasi, Beru, Gay, Garo, Jabba, Bay. Pas de centralisation en royaume comparable aux États omotiques voisins. La ville de Maji a été un avant-poste gouvernemental de chaque régime central éthiopien depuis l'époque de Menelik II.",
+      "relationsWithNeighbors": "Relations complexes avec les Me'en au nord et les Surma (Tirmaga-Chai) au sud et à l'ouest. Certains hommes Tirmaga-Chai ont épousé des femmes Dizi, mais la réciproque est rare. La différence de prix de la fiancée (1:4 entre femmes Dizi et Tirmaga-Chai) reflète les asymétries de relations. Les Dizi partagent des similarités somatiques avec les Sheko, les Nao, les Gimira (Bench), les Tsara, les Dime, les Aari et certains sous-groupes Basketo, regroupés par Jensen sous l'étiquette des anciens peuples du sud de l'Éthiopie.",
+      "conflictsOrAlliances": "L'incorporation forcée à l'empire éthiopien dans les années 1890 est le principal tournant conflictuel. Le système du gebbar et la traite des esclaves qui ont suivi ont dévasté la population Dizi : de 50 000-100 000 personnes estimées avant la conquête, la population a chuté à environ 20 000 en 1974. L'explorateur britannique Henry Darley a documenté la traite des esclaves à Maji dans les années 1920 ('Slaves and Ivory', 1926). Selon Fernyhough, au moins 300 000 personnes ont été tuées ou déportées dans les régions Kaffa, Gimira et Maji entre les débuts du XXe siècle et les années 1920.",
+      "diaspora": "La quasi-totalité des Dizi (98,9% selon le recensement de 2007) réside dans le SNNPR, principalement dans le woreda de Maji. Des minorités Dizi existent dans les woredas voisins de Meinit et Surma. Pas de diaspora urbaine significative documentée en dehors de la région."
+    },
+    "demography": {
+      "totalPopulation": 42000,
+      "referenceYear": 2025,
+      "source": "Recensement éthiopien 2007 (CSA) : 36 380 Dizi, dont 4 968 urbains et 98,9% dans le SNNPR. Estimation pré-conquête (1890s) : 50 000 à 100 000. Estimation 1974 (Haberland) : environ 20 000. SIL Ethnologue — Dizin language (mdx). Projection 2025 estimée à environ 42 000 en tenant compte du taux de croissance démographique éthiopien.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 42000,
+          "note": "Majorité dans le woreda de Maji (zone Bench Maji, South West Ethiopia Peoples' Regional State). Minorités dans les woredas de Meinit et Surma."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Dizi people. https://en.wikipedia.org/wiki/Dizi_people",
+      "Wikipedia EN — Dizin language. https://en.wikipedia.org/wiki/Dizin_language",
+      "Ethnologue — Dizin language (mdx). https://www.ethnologue.com/language/mdx/",
+      "101 Last Tribes — Dizi people. https://www.101lasttribes.com/tribes/dizi.html",
+      "Kwekudee. 2013. DIZI PEOPLE: ETHIOPIA'S OMOTIC HIGHLAND CULTIVATORS. https://kwekudee-tripdownmemorylane.blogspot.com/2013/08/dizi-people-ethiopias-omotic-highland.html",
+      "Beachy, Marvin Dean. 2005. An overview of Central Dizin phonology and morphology. M.A. thesis, University of Texas at Arlington.",
+      "Haberland, Eike. Altvölker Süd-Äthiopiens. Stuttgart, 1959.",
+      "Darley, Henry. 1926. Slaves and Ivory: A Record of Adventure and Exploration among the Abyssinian Slave-Raiders.",
+      "Recensement national de la population et du logement de l'Éthiopie 2007 (CSA)."
+    ]
+  }
+}

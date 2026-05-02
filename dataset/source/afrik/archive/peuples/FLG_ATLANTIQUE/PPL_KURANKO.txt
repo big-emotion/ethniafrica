@@ -1,0 +1,39 @@
+# Nom du peuple
+- Nom principal : Kuranko
+- Auto-appellation : Kuranko
+- Appellations historiques : parfois classé Mandé → classification mixte Atlantique/Mandé
+- Famille linguistique : Niger-Congo – Atlantique (classification AFRIK) (FLG_ATLANTIQUE)
+- Région historique : Sierra Leone (Nord), GIN (forêts)
+- Identifiant : PPL_KURANKO
+
+# 1. Ethnies incluses
+- Kuranko du Nord Sierra Leone
+- Kuranko de Guinée
+
+# 2. Origines
+- Peuple ancien des hautes terres forestières.
+- Lien historique avec Mandinka et Limba.
+
+# 3. Organisation
+- Système *Gbaku* (clan).
+- Autorité des anciens.
+
+# 4. Langue
+- Kuranko
+- ISO : knk
+
+# 5. Culture
+- Rites initiatiques *Poro*.
+- Musiques guerrières.
+- Cultures céréalières.
+
+# 6. Histoire
+- Interactions étroites avec Mende, Temne, Yalunka.
+
+# 7. Démographie
+- Population : 430 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (knk)
+- Sierra Leone Research Papers

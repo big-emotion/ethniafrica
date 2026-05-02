@@ -1,0 +1,98 @@
+{
+  "id": "PPL_GIZIGA",
+  "nameMain": "Giziga",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Giziga",
+      "selfAppellation": "Marva (sg. Marva, pl. Marvahay)",
+      "exonyms": ["Guissiga (Fourneau 1938)", "Gizga", "Ghiziga", "Gisiga"],
+      "originOfExonyms": "Le terme Giziga est un exonyme d'origine fulbe (peul), selon R. Lukas (1973:46) il designe le clan chefdal du groupe. J. Lukas (1970:46) precise que les Giziga se designent eux-memes Marva (pl. Marvahay), terme qui est a la racine du nom de la ville de Maroua, fondee par ce groupe. Pontie (1973:13) propose une etymologie pejorative : Guiziga venant de ngi zi ka (ceux qui mangent n'importe quoi), allusion au clan Pedizam considere comme paria.",
+      "whyProblematic": "L'ethnonymie giziga est complexe car le terme adopte (Giziga) est un exonyme fulbe, alors que le veritable endonyme est Marva. La denomination coloniale et post-coloniale a consacre l'exonyme, ce qui peut etre vecu comme une imposition exterieure.",
+      "contemporaryUsage": "Le terme Giziga est desormais d'usage courant en francais et en haoussa. Les locuteurs se designent eux-memes Marva ou utilisent Giziga selon le contexte. On distingue les Giziga du Nord (autour de Maroua et Dogba) et les Giziga du Sud (autour de Loulou et Moutouroua).",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique central (Biu-Mandara), groupe Matakam",
+      "historicalRegion": "Region de l'Extreme-Nord du Cameroun, plaine du Diamare autour de Maroua et Meri",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Giziga du Nord (Maroua, Dogba, Tchere/Tsere) — chefferie de Bi-Marva",
+      "Giziga du Sud (Loulou, Moutouroua, Midjivin) — chefferies de Muturua et Lulu/Tsabai",
+      "Clan Marva / Bi-Marva — fondateurs de Maroua, clan le plus influent",
+      "Clan Pedizam — historiquement considere comme paria, dit nourrir des sorciers",
+      "Groupes assimiles non-giziga absorbes par intermariage avec les Mofu au nord"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Giziga appartiennent au groupe Kirdi (terme arabe-fulbe signifiant paien), vaste ensemble de peuples de la region du lac Tchad et des montagnes Mandara qui ont resiste a l'islamisation. Leur ancetre fondateur le plus documente est Bildinguer, venu de la region de Gudur, qui fonda les chefferies de Lulu et Muturua. Diverses hypotheses placent l'origine des Giziga de Maroua (Bi-Marva) soit au Lere (Tchad), soit dans les regions Wandala ou Bagirmi.",
+      "formationPeriod": "Les trois chefferies giziga (Muturua, Lulu/Tsabai, Bi-Marva/Maroua) existaient environ cent ans avant l'arrivee des Peuls au debut du XIXe siecle. Pontie (1973:13) situe leur fondation a la fin du XVIIe et au debut du XVIIIe siecle. Les Giziga de Maroua ont interepouse les Mofu au nord et absorbe de petits groupes non-giziga. En 1809, les Peuls (Fulbe) prirent la ville de Maroua, dispersant une partie des Giziga Bi-Marva.",
+      "migrationRoutes": [
+        "Origine probable dans la region du Lere (Tchad actuel) ou des massifs Wandala/Bagirmi pour les Giziga de Maroua",
+        "Peuplement autochtone de la plaine du Diamare pour les Giziga du Sud",
+        "Repli vers les villages satelites apres la conquete fulbe de Maroua (1809)"
+      ],
+      "historicalSettlementZones": [
+        "Plaine du Diamare, autour de Maroua (Extreme-Nord Cameroun)",
+        "Localites de Muturua (chefferie de Muturua)",
+        "Localites de Loulou et Tsabai (chefferie de Lulu)",
+        "Dogba, Tchere/Tsere au nord de Maroua (Giziga du Nord)",
+        "Moutouroua et Midjivin au sud (Giziga du Sud)"
+      ],
+      "unificationsOrDivisions": "Les Giziga ne forment pas une unite politique centralisee. Ils sont organises en trois chefferies distinctes (Muturua, Lulu/Tsabai, Bi-Marva), chacune avec sa propre genealogie et ses traditions. La prise de Maroua par les Peuls en 1809 a bouleverse la chefferie Bi-Marva, separant symboliquement les Giziga de Maroua de ceux de Muturua.",
+      "externalInfluences": "Conquete peule (fulbe) de la plaine du Diamare au debut du XIXe siecle : les Peuls fondent l'emirat de Maroua et repoussent ou assimilent les Giziga. Islamisation progressive du territoire depuis le XIXe siecle. Influence des voisins Mofu au nord (intermariage documente). Colonisation allemande puis francaise : integration administrative dans la province de l'Extreme-Nord.",
+      "majorHistoricalEvents": "Les Giziga, sous le nom de Marva, etaient les habitants fondateurs de Maroua, l'actuelle capitale regionale de l'Extreme-Nord Cameroun. En 1809, le chef fulbe Bouba Djama s'empara de Maroua, mettant fin a la suprematie politique giziga dans la ville. Cette defaite militaire entraina une recomposition identitaire et l'etablissement des Giziga dans les villages ruraux environnants. Au XXe siecle, l'administration coloniale francaise a officialise les chefferies traditionnelles giziga."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe organisee en trois chefferies independantes (Muturua, Lulu/Tsabai, Bi-Marva) dirigees chacune par un chef hereditaire issu du clan Giziga/Marva. Chaque village est gouverne par un chef de village (mai gari) assiste d'un conseil d'anciens. Les villages giziga du Sud etaient traditionnellement regroupes en petits etablissements selon le clan ou le lignage.",
+      "clanOrganization": "La societe giziga est organisee en clans patrilineaires. Le clan chiefdal Giziga/Marva detient l'autorite politique. Le clan Pedizam est historiquement marginalise. Les maisons sont traditionnellement en briques de terre crue avec des toits de chaume, organisees en groupes relies par des clotures de paille tressee autour d'un espace central ouvert.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Chaque clan possede un therapeute-devin (medicine man) qui approvisionne en medicaments, mediatise avec les esprits et pratique de petites chirurgies, remunere par de modestes dons. Les lignages patrilineaires determinent l'identite, les droits fonciers et les alliances matrimoniales.",
+      "religiousAuthority": "La religion traditionnelle reconnait un dieu createur unique qui maintient l'ordre et n'intervient que lorsqu'il est derange. On ne prie pas directement ce dieu superieur, mais on passe par les ancetres comme intercesseurs. La terre est concue comme une deesse mere ayant enfante des etres surnaturels : la foudre, les serpents noirs, les crocodiles et certains objets inanimes. Chaque clan a un therapeute-devin specialise dans la mediation avec ces esprits. L'islamisation, menee par les voisins peuls depuis le XIXe siecle, a touche une partie de la population."
+    },
+    "languages": {
+      "mainLanguage": "Giziga (Marva)",
+      "isoCodes": ["giz", "gis"],
+      "dialects": [
+        "Giziga du Sud (giz) — parle a Loulou, Moutouroua, Midjivin",
+        "Giziga du Nord (gis) — parle a Maroua, Dogba, Tchere/Tsere",
+        "Les deux dialectes sont etroitement apparentes et constituent des variantes du mafa-sud selon Barreteau (1984)"
+      ],
+      "vehicularRole": "Le giziga est la langue maternelle de la communaute giziga. Le haoussa et le fulfulde (peul) servent de langues vehiculaires dans la region de l'Extreme-Nord. Le francais est la langue officielle de l'administration et de l'enseignement. La Bible a ete traduite en giziga par la Societe Biblique du Cameroun (edition 1996)."
+    },
+    "culture": {
+      "majorRites": "Rites de passage : la puberté marque l'entree dans la vie adulte avec attribution d'une case personnelle pour les jeunes garcons jusqu'au mariage. Mariage : organise par les parents, avec paiement d'une dot (bride-price) ; chaque nouveau menage commence dans une maison independante. Funeraires : ceremonies communautaires avec musique vocale et instrumentale. Agriculture : prières et invocations avant les semailles pour assurer la protection des récoltes et la bienveillance des ancetres. Divinisation : chaque clan fait appel a son therapeute-devin pour les rites de guerison, de protection contre les esprits et les mauvaises recoltes.",
+      "symbols": "La ville de Maroua, fondee par les Giziga sous le nom de Bi-Marva, constitue un symbole identitaire fort. Les serpents noirs et les crocodiles sont des etres surnaturels dans la cosmologie giziga. L'architecture traditionnelle (cases rondes en terre crue avec toit de chaume, reliees par des clotures de paille tressee) est un marqueur culturel visible.",
+      "artsAndMusic": "Musique vocale et instrumentale jouee lors des fetes et ceremonies. Poterie feminine. Tissage de clotures de paille tressee (architecture vernaculaire). Les danses collectives accompagnent les moments cles de la vie sociale (mariages, funerailles, fetes agricoles). Le systeme agro-pastoral giziga a ete documente en collaboration avec les Peuls (Seignobos et Donfack, 1996).",
+      "spiritualities": "Religion traditionnelle centree sur la croyance en un dieu createur unique et sur le culte des ancetres comme intercesseurs. La terre est une deesse mere ayant enfante des etres surnaturels : la foudre/eclair, les serpents noirs, les crocodiles et certains objets inanimes. Les esprits malveillants peuvent causer maladies et malheurs. Chaque clan dispose d'un therapeute-devin (medicine man) pour medier avec le monde spirituel et pratiquer la guerison. Une partie de la population giziga a adopte l'islam (sunnite) sous l'influence des Peuls depuis le XIXe siecle, mais des pratiques traditionnelles persistent."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Giziga ont fonde et dirige trois chefferies independantes : Muturua, Lulu/Tsabai et Bi-Marva (Maroua). La chefferie de Maroua (Bi-Marva) etait la plus influente avant la conquete peule de 1809. Les Giziga etaient les fondateurs eponymes de Maroua, aujourd'hui capitale regionale de l'Extreme-Nord Cameroun. Leur ancetre fondateur Bildinguer, venu de Gudur, etablit les chefferies de Lulu et Muturua.",
+      "relationsWithNeighbors": "Relations historiquement complexes avec les Peuls (Fulbe), conquerants de Maroua en 1809, qui constituaient la classe dirigeante de la region. Intermarriages et contacts culturels avec les Mofu au nord. Coexistence avec d'autres groupes Kirdi (non islamises) de la region Mandara.",
+      "conflictsOrAlliances": "La conquete peule de Maroua en 1809 par Bouba Djama constitue le principal conflit historique des Giziga, les privant de leur capitale et de leur suprematie politique. Les Giziga ont ensuite ete soumis a l'emirat peul de Maroua comme les autres groupes Kirdi de la region. Durant la periode coloniale (allemande puis francaise), les chefferies giziga ont ete maintenues mais integrees dans l'administration coloniale.",
+      "diaspora": "Les Giziga sont un peuple sedentaire agricole sans diaspora significative documentee. Une migration interne vers Maroua et les villes de l'Extreme-Nord est observee depuis l'independance du Cameroun (1960)."
+    },
+    "demography": {
+      "totalPopulation": 270000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur Podlewski (1966 : 55 000 ; 1980 : 80 000 estimes), South Gisiga PeopleGroups.org (148 000), North Gisiga Joshua Project, projections demographiques 2025. La population totale (Nord + Sud) est estimee a 250 000 - 300 000 personnes.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 270000,
+          "note": "Extreme-Nord Cameroun, plaine du Diamare, autour de Maroua, Muturua, Loulou, Moutouroua"
+        }
+      ]
+    },
+    "sources": [
+      "Barreteau, Daniel (1984). Description du musey (langue tchadique du Cameroun). Paris : ORSTOM. Classification des dialectes giziga.",
+      "Pontie, Guy (1973). Les Guiziga du Cameroun septentrional. Paris : ORSTOM. https://horizon.documentation.ird.fr/",
+      "Podlewski, A.M. (1966). La dynamique des principales populations du Nord-Cameroun. Cahiers ORSTOM, serie Sciences Humaines.",
+      "SIL Ethnologue — Giziga (giz). https://www.ethnologue.com/language/giz/",
+      "SIL Ethnologue — Giziga, North (gis). https://www.ethnologue.com/language/gis/",
+      "101 Last Tribes — Gisiga people. https://www.101lasttribes.com/tribes/gisiga.html",
+      "PeopleGroups.org — South Gisiga of Cameroon (PG012783). https://peoplegroups.org/people_groups/pg012783/",
+      "Kupi.com — Maroua history (Giziga founding peoples). https://www.kupi.com/en-ae/explore/cameroon-united-republic-of/maroua/history",
+      "Wikipedia EN — Demographics of Cameroon. https://en.wikipedia.org/wiki/Demographics_of_Cameroon"
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "id": "PPL_AIT_ATTA",
+  "nameMain": "Ait Atta",
+  "languageFamilyId": "FLG_BERBERE",
+  "currentCountries": ["MAR"],
+  "content": {
+    "appellations": {
+      "mainName": "Ait Atta",
+      "selfAppellation": "Ayt Etta",
+      "exonyms": [
+        "Ytata (premiere mention europeenne par Marmol Carvajal, 1571)",
+        "Ait 'Atta (transliteration academique standard)"
+      ],
+      "originOfExonyms": "Ytata est la transcription iberique du 16e siecle du nom Ait Atta. La transliteration academique Ait Atta est employee par les ethnologues et les sources officielles marocaines. En amazighe, Ait signifie les gens de ou les fils de.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Ait Atta est le nom standard employe dans les sources marocaines, academiques et administratives. La confederation se designe elle-meme par Ayt Etta en tamazight.",
+      "linguisticFamily": "FLG_BERBERE",
+      "ethnoLinguisticGroup": "Berbere nord, Atlas central (Tamazight), branche Sanhaja",
+      "historicalRegion": "Jbel Saghro (coeur ancestral), Draa, Tafilalet, Haut Atlas oriental, Maroc du Sud-Est",
+      "currentCountries": ["MAR"]
+    },
+    "ethnicities": [
+      "Ait Wallal (premier cinquieme, khums)",
+      "Ait Wahlim (deuxieme cinquieme)",
+      "Ait Isful-Ait Alwan (troisieme cinquieme)",
+      "Ait Aizza Mzin (quatrieme cinquieme)",
+      "Ait Unibgi (cinquieme cinquieme, comprenant les nomades Ait Khabbash)",
+      "Ait Yahya",
+      "Ait Ouazik",
+      "Ait Ouhman",
+      "Ait Bu Iknifen",
+      "Ait Ilimshan (sous-groupe de la resistance de Bougafer)",
+      "Ignaouen et Massufa (sous-clans d'origine probablement saharienne)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les traditions des Ait Atta font remonter leur origine a Dadda Atta (Grand-pere Atta), un ancetre berbere originaire du massif du Saghro, qui aurait eu quarante fils. Selon la tradition fondatrice, tous quarante furent tues lors d'une trahison par les gens du berger Ait Siddrat le jour de leur mariage collectif. Leurs femmes, deja enceintes, donnerent naissance a 39 fils et une fille, qui se vengerent et fonderent la confederation. L'anthropologue David Hart situe les origines des Ait Atta dans le Jbel Saghro, rejetant la these d'une origine saharienne, bien que certains clans comme les Ignaouen et Massufa soient probablement d'origine saharienne. Une tradition de non-Ait Atta fait descendre les Ait Atta de Jalut (Goliath).",
+      "formationPeriod": "La confederation des Ait Atta emerge comme entite politique dans le Jbel Saghro au 16e siecle ; la premiere mention europeenne date de 1571. La capitale traditionnelle, Igharm Amazdar (Igerm Amazdar), est fondee a cette epoque.",
+      "migrationRoutes": [
+        "Depuis le Jbel Saghro vers le nord : penetration en Haut Atlas central via le col Tizi Mqqurn",
+        "Vers l'ouest : tentative d'expansion bloquee par la confederation adverse Ait Yafelman",
+        "Vers le sud et l'est : prise de controle des oasis du Draa inferieur et du Tafilalet (18e-19e siecles)",
+        "Raids jusqu'a Touat (actuelle Algerie) au 19e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Jbel Saghro (coeur traditionnel)",
+        "Oasis du Draa (Agdz, Zagora) et du Tafilalet (region d'Erfoud, Rissani)",
+        "Haut Atlas oriental et ses piedmonts",
+        "Region de Draa-Tafilalet, province d'Errachidia et province de Zagora (Maroc actuel)"
+      ],
+      "unificationsOrDivisions": "La confederation est unifiee sous un systeme de cinq cinquiemes (khams khmas), chacun divise en taqbilts (sous-tribus), ighs amaggran (clans), puis ighs ahzzan (lignages). L'unite est renforcee par des documents fondateurs conserves sur peau de chameau, les Shrut n-khams khmas n-Ait Atta (Accords des cinq cinquiemes), et par le lieu d'election Admam pres d'Igharm Amazdar. La resistance a la France jusqu'en 1933 constitua l'acte d'unite le plus dramatique.",
+      "externalInfluences": "Conflits seculaires avec la confederation adverse Ait Yafelman (Ait Haddidou, Ait Murghad et autres tribus allies). Tensions recurrentes avec le makhzen alaouite depuis le 17e siecle. Pacification forcee par la France (1899-1933), sedentarisation imposee, incorporation dans l'armee coloniale et travail dans les mines de plomb. Independance marocaine (1956) suivie de nouvelles politiques de sedentarisation.",
+      "majorHistoricalEvents": "Premiere mention europeenne par Marmol Carvajal (1571). Revolte contre le sultan Moulay Ismail (1678). Expansion maximale dans le Tafilalt au 19e siecle et raids jusqu'a Touat. Premier contact avec les Francais aux oasis de Touat (1899-1901). Bataille de Bougafer (mars 1933) : dernier combat de la resistance sous Assou Oubasslam, capitulation devant les generaux Hure, Catroux et Giraud le 25 mars 1933."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La confederation des Ait Atta pratique le systeme de rotation annuelle et complementarite (annuel rotation and complementarity) : le chef supreme de la confederation (amghar n-ufilla) est elu chaque annee au printemps a Admam. Chaque annee, les candidats sont choisis dans un cinquieme specifique et seuls les membres des quatre autres cinquiemes votent. Ce systeme egalitaire s'applique a toutes les echelles de la hierarchie tribale. En dessous, chaque sous-tribu et chaque clan elise son amghar n-tamazirt (chef du terrain).",
+      "clanOrganization": "La confederation est organisee en cinq khams (cinquiemes) : Ait Wallal, Ait Wahlim, Ait Isful-Ait Alwan, Ait Aizza Mzin et Ait Unibgi. Chaque khums est subdivise en taqbilts, puis en clans (ighs amaggran) et en lignages (ighs ahzzan). La resolution des conflits inter-claniques fait appel a des panels d'arbitrage de six membres (deux par clan implique), extensibles si necessaire.",
+      "ageClassSystems": "Les conseils de chefs de famille (ajmu) gerent les affaires locales selon le droit coutumier (azerf / taeqqit). Les hommes adultes en age de porter les armes forment la base de la societe militaire et pastorale.",
+      "roleOfLineages": "Le patrilineage (lignage patrilatere) constitue l'unite fondamentale d'identite, de propriete fonciere et d'obligation militaire. Le systeme onomastique reflete cette structure : un homme est designe comme fils de son pere et membre du lignage de son grand-pere ou arriere-grand-pere patrilatere. La gestion des terres collectives pastorales (akal) est une competence lignagere.",
+      "religiousAuthority": "L'islam sunnite malekite est la religion universelle des Ait Atta. Le sharif Moulay Abdullah bin l-Hsain est le saint patron de la confederation ; son sanctuaire a Tiniurshan conserve le drapeau de guerre tribal et les documents fondateurs. Les pratiques soufies et le recours aux saints locaux (maraboutisme) coexistent avec l'orthodoxie islamique. Avant l'islamisation, les Ait Atta avaient une tradition juridique coutumiere codifiee (azerf)."
+    },
+    "languages": {
+      "mainLanguage": "Tamazight de l'Atlas central (tzm) dialecte Ait Atta",
+      "isoCodes": ["tzm"],
+      "dialects": [
+        "Tamazight Ait Atta (Atlas central meridional, Saghro)",
+        "Dialectes des Ait Khabbash (nomades, Tafilalet)",
+        "Varietes du Draa inferieur"
+      ],
+      "vehicularRole": "Le tamazight de l'Atlas central (tzm) est la langue maternelle exclusive des communautes rurales, transmise principalement par les femmes restees au village. L'arabe marocain (darija) est la langue vehiculaire inter-ethnique et commerciale. Le francais est employe dans l'administration et l'enseignement superieur. La constitution marocaine de 2011 reconnait le tamazight comme langue officielle a cote de l'arabe."
+    },
+    "culture": {
+      "majorRites": "L'ahidus est la performance culturelle collective emblematique : danse et poesie orale alternees par les hommes et les femmes en lignes paralleles se faisant face, pratiquee lors des mariages, ceremonies de nommage d'enfants et celebrations communautaires. Plus la troupe est nombreuse, plus l'ahidus est estime. Le mariage (tamghra) suit un rituel precis : apport d'une tutra (cadeau pre-nuptial de sucre, henne, khol) par le fiance ; contrat etabli oralement avec le faqih local avant l'independance, puis par ecrit depuis 1956. La fete de nommage (sbu) a lieu sept jours apres la naissance. Les ceremonies d'election de l'amghar (chef) a Admam constituent un rite politique annuel majeur.",
+      "symbols": "Le drapeau de guerre tribal conserve a Tiniurshan symbolise l'unite de la confederation. Les documents fondateurs sur peau de chameau (Shrut n-khams khmas) sont les symboles de l'alliance des cinq cinquiemes. Le djellaba a rayures, l'asilham (cape de laine blanche), et le turban (tikarzit en coton blanc) constituent le costume masculin identitaire. La couleur blanche domine, symbole de qualites morales et de bonne fortune.",
+      "artsAndMusic": "L'ahidus (musique et danse collective en lignes paralleles) est la forme artistique majeure, pratiquee tant par les hommes que par les femmes. La poesie orale berbere (izli) accompagne les performances. L'artisanat inclut le tissage de tapis et couvertures en laine (tapis du Saghro), le travail du cuir (sandales en cuir, equipement pastoral), et la poterie. L'architecture des kasbahs en pisee (terre compressee) et des ksour (villages fortifies) du Draa-Tafilalet constitue le patrimoine bati caracteristique.",
+      "spiritualities": "Islam sunnite malekite, universellement pratique. Reverence pour le saint patron Moulay Abdullah bin l-Hsain. Visite periodique au sanctuaire de Tiniurshan lors des elections de chef. Pratiques soufies (ziara, culte des saints). La jurisprudence coutumiere pre-islamique (azerf) a coexiste avec le droit islamique (fiqh) pendant des siecles ; certains elements persistent dans la resolution locale des conflits."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La confederation des Ait Atta est une entite tribale non royale, gouvernee par un systeme electoral annuel. Elle ne forme pas de royaume au sens dynastique. La capitale tribale est Igharm Amazdar dans le Jbel Saghro. La confederation a exerce une domination regionale sur le Saghro, le Draa et le Tafilalet du 16e au 20e siecle, imposant des accords de protection (raaya) aux communautes sedentaires haratines.",
+      "relationsWithNeighbors": "Rivalite seculaire avec la confederation Ait Yafelman (Ait Haddidou, Ait Murghad, Ait Sokhman) qui fut en partie formee en reponse a l'expansionnisme des Ait Atta. Des batailles meurtrières sont documentees jusqu'au debut du 20e siecle (ex. 1884 : 8 000 Ait Atta contre 12 700 Ait Murghad, bilan de 2 000 morts). Relations asymetriques avec les Haratin sedentaires des oases, qui travaillaient les terres sous protection des Ait Atta. Reconciliation progressive avec le makhzen alaouite sous la pression francaise (1892-1911).",
+      "conflictsOrAlliances": "Resistance farouche a la penetration francaise depuis 1899 ; dernier grand foyer de resistance dans le Saghro jusqu'en 1933. La bataille de Bougafer (fevrier-mars 1933) sous Assou Oubasslam est la plus celebre. Les Ait Khabbash (sous-tribu nomade de l'Ait Unibgi) furent les plus actifs dans les raids sahariens et la resistance anticoloniale. Apres l'independance (1956), la confederation s'est progressivement sedentarisee conformement aux politiques etatiques.",
+      "diaspora": "Pas de diaspora significant au sens contemporain. Des migrations economiques internes au Maroc amene des membres Ait Atta vers les villes de Ouarzazate, Errachidia, Marrakech et Casablanca, surtout depuis les annees 1970. La identite tribale est maintenue a travers des groupes sur les reseaux sociaux ou le tamazight est promu, parfois avec interdiction de l'arabe."
+    },
+    "demography": {
+      "totalPopulation": 500000,
+      "referenceYear": 2025,
+      "source": "L'ethnologue Claude Lefebure a estime la population des Ait Atta a 400 000 personnes en 2008. David Hart estimait 125 000 a 135 000 en 1960. En appliquant un taux de croissance demographique marocain d'environ 1,2% par an depuis 2008, la population en 2025 est estimee autour de 500 000 personnes, toutes au Maroc. Note : les recensements marocains ne distinguent pas les groupes tribaux ; les chiffres reposent sur des estimations ethnographiques.",
+      "distributionByCountry": [{ "country": "MAR", "population": 500000 }]
+    },
+    "sources": [
+      "Wikipedia, Ait Atta: https://en.wikipedia.org/wiki/Ait_Atta",
+      "Wikipedia, Central Atlas Tamazight: https://en.wikipedia.org/wiki/Central_Atlas_Tamazight",
+      "Hart, David. The Ait Atta of Southern Morocco: Daily Life and Recent History. Middle East and North African Studies Press, 1984. https://www.scribd.com/document/352703674/156167417-The-Ait-Atta-of-Southern-Morocco-Daily-Life-and-Recent-History-David-Hart-pdf",
+      "Amazigh Ethnic Jewels Shop, Berber Tribes - The Ait Atta: https://www.amazigh.it/berber-tribe-ait-atta/",
+      "University of New Mexico, A Comparison of Haratin and Ait Atta Indigenous Legal Systems: https://digitalrepository.unm.edu/cgi/viewcontent.cgi?article=1041&context=tlj",
+      "IRCAM (Institut Royal de la Culture Amazighe), Rabat: https://www.ircam.ma/",
+      "IWGIA, The Indigenous World 2024 Morocco: https://iwgia.org/en/morocco/5357-iw-2024-morocco.html"
+    ]
+  }
+}

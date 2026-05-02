@@ -1,0 +1,127 @@
+{
+  "id": "PPL_TSONGA",
+  "nameMain": "Tsonga",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MOZ", "ZAF", "ZWE", "SWZ"],
+  "content": {
+    "appellations": {
+      "mainName": "Tsonga",
+      "selfAppellation": "Vatsonga (pluriel) / Mutsonga (singulier)",
+      "exonyms": [
+        "Shangaan",
+        "Machangane",
+        "Thonga",
+        "Tonga (historique)",
+        "Gwamba",
+        "Shigwamba"
+      ],
+      "originOfExonyms": "Shangaan designe specifiquement les descendants du conquerant nguni Soshangane ka Zikode (19e siecle) et ceux qu'il a assimiles — appliquer ce terme a tous les Tsonga est considere comme inexact et offensant par beaucoup. Thonga est la forme ancienne utilisee par le missionnaire Henri-Alexandre Junod. Gwamba/Shigwamba est le terme employe par les premiers missionnaires suisses qui standariserent la langue. Le nom Tsonga est derive de Dzonga signifiant Sud ou de l'ancienne appellation des clans Chopi et Tembe.",
+      "whyProblematic": "Le terme Shangaan est souvent utilise de facon abusive pour l'ensemble des Tsonga, ce qui est historiquement inexact: les Shangaan ne sont qu'une fraction des Tsonga, liee a l'empire de Gaza de Soshangane (1820s). Cela cree des tensions identitaires, notamment en Afrique du Sud ou des communautes tsonga preexistaient a Gaza et refusent l'etiquette Shangaan. En Mozambique, l'appellation Changana est utilisee.",
+      "contemporaryUsage": "Vatsonga est l'appellation endonymique. Tsonga est la forme officielle en Afrique du Sud (langue officielle depuis 1996). Xitsonga designe la langue. Shangaan-Tsonga est un compromis courant en contexte sud-africain. Le terme Changana prevaut au Mozambique.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone S) — famille Tswa-Ronga (S.50), langue Tsonga S.53",
+      "historicalRegion": "Mozambique meridional (province de Gaza, Maputo, Inhambane), Limpopo et Mpumalanga (Afrique du Sud), Zimbabwe meridional",
+      "currentCountries": ["MOZ", "ZAF", "ZWE", "SWZ"]
+    },
+    "ethnicities": [
+      "Varhonga (Ronga) — clan originel de la baie de Delagoa (Maputo), sous-clans: Mpfumo de Nhlaruti, Nondwane, Vankomati, Mabota",
+      "AmaShangaan — descendants de l'empire de Gaza de Soshangane, sous-clans: Ndwandwe, Hlatshwayo, Nxumalo, Mkhatshwa",
+      "VaN'wanati — clan du nord de Limpopo, sous-clans: Makwakwa, Maluleke, Mondlane, Xivambu",
+      "VaMbayi — sous-clans: Khosa, Rikhotso, Rivisi, Mbhanyele",
+      "VaHlave — sous-clans: Mavundza, Maswanganyi, Nkwinika, Ndhzove",
+      "VaNdau — sous-clans: Moyane, Sithole, Simango, Maxava",
+      "VaHlengwe — sous-clans: Chauke, Sono, Hlungwani, Mavasa",
+      "Valoyi (Baloyi) — descendants de Gwambe, ayant conquis le Zimbabwe comme Barozwi",
+      "Tembe — nation influente, clans: Dlamini, Gumedes, Mashabanes, Matshinyes, Nyakas"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Tsonga descendent des populations bantoues originelles qui quitterent l'Afrique centrale entre 200 et 500 apr. J.-C. pour s'etablir dans le sud de l'Afrique. Le missionnaire Henri-Alexandre Junod estima en 1912 que la langue xitsonga existait deja depuis plus de 500 ans avant les premiers missionnaires, soit avant 1400. Les clans fondateurs (Mpfumo/Rhonga, Valenga, Vacopi, Vatonga-Nyembana, Vatshwa, Vandzawu) occupaient de grands territoires dans le Mozambique meridional et des parties d'Afrique du Sud. Le nom Thonga aurait des racines signifiant gens du fleuve (Shona) ou medium spirituel (Zulu).",
+      "formationPeriod": "La langue et l'identite culturelle tsonga se sont consolidees progressivement depuis le 12e siecle (plus de 800 ans d'integration culturelle commune selon les sources). L'identite Tsonga distincte des Shangaan se developpa entre le 15e et le 17e siecle. La denomination standardisee Tsonga/Xitsonga fut etablie par les missionnaires suisses romands (Henri Junod, Henri Berthoud, Ernest Creux) a la fin du 19e siecle. En 1996, le xitsonga fut officialise dans la Constitution sud-africaine.",
+      "migrationRoutes": [
+        "Migration depuis l'Afrique centrale (autour de 200-500 apr. J.-C.) vers le Mozambique meridional",
+        "Expansion vers les territoires de l'actuelle province du Limpopo et du Mpumalanga (Afrique du Sud) entre le 15e et le 17e siecle",
+        "Migrations forcees durant le mfecane (1820s): Soshangane envahit le Mozambique, de nombreux Tsonga fuient vers le Transvaal",
+        "Migrations economiques vers Johannesburg, Pretoria et les mines du Rand (20e siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Mozambique meridional: provinces de Gaza, Maputo, Inhambane",
+        "Afrique du Sud: province du Limpopo (ex-Gazankulu, Mhinga, Giyani, Tzaneen) et Mpumalanga",
+        "Zimbabwe meridional (tres minoritaires)",
+        "Nord de l'Eswatini (Swaziland)"
+      ],
+      "unificationsOrDivisions": "Les clans tsonga fonctionnaient comme une confederation de groupes autonomes, chacun dirige par un chef senior considere comme roi dans son territoire, selon le principe vukosi a byi peli nambu (la royaute ne franchit pas les frontieres territoriales ou familiales). Le mfecane (1820s) et l'Empire de Gaza de Soshangane divisa les Tsonga en deux categories: ceux subjugues par l'empire nguni (futurs Shangaan) et ceux qui resisterent ou fuirent. L'apartheid crea le Bantustan de Gazankulu dans les annees 1960 pour les Tsonga sud-africains (500 000 personnes, moins de la moitie des Tsonga d'Afrique du Sud).",
+      "externalInfluences": "Conquete de l'Empire de Gaza par Soshangane (1820s): des elements nguni (Ndwandwe) s'imposerent sur une partie des Tsonga du Mozambique. Missionnaires suisses romands (1875+): Henri-Alexandre Junod, Henri Berthoud, Ernest Creux standardiserent la langue et publierent grammaires et dictionnaires. Colonisation portugaise du Mozambique et britannique du Transvaal. Apartheid sud-africain: creation du Bantustan de Gazankulu (1960s-1994). Independance du Mozambique (1975) et guerre civile (1977-1992).",
+      "majorHistoricalEvents": "1498: premieres mentions de tribus tsonga dans les recits portugais. 1820s: invasions de Soshangane (Empire de Gaza) devastent le Mozambique meridional. 1889-1895: guerre de Gaza; defaite de Nghunghunyana face aux Portugais et aux Chopi. 1873: premiers travaux linguistiques des missionnaires suisses. 1912-1913: publication de The Life of a South African Tribe par Henri-Alexandre Junod — reference ethnographique mondiale. 1973: Gazankulu obtient le statut d'autorite territoriale. 1994: fin de l'apartheid, integration du Limpopo. 1996: xitsonga officialisee dans la Constitution sud-africaine."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Confederation de chefferies autonomes. Chaque chef senior (hosi) est l'equivalent d'un roi dans son territoire; la succession est patrilineaire. Le principe vukosi a byi peli nambu (la royaute ne traverse pas les frontieres) garantit l'autonomie de chaque unite. Des regiments (butho) etaient fournis aux royaumes voisins. En Afrique du Sud, la structure politique tsonga fut incarnee par le mouvement de Sunduza II (1957-1961) qui mobilisa les chefs tsonga pour resister a l'assimilation dans les Bantustans venda ou pedi, conduisant a la creation de Gazankulu.",
+      "clanOrganization": "Organisation en clans patrilineaires, chacun nomme d'apres un ancetre fondateur (system different du systeme totemi que des Pedi). Le principe de clan (xivongo) est central: les noms de clan remontent a un chef ancetre. Principaux clans: Maluleke, Mondlane, Nkuna, Khosa, Baloyi, Mavundza, Chauke, Tembe. Mariage exogame (interdiction de mariage au sein du meme clan).",
+      "ageClassSystems": "Initiations separees pour hommes et femmes. Pour les hommes: ecole Ngoma (eNgomeni) ou Hogo — ecole de circoncision; les inities sont reconnus comme hommes a leur sortie. Pour les femmes: Khomba — dirigee par des vieilles femmes; seules les vierges y participent; les tikhomba (initiees) y apprennent la feminite, la conduite communautaire et la preparation au mariage.",
+      "roleOfLineages": "Lignages patrilineaires determinant la succession, la propriete et les alliances matrimoniales. Les ancetres (swikwembu) ont une influence considerable sur les descendants; les n'anga (guerisseurs-devins) sont les intermediaires entre le monde des vivants et des ancetres. Les noms de clan (xivongo) sont transmis patrilineairement.",
+      "religiousAuthority": "Les n'anga (devins-guerisseurs) jouent un role spirituel central: ils diagnostiquent les maladies, identifient les esprits perturbateurs et prescrivent des remedes (muti). Les divinateurs primaires sont Nkomo We Lwandle (femme) et Dunga Manzi (homme), captures symboliquement par le serpent aquatique Nzunzu et formes par les ancetres. Trois categories d'esprits peuvent posseder: Ngoni (Nguni), Ndau, Malopo (esprits de soldats de Gaza). Les n'anga chretiens et syncretiques sont repandus."
+    },
+    "languages": {
+      "mainLanguage": "Xitsonga (Tsonga)",
+      "isoCodes": ["tso"],
+      "dialects": [
+        "Xin'walungu — dialecte nord du Limpopo, base des dialectes ruraux (sous-dialectes: Valoyi, Luleke)",
+        "Xihlanganu (Langanu, Nhlanganu) — Limpopo central",
+        "Xibila (Vila) — province de Gaza (Mozambique)",
+        "Xidjonga (Dzonga, Jonga) — Mozambique meridional et Maputo",
+        "Xitsonga proprement dit (Gwamba) — forme standardisee ecrite",
+        "Xihlengwe (Lengwe) — partage avec les Tswa, frontiere mozambicaine-zimbabweenne"
+      ],
+      "vehicularRole": "Le xitsonga (ISO 639-3: tso) est l'une des 11 langues officielles de la Republique d'Afrique du Sud depuis 1996. Il est aussi reconnu sous le nom de Shangani dans la Constitution du Zimbabwe. Toutes les langues Tswa-Ronga sont reconnues au Mozambique. Lingua franca dans le nord du Limpopo et dans les regions de Gazankulu. Bible complete traduite; longue tradition ecrite initiee par les missionnaires suisses des 1878."
+    },
+    "culture": {
+      "majorRites": "Danse xibelani: danse feminine emblematique originaire du Mozambique meridional (avant le 15e siecle selon les sources); le nom xitsonga signifie frapper au rythme (xi Bela ni vunanga); les danseuses portent la jupe tinguvu autour des hanches et effectuent des mouvements vibratoires intenses; pratiquee lors du mkhinyavezo, du ku chachula, des ceremonies du makhwaya et du mchongolo. Initiation masculine (Ngoma/Hogo): ecole de circoncision marquant l'entree dans l'age adulte. Initiation feminine (Khomba): preparation au mariage et a la feminite sous la direction des anciennes. Ceremonies funeraires avec veneration des ancetres (swikwembu). Rituel de divination initiatique des n'anga (immersion symbolique dans l'eau, capture par Nzunzu).",
+      "symbols": "La jupe xibelani (tinguvu) est le symbole vestimentaire le plus reconnu. Le mbila (xylophone) et les swigubu (tambours) sont des instruments identitaires centraux. L'ancetre Gwambe est le fondateur mythique des Baloyi et d'autres clans. Nzunzu (Ndhzhundzhu), le serpent des eaux, est une figure spirituelle majeure. Le xivongo (nom de clan) est un symbole identitaire fort.",
+      "artsAndMusic": "Musique tsonga reconnue pour ses genres: xitsonga traditionnel (ndzhumbha), Tsonga disco, electro shanghaan. Artistes traditionnels influents: General MD Shirinda, Fanny Mpfumo, Matshwa Bemuda, Thomas Chauke. Artistes modernes: Joe Shirimani, Penny Penny, Peta Teanet, Benny Mayengani, Nozinja (shangaan electro mondial). Danses traditionnelles: Makhwaya (masculine), Xighubu, Mchongolo, Xibelani (feminine). Instruments: mbila (xylophone de type timbila, inscrit au patrimoine UNESCO comme culture chopi apparentee), swigubu (tambours), hosho (maracas). Artisanat: vannerie, poterie, perlage. Tradition orale riche en proverbes (Benny Mayengani HP Junod les a repertories).",
+      "spiritualities": "Veneration des ancetres (swikwembu / mioya ya vantshwa) comme force agissante sur les vivants. Les n'anga (devins-guerisseurs) diagnostiquent, soignent et communiquent avec les ancetres via les rituels muti (medecines traditionnelles). Trois categories d'esprits possesseurs: Ngoni (Nguni), Ndau, Malopo. Divinite supreme: Xikwembu / Nkulunkulu. Syncretsime chretien fort: eglises protestantes (Mission suisse romande depuis le 19e siecle), catholiques, sionistes et eglises africaines independantes. Henri-Alexandre Junod (ethnographe, 1863-1934) a produit la reference academique mondiale sur les croyances tsonga dans The Life of a South African Tribe (2 vol., 1912-1913, reed. 1927)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Confederation de chefferies autonomes depuis au moins le 12e siecle. Dynastic de Mhinga: le plus ancien royaume tsonga du nord de l'Afrique du Sud, entre les rivieres Levhuvhu et Shingwedzi, fonde a la fin des annees 1600; fondateurs de Malamulele. Nation Tembe: influential sur la cote du KwaZulu-Natal septentrional. Empire de Gaza (1820-1895): fonde par Soshangane (Nguni), ayant domine une partie des Tsonga du Mozambique; ses successeurs Mzila et Nghunghunyana gouvernerent jusqu'a la defaite portugaise de 1895.",
+      "relationsWithNeighbors": "Relations commerciales et tributaires avec les Arabes et Portugais des le 15e siecle via la baie de Delagoa (Maputo). Alliance/conflit avec les Zulu au 19e siecle (mfecane). Fourniture de regiments aux royaumes de Modjadji (Nkuna et Valoyi) et a l'armee de Joao Albasini dans les annees 1800. Relations avec les Chopi (Vacopi), groupe proche mais distinct, celebres pour leur musique timbila. Tensions historiques avec les Venda et Pedi qui tentaient d'absorber les communautes tsonga dans leurs bantustans.",
+      "conflictsOrAlliances": "1820s: invasions de Soshangane (Empire de Gaza) dans le Mozambique meridional. 1889-1895: guerre de Gaza; Nghunghunyana (Gaza) est vaincu par les Portugais avec l'aide des Chopi sous Xipenenyana. 1950s-1961: resistance politique de Sunduza II contre l'absorption dans des bantustans non-tsonga, conduisant a la creation de Gazankulu. 1975-1992: guerre civile mozambicaine (FRELIMO vs RENAMO) devastant les regions a population tsonga.",
+      "diaspora": "Importante diaspora economique vers Johannesburg, Pretoria et les mines du Rand depuis le debut du 20e siecle. Environ 800 000 Tsonga a Johannesburg et Ekurhuleni (recensement 2011). Migration vers Maputo et les villes mozambicaines. Communautes en Eswatini (environ 26 000). Migrations liees a la guerre civile mozambicaine vers l'Afrique du Sud."
+    },
+    "demography": {
+      "totalPopulation": 7600000,
+      "referenceYear": 2025,
+      "source": "Wikipedia (2011): 7,3 millions de locuteurs xitsonga (3,3M Afrique du Sud + 4M Mozambique + 15 000 Eswatini + 18 000 Zimbabwe). Joshua Project et PeopleGroups.org (2025): Eswatini 26 000. Estimation 2025 avec croissance demographique.",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 4500000,
+          "note": "Provinces de Gaza, Maputo, Inhambane — coeur historique du peuplement tsonga; dominent le sud du Mozambique"
+        },
+        {
+          "country": "ZAF",
+          "population": 3000000,
+          "note": "Province du Limpopo (Giyani, Tzaneen, Makhado, Thulamela) et Mpumalanga; egalement Gauteng (Johannesburg, Pretoria, Ekurhuleni)"
+        },
+        {
+          "country": "SWZ",
+          "population": 26000,
+          "note": "Nord de l'Eswatini — environ 2,5% de la population du pays (recensement 2007)"
+        },
+        {
+          "country": "ZWE",
+          "population": 18000,
+          "note": "Zimbabwe meridional — tres minoritaires, Shangani reconnu langue officielle par la Constitution zimbabweenne"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Tsonga people. https://en.wikipedia.org/wiki/Tsonga_people",
+      "Wikipedia EN — Tsonga language. https://en.wikipedia.org/wiki/Tsonga_language",
+      "Wikipedia EN — Xibelani dance. https://en.wikipedia.org/wiki/Xibelani_dance",
+      "Junod, Henri-Alexandre — The Life of a South African Tribe (2 vol., 1912-1913, reed. 1927). Neuchatel: Attinger. Archive.org: https://archive.org/details/lifeofsouthafric02junouoft",
+      "Britannica — Henri Alexandre Junod, Missionary, Ethnographer. https://www.britannica.com/biography/Henri-Alexandre-Junod",
+      "UNISA — Junod Archives (HA & HP Junod). https://www.unisa.ac.za/sites/corporate/default/Library/Library-services/Archival-and-special-collections/Special-collections/Archival-collections/Junod-Archives",
+      "SIL Ethnologue — Tsonga (tso). https://www.ethnologue.com/language/tso/",
+      "Joshua Project — Tsonga, Shangaan in Eswatini. https://joshuaproject.net/people_groups/15596/wz",
+      "Wikipedia EN — Demographics of Eswatini. https://en.wikipedia.org/wiki/Demographics_of_Eswatini"
+    ]
+  }
+}

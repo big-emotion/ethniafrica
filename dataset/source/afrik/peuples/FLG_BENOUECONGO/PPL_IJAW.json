@@ -1,0 +1,107 @@
+{
+  "id": "PPL_IJAW",
+  "nameMain": "Ijaw",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Ijaw",
+      "selfAppellation": "Izon / Ijo",
+      "exonyms": [
+        "Ijaw (exonyme le plus repandu, utilise depuis la periode coloniale)"
+      ],
+      "originOfExonyms": "Le terme Ijaw est un exonyme d'origine coloniale britannique. Le nom endonymique est Izon (prononce Ijo dans certains dialectes), signifiant le peuple du delta.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les deux termes Ijaw et Izon sont utilises en parallele. Izon tend a etre prefere dans les contextes militants et identitaires (Izon Nation), tandis qu'Ijaw reste courant dans les usages officiels nigerians.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Ijoid (branche distincte du Niger-Congo, isolat linguistique dans le delta du Niger)",
+      "historicalRegion": "Delta du Niger, Nigeria (etats actuels de Bayelsa, Delta, Rivers, Edo, Ondo et Akwa Ibom)",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Izon central — groupe majoritaire, etats de Bayelsa et Delta",
+      "Kalabari — groupe oriental, etat de Rivers (Abonnema, Buguma)",
+      "Nembe-Brass — sous-groupe de Bayelsa, capital Brass",
+      "Okrika (Wakirike) — groupe de Rivers (Port Harcourt)",
+      "Ibani — groupe des royaumes de Bonny et Opobo",
+      "Ogbia — sous-groupe de Bayelsa (Oloibiri, Kolo Creek)",
+      "Epie-Atisa — groupe interne de Bayelsa",
+      "Andoni (Obolo) — groupe oriental de Rivers et Akwa Ibom",
+      "Arogbo et Apoi — groupes occidentaux d'Ondo et Edo",
+      "Egbema — groupe de Delta et Edo"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ijaw (Izon) habitent le delta du Niger depuis avant le cinquieme millenaire avant notre ere. Des fouilles archeologiques ont date leur presence a partir du VIIIe siecle avant notre ere (environ 800 BCE), offrant 3 000 ans de preuves archeologiques continues. Certains historiens les considerent comme l'un des peuples les plus anciens d'Afrique occidentale, d'origine peut-etre liee aux peuples autochthones Oru du Niger et de la Benoue. Leur isolement dans le delta marecageux (impenetrable aux groupes Benoue-Kwa agricoles) a preserve une identite distincte.",
+      "formationPeriod": "Premiere cite-Etat : Agadagba-bou (debut de notre ere jusqu'en 1050), abandonnee suite a des conflits internes et aux inondations. Deuxieme cite-Etat : Isoma-bou (XIe-XVIe siecles), egalement sur l'ile Wilberforce dans le delta central. Emergence de puissants royaumes a forte centralisation au XVIe siecle. Premier contact avec les explorateurs europeens (Portugais) vers 1450-1500.",
+      "migrationRoutes": [
+        "Etablissements originels dans le delta central (ile Wilberforce, region de Bayelsa)",
+        "Migration vers l'ouest : groupes Arogbo et Ijaw d'Ondo vers le IXe siecle CE",
+        "Expansion comme pecheurs migrants jusqu'en Sierra Leone, au Ghana et au Gabon"
+      ],
+      "historicalSettlementZones": [
+        "Delta central (ile Wilberforce) : zone de peuplement la plus dense (Bayelsa)",
+        "Delta oriental : Rivers et Akwa Ibom (Kalabari, Okrika, Ibani, Andoni)",
+        "Delta occidental : Delta, Ondo et Edo (Arogbo, Apoi, Egbema, Gbaramatu)",
+        "Presence dans 29 zones de gouvernement local reparties sur 6 etats nigerians"
+      ],
+      "unificationsOrDivisions": "Les Ijaw etaient organises en clans autonomes (environ 51 clans), cooperant essentiellement pour la defense. Chaque clan revendiquait une culture specifique et une autonomie vis-a-vis des autres. Au fil du temps, l'exploitation petroliere du delta et les inegalites de redistribution des revenus ont forge une conscience nationale unitaire : la Nation Izon. Des organisations comme l'Ijaw Youth Council (IYC) et l'Ijaw National Congress (INC) portent desormais cette identite collective.",
+      "externalInfluences": "Contact precoce avec les Portugais (vers 1450-1500) : les Ijaw deviennent des intermediaires commerciaux entre les Europeens et les peuples de l'interieur. Implication dans la traite atlantique (XVIe-XIXe siecles) comme courtiers en esclaves et en huile de palme. Colonisation britannique : rupture du monopole commercial ijaw dans les annees 1890. Exploitation petroliere (depuis les annees 1950) : bouleversement ecologique et economique majeur du delta.",
+      "majorHistoricalEvents": "Fondation d'Agadagba-bou et Isoma-bou (cites-Etats fondatrices). Attaque du roi Frederick William Koko (Nembe-Brass) contre la Royal Niger Company en 1895. Nationalisation des ressources petrolieres du delta sans redistribution equitable : conflits recurrents avec le gouvernement federal nigerien et les compagnies petrolieres (XXe-XXIe siecles). Luttes pour la justice environnementale et la creation de l'etat de Bayelsa (1996) comme reconnaissance politique."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Structure politique a deux niveaux : Ibenanaowei (chef de clan) et Amananowei (chef de ville). Les deux repondent de l'autorite spirituelle d'Egbesu (dieu de la ville). Les clans les plus importants (Nembe, Kalabari, Bonny, Opobo) ont developpe des royaumes a pouvoir central fort et une societe stratifiee. D'autres clans maintenaient des confederations decentralisees sans chef central jusqu'a la colonisation britannique.",
+      "clanOrganization": "Organisation en lignages commerciaux appeles Houses (maisons), avec un chef elu et des pirogues de guerre. La maison etait l'unite economique et militaire de base, integrant des membres non biologiques et des anciens esclaves accultures comme Ijaw. Ce systeme permettait une mobilite sociale remarquable.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les droits fonciers et d'acces aux ressources halieutiques sont determines par l'appartenance clanique. La solidarite clanique est mobilisee pour les funerailles, les mariages et la defense collective. Les femmes, proprietaires de pirogues, jouissent d'un statut economique notable.",
+      "religiousAuthority": "Egbesu (dieu de guerre, protection et justice) relie les differents clans. Wonyinghi (deesse supreme / Tamarau / Ayiba) est au centre de l'existence spirituelle. Les divinateurs (pratiquant l'Igbadai, interrogation des defunts) jouent un role d'intermediaire entre les vivants et les esprits de l'eau (Owuamapu)."
+    },
+    "languages": {
+      "mainLanguage": "Izon (Central Izon)",
+      "isoCodes": ["ijc"],
+      "dialects": [
+        "Kolokuma — dialecte de reference pour l'education",
+        "Gbanrain — dialecte du nord-est",
+        "Ekpetiama — dialecte central",
+        "Nembe — dialecte de Bayelsa (Nembe-Brass)",
+        "Kalabari — dialecte oriental (Rivers)",
+        "Ibani — dialecte de Bonny et Opobo",
+        "Okrika — dialecte de Wakirike (Rivers)",
+        "Ogbia — dialecte de Bayelsa meridional"
+      ],
+      "vehicularRole": "L'izon central est parle par environ 9 millions de personnes et est utilise comme vehiculaire au sein de la communaute ijaw. Le pidgin english nigerien est la lingua franca avec les autres groupes du delta. L'anglais est la langue d'education et d'administration."
+    },
+    "culture": {
+      "majorRites": "Ceremonie Iria : rite de passage pour les jeunes femmes, marquant l'entree dans l'age adulte. Funerailles dramatiques pour les personnes riches et respectees : mascarades, musique, festins communaux, chants funeraires. Mascarades des esprits de l'eau et des ancetres : les performers semblent marcher sur l'eau. Ceremonies de propitiation des Owuamapu (esprits de l'eau) : offrandes sur pirogues spirituelles (ikiyan aru). Luttes traditionnelles, courses de pirogues, danses traditionnelles lors des celebrations.",
+      "symbols": "Egbesu : dieu tutélaire symbolisant la force et la justice (totems : leopard, panthere, lion). Wonyinghi : staff sur plateforme, centre de l'existence spirituelle. Pirogue : symbole identitaire central de la culture ijaw, moyen de transport et d'existence. Tenues de prestige : Don (bijoux, perles, or, corail, chapeau) pour les hommes de haut rang. Perles de corail (Ibolo) comme marqueurs de statut.",
+      "artsAndMusic": "Masques en bois sculptes representant les esprits de l'eau (Owuamapu) et les ancetres, portes lors des ceremonies. Ecrans memoriels Duen Fobara (Kalabari) : sculptures en bois commemorant les ancetres. Cadres divinatoires Obebe (Egbema). Tenues traditionnelles elaborees (Etibo, George wrapper, Namatibi). Cuisine traditionnelle caracteristique : Polofiyai, Gbe, soupe Kiri-gina, poisson fume et plantain. Chants funeraires et musique rituelle pour guider les ames des defunts.",
+      "spiritualities": "Croyances traditionnelles centrees sur Wonyinghi (deesse supreme), Egbesu (dieu de la guerre et de la justice), et les Owuamapu (esprits de l'eau qui veillent sur les humains antes leur naissance et coexistent avec eux). La mort est un passage vers le monde des esprits via une riviere, avec le passeur Saibo. Divinateurs (Igbadai) pour interroger les defunts. Le christianisme est la religion dominante contemporaine (65% environ : catholicisme, anglicanism, pentecotisme)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Cite-Etat d'Agadagba-bou (jusqu'en 1050 CE). Cite-Etat d'Isoma-bou (XIe-XVIe siecles). Royaume de Nembe-Brass : puissance maritime, resista aux Britanniques (1895). Royaume de Bonny : centre commercial majeur du golfe de Guinee. Royaume de Kalabari : puissance commerciale de Rivers. Royaume d'Opobo : fonde par le roi Jaja d'Opobo (ex-esclave devenu roi ijaw, refusant le commerce libre avec les Britanniques).",
+      "relationsWithNeighbors": "Relations commerciales et parfois tendues avec les Igbo, Urhobo, Itsekiri et Efik. Les Ijaw servirent d'intermediaires essentiels entre les Europeens et les peuples de l'interieur. Tensions contemporaines avec les Itsekiri et Urhobo autour de l'acces aux terres petroliferes de Warri.",
+      "conflictsOrAlliances": "Attaque du roi Koko (Nembe-Brass) contre la Royal Niger Company en 1895, premier acte de resistance contre l'exploitation britannique. Conflits recurrents avec le gouvernement federal et les multinationales petrolieres (Shell, Chevron) au XXe-XXIe siecles. Mouvement Izon Youth Council et groupes armes de resistance dans le delta (annees 2000-2010).",
+      "diaspora": "Pecheurs migrants Ijaw presents en Sierra Leone, au Ghana et au Gabon. Professionnels ijaw en Europe et en Amerique du Nord depuis les programmes de bourses gouvernementaux (annees 1970-1980). L'Ijaw National Congress in the Americas (INCA) represente la diaspora nord-americaine."
+    },
+    "demography": {
+      "totalPopulation": 15000000,
+      "referenceYear": 2025,
+      "source": "Estimation 2025 basee sur les donnees Wikipedia (14,39 millions en 2024, 6,1% de la population nigeriane) et les projections demografiques. Sources : https://en.wikipedia.org/wiki/Ijaw_people, https://simple.wikipedia.org/wiki/Ijaw_people",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 15000000,
+          "note": "Principalement dans les etats de Bayelsa, Delta, Rivers ; minorites dans Edo, Ondo et Akwa Ibom"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia — Ijaw people : https://en.wikipedia.org/wiki/Ijaw_people",
+      "Wikipedia — Izon language : https://en.wikipedia.org/wiki/Izon_language",
+      "Ethnologue (SIL International) — Izon language (ijc) : https://www.ethnologue.com/language/ijc/",
+      "Simple Wikipedia — Ijaw people (population 2024) : https://simple.wikipedia.org/wiki/Ijaw_people",
+      "All Ijaw Culture — History of Ijaw People : https://allijawculture.org/blog/history-of-ijaw-people/",
+      "Niger Delta Cultural Archives — traditions culturelles du delta",
+      "The Guardian Nigeria — The Ijaw quest for Nigeria's fourth pillar : https://guardian.ng/politics/the-ijaw-quest-for-nigerias-fourth-pillar/"
+    ]
+  }
+}

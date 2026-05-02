@@ -1,0 +1,62 @@
+{
+  "id": "PPL_LAMBA",
+  "nameMain": "Lamba",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["BEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Lamba",
+      "selfAppellation": "",
+      "exonyms": ["Lamba (terme utilisé par les Européens)"],
+      "originOfExonyms": "N/A",
+      "whyProblematic": "N/A",
+      "contemporaryUsage": "N/A",
+      "linguisticFamily": "FLG_GUR",
+      "ethnoLinguisticGroup": "N/A",
+      "historicalRegion": "Nord-ouest du Bénin (sociétés montagnardes)",
+      "currentCountries": ["BEN"]
+    },
+    "ethnicities": ["Lamba"],
+    "origins": {
+      "ancientOrigins": "N/A",
+      "formationPeriod": "N/A",
+      "migrationRoutes": ["N/A"],
+      "historicalSettlementZones": [
+        "Nord-ouest du Bénin (sociétés montagnardes)"
+      ],
+      "unificationsOrDivisions": "N/A",
+      "externalInfluences": "N/A",
+      "majorHistoricalEvents": "N/A"
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "N/A",
+      "clanOrganization": "N/A",
+      "roleOfLineages": "N/A",
+      "religiousAuthority": "N/A"
+    },
+    "languages": {
+      "mainLanguage": "Lamba (lam)",
+      "isoCodes": ["lam"],
+      "dialects": ["N/A"],
+      "vehicularRole": "N/A"
+    },
+    "culture": {
+      "Rites majeurs": "N/A",
+      "Symboles": "N/A",
+      "Arts et musique": "N/A",
+      "Spiritualités": "N/A"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "N/A",
+      "relationsWithNeighbors": "N/A",
+      "conflictsOrAlliances": "N/A",
+      "diaspora": "N/A"
+    },
+    "demography": {
+      "totalPopulation": 280,
+      "referenceYear": 2025,
+      "source": "N/A"
+    },
+    "sources": []
+  }
+}

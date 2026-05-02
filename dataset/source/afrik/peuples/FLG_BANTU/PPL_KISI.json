@@ -1,0 +1,78 @@
+{
+  "id": "PPL_KISI",
+  "nameMain": "Kisi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Kisi",
+      "selfAppellation": "Kisi",
+      "exonyms": ["Kikisi", "Kese"],
+      "originOfExonyms": "Kikisi est le nom de la langue avec le prefixe Ki- du swahili. Kese est une autre orthographe alternative du nom du groupe utilisee dans certaines sources linguistiques.",
+      "whyProblematic": "A ne pas confondre avec les Kissi d'Afrique de l'Ouest (Guinee, Sierra Leone, Liberia), qui sont un groupe distinct de langue Mel, sans lien avec les Kisi bantous de Tanzanie.",
+      "contemporaryUsage": "Le nom Kisi designe ce groupe bantou etabli sur la rive nord-ouest du lac Malawi en Tanzanie. Le terme est utilise dans les sources academiques, missionnaires et administratives tanzaniennes.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou des hauts plateaux du sud de la Tanzanie",
+      "historicalRegion": "Rive nord-ouest du lac Malawi (lac Nyasa), Tanzanie meridionale",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Kisi"],
+    "origins": {
+      "ancientOrigins": "Les Kisi sont un groupe ethnolinguistique bantou des districts de Makete et Ludewa dans la region de Njombe, en Tanzanie, etablis sur la rive nord-ouest du lac Malawi. Leurs origines s'inscrivent dans la grande migration bantoue qui a peuple l'Afrique meridionale et orientale.",
+      "formationPeriod": "Installation ancienne sur les rives du lac Nyasa et dans les montagnes de Livingstone. Utilisation du nyakyusa comme deuxieme langue acquise seulement a partir de 1900.",
+      "migrationRoutes": [
+        "Migration bantoue vers les hauts plateaux du sud de la Tanzanie",
+        "Installation sur les rives du lac Nyasa (lac Malawi) et dans le district de Ludewa"
+      ],
+      "historicalSettlementZones": [
+        "District de Makete, Region de Njombe",
+        "District de Ludewa, Region de Njombe (anciennement Region d'Iringa)",
+        "Rive nord-ouest du lac Malawi",
+        "Village de Lupingu et environs"
+      ],
+      "unificationsOrDivisions": "Groupe compact etabli dans une zone geographique relativement restreinte. L'isolement geographique (montagnes, route difficile) a favorise le maintien d'une identite culturelle distincte.",
+      "externalInfluences": "Contacts commerciaux avec les Sangu (echange de pots contre du betail). Contact avec les missionnaires chretiens. Adoption du nyakyusa comme deuxieme langue depuis 1900. Influence du swahili comme langue nationale.",
+      "majorHistoricalEvents": "Dans le passe, les Kisi assuraient le transport de personnes a travers le lac Nyasa par pirogue. Leurs femmes fabriquaient et commercialisaient des poteries, et les pecheurs echangeaient poissons et pots (incluant de l'hippopotame) avec les peuples de l'interieur contre du betail."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation communautaire de petite echelle, sans chefferie centralisee documentee. Structure sociale fondee sur la famille etendue.",
+      "clanOrganization": "Organisation clanique propre aux societes bantoues avec des structures familiales etendues.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent l'acces aux ressources de peche, aux terres agricoles et la transmission des savoirs traditionnels (fabrication de poteries, techniques de peche).",
+      "religiousAuthority": "Religion traditionnelle africaine predominante (55% selon Joshua Project). Minorite chretienne (45%). Pratiques spirituelles liees aux ancetres et aux forces naturelles."
+    },
+    "languages": {
+      "mainLanguage": "Kisi",
+      "isoCodes": ["kiz"],
+      "dialects": [],
+      "vehicularRole": "Le kisi est la langue maternelle utilisee au sein de la communaute, bien que seulement environ la moitie de la population ethnique Kisi parle couramment cette langue (11 000 locuteurs sur 15 000 a 22 000 personnes en 2012-2025). Usage vigoureux la ou il est encore pratique. Le nyakyusa est utilise comme deuxieme langue depuis 1900. Le swahili est la langue nationale. Le kisi est closely related to Pangwa, Kinga, Sangu, Vwanji et Bena."
+    },
+    "culture": {
+      "majorRites": "Ceremonies liees aux cycles de la peche et de l'agriculture. Rites de passage (naissance, initiation, mariage). Traditions liees a la fabrication de poteries comme activite culturelle et economique.",
+      "symbols": "La pirogue (canoe) est un symbole de l'identite Kisi en tant que peuple du lac. La poterie faite main est un embleme de l'artisanat feminin Kisi.",
+      "artsAndMusic": "Tradition de fabrication de poteries artisanales par les femmes Kisi. Chants et musique vocale lors des ceremonies communautaires.",
+      "spiritualities": "Religion traditionnelle africaine majoritaire, axee sur la relation avec les ancetres et les forces naturelles du lac et des montagnes. Presence chretienne croissante (45%)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise documente. Communaute de petite taille organisant ses activites autour de la peche et du commerce lacustre.",
+      "relationsWithNeighbors": "Relations commerciales etablies avec les Sangu de l'interieur (echange de pots et de poisson contre du betail). Service de transport fluvial et lacustre pour d'autres groupes. Relations avec les Nyakyusa voisins, dont la langue a ete adoptee comme deuxieme langue vers 1900.",
+      "conflictsOrAlliances": "Relations commerciales pacifiques avec les Sangu. Integration progressive dans les reseaux d'echange regionaux des hauts plateaux meridionaux de Tanzanie.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 21000,
+      "referenceYear": 2025,
+      "source": "Joshua Project / PeopleGroups.org (2025)",
+      "distributionByCountry": [{ "country": "TZA", "population": 21000 }]
+    },
+    "sources": [
+      "Kisi people – Wikipedia, 2023 (https://en.wikipedia.org/wiki/Kisi_people)",
+      "Kisi language (Tanzania) – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kisi_language_(Tanzania))",
+      "Kisi in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12720)",
+      "Kisi – Omniglot, 2021 (https://www.omniglot.com/writing/kisi.htm)",
+      "Kisi – Ethnologue (https://www.ethnologue.com/language/kiz/)",
+      "Kisi of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg014965/)",
+      "Bantu, Central-Tanzania People Cluster – Joshua Project (https://www.joshuaproject.net/clusters/341)"
+    ]
+  }
+}

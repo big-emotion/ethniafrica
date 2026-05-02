@@ -1,0 +1,99 @@
+{
+  "id": "PPL_ALAGO",
+  "nameMain": "Alago",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Alago",
+      "selfAppellation": "Alago",
+      "exonyms": ["Arago", "Idoma Nokwu"],
+      "originOfExonyms": "Arago est une variante orthographique du nom Alago utilisée dans certains documents administratifs et littératures coloniales. Idoma Nokwu est un nom érudit utilisé en linguistique pour souligner la parenté de la langue alago avec les langues idomoides. Le nom Alago serait dérivé d'Ookelagwo, selon la tradition orale locale.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Alago est le nom officiel et le plus courant, utilisé dans les documents gouvernementaux du Nasarawa State et dans la littérature académique nigériane. Arago reste usité dans certaines publications.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Idomoide (branche Volta-Niger, famille Niger-Congo)",
+      "historicalRegion": "Zone méridionale du Nasarawa State (Nigeria) — LGAs d'Obi, Doma et Keana, ainsi que les zones de développement de Lafia East, Giza, Azara et Ekye",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Keana — communauté centrale, fondée vers 1232, descendants directs de la confédération Kwararafa",
+      "Doma — communauté du LGA Doma, dans la plaine centrale",
+      "Obi — communauté du LGA Obi, dans le sud du Nasarawa State",
+      "Agbashi — communauté dans la zone de Lafia East",
+      "Owena — communauté dans la zone de développement d'Azara",
+      "Odobu — communauté dans la zone de développement d'Ekye"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Alago sont un groupe d'origine idomoide qui partageait une origine commune avec les Idoma du Benue State actuel. La séparation des Alago avec leurs voisins Idoma est estimée vers 1200 après J.-C. Une autre tradition rapporte que les Alago ont migré depuis l'ancien royaume Jukun (actuel Taraba State) vers 800 après J.-C. Le peuple alago figure parmi les membres majeurs de la confédération Kwararafa, un empire nigérian du XVe siècle.",
+      "formationPeriod": "Formation comme groupe ethnique distinct entre le IXe et le XIIIe siècle, à la suite de la séparation d'avec les Idoma (vers 1200 après J.-C.) et de la fondation de Keana (vers 1232 après J.-C.). La cohésion identitaire s'affirme dans le cadre de la confédération Kwararafa.",
+      "migrationRoutes": [
+        "Migration initiale depuis le royaume Jukun (actuel Taraba State) vers 800 après J.-C.",
+        "Établissement progressif dans la vallée de la Benue et les zones adjacentes de l'actuel Nasarawa State",
+        "Séparation des Idoma de Benue State vers 1200 après J.-C.",
+        "Fondation de Keana comme centre principal vers 1232 après J.-C."
+      ],
+      "historicalSettlementZones": [
+        "Plaine méridionale du Nasarawa State (LGAs Obi, Doma, Keana)",
+        "Zone de développement de Lafia East",
+        "Zones de développement de Giza, Azara et Ekye"
+      ],
+      "unificationsOrDivisions": "Les Alago ont constitué une unité politique distincte au sein de la confédération Kwararafa, aux côtés des Jukun, Goemai, Koro, Agatu et Eloyi. Après l'effondrement de la Kwararafa, les communautés alago ont maintenu leur identité culturelle et linguistique propre, tout en subissant des pressions des groupes voisins (Kanuri à Lafia, Igala, Haoussa et Peul).",
+      "externalInfluences": "Influence de la confédération Kwararafa sur l'organisation politique. Contact historique avec les Kanuri de Lafia (fondateurs arabes de Lafia selon certaines traditions, qui ont épousé des femmes alago). Relations anciennes avec les Igala, auxquels les Alago revendiquent une fraternité historique. Influence croissante de l'islam et du christianisme depuis le XIXe siècle.",
+      "majorHistoricalEvents": "Participation à la confédération Kwararafa (XVe siècle); fondation de Keana vers 1232 après J.-C.; contact avec l'administration coloniale britannique au XIXe siècle; intégration dans la Province de Lafia coloniale; création du Nasarawa State en 1996; lancement de la traduction de la Bible en alago (il y a plus de 30 ans selon Joshua Project)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Système de chefferies sacrées (sacred kingships) avec des offices politiques héréditaires, selon Joshua Project. Les chefs traditionnels (têtes de clans et rois locaux) exercent une autorité politique et religieuse. La religion traditionnelle est profondément ancrée dans l'identité ethnique, les royautés sacrées et les offices politiques héréditaires.",
+      "clanOrganization": "Organisation en clans locaux correspondant aux communautés villageoises : Keana, Doma, Obi, Agbashi, Owena, Odobu et d'autres. Chaque communauté dispose de ses lignages fondateurs et de ses chefs traditionnels.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages structurent la succession aux titres traditionnels, la propriété foncière et l'appartenance communautaire. La mémoire des migrations depuis le Jukun et l'appartenance à la Kwararafa est conservée dans les traditions orales des lignages.",
+      "religiousAuthority": "Les prêtres de la religion traditionnelle occupent une position centrale, en lien avec les chefferies sacrées. La pratique religieuse traditionnelle est en recul chez les jeunes générations, remplacée par le christianisme (environ 35% selon Joshua Project) et l'islam (environ 10%). Les anciens pratiquants du Alago se perçoivent comme liés à des esprits capricieux (créances perpétuelles)."
+    },
+    "languages": {
+      "mainLanguage": "Alago (Idoma Nokwu)",
+      "isoCodes": ["ala"],
+      "dialects": [
+        "Keana — dialecte principal",
+        "Agbo-ko-tashi (Agwatashi)",
+        "Akpanaja",
+        "Aloshi",
+        "Ana",
+        "Assaikio (Owusakio)",
+        "Doma",
+        "Igbabo",
+        "Olonya",
+        "Idadu",
+        "Ibi",
+        "Obi"
+      ],
+      "vehicularRole": "L'alago est la langue maternelle de l'ensemble de la communauté. Le haoussa et le pidgin nigérian servent de langues véhiculaires pour les contacts interethniques au Nasarawa State. La traduction de la Bible en alago est en cours depuis plus de 30 ans, témoignant d'un effort de développement linguistique."
+    },
+    "culture": {
+      "majorRites": "Rites liés aux royautés sacrées (intronisation des chefs, cérémonies de renouveau annuel). Pratiques de divination et de protection spirituelle associées à la religion traditionnelle. Cérémonies agricoles pour les semailles et les récoltes (igname, sorgho, maïs, mil). Rites funéraires communautaires. Célébrations associées à la fondation de Keana (commémoration de l'appartenance à la Kwararafa).",
+      "symbols": "Les royautés sacrées et les offices héréditaires constituent les symboles centraux de l'identité alago. La mémoire de l'appartenance à la confédération Kwararafa est valorisée comme signe de grandeur historique.",
+      "artsAndMusic": "Agriculture traditionnelle valorisée comme activité prestigieuse pour hommes et femmes. Cuisine traditionnelle : ona-g'ishi (igname pilée) et ona-g'iye accompagnés des soupes Owo'oho et Okeshe. Tradition de conte oral et de transmission historique par les anciens. Artisanat local lié à l'agriculture et à la transformation des produits vivriers.",
+      "spiritualities": "Religion traditionnelle animiste profondément liée à l'identité ethnique, aux chefferies sacrées et aux offices politiques héréditaires. Conversion progressive au christianisme (environ 35% selon Joshua Project) et à l'islam (environ 10%). Coexistence fréquente au sein de mêmes familles de chrétiens, de musulmans et de pratiquants de la religion traditionnelle, reflet de la valeur accordée à la liberté religieuse."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Keana, fondée vers 1232 après J.-C., comme centre politique des descendants alago de la Kwararafa. Chefferies autonomes à Doma, Obi et dans les autres communautés. Participation historique à la confédération Kwararafa (XVe siècle), empire multi-ethnique regroupant également les Jukun, Goemai, Koro, Agatu et Eloyi.",
+      "relationsWithNeighbors": "Liens historiques avec les Idoma de Benue State (origine commune, séparation vers 1200 après J.-C.). Fraternité revendiquée avec les Igala de l'Etat de Kogi. Coexistence avec les Haoussa, Peul, Koro, Eggon et Gwandara du Nasarawa State. Mariages historiques entre les Kanuri de Lafia et les femmes alago.",
+      "conflictsOrAlliances": "Alliance dans le cadre de la confédération Kwararafa contre les pressions extérieures (XVe siècle). Pression des Peul du jihad de Dan Fodio au XIXe siècle affectant la région. Intégration dans l'administration coloniale britannique de la Province de Lafia.",
+      "diaspora": "Présence alago dans les centres urbains du Nasarawa State et de la zone de la capitale fédérale (Abuja). Migration vers les grandes villes nigérianes pour l'éducation et l'emploi. La langue alago est considérée comme menacée en raison de la pression des langues dominantes et de la migration des jeunes."
+    },
+    "demography": {
+      "totalPopulation": 115000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) indique une population de 115 000 Alago au Nigeria. Cette estimation est confirmée par la faible visibilité du groupe malgré son caractère de groupe ethnique dominant dans la zone méridionale du Nasarawa State. La publication académique d'Amirikpa Oyigbenu (2025) confirme la présence dans les LGAs d'Obi, Doma et Keana et les zones de développement adjacentes.",
+      "distributionByCountry": [{ "country": "NGA", "population": 115000 }]
+    },
+    "sources": [
+      "Wikipedia, Alago language (en). https://en.wikipedia.org/wiki/Alago_language (consulté 2025)",
+      "Ethnologue, Alago (ALA). https://www.ethnologue.com/language/ala/ (consulté 2025)",
+      "Joshua Project, Alago Idoma Nokwu in Nigeria. https://joshuaproject.net/people_groups/10241 (consulté 2025)",
+      "Oyigbenu, Amirikpa. The Threat of Endangerment and Extinction of Alago Language of Nasarawa State. International Journal of Language and Culture, 5(1), 2025, pp. 1-6. https://www.svedbergopen.com/files/1752662911_(1)_IJLC202509015611NG_(p_1-6).pdf",
+      "International Policy Digest, The Underexplored Tapestry of Nigeria's Alago People (2023). https://intpolicydigest.org/the-platform/the-underexplored-tapestry-of-nigeria-s-alago-people/",
+      "Wikipedia, List of ethnic groups in Nigeria. https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_Nigeria (consulté 2025)",
+      "Wikidata, Alago (Q106490494). https://www.wikidata.org/wiki/Q106490494 (consulté 2025)"
+    ]
+  }
+}

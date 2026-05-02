@@ -1,0 +1,100 @@
+{
+  "id": "PPL_EMBU",
+  "nameMain": "Embu",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["KEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Embu",
+      "selfAppellation": "Aembu (sg. Muembu / Waembu)",
+      "exonyms": [
+        "Embu (terme repris par l'administration coloniale britannique)",
+        "Waembu (variante swahilie)"
+      ],
+      "originOfExonyms": "Le terme Embu derive du nom de l'ancetre fondateur Kembu (fils du premier ancetre Mwene-Ndega), dont les descendants se denomment 'enfants de Kembu', soit Aembu. Les Europeens ont adopte cette forme abregee.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Aembu est l'endonyme courant. Embu est utilise en anglais et dans les contextes officiels kenyans. Le comite Embu est egalement le nom du comte administratif depuis la Constitution de 2010.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou de la zone E (groupe Thagicu des Grands Lacs)",
+      "historicalRegion": "Versants meridionaux du mont Kenya (ancienne Province Orientale du Kenya)",
+      "currentCountries": ["KEN"]
+    },
+    "ethnicities": [
+      "Embu proprement dits (versants sud du mont Kenya, comte d'Embu)",
+      "Mbeere (zone semi-aride du comte d'Embu, parfois distingues comme groupe separate)",
+      "Embu du Nord (zone de Runyenjes, pres des forets)",
+      "Embu du Sud (plaines et basses terres vers Mwea)",
+      "Clans majeurs : Muturi, Iruma, Kina, Igandu, Gicuku, Matau, Ngai, Kithami, Njuki, Rwamba"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Embu sont un peuple bantou du groupe Thagicu, etroitement apparente aux Kikuyu, Meru, Chuka, Mbeere et Kamba. Selon les traditions orales, leurs ancetres commencerent a migrer depuis les collines Nyambene (nord-est du mont Kenya) vers le 16e siecle. D'autres sources les rattachent a une origine dans la region de la cote orientale africaine (Mpwa/Pwani), depuis laquelle ils remonterent vers l'interieur. La mythologie embu evoque Mwene-Ndega et Nthara comme premiers ancetres, dont le fils Kembu donna son nom au peuple. Avant l'agriculture, les traditions mentionnent une phase de chasseurs-cueilleurs vivant en abris rupestres, en contact avec les Ndorobo (Okiek).",
+      "formationPeriod": "L'identite embu se consolida entre le 16e et le 18e siecle, apres la separation d'avec les Mbeere (dispute territoriale) et les contacts avec les Maasai (adoption de la circoncision). La period coloniale britannique (a partir de 1900) unifia administrativement les Embu, renforçant une identite collective.",
+      "migrationRoutes": [
+        "Depuis les collines Nyambene (nord-est du mont Kenya) vers le sud, avec les ancetres des Kikuyu, Chuka et Meru",
+        "Possible sejour intermediaire a Ithanga Hill au sud du mont Kenya avant installation dans le territoire actuel",
+        "Certains groupes vinrent du cote de Mwea (sud), associes a la region de Matiiri",
+        "Contacts historiques avec la cote swahilie (Pwani) mentionnes dans les traditions orales meru"
+      ],
+      "historicalSettlementZones": [
+        "Versants meridionaux du mont Kenya (forets et zones cultivables)",
+        "Region de Runyenjes et de Ngandori",
+        "Plaines de Mwea (limite sud)",
+        "Contreforts est vers la riviere Tana"
+      ],
+      "unificationsOrDivisions": "La separation entre Embu et Mbeere resulte d'un conflit territorial ancien : lors d'un combat convenu avec des batons, les Embu utiliserent des epees dissimulees et vainquirent les Mbeere, les repoussant vers les terres sableuses infertiles de Kiangombe. Les Embu s'etablirent sur les terres fertiles proches de la foret. Malgre cette division, les deux groupes partagent une origine commune.",
+      "externalInfluences": "Contacts guerriers et commerciaux avec les Kamba (est/sud), les Kikuyu (ouest), les Meru (nord) et les Maasai (sud) : les raids maasai introduisirent la pratique de la circoncision. La colonisation britannique (1900-1963) imposa une administration centralisee. Le christianisme (missionnaires depuis fin 19e s.) transforma les pratiques religieuses et sociales.",
+      "majorHistoricalEvents": "Vers 1870 et 1890, le heros de guerre Njeru Karuku mena les Embu contre les Chuka. En 1900, les Embu repoussèrent une attaque kamba a la bataille de Kathunguri, piégeant l'ennemi avec une ruse liee a la pluie. Les Embu participerent au mouvement Mau Mau (1952-1960) contre la colonisation britannique. Le chef Muruatetu fut une figure majeure de l'administration coloniale et post-coloniale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe sans chefferie centralisee, gouvernee par des conseils d'anciens (njuri). Les decisions importantes etaient prises par deliberation collective des hommes adultes, sur le modele proche du tajmaat kikuyu. Le chef (muthamaki) avait un role de prestige et de mediation plutot que de pouvoir absolu. Les anciens (athamaki) gererent la justice coutumiere, la repartition des terres et les alliances.",
+      "clanOrganization": "Organisation patrilineaire en clans (mbari) et sous-clans. Les principaux clans incluent : Muturi, Iruma, Kina, Igandu, Gicuku, Matau, Ngai, Kithami, Njuki, Rwamba, et de nombreux autres lignages. Chaque clan trace son ascendance a un ancetre masculin commun. Le systeme clanique organise la propriete fonciere, les mariages (exogamie clanique) et la solidarite communautaire.",
+      "ageClassSystems": "Les classes d'age (mariika) structuraient la societe masculine. Apres la circoncision, les jeunes hommes etaient integres dans une classe d'age determinant leurs obligations sociales, militaires et communautaires. Le systeme d'age organise les transitions de vie : guerriers (anake), puis anciens (athamaki).",
+      "roleOfLineages": "Les lignages patrilineaires (mbari) determinent l'identite, l'acces a la terre et les alliances matrimoniales. La famille etendue (nyumba) est l'unite economique de base. Les ancetres (agikuyu, ancestres fondateurs) sont invoques lors de libations et d'offrandes sur des autels familiaux (thingira) pour obtenir leur intercession.",
+      "religiousAuthority": "Les anciens avaient un role religieux : communication avec Ngai (Dieu supreme sur le mont Kenya) lors de ceremonies collectives. Les sorciers (aganga) et devins (arogi) jouaient un role dans la guerison et la protection. Depuis la colonisation, les pasteurs chretiens ont pris une place importante, creant un syncretisme entre croyances traditionnelles et christianisme."
+    },
+    "languages": {
+      "mainLanguage": "Kiembu (aussi appele Embu ou Kîembu)",
+      "isoCodes": ["ebu"],
+      "dialects": [
+        "Embu proprement dit (dialecte principal des versants du mont Kenya)",
+        "Mbeere / Kimbeere (dialecte des zones semi-arides, parfois considere comme langue separee)",
+        "Kiruguru (variante locale parlée pres du mont Kenya, accent distinctif reconnu par les locuteurs natifs)"
+      ],
+      "vehicularRole": "Le kiembu est la langue maternelle de la quasi-totalite des Aembu. Il est étroitement apparente au kikuyu, kimeru et kamba. Le swahili est la langue vehiculaire nationale et l'anglais la langue officielle du Kenya ; les deux sont couramment utilises dans les contextes administratifs, scolaires et urbains. Le kiembu est enseigne dans certaines ecoles primaires locales."
+    },
+    "culture": {
+      "majorRites": "Rites de naissance : a la naissance d'un garcon, cinq ululations (ngemi) sont poussees, quatre pour une fille. Quatre ou cinq jours apres la naissance, le rite kuumagarua (etre envoye dehors) introduit l'enfant au monde exterieur : une fille recoit un fagot de bois symbolique, un garcon un arc et des fleches miniatures, figurant leurs roles futurs. La circoncision (kutairiwa) est le rite de passage le plus crucial : les garcons sont circoncis entre 13 et 18 ans, apres paiement de la chevre mburi ya nduo. Le courage durant l'epreuve determine le statut social. Apres guerison, le jeune homme recoit une couronne (nthumbi). Les filles subissaient traditionnellement la clitoridectomie (aujourd'hui illegale au Kenya). Le mariage est central : le versement du prix de la fiancee (ruracio) scelle l'alliance entre lignages. Les funerailles impliquent des rituels de purification et des libations aux ancetres.",
+      "symbols": "Le mont Kenya (Kirinyaga) est le symbole sacre supreme : Ngai (Dieu) y reside. L'arc et les fleches symbolisent la masculinite et la protection. Les fagots de bois representent le role feminin. Les calebasses et les pots en poterie servent d'ustensiles rituels. La chevre est l'animal de sacrifice par excellence.",
+      "artsAndMusic": "Les Aembu sont reconnus pour leur amour de la danse et de la musique. Les danses traditionnelles (ngutha, kiraka) sont caracterisees par de l'acrobatie, des mouvements corporels vifs et des figures athletiques, comparables aux danses akamba. Les instruments comprennent le tambour (ngoma), la flute (muturiru) et les instruments a cordes. La poesie orale (gichandi) et les chants collectifs accompagnent les ceremonies. L'artisanat inclut la poterie (realise principalement par les femmes), le tissage de nattes et de paniers, et la fabrication d'arcs et de fleches. La modernisation et l'urbanisation ont fragilise une partie de ce patrimoine, mais des efforts de revitalisation culturelle sont en cours.",
+      "spiritualities": "Les Embu croient en Ngai, le Dieu supreme qui reside sur le mont Kenya (Kirinyaga). Les prieres et les sacrifices sont orientes vers le mont. Les ancetres (andu ago) jouent un role d'intercesseurs entre les vivants et le divin : des libations et des offrandes de nourriture sont deposees sur des autels familiaux (thingira) lors des occasions importantes. La medecine traditionnelle (aganga) integre des elements spirituels. Depuis la colonisation, le christianisme (presbyterien, catholique, et eglises evangeliques) est largement adopte, coexistant souvent avec des pratiques ancestrales dans un syncretisme pragmatique."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Embu n'ont pas developpe de royaume centralise. Leur organisation en conseils d'anciens et en classes d'age leur a permis de maintenir une autonomie locale. Des chefs influents comme le chef senior Muruatetu (plusieurs dizaines d'epouses, figure d'autorite sous la colonisation et au Kenya independant) representent le modele de leadership traditionnel embu. Les Embu se distinguerent comme guerriers defensifs redoutables face aux Kamba et aux Maasai.",
+      "relationsWithNeighbors": "Les Embu entretinrent des relations complexes avec leurs voisins : alliances culturelles et linguistiques avec les Kikuyu (ouest), Meru (nord), Chuka et Kamba. Conflits recurrents avec les Kamba (est/sud) et les Maasai (raids du sud). L'interaction avec les Maasai introduisit la circoncision dans la culture embu et mbeere. Les Embu commercerent des produits agricoles avec leurs voisins.",
+      "conflictsOrAlliances": "Bataille de Kathunguri (vers 1900) : victoire decisive des Embu sur les Kamba lors d'une invasion, grace a une ruse meteorologique (simulation de pluie). Conflits recurrents avec les Chuka (batailles victorieuses sous Njeru Karuku, vers 1870-1890). Resistance au systeme colonial britannique : participation au soulèvement Mau Mau (1952-1960). Resistance precoce a l'implantation britannique au debut du 20e siecle.",
+      "diaspora": "La diaspora embu est principalement urbaine et interne au Kenya : Nairobi, Mombasa, Nakuru et d'autres grandes villes comptent des communautes embu importantes. Une diaspora internationale (Europe, Amerique du Nord) s'est developpee depuis les annees 1990 avec la croissance de l'emigration kenyane."
+    },
+    "demography": {
+      "totalPopulation": 490000,
+      "referenceYear": 2025,
+      "source": "Projection 2025 basee sur le recensement national kenyan KNBS 2019 (population du comte d'Embu : 423 316 en 2019), projections KNBS 2023 et estimations tribales Facebook/Stats Kenya 2025 (Embu : 490 000). Le comte d'Embu compte 662 000 habitants tous groupes confondus en 2025 (Stats Kenya 2025).",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 490000,
+          "note": "Principalement dans le comte d'Embu (versants meridionaux du mont Kenya) ; communautes en diaspora interne a Nairobi et autres grandes villes"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Embu people. https://en.wikipedia.org/wiki/Embu_people",
+      "Wikipedia EN — Embu language. https://en.wikipedia.org/wiki/Embu_language",
+      "SIL Ethnologue — Kiembu language (ebu). https://www.ethnologue.com/language/ebu/",
+      "Jens Finke — Embu & Mbeere history, Traditional Music & Cultures of Kenya. http://www.bluegecko.org/kenya/tribes/embu/history.htm",
+      "101 Last Tribes — Embu people. https://www.101lasttribes.com/tribes/embu.html",
+      "Kenya National Bureau of Statistics (KNBS) — Population Projections 2019-2030. https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Summary-Report-on-Kenyas-Population-Projections.pdf",
+      "Stats Kenya — Population of Kenya 2025 by County. https://statskenya.co.ke/at-stats-kenya/about/population-of-kenya-2025-population-by-county/110/",
+      "Channel254Trends — Embu rites of passage: Birth, circumcision, marriage and death. https://channel254trend.home.blog/2022/05/27/embu-rites-of-passage-birth-circumsion-marriage-and-death/"
+    ]
+  }
+}

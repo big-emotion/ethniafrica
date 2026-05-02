@@ -1,0 +1,37 @@
+# Nom du peuple
+- Nom principal : Nankana / Nankani
+- Auto-appellation : Nankana
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Région historique : Ghana (Upper East)
+- Identifiant : PPL_NANKANA
+
+# 1. Ethnies incluses
+- Nankani du Ghana
+- Nankana des zones rurales
+
+# 2. Origines
+- Peuple agricole du nord du GHA, apparenté aux Frafra et Kusasi.
+
+# 3. Organisation
+- Lignages claniques autonomes
+- Autorité des anciens
+
+# 4. Langue
+- Nankani
+- ISO : nki (groupe Kusaal étendu)
+
+# 5. Culture
+- Peintures murales traditionnelles
+- Habitat circulaire
+- Festivals agricoles
+
+# 6. Histoire
+- Région en contact avec Mossi, Dagomba et Frafra.
+
+# 7. Démographie
+- Population : 150 000
+- Année : 2025
+
+# 8. Sources
+- Ghana Northern Heritage
+- Ethnographic Nankana Reports

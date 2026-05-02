@@ -1,0 +1,70 @@
+{
+  "id": "PPL_FANG",
+  "nameMain": "Fang",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GAB", "GIN", "CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Fang",
+      "selfAppellation": "Fan / Pahouin / Pangwe",
+      "exonyms": ["« Pahouins » (ancienne étiquette coloniale)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantous forestiers (GAB, GIN Équatoriale, CMR)",
+      "historicalRegion": "Forêts équatoriales",
+      "currentCountries": ["GAB", "GIN", "CMR"]
+    },
+    "ethnicities": [
+      "Fang du Gabon",
+      "Fang de Guinée équatoriale",
+      "Fang du Cameroun"
+    ],
+    "origins": {
+      "ancientOrigins": "Migration nord-sud depuis le Cameroun septentrional. Installation en forêts équatoriales il y a plusieurs siècles.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Conflits et alliances forestières. Influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferies lignagères. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Clanisme fort. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Fang",
+      "vehicularRole": "Le fang est parlé par la majorité des Fang. Le français et l'espagnol sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Masques fang (notamment ngil)",
+      "source_1": "Boîtes à reliques (byeri)",
+      "source_2": "Traditions d'initiation",
+      "source_3": "Rites de passage (initiation, fêtes de naissance)",
+      "source_4": "Cérémonies liées à l'agriculture",
+      "Symboles": "Masques fang (notamment ngil), boîtes à reliques (byeri)",
+      "Arts et musique": "",
+      "source_5": "Masques fang (notamment ngil)",
+      "source_6": "Boîtes à reliques (byeri)",
+      "source_7": "Musique traditionnelle",
+      "source_8": "Danse traditionnelle",
+      "source_9": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Croyances traditionnelles, syncrétisme avec le christianisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora fang dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 2320950,
+      "referenceYear": 2025,
+      "source": "peuple_demographie_globale.csv (PPL_FANG)"
+    },
+    "sources": [
+      "SIL Ethnologue – Fang language (fan)",
+      "Études sur les Pahouin",
+      "CIA World Factbook",
+      "Recensements nationaux"
+    ]
+  }
+}

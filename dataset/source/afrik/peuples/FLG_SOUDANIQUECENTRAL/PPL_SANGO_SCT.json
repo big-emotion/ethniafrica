@@ -1,0 +1,106 @@
+{
+  "id": "PPL_SANGO_SCT",
+  "nameMain": "Sango",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["CAF", "COD", "COG"],
+  "content": {
+    "appellations": {
+      "mainName": "Sango",
+      "selfAppellation": "Basango / Bosango",
+      "exonyms": ["Sangha", "Sangho", "Sangos"],
+      "originOfExonyms": "Le terme Sango (ou Sangho) a ete adopte par les administrateurs et missionnaires europeens a partir du nom que ce peuple donnait a sa propre langue et a lui-meme. La denomination Basango est le pluriel dans les langues locales. La forme Sangho est frequente dans les ecrits coloniaux francais.",
+      "whyProblematic": "Il ne faut pas confondre les Sango en tant que groupe ethnique distinct avec le sango vehiculaire, langue nationale officielle de la Republique centrafricaine qui est parlee par l'ensemble de la population et qui est une langue creole a base ngbandi. Le sango ethnique est la langue maternelle du groupe des rives de l'Oubangui, distincte du sango lingua franca a usage national.",
+      "contemporaryUsage": "Le terme Sango designe aujourd'hui principalement la langue vehiculaire en RCA. En tant que peuple, les Sango sont souvent identifies dans les regions riveraines de l'Oubangui. Leur langue maternelle, le sango proprement dit, est classee dans la branche Ubangienne du Niger-Congo (certains linguistes la classent comme langue creole a base ngbandi).",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Peuples riverains de l'Oubangui, groupe Ngbandi/Ubangien",
+      "historicalRegion": "Rives de l'Oubangui et de ses affluents, Republique centrafricaine (Ubangi-Shari colonial)",
+      "currentCountries": ["CAF", "COD", "COG"]
+    },
+    "ethnicities": [
+      "Yakoma (sous-groupe fluvial de l'Oubangui)",
+      "Dendi (dialecte Ngbandi apparente)",
+      "Kpatiri (groupe riverain apparente)",
+      "Sango du nord (regions de Bangui et Mbomou)",
+      "Sango du sud (rive congolaise de l'Oubangui)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Sango sont un peuple riverain etabli depuis plusieurs siecles sur les rives de l'Oubangui et de ses affluents dans l'actuelle Republique centrafricaine. Ils font partie du cluster Ngbandi, groupe Ubangien, et leur presence sur l'Oubangui est anterieure a la colonisation europeenne. Leur langue, le sango, a evolue a partir du dialecte ngbandi du Nord, utilisee comme langue de commerce sur le fleuve avant l'arrivee des Francais.",
+      "formationPeriod": "Avant le 19e siecle, une variete de sango servait deja de langue vehiculaire entre les ethnies riveraines depuis le village des Abira jusqu'a Bangui. Les Sango etaient principalement des commercants fluviaux et des pecheurs habitant les berges de l'Oubangui. L'arrivee des forces coloniales francaises a partir de la fin du 19e siecle a considérablement modifié leur role: leur langue est devenue le medium interethnique de communication dans toute la region Ubangi-Chari.",
+      "migrationRoutes": [
+        "Etablissement historique sur les berges de l'Oubangui et de ses affluents en RCA",
+        "Extension vers la rive congolaise (République du Congo et RDC) par les echanges commerciaux fluviaux"
+      ],
+      "historicalSettlementZones": [
+        "Rives de l'Oubangui central et de ses affluents (RCA)",
+        "Region de Bangui et ses environs",
+        "Prefectures de l'Ombella-M'Poko et de la Lobaye en RCA",
+        "Rive nord du Congo (République du Congo)",
+        "Province de l'Equateur (RDC) en bordure de l'Oubangui"
+      ],
+      "unificationsOrDivisions": "Les Sango sont organises en groupes territoriaux distincts le long de l'Oubangui, relies par des reseaux commerciaux fluviaux. Ils partageaient une identite culturelle et linguistique commune malgre l'absence d'une entite politique centralisee. L'usage de leur langue comme vehiculaire colonial a paradoxalement dilue leur identite ethnique specifique au profit d'une identite linguistique elargie.",
+      "externalInfluences": "Contacts anciens avec les populations Banda de l'arriere-pays. Influence du christianisme (missionnaires protestants et catholiques, notamment les Carmelites qui ont standardise la langue sango a partir des annees 1940). Influence coloniale francaise et belge. L'emploi du sango comme langue vehiculaire militaire par l'armee coloniale a accelere sa diffusion.",
+      "majorHistoricalEvents": "Avant la colonisation, les Sango controlaient les reseaux d'echange le long de l'Oubangui, transportant fer, ivoire et produits agricoles. En 1887-1889, les expeditions du commandant Alphonse Van Gele documentent pour la premiere fois les populations de l'Oubangui. En 1920, Bangui devient capitale de l'Oubangui-Chari ; le sango s'impose comme langue administrative et militaire. En 1984, l'orthographe du sango est officialisee. En 1994, le sango obtient le statut de coofficial avec le francais dans la Constitution centrafricaine."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies lignageres decentralisees le long des rives de l'Oubangui. Chaque village est dirige par un chef (kota) assiste d'un conseil d'anciens. L'autorite traditionnelle s'exercait principalement sur les droits de peche et les routes commerciales fluviales.",
+      "clanOrganization": "Structure clanique patrilineaire organisee autour de lignages (mbe) qui controlent des sections du fleuve et des droits de peche hereditaires. La maitrise de certains passages ou zones de peche definit le statut social et economique des clans.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite, les droits fonciers et halieutiques, ainsi que les alliances matrimoniales. La residence est patrilocale. Les chefs de lignages jouent un role d'intermediaires dans les transactions commerciales fluviales.",
+      "religiousAuthority": "Autorite des guerisseurs traditionnels (nganga) specialises dans la mediation avec les esprits du fleuve et de la foret. Depuis l'époque coloniale, forte presence du christianisme (protestantisme et catholicisme). Syncretisme entre croyances animistes et pratiques chretiennes."
+    },
+    "languages": {
+      "mainLanguage": "Sango (yanga ti sango)",
+      "isoCodes": ["sag"],
+      "dialects": [
+        "Sango riverain (variete des berges de l'Oubangui, langue maternelle du groupe ethnique)",
+        "Sango urbain de Bangui (variete vehiculaire standard, plus influencee par le francais)",
+        "Yakoma (dialecte proche, parfois considere comme langue distincte)"
+      ],
+      "vehicularRole": "Le sango est a la fois la langue maternelle des Sango ethniques et, dans sa forme vehiculaire, la langue nationale officielle de la RCA depuis 1994 (coofficiell avec le francais). Presque la totalite de la population de la RCA (environ 5,5 millions de personnes en 2025) parle le sango vehiculaire. On compte environ 450 000 locuteurs natifs (1988). Le sango vehiculaire est egalement present dans le sud du Tchad et en RDC."
+    },
+    "culture": {
+      "majorRites": "Rites de passage marques par des ceremonies communautaires villageoises incluant la circoncision des garcons, les rites de mariage impliquant la negociation d'une dot entre familles, et les ceremonies funeraires accompagnees de veillees et de danses. Les rites de premices de la peche rendent hommage aux esprits du fleuve avant les grandes saisons de peche. Les ceremonies de guerison font intervenir le nganga (guerisseur-medium) pour diagnostiquer et traiter les maladies attribuees a des causes spirituelles.",
+      "symbols": "La pirogue (bwato) est le symbole central de l'identite sango : elle represente le moyen de subsistance, la mobilite et le statut social. Les filets de peche tresses et les harpons sont des symboles du savoir-faire technique. Les scarifications faciales traditionnelles distinguaient autrefois les sous-groupes. Le sango vehiculaire lui-meme, langue de toute la RCA, est devenu un symbole identitaire national majeur.",
+      "artsAndMusic": "Musique animee par des percussions (tam-tams, maracas), des xylophones (balafon) et des chants polyphoniques lors des ceremonies et celebrations. Danse de la riviere executee lors des fetes de la peche. Artisanat specialise dans la construction de pirogues (bwato) sculptees dans de grands troncs d'arbres, technique transmise de generation en generation. Poterie feminine traditionelle. Tissage de nattes et de paniers en fibres vegetales. Litterature orale riche en contes sur les esprits de l'eau et les aventures fluviales.",
+      "spiritualities": "Croyances animistes centrees sur les esprits de l'eau (nzapa ti ndo) qui habitent le fleuve et ses affluents et peuvent proteger ou nuire aux pecheurs. Le nganga (guerisseur-medium) communique avec ces esprits. Croyance en un etre supreme (Nzapa ou Nzara) createur du monde. La mort est concue comme un passage vers un monde des ancetres qui veillent sur les vivants. Depuis le 20e siecle, la majorite des Sango est chretienne (protestantisme et catholicisme), avec un fort syncretisme avec les croyances traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Sango n'ont pas developpe de royaume centralise mais ont maintenu un reseau de chefferies riveraines autonomes controlant les axes commerciaux de l'Oubangui. Leur role de courtiers commerciaux fluviaux leur conferait une influence regionale considerable avant la colonisation.",
+      "relationsWithNeighbors": "Relations commerciales regulieres avec les peuples Banda de l'arriere-pays, echangeant du poisson seche contre des produits agricoles. Contacts avec les Ngbaka, Ngbandi et Yakoma partageant les memes berges fluviales. Relations commerciales avec les Azande et Zande plus a l'est via les routes fluviales du Mbomou.",
+      "conflictsOrAlliances": "Confrontations avec les razzias des negriers arabes et soudanais au 19e siecle, qui ciblaient les populations riveraines. Alliances circumstancielles avec l'administration coloniale francaise en echange de protection. Tensons recurrentes avec les groupes de l'arriere-pays contestant le controle des routes commerciales.",
+      "diaspora": "Presence dans les grandes villes centrafricaines (Bangui, Bambari, Bossangoa) ou de nombreux Sango se sont installes comme commercants et artisans. Communautes dans les regions frontalieres du Congo-Brazzaville et de la RDC de part et d'autre de l'Oubangui."
+    },
+    "demography": {
+      "totalPopulation": 500000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur SIL Ethnologue (2024 : environ 450 000 locuteurs natifs recenses en 1988, projection a 500 000 en 2025), CIA World Factbook, recensements centrafricains. Les Sango ethniques sont distincts des quelque 5,5 millions de locuteurs du sango vehiculaire.",
+      "distributionByCountry": [
+        {
+          "country": "CAF",
+          "population": 450000,
+          "note": "Principalement dans les prefectures de l'Ombella-M'Poko, Lobaye et Bangui, le long des rives de l'Oubangui"
+        },
+        {
+          "country": "COD",
+          "population": 30000,
+          "note": "Province de l'Equateur, rive sud de l'Oubangui"
+        },
+        {
+          "country": "COG",
+          "population": 20000,
+          "note": "Region de l'Oubangui, nord du Congo-Brazzaville"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Sango people. https://en.wikipedia.org/wiki/Sango_people",
+      "Wikipedia EN — Sango language. https://en.wikipedia.org/wiki/Sango_language",
+      "SIL Ethnologue — Sango (sag). https://www.ethnologue.com/language/sag/",
+      "101 Last Tribes — Sango people. https://www.101lasttribes.com/tribes/sango.html",
+      "Vergiat, Antonin-Marius. Les rites secrets des primitifs de l'Oubangui. Payot, 1936 ; reimpr. L'Harmattan, Paris, 1981. ISBN 2-85802-205-4.",
+      "Samarin, William J. The Black Man's Burden: African Colonial Labor on the Congo and Ubangi Rivers, 1880-1900. Westview Press, 1989.",
+      "CIA World Factbook — Central African Republic. https://www.cia.gov/the-world-factbook/countries/central-african-republic/",
+      "PeopleGroups.org — Sango of Central African Republic. https://peoplegroups.org/people_groups/pg012925/"
+    ]
+  }
+}

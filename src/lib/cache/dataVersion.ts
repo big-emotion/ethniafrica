@@ -8,20 +8,18 @@
 
 // Clés de version pour chaque type de données
 export const DATA_VERSION_KEYS = {
-  REGIONS: "data:version:regions",
-  COUNTRIES: "data:version:countries",
-  ETHNICITIES: "data:version:ethnicities",
-  POPULATION: "data:version:population",
+  AFRIK_LANGUAGE_FAMILIES: "data:version:afrik-language-families",
+  AFRIK_PEOPLES: "data:version:afrik-peoples",
+  AFRIK_COUNTRIES: "data:version:afrik-countries",
 } as const;
 
 // Version actuelle des données (incrémentée lors des migrations)
 // En production, cette valeur devrait être stockée dans une variable d'environnement
 // ou dans la base de données pour persister entre les redémarrages
 const dataVersions: Record<string, number> = {
-  [DATA_VERSION_KEYS.REGIONS]: 1,
-  [DATA_VERSION_KEYS.COUNTRIES]: 1,
-  [DATA_VERSION_KEYS.ETHNICITIES]: 1,
-  [DATA_VERSION_KEYS.POPULATION]: 1,
+  [DATA_VERSION_KEYS.AFRIK_LANGUAGE_FAMILIES]: 1,
+  [DATA_VERSION_KEYS.AFRIK_PEOPLES]: 1,
+  [DATA_VERSION_KEYS.AFRIK_COUNTRIES]: 1,
 };
 
 /**

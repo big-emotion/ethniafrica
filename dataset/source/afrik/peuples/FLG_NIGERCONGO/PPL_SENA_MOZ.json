@@ -1,0 +1,106 @@
+{
+  "id": "PPL_SENA_MOZ",
+  "nameMain": "Sena (Mozambique)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MOZ"],
+  "content": {
+    "appellations": {
+      "mainName": "Sena (Mozambique)",
+      "selfAppellation": "Sena / Asena",
+      "exonyms": [
+        "Chisena (désigne la langue)",
+        "Cisena",
+        "Sena do Zambeze (portugais)"
+      ],
+      "originOfExonyms": "Le nom Sena est un exonyme portugais dérivé du comptoir de Sena fondé par Vicente Pegado en 1531 sur le Zambèze (province de Sofala). Le nom du lieu, peut-être d'origine arabe ou locale, a été adopté par les Portugais et étendu progressivement au peuple de la région. En cisena, le groupe se désigne lui-même simplement comme Asena (les gens de/du Sena).",
+      "whyProblematic": "La fiche Sena (MOZ) se distingue de la fiche Sena macro (PPL_SENA) en ce qu'elle se concentre sur les Sena du Mozambique spécifiquement, notamment ceux des provinces de Sofala et de la Zambezia qui forment le noyau originel et démographiquement dominant du groupe. Les Sena du Malawi et du Zimbabwe constituent des branches issues de migrations de travail postérieures et sont parfois considérés comme des entités linguistiquement distinctes.",
+      "contemporaryUsage": "Au Mozambique, le terme Sena (ou son équivalent local Chisena/Cisena pour la langue) est d'usage courant dans l'administration provinciale, l'enseignement de base bilingue et les médias régionaux des provinces de Sofala, Tete, Zambezia et Manica. Le gouvernement mozambicain a introduit l'enseignement du Cisena dans les écoles primaires des zones senaphones dans le cadre de la politique linguistique nationale.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone N, groupe Nyasa)",
+      "historicalRegion": "Vallée du moyen et bas Zambèze, provinces de Sofala et Zambezia (Mozambique central)",
+      "currentCountries": ["MOZ"]
+    },
+    "ethnicities": [
+      "Sena de Sofala (cœur historique, autour du village de Sena et de la ville de Caia)",
+      "Sena de la Zambezia (Quelimane, Mocuba, Mopeia)",
+      "Sena de Tete (remontant le Zambèze vers l'intérieur)",
+      "Sena de Manica (province orientale du Mozambique)",
+      "Barwe (Chibarwe) — sous-groupe de la province de Manica, dialecte distinct avec reconnaissance officielle au Zimbabwe",
+      "Podzo — sous-groupe au dialecte fortement divergent du centre-Mozambique",
+      "Rue (Cibalke) — sous-groupe du Mozambique central"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Sena du Mozambique sont les descendants des populations bantoues qui ont peuplé la vallée du Zambèze entre le 1er et le 10e siècle de l'ère commune, dans le cadre des migrations bantoues d'Afrique centrale vers l'est et le sud. La région du moyen Zambèze (entre Tete et la côte de Sofala) était habitée par des groupes aux caractéristiques culturelles intermédiaires entre les Shona du plateau zimbabwéen et les Nyanja-Chewa du nord. Selon Isaacman, les Sena constituent un admix culturel, présentant la plupart des caractéristiques Shona mais avec des traits distinctifs. La vallée du Zambèze était connue pour ses richesses : les gisements aurifères du Manica et du Sofala attiraient les commerçants arabes swahilis dès avant le 11e siècle.",
+      "formationPeriod": "L'identité sena mozambicaine s'est consolidée entre le 16e et le 19e siècle sous l'effet de plusieurs processus : contact avec les Portugais depuis 1531, absorption partielle dans le système des prazos (grandes concessions agricoles coloniales), résistances collectives aux raids esclavagistes et aux impôts coloniaux. La fondation du comptoir de Sena en 1531 a cristallisé une identité géographique qui est devenue ethnonyme. Le Trans-Zambezi Railway (TZR) construit au début du 20e siècle a reorganisé les flux migratoires et économiques en territoire sena.",
+      "migrationRoutes": [
+        "Peuplement bantou initial depuis le nord-ouest (bassin du Congo) entre le 1er et le 10e siècle",
+        "Installation le long du Zambèze depuis sa haute vallée (Tete) jusqu'à son embouchure (Sofala)",
+        "Déplacements forcés sous le système des prazos et lors de la guerre civile mozambicaine (1977-1992)"
+      ],
+      "historicalSettlementZones": [
+        "Village de Sena et environs, district de Caia (province de Sofala) — berceau historique",
+        "Delta du Zambèze (province de la Zambezia, autour de Quelimane et Mopeia)",
+        "Haute vallée du Zambèze (province de Tete, autour de Sena Sugar Estate)",
+        "Province de Manica (sous-groupes Barwe)",
+        "Villes de Beira et Quelimane (migrations internes modernes)"
+      ],
+      "unificationsOrDivisions": "Les Sena du Mozambique n'ont jamais formé un état centralisé. L'organisation en chefferies indépendantes (mambo/régulo) a prévalu jusqu'à la colonisation. Le système des prazos (16e-19e siècle) a fragmenté les autorités traditionnelles en soumettant les chefs locaux aux prazeros portugais. L'indépendance du Mozambique (1975) a aboli les chefferies traditionnelles (sous FRELIMO), puis la guerre civile (1977-1992) a contraint à des déplacements massifs. Les années post-guerre ont vu la reconnaissance partielle des autorités traditionnelles (régulos) par le gouvernement frelimiste.",
+      "externalInfluences": "Commerce arabo-swahili pré-portugais (or, ivoire). Portugais depuis 1531 : fondation de Sena, missions jésuites et dominicaines, prazos. Raids ngoni (nguni) au 19e siècle depuis le sud. Régime colonial salazariste (1930s-1974) : culture forcée du coton, travail contracté. Trans-Zambezi Railway (TZR) et Sena Sugar Estate (grande plantation industrielle près de Caia). Guerre civile FRELIMO-RENAMO (1977-1992), particulièrement destructrice dans la vallée du Zambèze. Politique linguistique post-indépendance : le portugais imposé, puis introduction progressive du cisena dans l'enseignement primaire.",
+      "majorHistoricalEvents": "1531 : fondation du comptoir de Sena par Vicente Pegado. 17e-18e siècle : essor des prazos et raids esclavagistes des achikunda. 1897 : résistance armée des Sena, Tonga et Cambuenda contre l'impôt colonial. 20e siècle (début) : construction du TZR et de la Sena Sugar Estate, transformation de l'économie locale. 1975 : indépendance du Mozambique, abolition des chefferies traditionnelles par FRELIMO. 1977-1992 : guerre civile FRELIMO-RENAMO, dévastatrice pour les communautés de la vallée du Zambèze. 1992 : accords de paix de Rome. 2007-2012 : introduction du cisena dans l'enseignement primaire bilingue."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La société sena du Mozambique est organisée en chefferies (mambo, pluriel : amambo) dont l'autorité est transmise par la lignée matrilinéaire. Sous la colonisation, le titre de régulo (chef reconnu par l'administration portugaise) a recouvert partiellement la fonction de mambo. Le chef exerce une autorité judiciaire (règlement des litiges fonciers, familiaux), rituelle (gardien des rites ancestraux) et politique (représentation de la communauté). Les nduna (conseillers) constituent le conseil du chef. Après l'indépendance, FRELIMO a supprimé les chefferies, puis le gouvernement les a partiellement réhabilitées après les années 1990.",
+      "clanOrganization": "La société sena mozambicaine est matrilinéaire : l'appartenance clanique (mbumba), l'héritage et la succession au pouvoir politique passent par la mère. Le neveu utérin (mwini mbumba, fils de la soeur du chef) est le successeur légitime, non les propres enfants du chef. Les clans sont exogames : on ne se marie pas dans son propre clan. La mbumba (unité matrilinéaire) constitue l'unité de propriété foncière et de solidarité économique.",
+      "ageClassSystems": "Les rites d'initiation organisent les tranches d'âge : le chinamwali (initiation des filles à la puberté) et le jando (initiation des garçons, avec circoncision) constituent les rites de passage fondamentaux. Les initiés forment des cohortes d'âge partageant des obligations mutuelles. Des groupes de travail agricole collectif (ntchito) sont organisés par génération.",
+      "roleOfLineages": "Les lignages matrilinéaires (mbumba) structurent la transmission des droits fonciers, des droits de pêche sur le Zambèze et de ses affluents, et des alliances matrimoniales. La résidence est virilocale (la femme rejoint le village de l'époux) mais la descendance est matrilinéaire. Le lobolo (dot) est versé par la famille du marié à celle de la mariée. En cas de divorce, les enfants suivent la mère.",
+      "religiousAuthority": "Les ancêtres (mizimu) sont au centre de la pratique religieuse traditionnelle sena : ils protègent les vivants et doivent être honorés lors de cérémonies rituelles. Les singanga (guérisseurs-devins, sing. nyanga) pratiquent la divination, la médecine par les plantes et les exorcismes. Les chefs (mambo) ont une autorité rituelle sur le territoire : ils président aux rites propitiatoires aux ancêtres avant les semailles. Le catholicisme portugais s'est implanté dès le 16e siècle (missions jésuites de Sena). Des Églises protestantes et évangéliques (Assemblées de Dieu, IEA) sont très actives dans la région depuis l'époque coloniale britannique au Malawi."
+    },
+    "languages": {
+      "mainLanguage": "Cisena (Chisena)",
+      "isoCodes": ["seh"],
+      "dialects": [
+        "Cisena standard (dialecte de la province de Sofala, zone de Caia et Sena) — variété de référence",
+        "Cisena de la Zambezia (légèrement différent, avec influences Lomwe et Chuabo)",
+        "Cisena de Tete (avec influences Nyungwe et Sena de Zambie)",
+        "Cibarwe (Barwe/Rue/Cibalke) — dialecte divergent de Manica, parfois classé séparément",
+        "Podzo (très divergent, parfois classé comme langue distincte)"
+      ],
+      "vehicularRole": "Le cisena (ISO 639-3 : seh) est parlé par environ 900 000 locuteurs natifs au Mozambique (données Ethnologue 1997) avec une estimation de 1,5 à 2 millions si l'on inclut les locuteurs secondaires en 2025. Il est principalement concentré dans les quatre provinces du centre du Mozambique : Sofala, Tete, Zambezia et Manica. Le gouvernement mozambicain l'a inclus dans son programme d'enseignement bilingue primaire. Le portugais demeure la langue officielle de l'État, de l'administration et de l'enseignement secondaire."
+    },
+    "culture": {
+      "majorRites": "Chinamwali (initiation des filles) : retraite cérémonielle de plusieurs semaines à la puberté, avec instruction par des femmes initiées (anankungwi) sur les rôles féminins, la sexualité, le mariage et la maternité ; chants et danses rituels spécifiques. Jando (initiation des garçons) : retraite en brousse avec circoncision, instruction sur les devoirs masculins, interdits et responsabilités communautaires. Nyau (société masquée secrète) : rites de passage liés aux funérailles et aux transitions saisonnières, comprenant des danses de masques (mapiko-type) représentant des esprits ancestraux et des animaux. Mariage : négociation du lobolo (dot en bétail ou argent), cérémonies festives de plusieurs jours. Funérailles et deuil : veillée collective, inhumation dans les 24 heures, rites de purification pour la famille du défunt.",
+      "symbols": "Le Zambèze (Zambeze) est le symbole spatial et identitaire central des Sena mozambicains : source de nourriture (pêche), d'eau, de commerce et de cosmologie. La pirogue artisanale symbolise la maîtrise du fleuve et la tradition de pêche. Le chitenje (tissu wax coloré) est le vêtement traditionnel féminin. Le masque de la société Nyau représente le passage entre le monde des vivants et celui des esprits. La Sena Sugar Estate (grande plantation de canne à sucre à Caia) est devenu un symbole ambigu de la transformation économique moderne du territoire sena.",
+      "artsAndMusic": "Danse : performances de la société Nyau lors des funérailles et des initiations (masques en bois sculptés représentant esprits et animaux) ; danses de mariage (nkhupu, tchacha) avec tambours et chants. Musique : tambours (ng'oma), flûtes, instruments à lamelles (kalimba locale), chants polyphoniques lors des travaux collectifs et cérémonies. Poterie : production artisanale traditionnelle de jarres, marmites et ustensiles par les femmes. Vannerie : paniers tressés pour le stockage des grains et le transport. Construction : techniques traditionnelles de maisons en banco (pisé) avec toit de chaume le long du Zambèze. Oralité : épopées sur les ancêtres pêcheurs, proverbes en cisena, contes (nthano) transmettant la cosmologie.",
+      "spiritualities": "Mulungu (ou Chauta) est le créateur suprême dans la cosmologie sena mozambicaine. Les mizimu (esprits ancestraux) sont les médiateurs entre le monde visible et le divin : ils peuvent bénir les cultures, protéger les pêcheurs ou causer des maladies si négligés. Les singanga (guérisseurs-devins) diagnostiquent les maladies par divination, prescrivent des remèdes à base de plantes et président aux rites d'exorcisme. Des rites de propitiation (offrandes de bière de sorgho, sacrifice d'animaux) sont effectués avant les semailles et les grandes pêches. Le catholicisme est dominant en termes d'affiliation formelle (héritage des missions portugaises depuis 1531) ; des Églises protestantes et évangéliques sont très actives. Le syncrétisme est répandu : les pratiques ancestrales coexistent avec la pratique chrétienne régulière."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Sena du Mozambique étaient organisés en chefferies indépendantes (mambo) sans État centralisé. Leur territoire constituait un carrefour commercial crucial entre les royaumes de l'intérieur (Mwenemutapa, Munhumutapa — successeur shona du Grand Zimbabwe) et les marchands swahilis et portugais de la côte. Le comptoir portugais de Sena (fondé 1531) a été le premier établissement européen permanent dans la vallée du Zambèze et a structuré les relations entre chefferies sena et pouvoir colonial. Au 19e siècle, les achikunda (armées d'esclaves des prazeros) constituaient la force militaire dominante dans la région.",
+      "relationsWithNeighbors": "Les Sena ont entretenu des relations commerciales intenses avec les Shona (or, ivoire) et les commerçants swahilis (textiles, perles) avant et après l'arrivée des Portugais. Les relations avec les Tonga et les Tawara (voisins fluviaux) incluent des alliances de pêche et des échanges matrimoniaux. Les Nyanja-Chewa du Malawi partagent avec les Sena la société secrète Nyau. Les Ngoni (branche nguni/zulu) ont effectué des raids dévastateurs en territoire sena au 19e siècle (années 1830-1870). Les Sena ont parfois servi d'intermédiaires commerciaux entre les royaumes de l'intérieur et les marchands côtiers.",
+      "conflictsOrAlliances": "16e-17e siècle : résistance aux missions portuguaises suspectées de mauvaises intentions ; plusieurs missionnaires tués. 17e-18e siècle : rébellions contre le système des prazos et les raids esclavagistes. 1897 : résistance armée collective contre l'impôt colonial et la conscription (aux côtés des Tonga et Cambuenda). 1964-1975 : participation à la guerre d'indépendance du Mozambique. 1977-1992 : guerre civile FRELIMO-RENAMO, dévastatrice dans la vallée du Zambèze — villages détruits, populations déplacées, mines antipersonnel. 1992 : accords de paix de Rome, début de la reconstruction.",
+      "diaspora": "Les migrations internes liées à la guerre civile (1977-1992) ont dispersé des communautés sena à Beira (capitale de Sofala), Quelimane et Maputo. Les communautés sena du Malawi et du Zimbabwe (comprises dans la fiche PPL_SENA macro) résultent de migrations économiques du début du 20e siècle. Une diaspora mozambicaine générale (toutes ethnies) est présente au Portugal, en Afrique du Sud, au Zimbabwe et en Tanzanie."
+    },
+    "demography": {
+      "totalPopulation": 1800000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur : Wikipedia — Sena people (~1,4 million au Mozambique dans les données disponibles) ; SIL Ethnologue (seh : 900 000 locuteurs natifs en 1997, projection 2025 avec taux de croissance mozambicain) ; INE Mozambique (Institut National de Statistiques) ; Joshua Project — Sena in Mozambique. La population mozambicaine totale en 2025 est estimée à 35 millions (Worldometer/UNFPA).",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 1800000,
+          "note": "Principalement dans les provinces de Sofala (district de Caia, Mutarara), Zambezia (Mopeia, Quelimane), Tete et Manica ; concentrations urbaines à Beira et Quelimane"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Sena people. https://en.wikipedia.org/wiki/Sena_people",
+      "Wikipedia EN — Sena language. https://en.wikipedia.org/wiki/Sena_language",
+      "SIL Ethnologue — Sena (seh). https://www.ethnologue.com/language/seh/",
+      "Joshua Project — Sena in Mozambique. https://joshuaproject.net/people_groups/14848/mz",
+      "Allen F. Isaacman, Mozambique: The Africanization of a European Institution — The Zambezi Prazos 1750-1902, University of Wisconsin Press, 1972",
+      "CIA World Factbook — Mozambique. https://www.cia.gov/the-world-factbook/countries/mozambique/",
+      "INE Mozambique — Institut National de Statistiques. https://www.ine.gov.mz/",
+      "Rhodian G. Munyenyembe, Christianity and African Traditional Religion, 2011",
+      "Wikidata — Sena language (Q1160487). https://www.wikidata.org/wiki/Q1160487"
+    ]
+  }
+}

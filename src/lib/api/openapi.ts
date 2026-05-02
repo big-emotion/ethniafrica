@@ -4,10 +4,10 @@ const options: swaggerJsdoc.Options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "Ethniafrique Atlas API",
-      version: "1.0.0",
+      title: "Ethniafrique Atlas API v2 - AFRIK",
+      version: "2.0.0",
       description:
-        "API publique pour accéder aux données démographiques et ethniques de l'Afrique. Cette API fournit des informations sur les régions, pays, ethnies et statistiques démographiques du continent africain.",
+        "API publique AFRIK pour accéder aux données sur les peuples, familles linguistiques et pays d'Afrique. Cette API utilise la méthodologie AFRIK avec des identifiants stables et un format de réponse standardisé.",
       contact: {
         name: "Ethniafrique Atlas",
         url: "https://github.com/big-emotion/ethniafrica",
@@ -27,102 +27,39 @@ const options: swaggerJsdoc.Options = {
     ],
     tags: [
       {
-        name: "Statistics",
-        description: "Statistiques globales",
-      },
-      {
-        name: "Regions",
-        description: "Opérations sur les régions",
+        name: "Search",
+        description: "Recherche multi-entités",
       },
       {
         name: "Countries",
         description: "Opérations sur les pays",
       },
       {
-        name: "Ethnicities",
-        description: "Opérations sur les ethnies",
+        name: "Peoples",
+        description: "Opérations sur les peuples",
       },
       {
-        name: "API v2 - Search",
-        description: "Recherche multi-entités (API v2)",
-      },
-      {
-        name: "API v2 - Countries",
-        description: "Opérations sur les pays (API v2)",
-      },
-      {
-        name: "API v2 - Peoples",
-        description: "Opérations sur les peuples (API v2)",
-      },
-      {
-        name: "API v2 - Language Families",
-        description: "Opérations sur les familles linguistiques (API v2)",
+        name: "Language Families",
+        description: "Opérations sur les familles linguistiques",
       },
     ],
     components: {
       schemas: {
-        RegionData: {
-          type: "object",
-          properties: {
-            name: {
-              type: "string",
-              example: "Afrique du Nord",
-            },
-            totalPopulation: {
-              type: "number",
-              example: 274113455,
-            },
-            countries: {
-              type: "object",
-              additionalProperties: {
-                type: "object",
-                properties: {
-                  name: {
-                    type: "string",
-                  },
-                  population: {
-                    type: "number",
-                  },
-                  percentageInRegion: {
-                    type: "number",
-                  },
-                  percentageInAfrica: {
-                    type: "number",
-                  },
-                  ethnicityCount: {
-                    type: "number",
-                  },
-                },
-              },
-            },
-            ethnicities: {
-              type: "object",
-              additionalProperties: {
-                type: "object",
-                properties: {
-                  name: {
-                    type: "string",
-                  },
-                  totalPopulationInRegion: {
-                    type: "number",
-                  },
-                  percentageInRegion: {
-                    type: "number",
-                  },
-                  percentageInAfrica: {
-                    type: "number",
-                  },
-                },
-              },
-            },
-          },
-        },
         Error: {
           type: "object",
           properties: {
             error: {
-              type: "string",
-              example: "Resource not found",
+              type: "object",
+              properties: {
+                code: {
+                  type: "string",
+                  example: "NOT_FOUND",
+                },
+                message: {
+                  type: "string",
+                  example: "Resource not found",
+                },
+              },
             },
           },
         },
@@ -147,7 +84,7 @@ const options: swaggerJsdoc.Options = {
             },
           },
         },
-        ApiResponseV2: {
+        ApiResponse: {
           type: "object",
           properties: {
             data: {
@@ -185,7 +122,7 @@ const options: swaggerJsdoc.Options = {
             },
           },
         },
-        CountryV2: {
+        Country: {
           type: "object",
           properties: {
             id: {
@@ -210,7 +147,7 @@ const options: swaggerJsdoc.Options = {
             },
           },
         },
-        PeopleV2: {
+        People: {
           type: "object",
           properties: {
             id: {
@@ -236,11 +173,12 @@ const options: swaggerJsdoc.Options = {
             },
             content: {
               type: "object",
-              description: "Contenu évolutif en JSONB",
+              description:
+                "Contenu évolutif en JSONB avec les 8 sections AFRIK",
             },
           },
         },
-        LanguageFamilyV2: {
+        LanguageFamily: {
           type: "object",
           properties: {
             id: {
@@ -266,7 +204,7 @@ const options: swaggerJsdoc.Options = {
     },
   },
   apis: [
-    "./src/app/api/**/*.ts", // Chemin vers les fichiers avec les annotations Swagger
+    "./src/app/api/v2/**/*.ts", // Only v2 API routes
   ],
 };
 

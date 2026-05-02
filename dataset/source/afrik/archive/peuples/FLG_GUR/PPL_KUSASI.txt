@@ -1,0 +1,38 @@
+# Nom du peuple
+- Nom principal : Kusasi
+- Auto-appellation : Kusaal / Kusasi
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Région : Ghana (Bawku), BFA
+- Identifiant : PPL_KUSASI
+
+# 1. Ethnies incluses
+- Kusasi du Ghana
+- Kusasi du Burkina Faso
+
+# 2. Origines
+- Ancien peuple agricole de l’Upper East.
+
+# 3. Organisation
+- Chefferies lignagères
+- Autorité des anciens
+
+# 4. Langue
+- Kusaal
+- ISO : kus
+
+# 5. Culture
+- Architecture en terre
+- Musiques traditionnelles
+- Agriculture (mil, sorgho)
+
+# 6. Histoire
+- Conflits et relations avec Mamprusi
+- Importance dans la zone de Bawku
+
+# 7. Démographie
+- Population : 900 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (kus)
+- Ghana Upper East Documentation

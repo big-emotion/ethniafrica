@@ -1,0 +1,89 @@
+{
+  "id": "PPL_SINO_SEYCHELLOIS",
+  "nameMain": "Sino-Seychellois",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["SYC"],
+  "content": {
+    "appellations": {
+      "mainName": "Sino-Seychellois",
+      "selfAppellation": "Seychellois d'ascendance chinoise (auto-désignation contemporary) ; Nous sommes Seychellois avec des ancêtres chinois (formulation communautaire documentée)",
+      "exonyms": [
+        "Chinois (terme générique local)",
+        "Sino-Seychellois (terme descriptif officiel)",
+        "Chinese Seychellois (anglais)"
+      ],
+      "originOfExonyms": "Le terme Sino-Seychellois est un composé hybride désignant les habitants des Seychelles d'ascendance chinoise. Il suit le modèle des appellations diasporiques Indo-Pacifiques. Le terme Chinois est utilisé localement de manière générique sans distinction entre sous-groupes.",
+      "whyProblematic": "Le terme Chinois efface les distinctions entre les deux principaux sous-groupes : les Hakka (établis à Mont Fleuri) et les Cantonais (établis dans le centre de Victoria), qui avaient des pratiques sociales distinctes et refusaient de s'épouser mutuellement à l'origine.",
+      "contemporaryUsage": "Le terme Sino-Seychellois est utilisé dans les contextes académiques et institutionnels. La communauté représente moins de 1 % de la population seychelloise (environ 1,1 % selon les données de 2002). La communauté actuelle inclut deux catégories : les familles établies depuis la fin du XIXe siecle, profondément intégrées, et une nouvelle vague de migrants économiques chinois arrivés depuis les années 1990.",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Sino-Tibétain (Hakka, Cantonais) ; nouvelle vague : Mandarin",
+      "historicalRegion": "Victoria (centre), Mont Fleuri, île de Mahé",
+      "currentCountries": ["SYC"]
+    },
+    "ethnicities": [
+      "Sino-Seychellois Hakka",
+      "Sino-Seychellois Cantonais",
+      "Sino-Seychellois nouvelle vague (Mandarin)"
+    ],
+    "origins": {
+      "ancientOrigins": "Le premier Seychellois d'ascendance chinoise enregistré date de 1863. En 1886, un groupe de vingt-trois Chinois débarqua au port de Victoria, venant non pas directement de Chine mais de Maurice, où les réseaux commerciaux hakka et cantonais avaient décidé d'étendre leurs activités aux archipels voisins.",
+      "formationPeriod": "La communauté sino-seychelloise s'est formée entre 1886 et le milieu du XXe siecle, par l'arrivée progressive de Chinois transitant par Maurice. Un hiatus migratoire s'est produit après 1949 avec l'établissement de la République populaire de Chine qui interdit l'émigration. La mort de Mao Zedong en 1976 et l'ouverture économique ont relancé une nouvelle vague migratoire dans les années 1990.",
+      "migrationRoutes": [
+        "Mauritius vers Seychelles via l'océan Indien occidental, à partir de 1886",
+        "Guangdong (province côtière) vers Maurice, puis Victoria (Seychelles)",
+        "Chine continentale (Mandarin) vers Seychelles, à partir des années 1990, via routes commerciales"
+      ],
+      "historicalSettlementZones": [
+        "Victoria (centre) : quartier cantonais près du marché principal et de la pagode",
+        "Mont Fleuri : quartier hakka, légèrement à l'écart du centre",
+        "Île de Mahé, majoritairement"
+      ],
+      "unificationsOrDivisions": "La rivalité entre Cantonais et Hakka a marqué la vie sociale jusqu'au milieu du XXe siecle : les deux groupes vivaient dans des quartiers séparés, refusaient de se marier entre eux, préférant s'unir avec des femmes locales d'ascendance africaine. L'école de langue chinoise, demandée en 1945 par Richard Man-Cham (père du futur Premier ministre James Mancham), fut refusée par le gouvernement colonial. La première école fut ouverte en 2007 par la République populaire de Chine.",
+      "externalInfluences": "L'administration coloniale britannique interdit l'ouverture d'une école de langue chinoise jusqu'à l'indépendance. Le réseau commercial sino-mauricien a servi de tremplin et de réseau de soutien pour les Chinois s'installant aux Seychelles. La construction d'une nouvelle pagode (2020) avec le soutien de l'ambassade de Chine traduit l'influence croissante de la diplomatie chinoise dans l'archipel.",
+      "majorHistoricalEvents": "Sir James Mancham, premier président des Seychelles (1976-1977), était le petit-fils d'un immigrant chinois. L'archevêque anglican French Chang-Him est descendant d'un père chinois. Une nouvelle pagode a été inaugurée à Victoria vers 2020, avec le soutien de l'ambassade de Chine. En 2007, la RPC a envoyé un enseignant pour établir la première école de langue chinoise des Seychelles au sein du département d'éducation des adultes."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Absence de système politique traditionnel propre. La communauté est intégrée dans le système démocratique seychellois et s'est distinguée historiquement dans le commerce, les professions libérales et la politique nationale.",
+      "clanOrganization": "Organisation duale autour des deux sous-groupes principaux : association cantonaise (Victoria centre) et association hakka (Mont Fleuri). La pagode de Victoria a servi de centre social multifonctionnel : mariages, funérailles, rassemblements festifs, entraide.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les réseaux familiaux ont joué un rôle fondamental dans la migration et le commerce : les commerçants établis à Maurice formaient leurs proches et les envoyaient aux Seychelles avec du capital et des lettres de recommandation. La famille restait le socle de la communauté, souvent élargi à des parents éloignés.",
+      "religiousAuthority": "Catholicism dominant, adopté par intermariage avec des femmes d'origine africaine ou française. La pagode de Victoria est le centre du culte traditionnel chinois (taoïsme, bouddhisme, culte des ancêtres) pour la composante non catholique."
+    },
+    "languages": {
+      "mainLanguage": "Seychellois Creole (crs)",
+      "isoCodes": ["crs", "hak", "yue", "cmn"],
+      "dialects": [
+        "Hakka (Meixian, Guangdong) : compris par les générations âgées",
+        "Cantonais : compris par les générations âgées",
+        "Mandarin : parlé par la nouvelle vague de migrants des années 1990-2020"
+      ],
+      "vehicularRole": "La quasi-totalité des Sino-Seychellois nés sur l'archipel parle le créole seychellois (Seselwa) comme langue principale, avec l'anglais et le français. Les langues chinoises ne sont généralement plus parlées par les jeunes générations, qui peuvent au mieux les comprendre partiellement. Le mandarin est utilisé par les nouveaux migrants économiques."
+    },
+    "culture": {
+      "majorRites": "Célébration du Nouvel An chinois. Rites funéraires traditionnels pour certaines familles. La pagode de Victoria est le lieu central des célébrations communautaires (fêtes, mariages, funérailles). Rites catholiques pour la majorité baptisée.",
+      "symbols": "La pagode de Victoria (reconstruite et inaugurée vers 2020) est le principal symbole identitaire de la communauté sino-seychelloise. Le quartier de Mont Fleuri à Mahé est historiquement associé à la présence hakka. James Mancham, premier président de Seychelles, est la figure emblématique la plus connue d'ascendance chinoise.",
+      "artsAndMusic": "Influence culinaire chinoise intégrée dans la cuisine créole seychelloise. Maintien de pratiques artisanales chinoises dans les commerces (menuiserie, cordonnerie, pêche) introduites dès les premières décennies. Les arts traditionnels chinois sont transmis lors des fêtes communautaires à la pagode.",
+      "spiritualities": "Syncrétisme marqué : majorité catholique par intermariage et scolarisation mixte, coexistant avec des pratiques taoïstes, bouddhistes et de culte des ancêtres dans la sphère privée et lors des célébrations à la pagode. La nouvelle vague de migrants des années 1990-2020 est généralement sécularisée."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Les Sino-Seychellois se sont intégrés dans la société créole seychelloise par le commerce (épiceries, transports, pêche), les mariages mixtes avec des femmes d'origine africaine ou française, et la scolarisation commune. La communauté est acceptée comme partie intégrante du métissage créole seychellois. Le slogan communautaire documenté est : nous sommes Seychellois avec des ancêtres chinois.",
+      "conflictsOrAlliances": "La rivalité hakka-cantonaise des débuts a progressivement disparu avec l'intégration. Aucune opposition organisée à la présence chinoise n'a été enregistrée dans l'histoire des Seychelles. La construction de la pagode en 2020 avec le soutien de l'ambassade de Chine a suscité une réflexion sur la pertinence de l'institution dans une communauté très intégrée.",
+      "diaspora": "La communauté sino-seychelloise est principalement concentrée à Mahé. Des membres individuels d'ascendance chinoise se sont distingués dans la politique, la religion et les arts seychellois (James Mancham, archevêque French Chang-Him, première femme pilote Nicole Chang-Leng, vice-ministre Li Huarong)."
+    },
+    "demography": {
+      "totalPopulation": 1500,
+      "referenceYear": 2025,
+      "source": "Sino-Seychellois – Wikipedia EN, 2024 (estimation ~1 000 en 1999) ; Demographics of Seychelles – Wikipedia EN (1,1 % de la population) ; population seychelloise estimée à ~132 000 en 2025",
+      "distributionByCountry": [{ "country": "SYC", "population": 1500 }]
+    },
+    "sources": [
+      "Sino-Seychellois – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Sino-Seychellois)",
+      "Orient and Ocean: The Chinese Community in Seychelles – Dennis Hardy et Wang Dongxia, Seychelles Research Journal Vol. 4, No. 2, 2022 (https://seychellesresearchjournal.com/wp-content/uploads/2022/07/orient_and_ocean-the_chinese_community_in_seychelles-dennis_hardy_and_wang_dongxia-srj-4-2.pdf)",
+      "Han Chinese, Mandarin in Seychelles – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12051/SE)",
+      "Demographics of Seychelles – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Demographics_of_Seychelles)",
+      "Seychelles – Multicultural, Indian Ocean, Creole – Encyclopaedia Britannica, 2024 (https://www.britannica.com/place/Seychelles/People)",
+      "The Chinese in Seychelles Facts and Origins – My China Roots (https://www.mychinaroots.com/places/685204/seychelles)"
+    ]
+  }
+}

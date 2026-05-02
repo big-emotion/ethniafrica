@@ -1,0 +1,100 @@
+{
+  "id": "PPL_KISSI",
+  "nameMain": "Kissi",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["GIN", "SLE", "LBR"],
+  "content": {
+    "appellations": {
+      "mainName": "Kissi",
+      "selfAppellation": "Kissi (gizi dans certaines variantes phonétiques locales)",
+      "exonyms": [
+        "Kissi (terme utilisé par les Européens et les populations voisines)",
+        "Gizi / Gissi (variante orthographique utilisée en Sierra Leone et au Libéria)",
+        "Kisi (orthographe alternative présente dans la littérature anglophone)"
+      ],
+      "originOfExonyms": "Le terme Kissi est d'usage exogène, adopté par les colonisateurs européens et répandu dans la littérature ethnographique. Le nom est repris tel quel par les populations voisines mande (Mandingue, Soussou) et est aujourd'hui accepté par les locuteurs eux-mêmes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Kissi est le terme standard utilisé en Guinée, en Sierra Leone et au Libéria, dans les langues officielles (français et anglais) comme dans les usages locaux. Le terme ne porte pas de connotation péjorative.",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "ethnoLinguisticGroup": "Mel (branche de la famille Niger-Congo, distincte du groupe atlantique au sens strict)",
+      "historicalRegion": "Guinée forestière (préfectures de Kissidougou, Guékédou, Macenta), nord-est Sierra Leone, nord-ouest Libéria",
+      "currentCountries": ["GIN", "SLE", "LBR"]
+    },
+    "ethnicities": ["Kissi"],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale Kissi rapportée dans The Peoples of Africa, avant le XVIIe siècle, les Kissi habitaient la région du Haut Niger. Ils auraient ensuite vécu au sud du Fouta Djallon jusqu'à ce que le peuple Yalunka (Dialonké) les expulse. Cette pression les a poussés à migrer vers l'ouest à partir de 1600.",
+      "formationPeriod": "La formation du groupe Kissi en tant qu'entité distincte remonterait aux migrations du XVIIe siècle. Leur installation dans la zone forestière de Guinée, Sierra Leone et Libéria a consolidé leur identité ethnique autour d'une agriculture de riz et d'une organisation villageoise autonome.",
+      "migrationRoutes": [
+        "Du Haut Niger vers le sud et l'ouest, au XVIIe siècle, sous pression des Yalunka",
+        "À travers les contreforts du Fouta Djallon vers la zone forestière de Guinée",
+        "Migration vers la Sierra Leone et le Libéria, avec expulsion progressive des Limba"
+      ],
+      "historicalSettlementZones": [
+        "Guinée forestière (préfectures de Kissidougou, Guékédou, Macenta)",
+        "Nord-est de la Sierra Leone (Province du Nord)",
+        "Nord-ouest du Libéria (comté de Lofa)",
+        "Zone de transition forêt-savane au pied du Fouta Djallon"
+      ],
+      "unificationsOrDivisions": "Avant la colonisation, les Kissi vivaient en chefferies autonomes sans autorité politique centralisée. Le guerrier Kissi Kaba Keita parvint à fédérer de nombreuses chefferies kissi au XIXe siècle pour résister à la conquête française (1892-1893), constituant une unification temporaire remarquable. Il fut néanmoins exécuté à Siguiri par les Français, entraînant la fragmentation des chefferies réunies.",
+      "externalInfluences": "La pression des peuples mande (Yalunka, Kuranko, Mandingue) au nord a été le principal moteur des migrations kissi. La colonisation française en Guinée et britannique en Sierra Leone a fragmenté le territoire kissi entre plusieurs États. L'influence islamique est restée limitée en raison de l'isolement forestier du groupe.",
+      "majorHistoricalEvents": "XVIIe siècle: expulsion du Haut Niger par les Yalunka et migration vers la zone forestière. 1892: arrivée des Français en Guinée; Kissi Kaba Keita fédère les chefferies et mène une résistance guerrière incluant des alliés Kuranko (de Morige) et Lele (de Yombiro). 1893: Kissi Kaba Keita se soumet aux Français qui le reconnaissent chef du territoire kissi septentrional. Exécution ultérieure à Siguiri. XXe siècle: Kai Londo, guerrier kissi, joue un rôle notable en Sierra Leone méridionale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en villages autonomes de petite taille (moins de 150 habitants), chacun avec un chef de village (headman) qui offre des sacrifices au sanctuaire villageois et fait office de juge. Les villages sont regroupés en sous-chefferies indépendantes. L'autorité des anciens est centrale et le système est fortement gérontocratiqu.",
+      "clanOrganization": null,
+      "ageClassSystems": "La société kissi est fortement orientée par l'âge (age-oriented), dominée et conduite par les anciens (elderly). Les décisions collectives impliquent le respect hiérarchique des aînés.",
+      "roleOfLineages": "Les lignages patrilinéaires structurent l'organisation sociale et l'accès aux terres agricoles. L'héritage des chefferies suit la ligne paternelle.",
+      "religiousAuthority": "L'autorité religieuse est détenue par le chef de village qui maintient le sanctuaire communautaire. Les anciens jouent un rôle central dans les rituels d'offrandes aux ancêtres. Malgré des conversions au christianisme, la religion traditionnelle et le culte des ancêtres demeurent prépondérants."
+    },
+    "languages": {
+      "mainLanguage": "Kissi (kqs)",
+      "isoCodes": ["kqs", "kss"],
+      "dialects": [
+        "Kissi Nord (Guinée, préfecture de Kissidougou)",
+        "Kissi Sud (Sierra Leone et Libéria, code ISO kss)"
+      ],
+      "vehicularRole": "La langue kissi est une langue d'usage communautaire interne. Dans les échanges interethniques, le français (Guinée), l'anglais (Sierra Leone, Libéria) et le krio (Sierra Leone) sont utilisés. La langue kissi appartient à la branche Mel de la famille Niger-Congo, distincte des langues atlantiques malgré la classification administrative."
+    },
+    "culture": {
+      "majorRites": "Le culte des ancêtres est central: les Kissi prient leurs défunts pour obtenir des faveurs et guider la vie collective. Les figures en stéatite taillées (pomdo, pluriel pomtan) sont associées aux ancêtres selon certains chercheurs, ou à des divinités agricoles selon d'autres; elles sont placées dans les champs pour favoriser les récoltes. Les rites d'initiation (circoncision pour les garçons, excision pour les filles dans certains groupes) marquent le passage à l'âge adulte. La société Poro (masculine) et Sande (féminine), partagée avec des peuples voisins, structure les initiations.",
+      "symbols": "Les pomdo (figures sculptées en stéatite) sont le symbole culturel le plus distinctif des Kissi. La faucille rituelle et la fameuse monnaie kissi (Kissi penny), barre de fer torsadée avec une extrémité aplatie, représentent aussi l'identité kissi.",
+      "artsAndMusic": "Les Kissi sont réputés pour la vannerie et le tissage sur métiers verticaux. Ils ont été historiquement célèbres pour leur travail du fer: le pays kissi et ses voisins possédaient de riches gisements de minerai de fer. Les forgerons kissi fabriquaient la monnaie kissi (Kissi penny), unité d'échange dans toute la région forestière. Des figures sculptées en stéatite (avant le contact colonial) témoignent d'une tradition artistique ancienne.",
+      "spiritualities": "La religion traditionnelle, incluant le culte des ancêtres et des rites agraires, demeure prépondérante malgré les conversions au christianisme depuis la période coloniale. L'islam est peu présent en raison de l'isolement forestier et de la distance culturelle avec les peuples mande islamisés. Le culte des pomdo mêle croyances animistes et vénération des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Kissi n'ont pas formé de royaume centralisé durable. Leur organisation politique repose sur des chefferies villageoises autonomes. Kissi Kaba Keita (XIXe siècle) constitua une fédération temporaire de chefferies reconnue par les Français comme l'entité politique kissi du nord.",
+      "relationsWithNeighbors": "Les Kissi furent expulsés de leur territoire d'origine par les Yalunka au XVIIe siècle. Lors de leur migration vers l'ouest, ils expulsèrent à leur tour les Limba. Ils subirent la pression constante des Kuranko au nord. Des alliances tactiques furent nouées avec les Kuranko de Morige et les Lele de Yombiro lors de la résistance à la conquête française. Culturellement proches des Mende, Loma, Kpelle, Mano, Kono et Vai.",
+      "conflictsOrAlliances": "Résistance armée à la colonisation française (1892-1893) sous Kissi Kaba Keita, menée par des tactiques de guérilla. En Sierra Leone, Kai Londo fut un guerrier kissi influent. Les Kissi, en tant que minorité non mande dans un contexte mande dominant, ont été politiquement et économiquement marginalisés en Guinée post-indépendance.",
+      "diaspora": "Présence kissi dans les capitales de Guinée (Conakry), Sierra Leone (Freetown) et Libéria (Monrovia) dans le cadre des migrations de travail internes. Pas de diaspora internationale significative documentée."
+    },
+    "demography": {
+      "totalPopulation": 1224545,
+      "referenceYear": 2025,
+      "source": "Wikipedia (Kissi people) et Joshua Project 2025",
+      "distributionByCountry": [
+        {
+          "country": "GIN",
+          "population": 798429,
+          "note": "4e groupe ethnique de Guinée, 6,2% de la population nationale"
+        },
+        {
+          "country": "LBR",
+          "population": 250273,
+          "note": "4,8% de la population libérienne"
+        },
+        {
+          "country": "SLE",
+          "population": 175843,
+          "note": "4,5% de la population sierra-léonaise"
+        }
+      ]
+    },
+    "sources": [
+      "Kissi people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kissi_people)",
+      "Kissi in Guinea – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12722/gv)",
+      "The Peoples of Africa – éd. Murdock G.P., 1959, McGraw-Hill",
+      "Ethnologue – Kissi, Northern (kqs), SIL International, 2024 (https://www.ethnologue.com/language/kqs/)",
+      "Supplement to a Handbook of the Kissi Language – Kilson M., 1966"
+    ]
+  }
+}

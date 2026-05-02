@@ -1,0 +1,105 @@
+{
+  "id": "PPL_GWANDARA",
+  "nameMain": "Gwandara",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Gwandara",
+      "selfAppellation": "Gwandara",
+      "exonyms": [
+        "Abakwa Riga (designation utilisee dans l'etat du Plateau)",
+        "Guandara (forme alternative dans les ressources bibliques)"
+      ],
+      "originOfExonyms": "Le nom Gwandara est explique par la tradition orale comme une contraction de Gwanda-Rawa da Sallah, signifiant ceux qui preferent danser aux prieres, allusion au refus de leur ancetre eponyme d'adopter l'islam. La tradition situe ce refus sous le regne du roi Muhammadu Rumfa de Kano (vers 1476). L'appellation Abakwa Riga est utilisee dans l'etat du Plateau, notamment dans la zone gouvernementale de Kanke.",
+      "whyProblematic": "Le nom Gwandara est a la fois l'ethnonyme et le glottonyme du groupe. Historiquement groupes avec les Haoussa dans l'administration coloniale, les Gwandara ont du affirmer leur identite distincte. La denomination de Abakwa Riga dans le Plateau State cree une fragmentation nominale.",
+      "contemporaryUsage": "Le terme Gwandara est utilise par le groupe lui-meme et dans les sources officielles nigerianes. La Gwandara Development Educational and Cultural Association (GWADECA) promeut l'identite et la culture gwandara depuis sa fondation dans les annees 1970 a partir du Gwandara Youth Club (GYC, cree a Kaduna en 1970).",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique occidental (groupe Hausa-Gwandara, West Chadic A.1)",
+      "historicalRegion": "Region centre-nord du Nigeria ; historiquement issus de Kano (Hausaland), etablis dans les divisions d'Akwaja, Lafia, Keffi et Nassarawa (ancien Plateau Province)",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Gwandara de Karshi (premiere ville gwandara reconnue officiellement ; premier emirat de premiere classe gwandara a New Karshi, Nasarawa State)",
+      "Gwandara de Nasarawa (concentres dans l'etat de Nasarawa, zone principale)",
+      "Gwandara du FCT Abuja (l'un des peuples autochtones de la capitale federale du Nigeria)",
+      "Abakwa Riga du Plateau State (Kanke LGA, consideres comme l'un des premiers groupes etablis)",
+      "Gwandara du Niger State, Kaduna, Kogi, Taraba et Benue (diasporas historiques)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Gwandara sont les descendants des Haoussa aborigenes de Kano, en particulier de Barbushe, un grand pretre haoussa et l'un des premiers habitants de Kano avant l'arrivee des descendants de Bagauda. Selon la tradition orale, l'ancetre eponyme Karshi refusa de se convertir a l'islam lors du regne du roi Muhammadu Rumfa de Kano et emigra de Kano vers 1476. Le groupe pratiquait le culte de Tsumburbura sur les collines Dala de Kano. La langue gwandara est consideree comme un haoussa non arabise, conservant des formes pre-islamiques de la langue.",
+      "formationPeriod": "La formation du groupe en tant qu'entite distincte date du XVe siecle, lors de la fuite de Kano vers 1476. Le groupe s'etablit d'abord a Gwagwa, puis fut disperse vers le sud par des attaques musulmanes. Il s'installa finalement dans le territoire jukun aux XVIIe et XVIIIe siecles, dominant politiquement la region pendant de nombreuses annees. On denombrait plus de 100 villes et villages gwandara au Nigeria.",
+      "migrationRoutes": [
+        "Kano (Hausaland) — depart vers 1476 suite au refus de conversion a l'islam",
+        "Gwagwa (premier lieu d'etablissement au sud de Kano)",
+        "Territoire jukun (XVIIe-XVIIIe siecles) — apres de nouvelles dispersions dues aux attaques musulmanes",
+        "Etablissement dans les divisions d'Akwaja, Lafia, Keffi et Nassarawa"
+      ],
+      "historicalSettlementZones": [
+        "Etat de Nasarawa (zone principale actuelle) : Akwaja, Lafia, Keffi, Nassarawa, New Karshi (Karu LGA)",
+        "Territoire du FCT Abuja (peuple autochtone de la capitale federale)",
+        "Etat de Niger",
+        "Etat de Kaduna",
+        "Etat du Plateau (Kanke LGA — Abakwa Riga)",
+        "Etats de Kogi, Taraba, Benue, Kwara et Katsina (etablissements disperses)"
+      ],
+      "unificationsOrDivisions": "Les Gwandara sont disperses sur plusieurs etats nigerians mais partagent une identite culturelle et linguistique commune. La Gwandara Development Educational and Cultural Association (GWADECA) joue un role federer. Le premier emirat gwandara de premiere classe a ete etabli a New Karshi (Nasarawa State) sous l'Emir Muhammadu Bako III (PhD).",
+      "externalInfluences": "Influence haoussa persistante (langue proche, habits similaires, relations historiques). Contacts avec les Gwari, Yeskwa et Arago (resemblances culturelles, mariages interethniques avec les Yeskwa). Influence jukun lors de l'etablissement dans leur territoire. Islam sunnite : la majorite des Gwandara est aujourd'hui musulmane, contrairement a l'histoire de leur fondation marquee par le refus de l'islam.",
+      "majorHistoricalEvents": "Vers 1476, Karshi quitte Kano avec ses partisans plutot que de se convertir a l'islam sous le roi Muhammadu Rumfa. Les Gwandara s'etablissent en territoire jukun aux XVIIe-XVIIIe siecles et y dominent politiquement. En 1996, la creation de l'etat de Nasarawa (demembre de l'etat du Plateau) integre les principales zones gwandara. New Karshi devient le premier emirat gwandara de premiere classe. En 1979, Alh. Muhammadu Danladi Gwandara devient le premier Gwandara a acceder au poste de gouverneur adjoint (Plateau State). En 2010, Umaru Tanko Al-Makura devient le premier Gwandara a etre elu gouverneur (Nasarawa State)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies hierarchise similaire aux anciens etats-villes haoussa : chaque etablissement est dirige par un chef appele Sarki, Sangari, Whurki ou Seleki selon la region, assiste de detenteurs de titres. L'emir (sarki) de premiere classe de New Karshi (Nasarawa State) est le representant le plus eleve de la tradition gwandara. Chaque village a un chef responsable des affaires villageoises et du reglement des conflits.",
+      "clanOrganization": "Structure clanique patrilineaire. Les habitations sont disposees en cercle formant un compound de famille etendue. Chaque compound n'a qu'une seule entree car chaque case est reliee a la suivante par un grenier a mais.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite et les alliances. Les jeunes hommes travaillent sur les exploitations de leur pere jusqu'au mariage, generalement vers 17 ans. Les filles sont fiancees des l'enfance mais conservent le droit de rompre les fiancailles avant le mariage (avec restitution de la dot).",
+      "religiousAuthority": "Religion ethnique traditionnelle profondement enracinee dans l'identite gwandara historique. Le culte pratiquait des sacrifices de chevres et de moutons. Chaque village venerait des dieux mineurs dans des espaces rituels circulaires en plein air dans des bosquets, accessibles par des avenues de palmiers. Chaque village possedait deux temples (cases en banco contenant le dieu villageois). La conversion au christianisme ou a l'islam est vecue comme une assimilation culturelle. Aujourd'hui, la majorite des Gwandara est musulmane."
+    },
+    "languages": {
+      "mainLanguage": "Gwandara",
+      "isoCodes": ["gwn"],
+      "dialects": [
+        "Gwandara de Karshi (dialecte principal, systeme decimal)",
+        "Gwandara de Nimbia (systeme numerique duodecimal — comptage en base 12, influence des langues East Kainji voisines)",
+        "Gwandara Gitata",
+        "Gwandara Koro",
+        "Gwandara du Sud",
+        "Gwandara de l'Est (Eastern Gwandara)"
+      ],
+      "vehicularRole": "Le gwandara est la langue maternelle de la communaute. C'est le plus proche parent du haoussa (West Chadic A.1). Selon les linguistes, le gwandara est un haoussa historiquement recent creolise ou une variante non arabisee du haoussa. Le haoussa et l'anglais servent de langues vehiculaires. Le gwandara est une langue en danger (Ethnologue)."
+    },
+    "culture": {
+      "majorRites": "Danses rituelles : aspect central de la societe religieuse ethnique gwandara. Rites de passage : naissance, puberte, mariage (fiancailles precoces avec droit de rupture). Mariage traditionnel : la dot est negociee et restituee en cas de rupture des fiancailles. Ceremonies islamiques (Ramadan, Aid) pour la majorite musulmane actuelle. Sacrifices de chevres et moutons lors des ceremonies importantes. Pelerinage a La Mecque (Hajj) pour les musulmans.",
+      "symbols": "La danse est un symbole culturel fondateur (d'ou l'etymologie du nom Gwandara : ceux qui preferent la danse aux prieres). Les deux temples villageois (cases en banco) et les espaces rituels en plein air dans les bosquets representent le patrimoine spirituel traditionnel. L'huile de palme est un produit culturel et economique important. Les nattes tissees (chaque natte requiert quatre jours de travail) sont un produit artisanal emblematique.",
+      "artsAndMusic": "Musique traditionnelle et danses rituelles au coeur de la vie culturelle gwandara. Tissage de nattes vendues sur les marches locaux. Teinture, forge, tissage et agriculture de subsistance (mais, millet, igname, tabac). Fabrication et commerce de l'huile de palme. Poesie orale. La biere traditionnelle et le tabac ont une importance culturelle, bien que la plupart des Gwandara n'en abusent pas.",
+      "spiritualities": "Religion ethnique traditionnelle : sacrifice d'animaux, culte de dieux mineurs villageois veneres dans des espaces rituels naturels (bosquets, grottes). Chaque village possede deux temples en banco abritant le dieu villageois. La conversion (islam ou christianisme) est vecue comme une trahison identitaire. Islam sunnite majoritaire aujourd'hui : la plupart des Gwandara sont desormais musulmans, comme leurs freres haoussa, malgre leur histoire fondatrice de refus de l'islam."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Gwandara n'ont pas fonde de grand royaume, mais ont domine politiquement le territoire jukun (region de Benue basin) aux XVIIe-XVIIIe siecles. Le systeme politique gwandara s'inspire du modele haoussa des etats-villes avec un chef (Sarki, Sangari, Whurki ou Seleki). Le premier emirat gwandara de premiere classe a ete etabli a New Karshi (Nasarawa State) avec l'Emir Muhammadu Bako III (PhD). Plus de 100 villes et villages gwandara ont ete denombres au Nigeria.",
+      "relationsWithNeighbors": "Relations historiques etroites avec les Haoussa (origine commune, langue proche). Relations culturelles et matrimoniales avec les Yeskwa. Ressemblances culturelles avec les Gwari et les Arago (dances et religion similaires). Coexistence avec les Jukun lors de l'etablissement dans leur territoire. Les Gwandara ont ete en contact avec de nombreux groupes ethniques du Benue basin.",
+      "conflictsOrAlliances": "Le depart de Kano vers 1476 fut motive par le refus de l'islam, suivi de dispersion due aux attaques musulmanes. Les Gwandara s'etablirent en territoire jukun comme refuge. La creation de l'etat de Nasarawa (1996) et l'essor d'Abuja comme capitale federale ont transforme le contexte politique gwandara, leur donnant une plus grande visibilite institutionnelle.",
+      "diaspora": "Les Gwandara sont disperses dans plusieurs etats nigerians au-dela de leur zone principale de Nasarawa : Niger, Kaduna, Kogi, FCT Abuja, Plateau, Taraba, Benue, Kwara et Katsina. Une presence notable est documentee a Kano (ville d'origine historique). La GWADECA (Gwandara Development Educational and Cultural Association), fondee dans les annees 1970, joue un role dans la preservation culturelle."
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur SIL Ethnologue (gwn, language endangerment data), Wikipedia (30 000 locuteurs actifs de la langue), recensements nigerians (Nasarawa, Niger, FCT), etudes de S.O. Ayih (2003, 2012, 2013) sur l'histoire gwandara. La population ethnique totale depasse les locuteurs actifs de la langue.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 200000,
+          "note": "Principalement etat de Nasarawa (New Karshi, Lafia, Keffi), FCT Abuja, etats de Niger, Kaduna, Kogi, Plateau, Taraba, Benue"
+        }
+      ]
+    },
+    "sources": [
+      "SIL Ethnologue — Gwandara language (gwn). https://www.ethnologue.com/language/gwn/",
+      "Wikipedia EN — Gwandara language. https://en.wikipedia.org/wiki/Gwandara_language",
+      "Joshua Project — Gwandara in Nigeria. https://joshuaproject.net/people_groups/12015",
+      "OlaLeone.org — History of Gwandara, an Aboriginal of Hausa Land. http://www.olaleone.org/2025/05/history-of-gwandara-aboriginal-of-hausa.html",
+      "IIGDPublishers — Inter-Group Relations Study of Afo and Gwandara People of Nasarawa State. https://iigdpublishers.com/",
+      "Glottolog — Gwandara (gwn). https://glottolog.org/resource/languoid/id/duhw1236",
+      "Swordshare Map — Gwandara (gwn). https://map.swordshare.com/gwn",
+      "CIA World Factbook — Nigeria. https://www.cia.gov/the-world-factbook/countries/nigeria/"
+    ]
+  }
+}

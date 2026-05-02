@@ -1,0 +1,106 @@
+{
+  "id": "PPL_NGBANDE",
+  "nameMain": "Ngbande",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["CAF", "COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Ngbande",
+      "selfAppellation": "Ngbandi (ou Ngbande selon la translittération)",
+      "exonyms": [
+        "Mongbandi",
+        "Mongwandi (termes populaires utilisés par les Blancs de la région belge)",
+        "Gbandi",
+        "Mogwandi"
+      ],
+      "originOfExonyms": "Le terme Ngbandi est préféré par les ethnologues belges. Les ethnologues français les regroupent avec d'autres peuples 'oubanghiens' comme les Gbanziri, Nzakara, Sango et Yakoma. Mongbandi et Mongwandi étaient les formes utilisées par la population blanche coloniale dans la région. Le terme Gbandi ou Mogwandi apparaît dans certaines sources encyclopédiques.",
+      "whyProblematic": "Les Ngbande sont moins une ethnie traditionnelle délimitée qu'un ensemble de gens du nord-ouest du Congo devenus majoritairement locuteurs du lingala ou du bangala (son dialecte congolais). Leur identité fut fortement politisée sous le régime de Mobutu Sese Seko (1965-1997), lui-même membre du groupe, ce qui leur valut d'être assimilés à l'élite militaire et politique de Zaire puis de subir des discriminations après 1997.",
+      "contemporaryUsage": "Le terme Ngbandi (ou Ngbande) est utilisé dans les sources académiques, juridiques et les droits des minorités. Après la chute de Mobutu en 1997, les Ngbande perdirent leurs positions dans l'appareil militaire et d'Etat et sont sujets à des discriminations. Leur prédominance sous Mobutu a laissé une image négative durables auprès d'autres communautés congolaises.",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Famille Oubanghienne (Adamawa-Ubangi), sous-groupe Ngbandique (Niger-Congo) — bien que classés ici en FLG_SOUDANIQUECENTRAL dans ce projet",
+      "historicalRegion": "Bassin du fleuve Ubangi supérieur : province de l'Équateur (nord-ouest de la RDC) et sud de la République Centrafricaine",
+      "currentCountries": ["CAF", "COD"]
+    },
+    "ethnicities": [
+      "Ngbandi propre (population principale de la RDC, province de l'Équateur, autour d'Abumombazi, Libenge, Mobayi)",
+      "Yakoma (RCA et nord de la RDC, partiellement considérés comme des Ngbandiques)",
+      "Gbayi / Kpatiri (groupe Ngbandique divergent, sud de la zone Ngbaka)",
+      "Clan Bandia (envahirent le territoire des Zande au 18e siècle, aujourd'hui assimilés aux Azande)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ngbande sont originaires du Soudan du Sud, d'où ils migrèrent vers le sud-ouest pour s'installer dans le bassin du fleuve Ubangi supérieur. Leur installation progressive intégra de nombreuses petites communautés préexistantes dans leur espace territorial. Les Ngbandi du clan Bandia envahirent le territoire des Azande au 18e siècle, fondèrent une série d'États et adoptèrent si complètement la culture et la langue azande qu'ils sont aujourd'hui indiscernables de ce groupe.",
+      "formationPeriod": "Au cours des siècles de migration depuis le Soudan du Sud vers leur territoire actuel (bassin de l'Ubangi), les Ngbande assimilèrent de nombreux petits groupes. La constitution d'une identité Ngbande spécifique dans la région de l'Ubangi remonte probablement au 17e-18e siècle. La colonisation belge et française du bassin du Congo délimita leur territoire entre le Congo belge (province de l'Équateur) et l'Oubangui-Chari français (actuelle RCA).",
+      "migrationRoutes": [
+        "Du Soudan du Sud vers le bassin de l'Ubangi supérieur (migration ancienne)",
+        "Clan Bandia : invasion du territoire azande (18e siècle), assimilation complète dans ce groupe",
+        "Répartition de part et d'autre du fleuve Ubangi entre le Congo belge et l'Oubangui-Chari français"
+      ],
+      "historicalSettlementZones": [
+        "Province de l'Équateur, nord-ouest de la RDC (Abumombazi, Libenge, Mobayi, région du Bas-Uele)",
+        "Sud de la République Centrafricaine (rive nord du fleuve Ubangi)",
+        "Région de la capitale Gbadolite (fief de Mobutu, construit sur le territoire ngbande)"
+      ],
+      "unificationsOrDivisions": "Les Ngbande vivaient traditionnellement dans des villages compacts d'une seule rangée de maisons, communautés dispersées sans organisation gouvernementale globale ; un hameau était typiquement composé d'une famille étendue ou d'un clan patrilinéaire. La configuration coloniale sépara les Ngbande entre le Congo belge et l'Oubangui-Chari français, divisant le groupe entre deux États. Sous Mobutu, ceux de la RDC bénéficièrent d'une position privilégiée sans équivalent côté RCA.",
+      "externalInfluences": "Colonisation belge (province de l'Équateur, Congo Free State puis Congo belge) et française (Oubangui-Chari). Décolonisation et Indépendance (RDC 1960, RCA 1960). Régime de Mobutu Sese Seko (1965-1997) : les Ngbande de la RDC devinrent l'ethnie de référence de l'armée présidentielle. Chute de Mobutu et prise de pouvoir par Laurent-Désiré Kabila (1997) : perte des positions privilégiées et début des discriminations.",
+      "majorHistoricalEvents": "18e siècle : le clan Bandia ngbande envahit le territoire azande et s'y assimile complètement. 1965 : Mobutu Sese Seko (né Joseph-Désiré Mobutu, 14 octobre 1930, Lisala, membre du groupe ngbande) prend le pouvoir au Zaïre. Il recrute les Ngbande de manière disproportionnée dans son armée d'élite (Division Spéciale Présidentielle, DSP). A terme, environ 90 % des DSP étaient Ngbande. 1971 : Mobutu rebaptise le pays Zaïre dans le cadre de l'authenticité africaine. 1997 : chute de Mobutu devant les forces de Laurent-Désiré Kabila. Fuite de nombreux soldats ngbande vers le Congo-Brazzaville. 2004 : arrestation d'environ 200 Ngbande à Kinshasa après des attaques attribuées à d'anciens membres de la DSP."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferies traditionnelles avec des chefs agissant comme arbitres et prêtres du culte des ancêtres. La structure de gouvernance traditionnelle est décentralisée : chaque hameau est dirigé par un chef (headman) dont la maison se trouve au centre du village. Les communautés étaient dispersées, avec peu d'organisation gouvernementale globale au-delà du niveau du clan étendu.",
+      "clanOrganization": "Organisation principalement patrilinéaire, bien que des cas de résidence avec l'oncle maternel soient attestés. La polygynie est pratiquée mais en déclin depuis de nombreuses années. Les maisons sont sphériques avec des murs en terre cylindriques et des toits de chaume coniques (ou rectangulaires à pignon). Les villages forment une double rangée de cases le long d'une rue ou d'une place centrale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilinéaires structurant les clans et les alliances. Les chefs de clan sont à la fois autorités civiles et religieuses (prêtres du culte des ancêtres). Les hommes ont traditionnellement chassé, pêché et défriché les terres ; les femmes ont collecté les aliments sauvages et effectué les travaux agricoles (binage, plantation, récolte).",
+      "religiousAuthority": "Les chefs ngbande remplissent le rôle de prêtres du culte ancestral central à la vie sociale traditionnelle. Ce culte des ancêtres structure les relations sociales et les décisions communautaires. Le christianisme (catholique romain, protestant) s'est répandu pendant la période coloniale belge et française. L'islam est peu présent dans cette région traditionnellement animiste."
+    },
+    "languages": {
+      "mainLanguage": "Ngbandi du Nord (Northern Ngbandi)",
+      "isoCodes": ["ngb", "nbw"],
+      "dialects": [
+        "Ngbandi du Nord (ngb) — variété principale de la RDC, province de l'Équateur",
+        "Ngbandi du Sud (nbw) — autre variété documentée",
+        "Yakoma — parlé en RCA et dans le nord de la RDC, considéré comme une variété Ngbandique",
+        "Gbayi / Kpatiri — variété Ngbandique divergente"
+      ],
+      "vehicularRole": "Le ngbandi (continuum dialectal ngb + nbw) est parlé par environ 500 000 personnes en RDC et en RCA. Le ngbandi du nord (ngb) est la source lexicale principale du sango, la lingua franca nationale de la RCA (qui compte autant de locuteurs natifs que le ngbandi lui-même et est utilisé comme langue seconde par des millions de personnes). En RDC, les Ngbande parlent le lingala (langue bantu de commerce) comme seconde langue. Sous Mobutu, le lingala devint la langue militaire symbolisant le régime. Les codes ISO pour les deux variétés principales sont ngb (Ngbandi du Nord) et nbw (Ngbandi du Sud)."
+    },
+    "culture": {
+      "majorRites": "Culte des ancêtres : rituel central de la vie sociale, présidé par les chefs qui agissent comme prêtres. Les ancêtres sont consultés lors des décisions importantes de la vie communautaire. Rites liés au cycle agricole : maïs, manioc, arachides, patates douces, haricots de Lima, poivrons, ananas, papayes, tabac. Rites de passage : peu documentés spécifiquement pour les Ngbande.",
+      "symbols": "Les lances et couteaux courbes à haute valeur artistique, fabriqués par les artisans ngbande et recherchés par les collectionneurs d'art africain, constituent un symbole d'identité culturelle et de prestige. La harpe à col incurvé (similaire aux harpes des peuples du Tchad et du Soudan du Sud) est un instrument distinctif de la région. Gbadolite (fief de Mobutu, construit sur le territoire ngbande) est devenu un symbole ambigu du groupe sous la dictature.",
+      "artsAndMusic": "Artisanat de renom : les forgerons ngbande produisaient des lances et des couteaux d'une grande qualité artistique, largement échangés avec les groupes voisins et désormais prisés par les collectionneurs d'art africain. Instruments de musique : harpes à col incurvé caractéristiques de la région de l'Ubangi, figurines, masques, pipes, colliers, bâtons et statuettes zoomorphes liées à la chasse. Cette culture artistique partage des connexions avec les peuples du Tchad et du Soudan du Sud.",
+      "spiritualities": "Religion traditionnelle centrée sur le culte des ancêtres : les esprits ancestraux sont centraux à la vie sociale et les chefs servent de médiateurs entre le monde des vivants et des ancêtres. Animisme : croyance en des esprits protecteurs associés aux animaux (statuettes zoomorphes pour la chasse). Christianisme implanté pendant la colonisation belge et française. Le sango — issu du ngbandi — est notamment parlé par des communautés catholiques et protestantes en RCA."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Ngbande ne formèrent pas de royaume centralisé dans leur zone principale. Ils vivaient en communautés décentralisées sous des chefs de village. Cependant, le clan Bandia ngbande établit au 18e siècle une série d'États dans le territoire azande, adoptant ensuite la culture et la langue de leurs sujets jusqu'à en être indiscernables. Sous Mobutu (1965-1997), Gbadolite devint une capitale quasi-royale au coeur du territoire ngbande.",
+      "relationsWithNeighbors": "Les Ngbande entretiennent des relations avec les Ngbaka (Gbaya) à l'ouest, les Banda à l'est et les Azande au nord-est (le clan Bandia les ayant envahis et assimilés). Dans le bassin de l'Ubangi, les Ngbande, Ngbaka et Banda sont les trois grandes langues soudaniques, séparées par des zones bantu. Selon l'ethnologue Hulstaert, le ngbandi est la 'langue la plus importante de l'Ubangi', la mieux connue et apprise comme seconde langue par les membres d'autres tribus.",
+      "conflictsOrAlliances": "18e siècle : invasion azande par le clan Bandia ngbande. Colonisation belge et française (division du groupe entre Congo belge et Oubangui-Chari). 1965 : prise de pouvoir par Mobutu, membre ngbande, début d'une période de surreprésentation militaire ngbande au Zaïre. 1997 : chute de Mobutu, fuite de soldats ngbande vers le Congo-Brazzaville, perte des positions dans l'État. 2004 : arrestations de masse (~200 personnes) à Kinshasa sur fond de tensions post-mobutistes.",
+      "diaspora": "Après la chute de Mobutu en 1997, de nombreux soldats et fonctionnaires ngbande quittèrent Kinshasa pour se réfugier dans leur région d'origine (province de l'Équateur) ou traversèrent le fleuve vers la République du Congo (Brazzaville). Une petite diaspora ngbande est présente en Europe (France, Belgique), essentiellement liée à l'élite politique et militaire de l'ère Mobutu."
+    },
+    "demography": {
+      "totalPopulation": 500000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (SIL International, 2000) : environ 250 000 locuteurs pour le ngbandi du nord en RDC. Wikipedia EN (Ngbandi language) : environ 500 000 locuteurs au total (continuum Ngbandi propre). Minority Rights Group International : groupe estimé à plusieurs centaines de milliers. Projection 2025 estimée.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 400000,
+          "note": "Province de l'Équateur (Équateur/Mongala), nord-ouest de la RDC ; région de Libenge, Abumombazi, Mobayi, Gbadolite"
+        },
+        {
+          "country": "CAF",
+          "population": 100000,
+          "note": "Sud de la République Centrafricaine, rive nord du fleuve Ubangi"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Ngbandi people. https://en.wikipedia.org/wiki/Ngbandi_people",
+      "Wikipedia EN — Ngbandi language. https://en.wikipedia.org/wiki/Ngbandi_language",
+      "Britannica — Ngbandi. https://www.britannica.com/topic/Ngbandi",
+      "Qiraat Africa — The Ngbandi People of Central Africa. https://qiraatafrican.com/en/15310/the-ngbandi-people-of-central-africa/",
+      "Minority Rights Group International — Ngbandi in the Democratic Republic of the Congo. https://minorityrights.org/communities/ngbandi/",
+      "US Department of Justice (EOIR) — Democratic Republic of the Congo: Ngbandi. https://www.justice.gov/eoir/page/file/1026971/dl",
+      "MAR (Minorities at Risk) — Chronology and Assessment for Ngbandi in the DRC. http://www.mar.umd.edu/assessment.asp?groupId=49008",
+      "Wikipedia EN — Mobutu Sese Seko. https://en.wikipedia.org/wiki/Mobutu_Sese_Seko",
+      "Nelson, Quentin D. (1952). 'Linguistic Problems in Ngbandi.' SIL International. https://translation.bible/wp-content/uploads/2024/05/nelson-1952-linguistic-problems-in-ngbandi.pdf"
+    ]
+  }
+}

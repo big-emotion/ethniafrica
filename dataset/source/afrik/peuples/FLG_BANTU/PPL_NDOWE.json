@@ -1,0 +1,84 @@
+{
+  "id": "PPL_NDOWE",
+  "nameMain": "Ndowe",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["GNQ", "CMR", "GAB"],
+  "content": {
+    "appellations": {
+      "mainName": "Ndowe",
+      "selfAppellation": "Ndowe",
+      "exonyms": ["Playeros", "Peuples de la plage", "Beach People"],
+      "originOfExonyms": "Playeros est le terme espagnol signifiant litteralement gens de la plage ou habitants du rivage, utilise par les colons espagnols pour designer les peuples cotiers de la Guinee equatoriale. Beach People en est la traduction anglaise. Le terme Ndowe signifie lui-meme les gens dans leur langue native.",
+      "whyProblematic": "Le nom Ndowe est en realite un terme collectif englobant plusieurs peuples bantous cotiers distincts (Kombe, Benga, Bujeba, Balengue, etc.) partageant une identite littorale commune. Il est parfois difficile de distinguer les differents sous-groupes dans les statistiques et les sources.",
+      "contemporaryUsage": "Ndowe et Playeros sont utilises de maniere interchangeable en Guinee equatoriale. Le terme Ndowe est prefere dans les contextes politiques et culturels contemporains. Le nom Pais Ndowe (Pays Ndowe) designe la region cotiere de la province du Littoral en Guinee equatoriale.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Peuples cotiers bantous de la region du Rio Muni et du golfe de Guinee",
+      "historicalRegion": "Littoral de Rio Muni (continent de la Guinee equatoriale), baie de Corisco",
+      "currentCountries": ["GNQ", "CMR", "GAB"]
+    },
+    "ethnicities": ["Kombe", "Benga", "Bujeba", "Balengue", "Boumba", "Bongwe"],
+    "origins": {
+      "ancientOrigins": "Les Ndowe sont un peuple bantou dont les origines remontent aux grandes migrations bantoues depuis l'interieur de l'Afrique centrale. Ils seraient arrives sur la cote de l'actuelle Guinee equatoriale il y a environ 1 500 ans, probablement en plusieurs vagues migratoires.",
+      "formationPeriod": "XIIe-XIIIe siecle pour les vagues les plus documentees. Les Ndowe se sont installes sur le littoral avant ou pendant l'arrivee des Fang dans la region. Leur identite cotiere distincte s'est forgee au contact de l'ocean Atlantique et du commerce maritime.",
+      "migrationRoutes": [
+        "Interieur de l'Afrique centrale vers la cote atlantique",
+        "Installation le long du fleuve Mbini (Muni) et de ses affluents",
+        "Etablissement sur les iles de Corisco, Elobey Grande et Elobey Chico"
+      ],
+      "historicalSettlementZones": [
+        "Littoral de la province du Littoral (Rio Muni)",
+        "Baie de Corisco et iles avoisinantes (Corisco, Elobey)",
+        "Rives du fleuve Mbini (Muni)",
+        "Zone cotiere du Cameroun (Douala) et du Gabon (Cap Esterias, Cap Santa Clara)"
+      ],
+      "unificationsOrDivisions": "Le Bwiti, societe initiatique transethnique adoptee a la fin du XIXe siecle, constitue la principale force unificatrice entre les differents sous-groupes Ndowe, promouvant un sentiment de communaute (one-heartness). Les differents sous-groupes (Kombe, Benga, Bujeba, Balengue) maintiennent leurs identites distinctes tout en partageant une identite Ndowe commune.",
+      "externalInfluences": "Contact avec les explorateurs portugais des le XVe siecle. Relations commerciales avec les Espagnols, Britanniques, Hollandais et Francais aux XVIIe et XVIIIe siecles. Role d'intermediaires dans la traite transatlantique. Colonisation espagnole (Guinee espagnole). Missions chretiennes protestanty et catholiques du XIXe siecle.",
+      "majorHistoricalEvents": "Etablissement de relations commerciales avec les Portugais des 1472 (exploration de Fernando Poo par Fernando Po). Role d'intermediaires entre les marchands europeens et les communautes de l'interieur. Resistance a la colonisation espagnole au XIXe siecle. Adoption du Bwiti transethniqu a la fin du XIXe siecle. Independance de la Guinee equatoriale en 1968."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme acephale : pas de pouvoir centralise au niveau du groupe entier. Chaque clan est dirige par un chef, lui-meme conseille par un conseil des chefs des differentes lignees. La famille ou dyanga constitue l'unite politique et economique de base.",
+      "clanOrganization": "Organisation patrilineaire et exogame. Les deux grandes divisions sont les Boumba et les Bongwe, chacune comprenant plusieurs tribus. L'heritage et la succession a la chefferie suivent la ligne paternelle par ordre d'age parmi les males.",
+      "ageClassSystems": "Societes secretes dont la composition et les rites sont bases sur des criteres familiaux et de statut social. Seuls les membres de ces societes sont consideres capables de percevoir le monde metaphysique.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique, la succession et les droits matrimoniaux. L'ebonda (richesse de la mariee) fonctionne comme une alliance entre lignages : la famille du marie paie un tribut materiel a la famille de la mariee pour ceder une femme du clan, ce qui donne au clan du marie des droits sur la femme et sa descendance.",
+      "religiousAuthority": "Croyances animistes traditionnelles persistantes : foi en une force universelle manifestee dans les plantes, animaux, soleil, lune, mer ou feu. Les chamans sont des figures respectees pour les rituels, guerisons et resolutions de conflits. Le Bwiti (societe initiatique transethniqu) est la force religieuse la plus unificatrice. Christianisme catholique present depuis les missions du XIXe siecle."
+    },
+    "languages": {
+      "mainLanguage": "Kombe (langue principale des Ndowe du continent)",
+      "isoCodes": ["bng"],
+      "dialects": ["Benga (Boumba)", "Kombe", "Bujeba", "Balengue"],
+      "vehicularRole": "Les differents sous-groupes Ndowe parlent des langues bantou proches mais distinctes (Kombe, Benga, etc.). L'espagnol est la langue officielle de la Guinee equatoriale et sert de vehiculaire. Les Ndowe ont developpe historiquement un pidgin-anglais comme lingua franca, notamment sur l'ile de Bioko."
+    },
+    "culture": {
+      "majorRites": "Esube : circumcision a la naissance. Rites de puberté et d'initiation à l'age adulte (rites de passage exigeant courage, discipline, resistance et depassement de la douleur). Okuyi (Mekuyo) : rite de passage majeur pratique lors des funerailles, mariages, naissances (quand le bebe atteint quatre mois) et passages a l'adolescence. Le danseur Okuyi porte un masque de bois (ikuka, Alstonia congensis) et un costume de raphia. Les trois couleurs du masque symbolisent : blanc (vie, ancetres), rouge (force, sang, naissance), noir (mort, tenebres).",
+      "symbols": "Le masque Okuyi/Mekuyo est le symbole culturel le plus emblematique des Ndowe. La pirogue et le canot symbolisent leur heritage maritime. Les couleurs blanc, rouge et noir du masque Okuyi representent les cycles de la vie, de la force et de la mort.",
+      "artsAndMusic": "Musique polyrhythmique avec tambours (ngoma : monduma, le plus grand, ente dans des troncs de bananier pour produire une resonance grave ; mosomba ; ikubi). Les ceremonies Mekuyo combinent danse, chant et percussions. Les femmes constituent les voix essentielles du choeur. Les chants en vieux benga (incomprehensibles aujourd'hui) temoignent d'une memoire culturelle profonde. Fabrication de pirogues et de canots. Artisanat d'outils en bois et d'ornements ceremoniels.",
+      "spiritualities": "Animisme : foi en une force universelle manifestee dans la nature. Culte des ancetres comme protecteurs spirituels. Bwiti (societe initiatique adoptee fin XIXe siecle) : promeut l'unite entre les differentes communautes Ndowe. Societes secretes dont la connaissance du monde metaphysique est reservee aux membres. Christianisme catholique present depuis les missions espagnoles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation en clans et villages autonomes sous l'autorite de chefs de clan. Le Pais Ndowe (Pays Ndowe) designe la zone geographique traditionnelle du groupe sur la cote de la Guinee equatoriale.",
+      "relationsWithNeighbors": "Relations complexes avec les Fang, groupe majoritaire et politiquement dominant : conflits frequents pour le controle des terres, mais mariages mixtes aussi frequents. Relations avec les Bayele (Pygmees) : mariages interethniques rapportes historiquement. Les Ndowe ont ete progressivement exclus de l'interieur des terres par l'expansion fang.",
+      "conflictsOrAlliances": "Role d'intermediaires commerciaux entre les Europeens et les populations de l'interieur (commerce d'ivoire, bois, esclaves) aux XVe-XIXe siecles. Resistance a la colonisation espagnole au XIXe siecle. Marginalisation politique apres l'independance (1968) sous les gouvernements fang successifs.",
+      "diaspora": "Presence en Guinee equatoriale (province du Littoral), au Cameroun (cote sud) et au Gabon (nord du pays, Cap Esterias)."
+    },
+    "demography": {
+      "totalPopulation": 115000,
+      "referenceYear": 2025,
+      "source": "Les Ndowe representent environ 3,6 % de la population de Guinee equatoriale (1 853 559 hab. en 2025 selon Wikipedia). Estimation incluant les groupes au Cameroun et au Gabon. La population totale est estimee entre 100 000 et 120 000 personnes.",
+      "distributionByCountry": [
+        { "country": "GNQ", "population": 67000 },
+        { "country": "CMR", "population": 30000 },
+        { "country": "GAB", "population": 18000 }
+      ]
+    },
+    "sources": [
+      "Ndowe people – 101 Last Tribes (https://www.101lasttribes.com/tribes/ndowe.html)",
+      "Ndowe Tribe : History, Culture and Legacy – Rumbo Malabo (https://rumbomalabo.com/en/ndowe/)",
+      "Demographics of Equatorial Guinea – Wikipedia EN (https://en.wikipedia.org/wiki/Demographics_of_Equatorial_Guinea)",
+      "Equatorial Guinea – Wikipedia EN (https://en.wikipedia.org/wiki/Equatorial_Guinea)",
+      "Benga people – Wikipedia EN (https://en.wikipedia.org/wiki/Benga_people)",
+      "Benga language and alphabet – Omniglot (https://www.omniglot.com/writing/benga.htm)",
+      "What are the different tribes of Equatorial Guinea – SAIGA Tours (https://www.saigatours.com/article/what-are-the-different-tribes-of-equatorial-guinea)",
+      "Equatorial Guinea – South African History Online (https://sahistory.org.za/place/equatorial-guinea)"
+    ]
+  }
+}

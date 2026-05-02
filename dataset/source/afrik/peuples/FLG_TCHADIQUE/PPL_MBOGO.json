@@ -1,0 +1,87 @@
+{
+  "id": "PPL_MBOGO",
+  "nameMain": "Mbogo",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Mbogo",
+      "selfAppellation": "Mbogo",
+      "exonyms": [
+        "Mobber (variante orthographique utilisee dans les classements des langues du Nigeria)",
+        "Mober (variante utilisee dans les classifications Kanuri)"
+      ],
+      "originOfExonyms": "Le terme Mobber ou Mober apparait dans les classifications administratives coloniales et postcoloniales des langues de l'etat de Borno. Il est repertorie parmi les langues indigenes de l'etat de Borno au Nigeria. La forme Mbogo pourrait etre une variante phonetique locale ou la designation propre du groupe par lui-meme.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le groupe est peu documente dans la litterature academique disponible. Le terme Mbogo est la designation utilisee dans les bases de donnees ethnolinguistiques africaines pour ce petit groupe du nord-est du Nigeria.",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique (Biu-Mandara) ou peripherie Kanuri — nord-est du Nigeria",
+      "historicalRegion": "Borno State, nord-est du Nigeria",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Mbogo de Borno — population principale de l'etat de Borno",
+      "Groupes villageois de la zone frontaliere Nigeria-Niger-Tchad"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Mbogo sont un petit groupe etabli dans le nord-est du Nigeria, dans la zone d'influence historique de l'empire du Kanem-Bornu. Leur presence dans la region de Borno est attestee dans les classements des langues indigenes de l'etat de Borno (Nigeria). A l'instar de nombreux petits groupes tchadiques de la region, les Mbogo ont probablement connu une longue coexistence avec les Kanuri dominants et les autres groupes Biu-Mandara voisins. La region de Borno constitue l'un des creusets les plus anciens de l'Afrique subsaharienne, avec des traces d'organisation etatique remontant a environ 800 avant notre ere a Zilum.",
+      "formationPeriod": "La formation des identites des petits groupes tchadiques du nord-est du Nigeria s'est produite dans le contexte de l'expansion et de la domination de l'empire du Kanem-Bornu (9e-19e siecles). La colonisation britannique (1914-1960) a fixe les frontieres administratives et inventorie les groupes ethnolinguistiques de la region de Borno.",
+      "migrationRoutes": [
+        "Installation probable de longue date dans la region de Borno",
+        "Influence possible de mouvements migratoires lies aux turbulences de l'empire Kanuri"
+      ],
+      "historicalSettlementZones": [
+        "Borno State, nord-est du Nigeria",
+        "Zones de contact entre populations Kanuri, Haoussa et groupes tchadiques Biu-Mandara"
+      ],
+      "unificationsOrDivisions": "Petit groupe maintenant une identite distincte au sein du nord-est du Nigeria domine par les Kanuri. Les contacts avec les Kanuri ont probablement entraine un bilinguisme extensif et des echanges culturels.",
+      "externalInfluences": "Domination historique de l'empire du Kanem-Bornu. Islamisation progressive via les contacts avec les Kanuri (depuis le 11e siecle). Colonisation britannique (1914-1960). Depuis 2009, impact du conflit Boko Haram dans la region du lac Tchad et du Borno.",
+      "majorHistoricalEvents": "Integration dans la sphere d'influence du Kanem-Bornu. Administration coloniale britannique et creation de l'etat de Borno comme unite administrative. Impact du conflit Boko Haram dans la region depuis 2009."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies villageoises traditionnelles, avec des chefs locaux (lawan ou bulama) supervisees par l'administration emirale de Borno et les autorites etatiques nigerianes. La gouvernance locale repose sur des conseils d'anciens. Les structures politiques ont ete partiellement reformatees par l'administration coloniale britannique puis le gouvernement federal du Nigeria.",
+      "clanOrganization": "Structure clanique patrilineaire typique des petits groupes du nord-est nigerian. Les clans regissent les droits fonciers, les alliances matrimoniales et la solidarite communautaire.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite clanique et les obligations mutuelles au sein de la communaute. La famille elargie est l'unite de base de la solidarite sociale et economique.",
+      "religiousAuthority": "L'autorite religieuse est exercee par des imams et des chefs religieux locaux. La communaute est majoritairement sunnite malekite sous l'influence historique de l'empire du Bornu. Des pratiques pre-islamiques (charmes, amulettes) peuvent persister dans le quotidien."
+    },
+    "languages": {
+      "mainLanguage": "Mbogo (Mobber)",
+      "isoCodes": [],
+      "dialects": ["Variete principale parlée dans la region de Borno"],
+      "vehicularRole": "Le mbogo est une petite langue du nord-est du Nigeria. Les locuteurs sont generalement bilingues en kanuri ou en haoussa, qui servent de langues vehiculaires regionales. L'anglais est la langue officielle du Nigeria et langue d'enseignement. La documentation linguistique du mbogo est tres limitee dans les sources disponibles."
+    },
+    "culture": {
+      "majorRites": "Celebrations islamiques : Eid al-Fitr, Eid al-Adha, Mawlid al-Nabi. Rites de passage : circoncision masculine (tahara), ceremonies de mariage avec paiement de la dot. Funerailles selon le rite islamique sunnite : inhumation rapide, priere collective (salat al-janaza), condoleances sur plusieurs jours. Ceremonies de naissance (attribution du prenom au 7e jour). Les celebrations sont marquees par des repas communautaires et des rassemblements familiaux.",
+      "symbols": "La mosquee du village est le centre symbolique de la vie communautaire. Les habits de fete (djellabas, turbans, bonnets brodes) sont portes lors des celebrations islamiques et des ceremonies importantes. Des charmes et amulettes coraniques (hirizi) sont utilises pour la protection.",
+      "artsAndMusic": "Musique de percussions (tambours, bendirs) lors des fetes et ceremonies. Tradition de poesie orale et de contes transmis par les anciens. Artisanat local : poterie, tissage, travail du cuir et fabrication de sandales. Chants collectifs lors des celebrations islamiques. La broderie de bonnets et de vetements est une tradition artisanale importante dans la region de Borno.",
+      "spiritualities": "Islam sunnite malekite, heritage de l'empire du Kanem-Bornu qui islamisa progressivement toute la region depuis le 11e siecle. La pratique islamique structure le calendrier, les rites de passage et les obligations sociales. Des elements de croyances traditionnelles (gris-gris, protection contre le mauvais oeil, respect des esprits des ancetres) coexistent avec la pratique islamique orthodoxe."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Mbogo se trouvent dans la zone d'influence historique de l'emirat de Borno, heritier de l'empire du Kanem-Bornu. En tant que petit groupe, ils n'ont pas constitue d'etat independant mais ont existe comme communaute distincte dans le cadre de cet empire pluriethnique.",
+      "relationsWithNeighbors": "Relations de coexistence et d'echanges avec les Kanuri dominants de la region de Borno. Contacts avec les Haoussa du sud et les groupes tchadiques voisins (Margi, Bura, Shuwa Arabes). L'etat de Borno est l'une des regions les plus diversifiees du Nigeria avec plus de 60 langues indigenes recensees.",
+      "conflictsOrAlliances": "Insertion dans le cadre politique de l'empire du Kanem-Bornu et de ses successeurs. Impact des guerres coloniales (resistance au jihad de Usman dan Fodio au 19e siecle, puis administration britannique). Depuis 2009, la region de Borno est l'epicentre du conflit Boko Haram / ISWAP, avec des consequences devastatrices pour toutes les populations de la region.",
+      "diaspora": "Migration interne vers Maiduguri (capitale de Borno), Damaturu et d'autres centres urbains du nord-est du Nigeria. Deplacements forces dans le contexte du conflit Boko Haram."
+    },
+    "demography": {
+      "totalPopulation": 15000,
+      "referenceYear": 2025,
+      "source": "Estimation tres approximative basee sur le statut de petit groupe linguistique de Borno State, Nigeria. Aucune donnee demographique specifique au groupe Mbogo n'est disponible dans les sources consultees (SIL Ethnologue, Joshua Project, Wikipedia). Le recensement nigerian ne distingue pas systematiquement les sous-groupes a l'interieur des grands groupes ethnolinguistiques.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 15000,
+          "note": "Borno State, nord-est du Nigeria"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Languages of Nigeria (Mobber/Borno State). https://en.wikipedia.org/wiki/Languages_of_Nigeria",
+      "Wikipedia EN — Kanuri people (sous-groupes). https://en.wikipedia.org/wiki/Kanuri_people",
+      "Wikipedia EN — Biu-Mandara languages. https://en.wikipedia.org/wiki/Biu%E2%80%93Mandara_languages",
+      "SIL Ethnologue — Chadic languages subgroup Nigeria. https://www.ethnologue.com/subgroup/555/",
+      "CIA World Factbook — Nigeria. https://www.cia.gov/the-world-factbook/countries/nigeria/",
+      "Wikipedia EN — Chadic languages. https://en.wikipedia.org/wiki/Chadic_languages"
+    ]
+  }
+}

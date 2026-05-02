@@ -1,0 +1,103 @@
+{
+  "id": "PPL_BWABA",
+  "nameMain": "Bwaba",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["BFA", "MLI"],
+  "content": {
+    "appellations": {
+      "mainName": "Bwaba",
+      "selfAppellation": "Bwa (singulier)",
+      "exonyms": [
+        "Bobo-Oule (terme jula signifiant Bobo Rouge, utilise pour distinguer les Bwa des Bobo proprement dits, appeles Bobo Noir)",
+        "Bobo-Wule (variante orthographique)",
+        "Eastern Bobo (terme utilise par les Europeens)",
+        "White Bobo (Bobo Gbe, autre exonyme europeen)",
+        "Bobo-Oulé (utilise dans les sources coloniales et certaines sources contemporaines)"
+      ],
+      "originOfExonyms": "Les explorateurs europeens du XIXe siecle ont confondu les Bwa avec leurs voisins les Bobo, les designant tous sous le nom de Bobo. Pour les differencies, ils ont ajoute Oule (rouge en jula) pour les Bwa et Noir pour les Bobo proprement dits. Le terme Bobo-Oule signifie donc Bobo Rouge en jula, par opposition aux Bobo Noirs. Les Bwa eux-memes rejettent cette assimilation aux Bobo, dont ils sont ethniquement distincts malgre des similarites culturelles et religieuses.",
+      "whyProblematic": "La confusion historique avec les Bobo (voisins partageant des pratiques religieuses mais ethniquement distincts) a conduit a des denominations imprecises. Bobo-Oule ou Eastern Bobo sont des exonymes qui brouillent l'identite propre des Bwa. Le terme Bwaba (pluriel de Bwa) est prefere mais le nom officiel varie selon les sources (Bwa, Bwaba, Buamu, Bwamu).",
+      "contemporaryUsage": "Bwaba (pluriel) ou Bwa (singulier) est le terme prefere par la communaute. La langue est designee Buamu ou Bwamu dans la litterature linguistique (ISO box). Dans les medias et l'administration du Burkina Faso, Bwaba est le terme courant. Les noms Bobo-Oule et Eastern Bobo persistent dans certaines sources de collectionneurs d'art africain.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Gur (Niger-Congo, groupe Bwamu, sous-famille distincte)",
+      "historicalRegion": "Centre du Burkina Faso et sud-est du Mali, entre le fleuve Bani (Mali) et le Mouhoun (Volta Noire, Burkina Faso)",
+      "currentCountries": ["BFA", "MLI"]
+    },
+    "ethnicities": [
+      "Bwa du Sud (Nieniegue — les Bwa scarifies, caracterises par la scarification du visage et du corps, aujourd'hui moins courante ; utilisant davantage les masques en bois)",
+      "Bwa du Nord (utilisant davantage les masques de feuilles que les masques en bois)",
+      "Bwa de Boni (reconnus pour leurs masques de feuilles ceremoniales representant la divinite Dwo/Two)",
+      "Bobo Gbe (Bobo Blancs, autre appellation europeenne pour certains Bwa)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bwa sont un peuple autochtone du centre du Burkina Faso et du sud-est du Mali, entre la riviere Bani (Mali) et le Mouhoun/Volta Noire (Burkina Faso). Leur langue (buamu) appartient au groupe Gur de la famille Niger-Congo. Historiquement, les Bwa ont vecu dans des communautes villageoises independantes sans gouvernement centralise. Leur culture est fortement animiste, avec des pratiques artistiques (masques) acquises en partie de leurs voisins les Nuna apres le XVIIIe siecle.",
+      "formationPeriod": "Les Bwa ont developpe une identite culturelle distincte autour de l'animisme, de l'agriculture du coton et de la peche dans les plaines entre le Bani et le Mouhoun. Au XVIIIe siecle, sous la domination de l'empire bambara de Segou, leurs systemes sociaux et politiques ont ete affaiblis. Apres le declin bambara au XIXe siecle, ils ont subi les raids fulani. Au debut du XXe siecle, ils ont achete le droit d'utiliser les masques, les costumes et les danses des Nuna voisins.",
+      "migrationRoutes": [
+        "Populations autochtones du centre du Burkina Faso et du sud-est du Mali — pas de migration fondatrice externe documentee",
+        "Dispersion regionale entre le Bani (Mali) et le Mouhoun (Burkina Faso)"
+      ],
+      "historicalSettlementZones": [
+        "Burkina Faso central : villes principales de Houndé, Boni, Bagassi, Dossi, Pa",
+        "Sud-est du Mali : entre la riviere Bani et les provinces limitrophes",
+        "Plaines et plateaux entre le Bani et le Mouhoun (Volta Noire)"
+      ],
+      "unificationsOrDivisions": "Les Bwa vivent en communautes villageoises autonomes qui ne reconnaissent aucune autorite politique centrale. Toutes les decisions sont prises par un conseil des anciens males des lignages locaux. Cette independance politique leur a permis de reagir rapidement aux crises locales mais les a empeches de former de solides alliances face aux envahisseurs exterieurs.",
+      "externalInfluences": "XVIIIe siecle : occupation de leurs terres par l'empire bambara de Segou (taxations, raids). XIXe siecle : domination et raids de l'empire fulani (esclavage, pillage du betail, destruction des villages, enrolement force). Fin du XIXe siecle : arrivee des Francais qui utilisent les Fulani comme mercenaires pour controler la region. 1911-1913 : famine causee par la taxation coloniale qui sapait les traditions de stockage alimentaire. 1897 : arrivee des Francais dans la region. Contact avec les Nuna : achat des droits d'utiliser leurs masques, costumes, chants et danses.",
+      "majorHistoricalEvents": "XVIIIe siecle : occupation par l'empire bambara de Segou, affaiblissement social et politique. XIXe siecle : domination fulani, raids et esclavage. 1897 : arrivee des colonisateurs francais utilisant les Fulani comme mercenaires. 1911-1913 : grande famine liee aux politiques coloniales. 1915 : revolte des Bwa contre la demande francaise de recrues militaires, declenchant la Guerre du Volta-Bani (environ un an ; beaucoup de villages bwa detruits). Apres 1915 : les Bwa se tournent vers les Nuna et acquierent le droit d'utiliser leurs masques en bois, costumes et musiques. 1960 : independance du Burkina Faso (alors Haute-Volta)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Absence de gouvernement central ou de chefferie supravillageoise. Chaque village est une entite politique autonome. Toutes les decisions importantes sont prises par un conseil des anciens males (representants des lignages locaux). Cette organisation decentralisee a rendu les Bwa resilients aux crises locales mais vulnerables aux invasions exterieures. Trois castes professionnelles structurent la societe : les agriculteurs, les musiciens et les forgerons.",
+      "clanOrganization": "Organisation en lignages patrilineaires. Les structures sociales sont fondees sur la famille etendue et le lignage. La societe comporte trois castes fonctionnelles permanentes : agriculteurs (principale activite economique), musiciens (role ceremoniel central) et forgerons (producteurs de masques en bronze, outils et bijoux).",
+      "ageClassSystems": "Les jeunes hommes et femmes suivent un processus d'initiation les faisant passer de l'enfance a l'age adulte. Les inities sont regroupes en classes d'age. Les ceremonies d'initiation impliquent des danses avec des masques, sceptres et parures corporelles representant des esprits. L'initiation n'est pas exclusive aux hommes : les femmes y participent egalement a egalite.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique, les droits fonciers et l'acces aux ressources. Le Labie (ancienne male du village) est le pretre de la terre et le chef du culte de Dwo. Il incarne l'autorite spirituelle et sociale du village.",
+      "religiousAuthority": "Le Labie (pretre de la terre, ancien male le plus age du village) dirige le culte de Do (ou Dwo). Il est au centre de toutes les ceremonies liant la vie du village aux esprits de la nature et aux forces cosmo-spirituelles."
+    },
+    "languages": {
+      "mainLanguage": "Bwamu (Buamu)",
+      "isoCodes": ["box"],
+      "dialects": [
+        "Bwamu Kade (dialecte principal au Burkina Faso, Bobo-Dioulasso et environs)",
+        "Twi Bwamu (variante dialectale)",
+        "Varietes du nord (associees aux Bwa du nord utilisant les masques de feuilles)"
+      ],
+      "vehicularRole": "Le buamu (ISO box) est une langue gur (Niger-Congo) parlee au Burkina Faso et au Mali. Selon Glottolog, il est classe en statut 5 (Developing). Les Bwa parlent couramment le jula (dioula) pour les echanges commerciaux et les relations avec les etrangers. Le francais est la langue officielle du Burkina Faso et du Mali, utilisee dans l'administration et l'enseignement."
+    },
+    "culture": {
+      "majorRites": "Initiation : les jeunes hommes et femmes traversent une ceremonie de passage a l'age adulte comportant des danses de masques, des sceptres et des parures corporelles representant des esprits. Les inities sont regroupes en classes d'age. Les ceremonies ont lieu en saison seche (fevrier a mai). Funerailles des anciens : occasions majeures pour les representations de masques. Les funerailles des anciens de haut rang impliquent l'ensemble de la communaute villageoise. Ceremonies de divination et de fertilite avec sculptures et sculptures rituelles. Ceremonies agricoles et de recolte : le masque solaire (Sun Mask) apparait lors des festivals agricoles et de recolte, honorant le Soleil et sa capacite a donner une bonne recolte.",
+      "symbols": "Masques (en bois et en feuilles) : symboles centraux de l'identite culturelle bwa, representant des esprits protecteurs de la nature — esprits de la brousse, papillons, buffles, faucons, serpents, singes. Les motifs en damier (clair-sombre) des masques symbolisent la dualite innocence-connaissance. Le masque planche (nwantantay) — grand, vertical, en bois — est le plus emblematique des Bwa du sud. Scarification du visage et du corps (nieniegue — les Bwa scarifies) chez les Bwa du sud, pratique de moins en moins courante. Wuro : divinite creatrice supreme.",
+      "artsAndMusic": "Masques en bois (Bwa du sud) : sculptes par les forgerons, polychromes (noir, blanc, rouge), representant des animaux (papillon : cercles concentriques ; faucon : surface blanche unie). Masques de feuilles et de lianes (Bwa du nord) : representant Dwo et les esprits de la brousse. Bronzeworks : forgerons produisant masques, figurines, ustensiles et bijoux representant des animaux (hyene, buffle, cameleon double, calao). Sculptures de divination (rares figures sculptees). Flutes en bois : jouees en ensembles de 5 a 9 instruments, aux motifs entrelacsés et courts reproduisant le discours des langues tonales, racontant des histoires, accompagnees de danses. Tambours. Les motifs geometriques hautement abstraits des masques bwa et bobo ont joue un role inspirateur dans le developpement des mouvements artistiques occidentaux du debut du XXe siecle (cubisme, expressionnisme abstrait).",
+      "spiritualities": "Animisme (croyance principale) : les oeuvres d'art sont principalement destinees aux pratiques animistes d'origine nuna. Divinite creatrice : Wuro (a concu la terre dans un equilibre parfait ; blesse par les humains ; a envoye son fils Dwo comme lien de communication). Fils de Wuro : Dwo (dieu de la renaissance, associe aux masques en bois — esprit Lanle — et aux masques de feuilles) ; Soxo (dieu de la brousse) ; Kwere (dieu de la foudre). Culte de Do (ou Dwo) : groupe religieux central dirige par le Labie (pretre de la terre, l'ancien male le plus age). Do/Dwo est principalement associe a la renaissance et a toutes les ceremonies representant le renouveau de la vie. Il est relie directement a la brousse vivifiante qui fournit aux Bwa gibier et plantes medicinales. Islam et christianisme ont ete adoptes en partie sous l'influence des invasions et contacts exterieurs, mais l'animisme reste la pratique dominante."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Bwa n'ont pas constitue de royaumes centralises. Leur organisation en villages autonomes est un trait fondateur de leur identite. Cette structure decentralisee leur a permis une grande resilience culturelle malgre des siecles de pression exterieure (Bambara, Fulani, Francais).",
+      "relationsWithNeighbors": "Relations avec les Nuna : apres la Guerre du Volta-Bani (1915), les Bwa, admirant la prosperite continue des Nuna, ont rachete le droit d'utiliser leurs masques en bois, costumes, chants et danses. Relations avec les Bobo : partage de pratiques religieuses et culturelles mais ethnicite distincte. Confusion historique entre les deux groupes par les explorateurs europeens. Relations avec l'empire bambara de Segou : domination et taxation au XVIIIe siecle. Relations avec les Fulani : raids et esclavage au XIXe siecle. Voisins : Bobo, Bamana/Bambara, Gurunsi, Lobi.",
+      "conflictsOrAlliances": "XVIIIe siecle : soumission partielle a l'empire bambara de Segou (paiement de taxes, villages non conquis raides). XIXe siecle : raids fulani (destruction de cultures et villages, esclavage, enrolement force). 1897 : arrivee des Francais utilisant les Fulani comme mercenaires. 1915 : Guerre du Volta-Bani — revolte des Bwa contre les demandes de recrues militaires francaises ; la guerre dura environ un an et se termina par la destruction de nombreux villages bwa.",
+      "diaspora": "Les Bwa sont essentiellement sedentaires dans leur zone d'origine. Migration vers les villes du Burkina Faso (Bobo-Dioulasso, Ouagadougou) et du Mali (Bamako). Presence dans la diaspora burkinabe en Europe (France principalement) et dans d'autres pays d'Afrique de l'Ouest."
+    },
+    "demography": {
+      "totalPopulation": 320000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN (Bwa people) : environ 300 000 personnes. Bashiri.com / Gateway Africa : 300 000. Estimation 2025 tenant compte de la croissance demographique : environ 320 000 personnes. Sources : Wikipedia EN, 101lasttribes.com, Bashiri.com, Glottolog [box], SIL Ethnologue [buamu].",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 290000,
+          "note": "Centre du Burkina Faso : Houndé, Boni, Bagassi, Dossi, Pa et regions environnantes"
+        },
+        {
+          "country": "MLI",
+          "population": 30000,
+          "note": "Sud-est du Mali, entre le fleuve Bani et la frontiere burkinabe"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bwa people. https://en.wikipedia.org/wiki/Bwa_people",
+      "101 Last Tribes — Bwa people. http://www.101lasttribes.com/tribes/bwa.html",
+      "Bashiri.com — Bwa people of Burkina Faso. https://bashiri.com.au/bwa-people-of-burkina-faso/",
+      "Gateway Africa Safaris — Bwa Tribe. https://www.gateway-africa.com/tribe/bwa_tribe.html",
+      "Glottolog — Buamu [box]. https://glottolog.org/resource/languoid/id/buam1238",
+      "ALMA — The Language of African Music: Bwamu. https://alma.matrix.msu.edu/the-language-of-african-music-bwamu",
+      "Wikipedia EN — Bwa people (art). https://en.wikipedia.org/wiki/Bwa_people"
+    ]
+  }
+}

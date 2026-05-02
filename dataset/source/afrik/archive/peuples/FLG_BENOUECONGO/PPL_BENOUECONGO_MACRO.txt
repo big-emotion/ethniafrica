@@ -1,0 +1,49 @@
+# Nom du peuple
+- Nom principal : Macro-peuple Bénoué-Congo
+- Auto-appellation : Diverses selon les sous-groupes
+- Appellations historiques :
+  - « Kwa » (ancienne classification linguistique, dépassée)
+  - « Niger-Kordofanien » (macro-théorie périmée)
+- Pourquoi ces termes posent problème :
+  - regroupements trop larges ou non scientifiquement cohérents
+  - héritages de classifications coloniales
+- Famille linguistique : Niger-Congo – Bénoué-Congo (FLG_BENOUECONGO)
+- Région : NGA, BEN, TGO, GHA, CMR
+- Identifiant peuple : PPL_BENOUECONGO_MACRO
+
+# 1. Ethnies incluses
+- Yoruba, Igbo, Ewe, Fon, Edos, Tiv, Nupe, Idoma, Ijaw, Ibibio, Annang, Efik…
+- Et l’ensemble des 48 peuples Bénoué-Congo répertoriés par AFRIK.
+
+# 2. Origines
+- Grand ensemble linguistique et culturel issu de la vallée Niger.
+- Diversification ancienne (plusieurs millénaires).
+
+# 3. Organisation
+- Pas de structure politique unique.
+- États historiques variés : Oyo, Dahomey, BEN, Idah, Kwararafa…
+
+# 4. Langues
+- Yoruba, Igbo, Fon, Ewe
+- Edoïdes
+- Ijoïdes
+- Cross-River
+- Tiv, Nupe, Idoma, Jukun…
+
+# 5. Culture
+- Fortes traditions urbaines (Ife, Benin City)
+- États centralisés ou lignagers
+- Arts royaux (bronzes, masques)
+- Traditions vodun, Ifá, rituels fluviaux
+
+# 6. Histoire
+- Côte du Golfe de Guinée = une des régions les plus denses en États historiques d’Afrique.
+- Influence majeure dans la diaspora afro-atlantique.
+
+# 7. Démographie
+- Population totale : 0 (macro-groupe non compté)
+- Année : 2025
+
+# 8. Sources
+- Synthèse AFRIK 2025
+- UNESCO / Ethnologue / archives historiques du NGA, BEN, TGO, GHA

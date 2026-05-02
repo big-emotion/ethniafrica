@@ -1,0 +1,97 @@
+{
+  "id": "PPL_LANGO",
+  "nameMain": "Lango",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["UGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Lango",
+      "selfAppellation": "Lango (Langi au pluriel)",
+      "exonyms": ["Langi", "Lang'o", "Lang'i"],
+      "originOfExonyms": "Le terme Lango est a la fois l'endonyme et l'exonyme dominant. La forme Lang'o (ou Lang'i) est utilisee dans les sources anthropologiques et coloniales britanniques. Le terme Langi designe les membres du peuple au pluriel en langue lango (laj). Le nom Lango apparait egalement dans les vocabulaires teso, kumam, karamojong, jie et labwor, refletant leur appartenance historique commune au groupe Lango elargi.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Lango et Langi sont tous deux couramment utilises en Ouganda. La region nord-centrale de l'Ouganda est officiellement appelee Region Lango. Depuis novembre 2024, le gouvernement ougandais a officialise la reintegration des Lango dans le groupe Ateker lors d'une ceremonie historique a Mbale.",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique (groupe Ateker/Nilo-Hamitique, avec forte influence Luo dans la langue actuelle)",
+      "historicalRegion": "Region Lango (centre-nord de l'Ouganda), anciennement Lango District, comprenant les plaines entre le lac Kwania, le lac Kyoga et la riviere Nile",
+      "currentCountries": ["UGA"]
+    },
+    "ethnicities": [
+      "Lango d'Apac (district historique, centre-ouest de la region Lango)",
+      "Lango de Lira (capitale regionale, centre de la region)",
+      "Lango d'Oyam (district nord-ouest)",
+      "Lango d'Alebtong (district nord)",
+      "Lango d'Amolatar (district sud, lac Kyoga)",
+      "Lango de Kole (district centre)",
+      "Lango d'Otuke (district est)",
+      "Lango de Kwania (district sud)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Lango sont a l'origine des Nilotiques des plaines (Plains Nilotes) du groupe Ateker, apparentes aux Iteso, Karamojong, Turkana (Kenya) et Toposa (Soudan). Leur tradition orale affirme qu'ils faisaient partie de la grande race Lango lors de la periode de migration, avant de se separer en plusieurs groupes distincts entrant en Ouganda. L'historiographie contemporaine (soutenue par le rapprochement officiel de 2024 avec les peuples Ateker) etablit qu'ils ne sont pas ethniquement Luo mais Ateker, leur langue actuelle etant un melange luo adopte par contact prolonge avec les peuples Luo voisins.",
+      "formationPeriod": "L'identite lango distincte s'est consolidee entre le 18e et le 19e siecle lors de leur etablissement dans les plaines du centre-nord de l'Ouganda. L'adoption du parler luo (LebLango, mutellement intelligible avec le dholuo de Kisumu selon Driberg 1923) s'est produite progressivement par contact et intermariage avec les Acholi et autres groupes Luo voisins. La colonisation britannique (a partir de 1910) a fixe les structures administratives.",
+      "migrationRoutes": [
+        "Origine dans le groupe Ateker de l'Ethiopie et du nord-est de l'Afrique orientale",
+        "Migration vers l'Ouganda par le nord, a travers les regions Karamoja et Acholi",
+        "Installation dans les plaines entre le lac Kwania et le lac Kyoga (centre-nord Ouganda)"
+      ],
+      "historicalSettlementZones": [
+        "Plaines du Lango (entre le lac Kwania, le lac Kyoga et la Victoria Nile)",
+        "Districts actuels de Lira, Apac, Oyam, Alebtong, Kole, Otuke, Amolatar et Kwania",
+        "Bordures avec les regions Acholi (nord) et Teso (est)"
+      ],
+      "unificationsOrDivisions": "Les Lango etaient une societe sans Etat centralise, gouvernee par des leaders locaux (jon jago) et des leaders de haut niveau (rwot), qui etaient avant tout des chefs de guerre ad hoc plutot que des chefs permanents. Plus de 148 clans sont enregistres aupres de la Lango Cultural Foundation. La colonisation britannique (1910) a cree une structure administrative formelle avec des chefs locaux sous des comtes-chefs. L'insurrection LRA (1986-2006) a massivement deplace les populations.",
+      "externalInfluences": "Adoption progressive du parler Luo (Lwoo) par contact avec les Acholi et autres peuples Luo voisins (influences linguistiques majeures). Contacts avec les royaumes bantoues de Bunyoro (relations conflictuelles et alliances). Colonisation britannique a partir de 1910. Diffusion du christianisme (Eglise anglicane, missions catholiques). Insurrection LRA (1986-2006) : devastation de la region Lango, deplacements, reconstruction post-conflit. Reintegration officielle dans le groupe Ateker en 2024.",
+      "majorHistoricalEvents": "Rwot Ogwangguji (ne en 1875 a Lira), figure majeure de la transition entre l'ancien et le nouveau Lango, elu chef de comte (Rwot) d'Erute en 1918. Dirigeants militaires historiques : Ongora Okubal, Opyen, Arim Oroba, Agoro Abwango (qui aida le roi Kabalega de Bunyoro). Mise en place de l'administration coloniale britannique a partir de 1910. Insurrection LRA (1986-2006) : l'une des crises humanitaires les plus graves d'Afrique de l'Est, avec plus d'un million de deplaces dans la region Lango. Ceremonie de reunification Ateker a Mbale (novembre 2024)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe sans Etat centralise (stateless society). L'unite de base est le jo doggola (les gens de la porte), un lignage patrilineaire de six generations. Les jonco doggola forment des clans (sibs) repandus dans tout le territoire Lango. Le leader local jon jago administre une aire d'environ 80 km2 ; le rwot exerce son influence sur une zone d'environ 260 km2. Ces leaders etaient avant tout des chefs de guerre ad hoc dont l'autorite cessait apres le conflit. Les decisions collectives etaient prises par des conseils d'anciens (wang tic) regroupant des representants des clans dominants du voisinage.",
+      "clanOrganization": "Plus de 148 clans officiellement enregistres aupres de la Lango Cultural Foundation. Les clans (sibs) sont patrilineaires et disperses sur tout le territoire. Chaque clan est compose de jo doggola (lignages de six generations). Les membres d'un meme jo doggola participent conjointement aux funerailles, mariages et rituels importants. La fission des lignages intervient quand ils deviennent trop grands ou disperses.",
+      "ageClassSystems": "Les classes d'age existaient dans la societe lango traditionnelle mais ont disparu au milieu du 20e siecle. Des alliances rituelles entre anciens de cinq ou six clans patricians, liees a des alliances militaires, ont egalement disparu apres la colonisation.",
+      "roleOfLineages": "Le patrilineage (jo doggola) est l'unite corporative fondamentale : les membres contribuent collectivement au versement du prix du sang (compensation) en cas de meurtre commis par l'un des leurs. L'heritage patrilineal dominant attribue les biens au fils aine. La terre est usufructuaire : un jeune homme demande aux hommes du voisinage le droit d'utiliser une parcelle. La polygynie est valorisee mais pratiquee par seulement environ 20% des hommes maries dans les annees 1960.",
+      "religiousAuthority": "Autorite des anciens et des specialistes spirituels pour les rites de possession (esprits jok). Des rituels de possession d'esprits ont penetre dans la partie occidentale du Lango depuis le royaume voisin de Bunyoro a partir des annees 1920, prenant une importance particuliere aupres des femmes. Syncrétisme avec le christianisme (anglicane, catholique) tres repandu depuis l'epoque coloniale."
+    },
+    "languages": {
+      "mainLanguage": "Lango (LebLango)",
+      "isoCodes": ["laj"],
+      "dialects": [
+        "LebLango central (dialecte de Lira et Apac)",
+        "LebLango d'Oyam (influence acholi au nord)",
+        "LebLango d'Amolatar (influence kumam au sud)"
+      ],
+      "vehicularRole": "Le lango (code ISO 639-3 : laj) est parle par environ 2,1 a 2,9 millions de personnes selon les estimations. C'est une langue stable, instituee dans le systeme educatif ougandais comme langue d'enseignement. Mutellement intelligible avec le dholuo de Kisumu (Kenya) selon Driberg (1923). L'anglais est la langue officielle de l'Ouganda et est largement utilise dans l'administration et l'education. Le swahili est utilise comme vehiculaire regional."
+    },
+    "culture": {
+      "majorRites": "Rites de passage : le mariage est le principal rite de passage, impliquant un prix de la mariee (bride-wealth) en betail, source principale de conflits intrafamiliaux. Les ceremonies funeraires incluent des rituels de possession d'esprits (jok), particulierement pratiques par les femmes depuis les annees 1920. Ceremonies agricoles liees au millet et au sorgho, deux cultures centrales dans les conceptions religieuses et symboliques lango. Ceremonies de reconciliation et de resolution des conflits par les anciens claniques. Le meurtre commis par un membre du clan engage la responsabilite collective du jo doggola pour le versement du prix du sang.",
+      "symbols": "Le millet et le sorgho sont les cultures symboliques fondamentales, integrees dans les conceptions religieuses lango depuis les temps les plus anciens. Le betail (bovins) constitue la principale mesure de richesse, de statut et de compensation. La coiffure elaborate decrite par les observateurs europeens du debut du 20e siecle (sorte de casque fantastique) etait un symbole culturel distinctive des hommes lango.",
+      "artsAndMusic": "Musique traditionnelle vocale et instrumentale lors des ceremonies, funerailles et mariages. Danse collective lors des rites de possession d'esprits (jok), particulierement feminine. Poesie orale preservant l'histoire clanique et les exploits militaires. Artisanat feminin : poterie, tissage de paniers. Artisanat masculin : travail du bois, fabrication d'instruments agricoles et de chasse.",
+      "spiritualities": "Croyance en des esprits jok (esprits pouvant causer maladies et malheurs, necessitant propitiation) integres dans la vie quotidienne. Rituels de possession d'esprits (pratiques importees du Bunyoro voisin a partir des annees 1920) avec femmes comme principales protagonistes. Mauvaise mort et sorcellerie attribuees aux forces spirituelles. Syncrétisme marque avec le christianisme (Eglise anglicane d'Ouganda, missions catholiques) generalise depuis la colonisation. La catastrophe de l'insurrection LRA a accelere la recherche de bases spirituelles nouvelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Lango n'ont pas developpe de royaume centralise. Leur systeme politique etait decentralise, reposant sur des leaders ad hoc (jon jago, rwot) dont l'autorite etait principalement militaire et temporaire. Ils ont resiste au royaume de Bunyoro tout en entretenant des alliances avec lui (le guerrier Agoro Abwango aida le roi Kabalega de Bunyoro). La Lango Cultural Foundation (institution contemporaine) est chargee d'organiser et representer les 148 clans lango.",
+      "relationsWithNeighbors": "Relations complexes avec les Acholi (nord) : parentele Ateker, influence linguistique reciproque. Relations conflictuelles et alliances avec le royaume de Bunyoro (ouest). Cohabitation et tensions avec les Kumam (voisins sud-est, groupe Ateker apparente). Confrontations avec les Teso (est) pour les terres et le betail. Integration dans les reseaux commerciaux des villes coloniales comme Lira (hopital, ginneries de coton, ecoles, banques).",
+      "conflictsOrAlliances": "Raids interethniques pre-coloniaux pour le betail et les terres. Alliance ponctuelle avec le roi Kabalega de Bunyoro contre les Britanniques. Resistance a la penetration coloniale britannique (a partir de 1900). L'insurrection LRA (Lord's Resistance Army, 1986-2006) a ete l'un des conflits les plus destructeurs de l'histoire lango moderne, deplacant plus d'un million de personnes. La region Lango a connu une reconstruction progressive apres 2006.",
+      "diaspora": "Diaspora lango dans les grandes villes ougandaises (Kampala, Jinja, Mbale). Emigration economique moderee vers d'autres pays d'Afrique de l'Est et vers l'Europe. La reconstruction post-LRA a mobilise une partie de la diaspora dans le financement du developpement local."
+    },
+    "demography": {
+      "totalPopulation": 2900000,
+      "referenceYear": 2025,
+      "source": "Recensements ougandais et Lango Cultural Foundation. La population du district Lango est estimee a environ 2 884 000 (Wikipedia/Lango people). SIL Ethnologue : entre 1 million et 1 milliard (categorie large). Estimation 2025 : 2,9 millions en tenant compte de la croissance demographique post-LRA.",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 2900000,
+          "note": "Region Lango : districts d'Amolatar, Alebtong, Apac, Dokolo, Kole, Lira, Oyam, Otuke, Kwania. Capitale regionale : Lira."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Lango people. https://en.wikipedia.org/wiki/Lango_people",
+      "Wikipedia EN — Lango language (Uganda). https://en.wikipedia.org/wiki/Lango_language_(Uganda)",
+      "SIL Ethnologue — Lango language (laj). https://www.ethnologue.com/language/laj/",
+      "101 Last Tribes — Lango people. https://www.101lasttribes.com/tribes/lango.html",
+      "Lango Cultural Foundation — Clans et vie sociale. https://langoculturalfoundation.org/service-details-right.html",
+      "Driberg, J.H. The Lango: A Nilotic Tribe of Uganda. London, 1923.",
+      "Academia.edu — The Socio-Political History of the Langi of Uganda 1750-1909. https://www.academia.edu/11684657/"
+    ]
+  }
+}

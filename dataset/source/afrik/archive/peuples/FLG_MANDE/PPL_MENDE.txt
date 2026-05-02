@@ -1,0 +1,38 @@
+# Nom du peuple
+- Nom principal : Mende
+- Auto-appellation : Mende
+- Famille linguistique : Niger-Congo – Mandé (FLG_MANDE)
+- Région historique : Sierra Leone (Sud-Est)
+- Identifiant : PPL_MENDE
+
+# 1. Ethnies incluses
+- Mende du Sud
+- Mende du Nord
+
+# 2. Origines
+- Groupe mandé ancien lié aux peuplements forestiers guinéens.
+
+# 3. Organisation
+- Systèmes lignagers étendus.
+- Sociétés initiatiques importantes : Poro (hommes), Sande/Bundu (femmes).
+
+# 4. Langue
+- Mende
+- ISO : men
+
+# 5. Culture
+- Masques *Sowei* (Sande).
+- Musiques polyrythmiques.
+- Artisanat de la forêt.
+
+# 6. Histoire
+- Haute influence culturelle en Sierra Leone.
+- Rôle politique essentiel depuis l’indépendance.
+
+# 7. Démographie
+- Population : 1 800 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (men)
+- Sierra Leone National Archives

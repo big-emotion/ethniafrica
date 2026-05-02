@@ -1,0 +1,135 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_SEMITIQUE
+- Lien avec la famille linguistique : Afro-asiatique (FLG_AFROASIATIQUE)
+- Nom français : Sémitique
+- Nom anglais / auto-appellation académique : Semitic
+- Appellation(s) historique(s) : Chamito-sémitique ; Sémito-chamitique ; Chamito-sémitique
+- Origine du terme historique :
+  Le terme « sémitique » (allemand *Semitisch*, anglais *Semitic*) a été créé en **1781** par **August Ludwig von Schlözer** (1735-1809) dans son article *"Von den Chaldäern"* publié dans le *Repertorium für biblische und morgenländische Literatur* de Johann Gottfried Eichhorn. Schlözer proposa ce terme pour désigner les langues apparentées à l'hébreu, l'arabe et l'araméen, en référence biblique au personnage de Sem (hébreu *Šēm*), fils de Noé dans la Genèse. Le terme fut popularisé par **Johann Gottfried Eichhorn** (1752-1827) dans son article *"Semitische Sprachen"* en **1795** et dans son ouvrage *Einleitung ins Alte Testament* (1787). Les linguistes du XIXe siècle, notamment **Friedrich Müller** (1876) dans *Grundriss der Sprachwissenschaft*, ont ensuite construit la catégorie « chamito-sémitique » (ou « chamito-sémitique ») en y ajoutant d'autres peuples africains selon une logique biblique non scientifique, opposant les « Sémites » aux « Chamites » (descendants de Cham, autre fils de Noé).
+- Pourquoi le terme pose problème (si applicable) :
+  Le terme « chamito-sémitique » est profondément racialiste et colonial : il classe des peuples selon des généalogies bibliques et une hiérarchie raciale imaginaire. La notion de « Chamites », opposée à « Sémites », a été utilisée par des auteurs coloniaux (notamment Ernest Renan, Friedrich Müller) pour attribuer certains progrès techniques ou civilisations africaines à des étrangers « non-nègres », créant une dichotomie artificielle entre peuples « civilisés » (Sémites) et « primitifs » (Chamites). Cette classification a servi les discours coloniaux français, britanniques et allemands pour hiérarchiser les peuples africains. Des auteurs africains ont critiqué cette vision : **Cheikh Anta Diop** (1923-1986) dans *Nations nègres et culture* (1954) et *Antériorité des civilisations nègres* (1967) a dénoncé la division Chamites/Sémites comme eurocentrée, affirmant l'origine africaine des langues afro-asiatiques. Le linguiste éthiopien **Wolf Leslau** (1906-2006) a documenté les langues éthiosémitiques comme pleinement inscrites dans le monde africain. Les études génétiques modernes (Kitchen et al. 2009, Pagani et al. 2015) montrent que les populations parlant des langues sémitiques en Afrique présentent des patrimoines génétiques majoritairement africains avec des apports ouest-eurasiens anciens, invalidant toute lecture raciale essentialiste. Aujourd'hui, seule l'appellation **« sémitique »** (linguistique) est conservée, classée comme branche de la famille afro-asiatique (terme préféré à « chamito-sémitique »).
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Il n'existe pas d'auto-appellation unique pan-sémitique utilisée par tous les locuteurs. Chaque langue sémitique possède son propre endonyme : en arabe *العربية* (*al-ʿarabiyya*), en hébreu *עברית* (*ʿIvrit*), en amharique *አማርኛ* (*Amarəñña*), en tigrinya *ትግርኛ* (*Tigriñña*), en guèze *ግዕዝ* (*Gəʿəz*). Ces termes sont attestés historiquement : *al-ʿarabiyya* dans les textes islamiques dès le VIIe siècle, *ʿIvrit* dans la Bible hébraïque, *Gəʿəz* dans les inscriptions aksoumites dès le IVe-Ve siècle. Les peuples éthiopiens et érythréens utilisent parfois *ሐበሻ* (*Habesha*) pour se désigner collectivement, terme attesté dans les textes arabes médiévaux. Les linguistes contemporains utilisent « Semitic languages » (anglais) ou « Langues sémitiques » (français) comme exonyme académique.
+- Usage contemporain (définition moderne de la famille) :
+  La branche sémitique est l'une des plus importantes de la famille afro-asiatique. Elle comprend l'arabe (parlé par plus de 400 millions de locuteurs), l'amharique (langue officielle d'Éthiopie), le tigrinya (langue officielle d'Érythrée), l'hébreu (langue officielle d'Israël), et de nombreuses langues d'Éthiopie et d'Érythrée (guèze, guragé, harari, etc.). Les langues sémitiques sont caractérisées par une morphologie non-concaténative basée sur des racines consonantiques (souvent trilitères) combinées à des schèmes vocaliques.
+- Aire / répartition géographique générale :
+  Afrique du Nord-Est, Corne de l'Afrique, Moyen-Orient, péninsule Arabique.
+- Nombre de langues (estimation) : 40–80 selon classifications
+- Nombre total de locuteurs (estimation) : >460 millions (dont ~411 millions pour l'arabe seul)
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Sémitique
+- Branches internes / sous-groupes :
+  - Sémitique oriental (akkadien — éteint, parlé en Mésopotamie jusqu'au Ier siècle av. J.-C.)
+  - Sémitique occidental :
+    - Nord-ouest sémitique (araméen, hébreu, phénicien, ougaritique)
+    - Arabe (variante majeure contemporaine, avec de nombreux dialectes)
+  - Sémitique méridional :
+    - Sud-arabique ancien (sabéen, minéen — éteints)
+    - Sud-arabique moderne (mehri, soqotri, etc.)
+    - Éthiosémitique (amharique, tigrinya, tigré, guragé, harari, guèze)
+- Aire géographique :
+  Afrique du Nord-Est (Égypte, Soudan, Maghreb), Corne de l'Afrique (Éthiopie, Érythrée, Djibouti, Somalie), péninsule Arabique (Arabie Saoudite, Yémen, Oman), Levant (Syrie, Liban, Palestine/Israël, Jordanie), Mésopotamie (Irak).
+- Nombre de langues :
+  40 à 80 selon classifications (certaines variétés dialectales peuvent être considérées comme langues distinctes)
+- Nombre total de locuteurs :
+  >460 millions (estimation 2025), dont ~411 millions de locuteurs natifs de l'arabe, ~35 millions pour l'amharique, ~7-8 millions pour le tigrinya, ~7-8 millions pour l'hébreu moderne
+
+# 2. Peuples associés
+- Peuple 1 : Arabes (PPL_ARABES_AFRIQUE)
+- Peuple 2 : Amhara (PPL_AMHARA)
+- Peuple 3 : Tigréens / Tigrinya (PPL_TIGRE)
+- Peuple 4 : Habesha (terme collectif pour peuples éthiopiens et érythréens de langues sémitiques) (PPL_HABESHA)
+
+# 3. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues flexionnelles basées sur des racines consonantiques (généralement trilittères) combinées à des schèmes vocaliques. Systèmes verbaux riches ; conjugaisons non concaténatives (root-and-pattern morphology). Exemples concrets : racine *k-t-b* « écrire » → en arabe *kataba* « il écrivit » (parfait), *yaktubu* « il écrit » (imparfait), *kitāb* « livre » (nom), *kātib* « écrivain » (nom d'agent), *maktab* « bureau » (nom de lieu) ; en hébreu *katav* « il écrivit », *yikhtov* « il écrira », *mikhtav* « lettre », *kotev* « écrivain ». Structures grammaticales : accord en genre (masculin/féminin), nombre (singulier, duel dans certaines langues anciennes, pluriel), cas dans les langues classiques (nominatif, accusatif, génitif en arabe classique et akkadien). Ordre des mots : V-S-O dans les langues classiques (arabe classique *kataba Zayd-un kitāban* « Écrivit Zayd un livre »), S-V-O dans les langues modernes. Dérivation verbale : formes de base (G-stem), formes dérivées avec préfixes/infixes/redoublement (causatif *ʾafʿala*, intensif *faʿʿala*, passif *ʾufʿila*, réflexif *istafʿala* en arabe). Pluriels « brisés » (broken plurals) : arabe *kalb* « chien » → *kilāb* « chiens », *kitāb* « livre » → *kutub* « livres ».
+- Particularités phonologiques :
+  Consonnes emphatiques (pharyngalisées ou glottalisées) : en arabe /ṭ/ /ṣ/ /ḍ/ /ẓ/, exemples *ṭālib* « étudiant » vs *talib* « chercheur », *ṣādiq* « véridique ». Sons gutturaux/pharyngaux : /ʕ/ (*ʿayn*), /ħ/ (*ḥāʾ*), /ʔ/ (*hamza*), exemples arabe *ʿarab* « arabe », hébreu *ʿam* « peuple », arabe *ḥalīm* « doux ». Voyelles : système à trois voyelles de base (*a, i, u*) avec variantes longues (*ā, ī, ū*) et brèves, distinction longueur vocalique distinctive. Ablaut (changement vocalique interne) pour exprimer temps, aspect, voix. Tonalité : les langues sémitiques classiques ne sont généralement pas tonales, mais certaines langues éthiosémitiques modernes (notamment certaines variétés guragé) peuvent présenter des traits tonaux ou des registres de hauteur. Accent tonique (stress) ou accent syllabique dans la plupart des langues.
+- Liens avec les familles voisines :
+  Contacts historiques importants avec le couchitique et l'omotique (familles afro-asiatiques cousines) : emprunts réciproques, notamment en Éthiopie et Érythrée. Exemples d'emprunts : amharique *kitab* « livre » ← arabe *kitāb* ; somali (couchitique) *qasr* « palais », *kitab* « livre » ← arabe ; swahili (bantou) *kitabu* « livre », *safari* « voyage » ← arabe *kitāb*, *safar*. Influence des langues indo-européennes : emprunts du persan, grec, latin vers l'arabe (ex. *basiliskos* → *biser*), emprunts modernes de l'anglais, français vers l'arabe et l'hébreu modernes (*telefon*, *kompyuter*). Interaction avec les langues berbères en Afrique du Nord : emprunts mutuels, influence phonologique.
+- Innovations clés :
+  - Racines trilitères (système dominant) avec développement de racines quadrilitères et quinquilitères dans certaines langues (ex. arabe *ʕankabūt* « araignée » = quinquilitère)
+  - Morphologie interne (root-and-pattern) : système non-concaténatif unique parmi les familles linguistiques
+  - Distinction perfectif / imperfectif ancienne (aspects verbaux)
+  - Développement d'alphabets abjads (écriture consonantique) puis alphabétiques (guèze)
+  - Simplification morphologique dans les langues modernes : perte des cas grammaticaux dans la plupart des dialectes arabes et en hébreu moderne
+  - Formes périphrastiques pour temps composés dans certaines langues modernes (amharique, hébreu moderne)
+
+# 4. Histoire et origines
+- Origine probable (théories archéologiques, linguistiques, génétiques) :
+  **Théorie linguistique principale** : Le proto-sémitique est une branche de la famille afro-asiatique. **Andrew Kitchen, Christopher Ehret, Shiferaw Assefa** et **Connie J. Mulligan** (2009) dans *"Bayesian phylogenetic analysis of Semitic languages identifies an Early Bronze Age origin of Semitic in the Near East"* (Proceedings of the Royal Society B) estiment que le proto-sémitique a divergé il y a environ **5 750 ans avant le présent** (vers 3750 av. J.-C.) dans le Levant (Proche-Orient), durant l'Âge du Bronze ancien. Cette étude phylogénétique bayésienne situe l'origine au Levant avec une diffusion ultérieure vers l'Arabie du Sud puis la Corne de l'Afrique vers **2 800 ans avant le présent** (vers 800 av. J.-C.). **Théorie alternative « Africanist view »** : Certains linguistes (notamment **Robert Hetzron** 1972, **Lionel Bender**, **Roger Blench** 2006) proposent une origine africaine pour les langues sémitiques, basée sur le nombre élevé de langues sémitiques en Éthiopie et la « règle du moins de mouvements » linguistiques, suggérant que l'Éthiopie pourrait être la zone « least moved » (moins déplacée) pour la branche sémitique. **Théorie archéologique** : Les premières attestations écrites de langues sémitiques apparaissent en Mésopotamie avec l'akkadien vers **2500-2300 av. J.-C.** (inscriptions cunéiformes), dans le Levant avec l'ougaritique vers **1400 av. J.-C.**, et en Éthiopie avec le guèze (inscriptions aksoumites) vers le **IVe-Ve siècle ap. J.-C.** **Études génétiques** : **Luca Pagani** et al. (2015) dans *"Ethiopian genetic diversity reveals linguistic stratification and complex influences on the Ethiopian gene pool"* (Nature Communications) montrent l'introduction d'une composante ouest-eurasienne en Éthiopie il y a environ **3 000 ans**, corrélée avec l'arrivée des langues éthiosémitiques depuis l'Arabie du Sud. Les populations parlant des langues sémitiques en Afrique présentent des patrimoines génétiques majoritairement africains avec des apports ouest-eurasiens anciens.
+- Période d'émergence estimée :
+  (1) **Émergence historique de la FLG** : Proto-sémitique estimé vers **3750-3000 av. J.-C.** selon les reconstructions linguistiques (Kitchen et al. 2009). Premières attestations écrites : akkadien vers 2500-2300 av. J.-C., ougaritique vers 1400 av. J.-C., guèze vers IVe-Ve siècle ap. J.-C. (2) **Date de classification académique** : Terme « sémitique » introduit en **1781** par August Ludwig von Schlözer, popularisé en **1795** par Johann Gottfried Eichhorn. Classification moderne de la famille sémitique comme branche de l'afro-asiatique développée au XIXe siècle par **Carl Brockelmann** (1908-1913, *Grundriss der vergleichenden Grammatik der semitischen Sprachen*), **Joseph Greenberg** (1950, *Studies in African Linguistic Classification*), **Robert Hetzron** (1972, classification des langues éthiosémitiques).
+- Diffusion des langues (routes migratoires, expansion) :
+  **Théorie 1 (dominante)** : Origine au Levant (Proche-Orient) vers 3750 av. J.-C., expansion vers le sud dans la péninsule Arabique, puis diffusion vers la Corne de l'Afrique vers 800 av. J.-C. via les routes commerciales de la mer Rouge. Expansion de l'arabe à partir du VIIe siècle ap. J.-C. avec l'islam vers l'Afrique du Nord, l'Espagne, et au-delà. **Théorie 2 (Africanist)** : Origine en Afrique du Nord-Est ou dans la Corne de l'Afrique, avec migrations vers le Proche-Orient et la péninsule Arabique au cours du IVe millénaire av. J.-C., basée sur la diversité des langues sémitiques en Éthiopie. **Théorie 3** : Plusieurs vagues de diffusion : (a) langues sémitiques orientales (akkadien) en Mésopotamie, (b) langues nord-ouest sémitiques (cananéen, araméen, hébreu) au Levant, (c) langues sud-sémitiques en Arabie du Sud, (d) langues éthiosémitiques en Corne de l'Afrique via migrations depuis l'Arabie du Sud vers 800 av. J.-C.
+- Ruptures historiques (séparations, fusions) :
+  - Disparition du sémitique oriental (akkadien éteint vers le Ier siècle av. J.-C.)
+  - Séparation entre sémitique nord-ouest et arabe (vers le Ier millénaire av. J.-C.)
+  - Diffusion massive de l'arabe à partir du VIIe siècle ap. J.-C. (expansion islamique), remplacement de nombreuses langues locales en Afrique du Nord et au Moyen-Orient
+  - Développement local des langues éthiosémitiques en Éthiopie et Érythrée, diversification interne vers 1200-1600 ans avant le présent
+  - Renaissance de l'hébreu comme langue vernaculaire à partir du XIXe siècle (hébreu moderne)
+- Zones de contact et métissages :
+  **Régions géographiques précises** : (1) **Levant** : Syrie, Liban, Palestine/Israël, Jordanie — contact avec langues indo-européennes (hittite, grec), langues non-sémitiques. (2) **Péninsule Arabique** : Yémen, Oman, Arabie Saoudite — zones de contact entre langues sud-arabiques anciennes et modernes, routes commerciales. (3) **Corne de l'Afrique** : Éthiopie (régions Amhara, Tigray), Érythrée, nord de la Somalie — contact intense entre langues éthiosémitiques (amharique, tigrinya) et langues couchitiques (oromo, somali, afar) et omotiques. Villes portuaires sur la mer Rouge : Massawa, Assab (Érythrée), Djibouti. (4) **Afrique du Nord** : Égypte, Libye, Maghreb (Algérie, Tunisie, Maroc) — contact entre arabe et berbère, arabisation progressive depuis le VIIe siècle. Routes caravanières trans-sahariennes. (5) **Routes commerciales** : Mer Rouge (Yémen ↔ Corne de l'Afrique), routes caravanières arabes, ports méditerranéens. **Zones de métissage linguistique spécifiques** : Vallée du Nil (contact arabe/nubien), Sahel (contact arabe/langues africaines), côtes swahili (emprunts arabes en swahili).
+- Événements historiques majeurs ayant influencé la famille :
+  - **Vers 2500-2300 av. J.-C.** : Premières attestations écrites de l'akkadien en Mésopotamie (inscriptions cunéiformes)
+  - **Vers 1400 av. J.-C.** : Usage de l'ougaritique au Levant (écriture cunéiforme alphabétique)
+  - **Vers 800 av. J.-C.** : Arrivée des langues sémitiques du Sud-Arabique dans la Corne de l'Afrique, émergence du guèze, établissement du royaume de Dʿmt
+  - **VIIe siècle ap. J.-C.** : Expansion arabe-islamique à partir de la péninsule Arabique vers l'Afrique du Nord, l'Espagne, et au-delà, diffusion massive de l'arabe
+  - **IVe-Ve siècle ap. J.-C.** : Inscriptions guèze en Éthiopie, développement de la tradition éthiopienne sémitique
+  - **1781-1795** : Création et popularisation du terme « sémitique » dans la linguistique européenne (Schlözer, Eichhorn)
+  - **XIXe-XXe siècle** : Formalisation académique de la classification sémitique (Brockelmann, Greenberg, Hetzron)
+  - **XIXe-XXe siècle** : Renaissance de l'hébreu comme langue vernaculaire (hébreu moderne)
+
+# 5. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  >460 millions (estimation 2025), dont ~411 millions de locuteurs natifs de l'arabe, ~35 millions pour l'amharique (L1), ~25 millions L2, ~7-8 millions pour le tigrinya, ~7-8 millions pour l'hébreu moderne, et plusieurs millions pour les autres langues sémitiques
+- Répartition par pays :
+  **Égypte** : Arabe (dialecte égyptien et arabe standard) — ~110 millions de locuteurs (L1), ~98-99% de la population totale (source : Ethnologue 2025, CIA World Factbook 2025, projections ONU 2025)
+  
+  **Éthiopie** : Amharique (langue officielle) — ~35 millions L1, ~25 millions L2, total ~60 millions, ~30-32% de la population totale (~120 millions) ; Tigrinya — ~7-8 millions L1, ~6-7% de la population ; Autres langues éthiosémitiques (guragé, harari, etc.) — plusieurs millions, ~5-7% de la population (source : SIL/Ethnologue 2025, recensements nationaux éthiopiens, UNESCO)
+  
+  **Érythrée** : Tigrinya (langue officielle) — ~4-5 millions L1, ~60-70% de la population totale (~6-7 millions) selon régions ; Tigré — ~1-2 millions, ~30% ; Arabe dialectal — faible pourcentage (source : SIL/Ethnologue 2025, recensements nationaux)
+  
+  **Arabie Saoudite** : Arabe (dialectes saoudiens et arabe standard) — ~36-40 millions de locuteurs natifs, ~90-95% de la population totale (~40 millions) (source : SIL/Ethnologue 2025, données officielles saoudiennes)
+  
+  **Soudan** : Arabe soudanais — ~30 millions de locuteurs, ~70-75% de la population totale (~45 millions) (source : Global Mission Data 2025, CIA World Factbook 2025)
+  
+  **Yémen** : Arabe (dialectes yéménites) — ~30-35 millions de locuteurs, ~90% de la population totale (~35 millions) ; Langues sud-arabiques modernes (mehri, soqotri, etc.) — ~200 000-300 000 locuteurs, <1% (source : SIL/Ethnologue 2025, estimations ONU)
+  
+  **Israël** : Hébreu moderne — ~7-8 millions de locuteurs natifs, ~75-80% de la population totale (~9-10 millions) selon démographie juive et non-juive ; Arabe — ~2 millions, ~20% (source : recensements israéliens 2025, données nationales)
+  
+  **Autres pays arabophones** : Algérie (~45 millions, ~90% arabophones), Maroc (~37 millions, ~65% arabophones, reste berbérophone), Tunisie (~12 millions, ~98% arabophones), Libye (~7 millions, ~95% arabophones), Irak (~40 millions, ~75% arabophones), Syrie (~18 millions, ~90% arabophones), Jordanie (~11 millions, ~98% arabophones), Liban (~6 millions, ~95% arabophones), etc. (source : CIA World Factbook 2025, ONU/UNFPA projections 2025, SIL/Ethnologue 2025)
+  
+  **Djibouti** : Arabe — ~50 000-100 000 locuteurs, ~10-15% de la population ; Autres langues sémitiques minoritaires (source : SIL/Ethnologue 2025)
+  
+  **Somalie** : Arabe — faible pourcentage, langue minoritaire (source : SIL/Ethnologue 2025)
+  
+  **Malte** : Maltais (langue sémitique avec forte influence romane) — ~0,5 million de locuteurs, ~100% de la population (source : recensement maltais 2021, ajusté pour 2025)
+
+# 6. Sources
+- Kitchen, Andrew ; Ehret, Christopher ; Assefa, Shiferaw ; Mulligan, Connie J. (2009) – *Bayesian phylogenetic analysis of Semitic languages identifies an Early Bronze Age origin of Semitic in the Near East*. Proceedings of the Royal Society B: Biological Sciences, vol. 276, n° 1668, p. 2703-2710. DOI: 10.1098/rspb.2009.0408
+- Pagani, Luca ; Schiffels, Stephan ; Gurdasani, Deepti ; et al. (2015) – *Ethiopian genetic diversity reveals linguistic stratification and complex influences on the Ethiopian gene pool*. Nature Communications, vol. 6, article 1552. DOI: 10.1038/ncomms1552
+- Schlözer, August Ludwig von (1781) – *Von den Chaldäern*. Repertorium für biblische und morgenländische Literatur, Göttingen.
+- Eichhorn, Johann Gottfried (1795) – *Semitische Sprachen*. Allgemeine Bibliothek der biblischen Litteratur, Leipzig.
+- Eichhorn, Johann Gottfried (1787) – *Einleitung ins Alte Testament*. Leipzig.
+- Müller, Friedrich (1876) – *Grundriss der Sprachwissenschaft*. Stuttgart: Ferdinand Enke.
+- Brockelmann, Carl (1908-1913) – *Grundriss der vergleichenden Grammatik der semitischen Sprachen*. Berlin: Reuther & Reichard.
+- Greenberg, Joseph H. (1950) – *Studies in African Linguistic Classification: IV. Chamito-Semitic*. Southwestern Journal of Anthropology, vol. 6, n° 4, p. 487-498.
+- Hetzron, Robert (1972) – *Ethiopian Semitic: Studies in Classification*. Journal of Semitic Studies, Monograph n° 2. Manchester: Manchester University Press.
+- Diop, Cheikh Anta (1954) – *Nations nègres et culture : De l'antiquité nègre égyptienne aux problèmes culturels de l'Afrique noire d'aujourd'hui*. Paris: Présence Africaine.
+- Diop, Cheikh Anta (1967) – *Antériorité des civilisations nègres : Mythe ou vérité historique ?*. Paris: Présence Africaine.
+- Leslau, Wolf (1995) – *Reference Grammar of Amharic*. Wiesbaden: Harrassowitz Verlag.
+- Huehnergard, John ; Pat-El, Na'ama (2019) – *The Semitic Languages*. 2e édition. London: Routledge.
+- Britannica Editors (2025) – *Semitic languages*. Encyclopædia Britannica. Consulté en 2025. URL: https://www.britannica.com/topic/Semitic-languages
+- SIL International / Ethnologue (2025) – *Languages of the World*. 26e édition. Dallas: SIL International.
+- CIA World Factbook (2025) – *Field Listing: Languages*. Central Intelligence Agency. Consulté en 2025.
+- United Nations / UNFPA (2025) – *World Population Prospects*. United Nations Department of Economic and Social Affairs. Consulté en 2025.
+- Global Mission Data (2025) – *Language Portal*. Consulté en 2025.

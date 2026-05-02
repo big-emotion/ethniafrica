@@ -1,0 +1,93 @@
+{
+  "id": "PPL_MOBE",
+  "nameMain": "Mobe",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Mobe",
+      "selfAppellation": "Mobe",
+      "exonyms": [
+        "Mobe (designation externe utilisee dans les classifications ethnolinguistiques)",
+        "Kirdi (terme pejoratif generique, non specifique, utilise par les populations musul manes voisines)"
+      ],
+      "originOfExonyms": "Le terme Kirdi (signifiant paien en arabe-peul) a ete utilise comme desig nation generique pour de nombreux petits groupes non-islamises du nord du Cameroun. Il est rejete par les populations concernees. Le terme Mobe est la designation specifique du groupe dans les classifications linguistiques disponibles.",
+      "whyProblematic": "Le terme Kirdi est stigmatisant et ne reflete pas l'identite propre du groupe. Les Mobe, comme d'autres petits groupes tchadiques du nord du Cameroun, ont souffert de classifications generiques effacant leurs specificites culturelles et linguistiques.",
+      "contemporaryUsage": "Mobe est la designation utilisee dans les databases ethnolinguistiques. Le groupe est localise dans la region de l'Extreme-Nord du Cameroun, dans la zone des monts Mandara ou dans les plaines adjacentes.",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique (Biu-Mandara) — branche des langues de la region des monts Mandara, Cameroun",
+      "historicalRegion": "Region de l'Extreme-Nord du Cameroun, massifs des monts Mandara et plaines adjacentes",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Mobe des montagnes — populations installees dans les contreforts des monts Mandara",
+      "Mobe des plaines — populations etablies dans les zones de piedmont"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Mobe appartiennent au vaste ensemble des peuples tchadiques (Biu-Mandara) installes dans et autour des monts Mandara, dans la region de l'Extreme-Nord du Cameroun. Cette zone constitue l'un des plus importants refuges de diversite linguistique et culturelle d'Afrique centrale, abritant des dizaines de petits groupes Chadic qui ont maintenu leur identite face aux pressions des empires voisins (Bornu, sultanat de Mandara, Peuls). Les peuples des monts Mandara (Mafa, Mofu, Wandala, Hdi, Margi, etc.) partagent des caracteristiques culturelles liees a l'agriculture en terrasses montagnardes, a l'elevage de bovins et de petits ruminants, et a des systemes de croyances incorporant la veneration des ancetres.",
+      "formationPeriod": "L'identite des petits groupes tchadiques des monts Mandara s'est consolidee en partie en reaction aux pressions exterieures — jihad peul du 19e siecle, administration coloniale (allemande puis francaise au Cameroun). La colonisation allemande (1884-1916) puis la domination francaise ont favorise la categorisation et l'inventaire des groupes ethniques de la region.",
+      "migrationRoutes": [
+        "Installation de longue date dans les monts Mandara (region frontaliere Cameroun-Nigeria)",
+        "Repli possible vers les hauteurs montagnardes face aux pressions des empires des plaines (Bornu, sultanat peul de Ngaoundere)"
+      ],
+      "historicalSettlementZones": [
+        "Monts Mandara, region de l'Extreme-Nord du Cameroun",
+        "Plaines du piedmont des Mandara",
+        "Zone frontaliere Cameroun-Nigeria"
+      ],
+      "unificationsOrDivisions": "Comme la plupart des petits groupes tchadiques des Mandara, les Mobe vivent en communautes villageoises relativement independantes, sans structure politique centralisee. L'identite est principalement definie par la langue, les pratiques agricoles et les systemes de croyances communautaires.",
+      "externalInfluences": "Jihad peul du 19e siecle (Ousman dan Fodio et ses successeurs) — pression d'islamisation resiste par une partie des peuples des montagnes. Presence du sultanat islamise de Mandara/Wandala dans la region. Colonisation allemande (1884-1916) puis française (1916-1960). Independance du Cameroun (1960) et integration progressive dans l'etat moderne. Influence croissante de l'islam et du christianisme.",
+      "majorHistoricalEvents": "Resistance au jihad peul du 19e siecle. Administration coloniale et inventaire ethnographique des populations des Mandara. Independance du Cameroun (1960). Implantation de missions chretiennes dans la region au 20e siecle."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies villageoises traditionnelles. Chaque village est dirige par un chef (lawan ou son equivalent local) et des anciens. Les decisions importantes sont prises collectivement par les anciens du village. La chefferie est souvent liee au controle des ressources agricoles (terres en terrasses, sources d'eau). Le systeme politique est decentralise, sans structure monarchique englobante.",
+      "clanOrganization": "Organisation clanique patrilineaire typique des peuples tchadiques du Cameroun septentrional. Les clans determinent les droits fonciers, les regles matrimoniales (exogamie clanique) et les obligations de solidarite. Chaque village est generalement associe a un ou plusieurs clans fondateurs.",
+      "ageClassSystems": "Des systemes d'encadrement des jeunes hommes existent dans de nombreuses communautes tchadiques des Mandara, encadrant l'acces au statut d'adulte et aux responsabilites communautaires.",
+      "roleOfLineages": "Les lignages patrilineaires definissent l'appartenance communautaire, les droits sur les terres agricoles en terrasses (caracteristiques de l'agriculture montagnarde des Mandara) et les alliances inter-familiales. L'ancien du lignage exerce une autorite morale et arbitre les conflits familiaux.",
+      "religiousAuthority": "Les pratiques religieuses combinent traditions animistes et elements islamiques ou chretiens selon les individus. Des specialistes rituels (guerisseurs, devins, maitres des pluies) jouent un role d'intermediaires entre la communaute et les esprits des ancetres et de la nature. Chaque clan dispose souvent d'un specialiste therapeute-devin. La veneration des ancetres et de la terre-mere (divinite feminine associee a la fertilite) est centrale dans la cosmogonie traditionnelle."
+    },
+    "languages": {
+      "mainLanguage": "Mobe",
+      "isoCodes": [],
+      "dialects": [
+        "Variete montagnarde",
+        "Variete des plaines (contact avec le fulfude et le haoussa)"
+      ],
+      "vehicularRole": "Le mobe est une petite langue tchadique Biu-Mandara du Cameroun. Les locuteurs sont generalement bilingues ou multilingues : le fulfude (peul) est la principale lingua franca de la region de l'Extreme-Nord du Cameroun, et le francais est la langue officielle et d'enseignement. Des langues voisines (Wandala, Mafa, Haoussa) sont egalement utilisees dans les echanges. La documentation linguistique du mobe est extremement limitee dans les sources academiques disponibles."
+    },
+    "culture": {
+      "majorRites": "Agriculture en terrasses et ceremonies liees aux cycles agricoles (benedictions des semailles et des recoltes du mil et du sorgho). Sacrifices d'animaux lors des grandes celebrations communautaires et des funerailles. Rites de passage masculins encadrant l'acces a l'age adulte. Ceremonies de mariage avec paiement de la dot (en bovins, petits ruminants et biens divers). Funerailles : veillees communautaires, sacrifice, entretien des tombes des ancetres. Les fetes de la recolte rassemblent les membres de la communaute pour des danses et des festins collectifs.",
+      "symbols": "Les terrasses agricoles montagnardes sont le symbole de l'enracinement des peuples des Mandara dans leur territoire et de leur maitrise de l'environnement. Les pierres de pluie ou objets rituels lies a la pluie (maray, ou equivalents locaux) sont des symboles de pouvoir pour les chefs et specialistes rituels de la region. Les instruments de musique (flutes, tambours, cornes) sont des symboles festifs et rituels.",
+      "artsAndMusic": "Musique vocale et instrumentale : flutes, sifflets, cornes, harpes et percussions (tambours de differentes tailles). Chants collectifs lors des travaux agricoles communautaires, des ceremonies et des fetes. Danse collective lors des celebrations de recolte et des rites de passage. Poterie feminine pour usage quotidien et rituel. Architecture en pierres seches ou briques d'argile, caracteristique des habitats des peuples des Mandara. Tissage de fibres vegetales pour la confection de nattes et de paniers.",
+      "spiritualities": "Croyances traditionnelles animistes centrees sur les ancetres, les esprits de la nature (sources, rochers, arbres sacres) et un dieu createur supreme qui intervient rarement dans les affaires humaines. Les ancetres servent d'intermediaires entre le monde des vivants et le divin. Chaque clan dispose d'un specialiste guerisseur-devin. Une partie de la population adopte l'islam (sunnite, sous influence peule) ou le christianisme (missions catholiques et protestantes actives dans la region depuis le 20e siecle). Un syncretisme entre pratiques traditionnelles et religions abrahamiques est frequent."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Mobe n'ont pas developpe de structures monarchiques centralisees. Comme la plupart des petits groupes des monts Mandara, ils ont maintenu une organisation en chefferies villageoises independantes, utilisant la geographie montagnarde comme protection contre les empires voisins (sultanat de Mandara-Wandala, Peuls de l'Adamaoua). La zone des monts Mandara est connue pour avoir abrite de nombreux groupes refugies ayant fui les pressions exterieures.",
+      "relationsWithNeighbors": "Relations avec les Wandala (Mandara) islamises, les Mafa, les Mofu et les autres peuples tchadiques voisins des monts Mandara. Contacts avec les Peuls (Fulfude) qui controlent les plaines. Echanges commerciaux avec les marches regionaux de Maroua, Mokolo et Mora. La region de l'Extreme-Nord du Cameroun est une des plus denses en diversite ethnique et linguistique d'Afrique centrale.",
+      "conflictsOrAlliances": "Resistance historique aux jihads peuls du 19e siecle. Refuge dans les montagnes face aux razzias d'esclaves. Integration progressive dans le cadre administratif colonial et postcolonial camerounais. La region de l'Extreme-Nord du Cameroun fait face depuis 2014 a des attaques de Boko Haram (base au Nigeria), affectant les populations des plaines et des zones frontalières.",
+      "diaspora": "Migration interne vers les grandes villes de la region : Maroua, Mokolo, Mora, Kousseri. Emigration vers Yaounde et Douala. Communautes de la diaspora au Cameroun et, dans une moindre mesure, en France."
+    },
+    "demography": {
+      "totalPopulation": 15000,
+      "referenceYear": 2025,
+      "source": "Estimation tres approximative. Aucune donnee demographique specifique au groupe Mobe n'est disponible dans les sources consultees (SIL Ethnologue, Joshua Project, Wikipedia EN/FR). Le recensement camerounais ne distingue pas systematiquement tous les sous-groupes linguistiques tchadiques. Estimation basee par analogie avec d'autres petits groupes tchadiques des monts Mandara.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 15000,
+          "note": "Region de l'Extreme-Nord du Cameroun, monts Mandara et plaines adjacentes"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Biu-Mandara languages. https://en.wikipedia.org/wiki/Biu%E2%80%93Mandara_languages",
+      "Wikipedia EN — Chadic languages. https://en.wikipedia.org/wiki/Chadic_languages",
+      "Wikipedia FR — Mofu (peuple). https://fr.wikipedia.org/wiki/Mofu_(peuple)",
+      "Wikipedia EN — Mofu. https://en.wikipedia.org/wiki/Mofu",
+      "Joshua Project — Mofu, North in Cameroon. https://joshuaproject.net/people_groups/13760/CM",
+      "SIL Ethnologue — Chadic (subgroup Cameroon). https://www.ethnologue.com/subgroup/555/",
+      "Wiktionary — ISO 639-3 codes Africa (Biu-Mandara Cameroon). https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+      "CIA World Factbook — Cameroon. https://www.cia.gov/the-world-factbook/countries/cameroon/"
+    ]
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "id": "PPL_AMAZIGH_MACRO",
+  "nameMain": "Amazigh (Berberes)",
+  "languageFamilyId": "FLG_BERBERE",
+  "currentCountries": [
+    "MAR",
+    "DZA",
+    "TUN",
+    "LBY",
+    "NER",
+    "MLI",
+    "BFA",
+    "MRT",
+    "EGY"
+  ],
+  "content": {
+    "appellations": {
+      "mainName": "Amazigh (Berberes)",
+      "selfAppellation": "Imazighen (pluriel)",
+      "exonyms": [
+        "Berbers",
+        "Berberes",
+        "Libyens (Antiquite grecque)",
+        "Mazikes (sources byzantines)"
+      ],
+      "originOfExonyms": "Le terme Berber derive du latin barbarus et du grec barbaros, utilise par les Romains pour designer les populations non latines d'Afrique du Nord. Le terme Amazigh (pluriel Imazighen) signifie les hommes libres ou les hommes nobles en tamazight et est le nom que les peuples autochtones se donnent eux-memes. Les titres tribaux Barabara et Beraberata apparaissent dans des inscriptions egyptiennes de 1700 et 1300 av. J.-C.",
+      "whyProblematic": "Le terme Berber est considere pejoratif par une partie de la communaute car associe historiquement au mot barbare. Les mouvements culturels amazighs preferent Imazighen ou Amazigh.",
+      "contemporaryUsage": "Amazigh et Imazighen sont desormais les termes officialises dans les constitutions du Maroc (2011) et de l'Algerie. Berber reste d'usage courant dans les sources academiques anglophones.",
+      "linguisticFamily": "FLG_BERBERE",
+      "ethnoLinguisticGroup": "Groupe afro-asiatique berbere, comprenant de nombreuses branches : nord-berbere (kabyle, chaoui, rifain, chenoua), atlasique (tamazight central, tachelhit), saharien (touareg/tamashek), zenetique",
+      "historicalRegion": "Tout le Maghreb et le Sahara (Tamazgha) : du Maroc a l'Egypte, des cotes mediterraneennes aux confins du Sahel",
+      "currentCountries": [
+        "MAR",
+        "DZA",
+        "TUN",
+        "LBY",
+        "NER",
+        "MLI",
+        "BFA",
+        "MRT",
+        "EGY"
+      ]
+    },
+    "ethnicities": [
+      "Kabyles (Algerie, Grande et Petite Kabylie, ~6 millions)",
+      "Chaouis / Shawiya (Algerie, massif des Aures, ~2,8 millions)",
+      "Chleuhs / Ishelhiyen (Maroc, Anti-Atlas et Souss, ~8 millions)",
+      "Rifains (Maroc, region du Rif, ~1,5 million)",
+      "Tamazight du Moyen Atlas (Maroc, ~2,8 millions)",
+      "Touaregs / Imuhar (Algerie, Mali, Niger, Burkina Faso, ~4 millions)",
+      "Mozabites (Algerie, vallee du M'zab, ~200 000)",
+      "Chenouas (Algerie, mont Chenoua, Tipaza, ~106 000)",
+      "Nafusis (Libye, Jabal Nafusa, ~186 000)",
+      "Zuwaras (Libye, nord-ouest, ~280 000)",
+      "Siwis (Egypte, oasis de Siwa, ~24 000)",
+      "Zenagas (Mauritanie, ~10 000)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Imazighen sont consideres comme les peuples autochtones d'Afrique du Nord, presents dans la region depuis au moins 10 000 av. J.-C. selon les donnees archeologiques. Les peintures rupestres du Tassili n'Ajjer (Algerie, datees de 12 000 ans) et du Tadrart Acacus (Libye) attestent d'une civilisation prehistorique florissante. Les populations proto-berberes ont evolue a partir des cultures iberomaurusienne et capsienne. A partir de 2000 av. J.-C., les langues berberes se sont repandues depuis la vallee du Nil vers l'ouest a travers le Sahara septentrional jusqu'au Maghreb.",
+      "formationPeriod": "Au premier millenaire avant J.-C., les ancetres des Imazighen etaient les habitants autochtones de la vaste region visitee par les Grecs, les Carthaginois et les Romains. Tribes comme les Mauri, Masaesyli, Massyli, Musulamii, Gaetuli et Garamantes ont donne naissance aux royaumes berberes : Numidie (202-46 av. J.-C.), Mauretanie (3e s. av. J.-C.-44 ap. J.-C.).",
+      "migrationRoutes": [
+        "Diffusion vers l'ouest depuis la vallee du Nil a partir de 2000 av. J.-C.",
+        "Extension vers le sud dans le Sahara (Touaregs)",
+        "Expansion vers les iles Canaries (Guanches, aujourd'hui assimiles)"
+      ],
+      "historicalSettlementZones": [
+        "Maghreb (Maroc, Algerie, Tunisie, Libye, Mauritanie)",
+        "Sahara central et meridional (Mali, Niger, Burkina Faso)",
+        "Oasis de Siwa (Egypte)",
+        "Iles Canaries (extincts en tant que groupe distinct)"
+      ],
+      "unificationsOrDivisions": "Les Imazighen n'ont jamais forme un Etat unifie, mais ont produit de grandes dynasties : Almoravides (1053-1147), Almohades (1147-1275), Zirides, Hammadides, Marinides, Zayyanides, Hafsides. Les conquetes arabes du 7e-8e siecle ont amorce une arabisation progressive mais incomplete.",
+      "externalInfluences": "Contacts avec les Pheniciens et Carthaginois (fondation de Carthage, commerce), l'Empire romain (integration de la Numidie et de la Mauretanie), les Vandales (429-534), l'Empire byzantin (534-647), la conquete arabe (647-711), puis la colonisation europeenne (19e-20e siecles). Chaque vague a laisse des influences linguistiques, culturelles et religieuses.",
+      "majorHistoricalEvents": "Royaume de Numidie (roi Massinissa, 202-148 av. J.-C.). Grande revolte berbere contre les Arabes (739-741). Role central dans la conquete arabe de l'Espagne (711). Empires almoravide et almohade (11e-13e siecles). Resistance aux colonisations ottomane et europeenne. Printemps berbere en Algerie (1980). Officialisation de tamazight au Maroc (Constitution 2011) et en Algerie (Constitution 2016)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Structure tribale (taqbilt ou qabila) avec conseil d'anciens (jmaa ou tajmaat). Les societes berberes ont traditionnellement fonctionne selon un systeme democratique local : le conseil villageois delibere sur toutes les affaires communes, les conflits, les alliances et les decisions importantes. Certains groupes (Touaregs) ont des structures hierarchiques plus marquees avec un roi (amenokal).",
+      "clanOrganization": "Division en confederations tribales, tribus (icherkan) et fractions (tikhsiwin). Chaque village ou fraction est independant dans ses affaires locales. Systeme patrilineaire dominant (sauf chez les Touaregs, matrilineaires pour certains droits).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages (ighs) structurent les droits fonciers, les alliances matrimoniales et l'appartenance tribale. Chez les Touaregs, le systeme est en partie matrilineaire : le nom, la noblesse et certains biens passent par la mere.",
+      "religiousAuthority": "Depuis le 7e siecle, Islam sunnite (majorite malekite) et ibadite (Mozabites, Nafusis). Les saints locaux (imrabdhen, marabouts) jouent historiquement un role d'intermediaires spirituels et sociaux. Avant l'islam, les Imazighen pratiquaient des religions polytheistes et animistes avec culte des ancetres."
+    },
+    "languages": {
+      "mainLanguage": "Tamazight (terme generique) / Langues berberes (famille)",
+      "isoCodes": [
+        "ber",
+        "kab",
+        "shy",
+        "shi",
+        "tzm",
+        "rif",
+        "tmh",
+        "cnu",
+        "zgh"
+      ],
+      "dialects": [
+        "Kabyle (kab, Algerie)",
+        "Tachawit/Chaoui (shy, Algerie)",
+        "Tachelhit/Shilha (shi, Maroc)",
+        "Tamazight central (tzm, Maroc)",
+        "Tarifit/Rifain (rif, Maroc)",
+        "Tamashek/Touareg (tmh, Sahara)",
+        "Shenwa/Chenoua (cnu, Algerie)",
+        "Tamazight standard marocain (zgh)",
+        "Nafusi (nfz, Libye)",
+        "Siwi (siz, Egypte)",
+        "Zenaga (zen, Mauritanie)"
+      ],
+      "vehicularRole": "Les langues berberes sont les langues maternelles de 25 a 36 millions de personnes. L'arabe et le francais sont utilises comme langues vehiculaires. Tamazight est langue officielle au Maroc et en Algerie."
+    },
+    "culture": {
+      "majorRites": "Yennayer (Nouvel An amazigh, 13 janvier), celebrations agricoles saisonnieres, rites de passage (circoncision, mariage), festivals de moussem (pelerinages aux tombeaux de saints). Festival du mariage d'Imilchil (Maroc). Fetes d'Achoura. Rites funeraires islamises mais avec persistance de pratiques pre-islamiques.",
+      "symbols": "Tifinagh (alphabet ancestral ressuscite et officialise au 21e siecle). Signe Aza ou Agraw (croix berbere), adopte comme symbole pan-amazigh contemporain. Bijoux en argent a motifs geometriques, tapis et tissages aux motifs tribaux, poterie peinte.",
+      "artsAndMusic": "Musiques regionales distinctes : ahellil et ahidus (chants collectifs en cercle, Maroc et Algerie), izlan (chanson kabyle), isefra (poesie chantee). Instruments : bendir (tambourin), gasba (flute en roseau), lotar et guembri (luths), tindé (tambour touareg). Artisanat : tapis aux motifs geometriques, bijoux en argent, poterie, tatouages au henne.",
+      "spiritualities": "Islam sunnite malekite (majorite). Islam ibadite (Mozabites, Nafusis). Persistance de pratiques pre-islamiques : culte des saints (maraboutisme), croyances aux djinns et esprits, invocations pour la fertilite. Minorites juives berberes historiques. Conversions au christianisme chez une minorite de Kabyles (Algerie)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Numidie (roi Massinissa, 202-148 av. J.-C.), Mauretanie (Bocchus, Juba), Garamancie (Libye, 400 av. J.-C.-600 ap. J.-C.), Rustamides (Ibadhites, 776-909), empires almoravide (1053-1147) et almohade (1147-1275), royaumes marinide, zayyanide et hafside (13e-16e siecles).",
+      "relationsWithNeighbors": "Contacts commerciaux intenses avec les Pheniciens et Carthaginois. Integration partielle dans l'Empire romain. Relations complexes avec les Arabes : resistance puis conversion a l'islam et role actif dans l'expansion islamique (conquete de l'Espagne en 711). Coexistence avec les populations saharo-soudanaises (Touaregs et societes sahelo-subsahariennes).",
+      "conflictsOrAlliances": "Grande revolte berbere contre les Arabes (739-741). Role de la reine Dihya (Kahina) dans la resistance (703). Resistance aux colonisations ottomane et europeenne (19e-20e siecles). Printemps berbere en Algerie (1980). Mouvements tuareg au Mali et au Niger (rébellions de 1960, 1990, 2006, 2012).",
+      "diaspora": "Environ 2,2 millions d'Imazighen en Europe (principalement France, Belgique, Pays-Bas, Allemagne, Espagne). Communautes au Canada, aux Etats-Unis et en Israel (Berbers judeo-marocains). La diaspora joue un role actif dans la preservation linguistique et la revendication identitaire amazighe."
+    },
+    "demography": {
+      "totalPopulation": 35000000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN - Berbers (estimation 25-36 millions). Britannica : un quart de la population algerienne et plus de 60% de la population marocaine. IWGIA - Indigenous World 2025 Morocco. Ethnologue SIL International 2024. Recensement marocain HCP 2024 (24,8% de locuteurs tamazight, soit environ 9 millions). Recensement algerien (environ 10-12 millions de locuteurs berberophones).",
+      "distributionByCountry": [
+        {
+          "country": "MAR",
+          "population": 12000000
+        },
+        {
+          "country": "DZA",
+          "population": 12000000
+        },
+        {
+          "country": "MLI",
+          "population": 2000000
+        },
+        {
+          "country": "NER",
+          "population": 2000000
+        },
+        {
+          "country": "LBY",
+          "population": 600000
+        },
+        {
+          "country": "BFA",
+          "population": 100000
+        },
+        {
+          "country": "MRT",
+          "population": 100000
+        },
+        {
+          "country": "TUN",
+          "population": 100000
+        },
+        {
+          "country": "EGY",
+          "population": 30000
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Berbers : https://en.wikipedia.org/wiki/Berbers",
+      "Encyclopaedia Britannica - Berber : https://www.britannica.com/topic/Berber",
+      "IWGIA - The Indigenous World 2025: Morocco : https://iwgia.org/en/morocco/5632-iw-2025-morocco.html",
+      "Ethnologue SIL International - Berber languages : https://www.ethnologue.com/",
+      "Peabody Museum Harvard - Imazighen! Beauty and Artisanship : https://peabody.harvard.edu/OE-imazighen",
+      "Encyclopedie berbere (CNRS/INALCO) : https://journals.openedition.org/encyclopedieberbere/",
+      "Ibn Khaldoun, Muqaddima (14e siecle), traductions modernes"
+    ]
+  }
+}

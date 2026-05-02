@@ -1,0 +1,96 @@
+{
+  "id": "PPL_RWENDAIS_TUTSI",
+  "nameMain": "Tutsi du Rwanda",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["RWA", "BDI", "COD", "UGA", "TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Tutsi du Rwanda",
+      "selfAppellation": "Abatutsi (pluriel) — singulier : Umututsi",
+      "exonyms": ["Batutsi", "Watutsi", "Watusi"],
+      "originOfExonyms": "Batutsi et Watutsi sont des formes en langues bantou voisines (swahili, kirundi). Watusi a été popularisé en Occident comme désignation exotique. La distinction Tutsi/Hutu existait dans la société rwandaise précoloniale comme catégorie socio-économique liée à la possession de bétail, et fut rigidifiée en catégorie raciale par la colonisation belge.",
+      "whyProblematic": "La théorie hamitique coloniale présenta les Tutsi comme une race nilotique supérieure venue de la Corne d'Afrique, justifiant leur position d'élite sous la colonisation. Cette construction raciale exacerba les tensions et contribua à l'idéologie génocidaire. Le gouvernement rwandais a supprimé les catégories ethniques des documents officiels après 1994.",
+      "contemporaryUsage": "Abatutsi reste utilisé à des fins historiques et ethnographiques. Depuis le génocide de 1994, le gouvernement rwandais promeut une identité nationale rwandaise unique et décourage l'usage des étiquettes ethniques dans la sphère publique.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou (Zone JD — Rwanda-Rundi)",
+      "historicalRegion": "Rwanda, Burundi, région des Grands Lacs d'Afrique — Royaume du Rwanda (Ubwami bw'u Rwanda)",
+      "currentCountries": ["RWA", "BDI", "COD", "UGA", "TZA"]
+    },
+    "ethnicities": [
+      "Abatutsi du Rwanda central (ancienne région royale de Nyanza)",
+      "Abatutsi du nord-ouest (région de Ruhengeri-Gisenyi, sous-groupe Banyanduga)",
+      "Ganwa du Burundi (clan royal burundais, ni Hutu ni Tutsi selon la tradition)",
+      "Banyarwanda Tutsi de l'est de la RDC (Banyamulenge au Sud-Kivu, Tutsi du Nord-Kivu)",
+      "Tutsi de la diaspora ougandaise — Banyankore et Hima (groupe apparenté)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les origines des Tutsi sont un sujet complexe et controversé. La théorie hamitique coloniale les présentait comme des pasteurs nilotiques immigrés de la Corne d'Afrique (hypothèse étiopienne). Les recherches contemporaines (Christopher Ehret, Joseph Greenberg) suggèrent une ascendance mixte comprenant des populations couchitiques méridionales (Tale South Cushitic, entrées avant 800 av. J.-C.), des pasteurs nilosahariens orientaux (Sog Eastern Sahelians, vers 2000 av. J.-C.) et des populations bantoues centrales. Les Tutsi parlent des langues bantoues (kinyarwanda, kirundi) et ont adopté pleinement la culture bantoue.",
+      "formationPeriod": "Le Royaume du Rwanda, à dominante tutsi, s'est consolidé à partir du XVe siècle sous la succession des rois (abami) de la lignée Nyiginya. La monarchie tutsi atteignit son apogée aux XVIIIe et XIXe siècles. La colonisation allemande (1897-1916) puis belge (1916-1962) favorisa les Tutsi dans l'administration coloniale, accroissant leur domination formelle et rigidifiant la distinction avec les Hutu.",
+      "migrationRoutes": [
+        "Migrations de groupes pastoraux depuis le nord-est (région des Grands Lacs)",
+        "Diffusion progressive sur le territoire du Rwanda entre le XIVe et le XVIe siècle",
+        "Présence en Ouganda (Banyankore, Hima) et au Burundi"
+      ],
+      "historicalSettlementZones": [
+        "Plateau central du Rwanda (Nyanza, siège royal)",
+        "Collines de la région des Grands Lacs (Rwanda, Burundi)",
+        "Est de la RDC (Banyamulenge au Sud-Kivu, Masisi au Nord-Kivu)"
+      ],
+      "unificationsOrDivisions": "La société rwandaise précoloniale s'organisait en clans trans-ethniques (inzu) incluant Hutu, Tutsi et Twa. Le système ubuhake (clientélisme pastoral) liait les pasteurs tutsi aux agriculteurs hutu. La révolution sociale de 1959 mit fin à la monarchie tutsi et provoqua l'exil de centaines de milliers de Tutsi vers l'Ouganda, la Tanzanie et le Burundi. Ces exilés fondèrent le FPR (Front Patriotique Rwandais) en 1987.",
+      "externalInfluences": "Colonisation allemande (1897-1916) et belge (1916-1962) : les Belges institutionnalisèrent l'identité ethnique par des cartes d'identité (1933) basées sur des critères raciaux (nombre de vaches, morphologie). Influence du christianisme catholique et protestant depuis le début du XXe siècle. Soutien de l'Ouganda au FPR (Front Patriotique Rwandais) sous Yoweri Museveni.",
+      "majorHistoricalEvents": "Règne des abami (rois) Nyiginya du XVe au XIXe siècle. Domination coloniale de 1897 à 1962. Révolution sociale de 1959-1961 et exil massif de Tutsi. Indépendance du Rwanda (1962) sous gouvernement hutu. Pogroms anti-tutsi récurrents (1963-1964, 1973, 1990-1993). Invasion du Rwanda par le FPR depuis l'Ouganda (octobre 1990). Génocide contre les Tutsi (avril-juillet 1994) : entre 500 000 et 1 000 000 de morts (principalement des Tutsi) tués en 100 jours par les extrémistes hutu (Interahamwe) avec la complicité de l'Etat. Le FPR mit fin au génocide en prenant le contrôle du pays en juillet 1994."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le Royaume du Rwanda était dirigé par un roi sacré (mwami) de la lignée royale Nyiginya. Le mwami était garant de la fertilité de la terre, de la pluie et de la prospérité nationale. Il était entouré d'un conseil royal (abiiru) gardiens des rituels et traditions secrètes (ubwiru). L'administration s'articulait en chefs militaires (abatware b'ingabo), chefs de pâturages (abatware b'umukenke) et chefs de terres (abatware ba butaka).",
+      "clanOrganization": "Le système clanique rwandais (inzu) était trans-ethnique : les 18-20 clans regroupaient des Tutsi, Hutu et Twa. Les clans tutsi importants incluent : Abanyiginya (clan royal), Abega, Abatsobe, Abasinga, Abahondogo. L'appartenance clanique déterminait les alliances matrimoniales et les positions à la cour royale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires définissent l'appartenance au clan, les droits sur le bétail et les responsabilités dans les rituels royaux. Le gardien de la cour (umutware) gérait les troupeaux du roi. La richesse en bétail (inka) définissait le statut social tutsi. L'ubuhake liait le patron tutsi à ses clients hutu en échange de services.",
+      "religiousAuthority": "L'abiiru (collège des ritualistes royaux) gardait les traditions secrètes (ubwiru) du royaume. Le culte de Ryangombe (Lyangombe) : demi-dieu divinisé, protecteur, dont le culte initiatique (kubandwa) était partagé par les trois groupes. Imana : dieu créateur suprême bienveillant. Le roi (mwami) était médiateur sacré entre les hommes et les dieux. Christianisme catholique et protestant prépondérant depuis le XXe siècle."
+    },
+    "languages": {
+      "mainLanguage": "Kinyarwanda",
+      "isoCodes": ["kin"],
+      "dialects": [
+        "Kinyarwanda standard (langue partagée avec les Hutu et les Twa)",
+        "Kirundi (Burundi) — variante très proche du kinyarwanda",
+        "Mufumbira (Uganda occidental, dialecte frontalier)",
+        "Kinyarwanda des exilés de l'Ouganda (légèrement influencé par le luganda)"
+      ],
+      "vehicularRole": "Le kinyarwanda est la langue maternelle de l'ensemble des Rwandais, sans distinction ethnique. Tutsi et Hutu parlent la même langue, ce qui témoigne d'une coexistence historique profonde. Langue co-officielle au Rwanda avec le français, l'anglais et le swahili depuis 2009. Parlé par environ 12 millions de personnes, dont la diaspora rwandaise en Ouganda, RDC, Belgique, France, Canada et Etats-Unis."
+    },
+    "culture": {
+      "majorRites": "Umuganuro : fête nationale des premiers fruits, célébration de la fertilité associée à la royauté. Ikinimba : cérémonie royale de renouvellement du feu sacré, réservée aux initiés. Ukwishyira ikirari : mariage traditionnel avec dot (inkwano) en bétail. Rites funéraires collectifs (umutuzo). Kubandwa : initiation au culte de Ryangombe, partagée par les trois groupes rwandais. Guterura umwana : cérémonie de naissance et nomination.",
+      "symbols": "La vache (inka) est le symbole suprême de richesse, statut et beauté dans la culture tutsi. Les longues cornes des vaches ankole (inyambo) symbolisent l'élégance et la puissance. L'ingoma (tambour royal) représente l'autorité royale. La lance et le bouclier symbolisent le guerrier intore. Le lait (amata) est symbole de pureté et de vie.",
+      "artsAndMusic": "Danse Intore (danse des élus ou des guerriers) : chorégraphie guerrière et cérémonielle exécutée par des hommes portant des coiffures en herbe (imishanana) et des lances. Associée historiquement à la cour royale tutsi et désormais pratiquée comme héritage culturel national rwandais. Poésie de cour (ibisigo) : éloges royaux, poèmes épiques récités par des spécialistes. Musique aux instruments : inanga (cithare sur table), umuduri (arc musical monocorde), ingoma (tambours royaux). Artisanat de l'élevage : fabrication d'objets en cuir, de calebasses décorées. Vannerie (agaseke) : paniers tressés, symbole de mariage.",
+      "spiritualities": "Religion traditionnelle centrée sur Imana (dieu créateur suprême, bienveillant et omniscient). Culte initiatique de Ryangombe (Kubandwa) : Ryangombe est un demi-dieu divinisé dont les adeptes (imandwa) forment une confrérie initiatique. Culte des ancêtres (imitwe y'ababyeyi). La cour royale maintenait les rituels ubwiru gardés par le collège des abiiru. Christianisme dominant depuis le XXe siècle : catholicisme, protestantisme. Islam minoritaire."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume du Rwanda (Ubwami bw'u Rwanda) : monarchie tutsi fondée vers le XVe siècle, qui atteignit son apogée aux XVIIIe et XIXe siècles sous les abami (rois) Kigeli IV Rwabugiri et ses successeurs. Le palais royal se trouvait à Nyanza (Rukari). La monarchie fut abolie par referendum (28 janvier 1961) sous administration belge. Royaumes apparentés : Burundi (sous contrôle des Ganwa), Buganda et Ankole en Ouganda (Tutsi/Hima).",
+      "relationsWithNeighbors": "Interactions avec les Twa (peuple pygmée) dans les forêts rwandaises : les Twa servaient comme potiers et danseurs à la cour royale. Relations de clientélisme (ubuhake) avec les Hutu. Liens dynastiques avec le Burundi voisin. Rapports avec l'Ouganda de Museveni, qui abrita et arma le FPR fondé par des exilés tutsi en 1987.",
+      "conflictsOrAlliances": "Révolution sociale de 1959-1961 : les Belges soutinrent le transfert de pouvoir aux Hutu ; des milliers de Tutsi furent tués et des centaines de milliers exilés. Pogroms anti-tutsi récurrents (1963-1964, 1973, 1990-1993). Fondation du Front Patriotique Rwandais (FPR/RPF) en 1987 par des exilés tutsi en Ouganda, dont Paul Kagame. Invasion du Rwanda en octobre 1990. Génocide contre les Tutsi de 1994 : reconnu par l'ONU, le TPIR et la jurisprudence internationale comme génocide. Environ 800 000 Tutsi (et Hutu modérés) tués en 100 jours. Le FPR mit fin au génocide en juillet 1994 et prit le contrôle du pays. Paul Kagame devint président (2000, réélu).",
+      "diaspora": "Première vague de réfugiés tutsi (1959-1962) : exil vers l'Ouganda (Banyarwanda), la Tanzanie, le Burundi, le Zaïre. Deuxième vague (1972-1973). Ces exilés et leurs descendants fondèrent le FPR en 1987. Après 1994, retour de nombreux exilés au Rwanda. Communautés tutsi importantes en Ouganda (notamment région sud-ouest), RDC (Banyamulenge au Sud-Kivu), Belgique, France, Canada, Etats-Unis. Tribunaux pénaux internationaux (TPIR, à Arusha) jugèrent les responsables du génocide (1994-2015)."
+    },
+    "demography": {
+      "totalPopulation": 2200000,
+      "referenceYear": 2025,
+      "source": "Les Tutsi constituaient historiquement environ 14-15% de la population rwandaise (CIA World Factbook avant 2017, USHMM). Le Rwanda comptant environ 14,6 millions d'habitants en 2025, la population tutsi est estimée à environ 2,1-2,2 millions. Le gouvernement rwandais ne publie plus de statistiques ethniques depuis 1994. Au Burundi, les Tutsi représentent environ 14% de 13 millions d'habitants. Estimation également basée sur SIL Ethnologue et données de la Banque Mondiale.",
+      "distributionByCountry": [
+        { "country": "RWA", "population": 2100000 },
+        { "country": "BDI", "population": 1700000 },
+        { "country": "COD", "population": 450000 },
+        { "country": "UGA", "population": 200000 },
+        { "country": "TZA", "population": 50000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Tutsi : https://en.wikipedia.org/wiki/Tutsi",
+      "Wikipedia EN — Origins of Hutu, Tutsi and Twa : https://en.wikipedia.org/wiki/Origins_of_Hutu,_Tutsi_and_Twa",
+      "United Nations — 1994 Genocide against the Tutsi in Rwanda : https://www.un.org/en/preventgenocide/rwanda/historical-background.shtml",
+      "US Holocaust Memorial Museum — Rwanda (Divided by Ethnicity) : https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
+      "Canadian Museum for Human Rights — What led to the genocide against the Tutsi : https://humanrights.ca/story/what-led-genocide-against-tutsi-rwanda",
+      "Musée de l'Holocauste Montréal — Le génocide contre les Tutsi au Rwanda : https://museeholocauste.ca/en/resources-training/the-genocide-against-the-tutsi-in-rwanda/",
+      "SIL Ethnologue — Kinyarwanda (kin) : https://www.ethnologue.com/language/kin",
+      "CIA World Factbook — Rwanda : https://www.cia.gov/the-world-factbook/countries/rwanda/"
+    ]
+  }
+}

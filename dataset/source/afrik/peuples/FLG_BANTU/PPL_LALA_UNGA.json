@@ -1,0 +1,73 @@
+{
+  "id": "PPL_LALA_UNGA",
+  "nameMain": "Lala-Unga",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Lala-Unga",
+      "selfAppellation": "Unga",
+      "exonyms": ["BaUnga", "Ba-Unga", "Unga of Zambia"],
+      "originOfExonyms": "Le nom Unga designe ce peuple des marais de Bangweulu. Le prefixe Ba- est le pluriel bantu. La designation Lala-Unga reflete une classification externe les rattachant au groupe lala, bien que leur territoire et leur culture soient fortement marques par l'environnement lacustre.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Unga est utilise pour identifier ce groupe en Zambie. Joshua Project les recense sous Unga in Zambia (PGID 15714). Leur appartenance au sous-groupe Lala est soulignee dans la classification academique, mais leur identite est avant tout liee aux marais de Bangweulu.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Lala-Bisa / Bemba (Bantu zone M)",
+      "historicalRegion": "Marais de Bangweulu, province de Luapula, Zambie",
+      "currentCountries": ["ZMB"]
+    },
+    "ethnicities": ["Lala-Unga"],
+    "origins": {
+      "ancientOrigins": "Les BaUnga sont un peuple vivant dans les marais de Bangweulu en province de Luapula (Zambie). Ils rapportent eux-memes avoir trouve les BaTwa (populations de chasseurs-cueilleurs) lors de leur arrivee depuis la RDC, ce qui indique une migration bantoue plus tardive dans la region. Comme les autres Lala, ils sont reputes descendants du Royaume Luba.",
+      "formationPeriod": "Installation dans les marais de Bangweulu a une periode indeterminee, precedant l'expansion des Bemba au XIXe siecle. Les recherches genetiques (Nature Communications, 2024) situent un brassage demographique dans la region de Bangweulu autour de 1140 ans avant le present.",
+      "migrationRoutes": [
+        "Depuis le bassin du Congo, via la RDC, vers les marais de Bangweulu au nord de la Zambie"
+      ],
+      "historicalSettlementZones": [
+        "Marais de Bangweulu, province de Luapula",
+        "Iles de Kasoma Lunga, Nsamba, Bwalya Mponda, Kalima Nkonde"
+      ],
+      "unificationsOrDivisions": "Les Unga sont apparentes aux Bemba dont ils parlent une variante dialectale, mais sont culturellement distincts en raison de leur isolement geographique dans les marais. Ils partagent le systeme clanique des peuples matrilineaires de l'Afrique centrale orientale.",
+      "externalInfluences": "Contact avec les missionnaires et colons europeens venus travailler dans la region lacustre (fin XIXe-debut XXe siecle). Ces contacts ont engendre la pratique unique d'adopter des prenoms anglais comme noms de famille, caracteristique documentee pour les habitants de Kasoma Lunga.",
+      "majorHistoricalEvents": "Adoption de noms de famille anglophones derives des prenoms de leurs employeurs europeens, pratique culturelle unique en Zambie documentee pour la communaute Unga de Kasoma Lunga. Isolement relatif preserve une identite culturelle distincte."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferie traditionnelle. Les Unga s'organisent selon le systeme de chefferies bantoues avec des chefs et des chefs de village. La vie communautaire est organisee autour des iles et des bords des marais.",
+      "clanOrganization": "Organisation en clans exogames commune aux peuples matrilineaires de l'Afrique centrale orientale. Les clans partagent des noms d'animaux, de plantes ou d'elements naturels, comme atteste pour les peuples Lala, Swaka, Aushi et leurs voisins.",
+      "roleOfLineages": "La filiation matrilineaire structure les droits successoraux et les alliances. La vie communautaire dans les marais renforce la cohesion sociale au niveau insulaire.",
+      "religiousAuthority": "Veneration des ancetres. Les chefs jouent un role rituel dans les ceremonies agricoles et de peche. Les pratiques spirituelles sont liees a l'environnement lacustre."
+    },
+    "languages": {
+      "mainLanguage": "Bemba (variante Unga)",
+      "isoCodes": ["bem"],
+      "dialects": ["Unga (variante du Bemba)"],
+      "vehicularRole": "Les Unga parlent le bemba (ISO 639-3 : bem), mais leur variante est uniquement differente de celle parlée en province du Nord et de Muchinga, en raison de leur isolement geographique dans les marais. Le bemba est aussi la langue de communication avec les peuples voisins."
+    },
+    "culture": {
+      "majorRites": "Ceremonies de peche et ceremonies agricoles liees au cycle des marais de Bangweulu. Rites ancestraux pour assurer l'abondance de poisson et la protection des navigateurs dans les marais.",
+      "symbols": "La pirogue est le moyen de transport central et un symbole identitaire. L'adoption de noms de famille anglais est une particularite culturelle unique aux Unga de Kasoma Lunga.",
+      "artsAndMusic": "Traditions orales de peche et de navigation. Techniques de construction de pirogues et de filets transmises de generation en generation.",
+      "spiritualities": "Veneration des esprits ancestraux intimement liee a l'environnement des marais. Ceremonies pour proteger les pecheurs et assurer de bonnes peches. Contact croissant avec le christianisme depuis le XXe siecle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies locales dans les marais de Bangweulu. Organisation en communautes insulaires avec chefs et chefs de village.",
+      "relationsWithNeighbors": "Les Unga sont voisins des BaTwa de Bangweulu (populations de pecheurs-chasseurs pre-bantous), des Bemba de la province du Nord, et des peuples du Luapula. Selon les recherches genetiques de 2024, les BaUnga rapportent avoir trouve les BaTwa lors de leur installation dans les marais.",
+      "conflictsOrAlliances": "Alliance et cohabitation avec les BaTwa de Bangweulu, qui occupaient les marais avant l'arrivee des agriculteurs bantous. Rapport de contact avec l'administration coloniale britannique en Rhodesie du Nord.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 50000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Joshua Project PGID 15714 et sources ethnographiques ; chiffres precis non publies",
+      "distributionByCountry": [{ "country": "ZMB", "population": 50000 }]
+    },
+    "sources": [
+      "Unga in Zambia – Joshua Project, PGID 15714 (https://joshuaproject.net/people_groups/15714)",
+      "The Unga People: The Only Zambians With English Surnames – Paul Shalala Blog, 2015 (http://paulshalala.blogspot.com/2015/11/the-unga-people-only-zambians-with.html)",
+      "BaTwa populations from Zambia retain ancestry of past hunter-gatherers – Nature Communications, 2024 (https://pmc.ncbi.nlm.nih.gov/articles/PMC11344834/)",
+      "Lala people – Wikipedia EN (https://en.wikipedia.org/wiki/Lala_people)",
+      "Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory – Brian Siegel, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
+      "A History of the Unga People of the Bangweulu Swamps – Daily Nation News review, 2021 (https://www.facebook.com/dailynationews/posts/book-review-a-history-of-the-unga-people-of-the-bangweulu-swamps/2212642275532412/)"
+    ]
+  }
+}

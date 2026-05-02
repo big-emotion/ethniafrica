@@ -1,0 +1,98 @@
+{
+  "id": "PPL_HEHE",
+  "nameMain": "Hehe",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Hehe",
+      "selfAppellation": "Wahehe",
+      "exonyms": ["Wahehe (collectif swahili)"],
+      "originOfExonyms": "Le terme Wahehe aurait ete adopte par les Allemands et les Britanniques a partir du cri de guerre des guerriers hehe. Ce terme, porteur de connotations de prestige, fut ensuite repris par les Hehe eux-memes. Le nom KiHehe designe leur langue.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Hehe est couramment employe en anglais et en swahili. Wahehe est le collectif swahili. KiHehe designe la langue. Les locuteurs s'identifient fiecement comme Wahehe, l'identite hehe ayant resiste aux pressions coloniales.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone G — Bena-Kinga-Hehe)",
+      "historicalRegion": "Uhehe — hautes terres du centre-sud de la Tanzanie, entre le Grand Ruaha et la riviere Kilombero, region d'Iringa",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": [
+      "Hehe de la region d'Iringa (noyau principal, descendance de Mkwawa)",
+      "Hehe de Mufindi",
+      "Hehe des plaines basses (pastoraux)",
+      "Hehe de la zone d'Udzungwa (foret montagnarde)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Hehe occupaient a l'origine les hautes terres du centre-sud de la Tanzanie, au nord-est du lac Nyasa (lac Malawi). La population etait initialement peu nombreuse, avec peu de chefferies depassant 5 000 personnes. Ils etaient principalement agriculteurs, avec des pastoraux dans les plaines maintenant un nombre limite de bovins et de caprins. Les groupes parlant une langue commune maintenaient leur independance politique. L'organisation sociale et militaire hehe s'inspira des regiments d'age ngoni apres l'arrivee des Ngoni dans le sud-ouest de la Tanzanie vers les annees 1840.",
+      "formationPeriod": "L'Etat hehe centralise se forma autour de 1860 quand le clan Muyinga, sous Munyigumba (aussi appele Muyugumba), consolida par mariage et conquete un Etat agressif au detriment des Wasangu. A la mort de Munyigumba (1878 ou 1879), Mkwawa prit le pouvoir apres une guerre civile et devint vers 1880-1881 le seul dirigeant d'Uhehe par la guerre et l'intimidation.",
+      "migrationRoutes": [
+        "Etablissement ancestral sur les hautes terres au nord-est du lac Nyasa",
+        "Expansion sous Mkwawa vers le nord en direction des routes caravannieres centrales"
+      ],
+      "historicalSettlementZones": [
+        "Plateau d'Iringa (haute altitude, plus de 1 800 m au sud)",
+        "Vallee du Grand Ruaha (frontiere nord a environ 750 m)",
+        "Escarpement de Kilombero-Uzungwa (frontiere sud)",
+        "Montagnes Udzungwa",
+        "Plaines a broussailles epineuses sous l'escarpement"
+      ],
+      "unificationsOrDivisions": "Etat centralise et agressif cree par Munyigumba et expande par Mkwawa. Les chefferies conquises n'etaient pas assimilees mais maintenues sous domination par la force. En 1896, les Allemands diviserent Uhehe entre Merere (chef sangu) pour la moitie occidentale et Mpangile (frere de Mkwawa) pour la moitie orientale. Apres l'independance (1961), la chefferie fut abolie et l'affiliation tribale perdit son role administratif central.",
+      "externalInfluences": "Impact des Ngoni (arrives en 1840) : leur organisation en regiments d'age et leur incorporation des peuples vaincus provoqua une reorganisation generale de la guerre et de la politique dans la region. Les Sangu furent le premier Etat consolide, suivi des Hehe. Relations avec les Nyamwezi (commerce et conflits). Colonisation allemande (1891-1919), puis britannique (1919-1961).",
+      "majorHistoricalEvents": "Victoire contre l'expedition allemande de von Zelewski a Lugalo le 17 aout 1891 (10 sur 13 Europeens tues, dont Zelewski, environ 80% des troupes africaines eliminees). Siege de Kalenga par les Allemands (30 octobre 1894) : Mkwawa s'echappa. Guerre de guerilla de Mkwawa de 1894 a 1898. Suicide de Mkwawa le 19 juillet 1898, dont la tete fut coupee et envoyee en Allemagne. Clause du Traite de Versailles (1919) prevoyant la restitution de la tete ; trouvee a Bremen et rendue a Kalenga en 1956. Mkwawa est aujourd'hui heros national de Tanzanie."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Etat centralise sous l'autorite personnelle et charismatique du chef paramount (sultan). Hierarchy : chef paramount > sous-chefs (vanzagila, lords) > chefs de village. Sous l'administration britannique (1925), Sapi, descendant direct de Mkwawa, fut installe comme chef de la Hehe Native Authority. Des tribunaux natifs et une tresorerie furent etablis pour la collecte de l'impot. Apres l'independance (1961), la chefferie fut abolie et remplacee par des structures democratiques locales.",
+      "clanOrganization": "Organisation en groupes de parente patrilineaires (mulongo) et en reseaux de parente bilateraux localises (lukolo). Les patrilineages sont relativement peu profonds, sauf pour les lignages royaux. Leurs fonctions principales sont les enactments rituels (mariage, deuil), les evitements totemiques et les procedures judiciaires passees.",
+      "ageClassSystems": "Regiments d'age (inspires du modele ngoni via les Sangu) : chaque male adulte etait guerrier. Les plus jeunes etaient formes dans la capitale d'Iringa par des semi-professionnels. Dans les annees 1890, Mkwawa disposait de 2 000 a 3 000 guerriers immediats et pouvait mobiliser 20 000 hommes en age de combattre. Ces regiments etaient nommes, possedaient des noms de gloire, etaient armes de lances courtes et de boucliers, et combattaient en formations disciplinees rapprochees.",
+      "roleOfLineages": "La mere du cote maternel et son frere ont des obligations envers le fils de la soeur. Les mariages entre cousins croises etaient favorises mais devenus rares. Les brides ne sont pas incorporees dans le lignage du mari ; elles sont appelees par le nom de leur propre lignage avec le prefixe feminin Se.",
+      "religiousAuthority": "Chefs de pluie (roi s'il avait ce pouvoir, sinon anciens non-royaux) officiant lors des ceremonies annuelles de pluie aux sites royaux funeraires. Devins comme diagnosticiens, renvoyant aux herboristes et magiciens. Oracle celebre consulte via un servant choisi par l'oracle. Clercs chretiens et musulmans jouissent de respect et de leadership. Le christianisme et l'islam sont largement pratiques aujourd'hui."
+    },
+    "languages": {
+      "mainLanguage": "Kihehe (KiHehe, Hehe)",
+      "isoCodes": ["heh"],
+      "dialects": [
+        "KiHehe de la region d'Iringa",
+        "KiHehe de Mufindi",
+        "Variante des plaines (influence des Sangu)"
+      ],
+      "vehicularRole": "Le kihehe est la langue maternelle des Wahehe, parlee par environ 800 000 a 1 000 000 de personnes. Il est etroitement apparente au KiBena (mutuallement intelligibles) et regroupe avec les langues sangu, kinga, wanji et kisi. Il presente environ 50% de similitude lexicale avec le cigogo. Le swahili est la langue des ecoles et vehiculaire nationale. L'anglais est utilise dans l'administration."
+    },
+    "culture": {
+      "majorRites": "Les ceremonies de pluie aux sites royaux funeraires etaient une observation annuelle obligatoire. Les rites de passage pour les filles sont juges tres anciens, ceux pour les garcons surgirent avec les regiments d'age de la fin du XIXe siecle. Les rites de deuil pour les morts constituent la forme la plus courante de pratique rituelle : les esprits des defunts sont essentiels, et leur negligence provoque maladies et malheurs. Des ceremonies de mariage (avec paiement de betail) et de naissance (en particulier pour les jumeaux) marquent les grandes etapes de la vie. Les enfants recoivent du pere un nom de gloire (praise name) et des interdits alimentaires totemiiques. Les Wahehe ne peuvent pas epouser quelqu'un portant le meme nom de gloire et les memes interdits, meme si la parente ne peut etre retracee.",
+      "symbols": "Le cri de guerre hehe est a l'origine meme du nom du peuple. La lance est le symbole central de la puissance militaire et de l'identite guerriere hehe, demeurant l'arme principale de Mkwawa meme apres l'introduction des armes a feu. Le crane de Mkwawa, restitue par l'Allemagne en 1956, est un symbole national fort. Les sites funeraires royaux (lieux de ceremonies de pluie) sont des espaces sacres. Les animaux totemiques (liés aux clans mulongo) imposent des tabous alimentaires.",
+      "artsAndMusic": "La musique constitue la principale forme d'expression artistique hehe : chant, percussion et instruments a cordes (pince et frotte) sont largement pratiques dans les ceremonies, le deuil et les celebrations. La forge et le travail du fer, apportes du pays kinga, constituent un artisanat ancestral. La fabrication de nattes, paniers et cordages, ainsi que la poterie (dans les zones argileuses) sont des arts artisanaux traditionnels. L'art graphique et plastique est minimal : decoration de poterie et sculpture de tabourets en bois.",
+      "spiritualities": "La spiritualite hehe est centree sur la relation entre les vivants et les ancetres, foyer de prieres et de rituels. De petits bosquets entourent les sites funeraires ou des offrandes (eau et bouillie) sont deposees, accompagnees de desherbage rituel annuel, de battements de tambour et de chants. La conception d'un dieu createur peu interesse par les affaires quotidiennes coexiste avec le culte des ancetres. Les diviners agissent comme diagnosticiens, renvoyant aux herboristes (plantes medicinales, decoctions) et magiciens. Les sorciers (heriture de pouvoir amplifiee par des actes malefiques) et les magiciens (benefiques ou malefiques) jouent un role dans le controle social informel. Les amulettes islamiques sont portees ; les pratiques medicales occidentales sont populaires. Le christianisme et l'islam sont aujourd'hui largement integres a la vie spirituelle hehe."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "L'Etat d'Uhehe, forme autour de 1860 par Munyigumba et consolide sous Mkwawa (seul dirigeant de 1880-81 a 1898), etait la puissance dominante du centre-sud de la Tanzanie a la fin du XIXe siecle. Mkwawa controla les routes caravannieres vers le nord et fit de la region hehe la force la plus puissante du sud-est tanzanien. Apres la mort de Mkwawa en 1898, les Allemands integrerent le territoire dans l'Afrique Orientale Allemande. La Hehe Native Authority fut restauree symboliquement sous la colonisation britannique (1925) avec Sapi, descendant de Mkwawa.",
+      "relationsWithNeighbors": "Expansion aux depens des Wasangu (forçant Merere II a deplacer sa capitale), puis alliance des Sangu avec les Allemands contre les Hehe. Guerres contre les Wagogo, les Wakaguru et les peuples acceptant la suprematie allemande. Les Bena et les Sangu s'allierent aux Allemands pour l'expedition de Kalenga (1894). Les Hehe ne se revolterent jamais apres 1898, pas meme lors de la rebellion Maji Maji (1905-1907).",
+      "conflictsOrAlliances": "Victoire decisive a Lugalo contre l'expedition allemande de von Zelewski le 17 aout 1891. Capture de la forteresse de Kalenga le 30 octobre 1894. Guerre de guerilla sous Mkwawa dans les Udzungwa (1894-1898). Suicide de Mkwawa le 19 juillet 1898 pour eviter la capture. La tete de Mkwawa fut envoyee en Allemagne (Bremen), sa restitution fut stipulee dans le Traite de Versailles (1919) et executee en 1956. Mkwawa est celebre comme heros national en Tanzanie.",
+      "diaspora": "Des Wahehe se sont installes en Ouganda (4 023 personnes en 2014 selon le recensement ougandais) et dans les grandes villes tanzaniennes comme Dar es Salaam. Une diaspora hehe est presente dans plusieurs pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 900000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue (heh) ; Wikipedia cite 805 000 en 2006 et 250 000 au recensement de 1957 ; projection 2025 estimee avec croissance demographique tanzanienne ; 4 023 en Ouganda en 2014 (recensement ougandais)",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 896000,
+          "note": "Region d'Iringa principalement (Iringa Urban, Rural, Mufindi) — centre-sud de Tanzanie"
+        },
+        {
+          "country": "UGA",
+          "population": 4000,
+          "note": "Communaute hehe en Ouganda (recensement 2014 : 4 023 personnes)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Hehe people. https://en.wikipedia.org/wiki/Hehe_people",
+      "SIL Ethnologue — Hehe language (heh). https://www.ethnologue.com/language/heh/",
+      "Encyclopedia.com — Hehe (Encyclopedia of World Cultures). https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/hehe",
+      "Joshua Project — Hehe in Tanzania. https://joshuaproject.net/people_groups/12078",
+      "CIA World Factbook — Tanzania. https://www.cia.gov/the-world-factbook/countries/tanzania/",
+      "Tanzania National Bureau of Statistics. https://www.nbs.go.tz/"
+    ]
+  }
+}

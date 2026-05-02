@@ -1,0 +1,107 @@
+{
+  "id": "PPL_SWAHILI_SOMALIE",
+  "nameMain": "Swahili (Somalie)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["SOM", "KEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Swahili de Somalie (Bajuni et Bravanese)",
+      "selfAppellation": "Wabajuni / Wabarawa / Waswahili",
+      "exonyms": [
+        "Bajuni",
+        "Bravanese",
+        "Chimwini speakers",
+        "Swahili de Somalie"
+      ],
+      "originOfExonyms": "Les Bajuni (Wabajuni) tirent leur nom de l'archipel des iles Bajuni entre Lamu (Kenya) et Kismayu (Somalie). Les Bravanese ou Wabarawa sont les habitants de Barawa (Brava), cite cotiere au sud de Mogadiscio. Ces populations sont distinctes des Somalis ethniques et s'identifient avant tout comme Bajuni ou Bravanese plutot que comme Swahili, bien que leurs langues soient classees comme dialectes swahili.",
+      "whyProblematic": "La designation Swahili pour ces populations est academique plutot qu'auto-attribuee. Les Bajuni insistent sur leur identite distincte et affirment que le swahili est issu du bajuni, non l'inverse. En Somalie, leur statut de minorite bantoue les place en bas de la hierarchie clanique somali, exposant ces communautes a la discrimination et a la marginalisation depuis l'independance.",
+      "contemporaryUsage": "Les Bajuni restants en Somalie (tres peu apres 1991) ou au Kenya se designent comme Wabajuni. Les Bravanese de la diaspora (Etats-Unis, Royaume-Uni, Kenya) maintiennent une identite Bravanese distincte. La plupart des membres de ces communautes ont fui la guerre civile somalienne apres 1991.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Sabaki (Zone G) — dialectes swahili septentrionaux",
+      "historicalRegion": "Iles Bajuni (entre Kismayu et Lamu), Barawa/Brava (cote sud somalienne), Kismayu et la cote meridionale somalienne",
+      "currentCountries": ["SOM", "KEN"]
+    },
+    "ethnicities": [
+      "Wabajuni des iles (habitants insulaires de l'archipel bajuni, parlant le Kibajuni/Kitikuu)",
+      "Wabajuni du continent (villages agricoles en face des iles bajuni)",
+      "Wabarawa / Bravanese (habitants de Barawa/Brava, parlant le Chimwini/Chimbalazi)",
+      "Bajuni de Kismayu (communaute urbaine dans la capitale de Jubaland)",
+      "Bajuni de la diaspora kenyane (Mombasa, Lamu, Malindi, Watamu)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bajuni et Bravanese descendent des populations bantoues sabaki qui occupaient la cote est-africaine depuis le 1er millenaire. Des fouilles archeologiques indiquent que Merka, Kismayu et les iles Bajuni datent du 11e siecle au moins, contemporains de l'islamisation de la cote. Les Bajuni tracent leurs origines a Shungwaya, cite mythique et proto-swahili de la tradition orale, avec certains recits incluant des ancetres yemenites qui s'unirent aux agriculteurs locaux. Les Bravanese de Barawa ont des origines melangees : Bantous, Tunnis (somalis), Arabes et Indiens.",
+      "formationPeriod": "Du 16e siecle a 1960 : periode de stabilite relative pour les communautes bajuni, avec des etablissements de Mogadiscio a la riviere Tana au Kenya. L'invasion Orma du 16e siecle força les Bajuni a se retirer vers les iles et vers le Kenya. Barawa fut un important centre commercial et intellectuel islamique sur la cote somalienne jusqu'a la colonisation italienne (1889). Apres l'independance somalienne (1960), la marginalisation des minorites bantoues s'accentua.",
+      "migrationRoutes": [
+        "Expansion bantoue sabaki vers la cote est-africaine (1er millenaire apr. J.-C.)",
+        "Etablissement sur les iles cotières de Somalie (iles Bajuni) avant le 11e siecle",
+        "Retrait force vers le Kenya lors de l'invasion Orma au 16e siecle",
+        "Fuite massive vers le Kenya (Mombasa, Lamu, Malindi) apres la guerre civile somalienne (1991-)",
+        "Emigration vers les Etats-Unis, le Royaume-Uni et l'Europe (communautes bravanese diasporiques)"
+      ],
+      "historicalSettlementZones": [
+        "Iles Bajuni (archipel entre Kismayu, Somalie et Lamu, Kenya)",
+        "Kismayu et le littoral de la region de Jubaland",
+        "Barawa/Brava — cite fortifiee sur la cote somalienne, 275 km au nord de Kismayu",
+        "Cote nord du Kenya (Lamu, Kiunga, Watamu, Malindi, Mombasa)"
+      ],
+      "unificationsOrDivisions": "Les clans bajuni (ukoo ou khamasi) incluent des noms d'origine bantoue et somali. Le clan Katwa est d'origine somali ; le clan Garre egalement. Les Bajuni des iles etaient plus conservateurs et monolingues (uniquement Kibajuni) que les Bajuni du continent, davantage exposes au swahili et au somali. Les Bravanese constituent une communaute distincte des Bajuni, avec une histoire et un dialecte propres.",
+      "externalInfluences": "Influence arabe dans l'islamisation et le commerce (9e-15e siecles). Colonisation italienne de la Somalie (1889-1941) et administration britannique du Jubaland (jusqu'en 1925). L'independance somalienne (1960) et la guerre civile (1991-) ont profondement transforme ces communautes. Le Haut-Commissariat des Nations Unies pour les refugies a conseille aux Bajuni de se rendre dans les camps de refugies en 1991, entrainant un effondrement rapide de la transmission linguistique.",
+      "majorHistoricalEvents": "11e siecle : etablissement des villes bajuni datees par l'archeologie (Merka, Kismayu). 16e siecle : invasion Orma forçant le retrait des Bajuni vers les iles et le Kenya. 1889 : colonisation italienne de la Somalie meridionale, dont Barawa. 1925 : transfert du Jubaland de la Grande-Bretagne a l'Italie. 1960 : independance somalienne, debut de la marginalisation des minorites bantoues. 1991 : effondrement du gouvernement somali, guerre civile, exode massif des Bajuni et Bravanese. 2003 : petition bajuni a l'IGAD (Autorite intergouvernementale pour le developpement) pour la reconnaissance de leurs droits."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation clanique (ukoo) avec des conseils d'anciens masculins. Un kadhi (juge islamique) regit les affaires civiles et criminelles selon la loi islamique shafiite. Les decisions communautaires importantes sont prises de maniere collegiale. Les Bravanese de Barawa avaient une organisation plus urbaine et commerciale, avec des structures heritees du droit islamique.",
+      "clanOrganization": "Les Bajuni sont organises en clans (ukoo ou khamasi) qui influencent les pratiques sociales et le mariage. Les clans ont des noms d'origine bantoue et somali. Les Bajuni se designent comme waungwana (hommes libres), rejetant toute ascendance servile. Ils traitent les Giriama de la cote kenyane comme une classe de service inferieure.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La patrilinearite domine : l'appartenance au clan s'herite du pere. Si le pere est d'un autre groupe, les enfants adoptent le terme Swahili plutot que Bajuni. L'ascendance servile est stigmatisee et reniee. Les genealogies orales sont preservees par les anciens males de la communaute.",
+      "religiousAuthority": "Islam sunnite shafiite, present depuis l'islamisation de la cote (9e-11e siecles). Chaque enfant reçoit une education islamique de base. Tout parent musulman insiste sur l'enseignement du Coran. Le kadhi (juge islamique) gere les litiges civils et criminels. La vie communautaire s'organise autour de la mosquee et des cinq prieres quotidiennes."
+    },
+    "languages": {
+      "mainLanguage": "Kibajuni (Kitikuu) et Chimwini (Chimbalazi)",
+      "isoCodes": ["swa", "wmw"],
+      "dialects": [
+        "Kibajuni / Kitikuu — dialecte swahili des iles Bajuni, difficile a comprendre pour les locuteurs du swahili standard, ISO: partiellement classe sous swa",
+        "Chimwini / Chimbalazi — dialecte de Barawa (Brava), classe comme dialecte swahili septentrional par certains linguistes, considere comme langue separee par d'autres (moins de 15 000 locuteurs, en voie de disparition)",
+        "Swahili colore bajuni — stade intermediaire adopte par les jeunes generations post-1991 dans les camps de refugies"
+      ],
+      "vehicularRole": "Le Kibajuni etait pratiquement la seule langue des communautes insulaires jusqu'en 1990. Depuis la guerre civile somalienne (1991), le swahili standard remplace rapidement le Kibajuni chez les jeunes generations dans les camps de refugies et la diaspora. Le Chimwini est en voie d'extinction severe, la plupart de ses moins de 15 000 locuteurs etant disperses en diaspora (Columbus, Atlanta, Londres, Manchester, Mombasa). Le somali et l'arabe servent de langues de communication avec les autres groupes."
+    },
+    "culture": {
+      "majorRites": "Circoncision masculine : rite de passage islamique fondamental, l'enfant est tenu par le pere ou un ami qui recite l'appel a la priere (adhan) dans son oreille. Education coranique : tout enfant bajuni reçoit les enseignements de base de l'islam des la naissance. Mariage islamique : les filles ne quittent le domicile que pour des visites ou le marche (en fin d'apres-midi). Funerailles islamiques : inhumation rapide avec priere. Rites de passage (unyago) marques par des chants et des celebra-tions communautaires.",
+      "symbols": "Le kikoy (tissu swahili enroule autour de la taille) porte par les hommes bajuni. Le voile noir integral porte traditionnellement par les femmes bajuni (couvrant tout sauf les yeux), avec anneau nasal en or. Les embarcations de peche (jahazi, mashua) symbolisent l'identite maritime bajuni. La mosquee comme centre de la vie communautaire.",
+      "artsAndMusic": "Riche tradition poetique et chantee incluant : mashairi (poesie classique swahili), t'endi (poesie narrative), vave, randa (chants agricoles) et kimayi (chants de pecheurs). Les longues traditions orales conservent les recits des evenements anterieurs a l'invasion Orma. La musique bajuni est transmise par les anciens masculins. La comunaute bravanese avait une culture musicale et intellectuelle plus elaboree, Barawa etant un centre islamique reconnu. Les projets de preservation culturelle (Twaweza Communications, Swahili Resource Centre) documentent les traditions orales, la poesie et les proverbes.",
+      "spiritualities": "Islam sunnite shafiite, integrant des elements syncrétiques : croyance aux djinns (majini), utilisation d'amulettes coraniques (hirizi) pour la protection. Les marabouts islamiques (waganga wa koran) sont consultes pour la guerison et la protection. Les rites de passage et les ceremonies maintiennent une dimension spirituelle integrant les ancetres. La pratique soufie a ete historiquement presente a Barawa."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Barawa/Brava fut un important sultanat cotier et centre commercial islamique, connu pour ses mosquees et son architecture en pierre de corail, comparable aux cites-etats swahili de Zanzibar et Kilwa. La cite etait organisee en quartiers (michaa) avec une separation entre les Bajuni/Bravanese et les commerçants arabes et les somalis. Les Bajuni controlerent le commerce du bois de mangrove, des produits agricoles et du poisson entre la cote est-africaine et l'Arabie.",
+      "relationsWithNeighbors": "Relations tendue avec les Somalis ethniques, qui considerent les Bajuni comme des non-Somalis et les traitent comme l'un des clans les moins puissants dans la structure clanique somalienne. Relations commerciales historiques avec les Arabes et les commerçants indiens via les routes de l'ocean Indien. Liens avec les communautes bajuni du Kenya (Lamu, Mombasa) a travers les reseaux de peche et de commerce.",
+      "conflictsOrAlliances": "16e siecle : devastation par l'invasion Orma qui force la retraite vers les iles et le Kenya. Periode coloniale : resistance a la domination italienne en Somalie meridionale. 1991 : effondrement du gouvernement somali et guerre civile plongeant la communaute dans la misere. Post-1991 : discrimination persistante par les clans somalis dominants en Somalie et en Kenya. 2003 : petition a l'IGAD par le president Mohamed Ismail Barkale pour la reconnaissance des droits bajuni.",
+      "diaspora": "La quasi-totalite de la communaute bajuni de Somalie a fui vers le Kenya apres 1991. La communaute bravanese est largement dispersee dans des pays anglophones (Columbus et Atlanta aux USA, Londres et Manchester au Royaume-Uni) et a Mombasa (Kenya). Les organisations de la diaspora (Bajuni Cultural Heritage, Shungwaya Welfare Association) travaillent a la preservation de la langue et de la culture. Le Kibajuni est en voie d'extinction en Somalie : pratiquement plus de locuteurs restants sur place apres 1991."
+    },
+    "demography": {
+      "totalPopulation": 25000,
+      "referenceYear": 2025,
+      "source": "Estimations tres difficiles en raison de la dispersion post-1991. La recherche AFL (Bajuni refugees, Memorial University of Newfoundland) estimait environ 15 000 Bajuni sur la cote nord du Kenya en 1978 (chiffres gonfles par les politiques d'enregistrement). Chimwini (Bravanese) a moins de 15 000 locuteurs selon Wikipedia EN (Bravanese dialect). La population totale de ces communautes en Somalie est infime depuis 1991 (quelques dizaines a quelques centaines). La majorite est en diaspora au Kenya et dans les pays occidentaux.",
+      "distributionByCountry": [
+        {
+          "country": "SOM",
+          "population": 1000,
+          "note": "Tres peu de Bajuni restants en Somalie depuis 1991 ; quelques centaines dans la region de Kismayu"
+        },
+        {
+          "country": "KEN",
+          "population": 20000,
+          "note": "Majorite des Bajuni au Kenya : Mombasa, Lamu, Malindi, Watamu, Kiunga"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bajuni people. https://en.wikipedia.org/wiki/Bajuni_people",
+      "Wikipedia EN — Bravanese dialect. https://en.wikipedia.org/wiki/Bravanese_dialect",
+      "Bajuni Cultural Heritage — Who Are The Bajuni? https://www.bajuniculturalheritage.org/who-are-bajuni/",
+      "AFL — Bajuni: people, society, geography, history, language. https://aflat.org/files/dnurse/Bajuni.pdf",
+      "Memorial University of Newfoundland — Bajuni refugees. https://www.mun.ca/linguistics/media/production/memorial/academic/faculty-of-humanities-and-social-sciences/linguistics/media-library/more/e-books/Bajuni%20refugees.pdf",
+      "Ethnologue SIL — Swahili (swa). https://www.ethnologue.com/language/swa",
+      "Wikipedia EN — Swahili people. https://en.wikipedia.org/wiki/Swahili_people"
+    ]
+  }
+}

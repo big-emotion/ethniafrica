@@ -1,0 +1,121 @@
+{
+  "id": "PPL_SETSWANA_NATL",
+  "nameMain": "Setswana (National)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["BWA", "ZAF"],
+  "content": {
+    "appellations": {
+      "mainName": "Setswana (National)",
+      "selfAppellation": "Batswana (peuple) / Setswana (langue)",
+      "exonyms": [
+        "Tswana",
+        "Bechuana",
+        "Beetjuana",
+        "Chwana",
+        "Sechuana",
+        "Secwana"
+      ],
+      "originOfExonyms": "Batswana (singulier : Motswana) est l'ethnonyme que le peuple se donne lui-même. Setswana désigne la langue. Bechuana et Bechuanaland sont les orthographes coloniales britanniques à l'origine du nom du pays (Bechuanaland Protectorate, 1885-1966). Chwana, Sechuana et Coana sont d'autres transcriptions coloniales. Tswana est l'appellation académique standardisée en anglais.",
+      "whyProblematic": "Le terme Batswana désigne à la fois les Tswana ethniques et tous les citoyens du Botswana quelle que soit leur ethnie. Cette ambiguïté entre sens ethnique et sens civique est source de confusion, notamment pour les minorités non-tswana du Botswana (Kalanga, San, Herero, Yei) qui sont citoyens botswanais mais pas Batswana ethniques.",
+      "contemporaryUsage": "Setswana est la langue nationale de facto du Botswana (co-officielle avec l'anglais depuis 1966) et l'une des onze langues officielles de l'Afrique du Sud depuis 1996. Les Batswana ethniques constituent environ 85 % de la population du Botswana et plus de 4 millions de locuteurs en Afrique du Sud, principalement dans la province du North West.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone S, groupe Sotho-Tswana, Sotho de l'Ouest)",
+      "historicalRegion": "Plateau du Kalahari, Botswana, province du North West (Afrique du Sud), ancien Bechuanaland",
+      "currentCountries": ["BWA", "ZAF"]
+    },
+    "ethnicities": [
+      "Bakwena — l'un des merafe les plus anciens, Botswana",
+      "Bangwaketse — puissance dominante en 1824 sous Makaba II, sud-est du Botswana",
+      "Bangwato (Bangwato) — nord-est du Botswana, maison de Khama III et de Seretse Khama",
+      "Batawana — nord-ouest du Botswana, delta de l'Okavango",
+      "Barolong — Botswana et North West Province, Afrique du Sud",
+      "Batlhaping — Kuruman, Afrique du Sud",
+      "Bahurutshe — fondateurs de Kaditshwene (fin XVe siècle), province du North West",
+      "Bakgatla (Bakgatla-ba-Kgafela) — Pilanesberg, North West Province",
+      "Royal Bafokeng Nation — région de Rustenburg, North West Province",
+      "BaTlokwa — Botswana et Afrique du Sud"
+    ],
+    "origins": {
+      "ancientOrigins": "Les ancêtres des Batswana font partie du rameau Sotho-Tswana des peuples bantous d'Afrique australe, dont les données linguistiques et archéologiques suggèrent une origine dans l'Afrique de l'Est (Tanzanie actuelle). Ils auraient atteint l'Afrique australe entre 600 et 1000 de l'ère commune. Les premières traces archéologiques de la présence Tswana dans la région (Toutswe, Botswana oriental) remontent à l'an 700 environ, avec un complexe de villages d'éleveurs prospère jusqu'au XIIIe siècle, connecté aux routes commerciales de l'océan Indien (ivoire, or, corne de rhinocéros contre perles d'Asie).",
+      "formationPeriod": "La séparation des Tswana (Sotho de l'Ouest) des autres branches Sotho est documentée vers 1300-1500 de l'ère commune. Les premiers États tswana structurés (merafe) émergent au XVIIIe siècle : le premier, le Ngwaketse, est fondé dans le sud-est du Botswana actuel au milieu du XVIIIe siècle. La ville de Kaditshwene (Bahurutshe), datant de la fin du XVe siècle, était l'une des plus grandes agglomérations d'Afrique australe précoloniale, avec environ 16 000 à 20 000 habitants selon les estimations.",
+      "migrationRoutes": [
+        "Migration ancestrale depuis l'Afrique de l'Est vers l'Afrique australe, entre 600 et 1000 de l'ère commune",
+        "Diffusion depuis le Transvaal occidental (Afrique du Sud) vers le Botswana actuel et ses régions voisines",
+        "Séparation des Tswana des autres groupes Sotho vers 1300-1500",
+        "Migrations et déplacements liés au Difaqane/Mfecane (1815-1840) : certains merafe Tswana renforcés, d'autres dispersés"
+      ],
+      "historicalSettlementZones": [
+        "Toutswe (Botswana oriental) — premier site archéologique important, 700-1300 CE",
+        "Kaditshwene (North West Province, Afrique du Sud) — capitale Bahurutshe, fin XVe siècle",
+        "Kweneng Ruins (Suikerbosrand, Afrique du Sud) — complexe de villages tswana, XVe-XIXe siècles",
+        "Plateau du Kalahari (Botswana central) — territoire historique des merafe tswana",
+        "Pilanesberg et région de Rustenburg (North West Province) — Bakgatla, Bafokeng"
+      ],
+      "unificationsOrDivisions": "Les Tswana ne constituaient pas un empire unifié mais un ensemble de merafe (nations ou tribus) autonomes, chacun dirigé par un kgosi (chef suprême, kgosikgolo). Les principaux merafe du Botswana actuel sont : Bakwena, Bangwaketse, Bangwato, Batawana, Barolong, Batlhaping, Bakgatla, BaTlokwa. Sous le Bechuanaland Protectorate (1885-1966), huit merafe ont été officiellement reconnus par les Britanniques, qui leur ont attribué des réserves tribales distinctes.",
+      "externalInfluences": "Mission de Robert Moffat (London Missionary Society) à partir de 1818 : construction de la première école, traduction de la Bible en setswana (Nouveau Testament 1840, Ancien Testament 1857). Difaqane (1815-1840) : perturbations liées à l'expansion zouloue et aux guerres mfecane. Expansion des Boers (Voortrekkers) dans les terres tswana à partir de 1830. Annexion britannique du Bechuanaland (1885) comme protectorat. Indépendance du Botswana le 30 septembre 1966 sous Seretse Khama.",
+      "majorHistoricalEvents": "1824 : Bangwaketse sous Makaba II devient la puissance dominante de la région. 1818 : arrivée de Robert Moffat (LMS) et début de l'évangélisation et de l'alphabétisation. 1840 : traduction du Nouveau Testament en setswana par Moffat. 1885 : création du Bechuanaland Protectorate par les Britanniques. 1948 : mariage controversé de Seretse Khama (futur président) avec Ruth Williams, une Britannique blanche, conduisant à son exil forcé. 1966 : indépendance du Botswana sous Seretse Khama (1er président). 1977 : setswana établie comme langue des quatre premières années d'école au Botswana. 1996 : setswana reconnue comme l'une des onze langues officielles d'Afrique du Sud."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Tswana sont organisés en merafe (singulier : morafe), chacun gouverné par un kgosi (chef suprême, kgosikgolo). Le kgosi exerce l'autorité politique, judiciaire et rituelle. Sous le kgosi, une hiérarchie de dikgosi (chefs de niveau inférieur) administre les sections et villages. Le kgotla est l'institution démocratique centrale : assemblée publique où les citoyens masculins (et, dans certains contextes, les femmes) peuvent librement s'exprimer sur les affaires du morafe. Le proverbe fondamental du kgotla : Mmualebe o a bo a bua la gagwe (chacun exprime son propre point de vue, reflétant le pluralisme délibératif). Cette tradition de consultation publique est considérée comme le fondement de la démocratie botswanaise moderne.",
+      "clanOrganization": "Organisation patrilinéaire : descendance, héritage et appartenance au morafe se transmettent par le père. Les merafe sont eux-mêmes des unités patrilinéaires élargies. Le bogadi (bridewealth en bétail) est échangé pour légitimer le mariage, définir la paternité des enfants et créer des alliances entre familles. Les groupes serviles (Batlhanka) : les Bakgalagadi et les San (Bushmen) ont historiquement occupé un statut subordonné dans les sociétés tswana (batlhanka).",
+      "ageClassSystems": "Le mophato (pluriel : mephato) est le régiment militaire organisé par classe d'âge, introduit chez les Tswana orientaux vers 1750. Les mephato structurent la défense, les travaux collectifs et la cohésion sociale. L'initiation masculine (bogwera) regroupe les jeunes garçons (16 ans) qui sont circoncis dans un camp isolé et forment un régiment ayant un nom collectif. L'initiation féminine (bojale) incorpore les filles dans des mephato féminins. Ces pratiques ont été réduites ou adaptées sous l'influence coloniale et chrétienne, mais connaissent un renouveau chez certains merafe (Bakgatla, Balete).",
+      "roleOfLineages": "Les lignages patrilinéaires (lolwapa) définissent les droits sur la terre, les biens et la participation politique. Le lolwapa (foyer) est l'unité résidentielle de base. La philosophie botho (equivalent botswanais du ubuntu) — Motho ke motho ka batho (une personne est une personne grâce aux autres personnes) — fonde les valeurs d'interdépendance, de respect (tlhompho) et d'hospitalité.",
+      "religiousAuthority": "Les dikgosi exercent une autorité rituelle en plus de leur autorité politique. Les guérisseurs traditionnels (dingaka, singulier ngaka) pratiquent la divination (ditaola : lancer d'os) et la médecine ancestrale. La London Missionary Society (1818) puis d'autres Églises protestantes ont profondément christianisé les Tswana. Environ 71 % des Botswanais se définissent comme chrétiens (2011). Syncrétisme répandu entre pratiques chrétiennes et culte ancestral (badimo)."
+    },
+    "languages": {
+      "mainLanguage": "Setswana (Tswana)",
+      "isoCodes": ["tsn"],
+      "dialects": [
+        "Setswana du Botswana — dialecte de référence, langue nationale de facto",
+        "Setswana du North West (Afrique du Sud) — variété de la province du North West, très proche du setswana botswanais",
+        "Sepitori — dialecte urbain de Pretoria, mélange de setswana et d'autres langues de la ville",
+        "Setswana du Northern Cape — variété parlée par les Batlhaping et Barolong du Northern Cape"
+      ],
+      "vehicularRole": "Le setswana est la langue nationale de facto du Botswana (langue première de 85 % de la population) ; l'anglais est la langue officielle des affaires et du gouvernement. Setswana est l'une des onze langues officielles d'Afrique du Sud (1996). Environ 4 millions de locuteurs en Afrique du Sud, principalement dans la province du North West. Robert Moffat (LMS) a traduit la Bible entière en setswana (1857), jetant les bases de la langue écrite. Le setswana est enseigné à l'école au Botswana (quatre premières années depuis 1977, deux premières années depuis le milieu des années 1990, avant le passage à l'anglais)."
+    },
+    "culture": {
+      "majorRites": "Le bogwera (initiation masculine) est le rite de passage fondamental : les garçons d'environ 16 ans sont circoncis dans un camp isolé (bogwane), reçoivent un enseignement militaire, moral et culturel, et sont incorporés dans un mophato (régiment) auquel ils appartiendront à vie. Après l'initiation, présentés au kgotla avec un nom de régiment et des armes symboliques. Le bojale (initiation féminine) incorpore les filles dans des mephato féminins et les prépare au mariage et à la maternité. Le bogadi (dot en bétail) est un rite matrimonial central. Les funérailles (maloko) réunissent toute la communauté pendant plusieurs jours. Le pitso (assemblée publique au kgotla) est une réunion rituelle et politique.",
+      "symbols": "Le kgotla est le lieu sacré de l'assemblée publique et de la délibération communautaire — il incarne la démocratie coutumière tswana. Le boeuf (kgomo) est le symbole de richesse, de prestige et d'alliances (bogadi). Le léopard (nkwe) est le symbole royal : la peau de léopard est portée par les dikgosi. Le tissu leteisi (shweshwe), à motifs géométriques bleus, est le vêtement traditionnel des femmes tswana lors des cérémonies. La couverture mogagolwane (à carreaux) est portée par les mères lors des baby-showers, mariages et funérailles.",
+      "artsAndMusic": "La musique traditionnelle setswana inclut le segaba (instrument à corde monophonique joué à l'archet), les tambours (moropa), la flûte (phaxa) et le chant polyphonique collectif. La danse setswana la plus connue est le setapa (danse de mariage féminine) et le phathisi (danse mixte). Le molelo oa pina (poésie chantée) est une forme de composition orale d'éloge pour les chefs. Le Tswana Gospel (musique évangélique en setswana) est très populaire en Afrique du Sud et au Botswana. Artisanat : poterie, tissage de paniers (coupe-vent et paniers de Ngamiland au nord du Botswana, reconnus mondialement), travail du cuir, fonderie. La Royal Bafokeng Nation (North West Province) a développé un modèle économique unique basé sur les recettes de l'extraction du platine, finançant des projets sociaux et le Royal Bafokeng Stadium.",
+      "spiritualities": "La religion traditionnelle des Tswana vénère les badimo (ancêtres) : esprits des aïeux qui protègent ou punissent les vivants. Les rites d'offrande (go phasa) sont effectués pour honorer et apaiser les badimo. Le ngaka (devin-guérisseur) pratique la divination (ditaola, lancer d'os rituels) et prescrit des remèdes traditionnels. La mission de Robert Moffat (LMS) en 1818 marque le début d'une christianisation rapide : le roi Khama III (1875-1923) est le plus célèbre Tswana chrétien, ayant interdit l'alcool et certaines coutumes dans son morafe. Environ 71 % des Botswanais sont chrétiens (Églises protestantes, catholiques et Zion Churches africaines). Syncrétisme très répandu."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Tswana sont organisés en merafe indépendants, dont les plus importants sont les Bakwena, Bangwaketse, Bangwato, Batawana, Bakgatla et Barolong. Le Ngwaketse constitue le premier État tswana consolidé (milieu du XVIIIe siècle). La ville précoloniale de Kaditshwene (Bahurutshe, fin XVe siècle), avec 16 000 à 20 000 habitants, était l'une des plus grandes d'Afrique australe précoloniale. Les trois grands kgosi (Khama III des Bangwato, Sebele Ier des Bakwena et Bathoen Ier des Bangwaketse) se rendent à Londres en 1895 pour résister à l'annexion de leur territoire par la Compagnie britannique de l'Afrique du Sud (BSAC), obtenant de conserver leurs terres sous protectorat direct de la Couronne.",
+      "relationsWithNeighbors": "Relations commerciales avec les peuples de la côte via les réseaux d'ivoire, d'or et de bétail. Alliance avec les missionnaires britanniques (LMS) dès 1818. Résistance aux Boers (voortrekkers) qui envahissent les terres tswana à partir des années 1830. Bataille de Dimawe (1852) : victoire des Bakwena de Sechele Ier sur les Boers. Traité de paix en 1860 fixant la frontière entre la république boer et les terres tswana. Relations avec les Ndebele (guerre de 1884, bataille de Khutiyabasadi) : 700 alliés tswana aux côtés de Khama III lors de la Première guerre contre les Matabele (1893-1894).",
+      "conflictsOrAlliances": "Voyage historique de Khama III, Sebele Ier et Bathoen Ier à Londres (1895) pour maintenir leur territoire hors du contrôle de la BSAC de Cecil Rhodes — succès diplomatique majeur. Intégration au Bechuanaland Protectorate (1885) sous l'administration britannique directe. Mariage de Seretse Khama avec Ruth Williams Khama (1948) et son exil forcé par les Britanniques (1950-1956) sous pression sud-africaine (apartheid). Retour de Seretse Khama (1956), formation du mouvement indépendantiste, indépendance du Botswana (30 septembre 1966).",
+      "diaspora": "Diaspora tswana en Afrique du Sud (North West Province, Gauteng, Northern Cape, Free State) issue des divisions coloniales. Les Tswana du Bophuthatswana (bantoustan sud-africain, 1977-1994) ont été réintégrés aux provinces sud-africaines lors des élections démocratiques de 1994. Petites communautés tswana au Zimbabwe, en Namibie, au Swaziland et en Zambie."
+    },
+    "demography": {
+      "totalPopulation": 9000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur Statistics Botswana (recensement 2022, 85 % de 2,6 millions), Statistics South Africa (Census 2011 : environ 4 millions de locuteurs setswana), SIL Ethnologue (tsn, environ 13 millions de locuteurs total estimés), EBSCO Research Starters 2025",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 2200000,
+          "note": "Environ 85 % de la population botswanaise, langue nationale de facto du Botswana"
+        },
+        {
+          "country": "ZAF",
+          "population": 4200000,
+          "note": "Principalement province du North West (Mafikeng, Rustenburg, Potchefstroom), Gauteng (Pretoria), Northern Cape"
+        },
+        {
+          "country": "ZWE",
+          "population": 400000,
+          "note": "Minorité Kalanga-Tswana, nord du Zimbabwe"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Tswana people. https://en.wikipedia.org/wiki/Tswana_people",
+      "Wikipedia EN — History of Botswana. https://en.wikipedia.org/wiki/History_of_Botswana",
+      "Participedia — Kgotla (Botswana Public Assembly). https://participedia.net/method/kgotla-botswana-public-assembly",
+      "The Conversation — Botswana's kgotla system and democracy (2024). https://theconversation.com/in-a-world-where-political-polarization-and-disengagement-are-denting-democracy-does-botswanas-kgotla-system-hold-the-key-242358",
+      "South African History Online — Tswana. https://sahistory.org.za/article/tswana",
+      "EBSCO Research Starters — Tswana or Setswana language. https://www.ebsco.com/research-starters/language-and-linguistics/tswana-or-setswana-language",
+      "SIL Ethnologue — Setswana (tsn). https://www.ethnologue.com/language/tsn/",
+      "CIA World Factbook — Botswana. https://www.cia.gov/the-world-factbook/countries/botswana/"
+    ]
+  }
+}

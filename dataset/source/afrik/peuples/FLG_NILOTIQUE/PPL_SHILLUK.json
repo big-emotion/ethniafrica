@@ -1,0 +1,112 @@
+{
+  "id": "PPL_SHILLUK",
+  "nameMain": "Shilluk",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["SSD", "SDN"],
+  "content": {
+    "appellations": {
+      "mainName": "Shilluk",
+      "selfAppellation": "Chollo (Cøllø)",
+      "exonyms": [
+        "Shilluk (terme européen, déformation de Cøllø)",
+        "Chol",
+        "Schilluk"
+      ],
+      "originOfExonyms": "Le terme Shilluk est une déformation phonétique européenne de l'endonyme Cøllø (Chollo). Il fut popularisé par les explorateurs et administrateurs coloniaux britanniques et égyptiens au 19e siècle. Les Shilluk se désignent eux-mêmes comme Cøllø et leur langue comme Dhøg Cøllø (la bouche des Chollo).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Shilluk reste l'appellation internationale courante en anglais et en français. Dans la vie quotidienne et dans les contextes politiques contemporains au Soudan du Sud, les membres du groupe préfèrent Chollo ou Cøllø. Depuis l'indépendance du Soudan du Sud en 2011, l'identité Chollo est revendiquée dans le cadre du système fédéral.",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique occidental, groupe Luo septentrional",
+      "historicalRegion": "Royaume Shilluk (Pödh Cøllø) — rive occidentale du Nil Blanc, région de Fashoda (Kodok), État du Nil Supérieur, Soudan du Sud",
+      "currentCountries": ["SSD", "SDN"]
+    },
+    "ethnicities": [
+      "Kwareth — clan royal, descendants de Nyikang, fournissant le Reth",
+      "Ororo (Ororø) — branche de la lignée royale ayant perdu la succession, fonctions rituelles",
+      "Chollo (Cøllø) — ensemble des clans communs constituant la majorité de la population",
+      "Kwa Ajalø — lignage fondé par Jalø, compagnon exilé de Nyikang",
+      "Kwa Mønø — lignage fondé par un serviteur rencontré par Nyikang à son arrivée",
+      "Kwa Ju — lignage fondé par Ju, demi-frère de Nyikang",
+      "Bang Reth (Bangng Rädhø) — classe des épouses royales et serfs sous protection du roi"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Shilluk appartiennent au grand groupe Luo nilotique occidental, issu d'une diaspora luo originaire de la région du Nil supérieur. Selon les traditions orales, leur ancêtre fondateur Nyikang était le fils d'un roi nommé Okwa, qui régnait sur un territoire situé loin au sud, près d'un grand lac (probablement le lac Albert, région des Acholi actuels). Après la mort d'Okwa, Nyikang entra en conflit avec son frère Duwadh pour la succession et migra vers le nord-est avec ses partisans, traversant le Bahr el Ghazal, absorbant des populations locales et fondant progressivement le Royaume Shilluk.",
+      "formationPeriod": "Le Royaume Shilluk fut fondé selon la tradition vers 1490, à l'époque de Nyikang qui vécut probablement dans la seconde moitié du 15e siècle. L'identité shilluk distincte s'est consolidée autour de la figure mythique de Nyikang et de l'institution du Reth (roi divin). La royauté shilluk atteignit son apogée aux 18e et 19e siècles, lors du déclin du Sultanat des Funj de Sennar.",
+      "migrationRoutes": [
+        "Migration depuis le sud (région du lac Albert / pays Acholi) vers le nord-est avec Nyikang",
+        "Traversée du Bahr el Ghazal vers Acietagwok (environ 30 km à l'ouest de Tonga) vers 1550",
+        "Installation à Nyilual, région non habitée à l'ouest de l'actuelle ville de Malakal",
+        "Expansion progressive le long de la rive occidentale du Nil Blanc"
+      ],
+      "historicalSettlementZones": [
+        "Rive occidentale du Nil Blanc, de Kaka jusqu'au confluent du Sobat, État du Nil Supérieur (Soudan du Sud)",
+        "Région de Fashoda (Kodok), capitale historique du Royaume Shilluk",
+        "Comtés de Baliet, Akoka et district du Sobat (avant la guerre civile)",
+        "Diaspora dans les grandes villes soudanaises (Khartoum, Omdurman) et en Afrique de l'Est"
+      ],
+      "unificationsOrDivisions": "Le Royaume Shilluk était divisé en deux provinces : le Gher (nord) et le Luak (sud), eux-mêmes subdivisés en zones. La structure de base est le pödh, fédération de hameaux habitée par plusieurs lignages. La société comprend des castes : les kwareth (famille royale), les ororo (branche royale secondaire), et les chollo (peuple commun). Le système de succession royale par primogéniture masculine a parfois été source de conflits entre prétendants. Des divisions se sont accentuées lors des guerres civiles soudanaises (1955-1972, 1983-2005) et plus récemment en 2022.",
+      "externalInfluences": "Contacts et conflits avec les Dinka et les Nuer voisins. Arrivée des troupes turco-égyptiennes d'Ismail Pacha (Muhammad Ali) en 1820-1821. Raids esclavagistes du nord à partir de 1826. Destruction partielle du royaume par les assauts militaires ottomans au début des années 1860. Présence britannique et incident de Fashoda en 1898. Colonisation anglo-égyptienne du Soudan. Missions chrétiennes (Church Mission Society, mission catholique) à partir de la fin du 19e siècle. Conflits du mouvement SPLA/SPLM lors des guerres civiles soudanaises.",
+      "majorHistoricalEvents": "Fondation du Royaume Shilluk par Nyikang vers 1490. Règne du roi Odak Ochollo (vers 1600-1635) : alliance avec le Sultanat du Darfour contre les Funj. Fondation de Fashoda comme résidence permanente des Reth par le roi Tugø (vers 1690-1710). Apogée du royaume au 18e siècle lors du déclin de Sennar. Destruction par les Ottomans au début des années 1860. Incident de Fashoda en 1898 : confrontation franco-britannique sur le territoire shilluk entre le capitaine Marchand (France) et le général Kitchener (Grande-Bretagne), aboutissant à la domination britannique et au retrait français. Renommage de Fashoda en Kodok en 1904. Indépendance du Soudan du Sud en 2011."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le Royaume Shilluk est l'une des monarchies sacrées les plus documentées d'Afrique sub-saharienne. Le Reth (roi divin) détient une autorité à la fois politique et religieuse : sa santé est perçue comme indissociable de la santé de la nation tout entière. Le Reth est toujours issu du kwareth, le clan royal des descendants de Nyikang, et succède par primogéniture masculine. L'installation d'un nouveau Reth implique une cérémonie où le candidat doit livrer une bataille rituelle contre l'effigie de Nyikang, symbolisant la transmission de l'esprit fondateur. Selon l'anthropologue C.G. Seligman (1911), il s'agit d'une royauté sacrée au sens propre. James George Frazer a analysé ce système dans Le Rameau d'Or (1916). Le royaume est organisé en plus de 100 pödh (fédérations de villages) répartis entre les provinces du Gher (nord) et du Luak (sud).",
+      "clanOrganization": "La société shilluk est structurée en lignages (kwa). La classe supérieure est le kwareth (famille royale descendant de Nyikang). Les ororo sont une branche royale secondaire remplissant des fonctions rituelles. Les chollo constituent la majorité et comprennent plusieurs catégories : les clans des compagnons de Nyikang (mööyø), les descendants de populations absorbées (kwa'julø), et les kwa'mööyø (d'origine nuer). Le Bang Reth regroupe les épouses royales et les serfs sous protection du roi.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages (kwa) déterminent l'appartenance sociale, les droits fonciers et les alliances matrimoniales. Le pödh (groupement territorial) est la base de la structure sociale, réunissant plusieurs lignages sous un leader unique, traditionnellement issu du lignage dyil (propriétaires originels de la terre). Les wëdhdh sont les migrants arrivés plus tardivement. Le chef du pödh doit appartenir au lignage dyëll, sauf si ce lignage s'est éteint.",
+      "religiousAuthority": "La royauté sacrée shilluk est elle-même une institution religieuse. L'esprit de Nyikang, héros fondateur mi-humain mi-crocodile, est censé s'incarner dans chaque Reth. Des sanctuaires de Nyikang (temples et autels) sont entretenus dans l'ensemble du pays shilluk. Les cultes ancestraux jouent un rôle central dans la vie quotidienne. Depuis la fin du 19e siècle, le christianisme (église catholique et protestante anglicane via la Church Mission Society) est largement adopté, créant un syncrétisme entre pratiques traditionnelles et croyances chrétiennes."
+    },
+    "languages": {
+      "mainLanguage": "Shilluk (Dhøg Cøllø)",
+      "isoCodes": ["shk"],
+      "dialects": [
+        "Variété du nord (région de Kaka et Fashoda/Kodok)",
+        "Variété du sud (région de Baliet et du confluent du Sobat)",
+        "Dialecte de la diaspora urbaine (Malakal, Khartoum)"
+      ],
+      "vehicularRole": "Le shilluk est parlé par environ 580 000 à 800 000 personnes, selon les estimations (Ethnologue, ASJP). Troisième groupe ethnique du Soudan du Sud après les Dinka et les Nuer, il est langue maternelle de l'ensemble des Shilluk. L'arabe soudanais et l'anglais sont utilisés dans les contextes administratifs et commerciaux. L'écriture en alphabet latin a été développée par les missionnaires chrétiens au début du 20e siècle."
+    },
+    "culture": {
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"Pas de circoncision traditionnelle. Les rites de passage des garçons incluent l'intégration progressive aux activités pastorales et guerrières, marquée par des cérémonies communautaires supervisées par les anciens.\", \"femaleInitiation\": \"Rites de passage liés à la puberté et à la préparation au mariage, incluant des cérémonies familiales.\"}, \"marriageRites\": {\"bridewealth\": \"Le mariage est une institution culturelle centrale impliquant le transfert d'une dot en bétail (traditionnellement environ dix têtes de bœufs), des moutons (diek nom) et des objets symboliques comme des lances (jam nom). Le processus comprend des échanges formels de bétail, un festin de mariage chez la famille de la mariée, une bataille symbolique fictive entre les deux familles, et l'installation du couple dans la concession de la famille du marié. La mariée retourne souvent dans sa famille natale pour accoucher de son premier enfant, affirmant les liens de lignage.\"}, \"funeraryRites\": {\"burial\": \"Inhumation accompagnée de cérémonies communautaires. Les rites funéraires sont marqués par le deuil collectif, les sacrifices d'animaux et les prières aux ancêtres. Le culte des ancêtres joue un rôle essentiel.\"}, \"royalRites\": {\"installation\": \"L'installation d'un nouveau Reth est un rituel complexe. Le candidat doit livrer une bataille symbolique contre l'effigie de Nyikang et se laisser d'abord vaincre avant d'être possédé par l'esprit de Nyikang, émergeant ensuite victorieux. Ce rite incarne le transfert du pouvoir divin du fondateur légendaire au nouveau roi.\", \"nyikangCult\": \"Des sanctuaires et des autels de Nyikang sont maintenus dans tout le pays shilluk. Des rituels réguliers y sont accomplis, notamment lors des maladies du Reth ou des crises nationales, car la santé du roi est perçue comme indissociable du bien-être de la nation.\"}}",
+      "symbols": "{\"royalSymbols\": \"Le Reth (roi divin) incarne l'esprit de Nyikang, fondateur légendaire mi-homme mi-crocodile, symbole de la souveraineté shilluk. Les lances (jam nom) sont symboles de pouvoir et d'honneur. Le bœuf est symbole de richesse et d'identité culturelle.\", \"nilSymbol\": \"Le Nil Blanc est au coeur de l'identité shilluk : il structure le territoire du royaume, son agriculture, sa pêche et sa cosmologie.\", \"nyikangSymbol\": \"Nyikang est le symbole de l'unité nationale shilluk, incarnant à la fois le fondateur politique et la force divine qui relie les Shilluk à leurs ancêtres et à la terre.\"}",
+      "artsAndMusic": "{\"oralLiterature\": \"La tradition orale shilluk est riche en poésie épique, en récits mythologiques centrés sur Nyikang et les rois successifs, et en chants de louanges royaux (bul). Les griots et les anciens jouent un rôle essentiel dans la transmission de cette mémoire collective.\", \"music\": \"La musique traditionnelle shilluk comprend des tambours, des flûtes en roseau et des lyres. Les chants accompagnent les cérémonies royales, les mariages, les récoltes et les rites funéraires.\", \"dance\": \"Les danses rituelles accompagnent les grandes cérémonies, notamment l'installation du Reth et les fêtes de mariage. Les hommes performent des danses guerrières.\", \"crafts\": \"La poterie, le tissage, la vannerie et la fabrication d'armes (lances, boucliers) sont les principales formes d'artisanat. Les femmes travaillent la poterie et le tissage de nattes.\", \"bodyArt\": \"Les scarifications rituelles sont pratiquées par certains groupes. La peinture corporelle avec de l'argile blanche est utilisée lors de cérémonies.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Juok\", \"attributes\": \"Juok est le concept de force ou d'esprit suprême omniprésent dans la cosmologie shilluk. Il n'est pas une divinité personnelle anthropomorphe mais une puissance spirituelle diffuse présente dans les êtres, les lieux et les phénomènes naturels.\"}, \"nyikangCult\": {\"description\": \"L'esprit de Nyikang, fondateur mythique du royaume, est la figure spirituelle centrale du système religieux shilluk. Il s'incarne dans chaque Reth lors de l'installation royale. Des sanctuaires dédiés à Nyikang sont maintenus dans l'ensemble du pays shilluk.\"}, \"ancestors\": {\"roleOfAncestors\": \"Les ancêtres, notamment les rois défunts, sont invoqués dans les rituels pour protéger la communauté et intercéder auprès de Juok. Le culte des ancêtres royaux est institutionnalisé dans le système de la royauté sacrée.\"}, \"christianity\": {\"specificPractices\": \"La majorité des Shilluk se sont convertis au christianisme depuis la fin du 19e siècle (missions catholiques à Lul, Detwoc, Tonga, Yoynyang ; mission protestante américaine à Doleib Hill). L'Église épiscopale du Soudan et l'Église catholique romaine sont présentes. Un syncrétisme significatif existe entre pratiques chrétiennes et croyances traditionnelles, notamment le culte de Nyikang.\"}}"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume Shilluk (Pödh Cøllø) est l'une des monarchies africaines les plus anciennes et les mieux documentées d'Afrique orientale. Fondé vers 1490 par Nyikang, il atteignit son apogée aux 18e et 19e siècles lors du déclin du Sultanat des Funj de Sennar, étendant son influence jusqu'au confluent du Nil Bleu et du Nil Blanc et contrôlant les routes caravanières. La capitale historique est Fashoda (aujourd'hui Kodok). Le roi Tugø (vers 1690-1710) fonda Fashoda comme résidence permanente et établit des cérémonies d'investiture élaborées. Le roi Odak Ochollo (vers 1600-1635) avait formé une alliance avec le Sultanat du Darfour contre les Funj. Le Reth demeure aujourd'hui un chef traditionnel reconnu au sein des États du Soudan et du Soudan du Sud.",
+      "relationsWithNeighbors": "Relations complexes et souvent conflictuelles avec les Dinka (raids réciproques, guerres frontalières) et les Nuer. Relations commerciales avec les marchands arabes et swahili le long du Nil. Confrontations militaires avec les Funj de Sennar (17e siècle), suivies d'alliances contre les Dinka. Relations avec les administrations turco-égyptienne (1820-1860), mahdiste et britannique (à partir de 1899).",
+      "conflictsOrAlliances": "17e siècle : pillages des populations voisines le long du Nil Blanc. Vers 1600-1635 : alliance avec le Sultanat du Darfour contre les Funj. 1820-1821 : résistance aux troupes turco-égyptiennes d'Ismail Pacha. 1826 : premiers raids esclavagistes systématiques par les marchands du nord. Début des années 1860 : destruction partielle du royaume par les assauts ottomans. 1898 : incident de Fashoda — confrontation diplomatique franco-britannique sur le territoire shilluk, entre le capitaine Marchand arrivé en juillet 1898 et le général Kitchener arrivé en septembre 1898 avec 1 500 soldats. Retrait français en novembre 1898 ; la région passe sous contrôle anglo-égyptien. Guerres civiles soudanaises : les Shilluk ont été minoritaires au sein du SPLM et ont subi des violences de la SPLA en 2010-2011. Conflits ressurgis en 2022.",
+      "diaspora": "La diaspora shilluk est concentrée dans les grandes villes soudanaises (Khartoum, Omdurman) où des communautés importantes se sont établies depuis les guerres civiles. Des réfugiés shilluk ont été recensés au Kenya, en Ouganda et en Éthiopie, notamment dans les camps du HCR. Une diaspora de moindre importance existe en Australie, aux États-Unis, au Royaume-Uni et dans d'autres pays occidentaux, surtout depuis les conflits des années 1980-2000."
+    },
+    "demography": {
+      "totalPopulation": 800000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur Ethnologue (SIL International, SHK, 580 100 locuteurs recensés 2009), ASJP Database, CIA World Factbook (Soudan du Sud), projections démographiques 2025. Le Royaume Shilluk est le troisième groupe ethnique du Soudan du Sud après les Dinka et les Nuer.",
+      "distributionByCountry": [
+        {
+          "country": "SSD",
+          "population": 750000,
+          "note": "État du Nil Supérieur : comtés de Fashoda (Kodok), Baliet, Akoka, Malakal et environs"
+        },
+        {
+          "country": "SDN",
+          "population": 50000,
+          "note": "Diaspora dans les villes de Khartoum et Omdurman, et le long du Nil Blanc"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Shilluk people. https://en.wikipedia.org/wiki/Shilluk_people",
+      "Wikipedia EN — Shilluk Kingdom. https://en.wikipedia.org/wiki/Shilluk_Kingdom",
+      "Wikipedia EN — Shilluk language. https://en.wikipedia.org/wiki/Shilluk_language",
+      "Wikipedia EN — Fashoda Incident. https://en.wikipedia.org/wiki/Fashoda_Incident",
+      "Ethnologue — Shilluk (SHK). https://www.ethnologue.com/language/shk/",
+      "ASJP Database — Shilluk. https://asjp.clld.org/languages/SHILLUK_2",
+      "Graeber, David. The divine kingship of the Shilluk: On violence, utopia, and the human condition. HAU: Journal of Ethnographic Theory, 2011. https://www.journals.uchicago.edu/doi/full/10.14318/hau1.1.002",
+      "Seligman, C.G. The Shilluk of the Upper Nile. 1911. Études anthropologiques fondatrices.",
+      "Frazer, James George. The Golden Bough. 3e édition, 1922 (analyse de la royauté sacrée shilluk).",
+      "eHRAF World Cultures — Shilluk. https://ehrafworldcultures.yale.edu/cultures/fj23/summary",
+      "CIA World Factbook — South Sudan. https://www.cia.gov/the-world-factbook/countries/south-sudan/",
+      "UN Peacekeeping — Fashoda history. https://peacekeeping.un.org/en/sign-of-peace-past-british-and-french-ambassadors-visit-historical-town-where-peace-deal-was-reached"
+    ]
+  }
+}

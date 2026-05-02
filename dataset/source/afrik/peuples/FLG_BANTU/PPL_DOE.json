@@ -1,0 +1,84 @@
+{
+  "id": "PPL_DOE",
+  "nameMain": "Doe",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Doe",
+      "selfAppellation": "Wadoe",
+      "exonyms": ["Wadoe"],
+      "originOfExonyms": "Wadoe est la forme swahilie du nom du peuple (prefixe wa- de classe 2 designe un groupe humain en swahili). Le nom Doe est la forme simplifiee utilisee en anglais et en francais.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Doe (ou Wadoe) est utilise couramment en Tanzanie pour designer ce peuple. Ils sont recenses officellement dans la liste des groupes ethniques de Tanzanie sous le nom Doe, dans la region de Pwani.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu du centre-est (sous-groupe G.30, avec Kami, Kutu, Kwere, Luguru, Zaramo)",
+      "historicalRegion": "District de Bagamoyo et district de Chalinze, region de Pwani (cote), nord de la Tanzanie cotiere",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Doe"],
+    "origins": {
+      "ancientOrigins": "Les Doe font partie du complexe Bantu du centre-est de la Tanzanie, etroitement apparentes aux Zaramo, Kami, Kutu, Kwere et Luguru (sous-groupe G.30 selon la classification Guthrie). Ces peuples partagent des origines communes dans les migrations Bantu vers la cote orientale de l'Afrique. Les Doe etaient l'un des peuples autochtones de la region de Bagamoyo bien avant l'arrivee des marchands arabes et la fondation de la ville commerciale au XVIIIe siecle.",
+      "formationPeriod": "La formation de l'identite Doe distincte remonte probablement au premier millenaire apres J.-C., dans le cadre des migrations et installations Bantu sur la cote tanzanienne. Leur presence dans la region de Bagamoyo est documentee avant la fondation de la ville commerciale (fin XVIIIe siecle). Les sources historiques de Bagamoyo (vers 1880) mentionnent explicitement les Zaramo et Doe comme peuples indigenes de la region.",
+      "migrationRoutes": [
+        "Migrations Bantu depuis l'Afrique centrale (voie orientale) vers les plaines cotieres de la Tanzanie actuelle",
+        "Etablissement dans les plaines et collines de la region de Pwani, entre les districts de Bagamoyo et Chalinze"
+      ],
+      "historicalSettlementZones": [
+        "District de Bagamoyo, region de Pwani (Tanzanie)",
+        "District de Chalinze, region de Pwani (Tanzanie)",
+        "Arriere-pays cotier entre les monts Uluguru et la cote de l'ocean Indien"
+      ],
+      "unificationsOrDivisions": "Les Doe, comme les autres peuples Bantu de la region cotiere tanzanienne, etaient organises en communautes villageoises independantes sans structure politique centralisee. L'influence croissante de Bagamoyo (ville swahilie et arabe important centre caravanier au XIXe siecle) et la colonisation allemande puis britannique transformerent les structures sociales des Doe.",
+      "externalInfluences": "La presence de marchands omanais, ismaeliens et d'autres groupes islamiques a Bagamoyo (depuis le XVIIIe siecle) et l'essor de cette ville comme plaque tournante de la traite des esclaves et des caravanes d'ivoire au XIXe siecle influencerent profondement les Doe. La colonisation allemande (administration installee a Bagamoyo, capitale de l'Afrique orientale allemande) puis britannique transformerent les structures politiques et economiques. La langue Bondei et le swahili ont influence le Doe, qui les a reciproquement influences.",
+      "majorHistoricalEvents": "Presence documentee des Doe et Zaramo comme peuples autochtones de Bagamoyo bien avant l'arrivee des commerçants arabes (XVIIIe siecle). Coexistence avec les commerçants omanais, hindous et zanzibariens a Bagamoyo (vers 1880). Bagamoyo comme point de depart des caravanes d'ivoire et d'esclaves vers Zanzibar et d'extremite de la route de Stanley (XIXe siecle). Administration allemande installee a Bagamoyo jusqu'en 1891 (capitale initiale de l'Afrique orientale allemande). Independance de la Tanzanie (1961)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe Doe etait organisee en communautes villageoises dirigees par des conseils d'anciens. Pas de systeme monarchique ou de chefferies etendues documentees. Comme chez leurs voisins Zaramo et Kwere, l'autorite locale etait detenue par des lineages clefs.",
+      "clanOrganization": "Les Doe sont organises en lignages et clans patrilineaires, en conformite avec les structures Bantu du centre-est de la Tanzanie. La filiation determine l'appartenance clanique, les droits fonciers et les alliances matrimoniales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role central dans l'organisation sociale Doe : ils regissent l'acces a la terre, les decisions matrimoniales et les responsabilites funeraires. Les anciens des lignages sont les autorites morales et coutumières de la communaute.",
+      "religiousAuthority": "La religion traditionnelle Doe inclut le culte des ancetres et la croyance aux esprits. Sous l'influence de Bagamoyo (centre islamique important), l'islam sunnite s'est repandu parmi les Doe. Des pratiques animistes subsistent parallelement aux pratiques religieuses revelees."
+    },
+    "languages": {
+      "mainLanguage": "Doe",
+      "isoCodes": ["doe"],
+      "dialects": [],
+      "vehicularRole": "Le Doe (code ISO 639-3 : doe, code Guthrie G.301) est une langue Bantu du sous-groupe central tanzanien, apparentee au Bondei, au Kwere et aux autres langues du groupe G.30. Ethnologue la classe comme langue stable et indigene de Tanzanie. Le swahili est utilise comme langue vehiculaire nationale et est largement parle dans la region de Pwani. La langue Bondei et le Doe se sont mutuellement influences selon les etudes linguistiques."
+    },
+    "culture": {
+      "majorRites": "Comme les autres peuples Bantu de la cote tanzanienne, les Doe pratiquent des rites de passage (naissance, puberte, mariage, mort) combines avec des pratiques religieuses. Les ceremonies funeraires impliquent la communaute elargie et les membres des lignages. Les fetes islamiques (Aid el-Fitr, Aid el-Adha) sont celebrees dans les communautes islamisees.",
+      "symbols": "Le cocotier et la terre cotiere sont des elements identitaires forts pour les populations de la region de Pwani. Les pirogues et les activites de peche sont centrales dans l'identite des Doe cotieres.",
+      "artsAndMusic": "Les arts traditionnels Doe comprennent la vannerie, la poterie et la sculpture sur bois. La musique et la danse accompagnent les ceremonies. L'architecture vernaculaire en banco et paille caracterise les villages Doe de l'arriere-pays.",
+      "spiritualities": "La spiritualite Doe combine croyances animistes tradicionnelles (culte des ancetres, propitiation des esprits) et pratiques islamiques issues des contacts avec les marchands arabo-swahilis de Bagamoyo. Cette forme d'islam populaire, melant traditions locales et pratiques coraniques, est similaire a celle des autres peuples Bantu cotieres de la Tanzanie."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Doe ne sont pas connus pour avoir forme des royaumes ou grandes chefferies. Leur organisation politique traditionnelle etait decentralisee, basee sur des communautes villageoises autonomes. L'independance tanzanienne (1961) integra les Doe dans le cadre politique national.",
+      "relationsWithNeighbors": "Les Doe etaient en contact etroit avec les Zaramo (peuple majoritaire de la region de Dar es Salaam), les Kwere et les Bondei. A Bagamoyo, ils coexistaient avec les marchands omanais, ismaeliens, hindous et zanzibariens. La ville de Bagamoyo, etablie sur leur territoire, etait un carrefour multiculturel majeur de l'ocean Indien au XIXe siecle. Les langues Doe et Bondei se sont mutuellement influencees.",
+      "conflictsOrAlliances": "Les Doe furent affectes par les mouvements caravaners et la traite des esclaves qui transiterent par Bagamoyo au XIXe siecle. La region fut le theatre de resistances anti-coloniales (notamment le mouvement Maji Maji, 1905-1907) qui toucha les peuples Bantu cotieres de la Tanzanie.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 40000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur le recensement de 1987 (24 000) avec projection de croissance ; Joshua Project et Wikipedia",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 40000,
+          "note": "Districts de Bagamoyo et Chalinze, region de Pwani (cote), Tanzanie"
+        }
+      ]
+    },
+    "sources": [
+      "Doe people – Wikipedia (https://en.wikipedia.org/wiki/Doe_people)",
+      "List of ethnic groups in Tanzania – Wikipedia (https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_Tanzania)",
+      "Doe language – Wikipedia (https://en.wikipedia.org/wiki/Doe_language)",
+      "Doe language – Ethnologue (https://www.ethnologue.com/language/doe/)",
+      "Doe in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/11584)",
+      "History of Bagamoyo – Freundeskreis Bagamoyo (https://www.bagamoyo.com/index.php?id=history_bagamoyo)",
+      "Bagamoyo Town – Altezza Travel (https://altezzatravel.com/articles/bagamoyo)",
+      "Central Bantu subgroup (G.30) – Ethnologue (https://www.ethnologue.com/subgroup/54/)"
+    ]
+  }
+}

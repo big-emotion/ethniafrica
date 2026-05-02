@@ -1,0 +1,118 @@
+{
+  "id": "PPL_IGBO",
+  "nameMain": "Igbo",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Igbo",
+      "selfAppellation": "Ndi Igbo",
+      "exonyms": [
+        "Ibo (orthographe coloniale britannique, reductrice et phonetiquement inexacte)"
+      ],
+      "originOfExonyms": "Ibo provient d'une transcription coloniale britannique erronee du terme igbo, utilisee dans les documents administratifs coloniaux du XIXe et XXe siecle",
+      "whyProblematic": "Le terme Ibo est considere comme colonial et reducteur car il simplifie la prononciation tonale complexe du terme igbo et fut impose par l'administration coloniale britannique sans consultation des locuteurs natifs. Il perpetue une vision externe et deformee de l'identite igbo.",
+      "contemporaryUsage": "Le terme Igbo est desormais universellement prefere dans les contextes academiques, officiels et communautaires. Ibo n'est plus utilise que dans des documents historiques ou par meconnaissance.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Igboide",
+      "historicalRegion": "Foret orientale du Nigeria (bassin du Niger inferieur et moyen, region d'Igboland)",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Onicha (Onitsha) — groupe riverain du Niger, historiquement commercants",
+      "Ngwa — groupe meridional, agriculteurs et commercants",
+      "Aro — groupe connu pour le reseau commercial et religieux Aro, gardiens de l'oracle d'Arochukwu",
+      "Nri — groupe central, berceau du royaume de Nri, autorite spirituelle et politique ancienne",
+      "Mbaise — confederation de communautes du sud-est",
+      "Owerri — groupe central, connu pour ses traditions artistiques",
+      "Nsukka — groupe septentrional, zone de transition avec les cultures du Nord",
+      "Ikwerre — groupe occidental, parfois considere comme distinct",
+      "Ezza — groupe oriental, repute pour leur organisation militaire",
+      "Afikpo — groupe oriental, connu pour leurs masques et rituels"
+    ],
+    "origins": {
+      "ancientOrigins": "Preuves archeologiques d'Igbo-Ukwu (IXe siecle) : decouverte en 1939 d'objets en bronze sophistiques, perles de verre et ceramiques indiquant une civilisation avancee avec des liens commerciaux transsahariens. Theorie autochtone : les Igbo seraient originaires de la region qu'ils occupent actuellement depuis plusieurs millenaires (5000 ans avant notre ere selon certaines estimations). Theorie migratoire : certains recits oraux evoquent des migrations depuis le nord ou l'est, mais ces theories restent controversees. Etudes linguistiques : la langue igbo appartient a la famille Niger-Congo, suggerant des liens anciens avec d'autres peuples de la region.",
+      "formationPeriod": "Periode neolithique (5000-2000 avant notre ere) : etablissement des premieres communautes agricoles. Age du fer (500 avant notre ere - 200 de notre ere) : developpement de la metallurgie. IXe-Xe siecles : apogee du royaume de Nri et de la civilisation d'Igbo-Ukwu. XVe-XVIIIe siecles : expansion du reseau commercial Aro.",
+      "migrationRoutes": [
+        "Migrations internes depuis le coeur d'Igboland (region de Nri-Awka) vers les peripheries",
+        "Expansion vers le sud et l'ouest (delta du Niger)",
+        "Mouvements vers l'est (Cross River)"
+      ],
+      "historicalSettlementZones": [
+        "Coeur historique : region de Nri-Awka (Anambra actuel)",
+        "Expansion vers Owerri, Orlu, Okigwe (Imo actuel)",
+        "Etablissements riverains : Onitsha, Oguta, Aboh",
+        "Zones orientales : Afikpo, Abakaliki (Ebonyi actuel)"
+      ],
+      "unificationsOrDivisions": "Systeme politique decentralise : absence d'Etat centralise unifie, organisation en villages autonomes (obodo) et confederations. Royaume de Nri (Xe-XIXe siecles) : autorite spirituelle et politique, mais non imperiale, basee sur le prestige religieux de l'Eze Nri. Confederation Aro (XVIIe-XIXe siecles) : reseau commercial et religieux unifiant de nombreuses communautes via l'oracle d'Arochukwu (Ibini Ukpabi). Guerre civile du Biafra (1967-1970) : tentative de secession du sud-est du Nigeria, unification politique temporaire des Igbo.",
+      "externalInfluences": "Contacts avec les Ibibio, Ijaw, Efik (peuples cotiers). Commerce transsaharien (IXe-XVe siecles) : echanges de cuivre, perles, ivoire. Traite atlantique (XVIe-XIXe siecles) : participation via le reseau Aro, impact demographique et social majeur. Colonisation britannique (1900-1960) : imposition du systeme indirect rule, christianisation massive, introduction de l'education occidentale.",
+      "majorHistoricalEvents": "Fondation du royaume de Nri (Xe siecle). Developpement du reseau Aro (XVIIe siecle). Expedition punitive britannique d'Arochukwu (1901-1902) : destruction de l'oracle, fin de l'independance politique igbo. Guerre civile du Biafra (1967-1970) : conflit meurtrier (1-3 millions de morts), traumatisme collectif, diaspora massive. Retour et reconstruction post-Biafra (annees 1970-present)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Democratie villageoise : assemblees d'hommes libres (Oha na Eze, Umunna). Conseil des anciens (Ndi Ichie) : autorite decisionnelle basee sur l'age et la sagesse. Systeme de titres : Ozo, Nze na Ozo (titres honorifiques acquis par merite et richesse). Eze Nri : autorite spirituelle supreme du royaume de Nri, consideree comme descendant de la divinite Eri. Absence de monarchie hereditaire centralisee dans la plupart des communautes.",
+      "clanOrganization": "Umunna : lignage patrilineaire, unite de base de l'organisation sociale. Umunne : lignage maternel, important pour les alliances et la protection. Systeme segmentaire : villages composes de plusieurs lignages (umunna) descendant d'un ancetre commun. Exogamie clanique : interdiction de mariage au sein du meme umunna.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Propriete fonciere collective : la terre appartient au lignage, non aux individus. Solidarite economique et sociale : entraide mutuelle, resolution des conflits internes. Culte des ancetres : chaque lignage honore ses ancetres fondateurs.",
+      "religiousAuthority": "Eze Nri : pretre-roi du royaume de Nri, mediateur entre Chukwu et les hommes. Dibia : pretres-devins, guerisseurs, intermediaires avec le monde spirituel. Ndi Nze na Ozo : titulaires de titres religieux et sociaux, gardiens des traditions. Oracle d'Arochukwu (Ibini Ukpabi) : centre religieux et judiciaire majeur jusqu'en 1902."
+    },
+    "languages": {
+      "mainLanguage": "Igbo (Asususu Igbo)",
+      "isoCodes": ["ibo"],
+      "dialects": [
+        "Dialectes centraux : Owerri, Umuahia, Orlu (base de l'igbo standard)",
+        "Dialectes septentrionaux : Onitsha, Nsukka, Awka",
+        "Dialectes meridionaux : Ngwa, Asa, Ikwerre",
+        "Dialectes orientaux : Afikpo, Ezza, Izzi",
+        "Dialectes occidentaux : Ika, Ukwuani (parfois consideres comme langues distinctes)",
+        "Plus de 20 dialectes mutuellement intelligibles"
+      ],
+      "vehicularRole": "Igbo standard : developpe a partir des dialectes centraux, utilise dans l'education, les medias et l'administration du sud-est du Nigeria. Langue de communication inter-ethnique dans le sud-est. Langue liturgique : traduction de la Bible (1906-1913), usage dans les eglises chretiennes. Langue de la diaspora : maintenue par les communautes igbo a l'etranger."
+    },
+    "culture": {
+      "majorRites": "Festival de la Nouvelle Igname (Iri Ji Ohuru) : celebration annuelle de la recolte, action de grace aux dieux, festins communaux. Mascarades Mmanwu : rites majeurs incarnant les esprits des ancetres, role social et judiciaire. Rites de passage : ceremonies de nommage (Igu Nna, Nkwa Nwanyi), mariages traditionnels (Igba nkwu, presentation de la dot), funerailles elaborees. Systeme de titres Ozo et Nze : rites d'initiation aux cercles de prestige.",
+      "symbols": "Chi : spirit personnel gardien attribue a chaque individu avant la naissance. Ofo : baton sacre symbolisant l'autorite et la justice. Masques Mmanwu : representations des ancetres et des esprits. Igbo-Ukwu : site archeologique fondateur de la civilisation igbo. Couleurs symboliques : blanc (purity, Eze Nri), rouge (sang, guerre, sacrifice).",
+      "artsAndMusic": "Arts visuels : sculpture sur bois et bronze (masques, statues, portes sculptees), peintures murales uli (motifs geometriques et curvilignes par les femmes). Textiles aso-oke et akwete (tissage traditionnel). Musique : instruments Opi (flute), Ogene (gong metallique), Udu (tambour en argile), Ekwe (tambour en bois fendant). Dances : Atilogwu (acrobatique), Nkwa Umuagbogho (danse des jeunes femmes). Litterature orale : Mmonwu (epopees), contes Akuko-ifo. Ecrivain mondial de reference : Chinua Achebe (Things Fall Apart, 1958).",
+      "spiritualities": "Odinani (egalement Odinala, Omenala) : systeme religieux traditionnel polythéiste et pantéiste. Divinites principales : Chukwu (Dieu supreme), Ala (deesse de la terre, mere spirituelle), Amadioha (dieu du tonnerre et de la justice), Idemili (deesse de l'eau). Chi : esprit personnel de chaque individu. Le christianisme est massivement adopte depuis le XIXe siecle (catholicisme, anglicanisme, pentecotisme). Syncretisme frequent entre pratiques chretiennes et elements de l'Odinani."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume de Nri (Xe-XIXe siecles) : plus ancienne monarchie igbo documentee, autorite spirituelle et culturelle dans tout l'Igboland, sans empire territorial. Confederation Aro (XVIIe-XIXe siecles) : reseau religieux, commercial et judiciaire pan-igbo fonde sur l'oracle d'Arochukwu. Royaume d'Onitsha : puissance commerciale majeure sur le Niger. Royaume d'Aboh : centre de commerce fluvial. Agbor et Asaba : chefferies importantes du delta occidental.",
+      "relationsWithNeighbors": "Relations commerciales intenses avec les Ijaw (delta du Niger), les Efik (Cross River) et les Ibibio. Tensions historiques et cooperations avec les Hausa-Fulani du Nord, les Yoruba de l'Ouest, les Tiv et les Idoma. Les Igbo ont joue un role majeur comme intermediaires commerciaux dans les reseaux atlantiques via le reseau Aro.",
+      "conflictsOrAlliances": "Resistance a la colonisation britannique : guerre d'Aro (1901-1902), revolte des femmes Aba (1929). Guerre civile du Biafra (1967-1970) : tentative de secession du sud-est dirigee par Odumegwu Ojukwu ; 1 a 3 millions de morts ; traumatisme identitaire fondateur. Groupes activistes contemporains : MASSOB (1999) et IPOB pour l'independance du Biafra.",
+      "diaspora": "Importante diaspora mondiale apres la guerre du Biafra et pour raisons economiques. Communautes significatives au Royaume-Uni, aux Etats-Unis, au Canada, au Cameroun, au Gabon, en Europe continentale. Les Igbo forment l'une des diasporas africaines les plus dynamiques, avec des personnalites influentes dans la litterature mondiale (Chinua Achebe, Chimamanda Ngozi Adichie), la politique et les affaires."
+    },
+    "demography": {
+      "totalPopulation": 39365000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur peuple_demographie_globale.csv, Ethnologue (SIL International), recensements nigerians, estimations AFRIK. Les Igbo representent environ 18% de la population nigeriane.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 39000000,
+          "note": "Principalement dans les etats d'Abia, Anambra, Ebonyi, Enugu et Imo ; minorites significatives dans les etats de Delta et Rivers"
+        },
+        {
+          "country": "CMR",
+          "population": 200000,
+          "note": "Communautes diasporiques"
+        },
+        { "country": "GBN", "population": 50000, "note": "Diaspora en Gabon" },
+        {
+          "country": "GBR",
+          "population": 115000,
+          "note": "Importante communaute igbo au Royaume-Uni"
+        }
+      ]
+    },
+    "sources": [
+      "Achebe, Chinua — Things Fall Apart (1958), roman fondateur sur la societe igbo pre-coloniale",
+      "Uchendu, Victor — The Igbo of Southeast Nigeria (1965), etude anthropologique classique",
+      "Isichei, Elizabeth — A History of the Igbo People (1976)",
+      "Wikipedia — Igbo people : https://en.wikipedia.org/wiki/Igbo_people",
+      "Wikipedia — Odinani : https://en.wikipedia.org/wiki/Odinani",
+      "Wikipedia — Biafra : https://en.wikipedia.org/wiki/Biafra",
+      "Ethnologue (SIL International) — Igbo language (ibo) : https://www.ethnologue.com/language/ibo/",
+      "Nwala, T. Uzodinma — Igbo Philosophy (1985)",
+      "BeingAfrican.org — Music and Dance in Igbo Culture : https://beingafrican.org/culture-panel/music-and-dance-in-igbo-culture/"
+    ]
+  }
+}

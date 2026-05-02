@@ -1,0 +1,117 @@
+{
+  "id": "PPL_DENDI",
+  "nameMain": "Dendi",
+  "languageFamilyId": "FLG_SONGHAY",
+  "currentCountries": ["BEN", "NER", "NGA", "TGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Dendi",
+      "selfAppellation": "Dendi",
+      "exonyms": [
+        "Dandawa (terme haoussa, utilisé aussi bien pour les Dendi que pour les Songhaï en général)",
+        "Dendiganda (nom de leur province dans l'Empire songhaï)",
+        "Dandi (variante orthographique)"
+      ],
+      "originOfExonyms": "Le terme Dendi est dérivé de la langue songhay et signifie littéralement en aval du fleuve (down the river). Il fait référence à leur position géographique dans la vallée du Niger, en aval des centres historiques de l'Empire songhaï (Gao, Tombouctou). Le terme Dandawa est d'origine haoussa et est utilisé par les populations voisines. Dendiganda était le nom officiel de leur province dans l'Empire songhaï.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Dendi est universellement utilisé au Bénin, au Niger et au Nigeria pour désigner ce groupe. Le dendi est reconnu comme langue minoritaire officielle au Bénin et est enseigné dans certaines écoles. La communauté est estimée à environ 195 000 à 440 000 personnes selon les sources (Ethnologue et Omniglot 2025 estiment environ 440 000 locuteurs de dendi).",
+      "linguisticFamily": "FLG_SONGHAY",
+      "ethnoLinguisticGroup": "Songhay méridional",
+      "historicalRegion": "Province de Dendiganda de l'Empire songhaï ; basses terres de la vallée du Niger (nord Bénin, sud-ouest Niger, nord-ouest Nigeria)",
+      "currentCountries": ["BEN", "NER", "NGA", "TGO"]
+    },
+    "ethnicities": [
+      "Dendi du Bénin — groupe principal, dans les départements d'Alibori, Borgou, Donga et Atakora ; héritiers directs de la province Dendiganda de l'Empire songhaï",
+      "Dendi du Niger — concentrés autour de la ville de Gaya dans le département de Gaya, région Dosso",
+      "Dendi du Nigeria — petite communauté dans les États de Kebbi, Kwara, Niger et Sokoto (LGA d'Arewa Dandi) ; environ 4 505 personnes",
+      "Dendi du Togo — communauté présente dans le nord du Togo",
+      "Tyenga — groupe autochtone préexistant dans la région qui s'est mélangé aux Songhaï migrateurs pour former le peuple dendi actuel"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Dendi et les Songhaï en général descendent du royaume ancien de Za, dont la présence est attestée depuis le 8e siècle entre les villes de Kukiya et Gao (Mali actuel). La chronique Tarikh al-Sudan du 17e siècle (Al-Sadi) rapporte la tradition orale selon laquelle le fondateur légendaire de la dynastie, Za Alayaman, serait venu du Yémen et se serait installé à Kukiya. En 1010, des marchands arabes convertirent les populations locales à l'islam, qui se mélangea dès lors avec la religion autochtone fondée sur la croyance en les fleuves sacrés, la terre et la chasse. Les Dendi actuels résultent d'un métissage entre les Songhaï migrateurs (descendants de l'empire) et les Tyenga, population autochtone qui tirait son pouvoir de la pratique du Bori (culte animiste préislamique).",
+      "formationPeriod": "L'identité dendi distincte s'est cristallisée après la chute de l'Empire songhaï en 1591, lorsque les armées saâdiennes du Maroc ont défait les Songhaï à la bataille de Tondibi. Les nobles askias (dirigeants songhaï) ont fui la ville de Gao et se sont réinstallés dans leur région d'origine de Dendi, dans le sud-ouest du Niger actuel, fondant le Royaume dendi (1591-1901). Ce royaume a maintenu la tradition askia et a résisté aux conquérants marocains pendant plusieurs décennies, menant une guerre de guérilla sous Askia Nuh (1591-1599) avant de se stabiliser dans la région frontalière Niger-Bénin-Nigeria.",
+      "migrationRoutes": [
+        "Migration depuis Gao vers le sud (province de Dendiganda) lors de la chute de l'Empire songhaï (1591)",
+        "Diffusion commerciale le long de la vallée du Niger vers le Bénin, le Niger et le Nigeria",
+        "Mouvements saisonniers entre les centres urbains (Malanville, Gaya, Kamba) et les villages ruraux de la vallée"
+      ],
+      "historicalSettlementZones": [
+        "Malanville (Bénin) — principal centre urbain dendi au Bénin, sur le Niger",
+        "Gaya (Niger) — principale ville de la communauté dendi au Niger, sur le Niger",
+        "Kamba (Nigeria) — centre dendi du côté nigérian",
+        "Départements d'Alibori et Borgou au nord du Bénin",
+        "Axes caravaniers et marchés du Niger moyen entre Niamey et le Nigeria"
+      ],
+      "unificationsOrDivisions": "Le Royaume dendi (1591-1901) a maintenu l'unité politique des Dendi sous la dynastie askia pendant trois siècles. Cependant, ce royaume a connu une instabilité croissante aux 18e et 19e siècles, avec des coups d'État successifs et des rivalités internes entre prétendants au trône. En 1901, la France a destitué le dernier askia et incorporé le territoire dans l'Afrique-Occidentale française. La division du territoire entre les colonies françaises (Bénin, Niger) et britanniques (Nigeria) a fragmenté la communauté dendi selon des frontières coloniales arbitraires.",
+      "externalInfluences": "Islamisation initiée au 11e siècle par des marchands arabes ; l'islam coexiste avec les croyances animistes locales (Bori, culte des esprits). Conquête marocaine (1591) et pression des forces saâdiennes pendant une décennie. Influence haoussa sur la langue dendi (le dendi est fortement influencé par le bariba selon Ethnologue). Colonisation française et britannique au 19e-20e siècles. Depuis les indépendances (Bénin 1960, Niger 1960, Nigeria 1960), les frontières nationales segmentent la communauté dendi entre trois États.",
+      "majorHistoricalEvents": "8e siècle : fondation du royaume de Za à Kukiya-Gao. 1010 : islamisation de la région par des marchands arabes. 1275-1464 : domination de l'Empire du Mali sur la région de Gao. 1464-1591 : apogée de l'Empire songhaï sous les dynasties Sunni et Askia. 1591 : chute de l'Empire songhaï à la bataille de Tondibi ; fuite des askias vers la province de Dendi. 1591-1901 : Royaume dendi ; résistance aux Marocains, puis déclin progressif. 1609 : soutien dendi à la révolte de Djenné contre les pachas saâdiens. 1901 : conquête française et déposition du dernier askia."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le Royaume dendi (1591-1901) était dirigé par un askia (titre royal songhaï) héréditaire, maintenant la tradition politique de l'Empire songhaï. Au niveau villageois, chaque communauté dendi est composée d'une famille étendue patrilinéaire liée à un ancêtre commun masculin. Cette unité est subdivisée en sous-groupes puis en unités familiales. Le chef de village (chef de lignage senior) préside les affaires communautaires avec le conseil des anciens. Les imams islamiques jouent un rôle religieux officiel mais les marabouts servent aussi de guérisseurs.",
+      "clanOrganization": "Société patrilinéaire stricte : tous les hommes partagent un ancêtre masculin commun. La société dendi est divisée en groupes sociaux incluant une caste noble. Parmi les nobles dendi, le premier fils né d'une union est encouragé à épouser la fille de son oncle paternel, afin de préserver la pureté de la ligne du père. Cette pratique d'endogamie patri-clanale renforce la cohésion du lignage noble.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires structurent l'ensemble de la vie sociale, économique et politique. Chaque unité familiale comprend un fils marié, ses épouses et leurs enfants. Les hommes se marient dans la trentaine, les filles à l'adolescence. L'islam autorise jusqu'à quatre épouses, mais la majorité des hommes n'en ont qu'une pour des raisons économiques. En cas de polygamie, chaque épouse dispose de sa propre maison dans le compound familial. Le divorce est accepté ; tous les enfants appartiennent au lignage du mari.",
+      "religiousAuthority": "Presque tous les Dendi sont musulmans. Les imams dirigent les prières officielles et enseignent la philosophie islamique. Les marabouts islamiques jouent un double rôle : direction de la prière communautaire et guérison des malades. Cependant, la possession par les esprits, la magie, la sorcellerie et le culte des ancêtres restent des composantes vitales de la croyance dendi, coexistant avec l'islam. La plupart des villages ont des troupes de possession et des guérisseurs-magiciens."
+    },
+    "languages": {
+      "mainLanguage": "Dendi (langue songhay méridionale)",
+      "isoCodes": ["ddn"],
+      "dialects": [
+        "Dendi du Bénin — variété principale, parlée dans les départements d'Alibori, Borgou, Donga, Atakora",
+        "Dendi du Niger — variété parlée autour de Gaya (Dosso)",
+        "Dendi du Nigeria — variété parlée dans les États de Kebbi, Kwara, Niger et Sokoto",
+        "Langue à quatre tons (quadritonale) selon les analyses linguistiques"
+      ],
+      "vehicularRole": "Le dendi est utilisé comme langue de commerce et de communication interethnique dans le nord du Bénin, en particulier le long du fleuve Niger (Donga et Alibori). Il est aussi parlé dans le sud-ouest du Niger et le nord-ouest du Nigeria. Le dendi forme un cluster dialectal avec le zarma et le koyraboro senni mais est fortement influencé par le bariba. Reconnu comme langue minoritaire au Bénin, il est enseigné dans certaines écoles primaires. Le français est la langue administrative au Bénin et au Niger ; l'anglais au Nigeria."
+    },
+    "culture": {
+      "majorRites": "Genji bi hori : festival célébroé en saison sèche pour offrir des offrandes aux esprits noirs (esprits malveillants selon la cosmologie dendi) censés contrôler les épidémies de peste ; cérémonies élaborées de possession d'esprits avec chants et danses rituels. Yenaandi (danse de la pluie) : cérémonie de la saison sèche invoquant la pluie ; implique chants, danses collectives et rites propitiatoires. Cérémonies de possession d'esprits : organisées selon les caractéristiques locales ; dans certaines localités, célébrées chaque semaine ou plus souvent ; les marabouts islamiques y participent également. Rites islamiques standards : circoncision masculine, fêtes du Ramadan, Aïd el-Fitr, Aïd el-Adha, pèlerinage à La Mecque. Mariage : l'endogamie noble (fils épousant la fille de l'oncle paternel) est une pratique distinctive des lignages nobles ; hommes se marient dans la trentaine, femmes à l'adolescence.",
+      "symbols": "Le fleuve Niger est le symbole central de l'identité dendi ; leur nom même (en aval du fleuve) y fait référence et leur religion autochtone vénère les fleuves sacrés. Les maisons rectangulaires en banco (banco = terre crue) avec toits en tôle ondulée sont l'architecture typique des villages dendi. Les symboles islamiques (croissant, étoile, calligraphie coranique) sont intégrés dans la vie quotidienne. La noblesse askia représente un héritage identitaire fort lié à l'Empire songhaï.",
+      "artsAndMusic": "Musique traditionnelle songhay-dendi : instruments à percussion (tambours, calebasses), instruments à cordes (monochorde, luth). Chants rituels liés aux cérémonies de possession d'esprits (genji bi hori, yenaandi) et aux mariages. Poésie orale et contes transmis par les griots et les anciens. Artisanat : poterie (jarres, récipients), tissage de nattes et de pagnes, travail du cuir (sandales, sacs). Architecture locale en banco : maisons rectangulaires, greniers à grain caractéristiques. Commerce le long du Niger : les Dendi ont historiquement été des marchands actifs, transportant leurs marchandises et s'établissant le long des routes caravanières du Niger moyen.",
+      "spiritualities": "Islam sunnite (presque universel chez les Dendi) coexistant avec un substrat animiste robuste. Croyances animistes : foi en les fleuves sacrés, la terre et les esprits de la chasse comme forces protectrices. Possession par les esprits (Zar, esprits noirs, esprits des ancêtres) : phénomène central de la vie spirituelle ; les guérisseurs-chamanes (magiciens) et les sorciers sont présents dans la plupart des villages. Culte des ancêtres : les ancêtres masculins sont vénérés comme protecteurs du lignage. Magie et sorcellerie : pratiques intégrées à la vie quotidienne. Les marabouts islamiques participent aux prières communautaires et à la guérison des malades, incarnant le syncrétisme entre islam et croyances locales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume dendi (1591-1901) est le principal héritage politique des Dendi. Fondé après la chute de l'Empire songhaï, il a maintenu la tradition askia et a résisté aux envahisseurs marocains sous Askia Nuh (guerres de guérilla 1591-1599). Le royaume avait ses capitales successives à Lulami puis dans d'autres centres du Niger méridional. En 1609, le royaume a soutenu la révolte de Djenné contre les pachas saâdiens. Des siècles d'instabilité politique (coups d'État successifs, rivalités entre prétendants) ont affaibli le royaume jusqu'à sa conquête par la France en 1901. L'Empire du Mali (1275-1464) avait auparavant dominé la région de Gao avant que les Songhaï ne s'en libèrent.",
+      "relationsWithNeighbors": "Les Dendi entretiennent des relations complexes avec les Bariba (Baatonum) du nord du Bénin, qui ont fortement influencé la langue dendi. Avec les Haoussa, ils maintiennent des échanges commerciaux importants et ont adopté le terme Dandawa. Avec les autres Songhaï (Zarma, Songhaï propre), ils partagent une origine commune et une intelligibilité mutuelle élevée. Les Tyenga, population autochtone de la région, sont intégrés dans la communauté dendi après métissage. Les Fulbé (Peuls) sont présents dans les mêmes régions et des échanges culturels ont eu lieu.",
+      "conflictsOrAlliances": "Résistance à l'invasion marocaine (1591-1599) : Askia Nuh a conduit une guerre de guérilla coûteuse avant de se résigner à la pression ennemie. Soutien à la révolte de Djenné contre les Saâdiens (1609). Instabilité interne du Royaume dendi aux 17e-19e siècles : coups d'État successifs, dépositions d'askias, ingérences marocaines. Résistance à la pénétration coloniale française, finalement vaincue en 1901 avec la déposition du dernier askia. Sous la colonisation, le territoire dendi a été fragmenté entre le Dahomey français (Bénin), le Niger français et le Nigeria britannique.",
+      "diaspora": "Les Dendi ont historiquement été des marchands mobiles qui ont établi des comptoirs commerciaux le long du Niger moyen et des routes caravanières. Des communautés dendi sont présentes dans les grandes villes béninoises (Cotonou, Porto-Novo) et nigériennes (Niamey). La diaspora internationale reste limitée, mais des communautés existent en France et dans d'autres pays francophones, notamment parmi les migrations économiques du Bénin et du Niger."
+    },
+    "demography": {
+      "totalPopulation": 440000,
+      "referenceYear": 2025,
+      "source": "Omniglot 2025 (environ 440 000 locuteurs de dendi) ; Wikipedia EN — Dendi people (195 633 selon une source antérieure) ; SIL Ethnologue — Dendi language (ddn) ; Joshua Project — Dendi, Dandawa in Benin. Note : les estimations varient selon les sources et la définition de locuteur (premier locuteur vs locuteur secondaire).",
+      "distributionByCountry": [
+        {
+          "country": "BEN",
+          "population": 380000,
+          "note": "Groupe principal dans les départements d'Alibori, Borgou, Donga et Atakora (nord du Bénin) ; Malanville est le principal centre"
+        },
+        {
+          "country": "NER",
+          "population": 45000,
+          "note": "Concentrés autour de Gaya, département de Gaya, région Dosso"
+        },
+        {
+          "country": "NGA",
+          "population": 10000,
+          "note": "États de Kebbi, Kwara, Niger et Sokoto ; LGA d'Arewa Dandi"
+        },
+        {
+          "country": "TGO",
+          "population": 5000,
+          "note": "Présence dans le nord du Togo"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Dendi people. https://en.wikipedia.org/wiki/Dendi_people",
+      "Wikipedia EN — Dendi province. https://en.wikipedia.org/wiki/Dendi_(province)",
+      "Wikipedia EN — Dendi language. https://en.wikipedia.org/wiki/Dendi_language",
+      "Ethnologue — Dendi language (ddn). https://www.ethnologue.com/language/ddn/",
+      "Omniglot — Dendi language and alphabet. https://www.omniglot.com/writing/dendi.htm",
+      "101 Last Tribes — Dendi people. https://www.101lasttribes.com/tribes/dendi.html",
+      "Joshua Project — Dendi, Dandawa in Benin. https://joshuaproject.net/people_groups/11533/BN",
+      "CIA World Factbook — Benin, Niger, Nigeria"
+    ]
+  }
+}

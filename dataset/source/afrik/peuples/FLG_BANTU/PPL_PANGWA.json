@@ -1,0 +1,81 @@
+{
+  "id": "PPL_PANGWA",
+  "nameMain": "Pangwa",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Pangwa",
+      "selfAppellation": "Pangwa",
+      "exonyms": ["Ekipangwa", "Kipangwa"],
+      "originOfExonyms": "Ekipangwa et Kipangwa sont des formes prefixees de la langue bantoue designant a la fois le peuple et sa langue. Ces denominationsapparaissent dans les classifications linguistiques (SIL Ethnologue, Glottolog) et chez les missionaries luthériens allemands actifs dans la region au debut du XXe siecle.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Pangwa est utilise dans les recensements tanzaniens et les classifications ethnolinguistiques pour designer ce groupe du district de Ludewa, region de Njombe.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou des Hautes Terres du Sud (groupe Kisi-Pangwa)",
+      "historicalRegion": "Chaine des Kipengere (monts Livingstone), rive est du lac Malawi, district de Ludewa, region de Njombe, Tanzanie du Sud",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Pangwa"],
+    "origins": {
+      "ancientOrigins": "Les Pangwa sont un groupe bantoue des Hautes Terres du Sud de la Tanzanie. Leurs origines s'inscrivent dans les vagues de migration bantoue qui ont peuple les hautes terres du rift est-africain. Ils sont linguistiquement et culturellement proches des Kinga, Bena, Wanji, Hehe, Kisi et Manda, qui constituent ensemble le groupe des langues bantoues des Hautes Terres du Sud.",
+      "formationPeriod": "Formation comme groupe distinct probablement entre le XVe et le XVIIIe siecle lors de la differenciation des populations bantoues des Hautes Terres du Sud tanzaniennes.",
+      "migrationRoutes": [
+        "Progression des populations bantoues depuis le nord-ouest vers les hautes terres du sud de la Tanzanie",
+        "Etablissement dans la chaine des Kipengere (monts Livingstone) au-dessus du lac Malawi"
+      ],
+      "historicalSettlementZones": [
+        "Chaine des Kipengere (monts Livingstone), rive nord-est du lac Malawi",
+        "District de Ludewa, region de Njombe, Tanzanie du Sud"
+      ],
+      "unificationsOrDivisions": "Les Pangwa forment un groupe relativement homogene dans leur zone montagnarde. Ils partagent avec les Kisi un sous-groupe linguistique (Kisi-Pangwa, code Guthrie G.64).",
+      "externalInfluences": "Les missionnaires lutheriens allemands sont arrives dans la region au debut du XXe siecle (vers 1900-1910), introduisant le christianisme et l'education formelle. La colonisation allemande (Afrique-Orientale Allemande) puis britannique (Tanganyika) a transforme les structures politiques et economiques traditionnelles.",
+      "majorHistoricalEvents": "La Guerre des Boxers et la revolte Maji Maji (1905-1907) ont affecte le sud de la Tanzanie, bien que les Pangwa des hautes terres aient ete relativement proteges par leur isolement geographique. L'independance du Tanganyika (1961) puis la creation de la Tanzanie (1964) ont integre les Pangwa dans l'Etat tanzanien moderne."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation politique basee sur des chefferies locales. Pas de royaume centralise. L'autorite etait exercee par des chefs de clan (wahenga) et des anciens au niveau villageois.",
+      "clanOrganization": "Organisation clanique patrilineaire ; les clans determinent l'appartenance sociale, les droits fonciers et les regles matrimoniales exogames.",
+      "ageClassSystems": "Ceremonies d'initiation a l'age adulte communes aux groupes des Hautes Terres du Sud tanzaniennes.",
+      "roleOfLineages": "Descendance patrilineaire regissant l'heritage, l'acces a la terre et les obligations rituelles envers les ancetres.",
+      "religiousAuthority": "Tradition religieuse animiste avec culte des ancetres ; les guerisseurs et devins (waganga) jouaient un role important. Christianisme lutherien majoritaire depuis la colonisation allemande."
+    },
+    "languages": {
+      "mainLanguage": "Kipangwa (Ekipangwa, Pangwa)",
+      "isoCodes": ["pbr"],
+      "dialects": [],
+      "vehicularRole": "Le kipangwa est la langue maternelle des Pangwa dans le district de Ludewa. Le swahili est utilise comme langue vehiculaire avec les groupes voisins et dans les echanges commerciaux et administratifs. L'ethnologue classe le pangwa comme langue stable (Stable, institutionnel)."
+    },
+    "culture": {
+      "majorRites": "Ceremonies d'initiation a l'adolescence, rites de fecondite et de recolte. Funerailles avec invocations des ancetres. La religion traditionnelle accorde une place centrale a la propitiation des esprits ancestraux pour la fertilite des champs et la sante communautaire.",
+      "symbols": "Les monts Kipengere et le lac Malawi constituent des references geographiques et symboliques essentielles pour l'identite pangwa. La foret de montagne est associee aux esprits ancestraux.",
+      "artsAndMusic": "Musique rythmique avec ngoma (tambours) lors des ceremonies. Artisanat local incluant la vannerie et la poterie.",
+      "spiritualities": "Animisme traditionnel centre sur le culte des ancetres et les esprits de la nature. Christianisme lutherien dominant depuis le debut du XXe siecle, introduit par les missions luthériennes allemandes actives dans les Hautes Terres du Sud."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies locales sans unite politique centralisee. L'organisation politique des Pangwa etait similaire a celle des peuples voisins des Hautes Terres du Sud (Kinga, Kisi, Bena).",
+      "relationsWithNeighbors": "Relations de voisinage etroites avec les Kisi (groupe linguistique Kisi-Pangwa), les Kinga, les Bena et les Manda. Interactions commerciales et culturelles avec les populations du rivage du lac Malawi. La region a ete un axe de commerce et de migration reliant les Hautes Terres du Sud au lac Malawi.",
+      "conflictsOrAlliances": "La region des Hautes Terres du Sud a ete affectee par les raids ngoni au XIXe siecle ainsi que par le soulèvement Maji Maji (1905-1907) contre la colonisation allemande.",
+      "diaspora": "Migration de travail vers les centres urbains tanzaniens (Dar es Salaam, Mbeya) depuis l'epoque coloniale."
+    },
+    "demography": {
+      "totalPopulation": 130000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur le recensement de 2002 (95 000 personnes) et les projections 2025 (croissance demographique tanzanienne)",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 130000,
+          "notes": "District de Ludewa, region de Njombe, Tanzanie du Sud"
+        }
+      ]
+    },
+    "sources": [
+      "Pangwa language – Wikipedia (https://en.wikipedia.org/wiki/Pangwa_language)",
+      "Pangwa Language (PBR) – Ethnologue, SIL International (https://www.ethnologue.com/language/pbr/)",
+      "Pangwa in Tanzania – Joshua Project (https://www.joshuaproject.net/people_groups/14296)",
+      "Pangwa – Glottolog 5.3, ISO 639-3: pbr, code Guthrie G.64 (https://glottolog.org/resource/languoid/id/pang1287)",
+      "List of ethnic groups in Tanzania – Wikipedia (https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_Tanzania)",
+      "East African Notes and Records – A Politics of Fear, A Religion of Blame: Kinga, Pangwa and Nyakyusa Peoples in Southwestern Tanzania – George Park (https://notesandrecords.blogspot.com/2009/04/)"
+    ]
+  }
+}

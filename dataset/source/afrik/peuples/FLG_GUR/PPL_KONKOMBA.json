@@ -1,0 +1,106 @@
+{
+  "id": "PPL_KONKOMBA",
+  "nameMain": "Konkomba",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["GHA", "TGO", "BFA"],
+  "content": {
+    "appellations": {
+      "mainName": "Konkomba",
+      "selfAppellation": "Bikpakpaam",
+      "exonyms": ["Konkomba", "Bekpokpam", "Kekpokpam"],
+      "originOfExonyms": "Le terme Konkomba est l'anglicisation introduite par les missionnaires anglicans au debut du XXe siecle. Le mot Bikpakpaam est l'auto-designation du peuple au pluriel : un homme se dit ukpakpaanja, une femme ukpakpaanpii. Leur langue est le Likpakpaanl (ou Likpakpaln) et leur territoire le Kekpokpam.",
+      "whyProblematic": "Le terme Konkomba est un exonyme d'origine coloniale qui s'est diffuse dans la litterature academique et administrative. Les membres du groupe preferent Bikpakpaam, bien que Konkomba soit universellement reconnu dans les contextes officiels ghaneen et togolais.",
+      "contemporaryUsage": "Konkomba est le terme officiel utilise dans les recensements et documents gouvernementaux au Ghana et au Togo. Bikpakpaam est le terme utilise en interne par la communaute. L'association de jeunesse se nomme KOYA (Konkomba Youth Association).",
+      "linguisticFamily": "FLG_GUR",
+      "ethnoLinguisticGroup": "Gur (Oti-Volta), sous-groupe Gurma, apparente aux Basari et Moba du Togo et du Benin",
+      "historicalRegion": "Plaine du fleuve Oti (nord-est du Ghana actuel), zone de Yendi, Saboba, Chereponi et nord-ouest du Togo",
+      "currentCountries": ["GHA", "TGO", "BFA"]
+    },
+    "ethnicities": [
+      "Betshabob (Bemwatib de la plaine de l'Oti, plus de 6 000 membres dont 3 000 au Ghana)",
+      "Bemokpem (plus de 6 000 membres dont 3 000 au Ghana, marques faciaux identiques aux Betshabob)",
+      "Benafiab (dialecte plus distinct, utilisant parfois le dagbane)",
+      "Begbem (Bemwatib, partiellement intelligible avec Betshabob)",
+      "Besangma (memes marques faciaux que Betshabob et Bemokpem)",
+      "Bekwom (dialecte distinct, recours frequent au dagbane)",
+      "Nakpantib (moins de 2 000 membres)",
+      "Kpaltib (moins de 2 000 membres)",
+      "Bichabob (cinq clans autour du sanctuaire supra-clanique de Bwagbaln)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bikpakpaam sont consideres comme l'un des peuples les plus anciens du nord du Ghana. Avant l'arrivee d'autres groupes ethniques aux XVe-XVIe siecles, les Konkomba etaient deja etablis dans la region. L'historien Fynn (1971) rapporte que les ancetres des Dagomba ont rencontre un peuple apparente aux Konkomba deja installe dans le nord du Ghana. Les Konkomba tracent leurs origines a un trou dans la terre (tradition orale d'emergence). Ils disent avoir sejourne a Yaan/Chare (Yendi) avec les Kabre et les Bikwom avant que les Dagomba, arrivant a cheval de Tamale et Kumbungu, ne les poussent vers l'est.",
+      "formationPeriod": "L'identite Bikpakpaam s'est consolidee au sein de la plaine de l'Oti. Entre les XVe et XVIe siecles, la pression des Dagomba cavaliers a pousse les Konkomba vers l'est et le nord, definissant leur zone d'etablissement historique autour des rives de l'Oti et du Saboba. La periode coloniale (debut XXe siecle) a officialise l'appellation Konkomba et integre ce peuple dans les structures administratives.",
+      "migrationRoutes": [
+        "Presence autochtone dans la zone de Yendi (nord Ghana) avant le XVe siecle",
+        "Deplacement vers l'est et les rives de l'Oti sous la pression des cavaliers dagomba (XVe-XVIe siecles)",
+        "Migrations de travail agricole vers le Brong Ahafo, la region Volta et le Grand Accra au XXe siecle",
+        "Presence au Togo (regions des Savanes et de Kara) issue d'une expansion transfrontaliere"
+      ],
+      "historicalSettlementZones": [
+        "Plaine du fleuve Oti (6 300 km2, nord-est du Ghana, zone de savane)",
+        "Saboba et Chereponi (Nord Ghana, capitale traditionnelle Bikpakpaam)",
+        "Districts de Nanumba, Gushiegu, Karaga, Zabzugu et Tatale-Sanguli (region Nord du Ghana)",
+        "Districts de Nkwanta Nord et Sud (region Volta, Ghana)",
+        "Regions des Savanes et de Kara (nord Togo)"
+      ],
+      "unificationsOrDivisions": "La societe konkomba est fondamentalement acephale : pas de chef supreme ni de structure politique centralisee. Les clans constituent les plus grandes unites politiques. Les tribus (groupes de clans) maintiennent des alliances rituelles et des partenariats de solidarite. La modernite a amene la creation de la KOYA (Konkomba Youth Association) qui fonctionne comme structure de representation nationale.",
+      "externalInfluences": "Pression des royaumes dagomba et gonja depuis les XVe-XVIe siecles. Raids et esclavage sous les chefs de chefferies voisines (Nanumba, Dagomba). Domination coloniale britannique ayant renforce le systeme des chefferies existantes et marginalise les acephalous comme les Konkomba. Introduction du christianisme par les Assemblees de Dieu vers 1931, puis les catholiques en 1960.",
+      "majorHistoricalEvents": "XVe-XVIe siecles : deplacements dus aux cavaliers dagomba depuis Yendi. Periode coloniale : les Britanniques renforcent les chefferies de chefs supremes aux depens des groupes acephales. 1931 : premiere eglise protestante (Assemblees de Dieu) en pays konkomba. 1992 : les Konkomba soutiennent le NDC mais restent exclus du systeme des chefferies. 1994-1995 : guerre du pintade avec les Nanumba et Dagomba a Bimbilla, environ 2 000 morts et 200 000 deplaces, plus de 400 villages detruits. 2002 : violences avec les Nawuri, etat d'urgence declare. 2006 : accord de paix avec les Nanumba. 2018 : creation de la region Nord-Est du Ghana apres referendum (27 decembre 2018), partiellement reponse aux demandes konkomba. 2019 : nouveaux affrontements avec les Chokosi a Chereponi."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe acephale sans chef supreme. La plus grande unite politique est le clan. Les districts ou groupes de clans sont diriges par un ubor (chef local a fonctions administratives et judiciaires : maintien de la paix, de l'unite, de la justice ; polygame ; tient une cour traditionnelle avec linguiste ugbangmeer, scribe, pretre, anciens et gardes). L'utindaan (pretre de la terre, premier colon/proprietaire terrien) est le chef spirituel du territoire, vend et repartit les terres avec l'ubor. L'uninkpel est le chef de clan, l'homme le plus age, supervisant le clan et rapportant a l'ubor.",
+      "clanOrganization": "Les clans sont de type agnatique segmente : les lignaes majeurs (cinq generations), les lignages mineurs (trois generations) et les menages. Chaque segment a ses propres symboles rituels. Les clans controlent leurs terres de culture, zones de chasse et sources d'eau. La vie clanique est centree sur le village et les sanctuaires religieux. Les clans ont des frontières territoriales bien definies.",
+      "ageClassSystems": "Il n'existe pas de systeme formel de classes d'age au sens strict. Toutefois, les adolescents ont l'obligation culturelle de labourer leurs propres terres et celles de leurs parents dans la meme saison (independance economique). Un leader de jeunesse, l'unachiponbor (jeune chef), coordonne et promeut la paix parmi les jeunes, supervise les enterrements des beaux-parents et organise le travail communal (nkpawiin) pour les familles des beaux-parents.",
+      "roleOfLineages": "L'heritage est patrilineaire : l'enfant appartient au lignage du pere. Le cote maternel constitue un second foyer et un lieu d'asile. Les peres des femmes mariees recoivent un labourage annuel de la terre par les gendres. Les lignages majeurs (binikpel) forment une gerontocratie egalitaire d'anciens (bininkpiib) qui gouverne par consensus. Les liens inter-clans incluent les naabo (enfants d'une meme mere), taabo (enfants d'un meme pere) et dzo/nakwoo (amis), qui attenuent les hostilites.",
+      "religiousAuthority": "L'utindaan (pretre de la terre) est le chef spirituel communautaire : il interprete les regles soser, supervise les offrandes aux esprits terrestres (kitik) et preside les rituels saisonniers agricoles (plantation du sorgho, igname, recolte). Les sanctuaires terrestres (litingbaln) consistent en des baobabs, bosquets et pierres sacrificielles pres des habitations ou des limites bush/champs. Le marche d'Accra possede meme un sanctuaire terrestre (petit baobab defeuille supervise par un utindaan)."
+    },
+    "languages": {
+      "mainLanguage": "Likpakpaanl (Konkomba)",
+      "isoCodes": ["xon"],
+      "dialects": [
+        "Betshabob/Bemokpem/Begbem/Nakpantib : dialectes mutuellement intelligibles, core du Likpakpaanl",
+        "Benafiab et Bekwom : dialectes plus distincts, locuteurs recourant parfois au dagbane comme langue passerelle"
+      ],
+      "vehicularRole": "Le konkomba (Likpakpaanl) est parle au Ghana (regions Nord, Brong Ahafo, Volta, Est et Grand Accra), au Togo (regions des Savanes, de Kara et Plateaux) et dans une moindre mesure au Burkina Faso. Il appartient au sous-groupe Gurma de la famille Gur (Niger-Congo). Il represente 3,5% de la population ghaneenne selon le CIA World Factbook (2010). Le dagbane et l'anglais sont utilises comme vehiculaires par une partie des Konkomba."
+    },
+    "culture": {
+      "majorRites": "Le Ndinpondaan est le festival principal de la nouvelle recolte de sorgho : actions de grace pour la moisson, retour des emigres a Saboba, jeux, danses, rites rituels, libations et sacrifices. Le Naminsee (festival du feu) et le N-nidak (nouvelle igname) completent le calendrier rituel. Les rites funeraires sont elabores : inhumation dans les 24 heures, bain et habillement du corps par les femmes, enterre devant la maison pour les adultes (hommes a l'est, femmes a l'ouest). Le Kinachung (rite funeraire de grande ampleur avec abattage de bovins, bisatom laisse la nuit pour l'esprit) est suivi du Likpuul (ceremonie finale avec consultations divinatoires). Les rites de mariage incluent des formes de dot agricole : les jeunes hommes labourent les terres des beaux-parents en signe de contribution.",
+      "symbols": "Les marques faciales (scarifications) sont des symboles identitaires clans : certains clans (Betshabob, Bemokpem, Nakpantib, Besangma) partagent les memes marques. Les costumes cerimonials incluent l'unaa (cornes decorees), le tangana (tissu traditionnel), le tanbena (tissu de danse orne de perles), le tibaan (grelots). La riviere Oti constitue un axe symbolique majeur, frontiere entre territoire konkomba et pays dagomba. Les totems animaux sacres propres a chaque clan jouent un role symbolique important.",
+      "artsAndMusic": "Les Konkomba ont developpe une riche tradition d'instruments de musique : liwul (flute), kiwujabik (variante de flute), kibeek (guitare traditionnelle), ligangaln (tambour), lidabuln (variante de tambour), ukpiihn (corne). Les danses ceremoniales sont nombreuses : kinachung, njeem, ichaa, tibaln, nbanba, ngben. L'architecture traditionnelle inclut les libubul, lipil, kachala et kikpawung, construits en argile et torchis (n-yaam a base de tamarin pour la peinture, tinabin a base de bouse de vache pour le crepissage). Les marques faciales et les costumes de danse constituent les principales formes d'art corporel et vestimentaire.",
+      "spiritualities": "Les Bikpakpaam croient en Uwumbor (Dieu supreme, createur increate de l'univers, source de la vie et de la loi morale, origine et destinataire de l'ame). Uwumbor delegue son pouvoir a des esprits inferieurs. La Terre-Kitik est la divinite universelle, mere d'Uwumbor, manifestee dans les esprits terrestres clanique (litingbaln, litres par l'utindaan). Les esprits ancestraux (Bitekpiib) vengent les ennemis, protegent la famille et veillent au bien-etre des survivants : des libations et sacrifices leur sont offerts. Les esprits malins (Kininbon/Satan et ses kesou) causent maladies, pauvrete, conflits et mort. La croyance en la reincarnation est documentee (Jagri pour les males, Piigri pour les femmes, N-ya pour les grand-meres). L'islam, associe aux ennemis traditionnels dagomba, est peu suivi (moins de 5%). Le christianisme s'est implante depuis 1931 et est aujourd'hui majoritaire."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Konkomba n'ont pas forme de royaumes centralises. Leur organisation acephale les a distingues des peuples a monarchie voisins (Dagomba, Nanumba, Gonja). Localement, les chiefdoms (ubor) ont une portee clanique ou villageoise. La tradition orale evoque le sejour des ancetres a Yaan/Chare (Yendi) avant les pressions dagomba. Saboba est la capitale traditionnelle des Bikpakpaam au Ghana.",
+      "relationsWithNeighbors": "Relations historiquement antagonistes avec les Dagomba (qui ont chasse les Konkomba de leurs terres ancestrales a l'ouest de l'Oti et ont revendique la souverainete sur leurs terres). Les Nanumba et les Gonja ont egalement raide les Konkomba pour des esclaves et des tributs. Les Konkomba n'ont pas reconnu la souverainete des chefferies voisines. Ils commercent activement avec les Tchakosi et Bimoba (bouchers dans leurs marches). Le marche de yam de Saboba est un lieu d'echanges inter-ethniques important.",
+      "conflictsOrAlliances": "Multiples conflits inter-ethniques lies a la terre et aux droits politiques depuis la periode coloniale. Guerre du pintade (1994-1995) avec Nanumba et Dagomba : environ 2 000 morts, 200 000 deplaces, plus de 400 villages detruits. Violences avec les Nawuri en 2002 : etat d'urgence decrare. Affrontements avec les Chokosi a Chereponi en 2018-2019. Accord de paix avec les Nanumba en 2006. L'organisation KOYA (Konkomba Youth Association) milite pour la paix et la representation politique.",
+      "diaspora": "Les Konkomba sont des agriculteurs migrants, ayant essaime dans les regions Brong Ahafo, Volta, Est et Grand Accra du Ghana. Le marche de yam de Konkomba a Agbogbloshie (Accra) est un point d'ancrage de la diaspora interne. Des branches de la KOYA existent aux Etats-Unis et au Royaume-Uni."
+    },
+    "demography": {
+      "totalPopulation": 1265000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : 1 142 000 au Ghana, 123 000 au Togo, total mondial 1 265 000. Recensement ghaneen 2010 : 823 000 Konkomba au Ghana. CIA World Factbook : 3,5% de la population ghaneenne en 2010. Projection 2025 integrant la croissance demographique.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 1142000,
+          "note": "Principalement dans les regions Nord, Brong Ahafo, Oti, Est et Grand Accra ; capitale traditionnelle Saboba"
+        },
+        {
+          "country": "TGO",
+          "population": 123000,
+          "note": "Regions des Savanes, de Kara et Plateaux"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Konkomba people. https://en.wikipedia.org/wiki/Konkomba_people",
+      "Wikipedia EN — Konkomba language. https://en.wikipedia.org/wiki/Konkomba_language",
+      "Minority Rights Group — Konkomba in Ghana. https://minorityrights.org/communities/konkomba/",
+      "Joshua Project — Konkomba in all countries. https://joshuaproject.net/people_groups/10842",
+      "Ethnologue — Konkomba Language (XON). https://www.ethnologue.com/language/xon/",
+      "101 Last Tribes — Konkomba people. https://www.101lasttribes.com/tribes/konkomba.html",
+      "Modern Ghana — Konkomba Identity, Historical Claims (2025). https://www.modernghana.com/news/1442722/konkomba-identity-historical-claims-and-the-sear.html",
+      "Wikipedia EN — Konkomba-Nanumba conflict. https://en.wikipedia.org/wiki/Konkomba%E2%80%93Nanumba_conflict"
+    ]
+  }
+}

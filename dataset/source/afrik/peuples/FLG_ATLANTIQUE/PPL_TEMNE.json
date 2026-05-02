@@ -1,0 +1,101 @@
+{
+  "id": "PPL_TEMNE",
+  "nameMain": "Temne",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["SLE", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Temne",
+      "selfAppellation": "Themne / Timni",
+      "exonyms": ["Temen", "Timmannee", "Timne", "Timni", "Teymenes", "Themné"],
+      "originOfExonyms": "Temne est la denomination usuelle en anglais et en francais depuis les chroniques portugaises. Valentim Fernandes (debut XVIe siecle) les appelle Teymenes. Pacheco Pereira les mentionne sous une forme proche entre 1505 et 1508. Le terme Themne est utilise dans les sources scientifiques francophones. L'endonyme est Timni ou Themne selon les dialectes locaux.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Temne est le nom officiel utilise en Sierra Leone. Le terme Themne apparait dans les sources academiques. Le premier president Temne de Sierra Leone, Ernest Bai Koroma (APC), a ete elu en 2007.",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "ethnoLinguisticGroup": "Mel (branche atlantique Niger-Congo), proche du baga de Guinee",
+      "historicalRegion": "Province du nord et centre de Sierra Leone, entre les rivieres Kolente et Rokel (Scarcies) ; historiquement aussi le Fouta-Djallon (Guinee actuelle) comme terre ancestrale",
+      "currentCountries": ["SLE", "GIN"]
+    },
+    "ethnicities": [
+      "Temne du nord (Province du nord, autour de Makeni, Port Loko, Kambia), proches de la frontiere guineeenne",
+      "Mabanta Temne (Temne de Banta pres de la riviere Jong), qui fuyaient un dirigeant Fula Mansa",
+      "Yoni Temne (Temne ayant accepte l'autorite du Fula Mansa), zone centre de Sierra Leone",
+      "Temne cotiers de Freetown et de la Western Area, migrants urbains contemporains"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale, les Temne considerent le Fouta-Djallon (hauts plateaux de Guinee actuelle) comme leur foyer ancestral. Bankole Taylor situe leur migration vers la Sierra Leone actuelle aussi loin qu'aux XIe-XIIe siecles, liee a la chute de l'empire Jallonkadu dans le Fouta-Djallon. Les premiers textes portugais les mentionnent des 1462-1505. Pacheco Pereira les localise entre les iles de Loos et Sierra Leone, vendant de l'or fin et des esclaves.",
+      "formationPeriod": "XIe-XIIe siecle : premieres migrations depuis le Fouta-Djallon vers le nord-ouest de la Sierra Leone actuelle. XVe siecle : migrations supplementaires dues aux invasions fulani du Fouta-Djallon. Debut XVIe siecle (1505-1508) : premiere documentation ecrite detaillee par Pacheco Pereira.",
+      "migrationRoutes": [
+        "Migration initiale depuis le Fouta-Djallon (hauts plateaux de Guinee) vers les vallees fluviales du nord de Sierra Leone",
+        "Descente le long de la riviere Rokel depuis ses sources jusqu'a l'estuaire de Sierra Leone (Port Loko Creek, grand port naturel)",
+        "Expansion vers le littoral de Freetown et les zones cotieres de la Western Area",
+        "Pression vers le centre (Mabanta, Yoni) apres l'arrivee du Fula Mansa au sud de la Rokel"
+      ],
+      "historicalSettlementZones": [
+        "Province du nord de Sierra Leone (districts de Kambia, Port Loko, Tonkolili, Bombali)",
+        "Western Area urbaine (Freetown et environs)",
+        "Centre de Sierra Leone (districts Yoni, Mabanta)",
+        "Zones frontieres avec la Guinee (Forekaria, Boffa)"
+      ],
+      "unificationsOrDivisions": "Apres leur installation au nord-ouest de la Sierra Leone, les Temne repousserent les Limba vers le nord-est et les Bullom vers le sud. En 1642, une caravane susu islamique d'environ 1 500 personnes envahit Forekariah et perpetra des violences ethniques contre les Temne non convertis, les forcant a migrer vers le nord-ouest de la Sierra Leone. Au milieu du XVIe siecle, une armee mande (Mane) conquit les terres Temne : le general Farma Tami devint leur roi, faisant de Robaga (pres de Freetown) un centre economique et sacre. Les Temne partiellement resisterent, conservant leur langue malgre la domination mane.",
+      "externalInfluences": "Influence mane (XVIe siecle) : les Temne furent soumis mais garderent leur langue, contrairement aux Loko et Mende plus totalement assimiles. Influence fulani du Fouta-Djallon (XVIIe-XIXe siecles). Islamisierung progressive via les contacts avec les marchands musulmans et les Susu. Colonisation britannique (1896 protectorat, 1898 hut tax) transformant profondement l'organisation des chefferies. Contact avec les Krio de Freetown depuis le XVIIIe siecle.",
+      "majorHistoricalEvents": "1462-1508 : premieres mentions par les navigateurs portugais. 1642 : invasion susu islamique depuis Forekariah. Milieu XVIe siecle : invasion et soumission mane. 1684 : arrivee du commercant anglais Thomas Corker, debut de l'influence Caulker. 1792 : le roi Naimbana de Koya aide les afro-americains libres a fonder Freetown. 1807-1888 : guerre du royaume de Koya contre Loko, Mende et Susu. 1898 : revolte de la Hut Tax : les chefs Temne refusent la taxe coloniale britannique et petitionnent sans succes. 1961 : independance de la Sierra Leone. 2007 : Ernest Bai Koroma, premier president Temne de Sierra Leone."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies decentralisees : chaque chefferie (chiefdom) est gouvernee par un chef (hier hereditaire, aujourd'hui elu par une autorite tribale) pour la vie. Seuls les membres des familles dirigeantes peuvent etre designes chef, creant une aristocratie. Les chiefdoms contiennent des villages avec des sous-chefs. Le chef exerce une fonction partiellement religieuse et est souvent membre des societes secretes Ragbenle et Poro.",
+      "clanOrganization": "Organisation en clans nombreux, chacun independant, divise en chefferies. Le lignage du fondateur du village determine la succession au poste de chef de village (headman). La stratification sociale est endogame et hierarchique.",
+      "ageClassSystems": "La societe masculine secrete Poro assure les rites initiatiques, la transmission des savoirs et la cohesion interclan. La societe feminine Bundu (ou Sande) prepare les filles au mariage et a la vie adulte, et organise leur initiation. La societe Ragbenle est responsable de la guerison de certaines maladies et des ceremonies agricoles pour la croissance des recoltes.",
+      "roleOfLineages": "La societe Temne est patrilineaire : la succession et l'heritage passent par le pere. Le chef de village herite generalement son poste en tant que descendant du fondateur du village.",
+      "religiousAuthority": "Croyances traditionnelles en un dieu supreme et en des esprits de la nature et des ancetres. Le chef exerce une fonction religieuse partielle via son appartenance aux societes secretes Ragbenle et Poro. L'islam, adopt progressivement du XVIIIe au XXe siecle, est aujourd'hui pratique par la majorite des Temne. Le christianisme est minoritaire. Dans les zones centrales de Sierra Leone, le syncrétisme entre islam et traditions locales est courant."
+    },
+    "languages": {
+      "mainLanguage": "Temne (Themne, Timne ; ISO 639-3 : tem)",
+      "isoCodes": ["tem"],
+      "dialects": [
+        "Dialectes du nord de Sierra Leone (Province du nord, autour de Makeni et Port Loko)",
+        "Dialectes du centre de Sierra Leone (zones Yoni et Mabanta)",
+        "Temne urbain de Freetown (influence krio)"
+      ],
+      "vehicularRole": "Le temne est la langue vehiculaire majeure du nord de Sierra Leone, parlee par environ 40% de la population totale du pays (y compris des locuteurs non-Temne). Il est l'une des quatre langues majeures de Sierra Leone avec le mende, le krio et le limba. Le temne appartient a la branche Mel du Niger-Congo et est proche du baga de Guinee. C'est une langue tonale (le sens depend de l'intonation). En 1993, le temne avait environ 1 230 000 locuteurs selon les recensements de l'epoque."
+    },
+    "culture": {
+      "majorRites": "Le Poro est la societe masculine d'initiation centrale, commune avec plusieurs autres groupes ethniques de Sierra Leone, assurant les rites de passage vers l'age adulte et la formation des futurs chefs. Le Bundu (Sande) est la societe feminine equivalente : le masque Sande porte par la danseuse principale lors de la ceremonie accueillant les initiees est l'une des formes sculturales les plus celebres de Sierra Leone (tete noire stylisee avec coiffure pyramidale). Le Ragbenle organise des ceremonies pour la guerison et la croissance des recoltes. Ceremonies de succession des chefs impliquant des rites specifiques (sang de chevre et farine de riz selon De Almada).",
+      "symbols": "Le masque Sande (Bundu) est le symbole le plus connu de la culture Temne et de Sierra Leone : tete noire symetrique a coiffure elaborate, exprimant dignite et beaute feminine. Les figures d'ivoire caracteristiques des Temne et des peuples voisins (Sherbro, Bullom) ont ete achetees par les Portugais au XVIe siecle. Les figures nomoli (pierre) et pomtan (bois) etaient utilisees pour le culte des ancetres et les rites de fertilite.",
+      "artsAndMusic": "Sculpture sur bois et sur ivoire : les masques Sande, figures d'ivoire et statuettes en pierre (nomoli). Les maisons Temne traditionnelles sont construites en boue et torchis avec des toits de chaume, disposees en cercles autour d'une maison commune. La musique ceremonielle accompagne les rites Poro et Sande. La culture de masques en figures humaines et animales est avancee dans la region meridionale selon la Britannica. Artisanat du coton (vetements en coton d'origine locale).",
+      "spiritualities": "Croyances traditionnelles en un dieu supreme (Being) et en des esprits de la nature et des ancetres, maintenant en recul. L'islam sunnite est la religion dominante, adopte progressivement depuis le XVIIIe siecle : dans le nord de Sierra Leone, proche du Fouta-Djallon, les conversions sont quasi completes. Dans le centre-sud du territoire Temne, le syncrétisme islam-traditions locales est frequent. Premiers contacts chretiens avec les missionnaires jesuites portugais en 1607 (bapteme du premier groupe par Barreira). L'eglise catholique demeure minoritaire mais presente."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume de Koya : l'une des principales entites politiques Temne, dont le roi Naimbana (mort en 1793) etait hostile a la traite negriere. Naimbana aida les afro-americains libres a fonder Freetown en 1792, fournissant terre et main-d'oeuvre. Robaga (pres de Freetown), ancienne capitale du roi Temne sous influence mane, etait un centre economique et sacre. Les Temne etaient organises en de nombreuses chefferies independantes, liees par la societe Poro.",
+      "relationsWithNeighbors": "Apres leur installation, les Temne repousserent les Limba vers le nord-est et les Bullom vers le sud. Relations tendues avec les Susu islamiques (invasion de 1642). Alliance avec les Krio de Freetown au XIXe siecle pour certains echanges commerciaux. Rivalite politique avec les Mende (sud de Sierra Leone) qui a structure la politique du pays depuis l'independance en 1961. Le Poro facile la cooperation entre groupes ethniques de Sierra Leone.",
+      "conflictsOrAlliances": "XVIe siecle : resistance partielle aux invasions mane, conservation de la langue. 1642 : persecutions par les Susu islamiques. 1792 : alliance avec les liberes afro-americains (fondation de Freetown par le roi Naimbana). 1807-1888 : guerres du royaume de Koya. 1898 : revolte contre la Hut Tax britannique : les chefs Temne petitionnent le gouverneur puis refusent la taxe. 1961 : independance, competition politique avec les Mende. Les Temne sont majoritairement affilies au APC (All People's Congress).",
+      "diaspora": "Les Temne se trouvent dans les principales villes de Sierra Leone (Freetown notamment) en raison de l'exode rural interne. Certains Temne ont migre en dehors d'Afrique de l'Ouest, notamment en Grande-Bretagne, aux Etats-Unis et en Egypte, pour des raisons educatives et professionnelles. La diaspora suit les circuits de la diaspora sierra-leonaise plus large."
+    },
+    "demography": {
+      "totalPopulation": 3100000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Wikipedia EN (Temne people : 35,5% de la population de Sierra Leone selon le recensement de 2015), PeopleGroups.org (2025 : 2 110 000 Temne en Sierra Leone), et la population totale de Sierra Leone de 8 819 794 en 2025 (Worldometer). Les 35% correspondent a environ 3 086 928 personnes. D'autres sources (Minority Rights Group, recensement 2021) placent les Temne a 31,2-31,4% de la population. Une estimation conservative autour de 3 millions est retenue.",
+      "distributionByCountry": [
+        {
+          "country": "SLE",
+          "population": 3050000,
+          "note": "Province du nord (Kambia, Port Loko, Tonkolili, Bombali) et Western Area (Freetown). Entre 31 et 35% de la population nationale."
+        },
+        {
+          "country": "GIN",
+          "population": 50000,
+          "note": "Zones frontalieres avec la Sierra Leone (Forekaria, Boffa) ; certains Temne sont aussi presents en Gambie"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN, Temne people : https://en.wikipedia.org/wiki/Temne_people",
+      "Ethnologue, Temne (tem) : https://www.ethnologue.com/language/tem",
+      "Joshua Project, Temne of Sierra Leone : https://joshuaproject.net/people_groups/",
+      "PeopleGroups.org, Temne of Sierra Leone : https://peoplegroups.org/people_groups/pg014297/",
+      "Britannica, Temne : https://www.britannica.com/topic/Temne",
+      "Minority Rights Group, Sierra Leone : https://minorityrights.org/country/sierra-leone/",
+      "101 Last Tribes, Temne people : https://www.101lasttribes.com/tribes/temne.html",
+      "Wikipedia EN, History of Sierra Leone : https://en.wikipedia.org/wiki/History_of_Sierra_Leone"
+    ]
+  }
+}

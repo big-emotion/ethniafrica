@@ -1,0 +1,78 @@
+{
+  "id": "PPL_SANDAWE",
+  "nameMain": "Sandawe",
+  "languageFamilyId": "FLG_ISOLAT",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Sandawe",
+      "selfAppellation": "Sandawe",
+      "exonyms": [
+        "Usandawe (designation coloniale allemande pour leur territoire)",
+        "Sandawi"
+      ],
+      "originOfExonyms": "Usandawe est le terme utilise dans les rapports coloniaux allemands pour designer le territoire rocheux habite par le peuple (Pays des Sandawe). Le terme Sandawe lui-meme est utilise a la fois comme auto-designation et comme exonyme dans la litterature scientifique.",
+      "whyProblematic": "Le terme Sandawe ne presente pas de probleme particulier d'utilisation contemporaine. Il est accepte par le groupe lui-meme et dans les publications academiques.",
+      "contemporaryUsage": "Sandawe est utilise sans ambiguite dans les contextes officiels tanzaniens, les publications linguistiques et les profils ethnographiques internationaux (Joshua Project, Ethnologue).",
+      "linguisticFamily": "FLG_ISOLAT",
+      "ethnoLinguisticGroup": "Isolat linguistique possedant des clics ; debat scientifique sur une possible parente avec les langues Khoe d'Afrique australe",
+      "historicalRegion": "District de Chemba (ward de Kwamtoro), region de Dodoma, centre de la Tanzanie",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Sandawe"],
+    "origins": {
+      "ancientOrigins": "Les Sandawe sont consideres comme les descendants d'une population de type Bushmen originelle, differentielle de leurs voisins actuels les Gogo. Ils habitent le centre geographique de l'ancienne Afrique orientale allemande, traverse par la route caravaniere sud. Le lieutenant Tom von Prince (1895) ecrit que la peur mortelle qui dut les pousser depuis leur demeure au sud de l'equateur jusqu'au milieu de peuples etrangers pour trouver la paix ne peut qu'etre imaginee.",
+      "formationPeriod": "Groupe reconnu comme entite distincte maintenant son independance par le lieutenant Tom von Prince en 1895. Avant les expeditions de Charles Stokes et d'Emin Pasha (fin des annees 1880 - debut des annees 1890), ils etaient encore regroupes avec les Gogo, bien qu'etant devenus eleveurs et agriculteurs tout en conservant des traditions de chasse et de cueillette.",
+      "migrationRoutes": [
+        "Migrations ancestrales depuis le sud de l'equateur vers le centre de la Tanzanie actuelle, selon Tom von Prince",
+        "Etablissement dans la region de Kondoa, entre les rivieres Bubu et Mponde"
+      ],
+      "historicalSettlementZones": [
+        "Region de Kondoa, entre les rivieres Bubu et Mponde, district de Chemba, region de Dodoma",
+        "Collines rocheuses evitees comme habitats d'esprits, autour desquelles les villages etaient construits"
+      ],
+      "unificationsOrDivisions": "Peuple fondamentalement sans Etat, ne tolerant aucun chef ni superieur. Au milieu du XIXe siecle, certains clans tenterent d'utiliser le prestige des faiseurs de pluie pour s'arroger un statut de chef, sans etre reellement acceptes. Les Allemands nommerent 22 chefs de clan apres la pacification ; cette institution disparut a la fin de la periode coloniale.",
+      "externalInfluences": "Adoption de l'agriculture depuis les voisins Bantous (probablement les Gogo). Influence linguistique legere des langues couchitiques voisines. Tentative coloniale allemande d'installation d'un chef Nyamwezi (Mtoro) au debut du XXe siecle, rejetee violemment par les Sandawe (1902). Repression militaire allemande (Lieutenant Kohlerman : environ 800 hommes Sandawe tues en trois jours).",
+      "majorHistoricalEvents": "1895 : reconnaissance officielle comme peuple distinct par Tom von Prince. 1902 : expulsion des colons Nyamwezi et saisie de leur betail ; repression allemande sanglante. 1905 : 22 chefs nommes de force par les Allemands apres pacification. Fin du colonialisme : dissolution de l'institution des chefferies imposees. Aujourd'hui : pression demographique sur leurs terres et acculturation progressive."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe sans Etat (acephale). Aucun chef ni superieur n'etait tolere ; les Sandawe se debarrassaient dans des facons drastiques de ceux experimentalement installes. La cooperation mutuelle informelle (labour, battage, construction) reposait sur des arrangements interpersonnels plutot que sur une autorite centrale.",
+      "clanOrganization": "Foyers nucleaires organises en clans patrilineaires exogames qui forment la base de communautes locales autonomes. Mariage monogame avec bride-wealth interdit entre cousins paralleles et prefere avec la fille de l'oncle maternel. Residence patrilocale avec periode initiale chez les parents de l'epouse.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les clans patrilineaires constituent la base de l'organisation sociale et politique locale. Ce sont principalement les clans de faiseurs de pluie qui revendiquaient une autorite dans les situations critiques.",
+      "religiousAuthority": "Le faiseur de pluie (devin de clan) etait la principale figure d'autorite spirituelle et politique. Il organisait les sacrifices annuels aux caves et servait d'intermediaire entre les vivants et les ancetres."
+    },
+    "languages": {
+      "mainLanguage": "Sandawe",
+      "isoCodes": ["sad"],
+      "dialects": ["Pas de dialectes distincts documentes"],
+      "vehicularRole": "Le sandawe est la langue maternelle et vehiculaire interne du groupe. Il possede des consonnes clics (caracteristique tres rare partagee uniquement avec le hadza et le dahalo en Afrique orientale). Le swahili est la langue nationale et administrative. La langue sandawe est classee isolat par Ethnologue (code SAD) ; un possible ancetre commun avec les langues Khoe d'Afrique australe est debattu."
+    },
+    "culture": {
+      "majorRites": "Sacrifices annuels aux caves : le groupe s'y rendait en criant des prieres pour signaler son absence d'intrusion, afin d'eviter toute interference malveillante des esprits. Rituels de guerison avec transes. Festivals de circoncision. Danses de possession simba (les danseurs imitent les lions pour combattre la sorcellerie). Ceremonies de courtage et de recolte.",
+      "symbols": "La lune est le symbole central de vie et de fertilite, consideree benefique et fraiche, apportant la pluie et controlant le cycle de fertilite des femmes. L'insecte mante religieuse est un messager divin consulte lors de ses apparitions. Les caves des collines sont considerees comme des demeures d'esprits et traitees avec un respect profond.",
+      "artsAndMusic": "Tradition musicale et poetique exceptionnellement riche : les Sandawe possedent un enorme repertoire de chants. La pratique du chant, de la danse et de la musique est centrale dans les celebrations sociales. Forte tradition orale avec des recits incorporant la sagesse collective.",
+      "spiritualities": "Animisme avec veneration de la lune, des etoiles et des saisons. Warongwe est un dieu abstrait et distant, rarement prie ou propice au sacrifice. La religion repose sur une longue ligne ancestrale, et une famille elargie soudee sert d'intermediaire entre les vivants et ce Dieu tout-puissant mais distant. Les esprits des ancetres jouent un role mediateur dans la vie quotidienne."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Aucun royaume ni chefferie precoloniale reconnue. Les Sandawe refusaient toute hierarchie politique et se reorganisaient collectivement face aux pressions exterieures.",
+      "relationsWithNeighbors": "Relations tendues avec les Gogo (voisins Bantous dont ils ont adopte l'agriculture) et les Nyamwezi. Hostilite ouverte contre les colons Nyamwezi installes de force par les Allemands (expulsion en 1902, harcelement apres le depart militaire). Influences linguistiques legeres des langues couchitiques voisines.",
+      "conflictsOrAlliances": "Resistance active contre la domination coloniale allemande : refus systématique de reconnaître les chefs designes, guerilla contre les Nyamwezi, harcelement des soldats allemands. Apres la pacification, acceptation forcee de 22 chefs issus des clans de faiseurs de pluie.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 90000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 90 000 ; Ethnologue (SAD) : environ 60 000 locuteurs ; PeopleGroups.org (2025) : 197 000 (estimation haute) ; estimation mediane retenue : 90 000",
+      "distributionByCountry": [{ "country": "TZA", "population": 90000 }]
+    },
+    "sources": [
+      "Sandawe people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Sandawe_people)",
+      "Sandawe language – Wikipedia EN / Ethnologue code SAD (https://en.wikipedia.org/wiki/Sandawe_language)",
+      "Sandawe in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14720)",
+      "Sandawe – Britannica, 2026 (https://www.britannica.com/topic/Sandawe)",
+      "Sandawe language (SAD) – Ethnologue SIL (https://www.ethnologue.com/language/sad/)",
+      "von Prince, T. – Gegen Araber und Wahehe, 1914"
+    ]
+  }
+}

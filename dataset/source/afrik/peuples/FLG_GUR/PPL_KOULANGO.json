@@ -1,0 +1,92 @@
+{
+  "id": "PPL_KOULANGO",
+  "nameMain": "Koulango",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["CIV", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Koulango",
+      "selfAppellation": "Nkuraeng",
+      "exonyms": [
+        "Kulango",
+        "Kolango",
+        "Kulange",
+        "Nkorang",
+        "Nkurange",
+        "Nkoramfo",
+        "Kulamo",
+        "Lorhon",
+        "Ngwela",
+        "Babé",
+        "Pakhallas",
+        "Goutougo"
+      ],
+      "originOfExonyms": "Les Lorhon sont les ancêtres des Koulango. Sous le règne de Bounkani (XVIIe siècle), le fondateur du royaume aurait renommé son peuple Koulango, terme signifiant 'ceux qui n'ont pas peur de la mort' en référence à l'esprit guerrier qu'il voulait inculquer. Les Dioula les appelaient Pakhallas. Le nom Lorhon (ou Ngwela, Babé) désigne les populations proto-Koulango antérieures au royaume de Bounkani. Goutougo est le nom local du dialecte de Bondoukou.",
+      "whyProblematic": "La dénomination Koulango recouvre deux dialectes distincts (Bouna et Bondoukou), parfois traités comme des langues séparées par les linguistes (codes ISO distincts : nku pour Bouna, kzc pour Bondoukou). Le terme Lorhon peut désigner les ancêtres Koulango mais est encore utilisé pour certaines communautés.",
+      "contemporaryUsage": "Koulango est l'appellation officielle en Côte d'Ivoire. La variante Kulango est préférée dans la littérature anglophone et ghanéenne. Les deux graphies coexistent dans les publications académiques et les organisations de développement."
+    },
+    "ethnicities": ["Koulango", "Lorhon"],
+    "origins": {
+      "ancientOrigins": "Les ancêtres des Koulango, appelés Lorhon, occupaient la région de Bouna (nord-est de la Côte d'Ivoire) depuis au moins le XIe siècle. Vers ce siècle, ils étaient organisés en une petite chefferie à Kodo (village situé à 60 km de Bouna), sous la direction du roi Haingère qui cumulait les fonctions de chef de terre (Goro-Issié). La tradition orale situe l'origine de la royauté dans la rencontre entre un prince Dagomba du Ghana actuel (Garzyao) et les Lorhon locaux.",
+      "formationPeriod": "Le Royaume Koulango de Bouna est fondé au début du XVIIe siècle par Bounkani, fils d'un prince Dagomba et d'une mère Lorhon. Bounkani transforme la chefferie Lorhon en royaume guerrier de type Dagomba par voie de conquête, et institue une succession patrilinéaire en remplacement de l'organisation matrilinéaire traditionnelle des Lorhon. Ce royaume devient le premier État à pouvoir centralisé formé dans les frontières de l'actuelle Côte d'Ivoire.",
+      "migrationRoutes": [
+        "Peuplement autochtone Lorhon dans la région de Bouna (XIe siècle)",
+        "Influence Dagomba venue du Ghana actuel (fondation du royaume au XVIIe siècle)",
+        "Extension vers Bondoukou (sud de Bouna) et au Ghana (régions de Bono et Bono East)"
+      ],
+      "historicalSettlementZones": [
+        "Nord-est de la Côte d'Ivoire : région de Bouna, Bondoukou, Parc national de la Comoé",
+        "Régions ghanéennes de Bono et Bono East : Badu, Seikwa (district de Tain), Buni (Jaman North), villages proches de Wenchi et Techiman"
+      ],
+      "unificationsOrDivisions": "Bounkani unifie les Lorhon sous une autorité centrale et institue une stratification sociale hiérarchique. Il remplace le système matrilinéaire par la patrilinéarité pour consolider le pouvoir royal. La communauté Koulango s'est ensuite répartie entre le dialecte de Bouna (Koulango Bouna, code nku) et celui de Bondoukou (Koulango Bondoukou, code kzc), reflétant une divergence géographique et dialectale.",
+      "externalInfluences": "Influence Dagomba fondamentale dans la création du royaume (XVIIe siècle). Pression commerciale et religieuse des marchands Dioula musulmans, résistée par la majorité des Koulango. Contact historique avec les Lobi (anciens ennemis partageant aujourd'hui la même région). Colonisation française (Côte d'Ivoire) et britannique (Ghana).",
+      "majorHistoricalEvents": "XVIIe siècle : fondation du Royaume de Bouna par Bounkani, premier État centralisé de l'actuelle Côte d'Ivoire. XIXe-XXe siècles : pression des marchands Dioula pour l'islamisation, largement résistée. Période coloniale française : intégration du territoire Koulango dans la colonie de Côte d'Ivoire."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Royaume centralisé de type Dagomba, fondé par Bounkani. L'autorité est exercée par un roi (chef suprême) assisté de chefs de village (headmen) et d'un chef religieux. Les disputes et affaires communautaires sont traitées par les chefs de village et le chef religieux. La succession royale suit le modèle patrilinéaire institué par Bounkani.",
+      "clanOrganization": "Organisation matrilinéaire originelle (Lorhon) remplacée par la patrilinéarité sous Bounkani. Les Koulango actuels sont matrilinéaires à l'image des Akan voisins, selon les données linguistiques récentes. Le chef de famille étendu (mâle) est responsable des sacrifices aux esprits ancestraux et est succédé par le fils aîné de sa sœur aînée.",
+      "roleOfLineages": "Les lignages matrilinéaires (héritage Lorhon et influence Akan) déterminent la transmission du statut, des droits fonciers et des responsabilités rituelles. Les mariages sont arrangés par le père ou le chef de famille étendue.",
+      "religiousAuthority": "Croyance en un dieu suprême (associé à la terre mère) non directement vénéré. Le dieu de la terre Tano est le dieu de la tribu entière ; un sanctuaire lui est dédié et un festival annuel lui est consacré. Un chef religieux coexiste avec les chefs politiques pour traiter les affaires communautaires et rituelles."
+    },
+    "languages": {
+      "mainLanguage": "Koulango",
+      "isoCodes": ["nku", "kzc"],
+      "dialects": [
+        "Koulango Bouna (Bouna Kulango, Nkurange) – nku : sous-dialectes Sekwa et Nabanj",
+        "Koulango Bondoukou (Goutougo) – kzc"
+      ],
+      "vehicularRole": "Les deux dialectes koulango sont suffisamment distincts pour être codifiés séparément par l'ISO. Les locuteurs du dialecte Bouna comprennent le dialecte de Bondoukou, mais pas l'inverse. Le français est la langue officielle et véhiculaire en Côte d'Ivoire, l'anglais au Ghana. La langue koulango appartient à la branche Gur (ou Koulango) du Niger-Congo, avec un statut ambigu entre Gur et Kordofanien selon les classifications. Glottolog la classe sous kula1277."
+    },
+    "culture": {
+      "majorRites": "Festival annuel des ignames (yam festival) : fête de la récolte avec danses et musique. Festival des morts : demande aux dieux et aux ancêtres de bons conseils et de bonnes récoltes, avec danses et musique. Cérémonies de mariage arrangé et rites de puberté. Offrandes d'ignames pilées lors des calamités.",
+      "symbols": "Le dieu Tano (dieu de la terre et de la tribu) est le symbole religieux central. Les animaux sauvages et les phénomènes naturels (tonnerre, éclair, eau) sont considérés comme habités par des esprits. Les ignames représentent l'abondance et la connexion aux ancêtres.",
+      "artsAndMusic": "Danses et musique lors des festivals (ignames, morts). Artisanat traditionnel : poterie, tissage. Architecture en banco (maisons en argile à toits coniques de palmes ou de chaume, groupées autour d'une cour centrale). Cuillères et statuettes féminines mentionnées dans les collections muséales.",
+      "spiritualities": "Religion traditionnelle prédominante. Croyance en un dieu suprême non vénéré directement mais associé à la terre mère. Culte du dieu Tano (dieu de la tribu). Croyance aux esprits des ancêtres et aux esprits habitant les animaux sauvages et les éléments naturels (tonnerre, éclair, eau). Résistance historique à l'islamisation par les marchands Dioula (minorité musulmane actuelle). Présence chrétienne croissante."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume Koulango de Bouna (XVIIe siècle) est le premier État centralisé à se former dans les limites de l'actuelle Côte d'Ivoire. Fondé par Bounkani d'héritage Dagomba, il combine un modèle politique centralisé avec la culture autochtone Lorhon.",
+      "relationsWithNeighbors": "Relations historiquement conflictuelles puis pacifiées avec les Lobi (anciens ennemis occupant la même région). Voisinage avec les Sénoufo (au nord-ouest) et les Akan-Abron (au sud). Contact commercial avec les marchands Dioula. Influence culturelle Dagomba (Ghana) à l'origine du royaume.",
+      "conflictsOrAlliances": "Fondation du royaume par conquête sur les Lorhon (XVIIe siècle). Résistance à l'islamisation Dioula. Période de coexistence et de tensions avec les Lobi (voisinage partagé, langues proches, croyances similaires). Intégration dans le système colonial français en Côte d'Ivoire et britannique au Ghana.",
+      "diaspora": "Migration vers les villes du sud de la Côte d'Ivoire (Abidjan) et du Ghana (Kumasi, Accra), notamment chez les jeunes. Employés comme chauffeurs de taxi, mécaniciens et employés de bureau dans les villes."
+    },
+    "demography": {
+      "totalPopulation": 364000,
+      "referenceYear": 2025,
+      "source": "Joshua Project – Kulango, Bouna people group in all countries (2025). Ethnologue : 470 000 locuteurs (2021).",
+      "distributionByCountry": [
+        { "country": "CIV", "population": 327000 },
+        { "country": "GHA", "population": 37000 }
+      ]
+    },
+    "sources": [
+      "Koulango (peuple) – Wikipedia FR, 2005 (https://fr.wikipedia.org/wiki/Koulango_(peuple))",
+      "Kulango language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kulango_language)",
+      "Kulango, Bouna in Côte d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10955/IV)",
+      "Kulango, Bouna people group in all countries – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10955)",
+      "TERROIR : L'histoire du peuple Koulango – Djasso.com, 2021 (https://djasso.com/terroir-voici-toute-lrhistoire-du-peuple-koulango-a16305741701.html)",
+      "The Kulango of Cote d'Ivoire – 101 Last Tribes (http://www.101lasttribes.com/tribes/kulango.html)",
+      "Kulango of Ghana – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg013276/)",
+      "Parlons Koulango – Kra (linguistique), The Swiss Bay PDF"
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "id": "PPL_TIV",
+  "nameMain": "Tiv",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["NGA", "CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Tiv",
+      "selfAppellation": "Tiv (also written Tiiv)",
+      "exonyms": [
+        "Munchi / Munshi (Hausa-Fulani derogatory term, rejected by Tiv people)"
+      ],
+      "originOfExonyms": "The name Munchi or Munshi was used by Hausa-Fulani groups and adopted by British colonial administrators. The first European linguistic reference to the Tiv language appears in Sigismund Koelle's Polyglotta Africana (1854), based on accounts from freed slaves in Sierra Leone.",
+      "whyProblematic": "Munchi / Munshi is considered derogatory by the Tiv and is no longer used in formal contexts.",
+      "contemporaryUsage": "Tiv is the universally accepted self-designation and the standard term in Nigerian official contexts. The traditional paramount ruler bears the title Tor Tiv.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Benue-Congo, Southern Bantoid, Tivoid family",
+      "historicalRegion": "Benue Valley, Middle Belt Nigeria; Swem region on the Nigeria-Cameroon border",
+      "currentCountries": ["NGA", "CMR"]
+    },
+    "ethnicities": [
+      "Iyon clan (Kwande LGA)",
+      "Utange clan (Ushongo LGA)",
+      "Ikyurav-tiev clan (Katsina-Ala LGA)",
+      "Bitare (Cameroon Tivoid group)",
+      "Mesaka (Cameroon Tivoid group)",
+      "Iyive (Cameroon Tivoid group)",
+      "Ceve / Becheve (Cameroon Tivoid group)",
+      "Evant, Eman, Ipulo, Caka, Undir, Oliti (additional Cameroon Tivoid groups)"
+    ],
+    "origins": {
+      "ancientOrigins": "The Tiv believe they originated from south-central Africa and trace their ancestry through more than twenty generations back to a founding ancestor called Tiv. Oral tradition holds that the Tiv left their Bantu kin and migrated through southern and west-central Africa before arriving at Swem, a sacred mountain on the Nigeria-Cameroon border, around the beginning of the 17th century CE. Some scholars link Tiv origins to the broader Bantu dispersal from the Congo Basin region.",
+      "formationPeriod": "The Tiv consolidated their distinct identity and settled in the Benue Valley primarily between 1600 and 1700 CE. They were among the earliest inhabitants of the Benue Valley, arriving before many other groups now present in the region.",
+      "migrationRoutes": [
+        "From the Congo Basin and south-central Africa northwestward",
+        "Through the Cameroon Highlands and Obudu Plateau",
+        "Settling at Swem (Cameroon-Nigeria borderland)",
+        "Dispersing into the Benue Valley and surrounding states"
+      ],
+      "historicalSettlementZones": [
+        "Benue State (dominant homeland): Makurdi, Gboko, Katsina-Ala, Kwande, Vandeikya, Konshisha, Buruku, Ushongo LGAs",
+        "Taraba State: Wukari, Donga, Ibi, Gashaka, Bali LGAs",
+        "Nasarawa State: Lafia, Doma, Nasarawa, Obi, Keana LGAs",
+        "Plateau, Cross River, and Adamawa States (Nigeria)",
+        "Akwaya sub-division, Manyu Division, Cameroon (approximately 99 villages)"
+      ],
+      "unificationsOrDivisions": "The Tiv operated as a classically segmentary lineage society, without paramount chiefs or kings in the pre-colonial period. The British colonial administration installed the first Tor Tiv (paramount ruler) in 1948 to facilitate indirect rule. This imposed hierarchy created tensions with the Tiv egalitarian tradition. State creation in 1967 (Benue-Plateau State) and 1976 (Benue State) gave the Tiv a majority homeland.",
+      "externalInfluences": "The Tiv successfully resisted Islamic conquest during the Fulani jihad of the 19th century. British colonialism brought roads, Christianity (Dutch Reformed Church missionaries from 1911), and mission education. The establishment of the N.K.S.T. church (Dutch Reformed mission) at Sai in 1911 shaped Tiv Christian identity. Sustained conflict with Fulani pastoralists over agricultural land has been a defining modern pressure.",
+      "majorHistoricalEvents": "The Tiv resisted British forces from 1906 onward, with southern penetration in 1911. Anti-Hausa-Fulani riots occurred in 1952. Inter-communal violence with the Jokun in 1959-1964 and 1991-1992. The Nigerian army apologized in 2007 for reprisal killings against Tiv communities in 2001. Ongoing Fulani herdsmen conflicts have displaced hundreds of thousands in Taraba, Nasarawa, and Benue States."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "The Tiv operated a classic segmentary lineage system, one of the best-documented in West Africa (studied by Laura and Paul Bohannan from 1952). Authority rested with the Orya (eldest male of a lineage), not with appointed kings or chiefs. The family head derived authority through personality, command of tsav (witchcraft potential), and Akombo (sacred charms). Collective decision-making across lineage segments replaced centralized rulership. The Tor Tiv title was installed by the British colonial administration in 1948.",
+      "clanOrganization": "The Tiv are organized into patrilineal segments called tar (land/people), grouped into ipaven (division or segment), and ityo (lineage groups). All Tiv trace ultimate descent from the founding ancestor Tiv, creating a theoretically unified lineage that facilitates alliances against external threats while internal affairs are managed locally.",
+      "ageClassSystems": "Age-grade associations participate in community work, festivals, and social governance, though less formalized than in some neighboring societies.",
+      "roleOfLineages": "Lineage (ityo) is the primary organizing principle of Tiv social, political, religious, and economic life. Land tenure, inheritance, marriage (historically the yamshe exchange marriage system), and legal disputes are all mediated through patrilineal descent structures.",
+      "religiousAuthority": "Tiv religious thought rests on three pillars: Aondo (God/sky, distant creator), Tsav (witchcraft potential held by family heads and powerful individuals), and Akombo (sacred mystical forces embodied in emblems regulating community health and harmony). Mbatsav (communal spirit assemblies) judge the dead. The N.K.S.T. church and other Christian denominations now reach the majority of the population, though traditional belief systems remain influential."
+    },
+    "languages": {
+      "mainLanguage": "Tiv (tiv)",
+      "isoCodes": ["tiv"],
+      "dialects": [
+        "Standard Tiv (Benue heartland)",
+        "Bitare dialect (Cameroon)",
+        "Iyive dialect (Cameroon)",
+        "Becheve / Ceve dialect (Cross River / Cameroon border)"
+      ],
+      "vehicularRole": "Tiv serves as the mother tongue across all Tiv communities in Nigeria and Cameroon. It functions as a regional lingua franca in parts of Benue State. Nigerian Pidgin English is used in inter-ethnic commerce. English is the official language of education and administration."
+    },
+    "culture": {
+      "majorRites": "The Girinya is the most celebrated traditional performance, originally a ritual warrior dance honoring fallen fighters, now performed at funerals, festivals, and cultural celebrations. Swange is a popular social dance. Akombo rituals involve the activation and renewal of sacred emblems to protect community health. Marriage (tamber or yamshe exchange system) is a major social institution governed by lineage agreements. Funerary rites (Lyaku-ji, meaning away flies) include communal dancing to affirm life.",
+      "symbols": "The A'nger cloth (black-and-white striped fabric) is the defining cultural symbol of Tiv identity, worn at weddings, coronations, and festivals. Its geometric stripes are said to be inspired by the zebra. Swem, the sacred ancestral mountain on the Nigeria-Cameroon border, is the spiritual heartland. The akombo emblems (sacred objects representing mystical forces) are central to religious practice.",
+      "artsAndMusic": "Traditional weaving of the A'nger cloth is a major cottage industry passed across generations, centered in Benue State. Musical instruments include kakais (slit drums), agbande (talking drums), indyer, and adiguve. The Girinya, Swange, and Wanger dances are major performing arts traditions. Oral poetry and storytelling (kwagh-hir, puppet theatre tradition) preserve historical memory. Tiv women are known for pottery and other crafts.",
+      "spiritualities": "Traditional religion centers on Aondo (the distant sky God), Tsav (witchcraft power that can be used for protection or harm), and Akombo (protective sacred forces). Hundreds of distinct akombo cover all domains of life. Christianity arrived in 1911 through Dutch Reformed missionaries and now predominates, with the N.K.S.T. church as the largest denomination. Islam is a minority presence. Syncretic practices blending Christian faith with Akombo observances are widespread."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "The Tiv had no traditional kingdoms or paramount chiefs in the pre-colonial era, making them the canonical example of a stateless segmentary society in West Africa. The colonial Tor Tiv title (installed 1948) created an administrative paramount but lacks deep historical roots. Tiv political organization was built on expanding patrilineal segments rather than territorial kingdoms.",
+      "relationsWithNeighbors": "The Tiv resisted incorporation into the Hausa-Fulani Islamic emirate system during the 19th-century jihad. They maintained tense relations with the Jokun of Wukari over territory and dominance in Taraba State. Relations with Fulani pastoralists have oscillated between cooperative coexistence and violent conflict over farmland.",
+      "conflictsOrAlliances": "The Tiv successfully opposed British indirect rule attempts that favored Jokun elites. Violent uprisings in 1960 and 1964 expressed opposition to Northern People's Congress dominance. Post-independence conflicts in 1991-1992 and 2001 with the Jokun involved hundreds of deaths. Fulani-Tiv farmer-herder clashes from 2011 onward have displaced up to 300,000 people in Taraba State alone.",
+      "diaspora": "Tiv farmers maintain seasonal and semi-permanent settlements across many Nigerian states for agricultural purposes, but do not claim these as ancestral lands. Significant Tiv communities are present in Abuja, Kaduna, and other Nigerian urban centers. Small diaspora populations exist in Europe and North America."
+    },
+    "demography": {
+      "totalPopulation": 5300000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) estimates 5,200,000 Tiv in Nigeria and 10,000 in Cameroon, for a total of approximately 5,210,000. Ethnologue (2024) records over 5.2 million Tiv speakers. Minority Rights Group and various academic sources cite 2.4-2.5% of Nigeria's total population. Projection to 2025 based on these figures yields approximately 5.3 million total.",
+      "distributionByCountry": [
+        { "country": "NGA", "population": 5290000 },
+        { "country": "CMR", "population": 10000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia, Tiv people: https://en.wikipedia.org/wiki/Tiv_people",
+      "Wikipedia, Tiv language: https://en.wikipedia.org/wiki/Tiv_language",
+      "Minority Rights Group, Tiv in Nigeria: https://minorityrights.org/communities/tiv/",
+      "Joshua Project, Tiv people group all countries: https://joshuaproject.net/people_groups/15505",
+      "Agaku, J.M. (2008). The Girinya Dance Theatre of the Tiv People of Nigeria. International Journal of Intangible Heritage. https://www.ijih.org/volumes/article/32",
+      "TribeGuess, Tiv Tribe Culture, Names and History: https://www.tribeguess.com/learn/tiv"
+    ]
+  }
+}

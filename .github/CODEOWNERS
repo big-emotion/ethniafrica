@@ -1,0 +1,2 @@
+# Ferry workflow files — only repo admins should modify these
+.github/workflows/ferry-*.yml @big-emotion

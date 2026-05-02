@@ -1,0 +1,112 @@
+{
+  "id": "PPL_ARABES_SOMALIENS",
+  "nameMain": "Arabes somaliens",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": ["SOM"],
+  "content": {
+    "appellations": {
+      "mainName": "Arabes somaliens",
+      "selfAppellation": "Reer Banadiri (peuple du Benadir, pour les arabes somaliens des cotes meridionales) ; Reer Xamar (peuple de Mogadiscio) pour les habitants de la capitale",
+      "exonyms": [
+        "Benadiri",
+        "Banaadiri",
+        "Arabes du Benadir",
+        "Reer Hamar Gibil Madow (peau sombre, pour les clans les plus anciens de Mogadiscio)"
+      ],
+      "originOfExonyms": "Benadiri/Banaadiri designe les habitants de la cote Benadir (cote meridionale somalienne s'etendant de Mogadiscio a Barawa), terme derive de l'arabe et du persan bander (port). Reer Xamar est le nom somalien de Mogadiscio (Hamar). L'expression Arabes somaliens recouvre des communautes d'ascendance arabique (Arabie du Sud, Yemen, Oman, Hadramaout) installes en Somalie depuis un a deux millenaires et fortement metisses avec les populations somaliennes locales.",
+      "whyProblematic": "La distinction entre Arabes somaliens et Somaliens d'ascendance arabe est floue, car de nombreux clans somaliens revendiquent une origine arabe (notamment la genealogie depuis Quraych ou des saints islamiques). Les Benadiris sont souvent consideres comme distincts des Somaliens ethniques, mais leur identite est composite (arabe, persane, indienne, bantoue et somalienne). Le terme Arabes somaliens peut couvrir a la fois ces minorites historiques et les ressortissants arabes recents en Somalie.",
+      "contemporaryUsage": "La designation officielle en usage humanitaire et dans les etudes des droits des minorites est Benadiri ou Banaadiri. Le Joshua Project denombre les Arabes en Somalie (toutes origines confondues) a environ 7 800 personnes en 2025. Minority Rights Group les inclut dans les minorites cotieres du sud somalien.",
+      "linguisticFamily": "FLG_SEMITIQUE",
+      "ethnoLinguisticGroup": "Semitique (arabe), avec elements bantu (Chimwini/Chimini pour les Bravanese)",
+      "historicalRegion": "Cote Benadir (Mogadiscio, Merca, Barawa), Somalie meridionale",
+      "currentCountries": ["SOM"]
+    },
+    "ethnicities": [
+      "Benadiri",
+      "Reer Hamar",
+      "Reer Merca",
+      "Bravanese (Barawani)",
+      "Bajuni"
+    ],
+    "origins": {
+      "ancientOrigins": "Les communautes arabes de la cote somalienne sont issues de migrants de la peninsule arabique (Yemen, Oman, Hadramaout, Arabie du Sud), de Perse (Iran) et d'Inde installes progressivement depuis environ le IXe siecle ap. J.-C. Les premieres communautes Benadiris sont fondees il y a environ un millier d'annees. Des sources arabes medievales (Ibn Battuta, XIVe siecle ; Yaqut al-Hamawi, 1220) mentionnent Mogadiscio comme le centre commercial le plus important de la cote est-africaine. Le geographe Ibn Said (XIIIe siecle) decrit Mogadiscio, Merca et Barawa comme des centres islamiques et commerciaux prosperes. Les Banu Majid, fuyant la region de Mundhiriya au Yemen en 1159, s'installent a Mogadiscio selon Ibn al-Mujawir.",
+      "formationPeriod": "Formation des communautes arabes-benadiris entre le IXe et le XIIIe siecle, par des vagues successives de migrants arabes, persans et indiens qui s'etablissent sur la cote Benadir, se marient avec les populations locales somaliennes et bantou, et developpent une identite composite distincte. Le Sultanat de Mogadiscio (fonde vers le milieu du XIIIe siecle ou 1330) est l'expression politique de cette synthese.",
+      "migrationRoutes": [
+        "Migrations maritimes depuis la peninsule arabique (Yemen meridional, Oman, Hadramaout) vers les cotes somaliennes, a partir du IXe-Xe siecle",
+        "Migrations de marchands perses et indiens utilisant les moussons de l'ocean Indien",
+        "Fuite de familles arabo-yemenites (Banu Majid) depuis Mundhiriya au Yemen en 1159 vers Mogadiscio",
+        "Etablissement de comptoirs commerciaux successifs a Mogadiscio (Xamar), Merca et Barawa entre le IXe et le XIIIe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Mogadiscio (Xamar) : quartiers historiques de Hamar Weyne et Shingani",
+        "Merca (Marka) : quartiers de Saraha et Aw Balle",
+        "Barawa (Brava) : villes de Mpayi et Biruune",
+        "Warsheikh et cotes entre Mogadiscio et Barawa",
+        "Kismayo et interieur (Afgooye, Baidoa, Jowhar en lien avec le commerce)"
+      ],
+      "unificationsOrDivisions": "Les Benadiris sont organises en trois confederations principales selon leur ville d'implantation : Reer Hamar (Mogadiscio), Reer Marka/12 Koofi (Merca) et Reer Baraawe (Barawa). Chaque confederation est subdivisee en clans. Les quatre grands groupes claniques de Mogadiscio (Reer Hamar Gibil Madow) sont : Moorshe (considere le plus ancien, sous-clan de l'Ajuran), Iskashato, DhabarWeyne et Bandawow. La dispersion due a la guerre civile somalienne (depuis 1991) a fragmente ces communautes.",
+      "externalInfluences": "Assimilation progressive de la culture, de la langue et des genealogies somaliennes tout en maintenant une identite partiellement distincte. Influence de l'islam (role cle dans la diffusion de l'islam en Somalie et sur la cote swahili). Liens commerciaux avec la Chine et l'Asie du Sud-Est (Said de Mogadiscio, premier Africain a se rendre en Chine selon les sources medievales). Colonisation italienne (annees 1930 : gouverneurs Corni et Rava, politique d'assimilation). Impact de la guerre civile somalienne (depuis 1991).",
+      "majorHistoricalEvents": "Fondation du Sultanat de Mogadiscio (XIIIe-XIVe siecle) par la dynastie Fakhruddin/Fakhr ad-Din. Visite d'Ibn Battuta (1331) qui decrit le sultan comme Barbara (Somalien) parlant le maqdishi et l'arabe. Etablissement d'une colonie somalienne a Sofala (Mozambique) par des marchands de Mogadiscio pour le commerce de l'or. Resistance a l'attaque portugaise de Barawa (XVIe siecle). Fondation de la Ligue de la Jeunesse Somalienne (SYL, premier parti politique somalien, 1943) avec participation benadiri. Destruction et exode massive lors de la guerre civile somalienne (post-1991) : pillage, viols, expropriation des communautes benadiris sans milice armee propre."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisations en confederations urbaines de clans (Reer Hamar, Reer Marka, Reer Baraawe) avec des conseils d'anciens et des structures islamiques (cadis, oulémas). Les Benadiris n'etaient pas incorpores dans les grandes confederations claniques nomades somaliennes, ni soumis a l'exclusion des groupes d'artisans, mais ils n'avaient pas non plus de milice armee propre. Leur autorite etait commerciale et religieuse plutot que militaire.",
+      "clanOrganization": "Trois grandes confederations : Reer Hamar (Mogadiscio, clans Moorshe/Ajuran, Iskashato, DhabarWeyne, Bandawow), Reer Marka/12 Koofi (Merca), Reer Baraawe/Bravanese (Barawa, confederations Biido et Reer Faqi). Les clans Haatim, Reer Faqi et Shanshiyo se retrouvent dans les trois villes. La structure interne est liee a des jama'at soufis.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les genealogies arabes (rattachement revendique a des familles qoraychites, a des saints islamiques ou a des tribus du Yemen et de l'Oman) servent de marqueurs identitaires et de liens commerciaux. L'endogamie clanique est partiellement pratiquee, bien que les mariages avec des Somaliens soient devenus courants comme strategie de survie depuis 1991.",
+      "religiousAuthority": "Autorite islamique forte : cadis, oulémas et cheikhs jouent un role central. L'islam sunnite (avec influences soufies importantes : tariqa Qadiriyya, Shadhiliyya) est fondamental dans l'identite benadiri. Le cheikh Qassim al-Barawi est le premier erudite bravanese a avoir codifie le chimini en ecriture persane et arabe, pour diffuser l'islam sur la cote swahili via la poesie et les textes religieux."
+    },
+    "languages": {
+      "mainLanguage": "Arabe standard moderne et somali",
+      "isoCodes": ["arb", "som"],
+      "dialects": [
+        "Af-Hamari (dialecte somali de Mogadiscio/Hamar Weyne)",
+        "Af-Donte/Maasu-doonte (dialecte somali de Merca)",
+        "Chimwini/Chimini (langue bantoue de Barawa, variete swahili)"
+      ],
+      "vehicularRole": "La plupart des Arabes somaliens et Benadiris sont bilingues en somali et en arabe. L'arabe est la langue religieuse, liturgique et commerciale ; le somali est la langue nationale. Le chimwini (iso 639-3 : swh, variete swahili) est parle par les Bravanese de Barawa. Les dialectes somaliens locaux (af-hamari, af-donte) sont specifiques aux Benadiris de Mogadiscio et Merca respectivement."
+    },
+    "culture": {
+      "majorRites": "Pratiques islamiques sunnites avec forte coloration soufie : dhikr (recitations devotionnelles), madih (chants de louange), ceremonies de mariage selon le droit islamique. Traditions poetiques et litteraires en arabe et en chimini (Barawa). Architecture en pierre pour la defense et le commerce (maisons-tours de Mogadiscio, Merca, Barawa).",
+      "symbols": "Les cites portuaires historiques (Mogadiscio/Hamar, Merca, Barawa) sont les espaces symboliques des Benadiris. Le tissu toob benadir (specialite de Mogadiscio, exporte vers l'Egypte et la Syrie) etait un embleme commercial. Les mosquees historiques (mosquee Abd al-Aziz de Mogadiscio, nommee apres Abd al-Aziz, gouverneur des Maldives mentionne par Ibn Battuta) sont des symboles du prestige islamique benadiri.",
+      "artsAndMusic": "Poesie arabe et chimini, notamment a Barawa (role de diffusion de l'islam sur la cote swahili). Artisanat commercial (tissage, commerce de luxe). Cuisine melant influences arabes, persanes, indiennes et somaliennes (fruits, epices, riz). Musique de type qasida (chants religieux soufis).",
+      "spiritualities": "Islam sunnite avec forte tradition soufie (Qadiriyya, Shadhiliyya). Role de premier plan dans la diffusion de l'islam en Somalie (conversion des Somaliens a l'islam au XIVe siecle) et sur la cote swahili (poesie religieuse chimini de Barawa). Sanctuaires de saints locaux."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Sultanat de Mogadiscio (XIIIe-XIVe siecle, dynastie Fakhr ad-Din). Confederation de l'Ajuran (dont les Moorshe de Mogadiscio font partie), l'un des royaumes medievaux les plus puissants d'Afrique orientale. Les marchands de Mogadiscio ont etabli une colonie commerciale a Sofala (Mozambique actuel) pour exploiter les mines d'or, representant l'une des premières presences africaines en Afrique australe documentees.",
+      "relationsWithNeighbors": "Relations commerciales avec les clans somaliens nomades de l'interieur (acces aux ressources agropastorales). Concurrence et cooperation avec les marchands indiens (textile) et juifs (Hormuz). Contacts diplomatiques : le Sultanat de Mogadiscio a envoye des ambassadeurs en Chine (Said de Mogadiscio, premier Africain documente en Chine). Resistance a l'expansion portugaise (XVIe siecle, Barawa).",
+      "conflictsOrAlliances": "Resistance aux Portugais (XVIe siecle). Participation a la fondation de la Ligue de la Jeunesse Somalienne (SYL, 1943), premier parti politique somalien. Victimes principales de la guerre civile somalienne apres 1991 : les Benadiris n'avaient pas de milice armee propre ; pillage, viols, expropriation massifs. Exode vers le Kenya (refugies) puis vers les Etats-Unis et l'Europe.",
+      "diaspora": "Forte diaspora resultant de la guerre civile somalienne (1991). Nombreux Benadiris refugies aux Etats-Unis (Minneapolis, Columbus), au Kenya, en Europe (Pays-Bas, Royaume-Uni, Italie). Quelques milliers restent a Mogadiscio, Barawa et Merca, paient des milices privees pour leur protection. Les Bajuni (minorite associee) restent a Kismayo et dans les iles Bajuni."
+    },
+    "demography": {
+      "totalPopulation": 7800,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 – Arab in Somalia (population 7 800) ; Minority Rights Group – Coastal minorities including Benadiri, Bajuni and Bravans in Somalia (mis a jour novembre 2024)",
+      "distributionByCountry": [
+        {
+          "country": "SOM",
+          "population": 5000,
+          "note": "Concentres a Mogadiscio (quartiers historiques de Hamar Weyne et Shingani), Merca et Barawa ; presence commerciale dans les villes interieures (Afgooye, Baidoa, Jowhar)"
+        },
+        {
+          "country": "KEN",
+          "population": 1500,
+          "note": "Refugies benadiris, principalement a Nairobi et Mombasa"
+        },
+        {
+          "country": "USA",
+          "population": 1300,
+          "note": "Diaspora benadiri (Minneapolis, Columbus, autres villes)"
+        }
+      ]
+    },
+    "sources": [
+      "Minority Rights Group – Coastal minorities including Benadiri, Bajuni and Bravans in Somalia (https://minorityrights.org/communities/benadiri/), mis a jour novembre 2024",
+      "Joshua Project – Arab in Somalia (https://joshuaproject.net/people_groups/10375/SO)",
+      "Wikipedia EN – Benadiri people (https://en.wikipedia.org/wiki/Benadiri_people)",
+      "Wikipedia EN – Sultanate of Mogadishu (https://en.wikipedia.org/wiki/Sultanate_of_Mogadishu)",
+      "Wikipedia EN – History of Mogadishu (https://en.wikipedia.org/wiki/History_of_Mogadishu)",
+      "Ibn Battuta – Rihla (Voyages), XIV e siecle (description du Sultanat de Mogadiscio)",
+      "Cassanelli L.V. – The Origins and Development of Mogadishu AD 1000 to 1850, Universita Roma Tre, 2001"
+    ]
+  }
+}

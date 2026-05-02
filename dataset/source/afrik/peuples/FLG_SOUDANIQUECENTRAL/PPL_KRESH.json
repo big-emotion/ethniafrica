@@ -1,0 +1,109 @@
+{
+  "id": "PPL_KRESH",
+  "nameMain": "Kresh",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["SSD", "SDN", "CAF"],
+  "content": {
+    "appellations": {
+      "mainName": "Kresh",
+      "selfAppellation": "Gbaya",
+      "exonyms": ["Kreich", "Kreish", "Kresh-Woro"],
+      "originOfExonyms": "Kresh est un exonyme utilise par les voisins et repris dans la litterature coloniale et academique. L'endonyme est Gbaya (qui est aussi le nom de la langue dans les sources linguistiques), terme ambigu car il est partage avec des peuples Gbaya non apparentes du Cameroun et de la Republique centrafricaine. Pour eviter la confusion, la denomination Kresh est privilegiee dans les sources exterieures. Kreich et Kreish sont des variantes orthographiques coloniales.",
+      "whyProblematic": "Le terme Gbaya, endonyme des Kresh, est ambigu: il designe aussi des peuples non apparentes du Cameroun, de la RCA et du Congo. Cette homonymie peut preter a confusion dans la litterature. Le terme Kresh est un exonyme mais est le plus utilise dans les sources scientifiques pour ce groupe specifique du Bahr el Ghazal occidental.",
+      "contemporaryUsage": "Le terme Kresh est utilise dans les sources linguistiques (Ethnologue, Glottolog) et les profils ethnographiques. Le groupe se nomme lui-meme Gbaya (endonyme) dans sa propre langue. Au Soudan du Sud et au Soudan, le terme Kresh est celui employe par les administrations et les organisations humanitaires.",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Soudanique central (groupe Kresh, sous-branche Kresh-Ndogo)",
+      "historicalRegion": "Bahr el Ghazal occidental (comte de Raga/Raja, Soudan du Sud), region du Dar Fertit; extension au Soudan (Kafia Kingi) et a la RCA",
+      "currentCountries": ["SSD", "SDN", "CAF"]
+    },
+    "ethnicities": [
+      "Kresh proprement dit (Gbaya, Kresh de Raga/Raja, Bahr el Ghazal occidental, Soudan du Sud)",
+      "Kresh-Ndogo (dialecte Ndogo/Gbaya, dialecte de prestige)",
+      "Naka (Boro, Kpara): sous-groupe le plus nombreux",
+      "Kresh-Hofra (Gbaya-Ngbongbo): sous-groupe au Soudan",
+      "Woro (Orlo): sous-groupe meridional",
+      "Aja: langue/groupe apparente (ISO 639-3: aja, Soudan du Sud)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kresh sont un peuple soudanique central appartenant a la branche Kresh de la famille Kresh-Ndogo. Ils font partie du vaste ensemble des peuples Fertit du Bahr el Ghazal occidental, terme designant les groupes non-arabes et non-nilotiques de cette region frontaliere. Leur territoire historique, le Dar Fertit, couvre la partie meridionale du comte de Raga (anciennement ortographie Raja) au Soudan du Sud, region qui fut l'une des plus touchees par la traite negriere des 18e et 19e siecles menee par les sultanats musulmans voisins et l'Egypte mameluke.",
+      "formationPeriod": "La specificite kresh s'est formee dans le contexte de leur longue cohabitation avec les peuples arabes baggara du nord et les peuples soudaniques et nilotiques de leur environnement. La region du Bahr el Ghazal occidental, et en particulier le comte de Raga, a ete le foyer historique des Kresh. La colonisation anglo-egyptienne du Soudan (1898-1956) a impose des frontieres administratives qui ont divise leur territoire.",
+      "migrationRoutes": [
+        "Implantation ancestrale dans le Bahr el Ghazal occidental (Dar Fertit, comte de Raga/Raja)",
+        "Extension vers le nord dans le Kafia Kingi (zone disputee entre Soudan et Soudan du Sud sous administration soudanaise)",
+        "Presence dans les zones frontalieres de la Republique centrafricaine"
+      ],
+      "historicalSettlementZones": [
+        "Comte de Raga/Raja, Bahr el Ghazal occidental (Soudan du Sud): zone d'habitat principal",
+        "Kafia Kingi (exclave sous administration soudanaise): Dar Seid Bandas et Kata Bomas, Ringi Payam, Raja County",
+        "Zones frontalieres de la Republique centrafricaine",
+        "Soudan: regions du sud du Darfour adjacentes au Kordofan meridional"
+      ],
+      "unificationsOrDivisions": "Le terme Kresh designe un regroupement de plusieurs groupes ethniques distincts partageant des langues apparentees et un territoire commun dans le Bahr el Ghazal occidental. Les dialectes Ndogo, Naka, Kresh-Hofra et Woro ont des degres variables d'intelligibilite mutuelle. Le dialecte Ndogo est considere comme le dialecte de prestige. Le groupe Woro (meridional) et le Dongo (septentrional) sont les plus distincts.",
+      "externalInfluences": "Traite negriere des 18e et 19e siecles: le comte de Raga fut le seul comtat du Soudan du Sud a avoir une proportion significative de musulmans arabes, conseququence directe de la traite. Influence arabe: une partie des Kresh s'est arabisee et islamisee. Colonisation britannique: administration du Sudan anglo-egyptien a partir de 1898. L'islam represente la religion majoritaire chez les Kresh, avec une importante minorite chretienne. Conflit au Soudan du Sud (depuis 2013) et tensions frontieres dans le Kafia Kingi.",
+      "majorHistoricalEvents": "La region de Raga fut l'une des plus touchees au Soudan du Sud par la traite negriere conduite par les sultanats musulmans voisins et l'Egypte mameluke au 18e et 19e siecles. La colonisation britannico-egyptienne (1898) integra les Kresh dans le Soudan. Au moment de l'independance du Soudan du Sud (2011), les Kresh se retrouverent repartis entre le Soudan du Sud (Raga) et le Soudan (Kafia Kingi, region disputee). Le Kafia Kingi est administre par le Soudan mais revendique par le Soudan du Sud, compliquant la situation administrative des Kresh."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation agro-pastorale en villages diriges par des anciens. Les Kresh elevent des bovins et des chevres et cultivent des cereales. La bride price (dot en betail) est pratiquee. La polygamie est acceptee chez les hommes plus aises. Les familles arrangent les mariages; le mariage avec les cousins est courant. L'infrastructure (ecoles, hopitaux, eau courante, electricite, routes) est limitee.",
+      "clanOrganization": "Structure clanique avec mariage preferentiel entre cousins pour maintenir les alliances familiales. Pratique du levirat: un homme epouse la femme de son frere decede pour maintenir les alliances familiales. Organisation en familles etendues patrilineaires.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires organisent la vie sociale et les alliances. La dot en betail est versee aux familles de la mariee. Les femmes sont sous l'autorite de leur famille paternelle, puis de leur mari. Les obligations communautaires envers les parents s'etendent a des cercles de parentele larges.",
+      "religiousAuthority": "Autorite majoritairement islamique (majorite musulmane sunnite parmi les Kresh), avec une importante minorite chretienne. Les chefs religieux islamiques jouent un role dans la mediation sociale et la resolution des conflits. Les pratiques traditionnelles animistes subsistent en syncrétisme avec l'islam."
+    },
+    "languages": {
+      "mainLanguage": "Gbaya (Kresh)",
+      "isoCodes": ["krs"],
+      "dialects": [
+        "Ndogo (Gbaya): dialecte de prestige, Raga County",
+        "Naka (Boro, Kpara): dialecte le plus nombreux",
+        "Kresh-Hofra (Gbaya-Ngbongbo): sous-groupe au Soudan",
+        "Woro (Orlo): sous-groupe meridional, intelligible avec le Kresh propre",
+        "Dongo: sous-groupe septentrional, le plus distinct"
+      ],
+      "vehicularRole": "Le kresh (Gbaya) est parle par les membres de la communaute comme langue maternelle. L'arabe soudanais est largement utilise comme langue vehiculaire dans le nord et le centre du Soudan du Sud et au Soudan. L'anglais est langue officielle du Soudan du Sud; l'arabe est langue co-officielle. Le Kafia Kingi est administre sous l'arabe soudanais. La langue kresh est classee comme vulnerable (Glottolog). ISO 639-3: krs."
+    },
+    "culture": {
+      "majorRites": "Rites de mariage: les mariages sont arranges par les familles, avec versement d'une dot en betail. Polygamie acceptee pour les hommes pouvant subvenir aux besoins de plusieurs femmes. Pratique du levirat (mariage avec la veuve du frere). Rites funeraires avec commemoration des ancetres. Ceremonies agricoles marquant le cycle de semailles et de recoltes. Rites de passage pour les jeunes (circoncision masculine et ceremonies associees pour les garcons).",
+      "symbols": "Betail (symbole de richesse et de statut social; utilise pour la dot). Habitations a toits de chaume (architecture traditionnelle adaptee au climat du Bahr el Ghazal). Cereales (sorgho, mil) comme symboles de subsistance et de prosperite.",
+      "artsAndMusic": "Musique vocale et instrumentale dans le cadre des ceremonies de mariage et des fetes communautaires. Danse traditionnelle lors des celebrations. Artisanat: poterie, vannerie, travail du cuir. Agriculture et elevage comme activites economiques et culturelles centrales. Les femmes jouent un role important dans la poterie et la transformation des aliments. Poesie orale et transmission des histoires ancestrales par voie orale.",
+      "spiritualities": "Religion majoritairement islamique sunnite (majorite des Kresh), avec une importante minorite chretienne. Des pratiques animistes traditionnelles subsistent. La sorcellerie (dua dans les langues Gbaya de la region) est connue et redoutee. Les ancetres jouent un role dans la cosmologie traditionnelle. L'islam a penetre la region du Bahr el Ghazal occidental a travers les contacts avec les sultanats arabes et les routes commerciales trans-sahariennes. La mission chretienne est egalement active dans la region."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Kresh n'ont pas forme de royaume centralise. Leur organisation politique etait fondee sur des chefferies villageoises. Ils font partie du vaste ensemble des peuples Fertit du Bahr el Ghazal occidental, terme administratif colonial pour les groupes non-arabes et non-nilotiques. Certaines familles arabisees et islamisees des Kresh ont joue un role administratif sous l'influence des sultanats voisins, notamment la famille Feroge de Fartak.",
+      "relationsWithNeighbors": "Les Kresh vivent en contact avec les Arabes Baggara du nord (nomades saheliens), les Dinka et les Luo au sud et a l'est, et d'autres groupes Fertit dans le Bahr el Ghazal occidental. Les tensions entre Kresh (et autres groupes Fertit) et les Dinka se sont exacerbees depuis l'independance du Soudan du Sud, notamment a Wau. Les Kresh islamisés ont parfois joue le role d'intermediaires entre les populations arabes du nord et les populations animistes du sud.",
+      "conflictsOrAlliances": "La region de Raga/Raja fut l'une des plus touchees par la traite negriere des 18e et 19e siecles, conduite par les sultanats musulmans voisins et l'Egypte mameluke. Les guerres civiles soudanaises (1955-1972, 1983-2005) et le conflit du Soudan du Sud ont affecte les Kresh. La region du Kafia Kingi est au coeur d'un differend territorial entre Soudan et Soudan du Sud depuis 2011, affectant directement les Kresh qui y vivent. Des tensions ethniques entre Fertit (dont les Kresh) et Dinka ont ete documentees a Wau depuis les annees 1960.",
+      "diaspora": "La diaspora kresh est limitee. Des migrations vers Wau (capitale du Bahr el Ghazal occidental) et vers Khartoum (Soudan) sont documentees, notamment en raison des conflits. Des Kresh se trouvent egalement en Republique centrafricaine et dans les zones frontalieres du Soudan."
+    },
+    "demography": {
+      "totalPopulation": 80000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur Joshua Project, PeopleGroups.org et sources ethnographiques. Le groupe Kresh inclut plusieurs sous-groupes; leur population totale est difficile a determiner precisement. SIL Ethnologue code krs (Gbaya). L'Endangered Languages Project classe le kresh comme vulnerable. Repartis entre Soudan du Sud (Raga), Soudan (Kafia Kingi) et RCA.",
+      "distributionByCountry": [
+        {
+          "country": "SSD",
+          "population": 50000,
+          "note": "Bahr el Ghazal occidental, comte de Raga/Raja (zone principale de peuplement)"
+        },
+        {
+          "country": "SDN",
+          "population": 25000,
+          "note": "Kafia Kingi (region disputee sous administration soudanaise), Dar Seid Bandas, Ringi Payam"
+        },
+        {
+          "country": "CAF",
+          "population": 5000,
+          "note": "Zones frontalieres de la Republique centrafricaine"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kresh people. https://en.wikipedia.org/wiki/Kresh_people",
+      "Wikipedia EN — Kresh language. https://en.wikipedia.org/wiki/Kresh_language",
+      "Wikipedia EN — Western Bahr el Ghazal. https://en.wikipedia.org/wiki/Western_Bahr_el_Ghazal",
+      "Glottolog — Kresh-Woro (krs). https://glottolog.org/resource/languoid/id/gbay1288",
+      "SIL Ethnologue — Kresh subgroup. https://www.ethnologue.com/subgroup/2721/",
+      "Joshua Project — Kresh in Sudan. https://joshuaproject.net/people_groups/11239/SU",
+      "PeopleGroups.org — Kresh of South Sudan. https://peoplegroups.org/people_groups/pg012073/",
+      "PaanLuel Wel — How Dinka-Fertit Rivalry began in Wau (2025). https://paanluelwel.com/2025/05/28/how-dinka-fertit-rivalry-began-in-wau-western-bahr-el-ghazal-state/"
+    ]
+  }
+}

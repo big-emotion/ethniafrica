@@ -1,0 +1,44 @@
+# Nom du peuple
+- Nom principal : Harari
+- Auto-appellation : ሐረሪ / Harari ; parfois Adare
+- Appellations historiques : « Adare » (ancien exonyme local, non péjoratif)
+- Famille linguistique : Afro-asiatique – Sémitique éthiopien (FLG_SEMITIQUE)
+- Groupe ethno-linguistique : Sémitique du Sud
+- Région historique : Ville historique de Harar
+- Pays actuels : ETH
+- ID peuple : PPL_HARARI
+
+# 1. Ethnies incluses
+- Harari urbains (Adare)
+- Groupes harari diasporiques
+
+# 2. Origines
+- Héritiers des anciens sultanats musulmans du Harar.
+- Culture urbaine médiévale fortifiée (Jugol).
+
+# 3. Organisation interne
+- Organisation par quartiers (gära).
+- Familles anciennes structurées.
+
+# 4. Langues
+- Langue : Harari
+- Code ISO : har
+- Affiliée au sémitique méridional (proche de l’argobba et du gurage).
+
+# 5. Culture
+- Islam urbain ancien.
+- Architecture jugol (patrimoine UNESCO).
+- Arts textiles, calligraphie, poésie.
+
+# 6. Rôle historique
+- Sultanat du Harar.
+- Centre religieux et commercial important.
+
+# 7. Démographie
+- Population : 75 000
+- Année : 2025
+
+# 8. Sources
+- UNESCO Harar
+- Ethnologue (har)
+- Ethiopian CSA

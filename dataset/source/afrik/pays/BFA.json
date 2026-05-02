@@ -1,0 +1,361 @@
+{
+  "id": "BFA",
+  "nameFr": "Burkina Faso",
+  "nameOfficial": "Burkina Faso (Burkina Faso)",
+  "etymology": "Le nom \"Burkina Faso\" signifie \"Pays des hommes intègres\" en mooré (langue mossi) et en dioula (langue mandé). \"Burkina\" vient du mooré et signifie \"intègres\" ou \"honnêtes\", tandis que \"Faso\" vient du dioula et signifie \"pays\" ou \"patrie\". Le nom a été adopté en 1984 par le président Thomas Sankara pour remplacer \"Haute-Volta\", nom colonial français.",
+  "nameOriginActor": "Le nom \"Burkina Faso\" a été choisi par le président Thomas Sankara en 1984 lors de la révolution burkinabè. Il remplace \"Haute-Volta\" (nom colonial français dérivé du fleuve Volta). Le nom reflète l'identité pan-africaine et la diversité linguistique du pays (mooré et dioula).",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel du Burkina Faso était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs royaumes et territoires (royaumes mossi, chefferies gur, etc.).",
+      "middleAges": "Développement de royaumes mossi (XIe-XIXe siècles) : Wogodogo (Ouagadougou), Yatenga, Tenkodogo, Fada N'Gourma. Développement de chefferies gur (Bobo, Gourounsi, Dagara, etc.). Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaumes mossi (Wogodogo, Yatenga, Tenkodogo, Fada N'Gourma), chefferies Bobo, Lobi, Dagara, Gourounsi, Senoufo. Peuples Peuls et Touaregs en transhumance dans le nord. Les Européens utilisaient le terme \"Haute-Volta\" pour désigner la région (dérivé du fleuve Volta).",
+      "colonization": "1919-1960 : Haute-Volta (partie de l'Afrique-Occidentale française, AOF). Les Français ont créé la colonie de Haute-Volta en 1919, puis l'ont dissoute en 1932 (territoire réparti entre le Soudan français, la Côte d'Ivoire et le Niger). 1947 : Rétablissement de la Haute-Volta. Le territoire était administré comme une colonie française jusqu'à l'indépendance en 1960.",
+      "contemporary": "1960-1984 : République de Haute-Volta (indépendance le 5 août 1960). 1984 : Burkina Faso (changement de nom le 4 août 1984 par Thomas Sankara). Le nom \"Burkina Faso\" est officiel depuis 1984."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaumes Mossi",
+        "period": "XIe siècle - XIXe siècle (apogée), maintien jusqu'à la colonisation",
+        "dominantPeoples": ["Mossi (Moose)"],
+        "politicalCenters": [
+          "Ouagadougou (Wogodogo",
+          "capitale du royaume de Ouagadougou)",
+          "Yatenga",
+          "Tenkodogo",
+          "Fada N'Gourma"
+        ],
+        "historicalRole": "Royaumes mossi puissants et structurés, système monarchique (naaba), résistance à l'empire Songhay et aux Français. Légende fondatrice de Yennenga et Naaba Wedraogo. Autorité coutumière puissante encore active aujourd'hui."
+      },
+      {
+        "name": "Royaume de Fada N'Gourma",
+        "period": "Précolonial - XIXe siècle",
+        "dominantPeoples": ["Gourmantché"],
+        "politicalCenters": ["Fada N'Gourma (capitale)"],
+        "historicalRole": "Royaume de Fada N'Gourma, État gourmantché puissant dans l'est du Burkina Faso. Résistance à la colonisation française."
+      },
+      {
+        "name": "Chefferies Gur",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Bobo", "Gourounsi", "Dagara", "Lobi", "Birifor"],
+        "politicalCenters": ["Chefferies traditionnelles locales"],
+        "historicalRole": "Chefferies gur organisées en structures politiques traditionnelles. Traditions agricoles et artisanales. Résistance à la colonisation."
+      },
+      {
+        "name": "Colonie de Haute-Volta",
+        "period": "1919-1932, 1947-1960",
+        "dominantPeoples": [
+          "Tous les peuples burkinabés sous domination française"
+        ],
+        "politicalCenters": ["Ouagadougou (capitale administrative)"],
+        "historicalRole": "Colonie française, intégration dans l'AOF. Dissolution (1932) puis rétablissement (1947). Exploitation économique (coton, arachides), développement de l'administration coloniale, résistance des peuples autochtones, développement du mouvement indépendantiste au XXe siècle."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Mossi",
+        "selfAppellation": "Moaga (singulier), Moose (pluriel)",
+        "exonyms": [
+          "Mossi (terme utilisé par les Européens et les Français)",
+          "Mossé (forme ancienne)"
+        ],
+        "peopleId": "PPL_MOSSI",
+        "mainRegion": "Plateau central du Burkina Faso (Ouagadougou, Yatenga, Tenkodogo)",
+        "languages": ["Mooré (mos", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "\"Moose\" est l'auto-appellation (pluriel), \"Mossi\" est l'exonyme le plus courant. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Peul / Fulani",
+        "selfAppellation": "Fulɓe (pluriel), Pullo (singulier)",
+        "exonyms": [
+          "Peul (terme français)",
+          "Fulani (terme haoussa)",
+          "Fula (terme anglophone)",
+          "\"Fellata\" (terme haoussa parfois péjoratif",
+          "à éviter)"
+        ],
+        "peopleId": "PPL_FULA",
+        "mainRegion": "Nord du Burkina Faso, Sahel (pasteurs nomades et sédentaires)",
+        "languages": ["Fulfulde (ful", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Fulɓe\" est l'auto-appellation. \"Peul\" et \"Fulani\" sont des exonymes acceptés. \"Fellata\" peut avoir une connotation péjorative dans certains contextes et doit être évité."
+      },
+      {
+        "name": "Gourmantché",
+        "selfAppellation": "Gourmantché",
+        "exonyms": [
+          "Gourmantché (terme utilisé par les Européens et les Français)"
+        ],
+        "peopleId": "PPL_GOURMANTCHE",
+        "mainRegion": "Est du Burkina Faso (Fada N'Gourma)",
+        "languages": ["Gourmantché (gux", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "Le terme \"Gourmantché\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Bobo",
+        "selfAppellation": "Bobo",
+        "exonyms": ["Bobo (terme utilisé par les Européens et les Français)"],
+        "peopleId": "PPL_BOBO",
+        "mainRegion": "Ouest du Burkina Faso",
+        "languages": ["Bobo (bwq", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "Le terme \"Bobo\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Lobi / Birifor",
+        "selfAppellation": "Lobi, Birifor",
+        "exonyms": [
+          "Lobi",
+          "Birifor (termes utilisés par les Européens et les Français)"
+        ],
+        "peopleId": "PPL_LOBI_BIRIFOR",
+        "mainRegion": "Sud-ouest du Burkina Faso, frontière avec la Côte d'Ivoire et le Ghana",
+        "languages": [
+          "Lobi (lob",
+          "ISO 639-3)",
+          "Birifor (bfo",
+          "ISO 639-3)",
+          "français"
+        ],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "\"Lobi\" et \"Birifor\" sont les auto-appellations respectives. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Bissa",
+        "selfAppellation": "Bissa",
+        "exonyms": ["Bissa (terme utilisé par les Européens et les Français)"],
+        "peopleId": "PPL_BISSA",
+        "mainRegion": "Centre-sud du Burkina Faso",
+        "languages": ["Bissa (bib", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "Le terme \"Bissa\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Gourounsi",
+        "selfAppellation": "Gourounsi",
+        "exonyms": [
+          "Gourounsi (terme utilisé par les Européens et les Français)"
+        ],
+        "peopleId": "PPL_GOUROUNSI",
+        "mainRegion": "Centre-ouest du Burkina Faso",
+        "languages": [
+          "Gourounsi (gur",
+          "ISO 639-3",
+          "code générique)",
+          "français"
+        ],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "Le terme \"Gourounsi\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Dagara",
+        "selfAppellation": "Dagara",
+        "exonyms": ["Dagara (terme utilisé par les Européens et les Français)"],
+        "peopleId": "PPL_DAGARA",
+        "mainRegion": "Sud-ouest du Burkina Faso, frontière avec le Ghana",
+        "languages": ["Dagara (dga", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "Le terme \"Dagara\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Senoufo",
+        "selfAppellation": "Senoufo",
+        "exonyms": [
+          "Senoufo (terme utilisé par les Européens et les Français)"
+        ],
+        "peopleId": "PPL_SENUFO",
+        "mainRegion": "Sud-ouest du Burkina Faso, frontière avec la Côte d'Ivoire et le Mali",
+        "languages": [
+          "Senoufo (syc",
+          "ISO 639-3",
+          "code générique)",
+          "français"
+        ],
+        "languageFamily": "FLG_GUR",
+        "appellationRemarks": "Le terme \"Senoufo\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Touareg",
+        "selfAppellation": "Kel Tamasheq / Imuhagh",
+        "exonyms": [
+          "Touareg (terme français)",
+          "\"Targui\" (terme arabe)",
+          "\"Berbères du désert\" (terme descriptif)"
+        ],
+        "peopleId": "PPL_TUAREG",
+        "mainRegion": "Nord du Burkina Faso, Sahara",
+        "languages": ["Tamasheq (taq", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_BERBERE",
+        "appellationRemarks": "\"Kel Tamasheq\" ou \"Imuhagh\" sont les auto-appellations. \"Touareg\" est l'exonyme français le plus courant. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "Mooré",
+          "isoCode": "mos"
+        },
+        {
+          "name": "Fulfulde",
+          "isoCode": "ful"
+        },
+        {
+          "name": "Gourmantché",
+          "isoCode": "gux"
+        },
+        {
+          "name": "Bobo",
+          "isoCode": "bwq"
+        },
+        {
+          "name": "Lobi",
+          "isoCode": "lob"
+        },
+        {
+          "name": "Birifor",
+          "isoCode": "bfo"
+        },
+        {
+          "name": "Bissa",
+          "isoCode": "bib"
+        },
+        {
+          "name": "Gourounsi",
+          "isoCode": "gur"
+        },
+        {
+          "name": "Dagara",
+          "isoCode": "dga"
+        },
+        {
+          "name": "Senoufo",
+          "isoCode": "syc"
+        },
+        {
+          "name": "Tamasheq",
+          "isoCode": "taq"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique du Burkina Faso. Traditions mossi (masques, rituels des bois sacrés, culte des ancêtres, artisanat). Traditions gur (Bobo, Gourounsi, Dagara, Lobi). Traditions mandé (Bissa). Traditions peules (pastoralisme, poésie élogieuse). Traditions touarègues (nomadisme, culture du désert). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles.",
+      "dominantReligions": "Islam (majoritaire, surtout dans le nord), christianisme (catholicisme et protestantisme, surtout dans le sud), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques)",
+      "lifestyles": "Agriculture (Mossi, Bobo, Gourounsi, Dagara, cultures vivrières, coton), élevage (Peuls, Touaregs, bovins, chameaux), artisanat (forgerons Bobo, cuivre, cuir). Commerce et activités urbaines (zones urbaines, Ouagadougou). Urbanisation croissante. Économie basée sur l'agriculture (coton, arachides, mil, sorgho), l'élevage, et l'exploitation minière (or).",
+      "socialOrganization": "Organisation en royaumes historiques (Mossi, système monarchique naaba), chefferies traditionnelles (Gur), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Organisation pastorale nomade (Peuls, Touaregs).",
+      "regionalRelations": "Relations historiques avec le Mali (commerce, peuples transfrontaliers), la Côte d'Ivoire (commerce, migrations), le Ghana (Dagara, commerce), le Niger (Touaregs, commerce transsaharien). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest) et l'UEMOA (Union économique et monétaire ouest-africaine). Relations commerciales et culturelles transfrontalières."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par diverses sociétés sans nom unifié. Développement de chefferies et royaumes locaux. Arrivée et expansion des peuples gur et mandé dans la région.",
+      "middleAges": "Formation et développement des royaumes mossi (XIe siècle), légende fondatrice de Yennenga et Naaba Wedraogo. Apogée des royaumes mossi (Wogodogo, Yatenga, Tenkodogo, Fada N'Gourma). Développement de réseaux commerciaux régionaux et transsahariens. Résistance aux empires voisins (Songhay, Mali).",
+      "precolonial": "Consolidation des royaumes mossi, système monarchique (naaba). Développement des chefferies gur (Bobo, Gourounsi, Dagara, Lobi). Peuples Peuls et Touaregs en transhumance dans le nord. Résistance aux pressions extérieures. Commerce transsaharien.",
+      "colonization": "1896-1897 : Conquête française des royaumes mossi. 1919 : Création de la colonie de Haute-Volta par les Français, intégration dans l'AOF. 1932 : Dissolution de la Haute-Volta (territoire réparti entre le Soudan français, la Côte d'Ivoire et le Niger). 1947 : Rétablissement de la Haute-Volta. Période coloniale française, exploitation économique (coton, arachides), développement de l'administration coloniale, résistance des peuples autochtones. XXe siècle : Développement du mouvement indépendantiste, formation de partis politiques.",
+      "independenceStruggle": "1958 : Référendum sur l'autonomie, la Haute-Volta vote \"oui\" à la Communauté française. 1960 : Indépendance de la Haute-Volta (5 août 1960), proclamation de la République de Haute-Volta. Période d'instabilité politique (1960-1983), plusieurs coups d'État.",
+      "postIndependence": "1983-1987 : Révolution burkinabè sous Thomas Sankara, changement de nom pour \"Burkina Faso\" (1984), réformes sociales et économiques. 1987 : Assassinat de Thomas Sankara, prise de pouvoir de Blaise Compaoré. 2014 : Insurrection populaire, chute de Blaise Compaoré. Période de transition et de démocratisation. Défis : pauvreté, insécurité (terrorisme dans le nord), inégalités sociales. Le Burkina Faso est un pays sahélien confronté à des défis sécuritaires et économiques majeurs."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Burkina Faso",
+      "CIA World Factbook – Burkina Faso",
+      "ONU / UNFPA – Démographie Burkina Faso 2025",
+      "Izard, Michel – \"Le Yatenga précolonial\"",
+      "Archives royales du Moogho Naaba (Ouagadougou)",
+      "Recensements burkinabés",
+      "Études anthropologiques sur les peuples du Burkina Faso"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Mossi",
+          "population": 11500000,
+          "percentageInCountry": 50,
+          "peopleId": "PPL_MOSSI",
+          "region": "Plateau central du Burkina Faso (Ouagadougou, Yatenga, Tenkodogo)",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Peul / Fulani",
+          "population": 2300000,
+          "percentageInCountry": 10,
+          "peopleId": "PPL_FULA",
+          "region": "Nord du Burkina Faso, Sahel (pasteurs nomades et sédentaires)",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Gourmantché",
+          "population": 1610000,
+          "percentageInCountry": 7,
+          "peopleId": "PPL_GOURMANTCHE",
+          "region": "Est du Burkina Faso (Fada N'Gourma)",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Bobo",
+          "population": 920000,
+          "percentageInCountry": 4,
+          "peopleId": "PPL_BOBO",
+          "region": "Ouest du Burkina Faso",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Lobi / Birifor",
+          "population": 1150000,
+          "percentageInCountry": 5,
+          "peopleId": "PPL_LOBI_BIRIFOR",
+          "region": "Sud-ouest du Burkina Faso, frontière avec la Côte d'Ivoire et le Ghana",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Bissa",
+          "population": 690000,
+          "percentageInCountry": 3,
+          "peopleId": "PPL_BISSA",
+          "region": "Centre-sud du Burkina Faso",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Gourounsi",
+          "population": 690000,
+          "percentageInCountry": 3,
+          "peopleId": "PPL_GOUROUNSI",
+          "region": "Centre-ouest du Burkina Faso",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Dagara",
+          "population": 920000,
+          "percentageInCountry": 4,
+          "peopleId": "PPL_DAGARA",
+          "region": "Sud-ouest du Burkina Faso, frontière avec le Ghana",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Senoufo",
+          "population": 690000,
+          "percentageInCountry": 3,
+          "peopleId": "PPL_SENUFO",
+          "region": "Sud-ouest du Burkina Faso, frontière avec la Côte d'Ivoire et le Mali",
+          "languageFamily": "FLG_GUR"
+        },
+        {
+          "name": "Touareg",
+          "population": 230000,
+          "percentageInCountry": 1,
+          "peopleId": "PPL_TUAREG",
+          "region": "Nord du Burkina Faso, Sahara",
+          "languageFamily": "FLG_BERBERE"
+        },
+        {
+          "name": "Autres peuples",
+          "population": 2300000,
+          "percentageInCountry": 10,
+          "peopleId": "PPL_GURMA",
+          "region": "Diverses régions du Burkina Faso",
+          "languageFamily": "FLG_GUR"
+        }
+      ]
+    }
+  }
+}

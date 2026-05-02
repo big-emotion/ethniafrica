@@ -1,0 +1,95 @@
+{
+  "id": "PPL_GOLA",
+  "nameMain": "Gola",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["SLE", "LBR"],
+  "content": {
+    "appellations": {
+      "mainName": "Gola",
+      "selfAppellation": "Gola",
+      "exonyms": ["Gula (variante orthographique)"],
+      "originOfExonyms": "Le terme Gola est utilise par les Europeens depuis la periode coloniale. Il est possible que ce nom soit a l'origine du terme Gullah, designant un peuple d'origine africaine vivant sur les iles et cotes de Georgie et de Caroline du Sud aux Etats-Unis, bien que ce lien reste incertain.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Gola (ou Gula) est employe couramment en anglais, en krio et dans les langues regionales du Liberia et de la Sierra Leone. Les locuteurs se designent eux-memes comme Gola.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Isolat Niger-Congo (anciennement classe Atlantique)",
+      "historicalRegion": "Forets de Haute Guinee — zones frontalieres entre le Liberia occidental et la Sierra Leone orientale",
+      "currentCountries": ["SLE", "LBR"]
+    },
+    "ethnicities": [
+      "Gola de l'Est (Sierra Leone orientale)",
+      "Gola de l'Ouest (Liberia occidental — comte de Grand Cape Mount)",
+      "Gola du comte de Lofa (Liberia nord)",
+      "Gola du comte de Bomi",
+      "Gola du comte de Montserrado"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Gola sont consideres comme l'un des peuples les plus anciens de la region aujourd'hui appelee Liberia, presents dans les forets de Haute Guinee bien avant la formation des Etats modernes. Leurs traditions orales (Kabande) indiquent qu'ils vivaient initialement en matriarchat, la societe Sande precedant le Poro (Bohn). Ils entretinrent des liens historiques avec les Vai et les autres peuples de la cote liberienne.",
+      "formationPeriod": "La societe gola se consolida autour de ses institutions sociales majeures, notamment les societes secretes Sande (feminine) et Poro (masculine), bien avant le contact avec les Americano-Liberiens au XIXe siecle. Au debut du XIXe siecle, le roi Zolu Duma (dit King Peter) dominait les territories gola et vai.",
+      "migrationRoutes": [
+        "Etablissement ancestral dans les zones forestieres de la Haute Guinee",
+        "Extension vers les comtes de Lofa, Bomi, Grand Cape Mount et Montserrado au Liberia",
+        "Presence en Sierra Leone orientale"
+      ],
+      "historicalSettlementZones": [
+        "Comte de Grand Cape Mount (Liberia) — zone principale",
+        "Comte de Lofa (nord Liberia, entre les fleuves Mano et Saint Paul)",
+        "Comte de Bomi et Montserrado (Liberia)",
+        "Sierra Leone orientale (zones frontalieres)"
+      ],
+      "unificationsOrDivisions": "Organisation en chefferies lignageres independantes tout en partageant les institutions trans-ethniques Sande et Poro. Le roi Zolu Duma unifia au debut du XIXe siecle les territories gola et vai, participant aux negotiations avec les colons americains du Liberia en 1821.",
+      "externalInfluences": "Contacts anciens avec les Kissi, les Mende et le peuple Krio. Influence de l'islam par les marchands mandinka a partir du XVIe siecle. Les societes Poro et Sande se repandirent comme institutions trans-ethniques sur la Cote de Haute Guinee, etablissant des liens culturels forts avec les Mende, Kpelle, Loma et d'autres peuples. La periode coloniale britannique en Sierra Leone et la fondation du Liberia par les Americano-Liberiens (1822) modifierent durablement la structure politique gola.",
+      "majorHistoricalEvents": "En 1821, le roi Zolu Duma (King Peter) participa aux negotiations avec les colons americains qui fonderent le futur Liberia. Les guerres civiles liberienne (1989-2003) et sierra-leonaise (1991-2002) affecterent profondement les communautes gola des deux cotes de la frontiere."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies lignageres presidees par des chefs hereditaires. Le systeme de gouvernance traditional integre les societes secretes Poro et Sande comme instances de gouvernance paralleles, de resolution des conflits et de transmission du savoir. Les deux societes ont historiquement joue un role dans la gestion des affaires communautaires.",
+      "clanOrganization": "Structure clanique patrilineaire. Organisation en familles etendues et lignages. Les traditions orales gola (Kabande) evoquent cependant une organisation matriarcale originelle.",
+      "ageClassSystems": "Les societes Sande (pour les femmes) et Poro (pour les hommes) constituent de facto des systemes d'initiation par classes d'age, scandant le passage de l'enfance a l'age adulte dans des contextes forestiers sacres.",
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite, les droits fonciers et les alliances. Les obligations rituelles envers les ancetres structurent la vie sociale. Le Poro peut egalement statuer sur les questions d'heritage et de droit coutumier.",
+      "religiousAuthority": "Autorite duale entre chefs politiques et leaders des societes Poro (masculine) et Sande (feminine). Ces societes controlent l'acces aux connaissances rituelles et assurent la regulation morale et sociale. Syncrétisme religieux progressif avec le christianisme et, dans une moindre mesure, l'islam."
+    },
+    "languages": {
+      "mainLanguage": "Gola (aussi appele Gula)",
+      "isoCodes": ["gol"],
+      "dialects": ["Deng (Todii)", "Kongba", "Senje"],
+      "vehicularRole": "Le gola est parle comme premiere langue par environ 278 000 personnes (estimation 2015) reparties entre le Liberia et la Sierra Leone. Il constitue un isolat au sein de la famille Niger-Congo, anciennement classe parmi les langues Atlantiques. L'anglais est utilise comme langue officielle et vehiculaire dans les deux pays."
+    },
+    "culture": {
+      "majorRites": "Les rites d'initiation sont au coeur de la vie sociale gola. La societe Sande (feminine) organise l'initiation des filles a l'age adulte dans des espaces sacres sous la supervision de masques Sande representant des etres spirituels puissants associes a l'eau, a la nature et a la beaute feminine. Ces figures masquees apparaissent lors de ceremonies publiques et rituelles. Le Poro initie les garcons a l'age adulte dans des cadres forestiers secrets, leur transmettant les traditions culturelles, les responsabilites sociales et les aptitudes au leadership. Les deux societes jouent un role dans la gouvernance communautaire, la resolution des conflits et la transmission du patrimoine culturel. Des ceremonies de mariage traditionnelles et des rites lies a l'agriculture completent le cycle rituel annuel.",
+      "symbols": "Les masques Sande (masques de bois sculptes representes avec une coiffe et un cou annele, associes aux esprits de l'eau) sont l'un des rares cas en Afrique subsaharienne ou des masques sont portes par des femmes. Ils incarnent les ideaux de beaute feminine, d'ordre moral et d'autorite spirituelle. Les symboles lies a l'eau et a la foret sont centraux dans la cosmologie gola. Le leopard est un animal symbolique associe au pouvoir.",
+      "artsAndMusic": "La sculpture sur bois est un art majeur, notamment la fabrication des masques Sande et Poro, hautement valorises dans les collections museographiques mondiales. La musique des forets — chants polyphoniques accompagnes de percussions — est associee aux ceremonies d'initiation et aux celebrations saisonnieres. Morris Dorley (ne en 1942), guitariste et musicien gola, et Yatta Zoe, chanteuse et danseuse dont la carriere s'etend sur quatre decennies, sont des figures musicales reconnues. L'artisanat comprend le travail du bois, la ceramique et le tissage.",
+      "spiritualities": "La cosmologie gola traditionnelle associe les etres spirituels de la societe Sande a l'eau, a la nature et a la regulation morale de la societe. Les ancetres jouent un role protecteur essentiel. Les societes Poro et Sande servent de mediation entre le monde des vivants et le monde spirituel. L'adoption de l'islam a commence par l'influence des marchands mandinka a partir du XVIe siecle. Le christianisme, introduit par les missions protestataires et catholiques a l'epoque coloniale, est aujourd'hui largement repandu. Un syncrétisme persistant entre croyances traditionnelles, islam et christianisme caracterise la vie religieuse gola contemporaine."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Au debut du XIXe siecle, le roi Zolu Duma (King Peter) exerca une autorite sur les territories gola et vai du Liberia actuel. Il prit part en 1821 aux negociations avec la American Colonization Society qui mena a la fondation du Liberia en 1822. Les structures politiques gola etaient organisees en chefferies lignageres, sans royaume centralise comparable aux empires du Sahel.",
+      "relationsWithNeighbors": "Relations complexes avec les peuples voisins : les Mende, Kissi, Kpelle, Loma, Vai et Fula partageaient certaines institutions culturelles avec les Gola, notamment les societes Sande et Poro qui sont devenues trans-ethniques sur la Cote de Haute Guinee. Des similitudes dans les noms personnels gola sont notees avec les Vai, Mende, Kpelle, Loma, Kissi, Fula et Malinke, temoignant d'une longue coexistence. Les marchands mandinka introduisirent l'islam a partir du XVIe siecle.",
+      "conflictsOrAlliances": "Alliances avec les populations vai au XIXe siecle sous l'autorite de Zolu Duma. Les Gola subirent les consequences des guerres civiles liberienne (1989-2003) et sierra-leonaise (1991-2002), qui provoquerent des deplacements massifs de population dans les deux pays. La region frontaliere gola fut particulierement touchee par ces conflits.",
+      "diaspora": "Des communautes gola sont presentes dans les capitales et grandes villes du Liberia (Monrovia) et de la Sierra Leone (Freetown). Une diaspora gola existe dans la diaspora liberienne et sierra-leonaise en Occident (Etats-Unis, Royaume-Uni, autres pays europeens)."
+    },
+    "demography": {
+      "totalPopulation": 345000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue (gol) — 278 000 locuteurs en 2015 ; estimation 2025 tenant compte de la croissance demographique naturelle du Liberia et de la Sierra Leone ; recensements nationaux liberien et sierra-leonais",
+      "distributionByCountry": [
+        {
+          "country": "LBR",
+          "population": 265000,
+          "note": "Comtes de Grand Cape Mount, Lofa, Bomi et Montserrado principalement"
+        },
+        {
+          "country": "SLE",
+          "population": 80000,
+          "note": "Sierra Leone orientale, zones frontalieres avec le Liberia"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Gola people. https://en.wikipedia.org/wiki/Gola_people",
+      "Wikipedia EN — Gola language. https://en.wikipedia.org/wiki/Gola_language",
+      "SIL Ethnologue — Gola language (gol). https://www.ethnologue.com/language/gol/",
+      "Wikipedia EN — Sande society. https://en.wikipedia.org/wiki/Sande_society",
+      "CIA World Factbook — Liberia. https://www.cia.gov/the-world-factbook/countries/liberia/",
+      "CIA World Factbook — Sierra Leone. https://www.cia.gov/the-world-factbook/countries/sierra-leone/"
+    ]
+  }
+}

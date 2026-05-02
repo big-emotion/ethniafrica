@@ -1,0 +1,76 @@
+{
+  "id": "PPL_NDAI",
+  "nameMain": "Ndai",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Ndai",
+      "selfAppellation": "Ndai",
+      "exonyms": ["Galke", "Pormi"],
+      "originOfExonyms": "Le nom Ndai viendrait du mot de la langue désignant la 'vache' (bos taurus), ce qui reflète l'importance de l'élevage bovin dans la culture du groupe. Galke et Pormi sont des noms alternatifs documentés dans les sources linguistiques (Ethnologue, Glottolog). Ces ethnonymes sont utilisés par les communautés voisines et les chercheurs.",
+      "whyProblematic": "Le groupe Ndai est extrêmement peu documenté en raison de son très faible nombre de locuteurs (5 selon le recensement de 2002, tous de plus de 50 ans, plus deux locuteurs partiels). La langue est classée en voie d'extinction critique. L'appartenance au phylum Niger-Congo est marquée d'un point d'interrogation dans les classifications linguistiques (Wikipedia, Glottolog). Le groupe est souvent confondu avec d'autres petites communautés de la région de Tcholliré.",
+      "contemporaryUsage": "Le terme Ndai est peu utilisé en dehors des cercles linguistiques et anthropologiques. Les descendants s'identifient probablement en premier lieu à leur communauté locale ou régionale (Mayo-Rey, Cameroun septentrional). Avec la quasi-disparition de la langue, l'identité ethnique distincte Ndai est en voie d'assimilation dans les groupes voisins.",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Branche Mbum des langues Niger-Congo (classement provisoire ; appartenance incertaine au phylum Niger-Congo)",
+      "historicalRegion": "Environs de Tcholliré, commune de Tcholliré, département Mayo-Rey, Région Nord du Cameroun",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": ["Communauté de Tcholliré (zone principale documentée)"],
+    "origins": {
+      "ancientOrigins": "Les Ndai constituent un groupe ethno-linguistique de petite taille de la Région Nord du Cameroun, dans la sous-préfecture de Tcholliré. Leur appartenance à la famille Mbum les rattache à un ensemble de peuples du bassin du lac Tchad et de la vallée de la Bénoué. L'absence de documentation historique approfondie empêche de retracer avec précision leur origine ancienne et leurs migrations. Le nom de leur langue provient du mot local désignant la vache, suggérant une tradition agropastorale ancienne.",
+      "formationPeriod": "L'existence du groupe en tant qu'entité linguistique distincte est attestée par des enquêtes linguistiques (SIL, 2002), mais leur histoire propre est peu documentée. Leur quasi-extinction linguistique (5 locuteurs en 2002) indique une assimilation progressive dans des groupes voisins plus importants, probablement accélérée depuis la période coloniale.",
+      "migrationRoutes": [],
+      "historicalSettlementZones": [
+        "Environs de Tcholliré (Tcholliré commune, département Mayo-Rey, Région Nord du Cameroun)"
+      ],
+      "unificationsOrDivisions": "Groupe très réduit, sans organisation politique documentée au-delà du cadre villageois. L'assimilation avec les groupes voisins a probablement effacé les structures claniques propres.",
+      "externalInfluences": "Colonisation française du Cameroun. Influence des langues véhiculaires régionales (fulfuldé, langue des Peul, dominant dans la Région Nord). Christianisme et islam présents dans la Région Nord du Cameroun.",
+      "majorHistoricalEvents": "2002 : enquête SIL identifiant seulement 5 locuteurs natifs de la langue Ndai, tous âgés de plus de 50 ans, et deux locuteurs partiels. Ce constat marque la quasi-extinction de la langue."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation villageoise traditionnelle, non documentée en détail. Les sociétés Mbum de la région présentent généralement des chefferies traditionnelles sous l'autorité d'un chef de village (lawan ou chef de terre selon les contextes) intégrées dans le système des lamidats fulbé du Nord-Cameroun.",
+      "clanOrganization": "Non documentée pour les Ndai spécifiquement.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Non documenté pour les Ndai spécifiquement. Les groupes Mbum de la région ont généralement des structures patrilinéaires.",
+      "religiousAuthority": "Mixte : pratiques religieuses traditionnelles, islam (influence fulbé dominante dans la Région Nord du Cameroun), christianisme (présence de missions dans la région de Tcholliré)."
+    },
+    "languages": {
+      "mainLanguage": "Ndai (aussi connu sous les noms Galke ou Pormi)",
+      "isoCodes": ["gke"],
+      "dialects": [],
+      "vehicularRole": "La langue ndai est en voie d'extinction critique (5 locuteurs natifs en 2002, tous de plus de 50 ans ; Glottolog : ndai1238). Elle appartient à la branche Mbum de la famille Niger-Congo (appartenance au phylum incertaine). Le fulfuldé (langue des Peul / Fula) et le français sont les langues véhiculaires dominantes dans la Région Nord du Cameroun. La transmission intergénérationnelle de la langue ndai a cessé."
+    },
+    "culture": {
+      "majorRites": "Non documentés spécifiquement pour les Ndai. Les groupes Mbum et agropastoraux de la région de Tcholliré pratiquent généralement des rites liés aux cycles agricoles, au passage de l'âge adulte et aux funérailles, souvent mêlés d'influences islamiques en raison de la prédominance des Peul dans la région.",
+      "symbols": "Le nom même du groupe dérivant du mot local pour 'vache' suggère que le bétail constitue ou constituait un symbole identitaire et économique central.",
+      "artsAndMusic": "Non documentés spécifiquement pour les Ndai. Les sociétés agropastorales de la Région Nord du Cameroun pratiquent généralement la musique de percussion (balafon, djembé), le chant collectif lors des fêtes agricoles et des cérémonies de passage.",
+      "spiritualities": "Non documentées spécifiquement pour les Ndai. La Région Nord du Cameroun est majoritairement musulmane (influence des lamidats fulbé) avec des pratiques animistes traditionnelles persistant dans certaines communautés rurales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Aucune chefferie ou royaume proprement ndai n'est documenté. La région de Tcholliré a historiquement été sous l'influence des lamidats fulbé du Cameroun septentrional.",
+      "relationsWithNeighbors": "Les Ndai vivent dans une zone de contact entre les peuples Mbum, les Peul (Fula) et d'autres groupes de la vallée de la Bénoué. L'assimilation linguistique et culturelle progressive dans ces groupes voisins explique la quasi-extinction du groupe.",
+      "conflictsOrAlliances": "Non documentés spécifiquement pour les Ndai. La région de Tcholliré fut le théâtre d'expansions peules (lamidats) au 19e siècle qui affectèrent l'ensemble des petits groupes de la région.",
+      "diaspora": "Aucune diaspora documentée. Le groupe est extrêmement réduit et localisé dans les environs de Tcholliré."
+    },
+    "demography": {
+      "totalPopulation": 50,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue (2002) : 5 locuteurs natifs, 2 locuteurs partiels. La population ethnique (descendants) peut être légèrement plus importante que le nombre de locuteurs, mais reste marginale. Glottolog (ndai1238) confirme la classification 'Spoken L1 Language' en voie d'extinction. Les descendants ont probablement été assimilés dans les groupes voisins.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 50,
+          "note": "Environs de Tcholliré, département Mayo-Rey, Région Nord du Cameroun"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Ndai language. https://en.wikipedia.org/wiki/Ndai_language",
+      "Glottolog — Ndai (ndai1238). https://glottolog.org/resource/languoid/id/ndai1238",
+      "Ethnologue (SIL International) — Ndai (gke). Langue Mbum, Cameroun.",
+      "SIL International — enquête de terrain 2002, Tcholliré, Région Nord du Cameroun.",
+      "Wiktionary — Appendix:ISO 639-3 codes/Africa. https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa"
+    ]
+  }
+}

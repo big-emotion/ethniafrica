@@ -1,0 +1,85 @@
+{
+  "id": "PPL_DAGAABA",
+  "nameMain": "Dagaaba",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA", "BFA", "CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Dagaaba",
+      "selfAppellation": "Dagaaba (pluriel) / Dagao (singulier)",
+      "exonyms": ["Dagara", "Dagaari", "Dagarti", "Dagaare"],
+      "originOfExonyms": "Dagara est la forme utilisee dans les dialectes du nord (surtout au Burkina Faso). Dagaari et Dagarti sont des appellations coloniales britanniques. Dagaare designe egalement la langue parlee par ce peuple.",
+      "whyProblematic": "La confusion entre le nom du peuple (Dagaaba/Dagara) et le nom de la langue (Dagaare/Dagaari) est frequente dans la litterature. Les Dagaaba du Ghana et les Dagara du Burkina Faso sont souvent traites comme des groupes distincts bien qu'ils forment un continuum ethnolinguistique.",
+      "contemporaryUsage": "Dagaaba est prefere au Ghana, Dagara au Burkina Faso. Les organisations communautaires ghaneennes utilisent Dagaaba. Le terme Dagaari est encore present dans certains documents administratifs.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Mole-Dagbani (branche Gur, Niger-Congo)",
+      "historicalRegion": "Nord-Ouest du Ghana, Sud-Ouest du Burkina Faso",
+      "currentCountries": ["GHA", "BFA", "CIV"]
+    },
+    "ethnicities": ["Dagaaba", "Dagara", "Birifor (groupe apparente)"],
+    "origins": {
+      "ancientOrigins": "Les Dagaaba sont issus du groupe Mole-Dagbani. La tradition orale indique qu'ils se formerent comme faction dissidente du royaume de Dagbon sous le roi Na Nyagse. Ils appartiennent au grand ensemble Gur de l'Afrique de l'Ouest.",
+      "formationPeriod": "Le groupe Mole-Dagbani migra vers le Sahel semi-aride au XIVe siecle, puis vers le nord-ouest au XVIIe siecle. La consolidation des communautes Dagaaba dans leur territoire actuel se fit entre les XVIe et XVIIIe siecles.",
+      "migrationRoutes": [
+        "Migration depuis le Sahel semi-aride vers la region du nord-ouest du Ghana au XVIIe siecle",
+        "Vagues de migration interne au Ghana vers le sud (regions du Brong Ahafo et du Grand Accra) au debut du XXe siecle pour le travail dans les mines et les plantations de cacao",
+        "Presence en Cote d'Ivoire due aux frontieres coloniales imposees lors du partage de l'Afrique"
+      ],
+      "historicalSettlementZones": [
+        "Region du Nord-Ouest du Ghana (Upper West Region)",
+        "Province de l'Ioba, Poni, Bougouriba, Sissili et Mouhoun au Burkina Faso",
+        "Nord-Est de la Cote d'Ivoire"
+      ],
+      "unificationsOrDivisions": "Les frontieres coloniales etablies lors du partage de l'Afrique ont divise les Dagaaba entre le Ghana (colonie britannique) et le Burkina Faso (colonie francaise), entrainant des divergences linguistiques et culturelles entre Dagaaba du Ghana et Dagara du Burkina Faso.",
+      "externalInfluences": "Les royaumes voisins de Dagbon, Mamprugu, Gonja et Wala ont tente periodiquement de soumettre les Dagaaba. En 1894, certains villages du sud se revolterent contre l'autorite du royaume de Wala. L'Empire Wassoulou de Samory Toure, en alliance avec Wala, conquit une partie du territoire a la fin des annees 1890 avant d'etre repousse.",
+      "majorHistoricalEvents": "En 1894, rebellion des villages dagaaba meridionaux contre la domination du royaume de Wala, restauree par les Britanniques en 1933. Resistance a la conquete par les royaumes de Dagbon et Mamprugu. Implication dans les conflits fonciers avec les Sisala dans les annees 1980. En 2006, nomination de Naa Franklin Suantah comme chef de la communaute dagaaba du Ghana."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en petites communautes agricoles autonomes non centralisees. La structure de base est le Yir (groupe de sous-clan ou menage), regroupe au sein d'un Tengan (zone d'un sanctuaire de la divinite terrestre). Jusqu'a la fin du XIXe siecle, les communautes etaient dirigees par des conseils d'anciens. La chefferie ceremonnielle fut introduite ulterieurement sous influence coloniale.",
+      "clanOrganization": "Les lignages modernes des Dagaaba comptent dix clans regroupant plus d'un million de personnes. Chaque clan est lie a un systeme de custodiat spirituel des ressources territoriales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le systeme Tendaalun regroupe des roles rituels generalement herites au sein du meme groupe de menage. Le Tengan sob (ou Tindana) est le chef du systeme de zones de sanctuaires, chef communautaire et pretre. Le Tengan dem est le gardien et responsable rituel du centre sacre. Le Suo sob pratique le sacrifice rituel d'animaux a la divinite terrestre. Le Zongmogre effectue des rituels aux centres commerciaux sacres. Le Gara dana ou Wie sob est le leader rituel des societes de chasse.",
+      "religiousAuthority": "La terre est percue comme etant sous la garde spirituelle de diverses autorites, lignages et forces spirituelles selon le systeme Tendaalun. Le Tindana est le gardien de la terre et intermediaire avec les divinites terrestres."
+    },
+    "languages": {
+      "mainLanguage": "Dagaare (Ghana) / Dagara (Burkina Faso)",
+      "isoCodes": ["dga", "dgi"],
+      "dialects": [
+        "Dagaare du Sud (Southern Dagaare, dga) - principalement dans le nord-ouest du Ghana",
+        "Dagaare du Nord / Dagara (dgi) - principalement dans les provinces du Burkina Faso",
+        "Dagaari Dioula - parle surtout au Burkina Faso"
+      ],
+      "vehicularRole": "La langue Dagaare sert de langue vehiculaire dans l'Upper West Region du Ghana. Elle est utilisee dans l'enseignement, la liturgie chretienne et les medias locaux. La Bible complete est disponible en Dagaare du Sud."
+    },
+    "culture": {
+      "majorRites": "Le Bagr est la litterature sacree des Dagaaba, composee de recitations et d'oraisons mythiques prononcees lors des rituels d'initiation et d'autres ceremonies religieuses. Les rites lies a la divinite terrestre (Tengan) sont centraux dans la vie communautaire.",
+      "symbols": "La terre (Tengan) est le symbole central de la culture dagaaba, incarnant la relation entre les vivants, les ancetres et les forces spirituelles. Les xylophones (gyle) sont des instruments emblematiques. Les sanctuaires de la divinite terrestre marquent la geographie sacree.",
+      "artsAndMusic": "Les Dagaaba sont renommes pour leurs xylophones sophistiques (gyle). Ils etaient autosuffisants en production de fer avant la colonisation. La poterie est une tradition artisanale importante (documentee par Anna Craven dans The Pottery of Northern Ghana). La musique et la danse accompagnent les ceremonies de la divinite terrestre et les rites funeraires.",
+      "spiritualities": "Les Dagaaba pratiquent une religion traditionnelle centree sur le culte de la divinite terrestre (Tengan) et des ancetres. L'islam et le christianisme ont ete adoptes par une partie de la population depuis l'epoque coloniale. Les relations de cousinage et de plaisanterie (parenté a plaisanterie) avec les Frafra (Gurunsi) structurent les relations interethniques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Dagaaba n'ont pas developpe de grande structure etatique centralisee. Ils ont periodiquement resiste aux tentatives de conquest des royaumes de Dagbon, Mamprugu et Gonja au sud. Certains villages meridionaux etaient sous l'autorite du royaume de Wala au debut des annees 1890. Des chefferies cerimoniales existent aujourd'hui.",
+      "relationsWithNeighbors": "Relations de cousinage et de plaisanterie avec les Frafra (Gurunsi). Conflits fonciers recurrents avec les Sisala (encore actifs dans les annees 1980). Tensions historiques avec le royaume de Wala. Les Birifor et les Dagaare Dioula sont des groupes apparentes avec lesquels les Dagaaba partagent des liens culturels et linguistiques.",
+      "conflictsOrAlliances": "Resistance a la conquete par l'Empire Wassoulou de Samory Toure (generalship de Sarankye Mori) en alliance avec le royaume de Wala a la fin des annees 1890. Le kaleo naa (chef de Kaleo) contribua a defaire cette alliance. Rebellion de 1894 contre l'autorite de Wala.",
+      "diaspora": "Presence significative dans les villes du sud du Ghana (notamment la region Brong Ahafo) suite aux migrations de main-d'oeuvre au debut du XXe siecle. Petites communautes en Cote d'Ivoire. Les frontieres coloniales separent les Dagaaba en unites nationales distinctes utilisant jadis des cauris pour commercer d'une rive a l'autre."
+    },
+    "demography": {
+      "totalPopulation": 1200000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Wikipedia (700 000 locuteurs Dagaare du Sud au Ghana, 388 000 locuteurs Dagara au Burkina Faso en 2001) + croissance demographique",
+      "distributionByCountry": [
+        { "country": "GHA", "population": 780000 },
+        { "country": "BFA", "population": 410000 },
+        { "country": "CIV", "population": 10000 }
+      ]
+    },
+    "sources": [
+      "Dagaaba people – Wikipedia (https://en.wikipedia.org/wiki/Dagaaba_people)",
+      "Ethnologue – Southern Dagaare [dga] (https://www.ethnologue.com/language/dga/)",
+      "Joshua Project – Dagara in Burkina Faso (https://joshuaproject.net/people_groups/11465)",
+      "Joshua Project – Ghana People Groups (https://joshuaproject.net/countries/gh)",
+      "Craven, A. – The Pottery of Northern Ghana, 1975",
+      "World Population Review – Ghana Population 2025 (https://worldpopulationreview.com/countries/ghana)"
+    ]
+  }
+}

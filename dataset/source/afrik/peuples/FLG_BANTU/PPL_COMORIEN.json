@@ -1,0 +1,95 @@
+{
+  "id": "PPL_COMORIEN",
+  "nameMain": "Comoriens",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["COM", "MYT", "FRA"],
+  "content": {
+    "appellations": {
+      "mainName": "Comoriens",
+      "selfAppellation": "Wangazidja (Grande Comore), Wandzuani (Anjouan), Wamwali (Mohéli), Wamaore (Mayotte)",
+      "exonyms": ["Comorians (anglais)", "Comoriens (français)"],
+      "originOfExonyms": "Comores provient de l'arabe Juzur al-Qamar (iles de la lune), transcrit en français comme Comores, donnant le gentilé Comorien.",
+      "whyProblematic": "Les termes exonymes ne reflètent pas la diversité interne des Comoriens (Ngazidja, Ndzuani, Mwali, Maorais), ni les identités insulaires spécifiques. Chaque île a sa propre langue, ses propres traditions et une forte identité locale.",
+      "contemporaryUsage": "Comorien est largement accepté pour désigner l'ensemble des habitants de l'archipel. Les identités insulaires restent fortes: Ngazidja pour Grande Comore, Wandzuani pour Anjouan, Wamwali pour Mohéli, Maorais pour Mayotte.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantous de l'océan Indien, groupe swahili",
+      "historicalRegion": "Archipel des Comores (océan Indien occidental, entre Madagascar et la côte mozambicaine)",
+      "currentCountries": ["COM", "MYT", "FRA"]
+    },
+    "ethnicities": [
+      "Ngazidja (Grande Comore): habitants de la plus grande île, langue shingazidja (zdj)",
+      "Ndzuani (Anjouan): habitants d'Anjouan, langue shindzuani (wni)",
+      "Mwali (Mohéli): habitants de Mohéli, langue shimwali (wlc)",
+      "Maorais (Mayotte): habitants de Mayotte, langue shimaore (swb), territoire français",
+      "Diaspora comorienne: communautés en France métropolitaine (Marseille, Paris), Madagascar, Tanzanie, Zanzibar"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Comores ont été peuplées par des vagues successives de migrants: Bantous d'Afrique orientale (premiers colons africains), Austronésiens et Malgaches (apportant des éléments culturels et linguistiques), et marchands arabes et persans (apportant l'islam à partir du VIIIe siècle). Des commerçants indiens ont également laissé des traces. Ce brassage multiséculaire a créé une population et une culture syncrétiques uniques.",
+      "formationPeriod": "Peuplement des îles à partir du VIIIe siècle avec une présence islamique documentée dès le XIe siècle. Entre le XIe et le XVe siècle, les chefferies insulaires se transformèrent progressivement en sultanats sous influence arabe et persane.",
+      "migrationRoutes": [
+        "Bantous depuis la côte est-africaine (Mozambique, Tanzanie)",
+        "Austronésiens et Malgaches depuis Madagascar",
+        "Arabes et Persans depuis la péninsule arabique et le golfe Persique",
+        "Migrations inter-îles continues entre Grande Comore, Anjouan, Mohéli et Mayotte"
+      ],
+      "historicalSettlementZones": [
+        "Grande Comore (Ngazidja): capitale Moroni",
+        "Anjouan (Ndzuani): Mutsamudu, île la plus densément peuplée",
+        "Mohéli (Mwali): Fomboni, la plus petite et la moins peuplée",
+        "Mayotte (Maore): Mamoudzou, territoire français depuis 1975"
+      ],
+      "unificationsOrDivisions": "L'archipel fut rarement unifié sous une seule autorité. Grande Comore était divisée en royaumes autonomes (ntsi). En 1886-1887, l'archipel passa sous protectorat français. En 1975, Grande Comore, Anjouan et Mohéli déclarèrent l'indépendance (Union des Comores), tandis que Mayotte vota pour rester française. Anjouan tenta une sécession en 1997.",
+      "externalInfluences": "Islam sunnite introduit par les marchands arabes et persans (XIe siècle). Colonisation française (XIXe siècle). Commerce des esclaves par les sultanats. Raids malgaches (Sakalava) au XIXe siècle. Influence swahilie continue depuis la côte est-africaine.",
+      "majorHistoricalEvents": "Etablissement des sultanats (XIe-XVe siècle). Protectorat français (1886-1887). Territoire d'outre-mer français (1947). Indépendance de l'Union des Comores (1975). Mayotte reste française (référendum 1975, département 2011). Coups d'état nombreux (1975-1999). Tentative de sécession d'Anjouan (1997-2001)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Sultanats héréditaires islamisés (à partir du XIe siècle). Chaque île avait ses propres sultanats rivaux. Grande Comore était divisée en royaumes autonomes (ntsi). La société est matrilinéaire: la résidence est matrilocale et la transmission du statut se fait par la femme.",
+      "clanOrganization": "Organisation clanique héréditaire avec une composante matrilinéaire forte. Le grand mariage (anda) est une institution centrale: cérémonie élaborée et coûteuse qui confère un statut social élevé à l'homme qui l'accomplit.",
+      "ageClassSystems": "Pas de système de classes d'âge formalisé à l'instar des peuples pastoraux. Le statut social est acquis progressivement par le grand mariage et les donations à la communauté.",
+      "roleOfLineages": "Les lignages maternels (nyumba) gèrent la transmission du statut, des terres et des biens. Le grand mariage renforce l'appartenance clanique et le réseau d'alliance.",
+      "religiousAuthority": "Les cadis (juges islamiques) et imams jouent un rôle central dans la vie sociale et religieuse. L'enseignement coranique est universel. Les chefs religieux participent à la gouvernance locale."
+    },
+    "languages": {
+      "mainLanguage": "Shikomori (groupe des langues comoriennes)",
+      "isoCodes": ["zdj", "wni", "wlc", "swb"],
+      "dialects": [
+        "Shingazidja (zdj): Grande Comore",
+        "Shindzuani (wni): Anjouan",
+        "Shimwali (wlc): Mohéli",
+        "Shimaore (swb): Mayotte"
+      ],
+      "vehicularRole": "Les langues comoriennes (shikomori) sont les langues nationales de l'Union des Comores. Elles sont mutuellement intelligibles à des degrés variables. L'arabe est langue religieuse et d'enseignement coranique. Le français est langue officielle héritée de la colonisation, utilisée dans l'administration et l'éducation formelle. Le swahili sert de vehiculaire avec la côte est-africaine."
+    },
+    "culture": {
+      "majorRites": "Grand mariage (anda): cérémonie de mariage élaborée et couteuse qui confère un statut social majeur. Des semaines de festivités, danses, distributions de nourriture et cadeaux sont organisées. Rites de naissance et de nomination (aqiqa islamique). Circoncision (tahara). Enterrements islamiques rapides. Mawlid (célébration de la naissance du Prophète). Ziyara (visites aux tombeaux des saints).",
+      "symbols": "L'archipel volcanique (cratères du Karthala), les kwassa-kwassa (embarcations de migration), les mosquées à minarets caractéristiques, les robes traditionnelles (shiromani pour les femmes, kanzu pour les hommes), le henné utilisé lors des cérémonies.",
+      "artsAndMusic": "Twarab (musique comorienne influencée par la musique arabe et swahilie, joué lors des mariages). Chants polyphoniques féminins. Danses cérémonielles lors du grand mariage. Sculpture et travail du bois d'influence arabo-swahilie. Architecture en pierre de corail héritée des sultanats. Broderies et textiles.",
+      "spiritualities": "Islam sunnite (école chaféite) pratiqué par 98% de la population. Forte influence du soufisme (confréries Shadhiliyya, Qadiriyya). Culte des saints locaux (awliya). Croyances en esprits (djinns, pombes) persistent malgré l'islamisation. Syncrétisme entre pratiques islamiques et croyances ancestrales africaines. Une minorité chrétienne existe à Mayotte."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Sultanats des Comores (XIe-XIXe siècle): Sultanat de Ngazidja, Sultanat de Ndzuani (Anjouan), Sultanat de Mwali (Mohéli), Sultanats de Mayotte. Ces sultanats participèrent activement au réseau commercial swahili de l'océan Indien occidental, notamment au commerce de l'ivoire, des esclaves et des épices.",
+      "relationsWithNeighbors": "Relations commerciales et politiques intenses avec Zanzibar, la côte swahilie (Mozambique, Tanzanie) et Madagascar. Raids des Sakalava malgaches au XIXe siècle. Liens avec le sultanat d'Oman. Alliance et résistance face aux puissances coloniales européennes.",
+      "conflictsOrAlliances": "Guerres inter-sultanats fréquentes. Protectorat français accepté progressivement (1886-1887). Indépendance proclamée unilatéralement en 1975. Crise séparatiste d'Anjouan (1997-2001). Tensions permanentes avec la France autour du statut de Mayotte.",
+      "diaspora": "Entre 200 000 et 350 000 Comoriens en France (principalement Marseille, Paris, Seine-Saint-Denis). Marseille est parfois surnommée la cinquième île des Comores. Communautés en Tanzanie, Madagascar, Kenya et Zanzibar. La diaspora envoie des fonds importants pour financer écoles, hôpitaux et grand mariage dans l'archipel."
+    },
+    "demography": {
+      "totalPopulation": 1200000,
+      "referenceYear": 2025,
+      "source": "UNFPA 2025: 900 000 habitants pour l'Union des Comores. PopulationPyramid.net 2025: 882 847. ONU projection 2025: 1 041 150. Mayotte (MYT): environ 350 000 habitants dont une majorité d'origine comorienne. France métropolitaine: 200 000 à 350 000 Comoriens. Total estimé incluant diaspora: environ 1,2 million.",
+      "distributionByCountry": [
+        { "country": "COM", "population": 900000 },
+        { "country": "MYT", "population": 200000 },
+        { "country": "FRA", "population": 100000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia, Comoros: https://en.wikipedia.org/wiki/Comoros",
+      "Wikipedia, Demographics of the Comoros: https://en.wikipedia.org/wiki/Demographics_of_the_Comoros",
+      "Wikipedia, Comorians in France: https://en.wikipedia.org/wiki/Comorians_in_France",
+      "Encyclopaedia Britannica, Comoros: https://www.britannica.com/place/Comoros",
+      "UNFPA, Comoros Population 2025: https://www.unfpa.org/data/world-population/KM",
+      "Joshua Project, Comorian in France: https://joshuaproject.net/people_groups/19179",
+      "ISS Africa, Comoros-Mayotte migration: https://issafrica.org/iss-today/comoros-mayotte-saga-a-microcosm-of-africa-europe-migration-crisis"
+    ]
+  }
+}

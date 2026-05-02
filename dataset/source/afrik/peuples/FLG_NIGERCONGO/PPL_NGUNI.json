@@ -1,0 +1,141 @@
+{
+  "id": "PPL_NGUNI",
+  "nameMain": "Nguni",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["ZAF", "SWZ", "ZWE", "MOZ", "ZMB", "TZA", "MWI"],
+  "content": {
+    "appellations": {
+      "mainName": "Nguni",
+      "selfAppellation": "Nguni (terme collectif); chaque sous-groupe se designe par son propre nom : amaZulu, amaXhosa, emaSwati, amaNdebele",
+      "exonyms": [
+        "Nguni (terme anglophone et colonial)",
+        "Bantu de zone S (classification linguistique)",
+        "Ngoni (variante ancienne utilisee en Afrique centrale et orientale)"
+      ],
+      "originOfExonyms": "Le terme Nguni derive du nom d'un ancetre eponyme mythique, Mnguni. Il fut adopte par les linguistes et anthropologues europeens au 19e siecle pour regrouper les peuples bantous partageant des langues a consonnes claquantes (clicks), heritees du contact avec les peuples khoisan.",
+      "whyProblematic": "Nguni est une categorie macro-ethnique englobant des peuples distincts (Zulu, Xhosa, Swazi, Ndebele, Ngoni, Thembu, Mpondo, Mfengu, etc.) qui possedent chacun leur identite propre. Certains chercheurs debattent des limites exactes du groupe.",
+      "contemporaryUsage": "Nguni est principalement employe en linguistique et en anthropologie. Les membres se definissent en priorite par leur appartenance a leur propre sous-groupe (amaZulu, amaXhosa, etc.). Le terme Ngoni designe les branches diasporiques en Afrique de l'Est (Tanzanie, Zambie, Malawi).",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone S, sous-groupe Nguni)",
+      "historicalRegion": "Corridor cotier de l'Ocean Indien, de l'Eastern Cape (Afrique du Sud) jusqu'au KwaZulu-Natal et Eswatini; ramifications en Zimbabwe (Matabeleland), Mozambique, Zambie, Tanzanie et Malawi",
+      "currentCountries": ["ZAF", "SWZ", "ZWE", "MOZ", "ZMB", "TZA", "MWI"]
+    },
+    "ethnicities": [
+      "amaZulu — branche la plus nombreuse, environ 10 964 000 personnes, KwaZulu-Natal (Afrique du Sud)",
+      "amaXhosa — Eastern Cape et Western Cape (Afrique du Sud), environ 8 478 000 personnes",
+      "emaSwati (Swati/Swazi) — Eswatini et nord-est de l'Afrique du Sud, environ 2 258 000 personnes",
+      "amaNdebele du Sud — Transvaal central (Afrique du Sud), environ 659 000 personnes",
+      "amaNdebele du Nord (Matabele/Mthwakazi) — Matabeleland (Zimbabwe), environ 1 599 000 personnes",
+      "Ngoni — descendants des fugitifs du Mfecane, installes en Tanzanie, Zambie, Malawi, environ 2 044 000 personnes",
+      "amaThembu — Eastern Cape, environ 3 300 000 personnes",
+      "amaMpondo et amaMpondomise — Pondoland (Eastern Cape), environ 8 000 000 personnes",
+      "amaHlubi — province du KwaZulu-Natal, environ 724 000 personnes",
+      "amaMfengu (Fingo) — anciens refugies absorbes, Eastern Cape, environ 1 000 000 personnes"
+    ],
+    "origins": {
+      "ancientOrigins": "Les ancetres des Nguni ont quitte l'Afrique centrale-occidentale vers l'Afrique australe il y a environ 7 000 ans (5000 av. J.-C.), selon les donnees linguistiques et archeologiques. Ils avaient atteint l'actuel KwaZulu-Natal au 1er siecle de notre ere, apportant moutons, bovins, chevres et cultures horticoles inconnues dans la region jusqu'alors. En fusionnant avec les chasseurs-cueilleurs San, les Nguni integrerent les consonnes claquantes (clicks) caracteristiques de leurs langues.",
+      "formationPeriod": "L'identite nguni distincte se consolida au cours du premier millenaire de l'ere commune. Les grandes confederations (Xhosa, Zulu, Swazi, Ndebele) emergerent entre le 16e et le 19e siecle. Le choc du Mfecane (annees 1820) provoque par Shaka Zulu redistribua les populations sur une vaste partie de l'Afrique australe et orientale, donnant naissance aux Ngoni d'Afrique de l'Est.",
+      "migrationRoutes": [
+        "Migration bantou depuis l'Afrique centrale-occidentale vers l'Afrique australe (5000 av. J.-C. a 1er siecle ap. J.-C.)",
+        "Progression le long de la cote de l'Ocean Indien du nord vers le sud (Eastern Cape atteint vers le 16e siecle)",
+        "Diaspora Mfecane vers le nord au 19e siecle : Mzilikazi fonde le royaume Ndebele au Zimbabwe, Soshangane la nation Shangane au Mozambique, Zwengendaba mene ses Ngoni jusqu'en Tanzanie actuelle"
+      ],
+      "historicalSettlementZones": [
+        "KwaZulu-Natal — coeur historique des Zulu",
+        "Eastern Cape — territoire ancestral des Xhosa",
+        "Eswatini (Swaziland) et regions frontalieres — Swazi",
+        "Matabeleland (Zimbabwe) — Ndebele/Matabele depuis les annees 1830",
+        "Mozambique meridional — Gaza State/Shangane des Nguni diasporiques",
+        "Tanzanie, Zambie, Malawi — Ngoni issus du Mfecane"
+      ],
+      "unificationsOrDivisions": "Les Nguni ne forment pas une entite politique unifiee mais un ensemble de nations independantes partageant une origine, des langues et des coutumes communes. Le Mfecane du 19e siecle fut a la fois un facteur de dispersion (creation de nouveaux royaumes) et d'unification forcee sous la domination zulu. L'apartheid sudafricain tenta de maintenir des structures tribales rurales artificielles pour diviser les peuples.",
+      "externalInfluences": "Fusion avec les peuples khoisan (adoption des clicks), contacts et conflits avec les colons neerlandais (guerres de frontiere au Cape a partir du 18e siecle), avec les Britanniques (annexion progressive), islamisation partielle et christianisation massive aux 19e-20e siecles. La decouverte de l'or du Witwatersrand (1886) provoqua un exode massif de travailleurs migrants.",
+      "majorHistoricalEvents": "Fondation du royaume Zulu par Shaka au debut du 19e siecle. Mfecane/Difaqane (annees 1820-1840) : guerres et deplacements massifs. Guerres de frontiere xhosa contre les colons du Cape (1779-1878). Annexion britannique du Zululand apres la guerre anglo-zouloue (1879). Apartheid en Afrique du Sud (1948-1994). Nelson Mandela (amaXhosa, clan Thembu) devient premier president noir d'Afrique du Sud en 1994."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies patrilineaires hereditaires. Chaque peuple nguni possede un roi ou chef supreme (Inkosi) assiste d'un conseil d'induna (chefs de regiment ou de village). Chez les Zulu, Shaka crea un Etat centralise base sur le systeme des ibutho (regiments d'age). Chez les Xhosa, les confederations tribales (Gcaleka, Rharhabe, Gqunukhwebe) maintinrent une autonomie relative. Chez les Swazi, la reine-mere (Ndlovukati) et le roi (Ngwenyama) exercent conjointement le pouvoir.",
+      "clanOrganization": "Structure clanique patrilineaire stricte. Chaque individu appartient au clan de son pere (isibongo), qui determine ses alliances matrimoniales. Le mariage entre membres du meme clan est interdit (exogamie clanique). Les clans principaux des Zulu incluent les Zulu, Mthethwa, Ndwandwe, Ngcobo; ceux des Xhosa incluent les Gcaleka, Rharhabe, Thembu.",
+      "ageClassSystems": "Systeme d'ibutho (regiments) chez les Zulu : les jeunes hommes d'une meme tranche d'age sont regroupes en regiments militaires et sociaux. Le regiment determine le statut social, les obligations militaires et l'autorisation de se marier. Shaka supprima la circoncision comme rite de passage chez les Zulu, tandis que les Xhosa la maintinrent (ulwaluko).",
+      "roleOfLineages": "Les lignages patrilineaires (izibongo) determinent l'identite, l'heritage, les alliances et le statut social. Le transfert de lobola (prix de la mariee en betail) constitue le pivot economique et social du mariage et cimente les alliances inter-claniques. La coutume hlonipha oblige les belles-filles a eviter le nom et la presence directe de leur beau-pere et a ceux de son clan, exprimant le respect et la pudeur.",
+      "religiousAuthority": "Les nyangas (herboristes) et izinyanga (medecins traditionnels) jouent un role de mediateurs entre le monde des vivants et celui des ancetres (amadlozi). Les izangoma (divinateurs/chamanes) communiquent avec les esprits ancestraux. Depuis le 19e siecle, les Eglises africaines independantes (sionisme) fusionnent christianisme et croyances traditionnelles nguni."
+    },
+    "languages": {
+      "mainLanguage": "Langues nguni (groupe de langues bantoues)",
+      "isoCodes": ["zul", "xho", "ssw", "nbl", "nde"],
+      "dialects": [
+        "Zulu (isiZulu, ISO : zul) — 10,9 millions de locuteurs, langue officielle d'Afrique du Sud",
+        "Xhosa (isiXhosa, ISO : xho) — 8,5 millions de locuteurs, langue officielle d'Afrique du Sud",
+        "Swati/Swazi (siSwati, ISO : ssw) — 2,3 millions de locuteurs, langue officielle d'Eswatini et d'Afrique du Sud",
+        "Ndebele du Sud (isiNdebele, ISO : nbl) — 659 000 locuteurs, langue officielle d'Afrique du Sud",
+        "Ndebele du Nord/Nrebele (isiNdebele du Zimbabwe, ISO : nde) — 1,6 millions de locuteurs",
+        "Sous-groupe Tekela : Bhaca, Hlubi, Phuthi, Lala, Swati",
+        "Sous-groupe Zunda : Zulu, Xhosa, Ndebele du Sud, Ndebele du Nord"
+      ],
+      "vehicularRole": "Les langues nguni sont les plus parlees d'Afrique australe. Le zulu et le xhosa sont des langues officielles d'Afrique du Sud. Le siSwati est langue officielle d'Eswatini. Caracteristique distincte : toutes les langues nguni ont integre des consonnes cliquetantes (clicks) des langues khoisan, notamment le X, Q et C en xhosa. L'anglais est langue vehiculaire secondaire dans la region."
+    },
+    "culture": {
+      "majorRites": "{\"lobola\": \"Prix de la mariee verse en betail (izinkomo) ou en especes par la famille du marie a la famille de la mariee. Institution centrale de l'alliance matrimoniale nguni, materialisant le respect entre familles et garantissant le statut legal des enfants. Les negociations impliquent intermediaires (izinduna) des deux familles.\", \"hlonipha\": \"Code de respect et d'evitement : une belle-fille est tenue d'eviter le prenom de son beau-pere et de ses freres, de ne pas le regarder directement et d'adopter un vocabulaire modifie. Signale la deference envers la belle-famille.\", \"ulwaluko\": \"Rite d'initiation masculin chez les Xhosa et certains Nguni du Sud : circoncision des jeunes hommes suivie d'une periode de retraite dans la brousse (abakhwetha), symbole du passage a l'age adulte. Les inities sont appeles amakrwala.\", \"umemulo\": \"Ceremonie de passage a la feminite chez les Zulu : celebre la puberté d'une jeune femme, incluant danse (ukusina), cadeaux et offrandes aux ancetres (amadlozi).\", \"umembeso\": \"Ceremonie Zulu post-lobola : la famille du marie apporte des cadeaux vestimentaires a la famille de la mariee.\", \"ukubuyisa\": \"Ceremonie zulu de rappel de l'ame du defunt vers le foyer familial, un an apres le deces.\"}",
+      "symbols": "Betail (izinkomo) — richesse, statut social et prix de la mariee. Bouclier et sagaie assegai — symboles guerriers zulu. Perles colorees (amasimba) — messages codes dans les traditions de cour zulu et ndebele. Motifs geometriques sur les parures ndebele (peintures murales et robes de perles). Coiffe du roi swazi (injobo). Plumes de grue couronnee dans les parures de chef.",
+      "artsAndMusic": "{\"peintureMurale\": \"Les femmes ndebele sont renommees pour leurs peintures murales geometriques aux couleurs vives (motifs en damier, triangles, rectangles), reprises dans l'art contemporain et le design.\", \"perles\": \"Travail de perles elabore chez les Zulu et Ndebele; les colliers, bracelets et tabliers de perles transmettent des messages codes selon les couleurs et les motifs.\", \"musique\": \"Isicathamiya : style vocal a cappella zulu caracterise par des harmonies douces et des mouvements de scene choreographies, rendu celebre internationalement par le groupe Ladysmith Black Mambazo.\", \"danse\": \"Indlamu (danse zulu guerriere) : mouvements energiques, frapper les pieds au sol, portant les costumes traditionnels (amashoba). Ukuxhentsa chez les Xhosa. Sibhaca chez les Swazi.\", \"poesieOrale\": \"Izibongo : poesie de louange royale recitee a grande vitesse par le imbongi (poete de cour), celebrant les exploits et la genealogie des chefs.\", \"artisanat\": \"Poterie traditionnelle (izimbiza), paniers tresses, sculptures en bois, coiffures et vêtements ceremonials en peau de leopard.\"}",
+      "spiritualities": "{\"amadlozi\": \"Culte des ancetres : les esprits des defunts (amadlozi) veillent sur les vivants et peuvent envoyer maladies ou prosperite. Ils sont invites par des prieres et offrandes (ukuphahla) notamment des libations de biere de sorgho (utshwala).\", \"umvelinqangi\": \"Divinite supreme createur chez les Zulu (egalement appelee Unkulunkulu selon les traditions). Etre primordial peu implique dans les affaires quotidiennes, contrairement aux ancetres.\", \"inyangas\": \"Guerisseurs herboristes (izinyanga) et divinateurs (izangoma) — les izangoma sont appeles par les ancetres a travers la maladie initiatique (ukuthwasa). Les deux categories medient entre mondes visible et invisible.\", \"syncretisme\": \"Depuis le 19e siecle, le zionisme africain (sionisme sud-africain) represente la fusion la plus importante entre christianisme et croyances nguni : prophetes, guerisons, purifications rituelles, communication avec ancetres. Plus de 4 millions de membres en Afrique du Sud.\"}"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume Zulu fonde par Dingiswayo puis unifie et agrandi par Shaka Zulu au debut du 19e siecle, avec Ulundi comme capitale : le plus puissant Etat d'Afrique australe precoloniale. Confedérations xhosa (Gcaleka, Rharhabe) dans l'Eastern Cape. Royaume Swazi fonde par la dinastie Dlamini au 19e siecle, unique monarchie absolue subsistant en Afrique. Royaume Ndebele (Matabele) au Zimbabwe, fonde par Mzilikazi apres sa fuite de Shaka (vers 1840), avec Bulawayo comme capitale. Gaza State de Soshangane au Mozambique meridional. Royaumes Ngoni au Malawi, en Zambie et en Tanzanie.",
+      "relationsWithNeighbors": "Les Nguni eurent des contacts anciens avec les Khoikhoi et les San (echanges culturels, mariages mixtes, absorption de consonnes claquantes). Ils commercerent avec les peuples Sotho-Tswana voisins. Les guerres de frontiere du Cape (1779-1878) opposerent les Xhosa aux colons europeens du Cape dans une serie de neuf conflits. Les Zulu affronterent les Britanniques a la bataille d'Isandlwana (1879, victoire zulu) et Ulundi (1879, defaite zulu).",
+      "conflictsOrAlliances": "Le Mfecane (crushing) des annees 1820-1840 : declenche par les guerres des Ndwandwe de Zwide, amplifie par l'expansion de Shaka. Redistribution massive des peuples de l'Afrique australe. Guerres de frontiere xhosa (1779-1878) : neuf conflits contre les colons du Cap. Guerre anglo-zouloue (1879). Resistance ndebele aux Britanniques (1893, 1896-1897). Sous l'apartheid, les territoires nguni furent fragmentes en bantoustans (KwaZulu, Transkei, Bophuthatswana, etc.).",
+      "diaspora": "La migration des travailleurs vers les mines d'or et de diamants du Witwatersrand depuis la fin du 19e siecle creea d'importantes communautes urbaines nguni a Johannesburg, Durban, Le Cap. Les Ngoni forment des communautes distinctes en Tanzanie, Zambie, Malawi et Mozambique, descendants des migrants du Mfecane. Diaspora internationale en Grande-Bretagne, aux Etats-Unis et en Europe."
+    },
+    "demography": {
+      "totalPopulation": 28800000,
+      "referenceYear": 2025,
+      "source": "Wikipedia — Nguni peoples (estimations par sous-groupe); Statistics South Africa Census 2022; Ethnologue SIL International 2024",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 24000000,
+          "note": "Zulu, Xhosa, Swazi, Ndebele du Sud, Thembu, Mpondo et autres sous-groupes"
+        },
+        {
+          "country": "SWZ",
+          "population": 1100000,
+          "note": "emaSwati, population majoritaire du royaume d'Eswatini"
+        },
+        {
+          "country": "ZWE",
+          "population": 1600000,
+          "note": "amaNdebele du Nord (Matabele), Matabeleland"
+        },
+        {
+          "country": "MOZ",
+          "population": 500000,
+          "note": "Ngoni et descendants Gaza State dans le Mozambique meridional"
+        },
+        {
+          "country": "TZA",
+          "population": 800000,
+          "note": "Ngoni, descendants de Zwangendaba, regions de Songea et Njombe"
+        },
+        {
+          "country": "MWI",
+          "population": 600000,
+          "note": "Ngoni du Malawi, Northern et Central Region"
+        },
+        {
+          "country": "ZMB",
+          "population": 200000,
+          "note": "Ngoni de Zambie, Eastern Province"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Nguni peoples. https://en.wikipedia.org/wiki/Nguni_peoples",
+      "Wikipedia EN — Nguni languages. https://en.wikipedia.org/wiki/Nguni_languages",
+      "Britannica — Nguni peoples. https://www.britannica.com/topic/Nguni",
+      "South African History Online — Zulu. https://sahistory.org.za/article/zulu",
+      "Ethnologue SIL — Zulu (zul). https://www.ethnologue.com/language/zul/",
+      "Ethnologue SIL — Xhosa (xho). https://www.ethnologue.com/language/xho/",
+      "UNESCO — Isicathamiya (Zulu choral music). https://ich.unesco.org/",
+      "Statistics South Africa — Census 2022. https://www.statssa.gov.za/"
+    ]
+  }
+}

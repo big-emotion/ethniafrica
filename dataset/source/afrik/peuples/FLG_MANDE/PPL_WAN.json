@@ -1,0 +1,81 @@
+{
+  "id": "PPL_WAN",
+  "nameMain": "Wan",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Wan",
+      "selfAppellation": "Nwa",
+      "exonyms": ["Ouan", "Noua", "Ngwano", "Nua", "Wans"],
+      "originOfExonyms": "L'orthographe coloniale francaise utilisait Noua ou Ouan ; Nwa est la forme utilisee par les linguistes (Prost, Welmers) ; Wan est la romanisation la plus proche de la prononciation locale /wana/.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Wan est aujourd'hui standard dans la litterature academique et administrative ivoirienne ; Ouan subsiste dans certains documents d'archives coloniaux.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mande du Sud (Southern Mande)",
+      "historicalRegion": "Centre-ouest de la Cote d'Ivoire (region Beaoumi-Mankono-Gohitafla)",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": ["Wan"],
+    "origins": {
+      "ancientOrigins": "Les Wan appartiennent a l'aire culturelle du Mande du Sud et comptent parmi les peuples les plus anciens du centre-ouest et du nord de la Cote d'Ivoire, rivalisant d'anciennete avec les Gagou (Gban), les Dan (Yacouba) et les Senoufo. Selon les traditions orales collectees par Niangoran Bouah (1997), ils appartiennent a l'ancien groupe ethnique Kwanin, localise entre la Sassandra et la rive est du Comoe. D'autres sources evoquent une origine du groupe entre Guiglo et Duekoue (ouest) ou une formation par metissage entre Malinke et Gouro dans l'ancien village de Boron (aujourd'hui Kounahiri) apres le XVe siecle.",
+      "formationPeriod": "XVe-XVIe siecle, consolidation autour de la region Bouafle-Kounahiri-Beaoumi",
+      "migrationRoutes": [
+        "Depuis le nord-ouest (Mankono-Seguéla) vers le sud sous la pression de l'expansion islamique soudanaise (selon l'archive coloniale, lieutenant Schiffer, 1901)",
+        "Occupation occidentale partagee avec les Dan (Yacouba) avant separation",
+        "Deplacement vers la region de Beaoumi apres le XVIe siecle, puis diffusion dans les cantons de Kode, Goli, Satikran, Bro et Ouarebo (ouest de Bouake)",
+        "Certaines familles (clan Gbegbe) revendiquent une origine meridionale depuis la zone d'Abidjan, remontant vers le nord via Vavoua (region Kouya) et Sinfra (region Gouro)"
+      ],
+      "historicalSettlementZones": [
+        "Region de Marahoue (Bouafle)",
+        "Departement de Kounahiri",
+        "Region de Beaoumi",
+        "Zone de Gohitafla",
+        "Sous-prefectures de Beaoumi et de Mankono"
+      ],
+      "unificationsOrDivisions": "Les Wan se divisent en deux dialectes/groupes principaux : les Kemmu (sous-prefecture de Mankono) et les Myamu (sous-prefecture de Beaoumi), mutuellement intelligibles.",
+      "externalInfluences": "Contacts historiques avec les Dan (Yacouba), les Gouro, les Senoufo, les Malinke et les Baule ; relation de plaisanterie (cousinage a plaisanteries) avec les Dan ; invasion de Samory Toure ayant force l'abandon du site de Siapla ; colonisation francaise (1901-1960).",
+      "majorHistoricalEvents": "Expansion islamique sud-saharienne poussant les populations mande vers le sud (XVe-XVIe s.) ; invasion de Samory Toure (fin XIXe s.) ; colonisation francaise et desarmement des Wan (rapports d'archive 1906-1911) ; fouilles archeologiques de 2023 a Maminigui ayant mis au jour des pointes de fleches et ceramiques associees aux ancetres Wan."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe patrilineaire dirigee par des chefs de village et des conseils d'anciens. Les anciens jouent un role central dans les prises de decisions et la transmission des valeurs culturelles.",
+      "clanOrganization": "Organisation clanique patrilineaire ; les clans incluent notamment le clan Gbegbe (villages de Gbewa et Gbetepla). La societe Wan est a vocation patrilineaire selon les travaux academiques (The Social organization of the Wan: a patrilineal people of Ivory Coast).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent la societe et la gestion des terres. Les anciens de chaque lignage assurent la mediation des conflits et la transmission des savoirs ancestraux.",
+      "religiousAuthority": "Croyances animistes centrees sur la veneration des ancetres et des esprits. Des sites sacres (arbres, rivieres) sont associes a des puissances spirituelles. Certains Wan ont ete exposes au christianisme et a l'islam sans que ces religions aient supplante les pratiques ancestrales."
+    },
+    "languages": {
+      "mainLanguage": "Wan (Nwa)",
+      "isoCodes": ["wan"],
+      "dialects": ["Kemmu (Kymmu)", "Myamu (Miamu)"],
+      "vehicularRole": "La langue wan est utilisee comme langue maternelle et vehiculaire locale dans les sous-prefectures de Beaoumi et Mankono. Le dioula (jula) et le francais sont utilises comme langues de communication plus larges en Cote d'Ivoire."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation feminine dont le symbolisme occupe une place centrale dans la culture wan (mentionnes dans la bibliographie anthropologique : Le sacre et le secret chez les Wan). Celebrations agricoles aux temps des semailles et des recoltes, marquees par la musique traditionnelle, la danse et les contes.",
+      "symbols": "Le masque Goli, fonde par les Wan, est le symbole culturel le plus emblematique du peuple. Ce masque a ete adopte par les Baule entre 1900 et 1910, et est devenu l'une des formes de danse traditionnelle les plus connues de Cote d'Ivoire. Les sculptures lithiques anthropomorphiques de la region de Marahoue (pierres taillees de Gohitafla) sont attribuees aux ancetres Wan.",
+      "artsAndMusic": "Mascarade Goli comportant quatre paires de masques (kple kple et kpan, masculins et feminins) portes successivement par des danseurs. Les femmes et les enfants participent en chantant et en dansant avec les figures masquees. Traditions de contes, de chants et de danse.",
+      "spiritualities": "Animisme a base de veneration des ancetres ; croyance en des esprits associes a des sites naturels (arbres, rivieres) sacres. Economie spirituelle fondee sur des rituels d'apaisement des esprits ancestraux."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise documente ; organisation en chefferies villageoises sous autorite d'anciens et de chefs locaux.",
+      "relationsWithNeighbors": "Relation de cousinage a plaisanteries avec les Dan (Yacouba) de l'ouest ; ancienne cohabitation avec les Dan avant une separation liee a un conflit d'adultere. Contacts et metissages avec les Gouro, les Malinke et les Baule. Precedence sur les Ebrie dans la zone d'Abidjan selon le clan Gbegbe.",
+      "conflictsOrAlliances": "Deplacement sous la pression des Gouro, puis des Dosso de Mankono. Abandon du site de Siapla lors de l'invasion de Samory Toure (fin XIXe s.). Desarmement par l'administration coloniale francaise (1911).",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 75000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur les 59 000 habitants recenses entre 2000 et 2018 (Wikipedia FR), avec extrapolation selon le fort taux de croissance demographique signale ; estimation precedente de 22 000 locuteurs en 1993 (Ethnologue).",
+      "distributionByCountry": [{ "country": "CIV", "population": 75000 }]
+    },
+    "sources": [
+      "Wikipedia FR - Wan (peuple) (https://fr.wikipedia.org/wiki/Wan_(peuple))",
+      "Wikipedia EN - Wan language (https://en.wikipedia.org/wiki/Wan_language)",
+      "KOFFI Kouakou Sylvain - The Wan and their migrations in Cote d'Ivoire, Revue ASTR-Ghana / e.f.u.a editions, 2024 (https://edition-efua.acaref.net/wp-content/uploads/sites/6/2024/11/7-KOFFI-Kouakou-Sylvain.pdf)",
+      "Ravenhill P. L. - The Wan Language, LLACAN-CNRS (https://llacan.cnrs.fr/PDF/AutresMandenkan/ravenhil1.PDF)",
+      "Joshua Project - Wan, Nwa in Cote d'Ivoire (https://joshuaproject.net/people_groups/15848)",
+      "Ethnologue - Wan Language (WAN) (https://www.ethnologue.com/language/wan/)",
+      "Goli (dance) - Wikipedia EN (https://en.wikipedia.org/wiki/Goli_(dance))"
+    ]
+  }
+}

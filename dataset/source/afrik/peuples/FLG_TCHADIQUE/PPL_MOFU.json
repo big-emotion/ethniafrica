@@ -1,0 +1,103 @@
+{
+  "id": "PPL_MOFU",
+  "nameMain": "Mofu",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Mofu",
+      "selfAppellation": "Mofu / Mofu-Gudur (variante sud) / Mofu-Diamare (variante nord)",
+      "exonyms": [
+        "Matakam (ancien exonyme colonial impropre et pejoratif, utilise par l'administration francaise pour designer les peuples montagnards du Mandara ; rejete aujourd'hui)",
+        "Muffu / Muffo (premiere orthographe europeenne, carte de Moisel 1912-1913)",
+        "Mofu-Sud (synonyme de Mofu-Gudur dans la litterature linguistique)"
+      ],
+      "originOfExonyms": "Le terme Matakam est une invention des Peuls (Fulbe) reprise par les administrateurs coloniaux francais pour designer l'ensemble des montagnards du Mandara. Il fut applique indistinctement aux Mafa et aux Mofu. L'ethnonyme Mofu (Muffu) apparait pour la premiere fois sur la carte de Moisel (1912-1913). Selon Vincent (1991), le terme designe initialement tous les montagnards au nord de la riviere Tsanaga.",
+      "whyProblematic": "Le terme Matakam est rejete car il confondait sous une meme appellation des groupes ethniques distincts (Mafa, Mofu, Mada) et portait une connotation pejorative liee a la domination fulbe et coloniale. Les Mofu eux-memes se divisent en sous-groupes (Mofu-Gudur, Mofu-Diamare) dont les identites distinctes sont importantes.",
+      "contemporaryUsage": "Le terme Mofu est aujourd'hui utilise dans les publications scientifiques et administratives camerounaises pour designer les groupes apparentes de la region du Mandara. Les locuteurs se designent selon leur massif d'origine (Gudur, Mokong, Douvangar, Douroum, Meri, Wazang). Le code ISO distingue Mofu-Nord (mfk) et Mofu-Gudur/Sud (mif).",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique Biu-Mandara (branche A, sous-groupe A.5)",
+      "historicalRegion": "Massifs du Mandara meridional, region de l'Extreme-Nord du Cameroun (departements Mayo-Tsanaga et Diamare)",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Mofu-Gudur (Mofu du Sud, cantons Mokong et Mofou-Sud, arrondissement Mokolo) — le sous-groupe le plus documente linguistiquement",
+      "Mofu-Duvangar (Douvangar, massif central du Mandara meridional, canton Douvangar)",
+      "Mofu-Douroum (Durum, massif nord-occidental, canton Douroum)",
+      "Mofu-Wazang (Wazang/Ouazzang, massif nord, canton Ouazzang)",
+      "Mofu-Meri (Doulek, massif de Meri, canton Doulek, arrondissement Meri)",
+      "Mofu-Mokyo (Mokyo-Molkwo, massif oriental)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Mofu sont des peuples montagnards autochtones du massif du Mandara dans l'Extreme-Nord du Cameroun. Selon les traditions orales recueillies par Lembezat (1961), l'ancetre fondateur Ngueleo, eleve chez les Gisiga de Maroua, recut un taureau et se dirigea vers les montagnes du Nord. A Gudur, le taureau disparut dans le sol, ses cornes seules restant visibles — origine mythique du centre de pouvoir rituel de Gudur. Les Mofu font partie de la grande famille des peuples montagnards (montagnards) du Mandara qui occupent les massifs depuis plusieurs siecles, ayant fui les plaines pour se refugier dans les montagnes lors des expansions peules et des pressions de l'Etat Wandala.",
+      "formationPeriod": "L'identite mofu distincte s'est cristallisee entre le XVIe et le XIXe siecle. La chefferie theocratique de Gudur emergeait probablement en reponse aux pressions de l'Etat Wandala et a l'expansion peule. Elle exerca une autorite rituelle limitee sur une quinzaine de petites chefferies Mofu-Gudur. Les Mofu-Diamare (Douroum, Douvangar, Wazang) se consideraient comme les Mofu 'authentiques', distinguant les Mofu-Gudur (au sud de la Tsanaga) des montagnards du nord.",
+      "migrationRoutes": [
+        "Etablissement originel dans les plaines du Diamare, suivi d'un repli vers les contreforts orientaux et les massifs lors de l'arrivee des Gisiga dans les plaines",
+        "Migrations partielles depuis des massifs voisins (Waza, Mada, Uldeme) pour certains lignages integres aux groupes mofu",
+        "Pression de l'Etat Wandala et des jihadistes peuls (XIXe siecle) ayant renforce la concentration dans les massifs"
+      ],
+      "historicalSettlementZones": [
+        "Massifs de Gudur, Mokong, Mofou-Sud (Mofu-Gudur) — arrondissement Mokolo, departement Mayo-Tsanaga",
+        "Massifs de Douvangar, Douroum, Wazang (Mofu-Diamare nord) — canton Douvangar et Douroum, arrondissement Meri, departement Diamare",
+        "Massif de Meri et Doulek (Mofu-Meri) — canton Doulek, arrondissement Meri",
+        "Massif de Mokyo-Molkwo (Mofu-Mokyo) — zone orientale du Mandara"
+      ],
+      "unificationsOrDivisions": "Les Mofu ne forment pas une entite politique unifiee. La chefferie de Gudur exerca une paramountcy rituelle limitee sur la majorite des chefferies Mofu-Gudur : le Bay Gudal 'criait les fetes', controlant le calendrier rituel, et etait consulte pour les questions de fecondite et de protections contre les epidemies. Cependant, certaines chefferies (Njeleng, Masakal) n'y etaient pas soumises. Les Mofu-Diamare (Douroum, Douvangar, Wazang) considererent Gudur comme leur cadette.",
+      "externalInfluences": "Pression de l'Etat Wandala (Mandara) depuis les plaines orientales. Jihad peul du XIXe siecle : les chefferies Mofu-Gudur furent partiellement forcees a payer tribut ou a accepter l'islam. Colonisation allemande puis francaise (fin XIXe-XXe siecles) : reorganisation administrative sous le terme generique Matakam. Christianisation et islamisation progressives depuis les annees 1950-1960, affaiblissant les structures religieuses traditionnelles.",
+      "majorHistoricalEvents": "La chefferie de Gudur est mentionnee pour la premiere fois dans les sources europeennes par Strumpell (vers 1906). Gudur fut decrit par certains observateurs comme un 'Mecque paien', centre de pelerinage pour plusieurs groupes ethniques voisins (Kapsiki, Mafa, Wula, Sukur, Dughwede, Guduf). Durant la crise du XIXe siecle (vers 1820-1940), la chefferie de Gudur consolida son role de garant rituel face aux menaces exterieures. La conquete coloniale allemande puis francaise reorganisa les structures politiques, reduisant l'autorite des chefs traditionnels. Depuis les annees 1990, l'exode rural vers les plaines et les villes accelere la transformation sociale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Mofu sont organises en chefferies independantes (hay) dirigees par un chef (bay). La chefferie de Gudur (Bay Gudal) exercait une paramountcy rituelle sur une quinzaine de chefferies Mofu-Gudur. Le Bay Gudal controle le calendrier rituel, garantit la fecondite du sorgho et protege contre les epidemies. Il pouvait etre consulte par d'autres chefferies voisines. Le pouvoir est double : autorite temporelle du chef des hommes (Bay) et autorite sur la terre des esprits confiee au Maslalam ('maitre de la terre'), appartenant au clan autochtone Ngwaadama.",
+      "clanOrganization": "Chaque chefferie est organisee en quartiers (mededwe) places sous l'autorite de chefs coutumiers (biy gorbay). Les chefs de famille (bab giy hay) se reunissent chez le chef lors des ceremonies importantes. Les notables (titulaires de titres traditionnels, chefs de clan) constituent le conseil du bay. Les forgerons (biy ngwazla, chef des forgerons) forment une caste speciale avec des fonctions rituelles pendant les fetes.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent l'organisation sociale, les droits fonciers et les alliances matrimoniales. L'appartenance clanique determine les responsabilites rituelles : certains clans sont 'autochthones' et exercent des fonctions de maitres de la terre. Les ancetres jouent un role central dans la legitimation des chefferies.",
+      "religiousAuthority": "Le Bay Gudal exerce une autorite priestly centrale : il garantit la fecondite, controle le calendrier des fetes (dont le festival du taureau Maray), et peut etre depose par une autre figure priestly. Le Maslalam (maitre de la terre) est responsable des relations avec les esprits de la terre. Des devins (ndo mpiy kwa, 'celui qui sait les sacrifices') jouent un role crucial dans les ceremonies du Maray. L'islamisation et la christianisation progressives depuis les annees 1950 ont affaibli ces structures."
+    },
+    "languages": {
+      "mainLanguage": "Mofu-Gudur (Sud) et Mofu-Nord, deux langues tchadiques Biu-Mandara proches",
+      "isoCodes": ["mif", "mfk"],
+      "dialects": [
+        "Mofu-Gudur (mif) : dialectes Dimeo, Gudur, Massagal, Mokong, Njeleng, Zidim — parles au sud de la riviere Tsanaga (cantons Mokong et Mofou-Sud, arrondissement Mokolo)",
+        "Mofu-Nord (mfk) : dialectes Douroun (Douroum) et Wazang — parles dans les cantons Douvangar, Douroum, Ouazzang (arrondissement Meri)",
+        "Les deux langues sont proches mais distinctes ; les locuteurs se designe selon leur massif d'origine"
+      ],
+      "vehicularRole": "Les Mofu sont bilingues : ils utilisent le fulfude (fulfulde) comme langue vehiculaire dans les marches et les echanges interethniques avec les plaines. Le francais est la langue d'instruction scolaire. Le Mofu-Gudur compte environ 60 000 locuteurs, le Mofu-Nord environ 27 500 locuteurs (Ethnologue). Une particularite remarquable : les locuteurs Mofu-Gudur utilisent un systeme d'environ 1 500 gestes conventionnalises, employes pour la narration, la recitation de l'histoire, et comme langue alternative pour les sourds."
+    },
+    "culture": {
+      "majorRites": "Le festival du taureau Maray (ngwalala maray) est la fete la plus importante des Mofu et des peuples voisins du Mandara (Mafa, Mada, Mineo). Un taureau est achete aupres d'eleveurs Mbororo et claustré pendant un a deux ans dans l'enclos familial. Le chef de village (bay) doit d'abord sacrifier un taureau, suivi deux jours apres par les autres familles. Le festival dure plusieurs jours. Des sacrifices aux ancetres sont effectues par le devin (ndo mpiy kwa) afin d'obtenir protection contre les maladies, une bonne recolte et de nombreux enfants. La corde sacree (teba), representant un etre mysterieux en forme de serpent trouve par les ancetres entre les pierres des terrasses, est un objet rituel central. Le chef annonce la fete de preparation (melebay) l'annee precedente. Les instruments utilises lors du Maray incluent les tambours a siège (ganga), les grands tambours (dezlezlew), des flutes, et d'autres instruments traditionnels. Le Maray est aussi une occasion d'honorer les ancetres et de renforcer l'unite politique. La fete des recoltes (ngwalala) et la ceremonie du nouveau feu (rattachee a Gudur) font partie du calendrier rituel. Les Mofu pratiquent egalement l'agriculture en terrasses avec des rites de semailles (invocations, visites aux lieux sacres pour la protection des recoltes), ainsi que des rites de circoncision masculine comme rite de passage.",
+      "symbols": "Le taureau (maray) est le symbole central de la vie sociale et religieuse mofu. La corde sacree (teba), representant un serpent ancestral trouve entre les pierres, symbolise le lien avec les ancetres fondateurs. La pierre de sacrifice (kwa veray) sur laquelle s'assoit le sacrifiant est un objet sacre. Les terrasses agricoles construites sur les flancs des massifs sont le symbole tangible de la maitrise humaine des montagnes et du travail ancestral. Le mil (sorgho) est le symbole de la survie et de la prosperite ; sa fecondite est placee sous la protection rituelle du Bay Gudal. Le feu nouveau (ceremonie annuelle de Gudur) symbolise le renouveau et l'ordre cosmique.",
+      "artsAndMusic": "Les Mofu pratiquent la poterie traditionnelle (documentee des 1937 par Chaumbard de Lauwe sur les poteries sacrees), la vannerie et la fabrication d'outils agricoles et guerriers en fer. Les forgerons (biy ngwazla) ont un statut rituel particulier et participent aux ceremonies du Maray. La musique instrumentale comprend les tambours a siege (ganga), les grands tambours (dezlezlew), des flutes en roseau et une guitare locale. Les chants traditionnels, les proverbes et les recits oraux constituent un patrimoine litteraire important. La narration gestuelle (environ 1 500 gestes conventionnalises) est une forme d'expression culturelle unique parmi les Mofu-Gudur, utilisee pour les recits historiques et la communication en situation difficile.",
+      "spiritualities": "La religion traditionnelle mofu est centree sur le culte des ancetres et les esprits de la terre. Le Bay Gudal est le garant rituel de la fecondite et de la protection collective. Les esprits de la terre (maitrise du Maslalam) regissent les droits fonciers et les recoltes. Les sacrifices aux ancetres (pratiques pendant le Maray et d'autres ceremonies) visent a obtenir protection, sante et fertilite. Des devins (ndo mpiy kwa) guident les pratiques rituelles. L'islam et le christianisme ont progressivement penetre le massif depuis les annees 1950-1960, en particulier dans les zones en contact avec les plaines fulbe. Aujourd'hui, les Mofu pratiquent un melange de croyances traditionnelles, d'islam et de christianisme selon les villages et les familles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La chefferie de Gudur (Bay Gudal) constitue la plus importante entite politique historique des Mofu. Bien que certains observateurs europeens lui aient attribue une antiquite fictive et une saintete exageree, les recherches recentes (Sterner, Muller-Kosack, Seignobos) montrent qu'elle emergea probablement en reponse aux pressions de l'Etat Wandala et de l'expansion peule, formant une paramountcy rituelle sur 15 petites chefferies. Gudur est mentionne dans les sources orales de plusieurs groupes ethniques voisins (Kapsiki, Mafa, Sukur, Dughwede, Guduf) comme un centre d'origine clanique et un lieu sacre. La chefferie de Gudur est mentionnee pour la premiere fois dans les sources europeennes vers 1906 (Strumpell).",
+      "relationsWithNeighbors": "Les Mofu entretenaient des relations complexes avec leurs voisins : rivalites et echanges matrimoniaux avec les Mafa (Matakam), les Mada, les Gisiga et les Zulgo. La chefferie de Gudur etait un centre de convergence inter-ethnique : des groupes Kapsiki, Mafa, Wula, Sukur, Dughwede et Guduf y envoyaient des representants pour des consultations rituelles. Les relations avec les Peuls des plaines etaient marquees par des tensions, des tributs forcement payes et des raids. Les marches hebdomadaires favorisaient des echanges de produits agricoles et artisanaux avec les populations des plaines.",
+      "conflictsOrAlliances": "Durant le XIXe siecle, les chefferies Mofu furent partiellement contraintes de payer tribut aux Peuls jihadistes ou de subir leurs raids. La periode de crise entre 1820 et 1940 renforça le role de Gudur comme garant rituel face aux menaces exterieures. La colonisation allemande (fin XIXe siecle) puis francaise imposa une reorganisation administrative, reduisant l'autonomie des chefferies. Les Mofu resisterent a leur maniere en maintenant leurs pratiques religieuses traditionnelles malgre les pressions.",
+      "diaspora": "Les Mofu vivent essentiellement dans leurs massifs d'origine. Depuis les annees 1970-1980, un exode rural progressif dirige les jeunes vers les villes de Maroua, Garoua et Yaounde. Des communautes de Mofu descendent dans les plaines environnantes pour cultiver, tout en maintenant leur habitat montagnard. La diaspora internationale reste marginale."
+    },
+    "demography": {
+      "totalPopulation": 195000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur Ethnologue (SIL International) : Mofu-Gudur (mif) environ 60 000 locuteurs, Mofu-Nord (mfk) environ 89 500 a 91 000 locuteurs (Joshua Project 2025) ; donnees de Hallaire (1991) : 28 874 Mofu-Diamare et 26 235 Mofu-Gudur (1991) ; Boulet et al. (1984) : 42 100 Mofu. Projection 2025 tenant compte de la croissance demographique.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 195000,
+          "note": "Massifs du Mandara meridional, departements Mayo-Tsanaga et Diamare, region de l'Extreme-Nord"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Mofu-Gudur language. https://en.wikipedia.org/wiki/Mofu-Gudur_language",
+      "Wikipedia EN — North Mofu language. https://en.wikipedia.org/wiki/North_Mofu_language",
+      "mandaras.info — The Mofu Groups. https://www.mandaras.info/MofuGroups.html",
+      "Sterner, J. & David, N. (2020). Gudur revisited. NDJS 2020.2. University of Calgary. https://www.ucalgary.ca/sukur/",
+      "Barreteau, D. (1988). Description du mofu-gudur. Paris : ORSTOM/CNRS.",
+      "Gbaya Art's Blog — The Mafa community (bull festival Maray). https://gbayaart.wordpress.com/2014/07/17/the-mafa-community/",
+      "Maura, D. (2022). Socio-Cultural Heritage, Identity and Political Affirmation through Toponyms in Far-North Cameroon. SCIRP. https://www.scirp.org/journal/paperinformation?paperid=119428",
+      "SIL Ethnologue — Mofu-Gudur (mif). https://www.ethnologue.com/language/mif/",
+      "SIL Ethnologue — Mofu North (mfk). https://www.ethnologue.com/language/mfk/",
+      "Joshua Project — Mofu, North in Cameroon. https://joshuaproject.net/people_groups/13760/CM"
+    ]
+  }
+}

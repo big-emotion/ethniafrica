@@ -1,0 +1,103 @@
+{
+  "id": "PPL_CREOLE_REUNION",
+  "nameMain": "Créoles Réunionnais",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["REU"],
+  "content": {
+    "appellations": {
+      "mainName": "Créoles Réunionnais",
+      "selfAppellation": "Kréol Rényoné",
+      "exonyms": [
+        "Reunionese Creole",
+        "Réunionnais",
+        "Zoreil (terme pour les métropolitains français, par opposition aux Créoles natifs)"
+      ],
+      "originOfExonyms": "A la Réunion, le terme créole désigne de manière spécifique toute personne née sur l'île, quelle que soit son origine ethnique, par opposition aux Zoreilles (métropolitains français). Cette acception est distincte de celle en usage à Maurice ou aux Seychelles. L'endonymie Kréol Rényoné est la désignation linguistique de la langue créole locale.",
+      "whyProblematic": "L'usage inclusif du terme créole à la Réunion (désignant tous les natifs) efface les distinctions entre les communautés de descendance africaine-malgache, indienne (Malbars, Zarabes, Chinois) et européenne. Des tensions identitaires existent entre les Réunionnais d'ascendance africaine qui revendiquent l'identité créole comme mémoire de l'esclavage, et un usage administratif neutre.",
+      "contemporaryUsage": "Le terme Créole réunionnais s'emploie à la fois pour désigner la langue (kréol rényoné) parlée par environ 90% de la population de l'île et, dans un sens plus restreint, les personnes d'ascendance africaine et malgache. Des mouvements culturels (associations maloya, festivals) militent pour la reconnaissance de l'héritage africain créole.",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Créole afro-français (Mascareignes)",
+      "historicalRegion": "Île de la Réunion (ancienne île Bourbon, département français d'outre-mer)",
+      "currentCountries": ["REU"]
+    },
+    "ethnicities": [
+      "Kaf ou Cafres (descendants d'esclaves africains bantous et malgaches, usage endonymique valorisé par la culture maloya)",
+      "Malbars (descendants d'engagés tamouls indiens, intégrés à la société créole)",
+      "Zarabes (communauté musulmane originaire d'Inde du Nord et du Pakistan)",
+      "Chinois réunionnais (Sinoi, descendants de migrants chinois du XIXe siècle)",
+      "Petits Blancs des Hauts (descendants de colons français établis dans les hauts de l'île)"
+    ],
+    "origins": {
+      "ancientOrigins": "La Réunion était inhabitée avant l'arrivée des Français en 1638-1642. L'île fut baptisée Bourbon sous la monarchie française. Les premiers habitants étaient des colons français et des engagés malgaches. À partir de 1663, les autorités françaises introduisirent des esclaves africains (Mozambique, Madagascar, Côte des Esclaves) pour cultiver le café, le coton et la canne à sucre. La langue créole réunionnaise se forma dans les premières décennies de la colonisation : la majorité de la population étant française ou malgache dans les premiers temps, le créole réunionnais garde une base lexicale française très forte avec des apports malgaches importants.",
+      "formationPeriod": "Le créole réunionnais se constitua entre 1663 et la fin du XVIIIe siècle. Les esclaves africains (bantous du Mozambique, Malgaches, populations de la côte swahilie) adoptèrent le français comme base linguistique commune, y intégrant des éléments de leurs langues d'origine. L'abolition de l'esclavage (1848) libéra environ 60 000 esclaves. L'arrivée d'engagés indiens (Malbars et Zarabes) entre 1848 et 1880, puis de travailleurs chinois, diversifia la société réunionnaise sans remettre en cause la dominance du créole comme lingua franca.",
+      "migrationRoutes": [
+        "Traite négrière de l'océan Indien : Mozambique, Côte des Esclaves (Bénin), Madagascar, côte swahilie vers l'île Bourbon (XVIIe-XIXe siècles)",
+        "Engagement indenturé : Inde du Sud (Tamouls) et du Nord, côte Malabar vers la Réunion (1848-1880)",
+        "Migration contemporaine : France métropolitaine (en France, la diaspora réunionnaise représente environ 200 000 à 250 000 personnes)"
+      ],
+      "historicalSettlementZones": [
+        "Hauts de l'île (zones montagnardes, refuges des esclaves marrons)",
+        "Littoral et plaines côtières (plantations sucrières, principaux centres urbains : Saint-Denis, Saint-Pierre)",
+        "Cilaos, Salazie, Mafate (cirques montagneux, zones de marronnage historique)"
+      ],
+      "unificationsOrDivisions": "La société réunionnaise est stratifiée selon l'origine ethnique et la couleur de peau (l'échelle allant des Blancs aux Cafres dans la hiérarchie coloniale). Le maloya, longtemps marginalisé car associé à la culture noire et aux milieux communistes, a joué un rôle central dans la reconstruction d'une identité créole unifiée à partir des années 1980.",
+      "externalInfluences": "Colonisation française depuis 1638 : apport de la langue française, du catholicisme, des institutions administratives. Abolition de l'esclavage en 1848 : restructuration sociale majeure. Départementalisation en 1946 : la Réunion devient un département français d'outre-mer, accélérant la francisation administrative. Influences indiennes (cuisine masala, musique hindoue) et chinoises intégrées à la culture créole locale.",
+      "majorHistoricalEvents": "1638-1642 : premières explorations françaises. 1663 : début de la colonisation organisée et introduction d'esclaves. 1848 : abolition de l'esclavage (Victor Schoelcher) — libération de 60 000 esclaves. 1946 : départementalisation, la Réunion devient DOM. Années 1970-1980 : le maloya, longtemps interdit car associé au Parti communiste réunionnais, est réhabilité culturellement. 2009 : inscription du maloya au patrimoine immatériel de l'UNESCO."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Pas de structure politique traditionnelle précoloniale (île inhabitée). Organisation communautaire fondée sur les paroisses catholiques, les comités de quartier et les associations culturelles. Politiquement, la Réunion est un département et région française d'outre-mer : les Réunionnais sont citoyens français et élisent des représentants à l'Assemblée nationale et au Sénat. Des mouvements autonomistes et indépendantistes créoles existent (MPAR, Mouvement pour le droit des peuples à la démocratie) mais restent minoritaires.",
+      "clanOrganization": "Organisation en familles étendues. La solidarité familiale est très forte dans la communauté créole réunionnaise. Les grandes familles créoles (notamment les Petits Blancs des Hauts) cultivent des généalogies remontant aux premiers colons.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignées structurent l'appartenance communautaire et l'accès aux réseaux sociaux. La mémoire de l'esclavage est transmise oralement via le maloya et les récits familiaux. Des associations généalogiques travaillent à reconstituer les arbres familiaux des descendants d'esclaves.",
+      "religiousAuthority": "Catholicisme romain dominant (environ 80% de la population). L'Église catholique a joué un rôle ambivalent dans l'histoire de l'île : complicité initiale avec l'esclavage, puis rôle dans l'éducation et l'assistance sociale post-abolition. Des pratiques syncrétiques persistent : servis kabaré (cérémonie malgache d'invocation des ancêtres), service Kaf (cérémonie afro-réunionnaise de propitiation des esprits), tisaneurs (guérisseurs traditionnels créoles)."
+    },
+    "languages": {
+      "mainLanguage": "Kréol Rényoné (créole réunionnais)",
+      "isoCodes": ["rcf"],
+      "dialects": [
+        "Basilecte (parler des hauts de l'île, plus proche des substrats africains-malgaches, phonologie distincte)",
+        "Acrolecte (parler urbain côtier, plus proche du français standard)",
+        "Variété chagossienne (parlée par les Chagossiens réfugiés à la Réunion)"
+      ],
+      "vehicularRole": "Le kréol rényoné est la langue maternelle de 90% des Réunionnais (environ 880 000 locuteurs en 2025). C'est la principale langue de communication informelle, familiale et communautaire. Le français est la langue officielle, utilisée dans l'éducation, l'administration et les médias. La langue créole n'a pas de statut officiel en France mais est enseignée comme option au lycée depuis 2001 (CAPES de créole réunionnais). Code ISO 639-3 : rcf. Glottocode : reun1238."
+    },
+    "culture": {
+      "majorRites": "Rites catholiques : baptême, mariage, funérailles avec veillées. Servis kabaré : cérémonie syncrétique malgache-réunionnaise en hommage aux ancêtres, incluant offrandes alimentaires, chants en malgache et percussion. Service Kaf : cérémonie afro-créole d'invocation et de propitiation des esprits africains (kafs), pratiquée discrètement. Commémoration de l'abolition de l'esclavage (20 décembre) : Fèt Kaf, fête officielle réunionnaise. Carnaval réunionnais : procession de chars et groupes musicaux, avec des personnages symboliques comme le roi Carnaval.",
+      "symbols": "Le piton des Neiges et le piton de la Fournaise (volcans emblématiques) sont des références géographiques identitaires. Le kayamb (hochet en canne à sucre) est l'instrument emblématique du maloya. La canne à sucre est à la fois symbole de la plantation esclavagiste et du paysage agricole réunionnais. Le roulér (tambour-barrique) est le symbole de la résistance culturelle créole. Le foulard madras est un vêtement traditionnel coloré.",
+      "artsAndMusic": "Maloya : genre musical issu des chants d'esclaves africains et malgaches, accompagné de percussions (roulér, kayamb, pikér, sati, bob). Le maloya était interdit ou marginalisé jusqu'aux années 1970-1980. Artistes emblématiques : Danyèl Waro, Firmin Viry, Granmoun Baba, Ziskakan (groupe fusionnant maloya, reggae et rock). Inscrit au patrimoine immatériel de l'UNESCO en 2009. Séga réunionnais : forme plus légère et dansante, influencée par le séga mauricien. Instruments du maloya : roulér (tambour-barrique joué à mains nues), kayamb (hochet plat en tige de canne à sucre), pikér (idiophone en bambou), sati (idiophone métallique), bob (arc musical). Poésie créole : tradition orale très vivace, concours de poésie en créole. Arts plastiques : peintures naïves représentant la vie rurale créole, artisanat de vannerie et de poterie.",
+      "spiritualities": "Catholicisme romain prédominant. Syncrétisme afro-malgache-indien : le servis kabaré (cérémonie malgache) et le service Kaf coexistent avec la pratique catholique dans de nombreuses familles créoles. Les tisaneurs (guérisseurs utilisant plantes médicinales et prières) jouent un rôle médical et spirituel traditionnel. Hindouisme présent chez les Malbars (environ 20 000 pratiquants), avec temple tamoul et fêtes (Cavadee, Dipavali). Islam pratiqué par les Zarabes. Ces traditions spirituelles multiples s'interpénètrent dans la culture créole quotidienne."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de structures royales ou chefferies précoloniales. Des figures de résistance à l'esclavage ont acquis un statut légendaire : Cimendef (esclave marron réunionnaise du XVIIIe siècle, figure fondatrice), Mafate (esclave marron ayant donné son nom au cirque montagneux). La tradition de marronnage (fuite des esclaves vers les hauts de l'île) constitue le référent historique central de l'identité créole réunionnaise.",
+      "relationsWithNeighbors": "Relations culturelles étroites avec Maurice (séga, langue créole apparentée, histoire commune de la plantation). Relations administratives avec la France métropolitaine (département d'outre-mer depuis 1946). Influences culturelles des Comores et de Madagascar sur les pratiques syncrétiques réunionnaises.",
+      "conflictsOrAlliances": "Résistances des esclaves : marronnage (fuite vers les cirques montagneux), révoltes et sabotages dans les plantations. Mouvement culturel de réhabilitation du maloya dans les années 1970-1980, porté par le Parti communiste réunionnais (qui utilisait le maloya comme outil de contestation politique). Revendications autonomistes de certains mouvements créoles. Inscription du maloya à l'UNESCO (2009) comme victoire culturelle symbolique.",
+      "diaspora": "Diaspora réunionnaise estimée à 200 000-250 000 personnes en France métropolitaine (Île-de-France principalement), composée en proportion significative de Créoles d'ascendance africaine-malgache. Les Réunionnais de la diaspora maintiennent les pratiques culturelles créoles (associations maloya, cuisines créoles, radios en ligne en créole)."
+    },
+    "demography": {
+      "totalPopulation": 896000,
+      "referenceYear": 2025,
+      "source": "INSEE — Estimation de population 2025 pour la Réunion (896 175 habitants projetés). Note : la Réunion ne distinguant pas les groupes ethniques dans ses recensements (pratique républicaine française), la population créole au sens strict (descendants d'Africains et Malgaches) est estimée à environ 35-40% de la population totale, soit 310 000-360 000 personnes. Source complémentaire : SIL Ethnologue — Réunion French Creole (rcf).",
+      "distributionByCountry": [
+        {
+          "country": "REU",
+          "population": 896000,
+          "note": "Population totale de la Réunion (INSEE 2025). Créoles au sens ethnique strict estimés à 35-40% (310 000-360 000 personnes)."
+        },
+        {
+          "country": "FRA",
+          "population": 200000,
+          "note": "Diaspora réunionnaise en France métropolitaine, avec proportion significative de créoles d'ascendance africaine-malgache (estimation)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Réunion Creole (langue). https://en.wikipedia.org/wiki/R%C3%A9union_Creole",
+      "Wikipedia EN — Maloya. https://en.wikipedia.org/wiki/Maloya",
+      "Wikipedia EN — Demographics of Réunion. https://en.wikipedia.org/wiki/Demographics_of_R%C3%A9union",
+      "UNESCO — Maloya, patrimoine immatériel (2009). https://ich.unesco.org/en/RL/maloya-00183",
+      "SIL Ethnologue — Réunion French Creole (rcf). https://www.ethnologue.com/language/rcf/",
+      "APiCS Online — Survey chapter: Reunion Creole. https://apics-online.info/surveys/54",
+      "Portail esclavage Réunion — Maloya et séga, héritage musical de l'esclavage. https://www.portail-esclavage-reunion.fr/en/documentaires/memory-of-slavery/artistic-works/maloya-and-sega-slaverys-musical-legacy/"
+    ]
+  }
+}

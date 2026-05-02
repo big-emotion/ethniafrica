@@ -1,0 +1,23 @@
+{
+  "id": "PPL_ORON",
+  "nameMain": "",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Oron / Oro",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "historicalRegion": "Nigeria (Akwa Ibom State)",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (orx)", "Akwa Ibom Cultural Records"]
+  }
+}

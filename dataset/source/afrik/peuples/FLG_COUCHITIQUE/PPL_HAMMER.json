@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_HAMMER",
+  "nameMain": "Hamar",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Hamar",
+      "selfAppellation": "Hamar",
+      "exonyms": [
+        "Hammer",
+        "Hamer",
+        "Hamer-Banna",
+        "Amar",
+        "Hamar-Koke",
+        "Hammercoche"
+      ],
+      "originOfExonyms": "Hammer est la transcription allemande et anglaise ancienne du même ethnonyme ; Hamer est la graphie académique moderne. Hamer-Banna reflète l'union des Hamar avec les Banna, groupe culturellement apparenté avec lequel ils partagent la langue. Les graphies Amar et Amarcocche sont des variantes phonétiques. Le terme Hamar-Koke (ou Hammercoche) désigne littéralement les gens (koke) Hamar dans certaines classifications.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Hamar (ou Hamer) est le terme courant dans les publications académiques et touristiques. Hammer est encore employé dans les sources francophones et allemandes. L'administration éthiopienne reconnaît le Hamar Woreda dans la South Omo Zone, région South Ethiopia Regional State."
+    },
+    "ethnicities": ["Hamar", "Banna", "Bashada", "Kara"],
+    "origins": {
+      "ancientOrigins": "Les Hamar sont un peuple agro-pastoral de la basse vallée de l'Omo, dans le sud de l'Éthiopie. Leur langue, le hamer-banna (ISO : amf), appartient à la branche omotique méridionale de l'Afroasiatique, distincte du couchitique. Ils forment une unité culturelle avec les Bashada, les Banna (Bana) et les Kara, partageant une langue commune, des pratiques matrimoniales, des rites d'initiation (dont le saut du taureau), le système d'âge et l'institution du bita (chef rituel).",
+      "formationPeriod": "Les sources écrites sur les Hamar sont rares avant la conquête de Menelik II à la fin du XIXe siècle. La mémoire historique est transmise oralement et façonnée par la migration dans la basse vallée de l'Omo et par des rapports complexes avec de nombreux groupes voisins (selon l'ethnologue Ivo Strecker).",
+      "migrationRoutes": [
+        "Migration dans la basse vallée de l'Omo depuis un foyer non documenté avec précision",
+        "Interactions avec les Boa (anciens pasteurs bovins mythiques), les Borana (refoulés vers l'est par le chef rituel hamar), les Murle (déplacés au sud du lac Diba), et les Kwegu (déplacés à l'ouest de l'Omo vers le district nyangatom)"
+      ],
+      "historicalSettlementZones": [
+        "Basse vallée de l'Omo, rive est de la rivière Omo",
+        "Hamar Woreda, South Omo Zone, South Ethiopia Regional State",
+        "Territoire s'étendant depuis la rivière Weito (est) jusqu'aux plaines de la basse vallée de l'Omo (ouest)"
+      ],
+      "unificationsOrDivisions": "La société hamar est polycéphale (sans chef central) mais maintient une cohésion culturelle forte grâce aux structures claniques, au système d'âge et aux rituels partagés. Les 24 clans exogames sont regroupés en deux moitiés. L'autorité est distribuée selon l'ancienneté et la rhétorique plutôt que concentrée.",
+      "externalInfluences": "Incorporation dans l'État éthiopien sous Menelik II (fin XIXe siècle) : offensive par la vallée Weito, entrainant des massacres, réductions en esclavage et fuite vers les plaines marécageuses. Sous Hailé Sélassié (1930-1974) : imposition fiscale sans répression des traditions. Sous le Derg (1974-1991) : introduction d'écoles, routes et marchés avec une orientation civilisationnelle. Depuis 1991 : fédéralisme ethnique, auto-gouvernance et infrastructure moderne, mais tensions avec la modernisation et violence armée en 2015.",
+      "majorHistoricalEvents": "Conquête par Menelik II à la fin du XIXe siècle. Introduction des missionnaires catholiques et d'ONG cherchant à modifier les pratiques traditionnelles (mingi, fouettage). Conflits armés avec la police en 2015. Dialogue engagé en 2025 entre l'Église catholique (père Kilimpe Garbicha) et les Hamar sur une alternative douce au rite de fouettage."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Société égalitaire et polycéphale (anarchie régulée). Pas de chef central ; l'autorité repose sur l'ancienneté et les compétences rhétoriques. Les décisions collectives sont prises lors d'assemblées. Le système est qualifié d'anarchie régulée (regulated anarchy) par les ethnologues.",
+      "clanOrganization": "24 clans exogames regroupés en deux moitiés (moieties). Structure patrilinéaire, polygame et patrilocale. Le mariage hors du clan de naissance est obligatoire. Les bitta (chefs rituels, non politiques) proviennent du clan Gatta et du clan Worla.",
+      "ageClassSystems": "Système d'initiation masculine par classes d'âge. L'initiation majeure est le saut du taureau (ukuli bula) : rite de passage de la jeunesse à l'âge adulte donnant le droit de posséder du bétail et de se marier. Les maza (hommes ayant accompli le saut et en attente de mariage) supervisent le rituel.",
+      "roleOfLineages": "La patrilinéarité régit les héritages, les droits sur le bétail et les alliances matrimoniales. Les clans sont exogames ; les alliances de mariage cimentent les relations inter-claniques. La société est patriarchale : les hommes gèrent le bétail et le leadership ; les femmes l'agriculture, les soins aux enfants et le petit bétail.",
+      "religiousAuthority": "Deux chefs rituels (bitta) non politiques : l'un du clan Gatta, l'autre du clan Worla. Leur autorité est spirituelle. Le concept de pureté (mingi) est central : certains enfants nés dans des circonstances jugées impures (dents du haut en premier, naissance gémellaire sans rites préalables, etc.) peuvent être condamnés. Des ONG (Save the Children, UNICEF, AMREF, Omo Child) et le gouvernement éthiopien travaillent à l'abandon de cette pratique."
+    },
+    "languages": {
+      "mainLanguage": "Hamer-Banna (amf)",
+      "isoCodes": ["amf"],
+      "dialects": [],
+      "vehicularRole": "Le hamer-banna est la langue maternelle de tous les membres du groupe, utilisée comme première langue par les Hamar, Banna, Bashada et Kara. Elle n'est pas enseignée à l'école ni utilisée dans les institutions gouvernementales. L'amharique est la langue administrative et d'instruction. Le hamer-banna partage une base linguistique avec les langues karo."
+    },
+    "culture": {
+      "majorRites": "Saut du taureau (ukuli bula) : rite d'initiation masculin majeur ; le futur homme doit courir sur le dos de plusieurs taureaux alignés sans tomber, après avoir vécu une période comme maza. Evangadi : danse nocturne d'adolescents non mariés pour la rencontre de partenaires. Mingi : rite de purification concernant les enfants nés dans des conditions jugées impures, conduisant autrefois à leur mise à mort ; pratique en cours d'abandon. Whipping ritual : les femmes se font fouetter volontairement par les maza lors du saut du taureau en signe de solidarité avec l'initié.",
+      "symbols": "Le bétail (bovins, chèvres, moutons) est le symbole central de richesse, de statut et d'identité. Les cicatrices de fouet sur le dos des femmes sont des marques de dévotion et de force. Les ornements corporels (perles, peintures corporelles, coiffures) distinguent les statuts et l'appartenance clanique.",
+      "artsAndMusic": "La danse evangadi est une institution culturelle importante pour les jeunes non mariés. La tradition orale perpétue l'histoire des migrations, des conflits et des alliances. Le corpus ethnographique d'Ivo Strecker sur les Hamar constitue une référence académique majeure.",
+      "spiritualities": "Cosmologie fondée sur le concept de pureté (mingi) et l'impureté rituelle. Les bitta ont une autorité spirituelle distincte des fonctions politiques. Les Hamar pratiquent la médecine traditionnelle à base de plantes : 145 espèces médicinales identifiées sur le mont Buska, transmises oralement. La christianisation reste marginale dans ce groupe."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royauté ni de chefferie centralisée. La société est fondée sur une autorité distribuée entre anciens, rhétoriciens et chefs rituels (bitta). Les deux bitta (clans Gatta et Worla) exercent une autorité spirituelle collective.",
+      "relationsWithNeighbors": "Unité culturelle étroite avec Bashada, Banna et Kara (langue, rites et institutions partagés, mariages inter-groupes, pas de guerres mutuelles). Conflits récurrents avec les Nyangatom (vols de bétail, raids pastoraux). Relations historiquement pacifiques avec les Dasanech (refuge lors de sécheresses et après la défaite face à Menelik). Arbore et Tsamaï aux frontières est ; Borana et Murle dans la mémoire historique.",
+      "conflictsOrAlliances": "Conflits contemporains avec les Nyangatom pour les pâturages et le bétail. Intégration forcée dans l'État éthiopien sous Menelik II (fin XIXe siècle). Tensions avec les forces de l'ordre éthiopiennes en 2015. Dialogue en cours avec l'Église catholique sur l'abandon des pratiques traditionnelles considérées comme préjudiciables.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 56000,
+      "referenceYear": 2025,
+      "source": "Recensement éthiopien 2007 (Hamar Woreda : 64 925 habitants dont environ 80 % Hamar ethniques) ; estimation pour la population ethnique hamar stricte avec projection 2025 – Wikipedia Hamar people / CSA Ethiopia 2007",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 56000, "percentage": 100 }
+      ]
+    },
+    "sources": [
+      "Hamar people – Wikipedia (https://en.wikipedia.org/wiki/Hamar_people)",
+      "Hamer language – Wikipedia (https://en.wikipedia.org/wiki/Hamer_language)",
+      "Hamer-Banne Language (AMF) – Ethnologue (https://www.ethnologue.com/language/amf/)",
+      "Hamar PDF – DICE Missouri University, Strecker I. (https://dice.missouri.edu/assets/docs/afro-asiatic/Hamar.pdf)",
+      "Appendix ISO 639-3 codes Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
+      "Hamer language PDF – Archive.org, 2020 (https://archive.org/download/enwiki-Hamer_language-20200726.pdf/enwiki-Hamer_language-20200726.pdf)"
+    ]
+  }
+}

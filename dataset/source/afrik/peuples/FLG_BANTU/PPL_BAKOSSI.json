@@ -1,0 +1,93 @@
+{
+  "id": "PPL_BAKOSSI",
+  "nameMain": "Bakossi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Bakossi",
+      "selfAppellation": "Bakossi",
+      "exonyms": [
+        "Akose / Akoose (désignation à partir de la langue, Akoose étant le terme préféré par les linguistes)",
+        "Kosi, Nkosi, Nkoosi, Koose, Bekoose (variantes orthographiques dans la littérature coloniale et missionnnaire)",
+        "Bakosi (graphie alternative dans les documents officiels camerounais)"
+      ],
+      "originOfExonyms": "Le terme Bakossi est un exonyme en préfixe bantou (Ba- = les gens de) appliqué au nom de la communauté. Le préfixe A- de la langue (Akoose) est distinct du préfixe de personnes (Bakossi). Les variantes Kosi, Nkosi, etc. reflètent les transcriptions des administrateurs coloniaux allemands, britanniques et français aux 19e-20e siècles.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Bakossi est l'appellation standard en anglais et en français au Cameroun. Akoose est le terme préféré par SIL International pour la langue. Les membres de la communauté utilisent les deux termes selon le contexte.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantous des montagnes du Cameroun (groupe Manenguba / Mbo, sous-famille Lundu-Balong A.15)",
+      "historicalRegion": "Pentes ouest et est du mont Mwanenguba et du mont Kupe (Kupe-Muanenguba), région du Sud-Ouest du Cameroun",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Lignages des Douze Enfants de Ngoe : chaque grand clan bakossi descend de l'un des douze enfants de l'ancêtre mythique Ngoe (ou Ngweh) et de son épouse Sumediang",
+      "Communautés bakossi du District de Bangem (Nord, zone de montagne autour du mont Mwanenguba)",
+      "Communautés bakossi du District de Bangem (Sud, zone de piémont et de contact avec les basses terres)",
+      "Bakossi de la zone de Tombel (Kupe Rural, basses terres ; fortement concernés par les migrations bamileke)",
+      "Bakossi de la zone de Nguti (bordure orientale du territoire, contacts avec les Mbo et Bassossi)",
+      "Mwane-Ngoe Union (structure politique pan-bakossi fondée pour représenter l'ensemble des clans face aux autorités coloniales et postcoloniales)"
+    ],
+    "origins": {
+      "ancientOrigins": "La tradition orale bakossi fait remonter l'origine du peuple à l'ancêtre fondateur Ngoe (ou Ngweh) et sa femme Sumediang. Selon le récit fondateur, un être surnaturel avertit Ngoe d'un déluge imminent. Il construisit une arche dans laquelle il rassembla sa famille et des animaux. L'arche se posa entre les deux lacs jumeaux du mont Mwanenguba (un lac mâle et un lac femelle), lieu sacré du peuple bakossi encore aujourd'hui. Les douze enfants de Ngoe devinrent les ancêtres des douze grands clans bakossi. Ce récit présente des parallèles avec d'autres mythes de déluge de la région mais porte une forte spécificité géographique (mont Mwanenguba).",
+      "formationPeriod": "Le peuplement de la zone montagneuse Kupe-Mwanenguba remonte probablement au 1er millénaire de notre ère, dans le cadre des migrations bantoues vers l'ouest du Cameroun. La structuration en clans distincts occupant des territoires montagnards indépendants caractérise la période précoloniale. La constitution d'instances fédérales (Kumba Eastern Area Federation, 1953) marque la période contemporaine.",
+      "migrationRoutes": [
+        "Mouvements bantu anciens depuis le bassin du Congo ou la zone de dispersion bantoue du Cameroun-Nigeria vers les hautes terres du Kupe-Mwanenguba",
+        "Mobilité interne entre les hautes terres et les basses terres le long des pentes du Mwanenguba et du Kupe",
+        "Contacts historiques avec les peuples côtiers via la vallée du Mungo et le littoral du golfe de Guinée"
+      ],
+      "historicalSettlementZones": [
+        "Hauts plateaux autour du mont Mwanenguba (1 500-2 400 m), zone de montagne humide",
+        "Pentes du mont Kupe (2 050 m), forêt tropicale humide classée réserve naturelle stricte",
+        "Basses terres de Tombel et de la plaine du Mungo (contacts avec la zone côtière)"
+      ],
+      "unificationsOrDivisions": "Les Bakossi ne constituèrent jamais un Etat centralisé mais un ensemble de clans organisés en chefferies villageoises indépendantes, liés par l'origine commune de l'ancêtre Ngoe. La Kumba Eastern Area Federation (1953) fut la première instance fédérale reconnue couvrant l'ensemble des Bakossi. En 1961, la Mwane-Ngoe Union demanda à l'ONU que les Bakossi rejoignent le Nigeria plutôt que la fédération camerounaise. La partition post-WWI entre zone britannique et zone française (frontière du fleuve Mungo) a divisé administrativement les communautés bakossi.",
+      "externalInfluences": "Commerce avec les peuples côtiers via Douala et la vallée du Mungo (commerce de l'huile de palme, implication dans la traite atlantique des esclaves). Administration allemande à partir des années 1880 (Kamerun). Partage du territoire entre administrations britannique et française après la Première Guerre mondiale (1919). Vague de migration bamileke dès la première moitié du 20e siècle, notamment à Tombel, pour le travail dans les plantations de cacao. Tensions ethniques et violence en 1966."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferies locales villageoises sans centralisation politique. Chaque village est gouverné par un chef (fon ou chef de village) assisté d'un conseil d'anciens. Des sociétés secrètes (jujus) jouent un rôle de régulation sociale, de maintien de l'ordre et de gestion des litiges rituels. La société secrète Mwakum est considérée comme la plus puissante, dotée de pouvoirs mystiques invisibles. Les membres de ces sociétés exercent une autorité morale et rituelle complémentaire à celle des chefs.",
+      "clanOrganization": "Structure clanique fondée sur la descendance des douze enfants de l'ancêtre Ngoe. Chaque clan occupe historiquement un territoire spécifique dans les montagnes et possède ses propres récits, interdits et responsabilités rituelles. L'organisation en dix jours (cycle bakossi, non calqué sur la semaine de sept jours ni sur le mois) rythmait le calendrier social et commercial traditionnel.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires ou bilinéaires (selon les localités) structurent l'héritage foncier, les droits de chasse et de culture, et les responsabilités rituelles envers les ancêtres. La gestion de la forêt et des terres est traditionnellement collective au niveau clanique.",
+      "religiousAuthority": "Autorités rituelles liées à la terre, à la forêt et aux ancêtres. Les praticiens des jujus (sociétés secrètes) disposent de pouvoirs reconnus pour maintenir la paix, détecter les sorciers et guérir. Le mont Kupe est considéré comme un lieu de puissances mystiques (Nyongo, witches invisibles avec plantations invisibles). Le christianisme est très fortement implanté depuis les missions protestantes du 20e siècle. L'Eglise Évangélique du Cameroun (EEC) et les Eglises catholiques sont présentes dans tous les villages."
+    },
+    "languages": {
+      "mainLanguage": "Akoose (Akose)",
+      "isoCodes": ["bss"],
+      "dialects": [
+        "Akoose du Nord (zone de Bangem Nord, hautes terres du Mwanenguba)",
+        "Akoose du Sud (zone de Bangem Sud, piémont et basses terres de Tombel)",
+        "Variante de la zone de Nguti (bordure orientale, contacts avec le mbo et le bassossi)",
+        "Langues manenguba apparentées : Mbo (mbo), Bakaka (bqz), Sosi (bsi)"
+      ],
+      "vehicularRole": "L'akoose est la langue maternelle des Bakossi et la langue de communication locale dans la zone Kupe-Mwanenguba. L'anglais est la langue officielle d'enseignement et d'administration dans la région du Sud-Ouest (anciennement British Southern Cameroons). Le pidgin-english camerounais est très utilisé comme langue véhiculaire inter-ethnique. Un Nouveau Testament en akoose a été publié par SIL Cameroun (2012)."
+    },
+    "culture": {
+      "majorRites": "Rites agraires liés au calendrier agricole du cacao et du taro (coco-yam) : cérémonies de début et de fin de saison, offrandes aux ancêtres pour la fertilité des champs. Initiations aux sociétés secrètes (jujus) : les hommes paient des droits d'entrée et traversent des épreuves pour accéder aux grades successifs, acquérant autorité et connaissances rituelles. Rites de passage (naissance, circoncision, mariage traditionnel, funérailles) encadrés par les anciens et les sociétés. Rites de guérison faisant appel aux praticiens des jujus et aux plantes médicinales. En 1994, lors d'une protestation à Tombel concernant l'approvisionnement en eau, 4 000 femmes ont marché nus et accompli des rites traditionnels d'intimidation symbolique devant les bureaux de la SNEC.",
+      "symbols": "Le mont Mwanenguba et ses deux lacs jumeaux (un lac mâle, un lac femelle) constituent le symbole géographique et cosmique central du peuple bakossi, lieu de l'arche de l'ancêtre Ngoe. Les masques des sociétés secrètes (jujus), en bois sculpté, représentent des forces ancestrales et sont utilisés dans les cérémonies de régulation sociale. Le Mwakum est la société secrète la plus puissante, invisible et mystique. Les éléments de la faune et du relief montagnard (éléphant, gorille du mont Kupe, rapaces) structurent les emblèmes identitaires.",
+      "artsAndMusic": "Danses collectives exécutées lors des cérémonies de jujus, des funérailles et des fêtes agricoles. Chants rituels accompagnant les rites de passage et les cérémonies des sociétés secrètes. Instruments à percussion (tam-tams de tailles variées, hochets, cloches en fer) rythmant les danses. Sculpture sur bois (masques de sociétés secrètes, statuettes rituelles). Artisanat du bois et des fibres végétales pour les ustensiles domestiques. Cuisine traditionnelle : taro (coco-yam), manioc, maïs ; spécialités comme les têtards et les Hairy Frogs (rainettes velues), consommés pour la fertilité.",
+      "spiritualities": "Croyances en des forces de la nature et des puissances ancestrales liées à la forêt et au mont Kupe. Le mont Kupe est le siège de pouvoirs mystiques : selon la tradition, des sorciers (Nyongo, ekom) y maintiennent des plantations invisibles peuplées de morts-vivants (ekongi) volés dans les tombes. Les pratiques de sorcellerie (ekongeur, hypnose) et les contre-mesures rituelles structurent le rapport à la maladie, à la mort et à la richesse. La médecine traditionnelle des plantes et les rites d'exorcisme sont pratiqués parallèlement au christianisme. L'Eglise Évangélique du Cameroun (EEC) et les Eglises catholiques sont omniprésentes depuis le milieu du 20e siècle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume unifié. L'ensemble des Bakossi forme un réseau de chefferies villageoises indépendantes liées par l'ancestralité commune. La Kumba Eastern Area Federation (1953), première instance fédérale reconnue, regroupait toutes les chefferies bakossi sous l'autorité coloniale britannique. Le Bakossi Council (1977) a ensuite été divisé en conseils Nord et Sud. La Mwane-Ngoe Union constitue l'organisation pan-bakossi la plus représentative.",
+      "relationsWithNeighbors": "Relations étroites avec les peuples voisins de la zone Manenguba-Sawa : Bafaw (bwt), Bakundu, Balong, Bassossi, Mbo, Abo, Balondo. Alliances matrimoniales et échanges commerciaux traditionnels avec les Bamileke de l'Ouest, devenus sources de tensions foncières dès les années 1950. Contacts avec les peuples côtiers sawa de la zone littorale via la vallée du Mungo. Relations avec les Duala pour le commerce via le port de Douala.",
+      "conflictsOrAlliances": "Implication dans le commerce atlantique des esclaves (18e-19e s.) via Douala. Résistance à l'administration allemande puis à la politique de plantation coloniale. Opposition à la réunification camerounaise en 1961 (Mwane-Ngoe Union demandant à rejoindre le Nigeria). Violences de 1966 : affrontements entre Bakossi et migrants Bamileke à Tombel (236 morts Bamileke, répression militaire dure contre les Bakossi, 17 condamnations à mort, 75 emprisonnements à vie). Tensions contemporaines liées aux droits fonciers, à l'exploitation forestière et à la conservation (Réserve forestière de Bakossi, 5 517 km²).",
+      "diaspora": "Migration interne vers les villes camerounaises : Douala (première destination), Kumba, Buea, Yaoundé. Diaspora bakossi en Europe (Suisse, France, Grande-Bretagne) et en Amérique du Nord, organisée notamment autour de l'association Bakoswiss."
+    },
+    "demography": {
+      "totalPopulation": 199000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 199 000 pour le Cameroun. Wikipedia EN : environ 200 000. Note : les estimations oscillent entre 160 000 et 200 000 selon les sources ; le chiffre Joshua Project (2025) est retenu.",
+      "distributionByCountry": [{ "country": "CMR", "population": 199000 }]
+    },
+    "sources": [
+      "Wikipedia EN – Bakossi people : https://en.wikipedia.org/wiki/Bakossi_people",
+      "Joshua Project – Bakossi in Cameroon (2025) : https://joshuaproject.net/people_groups/10595",
+      "Glottolog – Akoose (bss) : https://glottolog.org/resource/languoid/id/akoo1248",
+      "SIL International – Akoose-English dictionary (2012) : https://searchworks.stanford.edu/view/10770615",
+      "Wikipedia EN – Manenguba languages : https://en.wikipedia.org/wiki/Manenguba_languages",
+      "Balz, Heinrich (1984). Where the Faith Has to Live: Studies in Bakossi Society and Religion. Berlin: Reimer Verlag.",
+      "CIA World Factbook – Cameroon : https://www.cia.gov/the-world-factbook/countries/cameroon/"
+    ]
+  }
+}

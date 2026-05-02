@@ -1,0 +1,95 @@
+{
+  "id": "PPL_VEZO",
+  "nameMain": "Vezo",
+  "languageFamilyId": "FLG_AUSTRONESIENNE",
+  "currentCountries": ["MDG"],
+  "content": {
+    "appellations": {
+      "mainName": "Vezo",
+      "selfAppellation": "Vezo",
+      "exonyms": [
+        "Nomades de la mer (appellation externe de langue française)",
+        "Vezo (terme signifiant ceux qui rament ou ceux qui luttent contre la mer)"
+      ],
+      "originOfExonyms": "Le terme Vezo est un ethnonyme d'origine malgache signifiant littéralement ceux qui rament ou ceux qui pêchent. Certains linguistes le rattachent aussi au terme Bajo, désignant les peuples maritimes semi-nomades d'Indonésie orientale (mer de Flores), ancêtres lointains probables des Vezo.",
+      "whyProblematic": "L'identité vezo est perçue par ses membres comme un mode de vie (la pêche nomade) plutôt qu'un groupe ethnique fixe : un Masikoro peut devenir Vezo en adoptant la pêche, et inversement. Cette fluidité complique le recensement et l'identification ethno-démographique.",
+      "contemporaryUsage": "Le terme Vezo est utilisé en français comme en malgache pour désigner ce peuple côtier du sud-ouest de Madagascar. Les locuteurs s'identifient spontanément comme Vezo dans les contextes de pêche et de vie maritime.",
+      "linguisticFamily": "FLG_AUSTRONESIENNE",
+      "ethnoLinguisticGroup": "Malayo-polynésien (branche barito, dialecte sakalava-vezo du malgache)",
+      "historicalRegion": "Côte sud-ouest de Madagascar, du cap Sainte-Marie (Intampolo) au nord jusqu'à Morondava, en passant par Toliara (Tuléar)",
+      "currentCountries": ["MDG"]
+    },
+    "ethnicities": [
+      "Vezo du littoral de Toliara (région Atsimo-Andrefana, pêcheurs côtiers des villages autour du chef-lieu)",
+      "Vezo du couloir côtier de Morombe à Morondava (région Menabe, pêcheurs semi-nomades du nord-ouest)",
+      "Vezo de la côte de Salary et de Belo-sur-Mer (villages de pêcheurs, fabricants de pirogues et de voiliers traditionnels)",
+      "Vezo d'Andavadoaka et du corridor Velondriake (pêcheurs des récifs coralliens de la réserve marine communautaire)",
+      "Vezo du cap Saint-Vincent et de Befandefa (groupes méridionaux proches des Antandroy et Mahafaly)",
+      "Sakalava-Vezo (sous-groupe de transition entre identité sakalava et identité vezo, vivant dans les villages semi-sédentaires du Menabe)",
+      "Vezo de l'île Nosy Ve et des îlots côtiers (pêcheurs insulaires pratiquant la pêche à la requins et à la tortue)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Vezo sont issus du grand mouvement de peuplement austronésien qui a atteint Madagascar entre le 5e et le 8e siècle de notre ère, en provenance du sud de Bornéo (région barito) via l'Asie du Sud-Est maritime. Des liens linguistiques et culturels étroits ont été établis avec les Bajo, peuple maritime semi-nomade d'Indonésie orientale. Ce substrat austronésien s'est ensuite mêlé à des apports bantous venus d'Afrique de l'Est, notamment à travers les contacts swahilis et les migrations côtières. Les Vezo se distinguent des groupes malgaches de l'intérieur par leur orientation maritime millénaire, leur nomadisme lié aux saisons de pêche et leur identité définie par la pratique (la pêche) plutôt que par la seule ascendance.",
+      "formationPeriod": "Constitution progressive d'un groupe à identité maritime distinctive entre le 9e et le 15e siècle, avec intensification des échanges avec les marchands arabes et swahilis le long de la côte occidentale. Les premières descriptions européennes datent du 16e-17e siècle.",
+      "migrationRoutes": [
+        "Arrivées austronésiennes depuis le sud de Bornéo via les routes maritimes de l'océan Indien (5e-8e s.)",
+        "Contacts et apports bantous depuis la côte est-africaine (Mozambique, Tanzanie actuels) par voie maritime",
+        "Diffusion progressive le long de la côte ouest malgache, du nord vers le sud, en suivant les ressources marines"
+      ],
+      "historicalSettlementZones": [
+        "Côte sud-ouest malgache entre les caps Sainte-Marie et Saint-André",
+        "Estuaires et lagons entre Toliara, Morombe et Morondava",
+        "Archipel des Barren Islands et zone maritime du canal du Mozambique"
+      ],
+      "unificationsOrDivisions": "Les Vezo ne forment pas un groupe politiquement unifié. Leur cohésion est culturelle et fondée sur le mode de vie maritime. Ils se distinguent des Masikoro (agriculteurs voisins de l'intérieur) et des Mikea (chasseurs-cueilleurs de la forêt épineuse). Des échanges rituels et économiques relient ces trois groupes : les Vezo troc tent du poisson contre le miel et les tubercules des Mikea. L'identité vezo est fluide : un individu peut adopter ou quitter ce statut selon qu'il pratique ou non la pêche.",
+      "externalInfluences": "Contacts anciens avec les marchands arabes et swahilis (commerce de tortues, d'ambre gris, de corail). Rencontres avec les Portugais dès le 16e siècle, puis les Français à partir du 17e siècle (comptoirs, missions). Influence croissante du christianisme (Eglise catholique, protestantisme FJKM) depuis le 19e siècle. Pression contemporaine de la surpêche industrielle asiatique et européenne dans les eaux malgaches.",
+      "majorHistoricalEvents": "Intégration dans les réseaux commerciaux de l'océan Indien (7e-19e s.) ; contacts avec les comptoirs français de Fort-Dauphin et Toliara (17e-18e s.) ; inclusion dans le territoire du royaume Sakalava du Menabe (18e-19e s.) ; colonisation française de Madagascar (1896) et sédentarisation progressive des populations côtières ; création des premières réserves marines communautaires (Velondriake, 2006) en réponse à la surpêche."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en communautés villageoises côtières sans chefferie centralisée forte. Le fokonolona (conseil de communauté villageoise) constitue l'unité politique de base, gérant les affaires locales, les droits de pêche et les règlements de conflits. Les anciens (ray aman-dreny, père et mère, titre honorifique) jouent un rôle central de médiation et de mémoire collective.",
+      "clanOrganization": "Structure patrilinéaire organisée en familles étendues et lignages (karazana). Les groupes de filiation déterminent l'identité, les droits fonciers et les alliances matrimoniales. Les tabous alimentaires et comportementaux (fady) sont propres à chaque lignage et contribuent à l'identité clanique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages (karazana) patrilinéaires déterminent l'identité, les alliances matrimoniales et les droits sur les zones de pêche traditionnelles. Le respect des ancêtres (razana) structure les obligations rituelles et les pratiques funéraires : les morts sont informés des événements importants (départ pour la pêche, naissance, mariage) et leur bénédiction est recherchée avant chaque sortie en mer.",
+      "religiousAuthority": "Les mpisikidy (devins-guérisseurs) jouent un rôle central dans la divination, la médiation avec les esprits et les soins. Les pasteurs des Eglises protestantes FJKM et catholiques coexistent avec ces pratiques traditionnelles dans un syncrétisme bien établi."
+    },
+    "languages": {
+      "mainLanguage": "Malgache sakalava-vezo (dialecte vezo du malgache occidental)",
+      "isoCodes": ["skg"],
+      "dialects": [
+        "Dialecte vezo de Toliara (variante méridionale, zone urbaine et périurbaine)",
+        "Dialecte vezo de Morombe-Morondava (variante septentrionale, plus proche du sakalava standard)",
+        "Variantes de transition vers le dialecte masikoro dans les zones de contact intérieur"
+      ],
+      "vehicularRole": "Le dialecte sakalava-vezo est la langue maternelle et principale de communication au sein des communautés de pêcheurs. Le malgache standard (officiel) est utilisé à l'école et dans les contacts avec l'administration. Le français est présent dans les contextes scolaires, administratifs et touristiques."
+    },
+    "culture": {
+      "majorRites": "La circumcision (soro ou famorana) est le rite de passage masculin majeur, organisé à l'échelle du lignage et accompagné de sacrifices, de festins et de danses. La cérémonie dure de l'aube jusqu'en milieu de matinée ; l'oncle maternel tient l'enfant. Les fomba (coutumes rituelles) maritimes encadrent la vie des pêcheurs : cérémonies avant le lancement d'une nouvelle pirogue, rites avant la première pêche saisonnière, offrandes aux esprits marins. Le Tromba (cérémonie de possession par les esprits des ancêtres royaux sakalava) est pratiqué par les Vezo en lien avec les Sakalava. Le Famadihana (retournement des morts) est connu mais moins central chez les Vezo côtiers que chez les populations de plateau. Les défunts sont inhumés dans des cimetières forestiers éloignés des villages, symboliquement invisibles pour éviter la tristesse. Les esprits des noyés (fanahy qui devient angatse après la mort) sont particulièrement craints et apaisés par des offrandes.",
+      "symbols": "La pirogue à balancier (lakana ou laka) à voile rectangulaire est le symbole identitaire par excellence des Vezo, à la fois outil de travail, de migration et d'expression de l'identité maritime. Les callosités des mains acquises par la pêche et la navigation sont portées comme un insigne de fierté et d'appartenance. Les sculptures funéraires en bois (aloalo) ornant les tombeaux vezo et sakalava, représentant des figures érotiques ou des scènes de vie, sont reconnues comme art funéraire traditionnel. Les couleurs vives des voiles et des embarcations signalent l'appartenance régionale.",
+      "artsAndMusic": "La pirogue est le principal objet d'art et de savoir-faire technique vezo : taillée dans un tronc de rafia ou de manguier, elle concentre tout le savoir nautique du groupe. La sculpture funéraire (aloalo, poteaux sculptés ornant les tombeaux) est une forme artistique majeure reconnue par l'UNESCO. La tradition orale est riche en récits des voyages en mer, en mythes sur les esprits marins et en chants liés à la pêche. Les danses collectives accompagnent les cérémonies de passage et les fêtes villageoises. L'artisanat inclut le tissage (lamba côtier, nattes), la vannerie et la fabrication d'objets en coquillages pour le commerce local et touristique.",
+      "spiritualities": "Les Vezo pratiquent un syncrétisme entre les croyances ancestrales malgaches et le christianisme. Le culte des ancêtres (razana) est fondamental : les morts communiquent avec les vivants par les rêves et leur bénédiction est indispensable pour la pêche et les grandes décisions. De nombreux esprits marins (fanahy) habitent l'océan, notamment les âmes des noyés, et il est interdit de pêcher au-delà du nécessaire sous peine d'offenser les dieux de la mer. Le Tromba (possession par les esprits royaux sakalava) est pratiqué lors de cérémonies collectives. Les fady (tabous) rituels propres à chaque lignage structurent la vie quotidienne. Le christianisme (FJKM protestante et catholicisme) est largement adopté et intégré sans supplanter totalement les pratiques traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Vezo n'ont pas constitué de royaume propre. Ils ont été intégrés dans l'aire d'influence des royaumes Sakalava (Menabe et Boina) qui dominaient la côte ouest de Madagascar aux 17e-19e siècles. Les chefs vezo locaux (ampanjaka) reconnaissaient la suzeraineté sakalava tout en maintenant une large autonomie dans la gestion des ressources marines. Depuis la création de la réserve marine communautaire de Velondriake en 2006 (le plus grand réseau d'aires marines protégées communautaires de l'océan Indien occidental à l'époque), les Vezo d'Andavadoaka et des villages environnants exercent une autogestion collective de leurs ressources halieutiques.",
+      "relationsWithNeighbors": "Les Vezo entretiennent des relations d'échange complémentaire avec les Masikoro (agriculteurs-éleveurs de l'intérieur) : poisson séché contre millet, manioc et produits de l'élevage. Avec les Mikea (chasseurs-cueilleurs de la forêt épineuse), les échanges portent sur le poisson contre le miel et les tubercules sauvages. Les Mahafaly au sud et les Bara de l'intérieur sont des voisins avec qui les contacts sont plus distants. Les Vezo partagent de nombreux fomba rituels avec les Sakalava dont ils sont culturellement proches.",
+      "conflictsOrAlliances": "Les Vezo ont historiquement évité les conflits armés majeurs grâce à leur mobilité maritime et à leur économie fondée sur la mer plutôt que sur la terre. Sous la colonisation française (1896-1960), ils ont été peu impliqués dans les soulèvements terrestres mais ont subi des restrictions sur la pêche aux tortues et aux espèces protégées. Le principal conflit contemporain est la surpêche industrielle qui menace leurs ressources et leur mode de vie.",
+      "diaspora": "Présence de communautés vezo dans les villes de Toliara, Morondava, Mahajanga et Antananarivo (Madagascar), notamment des jeunes migrants cherchant de l'emploi hors du secteur de la pêche. Faible diaspora internationale."
+    },
+    "demography": {
+      "totalPopulation": 407000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 407 000 individus pour Madagascar ; Ethnologue (SIL) : Malagasy sakalava (skg) ; CIA World Factbook Madagascar. Note : les données varient entre 200 000 et 500 000 selon les définitions retenues (ethnie ou locuteurs du dialecte vezo).",
+      "distributionByCountry": [{ "country": "MDG", "population": 407000 }]
+    },
+    "sources": [
+      "Wikipedia EN – Vezo people : https://en.wikipedia.org/wiki/Vezo",
+      "Wikipedia FR – Peuple Vezo : https://fr.wikipedia.org/wiki/Peuple_Vezo",
+      "Joshua Project – Vezo in Madagascar (2025) : https://joshuaproject.net/people_groups/14648/MA",
+      "SIL Ethnologue – Sakalava Malagasy (skg) : https://www.ethnologue.com/language/skg/",
+      "Mada Expeditions – Le peuple Vezo de Madagascar, entre tradition et modernité (2023) : https://madaexpeditions.com/sous-le-ciel-de-madagascar-la-vie-du-peuple-vezo-entre-tradition-et-modernite/",
+      "Astuti, R. (1995). People of the Sea: Identity and Descent among the Vezo of Madagascar. Cambridge University Press.",
+      "CIA World Factbook – Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/",
+      "Blue Ventures – Velondriake marine protected area, southwest Madagascar : https://blueventures.org/conservation/velondriake/",
+      "UNESCO – Patrimoine immatériel de Madagascar : https://ich.unesco.org/en/state/madagascar-MG"
+    ]
+  }
+}

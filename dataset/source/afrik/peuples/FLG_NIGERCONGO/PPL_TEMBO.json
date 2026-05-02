@@ -1,0 +1,103 @@
+{
+  "id": "PPL_TEMBO",
+  "nameMain": "Tembo",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Tembo",
+      "selfAppellation": "Batembo (pluriel) / Mutembo (singulier) ; la langue se dit Chitembo ou Kitembo",
+      "exonyms": [
+        "Batembo (exonyme bantou courant, préfixe Ba- + Tembo)",
+        "Kitembo (nom swahili de la langue et parfois du peuple)",
+        "Chitembo (nom dans la langue elle-même)",
+        "Tembo-Kitembo (désignation utilisée par les sources missionnaires et Joshua Project)"
+      ],
+      "originOfExonyms": "Le terme Tembo est le nom de base du peuple dans leur propre langue. Les préfixes bantou Ba- (pluriel de personne) et Mu- (singulier) lui sont ajoutés dans l'usage courant. Kitembo est la forme swahili du nom. Chitembo est la forme dans la langue elle-même.",
+      "whyProblematic": "Il existe deux langues distinctes portant le nom Tembo dans la nomenclature Ethnologue : Tembo (tbt) parlé dans les provinces du Kivu (DRC, Zone J — Grand Lacs) et Tembo (tmv) de la rivière Mongala (Zone C, nord de la DRC, distinct du groupe kivu). L'article PPL_TEMBO concerne les Batembo du Kivu (tbt), peuple bantou des provinces de Sud-Kivu et Nord-Kivu, à l'est de la RDC.",
+      "contemporaryUsage": "Batembo ou Tembo sont les appellations courantes dans les sources contemporaines. Kitembo est parfois utilisé pour distinguer les Tembo du Kivu des autres groupes portant un nom similaire.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou des Grands Lacs (Zone J, Northeast Bantu / Great Lakes Bantu)",
+      "historicalRegion": "Hauts plateaux du Kivu — territoire de Kalehe (Sud-Kivu), Masisi et Walikale (Nord-Kivu), à l'ouest du lac Kivu et dans les massifs forestiers du Kivu",
+      "currentCountries": ["COD"]
+    },
+    "ethnicities": [
+      "Batembo de Kalehe (Sud-Kivu) — chefferie de Buloho, capitale Bunyakiri",
+      "Batembo de Masisi (Nord-Kivu) — chefferies de Katoy et Osso (Batembo et Bahunde coexistent)",
+      "Batembo de Walikale (Nord-Kivu) — chefferie de Bakano",
+      "Batembo de Rutshuru (Nord-Kivu) — présence dans le chefferie de Bwito",
+      "Twa Batembo (communauté Twa parlant la langue chitembo, expulsée du Parc National de Kahuzi-Biéga)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Batembo sont un peuple bantou des Grands Lacs dont les origines remontent aux migrations bantou de la zone des Grands Lacs africains. Ils sont établis depuis des siècles dans les hauts plateaux et les forêts du Kivu, à l'ouest du lac Kivu. Historiquement, les Batembo vivaient en petites communautés indépendantes sur les berges est du bassin du Congo, où l'autorité était partagée entre plusieurs clans et groupes — une organisation radicalement différente du système de chefferie unique qu'imposa l'administration coloniale belge.",
+      "formationPeriod": "L'organisation en communautés claniques indépendantes caractérisait les Batembo en période précoloniale. L'administration coloniale belge chercha à les regrouper sous des chefferies unifiées, ce qui entraîna des résistances. Les Batembo résistèrent à l'intégration forcée dans la chefferie Buhavu (Bahavu), et après l'indépendance du Congo en 1960, ils luttèrent pour la reconnaissance de leur propre territoire (Bunyakiri comme territoire tembo autonome). La conscience ethnique tembo s'est consolidée au cours du 20e siècle dans le contexte des conflits politiques du Kivu.",
+      "migrationRoutes": [
+        "Migrations bantou des Grands Lacs depuis le nord-ouest du lac Victoria",
+        "Installation dans les massifs montagneux du Kivu (hauts plateaux forestiers à l'ouest du lac Kivu)",
+        "Expansion dans les territoires de Kalehe (Sud-Kivu), Masisi, Walikale (Nord-Kivu)"
+      ],
+      "historicalSettlementZones": [
+        "Territoire de Kalehe, Sud-Kivu (chefferie Buloho, capitale Bunyakiri ; Kalonge groupement)",
+        "Territoire de Masisi, Nord-Kivu (chefferies Katoy, Osso)",
+        "Territoire de Walikale, Nord-Kivu (chefferie Bakano)",
+        "Hauts plateaux forestiers entre Bukavu et le Parc National de Kahuzi-Biéga",
+        "Zones de transition entre savane et forêt équatoriale du Kivu"
+      ],
+      "unificationsOrDivisions": "Les Batembo résistèrent à la centralisation coloniale et postcoloniale. Leur aspiration à constituer une chefferie ou un territoire tembo autonome (Bunyakiri) reste un enjeu politique actif. Les guerres du Congo (1996-2003) ont mêlé certains chefs batembo à des milices armées. La question de l'identité batembo est liée aux conflits fonciers et ethniques du Kivu, notamment la dispute avec les Bahavu sur le contrôle du territoire.",
+      "externalInfluences": "Colonisation belge (Congo belge, 1885-1960) : réorganisation forcée des chefferies. Présence de missionnaires protestants (SIL) à partir des années 1950-1960 (traduction de la Bible en Chitembo). Instabilité chronique du Kivu depuis les années 1990 : guerres du Congo, FDLR (Forces Démocratiques de Libération du Rwanda), Raia Mutomboki, M23, FARDC. Présence de réfugiés rwandais (après 1994) dans la région.",
+      "majorHistoricalEvents": "Sous la colonisation belge, les Batembo résistèrent à leur intégration forcée dans la chefferie Buhavu dominée par les Bahavu. Après l'indépendance (1960), leurs leaders revendiquèrent l'établissement d'un territoire tembo autonome autour de Bunyakiri. Pendant les guerres du Congo (1996-2003), des milices batembo combattirent aux côtés des Forces Armées congolaises (FARDC) contre les groupes rwandais présents au Kivu. En 1986, les premiers missionnaires SIL (Summer Institute of Linguistics) entrèrent dans la zone tembo pour travailler à la traduction biblique. En 2002, le livre de Luc fut publié en Chitembo. La création du Parc National de Kahuzi-Biéga (1970, élargi 1975) expulsa des communautés Twa-Batembo de leurs terres ancestrales."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La politique batembo est organisée autour du Mwami (chef, roi) à la tête de chaque chefferie (bwami). Le Mwami dispose d'un conseil d'anciens (dont les chefs de groupements et villages subordonnés) pour le gouvernement local. Traditionnellement, les Batembo vivaient en communautés indépendantes sans chef unique dominant. L'administration coloniale belge tenta de centraliser ce système sous des chefferies unifiées. Aujourd'hui, les principaux Mwami batembo sont ceux des chefferies de Buloho et Bunyakiri (province du Sud-Kivu). Le Mwami porte le titre de père de tous et a pour vocation de préserver l'unité et la paix.",
+      "clanOrganization": "La société batembo est organisée en clans patrilinéaires. L'autorité était historiquement répartie entre plusieurs chefs claniques. L'identité clanique détermine les droits fonciers, les alliances matrimoniales et les affiliations politiques. La multiplicité des groupes claniques indépendants est une caractéristique historique marquée des Batembo, souvent en contraste avec des voisins plus centralisés comme les Bahavu.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages déterminent la succession aux chefferies et l'appartenance clanique. Les ancêtres fondateurs des lignages royaux sont honorés lors de cérémonies annuelles (le Mwami réunit les gardiens des coutumes et les chefs notables pour des cérémonies de communion symbolisant la continuité du royaume).",
+      "religiousAuthority": "Les Mwami ont un rôle spirituel important en plus de leur autorité politique : ils président les cérémonies de renouvellement annuel (réunissant les gardiens des coutumes — environ 63 chefs notables selon certains témoignages). La religion traditionnelle coexiste avec le catholicisme romain (confession dominante). Les Batembo entretiennent des relations avec les esprits des ancêtres. Les missionnaires protestants (SIL/Wycliffe) ont traduit des textes religieux en Chitembo depuis les années 1970."
+    },
+    "languages": {
+      "mainLanguage": "Tembo (Chitembo / Kitembo), ISO 639-3 : tbt",
+      "isoCodes": ["tbt"],
+      "dialects": [
+        "Variante principale du Sud-Kivu (territoire de Kalehe, Bunyakiri)",
+        "Variante du Nord-Kivu (Masisi, Walikale)",
+        "Chitembo des Twa (communauté Twa utilisant la même langue que les Batembo voisins)"
+      ],
+      "vehicularRole": "Le Tembo (Chitembo, tbt) est une langue bantou des Grands Lacs parlée dans les provinces du Nord-Kivu (Masisi, Walikale) et du Sud-Kivu (Kalehe) par les Batembo. Le nombre de locuteurs est estimé entre 150 000 (Omniglot, 2023) et 392 000 à 700 000 selon les sources (Joshua Project 2024 : 392 000 ; Wikipedia 2023 : 500 000-700 000). L'alphabet latin a été adapté pour le Chitembo par des missionnaires belges pour les traductions bibliques. De manière remarquable, un alphabet Hangul (coréen) a également été développé pour la communauté Twa qui parlait Chitembo, initiative lancée en 2015 par des missionnaires coréens. Le swahili est la langue véhiculaire dominante du Kivu, avec le français comme langue officielle de la RDC."
+    },
+    "culture": {
+      "majorRites": "Cérémonies annuelles de renouvellement de la chefferie : le Mwami réunit les gardiens des coutumes et les chefs notables (environ 63 chefs) pour une communion symbolisant la continuité du royaume et permettant de transmettre les enseignements sur le mode de gouvernance. Rites funéraires liés aux pratiques ancestrales bantoues des Grands Lacs. Rites de mariage avec paiement de dot (prix de la fiancée). Rites d'initiation à l'âge adulte. Rites agricoles liés à la saison des cultures (le Mwami invoque traditionnellement les ancêtres pour la fertilité de la terre). Rituels de guérison menés par des spécialistes spirituels.",
+      "symbols": "Le Mwami (chef) est le symbole de l'autorité et de l'unité du peuple. Les insignes royaux du Mwami (trône, coiffe traditionnelle, bâton de commandement) symbolisent l'autorité spirituelle et politique. L'identité batembo est liée à la revendication territoriale autour de Bunyakiri. Les forêts du Kivu (notamment le Parc National de Kahuzi-Biéga) sont des espaces symboliquement chargés, liés aux ancêtres et à l'identité culturelle.",
+      "artsAndMusic": "Les Batembo pratiquent les arts bantoues communs au Kivu : sculpture sur bois (masques et figures cérémonielles), tressage et vannerie, poterie. La musique traditionnelle utilise des tambours, des xylophones (lamellophones), des flûtes et des instruments à cordes. Les chants polyphoniques accompagnent les cérémonies. Les danses traditionnelles (en groupe, lors des cérémonies claniques et royales) constituent un art central. La culture de la natte tressée et des objets utilitaires en fibres végétales est un artisanat courant. Une écriture spécifique en alphabet Hangul a été développée pour les Twa-Batembo (initiative coréenne depuis 2015), témoignant d'une démarche de revitalisation culturelle unique.",
+      "spiritualities": "La religion traditionnelle batembo inclut le culte des ancêtres (les Bwami défunts sont invoqués lors des cérémonies de renouvellement), des rites de propitiation des esprits et des pratiques de médecine traditionnelle. Le catholicisme romain est la religion principale (large majorité des Batembo), avec une présence protestante (environ 6% des fidèles protestants selon Joshua Project). Le christianisme a été introduit dans la région dans les années 1950-1960 par des missionnaires. La foi catholique coexiste souvent avec des éléments de la spiritualité traditionnelle bantou (culte des ancêtres, médecine traditionnelle). Des tentatives de traduction biblique en Chitembo ont été menées depuis les années 1970 (première publication du livre de Luc en 2002)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Batembo ne constituèrent jamais un royaume centralisé, mais plutôt un ensemble de communautés claniques indépendantes. Historiquement, ils résistèrent à la centralisation coloniale (intégration dans la chefferie Buhavu). Après l'indépendance (1960), une faction de chefs batembo lutta pour la création d'un territoire tembo autonome autour de Bunyakiri. Les principales chefferies actuelles sont : Buloho (capitale Bunyakiri, Kalehe, Sud-Kivu), Bunyakiri (Kalehe, Sud-Kivu), Bakano (Walikale, Nord-Kivu), Katoy et Osso (Masisi, Nord-Kivu).",
+      "relationsWithNeighbors": "Relations complexes avec les Bahavu (dominant dans le territoire de Kalehe, Sud-Kivu) : les Batembo résistèrent à l'intégration dans la chefferie Buhavu. Coexistence avec les Bahunde (Nord-Kivu), les Havu, les Twa. Tensions récurrentes liées aux droits fonciers et à la délimitation des chefferies dans une région densément peuplée. Le territoire de Kalehe est un espace multiéthnique (Tembo, Havu, Twa, Hunde).",
+      "conflictsOrAlliances": "Résistance à l'administration coloniale belge (refus d'intégration dans la chefferie Buhavu). Pendant les guerres du Congo (1996-2003), les milices batembo combattirent aux côtés des FARDC contre le FDLR (groupes armés hutus rwandais) dans le Kivu. Cet engagement militaire donna aux Batembo des capacités pour revendiquer leur territoire propre (Bunyakiri), mais le contexte post-guerre ne favorisa pas leur reconnaissance politique. Les tensions foncières continuent d'alimenter des conflits locaux dans la région.",
+      "diaspora": "Des Batembo se trouvent à Bukavu et Goma (grandes villes du Kivu) suite aux déplacements liés aux conflits. Une communauté existe à Kinshasa et dans d'autres centres urbains congolais. Des réfugiés batembo se sont installés dans les pays voisins (Rwanda, Burundi, Tanzanie, Uganda) pendant les périodes de conflits."
+    },
+    "demography": {
+      "totalPopulation": 400000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur Joshua Project (Tembo-Kivu, 392 000 en 2024), PeopleGroups.org (Tembo-Kitembo, 342 000), Omniglot (150 000 locuteurs de Chitembo, 2023), Wikipedia (500 000 à 700 000 en 2023). Les différences importantes entre sources reflètent les méthodes de comptage et la definition du groupe. La population de 400 000 est une estimation médiane prudente pour 2025.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 400000,
+          "note": "Territoire de Kalehe (Sud-Kivu, Bunyakiri), Masisi et Walikale (Nord-Kivu) ; déplacés à Bukavu, Goma et autres villes du Kivu"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Tembo language. https://en.wikipedia.org/wiki/Tembo_language",
+      "Omniglot — Tembo (Kitembo / Chitembo). https://www.omniglot.com/writing/tembo.htm",
+      "SIL Ethnologue — Tembo (tbt). https://www.ethnologue.com/language/tbt/",
+      "Joshua Project — Tembo-Kivu in Congo, Democratic Republic of. https://joshuaproject.net/people_groups/15329",
+      "PeopleGroups.org — Tembo-Kitembo of Democratic Republic of the Congo. https://peoplegroups.org/people_groups/pg014737/",
+      "Wikipedia EN — Bunyakiri. https://en.wikipedia.org/wiki/Bunyakiri",
+      "Africa Federation — History of Kivu, Batembo Chiefdoms. http://www.africafederation.net/Kivu_History.htm",
+      "The Conversation — How DRC's colonial legacy forged a nexus between ethnicity, territory and conflict. https://theconversation.com/how-drcs-colonial-legacy-forged-a-nexus-between-ethnicity-territory-and-conflict-153469",
+      "de Wit, Gert and Alie de Wit-Hasselaar. Tembo survey report. SIL International, 1995."
+    ]
+  }
+}

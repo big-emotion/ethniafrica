@@ -1,0 +1,54 @@
+# Nom du peuple
+- Nom principal du peuple : Tokelau (Faux exonyme)
+- Auto-appellation : N/A
+- Exonymes / appellations historiques : Tokelau (terme erroné, ne correspond pas à un peuple africain)
+- Famille linguistique principale : N/A (FLG_NIGERCONGO)
+- Groupe ethno-linguistique : N/A
+- Région historique : N/A
+- Pays actuels : N/A
+- Identifiant peuple (ID) : PPL_TOKELAU_FAUXEX
+
+# 1. Ethnies incluses dans le peuple
+- Ethnie 1 : N/A
+- Ethnie 2 : N/A
+- Ethnie 3 : N/A
+
+# 2. Origines, migrations et formation du peuple
+- Origines anciennes : Ce fichier identifie un exonyme erroné. Tokelau fait référence à un territoire du Pacifique, non à un peuple africain.
+- Routes migratoires : N/A
+- Unifications / divisions : N/A
+- Influences externes : N/A
+
+# 3. Organisation et structure interne
+- Système politique traditionnel : N/A
+- Organisation clanique : N/A
+- Rôle des lignages : N/A
+- Autorité religieuse : N/A
+
+# 4. Langues et sous-familles
+- Langue principale : N/A
+- Codes ISO : N/A
+- Dialectes : N/A
+- Rôle véhiculaire : N/A
+
+# 5. Culture, rites et traditions
+- Rites majeurs : N/A
+- Symboles : N/A
+- Arts et musique : N/A
+- Spiritualités : N/A
+
+# 6. Rôle historique et interactions régionales
+- Royaumes / chefferies : N/A
+- Relations avec peuples voisins : N/A
+- Conflits / alliances : N/A
+- Diaspora : N/A
+
+# 7. Démographie globale
+- Population totale (tous pays) : N/A
+- Répartition par pays : N/A
+- Année de référence : 2025
+- Source : N/A
+
+# 8. Sources
+- Note : Ce fichier identifie un exonyme erroné qui ne correspond pas à un peuple africain.
+

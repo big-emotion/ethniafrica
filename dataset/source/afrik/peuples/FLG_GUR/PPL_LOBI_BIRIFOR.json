@@ -1,0 +1,92 @@
+{
+  "id": "PPL_LOBI_BIRIFOR",
+  "nameMain": "Lobi / Birifor",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["BFA", "CIV", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Lobi / Birifor",
+      "selfAppellation": "Lober (Lobi) ; Birifo / Malba (Birifor)",
+      "exonyms": [
+        "Lobi",
+        "Lobiri",
+        "Lobis",
+        "LobiMiwô",
+        "Birifor",
+        "Birifo",
+        "Malba",
+        "Birfor"
+      ],
+      "originOfExonyms": "L'étymologie du nom Lobi est débattue : certains y voient 'lou (forêt) + bi (enfants)', soit 'enfants de la forêt' ; d'autres proposent 'lo (entrer) + bi (unité d'ensemble)', soit 'ceux qui sont entrés (les premiers) dans le monde/espace culturel'. Le nom Lobiri désigne à la fois le peuple (Lober au singulier) et sa langue. Birifor (variante : Birifo ou Malba) est le nom du peuple proche ; Malba signifie 'les gens du nord' en référence à leur localisation relative. Le nom Birfor est utilisé à Burkina Faso pour la variante septentrionale.",
+      "whyProblematic": "Lobi et Birifor sont deux peuples distincts mais culturellement et linguistiquement très proches, souvent regroupés dans la littérature ethnographique. Les Birifor ont deux dialectes (Nord et Sud) aux codes ISO distincts. Les deux groupes occupent la même région géographique et partagent des croyances, des coutumes et un mode de vie similaires, ce qui conduit parfois à les assimiler.",
+      "contemporaryUsage": "Les deux appellations coexistent. Au Burkina Faso, Lobi et Birifor sont reconnus comme deux groupes distincts dans l'administration et les études ethnographiques. En Côte d'Ivoire, les Lobi sont concentrés dans la région de Bouna. Au Ghana, les Birifor sont surtout présents dans la région Wa (Upper West)."
+    },
+    "ethnicities": ["Lobi", "Birifor"],
+    "origins": {
+      "ancientOrigins": "L'origine des Lobi est connue principalement par des récits mythiques. La tradition orale rapporte une migration depuis le nord de l'actuel Ghana, traversant la région de Wa et la Volta Noire, il y a plusieurs siècles. Des hypothèses savantes (S. Hien) suggèrent une origine lointaine en Egypte ancienne (ressemblances esthétiques des statuaires), au Tchad ou au Bénin (similarités linguistiques et architecturales). Les contacts anciens avec les Gan ou Kan (dont le nom Gaoua proviendrait : 'Kan Ouara' signifiant 'route des Kan') et avec les Koulango attestent de leur intégration dans le tissu régional.",
+      "formationPeriod": "Autour de 1770, des groupes Lobés traversent le fleuve Mouhoun (Volta Noire) par vagues successives pour s'installer sur le territoire du pays Lobi, dans le nord-est de l'actuelle Côte d'Ivoire et le sud-ouest du Burkina Faso. Cette migration progressive constitue la période de formation du pays Lobi actuel.",
+      "migrationRoutes": [
+        "Origine : nord du Ghana actuel (région de Wa)",
+        "Traversée de la Volta Noire (Mouhoun) vers 1770",
+        "Installation dans le sud-ouest du Burkina Faso (Gaoua, Diébougou)",
+        "Extension vers le nord-est de la Côte d'Ivoire (Bouna) et le nord-ouest du Ghana (Lawra, Wa, Kampté)"
+      ],
+      "historicalSettlementZones": [
+        "Sud-ouest du Burkina Faso : Gaoua, Diébougou",
+        "Nord-est de la Côte d'Ivoire : Bouna et environs (rive droite de la Volta Noire, Parc national de la Comoé)",
+        "Nord-ouest du Ghana : Lawra, Wa, Kampté"
+      ],
+      "unificationsOrDivisions": "Les Lobi rejettent toute forme d'autorité politique centralisée. Il n'existait pas de pouvoir centralisé avant la période coloniale. Les clans se sont temporairement unifiés lors des guérillas contre l'administration coloniale française, avant de retrouver leur autonomie villageoise. La convention franco-britannique de 1898 attribua la rive droite de la Volta aux Français sans consulter les autochtones, divisant les territoires Lobi entre la Haute-Volta française et la Gold Coast britannique.",
+      "externalInfluences": "Contact historique avec les Gan/Kan et les Koulango (voisins anciens). Pression coloniale française intense à partir de la fin du XIXe siècle, avec incendies de fermes et récoltes pour forcer la soumission. Guérilla de plus de trente ans contre l'administration coloniale (début XXe siècle). Influence Dioula pour le commerce. Les Birifor ont été influencés par les Dagara voisins.",
+      "majorHistoricalEvents": "1885 : conférence de Berlin décidant du partage colonial de l'Afrique. 1898 : convention franco-britannique attribuant la rive droite de la Volta aux Français sans consentement des Lobi. 1902 : embuscade de Niobini contre le lieutenant Schwartz (flèches empoisonnées, essaims d'abeilles). Début XXe siècle : guérilla de plus de trente ans des Lobi contre l'administration française (pendaisons à Gaoua, incendies de villages). Résistance économique (refus des cauris comme monnaie), religieuse et culturelle. Les Lobi ont inspiré le personnage du peuple Oulé dans 'Les Racines du Ciel' de Romain Gary."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Refus absolu de toute autorité politique centralisée. Deux figures d'autorité non hiérarchiques : le Chef de la Terre (intermédiaire entre esprits et humains, responsable des cérémonies rituelles comme mariages et enterrements, sans pouvoir coercitif) et le Chef de l'Arc (chef de guerre, dirige les conflits armés et la chasse). Absence de pouvoir centralisé à l'échelle du groupe avant la colonisation.",
+      "clanOrganization": "Organisation clanique permettant des alliances défensives entre villages. Les clans se sont temporairement unifiés contre l'administration coloniale pour mener la guérilla. Chaque famille étendue (soukala) constitue une unité économique et sociale autonome.",
+      "roleOfLineages": "Les lignages contrôlent l'accès à la terre et la transmission des droits rituels. La soukala (maison-forteresse) abrite une famille étendue et constitue l'unité sociale de base. La résidence post-maritale et les droits fonciers sont organisés au niveau du lignage.",
+      "religiousAuthority": "Rôle central du thildar : spécialiste religieux, devin, communicant avec les esprits (thila). Les thila (esprits protecteurs) protègent les familles si leurs interdictions (bonoo, transmises par les devins) sont respectées. Initiation dyoro tous les sept ans sur la Volta Noire, cérémonie fondamentale dans la vie religieuse Lobi."
+    },
+    "languages": {
+      "mainLanguage": "Lobiri (Lobi) ; Birifor (Birifor)",
+      "isoCodes": ["lob", "bfo", "biv"],
+      "dialects": [
+        "Lobiri – lob (Lobi, parlé au Burkina Faso et en Côte d'Ivoire)",
+        "Malba Birifor – bfo (Birifor du Burkina Faso, dialecte septentrional)",
+        "Southern Birifor – biv (Birifor du Ghana et de Côte d'Ivoire, dialecte méridional)"
+      ],
+      "vehicularRole": "Le Lobiri est la langue maternelle des Lobi (440 000 locuteurs au début des années 1990 : 286 000 au Burkina Faso, 156 000 en Côte d'Ivoire). Le Dioula et le français servent de langues véhiculaires pour le commerce et l'administration. Le Lobiri appartient à la branche Gur (Oti-Volta) du Niger-Congo, proche du Birifor et du Dagara. L'anglais est utilisé au Ghana."
+    },
+    "culture": {
+      "majorRites": "Initiation dyoro : cérémonie collective tenue tous les sept ans sur la Volta Noire, passage obligé dans la vie religieuse Lobi. Cérémonies funéraires élaborées. Mariages et enterrements organisés par le Chef de la Terre. Rites de chasse (Chef de l'Arc). Culte des thila (esprits) avec respect des bonoo (interdits rituels).",
+      "symbols": "Les boteba : statues en bois, argile ou laiton représentant les thila (esprits de la nature), logées dans des sanctuaires familiaux. Chaque geste ou posture des boteba a une signification précise (deux têtes = détection rapide des menaces ; avec bébé = fertilité ; bras en place = barrage contre les esprits malveillants). La soukala (maison-forteresse) à entrée par le toit est le symbole architectural le plus emblématique.",
+      "artsAndMusic": "Art statuaire reconnu internationalement : boteba (statues de bois, argile, laiton), autels, objets rituels. Les Lobi sont réputés pour leur art statuaire et leur cosmogonie. Musique liée aux cultes et à la nosologie (art de soigner). Architecture traditionnelle : soukala (maison-forteresse en banco, entrée par le toit), développée autour de Bouna en Côte d'Ivoire. Réputation historique de guerriers et de chasseurs d'éléphants.",
+      "spiritualities": "Cosmogonie Lobi : au paradis initial, Thangba Yu (Thgaba) nourrissait les humains sans travail, maladie ni guerre. La désobéissance (vol de femmes) entraîna l'exil : Dieu retira la viande, donna la houe, introduit la maladie (kho) et la mort (kir). Les thila (esprits protecteurs) aident les humains si les bonoo (interdits) transmis par les devins sont respectés. Vénération de Thgaba comme être suprême. Initiations dyoro tous les sept ans."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Lobi et les Birifor n'ont jamais constitué de royaumes centralisés. Leur résistance acharnée à toute autorité extérieure (coloniale ou royale voisine) constitue leur trait historique distinctif. Ils ont mené une guérilla de plus de trente ans contre la France coloniale, utilisant la géographie (collines, herbes hautes, forêts) et des armes non conventionnelles (flèches empoisonnées, pièges, essaims d'abeilles).",
+      "relationsWithNeighbors": "Relations historiques complexes avec les Koulango (anciens ennemis, maintenant coexistants dans la même région). Contact avec les Gan/Kan à Gaoua. Culture proche des Birifor et des Dagara. Pression Dioula pour la conversion à l'islam, résistée.",
+      "conflictsOrAlliances": "Guérilla anti-coloniale de plus de trente ans au début du XXe siècle, avec embuscades utilisant la géographie locale et des armes non conventionnelles. Résistances économiques (refus des cauris), religieuses et culturelles à la domination française. Malédictions des collaborateurs ('bouche sur la voie des Blancs'). A Bouna, nomination contestée d'un chef central des Lobi de Côte d'Ivoire (Sib Virkoun, intronisé, mais contesté par une faction soutenant Hien Binsaré).",
+      "diaspora": "Migrations économiques vers les villes de Bobo-Dioulasso et Ouagadougou (Burkina Faso), Abidjan (Côte d'Ivoire) et Accra (Ghana). Diaspora internationale en France et dans d'autres pays européens."
+    },
+    "demography": {
+      "totalPopulation": 817000,
+      "referenceYear": 2025,
+      "source": "Joshua Project : Lobi 617 000 (BFA 356 000, CIV 250 000, GHA 11 000) + Birifor 200 000 (Wikipedia EN, PeopleGroups.org BFA 271 000). Chiffre combiné estimé Lobi + Birifor.",
+      "distributionByCountry": [
+        { "country": "BFA", "population": 627000 },
+        { "country": "CIV", "population": 260000 },
+        { "country": "GHA", "population": 21000 }
+      ]
+    },
+    "sources": [
+      "Lobi (peuple) – Wikipedia FR, 2005 (https://fr.wikipedia.org/wiki/Lobi_(peuple))",
+      "Birifor people – Wikipedia EN, 2018 (https://en.wikipedia.org/wiki/Birifor_people)",
+      "Lobi people group in all countries – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13082)",
+      "Lobi in Burkina Faso – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13082/UV)",
+      "Birifor, Southern in Côte d'Ivoire – Joshua Project (https://joshuaproject.net/people_groups/10869/IV)",
+      "Birifor, Southern in Ghana – Joshua Project, 2024 (https://joshuaproject.net/people_groups/10869/GH)",
+      "The Birifor of Burkina Faso – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg012375/)",
+      "Les Racines du Ciel (roman) – Gary R., 1956 (inspiration : peuple Lobi)"
+    ]
+  }
+}

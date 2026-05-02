@@ -135,46 +135,39 @@ interface Contribution {
 }
 
 /**
- * Merge a contribution into the official tables
+ * Merge a contribution into the official AFRIK tables
  */
 async function mergeContribution(contribution: Contribution) {
   const supabase = createAdminClient();
   const { type, proposed_payload } = contribution;
 
   switch (type) {
-    case "new_region":
-      await supabase.from("african_regions").insert(proposed_payload);
+    case "new_people":
+      await supabase.from("afrik_peuples").insert(proposed_payload);
       break;
-    case "update_region":
+    case "update_people":
       await supabase
-        .from("african_regions")
+        .from("afrik_peuples")
         .update(proposed_payload)
-        .eq("code", proposed_payload.code);
+        .eq("id", proposed_payload.id);
       break;
     case "new_country":
-      await supabase.from("countries").insert(proposed_payload);
+      await supabase.from("afrik_pays").insert(proposed_payload);
       break;
     case "update_country":
       await supabase
-        .from("countries")
+        .from("afrik_pays")
         .update(proposed_payload)
-        .eq("slug", proposed_payload.slug);
+        .eq("id", proposed_payload.id);
       break;
-    case "new_ethnicity":
-      await supabase.from("ethnic_groups").insert(proposed_payload);
-      break;
-    case "update_ethnicity":
+    case "new_language_family":
       await supabase
-        .from("ethnic_groups")
-        .update(proposed_payload)
-        .eq("slug", proposed_payload.slug);
+        .from("afrik_familles_linguistiques")
+        .insert(proposed_payload);
       break;
-    case "new_presence":
-      await supabase.from("ethnic_group_presence").insert(proposed_payload);
-      break;
-    case "update_presence":
+    case "update_language_family":
       await supabase
-        .from("ethnic_group_presence")
+        .from("afrik_familles_linguistiques")
         .update(proposed_payload)
         .eq("id", proposed_payload.id);
       break;

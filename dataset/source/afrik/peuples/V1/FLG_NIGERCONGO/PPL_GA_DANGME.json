@@ -1,0 +1,70 @@
+{
+  "id": "PPL_GA_DANGME",
+  "nameMain": "Ga-Dangme",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Ga-Dangme",
+      "selfAppellation": "Gã / Ga (Ga), Dangme / Adaŋme (Dangme)",
+      "exonyms": ["Ga-Dangme (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bénoué-Congo (Ga-Dangme)",
+      "historicalRegion": "Ghana (Grande Accra, Dangme East)",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": [
+      "Ga (Ga Mashie, Ga de l'intérieur)",
+      "Dangme (Ada, Krobo, Shai)",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Peuples côtiers anciens de la Gold Coast. Parenté culturelle forte entre Ga et Dangme.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Présence historique à Accra avant la colonisation européenne. Influences croisées avec Akan et Ewe."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chieftaincy (Ga Mantse pour les Ga). Chefferies traditionnelles pour les Dangme. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Lignages familiaux. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Ga, Dangme",
+      "vehicularRole": "Le ga et le dangme sont parlés par la majorité des Ga-Dangme. L'anglais et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Festival Homowo (célèbre dans toute l'Afrique de l'Ouest)",
+      "source_1": "Festival Ngmayem (Dangme)",
+      "source_2": "Rituels de la jeune fille (Dipo) chez les Dangme",
+      "source_3": "Rites de pêche et de mer",
+      "source_4": "Cérémonies de mariage traditionnelles",
+      "Symboles": "Symboles liés à la pêche et à la mer, symboles culturels ga-dangme",
+      "Arts et musique": "",
+      "source_5": "Musique kpanlogo (Ga)",
+      "source_6": "Musiques Ga-Dangme",
+      "source_7": "Danse traditionnelle",
+      "source_8": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Croyances traditionnelles, syncrétisme avec le christianisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora ga-dangme dans les grandes villes ghanéennes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 2740000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements ghanéens, CIA World Factbook, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Ga language (gaa), Dangme language (ada)",
+      "CIA World Factbook – Ghana",
+      "Ghana Ga Heritage Archives",
+      "Ghana Coastal Heritage Archives",
+      "Recensements ghanéens"
+    ]
+  }
+}

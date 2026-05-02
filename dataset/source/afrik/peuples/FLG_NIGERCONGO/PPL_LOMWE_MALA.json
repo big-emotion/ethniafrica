@@ -1,0 +1,101 @@
+{
+  "id": "PPL_LOMWE_MALA",
+  "nameMain": "Lomwe (Malawi)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MWI"],
+  "content": {
+    "appellations": {
+      "mainName": "Lomwe (Malawi)",
+      "selfAppellation": "Alomwe / Lomwe",
+      "exonyms": [
+        "Nguru (terme colonial portugais et britannique)",
+        "Ngulu (variante orthographique)"
+      ],
+      "originOfExonyms": "Nguru fut employe par les administrateurs coloniaux britanniques au Nyassaland pour designer les migrants lomwe venus du Mozambique. Ce terme pejoratif est aujourd'hui abandonne au profit du nom auto-designatif Alomwe (Lomwe avec prefixe pluriel bantou).",
+      "whyProblematic": "La langue lomwe du Malawi (Chilomwe, ISO lon) n'est pas mutuellement intelligible avec l'Elomwe du Mozambique (ISO ngl) depuis au moins 2005 selon l'Ethnologue. Cette divergence linguistique reflete des siecles de separation geographique et d'acculturation au chichewa, langue nationale du Malawi. Beaucoup de Lomwe du Malawi ont le chichewa comme premiere langue, l'identite ethnique persistant meme avec le glissement linguistique.",
+      "contemporaryUsage": "Au Malawi, les Lomwe constituent le deuxieme groupe ethnique (18,9% de la population nationale selon le recensement 2018). Ils sont fortement implantes dans le sud du pays. Deux presidents malawites sont d'origine lomwe : Bingu wa Mutharika (2004-2012) et Peter Mutharika (2014-2020). L'identite lomwe au Malawi est robuste malgre l'acculturation linguistique.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone P, sous-groupe Makhuwa-Lomwe)",
+      "historicalRegion": "Shire Highlands et sud du Malawi (districts de Mulanje, Phalombe, Thyolo, Chiradzulu, Zomba, Liwonde)",
+      "currentCountries": ["MWI"]
+    },
+    "ethnicities": [
+      "Alomwe de Mulanje — etablis dans le district montagneux de Mulanje, frontalier du Mozambique",
+      "Alomwe de Phalombe — district de Phalombe, concentration lomwe la plus dense du Malawi",
+      "Alomwe de Thyolo — district de Thyolo, coeur des plantations de the du Shire Highlands",
+      "Alomwe de Chiradzulu — district de Chiradzulu, pres de Blantyre",
+      "Alomwe de Zomba — district de Zomba (ancienne capitale du Malawi)",
+      "Alomwe du lakeshore et de Liwonde — communautes dispersees dans le sud profond"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Lomwe du Malawi sont des descendants de migrants bantous originaires du Mozambique actuel (province de Zambezia principalement). Ils font partie du grand groupe Makhuwa-Lomwe qui peuple le nord du Mozambique. Leur presence au Malawi precede l'arrivee des missionnaires et des colons europeens : une premiere migration eut lieu avant la seconde moitie du 19e siecle. Ils appartiennent a la meme souche bantou (Zone P) que les Makua et partagent les memes lignages familiaux (mahimo).",
+      "formationPeriod": "L'identite lomwe distincte au Malawi s'est construite progressivement a partir de la seconde moitie du 19e siecle, avec l'arrivee massive de migrants du Mozambique. La grande vague migratoire des annees 1930 (fuyant les guerres tribales au Mozambique) consolida la communaute lomwe dans le sud malawite. Le contact prolonge avec les Chewa, Nyanja et Yao a produit un acculturation culturelle et linguistique progressive tout en maintenant une identite ethnique distincte.",
+      "migrationRoutes": [
+        "Migration principale depuis la Province de Zambezia (Mozambique) vers les Shire Highlands du Malawi, traversant la frontiere naturelle du massif de Mulanje",
+        "Grande vague des annees 1930 : fuite des guerres tribales au Mozambique et du travail force portugais (chibalo)",
+        "Migrations liees a la guerre civile mozambicaine (1977-1992) : de nombreux Lomwe se refugierent dans le sud du Malawi",
+        "Migrations saisonnieres et permanentes depuis le Malawi vers les plantations de the des Shire Highlands (19e-20e siecles)"
+      ],
+      "historicalSettlementZones": [
+        "District de Phalombe — concentration lomwe la plus dense du Malawi",
+        "District de Mulanje — region montagneuse frontiere Malawi-Mozambique",
+        "District de Thyolo — plantations de the du Shire Highlands",
+        "Districts de Chiradzulu, Zomba et Liwonde — sud du Malawi",
+        "Zones periurbaines de Blantyre — presences urbaines significatives"
+      ],
+      "unificationsOrDivisions": "Les Lomwe du Malawi ont maintenu une identite ethnique forte malgre le glissement linguistique vers le chichewa. L'initiation feminine (chinamwali) et masculine, les structures claniques matrilineaires, et les liens avec le Mozambique maintiennent la cohesion. La conscience ethnique lomwe s'est renforcee au 20e siecle, notamment dans le contexte politique malawite.",
+      "externalInfluences": "Colonisation britannique du Nyassaland (1891-1964) : les Lomwe migrants furent employes dans les plantations de the et de tabac du Shire Highlands, parfois dans des conditions proches du travail force. Mission UMCA a Magomero (1861) : evangelisation precoce des Lomwe. Independence du Malawi (1964) sous Hastings Kamuzu Banda : politique de 'malawisation' favorisant l'unite nationale et le chichewa comme vehiculaire. Guerre civile mozambicaine (1977-1992) : nouvelles vagues migratoires.",
+      "majorHistoricalEvents": "1861 : Mission UMCA a Magomero — premiers contacts missionnaires avec des groupes lomwe du sud Malawi. 19e siecle (avant 1880) : premieres migrations lomwe du Mozambique vers le Malawi. 1930s : grande vague migratoire fuyant les guerres tribales au Mozambique et le chibalo portugais. 1964 : independance du Malawi — les Lomwe integrent la nation malawite. 1968 : le chichewa devient langue officielle — acceleration de l'assimilation linguistique des Lomwe. 2004-2012 : presidence de Bingu wa Mutharika, d'origine lomwe. 2014-2020 : presidence de Peter Mutharika, frere de Bingu, d'origine lomwe. 2018 : recensement national — les Lomwe = 18,9% de la population nationale (3 302 634 personnes)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies hereditaires (chieftaincies) sous l'autorite d'un chef (mfumu) dont la legitimite repose sur la descendance matrilineaire. Le chef est assiste par un conseil d'anciens du lignage. La succession passe au neveu matrilineaire (fils de la soeur ainee du chef). Les chefferies lomwe au Malawi interagissent avec le systeme administratif officiel (Traditional Authorities) herite de la colonisation britannique.",
+      "clanOrganization": "Systeme matrilineaire (mbumba) : l'appartenance clanique, l'heritage et les droits fonciers se transmettent par la ligne maternelle. Les clans portent des noms specifiques et partagent des ancetres fondateurs. Les membres du clan ont des obligations mutuelles de solidarite (aide en cas de deuil, contribution aux ceremonies). La residence post-maritale est variable selon les contextes : virilocale dans certains districts, uxorilocale dans d'autres.",
+      "ageClassSystems": "Ceremonies d'initiation annuelles : groupes de meme age passent ensemble par les rites de transition. L'initiation feminine (chinamwali) est la plus elaboree : les jeunes filles recoivent l'enseignement des femmes agees sur leurs roles en tant qu'epouses et meres pendant plusieurs jours, avec chants, danses et conseils pratiques. L'initiation masculine peut inclure la circoncision selon les localites. Ces ceremonies renforcent la cohesion sociale et transmettent les valeurs culturelles.",
+      "roleOfLineages": "Le groupe matrilineaire (mbumba) est l'unite fondamentale de la societe : il determine l'heritage des biens, des terres et du statut. Le neveu matrilineaire (mlongo) est l'heritier privilegie. Les obligations rituelles envers les ancetres sont assumees collectivement par le lignage. La pratique du travail collectif sur les champs (kulima mzinda) renforce les liens de lignage et de voisinage.",
+      "religiousAuthority": "Les guerisseurs traditionnels (sing'anga ou nganga) pratiquent la divination et la medecine traditionnelle, servant d'intermediaires avec les esprits ancestraux. Le culte du createur Muluku persiste sous forme syncretique. Les eglises chretiennes (catholique, Eglise du Christ au Malawi — CCAP, presbyterienne, adventiste, pentecotiste) sont la reference religieuse dominante. L'islam est minoritaire chez les Lomwe du Malawi. Le syncretisme est repandu : les pratiques ancestrales coexistent avec la foi chretienne."
+    },
+    "languages": {
+      "mainLanguage": "Chilomwe / Lomwe, Malawi",
+      "isoCodes": ["lon"],
+      "dialects": [
+        "Chilomwe de Mulanje — variete proche des parlers de la province de Zambezia (Mozambique), en raison de la proximite geographique",
+        "Chilomwe de Phalombe — variete centrale du Malawi",
+        "Chilomwe de Thyolo-Chiradzulu — variete influencee par le chichewa voisin"
+      ],
+      "vehicularRole": "Le Chilomwe (lon) est la langue maternelle des Lomwe du Malawi, utilisee surtout par les anciens. La langue recede progressivement au profit du chichewa, langue nationale officielle du Malawi depuis 1968 et premier vehiculaire du sud malawite. La grande majorite des Lomwe du Malawi parlent le chichewa comme premiere ou deuxieme langue. L'anglais est la seconde langue officielle du Malawi, utilisee dans l'administration et l'enseignement superieur. Un NT en lomwe a ete traduit en 1931. Le Chilomwe n'est pas mutuellement intelligible avec l'Elomwe du Mozambique (ngl) selon l'Ethnologue (2005)."
+    },
+    "culture": {
+      "majorRites": "Chinamwali (initiation feminine) : ceremonie de plusieurs jours au cours de laquelle des femmes agees enseignent aux jeunes filles leurs responsabilites conjugales, domestiques et communautaires, avec chants, danses et discussions ; marque le passage a l'age adulte feminin. Initiation masculine : ceremonies de passage pouvant inclure la circoncision selon les localites et groupes. Chinkhoswe (engagement matrimonial) : ceremonie familiale marquant la formalisation des fiancailles apres le versement partiel de la dot (lobola). Funerailles : veillees collectives avec chants et danses ; rites d'adieu et commenmoration des ancetres. Ceremonies agricoles : invocations aux ancetres au debut de la saison des pluies pour de bonnes recoltes.",
+      "symbols": "La scarification faciale feminine (marques sur les joues) : symbole historique d'identite lomwe, de plus en plus rare. Les nattes et paniers tisses en roseau : expression de l'artisanat traditionnel. Les jarres en argile (nkhanda) : fabriquees par les femmes, symboles de la vie domestique et de la culture materielle. Les greniers a mais construits par les hommes : symbole de prevoyance et de prosperite.",
+      "artsAndMusic": "Danse Manganje : danse emblematique des Lomwe du Malawi, executee lors des celebrations, mariages et ceremonies d'initiation, accompagnee de tambours, hochets et battements de mains rythmiques. Chants de travail collectifs : lors des cultures communautaires (kulima mzinda), les participants scandent des chants qui rythment le travail. Artisanat : tressage de nattes (matete) et de paniers, poterie feminine, construction de greniers en roseau par les hommes. Instruments : tambours (ngoma), hochets, sifflets. Musique moderne : les Lomwe participent aux genres musicaux malawites (gospel, pop, reggae local). Litterature orale : contes (nthano), proverbes, devinettes transmis par les aieux.",
+      "spiritualities": "Croyance fondamentale en Muluku, dieu createur supreme, et en le pouvoir des esprits ancestraux. Les ancetres (mizimu) interviennent dans les affaires des vivants, pouvant causer maladie ou bonheur. La consultation du nganga (devin-guerisseur) permet d'identifier la cause spirituelle des malheurs. Le christianisme domine : environ 75% des Lomwe du Malawi s'identifient comme chretiens (catholiques, CCAP, presbyteriens, pentecotistes). La pratique religieuse est souvent syncretic : les ceremonies d'initiation, le respect des ancetres et les rites agricoles coexistent avec la pratique chretienne."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Lomwe du Malawi s'organisaient en petites chefferies locales dirigees par des mfumu. Ces chefferies n'atteignirent jamais la taille des royaumes Chewa ou Yao voisins. Sous la colonisation britannique (1891-1964), les chefferies traditionnelles furent integrees au systeme des Native Authorities. Les Lomwe migrants au Malawi furent parfois en competition avec les chefferies etablies des Chewa et Nyanja pour les droits fonciers dans les Shire Highlands.",
+      "relationsWithNeighbors": "Les Lomwe du Malawi ont cohabite avec les Chewa (groupe dominant), les Nyanja, les Yao et les Ngoni. L'aculturation au chichewa (langue chewa) temoigne d'une integration profonde dans le contexte culturel malawite meridional. Des tensions existerent parfois avec les proprietaires terriens europeens et les Tumbuka ou Ngoni plus au nord. Les Lomwe maintiennent des liens familiaux et culturels avec le Mozambique voisin.",
+      "conflictsOrAlliances": "Les Lomwe furent parfois employes comme main-d'oeuvre semi-servile dans les plantations du Shire Highlands par les colons britanniques, une situation generatrice de tensions sociales. La migration massive des annees 1930 (due aux guerres tribales mozambicaines) crea ponctuellement des frictions avec les populations locales malawites. Durant l'ere Banda (1964-1994), les Lomwe furent favorises dans certains secteurs de l'administration, creant des jalousies regionales.",
+      "diaspora": "La majorite des Lomwe du Malawi vit en milieu rural dans le sud du pays. Une diaspora interne existe dans les grandes villes malawites (Blantyre, Zomba, Lilongwe). Des travailleurs migrants lomwe sont presents en Afrique du Sud et au Zimbabwe. La diaspora internationale (Europe, Amerique du Nord) est limitee et s'integre dans la plus large diaspora malawite."
+    },
+    "demography": {
+      "totalPopulation": 3800000,
+      "referenceYear": 2025,
+      "source": "Recensement national du Malawi 2018 (National Statistics Office) : 3 302 634 Lomwe = 18,87% de la population totale de 17 506 022. Projection 2025 basee sur le taux de croissance demographique malawite de 2,9% annuel (2018-2025). Sources : NSO Malawi 2018 PHC, UNFPA Malawi, SIL Ethnologue (lon).",
+      "distributionByCountry": [
+        {
+          "country": "MWI",
+          "population": 3800000,
+          "note": "Principalement dans les districts de Phalombe (concentration la plus dense), Mulanje, Thyolo, Chiradzulu, Zomba et Liwonde. Presence urbaine a Blantyre. Donnees recensement 2018 (3 302 634) projetes a 2025 au taux de 2,9%."
+        }
+      ]
+    },
+    "sources": [
+      "National Statistics Office Malawi — 2018 Population and Housing Census Main Report. https://malawi.unfpa.org/sites/default/files/resource-pdf/2018%20Malawi%20Population%20and%20Housing%20Census%20Main%20Report%20(1).pdf",
+      "Wikipedia EN — 2018 census of Malawi. https://en.wikipedia.org/wiki/2018_census_of_Malawi",
+      "Orville Boyd Jenkins — The Lomwe of Mozambique and Malawi: A Cultural Profile. http://orvillejenkins.com/profiles/lomwe.html",
+      "SIL Ethnologue — Lomwe, Malawi (lon). https://www.ethnologue.com/language/lon/",
+      "Academia.edu — Materialism and Ethnicity: The Rise of Lomwe Ethnic Consciousness in Malawi, 1890-2010. https://www.academia.edu/11719522/",
+      "Britannica — Malawi, People. https://www.britannica.com/place/Malawi/People",
+      "Facebook / Kamba Cultural Center — Lomwe tribe origins and culture. https://www.facebook.com/groups/kambaculturalcenter/posts/10152471646389977/"
+    ]
+  }
+}

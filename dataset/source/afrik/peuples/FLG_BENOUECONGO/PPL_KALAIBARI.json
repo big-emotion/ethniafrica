@@ -1,0 +1,95 @@
+{
+  "id": "PPL_KALAIBARI",
+  "nameMain": "Kalabari",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Kalabari",
+      "selfAppellation": "Awome",
+      "exonyms": ["Eastern Ijaw", "New Calabar", "Elem Kalabari"],
+      "originOfExonyms": "Le nom Kalabari est derive de l'ancetre eponyme Perebo Kalabari, fils de Meinowei (Mein Owei). Les Portugais qui arriverent sur la cote ouest-africaine ont maintenu le nom Calabari, influence par la presence voisine des Efik a l'ancien Calabar. Les Britanniques prononcerent Calabar. Le terme Awome est le nom d'autodesignation traditionnel du peuple. Le nom Elem Kalabari signifie Nouveau port d'expedition en kalabari.",
+      "whyProblematic": "La ressemblance des noms Kalabari et Calabar (ville du Cross River State) peut preter a confusion. Les deux toponymes ont des origines distinctes : Calabar est un nom efik, tandis que Kalabari renvoie a l'ancetre eponyme du peuple ijaw de Rivers State. Certains membres du groupe Ijaw considerent les Kalabari comme un sous-groupe ijaw, tandis que d'autres les identifient comme un peuple distinct.",
+      "contemporaryUsage": "Le terme Kalabari est largement utilise dans la litterature academique et dans l'administration nigeriane. Le royaume traditionnel Kalabari (Elem Kalabari) est une entite reconnue dans l'Etat de Rivers. Les Kalabari revendiquent une identite distincte tout en reconnaissant leur appartenance au groupe ijaw elargi.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Ijaw oriental (Eastern Ijo)",
+      "historicalRegion": "Delta oriental du Niger — region de New Calabar (Rivers State, Nigeria)",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Kalabari proprement dits — groupe central etabli a Elem Kalabari (ancien New Calabar)",
+      "Branche Amachree — famille royale dynastique issue d'Amachree I (1669-1757)",
+      "Branche Barboy/Will Braide — faction qui s'installa a Bakana en 1881",
+      "Groupe de Buguma — etabli en 1884 lors des affrontements avec Bonny",
+      "Groupe d'Abonnema — etabli en 1882 lors des reconfigurations politiques",
+      "Communaute de Bakana — ville kalabari sur la New Calabar River",
+      "Groupe de Soku — localite kalabari dans le bas-delta"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kalabari sont un sous-groupe du peuple Ijaw (Izon), originellement connu sous le nom d'Awome. Selon la tradition orale, leur ancetre eponyme Perebo Kalabari etait le fils de Meinowei (Mein Owei), lui-meme chef d'une lignee de colons ijaw. Une tradition rapporte que les Kalabari vinrent initialement de l'ancien Calabar (occupe par les Efik), bien que les historiens considerent cela comme une invention du XIXe siecle. D'autres traditions evoquent une fondation par des colons ijo venus d'Amafo (rive ouest de la New Calabar River), rejoints par des migrants d'autres communautes.",
+      "formationPeriod": "XVIe - XVIIe siecle. Le royaume de Kalabari (Elem Kalabari) fut fonde autour du XVIe siecle. Les premiers Europeens qui etablirent des contacts commerciaux avec les Kalabari les trouverent deja organises en cites-Etats commercantes vers le XVe siecle. La dynastie Amachree fut fondee vers 1669-1757.",
+      "migrationRoutes": [
+        "Possible origine ancienne dans l'interieur du delta du Niger",
+        "Installation sur les iles et les rives de la New Calabar River (riviere du Nouveau Calabar)",
+        "Expansion vers Abonnema (1882), Buguma (1884) et autres etablissements fluviaux du delta"
+      ],
+      "historicalSettlementZones": [
+        "Elem Kalabari (ancien New Calabar) — capitale historique",
+        "Bakana — etablissement secondaire historique",
+        "Abonnema — site de la cour royale depuis 1882",
+        "Buguma — site actuel principal depuis 1884",
+        "Tombia, Soku, Kula, Ke et autres villes du bas-delta"
+      ],
+      "unificationsOrDivisions": "Une guerre civile divisa le royaume en deux factions rivales, l'une restee a la cite originelle (Elem Kalabari) et l'autre fondant de nouveaux etablissements. En 1882-1884, les conflits entre factions royales (Amachree contre Barboy/Will Braide) conduisirent a une dispersion geographique du peuple kalabari vers Abonnema puis Buguma. Un traite de paix avec le royaume de Bonny fut signe en 1873, mais ne fut pas respecte.",
+      "externalInfluences": "L'arrivee des Portugais au XVe siecle puis des Britanniques transformerent profondement l'economie kalabari, les integrant dans les reseaux du commerce atlantique (esclaves, huile de palme, ivoire). La presence de missionnaires chretiens britanniques a partir du milieu du XIXe siecle contribua aux tensions factionnelles internes. En 1884, la region fut incorporee dans l'Oil Rivers Protectorate britannique.",
+      "majorHistoricalEvents": "Roi Owerri Daba introduisit la traite des esclaves avant 1699. La dynasty Amachree domina a partir de circa 1770. En juillet 1863, guerre avec le royaume de Nembe (Brass), remportee par Nembe. En 1865, embuscade d'Okrika contre des pirogues kalabari avec intervention du consul britannique. En 1873, traite de paix avec Bonny (non respecte). En 1882-1884, crise politique interne et deplacements vers Abonnema et Buguma."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Cité-Etat gouvernee par un roi (Amanyanabo) et un conseil de chefs et princes royaux. Le gouvernement est constitue d'un conseil de chefs puissants et de princes royaux presidé par le roi. La famille royale Amachree (branche Princewill) dirige le royaume depuis le XVIIIe siecle. La succession est dynastique au sein de la maison Amachree.",
+      "clanOrganization": "Le royaume comprend environ 35 etablissements reconnus. L'autorite administrative est exercee par des chefs locaux (chiefs) dans chaque communaute, sous l'autorite supreme de l'Amanyanabo. Les Kalabari sont organises en maisons de trading (canoe houses) historiques, structures sociales et economiques caracteristiques du delta du Niger.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La lignee royale Amachree (famille Princewill) detient la chefferie supreme. Les autres grandes families ancestrales jouent un role dans le conseil royal. L'appartenance familiale determine les droits dans les maisons de commerce traditionnelles.",
+      "religiousAuthority": "Tradition religieuse ancestrale centree sur les divinites aquatiques. La deesse Awoamenakaso (Akaso), mere de toutes les divinites kalabari, etait la divinite principale, opposee a la guerre et au sang. Chaque etablissement possedait ses dieux et deesses locaux. Depuis le XIXe siecle, le christianisme est presente, avec la premiere mission chretienne etablie a Buguma."
+    },
+    "languages": {
+      "mainLanguage": "Kalabari (Ijaw oriental)",
+      "isoCodes": ["ijn"],
+      "dialects": [
+        "Kalabari proper — dialecte principal, sud de Port Harcourt",
+        "Ibani — parle au sud-est de Port Harcourt, LGA de Bonny et Opobo",
+        "Kirike — parle a Port Harcourt et les LGA d'Okrika et Ogu-Bolo"
+      ],
+      "vehicularRole": "La langue kalabari (ISO ijn) a joue le role de langue de commerce dans le delta oriental du Niger. Elle est consideree comme l'une des varietes Ijaw les mieux documentees et est frequemment citee comme exemple type dans la litterature linguistique sur les langues Ijaw. Le pidgin nigerian et l'anglais sont les langues vehiculaires modernes dans la region."
+    },
+    "culture": {
+      "majorRites": "Le mariage est une institution centrale avec trois formes reconnues : Iya (forme superieure et la plus valorisee, incluant le rite BIBIFE ou l'homme promet de nourrir son epouse), Igwa et Waribiobesime. La forme la moins couteuse est l'Ari Ibara emi (elle est avec moi). Les fetes liees aux mascarades (Ekine) sont des moments rituels essentiels. Des ceremonies de veneration des esprits aquatiques marquent le calendrier rituel communautaire.",
+      "symbols": "La pirogue de guerre et de commerce est un symbole central de la puissance et de l'identite kalabari. La deesse Awoamenakaso (Akaso) represente la spiritualite communautaire. Les maisons de commerce (canoe houses) etaient des symboles de statut socio-economique. Les Kalabari etaient connus de leurs voisins sous le nom d'Anglais en raison de leur comportement pacifique et civilise percu.",
+      "artsAndMusic": "Les mascarades sont un element culturel majeur : les Ekine (mascarades de l'eau) impliquent des representations complexes avec musique, danse et costumes. Les sculptures de masques sont particulierement elaborees. La cuisine traditionnelle comprend l'Onunu (igname pilee, plantain mur et huile de palme), le Tominafulo (poisson frais, crevettes, periwinkle et huitres), et le Odo'fulo (soupe traditionnelle de fruits de mer). Les Kalabari sont reconnus pour leur sens du commerce et leur organisation en societes de trading sophistiquees.",
+      "spiritualities": "Religion traditionnelle centree sur les esprits de l'eau (Owu), avec la deesse Awoamenakaso comme divinite supreme. Chaque etablissement avait ses dieux protecteurs locaux. Le culte des ancetres est fondamental. Depuis le XIXe siecle, le christianisme (protestantisme anglican principalement) a gagne de nombreux adeptes au sein de la communaute kalabari, creant parfois un syncretisme avec les pratiques traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume kalabari (Elem Kalabari) fut une puissante cite-Etat commercante du delta du Niger. Il devint un important entrepot de la traite atlantique des esclaves au XVIIe-XVIIIe siecle, commercant des esclaves du pays igbo contre des marchandises europeennes (tissus de coton, quincaillerie, armes, poudre a canon). A son apogee, le royaume incluait environ 35 etablissements. Au XIXe siecle, avec l'abolition de la traite des esclaves, les Kalabari se reconvertirent au commerce de l'huile de palme.",
+      "relationsWithNeighbors": "Les Kalabari entretinrent des relations commerciales et conflictuelles avec les royaumes voisins du delta : Nembe (Brass) a l'ouest — guerre en juillet 1863 (victoire de Nembe) ; royaume de Bonny au sud-est — rivalite commerciale intense, traite de paix en 1873 ; Okrika au nord-est — principal rival pour le controle des routes commerciales vers l'interieur, embuscades en 1865. Les Kalabari s'allierent avec Opobo (Jubo Jubogha/Ja-Ja) en 1869 contre Bonny.",
+      "conflictsOrAlliances": "Commerce avec les Europeens des le XVe siecle (refus de credit aux traders portugais, fait note par les chroniqueurs). Participation intensive a la traite atlantique des esclaves (XVIIe-XIXe siecles). Alliance avec Opobo (1869). Traite de paix avec Bonny (1873). Conflit ouvert avec Okrika (1865, intervention du consul britannique). Guerre avec Nembe (1863). Incorporation dans l'Oil Rivers Protectorate britannique en 1884.",
+      "diaspora": "La diaspora kalabari est presente dans d'autres parties du Nigeria, notamment a Lagos, Abuja et dans diverses villes petrolieres du Delta. Des communautes kalabari de moindre envergure existent au Ghana. La migration economique liee au developpement petrolier de la region de Port Harcourt a engendre une dispersion de la population kalabari."
+    },
+    "demography": {
+      "totalPopulation": 632000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (population en 2024 : 579,000 au Nigeria, 632,000 tous pays confondus). Wikipedia indique 448,000 (estimation anterieure). Projections 2025 estimees a environ 632,000 au Nigeria principalement, avec une petite communaute au Ghana. La langue kalabari avait 258,000 locuteurs en 2005 selon Ethnologue, mais la population ethnique est plus large.",
+      "distributionByCountry": [
+        { "country": "NGA", "population": 620000 },
+        { "country": "GHA", "population": 12000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kalabari tribe : https://en.wikipedia.org/wiki/Kalabari_tribe",
+      "Wikipedia EN — Kalabari Kingdom : https://en.wikipedia.org/wiki/Kalabari_Kingdom",
+      "Wikipedia EN — Kalabari language : https://en.wikipedia.org/wiki/Kalabari_language",
+      "Joshua Project — Kalabari in Nigeria (ijn) : https://joshuaproject.net/people_groups/12441/NI",
+      "Alagoa, E.J. (2009). A History of the Niger Delta. Port Harcourt: Onyoma Research Publications.",
+      "Ethnologue (SIL) — Kalabari (ijn) : https://www.ethnologue.com/language/ijn/",
+      "SwordShare Language Map — Kalabari ISO 639-3 ijn : https://map.swordshare.com/ijn"
+    ]
+  }
+}

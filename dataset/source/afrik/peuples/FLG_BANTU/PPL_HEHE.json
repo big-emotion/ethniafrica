@@ -1,0 +1,106 @@
+{
+  "id": "PPL_HEHE",
+  "nameMain": "Hehe",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Hehe",
+      "selfAppellation": "Wahehe",
+      "exonyms": [
+        "Wahehe (terme swahili collectif)",
+        "Uhehe (designation du territoire)"
+      ],
+      "originOfExonyms": "Wahehe est la forme swahili du collectif, utilise par les Europeens et les voisins. Le terme Hehe est celui que les Europeens ont adopte. L'origine du nom Hehe n'est pas clairement etablie.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Hehe est le terme courant en anglais. Wahehe est utilise en swahili et par la communaute elle-meme. Kihehe designe la langue.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou des hautes terres meridionales de Tanzanie (Guthrie G.62)",
+      "historicalRegion": "Uhehe - hauts plateaux du centre-sud de la Tanzanie, au sud de la riviere Great Ruaha (region d'Iringa)",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": [
+      "Hehe de la chefferie de Ng'uluhe (dynastle Muyinga, berceau de l'unification)",
+      "Hehe du district de Kilolo",
+      "Hehe du district d'Iringa Rural",
+      "Hehe du district de Mufindi",
+      "Hehe de l'ancienne chefferie de Utemikwila",
+      "Hehe de l'ancienne chefferie de Usangwa",
+      "Hehe de l'ancienne chefferie de Ungoni (assimiles)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Hehe habitaient les hauts plateaux du sud-ouest de la Tanzanie actuelle, au nord-est du lac Nyasa (lac Malawi). Ils forment un ensemble de peuples partageant une langue et une culture communes, sans ancetres communs etablis dans la region depuis plus de quatre generations avant la consolidation du XIXe siecle. A l'origine, population essentiellement agricole vivant en relative independance, avec de petits chefferies ne depassant pas 5 000 personnes.",
+      "formationPeriod": "Au milieu du XIXe siecle, Munyigumba, chef de la chefferie de Ng'uluhe de la dynstie Muyinga, entreprit l'unification par le mariage et la conquete. Il s'inspira de l'organisation militaire et des tactiques des Ngoni pour creer un proto-Etat. A sa mort vers 1878-1879, une guerre civile eclata. Son fils Mkwawa (Mukwavinyika Munyigumba Mwamuyinga, vers 1855-1898) reprit le pouvoir et devint le chef supreme des Wahehe vers 1880-1881.",
+      "migrationRoutes": [
+        "Hauts plateaux du sud-ouest tanzanien (region d'Iringa et de Mufindi)"
+      ],
+      "historicalSettlementZones": [
+        "Region d'Iringa (districts d'Iringa Rural, Kilolo, Mufindi)",
+        "Hautes terres meridionales de Tanzanie, au sud de la riviere Great Ruaha",
+        "Peripherie de la ville d'Iringa et de Kalenga"
+      ],
+      "unificationsOrDivisions": "Unification sous Munyigumba (vers 1850-1878) puis Mkwawa (1880-1898). Sous Mkwawa, les Hehe devinrent la puissance dominante du centre-sud et du sud-est de la Tanzanie. Apres la mort de Mkwawa en 1898, les Allemands diviserent le territoire. La chefferie fut restauree en 1926. En 1961, l'independance tanzanienne abolit les chefferies traditionnelles.",
+      "externalInfluences": "Influence decisive de l'organisation militaire des Ngoni (tactics, termes de commandement). Contacts avec les Wasangu, les Wagogo, les Wakaguru. Colonisation allemande (1891-1919) : epopee militaire unique, resistance de sept ans. Colonisation britannique (1919-1961) : restauration de la chefferie hehe en 1926 sous Sapi (descendant direct de Mkwawa). Presence missionnaire chretienne depuis la fin du XIXe siecle.",
+      "majorHistoricalEvents": "Victoire hehe a la bataille de Lugalo (17 aout 1891) : embuscade contre l'expedition du commissaire Emil von Zelewski, qui fut tue avec la majorite de ses troupes. Resistance de Mkwawa contre les Allemands (1891-1898). Prise de la forteresse de Kalenga par les Allemands (28 octobre 1894). Mort de Mkwawa par suicide (19 juillet 1898) pour eviter la capture. Le crane de Mkwawa fut envoye en Allemagne ; son retour a Kalenga fut stipule dans le Traite de Versailles (1919) et realise en 1954. Le Mkwawa Memorial Museum de Kalenga conserve le crane."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Etat centralise et intensement hierarchise sous les chefs Mkwawa et ses predecesseurs. L'autorite des rois hehe (sultans) reposait sur un charisme personnel et une organisation militaire. Sous colonisation, transformation en une hierarchie de chefs bureaucratiques (chefs, sous-chefs, collecteurs d'impots). La chefferie, abolie a l'independance, fut remplacee par des autorites locales elues et une structure de participation democratique nationale.",
+      "clanOrganization": "Les Hehe sont divises en clans patrilineaires exogames et disperses. La dynstie Muyinga (de la chefferie de Ng'uluhe) constitue le clan royal. Organisation en familles etendues et lignages patrilineaires.",
+      "ageClassSystems": "Classes d'age militaires : chaque homme adulte etait un guerrier. Les plus jeunes vivaient dans la capitale Iringa ou des guerriers semi-professionnels les formaient. Systeme de regiments d'age dissous avant l'independance.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite, la succession des chefferies et les alliances matrimoniales. La dynstie Muyinga exercait l'autorite supreme jusqu'a la colonisation.",
+      "religiousAuthority": "Religion centree sur le culte des ancetres (mzimu). Autorite des guerisseurs traditionnels et des anciens. Syncrétisme marque avec le christianisme (catholique et protestant) depuis la fin du XIXe siecle."
+    },
+    "languages": {
+      "mainLanguage": "Kihehe",
+      "isoCodes": ["heh"],
+      "dialects": [
+        "Kalenga (centre de la region, nord-ouest et ouest d'Iringa)",
+        "Koisamba (vallee du Rift au nord-ouest)",
+        "Sungwa (est d'Iringa, montagnes Udzungwa ; possede des sons ts et dz absents des autres dialectes)",
+        "Mufindi (sud d'Iringa)"
+      ],
+      "vehicularRole": "Le kihehe est la langue premiere des Hehe, locuteurs dans la region d'Iringa. Il est etroitement apparente au kibena, avec lequel il est generalement mutuellement intelligible. Il est regroupe linguistiquement avec le sangu, le kinga, le wanji et le kisi (Southern Tanzania Highlands Bantu, Guthrie G.62). Le swahili est la langue nationale et d'enseignement. La langue est consideree menacee car les jeunes hehe passent de plus en plus au swahili. Une traduction du Nouveau Testament existe en kihehe."
+    },
+    "culture": {
+      "majorRites": "Culte des ancetres (mzimu) : ceremonies de propitiation regulieres, offrandes aux esprits des ancetres pour protection et fertilite. Ceremonies de mariage traditionnelles (avec danse kudua : les femmes frappent le sol en tournant en cercle, parfois avec les genoux). Salutation kihehe formelle : 'Kamwene' / 'Kamwene', puis 'Mnogage' / 'Twinofu hela' (comment allez-vous / je vais bien). Les jeunes femmes flechirent legerement les genoux en saluant les anciens. Rituel de joie : kigere-gere (son de joie produit avec la bouche, mains levees lors des mariages). Rites funeraires avec ceremonies pour les ancetres.",
+      "symbols": "Le gourdin (arme traditionnelle symbolique du guerrier hehe). La lance (arme principale des guerriers de Mkwawa, preferee aux fusils dans les combats en plaine). Mkwawa comme figure heroique nationale (heros national de la Tanzanie). Le Memorial Museum de Kalenga (sanctuaire de la memoire hehe). La boma (forteresse palissadee de Kalenga, siege de la resistance contre les Allemands).",
+      "artsAndMusic": "Danse traditionnelle kudua : danse collective feminine lors des mariages et celebrations, avec frappes rythmees du sol en mouvement circulaire. Chants occasionnels : chants de mariage, de fianailles, de cuisines rituelles (kitchen parties), chants educatifs sur la sagesse et la vie, en kihehe. Plat traditionnel emblematique : makande (haricots et mais bouillis ensemble pendant une longue duree avec oignons et tomates). Poesie orale et traditions orales. Artisanat traditionnel. Musique ceremonielle aux tambours.",
+      "spiritualities": "Religion traditionnelle centree sur le culte des ancetres (mzimu). Croyances en des esprits pouvant proteger ou nuire, avec ceremonies de propitiation. Guerisseurs traditionnels. Syncrétisme avec le christianisme (catholique et protestant) tres repandu depuis la fin du XIXe siecle. Islam present dans une proportion mineure."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Proto-etat hehe fonde par Munyigumba (vers 1850-1878), consolide par Mkwawa (1880-1898). La forteresse de Kalenga (a l'ouest d'Iringa actuelle) etait le centre du pouvoir. Apres 1898, les Allemands diviserent le territoire : partie occidentale confiee au chef sangu Merere, partie orientale au frere de Mkwawa, Mpangile (execute en 1897). Restauration de la chefferie en 1926 sous Sapi. Sous administration britannique (1925-1961), la chefferie native hehe fut reconnue dans le cadre de la politique de 'indirect rule'.",
+      "relationsWithNeighbors": "Conflits et domination sur les Wasangu (qui se tournerent vers les Allemands), les Wagogo, les Wakaguru. Alliance de fait contre les colonisateurs allemands. Les Bena et Sangu firent alliance avec les Allemands contre les Hehe. Les Hehe ne se revolterent pas lors du soulèvement Maji Maji (1905-1907), signe de leur soumission apres 1898.",
+      "conflictsOrAlliances": "Victoire decisive a la bataille de Lugalo (17 aout 1891) contre l'expedition Zelewski. Resistance de guerrilla jusqu'en 1898. Politique de terre brûlee allemande dans l'Uhehe. Apres 1898, cooperation progressive avec les colonisateurs. Les Hehe servirent comme soldats dans l'armee coloniale britannique. Mkwawa est classe heros national tanzanien.",
+      "diaspora": "Diaspora hehe dans les grandes villes tanzaniennes, notamment Dar es Salaam. Presence en Ouganda (4 023 personnes recensees en 2014). Emigration limitee vers les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 1650000,
+      "referenceYear": 2025,
+      "source": "Peoplegroups.org estimation 2022 : 1 655 000. SIL Ethnologue (locuteurs kihehe : environ 810 000 selon Omniglot 2024 ; environ 1 210 000 selon find.bible). Population Iringa region recensement 1988 : environ 1 million. Projection 2025 basee sur taux de croissance tanzanien.",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 1645000,
+          "note": "Principalement dans la region d'Iringa (districts d'Iringa Rural, Kilolo, Mufindi)"
+        },
+        {
+          "country": "UGA",
+          "population": 5000,
+          "note": "Migrants economiques (4 023 recenses en 2014)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Hehe people : https://en.wikipedia.org/wiki/Hehe_people",
+      "Wikipedia EN - Hehe language : https://en.wikipedia.org/wiki/Hehe_language",
+      "Wikipedia EN - Chief Mkwawa : https://en.wikipedia.org/wiki/Chief_Mkwawa",
+      "Britannica - Hehe : https://www.britannica.com/topic/Hehe",
+      "Glottolog - Hehe : https://glottolog.org/resource/languoid/id/hehe1240",
+      "Omniglot - Hehe language : https://www.omniglot.com/writing/hehe.htm",
+      "Mkwawa Memorial : https://mkwawa.com/chiefmkwawa",
+      "101 Last Tribes - Hehe people : https://www.101lasttribes.com/tribes/hehe.html",
+      "Joshua Project - Hehe in Tanzania : https://joshuaproject.net/people_groups/12078",
+      "African Union Library - Mkwawa and the Hehe Wars : https://library.au.int/mkwawa-and-hehe-wars-2"
+    ]
+  }
+}

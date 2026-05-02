@@ -1,0 +1,79 @@
+{
+  "id": "PPL_ASHANTI",
+  "nameMain": "Ashanti",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Ashanti",
+      "selfAppellation": "Asantefo",
+      "exonyms": ["Asante", "Ashanti"],
+      "originOfExonyms": "Le terme Asante signifie en twi guerrier ou peuple de la guerre, nom adopte dans les annees 1670 lorsque le groupe passa du statut d'Etat tributaire a celui de royaume centralise. Ashanti est la forme anglaise du nom, popularisee par les chroniques coloniales britanniques.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les deux formes Asante et Ashanti sont utilisees simultanement au Ghana. Asante est prefere dans les contextes formels ghaneens et dans les textes academiques, tandis qu'Ashanti reste courant dans les medias internationaux et dans le nom officiel de la region administrative Ashanti Region.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan",
+      "historicalRegion": "Centre du Ghana actuel, foret humide du Kwabre",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Ashanti", "Asante"],
+    "origins": {
+      "ancientOrigins": "Les Ashanti sont le dernier grand groupe a emerge de la civilisation akan. Leurs origines remontent aux populations de la zone de transition foret-savane du Ghana meridional, issues du berceau akan de Bonoman. La tradition orale attribue la fondation de la confederation au chef Osei Kofi Tutu I et a son conseiller religieux Okomfo Anokye vers 1670.",
+      "formationPeriod": "Empire fonde vers 1670. La capitale Kumase fut etablie en 1680 par Osei Kofi Tutu I sur les conseils d'Okomfo Anokye. La victoire sur le Denkyira en 1701 a la bataille de Feyiase consolida l'hegemonie asante sur la region.",
+      "migrationRoutes": [
+        "Etablissement initial dans la zone forestiere du Kwabre, au nord de la cote du Ghana actuel",
+        "Expansion progressive vers le nord, l'est et l'ouest a partir de Kumase"
+      ],
+      "historicalSettlementZones": [
+        "Region Ashanti du Ghana (Kumase et environs)",
+        "Zone forestiere centrale du Ghana"
+      ],
+      "unificationsOrDivisions": "Osei Tutu I unifia plusieurs chefferies akan en une confederation centralisee en utilisant le Tabouret d'Or (Sika Dwa Kofi) comme symbole de l'ame collective de la nation. Cette confederation fut progressivement transformee en empire par ses successeurs, notamment Opoku Ware I qui etendit considerablement les frontieres.",
+      "externalInfluences": "Commerce avec les marchands musulmans d'Afrique du Nord ayant introduit des pratiques islamiques (port d'amulettes coraniques). Contacts avec les Europeens (Britanniques, Neerlandais, Danois) via le commerce de l'or et des esclaves a partir du XVIIe siecle. Guerres contre les Britanniques (guerres anglo-asante 1823-1900).",
+      "majorHistoricalEvents": "1670: Fondation de l'empire. 1701: Defaite du Denkyira a Feyiase. 1731-1742: Expansion sous Opoku Ware I. 1823-1896: Quatre guerres anglo-asante. 1900: Guerre du Tabouret d'Or. 1901: Defaite finale et protectorat britannique. 1935: Restauration du royaume autonome et du titre d'Asantehene. 1957: Integration dans le Ghana independant."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie centralisee et hierarchique dirigee par l'Asantehene (roi supreme). L'Asantehene est assiste de l'Asantehemaa (reine mere) qui a rang superieur a tout homologue masculin et joue un role de conseillere et de garante de la lignee royale. Le systeme inclut des chefs regionaux (ohene) places sous l'autorite du roi. L'Asantehene actuel est Otumfuo Nana Osei Tutu II (depuis 1999).",
+      "clanOrganization": "Societe matrilineaire organisee en clans (abusua). La descendance, l'heritage des biens, des titres et des offices se transmettent par la ligne maternelle. Le clan royal est le clan Oyoko, auquel appartient la famille d'Osei Tutu I.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires (abusua) determinent les droits fonciers, l'heritage, et l'acces aux charges politiques et religieuses. L'appartenance clanique prime sur toute autre affiliation pour les questions d'heritage.",
+      "religiousAuthority": "La religion akan traditionnelle et les pratiques ancestrales sont maintenues lors des grandes ceremonies royales. Le Tabouret d'Or (Sika Dwa Kofi) est considere comme le receptacle de l'ame collective de la nation asante. Les okomfo (pretres/pretresses) jouent un role de mediation avec le monde des esprits."
+    },
+    "languages": {
+      "mainLanguage": "Twi (dialecte asante)",
+      "isoCodes": ["twi"],
+      "dialects": ["Asante Twi", "Fante", "Akuapem Twi"],
+      "vehicularRole": "L'asante twi est la langue officielle de la region Ashanti et est utilise dans l'education primaire (niveaux 1 a 3). Il est parle par plus de 9 millions de locuteurs natifs et sert de lingua franca dans le sud du Ghana. Etudie au niveau universitaire (licence et master) au Ghana."
+    },
+    "culture": {
+      "majorRites": "Bragoro (rites de puberte pour les filles de 13 a 20 ans apres les premieres menstruations): marque l'entree dans l'age adulte et conditionne le mariage; la jeune fille est baignee par des ainesses (mmerewa), nourrie d'oeufs bouillis, de poisson et de beignets de plantain (eto), puis presentee en habit blanc (ntoma) et bijoux en or. Awade (mariage): la famille du garcon offre des biens a la famille de la fille. Festivals royaux: Adae (tous les 42 jours), Adae Kese (grand Adae), Akwasidae (dimanche d'Adae), Awukudae (mercredi d'Adae), festival des ignames asante.",
+      "symbols": "Tabouret d'Or (Sika Dwa Kofi): ame collective de la nation asante, symbole supreme du pouvoir royal. Symboles adinkra (originellement bono-akan): ideogrammes representant des concepts philosophiques et moraux. Ntoma blanc: vitalite, saintete, victoire, purete. Or et bijoux en or: royaute, richesse, continuite de la vie. Embleme national asante et sceptre royal.",
+      "artsAndMusic": "Kente: tissu tisse en bandes de soie ou coton aux motifs geometriques colores, symbole de statut royal. Bijouterie et orfèvrerie en or. Sculpture sur bois. Seperewa: harpe-luth a 10-14 cordes (instrument originellement bono-akan). Fontomfrom: tambours parlants royaux (originellement bono-akan). Musique et danse lors des ceremonies d'Adae. Cors de chasse en ivoire.",
+      "spiritualities": "Religion akan traditionnelle fondee sur la veneration des ancetres et la croyance en un dieu supreme (Nyame) et des divinites intermediaires (abosom). Pratiques en lente diminution mais revivifiees lors des grandes ceremonies et dans la diaspora mondiale. Christianisme (catholicisme romain et protestantisme) largement repandu. Islam present depuis les contacts avec l'Afrique du Nord, avec port d'amulettes coraniques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Empire Ashanti (1670-1901), l'une des puissances les plus importantes d'Afrique de l'Ouest precoloniale. Capitale: Kumase. Territoire a son apogee couvrant la majeure partie du Ghana actuel et des zones du Togo et de la Cote d'Ivoire. Royaume d'Asante (autonomie retrouvee en 1935 sous protection britannique, puis integration dans le Ghana independant en 1957).",
+      "relationsWithNeighbors": "Relations complexes avec les Fante (allies des Britanniques, rivals commerciaux sur la cote), les Bono (Etat anterieur dont l'empire s'inspira culturellement), le Denkyira (vaincu en 1701), l'Akyem, le Dagomba, le Gonja, le Brong. Commerce avec les marchands haoussa et musulmans du nord.",
+      "conflictsOrAlliances": "Defaite du Denkyira a la bataille de Feyiase (1701): victoire fondatrice de l'empire. Quatre guerres anglo-asante (1823-1831, 1863-1864, 1873-1874, 1895-1896). Guerre du Tabouret d'Or (1900): resistance menee par la reine Yaa Asantewa contre l'annexion britannique. Alliance avec diverses chefferies akan integrees dans la confederation.",
+      "diaspora": "Importante diaspora asante dans les pays europeens et nord-americains, notamment au Royaume-Uni et aux Etats-Unis. La culture asante (kente, adinkra, religion akan) est revivifiee dans les communautes de la diaspora africaine-americaine qui y retrouve des racines historiques liees a la traite des esclaves."
+    },
+    "demography": {
+      "totalPopulation": 10000000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Wikipedia EN (upwards of 10 million Asante people) et recensement Ghana 2021 (region Ashanti: 5,4 millions habitants, majorite akan-asante)",
+      "distributionByCountry": [
+        { "country": "GHA", "population": 9500000 },
+        { "country": "GBR", "population": 300000 },
+        { "country": "USA", "population": 200000 }
+      ]
+    },
+    "sources": [
+      "Asante people – Wikipedia EN (https://en.wikipedia.org/wiki/Ashanti_people)",
+      "Ashanti Empire – Wikipedia EN (https://en.wikipedia.org/wiki/Ashanti_Empire)",
+      "Twi language – Wikipedia EN (https://en.wikipedia.org/wiki/Twi_language)",
+      "Ghana Statistical Service, Population and Housing Census 2021 (https://census2021.statsghana.gov.gh)",
+      "Rattray, Robert Sutherland – Ashanti, Oxford University Press, 1923",
+      "McCaskie, T. C. – State and Society in Pre-colonial Asante, Cambridge University Press, 1995"
+    ]
+  }
+}

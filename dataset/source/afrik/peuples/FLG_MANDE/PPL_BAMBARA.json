@@ -1,0 +1,121 @@
+{
+  "id": "PPL_BAMBARA",
+  "nameMain": "Bambara",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["MLI", "BFA", "CIV", "GIN", "SEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Bambara",
+      "selfAppellation": "Bamana",
+      "exonyms": ["Bambara", "Banmana"],
+      "originOfExonyms": "Le terme Bambara est un exonyme d'origine incertaine, parfois attribue a l'arabe bambariyyun ou au mandingue banbara signifiant ceux qui refusent (l'islam). Selon l'Encyclopedie d'Afrique, Bambara signifiait infidele ou mecreant, designation donnee par les voisins musulmans au XVIIIe siecle. La forme endonymique Bamana est preferee par les locuteurs.",
+      "whyProblematic": "Le terme Bambara porte une connotation historiquement negative liee au refus de l'islam. Des le XVIIIe siecle, il etait employe comme terme depreciatif par les Mandingues islamises pour designer les Bamana restes animistes. Il a ete recupere et neutralise au fil du temps.",
+      "contemporaryUsage": "Bambara est le terme courant en francais et dans les medias internationaux. Bamana est prefere dans les contextes endogenes maliens. La langue est officiellement designee bamanankan (langage des Bamana) au Mali.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mande central, sous-groupe Mandingue (Manding)",
+      "historicalRegion": "Mali central et meridional (regions de Bamako, Segou, Koulikoro, Dioila, Sikasso)",
+      "currentCountries": ["MLI", "BFA", "CIV", "GIN", "SEN"]
+    },
+    "ethnicities": [
+      "Bamana de Segou : groupe central, heritiers directs du Royaume de Segou (XVIIIe-XIXe s.), region de Segou",
+      "Bamana de Bamako : groupe urbain dominant de la capitale malienne",
+      "Bamana de Koulikoro : groupe occidental, region de Koulikoro",
+      "Bamana de Dioila : groupe meridional, region de Dioila",
+      "Bamana de Sikasso : groupe oriental, region de Sikasso",
+      "Bamana de Niono : groupe septentrional, region de Niono et du delta interieur du Niger",
+      "Les Bamana forment un peuple relativement homogene avec des subdivisions territoriales organisees autour des anciennes cheffer ies et zones d'etablissement historique"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bamana sont issus de la grande famille mande dont la divergence est datee d'au moins 7 000 ans. Leurs ancetres sont associes aux sites protohistoriques de Tichitt (Mauritanie meridionale), ou des centres urbains emergerent des 2500 av. J.-C. Les Bamana sont etroitement lies aux Mandinka, fondateurs de l'Empire du Mali au XIIIe siecle, dont ils constituent historiquement une branche ayant conserve les pratiques religieuses animistes.",
+      "formationPeriod": "L'identite bamana distincte se consolida autour du XVIIe siecle, lors de la montee en puissance de clans guerriers dans la region de Segou apres l'effondrement de l'Empire songhai (1591). Le premier chef bamana de Segou, Kaladian Coulibaly, etablit un proto-empire vers 1650. L'ethnonymie Bambara se precisa avec la fondation de l'Empire de Segou par Biton Coulibaly (1712-1755).",
+      "migrationRoutes": [
+        "Migration depuis le Manden (region du Haut-Niger) vers le centre du Mali actuel",
+        "Expansion progressive vers le sud (Sikasso), l'ouest (Koulikoro) et le nord (Niono) au fil des conquetes de l'Empire de Segou"
+      ],
+      "historicalSettlementZones": [
+        "Vallee du Niger moyen (Segou, Bamako, Koulikoro)",
+        "Plaine du Bani (Dioila, San)",
+        "Delta interieur du Niger (Niono, Markala)",
+        "Sikasso et regions meridionales (contact avec les Senoufo)",
+        "Diaspora en France (Ile-de-France, Marseille, Lyon)"
+      ],
+      "unificationsOrDivisions": "L'Empire de Segou (1712-1861) unifia les clans bamana sous l'autorite des dynasties Coulibaly puis Diarra. A son apogee, l'empire controlab une grande partie du Mali actuel et imposait tribut a Tombouctou (1800). En 1861, al-Hajj Umar Tall conquit Segou et mit fin a l'empire. La resistance bamana se poursuivit jusqu'a la colonisation francaise (1893).",
+      "externalInfluences": "Empire du Mali (XIIIe-XVe s.) : cadre politique et culturel fondateur. Empire songhai (XVe-XVIe s.) : influence politique. Jihad d'al-Hajj Umar Tall (1852-1864) : islamisation forcee et fin de l'Empire de Segou. Colonisation francaise (1880-1960) : integration dans l'AOF, modification des structures sociales et economiques. Independance du Mali (1960) : emergence d'une identite nationale dans laquelle les Bamana jouent un role dominant.",
+      "majorHistoricalEvents": "Fondation de l'Empire de Segou par Biton Coulibaly (1712). Prise de Tombouctou par Mansong Diarra (1800). Jihad d'al-Hajj Umar Tall et chute de Segou (1861). Guerre contre les Toucouleurs et la France. Integration du Mali dans l'AOF (1890-1893). Independance du Mali (1960). Role central dans la politique malienne contemporaine (presidents Modibo Keita, Moussa Traore)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "L'Empire de Segou etait gouverne par un faama (chef militaire) assiste de l'elite guerriere des Jonton (esclaves-soldats). Au niveau villageois, les decisions etaient prises par un conseil de chefs de lignages (dutigi). Les associations d'age (ton) structuraient la vie sociale et economique, et servirent de base au systeme politique de Segou. Le chef du ton le plus puissant pouvait acceder au statut de faama.",
+      "clanOrganization": "Societe organisee en clans patrilineaires (jamu ou jamuw), chaque clan portant un patronyme emblematique (Coulibaly, Traore, Diarra, Keita, etc.). Les forgerons (numu) et les griots (jeli) constituent des castes endogames distinctes avec des fonctions sociales hereditaires.",
+      "ageClassSystems": "Systeme des associations d'age (ton) : groupes de pairs masculins organises par tranches d'age, responsables du travail collectif agricole, de la defense du village et des ceremonies initiatiques. Chaque tranche d'age franchit successivement les six societes initiatiques masculines (jow).",
+      "roleOfLineages": "Les lignages patrilineaires (kabila) determinent l'identite, les droits fonciers et les alliances matrimoniales. Le chef de lignage (dutigi) administre les biens collectifs et represente le clan dans les conseils villageois. Les ancetres (faraw) sont invoques lors de ceremonies pour leur benediction et protection.",
+      "religiousAuthority": "Avant l'islamisation, l'autorite religieuse etait detenue par les pretres des six societes initiatiques (jow) : Ntomo, Komo, Nama, Kono, Ciwara et Kore. Les forgeron (numu) et les chasseurs (donsoton) avaient egalement des fonctions rituelles importantes. Depuis l'islamisation partielle (XIXe-XXe s.), les imams et chefs religieux islamiques coexistent avec les traditions animistes."
+    },
+    "languages": {
+      "mainLanguage": "Bambara (bamanankan)",
+      "isoCodes": ["bam"],
+      "dialects": [
+        "Bambara de Segou (dialecte central, considere comme standard litteraire)",
+        "Bambara de Bamako (dialecte urbain, influence du francais et d'autres langues)",
+        "Bambara de Koulikoro (dialecte occidental)",
+        "Bambara de Dioila (dialecte meridional)",
+        "Bambara de Sikasso (dialecte oriental, influence senoufo)"
+      ],
+      "vehicularRole": "Langue nationale du Mali, parlee par environ 80 % de la population malienne comme langue premiere ou seconde. Lingua franca du commerce et des echanges dans l'ensemble du Mali et des pays voisins. Utilisee dans les medias (radio, television nationale), l'enseignement primaire et l'administration locale. Coexiste avec le francais, langue officielle."
+    },
+    "culture": {
+      "majorRites": "Six societes initiatiques masculines (jow) constituant le systeme educatif et spirituel bamana : (1) Ntomo : initiation des garcons non circoncis (6-13 ans), enseignement de la discipline et de la retenue ; (2) Komo : gardien de la tradition, arbitre des conflits, regule la vie agricole et les rites de passage ; (3) Kono : renforce la morale civique, utilise lors des rituels agricoles ; (4) Nama : protection contre les sorciers et les forces mauvaises ; (5) Ciwara : celebration du travail agricole, association au buffle celeste symbole de l'agriculture ; (6) Kore : derniere initiation des hommes murs, seuil de la sagesse ancestrale, mise en scene de la dualite humaine. Chaque transition dure sept ans. Rites de circoncision masculine et d'excision feminine (en declin). Ceremonies funebres (du) : rituel de separation et d'accompagnement du defunt.",
+      "symbols": "Le Ciwara (antilope stylisee en bois, souvent surmontee d'une criniere): symbole de l'agriculture et du travail, embleme choisi par Air Afrique. Les boliw (objets de pouvoir sacres en argile, bois et metaux) utilises par les societes Komo et Kono. Le n!yama (force vitale et spirituelle presente dans les etres vivants et les objets). Masques animaliers des societes initiatiques : hyene (Kore), antilope (Ciwara), oiseau (Kono).",
+      "artsAndMusic": "Sculpture sur bois : masques des societes initiatiques (Ntomo, Komo, Kono), statuettes rituelles, sceptres et objets de pouvoir. Balafon (xylophone a calebasses) et kora (harpe-luth a 21 cordes) : instruments emblematiques de la musique mande. Tradition des griots (jeliw) : poetes chanteurs transmettant l'histoire orale, les genealogies et les epicles heroiques (notamment l'Epopee de Soundiata). Danse Didadi et danses masquees des jow. Art de la parole (kuma) : oratoire, proverbes et devination.",
+      "spiritualities": "Systeme cosmogonique bamana : le dieu createur supreme est Bemba (ou Nyama-jigi), omniscient et omnipotent, ne recevant pas de culte direct. Le monde est regi par les forces nyama (energie spirituelle omnipresente) qui peuvent etre mobilisees pour le bien ou le mal. Les ancetres (faraw) jouent un role d'intermediaires actifs entre vivants et forces cosmiques. Depuis le XIXe siecle, l'islam sunnite (majoritairement de l'ecole malikite et influence soufi tijaniyya) s'est largement repandu, sans effacer completement les pratiques initiatiques et animistes traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Empire de Segou (1712-1861) : premier grand Etat bamana, fonde par Biton Coulibaly, atteignant son apogee sous Ngolo Diarra et Mansong Diarra. Connu pour son armee organisee, ses esclaves-soldats (Jonton) et sa resistance a l'islamisation. Royaume de Kaarta : Etat frere fonde par une branche bamana au nord du Senegal actuel. Ces empires etaient les seuls grands Etats ouest-africains de l'epoque a maintenir officiellement les religions traditionnelles face a l'islam.",
+      "relationsWithNeighbors": "Relations complexes avec les Peuls (Fula) : conflits avec l'Empire toucouleur d'al-Hajj Umar Tall, alliances circonstancielles avec les Masinanke. Echanges commerciaux avec les Dioula et les Soninke. Domination politique sur les Bozo (pecheurs du Niger) et les Somono (bateliers). Conflits avec les Senoufo au sud et les Mossi a l'est.",
+      "conflictsOrAlliances": "Resistance a l'islamisation : l'Empire de Segou fut le plus grand Etat animiste d'Afrique de l'Ouest au XIXe siecle. Guerre contre al-Hajj Umar Tall (1852-1861) et chute de Segou. Resistance a la penetration francaise (1880-1893). Sous la colonisation, les Bamana furent recrutes massivement dans les tirailleurs senegalais. Conflits intercommunautaires recents dans le centre du Mali (2012-2025) avec les groupes peuls et jihadistes.",
+      "diaspora": "Importante diaspora en France (region parisienne, Marseille, Lyon), en Cote d'Ivoire, au Senegal et dans les pays du Golfe. Les Bamana de la diaspora maintiennent des liens etroits avec leurs villages d'origine via les transferts de fonds et les associations culturelles. Deportation vers les Ameriques pendant la traite atlantique (XVIIIe-XIXe s.) : presence de descendants bamana au Bresil et dans les Antilles."
+    },
+    "demography": {
+      "totalPopulation": 7787000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue (bam, edition 2024), Joshua Project, PeopleGroups.org, recensements maliens et projections demographiques 2025",
+      "distributionByCountry": [
+        {
+          "country": "MLI",
+          "population": 6500000,
+          "note": "Concentration dans les regions de Bamako, Segou, Koulikoro, Sikasso, Mopti"
+        },
+        {
+          "country": "BFA",
+          "population": 500000,
+          "note": "Province du Houet et zones frontieres"
+        },
+        {
+          "country": "CIV",
+          "population": 400000,
+          "note": "Communautes migratoires dans les villes ivoiriennes"
+        },
+        {
+          "country": "GIN",
+          "population": 250000,
+          "note": "Haute-Guinee (Kankan, Siguiri)"
+        },
+        {
+          "country": "SEN",
+          "population": 137000,
+          "note": "Dakar et region du Tambacounda"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bambara people. https://en.wikipedia.org/wiki/Bambara_people",
+      "Wikipedia FR — Cosmogonie bambara. https://fr.wikipedia.org/wiki/Cosmogonie_bambara",
+      "African History Extra — The empire of Segu (2025). https://www.africanhistoryextra.com/p/the-empire-of-segu-1712-1861-ethnic",
+      "SIL Ethnologue — Bambara (bam). https://www.ethnologue.com/language/bam/",
+      "Joshua Project — Bambara in Mali. https://joshuaproject.net/people_groups/10530/ML",
+      "Marc Ladreit de Lacharriere Collection — N'tomo masks. https://collection-lacharriere.quaibranly.fr/en/ntomo-masks",
+      "Britannica — Umar Tal. https://www.britannica.com/biography/Umar-Tal",
+      "Zahan, Dominique. La Dialectique du verbe chez les Bambara. Paris : Mouton, 1963.",
+      "Dieterlen, Germaine. Essai sur la religion bambara. Paris : PUF, 1951."
+    ]
+  }
+}

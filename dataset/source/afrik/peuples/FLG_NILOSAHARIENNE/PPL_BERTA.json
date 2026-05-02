@@ -1,0 +1,112 @@
+{
+  "id": "PPL_BERTA",
+  "nameMain": "Berta",
+  "languageFamilyId": "FLG_NILOSAHARIENNE",
+  "currentCountries": ["ETH", "SDN"],
+  "content": {
+    "appellations": {
+      "mainName": "Berta",
+      "selfAppellation": "Berta",
+      "exonyms": [
+        "Bertha",
+        "Benishangul",
+        "Bela Shangul",
+        "Shangul",
+        "Funj",
+        "Banu",
+        "Barta",
+        "Beni Changoul",
+        "Beni Shangul",
+        "Burta",
+        "Changalla",
+        "Jebelawi",
+        "Wetawit",
+        "Watawit"
+      ],
+      "originOfExonyms": "Benishangul est la forme arabisee du nom original Bela Shangul (Rocher de Shangul), designant une pierre sacree dans le woreda de Menge en Ethiopie. Funj est le nom utilise au Soudan, faisant reference au sultanat de Sennar dont ils sont issus. Watawit signifie chauve-souris en arabe local, evoquant le melange entre Berta et commercants arabes par mariages. Changalla et Shanqella sont des termes collectifs parfois pejoratifs utilises pour designer des peuples nilotiques le long de la frontiere ethio-soudanaise.",
+      "whyProblematic": "Les termes Shanqella et Changalla sont consideres pejoratifs car utilises par les peuples des hautes terres pour designer les peuples des basses terres qu'ils asservissaient. Wetawit/Watawit peut etre ressenti comme stigmatisant pour les individus issus de mariages mixtes.",
+      "contemporaryUsage": "Le nom Berta est l'appellation officielle utilisee en Ethiopie. La region Benishangul-Gumuz tire son nom de Benishangul (Berta) et Gumuz. Au Soudan, le terme Funj reste d'usage courant.",
+      "linguisticFamily": "FLG_NILOSAHARIENNE",
+      "ethnoLinguisticGroup": "Nilo-saharien, branche Berta (isolat ou proche des langues komanes)",
+      "historicalRegion": "Benishangul-Gumuz (ouest de l'Ethiopie), region de Sennar (est du Soudan)",
+      "currentCountries": ["ETH", "SDN"]
+    },
+    "ethnicities": ["Berta", "Funj"],
+    "origins": {
+      "ancientOrigins": "Les origines des Berta se trouvent a Sennar, a l'est du Soudan, dans la region de l'ancien sultanat Funj de Sennar (1521-1804). Au Soudan, ils sont appeles Funj et sont decrits par l'historien soudanais Awn ash-Sharif Gasim comme la plus grande tribu Funj. Ils parlent une langue nilo-saharienne isolee, distincte des langues environnantes.",
+      "formationPeriod": "XVIe-XVIIe siecle : migration depuis Sennar vers l'ouest de l'Ethiopie. Installation dans la region qui deviendra la zone de Benishangul-Gumuz. La designation Bela Shangul (Rocher de Shangul) remonte a leur arrivee dans le woreda de Menge.",
+      "migrationRoutes": [
+        "Migration depuis Sennar (Soudan oriental) vers l'ouest de l'Ethiopie au XVIe ou XVIIe siecle",
+        "Installation initiale dans les collines et montagnes naturellement defensibles du woreda de Menge",
+        "Descente progressive dans les vallees apres le recul des razzias au XXe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Benishangul-Gumuz (ouest de l'Ethiopie, zone d'Assosa)",
+        "Region de Sennar (Soudan), bords du Nil Bleu",
+        "Montagnes et collines de la zone Menge (installation historique defensive)"
+      ],
+      "unificationsOrDivisions": "Au XIXe siecle, la region de Benishangul etait divisee en plusieurs chefferies (Fadasi, Komosha, Gizen, Asosa), la plus puissante dirigee par le cheikh Khoyele a la fin du XIXe siecle. L'incorporation de Benishangul a l'Ethiopie en 1896 a reorganise le pouvoir local. Le chef Khojali al-Hassan dirigeait le Benishangul ethiopien au debut du XXe siecle.",
+      "externalInfluences": "Influence arabe et islamique majeure en provenance du Soudan depuis le XVIIe siecle : beaucoup de Berta parlent couramment l'arabe soudanais et se sont islamises. Mariages mixtes avec des commercants arabes. Razzias d'esclaves venues du Soudan qui ont force les communautes a s'installer dans des zones defensives en hauteur.",
+      "majorHistoricalEvents": "Arrivee en Ethiopie marquee par des conflits territoriaux intenses. Construction de villages defendus sur collines et rochers avec maisons et greniers sur piliers (decrit par Ernst Marno en 1874). Incorporation a l'Ethiopie en 1896. Descente dans les vallees au XXe siecle apres la fin des razzias."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies (sheikhdoms) : Fadasi, Komosha, Gizen, Asosa au XIXe siecle. La chefferie la plus puissante etait celle du cheikh Khoyele. Apres l'integration a l'Ethiopie, la chefferie a ete reorganisee avec Khojali al-Hassan comme leader au debut du XXe siecle.",
+      "clanOrganization": "Organisation clanique presente mais non detaillee dans les sources disponibles. Les communautes sont organisees en groupes residentiels avec des champs collectifs entretenus par des groupes d'entraide (voisins aidant a construire une maison ou cultiver un champ, retribues en biere et nourriture).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lineages structurent les pratiques matrimoniales et agricoles. L'organisation sociale favorise la cooperation au sein du village pour les grandes taches agricoles et la construction.",
+      "religiousAuthority": "Specialistes rituels appeles neri, dots de pouvoirs de guerison et de divination, capables de traiter avec les esprits malefiques (shuman). Pratiques de fabrication de pluie. Ces specialistes coexistent avec l'islam majoritaire."
+    },
+    "languages": {
+      "mainLanguage": "Berta (Gebeto)",
+      "isoCodes": ["wti"],
+      "dialects": [
+        "Gebeto (Berta propre)",
+        "Fadashi",
+        "Undu",
+        "Bake",
+        "Dabuso",
+        "Mayu",
+        "Shuru"
+      ],
+      "vehicularRole": "Le berta est la langue maternelle du groupe. L'arabe soudanais est largement parle comme langue seconde apres des siecles d'influence soudanaise. L'amharique est utilise comme langue nationale en Ethiopie."
+    },
+    "culture": {
+      "majorRites": "Ceremonies de mariage : les hommes jouent de la musique avec de grandes trompettes en calebasse (waz'a) ; le marie arrive sur un ane portant un baton a lancer (bang) ; apres le mariage, l'epoux construit une hutte et vit dans le village de l'epouse pendant un an ou plus, cultivant les terres du beau-pere. Le divorce est accepte. Rites de fabrication de pluie. Rituel avec les neri (specialistes) pour proteger contre les esprits malefiques.",
+      "symbols": "Scarifications : trois lignes verticales sur chaque joue, symbolisant Dieu (chaque ligne interpretee comme la lettre initiale d'Allah en arabe, l'alif). Architecture historique distinctive : maisons et greniers eleves sur piliers en pierre dans les zones montagneuses.",
+      "artsAndMusic": "Musique aux ceremonies de mariage avec trompettes waz'a (grandes trompettes en calebasse jouees par les hommes). Ensemble musical Bol Negero, orchestre traditionnel des Berta de l'ouest de l'Ethiopie. Poterie feminine : fabrication de recipients ceramiques pour la cuisine (porridge) et la brasserie (awar et is'u pour la biere de sorgho).",
+      "spiritualities": "Majorite musulmane avec maintien de pratiques traditionnelles. Specialistes rituels neri (guerisseurs-devins). Croyance en esprits malefiques (shuman). Rites de fabrication de pluie. Pratiques synchretiques melant islam et traditions ancestrales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Sultanat de Sennar (1521-1804) dans le contexte duquel les Berta/Funj ont evolue comme la plus grande tribu Funj. Chefferies de Benishangul (Fadasi, Komosha, Gizen, Asosa) au XIXe siecle, integrees a l'Ethiopie en 1896.",
+      "relationsWithNeighbors": "Voisinage et relations avec les Gumuz (groupe ethnique proche dans la region Benishangul-Gumuz) et les Uduk (Soudan). Mariages mixtes avec des commercants arabes soudanais. Relations de dependance commerciale avec le Soudan via des routes caravanières (or, sel amole, esclaves, betail, ivoire, miel, cafe).",
+      "conflictsOrAlliances": "Subissaient des razzias d'esclaves venues du Soudan, ce qui a motive leur installation en hauteur. Tensions territoriales a l'arrivee en Ethiopie. Incorporation forcee a l'Ethiopie en 1896.",
+      "diaspora": "Presence des deux cotes de la frontiere ethio-soudanaise. Environ moitie de la population en Ethiopie (zone d'Assosa, Benishangul-Gumuz), moitie au Soudan (region de Sennar et du Nil Bleu)."
+    },
+    "demography": {
+      "totalPopulation": 430000,
+      "referenceYear": 2025,
+      "source": "Estimation 2025 basee sur recensement ethiopien 2007 (208 759) et estimation soudanaise (~180 000) avec projection de croissance. Joshua Project 2024.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 250000,
+          "note": "Principalement dans la zone d'Assosa, region Benishangul-Gumuz"
+        },
+        {
+          "country": "SDN",
+          "population": 180000,
+          "note": "Region de Sennar et bords du Nil Bleu, connus comme Funj"
+        }
+      ]
+    },
+    "sources": [
+      "Berta people – Wikipedia (https://en.wikipedia.org/wiki/Berta_people)",
+      "Berta language – Wikipedia (https://en.wikipedia.org/wiki/Berta_language)",
+      "Berta (peuple) – Wikipedia FR (https://fr.wikipedia.org/wiki/Berta_(peuple))",
+      "Berta Language (WTI) – Ethnologue, SIL International (https://www.ethnologue.com/language/wti/)",
+      "Berta, Benishangul in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/10793/ET)",
+      "Benishangul-Gumuz Region – Wikipedia (https://en.wikipedia.org/wiki/Benishangul-Gumuz_Region)",
+      "Timkehet Teffera, The Bol Negero ensemble of the Berta of West Ethiopia – Annales d'Ethiopie, 23, 2007-2008, p. 281-306"
+    ]
+  }
+}

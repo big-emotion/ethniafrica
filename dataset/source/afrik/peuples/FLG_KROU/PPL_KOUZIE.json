@@ -1,0 +1,75 @@
+{
+  "id": "PPL_KOUZIE",
+  "nameMain": "Kouzié",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Kouzié",
+      "selfAppellation": "Kouzié",
+      "exonyms": ["Kouzi", "Kouzié", "Kouyé"],
+      "originOfExonyms": "Exonyme issu de la dénomination coloniale française reprise par les administrateurs du cercle de Soubré ; le nom Kouzié désigne à la fois le peuple et la localité autour de Buyo.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Kouzié est utilisé par les locuteurs eux-mêmes et par les administrations ivoiriennes pour désigner ce sous-groupe nyabwa établi dans la région de la Nawa.",
+      "linguisticFamily": "FLG_KROU",
+      "ethnoLinguisticGroup": "Nyabwa (sous-groupe krou)",
+      "historicalRegion": "Région de la Nawa, département de Buyo, sud-ouest de la Côte d'Ivoire",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": ["Kouzié", "Nyabwa"],
+    "origins": {
+      "ancientOrigins": "Les Kouzié font partie du grand ensemble Nyabwa-Krou, dont les ancêtres auraient migré depuis l'actuel Liberia vers le XVe siècle. Selon la tradition orale, l'ancêtre Goze aurait fui une guerre au Liberia et trouvé refuge chez les gens de Kouézé, donnant naissance au rameau qui deviendra les Kouzié. Ils s'installèrent progressivement dans les vallées forestières entre le Sassandra et le Lobo.",
+      "formationPeriod": "XVe-XVIIe siecle, sous la pression des expansions mandingue et akan qui poussèrent les groupes krou vers leurs territoires actuels.",
+      "migrationRoutes": [
+        "Liberia actuel vers le nord-ouest de la Côte d'Ivoire",
+        "Vallées forestières du Sassandra vers la région de Buyo"
+      ],
+      "historicalSettlementZones": [
+        "Région de la Nawa (département de Buyo)",
+        "Canton Bakoué, sous-préfecture de Soubré"
+      ],
+      "unificationsOrDivisions": "Les Kouzié constituent l'un des quatre sous-groupes nyabwa, avec les Niaboua (Zoukougbeu-Ibogué), les Niédéboua (Dania) et les Zombo (Zaïbo). Ils partagent une parenté culturelle et linguistique avec ces groupes.",
+      "externalInfluences": "Présence coloniale française à partir du XIXe siècle avec la création des cercles administratifs ; influence du français comme langue officielle ; migration vers Buyo liée au barrage hydroélectrique de Buyo (mis en service 1980).",
+      "majorHistoricalEvents": "Construction du barrage de Kossou puis de celui de Buyo (années 1970-1980) qui a entraîné des déplacements de populations dans la région de la Nawa, affectant indirectement les villages kouzié."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation clanique sans État centralisé, fondée sur des patrilignages. Le pouvoir est exercé par les chefs de lignages (aînés), la séniorité conférant l'autorité. Les décisions collectives sont prises en assemblée de chefs de lignages.",
+      "clanOrganization": "Société organisée en patrilignages. La région de Buyo est formée du peuple Kouzié et des Bété de Lobé. Les lignages kouzié sont répartis entre des villages-campements issus de la segmentation progressive des clans fondateurs.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le patrilignage est l'unité sociale de base. Le chef de lignage représente l'autorité morale, arbitre les conflits et veille au respect des traditions et des interdits claniques.",
+      "religiousAuthority": "Autorité religieuse exercée par les anciens gardiens des cultes animistes (glé et cultes agraires), en parallèle d'une progression du christianisme et de l'islam depuis le XXe siècle."
+    },
+    "languages": {
+      "mainLanguage": "kouzié",
+      "isoCodes": ["nwb"],
+      "dialects": ["kouzié (parler nyabwa de la région de Buyo)"],
+      "vehicularRole": "Le kouzié est la langue maternelle et vernaculaire de la communauté kouzié. Le français est utilisé comme langue officielle et d'enseignement. Le kouzié est classé comme langue vulnérable selon les critères UNESCO : 3 249 locuteurs recensés (RGPH 2014), langue transmise de génération en génération mais sans statut officiel de protection. Le dioula sert de langue véhiculaire dans les échanges commerciaux régionaux."
+    },
+    "culture": {
+      "majorRites": "Pratiques animistes ancestrales comprenant des cultes agraires (prémices du riz), des rites de passage et des cérémonies liées aux forces de la nature. Le culte du glé (divinité protectrice et justicière) est partagé avec les autres groupes nyabwa et krou. Des interdits alimentaires liés aux clans structurent la vie sociale.",
+      "symbols": "Masques cérémoniels jouant un rôle central dans la vie religieuse et sociale, similaires aux traditions des peuples krou voisins (Niaboua, Guéré). Couleurs symboliques : noir (puissance), rouge (autorité).",
+      "artsAndMusic": "Traditions musicales et chorégraphiques partagées avec l'ensemble nyabwa-krou : chants responsorisaux, percussions (tambours), danses cérémonielles. La transmission orale (contes, proverbes, chants) est le vecteur principal de la mémoire collective.",
+      "spiritualities": "Animisme traditionnel fondé sur la croyance en des génies locaux et des forces de la nature. Le kouzié est porteur d'un patrimoine culturel immatériel transmis oralement. Les associations communautaires kouzié militent activement pour la promotion et la sauvegarde de la langue et de la culture."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume ou de chefferie centralisée. Organisation en chefferies de village et de lignages, conforme au modèle krou de société sans État.",
+      "relationsWithNeighbors": "Relations avec les Bété de Lobé (co-résidence dans la région de Buyo), les Nyabwa (Niaboua, Niédéboua, Zombo) avec qui ils partagent une origine commune, et les groupes migrants (Dioula, Mossi) attirés par l'agriculture de plantation.",
+      "conflictsOrAlliances": "Les Kouzié ont subi, comme d'autres populations krou, les pressions liées à la colonisation puis à l'installation de migrants agricoles dans la région de Buyo au XXe siècle. Tensions foncières signalées dans la région de la Nawa.",
+      "diaspora": "Présence de Kouzié à Abidjan et dans les grandes villes de Côte d'Ivoire, sans qu'une diaspora internationale significative soit documentée."
+    },
+    "demography": {
+      "totalPopulation": 4200,
+      "referenceYear": 2025,
+      "source": "Estimation 2025 basée sur le RGPH 2014 (3 429 locuteurs kouzié) et un taux de croissance annuel de 2,4% (Joshua Project / UN CIV 2025). Population autochtone concentrée dans le département de Buyo (région de la Nawa).",
+      "distributionByCountry": [{ "countryCode": "CIV", "population": 4200 }]
+    },
+    "sources": [
+      "Adou Coulibaly, Kouassi Emile, Le kouzié, langue kru de Cote d'Ivoire : vitalite linguistique et dynamisme communautaire – Revues Scientifiques Marocaines / Sciences du Langage et Communication, 2018 (https://revues.imist.ma/index.php/SLC/article/download/14714/8148/36851)",
+      "Description linguistique et sociolinguistique du kouzié – Thèse de doctorat, Université Félix Houphouët-Boigny, 2017 (https://www.academia.edu/40191884/DESCRIPTION_LINGUISTIQUE_ET_SOCIOLINGUISTIQUE_DU_KOUZIE)",
+      "Nyabwa (peuple) – Wikipédia, consulté 2025 (https://fr.wikipedia.org/wiki/Nyabwa_(peuple))",
+      "Région de la Nawa – Wikipédia, consulté 2025 (https://fr.wikipedia.org/wiki/R%C3%A9gion_de_la_Nawa)",
+      "Ethnologue – Nyabwa language (nwb), SIL International, 2024 (https://www.ethnologue.com/language/nwb/)",
+      "Aka Konin, L'art musical chez les Niaboua, un peuple krou du centre-ouest de la Cote d'Ivoire – Royal Museum for Central Africa, 2012 (https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/documents-social-sciences-humanities/niaboua.pdf)"
+    ]
+  }
+}

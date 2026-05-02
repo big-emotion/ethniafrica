@@ -1,0 +1,82 @@
+{
+  "id": "PPL_YOHOURE",
+  "nameMain": "Yohouré",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Yohouré",
+      "selfAppellation": "Yowle",
+      "exonyms": ["Yaouré", "Yaure", "Yohure", "Yohowré", "Youré", "Yaouré"],
+      "originOfExonyms": "Le nom Yaouré (ou Yohouré) serait une deformation de Yao Wale (ou Yao Ware), nom du patriarche fondateur qui mena le groupe dans sa region actuelle de Bouafle. Le terme aurait evolue en Yaourefouè (gens de Yao Wale) puis en Yaouré. Yowle est l'auto-denomination locale.",
+      "whyProblematic": "La classification linguistique du groupe est debattue : geographiquement et culturellement a la frontiere entre les mondes Mande (Gouro) et Akan (Baoulé), les Yaouré parlent soit une langue mande-sud (variante sud-est mande : yre), soit le baoulé selon leur zone d'habitation. Le Smithsonian les situe entre Baoulé (Akan) a l'est et Gouro/Gban (Mande sud) a l'ouest.",
+      "contemporaryUsage": "Yohouré est la forme courante en Cote d'Ivoire et dans les travaux artistiques et museologiques (musees europeens). Yaouré ou Yaure est prefere dans les publications academiques anglophones.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Mande sud (branche Guro-Tura) ; influence Akan (Baoulé)",
+      "historicalRegion": "Centre-Ouest de la Cote d'Ivoire, entre les Bandama Blanc et Bandama Rouge",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": ["Yohouré", "Yaouré"],
+    "origins": {
+      "ancientOrigins": "Les Yaouré sont une ethnie de Cote d'Ivoire appartenant au groupe Mande Sud, linguistiquement plus proches des Gouro que des Akan voisins. Leur installation dans la zone de Bouafle est liee a la migration du patriarche Yao Wale (ou Yao Ware) et de ses hommes venus de N'drannouan. Ils etaient a l'origine membres du groupe Allanguira. Certaines sources les rattachent aussi aux migrations akan liees a la montee en puissance du Royaume Asante au 18e siecle (Africa Direct, Smithsonian).",
+      "formationPeriod": "La migration fondatrice est difficile a dater precisement. Le groupe est associe a l'epoque de la reine Baoulé Abla Pokou (fuite des Akan de Ghana vers la Cote d'Ivoire, milieu du 18e siecle), mais leurs propres traditions fondatrices evoquent une arrivee independante sous la conduite du patriarche Yao Wale.",
+      "migrationRoutes": [
+        "N'drannouan vers la region de Bouafle (direction d'origine non precisement connue)",
+        "Deplacement motive par la recherche de l'or et de terres fertiles dans le centre-ouest ivoirien"
+      ],
+      "historicalSettlementZones": [
+        "Region de Bouafle (chef-lieu du canton Yaouré Sud : Bozi)",
+        "Proximite de Bouaké, Yamoussoukro, Sakassou",
+        "Territoire entre le Bandama Blanc et le Bandama Rouge (est de Bouafle)"
+      ],
+      "unificationsOrDivisions": "La region Yaouré est composee de deux cantons : Yaouré Nord (chef-lieu Begbessou, siege du tam-tam sacre symbolisant l'appartenance royale au patriarche) et Yaouré Sud (chef-lieu Bozi). On compte 33 villages yaouré. Les peuples anterieurement presents sur le territoire (Yonin-yonin) ont ete soumis par Yao Wale et qualifies de kangabonou (esclaves de la foret) par les Yaouré.",
+      "externalInfluences": "Influence artistique et culturelle profonde des Baoulé (voisins de l'est) et des Gouro (voisins de l'ouest). Les masques yaouré presentent des elements empruntes aux deux traditions. Selon Africa Direct et le Smithsonian, leur art et leur culture varient selon la proximite geographique avec l'un ou l'autre voisin.",
+      "majorHistoricalEvents": "Arrivee du patriarche Yao Wale et soumission des Yonin-yonin (epoque indeterminee). Apres la mort de la reine Abla Pokou, sa niece Akoua Boni monta sur le trone Baoulé et les Yaouré coexisterent avec les Baoulé dans la region centrale ivoirienne. Influence de l'administration coloniale française (attribution du nom Bouafle). Impact de la guerre civile ivoirienne (2002-2007) sur les pratiques rituelles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en deux cantons (Nord et Sud) avec des chefs de canton. L'autorite supreme traditionnelle se reclame de la descendance du patriarche Yao Wale. Les 33 villages ont chacun leur propre chef. Les femmes sont exclues des ceremonies masquees.",
+      "clanOrganization": "Le groupe se reclame de la lignee du patriarche Yao Wale, membre du groupe Allanguira. Les conquis et soumis (anciens Yonin-yonin) se reclament aussi du patriarche comme marque de leur integration. L'organisation clanique precise est peu documentee dans les sources accessibles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role dans la transmission des masques et des connaissances rituelles. Les masques ne peuvent etre vus par les femmes sous peine d'infertilite ou de mort. La gestion des esprits yu est l'apanage des hommes inities.",
+      "religiousAuthority": "Le systeme religieux yaouré est centre sur les esprits yu, forces surnaturelles a la fois benefiques et dangereuses. Les masques sont les emblemes de ces esprits. Les officiants masques jouent un role de mediateurs entre le monde des vivants et celui des esprits, notamment lors des deces."
+    },
+    "languages": {
+      "mainLanguage": "Yaouré (Yaure)",
+      "isoCodes": ["yre"],
+      "dialects": ["Klan", "Yaan", "Taan", "Yoo", "Bhoo"],
+      "vehicularRole": "Le yaouré (code ISO 639-3 : yre, Glottolog : yaou1238) est une langue mande-sud (branche guro-tura). Selon leur localisation geographique, les Yaouré parlent soit le yaouré mande, soit le baoulé (Akan). La population estimee a 52 000 personnes (2023). Le français est la langue officielle de Cote d'Ivoire et sert de vehiculaire interethnique."
+    },
+    "culture": {
+      "majorRites": "Ceremonie Je (ou Gye) : purifie le village apres un deces et accompagne l'ame du defunt vers son lieu de repos definitif ; masques peints danses par les hommes lors de cette ceremonie. Ceremonie Lo : funerailles avec masques couverts de pigments noirs, tres prisees des collectionneurs pour leur austere beaute. Ces masques ne peuvent etre vus par les femmes. Statuettes protectrices : petites sculptures a traits realistes portees ou placees dans les demeures pour proteger les individus en situations difficiles.",
+      "symbols": "Les masques yaouré sont le symbole artistique et spirituel le plus celebre du groupe. Traits caracteristiques : visage allonge avec bouche protubérante, yeux semi-circulaires perces sous un front eleve, coiffure elaboree avec tresses et souvent des cornes, et surtout une bordure dentelee caracteristique encadrant le masque. Certains masques representent des visages humains surmontes de cornes d'antilope. Le tam-tam sacre conserve a Begbessou symbolise l'appartenance royale au patriarche fondateur.",
+      "artsAndMusic": "Les masques yaouré (faces humaines supplementees d'attributs animaux) sont parmi les plus raffines de l'art d'Afrique de l'Ouest. Le Musee Barbier-Mueller de Geneve leur a consacre une exposition majeure (2019) avec un catalogue de reference redige par le Pr. Alain-Michel Boyer. Deux types principaux : masques noirs (ceremonies lo, funerailles) et masques peints (ceremonies je, purification). Statuettes anthropomorphes a proportions realistes. Decoration d'objets quotidiens par des representations figuratives. Tambours utilises pour annoncer la mort d'un chef.",
+      "spiritualities": "Le systeme spirituel est centre sur les yu : esprits surnaturels posedant des caracteristiques humaines et animales, vitaux pour la vie mais potentiellement destructeurs. La veneration de ces esprits est essentielle. Les masques sont leurs emblemes et leur permettent d'agir dans le monde humain. Les masques sont si sacres et donc dangereux qu'ils ne peuvent pas etre vus par les femmes, au risque de causer l'infertilite ou la mort. Les fonctions des masques ne sont pas rigidement fixees : ils peuvent apparaitre lors des ceremonies je ou lo selon les circonstances."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en deux cantons territoriaux (Nord et Sud) sans constitution d'un etat centralise au sens classique. Le role du patriarche Yao Wale est comparable a celui d'un fondateur dynastique. L'influence politique locale est exercee par les chefs de canton et de village.",
+      "relationsWithNeighbors": "Relations de voisinage intensives avec les Baoulé (est) et les Gouro (ouest), dont l'influence artistique est manifeste dans les masques yaouré. Selon le Smithsonian, les masques yaouré presentent des emprunts aux deux traditions : la barbe en zigzag et le hairline dentele typiques du Baoulé se retrouvent aussi dans les masques Gouro et Yaouré. Les Yaouré ont soumis les Yonin-yonin anterieurement presents sur leur territoire.",
+      "conflictsOrAlliances": "La soumission initiale des Yonin-yonin (population anterieure) par Yao Wale est l'evenement fondateur. L'integration progressive de ces populations soumises dans le groupe yaouré est documentee. La guerre civile ivoirienne (2002-2007) a perturbe les pratiques rituelles et diminue l'importance sociale des masques sous l'influence occidentale et des conflits.",
+      "diaspora": "Peu documentee. La population yaouré est tres localisee dans le centre-ouest de la Cote d'Ivoire (zone de Bouafle). Certains Yaouré se retrouvent dans les grandes villes ivoiriennes (Abidjan, Bouaké, Yamoussoukro)."
+    },
+    "demography": {
+      "totalPopulation": 52000,
+      "referenceYear": 2023,
+      "source": "101lasttribes.com (Peoplegroups.org, 2023) : 52 000. Art-masque-africain.com mentionne environ 15 000 personnes (estimation plus ancienne). L'estimation de 52 000 est retenue comme la plus recente.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 52000,
+          "note": "Centre-ouest, region de Bouafle, entre Bandama Blanc et Bandama Rouge (est de Bouafle). 33 villages."
+        }
+      ]
+    },
+    "sources": [
+      "Yaure people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/yaure.html)",
+      "Yaure language – Wikipedia (https://en.wikipedia.org/wiki/Yaure_language)",
+      "Yaure (Yaoure) People – Africa Direct, 2023 (https://africadirect.com/blogs/people/african-peoples-art-yaure)",
+      "Face mask (Yaure) – Smithsonian Institution, NMAFA (https://www.si.edu/object/nmafa_91-21-1)",
+      "Arts de la Cote d'Ivoire, autour des Yohoure – Musee Barbier-Mueller, 2019 (https://www.barbier-mueller.ch/2019/07/04/arts-de-la-cote-divoire-autour-des-yohoure/)",
+      "Yohoure mask – Art Masque Africain (https://www.art-masque-africain.com/en/fiche_yohoure-mask_4236)"
+    ]
+  }
+}

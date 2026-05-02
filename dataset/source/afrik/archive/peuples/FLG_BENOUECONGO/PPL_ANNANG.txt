@@ -1,0 +1,39 @@
+# Nom du peuple
+- Nom principal : Annang
+- Auto-appellation : Annang
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Cross-River / Ibibioïde) (FLG_BENOUECONGO)
+- Région : Nigeria (Akwa Ibom)
+- Identifiant : PPL_ANNANG
+
+# 1. Ethnies incluses
+- Annang centre
+- Annang sud
+- Villages associés aux Ibibio
+
+# 2. Origines
+- Branche ibibioïde ancienne.
+- Parenté avec Ibibio et Efik.
+
+# 3. Organisation
+- Conseil des anciens
+- Chefferies lignagères
+
+# 4. Langue
+- Annang
+- ISO : anw
+
+# 5. Culture
+- Danses rituelles
+- Bois sacrés
+- Masques ibibioïdes
+
+# 6. Histoire
+- Région de Calabar influente dans le commerce précolonial.
+
+# 7. Démographie
+- Population : 2 800 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (anw)
+- Akwa Ibom Cultural Reports

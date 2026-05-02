@@ -1,0 +1,70 @@
+{
+  "id": "FLG_GUR",
+  "nameFr": "Gur",
+  "nameEn": "Gur / Voltaic (terme ancien)",
+  "content": {
+    "decolonialHeader": {
+      "whyProblematic": " - « Voltaïque » est un terme purement géographique imposé par l'administration coloniale, sans consultation des communautés locales. Le terme nomme selon un référent géographique (fleuve Volta) sans tenir compte des auto-appellations endogènes.",
+      "selfAppellation": "Gur / Voltaic (terme ancien)",
+      "contemporaryUsage": "Bodomo publie *Handbook of the Mabia Languages of West Africa* (2020) en utilisant explicitement Mabia comme terme remplaçant « Central Gur » dans la classification moderne. Les locuteurs de Dagbani, Kusaal, Wala, Sisaali, etc. utilisent ou acceptent l'appellation Mabia.",
+      "historicalAppellations": "Gur / Voltaic (terme ancien)",
+      "originOfHistoricalTerm": " Le terme « Voltaic » (français : « voltaïque ») a été créé par des administrateurs et linguistes coloniaux français au milieu du XIXe siècle pour désigner les langues parlées autour des affluents du fleuve Volta (Burkina Faso, Ghana). Sigismund Wilhelm Koelle mentionne pour la première fois ces langues sous l'appellation « North-Eastern High Sudan » dans son ouvrage *Polyglotta Africana* (Koelle 1854), correspondant à ce qui sera plus tard classé comme Gur. Le terme « Gur » lui-même a été adopté par les linguistes du XXe siècle, notamment par John T. Bendor-Samuel dans les années 1970 et Gabriel Manessy dans ses travaux sur les langues Oti-Volta (Manessy 1975, 1979), pour remplacer « Voltaic » dans un souci de classification plus cohérente."
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Sahel et savanes d'Afrique de l'Ouest, du sud du Mali au nord du Ghana, du Niger occidental au nord du Bénin",
+      "numberOfLanguages": 70,
+      "totalSpeakers": 20000000
+    },
+    "associatedPeoples": [
+      {
+        "name": "Mossi",
+        "peopleId": "PPL_MOSSI"
+      },
+      {
+        "name": "Dagomba",
+        "peopleId": "PPL_DAGOMBA"
+      },
+      {
+        "name": "Gourmantché",
+        "peopleId": "PPL_GOURMANTCHE"
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " Langues tonales avec structure syntaxique SVO (Sujet-Verbe-Objet) dominante. Exemples concrets : en Mooré, *N na ya* « Je mange riz » (*N* = je, *na* = mange, *ya* = riz) ; en Dagbani, *Dagbo langa* « langue de Dagbo » montre l'ordre possesseur-possédé avec postpositions. Système de classes nominales marqué par des suffixes dans certaines langues Gur. Exemple : dans les langues Oti-Volta, les noms peuvent être marqués par des suffixes de classe (-li, -la) qui influencent l'accord des adjectifs et déterminants. Distinction aspectuelle perfectif/imperfectif dans les verbes. Exemple : en Gur (Dagbani), les formes verbales marquent l'aspect achevé vs non-achevé via des affixes ou alternances internes (contraste entre passé accompli vs non accompli).",
+      "phonologicalFeatures": " Tonalité : Systèmes tonals avec généralement 2 à 4 tons contrastifs. Les tons peuvent porter des distinctions grammaticales (ex : temps/aspect) ainsi que lexicales. Exemple en Dagaare : *dá* (ton haut) « pousser » vs *dà* (ton bas) « acheter ». Certaines langues comme Koromfé sont atonales (cas rare dans Gur). Nasales syllabiques : Usage de nasales comme syllabes à elles seules en position initiale. Exemples : en Dagbani, *nzugu* « ma tête » ; *mbia* « mon enfant » dont la syllabe initiale est nasale et porte ton. Consonnes : Inventaire consonantique riche comprenant stops (voisés/non-voisés), fricatives, nasales, labi-vélaires (kp, gb), et parfois implosives (/ɓ/, /ɗ/) dans certaines langues comme Dagaare. Harmonie vocalique : Dans certaines langues de la branche Grusi (ex : Dagaare, Waale), harmonie basée sur ATR (Advanced/Non-Advanced Tongue Root) avec longueur vocalique distinctive.",
+      "relationsWithNeighbors": " Emprunts lexicaux intenses avec les langues Mandé (Bambara, Malinké) dans les zones de contact, notamment dans le vocabulaire du commerce et de la végétation. Contacts avec les langues Kwa : les langues Gurunsi orientales (selon Kleinewillinghöfer 2002) montrent des influences des langues Kwa avec des emprunts lexicaux spécifiques. Emprunts entre langues Gur voisines : exemple, mots partagés comme *di* « manger » (Mooré *di*, Dagaare *di*) et *wɛ/kõwõ* « eau » (Mooré *wɛ*, Dagaare *kõwõ*) montrent des lexicalismes communs au sein du groupe.",
+      "keyInnovations": " - Développement des systèmes tonals grammaticaux utilisant les tons pour marquer des catégories grammaticales (nombre, aspect, classes nominales) en plus des distinctions lexicales"
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " Théories linguistiques : Sigismund Wilhelm Koelle (1854) mentionne pour la première fois des langues que l'on classerait aujourd'hui dans Gur sous l'appellation « North-Eastern High Sudan » dans *Polyglotta Africana*. Joseph H. Greenberg (1955, révisé 1963) dans *The Languages of Africa* classifie les langues alors appelées Voltaic comme branche du Niger-Congo. Gabriel Manessy (1975, 1979) contribue à la classification généalogique des langues voltaïques avec ses travaux sur le proto-central et les langues Oti-Volta. Tony Naden (1989) et Williamson & Blench (2000) affinent les subdivisions et rejettent l'inclusion des Sénoufo dans Gur. Ulrich Kleinewillinghöfer (2014) travaille sur les connexions Gur-Adamawa et les analyses typologiques modernes. Théories archéologiques : Les données archéologiques suggèrent une diffusion des pratiques agricoles (millet, sorgho) dans les savanes ouest-africaines, probablement il y a quelques millénaires (estimations variant entre ~3000-2000 av. J.-C. selon certains modèles), mais les preuves précises restent indirectes. Théories génétiques : L'étude « Contrasting maternal and paternal histories in the linguistic context of Burkina Faso » (de Filippo et al. 2011) montre que les populations parlant les langues Gur partagent des traits génétiques communs, notamment une forte fréquence de l'haplogroupe Y-chromosomique E-U175 (près de 67 % chez les Mossi), distincts des groupes Mandé voisins, indiquant une histoire de peuplement locale cohérente avec les frontières linguistiques.",
+      "emergencePeriod": " 1. Émergence historique de la FLG : Reconstruction linguistique suggère que le proto-Gur/Central Gur était déjà distinct il y a plusieurs millénaires, probablement au cours du 2e millénaire avant notre ère selon les modèles basés sur les technologies agricoles et migrations dans les savanes ouest-africaines. Certaines estimations archéologiques placent cette émergence dans le Néolithique ou Bronze ancien (~3000-2000 av. J.-C.), mais les données précises manquent et restent indirectes. 2. Date de classification académique : Le terme « Voltaic » apparaît au milieu du XIXe siècle (Koelle 1854). Joseph Greenberg (1955, révisé 1963) classe les langues Voltaic comme branche du Niger-Congo. Le terme « Gur » est adopté dans les années 1970 par Bendor-Samuel et Manessy pour remplacer « Voltaic ». Le terme « Mabia » est proposé par Bodomo en 2017 et institutionnalisé en 2020 avec la publication du *Handbook of the Mabia Languages of West Africa*.",
+      "diffusion": " Théorie 1 : Expansion depuis le bassin de la Volta (région actuelle Burkina Faso-nord Ghana-Togo) par migration graduelle vers le nord et l'est, avec sédentarisation dans la savane boisée. Expansion des royaumes mossi (XVe–XIXe siècles) comme facteur de diffusion, migrations agricoles dans la zone voltaïque. Théorie 2 : Gradient de contact linguistique avec les langues Mande, Gurunsi, Kwa influençant la diffusion culturelle et lexicale. Kleinewillinghöfer (2014) propose que beaucoup de langues considérées dans Adamawa pourraient être plus proches de Gur que d'autres Adamawa, suggérant un continuum linguistique (savannas languages) plutôt qu'une séparation nette. Théorie 3 : Influence environnementale (climatique, écologique) sur la diffusion, avec adaptation agriculture ↔ langues. Certaines études génétiques suggèrent des expansions démographiques liées au climat (Holocene Climate Optimum) favorisant la dispersion nord-sud-est des locuteurs de proto-Gur/proto-Mabia.",
+      "historicalBreaks": " - Pressions mandingues au Moyen Âge affectant les zones frontalières - Colonisation française et britannique avec imposition de frontières administratives - Rejet académique de l'inclusion des Sénoufo dans Gur (Naden 1989, Williamson & Blench 2000) - Déplacements liés à la désertification et aux conflits sahéliens récents",
+      "contactZones": " Géographie précise : Frontière Burkina Faso / Côte d'Ivoire pour les langues Sénoufo ; zones nord Ghana / sud Burkina pour langues Oti-Volta ; zones nord Togo / nord Bénin avec Grusi ; régions sahéliennes et de savane au nord de la forêt de Côte d'Ivoire, du Mali central, Burkina Faso, nord Ghana, nord Togo, nord Bénin, sud-désert du Niger. Villes/routes précises : Corridors de commerce entre Ouagadougou (Burkina Faso), Kumasi (Ghana) via zones frontalières ; marchés transfrontaliers Burkina-Ghana ; routes commerciales précoloniales du Sahel-Savane (trans-sahariennes, échanges avec Mossi, Gonja) facilitant emprunts et échanges linguistiques. Zones de métissage linguistique spécifiques : Langues Gurunsi en zones de contact Kwa (régions orientales de Ghana/Togo) selon Kleinewillinghöfer (2002) ; zones côtières nord-Côte d'Ivoire, nord-Bénin ; zones autour de la Volta blanche/Volta noire dans Ghana."
+    },
+    "distribution": {
+      "totalSpeakers": 20000000,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "Koelle, Sigismund Wilhelm (1854) – *Polyglotta Africana*. Londres : Church Missionary Society.",
+      "Greenberg, Joseph H. (1955, révisé 1963) – *The Languages of Africa*. Bloomington : Indiana University / La Haye : Mouton.",
+      "Manessy, Gabriel (1975, 1979) – *Les langues Oti-Volta* / *Contribution à la classification généalogique des langues voltaïques : le proto-central*. Paris : SELAF.",
+      "Bendor-Samuel, John T. (1989) – *The Niger-Congo Languages: A Classification and Description of Africa's Largest Language Family*. Lanham : University Press of America.",
+      "Naden, Tony (1989) – *Gur*. In: Bendor-Samuel (éd.), *The Niger-Congo Languages*. Lanham : University Press of America.",
+      "Williamson, Kay & Blench, Roger (2000) – *Niger-Congo*. In: Heine & Nurse (éds.), *African Languages: An Introduction*. Cambridge : Cambridge University Press.",
+      "Kleinewillinghöfer, Ulrich (2002) – *Kontaktphänomene im Südost-Gurunsi*. In: *Aktuelle Forschungen zu afrikanischen Sprachen*. Köln.",
+      "Kleinewillinghöfer, Ulrich (2014) – *Adamawa*. Séminaire, Humboldt-Universität Berlin.",
+      "de Filippo, Cesare ; Altheide, I.; Caron, M.; et al. (2011) – \"Contrasting maternal and paternal histories in the linguistic context of Burkina Faso\", *Molecular Biology and Evolution* vol. 29(4), pp. 1213-1224. Oxford University Press.",
+      "Bodomo, Adams (2017) – \"Mabia: Its Etymological Genesis, Geographical Spread, and some Salient Genetic Features\". Présentation académique.",
+      "Bodomo, Adams ; Abubakari, Hasiyatu ; Issah, Samuel Alhassan (2020) – *Handbook of the Mabia Languages of West Africa*. Glienicke : Galda Verlag.",
+      "Blench, Roger – *Gur Languages Overview*. URL : Glottolog / African Language Resources.",
+      "Glottolog – Oti-Volta / Gur branch. Max Planck Institute for Evolutionary Anthropology.",
+      "SIL Ethnologue – Gur languages. Dallas : SIL International.",
+      "UNESCO – Atlas des langues africaines.",
+      "Britannica Editors (2024-2025) – \"Gur languages\". *Encyclopædia Britannica*. Chicago : Encyclopædia Britannica, Inc.",
+      "LanguagesGulper – Gur family overview. URL : languagesgulper.com/eng/Gur.html"
+    ]
+  }
+}

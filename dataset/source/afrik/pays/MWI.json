@@ -1,0 +1,219 @@
+{
+  "id": "MWI",
+  "nameFr": "République du Malawi (Republic of Malawi, Dziko la Malaŵi)",
+  "nameOfficial": "République du Malawi (Republic of Malawi, Dziko la Malaŵi)",
+  "etymology": "Le nom \"Malawi\" vient du mot \"Maravi\", nom d'un ancien royaume qui dominait la région aux XVIe-XVIIe siècles. \"Maravi\" signifie \"flammes\" ou \"reflets\" en langue chewa, en référence aux reflets du soleil sur le lac Malawi. Le nom a été officialisé lors de l'indépendance en 1964.",
+  "nameOriginActor": "Le nom \"Malawi\" vient de l'ancien royaume de Maravi. Le nom \"Nyasaland\" (pays du Nyasa, du nom du lac) était utilisé pendant la colonisation britannique. Le nom \"Malawi\" a été officialisé à l'indépendance en 1964 par le président Hastings Kamuzu Banda.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel du Malawi était peuplé de diverses sociétés bantoues sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Migrations bantoues vers la région. Développement de chefferies et royaumes locaux. Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "XVIe-XVIIe siècles : Royaume de Maravi, puissant royaume qui dominait la région. Le royaume était centré sur le lac Malawi (lac Nyasa). Développement des chefferies Chewa, Tumbuka, Yao, Lomwe, Nyanja, Sena, Ngoni, Tonga. Commerce régional et avec les Portugais. Les Européens utilisaient le terme \"Nyasaland\" (pays du Nyasa) pour désigner la région.",
+      "colonization": "1891-1964 : Protectorat britannique du Nyasaland (Nyasaland Protectorate). Les Britanniques ont établi un protectorat sur le Nyasaland en 1891. Le territoire était administré comme un protectorat britannique jusqu'à l'indépendance en 1964.",
+      "contemporary": "1964 : Indépendance du Nyasaland (6 juillet 1964), proclamation de la République du Malawi. Le nom \"Malawi\" a été officialisé à l'indépendance pour remplacer \"Nyasaland\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume de Maravi",
+        "period": "XVIe siècle - XVIIe siècle",
+        "dominantPeoples": ["Chewa", "autres peuples bantous"],
+        "politicalCenters": ["Centres autour du lac Malawi"],
+        "historicalRole": "Royaume de Maravi puissant, système matrilinéaire, développement du commerce régional, relations avec les Portugais. Le royaume était centré sur le lac Malawi (lac Nyasa). Fondation du royaume par les Chewa."
+      },
+      {
+        "name": "Chefferies Chewa",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Chewa"],
+        "politicalCenters": ["Chefferies traditionnelles (centre du Malawi)"],
+        "historicalRole": "Chefferies Chewa, système matrilinéaire, traditions culturelles (masques Gule Wamkulu, rituel initiatique majeur), agriculture (maïs). Héritiers du royaume de Maravi."
+      },
+      {
+        "name": "Chefferies Tumbuka",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Tumbuka"],
+        "politicalCenters": ["Chefferies traditionnelles (nord du Malawi)"],
+        "historicalRole": "Chefferies Tumbuka, traditions culturelles, structures lignagères patrilinéaires."
+      },
+      {
+        "name": "Chefferies Yao",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Yao"],
+        "politicalCenters": ["Chefferies traditionnelles (sud du Malawi)"],
+        "historicalRole": "Chefferies Yao, traditions islamiques, commerce régional, résistance à la colonisation britannique."
+      },
+      {
+        "name": "Protectorat britannique du Nyasaland",
+        "period": "1891 - 1964",
+        "dominantPeoples": [
+          "Tous les peuples malawiens sous protectorat britannique"
+        ],
+        "politicalCenters": ["Zomba (capitale coloniale)"],
+        "historicalRole": "Protectorat britannique, développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance des Yao). Développement du mouvement indépendantiste au XXe siècle, leadership de Hastings Kamuzu Banda."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Chewa",
+        "selfAppellation": "Achewa",
+        "exonyms": [
+          "Chewa (terme utilisé par les Européens)",
+          "Cewa (variante coloniale)"
+        ],
+        "peopleId": "PPL_CHEWA",
+        "mainRegion": "Centre du Malawi",
+        "languages": ["Chewa / Chichewa (nya", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Achewa\" est l'auto-appellation. \"Chewa\" est l'exonyme le plus courant. \"Cewa\" est une variante coloniale moins utilisée. Pas de terme péjoratif connu. Héritiers du royaume de Maravi."
+      },
+      {
+        "name": "Tumbuka",
+        "selfAppellation": "Tumbuka",
+        "exonyms": ["Tumbuka (terme utilisé par les Européens)"],
+        "peopleId": "PPL_TUMBUKA",
+        "mainRegion": "Nord du Malawi",
+        "languages": ["Tumbuka (tum", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Tumbuka\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Lomwe",
+        "selfAppellation": "Lomwe",
+        "exonyms": ["Lomwe (terme utilisé par les Européens)"],
+        "peopleId": "PPL_LOMWE",
+        "mainRegion": "Sud-est du Malawi",
+        "languages": ["Lomwe (lon", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Lomwe\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Yao",
+        "selfAppellation": "Yao",
+        "exonyms": ["Yao (terme utilisé par les Européens)"],
+        "peopleId": "PPL_YAO_MALAWI",
+        "mainRegion": "Sud du Malawi",
+        "languages": ["Yao (yao", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Yao\" est l'auto-appellation. Pas de terme péjoratif connu. Traditions islamiques, commerce régional."
+      },
+      {
+        "name": "Nyanja",
+        "selfAppellation": "Nyanja",
+        "exonyms": ["Nyanja (terme utilisé par les Européens)"],
+        "peopleId": "PPL_NYANJA",
+        "mainRegion": "Centre et sud du Malawi",
+        "languages": ["Nyanja (ny", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Nyanja\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Sena",
+        "selfAppellation": "Sena",
+        "exonyms": ["Sena (terme utilisé par les Européens)"],
+        "peopleId": "PPL_SENA",
+        "mainRegion": "Sud du Malawi",
+        "languages": ["Sena (seh", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Sena\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Ngoni",
+        "selfAppellation": "Ngoni",
+        "exonyms": ["Ngoni (terme utilisé par les Européens)"],
+        "peopleId": "PPL_NGONI",
+        "mainRegion": "Centre et nord du Malawi",
+        "languages": ["Ngoni (ngo", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Ngoni\" est l'auto-appellation. Pas de terme péjoratif connu. Migrants zoulous du XIXe siècle."
+      },
+      {
+        "name": "Tonga",
+        "selfAppellation": "Tonga",
+        "exonyms": ["Tonga (terme utilisé par les Européens)"],
+        "peopleId": "PPL_TONGA",
+        "mainRegion": "Nord du Malawi (lac Malawi)",
+        "languages": ["Tonga (toi", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Tonga\" est l'auto-appellation. Pas de terme péjoratif connu. Peuple du lac Malawi."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Diverses régions du Malawi",
+        "languages": ["Langues diverses", "anglais"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Anglais",
+          "isoCode": "eng",
+          "isPrimary": true
+        },
+        {
+          "name": "Chewa / Chichewa"
+        },
+        {
+          "name": "Tumbuka",
+          "isoCode": "tum"
+        },
+        {
+          "name": "Lomwe",
+          "isoCode": "lon"
+        },
+        {
+          "name": "Yao",
+          "isoCode": "yao"
+        },
+        {
+          "name": "Nyanja"
+        },
+        {
+          "name": "Sena",
+          "isoCode": "seh"
+        },
+        {
+          "name": "Ngoni",
+          "isoCode": "ngo"
+        },
+        {
+          "name": "Tonga",
+          "isoCode": "toi"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique du Malawi. Traditions bantoues : masques Gule Wamkulu (Chewa, rituel initiatique majeur), musiques traditionnelles, danses traditionnelles. Traditions matrilinéaires (Chewa, système matrilinéaire). Traditions patrilinéaires (Tumbuka, autres peuples). Traditions islamiques (Yao). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Le lac Malawi (lac Nyasa) est un élément central de la culture et de l'économie malawienne.",
+      "dominantReligions": "Christianisme (protestantisme majoritaire, catholicisme, églises indépendantes africaines), islam (minorité, Yao), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques, rituels)",
+      "lifestyles": "Agriculture (maïs, tabac, thé, cultures vivrières), pêche (lac Malawi, importante source de protéines), élevage (bovins, caprins), commerce et activités urbaines (zones urbaines, Lilongwe, Blantyre). Urbanisation modérée. Économie basée sur l'agriculture (maïs, tabac, thé, principales exportations), la pêche, et les services. Le Malawi est l'un des pays les plus pauvres d'Afrique.",
+      "socialOrganization": "Organisation en royaumes historiques (royaume de Maravi), chefferies traditionnelles (Chewa, Tumbuka, Yao, Lomwe, Nyanja, Sena, Ngoni, Tonga), structures claniques matrilinéaires (Chewa) et patrilinéaires (Tumbuka, autres peuples). Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte. Système matrilinéaire (Chewa).",
+      "regionalRelations": "Relations historiques avec le Mozambique (commerce, migrations, peuples transfrontaliers, frontière), la Zambie (Tumbuka, commerce, frontière), la Tanzanie (commerce, frontière). Intégration dans la SADC (Communauté de développement d'Afrique australe). Relations commerciales et culturelles transfrontalières. Le lac Malawi est partagé avec le Mozambique et la Tanzanie."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par les peuples bantous. Migrations bantoues vers la région. Développement de chefferies locales.",
+      "middleAges": "Migrations bantoues continues. Développement de structures politiques locales. Contacts avec les peuples voisins.",
+      "precolonial": "XVIe-XVIIe siècles : Royaume de Maravi, puissant royaume qui dominait la région, centré sur le lac Malawi. Consolidation des chefferies Chewa, Tumbuka, Yao, Lomwe, Nyanja, Sena, Ngoni, Tonga. Commerce régional et avec les Portugais. XIXe siècle : Migrations Ngoni (migrants zoulous). Développement des traditions culturelles.",
+      "colonization": "1891 : Établissement du protectorat britannique du Nyasaland. Période coloniale britannique (1891-1964), développement de l'administration coloniale, résistance des peuples autochtones (notamment résistance des Yao). XXe siècle : Développement du mouvement indépendantiste, leadership de Hastings Kamuzu Banda.",
+      "independenceStruggle": "1950s-1964 : Mouvement pour l'indépendance mené par Hastings Kamuzu Banda et le Parti du congrès du Malawi (MCP). 1964 : Indépendance du Nyasaland (6 juillet 1964), proclamation de la République du Malawi. Hastings Kamuzu Banda devient premier président.",
+      "postIndependence": "1964-1994 : Présidence de Hastings Kamuzu Banda, régime autoritaire, parti unique. 1994-présent : Transition démocratique, élections multipartites, présidence de Bakili Muluzi (1994-2004), Bingu wa Mutharika (2004-2012), Joyce Banda (2012-2014), Peter Mutharika (2014-2020), Lazarus Chakwera (depuis 2020). Défis : pauvreté, développement économique, VIH/sida, sécurité alimentaire. Le Malawi est l'un des pays les plus pauvres d'Afrique."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Malawi",
+      "CIA World Factbook – Malawi",
+      "ONU / UNFPA – Démographie Malawi 2025",
+      "Recensements malawiens",
+      "Études anthropologiques sur les peuples du Malawi",
+      "Études historiques sur le royaume de Maravi"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Chewa",
+          "population": 6500000,
+          "percentageInCountry": 32.5,
+          "peopleId": "PPL_CHEWA",
+          "region": "Centre du Malawi"
+        }
+      ]
+    }
+  }
+}

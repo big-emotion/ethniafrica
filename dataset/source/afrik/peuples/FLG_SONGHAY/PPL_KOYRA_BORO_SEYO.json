@@ -1,0 +1,110 @@
+{
+  "id": "PPL_KOYRA_BORO_SEYO",
+  "nameMain": "Koyra Boro Seyo",
+  "languageFamilyId": "FLG_SONGHAY",
+  "currentCountries": ["MLI"],
+  "content": {
+    "appellations": {
+      "mainName": "Koyra Boro Seyo",
+      "selfAppellation": "Koroboro Senni / Koyra Senni / Gao Senni",
+      "exonyms": [
+        "Koyraboro Senni (orthographe SIL/Ethnologue)",
+        "Koroboro Senni (variante orthographique)",
+        "Koyra Senni (nom abrégé)",
+        "Gao Senni (nom géographique, en référence à la ville de Gao)",
+        "Songhay de Gao (désignation géographique française)"
+      ],
+      "originOfExonyms": "L'expression koyra-boro senn-i signifie littéralement la langue des habitants de la ville (koyra = ville, boro = habitant, senni = langue). Ce nom distingue les Songhaï sédentaires urbanisés des nomades comme les Touaregs et autres peuples transhumants de la région. Le nom Gao Senni fait référence à la ville de Gao, capitale historique de l'Empire songhaï et principal centre de ce groupe. L'orthographe Koyraboro Senni est celle adoptée par le SIL International pour la classification ISO.",
+      "whyProblematic": "La distinction entre Koyra Boro Seyo (Koyraboro Senni, groupe de Gao) et Koyra Chiini (groupe de Tombouctou) peut prêter à confusion, les deux étant des dialectes songhaï du Mali mais géographiquement et linguistiquement distincts. Koyraboro Senni est inintelligible aux locuteurs zarma du Niger selon Ethnologue, ce qui souligne la diversité interne du groupe songhay.",
+      "contemporaryUsage": "Le terme Koyraboro Senni est utilisé par les linguistes et les chercheurs. Les locuteurs se désignent simplement comme Songhaï de Gao ou Koroboro Senni. La langue est utilisée dans l'enseignement primaire dans la région de Gao (le gouvernement malien a officiellement adopté le dialecte de Gao comme médium d'enseignement primaire). La communauté représente environ 5 % de la population malienne.",
+      "linguisticFamily": "FLG_SONGHAY",
+      "ethnoLinguisticGroup": "Songhay méridional — dialecte de Gao",
+      "historicalRegion": "Région de Gao, boucle du Niger (Mali) — capitale historique de l'Empire songhaï",
+      "currentCountries": ["MLI"]
+    },
+    "ethnicities": [
+      "Songhaï sédentaires de Gao — habitants de la ville de Gao et de ses environs immédiats, héritiers directs de la capitale de l'Empire songhaï",
+      "Songhaï de Bourem — communautés entre Gao et Bourem sur le Niger",
+      "Songhaï d'Ansongo — communautés d'Ansongo jusqu'à la frontière Mali-Niger",
+      "Songhaï de Gourma-Rharous — communautés à l'est de Tombouctou jusqu'à Gourma-Rharous",
+      "Bozo assimilés — pêcheurs bozo de la rivière ayant adopté le koyraboro senni comme langue principale",
+      "Peuls assimilés — Peuls de la frontière Mali-Niger ayant adopté le koyraboro senni"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Koyra Boro Seyo sont les descendants des habitants sédentaires de Gao, capitale de l'Empire songhaï (15e-16e siècles). Gao était depuis le 8e siècle le centre du royaume de Za / Songhaï, l'une des premières formations étatiques de la boucle du Niger. Les ancêtres du groupe songhay parlent une langue remontant au proto-songhaï, classée dans le groupe nilo-saharien selon la majorité des linguistes (bien que cette classification reste controversée). L'identité urbanisée de ville des habitants (koyra = ville) est fondamentale : les Koyra Boro Seyo sont les Songhaï des villes, par opposition aux Touaregs et autres nomades.",
+      "formationPeriod": "L'identité distinctive du groupe de Gao s'est consolidée autour de la ville de Gao comme centre politique et commercial de l'Empire songhaï (apogée 1464-1591). Sunni Ali Ber (1464-1492) a transformé Gao en capitale d'un empire s'étendant sur une grande partie de l'Afrique de l'Ouest sahélienne. Après la chute de l'empire (1591), la majorité de la population commune est restée à Gao et dans la région, tandis que les nobles askias fuyaient vers le sud. Le dialecte de Gao (koyraboro senni) s'est alors développé distinctement du koyra chiini de Tombouctou, à l'ouest.",
+      "migrationRoutes": [
+        "Populations autochtones de la boucle du Niger ; pas de migration fondatrice documentée depuis une région extérieure",
+        "Extension du dialecte vers l'est jusqu'à la frontière Mali-Niger (Ansongo) et vers l'ouest jusqu'à Gourma-Rharous",
+        "Diffusion de la langue aux Peuls et aux Bozo vivant dans les mêmes zones, qui l'ont adoptée comme langue principale"
+      ],
+      "historicalSettlementZones": [
+        "Gao — ville principale, capitale historique de l'Empire songhaï ; principal centre du groupe",
+        "Bourem — ville sur le Niger entre Gao et Gourma-Rharous",
+        "Ansongo — ville sur le Niger entre Gao et la frontière Niger",
+        "Gourma-Rharous — limite occidentale du territoire koyraboro senni, à l'est de Tombouctou",
+        "Vallée du Niger entre Gourma-Rharous et la frontière malienne avec le Niger"
+      ],
+      "unificationsOrDivisions": "La communauté Koyra Boro Seyo forme un continuum dialectal homogène le long du Niger, de Gourma-Rharous à la frontière malienne avec le Niger. La limite avec le koyra chiini de Tombouctou, à l'ouest, est nette et abrupte selon les analyses linguistiques. La langue koyraboro senni est unintelligible aux locuteurs zarma du Niger, illustrant la diversification interne du groupe songhaï. Le gouvernement malien a reconnu le rôle central du dialecte de Gao en l'adoptant comme médium d'enseignement primaire officiel.",
+      "externalInfluences": "Islamisation progressive depuis le 11e siècle via les routes commerciales transsahariennes et l'influence des savants de Tombouctou. L'apogée de l'Empire songhaï sous les Askia a vu un patronage intense de l'enseignement islamique (université de Sankore à Tombouctou, étroitement liée à Gao). Invasion marocaine (1591) : rupture majeure — destruction de la structure étatique songhaï, début d'une période de fragmentation. Colonisation française (19e-20e siècles) : incorporation dans le Soudan français, puis dans le Mali indépendant (1960). Depuis 2012 : instabilité due aux rébellions touarègues et à la présence de groupes armés islamistes dans la région de Gao.",
+      "majorHistoricalEvents": "8e siècle : fondation du royaume de Za à Kukiya-Gao. 1325 : conquête de Gao par l'Empire du Mali. 1464 : Sunni Ali Ber reprend Gao et fonde l'Empire songhaï. 1492 : Sunni Ali Ber remplacé par Askia Mohammed (Muhammad Touré), début de la dynastie askia. 1500-1591 : apogée de l'Empire songhaï, Gao capitale d'un des plus grands empires africains de l'histoire. 1591 : défaite à la bataille de Tondibi face aux Saâdiens armés de mousquets ; fin de l'Empire songhaï. 1960 : indépendance du Mali. 2012-2013 : occupation de Gao par des groupes armés (MNLA, MUJAO) ; reprise par les forces maliennes et françaises (opération Serval)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Historiquement, la société songhaï de Gao était organisée autour de la chefferie royale askia avec une administration centralisée, des gouverneurs de province et un système de perception des impôts. Après la chute de l'empire, l'organisation s'est morcelée en chefferies locales (chefs de village, conseils d'anciens). Aujourd'hui, la gouvernance est assurée par les structures administratives maliennes (cercle de Gao, région de Gao) avec maintien des chefferies traditionnelles comme autorités coutumières reconnues par l'État.",
+      "clanOrganization": "Société patrilinéaire organisée en lignages (hori). Les nobles de la caste askia (descendants de la famille royale songhaï) maintiennent un prestige particulier. La société songhaï historique comportait plusieurs castes fonctionnelles : guerriers, marchands, artisans (forgerons, tisserands), pêcheurs (Sorko), agriculteurs. Les esclaves (horso) constituaient une catégorie sociale inférieure qui a officiellement disparu après la colonisation.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires (hori) structurent l'organisation sociale, les alliances matrimoniales et les droits sur les terres agricoles et les zones de pêche. Les castes artisanales (forgerons, griots, tisserands) sont héréditaires et endogames. Les griots (jesere) jouent un rôle mémoriel crucial, conservant l'histoire dynastique et les généalogies des familles nobles.",
+      "religiousAuthority": "Islam sunnite malékite dominant depuis le 11e siècle. Les imams et oulémas exercent une autorité religieuse et juridique (droit familial, successions). Gao, bien que moins célèbre que Tombouctou, était un centre d'enseignement islamique important sous l'Empire songhaï. Ahmed Baba al-Massufi, savant songhaï de Tombouctou, est l'un des intellectuels les plus cités dans le Tarikh al-Sudan. Subsiste une spiritualité animiste syncrétique avec croyances en esprits (jinns), pratiques de divination et rôle des marabouts-guérisseurs."
+    },
+    "languages": {
+      "mainLanguage": "Koyraboro Senni (Koroboro Senni / Gao Senni)",
+      "isoCodes": ["ses"],
+      "dialects": [
+        "Dialecte de Gao — variété de prestige et standard officiel adopté par le gouvernement malien pour l'enseignement primaire",
+        "Dialecte de Bourem — variété parlée entre Gao et Gourma-Rharous",
+        "Dialecte d'Ansongo — variété de la zone frontière avec le Niger",
+        "Variétés adoptées par les communautés peules et bozo de la même zone"
+      ],
+      "vehicularRole": "Le koyraboro senni est parlé par environ 400 000 personnes et constitue la principale langue de communication dans la région de Gao (Mali). C'est une langue cosmopolite utilisée non seulement par les Songhaï sédentaires mais aussi par les Peuls et les Bozo de la région. Le gouvernement malien l'a officiellement adopté comme dialecte utilisé dans l'enseignement primaire. La langue est instable avec le zarma du Niger avec lequel elle est mutuellement inintelligible, ce qui souligne son individualité. Le français est la langue administrative du Mali."
+    },
+    "culture": {
+      "majorRites": "Rites islamiques structurant le calendrier annuel : célébration du Ramadan et de l'Aïd el-Fitr, de l'Aïd el-Adha, de la fête du Mawlid. Circoncision masculine (rite de passage central, célébré en communauté). Mariages : négociés entre familles par l'intermédiaire d'anciens ; festins communautaires ; dot versée par la famille du marié. Funérailles islamiques : inhumation rapide, prières collectives, période de deuil de 40 jours. Rites liés à l'agriculture et à la pêche : prières de début de saison, bénédictions des filets et des pirogues, offrandes symboliques au fleuve. Rituels syncrétiques : consultations de guérisseurs pour les maladies inexpliquées, recours aux amulettes coraniques (gris-gris), cérémonies de possession d'esprits (holey) héritées de la tradition songhaï.",
+      "symbols": "Le fleuve Niger est le symbole identitaire central des Koyra Boro Seyo, source de vie et axe de leur territoire. La ville de Gao, ancienne capitale de l'Empire songhaï, est un symbole puissant de l'héritage historique et de la fierté identitaire. La tombe des Askia (Tombeau des Askia à Gao, classé au Patrimoine mondial de l'UNESCO en 2004) est le monument le plus emblématique de l'identité songhaï de Gao. La pirogue et les filets de pêche des Sorko (pêcheurs spécialisés) symbolisent le lien avec le fleuve. Le mil et le sorgho, cultivés sur les berges inondées, symbolisent la subsistance liée au cycle du Niger.",
+      "artsAndMusic": "Tradition des griots (jesere) : gardiens de la mémoire historique, spécialistes de la louange et de la généalogie ; jouent du ngoni (luth) et chantent les épopées des grands rois songhaï (Sunni Ali Ber, Askia Mohammed). Instruments de musique : goje (vielle à une corde), ngoni (luth), gouro (tambour), dunun (tambour basse), calebasse flottante (percussion). Chants épiques : récits oraux des batailles et des rois de l'Empire songhaï, transmis par les griots. Danses collectives lors des fêtes et mariages. Artisanat : poterie (jarres, récipients d'eau), tissage du coton (pagnes colorés), maroquinerie (sandales, coussins en cuir), travail du bois (pirogues, meubles). Pratique de la pêche artisanale transmise de génération en génération par les Sorko.",
+      "spiritualities": "Islam sunnite malékite (pratique dominante) : cinq prières quotidiennes, jeûne du Ramadan, mosquées dans chaque village, écoles coraniques (madrassa). Syncrétisme avec la religion traditionnelle songhaï : croyances en les holey (esprits du fleuve et de la nature), culte des ancêtres, rôle des marabouts comme intermédiaires entre le monde visible et invisible. Divination et médecine traditionnelle : recours aux géomanciens et aux guérisseurs pour les maladies inexpliquées, les conflits familiaux et les questions d'avenir. Les amulettes coraniques (gris-gris) constituent une synthèse entre islam et croyances animistes ancestrales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Gao est l'une des cités les plus historiquement significatives d'Afrique de l'Ouest. Centre du royaume de Za depuis le 8e siècle. Capitale de l'Empire songhaï (1464-1591), l'un des plus grands empires africains médiévaux, s'étendant de l'Atlantique (Sénégal) au centre du Niger. Les Askia de Gao (Askia Mohammed, 1493-1528, et ses successeurs) ont gouverné un empire qui dépassait en superficie les empires du Ghana et du Mali. Gao a été pendant plus de deux siècles un carrefour commercial majeur des routes transsahariennes (or, sel, esclaves, tissus) et un centre de savoir islamique.",
+      "relationsWithNeighbors": "Relations complexes avec les Touaregs : partenaires commerciaux (les Touaregs contrôlaient les routes du sel au nord) mais aussi rivaux récurrents pour les ressources du Niger moyen. Relations avec les Fulbé (Peuls) sédentarisés dans la région : échanges et assimilation progressive ; de nombreux Peuls ont adopté le koyraboro senni. Relations avec les Bozo (pêcheurs du Niger) : intégration partielle dans la communauté koyraboro senni. Relations avec les Dogon, Bambara et Marka des régions voisines, marquées par le commerce et parfois des conflits.",
+      "conflictsOrAlliances": "Bataille de Tondibi (1591) : défaite décisive face aux forces marocaines saâdiennes armées de mousquets, fin de l'Empire songhaï. Résistances aux tentatives de reconquête par les Dendi du sud (1591-17e siècle). Incorporation dans le Soudan français et résistance à la pénétration coloniale française (fin 19e siècle). Depuis 2012 : occupation de Gao par des groupes armés (MNLA touareg puis MUJAO islamiste) ; crise majeure avec afflux de réfugiés ; reprise par l'opération militaire française Serval (janvier 2013) et les forces maliennes.",
+      "diaspora": "La majorité des Koyra Boro Seyo résident dans la région de Gao. Des migrations vers Bamako (capitale du Mali) et d'autres villes maliennes sont documentées pour des raisons économiques et éducatives. La crise de 2012-2013 a provoqué un déplacement massif de la population de Gao, dont une partie a rejoint des pays voisins (Niger, Mauritanie, Burkina Faso) comme réfugiés internes ou internationaux. Des communautés diasporiques existent en France (Paris, Île-de-France) parmi les migrants économiques maliens."
+    },
+    "demography": {
+      "totalPopulation": 1340000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 — Songhai-Koyraboro in Mali (1 307 000 locuteurs de koyraboro senni, code ses, estimé à 5 % de la population malienne) ; Wikipedia EN — Koyraboro Senni language (environ 400 000 locuteurs selon 1999, probablement plus en 2025 avec la croissance démographique malienne) ; Ethnologue — Songhay, Koyraboro Senni (ses). Note : Les estimations varient selon les définitions ; Joshua Project donne le total le plus récent.",
+      "distributionByCountry": [
+        {
+          "country": "MLI",
+          "population": 1300000,
+          "note": "Région de Gao principalement ; vallée du Niger de Gourma-Rharous à Ansongo, incluant les villes de Gao, Bourem, Ansongo"
+        },
+        {
+          "country": "NER",
+          "population": 40000,
+          "note": "Communautés koyraboro senni dans l'ouest du Niger (frontière malienne) et parmi les migrants économiques à Niamey"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Koyraboro Senni language. https://en.wikipedia.org/wiki/Koyraboro_Senni_language",
+      "Wikipedia EN — Songhay languages. https://en.wikipedia.org/wiki/Songhay_languages",
+      "Wikipedia EN — Songhai people. https://en.wikipedia.org/wiki/Songhai_people",
+      "Ethnologue — Songhay, Koyraboro Senni (ses). https://www.ethnologue.com/language/ses/",
+      "Joshua Project — Songhai-Koyraboro in Mali. https://joshuaproject.net/people_groups/14989",
+      "ScriptSource — Koyraboro Senni Songhay (ses). https://scriptsource.org/cms/scripts/page.php?item_id=subtag_detail&uid=uthnk4pcdr",
+      "UNESCO — Tombeau des Askia, Gao (patrimoine mondial). https://whc.unesco.org/fr/list/1139",
+      "CIA World Factbook — Mali"
+    ]
+  }
+}

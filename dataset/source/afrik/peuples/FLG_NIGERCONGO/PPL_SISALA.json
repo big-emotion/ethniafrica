@@ -1,0 +1,88 @@
+{
+  "id": "PPL_SISALA",
+  "nameMain": "Sisala",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA", "BFA"],
+  "content": {
+    "appellations": {
+      "mainName": "Sisala",
+      "selfAppellation": "Sisaala",
+      "exonyms": ["Sissala", "Sisaal", "Grusi"],
+      "originOfExonyms": "Le terme Sissala est la forme francophone courante utilisee au Burkina Faso; Grusi est un terme exonyme historique applique par les voisins a ce sous-groupe des langues Gur.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Sisaala designe le peuple et la langue dans les publications academiques anglophones; Sissala est la variante officielle au Burkina Faso. La province de Sissili au Burkina Faso tire son nom de ce peuple.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Gur (Voltaique), sous-groupe Grusi",
+      "historicalRegion": "Nord-Ouest Ghana et Sud Burkina Faso",
+      "currentCountries": ["GHA", "BFA"]
+    },
+    "ethnicities": ["Sisala"],
+    "origins": {
+      "ancientOrigins": "Les Sisala sont un peuple agraire Gur-phone formant un sous-groupe du grand ensemble Gurune/Grunshi. Leurs traditions orales font etat d'origines multiples: clans issus du Gonjaland, de peuples Mole-Dagbani (Mossi, Mamprusi, Dagomba) et de tribus Gurunshi du nord Ghana et du sud Burkina Faso.",
+      "formationPeriod": "Formation progressive comme groupe ethnique distinct entre le 17e et le 19e siecle, au croisement de migrations depuis le nord et l'est. La muraille fortifiee de Gwollu (19e siecle), construite par Gwollu Koro Limann contre les razzias d'esclaves de Babatu, constitue un marqueur historique fondateur.",
+      "migrationRoutes": [
+        "Depuis le Gonjaland vers le nord-ouest",
+        "Depuis les royaumes Mole-Dagbani vers l'ouest",
+        "Depuis les zones Gurunshi vers le district de Tumu"
+      ],
+      "historicalSettlementZones": [
+        "District de Tumu, Upper West Region, Ghana",
+        "Gwollu et ses environs",
+        "Provinces de Sissili et Ioba, Burkina Faso"
+      ],
+      "unificationsOrDivisions": "Les Sisala se sont constitues par fusion de clans d'origines diverses. Apres leur etablissement en tant que groupe distinct, ils ont essaime vers d'autres communautes et fonde des villes comme Banda Nkwanta (anciennement Dua).",
+      "externalInfluences": "Pression des razzias d'esclaves aux 18e-19e siecles, notamment par Babatu; construction de murs defensifs en reponse. Influence de l'islam a partir du 20e siecle, et du christianisme plus recemment.",
+      "majorHistoricalEvents": "Construction de la double muraille fortifiee de Gwollu au 19e siecle comme defense contre les razzias d'esclaves. Inclusion dans la Gold Coast britannique puis dans le Ghana independant (1957). Traduction du Nouveau Testament en sisaala publiee en 1999."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme acephale au niveau supravillageois: l'autorite politique traditionnelle ne depasse pas le cadre du village. Elle reside dans les mains du jangtina (proprietaire du village), gardien du sanctuaire villageois et mediateur des conflits intra-villageois par le biais de rituels. Aujourd'hui, le jangtina coexiste avec le chef de village elu et le chef de district.",
+      "clanOrganization": "Organisation en clans patronymiques dont le Gamvera (clan de l'oiseau couronne), originaire de la region de Bole. Les clans sont structures en villages-clans, et le mariage entre membres du meme village ou village-clan est strictement tabou.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La filiation est patrilineaire: les fils aines succedent a leur pere pour perpetuer la ligne ancestrale et le culte des ancetres. L'enfant est considere comme appartenant a toute la famille elargie, vue comme un don des ancetres.",
+      "religiousAuthority": "Le jangtina est le gardien du sanctuaire villageois et assume un role religieux central. Les rites ancestraux, les funerailles doubles et les ceremonies de nomination sont des moments communautaires majeurs. L'islam et le christianisme sont aujourd'hui presents mais le syncretisme est repandu."
+    },
+    "languages": {
+      "mainLanguage": "Sisaala (dialecte Tumulung Sisaala ou Sisaali selon la zone)",
+      "isoCodes": ["sil", "ssl", "sld", "sig"],
+      "dialects": [
+        "Tumulung Sisaala (Sisaala Oriental, est de Tumu)",
+        "Western Sisaala (Lambishi Sisaala)",
+        "Paasaal (Sisaala Meridional, entre Lambussie et Tumu)",
+        "Burkina Sisaala (Sisaali, provinces de Sissili et Ioba)"
+      ],
+      "vehicularRole": "Les langues Sisaala sont utilisees comme langues maternelles dans les districts Sissala East et Sissala West (Upper West Region) et dans les communautes transfrontalieres du Burkina Faso. Le Nouveau Testament a ete traduit en Tumulung Sisaala (publie 1999). L'anglais et le haoussa servent de vehiculaires inter-ethniques."
+    },
+    "culture": {
+      "majorRites": "Deux funerailles successives: la premiere lors de l'inhumation (condoleances et dons), la seconde plus tardive et plus solennelle pour celebrer la vie du defunt, accompagnee de rites d'initiation, de tenues, chants et danses specifiques. La naissance du premier enfant marque l'entree officielle dans la vie adulte. La danse de guerre Bayilla est une expression patrimoniale cle.",
+      "symbols": "Le foulard de tete (nyukpala) est un symbole matrimonial fort: offert par un homme a une femme qu'il courtise, il n'est porte qu'apres le mariage. Les perles portees par les femmes (perles sonores ou chantantes) communiquent le statut et le sentiment romantique.",
+      "artsAndMusic": "Poteries et vanneries feminines. Fabrication de charbon. Cuisine communautaire: le kore (bouillie de mais epaisse) et le kapalla (igname pile) sont les plats de base. La musique accompagne les funerailles et les ceremonies d'initiation.",
+      "spiritualities": "Culte des ancetres (culte agraire) avec venerations des sanctuaires de village; croyance que l'enfant est un don des ancetres. Les fils aines portent la responsabilite de perpetuer les rites funeraires pour permettre aux defunts de devenir des ancetres veneres. Islam et christianisme sont presents avec un fort syncretisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation politique acephale sans royaume centralise. La ville de Tumu est la capitale traditionnelle des Sisala. Les chefs de villages et le chef de district exercent une autorite parallele a celle du jangtina.",
+      "relationsWithNeighbors": "Voisins des peuples Dagomba, Mamprusi, Mossi et Gurunshi. Relations commerciales et culturelles avec les peuples du nord Ghana et du sud Burkina Faso. Tensions historiques liees aux razzias d'esclaves.",
+      "conflictsOrAlliances": "Construction de la muraille fortifiee de Gwollu (19e siecle) contre les razzias de Babatu (chef de guerre peul). Alliance defensive des clans Sisala pour proteger leurs villages.",
+      "diaspora": "Environ 20% des Sisala du Ghana ont migre vers le sud du pays pour raisons economiques. Une communaute Sisaala se trouve aussi a Banda Nkwanta (anciennement Dua)."
+    },
+    "demography": {
+      "totalPopulation": 338000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2024-2025: Tumulung Sisaala Ghana 187 000 + Western Sisaala Ghana 53 000 + Pasaale Sisaala Ghana 64 000 + Sissala Burkina Faso 34 000. Estimation 2025 sur base de croissance de 2,2% par an.",
+      "distributionByCountry": [
+        { "country": "GHA", "population": 304000 },
+        { "country": "BFA", "population": 34000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Sisaala language (https://en.wikipedia.org/wiki/Sisaala_language)",
+      "101 Last Tribes – Sissala people (https://www.101lasttribes.com/tribes/sissala.html)",
+      "Joshua Project – Sisaala, Tumulung in Ghana (https://joshuaproject.net/people_groups/14952)",
+      "Joshua Project – Sisaala, Western in Ghana (https://joshuaproject.net/people_groups/14953)",
+      "Joshua Project – Sisaala, Pasaale in Ghana (https://joshuaproject.net/people_groups/14325)",
+      "Joshua Project – Sissala in Burkina Faso (https://joshuaproject.net/people_groups/14956)",
+      "Ethnologue – Sisaala, Tumulung SIL (https://www.ethnologue.com/language/sil/)",
+      "Ethnologue – Sisaala, Western SSL (https://www.ethnologue.com/language/ssl/)",
+      "Ghana Statistical Service – 2021 Population and Housing Census, Sissala West District"
+    ]
+  }
+}

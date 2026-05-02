@@ -1,0 +1,39 @@
+# Nom du peuple
+- Nom principal : Limba
+- Auto-appellation : Limba
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Région historique : Sierra Leone (Nord)
+- Pays actuels : SLE
+- Identifiant : PPL_LIMBA
+
+# 1. Ethnies incluses
+- Limba du Nord
+- Limba du Sud
+
+# 2. Origines
+- Probablement l’un des peuples autochtones les plus anciens de Sierra Leone.
+
+# 3. Organisation
+- Structures lignagères verticales.
+- Rôle fort des sociétés secrètes.
+
+# 4. Langue
+- Limba
+- ISO : lia
+
+# 5. Culture
+- Musiques polyphoniques.
+- Masques rituels.
+- Importance des récoltes rituelles.
+
+# 6. Histoire
+- Résistance marquée à la colonisation britannique.
+- Relations anciennes avec Temne, Kuranko, Yalunka.
+
+# 7. Démographie
+- Population : 540 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (lia)
+- Sierra Leone Ethnic Documentation

@@ -1,0 +1,23 @@
+{
+  "id": "PPL_GIZIGA",
+  "nameMain": "",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Giziga / Ghiziga",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "historicalRegion": "Cameroun (Maroua, Méri)",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (giz)", "Cameroun – Ministère de la Culture"]
+  }
+}

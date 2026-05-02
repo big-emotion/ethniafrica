@@ -1,0 +1,60 @@
+{
+  "id": "PPL_TONGA",
+  "nameMain": "Tonga",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["MWI"],
+  "content": {
+    "appellations": {
+      "mainName": "Tonga",
+      "selfAppellation": "",
+      "exonyms": ["Tonga (terme utilisé par les Européens)"],
+      "originOfExonyms": "N/A",
+      "whyProblematic": "N/A",
+      "contemporaryUsage": "N/A",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "N/A",
+      "historicalRegion": "Nord du Malawi (lac Malawi)",
+      "currentCountries": ["MWI"]
+    },
+    "ethnicities": ["Tonga"],
+    "origins": {
+      "ancientOrigins": "N/A",
+      "formationPeriod": "N/A",
+      "migrationRoutes": ["N/A"],
+      "historicalSettlementZones": ["Nord du Malawi (lac Malawi)"],
+      "unificationsOrDivisions": "N/A",
+      "externalInfluences": "N/A",
+      "majorHistoricalEvents": "N/A"
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "N/A",
+      "clanOrganization": "N/A",
+      "roleOfLineages": "N/A",
+      "religiousAuthority": "N/A"
+    },
+    "languages": {
+      "mainLanguage": "Tonga (toi)",
+      "isoCodes": ["toi"],
+      "dialects": ["N/A"],
+      "vehicularRole": "N/A"
+    },
+    "culture": {
+      "Rites majeurs": "N/A",
+      "Symboles": "N/A",
+      "Arts et musique": "N/A",
+      "Spiritualités": "N/A"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "N/A",
+      "relationsWithNeighbors": "N/A",
+      "conflictsOrAlliances": "N/A",
+      "diaspora": "N/A"
+    },
+    "demography": {
+      "totalPopulation": 800,
+      "referenceYear": 2025,
+      "source": "N/A"
+    },
+    "sources": []
+  }
+}

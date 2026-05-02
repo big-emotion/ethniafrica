@@ -1,0 +1,99 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_BANTU
+- Nom français : Bantou
+- Nom anglais / auto-appellation académique : Bantu
+- Appellation(s) historique(s) :
+  « Langues bantoues » ; « Bantou » (souvent détourné en « race bantoue » dans les systèmes coloniaux du XIXᵉ siècle).
+- Origine du terme historique :
+  Le terme « bantou » a été créé par le philologue allemand Wilhelm Heinrich Immanuel Bleek (1827-1875) en 1862 dans son ouvrage A Comparative Grammar of South African Languages. Bleek a observé que de nombreuses langues africaines partageaient des éléments syntaxiques suggérant une origine commune. Il a choisi le terme « Bantu » car ce mot signifie « gens » ou « personnes » dans plusieurs de ces langues, dérivé de la racine proto-Bantu ba-ntu où ba- est le préfixe de classe nominale pour le pluriel et -ntu signifie « personne » ou « être humain ». Le terme a été popularisé par Carl Meinhof dans Grundzüge einer vergleichenden Grammatik der Bantusprachen (1906) et par Harry Hamilton Johnston dans A Comparative Study of the Bantu and Semi-Bantu Languages (1919).
+- Pourquoi le terme pose problème (si applicable) :
+  Carl Meinhof (1857-1944) : Linguiste allemand dont les travaux reflétaient des perspectives coloniales et eurocentriques. Harry Hamilton Johnston (1858-1927) : Administrateur colonial britannique qui a utilisé le terme « bantou » dans un contexte de classification raciale. Placide Tempels (1906-1977) : Missionnaire belge qui, dans La philosophie bantoue (1945), a présenté une vision occidentale et paternaliste des cultures africaines. En Afrique du Sud, le gouvernement de l'apartheid a utilisé le terme « Bantu » pour désigner les populations noires, créant des catégories légales discriminatoires (« Bantu Education Act » de 1953). Des intellectuels africains ont critiqué cette terminologie. Le concept d'Ubuntu a été mis en avant par des penseurs africains pour défendre l'humanité et la solidarité inhérentes aux cultures africaines. Des études génétiques contemporaines (Berniell-Lee et al., 2009) ont montré que les populations parlant ces langues sont génétiquement diverses, remettant en question l'homogénéité supposée par le terme « bantou ». Aujourd'hui, « bantou » est strictement linguistique, pas racial. Le terme est utilisé uniquement pour désigner une famille linguistique au sein du Niger-Congo, sans aucune connotation raciale ou ethnique.
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Les locuteurs des langues dites « bantoues » utilisent des termes endonymes spécifiques à chaque langue pour se désigner : Swahili : watu (« personnes »), Waswahili (« les Swahilis »), langue appelée Kiswahili. Zoulou : abantu (« personnes »), AmaZulu (« les Zoulous »), langue appelée isiZulu. Lingala : bato (« personnes »), langue appelée Lingála. Kinyarwanda/Kirundi : abantu (« personnes »), langue appelée Ikinyarwanda ou Ikirundi. Kikongo : bantu ou wantu (« personnes »), Bakongo (« les Kongo »), langue appelée Kikongo. Ces termes partagent une racine commune -ntu signifiant « être humain ». Il n'existe pas de terme endogène unique englobant toutes les langues bantoues, car elles ne constituent pas un groupe ethnique homogène.
+- Usage contemporain (définition moderne de la famille) :
+  Regroupe plus de 500 langues parlées par environ 350 millions de personnes en Afrique centrale, orientale et australe. Classification strictement linguistique au sein de la famille Niger-Congo (branche Bénoué-Congo), sans aucune connotation raciale ou ethnique.
+- Aire / répartition géographique générale :
+  Cameroun, Gabon, Congo, RDC, Angola, Tanzanie, Kenya, Ouganda, Mozambique, Zambie, Malawi, Zimbabwe, Afrique du Sud, Namibie, Botswana, Lesotho, Eswatini, Rwanda, Burundi, Comores, Madagascar (partiellement), République centrafricaine, Guinée équatoriale, São Tomé-et-Príncipe.
+- Nombre de langues (estimation) : environ 500
+- Nombre total de locuteurs (estimation) : environ 350 millions
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Bantou
+- Liens entre familles linguistiques :
+  - Famille parente directe : Bénoué-Congo (FLG_BENOUECONGO)
+  - Famille parente supérieure : Niger-Congo (FLG_NIGERCONGO)
+  - Relation : Bantou est un sous-groupe de Bénoué-Congo, qui est lui-même un sous-groupe de Niger-Congo
+- Branches internes / sous-groupes :
+  Classification Guthrie (zones A à S) : Zone A (Cameroun, Gabon : Duala, Bassa, Fang, Beti), Zone B (Nord Congo, Gabon : Kongo, Teke), Zone C (RDC centrale : Mongo, Tetela, Luba-Kasai), Zone D (Est RDC : Lega, Nyanga), Zone E/F/G (Kenya, Tanzanie : Swahili, Gikuyu, Kamba, Chaga), Zone H (Rwanda, Burundi, RDC : Kinyarwanda, Kirundi, Shi), Zone K (Angola, RDC : Kimbundu, Umbundu, Chokwe), Zone L (RDC, Zambie : Luba-Katanga, Kaonde), Zone M (Tanzanie : Nyakyusa, Safwa), Zone N (Malawi, Mozambique, Tanzanie : Chewa, Yao, Makonde), Zone P (Tanzanie, Mozambique : Makhuwa, Lomwe), Zone R (Angola, Namibie : Herero, Kwanyama), Zone S (Afrique australe : Zulu, Xhosa, Ndebele, Swati, Tswana, Sotho, Venda, Tsonga, Shona).
+- Aire géographique :
+  Afrique centrale, orientale et australe, de la région des Grassfields (Cameroun-Nigeria) jusqu'au Cap de Bonne-Espérance (Afrique du Sud), et de la côte atlantique à la côte indienne.
+- Nombre de langues : environ 500 langues (selon SIL Ethnologue, 2025)
+- Nombre total de locuteurs : environ 350 millions (estimation ONU/UNFPA, 2025)
+
+# 2. Peuples associés
+- Peuple 1 : Kongo (PPL_KONGO)
+- Peuple 2 : Luba (PPL_LUBA)
+- Peuple 3 : Zoulou (PPL_ZULU)
+- Peuple 4 : Shona (PPL_SHONA)
+- Peuple 5 : Tswana (PPL_TSWANA)
+- Peuple 6 : Ganda (PPL_GANDA)
+- Peuple 7 : Xhosa (PPL_XHOSA)
+- Peuple 8 : Fang (PPL_FANG)
+- Peuple 9 : Kikuyu (PPL_KIKUYU)
+- Peuple 10 : Swahili (PPL_SWAHILI)
+- Peuple 11 : Chewa (PPL_CHEWA)
+
+# 3. Caractéristiques linguistiques
+- Typologie linguistique :
+  Les langues bantoues sont agglutinantes et utilisent un système de classes nominales préfixales. Exemples : Swahili : mtu (« personne », classe 1), pluriel watu (« personnes », classe 2) ; kitabu (« livre », classe 7), pluriel vitabu (« livres », classe 8). Zoulou : umuntu (« personne », classe 1), pluriel abantu (« personnes », classe 2). Les classes déterminent l'accord dans toute la phrase. Morphologie verbale riche avec extensions causatives, passives, réciproques, applicatives. Ordre des mots : SVO (Sujet-Verbe-Objet) fréquent.
+- Particularités phonologiques :
+  Systèmes tonals : Kikongo : kala avec ton haut signifie « rester », avec ton bas signifie « longtemps ». Consonnes prénasalisées : mb, nd, ng, nj (exemple swahili : mbwa « chien », ndizi « banane »). Clics (empruntés aux langues khoïsan) : Xhosa : cwaka (« silencieux ») avec clic dental. Sons implosifs dans certaines langues de zone A (Fang, Duala, Beti). Harmonies vocaliques dans certaines langues de zone A et B.
+- Liens avec les familles voisines :
+  Emprunts lexicaux : arabe (via swahili : kitabu « livre », safari « voyage », saa « heure »), khoïsan (incorporation de clics dans xhosa et zoulou), langues nilotiques (termes de parenté et culture matérielle), langues européennes (kompyuta « ordinateur », televisheni « télévision »).
+- Innovations clés :
+  Système de classes nominales extrêmement développé (10 à 20 classes). Morphologie verbale très riche (extensions causatives, passives, réciproques, applicatives, intensives). Structuration morphosyntaxique régulière à travers les 15 zones géographiques. Reconstruction du proto-bantou possible grâce à cette régularité.
+
+# 4. Histoire et origines
+- Origine probable (théories archéologiques, linguistiques, génétiques) :
+  Wilhelm Bleek (1862) : Premier à classifier les langues bantoues. Malcolm Guthrie (1948) : Proposé que le proto-bantou s'est développé dans la région des Grassfields (frontière Cameroun-Nigeria), il y a environ 3000 à 5000 ans. Joseph Greenberg (1963) : Classé les langues bantoues dans la famille Niger-Congo (branche Bénoué-Congo). Derek Nurse et Gérard Philippson (2003) : Affiné la classification et proposé une origine dans la région Cameroun-Gabon. Archéologie : Jan Vansina (1990) : Expansion bantoue liée à la diffusion de l'agriculture et de la métallurgie du fer. Christopher Ehret (1998) : Expansion bantoue a commencé vers 3000-2500 avant notre ère. Génétique : Berniell-Lee et al. (2009) : Liens génétiques entre les populations de la région des Grassfields et les populations bantoues actuelles. Henn et al. (2011) : Populations dites « bantoues » présentent une diversité génétique importante. Consensus actuel : Origine probable : Région des Grassfields (Cameroun-Nigeria) ou forêt équatoriale Cameroun-Gabon. Période : 3000 à 5000 ans avant notre ère (émergence du proto-bantou). Expansion majeure : 1000 avant notre ère à 500 de notre ère.
+- Période d'émergence estimée :
+  3000 à 5000 ans avant notre ère : Émergence du proto-bantou dans la région Cameroun-Gabon. 2500 à 1000 avant notre ère : Première phase d'expansion vers le sud (Congo) et l'est (Grands Lacs). 1000 avant notre ère à 500 de notre ère : Expansion majeure vers l'Afrique orientale et australe. 1862 : Classification initiée par Wilhelm Bleek. 1948 : Malcolm Guthrie établit la classification géographique en zones A à S. 1963 : Joseph Greenberg classe les langues bantoues dans la famille Niger-Congo.
+- Diffusion des langues (routes migratoires, expansion) :
+  Routes migratoires : Route occidentale (Cameroun, Gabon, Congo, Angola), Route centrale (Cameroun, RDC bassin du Congo, Zambie), Route orientale (Cameroun, RDC Grands Lacs, Ouganda, Kenya, Tanzanie, Mozambique), Route australe (Zambie, Zimbabwe, Afrique du Sud, Namibie, Botswana). Expansion en vagues : Vague 1 (3000-2000 av. J.-C.) : Expansion vers le bassin du Congo. Vague 2 (2000-1000 av. J.-C.) : Expansion vers les Grands Lacs. Vague 3 (1000 av. J.-C. - 500 apr. J.-C.) : Expansion vers l'Afrique orientale et australe.
+- Ruptures historiques (séparations, fusions) :
+  Fusions : Royaume du Kongo (XIVe-XIXe siècle), Empire Luba (XVIe-XIXe siècle), Empire Lunda (XVIIe-XIXe siècle), Royaume du Buganda (XIVe-XXe siècle). Séparations : Colonisation européenne (XVe-XXe siècle), Apartheid en Afrique du Sud (1948-1994), Découpage colonial de l'Afrique (Conférence de Berlin, 1884-1885).
+- Zones de contact et métissages :
+  Bassin du Congo : Interactions avec les populations pygmées. Région des Grands Lacs : Interactions avec les populations nilotiques. Afrique australe : Interactions avec les populations khoïsan (emprunt de clics). Côte est-africaine : Métissage linguistique entre langues bantoues et arabe (émergence du swahili).
+
+# 5. Répartition géographique et démographie
+- Nombre total de locuteurs : environ 350 millions
+- Répartition par pays : Cameroun, Gabon, Congo, RDC, Angola, Tanzanie, Kenya, Ouganda, Mozambique, Zambie, Malawi, Zimbabwe, Afrique du Sud, Namibie, Botswana, Lesotho, Eswatini, Rwanda, Burundi
+
+# 6. Sources
+
+Sources linguistiques (classification et grammaire) :
+- Bleek, W. H. I. (1862) – A Comparative Grammar of South African Languages. Cape Town : Saul Solomon.
+- Meinhof, C. (1906) – Grundzüge einer vergleichenden Grammatik der Bantusprachen. Berlin : Reimer.
+- Guthrie, M. (1948) – The Classification of the Bantu Languages. London : International African Institute, Oxford University Press.
+- Greenberg, J. H. (1963) – The Languages of Africa. Bloomington : Indiana University.
+- Nurse, D. & Philippson, G. (2003) – The Bantu Languages. London : Routledge.
+
+Sources historiques et archéologiques :
+- Vansina, J. (1990) – Paths in the Rainforests. Madison : University of Wisconsin Press.
+- Ehret, C. (1998) – An African Classical Age. Charlottesville : University Press of Virginia.
+
+Sources génétiques :
+- Berniell-Lee, G. et al. (2009) – "Genetic and Demographic Implications of the Bantu Expansion", Molecular Biology and Evolution, vol. 26, n°7, pp. 1581-1589.
+- Henn, B. M. et al. (2011) – "Hunter-gatherer genomic diversity suggests a southern African origin for modern humans", Proceedings of the National Academy of Sciences, vol. 108, n°13, pp. 5154-5162.
+
+Sources démographiques et statistiques :
+- ONU (2025) – World Population Prospects 2025. New York : United Nations.
+- UNFPA (2025) – État de la population mondiale 2025. New York : UNFPA.
+- SIL Ethnologue (2025) – "Bantu languages". https://www.ethnologue.com/subgroups/bantu

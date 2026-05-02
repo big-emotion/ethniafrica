@@ -1,0 +1,95 @@
+{
+  "id": "PPL_NYABWA",
+  "nameMain": "Nyabwa",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Nyabwa",
+      "selfAppellation": "Nyabwa (denomination propre du groupe)",
+      "exonyms": [
+        "Niabwa (variante orthographique francophone)",
+        "Niaboua (ancienne transcription coloniale francaise)",
+        "Wee (terme generique kru englobant plusieurs groupes apparentes dont le Nyabwa)"
+      ],
+      "originOfExonyms": "Nyabwa est la denomination que le groupe s'attribue lui-meme. Niabwa et Niaboua sont des transcriptions francophones de l'administration coloniale. Le terme Wee est un terme generique partage par plusieurs groupes kru de l'ouest de la Cote d'Ivoire (Guere, Wobe, Nyabwa) qui forment un continuum dialectal.",
+      "whyProblematic": "La delimitation entre Nyabwa, Guere et Wobe est complexe car ces groupes forment un continuum dialectal (le continuum Wee) et s'interpenetrent culturellement. Les appellations varient selon les sources linguistiques et ethnographiques.",
+      "contemporaryUsage": "Nyabwa est le terme standard en linguistique (code ISO 639-3 : nwb) et dans les sources officielles ivoriennes. Le terme Niabwa est encore utilise dans les contextes administratifs locaux.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Kru (branche de la famille Niger-Congo; sous-groupe Wee)",
+      "historicalRegion": "Ouest de la Cote d'Ivoire, region du Guemon (anciennement Dix-Huit Montagnes), departements de Duekoue et de Bangolo",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": [
+      "Nyabwa de Duekoue — sous-groupe principal dans la region de Duekoue",
+      "Nyabwa de Bangolo — communautes dans le departement de Bangolo",
+      "Nyabwa de l'Ouest — communautes pres de la frontiere liberienne",
+      "Sous-groupes locaux partageant le continuum dialectal Wee avec les Guere et les Wobe"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Nyabwa font partie du groupe kru, l'un des plus anciens complexes ethnolinguistiques de l'Afrique occidentale actuelle. Les peuples kru sont generalement considered comme indigenes a la region forestiere de l'ouest de la Cote d'Ivoire et de l'est du Liberia. Selon les traditions orales, les ancetres kru descendirent de l'interieur vers la cote il y a plusieurs siecles, en apprenant la valeur du sel au contact de la mer. Les Nyabwa occupent les forets denses de l'arriere-pays de la region de Duekoue.",
+      "formationPeriod": "L'identite nyabwa specifique au sein du continuum Wee est ancienne mais ses contours ont ete formalises lors de la periode coloniale francaise (debut 20e siecle). Les Kru de la region resisterent aux tentatives d'esclavage europeen aux 17e-19e siecles, ce qui renforça leur identite collective.",
+      "migrationRoutes": [
+        "Descente depuis l'interieur forestier vers les zones de plaine de l'ouest ivoirien",
+        "Etablissement progressif dans les forets du bassin du Sassandra"
+      ],
+      "historicalSettlementZones": [
+        "Region du Guemon (Cote d'Ivoire) — territoire central nyabwa",
+        "Departements de Duekoue et Bangolo (Cote d'Ivoire occidentale)",
+        "Forets denses de l'arriere-pays entre le fleuve Sassandra et la frontiere liberienne"
+      ],
+      "unificationsOrDivisions": "Les Nyabwa sont organises en chefferies villageoises autonomes sans entite politique centralisee supravillageoise. Cette organisation decentralisee est caracteristique des peuples kru. Les decisions majeures sont prises en conseil d'anciens. Des allegiances territoriales inter-villageoises existent mais sans unite politique formelle.",
+      "externalInfluences": "Contact avec l'administration coloniale francaise (19e-20e siecle). Missions chretiennes actives dans la region depuis la colonisation. Les conflits post-electoraux ivoiriens (2002-2011) ont provoque d'importants deplacements de population dans la region de Duekoue, affectant directement les communautes nyabwa. Influence de l'islam via les commerçants dioula du nord, restant minoritaire.",
+      "majorHistoricalEvents": "Resistance a l'esclavage et aux razzias coloniales, caracteristique des peuples kru. Integration dans l'administration coloniale francaise de la Cote d'Ivoire (debut 20e siecle). Independence de la Cote d'Ivoire (1960). Crise politico-militaire ivoirienne (2002-2011) : la region de l'ouest, incluant Duekoue, fut fortement touchee par des violences intercommunautaires."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies villageoises independantes. Le chef de village (dont le titre varie selon les communautes) est assiste d'un conseil d'anciens qui detient l'essentiel du pouvoir deliberatif. Les decisions relatives a la terre, aux conflits et aux ceremonies communautaires sont prises collectivement par les anciens. Il n'existe pas de structure politique centralisee au-dessus du village.",
+      "clanOrganization": "Societe patrilineaire : l'appartenance clanique se transmet par le pere. Les clans partagent des droits fonciers et des obligations ceremonielles. La propriete fonciere est traditionnellement communautaire et gered par le clan, non vendable a des etrangers. Les familles etendues constituent l'unite de base de la vie sociale et economique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires structurent les alliances matrimoniales, la gestion fonciere et les obligations rituelles. Les anciens des lignages jouent un role de mediateurs dans la resolution des conflits inter-claniques. Les decisions de mariage impliquent les deux familles etendues.",
+      "religiousAuthority": "L'autorite spirituelle est exercee par des specialistes rituels connaissant les esprits de la brousse et les protocoles d'offrandes. Dans la cosmologie kru-wee, des esprits lies aux territoires (bush spirits) gouvernent les espaces non domestiques : toute nouvelle defrichement ou expedition exige des offrandes pour apaiser ces esprits. Des figures missionnaires chretiennes ont introduit le christianisme depuis le 19e siecle."
+    },
+    "languages": {
+      "mainLanguage": "Nyabwa (Niaboua)",
+      "isoCodes": ["nwb"],
+      "dialects": [
+        "Nyabwa — variete principale (ISO 639-3 : nwb)",
+        "Continuum dialectal Wee partage avec le Guere (gxx) et le Wobe (wob)"
+      ],
+      "vehicularRole": "Le nyabwa est parle par environ 200 000 locuteurs en Cote d'Ivoire, principalement dans la region du Guemon. Il appartient a la famille Kru (branche Niger-Congo) et fait partie du continuum dialectal Wee. Le francais est la langue officielle de la Cote d'Ivoire et sert de vehicule dans l'administration, l'education et les echanges interethniques. Le dioula est utilise comme langue commerciale dans la region."
+    },
+    "culture": {
+      "majorRites": "{\"initiation\": \"Les rites d'initiation marquent le passage de l'adolescence a l'age adulte pour les jeunes hommes et les jeunes femmes. Ces ceremonies comprennent une periode de retraite hors du village, des epreuves initiatiques et l'acquisition de connaissances rituelles et sociales transmises par les anciens.\", \"culteBushSpirits\": \"Avant toute defrichement de nouvelle terre ou expedition en foret, des offrandes sont faites aux esprits de la brousse (bush spirits). Ces esprits, croyance centrale dans la cosmologie wee-nyabwa, doivent etre apaises pour garantir la securite et la prosperite.\", \"funerailles\": \"Les funerailles incluent des veillees prolongees, des chants et des danses rituels, et des ceremonies d'honoration des ancetres. Les grisgris et charmes protecteurs jouent un role important dans les rites funeraires.\", \"masks\": \"L'utilisation des masques en bois lors de ceremonies est une tradition kru importante : les masques representent des esprits, des forces naturelles ou des ancetres et sont portes par des individus specifiquement formes a cet effet.\"}",
+      "symbols": "Masques en bois — centres de la vie ceremoniale kru, representant esprits et ancetres; considers comme dangereux si toucher par des non-inities. Feu sacre — utilise dans les ceremonies d'initiation et de purification. Objets rituels en eau (tien/nitien) — artéfacts vus comme des esprits de l'eau lies a la guerison, la fertilite et la creation de nouveaux villages.",
+      "artsAndMusic": "{\"masques\": \"La sculpture de masques en bois est l'expression artistique la plus importante des peuples kru de l'ouest ivoirien, dont les Nyabwa. Chaque masque a une identite spirituelle propre et son port transforme le porteur en l'entite representee.\", \"musique\": \"La musique rituelle et sociale accompagne toutes les etapes importantes de la vie (mariages, naissances, funerailles, initiations, recoltes). Les instruments comprennent le tam-tam, des percussions et des flutes. La tradition musicale kru a joue un role dans l'evolution des musiques de l'Afrique de l'Ouest, notamment dans la diffusion des premiers styles de guitare precurseurs du highlife.\", \"danse\": \"Les danses rituelles sont liees aux ceremonies d'initiation et aux celebrations communautaires. Elles servent de lien entre le monde des vivants et celui des esprits.\", \"artisanat\": \"Tissage, poterie et sculpture en bois sont des arts traditionnels pratiiques dans les villages nyabwa. La cueillette et l'agriculture (riz, ignames, taro, manioc, mais, banane) constituent la base de l'economie traditionnelle.\"}",
+      "spiritualities": "{\"espritsTerritoriauxEtBrousse\": \"La cosmologie nyabwa-wee reconnaît des esprits lies aux territoires (grottes, forets, rivieres) qui doivent etre honores pour proteger les communautes. Les bush spirits (esprits de la brousse) sont consideres comme actifs et potentiellement dangereux; des offrandes rituelles sont necessaires lors de tout empiètement sur leur domaine.\", \"createur\": \"Comme les autres peuples kru, les Nyabwa reconnaissent un etre createur supreme (apparente a Nyesoa dans le pantheon kru general) distant des affaires humaines quotidiennes, tandis que les esprits intermediaires jouent un role plus direct.\", \"culteDesAncetres\": \"Les ancetres restent actifs dans le monde des vivants; on les invoque par des prieres et des offrandes lors des moments importants (mariages, naissances, funerailles, recoltes).\", \"christianisme\": \"Le christianisme (catholique et protestant) est present depuis la periode coloniale et coexiste avec les croyances traditionnelles dans un syncrétisme souple. Une partie de la population pratique les deux.\"}"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Nyabwa n'ont pas forme de royaumes centralises. Ils sont organises en chefferies villageoises independantes, organisation typique des peuples kru de l'ouest ivoirien. Cette structure decentralisee rendit difficile leur integration dans les structures coloniales et leur permit de preserver une autonomie relative.",
+      "relationsWithNeighbors": "Les Nyabwa sont proches culturellement des Guere et des Wobe avec qui ils partagent le continuum dialectal Wee. Des relations d'echanges et de mariages inter-groupes existent avec les peuples voisins (Bete, Dan/Yacouba). Des tensions territoriales apparurent avec les communautes dioula implantees dans la region pour le commerce. Les conflits post-electoraux ivoiriens (2010-2011) provoquerent des violences intercommunautaires graves dans la region de Duekoue.",
+      "conflictsOrAlliances": "Resistance aux razzias esclavagistes et a la penetration coloniale (caracteristique des peuples kru, qui refuserent d'etre reduits en esclavage et marquaient leurs fronts a l'indigo pour s'en distinguer). Implication dans les tensions inter-communautaires de la crise ivoirienne (2002-2011). Opposition entre autochtones de l'ouest (dont les Nyabwa) et migrants economiques dans le contexte de l'ivoirite.",
+      "diaspora": "Migrations internes vers les centres urbains ivoiriens (Abidjan, San-Pedro, Daloa) dans le contexte de la modernisation et des crises. Deplacement de populations lors de la crise ivoirienne (2002-2011). Pas de diaspora internationale significative documentee."
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2025,
+      "source": "Ethnologue SIL — Nyabwa (nwb), Cote d'Ivoire; Accent Network — Nyabwa language profile; estimations demographiques regionales",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 200000,
+          "note": "Region du Guemon, principalement departements de Duekoue et Bangolo (Cote d'Ivoire occidentale)"
+        }
+      ]
+    },
+    "sources": [
+      "Ethnologue SIL — Nyabwa (nwb). https://www.ethnologue.com/language/nwb/",
+      "Wikipedia EN — Nyabwa language. https://en.wikipedia.org/wiki/Nyabwa_language",
+      "Wikipedia EN — Kru people. https://en.wikipedia.org/wiki/Kru_people",
+      "Wikipedia EN — Kru languages. https://en.wikipedia.org/wiki/Kru_languages",
+      "Accent Network — Nyabwa. https://accentnetwork.com/nyabwa/",
+      "101 Last Tribes — Krahn/Wee people. https://www.101lasttribes.com/tribes/krahn.html",
+      "Qiraat Africa — The Kru/Kroo of West Africa. https://qiraatafrican.com/en/19895/the-kru-kroo-of-west-africa/"
+    ]
+  }
+}

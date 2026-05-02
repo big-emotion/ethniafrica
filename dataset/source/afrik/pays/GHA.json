@@ -1,0 +1,220 @@
+{
+  "id": "GHA",
+  "nameFr": "République du Ghana (Republic of Ghana)",
+  "nameOfficial": "République du Ghana (Republic of Ghana)",
+  "etymology": "Le nom \"Ghana\" a été choisi lors de l'indépendance en 1957 en référence à l'empire du Ghana (Wagadu), un ancien empire ouest-africain (IIIe-XIIIe siècles). Cependant, l'empire historique du Ghana était situé en Mauritanie et au Mali actuels, pas dans le territoire du Ghana moderne. Le nom est donc symbolique et ne correspond pas à l'ancienne localisation de l'empire.",
+  "nameOriginActor": "Le nom \"Ghana\" a été choisi par Kwame Nkrumah et les nationalistes ghanéens lors de l'indépendance en 1957 pour honorer l'héritage historique de l'empire du Ghana, bien que l'empire historique ne se trouvait pas sur le territoire actuel.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire était peuplé de royaumes Akan (Bono, Akwamu, Denkyira, Asante, Fante, Akuapem), peuples Ga-Dangme, Guan, Gur et Mandé sans nom unifié. L'empire du Ghana (Wagadu) était situé en Mauritanie/Mali, pas dans le Ghana actuel.",
+      "middleAges": "Développement des royaumes Akan (XIIIe-XIXe siècles). Royaume Ashanti (Asante) devient le plus puissant. Commerce avec les Européens (or, esclaves).",
+      "precolonial": "Royaumes Akan puissants (Ashanti, Denkyira, Akwamu), peuples Ga-Dangme sur la côte, royaumes gur au nord (Dagomba, Mamprusi). Commerce côtier avec les Européens. Pas de nom unifié pour l'ensemble du territoire.",
+      "colonization": "XVe-XIXe siècles : présence portugaise, néerlandaise puis britannique. Nom colonial : \"Côte-de-l'Or\" (Gold Coast). Le territoire est appelé \"Gold Coast\" par les colonisateurs européens.",
+      "contemporary": "Indépendance en 1957 sous le nom de \"Ghana\" (choisi en référence à l'empire historique). Le nom officiel en anglais est \"Republic of Ghana\"."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaumes Akan",
+        "period": "XIIIe - XIXe siècles",
+        "dominantPeoples": [
+          "Akan (Ashanti",
+          "Fante",
+          "Akyem",
+          "Akuapem",
+          "Denkyira)"
+        ],
+        "politicalCenters": [
+          "Kumasi (capitale Ashanti)",
+          "Cape Coast",
+          "Accra"
+        ],
+        "historicalRole": "Royaumes Akan puissants, commerce de l'or, résistance à la colonisation. Royaume Ashanti particulièrement puissant."
+      },
+      {
+        "name": "Royaume Ashanti",
+        "period": "XVIIe - XIXe siècles",
+        "dominantPeoples": ["Ashanti (Akan)"],
+        "politicalCenters": ["Kumasi (capitale)"],
+        "historicalRole": "Royaume Akan le plus puissant, expansion territoriale, commerce de l'or, résistance aux Britanniques. Guerres anglo-ashanti (XIXe siècle)."
+      },
+      {
+        "name": "Royaumes Ga-Dangme",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Ga", "Dangme"],
+        "politicalCenters": ["Accra", "régions côtières"],
+        "historicalRole": "Peuples côtiers, commerce avec les Européens, présence historique à Accra."
+      },
+      {
+        "name": "Royaumes gur",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Dagomba", "Mamprusi"],
+        "politicalCenters": ["Nord"],
+        "historicalRole": "Royaumes gur liés aux Mossi et aux Mandé, organisation politique traditionnelle."
+      },
+      {
+        "name": "Côte-de-l'Or",
+        "period": "1874 - 1957",
+        "dominantPeoples": [
+          "Tous les peuples ghanéens sous administration coloniale britannique"
+        ],
+        "politicalCenters": ["Accra (capitale coloniale)", "Cape Coast"],
+        "historicalRole": "Colonie britannique, résistance ghanéenne (guerres anglo-ashanti), mouvements nationalistes."
+      },
+      {
+        "name": "République du Ghana",
+        "period": "1957 - présent",
+        "dominantPeoples": ["Tous les peuples ghanéens"],
+        "politicalCenters": ["Accra (capitale)"],
+        "historicalRole": "Premier État indépendant d'Afrique subsaharienne (1957). Histoire politique avec alternance démocratique et régimes militaires. Développement économique, modèle de démocratie en Afrique."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Akan",
+        "selfAppellation": "Akan",
+        "exonyms": ["Akan (terme utilisé par les Européens)"],
+        "peopleId": "PPL_AKAN",
+        "mainRegion": "Centre, Sud, Ouest",
+        "languages": ["Akan (Twi", "Fante)", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Akan\" est neutre et accepté."
+      },
+      {
+        "name": "Mole-Dagbani",
+        "selfAppellation": "Dagomba, Mamprusi",
+        "exonyms": [
+          "Mole-Dagbani (terme utilisé par les Européens)",
+          "Dagomba",
+          "Mamprusi"
+        ],
+        "peopleId": "PPL_DAGOMBA",
+        "mainRegion": "Nord",
+        "languages": ["Dagbani", "Mampruli", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Mole-Dagbani\" est neutre et accepté."
+      },
+      {
+        "name": "Ewe",
+        "selfAppellation": "Eʋe / Eʋegbe",
+        "exonyms": ["Ewe (terme utilisé par les Européens)"],
+        "peopleId": "PPL_EWE",
+        "mainRegion": "Volta (Est)",
+        "languages": ["Ewe", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Ewe\" est neutre et accepté. L'auto-appellation \"Eʋe\" est préférée."
+      },
+      {
+        "name": "Ga-Dangme",
+        "selfAppellation": "Gã / Ga (Ga), Dangme / Adaŋme (Dangme)",
+        "exonyms": ["Ga-Dangme (terme utilisé par les Européens)"],
+        "peopleId": "PPL_GA_DANGME",
+        "mainRegion": "Grande Accra",
+        "languages": ["Ga", "Dangme", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Ga-Dangme\" est neutre et accepté. Les auto-appellations \"Gã\" et \"Dangme\" sont préférées."
+      },
+      {
+        "name": "Guan",
+        "selfAppellation": "Guan",
+        "exonyms": ["Guan (terme utilisé par les Européens)"],
+        "peopleId": "PPL_GUAN",
+        "mainRegion": "Centre",
+        "languages": ["Guan", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Guan\" est neutre et accepté."
+      },
+      {
+        "name": "Gurma",
+        "selfAppellation": "Gurma",
+        "exonyms": ["Gurma (terme utilisé par les Européens)"],
+        "peopleId": "PPL_GURMA",
+        "mainRegion": "Nord-Est",
+        "languages": ["Gurma", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Gurma\" est neutre et accepté."
+      }
+    ],
+    "culture": {
+      "culturalTraditions": "Musique traditionnelle (highlife, hiplife), danse traditionnelle, poésie orale, artisanat (kente, adinkra), architecture traditionnelle, festivals (Homowo, Akwasidae)",
+      "dominantReligions": "Christianisme (protestant majoritaire, catholique), islam (minorité, surtout au nord), croyances traditionnelles (syncrétisme)",
+      "lifestyles": "Vie principalement rurale, agriculture (cacao, or, pétrole, manioc, igname, riz), élevage (bovins, caprins), pêche (côtes), exploitation minière (or, diamants), commerce, urbanisation croissante",
+      "socialOrganization": "Système de chefferies traditionnelles (chieftaincy), structure clanique patrilinéaire, organisation en familles étendues et lignages, importance des ancêtres, système de confréries religieuses",
+      "regionalRelations": "Relations historiques avec les peuples du Togo, du Bénin, de la Côte d'Ivoire, du Burkina Faso. Diaspora importante au Royaume-Uni, aux États-Unis, et dans les pays occidentaux."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement du territoire par des groupes Akan, Ga-Dangme, Guan, Gur. Développement de royaumes indépendants.",
+      "middleAges": "Développement des royaumes Akan (XIIIe-XIXe siècles). Royaume Ashanti devient le plus puissant. Commerce de l'or avec les Européens.",
+      "precolonial": "Apogée du royaume Ashanti (XVIIe-XIXe siècles). Expansion territoriale, commerce de l'or, résistance aux Britanniques. Guerres anglo-ashanti (XIXe siècle).",
+      "colonization": "XVe siècle : premiers contacts portugais. XVIIe-XIXe siècles : présence néerlandaise, danoise, britannique. 1874 : Colonie britannique (Gold Coast). Résistance ghanéenne (guerres anglo-ashanti).",
+      "independenceStruggle": "Mouvements nationalistes dans les années 1950. Indépendance obtenue en 1957. Kwame Nkrumah devient premier président. Premier État indépendant d'Afrique subsaharienne.",
+      "postIndependence": "Première République (1957-1966) : présidence de Nkrumah, socialisme africain. Régimes militaires (1966-1992). Quatrième République depuis 1992 : alternance démocratique, développement économique, modèle de démocratie en Afrique."
+    },
+    "sources": [
+      "CIA World Factbook – Ghana",
+      "SIL Ethnologue – Languages of Ghana",
+      "Recensements nationaux ghanéens",
+      "ONU – Données démographiques 2025",
+      "UNFPA – Projections démographiques 2025",
+      "Études anthropologiques sur les peuples ghanéens",
+      "Études historiques sur le royaume Ashanti"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Akan",
+          "population": 17575000,
+          "percentageInCountry": 47.5,
+          "percentageInAfrica": 1.23,
+          "peopleId": "PPL_AKAN",
+          "region": "Centre, Sud, Ouest",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Mole-Dagbani",
+          "population": 6160000,
+          "percentageInCountry": 16.6,
+          "percentageInAfrica": 0.43,
+          "peopleId": "PPL_DAGOMBA",
+          "region": "Nord",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Ewe",
+          "population": 5140000,
+          "percentageInCountry": 13.9,
+          "percentageInAfrica": 0.36,
+          "peopleId": "PPL_EWE",
+          "region": "Volta (Est)",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Ga-Dangme",
+          "population": 2740000,
+          "percentageInCountry": 7.4,
+          "percentageInAfrica": 0.19,
+          "peopleId": "PPL_GA_DANGME",
+          "region": "Grande Accra",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Guan",
+          "population": 1630000,
+          "percentageInCountry": 4.4,
+          "percentageInAfrica": 0.11,
+          "peopleId": "PPL_GUAN",
+          "region": "Centre",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Gurma",
+          "population": 1170000,
+          "percentageInCountry": 3.2,
+          "percentageInAfrica": 0.08,
+          "peopleId": "PPL_GURMA",
+          "region": "Nord-Est",
+          "languageFamily": "FLG_NIGERCONGO"
+        }
+      ]
+    }
+  }
+}

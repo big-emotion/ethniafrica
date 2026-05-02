@@ -1,0 +1,105 @@
+{
+  "id": "PPL_WEST_TAA",
+  "nameMain": "West Taa (!Xoon occidental)",
+  "languageFamilyId": "FLG_TUU",
+  "currentCountries": ["BWA", "NAM"],
+  "content": {
+    "appellations": {
+      "mainName": "West Taa (!Xoon occidental)",
+      "selfAppellation": "!Xoon (!Xóõ) ou ǃama ʘʔâni ('gens de l'ouest' en taa)",
+      "exonyms": [
+        "West !Xoon",
+        "West !Xóõ",
+        "Nǀuǁ'en (dialecte de Bleek, aujourd'hui eteint)",
+        "Masarwa (exonyme tswana, pejoratif)",
+        "Magon/Magong (terme tswana regional)"
+      ],
+      "originOfExonyms": "Le terme West !Xoon fut utilise par les linguistes, notamment dans le cadre du projet DoBeS (Documentation of Endangered Languages), pour distinguer ce dialecte occidental du dialecte oriental (East !Xoon) documente par Anthony Traill. Le nom Masarwa est un terme tswana generalement considere pejoratif. L'autonym !Xoon (pl. !Xooŋake) est employe a l'extremite ouest de l'aire Taa, notamment a la reserve d'Aminius en Namibie.",
+      "whyProblematic": "La designation West Taa est une denomination linguistique externe. Les locuteurs se designent par leur propre ethnonyme (!Xoon ou 'N|ohan selon la region). Le terme Bushman, autrefois courant, est aujourd'hui largement rejete comme pejoratif.",
+      "contemporaryUsage": "Le terme West !Xoon est employe par les linguistes. Dans la vie quotidienne, les membres se designent comme !Xoon ou selon leur village. L'afrikaans et le tswana sont aujourd'hui les langues principales de communication avec l'exterieur.",
+      "linguisticFamily": "FLG_TUU",
+      "ethnoLinguisticGroup": "Tuu (Taa occidental)",
+      "historicalRegion": "Kalahari meridional (Botswana occidental, Namibie du Sud — regions d'Omaheke et Hardap)",
+      "currentCountries": ["BWA", "NAM"]
+    },
+    "ethnicities": [
+      "!Xoon de la reserve d'Aminius (Namibie, Omaheke)",
+      "!Xoon de Dzutshwa (Botswana)",
+      "Nǀuǁ'en (dialecte occidental de Bleek, probablement eteint)",
+      "Locuteurs West !Xoon du Hardap septentrional (Namibie)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les West Taa sont un peuple autochtone du Kalahari meridional, chasseurs-cueilleurs depuis des millenaires. Leur langue, variante occidentale du Taa (!Xóõ), est notable pour le nombre eleve de phonemes qu'elle contient — jusqu'a 87 consonnes et 20 voyelles selon le projet DoBeS — et une charge fonctionnelle des clics parmi les plus elevees au monde. Leurs ancetres peuplaient le Kalahari bien avant les migrations bantoues et europeennes.",
+      "formationPeriod": "Le dialecte West !Xoon s'est differencie du continuum dialectal Taa dans un mouvement de diffusion est-ouest documente par les etudes de classification genealogique (Traill, DoBeS). Les caracteristiques phonologiques du West !Xoon different de celles de l'East !Xoon, notamment dans l'inventaire consonantique et le systeme tonal.",
+      "migrationRoutes": [
+        "Presence autochtone dans le Kalahari meridional sans migration fondatrice documentee",
+        "Retrait progressif vers des zones plus arides sous la pression des pasteurs tswana et des fermiers coloniaux au 19e-20e siecles"
+      ],
+      "historicalSettlementZones": [
+        "Reserve d'Aminius, region d'Omaheke, Namibie",
+        "Village de Dzutshwa et environs, Botswana occidental",
+        "Kalahari meridional, region de Lone Tree (aujourd'hui Namibie)"
+      ],
+      "unificationsOrDivisions": "Organisation en bandes independantes de chasseurs-cueilleurs, sans structure politique unifiee. Les bandes West !Xoon se distinguaient des groupes East !Xoon et des 'N|ohan par leur territoire et certains traits linguistiques, mais partageaient la meme culture materielle et spirituelle de base.",
+      "externalInfluences": "Contacts anciens avec les pasteurs Khoekhoe et les agriculteurs tswana aux marges du Kalahari. Colonisation europeenne (Namibie allemande puis administration sud-africaine, Bechuanaland britannique): reduction progressive des territoires de chasse, salarisation forcee, sedentarisation dans des villages ou des fermes. Influence grandissante de l'eglise lutherienne et des missions chretiennes.",
+      "majorHistoricalEvents": "Sedentarisation forcee dans des villages communaux (Namibie, annees 1950-1970). Politique d'apartheid sud-africaine et ses effets sur la Namibie jusqu'en 1990. Independence namibienne (1990): reconnaissance progressive des droits des San. Etudes linguistiques du projet DoBeS (2000s) ayant produit des archives du West !Xoon."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation egalitaire sans chefs hereditaires. Les decisions sont prises par consensus entre les adultes de la bande. L'autorite des guerisseurs-chamanes (!gi:xa) repose sur leurs capacites rituelles. En contexte contemporain, des leaders de communaute reconnus par les gouvernements botswanais et namibien representent les groupes San.",
+      "clanOrganization": "Bandes de chasseurs-cueilleurs de 10 a 50 personnes, organisees autour de liens de parente bilateraux et de reciprocite. Le territoire de chasse et les ressources en eau etaient geres collectivement. Les West !Xoon se distinguaient entre eux par l'environnement (plaine, riviere) et la direction (gens de l'ouest: ǃama ʘʔâni).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages bilatEraux sans primaute systematique d'une ligne. Les systemes de parente Taa (dont West !Xoon) se caracterisent par une classification des cousins croisee/parallele, partages avec les voisins G|ui (Khoe) et ǂHoan (Kx'a), temoignant de contacts interets au Kalahari.",
+      "religiousAuthority": "Autorite des guerisseurs-chamanes entrant en transe lors de la grande danse (!Xoon: Grande Danse). Transmission orale des connaissances rituelles et mythologiques. Pas d'institution religieuse formalisee."
+    },
+    "languages": {
+      "mainLanguage": "Taa occidental (West !Xoon), variante de la langue Taa",
+      "isoCodes": ["nmn"],
+      "dialects": [
+        "West !Xoon proprement dit (Aminius, Namibie et Dzutshwa, Botswana)",
+        "Nǀuǁ'en (dialecte de Dorothea Bleek, Nord-Ouest, probablement eteint)",
+        "Continuum avec les dialectes East Taa (!Ama, 'N|ohan, East !Xoon)"
+      ],
+      "vehicularRole": "Le West !Xoon est parle par une minorite des ~2 500 locuteurs Taa (2011). Selon le projet DoBeS, ce dialecte est distinct du East !Xoon (etudie par Traill) sur le plan phonologique. Le tswana et l'afrikaans sont les langues vehiculaires dominantes pour les echanges avec l'exterieur. L'anglais est utilise dans les contextes administratifs en Botswana et en Namibie."
+    },
+    "culture": {
+      "majorRites": "Grande danse de transe (ceremonie centrale): les femmes claquent des mains et chantent, les hommes dansent en cercle toute la nuit, jusqu'a ce que les guerisseurs entrent en transe (nosebleeds, sensations de vol, transformation en animal). Rites de premiere menstruation (isolement, interdits alimentaires, benedictions). Rituel de premiere mise a mort par un jeune chasseur (rôle important dans la transmission du statut). Distribution reglementee de la viande selon les regles de parente.",
+      "symbols": "L'eland (antilope): animal le plus sacre, figure centrale des ceremonies de guerison et de l'art rupestre. Le gemsbok (oryx): animaux de la cosmologie Taa. La mante religieuse: forme du demiurge |Kaggen. Les peintures rupestres du Kalahari: temoignages du monde spirituel.",
+      "artsAndMusic": "Art rupestre: peintures et gravures dans les sites du Kalahari (Tsodilo Hills classes au patrimoine mondial de l'UNESCO, avec peintures San); representations d'animaux, de guerisseurs en transe, de therianthropes. Instruments: arc musical, hochets en coquilles d'autruche ou en cocons d'insectes. Chants polyphoniques collectifs lors des danses de transe. Tradition orale: recits mythologiques, contes, transmis de generation en generation.",
+      "spiritualities": "Cosmologie chamanique: deux mondes interconnectes (monde ordinaire et monde spirituel, accessible sous terre et dans le ciel). |Kaggen (Mantis): demiurge-farceur, createur et transformateur, prenant la forme d'une mante religieuse ou d'un eland; ses mythes sont communs aux peuples Taa et !Kwi. Pouvoir n/om: energie spirituelle activee par la danse, accumulee dans le ventre des guerisseurs. Esprits des morts: presences apres la mort, pouvant causer ou soigner les maladies. Christianisme: influence des missions lutheriennes et catholiques depuis le 20e siecle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas d'organisation etatique. Structure sociale egalitaire de chasseurs-cueilleurs. Aucune chefferie permanente ni royaute documentee.",
+      "relationsWithNeighbors": "Echanges commerciaux avec les pasteurs tswana et les agriculteurs bantoues aux marges du Kalahari (peaux, miel, gibier contre betail, outils). Relations parfois marquees par la servitude ou le travail salarial sur les fermes boers et namibiennes. Influences linguistiques reciproques attestees par les emprunts entre Taa, Khoe et Kx'a.",
+      "conflictsOrAlliances": "Deplacements forces par les fermiers coloniaux (Namibie allemande et Sud-Ouest africain sous mandat sud-africain). Sedentarisation imposee dans des villages durant la periode coloniale et post-coloniale. Conflits avec les fermiers boers en Botswana (Bechuanaland) au 19e siecle.",
+      "diaspora": "Concentration dans des villages communaux en Namibie (region d'Omaheke) et au Botswana (Kalahari central). Certains travaillent comme employes sur des fermes. Migration vers les villes (Gobabis, Ghanzi) sans integration sociale significative."
+    },
+    "demography": {
+      "totalPopulation": 500,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Ethnologue (SIL International, 2024): total Taa ~2 500 locuteurs; le West !Xoon represente une fraction mineure, estimee a 300-500 personnes. Donnees du projet DoBeS et de Boden (2004-2011).",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 300,
+          "note": "Village de Dzutshwa et Kalahari occidental, Botswana"
+        },
+        {
+          "country": "NAM",
+          "population": 200,
+          "note": "Reserve d'Aminius, region d'Omaheke et Hardap septentrional, Namibie"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Taa language. https://en.wikipedia.org/wiki/Taa_language",
+      "Ethnologue (SIL International) — Taa language (nmn). https://www.ethnologue.com/language/nmn/",
+      "Glottolog — West !Xoon. https://glottolog.org/resource/languoid/id/xooo1239",
+      "Boden, Gertrud — Cultural, Lexical and Conceptual Change in the Southern Kalahari: !Xoon in Namibia between the 1920s and 1970s. Journal of Namibian Studies, 2013.",
+      "Boden, Gertrud — Khoisan Kinship Terminologies in Diachronic Perspective. Kalahari Basin Area Project, University of Edinburgh.",
+      "Traill, Anthony — Phonetic and Phonological Studies of !Xóõ Bushman. Hamburg: Helmut Buske, 1985.",
+      "DoBeS Project — Documentation of West !Xoon (Taa). 2000s fieldwork in Namibia and Botswana.",
+      "UNESCO — Tsodilo Hills World Heritage Site. https://whc.unesco.org/en/list/1021/",
+      "IWGIA — Indigenous Peoples in Africa: Botswana and Namibia. https://www.iwgia.org/en/africa.html"
+    ]
+  }
+}

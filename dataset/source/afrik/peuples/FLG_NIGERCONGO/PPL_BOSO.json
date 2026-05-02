@@ -1,0 +1,110 @@
+{
+  "id": "PPL_BOSO",
+  "nameMain": "Bozo",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MLI", "BFA", "CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Bozo",
+      "selfAppellation": "Boso",
+      "exonyms": [
+        "Bozo (exonyme d'origine bambara)",
+        "Sorogo",
+        "Tieyaxo Bozo",
+        "Jenaama"
+      ],
+      "originOfExonyms": "Le terme Bozo derive du bambara bo-so signifiant maison de bambou ou maison de paille, reference aux habitations provisoires des campements de peche sur les rives du Niger. Les Bozo acceptent ce nom collectif mais utilisent en interne des noms de clan plus specifiques : Sorogoye, Hain et Tieye.",
+      "whyProblematic": "Le terme Bozo, exonyme bambara, homogeneise un groupe linguistiquement diversifie compose d'au moins quatre varietes dialectales distinctes, dont certaines ont une intelligibilite mutuelle limitee. Ethnologue distingue quatre langues separees au sein du cluster bozo.",
+      "contemporaryUsage": "Bozo est le nom consacre dans les langues officielles et les medias. Les locuteurs se designent souvent par le nom de leur sous-groupe dialectal : Jenaama, Sorogoye, Hainyaxo ou Tieyaxo. Le nom est egalement romanise Boso en bambara.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Mande nord-occidental (sous-groupe Soninke-Bozo)",
+      "historicalRegion": "Delta interieur du Niger (region de Mopti, Djenne, Segou, Mali)",
+      "currentCountries": ["MLI", "BFA", "CIV"]
+    },
+    "ethnicities": [
+      "Sorogoye (Jenaama, Sorko) — sous-groupe le plus nombreux, delta central du Niger entre Djenne et Mopti",
+      "Hain (Hainyaxo, Kelegaxo) — sous-groupe occidental le long du Niger, quelques milliers de locuteurs",
+      "Tieye (Tieyaxo, Tigemaxo) — sous-groupe autour de Diafarabe et de la riviere Diaka",
+      "Tieye orientaux (Tiema-Ciewe) — sous-groupe nord-oriental pres du lac Debo"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bozo sont considered comme l'un des plus anciens peuples du Mali, probablement la composante la plus ancienne de la population du delta interieur du Niger. Ils se considerent eux-memes comme les premiers habitants des rives du Niger, anterieurs aux Bambara et aux Songhay. Selon la tradition, ils sont les fondateurs de Djenne et de Mopti. Des gravures rupestres associees aux Bozo remontent a environ 6 000 ans. La culture bozo a pris forme sous l'Empire du Ghana au Xe siecle, periode a laquelle ils ont pris possession des rives du fleuve Niger.",
+      "formationPeriod": "L'identite bozo s'est consolidee progressivement autour de l'activite de peche du delta interieur du Niger. Leur cohesion comme groupe distinct est attestee des le Xe siecle sous l'influence de l'Empire du Ghana. L'islamisation progressive, commencee au XIVe siecle, a remodele leur identite tout en preservant des traditions animistes.",
+      "migrationRoutes": [
+        "Installation ancestrale sur les berges du Niger entre Segou et le lac Debo",
+        "Extension saisonniere dans le delta interieur selon les cycles de crue et de decrue du fleuve"
+      ],
+      "historicalSettlementZones": [
+        "Delta interieur du Niger : region de Mopti, Djenne, Youwarou, Tenenkou, Bandiagara (Mali)",
+        "Region de Segou sur le Niger (Mali)",
+        "Abords du lac Debo (Mali)",
+        "Riviere Diaka (Mali)",
+        "Presence minoritaire au Burkina Faso et en Cote d'Ivoire"
+      ],
+      "unificationsOrDivisions": "Les Bozo forment une constellation de sous-groupes unis par une culture de peche commune et une organisation clanique similaire, mais divises linguistiquement. Ethnologue distingue quatre langues : Jenaama (bze), Tiemaceve (bzx), Tieyaxo (bzj) et Hainyaxo (bzd). Le terme Bozo est avant tout un label exterieur qui agregge ces communautes autour d'une pratique economique partagee.",
+      "externalInfluences": "Influence de l'Empire du Ghana (Xe siecle). Islamisation progressive a partir du XIVe siecle — les Bozo etaient tous musulmans au XIXe siecle. Relations avec l'Empire bambara de Segou (XVIIIe siecle). Liens etroits avec les Dogon et les Nono, dont ils sont allies traditionnels. L'etat colonial francais a restructure leurs pratiques de peche et de commerce.",
+      "majorHistoricalEvents": "Fondation presumee des villes de Djenne et Mopti. Integration dans le systeme commercial de l'Empire du Ghana (Xe siecle). Islamisation progressive (XIVe-XIXe siecle). Periode de l'Empire bambara de Segou (XVIIIe siecle) marquant des reconfigurations territoriales. A l'epoque contemporaine, la surpeche dans le delta interieur et les changements climatiques menacent le mode de vie traditionnel bozo."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe patriarcale organisee en villages autonomes. Chaque village est administre par un chef de clan (chef de village) qui reside dans la cour interieure centrale du village et gere les affaires communautaires. La terre appartient a la communaute dans son ensemble et est administree par ce chef. Les decisions importantes relevent du conseil des anciens.",
+      "clanOrganization": "Organisation en trois grandes lignees claniques : Sorogoye, Hain et Tieye, chacune avec son propre dialecte et son territoire de peche. Au sein de chaque clan, les familles etendues partagent des zones de peche hereditaires. Le mariage est arrange par les chefs de familles elargies par l'intermediaire de mandataires masculins.",
+      "ageClassSystems": "Les jeunes hommes non maries resident dans des huttes de celibataires separees. Le passage a l'age adulte est marque par le mariage et l'integration dans la vie economique du clan.",
+      "roleOfLineages": "Les lignages patrilineaires determinent les droits de peche sur les troncons du fleuve. La polygamie est pratiquee dans la limite islamique de quatre epouses. Les couples maries vivent avec la famille du mari. Les mariages sont scelles par le versement d'une dot par le mari aux parents de l'epouse, accompagne de prestations de travail.",
+      "religiousAuthority": "Autorite des chefs religieux islamiques (imams) dans les villages. Coexistence avec des pratiques animistes traditionnelles, notamment le culte du dieu de l'eau Faro et le totemisme (le taureau comme totem du groupe)."
+    },
+    "languages": {
+      "mainLanguage": "Bozo (cluster de quatre varietes)",
+      "isoCodes": ["bze", "bzd", "bzj", "boo"],
+      "dialects": [
+        "Jenaama (bze) — variete centrale et la plus parlee, sous-dialectes Pondori, Kotya, Korondougou, Debo",
+        "Hainyaxo (bzd) — variete occidentale, quelques milliers de locuteurs le long du Niger",
+        "Tieyaxo (bzj) — variete parlée autour de Diafarabe et de la riviere Diaka",
+        "Tiemaceve (boo) — variete nord-orientale pres du lac Debo"
+      ],
+      "vehicularRole": "Les varietes bozo appartiennent au sous-groupe Soninke-Bozo du Mande nord-occidental. Elles sont tonales avec trois tons lexicaux. Les Bozo parlent couramment une ou plusieurs langues regionales comme le bambara, le Maasina Fulfulde ou le Songhai occidental pour les echanges commerciaux. Le bambara sert de langue vehiculaire au Mali."
+    },
+    "culture": {
+      "majorRites": "Ceremonies de mariage : organisation par les chefs de famille, le marie verse une dot et effectue des prestations de service aupres de la famille de l'epouse. Ceremonies de deuil : rituels funebres islamiques combines avec des traditions animistes de commemoration des ancetres. Mascarades et spectacles de marionnettes : les Bozo sont consideres comme les inventeurs des mascarades mettant en scene des animaux mythiques appeles Sogow, dont le buffle des brousses Sigi (dont le corps represente le Niger et les cornes symbolisent les pirogues de peche). Ces spectacles sont animes par des chanteurs solistes et un choeur de femmes et de filles avec tambours, hochets et castagnettes. Rites de passage : transition de l'enfance a l'age adulte marquee socialement par le mariage et l'installation au sein du clan.",
+      "symbols": "Totem principal : le taureau (son corps represente le Niger, ses cornes symbolisent les pirogues de peche bozo). Le buffle Sigi incarne la puissance et la richesse des eaux. Le pirogue (canoe de peche) est le symbole identitaire par excellence. Le dieu-eau Faro, esprit tutélaire des eaux, est au centre de la cosmologie traditionnelle.",
+      "artsAndMusic": "Mascarades avec grandes marionnettes des animaux Sogow : le buffle Sigi anime par des tiges, portant des figurines plus petites representant des personnages (agriculteur, femme pilant le mil, musiciens). Musique de mascarade : chant solo et choeur feminin accompagnes de tambours, hochets et castagnettes. Gravures rupestres associees aux Bozo datant d'environ 6 000 ans. Construction de pirogues et de canoes (savoir-faire artisanal transmis de generation en generation). Artisanat traditionnel des huttes en bambou et en paille des campements de peche.",
+      "spiritualities": "Islam sunnite pratique depuis le XIVe siecle — les Bozo sont entierement islamises depuis le XIXe siecle, respectant les cinq piliers. Maintien de traditions animistes paralleles : culte du dieu-eau Faro (Dieu createur et esprit des eaux, associe aux jumeaux primoriaux et a la purification du monde) ; sacrifice d'un belier par Dieu pour racheter les erreurs de Mousso Koroni (ancienne petite femme), mettant fin au desordre et instaurant prosperite et paix. Totemisme : le taureau comme totem collectif du groupe. Syncrétisme islamo-animiste caractéristique : les pratiques de peche, les mascarades et les recits mythiques coexistent avec la pratique islamique."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Bozo n'ont pas constitue de royaumes centralises. Ils ont fonde et peuple les villes fluviales de Djenne et Mopti, qui sont devenues des centres commerciaux majeurs de l'Afrique de l'Ouest. Ils ont joue un role fondateur dans la constitution des reseaux d'echange du delta interieur du Niger sous l'Empire du Ghana (Xe siecle). La ville de Segou (sur le Niger) est egalement associee a leur histoire.",
+      "relationsWithNeighbors": "Relations traditionnellement amicales et symbiotiques avec les Dogon et les Nono. Les Bozo echangeaient poisson contre cereales avec les agriculteurs des plateaux (notamment les Dogon). Relation complexe avec les Bambara et l'Empire de Segou (XVIIIe siecle). Ils sont appeles les maitres du fleuve, reconnus par tous les peuples riverains du Niger comme les navigateurs et pecheurs par excellence.",
+      "conflictsOrAlliances": "Alliance traditionnelle avec les Dogon et les Nono. Periode de pression sous l'Empire bambara de Segou (XVIIIe siecle). A l'epoque coloniale, adaptation aux structures administratives francaises sans resistance armée notoire. Alliance de fait avec tous les peuples du delta interieur du Niger autour de l'exploitation des ressources halieutiques.",
+      "diaspora": "Migration saisonniere le long du Niger depuis des siecles, liee aux cycles de crue et de decrue. Presence minoritaire au Burkina Faso et en Cote d'Ivoire. A Bamako et dans d'autres grandes villes maliennes, des quartiers de pecheurs bozo subsistent. La surpeche et les changements climatiques poussent certains Bozo vers les villes."
+    },
+    "demography": {
+      "totalPopulation": 260000,
+      "referenceYear": 2025,
+      "source": "Peoplegroups.org (2024) : 257 500 dans 3 pays. Joshua Project (2025) : Bozo Jenaama seul compte 432 000 locuteurs au Mali. Estimation 2025 consolidee tenant compte des quatre sous-groupes dialectaux : environ 260 000 personnes. Sources : SIL Ethnologue (langues bze, bzd, bzj, boo), recensement Mali 2009, Peoplegroups.org.",
+      "distributionByCountry": [
+        {
+          "country": "MLI",
+          "population": 240000,
+          "note": "Delta interieur du Niger : Mopti, Djenne, Segou, Youwarou, Tenenkou, Bandiagara ; lac Debo"
+        },
+        {
+          "country": "BFA",
+          "population": 12000,
+          "note": "Presence minoritaire au Burkina Faso"
+        },
+        {
+          "country": "CIV",
+          "population": 8000,
+          "note": "Presence diasporique en Cote d'Ivoire"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bozo people. https://en.wikipedia.org/wiki/Bozo_people",
+      "101 Last Tribes — Bozo. https://www.101lasttribes.com/tribes/bozo.html",
+      "SIL Ethnologue — Jenaama Bozo [bze]. https://www.ethnologue.com/language/bze/",
+      "SIL Ethnologue — Tiemaceve Bozo [boo]. https://www.ethnologue.com/language/boo/",
+      "Joshua Project — Bozo, Jenaama in Mali. https://joshuaproject.net/people_groups/15003/ML",
+      "Spirit Land of Africa — Bozo culture. https://spiritlandofafrica.com/products/list/bozo-mali/",
+      "Peoplegroups.org — Bozo people demography 2024"
+    ]
+  }
+}

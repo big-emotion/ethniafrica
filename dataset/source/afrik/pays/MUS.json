@@ -1,0 +1,266 @@
+{
+  "id": "MUS",
+  "nameFr": "République de Maurice (Republic of Mauritius, Repiblik Moris)",
+  "nameOfficial": "République de Maurice (Republic of Mauritius, Repiblik Moris)",
+  "etymology": "Le nom \"Maurice\" vient du prince Maurice de Nassau (Maurice d'Orange), en l'honneur duquel l'île a été nommée par les Néerlandais en 1598. Le nom créole \"Moris\" est dérivé de \"Maurice\". L'île était auparavant appelée \"Dina Arobi\" (île déserte) par les Arabes.",
+  "nameOriginActor": "Les Néerlandais ont nommé l'île \"Mauritius\" en l'honneur du prince Maurice de Nassau (Maurice d'Orange), stathouder des Provinces-Unies. Les Français l'ont appelée \"Île de France\" (1715-1810), puis les Britanniques ont restauré le nom \"Mauritius\" (1810).",
+  "content": {
+    "historicalNames": {
+      "antiquity": "L'île Maurice était inhabitée. Les Arabes l'ont appelée \"Dina Arobi\" (île déserte) mais ne l'ont pas colonisée.",
+      "middleAges": "L'île reste inhabitée. Les Arabes connaissent l'île mais ne s'y installent pas.",
+      "precolonial": "L'île reste inhabitée jusqu'à l'arrivée des Européens. Pas de nom unifié avant la colonisation.",
+      "colonization": "1598 : Arrivée des Néerlandais, nom \"Mauritius\" (en l'honneur du prince Maurice de Nassau). 1638-1710 : Colonisation néerlandaise (abandonnée en 1710). 1715-1810 : Colonisation française, nom \"Île de France\". 1810-1968 : Colonisation britannique, nom \"Mauritius\" restauré.",
+      "contemporary": "1968 : Indépendance, République de Maurice. Le nom \"Maurice\" est officiel en français, \"Mauritius\" en anglais, \"Moris\" en créole."
+    },
+    "kingdoms": [
+      {
+        "name": "Île déserte",
+        "period": "Avant 1598",
+        "dominantPeoples": ["Aucun (île inhabitée)"],
+        "politicalCenters": ["Aucun"],
+        "historicalRole": "L'île Maurice était inhabitée avant l'arrivée des Européens. Les Arabes connaissaient l'île mais ne l'ont pas colonisée."
+      },
+      {
+        "name": "Colonie néerlandaise",
+        "period": "1638-1710",
+        "dominantPeoples": ["Néerlandais", "esclaves africains et malgaches"],
+        "politicalCenters": ["Port-Louis (établissement néerlandais)"],
+        "historicalRole": "Première colonisation européenne, introduction d'esclaves africains et malgaches, exploitation du bois d'ébène, abandon de la colonie en 1710."
+      },
+      {
+        "name": "Colonie française (Île de France)",
+        "period": "1715-1810",
+        "dominantPeoples": [
+          "Français",
+          "esclaves africains et malgaches",
+          "colons français"
+        ],
+        "politicalCenters": ["Port-Louis (capitale)"],
+        "historicalRole": "Colonisation française intensive, développement de l'économie sucrière, importation massive d'esclaves africains et malgaches, développement du créole mauricien, base navale française dans l'océan Indien."
+      },
+      {
+        "name": "Colonie britannique",
+        "period": "1810-1968",
+        "dominantPeoples": [
+          "Britanniques",
+          "Créoles mauriciens",
+          "immigrants indiens",
+          "immigrants chinois"
+        ],
+        "politicalCenters": ["Port-Louis (capitale)"],
+        "historicalRole": "Colonisation britannique, abolition de l'esclavage (1835), immigration massive d'Indiens (travailleurs engagés, 1834-1920), immigration chinoise (commerce), développement de la société multiethnique, mouvements nationalistes (XXe siècle)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Indo-Mauriciens",
+        "selfAppellation": "Variées selon les groupes (Hindous, Musulmans, Tamouls, Telugu, Marathi, etc.)",
+        "exonyms": [
+          "\"Coolies\" (terme colonial péjoratif pour les travailleurs engagés indiens)",
+          "\"Indiens\" (terme générique)"
+        ],
+        "peopleId": "PPL_INDO_MAURICIENS",
+        "mainRegion": "Toutes les régions de Maurice, majoritaires",
+        "languages": [
+          "Hindi",
+          "ourdou",
+          "tamoul",
+          "telugu",
+          "marathi",
+          "bhojpuri",
+          "créole mauricien",
+          "anglais",
+          "français"
+        ],
+        "languageFamily": "FLG_CREOLE",
+        "appellationRemarks": "Le terme \"Coolie\" est un terme colonial péjoratif utilisé pour désigner les travailleurs engagés indiens. Il doit être évité. Les Indo-Mauriciens sont majoritairement hindous, avec des minorités musulmanes et chrétiennes. Ils sont descendants d'immigrants indiens arrivés entre 1834 et 1920 comme travailleurs engagés dans les plantations de canne à sucre."
+      },
+      {
+        "name": "Créoles mauriciens",
+        "selfAppellation": "Kreol Morisien",
+        "exonyms": [
+          "Créole mauricien (terme utilisé pour les créoles de Maurice)",
+          "\"Noirs\" (terme générique",
+          "peut être problématique)"
+        ],
+        "peopleId": "PPL_CREOLE_MAURICE",
+        "mainRegion": "Toutes les régions de Maurice",
+        "languages": [
+          "Créole mauricien (mfe",
+          "ISO 639-3)",
+          "français",
+          "anglais"
+        ],
+        "languageFamily": "FLG_CREOLE",
+        "appellationRemarks": "\"Kreol Morisien\" est l'auto-appellation. Les Créoles mauriciens sont descendants d'esclaves africains et malgaches, métissés avec les colons français. Le terme \"Noir\" peut être problématique et doit être utilisé avec précaution. Culture créole riche (séga, musique traditionnelle)."
+      },
+      {
+        "name": "Sino-Mauriciens",
+        "selfAppellation": "Variées selon les groupes (Chinois mauriciens)",
+        "exonyms": [
+          "\"Chinois\" (terme générique)",
+          "\"Sino-Mauriciens\" (terme descriptif)"
+        ],
+        "peopleId": "PPL_SINO_MAURICIENS",
+        "mainRegion": "Toutes les régions de Maurice, majoritairement urbains",
+        "languages": [
+          "Créole mauricien",
+          "français",
+          "anglais",
+          "hakka",
+          "cantonais",
+          "mandarin"
+        ],
+        "languageFamily": "FLG_CREOLE",
+        "appellationRemarks": "Les Sino-Mauriciens sont descendants d'immigrants chinois arrivés au XIXe et XXe siècles, principalement pour le commerce. Ils sont majoritairement chrétiens (catholicisme) ou bouddhistes."
+      },
+      {
+        "name": "Franco-Mauriciens",
+        "selfAppellation": "Variées selon les groupes (Français mauriciens, Blancs mauriciens)",
+        "exonyms": [
+          "\"Français\" (terme générique)",
+          "\"Blancs\" (terme descriptif",
+          "peut être problématique)",
+          "\"Colons\" (terme historique)"
+        ],
+        "peopleId": "PPL_FRANCO_MAURICIENS",
+        "mainRegion": "Toutes les régions de Maurice, majoritairement urbains",
+        "languages": ["Français", "créole mauricien", "anglais"],
+        "languageFamily": "FLG_CREOLE",
+        "appellationRemarks": "Les Franco-Mauriciens sont descendants de colons français. Le terme \"Blanc\" peut être problématique et doit être utilisé avec précaution. Le terme \"Colon\" est historique et doit être contextualisé. Ils sont majoritairement catholiques."
+      },
+      {
+        "name": "Autres groupes",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_AUTRES_GROUPES",
+        "mainRegion": "Toutes les régions de Maurice",
+        "languages": [
+          "Créole mauricien",
+          "français",
+          "anglais",
+          "langues diverses"
+        ],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Anglais",
+          "isoCode": "eng",
+          "isPrimary": true
+        },
+        {
+          "name": "français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "créole mauricien",
+          "isoCode": "mfe"
+        },
+        {
+          "name": "hindi",
+          "isoCode": "hin"
+        },
+        {
+          "name": "ourdou",
+          "isoCode": "urd"
+        },
+        {
+          "name": "tamoul",
+          "isoCode": "tam"
+        },
+        {
+          "name": "telugu",
+          "isoCode": "tel"
+        },
+        {
+          "name": "marathi",
+          "isoCode": "mar"
+        },
+        {
+          "name": "bhojpuri",
+          "isoCode": "bho"
+        },
+        {
+          "name": "hakka",
+          "isoCode": "hak"
+        },
+        {
+          "name": "cantonais",
+          "isoCode": "yue"
+        },
+        {
+          "name": "mandarin",
+          "isoCode": "cmn"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle exceptionnelle reflétant la mosaïque ethnique de Maurice. Traditions indiennes (hindouisme, fêtes indiennes, Diwali, Holi, musique indienne, cuisine indienne). Traditions créoles (séga, musique créole mauricienne, danse créole, culture créole). Traditions chinoises (fêtes chinoises, Nouvel An chinois, cuisine chinoise). Traditions françaises (influence culturelle française, cuisine française). Traditions africaines (héritage des esclaves africains et malgaches). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Le séga est la musique traditionnelle créole mauricienne.",
+      "dominantReligions": "Hindouisme (majoritaire, environ 48%), christianisme (catholicisme majoritaire, environ 26%), islam (environ 17%), bouddhisme (minorité, Sino-Mauriciens), religions traditionnelles africaines (syncrétisme fréquent)",
+      "lifestyles": "Urbanisation importante (Port-Louis, Curepipe, Quatre Bornes, Vacoas-Phoenix). Économie diversifiée : tourisme (secteur majeur), industrie textile, canne à sucre (agriculture), services financiers (centre financier offshore), pêche, commerce. Économie basée sur les services (tourisme, finance), l'industrie (textile), et l'agriculture (canne à sucre). Maurice est l'un des pays les plus développés d'Afrique.",
+      "socialOrganization": "Société multiethnique et multiculturelle. Structures familiales traditionnelles variées selon les groupes ethniques. Organisation communautaire (communautés indiennes, créoles, chinoises, françaises). Structures étatiques modernes (république parlementaire). Cohabitation pacifique des différentes communautés. Système politique démocratique stable.",
+      "regionalRelations": "Relations avec l'Afrique (membre de l'Union africaine, SADC), relations avec l'Asie (relations avec l'Inde, la Chine), relations avec l'Europe (Union européenne, France, Royaume-Uni), relations avec les îles de l'océan Indien (Seychelles, Réunion, Madagascar). Maurice est un centre financier et touristique régional."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "L'île Maurice était inhabitée. Les Arabes connaissaient l'île (appelée \"Dina Arobi\", île déserte) mais ne l'ont pas colonisée.",
+      "middleAges": "L'île reste inhabitée. Pas de présence humaine permanente.",
+      "precolonial": "L'île reste inhabitée jusqu'à l'arrivée des Européens. Pas de structures politiques ou sociales.",
+      "colonization": "1598 : Arrivée des Néerlandais, nom \"Mauritius\" (en l'honneur du prince Maurice de Nassau). 1638-1710 : Colonisation néerlandaise (abandonnée en 1710). 1715-1810 : Colonisation française, nom \"Île de France\", développement de l'économie sucrière, importation massive d'esclaves africains et malgaches, développement du créole mauricien. 1810-1968 : Colonisation britannique, abolition de l'esclavage (1835), immigration massive d'Indiens (travailleurs engagés, 1834-1920), immigration chinoise (commerce), développement de la société multiethnique.",
+      "independenceStruggle": "1930s-1968 : Mouvements nationalistes, Parti travailliste mauricien, Seewoosagur Ramgoolam, indépendance (12 mars 1968).",
+      "postIndependence": "République de Maurice (1968), développement économique (tourisme, industrie textile, services financiers), stabilité politique, démocratie multipartite, développement social. Maurice est l'un des pays les plus développés d'Afrique, avec un IDH élevé et une économie diversifiée."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Mauritius",
+      "SIL Ethnologue – Languages of Mauritius",
+      "Recensements mauriciens",
+      "Études anthropologiques sur les peuples de Maurice",
+      "Histoire de Maurice (colonisation, immigration indienne, créolisation)"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Indo-Mauriciens",
+          "population": 750000,
+          "percentageInCountry": 57.7,
+          "peopleId": "PPL_INDO_MAURICIENS",
+          "region": "Toutes les régions de Maurice",
+          "languageFamily": "FLG_CREOLE"
+        },
+        {
+          "name": "Créoles mauriciens",
+          "population": 400000,
+          "percentageInCountry": 30.8,
+          "peopleId": "PPL_CREOLE_MAURICE",
+          "region": "Toutes les régions de Maurice",
+          "languageFamily": "FLG_CREOLE"
+        },
+        {
+          "name": "Sino-Mauriciens",
+          "population": 30000,
+          "percentageInCountry": 2.3,
+          "peopleId": "PPL_SINO_MAURICIENS",
+          "region": "Toutes les régions de Maurice, majoritairement urbains",
+          "languageFamily": "FLG_CREOLE"
+        },
+        {
+          "name": "Franco-Mauriciens",
+          "population": 20000,
+          "percentageInCountry": 1.5,
+          "peopleId": "PPL_FRANCO_MAURICIENS",
+          "region": "Toutes les régions de Maurice, majoritairement urbains",
+          "languageFamily": "FLG_CREOLE"
+        },
+        {
+          "name": "Autres groupes",
+          "population": 100000,
+          "percentageInCountry": 7.7,
+          "peopleId": "PPL_AUTRES_GROUPES",
+          "region": "Toutes les régions de Maurice"
+        }
+      ]
+    }
+  }
+}

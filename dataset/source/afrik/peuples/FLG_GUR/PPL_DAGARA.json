@@ -1,0 +1,101 @@
+{
+  "id": "PPL_DAGARA",
+  "nameMain": "Dagara",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["BFA", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Dagara",
+      "selfAppellation": "Dagara / Dagao",
+      "exonyms": ["Dagarti", "Dagaati", "Dagaaba", "Dagaari"],
+      "originOfExonyms": "Le terme Dagarti ou Dagaati a été forgé par les premiers Européens à visiter la région à partir de la racine vernaculaire dagaa. Dagarti est une forme anglicisée popularisée à l'époque coloniale. Dagaaba (singulier Dagao) est l'ethnonyme le plus courant en dehors du nord, tandis que Dagara est l'appellation préférée dans les dialectes du nord ainsi que par les communautés du Burkina Faso.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Dagara est aujourd'hui l'appellation privilégiée par les communautés du Burkina Faso et de nombreux intellectuels du groupe. Dagaaba reste en usage courant dans le nord-ouest du Ghana. Les deux termes coexistent dans la littérature académique. Dagaarie ou Dagawie désigne le territoire ancestral.",
+      "linguisticFamily": "FLG_GUR",
+      "ethnoLinguisticGroup": "Gur central, sous-groupe Mole-Dagbani (Mabia)",
+      "historicalRegion": "Dagawie — nord-ouest du Ghana (région Upper West) et sud-ouest du Burkina Faso (provinces Ioba, Poni, Bougouriba, Sissili, Mouhoun)",
+      "currentCountries": ["BFA", "GHA"]
+    },
+    "ethnicities": [
+      "Dagara du nord (locuteurs du dialecte nordique, principalement Burkina Faso, province de Ioba)",
+      "Dagaaba du sud (locuteurs du Southern Dagaare, Ghana, région Upper West)",
+      "Dagaari Dioula (sous-groupe orienté vers le commerce, bilingues dagaare-dioula)",
+      "Birifor (groupe apparenté, parfois distingué des Dagara stricto sensu)",
+      "Dagara de la Brong-Ahafo (communautés migrantes établies dans le centre-sud du Ghana)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Dagara constituent un rameau du macro-groupe Mole-Dagbani qui migra vers la région sahélienne au XIVe siècle de l'ère commune. La tradition orale mentionne une rupture d'avec le groupe Dagbon sous le règne de Na Nyagse, fondateur du royaume de Dagbon, dont une partie de la population se serait dissociée et installée plus à l'ouest. Les Dagara ont toujours vécu en communautés agricoles décentralisées, sans jamais former un grand État centralisé, résistant périodiquement aux tentatives de conquête des royaumes de Dagbon, Mamprugu et Gonja.",
+      "formationPeriod": "La formation d'une identité dagara distincte est généralement placée entre le XIVe et le XVIIe siècle. Après la migration initiale vers la région sahélienne (XIVe siècle), les communautés se sont déplacées vers la partie méridionale de la région actuelle au XVIIe siècle. La démarcation coloniale lors du Scramble for Africa (fin XIXe siècle) a séparé les Dagara entre le Ghana (colonie britannique) et le Burkina Faso (Haute-Volta française), créant une frontière artificielle au sein d'un même ensemble culturel.",
+      "migrationRoutes": [
+        "Migration initiale vers le Sahel depuis l'est (région du bassin du lac Tchad, confluence Mole-Dagbani) au XIVe siècle",
+        "Déplacement vers le nord-ouest du Ghana et le sud-ouest du Burkina Faso au XVIIe siècle",
+        "Migrations économiques internes au Ghana vers le sud (Brong-Ahafo, Kumasi, Accra) à partir du début du XXe siècle (mines et plantations de cacao)"
+      ],
+      "historicalSettlementZones": [
+        "Région Upper West du Ghana (districts de Nandom, Lawra, Jirapa, Kaleo, Papu, Nadowli, Daffiama, Wechiau, Hamile)",
+        "Province de Ioba, Burkina Faso (Diébougou), ainsi que Poni, Bougouriba, Sissili, Mouhoun",
+        "Villes de Wa, Bogda, Babile, Tuna, Han, Zambo (Ghana)",
+        "Rives du fleuve Black Volta (frontière naturelle Dagawie)"
+      ],
+      "unificationsOrDivisions": "Les Dagara n'ont jamais formé de structure politique unifiée. Ils ont résisté aux tentatives de conquête des royaumes voisins (Dagbon, Mamprugu, Gonja) et à l'empire Wassoulou de Samory Toure dans les années 1890, sous la conduite du Kaleo Naa. L'administration coloniale britannique a imposé des structures de chefferies en 1933, rattachant certains villages Dagara au Wala Native Authority. Depuis l'indépendance, le Conseil des Anciens Dagara du Ghana tente périodiquement d'unifier les différentes factions.",
+      "externalInfluences": "Résistance à la conquête de l'empire Wassoulou de Samory Toure (fin XIXe siècle). Imposition coloniale de chefferies par les Britanniques. Évangélisation catholique et protestante (XXe siècle). Influence de l'islam via les réseaux commerciaux. Migrations vers le sud pour le travail salarié (mines, cacao) depuis les années 1920.",
+      "majorHistoricalEvents": "Dans les années 1890, l'armée de Sarankye Mori (allié de Samory Toure) conquit une grande partie du Dagawie, mais fut défaite par le Kaleo Naa. En 1894, des villages Dagara du sud se rebellèrent contre l'autorité du Royaume de Wala. En 1933, les Britanniques rattachèrent ces villages à la Wala Native Authority. En 2006, le Conseil des Anciens Dagara nomma Naa Franklin Suantah chef de la communauté dagara du Ghana dans une tentative d'unification politique."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La société Dagara est traditionnellement organisée sans chefferie centralisée. L'unité de base est le Yir (foyer ou sous-clan), groupement de familles partageant un territoire et une relation ancestrale commune. Un ensemble de Yir forme le Tengan, territoire placé sous l'autorité d'une divinité terrestre (tengane). Le système décisionnel repose sur des conseils d'anciens. Des chefferies cérémonielles ont émergé à la fin du XIXe siècle sous influence coloniale, mais ne disposent pas de pouvoir coercitif comparable aux royaumes voisins.",
+      "clanOrganization": "Les lignages modernes Dagara sont organisés en dix clans principaux englobant plus d'un million de personnes. Chaque clan est patrilinéaire et revendique un ancêtre masculin commun. Les relations entre clans sont régulées par des pratiques de cousinage à plaisanterie, notamment avec les Frafra (Gurunsi), groupe voisin avec lequel les Dagara entretiennent une relation de joking relationship (parenté à plaisanterie).",
+      "ageClassSystems": null,
+      "roleOfLineages": "La structure Tengan organise l'accès à la terre et les obligations rituelles. Le tengan sob (ou tindana, chef de terre) est l'ancien-prêtre héréditaire qui remplit des fonctions communautaires de médiation, de redistribution foncière et de rituel. Il est secondé par le tengan dem (gardien rituel), le suo sob (sacrificateur à la divinité terrestre), le zongmogre (officiant des marchés sacrés) et le gara dana (chef des chasseurs rituels). Ces rôles sont hérités au sein de mêmes groupes de parenté.",
+      "religiousAuthority": "L'autorité religieuse est exercée par les tengan sob (chefs de terre) qui assurent la médiation entre la communauté et les forces spirituelles. La religion Bagre (ou Bagr), système de connaissance ésotérique transmis lors d'initiations, constitue le coeur de la vie religieuse Dagara. Les ancêtres (kpii) jouent un rôle central dans la cosmologie. Islam et christianisme sont présents mais coexistent souvent avec les pratiques traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Dagaare (dagare, dagaari)",
+      "isoCodes": ["dga", "dgi"],
+      "dialects": [
+        "Southern Dagaare (dga) — parlé principalement dans la région Upper West du Ghana (districts de Lawra, Nandom, Jirapa, Nadowli)",
+        "Northern Dagaare / Dagara du nord (dgi) — parlé principalement dans la province de Ioba au Burkina Faso",
+        "Dagaari Dioula — variété orientée vers le commerce, bilingue avec le dioula"
+      ],
+      "vehicularRole": "Le Dagaare est la langue véhiculaire principale de la région Upper West du Ghana. Il est reconnu comme langue nationale du Ghana. Le Southern Dagaare (dga) dispose d'une Bible complète. La langue est enseignée dans les écoles primaires de la région Upper West. En Burkina Faso, le dialecte nordique est moins standardisé."
+    },
+    "culture": {
+      "majorRites": "Le Bagr (ou Bagre) est l'institution initiatique la plus importante des Dagara. Cette initiation à la fois religieuse et philosophique introduit les initiés (hommes et femmes) aux mystères de la vie, de la mort et du divin. La cérémonie dure plusieurs jours et comprend des récitations de narrations mythiques (bagr mythical narratives), de la musique, des danses et des rituels ésotériques. Les funérailles constituent l'autre grand moment rituel : elles peuvent durer plusieurs jours selon le statut du défunt, avec musique de gyil (xylophone), chants de dirge (langni), danses rituelles et distribution de nourriture. Le rite funéraire détermine le statut ancestral du défunt. La cérémonie de nomination des enfants (quelques jours après la naissance) et les rites liés aux semailles et aux récoltes complètent le calendrier rituel.",
+      "symbols": "Le gyil (xylophone à clavier en bois de roseau, caisse de résonance en calebasse) est le symbole musical central des Dagara et l'instrument rituel par excellence. Les autels Tengan (pierres semi-circulaires dans les cours) symbolisent le lien à la terre et aux ancêtres. Le cowrie (cauris) demeure un symbole de valeur et d'échange rituels dans certaines communautés du nord-ouest du Ghana. Les motifs de scarification (selon les clans) fonctionnent comme marqueurs identitaires.",
+      "artsAndMusic": "Le gyil (xylophone) est l'instrument central de la tradition musicale Dagara, utilisé lors des funérailles (musique bine), des initiations Bagr et des cérémonies sociales. Il est accompagné du kuor (tambour cylindrique). Les funérailles sont les principales occasions de performance musicale publique : gyil-mwier (joueur de gyil), lang-konme (chanteurs de dirge, souvent des femmes) et lang-muoli (voix de deuil féminines) y interviennent. Les Dagara ont développé une littérature orale riche : contes, proverbes, épopées historiques. L'artisanat comprend la poterie, le tissage et la fabrication d'instruments en fer (tradition de siderurgie précoloniale). La bière de mil (daa ou pito) est une production culturelle et sociale importante.",
+      "spiritualities": "La cosmologie Dagara reconnaît un créateur suprême, les ancêtres (kpii) comme forces médiatrices et les esprits de la nature. Le système Bagr organise la connaissance ésotérique et les relations entre le monde des vivants et celui des ancêtres. La terre (Tengane) est une divinité à laquelle des sacrifices sont régulièrement offerts par les tengan sob. L'islam est présent dans certaines communautés, notamment dans les zones de contact commercial. Le christianisme (catholique et protestant) a progressé depuis la colonisation, mais coexiste fréquemment avec les pratiques traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Dagara n'ont pas formé de royaume centralisé. Leur organisation en communautés autonomes (Yir-Tengan) leur a permis de résister aux expansions des royaumes voisins. Des chefferies cérémonielles existent (Kaleo Naa, Nandom Naa, Lawra Naa) mais elles sont le produit partiel de l'organisation coloniale britannique plutôt que d'une tradition de royauté ancienne.",
+      "relationsWithNeighbors": "Les Dagara entretiennent une parenté à plaisanterie (joking relationship) historique avec les Frafra (Gurunsi), fondée sur une ancêtre commun mythique. Des conflits fonciers ont opposé les Dagara aux Sisala (années 1980) et aux Wala. Les relations avec les Dagomba sont marquées par une indépendance farouche, les Dagara ayant résisté aux tentatives de vassalisation de Dagbon. Avec les Birifor, groupe apparenté, les relations sont généralement fraternelles.",
+      "conflictsOrAlliances": "Dans les années 1890, l'armée de Sarankye Mori (général de Samory Toure, allié des Wala) conquit temporairement une partie du Dagawie. Le Kaleo Naa organisa la résistance et repoussa les envahisseurs. En 1894, des villages du sud se révoltèrent contre le Royaume de Wala. L'administration coloniale britannique imposa son autorité dans les années 1930 en rattachant des communautés Dagara à la Wala Native Authority. Des tensions foncières inter-ethniques ont éclaté à plusieurs reprises aux XXe et XXIe siècles.",
+      "diaspora": "Des vagues successives de migration interne au Ghana, commençant avec les besoins en main-d'oeuvre dans les mines et les plantations de cacao au début du XXe siècle, ont établi d'importantes communautés Dagara dans le sud du pays, notamment en région Brong-Ahafo, et dans les villes de Kumasi et Accra. Une diaspora plus restreinte existe en Europe (notamment au Royaume-Uni et en Allemagne) et en Amérique du Nord."
+    },
+    "demography": {
+      "totalPopulation": 1850000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur Joshua Project (Southern Dagaaba Ghana : 1 268 000 ; Dagara Burkina Faso : 399 000, 2024-2025), Wikipedia Dagaaba people, Ethnologue (SIL International). Population projetée 2025 avec taux de croissance Ghana (2,2%) et Burkina Faso (2,8%).",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 1430000,
+          "note": "Principalement région Upper West (districts Nandom, Lawra, Jirapa, Nadowli, Daffiama, Wechiau, Hamile) et communautés migrantes en Brong-Ahafo, Kumasi, Accra"
+        },
+        {
+          "country": "BFA",
+          "population": 420000,
+          "note": "Principalement provinces Ioba (Diébougou), Poni, Bougouriba, Sissili et Mouhoun dans la région Sud-Ouest"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Dagaaba people. https://en.wikipedia.org/wiki/Dagaaba_people",
+      "Joshua Project — Southern Dagaaba in Ghana. https://joshuaproject.net/people_groups/11466",
+      "Joshua Project — Dagara in Burkina Faso. https://joshuaproject.net/people_groups/11465",
+      "Ethnologue — Dagaare, Southern (dga). https://www.ethnologue.com/language/dga",
+      "Cultural Survival Quarterly — The Seen and the Unseen: Spirituality among the Dagara people. https://www.culturalsurvival.org/publications/cultural-survival-quarterly/seen-and-unseen-spirituality-among-dagara-people",
+      "Folklore.ee — The Dagaaba-Frafra Joking Relationship. https://www.folklore.ee/folklore/vol14/dagaaba.htm",
+      "Bernard Woma — The Socio-Political Dimension of Dagara Funeral Ritual Music and Dirge (Master's Thesis, Indiana University, 2012). http://www.dagaramusic.org/wp-content/uploads/2015/05/African-Studies-Masters-Thesis-2012.pdf",
+      "Wikipedia EN — Upper West Region, Ghana. https://en.wikipedia.org/wiki/Upper_West_Region"
+    ]
+  }
+}

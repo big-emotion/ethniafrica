@@ -1,0 +1,77 @@
+{
+  "id": "PPL_LOGBA",
+  "nameMain": "Logba",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Logba",
+      "selfAppellation": "Akpana",
+      "exonyms": ["Logba", "Ikpana", "Akpanawo"],
+      "originOfExonyms": "Logba est le nom exonyme donne par les voisins ewe et twi. Akpana est l'auto-denomination du peuple. Ikpana designe a la fois le peuple (dans le sens de 'defenseurs de la verite') et leur langue. Akpanawo est le pluriel de Akpana. A ne pas confondre avec les Lukpa (aussi appeles Logba) du Togo et du Benin, qui sont un peuple distinct.",
+      "whyProblematic": "Le terme Logba cree une confusion avec les Lukpa du Togo et du Benin, parfois egalement appeles Logba dans la litterature. Ces deux peuples sont distincts et geographiquement eloignes. La denomination Ikpana est preferee par les locuteurs pour nommer leur langue.",
+      "contemporaryUsage": "Logba est le nom couramment utilise en anglais et dans la litterature scientifique pour ce peuple du Ghana. Akpana reste l'auto-appellation principale au sein de la communaute.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Kwa (Ghana-Togo Mountain Languages), Niger-Congo",
+      "historicalRegion": "Region Volta (Volta Region), montagnes Ghana-Togo, Ghana",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Logba", "Akpana"],
+    "origins": {
+      "ancientOrigins": "Deux hypotheses s'affrontent sur les origines des Logba. Selon Bernd Heine (1968, suivant Debrunner), les Logba seraient des descendants des Mako, un peuple Guan qui aurait fui vers le sud apres une defaite militaire dans la deuxieme moitie du 18e siecle. Selon la tradition orale des Logba eux-memes (soutenue par Dorvlo, 2004), ils seraient venus avec les peuples Gbe depuis Ketu (actuel Benin), faisant partie des migrations Guan en direction de l'ouest.",
+      "formationPeriod": "Etablissement dans les montagnes du Ghana-Togo probablement entre le 17e et le 18e siecle. Presence documentee scientifiquement depuis la fin du 19e siecle.",
+      "migrationRoutes": [
+        "Selon l'hypothese Gbe: depuis Ketu (actuel Benin) vers l'ouest",
+        "Selon l'hypothese Guan: depuis la region des Mako vers le sud au 18e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Afadzato South District, Volta Region, Ghana",
+        "Montagnes Ghana-Togo, a l'est du lac Volta",
+        "Le long de la route Accra-Hohoe"
+      ],
+      "unificationsOrDivisions": "Le peuple Logba est uni par une langue et une culture commune. Klikpo est traditionnellement le siege du chef principal des Logba. Alakpeti est le centre commercial de la zone Logba.",
+      "externalInfluences": "Influence de la langue ewe (langue vehiculaire dominante dans la region). Influence du twi (akan). Presence chretienne via les missions. L'ewe est souvent utilise dans les services religieux meme si la plupart des Logba ne le comprennent pas parfaitement.",
+      "majorHistoricalEvents": "18e siecle: etablissement dans les montagnes Ghana-Togo selon les deux traditions. Periode coloniale: integration dans la Gold Coast britannique. Independance du Ghana (1957): les Logba restent au Ghana, la frontiere les separant des groupes apparentes au Togo."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferie traditionnelle avec un chef principal dont le siege est a Klikpo. La structure politique est decentralisee, chaque village ayant son propre chef. L'autorite est partagee entre le chef et le conseil des anciens.",
+      "clanOrganization": "Organisation en lignages et clans lies aux villages fondateurs. Les droits fonciers et les affiliations rituelles sont transmis selon les lignages.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent l'appartenance aux villages Logba et les droits sur les terres agricoles des montagnes. La transmission des fonctions rituelles suit les lignages.",
+      "religiousAuthority": "Autorite religieuse traditionnelle exercee par des pretres et anciens charges des ceremonies liees a la terre et aux ancetres. Des eglises chretiennes sont presentes mais leurs services sont souvent en ewe, langue vehiculaire de la region, plutot qu'en ikpana."
+    },
+    "languages": {
+      "mainLanguage": "Ikpana (Logba)",
+      "isoCodes": ["lgq"],
+      "dialects": [],
+      "vehicularRole": "L'ewe est la langue vehiculaire dominante dans la region Volta, suivie du twi. La plupart des Logba sont bilingues en ewe. Le francais est aussi utilise pres de la frontiere togolaise. L'ikpana est distincitement different de ses voisins immediats Avatime et Nyagbo-Tafi; il est plus proche des langues Akpafu et Santrokofi parlees au nord."
+    },
+    "culture": {
+      "majorRites": "Ceremonies rituelles liees aux recoltes et aux ancetres. Ensembles musicaux traditionnels (Logba traditional musical ensembles) jouant un role social et rituel serendipitous (selon les recherches de 2015). Rites de passage marquant les etapes de la vie. Des recherches academiques ont documente les dynamiques socioculturelles des ensembles musicaux Logba.",
+      "symbols": "Le nom Ikpana ('defenseurs de la verite') est un symbole identitaire fort du peuple Akpana. Les montagnes Ghana-Togo constituent le territoire identitaire.",
+      "artsAndMusic": "Les ensembles musicaux traditionnels Logba sont bien documentes et jouent un role central dans la vie communautaire: ils servent lors des funerailles, ceremonies de recolte, festivals et evenements sociaux. La musique integre tambours, chants et danse. Une etude publiee en 2015 (International Development Publications) decrit les dynamiques socioculturelles de ces ensembles.",
+      "spiritualities": "Religion traditionnelle centree sur le culte des ancetres et des esprits de la nature, lies au territoire montagneux. Christianisme present (des eglises existent dans les villages Logba). La langue de culte est souvent l'ewe plutot que l'ikpana, ce qui limite la penetration chretienne dans la communaute."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation en confederation de villages avec Klikpo comme siege de l'autorite supreme. Alakpeti fonctionne comme centre commercial et administratif de la zone.",
+      "relationsWithNeighbors": "Voisins des Avatime, Nyagbo-Tafi (proches geographiquement mais linguistiquement distants), Akpafu et Santrokofi (plus apparentes linguistiquement). Relations commerciales et culturelles avec les Ewe, langue vehiculaire adoptee dans les echanges regionaux. Proche de la frontiere Ghana-Togo, impliquant des liens transfrontaliers.",
+      "conflictsOrAlliances": null,
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 8000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN (Logba people): environ 7 500 locuteurs de l'ikpana. Estimation 2025 : environ 8 000 personnes.",
+      "distributionByCountry": [{ "country": "GHA", "population": 8000 }]
+    },
+    "sources": [
+      "Wikipedia EN – Logba people (https://en.wikipedia.org/wiki/Logba_people)",
+      "Wikipedia EN – Logba language (https://en.wikipedia.org/wiki/Logba_language)",
+      "Wikipedia EN – LGQ ISO code (https://en.wikipedia.org/wiki/LGQ)",
+      "Joshua Project – Logba in Ghana (https://joshuaproject.net/people_groups/13083)",
+      "International Development Publications – Serendipitous Socio-Cultural Dynamics of Logba Traditional Musical Ensembles in Ghana, 2015 (https://www.idpublications.org/wp-content/uploads/2014/12/SERENDIPITOUS-SOCIO-CULTURAL-DYNAMICS-OF-LOGBA-TRADITIONAL-MUSICAL-ENSEMBLES-IN-GHANA.pdf)",
+      "Wikipedia EN – Guan people (https://en.wikipedia.org/wiki/Guan_people)",
+      "Rosetta Panglossia – Logba Language lgq (https://rosettapanglossia.longnow.org/index.php?title=Logba_Language_%28lgq%29)"
+    ]
+  }
+}

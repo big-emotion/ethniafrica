@@ -1,0 +1,102 @@
+{
+  "id": "PPL_KOREKORE",
+  "nameMain": "Korekore",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["ZWE"],
+  "content": {
+    "appellations": {
+      "mainName": "Korekore",
+      "selfAppellation": "Korekore",
+      "exonyms": ["Northern Shona", "Shona du Nord"],
+      "originOfExonyms": "Le terme Korekore est leur auto-denomination et designe le groupe shona du nord du Zimbabwe. Ils constituent le cluster des Shona du Nord (Northern Shona), l'un des six grands groupes dialectaux shona identifies par l'anthropologue Clement Doke en 1931. L'appellation Korekore recouvre plusieurs sous-groupes dont les Tavara, Shangwe, Budya, Gouva et d'autres.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Korekore est utilise au Zimbabwe pour designer le groupe shona du nord. Leur dialecte korekore est l'une des varietes du shona, langue officielle du Zimbabwe avec l'anglais et le ndebele. Le terme Northern Shona est utilise en contexte academique anglophone.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Zone S (Shona)",
+      "historicalRegion": "Nord du Zimbabwe (Mashonaland du Nord), vallee du Zambeze, regions de Murewa, Bindura, Mt Darwin, Guruve",
+      "currentCountries": ["ZWE"]
+    },
+    "ethnicities": [
+      "Tavara (Korekore de l'est, incorpores dans l'Empire Mutapa)",
+      "Shangwe (Korekore du centre-nord, region de Gokwe)",
+      "Budya (Korekore, region de Mutoko)",
+      "Gouva (Korekore du nord-ouest)",
+      "Korekore d'Urungwe (region de Karoi)",
+      "Korekore de Sipolilo (actuel Guruve)",
+      "Nyongwe (region de Darwin / Mt Darwin)",
+      "Pfungwe (region de Mrewa / Murewa)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Korekore sont l'un des groupes shona les plus anciens et les plus septentrionaux du Zimbabwe. Ils sont consideres comme les descendants des premiers locuteurs shona du plateau nord. Ils semblent etre issus de la desintegration de l'etat karanga centre sur les ruines du Grand Zimbabwe. Les migrations bantous depuis le bassin du fleuve Congo vers la fin du premier millenaire ont pose les bases de la civilisation shona.",
+      "formationPeriod": "Au cours du 15e siecle, de nombreux groupes dont les ancetres des Korekore ont migre vers le nord depuis le plateau du Zimbabwe. Certains chiefdoms korekore, particulierement ceux de l'est (Tavara), ont ete incorpores a l'Empire Mutapa a diverses periodes. L'identite korekore distincte s'est consolidee par un isolement geographique relatif dans le nord, qui a fait evoluer leur dialecte independamment des autres groupes shona.",
+      "migrationRoutes": [
+        "Origine dans les regions de Grande Zimbabwe et du plateau karanga (avant le 15e siecle)",
+        "Migration vers le nord du plateau zimbabween au 15e siecle",
+        "Expansion dans les regions de Dande et du plateau nord (Urungwe, Sipolilo, Guruve)"
+      ],
+      "historicalSettlementZones": [
+        "Province du Mashonaland Central (Bindura, Mt Darwin, Guruve)",
+        "Province du Mashonaland Occidental (Karoi, Urungwe)",
+        "Vallee du Zambeze (Dande, zone des Tavara)",
+        "Region de Mutoko (Budya)",
+        "Region de Gokwe (Shangwe)"
+      ],
+      "unificationsOrDivisions": "Les Korekore constituaient, au moment de la colonisation britannique a la fin du 19e siecle, un grand nombre de petits chiefdoms independants et mutuellement autonomes. Certains chiefdoms de l'est (Tavara) avaient ete incorpores a l'Empire Mutapa. Les Korekore ont absorbe des elements culturels et administratifs de l'Empire Mutapa et, dans une moindre mesure, de l'Empire Rozvi.",
+      "externalInfluences": "L'Empire Mutapa (15e-19e siecles) a exerce une influence politique et culturelle sur les chiefdoms korekore de l'est. L'Empire Rozvi (17e-19e siecles) a influence les systemes de gouvernance et d'architecture en pierre. Les Ndebele ont detruit l'Empire Rozvi dans les annees 1830, modifiant l'equilibre des pouvoirs dans la region. La colonisation britannique via la British South Africa Company (Pioneer Column, 1890) a mis fin aux structures politiques independantes.",
+      "majorHistoricalEvents": "L'Empire Mutapa (Mwenemutapa), dont le coeur se trouve dans les regions korekore du nord, a constitue l'un des grands royaumes de l'Afrique australe entre le 15e et le 19e siecle. Les chiefdoms korekore constituaient l'ossature administrative et militaire de cet empire. La colonisation britannique a mis fin aux structures independantes korekore a la fin du 19e siecle. Les chefferies korekore restent actives dans la gouvernance traditionnelle rurale contemporaine."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en nombreux chiefdoms independants, chacun dirige par un chef (mambo ou chef). Systeme hierachique a plusieurs niveaux : le Mutapa (roi supreme), suivi de chefs, sous-chefs et chefs de village (headmen). Les disputes entre fermes isolees et entre villes etaient reglees a travers une cour d'hommes, l'arbitre ou juge etant issu du niveau hierarchique superieur.",
+      "clanOrganization": "Systeme de clans et sous-clans identifies par des totems (mitupo). Plus de 25 mitupo existent au Zimbabwe. Les mitupo sont nommes d'apres des animaux ou parties d'animaux indigenes et servent depuis la formation de la culture shona a eviter l'inceste, construire la solidarite et affirmer l'identite.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite clanique, les droits fonciers et les alliances matrimoniales. Le systeme des mitupo (totems) permet d'identifier les relations de parente et d'interdire les mariages entre membres du meme clan.",
+      "religiousAuthority": "Les mediums spirituels (masvikiro) jouent un role central de communication entre les vivants et les esprits ancestraux (dzavadzimu) ainsi qu'avec Mwari (Dieu). Les pretres de la pluie et les guerisseurs traditionnels sont des autorites spirituelles importantes. Les chefs sont souvent custodes des Mhondoro (esprits de lion ancestraux) qui guident et protegent le peuple."
+    },
+    "languages": {
+      "mainLanguage": "Korekore (dialecte shona du nord)",
+      "isoCodes": ["sna"],
+      "dialects": [
+        "Korekore proprement dit (Urungwe, Sipolilo/Guruve)",
+        "Tavara (est, Dande, associe a l'Empire Mutapa)",
+        "Shangwe (centre-nord, region de Gokwe)",
+        "Budya (Mutoko)",
+        "Nyongwe (Mt Darwin)",
+        "Pfungwe (Murewa)"
+      ],
+      "vehicularRole": "Le korekore est un dialecte du shona, langue bantoue officielle du Zimbabwe (code ISO 639-3 : sna). Le shona est parle par environ 70% de la population zimbabweenne. L'anglais est co-officiel. Le dialecte korekore a evolue independamment du fait de l'isolement geographique relatif du nord du Zimbabwe, absorbant des influences des langues voisines."
+    },
+    "culture": {
+      "majorRites": "La ceremonie bira est un rituel nocturne pratique par les Shona, y compris les Korekore, dans lequel les membres d'une famille etendue font appel aux esprits ancestraux pour guidance et intercession. La ceremonie kurova guva (frapper la tombe) a lieu au moins un an apres un deces pour accueillir l'esprit du defunt dans la famille. Le lobola (prix de la fiancee en betail) est central dans les ceremonies de mariage. Des rituels agricoles de benediction des champs et d'invocation de la pluie precedent les semailles. Les rites funeraires incluent des ceremonies de deuil collectives.",
+      "symbols": "Les mitupo (totems claniques) sont le systeme symbolique identitaire fondamental des Korekore, chaque clan etant identifie par un animal ou une partie d'animal totemique. Le mbira (instrument de musique sacre) est un symbole spirituel et culturel majeur. Les oiseaux Zimbabwe (Zimbabwe Birds) en pierre sculptee, retrouves dans les ruines du Grand Zimbabwe, symbolisent le lien entre le monde physique et le monde ancestral.",
+      "artsAndMusic": "Le mbira (sanza ou kalimba) est l'instrument sacre par excellence des Shona, dont les Korekore : le mbira dzavadzimu (22-24 touches) est utilise pour invoquer les esprits lors des ceremonies bira. D'autres variantes incluent le nhare, le nyunga nyunga et le matepe. Les ngoma (tambours) varient en taille selon les types de musique. Le marimba (similaire au xylophone), le hosho (hochets), les cliquetis en bois (makwa) et le chikorodzi (baton encoche frotte) completent l'instrumentation. La sculpture en pierre (serpentinite, steatite) est un art shona reconnu mondialement, reemergent dans les annees 1940-1950. La poterie traditionnelle (hari) est une pratique artisanale feminine centrale.",
+      "spiritualities": "La religion traditionnelle korekore est centree sur Mwari (ou Musikavanhu, Createur des hommes, ou Nyadenga, Celui qui vit en haut), dieu supreme. Mwari communique avec les humains directement ou a travers des membres de famille choisis, dotes de pouvoirs de prophetie, guerison et benediction. Les esprits ancestraux (dzavadzimu) communiquent avec les vivants et Dieu. Les Mhondoro (esprits de lion ancestraux) guident les communautes a travers des mediums (masvikiro). La culture de l'Unhu (ubuntu) guide le comportement moral pour eviter de devenir de mauvais esprits apres la mort. 60 a 80% des Korekore se declarent chretiens, tout en maintenant les croyances traditionnelles ancestrales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les chiefdoms korekore ont constitue l'ossature administrative et militaire de l'Empire Mutapa (Mwenemutapa), un des grands royaumes de l'Afrique australe (15e-19e siecles). La lignee royale mutapa elle-meme est consideree comme Korekore ou profondement liee aux lignages korekore. Les chefs locaux de l'empire dans les regions du nord etaient majoritairement korekore et relevaient du roi Mutapa (Mambo). Le systeme spirituel Mhondoro s'alignait avec les structures religieuses korekore, renforçant la loyaute politique par les croyances ancestrales partagees.",
+      "relationsWithNeighbors": "Les Korekore sont bornes au sud par les Zezuru. Ils ont entretenu des relations d'alliance et de vassalite avec l'Empire Mutapa et, dans une moindre mesure, avec l'Empire Rozvi. Les Tavara et autres groupes korekore de la vallee du Zambeze ont eu des contacts avec les marchands swahili et arabes via le commerce de l'or et de l'ivoire. Des relations complexes avec les Portugais (alliés strategiques ou adversaires) ont marque l'histoire de l'Empire Mutapa.",
+      "conflictsOrAlliances": "Les chiefdoms korekore incorpores dans l'Empire Mutapa ont participe aux guerres de succession et aux conflits avec les Portugais aux 16e-17e siecles. Certains chiefdoms korekore ont reconnu l'autorite spirituelle et politique des Rozvi. D'autres ont resiste, notamment dans les zones les plus reculees du nord ou l'influence rozvi etait plus faible. Lors du declin de l'Empire Rozvi aux 17e-19e siecles, certains groupes dissidents ont migre vers le nord, formant ou renforçant l'identite korekore.",
+      "diaspora": "Les Korekore sont presents dans les grandes villes zimbabweennes (Harare, Bindura). Une diaspora zimbabweenne, dont des Korekore, existe en Afrique du Sud, au Royaume-Uni, aux Etats-Unis et dans d'autres pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 1600000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur le recensement zimbabween de 2022 et les donnees SIL Ethnologue pour le shona (sna). Les Shona representent environ 70% des 16,3 millions de Zimbabweens (2022). Les Korekore constituent l'un des six grands groupes dialectaux shona, estimés à environ 10% des Shona du Zimbabwe.",
+      "distributionByCountry": [
+        {
+          "country": "ZWE",
+          "population": 1600000,
+          "note": "Principalement dans le Mashonaland Central et Occidental (Bindura, Mt Darwin, Guruve, Karoi), la vallee du Zambeze et la region de Mutoko"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Shona people. https://en.wikipedia.org/wiki/Shona_people",
+      "DHCS Zimbabwe — Korekore People. https://dhcs.co.zw/korekore.php",
+      "Wikipedia EN — Mutapa Empire. https://en.wikipedia.org/wiki/Mutapa_Empire",
+      "Wikipedia EN — Bira ceremony. https://en.wikipedia.org/wiki/Bira_ceremony",
+      "SIL Ethnologue — Shona language (sna). https://www.ethnologue.com/language/sna/",
+      "Zimbabwe Field Guide — Mutapa State. https://zimfieldguide.com/mashonaland-central/mutapa-mwenemutapa-monomotapa-state-its-heyday-c1480-%E2%80%93-c1623",
+      "YouTube — The Mysterious Korekore Clan. https://www.youtube.com/watch?v=gHxC89k7V-c"
+    ]
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "id": "PPL_KANURI",
+  "nameMain": "Kanuri",
+  "languageFamilyId": "FLG_SAHARIEN",
+  "currentCountries": ["NGA", "NER", "TCD", "CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Kanuri",
+      "selfAppellation": "Kanuri (endonymie : Kanuri / كَنُرِيِه en ajami)",
+      "exonyms": [
+        "Barebari (exonyme haoussa utilisé au Niger)",
+        "Beriberi (exonyme haoussa, considéré péjoratif par les locuteurs)",
+        "Barnawi (désignation au Nigeria)",
+        "Yerwa (désignation à Maiduguri, Nigeria)",
+        "Kanowri",
+        "Kanouri"
+      ],
+      "originOfExonyms": "Le terme Barebari (ou Beriberi) est un exonyme haoussa désignant les Kanuri sédentaires, considéré péjoratif par les Kanuri eux-mêmes. Yerwa est le nom kanuri traditionnel de Maiduguri et s'applique par extension au dialecte principal parlé dans cette ville. Barnawi réfère à Bornu, le nom historique de l'empire.",
+      "whyProblematic": "Le terme Kanuri englobe plusieurs sous-groupes qui s'identifient parfois différemment : Manga, Tumari, Bilma, Kanembu. Les Kanuri du Nigeria se distinguent des Kanembu du Tchad bien que ces deux groupes partagent une origine et une langue communes. La frontière entre kanuri et kanembu est linguistiquement floue (continuum dialectal) mais culturellement et politiquement significative.",
+      "contemporaryUsage": "Kanuri est le terme standard utilisé en anglais, français et dans les recensements nationaux du Nigeria, du Niger, du Tchad et du Cameroun. Les locuteurs s'identifient souvent par leur sous-groupe ou dialecte local. L'identité kanuri a été politisée au Nigeria à travers le Borno Youth Movement (1954) et les revendications d'un Greater Kanowra.",
+      "linguisticFamily": "FLG_SAHARIEN",
+      "ethnoLinguisticGroup": "Saharien occidental (branche kanuri-kanembu, Nilo-Saharien)",
+      "historicalRegion": "Bornou (Nigeria nord-est, autour du lac Tchad), Kanem (Tchad), Diffa et Zinder (Niger), Nord-Cameroun",
+      "currentCountries": ["NGA", "NER", "TCD", "CMR"]
+    },
+    "ethnicities": [
+      "Yerwa (Kanuri central, dialecte de Maiduguri, Borno State, Nigeria)",
+      "Manga (Mangari, est du Niger, région de Zinder ; se considèrent distincts des Barebari)",
+      "Tumari (région de N'Guigmi, Niger ; parfois appelés Kanembu au Niger)",
+      "Bilma (oasis de Kaour, Niger oriental ; spécialistes du commerce du sel de Bilma)",
+      "Kanembu (Tchad, préfectures du Lac et du Kanem ; se distinguent des Kanuri du Nigeria)",
+      "Barnawi (Nigeria, lié au titre de Borno)",
+      "Mobar (Nigeria et Niger, proche du dialecte Yerwa)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kanuri sont issus des populations nilo-sahariennes qui peuplaient la région du lac Tchad depuis au moins le 8e siècle avant l'ère commune (site archéologique de Zilum, c. 800 avant J.-C.). Ils ont émergé comme groupe distinct à partir des croisements entre les Kanembu (fondateurs de l'empire du Kanem) et les populations Sao qui vivaient sur les rives occidentales du lac Tchad, à partir du 14e siècle. La tradition orale kanuri relie leur origine à Sef, fils de Dhu Ifazan du Yémen, une construction légendaire typique des dynasties islamisées d'Afrique subsaharienne pour rattacher leur lignée au prestige islamique. Ils sont reconnus comme le plus grand groupe de locuteurs du rameau saharien de la famille nilo-saharienne.",
+      "formationPeriod": "L'identité kanuri distincte se consolida entre le 14e et le 16e siècle, après le repli de la dynasty sayfawa du Kanem vers le Bornou (c. 1380). Le métissage des aristocrates kanembu avec les populations Sao et autres peuples du Bornou créa progressivement l'ethnie kanuri. L'empire du Bornou (capitale Ngazargamu, fondée c. 1472) constitua le creuset de la kanurisation de la région. Au 16e siècle, sous le mâï Idris IV Alooma, l'empire atteignit son apogée, et le kanuri s'imposa comme langue de prestige de toute la région.",
+      "migrationRoutes": [
+        "Migration des ancêtres kanembu depuis le plateau de l'Ennedi et le Bahr el Ghazal vers le Kanem (avant le 7e siècle)",
+        "Repli de la dynasty sayfawa du Kanem vers le Bornou (rive occidentale du lac Tchad) à partir de c. 1380",
+        "Expansion vers le sud et l'ouest sous l'empire du Bornou (15e-17e siècles)",
+        "Dispersion au Niger, au Niger oriental et au nord-Cameroun lors des jihads peuls (début 19e siècle)"
+      ],
+      "historicalSettlementZones": [
+        "Borno State et Yobe State (Nigeria) : cœur historique du Bornou",
+        "Diffa Region et Zinder Region (Niger) : zone de peuplement principal au Niger",
+        "Agadez Region (Niger) : sous-groupe Bilma",
+        "Far North Region (Cameroun) : populations kanuri de la rive du lac Tchad",
+        "Préfectures du Lac et du Kanem (Tchad) : Kanembu, groupe frère",
+        "Darfour (Soudan) : diaspora historique"
+      ],
+      "unificationsOrDivisions": "L'empire du Kanem-Bornu unifia les différents groupes kanuri sous une même structure politique pendant plus d'un millénaire. La partition coloniale (1900-1902) entre empires britannique, français et allemand divisa le territoire kanuri entre le Nigeria, le Niger, le Tchad et le Cameroun, créant des identités nationales distinctes. Au Nigeria, le mouvement nationaliste du Borno Youth Movement (1954) tenta de revendiquer un Grand Kanem-Bornu (Greater Kanowra) mais sans succès. Les Manga et Tumari s'identifient parfois comme des groupes distincts des Kanuri centraux.",
+      "externalInfluences": "Islamisation au 11e siècle et développement d'une culture islamique lettrée (capitale Kanem, centre d'études islamiques jusqu'à Alexandrie). Alliance avec les Ottomans sous Idris IV Alooma (fin 16e siècle) : introduction des armes à feu. Contacts avec les Haoussa à l'ouest (langue haoussa partiellement adoptée par les Kanuri du Niger). Influence des Arabes Choa et des Toubou (partenaires commerciaux). Colonisation britannique (Nigeria), française (Niger, Tchad) et allemande (Cameroun) à partir de 1900. Diffusion de l'influence Boko Haram dans la région de Borno depuis les années 2000.",
+      "majorHistoricalEvents": "Fondation de l'empire du Kanem (c. 700). Islamisation au 11e siècle. Mâï Dunama II Dibbalemi (1221-1259) : apogée du Kanem. Perte du Kanem c. 1380 aux mains des Bulala, repli dans le Bornou. Fondation de Ngazargamu c. 1472 par le mâï Ali I Gaji. Idris IV Alooma (fin 16e siècle) : apogée du Bornou, alliance ottomane. Jihads peuls (1804-) : choc de la Caliphate de Sokoto ; résistance de Muhammad al-Amin al-Kanemi qui fonde une nouvelle dynasty (al-Kanemi). Conquête par Rabih az-Zubayr (1893). Partition coloniale (1900-1902). Indépendances (Nigeria 1960, Niger et Tchad 1960, Cameroun 1960). Création de l'Emirat cérémoniel de Borno à Maiduguri."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le Shehu (cheikh) de Borno est la plus haute autorité traditionnelle des Kanuri, résidant à Maiduguri (Borno State, Nigeria). Son autorité est reconnue symboliquement par les quelque 4 millions de Kanuri des pays voisins. La dynasty al-Kanemi (depuis le début du 19e siècle) a supplanté la dynasty sayfawa. L'Emirat de Borno trace sa descendance directe de l'empire du Kanem-Bornu fondé avant 1000 de l'ère commune. Au Niger et au Tchad, les Kanuri et Kanembu sont organisés en sultanats et chefferies locales (Sultan de Zinder au Niger, Alifa de Mao au Tchad). Le système politique traditionnel repose sur une hiérarchie de chefs de village, de canton et de région.",
+      "clanOrganization": "Structure patrilinéaire organisée en clans et lignages. Les clans nobles revendiquent une ascendance directe des mâïs de l'empire du Kanem-Bornu. L'aristocratie kanuri (kagama) formait historiquement une classe privilégiée administrant les différentes provinces de l'empire (524 fiefs en 1893 selon les sources coloniales). Les clans artisanaux (forgerons, potiers, cordonniers, tisserands) constituent des groupes endogames à statut inférieur.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'appartenance sociale, les droits à la terre, l'accès aux ressources et les alliances matrimoniales. La transmission des titres et des chefferies suit la ligne masculine. Les femmes n'ont traditionnellement pas de droits d'héritage sur la terre, bien que cela évolue sous l'influence des lois nationales et islamiques. Les Nga du Bauchi State (Nigeria) tracent leur origine à une diaspora kanuri, illustrant l'importance des lignages dans la construction identitaire.",
+      "religiousAuthority": "Islam sunnite malékite, pratiqué depuis le 11e siècle. Les oulémas (savants islamiques) jouent un rôle crucial depuis l'époque de l'empire du Kanem (hostel kanuri au Caire, financé pour les pèlerins, 14e siècle). Les confréries soufies Tijaniyya et Qadiriyya sont actives. Les chefs religieux locaux (imams, malams) gèrent les mosquées et les écoles coraniques (khalwa). L'autorité des oulémas et des chefs traditionnels se renforce mutuellement dans la légitimation du pouvoir."
+    },
+    "languages": {
+      "mainLanguage": "Kanuri (Kànùrí, كَنُرِيِه en ajami)",
+      "isoCodes": ["kau", "knc", "kby", "krt", "bms"],
+      "dialects": [
+        "Yerwa Kanuri (Central Kanuri, knc) : dialecte principal, Maiduguri (Nigeria), utilisé comme lingua franca",
+        "Manga Kanuri (kby) : est du Niger (région de Zinder) et nord-est du Nigeria",
+        "Tumari Kanuri (krt) : région de N'Guigmi (Niger), parlé par le sous-groupe Tumari",
+        "Bilma Kanuri (bms) : oasis de Kaour (Niger oriental), parlé par les Kanuri de Bilma",
+        "Mobar : proche de Yerwa, Nigeria et Niger",
+        "Kanembu (kbl) : dialecte le plus distinct, Tchad, parfois classé comme langue séparée"
+      ],
+      "vehicularRole": "Le kanuri (code macrolangue ISO : kau ; Central Kanuri ISO : knc) est la langue nilo-saharienne avec le plus grand nombre de locuteurs dans la famille saharienne (environ 9,7 millions en incluant les dialectes et le kanembu). Il est l'une des langues nationales du Nigeria et du Niger. L'écriture standardisée a été développée au Nigeria ; la langue est enseignée dans les écoles et à l'Université de Maiduguri. Le kanuri a servi de lingua franca dans toute la région du lac Tchad pendant des siècles. L'arabe ajami était utilisé comme écriture depuis au moins le 17e siècle. Au Cameroun, au Niger et au Tchad, le français et l'anglais coexistent avec le kanuri."
+    },
+    "culture": {
+      "majorRites": "Rites islamiques fondamentaux : circoncision masculine (rite de passage central avec festins communautaires), mariage islamique (cérémonies élaborées de plusieurs jours, dot importante en bétail ou numéraire, rôle des griots pour chanter les louanges des familles), funérailles (inhumation dans les 24 heures, deuil de trois jours, commémoration aux 3e, 7e et 40e jours). Célébrations des fêtes islamiques (Aïd el-Fitr, Aïd el-Adha) avec prières en plein air, sacrifices et festins. Hajj valorisé : le pèlerin est accueilli à son retour avec des fêtes. Cérémonies d'intronisation des chefs traditionnels : processions à cheval en grande tenue (kachahari), défilé de la cavalerie cérémonielle, récitation des généalogies par les griots.",
+      "symbols": "Le cheval et la cavalerie (symbole central du prestige noble et militaire hérité de l'empire du Bornou : cavalerie de 40 000 hommes au 13e siècle). La broderie élaborée des boubous et robes de cérémonie (signe de rang et d'identité culturelle). Le turban (coiffure masculine de prestige). La calligraphie arabe ajami (tradition lettrée islamique remontant à l'empire du Kanem). Les proverbes (outil pédagogique et moral central dans la culture kanuri islamique, construits autour d'objets de la vie quotidienne). Le lac Tchad comme espace identitaire commun.",
+      "artsAndMusic": "Musique : tambours (garaya, kakaki trompette de cour), flûtes et percussions utilisées lors des cérémonies royales et des fêtes. Chants épiques des griots (maîtres de la parole) relatant les exploits des mâïs de l'empire du Kanem-Bornu et les généalogies des familles nobles. Poésie orale en kanuri et en arabe. Artisanat : travail du cuir (selles, harnachements, sandales, bourses), tissage (pagnes de coton et soieries), broderies des tenues cérémonielles, bijouterie (argent et cuivre), poterie. Architecture : maisons rectangulaires en banco (argile), avec cour intérieure, à Maiduguri et dans les villes du Bornou. Cavalerie cérémonielle : les chevaliers de la cour du Shehu de Borno en armure et tenues d'apparat (documentés dès les années 1820 par les explorateurs européens).",
+      "spiritualities": "Islam sunnite malékite, pratiqué depuis le 11e siècle, profondément intégré à l'identité kanuri. Le Kanem fut l'un des centres de l'apprentissage islamique en Afrique centrale (finançait des écoles islamiques jusqu'à Alexandrie). Les confréries soufies Tijaniyya et Qadiriyya sont influentes depuis le 18e siècle. Pratiques populaires : recours aux marabouts pour amulettes protectrices (tavizas), interprétation des rêves par des savants coraniques, consultations de devins pour les décisions importantes. Croyances préislamiques résiduelles concernant les esprits de la nature (esprits des eaux, des arbres, des lieux anciens). Les proverbes kanuri sont utilisés pour enseigner les valeurs islamiques et sociales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Kanuri sont le peuple fondateur de l'empire du Kanem-Bornu, l'une des entités politiques les plus durables d'Afrique (c. 700-1893, soit près de 1 200 ans). Sous la dynasty sayfawa (1075-1846), cet empire domina le commerce transsaharien et fut le principal fournisseur de sel, d'ivoire et d'esclaves de l'Afrique centrale. Au 16e siècle, sous Idris IV Alooma, l'empire s'étendait de la région haoussa à l'ouest au Bahr el Ghazal à l'est, et du Fezzan au nord au sud du lac Tchad. L'Emirat cérémoniel de Borno à Maiduguri perpétue cette tradition jusqu'à aujourd'hui. La dynasty al-Kanemi gouverne depuis le début du 19e siècle avec le titre de Shehu (Sheikh).",
+      "relationsWithNeighbors": "Relations avec les Haoussa (voisins ouest : compétition commerciale, mais aussi diffusion de l'islam et du kanuri) ; avec les Toubou et Zaghawa (partenaires commerciaux du nord) ; avec les Arabes Choa (cohabitation et échanges) ; avec les Fulani (conflits liés aux jihads du 19e siècle). Les Kanuri ont exercé une influence culturelle majeure sur leurs voisins (Buduma du lac Tchad, Kotoko, Marghi, Bolewa, Bede) qui ont adopté diverses aspects de la culture kanuri, notamment la langue et l'islam. Tensions contemporaines avec les Fulani et les groupes Boko Haram dans la région du lac Tchad.",
+      "conflictsOrAlliances": "Guerres contre les Sao (populations préexistantes, absorbées) et les Bulala (13e-15e siècles). Alliance avec les Ottomans sous Idris IV Alooma (fin 16e siècle). Résistance aux jihads peuls (1804-1820) grâce à Muhammad al-Amin al-Kanemi. Conquête par Rabih az-Zubayr (1893). Partition coloniale entre Britanniques (Nigeria), Français (Niger, Tchad) et Allemands (Cameroun) en 1900-1902. Création du Borno Youth Movement (1954) et revendications d'un Greater Kanowra. Implication dans les conflits du nord-est du Nigeria (Boko Haram depuis 2002) qui ont dévasté la région du Borno.",
+      "diaspora": "Communautés kanuri dans les grandes villes nigérianes (Lagos, Kano, Abuja) en dehors de leur territoire traditionnel. Diaspora au Soudan (quelques milliers à Omdurman) documentée historiquement. Les Nga du Bauchi State (Nigeria) tracent leur origine à une diaspora kanuri ancienne. Migrations économiques récentes vers les pays du Golfe et l'Europe. Flux de réfugiés liés aux violences de Boko Haram (depuis 2009) vers le Niger, le Tchad et le Cameroun."
+    },
+    "demography": {
+      "totalPopulation": 9700000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue (2024) et Wikipedia : environ 9,7 millions de locuteurs kanuri-kanembu au total. Nigeria : environ 7,65 millions dont 3 millions de Kanuri centraux plus 200 000 Manga (données 2020). Niger : environ 1,5 millions. Tchad : quelques centaines de milliers (surtout Kanembu). Cameroun : environ 100 000. Soudan : diaspora.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 7650000,
+          "note": "Principalement Borno State et Yobe State (Nigeria nord-est). Inclut environ 200 000 locuteurs Manga. Estimation 2020."
+        },
+        {
+          "country": "NER",
+          "population": 1500000,
+          "note": "Régions de Diffa et Zinder (Barebari), sous-groupes Manga (300 000), Tumari (60 000), Bilma (27 000). Estimation 2023."
+        },
+        {
+          "country": "TCD",
+          "population": 450000,
+          "note": "Principalement sous la dénomination Kanembu, préfectures du Lac et du Kanem. Quelques locuteurs kanuri dans les villes."
+        },
+        {
+          "country": "CMR",
+          "population": 100000,
+          "note": "Région de l'Extrême-Nord, rive du lac Tchad."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kanuri people. https://en.wikipedia.org/wiki/Kanuri_people",
+      "Wikipedia EN — Kanuri language. https://en.wikipedia.org/wiki/Kanuri_language",
+      "Wikipedia EN — Kanem-Bornu Empire. https://en.wikipedia.org/wiki/Kanem%E2%80%93Bornu_Empire",
+      "SIL Ethnologue — Kanuri subgroup. https://www.ethnologue.com/subgroup/767/",
+      "Michigan State University ALMA — Introduction to the Kanuri Language. https://alma.matrix.msu.edu/assets/uploads/2023/02/ALMA_IntroductionToTheKanuriLanguageEdited2.pdf",
+      "Qiraat African — The Kanuri people in West Africa. https://qiraatafrican.com/en/13870/the-kanuri-people-in-west-africa/",
+      "101 Last Tribes — Kanuri people. https://www.101lasttribes.com/tribes/kanuri.html",
+      "CIA World Factbook — Nigeria, Niger, Chad, Cameroon. https://www.cia.gov/the-world-factbook/"
+    ]
+  }
+}

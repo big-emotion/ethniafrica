@@ -1,0 +1,105 @@
+{
+  "id": "PPL_MARGI",
+  "nameMain": "Margi",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Margi",
+      "selfAppellation": "Margi (Màrgí)",
+      "exonyms": ["Marghi", "Margyi", "Marghi Central"],
+      "originOfExonyms": "Le terme Marghi est une variante orthographique utilisee par les administrateurs coloniaux britanniques. Marghi Central ou Marghi Central Language designe la variete linguistique principale dans les classifications linguistiques modernes (SIL Ethnologue, Glottolog). Les sous-groupes parlant des varietes proches sont parfois appeles Margi du Sud (Margi South) et Putai (Margi Ouest).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Margi est le terme usuel en anglais et en haoussa. Les locuteurs se designent comme Margi (Màrgí). Le groupe est reconnu comme entite ethnique distincte dans les etats d'Adamawa et de Borno au Nigeria. La langue Margi (mrt) est l'une des mieux documentees de la branche Biu-Mandara du tchadique.",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique Biu-Mandara (branche A.2, groupe Bura-Margi)",
+      "historicalRegion": "Montagnes Mandara et plaines adjacentes du nord-est du Nigeria (Borno, Adamawa)",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Margi Central (Margi babal, Margi de la plaine) — autour de Lasa, Borno State",
+      "Margi Dzarnu (Margi pres de la colline) — autour de Gulak, Adamawa State",
+      "Gwara — sous-groupe de la region de Madagali",
+      "Mulgwai (Mulgwe, Molgheu) — sous-groupe du nord",
+      "Wurga (Urga) — sous-groupe de la region de Mubi",
+      "Margi South (Margi ti ntam) — sous-groupe du sud, parfois classe comme langue distincte ; dialects Wamdiu et Hildi",
+      "Putai (Marghi West) — sous-groupe de Damboa, parfois classe comme langue separee en voie d'extinction"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Margi sont un peuple afro-asiatique de la branche tchadique (Biu-Mandara) originaire des massifs des monts Mandara et des hautes terres septentrionales du Cameroun. Leur migration vers les plaines du Nigeria s'est faite en groupes ou en clans (fal en margi). Le territoire ancestral margi comprend les zones montagneuses de la frontiere Nigeria-Cameroun. Les Margi, les Kamwe, les Bura et les Chibok forment un ensemble culturel et linguistique au sein du nord-est nigerian. Les Margi ont ete exposes aux influences culturelles des Kanuri, Kilba et Pabir (Babur) au cours de leur histoire.",
+      "formationPeriod": "L'identite margi s'est consolidee au cours du premier millenaire de l'ere commune. Nombreux se sont installes dans l'empire du Bornu comme tributaires ou allies. D'autres ont migre vers le sud dans la region d'Adamawa. Le premier chef (mai) d'Askira, Muhammadu Mai Maina, a gouverne de 1922 a 1964, marquant l'institutionnalisation politique moderne des Margi sous administration coloniale britannique.",
+      "migrationRoutes": [
+        "Migration depuis les monts Mandara (Cameroun septentrional) vers les plaines du nord-est du Nigeria",
+        "Installation dans l'empire du Bornu — regions de Borno actuelles (Askira-Uba, Damboa, Konduga)",
+        "Migration vers le sud dans la region d'Adamawa (Madagali, Mubi, Michika, Hong, Gombi)"
+      ],
+      "historicalSettlementZones": [
+        "Borno State : LGA d'Askira-Uba et Damboa (Margi Central et Margi South)",
+        "Adamawa State : LGA de Madagali, Mubi, Michika, Hong et Gombi",
+        "Zone frontaliere Nigeria-Cameroun (massifs des Mandara)",
+        "Sukur — village perche sur les collines de Madagali LGA, inscrit au patrimoine mondial de l'UNESCO"
+      ],
+      "unificationsOrDivisions": "Les Margi sont divises en plusieurs sous-groupes dont certains ont des langues mutuellement intelligibles (Margi Central, Margi South) et d'autres partiellement distincts (Putai). Ils sont bilingues ou trilingues : en Borno ils parlent le kanuri, en Adamawa le fulfude. L'unite margi est surtout culturelle et linguistique, sans etat centralise historique fort.",
+      "externalInfluences": "Forte influence de l'empire du Bornu (politique, islamisation partielle). Influence culturelle des Kanuri (bilinguisme en Borno) et des Peuls/Fulfude (bilinguisme en Adamawa). Colonisation britannique (1914) — administration indirecte via chefferies. Depuis 2009, les Margi sont affectes par le conflit Boko Haram : plusieurs de leurs zones (Madagali, Gwoza) ont ete des epicentres de violence.",
+      "majorHistoricalEvents": "Etablissement progressif dans l'empire du Bornu (9e-19e siecles). Premier chef officiel d'Askira : Muhammadu Mai Maina (1922). Inscription du Paysage culturel de Sukur au patrimoine mondial de l'UNESCO en 1999 — premier paysage culturel d'Afrique a recevoir cette distinction. Attaques de Boko Haram dans la region de Madagali et Gwoza (2014-2016), avec occupation temporaire de Sukur."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Margi sont organises en chefferies (maikari ou lawan au niveau village). Le chef superieur porte souvent le titre de Hidi (equivalent de roi-chef religieux) dans la zone de Sukur, ou le Hidi est a la fois chef politique et spirituel de la communaute. Le Hidi de Sukur reside dans un palais en pierre seche perche sur une colline dominant les villages, symbole de son autorite. Des conseils de chefs de villages participent a la governance locale.",
+      "clanOrganization": "La societe margi est organisee en clans (fal), chaque clan ayant migre et s'etant installe comme unite distincte. Les clans sont patrilineaires. L'affiliation clanique determine les droits fonciers, les alliances matrimoniales et les obligations communautaires.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires (fal) sont l'unite sociale de base. L'heredite suit la lignee paternelle pour les chefferies et les droits sur les terres agricoles en terrasses. La structure familiale elargie inclut plusieurs menages sous l'autorite d'un ancien.",
+      "religiousAuthority": "Le Hidi de Sukur cumule les fonctions politiques et religieuses — il est garant des rituels associes aux terrasses agricoles et aux sites sacres. Parmi les Margi islamisés, des imams exercent l'autorite religieuse locale. Les pratiques traditionnelles (sacrifices, culte des ancetres) persistent, notamment dans les communautes moins islamisees des zones montagnardes."
+    },
+    "languages": {
+      "mainLanguage": "Margi (Marghi Central, Màrgí)",
+      "isoCodes": ["mrt"],
+      "dialects": [
+        "Madube — variete du nord",
+        "Izge — variete centrale",
+        "Lasa (Margi babal) — Margi de la plaine, autour de Lasa",
+        "Gulak (Margi Dzarnu) — autour de Gulak",
+        "Damboa — variete du sud-ouest",
+        "Mulgwai (Mulgwe) — variete du nord",
+        "Uba — variete de la zone de Mubi",
+        "Sukur — variete du village de Sukur (langue Sukur partiellement distincte, ISO suk)",
+        "Margi South (mfm) — plus proche du Huba/Kilba, parfois classe independamment",
+        "Putai — Margi de l'ouest, langue en danger (Damboa LGA)"
+      ],
+      "vehicularRole": "La langue margi est consideree comme l'une des mieux documentees de la branche Biu-Mandara tchadique. Elle compte environ 360 000 locuteurs au Nigeria (estimation 2025). Les Margi de Borno utilisent aussi le kanuri comme lingua franca, et ceux d'Adamawa utilisent le fulfude. L'anglais est la langue d'enseignement officielle."
+    },
+    "culture": {
+      "majorRites": "Le Paysage culturel de Sukur est au coeur des pratiques rituelles margi. Les terrasses agricoles de Sukur ont une forte signification spirituelle : elles sont associees a des arbres sacres et a des rites de benediction avant les semailles. La forge du fer etait un acte hautement ritualise, associe a des ceremonies complexes et des relations socio-economiques specifiques. Rites de passage : circoncision masculine, ceremonies de mariage avec paiement de la dot (en bovins et autres biens). Funerailles selon le rite islamique (dans les communautes musulmanes) ou traditionnel (sacrifice, veillees). Festivals communautaires annuels celebrant les recoltes.",
+      "symbols": "Le Hidi (chef-roi) et son palais en pierre seche sur la colline de Sukur sont le symbole supreme de l'autorite et de la continuite culturelle margi. Les terrasses agricoles en gradins representent le lien entre l'homme, la terre et les ancetres. Les puits a structure conique en pierre (structures souterraines specifiques de Sukur) sont des symboles communautaires. Les fourneaux de fonte du fer (desormais abandonnes) temoignent du passe industrieux des Margi.",
+      "artsAndMusic": "Tradition de forge artisanale du fer (patrimoine historique majeur de Sukur) : fabrication d'outils, d'armes et d'objets de prestige. Architecture en pierre seche (murs, chemins paves, palais du Hidi, enceintes) caracteristique du paysage de Sukur. Musique de percussion lors des ceremonies. Poterie feminine. Chants collectifs lors des travaux agricoles communautaires (labour en terrasses). Tradition orale incluant contes, proverbes et epopees liees a l'histoire des clans.",
+      "spiritualities": "Les Margi combinent des pratiques religieuses traditionnelles et islamiques selon les sous-groupes. Dans la zone de Sukur, les croyances traditionnelles sont fortes : le Hidi est le mediateur entre le monde des vivants et celui des ancetres, garant de la fertilite des terres et du bon deroulement des saisons agricoles. Des sites sacres (arbres, sources, rochers) sont veneres. Les Margi des plaines (Borno, Adamawa) sont majoritairement sunnites malekites, avec l'influence du soufisme (confraternite Tijaniyya). Le syncretisme entre pratiques traditionnelles et islam est frequent."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le paysage culturel de Sukur temoigne d'une institution politique margi ancienne : le Hidi de Sukur exerce depuis le 16e siecle une autorite a la fois politique et spirituelle sur les villages environnants. Cette chefferie theocratique s'est maintenue a travers les siecles, resisant aux pressions des voisins (empire du Bornu, Peuls) et de la colonisation. Le premier chef officiel d'Askira, Muhammadu Mai Maina (1922-1964), a etabli l'autorite chiefly margi reconnue par les Britanniques.",
+      "relationsWithNeighbors": "Relations complexes avec l'empire du Bornu — certains Margi s'etaient etablis comme tributaires du Bornu, tout en conservant leurs pratiques traditionnelles. Contacts avec les Kamwe (Higi), les Kilba et les Bura avec lesquels ils partagent de nombreuses similarites culturelles. En Adamawa, rapports avec les Peuls (Fulfude) dominants. Le Paysage de Sukur est proche de la frontiere camerounaise et les echanges avec les peuples Chadic du Cameroun ont ete constants.",
+      "conflictsOrAlliances": "Resistance partielle a l'empire du Bornu et aux raids des esclavagistes (18e-19e siecles). Alliance selective avec les Britanniques lors de la colonisation (1914). Les LGA de Madagali et Gwoza, coeurs du territoire margi, ont ete des zones d'intense violence de Boko Haram (2014-2016), avec destruction de villages, deplacements et occupation temporaire du site de Sukur. Le World Monuments Fund a classe Sukur parmi les sites menaces depuis 2014.",
+      "diaspora": "Migration interne vers Maiduguri, Yola et les grandes villes du nord-est du Nigeria. Etudiants et fonctionnaires margi presents dans toutes les grandes villes nigerianes. Des personnalites margi ont accede aux plus hautes fonctions : le gouverneur de l'etat d'Adamawa Ahmadu Umaru Fintiri (depuis 2019) et le Secretaire du gouvernement federal Boss Mustapha (administration Buhari) sont d'origine margi."
+    },
+    "demography": {
+      "totalPopulation": 360000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN — Marghi people (estimation 360 000). SIL Ethnologue — Margi (mrt). Biu-Mandara languages Wikipedia (200 000 pour Margi + Margi South + Putai, 1987 UBS). Projection 2025 estimee a environ 360 000 en tenant compte de la croissance demographique et des deplacements dus au conflit.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 360000,
+          "note": "Principalement Adamawa State (LGA : Madagali, Mubi, Hong, Gombi) et Borno State (LGA : Askira-Uba, Damboa, Konduga)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Marghi people. https://en.wikipedia.org/wiki/Marghi_people",
+      "Wikipedia EN — Margi language. https://en.wikipedia.org/wiki/Margi_language",
+      "UNESCO World Heritage Centre — Sukur Cultural Landscape (1999). https://whc.unesco.org/en/list/938/",
+      "Wikipedia EN — Sukur (UNESCO). https://en.wikipedia.org/wiki/Sukur",
+      "Wikipedia EN — Biu-Mandara languages. https://en.wikipedia.org/wiki/Biu%E2%80%93Mandara_languages",
+      "SIL Ethnologue — Marghi Central (mrt). https://www.ethnologue.com/language/mrt/",
+      "World Monuments Fund — Sukur Cultural Landscape. https://www.wmf.org/monuments/sukur-cultural-landscape",
+      "Rosetta Project — Marghi Central Language (mrt). https://rosettapanglossia.longnow.org/index.php?title=Marghi_Central_Language"
+    ]
+  }
+}

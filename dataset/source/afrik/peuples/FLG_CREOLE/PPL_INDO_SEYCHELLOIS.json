@@ -1,0 +1,85 @@
+{
+  "id": "PPL_INDO_SEYCHELLOIS",
+  "nameMain": "Indo-Seychellois",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["SYC"],
+  "content": {
+    "appellations": {
+      "mainName": "Indo-Seychellois",
+      "selfAppellation": "Indo-Seychellois",
+      "exonyms": [
+        "Indiens (terme générique employé localement)",
+        "Tamil Seychellois (pour la composante tamoule)",
+        "Indo-Seychellois (terme descriptif officiel)"
+      ],
+      "originOfExonyms": "Le terme Indo-Seychellois est un terme descriptif composite forgé sur le modèle colonial britannique pour désigner les habitants des Seychelles d'origine indienne, distinguant leur ascendance asiatique de la majorité créole africaine.",
+      "whyProblematic": "Le terme générique Indiens est imprécis car il regroupe des communautés aux origines très différentes : Tamouls du Tamil Nadu, Gujaratis du Kutch, et autres sous-groupes régionaux indiens ayant des langues et pratiques religieuses distinctes.",
+      "contemporaryUsage": "Le terme Indo-Seychellois est utilisé dans les contextes officiels et médiatiques aux Seychelles. La communauté représentait 9,0 % de la population selon le recensement national de 2022, contre 4,4 % en 2010.",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Dravidien (Tamouls), Indo-aryen (Gujaratis, Hindis)",
+      "historicalRegion": "Île de Mahé (Victoria et alentours), Praslin, La Digue",
+      "currentCountries": ["SYC"]
+    },
+    "ethnicities": [
+      "Indo-Seychellois",
+      "Tamil Seychellois",
+      "Gujarati Seychellois"
+    ],
+    "origins": {
+      "ancientOrigins": "Les premiers Indo-Seychellois furent cinq Indiens du Sud faisant partie du groupe fondateur de la première colonie française sur l'île Sainte-Anne en 1770, aux côtés de 15 colons blancs et de sept esclaves africains. Ils figuraient parmi les tous premiers habitants permanents de l'archipel alors inhabité.",
+      "formationPeriod": "La communauté s'est formée progressivement entre 1770 et le debut du XXe siecle, par vagues successives : esclaves indiens puis travailleurs sous contrat (coolies) recrutés pour les plantations et les travaux de construction routière sous l'administration coloniale britannique.",
+      "migrationRoutes": [
+        "Inde du Sud (Tamil Nadu) vers les Seychelles via l'ocean Indien, à partir de 1770",
+        "Gujarat (région du Kutch) vers les Seychelles, XIXe-XXe siecles",
+        "Arrivées via l'Inde britannique enregistrées sur des navires britanniques, dont un arrivage de 135 passagers en février 1905"
+      ],
+      "historicalSettlementZones": [
+        "Île de Mahé (Victoria et zones urbaines), majoritaire",
+        "Île de Praslin",
+        "Île de La Digue"
+      ],
+      "unificationsOrDivisions": "La communauté indo-seychelloise est divisée selon les origines régionales et la religion : Tamouls hindous (majorité, environ 60 %), Gujaratis du Kutch, Jaïns indiens, musulmans indiens et chrétiens indiens. Ces sous-groupes ont maintenu des associations culturelles distinctes tout en partageant une identité commune.",
+      "externalInfluences": "L'administration coloniale britannique a structuré les arrivées d'Indiens comme main-d'oeuvre contractuelle. L'indépendance des Seychelles en 1976 et la politique multiculturaliste ont favorisé l'intégration. Plus de 82 % de la population seychelloise aurait des racines indiennes selon le Ministère des affaires étrangères indien.",
+      "majorHistoricalEvents": "En 2015, un Mur de l'Histoire a été inauguré au Centre national de la culture des Seychelles pour honorer plus de 50 Seychellois d'origine indienne ayant marqué l'histoire du pays. Le 17 août 1770 est commémoré comme date d'arrivée des cinq premiers colons indiens. Satya Naidu fut le premier membre hindou de l'Assemblée nationale seychelloise."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Absence de système politique traditionnel propre : la communauté indo-seychelloise est une diaspora intégrée dans le système politique démocratique des Seychelles. Elle est représentée dans toutes les institutions civiles, juridiques et gouvernementales.",
+      "clanOrganization": "Organisation autour de sous-communautés régionales et religieuses : associations tamoules, associations gujaraties, Hindu Kovil Sangam (gestion du temple hindou), Hindu Council of Seychelles, Indo-Seychelles Friendship Association.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages familiaux jouent un rôle dans le maintien des pratiques religieuses et culturelles indiennes, notamment dans les familles hindoues tamoules et gujaraties. Les mariages se font souvent au sein de la communauté d'origine.",
+      "religiousAuthority": "Le Hindu Kovil Sangam administre le temple hindou des Seychelles. Le Hindu Council of Seychelles coordonne les activités religieuses communautaires."
+    },
+    "languages": {
+      "mainLanguage": "Seychellois Creole (crs)",
+      "isoCodes": ["crs", "tam", "guj", "hin"],
+      "dialects": [],
+      "vehicularRole": "Le créole seychellois (Seselwa) est la langue principale de la vie quotidienne pour la quasi-totalité des Indo-Seychellois nés sur l'archipel. Le tamoul, le gujarati et l'hindi sont maintenus comme langues patrimoniales dans certaines familles. L'anglais et le français sont également utilisés dans les contextes formels."
+    },
+    "culture": {
+      "majorRites": "Célébration des grandes fêtes hindoues : Divali (fête des lumières), Thaipusam, et les festivals du calendrier tamoul. Rites de mariage selon les traditions hindoues ou musulmanes selon la confession. Inauguration du Mur de l'Histoire en 2015 comme reconnaissance communautaire officielle.",
+      "symbols": "Le temple hindou des Seychelles, géré par le Hindu Kovil Sangam, est le principal symbole identitaire de la communauté. La divinité Murugan est particulièrement vénérée dans la composante tamoule.",
+      "artsAndMusic": "Influence indienne dans la cuisine seychelloise (currys, épices). Danses et musiques traditionnelles indiennes préservées dans les contextes festifs. Les commerces, épiceries et bazars tenus par des Indo-Seychellois constituent aussi un marqueur culturel.",
+      "spiritualities": "Majoritairement hindous (environ 60 %), principalement de tradition shivaïte tamoule et vaishnavie gujaratie. Minorités de jaïns, musulmans et chrétiens indiens. Syncrétisme courant dans la vie quotidienne seychelloise multiculturelle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Les Indo-Seychellois ont développé des relations de complémentarité économique avec les autres communautés : ils occupent historiquement les rôles de commerçants, grossistes, entrepreneurs agricoles et constructeurs. Les mariages mixtes avec des Créoles et d'autres groupes sont fréquents, leurs enfants étant généralement classifiés dans la majorité créole.",
+      "conflictsOrAlliances": "Pas de conflits intercommunautaires notables. La communauté a construit une relation de partenariat économique étroit avec le gouvernement seychellois, notamment dans les domaines de la construction, de la médecine et du droit. L'Inde et les Seychelles ont développé de nombreux projets socio-économiques communs.",
+      "diaspora": "Présence majoritaire à Mahé (Victoria), avec des populations moindres à Praslin et La Digue. La communauté maintient des liens forts avec l'Inde, notamment via les associations culturelles et religieuses. Les NRIs (Non-Resident Indians) et PIOs (Persons of Indian Origin) aux Seychelles totalisaient 17 200 personnes selon le recensement du MEA indien."
+    },
+    "demography": {
+      "totalPopulation": 12000,
+      "referenceYear": 2025,
+      "source": "National Bureau of Statistics Seychelles, recensement 2022 (9,0 % d'une population de ~132 000 habitants estimée en 2025, World Population Review)",
+      "distributionByCountry": [{ "country": "SYC", "population": 12000 }]
+    },
+    "sources": [
+      "Indo-Seychellois – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Indo-Seychellois)",
+      "Demographics of Seychelles – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Demographics_of_Seychelles)",
+      "247th Anniversary of Arrival of First Indian Settlers to Seychelles – Seychelles Nation, 2017 (https://www.nation.sc/archive/255508/247th-anniversary-of-arrival-of-first-indian-settlers-to-seychelles-remembered)",
+      "Seychelles Population 2026 – World Population Review, 2025 (https://worldpopulationreview.com/countries/seychelles)",
+      "Population of Overseas Indians – Ministry of External Affairs of India, 2023 (https://mea.gov.in/images/attach/nris-and-pios_1.pdf)",
+      "Seychelles – Multicultural, Indian Ocean, Creole – Encyclopaedia Britannica, 2024 (https://www.britannica.com/place/Seychelles/People)"
+    ]
+  }
+}

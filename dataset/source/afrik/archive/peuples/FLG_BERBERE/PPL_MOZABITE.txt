@@ -1,0 +1,42 @@
+# Nom du peuple
+- Nom principal : Mozabites
+- Auto-appellation : Imuhagh n Mzab / At Mzab
+- Appellations historiques : « Mozabite » (terme français non péjoratif) ; Amazigh est l’auto-appellation correcte
+- Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+- Région historique : Vallée du Mzab (Ghardaïa – Algérie)
+- ID peuple : PPL_MOZABITE
+
+# 1. Ethnies incluses
+- At Mzab
+- At Bounour
+- At Abad
+
+# 2. Origines
+- Regroupement ibadite établi dès le Xe siècle.
+- Population amazighe sédentaire spécialisée dans l’urbanisme oasien.
+
+# 3. Organisation
+- Système communautaire ibadite très structuré.
+- Citadelles (ksour) organisées autour de mosquées-forteresses.
+
+# 4. Langue
+- Tumzabt
+- ISO : mzb
+
+# 5. Culture
+- Architecture oasienne, ksour UNESCO.
+- Artisanat (cuir, poterie).
+- Organisation sociale fortement égalitaire.
+
+# 6. Histoire
+- Fondations des cinq ksour originels.
+- Importance dans les réseaux commerciaux sahariens.
+
+# 7. Démographie
+- Population : 150 000
+- Année : 2025
+
+# 8. Sources
+- UNESCO Mzab
+- CNRS Berbère
+- Ethnologue (mzb)

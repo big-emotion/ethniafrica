@@ -1,0 +1,99 @@
+{
+  "id": "PPL_SOUSSOU",
+  "nameMain": "Soussou",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["GIN", "SLE", "GNB", "SEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Soussou",
+      "selfAppellation": "Susu (ou Soso, Sosoxui designant leur langue)",
+      "exonyms": [
+        "Susu",
+        "Soso",
+        "Sosoe",
+        "Sosso",
+        "Sousou",
+        "Susa",
+        "Susoo",
+        "Susso",
+        "Sussu",
+        "Soossoo",
+        "Sosokhoui"
+      ],
+      "originOfExonyms": "Soussou est la transcription francophone adoptee par l'administration coloniale francaise et restee en usage en Guinee et dans la litterature francophone. Susu est la forme anglophone utilisee en Sierra Leone et dans la litterature internationale. Soso/Sosso renvoie a la connexion historique avec l'empire Sosso de Soumaoro Kante.",
+      "whyProblematic": "La relation entre les Soussou et les Sosso de l'empire du 13e siecle est debattue : certaines sources les assimilent directement (Soussou d'aujourd'hui = descendants des soldats Sosso), d'autres les considerent comme un groupe forme par fusion de plusieurs elements mande. Le nom Sosso est aussi utilise pour l'empire de Soumaoro Kante, ce qui cree une ambiguite entre le peuple contemporain et l'entite historique medievale.",
+      "contemporaryUsage": "Soussou est le terme officiel en Republique de Guinee, ou le peuple est l'un des quatre grands groupes ethniques. Susu est prefere en Sierra Leone et en anglais. Le soussou est une des huit langues nationales de Guinee.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mande du Sud-Ouest (branche Susu-Yalunka)",
+      "historicalRegion": "Fouta-Djallon puis cote atlantique de Guinee (Basse-Guinee, Conakry, Kindia, Dubreka, Kambia)",
+      "currentCountries": ["GIN", "SLE", "GNB", "SEN"]
+    },
+    "ethnicities": ["Soussou", "Dialonke (Yalunka, proches parents)"],
+    "origins": {
+      "ancientOrigins": "Les Soussou sont originaires des populations mande du Sahel occidental. Ils sont consideres comme une section des Soninke ayant migre hors de Wagadou (empire du Ghana), initialement un clan de forgerons ayant refuse l'islamisation. Ils s'installent dans la region montagneuse Mali-Guinee et fondent une capitale a Soso (region de Koulikoro) au 12e siecle. Les traditions orales guinéennes les font remonter a l'empire du Ghana (Koumbi Saleh), quitte apres la prise almoravide de 1077.",
+      "formationPeriod": "12e-15e siecle : formation et apogee de l'empire Sosso sous Soumaoro Kante (jusqu'a la bataille de Kirina en 1235). 15e-17e siecle : migration vers le Fouta-Djallon apres la desintegration de l'empire du Mali. 18e siecle : pression Peule (jihad du Fouta-Djallon) qui pousse les Soussou vers le littoral atlantique.",
+      "migrationRoutes": [
+        "Wagadou (Sahel) vers la region Mali-Guinee (montagnes frontieres)",
+        "Montagne Mali-Guinee vers le Fouta-Djallon (14e-15e siecle)",
+        "Fouta-Djallon vers la cote atlantique (Basse-Guinee, Sierra Leone) sous pression Peule (18e siecle)"
+      ],
+      "historicalSettlementZones": [
+        "Fouta-Djallon (zone de co-habitation avec Yalunka)",
+        "Basse-Guinee : Conakry, Kindia, Dubreka, Boffa, Boke",
+        "Sierra Leone : district de Kambia (nord-ouest)",
+        "Guinee-Bissau et Senegal (communautes diasporiques)"
+      ],
+      "unificationsOrDivisions": "Les Soussou et les Yalunka (Dialonke) etaient initialement un seul groupe dans le Fouta-Djallon ; ils ont ete separes par les invasions Peules au 18e siecle. Les Soussou absorbent plusieurs peuples cotiers (Nalu, Baga, Landouma) lors de leur installation sur le littoral.",
+      "externalInfluences": "Empire Sosso de Soumaoro Kante (13e siecle). Empire du Mali (13e-15e siecle). Jihad Peul au Fouta-Djallon (1725-18e siecle) : islamisation forcee et esclavage de nombreux Soussou rebelles. Commerce avec les Europeens (Portugais 15e-16e siecle, puis Francais). Colonisation francaise (fin 19e siecle) ; accord de protectorat avec les Francais en 1880 (Bale Demba a Dubreka).",
+      "majorHistoricalEvents": "Bataille de Kirina (1235) : defaite de Soumaoro Kante face a Soundiata Keita ; certains soldats Sosso refusent de se soumettre et migrent vers le Fouta-Djallon. Jihad du Fouta-Djallon (18e siecle) : pousse les Soussou vers le littoral. Fondation de royaumes cotiers (Dubreka, Kindia) bases sur le commerce avec les Europeens (poivre de Guinee, huile de palme, esclaves). Accord de protectorat avec la France (1880). Independence de la Guinee (1958) : les Soussou constituent une part significative du pouvoir politique a Conakry."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe patrilineaire avec systeme de castes comparable aux autres peuples Mande. Les royaumes cotiers soussou etaient organises autour d'un roi (chef) entour d'une noblesse (Horon). Organisation politique decentralisee par lignages apres la dispersion du 18e siecle. Les regions de Kindia et Dubreka etaient des centres politiques majeurs.",
+      "clanOrganization": "Hierarchie sociale a trois niveaux : les Horon (noblesse/aristocratie : rois, guerriers, chasseurs, commercants), les Niamakala (castes artisanales : forgerons, cordonniers, tisserands, griots appeles Dyali), les Jon (captifs/esclaves). Les Donso (chasseurs) forment une categorie transversale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires controlent les terres et determinent le statut social. Mariages endogames entre cousins croises preconises. Les komotigui (individus inities de toutes castes, hommes et femmes) jouent un role de guerisseurs et predicateurs, intermediaires entre le monde des vivants et celui des ancetres.",
+      "religiousAuthority": "Islam sunnite majoritaire aujourd'hui. Les marabouts ont largement supplante les komotigui traditionels. Persistence de pratiques animistes hybrides (komotigui, guerisseurs). Des traditions chretiennes existent aupres de petites communautes."
+    },
+    "languages": {
+      "mainLanguage": "Soussou (Sosoxui)",
+      "isoCodes": ["sus"],
+      "dialects": [
+        "Soussou de Guinee maritime",
+        "Susu de Sierra Leone (district de Kambia)"
+      ],
+      "vehicularRole": "Le soussou est une langue vehiculaire commerciale historique sur la cote atlantique de Guinee et en Sierra Leone (langue de commerce cotier). Il est une des huit langues nationales de Guinee et une des langues de la Sierra Leone. Environ 2,2 millions de locuteurs totaux selon diverses estimates. Langue proche du yalunka. Une premiere traduction biblique en soussou date de 1816 (J.G. Wilhelm). Systemes d'ecriture : latin, Ajami (arabe), N'ko, Adlam, et le script Kore Sebeli (depuis 2009)."
+    },
+    "culture": {
+      "majorRites": "Mariage islamique avec dot et celebrations. Circonscision masculine. Rites des komotigui : initiation spirituelle ouverte a toutes les castes, conferant le statut de guerisseur-predicateur et intermediaire avec les ancetres. Rites funeraires avec presence des griots (Dyali). Fetes communautaires villageoises.",
+      "symbols": "La ville de Sayou (pays soussou historique), citee par les voyageurs europeens comme une ville dynamique et belle. L'architecture soussou est remarquee par les chroniqueurs europeens pour son organisation et sa qualite. Les griots Dyali comme gardiens de la memoire historique.",
+      "artsAndMusic": "Tradition de griotisme (Dyali) : musique, chant, conservation de la genealogie et de l'histoire. Agriculture (riz, igname), peche et commerce maritime comme fondements de l'economie traditionnelle. Production de sel. Arts visuels lies aux ceremonies des komotigui.",
+      "spiritualities": "Islam sunnite dominant depuis le 17e-18e siecle. Pratiques animistes persistantes encadrees par les komotigui : croyance aux esprits des ancetres, medecine traditionnelle, consultation des komotigui pour les grands evenements (naissance, mariage, maladie, mort). Syncretisme islam-animisme frequent."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Empire Sosso (jusqu'en 1235, centre a Soso/Koulikoro). Royaumes cotiers soussou (16e-19e siecle) : Dubreka, Kindia, base sur le commerce atlantique (poivre de Guinee, epices, huile de palme). Bale Demba (Dubreka) signe l'accord de protectorat avec la France en 1880.",
+      "relationsWithNeighbors": "Relations etroites avec les Yalunka (Dialonke), consideres comme leur famille originelle. Commerce avec les Europeens depuis le 15e siecle (Portugais, puis Francais et Anglais). Conflits avec les Peuls du Fouta-Djallon (18e siecle). Absorption progressive des peuples cotiers : Nalu, Baga, Landouma. En Sierra Leone, alliance avec les Francais contre les Temne allies aux Anglais au 19e siecle.",
+      "conflictsOrAlliances": "Defaite de Soumaoro Kante a Kirina (1235) face a Soundiata Keita. Resistance puis soumission au jihad Peul au Fouta-Djallon (18e siecle). Alliance avec les Francais en Sierra Leone contre les Temne (19e siecle). Les Soussou dominent la politique guinéenne depuis l'independance (1958).",
+      "diaspora": "Communautes en Sierra Leone (Kambia), Guinee-Bissau et Senegal. Diaspora en France et en Europe (migration economique). Refuge pendant les periodes d'instabilite politique en Guinee."
+    },
+    "demography": {
+      "totalPopulation": 3200000,
+      "referenceYear": 2025,
+      "source": "Wikipedia FR cite plus de 5 millions de locuteurs de soussou au debut des annees 2000 (3 millions en Guinee en 2001, 1 million en Sierra Leone en 2006). Guinee 2018 : Susu = 21,2% de la population guinéenne (~2,7M). Estimation 2025 basee sur croissance demographique (2,76% annuel en Guinee).",
+      "distributionByCountry": [
+        { "country": "GIN", "population": 2800000 },
+        { "country": "SLE", "population": 350000 },
+        { "country": "GNB", "population": 30000 },
+        { "country": "SEN", "population": 20000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia – Susu people (EN), 2024 (https://en.wikipedia.org/wiki/Susu_people)",
+      "Wikipedia – Soussou (peuple) (FR), 2024 (https://fr.wikipedia.org/wiki/Soussou_(peuple))",
+      "Wikipedia – Susu language (EN), 2024 (https://en.wikipedia.org/wiki/Susu_language)",
+      "101 Last Tribes – Susu people (https://www.101lasttribes.com/tribes/susu.html)",
+      "Ethnologue – Susu Language (SUS) (https://www.ethnologue.com/language/sus/)",
+      "Indiana University Center for Language Technology – Susu Language Portal (https://celt.indiana.edu/portal/Susu/index.html)",
+      "IndexMundi – Guinea ethnic groups, CIA World Factbook 2021 (https://www.indexmundi.com/factbook/compare/guinea.liberia/demographics)"
+    ]
+  }
+}

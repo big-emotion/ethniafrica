@@ -300,11 +300,29 @@ Route : HTTP 404
 2. **Pagination** : Limite la quantité de données retournées
 3. **Lazy loading** : Les fichiers ne sont chargés que si nécessaire
 
-### Optimisations futures (Step 9)
+### Optimisations actuelles (Step 9+)
 
-1. **Cache Next.js** : Utilisation de `unstable_cache` pour le cache HTTP
+1. **Cache Next.js avec tags** : Utilisation de `fetch` avec tags de revalidation pour invalidation ciblée
+   - Routes internes : `/api/v2/internal/*` pour le cache avec tags
+   - Tags disponibles : `afrik-language-families`, `afrik-peoples`, `afrik-countries`
+   - Revalidation : 1 heure (3600 secondes)
+   - Invalidation automatique après migration via `/api/admin/revalidate`
 2. **Base de données** : Requêtes optimisées avec indexes
 3. **Full-text search** : Recherche indexée dans PostgreSQL
+
+### Architecture du cache
+
+Le système de cache utilise une architecture en deux couches :
+
+1. **Routes internes** (`/api/v2/internal/*`) : Routes dédiées au cache avec tags
+   - Appelées uniquement par les services via `fetch` avec tags
+   - Retournent les données brutes sans pagination ni logique métier
+   - Permettent l'invalidation ciblée via `revalidateTag()`
+
+2. **Services** : Utilisent `fetch` avec tags au lieu de `unstable_cache`
+   - Fallback automatique vers les queries directes si `fetch` échoue
+   - Tags spécifiques pour chaque type de données AFRIK
+   - Compatible avec l'invalidation automatique après migration
 
 ## Évolutivité
 

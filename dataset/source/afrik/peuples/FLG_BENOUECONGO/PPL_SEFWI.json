@@ -1,0 +1,84 @@
+{
+  "id": "PPL_SEFWI",
+  "nameMain": "Sefwi",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Sefwi",
+      "selfAppellation": "Sefwi",
+      "exonyms": ["Sehwi", "Sefwhi", "Esahie"],
+      "originOfExonyms": "Sehwi est la graphie courante chez les linguistes et dans la classification Ethnologue (langue Esahie, code sfw). Le nom Sefwi est la forme locale et administrative dominante. L'etymologie la plus repandue lie le nom a la phrase akan Asa awie (la guerre est finie), refletant l'origine migratoire du groupe.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Sefwi est le nom officiel utilise dans les decoupages administratifs ghaneeens (Western North Region). Sehwi apparait dans les travaux academiques et la classification ISO.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan (branche Bia / Tano central)",
+      "historicalRegion": "Western North Region, Ghana occidental",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Sefwi"],
+    "origins": {
+      "ancientOrigins": "Les Sefwi sont un peuple Akan dont les traditions orales indiquent une origine dans le Bonoland et les regions de Techiman-Wenchi. Comme tous les Akan, ils auraient migre depuis le nord de l'Afrique (Sahel et savane) vers le 11e siecle. L'etymologie du nom Sefwi serait une deformation de la phrase akan Asa awie (la guerre est terminee), refletant les migrations de refugies fuyant les guerres du 17e siecle.",
+      "formationPeriod": "Fin du 17e siecle - debut du 18e siecle. Le peuplement du territoire actuel resulte de migrations de communautes venant de Bono-Techiman, Wenchi, Adanse, Denkyira, Assin et Asante, qui se sont etablies sur les territoires de l'Aowin (actuel Sefwi) a la suite des guerres de la fin du 17e siecle. En 1713, l'attaque asante de Wenchi a disperse de nombreuses familles vers la region sefwi.",
+      "migrationRoutes": [
+        "Bonoland (Techiman/Wenchi) vers le sud-ouest via Adanse",
+        "Denkyira et Assin vers les territoires de l'Aowin",
+        "Adanse vers Fomena puis vers le territoire sefwi actuel (branche Bekwai)"
+      ],
+      "historicalSettlementZones": [
+        "Western North Region, Ghana",
+        "Sefwi Wiawso (chef-lieu regional)",
+        "Bibiani, Anhwiaso, Bekwai",
+        "Region drainee par les rivieres Tano et Bia"
+      ],
+      "unificationsOrDivisions": "Le pays Sefwi est organise en trois parametaincies independantes : Anhwiaso (la plus ancienne, fondee par des migrants de Wenchi), Bekwai (fondee par des migrants d'Adanse-Fomena) et Wiawso (la plus importante, chef-lieu regional, trouvant son origine a Techiman). Chacune a son propre chef paramount.",
+      "externalInfluences": "La proximite avec l'Aowin et la domination de ce dernier ont marque la formation initiale. La conquete Denkyira puis asante a provoque les dernières vagues migratoires. La langue sefwi est influencee par les dialectes Bono, Wassa, Ahanta, Asante et Nzima des peuples voisins.",
+      "majorHistoricalEvents": "Vers 1715, les Aowin ont perdu une grande partie de leur territoire face aux nouveaux immigrants sefwi qui controlaient les routes commerciales et les sources d'or. La Sefwi Wiawso est fondee par le groupe Asankera venant de Techiman (Bono Est). En 1713, l'attaque asante de Wenchi a provoque l'emigration d'un grand nombre de familles sefwi."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Trois parametaincies independantes (Anhwiaso, Bekwai, Wiawso), chacune dirigee par un chef paramount (Omanhene). Le territoire sefwi couvre 7 districts et 7 circonscriptions electorales : Bia West, Bia East, Bibiani/Anhwiaso/Bekwai, Bodi, Juabuso, Sefwi Akontombra et Sefwi Wiawso.",
+      "clanOrganization": "Organisation matrilineaire de type akan. Certaines familles tracent leur origine a Denkyira et se classent comme Agona Royals. Le groupe Asankera occupe le tabouret paramount de Wiawso.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires structurent l'heritage, la succession et l'appartenance clanique. Les familles issues de differents groupes migrants (Denkyira, Adanse, Wenchi) conservent la memoire de leur origine tout en s'identifiant comme Sefwi.",
+      "religiousAuthority": "La divinite commune a tous les Sefwi est Sobore. Les pretres traditionnels president aux rituels. Forte christianisation contemporaine."
+    },
+    "languages": {
+      "mainLanguage": "Sehwi (Esahie)",
+      "isoCodes": ["sfw"],
+      "dialects": ["Anhwiaso", "Bekwai", "Wiawso"],
+      "vehicularRole": "Le sehwi est un dialecte akan de la branche Bia (Tano central), parle dans la Western North Region du Ghana. Avec environ 305 000 locuteurs (Ethnologue), il est classe comme langue stable (Ethnologue status 6a). Il est influence par les dialectes voisins : Bono, Wassa, Ahanta, Asante et Nzima."
+    },
+    "culture": {
+      "majorRites": "Festival de l'igname Alluolue (ou Elue) : celebration commune a tous les Sefwi, marquant la recolte de l'igname et le renouveau communautaire. Ceremonies de chefferie liees aux tabourets ancestraux (nnua).",
+      "symbols": "La divinite Sobore est un symbole identitaire commun a l'ensemble du peuple sefwi. Les tabourets de chef (stools) symbolisent l'autorite royale comme dans toute la tradition akan.",
+      "artsAndMusic": "Artisanat akan : orfevrerie, sculpture sur bois, tissage de kente. La region sefwi est riche en ressources forestieres et auriferes. Chants et danses traditionnels lors du festival de l'igname.",
+      "spiritualities": "Veneration de la divinite Sobore et du dieu supreme akan (Nyame/Onyame). Culte des ancetres. Christianisme majoritaire aujourd'hui dans la region."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Trois etats traditionnels independants : Sefwi Anhwiaso (le plus ancien, fonde par des migrants de Wenchi-Bono), Sefwi Bekwai (migrants d'Adanse-Fomena) et Sefwi Wiawso (migrants de Techiman, dominant politique de la region). Sefwi Wiawso est la capitale de la Western North Region.",
+      "relationsWithNeighbors": "A l'est, les Denkyira et les Wassa (voisins avec qui les Sefwi ont des liens historiques). Au nord, les Bono et Ahafo et les Asante. A l'ouest, les Anyi-Baoulé de Cote d'Ivoire. Au sud, les Aowin sur les territoires desquels les ancetres sefwi se sont etablis au 17e siecle.",
+      "conflictsOrAlliances": "Les Sefwi se sont imposes sur les Aowin vers 1715, leur prenant une grande partie de leur territoire. Ils ont maintenu une relation complexe avec les Asante, subissant parfois leur domination mais beneficiant aussi de la dispersion des guerres asante pour affirmer leur identite propre.",
+      "diaspora": "Principalement concentree dans les grandes villes ghaneeennes (Accra, Kumasi, Takoradi). La region sefwi est une zone d'attraction economique grace a ses ressources forestieres et minieres (or, bauxite)."
+    },
+    "demography": {
+      "totalPopulation": 880231,
+      "referenceYear": 2021,
+      "source": "Wikipedia (Sefwi people) cite une population de 880 231 (recensement Ghana 2021) ; Ethnologue : 305 000 locuteurs de la langue sehwi",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 880231,
+          "note": "Western North Region, recensement 2021"
+        }
+      ]
+    },
+    "sources": [
+      "Sefwi people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Sefwi_people)",
+      "Sehwi language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Sehwi_language)",
+      "Esahie Language (SFW) – Ethnologue (https://www.ethnologue.com/language/sfw/)",
+      "Languages of Ghana – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Languages_of_Ghana)",
+      "Akan Heritage – History of Sefwi (https://akanheritage.com.gh/history.html)",
+      "Sehwi – Wikidata Q36593 (https://www.wikidata.org/wiki/Q36593)"
+    ]
+  }
+}

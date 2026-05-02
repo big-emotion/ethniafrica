@@ -1,0 +1,103 @@
+{
+  "id": "PPL_SWAHILI_OMAN",
+  "nameMain": "Swahili (Oman)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["OMN"],
+  "content": {
+    "appellations": {
+      "mainName": "Swahili d'Oman (Zanzibari Omanis)",
+      "selfAppellation": "Waswahili / Zanzibari",
+      "exonyms": [
+        "Swahili Omanis",
+        "Omani de retour (Back-from-Africa)",
+        "Zanzibari"
+      ],
+      "originOfExonyms": "Le terme Zanzibari designe en Oman les familles d'ascendance omanaise qui ont vecu a Zanzibar et sur la cote swahili pendant des generations, avant de revenir en Oman apres la revolution de Zanzibar de 1964. Le terme Swahili Omanis est utilise par les chercheurs pour decrire cette communaute hybride qui parle swahili en plus de l'arabe.",
+      "whyProblematic": "L'identite de cette communaute est complexe : certains membres se considerent comme omanais ayant des racines en Afrique de l'est, d'autres comme des Zanzibaris exiles. Le terme Swahili peut etre percu comme stigmatisant dans certains contextes omanais, ou ces familles cherchent a s'integrer a la societe omanaise dominante.",
+      "contemporaryUsage": "En Oman, ces communautes sont designees informellement comme Zanzibari ou Swahili. Elles maintiennent le swahili comme langue d'heritage au sein de la sphere domestique, tout en parlant l'arabe omanais dans la vie publique. Leur statut est reconnu mais leur integration a ete parfois problematique en raison de leur arabisation incomplete et de leur culture hybride.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Sabaki (Zone G) — identite swahili en diaspora arabe",
+      "historicalRegion": "Zanzibar, cote est-africaine (Kenya, Tanzanie, Mozambique) — migrants de retour en Oman depuis 1964",
+      "currentCountries": ["OMN"]
+    },
+    "ethnicities": [
+      "Zanzibari Omanis (familles omanaises ayant vecu a Zanzibar pendant des generations, rapatriees apres 1964)",
+      "Swahili Omanis de Kenya et Tanganyika (familles etablies sur la cote continentale de l'Afrique de l'est)",
+      "Swahili Omanis francophones du Congo, Rwanda et Burundi (environ 10% de la communaute, Manga Arabs)",
+      "Descendants d'esclaves africains en Oman (communaute distincte, moins mobile et socialement inferieure)",
+      "Familles Busaidi d'ascendance royale ayant vecu a Zanzibar"
+    ],
+    "origins": {
+      "ancientOrigins": "Les liens entre Oman et la cote swahili remontent a l'Antiquite. Les explorateurs grecs mentionnent la presence de marins de la peninsule arabique le long de la cote est-africaine. Selon la tradition orale, les premiers Omanis arriverent a Zanzibar lors de la fuite des freres Suleiman et Said devant l'invasion omeyyade au 7e siecle. Les Al-Busaidi, dynastes d'Oman depuis le milieu du 18e siecle, ont toujours entretenu des liens avec Zanzibar et d'autres ports de l'ocean Indien.",
+      "formationPeriod": "La periode clef est 1832-1964. En 1832, le sultan Said bin Sultan transfera sa capitale de Muscat a Stone Town (Zanzibar), faisant de l'ile le centre de l'empire commercial omanais. Des milliers d'Omanis emigrerent vers Zanzibar et la cote swahili, s'y etablissant sur plusieurs generations. En 1856, Zanzibar et Oman furent divises en deux sultanats separes. La revolution de Zanzibar de 1964 provoqua le rapatriement massif de ces communautes vers Oman.",
+      "migrationRoutes": [
+        "Flux saisonnier de marins et commerçants omanais vers Zanzibar (7e-18e siecles, empruntes avec les vents de mousson)",
+        "Emigration massive d'Omanis vers Zanzibar pendant le regne de Said bin Sultan (1832-1856)",
+        "Rapatriement force apres la revolution de Zanzibar (1964) : 3 700 premiers refugies, puis vague supplementaire",
+        "Retour en Oman apres l'appel du sultan Qaboos en 1970 : environ 10 000 personnes vers 1975",
+        "Migration des Swahili-Omanis francophones de retour depuis Rwanda et Burundi (debut des annees 1990)"
+      ],
+      "historicalSettlementZones": [
+        "Muscat et la region de Mascate (concentration principale de la communaute en Oman)",
+        "Cote omanaise, notamment Matrah et Sur",
+        "Zanzibar (Unguja et Pemba) — zones d'etablissement historique",
+        "Mombasa et la cote kenyane",
+        "Dar es Salaam et la cote tanzanienne"
+      ],
+      "unificationsOrDivisions": "La communaute est hautement heterogene. Les divisions internes incluent : la tribu d'origine en Oman, la date d'arrivee en Afrique de l'est (l'anciennete etant plus prestigieuse), le lieu d'etablissement africain (Zanzibar vs continent, anglophone vs francophone), et la presence ou l'absence d'esclaves dans la genealogie familiale. Les familles les plus aristocratiques avaient des liens directs avec la cour sultana-le de Zanzibar.",
+      "externalInfluences": "Revolution de Zanzibar (janvier 1964) : massacre de dizaines de milliers d'Arabes omanais et yemenites, expulsion du reste. Politique de retour du sultan Qaboos (1970) : octroi de la citoyennete omanaise a ceux pouvant prouver leur ascendance paternelle omanaise. Integration en Oman dans les secteurs de la securite, du renseignement et du gouvernement grace a leur maitrise de l'anglais et leur experience administrative.",
+      "majorHistoricalEvents": "1698 : Oman expulse les Portugais de Mombasa et etend son controle sur la cote swahili. 1832 : Said bin Sultan deplace sa capitale de Muscat a Zanzibar. 1856 : Traite de Canning divisant les sultanats d'Oman et de Zanzibar. 12 janvier 1964 : Revolution de Zanzibar, massacre de 17 000 Arabes, exode des communautes omanaises. 1970 : Coup d'etat de Qaboos, appel aux Zanzibaris de retourner et contribuer au developpement de l'Oman moderne. 1975 : Environ 10 000 Zanzibari Omanis rentres en Oman."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "En Oman, la communaute swahili-zanzibari s'organise autour d'associations culturelles informelles et de reseaux familiaux. Elle n'a pas d'autonomie politique formelle mais occupe des positions d'influence dans la bureaucratie omanaise, la securite, l'oil and gas, grace a leur education anglophone acquise a Zanzibar. Les cheikhs tribaux restant en Oman ont joue un role de validation des genealogies des retournants.",
+      "clanOrganization": "Organisation tribale omanaise maintenue : chaque famille reconnait son appartenance aux grandes tribus omanaises (Busaidi, Hinawi, Ghafiri etc.) tout en ayant developpe des reseaux familiaux specifiques lies a leur experience africaine. Les liens avec les branches restees en Oman ont ete maintenues via des transferts financiers importants.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La genealogie paternelle omanaise est le critere determinant pour l'obtention de la citoyennete au retour. La ligne maternelle, souvent africaine ou mixte, est moins mise en avant publiquement. En prive, les liens avec les familles swahili et africaines sont maintenus.",
+      "religiousAuthority": "Islam ibadhi (rite majoritaire en Oman) pratique par la majorite de la communaute, qui s'est adaptee au rite local lors du retour. Certaines familles avaient adopte le rite sunnite shafiite a Zanzibar, predominant sur la cote swahili. Le Grand Mufti d'Oman et l'ancien ministre de l'Education etaient tous deux nes a Zanzibar, illustrant l'influence de la communaute."
+    },
+    "languages": {
+      "mainLanguage": "Kiswahili (swahili de Zanzibar)",
+      "isoCodes": ["swa", "swh"],
+      "dialects": [
+        "Kiunguja (dialecte de Zanzibar) — langue d'heritage domestique de la communaute",
+        "Arabe omanais — langue d'integration et de la sphere publique",
+        "Anglais — acquis a Zanzibar via l'education coloniale britannique, atout majeur pour l'integration en Oman"
+      ],
+      "vehicularRole": "Le swahili est maintenu comme langue domestique et culturelle au sein des foyers zanzibari omanais. Les estimations varient sur le pourcentage d'Omanis parlant swahili : certains estiment que 20% ou plus de la population omanaise a des liens avec la cote swahili, bien que des estimations plus prudentes situent la proportion de locuteurs actifs du swahili a 2-3% de la population. L'arabe omanais est la langue publique et l'anglais sert de langue de travail dans les secteurs specialises."
+    },
+    "culture": {
+      "majorRites": "Mariage selon le rite islamique ibadhi ou shafiite, avec des elements culturels swahili maintenus dans les celebrations : musique taarab jouee lors des fetes, cuisine swahili servie aux cotes de la cuisine arabe. Circoncision masculine celebree selon les traditions islamiques. Ceremonies du Mawlid (naissance du Prophete) et de l'Aid el-Fitr avec chants et benedictions. Funerailles selon le rite islamique local.",
+      "symbols": "Le kanzu (longue robe blanche) et le kofia (bonnet brode) portes lors des ceremonies. La porte sculptee en bois d'inspiration swahili (heritage de Zanzibar). La cuisine swahili (pilau, biryani, mchuzi, maandazi) maintenue comme marqueur identitaire et servie lors des gatherings familiaux. La langue swahili elle-meme comme symbole fort d'identite et de solidarite communautaire.",
+      "artsAndMusic": "Musique taarab (genre musical swahili melant instruments arabes, indiens et africains : oud, qanun, violon, derbouka) maintenue dans les celebrations privees de la communaute zanzibari en Oman. Poesie swahili (mashairi, utenzi) recitee lors des rassemblements. Cuisine fusion swahili-arabe-indienne comme expression culturelle. Transmission orale des histoires et genealogies familiales liees a l'epoque de Zanzibar.",
+      "spiritualities": "Islam sunnite shafiite (rite de Zanzibar) pour certaines families, ibadhi pour celles plus integrees a la societe omanaise. Croyances en les djinns (majini) et pratiques de protection spirituelle issues de la tradition swahili coexistant avec l'orthodoxie islamique omanaise. Visite des tombes de saints (ziara) pratiquee par les branches plus conservatrices de la communaute."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La communaute swahili-zanzibari en Oman est le produit de l'empire commercial omanais centre sur Zanzibar (1698-1964). Le Sultanat de Zanzibar sous les Al-Busaidi controla la cote swahili de la Somalie au Mozambique. Les retournants ont joue un role fondamental dans la construction de l'Oman moderne : le Conseil d'orientation provisoire de 1972, qui planifiait le developpement du pays, comptait parmi ses 10 membres 2 personnes nees a Zanzibar n'ayant jamais ete en Oman.",
+      "relationsWithNeighbors": "Relations complexes avec la societe omanaise : integration reussie pour les elites eduquees, marginalisation pour les descendants d'esclaves. Contacts maintenus avec les familles restees en Afrique de l'est (Zanzibar, Kenya, Tanzanie). Liens avec les communautes swahili-arabes de Dubai, Kuwait et du Caire ou certaines familles ont ete bloquees avant d'acceder a l'Oman.",
+      "conflictsOrAlliances": "Revolution de Zanzibar (12 janvier 1964) : evenement traumatique qui declencha l'exode. Les Omanis de Zanzibar furent designes comme etrangers par le gouvernement revolutionnaire, malgre des siecles de presence. Sultan Qaboos, apres son coup d'etat de 1970, utilisa les Zanzibari comme cadres administratifs pour developper l'Oman, compensant le manque de personnel qualifie local.",
+      "diaspora": "La communaute swahili-zanzibari d'Oman est elle-meme une diaspora : ancienne diaspora omanaise en Afrique de l'est reconvertie en diaspora zanzibari en Oman. Environ 10 000 personnes rapatriees vers 1975. Des branches de la communaute subsistent a Dubai, Cairo, Kuwait et dans d'autres capitales du Golfe. Des membres cherchent encore a obtenir la citoyennete omanaise, certains etant restes bloques en Afrique de l'est apres que le gouvernement omanais ferma les portes au rapatriement une fois les besoins en personnel satisfaits."
+    },
+    "demography": {
+      "totalPopulation": 50000,
+      "referenceYear": 2025,
+      "source": "Pas de recensement officiel disponible sur cette communaute en Oman. L'Institut de Current World Affairs (2015) estime que 20% ou plus de la population omanaise pourrait avoir des liens avec la cote swahili, toutes generations confondues. Les estimations plus conservatrices des chercheurs (Marc Valeri et al.) situent la communaute ayant des liens directs avec l'Afrique de l'est entre 50 000 et 150 000 personnes. La diaspora Azanian Sea (2008) note qu'environ 10 000 personnes etaient rentrees vers 1975, avec des flux supplementaires ensuite.",
+      "distributionByCountry": [
+        {
+          "country": "OMN",
+          "population": 50000,
+          "note": "Concentrees principalement a Muscat (Matrah, Ruwi), avec des communautes sur la cote omanaise. Chiffre approximatif compte tenu de l'absence de donnees officielles."
+        }
+      ]
+    },
+    "sources": [
+      "Institute of Current World Affairs — Muscat to Mji Mkongwe (2015). https://www.icwa.org/muscat-to-mji-mkongwe/",
+      "The Azanian Sea — The Swahili Omani (2008). http://www.azaniansea.com/2008/10/swahili-omani.html",
+      "Wikipedia EN — Sultanate of Zanzibar. https://en.wikipedia.org/wiki/Sultanate_of_Zanzibar",
+      "Joshua Project — Swahili, Zanzibari in Oman. https://joshuaproject.net/people_groups/16087/MU",
+      "IJICC — The Omani Diaspora in Eastern Africa (Yenigun 2021). https://www.ijicc.net/images/Vol_15/Iss_7/15714_Yenigun_2021_E1_R.pdf",
+      "EBSCO Research Starters — Oman Captures Zanzibar. https://www.ebsco.com/research-starters/history/oman-captures-zanzibar",
+      "Citizenship Rights Africa — OAHR Right to Return Campaign (2019). https://citizenshiprightsafrica.org/east-africa-oahr-launches-right-to-return-campaign-coinciding-with-the-world-conference-on-statelessness/",
+      "Reddit r/Oman — Swahili speakers in Oman (2025). https://www.reddit.com/r/Oman/comments/1rcxpur/what_percentage_of_omanis_talk_swahili/"
+    ]
+  }
+}

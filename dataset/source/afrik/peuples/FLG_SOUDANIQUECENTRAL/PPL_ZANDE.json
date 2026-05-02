@@ -1,0 +1,119 @@
+{
+  "id": "PPL_ZANDE",
+  "nameMain": "Azande",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["COD", "CAF", "SSD"],
+  "content": {
+    "appellations": {
+      "mainName": "Azande",
+      "selfAppellation": "Azande (singulier : Zande ou Manzande)",
+      "exonyms": [
+        "Zande (terme anglophone courant)",
+        "Nzakara (designation d'un sous-groupe)",
+        "A-Zande (graphie avec prefixe du pluriel bantou adopte par les premiers voyageurs europeens)"
+      ],
+      "originOfExonyms": "Le nom Azande signifie litteralement ceux qui possedent beaucoup de terres, refletant leur histoire de conquetes et d'expansion territoriale. Il constitue a la fois l'endonyme et l'exonyme. La forme Zande est employee dans les textes anglophones et la litterature academique. La forme Nzakara designe un sous-groupe de la branche Bandia.",
+      "whyProblematic": "La confusion entre Azande (peuple) et Zande (langue) est frequente. De plus, le terme Azande designe un macro-groupe constitue de nombreux peuples assimiles par la conquete Avungara : tous les Azande ne partagent pas les memes origines, mais ont adopte la langue et la culture zande.",
+      "contemporaryUsage": "Le terme Azande est employe dans toute la litterature anthropologique et ethnographique, notamment depuis l'oeuvre fondatrice d'E.E. Evans-Pritchard (1937). Il est utilise par les membres du groupe pour se designer collectivement.",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Langues zande (branche Ubangienne du Niger-Congo selon certains linguistes ; position dans les langues soudaniques centrales debattue)",
+      "historicalRegion": "Savanes du sud-est de la Republique centrafricaine, nord-est de la RDC (Haut-Uele, Bas-Uele), Soudan du Sud occidental (Equatoria occidental)",
+      "currentCountries": ["COD", "CAF", "SSD"]
+    },
+    "ethnicities": [
+      "Vungara (Avungara) — clan noble dirigeant, fondateur de la dynasty royale",
+      "Bandia — dynasty non-zande ayant adopte les coutumes zande et fusionne avec les Vungara",
+      "Adio — sous-groupe linguistique zande",
+      "Barambu — sous-groupe assimile",
+      "Apambia — sous-groupe assimile",
+      "Geme — sous-groupe assimile",
+      "Kpatiri — sous-groupe assimile",
+      "Nzakara — sous-groupe de la branche Bandia en RCA"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Azande ont ete formes par une conquete militaire dans la premiere moitie du 18e siecle. Deux dynasties d'origines differentes les ont constitues : les Vungara (Avungara) qui ont cree l'identite politique, linguistique et culturelle du groupe, et les Bandia, une dynasty non-zande qui s'est etendue vers le nord du Zaire actuel en adoptant les coutumes zande. Au debut du 19e siecle, les Bandia etaient devenus suzerains des Vungara et les deux groupes formerent ensemble le peuple Azande. Ils habitaient les savanes de ce qui est aujourd'hui le sud-est de la Republique centrafricaine.",
+      "formationPeriod": "L'expansion azande a debute sous le regne de Ngura, descendant de Basanginonga (fondateur de la dynasty Avungara). Basanginonga avait renverse le tyran Ngara de la dynasty precedente Abakundo, recevant le nom Vongara (celui qui a ficele Ngara), origine du nom Avungara. L'expansion s'est faite par assimilation et conquete, les Avungara envoyant un prince dans chaque nouveau territoire pour etablir un royaume autonome, garantissant l'unite par la regle d'un clan mais decentralisant le gouvernement.",
+      "migrationRoutes": [
+        "Expansion depuis le sud-est de la RCA (berceau originel dans les savanes) vers l'est",
+        "Extension vers le nord-est de la RDC (Haut-Uele, Bas-Uele) sous les Avungara et Bandia",
+        "Penetration vers le nord dans l'actuel Soudan du Sud (Equatoria occidental) jusqu'a ce que les razzias soudanaises du 19e siecle stoppent l'expansion"
+      ],
+      "historicalSettlementZones": [
+        "Savanes du sud-est de la RCA (zone de la Haute-Sangha et de la Haute-Kotto)",
+        "Province du Haut-Uele (nord-est de la RDC)",
+        "Province du Bas-Uele (nord de la RDC)",
+        "Equatoria occidental (Soudan du Sud) : region de Yambio"
+      ],
+      "unificationsOrDivisions": "L'empire Azande etait un systeme de royaumes autonomes lies par la communaute de la dynasty Avungara. A la mort d'un roi, ses fils se disputaient la succession : le fils perdant etablissait souvent un royaume dans une region voisine, propageant ainsi l'empire vers l'est et le nord. A l'apogee, plusieurs royaumes autonomes coexistaient (Tamburo, Ezo, Gbudue au Soudan ; Ndoromo, Wandu, Ngima au Congo belge ; Kipa en AEF francaise). La colonisation europeenne a divise ces royaumes entre la Belgique, la France et l'Anglo-Egypte soudanaise.",
+      "externalInfluences": "Razzias soudanaises (marchands d'esclaves du nord) au 19e siecle qui ont stoppe l'expansion nordique. Partage colonial entre Belgique (Congo belge), France (AEF) et Anglo-Egypte (Soudan) apres 1884. Tentative britannique de modernisation agricole : le Zande Scheme (1944-1950s) imposant la resettlement et la culture du coton a echoue. Christianisation depuis les missions catholiques et protestantes ; 85% des Azande se declarent aujourd'hui chretiens.",
+      "majorHistoricalEvents": "18e siecle : formation de l'empire Azande sous la dynasty Avungara. 19e siecle : expansion vers l'est et le nord ; razzias soudanaises. Annees 1870-1879 : voyages du photographe autrichien Richard Buchta fournissant les premieres documentations photographiques des Azande. 1884-1905 : partage colonial. Fevrier 1905 : mort du roi Gbudue (Yambio), qui resistait a la domination britannique. Ce moment est considere par les Azande comme le debut du declin de leur civilisation. Annees 1920 : resettlement de 60 000 Azande pour combattre la maladie du sommeil. 1944-1960s : echec du Zande Scheme agricole britannique. 2011 : independance du Soudan du Sud. 2015 et 2021 : violences interethniques entre Azande et Dinka dans la region de Yambio."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Azande etaient organises en chefferies pouvant etre appelees royaumes. Les Avungara formaient la noblesse, transmettant leur statut par heredite. Les chefs cumulaient les roles militaire, economique et politique. Les jeunes hommes non-maries etaient a la fois travailleurs et guerriers. L'empire fonctionnait par decentralisation : chaque prince Avungara gouvernait un territoire autonome mais les royaumes cooperaient pour la defense collective. Dans les chefferies, l'affiliation clanique n'etait pas soulignee au niveau local; les groupes locaux ressemblaient davantage a des organisations politiques territoriales.",
+      "clanOrganization": "Division fondamentale entre la class nobiliaire Avungara (heredite royale) et le reste de la population (communs). Les Avungara refusaient le cannibalisme et le condamnaient chez les autres, mais punissaient les criminels en les vendant a des peuples cannibales voisins. La class noble monopolisait les femmes et le pouvoir politique.",
+      "ageClassSystems": "Les jeunes hommes non-maries formaient la base des guerriers. En raison d'une penurie de femmes (polygamie des chefs et nobles), les guerriers entre 20 et 30 ans prenaient couramment de jeunes hommes comme partenaires intimes, pratique qui s'est largement etinte au 19e siecle avec l'influence coloniale.",
+      "roleOfLineages": "Les lignages etaient moins importants au niveau local que la structure royale. Le systeme prioritaire etait l'appartenance au territoire d'un prince Avungara plutot qu'a un lignage specifique. Les familles etaient etablies dans des homesteads agricoles.",
+      "religiousAuthority": "Le chef royal (prince Avungara) avait autorite sur le recours aux oracles. La consultation du benge (oracle de la potion de poulet) etait reservee aux hommes et necessitait l'autorisation du prince. Les devins (aborutu) jouaient un role dans l'identification des sorciers. Depuis la colonisation, 85% des Azande se declarent chretiens (catholiques en majorite : plus de la moitie des Azande est catholique romaine). 15% maintiennent la religion traditionnelle."
+    },
+    "languages": {
+      "mainLanguage": "Zande (Pa-Zande / Pazande)",
+      "isoCodes": ["zne"],
+      "dialects": [
+        "Pa-Zande (dialecte central, langue principale, ISO zne)",
+        "Adio (dialecte ou langue proche)",
+        "Barambu (dialecte ou langue proche)",
+        "Apambia",
+        "Geme",
+        "Kpatiri",
+        "Nzakara (sous-groupe Bandia en RCA, parfois considere comme langue distincte)"
+      ],
+      "vehicularRole": "Le zande (Pa-Zande) est parle par environ 1,1 million de locuteurs dont 730 000 en RDC, 62 000 en RCA et 350 000 au Soudan du Sud (SIL Ethnologue). C'est une langue stable et transmise a toutes les generations. Il est enseigne dans certaines ecoles. Le francais est utilise en RCA et en RDC ; l'anglais au Soudan du Sud."
+    },
+    "culture": {
+      "majorRites": "Le systeme de la sorcellerie (mangu) est central dans la vie culturelle azande : la mangu est une substance hereditaire (fluide noir dans l'abdomen) transmise du pere aux fils et de la mere aux filles. Elle peut agir de maniere autonome et causer le malheur des ennemis. Les Azande consultent des oracles pour identifier les sorciers responsables de leurs infortunes. Le benge (oracle de la potion de poulet) est le plus puissant et le plus prestigieux des oracles, reserve aux hommes : une potion extraite d'une plante liane est administree a un poulet pendant qu'on lui pose des questions ; sa survie ou sa mort indique la reponse. D'autres oracles incluent les termites et la planche a friction. Les ceremonies royales lors de la succession et d'evenements importants etaient conduites par les chefs Avungara. Rites funeraires etendus selon le statut social.",
+      "symbols": "Le couteau de jet (shongo ou sabe) multi-lames en acier forge est le symbole guerrier le plus emblematique des Azande, reconnu dans le monde entier pour sa forme complexe courbe et ses multiples lames tranchantes. Il constitue egalement un instrument de prestige. Le tambour royal symbolise l'autorite du prince Avungara. Les sculptures en bois et argile (ancetres, animaux importants) symbolisent la connection au monde spirituel.",
+      "artsAndMusic": "Les Azande sont celebres pour leurs couteaux de jet (shongo) qui temoignent de leur maitrise du travail du metal (ils etaient consideres comme des metallurgistes habiles en periode precoloniale). Sculpture sur bois et argile : figures anthropomorphes et zoomorphes, recipients en forme de tete humaine. Instruments de musique : sanza (piano a pouces, parfois en forme d'animaux ou de personnages), tambours utilises lors des mariages et danses communautaires. Le personnage du filou Ture dans la litterature orale azande sert de guide moral en illustrant les consequences des mauvais choix. Contes oraux publies partiellement par des missionnaires au debut du 20e siecle.",
+      "spiritualities": "Croyance en Mbori, dieu omnipotent createur du monde. Systeme elabore de sorcellerie (mangu) : toute misfortune est potentiellement l'oeuvre d'un sorcier dont la substance s'est activee. Les oracles (benge, termites, planche a friction) permettent d'identifier le responsable. Une autopsie du sorcier presume peut confirmer la presence de mangu dans ses intestins. La sorcellerie est consideree comme une action psychique (l'ame de la mangu quitte le corps du sorcier la nuit pour atteindre la victime, brillant d'une lumiere visible). Les vengeurs font appel au magie de vengeance (mbisimo mangu). Les specialistes religieux (devins, aborutu) identifient les sorciers. La magie protectrice est pratiquee quotidiennement. Aujourd'hui, 85% des Azande se declarent chretiens (catholiques en majorite) avec un fort syncretisme avec les croyances traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "L'empire Azande constitue l'une des entites politiques les plus etendues d'Afrique centrale precoloniale. Fonde sous la dynasty Avungara au 18e siecle, il s'est etendu sur une vaste zone de savane couvrant parties de l'actuelle RCA, RDC et Soudan du Sud. Les royaumes etaient decentralises : chaque fils de roi recevait un territoire a gouverner de maniere autonome. A la fin du 19e siecle, les principaux royaumes etaient ceux de Tamburo, Ezo et Gbudue (Soudan britannique), Ndoromo, Wandu et Ngima (Congo belge) et Kipa (AEF francaise). Le roi Gbudue (aussi appele Yambio, ne vers 1835, mort en 1905) est la figure royale azande la plus celebre.",
+      "relationsWithNeighbors": "L'expansion azande s'est faite par assimilation et conquete de nombreux peuples voisins (Moru, Dinka, Nzakara, Banda et autres). Les voisins assimiles ont adopte la langue et la culture azande. Relations conflictuelles avec les marchands d'esclaves arabes du nord au 19e siecle. Tensions postcoloniales avec les Dinka dans la region de Yambio (Soudan du Sud), notamment en 2015 et 2021.",
+      "conflictsOrAlliances": "18e-19e siecles : expansion conquérante sous la dynasty Avungara. 19e siecle : razzias soudanaises stoppant l'expansion nordique. 1905 : mort du roi Gbudue apres avoir resiste a la domination britannique. Partage de l'empire entre Belgique, France et Angleterre (1884-1910). 1938-1950s : imposition britannique du Zande Scheme (echec economique et social). 2015 : tensions interethniques Azande-Dinka a Yambio. 2021 : violations documentees par Amnesty International lors des conflits dans l'Equatoria occidental.",
+      "diaspora": "Communautes azande dans les grandes villes (Kinshasa, Bangui, Djouba). Diaspora de guerre dans des pays voisins suite aux conflits du Soudan du Sud. Rencontre en Ouganda de representants azande lors de reunions sur la restauration de la royaute (convocation a Kampala mentionnee dans les sources recentes)."
+    },
+    "demography": {
+      "totalPopulation": 2000000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue (2024) : 1,1 million de locuteurs du zande (730 000 en RDC, 62 000 en RCA, 350 000 au Soudan du Sud). Wikipedia Azande people : estimations totales de 1,1 million de locuteurs. Liste ethnique du Soudan du Sud : 878 000 Zande. Estimation totale en 2025 (incluant locuteurs dans les 3 pays et croissance demographique) : environ 2 millions.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 1100000,
+          "note": "Provinces du Haut-Uele et du Bas-Uele, nord-est de la RDC"
+        },
+        {
+          "country": "SSD",
+          "population": 750000,
+          "note": "Equatoria occidental (region de Yambio), Soudan du Sud"
+        },
+        {
+          "country": "CAF",
+          "population": 150000,
+          "note": "Est de la Republique centrafricaine, regions frontalières"
+        }
+      ]
+    },
+    "sources": [
+      "Evans-Pritchard, E.E. Witchcraft, Oracles and Magic Among the Azande. Oxford University Press, 1937. Edition abregee 1976 : ISBN 0-19-874029-8.",
+      "Wikipedia EN — Azande people. https://en.wikipedia.org/wiki/Azande_people",
+      "Wikipedia EN — Zande language. https://en.wikipedia.org/wiki/Zande_language",
+      "Azande Royal — History of the Avongara Dynasty. https://www.azanderoyal.org/history.html",
+      "SIL Ethnologue — Zande (zne). https://www.ethnologue.com/language/zne/",
+      "Glottolog — Zande. https://glottolog.org/resource/languoid/id/zand1248",
+      "HAU Journal — New oracles among the Azande (2024). https://www.haujournal.org/index.php/hau/article/view/1895",
+      "Leiden University — Zande chieftaincy and kingship (2024). https://scholarlypublications.universiteitleiden.nl/access/item:3718381/view",
+      "Wikipedia EN — List of ethnic groups in South Sudan. https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_South_Sudan",
+      "HistoryFiles — Kingdoms of Central Africa : Zande State of Vungara. https://www.historyfiles.co.uk/KingListsAfrica/AfricaZandeVungara.htm"
+    ]
+  }
+}

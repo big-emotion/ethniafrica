@@ -1,0 +1,106 @@
+{
+  "id": "PPL_GODIE",
+  "nameMain": "Godié",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Godié",
+      "selfAppellation": "Godié / Godye",
+      "exonyms": [
+        "Goddie",
+        "Godye",
+        "Gwèdji (dénomination ancienne signifiant Chimpanzé-panthère, attribuée par les Neyo voisins pour décrire leur caractère belliqueux)"
+      ],
+      "originOfExonyms": "Le nom Godié vient du mot Gwèdji, surnom donné par les Neyo, un peuple voisin, pour décrire le caractère guerrier et farouche des Godié. Le terme a évolué vers Godié dans l'usage courant.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Godié est universellement utilisé en Côte d'Ivoire et dans la littérature ethnographique pour désigner ce peuple krou du Gbôklè et de la région de Sassandra.",
+      "linguisticFamily": "FLG_KROU",
+      "ethnoLinguisticGroup": "Krou occidental",
+      "historicalRegion": "Sud-ouest de la Côte d'Ivoire, région du Gbôklè et de Sassandra (littoral entre Sassandra et Fresco)",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": [
+      "Godié de Sassandra – groupe côtier principal",
+      "Godié de Fresco – groupe du littoral, fête PÔPAIX",
+      "Godié de Godjiboué (sous-préfecture de Sago) – berceau du genre musical WAYÔ",
+      "Godié de l'intérieur – groupes forestiers des terres entre Sassandra et Lakota",
+      "Groupes de résultante akan-krou : historiquement, les Godié sont le résultat de la rencontre entre une culture akan et une culture krou"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Godié sont un sous-groupe krou du sud-ouest de la Côte d'Ivoire, faisant partie de la grande famille des peuples krou. Historiquement, ils sont le résultat de la rencontre et du métissage de deux cultures fondamentalement différentes : l'une akan et l'autre krou. Cette dualité d'origine distingue les Godié de leurs voisins krou purs. Ils sont localisés dans la région du Gbôklè, au sud-ouest de la Côte d'Ivoire.",
+      "formationPeriod": "La formation d'une identité godié distincte s'est opérée sur plusieurs siècles dans la zone côtière et forestière entre Sassandra et Fresco. La rencontre des traditions akan et krou y a façonné une culture syncrétique originale.",
+      "migrationRoutes": [
+        "Depuis l'ouest (Guinée ou Libéria) selon une hypothèse migratoire",
+        "Depuis le nord selon une autre hypothèse",
+        "Une tradition revendique une origine totalement ivoirienne sur plusieurs siècles",
+        "Les migrations godié ont souvent été motivées par la recherche de terres fertiles et de ressources agricoles"
+      ],
+      "historicalSettlementZones": [
+        "Région du Gbôklè (sud-ouest de la Côte d'Ivoire)",
+        "Littoral de Sassandra à Fresco",
+        "Forêts entre Sassandra et Lakota",
+        "Sous-préfecture de Sago (région de Sassandra)"
+      ],
+      "unificationsOrDivisions": "Organisation clanique sans État centralisé. Les Godié vivent en groupes territoriaux distincts partageant une identité culturelle commune construite sur le syncrétisme akan-krou.",
+      "externalInfluences": "Double héritage akan et krou constituant l'identité godié. Contacts avec les peuples voisins Neyo, Bakwé, Dida et Bété. Influence du christianisme depuis la période coloniale (55% de chrétiens selon Joshua Project 2025). Intégration dans l'économie ivoirienne.",
+      "majorHistoricalEvents": "Participation à la résistance aux pressions extérieures communes aux peuples krou. Organisation de festivals culturels annuels (ZOKPA, WAYÔ, PÔPAIX) pour la préservation du patrimoine. Intégration dans les structures politiques ivoiriennes depuis l'indépendance de 1960."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "À la tête de l'organisation traditionnelle se trouve un chef héréditaire qui détient l'autorité centrale : résolution des conflits, garde des traditions, représentation de la communauté auprès des autorités gouvernementales. Un conseil des anciens (aînés) assiste le chef. Les femmes et les jeunes jouent des rôles significatifs dans l'organisation des activités économiques et sociales, bien que les conseils soient dominés par les hommes.",
+      "clanOrganization": "Société patrilinéaire. Le lolokpa (clan) désigne l'ensemble des personnes se réclamant d'un même ancêtre et partageant souvent un interdit alimentaire commun. Le go désigne à la fois le lignage et l'emplacement qu'il occupe dans le village ; son chef, le göba, gère les biens communs, rend la justice et contrôle l'éducation des enfants. À l'intérieur du go vivent plusieurs butu (ménages étendus) dont le chef est le bubuta.",
+      "ageClassSystems": "Institution des zokpa : classes d'âge regroupant les personnes nées la même année. Les zokpa se retrouvent lors du festival annuel ZOKPA (festival des chants, danses et concours culinaire par générations). Les jeux guerriers entre zokpa d'un même village ou de villages différents sont des distractions importantes de la vie villageoise.",
+      "roleOfLineages": "Les lignages patrilinéaires (go) déterminent l'identité sociale, les droits fonciers et les responsabilités rituelles. Autrefois, la filiation était assurée par les femmes selon la tradition, mais un changement vers la patrilinéarité s'est imposé selon la légende. La femme conserve une grande importance dans la société godié : les femmes adultes d'un village agissent collectivement dans les affaires communales. Dot élevée (90 000 à 120 000 FCFA), en régression chez les jeunes.",
+      "religiousAuthority": "Autorité des prêtres traditionnels et des anciens dans les affaires spirituelles. Les aînés des deux sexes sont censés contrôler de puissantes forces spirituelles et protéger la communauté."
+    },
+    "languages": {
+      "mainLanguage": "Godié (langue krou)",
+      "isoCodes": ["god"],
+      "dialects": [
+        "Kagbowalé",
+        "Ttigluwalé",
+        "Nugbowalé",
+        "Gnagowalé",
+        "Djrikowalé",
+        "Drogowalé",
+        "Gligbowalé",
+        "Koyo",
+        "Dadjriwalé"
+      ],
+      "vehicularRole": "Le godié est la langue maternelle de toute la communauté (Ethnologue : utilisé comme première langue par tous). Les jeunes Godié parlent généralement le français (langue officielle), facilitant la communication avec les autres groupes. Le dioula est la langue véhiculaire régionale."
+    },
+    "culture": {
+      "majorRites": "Rites de passage structurant la vie sociale : naissance, puberté, mariage (dot élevée), mort. Les funérailles sont des événements communautaires majeurs comportant des phases rituelles. Festival ZOKPA : fête des générations (classes d'âge), avec chants, danses et concours culinaire. Festival WAYÔ (signifiant ils palabrent) : né à Godjiboué (sous-préfecture de Sago), organisé pour permettre aux Godié autochtones de Sassandra de se ressourcer dans les traditions. Festival PÔPAIX (festival de la paix) : célébré pendant trois jours, les Godié autochtones de Fresco exhibent leur culture (parade de tenues vestimentaires, chants, danses, concours culinaire).",
+      "symbols": "Les masques godié en bois sculpté, très prisés, sont utilisés lors des cérémonies culturelles, danses et célébrations. Les motifs et symboles de l'art godié reflètent des éléments de l'environnement naturel (forêt, mer) et des concepts spirituels. L'institution des zokpa (classes d'âge) est un symbole identitaire central.",
+      "artsAndMusic": "Le peuple Godié est reconnu pour son artisanat, notamment la sculpture du bois et la fabrication de masques cérémoniels. Danses traditionnelles : l'Alloukou (danse masculine). Genre musical WAYÔ né à Godjiboué. Le festival ZOKPA rassemble les arts musicaux et chorégraphiques de toutes les générations. Les femmes Godié ont des danses spécifiques valorisées pour leur technique. La poterie et le tissage complètent le patrimoine artisanal.",
+      "spiritualities": "Les Godié sont profondément enracinés dans des croyances animistes. Ils vénèrent les esprits de la nature et croient en un Dieu créateur suprême (esprit supérieur). Les rites et cérémonies font partie intégrante de leur culture : rites de passage, rituels de fertilité, cérémonies en l'honneur des ancêtres. Les anciens détiennent des forces spirituelles et protègent la communauté. Avec la modernisation, une partie de la communauté a adopté le christianisme (55% selon Joshua Project 2025) ; de nombreux membres maintiennent les pratiques traditionnelles ancestrales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies héréditaires villageoises sans royaume centralisé. Intégration dans les structures politiques ivoiriennes depuis l'indépendance. Les chefs traditionnels servent d'intermédiaires entre la communauté et les autorités gouvernementales.",
+      "relationsWithNeighbors": "Relations avec les peuples voisins Neyo (qui leur ont donné leur surnom Gwèdji), Bakwé, Dida et Bété. Échanges culturels et commerciaux dans la région côtière du Gbôklè. Héritage culturel dual (akan-krou) témoigne d'interactions historiques intenses avec les peuples akan.",
+      "conflictsOrAlliances": "Tradition guerrière (Gwèdji : chimpanzé-panthère) qui a marqué les relations avec les voisins Neyo. Participation aux dynamiques de résistance krou à la colonisation française. Alliances intercommunautaires au sein du réseau krou du sud-ouest ivoirien.",
+      "diaspora": "Exode rural vers les grandes villes ivoiriennes (Abidjan, San-Pédro) lié aux opportunités économiques. Maintien de liens culturels avec les communautés d'origine via les festivals (ZOKPA, WAYÔ, PÔPAIX)."
+    },
+    "demography": {
+      "totalPopulation": 61000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : 61 000 Godié en Côte d'Ivoire (unique pays de présence). Données confirmées par Ethnologue (langue godié, code god) et les recensements ivoiriens.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 61000,
+          "note": "Sud-ouest de la Côte d'Ivoire, région du Gbôklè : Sassandra, Fresco, Godjiboué (sous-préfecture de Sago) et zones forestières environnantes"
+        }
+      ]
+    },
+    "sources": [
+      "Joshua Project – Godie in Côte d'Ivoire. https://joshuaproject.net/people_groups/11913",
+      "Ethnologue – Godié language (god). https://www.ethnologue.com/language/god/",
+      "Rezo Ivoire – Organisation familiale des Godié. https://rezoivoire.net/ivoire/patrimoine/2121/organisation-familiale-des-godie.html",
+      "Scribd – Origine et culture du peuple Godié. https://www.scribd.com/document/808295722/Legislation-Et-Reglementation-Scolaire",
+      "Facebook Tourisme Côte d'Ivoire – Le peuple Godié. https://www.facebook.com/tourismecotedivoire.ci/posts/5252704381496923/",
+      "Wikipedia FR – Krou (peuple). https://fr.wikipedia.org/wiki/Krou_(peuple)",
+      "Minority Rights Group – Krou in Côte d'Ivoire. https://minorityrights.org/communities/krou/"
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "id": "PPL_SAMBURU",
+  "nameMain": "Samburu",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["KEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Samburu",
+      "selfAppellation": "Lokop (ou Loikop : lo = possession, nkop = terre, soit proprietaires de la terre)",
+      "exonyms": [
+        "Samburu (terme d'origine incertaine, utilise par les colonisateurs et voisins)",
+        "Burkeneji (nom alternatif)",
+        "Burkuji"
+      ],
+      "originOfExonyms": "Le terme Lokop (ou Loikop) est l'autonyme signifiant litteralement proprietaires de la terre. L'origine du terme Samburu est debattue; certains le derivent d'un nom de lieu ou d'un terme descriptif. Au sein de la communaute Maa (Maasai), les Samburu sont la troisieme plus grande sous-tribu apres les Kisonko/Isikirari (Tanzanie) et les Purko (Kenya/Tanzanie). Le terme Burkeneji est parfois utilise dans les profils demographiques.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Samburu est le terme universellement utilise dans les contextes administratifs, academiques et touristiques kenyans. La plupart des Samburu se designent eux-memes indifferemment comme Samburu ou comme faisant partie de la communaute Maa (Maasai au sens large). Des tensions identitaires existent entre ceux qui insistent sur la distinction Samburu/Maasai et ceux qui revendiquent une identite Maa unifiee.",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique oriental (groupe Maa, Plains Nilotes)",
+      "historicalRegion": "Centre-nord du Kenya (comte de Samburu); territoire ancestral Woto (au nord du lac Turkana, identifie en Ethiopie meridionale)",
+      "currentCountries": ["KEN"]
+    },
+    "ethnicities": [
+      "Samburu proprement dits (Lokop) : pasteurs semi-nomades du comte de Samburu, eleveurs de bovins, chameaux et petits ruminants",
+      "Lmurran (classe des guerriers) : hommes circoncis non maries, gardiens du betail et protecteurs de la communaute",
+      "Lkiama (anciens) : hommes maries constituant le conseil gerontocratique de decision collective",
+      "Loibonok (devins/chamans) : specialistes rituels et spirituels guidant les guerriers et interpretant les presages",
+      "Ariaal (Rendille du Sud) : groupe hybride Samburu-Rendille au nord du territoire samburu, parlant a la fois le samburu et les traditions cushitiques rendille",
+      "Lchamus (Njemps / Camus) : groupe apparente parlant un dialecte proche du samburu (94% de similitude lexicale) dans la vallee du Rift, lac Baringo"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Samburu sont un peuple nilotique oriental du groupe Maa (Plains Nilotes), apparente aux Maasai dont ils partagent la langue (dialecte du Maa). Leur homeland mythique Woto (aussi ecrit Otto, Do ou To, signifiant nord en samburu) est generalement localise au nord du lac Turkana, probablement dans le sud de l'Ethiopie actuel. Les etudes linguistiques indiquent des transferts culturels importants entre les Nilotiques meridionaux (dont les Nandi) et les Cushites orientaux anterieurement a l'etablissement Nilotique en Afrique de l'Ouest du Kenya. La tradition de la circoncision aurait ete introduite par Kipkenyo, premier homme a la pratiquer dans le pays appele Do/To.",
+      "formationPeriod": "L'identite samburu s'est differenciee de l'ensemble Maa lors de migrations depuis le homeland Woto vers le centre-nord du Kenya. Cette separation serait liee aux pressions ecologiques et demographiques qui ont pousse certains sous-groupes Maa vers le nord tandis que d'autres (ancetres des Maasai) se dirigeaient vers le sud. L'identite samburu distincte est bien etablie a l'arrivee des colonisateurs europeens au 19e siecle.",
+      "migrationRoutes": [
+        "Homeland ancestral Woto (nord du lac Turkana, possible Ethiopie meridionale)",
+        "Migration vers le sud et l'est vers le centre-nord du Kenya actuel",
+        "Etablissement dans le comte de Samburu, la reserve nationale de Samburu et les regions avoisinantes"
+      ],
+      "historicalSettlementZones": [
+        "Comte de Samburu (principale zone de concentration) : reserve nationale de Samburu, plateau de Leroghi",
+        "Comte de Laikipia : presence historique et recente (conflits avec ranchs prives depuis 2010)",
+        "Mont Nyiru, Ndoto Mountains : zones de paturage en saison seche",
+        "Frontiere nord-ouest du Kenya (zones frontalieres avec Samburu et Marsabit)"
+      ],
+      "unificationsOrDivisions": "Les Samburu partagent la langue et la culture Maa avec les Maasai mais se considerent distincts. La gerontocratie (systeme des anciens) et les classes d'age (lmurran = guerriers) structurent la societe. La plupart des Samburu se reconnaissent dans la communaute Maa plus large. Des tensions recentes (depuis 2010) entre classes d'age et entre Samburu et colons de ranchs dans le comte de Laikipia ont fragilise les structures traditionnelles.",
+      "externalInfluences": "Influence cushitique ancienne (adoption de la circoncision, elements de vocabulaire). Contact avec les Rendille (voisins cushitiques), engendrant le groupe hybride Ariaal. Voisinage et conflits avec les Pokot (escalade depuis 2010). Missions chretiennes du 19e-20e siecle. Administration coloniale britannique au Kenya. Tourisme international (le Samburu National Reserve est une destination majeure).",
+      "majorHistoricalEvents": "Formation de l'identite samburu distincte lors de la migration depuis le homeland Woto. Arrivee des missionnaires chretiens (19e siecle). Independence du Kenya (1963) : integration dans l'Etat kenyan. Epidemie de rinderpest (fin 19e siecle) : aide de la communaute Rendille a la survie. Depuis 2010 : conflits armes recurrents avec les Pokot pour les paturages et l'eau dans les comtes de Samburu et Laikipia. Secheresse catastrophique de 2017 : invasions de ranchs prives a Laikipia. Tensions politiques liees aux droits fonciers des pasteurs nomades."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Gerontocratie : le pouvoir des anciens repose sur leur capacite a maudire les jeunes (curse) pour cause d'irrespect, ce qui les prive de la protection de Nkai. Les anciens monopolisent les mariages (ils arrangent les mariages et prennent de nouvelles femmes), maintenant les jeunes guerriers (lmurran) dans une suspension sociale jusqu'a l'age de 30 ans environ, prolongeant leur statut adolescent. Les decisions communautaires sont prises collectivement par les anciens dans des assemblees.",
+      "clanOrganization": "Organisation en clans patrilineaires exogames au sein de la communaute Maa. Les clans Samburu sont organises en sections analogues aux sections Maasai (iloshon). Les mariages sont arranges entre clans distincts (exogamie clanique). Les droit fonciers, les obligations de betail (dot) et les appartenances rituelles sont transmis par les lignages patrilineaires.",
+      "ageClassSystems": "Systeme de classes d'age structure l'ensemble de la vie sociale masculine. Classes principales : (1) boyhood — garcons non-inities, gardent les troupeaux pres du campement; (2) lmurran (aussi moran, marani, ilmurran) — guerriers apres la circoncision, portent les cheveux en longues tresses colorees d'ocre rouge, decorent leur corps, guidés par les loibonok (devins/chamans rituels); ils sont les gardiens du betail, les guerriers et les diplomates; (3) junior elders — apres mariage; (4) senior elders — autorite maximale. Les lmurran sont sous la tutelle spirituelle des loibonok. Un jeune homme non encore circoncis risque d'etre mis a l'ecart socialement.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique, les droits fonciers, les obligations de dot et les alliances matrimoniales. Le statut social est fortement correle au nombre de bovins (richesse et prestance). Les femmes passent de leur lignage paternel a celui de leur mari lors du mariage. Les obligations de parentele s'etendent a l'ensemble du clan.",
+      "religiousAuthority": "Nkai : divinite feminine multi-dimensionnelle, source de toute protection contre les dangers. Nkai joue un role actif dans la vie quotidienne contemporaine. Les anciens invoquent Nkai lorsqu'ils maudissent les jeunes pour irrespect : c'est en realite Nkai qui decide si la malédiction est justifiee. Les victimes de malheur apres un irrespect doivent offrir reparation a l'ancien pour que sa benediction restaure la protection de Nkai. Maledictions peu frequentes, reservees aux irrespects graves. Les loibonok (devins/chamans rituels) guidant les guerriers (lmurran) ont une autorite spirituelle importante. Enfants et jeunes femmes rapportent parfois des visions de Nkai et certains acquierent une reputation prophetique."
+    },
+    "languages": {
+      "mainLanguage": "Samburu (dialecte de la langue Maa)",
+      "isoCodes": ["saq"],
+      "dialects": [
+        "Samburu proprement dit : dialecte Maa parle dans le comte de Samburu; 128 000 a 147 000 locuteurs",
+        "Camus (Lchamus / Njemps) : dialecte apparente, 88-94% de similitude lexicale avec le samburu, parle au lac Baringo",
+        "Dialectes Maasai du Sud : 77-89% de similitude lexicale avec le samburu"
+      ],
+      "vehicularRole": "Le samburu (saq) est un dialecte de la langue Maa (nilotique oriental), mutuellement intelligible avec les dialectes Maasai proches. Parle par environ 128 000 a 403 000 personnes selon les estimates (donnees 2025). Le swahili est la lingua franca nationale; l'anglais est langue officielle au Kenya. Le samburu n'a pas de role vehiculaire au-dela de la communaute Maa."
+    },
+    "culture": {
+      "majorRites": "Circoncision masculine : rite de passage fondamental, pratiquee chez les garcons adolescents; marque l'entree dans la classe des lmurran (guerriers); adoption attribuee a Kipkenyo, le premier homme a circumcire ses enfants dans le pays Woto pour prevenir les deces. Excision feminine (clitoridectomie) : pratiquee chez la plupart des filles avant le mariage; illegale au Kenya mais encore pratiquee; les filles non excisees risquent d'etre victimes de la pratique de beading (mise en relation sexuelle avec des guerriers en l'echange de perles). Mariage : arrangement par les anciens; dot en betail; les filles peuvent se marier tot (12-15 ans). Beading : pratique par laquelle les guerriers (lmurran) offrent des colliers de perles aux filles non circoncises comme symboles de leur relation; les filles beadees ne peuvent avoir d'enfants. Funerailles : ceremonies de deuil avec offrandes a Nkai.",
+      "symbols": "Le papillon (enkiama) est un symbole culturel notable associe aux Samburu et a leur relation a la nature. Le betail bovin est le symbole central de richesse, de statut social, de dot et de lien ancestral. Les perles (colliers multicolores) portees par les femmes symbolisent l'age, le statut matrimonial et les liens sociaux. Les lances des lmurran symbolisent la force et le statut guerrier. La tresse longue et coloree d'ocre des guerriers symbolise leur appartenance a la classe des lmurran. La marque du feu (ocre et graisse) sur le corps des lmurran est un signe distinctif.",
+      "artsAndMusic": "Colliers et parures en perles : art textile feminin tres developpe; differents styles de colliers indiquent l'age, le statut et l'appartenance claniques. Habits des lmurran : tissus fluides aux motifs floraux ou pastels, distinction des guerriers. Artisanat en cuir : fabrication de sandales, etuis pour armes, objets utilitaires. Musique et chant : chants collectifs des classes d'age lors des ceremonies; chants d'amour et de cour; chants guerriers. Danse : danses sautillantes caracteristiques des lmurran (sauts verticaux, chants en choeur); tres photogeniques, integrees dans le tourisme de la reserve de Samburu. Instruments : enkiloriti (trompe longue), enjia (cor de chasse), tambours lors des ceremonies. Poesie orale : recitation de genealogies et de louanges.",
+      "spiritualities": "Religion traditionnelle Maa centree sur Nkai, divinite feminine multidimensionnelle et omnipresente. Nkai est la source de toute protection et peut infliger des punitions si des anciens maudissent des jeunes pour irrespect. Les loibonok (devins/chamans rituels, sing. laibon) sont les intermediaires entre les humains et Nkai; ils guident les guerriers, interpretent les presages et accomplissent les rituels. Les visions de Nkai sont rapportees notamment par des enfants et jeunes femmes. Le christianisme (catholique, protestant) est pratique par une partie de la population depuis le 20e siecle. L'islam est present en moindre proportion. Croyance en des malédictions ancestrales transmises par les anciens dont l'efficacite depend de la volonte de Nkai."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume ou chefferie formelle centralise. La gerontocratie samburu fonctionne sans chef unique; le pouvoir est collectivement exerce par les anciens (lkiama). Les loibonok (devins) exercent une autorite spirituelle transversale. Au sein de la communaute Maa plus large, les Samburu ont historiquement occupe les territoires du centre-nord du Kenya sans structure politique monarchique.",
+      "relationsWithNeighbors": "Relations etroites et amicales avec les Rendille (Cushites voisins) : aide reciproque lors des epidemies, mariage interethnique produisant le groupe hybride Ariaal; les Samburu ont adopte certains traits de culture Rendille. Relations avec les Maasai : meme langue Maa, culture partagee, mais identite distincte revendiquee; presences conjointes dans certaines films hollywoodiens (Ghost and the Darkness, The White Masai). Conflits recurrents avec les Pokot (depuis 2010) pour les paturages dans les comtes de Samburu et Laikipia, pires depuis 2017 lors de la secheresse catastrophique. Commerce et interactions avec les voisins agricoles.",
+      "conflictsOrAlliances": "Alliance historique et culturelle avec les Maasai (communaute Maa). Alliance avec les Rendille pour la survie mutuelle. Resistance a la colonisation britannique au Kenya. Integration dans l'Etat kenyan post-independance (1963). Conflits contemporains avec les Pokot (depuis 2010) lies a la competition pour les ressources en eau et paturages, exacerbee par les secheresses recurrentes et la manipulation politique. Invasions de ranchs prives et de reserves de conservation dans le comte de Laikipia (2017, 2019) sous pression demographique et climatique.",
+      "diaspora": "Diaspora samburu limitee; quelques individus dans les grandes villes kenyanes (Nairobi). La majorite demeure sur le territoire traditional du comte de Samburu en raison de l'attachement a l'identite pastorale semi-nomade."
+    },
+    "demography": {
+      "totalPopulation": 403000,
+      "referenceYear": 2025,
+      "source": "Population projetee 2025 au Kenya selon les statistiques kenyanes (403 000 selon plusieurs sources Facebook citant des projections kenyanes 2025, consistant avec le recensement KNBS 2019). Joshua Project : 364 000. Samburu language Wikipedia : 128 000 a 147 000 locuteurs (sous-estimation). Ethnologue : population de 10 000 a 1 million.",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 403000,
+          "note": "Comte de Samburu (principale concentration), comte de Laikipia, regions frontalieres nord du Kenya"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Samburu people. https://en.wikipedia.org/wiki/Samburu_people",
+      "Wikipedia EN — Samburu language. https://en.wikipedia.org/wiki/Samburu_language",
+      "Joshua Project — Samburu in Kenya. https://joshuaproject.net/people_groups/14672",
+      "Ethnologue — Samburu (SAQ). https://www.ethnologue.com/language/saq/",
+      "101 Last Tribes — Rendille (pour la relation Rendille-Samburu). https://www.101lasttribes.com/tribes/rendille.html",
+      "Spencer, Paul. The Samburu: A Study of Gerontocracy in a Nomadic Tribe. London: Routledge and Kegan Paul, 1965.",
+      "Spencer, Paul. Nomads in Alliance: Symbiosis and Growth among the Rendille and Samburu of Kenya. London: Oxford University Press, 1973.",
+      "Holtzman, Jon D. Nuer Journeys, Nuer Lives. Needham Heights: Allyn and Bacon, 2000.",
+      "Kenya National Bureau of Statistics (KNBS) — Kenya Census 2019. https://www.knbs.or.ke/",
+      "Straight, Bilinda. Miracles and Extraordinary Experience in Northern Kenya. Philadelphia: University of Pennsylvania Press, 2007.",
+      "Lesorogol, Carolyn K. Contesting the Commons: Privatizing Pastoral Lands in Kenya. Ann Arbor: University of Michigan Press, 2008."
+    ]
+  }
+}

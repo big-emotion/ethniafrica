@@ -1,0 +1,83 @@
+{
+  "id": "PPL_KUSSI",
+  "nameMain": "Kasanga",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["GNB", "SEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Kasanga",
+      "selfAppellation": "Gu-haaca (nom de la langue dans l'autonymie des locuteurs)",
+      "exonyms": ["Cassanga", "Kussi", "Kassanga", "Haal"],
+      "originOfExonyms": "Cassanga est la forme portugaise du nom, utilisee dans les sources coloniales. Haal est une designation alternative utilisee par Joshua Project. Kussi est une variante attestee dans certaines sources ethnographiques de Casamance.",
+      "whyProblematic": "La designation Kussi est parfois confondue avec d'autres groupes. Le nom Cassanga renvoie egalement au royaume historique de Kasa (ou Kasanga) de Casamance, qui etait domine par des elites mandinguisees.",
+      "contemporaryUsage": "Kasanga (ou Cassanga) est le terme le plus utilise dans la litterature linguistique et ethnographique contemporaine.",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "ethnoLinguisticGroup": "Groupe Bak (sous-groupe Buy ou Kobiana-Kasanga-Banhum) de la famille atlantique du Niger-Congo",
+      "historicalRegion": "Quelques villages de Guinee-Bissau (region de Cacheu) et Casamance meridionale (Senegal)",
+      "currentCountries": ["GNB", "SEN"]
+    },
+    "ethnicities": [
+      "Kasanga de Guinee-Bissau (locuteurs originels, quelques villages de la region de Cacheu)",
+      "Cassanga de Casamance (Senegal, Basse-Casamance, en contact avec les Diola et Bainuk)",
+      "Haal (designation alternative utilisee pour les Kasanga de Guinee-Bissau dans les registres de Joshua Project)",
+      "Composantes du Royaume de Kasa (Casamance, federant Cassanga et Bainuk sous une elite mandinguisee)"
+    ],
+    "origins": {
+      "ancientOrigins": "Le peuple Kasanga est l'un des groupes atlantiques anciens etablis dans la zone frontaliere entre l'actuelle Guinee-Bissau et la Casamance senegalaise. Ils sont proches des Kobiana et Bainuk, avec lesquels ils partagent des traits linguistiques et culturels. Le nom Casamance lui-meme derive du nom du royaume de Kasa (Kasanga), dont les Cassanga etaient des composantes importantes.",
+      "formationPeriod": "Presence attestee dans la region depuis au moins le 15e siecle, quand les Portugais etablissent des contacts commerciaux avec la Basse-Casamance. La region est alors connue sous le nom de Royaume de Kasa.",
+      "migrationRoutes": [
+        "Installation ancienne dans la zone littorale entre Guinee-Bissau et Casamance",
+        "Pression des Mandinka depuis le nord-est (15e-18e siecles) ayant conduit a une retraite vers les zones forestieres et marais"
+      ],
+      "historicalSettlementZones": [
+        "Quelques villages de la region de Cacheu, Guinee-Bissau",
+        "Basse-Casamance (Senegal), zones forestieres et marecageuses"
+      ],
+      "unificationsOrDivisions": "La langue kasanga est en recul marque, les locuteurs se deplacant vers le mandinka comme langue principale. Les communautes kasanga sont extremement reduites et dispersees.",
+      "externalInfluences": "Forte influence mandinka ayant conduit a un glissement linguistique (language shift) generalise. Contacts anciens avec les Portugais des le 15e siecle. Influences diola, bainuk et kobiana dans les pratiques culturelles.",
+      "majorHistoricalEvents": "Inclusion dans la sphere commerciale portugaise des le 15e siecle. Declin progressif sous la pression mandinka et pendant la periode coloniale. Le nom Casamance est derive du royaume de Kasa (Kasa mansa, roi de Kasa), associe aux Cassanga et Bainuk."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation villageoise avec chef de village et conseil d'anciens, en lien avec le systeme politique plus large des groupes atlantiques de la region. Societe traditionnellement acephalique ou semi-acephalique, sans royaume centralise propre.",
+      "clanOrganization": "Organisation en lignages, avec des pratiques exogamiques. Les details des structures claniques ne sont pas bien documentes en raison de la petite taille de la communaute et de l'assimilation progressive. Les clans kasanga maintiennent des genealogies orales transmises par les anciens, et pratiquent des mariages endogames dans leur zone d'implantation.",
+      "ageClassSystems": "Rituals d'initiation a l'age adulte partages avec les groupes voisins (Bainuk, Diola), incluant des rites de passage pour les jeunes garcons et filles.",
+      "roleOfLineages": "Les lignages determinent l'appartenance communautaire et les droits fonciers. En raison de l'assimilation au monde mandinka, certains membres se sont integres dans des structures lignageres mandinka.",
+      "religiousAuthority": "Autorite des anciens et des specialistes rituels traditionnels. Pratiques animistes liees aux forces de la nature et aux ancetres."
+    },
+    "languages": {
+      "mainLanguage": "Kasanga (Cassanga), appele gu-haaca par ses locuteurs",
+      "isoCodes": ["ccj"],
+      "dialects": ["Haal (variante ou designation alternative du kasanga)"],
+      "vehicularRole": "Le kasanga est en situation de glissement linguistique severe vers le mandinka, qui sert de langue vehiculaire principale dans les zones d'habitation kasanga. Le kreol portugais de Guinee-Bissau est egalement utilise comme vehiculaire regional."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation a l'age adulte pour les garcons et les filles, en lien avec les pratiques des groupes atlantiques voisins. Ceremonies liees aux cycles agricoles, notamment la culture du riz dans les zones marecageuses. Rituels d'invocation des ancetres et des esprits naturels.",
+      "symbols": "Lien symbolique fort avec les zones forestieres et marecageuses de la Basse-Casamance. La riziculture de mangrove constitue un element identitaire et symbolique central.",
+      "artsAndMusic": "Tradition musicale percussive partagee avec les groupes atlantiques de la region (tambours, flutes). Artisanat local incluant la vannerie, la poterie et le travail du bois. Transmission orale des recits historiques et des genealogies claniques par les anciens (griots et depositaires de la memoire collective). La langue kasanga elle-meme (gu-haaca) est un vehicule de transmission culturelle desormais menace, les jeunes adoptant majoritairement le mandinka.",
+      "spiritualities": "Animisme traditionnel : croyances en esprits de la nature, des forets, des cours d'eau et des terres agricoles. Culte des ancetres central dans la vie rituelle : les ancetres sont invoques lors des semailles, des recoltes et des decisions importantes de la communaute. Pratiques synchretiques : en contact avec l'islam mandinka (majoritaire dans la region), certains Kasanga ont adopte l'islam tout en maintenant des pratiques animistes. Presence chretienne limitee. Les groupes Kasanga maintiennent des pratiques rituelles traditionnelles etroitement liees a la riziculture de mangrove et aux lieux sacres naturels."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le nom Casamance derive du royaume de Kasa (Kasa mansa), qui regroupait les communautes Cassanga et Bainuk de la Basse-Casamance. Ce royaume avait des relations commerciales avec les Portugais des le 15e siecle. Les Cassanga etaient parmi les populations fondatrices de cette entite politique regionale.",
+      "relationsWithNeighbors": "Relations historiques avec les Bainuk (proches culturellement et co-fondateurs du Royaume de Kasa), les Diola (voisins dominants en Basse-Casamance avec qui ils partagent la zone de mangrove), les Mandinka (influence linguistique et culturelle majeure, principale cause du declin de la langue kasanga) et les Kobiana (proches linguistiquement, classes dans le meme sous-groupe Kobiana-Kasanga-Banhum de l'Atlantic). Relations commerciales anciennes avec les Portugais des le 15e siecle, impliquant l'echange de riz, d'huile de palme et d'autres produits locaux.",
+      "conflictsOrAlliances": "Pression mandinka (Kaabu) depuis le 15e siecle ayant conduit a l'erosion de l'autonomie kasanga. Alliance commerciale ancienne avec les Portugais. Inclusion dans l'espace colonial francais (Senegal) et portugais (Guinee-Bissau) apres le traite frontalier de 1888.",
+      "diaspora": "Pas de diaspora significative documentee en raison de la tres petite taille de la communaute (estimee a moins de 1 000 personnes). La dispersion est limitee a la zone frontaliere Guinee-Bissau/Senegal."
+    },
+    "demography": {
+      "totalPopulation": 900,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 900 personnes en Guinee-Bissau. La langue kasanga (ccj) est classee comme en danger critique (Ethnologue, 2024) avec un tres petit nombre de locuteurs. Le US Department of State (2005) estimait les locuteurs Cassanga a environ 0,04% de la population de Guinee-Bissau, soit moins de 1 000 personnes.",
+      "distributionByCountry": [
+        { "country": "GNB", "population": 800 },
+        { "country": "SEN", "population": 100 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Kasanga language : https://en.wikipedia.org/wiki/Kasanga_language",
+      "Ethnologue - Kasanga language (ccj) : https://www.ethnologue.com/language/ccj/",
+      "Joshua Project - Kasanga, Haal in Guinea-Bissau : https://joshuaproject.net/people_groups/print/12555/PU",
+      "Minority Rights Group - Guinea-Bissau (2024) : https://minorityrights.org/country/guinea-bissau/",
+      "US State Department - Guinea-Bissau Background Note : https://2009-2017.state.gov/outofdate/bgn/guineabissau/47466.htm",
+      "Wikipedia EN - Casamance (origine du nom, royaume de Kasa) : https://en.wikipedia.org/wiki/Casamance"
+    ]
+  }
+}

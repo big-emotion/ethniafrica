@@ -1,0 +1,113 @@
+{
+  "id": "PPL_COMORIEN",
+  "nameMain": "Comorien",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["COM", "MDG"],
+  "content": {
+    "appellations": {
+      "mainName": "Comorien",
+      "selfAppellation": "Shimasiwa (gens des iles) / Wangazidja (Grande Comore) / Wanzwani (Anjouan) / Wamwali (Moheli)",
+      "exonyms": [
+        "Comorians (denomination anglaise)",
+        "Comorenses (denomination portugaise et espagnole)",
+        "Qomori (denomination arabe)"
+      ],
+      "originOfExonyms": "Le nom Comores (ou Comoros en anglais) derive de l'arabe Qamar (lune) ou Komr, designation arabe medievale de l'archipel en reference a ses monts volcaniques lumineux ou a la lune. Les habitants sont donc les Comoriens (anglophones : Comorians). Les autodesignations insulaires (Wangazidja, Wanzwani, Wamwali, Wamaore) soulignent l'identite insulaire specifique de chaque ile.",
+      "whyProblematic": "La denomination Comorien regroupe sous un meme terme des populations parlant quatre langues distinctes (Shingazija, Shinzwani, Shimwali, Shimaore) dont certaines ne sont pas mutuellement intelligibles. La question de Mayotte — revendiquee par les Comores mais administree par la France comme departement d'outre-mer depuis 2011 — complexifie le perimetre de l'identite comorienne.",
+      "contemporaryUsage": "Comorien est la denomination officielle pour les ressortissants de l'Union des Comores. Les habitants de Mayotte (dont beaucoup se reclament de l'identite mahoraise plutot que comorienne) sont officiellement francais depuis 2011 mais sont souvent inclus dans les etudes ethnographiques sur les Comoriens. La diaspora en France s'identifie generalement comme comorienne.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Langues Sabaki, Zone G, branche swahili-comorienne)",
+      "historicalRegion": "Archipel des Comores dans l'Ocean Indien occidental, entre le canal du Mozambique et la cote nord-ouest de Madagascar",
+      "currentCountries": ["COM", "MDG"]
+    },
+    "ethnicities": [
+      "Ngazidja (Grande Comore) — ile principale, capitale Moroni, variete linguistique Shingazija",
+      "Ndzuani (Anjouanais) — ile la plus densement peuplee, capitale Mutsamudu, variete Shinzwani",
+      "Mwali (Moheli) — ile la plus petite et la moins peuplee, capitale Fomboni, variete Shimwali",
+      "Maorais (Mayotte) — ile sous administration francaise (departement d'outre-mer depuis 2011), variete Shimaore",
+      "Comoriens d'origine arabe et shirazi — familles de negociants et savants islamiques d'origine arabique ou persane installes depuis le Moyen Age",
+      "Comoriens d'origine malgache — descendants des vagues de peuplement austronesien/malgache"
+    ],
+    "origins": {
+      "ancientOrigins": "L'archipel des Comores fut vraisemblablement peuple par plusieurs vagues successives. Les premiers Bantous parlant des langues sabaki arriverent entre le 5e et le 10e siecle. Des populations austronesiennes ou proto-malgaches coloniserent aussi les iles avant ou en meme temps. Des marchands et navigateurs arabes et persans (notamment du Hadramaout et d'Iran) s'installerent progressivement a partir du 7e-8e siecle, apportant l'islam. Des colons shirazi (d'origine persane) sont mentionnes dans les traditions comme fondateurs de dynasties. Le syncrétisme de ces apports bantou, malgache, arabe et persan a donne naissance a la civilisation comorienne.",
+      "formationPeriod": "L'islamisation progressive debute au 7e-8e siecle selon la tradition (un emissaire aurait voyage a La Mecque en 632). A partir du 10e siecle, l'archipel devient une etape majeure du commerce swahili dans l'Ocean Indien. Les sultanats locaux se consolident entre le 15e et le 19e siecle. La France annexe Mayotte en 1841, etend son protectorat aux autres iles entre 1886 et 1912. L'independance est proclamee le 6 juillet 1975.",
+      "migrationRoutes": [
+        "Migration bantoue depuis la cote est-africaine (Sabaki) vers l'archipel (5e-10e siecle)",
+        "Peuplement austronesien depuis Madagascar ou l'Asie du Sud-Est",
+        "Etablissement de marchands arabes et shirazi (7e-15e siecle)",
+        "Hadhramaut (Yemen) : arrivee de savants islamiques et de familles nobles arabes"
+      ],
+      "historicalSettlementZones": [
+        "Grande Comore (Ngazidja) — ile principale, capitale Moroni, environ 379 000 habitants (2017)",
+        "Anjouan (Ndzuani) — ile la plus densement peuplee, capitale Mutsamudu, environ 327 000 habitants (2017)",
+        "Moheli (Mwali) — ile la plus petite, capitale Fomboni, environ 52 000 habitants (2017)",
+        "Mayotte (Maore) — administree par la France, environ 320 000 habitants"
+      ],
+      "unificationsOrDivisions": "Les quatre iles ont des histoires politiques distinctes. Grande Comore etait divisee en une multitude de sultanats autonomes (ntsi). Anjouan et Moheli avaient des sultanats unifies. En 1886, les iles passent sous protectorat francais. En 1975, trois iles votent pour l'independance (Mayotte vote contre). L'Union des Comores (Ngazidja, Ndzuani, Mwali) est l'Etat actuel. Des tensions separatistes persistent notamment a Anjouan (rebellion de 1997, re-integration en 2008).",
+      "externalInfluences": "Commerce arabe medieval : les iles sont connues des marins arabes comme les Iles du Parfum (Qamar) depuis le 9e siecle. Contacts portugais des 1503 (flotte de Vasco de Gama). Raids des guerriers malgaches Betsimisaraka et Sakalava a la fin du 18e siecle (devastation, reduction en esclavage). Colonisation francaise (1841-1975). Independence. Coups d'Etats multiples (plus de 20 entre 1975 et 1999). L'islam sunnite malekite structure profondement toute la vie sociale.",
+      "majorHistoricalEvents": "Mention des iles dans le Periplus (1e siecle de notre ere). En 933, les marins omani nomment les iles Iles du Parfum. Arrivee de l'islam (7e-8e siecle selon la tradition). Formation des sultanats (15e-19e siecle). Raids esclavagistes malgaches (1798-1820) devastants. Annexion de Mayotte par la France (1841). Unification administrative francaise (1908-1912). Independance (1975, sauf Mayotte). Coup d'Etat d'Ahmed Abdallah (1978). Rebellion d'Anjouan (1997-2008). Mayotte devient departement francais d'outre-mer (2011)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de notables structure autour du Grand Mariage (ada/anda). A Grande Comore, l'achievement du Grand Mariage marque le passage d'un homme du statut de jeune (djahazi) au statut d'ancien (mzee/shungu), lui conferant le droit de parler en public et de participer a la gouvernance du village. Ce systeme hierarchique remplace partiellement le systeme des sultanats. Les sultanats (ntsi a Grande Comore) etaient de petites principautes dirigees par des sultans hereditaires, dont certains perdurerent jusqu'au 20e siecle.",
+      "clanOrganization": "Societe a descendance bilaterale : les biens immobiliers (terres, maisons) se transmettent en ligne maternelle (matrilineaire comme dans de nombreux peuples bantous), tandis que les biens mobiliers et les patronymes se transmettent en ligne paternelle. L'element matrilineaire est plus fort a Grande Comore. Les lignages maternels controlent les droits sur les maisons et les terres ancestrales.",
+      "ageClassSystems": "Systeme de classes d'age formalise a Grande Comore autour du Grand Mariage (ada). Les hommes progressent par etapes (djahazi / jeune, shungu / notable-marie) en accomplissant le Grand Mariage. Ce rite de passage confere progressivement droits politiques, privileges sociaux et acces aux espaces reserves aux anciens (entree principale de la mosquee, places d'honneur).",
+      "roleOfLineages": "Les lignages maternels (lignee de la maison, nyi'uma) controlent la transmission des maisons et des terres. Les hommes acquierent leur statut social principalement par le systeme du Grand Mariage (anda/ada). Les femmes acquierent le statut de mere et de maitresse de maison propre apres le Grand Mariage. La structure bilaterale cree un equilibre complexe entre heritage maternel (immobilier) et paternel (mobilier, nom).",
+      "religiousAuthority": "L'islam sunnite malekite structure entierement la vie sociale, juridique et culturelle des Comores. Les oulemas (savants islamiques) et les cadis (juges islamiques) exercent l'autorite religieuse et juridique. Les ecoles coraniques sont presentes dans tous les villages. Influence historique des confrederies soufies (notamment Shadhiliyya). Le role des oulémas dans la vie politique comorienne est tres important. Syncretisme limite avec quelques pratiques pre-islamiques (invocations, talismans)."
+    },
+    "languages": {
+      "mainLanguage": "Shikomori (ensemble des langues comoriennes) : Shingazija (Grande Comore), Shinzwani (Anjouan), Shimwali (Moheli), Shimaore (Mayotte)",
+      "isoCodes": ["zdj", "wni", "wlc", "swb"],
+      "dialects": [
+        "Shingazija (zdj) — parle a Grande Comore (Ngazidja), groupe occidental avec Shimwali",
+        "Shimwali (wlc) — parle a Moheli (Mwali), groupe occidental avec Shingazija",
+        "Shinzwani (wni) — parle a Anjouan (Ndzwani), groupe oriental avec Shimaore",
+        "Shimaore (swb) — parle a Mayotte (Maore), groupe oriental avec Shinzwani"
+      ],
+      "vehicularRole": "Les langues comoriennes sont langues officielles de l'Union des Comores (avec le francais et l'arabe). Les langues des groupes oriental et occidental ne sont generalement pas mutuellement intelligibles (environ 80% de lexique commun). Dans les villes, le swahili est utilise dans les echanges commerciaux. Le francais est la langue de l'administration et de l'enseignement superieur. L'arabe est la langue de l'enseignement religieux coranique et de la litterature savante. Les langues comoriennes etaient ecrites en alphabet ajami (arabe) jusqu'au 20e siecle ; un alphabet latin officiel a ete decrete en 2009."
+    },
+    "culture": {
+      "majorRites": "Grand Mariage (ada a Grande Comore, harusi dans les autres iles) : ceremonie matrimoniale de prestige dure deux semaines et peut couter jusqu'a 50 000 euros. Les familles des deux epoux partagent les frais avec un cercle social etendu. La dot de la mariee est importante (bijoux en or, tissus de soie). Le Grand Mariage marque la transition du statut social masculin de djahazi a shungu (notable), conferant droits politiques et privileges religieux. Beaucoup de couples economisent toute leur vie pour l'ada, et il n'est pas rare que leurs enfants adultes y assistent. L'ada est aussi une puissante source de cohesion sociale et de transferts de fonds de la diaspora. Rites islamiques : circoncision masculine (sunna), fetes du calendrier islamique (Eid al-Fitr, Eid al-Adha, Mawlid an-Nabi), pratiques de jeune (Ramadan). Rites funeraires islamiques : inhumation dans les 24 heures, prieres funeraires, condoleances (ziara) les premiers jours.",
+      "symbols": "Les bijoux en or portes lors du Grand Mariage (referencent les tenues des sultans de l'epoque pre-coloniale) sont les symboles identitaires les plus visibles. La mosquee du vendredi (djumua) est le coeur symbolique de chaque village. Le leso (chale colore porte par les femmes de Grande Comore et Moheli) et le shiromani (tissu rouge et blanc de Anjouan) sont des symboles vestimentaires specifiques a chaque ile. Le msindzano (pate de bois de santal et de corail blanc) applique sur le visage des femmes est un symbole de beaute et d'identite feminine comorienne. Le kofia (bonnet blanc masculin) et le nkandu (longue tunique blanche) completent l'habit masculin traditionnel.",
+      "artsAndMusic": "Twarab (tarab) : genre musical comorien dominant, importe de Zanzibar au debut du 20e siecle, combinant musique arabe-orientale, swahili et comorienne. Tres present lors des Grands Mariages et celebrations. Poesie chantee en langues comoriennes et en arabe (tradition shairi). Architecture en pierre : les medinas des villes historiques (Moroni, Mutsamudu, Domoni) presentent une architecture de pierre corallienne caracteristique avec minarets, maisons a arcades et portes sculptees en bois — influence swahili-arabe. Artisanat : broderie et tisserands (tapis, vetements ceremonials), bijouterie en or (expertise reconnue pour les parures du Grand Mariage), poterie. Musique et danse : danse debaa (chants religieux soufis) pratiquee par les femmes, danse chama (chants et percussions), poesie orale (ndzari) en langue comorienne.",
+      "spiritualities": "L'islam sunnite malekite est la religion quasi-universelle (98% de la population). Il structure profondement tous les aspects de la vie sociale (droit de la famille, heritage, alimentation, festivites). Forte influence soufi (confrderie Shadhiliyya notamment). Pratiques coraniquesd omniprésentes : ecoles coraniques pour tous les enfants, recitation du Coran lors des ceremonies importantes. Syncretisme limite : certaines croyances pre-islamiques persistent sous forme de talismans (hirizi), d'invocations de djinns, et de pratiques de protection contre le mauvais oeil (jinni). Une infime minorite (moins de 2%) est chretienne (catholiques et protestants, principalement etrangers ou issus de la diaspora)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les iles ont connu une longue succession de sultanats. A Grande Comore, l'ile etait divisee en de nombreux sultanats autonomes (ntsi), dont les plus importants etaient Bambao (dont le sultan Said Ali plaça l'ile sous protectorat francais en 1886) et Itsandra. A Anjouan, le Sultanat d'Anjouan (ou Johanna) fut le plus puissant des Comores du 15e au 19e siecle, avec des relations avec les Britanniques (escale des vaisseaux anglais vers l'Inde). A Moheli, le sultanat fut moins stable. Le dernier sultan de Ndzwani (Anjouan), Said Muhamed, abdiqua en faveur de la France en 1909. L'archipel s'inscrit dans la sphere culturelle et economique de la civilisation swahili medievale (reseau allant de Kilwa a Sofala en passant par Mombasa et Zanzibar).",
+      "relationsWithNeighbors": "Relations commerciales intenses avec les villes swahilies de la cote est-africaine (Kilwa, Mombasa, Zanzibar, Sofala). L'or du Zimbabwe transitait par les Comores. Relations avec Madagascar : influences malgaches dans la culture et le peuplement ; relations tendues lors des raids esclavagistes malgaches (fin 18e-debut 19e siecle). Des Comoriens ont historiquement emigre vers Madagascar, Zanzibar et la cote africaine. En 1976, des pogroms anti-comoriens a Mahajanga (Madagascar) tuerent au moins 1 400 personnes et provoquerent le retour de 17 000 Comoriens.",
+      "conflictsOrAlliances": "Raids des guerriers malgaches Betsimisaraka et Sakalava (1798-1820 environ) : devastation des iles, reduction en esclavage d'une grande partie de la population, quasi-depopulation de Moheli. Colonisation francaise progressive (Mayotte 1841, protectorat 1886-1912, colonie 1912). Referendum d'independance 1975 (trois iles pour, Mayotte contre). Multiples coups d'Etat depuis 1975. Rebellion separatiste d'Anjouan (1997-2008), resolue militairement en 2008 avec soutien de l'Union africaine. Mayotte administree par la France contre la volonte de l'Union des Comores.",
+      "diaspora": "Importante diaspora comorienne en France (estimee entre 200 000 et 350 000 personnes, principalement a Paris et Marseille), maintenant des liens economiques forts avec l'archipel (transferts de fonds pour les Grands Mariages). Des Comoriens resident en nombre a Madagascar (malgre les pogroms de 1976 qui forcerent le retour de milliers d'entre eux). Presence historique sur la cote est-africaine (Kenya, Tanzanie). La diaspora contribue de maniere decisive aux finances des Grands Mariages, financement essentiel de la cohesion sociale comorienne."
+    },
+    "demography": {
+      "totalPopulation": 1041150,
+      "referenceYear": 2025,
+      "source": "Projection ONU variante moyenne 2025 : 1 041 150 habitants pour l'Union des Comores (les trois iles hors Mayotte). Source : Wikipedia EN, Demographics of the Comoros. Recensement national 2017 : 758 316 (Comores sans Mayotte). Projection PopulationPyramid.net 2025 : environ 882 847 (autre estimation). Chiffre ONU retenu : 1 041 150.",
+      "distributionByCountry": [
+        {
+          "country": "COM",
+          "population": 882847,
+          "note": "Union des Comores : Ngazidja (Grande Comore) 379 367 hab., Ndzwani (Anjouan) 327 382 hab., Mwali (Moheli) 51 567 hab. (recensement 2017). Projection 2025 : 882 847 (PopulationPyramid.net)"
+        },
+        {
+          "country": "MDG",
+          "population": 60000,
+          "note": "Communaute comorienne a Madagascar (fortement reduite apres les pogroms de 1976 a Mahajanga)"
+        },
+        {
+          "country": "FRA",
+          "population": 250000,
+          "note": "Diaspora comorienne en France (principalement Paris et Marseille), estimee entre 200 000 et 350 000"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Comoros. https://en.wikipedia.org/wiki/Comoros",
+      "Wikipedia EN — Demographics of the Comoros. https://en.wikipedia.org/wiki/Demographics_of_the_Comoros",
+      "Wikipedia EN — Comorian languages. https://en.wikipedia.org/wiki/Comorian_languages",
+      "CIA World Factbook — Comoros. https://www.cia.gov/the-world-factbook/countries/comoros/",
+      "PopulationPyramid.net — Comoros 2025. https://www.populationpyramid.net/comoros/2025/",
+      "Ethnologue (SIL) — Shingazija (zdj), Shinzwani (wni), Shimwali (wlc), Shimaore (swb). https://www.ethnologue.com/",
+      "UNESCO / Barron's — Grand Mariage des Comores. https://www.barrons.com/news/lavish-grand-mariage-weddings-celebrate-comoros-tradition-society-4af0e0fc",
+      "Wikipedia EN — Comorians. https://en.wikipedia.org/wiki/Comorians"
+    ]
+  }
+}

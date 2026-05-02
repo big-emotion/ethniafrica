@@ -1,0 +1,95 @@
+{
+  "id": "PPL_BOLIWA",
+  "nameMain": "Boliwa",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Boliwa",
+      "selfAppellation": "Boliwa",
+      "exonyms": ["Bolewa", "Bole", "Bolawa", "Bolua"],
+      "originOfExonyms": "Le terme Boliwa est une variante orthographique du terme Bolewa (ou Bole), nom du peuple et de la langue parles dans le nord du Gombe State et le sud du Yobe State au nord-est du Nigeria. Le terme Bole est la forme adoptee par les linguistes et Ethnologue. Bolewa est la forme utilisee dans les documents historiques et coloniaux. La langue Bole (code ISO 639-3 : bol) appartient a la branche Bole-Tangale du West Chadic. Note : le code ISO blv (Kibala Bolo, Congo-Brazzaville) presente dans la source originale est une erreur d'attribution ; le code correct pour la langue Bole du Nigeria est bol.",
+      "whyProblematic": "L'identification de ce peuple pose des difficultes : 'Boliwa' n'apparait pas comme terme autonome dans les bases de donnees linguistiques (Ethnologue, Glottolog). Il s'agit vraisemblablement d'une variante orthographique de 'Bolewa' ou 'Bolua', designant le peuple Bole/Bolewa du nord-est du Nigeria. Le code ISO blv attribue dans le fichier source original correspond en realite au Kibala (langue de la Republique du Congo) et non a un peuple nigerian. La correction retenue ici est d'identifier Boliwa aux Bolewa/Bole (ISO : bol, Ethnologue : Bole-Tangale, West Chadic).",
+      "contemporaryUsage": "Le terme Bolewa est utilise dans la litterature academique et les documents historiques. Bole est le nom utilise par les linguistes (SIL Ethnologue). Dans la vie quotidienne, le groupe se designe comme Bole ou Bolewa. La capitale traditionnelle est Fika (Yobe State), siege de l'Emir de Fika (Moi Pikka).",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique occidental (West Chadic), branche A.2 Bole-Tangale",
+      "historicalRegion": "Nord du Gombe State et sud du Yobe State, nord-est du Nigeria (region de Fika et Potiskum)",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Bolewa de Fika (capitale traditionnelle, Yobe State)",
+      "Bolewa de Potiskum (grand centre de la diaspora Bole, Yobe State)",
+      "Bolewa du Gombe State (nord de l'etat)",
+      "Bolewa de Kalam (etablissement historique, region de Borno occidental)",
+      "Bolewa des rives de la riviere Gongola (implantations historiques)"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale et les etudes historiques (C.K. Meeks, 1931 ; H.R. Palmer), les Bolewa descendent de migrants venus du Yemen, associes aux fondateurs des royaumes de Kanem et Songhai. Cette origine yemenite est partagee par plusieurs peuples tchadiques du nord-est du Nigeria. Les Bolewa s'etablirent d'abord sur les rives de la riviere Gongola et dans les regions de Kalam, Fali, Daniski, Kafarati, Mbara et Bauchi. Palmer les mentionne sous le nom Ata-Gara lors de leur apparition dans la vallee de la Gongola.",
+      "formationPeriod": "Des le 13e siecle, les Bolewa etaient etablis dans la region de Gombe et dans la vallee de la Gongola. L'etablissement de Kalam Bolewa (entre 1499 et 1509, sous le regne du Sarkin Kano Abdullahi) est documente. Le centre de peuplement bolewa s'est progressivement consolide autour de Fika, qui devint la capitale traditionnelle. L'Emir de Fika (Moi Pikka) est le chef traditionnel supreme des Bolewa et l'une des plus importantes figures royales du nord du Nigeria.",
+      "migrationRoutes": [
+        "Migration legendaire depuis le Yemen vers le basin du lac Tchad (apres 940 ap. J.-C. selon la tradition)",
+        "Deplacement vers les rives de la Gongola et le nord du Nigeria (entre 1100 et 1500 ap. J.-C.)",
+        "Etablissement a Fika et expansion vers Potiskum et les zones adjacentes"
+      ],
+      "historicalSettlementZones": [
+        "Fika (Yobe State) : capitale traditionnelle historique de l'emirat Bole",
+        "Potiskum (Yobe State) : ville ou la cour de l'Emir de Fika fut deplacee en 1924 par l'administration coloniale",
+        "Nord du Gombe State : zone principale de peuplement Bole",
+        "Rives de la riviere Gongola : etablissements anciens (Kalam, Fali, Daniski, Kafarati, Mbara)",
+        "Parties du nord-ouest de Borno (Kalam, Fali)"
+      ],
+      "unificationsOrDivisions": "Les Bolewa sont unifies sous l'autorite de l'Emir de Fika (Moi Pikka), l'une des plus hautes figures de la royaute traditionnelle du nord du Nigeria. La cour de l'Emir de Fika fut transferee de Fika a Potiskum en 1924 par l'administration coloniale britannique. Des dialectes distincts (Bara, Fika) existent mais partagent une intelligibilite mutuelle. L'etablissement de Kalam Bolewa fut detruit lors d'un raid de Kano un siecle apres sa fondation.",
+      "externalInfluences": "Influence precoce de l'empire Kanem et du systeme politique Songhai (tradition d'origine commune). Domination de l'empire Kanuri de Borno sur la region a partir du 13e siecle. Jihad Fulani du 19e siecle, qui accentua l'islamisation. Colonisation britannique : reorganisation administrative de l'emirat, deplacement de la cour a Potiskum (1924). Domination croissante du haoussa, qui est devenu la langue vehiculaire de toute la region.",
+      "majorHistoricalEvents": "Etablissement dans la region de Gombe au 13e siecle. Fondation de Kalam Bolewa (1499-1509). Raid de Kano detruisant Kalam un siecle plus tard. Islamisation progressive sous l'influence Fulani et Kanuri. Etablissement de l'emirat de Fika. Deplacement de la cour de l'Emir de Fika de Fika a Potiskum par les Britanniques (1924). Integration dans le Yobe State (cree en 1991). Presence de Boko Haram dans la region depuis 2009, affectant les communautes Bolewa."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe Bolewa est organisee autour de l'emirat de Fika, dirige par l'Emir de Fika (Moi Pikka), l'une des figures royales les plus importantes du nord du Nigeria. La cour de l'emir est a Potiskum. Sous l'emir, des chefs de district (hakimi) et de village (mai-gida) administrent les communautes. Le systeme emiral suit le modele haoussa-fulani standard du nord du Nigeria.",
+      "clanOrganization": "Organisation patrilineaire en familles etendues et lignages. Les Bolewa nobles lies a l'emirat forment l'elite dirigeante. Les groupes dialectaux (Bara, Fika) ont des loyautes claniques distinctes, mais tous reconnaissent l'autorite de l'Emir de Fika.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'acces aux postes de chefferie, les droits fonciers et les alliances. La succession a l'emirat suit les regles de succession patrilineaire etablies par la tradition et confirmees par les autorites islamiques.",
+      "religiousAuthority": "L'islam sunnite est la religion dominante depuis l'islamisation des Bolewa. La vie religieuse est encadree par les oulemas, imams et le systeme juridique islamique (charia). La tradition religieuse preislamique des Bolewa etait centree sur le culte des ancetres et les rites de fabrication de la pluie (Konon ou Konon-Ako chez certains groupes ; Gamdo ou Ngwando comme ceremonies rituelles principales). La ceremonie Dengti (ou Dengtide), ou hommes et femmes echangeaient leurs vetements, existait parmi les Bolewa de Kafarati. Ces pratiques ont ete largement abandonnees avec l'islamisation."
+    },
+    "languages": {
+      "mainLanguage": "Bole (Bolewa)",
+      "isoCodes": ["bol"],
+      "dialects": [
+        "Fika Bole (dialecte de Fika, centre politique)",
+        "Bara Bole (dialecte de Bara)"
+      ],
+      "vehicularRole": "Le bole est parle par environ 250 000 a 300 000 personnes dans le sud du Yobe State et le nord du Gombe State. Il est l'une des plus importantes langues de la region apres le haoussa et le kanuri. La langue est classee West Chadic A.2 (Bole-Tangale). Malgre sa relative vitalite (le bole est encore largement parle), la transition vers le haoussa est perceptible. Le haoussa sert de lingua franca dans toute la region. L'anglais est la langue officielle de l'education et de l'administration. Le bole est l'une des rares langues du Yobe State a avoir une litterature nascente (premières publications dans les annees 1950 avec la NORLA, Northern Region Literacy Agency)."
+    },
+    "culture": {
+      "majorRites": "Ceremonies islamiques : celebrations du Ramadan, Aïd al-Fitr, Aïd al-Adha, pelerinage a La Mecque. Mariages : ceremonies traditionnelles incluant la dot et les festivites communautaires. Rites funeraires islamiques (enterrement rapide, condoleances). Rites pre-islamiques partiellement conserves dans la memoire collective : Gamdo ou Ngwando (rituels de pluie en cas de secheresse, comprenant des circumambulations de tombeaux royaux et des sacrifices). Dengti ou Dengtide : ancienne ceremonie annuelle chez les Bolewa de Kafarati, ou hommes et femmes echangeaient leurs vetements et roles lors d'une ceremonie autour d'un baobab sacre, lieu considere comme la demeure du peuple Kwami.",
+      "symbols": "Le titre de Moi Pikka (Emir de Fika) est le symbole politique supreme des Bolewa. Les marques culturelles corporelles (scarifications distinctives sur le visage et le ventre) ont longtemps identifie les Bolewa. Les objets d'artisanat traditionnels (poteries, nattes) et les vetements brodes sont des marqueurs identitaires.",
+      "artsAndMusic": "Artisanat : poterie, tissage, maroquinerie, broderie. Musique : musique de cour associee aux ceremonies de l'emirat (percussions, trompettes royales). Danse : danses traditionnelles lors des celebrations culturelles et islamiques. Traditions orales : histoires de la migration depuis le Yemen, genealogies des emirs, recits de l'etablissement de Kalam Bolewa et de Fika. La premiere oeuvre litteraire en langue Bole est une nouvelle (Labar Kadija Zangaya de Malam Baba Ali) publiee dans les annees 1950, consideree comme une etape majeure pour les langues du Yobe State.",
+      "spiritualities": "L'islam sunnite (pratique populaire ou folk Islam, melange de traditions islamiques et d'elements d'animisme residuel) est la religion de la quasi-totalite des Bolewa. La tradition spirituelle preislamique etait centree sur le culte des ancetres et un dieu ancestral Konon (ou Konon-Ako), associe a la protection contre la secheresse et les malheurs. Des rituels de culte aux ancetres (hommage aux Auni, rois bolewa enterres dans des lieux sacres) etaient pratiques lors des fetes culturelles. L'islamisation a largement remplace ces pratiques, mais des traces de syncrétisme subsistent dans certaines zones rurales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "L'emirat de Fika (Fika Emirate) est le principal heritage politique des Bolewa. L'Emir de Fika (Moi Pikka) est l'une des plus hautes figures royales du nord du Nigeria, jouant un role important dans les periodes precoloniale, coloniale et postcoloniale. La cour de l'emir etait historiquement a Fika (Yobe State) avant d'etre deplacee a Potiskum par les Britanniques en 1924. Les Bolewa avaient des etablissements dans les zones de Kalam, Fali, Daniski, Kafarati, Mbara et Bauchi des le 13e siecle.",
+      "relationsWithNeighbors": "Relations complexes avec les Haoussa (qui ont progressivement assimile culturellement et linguistiquement les Bolewa), les Kanuri (empire Borno ayant exerce une suzerainte historique), et les autres peuples Bole-Tangale voisins (Karekare, Ngamo, Ngizim). Les Bolewa ont joue un role important dans le nord-est du Nigeria comme intermediaires commerciaux entre les grandes routes transsahariennes et les communautes rurales.",
+      "conflictsOrAlliances": "Assimilation a l'empire de Kanem/Songhai selon les traditions orales. Raids de Kano ayant detruit Kalam Bolewa au 16e siecle. Islamisation sous influence Fulani et Kanuri (19e siecle). Colonisation britannique : reconstitution de l'emirat, deplacement de la cour de l'Emir de Fika a Potiskum (1924). Apres l'independance du Nigeria (1960) : integration dans le systeme politique federal. Depuis 2009, presence de Boko Haram dans le nord-est du Nigeria affectant les communautes.",
+      "diaspora": "Les Bolewa ont une presence notable dans l'administration, le commerce et les milieux educatifs nigeriants. Des membres de la communaute se trouvent dans toutes les grandes villes du Nigeria (Lagos, Abuja, Kano, Maiduguri). Une diaspora internationale modeste existe dans les pays anglophones."
+    },
+    "demography": {
+      "totalPopulation": 280000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue — Bole (bol) : 250 000 a 300 000 locuteurs. UCLA African Languages — Bole (2018) : environ 250-300 000 locuteurs. Joshua Project — Bole, Bolewa in Nigeria (2025). Wikipedia EN — Bolewa people. Recensement national nigerian 2006. Estimations ajustees pour la croissance demographique nigeriane.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 280000,
+          "note": "Principalement sud du Yobe State (Fika, Potiskum et environs) et nord du Gombe State ; presence historique dans le Borno occidental et le Bauchi State"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bolewa people. https://en.wikipedia.org/wiki/Bolewa_people",
+      "UCLA African Languages — Bole. https://aflang.humanities.ucla.edu/language-materials/chadic-languages/yobe/bole/",
+      "Joshua Project — Bole, Bolewa in Nigeria. https://joshuaproject.net/people_groups/10914",
+      "SIL Ethnologue — Bole (bol). https://www.ethnologue.com/subgroup/555/",
+      "Wikipedia EN — West Chadic languages. https://en.wikipedia.org/wiki/West_Chadic_languages",
+      "Wiktionary ISO 639-3 codes/Africa. https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+      "Gbeyonron & Bare — Language Ecology in Yobe State. Journal of the Nigerian Languages Project, vol. 2, 2020."
+    ]
+  }
+}

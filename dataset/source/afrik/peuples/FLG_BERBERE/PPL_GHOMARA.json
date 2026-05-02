@@ -1,0 +1,97 @@
+{
+  "id": "PPL_GHOMARA",
+  "nameMain": "Ghomara",
+  "languageFamilyId": "FLG_BERBERE",
+  "currentCountries": ["MAR"],
+  "content": {
+    "appellations": {
+      "mainName": "Ghomara",
+      "selfAppellation": "Ighomaren",
+      "exonyms": ["Ghumara", "Ighmaren"],
+      "originOfExonyms": "Le terme arabe Ghumara (غمارة) est l'exonyme classique utilisé par les géographes arabes médiévaux comme Al-Muqadassi et Yaqut, qui mentionnent un Balad Ghumar dans le Sus septentrional. Le terme berbère Ighmaren est l'endonyme propre.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Ghomara est utilisé dans les contextes académiques et administratifs marocains. Les habitants se désignent eux-mêmes comme Ighomaren. La plupart des membres de cette communauté parlent aujourd'hui l'arabe marocain au quotidien, même si certains conservent la langue ghomarie.",
+      "linguisticFamily": "FLG_BERBERE",
+      "ethnoLinguisticGroup": "Berbère nord-occidental (Rif occidental, groupe Masmuda)",
+      "historicalRegion": "Rif occidental (Maroc) — provinces de Chefchaouen et Tétouan",
+      "currentCountries": ["MAR"]
+    },
+    "ethnicities": [
+      "Beni Bouzra — tribu de l'Ouest du pays ghomari, l'une des deux tribus maintenant encore la langue ghomarie",
+      "Beni Mansour — tribu conservant la langue berbère ghomarie avec les Beni Bouzra",
+      "Beni Grir — tribu du territoire ghomari central",
+      "Beni Khaled — tribu du territoire ghomari",
+      "Beni Rezin — tribu du territoire ghomari",
+      "Beni Selman — tribu du territoire ghomari",
+      "Beni Smih — tribu du territoire ghomari",
+      "Beni Zejel — tribu du territoire ghomari",
+      "Beni Ziat — tribu du territoire ghomari"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ghomara sont une confédération tribale berbère appartenant originellement à la confédération des Masmuda, l'un des grands groupes tribaux berbères du Maroc atlantique et méditerranéen. Selon la tradition orale et les chroniques médiévales, leur territoire fut autrefois peuplé par les Ahl Sous (gens du Sous), terme qui désignait alors l'ensemble de l'Atlantique marocain de Tanger à Agadir. Le géographe Al-Muqadassi (10e siècle) mentionne expressément un Sus al-Adna (Sous prochain), avec Fès comme capitale, englobant un Balad Ghumar.",
+      "formationPeriod": "La confédération ghomara s'est consolidée au cours du premier millénaire de l'ère commune, sous l'influence des dynamiques tribales masmuda. Leur territoire actuel, plus restreint qu'à l'époque médiévale, résulte d'une réduction progressive face aux pressions des Zénètes et des Sanhadja.",
+      "migrationRoutes": [
+        "Depuis le Sous atlantique vers le Rif occidental selon la tradition orale",
+        "Maintien sur le Rif côtier occidental malgré les conquêtes successives"
+      ],
+      "historicalSettlementZones": [
+        "Rif occidental entre Chefchaouen et Tétouan",
+        "Zone côtière méditerranéenne du nord du Maroc",
+        "Provinces actuelles de Chefchaouen et Tétouan"
+      ],
+      "unificationsOrDivisions": "La confédération ghomara est composée de neuf tribus fondatrices. Ils ont subi des divisions territoriales sous les conquêtes almoravide (1067) et à la suite des conflits entre Masmuda et Sanhadja. La conversion à l'islam fut progressive et conflictuelle, marquée par des apostasies et reconversions au 8e et 10e siècles.",
+      "externalInfluences": "Influence de la conquête arabe et islamique (8e siècle), conquête almoravide (1067 sous Youssef ibn Tachfin), pression des Zénètes venus de l'est, arabisation progressive qui a conduit à la quasi-disparition de la langue ghomarie.",
+      "majorHistoricalEvents": "En 1067, Youssef ibn Tachfin occupa la région ghomara. Au 10e siècle, un prédicateur surnommé Ha-mim se proclama prophète parmi les Ghomara, proposant une réforme de l'islam (réduction du Ramadan, abolition du pèlerinage), mouvement qui fut écrasé en 928. Au 8e siècle, le pays de Nekour, voisin des domaines ghomaro-sanhadjiens, fut conquis par Said ibn Idris ibn Saleh, fondateur de Nekour, ville pillée par des Normands en 859."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation tribale de type confédéral, composée de neuf tribus (Beni Bouzra, Beni Grir, Beni Khaled, Beni Mansour, Beni Rezin, Beni Selman, Beni Smih, Beni Zejel, Beni Ziat). Chaque tribu dispose de sa propre structure sociale et de ses coutumes. L'organisation est patrilinéaire : la descente est tracée par les pères et les héritages transmis par les mâles.",
+      "clanOrganization": "Les neuf tribus constituent les unités de base de la confédération ghomara. Chaque tribu maintient des liens familiaux et sociaux étroits remontant à plusieurs générations. La règle d'endogamie tribale est stricte : les Ghomara ne peuvent pas se marier en dehors de leur groupe.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Société à dominante masculine et patrilinéaire. Le chef de famille contrôle et administre les affaires du ménage tout en devant trouver un accord avec l'ensemble de la famille. La descente est tracée par les pères et toutes les héritages sont transmis par les mâles.",
+      "religiousAuthority": "Islam sunnite malékite pratiqué par la quasi-totalité des Ghomara. Les pratiques islamiques coexistent avec des traditions berbères pré-islamiques. Bien que nominalement sunnites, certains Ghomara ruraux maintiennent des pratiques syncrétiques incluant l'usage de versets coraniques dans des amulettes protectrices."
+    },
+    "languages": {
+      "mainLanguage": "Ghomari (Taghmart) — langue berbère nord-occidentale en voie d'extinction",
+      "isoCodes": ["gho"],
+      "dialects": [
+        "Dialecte des Beni Bouzra (ouest du pays ghomari)",
+        "Dialecte des Beni Mansour"
+      ],
+      "vehicularRole": "La langue ghomarie n'est plus que parlée (aucun système d'écriture standardisé). La majorité des Ghomara ont adopté l'arabe marocain comme langue principale au quotidien. Le ghomari présente des traits distinctifs par rapport au rifain : usage de la préposition dar au lieu du rifain ghar, pluriel féminin en -an au lieu de -in, absence de spirantisation en position initiale. La langue est considérée menacée avec environ 10 000 locuteurs (2008), transmise dans quelques foyers ruraux."
+    },
+    "culture": {
+      "majorRites": "Rites de passage traditionnels : circoncision (tahara) pour les garçons, marquant l'entrée dans l'âge adulte. Le mariage est le rite de passage le plus élaboré. Rites saisonniers amazighs (Yennayer, Nouvel An berbère, 13 janvier). Prières et invocations avant les semailles pour demander la baraka. Yennayer (Nouvel An berbère, 13 janvier) célébré dans les villages ghomaris avec des repas festifs collectifs. Les mères préparent des plats spéciaux à base d'orge et de légumes. On allume des feux et on chante des chants traditionnels rifains.",
+      "artsAndMusic": "Musiques et chants rifains traditionnels accompagnés de bendir (tambourin) et d'addjun. Artisanat féminin : tissage de tapis et couvertures à motifs géométriques, poterie. Artisanat masculin : travail du bois, du métal. La poésie orale (izran, couplets) est une forme d'expression traditionnelle. Contes et légendes transmis oralement, notamment la tradition des Ahl Sous et leurs trésors enfouis. Gastronomie : Alimentation principalement céréalière : orge, maïs, millet, blé, seigle. Légumes cultivés dans les zones bien arrosées (tomates, oignons, courges, poivrons, pommes de terre). Élevage de poulets, chèvres et moutons pour le lait, les oeufs, le beurre et la viande. Oliviers et figuiers sur les pentes montagnardes. La figue et l'huile d'olive sont les principales ressources alimentaires.",
+      "symbols": "Motifs géométriques berbères dans l'artisanat (tissage, poterie). La djellaba (burnous à capuche) est le vêtement traditionnel masculin. L'agriculture est le symbole central de l'identité ghomara : oliviers, figuiers, orge, blé, maïs.",
+      "spiritualities": "Islam sunnite malékite, pratiqué depuis la conversion au 8e siècle. Syncrétisme islamo-berbère : maintien de croyances et pratiques pré-islamiques en milieu rural. Usage d'amulettes coraniques pour la protection. Respect des saints locaux (maraboutisme). Tradition des guérisseurs et devins villageois."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Ghomara firent partie de la confédération masmuda, l'une des grandes structures tribales berbères du Maroc médiéval. Leur voisinage avec le pays de Nekour (émirat berbère fondé par Said ibn Idris au 8e siècle) les impliqua dans les dynamiques politiques du Rif. Les chroniques d'Ibn Khaldoun mentionnent Yulian (comte Julien), détenteur de Ceuta pour les Wisigoths, comme prince masmoudien, soulignant l'étendue historique de ce groupe.",
+      "relationsWithNeighbors": "Relations complexes avec les Sanhadja voisins, alternant conflits et alliances. Les tensions entre Masmuda et Sanhadja facilitèrent la conquête almoravide. Relations marchandes avec la péninsule ibérique via Nekour. Pression des Zénètes venus de l'est qui s'emparèrent de Ceuta, Tanger et Fès.",
+      "conflictsOrAlliances": "Résistance à la conquête arabe au 7e-8e siècle, suivie de conversions successives à l'islam et d'apostasies. Soulèvement du mouvement prophétique d'Ha-mim au 10e siècle (écrasé en 928). Intégration dans le Maghreb al-Aqsa sous la domination almoravide (1067) puis almohade.",
+      "diaspora": "Émigration économique vers les villes européennes (Espagne, France, Pays-Bas, Belgique), phénomène partagé avec l'ensemble du Rif. La surpopulation et la pauvreté dans les zones rurales ont poussé jusqu'à un tiers des hommes adultes à chercher du travail à l'étranger."
+    },
+    "demography": {
+      "totalPopulation": 54000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (estimation ~54 000 Ghomara), Wikipedia EN (10 000 locuteurs de la langue ghomarie en 2008 selon Ethnologue). La population totale identifiée comme Ghomara est estimée à environ 54 000 personnes, dont seule une minorité maintient la langue berbère (environs 10 000 locuteurs). L'essentiel de la population est arabophone au quotidien.",
+      "distributionByCountry": [
+        {
+          "country": "MAR",
+          "population": 54000,
+          "note": "Rif occidental, provinces de Chefchaouen et Tétouan"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Ghomaras. https://en.wikipedia.org/wiki/Ghomaras",
+      "Wikipedia EN — Ghomara language. https://en.wikipedia.org/wiki/Ghomara_language",
+      "Ethnologue — Ghomara (gho). https://www.ethnologue.com/language/gho/",
+      "Glottolog — Ghomara (ghom1257). https://glottolog.org/resource/languoid/id/ghom1257",
+      "Joshua Project — Berber, Ghomara in Morocco. https://joshuaproject.net/people_groups/11882",
+      "IRCAM (Institut Royal de la Culture Amazighe) — Études amazighes du Rif. https://www.ircam.ma/",
+      "Ibn Khaldoun, Abd ar-Rahman. Kitab al-Ibar (Histoire des Berbères). 14e siècle.",
+      "Al-Muqadassi. Ahsan at-Taqasim fi Marifat al-Aqalim. 10e siècle."
+    ]
+  }
+}

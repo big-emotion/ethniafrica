@@ -1,0 +1,113 @@
+{
+  "id": "PPL_MANYIKA",
+  "nameMain": "Manyika",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["ZWE", "MOZ"],
+  "content": {
+    "appellations": {
+      "mainName": "Manyika",
+      "selfAppellation": "VaManyika / WanaSaManyika",
+      "exonyms": [
+        "Manica (graphie portugaise)",
+        "Wanyika",
+        "Wamanyika",
+        "Bamanyeka",
+        "Chimanyika (langue)"
+      ],
+      "originOfExonyms": "Manyika est le nom du peuple et de leur langue (ChiManyika, dialecte du shona). La graphie Manica est la version portugaise, qui donna son nom à la province de Manica au Mozambique. Wanyika (ou Wamanyika) est une forme swahilie du même ethnonyme. VaManyika est la forme grammaticalement correcte en shona (Va- étant le préfixe de classe humaine au pluriel). Le terme Manicaland, désignant la province orientale du Zimbabwe, dérive directement du nom du peuple Manyika.",
+      "whyProblematic": "L'identité manyika comme groupe distinct des autres Shona n'existe formellement que depuis les années 1930, construite en partie par les missionnaires et administrateurs coloniaux qui standardisèrent le dialecte écrit et appliquèrent le terme Manyika à tous les habitants de Manicaland. Des sous-groupes comme les peuples de Makoni (MaUngwe, ChiUngwe) ne parlent pas le même dialecte et furent inclus de manière arbitraire. Les Manyika du Mozambique et du Zimbabwe ont des trajectoires coloniales distinctes (portugaise versus britannique).",
+      "contemporaryUsage": "Manyika et VaManyika sont les termes courants au Zimbabwe et au Mozambique. ChiManyika désigne la langue. La province du Manicaland (Zimbabwe) et la province de Manica (Mozambique) portent ce nom. Le terme est utilisé dans les recensements nationaux du Zimbabwe et du Mozambique.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou — Zone S — Shona (S.10), dialecte Manyika",
+      "historicalRegion": "Est du Zimbabwe (province du Manicaland) et zones intérieures du Mozambique au sud du fleuve Púnguè (province de Manica) — anciens royaumes de Mutasa et Makoni",
+      "currentCountries": ["ZWE", "MOZ"]
+    },
+    "ethnicities": [
+      "VaMutasa (royaume de Mutasa, Mutasa District, nord du Manicaland, Zimbabwe)",
+      "VaMakoni (royaume de Makoni, Makoni District, Manicaland, Zimbabwe)",
+      "VaMaranke (Maranke District, Manicaland, Zimbabwe)",
+      "VaZimunya (Zimunya, Mutare District, Zimbabwe)",
+      "VaNyamaropa / VaTangwena (région de Nyamaropa/Nyatate, Zimbabwe — dialecte distinct)",
+      "VaBarwe (peuple barwe, nord-est du Manicaland/Mozambique)",
+      "VaBocha (sud du Manicaland, dialecte chiBocha/Jindwi)",
+      "Manyika de la province de Manica (Mozambique, zone de Manica, Chimoio)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Manyika font partie des peuples shona du Zimbabwe, dont la présence dans la région remonte à environ 1000 ap. J.-C. (migrations bantoues progressives depuis l'Afrique centrale et orientale). Leurs ancêtres participèrent à la civilisation de Great Zimbabwe (10e-15e siècles), centre politico-religieux shona. Les Manyika (wana-saManyika) s'identifient comme un peuple spirited, steadfast, prudent et fier, avec leur propre dialecte. La région du Manicaland est riche en gisements aurifères exploités depuis le 17e siècle ou plus tôt, l'or étant commercé vers les ports côtiers du Mozambique en échange de marchandises indiennes, arabes et portugaises.",
+      "formationPeriod": "L'identité manyika comme groupe ethnique distinct des autres Shona n'est formellement articulée que depuis les années 1930, sous l'impulsion des missionnaires anglicans, méthodistes et catholiques qui établirent un dialecte manyika écrit standardisé pour l'enseignement et l'évangélisation. Les deux royaumes fondateurs — Mutasa et Makoni — existent depuis au moins le 17e siècle. La distinction entre Manyika et autres groupes shona fut renforcée par les administrateurs coloniaux britanniques (Rhodésie du Sud) et portugais (Mozambique).",
+      "migrationRoutes": [
+        "Migrations bantoues depuis l'Afrique centrale vers le plateau du Zimbabwe (vers 1000 ap. J.-C.)",
+        "Migrations internes est-ouest sur le plateau du Manicaland à partir des royaumes de Mutasa et Makoni (17e-19e siècles)",
+        "Migration rurale-urbaine vers Mutare (Umtali), Harare et Johannesburg (20e siècle)",
+        "Expansion coloniale : l'entrée de la British South Africa Company (traité avec Mutasa, 1890) délimita les frontières"
+      ],
+      "historicalSettlementZones": [
+        "Province du Manicaland, Zimbabwe (Mutare, Nyanga, Mutasa, Makoni, Buhera, Chipinge, Chimanimani)",
+        "Province de Manica, Mozambique (Manica, Chimoio, zones sud du fleuve Púnguè)",
+        "Villes zimbabwéennes : Mutare (centre administratif de Manicaland), Harare (diaspora interne)"
+      ],
+      "unificationsOrDivisions": "La division coloniale entre Rhodésie britannique et Mozambique portugais sépara les Manyika en deux groupes distincts sous des administrations coloniales différentes. Au Zimbabwe, le terme Manyika fut appliqué par les Britanniques à l'ensemble des habitants de Manicaland, incorporant des sous-groupes (MaUngwe, peuples de Makoni) qui ne partagent pas exactement le même dialecte. Les tensions entre les sous-groupes régionaux (MaUngwe du Makoni vs Manyika du Mutasa) furent une source de débats administratifs récurrents.",
+      "externalInfluences": "Commerce avec les marchands arabes, indiens et portugais via les ports côtiers du Mozambique (or, ivoire contre étoffes et perles, dès le 17e siècle). Conquête de Changamire Dombo en 1695 (empire Rozvi/Butwa) sur le Manyika aurifère et destruction du comptoir portugais de Masikwesi. Traité de la British South Africa Company avec Mutasa (14 septembre 1890), suivi de l'appropriation des terres par des colons blancs. Soulèvement shona (Première Chimurenga, 1896-1897). Guerre d'indépendance du Zimbabwe (Deuxième Chimurenga, 1966-1979). Indépendance du Zimbabwe (1980). Au Mozambique : colonisation portugaise suivie de l'indépendance (1975) et de la guerre civile FRELIMO/RENAMO (1977-1992).",
+      "majorHistoricalEvents": "Apogée de l'empire de Great Zimbabwe (14e-15e siècles, contexte shona). Fondation des royaumes de Mutasa et Makoni (au moins début 17e siècle). Commerce aurifère vers les côtes mozambicaines (17e siècle). Conquête de Changamire Dombo et destruction du comptoir portugais de Masikwesi (1695). Traité de la BSA Company avec Mutasa (1890) : cession des droits miniers. Soulèvement shona (Première Chimurenga, 1896-1897). Standardisation du dialecte manyika par les missionnaires (années 1920-1930). Nationalistes manyika célèbres : Herbert Chitepo (premier avocat africain de Rhodésie) et l'évêque Abel Muzorewa (leader politique). Indépendance du Zimbabwe (1980)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La société manyika est organisée en chefferies héréditaires. Le chef (sadunhu ou ishe) est le chef de village héréditaire, assisté des chefs de famille (ishe yemba) qui arbitrent les conflits et officient aux sacrifices aux esprits ancestraux. Le chef suprême (mambo ou ishe mukuru) des royaumes de Mutasa et Makoni exerce une autorité sur plusieurs villages. Les décisions politiques importantes impliquent les anciens et les médiums des esprits (svikiro) qui communiquent avec les midzimu (esprits ancestraux) et avec le mudzimumukuru (grand esprit ancestral). L'autorité est investie dans les hommes, la sagesse dans l'âge.",
+      "clanOrganization": "La société manyika est organisée en totems (mitupo) patrilinéaires, chaque totem identifiant les descendants d'un ancêtre commun. Les totems courants incluent Shumba (lion), Nzou (éléphant), Mbizi (zèbre), Dhuve/Mazvimbakupa. Les personnes du même totem ne peuvent se marier (règle d'exogamie totémique). Les totems transcendent les divisions géographiques et empêchent l'ethnicisme intra-shona. Chaque homme adulte reçoit traditionnellement de la terre de son père ou du village pour cultiver.",
+      "ageClassSystems": null,
+      "roleOfLineages": "L'organisation est patrilinéaire : les terres, le nom et les droits se transmettent par le père. La dot (lobola) est payée au père de la fiancée, généralement en bétail et en argent. Les vaches sont tabou pour les femmes (seuls les hommes les traient et les gardent). Le foyer étendu (plusieurs femmes et leurs enfants dans une polygynie traditionnelle, en recul) est l'unité de production. Les ancêtres non vivants sont considérés comme membres de la famille actuelle.",
+      "religiousAuthority": "Les médiums d'esprits (svikiro) jouent un rôle central : ils communiquent avec les midzimu (esprits ancestraux) et avec Mwari (dieu suprême shona), et servent d'intermédiaires entre les vivants et les ancêtres pour les grandes décisions politiques, agricoles et judiciaires. Le chef héréditaire officie aux sacrifices communautaires aux esprits. Les missionnaires anglicans, méthodistes et catholiques implantés depuis le 19e siècle ont profondément influencé la société manyika; les Manyika évangélisés furent favorisés pour l'emploi en période coloniale."
+    },
+    "languages": {
+      "mainLanguage": "ChiManyika (dialecte shona)",
+      "isoCodes": ["mxc", "sna"],
+      "dialects": [
+        "ChiManyika strict (Mutasa District, Honde Valley, Nyanga nord — dialecte de référence)",
+        "ChiBocha / Jindwi (sud du Manicaland, Buhera et Bocha — dialecte du sud)",
+        "ChiUngwe (Makoni District — incorporé au Manyika large sous l'administration coloniale)",
+        "ChiNdau (Chimanimani et Chipinge — dialecte proche, distinct)",
+        "Dialecte de Nyamaropa / VaTangwena (variété nord, traits distinctifs)",
+        "ChiManyika du Mozambique (province de Manica — influencé par le portugais)"
+      ],
+      "vehicularRole": "Le ChiManyika est un dialecte du shona (ISO 639-3 : sna), troisième langue nationale du Zimbabwe (après le ndébélé). Le shona est parlé par environ 77% de la population zimbabwéenne. Le ChiManyika est parlé principalement dans la province du Manicaland (Zimbabwe) et dans certaines zones de la province de Manica (Mozambique). L'anglais est la langue officielle du Zimbabwe et du Mozambique (bien que le portugais soit officiel au Mozambique). Les missionnaires établirent une forme écrite standardisée du ChiManyika dès les années 1920-1930."
+    },
+    "culture": {
+      "majorRites": "{\"ancestorCult\": \"Les sacrifices aux esprits ancestraux (midzimu) sont centraux dans la culture manyika. Le chef héréditaire officie lors des cérémonies communautaires (pluie, récolte, guérison). Les médiums d'esprits (svikiro) entrent en transe pour transmettre les messages des ancêtres. Mwari, dieu suprême shona, est invoqué via ses médiums pour les grandes décisions.\", \"marriageRites\": \"La lobola (dot en bétail et argent, versée au père de la fiancée) est une pratique centrale. La polygynie était traditionnellement préférée mais est en recul en raison du coût de la vie et de l'éducation. L'âge au premier mariage est généralement au début de la vingtaine. Le divorce est traditionnel très rare.\", \"burialRites\": \"Rites funéraires en trois périodes (Kuchema — pleurer/se lamenter). Le corps est lavé, les bras et les jambes liés. Les tambours battent; des coups de feu si le défunt est un chef. La danse Kupeta est pratiquée. Le gendre (mukwambo, non-parent par le sang) désigne et prépare la tombe. Une chèvre est sacrifiée. Le nganga (devin/guérisseur) reçoit des présents et prononce des formules contre la sorcellerie.\", \"agricultureRites\": \"Cérémonies de pluie (kupiwa mvura) invoquant Mwari et les esprits ancestraux avant les semailles (novembre). Offrandes de bière de mil et de nourriture aux ancêtres lors des récoltes.\"}",
+      "symbols": "Le totem (mutupo) est le symbole identitaire fondamental de chaque clan manyika-shona : il désigne l'ancêtre fondateur et interdit les mariages entre membres du même totem. Les mines d'or (présentes dans le Manicaland depuis le 17e siècle) sont un marqueur historique. Le dzimbahwe (enclos en pierre, dont le terme Great Zimbabwe) symbolise la grandeur architecturale des ancêtres shona. Les céramiques (poterie féminine) et les paniers tressés sont des symboles artisanaux.",
+      "artsAndMusic": "{\"crafts\": \"Les femmes pratiquent la poterie et le tressage de paniers utilitaires (vendus pour compléter les revenus). Les hommes travaillent comme forgerons ou sculpteurs sur commande. La forge a une valeur culturelle (caste artisanale). Les badzas (houes) sont des outils rituels (présents lors des funérailles).\", \"music\": \"Musique traditionnelle shona : mbira (lamellophone, instrument sacré joué lors des cérémonies de contact avec les ancêtres — bira), hosho (hochets en calebasse), ngoma (tambours). Les chants de travail (collectifs) et les chants de deuil (lors des Kuchema) sont particulièrement développés. La musique mbira est inscrite au patrimoine immatériel de l'UNESCO pour les Shona en général.\", \"dance\": \"La danse Kupeta est pratiquée lors des funérailles. Les danses communautaires accompagnent les cérémonies agricoles et les fêtes de chef. La danse jerusarema (jeu mbende), danse traditionnelle shona, est inscrite au patrimoine immatériel de l'UNESCO.\", \"oralLiterature\": \"Tradition orale riche : mythes de création shona (Mwari, Mwedzi le premier homme, Morongo), contes (ngano), proverbes. Les médiums d'esprits (svikiro) transmettent des récits historiques sacrés.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Mwari (dieu suprême shona)\", \"attributes\": \"Mwari est le dieu créateur unique et suprême des Shona, parfois désigné comme mudzimumukuru (grand esprit ancestral). Il réside dans les collines sacrées de Matonjeni (Matopos, Zimbabwe). Il s'exprime à travers des médiums et des oracles situés dans des grottes sacrées. La cosmologie shona lie Mwari à dzivaguru (la grande mare primordiale) d'où émergèrent les premiers êtres.\"}, \"ancestors\": {\"roleOfAncestors\": \"Les midzimu (esprits ancestraux) veillent sur les vivants. Les ancêtres non vivants sont considérés comme membres de la famille actuelle. Le respect des obligations rituelles envers les ancêtres garantit la bonne fortune, les récoltes abondantes et la santé. Le svikiro (médium d'esprit) communique directement avec les midzimu et avec Mwari.\"}, \"totemism\": \"Le système totémique (mitupo) structure les relations sociales, interdit les mariages intratotémiques et préserve l'unité suprafamiliale. Les totems transcendent les divisions géographiques entre groupes shona.\", \"christianity\": {\"specificPractices\": \"Syncrétisme profond entre christianisme (anglicanism, méthodisme, catholicisme implantés depuis le 19e siècle) et croyances shona traditionnelles. Les Manyika catholiques du Mozambique pratiquent la religion traditionnelle à domicile tout en adhérant extérieurement au catholicisme. Les Manyika évangélisés furent pionniers dans l'éducation et l'emploi en période coloniale.\"}, \"sorcery\": \"La sorcellerie (uroi) explique les malheurs inexplicables. Le nganga (devin-guérisseur) est consulté pour identifier les sorciers et proposer des remèdes rituels. Les serments lors des funérailles (If it is I who ate my father — formule contre la sorcellerie) protègent contre les accusations.\"}"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les deux royaumes fondateurs des Manyika sont Mutasa et Makoni, documentés depuis au moins le début du 17e siècle. Le royaume de Mutasa couvrait la région autour de l'actuel Mutare (Umtali), s'étendant dans le Mozambique actuel. Le royaume de Makoni englobait la région de Rusape. En 1695, l'emperor Changamire Dombo (empire Rozvi/Butwa) envahit le riche pays minyika producteur d'or et détruisit le comptoir portugais de Masikwesi, consolidant le contrôle shona du territoire. La British South Africa Company imposa un traité à Mutasa le 14 septembre 1890, marquant le début de la colonisation britannique. Des chefs secondaires — Maranke, Zimunya, Saunyama, Tangwena, VaBarwe — organisaient des parties du territoire.",
+      "relationsWithNeighbors": "Les Manyika commercèrent intensément avec les marchands arabes, indiens et portugais via les ports mozambicains (Sofala, Quelimane) : l'or, l'ivoire et les esclaves étaient échangés contre des étoffes indiennes, des perles et de la porcelaine. Les relations avec les Ndébélé (voisins de l'ouest, groupe nguni) furent conflictuelles au 19e siècle (raids). Les relations avec les groupes shona voisins (Zezuru, Karanga, Korekore) impliquaient des échanges commerciaux et des alliances matrimoniales interclaniques.",
+      "conflictsOrAlliances": "Conquête de Changamire Dombo et destruction du comptoir portugais de Masikwesi (1695). Traité de cession à la BSA Company et début de la dépossession foncière (1890). Soulèvement shona (Première Chimurenga, 1896-1897) : résistance à la colonisation britannique. Deuxième Chimurenga (guerre d'indépendance, 1966-1979) : les Manyika y participèrent activement (Herbert Chitepo, premier avocat africain de Rhodésie, en fut un martyr, assassiné en 1975). Indépendance du Zimbabwe (1980). Au Mozambique : guerre de libération (1964-1974) puis guerre civile FRELIMO/RENAMO (1977-1992) affectant les Manyika du Mozambique.",
+      "diaspora": "La migration rurale-urbaine est intense : Mutare (centre administratif de Manicaland, ~150 000 hab.) est la quatrième ville du Zimbabwe. Des Manyika vivent à Harare, Bulawayo et à Johannesburg (Afrique du Sud, travail dans les mines). La diaspora internationale comprend des communautés au Royaume-Uni, aux États-Unis et dans d'autres pays anglophones. Herbert Chitepo et l'évêque Abel Muzorewa sont les figures historiques nationales les plus célèbres issues de la région."
+    },
+    "demography": {
+      "totalPopulation": 662000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : population mondiale Manyika = 662 000 (Zimbabwe + Mozambique). Manicaland Province Wikipedia : population totale 2,037,762 (recensement 2022), dont les Manyika sont l'un des principaux groupes (mais pas le seul — le terme administratif Manyika englobe des locuteurs d'autres dialectes shona). DOJ/EOIR Manyika Report (2014) : 14% des Shona (= environ 1 million au Zimbabwe si Shona = 77% de la population). Estimation raisonnable pour les Manyika stricts (dialecte ChiManyika, royaumes historiques de Mutasa/Makoni) : 500 000-700 000. ISO 639-3 mxc (Glottolog many1258).",
+      "distributionByCountry": [
+        {
+          "country": "ZWE",
+          "population": 501000,
+          "note": "Province du Manicaland (districts de Mutasa, Makoni, Nyanga, Mutare, Buhera) — Manyika au sens strict du dialecte ChiManyika"
+        },
+        {
+          "country": "MOZ",
+          "population": 161000,
+          "note": "Province de Manica (Mozambique), zones intérieures au sud du fleuve Púnguè — Joshua Project 2024 : 161 000"
+        }
+      ]
+    },
+    "sources": [
+      "Encyclopedia Britannica — Manyika. https://www.britannica.com/topic/Manyika",
+      "101 Last Tribes — Manyika people. https://www.101lasttribes.com/tribes/manyika.html",
+      "Joshua Project — Manyika in Mozambique. https://joshuaproject.net/people_groups/13520/MZ",
+      "Wikipedia EN — Manicaland Province. https://en.wikipedia.org/wiki/Manicaland_Province",
+      "University of Missouri — Manyika, Shona people of Zimbabwe (PDF). https://dice.missouri.edu/assets/docs/niger-congo/Manyinka.pdf",
+      "US Department of Justice — Manyika-Shona, Zimbabwe (PDF). https://www.justice.gov/sites/default/files/eoir/legacy/2014/01/06/manyika%20.pdf",
+      "Glottolog — Manyika (many1258). https://glottolog.org/resource/languoid/id/many1258",
+      "Seed Gallery New York — Manyika. https://www.seedgallerynewyork.com/glossary/manyika"
+    ]
+  }
+}

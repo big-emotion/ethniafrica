@@ -1,0 +1,101 @@
+{
+  "id": "FLG_BENOUECONGO",
+  "nameFr": "Bénoué-Congo",
+  "nameEn": "Benue–Congo",
+  "content": {
+    "decolonialHeader": {
+      "whyProblematic": " PREUVES - Auteurs coloniaux problématiques :",
+      "selfAppellation": "Benue–Congo",
+      "contemporaryUsage": " Position dans la classification linguistique :",
+      "historicalAppellations": "Benue–Congo",
+      "originOfHistoricalTerm": " Le terme « Western Sudanese » a été introduit par l'ethnologue allemand Diedrich Westermann en 1927 dans son ouvrage *Die westlichen Sudansprachen und ihre Beziehungen zum Bantu* (Les langues soudanaises occidentales et leurs relations avec le bantou). Cette classification a été reprise et affinée par Joseph H. Greenberg dans les années 1940-1950, consolidant le terme « Benue-Congo » en 1963 dans *The Languages of Africa* (Indiana University Press). D'OÙ : Le terme dérive de deux repères géographiques : la rivière Bénoué (Benue River), affluent du Niger qui prend sa source dans le massif de l'Adamaoua au Cameroun et traverse le Nigeria jusqu'à Lokoja, et le fleuve Congo, deuxième plus long fleuve d'Afrique traversant l'Afrique centrale."
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Précision régionale :",
+      "numberOfLanguages": 900,
+      "totalSpeakers": 500000000
+    },
+    "associatedPeoples": [
+      {
+        "name": "Yoruba (PPL_YORUBA) - Nigeria, Bénin, Togo",
+        "peopleId": null
+      },
+      {
+        "name": "Igbo (PPL_IGBO) - Nigeria",
+        "peopleId": null
+      },
+      {
+        "name": "Edo / Bini (PPL_EDO) - Nigeria",
+        "peopleId": null
+      },
+      {
+        "name": "Tiv (PPL_TIV) - Nigeria, Cameroun",
+        "peopleId": null
+      },
+      {
+        "name": "Efik/Ibibio (PPL_EFIK) - Nigeria",
+        "peopleId": null
+      },
+      {
+        "name": "Swahili (PPL_SWAHILI) - Tanzanie, Kenya, Ouganda, RDC",
+        "peopleId": null
+      },
+      {
+        "name": "Lingala (PPL_LINGALA) - RDC, Congo-Brazzaville",
+        "peopleId": null
+      },
+      {
+        "name": "Kikongo (PPL_KIKONGO) - RDC, Angola, Congo-Brazzaville",
+        "peopleId": null
+      },
+      {
+        "name": "Zoulou (PPL_ZULU) - Afrique du Sud",
+        "peopleId": null
+      },
+      {
+        "name": "Xhosa (PPL_XHOSA) - Afrique du Sud",
+        "peopleId": null
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " OBLIGATOIRE - Exemples CONCRETS de structures : Les langues Bénoué-Congo sont en majorité SVO (Sujet-Verbe-Objet), tonales et présentent des systèmes de classes nominales variables. Exemple 1 - Yoruba (structure SVO + tons) : - *Mo nà ọmọ* \"Je frappe l'enfant\" vers *Mo* (je, ton haut) + *nà* (frapper, ton haut) + *ọmọ* (enfant, tons bas-moyen)",
+      "phonologicalFeatures": " Détails précis (sons, tonals, traits distinctifs) : Systèmes tonals :",
+      "relationsWithNeighbors": " Exemples concrets d'emprunts avec mots précis : Emprunts à l'arabe (via contacts commerciaux, islamisation) :",
+      "keyInnovations": " Traits spécifiques avec exemples : Innovation 1 - Expansion du système de classes nominales bantoues : Les langues bantoues utilisent des préfixes ajoutés devant les noms pour indiquer leur catégorie sémantique (humain, plante, objet, etc.) et leur nombre (singulier/pluriel). C'est comparable au genre masculin/féminin en français, mais beaucoup plus développé : le proto-bantou avait environ 20 classes nominales (Guthrie, 1948). Comment ça fonctionne - Exemples en swahili : Classe 1/2 (humains) :"
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " QUI a classé ? Citer linguistes/archéologues/généticiens avec œuvres et dates. Présenter TOUTES les théories :",
+      "emergencePeriod": " QUAND en deux temporalités : (1) émergence historique de la FLG, (2) date de classification académique : (1) Émergence historique de la famille linguistique :",
+      "diffusion": " Afficher l'ensemble des avis disponibles - Pluralité des perspectives : Théorie 1 - Expansion graduelle depuis le foyer Niger-Bénoué (Greenberg, 1963) :",
+      "contactZones": " Répondre à \"OÙ\" - Localiser géographiquement (régions, villes, côtes, routes précises). Zones de métissage linguistique spécifiques : Zone 1 - Vallée de la Bénoué (Nigeria-Cameroun) :",
+      "majorEvents": " Chronologie avec dates précises :"
+    },
+    "distribution": {
+      "totalSpeakers": 500000000,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press.",
+      "Williamson, Kay (1989) – \"Benue–Congo Overview\", dans Bendor-Samuel, J. & Hartell, R. L. (éds.), *The Niger–Congo Languages – A classification and description of Africa's largest language family*. University Press of America, pp. 246-266.",
+      "Guthrie, Malcolm (1948) – *The Classification of the Bantu Languages*. Oxford University Press.",
+      "Maho, Jouni F. (2009) – *New Updated Guthrie List Online*. [https://goto.glottolog.org/resource/languoid/id/narr1281](https://goto.glottolog.org/resource/languoid/id/narr1281)",
+      "Blench, Roger M. (2012) – *Niger-Congo: an alternative view*. Working paper. [https://www.academia.edu/1974569/Niger_Congo_an_alternative_view](https://www.academia.edu/1974569/Niger_Congo_an_alternative_view)",
+      "Vansina, Jan (1990) – *Paths in the Rainforests: Toward a History of Political Tradition in Equatorial Africa*. University of Wisconsin Press.",
+      "Ehret, Christopher (1998) – *An African Classical Age: Eastern and Southern Africa in World History, 1000 B.C. to A.D. 400*. University of Virginia Press.",
+      "Phillipson, David W. (2005) – *African Archaeology* (3e édition). Cambridge University Press.",
+      "Nurse, Derek & Philippson, Gérard (2003) – *The Bantu Languages*. Routledge.",
+      "Hyman, Larry M. (2007) – \"Niger-Congo verb extensions: overview and discussion\", dans Payne, D. L. & Peña, J. (éds.), *Selected Proceedings of the 37th Annual Conference on African Linguistics*. Cascadilla Proceedings Project, pp. 149-163.",
+      "Good, Jeff (2020) – \"Niger-Congo, with a special focus on Benue-Congo\", dans Vossen, R. & Dimmendaal, G. J. (éds.), *The Oxford Handbook of African Languages*. Oxford University Press.",
+      "Djité, Paulin G. (1993) – *The Sociolinguistics of Development in Africa*. Multilingual Matters.",
+      "Prah, Kwesi Kwaa (1998) – *Between Distinction and Extinction: The Harmonisation and Standardisation of African Languages*. Centre for Advanced Studies of African Society (CASAS).",
+      "Watters, John R. (éd.) (2003) – *East Benue-Congo: Nouns, pronouns, and verbs*. Language Science Press. [https://langsci-press.org/catalog/book/190](https://langsci-press.org/catalog/book/190)",
+      "Bendor-Samuel, John T. (2025) – \"Benue-Congo languages\", *Encyclopædia Britannica*. [https://www.britannica.com/topic/Benue-Congo-languages](https://www.britannica.com/topic/Benue-Congo-languages)",
+      "SIL International (2025) – *Ethnologue: Languages of the World* (25e édition). [https://www.ethnologue.com](https://www.ethnologue.com)",
+      "Glottolog (2025) – \"Benue-Congo\". [https://glottolog.org/resource/languoid/id/benu1247](https://glottolog.org/resource/languoid/id/benu1247)",
+      "UNFPA (2025) – *World Population Dashboard*. [https://www.unfpa.org/data/world-population-dashboard](https://www.unfpa.org/data/world-population-dashboard)",
+      "CIA (2025) – *The World Factbook*. [https://www.cia.gov/the-world-factbook/](https://www.cia.gov/the-world-factbook/)",
+      "Statistics South Africa (2025) – *Census 2022 Main Results*. [http://www.statssa.gov.za/](http://www.statssa.gov.za/)"
+    ]
+  }
+}

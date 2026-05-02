@@ -1,0 +1,130 @@
+{
+  "id": "PPL_KHOZA_FAUXEX",
+  "nameMain": "Xhosa",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["ZAF", "ZWE", "LSO", "BWA", "NAM"],
+  "content": {
+    "appellations": {
+      "mainName": "Xhosa",
+      "selfAppellation": "AmaXhosa",
+      "exonyms": [
+        "Khosa (forme ancienne, orthographe coloniale)",
+        "Xosa (ancienne orthographe officielle sud-africaine)",
+        "Red Blanket People (surnom ethnographique anglophone)"
+      ],
+      "originOfExonyms": "Le terme Xhosa derive de la langue khoisan et designe le peuple fondateur du royaume nguni. L'orthographe Khosa ou Xosa fut utilisee par les administrateurs coloniaux europeens avant la standardisation de l'isiXhosa. L'appellation Red Blanket People provient de l'usage traditionnel de couvertures teintes a l'ocre rouge.",
+      "whyProblematic": "Le terme Khoza utilise dans l'intitule de cette fiche est un faux exonyme : il ne designe pas un peuple distinct mais resulte d'une transcription erronee ou d'une confusion orthographique avec AmaXhosa. La denomination correcte est Xhosa ou AmaXhosa.",
+      "contemporaryUsage": "Le terme AmaXhosa est l'appellation propre contemporaine. Xhosa est utilise en anglais et en afrikaans. La langue se nomme isiXhosa. Depuis 1994, l'isiXhosa est l'une des onze langues officielles de l'Afrique du Sud.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou nguni meridional (Zunda)",
+      "historicalRegion": "Cap oriental (Eastern Cape) — region du fleuve Kei, Transkei et Ciskei historiques",
+      "currentCountries": ["ZAF", "ZWE", "LSO", "BWA", "NAM"]
+    },
+    "ethnicities": [
+      "Gcaleka (clan royal, Grande Place sur la riviere Mbashe)",
+      "Ngqika (Rharhabe, branche occidentale, cap oriental)",
+      "Ndlambe (branche du cap oriental)",
+      "Thembu (confederation proche, cap oriental, region de Mthatha)",
+      "Pondo (Mpondo, littoral oriental, region de Lusikisiki)",
+      "Bomvana (cote est entre Mthatha et Mbashe)",
+      "Mpondomise (confederation historique du cap oriental)",
+      "Xesibe (sous-groupe oriental)",
+      "AmaMfengu (groupes assimiles apres le Mfecane — amaBhaca, amaHlubi, amaZizi)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les AmaXhosa descendent de clans nguni qui migrerent depuis l'Afrique orientale et centrale (groupe bantou) vers l'Afrique australe. Les donnees archeologiques attestent leur presence dans la region du Cap oriental des le 7e siecle apr. J.-C. Ils font partie des Nguni meridionaux, sous-groupe du grand ensemble bantou. Leur tradition orale mentionne une installation ancienne appelee Eluhlangeni en Afrique de l'Est, avant la migration vers le sud. En arrivant dans la region, ils absorberent progressivement des populations khoisan et sotho.",
+      "formationPeriod": "Le Royaume xhosa fut fonde avant le 15e siecle par Tshawe, qui unifia les clans nguni du cap oriental en battant les groupes Cirha et Jwarha avec l'aide du clan amaNgwevu. Les clans independants et les chefferies khoekhoentrerent dans la sphere d'influence xhosa comme tributaires des amaTshawe. L'identite xhosa unifiee se consolida au cours des guerres frontieres des 18e et 19e siecles contre les colons europeens.",
+      "migrationRoutes": [
+        "Migration bantou depuis l'Afrique centrale (region lac Victoria) vers l'Afrique australe au premier millenaire de l'ere commune",
+        "Progression vers le sud le long de la cote est de l'Afrique jusqu'au Cap oriental",
+        "Absorption et integration des groupes khoikhoi (Inqua, Giqwa, amaNgqosini) et sotho dans la sphere culturelle xhosa"
+      ],
+      "historicalSettlementZones": [
+        "Cap oriental (Eastern Cape) — region du fleuve Kei, Transkei et Ciskei historiques",
+        "Littoral est de l'Afrique du Sud entre Port Elizabeth et la riviere Umzimkhulu",
+        "Regions de Mthatha, East London, King William's Town",
+        "Zimbabwe (communaute mfengu implantee au debut du 20e siecle pour les mines)"
+      ],
+      "unificationsOrDivisions": "Le Royaume xhosa se scinda au 18e siecle entre les branches Gcaleka (cap oriental, chef supreme) et Rharhabe-Ngqika (cap occidental). Cette division affaiblit la resistance face a la colonisation britannique. Les guerres de frontiere (1779-1879) mobiliserent tantot des alliances inter-clans, tantot des rivalites internes exploitees par les Britanniques. La catastrophe des massacres de betail (1856-1858), provoquee par la prophetesse Nongqawuse, disloqua profondement la societe xhosa.",
+      "externalInfluences": "Contact avec les Khoikhoi et les San (absorption culturelle, linguistique — adoption des consonnes clics de l'isiXhosa). Neuf guerres frontieres contre les colons neerlandais puis britanniques (1779-1879). Influence chretienne majeure depuis le 19e siecle (missions de Glasgow et de Londres). Apartheid (1948-1994) : creation des bantoustans de Transkei et du Ciskei. Mouvement Mfecane dans les annees 1820 : arrivee des refugies des guerres zouloues, assimiles comme AmaMfengu.",
+      "majorHistoricalEvents": "1652 : installation europeenne au Cap, debut de la pression vers l'est. 1779 : premiere guerre de frontiere. 1820 : Mfecane, absorption des AmaMfengu. 1856-1858 : massacre des betails et desastre national. 1879 : chute du dernier bastion nguni sous domination coloniale. 1912 : fondation du Congres national africain (ANC), avec forte representation xhosa (Nelson Mandela, Walter Sisulu, Oliver Tambo). 1948-1994 : apartheid et bantoustans de Transkei et Ciskei. 1994 : reintegration des bantoustans dans la province du Cap oriental."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe xhosa est organisee en chefferies (inkosi) hereditaires. Le chef supreme (inkosi enkulu) est issu du clan royal amaTshawe (branche Gcaleka). Chaque sous-chefferie dispose d'un inkosi local assiste d'un conseil d'anciens (ibandla). Le systeme politique est decentralise : les chefs des sous-chefferies reconnaissent l'autorite du chef supreme en matiere ceremonielle et judiciaire, mais gèrent leurs affaires interieures. Les chefs n'avaient pas le pouvoir d'un monarque absolu.",
+      "clanOrganization": "La societe xhosa est structuree en clans (isiduko) identifies par un nom clanique hereditaire. Le nom de clan (isiduko) est central a l'identite et interdit les mariages entre membres du meme clan. Les clans sont patrilineaires. Les principaux clans incluent amaTshawe (royal), amaGcaleka, amaNgqika, amaNdlambe, amaThembu, amaPondo, amaBomvana.",
+      "ageClassSystems": "Les jeunes hommes passent par une initiation formelle (ulwaluko) qui marque le passage a l'age adulte. Les initie (abakhwetha) forment un groupe d'age cohorte qui partagent des liens particuliers. Apres l'initiation, ils deviennent amakrwala (jeunes hommes accomplis) puis progressivement integrent le statut d'anciens.",
+      "roleOfLineages": "Les lignages patrilineaires (intloko) determinent l'identite, les droits fonciers, les alliances matrimoniales et le statut social. Le lobola (bridewealth en betail ou en argent) scelle les alliances entre lignages. Le nom clanique est transmis par le pere et interdit les mariages entre proches du meme clan.",
+      "religiousAuthority": "Les devins (amagqirha) jouent un role central comme intermediaires avec les ancetres. Les chefs religieux traditionnels co-existent avec les pasteurs chretiens (forte influence depuis le 19e siecle). Aujourd'hui, la majorite des Xhosa sont chretiens, souvent dans des Eglises africaines independantes combinant christianisme et croyances ancestrales."
+    },
+    "languages": {
+      "mainLanguage": "isiXhosa",
+      "isoCodes": ["xho"],
+      "dialects": [
+        "Gcaleka (dialecte du chef supreme, reference de prestige)",
+        "Ngqika (Gaika) — dialecte occidental, base de la langue standard",
+        "Ndlambe",
+        "Thembu",
+        "Bomvana",
+        "Mpondo (Pondo)",
+        "Mpondomise",
+        "Xesibe",
+        "Bhaca"
+      ],
+      "vehicularRole": "L'isiXhosa est l'une des onze langues officielles de l'Afrique du Sud depuis 1994 et l'une des deux langues officielles du Zimbabwe. Elle est parlee par environ 8 a 10 millions de locuteurs en Afrique du Sud (environ 16 % de la population). L'isiXhosa est langue d'enseignement dans le cap oriental et langue de media. Elle se distingue par ses consonnes clics (15 clics distincts), heritees du contact avec les langues khoisan."
+    },
+    "culture": {
+      "majorRites": "Initiation masculine (ulwaluko) : rite de passage le plus important, marquant l'entree dans l'age adulte. Il comprend la circoncision (par un specialiste, ingcibi), une periode de reclusion de 2 a 3 semaines dans une hutte d'initiation (ibhoma), l'enseignement des responsabilites d'homme par les anciens (ikhankatha), puis la ceremonie de fin (umgidi) avec sacrifice d'animaux et remise de cadeaux. Les vetements et la hutte sont brules apres l'emergence. Initiation feminine (intonjane) : periode de reclusion marquant la puberte, sans circoncision, avec transmission du savoir feminin. Imbeleko : ceremonie de naissance introduisant le nouveau-ne aux ancetres par un sacrifice. Umtshato (mariage) : negociation du lobola (bridewealth en betail), ceremonies de reception de la mariee, don d'un nouveau nom a l'epouse.",
+      "symbols": "La perle (ubulawu) est centrale dans la culture xhosa : couleurs (blanc pour la purete et les ancetres, bleu marine, jaune pour la fertilite, vert pour la vie nouvelle, turquoise) et motifs geometriques (triangles, losanges, cercles, chevrons) codifient l'age, le statut matrimonial, le rang et l'etat spirituel. La couverture rouge (umrhamba) teinte a l'ocre rouge est le symbole culturel le plus visible. Les bois sacres (umquma, figuier) servent de lieux de communication avec les ancetres. Le betail (inkomo) symbolise la richesse, le statut et les liens sociaux.",
+      "artsAndMusic": "Musique : percussions (tambourins, hochets), flutes, harpes a bouche, chant collectif et frappes de mains. Chant choral influence par les missions chretiennes du 19e siecle. Le chant Nkosi Sikelel iAfrika (Hymne de l'Afrique du Sud) fut compose en isiXhosa par Enoch Sontonga (1897). La chanteuse Miriam Makeba rendit celebre la chanson Qongqothwane (Click Song). Artisanat : perles (ubulawu), tissage, poterie, sculpture sur bois. Litterature : journaux, romans et pieces de theatre en isiXhosa des le 19e siecle. Cinema : le film U-Carmen eKhayelitsha (opera xhosa, Ours d'or Berlin 2005) et la saga Black Panther (Marvel, 2018) ont contribue a la visibilite mondiale de la culture xhosa.",
+      "spiritualities": "La cosmologie xhosa repose sur la communication constante avec les ancetres (amadlozi ou izinyanya). Les defunts continuent de veiller sur les vivants et doivent etre honores par des offrandes (sacrifice de betail ou de chevres, rituels a la biere umqombothi). Les devins (amagqirha, souvent des femmes) entrent en transe pour transmettre les messages des ancetres. Le concept Ubuntu (je suis parce que nous sommes) structure la vision du monde et de la communaute. Depuis le 19e siecle, la majorite des Xhosa pratiquent un christianisme syncrétique integrant les croyances ancestrales (Eglises africaines independantes, methodistes, anglicans)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume xhosa, fonde avant le 15e siecle par Tshawe, constitua le principal pouvoir politique du cap oriental. Il etait organise en confederation de chefferies sous l'autorite supreme du clan Gcaleka. Les sous-royaumes de Rharhabe et de Ndlambe (18e siecle) constituaient des entites semi-autonomes. Les chefferies Thembu et Pondo etaient alliees sans etre strictement soumises. Le Transkei et le Ciskei furent constitues en bantoustans (territoires autonomes) sous l'apartheid (1963-1994).",
+      "relationsWithNeighbors": "Relations complexes avec les Khoikhoi : absorption progressive, adoption de leurs consonnes clics dans l'isiXhosa, integration de clans khoikhoi. Conflits et alliances avec les Zoulou lors du Mfecane (annees 1820). Neuf guerres de frontiere contre les colons neerlandais puis britanniques (1779-1879). Relations avec les Sotho et les Tswana, notamment dans les zones frontieres du Lesotho et du Botswana.",
+      "conflictsOrAlliances": "Les neuf guerres frontieres du Cap (1779-1879) furent la resistance la plus longue a la colonisation en Afrique australe. Les chefs Sandile et Maqoma dirigerent la resistance au 19e siecle. Le mouvement ANC (fonde en 1912) vit une forte participation xhosa (Nelson Mandela, Walter Sisulu, Oliver Tambo, Thabo Mbeki, Cyril Ramaphosa). La catastrophe du massacre des betails (1856-1858), inspiree par la prophetesse Nongqawuse, entraina la mort de plus de 20 000 personnes et la dispersion de 30 000 autres.",
+      "diaspora": "Les Xhosa sont presents en Afrique du Sud (province du Cap oriental, Cap occidental, Gauteng), au Zimbabwe (communaute mfengu issue des migrations du debut du 20e siecle), au Lesotho (minorite), au Botswana et en Namibie. Une diaspora xhosa se trouve en Europe et en Amerique du Nord, principalement des professionnels et etudiants."
+    },
+    "demography": {
+      "totalPopulation": 10400000,
+      "referenceYear": 2025,
+      "source": "Statistics South Africa (StatsSA) mid-year population estimates 2024 ; Joshua Project 2025 ; Facebook demographic aggregator 2026 ; estimations croisees",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 10110000,
+          "note": "Deuxieme groupe ethnique d'Afrique du Sud (~16 % de la population). Concentration dans le Cap oriental (Eastern Cape), le Cap occidental et Gauteng."
+        },
+        {
+          "country": "ZWE",
+          "population": 200000,
+          "note": "Communaute mfengu et xhosa dans les zones frontalieres et milieux miniers"
+        },
+        {
+          "country": "LSO",
+          "population": 27000,
+          "note": "Minorite dans le Lesotho, principalement zones frontieres"
+        },
+        {
+          "country": "BWA",
+          "population": 13000,
+          "note": "Petite communaute dans le Botswana"
+        },
+        {
+          "country": "NAM",
+          "population": 10000,
+          "note": "Communaute en Namibie"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Xhosa people. https://en.wikipedia.org/wiki/Xhosa_people",
+      "Wikipedia EN — Xhosa language. https://en.wikipedia.org/wiki/Xhosa_language",
+      "South African History Online — Xhosa. https://sahistory.org.za/article/xhosa",
+      "South African Tourism — Xhosa culture, clans and customs. https://www.southafrica.net/za/en/travel/article/xhosa-culture-the-clans-and-customs",
+      "Glottolog — Xhosa (xhos1239). https://glottolog.org/resource/languoid/id/xhos1239",
+      "Statistics South Africa — Mid-year population estimates 2025. https://www.statssa.gov.za/?p=18613",
+      "Joshua Project — Xhosa people group profile. https://joshuaproject.net/people_groups/15436/LT",
+      "KrugerPark.co.za — Xhosa : Red Blanket People. https://www.krugerpark.co.za/africa_xhosa.html"
+    ]
+  }
+}

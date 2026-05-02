@@ -1,0 +1,98 @@
+{
+  "id": "PPL_EWONDO",
+  "nameMain": "Ewondo",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Ewondo",
+      "selfAppellation": "Ewondo",
+      "exonyms": ["Yaunde", "Yaoundé", "Kolo"],
+      "originOfExonyms": "Yaunde ou Yaoundé est le nom donne par les colonisateurs allemands puis français, qui est devenu le nom de la capitale camerounaise. Kolo est la denomination interne plus precise utilisee par le groupe lui-meme. Le terme Ewondo signifie arachide ou la terre en ewondo.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Ewondo est d'usage courant au Cameroun pour designer ce sous-groupe beti. Yaunde reste associe a la capitale mais moins utilise comme designation ethnique.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Macro-groupe Beti-Pahouin (sous-groupe Beti)",
+      "historicalRegion": "Centre du Cameroun (region de Yaoundé, forets equatoriales)",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Ewondo proprement dit (Kolo)",
+      "Bane",
+      "Mvete",
+      "Mvog-Nyenge",
+      "Mbida-Mbane",
+      "Manguissa (en cours d'assimilation)",
+      "Yekaba (en cours d'assimilation)",
+      "Evuzok"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ewondo font partie du grand ensemble Beti-Pahouin, peuple bantou dont l'origine commune remonte a plusieurs siecles. Les traditions orales et les etudes linguistiques placent les ancetres Beti-Pahouin dans les savanes au nord de leur territoire actuel, avant une migration progressive vers les forets equatoriales. Leurs origines remontent probablement au XVe siecle, les migrations vers le centre du Cameroun s'etant intensifiees aux XVIIe-XIXe siecles.",
+      "formationPeriod": "Formation du groupe Ewondo distincte entre le XVIIe et le XIXe siecle, lors de l'occupation des terres au sud de la riviere Sanaga et autour du futur site de Yaoundé.",
+      "migrationRoutes": [
+        "Migration depuis les savanes du nord (rive droite de la Sanaga)",
+        "Penetration progressive dans les forets equatoriales du centre Cameroun",
+        "Installation dans la region de Yaoundé et les departements avoisinants"
+      ],
+      "historicalSettlementZones": [
+        "Region de Yaoundé (Mfoundi)",
+        "Departements de Mefou-et-Afamba et Mefou-et-Akono",
+        "Departement de Nyong-et-So'o et Nyong-et-Mfoumou (region Centre)",
+        "Partie nord du departement Ocean (region Sud)"
+      ],
+      "unificationsOrDivisions": "Les Ewondo constituent l'un des sous-groupes beti les plus importants. Ils ont progressivement assimile des groupes voisins (Manguissa, Yekaba, Evuzok, Bamvele) dans un processus dit de 'Pahouinisation'. La colonisation allemande (1884) puis française a profondement restructure leur organisation sociale.",
+      "externalInfluences": "Traite negriere des XVIe-XIXe siecles. Colonisation allemande (1884-1916), puis française. Evangelisation chretienne intensive: christianisation quasi totale de la population ewondo avant 1939. Missions catholiques et protestantes. Introduction de la culture du cacao et du café comme cultures de rente.",
+      "majorHistoricalEvents": "Installation de la station allemande a Yaoundé en 1889 sur le territoire ewondo. Cette station devient le noyau de la future capitale camerounaise, dont le nom est derive de Ewondo/Yaunde. Resistance partielle puis adaptation a la colonisation. Independance du Cameroun en 1960."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe patrilineaire organisee en villages (ngon) de quelques centaines d'habitants. Plusieurs familles d'un meme lignage vivent ensemble dans le village; plusieurs villages apparentes forment un clan. Chaque clan est place sous l'autorite nominale d'un chef (nkukuma) qui est egalement autorite religieuse. Les decisions importantes se prennent en conseil des anciens.",
+      "clanOrganization": "Organisation clanique patrilineaire strict. Les clans portent generalement le prefixe Mvog- (fils de) suivi du nom d'un ancetre eponyme. Mariage exogamique obligatoire. La famille nucleaire (un homme, ses epouses, leurs enfants) forme la cellule de base.",
+      "ageClassSystems": "Absence de systeme de classes d'age aussi formalise que chez d'autres peuples bantous. L'initiation masculine (So) marquait le passage a l'age adulte et l'integration dans les societes secretes.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique, les droits foncieres, les alliances matrimoniales et les obligations de solidarite. Le neveu uterine (fils de la soeur) entretient un lien traditionnel fort avec son oncle maternel, heritage d'une ancienne composante matrilineaire.",
+      "religiousAuthority": "Le chef de clan (nkukuma) cumule autorite politique et religieuse. Les ancetres sont veneres; les guerisseurs traditionnels (ngengang) jouent un role important. Depuis la christianisation, l'Eglise catholique et les Eglises protestantes ont pris une place centrale dans la vie communautaire."
+    },
+    "languages": {
+      "mainLanguage": "Ewondo (Kolo)",
+      "isoCodes": ["ewo"],
+      "dialects": [
+        "Badjia (Bakjo)",
+        "Bafeuk",
+        "Bemvele (Mvele, Yezum, Yesoum)",
+        "Bane",
+        "Enoah",
+        "Mbida-Bani",
+        "Mvete",
+        "Yabekolo",
+        "Omvang"
+      ],
+      "vehicularRole": "L'ewondo est la langue vehiculaire la plus parlée dans les regions Centre, Sud et Est du Cameroun, servant de lingua franca a Yaoundé et dans les echanges interethniques de toute la moitie sud du pays. Il est egalement utilise dans la litterature et les medias camerounais. L'ewondo est mutellement intelligible avec le bulu, l'eton et le fang. Le français est la langue officielle utilisee dans l'administration et l'education."
+    },
+    "culture": {
+      "majorRites": "Initiation masculine (So): societe secrete d'initiation reservee aux hommes, marquant le passage a l'age adulte par des epreuves et l'acquisition de savoirs traditionnels. Ceremonies de mariage avec versement de la dot (eseng) en biens materiels. Rites funeraires: veillees accompagnees de chants et danses, repas communautaires pour honorer les defunts. Ceremonies agricoles liees aux semailles et aux recoltes. Rituels de guerison faisant appel aux guerisseurs traditionnels (ngengang).",
+      "symbols": "L'arc musical mendzang et le balafon sont des instruments emblematiques de la culture ewondo et beti. Les masques sculptes utilises lors des ceremonies d'initiation et des funerailles. Les motifs geometriques ornamantant les cases traditionnelles. La foret equatoriale comme espace sacre et ressource fondamentale.",
+      "artsAndMusic": "Le bikutsi est le genre musical emblematique des Ewondo et des Beti: danse rythmee ou l'on tape le sol (bi-kut-si signifie frapper la terre en ewondo), originellement pratiquee par les femmes pour exprimer leurs douleurs et frustrations, puis popularisee mondialement depuis les annees 1980-1990 par des artistes comme Les Tetes Brulees, K-Tino et Lady Ponce. Instruments: balafon (xylophone), mendzang (arc musical), tam-tams, mvet. Sculpture sur bois et ivoire, masques cerimonials, art de la natte et de la poterie.",
+      "spiritualities": "Croyance en un etre supreme appele Nzame (Dieu createur). Veneration des ancetres qui intercedent entre les vivants et le divin. Pratique de rites de protection contre les esprits malefiques. Aujourd'hui, la grande majorite des Ewondo se declare chretienne (catholique majoritairement, avec des communautes protestantes et evangeliques significatives). Persistance du recours aux tradipraticiens et aux societes secretes en parallele a la pratique chretienne."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise: organisation en chefferies villageoises independantes. La ville de Yaoundé, capitale du Cameroun, tire son nom des Ewondo (Yaunde en allemand). La station allemande etablie en 1889 sur leurs terres a donne naissance a la capitale moderne.",
+      "relationsWithNeighbors": "Les Ewondo sont apparentes aux autres groupes Beti-Pahouin (Bulu, Eton, Fang, Bane) avec qui ils partagent langue, histoire et culture. Ils ont progressivement assimile plusieurs groupes voisins (Manguissa, Yekaba, Bamvele, Evuzok). Contacts commerciaux avec les peuples cotieres Bassa et Douala.",
+      "conflictsOrAlliances": "Resistance partielle a la penetration coloniale allemande, puis adaptation et collaboration. Participation a la vie politique camerounaise post-independance: parmi les personnalites ewondo notables figurent l'ecrivain Mongo Beti et divers hommes politiques.",
+      "diaspora": "Presence ewondo dans toutes les grandes villes camerounaises, particulierement a Yaoundé dont ils sont le peuple fondateur. Diaspora camerounaise en Europe (France, Belgique), en Amerique du Nord et dans d'autres pays africains."
+    },
+    "demography": {
+      "totalPopulation": 2050000,
+      "referenceYear": 2025,
+      "source": "PeopleGroups.org (2025): environ 2 050 000 Ewondo au Cameroun. Sources complementaires: Languages of Cameroon (Wikipedia): 578 000 locuteurs Ewondo recenses; Ethnologue (ewo). La difference s'explique par la definition ethnique versus linguistique. Estimation 2025 basee sur taux de croissance demographique camerounais.",
+      "distributionByCountry": [{ "country": "CMR", "population": 2050000 }]
+    },
+    "sources": [
+      "Wikipedia EN – Beti-Pahuin peoples: https://en.wikipedia.org/wiki/Beti-Pahuin_peoples",
+      "Wikipedia EN – Ewondo language: https://en.wikipedia.org/wiki/Ewondo_language",
+      "Ethnologue – Ewondo (ewo): https://www.ethnologue.com/language/ewo/",
+      "PeopleGroups.org – Ewondo of Cameroon: https://peoplegroups.org/people_groups/pg012592/",
+      "African Music Library – Bikutsi genre: https://www.africanmusiclibrary.org/genre/Bikutsi",
+      "Glottolog – Beti: https://glottolog.org/resource/languoid/id/beti1250",
+      "101 Last Tribes – Ewondo people: https://www.101lasttribes.com/tribes/ewondo.html"
+    ]
+  }
+}

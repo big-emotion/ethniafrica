@@ -1,0 +1,92 @@
+{
+  "id": "PPL_MANO",
+  "nameMain": "Mano",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["LBR", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Mano",
+      "selfAppellation": "Mah",
+      "exonyms": [
+        "Mano",
+        "Mano-Dan",
+        "Yacouba",
+        "Maan",
+        "Manon",
+        "Mawe",
+        "Maa",
+        "Mah-Yacouba"
+      ],
+      "originOfExonyms": "Le terme Mano est d'usage courant en anglais et dans l'administration liberienne. Yacouba est parfois utilise pour designer indistinctement les Mano et les Dan (Gio) dans la litterature francophone. Mah est l'autonym (endonyme). Maan est la forme utilisee par le Joshua Project.",
+      "whyProblematic": "Les Mano sont souvent confondus avec les Dan/Gio, leurs voisins tres proches linguistiquement et culturellement. Les deux peuples partagent le comte de Nimba (Liberia) et sont parfois regroupes sous l'appellation Mano-Dan ou Yacouba. Voir aussi PPL_GIO/PPL_DAN si existant dans la base.",
+      "contemporaryUsage": "Le terme Mano est officiel au Liberia. En Guinee, le peuple est souvent appele Toma ou Manon dans les sources francophones. Mah est l'endonyme prefere par la communaute elle-meme.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mande du Sud",
+      "historicalRegion": "Nimba County (nord-est du Liberia), prefecture de Nzerekore et Lola (Guinee forestiere)",
+      "currentCountries": ["LBR", "GIN"]
+    },
+    "ethnicities": ["Mano", "Mah"],
+    "origins": {
+      "ancientOrigins": "Les Mano descendent des peuples mande et, selon la tradition orale rapportee par John Gbatu (1919-2010), ont migre depuis la Nubie (actuel Soudan) vers l'empire du Mali antique, ou ils formaient le clan Soumano/Danhou Maghan de la federation Gbara. Ils sont consideres comme les freres aines des Dan (Gio).",
+      "formationPeriod": "Entre le 13e et le 17e siecle, lors des grandes migrations mande vers le sud-ouest. Une premiere vague s'installe en Guinee forestiere (region de Youmou), puis migre vers le Liberia actuel entre le 16e et le 17e siecle.",
+      "migrationRoutes": [
+        "Soudan (Nubie) vers l'empire du Mali",
+        "Empire du Mali vers la Guinee forestiere (region de Youmou)",
+        "Guinee forestiere vers le comte de Nimba (Liberia), fin 19e siecle sous pression de l'occupation francaise"
+      ],
+      "historicalSettlementZones": [
+        "Comte de Nimba (Liberia) : Ganta, Yekepa, Sanniquellie, Scalepea",
+        "Prefecture de Nzerekore, Lola et Yomou (Guinee forestiere)"
+      ],
+      "unificationsOrDivisions": "Les Mano et les Dan (Gio) forment les deux peuples dominants du comte de Nimba. Ils maintiennent des liens culturels et linguistiques etroits tout en conservant des identites distinctes.",
+      "externalInfluences": "Influence mandingue (Kpelle, Mandingo). Presence missionnaire americaine significative au 19e siecle avec le Dr George Way Harley qui fonda la Ganta United Mission. Penetration islamique moderee.",
+      "majorHistoricalEvents": "Participation a la defense de l'empire du Mali contre les envahisseurs nord-africains. Guerre civile liberienne (1989-2003) : les Mano ont ete majeure victimes de violences ethniques ; de nombreux refugies Mano ont ete accueillis en Guinee. Tension inter-ethnique avec les Gio sous le regime Samuel Doe."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe decentralisee organisee en chefferies claniques. Le pouvoir politique repose sur les anciens et les chefs de lignage. Pas de royaute centralisee comparable aux grands empires voisins.",
+      "clanOrganization": "Organisation patrilineaire. Les familles sont organisees en lignages (clans) exogames. Les familles de freres vivent generalement proches les unes des autres (communautes virilocales).",
+      "ageClassSystems": "Systeme d'initiation a deux volets : le Poro pour les hommes et le Sande pour les femmes, societes secretes qui supervisent le passage a l'age adulte.",
+      "roleOfLineages": "Les anciens des lignages jouent un role central dans la resolution des conflits, la gestion des terres et les decisions communautaires.",
+      "religiousAuthority": "L'autorite religieuse traditionnelle est liee aux societes secretes Poro et Sande. Les masques du Poro sont gardes par des ainés initiés. Depuis le 19e siecle, influence chretienne (methodiste, catholique) forte au Liberia ; presence islamique en Guinee."
+    },
+    "languages": {
+      "mainLanguage": "Mah (Mano)",
+      "isoCodes": ["mev"],
+      "dialects": [
+        "Mah du Liberia (Nimba County)",
+        "Maan de Guinee (Nzerekore, Lola, Yomou)"
+      ],
+      "vehicularRole": "La langue mah est une langue vernaculaire locale, utilisee principalement dans le comte de Nimba et la Guinee forestiere. Elle est influencee par le mandingue et la langue gio (dan). Elle n'a pas de role de vehiculaire regional mais est langue de communication inter-Mano. Le mev est une des langues nationales minoritaires du Liberia."
+    },
+    "culture": {
+      "majorRites": "Initiation au Poro (hommes) et au Sande (femmes) : rites de passage a l'age adulte organises dans la foret sacree. Les masques Poro sont centraux dans ces ceremonies. Rites funeraires avec chants et danses pour honorer les defunts. Mariages traditionnels avec dote.",
+      "symbols": "Le masque du Poro, dont la gardienne est une mascarade feminine honoree comme la mere de tous les autres masques. Mt. Nimba (Niemba Tun en mano, signifiant collines ou les jeunes filles glissent et tombent), lieu de culte ancestral dedie au dieu createur Wala/Ya'ala/Nyamba.",
+      "artsAndMusic": "Les Mano sont reputes comme musiciens et artisans accomplis. Danses masquees alliant energie physique et dimension spirituelle. Transmission des traditions par la danse, les masques et les contes (folklores). Les masques drapent souvent du tissu rouge. Le Dr George Way Harley a collecte de nombreux masques Mano au 20e siecle, aujourd'hui conserves dans des musees americains.",
+      "spiritualities": "Religion traditionnelle animiste centree sur le culte du dieu createur Wala/Ya'ala/Nyamba. Societes secretes Poro et Sande comme piliers spirituels. Au Liberia, forte penetration chretienne depuis le 19e siecle (methodiste, catholique). En Guinee, influence islamique plus marquee."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume fonde dans la region de Youmou (Guinee) lors des migrations medievales. Organisation en chefferies decentralisees lors de l'installation au Liberia. Pas de royaute unique centralisee documentee a grande echelle.",
+      "relationsWithNeighbors": "Relations tres etroites avec les Dan (Gio), consideres comme freres cadets. Liens avec les Kono et les Kpelle. Tensions historiques avec les Mandingo qui ont pousse vers le sud les peuples mande, dont les Mano. Relations de voisinage avec les Guerze (Kpelle) au Liberia.",
+      "conflictsOrAlliances": "Alliance historique avec les Dan (Gio). Pendant la guerre civile liberienne, les Mano et les Gio ont ete cibles par les forces du president Samuel Doe (lui-meme Krahn), ce qui a contribue a l'escalade du conflit. Lors du siege de Ganta, des officiers Mano de l'armee guineenne ont apporte leur soutien aux defenseurs liberiens.",
+      "diaspora": "Refuge en Guinee pendant la guerre civile liberienne (1989-2003). Communautes dans les grandes villes du Liberia (Monrovia). Presence en Cote d'Ivoire et dans d'autres pays d'Afrique de l'Ouest."
+    },
+    "demography": {
+      "totalPopulation": 499000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : 377 000 au Liberia, 122 000 en Guinee. Wikipedia estime 472 000 a 510 000. Mano representent environ 7,9 % de la population du Liberia (recensement 2008).",
+      "distributionByCountry": [
+        { "country": "LBR", "population": 377000 },
+        { "country": "GIN", "population": 122000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia – Mano people (EN), 2024 (https://en.wikipedia.org/wiki/Mano_people)",
+      "Wikipedia – Mano language (EN), 2024 (https://en.wikipedia.org/wiki/Mano_language)",
+      "Joshua Project – Maan in Liberia, 2025 (https://joshuaproject.net/people_groups/16121/LI)",
+      "Joshua Project – Maan in Guinea, 2025 (https://joshuaproject.net/people_groups/16121/GV)",
+      "101 Last Tribes – Mano people of Liberia and Guinea (https://www.101lasttribes.com/tribes/mano.html)",
+      "IndexMundi – Liberia ethnic groups, CIA World Factbook 2021 (https://www.indexmundi.com/factbook/compare/guinea.liberia/demographics)",
+      "Scripture Earth – Mano [mev], SIL International (https://www.scriptureearth.org/00i-Scripture_Index.php?iso=mev)"
+    ]
+  }
+}

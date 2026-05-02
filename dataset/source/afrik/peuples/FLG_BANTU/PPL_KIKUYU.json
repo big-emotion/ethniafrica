@@ -1,0 +1,107 @@
+{
+  "id": "PPL_KIKUYU",
+  "nameMain": "Kikuyu",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["KEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Kikuyu",
+      "selfAppellation": "Agikuyu / Gikuyu",
+      "exonyms": [
+        "Kikuyu (emprunt swahili, devenu standard international)",
+        "Gikuyu (forme en langue propre)",
+        "Agikuyu (forme plurielle avec prefixe bantou a-)"
+      ],
+      "originOfExonyms": "Le terme Kikuyu est un emprunt au swahili utilise par les administrateurs britanniques et les explorateurs europeens a partir du XIXe siecle. L'autodenomination Agikuyu (ou Gikuyu) derive du nom de l'ancetre mythique Gikuyu, epoux de Mumbi, parents des neuf clans fondateurs selon la cosmogonie kikuyu.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les deux formes Kikuyu et Gikuyu sont couramment utilisees au Kenya. Gikuyu est prefere dans les contextes culturels et identitaires, Kikuyu dans les usages administratifs et internationaux.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou de la zone E (Thagicu, bantou nord-est)",
+      "historicalRegion": "Hautes terres centrales du Kenya autour du mont Kenya, Murang'a (Metumi), Nyeri (Gaki), Kiambu (Kabete), Kirinyaga",
+      "currentCountries": ["KEN"]
+    },
+    "ethnicities": [
+      "Anjiru (clan de la Grande Kabylie Kikuyu, associe aux chefs)",
+      "Ambui (clan lié aux rituels et à la terre)",
+      "Agaciku (clan du sud, region de Kiambu)",
+      "Aceera / Aacera (clan est, region de Kirinyaga et Embu)",
+      "Angui / Aithiegeni (clan des combattants)",
+      "Angechi / Aithirandũ (clan des pasteurs)",
+      "Ambura / Aakiuru / Eethaga (clan du nord, Nyeri)",
+      "Airumu / Agathiigia (clan des forgerons et artisans)",
+      "Angari / Aithekahuno (clan des negotiants)",
+      "Aicakamuyu (dixieme clan, plus recent)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Agikuyu sont un peuple bantou originaire d'Afrique centre-occidentale (region du Cameroun-Nigeria actuel). Membres du groupe Thagicu, leurs ancetres migrerent vers les hautes terres du mont Kenya aux alentours du IIIe siecle CE. Le coeur culturel kikuyu se consolida dans les hautes terres de Murang'a au XIIIe siecle, avant une expansion vers le sud (Kiambu) aux XVIIIe-XIXe siecles. Des analyses genetiques montrent une ascendance mixte bantou (60%), nilotique (20-25%) et couchitique (32-36%), refletant des siecles de mariages intergroupes.",
+      "formationPeriod": "Consolidation de l'identite kikuyu entre le XIIIe et le XVIIIe siecle, avec des cycles de gouvernement tournant par generations (riika et itwika). Le mythe fondateur decrit Gikuyu et Mumbi comme les ancetres du peuple, installes par Ngai (dieu) a Mukurwe wa Nyagathanga (Murang'a). Chaque generation dura en moyenne 35 ans.",
+      "migrationRoutes": [
+        "Migration bantoue depuis l'Afrique centre-occidentale via le bassin du Congo vers l'Afrique de l'Est",
+        "Installation sur les versants nord du mont Kenya (groupe Thagicu, IIIe s. CE)",
+        "Consolidation dans les hautes terres de Murang'a (XIIIe s.)",
+        "Expansion vers le sud : Kirinyaga, Nyeri, Kiambu (XVIIIe-XIXe s.)"
+      ],
+      "historicalSettlementZones": [
+        "Murang'a County (Metumi, coeur historique et berceau mythique)",
+        "Nyeri County (Gaki, region de Dedan Kimathi)",
+        "Kiambu County (Kabete, porte de Nairobi)",
+        "Kirinyaga County (Gichugu, Ndia)",
+        "Thika (district frontalier avec les Kamba et Embu)"
+      ],
+      "unificationsOrDivisions": "Organisation politique par generations alternantes (itwika) evitant la tyrannie : deux generations se relaient pour gouverner (~35 ans chacune). Neuf clans coexistaient sans frontieres geographiques fixes. Le dernier transfert de pouvoir (itwika) eut lieu en 1898-1899 (Maina cede a Mwangi) ; le suivant fut bloque par l'administration coloniale britannique.",
+      "externalInfluences": "Contacts avec les Maasai (mariages, conflits, adoption culturelle), les Kamba (commerce), les Embu et Meru (liens du groupe Thagicu). Colonisation britannique a partir de 1888 : depossession fonciere des hautes terres, hut tax, interdiction du commerce de l'ivoire et du cafe. Resistance culminant dans le mouvement Mau Mau (1952-1956).",
+      "majorHistoricalEvents": "1888 : premier contact intense avec les Britanniques. 1892 : mort de Waiyaki wa Hinga (chef pro-resistance enterre vivant). 1921 : Harry Thuku fonde la Young Kikuyu Association. 1924 : formation de la Kikuyu Central Association (KCA), Jomo Kenyatta secretaire general. 1952 : debut de la revolte Mau Mau sous Dedan Kimathi. 1956 : capture de Kimathi (21 octobre). 1963 : independance du Kenya, Jomo Kenyatta premier president. Les presidents Kenyatta (1964-1978), Kibaki (2002-2013) et Kenyatta Jr. (2013-2022) sont Kikuyu."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme poly-gerontocratique : chaque clan est gouverne par un conseil d'anciens (kiama) a differents niveaux (famille, village, region). La mbari (lignage etendu) est l'unite politique de base. Le kiama wa athamaki (conseil de chefs) arbitrait les differends interclaniques. Le systeme des generations (riika) organisait des regiments (mariika) successifs charges de la defense et des travaux collectifs. L'itwika (ceremonie de transfert de pouvoir, environ tous les 35 ans) evitait la concentration du pouvoir.",
+      "clanOrganization": "Neuf clans fondateurs (mbari za Mumbi), chacun nomme d'apres une fille de Mumbi, l'ancetre mythique. Les clans ne sont pas geographiquement bornes : des membres de tous les clans vivent cote a cote. Chaque clan avait un leader reconnu mais le pouvoir reposait sur le conseil d'anciens. Les mariages entre clans renforcaient les alliances.",
+      "ageClassSystems": "Le riika (groupe d'initiation) reunit les jeunes circoncis la meme annee ; chaque riika porte un nom commemmorant un evenement contemporain (ex. Ruharo 1894, Kagica 1896). Les mariika s'organisent en regiments (avec liste documentee depuis ~1665 pour Murang'a). Les femmes ont leurs propres initiations annuelles.",
+      "roleOfLineages": "La mbari (lignage patrilineaire etendu) detient les droits fonciers collectifs. Le muramati (administrateur de lignage) gere les terres et arbitre les conflits. Les ancetres sont honores par des libations sous l'arbre sacre (Mugumo/Mukuyu). La transmission de la propriete fonciere est patrilineaire.",
+      "religiousAuthority": "Les anciens du kiama detiennent l'autorite rituelle. Les mundu mugo (devins-guerisseurs) pratiquent la divination et la medecine traditionnelle. Le mont Kenya (Kirinyaga) est le siegde de Ngai (dieu suprême, aussi Mwene-Nyaga) ; les sacrifices etaient offerts sous le Mugumo (figuier sacre). Les abiru etaient des gardiens des traditions eso-teriques royales dans certains sous-groupes."
+    },
+    "languages": {
+      "mainLanguage": "Gikuyu (kikuyu)",
+      "isoCodes": ["kik"],
+      "dialects": [
+        "Gikuyu de Murang'a (Metumi, dialecte central de reference)",
+        "Gikuyu de Nyeri (Gaki, variante nord avec quelques differences lexicales)",
+        "Gikuyu de Kiambu (Kabete, variante sud, influence swahili notable)",
+        "Gikuyu de Kirinyaga (Gichugu et Ndia, variantes orientales)"
+      ],
+      "vehicularRole": "Le gikuyu est langue maternelle de l'ensemble des Agikuyu et compris par les groupes Thagicu voisins (Embu, Mbeere, Tharaka). Le swahili est vehiculaire national et d'enseignement. L'anglais est co-langue officielle du Kenya. Le gikuyu est enseigne comme matiere dans certaines ecoles primaires du centre du Kenya. Des ecrivains majeurs comme Ngugi wa Thiong'o ont plaide pour l'usage litteraire du gikuyu."
+    },
+    "culture": {
+      "majorRites": "La circoncision masculine (irua) est le rite de passage central, integrant les jeunes dans un riika (groupe generationnel). Les filles avaient aussi des rites d'initiation annuels. Le Mburi cia Kiama est la ceremonie de passage a l'âge des anciens (kiama), impliquant sacrifice de chevres et conseils communautaires. L'itwika (tous les ~35 ans) est la grande ceremonie de transfert du pouvoir generationnel, la derniere reconnue datant de 1898-1899. Les funerailles comportent des rites elabores de retour de l'esprit aux ancetres. Les ceremonie agricoles rythment les deux saisons des pluies et des recoltes.",
+      "symbols": "Ngai (dieu createur, resident sur le mont Kenya/Kirinyaga) est la divinite supreme. Le Mugumo (Ficus) est l'arbre sacre de l'alliance entre Ngai et les Agikuyu. Mukurwe wa Nyagathanga (pres de Murang'a) est le site d'origine sacre. Le muthigi (baton de leadership) et l'itimũ (lance de guerre) sont les insignes du pouvoir. Les neuf calabasses representant les neuf filles de Mumbi symbolisent la totalite du peuple.",
+      "artsAndMusic": "La musique traditionnelle comprend le muturiru (flute en ecorce oblique), le gicandi (instrument de divination musicale), le wandindi (arc musical) et les tambours ngoma. Les styles musicaux Kibaata, Nduumo et Muthunguci sont anciens (avant 1888). L'echelle pentatonique est caracteristique. La danse intore (guerriere) et les danses de mariage sont festives. La literature orale est tres riche : contes (Ngano), devinettes (ndai), proverbes. Ngugi wa Thiong'o est le romancier kikuyu le plus celebre (Prix Nobel de litterature frequemment cite). L'artisanat comprend la vannerie, la poterie et les perles.",
+      "spiritualities": "Le systeme religieux traditionnel agikuyu est animiste monothéiste : Ngai (Mwene-Nyaga) est le dieu unique, createur et juge, residant sur le mont Kenya et manifeste dans les orages, les eclairs et les cometes. Les ancetres (ngoma/roho) sont veneres comme intercesseurs. Les sacrifices sous le Mugumo (offrandes de viande, de lait, de biere) maintiennent l'alliance avec Ngai. Les mundu mugo pratiquent magie curative et divination. Aujourd'hui, la grande majorite des Agikuyu sont chretiens (diverses denominations : catholique, presbyterienne PCEA, methodiste, evangelique) avec des formes syncretiques. Une petite communaute judaique (Akorino, ~60 personnes en 2015) existe."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Agikuyu n'ont jamais developpe de monarchie centralisee. Leur systeme poly-gerontocratique (kiama d'anciens a plusieurs niveaux) constituait un gouvernement democratique decentralise. La tradition evoque un roi legendaire Gikuyu depose pour tyrannie, justifiant le systeme alternatif de l'itwika. Des chefs influents (Waiyaki wa Hinga, Kinyanjui wa Gathirimu) emergerent sous la colonisation.",
+      "relationsWithNeighbors": "Intermarriages et commerce intenses avec les Kamba (partenaires commerciaux), les Embu et Meru (proches du groupe Thagicu), les Maasai (echanges et conflits pastoraux). Adoption de pratiques culturelles maasai (circoncision male documentee comme emprunt). Tensions frontieres avec les Ndorobo (Okiek) chasseurs-cueilleurs des forets.",
+      "conflictsOrAlliances": "1952-1956 : revolte Mau Mau (Kenya Land and Freedom Army) sous le commandement militaire de Field Marshal Dedan Kimathi, luttant pour l'independance et la terre. C'est la crise la plus grave jamais affrontee par les colonies africaines britanniques. Dedan Kimathi capture le 21 octobre 1956 et pendu en 1957. L'urgence nationale prit fin en 1959, l'independance suivit en 1963. Les Agikuyu ont domine la vie politique kenyane depuis l'independance.",
+      "diaspora": "Presence kikuyu significative dans toutes les grandes villes kenyanes (Nairobi, Mombasa, Nakuru, Eldoret). Communautes de la diaspora en Europe (Royaume-Uni, Allemagne), en Amerique du Nord (Etats-Unis, Canada) et dans les pays du Golfe."
+    },
+    "demography": {
+      "totalPopulation": 8500000,
+      "referenceYear": 2025,
+      "source": "Recensement kenyan 2019 (Kenya National Bureau of Statistics) : 8 148 668 Agikuyu (17,13% de la population kenyane, premier groupe ethnique du pays). Projection 2025 estimee a ~8,5 millions. Source : KNBS Kenya Population and Housing Census 2019.",
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 8500000,
+          "note": "projection 2025 depuis recensement 2019 (8 148 668), 17% de la population totale"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kikuyu people. https://en.wikipedia.org/wiki/Kikuyu_people",
+      "Ethnologue (SIL) — Gikuyu [kik]. https://www.ethnologue.com/language/kik/",
+      "Kenya National Bureau of Statistics — Kenya Population and Housing Census 2019. https://www.knbs.or.ke/2019-kenya-population-and-housing-census/",
+      "Wikipedia EN — Mau Mau Uprising. https://en.wikipedia.org/wiki/Mau_Mau_uprising",
+      "Wikipedia EN — Jomo Kenyatta. https://en.wikipedia.org/wiki/Jomo_Kenyatta",
+      "Ngugi wa Thiong'o — Decolonising the Mind: The Politics of Language in African Literature. James Currey, 1986.",
+      "Joshua Project — Kikuyu people group. https://joshuaproject.net/people_groups/11523/KE"
+    ]
+  }
+}

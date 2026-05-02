@@ -1,0 +1,169 @@
+# Famille linguistique
+
+## HEADER DÉCOLONIAL (obligatoire)
+
+- Identifiant famille linguistique (FLG_xxxxx) : FLG_TCHADIQUE
+- Lien avec la famille linguistique : Afro-asiatique (FLG_AFROASIATIQUE)
+- Nom français : Tchadique
+- Nom anglais / auto-appellation académique : Chadic
+- Appellation(s) historique(s) :
+  « Hamitique » (désignation raciale coloniale), « Langues tchadiennes », « Sous-groupe tchadique », « Hamito-Chadic » (Meinhof 1912).
+- Origine du terme historique :
+  Le terme « tchadique » (Chadic) provient géographiquement du bassin du lac Tchad, où se concentrent les principales langues du groupe. L'origine académique du terme remonte à la classification afro-asiatique moderne :
+  - **Friedrich Müller (1876)** – *Grundriss der Sprachwissenschaft* : Introduit le terme *Hamito-Semitic* pour décrire une famille composée de deux branches majeures (Semitic et Hamitic incluant Égyptien, Berber, Cushitic), mais **exclut Chadic** du groupe hamitique.
+  - **Karl Richard Lepsius (milieu XIXᵉ siècle)** : Propose que Chadic, notamment Hausa, pourrait appartenir aux langues « hamitiques » en s'appuyant sur des critères typologiques comme le genre grammatical.
+  - **Carl Meinhof (1912)** – *Die Sprachen der Hamiten ("The Languages of the Hamites")* : Étend considérablement le regroupement « hamitique » au-delà des propositions antérieures, incluant de nombreuses langues non liées linguistiquement (Fula, Maasai, Bari, Hadza, etc.). Il divise ce que nous considérons maintenant comme les langues tchadiques : distingue un groupe « Hamito-Chadic » (celles avec genre grammatical) versus un « Chadic non-hamitique ». Ainsi, sous la vision de Meinhof, Chadic était partiellement inclus dans « Hamitic ».
+  - **Joseph H. Greenberg (1940s-1963)** – *Studies in African Linguistic Classification* (1955) et *The Languages of Africa* (1963) : Réexamine rigoureusement les familles linguistiques africaines, abandonne le concept « hamitique » car ce n'était jamais un groupe génétique cohérent. Place **Chadic comme branche primaire** de ce qu'il renomme **Afroasiatic**, aux côtés de **Semitic, Berber, Egyptian, Cushitic**, et plus tard **Omotic**.
+  Le terme « hamitique » est dérivé de **Ham**, traditionnellement un des fils de Noé dans la Bible, considéré comme le progéniteur de certains peuples africains. « Semitic » vient de Shem. Ces termes étaient utilisés dans les théories raciales et ethnolinguistiques du XIXᵉ siècle.
+- Pourquoi le terme pose problème (si applicable) :
+  L'étiquette « hamite » associait à tort des peuples africains à une origine non-africaine prétendument « civilisatrice ». Le regroupement « hamitique » servait une hiérarchie raciale artificielle. **PREUVES** :
+  - **Auteurs coloniaux problématiques** : Carl Meinhof (1912) utilise un mélange de critères linguistiques (genre, typologie) et d'idées extra-linguistiques/racistes (couleur de peau, origine raciale supposée, mode de vie). Il invente la notion de *Nilo-Hamitic* pour certaines langues nilotiques considérées comme mixtes. Ses critères combinent traits linguistiques (genre, typologie) et suppositions raciales/anthropologiques.
+  - **Auteurs locaux et défenseurs de l'africanité** : Marcel Cohen (1924), A. Klingenheben, Dietrich Westermann (années 1920-30) remettent en question la cohérence de « Hamitic » comme unité linguistique. Ils notent que les caractéristiques utilisées (genre, typologie, suppositions raciales/anthropologiques) n'étaient pas des indicateurs fiables de relation génétique. Ainsi, même avant Greenberg, beaucoup doutaient de l'hypothèse hamitique élargie de Meinhof.
+  - **Études génétiques modernes** : Les données génétiques (haplogroupe mitochondrial L3f3, Y-chromosome R-V88, ADN autosomal) montrent que les locuteurs tchadiques sont génétiquement plus proches de leurs voisins nilo-sahariens et nigéro-congolais de la région qu'aux autres branches afro-asiatiques, avec cependant une composante est-africaine (~cushitique) présente. Cela contredit les anciennes associations raciales « hamitiques ».
+  - **Problèmes avec « Hamitic »** : Il était censé représenter un groupe génétique, mais la recherche linguistique montre qu'il n'existe pas de branche « hamitique » *monophylétique* distincte des autres branches afro-asiatiques. Il portait des **connotations raciales**, associant certaines langues/locuteurs à des origines supposées « caucasiennes » vs « négroïdes », ce qui est maintenant considéré comme non scientifique et discriminatoire.
+- Auto-appellation (locuteurs / linguistes contemporains) :
+  Chadic languages / Langues tchadiques. **PREUVES** :
+  - **Termes endonymes avec étymologies** : Le terme « tchadique » (Chadic) est une désignation géographique académique moderne dérivée du bassin du lac Tchad. Les locuteurs individuels utilisent les noms de leurs langues spécifiques (Hausa = *Hausa* ou *Hausanci* en haoussa, Ngas = *Ngas*, Masa = *Masa*, etc.). Il n'existe pas de terme endonyme unique regroupant toutes les langues tchadiques car elles n'ont pas d'identité linguistique collective historique.
+  - **Attestations historiques** : Joseph Greenberg (1963) est le premier à utiliser systématiquement le terme « Chadic » comme branche primaire d'Afroasiatic dans *The Languages of Africa*.
+  - **Usage contemporain** : Le terme est maintenant universellement accepté en linguistique (SIL Ethnologue, Glottolog, UNESCO) et préféré à « hamitique » pour des raisons scientifiques et décoloniales.
+- Usage contemporain (définition moderne de la famille) :
+  Les langues tchadiques constituent l'une des six branches majeures de la famille afro-asiatique (avec Berber, Chadic, Egyptian, Cushitic, Semitic, Omotic). Comprend environ 150–190 langues vivantes réparties à travers le Nigeria septentrional, le Niger méridional, le Tchad, le Cameroun septentrional, et le nord de la République centrafricaine. Démographiquement dominée par le haoussa (~94–120 millions de locuteurs totaux), la famille est subdivisée en quatre branches principales : West Chadic, Central Chadic (Biu-Mandara), Masa, East Chadic.
+- Aire / répartition géographique générale :
+  Nigeria septentrional, Niger méridional, Tchad méridional, Cameroun septentrional, nord de la République centrafricaine. Zone géographique : Bassin du lac Tchad, Sahel et savanes du centre-ouest de l'Afrique.
+- Nombre de langues (estimation) : 150–190
+- Nombre total de locuteurs (estimation) : ~114–150 millions (Hausa : ~94–120 millions ; autres langues tchadiques : ~20–30 millions)
+
+------------------------------------------
+
+## MODÈLE STRUCTURÉ AFRIK
+
+# 1. Informations générales
+- Nom de la famille : Tchadique
+- Branches internes / sous-groupes :
+  - West Chadic (Ouest-tchadique) : Hausa, Bole, Ngas, Gera, Goemai, Karekare, Mwaghavul, Bura-Pabir, Bade, Kanakuru, etc.
+  - Central Chadic (Biu-Mandara) : Massifs Mandara (Cameroun–Nigéria), Hdi, Wandala, Lagwan, Mpade, Maɗa, Buduma, Bidiyo, Gabri, Kera, Malgbe, etc.
+  - Masa : Masa, Musey, etc. (Tchad–Cameroun)
+  - East Chadic : Langues du Tchad oriental et de la RCA septentrionale
+- Aire géographique :
+  Bassin du lac Tchad (Sahel et savanes du centre-ouest de l'Afrique), s'étendant du Nigeria septentrional et du Niger méridional à travers le Tchad méridional et le Cameroun septentrional jusqu'au nord de la République centrafricaine.
+- Nombre de langues :
+  150–190 langues vivantes
+- Nombre total de locuteurs :
+  ~114–150 millions (estimation 2025)
+
+# 2. Peuples associés
+- Peuple 1 : Haoussa / Hausa (PPL_HAUSA)
+- Peuple 2 : Massa (PPL_MASSA)
+- Peuple 3 : Bura (PPL_BURA)
+
+# 3. Caractéristiques linguistiques
+- Typologie linguistique :
+  Langues tonales avec structures verbales complexes et flexion nominale relativement simple. **EXEMPLES CONCRETS** :
+  - **Structure tonale** : La plupart des langues ont deux tons de niveau (Haut /H/ vs Bas /L/), certaines ont trois niveaux et/ou downstep. En Hausa : *màatáa* "femme, épouse" (ton bas-bas) vs *dàawáa* "céréale" (ton bas-haut).
+  - **Structures grammaticales** : Ordre des mots SVO (Sujet-Verbe-Objet) prédominant en Hausa, avec quelques langues Central Chadic conservant VSO dans certains contextes. Exemple Hausa : *Yàroo yàa karàntaa littàafii* "L'enfant a lu le livre" (enfant-sujet-a lu-livre-objet).
+  - **Dérivation verbale** : Système de "grades" verbaux en Hausa avec modifications suffixales et tonales affectant le sens du verbe. Exemple : *gudù* "courir" → *gùdáa* "faire courir" (causatif) ; *karàntaa* "lire" → *karàntáa* "faire lire" (causatif). Reduplication complète et partielle des radicaux verbaux pour exprimer l'intensité, l'action distributive/répétitive : *bugaa* "frapper" → *bugà-bugàa* "frapper à plusieurs reprises".
+  - **Morphologie nominale** : Système à trois termes en Hausa (masculin singulier, féminin singulier, pluriel sans distinction de genre). Le féminin est souvent marqué par des suffixes comme *-aa*, *-iyaa*. Exemples : *yàroo* "garçon" (masc.) → *yàrinyáa* "fille" (fém.) ; pluriel via suffixes ou changements de voyelles/ton : *mutùm* "personne" → *mutánèe* "personnes".
+  - **Complexe Personne-Aspect (PAC)** : En Hausa, le pronom sujet plus un marqueur d'aspect forme une unité précédant le verbe. Exemple : *Hàwwa táa gudù* "Hàwwa a couru / a couru" où *táa* marque le perfectif (aspect accompli).
+  - **Aspect sans temps morphologique** : Hausa est souvent décrit comme *sans temps* morphologiquement : il n'y a pas d'inflexion de temps propre ; plutôt, l'aspect (perfectif vs imperfectif) et le mode sont manifestes. La référence temporelle (passé/futur) vient souvent du contexte ou de particules plutôt que d'affixes de temps.
+- Particularités phonologiques :
+  Systèmes phonologiques riches avec inventaires consonantiques complexes. **DÉTAILS PRÉCIS** :
+  - **Consonnes** : Inventaires riches avec occlusives voisées/sourdes, consonnes glottalisées (implosives ou éjectives), occlusives prénasalisées, fricatives latérales dans de nombreuses langues Central & West Chadic. En Hausa : consonnes implosives /ɓ/ (bilabiale), /ɗ/ (alvéolaire), souvent appelées implosives ; éjectives comme /ƙ/ (velaire éjective), variation selon les dialectes. Contraste entre vélaires simples vs vélaires palatalisées vs vélaires labialisées dans certains environnements vocaliques. Exemple : avant /a/ il y a /cʼaːʖa/, /kʼaːʖa/, /kʷʼaːʖa/, etc.
+  - **Voyelles** : Nombreuses langues tchadiques ont 3–5 voyelles (avec contraste de longueur), certaines ont aussi peu que 2, d'autres jusqu'à 7. Harmonie vocalique rare mais trouvée dans *Dangaléat* et *Tangale*. En Hausa : ~5 qualités vocaliques de base (/i, e, a, o, u/), avec distinction de longueur. Certains dialectes/analyses détaillées montrent des voyelles centrales ou schwa dans des positions restreintes.
+  - **Ton** : Tons haut et bas sont contrastifs, avec phénomènes de downstep. Le ton interagit avec la morphologie. Exemples Hausa : *káràa* "lire" (ton haut) vs *karàntáa* "faire lire" (ton haut-bas-haut avec changement tonal du grade).
+  - **Structure syllabique** : Généralement simple ; prédominance CV(C), peu ou pas de groupes consonantiques, voyelles épenthétiques insérées pour rompre des séquences illicites.
+  - **Processus phonologiques** : **Loi de Klingenheben** affecte les consonnes finales de syllabe : historiquement lénition (adoucissement) selon le matériel suivant ou la structure syllabique. Ex. : les occlusives vélaires en coda peuvent changer en semi-voyelles sous certaines conditions. Affixes intégrant le ton vs non-intégrant le ton : certains affixes en Hausa écrasent le ton de la base (TIA), d'autres préservent le ton (TNI).
+- Liens avec les familles voisines :
+  Influence réciproque avec les langues nilo-sahariennes, les langues nigéro-congolaises voisines, et les autres branches afro-asiatiques. **EXEMPLES CONCRETS D'EMPRUNTS** :
+  - **Avec les langues nilo-sahariennes** : Emprunts au Kanuri (saharien) en Hausa, notamment dans les domaines du commerce, de l'administration, et de la religion. Exemples : *alkáalii* "juge" (du Kanuri) ; *kàsúwaa* "marché" (influence Kanuri). Contacts anciens avec les Songhay, notamment dans les zones de commerce transsaharien.
+  - **Avec les langues nigéro-congolaises** : Interactions avec les peuples bantous du Cameroun, particulièrement dans la zone Biu-Mandara où il y a eu des contacts intensifs. Métissage linguistique dans les zones de contact avec les langues bantoues voisines.
+  - **Avec les langues afro-asiatiques** : Partage de traits typologiques avec Berber (genre grammatical), Cushitic (structures verbales), Semitic (racines consonantaliques), bien que ces similitudes soient héritées du proto-afro-asiatique plutôt que des emprunts récents.
+- Innovations clés :
+  - **Développement ancien de structures tonales complexes** : Systèmes tonaux sophistiqués avec interaction ton-morphologie, downstep, contrastes tonaux lexicaux et grammaticaux.
+  - **Systèmes verbaux dérivationnels multiples** : Système de "grades" verbaux avec modifications morphologiques (suffixes, ton) exprimant causatif, intensif, réfléchi, réciproque, etc. Exemple Hausa : système de grades verbaux où un verbe peut apparaître dans différents grades selon la valence et la sémantique.
+  - **Importance sociolinguistique du haoussa comme lingua franca** : Hausa fonctionne comme langue véhiculaire majeure à travers le Sahel occidental, avec ~47 millions de locuteurs L2 en plus des ~73 millions de locuteurs L1, servant de moyen de communication interethnique et de commerce.
+  - **Système aspectuel sans temps morphologique** : Focus sur l'aspect (perfectif/imperfectif) plutôt que sur le temps, avec référence temporelle gérée contextuellement.
+
+# 4. Histoire et origines
+- Origine probable (théories archéologiques, linguistiques, génétiques) :
+  Plusieurs théories coexistent concernant l'origine géographique et les routes migratoires des locuteurs proto-tchadiques. **QUI A CLASSÉ ? CITATIONS COMPLÈTES** :
+  - **Théorie 1 – Hypothèse Trans-Saharienne / "Nord-Saharienne" (Ehret)** : **Christopher Ehret** propose que les peuples proto-tchadiques ont migré vers le nord à travers le Sahara, puis se sont déplacés vers le sud à travers celui-ci vers le lac Tchad. Dans cette vision, Chadic est le plus étroitement lié à *Berber*. Arguments : Correspond bien avec le modèle de fréquences du Y-chromosome R-V88 s'étendant de l'Afrique du Nord vers la région du Tchad ; soutient une affinité plus élevée entre Chadic et Berber sous certaines reconstructions linguistiques. Source : Ehret dans diverses publications afro-asiatiques.
+  - **Théorie 2 – Hypothèse Inter-Saharienne / "Corridor Wadi Howar" (Blench)** : **Roger Blench** propose que Proto-Chadic provenait d'une "terre-mère Cushitic-Chadic" dans la vallée du Nil ou l'Afrique de l'Est/Nord-Est, se déplaçant vers l'ouest le long du système fluvial antique Wadi Howar vers le lac Tchad. Dans cette vision, Chadic est plus étroitement aligné avec *Cushitic*. Arguments : Corridor archéologique fort (Wadi Howar), vocabulaire partagé entre Cushitic et Chadic, lignée génétique maternelle pointant vers l'Afrique de l'Est ; correspond bien avec la diffusion pastorale au début et milieu de l'Holocène. Sources : Blench (2006) – *Archaeology, Language, and the African Past* ; Blench dans *BMC Evolutionary Biology* (2009).
+  - **Théorie 3 – Classification sans route migratoire spécifique (Newman / Greenberg)** : **Paul Newman** (suivant le cadre de **Joseph Greenberg**) reconnaît Chadic comme branche valide d'Afroasiatic. Newman met l'accent sur la reconstruction linguistique interne (phonologie, morphologie), mais ne s'engage **pas** fortement sur une route migratoire spécifique. Son travail soutient la nature de Chadic au sein d'Afroasiatic sous les cadres de classification greenbergienne. Sources : Newman (1980) – *The Classification of Chadic within Afroasiatic* ; Greenberg (1955) – *Studies in African Linguistic Classification* ; Greenberg (1963) – *The Languages of Africa*.
+  - **ÉVIDENCES ARCHÉOLOGIQUES** : Le corridor **Wadi Howar** est critique dans le modèle de Blench : pendant l'Holocène (~9,500-4,500 YBP), cette ancienne vallée fluviale offrait une route verte de la vallée du Nil vers les bords occidentaux du Sahara, facilitant le mouvement pastoraliste. Styles de poterie ("Leiterband" pottery), présence de pastoralisme (chèvres, moutons), et connexions néolithiques de Khartoum dans ces régions archéologiques sont pris comme preuves soutenant la route migratoire de Blench. Période humide africaine (~10,000-5,000 YBP) : le Sahara était plus vert ; puis la désertification s'intensifia, poussant potentiellement les populations pastorales vers des régions plus habitables comme le lac Tchad.
+  - **ÉVIDENCES GÉNÉTIQUES** : **Y-chromosome, ligne paternelle (R-V88)** : Populaire parmi les locuteurs tchadiques, et certains Berbères de Siwa. Fortement associé aux migrations sahariennes au début et milieu de l'Holocène. Soutient une route nord ou trans-saharienne. Source : Nature (2010). **Haplogroupe mitochondrial L3f3** : Presque exclusivement parmi les populations parlant tchadique dans le bassin du Tchad. TMRCA (temps jusqu'à l'ancêtre commun le plus récent) estimé ~8,000 ± 2,500 ans. Cela correspond aux expansions de l'Holocène depuis l'Afrique de l'Est/Nord-Est. Source : BMC Evolutionary Biology (2009). **ADN autosomal** : Montre que globalement, les locuteurs tchadiques sont génétiquement plus proches des locuteurs nilo-sahariens et nigéro-congolais voisins de la région, moins aux autres branches afro-asiatiques. Cependant, il y a une composante est-africaine (~cushitique) présente. Source : Nature (2010).
+  - **ÉVIDENCES LINGUISTIQUES** : Similitudes (vocabulaire partagé) entre les branches Chadic et Cushitic soutiennent la vue de Blench d'un nœud Cushitic-Chadic proche. Ehret argumente que Chadic partage plus notablement avec Berber, soulignant un sous-groupe Berber-Chadic dans certaines de ses reconstructions.
+  - **CONCLUSION PLURALISTE** : La vérité peut incorporer des parties des deux principales théories (Ehret et Blench). Le modèle **Inter-Saharien / Wadi Howar** (Blench) semble plus cohérent avec les lignées génétiques maternelles et les routes archéologiques. Le modèle d'Ehret a un fort soutien linguistique et du Y-chromosome (surtout via R-V88), donc les deux sont plausibles.
+- Période d'émergence estimée :
+  **DEUX TEMPORALITÉS** :
+  - **(1) Émergence historique de la FLG** : Données génétiques suggèrent que la lignée maternelle L3f3 s'est étendue ~8,000 ans depuis l'Afrique de l'Est vers le bassin du lac Tchad. Données archéologiques du bassin du lac Tchad (ex. pirogue de Dufuna, poterie néolithique, animaux domestiqués) montrent établissement et pastoralisme déjà présents ~7,000-8,000 YBP. Divergence estimée pour la branche interne de Chadic : séparations majeures entre West, Central, East Chadic et Masa ont probablement eu lieu durant l'Holocène moyen, il y a ~5,000-7,000 ans.
+  - **(2) Date de classification académique** : 1876 (Müller exclut Chadic de Hamitic) ; 1912 (Meinhof inclut partiellement Chadic dans Hamitic) ; 1955-1963 (Greenberg place Chadic comme branche primaire d'Afroasiatic) ; post-1969 (consensus moderne sur six branches d'Afroasiatic incluant Chadic).
+- Diffusion des langues (routes migratoires, expansion) :
+  **TOUTES LES THÉORIES DISPONIBLES AVEC AUTEURS** :
+  - **Théorie 1 – Route Nord-Saharienne (Ehret)** : Migration proto-tchadique vers le nord à travers le Sahara, puis mouvement sud vers le lac Tchad. Soutenue par les fréquences du Y-chromosome R-V88 et certaines reconstructions linguistiques Berber-Chadic. Auteur : Christopher Ehret.
+  - **Théorie 2 – Corridor Wadi Howar (Blench)** : Proto-Chadic de la vallée du Nil ou Afrique de l'Est/Nord-Est, mouvement ouest le long du système fluvial Wadi Howar vers le lac Tchad pendant l'Holocène (~9,500-4,500 YBP). Soutenue par données archéologiques (poterie "Leiterband", pastoralisme), vocabulaire partagé Cushitic-Chadic, et lignée maternelle L3f3. Auteur : Roger Blench (2006, 2009).
+  - **Expansion ultérieure du Hausa** : Expansion du Hausa par le commerce transsaharien à partir des cités-États haoussa (Kano, Katsina, Zaria, etc.) à partir du XIVᵉ siècle, diffusion dans les routes du Sahel ouest, islamisation facilitant la propagation comme lingua franca. Facteurs : routes commerciales, propagation de l'Islam, rôle des États haoussa, migration urbaine.
+- Ruptures historiques (séparations, fusions) :
+  - **Divergences internes de Chadic** : Séparation entre West Chadic, Central Chadic (Biu-Mandara), East Chadic, et Masa, estimée il y a ~5,000-7,000 ans (Holocène moyen). Division reflétée dans les différences phonologiques, morphologiques, et lexicales entre les branches.
+  - **Déplacement de populations** : Interactions historiques entre locuteurs Chadic et Kanuri (saharien) dans la région du lac Tchad, avec déplacements et assimilations réciproques. Conflits et alliances entre États haoussa et empires Kanuri (Bornu).
+  - **Islamisation des cités-États haoussa** : Conversion à l'Islam à partir du XIVᵉ siècle, influençant les pratiques culturelles, le vocabulaire (emprunts arabes), et facilitant l'expansion du Hausa comme langue du commerce et de l'éducation islamique.
+  - **Pressions coloniales françaises et britanniques** : Colonisation du XIXᵉ-XXᵉ siècle créant des divisions administratives affectant les communautés linguistiques, introduction du français et de l'anglais comme langues officielles, mais Hausa conservant son statut de lingua franca régionale.
+- Zones de contact et métissages :
+  **RÉPONDRE À "OÙ" – LOCALISER GÉOGRAPHIQUEMENT** :
+  - **Contacts anciens avec les Songhay** : Zones de commerce transsaharien, routes commerciales reliant le bassin du Niger (Songhay) au bassin du lac Tchad (Haoussa), villes marchandes du Sahel central (Gao, Tombouctou, Agadez, Kano, Katsina). Métissage linguistique dans le vocabulaire commercial et administratif.
+  - **Métissage linguistique avec le Kanuri** : Région du lac Tchad (Bornu, nord-est du Nigeria, sud-est du Niger, ouest du Tchad), où les locuteurs Chadic et Kanuri ont coexisté et interagi pendant des siècles. Exemples d'emprunts : *alkáalii* "juge" (Kanuri → Hausa), *kàsúwaa* "marché" (influence Kanuri).
+  - **Interactions avec les peuples bantous du Cameroun (Biu-Mandara)** : Massifs Mandara (Cameroun septentrional–Nigeria nord-est), où les langues Central Chadic (Biu-Mandara) sont en contact intensif avec les langues bantoues voisines. Zones de métissage linguistique avec emprunts lexicaux et influences phonologiques réciproques.
+  - **Zones de contact avec langues nilo-sahariennes** : Périphéries sud-est du bassin tchadique (Tchad oriental, nord de la RCA), où certaines langues East Chadic interagissent avec des langues nilo-sahariennes (Sara, Mbay, etc.).
+  - **Contacts avec langues afro-asiatiques voisines** : Nord du Cameroun (contact avec langues tchadiques et langues bantoues), zones frontalières Sahara-Sahel (contact avec langues berbères dans certaines régions du Niger septentrional).
+- Événements historiques majeurs ayant influencé la famille :
+  **CHRONOLOGIE AVEC DATES PRÉCISES** :
+  - **~8,000 YBP** : Expansion de la lignée maternelle L3f3 depuis l'Afrique de l'Est vers le bassin du lac Tchad (données génétiques).
+  - **~7,000-8,000 YBP** : Établissements néolithiques et pastoralisme dans le bassin du lac Tchad (données archéologiques : pirogue de Dufuna, poterie, animaux domestiqués).
+  - **~5,000-7,000 YBP** : Divergence estimée entre branches majeures de Chadic (West, Central, East, Masa) durant l'Holocène moyen.
+  - **~9,500-4,500 YBP** : Période humide africaine rendant passables les routes sahariennes (corridor Wadi Howar selon Blench).
+  - **XIVᵉ siècle** : Islamisation des cités-États haoussa (Kano, Katsina, Zaria, Gobir, etc.), facilitant l'expansion du Hausa comme langue véhiculaire.
+  - **XIVᵉ-XVIᵉ siècles** : Apogée des États haoussa et expansion commerciale transsaharienne.
+  - **XVIᵉ-XIXᵉ siècles** : Interactions et conflits entre États haoussa et empire Kanuri (Bornu).
+  - **XIXᵉ siècle** : Jihad d'Usman dan Fodio (1804-1808), création du califat de Sokoto, consolidation de l'emprise politique et linguistique haoussa dans le nord du Nigeria et sud du Niger.
+  - **Fin XIXᵉ–début XXᵉ siècle** : Colonisation française (Niger, Tchad, Cameroun) et britannique (Nigeria), divisions administratives créant des frontières affectant les communautés linguistiques.
+  - **1876** : Classification de Müller excluant Chadic de Hamitic.
+  - **1912** : Classification de Meinhof incluant partiellement Chadic dans Hamitic.
+  - **1955-1963** : Classification de Greenberg plaçant Chadic comme branche primaire d'Afroasiatic.
+  - **1969** : Omotic séparé de Cushitic, consensus sur six branches d'Afroasiatic.
+  - **2025** : Hausa déclaré langue officielle du Niger (remplaçant le français).
+
+# 5. Répartition géographique et démographie
+- Nombre total de locuteurs :
+  ~114–150 millions (estimation 2025), incluant :
+  - Hausa : ~94–120 millions (L1 : ~73 millions + L2 : ~47 millions selon certaines sources ; ou ~94 millions total selon d'autres estimations 2025)
+  - Autres langues tchadiques : ~20–30 millions (agrégat de nombreuses langues, la plupart petites)
+- Répartition par pays :
+  **CHIFFRES DÉTAILLÉS PAR PAYS AVEC POURCENTAGES. SOURCES PRÉCISES (ONU, UNFPA, CIA, SIL, ANNÉE 2025)** :
+  - **Nigeria** : Hausa ~73 millions de locuteurs L1 (majorité dans les États du nord : Kano, Katsina, Kaduna, Sokoto, Zamfara, Bauchi, Gombe, etc.) ; autres langues tchadiques : ~10–15 millions (Ngas ~300,000, Kamwe ~200,000–300,000, Mwaghavul ~200,000–300,000, Bura-Pabir ~250,000, Bade ~250,000, Gera/Goemai/Karekare ~200,000 chacun, etc.). Hausa L2 : ~20–30 millions additionnels. **Source** : SIL Ethnologue (2025), Wikipedia, Visual Capitalist via Ethnologue (2025).
+  - **Niger** : Hausa parlé par ~53% de la population (estimé ~13–15 millions sur ~27 millions d'habitants en 2025), déclaré langue officielle en 2025 (remplaçant le français). Autres langues tchadiques : populations plus petites le long des frontières méridionales, données détaillées limitées. **Source** : Wikipedia (2025), SIL Ethnologue (2025).
+  - **Tchad** : Environ 123 langues indigènes vivantes, dont 55 afro-asiatiques (Chadic + Semitic). Exemples de langues tchadiques : Buduma ~58,000, Bidiyo ~22,000, Gabri ~35,000, Kera ~65,000, Malgbe ~7,000, Lagwan ~38,500 (Logone River), Mpade ~12,000 (Tchad/Cameroun combinés), etc. Hausa : communauté plus petite (minorité/migrante). **Source** : SIL Ethnologue (2025), Wikipedia.
+  - **Cameroun** : Environ 273 langues indigènes vivantes, dont 57 afro-asiatiques (Chadic + Semitic). Langues tchadiques (excluant Hausa) : Lagwan ~38,500 (Cameroun/Tchad), Mpade ~12,000 (Cameroun/Tchad combinés), Maɗa ~17,000 (Cameroun septentrional), nombreuses autres langues Central Chadic (Biu-Mandara) avec populations variables. Hausa : communauté plus petite (minorité/migrante). **Source** : SIL Ethnologue (2025), Wikipedia.
+  - **République centrafricaine (RCA)** : Populations plus petites de locuteurs tchadiques dans le nord, principalement langues East Chadic, données détaillées limitées. **Source** : SIL Ethnologue (2025).
+
+# 6. Sources
+- [Müller, F.] ([1876]) – *Grundriss der Sprachwissenschaft*. [Vienne]
+- [Meinhof, C.] ([1912]) – *Die Sprachen der Hamiten ("The Languages of the Hamites")*. [Hamburg]
+- [Greenberg, J.H.] ([1955]) – *Studies in African Linguistic Classification*. [New Haven : Compass Publishing Company]
+- [Greenberg, J.H.] ([1963]) – *The Languages of Africa*. [Bloomington : Indiana University Press]
+- [Cohen, M.] ([1924]) – *Le système verbal sémitique et l'expression du temps*. [Paris]
+- [Frajzyngier, Z. & Shay, E.] ([2010]) – *Tense and Aspect in Chadic – A Typological Overview*. Folia Orientalia, Vol. 47. [Cracovie]
+- [Frajzyngier, Z. & Shay, E.] ([2001]) – *A Grammar of Hdi*. Mouton Grammar Library. [Berlin : Mouton de Gruyter]
+- [Frajzyngier, Z. & Shay, E.] ([2012]) – *A Grammar of Wandala*. Mouton Grammar Library 47. [Berlin : De Gruyter]
+- [Frajzyngier, Z. & Shay, E.] ([2003]) – *Explaining Language Structure through Systems Interaction*. Typological Studies in Language 55. [Amsterdam : John Benjamins]
+- [Frajzyngier, Z. & Shay, E.] ([2024]) – *Locative Predications in Chadic Languages: Implications for Semantic Analysis*. [Oxford : Oxford University Press]
+- [Newman, P.] ([1980]) – *The Classification of Chadic within Afroasiatic*. [In : Bender, M.L. (ed.) – Nilo-Saharan Language Studies]
+- [Newman, P.] ([2022]) – *Comprehensive Bibliography of Chadic and Hausa Linguistics* (5ᵉ édition). [Bloomington : Indiana University]
+- [Ehret, C.] – *Reconstructing Proto-Afroasiatic (Proto-Afrasian): Vowels, Tone, Consonants, and Vocabulary*. [Berkeley : University of California Press]
+- [Blench, R.] ([2006]) – *Archaeology, Language, and the African Past*. [Lanham : Altamira Press]
+- [Blench, R. & al.] ([2009]) – *The Wadi Howar Diaspora and its role in the spread of East Sudanic languages from the fourth to the first millennia BCE*. BMC Evolutionary Biology, Vol. 9, Article 63. [https://bmcecolevol.biomedcentral.com/articles/10.1186/1471-2148-9-63]
+- [Cruciani, F. & al.] ([2010]) – *Human Y chromosome R1b1b2-V88 shows a parental trace within the Green Sahara*. European Journal of Human Genetics, Vol. 18. [Nature Publishing Group : https://www.nature.com/articles/ejhg201088]
+- [Tishkoff, S.A. & al.] ([2009]) – *The genetic structure and history of Africans and African Americans*. Science, Vol. 324. [Washington : AAAS]
+- [SIL Ethnologue] ([2025]) – *Languages of Nigeria / Niger / Chad / Cameroon*. [https://www.ethnologue.com/]
+- [Glottolog] ([2025]) – *Chadic Overview*. [https://glottolog.org/resource/languoid/id/chad1250]
+- [Britannica] ([2025]) – *Chadic Languages*. [https://www.britannica.com/topic/Chadic-languages]
+- [Wikipedia] ([2025]) – *Chadic languages / Hausa language*. [https://en.wikipedia.org/wiki/Chadic_languages]
+- [UNFPA] ([2025]) – *West & Central Africa Regional Profiles*. [https://wcaro.unfpa.org/en/overview]

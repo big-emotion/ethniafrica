@@ -1,0 +1,116 @@
+{
+  "id": "PPL_BETE",
+  "nameMain": "Bété",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Bété",
+      "selfAppellation": "Magwé / Bété",
+      "exonyms": [
+        "Magwe",
+        "Tsien",
+        "Bokya",
+        "Kpwe",
+        "Bèti",
+        "Bètia",
+        "Betegnan"
+      ],
+      "originOfExonyms": "Le terme Bété est d'origine locale, sans connotation coloniale négative avérée. Il aurait émergé comme désignation générique des populations travaillant sur les plantations du sud-est de la Côte d'Ivoire à l'époque coloniale. L'appellation Magwé est l'ethnonyme traditionnel le plus ancien, commun avec les peuples Wé dont les Bété partagent un ancêtre mythique nommé Gadi.",
+      "whyProblematic": "La notion d'ethnie Bété est en partie une construction coloniale française, qui a regroupé sous une même étiquette administrative quelque 93 sous-groupes distincts, sans unité politique précoloniale. Des stéréotypes négatifs ont été associés à ce groupe depuis l'ère coloniale.",
+      "contemporaryUsage": "Le terme Bété est universellement accepté et utilisé en Côte d'Ivoire, dans les médias et l'administration. Les locuteurs utilisent aussi les dénominations spécifiques à leur sous-groupe ou région.",
+      "linguisticFamily": "FLG_KROU",
+      "ethnoLinguisticGroup": "Krou occidental",
+      "historicalRegion": "Forêt centre-ouest de la Côte d'Ivoire, boucle du cacao entre Daloa, Gagnoa et Soubré",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": [
+      "Niabré – sous-groupe de la région de Gagnoa",
+      "Logobre – sous-groupe forestier",
+      "Nékédi – groupe à matriclans, région de Gagnoa",
+      "Zédi – groupe occidental à organisation matriclanique",
+      "Zabia – groupe proche des Dida au sud",
+      "Guébié – sous-groupe oriental, victime du génocide de 1970",
+      "Gbadi (Badie) – dialecte central du bété de Gagnoa",
+      "Paccolo – sous-groupe méridional",
+      "Dakua – groupe de la zone Soubré",
+      "Dri – sous-groupe forestier occidental",
+      "Zikobouo, Krihiri, Lossom, Gotibo – sous-groupes secondaires de la région de Daloa",
+      "93 sous-groupes distincts selon la tradition orale et les études ethnographiques"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bété font partie du groupe ethnique Krou, dont l'origine ancienne se situe dans les franges sud du Sahara, avec des migrations progressives vers les forêts guinéo-ivoiriennes entre le 13e et le 15e siècle. Selon la tradition orale, les Bété portent l'ethnonyme Magwé et partagent un ancêtre commun avec les peuples Wé, figure mythique nommée Gadi. Des recherches archéologiques et ethnohistoriques (Téty Antoine Gauze, Jean-Noël Loucou) situent leurs premiers établissements au nord-ouest de leur habitat actuel, entre les fleuves Bandama et Sassandra, vers la fin du Néolithique.",
+      "formationPeriod": "L'identité bété distincte s'est consolidée au cours du 17e siècle, sous la pression de conflits avec d'autres groupes de la savane ouest-soudanienne. Ces tensions les ont poussés à migrer vers les forêts du centre-ouest de la Côte d'Ivoire. La catégorie Bété au sens actuel est en partie une construction de l'administration coloniale française du 19e-20e siècle.",
+      "migrationRoutes": [
+        "Depuis le Sahel et la savane ouest-soudanienne vers le sud, via les vallées des fleuves Bandama et Sassandra",
+        "Premier établissement sur la rive gauche du Sassandra avant dispersion vers les régions de Gagnoa, Daloa, Soubré et Issia",
+        "Vagues successives de migration depuis le nord et l'est, certaines par voie maritime selon la tradition orale"
+      ],
+      "historicalSettlementZones": [
+        "Région de Gagnoa (groupe central, Bété de l'Est)",
+        "Région de Daloa (groupe septentrional)",
+        "Région de Soubré et Buyo (groupe méridional)",
+        "Région d'Issia et Guibéroua (groupe occidental)",
+        "Zone de la boucle du cacao entre Daloa, Soubré et Gagnoa (30 000 km²)"
+      ],
+      "unificationsOrDivisions": "Les Bété n'ont jamais constitué d'entité politique unifiée. Leurs 93 sous-groupes tribaux distincts ont toujours fonctionné de façon autonome, organisés en clans et lignages. La conscience d'une identité bété commune est en grande partie un produit de l'ère coloniale et des décennies post-indépendance.",
+      "externalInfluences": "Contacts historiques avec les Wé (Guéré), les Dida, les Nyabwa et les Guro. Influence artistique des Wé pour les masques. Influence des Akans à Gagnoa (absence de masques dans ce sous-groupe). Colonisation française (résistance jusqu'en 1906-1936). Islamisation partielle dans les années 1970. Immigration massive de Baoulé, Dioula et Voltaïques dans les zones d'agriculture commerciale.",
+      "majorHistoricalEvents": "Résistance acharnée à la pénétration coloniale française jusqu'en 1906, dernière résistance en 1936 avec la figure de Zokou Gbéouli. Mort non élucidée du sénateur Biaka Boda en 1950. Tentative de sécession en 1970 (État d'Éburnie ou République de Guébié), réprimée dans le sang par le gouvernement Houphouët-Boigny (génocide de Guébié). Laurent Gbagbo, Bété de Gagnoa, devient président de la République de Côte d'Ivoire."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en 93 tribus autonomes (clans ou fédérations de lignages). Gouvernance par conseils de sages (anciens) au sein de chaque village, sans chefferie centralisée ni royauté. Système qualifié de démocratie primaire par les chercheurs. Le chef est choisi par la communauté selon la sagesse et les qualités morales, et reste en poste jusqu'à sa mort ou à une faute grave. Culte du bagnon : personnage désigné par critères physiques et moraux, consulté et respecté dans chaque village.",
+      "clanOrganization": "Organisation patrilinéaire prépondérante, avec présence de matriclans (lêlé) chez les Bété de Gagnoa et certains sous-groupes (Zédi, Zabia, Gbadi, Nékédi, Niabré, Paccolo, Guébié). Les matriclans comptent 6 à 8 unités par village, portant les noms d'ancêtres féminines mythiques (Gatoua, Têkpêtoua, Médétoua, Datoua, Litoua, Doutoua). Le mariage entre membres d'un même lêlé est interdit et nécessite un sacrifice animal expiatoire.",
+      "ageClassSystems": "Pas de système de classes d'âge formalisé comparable à d'autres peuples Krou. La transmission des arts et savoirs (masques, danses) s'effectue via des sociétés masculines de danse au niveau villageois, auxquelles tout homme adulte doit adhérer.",
+      "roleOfLineages": "L'héritage est adélphique : les biens d'un homme reviennent d'abord à ses frères et cousins de la même génération ; ses enfants n'héritent qu'après le décès de tous les frères et cousins. Les lignages exercent le contrôle judiciaire et financier au sein de la communauté. L'appartenance au lignage détermine les droits fonciers et l'identité sociale.",
+      "religiousAuthority": "Autorité spirituelle exercée par des prêtres et spécialistes rituels maîtrisant les masques sacrés (Grand Masque ou masque tutélaire de chaque village). Les danseurs masqués assurent la protection du village, la justice coutumière et le passage entre monde des vivants et des esprits."
+    },
+    "languages": {
+      "mainLanguage": "Bété (continuum dialectal krou)",
+      "isoCodes": ["bev", "bet", "byf"],
+      "dialects": [
+        "Bété de Daloa (bev) – dialecte septentrional, région de Daloa",
+        "Bété de Gagnoa / Shyen (byf) – dialecte oriental, le plus parlé",
+        "Bété de Guibéroua / Bété occidental (bet) – dialecte central, similaire au godié",
+        "Bété de Soubré – dialecte méridional",
+        "Bété d'Issia – dialecte occidental",
+        "Bété de Guéyo – dialecte côtier"
+      ],
+      "vehicularRole": "Le bété est la langue de communication inter-bété et véhiculaire dans la zone centre-ouest de la Côte d'Ivoire. Il est utilisé dans les médias locaux (radio, télévision). La langue coexiste avec le français (langue officielle) et le dioula (langue véhiculaire nationale). Certaines variantes sont enseignées dans des écoles primaires de la région."
+    },
+    "culture": {
+      "majorRites": "Rites de passage centrés sur le masque gre ou nyabwa : le Grand Masque (un par village) sert de réceptacle des forces spirituelles de la communauté. Les danses masquées assurent purification et protection du village, funérailles, justice coutumière, accueil de dignitaires et préparation des hommes à la guerre. Les statues féminines (rares, sobres, abstraites) sont utilisées lors de cérémonies commémorant les ancêtres féminins. Des figures à la fertilité exagérée, liées à des appels magico-religieux de fécondité, sont documentées. Le rite de veuvage kuizi (kuizi bhudu) implique une série de phases rituelles strictes incluant l'internement de la veuve et un rite de bénédiction (hunpè) destiné à éloigner l'esprit du défunt.",
+      "symbols": "Le masque gre ou nyabwa est le symbole identitaire et spirituel majeur des Bété : visage grimaçant aux traits distordus, proéminences faciales, front bombé, yeux tubulaires ou globulaires, dents d'animaux sauvages, cornes. La tenue traditionnelle est un pagne tapa ou gloko fabriqué à partir d'écorce d'arbre battue, séchée et teinte. L'écriture bété, alphabet syllabaire de 448 unités-pictogrammes, créé par l'artiste Frédéric Bruly Bouabré, constitue un patrimoine culturel unique pratiqué par des initiés.",
+      "artsAndMusic": "Les Bété sont reconnus pour leur tradition de masques sculptés (gre ou nyabwa) : grimaces expressives, front haut en dôme, nez allongé, yeux saillants, parfois ornés de pigments blancs. La sculpture comprend aussi des figures humaines élégantes, influencées stylistiquement par les Guro voisins. La production artistique est dominée par la danse et le chant, qui régissent les événements sociaux. Rythmes traditionnels caractéristiques : towoulou, alloukou, ziglibithy, gbégbé. Le pepe ou tite est une semaine artistique tournante rassemblant plusieurs villages. Les sociétés de danse masculines constituent un pilier de la socialisation et de la transmission culturelle.",
+      "spiritualities": "La religion traditionnelle bété est fondée sur la croyance en un Dieu créateur suprême nommé Lago (ou Lago Tapé), que l'on n'adore pas directement. Les Bété cherchent l'aide de puissances intermédiaires : esprits des ancêtres, esprits habitant les arbres, les rivières et les rochers. Les rituels visent à maintenir une relation harmonieuse entre la nature et les ancêtres, protecteurs des lignages. Des sacrifices (œufs, poulets, bovins) et des tabous régulent le rapport au sacré. Les masques sont des instruments de médiation entre les vivants et le monde des esprits. Le christianisme (catholicisme majoritaire) s'est largement répandu depuis la colonisation. Une vague d'islamisation a touché certains Bété dans les années 1970."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Bété n'ont pas constitué de royaumes ou chefferies centralisées. Leur organisation en 93 clans autonomes correspond à une forme de démocratie villageoise segmentaire. Des figures de résistance comme Zokou Gbéouli (résistance anticoloniale jusqu'en 1936) ont acquis une stature historique sans fonder d'institution politique durable.",
+      "relationsWithNeighbors": "Relations complexes avec les Wé (Guéré), dont ils partagent l'institution du masque ; avec les Dida (ancêtres communs Magwé) ; avec les Nyabwa, Godiés, Néyo et Bakwé. Relations commerciales et parfois conflictuelles avec les peuples Akan à l'est (Baoulé) et les Mandingues (Dioula) au nord. Sous Houphouët-Boigny, des migrations de Baoulé et Voltaïques dans les terres bété ont généré des tensions durables.",
+      "conflictsOrAlliances": "Résistance farouche à la colonisation française (1906-1936). Mouvement politique de défense des intérêts bété depuis les années 1930. Tentative de sécession (État d'Éburnie, 1970) réprimée par le gouvernement avec de nombreux morts. Soutien massif au Front Populaire Ivoirien (FPI) de Laurent Gbagbo dès 1982. Implication dans les tensions ethniques des crises ivoiriennes de 2002-2011.",
+      "diaspora": "Forte migration des Bété vers Abidjan et les grandes villes ivoiriennes depuis l'époque coloniale. Diaspora en France et dans les pays occidentaux (communauté moins documentée que d'autres groupes ivoiriens). L'identité bété urbaine est distincte de celle rurale et varie selon les sous-groupes."
+    },
+    "demography": {
+      "totalPopulation": 994000,
+      "referenceYear": 2025,
+      "source": "Estimations combinées Joshua Project 2025 (Bété Gagnoa : 394 000 ; Bété Daloa : 300 000 ; Bété Western/Guibéroua : 300 000), confirmées par la Minority Rights Group (environ 410 000 selon données antérieures) et les extrapolations 2025 basées sur le taux de croissance démographique ivoirien (2,4%)",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 994000,
+          "note": "Centre-ouest de la Côte d'Ivoire : régions de Gagnoa, Daloa, Soubré, Issia, Guibéroua, Buyo. Forte présence à Abidjan."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Bété people. https://en.wikipedia.org/wiki/B%C3%A9t%C3%A9_people",
+      "Wikipedia FR – Bétés. https://fr.wikipedia.org/wiki/B%C3%A9t%C3%A9s",
+      "101 Last Tribes – Bete people. https://www.101lasttribes.com/tribes/bete.html",
+      "Joshua Project – Bete, Gagnoa in Côte d'Ivoire. https://joshuaproject.net/people_groups/15357",
+      "Minority Rights Group – Krou in Côte d'Ivoire. https://minorityrights.org/communities/krou/",
+      "Ethnologue – Bété, Daloa (bev). https://www.ethnologue.com/language/bev/",
+      "Ethnologue – Bété, Guiberoua (bet). https://www.ethnologue.com/language/bet/",
+      "Tchetche, Mathieu Obou – L'exemple des effets du KUIZI chez le peuple Bété de Côte d'Ivoire. Revue SLC, 2023. https://www.revue-slc.org/wp-content/uploads/2023/12/29_Mathieu-Obou-TCHETCHE.pdf",
+      "Loucou, Jean-Noël – Histoire de la Côte d'Ivoire. Abidjan : CEDA, 1984."
+    ]
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "id": "PPL_DINKA",
+  "nameMain": "Dinka",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["SSD", "SDN", "UGA", "KEN", "ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Dinka",
+      "selfAppellation": "Jieng (pluriel) / Muonyjang (singulier, signifiant 'homme des hommes' ou 'mari des femmes')",
+      "exonyms": [
+        "Dinka (terme arabe et colonial)",
+        "Denka (variante)",
+        "Jaang (terme utilise par certains voisins)"
+      ],
+      "originOfExonyms": "Le terme Dinka est un exonyme arabe utilise depuis les contacts avec les marchands arabes du nord Soudan. Il fut adopte par les colonisateurs britanniques et egyptiens. Le terme Jieng (pluriel) ou Muonyjang (singulier) est l'endonyme propre. Muonyjang est parfois traduit par 'mari des femmes' ou 'homme parmi les hommes', referant a une identite virile fondatrice.",
+      "whyProblematic": "Le terme Dinka, d'origine arabe externe, est aujourd'hui universellement accepte y compris par les Jieng eux-memes dans les contextes officiels. Toutefois, dans les contextes politiques post-independance (Soudan du Sud depuis 2011), le terme Jieng est de plus en plus utilise dans les revendications identitaires.",
+      "contemporaryUsage": "Dinka est utilise dans tous les contextes internationaux, administratifs et médiatiques. Jieng est prefere par la communaute elle-meme et par les militants de l'identite sud-soudanaise. Le Jieng Council of Elders (Conseil des Anciens Jieng) est une institution politique influente dans le Soudan du Sud post-independance.",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique occidental (sous-groupe Luo-Dinka, aussi appele Nilotiques centraux)",
+      "historicalRegion": "Region du Sudd (marais du Nil Blanc) et Bahr el-Ghazal — Soudan du Sud ; anciennement dans la Gezira (plaine entre Nil Bleu et Nil Blanc)",
+      "currentCountries": ["SSD", "SDN", "UGA", "KEN", "ETH"]
+    },
+    "ethnicities": [
+      "Dinka Rek (Warrap State et parties du Bahr el-Ghazal du Nord et Ouest) — le plus grand groupe",
+      "Dinka Ngok (Abyei et Malakal) — zone disputee entre Soudan du Sud et Soudan du Nord",
+      "Dinka Padang (Unity State) — Upper Nile",
+      "Dinka Bor (Jonglei) — premier groupe affecte lors de la crise 2013",
+      "Dinka Agar (Lakes State)",
+      "Dinka Ciec (Lakes State)",
+      "Dinka Twic (Warrap State)",
+      "Dinka Malual (Bahr el-Ghazal du Nord)",
+      "Dinka Luac (Ruweng, Unity State)",
+      "Dinka Gok (Lakes State)",
+      "Dinka Aliab (Lakes State)",
+      "Dinka Nyarweng, Hol, Twic East (Jonglei)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Dinka sont originaires de la Gezira, la plaine entre le Nil Bleu et le Nil Blanc dans l'actuel Soudan. Dans les temps anciens, cette region etait occupee par le royaume de Kouch ; au Moyen Age par le royaume chretien d'Alodia (empire multiethnique de Nubie). Les Dinka absorberent du vocabulaire nubien lors de leurs interactions avec les populations du pourtour meridional d'Alodia. A partir du 13e siecle, ils migrerent hors de la Gezira sous la pression des razzias d'esclaves, des conflits militaires et des secheresses.",
+      "formationPeriod": "Du 13e au 18e siecle, les Dinka se repandirent depuis la Gezira vers les marecages du Sudd et les zones du Bahr el-Ghazal. Le groupe Damadim, mentionne par des ecrivains arabes medievaux du 13e siecle, vivait au sud-ouest d'Alodia et serait un ancetre possible des Dinka et d'autres Nilotiques occidentaux (Luo). Ces groupes saccagerent la capitale d'Alodia, Soba, vers 1220 apr. J.-C.",
+      "migrationRoutes": [
+        "Migration depuis la Gezira (Nil Bleu-Nil Blanc) vers le sud et l'ouest, du 13e au 18e siecle",
+        "Etablissement dans les marecages du Sudd (Nil Blanc) et les zones de Bahr el-Ghazal",
+        "Expansion vers le nord (Abyei, Kordofan) et l'est (Jonglei) sous la pression demographique"
+      ],
+      "historicalSettlementZones": [
+        "Region du Sudd (marais du Nil Blanc, Soudan du Sud)",
+        "Bahr el-Ghazal (Warrap State, Northern Bahr el-Ghazal, Western Bahr el-Ghazal)",
+        "Unity State (Upper Nile)",
+        "Jonglei State (Bor, Twic East)",
+        "Lakes State",
+        "Region d'Abyei (zone disputee)"
+      ],
+      "unificationsOrDivisions": "Les Dinka ne sont pas unifies politiquement en un seul royaume centralise. Ils sont organises en cieng (communautes territoriales), groupes dialectaux et sous-groupes distincts. La coherence culturelle est maintenue par une langue commune (dialectes mutuellement intelligibles), des pratiques rituelles partagees (camps de betail, sacrifice de boeufs) et une identite Jieng commune. La guerre civile soudanaise (1955-2005) et la guerre civile du Soudan du Sud (2013-2018) ont cree des alliances nouvelles et des fractures profondes.",
+      "externalInfluences": "Contacts et conflits avec les Nuer (voisins de l'est) ; les rivalites Dinka-Nuer sont constitutives de l'histoire nilotique. Razzias arabes d'esclaves depuis le nord depuis le 16e siecle, accentuees au 19e siecle (commerce de l'ivoire et des esclaves). Colonisation british-egyptienne (Condominium, 1899-1956) puis soudanaise. Introduction du christianisme (anglicanism, catholicisme) depuis le 20e siecle. Les guerres civiles soudanaises (1955-1972, 1983-2005) et la guerre civile du Soudan du Sud (2013-2018) ont profondement transforme la societe dinka.",
+      "majorHistoricalEvents": "13e siecle : sac d'Alodia (Soba) par des groupes ancetres Dinka/Luo. 15e-18e siecles : migrations depuis la Gezira vers le Sudd et Bahr el-Ghazal. Fin 19e siecle : introduction des bovins Sanga/Zebu resistants a la secheresse, renforçant l'expansion dinka. 1955-1972 : premiere guerre civile soudanaise. 1983 : debut de la seconde guerre civile soudanaise ; John Garang (Dinka de Bor) fonde le Mouvement de Liberation du Peuple Soudanais (MPLS/SPLA). 2005 : Accord de paix de Naivasha ; John Garang meurt dans un accident d'helicoptere. 2011 : independance du Soudan du Sud ; Salva Kiir Mayardit (Dinka) premier president. Decembre 2013 : demarrage de la guerre civile au Soudan du Sud (Kiir vs Riek Machar) ; environ 2 000 civils Dinka (Hol, Nyarweng, Twic East, Bor) massacres par les forces Machar. Depuis 2018 : accords de paix fragiles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Pas d'autorite politique centralisee. Les clans sont independants mais interrelies. Certains clans fournissent des chefs rituels : les maitres de la lance de peche (beny bith, sing. bany bith), figures de leadership a la fois spirituelles et politiques. Le beny bith assure le leadership en temps de crise, de conflit et lors des rituels de sacrifice. Sa fonction est au moins partiellement hereditaire. Le Jieng Council of Elders est une institution politique moderne influente.",
+      "clanOrganization": "Societe patrilineaire organisee en clans (thok) et communautes territoriales (cieng). Les clans determinent l'identite, les droits de paturage, les alliances matrimoniales et les droits fonciers. Chaque cieng (communaute) est autonome mais liee aux autres par la langue et la culture partagées.",
+      "ageClassSystems": "Systeme de classes d'age : les jeunes hommes deviennent adultes lors de l'initiation (gar), marquant le passage par une scarification du front (lignes paralleles). Ils reçoivent un nom de couleur de vache (ox-color name) lors de cette initiation et rejoignent la classe d'age des guerriers. Les classes d'age structurent la vie sociale, militaire et ceremonielle.",
+      "roleOfLineages": "Les lignages (cieng) sont fondamentaux : ils determinent les droits sur le betail, les terres de paturage et les alliances matrimoniales. La transmission patrilineaire des biens et du statut est la regle. La dot en betail (bride wealth) peut mobiliser l'ensemble du lignage. Le betail est plus stable comme stock de valeur que le grain et constitue la principale forme d'epargne et de richesse.",
+      "religiousAuthority": "Les maitres de la lance de peche (beny bith) combinent autorite spirituelle et politique. Ils president aux sacrifices de boeufs (acte religieux central), medient avec les esprits (jok) et assurent la cohesion communautaire. Les pyramides et tumulus de cendres de boeuf (luak) sont des sites religieux majeurs, dont Luak Deng ('La Mecque' des Dinka et Nuer, associee au grand ancetre Deng Dit)."
+    },
+    "languages": {
+      "mainLanguage": "Dinka (Thong Muonyjang / Thong Jieng)",
+      "isoCodes": ["din"],
+      "dialects": [
+        "Dinka du nord-est / Padang (dip) — Unity State",
+        "Dinka du nord-ouest / Ruweng (diw)",
+        "Dinka centre-sud / Gok, Agar, Ciec (dib)",
+        "Dinka Bor (dks) — Jonglei",
+        "Dinka Rek (dri) — Warrap State, le plus parle"
+      ],
+      "vehicularRole": "Le dinka (code ISO 639-3 : din, macrolangue) est la langue la plus parlee au Soudan du Sud (~40% de la population, soit environ 4,5 millions de locuteurs). Il appartient au groupe Luo des langues nilotiques occidentales. Le dinka est un macrolangue comprenant plusieurs varietes dialectales mutuellement intelligibles. L'anglais est la langue officielle du Soudan du Sud. Le dinka est enseigne dans certaines ecoles communautaires et utilise dans les medias locaux de la region."
+    },
+    "culture": {
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"L'initiation masculine (gar) est le rite de passage le plus important de la societe dinka. Les jeunes hommes (environ 15-20 ans) subissent une scarification frontale : six lignes paralleles horizontales (patterns variant selon les sous-groupes) incisees sur le front, marque permanente de virilite et d'appartenance ethnique. L'initie recoit un nom de couleur de son boeuf de dedication (ox-color name), liant son identite au betail. Les camps de betail (toic) jouent un role fondamental dans les ceremonies d'initiation.\", \"femaleInitiation\": \"Les filles recoivent des scarifications ornementales du front jusqu'a la region du ventre, symboles de fertilite, bonne sante et beaute. Les scarifications feminines signalent le statut matrimonial.\"}, \"marriageRites\": {\"description\": \"Le mariage necessite le paiement d'une dot considerable en betail (bride wealth), mobilisant l'ensemble du lignage. La valeur de la dot reflète le statut social de la famille de la mariee. Les ceremonies de mariage durent plusieurs jours avec danses, chants et sacrifices.\"}, \"funeraryRites\": {\"description\": \"Ceremonies funéraires avec sacrifices de boeufs pour accompagner le defunt. Les pyramides de cendres de boeuf (luak) pres des sépultures des beny bith sont des monuments religieux permanents. Le deuil implique des periodes de restrictions alimentaires et sociales.\"}, \"cattleCampRites\": {\"toic\": \"Migration annuelle en saison seche (decembre-janvier) vers les camps de betail semi-permanents dans les toic (plaines inondables du Nil). Tout le village y participe sauf les vieillards, les malades et les meres allaitantes. Ces camps sont des espaces de socialisation, de competitions de chants et de danses entre jeunes.\"}, \"beerRituals\": {\"description\": \"Rituel de consommation de biere de sorgho (influences nubiennes) lors des semailles et des recoltes, renforçant la cohesion communautaire.\"}}",
+      "symbols": "Le betail (bovins a longues cornes) est le symbole central de l'identite, de la richesse et de la spiritualite dinka. Chaque homme adulte possede un boeuf de dedication dont la couleur inspire son nom ceremonial (ox-color name). Les scarifications frontales (six lignes horizontales) sont le signe visuel distinctif des hommes dinka inities. Nhialic (le ciel, dieu supreme) est le symbole cosmologique supreme. Les pyramides de cendres de boeuf (luak) sont des monuments spirituels sacres.",
+      "artsAndMusic": "{\"music\": {\"description\": \"Musique vocale dominante : chants de betail (cattle songs) ou chaque jeune homme compose et interprete des chants louant son boeuf de dedication. Ces chants narrent la beaute de l'animal, les exploits du proprietaire et ses qualites. Tradition de poesie orale epique (chants de guerre, eloge des ancetres).\"}, \"musicalInstruments\": [\"Tambour (long, cylindrique)\", \"Flute en roseau\", \"Luth a archet (tong)\", \"Hochets\"], \"dances\": \"Danses de saut (leaps) lors des ceremonies d'initiation et des celebrations : les jeunes hommes competent de hauteur de saut, demontrant leur agilite et leur force. Danses collectives lors des camps de betail.\", \"crafts\": \"Colliers en perles et en metal associes aux boeufs. Bracelets d'ivoire et de metaux divers. Confection d'ecuelles et d'instruments a partir de calebasses. Tissage de nattes.\", \"scarification\": \"L'art de la scarification (op) est une forme d'expression corporelle majeure : les motifs du front des hommes (initiation), les motifs ornementaux des femmes, et les marques des boeufs (gar) forment un systeme de signes identitaires complexe.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Nhialic\", \"attributes\": \"Nhialic (litteralement 'celui qui est en haut / le ciel') est le createur supreme et le maitre de l'univers. Il est distant et n'interagit pas directement avec les humains, mais controle la vie, la mort et les elements naturels. Nhialic est le sommet d'un pantheon de dieux et d'esprits.\"}, \"intermediateDivinities\": [{\"name\": \"Deng Dit (Deng le Grand)\", \"role\": \"Divinite / figure ancestrale majeure, fils ou emanation de Nhialic. Deng est associe a la pluie, la fertilite et la maladie. Le site de Luak Deng est le sanctuaire le plus venere des Dinka et Nuer, parfois surnomme leur Mecque. Un tumulus de cendres de boeuf marque son tombeau.\"}, {\"name\": \"Garang\", \"role\": \"Figure divine associee a la lumiere et au tonnerre.\"}, {\"name\": \"Abuk\", \"role\": \"Deesse feminine, maitresse des jardins et de la biere ; epouse de Garang.\"}], \"ancestors\": {\"roleOfAncestors\": \"Les ancetres (notamment les anciens beny bith) sont invoques lors des ceremonies. Leurs tumulus de cendres de boeuf (luak) sont des sites de culte et de pelerinage.\"}, \"spirits\": {\"jok\": \"Jok designe les esprits (bons et mauvais) pouvant intervenir dans la vie des hommes. Les beny bith servent de mediateurs entre les vivants et les jok.\"}, \"christianity\": {\"specificPractices\": \"Nombreuses conversions au christianisme depuis la deuxieme guerre civile (1983-2005) via les missions de la Church Missionary Society et les camps de refugies. Les Lost Boys of Sudan, devenus en majorite chretiens, ont diffuse le christianisme dans la diaspora. Syncretisme frequent avec les croyances traditionnelles.\"}}}"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Dinka n'ont pas constitue de royaumes centralises. Leur organisation politique est fondee sur des chefferies rituelles (beny bith) et des communautes territoriales (cieng) autonomes. Le Jieng Council of Elders est une institution moderne d'autorite morale influente dans le Soudan du Sud post-independance (2011). Sous la Seconde Guerre civile, le SPLA/MPLS (Mouvement de Liberation du Peuple Soudanais) dirige par John Garang (Dinka de Bor) constitua une structure politique et militaire quasi-etatique.",
+      "relationsWithNeighbors": "Les relations Dinka-Nuer sont les plus significatives : fondees sur des siecles de competitions pastorales, de raids de betail et d'alliances rituelles, elles structurent l'histoire politique du Soudan du Sud. Les Dinka entretiennent egalement des relations avec les Shilluk (Anuak du nord), les Murle, les Azande et les Luo du Kenya. Les contacts avec les Arabes du nord Soudan ont ete marques par les razzias d'esclaves (16e-19e siecles) et les conflits politico-militaires de la periode coloniale et post-coloniale.",
+      "conflictsOrAlliances": "Deuxième guerre civile soudanaise (1983-2005) : le SPLA de John Garang (Dinka), mena 21 ans de guerre contre le gouvernement de Khartoum ; des milliers de Dinka et non-Dinka massacres. 2005 : mort de Garang en helicoptere. 2011 : independance du Soudan du Sud. Decembre 2013 : declenchement de la guerre civile soud-soudanaise entre les forces du president Salva Kiir Mayardit (Dinka) et celles de l'ex-vice-president Riek Machar (Nuer). Environ 2 000 civils Dinka furent massacres (Hol, Nyarweng, Twic East, Bor) ; des centaines de milliers deplaces. En 2016-2018 : escalade des violences ; accord de paix revitalise en 2018. La region de Jonglei et Abyei reste instable.",
+      "diaspora": "Les conflits ont produit une importante diaspora dinka. Les Lost Boys of Sudan (enfants deplaces des annees 1980-1990) forment une communaute culturellement visible en Ethiopie, Kenya, Etats-Unis, Canada et Australie. Les Etats-Unis (Minnesota, Nebraska, Nashville, Boston) accueillent la plus grande communaute dinka de diaspora. Des oeuvres litteraires et cinematographiques documentent leur experience : God Grew Tired of Us (film, 2006), What Is the What (Dave Eggers, 2006). Le basketteur Thon Maker (NBA) et la mannequin Alek Wek sont des figures de la diaspora dinka connues internationalement."
+    },
+    "demography": {
+      "totalPopulation": 4500000,
+      "referenceYear": 2025,
+      "source": "Recensement soudanais 2008 : environ 4,5 millions (40% de la population du Soudan du Sud). CIA World Factbook — South Sudan. UNFPA South Sudan. SIL Ethnologue — Dinka macrolanguage (din, 2024). Les Dinka constituent le plus grand groupe ethnique du Soudan du Sud.",
+      "distributionByCountry": [
+        {
+          "country": "SSD",
+          "population": 4300000,
+          "note": "Warrap State, Bahr el-Ghazal, Unity State, Jonglei, Lakes State, region d'Abyei"
+        },
+        {
+          "country": "SDN",
+          "population": 100000,
+          "note": "Region d'Abyei (zone disputee) et diaspora au Soudan du Nord"
+        },
+        {
+          "country": "UGA",
+          "population": 50000,
+          "note": "Refugies et diaspora en Ouganda (Kampala, camps de refugies)"
+        },
+        {
+          "country": "KEN",
+          "population": 30000,
+          "note": "Diaspora et refugies au Kenya (Nairobi, camp de Kakuma)"
+        },
+        {
+          "country": "ETH",
+          "population": 20000,
+          "note": "Diaspora et anciens refugies en Ethiopie"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Dinka people. https://en.wikipedia.org/wiki/Dinka_people",
+      "SIL Ethnologue — Dinka macrolanguage (din). https://www.ethnologue.com/language/din/",
+      "Deng, Francis Mading — The Dinka of the Sudan. New York: Holt, Rinehart and Winston, 1972.",
+      "Lienhardt, Godfrey — Divinity and Experience: The Religion of the Dinka. Oxford: Clarendon Press, 1961.",
+      "Johnson, Douglas H. — The Root Causes of Sudan's Civil Wars. Oxford: James Currey, 2003.",
+      "Human Rights Watch — South Sudan: Ethnic Targeting, Crimes Against Humanity (2014). https://www.hrw.org/",
+      "Wikipedia EN — Lost Boys of Sudan. https://en.wikipedia.org/wiki/Lost_Boys_of_Sudan",
+      "Wikipedia EN — Second Sudanese Civil War. https://en.wikipedia.org/wiki/Second_Sudanese_Civil_War",
+      "CIA World Factbook — South Sudan. https://www.cia.gov/the-world-factbook/countries/south-sudan/",
+      "UNFPA South Sudan population data. https://southsudan.unfpa.org/"
+    ]
+  }
+}

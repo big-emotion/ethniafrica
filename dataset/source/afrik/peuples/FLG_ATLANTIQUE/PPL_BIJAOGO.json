@@ -1,0 +1,99 @@
+{
+  "id": "PPL_BIJAOGO",
+  "nameMain": "Bijago",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["GNB"],
+  "content": {
+    "appellations": {
+      "mainName": "Bijago",
+      "selfAppellation": "Bidyogo / Bijago",
+      "exonyms": [
+        "Bissagos",
+        "Bojagos",
+        "Anaki",
+        "Bidjogo",
+        "Bidyogo",
+        "Bujagos",
+        "Bijaga",
+        "Bugago",
+        "Orango"
+      ],
+      "originOfExonyms": "Les differentes formes du nom refletent les transcriptions variees par les explorateurs et administrateurs portugais (XVIe siecle), puis francais et britanniques. Bijago est la forme la plus courante en français et en portugais. Bidyogo est l'appellation usuelle en Guinee-Bissau et dans la litterature linguistique. Anaki serait une denomination plus ancienne. L'archipel lui-meme est parfois appele archipel des Bissagos ou Bijagos, du nom de ses habitants.",
+      "whyProblematic": "Le nom Bijago englobe des populations insulaires avec des variations dialectales significatives d'une ile a l'autre. La culture bijago est souvent exotisee dans les medias internationaux, notamment en raison de sa reputation matriarcale, ce qui peut mener a des simplifications.",
+      "contemporaryUsage": "Bijago ou Bidyogo sont les termes officiels utilises en Guinee-Bissau et dans la litterature academique. Les Bijago representent environ 2,5% de la population guineenne et ont une forte identite culturelle malgre leur petit nombre.",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "ethnoLinguisticGroup": "Langue bijago (bjg), branche isolee des langues atlantiques, classee parfois dans le groupe bak mais consideree comme divergente. Bijago est la seule langue de son sous-groupe.",
+      "historicalRegion": "Archipel des Bijagos (Ilhas dos Bijagos), groupe d'environ 88 iles et ilots dans l'Ocean Atlantique au large des cotes de la Guinee-Bissau",
+      "currentCountries": ["GNB"]
+    },
+    "ethnicities": [
+      "Orakuma — clan des terres et des ceremonies ; detient les droits sur la terre et la direction des rituels ; seuls habilites a sculpter les statues iran",
+      "Ominka — clan de la mer ; detient les droits de peche",
+      "Oraga — clan de la nature et des champs ; controle les palmeraies et les ressources agricoles",
+      "Ogubane — clan du vent et de la pluie ; detient le pouvoir de controler les saisons seche et humide"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la mythologie bijago, le monde commenca sur l'ile d'Orango (la premiere ile creee). Un homme et une femme (Akapakama) y arriverent et eurent quatre filles : Orakuma, Ominka, Oraga et Ogubane. Ces quatre filles sont a l'origine des quatre clans principaux et de leurs attributions complementaires. Cette cosmogonie explique le role central des femmes dans la societe bijago. Des anthropologues suggerent que les Bijago pourraient etre les descendants d'une population ancienne etablie dans les iles avant les grandes migrations de la cote atlantique.",
+      "formationPeriod": "La presence bijago dans l'archipel est attestee depuis les premiers contacts europeens au XVe siecle (navigateurs portugais). Leur puissante marine militaire et leur culture distincte indiquent une occupation ancienne et consolidee. En 1532, le roi Joao III du Portugal ceda nominalement des droits sur les iles a son frere Luis ; en 1535, une force d'invasion portugaise fut detruite par la marine bijago. Les Bijago resisterent aux Portugais jusqu'a la fin du XIXe siecle.",
+      "migrationRoutes": [
+        "Etablissement immemorial dans l'archipel des Bijagos (aucune migration externe documentee vers les iles)",
+        "Razzias maritimes sur le continent pour capturer des esclaves (XVIe-XIXe siecles)",
+        "Contacts commerciaux avec les populations continentales"
+      ],
+      "historicalSettlementZones": [
+        "Archipel des Bijagos (88 iles et ilots dont environ 20 habites), Guinee-Bissau",
+        "Iles principales : Bubaque, Orango Grande, Canhabaque, Formosa, Caravela, Uno"
+      ],
+      "unificationsOrDivisions": "Les Bijago sont organises en villages (tabancas) autonomes diriges par un roi ou chef (cacique) choisi selon l'appartenance clanique. Chaque ile maintient son autonomie, meme si des traits culturels communs unissent l'archipel. La rivalite inter-insulaire a parfois ete mise de cote pour des expeditions maritimes communes (notamment lors des razzias d'esclaves). La societe est unifiee par le systeme matrilineaire des quatre clans qui traversent toutes les iles.",
+      "externalInfluences": "Les Portugais ont etabli un contact precoce mais violent : la marine bijago detruisit la force d'invasion de 1535. Des echanges commerciaux s'etablirent vers 1550. Les Bijago devinrent d'importants fournisseurs d'esclaves, raidant le continent. La colonisation portugaise effective ne s'imposa qu'a la fin du XIXe siecle. La reserve de biosphere (UNESCO, 1996) a contribue a proteger leur territoire et leur culture. Le tourisme contemporain represente une pression culturelle croissante.",
+      "majorHistoricalEvents": "1532-1535 : premières confrontations avec les Portugais (destruction de la force d'invasion). Vers 1550 : reprise du commerce avec les Portugais. XVIe-XIXe siecles : razzias maritimes bijago sur le continent, fournissant des esclaves aux Portugais. Fin XIXe siecle : colonisation portugaise effective. 1996 : classement de l'archipel en reserve de biosphere par l'UNESCO. 2024 : l'archipel maintient un isolement relatif preservant sa culture."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe bijago est matrilineaire et souvent decrite comme matriarcale. Les femmes jouent un role central dans les decisions economiques, religieuses et politiques. L'heritage et les titres se transmettent en ligne maternelle. Le chef (roi ou cacique) d'une tabanca appartient au clan qui detient les droits sur la terre (Orakuma), et ce lineage etant transmis par les femmes, ce sont elles qui determinent les positions de pouvoir. Les femmes choisissent leurs maris et peuvent mettre fin au mariage. Les femmes ainées sont les gardiennes du savoir culturel et spirituel.",
+      "clanOrganization": "Les quatre clans (Orakuma, Ominka, Oraga, Ogubane) sont exogames et present dans toutes les iles de l'archipel. Ce systeme de clans matrilineaires assure l'unite culturelle de l'ensemble de l'archipel malgre l'isolement insulaire. Les clans se distinguent par leurs droits et fonctions : terre et ceremonies (Orakuma), mer et peche (Ominka), nature et champs (Oraga), pluie et vent (Ogubane).",
+      "ageClassSystems": "Les initiations successives (fanado masculin et garandesa feminin) constituent le coeur du systeme de classes d'age bijago. Les hommes et les femmes passent par plusieurs etapes d'initiation tout au long de leur vie. Chaque etape ouvre l'acces a de nouveaux droits et responsabilites. Ce n'est pas l'age mais le niveau d'initiation qui determine le statut social.",
+      "roleOfLineages": "Les lignages matrilineaires sont fondamentaux : ils determinent l'appartenance clanique, les droits fonciers, et l'acces aux ceremonies. La residence est matrilocale : les filles et petites-filles restent dans la maison clanale de leur mere apres le mariage. Les hommes maries pratiquent un mariage de visite (ils ne quittent pas la maison de leur mere). La propriete collective des clans est geree par les femmes.",
+      "religiousAuthority": "Le pouvoir religieux est exerce par des pretresses (les baloberas) qui officiaient dans les maisons sacrees rondes appelees balobas. Ces maisons abritent les iran (statues sculptees representant les esprits de la terre et des ancetres). L'une des divinites principales est Orebok Ocoto, dont le roi tient un trident (la main du roi) en bois de mangrove comme objet sacre. Les femmes sont les principales pretresses et peuvent seules communiquer avec les dieux, les forces de la nature et les esprits des defunts."
+    },
+    "languages": {
+      "mainLanguage": "Bijago (Bidyogo), langue isolee de la famille atlantique Niger-Congo, classee parfois dans le groupe bak. C'est la langue maternelle dominante de l'archipel.",
+      "isoCodes": ["bjg"],
+      "dialects": [
+        "Dialectes d'iles : chaque ile principale a ses variantes propres (Bubaque, Orango, Canhabaque, Formosa, Caravela, Uno)",
+        "Les variantes sont mutuellement intelligibles mais presentent des differences lexicales et phonologiques"
+      ],
+      "vehicularRole": "Le Bijago (Bidyogo) est la langue dominante dans les zones rurales de l'archipel. Le Kriol Guinensi (creole de Guinee-Bissau) a pris le dessus dans les zones urbaines et dans l'enseignement depuis les annees 1990. Le portugais est peu utilise, meme dans les ecoles et parmi les enseignants. Le Bijago n'est pas enseigne formellement dans les ecoles. Le multilinguisme (bijago + kriol) est la norme pour la population active."
+    },
+    "culture": {
+      "majorRites": "Le fanado est l'initiation masculine : les jeunes hommes sont reclus dans la foret sacree pendant plusieurs mois, soumis a des epreuves, et ne peuvent reveler a leur retour ce qui s'est passe. Leur retour au village est marque par une grande fete. La garandesa est l'initiation feminine : les jeunes filles (17 a 25 ans) sejournent brievement en foret puis parcourent les villages de l'ile en executant des danses et des chants en groupe. Les deux initiations sont des rituels fondamentaux pour l'integration dans la societe adulte. Les funerailles impliquent une cérémonie collective en habits de fete ; apres la mort, l'esprit du defunt est invite a entrer dans le sanctuaire familial. Les saias (jupes traditionnelles en fibres de liane) portees par les femmes lors des rituels et parfois au quotidien varient selon l'age et le statut (plus courtes pour les adolescentes, plus longues pour les adultes, couleurs differentes).",
+      "symbols": "L'iran (plural iran) est la statue sacree sculptee en bois representant les esprits de la terre et des ancetres. Ces statues, gardees dans les balobas, sont des objets vivants : leur creation implique une invocation de l'esprit ira, la permission de couper l'arbre ou il reside, et plusieurs rituels. La vaca bruta (masque zoomorphe representant un taureau) symbolise la force et le pouvoir spirituel des hommes en cours d'initiation. D'autres masques zoomorphes representent des requins, des raies et d'autres animaux marins. Le trident (main du roi, en bois de mangrove a trois cornes de chevre ou de gazelle) est l'objet sacre du chef de tabanca.",
+      "artsAndMusic": "L'art bijago est etroitement lie a la religion et aux rites. La sculpture sur bois est la forme artistique principale : statues iran (esprits des ancetres), masques zoomorphes (vaca bruta, requins, raies), objets cérémoniels (lances, boucliers, coiffes, bracelets pour le fanado), selles, vannerie, vaisselle. Chaque ile developpe ses propres variations stylistiques, rendant l'art bijago facilement identifiable entre toutes les traditions africaines. La musique inclut des percussions lors des ceremonies d'initiation et des funerailles. La danse de la vaca bruta est pratiquee lors des festivites de fanado, notamment sur les iles de Canhabaque et Formosa. Le vin de palme est sacre et ne peut etre ni vendu ni achete.",
+      "spiritualities": "La religion bijago est un animisme ancestral fonde sur le culte des iran (esprits de la terre, des ancetres et de la nature). L'animisme marque profondement toute la vie quotidienne : les rites agricoles, la peche, les naissances, les funerailles et les initiations sont tous entoures de ceremonies spirituelles. Il n'y a pas de separation entre le sacre et le profane : meme les taches quotidiennes (plantation, recolte, cuisine, tissage) sont des rituels significatifs. La croyance en la vie apres la mort est centrale : les ames se rendent sur l'ile d'Unhocomo (extremite occidentale de l'archipel) apres la mort. L'islam et le christianisme sont peu presents dans l'archipel, qui a conserve son animisme de maniere remarquable grace a son isolement relatif."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Bijago n'ont pas constitue d'etat centralise mais ont developpe une puissante confederation maritime. Chaque ile est gouvernee par un roi (cacique) et une reine dont les pouvoirs sont complementaires. La force maritime bijago (pirogue de guerre) etait suffisamment redoutable pour defaire une force navale portugaise en 1535 et maintenir l'independance de l'archipel pendant plusieurs siecles.",
+      "relationsWithNeighbors": "Les Bijago ont entretenu des relations contradictoires avec le continent : menant des razzias d'esclaves sur les populations cotieres (Bainouk, Manjaku) d'un cote, et commercant avec les Portugais de l'autre. Des tensions inter-insulaires etaient habituelles mais pouvaient etre mises de cote pour des expeditions communes. L'isolement de l'archipel a preserve leur culture des influences exterieures mieux que n'importe quel autre groupe atlantique.",
+      "conflictsOrAlliances": "1535 : destruction de la force d'invasion portugaise. Periode 1535-1550 : refus de commercer avec les Portugais, traitement brutal des naufrages europeens. Vers 1550 : reprise des echanges commerciaux. XVIe-XIXe siecles : razzias d'esclaves sur le continent, parfois en mettant de cote les rivalites inter-insulaires. Fin XIXe siecle : soumission a la colonisation portugaise, avec des consequences psychologiques et economiques graves.",
+      "diaspora": "Les Bijago sont quasi-exclusivement etablis dans l'archipel des Bijagos (Guinee-Bissau). Une migration limitee vers la capitale Bissau s'est developpee pour des raisons economiques. Aucune diaspora internationale significative n'est documentee. L'isolement de l'archipel reste le principal facteur de preservation culturelle."
+    },
+    "demography": {
+      "totalPopulation": 43000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 43 000 personnes, uniquement en Guinee-Bissau. Comboni Missionaries (2017) : environ 30 000 personnes (2,5% de la population guineenne). 101 Last Tribes : entre 15 000 et 20 000 habitants dans l'archipel dont 90% de Bijago. Britannica (Atlantic languages) : 20 000 locuteurs du bijago. Les estimations varient selon qu'on comptabilise uniquement les habitants de l'archipel ou l'ensemble des personnes d'identite bijago incluant les migrants vers Bissau. La population de l'archipel est en croissance lente.",
+      "distributionByCountry": [
+        {
+          "country": "GNB",
+          "population": 43000,
+          "note": "Principalement dans l'archipel des Bijagos (iles de Bubaque, Orango, Canhabaque, Formosa, Caravela, Uno), avec une minorite a Bissau (capitale)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN. Bijagos Islands. https://en.wikipedia.org/wiki/Bijag%C3%B3s_Islands",
+      "Consulado de Guinea-Bissau en Malaga. Bijago culture, traditions, customs and the role of women in a matriarchal society. https://www.consuladoguineabissaumalaga.com/en/Blog/Bijag%C3%B3-culture-traditions-customs-and-the-role-of-women-in-a-matriarchal-society/",
+      "Comboni Missionaries. Guinea Bissau: A People With A Strong Identity. https://combonimissionaries.ie/2017/01/26/guinea-bissau-a-people-with-a-strong-identity/ (2017)",
+      "101 Last Tribes. Bijago people. https://www.101lasttribes.com/tribes/bijago.html",
+      "Ethnologue (SIL International). Bijago Language (BJG). https://www.ethnologue.com/language/bjg/"
+    ]
+  }
+}

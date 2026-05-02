@@ -1,0 +1,79 @@
+{
+  "id": "PPL_WONNIN",
+  "nameMain": "Wonnin",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Wonnin",
+      "selfAppellation": "Godié",
+      "exonyms": ["Godié", "Godie", "Goddie", "Godye", "Gwèdji"],
+      "originOfExonyms": "Le nom Godié est l'exonyme le plus courant, dérivé du terme Gwèdji signifiant chimpanzé-panthère en langue néyo. Ce surnom leur aurait été attribué par les Néyo, peuple voisin, pour décrire le caractère belliqueux des Godié. Wonnin est le nom propre que les membres du groupe utilisent parfois pour se désigner eux-mêmes. Goddie et Godye sont des variantes orthographiques anglophones.",
+      "whyProblematic": "L'identité godié est parfois contestée : certaines sources (notamment le tourisme officiel ivoirien) ont tenté de rattacher les Godié aux Dida comme sous-groupe, ce que les Godié eux-mêmes récusent, affirmant constituer un groupe ethnique à part entière.",
+      "contemporaryUsage": "Godié est le terme officiellement reconnu en Côte d'Ivoire et dans les publications académiques. Les membres du groupe revendiquent leur autonomie ethnique vis-à-vis des Dida.",
+      "linguisticFamily": "FLG_KROU",
+      "ethnoLinguisticGroup": "Krou du sud-ouest ivoirien",
+      "historicalRegion": "Environs de Sassandra et de Fresco, axe Sassandra-Gagnoa et axe Sassandra-Lakota, département de Guéyo, sud-ouest de la Côte d'Ivoire",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": ["Wonnin", "Godié"],
+    "origins": {
+      "ancientOrigins": "Les Godié font partie du grand ensemble krou du sud-ouest de la Côte d'Ivoire. Comme les autres groupes krou, leurs ancêtres auraient migré depuis l'actuel Liberia vers le territoire ivoirien, il y a environ sept siècles (bas Moyen Age). Une tradition orale rapporte qu'un changement majeur d'organisation sociale (passage du matriarcat au patriarcat) suivit la mort d'un grand guerrier légendaire, dont la trahison par sa femme transforma les règles de succession.",
+      "formationPeriod": "XVe-XVIIe siecle, période de consolidation des groupes krou sur le littoral et dans la forêt du sud-ouest ivoirien, sous la pression des Manding et des Akan.",
+      "migrationRoutes": [
+        "Liberia vers la côte sud-ouest de Côte d'Ivoire",
+        "Installation progressive entre Sassandra et Fresco, puis le long des axes Sassandra-Gagnoa et Sassandra-Lakota"
+      ],
+      "historicalSettlementZones": [
+        "Environs de Sassandra et de Fresco (villages de Gbagbam, Kokolopozo, Dakpadou, Beyo, Niapidou, Sago)",
+        "Axe Sassandra-Gagnoa",
+        "Axe Sassandra-Lakota",
+        "Département de Guéyo"
+      ],
+      "unificationsOrDivisions": "Les Godié sont proches des Dida, des Bété, des Wè et des Néyo. Leur organisation interne est structurée en concessions (familles élargies) et en lignages. La transition du matriarcat au patriarcat, attribuée à un événement mythique fondateur, marque une rupture historique dans l'organisation sociale.",
+      "externalInfluences": "Contact avec les peuples voisins krou (Néyo, Bété, Dida, Wè), avec lesquels des échanges culturels et matrimoniaux ont eu lieu. Présence coloniale française depuis la fin du XIXe siècle. Développement des cultures de rente (café, cacao, palmier à huile) au XXe siècle. Influence du christianisme (majoritaire) et de l'islam.",
+      "majorHistoricalEvents": "Migration depuis le Liberia (avant le XVe s.). Pressions coloniales françaises (fin XIXe-début XXe s.). Changement d'organisation sociale (passage du matriarcat au patriarcat) selon la tradition orale. Le festival Djaka (2021) a célébré et revalorisé la culture Dida-Godié."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation clanique fondée sur des concessions (unités résidentielles de familles élargies). La vie collective s'organise autour de la concession dont le chef joue le rôle de père pour tous. Il existe une hiérarchie entre les générations et à l'intérieur d'une même génération. Le successeur est désigné à l'unanimité et est généralement connu d'avance. Pas de chefferie centralisée : organisation décentralisée conforme au modèle krou.",
+      "clanOrganization": "Société patrilinéaire depuis la réforme mythique (transition du matriarcat). Les hommes peuvent pratiquer la polygamie. La concession est l'unité sociale de base. Kouassi Lowa Jonas a documenté les origines des Godié du Tigrou (sous-préfecture de Lakota) en 1967.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Patrilignages comme cadres de la transmission foncière, de l'autorité et des alliances matrimoniales. Auparavant (régime matrilinéaire), la succession passait de l'oncle maternel au neveu.",
+      "religiousAuthority": "Autorité spirituelle exercée par les anciens gardiens des cultes animistes traditionnels. Présence documentée de la notion de spiritisme (Ch. Kokra, 1956, Notes Africaines). Le christianisme est devenu la religion majoritaire (55% selon Joshua Project)."
+    },
+    "languages": {
+      "mainLanguage": "godié",
+      "isoCodes": ["god"],
+      "dialects": ["godié (variété krou du sud-ouest ivoirien)"],
+      "vehicularRole": "Le godié est la langue maternelle de la communauté godié, utilisée comme première langue par tous les membres de la communauté ethnique. C'est une variété de la famille des langues krou (nigéro-congolaises), stable selon l'Ethnologue. Le français est la langue officielle ; le dioula est la langue véhiculaire commerciale régionale. Un alphabet de la langue godié a été élaboré et des ressources linguistiques existent."
+    },
+    "culture": {
+      "majorRites": "Rites funéraires documentés (M.F. Tappa, 1945, Ecole normale William Ponty). Cérémonies liées aux cycles agraires. Pratiques animistes traditionnelles (spiritisme). Festival Pôpaix : rassemblement culturel majeur réunissant la communauté godié et valorisant le patrimoine immatériel.",
+      "symbols": "Le nom Gwèdji (chimpanzé-panthère) donné par les Néyo reflète le caractère guerrier des Godié et est devenu un symbole d'identité. La concession est le symbole de l'unité communautaire : vivre isolé n'existe pas chez ce peuple.",
+      "artsAndMusic": "Traditions chorégraphiques riches : danses de l'Abi Ayara de Dadjeré, l'Alloukou, le Sakékowê (danse du Grélot), la danse Tosi des femmes du village Guédikpô. Ces danses sont des rendez-vous de grande mobilisation communautaire. Le Festival Djaka (2021) a revalorisé les rythmes et la culture Dida-Godié du terroir. Travail du bois (sculpture religieuse, masque bovin godié).",
+      "spiritualities": "Animisme traditionnel incluant le spiritisme (croyance en des esprits). La transition du matriarcat au patriarcat est narrée comme un événement spirituel fondateur lié à un don reçu en vision par un grand guerrier. Le christianisme est dominant (55% de chrétiens selon Joshua Project 2025). Présence évangélique (9%)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume ou de chefferie centralisée. Organisation en concessions et lignages, conforme au modèle krou. L'organisation sociale des Godié a fait l'objet d'un mémoire de recherche (Djagnan Raymond Degri, EPHE Paris, 1965).",
+      "relationsWithNeighbors": "Proches des Néyo (qui leur ont donné le nom Gwèdji), des Dida, des Bété et des Wè. Tous appartiennent au grand ensemble krou du sud-ouest ivoirien. Relations matrimoniales et commerciales avec ces groupes. Les Godié ont intégré des influences culturelles venues de leurs voisins.",
+      "conflictsOrAlliances": "Le caractère belliqueux (gwèdji) attribué par les Néyo suggère une tradition guerrière dans les relations inter-ethniques. Les Godié revendiquent leur identité propre face aux tentatives de rattachement aux Dida.",
+      "diaspora": "Présence de Godié à Abidjan et dans les villes de la région (Sassandra, Fresco, Gagnoa, Lakota). Pas de diaspora internationale significative documentée."
+    },
+    "demography": {
+      "totalPopulation": 61000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : 61 000 Godié en Côte d'Ivoire, unique pays de résidence (https://joshuaproject.net/people_groups/11913). Religion principale : christianisme (55% chrétiens, 9% évangéliques).",
+      "distributionByCountry": [{ "countryCode": "CIV", "population": 61000 }]
+    },
+    "sources": [
+      "Godié (Peuple) – Wikipédia FR, consulté 2025 (https://fr.wikipedia.org/wiki/Godi%C3%A9_(Peuple))",
+      "Godie in Côte d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11913)",
+      "Ethnologue – Godié language (god), SIL International, 2024 (https://www.ethnologue.com/language/god/)",
+      "Les Godiés : ce sous-groupe des Krou – VoixVoie de Femme, 2025 (https://voiedefemme.net/2025/02/17/les-godies-ce-sous-groupe-des-krou/)",
+      "Kouassi Lowa Jonas, Origines des Godié du Tigrou (sous-préfecture de Lakota) – Bulletin d'information et de liaison des Instituts d'ethno-sociologie et de géographie tropicale, Abidjan, 1967/2, p. 13-39",
+      "Djagnan Raymond Degri, Organisation sociale des Godie – EPHE, Paris, 1965",
+      "Ch. Kokra, Notion de spiritisme chez les Godié de Fresco – Notes Africaine, 70, 1956, pp. 52-54",
+      "Krou (peuple) – Wikipédia FR, consulté 2025 (https://fr.wikipedia.org/wiki/Krou_(peuple))"
+    ]
+  }
+}

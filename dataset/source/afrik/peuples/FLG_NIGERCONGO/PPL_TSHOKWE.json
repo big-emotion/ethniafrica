@@ -1,0 +1,120 @@
+{
+  "id": "PPL_TSHOKWE",
+  "nameMain": "Tshokwe",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["COD", "AGO", "ZMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Tshokwe",
+      "selfAppellation": "Tshokwe / Chokwe",
+      "exonyms": [
+        "Chokwe",
+        "Kioko",
+        "Bajokwe",
+        "Chibokwe",
+        "Kibokwe",
+        "Ciokwe",
+        "Cokwe",
+        "Badjok",
+        "Djok"
+      ],
+      "originOfExonyms": "Tshokwe est la graphie francophone utilisee en RDC et dans la litterature francaise. Chokwe est la forme anglophone et lusophone standard, utilisee au Portugal et en Angola. Kioko est une forme utilisee en Zambie. Badjok est un exonyme employe par certains peuples voisins.",
+      "whyProblematic": "La multiplicite des orthographes (Tshokwe, Chokwe, Ciokwe) reflete les heritages coloniaux francais, anglais et portugais. Le terme Bajokwe (prefixe ba-) est parfois prefere dans les sources academiques anglophones comme forme bantoue correcte.",
+      "contemporaryUsage": "Tshokwe est la forme officielle en RDC. Chokwe est la forme officielle en Angola, ou la langue chokwe est reconnue comme langue nationale. En Zambie, on emploie generalement Chokwe ou Kioko.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone K) — groupe Lunda-Chokwe",
+      "historicalRegion": "Angola nord-est (region du Kasai superieur), province du Kasai (RDC), province du Nord-Ouest de Zambie",
+      "currentCountries": ["COD", "AGO", "ZMB"]
+    },
+    "ethnicities": [
+      "Tshokwe d'Angola — principalement dans les provinces de Lunda Norte, Lunda Sul, Moxico, Bie et Malanje",
+      "Tshokwe de RDC — principalement dans les provinces du Kasai, Kasai-Oriental et Kwango",
+      "Tshokwe de Zambie (Kioko) — province du Nord-Ouest, pres de la frontiere angolaise",
+      "Tshokwe de Namibie — tres minoritaires, province du Kavango"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Tshokwe etaient l'un des douze clans constituant l'Empire Lunda aux 17e et 18e siecles, en Angola central. Selon les traditions orales, les Tshokwe, Lunda, Lwena/Luvale, Luchazi, Ovimbundu et Mbunda partagent une ancestralite commune remontant aux migrations Lunda du 16e siecle. Le heros culturel Cibinda Ilunga, legendaire chasseur du puissant royaume Luba, aurait epouse une femme Lunda et introduit de nouveaux principes de gouvernance chez les Tshokwe.",
+      "formationPeriod": "Aux 17e et 18e siecles, les Tshokwe etaient sous l'influence considerable des Etats Lunda, bases en Angola central. La rupture avec les nobles Lunda survint a la suite de conflits civils, notamment un refus de payer tribut. Dans la seconde moitie du 19e siecle, le developpement du commerce d'ivoire et de caoutchouc avec la cote angolaise porta les Tshokwe a une grande prosperite. Armes de fusils obtenus des Ovimbundu, ils detruisirent le royaume Lunda (Mwata Yanvo) vers 1900.",
+      "migrationRoutes": [
+        "Depuis le Kasai superieur (zone ancestrale) vers l'Angola nord-est aux 17e-18e siecles",
+        "Expansion vers le nord dans tout l'Angola nord-est, le Congo (RDC) et la Zambie occidentale dans la seconde moitie du 19e siecle",
+        "Migrations liees aux conflits de la guerre civile angolaise (1961-2002) vers Kinshasa (RDC) et les villes zambiennes"
+      ],
+      "historicalSettlementZones": [
+        "Angola nord-est: provinces de Lunda Norte, Lunda Sul, Moxico",
+        "Kasai (RDC): territories de Kahemba, Tshikapa",
+        "Province du Nord-Ouest de Zambie (Chavuma, Mwinilunga)",
+        "Centres urbains: Luanda (Angola), Kinshasa (RDC), Lubumbashi (RDC)"
+      ],
+      "unificationsOrDivisions": "L'expansion tshokwe du 19e siecle fut une periode d'unification et de domination: les Tshokwe absorberent les onze autres clans de l'ancien empire Lunda et supplantere leurs cultures avec la langue et les coutumes chokwe. Cette periode est parfois qualifiee de conqu ete tshokwe. La colonisation portugaise (fin 19e siecle) mit fin a cette domination. La guerre civile angolaise (1975-2002) divisa les populations tshokwe entre zones MPLA et UNITA.",
+      "externalInfluences": "Empire Lunda (17e-18e siecles): influence politique et culturelle majeure. Commerce avec les Portugais depuis les annees 1830 (cire, caoutchouc, ivoire, esclaves). Colonisation belge (RDC) et portugaise (Angola) depuis la fin du 19e siecle. Guerres arabo-swahilis (est) et incursions coloniales (ouest) aux 19e-20e siecles. Guerre civile angolaise (1975-2002) avec devastation de la region tshokwe.",
+      "majorHistoricalEvents": "Milieu du 19e siecle: essor du commerce d'ivoire et de caoutchouc, enrichissement des Tshokwe. 1900: destruction du royaume Lunda (Mwata Yanvo) par les Tshokwe armes. 1830s: premiers contacts commerciaux avec les Portugais. 1961: debut de la guerre d'independance angolaise impliquant les regions tshokwe. 1975: independance de l'Angola, debut de la guerre civile. 2002: fin de la guerre civile angolaise, reconstruction."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies (chiefs) et groupements villageois. Le chef (mwanangana, litteralement surintendant ou seigneur de la terre) est considere comme representant de la divinite Kalunga/Nzambi et est donc revere. Les cours villageoises (anciens masculins) traitent les questions foncieres, les querelles familiales, les vols et les accusations de sorcellerie. Des cours de chefs et des tribunaux de district completent la hierarchie judiciaire.",
+      "clanOrganization": "Societe matrilineaire: la femme, apres le mariage, va vivre dans la famille du mari (residence patrilocale) mais l'identite clanique et la succession passent par la lignee maternelle. La polygamie fut historiquement pratiquee, surtout par les chefs et les families aisees. Les villages (groupements de parents du chef ou headman) sont organises en grands cercles avec une cour centrale et un abri communautaire cone-shaped (chota).",
+      "ageClassSystems": "Initiations separees pour garcons (mukanda) et filles (ukule) a la puberte. Le mukanda est une institution centrale: enclos en foret prive, loin du village; tous les inities sont circonscis; ils restent sous la garde des vilombola (soignants) pendant des mois a un an; formation religieuse, sexuelle, artisanale et traditionnelle. Les diplomes sont consideres comme renaitres dans la societe.",
+      "roleOfLineages": "Lignages matrilineaires determinant l'identite, la succession et les alliances. Les sculptures et objets d'art royaux (sieges ngunj a, trones, sceptres, pipes) expriment le rang et le prestige. Les sanctuaires ancestraux (kachipango) abritent sculptures et objets destines a contenir les esprits ancestraux (hamba/mahamba).",
+      "religiousAuthority": "Autorite religieuse du chef (mwanangana) comme representant de Nzambi/Kalunga. Guerisseurs-devins (cimbanda) ayant ete eux-memes possedes par un esprit hamba, initiant les victimes de possession. Culte des esprits ancetres et naturels (mahamba): deux types — mahamba makulwana (esprits ancetres, representes par deux termitières) et mahamba yipwiya (esprits parasites malevolents causes de maladies)."
+    },
+    "languages": {
+      "mainLanguage": "Chokwe (Tshokwe / Kichokwe)",
+      "isoCodes": ["cjk"],
+      "dialects": [
+        "Chokwe d'Angola — forme standardisee, langue nationale angolaise",
+        "Chokwe de RDC (Kichokwe) — parle dans les provinces du Kasai",
+        "Chokwe de Zambie (Kioko) — Province du Nord-Ouest"
+      ],
+      "vehicularRole": "Le chokwe (ISO 639-3: cjk) est une langue nationale en Angola et sert de lingua franca dans l'est angolais. Il est parle par environ 4 millions de personnes (Joshua Project, 2025). Beaucoup parlent egalement les langues officielles: portugais en Angola, francais en RDC, anglais en Zambie. La Bible complete est disponible en chokwe."
+    },
+    "culture": {
+      "majorRites": "Mukanda (initiation masculine): enclos forestier prive; tous les garcons a la puberte sont circonscis; formation pendant des mois sous la garde des vilombola; education religieuse, artisanale, sexuelle et traditionnelle; les diplomes sont dits renaitre. Ukule (initiation feminine): individuelle; camp a la peripherie du village; hutte conique en herbe; les anciennes scarifient l'abdomen et le bas du dos pour preparer l'accouchement; a la fin, le corps est peint de dessins lineaires, procession dans le village. Rites funeraires avec sacrifices et invocations aux ancetres. Ceremonies de divination par les ngombo (figurines) pour identifier causes de maladies, infertilite ou malheurs.",
+      "symbols": "Masque pwo (Mwana Pwo): portrait de femme mature ayant prouve sa fertilite; porte par un danseur masculin; incarne l'ideal de feminite et accorde fertilite aux spectateurs. Masque cihongo (Chihongo): represente l'esprit de la richesse et du pouvoir; porte par le chef ou son fils/neveu; usage jadis judiciaire. Masque cikungu: le plus grand masque, appartenant au mwanangana, representant les ancetres du chef. Figurine Cibinda Ilunga: heros culturel sculpe tenant une arme et portant la coiffe chiefly. Sanza (lamellaphone, piano a pouces): instrument du chef-gardien du savoir historique.",
+      "artsAndMusic": "L'art tshokwe est parmi les plus celebres d'Afrique centrale. Masques sculptes en bois: pwo (feminin, Mwana Pwo), cihongo (masculin, richesse), cikungu (ancestral du chef), cikunza (associe au mukanda). Figurines representant Cibinda Ilunga, les chefs (mwanangana) et les gardiens de fertilite (Mwana po). Ngombo: figurines divinatoires. Sieges ngunj a (chaises sculptees) pour chefs et anciens. Poterie, paniers, objets utilitaires integrant la mythologie tshokwe. Sanza (thumb piano) accompagnant les recitations d'histoire orale. Collections au Metropolitan Museum of Art (New York), au Musee du Quai Branly-Jacques Chirac (Paris), au Smithsonian (Washington), au Musee de Tervuren (Belgique).",
+      "spiritualities": "Croyance en Nzambi/Kalunga, divinite supreme creatrice. Culte intense des ancetres (mahamba): spirits d'ancetres et de la nature auxquels sont dedies des cultes. Sanctuaires kachipango: sculptures et objets pour contenir les esprits, point de contact entre vivants et forces spirituelles. Les chiens voient les invisibles (leurs hurlements avertissent de la presence d'etres invisibles). Babouins et pangolins (nkaka = grand-pere) sont en contact avec les ancetres souterrains. Exorcisme par le cimbanda induisant la possession, frottant argile blanche (symbole d'innocence). Christianisme adopte en masse a l'epoque coloniale avec maintien des pratiques traditionnelles (syncretsime)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Avant le 19e siecle: integration au systeme de l'empire Lunda comme l'un de ses douze clans. Milieu-fin 19e siecle: expansion tshokwe considerable (renforcee par le commerce d'ivoire et de caoutchouc, puis par l'acquisition d'armes). 1900: renversement et absorption du royaume Lunda (Mwata Yanvo). Domination de l'Angola nord-est et des 11 autres clans de l'ancien empire Lunda jusqu'a la repression coloniale portugaise. Chefferies locales maintenues sous la colonisation, avec le mwanangana comme figure centrale.",
+      "relationsWithNeighbors": "Relations complexes avec les Lunda (vassaux puis conquerants). Relations commerciales avec les Ovimbundu (fournisseurs d'armes) et les Portugais (ivoire, caoutchouc). Conflits avec les raiders arabo-swahilis (est) dont Tippu Tip. Les chefs Tshokwe, Lunda, Lwena/Luvale, Luchazi, Ovimbundu et Mbunda partagent une ancestralite commune lunda.",
+      "conflictsOrAlliances": "17e-18e siecles: vassalite sous l'empire Lunda. Mi-19e siecle: rupture et expansion aggressive, destruction du royaume Lunda vers 1900. Fin 19e siecle: resistance a la colonisation portugaise. 1961-1975: guerre d'independance angolaise. 1975-2002: guerre civile angolaise devastant les regions tshokwe (province de Moxico particulierement touchee). Implication historique dans la traite des esclaves (acheteurs et vendeurs).",
+      "diaspora": "Migrations vers les grandes villes angolaises (Luanda, Huambo) et congolaises (Kinshasa, Lubumbashi) durant et apres la guerre civile. Communautes diasporiques en Portugal (ancienne metropole coloniale) et en Europe. Importante diaspora interne au sein des provinces angolaises et de la RDC."
+    },
+    "demography": {
+      "totalPopulation": 3980000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025): Angola 2 417 000, RDC 1 423 000, Zambie 132 000, Namibie 8 300 — total 3 980 300. Wikipedia cite environ 1,3 million (estimation ancienne). Les chiffres du Joshua Project sont les plus recents et les plus complets.",
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 2417000,
+          "note": "Provinces de Lunda Norte, Lunda Sul, Moxico, Bie — region ancestrale et coeur historique tshokwe"
+        },
+        {
+          "country": "COD",
+          "population": 1423000,
+          "note": "Provinces du Kasai, Kasai-Oriental, Kwango — expansion du 19e siecle"
+        },
+        {
+          "country": "ZMB",
+          "population": 132000,
+          "note": "Province du Nord-Ouest (Chavuma, Mwinilunga) — appeles Kioko en Zambie"
+        },
+        {
+          "country": "NAM",
+          "population": 8300,
+          "note": "Province du Kavango — tres minoritaires"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Chokwe people. https://en.wikipedia.org/wiki/Chokwe_people",
+      "The Metropolitan Museum of Art — Mwanangana (lord of the land) playing a sanza, Chokwe artist, 19th century. https://www.metmuseum.org/art/collection/search/316173",
+      "Smarthistory — Female (pwo) Mask, Chokwe peoples. https://smarthistory.org/female-pwo-mask/",
+      "Khan Academy — Female (pwo) Mask (Chokwe peoples). https://www.khanacademy.org/humanities/ap-art-history/africa-apah/central-africa-apah/a/female-pwo-mask-chokwe",
+      "Joshua Project — Chokwe people group in all countries. https://joshuaproject.net/people_groups/11365",
+      "CountryStudies.us — Lunda and Chokwe Kingdoms, Angola. https://countrystudies.us/angola/9.htm",
+      "SIL Ethnologue — Chokwe (cjk). https://www.ethnologue.com/language/cjk/",
+      "Bastin, Marie-Louise — Arts of the Angolan Peoples, I: Chokwe. Museu do Dundo, 1961."
+    ]
+  }
+}

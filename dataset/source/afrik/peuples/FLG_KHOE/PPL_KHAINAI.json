@@ -1,0 +1,97 @@
+{
+  "id": "PPL_KHAINAI",
+  "nameMain": "Khainai",
+  "languageFamilyId": "FLG_KHOE",
+  "currentCountries": ["BWA"],
+  "content": {
+    "appellations": {
+      "mainName": "Khainai",
+      "selfAppellation": "Khainai",
+      "exonyms": ["Gxana", "llGana", "G//ana", "Gana", "G||ana"],
+      "originOfExonyms": "Le nom Gana ou G//ana designe dans la litterature ethnolinguistique un peuple San du Kalahari central parlant le Gana (ISO 639-3 : gnk), apparente au Gǀwi (Gwi). Khainai est la graphie utilisee dans la base EthniAfrica pour ce groupe. Les doubles barres (ǁ ou //) dans les transcriptions renvoient aux clics lateraux caracteristiques des langues Khoisan.",
+      "whyProblematic": "La denomination Khainai/Gana est peu standardisee dans les sources. Les groupes San du Kalahari central sont souvent designes de facon generique et leurs ethnonymies varient selon les traditions orale, coloniale et academique. La relation exacte entre Khainai et les groupes documentes (Gana, G||ana) reste a clarifier selon les sources primaires.",
+      "contemporaryUsage": "Dans les publications recentes sur les San du Botswana, ces groupes sont identifies collectivement comme San du Kalahari central, parfois regroupes avec les Gǀwi (Gwi). Joshua Project recense les 'Gxana, llGana' comme groupe distinct au Botswana (1 300 personnes, langue Gana, code gnk).",
+      "linguisticFamily": "FLG_KHOE",
+      "ethnoLinguisticGroup": "Khoe (branche Tshu-Khwe, sous-branche Kalahari occidentale, famille Khoe-Kwadi)",
+      "historicalRegion": "Kalahari central, Botswana : Central Kalahari Game Reserve (CKGR) et zones environnantes",
+      "currentCountries": ["BWA"]
+    },
+    "ethnicities": [
+      "Gana du nord du CKGR (groupe septentrional, contacts etroits avec les Gǀwi, partage partiel du territoire et de certaines ressources)",
+      "Gana du sud du CKGR (groupe meridional, dialecte distinct, territoire plus isole)",
+      "Groupes Khainai de Molapo (communautes revenues dans la reserve apres le jugement de 2006)",
+      "Gana de New Xade (communautes deportees lors des evictions de 1997-2002, reinstallees dans le village gouvernemental)",
+      "Gana de Kaudwane (deuxieme principal village de reinstallation, region de Ghanzi)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Khainai/Gana font partie des populations San les plus anciennes du Kalahari central botswanais. Leurs ancetres appartiennent au complexe des chasseurs-cueilleurs du desert du Kalahari, dont les cultures remontent a plus de 20 000 ans d'apres les donnees genetiques et archeologiques. En 2013, des etudes genetiques ont identifie les San du Kalahari parmi les populations humaines ayant la plus longue continuite genétique sur leur territoire.",
+      "formationPeriod": "Presence documentee dans le CKGR depuis au moins le 19e siecle par des sources orales et les premiers explorateurs europeens. La Reserve du Kalahari Central a ete creee en 1961 precisement pour proteger ces communautes de chasseurs-cueilleurs. La denomination et la classification comme groupe distinct datent principalement des enquetes ethnolinguistiques du 20e siecle.",
+      "migrationRoutes": [
+        "Populations autochtones du Kalahari central sans migration fondatrice documentee",
+        "Mouvements saisonniers a l'interieur du CKGR selon les ressources en eau et en gibier",
+        "Deplacements forces lors des evictions gouvernementales du CKGR (1997, 2002)"
+      ],
+      "historicalSettlementZones": [
+        "Central Kalahari Game Reserve (CKGR), Botswana — territoire ancestral principal",
+        "Zone de Molapo (CKGR) — l'un des sites autorises par le jugement de 2006",
+        "Zone de Xade (CKGR western section)",
+        "Zones de reinstallation exterieures au CKGR (New Xade, Kaudwane)"
+      ],
+      "unificationsOrDivisions": "Les Gana/Khainai forment de petites bandes autonomes de chasse-cueillette sans organisation politique centralisee. Ils partagent avec les Gǀwi voisins une culture et une organisation sociale similaires. La creation du CKGR en 1961, les evictions de 1997 et 2002, et le jugement de la Haute Cour botswanaise de 2006 (Roy Sesana et al. v. Attorney General) ont profondement restrucure leurs communautes.",
+      "externalInfluences": "Contacts avec les Bakgalagadi (voisins bantous), parfois en relation de dependance economique. Contacts avec les Tswana et l'administration coloniale britannique (Bechuanaland). Pression des deplacements gouvernementaux postcoloniaux au nom de la conservation de la faune et de l'exploitation diamantifere (Gope Mine). Influence croissante du christianisme via les missions.",
+      "majorHistoricalEvents": "1961 : creation du Central Kalahari Game Reserve comme sanctuaire pour les San. 1997 et 2002 : evictions forcees massives des communautes San du CKGR par le gouvernement botswanais ; les Gana et Gǀwi figurent parmi les groupes principalement affectes. 2006 : jugement historique de la Haute Cour du Botswana (Roy Sesana et al. v. Attorney General) reconnaissant le droit des San a retourner dans le CKGR et declarant leur eviction illegale et inconstitutionnelle. Les Gana/Khainai font partie des communautes dont les representants (dont Roy Sesana du groupe Gana) ont mene ce combat juridique majeur pour les droits des peuples autochtones en Afrique subsaharienne."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Structure acephale (sans chef hereditaire). Les decisions sont prises par consensus au sein de la bande locale. Un homme age et experimente peut avoir un role de coordinateur (headman informel) sans pouvoir coercitif. La bande est l'unite sociale et economique de base, regroupant 10 a 50 individus lies par la parente et le mariage.",
+      "clanOrganization": "Organisation en bandes de chasse-cueillette mobiles. Les droits sur les territoires de chasse et les points d'eau sont transmis bilateralement. Le systeme de parenté impose l'exogamie de la bande locale et la residence alternee chez les parents de l'un ou l'autre conjoint (bilocale).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages bilateraux determinent l'acces aux ressources, les obligations de partage et les alliances matrimoniales. Le partage equitable du gibier chasse est une norme sociale centrale, renforçant la cohesion communautaire.",
+      "religiousAuthority": "Autorite des guerisseurs-chamanes (n/um-kxaosi) capables d'entrer en transe lors des danses de guerison nocturnes. La guerison des maladies physiques et sociales, la divination pour anticiper evenements futurs ou identifier causes de malheur, et la mediation avec le monde des esprits et des ancetres sont les fonctions principales des chamanes. L'acces a ces fonctions n'est pas hereditaire mais acquis par don et apprentissage intensif."
+    },
+    "languages": {
+      "mainLanguage": "Gana (G//ana, langue San du Kalahari central, famille Khoe-Kwadi)",
+      "isoCodes": ["gnk"],
+      "dialects": [
+        "G//ana septentrional (CKGR nord, contacts avec Gwi)",
+        "G//ana meridional (CKGR sud, dialecte plus conservateur)"
+      ],
+      "vehicularRole": "Le Gana (gnk) est une langue menacee du Kalahari central botswanais, comptant environ 1 300 locuteurs selon Joshua Project. C'est une langue de la branche Tshu-Khwe de la famille Khoe-Kwadi, apparentee au Gǀwi (gwj), au Naro (nhr) et aux autres langues du Kalahari. Les phonemes clics caracteristiques ont ete partiellement perdus dans le dialecte septentrional. Le Setswana est la langue nationale et vehicule de scolarisation utilise par toute la population botswanaise. Les groupes deportes hors du CKGR subissent une assimilation linguistique acceleree vers le Setswana, avec une transmission intergenerationnelle du Gana qui diminue rapidement dans les villages de reinstallation."
+    },
+    "culture": {
+      "majorRites": "La danse de transe (healing dance) est le rite central : elle se deroule de nuit autour d'un feu, les femmes chantant et battant des mains en cercle tandis que les guerisseurs dansent jusqu'a l'etat de transe (!kia). Dans la transe, le guerisseur active son energie spirituelle (n/um), identifie les maladies et les soigne par imposition des mains. Rites de passage : ceremonies d'initiation feminine (seclusion lors des premieres menstruations, application d'huiles et d'ocre rouge, instructions des ainees) ; initiation masculine liee a la premiere chasse. Rites funeraires : inhumation rapide, abandon du campement apres le deces pour eviter le contact avec l'esprit du mort.",
+      "symbols": "L'eland (Taurotragus oryx) est l'animal spirituel majeur des San du Kalahari : associe aux pouvoirs du guerisseur et au n/um dans les peintures rupestres et les chants rituels. Le feu du camp est le centre symbolique de la communaute. L'arc et le carquois de fleches sont les symboles de l'identite masculine du chasseur.",
+      "artsAndMusic": "Peintures rupestres attribuees aux ancetres san (art rupestre du Kalahari) representant animaux, chamanes en transe et creatures mi-humaines mi-animales. Musique : chants polyphoniques feminins lors des danses de guerison, hochets de cheville (cocons de chrysalides), arc musical (pluriarc), flute. Narration orale (mantis stories, contes du trickster g//amm correspondant au Kaggen des San meridionaux). Artisanat : perles d'autruche (ostrich-shell beads), paniers tisses, sacs en peau, arcs et fleches empoisonnees.",
+      "spiritualities": "Cosmologie dualiste : une divinite superieure bienveillante (Nladima ou //Gauwa selon les groupes, creatrice et protectrice) et une divinite malveillante (//Gauwa inferieure, associee a la maladie et a la mort). Les esprits des morts peuvent etre benefiques ou malfaisants. Le n/um (energie spirituelle) est la force de vie activee dans les danses de guerison. Les chamanes san communiquent avec les ancetres lors des etats de transe pour guerir les vivants. Influence croissante du christianisme (eglises de mission, eglises independantes) dans les communautes sedentarisees."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de structure de chefferie ou de royaumes. Les San du Kalahari central ont maintenu un mode de vie de chasseurs-cueilleurs autonomes pendant des millenaires. Leur resistance politique contemporaine la plus notable est le proces historique de 2006 (Roy Sesana et al. v. Attorney General of Botswana) : la Haute Cour a juge que l'eviction des San du CKGR etait illegale et inconstitutionnelle, et que le gouvernement ne pouvait pas les priver d'eau dans la reserve. Ce jugement est cite comme precedent en matiere de droits des peuples autochtones en Afrique australe, bien que son application ait ete tres partielle.",
+      "relationsWithNeighbors": "Relations complexes avec les Bakgalagadi et Tswana voisins : les San etaient parfois employes comme bergers, guides et traqueurs, parfois en situation de clientelisme economique. Relations pacifiques et d'echange avec les autres groupes San (Gǀwi, !Xoo). Le gouvernement botswanais a systematiquement favorise les populations tswana dans l'acces aux ressources du Kalahari central.",
+      "conflictsOrAlliances": "1997 et 2002 : evictions forcees du CKGR par le gouvernement botswanais, officiellement motivees par la conservation de la faune mais critiquees par les ONG comme liees a l'exploitation diamantifere (Gope Mine). 2006 : victoire judiciaire partielle a la Haute Cour, permettant a un petit nombre de revenir dans le CKGR. Interdiction maintenue de la chasse, privant les communautes de leur moyen de subsistance principal.",
+      "diaspora": "Suite aux evictions, la majorite des Gana/Khainai vivent dans les villages de reinstallation hors du CKGR (New Xade, Kaudwane, Gugamma). Un petit nombre est retourne a Molapo, Mestsiamaneng, Matumelo et Kukama a la suite du jugement de 2006. Migration vers des centres urbains (Ghanzi, Maun) pour une partie des jeunes generations."
+    },
+    "demography": {
+      "totalPopulation": 1300,
+      "referenceYear": 2025,
+      "source": "Joshua Project — Gxana, llGana in Botswana (1 300 personnes, langue Gana gnk, 2025). Estimation basse compte tenu de la sedentarisation et de l'assimilation : des chercheurs estiment que 3 000 a 5 000 San apparentes aux Gana vivaient dans le CKGR avant les evictions de 1997-2002 (incluant groupes mixtes). !Khwa ttu (2021) documente les evictions et reinstallations. La difficulte de recensement des populations San dispersees dans les villages de reinstallation et les zones urbaines contribue a la sous-estimation. Botswana Statistics (2022) ne ventile pas les donnees par ethnies San specifiques.",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 1300,
+          "note": "Central Kalahari Game Reserve (Molapo, quelques familles autorisees), villages de reinstallation New Xade et Kaudwane, region de Ghanzi"
+        }
+      ]
+    },
+    "sources": [
+      "Joshua Project — Gxana, llGana in Botswana. https://joshuaproject.net/countries/bc",
+      "!Khwa ttu — The San of Botswana. https://khwattu.org/exhibitions/the-san-of-botswana/",
+      "The New Humanitarian — Culture under threat: Special Report on the San Bushmen. https://www.thenewhumanitarian.org/report/49005/botswana-culture-under-threat-special-report-san-bushmen-ii",
+      "Wikipedia EN — Khoe languages. https://en.wikipedia.org/wiki/Khoe_languages",
+      "Wikipedia EN — San peoples. https://en.wikipedia.org/wiki/San_peoples",
+      "Wikipedia EN — San healing practices. https://en.wikipedia.org/wiki/San_healing_practices",
+      "Glottolog — Gana language, code gana1257. https://glottolog.org/",
+      "JSTOR — The Social History of the Khoisan in Botswana. https://www.jstor.org/stable/27255634",
+      "Khoisan.org — The Khoikhoi and San ritual. http://khoisan.org/ritual.htm",
+      "Wikipedia EN — Khoisan. https://en.wikipedia.org/wiki/Khoisan"
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "id": "PPL_BASKETO",
+  "nameMain": "Basketo",
+  "languageFamilyId": "FLG_OMOTIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Basketo",
+      "selfAppellation": "Masketo",
+      "exonyms": [
+        "Basketto",
+        "Baskatta",
+        "Mesketo",
+        "Misketto",
+        "Basketo-Dokka"
+      ],
+      "originOfExonyms": "Le terme Basketo est un exonyme utilisé par les voisins et dans la littérature académique. Les locuteurs se désignent eux-mêmes sous le nom de Masketo. Le terme Dokka-Dollo fait référence aux deux dialectes principaux de la langue et est parfois utilisé pour désigner l'ensemble du peuple.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Basketo est utilisé officiellement dans les divisions administratives éthiopiennes (Basketo Zone, autrefois Basketo special woreda). Il est couramment employé dans la littérature académique et par les organismes gouvernementaux.",
+      "linguisticFamily": "FLG_OMOTIQUE",
+      "ethnoLinguisticGroup": "Omotique du Nord (groupe Gimojan)",
+      "historicalRegion": "Basketo Zone (ancienne Basketo special woreda), South Ethiopia Regional State — bordée au sud et à l'ouest par la zone de South Omo, et au nord et à l'est par la zone Gofa",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Basketo proprement dits — groupe central du woreda de Basketo",
+      "Doko (Dokko) — sous-groupe portant le nom du dialecte septentrional",
+      "Dollo — sous-groupe portant le nom du dialecte méridional",
+      "Wolayta installés dans le woreda (4,28% de la population selon le recensement de 2007)",
+      "Aari — voisins et minorité présente dans la zone"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Basketo font partie des peuples omotiques autochtones du sud-ouest de l'Éthiopie. Leur présence dans la région est antérieure aux conquêtes du XIXe siècle. Haberland les classe parmi les 'Altvölker' (peuples anciens) du sud de l'Éthiopie aux côtés de groupes comme les Dizi, les Aari et les Dime. Leur société traditionnelle, organisée en clans segmentaires dirigés par un roi divin (le kati), témoigne d'une civilisation ancienne bien établie.",
+      "formationPeriod": "L'identité Basketo s'est consolidée en tant que société clanique segmentaire plusieurs siècles avant la conquête éthiopienne. La conquête par Ras Welde Giyorgis en 1893 sous l'ordre de Menelik II a profondément transformé leur organisation politique et religieuse, provoquant de nombreuses conversions au christianisme orthodoxe éthiopien.",
+      "migrationRoutes": [
+        "Population autochtone sans migration fondatrice documentée hors de la région",
+        "Établissement historique dans les hautes terres de la zone actuelle de Basketo"
+      ],
+      "historicalSettlementZones": [
+        "Basketo Zone (South Ethiopia Regional State), capitale administrative Laska",
+        "Bordure avec la zone South Omo au sud et à l'ouest",
+        "Bordure avec la zone Gofa au nord et à l'est"
+      ],
+      "unificationsOrDivisions": "La société Basketo était organisée en clans segmentaires (adhérents à la lignée patrilinéaire) coiffés par un roi divin héréditaire (kati). La conquête éthiopienne de 1893 a mis fin à l'autonomie politique Basketo et les a intégrés à l'empire de Menelik II. Le statut de woreda spécial, puis de zone à partir de 2023, a reconnu leur identité distinctive au sein du système régional éthiopien.",
+      "externalInfluences": "Conquête de Ras Welde Giyorgis en 1893 au nom de Menelik II. Christianisation forcée suivant la conquête. Contacts avec les voisins Wolayta, Aari, Gofa, Melo et Oyda. Influence du protestantisme dans la période contemporaine (64% de protestants selon le recensement de 2007).",
+      "majorHistoricalEvents": "La conquête du territoire Basketo par Ras Welde Giyorgis en 1893 constitue le tournant majeur de leur histoire, marquant la fin de leur indépendance et leur intégration à l'empire éthiopien. Le woreda spécial de Basketo a obtenu un statut autonome au sein du SNNPR, puis a été intégré au South Ethiopia Regional State et élevé au rang de zone en août 2023."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La société Basketo était organisée comme une société clanique segmentaire dirigée par un roi divin héréditaire appelé kati. Le kati concentrait les fonctions politiques et spirituelles. Ce système a été démantelé après la conquête éthiopienne de 1893.",
+      "clanOrganization": "Structure clanique patrilinéaire segmentaire. Les clans sont liés par leur reconnaissance d'un ancêtre commun masculin. Les clans sont autonomes mais reconnaissaient l'autorité supérieure du kati. La société comportait également des groupes occupationnels (artisans, forgerons) souvent marginalisés.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires structurent l'organisation sociale, foncière et politique Basketo. L'appartenance lignagère détermine les droits d'accès à la terre, les alliances matrimoniales et les obligations rituelles.",
+      "religiousAuthority": "Traditionnellement, le kati était à la fois chef politique et chef spirituel. La religion ethnique des Basketo reconnaissait une dualité entre le dieu céleste Tsosii et la mère-terre Qacharunde. Depuis 1893, le protestantisme (64%) et le christianisme orthodoxe éthiopien (31%) dominent, supplantant largement les croyances traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Basketo (Masketo)",
+      "isoCodes": ["bst"],
+      "dialects": [
+        "Doko (Dokko) — dialecte septentrional",
+        "Dollo — dialecte méridional"
+      ],
+      "vehicularRole": "Le basketo (auto-désigné masketo) est parlé par environ 93 000 locuteurs selon le recensement de 2007. Il est la langue d'instruction au niveau primaire dans la zone de Basketo. L'amharique est utilisé pour l'administration et l'enseignement secondaire. Certains locuteurs parlent également le melo, l'oyda, le galila ou le gofa. La langue s'écrit en syllabaire guèze (Ge'ez)."
+    },
+    "culture": {
+      "majorRites": "Rites de passage marquant la naissance, la puberté, le mariage et le décès. L'organisation clanique segmentaire impliquait des rites collectifs de cohésion. Les sacrifices au dieu du ciel Tsosii et à la mère-terre Qacharunde constituaient le cœur de la ritualité traditionnelle. Les cérémonies liées au cycle agricole de l'enset (fausse banane), culture centrale de la subsistance Basketo, scandaient le calendrier rituel. Le mariage exogamique entre clans était accompagné de négociations formelles et de rituels d'alliance.",
+      "symbols": "Le kati (roi divin) constituait le symbole principal de l'unité politique et spirituelle Basketo. L'enset (Ensete ventricosum, fausse banane) est le symbole culturel et alimentaire central. La dualité cosmique Tsosii (ciel) / Qacharunde (terre) structure la vision du monde traditionnelle.",
+      "artsAndMusic": "Artisanat traditionnel incluant la poterie, le tissage et le travail des métaux. Les Basketo cultivent l'enset et produisent diverses céréales. Les femmes pratiquent la poterie décorative. La musique vocale et instrumentale accompagne les cérémonies claniques et les festivités agricoles. L'artisanat des Basketo est influencé par les contacts avec les peuples voisins (Wolayta, Gofa, Aari). Les produits agricoles de rente incluent le café et l'épice Aframomum corrorima (cardamome éthiopienne), qui jouent un rôle dans les échanges culturels et commerciaux.",
+      "spiritualities": "La religion traditionnelle des Basketo était dualiste : le dieu du ciel Tsosii représentait la puissance céleste et masculine, tandis que la mère-terre Qacharunde incarnait la fertilité terrestre et féminine. Le roi divin (kati) assurait la médiation entre les hommes et ces forces cosmiques. Après la conquête de 1893, la grande majorité des Basketo a adopté le protestantisme (64%) et le christianisme orthodoxe éthiopien (31%). Une minorité (2%) maintient des pratiques religieuses traditionnelles. Des formes syncrétiques intégrant des éléments de la cosmologie ancienne persistent dans les pratiques populaires."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La société Basketo était organisée autour de la chefferie royale du kati, roi divin disposant de pouvoirs à la fois politiques et spirituels. Ce n'était pas un royaume centralisé mais plutôt une chefferie clanique segmentaire dont l'autorité suprême était incarnée par le kati. Cette organisation a pris fin lors de la conquête par Ras Welde Giyorgis en 1893 pour le compte de l'empire de Menelik II.",
+      "relationsWithNeighbors": "Les Basketo entretenaient des relations commerciales et culturelles avec leurs voisins omotiques (Wolayta, Gofa, Aari, Gamo, Melo, Oyda). La zone Basketo est bordée par la zone South Omo au sud et à l'ouest, et par la zone Gofa au nord et à l'est. Des échanges linguistiques ont eu lieu, certains Basketo parlant le melo, l'oyda, le galila ou le gofa en plus de leur langue maternelle.",
+      "conflictsOrAlliances": "La résistance à la conquête éthiopienne de 1893 constitue le principal événement conflictuel documenté. Les Basketo ont été intégrés à l'empire de Menelik II suite à leur défaite militaire face aux troupes de Ras Welde Giyorgis. Cette intégration forcée a profondément transformé leur système politique et religieux traditionnel.",
+      "diaspora": "La quasi-totalité des Basketo (99,3% selon le recensement de 2007) réside dans leur zone d'origine au sein du South Ethiopia Regional State. La dispersion en dehors de la zone reste très limitée. Une petite communauté vit dans les villes éthiopiennes."
+    },
+    "demography": {
+      "totalPopulation": 110000,
+      "referenceYear": 2025,
+      "source": "Recensement éthiopien 2007 (CSA) : 78 284 membres dont 99,3% dans le SNNPR. Langue Basketo : 93 000 locuteurs (Ethnologue, SIL International, 2007). Projection 2025 estimée à environ 110 000 en tenant compte d'un taux de croissance démographique éthiopien moyen.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 110000,
+          "note": "Quasi-totalité dans la Basketo Zone (South Ethiopia Regional State), capitale Laska. Présence minoritaire dans les villes éthiopiennes."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Basketo people. https://en.wikipedia.org/wiki/Basketo_people",
+      "Wikipedia EN — Basketo language. https://en.wikipedia.org/wiki/Basketo_language",
+      "Wikipedia EN — Basketo Zone. https://en.wikipedia.org/wiki/Basketo_Zone",
+      "Ethnologue — Basketo language (bst). https://www.ethnologue.com/language/bst/",
+      "Azeb Amha et Dirk Bustorf : 'Basketo'. In: Encyclopaedia Aethiopica, vol. 1. Wiesbaden, 2003, pp. 499-500.",
+      "Haberland, Eike : 'Die Basketto und verwandte Stämme'. In: Altvölker Süd-Äthiopiens. Stuttgart, 1959, pp. 189-226.",
+      "The Tribal Society — The Basketo people. https://thetribalsociety.com/the-basketo-people/"
+    ]
+  }
+}

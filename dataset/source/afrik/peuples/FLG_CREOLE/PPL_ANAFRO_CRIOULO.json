@@ -1,0 +1,101 @@
+{
+  "id": "PPL_ANAFRO_CRIOULO",
+  "nameMain": "Crioulo de Guinée-Bissau",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["GNB"],
+  "content": {
+    "appellations": {
+      "mainName": "Crioulo de Guinée-Bissau",
+      "selfAppellation": "Crioulo / Kriyol",
+      "exonyms": [
+        "Anafro Crioulo",
+        "Upper Guinea Creole (anglais)",
+        "Crioulo, Upper Guinea (Ethnologue)",
+        "Guinensi",
+        "Purtuguis (terme local pour les Creoles catholiques de souche portugaise)"
+      ],
+      "originOfExonyms": "Le terme Crioulo dérive du portugais crioulo, désignant à l'origine les esclaves africains nés dans les colonies portugaises, puis étendu aux personnes de descendance mixte africaine et portugaise. Le terme Anafro Crioulo désigne spécifiquement la communauté créole présente en Guinée (Conakry) issue des migrations depuis la Guinée-Bissau.",
+      "whyProblematic": "Le terme Crioulo est ambigu car il désigne à la fois une identité ethnique (les Créoles, métis d'origine afro-portugaise) et une pratique linguistique (tous les locuteurs du créole de Guinée-Bissau, quelle que soit leur origine). Les Créoles ethniques ne représentent qu'environ 1% de la population, mais leur langue est parlée par 90% des Bissau-Guinéens.",
+      "contemporaryUsage": "Les Créoles ethniques se désignent comme Crioulo et constituent une minorité instruite, souvent catholique, historiquement liée à l'administration coloniale portugaise. En Guinée-Conakry, les Anafro Crioulo sont une petite communauté issue de l'immigration bissau-guinéenne.",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Créole afro-portugais de Haute-Guinée",
+      "historicalRegion": "Guinée-Bissau côtière et fluviale (Bissau, Cacheu, Bolama, Farim, Bafata)",
+      "currentCountries": ["GNB"]
+    },
+    "ethnicities": [
+      "Filhos da Terra (fils de la terre, métis de première génération)",
+      "Creoles de Bissau (capitale)",
+      "Creoles de Cacheu (ancien centre commercial)",
+      "Creoles de Bolama (ancienne capitale coloniale)",
+      "Kristons (Catholics de langue portugaise)",
+      "Lançados (descendants de Portugais métissés avec des Africaines)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Créoles de Guinée-Bissau sont nés du contact entre les populations africaines locales (Mandingue, Balante, Papel, Manjak, Fulani) et les colons et marchands portugais à partir du XVe siècle. Les premiers établissements portugais furent créés à Cacheu (XVIe siècle), Geba, Bissau et Joal. Des individus d'horizons divers — aventuriers, marchands, exilés, naufragés, clercs d'Europe et du Cap-Vert, et esclaves africains — se mêlèrent dans ces comptoirs fluviaux, donnant naissance à une culture et une langue créoles distinctes.",
+      "formationPeriod": "Le créole de Guinée-Bissau se forma probablement comme langue maternelle à partir du XVIIe siècle dans les comptoirs portugais de Cacheu, Geba, Bissau et Joal. Il dérive du créole initié sur l'île de Santiago au Cap-Vert, transporté sur le continent par les lançados et les commerçants cap-verdiens. L'identité créole ethnique s'est consolidée sous la colonisation portugaise (XIXe-XXe siècles), les Créoles occupant un rôle d'intermédiaires entre l'administration coloniale et les populations africaines.",
+      "migrationRoutes": [
+        "Du Cap-Vert (île de Santiago) vers les comptoirs de la côte de Guinée, XVe-XVIe siècles, via les lançados",
+        "Diffusion depuis les centres côtiers et fluviaux (Cacheu, Bissau, Geba) vers l'intérieur du pays"
+      ],
+      "historicalSettlementZones": [
+        "Bissau (capitale, principal centre créole)",
+        "Cacheu (plus ancienne ville, rôle commercial majeur)",
+        "Bolama (ancienne capitale coloniale)",
+        "Farim et Bafata (centres commerciaux intérieurs)",
+        "Ziguinchor (Casamance, Sénégal) pour la variété casamançaise"
+      ],
+      "unificationsOrDivisions": "La communauté créole est divisée géographiquement selon les anciens comptoirs commerciaux, chacun ayant développé une variété dialectale spécifique du kriyol (Bissau-Bolama, Bafata, Cacheu-Ziguinchor). Sous le régime colonial portugais, les Créoles bénéficiaient d'un statut d'assimilados, favorisant une cohésion sociale par distinction d'avec les populations africaines non christianisées.",
+      "externalInfluences": "Christianisme catholique (héritage colonial portugais). Influence des substrats africains : Balanta, Mankanya, Mandinka, Manjak, Papel. Immigration cap-verdienne continue, renforçant les liens linguistiques et culturels avec le Cap-Vert. Depuis l'indépendance de la Guinée-Bissau en 1974, déclin du statut élitaire des Créoles au profit d'une démocratisation de la langue créole devenue lingua franca nationale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Pas de système politique traditionnel propre aux Créoles : leur identité s'est construite dans le cadre des structures coloniales portugaises. Les Créoles jouaient un rôle d'intermédiaires administratifs et commerciaux. Après l'indépendance (1974), intégration dans les structures politiques de la République de Guinée-Bissau.",
+      "clanOrganization": "Organisation en familles étendues portant souvent des patronymes portugais (da Silva, Carvalho, Fonseca, Pinto). Les familles créoles de vieille souche sont organisées en réseaux de parenté et d'alliance fondant leur identité métisse et catholique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilinéaires transmettant à la fois le nom (d'origine portugaise) et le statut social créole. L'appartenance à une famille créole reconnue conférait historiquement un statut d'assimilado et un accès privilégié à l'administration coloniale.",
+      "religiousAuthority": "Catholicisme romain dominant dans la communauté créole, héritage de l'influence portugaise. Les prêtres catholiques ont joué un rôle de cohésion communautaire. Certaines familles créoles maintiennent des pratiques syncrétiques mêlant catholicisme et croyances africaines traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Kriyol (créole de Guinée-Bissau)",
+      "isoCodes": ["pov"],
+      "dialects": [
+        "Créole de Bissau-Bolama (dialecte de la capitale, base du créole standard)",
+        "Créole de Bafata (dialecte intérieur)",
+        "Créole de Cacheu-Ziguinchor (dialecte du nord et de la Casamance sénégalaise)"
+      ],
+      "vehicularRole": "Le kriyol est la langue nationale de facto de la Guinée-Bissau, parlé comme première langue par environ 54% de la population et comme langue seconde par 40% supplémentaires (étude 2012). C'est la lingua franca du pays, langue du commerce, de la vie quotidienne et de l'identité nationale post-indépendance. Le portugais reste la langue officielle de l'administration et de l'éducation. Le kriyol est aussi parlé en Casamance (Sénégal) et en Gambie."
+    },
+    "culture": {
+      "majorRites": "Rites catholiques structurant le cycle de vie : baptême, première communion, mariage à l'église, funérailles chrétiennes. Célébrations de saints patrons dans les villages (festas des santos). Rites de passage informels marquant l'appartenance à la communauté créole. Carnaval urbain à Bissau, mêlant traditions africaines et catholiques. Cérémonies de réconciliation entre familles. Fêtes de la Saint-Jean (Festa de São João) avec percussions africaines et rituels locaux.",
+      "symbols": "La langue kriyol est le symbole central de l'identité créole de Guinée-Bissau : considérée comme langue de l'indépendance et de l'unité nationale. La croix catholique et les patronymes portugais sont des marqueurs identitaires de la communauté créole ethnique. Le statut d'intermédiaire culturel entre l'Afrique et l'Europe est une composante identitaire forte.",
+      "artsAndMusic": "Musique créole : gumbe (rythme phare de la Guinée-Bissau, mêlant percussions africaines et influences européennes), tina et mantenha (styles locaux). Poésie orale en kriyol. Danse traditionnelle lors des cérémonies et fêtes de quartier. Artisanat : vannerie, tissage, bijouterie influencée par les traditions des peuples voisins (Papel, Manjak). Littérature créole émergente depuis l'indépendance. Influence musicale cap-verdienne (morna, funaná) dans les milieux créoles urbains.",
+      "spiritualities": "Catholicisme romain majoritaire dans la communauté créole ethnique (environ 52% des Créoles sont chrétiens selon Joshua Project). Syncrétisme présent : certaines pratiques animistes africaines (cérémonies liées aux ancêtres, esprits de la nature) coexistent avec la pratique catholique. Dans la communauté plus large des locuteurs du kriyol, l'islam est majoritaire (plus de 40% de la population de Guinée-Bissau). Présence d'Eglises protestantes évangéliques depuis le XXe siècle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume créole proprement dit. Les Créoles ont organisé leur pouvoir dans le cadre des structures coloniales portugaises comme intermédiaires commerciaux et administratifs. Ils constituaient l'élite assimilée de la Guinée portugaise, avec accès à l'éducation et aux postes administratifs. Après l'indépendance (1974), leur rôle politique a décliné au profit des élites africaines du PAIGC.",
+      "relationsWithNeighbors": "Relations commerciales et culturelles étroites avec le Cap-Vert (langue et culture partagées). Relations d'intermédiation avec les populations africaines locales (Balante, Papel, Manjak, Fulani, Mandingue) dont les Créoles étaient les interlocuteurs commerciaux et administratifs. Liens familiaux et culturels avec les communautés créoles du Sénégal (Casamance) et de la Gambie.",
+      "conflictsOrAlliances": "Rôle ambigu sous la colonisation : les Créoles étaient à la fois utilisés par le pouvoir colonial portugais et discriminés malgré leur statut d'assimilados. Certains Créoles ont participé au mouvement d'indépendance du PAIGC (Parti africain pour l'indépendance de la Guinée et du Cap-Vert, fondé par Amilcar Cabral). Marginalisation politique post-indépendance dans un pays à majorité africaine non métisse.",
+      "diaspora": "Diaspora créole en Portugal (ex-métropole coloniale), en France et dans les pays lusophones. Communauté Anafro Crioulo présente en Guinée-Conakry, issue de migrations économiques depuis la Guinée-Bissau. Les Créoles de Guinée-Bissau entretiennent des liens forts avec la diaspora cap-verdienne dans le monde (Portugal, Etats-Unis, France, Pays-Bas)."
+    },
+    "demography": {
+      "totalPopulation": 20000,
+      "referenceYear": 2025,
+      "source": "International Kreol Magazine (2024) : les Créoles représentent environ 1% d'une population de près de 2 millions en Guinée-Bissau, soit environ 20 000 personnes. Joshua Project : Crioulo, Upper Guinea in Guinea-Bissau, 301 000 locuteurs natifs du kriyol (incluant ceux d'autres origines ethniques). Note : la communauté créole ethnique (métis afro-portugais) est distincte et bien plus petite que l'ensemble des locuteurs du kriyol.",
+      "distributionByCountry": [
+        {
+          "country": "GNB",
+          "population": 20000,
+          "note": "Communauté créole ethnique (métis afro-portugais), principalement à Bissau, Cacheu et Bolama"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Guinea-Bissau Creole. https://en.wikipedia.org/wiki/Guinea-Bissau_Creole",
+      "International Kreol Magazine — Guinea-Bissau's Creole Culture. https://kreolmagazine.com/guinea-bissaus-creole-culture-evolution-influence-and-resilience/",
+      "Joshua Project — Crioulo, Upper Guinea in Guinea-Bissau. https://joshuaproject.net/people_groups/11436/PU",
+      "Sorosoro — Guinea-Bissau Creole language. https://www.sorosoro.org/en/guinea-bissau-creole/",
+      "Ethnologue — Guinea-Bissau Creole (pov). https://www.ethnologue.com/language/pov/",
+      "Wikipedia EN — Guinea-Bissau. https://en.wikipedia.org/wiki/Guinea-Bissau",
+      "Britannica — Guinea-Bissau. https://www.britannica.com/place/Guinea-Bissau"
+    ]
+  }
+}

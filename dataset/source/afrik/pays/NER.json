@@ -1,0 +1,224 @@
+{
+  "id": "NER",
+  "nameFr": "République du Niger",
+  "nameOfficial": "République du Niger (République du Niger)",
+  "etymology": "Le nom \"Niger\" vient du fleuve Niger, qui traverse le pays. Le nom du fleuve vient du terme berbère \"n-igere-n\" (rivière des rivières) ou du terme touareg \"egerew n-igerewen\" (grande rivière). Le nom a été adopté lors de l'indépendance en 1960. Auparavant, le territoire était appelé \"Colonie du Niger\" pendant la colonisation française.",
+  "nameOriginActor": "Le nom \"Niger\" vient du fleuve Niger, nommé par les Berbères ou les Touareg. Le nom a été adopté par les Français lors de la création de la colonie (1922) puis officialisé lors de l'indépendance (1960).",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel du Niger était peuplé de diverses sociétés (Hausa, Zarma, Peul, Touareg, Kanuri). Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Développement des cités-États hausa (Kano, Katsina, Zaria), royaumes songhay, chefferies peules, confédérations touarègues. Commerce transsaharien. Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Consolidation des cités-États hausa, royaumes songhay, chefferies peules, confédérations touarègues. Commerce transsaharien. Les Européens utilisaient le terme \"Niger\" pour désigner la région du fleuve Niger.",
+      "colonization": "1890-1960 : Colonie française du Niger (Colonie du Niger). Les Français ont établi un protectorat puis une colonie sur le territoire. Le nom \"Niger\" est officialisé par les Français.",
+      "contemporary": "1960 : Indépendance (3 août 1960), proclamation de la République du Niger. Le nom \"Niger\" est officiel."
+    },
+    "kingdoms": [
+      {
+        "name": "Cités-États hausa",
+        "period": "Moyen Âge - présent",
+        "dominantPeoples": ["Hausa"],
+        "politicalCenters": [
+          "Kano",
+          "Katsina",
+          "Zaria (Zazzau)",
+          "autres cités-États"
+        ],
+        "historicalRole": "Cités-États hausa, islamisation ancienne, commerce transsaharien, développement urbain, émirats hausa. Les cités-États hausa ont joué un rôle majeur dans l'histoire de la région."
+      },
+      {
+        "name": "Royaumes songhay",
+        "period": "Moyen Âge - XIXe siècle",
+        "dominantPeoples": ["Songhay", "Zarma"],
+        "politicalCenters": ["Gao", "Tombouctou", "autres centres songhay"],
+        "historicalRole": "Royaumes songhay, empire songhay (XVe-XVIe siècles), commerce transsaharien, développement culturel et intellectuel. L'empire songhay a été l'un des plus grands empires d'Afrique de l'Ouest."
+      },
+      {
+        "name": "Chefferies peules",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Peul (Fulani)"],
+        "politicalCenters": ["Chefferies traditionnelles"],
+        "historicalRole": "Chefferies peules, pastoralisme, islam, résistance à la colonisation."
+      },
+      {
+        "name": "Confédérations touarègues",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Touareg"],
+        "politicalCenters": ["Confédérations tribales touarègues"],
+        "historicalRole": "Confédérations touarègues, nomadisme saharien, commerce transsaharien, résistance à la colonisation, rébellions touarègues (1990s-2010s)."
+      },
+      {
+        "name": "Royaume du Kanem-Bornou",
+        "period": "Moyen Âge - XIXe siècle",
+        "dominantPeoples": ["Kanuri"],
+        "politicalCenters": ["Kanem", "Bornou"],
+        "historicalRole": "Royaume du Kanem-Bornou, islamisation, commerce transsaharien, développement culturel."
+      },
+      {
+        "name": "Colonie française du Niger",
+        "period": "1890 - 1960",
+        "dominantPeoples": [
+          "Tous les peuples nigériens sous domination coloniale française"
+        ],
+        "politicalCenters": ["Niamey (capitale coloniale)"],
+        "historicalRole": "Colonisation française, résistance des peuples autochtones, développement de l'administration coloniale, mouvements nationalistes (XXe siècle)."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Hausa",
+        "selfAppellation": "Hausawa",
+        "exonyms": [
+          "\"Haoussa\" (transcription coloniale française)",
+          "\"Al-Sūdān\" (ancienne appellation arabo-islamique large",
+          "non spécifique)"
+        ],
+        "peopleId": "PPL_HAUSA",
+        "mainRegion": "Sud du Niger",
+        "languages": ["Hausa (hau", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_TCHADIQUE",
+        "appellationRemarks": "\"Hausawa\" est l'auto-appellation. \"Haoussa\" est la transcription coloniale française. Pas de terme péjoratif connu. Groupe majoritaire, cités-États hausa, islamisation ancienne."
+      },
+      {
+        "name": "Zarma",
+        "selfAppellation": "Zarma",
+        "exonyms": [
+          "Zarma (terme utilisé par les Européens)",
+          "\"Djerma\" (variante)"
+        ],
+        "peopleId": "PPL_ZARMA",
+        "mainRegion": "Ouest du Niger (fleuve Niger)",
+        "languages": ["Zarma (dje", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_SONGHAY",
+        "appellationRemarks": "\"Zarma\" est l'auto-appellation. \"Djerma\" est une variante moins utilisée. Pas de terme péjoratif connu. Héritiers des royaumes songhay, langue véhiculaire au Niger."
+      },
+      {
+        "name": "Peul",
+        "selfAppellation": "Fulɓe",
+        "exonyms": [
+          "\"Peul\" (terme français)",
+          "\"Fulani\" (terme anglais)",
+          "\"Fellata\" (terme historique",
+          "peut avoir une connotation péjorative)"
+        ],
+        "peopleId": "PPL_FULANI",
+        "mainRegion": "Toutes les régions du Niger",
+        "languages": ["Fulfulde (ful", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Fulɓe\" est l'auto-appellation. \"Peul\" et \"Fulani\" sont des exonymes acceptés. \"Fellata\" peut avoir une connotation péjorative dans certains contextes et doit être évité. Pasteurs et commerçants musulmans."
+      },
+      {
+        "name": "Touareg",
+        "selfAppellation": "Kel Tamasheq, Imuhagh",
+        "exonyms": [
+          "\"Touareg\" (terme français)",
+          "\"Tuareg\" (terme anglais)",
+          "\"Berbères du Sahara\" (terme descriptif)"
+        ],
+        "peopleId": "PPL_TUAREG",
+        "mainRegion": "Nord du Niger (Sahara)",
+        "languages": ["Tamasheq (tmh", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_BERBERE",
+        "appellationRemarks": "\"Kel Tamasheq\" ou \"Imuhagh\" sont les auto-appellations. \"Touareg\" est l'exonyme le plus courant. \"Berbère\" est un terme descriptif mais peut être problématique dans certains contextes. Nomades sahariens, commerce transsaharien, rébellions touarègues (1990s-2010s)."
+      },
+      {
+        "name": "Kanuri",
+        "selfAppellation": "Kanuri",
+        "exonyms": ["Kanuri (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KANURI",
+        "mainRegion": "Sud-est du Niger",
+        "languages": ["Kanuri (kau", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_SAHARIEN",
+        "appellationRemarks": "\"Kanuri\" est l'auto-appellation. Pas de terme péjoratif connu. Héritiers du royaume du Kanem-Bornou."
+      },
+      {
+        "name": "Toubou",
+        "selfAppellation": "Toubou",
+        "exonyms": [
+          "Toubou (terme utilisé par les Européens)",
+          "\"Teda\" (sous-groupe)"
+        ],
+        "peopleId": "PPL_TOUBOU",
+        "mainRegion": "Nord-est du Niger (Sahara)",
+        "languages": ["Toubou (tuv", "ISO 639-3)", "français"],
+        "languageFamily": "FLG_SAHARIEN",
+        "appellationRemarks": "\"Toubou\" est l'auto-appellation. Pas de terme péjoratif connu. Nomades sahariens."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Diverses régions du Niger",
+        "languages": ["Langues diverses", "français"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Français",
+          "isoCode": "fra",
+          "isPrimary": true
+        },
+        {
+          "name": "hausa"
+        },
+        {
+          "name": "zarma",
+          "isoCode": "dje"
+        },
+        {
+          "name": "fulfulde",
+          "isoCode": "ful"
+        },
+        {
+          "name": "tamasheq",
+          "isoCode": "tmh"
+        },
+        {
+          "name": "kanuri",
+          "isoCode": "kau"
+        },
+        {
+          "name": "toubou",
+          "isoCode": "tuv"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique du Niger. Traditions hausa : cités-États hausa, émirats, islamisation ancienne, commerce transsaharien, architecture hausa, poésie hausa. Traditions songhay : héritage de l'empire songhay, commerce transsaharien, traditions intellectuelles. Traditions peules : pastoralisme, poésie peule, traditions islamiques. Traditions touarègues : nomadisme saharien, commerce transsaharien, poésie touarègue, musique touarègue (guitare, chant), artisanat touareg (bijoux, cuir). Traditions kanuri : héritage du royaume du Kanem-Bornou, traditions islamiques. Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. La poésie touarègue est réputée internationalement.",
+      "dominantReligions": "Islam (sunnite majoritaire, école malékite), toutes les communautés sont majoritairement musulmanes",
+      "lifestyles": "Agriculture (sud, hausa, zarma, kanuri, millet, sorgho, cultures vivrières), pastoralisme (peul, touareg, toubou, élevage de bovins, caprins, chameaux), commerce transsaharien (touareg, hausa), commerce et activités urbaines (zones urbaines, Niamey, Zinder, Maradi). Urbanisation modérée. Économie basée sur l'agriculture, l'élevage, l'exploitation minière (uranium, or), et le commerce. Le Niger est l'un des pays les plus pauvres d'Afrique, avec des défis de développement importants.",
+      "socialOrganization": "Organisation en cités-États hausa (émirats), chefferies traditionnelles (zarma, peul, kanuri), confédérations touarègues (tribus nomades). Structures claniques patrilinéaires (majorité des groupes). Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Traditions d'initiation et de passage à l'âge adulte. Système patrilinéaire (majorité des groupes).",
+      "regionalRelations": "Relations historiques avec le Nigeria (commerce, migrations, peuples transfrontaliers, frontière), le Mali (commerce, frontière), l'Algérie (commerce, frontière), la Libye (commerce, frontière), le Tchad (commerce, frontière), le Burkina Faso (commerce, frontière), le Bénin (commerce, frontière). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest). Relations commerciales et culturelles transfrontalières. Le Niger est un pays de transit pour le commerce régional et transsaharien."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Présence des peuples hausa, songhay, peul, touareg, kanuri. Développement de structures politiques locales.",
+      "middleAges": "Développement des cités-États hausa (Kano, Katsina, Zaria), islamisation ancienne, commerce transsaharien. Empire songhay (XVe-XVIe siècles), développement culturel et intellectuel. Royaume du Kanem-Bornou, islamisation. Développement des chefferies peules et des confédérations touarègues.",
+      "precolonial": "Consolidation des cités-États hausa, royaumes songhay, chefferies peules, confédérations touarègues. Commerce transsaharien intensif. Développement des traditions culturelles.",
+      "colonization": "1890-1960 : Colonie française du Niger. Résistance des peuples autochtones (notamment résistance touarègue). Développement de l'administration coloniale. XXe siècle : Développement du mouvement indépendantiste.",
+      "independenceStruggle": "1950s-1960 : Mouvement pour l'indépendance, Hamani Diori, indépendance (3 août 1960), proclamation de la République du Niger. Hamani Diori devient premier président.",
+      "postIndependence": "République du Niger (1960), présidence de Hamani Diori (1960-1974), coups d'État (1974, 1996, 1999, 2010), rébellions touarègues (1990s-2010s), transition démocratique (depuis 1999), présidence de Mamadou Tandja (1999-2010), Mahamadou Issoufou (2011-2021), Mohamed Bazoum (2021-2023), coup d'État (2023), Abdourahamane Tiani (depuis 2023). Défis : pauvreté, développement économique, sécurité (terrorisme, rébellions touarègues), changement climatique (désertification). Le Niger est l'un des pays les plus pauvres d'Afrique, avec des défis de développement importants."
+    },
+    "sources": [
+      "ONU – World Population Prospects 2025",
+      "CIA World Factbook – Niger",
+      "SIL Ethnologue – Languages of Niger",
+      "Recensements nigériens",
+      "Études anthropologiques sur les peuples du Niger",
+      "Études historiques sur les cités-États hausa, l'empire songhay, le royaume du Kanem-Bornou"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Hausa",
+          "population": 11000000,
+          "percentageInCountry": 44,
+          "peopleId": "PPL_HAUSA",
+          "region": "Sud du Niger",
+          "languageFamily": "FLG_TCHADIQUE"
+        },
+        {
+          "name": "Autres peuples"
+        }
+      ]
+    }
+  }
+}

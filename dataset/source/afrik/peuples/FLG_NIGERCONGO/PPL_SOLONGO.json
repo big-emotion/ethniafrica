@@ -1,0 +1,103 @@
+{
+  "id": "PPL_SOLONGO",
+  "nameMain": "Solongo",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["AGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Solongo",
+      "selfAppellation": "Solongo / Basolongo",
+      "exonyms": [
+        "Basolongo (forme plurielle en préfixe bantu Ba-)",
+        "Solongo (usage colonial portugais)"
+      ],
+      "originOfExonyms": "Le terme Solongo est le nom propre de ce sous-groupe Bakongo. Le préfixe Ba- (Basolongo) est la forme plurielle bantu standard. Les sources coloniales portugaises utilisaient Solongo pour désigner spécifiquement cette communauté côtière du nord-ouest de l'Angola, distincte des autres Bakongo de l'intérieur.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les Solongo sont reconnus comme un sous-groupe distinct des Bakongo d'Angola, localisés dans la province du Zaïre (nord-ouest) et autour de Soyo. Ils se distinguent par leur tradition de pêche maritime, activité rare parmi les peuples bantous de la région.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Zone H (Kongo, H16)",
+      "historicalRegion": "Plaine côtière nord-ouest de l'Angola, province du Zaïre, embouchure du fleuve Congo (Soyo)",
+      "currentCountries": ["AGO"]
+    },
+    "ethnicities": [
+      "Basolongo de Soyo — zone côtière de l'embouchure du Congo, pêcheurs maritimes",
+      "Basolongo de la province du Zaïre (Mbanza Congo) — intérieur, agriculteurs",
+      "Ashiluanda — groupe côtier apparenté de l'île de Luanda, parfois associé aux Solongo pour leur tradition maritime",
+      "Bashikongo — sous-groupe voisin, zone côtière proche, interactions historiques avec les Solongo",
+      "Pombo — sous-groupe Bakongo oriental, frontière RDC-Angola"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Solongo sont un sous-groupe Bakongo, descendants du peuple Kongo qui s'établit dans la vallée du fleuve Congo à partir du milieu du 13e siècle. Ils font partie du grand ensemble Bantou Zone H (Kikongo, H16). Le Royaume de Kongo, fondé vers le 14e siècle avec pour capitale Mbanza Kongo (São Salvador) dans l'actuelle province angolaise du Zaïre, constitue leur matrice politique et culturelle de référence. Les Solongo occupaient spécifiquement la plaine côtière sèche au nord-ouest de l'Angola, en particulier la région de Soyo près de l'embouchure du fleuve Congo.",
+      "formationPeriod": "La communauté solongo s'est distinguée comme groupe distinct du Kongo principalement par son adaptation à l'environnement côtier et maritime. Cette spécialisation remonte à l'époque précoloniale. Leur position géographique à l'embouchure du Congo et sur la côte atlantique les a éloignés du centre du Royaume de Kongo tout en leur conférant un rôle commercial stratégique. Ils eurent peu de contacts avec les Portugais comparés aux Bashikongo côtiers.",
+      "migrationRoutes": [
+        "Migration Kongo depuis la région Congo-Brazzaville vers le nord-ouest de l'Angola, 13e-14e siècles",
+        "Installation sur la plaine côtière atlantique angolaise et à l'embouchure du fleuve Congo (Soyo)",
+        "Mouvements internes lors des guerres civiles kongo (17e-18e siècles) et de la traite des esclaves"
+      ],
+      "historicalSettlementZones": [
+        "Soyo (embouchure du fleuve Congo) et le littoral atlantique nord-angolais",
+        "Province du Zaïre, Angola (capitale Mbanza Kongo)",
+        "Plaine côtière sèche entre l'embouchure du Congo et Luanda"
+      ],
+      "unificationsOrDivisions": "Les Solongo faisaient partie des provinces périphériques du Royaume de Kongo. Avec la dislocation du royaume au 18e siècle (suite aux guerres civiles et à l'impact de la traite négrière), les différents sous-groupes Bakongo, dont les Solongo, développèrent des identités locales plus marquées. Lors des guerres d'indépendance angolaises, les Bakongo (dont les Solongo) formèrent l'essentiel du soutien au FNLA (Front National de Libération de l'Angola).",
+      "externalInfluences": "Contact avec les explorateurs et marchands portugais depuis la fin du 15e siècle (Diogo Cão atteignit l'embouchure du Congo en 1482-1483). Evangélisation catholique précoce du Royaume de Kongo (roi Nzinga a Ntinu converti vers 1491). Traite transatlantique des esclaves (16e-19e siècles). Colonisation portugaise intense à partir du 19e siècle. Indépendance de l'Angola en 1975; guerre civile angolaise (1975-2002) perturbant fortement les communautés du nord-ouest."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies et sous-chefferies relevant du système politique kongo. Le chef (mfumu ou ntinu au niveau du clan, lukeni au niveau provincial) détient une autorité politico-religieuse. Le village (kanda) constitue l'unité de base, dirigé par son chef de clan. La succession était traditionnellement matrilinéaire dans le système kongo classique, contrairement à la plupart des peuples bantous.",
+      "clanOrganization": "Comme l'ensemble des Bakongo, les Solongo sont organisés en clans matrilinéaires (kanda). L'identité clanique est transmise par la mère. Les clans sont exogames. Le rôle du frère de la mère (ngudi a nkazi) est déterminant dans les décisions familiales importantes (héritages, mariages, initiations).",
+      "ageClassSystems": null,
+      "roleOfLineages": "La matrilinéarité kongo confère aux oncles maternels (ngudi a nkazi) une autorité sur leurs neveux, notamment pour la transmission des biens, des titres et des terres. Les disputes successorales entre fils et neveux furent une source récurrente de conflits au sein du Royaume de Kongo.",
+      "religiousAuthority": "Les chefs traditionnels (mfumu) cumulent autorité politique et religieuse. Les nganga (devins-guérisseurs) interviennent pour la santé, la divination et la médiation avec les esprits ancestraux (bakulu). Le christianisme catholique est ancré depuis le 16e siècle au sein des élites kongo, et s'est largement diffusé dans la population au 20e siècle."
+    },
+    "languages": {
+      "mainLanguage": "Kikongo (Kongo), dialecte solongo / côtier",
+      "isoCodes": ["kon", "kng"],
+      "dialects": [
+        "Solongo — dialecte côtier propre aux Basolongo, variété du Kikongo du nord-ouest angolais",
+        "Kongo San Salvador (Kongo de Mbanza Kongo) — dialecte de référence du Kikongo angolais",
+        "Kikongo ya Leta / Kituba — Kikongo simplifié utilisé comme langue véhiculaire régionale",
+        "Fiote (Vili) — dialecte kongo côtier du nord, parlé également à Cabinda et Congo-Brazzaville"
+      ],
+      "vehicularRole": "Le kikongo est la langue nationale de la province du Zaïre angolaise et de Cabinda. Il est l'une des six langues nationales d'Angola reconnues officiellement. Le portugais est la langue officielle de l'État. Environ 13-15 % de la population angolaise parle un dialecte kongo comme langue maternelle."
+    },
+    "culture": {
+      "majorRites": "Kindoki (rite de protection et de purification contre la sorcellerie, avec intervention du nganga). Funzi (initiation des jeunes dans certaines communautés kongo voisines). Rites funéraires élaborés incluant veillées, danses et repas communautaires (inkuni ya mfumu). Mariage traditionnel avec lobola (compensation matrimoniale). Rites de la pêche : cérémonies propitiatoires avant les sorties de pêche maritime, invocations aux esprits des eaux (nkisi ya mbu).",
+      "symbols": "Nkisi (fétiches/objets de pouvoir spirituel, tradition kongo centrale). Mbumba (serpent arc-en-ciel, divinité des eaux dans la cosmologie kongo). Filets de pêche (symbole identitaire, seuls pêcheurs maritimes africains avec les Ashiluanda dans la région). Kimpasi (société initiatique kongo). Drapeau angolais avec machette et roue dentée (contexte post-indépendance).",
+      "artsAndMusic": "Musique kongo : tambours ngoma, sanza (lamellophone), chants polyphoniques. Danse traditionnelle kikosi et nkumba. Sculpture sur bois : statuettes nkisi nkondi (figures à clous, tradition kongo, renommée dans l'art africain mondial). Tissage de raphia (nzimbu, paniers). Poterie féminine traditionnelle. Art de la pêche : construction de pirogues et fabrication de filets, savoir-faire distinctif des Solongo côtiers.",
+      "spiritualities": "Cosmologie kongo centrée sur le concept de nza yayi (monde des vivants et des morts reliés). Les bakulu (esprits ancestraux) sont des intermédiaires actifs. Les nkisi (objets de pouvoir spirituel, contenants d'esprits) constituent l'une des traditions religieuses les plus élaborées d'Afrique centrale. Le nganga (guérisseur-devin) est le spécialiste rituel central. Le christianisme catholique, présent depuis le 16e siècle, est aujourd'hui dominant; de nombreuses Eglises indépendantes africaines (kimbanguisme notamment) sont également actives."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Province de Soyo (Nsuwu) du Royaume de Kongo : l'une des grandes provinces du royaume, gouvernée par un comte (mani Soyo); la région de Soyo acquit une importance stratégique en tant que premier point de contact avec les Portugais à l'embouchure du Congo. La province de Soyo joua un rôle particulier dans l'évangélisation catholique précoce et dans le commerce atlantique. Lors de la dislocation du Royaume de Kongo au 17e siècle, le comte de Soyo devint presque indépendant.",
+      "relationsWithNeighbors": "Relations commerciales et politiques avec les Bashikongo, les Pombo et les Mayombe. Les Solongo côtiers ont eu moins de contacts directs avec les Portugais que les Bakongo de l'intérieur (Bashikongo). Relations complexes avec les peuples Mbundu (Ambundu) au sud. Les Bakongo d'Angola entretiennent des liens culturels transfrontaliers avec leurs homologues de la RDC et de la République du Congo.",
+      "conflictsOrAlliances": "Bataille d'Mbwila (1665) : défaite du Royaume de Kongo face aux Portugais, mort du roi António I; début de la désintégration du royaume. Participation des Bakongo angolais au soulèvement de mars 1961 contre la colonisation portugaise. FNLA (Front National de Libération de l'Angola) de Holden Roberto : principal mouvement Bakongo lors de la guerre d'indépendance. Exil de 400 000 Bakongo au Zaïre pendant la guerre d'indépendance (1961-1975). Implication dans la guerre civile angolaise (1975-2002).",
+      "diaspora": "Les Bakongo angolais (dont les Solongo) ont une importante diaspora en République Démocratique du Congo (Kinshasa), issue des guerres d'indépendance et civile. Communautés à Luanda (capitale angolaise). Migrations vers le Portugal et l'Europe depuis la fin de la guerre civile (2002). Les liens culturels et familiaux transfrontaliers avec les Bakongo du Congo-Kinshasa restent forts."
+    },
+    "demography": {
+      "totalPopulation": 250000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur le recensement angolais 2014 (province du Zaïre : 594 428 habitants, majorité Bakongo), US Department of State (Bakongo 13 % population angolaise), Angola Culture Studies (Bakongo sous-groupes dont Solongo). Population totale angolaise ~35 millions en 2025 (UN). Les Solongo représentent un sous-groupe distinct mais relativement restreint au sein des Bakongo.",
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 220000,
+          "note": "Province du Zaïre (nord-ouest Angola), zone côtière autour de Soyo, ville de Mbanza Kongo"
+        },
+        {
+          "country": "COD",
+          "population": 30000,
+          "note": "Communautés transfrontalières au Bas-Congo/Kongo Central (RDC), proches de l'embouchure du Congo"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Culture of Angola (Bakongo section). https://en.wikipedia.org/wiki/Culture_of_Angola",
+      "Wikipedia EN — Kongo people. https://en.wikipedia.org/wiki/Bakongo",
+      "Wikipedia EN — Zaire Province Angola. https://en.wikipedia.org/wiki/Zaire_Province",
+      "Country Studies US — Angola: Bakongo. https://countrystudies.us/angola/61.htm",
+      "IRB Canada — Angola: Situation and treatment of Bakongo people (2024). https://www.ecoi.net/en/document/2110281.html",
+      "Ethnologue (SIL) — Kongo language (kon). https://www.ethnologue.com/language/kon/",
+      "CIA World Factbook — Angola. https://www.cia.gov/the-world-factbook/countries/angola/",
+      "Reddit Angola — Bakongo subgroups including Solongo (Soyo). https://www.reddit.com/r/Angola/comments/1k0opk0/bakongo_angolans/"
+    ]
+  }
+}

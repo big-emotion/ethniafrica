@@ -1,0 +1,80 @@
+{
+  "id": "PPL_BULSA",
+  "nameMain": "Bulsa",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Bulsa",
+      "selfAppellation": "Bulsa",
+      "exonyms": ["Builsa", "Kanjaga"],
+      "originOfExonyms": "Builsa est la forme administrative officielle utilisee par l'Etat ghaneen (Builsa North District, Builsa South District). Kanjaga est un terme errone utilise par les coloniaux et certains Ghaneens qui confondaient le peuple avec le village de Kanjaga, l'un de leurs bourgs, dans le nord-est du Ghana.",
+      "whyProblematic": "L'appellation Kanjaga est consideree incorrecte par les Bulsa eux-memes : Kanjaga est un village dans le territoire Bulsa, non un ethnonyme. Cette confusion coloniale et populaire persiste dans certaines sources.",
+      "contemporaryUsage": "Bulsa et Builsa sont tous deux utilises dans les contextes contemporains, Builsa predominant dans les documents officiels ghaneens. Bulsa est prefere par la communaute elle-meme.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Oti-Volta (Gur)",
+      "historicalRegion": "Nord du Ghana, Upper East Region",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Bulsa", "Builsa"],
+    "origins": {
+      "ancientOrigins": "Les Bulsa sont un peuple de langue Oti-Volta (sous-famille Gur, famille Niger-Congo). Selon la tradition orale, ils descendent de trois fondateurs : le prince mamprussi Atuga de Nalerigu ; le forgeron kasena Akana de Kurugu (pres de Dakai, Burkina Faso) qui batit le Kanjag Pung (tanggbain, sanctuaire de la terre) ; et les autochtones Koma (kom dem, peuple de Kom) qu'Atuga et Akana trouverent sur place.",
+      "formationPeriod": "Formation ethnique situee dans le premier millenaire de notre ere selon les traditions orales ; structuration politique plus claire documentee avant la periode coloniale. La communaute Bulsa est decrite comme distincte de tous ses voisins avant l'arrivee des Europeens.",
+      "migrationRoutes": [
+        "Migration du fondateur Akana depuis Kurugu (Burkina Faso) vers les savanes du nord du Ghana",
+        "Convergence des groupes Mamprussi, Kasena et Koma sur les terres de la confluence des fleuves Kulpawn et Sisil"
+      ],
+      "historicalSettlementZones": [
+        "Savanes de la Upper East Region du Ghana, le long des fleuves Kulpawn et Sisil",
+        "Districts de Builsa North (capitale Sandema) et Builsa South (capitale Fumbisi)"
+      ],
+      "unificationsOrDivisions": "La paramountcy de Sandema constitue le centre politique de l'ensemble Bulsa. La distinction entre Builsa North et Builsa South est une division administrative ghaneenne contemporaine ne correspondant pas a une division culturelle ancienne.",
+      "externalInfluences": "Au XIXe siecle, les Bulsa resistèrent avec succes aux raids de l'esclavagiste Babatu, evenement fondateur celebre annuellement. La colonisation britannique reorganisa les structures de chefferie mais ne parvint pas a effacer l'identite Bulsa distincte.",
+      "majorHistoricalEvents": "Resistance victorieuse aux raids de l'esclavagiste Babatu au XIXe siecle, evenement commémoré par un festival elabore avant Noël. Incorporation dans le territoire colonial britannique de la Gold Coast. Independence du Ghana en 1957 et integration dans la Upper East Region."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Paramountcy centree sur Sandema, siege de la chefferie supreme. Organisation agricole et pastorale avec villages regroupes en compounds (ensembles familiaux de 7 a 40 personnes ou plus). Abri exterieur a toit de chaume (gazing place) utilise pour les activites sociales et l'accueil des visiteurs.",
+      "clanOrganization": "Organisation en unites familiales composees au sein de compounds. Chaque compound comprend au moins trois unites familiales plus petites. Les subsections familiales (jeunes meres, enfants, femmes agees, hommes) ont des usages distincts de l'espace communautaire.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent la residence dans les compounds et la participation aux travaux agricoles. Les champs sont situes jusqu'a cinq kilometres des compounds, refletant une organisation fonciere lignagere structuree.",
+      "religiousAuthority": "Religion traditionnelle basee sur le culte du dieu du ciel Wen (ou Naawen). Le chef et les anciens de lignage detiennent l'autorite religieuse. Le Kanjag Pung (tanggbain), sanctuaire de la terre fonde par Akana, reste un lieu de reference spirituelle."
+    },
+    "languages": {
+      "mainLanguage": "Buli",
+      "isoCodes": ["bwu"],
+      "dialects": [],
+      "vehicularRole": "Le buli est la langue maternelle exclusive utilisee dans la quasi-totalite des contextes oraux. Peu utilise pour la lecture et l'ecriture jusqu'a recemment faute de materiaux. Partage des similarites avec le mampruli et le konni (konni etant le plus proche), et certains paralleles grammaticaux avec le frafra. L'anglais sert de langue d'instruction scolaire et de vehicule administratif."
+    },
+    "culture": {
+      "majorRites": "Festival de commemoration de la resistance aux raids de Babatu, celebre chaque annee peu avant Noël avec des ceremonies elaborees (danse, chants, reconstitutions). Rites agricoles accompagnant les semailles et les recoltes de mil, haricots et arachides. Culte du dieu du ciel Naawen via libations et sacrifices.",
+      "symbols": "Le Kanjag Pung (tanggbain), sanctuaire de la terre fonde par le forgeron Akana, est le symbole fondateur de l'unite Bulsa. L'abri exterieur a toit de chaume (open-side grass-roofed shelter) est le signe visible de la sociabilite et de l'hospitalite Bulsa.",
+      "artsAndMusic": "Artisanat : poterie, tabourets en bois, manches decores de houes et de haches, paniers et chapeaux tisses en herbe. Transmission orale : contes, recits des origines, tales du dieu du ciel (Wen, Naawen).",
+      "spiritualities": "Religion traditionnelle : culte du dieu du ciel Wen/Naawen. Les ancetres sont consultes par le chef et les anciens de lignage lors de ceremonies. Penetration du christianisme : 5 a 10 % de la population selon Joshua Project (2024). Pratiques animistes et de divination maintenues parallelement."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Paramountcy de Sandema, siege de la chefferie supreme Bulsa. L'organisation en chefferie territoriale est attestee avant la colonisation. Sandema est reconnue comme capitale du Builsa North District, Fumbisi comme capitale du Builsa South District.",
+      "relationsWithNeighbors": "Les Bulsa sont largement identiques aux autres peuples de la region (Kasena, Nankana) avec lesquels ils partagent les territoires et pratiquent les mariages mixtes. Ils se distinguent neanmoins par leur langue et leur heritage culturel propres. Le groupe est decrit comme distinct de tous ses voisins.",
+      "conflictsOrAlliances": "Resistance victorieuse aux raids de l'esclavagiste Babatu au XIXe siecle : les Bulsa furent capables de lui faire face et de le repousser, evenement celebre comme moment fondateur de l'identite collective. Coexistence avec les peuples Koma autochtones sur leurs terres.",
+      "diaspora": "Migration economique vers les villes du Ghana (Tamale, Accra). Certains membres de la communaute ont emigre vers d'autres regions du Ghana pour le travail saisonnier agricole."
+    },
+    "demography": {
+      "totalPopulation": 267575,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2024 : 231 000 (joshuaproject.net/people_groups/11005) ; Ghana Statistical Service, Recensement 2021 : Builsa North 100 940 hab. + Builsa South 36 575 hab. (citypopulation.de)",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 267575,
+          "note": "Builsa North District (cap. Sandema) et Builsa South District (cap. Fumbisi), Upper East Region du Ghana ; villages : Wiaga, Kanjaga, Gbedema, Siniensi, Kadema, Chuchuliga"
+        }
+      ]
+    },
+    "sources": [
+      "Builsa – Wikipedia EN, 2025 (https://en.wikipedia.org/wiki/Builsa)",
+      "Builsa, Buli in Ghana – Joshua Project, 2024 (https://joshuaproject.net/people_groups/11005)",
+      "Buli (Ghana) – WALS Online (https://wals.info/languoid/lect/wals_code_buy)",
+      "Buli (Ghana) – Glottolog 5.2, ISO 639-3 bwu (https://glottolog.org/resource/languoid/id/buli1254)",
+      "Builsa South District population – CityPopulation.de, recensement Ghana 2021 (https://www.citypopulation.de/en/ghana/admin/upper_east/0910__builsa_south/)"
+    ]
+  }
+}

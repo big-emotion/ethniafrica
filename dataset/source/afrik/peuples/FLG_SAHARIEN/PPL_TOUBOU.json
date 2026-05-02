@@ -1,0 +1,124 @@
+{
+  "id": "PPL_TOUBOU",
+  "nameMain": "Toubou",
+  "languageFamilyId": "FLG_SAHARIEN",
+  "currentCountries": ["TCD", "NER", "LBY"],
+  "content": {
+    "appellations": {
+      "mainName": "Toubou",
+      "selfAppellation": "Toubou / Tubu",
+      "exonyms": [
+        "Tibu",
+        "Tebu",
+        "Tibbu",
+        "Tebou",
+        "Gorane (terme arabe pour les Daza)",
+        "Umbararo"
+      ],
+      "originOfExonyms": "Le terme Toubou est dérivé du vieux tebu : tou (Tibesti, massif montagneux) et bou (habitants, en kanembou), signifiant donc habitants du Tibesti. Le terme Gorane, utilisé par les Arabes et repris par l'administration coloniale française, désigne plus particulièrement les Daza. Hérodote mentionna des troglodytes éthiopiens que l'on identifie parfois aux ancêtres des Toubou.",
+      "whyProblematic": "Le terme Toubou est un exonyme kanembou devenu générique pour désigner l'ensemble du groupe, alors que les deux sous-groupes principaux (Teda et Daza) se désignent eux-mêmes par leurs propres noms. L'usage du terme Gorane pour les Daza crée une confusion supplémentaire.",
+      "contemporaryUsage": "Le terme Toubou est aujourd'hui accepté et utilisé par le groupe lui-même comme identifiant commun, notamment depuis la rébellion toubou des années 1960 qui a diffusé ce nom comme emblème identitaire collectif.",
+      "linguisticFamily": "FLG_SAHARIEN",
+      "ethnoLinguisticGroup": "Saharien occidental (branche nilo-saharienne, Tedaga et Dazaga)",
+      "historicalRegion": "Massif du Tibesti (Tchad septentrional), Borkou, Ennedi, Fezzan libyen, département de Bilma (Niger)",
+      "currentCountries": ["TCD", "NER", "LBY"]
+    },
+    "ethnicities": [
+      "Teda (Toubou du Nord, Tibesti et Fezzan libyen) : groupe guerrier habitant les massifs du Tibesti et du Fezzan, éleveurs de dromadaires",
+      "Daza (Toubou du Sud, Borkou et Ennedi) : groupe plus nombreux, nomades pasteurs du Borkou, Bahr el Ghazal et Ennedi",
+      "Kamaya (clan Daza du Borkou, dirigé par al-haj Kelleï Chahami au 20e siècle)",
+      "Anakaza (clan Daza, nord-central du Tchad)",
+      "Maghya (Magomi, ancienne tribu royale liée aux dynasties du Kanem-Bornu)",
+      "Tumagra (clan Teda du Tibesti, source de l'autorité du derde)",
+      "Kréda / Karra (groupe apparenté, Bahr el Ghazal)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Toubou sont un peuple nilo-saharien autochtone du Sahara central, dont les origines remontent à la période du Sahara vert (avant 3000 av. J.-C.). Les théories sur leur origine sont débattues : certains auteurs les font venir du Fezzan ou du Kawar (actuelle Libye), d'autres les rattachent à des populations nilotiques, d'autres encore les considèrent comme des Berbères métissés de populations sub-sahariennes. Les Toubou sont mentionnés par Ibn Qutaybah au 8e siècle aux côtés des Zaghawa, et par al-Khwarizmi au 9e siècle sous le nom de Daza. Hérodote évoque au 5e siècle av. J.-C. des troglodytes éthiopiens vivant dans des grottes du Sahara, parfois identifiés comme leurs lointains ancêtres.",
+      "formationPeriod": "L'identité toubou distincte s'est consolidée au cours du premier millénaire de l'ère commune dans le massif du Tibesti. L'islamisation s'est faite progressivement à partir du 11e-12e siècle via les contacts avec l'empire Kanem-Bornu. La distinction Teda/Daza, fondée sur des différences géographiques et dialectales, est ancienne mais les deux groupes partagent une identité et une organisation sociale communes.",
+      "migrationRoutes": [
+        "Populations autochtones du Sahara central, sans migration fondatrice documentée",
+        "Expansion vers le Fezzan libyen et les oasis de Koufra, Kufra et Awjila (Libye)",
+        "Expansion vers le Kawar et Bilma (Niger), dont l'oasis était sous leur contrôle jusqu'en 1870",
+        "Dispersion dans les grandes villes tchadiennes (N'Djamena, Faya-Largeau) aux 20e-21e siècles"
+      ],
+      "historicalSettlementZones": [
+        "Massif du Tibesti (Tchad septentrional) : coeur historique des Teda, altitude jusqu'à 3415 m (Emi Koussi)",
+        "Borkou (Faya-Largeau) : zone principale des Daza",
+        "Ennedi (Fada) : zone des Daza orientaux",
+        "Fezzan (Libye méridionale) : présence historique des Teda et Daza",
+        "Kawar et Bilma (Niger) : oasis sous influence toubou jusqu'au 19e siècle",
+        "Bahr el Ghazal et Kanem (Tchad occidental) : zone des Daza méridionaux"
+      ],
+      "unificationsOrDivisions": "Les Teda (nord, Tibesti) et les Daza (sud, Borkou-Ennedi) constituent les deux sous-groupes principaux, parlant des langues nilo-sahariennes proches mais distinctes (Tedaga et Dazaga). Les Daza sont plus nombreux. L'autorité traditionnelle suprême est le derde, chef spirituel issu du clan Tumagra des Teda, résidant à Zouar. En pratique, les Toubou sont très individualistes, organisés en clans et sous-clans jaloux de leur autonomie. Une tentative d'organisation politique commune est incarnée par le Conseil national toubou (créé en 1999) qui revendique un État autonome dans le nord du Tchad, le sud de la Libye et le nord-est du Niger.",
+      "externalInfluences": "Islamisation progressive à partir du 11e-12e siècle via l'empire Kanem-Bornu. Contacts avec les Touaregs (Niger occidental), les Zaghawa (est), les Arabes (Libye). Colonisation française (début 20e siècle) : administration militaire maintenue dans la région BET jusqu'en 1965. Pression ottomane via la Libye. Conflit avec la Libye de Kadhafi : dépossession de la citoyenneté des Toubous libyens (2007), expulsions (2009), révolte TFSL (2008).",
+      "majorHistoricalEvents": "8e siècle : première mention avec les Zaghawa (Ibn Qutaybah). 18e siècle : contrôle de l'oasis de Kaouar (Niger) jusqu'en 1870. 1936 : les Français nomment al-haj Kelleï Chahami premier chef officiel du canton Kamaya. 1953 : émancipation des esclaves dans le Borkou par al-haj Kelleï Chahami. 1965 : le gouvernement tchadien assume le contrôle du Tibesti, le derde Oueddei Kichidemi proteste et s'exile en Libye. 1966-1979 : guerre civile tchadienne (FROLINAT), Goukouni Oueddei (fils du derde, Teda) dirige le CCFAN puis le FAN. 1979-1980 : Goukouni chef de l'État tchadien. 1982 : Hissène Habré (Daza) le remplace. 1990 : chute de Habré devant Idriss Déby (Zaghawa). 1999 : création du Conseil national toubou. 2007-2009 : Kadhafi prive les Toubous libyens de citoyenneté, démolitions forcées. 2011 : guerre civile libyenne, les Toubous combattent aux côtés des rebelles anti-Kadhafi."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La société toubou est organisée en clans (environ 50 clans actuellement, 36 à l'origine) réunis sous l'autorité spirituelle du derde, chef du clan Tumagra des Teda, résidant à Zouar (Tibesti). Le derde est un arbitre des conflits et juge coutumier, comparable à l'amenokal touareg. Son rôle s'est renforcé sous la colonisation française et lors de la première guerre civile tchadienne. En dessous du derde, chaque clan possède un chef (soultane ou al-haj) nommé ou reconnu par l'administration coloniale française à partir de 1936. Les Français ont créé des cantons et nommé des chefs officiels, superposant une structure administrative à l'organisation clanique traditionnelle.",
+      "clanOrganization": "Chaque clan dispose de droits exclusifs sur certaines oasis, pâturages, puits et palmiers. La propriété (terre, arbres, puits, animaux) au sein d'une oasis est fragmentée entre différents propriétaires selon l'appartenance clanique. La société comprend trois strates : les hommes libres (freemen), les artisans spécialisés (Azza/Aza : forgerons, travailleurs du cuir, mineurs de sel, puits, poterie, couture ; endogames, ségrégués socialement) et les anciens esclaves (Agara : issus de razzias, endogames, émancipés en 1953 par al-haj Kelleï Chahami dans le Borkou).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages sont patrilinéaires. L'aîné mâle dirige la famille étendue. Le clan est le deuxième niveau de parenté, vecteur d'hospitalité, de protection et d'alliances matrimoniales. Les mariages entre cousins sont interdits jusqu'à 9 générations chez les Teda ; certains clans Daza pratiquent le mariage de cousins proches. Le blason clanique (signe distinctif) identifie chaque clan parmi les 36 originaux.",
+      "religiousAuthority": "Le derde est à la fois chef spirituel et arbitre des conflits. Les conflits graves (meurtre) sont réglés entre familles via la goroga (diya, prix du sang, conforme à la loi islamique). Les oulémas et imams exercent une autorité religieuse locale. L'islam sunnite (école malékite) structure la vie sociale depuis le 12e siècle, mais des rites pré-islamiques subsistent : cérémonies agricoles (sadaga) avant les semailles, offrandes aux génies de la montagne et des oasis, invocations aux esprits protecteurs lors des serments."
+    },
+    "languages": {
+      "mainLanguage": "Tedaga (Teda Toubou) et Dazaga (Daza Toubou), deux langues nilo-sahariennes distinctes mais proches",
+      "isoCodes": ["tuq", "dzg"],
+      "dialects": [
+        "Tedaga (tuq) : langue des Teda, parlée principalement dans le Tibesti, le Fezzan libyen et le département de Bilma (Niger) ; deux dialectes principaux (nord et sud)",
+        "Dazaga (dzg) : langue des Daza, parlée dans le Borkou, l'Ennedi, le Bahr el Ghazal et le Kanem (Tchad), ainsi qu'en partie au Niger ; deux dialectes principaux Daza et Kara",
+        "Dazaga est la langue véhiculaire du BET (Borkou-Ennedi-Tibesti) ; la majorité des Teda comprend le Dazaga mais pas l'inverse"
+      ],
+      "vehicularRole": "Le Dazaga (ISO : dzg) est la langue véhiculaire de toute la région du BET, utilisée par les Teda, les Daza, les Zaghawa et d'autres populations du nord du Tchad. Le Tedaga (ISO : tuq) est plus restreint géographiquement. L'arabe tchadien est utilisé comme langue de commerce et d'administration. Le français est la langue officielle de l'État. Les deux langues toubou appartiennent à la branche saharienne occidentale du nilo-saharien, proches du kanuri et du zaghawa."
+    },
+    "culture": {
+      "majorRites": "Circoncision masculine comme rite de passage vers l'âge adulte, accompagné de fêtes familiales. Mariage : dot payée en bétail (dromadaires, chèvres) ; interdiction du mariage entre cousins jusqu'à 9 générations chez les Teda. Rites agricoles pré-islamiques : sadaga (repas sacré) offert par le maître de la terre (clan Ederguia) avant les semailles, la fécondation des palmiers et la récolte des dattes. Funérailles : inhumation rapide selon le rite islamique, condoléances de trois jours. Rites de purification : invocations aux génies de la montagne, des dunes et des lacs pour protection et lors de serments solennels.",
+      "symbols": "Le dromadaire : animal emblématique, vecteur de richesse, de commerce et de survie dans le désert. Les oasis de dattes (Tibesti, Borkou, Bilma) : symboles de vie et d'identité territoriale. Le blason clanique (marque distinctive) de chacun des 36 clans originaux, apposé sur les animaux et les biens. Le massif du Tibesti (Tou, montagne rocheuse) comme lieu sacré et centre de gravité identitaire. Le natron (sel naturel) : substance polyvalente utilisée comme médicament, tabac, conservateur, tannin et élément des échanges commerciaux.",
+      "artsAndMusic": "Artisanat : la caste Azza/Aza produit des objets en métal (forge), en cuir (sellerie, outres), des poteries, des vêtements (couture) et exploite le sel et le natron. Architecture : maisons en torchis avec toits de palme dans les oasis sédentarisées. Poésie orale et transmission des généalogies claniques. Musique : percussions et chants lors des fêtes (mariages, naissances). Le peintre africaniste Gustave Hervigo (1896-1993) a consacré une partie de son oeuvre aux Toubous lors de quatre séjours au Tchad à partir de 1951. Littérature ethnographique majeure : Catherine Baroin, Anarchie et Cohésion sociale chez les Toubou (1985).",
+      "spiritualities": "Islam sunnite malékite, adopté progressivement à partir du 11e-12e siècle via l'empire Kanem-Bornu. La pratique islamique coexiste avec des rites pré-islamiques : croyance en des génies (esprits invisibles mais mortels) habitant les montagnes, les dunes et les lacs, invoqués pour protection et lors de serments. Culte des ancêtres. Avant l'islamisation, les Toubou pratiquaient des formes de polythéisme avec rites agricoles dans les grottes et oasis. Le derde (chef spirituel) joue un rôle de médiateur entre le monde des vivants et les forces surnaturelles. Croyances en la baraka (grâce divine) des marabouts locaux."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Toubou, notamment le clan Maghya (Magomi), comptaient parmi les fondateurs et les membres de la royauté du Kanem-Bornu (8e-19e siècles), empire centré sur le lac Tchad qui contrôlait une vaste zone de l'Afrique centrale et subsaharienne. La ville oasis de Kaouar (Niger) fut une cité indépendante sous contrôle toubou jusqu'en 1870. Dans le Tibesti, l'autorité du derde (chef Tumagra) constitue une forme de chefferie théocratique préservée jusqu'à aujourd'hui.",
+      "relationsWithNeighbors": "Les Toubou ont entretenu des relations commerciales et conflictuelles avec les Zaghawa (est), les Kanembou et Kanuri (sud-ouest), les Touaregs (ouest, Niger), les Arabes (Libye et Tchad) et les Peuls (Fulani) du Sahel. Ils contrôlaient une partie des routes caravanières transsahariennes reliant le Fezzan libyen, le Kawar et l'empire Kanem-Bornu. Les affrontements avec les Arabes (notamment à Sabha en Libye en 2012) et les tensions avec les autorités tchadiennes et libyennes caractérisent les relations contemporaines.",
+      "conflictsOrAlliances": "1965 : conflit avec le gouvernement tchadien de Tombalbaye ; le derde Oueddei Kichidemi s'exile en Libye. 1966-1979 : participation à la première guerre civile tchadienne (FROLINAT, CCFAN/FAN) ; Goukouni Oueddei (Teda) et Hissène Habré (Daza) en sont les figures principales. 1990 : chute de Habré devant Idriss Déby (Zaghawa). 2007-2009 : confrontation avec le régime Kadhafi en Libye (dépossession de citoyenneté, expulsions, révolte TFSL, 33 morts). 2011 : guerre civile libyenne, les Toubous combattent avec les rebelles anti-Kadhafi dans le Fezzan. 2012 : affrontements avec les Arabes Oulad Souleymane à Sabha (Libye). Tensions récurrentes avec le gouvernement central tchadien de N'Djamena.",
+      "diaspora": "Plusieurs milliers de Daza vivent à Omdurman (Soudan). Quelques milliers travaillent à Djedda (Arabie saoudite). Des communautés toubou sont présentes dans les grandes villes tchadiennes (N'Djamena, Faya-Largeau, Moundou) et dans certaines villes libyennes (Sebha, Mourzouq). En France et dans d'autres pays occidentaux, une diaspora toubou composée principalement de réfugiés et d'étudiants est modestement représentée."
+    },
+    "demography": {
+      "totalPopulation": 5745000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur Wikipedia FR (Toubou), SIL Ethnologue (Tedaga tuq, Dazaga dzg), Minority Rights Group International, recensements tchadien (2009 BET : 286 986 hab., dont 55,96 % Daza et 22,63 % Teda) et nigérien. Note : les estimations varient fortement selon les sources (de 200 000 selon certaines sources anciennes à plus de 5 millions selon les sources récentes incluant la diaspora et les groupes apparentés).",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 2750000,
+          "note": "Principalement dans les régions du Tibesti, Borkou, Ennedi, Bahr el Ghazal, Kanem et les grandes villes"
+        },
+        {
+          "country": "LBY",
+          "population": 1502000,
+          "note": "Fezzan libyen (Sebha, Mourzouq, Koufra) et villes du nord de la Libye"
+        },
+        {
+          "country": "NER",
+          "population": 200000,
+          "note": "Département de Bilma, région d'Agadez, oasis du Kawar"
+        },
+        {
+          "country": "SDN",
+          "population": 250000,
+          "note": "Omdurman et nord-ouest du Soudan"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Toubou people. https://en.wikipedia.org/wiki/Toubou_people",
+      "Wikipedia FR - Toubous. https://fr.wikipedia.org/wiki/Toubou",
+      "SIL Ethnologue - Tedaga (tuq). https://www.ethnologue.com/language/tuq/",
+      "SIL Ethnologue - Dazaga (dzg). https://www.ethnologue.com/language/dzg/",
+      "Baroin, Catherine - Anarchie et Cohesion sociale chez les Toubou. Paris : MSH, 1985.",
+      "Minority Rights Group International - Chad: Toubou. https://minorityrights.org/country/chad/",
+      "Chapelle, Jean - Le Peuple tchadien : ses racines et sa vie quotidienne. L'Harmattan, 1980.",
+      "CIA World Factbook - Chad, Niger, Libya. https://www.cia.gov/the-world-factbook/",
+      "Africa Is a Country - A forsaken people (2021). https://africasacountry.com/2021/04/a-forsaken-people"
+    ]
+  }
+}

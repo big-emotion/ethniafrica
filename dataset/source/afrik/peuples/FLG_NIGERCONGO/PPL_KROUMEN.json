@@ -1,0 +1,100 @@
+{
+  "id": "PPL_KROUMEN",
+  "nameMain": "Kroumen",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Kroumen",
+      "selfAppellation": "Krao / Klao (selon les sous-groupes)",
+      "exonyms": ["Krumen", "Kroomen", "Kru", "Kroo", "Krou"],
+      "originOfExonyms": "Le terme Kroumen (aussi ecrit Krumen ou Kroomen) est le terme utilise depuis le 19e siecle par les Europeens, notamment la Royal Navy britannique, pour designer les marins kru recrutes sur la cote ouest-africaine. Il derive probablement du nom Klao (ou Krao), qui est l'autonym du groupe dans leur propre langue. Une these erronee faisait deriver le mot de 'crewmen' (membres d'equipage en anglais) ; les linguistes s'accordent aujourd'hui que le terme Kru/Krumen est antérieur a ce contact et constitue l'endonym transpose.",
+      "whyProblematic": "Le terme Kroumen peut designer a la fois le groupe ethnique specifique de la cote ivoirienne et plus largement tout marin kru recrute sur les navires europeens, incluant parfois des membres d'autres ethnies kru (Grebo, etc.) qui avaient adopte l'identite et les pratiques des Kru marins.",
+      "contemporaryUsage": "Kroumen (ou Krumen) designe aujourd'hui le groupe ethnique specifique parlant les langues Tepo (ted) et Pye (pye) dans le sud-ouest de la Cote d'Ivoire (sous-prefectures de Tabou et Grabo). Par extension, le terme reste associe a la tradition maritime kru dans l'historiographie ouest-africaine.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Krou occidental (sous-groupe Grebo, branche Kroumen, famille Kru de la branche Niger-Congo)",
+      "historicalRegion": "Cote du Grain, littoral sud-ouest de la Cote d'Ivoire (sous-prefectures de Tabou et Grabo, departement du Bas-Sassandra)",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": [
+      "Tepo Krumen (sous-groupe principal, parle le Tepo/ted, sous-prefectures de Tabou et Grabo)",
+      "Pye Krumen (second sous-groupe majeur, parle le Pye/pye, zone cotiere de Tabou)",
+      "Plapo Krumen (tres petit sous-groupe, une centaine de locuteurs seulement)",
+      "Communautes Kroumen etablies a Freetown (Sierra Leone), descendant des marins kru du 19e siecle"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kroumen font partie du grand ensemble ethnique Kru (aussi ecrit Krao, Kroo, Krou), peuple autochtone de la cote atlantique ouest-africaine entre le Liberia meridional et la Cote d'Ivoire occidentale. Les Kru sont documentes par les premiers Portugais qui atteignirent la Cote du Grain (actuel Liberia) au 15e siecle. Les Kru/Kroumen vivaient dans de petits hameaux cotiers le long de la cote, pratiquant la peche, le commerce et la navigation en pirogue dans les eaux dangereuses de la cote atlantique. Les cinq villages fondateurs des Krao (Krao dake) sont consideres comme le coeur originel du groupe.",
+      "formationPeriod": "L'identite Kroumen s'est cristallisee a partir de la fin du 18e siecle avec l'explosion du commerce maritime europeen sur la cote ouest-africaine. Les hommes kru qui s'engageaient comme marins sur les navires europeens formaient des societes specifiques (Krumen towns) dans les ports commerciaux de la cote. A partir des annees 1790, les Kru/Kroumen sont systematiquement recrutes comme marins libres sur les navires europeens, forgeant une identite maritime forte distincte des Kru de l'interieur.",
+      "migrationRoutes": [
+        "Populations autochtones de la cote du Grain, migrations depuis l'interieur vers la cote il y a 100 a 150 ans selon les traditions orales du 19e siecle (depuis un lieu appele Claho)",
+        "Etablissement de communautes Kroumen dans les ports commerciaux de Freetown (Sierra Leone), Monrovia, Lagos, Douala et d'autres ports de la cote atlantique africaine",
+        "Quelques Kroumen jusqu'en Grande-Bretagne (Liverpool) et dans les Ameriques lors du service sur navires europeens"
+      ],
+      "historicalSettlementZones": [
+        "Littoral de la sous-prefecture de Tabou, Cote d'Ivoire (principale zone de peuplement actuelle)",
+        "Sous-prefecture de Grabo, departement du Bas-Sassandra, Cote d'Ivoire",
+        "Freetown (Sierra Leone) : communaute historique de marins kroumen installee au 19e siecle",
+        "Kroo Town, Liverpool (Grande-Bretagne) : communaute historique de marins kru"
+      ],
+      "unificationsOrDivisions": "Les Kroumen sont organises en villages autonomes (dako ou clans) relies par des liens de parenté presumes et des echanges coutumiers. Le systeme des Krao dake (clans fondateurs) a permis une cohesion identitaire forte malgre l'absence de chefferie unifiee. La dispersion des Kroumen le long de la cote africaine a cree une identite forte basee sur les competences maritimes plutot que sur un territoire fixe.",
+      "externalInfluences": "Role majeur dans le commerce atlantique esclavagiste (18e-19e siecles) comme intermediaires, marins et interpretes - les Kroumen refusaient farouchement d'etre eux-memes reduits en esclavage et se tatouaient le front pour etre identifiables comme hommes libres. Service dans la Royal Navy britannique de 1820 a 1924. Missions chretiennes (missionnaires protestants americains et britanniques, puis William Wade Harris au debut du 20e siecle). Colonisation française de la Cote d'Ivoire. Le Harrisisme (mouvement chretien africain) a une forte implantation chez les Kru.",
+      "majorHistoricalEvents": "Premiers contacts avec les Portugais au 15e siecle. Developpement du role de marins-libres sur les navires negriers et marchands europeens (18e siecle). Etablissement de Kroo Town a Freetown (Sierra Leone) lors de la fondation de la colonie britannique (debut 19e siecle). Service dans la Royal Navy britannique (1820-1924) : des Kroomen sont enterres au Seaforth Old Burial Ground de Simonstown (Afrique du Sud). Crise de recrutement de 1903 en Sierra Leone pour la Royal Navy. Participation aux travaux de construction du Canal de Panama (tentative française). Colonisation française de la Cote d'Ivoire (fin 19e-debut 20e siecle). Independance de la Cote d'Ivoire (1960). Mouvements de population lors des crises ivoiriennes (2002-2011)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en petites communes (commonwealths) avec un chef hereditaire dont la principale fonction est de representer le peuple dans ses relations avec les etrangers. Chaque village a un chef (et anciennement des anciens portant des anneaux de fer aux jambes comme insigne d'autorite). L'organisation des expeditions maritimes est dirigee par un headman (chef de groupe de marins) qui negocie les contrats avec les employeurs europeens, recrute les hommes, maintient la discipline et garantit leur retour. Ce headman est l'unique autorise a punir les membres du groupe.",
+      "clanOrganization": "Structure clanique (dako) organisee en villages ou hameaux, chaque dako identifie par un nom de lieu ou un ancetre. Les villages sont lies par des liens de parenté presumes renforces par des echanges ceremonials et des mariages. L'appartenance au clan determine les droits de peche sur des zones maritimes specifiques.",
+      "ageClassSystems": "Organisation par groupes d'age regissant les responsabilites dans les expeditions maritimes (marins juniors, marins experimentes, headmen). Les anciens portant des anneaux de fer (insignes d'autorite) constituent la classe superieure et doivent etre respectes de tous les jeunes hommes.",
+      "roleOfLineages": "Les lignages determinent les droits d'acces aux zones de peche hereditaires et les obligations de solidarite en cas de maladie ou de deces d'un membre a l'etranger. Le headman des expeditions maritimes est responsable du retour des membres du groupe aupres de leurs familles.",
+      "religiousAuthority": "Autorite des pretres-devins traditionnels pour les ceremonies propitiatoires avant la peche et les voyages en mer. Les esprits de l'eau (tien, nitien, Dwin) sont des entites vivantes de riviere associees a la guerison, la fertilite et la fondation de nouveaux villages. Le Harrisisme (mouvement chretien africain fonde par William Wade Harris, lui-meme kru du Liberia, au debut du 20e siecle) est fortement implante chez les Kru/Kroumen. Des eglises methodistes et catholiques ont aussi une presence historique."
+    },
+    "languages": {
+      "mainLanguage": "Krumen (dialectes Tepo et Pye)",
+      "isoCodes": ["ted", "pye"],
+      "dialects": [
+        "Tepo (ted) : dialectes Tepo, Bapo, Wlopo/Ropo, Dapo, Honpo, Yrepo/Kapo, Glawlo",
+        "Pye (pye) : dialectes Trepo, Wluwe-Hawlo, Gbowe-Hran, Wlepo, Dugbo, Yrewe/Giriwe/Jrwe, Yapo, Pie",
+        "Plapo : sous-dialecte en voie de disparition (une centaine de locuteurs)"
+      ],
+      "vehicularRole": "Le Krumen est un continuum dialectal appartenant a la branche Grebo des langues Kru occidental (Niger-Congo). Il est parle par environ 48 000 personnes (estimation 1993, plus ancienne disponible) dans le sud-ouest de la Cote d'Ivoire et un peu au Liberia. Les deux variantes principales (Tepo et Pye) sont assez differentes pour necessiter des ressources linguistiques separees. Le français est la langue officielle de la Cote d'Ivoire et la principale langue d'education et d'administration pour les Kroumen."
+    },
+    "culture": {
+      "majorRites": "Les Kroumen pratiquent des rites de passage marquant les etapes de la vie : naissance (ceremonies de nomination et de bienvenue), puberte (initiation dans les structures d'age), mariage (negociation de dot, ceremonies communautaires) et deces (funerailles avec sacrifices aux esprits ancestraux et repas collectifs). Les rituels de depart en mer et de retour de la peche sont importants : des offrandes sont faites aux esprits de l'eau avant et apres les voyages. Le chant en groupe des marins (un soliste entonnant et les autres repondant en choeur) est une pratique musicale caracteristique des expeditions maritimes kru.",
+      "symbols": "La pirogue (et la maitrise de la navigation dans les eaux de surf dangereuses de la cote atlantique) est le symbole identitaire central des Kroumen. Le tatouage frontal (front tattoo) pratique historiquement pour signifier le statut d'homme libre (et ainsi ne pas etre pris comme esclave) est un symbole identitaire fort. Les anneaux de fer aux jambes des anciens (insignes d'autorite). Les objets-esprits de l'eau (tien/nitien) sont des talismans de protection.",
+      "artsAndMusic": "Tradition de chant maritime caracteristique : un chef de groupe (soliste) entonne une recitative et les autres repondent en choeur pendant que l'equipage rame. Fabrication de pirogues de haute mer (oceanic canoes) capables d'affronter les dangereuses deferlantes de la cote atlantique ouest-africaine, qui etaient reconnues dans le monde entier pour leur qualite au 19e siecle. Artisanat : filets de peche, nasses, vannerie et poterie. Littérature orale : chants, contes, proverbes maritimes transmis de generation en generation.",
+      "spiritualities": "Croyances animistes centrees sur les esprits de l'eau (tien/nitien/Dwin) associes aux petits cours d'eau et rivieres, qui guerissent, protegent la fertilite et aident a fonder de nouveaux villages. Les ancetres sont honores par des offrandes et jouent un role de protection active. La croyance aux esprits-totems animaux (totems personnels) est repandue. Le Harrisisme (mouvement prophetique et chretien indigene fonde par William Wade Harris, Kru du Liberia, vers 1913) a converti une grande partie des Kru/Kroumen a une forme syncrétique du protestantisme, en respectant les interdits alimentaires et les pratiques communautaires. Une partie de la population catholique maintient des pratiques tradicionnelles syncrétiques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Kroumen n'ont pas forme de royaume centralise. Leur organisation en petits clans (dako) independants, lies par des communautes d'identite et de pratiques maritimes, constitue leur structure politique traditionnelle. En revanche, ils ont constitue des communautes organisees et reconnues dans les ports commerciaux (Kroo Town a Freetown, communautes a Lagos, Douala, etc.) dotees de leurs propres headmen negociant directement avec les autorites coloniales et les armateurs.",
+      "relationsWithNeighbors": "Relations avec les autres peuples Kru de la cote (Grebo, Klao, Bassa) avec qui ils partagent des traits culturels et linguistiques. Relations commerciales et parfois conflictuelles avec les peuples de l'interieur (Bete, Guere/We). Relations de travail avec les Europeens (Britanniques, Français, Americains) depuis le 18e siecle. Relations avec les populations de Sierra Leone (communauté Kroumen de Freetown). Les Kroumen resistent activement aux tentatives d'esclavage, se suicidant parfois pour eviter la capture.",
+      "conflictsOrAlliances": "Resistance historique a la traite negriere (les Kroumen refusaient d'etre asservis et tatouaient leur front pour signifier leur statut d'hommes libres). Paradoxalement, participation comme intermediaires dans la traite negriere (interpretes, marins sur les navires negriers). Service dans la Royal Navy britannique lors des patrouilles anti-esclavagistes sur la cote est-africaine (annees 1860) - situation ironique puisque ces memes patrons avaient parfois facilite la traite. Tensions liees a la colonisation française de la Cote d'Ivoire. Affectation par les crises ivoiriennes (2002-2011), notamment dans le departement de Tabou.",
+      "diaspora": "La diaspora historique des Kroumen/Krumen est l'une des plus remarquables d'Afrique occidentale au 19e siecle : des communautes kru etaient presentes dans presque tous les grands ports commerciaux de la cote atlantique africaine, de Dakar (Senegal) a Douala (Cameroun) et jusqu'au Cap (Afrique du Sud) ou des tombes de Kroomen sont encore visibles a Seaforth. Au Royaume-Uni, une 'Kroo Town' existait a Liverpool. Des Kroumen ont travaille au Panama (canal français) et en Jamaique. La diaspora contemporaine de Kroumen hors de la Cote d'Ivoire est limitee, la plupart etant retournes dans leur pays d'origine avec la fin de l'ere des grands voiliers (debut 20e siecle)."
+    },
+    "demography": {
+      "totalPopulation": 60000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Wikipedia (48 300 locuteurs en 1993 selon Ethnologue), Minority Rights Group, SIL Ethnologue langues ted et pye, et projections demographiques 2025 pour le sud-ouest de la Cote d'Ivoire.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 58000,
+          "note": "Sous-prefectures de Tabou et Grabo, departement du Bas-Sassandra (region du Bas-Sassandra et Moyen-Cavally)."
+        },
+        {
+          "country": "LBR",
+          "population": 2000,
+          "note": "Quelques communautes Kroumen au Liberia meridional, zone frontaliere."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Krumen people. https://en.wikipedia.org/wiki/Krumen_people",
+      "Wikipedia EN - Kru people. https://en.wikipedia.org/wiki/Kru_people",
+      "Wikipedia EN - Seedies and Kroomen. https://en.wikipedia.org/wiki/Seedies_and_Kroomen",
+      "SA History - The West African Kroomen and their link to Simon's Town. https://sahistory.org.za/archive/west-african-kroomen-and-their-link-simons-town-joline-young",
+      "Minority Rights Group - Krou in Cote d'Ivoire. https://minorityrights.org/communities/krou/",
+      "Camissa People - The Kroomen from West Africa. https://camissapeople.wordpress.com/2014/03/29/the-kroomen-from-west-africa-and-the-zanzibari-siddis-in-our-heritage/",
+      "SIL Ethnologue - Tepo Krumen (ted) et Pye Krumen (pye)",
+      "Kroumen.com - Aspects of tone change in three Krumen languages. https://kroumen.com/sites/www.kroumen.com/files/20414%20Krumen%20Tones%20ver2_0.pdf"
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "id": "PPL_ALLADIAN",
+  "nameMain": "Alladian",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Alladian",
+      "selfAppellation": "Alladian",
+      "exonyms": ["Aladjan", "Alladyan", "Allagia", "Allagian", "Esiep"],
+      "originOfExonyms": "Les formes Aladjan et Alladyan sont des variantes orthographiques utilisees en français et dans les classifications ethnolinguistiques (Ethnologue : code ald). La forme Esiep designe l'appellation que portait probablement ce peuple avant son installation sur la cote ivoirienne. Ces variantes reflètent la transcription française du nom vernaculaire.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Alladian est employe dans les documents administratifs ivoiriens et dans la littérature anthropologique pour designer ce petit peuple lagunaire installe autour de Jacqueville et de Petit-Bassam. Joshua Project utilise la forme Aladjan pour distinguer la communaute de Jacqueville.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan lagunaire (sous-groupe Avikam-Alladian)",
+      "historicalRegion": "Lagune Ebrié, côte sud de la Côte d'Ivoire (Jacqueville, Petit-Bassam, Grand-Lahou)",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": ["Alladian"],
+    "origins": {
+      "ancientOrigins": "Les Alladian sont probablement les descendants du peuple Esiep. Ils font partie du vaste groupe des Akan lagunaires du Sud de la Cote d'Ivoire. Ils sont proches linguistiquement et culturellement des Avikam et appartiennent au sous-groupe Avikam-Alladian selon la classification Ethnologue (famille Kwa, Niger-Congo).",
+      "formationPeriod": "Le peuple Alladian prend sa forme actuelle au debut du XVe siecle, apres sa migration depuis la region de Kumasi (Ghana actuel). Au XVIe siecle, ils sont deja en contact avec les Europeens (Portugais, Hollandais, Anglais, Français) sur la cote.",
+      "migrationRoutes": [
+        "Depart de la region de Kumasi (Ghana actuel), plus precisement du village de Nantré, a la suite d'affrontements meurtriers",
+        "Passage par la region de l'Appolonie en pays Eotilé",
+        "Puis etablissement dans la region d'Agrouvry (actuel pays Mgbato, site de l'actuel Akoré)",
+        "De Agrouvry, progression le long de la lagune vers Layo (region de Songon M'brate)",
+        "Arrivée finale dans le village d'Abreby, puis Jacqueville"
+      ],
+      "historicalSettlementZones": [
+        "Jacqueville (chef-lieu actuel)",
+        "Petit-Bassam (région d'Abidjan)",
+        "Zone lagunaire de la Lagune Ebrié",
+        "Abreby, Layo, Songon M'brate"
+      ],
+      "unificationsOrDivisions": "En 1890, la representation politique du pays alladian est confiee au chef coutumier de Jacqueville, Adjé Bonny, dont le titre de roi Bonny est encore utilise par les anciens. La commune de Jacqueville est habitee par les Alladian, les Ahizi (ou Pepehiri) et les Avikam (ou Akouri).",
+      "externalInfluences": "Des le XVIe siecle, les Alladian sont en rapport avec les commerçants europeens (Portugais, Hollandais, Anglais, Français), ce qui en fait l'un des peuples de la région les plus precocement integres au commerce atlantique. En 1889, ils se revoltent contre l'occupation française, mais la revolte est rapidement reprimee par Marcel Treich-Laplène. La France integre ensuite leur territoire au protectorat puis a la colonie de Cote d'Ivoire.",
+      "majorHistoricalEvents": "Debut XVe siecle : migration depuis la region de Kumasi. XVIe siecle : contact avec les premiers negociants europeens. 1889 : revolte contre l'occupation française, reprimee par Marcel Treich-Laplène. 1890 : chef Adjé Bonny designe representant du pays alladian par les autorites coloniales."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferie coutumiere avec a sa tete le roi Bonny (titre transmis depuis le chef Adjé Bonny, designe en 1890). Organisation politique de type lagunaire, associant un chef de village (et sa cour) a une structure lignaigere. Les decisions importantes impliquent les anciens.",
+      "clanOrganization": "Organisation clanique de type matrilineaire, commune aux peuples akan lagunaires. Les lignages determinent l'appartenance sociale, la succession et l'heritage foncier.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages maternels (abusua) structurent la vie sociale, la transmission des terres et la succession aux charges traditionnelles. La litterature anthropologique de Marc Augé decrit la structure lignagere alladian et son rapport a la servitude et au foncier.",
+      "religiousAuthority": "Pratiques animistes traditionnelles coexistant avec le christianisme. Les autorites religieuses traditionnelles (pretres et devins) maintiennent leur role dans les ceremonies et la resolution des conflits."
+    },
+    "languages": {
+      "mainLanguage": "Alladian",
+      "isoCodes": ["ald"],
+      "dialects": [],
+      "vehicularRole": "L'alladian (code ISO 639-3 : ald) est une langue kwa de la famille Niger-Congo. Il est classe par Ethnologue dans le sous-groupe Avikam-Alladian. Le nombre de locuteurs etait estime a 23 000 en 1993. Le français est la langue officielle et vehiculaire de Cote d'Ivoire, utilisee dans l'education et l'administration."
+    },
+    "culture": {
+      "majorRites": "Ceremonies d'initiation, funerailles traditionnelles avec rites de purification et de transition vers le monde des ancetres. Celebrations saisonnieres liees au rythme de la peche et de l'agriculture lagunaire. Jeux traditionnels (en pays alladian, etudies par A. Yesso).",
+      "symbols": "La lagune Ebrié et l'ocean Atlantique comme espaces symboliques centraux de l'identite alladian, ce peuple etant fondamentalement lie au littoral et a la peche. Le titre de roi Bonny comme symbole de continuite politique.",
+      "artsAndMusic": "Traditions orales (contes, proverbes, genealogies). Artisanat lie a la mer et a la peche (construction de pirogues, filets). Les representations culturelles incluent des danses ceremoniales propres aux peuples lagunaires du sud ivoirien.",
+      "spiritualities": "Animisme traditionnel (croyance aux forces naturelles, aux ancetres, aux genies de l'eau et de la terre) pratique simultanement avec le christianisme (principalement catholique et protestant). Joshua Project (2025) indique 90% de chretiens dans la communaute, dont 5 a 10% d'evangeliques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferie alladian de Jacqueville, dirigee par le roi Bonny (titre institue en 1890). Pas de royaume centralise a proprement parler, mais une organisation lignaigere et villageoise coherente caracteristique des peuples lagunaires du sud ivoirien.",
+      "relationsWithNeighbors": "Coexistence dans la commune de Jacqueville avec les Ahizi (Pepehiri) et les Avikam (Akouri). Relations commerciales avec les peuples de la lagune Ebrié et les marchands d'Abidjan. Contacts anciens avec les marchands europeens depuis le XVIe siecle.",
+      "conflictsOrAlliances": "Revolte de 1889 contre l'administration coloniale française, rapidement reprimee. Integration progressive dans le cadre colonial de la Cote d'Ivoire, avec maintien de la structure de chefferie traditionnelle. Cooperation avec les autorites coloniales francaises apres 1890.",
+      "diaspora": "Presence limitee hors du territoire lagunaire traditionnel. Quelques membres de la communaute sont installes a Abidjan en raison de la proximite geographique (Petit-Bassam est un quartier d'Abidjan)."
+    },
+    "demography": {
+      "totalPopulation": 53000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Aladjan Jacquesville in Cote d'Ivoire : 53 000)",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 53000,
+          "note": "Principalement Jacqueville, Petit-Bassam et la zone lagunaire au sud d'Abidjan"
+        }
+      ]
+    },
+    "sources": [
+      "Alladian (peuple) – Wikipedia FR (https://fr.wikipedia.org/wiki/Alladian_(peuple))",
+      "Alladian (langue) – Wikipedia FR (https://fr.wikipedia.org/wiki/Alladian_(langue))",
+      "Joshua Project – Aladjan Jacquesville in Côte d'Ivoire, 2025 (https://joshuaproject.net/people_groups/10240)",
+      "Ethnologue – Alladian language (ald) (https://www.ethnologue.com/language/ald/)",
+      "Ethnologue – Avikam-Alladian subgroup (https://www.ethnologue.com/subgroup/939/)",
+      "Facebook EthnicsDECI – Jacqueville (https://www.facebook.com/ethniesdeCI/posts/jacquevillela-commune-de-jacqueville)"
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "id": "PPL_LUNDA",
+  "nameMain": "Lunda",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["COD", "AGO", "ZMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Lunda",
+      "selfAppellation": "Balunda",
+      "exonyms": [
+        "Lunda",
+        "Ruund",
+        "Ndembu (branche zambienne)",
+        "Kazembe-Lunda (branche orientale)",
+        "Kanongesha-Lunda",
+        "Ishindi-Lunda"
+      ],
+      "originOfExonyms": "Les differentes denominations refletent les ramifications geographiques de l'empire Lunda. Ndembu designe la branche installee au nord-ouest de la Zambie. Kazembe-Lunda (ou Lunda orientaux) s'est etablie dans la vallee de la Luapula (Zambie orientale). Le terme Ruund designe la langue du groupe central (nord-ouest du Katanga, RDC).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Balunda est l'appellation usuelle en RDC. Lunda est le terme courant en Zambie et en Angola. Les distinctions Kanongesha, Ishindi et Kazembe sont utilisees en Zambie pour differencier les chefferies.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou zone L (Lunda-Nkoya, sous-groupe de la zone Luba-Lunda)",
+      "historicalRegion": "Coeur de l'empire Lunda dans le nord-ouest du Katanga (RDC) ; expansion vers le nord-est de l'Angola, le nord-ouest de la Zambie et la vallee de la Luapula",
+      "currentCountries": ["COD", "AGO", "ZMB"]
+    },
+    "ethnicities": [
+      "Lunda centraux (Ruund) — coeur du royaume, nord-ouest du Katanga (RDC), capitale Musumba",
+      "Kanongesha-Lunda — Province nord-ouest de Zambie, chefferie Kanongesha",
+      "Ishindi-Lunda — Province nord-ouest de Zambie, chefferie Ishindi",
+      "Kazembe-Lunda (Lunda orientaux) — vallee de la Luapula (Zambie), chefferie Kazembe",
+      "Akosa — sous-groupe lunda",
+      "Imbangala — peuple issu des migrations et conquetes lunda vers l'Angola",
+      "Ndembu — branche lunda de Zambie nord-ouest, celebres pour leurs rites d'initiation"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Lunda sont originaires de la region de la riviere Kalanyi (nord-ouest du Katanga, RDC actuelle). La tradition orale rapporte que le peuple vivait de peche et d'agriculture dans un coeur territorial riche en rivieres, lacs, forets et savanes. Ils cultivaient le mais, le mil, l'igname, le sorgho, la courge, les haricots, les patates douces, les palmiers a huile et le tabac, et buvaient du vin de palme. Leur organisation initiale etait en petits chefs territoriaux avant la consolidation royale du 17e siecle.",
+      "formationPeriod": "17e siecle : constitution du royaume Lunda sous le premier Mwata Yamvo (Mwaant Yav), titre royal supreme. La capitale Musumba (Mussumba) fut etablie dans le nord-ouest du Katanga. L'empire atteignit environ 150 000 km2 en 1680 et doubla de surface au 19e siecle (300 000 km2 a son apogee).",
+      "migrationRoutes": [
+        "Migration et expansion vers le Katanga meridional puis l'Angola nord-oriental (17e-18e siecle)",
+        "Extension vers le nord-ouest de la Zambie : Kanongesha-Lunda et Ishindi-Lunda",
+        "Expansion vers la vallee de la Luapula : Kazembe-Lunda (Lunda orientaux)",
+        "Raids vers le Gabon et la Republique du Congo septentrional",
+        "Contacts commerciaux avec les traders portugais de la cote atlantique et arabo-swahili de la cote indienne"
+      ],
+      "historicalSettlementZones": [
+        "Musumba (capitale, Katanga nord-ouest, RDC)",
+        "Province du Nord-Ouest de Zambie (Kanongesha, Ishindi)",
+        "Vallee de la Luapula, Zambie orientale (Kazembe)",
+        "Province du Moxico et de la Lunda Sul en Angola"
+      ],
+      "unificationsOrDivisions": "Le modele politique lunda (gouvernance sacree adoptee des Luba) permit une expansion unique : les peuples conquis etaient integres en tant que sujets portant un anneau de fer, liberes apres avoir prouve leur loyaute (en rapportant la tete d'un ennemi du royaume), puis pleinement incorpores dans la societe lunda. Apres 1608, les Lunda lancerent des attaques contre les Mbundu (guerre avec le royaume Ndongo), s'enrichissant par le betail et les prisonniers vendus aux Portugais. La traite des esclaves fut abandonnee au 19e siecle lorsque les Europeens cesserent de la pratiquer. La colonisation (1884) divisa le coeur lunda entre le Congo belge, l'Angola portugais et la Rhodesie du Nord britannique.",
+      "externalInfluences": "Influence majeure de l'empire Luba : le modele de gouvernance sacree luba (Balopwe) fut adopte et adapte par les Lunda. Contacts precoces avec les Portugais via les traders de la cote atlantique (17e siecle), puis avec les traders arabo-swahili de la cote indienne. Conseillers militaires musulmans et armes datees recues des villes de Nyangwe et Kabambare. Colonisation belge, portugaise et britannique apres 1884.",
+      "majorHistoricalEvents": "17e siecle : fondation du royaume Lunda par le premier Mwata Yamvo, capitale Musumba. Apres 1608 : raids contre les Mbundu et guerre avec le royaume Ndongo. 1680 : l'empire couvre 150 000 km2. 19e siecle : apogee territoriale (300 000 km2). 1884 : partage colonial entre Belgique, Portugal et Grande-Bretagne. Le Mwane-a Yamvo disposait d'une force militaire de 175 000 hommes a son apogee."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "L'empire Lunda etait dirige par le Mwata Yamvo (Mwaant Yav), souverain supreme dont l'autorite etait fondee sur un modele de gouvernance sacree emprunte aux Luba. Le Mwata Yamvo avait entre vingt et trente epouses. Les chefs conquis etaient integres comme governors regionaux relies par des obligations tributaires. Le systeme se diffusa par essaimage : des membres de la famille royale ou des allies furent installes comme chefs dans les territoires etendus (Kanongesha, Kazembe, etc.), creant un reseau de chefferies rattachees au centre.",
+      "clanOrganization": "Organisation en clans et lignages : les peuples integres conservaient une structure clanique propre tout en relevant de l'autorite du Mwata Yamvo. Parmi les sous-groupes les plus documentes, les Ndembu (Zambie) presentent une organisation matrilineaire bien etudiee par l'anthropologue Victor Turner.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role central dans la transmission de l'autorite des chefferies locales. Chez les Ndembu (Zambie), la filiation matrilineaire determine l'appartenance clanique et les droits sur la terre.",
+      "religiousAuthority": "Les Lunda croyaient en Nzambi (ou Nzamb Katang) comme createur supreme. La religion lunda s'adressait a Nzambi par l'intermediaire des esprits ancestraux. Les chefs et le Mwata Yamvo jouaient un role rituel et sacre. Aujourd'hui, le christianisme (catholique en RDC et Angola, protestant en Zambie) est dominant, avec maintien de pratiques traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Lunda (Chilunda, Ruund)",
+      "isoCodes": ["lun"],
+      "dialects": [
+        "Ruund — dialecte central parle a Musumba et dans le nord-ouest du Katanga (RDC)",
+        "Chilunda / Lunda de Zambie — parle dans la Province du Nord-Ouest, compris par environ 8,6 % des Zambiens (estimation 1986)",
+        "dialectes du Kazembe (Luapula)",
+        "variantes mineures representes en Namibie"
+      ],
+      "vehicularRole": "Le lunda est parle comme langue maternelle et vehiculaire dans les zones rurales du nord-ouest de la Zambie, du nord-est de l'Angola et du Katanga occidental (RDC). Le francais (RDC), le portugais (Angola) et l'anglais (Zambie) sont les langues officielles utilisees dans l'administration."
+    },
+    "culture": {
+      "majorRites": "Les Lunda pratiquent des ceremonies royales autour du Mwata Yamvo incluant des rites d'investiture et de deuil tres elabores. Chez les Ndembu (branche zambienne), les rites de passage et d'initiation sont particulierement bien documentes par l'anthropologue Victor Turner (Nkanga pour les filles, Mukanda pour les garcons avec circoncision, Wubwangu pour les jumeaux). Le rituel Chihamba implique des ceremonies de guerison collectives. Les ceremonies de mariage incluent des negociations de dot (lobola) et des celebrations communautaires.",
+      "symbols": "Le titre de Mwata Yamvo est le symbole supreme du pouvoir lunda. Les insignes royaux (bracelets, colliers, etoffes particulieres) distinguent les membres de la famille royale. L'anneau de fer porte par les prisonniers integres et retire apres preuve de loyaute est un symbole d'inclusion dans la societe lunda. La capitale Musumba est un lieu symbolique de reference.",
+      "artsAndMusic": "L'artisanat lunda comprend la poterie, le tissage de nattes, la sculpture sur bois et la fabrication d'instruments de musique. Les tambours jouent un role central dans les ceremonies royales et les rites de passage. Chez les Ndembu, les masques et les statues rituelles (ikishi) sont utilises lors des ceremonies d'initiation. La musique traditionnelle inclut des chants polyphoniques et des danses collectives lors des ceremonies communautaires. La tradition orale (genealogies royales, recits de fondation, proverbes) est soigneusement preservee.",
+      "spiritualities": "La cosmologie lunda est centree sur Nzambi (Nzamb Katang), createur supreme. La communication avec Nzambi se fait par l'intermediaire des esprits ancestraux, particulierement puissants pour les lignees royales. Chez les Ndembu, le systeme symbolique des couleurs (blanc/rouge/noir) structure la pensee rituelle, tel qu'analyse par Victor Turner. Le christianisme est aujourd'hui dominant (catholicisme en RDC et Angola, protestantisme en Zambie), souvent pratique en syncrctisme avec les croyances traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "L'empire Lunda (Lunda Commonwealth), fonde au 17e siecle, fut l'une des plus grandes confederations d'Afrique centrale precoloniale. Avec une capitale a Musumba (nord-ouest du Katanga), il s'etendit sur environ 300 000 km2 a son apogee au 19e siecle, couvrant l'actuel Katanga occidental, le nord-est de l'Angola et le nord-ouest de la Zambie. Il engendra des royaumes vassaux importants : le royaume du Kazembe (vallee de la Luapula), le Kasanje (haut Kwango, Angola) et contribua a la formation des Luvale (haut Zambeze). Le Mwata Yamvo disposait d'une force militaire de 175 000 hommes et recevait des conseillers militaires et des armes de Nyangwe et Kabambare.",
+      "relationsWithNeighbors": "Les Lunda sont historiquement allies aux Luba (dont ils ont adopte le modele de gouvernance sacree). Ils ont entretenu des relations de domination avec les Mbundu (raids apres 1608, guerre avec le royaume Ndongo). Les Luvale du haut Zambeze et les Kasanje de l'haut Kwango sont des peuples issus des migrations et conquetes lunda. Les Bemba (Zambie) ont adopte la langue des Kazembe-Lunda. Les traders portugais de la cote atlantique et arabo-swahili de la cote indienne etaient leurs principaux partenaires commerciaux.",
+      "conflictsOrAlliances": "Raids contre les Mbundu apres 1608 et guerre avec le royaume Ndongo (Angola), enrichissant les Lunda par le betail et les prisonniers vendus aux Portugais. Grande implication dans la traite atlantique des esclaves (17e-19e siecle), abandonnee au 19e siecle. Partage colonial de 1884 entre Belgique (Congo belge), Portugal (Angola) et Grande-Bretagne (Rhodesie du Nord), qui divisa le coeur de l'empire Lunda.",
+      "diaspora": "Presence lunda dans les grandes villes du Katanga (Lubumbashi, Kolwezi), du nord-ouest de la Zambie (Solwezi) et du Moxico angolais. Migrations economiques vers Kinshasa, Luanda et les villes zambiennes."
+    },
+    "demography": {
+      "totalPopulation": 1175000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : Lunda en RDC 259 000, en Zambie 496 000, en Angola 420 000 — total 1 175 000. Wikipedia (sources diverses) : environ 1 100 000 en RDC, 600 000 en Zambie, 800 000 en Angola. Les estimations varient selon les criteres d'inclusion des sous-groupes.",
+      "distributionByCountry": [
+        { "country": "COD", "population": 259000 },
+        { "country": "ZMB", "population": 496000 },
+        { "country": "AGO", "population": 420000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Lunda people : https://en.wikipedia.org/wiki/Lunda_people",
+      "Wikipedia EN — Lunda Empire : https://en.wikipedia.org/wiki/Lunda_Empire",
+      "Wikipedia EN — Lunda language : https://en.wikipedia.org/wiki/Lunda_language",
+      "SIL Ethnologue — Lunda (lun) : https://www.ethnologue.com/language/lun/",
+      "Joshua Project — Lunda in Angola : https://joshuaproject.net/people_groups/13153/AO",
+      "Joshua Project — Lunda in DRC : https://joshuaproject.net/people_groups/13153/CG",
+      "Victor Turner — The Ritual Process: Structure and Anti-Structure. Aldine, Chicago, 1969.",
+      "Victor Turner — The Forest of Symbols: Aspects of Ndembu Ritual. Cornell University Press, 1967.",
+      "Encyclopaedia Britannica — Lunda subgroup (Ethnologue free profile) : https://www.ethnologue.com/subgroup/4226/"
+    ]
+  }
+}

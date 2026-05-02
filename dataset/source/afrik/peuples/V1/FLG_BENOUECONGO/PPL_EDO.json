@@ -1,0 +1,23 @@
+{
+  "id": "PPL_EDO",
+  "nameMain": "",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Edo",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "historicalRegion": "Nigeria (Edo State)",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (bin)", "Edo Royal Archives (Benin Kingdom)"]
+  }
+}

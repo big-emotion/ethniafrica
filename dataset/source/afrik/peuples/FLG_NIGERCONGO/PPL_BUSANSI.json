@@ -1,0 +1,111 @@
+{
+  "id": "PPL_BUSANSI",
+  "nameMain": "Busansi",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["BFA", "GHA", "TGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Busansi",
+      "selfAppellation": "Bissa (singulier : Bisa ; pluriel : Bisan, Bissanno)",
+      "exonyms": [
+        "Busansi (terme utilise par les Mossi)",
+        "Busanga (terme utilise par les Kusasi et forme plurielle mossi)",
+        "Bussawa (terme utilise par les Hausa)"
+      ],
+      "originOfExonyms": "Le nom Bissa est le terme utilise par le peuple lui-meme. Busansi est le terme en langue moore (langue des Mossi) designant le singular Bissa. Busanga est la forme plurielle correspondante en moore. Le terme Busanga serait une forme corrompue de l'expression en dialecte lebir/lere bisa : bisag gua (homme bissa), reponse donnee aux premiers europeens qui demandaient au peuple son identite et que ces derniers n'ont pas compris. A ne pas confondre avec le Bisa du Zambie ou le Busa du Nigeria et du Benin.",
+      "whyProblematic": "La denomination Busansi, bien que courante dans la litterature, est un exonyme mossi. Le terme propre est Bissa. Il existe aussi une confusion potentielle avec le Bisa (langue zambo-bantoue) et le Busa (langue nilo-saharienne du Nigeria/Benin), qui sont des langues completement differentes malgre la ressemblance phonique.",
+      "contemporaryUsage": "Bissa est le terme privilegie dans la litterature academique et par la communaute elle-meme au Burkina Faso et au Ghana. Busansi est encore utilise dans le contexte burkinabe sous influence mossi. La langue est codifiee sous l'ISO bib (Bisa).",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Mande oriental (sous-groupe Bissa-Busa-Boko)",
+      "historicalRegion": "Centre-Est du Burkina Faso (Boulgou, Koulpelego, Kouritenga), Nord-Est du Ghana (Upper East Region, Bawku)",
+      "currentCountries": ["BFA", "GHA", "TGO"]
+    },
+    "ethnicities": [
+      "Bissa de Barka (groupe oriental, parle le dialecte Barka/Baraka)",
+      "Bissa de Lebre-Zeba (groupe occidental, parle le dialecte Lebre/Zeba)",
+      "Bissa de Leere (groupe septentrional, parle le dialecte Leere)",
+      "Bissa de Gormine (Gourmyne, proche du Barka, parlé dans la region Yargatenga/Yargatala)",
+      "Clan Lingani (Tangaré, Garango — clan detenteur du pouvoir politique et mystique traditionnel)",
+      "Busa et Boko (sous-groupes du Nigeria du Nord-Ouest et du Benin du Nord, parlant les langues busa et boko)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bissa sont un peuple mande oriental etabli principalement dans le Centre-Est du Burkina Faso, le Nord-Est du Ghana et l'extreme nord du Togo. Selon le Dictionnaire historique de la Haute-Volta de Daniel McFarland, ils sont decrits comme des Mande intrusifs qui se sont installes dans la region le long du Volta Blanc en dessous de Tenkodogo vers 1300 ap. J.-C. Selon leurs propres traditions, leur ancetre etait Barso, un chasseur. Des sources orales rapportent que leur groupe ancestral, les Sona, avaient des origines dans l'ancien empire du Ghana et font partie du tronc commun des peuples mande. Ils ont participe aux empires du Ghana et du Mali avant de migrer vers le Burkina Faso actuel.",
+      "formationPeriod": "Installation dans la region de l'actuel Centre-Est du Burkina Faso a partir d'environ 1300 ap. J.-C., avec Tondogho (Tanodogo) comme ville la plus ancienne. La tradition rapporte qu'ils n'ont rencontre aucun groupe ethnique dans ce territoire vierge lors de leur arrivee. A partir du Burkina Faso, une partie s'est dispersee vers le Ghana, le Togo et le Benin a la recherche de terres fertiles.",
+      "migrationRoutes": [
+        "Depuis l'empire du Ghana et le Mali, traversant le Sahel vers le sud",
+        "Installation au Centre-Est du Burkina Faso (Tondogho, Garango, Tenkodogo) vers 1300",
+        "Migration ulterieure vers le Nord-Est du Ghana (Upper East Region, Bawku) et l'extreme nord du Togo"
+      ],
+      "historicalSettlementZones": [
+        "Burkina Faso : provinces de Boulgou, Koulpelego, Kouritenga (region Centre-Est) ; Bazaga, Zoundwéogo, Centre-Sud ; Garango, Gomboussougou, Zabre, Tenkodogo",
+        "Ghana : district de Bawku Municipal, Upper East Region, North East Region",
+        "Togo : prefecture de Tone (region des Savanes)",
+        "Cote d'Ivoire : presence minoritaire de locuteurs bissa"
+      ],
+      "unificationsOrDivisions": "Les Bissa sont organises en clans nombreux (plus de cinquante), chacun portant un nom propre et une appellation (dedaa, utilisee comme nom de famille au Burkina Faso). Les clans sont repartis entre trois groupes dialectaux principaux : Barka, Lebre et Leere. La chefferie de Garango est restee independante ; les districts du Nord-Ouest ont ete soumis au royaume mossi de Ouagadougou, et les cantons du Nord-Est au royaume mossi de Tenkodogo. La tradition rapporte que Rialle, fondateur de la lignee royale Nakomse des Mossi, etait lui-meme Busansi, soulignant les liens ancestraux entre Bissa et Mossi.",
+      "externalInfluences": "Pression des royaumes mossi (Ouagadougou, Tenkodogo) ayant soumis plusieurs districts bissa. Islamisation progressive : la majorite des Bissa sont musulmans. Colonisation francaise du Burkina Faso et britannique du Ghana. Relations commerciales avec les peuples voisins. Bissa est la langue mande la plus parlee au Ghana et au Togo.",
+      "majorHistoricalEvents": "Vers 1300 : installation dans l'actuel Burkina Faso. XVe-XVIe siecle : formation des royaumes mossi voisins, avec soumission de certains districts bissa. Periode coloniale : integration dans les administrations coloniales francaises et britanniques. Independances du Burkina Faso (1960) et du Ghana (1957). La langue bissa est enseignee dans certaines ecoles au Burkina Faso."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies de villages et de cantons. Le clan Lingani de Tangaré (province de Boulgou, Garango) detient le pouvoir politique et mystique traditionnel : aucun individu ne peut prendre le pouvoir ni porter la couronne sans une preparation mystique effectuee par le clan Lingani dans le village de Tangaré. L'autorite ne reside pas dans celui qui porte la couronne mais dans celui qui la confere. La chefferie de Garango est restee historiquement independante des royaumes mossi.",
+      "clanOrganization": "Plus de cinquante clans, chacun avec un nom propre et une appellation (dedaa) utilisee comme nom de famille au Burkina Faso. Le clan Lingani est le depositaire du pouvoir politique et mystique avec un arbre-fromager ceremonial et une lance ancestrale de chasseur pres de la Montagne Tangaré, face a la residence de la famille Lingani. Les clans sont repartis selon les groupes dialectaux (Barka, Lebre, Leere).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite, le droit foncier et la succession. Les dedaa (appellations claniques) fonctionnent comme des patronymes transmis patrilineairement. Les pratiques de mariage incluent une tradition particuliere : un homme souhaitant courtiser une femme bissa doit travailler dans le champ d'arachides de la mere de la jeune fille et lui fournir son propre champ d'arachides en cas de mariage.",
+      "religiousAuthority": "Autorite des leaders islamiques (imams) dans les villages, la majorite des Bissa etant musulmane. Des pratiques animistes subsistent parallelement a l'islam. Le clan Lingani detient aussi une autorite spirituelle traditionnelle liee aux rites de pouvoir et aux lieux sacres (arbre-fromager ceremonial, lance ancestrale, montagne Tangaré)."
+    },
+    "languages": {
+      "mainLanguage": "Bissa (Bisa)",
+      "isoCodes": ["bib"],
+      "dialects": [
+        "Barka ou Baraka (dialecte oriental, zone Yargatenga/Yargatala)",
+        "Gormine ou Gourmyne (proche du Barka, nord-est de la zone)",
+        "Lebre ou Zeba (dialecte occidental)",
+        "Leere (dialecte septentrional)"
+      ],
+      "vehicularRole": "Le bissa (ISO bib) est une langue mande orientale stable, enseignee comme matiere dans certaines ecoles au Burkina Faso. C'est la langue mande la plus parlee au Ghana et au Togo. Elle est tonale et apparentee (sans etre identique) aux langues du vieux royaume de Borgu : busa, boko, kyenga. Le bissa est proche du moore (langue des Mossi) en raison d'une ascendance commune. Le francais est utilise au Burkina Faso dans l'administration ; l'anglais au Ghana. SIL Ethnologue le classe avec 1M a 1B de locuteurs (gamme large incluant tous les dialectes)."
+    },
+    "culture": {
+      "majorRites": "Pratiques funeraires distinctives : les defunts sont enteres devant les maisons familiales. Les tombes sont amenagees comme des habitations traditionnelles souterraines, avec une petite ouverture pour l'entree du corps. Un membre designe de la famille est charge de la mise en terre. Plusieurs membres d'une meme famille peuvent partager la meme tombe. L'entree est scellee avec un recipient en argile amovible pour permettre des inhumations futures. Ceremonies islamiques (priere des morts, deuil) combinees avec des pratiques ancestrales. Mariage : tradition de la prestation de travail dans le champ d'arachides de la belle-mere par le prétendant, et fourniture d'un champ a la future epouse.",
+      "symbols": "L'arachide (la culture de l'arachide est centrale dans l'identite et l'economie bissa). L'arbre-fromager ceremonial pres de la Montagne Tangaré (symbole du pouvoir du clan Lingani). La lance ancestrale de chasseur (symbole de l'ancetre fondateur Barso). Le nom dedaa (appellation clanique) comme marqueur identitaire fondamental.",
+      "artsAndMusic": "Danses traditionnelles incluant le Gan (danse des chasseurs). Musique percussive lors des ceremonies et celebrations. Artisanat : poterie, tissage. Traditions orales richement developpees pour la transmission de l'histoire et des genealogies claniques. La culture materielle est fortement liee a l'agriculture et a la chasse.",
+      "spiritualities": "Islam sunnite pratique par la majorite des Bissa. Preservation de pratiques animistes traditionnelles en syncrétisme avec l'islam. Culte des ancetres et des lieux sacres : la Montagne Tangaré et l'arbre-fromager ceremonial du clan Lingani constituent des lieux de memoire et de rituel ancestral. Croyance en des esprits de la nature et des ancetres fondateurs de lignee. Le clan Lingani joue un role de mediateur entre le monde des vivants et celui des ancetres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La chefferie de Garango est la principale structure politique bissa, ayant maintenu son independance vis-a-vis des royaumes mossi. Les districts nord-ouest ont ete soumis au royaume mossi de Ouagadougou ; les cantons nord-est au royaume mossi de Tenkodogo. La tradition selon laquelle Rialle, fondateur de la lignee nakomse des Mossi, serait Busansi (Bissa) suggere un role historique dans la formation des grandes chefferies de la region.",
+      "relationsWithNeighbors": "Relations complexes avec les Mossi (domination partielle, mais aussi liens ancestraux selon les traditions orales). Commerce et echanges avec les peuples gur voisins (Kusasi, Dagomba, Bimoba). A Accra (Ghana), le quartier Busanga Line dans la zone de Kaneshie temoigne de la presence historique de la communaute. Relations avec les Hausa (qui les designent sous le nom de Bussawa) dans les reseaux commerciaux trans-saheliens.",
+      "conflictsOrAlliances": "Soumission partielle aux royaumes mossi (certains districts) tout en maintenant une independance locale (Garango). Integration dans les structures coloniales francaises (Burkina Faso) et britanniques (Ghana). Appartenance historique aux reseaux de l'empire du Ghana et de l'empire du Mali comme composante mande.",
+      "diaspora": "Presence dans les grandes villes du Burkina Faso (Ouagadougou) et du Ghana (Accra : Busanga Line a North Kaneshie, Lartebiokorshie, Ablekuma ; Nima a Ayawaso). Migration vers le sud du Ghana et d'autres villes d'Afrique de l'Ouest a la recherche de terres fertiles et d'opportunites economiques."
+    },
+    "demography": {
+      "totalPopulation": 600000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue (langue bib : population entre 1M et 1B, gamme large). Les Bissa representeraient environ 2/5e de la population du Burkina Faso selon certaines sources — chiffre qui semble excessif et probablement attribuable a la diaspora elargie. Estimation conservatrice 2025 : environ 600 000 personnes au Burkina Faso, Ghana et Togo combines. Sources : SIL Ethnologue [bib], recensements nationaux BFA et GHA, Wikipedia EN, Joshua Project.",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 500000,
+          "note": "Centre-Est : Boulgou, Koulpelego, Kouritenga ; Centre-Sud : Bazaga, Zoundwéogo ; Garango, Tenkodogo, Zabre"
+        },
+        {
+          "country": "GHA",
+          "population": 80000,
+          "note": "Upper East Region (Bawku Municipal District et districts voisins), North East Region"
+        },
+        {
+          "country": "TGO",
+          "population": 20000,
+          "note": "Prefecture de Tone, region des Savanes (extreme nord du Togo)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bissa people. https://en.wikipedia.org/wiki/Bissa_people",
+      "Wikipedia EN — Bissa language. https://en.wikipedia.org/wiki/Bissa_language",
+      "SIL Ethnologue — Bisa language [bib]. https://www.ethnologue.com/language/bib/",
+      "YouTube — Who Are the Bissa (Busanga) People? https://www.youtube.com/watch?v=bP0kGwHPQvk",
+      "Facebook — A Rich Cultural Heritage: The Bissa People. https://www.facebook.com/engrkogwuonyepatrick.patsallyonyeka/videos/949872800427144/",
+      "McFarland, Daniel. Historical Dictionary of Upper Volta (Burkina Faso). Metuchen, NJ: Scarecrow Press, 1978.",
+      "Joshua Project — Bissa people group profile"
+    ]
+  }
+}

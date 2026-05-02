@@ -1,0 +1,109 @@
+{
+  "id": "PPL_GA_DANGME",
+  "nameMain": "Ga-Dangme",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Ga-Dangme",
+      "selfAppellation": "Ga / Gã (sous-groupe Ga), Dangme / Adangme / Adaŋgbi (sous-groupe Dangme)",
+      "exonyms": [
+        "Ga-Adangbe (forme anglophone courante utilisee par les Européens et dans l'administration ghanéenne)",
+        "Ga-Dangme (variante orthographique officielle)",
+        "Gan (terme alternatif pour le sous-groupe Ga)"
+      ],
+      "originOfExonyms": "Le terme Ga-Dangme est un compose artificiel cree par les colonisateurs britanniques pour grouper deux peuples linguistiquement apparentes mais historiquement distincts. Le Ga designe le peuple coutier d'Accra, tandis que le Dangme (ou Adangme) designe les populations de l'interieur et de la cote orientale. Selon des historiens Ga, la langue Dangme serait la langue-mere du Ga, ce qui expliquerait leur appartenance a un meme groupe ethno-linguistique.",
+      "whyProblematic": "La denomination composite Ga-Dangme efface les distinctions importantes entre les deux sous-groupes. Les Ga d'Accra ont une identite urbaine et maritime distincte des Dangme plus ruraux. La confusion avec d'autres groupes Kwa (Akan, Ewe) est frequente.",
+      "contemporaryUsage": "Ga-Dangme est le terme officiel utilise au Ghana pour designer l'ensemble de ce groupe ethno-linguistique. La Region du Grand Accra est leur territoire historique. Les Ga d'Accra ont une visibilite politique particuliere en tant que proprietaires ancestraux de la capitale.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Niger-Congo, branche Kwa (sous-branche Ga-Dangme), distincte des Akan",
+      "historicalRegion": "Cote du Ghana (Gold Coast historique), plaines d'Accra, cote de Ada a Tema, haut plateau de Krobo",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": [
+      "Ga Mashie (Ga centraux d'Accra; les six villes Ga traditionnelles : Accra/Gamashie, Osu, La, Teshie, Nungua, Tema)",
+      "Dangme Ada (peuple de l'embouchure du Volta, cote sud-est)",
+      "Dangme Krobo / Klo (peuple du plateau Krobo dans la region orientale; les plus nombreux)",
+      "Dangme Shai (peuple des collines Shai)",
+      "Dangme Prampram / Gbugbla (peuple cotier de Prampram)",
+      "Dangme Ningo (peuple cotier de Ningo)",
+      "Dangme Osudoku (peuple de l'interieur, region du Volta)",
+      "Dangme Kpone (peuple cotier de Kpone)"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon les traditions orales Ga, le peuple Ga serait venu de la region du lac Tchad, puis aurait migre en passant par le Niger, le Nigeria, le Togo, avant d'atteindre les plaines d'Accra au 16e siecle. Sous la direction du roi Ayi Kushi (1483-1519), les Ga ont traverse plusieurs etats avant de s'etablir sur la cote de la Gold Coast. Une tradition alternative relie les Ga a une migration depuis l'Egypte via l'Ethiopie et le Soudan. Les Dangme auraient precede les Ga sur les plaines d'Accra, se repliant vers les collines interieures et la vallee du Volta. Linguistiquement, le Ga et le Dangme forment la branche Ga-Dangme du groupe Kwa, parente des langues Akan et Ewe.",
+      "formationPeriod": "L'identite distincte des Ga s'est consolidee apres leur etablissement sur les plaines d'Accra au 16e-17e siecle. Les Ga etaient organises en six villes independantes (Accra/Gamashie, Osu, La, Teshie, Nungua, Tema) chacune ayant son propre stool (trone), chef de guerre (asafoatse) et wulomo (pretre supreme). Les Dangme, plus disperses, ont forme des communautes independantes dans l'interieur et sur la cote orientale.",
+      "migrationRoutes": [
+        "Migration depuis la region du lac Tchad vers l'ouest (tradition orale Ga)",
+        "Traversee du Nigeria, du Niger, du Togo avant d'atteindre la Gold Coast (16e siecle)",
+        "Les Dangme/Adangme auraient migre depuis le Togo vers les plaines d'Accra et la vallee du Volta",
+        "Etablissement sur les plaines d'Accra et la cote entre Kpone et Ada (estuaire du Volta)"
+      ],
+      "historicalSettlementZones": [
+        "Plaines d'Accra (cote de la Gold Coast)",
+        "Six villes Ga traditionnelles (Gamashie/Accra Ga, Osu, La, Teshie, Nungua, Tema)",
+        "Cote de Kpone a Ada (Dangme cotiers)",
+        "Plateau de Krobo (Dangme Krobo/Klo, region orientale)",
+        "Collines de Shai, vallee du Volta meridionale"
+      ],
+      "unificationsOrDivisions": "Les Ga et les Dangme ont toujours ete des peuples distincts partageant une parente culturelle et linguistique sans unite politique permanente. Le Gamashie Mantse (chef paramount des Ga d'Accra) est choisi comme premier parmi egaux au sein de l'Etat Ga. La domination coloniale britannique a formalise le concept de Ga-Dangme comme entite administrative. Aujourd'hui les deux groupes maintiennent leurs propres institutions cheffales distinctes.",
+      "externalInfluences": "Contacts historiques avec les Akan (Akwapim, Fante, Ashanti) et les Ewe : influences reciproques culturelles et linguistiques. Presence europeenne ancienne sur la cote d'Accra (Fort James britannique, Fort Crevecoeur neerlandais, Fort Christiansborg danois). La Gold Coast devient une colonie britannique en 1874, transformant profondement l'organisation sociale Ga. Independence du Ghana en 1957 (sous Kwame Nkrumah, qui etablit Accra comme capitale) : les Ga deviennent les proprietaires ancestraux de la capitale nationale.",
+      "majorHistoricalEvents": "16e siecle : etablissement des Ga sur les plaines d'Accra sous le roi Ayi Kushi. 17e siecle : arrivee des marchands europeens; construction de forts commerciaux a Accra. 1874 : la Gold Coast devient colonie britannique; Accra designe capitale en 1877. 1908 : Accra devient siege du gouvernement colonial. 1957 : independance du Ghana; Accra capitale nationale. 1960s : le kpanlogo (musique et danse Ga) emerge comme forme culturelle moderne influente."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies independantes. Chez les Ga : chaque ville a un Mantse (chef), un Wulomo (pretre supreme/chef spirituel), un Asafoatse (chef de guerre), et un conseil d'anciens. Le Ga Mantse (ou Gamashie Mantse) est le chef paramount de l'Etat Ga global, choisi comme premier parmi egaux. Chez les Dangme : les Dangme Krobo ont un Konor (chef paramount); les Ada ont le chef d'Ada; chaque communaute Dangme a ses propres institutions cheffales.",
+      "clanOrganization": "Organisation en lignages familiaux (we pour les Ga). Heritage dualiste : succession aux fonctions masculines et heritage de biens par lignages patrilineaires; succession aux fonctions feminines et heritage des biens feminins par lignages matrilineaires. Le systeme Huza chez les Dangme est une forme ancienne de propriete collective innovante : une grande parcelle de terre est acquise collectivement par un groupe familial, subdivisee selon les contributions de chacun, avec chaque membre ayant un controle total sur sa part.",
+      "ageClassSystems": "Societes de guerriers Asafo (companies militaires traditionnelles) actives lors des festivals. Les hommes sont classes en groupes d'age (kpee) qui participent aux activites communautaires. Rites de passage (Dipo chez les Krobo et Shai) organisent la transition des jeunes filles a l'age adulte.",
+      "roleOfLineages": "Les lignages determinent l'appartenance communautaire, l'heritage foncier, les droits coutumiers et les affiliations religieuses (chaque lignage a ses divinites tutelaires et participe aux festivals de ses dieux ancestraux). Les femmes Ga controlent le commerce des marches, heritage matrilineaire distinctif.",
+      "religiousAuthority": "Le Wulomo (pretre supreme) est la plus haute autorite spirituelle dans chaque ville Ga. Il est le mediateur entre la communaute et les dieux ancestraux (Ataa-Naa Nyonmo, le Dieu supreme; DzemaWodzi et Sisadzi, les esprits des ancetres). Les Wulomei (pluriel) dirigent les rituels du Homowo. Le christianisme (toutes confessions) est aujourd'hui majoritaire; syncrétisme frequent avec les pratiques traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Ga et Dangme (Adangme)",
+      "isoCodes": ["gaa", "ada"],
+      "dialects": [
+        "Ga de Gamashie (Accra central) - dialecte de reference du Ga",
+        "Ga de La, Osu, Teshie, Nungua, Tema - variations locales mineures",
+        "Dangme Ada (cote de l'estuaire du Volta) - code ada",
+        "Dangme Krobo / Klogbi (Klo) - variante du plateau Krobo, parfois decrite comme separate",
+        "Dangme Shai - variante des collines Shai",
+        "Dangme Prampram (Gbugbla) et Ningo - variantes cotieres"
+      ],
+      "vehicularRole": "Le Ga est la langue de la capitale Accra et jouit d'une forte presence dans les medias locaux et les eglises. Le Dangme est parle par un plus grand nombre de locuteurs (plus de 800 000 en 2004 selon Wikipedia). Les deux langues sont enseignees dans les ecoles primaires de la Region du Grand Accra. L'anglais est la langue officielle du Ghana, largement utilisee par les Ga-Dangme urbanises. Le twi (Akan) est aussi compris par beaucoup."
+    },
+    "culture": {
+      "majorRites": "Homowo (hooting at hunger / se moquer de la faim) : festival annuel principal des Ga, celebre de mai a septembre selon les villes; commemore une grande famine surmontee lors des migrations ancestrales. Phases du Homowo : Gbemlilaa (interdiction des tambours, mai-aout); recolte du mais; Kpashimo (aspersion de kpokpoi, plat sacre de mais fermente et soupe de palme, dans les espaces publics pour les ancetres); levee de l'interdiction et celebration collective. Nungua celebre en premier, Teshi en dernier (ville la plus recente, fondee en 1710). Ngmayem : festival des Dangme celebrant la recolte du mil; similaire au Homowo. Dipo (ou Klama) : rite de passage des jeunes filles Krobo et Shai vers l'age adulte; initiation communautaire avec periode de formation, retraite rituelle, parure de perles de verre colorees (kokalorku/aggrey beads), presentation publique avec chants et danses. Asafotu / Asafo : ceremonies militaires traditionnelles avec faux batailles, purification, et durbar des chefs en palanquins. Funerailles : les Ga sont connus pour leurs cercueils sculptes en formes symboliques (canot, poisson, lion, cocoa pod) depuis les annees 1950; art funeraire distinctif valorise internationalement.",
+      "symbols": "La mer et la pirogue de peche (identite maritime Ga). Le kpokpoi (plat sacre du Homowo). Le stool (siege/trone) de chaque ville Ga comme symbole d'autorite et de magie rituelle. Les perles de verre colorees (kokalorku/aggrey beads) des femmes Dangme Krobo comme symbole d'identite et de statut. Les tambours (fontomfrom, kpanlogo) comme symboles de vie communautaire. Les cercueils sculptes symboliques (fantasy coffins). Ataa-Naa Nyonmo (Dieu supreme androgyne) comme concept spirituel central.",
+      "artsAndMusic": "Kpanlogo : style de musique et de danse moderne cree vers 1960, fusionnant les traditions Ga avec des influences contemporaines; percussif, avec tambours kpanlogo en forme de tonneau et chants; popularise internationalement par Obo Addy, Yacub Addy et Mustapha Tettey Addy. Klama, Kpatsa : styles musicaux traditionnels Dangme. Danse Dipo : choreographie rituelle des initiees Krobo, avec ornements de perles. Artisanat de perles de verre Krobo (kokalorku) : savoir-faire distinctif, reconnu internationalement. Cercueils sculptes Ga (Seth Kane Kwei, Ataa Oko) : art funeraire qui a attire l'attention internationale. Broderie et tissage de pagnes. Chants de pecheurs et rythmes de mer. Boxe : la communaute de Bukom (Accra) est un vivier de boxeurs professionnels de renommee mondiale.",
+      "spiritualities": "Systeme de croyances traditionnel centré sur Ataa-Naa Nyonmo (Dieu supreme), les DzemaWodzi (divinites intermediaires ancestrales), les Wodzi (esprits de lieux specifiques) et les Sisadzi (esprits des ancetres). Les Wulomei (pretres) assurent la communication avec ces entites, notamment lors des festivals. Croyance que les morts passent dans une vie parallele (ce qui explique les riches pratiques funeraires). Le christianisme (majoritaire) coexiste avec ces croyances en syncrétisme: les festivals Homowo incluent toujours des libations aux ancetres. Presence de l'islam dans certaines communautes Ga d'Accra."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Ga n'ont pas forme de royaume centralise mais un Etat federatif compose de six villes independantes (Accra/Gamashie, Osu, La, Teshie, Nungua, Tema) chacune avec son propre stool et sa chefferie. Le Ga Mantse (chef paramount d'Accra Ga) est le premier parmi egaux. Les Dangme ont des structures similaires : Konor (chef des Krobo), chef d'Ada, etc. Nii Tackie Tawiah III fut Mantsemei (chef de l'Etat Ga) de 2006 a 2012. La ville d'Accra (Ga Mashie) est devenue la capitale du Ghana colonial puis independant, donnant aux Ga un role symbolique majeur.",
+      "relationsWithNeighbors": "Contacts commerciaux et parfois conflictuels avec les Akan (Akwapim, Fante, Ashanti) qui ont tente d'etendre leur influence sur les plaines d'Accra aux 18e-19e siecles. Relations avec les Ewe (voisins a l'est). Les Ga ont eu des alliances commerciales avec les marchands europeens (Britanniques, Neerlandais, Danois) des le 16e siecle, jouant le role d'intermediaires dans le commerce cotier. Les Dangme Krobo ont developpe le systeme Huza d'exploitation collective des terres, adaptable aux contacts avec les Akan.",
+      "conflictsOrAlliances": "Le Buganda Agreement est une erreur - les Ga ont signe des traites avec les Britanniques qui ont permis l'etablissement d'Accra comme capitale coloniale. Les Ga ont subi des pressions des Ashanti au 19e siecle. La fondation d'Accra comme capitale de la Gold Coast (1877) et du Ghana independant (1957) a ete a double tranchant pour les Ga : prestige symbolique mais denaturation progressive de leurs terres ancestrales par le developpement urbain.",
+      "diaspora": "Diaspora Ga-Dangme presente dans les grandes villes ghanéennes (Kumasi, Tamale) et a l'etranger (Etats-Unis, Royaume-Uni, Allemagne). Le Homowo est aujourd'hui celebre dans la diaspora mondiale. Des associations culturelles Ga-Dangme maintiennent les liens avec Accra et les communautes d'origine."
+    },
+    "demography": {
+      "totalPopulation": 2800000,
+      "referenceYear": 2025,
+      "source": "Ghana Statistical Service (recensement 2021) : les Ga-Dangme representent environ 8% de la population ghanéenne. Population ghanéenne 2025 estimee : environ 34-35 millions. SIL Ethnologue (2004) : plus de 800 000 locuteurs du Dangme; Glottolog (2025) confirme code gaa pour le Ga. Projection 2025 basee sur recensements ghanéens et estimations demographiques regionales.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 2800000,
+          "note": "Region du Grand Accra (Ga Mashie, Ga East, Ga West, Ga South, Adentan); Region Orientale (Manya Krobo, Yilo Krobo); cote de Kpone a Ada"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Ga-Adangbe. https://en.wikipedia.org/wiki/Ga-Adangbe",
+      "Britannica - Ga people. https://www.britannica.com/topic/Ga",
+      "Visit Ghana - Homowo Festival. https://visitghana.com/homowo-festival/",
+      "GBC Ghana Online - The Homowo Story. https://www.gbcghanaonline.com/news/the-homowo-story-how-the-ga-people-conquered-hunger/2025/",
+      "Osabu-Kle, Daniel Tetteh. The Ga People and Homowo Festival. Carleton University African Studies. https://carleton.ca/africanstudies/wp-content/uploads/Ga-People-and-Homowo-Festival.pdf",
+      "Glottolog - Ga (gaa). https://glottolog.org/resource/languoid/id/gaaa1244",
+      "SIL Ethnologue - Dangme (ada). https://www.ethnologue.com/language/ada/",
+      "Wikipedia EN - Dangme language. https://en.wikipedia.org/wiki/Dangme_language",
+      "Ghana Statistical Service - Population and Housing Census. https://statsghana.gov.gh/"
+    ]
+  }
+}

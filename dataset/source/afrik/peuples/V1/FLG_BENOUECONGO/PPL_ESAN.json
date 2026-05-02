@@ -1,0 +1,22 @@
+{
+  "id": "PPL_ESAN",
+  "nameMain": "",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Esan",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (ish)", "Esan Historical Archives"]
+  }
+}

@@ -1,0 +1,40 @@
+# Nom du peuple
+- Nom principal : Ewe
+- Auto-appellation : Eʋe / Eʋegbe
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Gbe) (FLG_BENOUECONGO)
+- Région : Ghana (Volta), TGO, BEN
+- Identifiant peuple : PPL_EWE
+
+# 1. Ethnies incluses
+- Ewe du Ghana (Volta)
+- Ewe du Togo
+- Ewe du Bénin (Mono, Couffo)
+
+# 2. Origines
+- Migration depuis Notsé (Togo) selon tradition orale.
+- Branche importante du groupe Gbe.
+
+# 3. Organisation
+- Chefferies locales
+- Lignages familiaux
+
+# 4. Langue
+- Ewe
+- ISO : ewe
+
+# 5. Culture
+- Musique *Agbadza*
+- Rituels vodun
+- Tissage kente (variante ewe)
+
+# 6. Histoire
+- Relations anciennes avec Fon, Adja et Yoruba.
+- Rôle majeur dans l’histoire du Togo précolonial.
+
+# 7. Démographie
+- Population : 10 300 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (ewe)
+- Ghana & Togo Gbe Studies

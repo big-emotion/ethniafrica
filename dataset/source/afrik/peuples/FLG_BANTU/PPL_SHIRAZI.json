@@ -1,0 +1,106 @@
+{
+  "id": "PPL_SHIRAZI",
+  "nameMain": "Shirazi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA", "KEN", "COM", "MOZ"],
+  "content": {
+    "appellations": {
+      "mainName": "Shirazi",
+      "selfAppellation": "Washirazi (pluriel swahili)",
+      "exonyms": ["Mbwera", "Afro-Shirazi", "Swahili Shirazi"],
+      "originOfExonyms": "Le nom Shirazi fait reference a la ville de Shiraz, dans la province persane du meme nom (Iran actuel), dont les Shirazi revendiquent l'ascendance. Le terme Mbwera est utilise localement sur la cote. Le terme Afro-Shirazi a ete employe notamment dans le contexte politique de Zanzibar au XXe siecle.",
+      "whyProblematic": "L'identite Shirazi est debattue entre historiens. Certains la presentent comme une origine persane authentique (soutenue par des traditions orales et la Chronique de Kilwa), d'autres y voient une construction identitaire posterieure destinee a se distinguer des Arabes omanais arrivants au XIXe siecle, ou a masquer des origines serviles. Des preuves genetiques recentes attestent d'un metissage iranien reel, mais les preuves archeologiques d'une colonisation persane massive font defaut.",
+      "contemporaryUsage": "Aujourd'hui, l'identite Shirazi designe les populations de la cote swahili et des iles (Zanzibar, Pemba, Comores) qui revendiquent une ascendance persane-africaine. A Zanzibar, le terme est surtout utilise en opposition aux Arabes omanais et aux migrants africains recents du continent.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Swahili (cote Est-africaine)",
+      "historicalRegion": "Cote swahili, iles de Zanzibar, Pemba, Comores, Kilwa",
+      "currentCountries": ["TZA", "KEN", "COM", "MOZ"]
+    },
+    "ethnicities": ["Shirazi", "Afro-Shirazi", "Swahili cotier"],
+    "origins": {
+      "ancientOrigins": "Deux theories principales s'affrontent. La premiere, basee sur les traditions orales et la Chronique de Kilwa, affirme que des immigrants venus de Shiraz (Iran) s'installerent sur la cote est-africaine a partir du Xe siecle. Selon la legende, un prince de Shiraz interpreta un reve comme un signe de malheur et s'embarqua avec six freres pour fonder des cites-etats sur la cote. La seconde theorie soutient que les Shirazi sont des Bantous de la cote qui, apres leur islamisation aux XIe-XIIe siecles, adopterent des genealogies persanes fictives pour se distinguer des autres populations et legitimer leur statut de musulmans.",
+      "formationPeriod": "X-XIIe siecles pour les premieres installations selon la tradition orale. Selon l'anthropologue Helena Jerman, l'identite Washirazi s'est constituee apres l'arrivee de l'islam, probablement au XVIIe siecle.",
+      "migrationRoutes": [
+        "Hypothese persane: depuis la region du Golfe Persique vers la Somalie, puis migration vers le sud le long de la cote est-africaine",
+        "Hypothese bantoue: expansion de populations bantoues de la cote adaptees au commerce maritime",
+        "Migration vers les iles de Zanzibar, Pemba, Mafia, Comores et Madagascar a partir du XIIe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Iles de Zanzibar (Unguja) et Pemba",
+        "Archipel des Comores",
+        "Villes cotieres de Kilwa, Mombasa, Malindi",
+        "Cote du Mrima (Kenya et nord-Tanzanie)",
+        "Nord-ouest de Madagascar"
+      ],
+      "unificationsOrDivisions": "Les Shirazi ne formerent jamais un empire unifie mais un reseau de cites-etats independantes reliees par le commerce et les liens familiaux. Les sultanats Shirazi de Kilwa, Mombasa, Malindi et des Comores constituaient des entites politiques distinctes. L'arrivee des Portugais (fin XVe siecle) puis des Omanais (fin XVIIe siecle) marginalisa progressivement leur pouvoir.",
+      "externalInfluences": "Le commerce de l'ocean Indien (or du Mozambique, ivoire, esclaves, epices) fonda leur prosperite. L'islam, adopte a partir des VIIIe-IXe siecles, remodela profondement leur identite et leurs structures sociales. Les Portugais detruisirent les principaux ports Shirazi apres 1498. Les Arabes omanais s'imposerent comme nouvelle elite a partir de 1698.",
+      "majorHistoricalEvents": "Fondation de la dynastie Shirazi a Kilwa (vers 957 selon la tradition). Apogee du commerce de l'or de Sofala (XIIe-XVe siecles). Arrivee de Vasco de Gama a Kilwa (1498) et debut des guerres portugaises. Prise de Mombasa par les Portugais. Victoire omanaise sur les Portugais a Mombasa (1698). Revolution de Zanzibar (1964) et formation du parti Afro-Shirazi."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Cites-etats gouvernees par des sultans ou sheikhs Shirazi. Le pouvoir politique etait fonde sur le controle des reseaux commerciaux de l'ocean Indien. Les dirigeants se definissaient comme une aristocratie musulmane avec des genealogies remontant a la Perse ou a l'Arabie.",
+      "clanOrganization": "Organisation clanique avec des noms de famille arabises qui remplacent progressivement les noms de lignages bantous d'origine. Par exemple, le clan Wapate devint Batawiyna. Les liens de mariage et de commerce unissaient les elites des differentes cites-etats cotieres.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires definissaient le statut social et commercial. L'ascendance reelle ou fictive de Perses ou d'Arabes islamises conferait un prestige social eleve. Les mariages entre familles Shirazi de differentes villes et iles maintenaient les reseaux commerciaux.",
+      "religiousAuthority": "L'islam sunnite est au coeur de l'identite Shirazi. Les oulemats (savants musulmans) constituaient l'elite culturelle et religieuse. La distinction entre musulmans (ulama) et non-musulmans (designes comme Zanj) structurait la hierarchie sociale. Les pratiques bantoues d'origine coexistaient sous une forme islamiste."
+    },
+    "languages": {
+      "mainLanguage": "Swahili (dialectes cotiers)",
+      "isoCodes": ["swh"],
+      "dialects": [
+        "Kiunguja (dialecte de Zanzibar)",
+        "Kimvita (dialecte de Mombasa)",
+        "Swahili du Mrima",
+        "Dialecte des Comores (Shikomori influence)"
+      ],
+      "vehicularRole": "Le swahili est la langue maternelle et vehiculaire des Shirazi. Il est decrit comme une langue syncretique melant bantou sabaki, comorien, pokomo, persan, anglais, arabe et elements indiens. Le swahili est la langue de l'islam et du commerce sur toute la cote est-africaine."
+    },
+    "culture": {
+      "majorRites": "Pratiques islamiques (cinq piliers de l'islam). Celebraton du Nowruz (Nouvel An persan) maintenu par certaines communautes Shirazi de Zanzibar comme marqueur identitaire. Ceremonies de mariage elaborees combinant elements africains et islamiques. Rites funeraires islamiques.",
+      "symbols": "L'architecture en corail sculpte et le style des mosquees meles d'elements persans et africains. Les dhows (embarcations a voile) symbolisent le commerce et la maitrise de la mer. Les epices (clous de girofle, muscade, cannelle) sont associees a la prospite Shirazi.",
+      "artsAndMusic": "La musique taarab, typique de Zanzibar, melange des influences arabes, indiennes et africaines. Les rythmiques Shirazi se sont fondues dans la musique swahili. L'architecture des ruines de Kilwa Kisiwani (inscrite au patrimoine mondial UNESCO) temoigne du genie architectural Shirazi (construction en corail, voutes, colonnes).",
+      "spiritualities": "Islam sunnite (quasi-exclusif chez les Shirazi). Certains elements de spiritualite ancestrale bantoue ont ete conserves sous une forme islamiste. La distinction entre Shirazi (descendants libres) et populations serviles structurait la vision du monde. Selon certains historiens, des Africains revendiquaient l'identite Shirazi pour obscurcir leurs origines serviles et acceder a un statut social superieur."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Sultanat de Kilwa (un des plus importants): controla le commerce de l'or de Sofala pendant plusieurs siecles. Sultanat de Mombasa. Sultanat de Malindi. Sultanats des Comores. Sultanat de Zanzibar (qui devint ensuite omanais). Ces cites-etats controlerent les routes commerciales entre l'Afrique subsaharienne, l'Arabie, la Perse et l'Inde.",
+      "relationsWithNeighbors": "Relations commerciales intenses avec l'interieur africain (ivoire, or, esclaves). Commerce actif avec l'Arabie, la Perse, l'Inde et la Chine via les routes de l'ocean Indien. Conflits avec les Portugais apres 1498. Relations complexes avec les Arabes omanais qui s'imposerent comme nouvelle elite dominante.",
+      "conflictsOrAlliances": "Guerres contre les Portugais (XVe-XVIIe siecles) qui detruisirent les principaux ports Shirazi. Alliance avec les Omanais contre les Portugais (qui furent defaits en 1698 a Mombasa). Rivalites entre cites-etats cotieres (Zanzibar contre Pemba, Mombasa contre Malindi). Revolution de Zanzibar (1964) opposant les Africains aux Arabes, dans laquelle le parti Afro-Shirazi joua un role central.",
+      "diaspora": "Les Shirazi sont presents dans les principales villes cotieres de l'ocean Indien occidental: Zanzibar, Pemba, Mombasa, Malindi, Mogadiscio, Comores, nord-ouest de Madagascar. A Zanzibar en 1948, 56% de la population revendiquait une ascendance Shirazi. La diaspora Shirazi a contribue a la diffusion de la langue swahili et de la culture islamique sur toute la cote est-africaine."
+    },
+    "demography": {
+      "totalPopulation": 993000,
+      "referenceYear": 2025,
+      "source": "PeopleGroups.org (2025); Joshua Project estimait 760 000 en Tanzanie",
+      "distributionByCountry": [
+        {
+          "countryCode": "TZA",
+          "population": 900000,
+          "notes": "Principalement a Zanzibar, Pemba et sur la cote continentale"
+        },
+        {
+          "countryCode": "KEN",
+          "population": 50000,
+          "notes": "Cote kenyane, region de Mombasa et Lamu"
+        },
+        {
+          "countryCode": "COM",
+          "population": 30000,
+          "notes": "Archipel des Comores"
+        },
+        {
+          "countryCode": "MOZ",
+          "population": 13000,
+          "notes": "Cote nord du Mozambique"
+        }
+      ]
+    },
+    "sources": [
+      "Shirazi people – Wikipedia (https://en.wikipedia.org/wiki/Shirazi_people)",
+      "Shirazi and Arabs of Zanzibar – Minority Rights Group (https://minorityrights.org/communities/shirazi-and-arabs-of-zanzibar/)",
+      "Eastern Africa: The Shirazi migration – Britannica (https://www.britannica.com/place/eastern-Africa/The-Shirazi-migration)",
+      "Shirazi in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/print/14915/TZ)",
+      "Shirazi of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg050316/)",
+      "Jerman, Helena – Washirazi identity and Islam, XVIIe siecle (reference academique)",
+      "The Kilwa Chronicle (document medieval arabe-portugais)"
+    ]
+  }
+}

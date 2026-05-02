@@ -1,0 +1,99 @@
+{
+  "id": "PPL_SWAHILI_MOZAMBIQUE",
+  "nameMain": "Swahili (Mozambique)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MOZ"],
+  "content": {
+    "appellations": {
+      "mainName": "Swahili du Mozambique",
+      "selfAppellation": "Mwani / Waswahili",
+      "exonyms": ["Swahili", "Mwani (locuteurs de la cote nord)"],
+      "originOfExonyms": "Le terme Swahili vient de l'arabe sawahil (cotes), designe les peuples musulmans bantoues de la cote est-africaine. Au Mozambique, le terme local Mwani designe les locuteurs du dialecte kiMwani, concentrated sur l'ile de Mozambique, Angoche et l'archipel des Quirimbas.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Au Mozambique, les communautes se designent comme Mwani ou Waswahili selon le contexte. Le terme Swahili est utilise academiquement et administrativement. Les habitants de l'Ilha de Mocambique maintiennent une identite distinctive marquee par les influences bantoues, arabes, indiennes et portugaises.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Sabaki (Zone G)",
+      "historicalRegion": "Cote nord du Mozambique : Ilha de Mocambique (Nampula), Angoche, ile d'Ibo (archipel des Quirimbas), Cabo Delgado",
+      "currentCountries": ["MOZ"]
+    },
+    "ethnicities": [
+      "Mwani de l'Ilha de Mocambique (descendants des populations swahili pre-portugaises et des commerçants arabes et indiens)",
+      "Mwani d'Angoche (anciens sujets du Sultanat d'Angoche, derniere resistance anti-portugaise conquise en 1910)",
+      "Swahili de l'ile d'Ibo (archipel des Quirimbas, influences indiennes et goanes fortes)",
+      "Swahili de Pemba et Cabo Delgado (populations melangees bantoues et arabes du nord)",
+      "Makua islamises de la cote (populations bantoues locales ayant adopte la culture et la langue swahili)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les communautes swahili du Mozambique descendent des populations bantoues qui s'etaient etablies sur la cote est-africaine des le 3e siecle de l'ere commune, pratiquant peche et agriculture. Des le 8e siecle, des commerçants arabes et persans frequentent la cote, apportant l'islam et s'y installant. L'Ilha de Mocambique tire son nom du sultan Ali Musa Mbiki, qui regnait sur l'ile avant l'arrivee de Vasco da Gama en 1498. Le Sultanat d'Angoche, etat musulman swahili, controlait le commerce de l'ivoire, de l'or et des esclaves entre l'arriere-pays et les routes de l'ocean Indien.",
+      "formationPeriod": "L'identite swahili au Mozambique s'est consolidee entre le 9e et le 15e siecle, lors de l'essor des cites-etats marchandes. La periode portugaise (1507-1975) a introduit des influences europeennes tout en maintenant les structures islamiques locales. Le Sultanat d'Angoche a resiste aux Portugais jusqu'en 1910, date de la conquete definitive par les forces coloniales.",
+      "migrationRoutes": [
+        "Expansion bantoue depuis le bassin du Congo vers la cote est-africaine (1er millenaire apr. J.-C.)",
+        "Arrivee de commerçants arabes et shirazi depuis le golfe Persique et Oman (8e-12e siecles)",
+        "Immigration de commerçants indiens (Gujarat) depuis Goa sous la periode portugaise (16e-19e siecles)",
+        "Deplacements internes depuis l'arriere-pays Makua vers la cote"
+      ],
+      "historicalSettlementZones": [
+        "Ilha de Mocambique (Nampula) — ancienne capitale de l'Afrique orientale portugaise",
+        "Angoche — site du Sultanat d'Angoche, centre du commerce de l'ivoire",
+        "Ile d'Ibo (archipel des Quirimbas) — ancien comptoir commercial et esclavagiste",
+        "Pemba et littoral de Cabo Delgado",
+        "Quelimane et la cote de Zambezie"
+      ],
+      "unificationsOrDivisions": "Les communautes swahili du Mozambique etaient historiquement organisees en sultana-ts et cites-etats independants. Le Sultanat d'Angoche fut l'entite politique la plus durable, maintenant son independance face aux Portugais jusqu'en 1910. La colonisation portugaise a unifie administrativement ces communautes tout en les marginalisant.",
+      "externalInfluences": "Influence arabe et islamisation (8e-15e siecles). Domination portugaise (1507-1975) : introduction du catholicisme, du portugais, de l'architecture coloniale. Influence indienne (Gujarat) via Goa dans l'archipel des Quirimbas. Contacts avec les Omanis qui controlaient partiellement la cote nord avant la periode portugaise.",
+      "majorHistoricalEvents": "1498 : Vasco da Gama arrive a l'Ilha de Mocambique. 1507 : les Portugais etablissent leur premier siege de gouvernement sur l'ile. 1522 : construction de la chapelle Nossa Senhora de Baluarte, l'un des plus anciens batiments europeens dans l'hemisphere sud. 1558-1620 : construction de la Fortaleza de Sao Sebastiao. 1861-1910 : resistance du Sultanat d'Angoche contre les Portugais. 1975 : independance du Mozambique. 1991 : classement de l'Ilha de Mocambique au patrimoine mondial de l'UNESCO."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation historique en sultana-ts et cites-etats dirige par des sultans musulmans (wali). Les sultans d'Angoche exercaient un pouvoir sur le commerce de l'ivoire et des esclaves entre l'arriere-pays et la cote. L'autorite etait legitimee par la genealogie arabe ou shirazi et par le statut islamique. Au niveau local, des conseils d'anciens (wazee) gererent les affaires communautaires.",
+      "clanOrganization": "Organisation en lignages patrilineaires (ukoo). Les familles nobles revendiquent une ascendance arabe ou shirazi. Les artisans (forgerons, bateliers) et les agriculteurs forment des categories sociales distinctes. L'appartenance clanique determine l'acces a la terre et les droits de mariage.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent le statut social, l'acces aux ressources foncieres et les alliances matrimoniales. Les familles d'ascendance arabe ou shirazi jouissent d'un prestige eleve. La transmission de l'identite swahili se fait principalement par la ligne maternelle pour la langue et la culture.",
+      "religiousAuthority": "Autorite des oulémas et imams musulmans. Presence de confr-eries soufies (Qadiriyya, Shadhiliyya) influentes sur la cote nord. Les kadhi (juges islamiques) regissent le droit de la famille, le mariage et l'heritage selon la loi islamique sunnite shafiite."
+    },
+    "languages": {
+      "mainLanguage": "kiMwani (dialecte swahili du Mozambique)",
+      "isoCodes": ["wmw", "swa"],
+      "dialects": [
+        "kiMwani de l'Ilha de Mocambique — dialecte local avec fortes influences arabes et portugaises",
+        "kiMwani d'Angoche — variante du nord integrant des elements Makua",
+        "Swahili standard (Kiunguja) compris par les populations instruites"
+      ],
+      "vehicularRole": "Le kiMwani est parle par les communautes cotieres du nord du Mozambique, principalement dans les provinces de Nampula et Cabo Delgado. Il est classe parmi les langues bantoues sabaki, proche mais distinct du swahili de Tanzanie. Le portugais est la langue officielle du Mozambique et sert de langue d'education et d'administration. L'arabe est utilise dans les contextes religieux."
+    },
+    "culture": {
+      "majorRites": "Circoncision masculine (tohara ou harusi ya msongo) : rite de passage fondamental, celebre entre 7 et 14 ans, marquant l'entree dans la communaute islamique masculine. Mariage islamique (nikah) : ceremonie en plusieurs etapes incluant la dot (mahari), la benediction du katibu et les festivites communautaires. Rites funeraires islamiques : inhumation dans les 24 heures, corps oriente vers La Mecque, priere funebre (swala ya maiti), commem-orations aux 3e, 7e et 40e jours. Tufo : danse et chant rituel feminins d'inspiration soufie, execute lors des fetes islamiques (Mawlid an-Nabi, Aid el-Fitr, mariages) dans les provinces de Nampula et Cabo Delgado.",
+      "symbols": "La porte sculptee en bois d'inspiration arabe (mlango wa kuchonga) symbolise le statut et l'identite swahili. Le kanzu (longue robe blanche masculine) et le kofia (bonnet brode) sont les symboles de l'identite islamique masculine. L'architecture en pierre corail et chaux (matumbawe) de l'Ilha de Mocambique et de l'ile d'Ibo represente le patrimoine swahili de la region.",
+      "artsAndMusic": "Tufo : genre musical et choregraphique feminin, chants en makhuwa ou arabe accompagnes de tambourins (adufe), practique dans les cercles soufis. Architecture swahili en pierre corail de l'Ilha de Mocambique (classee UNESCO 1991) : melange unique de styles bantoue, arabe, indien et portugais. Artisanat de l'ile d'Ibo : bijouterie en argent (filigrane) produite par des artisans locaux, heritage de l'influence indienne et arabe. Poesie et chant islamiques (kasida, madhu) executes lors des celebrations religieuses.",
+      "spiritualities": "Islam sunnite shafiite majoritaire, pratique depuis le 9e siecle. Presence de confr-eries soufies (Qadiriyya, Shadhiliyya) influentes dans les ceremonies de mawlid. Croyances en les djinns (majini) et pratiques de protection spirituelle (hirizi, amulettes coraniques). Certaines pratiques animistes pre-islamiques persistent dans les zones rurales. Culte des ancetres integre a la pratique islamique populaire."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Sultanat d'Angoche (17e-1910) : etat swahili musulman qui controlait le commerce de l'ivoire, de l'or et des esclaves dans la region de Nampula. Le sultana-t resista aux Portugais pendant plusieurs siecles avant d'etre finalement conquis en 1910 par les forces coloniales. L'Ilha de Mocambique fut la premiere capitale de l'Afrique orientale portugaise de 1507 a 1898. Les sultans de l'ile d'Ibo exercaient un pouvoir local dans l'archipel des Quirimbas.",
+      "relationsWithNeighbors": "Relations commerciales avec les populations Makua et Yao de l'arriere-pays pour l'ivoire, l'or et les esclaves. Partenariats avec les commerçants arabes omanais et indiens dans les reseaux de l'ocean Indien. Tensions recurrentes avec les Portugais qui cherchaient a monopoliser le commerce cotier. Liens culturels et commerciaux avec les communautes swahili de Zanzibar et du Kenya.",
+      "conflictsOrAlliances": "1861-1910 : serie de conflits entre le Sultanat d'Angoche et les forces coloniales portugaises. Le sultan Mussa Quanto attaqua les prazos portugais, provoquant une premiere occupation en 1861 suivie d'un retrait. La conquete definitive intervint en 1910 sous le gouverneur Massano de Amorim. Les Swahili de l'Ilha de Mozambique avaient negocie une coexistence avec les Portugais, servant d'intermediaires commerciaux entre l'arriere-pays africain et les routes maritimes asiatiques.",
+      "diaspora": "Diaspora significative a Maputo et dans les grandes villes mozambicaines. Liens maintenus avec les communautes swahili du Kenya, de Tanzanie et des Comores. Certaines familles ont des attaches historiques avec Oman et le golfe Persique via les reseaux commerciaux de l'ocean Indien. Apres 1975 et la guerre civile, des familles ont migre vers le Mozambique continental ou vers les pays voisins."
+    },
+    "demography": {
+      "totalPopulation": 20000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (Swahili in Mozambique, 2024) : environ 18 000 a 24 000 locuteurs natifs du kiMwani. PeopleGroups.org estime la population swahili du Mozambique a environ 18 000 personnes. Ces chiffres concernent les locuteurs du kiMwani comme langue maternelle ; les populations d'identite swahili plus large sont plus nombreuses dans les provinces de Nampula et Cabo Delgado.",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 20000,
+          "note": "Concentres dans les provinces de Nampula (Ilha de Mocambique, Angoche) et Cabo Delgado (ile d'Ibo, archipel des Quirimbas)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Swahili people. https://en.wikipedia.org/wiki/Swahili_people",
+      "Wikipedia EN — Portuguese conquest of Angoche. https://en.wikipedia.org/wiki/Portuguese_conquest_of_Angoche",
+      "UNESCO World Heritage Centre — Island of Mozambique. https://whc.unesco.org/en/list/599/",
+      "Joshua Project — Swahili in Mozambique. https://joshuaproject.net/people_groups/15145/MZ",
+      "PeopleGroups.org — Swahili of Mozambique (PGID: PG015420). https://peoplegroups.org/people_groups/pg015420/",
+      "Mozambique Experience — Ilha de Mocambique history and culture. https://www.mozambiqueexperience.com/post/ilha-de-mo%C3%A7ambique-a-timeless-gem-of-history-and-culture",
+      "Mozambique.co.za — History of Ibo Island. https://www.mozambique.co.za/ibo-island-history.html",
+      "Ethnologue SIL — kiMwani (wmw). https://www.ethnologue.com/language/wmw",
+      "CID-DS — Tufo Dancing: Muslim Women's Culture in Northern Mozambique. https://cid-ds.org/wp-content/uploads/2024/03/article-tufo.pdf"
+    ]
+  }
+}

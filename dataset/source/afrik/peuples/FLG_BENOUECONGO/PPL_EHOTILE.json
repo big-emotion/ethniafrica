@@ -1,0 +1,78 @@
+{
+  "id": "PPL_EHOTILE",
+  "nameMain": "Ehotilé",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Ehotilé",
+      "selfAppellation": "Bétibé",
+      "exonyms": ["Bétibé", "Mekyibo", "Eotilé", "Betibé"],
+      "originOfExonyms": "Le terme Eotilé (ou Ehotilé) est le nom attribué par les voisins Agua (Aliékro, Aboisso) ; il dérive du mot aoci (tête), signifiant premiers occupants des terres lagunaires. Bétibé est l'auto-désignation du peuple (Bétini au singulier). L'administration coloniale française a adopté la forme Ehotilé. Le nom scientifique Eotilé est utilisé en linguistique. Mekyibo est une dénomination alternative.",
+      "whyProblematic": "En 2015, lors de l'intronisation d'un roi, la communauté a demandé l'usage officiel de Bétibé plutôt qu'Ehotilé, nom imposé par l'administration.",
+      "contemporaryUsage": "Ehotilé reste le terme administratif en Côte d'Ivoire. Bétibé est préféré par les membres du peuple. Eotilé est utilisé dans les publications scientifiques et linguistiques.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan lagunaires (Tano occidental)",
+      "historicalRegion": "Lagune Aby-Ehi-Tendo, Sud-Est de la Côte d'Ivoire",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": ["Ehotilé", "Bétibé"],
+    "origins": {
+      "ancientOrigins": "Les recherches archéologiques de Jean Polet (1988) attestent d'un peuplement très ancien : fabrication de poteries et usage de perles en quartz sur l'île de Nyamoan vers 6000 ans avant Jésus Christ ; amas coquilliers comme résidences depuis 300 ans avant Jésus Christ ; apparition du fer au début de l'ère chrétienne à Nyamoan ; hauts fourneaux et scories de fer au nord de la lagune Aby. Entre le début de l'ère chrétienne et le XIIe siècle, aucune trace de civilisation sur les îles bétibé. À partir du XIIe siècle, réapparition d'habitats sur pilotis et de cimetières sur amas coquilliers. Les Bétibé se sont constitués en diachronie par fusion de communautés aux origines diverses.",
+      "formationPeriod": "XIIe siècle (second peuplement attesté scientifiquement) ; présence humaine depuis au moins 6000 ans avant J.-C. sur le complexe lagunaire Aby-Ehi-Tendo.",
+      "migrationRoutes": [
+        "Sortie des profondeurs de la lagune eBonon (Aby-Ehi-Tendo) selon la tradition orale",
+        "Établissement initial sur les îles : Balouaté, Monobaha, Asoko, Draman, Ehikomian, Assohoun, Eso",
+        "Après la défaite de 1754 : exode vers l'est (Ghana : Nzulézo, Nziambo) et vers l'ouest (Grand-Bassam via N'gandan-n'gandan)",
+        "Retour et établissement à Ehi-ando/Bianou en 1848, puis dans les villages actuels"
+      ],
+      "historicalSettlementZones": [
+        "Îles de la lagune Aby-Ehi-Tendo (Nyamoan, Balouaté, Monobaha)",
+        "Côte sud-est de la Côte d'Ivoire, région d'Adiaké",
+        "Vitré 1 et Vitré 2 (Grand-Bassam) sous la colonisation"
+      ],
+      "unificationsOrDivisions": "Le royaume bétibé de Monobaha fut détruit en 1754 lors d'une attaque du royaume agni (Agni brafè) conduit par Aka Essoin, profitant d'une crise de succession interne (roi Abakuaba Wopou Nigbéni contre son demi-frère Efraon Wopou Siguin). Le roi plongea dans la lagune avec le trésor royal, mettant fin au royaume. Intronisation d'un nouveau roi en 2015.",
+      "externalInfluences": "Influence des commerçants sahariens (perles de cornaline avant le XVe siècle), des Portugais (pipes du XVIe siècle), des Agni (domination et interdiction du béti-nné sous peine de mort après 1754), puis de la colonisation française. Contact avec les royaumes akan voisins (Sanwi, Abouré).",
+      "majorHistoricalEvents": "Attaque et chute du royaume de Monobaha en 1754 par les Agni brafè ; grand exode des Bétibé vers l'est et l'ouest ; établissement à Bianou/Ehi-ando en 1848 sous alliance avec le roi brafè Amon N'douffou kpangni ; incorporation dans l'armée sanwi ; création du Parc National des Iles Ehotilé par décret N074-179 à l'initiative des communautés locales."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie dirigée par le roi (Abakuaba), assisté d'un chef militaire (Efraon) et d'un Conseil des Nigbe. Cinq familles fondatrices dirigées chacune par un chef de siège. Des chefs de fâ (chefs de guerre) organisaient les exodes et migrations.",
+      "clanOrganization": "Cinq familles fondatrices formant le socle de la société : Boinɛ, Bouayo, Bosseman, Bouatchiman, Bouakru. Le premier ancêtre connu est N'Gbandji N'Gniman de la famille Boinɛ, premier à sortir des profondeurs de la lagune pour s'établir sur terre ferme.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Chaque famille est dirigée par un chef de siège. Les liens matrilinéaires sont importants, comme en témoigne l'intégration de matriclans Abouré d'origine bétibé (Assokopouè).",
+      "religiousAuthority": "La plante dracena arborea guinéensis (Ebobia en bétiné) est utilisée comme repère pour les nécropoles, indiquant un lien fort entre autorité religieuse et culte des ancêtres. La divinité du cours d'eau et les esprits lagunaires occupent une place centrale dans la cosmologie traditionnelle."
+    },
+    "languages": {
+      "mainLanguage": "Bétiné (béti-nné)",
+      "isoCodes": ["otl"],
+      "dialects": ["Parler de Vitré (étudié par Antoine Kakou Foba, 2009)"],
+      "vehicularRole": "Langue vernaculaire des Bétibé. Interdite sous peine de mort par les Agni brafè après 1754, ce qui a entraîné une perte de vitalité. Proche de l'Aïzi (un des trois parlers d'origine bétibé). Appartient au groupe Tano occidental (Kwa). Le domaine linguistique Eotilé a été décrit par G.L. Retord (1970)."
+    },
+    "culture": {
+      "majorRites": "Pratiques funéraires élaborées : usage de la plante Ebobia (dracena arborea guinéensis) pour repérer les sépultures ; dépôts de têtes funéraires en terre cuite avec offrandes ; bijoux en cuivre ; perles de cornaline. Architecture sur pilotis (assanga) pour les habitations lacustres. Marché tournant du mercredi à Adiaké.",
+      "symbols": "La plante Ebobia (dracena arborea guinéensis) est un symbole de sacré et de mémoire des ancêtres. Le trésor royal du roi de Monobaha, emporté dans la lagune lors de la défaite de 1754, constitue un mythe fondateur de la résistance culturelle.",
+      "artsAndMusic": "Littérature orale transmettant l'histoire des migrations. Architecture lacustre sur pilotis (assanga). Poteries et perles en quartz parmi les plus anciennes de la région (6000 ans avant J.-C.).",
+      "spiritualities": "Culte des ancêtres avec nécropoles repérées par la plante Ebobia. Croyance aux esprits de la lagune. Religion de l'eau liée à la fondation mythique (sortie des profondeurs de la lagune). Christianisation partielle sous influence coloniale et des peuples voisins."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume de Monobaha (détruit en 1754). Le terme Abakuaba (roi) désigne le souverain. Intronisation d'un roi renouvelée en 2015 avec revendication du nom Bétibé.",
+      "relationsWithNeighbors": "Voisins principaux : Agni sanwi (nord), N'zima adouvlais (est), Essouma d'Assinie (sud), Abouré (ouest), Ebrié (nord-ouest). Relations de troc avec les Agoua et les Abouré. Conflits avec les Agni brafè (attaque de 1754), les Ebrié Akouè (attaque de l'île près d'Okobledji), et querelles avec les N'zima. Pacte de non-agression avec les Ebrié à la baie d'Attopou. Alliance avec le roi brafè Amon N'douffou kpangni.",
+      "conflictsOrAlliances": "Attaque et chute du royaume de Monobaha en 1754. Exil des Bétibé vers le Ghana et Grand-Bassam. Incorporation dans l'armée sanwi à Bianou (1848). Défense de l'aile gauche de l'armée sanwi. Pacte de non-agression avec les Ebrié.",
+      "diaspora": "Après la défaite de 1754, exode vers l'est (N'zulézó, N'ziambo au Ghana) sous la chefferie de Takrika, et vers l'ouest (Grand-Bassam via N'gandan-n'gandan). Actuellement, les Bétibé sont présents dans les villages : Akounougbé, Abiaty, Aby, Assomlan, Eplémlan, Etuéssika, Mélékoukro, M'braty, N'Galiwa, Vitré 1 et Vitré 2."
+    },
+    "demography": {
+      "totalPopulation": 10000,
+      "referenceYear": 2025,
+      "source": "Estimation (peuple très minoritaire, pas de données officielles récentes disponibles). Parc National des Iles Ehotilé : 550 ha + chenaux, 6 îles principales.",
+      "distributionByCountry": [{ "country": "CIV", "population": 10000 }]
+    },
+    "sources": [
+      "Ehotilé – Wikipédia (https://fr.wikipedia.org/wiki/Ehotil%C3%A9)",
+      "Polet, Jean – Recherches archéologiques sur les peuplements lagunaires de Côte d'Ivoire, 1988",
+      "Retord, G.L. – Domaine linguistique Eotilé, 1970",
+      "Kakou Foba, Antoine – Le parler de Vitré, 2009",
+      "Parc National des Iles Ehotilé, Côte d'Ivoire – Décret N074-179 (https://joshuaproject.net/people_groups/12190)",
+      "Langues kwa – Wikipédia (https://fr.wikipedia.org/wiki/Langues_kwa)"
+    ]
+  }
+}

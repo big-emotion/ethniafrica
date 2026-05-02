@@ -1,0 +1,92 @@
+{
+  "id": "PPL_SINO_MAURICIENS",
+  "nameMain": "Sino-Mauriciens",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["MUS"],
+  "content": {
+    "appellations": {
+      "mainName": "Sino-Mauriciens",
+      "selfAppellation": "Sino-Mauriciens (français) ; Chinese Mauritians (anglais) ; Hakka : Ka-ngin (客人, littéralement personnes invitées)",
+      "exonyms": [
+        "Chinois (terme générique local)",
+        "Sino-Mauriciens (terme officiel descriptif)",
+        "Chinese Mauritians (anglais)",
+        "Hakka (pour la composante majoritaire, ~95 % de la communauté)"
+      ],
+      "originOfExonyms": "Le terme Sino-Mauriciens est un composé hybride franco-mauricien désignant les habitants de l'île Maurice d'ascendance chinoise. Le sous-groupe Hakka (客家, littéralement familles invitées) tire son nom de son statut de migrants tardifs dans la Chine du Sud, par opposition aux populations han établies antérieurement.",
+      "whyProblematic": "Le terme générique Chinois efface les distinctions internes majeures entre sous-groupes : Hakka (majoritaires, ~95 %), Cantonais-Namshun (~5 %) et Hokkiens (Fujianese, groupe historique initial). Ces groupes ont une histoire migratoire, des langues et des organisations sociales distinctes, et ont parfois connu des tensions intercommunautaires.",
+      "contemporaryUsage": "Le terme Sino-Mauriciens est utilisé dans les contextes officiels et académiques. La communauté représente environ 2 à 3 % de la population mauricienne totale, soit environ 10 000 à 30 000 personnes selon les estimations récentes. La communauté est en déclin démographique relatif par emigration.",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Sino-Tibétain (Hakka, Cantonais, Hokkien, Mandarin)",
+      "historicalRegion": "Port-Louis (Chinatown), toutes les régions de Maurice, majoritairement urbains",
+      "currentCountries": ["MUS"]
+    },
+    "ethnicities": [
+      "Sino-Mauriciens Hakka",
+      "Sino-Mauriciens Cantonais (Namshun)",
+      "Sino-Mauriciens Hokkiens",
+      "Sino-créoles"
+    ],
+    "origins": {
+      "ancientOrigins": "Les premiers Chinois arrivèrent à Maurice de manière involontaire : en 1740, l'amiral français Charles Hector d'Estaing fit enlever des Chinois à Sumatra pour travailler à Maurice. Ils se révoltèrent et furent rapatriés en Sumatra. Dans les années 1780, des milliers de migrants chinois volontaires (plus de 3 000) embarquèrent de Guangzhou à bord de navires britanniques, français et danois pour Port-Louis, trouvant des emplois de forgerons, charpentiers, cordonniers et tailleurs.",
+      "formationPeriod": "La communauté sino-mauricienne s'est formée en trois grandes vagues migratoires : la première (début XIXe siècle) constituée de Hokkiens de Xiamen (Fujian) ; la deuxième (milieu XIXe siècle) de Cantonais de Guangzhou (Shunde) ; la troisième (fin XIXe - milieu XXe siecle) de Hakka de Meixian (Guangdong). Apres 1945, l'immigration ralentit significativement avec l'établissement de la République populaire de Chine.",
+      "migrationRoutes": [
+        "Guangzhou (Guangdong) vers Port-Louis via l'océan Indien, à partir des années 1780",
+        "Xiamen (Fujian) vers Port-Louis, première moitié du XIXe siecle",
+        "Meixian (Guangdong) vers Port-Louis via Hong Kong, fin XIXe - milieu XXe siecle",
+        "Taïwan vers Maurice (femmes hakka pour mariage), période 1950-1980",
+        "Hong Kong vers Maurice (investisseurs), période 1980-1997"
+      ],
+      "historicalSettlementZones": [
+        "Port-Louis : Chinatown (camp des Chinois), quartier historique fondé dès les années 1780",
+        "Toutes les régions de Maurice, majoritairement urbains"
+      ],
+      "unificationsOrDivisions": "La rivalité Hakka-Cantonais a été une constante de la vie sociale sino-mauricienne. Les Hakka sont devenus dominants numérique dès la fin du XIXe siecle. Les tensions Hakka-Cantonais ont abouti au départ de nombreux Cantonais vers La Réunion et Madagascar. Chaque sous-groupe dispose de ses propres associations (ex : Nam Shun Fooy Koon pour les Cantonais).",
+      "externalInfluences": "L'administration coloniale britannique a d'abord restreint les droits fonciers des Chinois (interdiction d'acheter des terres sans abandonner la nationalité chinoise), poussant aux mariages mixtes avec des Créoles ou des Indiennes. Le gouverneur John Pope Hennessy a résisté aux restrictions migratoires dans les années 1860. L'ouverture économique de la Chine dans les années 1980 a permis un renouveau des liens transnationaux.",
+      "majorHistoricalEvents": "En 1829, un groupe de Chinois fut amené pour travailler dans les plantations sucrières ; une révolte avortée s'ensuivit. En 1843, 3 000 travailleurs chinois sous contrat arrivèrent sur l'île. En 1901, la population sino-mauricienne comptait 3 515 individus dont 2 585 commerçants. En 1941, la Chung-Hwa Middle School fut fondée par des cadres du Kuomintang. Les investisseurs de Hong Kong et de Taïwan ont joué un rôle majeur dans les zones de traitement des exportations (ZTE) dans les années 1980, faisant de Maurice le troisième exportateur mondial de bonnetterie en laine."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Absence de système politique traditionnel structuré au sens ethnique. La communauté est organisée autour d'associations claniques et culturelles. Les trois principaux sous-groupes (Fukienese, Namshun, Hakka) avaient chacun leurs propres chefs reconnus pendant la période coloniale.",
+      "clanOrganization": "Organisation clanique fondée sur les origines géographiques chinoises : la Nam Shun Society (Nam Shun Fooy Koon, 南顺会馆) pour les Cantonais de Nanhai et Shunde ; associations hakka liées à Meixian. Plus de dix associations culturelles et clanique sont présentes dans le Chinatown de Port-Louis.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les réseaux familiaux ont joué un rôle commercial essentiel : les commerçants établis faisaient venir leurs proches de Chine pour les former, puis les envoyaient créer des affaires dans les pays voisins (Madagascar, Afrique du Sud, La Réunion) avec capital et lettres de recommandation.",
+      "religiousAuthority": "Syncrétisme religieux : associations catholiques (majorité des Sino-Mauriciens sont baptisés catholiques depuis le XIXe siecle) coexistant avec des associations de culte ancestral chinois, taoïste et bouddhiste. En 1819 existait déjà un cimetière chinois à Port-Louis."
+    },
+    "languages": {
+      "mainLanguage": "Créole mauricien (mfe)",
+      "isoCodes": ["mfe", "hak", "nan", "yue", "cmn"],
+      "dialects": [
+        "Hakka de Meixian (majorité, ~95 % des Sino-Mauriciens d'origine ancienne)",
+        "Cantonais-Namshun (dialecte de Nanhai/Shunde)",
+        "Hokkien (dialecte Amoy, Xiamen, Fujian, groupe historique initial)"
+      ],
+      "vehicularRole": "Le créole mauricien et l'anglais sont les langues principales de la vie quotidienne des Sino-Mauriciens nés à Maurice. Le français est également courant. Les langues chinoises (hakka, cantonais, mandarin) sont maintenues comme langues patrimoniales par les générations âgées, mais peu parlées par les jeunes. Une école mandarine du samedi fonctionne dans le Chinatown de Port-Louis."
+    },
+    "culture": {
+      "majorRites": "Célébration du Nouvel An chinois (Chine lunaire), de Qingming (nettoyage des tombes), et des festivals liés aux pagodes. Rites funéraires traditionnels chinois préservés dans de nombreuses familles malgré la majorité catholique. Cérémonie de distribution de nourriture (Pow Wow) pendant les fêtes. Baptêmes catholiques combinés aux rites ancestraux dans les familles mixtes.",
+      "symbols": "La pagode Kwan Tee aux Salines (Port-Louis) est la plus ancienne pagode chinoise de Maurice et de l'hémisphere sud. Le Chinatown de Port-Louis, l'un des plus anciens d'Afrique, avec ses associations et ses journaux en langue chinoise, est le coeur symbolique de la communauté.",
+      "artsAndMusic": "La cuisine sino-mauricienne (mine frit, chow mein, dim sum) est intégrée dans la gastronomie nationale mauricienne. Trois journaux en langue chinoise publiés à Port-Louis. Trois pagodes et plus de dix associations culturelles dans le Chinatown. Système de micro-crédit communautaire (carnet laboutik) introduit par les commerçants chinois.",
+      "spiritualities": "Syncrétisme marqué : la majorité des Sino-Mauriciens s'identifie comme catholique (66 % en 1980), tout en pratiquant les religions chinoises (taoïsme, bouddhisme, confucianisme, culte des ancêtres). Les pagodes continuent d'être des lieux de rassemblement communautaire pour les fêtes, les mariages et les funérailles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Les Sino-Mauriciens ont occupé une niche économique de commerçants détaillants et grossistes depuis le XIXe siecle, fournissant des biens de première nécessité à des prix accessibles à toutes les communautés. En per capita, ils constituent le deuxième groupe le plus riche de l'île après les Franco-Mauriciens. Ils détiennent des postes dans la Cour Supreme, les ministères gouvernementaux, les banques et les conseils d'administration.",
+      "conflictsOrAlliances": "La rivialité Hakka-Cantonais a marqué la communauté au XIXe siecle, aboutissant au départ de nombreux Cantonais vers La Réunion et Madagascar. En 1829, une révolte avortée des travailleurs chinois sous contrat fut rapidement réprimée. Les Sino-Mauriciens ont joué un rôle central dans le développement des zones de traitement des exportations dans les années 1980, accueillant les investisseurs de Hong Kong et de Taïwan.",
+      "diaspora": "À partir de Maurice, les Sino-Mauriciens ont essaimé dans toute la région : Madagascar, Afrique du Sud (port Elizabeth, Durban), La Réunion, Seychelles. Entre 1888 et 1898, environ 1 800 Chinois quittèrent Port-Louis pour des ports africains. La communauté mauricienne est en déclin démographique depuis les années 1980-1990 par émigration vers l'Europe, l'Australie et le Canada."
+    },
+    "demography": {
+      "totalPopulation": 10000,
+      "referenceYear": 2025,
+      "source": "Estimations locales citées dans Hakka people – Wikipedia EN, 2025 (environ 10 000 en 2025 contre 35 000 en 2008) ; Mauritians of Chinese origin – Wikipedia EN, 2024",
+      "distributionByCountry": [{ "country": "MUS", "population": 10000 }]
+    },
+    "sources": [
+      "Mauritians of Chinese origin – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Mauritians_of_Chinese_origin)",
+      "Hakka people – Wikipedia EN, 2025 (https://en.wikipedia.org/wiki/Hakka_people)",
+      "Han Chinese, Hakka in Mauritius – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12054/MP)",
+      "The Hakka Chinese – Banana Writers, 2016 (https://www.bananawriters.com/thehakkachinese)",
+      "Chinese Mauritians: Paradise Island's Next Dodo? – The Yale Globalist, 2013 (https://globalist.yale.edu/uncategorized/chinese-mauritians-paradise-islands-next-dodo/)",
+      "The Chinese in Mauritius Facts and Origins – My China Roots (https://www.mychinaroots.com/places/651564/mauritius)"
+    ]
+  }
+}

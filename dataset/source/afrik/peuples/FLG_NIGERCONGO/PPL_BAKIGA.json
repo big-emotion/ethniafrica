@@ -1,0 +1,113 @@
+{
+  "id": "PPL_BAKIGA",
+  "nameMain": "Bakiga",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["UGA", "RWA"],
+  "content": {
+    "appellations": {
+      "mainName": "Bakiga",
+      "selfAppellation": "Abakiga (gens des montagnes)",
+      "exonyms": [
+        "Kiga (forme raccourcie utilisee en anglais)",
+        "Chiga (variante orthographique anglaise)",
+        "Rukiga (nom de la langue, parfois utilise pour le peuple)",
+        "Omukiga (forme singuliere en langue kinyarwanda/rukiga)"
+      ],
+      "originOfExonyms": "Bakiga est le terme bantou pluriel signifiant gens des montagnes, du radical kiga (montagne en kinyarwanda). Le terme derive du kinyarwanda et fut initialement attribue au clan royal Abungura. Il s'est progressivement etendu a l'ensemble de la population du Kigezi. En Ouganda, le terme Bakiga est courant ; au Rwanda, le terme Bakiga designe collectivement les Hutu du nord.",
+      "whyProblematic": "La distinction entre Bakiga et Hutu du nord Rwanda est politiquement sensible depuis le genocide de 1994 : les Bakiga ougandais sont une ethnie distincte avec une identite propre, tandis que les Bakiga rwandais sont souvent assimiles aux Hutu. La classification ethnique dans les deux pays est chargee d'histoire coloniale et post-coloniale.",
+      "contemporaryUsage": "Bakiga est le terme officiel et courant en Ouganda pour designer ce groupe. En Rwanda, le terme Bakiga designe les Hutu septentrionals (Byumba, Ruhengeri). Les locuteurs ougandais s'identifient fièrement comme Abakiga.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou de la Zone J (Interlacustre)",
+      "historicalRegion": "Kigezi (Kigyezi) — region montagneuse du sud-ouest de l'Ouganda ; nord du Rwanda (Byumba, Ruhengeri)",
+      "currentCountries": ["UGA", "RWA"]
+    },
+    "ethnicities": [
+      "Ba-Mungura (Abungura / Abahitira) — clan royal fondateur ; peu nombreux aujourd'hui, concentres pres de Kabale Town avec patrimoine herite",
+      "Ba-Musigi — gardiens royaux et defenseurs du clan fondateur",
+      "Ba-Mungwe — totem : bushbuck des caps (cape bushbuck, interdit de chasse)",
+      "Ba-Kinyagiro — clan important des hautes terres",
+      "Ba-Mugiri — clan etabli dans les zones interieures",
+      "Ba-Muhutu — clan de cultivateurs, nomme Mukama pour les fils du lignage Mungura/Mwitira",
+      "Ba-Mugera — clan des vallees",
+      "Ba-Mugyesera — clan des zones lacustres",
+      "Ba-Mugyeyo — clan des hautes prairies",
+      "Abasigi — descendants de Rwandeme, installes dans les monts Karweru, maries avec les Ankore"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bakiga tracent leurs origines au Rwanda, plus precisement aux regions de Byumba et Ruhengeri selon la tradition orale preservee dans un chant folklorique : Abakiga twena tukaruga Rwanda, omu Byumba na Ruhenjere (Nous tous les Bakiga, nous venons du Rwanda, de Byumba et de Ruhenjere). Selon la tradition, les Bakiga descendent de Kashyiga (plus tard nomme Kakiga), fils de Mbogo, roi du royaume ancestral de Bumbogo au Rwanda (clan Abungura/Abahitira). Mbogo fut deplace par Kirima (Cyirima) de la dynaste Abanyiginya. Kakiga s'enfuit vers le nord avec le tambour royal Kamuhagama, et s'installa dans les forets de Kagarama, dans la region montagneuse le long de la frontiere Rwanda-Ouganda actuelle.",
+      "formationPeriod": "La formation de la communaute bakiga dans la region du Kigezi remonte au 16e-17e siecle selon les estimations historiques les plus courantes (entre 1600 et 1700). Le processus identitaire fut consolide quand de nombreux Bakiga devinrent officiellement Ougandais suite au protocole anglo-allemand de Kamwezi (30 octobre 1911), qui delimita definitivement la frontiere Rwanda-Ouganda.",
+      "migrationRoutes": [
+        "Migration fondatrice depuis le royaume de Bumbogo (Rwanda) vers les forets de Kagarama, region du Kigezi (Ouganda actuel)",
+        "Trajet via Bwisa, Bugoyi, Rutchru (Zaire actuel) avant de s'etablir a Kigezi selon certaines traditions",
+        "Expansion des clans vers Muko, Rubanda, Kihihi (Abaromba et Abahimba) et Kakore, Mparo, Nyakishenyi, Nyarushanje"
+      ],
+      "historicalSettlementZones": [
+        "District de Kabale (ancien Kigezi District, sud-ouest de l'Ouganda) — zone principale",
+        "Districts de Rukiga, Rubanda, Kanungu, Rukungiri (Ouganda)",
+        "Districts de Masaka et Rakai (Ouganda, migration secondaire)",
+        "Region du Byumba et Ruhengeri (nord du Rwanda, Bakiga rwandais)",
+        "Region de Kigezi, forets de Kagarama, long de la frontiere Rwanda-Ouganda"
+      ],
+      "unificationsOrDivisions": "Contrairement aux royaumes voisins hierarchises (Ankore, Rwanda), les Bakiga ont maintenu une structure sociale egalitaire sans royaute centralisee. Kakiga etablit le Kigom mais ne parvint pas a consolider un royaume puissant faute de confiance publique et de force militaire. La gouvernance reposait sur des conseils de clans (Abukuru b'ekika). Cette structure decentralisee leur permit une grande resistance aux pouvoirs exterieurs (Tutsi, colonisateurs allemands et belges), incarnee par le mantra : Les Bakiga ne se sont jamais laisses soumettre, ni par les Tutsi ni par les Hima.",
+      "externalInfluences": "Pression des Banyoro (invasion qui provoqua la fuite de Kakiga depuis le Rwanda). Interactions avec les Ankore (voisins du nord) et le Rwanda (contacts culturels et linguistiques). Colonisation allemande puis belge du Rwanda (creant l'appartenance frontiere), puis britannique de l'Ouganda. Protocole de Kamwezi (1911) fixant la frontiere. Introduction du christianisme (catholique et protestant) au debut du 20e siecle. Cult Nyabingi comme force de resistance anti-coloniale.",
+      "majorHistoricalEvents": "16e-17e siecle : migration fondatrice depuis Bumbogo (Rwanda) vers Kigezi. 1911 : Protocole de Kamwezi — de nombreux Bakiga deviennent automatiquement Ougandais. 1895 : mort du roi rwandais Kigeri IV Rwabugiri ; Muhumuza (epouse royale) fuit vers les hautes terres kiga, lance la rebellion anti-coloniale de 1911 (capturee la meme annee). Rebellions de Ndungutse (fils presume de Rwabugiri et Muhumuza) : rebellions intermittentes jusqu'a l'administration belge post-Premiere Guerre mondiale. Ces rebellions etaient motivees par la resistance au travail force (ubareetwa). 1973-1994 : Habyarimana (Hutu, clan Abungura, fils de Mukiga) dirige le Rwanda."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme politique egalitaire sans royaute centralisee. La gouvernance est assuree par les Abukuru b'ekika (conseil des anciens choisis par chaque clan) qui etablissent les regles et administrent la justice au niveau clanique. Les differends graves inter-clans sont traites dans des assemblees publiques presidees par un Omukuru (ancien respecte pour sa sagesse et son equite). L'absence de chef supreme (Omukama ou Mwami equivalent) differentie fondamentalement les Bakiga de leurs voisins hierarchises. Cette structure decentralisee alimenta une forte resistance aux pouvoirs exterieurs jusqu'au debut du 20e siecle.",
+      "clanOrganization": "La societe bakiga est organisee en une dizaine de clans majeurs (Ba-Mungura, Ba-Musigi, Ba-Mungwe, Ba-Kinyagiro, Ba-Mugiri, Ba-Muhutu, Ba-Mugera, Ba-Mugyesera, Ba-Mugyeyo), chacun avec des sous-clans. Chaque clan possede un animal totem interdit de chasse et de consommation (ex : Ba-Mungwe ne chassent pas le bushbuck des caps) — ce systeme limitait la competition alimentaire entre clans. La filiation est patrilineaire : les noms sont transmis de grand-pere ou pere decede (ex : Mbogo fils de Rwambogo, Mubangizi fils de Mubanga). Des noms theophoriques courants incluent : Ainemukama, Ayebare, Byamukama.",
+      "ageClassSystems": "Des classes communautaires participent a la defense et aux activites collectives. La circoncision est obligatoire pour les males du clan Mungura a leur onzieme annee (institution de Kakiga) ; de nombreux Bakiga pratiquent aujourd'hui la circoncision pour des raisons sanitaires.",
+      "roleOfLineages": "Le lignage patrilineaire (ekika) determine l'appartenance clanique, les droits sur la terre et l'identite. Le systeme totémique (un animal interdit par clan) structure les relations entre clans et evite la competition pour les ressources. Les mariages sont regis par l'exogamie clanique. Kakiga interdit initialement a ses enfants d'epouser des etrangers pour preserver la linearite.",
+      "religiousAuthority": "Avant l'islam et le christianisme, les Bakiga pratiquaient une foi monotheiste centree sur Ruhanga, divinite creatrice ni masculine ni feminine. Ruhanga etait aussi nomme Mukama (suzerain supreme et gouverneur de l'univers), Kazooba-Nyamuhanga (associe a la puissance du soleil) et Biheeko (celui qui fait croitre les choses). Aujourd'hui les Bakiga sont majoritairement chretiens (catholiques et protestants). La division catholique-protestante polarise parfois les communautes. Un petit groupe est musulman. Le culte Nyabingi (anti-centraliste) a fortement influence l'identite bakiga sous la colonisation."
+    },
+    "languages": {
+      "mainLanguage": "Rukiga (Kiga / Chiga / Kikiga-Kinyakore)",
+      "isoCodes": ["cgg"],
+      "dialects": [
+        "Rukiga du district de Kabale (variante principale, centree sur la ville de Kabale)",
+        "Kikiga-Kinyakore (melange dialectal avec le Runyankore des Ankore voisins)",
+        "Rukiga des zones frontalieres Rwanda-Ouganda (avec influences du kinyarwanda, kihororo et kihaya)",
+        "Dialecte des Abasigi (accentuation et intonation propres, suite au metissage avec les Ankore)"
+      ],
+      "vehicularRole": "Le Rukiga est une langue bantoue tres proche du Runyankore (mutuellement intelligibles en grande partie). Il integre des elements du kinyarwanda, du kihororo, du kihaya et du swahili. La langue fut ecrite pour la premiere fois dans la seconde moitie du 19e siecle. L'anglais est langue officielle des reunions des conseils de district en Ouganda et du pays en general. Le Rukiga est parle par environ 2,9 a 3,5 millions de personnes selon les estimations 2025."
+    },
+    "culture": {
+      "majorRites": "Initiation masculine (clan Mungura) : circoncision a onze ans, instituee par Kakiga comme passage a l'age adulte et signe d'appartenance au clan royal. Mariages traditionnels : des ceremonies elaborees impliquant des chants, danses en tenue Kikiga-Kinyakore et des coutumes communautaires. Les mariages contemporains incorporent des elements occidentaux (costumes formels, musique importee) mais de nombreux jeunes font revivre les coutumes traditionnelles. Systeme totemique : chaque clan honore son animal totem (interdit de chasse et de consommation) comme marque d'identite et prevention de la competition interlignage. Lutte traditionnelle, danse et chasse sont des pratiques culturelles importantes. Rites funeraires : lors des deces importants, reunions communautaires, offrandes aux ancetres, recits genealogiques.",
+      "symbols": "Tambour royal Kamuhagama : symbole supreme du pouvoir kiga, emporte par Kakiga lors de sa fuite du Rwanda. Sa perte par Rwandeme (retour symbolique des Abasigi dans la sphere ankore) est un evenement fondateur. Kalinga : tambour sacre rwandais (orne des organes genitaux des ennemis vaincus), symbole parallele de l'autorite royale. Boucliers en cuir de vache : fabriques par Kakiga, symboles guerriers. Animaux totems par clan : each clan a son animal protecteur. Noms theophoriques : Ainemukama, Ayebare, Byamukama — refletant la centralite de Ruhanga-Mukama dans l'identite.",
+      "artsAndMusic": "Chants folkloriques traditionnels (ex : Abakiga twena tukaruga Rwanda — chant de memoire des origines). Musique de mariage et de ceremonie avec percussions et danses collectives. Poterie et tissage artisanaux. L'architecture traditionnelle adaptee au terrain montagneux (case en pisé et chaume). Rutamirika : acteur, metteur en scene, producteur et auteur-compositeur-interprete ougandais contemporain d'origine bakiga. Anne Kansiime : comedienne et entertaineure ougandaise populaire, d'origine bakiga.",
+      "spiritualities": "Religion traditionnelle monotheiste pre-coloniale centree sur Ruhanga (ou Mukama, Kazooba-Nyamuhanga, Biheeko selon les attributs invoques). Ruhanga est un createur transcendant, ni masculin ni feminin. Culte Nyabingi : mouvement anti-centraliste associe a une puissance spirituelle feminine (Nyabingi), fortement repandu chez les Bakiga pendant la periode coloniale. Il a inspire les rebellions de Muhumuza (1911) et de Ndungutse, et a constitue une forme de resistance spirituelle a l'autorite etrangere. Aujourd'hui : christianisme majoritaire (catholique et protestant). Festo Kivengere (eveque anglican, mort 1988) est un pasteur bakiga venere, enterre a la cathedrale St Pierre de Rugarama."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Bakiga n'ont pas constitue de royaume centralise. Kakiga etablit un Kiga Kingdom embryonnaire mais sans consolidation faute de confiance publique et de force militaire. La gouvernance decentralisee par conseils de clans (Abukuru b'ekika) etait la norme. Neanmoins, les Abungura sont reconnus aujourd'hui comme le clan royal historique, rares et concentres pres de Kabale Town avec un patrimoine herite.",
+      "relationsWithNeighbors": "Relations complexes avec l'Ankore (voisins du nord-ouest, metissage des Abasigi). Interactions regulieres avec le Rwanda voisin (origines communes, echanges linguistiques et culturels). Contacts avec les Banyambo de Tanzanie (tradition d'origine possible). Resistance constante aux tentatives d'integration dans les royaumes voisins hierarchises (Tutsi, Hima), crystallisee dans le mantra identitaire : Les Bakiga ne se sont jamais laisses soumettre, ni par les Tutsi ni par les Hima.",
+      "conflictsOrAlliances": "Resistance aux Banyoro (invasion qui provoqua la migration fondatrice vers le Kigezi). Defence de l'autonomie contre les forces coloniales allemandes et les troupes royales du Mwami rwandais a la fin du 19e siecle. Rebellion de Muhumuza (1911) : epouse du roi rwandais Rwabugiri, refugiee au Kigezi, lança une rebellion anti-coloniale avant d'etre capturee. Rebellions de Ndungutse (son fils presume) : intermittentes jusqu'a l'administration belge post-Premiere Guerre mondiale. Resistance au travail force (ubareetwa) impose par les colonisateurs.",
+      "diaspora": "Des Bakiga ont migre vers les districts de Masaka et Rakai (centre de l'Ouganda). La population bakiga en dehors de leur region d'origine est presente dans les grandes villes ougandaises (Kampala, Entebbe). Une diaspora bakiga existe aussi en Europe, en Amerique du Nord et en Australie dans le cadre de la diaspora ougandaise plus large."
+    },
+    "demography": {
+      "totalPopulation": 3200000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : 3 520 000 Bakiga en Ouganda. Estimation Facebook basee sur le recensement ougandais 2024 (UBOS) : Bakiga 2,9 millions (5,6% de la population ougandaise totale de 45,9 millions, recensement 2024). En incluant les Bakiga du Rwanda (nord, region de Byumba-Ruhengeri), l'estimation totale 2025 est d'environ 3,2 a 3,5 millions. Population totale Ouganda (UBOS 2024) : 45 905 417.",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 2900000,
+          "note": "Principalement districts de Kabale, Rukiga, Rubanda, Kanungu, Rukungiri (sud-ouest Ouganda)"
+        },
+        {
+          "country": "RWA",
+          "population": 300000,
+          "note": "Bakiga du nord Rwanda (regions de Byumba et Ruhengeri), souvent classes comme Hutu du nord dans le contexte rwandais"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kiga people. https://en.wikipedia.org/wiki/Kiga_people",
+      "Select Adventure Safari — The Bakiga tribe. https://selectadventuresafari.com/the-bakiga-tribe/",
+      "Joshua Project — Bakiga in Uganda. https://joshuaproject.net/people_groups/11331",
+      "Trip Down Memory Lane (Kwekudee) — Bakiga (Kiga) People. https://kwekudee-tripdownmemorylane.blogspot.com/2013/07/bakiga-kiga-people-beautiful-and.html",
+      "Uganda Bureau of Statistics (UBOS) — National Population and Housing Census 2024 Final Report. https://www.ubos.org/wp-content/uploads/2024/12/National-Population-and-Housing-Census-2024-Final-Report-Volume-1-Main.pdf",
+      "Ethnologue — Kiga language (cgg). SIL International. https://www.ethnologue.com/language/cgg/",
+      "Glottolog — Kiga language. https://glottolog.org/",
+      "Facebook — Estimated Population: Ethnic Groups in Uganda (2025). https://www.facebook.com/EmmanuelMotelin/posts/estimated-population-ethnic-groups-in-uganda-2025"
+    ]
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "id": "PPL_PIMBWE",
+  "nameMain": "Pimbwe",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Pimbwe",
+      "selfAppellation": "Wapimbwe",
+      "exonyms": ["Wapimbwe (forme swahili)"],
+      "originOfExonyms": "Le prefixe swahili Wa- designe un peuple ; la forme Wapimbwe est utilisee dans le contexte administratif tanzanien. Le nom Pimbwe designe egalement le district de Mpimbwe.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Pimbwe est utilise couramment dans les contextes officiels et scientifiques tanzaniens. La communaute se designe elle-meme Wapimbwe en swahili.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu de la zone Rukwa-Katavi, groupe M.11 selon la classification Guthrie",
+      "historicalRegion": "Vallee du Rukwa, region de Katavi, Tanzanie occidentale",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Pimbwe"],
+    "origins": {
+      "ancientOrigins": "Les Pimbwe sont un peuple bantu de la zone M.11 (classification Guthrie) etabli dans la vallee du Rukwa en Tanzanie occidentale. Leurs origines sont etroitement liees aux autres peuples bantu du corridor Rukwa-Tanganyika (Fipa, Bende, Kimbu, Konongo). Les traditions orales rapportent que les ancetres des Pimbwe, Bende et Fipa viendraient d'une zone proche de la Zambie actuelle.",
+      "formationPeriod": "Periode precoloniale, probablement constituee comme entite distincte avant le XIXe siecle ; les sources coloniales britanniques mentionnent les Pimbwe des le XIXe siecle dans les recits d'exploration (Burton, Stanley, Livingstone, Thomson).",
+      "migrationRoutes": ["Corridor Zambie - Lac Tanganyika - Vallee du Rukwa"],
+      "historicalSettlementZones": [
+        "Mpimbwe Division au nord de la vallee du Rukwa",
+        "Zone de l'actuel Parc national de Katavi (Katavi et Chada)",
+        "Rives du lac Rukwa au nord-ouest",
+        "Region de Katavi, district de Mpimbwe"
+      ],
+      "unificationsOrDivisions": "Les Pimbwe ont coexiste avec les Fipa, Bende et Konongo dans la region du Rukwa. Ils partageaient des chefferies locales avec des lineages de type Nyamwezi selon les sources coloniales du XIXe siecle. La creation du Katavi Game Reserve en 1954 puis du Parc national de Katavi a fragmente leur territoire ancestral.",
+      "externalInfluences": "Contact avec les negociants arabes-swahili aux XIXe siecle. Colonisation allemande puis britannique. Arrivee massive des Sukuma (pasteurs agropastoralistes) depuis les annees 1970, qui ont progressivement occupe une partie des terres pimbwe.",
+      "majorHistoricalEvents": "Creation du Katavi Game Reserve en 1954, puis du Parc national de Katavi (1974), privant les Pimbwe de leurs plaines ancestrales et d'une partie de leur territoire sacre. Depuis les annees 1970, afflux de la population Sukuma, devenue majoritaire dans la region (60% contre 20% de Wapimbwe en 2022)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies (chiefdoms) avec des lignages cheffaux qualifies de Nyamwezi dans les sources coloniales. Les anciens chefs sont consideres comme sacres et enterres au lac Chada. Absence de grandes structures etatiques ; organisation en communautes villageoises avec des chefs locaux.",
+      "clanOrganization": "Organisation clanique patrilineaire ; le multilinguisme et les inter-mariages frequents entre Pimbwe, Fipa et Konongo attestent une permeabilite des frontieres ethniques.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lineages cheffaux jouent un role spirituel important : les anciens chefs sont croyance d'etre enterres au lac Chada, site sacre ou le dieu Katabi se manifeste.",
+      "religiousAuthority": "Presence de figures spirituelles liees aux lacs sacres Katavi et Chada. Aujourd'hui majorite musulmane et catholique, avec subsistance de croyances animistes."
+    },
+    "languages": {
+      "mainLanguage": "Pimbwe",
+      "isoCodes": ["piw"],
+      "dialects": [],
+      "vehicularRole": "Le swahili est langue vehiculaire nationale. Le pimbwe est la langue maternelle communautaire. Les Pimbwe sont souvent plurilingues et parlent egalement le fipa ou le konongo."
+    },
+    "culture": {
+      "majorRites": "Culte des ancetres aux sites sacres des lacs Katavi et Chada. Le dieu Katabi est une divinite ancestrale dont on croit qu'il conduit des troupeaux d'hippopotames sur les rives du lac Chada. Les anciens chefs pimbwe sont croyance d'etre enterres a Chada. Culte du dieu soleil Ilyuba (createur de la vie) et de Katavi (dieu de la pluie) dans la religion traditionnelle.",
+      "symbols": "Les lacs Katavi et Chada sont les symboles spirituels centraux de l'identite pimbwe. L'hippopotame est associe au dieu Katabi.",
+      "artsAndMusic": "Pratiques de l'apiculture traditionnelle et artisanat. L'usage du mortier et du pilon pour moudre le mais et le riz est un element culturel identitaire. Peu de donnees documentees sur les arts plastiques ou musicaux specifiques.",
+      "spiritualities": "Animisme traditionnel avec culte du dieu soleil Ilyuba, du dieu de la pluie Katavi, et de divinites villageoises. Sacrifices aux sites sacres pour eviter la famine ou les maladies. Aujourd'hui, majorite musulmane et catholique romaine avec une minorite evangelique, souvent en syncrethisme avec les croyances ancestrales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies locales avec lineages cheffaux (qualifies de Nyamwezi dans les sources coloniales du XIXe siecle). Les chefs Pimbwe etaient en interaction avec les chefs Kimbu et Konongo dans la region du Rukwa.",
+      "relationsWithNeighbors": "Relations complexes avec les Fipa, Bende, Kimbu et Konongo, peuples voisins du Rukwa. Multilinguisme et inter-mariages frequents. Depuis les annees 1970, cohabitation tendue avec les Sukuma (pasteurs) qui ont occupe de grandes surfaces de terres, reduisant les Pimbwe souvent au statut de travailleurs agricoles sur les fermes Sukuma.",
+      "conflictsOrAlliances": "Conflits avec la faune sauvage autour du Parc national de Katavi. Tensions foncieres avec les Sukuma depuis les annees 1970. Collaboration avec le Peoples of Mpimbwe Fund (Cultural Survival) cree en 2003 pour soutenir les communautes Pimbwe et Sukuma.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 104000,
+      "referenceYear": 2025,
+      "source": "PeopleGroups.org (estimation ~104 000, 2025) ; Mpimbwe District : Wapimbwe representent environ 20% des 215 438 habitants recenses en 2022 (Tanzania National Bureau of Statistics)",
+      "distributionByCountry": [{ "country": "TZA", "population": 104000 }]
+    },
+    "sources": [
+      "Pimbwe language – Wikipedia (https://en.wikipedia.org/wiki/Pimbwe_language)",
+      "Mpimbwe District – Wikipedia (https://en.wikipedia.org/wiki/Mpimbwe_District)",
+      "A Sustainable Future for the Pimbwe – Cultural Survival Quarterly, 2010 (https://www.culturalsurvival.org/publications/cultural-survival-quarterly/sustainable-future-pimbwe-peoples-mpimbwe-fund)",
+      "Pimbwe in Tanzania – Joshua Project (https://www.joshuaproject.net/people_groups/14394)",
+      "Pimbwe of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015021/)",
+      "Social Organization and Social Status in Nineteenth and Twentieth Century Rukwa – Waters, African Studies Quarterly vol.11 no.1 (https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf)",
+      "A Description of Pimbwe (Bantu, Tanzania) – Trinity Western University / ARCA (https://arcabc.ca/islandora/object/twu:639/datastream/PDF/download/citation.pdf)",
+      "ISO 639-3 Language Codes – National Center for Education Statistics (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "PPL_GOGO",
+  "nameMain": "Gogo",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Gogo",
+      "selfAppellation": "Wagogo",
+      "exonyms": ["Gongwe", "Kigogo"],
+      "originOfExonyms": "Wagogo est la forme swahilie du pluriel (wa- prefixe de personne); un seul individu est un Mgogo. La region s'appelle Ugogo, la langue Cigogo ou Kigogo. Le nom Gogo aurait ete forge au XIXe siecle par les caravanes nyamwezi traversant la region.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Wagogo est le terme courant en swahili tanzanien. Gogo est utilise dans les contextes administratifs et academiques anglophones.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou de Tanzanie centrale (groupe Kagulu-Gogo, zone F)",
+      "historicalRegion": "Ugogo: plaines semi-arides du centre de la Tanzanie (region de Dodoma)",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": [
+      "Wagogo de l'Ouest (dialecte Nyambwa, region de Manyoni)",
+      "Wagogo du Centre (dialecte Nyaugogo, environs de Dodoma)",
+      "Wagogo de l'Est (dialecte Tumba, est de Dodoma)",
+      "Groupes dirigeants d'origine Uhehe (moitie des lignages royaux)",
+      "Groupes colonisateurs d'origine Nyamwezi"
+    ],
+    "origins": {
+      "ancientOrigins": "L'origine des Wagogo est situee en Nubie (Soudan actuel). Au XVIIIe siecle, les Wagogo etaient principalement des colons pionniers venus de l'Unyamwezi et de l'Uhehe, installes dans les plaines semi-arides du centre de la Tanzanie. La moitie de leur groupe dirigeant est d'origine uhehe. Ils sont parfois confondus avec les Sandawe et les Kaguru, peuples voisins.",
+      "formationPeriod": "Constitution progressive du groupe aux XVIIe-XIXe siecles. Leur nom aurait ete cree au XIXe siecle par les caravanes nyamwezi traversant leur territoire comme zone de transit entre la cote et l'interieur du continent.",
+      "migrationRoutes": [
+        "Depuis la Nubie (Soudan actuel) vers l'Afrique de l'Est",
+        "Passage par l'Unyamwezi et l'Uhehe (Tanzanie meridionale et occidentale)",
+        "Installation dans les plaines semi-arides du centre (region de Dodoma actuelle)"
+      ],
+      "historicalSettlementZones": [
+        "Ugogo: region de Dodoma, centre de la Tanzanie",
+        "Plaines entre les rivieres Bubu et Mkondoa",
+        "Zone traversee par les routes caravanieres vers le lac Tanganyika"
+      ],
+      "unificationsOrDivisions": "Societe tres decentralisee: les clans wagogo se deplacaient frequemment, changeant d'affiliations et de noms de clans. Des populations kimbu et nyamwezi ont progressivement colonise les plaines adjacentes. La region de Dodoma (Idodomya, signifiant le lieu ou il a enfonce) tire son nom d'une legende sur un elephant embourbe dans la boue pres du ruisseau Kikuyu.",
+      "externalInfluences": "Routes caravanieres du XIXe siecle: apport du swahili et contacts commerciaux. Missions chretiennes a partir de 1910 (Peres du Saint-Esprit, Peres Blancs). Colonisation allemande (1880s) puis britannique. Famines recurrentes aggravees par les requisitions militaires de la Premiere Guerre mondiale.",
+      "majorHistoricalEvents": "Traversee d'Ugogo par les explorateurs europeens (Stanley, Emin Pasha) au XIXe siecle. Grande famine de 1917-1919 causee par les requisitions militaires: environ 30 000 morts dans le seul district de Dodoma. Etablissement de missions catholiques et protestantes (1909-1912). Independance de la Tanzanie en 1961. Dodoma devient capitale federale officielle en 1973."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme dualiste: autorite politique des chefs (appeles sultans par les colonisateurs) qui percevaient des taxes sur les caravanes (hongo), et autorite rituelle des maitres de pluie (waganga wa mvua) qui controlaient les rites agricoles. Les maitres rituels etaient en realite les autorites les plus influentes: ils controlaient la pluie, protégeaient contre les catastrophes et arbitraient les conflits graves. Ils ne pouvaient quitter leur territoire et devaient etre riches en betail.",
+      "clanOrganization": "Organisation clanique fluide et adaptative: les clans wagogo se deplacaient et changeaient d'affiliations, adoptant de nouveaux noms de clans, nouvelles alliances et fonctions rituelles. La mobilite clanique est une caracteristique distinctive des Wagogo.",
+      "ageClassSystems": "Organisation militaire et sociale basee sur des groupes d'age de guerriers, similaire au systeme masai. Ces groupes assuraient la defense locale et pouvaient conduire des razzias de betail. En cas d'alarme, tout homme valide devait repondre a l'appel.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite sociale et les obligations de solidarite. La fraternite entre soeurs et freres est particulierement forte: les freres ont des obligations morales et legales envers leurs soeurs, meme apres leur mariage. Les enfants nes pendant le mariage appartiennent au mari, meme en cas de divorce.",
+      "religiousAuthority": "Les maitres de pluie (waganga wa mvua) sont les principales autorites religieuses traditionnelles dans ce milieu semi-aride sujet a la secheresse. Ils controlent les rites de fertilite et arbitrent les conflits. Depuis les missions du debut du XXe siecle, l'Eglise catholique et les Eglises protestantes ont pris une place importante."
+    },
+    "languages": {
+      "mainLanguage": "Cigogo (Kigogo)",
+      "isoCodes": ["gog"],
+      "dialects": [
+        "Nyambwa (Cinyambwa): dialecte ouest, parle a l'ouest de Dodoma et dans le Manyoni",
+        "Nyaugogo (Cinyaugogo): dialecte central, parle dans les environs de Dodoma",
+        "Tumba (Citumba): dialecte est, parle a l'est de Dodoma"
+      ],
+      "vehicularRole": "Le Cigogo est preserve avec force dans le cadre familial par les Wagogo, meme parmi ceux qui ont migre en ville. Le swahili (langue nationale de Tanzanie) est la langue vehiculaire dans le commerce, l'administration et l'education. Le Cigogo est apparente au Kagulu (56% de similitude lexicale), au Hehe et au Sangu (50%). Code Glottolog: gogo1256."
+    },
+    "culture": {
+      "majorRites": "Makumbigawadala: rite de passage feminin comprenant la circoncision (cigotogoto) et une periode de retraite dans la maison d'initiation (makumbi), marquant le passage de la fille a l'age adulte; accompagne de musique muheme pour couvrir les cris et celebrer la transition; officellement abolie en 1998. Circoncision masculine (cipande): rite de passage accompagne de chants polyphoniques cipande. Rites de pluie: ceremonies dirigees par les maitres rituels, fondamentales dans cet environnement semi-aride. Ceremonies de mariage avec versement de la dot principalement en betail. Funerailles avec regles strictes: les morts singuliers (foudre, maladies contagieuses) sont enterres dans la brousse ou dans un baobab pour eviter qu'ils deviennent esprits malefiques.",
+      "symbols": "Le betail (vaches) est le symbole principal de richesse et de prestige; il sert pour la dot et les ceremonies mais n'est jamais abattu pour la consommation ordinaire. Le baobab sacre. L'ilimba (piano a pouces) et le ngoma (tam-tam) sont les instruments emblematiques de la culture wagogo.",
+      "artsAndMusic": "Les Wagogo ont produit certains des plus grands noms de la musique tanzanienne: Hukwe Zawose (1938-2003), maitre de l'ilimba et ambassadeur de la musique wagogo a l'international; Mzee Mchoya Malogo, John Mtangoo, Patrick Balisidya, Ben Pol. Le muheme est une tradition musicale feminine originellement liee aux initiations, aujourd'hui aussi chantee dans les eglises. Danse traditionnelle uvina. Instruments: ilimba (piano a pouces), zeze (vielle a archet), ngoma (tambours). Staple alimentaire: ugali de sorgho ou millet avec legumes, viande ou mhopota (lait barate).",
+      "spiritualities": "Religion traditionnelle centree sur la regulation du cycle agricole et climatique par les maitres de pluie. Culte des ancetres: les morts singuliers peuvent devenir des esprits malefiques associes aux sorciers. La sorcellerie et les protections contre elle sont des preoccupations majeures. Aujourd'hui, le christianisme (catholique et protestant) est largement adopte, avec persistance de pratiques traditionnelles notamment dans les rituels agricoles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation en chefferies locales dont les chefs percevaient des taxes (hongo) sur les caravanes commerciales traversant Ugogo. Les chefs wagogo avaient souvent des conseillers nyamwezi. L'autorite duale entre chefs politiques et maitres rituels caracterise l'organisation traditionnelle wagogo.",
+      "relationsWithNeighbors": "Ugogo etait une zone de transit majeure pour les caravanes reliant la cote swahilie a l'interieur (lac Tanganyika). Les Wagogo percevaient des droits de passage (hongo). Defense organisee contre les Masai kisongo, les Hehe (Wahehe) et d'autres. Les Nyamwezi ont colonise les plaines adjacentes et fourni des conseillers aux chefs wagogo.",
+      "conflictsOrAlliances": "Confrontations recurrentes avec les Masai et les Hehe qui menaçaient le betail. Taxes imposees aux caravanes europeennes et arabes, ce qui valut aux Wagogo une reputation difficile aupres des explorateurs (Stanley, Emin Pasha, Edward Hore). Grande famine de 1917-1919 due aux requisitions militaires de la Premiere Guerre mondiale. Participation a l'independance de la Tanzanie sous Julius Nyerere.",
+      "diaspora": "Migration importante vers Dar es Salaam, Arusha et autres grandes villes tanzaniennes depuis l'independance. Les musiciens wagogo (notamment Hukwe Zawose) ont diffuse leur culture musicale a l'echelle internationale."
+    },
+    "demography": {
+      "totalPopulation": 3035000,
+      "referenceYear": 2025,
+      "source": "PeopleGroups.org (2025): environ 3 035 000 Wagogo en Tanzanie. Estimation Wikipedia 1992: 1 300 000. Recensement tanzanien 2022: region de Dodoma 3 085 625 habitants (Gogo majoritaires, avec Rangi, Sandawe et Burungi). National Bureau of Statistics Tanzania.",
+      "distributionByCountry": [{ "country": "TZA", "population": 3035000 }]
+    },
+    "sources": [
+      "Wikipedia EN – Gogo people: https://en.wikipedia.org/wiki/Gogo_people",
+      "Wikipedia EN – Gogo language: https://en.wikipedia.org/wiki/Gogo_language",
+      "Wikipedia EN – Dodoma Region: https://en.wikipedia.org/wiki/Dodoma_Region",
+      "Ethnologue – Gogo (gog): https://www.ethnologue.com/language/gog/",
+      "PeopleGroups.org – Gogo of Tanzania: https://peoplegroups.org/people_groups/pg014928/",
+      "National Bureau of Statistics Tanzania – 2022 Population and Housing Census: https://www.nbs.go.tz/",
+      "101 Last Tribes – Gogo people: https://www.101lasttribes.com/tribes/gogo.html",
+      "Kwekudee Trip Down Memory Lane – Wagogo people: https://kwekudee-tripdownmemorylane.blogspot.com/2013/12/wagogo-gogo-people-tanzanian-dancing.html"
+    ]
+  }
+}

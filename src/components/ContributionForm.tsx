@@ -15,20 +15,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { ContributionFormFields } from "./ContributionFormFields";
-import { Language } from "@/types/ethnicity";
+import { Language } from "@/types/shared";
 
 interface ContributionFormProps {
-  language: "en" | "fr" | "es" | "pt";
+  language: Language;
 }
 
 export function ContributionForm({
   language: propLanguage,
 }: ContributionFormProps) {
-  // Détecter la langue depuis l'URL
   const params = useParams();
   const urlLang = params?.lang as string;
   const detectedLanguage: Language =
-    urlLang && ["en", "fr", "es", "pt"].includes(urlLang)
+    urlLang && ["en", "fr"].includes(urlLang)
       ? (urlLang as Language)
       : propLanguage;
   const [type, setType] = useState<string>("");
@@ -38,7 +37,7 @@ export function ContributionForm({
   const [contributorName, setContributorName] = useState<string>("");
   const [contributorEmail, setContributorEmail] = useState<string>("");
   const [notes, setNotes] = useState<string>("");
-  const [honeypot, setHoneypot] = useState<string>(""); // Anti-spam
+  const [honeypot, setHoneypot] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -51,7 +50,8 @@ export function ContributionForm({
       jsonMode: "JSON",
       formMode: "Form",
       payload: "Data (JSON)",
-      payloadPlaceholder: '{"name": "...", "population": 12345, ...}',
+      payloadPlaceholder:
+        '{"name_main": "...", "language_family_id": "FLG_...", ...}',
       name: "Your Name (optional)",
       email: "Your Email (optional)",
       notes: "Notes (optional)",
@@ -61,8 +61,12 @@ export function ContributionForm({
       error: "Error submitting contribution",
       invalidJson: "Invalid JSON format",
       selectType: "Select type",
-      newEthnicity: "New Ethnicity",
-      updateEthnicity: "Update Ethnicity",
+      newPeople: "New People",
+      updatePeople: "Update People",
+      newCountry: "New Country",
+      updateCountry: "Update Country",
+      newLanguageFamily: "New Language Family",
+      updateLanguageFamily: "Update Language Family",
       requiredFields: "Please fill in all required fields",
     },
     fr: {
@@ -72,7 +76,8 @@ export function ContributionForm({
       jsonMode: "JSON",
       formMode: "Formulaire",
       payload: "Données (JSON)",
-      payloadPlaceholder: '{"name": "...", "population": 12345, ...}',
+      payloadPlaceholder:
+        '{"name_main": "...", "language_family_id": "FLG_...", ...}',
       name: "Votre nom (optionnel)",
       email: "Votre email (optionnel)",
       notes: "Notes (optionnel)",
@@ -82,51 +87,13 @@ export function ContributionForm({
       error: "Erreur lors de la soumission",
       invalidJson: "Format JSON invalide",
       selectType: "Sélectionner un type",
-      newEthnicity: "Nouvelle ethnie",
-      updateEthnicity: "Modifier une ethnie",
+      newPeople: "Nouveau peuple",
+      updatePeople: "Modifier un peuple",
+      newCountry: "Nouveau pays",
+      updateCountry: "Modifier un pays",
+      newLanguageFamily: "Nouvelle famille linguistique",
+      updateLanguageFamily: "Modifier une famille linguistique",
       requiredFields: "Veuillez remplir tous les champs obligatoires",
-    },
-    es: {
-      title: "Enviar una contribución",
-      type: "Tipo de contribución",
-      inputMode: "Modo de entrada",
-      jsonMode: "JSON",
-      formMode: "Formulario",
-      payload: "Datos (JSON)",
-      payloadPlaceholder: '{"name": "...", "population": 12345, ...}',
-      name: "Tu nombre (opcional)",
-      email: "Tu email (opcional)",
-      notes: "Notas (opcional)",
-      submit: "Enviar contribución",
-      submitting: "Enviando...",
-      success: "¡Contribución enviada con éxito!",
-      error: "Error al enviar la contribución",
-      invalidJson: "Formato JSON inválido",
-      selectType: "Seleccionar tipo",
-      newEthnicity: "Nueva etnia",
-      updateEthnicity: "Actualizar etnia",
-      requiredFields: "Por favor complete todos los campos obligatorios",
-    },
-    pt: {
-      title: "Enviar uma contribuição",
-      type: "Tipo de contribuição",
-      inputMode: "Modo de entrada",
-      jsonMode: "JSON",
-      formMode: "Formulário",
-      payload: "Dados (JSON)",
-      payloadPlaceholder: '{"name": "...", "population": 12345, ...}',
-      name: "Seu nome (opcional)",
-      email: "Seu email (opcional)",
-      notes: "Notas (opcional)",
-      submit: "Enviar contribuição",
-      submitting: "Enviando...",
-      success: "Contribuição enviada com sucesso!",
-      error: "Erro ao enviar contribuição",
-      invalidJson: "Formato JSON inválido",
-      selectType: "Selecionar tipo",
-      newEthnicity: "Nova etnia",
-      updateEthnicity: "Atualizar etnia",
-      requiredFields: "Por favor preencha todos os campos obrigatórios",
     },
   }[detectedLanguage];
 
@@ -140,7 +107,6 @@ export function ContributionForm({
       let parsedPayload: Record<string, unknown>;
 
       if (inputMode === "json") {
-        // Validate JSON payload
         try {
           parsedPayload = JSON.parse(payload);
         } catch {
@@ -149,30 +115,19 @@ export function ContributionForm({
           return;
         }
       } else {
-        // Convert form data to payload
         if (!type) {
           setError(t.selectType);
           setLoading(false);
           return;
         }
 
-        // For update_ethnicity, include the identifier (slug from selection)
-        if (type === "update_ethnicity" && formData.slug) {
-          // Ne pas inclure le slug dans le payload, seulement l'id
-          const { slug, ...restData } = formData;
-          parsedPayload = { ...restData, id: slug };
+        // For update types, include the identifier
+        if (type.startsWith("update_") && formData.id) {
+          parsedPayload = { ...formData };
         } else {
-          parsedPayload = formData;
+          parsedPayload = { ...formData };
         }
 
-        // Mapper le champ 'name' vers 'name_{lang}' selon la langue détectée
-        if (parsedPayload.name) {
-          const nameValue = parsedPayload.name;
-          delete parsedPayload.name;
-          parsedPayload[`name_${detectedLanguage}`] = nameValue;
-        }
-
-        // Basic validation for required fields
         if (Object.keys(parsedPayload).length === 0) {
           setError(t.requiredFields);
           setLoading(false);
@@ -189,7 +144,7 @@ export function ContributionForm({
           contributor_name: contributorName || null,
           contributor_email: contributorEmail || null,
           notes: notes || null,
-          honeypot, // Anti-spam
+          honeypot,
         }),
       });
 
@@ -199,7 +154,6 @@ export function ContributionForm({
       }
 
       setSuccess(true);
-      // Reset form
       setType("");
       setInputMode("form");
       setPayload("");
@@ -225,7 +179,6 @@ export function ContributionForm({
             value={type}
             onValueChange={(value) => {
               setType(value);
-              // Reset form data when type changes
               setPayload("");
               setFormData({});
             }}
@@ -235,9 +188,15 @@ export function ContributionForm({
               <SelectValue placeholder={t.selectType} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="new_ethnicity">{t.newEthnicity}</SelectItem>
-              <SelectItem value="update_ethnicity">
-                {t.updateEthnicity}
+              <SelectItem value="new_people">{t.newPeople}</SelectItem>
+              <SelectItem value="update_people">{t.updatePeople}</SelectItem>
+              <SelectItem value="new_country">{t.newCountry}</SelectItem>
+              <SelectItem value="update_country">{t.updateCountry}</SelectItem>
+              <SelectItem value="new_language_family">
+                {t.newLanguageFamily}
+              </SelectItem>
+              <SelectItem value="update_language_family">
+                {t.updateLanguageFamily}
               </SelectItem>
             </SelectContent>
           </Select>

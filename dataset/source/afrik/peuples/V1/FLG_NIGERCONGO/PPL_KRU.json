@@ -1,0 +1,70 @@
+{
+  "id": "PPL_KRU",
+  "nameMain": "Kru",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["CIV", "LBR"],
+  "content": {
+    "appellations": {
+      "mainName": "Kru",
+      "selfAppellation": "Kru",
+      "exonyms": [
+        "« Kru » (terme utilisé par les Européens), parfois appelés « Krou » (terme générique)"
+      ],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Krou occidental",
+      "historicalRegion": "Libéria, CIV",
+      "currentCountries": ["CIV", "LBR"]
+    },
+    "ethnicities": [
+      "Kru du Libéria",
+      "Kru de Côte d'Ivoire",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kru sont originaires de la région du Libéria et de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe krou occidental.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les autres peuples krou.",
+      "externalInfluences": "Contacts avec les commerçants européens, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Rôle important des croyances traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Kru",
+      "vehicularRole": "Le kru est parlé par la majorité des Kru. L'anglais, le français et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de mariage traditionnelles",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à la pêche et à l'agriculture",
+      "source_3": "Cérémonies religieuses chrétiennes",
+      "Symboles": "Symboles liés à la pêche et à l'agriculture, symboles culturels kru, symboles chrétiens",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Croyances traditionnelles, syncrétisme avec le christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies indépendantes.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora kru dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Kru language (klu)",
+      "CIA World Factbook – Country profiles",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples krou"
+    ]
+  }
+}

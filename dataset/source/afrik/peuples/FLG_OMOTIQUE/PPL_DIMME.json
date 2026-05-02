@@ -1,0 +1,91 @@
+{
+  "id": "PPL_DIMME",
+  "nameMain": "Dimme",
+  "languageFamilyId": "FLG_OMOTIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Dimme",
+      "selfAppellation": "Dime",
+      "exonyms": ["Dima", "Dime"],
+      "originOfExonyms": "Le nom Dime (ou Dima) est à la fois l'auto-désignation du peuple et le nom de sa langue. La variante Dimme est utilisée dans certains contextes académiques et administratifs. Le peuple et sa langue portent le même nom, ce qui est courant parmi les petits groupes ethnolinguistiques éthiopiens.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Dime/Dimme est utilisé dans la littérature académique et dans les recensements éthiopiens. Le peuple est peu documenté en raison de sa très faible population, ce qui le rend vulnérable à la disparition culturelle et linguistique.",
+      "linguisticFamily": "FLG_OMOTIQUE",
+      "ethnoLinguisticGroup": "Omotique du Sud (groupe Aroid / Aaroid)",
+      "historicalRegion": "Partie nord du district de Selamago (anciennement Sala-Mago), zone South Omo, Southern Nations Nationalities and Peoples Region (SNNPR) / South Ethiopia Regional State — autour du mont Smith, sur une chaîne de montagnes de moins de 20 km de large et 55 km de long",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Sous-groupe Us'a — correspond au dialecte Us'a de la langue dime",
+      "Sous-groupe Gerfa — correspond au dialecte Gerfa de la langue dime"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Dimme font partie des peuples omotiques du Sud (groupe Aroid) du sud-ouest de l'Éthiopie. Jensen les classe parmi les anciens peuples du sud de l'Éthiopie aux côtés des Dizi, des Aari et des Basketo. Leur territoire est une chaîne de montagnes isolée (moins de 20 km de largeur sur 55 km de longueur) dans la zone South Omo, autour du mont Smith. La langue dime présente des parentés avec l'aari et le hamer, notamment la présence de consonnes implosives.",
+      "formationPeriod": "La société Dimme s'est organisée en chefferies traditionnelles dans leurs montagnes isolées de la zone South Omo. Avant l'incorporation forcée à l'empire éthiopien à la fin du XIXe siècle, les Dimme disposaient d'une organisation politique propre avec des chefs aux fonctions politiques, économiques et rituelles combinées.",
+      "migrationRoutes": [
+        "Population autochtone sans migration fondatrice documentée hors de leur territoire montagnard de la zone South Omo",
+        "Isolement géographique dans leur chaîne de montagnes constituant un refuge naturel"
+      ],
+      "historicalSettlementZones": [
+        "Partie nord du district de Selamago (Sala-Mago), zone South Omo, autour du mont Smith",
+        "Chaîne montagneuse de moins de 20 km de large et 55 km de long"
+      ],
+      "unificationsOrDivisions": "La communauté Dimme est très petite et géographiquement concentrée. La langue présente deux dialectes (Us'a et Gerfa). La pression des voisins, notamment les Bodi (Me'en), a entraîné une dépopulation dramatique au cours du XXe siècle, menaçant la cohésion communautaire.",
+      "externalInfluences": "Pressions des voisins Bodi (Me'en) ayant entraîné une dépopulation grave. Influences linguistiques des langues environnantes (Chara au nord à travers le fleuve Omo, Basketo au nord-est et à l'est, Aari au sud-est, Mursi et Surma au sud-ouest, Bodi/Me'en à l'ouest). Le bilinguisme et le multilinguisme sont courants. L'amharique est la langue d'administration. Influence croissante du christianisme évangélique.",
+      "majorHistoricalEvents": "La situation démographique des Dimme constitue l'enjeu historique le plus critique : le recensement de 1994 comptabilisait 5 462 à 6 293 personnes selon les sources, mais le recensement de 2007 n'a enregistré que 574 à 895 locuteurs, une chute catastrophique attribuée aux pressions des Bodi, à la traite des esclaves dans les périodes antérieures et à l'assimilation linguistique. L'incorporation à l'empire éthiopien à la fin du XIXe siècle a perturbé les structures politiques traditionnelles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Avant la période contemporaine, les Dimme étaient gouvernés par des chefs traditionnels aux fonctions politiques, économiques et rituelles combinées. L'organisation en chefferies locales assurait l'ordre social et la gestion des ressources dans leur territoire montagnard isolé. Ces structures ont été progressivement remplacées par les structures administratives éthiopiennes.",
+      "clanOrganization": "Structure clanique patrilinéaire. L'organisation sociale était fondée sur des lignages et des groupes claniques dont les détails précis restent peu documentés en raison de la faiblesse démographique du groupe et des perturbations historiques.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires structurent l'organisation sociale et les droits fonciers dans la communauté Dimme. L'appartenance lignagère détermine les alliances matrimoniales et les obligations rituelles. Les Dimme pratiquent le mariage exogamique : les membres du même clan ne peuvent pas se marier entre eux. Les jeunes hommes doivent obtenir l'accord du lignage de la future épouse et verser un prix de la fiancée en bétail.",
+      "religiousAuthority": "Les chefs traditionnels exerçaient une autorité rituelle. La religion traditionnelle comporte des éléments de culte des ancêtres et de pratiques propitiatoires. L'agriculture dime, dont les cultures vivrières sont le maïs, le sorgho, le teff et des produits horticoles, est régulée par des pratiques rituelles liées au cycle des saisons. L'influence du christianisme évangélique est croissante dans les décennies récentes."
+    },
+    "languages": {
+      "mainLanguage": "Dime (Dima)",
+      "isoCodes": ["dim"],
+      "dialects": [
+        "Us'a — dialecte documenté par Mulugeta Seyoum (2008)",
+        "Gerfa — dialecte documenté par Mulugeta Seyoum (2008)"
+      ],
+      "vehicularRole": "La langue dime est parlée par un nombre extrêmement restreint de locuteurs : le recensement de 2007 n'a recensé que 574 à 895 locuteurs, contre 5 462 à 6 293 lors du recensement de 1994. La langue est classée comme gravement en danger par les linguistes. Elle n'avait pas de système d'écriture établi jusqu'aux efforts récents de développement d'une orthographe à base de caractères éthiopiques (Mulugeta, 2020). Phonologiquement, le dime est remarquable parmi les langues omotiques pour ses fricatives vélaires et uvulaires phonémiques (x, ɣ, χ, ʁ), uniques dans la famille. L'ordre des mots est SOV. L'amharique est utilisé pour l'éducation et l'administration."
+    },
+    "culture": {
+      "majorRites": "Rites agricoles liés au cycle des saisons dans la zone montagnarde (maïs, sorgho, teff). Cérémonies de mariage selon les règles d'exogamie clanique. Rites funéraires avec rôle des anciens et des chefs traditionnels. Pratiques rituelles de purification et de protection communautaire. Rites de passage liés à la naissance et à la puberté. La très faible population du groupe a rendu difficile la documentation exhaustive de ces pratiques rituelles.",
+      "symbols": "Le mont Smith et le territoire montagnard isolé constituent des repères symboliques identitaires forts pour les Dimme. La chaîne de montagnes de Selamago représente leur espace de vie et d'identité ancestrale. La langue dime elle-même, avec ses caractéristiques phonologiques exceptionnelles, est un marqueur identitaire.",
+      "artsAndMusic": "Artisanat traditionnel incluant la poterie, le travail du cuir et la vannerie. La culture agricole Dimme est centrée sur les cultures de montagne (maïs, sorgho, teff). La musique traditionnelle accompagne les cérémonies de passage et les fêtes collectives, mais les détails précis restent peu documentés. Les Dimme sont agriculteurs sédentaires dans leurs montagnes et pratiquent également l'élevage de petits ruminants.",
+      "spiritualities": "La religion traditionnelle Dimme comporte le culte des ancêtres et des pratiques propitiatoires. La cosmologie traditionnelle inclut des croyances sur les forces naturelles liées à leur territoire montagnard. Le multilinguisme Dimme, attesté par les chercheurs (Mulugeta 2020), reflète l'ouverture aux influences culturelles des peuples voisins (Chara, Basketo, Aari, Mursi). L'influence croissante du christianisme évangélique modifie les pratiques religieuses traditionnelles dans les décennies récentes. L'absence de système d'écriture traditionnel a favorisé la tradition orale comme mode de transmission du savoir religieux et culturel."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Dimme n'ont pas formé de royaume centralisé. Leur organisation en chefferies locales dans leur territoire montagnard isolé leur a permis de maintenir une relative autonomie jusqu'à la fin du XIXe siècle. Les chefs (plurifonctionnels : politiques, économiques et rituels) assuraient la gouvernance locale.",
+      "relationsWithNeighbors": "Relations avec les Chara au nord (de l'autre côté du fleuve Omo), les Basketo au nord-est et à l'est, les Aari au sud-est, les Mursi et certains Surma au sud-ouest, et les Bodi (Me'en) à l'ouest. Les relations avec les Bodi ont été particulièrement difficiles : les pressions et raids des Bodi sont cités comme l'une des principales causes de la dépopulation dramatique des Dimme au cours du XXe siècle. Selon les chercheurs du SIL (Siebert 2002), les Dime sont bilingues et multilingues, parlant souvent la langue de leurs voisins.",
+      "conflictsOrAlliances": "Les pressions des Bodi (Me'en) constituent le principal facteur de la dépopulation Dimme documentée au XXe siècle. La traite des esclaves dans la région pendant la période coloniale et post-conquête éthiopienne a également touché les Dimme. La dépopulation catastrophique — de plus de 5 000 personnes en 1994 à moins de 900 en 2007 selon les recensements officiels — constitue une crise existentielle pour ce peuple.",
+      "diaspora": "Il n'existe pas de diaspora Dimme documentée en dehors de leur territoire d'origine en raison de l'extrême faiblesse démographique du groupe. La population est presque entièrement concentrée dans la partie nord du district de Selamago (zone South Omo). Certains individus ont été assimilés par les groupes environnants, contribuant à la contraction de la communauté."
+    },
+    "demography": {
+      "totalPopulation": 1500,
+      "referenceYear": 2025,
+      "source": "Recensement éthiopien 1994 (CSA) : 5 462 à 6 293 locuteurs du dime. Recensement éthiopien 2007 (CSA) : 574 à 895 personnes (les deux sources s'accordent sur une chute dramatique). Joshua Project : territoire de moins de 20 km de large et 55 km de long dans la zone North Omo. SIL — Rapport sociolinguistique sur la langue dime (Siebert 2002). Mulugeta 2020 : discussion de la dépopulation. Projection 2025 incertaine, estimée entre 1 000 et 2 000 personnes.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 1500,
+          "note": "Partie nord du district de Selamago (Sala-Mago), zone South Omo, South Ethiopia Regional State. Population concentrée autour du mont Smith sur une chaîne de montagnes isolée. Groupe en danger critique d'extinction."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Dime language. https://en.wikipedia.org/wiki/Dime_language",
+      "Ethnologue — Dime language (dim). https://www.ethnologue.com/language/dim/",
+      "Mulugeta Seyoum. 2008. A Grammar of Dime. Doctoral dissertation, Leiden University.",
+      "Mulugeta Seyoum. 2020. Ethiopic Script Based Dime Orthography. Studies in Ethiopian Languages, 9 (2020), 1-25. http://ds22n.cc.yamaguchi-u.ac.jp/~abesha/SEL/pub/2020/Mulugeta-2020.pdf",
+      "Ralph Siebert. 2002. Sociolinguistic survey report on the Dime language of Ethiopia. SIL Electronic Survey Reports 2002-043.",
+      "Joshua Project — Dime in Ethiopia. https://joshuaproject.net/people_groups/11559",
+      "Wikipedia EN — Omotic languages. https://en.wikipedia.org/wiki/Omotic_languages",
+      "Aklilu Yilma et Ralph Siebert. 2002. Sociolinguistic survey report of the Chara, Dime, Melo and Nayi languages of Ethiopia part 1. SIL Electronic Survey Reports 2002-029.",
+      "101 Last Tribes — Dizi people (voisins Dizi/Dime). https://www.101lasttribes.com/tribes/dizi.html",
+      "Glottolog — Dime language. https://glottolog.org/resource/languoid/id/dime1235"
+    ]
+  }
+}

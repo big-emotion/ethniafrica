@@ -1,0 +1,115 @@
+{
+  "id": "PPL_KUBA",
+  "nameMain": "Kuba",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Kuba",
+      "selfAppellation": "Bakuba (pluriel) / Mukuba (singulier)",
+      "exonyms": [
+        "Kuba (denomination europeenne, nom du royaume)",
+        "Bakuba (forme plurielle avec prefixe bantou ba-)",
+        "Bushongo / Bashi-Bushongo (nom des Bushoong dominants, signifiant peuple du couteau de jet)"
+      ],
+      "originOfExonyms": "Le terme Kuba est d'origine europeenne, utilise par les explorateurs et administrateurs belges pour designer le royaume et ses habitants. Le nom Bushongo (ou Bashi-Bushongo) est le nom que les Europeens donnaient au peuple dominant du royaume (les Bushoong). En langue propre, Bakuba designe l'ensemble de la confederation de peuples du royaume.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les termes Kuba et Bakuba sont couramment utilises dans les contextes academiques et artistiques internationaux. Le roi actuel (nyim) Kot-a-Mbweeky III (en fonction depuis 1968) est chef du royaume Kuba, qui existe toujours en tant qu'entite culturelle au sein de la province du Kasai en RDC.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou de la zone C (Kasai, Guthrie C.83)",
+      "historicalRegion": "Triangle forme par les fleuves Sankuru, Lulua et Kasai au coeur de la RDC (province du Kasai)",
+      "currentCountries": ["COD"]
+    },
+    "ethnicities": [
+      "Bushoong (groupe dominant, le nyim/roi est toujours Bushoong)",
+      "Ngeende",
+      "Kel",
+      "Pyaang",
+      "Bulaang",
+      "Bieeng",
+      "Ilebo",
+      "Idiing",
+      "Kaam",
+      "Ngoombe Kayuweeng",
+      "Shoowa (celebres pour leurs tissus raphia geometriques)",
+      "Bokila",
+      "Maluk",
+      "Ngongo",
+      "Kete",
+      "Coofa",
+      "Mbeengi",
+      "Kasai Twa Pygmies (clients des Bushoong dans une relation patron-client)",
+      "Lele (dialecte apparente, installes a l'ouest du Kasai)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les ancetres des Kuba migrerent depuis le nord lors du XVIe siecle. Avant la fondation du royaume, les differents groupes constituants vivaient dans des societies a petite echelle, sans hierarchie politique au-dela du village. Selon la tradition orale, un commercant voyageur nomme Shyaam a-Mbul a Ngoong (fils adoptif d'une reine kuba) quitta la region pour apprendre des royaumes Pende et Kongo avant de revenir et d'unifier les chefferies. Les analyses genetiques (PNAS 2018) confirment une origine commune des Kuba et des Lele, separee peu avant la fondation du royaume.",
+      "formationPeriod": "Le royaume de Kuba fut fonde vers 1625 quand Shyaam a-Mbul a Ngoong unifica les chefferies et reorganisa le gouvernement en systeme meritocratique a base de titres. Au debut du XVIIIe siecle, Kuete M'bogi etendit le pouvoir vers le sud le long du Kasai. Au milieu du XIXe siecle, le royaume atteignit son apogee. Les Europeens n'atteignirent la region qu'en 1884.",
+      "migrationRoutes": [
+        "Migration depuis le nord (probablement bassin du Congo superieur) au XVIe siecle",
+        "Consolidation entre les rivieres Sankuru, Lulua et Kasai",
+        "Fondation du royaume a partir de 1625 par unification de chefferies locales"
+      ],
+      "historicalSettlementZones": [
+        "Province du Kasai (RDC), entre les fleuves Sankuru, Lulua et Kasai",
+        "Region d'Ilebo (ancienne Port-Francqui) sur le Kasai",
+        "Capitale du royaume : Nsheng (siege du nyim/roi)"
+      ],
+      "unificationsOrDivisions": "Shyaam a-Mbul a Ngoong (vers 1625) unifia dix-neuf groupes ethniques sous un systeme politique centralise innovant : constitution non ecrite, fonctions electives, separation des pouvoirs, systeme judiciaire avec cours et juries, police, armee, taxation. Chaque groupe ethnique avait un representant a la cour Bushoong. L'isolement relatif du royaume le protegea largement de la traite des esclaves, contrairement au Kongo et au Ndongo voisins.",
+      "externalInfluences": "Adoption de plantes du Nouveau Monde (mais, tabac, manioc, haricots) via les routes commerciales africaines avant le contact europeen direct. Influence des royaumes Pende et Kongo sur les innovations politiques et artistiques apportees par Shyaam. La colonisation belge (Etat independant du Congo de Leopold II puis Congo belge a partir de 1908) finit par integrer le royaume dans l'administration coloniale, marquant la fin de la souverainete politique formelle vers 1900.",
+      "majorHistoricalEvents": "Vers 1625 : fondation du royaume par Shyaam a-Mbul a Ngoong. Apres 1700 : introduction des ndop (statuettes royales) par le roi Misha mi-Shyaang a-Mbul. Milieu XIXe siecle : apogee du royaume. 1884 : premiers Europeens dans la region. 1900 : desestablissement politique sous la colonisation belge. 1968 : intronisation du nyim Kot-a-Mbweeky III, chef actuel du royaume."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le gouvernement Kuba est considere comme l'un des plus sophistiques d'Afrique precoloniale : constitution non ecrite, fonctions electives, separation des pouvoirs legislatif-executif-judiciaire, systeme de cours de justice avec juries, police, armee permanente, taxation, provision de biens publics. Le roi (nyim), toujours issu du clan Bushoong, est a la fois chef politique, judiciaire et religieux. Le conseil de cour representait egalement chacun des dix-neuf groupes ethniques du royaume via leurs elites.",
+      "clanOrganization": "Dix-neuf groupes ethniques distincts, chacun avec ses propres traditions mais tous integres dans la structure politique du royaume. Le clan Bushoong (dominant) entretient une relation patron-client avec les Kasai Twa Pygmies. La moitie de tous les hommes Bushoong detenaient des titres officiels dans les annees 1880, temoignant d'un systeme de noblesse tres etendu.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages aristocratiques Bushoong determinent l'acces au titre royal. La competion pour les titres de cour entre membres titrés animait la vie politique et stimulait la creation artistique (les coupes a vin de palme ornees etaient associees a cette competition entre nobles).",
+      "religiousAuthority": "Les nganga (pretres-guerisseurs) pratiquent les rites de protection et de guerison. La tukula (poudre rouge de bois cam) est utilisee dans les ceremonies et pour oindre les corps des defunts. Les ndop (statuettes royales en bois) concentrent l'essence spirituelle du roi et perdurent apres sa mort. Le christianisme (missions catholiques et protestantes) est present depuis la colonisation belge."
+    },
+    "languages": {
+      "mainLanguage": "Bushong (Bushoong)",
+      "isoCodes": ["buf"],
+      "dialects": [
+        "Djembe",
+        "Ngende",
+        "Ngombe / Ngombia",
+        "Ngongo",
+        "Pianga / Panga / Tsobwa / Shobwa / Shoba (consideree comme langue distincte du groupe Tetela)"
+      ],
+      "vehicularRole": "Le bushong (ISO buf) est la langue du groupe dominant Bushoong et la langue de la cour royale du royaume Kuba. Elle appartient au groupe bantou de la zone C (Kasai). Les Lele parlent un dialecte tres proche et sont souvent consideres comme apparentes. Les differents groupes ethniques du royaume parlent leurs propres langues. Le lingala et le swahili sont vehiculaires dans la province du Kasai. Le francais est la langue officielle de la RDC."
+    },
+    "culture": {
+      "majorRites": "Les ceremonies royales d'intronisation du nyim sont les rites les plus importants du royaume, impliquant regalia, danses, musique de tambours et participation de toutes les composantes du royaume. Les rites funeraires comportent l'onction du corps avec de la tukula (poudre rouge). Les ceremonies de danse et les competitions entre groupes titres animent la vie de cour. Les rites agricoles rythment le calendrier des plantations de manioc, mais et haricots.",
+      "symbols": "Les tissus de raphia kuba (velours de raphia tisse et brode avec des motifs geometriques en coupes, entrelacs, damiers) sont le symbole culturel le plus connu des Kuba dans le monde. Les ndop (statuettes royales sculptees, chaque roi ayant le sien avec son ibol/symbole personnel) representent le prestige et la continuite de la royaute. La tukula (poudre rouge de bois cam) symbolise la vie, la mort et la beaute. Les masques monumentaux ornes de motifs geometriques, de perles et de coquillages sont portes lors des ceremonies.",
+      "artsAndMusic": "Les Kuba sont universellement celebres pour la qualite exceptionnelle de leurs arts : tissus de raphia brodes (velours kuba ou kasai velvet), masques casque monumentaux a motifs geometriques, coupes a vin de palme sculptees (associees a la competition entre nobles titrés), boites cosmetiques (ngedi mu ntey) en diverses formes (carree, demi-lune, rectangulaire, masque), statuettes ndop royales. Les perles et les fourrures composent les coiffures et les habillements cerimonials. La geometrie rigoureuse et l'invention formelle des motifs kuba ont influencé des artistes occidentaux comme Matisse et Picasso. La musique comprend tambours, xylophones (marimba) et polyphonies vocales lors des ceremonies.",
+      "spiritualities": "Le systeme spirituel kuba reconnait un dieu createur (Mboom ou Woot selon les traditions) a l'origine du monde et des hommes. Les ancetres royaux sont venerés ; les ndop perpetuent la presence spirituelle des rois defunts. La tukula est un pigment a valeur sacree, utilisee pour oindre les corps (vivants et morts) dans les ceremonies. Les nganga (specialists du sacre) interviennent pour la guerison, la protection et la divination. Aujourd'hui, le christianisme (catholique et protestant, issu des missions belges) est predominant, en syncrétisme avec les pratiques traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume de Kuba (fonde vers 1625) est l'une des grandes formations politiques de l'Afrique centrale precoloniale, connu pour son organisation constitutionnelle innovante. Dix-neuf groupes ethniques furent unifies sous une structure politique a gouvernance partagee. Le royaume atteignit son apogee au milieu du XIXe siecle. Contrairement aux royaumes voisins, les Kuba resterent relativement isoles de la traite des esclaves. Le royaume existe encore aujourd'hui en tant qu'entite culturelle sous Kot-a-Mbweeky III.",
+      "relationsWithNeighbors": "Les Kuba ont entretenu des relations commerciales et culturelles avec les Luba (est), les Lulua, les Chokwe, les Pende (ouest) et les Lele (dialecte kuba a l'ouest du Kasai). Les Bushoong entretiennent une relation patron-client traditionnelle avec les Twa Pygmies du Kasai. Les Kuba echangeaient de l'ivoire, du raphia et des produits artisanaux contre des biens exterieurs.",
+      "conflictsOrAlliances": "Le fondateur Shyaam apprit des royaumes Pende et Kongo avant de revenir unifier les Kuba, suggerant des alliances et influences mutuelles. Le Kuba resta largement isole des guerres esclavagistes grâce a sa position geographique dans les forets du Kasai. La colonisation belge mit fin a la souverainete politique vers 1900 sans guerre majeure. Les analyses genetiques montrent que la centralisation politique du royaume a effectivement unifie des populations precedemment separees (PNAS 2018).",
+      "diaspora": "La diaspora kuba est essentiellement interne : mouvements vers Kinshasa et d'autres villes de la RDC. Des objets d'art kuba ont ete exportes massivement en Europe et aux Etats-Unis depuis la colonisation belge ; les collections des musees de Tervuren (Belgique), du Metropolitan Museum of Art (New York), du British Museum et du Musee du quai Branly (Paris) contiennent des pieces kuba majeures."
+    },
+    "demography": {
+      "totalPopulation": 250000,
+      "referenceYear": 2025,
+      "source": "Estimation 2025 : ~250 000 personnes dans la province du Kasai (RDC). Source : Gateway Africa Kuba Tribe (~250 000) ; SIL Ethnologue ; 101 Last Tribes. Les recensements congolais ne ventilent pas systematiquement par groupe ethnique. La population Bushoong (groupe dominant) est estimee plus reduire au sein de l'ensemble Kuba.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 250000,
+          "note": "province du Kasai, entre les fleuves Sankuru, Lulua et Kasai"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kuba Kingdom. https://en.wikipedia.org/wiki/Kuba_Kingdom",
+      "Wikipedia EN — Bushong language. https://en.wikipedia.org/wiki/Bushong_language",
+      "Gateway Africa — Kuba Tribe. https://www.gateway-africa.com/tribe/kuba_tribe.html",
+      "101 Last Tribes — Kuba people. https://www.101lasttribes.com/tribes/kuba.html",
+      "PNAS — Genetic legacy of state centralization in the Kuba Kingdom (2018). https://www.pnas.org/doi/10.1073/pnas.1811211115",
+      "Ethnologue (SIL) — Bushoong [buf]. https://www.ethnologue.com/language/buf/",
+      "Localizely — ISO 639-3 List (buf: Bushoong). https://localizely.com/iso-639-3-list/",
+      "Jan Vansina — The Children of Woot: A History of the Kuba Peoples. University of Wisconsin Press, 1978."
+    ]
+  }
+}

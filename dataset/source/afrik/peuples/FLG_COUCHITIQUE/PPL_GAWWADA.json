@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_GAWWADA",
+  "nameMain": "Gawwada",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Gawwada",
+      "selfAppellation": "Ale",
+      "exonyms": ["Gauwada", "Gawata", "Kawwada", "Kawwad'a"],
+      "originOfExonyms": "Le terme Gawwada est l'ethnonyme externe le plus courant dans la littérature ethnographique et dans les sources Ethnologue. Les locuteurs se désignent eux-mêmes par le terme Ale, qui renvoie à leur propre langue. Les variantes Gauwada et Kawwada apparaissent dans les sources allemandes et françaises du XXe siècle.",
+      "whyProblematic": null,
+      "contemporaryUsage": "L'appellation Gawwada est utilisée dans les documents officiels éthiopiens et dans la nomenclature linguistique internationale (ISO : gwd). Le terme Ale est privilégié par les locuteurs eux-mêmes ; les linguistes travaillant sur le terrain depuis 2010 rapportent une forte résistance à toute standardisation entre sous-groupes."
+    },
+    "ethnicities": [
+      "Gawwada",
+      "Dihina",
+      "Gergere",
+      "Gobeze",
+      "Gollango",
+      "Gorose",
+      "Harso"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Gawwada sont un peuple Cushitique de branche Dullay, isolé pendant des siècles dans les régions accidentées du sud de l'Éthiopie, à l'ouest du lac Chamo. L'inaccessibilité de la région de l'Omo inférieur a permis le maintien de leurs structures sociales traditionnelles.",
+      "formationPeriod": "Formation ancienne dans le corridor du bas Omo ; leur organisation sociale fondée sur un modèle de défense guerrière et les valeurs d'hospitalité et de solidarité communautaire attestent d'une tradition ancienne et cohérente.",
+      "migrationRoutes": [
+        "Hautes terres Dullay vers les basses terres de l'Omo autour du lac Chamo"
+      ],
+      "historicalSettlementZones": [
+        "Région de l'Omo à l'ouest du lac Chamo (État du Sud de l'Éthiopie)",
+        "Zone s'étendant des montagnes de Gaedulla-Dobase au sud du lac Cam aux hautes terres de Hanna-Hamar",
+        "Deux rives du fleuve Weyt'o (Gawwada principal)",
+        "Zones montagneuses à une altitude d'environ 1 600-1 700 mètres pour les dialectes orientaux"
+      ],
+      "unificationsOrDivisions": "La communauté Gawwada se divise en au moins six sous-groupes distincts, chacun attaché à sa propre forme dialectale ; les linguistes documentent une forte résistance à la standardisation entre sous-groupes.",
+      "externalInfluences": "Isolation historique due à l'inaccessibilité du bas Omo, l'une des zones les moins développées d'Afrique orientale. Influence minimale du christianisme (environ 2 % de chrétiens) et de l'islam. Les chefs Gawwada utilisent l'amharique, l'oromo ou le konso comme langues secondes.",
+      "majorHistoricalEvents": "Maintien remarquable des structures sociales et des valeurs traditionnelles au cours du siècle passé grâce à l'isolement géographique. La pratique ancienne exigeant des jeunes hommes de tuer un ennemi avant le mariage a été transformée en sacrifice animal."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Société traditionnellement organisée sur un modèle de défense guerrière ; tous les garçons étaient formés au combat. La famille est dirigée par un père à l'autorité absolue, dont les décisions appellent une obéissance totale de la part de tous les membres. Les hommes sont généralement monogames.",
+      "clanOrganization": "Au moins six sous-groupes Gawwada constituent des unités identitaires distinctes : Dihina, Gergere, Gobeze, Gollango, Gorose et Harso. Chaque sous-groupe est fortement attaché à sa propre forme dialectale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "L'identité de groupe et la coopération sont des valeurs centrales ; la cohésion communautaire se manifeste lors des travaux collectifs et des cérémonies. Le prestige social d'un homme est lié au nombre de ses enfants.",
+      "religiousAuthority": "Pratique de religions traditionnelles ; culte des esprits des ancêtres comme intermédiaires entre les vivants et un Dieu unique ; esprits des rivières et lacs (zar, analogue aux djinn arabes) font l'objet de rituels spécifiques. La région a été très peu touchée par le christianisme ou l'islam."
+    },
+    "languages": {
+      "mainLanguage": "Gawwada (gwd)",
+      "isoCodes": ["gwd"],
+      "dialects": [
+        "Dihina",
+        "Gergere",
+        "Gobeze (dialecte principal)",
+        "Gollango",
+        "Gorose",
+        "Harso-Dobase"
+      ],
+      "vehicularRole": "L'amharique, l'oromo et le konso sont utilisés par les chefs et commerçants Gawwada comme langues véhiculaires. Le taux d'alphabétisation est très faible, entre 1 % et 15 % selon les sources."
+    },
+    "culture": {
+      "majorRites": "La cérémonie la plus importante dans la vie d'un homme intervient lorsque sa fille ainée atteint l'adolescence : il reçoit alors le titre ma gudoha (grand homme). Les enfants ne sont généralement pas nommés pendant plusieurs mois, voire années, après la naissance.",
+      "symbols": "La maison traditionnelle Gawwada (tukal) est une hutte circulaire construite en branches d'acacia recouvertes de nattes en herbe, avec un toit conique percé d'une ouverture pour laisser échapper la fumée. La lance est l'arme et le symbole identitaire traditionnel.",
+      "artsAndMusic": "Tradition orale et pratiques musicales liées aux cérémonies de passage. La culture matérielle est axée sur l'agriculture (durra, maïs, haricots, riz) et l'élevage (bovins, chèvres, moutons). La pêche dans le lac est pratiquée en saison sèche.",
+      "spiritualities": "Religion traditionnelle comprenant le culte des esprits des ancêtres comme intermédiaires vers un Dieu unique ; esprits des cours d'eau et des lacs (zar). Cette tradition est partagée par les peuples voisins de la région avec de légères variations par groupe ethnique. Environ 2 % seulement des Gawwada se déclarent chrétiens."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralisé documenté ; organisation en communautés autonomes selon un modèle de défense guerrière, maintenues isolées par la topographie du bas Omo.",
+      "relationsWithNeighbors": "Les Konso, les Tsama, les Dirasha et les peuples Dullay voisins parlent des langues apparentées (famille Dullay) avec des similitudes lexicales allant de 51 % à 86 % avec le Gawwada. Les Gawwada leaders utilisent le konso comme langue de communication régionale.",
+      "conflictsOrAlliances": "Tradition historique de guerriers ; des pratiques rituelles liées à la guerre (ex. : exigence de tuer un ennemi avant le mariage) ont progressivement évolué vers des substituts symboliques. La région du bas Omo est restée l'une des plus inaccessibles d'Afrique orientale, limitant les conflits avec les empires extérieurs.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 50000,
+      "referenceYear": 2025,
+      "source": "Estimation 2025 basée sur le recensement éthiopien 1994 (33 971 personnes dans le cluster Gawwada dont 27 477 monolingues) et croissance démographique projetée ; Ethnologue (gwd) et 101 Last Tribes",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 50000, "percentage": 100 }
+      ]
+    },
+    "sources": [
+      "Gawwada language – Wikipedia / Ale language, 2024 (https://en.wikipedia.org/wiki/Gawwada_language)",
+      "Gawwada people – 101 Last Tribes (https://www.101lasttribes.com/tribes/gawwada.html)",
+      "Gawwada, Ale in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11836)",
+      "ISO 639-3 gwd : Gawwada – CEDS / National Center for Education Statistics (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)",
+      "Gawwada (gwd) – WOLD / MPI-EVA (https://wold.clld.org/language/3)",
+      "Ethiopia Profile – Languages – Day Translations, 2024 (https://www.daytranslations.com/blog/guide/ethiopia/4/)",
+      "A Summary of the Cushite Peoples of Eastern Africa – Orville Jenkins (http://orvillejenkins.com/peoples/cushite.html)"
+    ]
+  }
+}

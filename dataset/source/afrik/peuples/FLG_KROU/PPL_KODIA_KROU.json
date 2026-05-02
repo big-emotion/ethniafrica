@@ -1,0 +1,79 @@
+{
+  "id": "PPL_KODIA_KROU",
+  "nameMain": "Kodia Krou",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Kodia Krou",
+      "selfAppellation": "Kodia (endonyme propre du groupe ; parfois orthographie Kwadia dans certaines sources anglophones)",
+      "exonyms": [
+        "Kwadia (variante orthographique utilisee dans les sources anglophones et Joshua Project)",
+        "Kodia Krou (denomination composee precisisant l'appartenance au grand ensemble krou)"
+      ],
+      "originOfExonyms": "Le nom Kodia est l'appellation propre du groupe. La variante Kwadia est une transcription phonetique anglophone. L'ajout de Krou precise l'appartenance ethnolinguistique du groupe au sein de la grande famille kru d'Afrique de l'Ouest, souvent necessaire pour le distinguer dans les classifications administratives et linguistiques.",
+      "whyProblematic": "Les Kodia sont souvent assimiles aux peuples voisins plus importants numeriquement (Bakwe, Bete, Godie), ce qui efface leur specificite ethnique et linguistique. Ils ne figurent pas sur certaines listes officielles des 68 ethnies de Cote d'Ivoire, ce qui les rend administrativement invisibles.",
+      "contemporaryUsage": "Kodia ou Kwadia est utilise dans les contextes academiques et linguistiques. La designation Kodia Krou prevaut dans les classifications ethnolinguistiques. La langue kodia (ISO 639-3 : kwp) est repertoriee par l'Ethnologue comme langue en danger.",
+      "linguisticFamily": "FLG_KROU",
+      "ethnoLinguisticGroup": "Kru",
+      "historicalRegion": "Region du Gboklé, sud-ouest de la Cote d'Ivoire",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": ["Kodia (sous-groupe kru du sud-ouest ivoirien)"],
+    "origins": {
+      "ancientOrigins": "Les Kodia font partie de l'ensemble krou d'Afrique de l'Ouest, qui s'est installe dans la zone forestiere ivoiro-liberienne entre le XIIIe et le XVe siecle, probablement en migrant depuis les vallees sud des montagnes guineennes. Comme les autres sous-groupes krou, ils semblent avoir une origine clanique commune et partager un fond linguistique kru avec leurs voisins Bakwe, Bete, Godie et Dida.",
+      "formationPeriod": "Constitution comme groupe distinct entre le XIVe et le XVIe siecle, lors de la diversification des groupes kru dans l'espace forestier du sud-ouest ivoirien. La region du Gboklé constitue leur espace historique de sedentarisation.",
+      "migrationRoutes": [
+        "Migration depuis les zones interieures (nord-est) vers le sud-ouest ivoirien par les couloirs forestiers",
+        "Etablissement dans la region du Gboklé, entre les Bakwe a l'ouest, les Bete au nord et les Godie a l'est"
+      ],
+      "historicalSettlementZones": [
+        "Region du Gboklé (sud-ouest de la Cote d'Ivoire)",
+        "Capitale traditionnelle : Medon",
+        "Zone frontaliere avec les Bakwe (ouest), Bete (nord) et Godie (est)"
+      ],
+      "unificationsOrDivisions": "Les Kodia forment un groupe distinct mais peu nombreux, partageant des traits culturels et linguistiques avec les peuples kru voisins. Ils n'ont pas constitue de confederation politique mais maintiennent une identite propre autour de la langue kodia et de leur territoire ancestral.",
+      "externalInfluences": "Pression des groupes voisins plus importants (Bete, Bakwe, Godie) conduisant a une absorption progressive des Kodia dans les ensembles ethniques regionaux. Contact avec la colonisation française et les missions chretiennes au XXe siecle. Expansion de l'economie de plantation (cacao, cafe) ayant modifie les modes de vie traditionnels.",
+      "majorHistoricalEvents": "XIVe-XVIe siecles : etablissement dans la region du Gboklé avec les autres groupes kru. Periode coloniale française (a partir de 1893) : integration forcee dans l'administration territoriale. XXe siecle : declin demographique et erosion linguistique avec l'adoption du français et des langues voisines. Absence des listes officielles des 68 ethnies de Cote d'Ivoire, alimentant un sentiment de marginalisation identitaire."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation segmentaire par villages, sans chefferie centralisee. Decisions par conseil de notables et d'anciens. Systeme typique des groupes kru decentralises, ou chaque village constitue une unite politique autonome.",
+      "clanOrganization": "Organisation par lignages patrilineaires defines par leur village fondateur et leurs droits sur les terres ancestrales. Les clans Kodia maintiennent des relations d'alliance et d'echange avec les groupes voisins (Bakwe, Godie).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent l'appartenance communautaire, l'acces a la terre et la succession des fonctions villageoises. La genealogie du lignage fondateur legitime la propriete symbolique du territoire.",
+      "religiousAuthority": "Animisme traditionnel avec culte des ancetres, predominant avant la colonisation. Christianisme majoritaire aujourd'hui (80 % des Kwadia se declarent chretiens selon Joshua Project 2025). Pratiques syncrétiques maintenues dans certains villages."
+    },
+    "languages": {
+      "mainLanguage": "Kodia (langue kru, code ISO 639-3 : kwp)",
+      "isoCodes": ["kwp"],
+      "dialects": [],
+      "vehicularRole": "La langue kodia est en danger selon l'Ethnologue : tous les adultes la parlent encore comme premiere langue, mais la transmission aux jeunes generations n'est plus assuree. Le français est la langue officielle et d'enseignement. Le bete et le dioula servent de langues vehiculaires dans la region. Le kodia n'est pas enseigne a l'ecole et ne dispose pas encore de Bible traduite (traduction en cours selon Joshua Project)."
+    },
+    "culture": {
+      "majorRites": "Rites agricoles lies au cycle de la foret et aux premieres recoltes. Ceremonies funeraires avec rassemblement du lignage et libations aux ancetres. Initiations masculines et feminines communes aux traditions kru du sud-ouest ivoirien. Pratiques animistes (chasses rituelles, consultations des ancetres) encore presentes dans les villages.",
+      "symbols": "La foret du Gboklé constitue le cadre symbolique central de l'identite kodia, source de vie, de ressources et de memoire ancestrale. La figure du guerrier ancetre protecteur est un element recurrent de la tradition orale.",
+      "artsAndMusic": "Musiques de percussions et chants collectifs lors des ceremonies communautaires. Traditions de conte oral transmettant l'histoire du groupe. Artisanat local (vannerie, travail du bois). Partage de la tradition des masques kru avec les groupes voisins, bien que la specificite kodia reste peu documentee.",
+      "spiritualities": "Animisme traditionnel base sur le culte des ancetres et la croyance en forces naturelles tutelaires. Les Kodia, comme les autres Krou, etaient a l'origine paiens et ont progressivement adopte le christianisme sous l'influence des missions coloniales. Syncrétisme frequent entre pratiques chretiennes et cultes ancestraux."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume ni de chefferie centralisee. Les Kodia s'organisent en chefferies villageoises autonomes, conformement au modele kru decentralise. Medon est leur capitale traditionnelle.",
+      "relationsWithNeighbors": "Voisins des Bakwe a l'ouest, des Bete au nord et des Godie a l'est. Relations de coexistence, d'echange matrimonial et de commerce avec ces groupes, mais aussi de concurrence fonciere. Leur faible nombre les rend vulnerables a l'absorption culturelle et linguistique par les groupes voisins plus importants.",
+      "conflictsOrAlliances": "Participation probable aux resistances kru contre la penetration coloniale française au debut du XXe siecle. Absence de conflits armes specifiquement documentes. Marginalisation administrative contemporaine constituant une forme de pression indirecte sur l'identite du groupe.",
+      "diaspora": "Presence limitee en milieu urbain du sud-ouest ivoirien (San Pedro, Soubre). Migrations vers Abidjan liees a la recherche d'emploi et a la scolarisation. La communaute reste principalement rurale dans la region du Gboklé."
+    },
+    "demography": {
+      "totalPopulation": 2000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : Kwadia en Cote d'Ivoire, 1 800 personnes. Ethnologue : moins de 10 000 locuteurs (kwp). Estimation 2025 tenant compte de la croissance demographique ivoirienne.",
+      "distributionByCountry": [{ "country": "CIV", "population": 2000 }]
+    },
+    "sources": [
+      "Ethnologue – Kodia Language (KWP) (https://www.ethnologue.com/language/kwp/)",
+      "Joshua Project – Cote d'Ivoire people groups, Kwadia (https://joshuaproject.net/countries/iv)",
+      "Wikipedia – Krou (peuple) (https://fr.wikipedia.org/wiki/Krou_(peuple))",
+      "Landinfo – Report Cote d'Ivoire: Ethnicity, Ivoirité and Conflict (https://www.landinfo.no/asset/514/1/514_1.pdf)",
+      "Facebook – Ethnies de CI : peuple Kodia (https://www.facebook.com/ethniesdeCI/posts/3360851760603000/)",
+      "Demographics of Ivory Coast – Wikipedia (https://en.wikipedia.org/wiki/Demographics_of_Ivory_Coast)"
+    ]
+  }
+}

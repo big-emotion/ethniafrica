@@ -1,0 +1,100 @@
+{
+  "id": "PPL_ARINGA",
+  "nameMain": "Aringa",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["UGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Aringa",
+      "selfAppellation": "Aringa",
+      "exonyms": ["Aringa"],
+      "originOfExonyms": "Le terme Aringa est a la fois l'endonym et l'exonyme. Il designe le peuple et leur region (Aringa County, Yumbe District). Le nom est utilise sans variation significative dans les sources coloniales britanniques et les recensements ougandais modernes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Aringa est d'usage courant en Ouganda pour designer ce groupe soudanique central du district de Yumbe dans le West Nile. Le terme apparait dans les recensements officiels ougandais, notamment celui de 2014.",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Soudanique central (branche Moru-Madi-Lugbara)",
+      "historicalRegion": "West Nile sub-region, nord-ouest de l'Ouganda (Aringa County, Yumbe District)",
+      "currentCountries": ["UGA"]
+    },
+    "ethnicities": [
+      "Aringa-Ole'ba (grande confederation historique du pays aringa, la plus documentee)",
+      "Aringa du nord (proches de la frontiere avec le Soudan du Sud)",
+      "Aringa du sud (vers le district d'Arua)",
+      "Aringa de la plaine (zones agricoles de Yumbe)",
+      "Groupes d'origine Bari absorbes historiquement par les Aringa selon la tradition orale lugbara"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Aringa sont consideres comme les habitants autochtones de leurs terres dans le West Nile, au nord-ouest de l'Ouganda. Selon la tradition orale lugbara, la majorite des habitants du pays aringa avant la consolidation ethnique etaient d'origine Bari. Les Aringa font partie de la grande famille soudanique centrale, etroitement apparentes aux Lugbara et aux Ma'di voisins. Leur region a ete ulterieurement colonisee par des populations connues sous le nom de Nubiens (soldats de l'ancienne armee egyptienne et soudanaise) a partir du 19e siecle.",
+      "formationPeriod": "L'identite aringa distincte s'est consolidee au cours du second millenaire, dans le cadre des migrations et reorganisations des peuples soudaniques centraux du West Nile. Les Lugbara, Aringa et Ma'di partagent une origine commune et se sont differencies progressivement par region et par organisation clanique.",
+      "migrationRoutes": [
+        "Origines dans la zone de convergence soudan-ougandaise du West Nile",
+        "Mouvements de refugies vers le Soudan du Sud lors des persecutions post-Amin (1979-1987)",
+        "Retour progressif dans le district de Yumbe a partir de la fin des annees 1980"
+      ],
+      "historicalSettlementZones": [
+        "Yumbe District (Aringa County), nord-ouest de l'Ouganda, zone centrale historique",
+        "West Nile sub-region (districts d'Arua et Moyo en peripherie)",
+        "Camps de refugies en Soudan du Sud (1979-1987)"
+      ],
+      "unificationsOrDivisions": "Les Aringa sont historiquement organises en groupes territoriaux distincts partageant une identite culturelle et linguistique commune. La confederation Aringa-Ole'ba constitue le noyau identitaire principal. Les crises politiques liees au regime Amin (1970s) et leurs consequences (1979-1987) ont provoque une dispersion massive suivie d'un retour progressif.",
+      "externalInfluences": "Influence de l'islam, arrive dans la region via les reseaux commerciaux et les populations nubiano-soudanaises au 19e siecle. Colonisation britannique (Uganda Protectorate) a partir de 1894. Influence nilotique des Kakwa voisins. Persecutions post-Amin par l'UNLA (Uganda National Liberation Army) et les forces tanzaniennes en 1979-1980.",
+      "majorHistoricalEvents": "Dans les annees 1970, les Aringa furent associes, avec les Kakwa voisins, aux actions du regime d'Idi Amin — Mustafa Adrisi, un Aringa, fut vice-president d'Amin. Apres la chute d'Amin en 1979, l'Aringa County fut presque entierement depeupled par les represailles de l'UNLA et des forces tanzaniennes. En 1980, environ 500 000 civils du West Nile incluant les Aringa fuyirent vers le Soudan. En 1987, les camps de refugies sudanais furent attaques par la SPLA, forcant le retour en Ouganda. La stabilisation eut lieu apres l'avenement de l'Armee de resistance nationale (NRA) en 1986-1987."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies territoriales (rwodi) et en conseils d'anciens. Le systeme politique traditionnel est base sur le consensus entre anciens de clans et de lignages. En cas de crise ou de guerre, des chefs de guerre etaient designes temporairement, leurs pouvoirs etant restitues apres le retour de la paix. Les decisions communautaires sont prises collectivement.",
+      "clanOrganization": "Structure clanique patrilineaire. Les Aringa sont organises en clans (groupes de descendance agnative) qui constituent l'unite de base de l'organisation sociale. L'appartenance clanique determine les alliances matrimoniales, les droits fonciers et les obligations de solidarite.",
+      "ageClassSystems": "Des classes d'age existent, notamment pour les jeunes guerriers, en lien avec les pratiques d'initiation et les responsabilites communautaires selon l'age.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite sociale, les droits sur la terre et les alliances politiques entre familles. Le lignage constitue le groupe de reference pour les affaires matrimoniales, juridiques et coutumières.",
+      "religiousAuthority": "La majorite des Aringa etant musulmane, l'autorite religieuse est exercee par les imams et les chefs islamiques locaux. Des croyances traditionnelles en les esprits ancestraux coexistent avec l'islam, les deux systemes se completant dans la vie quotidienne."
+    },
+    "languages": {
+      "mainLanguage": "Aringa (aussi appele Lu'Aringa ou Aringa-Lugbara)",
+      "isoCodes": ["luc"],
+      "dialects": [
+        "Andre (dialecte du nord-est)",
+        "Kuluba (dialecte central)",
+        "Lebati (dialecte meridional)"
+      ],
+      "vehicularRole": "L'aringa (ISO 639-3 : luc) est etroitement apparente au lugbara (lgg) et au ma'di, appartenant tous au sous-groupe Moru-Madi des langues soudaniques centrales. Il est la langue maternelle des Aringa de Yumbe District. Le lugbara est utilise comme langue de communication inter-ethnique dans la sous-region du West Nile, et l'anglais comme langue officielle en Ouganda."
+    },
+    "culture": {
+      "majorRites": "Les rites de passage islamiques structurent la vie sociale aringa : la circoncision masculine (khitan) est le principal rite d'entree dans l'age adulte masculin. Les mariages sont celebres selon les rites islamiques (nikah) associes a des festivites communautaires traditionnelles. Les funerailles suivent le protocole islamique (inhumation rapide, prieres collectives). Les ceremonies agricoles marquant les semailles et les recoltes persistent dans les pratiques villageoises, souvent en syncrétisme avec les invocations islamiques.",
+      "symbols": "Les symboles agricoles (la houe, les instruments aratoires) representent l'identite rurale et l'économie de subsistance. Les symboles islamiques (croissant, tapis de priere) sont presents dans les foyers. Le leopard est cite dans certaines traditions orales comme symbole de puissance.",
+      "artsAndMusic": "La musique traditionnelle aringa inclut des tambours (ngoma) utilises lors des celebrations communautaires, des danses collectives lors des mariages et des ceremonies. La poesie orale et les chants epiques preservent la memoire historique. L'artisanat comprend la poterie feminine, le tissage de nattes et de paniers, et la fabrication d'outils agricoles. La tradition orale (contes, genealogies, proverbes) joue un role central dans la transmission culturelle.",
+      "spiritualities": "La majorite des Aringa pratique l'islam sunnite, introduit dans la region via les contacts avec les populations nubiano-soudanaises au 19e siecle. Bien qu'officiellement musulmans, les Aringa maintiennent des croyances en la puissance des esprits ancestraux (ancestral spirits) qui s'integrent aux pratiques islamiques. Certaines pratiques de divination et de protection spirituelle persistent dans un cadre syncrétique."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Aringa n'ont pas developpe de structure royale centralisee. Leur organisation politique traditionnelle repose sur des chefferies territoriales et des conseils d'anciens. Le modele politique est comparable a celui des Lugbara voisins — une organisation segmentaire sans pouvoir royal hereditaire centralise, avec des chefs de guerre temporaires en cas de conflit.",
+      "relationsWithNeighbors": "Les Aringa sont etroitement lies aux Lugbara (peuple apparente linguistiquement et culturellement) et aux Ma'di. Les relations avec les Kakwa voisins ont ete complexifiees par les evenements du regime Amin. Des relations commerciales et matrimoniales existent avec les Alur, Teso et autres peuples du West Nile. Les Nubiens (anciens soldats de l'armee soudanaise et egyptienne installes dans la region) ont eu une influence culturelle et religieuse (islamisation).",
+      "conflictsOrAlliances": "Les Aringa subirent des persecutions severes apres la chute d'Amin en 1979, considerees collectivement comme des partisans de l'ancien regime. L'Uganda National Rescue Front (UNRF), compose majoritairement d'Aringa, mena des incursions depuis le Soudan du Sud contre l'UNLA dans les annees 1980. Les massacres et destructions dans les districts d'Arua et de Moyo forcerent la fuite de quelque 500 000 civils du West Nile vers le Soudan. La stabilisation progressive intervint apres 1986 avec l'avenement du gouvernement NRM de Museveni.",
+      "diaspora": "Suite aux violences de 1979-1987, une diaspora aringa s'est formee dans les grandes villes ougandaises (Kampala, Arua), dans les camps de refugies du Soudan du Sud et dans des pays occidentaux. Des communautes aringa sont presentes en Suede et au Royaume-Uni dans la diaspora africaine ougandaise. Le retour progressif dans Yumbe District depuis la fin des annees 1980 a en grande partie reconstitue la population locale."
+    },
+    "demography": {
+      "totalPopulation": 550000,
+      "referenceYear": 2025,
+      "source": "Recensement national ougandais de 2014 (494 626 personnes), projection 2025 estimee sur la base d'un taux de croissance de ~3% par an (Uganda Bureau of Statistics). SIL Ethnologue (langue luc). Joshua Project (profil Aringa in Uganda).",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 545000,
+          "note": "Principalement dans le district de Yumbe (Aringa County), West Nile sub-region, nord-ouest de l'Ouganda"
+        },
+        {
+          "country": "SSD",
+          "population": 5000,
+          "note": "Petite communaute aringa dans le sud du Soudan du Sud, zone frontaliere avec l'Ouganda"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Aringa people. https://en.wikipedia.org/wiki/Aringa_people",
+      "Wikipedia EN — Aringa language. https://en.wikipedia.org/wiki/Aringa_language",
+      "SIL Ethnologue — Aringa language (luc). https://www.ethnologue.com/language/luc/",
+      "Joshua Project — Aringa in Uganda. https://joshuaproject.net/people_groups/19162",
+      "JSTOR — The Lugbara States (reference to Aringa-Ole'ba and Bari origins). https://www.jstor.org/stable/24328592",
+      "Uganda Bureau of Statistics — National Population and Housing Census 2014. https://www.ubos.org/",
+      "101 Last Tribes — Aringa. http://www.101lasttribes.com/tribes/aringa.html",
+      "CIA World Factbook — Uganda. https://www.cia.gov/the-world-factbook/countries/uganda/"
+    ]
+  }
+}

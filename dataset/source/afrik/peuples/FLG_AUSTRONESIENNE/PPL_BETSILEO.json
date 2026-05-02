@@ -1,0 +1,101 @@
+{
+  "id": "PPL_BETSILEO",
+  "nameMain": "Betsileo",
+  "languageFamilyId": "FLG_AUSTRONESIENNE",
+  "currentCountries": ["MDG"],
+  "content": {
+    "appellations": {
+      "mainName": "Betsileo",
+      "selfAppellation": "Betsileo",
+      "exonyms": [
+        "Les Nombreux Invincibles (traduction du nom Betsileo en français)"
+      ],
+      "originOfExonyms": "Le nom Betsileo est attribué à la suite de la résistance victorieuse du roi Besilau contre une invasion du royaume Sakalava-Menabe dans les années 1670. Le terme signifie littéralement les nombreux invincibles ou les nombreux qui ne peuvent être vaincus.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Terme accepté et revendiqué par le groupe lui-même comme ethnonyme officiel depuis le XIXe siècle, après leur incorporation dans l'Empire Merina.",
+      "linguisticFamily": "FLG_AUSTRONESIENNE",
+      "ethnoLinguisticGroup": "Malayo-polynésien — groupe central-oriental des plateaux malgaches (Betsileo-Fisakana)",
+      "historicalRegion": "Hautes terres centrales méridionales de Madagascar — région de Fianarantsoa, du plateau d'Amoron'i Mania à l'Andringitra, entre la rivière Mania au nord et le massif de l'Andringitra au sud",
+      "currentCountries": ["MDG"]
+    },
+    "ethnicities": [
+      "Betsileo du Nord (Fisakana) — entre les rivières Ivato-Manandona au nord et Sahanivotry-Mania au sud",
+      "Betsileo Central (Manandriana) — entre les rivières Ivato et Matsiatra",
+      "Betsileo du Sud — territoire au sud de la Matsiatra : Isandra, Lalangina, Iarindrano, Andringitra",
+      "Lalangina — confédération orientale historiquement puissante",
+      "Isandra — confédération occidentale, bastion de résistance sakalava",
+      "Fandriana — royaume indépendant de la zone septentrionale",
+      "Manandriana — subdivision centrale avec traditions royales propres",
+      "Andriana (nobles) — classe supérieure héréditaire",
+      "Hova (hommes libres) — classe intermédiaire des hommes libres",
+      "Andevo (esclaves libérés) — descendants d'esclaves, encore stigmatisés socialement"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Betsileo descendent du peuplement austronésien de Madagascar, initié entre le Ve et le VIIe siècle ap. J.-C. par des migrants venus du sud de Bornéo (Ma'anyan-Banjar), ayant fusionné avec des populations bantoues d'Afrique orientale. Le groupe proto-malgache central-oriental — ancêtre commun des Betsileo, Merina, Bezanozano et Sihanaka — s'est différencié des autres sous-groupes après les premières vagues d'installation. Les Betsileo ont développé une civilisation rizicole sophistiquée sur les hauts plateaux méridionaux.",
+      "formationPeriod": "Les royaumes betsileo indépendants sont attestés dès le XVIIe siècle avec des traditions orales remontant à cette période. Leur identité collective s'est cristallisée après la conquête par Radama I au début du XIXe siècle : c'est à partir de 1830 environ que la dénomination Betsileo s'est appliquée à l'ensemble du groupe, devenu la sixième province de l'Empire Merina.",
+      "migrationRoutes": [
+        "Migration austronésienne depuis le sud de Bornéo via les côtes est-africaines vers Madagascar (Ve-VIIe siècle)",
+        "Différenciation du proto-malgache central-oriental vers les plateaux du sud (Xe-XIVe siècle)",
+        "Migrations betsileo vers le nord de Madagascar suite à la pression démographique (XIXe-XXe siècle)"
+      ],
+      "historicalSettlementZones": [
+        "Plateau de Fianarantsoa et ses environs (capitale historique et administrative)",
+        "Bassin de la rivière Matsiatra et ses affluents",
+        "Régions d'Amoron'i Mania (nord) et Matsiatra Ambony (centre)",
+        "Massif de l'Andringitra (sud), zone pastorale et agricole",
+        "Vallée d'Ambalavao — grand marché aux zébus"
+      ],
+      "unificationsOrDivisions": "Les royaumes betsileo (Fandriana, Fisakana, Manandriana, Isandra, Lalangina, Iarindrano) ont longtemps fonctionné de manière indépendante avant d'être conquis par Radama I et réorganisés en province Betsileo de l'Empire Merina (vers 1830). Fianarantsoa devient la capitale administrative du Betsileo central et méridional, Antsirabe étant rattachée au nord.",
+      "externalInfluences": "Contacts avec le royaume Sakalava-Menabe à l'ouest (conflits et échanges aux XVIIe-XVIIIe siècles). Conquête et domination merina au XIXe siècle, imposant la langue et les structures administratives merina. Colonisation française (1896-1960) : développement de l'éducation (missions protestantes LMS et catholiques), agriculture commerciale. Christianisation massive dès le XIXe siècle — environ 94% de chrétiens aujourd'hui.",
+      "majorHistoricalEvents": "Résistance victorieuse contre Sakalava-Menabe sous le roi Besilau (vers 1670). Conquête par Radama I et intégration à l'Empire Merina (vers 1830). Esclavage massif d'une partie de la population. Administration coloniale française (1896-1960). Indépendance de Madagascar en 1960. Mouvements migratoires betsileo vers le nord de Madagascar au XXe siècle."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en royaumes (fanjakana) dirigés par des mpanjaka (chefs, rois ou reines). La structure politique traditionnelle reposait sur l'autorité des ancêtres fondateurs et des lignages nobles (andriana). Après la conquête merina, les administrateurs locaux betsileo ont été remplacés par des fonctionnaires merina. Le fokonolona (assemblée villageoise) demeure la cellule de base de la gouvernance locale contemporaine.",
+      "clanOrganization": "Structure clanique complexe à base patrilinéaire. Les clans (karazana) se réclament d'ancêtres communs et maintiennent des droits lignagers sur la terre et les zébus. L'identité clanière détermine les obligations professionnelles : la plupart des Betsileo sont tenus d'exercer la profession familiale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires structurent profondément la société betsileo : droits fonciers, alliances matrimoniales, statut social, obligations rituelles envers les ancêtres (razana) sont tous déterminés par l'appartenance lignagère. Les anciens (Ray amandreny) exercent une autorité morale supérieure à celle des agents de l'État. La force vitale hasina — essence sacrée circulant des ancêtres vers les vivants — légitime l'autorité traditionnelle.",
+      "religiousAuthority": "Rôle persistant des devins (mpisikidy), astrologues (mpanandro) et ombiasy (sages-guérisseurs) pour la divination, la guérison et la fixation des dates rituelles. Le syncrétisme entre christianisme (protestant et catholique, environ 94% de chrétiens) et croyances traditionnelles est profond : les cérémonies chrétiennes coexistent avec le famadihana et les rituels aux ancêtres."
+    },
+    "languages": {
+      "mainLanguage": "Dialecte betsileo du malgache (variété des plateaux centraux méridionaux)",
+      "isoCodes": ["plt", "mlg"],
+      "dialects": [
+        "Betsileo septentrional (Fisakana) — très proche du merina, parlé dans la zone Ivato-Manandona",
+        "Betsileo central (Manandriana) — dialecte intermédiaire entre nord et sud betsileo",
+        "Betsileo méridional (Isandra, Lalangina, Andringitra) — variété la plus distincte",
+        "Malgache standard (merina-plt) — utilisé à l'école, dans l'administration, à l'église",
+        "Français — langue d'enseignement supérieur et de l'administration nationale"
+      ],
+      "vehicularRole": "Le dialecte betsileo (classé sous le code plt — Plateau Malagasy, Glottolog bets1235) est la langue maternelle d'environ 2 millions de locuteurs sur les hauts plateaux méridionaux. Le malgache standard (merina) assure l'intercompréhension nationale. Le betsileo septentrional est si proche du merina qu'il est parfois considéré comme une variante. Le français est utilisé dans l'enseignement supérieur et les actes officiels."
+    },
+    "culture": {
+      "majorRites": "Famadihana (retournement des ancêtres, fasim-bady) : la cérémonie la plus emblématique du peuple betsileo — les restes des ancêtres sont exhumés, enveloppés dans de nouveaux linceuls de soie (lambamena) et portés en procession au son de la musique. Célébration communautaire réunissant famille et voisins, généralement tous les sept ans. Sambatra (circoncision collective) : rite de passage masculin accompagné de sacrifices de zébus et de festivités. Rites agricoles liés aux cycles du riz (bénédiction des semailles, fête de la récolte). Sacrifice de zébus pour honorer les ancêtres lors de funérailles, mariages ou vœux importants. Veillées funèbres (andro firavoravoan-drazana) avec narration des généalogies et des exploits ancestraux.",
+      "symbols": "Les rizières en terrasses sont le symbole identitaire le plus fort des Betsileo — leur maîtrise de l'irrigation et des terrasses (très comparables à celles de l'Asie du Sud-Est) est reconnue dans tout Madagascar. Le zébu symbolise la richesse et le prestige social : la taille du troupeau et de la rizière familiale indique le statut. Le hasina (force vitale sacrée) est la valeur spirituelle centrale. Les tombeaux familiaux (fasana) en pierre, souvent plus imposants que les maisons des vivants, sont des marqueurs identitaires essentiels.",
+      "artsAndMusic": "Sculpture sur bois : les Betsileo sont réputés pour leurs grandes sculptures en bois (aloalo — poteaux funéraires sculptés), décoration de tombeaux et de maisons. Tissage : lamba (tissu national malgache) et lambamena (tissu de soie rouge pour les cérémonies funéraires). Architecture traditionnelle : maisons rectangulaires en bois de nobles, en fibres végétales pour les autres, avec décoration de cornes de zébus. Musique : valiha (cithare en bambou), sodina (flûte en bambou), amponga (tambour), marovany (cithare à caisse). Poésie orale (hainteny) et kabary (art oratoire). Moraingy (art martial traditionnel) pratiqué lors des fêtes.",
+      "spiritualities": "Syncrétisme profond entre christianisme et religion traditionnelle : environ 94% des Betsileo sont chrétiens (protestants FJKM et FLM, catholiques) mais maintiennent les pratiques ancestrales. Croyance en Zanahary ou Andriamanitra — divinité créatrice, invoquée lors des cérémonies. Culte des ancêtres (razana) : les ancêtres défunts intercèdent pour les vivants et peuvent causer des malheurs s'ils sont négligés. Croyance en des esprits de la nature (esprits des rivières, des forêts), des fantômes (angatra) et des sorciers. Les fady (tabous) ancestraux régissent de nombreux aspects de la vie quotidienne. Consultation des mpisikidy et mpanandro pour les décisions importantes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les royaumes betsileo (Fandriana, Fisakana, Manandriana, Isandra, Lalangina, Iarindrano, Andringitra) se sont développés indépendamment à partir du XVIIe siècle. Isandra et Lalangina étaient les plus puissants. Tous ont été conquis et intégrés à l'Empire Merina sous Radama I (vers 1830), formant la sixième province merina avec Fianarantsoa pour capitale.",
+      "relationsWithNeighbors": "Conflits historiques avec le royaume Sakalava-Menabe à l'ouest (résistance victorieuse sous le roi Besilau vers 1670). Relations commerciales avec les Tanala de la forêt orientale. Affinités culturelles et commerciales avec les Merina des hautes terres septentrionales. Échanges avec les Bara du sud pour le commerce du bétail (grand marché d'Ambalavao). Relations avec les Antemoro de la côte est-orientale (tradition orale commune revendiquée).",
+      "conflictsOrAlliances": "Résistance armée contre les Sakalava-Menabe (XVIIe siècle). Conquête par Radama I et imposition du fanampoana (travail non rémunéré en lieu de taxes) au XIXe siècle. Esclavage de masse — les Betsileo ont été une source importante d'esclaves domestiques et vendus aux négriers européens. Résistance à la colonisation française (1896). Participation à la vie politique nationale après l'indépendance en 1960.",
+      "diaspora": "Migration betsileo vers les zones urbaines de Madagascar (Antananarivo, Tamatave, Mahajanga) et vers le nord de l'île (jusqu'à Antsiranana) à partir du XIXe siècle. La population à forte croissance démographique (plus de 3% par an dans les années 1990) a poussé à des migrations internes importantes. Présence dans la diaspora malgache internationale (France, Réunion, Canada, États-Unis), bien que moins visible que la diaspora merina."
+    },
+    "demography": {
+      "totalPopulation": 2100000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur Ethnologue (SIL International, 2024 — environ 1,5 million de locuteurs du dialecte betsileo dans les années 1990, projetés à 2,1 millions en 2025 au taux de croissance historique), CIA World Factbook Madagascar, INSTAT Madagascar, Britannica (troisième groupe ethnique du pays). Britannica 2025 confirme leur statut de troisième groupe en importance.",
+      "distributionByCountry": [{ "country": "MDG", "population": 2100000 }]
+    },
+    "sources": [
+      "Wikipedia — Betsileo people, https://en.wikipedia.org/wiki/Betsileo_people (consulté 2025)",
+      "Britannica — Betsileo, https://www.britannica.com/topic/Betsileo (consulté 2025)",
+      "101 Last Tribes — Betsileo, https://www.101lasttribes.com/tribes/betsileo.html (consulté 2025)",
+      "Ethnologue — Plateau Malagasy (plt), https://www.ethnologue.com/language/plt/ (consulté 2025)",
+      "Wikipedia — Betsileo dialect, https://en.wikipedia.org/wiki/Betsileo_dialect (consulté 2025)",
+      "Joshua Project — Betsileo in Madagascar, https://joshuaproject.net/people_groups/10818 (consulté 2025)",
+      "LICCI — Betsileo people, Namoly Valley, https://www.licci.eu/wp-content/uploads/2024/01/betsileo-madagascar-leaflet.pdf (consulté 2025)",
+      "Kusuma, P. et al. Malagasy Genetic Ancestry. Molecular Biology and Evolution, 2016. https://pmc.ncbi.nlm.nih.gov/articles/PMC4989113/",
+      "CIA World Factbook — Madagascar, https://www.cia.gov/the-world-factbook/countries/madagascar/ (consulté 2025)"
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "id": "PPL_TEMNE",
+  "nameMain": "Temne",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["SLE"],
+  "content": {
+    "appellations": {
+      "mainName": "Temne",
+      "selfAppellation": "Atemne",
+      "exonyms": [
+        "Themne",
+        "Timne",
+        "Timmannee",
+        "Timni",
+        "Temené",
+        "Temen",
+        "Thimni"
+      ],
+      "originOfExonyms": "Le terme Temne (aussi orthographié Themne, Timne, Timmannee) est utilisé aussi bien comme endonyme que comme exonyme depuis les premières mentions écrites par les Portugais au 15e siècle. Selon la tradition orale, Temne signifie l'homme d'âge ou le vieux lui-même, soulignant l'idée que la nation existera toujours. Les variantes orthographiques reflètent les transcriptions successives par le portugais, l'anglais et le français.",
+      "whyProblematic": "La distinction entre endonyme et exonyme est ténue : le terme Atemne (avec le préfixe de classe nominale) est la forme endonyme stricte, tandis que Temne est la forme internationale courante. L'ethnonyme est politiquement sensible car il est associé au parti APC (All People's Congress) dans la polarisation politique Sierra-Léonaise entre Temne du nord et Mende du sud.",
+      "contemporaryUsage": "Le terme Temne est universellement utilisé en anglais et en krio (lingua franca de Sierra Leone). Les Temne constituent le premier groupe ethnique du pays avec environ 35,5 % de la population nationale. Le groupe concentre sa force politique dans le nord du pays et la région de Freetown.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Branche Mel (Atlantique sud) de la famille Niger-Congo",
+      "historicalRegion": "Province du Nord de Sierra Leone (Kambia, Port Loko, Tonkolili, Bombali) et banlieue de Freetown; région historique de la Guinée (Futa Jallon)",
+      "currentCountries": ["SLE"]
+    },
+    "ethnicities": [
+      "Yoni Temne : sous-groupe qui accepta la domination du Fula Mansa au sud du fleuve Rokel; locuteurs du dialecte Yoni",
+      "Mabanta Temne : sous-groupe ayant fui vers Banta près de la rivière Jong pour échapper au Fula Mansa",
+      "Temne de Koya : du royaume historique de Koya (sur le fleuve Sierra Leone), alliés précoces des Européens",
+      "Temne de Marampa : chiefdom de Marampa, chef Bai Koblo",
+      "Temne du Nord-Ouest (Kambia) : locuteurs du dialecte de Kambia, frontaliers avec la Guinée",
+      "Temne du Centre (Tonkolili, Bombali) : zone de syncrétisme islamique et de traditions Poro/Ragbenle"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Temne sont un peuple autochtone de l'Afrique de l'Ouest appartenant au groupe linguistique Mel (branche atlantique sud du Niger-Congo). Selon la tradition orale et l'historien Bankole Taylor, leur migration vers la Sierra Leone actuelle remonte aux 11e-12e siècles, déclenchée par la chute de l'empire Jallonkadu dans le Futa Jallon (actuelle Guinée). Ils peuplaient à l'origine les hauts plateaux du Fouta Djallon avant d'être progressivement refoulés vers le sud-ouest.",
+      "formationPeriod": "L'identité Temne distincte s'est consolidée entre le 14e et le 16e siècle lors des migrations successives vers la Sierra Leone actuelle. Au milieu du 16e siècle, l'armée mandé (Mané/Mani) conquit les terres Temne et le général Farma Tami établit sa capitale à Robaga, près du fleuve Sierra Leone (actuelle Freetown), qui devint un centre sacré et économique. Cette période fusionna des éléments mandés dans la culture Temne. La résistance à la taxe sur la case (Hut Tax War) de 1898, menée par le chef Bai Bureh, fortifia le sentiment identitaire temne.",
+      "migrationRoutes": [
+        "Depuis le Futa Jallon (Guinée actuelle) vers le nord-ouest de la Sierra Leone, fuite des jihads Fula aux 11e-15e siècles",
+        "Migration au sud du fleuve Rokel : formation du groupe Yoni Temne (sous la domination Fula Mansa)",
+        "Migration vers Banta (rivière Jong) : formation du groupe Mabanta Temne",
+        "Dispersion vers Freetown et les zones côtières au 19e-20e siècle (urbanisation)"
+      ],
+      "historicalSettlementZones": [
+        "Province du Nord : districts de Kambia, Port Loko, Tonkolili, Bombali (zone de peuplement principal)",
+        "Province de l'Ouest (Freetown et banlieue) : forte présence temne",
+        "Vallée du fleuve Rokel et ses affluents",
+        "Zone côtière autour de la presqu'île de Sierra Leone",
+        "Guinée : petites communautés frontalières"
+      ],
+      "unificationsOrDivisions": "Les Temne n'ont jamais constitué un État centralisé : ils étaient organisés en une cinquantaine de chefferies (chiefdoms) indépendantes, chacune sous un chef titré o bai (chef suprême), assisté de sous-chefs (o kapr). La conquête mandé du 16e siècle imposa une organisation en quatre royaumes supra-locaux, mais les structures locales survécurent. L'époque coloniale britannique (à partir de 1896) restructura les chefferies en unités administratives avec des chefs à la solde du gouvernement. L'installation de la British Sierra Leone Colony (1808) divisa les Temne entre colonie côtière et protectorat intérieur.",
+      "externalInfluences": "Invasions mandé (Mané/Mani) au 16e siècle, apportant la société secrète Poro et de nouvelles structures politiques. Djihads fula aux 15e-18e siècles provoquant des migrations et des conversions à l'islam. Traite transatlantique des esclaves (17e-19e siècles) : Sierra Leone occupait un port naturel exceptionnel. Colonisation britannique (Sierra Leone Colony 1808, Protectorat 1896). Missionnaires chrétiens portuguais (17e siècle), puis protestants et catholiques. Influence du krio (créole) de Freetown.",
+      "majorHistoricalEvents": "1460s : premières mentions par les explorateurs portugais. 1594 : André Álvares de Almada décrit la société et la culture temne dans son guide sur la Sierra Leone. 1642 : caravane susu de 1 500 personnes tente d'islamiser les Temne. 1788 : le roi Naimbana signe le traité cédant la péninsule aux colons britanniques. 1792 : aide à la fondation de Freetown par les Afro-Américains libres (Black Nova Scotians). 1807-1888 : guerres du royaume de Koya contre les Loko, Mende et Susu. 1896 : Proclamation du Protectorat britannique. 1898 : Guerre de la taxe sur la case (Hut Tax War), dirigée par le chef Bai Bureh contre la domination coloniale britannique. 1961 : indépendance de la Sierra Leone."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Temne étaient traditionnellement organisés en une cinquantaine de chefferies (chiefdoms) indépendantes. Chaque chefferie est dirigée par un chef titré o bai (chef suprême ou paramount chief), assisté de quatre à six sous-chefs titrés (o kapr) et d'un sous-chef de transition (kapr me sem) qui assure l'intérim après le décès du chef. Dans les chefferies dites de société (society chiefdoms), le chef est considéré comme divin et possède un lien mystique avec la chefferie et la lignée des chefs précédents. Les chefs sont installés avec des cérémonies islamiques dans les chefferies du nord, et par les sociétés secrètes (Ramena, Ragbenle, Poro) dans d'autres chefferies.",
+      "clanOrganization": "Structure clanique patrilinéaire. La société est organisée en lignages patrilinéaires (families) et en clans exogames. Des castes d'artisans et de musiciens, endogames, existent dans certains clans, surtout dans le nord des territoires temne. Dans les zones historiquement esclavagistes, une hiérarchie sociale complexe distinguait nobles, hommes libres, serfs et descendants d'esclaves.",
+      "ageClassSystems": "Les sociétés secrètes Poro (hommes) et Bondo/Sande (femmes) organisent le passage à l'âge adulte et fonctionnent comme classes d'âge informelles. Le Ragbenle (à l'est du territoire) et le Ramena jouent un rôle équivalent. L'initiation marque l'entrée dans la vie adulte et dans les droits civiques (droit de vote en assemblée, accès à la terre).",
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'identité, l'héritage foncier et la succession aux titres de chef. Le chef d'une chefferie est issu du clan fondateur (lignage du chefdom). La tenure foncière est liée à l'histoire des clans : la terre appartient symboliquement au chef qui l'a achetée lors de son investiture (cérémonie Makane). Les femmes sélectionnées comme helper (mankapr) des chefs ont des fonctions rituelles et représentent le lien entre genres.",
+      "religiousAuthority": "Autorité duale : dans les chefferies du nord (islamiques), les chefs portent des titres arabes (alkali, alimamy, santigi) et les cérémonies sont islamiques. Dans les chefferies orientales, ce sont les sociétés secrètes Poro, Ragbenle ou Ramena qui président aux rites d'installation et aux funérailles. Les oulémas (enseignants coraniques) et les imams ont une autorité spirituelle dans les zones majoritairement musulmanes. Le culte des esprits ancestraux (ancêtres patrilinéaires) coexiste avec l'islam dans les zones de syncrétisme du centre et du sud-est."
+    },
+    "languages": {
+      "mainLanguage": "Temne (Atemne)",
+      "isoCodes": ["tem"],
+      "dialects": [
+        "Dialecte Yoni : parlé par les Yoni Temne, au sud du fleuve Rokel; décrit par Northcote Thomas (1916)",
+        "Dialecte du Nord-Ouest (Kambia) : parlé dans le district de Kambia frontalier avec la Guinée",
+        "Dialecte de Port Loko : variété intermédiaire au centre du territoire temne",
+        "Dialecte de Tonkolili : variété du centre-est du territoire"
+      ],
+      "vehicularRole": "Le temne est la langue maternelle d'environ 35,5 % de la population de Sierra Leone (soit environ 2,5 à 3 millions de locuteurs en 2025). Il est langue provinciale officielle dans la Province du Nord (3 districts) et dans certaines zones de la Province du Sud et de la Western Area, conformément au Local Government Act de 2004. Le krio (anglophone créole de Sierra Leone) et l'anglais sont les langues de communication nationale. Le temne appartient à la branche Mel du Niger-Congo, tonal avec un système de classes nominales."
+    },
+    "culture": {
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"La société secrète Poro (dans l'ouest) ou Ragbenle/Ramena (dans l'est) préside aux initiations masculines. Les jeunes garçons passent plusieurs semaines en brousse sous la supervision des anciens, apprenant les savoirs traditionnels, les lois coutumières et les responsabilités d'adulte. Cette période inclut des épreuves physiques et des enseignements secrets. La sortie de la forêt marque l'entrée dans la vie d'homme.\", \"femaleInitiation\": \"La société secrète Bondo (équivalent féminin du Poro) initie les jeunes filles à la vie adulte. Les cérémonies comprennent une période de réclusion, des enseignements sur les rôles féminins, la danse, et l'acquisition du statut de femme mariable. Le masque Bondo (Sowei), en bois sculpté à casque noir, est un symbole de la féminité idéale et de la fertilité.\"}, \"funeraryRites\": {\"burial\": \"Inhumation rapide, dans les 24 à 48 heures. Dans les zones islamiques, enterrement selon le rite musulman (ablution, linceul blanc, orientation vers La Mecque). Dans les zones traditionnelles, le défunt pouvait être enterré à l'intérieur de la maison familiale avec des offrandes (or, nourriture). Le chef Naimbana (18e siècle) fut ainsi enterré dans sa maison.\", \"postFuneraryCeremonies\": \"Cérémonies de deuil collectives (pleurs rituels, chants). Commémoration au 3e, 7e et 40e jour. Les sociétés secrètes (Poro, Bondo) ont leurs propres rites funèbres pour leurs membres.\"}, \"agriculturalRites\": {\"landBlessing\": \"Avant les semailles (riz, manioc), invocations aux esprits ancestraux et aux esprits de la terre pour assurer une bonne récolte. Offrandes de riz et de viande aux autels ancestraux.\"}, \"successionRites\": {\"chiefInstallation\": \"L'investiture d'un chef (o bai) implique du sang de chèvre et de la farine de riz (décrit par de Almada en 1594). Dans les chefferies islamiques, cérémonie islamique avec les titres alkali ou alimamy. Période d'interdits et de tabous imposés au chef.\"}}",
+      "symbols": "{\"masks\": {\"bondoMask\": \"Le masque Sowei de la société Bondo, sculpté en bois noir laqué représentant une femme idéale (front bombé, cou à plis gras symbolisant la prospérité, coiffure élaborée). Parmi les rares masques africains portés par des femmes. Symbole de fertilité, beauté et pouvoir féminin.\", \"sanko\": \"Le masquerade Sanko représente l'esprit de la chefferie (kärfi) et apparaît publiquement avec le chef lors des cérémonies, portant les mêmes insignes royaux et soumis aux mêmes tabous.\"}, \"chieflyInsignia\": \"Les chefs (o bai) portent des costumes cérémoniels distinctifs lors des rites d'investiture et des funérailles. Dans les chefferies islamiques, les insignes intègrent des éléments arabisés.\"}",
+      "artsAndMusic": "{\"sculpture\": \"Masques Bondo/Sowei : parmi les oeuvres les plus connues de la sculpture d'Afrique de l'Ouest, exportées par les Portugais dès le 16e siècle sous le nom de Afro-Portuguese ivories. Les Temne sculptent également des figures nomoli en stéatite (anciennement liées au culte des ancêtres ou à la fertilité). Poterie et vannerie traditionnelles.\", \"musicalInstruments\": \"Tambours (dundun, djembé local), flûtes en roseau, lithophones, hochets de calebasse. Les instruments accompagnent les danses de la société Poro lors des cérémonies d'initiation et les fêtes villageoises.\", \"dances\": \"Danses de mariage (décrites par de Almada en 1594 : danse avec retournement rapide du public). Danses cérémonielles des sociétés Poro et Bondo lors des initiations et fêtes annuelles. Danses de récolte communautaires.\", \"oralLiterature\": \"Tradition de contes mettant en scène l'araignée trickster (panis en temne), personnage commun aux traditions temne, vai, mende et limba. Recueil par Northcote Thomas en 1916 : 27 contes en temne avec traduction anglaise. Proverbes, épopées des chefs et devinettes.\", \"weaving\": \"Tissage de coton (tissus country cloth) pour les tenues cérémonielles et quotidiennes.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Kuru Masaba\", \"attributes\": \"Dieu unique et créateur (Kuru signifie vieillesse, ciel, ou demeure de Dieu; Masaba est emprunté au mandingue mansa ba, grand roi). Kuru Masaba est une divinité transcendante, accessible uniquement par l'intercession des esprits ancestraux patrilinéaires.\"}, \"intermediateDivinities\": [{\"name\": \"Esprits de la chefferie (kärfi)\", \"role\": \"Esprit territorial de la chefferie, incarné par un masquerade (Sanko). Il partage les insignes et tabous du chef vivant et représente le lien entre le monde des vivants et celui des ancêtres.\"}, {\"name\": \"Esprits non-ancestraux\", \"role\": \"Certains bienveillants, d'autres malveillants ou malicieux, tous recevant des sacrifices selon les circonstances.\"}], \"natureSpirits\": {\"earthSpirits\": \"Esprits des lieux naturels (grottes, rivières, grands arbres) auxquels des offrandes sont faites avant les cultures et la pêche.\"}, \"ancestors\": {\"roleOfAncestors\": \"Les esprits ancestraux patrilinéaires sont les intermédiaires obligatoires entre les vivants et Kuru Masaba. Offrandes et sacrifices leur sont adressés lors des semailles, des rites de passage et des crises. Dans les zones de syncrétisme islamique du sud-est, les esprits ancestraux sont réinterprétés comme transitant vers le paradis ou l'enfer islamique, et catégorisés en esprits musulmans (an-yina) ou non-islamiques (an-kerfi).\"}, \"islam\": {\"specificPractices\": \"Environ 80 % des Temne sont musulmans sunnites (école malékite). L'islamisation progressive depuis le 18e siècle a conduit à un syncrétisme persistant dans les zones centrales et méridionales. Les chefferies du nord (proches du Futa Jallon) sont entièrement islamiques. Certaines pratiques traditionnelles (sociétés secrètes, culte des ancêtres) coexistent avec l'islam.\"}, \"christianity\": {\"history\": \"Premières missions jésuites portugaises au 17e siècle. Le père Barreira convertit les premiers Temne en 1607. Résistance des élites au christianisme car il imposait la monogamie et condamnait la traite des esclaves. Progression du protestantisme au 19e-20e siècles.\"}}"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Temne n'ont pas formé de royaume centralisé, mais des confédérations de chefferies avec des organisations supra-locales ponctuelles. Le Royaume de Koya (sur le fleuve Sierra Leone, capitale Robaga) fut l'entité politique temne la plus puissante et la plus engagée dans les relations avec les Européens. Le chef Naimbana (mort en 1793) dirigea Koya et négocia avec les Britanniques le traité de 1788 cédant la péninsule. Ses successeurs (Naimbana II et d'autres) maintinrent des relations commerciales actives avec Freetown. Entre 1807 et 1888, Koya mena des guerres répétées contre les Loko, les Mende et les Susu.",
+      "relationsWithNeighbors": "Relations complexes et souvent conflictuelles avec les peuples voisins : les Temne refoulèrent les Limba vers le nord-est et les Bullom vers le sud lors de leur arrivée (avant 1400). Relations de commerce et de tension avec les Susu et les Yalunka (18e siècle). Alliance stratégique avec les Britanniques de Freetown (1788-1898), rompue par la Hut Tax War de 1898. Relations commerciales intenses avec les marchands mandé, fula et krio. Les Temne et les Mende constituent les deux principales forces politiques de Sierra Leone post-indépendance, dans une compétition structurante.",
+      "conflictsOrAlliances": "1642 : résistance à l'islamisation forcée par la caravane susu de Forécariah. Guerres du royaume de Koya (1807-1888) contre les Loko, Mende et Susu. 1898 : Hut Tax War, révolte armée contre la taxe sur la case britannique, coordonnée par le chef Bai Bureh. Cette guerre marqua la résistance la plus organisée des Temne à la domination coloniale. L'armée coloniale rétablit le contrôle, mais la résistance de Bai Bureh resta une figure nationale fondatrice. Après l'indépendance de Sierra Leone en 1961, les Temne s'alignent majoritairement sur le parti APC (All People's Congress), rival du SLPP (Sierra Leone People's Party) à dominante Mende.",
+      "diaspora": "Diaspora temne principalement dans les grandes villes de Sierra Leone (Freetown concentre une forte population temne). Émigration internationale vers la Grande-Bretagne (ancienne puissance coloniale), les États-Unis, la Gambie, la Guinée et d'autres pays d'Afrique de l'Ouest. Remittances importantes des Temne de la diaspora vers les familles rurales."
+    },
+    "demography": {
+      "totalPopulation": 3000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur : CIA World Factbook (Sierra Leone, 2024, Temne = 35.5 % de la population), UNFPA Sierra Leone (population totale SLE ~8,8 millions en 2025), Statistics Sierra Leone, SIL Ethnologue (code ISO tem). Population temne estimée à 3 millions en 2025 (35,5 % de 8,8 millions). Note : le recensement 2021 de Sierra Leone reste la dernière source nationale publiée avec ventilation ethnique.",
+      "distributionByCountry": [
+        {
+          "country": "SLE",
+          "population": 2950000,
+          "note": "Province du Nord (districts Kambia, Port Loko, Tonkolili, Bombali) et Western Area (Freetown)"
+        },
+        {
+          "country": "GIN",
+          "population": 50000,
+          "note": "Communautés frontalières dans le sud de la Guinée (région de Kindia et Forecariah)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Temne people. https://en.wikipedia.org/wiki/Temne_people",
+      "Wikipedia EN — Temne language. https://en.wikipedia.org/wiki/Temne_language",
+      "SIL Ethnologue — Themne (tem). https://www.ethnologue.com/language/tem/",
+      "Glottolog — Timne (timn1235). https://glottolog.org/resource/languoid/id/timn1235",
+      "Encyclopedia Britannica — Sierra Leone: Cultural life. https://www.britannica.com/place/Sierra-Leone/Cultural-life",
+      "CIA World Factbook — Sierra Leone. https://www.cia.gov/the-world-factbook/countries/sierra-leone/",
+      "UNFPA — Sierra Leone Population 2025. https://www.unfpa.org/data/world-population/SL",
+      "StudyGuides.com — Temne (Ethnic Group). https://studyguides.com/study-methods/overview/cmmkffek206uq01aaxxjk39hl",
+      "101 Last Tribes — Temne people. https://www.101lasttribes.com/tribes/temne.html",
+      "Cambridge Core — Journal of the International Phonetic Association: Temne. https://www.cambridge.org/core/journals/journal-of-the-international-phonetic-association/article/temne/BD1773945818578E52AF92431AEE168C"
+    ]
+  }
+}

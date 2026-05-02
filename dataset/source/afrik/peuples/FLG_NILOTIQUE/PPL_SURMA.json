@@ -1,0 +1,100 @@
+{
+  "id": "PPL_SURMA",
+  "nameMain": "Surma",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Surma",
+      "selfAppellation": "Suri",
+      "exonyms": [
+        "Surma (terme administratif éthiopien et occidental)",
+        "Shuri",
+        "Dhuri",
+        "Churi"
+      ],
+      "originOfExonyms": "Le terme Surma est un exonyme administratif utilisé par le gouvernement éthiopien et les observateurs extérieurs. Les membres du groupe se désignent eux-mêmes comme Suri. Le terme Surma est parfois utilisé dans un sens plus large incluant le groupe Mursi, qui est culturellement et linguistiquement proche mais constitue une ethnie distincte depuis le recensement éthiopien de 2007.",
+      "whyProblematic": "La confusion entre Surma et Nuer est une erreur fréquente dans les sources anciennes. Les Suri/Surma sont des Nilotiques méridionaux du groupe Surmic, distinct des Nuer qui sont des Nilotiques occidentaux du groupe Luo. Les appellations Suri et Surma sont parfois utilisées indifféremment, notamment dans les médias touristiques, ce qui peut prêter à confusion avec la variété linguistique exacte.",
+      "contemporaryUsage": "Suri est l'appellation préférée par les membres du groupe. Surma reste courant dans la littérature scientifique et dans le contexte administratif éthiopien. Les Suri se répartissent en trois sous-groupes principaux : Chai, Timaga (Tirma) et Baale. Dans les politiques d'identité régionale de l'Éthiopie fédérale (région SNNPR puis South West Ethiopia Peoples' Region depuis 2021), le groupe est enregistré sous le terme Suri.",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique méridional, branche Surmic (Suri du Sud-Est)",
+      "historicalRegion": "Vallée de l'Omo et plateau de Boma — zone de l'Omo occidental (West Omo Zone), South West Ethiopia Peoples' Region, Éthiopie, à la frontière du Soudan du Sud",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Chai (Caci, Cai) — sous-groupe Suri de la région de Kibish",
+      "Timaga (Tirmaga, Tirma, Cirma, Dirma) — sous-groupe Suri de la vallée de l'Omo",
+      "Baale — sous-groupe Suri dans les collines",
+      "Mursi — groupe distinct mais culturellement proche, plus de 80 % de similitude lexicale avec le suri, distingué officiellement depuis 2007",
+      "Me'en (Me'enit) — groupe culturellement apparenté, classé séparément"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon les traditions orales suri, le groupe est originaire du plateau de Boma, de la vallée de l'Omo et du plateau de Gobi dans la région de Maji. Les ancêtres Suri sont arrivés dans leur territoire actuel il y a environ 200 ans, migrant depuis l'Akobo (est du Nil Bleu), traversant Kidhoa Bo, la montagne Boma et le plateau de Gobi Maji. Durant leur migration, ils ont absorbé des populations locales préexistantes. Les Suri font partie de la famille Surmic, une branche des langues nilotiques méridionales (Nilo-saharienne).",
+      "formationPeriod": "L'identité suri distincte s'est consolidée il y a environ deux siècles dans la vallée de l'Omo et ses environs. Les Suri se différencient des Mursi depuis leur séparation géographique et linguistique progressive, bien que les deux groupes partagent encore plus de 80 % de similitude lexicale. L'organisation sociale en groupes d'âge et la tradition agro-pastorale constituent les piliers de l'identité collective.",
+      "migrationRoutes": [
+        "Depuis le plateau de Boma (Éthiopie-Soudan du Sud) vers la vallée de l'Omo",
+        "Traversée de la région de l'Akobo (est du Nil Bleu) vers le sud-ouest",
+        "Installation progressive dans le woreda Suri, zone West Omo, région SNNPR / South West Ethiopia"
+      ],
+      "historicalSettlementZones": [
+        "Woreda Suri, zone West Omo, South West Ethiopia Peoples' Region (territoire principal)",
+        "Plaines semi-arides et collines bordant la vallée de l'Omo, à la frontière du Soudan du Sud",
+        "Région de Kibish (sous-groupe Chai)",
+        "Vallée de l'Omo (sous-groupe Timaga/Tirma)"
+      ],
+      "unificationsOrDivisions": "Les Suri sont organisés en trois sous-groupes principaux (Chai, Timaga, Baale) distincts territorialement mais partageant la même langue et les mêmes structures culturelles. Il n'existe pas de chef centralisé : l'autorité est exercée par des komoru (chefs rituels) issus de clans spécifiques, aux fonctions consultatives et rituelles sans pouvoirs exécutifs. Des tensions existent avec les peuples voisins, notamment les Nyangatom et les Toposa, pour le contrôle des pâturages et des points d'eau.",
+      "externalInfluences": "Harcèlement par les troupes et colons éthiopiens depuis la fin des années 1890 (fuite vers le plateau de Boma après 1925). Contrebande d'armes depuis le Soudan dans les années 1980. Impact de la guerre civile du Soudan du Sud. Depuis 2000 : confiscation des terres pour l'agriculture commerciale (plantations de canne à sucre), construction du barrage de Gilgel Gibe III (achevé en 2016) qui a mis fin à la culture en bordure de rivière et provoqué une pénurie d'eau. Tentatives de déplacement liées au Parc national de l'Omo (African Parks Foundation)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La société suri est fondamentalement égalitaire. Il n'y a pas de chef héréditaire doté de pouvoirs exécutifs. Le komoru est le chef rituel le plus respecté, élu parmi les anciens de certains clans. Son rôle est de résumer et de légitimer les décisions prises lors des assemblées masculines, sans autorité contraignante. Les décisions collectives sont prises lors d'assemblées d'hommes (les femmes peuvent exprimer leur avis avant et après). Les différends sont tranchés par les anciens selon le droit coutumier.",
+      "clanOrganization": "La société suri est organisée en villages de 40 à 2 500 habitants. Les clans patrilinéaires structurent les alliances matrimoniales et les droits pastoraux. Les rainmakers (faiseurs de pluie) sont héréditaires au sein de certains clans spécifiques : ils mâchent des copeaux d'arbres particuliers, mélangent le jus obtenu à de l'argile et s'en enduisent le corps pour invoquer la pluie.",
+      "ageClassSystems": "Les hommes suri sont organisés en classes d'âge : les Tegay (jeunes gardiens de troupeaux) et les Rora (anciens juniors, accédant à ce statut par initiation). Les Rora sont les guerriers et défenseurs de la communauté. La promotion d'une classe à l'autre est marquée par des cérémonies collectives.",
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'appartenance clanique, les droits sur les pâturages, les obligations matrimoniales et les alliances politiques. Le bétail est au centre de toutes les transactions sociales : bride-wealth (dot en bœufs), héritage, et réseaux d'entraide. Chaque homme marié possède en moyenne 30 à 40 vaches.",
+      "religiousAuthority": "Les faiseurs de pluie (rainmakers héréditaires de clans spécifiques) jouent un rôle spiritual central. Les devineresses féminines (female diviners) sont également consultées. La religion traditionnelle est animiste, centrée sur le dieu du ciel Tumu (ou Tuma) et sur les esprits de la nature. Une petite minorité de Suri (200 à 300 personnes, surtout autour de Kibish et parmi les étudiants ayant quitté la région) pratique le christianisme évangélique."
+    },
+    "languages": {
+      "mainLanguage": "Suri (Suri, Tirmaga-Chai)",
+      "isoCodes": ["suq"],
+      "dialects": [
+        "Chai (Caci, Cai) — dialecte du sous-groupe Chai, région de Kibish",
+        "Tirma (Tirmaga, Cirma, Dirma, Terema) — dialecte du sous-groupe Timaga/Tirma, vallée de l'Omo"
+      ],
+      "vehicularRole": "Le suri est parlé par environ 32 000 à 54 000 personnes (estimations 2016-2025 : Ethnologue, Joshua Project). La langue présente plus de 80 % de similitude lexicale avec le mursi. La connaissance de l'amharique est faible dans la majorité de la communauté (langue véhiculaire nationale de l'Éthiopie). La scolarisation est croissante depuis les années 2000, mais le taux d'alphabétisation reste faible. La langue est classifiée dans les langues surmic méridionales, branche de la famille nilo-saharienne."
+    },
+    "culture": {
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"L'initiation masculine Rora marque le passage du statut de Tegay (jeune gardien de troupeau) à celui de guerrier adulte. Elle est accompagnée de cérémonies collectives, de jeûnes, de combats rituels et de démonstrations de bravoure. La scarification faciale et corporelle des hommes est traditionnellement réalisée après avoir tué un ennemi, marquant ainsi le statut guerrier.\", \"femaleInitiation\": \"L'insertion du labret (disque labial ou lèvre plate) marque l'entrée dans la vie adulte des femmes. Pratiquée sur la plupart des jeunes filles avant le mariage, la lèvre inférieure est percée et progressivement agrandie pour accueillir un disque en argile de taille croissante (jusqu'à 40 cm de diamètre pour les plus grandes). Ce disque est un symbole majeur de beauté féminine et d'éligibilité matrimoniale.\"}, \"stickFighting\": {\"sagineFighting\": \"Le combat à la canne (saginé) est le rite de passage central pour les jeunes hommes suri. Il constitue un droit d'initiation, source de prestige social et moyen de conquête des femmes. Les combats sont très compétitifs, avec risque de blessures graves ou de mort. Le vainqueur acquiert gloire et pouvoir d'attraction auprès des femmes à marier.\"}, \"marriageRites\": {\"bridewealth\": \"Le mariage implique le transfert d'une dot importante en bétail. La taille du labret de la femme est traditionnellement mise en relation avec la valeur de la dot en bovins. Les chants de louanges pour le bétail (cattle songs) et les noms donnés aux animaux favoris sont des traditions importantes dans le contexte du mariage.\", \"weddingFeast\": \"Lors du mariage d'une femme, ses amies de la même classe d'âge fêtent avec elle lors d'un banquet où un bœuf est sacrifié par le futur mari.\"}, \"bodyDecoration\": {\"scarification\": \"Les femmes pratiquent des scarifications décoratives à l'aide d'un crochet, d'une épine et d'un rasoir. Les hommes portent des scarifications acquises au combat.\", \"facePaint\": \"Pour les occasions spéciales, les hommes et les femmes se peignent le visage et le corps avec des couleurs vives obtenues à partir de plantes et de roches broyées mélangées à de l'eau. Les enfants sont peints d'argile blanche protectrice.\", \"flowers\": \"Les hommes portent des fleurs vivement colorées sur la tête lors des cérémonies et des fêtes.\"}}",
+      "symbols": "{\"lipPlate\": \"Le disque labial (lèvre plate) porté par les femmes est le symbole cultural suri le plus connu internationalement. Il symbolise la beauté féminine, la maturité et l'éligibilité matrimoniale.\", \"cattle\": \"Le bétail est le symbole central de richesse, de prestige et d'identité sociale. Les hommes donnent des noms à leurs animaux favoris et leur composent des chants. Environ 30 à 40 vaches constituent le patrimoine normal d'un homme marié.\", \"saginé\": \"Le bâton de combat (saginé) symbolise la virilité, le courage et le statut de guerrier chez les hommes adultes.\"}",
+      "artsAndMusic": "{\"bodyArt\": \"La peinture corporelle (argile blanche pour les enfants, couleurs vives pour les adultes lors des cérémonies), les scarifications et le port du disque labial constituent les formes d'art corporel les plus importantes de la culture suri.\", \"music\": \"La musique traditionnelle suri comprend des chants collectifs, des chants de louange pour le bétail, des chants d'amour et des chants rituels. La musique accompagne les combats de saginé et les cérémonies d'initiation.\", \"dance\": \"Les danses collectives accompagnent les combats rituels, les mariages et les cérémonies de passage. Les hommes performent des danses acrobatiques au moment des combats de saginé.\", \"crafts\": \"La poterie (en déclin), les bijoux en perles et les armes (fusils obtenus par commerce depuis les années 1980, lances traditionnelles) constituent les principales formes d'artisanat.\", \"oralLiterature\": \"Les Suri possèdent une riche tradition de poésie orale et de récits transmis lors des assemblées d'hommes sous les arbres, espace de mémoire collective et de transmission culturelle.\", \"agriculture\": \"La bière locale (gèso), brassée à partir de sorgho, joue un rôle social important lors des rassemblements masculins.\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Tumu (ou Tuma)\", \"attributes\": \"Tumu est le dieu du ciel, être suprême de la cosmologie suri. C'est une puissance céleste distante qui n'intervient pas directement dans les affaires humaines, mais peut être invoquée par les spécialistes rituels lors de sécheresses ou de crises.\", \"rainmaking\": \"Des faiseurs de pluie héréditaires (appartenant à des clans spécifiques) assurent la médiation entre la communauté et les puissances célestes. Le rituel implique de mâcher des copeaux d'arbres particuliers, de mélanger le jus à de l'argile et de s'en enduire le corps pour appeler la pluie.\"}, \"spirits\": {\"natureSpirits\": \"Les esprits de la nature habitent les rivières, les montagnes et les arbres sacrés. Les devineresses féminines (diviners) communiquent avec ces esprits pour guider la communauté.\", \"ancestorCult\": \"Le culte des ancêtres joue un rôle de cohésion sociale. Les ancêtres sont invoqués lors des cérémonies collectives, des mariages et des rituels funéraires.\"}, \"religion\": {\"animism\": \"97 % des Suri pratiquent la religion animiste traditionnelle.\", \"christianity\": \"Minorité évangélique (200-300 personnes, principalement à Kibish et parmi les étudiants ayant quitté la région). L'évangélisation est menée par des missions chrétiennes.\"}, \"worldview\": {\"cattlecosmology\": \"Le bétail occupe une place cosmologique centrale : les bovins sont au coeur de la spiritualité, des rituels d'initiation, des mariages et de la vie sociale. Les chants dédiés aux animaux favoris constituent une forme de prière et de méditation culturelle.\"}}"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Suri n'ont pas développé de royauté ou de chefferie centralisée. Leur organisation politique est fondamentalement égalitaire, reposant sur le consensus des assemblées d'hommes et l'autorité morale des komoru (chefs rituels) issus de certains clans. Avant le 20e siècle, les Suri occupaient un territoire plus vaste sur le plateau de Boma, avant d'être refoulés par les troupes éthiopiennes après 1925.",
+      "relationsWithNeighbors": "Relations conflictuelles récurrentes avec les Nyangatom et les Toposa (Soudan du Sud) pour le contrôle des pâturages, des points d'eau et du bétail, notamment lors des saisons sèches. Relations commerciales et parfois conflictuelles avec les groupes Mursi et Me'en voisins. Les Suri ont utilisé le Soudan du Sud comme source d'approvisionnement en armes à feu depuis les années 1980, modifiant profondément l'équilibre des forces régional. Depuis les années 1990, des conférences de paix organisées par l'État éthiopien tentent de gérer les conflits inter-ethniques.",
+      "conflictsOrAlliances": "Fin du 19e siècle : harcèlement par les troupes éthiopiennes lors de la conquête menelikienne. Après 1925 : fuite d'une partie des Suri vers le plateau de Boma (Soudan du Sud) suite aux pressions éthiopiennes. Années 1980 : accès aux armes à feu via le Soudan, multiplication des raids sur les Nyangatom et les Toposa. Impact de la guerre civile soudanaise. Années 2000-2010 : conflits liés à la confiscation des terres pour les plantations de canne à sucre et à la construction du barrage de Gilgel Gibe III. 2008 : conférences de paix organisées par l'État éthiopien.",
+      "diaspora": "La population suri est quasi entièrement rurale et concentrée dans le woreda Suri (zone West Omo, Éthiopie). Il n'existe pas de diaspora significative à l'échelle internationale. Quelques individus scolarisés ont migré vers Addis-Abeba ou d'autres villes éthiopiennes. Des réfugiés ont temporairement séjourné au Soudan du Sud lors des périodes de persécutions."
+    },
+    "demography": {
+      "totalPopulation": 45000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensement éthiopien de 1998 (20 622 Suri), estimation 2016 (environ 32 000 Suri), Joshua Project 2025 (Suri, Tirmaga-Chai : 54 000 locuteurs langue suq). Projection 2025 tenant compte du taux de croissance démographique éthiopien. Population distincte des Mursi (environ 10 000 personnes) et des Me'en.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 45000,
+          "note": "Woreda Suri, zone West Omo (ancienne zone Bench-Maji), South West Ethiopia Peoples' Region. Sous-groupes Chai (région de Kibish), Timaga/Tirma (vallée de l'Omo) et Baale."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Surma people. https://en.wikipedia.org/wiki/Surma_people",
+      "Wikipedia EN — Suri language. https://en.wikipedia.org/wiki/Suri_language",
+      "Ethnologue — Suri, Tirmaga-Chai (SuQ). https://joshuaproject.net/people_groups/15130",
+      "Global Recordings Network — Suri, Tirmaga-Chai (suq). https://globalrecordings.net/en/language/suq",
+      "Joshua Project — Suri, Tirmaga-Chai in Ethiopia. https://joshuaproject.net/people_groups/15130",
+      "Abbink, Jon G. 2009. Suri Orature and Material Culture in Changing Times. African Studies.",
+      "Turton, David. 1988. Looking for a Cool Place: The Mursi, 1890s-1980s. The African Experience.",
+      "Galaty, J. and Bonte, P. (eds.) 1991. Herders, Warriors and Traders: Pastoralism in Africa. Boulder: Westview Press.",
+      "CIA World Factbook — Ethiopia. https://www.cia.gov/the-world-factbook/countries/ethiopia/"
+    ]
+  }
+}

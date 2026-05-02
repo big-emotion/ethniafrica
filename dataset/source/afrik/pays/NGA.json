@@ -1,0 +1,275 @@
+{
+  "id": "NGA",
+  "nameFr": "République fédérale du Nigeria (Federal Republic of Nigeria)",
+  "nameOfficial": "République fédérale du Nigeria (Federal Republic of Nigeria)",
+  "etymology": "Le nom \"Nigeria\" a été créé en 1914 par Flora Shaw (épouse de Lord Lugard, gouverneur général de la colonie) en combinant \"Niger\" (fleuve Niger) avec le suffixe \"-ia\" (pays). Le nom fait référence au fleuve Niger qui traverse le pays.",
+  "nameOriginActor": "Le nom a été créé par Flora Shaw en 1914 lors de l'\"Amalgamation\" (unification) des protectorats du Nord et du Sud par les Britanniques. C'est un nom colonial qui ne reflète pas les appellations précoloniales.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire était peuplé de nombreux royaumes et entités politiques indépendantes sans nom unifié : sultanats haoussa, empire Kanem-Bornou, royaume d'Oyo, Ile-Ife, chefferies igbo, royaumes ijaw, royaume du Bénin.",
+      "middleAges": "Développement des sultanats haoussa (Kano, Katsina, Zaria), empire Kanem-Bornou, royaume d'Oyo, civilisation yoruba d'Ife, royaumes igbo décentralisés, royaume du Bénin.",
+      "precolonial": "Mosaïque de royaumes puissants : califat de Sokoto, royaume d'Oyo, royaume du Bénin, cités-États haoussa, chefferies igbo. Commerce transsaharien et commerce côtier (or, esclaves, ivoire).",
+      "colonization": "XVe-XVIe siècles : premiers contacts portugais sur les côtes (Lagos, Bénin, Calabar). XIXe siècle : expansion britannique, création des protectorats Nord et Sud. 1914 : \"Amalgamation\" - unification Nord/Sud sous le nom de \"Nigeria\" (choisi par Flora Shaw).",
+      "contemporary": "1960 : Fédération du Nigeria (indépendance). 1963 : République fédérale du Nigeria (nom actuel)."
+    },
+    "kingdoms": [
+      {
+        "name": "Sultanats haoussa",
+        "period": "Premier millénaire - XIXe siècle",
+        "dominantPeoples": ["Hausa"],
+        "politicalCenters": ["Kano", "Katsina", "Zaria (Zazzau)"],
+        "historicalRole": "Cités-États haoussa puissantes, centres commerciaux et intellectuels. Islamisation ancienne par les routes transsahariennes."
+      },
+      {
+        "name": "Califat de Sokoto",
+        "period": "1804 - 1903",
+        "dominantPeoples": ["Hausa", "Fulani"],
+        "politicalCenters": ["Sokoto (capitale)", "Kano", "Katsina"],
+        "historicalRole": "Califat islamique puissant fondé par Usman dan Fodio. Unification politique et religieuse du nord du Nigeria. Résistance à la colonisation britannique."
+      },
+      {
+        "name": "Royaume d'Oyo",
+        "period": "XIVe - XIXe siècles",
+        "dominantPeoples": ["Yoruba"],
+        "politicalCenters": ["Oyo (capitale)", "Ile-Ife"],
+        "historicalRole": "Royaume yoruba puissant, expansion territoriale, commerce transsaharien. Influence culturelle majeure."
+      },
+      {
+        "name": "Royaume du Bénin",
+        "period": "XIIIe - XIXe siècles",
+        "dominantPeoples": ["Edo (Bini)"],
+        "politicalCenters": ["Bénin City (capitale)"],
+        "historicalRole": "Royaume réputé pour ses bronzes et son art. Commerce avec les Européens. Résistance à la colonisation."
+      },
+      {
+        "name": "Empire Kanem-Bornou",
+        "period": "VIIIe - XIXe siècles",
+        "dominantPeoples": ["Kanuri"],
+        "politicalCenters": ["Kanem", "Bornou"],
+        "historicalRole": "Empire puissant du Sahel, commerce transsaharien, centre intellectuel."
+      },
+      {
+        "name": "Nigeria colonial",
+        "period": "1914 - 1960",
+        "dominantPeoples": [
+          "Tous les peuples nigérians sous administration coloniale britannique"
+        ],
+        "politicalCenters": ["Lagos (capitale coloniale)"],
+        "historicalRole": "Unification administrative par les Britanniques. Résistance nigériane et mouvements nationalistes."
+      },
+      {
+        "name": "République fédérale du Nigeria",
+        "period": "1960 - présent",
+        "dominantPeoples": ["Tous les peuples nigérians"],
+        "politicalCenters": [
+          "Abuja (capitale depuis 1991)",
+          "Lagos (ancienne capitale)"
+        ],
+        "historicalRole": "Indépendance en 1960. Guerre du Biafra (1967-1970). Histoire politique mouvementée avec alternance démocratique et régimes militaires. Développement économique et défis de gouvernance."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Hausa-Fulani",
+        "selfAppellation": "Hausawa (Hausa), Fulɓe (Peul)",
+        "exonyms": [
+          "Hausa (terme utilisé par les Européens)",
+          "\"Haoussa\" (transcription coloniale française)",
+          "Peul/Fulani"
+        ],
+        "peopleId": "PPL_HAUSA",
+        "mainRegion": "Nord",
+        "languages": ["Hausa", "Pulaar", "anglais"],
+        "languageFamily": "FLG_TCHADIQUE",
+        "appellationRemarks": "Les termes \"Hausa\" et \"Peul/Fulani\" sont neutres et acceptés. L'auto-appellation \"Hausawa\" (pluriel de Bahaushe) est préférée pour les Hausa."
+      },
+      {
+        "name": "Yoruba",
+        "selfAppellation": "Yorùbá (Yorùbá ènìyàn)",
+        "exonyms": [
+          "\"Nago\" (terme colonial réducteur",
+          "éviter)",
+          "\"Aku\" (diaspora",
+          "Sierra Leone)"
+        ],
+        "peopleId": "PPL_YORUBA",
+        "mainRegion": "Sud-Ouest",
+        "languages": ["Yoruba", "anglais"],
+        "languageFamily": "FLG_BENOUECONGO",
+        "appellationRemarks": "Le terme \"Nago\" est colonial et réducteur. L'auto-appellation \"Yorùbá\" est préférée."
+      },
+      {
+        "name": "Igbo",
+        "selfAppellation": "Ǹdị́ Ìgbò",
+        "exonyms": ["\"Ibo\" (terme colonial réducteur", "éviter)"],
+        "peopleId": "PPL_IGBO",
+        "mainRegion": "Sud-Est",
+        "languages": ["Igbo", "anglais"],
+        "languageFamily": "FLG_BENOUECONGO",
+        "appellationRemarks": "Le terme \"Ibo\" est colonial et réducteur. L'auto-appellation \"Ǹdị́ Ìgbò\" est préférée."
+      },
+      {
+        "name": "Ijaw",
+        "selfAppellation": "Izon / Ijo",
+        "exonyms": ["Ijaw (terme utilisé par les Européens)", "Ijo (variante)"],
+        "peopleId": "PPL_IJAW",
+        "mainRegion": "Delta du Niger",
+        "languages": ["Ijaw", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Les termes \"Ijaw\" et \"Ijo\" sont neutres et acceptés. L'auto-appellation \"Izon\" est préférée."
+      },
+      {
+        "name": "Kanuri",
+        "selfAppellation": "Kanuri",
+        "exonyms": ["Kanuri (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KANURI",
+        "mainRegion": "Nord-Est (Borno)",
+        "languages": ["Kanuri", "haoussa", "anglais"],
+        "languageFamily": "FLG_SAHARIENNE",
+        "appellationRemarks": "Le terme \"Kanuri\" est neutre et accepté."
+      },
+      {
+        "name": "Tiv",
+        "selfAppellation": "Tiv",
+        "exonyms": ["Tiv (terme utilisé par les Européens)"],
+        "peopleId": "PPL_TIV",
+        "mainRegion": "Centre-Est (Benue)",
+        "languages": ["Tiv", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Tiv\" est neutre et accepté."
+      },
+      {
+        "name": "Ibibio-Efik",
+        "selfAppellation": "Ibibio, Efik",
+        "exonyms": [
+          "Ibibio",
+          "Efik",
+          "parfois regroupés sous le terme \"Calabar\" (terme géographique)"
+        ],
+        "peopleId": "PPL_IBIBIO",
+        "mainRegion": "Sud-Est (Cross River, Akwa Ibom)",
+        "languages": ["Ibibio", "Efik", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Les termes \"Ibibio\" et \"Efik\" sont neutres et acceptés."
+      },
+      {
+        "name": "Edo / Bini",
+        "selfAppellation": "Edo, Bini",
+        "exonyms": ["Edo", "Bini (terme utilisé par les Européens)"],
+        "peopleId": "PPL_EDO",
+        "mainRegion": "Sud (Edo State)",
+        "languages": ["Edo", "anglais"],
+        "languageFamily": "FLG_BENOUECONGO",
+        "appellationRemarks": "Les termes \"Edo\" et \"Bini\" sont neutres et acceptés."
+      },
+      {
+        "name": "Nupe",
+        "selfAppellation": "Nupe",
+        "exonyms": ["Nupe (terme utilisé par les Européens)"],
+        "peopleId": "PPL_NUPE",
+        "mainRegion": "Centre (Niger State)",
+        "languages": ["Nupe", "haoussa", "anglais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Nupe\" est neutre et accepté."
+      },
+      {
+        "name": "Gbagyi / Gwari",
+        "selfAppellation": "Gbagyi",
+        "exonyms": ["Gbagyi", "Gwari (variante)"],
+        "peopleId": "PPL_GBAGYI",
+        "mainRegion": "Centre (FCT Abuja, Niger State, Kaduna)",
+        "languages": ["Gbagyi", "haoussa", "anglais"],
+        "languageFamily": "FLG_BENOUECONGO",
+        "appellationRemarks": "Les termes \"Gbagyi\" et \"Gwari\" sont neutres et acceptés. L'auto-appellation \"Gbagyi\" est préférée."
+      }
+    ],
+    "culture": {
+      "culturalTraditions": "Art yoruba (sculptures, masques), bronzes du Bénin, musique traditionnelle (juju, afrobeat), danse traditionnelle, poésie orale (griot), artisanat (tissage, poterie, vannerie), architecture traditionnelle",
+      "dominantReligions": "Islam (nord, majoritaire), christianisme (sud, majoritaire), croyances traditionnelles (syncrétisme)",
+      "lifestyles": "Vie principalement rurale, agriculture (cacao, arachides, manioc, igname, riz), élevage (bovins, caprins), pêche (côtes et fleuves), exploitation pétrolière (delta du Niger), commerce, urbanisation croissante",
+      "socialOrganization": "Système de chefferies traditionnelles, structure clanique (patrilinéaire ou matrilinéaire selon les groupes), organisation en familles étendues et lignages, importance des ancêtres, système de confréries religieuses",
+      "regionalRelations": "Relations historiques avec les peuples du Cameroun, du Niger, du Tchad, du Bénin. Diaspora importante au Royaume-Uni, aux États-Unis, et dans les pays occidentaux."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement du territoire par de nombreux groupes ethniques. Développement de civilisations sophistiquées (Ife, Bénin, haoussa).",
+      "middleAges": "Apogée des sultanats haoussa, empire Kanem-Bornou, royaume d'Oyo, royaume du Bénin. Commerce transsaharien et commerce côtier. Islamisation du nord.",
+      "precolonial": "Califat de Sokoto (1804-1903) : unification islamique du nord. Royaumes yoruba et igbo. Commerce avec les Européens (or, esclaves, ivoire).",
+      "colonization": "XVe-XVIe siècles : premiers contacts portugais. XIXe siècle : expansion britannique. 1914 : \"Amalgamation\" - unification administrative. Résistance nigériane.",
+      "independenceStruggle": "Mouvements nationalistes dans les années 1950. Indépendance obtenue en 1960. Première République (1960-1966).",
+      "postIndependence": "Guerre du Biafra (1967-1970) : sécession igbo, conflit meurtrier. Régimes militaires (1966-1979, 1983-1999). Transition démocratique depuis 1999. Développement économique (pétrole), défis de gouvernance et de sécurité."
+    },
+    "sources": [
+      "CIA World Factbook – Nigeria",
+      "SIL Ethnologue – Languages of Nigeria",
+      "Recensements nationaux nigérians",
+      "ONU – Données démographiques 2025",
+      "UNFPA – Projections démographiques 2025",
+      "Études anthropologiques sur les peuples nigérians",
+      "Études historiques sur les royaumes précoloniaux"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Hausa-Fulani",
+          "peopleId": "PPL_HAUSA",
+          "region": "Nord",
+          "languageFamily": "FLG_TCHADIQUE"
+        },
+        {
+          "name": "Yoruba",
+          "peopleId": "PPL_YORUBA",
+          "region": "Sud-Ouest",
+          "languageFamily": "FLG_BENOUECONGO"
+        },
+        {
+          "name": "Igbo",
+          "peopleId": "PPL_IGBO",
+          "region": "Sud-Est",
+          "languageFamily": "FLG_BENOUECONGO"
+        },
+        {
+          "name": "Ijaw",
+          "peopleId": "PPL_IJAW",
+          "region": "Delta du Niger",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Kanuri",
+          "peopleId": "PPL_KANURI",
+          "region": "Nord-Est (Borno)",
+          "languageFamily": "FLG_SAHARIENNE"
+        },
+        {
+          "name": "Tiv",
+          "peopleId": "PPL_TIV",
+          "region": "Centre-Est (Benue)",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Ibibio-Efik",
+          "peopleId": "PPL_IBIBIO",
+          "region": "Sud-Est (Cross River, Akwa Ibom)",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Edo / Bini",
+          "peopleId": "PPL_EDO",
+          "region": "Sud (Edo State)",
+          "languageFamily": "FLG_BENOUECONGO"
+        },
+        {
+          "name": "Nupe",
+          "peopleId": "PPL_NUPE",
+          "region": "Centre (Niger State)",
+          "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Gbagyi / Gwari",
+          "peopleId": "PPL_GBAGYI",
+          "region": "Centre (FCT Abuja, Niger State, Kaduna)",
+          "languageFamily": "FLG_BENOUECONGO"
+        }
+      ]
+    }
+  }
+}

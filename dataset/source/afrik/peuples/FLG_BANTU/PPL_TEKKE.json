@@ -1,0 +1,109 @@
+{
+  "id": "PPL_TEKKE",
+  "nameMain": "Tekke",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["COG", "COD", "GAB"],
+  "content": {
+    "appellations": {
+      "mainName": "Teke",
+      "selfAppellation": "Bateke (pluriel), Moteke (singulier) ; aussi appeles Tio ou Tyo",
+      "exonyms": [
+        "Bateke (terme general, souvent utilise par les Europeens)",
+        "Teke (forme simplifiee francophone)",
+        "Tio ou Tyo (terme utilise dans la litterature ethnographique francaise)",
+        "Boko (designation utilisee dans certaines zones de la RDC)"
+      ],
+      "originOfExonyms": "Teke derive probablement du terme teke signifiant acheter ou vendre dans plusieurs sous-groupes linguistiques, refletant la vocation commerciale historique du peuple. Le nom Bateke fut systématise par les colonisateurs europeens. Makoko etait le titre du roi teke (roi divin de Brazzaville). Le nom Tio est utilise specifiquement pour le sous-groupe riverain du Pool Malebo.",
+      "whyProblematic": "Le terme Bateke regroupe en realite plus de 12 sous-groupes linguistiques distincts (selon le SIL Linton 2008) sur un vaste territoire. Certains chercheurs estiment qu'il s'agit d'un groupe heterogene dont l'unite repose davantage sur une histoire politique partagee que sur une identite ethnique homogene.",
+      "contemporaryUsage": "Teke ou Bateke est le terme officiellement accepte au Congo-Brazzaville, en RDC et au Gabon. Le nom est utilise dans les politiques ethniques nationales et les recensements.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou du Nord-Ouest (Zone B, B70-B79 classification Guthrie, 12 sous-groupes linguistiques)",
+      "historicalRegion": "Plateau des Bateke — hauts plateaux herbeux entre le bassin du Congo et l'Ogooue (actuel Congo-Brazzaville, RDC et Gabon) ; zone du Pool Malebo (Stanley Pool) sur le fleuve Congo",
+      "currentCountries": ["COG", "COD", "GAB"]
+    },
+    "ethnicities": [
+      "Tio (Teke de Brazzaville) — sous-groupe riverain du Pool Malebo, historiquement dominant politiquement",
+      "Ngungwel — sous-groupe du nord-est, region de Ngabe, Congo-Brazzaville",
+      "Kukuya — sous-groupe du sud (Teke du Sud), plateau de Kukuya",
+      "Fuumu — sous-groupe du sud, dans la vallee du Niari",
+      "Tsaayi — sous-groupe du Gabon occidental, region de l'Ogooue-Ngounie",
+      "Teghe (Teke du Nord) — sous-groupe du nord, Congo-Brazzaville",
+      "Boma — plusieurs variantes (Boma Nkuu, Boma Yumu) a cheval sur COG et COD",
+      "Teke-Laali — sous-groupe dans la zone de transition Congo-Gabon"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bateke font partie de la grande expansion bantoue du Nord-Ouest. Ils s'etablirent sur le Plateau des Bateke au cours du premier millenaire de notre ere et fonderent un puissant royaume dans l'actuelle Republique du Congo. Leur position sur les hauts plateaux herbeux entre le bassin du Congo et l'Ogooue leur permit de controler les routes commerciales entre l'interieur du continent et la cote atlantique. Initialement installes entre Manyanga et le Pool Malebo, ils furent progressivement repousses vers le nord par les raids et migrations lies a la traite atlantique des esclaves.",
+      "formationPeriod": "Le royaume teke se consolide entre le 12e et le 13e siecle, avec le Makoko comme roi divin. Au 15e siecle, le royaume devient vassal du royaume du Kongo. Malgre cette subordination nominale, les Teke conservèrent une autonomie reelle et continuerent a controler les echanges commerciaux regionaux.",
+      "migrationRoutes": [
+        "Mouvement initial depuis les zones de foret dense vers les savanes du plateau des Bateke",
+        "Expansion vers le nord et l'ouest sous la pression des conflits lies a la traite esclavagiste atlantique (15e-18e siecle)",
+        "Dispersion vers le Gabon (bassin de l'Ogooue-Ngounie) et l'est de la RDC (zones du Kasai)"
+      ],
+      "historicalSettlementZones": [
+        "Plateau des Bateke — zone nucleaire, savane herbeuse entre Congo-Brazzaville et RDC",
+        "Pool Malebo (Stanley Pool) — carrefour commercial fluvial sur le fleuve Congo, pres de Brazzaville",
+        "Vallee du Niari et de la Lekoumou — Congo-Brazzaville",
+        "Bassin de l'Ogooue-Ngounie — Gabon occidental",
+        "Province du Kwilu et du Kasai — est de la RDC (sous-groupes Boma, Mfinu, Mpuono)"
+      ],
+      "unificationsOrDivisions": "Le royaume teke centralise sous le Makoko atteignit son apogee aux 12e-13e siecles. Le traite de 1883 signe entre le Makoko Iloo Ier et Pierre Savorgnan de Brazza ceda une grande partie du territoire au protectorat francais, amorçant la dissolution du pouvoir royal. La colonisation francaise (1880-1960) desintegra l'economie traditionnelle teke fondee sur le commerce.",
+      "externalInfluences": "Royaume du Kongo (15e siecle) : les Bateke devinrent partiellement vassaux, adoptant certains elements politiques. Commerce atlantique (esclavage, ivoire, 15e-19e siecle) : remodelage des routes et des hierarchies politiques. Colonisation francaise (1880-1960) : exploitation intensive, rassemblement force de populations, destruction des economies traditionnelles. Christianisme (missions catholiques et protestantes) depuis la fin du 19e siecle.",
+      "majorHistoricalEvents": "Premier millenaire : etablissement du royaume teke. 12e-13e siecle : apogee du royaume, Makoko souverain divin a Brazzaville. 15e siecle : vassalite partielle vis-a-vis du royaume du Kongo. 1880 : arrivee des Francais (Pierre Savorgnan de Brazza) dans le bassin du Congo. 1883 : Traite du Makoko — le roi Iloo Ier signe avec de Brazza, cedant des droits territoriaux en echange de protection ; Brazzaville devient capitale de l'Afrique equatoriale francaise. Periode coloniale : exploitation severe, depeuplement, destruction des ceremonies traditionnelles. 1960 : independance du Congo-Brazzaville ; renaissance des pratiques culturelles teke."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie sacree avec le Makoko comme roi divin, intermediaire entre les vivants et les esprits, garant de la fertilite et de l'ordre cosmique. Le Makoko regnait sur des chefs locaux depuis les environs de l'actuelle Brazzaville. Le rite d'intronisation durait deux ans et impliquait le Nganga (devin-guerisseur) et des griots. L'autorite etait fondee sur la religion plutot que sur la force militaire.",
+      "clanOrganization": "Structure a trois niveaux : Mfumu (chef de famille, prestige proportionnel au nombre de membres et d'esclaves) ; chef de clan (controle plusieurs villages, detient la figure fetiche Pere de la terre, garantissant fertilite et bien-etre collectif) ; Mfumu Mpugu (chef de tribunal, descendant royal, droit de vie et de mort sur les membres). Les forgerons forment un groupe hereditaire (forge transmise de pere en fils) jouissant d'un statut particulier, parfois elus chefs.",
+      "ageClassSystems": "Societe Mungala : association masculine regroupant chefs de clan et Nganga pour l'education des initiates. Les ceremonies d'initiation masculine marquent le passage a l'age adulte et l'integration aux responsabilites communautaires.",
+      "roleOfLineages": "Lignages matrilineaires et patrilineaires selon les sous-groupes. Chez les Tio, la filiation est matrilineaire pour l'appartenance clanique mais patrilineaire pour la chefferie. Les Nganga heritent de leur role par voie familiale ou par revelation onirique.",
+      "religiousAuthority": "Le Nganga (devin-guerisseur, aussi sage, juge, pretre, magicien) est la figure d'autorite religieuse centrale. Il possede des outils rituels (miroir, statuettes, plumeau, hochet, cloche). Le Nganga Tamakuwi possede une statuette habitee par une ame ancestrale, lui permettant de reveler les sorciers et de fonder de nouveaux villages. Le Mpugu (ancien du village) detient le Tara-Mantsie (Pere de la terre), grande figure en bois affectant tous les villageois."
+    },
+    "languages": {
+      "mainLanguage": "Langues teke (groupe de langues bantou du Nord-Ouest)",
+      "isoCodes": ["tek"],
+      "dialects": [
+        "Teke-Tio (Bali) — dialecte du Pool Malebo, base du dialecte de prestige",
+        "Ngungwel (Ngungulu) — Teke du Nord-Est, Congo-Brazzaville",
+        "Tsege (Teke du Nord) — sous-groupe nordique",
+        "Kukuya — Teke du Sud, plateau de Kukuya",
+        "Fuumu — Teke du Sud, vallee du Niari",
+        "Tsaayi — Gabon occidental (Ogooue-Ngounie)",
+        "Boma — zone de transition COG-COD, plusieurs variantes",
+        "Mfinu — RDC occidentale",
+        "Tiene — zone B80"
+      ],
+      "vehicularRole": "Les langues teke sont parles par les Bateke dans leurs comunautes respectives. Le lingala est la principale langue vehiculaire a Brazzaville et dans l'ouest de la RDC. Le francais est langue officielle au Congo-Brazzaville, en RDC et au Gabon. L'inter-comprehension entre sous-groupes linguistiques teke est variable selon la proximite geographique."
+    },
+    "culture": {
+      "majorRites": "Initiation masculine : les jeunes hommes utilisant des masques (mbuya) realisent des ceremonies symbolisant le passage a l'age adulte, accompagnees de danses et orchestres. Funerailles : rites complexes incluant placement du defunt, offrandes aux ancetres, tissu de raphia (trois pieces placees dans la tombe comme cartes guidant vers le village des morts — ciel, terre, eau). Culte des ancetres : offrandes alimentaires et sacrifices animaux aupres des sanctuaires en forêt ou au bord de l'eau (grottes, cascades, clairieres). Scarification faciale : tatouages rituels allant de la tempe jusqu'a la joue, donnes aux jeunes enfants, signe d'appartenance ethnique.",
+      "symbols": "Masques a disque plat — symboles d'identite ceremonielle teke, utilises pour les mariages, funerailles et initiations. Statuettes nkisi (bilongo) — figures humaines avec cavite ventrale contenant des substances magiques (cheveux, ongles, matieres vegetales et animales), creees et consacrees par le Nganga. Tara-Mantsie (Pere de la terre) — grande figure de bois du chef de clan, symbole de la fertilite et du bien-etre collectif. Tissu de raphia tisse — marque de statut et symbole funeraire. Kaolin blanc (bonga) — argile blanche sacree utilisee pour les peintures corporelles et les statues rituelles.",
+      "artsAndMusic": "Masques teke : disques plats en bois de forme ronde, motifs abstraits geometriques, ligne horizontale divisant le masque, couleurs sombres (bleu, noir, brun, argile), nez triangulaire, fentes oculaires etroites, bord perfore pour attacher un costume de raphia et de plumes. Variante Tsaye (nord-ouest) : petit disque de la societe secrete Kidumu, utilise pour les mariages, la mort des chefs, la circoncision. Statuettes figuratives : forme humaine de base avec grande tete, coudes et genoux legerement flechis, corps cylindrique, visage abstrait. Types : Butti (ancetres), Mutinu Bmamba (aide grossesse), Matomba (contre malchance), Iteo (bonheur). Artisanat textile : nattes, chapeaux et vetements en feuilles de raphia seche. Poterie et vannerie.",
+      "spiritualities": "Monotheisme avec supreme divinite Nzambi (ou Nzami) : createur de la terre, de l'eau et du ciel, maitre de la vie et de la mort, mais trop distant pour interferer directement dans les affaires humaines et n'etant pas adore directement. Culte des ancetres et des esprits de la nature : intermediaires entre Nzambi et les vivants, anthropomorphes, pouvant etre propices ou courrouces. Nkwimbali : esprit principal residant dans les cascades, auquel sont faits des sacrifices. Chaque etre vivant possede une ame et un souffle de vie ; la mort libere l'ame (qui devient esprit) et le souffle passe a une nouvelle vie. Christianisme present depuis le 19e siecle, souvent syncrétise avec les pratiques ancestrales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume teke (Makoko) fut l'une des puissances politiques majeures du bassin du Congo, avec une apogee aux 12e-13e siecles. Le Makoko residait pres de l'actuelle Brazzaville et exercait une souverainete religieuse sur les chefs locaux d'un vaste territoire. Le royaume devint partiellement vassal du royaume du Kongo au 15e siecle, puis fut affaibli par la traite esclavagiste et les migrations forcees. Le traite de 1883 signa symboliquement la fin de l'independance politique teke.",
+      "relationsWithNeighbors": "Le nom meme Teke (acheter/vendre) reflete une identite commercante : les Bateke etaient des intermediaires commerciaux incontournables entre l'interieur du Congo et les cotes. Ils commercaient avec les Kongo, les Loango et les marchands europeens. Relations historiquement conflictuelles avec le royaume du Kongo (vassalite), et complexes avec les Portugais puis les Francais. Omar Bongo, president du Gabon (1967-2009), etait d'origine teke.",
+      "conflictsOrAlliances": "Traite du Makoko (1883) entre le roi Iloo Ier et Pierre Savorgnan de Brazza : accord de protectorat francais en echange d'une protection contre les Belges et les Portugais. Cette cession est contreversee — les historiens debattent de la comprehension qu'en avait le Makoko. La colonisation qui s'ensuivit detruisit l'economie teke basee sur l'intermediation commerciale, la chasse et l'agriculture de plateau.",
+      "diaspora": "Les Bateke restent principalement dans leurs territoires traditionnels au Congo-Brazzaville, en RDC et au Gabon. Presence dans les capitales Brazzaville et Kinshasa. Quelques communautes en Europe (France, Belgique) suivant les migrants post-independance."
+    },
+    "demography": {
+      "totalPopulation": 500000,
+      "referenceYear": 2025,
+      "source": "Le SIL International (Linton 2008) estime a environ 390 000 locuteurs des langues teke dans les trois pays (COG, COD, GAB). Joshua Project Teke du Nord en Gabon : 129 000 personnes. 101lasttribes.com : population principalement en RDC et COG, minorite au Gabon. Estimation totale pour 2025, incluant croissance demographique : environ 500 000 personnes. Les donnees par pays sont peu disponibles dans les recensements nationaux.",
+      "distributionByCountry": [
+        { "country": "COG", "population": 250000 },
+        { "country": "COD", "population": 150000 },
+        { "country": "GAB", "population": 100000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Teke people : https://en.wikipedia.org/wiki/Teke_people",
+      "Wikipedia EN — Teke languages : https://en.wikipedia.org/wiki/Teke_languages",
+      "101 Last Tribes — Teke people : https://www.101lasttribes.com/tribes/teke.html",
+      "Joshua Project — Teke Northern in Gabon : https://joshuaproject.net/people_groups/14033/GB",
+      "SIL International — Linton (2008), cote par 101lasttribes.com : 12 sous-groupes linguistiques, 390 000 locuteurs",
+      "Wikipedia EN — Makoko : https://en.wikipedia.org/wiki/Makoko",
+      "CIA World Factbook — Republic of Congo : https://www.cia.gov/the-world-factbook/countries/congo-republic-of-the/",
+      "CIA World Factbook — Democratic Republic of the Congo : https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/"
+    ]
+  }
+}

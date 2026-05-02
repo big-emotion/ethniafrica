@@ -1,0 +1,104 @@
+{
+  "id": "PPL_KOTA",
+  "nameMain": "Kota",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GAB", "COG"],
+  "content": {
+    "appellations": {
+      "mainName": "Kota",
+      "selfAppellation": "Bakota",
+      "exonyms": ["Bakota", "Ikota", "Ikuta", "Mekora (terme fang)"],
+      "originOfExonyms": "Le terme Bakota est l'auto-denomination de ce peuple bantou (avec le prefixe pluriel ba-). La langue qu'ils parlent est appelee iKota ou Ikota. Les Fang, peuple voisin, les appellent Mekora. La signification du terme Bakota serait derivee du mot kota qui signifie lier/attacher/relier, suggerant que ce peuple se considere uni par un destin commun. Le nom Kota est la version abregee et la plus couramment utilisee en francais.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Kota (ou Bakota) est utilise dans les sources academiques et museographiques mondiales, notamment en lien avec leurs celebres figures reliquaires (mbulu ngulu). Les Bakota sont mentionnes dans les statistiques gabonaises parmi les principaux groupes ethniques du pays. Ils forment la majorite de la population de la ville de Makokou, capitale regionale de la province de l'Ogooue-Ivindo.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Zone B (langues kele)",
+      "historicalRegion": "Nord-est du Gabon (province de l'Ogooue-Ivindo) et nord du Congo-Brazzaville",
+      "currentCountries": ["GAB", "COG"]
+    },
+    "ethnicities": [
+      "Bakota proprement dits (Gabon, Ogooue-Ivindo)",
+      "Mahongwe (sous-groupe a lignage matrilineaire, region de Mekambo)",
+      "Ndambomo (sous-groupe du nord-est gabonais)",
+      "Sake (sous-groupe du Gabon)",
+      "Menzambi (sous-groupe du Gabon et Congo)",
+      "Bougom (sous-groupe du Congo-Brazzaville)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bakota sont un peuple bantou de la Zone B etabli dans le nord-est du Gabon et le nord du Congo-Brazzaville. Comme les autres peuples bantous de la region, leurs ancetres ont migre depuis le bassin du Congo dans le cadre des grandes migrations bantoues. Leur presence dans la region de l'Ogooue-Ivindo est attestee depuis plusieurs siecles avant les premiers contacts avec les Europeens.",
+      "formationPeriod": "L'identite bakota distincte s'est consolidee au fil des siecles dans la region forestiere de l'Ogooue-Ivindo. Leur culte ancestral particulier, avec ses figures reliquaires en metal (mbulu ngulu) dans le cadre de l'ordre Bwete, remonte au moins au 18e siecle. Ce culte s'est eteint vers 1940 avec la conversion progressive au christianisme.",
+      "migrationRoutes": [
+        "Migrations bantoues depuis le bassin du Congo vers le Gabon",
+        "Etablissement dans la region forestiere de l'Ogooue-Ivindo (nord-est du Gabon)",
+        "Extension vers le nord du Congo-Brazzaville (Cuvette-Ouest, region de Kelle et Mbomo)"
+      ],
+      "historicalSettlementZones": [
+        "Province de l'Ogooue-Ivindo (nord-est du Gabon), capitale regionale Makokou",
+        "Province du Haut-Ogooue (Gabon, region entre Makokou et Okondja)",
+        "Departement de la Cuvette-Ouest, Congo-Brazzaville (regions de Kelle et Mbomo)",
+        "Sud-est du Congo-Brazzaville"
+      ],
+      "unificationsOrDivisions": "Les Bakota ont un fort background egalitaire qui traverse les clivages d'age et de genre. Politiquement, ils ont ete classes parmi les societes dites sans etat (stateless societies). Les sous-groupes bakota (Mahongwe, Ndambomo, Sake, etc.) se distinguent par des variantes culturelles et dialectales, notamment le Mahongwe qui a adopte un systeme de filiation matrilineaire contrairement a la majorite patrilineaire.",
+      "externalInfluences": "Contacts avec les commerçants europeens a partir du 18e-19e siecles. Colonisation francaise et evangelisation chretienne (notamment catholique) aux 19e-20e siecles. La conversion au christianisme a conduit a l'extinction du culte Bwete et des figures reliquaires vers 1940. Les missionnaires et fonctionnaires coloniaux ont collecte les figures reliquaires mbulu ngulu, dont la plupart se trouvent aujourd'hui dans des musees europeens et nord-americains.",
+      "majorHistoricalEvents": "La collecte systematique des figures reliquaires mbulu ngulu par les missionnaires et administrateurs coloniaux au 18e-19e siecles. La conversion progressive au catholicisme romain, entraenant l'abandon du culte ancestral Bwete vers 1940. Quelques Bakota ont accede a des postes politiques importants au Gabon apres l'independance (1960) : Alexandre Sambat (ambassadeur aux Etats-Unis, candidat presidentiel 1993), Pascal Desire Misongo (ministre de la Justice), Emmanuel Issoze-Ngondet (representant aux Nations Unies, Premier ministre du Gabon)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Bakota sont classes parmi les societes sans etat (stateless societies) avec un fort background egalitaire depassant les clivages d'age et de genre. Systeme de gouvernance localise base sur des conseils d'anciens. L'etat egalitaire de la societe kota s'illustre notamment dans le concept d'Ewele (fierte/dignite) enseigne aux enfants et valorise a travers les generations.",
+      "clanOrganization": "Structure majoritairement patriarcale avec des lignages patrilineaires. Cependant, certains sous-groupes comme les Mahongwe ont adopte un systeme matrilineaire au fil du temps. Les reliquaires ancestraux (usuwu) etaient gardes par des clans et sortis lors de grandes ceremonies communautaires.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent les droits sur les reliquaires ancestraux et les obligations rituelles envers les ancetres. Les cranes et ossements des fondateurs de clans et chefs importants etaient conserves dans des paniers reliquaires, materialisant le lien entre les lignages des vivants et des morts.",
+      "religiousAuthority": "L'ordre Bwete (culte ancestral) etait l'institution religieuse centrale, associee aux figures reliquaires mbulu ngulu. Des gardiens spirituels preservaient les reliquaires et presidaient les ceremonies d'invocation des ancetres. Depuis la conversion au christianisme (catholique romain majoritairement), les pretres catholiques et pasteurs constituent l'autorite religieuse dominante."
+    },
+    "languages": {
+      "mainLanguage": "iKota (Kota)",
+      "isoCodes": ["koq"],
+      "dialects": [
+        "Ndambomo (nord-est du Gabon)",
+        "Mahongwe (region de Mekambo, Gabon)",
+        "Ikota-la-hua (variete centrale)",
+        "Sake (Gabon)",
+        "Menzambi (Gabon et Congo)",
+        "Bougom (Congo-Brazzaville)"
+      ],
+      "vehicularRole": "L'iKota est une langue bantoue de la Zone B (langues kele) parlee par environ 43 500 locuteurs selon Ethnologue, dont 34 442 au Gabon (province de l'Ogooue-Ivindo) et 9 055 en Republique du Congo. Le francais est la langue officielle au Gabon et au Congo. Le fang et d'autres langues regionales servent de vehiculaires dans les echanges interethniques. La variete Mahongwe, parlee par quelques milliers de personnes dans la region de Mekambo, fait l'objet d'etudes par l'Endangered Language Alliance."
+    },
+    "culture": {
+      "majorRites": "Le culte Bwete etait l'ordre religieux et mystique central des Bakota, associe aux figures reliquaires mbulu ngulu. Les cranes et ossements des ancetres importants (fondateurs de clan, chefs) etaient places dans des paniers (usuwu) gardes dans des sanctuaires. Ces paniers etaient sortis lors de grandes ceremonies communautaires, pendant lesquelles les ancetres participaient symboliquement a la vie des descendants. Les figures mbulu ngulu surplombaient les paniers. Si le village demenageait, les paniers d'ossements accompagnaient le groupe. Les rites de circoncision et de purification des veuves sont une autre caracteristique originale, generalement gardes secrets. Le culte Bwete s'est eteint vers 1940 avec la christianisation.",
+      "symbols": "Les figures reliquaires mbulu ngulu (en iKota : reliquaire en panier avec figure) sont le symbole artistique et spirituel le plus connu des Bakota. Ces sculptures en bois recouvertes de plaques de cuivre ou de laiton martelee sont uniques dans l'art africain par leur combinaison de bois et de metal. La face ovale concave est feminine, la face convexe est masculine. La base en losange ou diamant est attachee au panier reliquaire. L'Ewele (fierte ou dignite) est le concept culturel central enseigne aux enfants kota.",
+      "artsAndMusic": "Les figures reliquaires mbulu ngulu sont la forme artistique la plus celebre des Bakota, exposees dans les principaux musees du monde (Metropolitan Museum of Art, Smithsonian, Saint Louis Art Museum, Kimbell Art Museum, Toledo Museum). Ces sculptures en bois recouvertes de plaques de metal martelee (cuivre, laiton, fer) ont fascine les artistes europeens du debut du 20e siecle et ont influence l'art moderne. La variante Mahongwe produit des masques sculptes reconnus. La musique traditionnelle inclut des percussions et des chants lors des ceremonies communautaires. L'artisanat comprend la vannerie (fabrication des paniers usuwu) et le travail du metal.",
+      "spiritualities": "La religion traditionnelle bakota etait centree sur un culte ancestral : les Bakota croyaient que les reliques (crane et certains os) des ancetres importants conservaient leur pouvoir apres la mort, protegeant et assurant la bonne fortune de leurs descendants. Ces reliques etaient gardees dans des paniers reliquaires (usuwu), et les figures mbulu ngulu servaient de gardiens. Ce culte etait integre dans l'ordre spirituel et mysterieux appele Bwete. La majorite des Bakota sont aujourd'hui catholiques romains, la region etant couverte par le Vicariat apostolique de Makokou."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Bakota ont historiquement ete classes parmi les societes sans etat centralise (stateless societies), sans royaume ni chefferie centralisee au sens strict. L'organisation etait egalitaire, sans hierarchie rigide. Politiquement peu influents a l'echelle gabonaise, quelques Bakota ont neanmoins accede a des postes importants apres l'independance : Emmanuel Issoze-Ngondet a ete representant aux Nations Unies et Premier ministre du Gabon.",
+      "relationsWithNeighbors": "Les Bakota partagent leur region avec les Fang (qui les appellent Mekora) et les Kwele dans la province de l'Ogooue-Ivindo. Ils sont egalement en contact avec les pygmees (Bakoya, Baka) des forets de l'Ivindo. Des contacts commerciaux anciens avec d'autres groupes bantous de la region. Les missionnaires et explorateurs europeens (Pierre Savorgnan de Brazza, 1875-1882) ont documente la region de l'Ogooue-Ivindo et ses habitants.",
+      "conflictsOrAlliances": "Peu de conflits majeurs documentés. L'histoire des Bakota est marquee davantage par des processus de transformation interne (adoption du matrilineat par les Mahongwe) et par l'impact de la colonisation (evangelisation, collecte des reliquaires). Les explorateurs europeens (Marche, Compiègne, 1873-1874) ont explore la region de l'Ivindo et rencontre l'hostilite de certains groupes voisins comme les Fang-Meke.",
+      "diaspora": "Une diaspora bakota est presente dans les grandes villes du Gabon (Libreville, Franceville) et du Congo-Brazzaville (Brazzaville). Une emigration vers la France et d'autres pays francophones existe depuis l'independance."
+    },
+    "demography": {
+      "totalPopulation": 50000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue : 34 442 locuteurs au Gabon et 9 055 au Congo-Brazzaville. Endangered Language Alliance estime 40 000 a 50 000 Bakota au total. Wikipedia (Kota people, Gabon) : au moins 43 500 locuteurs kota dans le monde. Estimation 2025 integrant la croissance demographique.",
+      "distributionByCountry": [
+        {
+          "country": "GAB",
+          "population": 40000,
+          "note": "Principalement dans la province de l'Ogooue-Ivindo (Makokou) et dans le Haut-Ogooue du Gabon"
+        },
+        {
+          "country": "COG",
+          "population": 10000,
+          "note": "Departement de la Cuvette-Ouest (regions de Kelle et Mbomo) et sud-est du Congo-Brazzaville"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kota people (Gabon). https://en.wikipedia.org/wiki/Kota_people_(Gabon)",
+      "Wikipedia EN — Kota language (Gabon). https://en.wikipedia.org/wiki/Kota_language_(Gabon)",
+      "SIL Ethnologue — Kota language (koq). https://www.ethnologue.com/language/koq/",
+      "Endangered Language Alliance — Ikota. https://www.elalliance.org/languages/kota",
+      "Smithsonian Institution — Reliquary guardian figure. https://www.si.edu/object/nmafa_78-14-12",
+      "Barakat Gallery — Bakota Reliquary Guardian Figure. https://barakatgallery.eu/artworks/categories/889/95879-bakota-reliquary-guardian-figure-mbulu-ngulu-19th-early-20th-century/",
+      "Kimbell Art Museum — Kota Reliquary Guardian Figure. https://kimbellart.org/news-and-stories/kimbell-reliquary-guardian-figure-and-kwele-mask"
+    ]
+  }
+}

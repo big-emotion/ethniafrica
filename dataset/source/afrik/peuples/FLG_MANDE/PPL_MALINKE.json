@@ -1,0 +1,141 @@
+{
+  "id": "PPL_MALINKE",
+  "nameMain": "Malinké",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["MLI", "GIN", "SEN", "GMB", "CIV", "BFA"],
+  "content": {
+    "appellations": {
+      "mainName": "Malinké",
+      "selfAppellation": "Maninka / Mandinka",
+      "exonyms": [
+        "Mandinka (Sénégal, Gambie, Guinée-Bissau)",
+        "Mandingo (anglophone)",
+        "Manding (générique)",
+        "Maninka (Guinée, Mali)",
+        "Malinké (français)",
+        "Madingo",
+        "Madinka"
+      ],
+      "originOfExonyms": "Le terme Malinké est la forme française de Maninka, issu du nom de la région historique du Manden (ou Mandé), berceau de l'empire du Mali (Mali/Guinée actuels). Mandinka est la variante soninkée-gambienne du même terme. Mandingo est la version anglaise coloniale, encore utilisée en Gambie et en Sierra Leone. Ces variantes reflètent les différentes routes de dispersion du peuple et les influences linguistiques coloniales (français/anglais).",
+      "whyProblematic": "La terminologie est complexe car Malinké, Mandinka, Mandingo, Maninka et Manding désignent parfois le même groupe ethnique élargi (environ 15 millions de personnes), parfois des sous-groupes distincts selon les contextes géographiques et académiques. L'ISO 639-3 distingue plusieurs langues : emk (Eastern Maninkakan), mnk (Mandinka), mlq (Western Maninkakan), mku (Konyanka Maninka), msc (Sankaran Maninka), mwk (Kita Maninkakan), sous le macrocode man (Mandingo).",
+      "contemporaryUsage": "Malinké est le terme courant en français (Guinée, Côte d'Ivoire, Mali). Mandinka est le terme dominant en Gambie, Sénégal et Guinée-Bissau. Maninka est la forme locale utilisée en Guinée et au Mali. Le groupe est reconnu comme le plus grand sous-groupe des peuples mandé et comme le fondateur de l'empire du Mali.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mandé occidental (Western Mande, branche Manding)",
+      "historicalRegion": "Manden / Mandé (actuel sud du Mali et nord-est de la Guinée) — berceau de l'empire du Mali. Aujourd'hui dispersés du Sénégal à la Côte d'Ivoire.",
+      "currentCountries": ["MLI", "GIN", "SEN", "GMB", "CIV", "BFA"]
+    },
+    "ethnicities": [
+      "Malinké du Mali (Kankan Maninka, Bambara apparentés)",
+      "Malinké de Guinée / Maninka (majorité en Haute-Guinée, région de Kankan)",
+      "Mandinka du Sénégal (Casamance) et de la Gambie (groupe majoritaire de Gambie)",
+      "Mandinka de Guinée-Bissau (environ 35% de la population)",
+      "Malinké de Côte d'Ivoire (nord ivoirien, liés aux réseaux commerciaux Dioula)",
+      "Malinké du Burkina Faso (zones de contact avec les marchands dioula)",
+      "Jakhanke (sous-caste de clercs islamiques, présents dans plusieurs pays)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Malinké descendent des peuples mandé du Manden, région correspondant au sud du Mali et nord-est de la Guinée actuels. Leur histoire commence avec l'empire du Ghana (Wagadu), dont les peuples mandé constituaient une composante essentielle. Les ancêtres chasseurs fondateurs du Manden — Kontron et Sanin (fraternité des chasseurs) — sont les ancêtres mythiques des Malinké et des Bambara. La famille Camara (Kamara) est réputée être la plus ancienne famille de Manden, ayant quitté Wagadou lors d'une sécheresse pour fonder les premiers villages (Kiri, Kirina, Siby, Kita). Le Manden était une province fertile giboyeuse, populaire comme terrain de chasse, avant de devenir le cœur politique de l'empire du Mali.",
+      "formationPeriod": "L'identité malinké s'est cristallisée lors de la fondation de l'empire du Mali par Soundiata Keïta en 1235, qui réunit les royaumes fragmentés issus de l'effondrement de l'empire du Ghana au 11e siècle. L'expansion vers l'ouest sous le général Tiramakhan Traore (fin 13e siècle) a créé la diaspora mandinka en Sénégambie. La Kangaba, l'une des plus anciennes dynasties au monde (13 siècles de règne quasi ininterrompu), constitue le noyau historique du peuple malinké.",
+      "migrationRoutes": [
+        "Depuis le Manden (Mali/Guinée) vers l'ouest : migration vers la Sénégambie sous Tiramakhan Traore (13e siècle)",
+        "Vers le sud-ouest : Guinée Forestière, Sierra Leone, Libéria",
+        "Vers le nord-ouest : Sénégal, Gambie, Guinée-Bissau (migrations commerciales et conquêtes)",
+        "Vers le sud-est : Côte d'Ivoire (réseaux commerciaux Dioula)",
+        "Vers le Burkina Faso (marchands mandé)"
+      ],
+      "historicalSettlementZones": [
+        "Manden (Mali/Guinée) — foyer historique, région de Kangaba et Kankan",
+        "Sénégambie (Gambie, Casamance sénégalaise) — foyer mandinka",
+        "Haute-Guinée (région de Kankan, Siguiri) — foyer maninka guinéen",
+        "Nord de la Côte d'Ivoire (réseaux Dioula-Malinké)",
+        "Guinée-Bissau (groupe majeur)",
+        "Libéria et Sierra Leone (présence marchande et ethnique)"
+      ],
+      "unificationsOrDivisions": "Les Malinké se distinguent de leurs voisins par leur organisation en groupes dynastiques dominés par une noblesse héréditaire. La Kangaba est la plus illustre de ces dynasties. Les groupes malinké sont divisés entre les différents pays et ont développé des identités locales distinctes (Mandinka, Maninka, etc.) tout en maintenant une conscience commune de leur lien avec l'empire du Mali et la tradition de Soundiata Keïta. La stratification sociale en castes héréditaires est une constante : freeborn (foro/horon), castes d'artisans-griots (nyamolo/nyamakala), et anciens esclaves (jongo).",
+      "externalInfluences": "Islam : les marchands arabo-berbères ont introduit l'islam dans la région du Mali dès le 11e siècle. Mansa Musa (1307-1332) a institutionnalisé l'islam dans l'empire. Les jihads fula (Imamat du Fouta Djalon, 18e-19e siècles) ont converti de nombreux Malinké de l'ouest. Les Malinké du Mali se sont islamisés tôt, tandis que ceux de l'ouest ont résisté plus longtemps. Colonisation française (Mali, Guinée, Sénégal, Côte d'Ivoire) et britannique (Gambie, Sierra Leone) ayant restructuré les chefferies. Traite transatlantique (16e-19e siècles) : des dizaines de milliers de Mandinka ont été réduits en esclavage.",
+      "majorHistoricalEvents": "Fondation de l'empire du Ghana par les ancêtres soninké (1er millénaire CE). Fondation de l'empire du Mali par Soundiata Keïta (1235) après la bataille de Kirina. Pèlerinage mémorable de Mansa Musa à La Mecque (1324) avec 60 000 personnes et 12 tonnes d'or. Apogée de l'empire du Mali (14e siècle). Déclin et éclipse par l'empire Songhaï (15e siècle). Empire du Wassoulou de Samori Touré (19e siècle) — résistance à la colonisation française. Traite transatlantique (16e-19e siècles). Indépendances (Mali 1960, Guinée 1958, Sénégal 1960, Gambie 1965, Côte d'Ivoire 1960)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Système politique traditionnel fondé sur des confédérations de villages (kafu) dirigées par un kafu-tigi (chef de confédération). Le village (dugu) est dirigé par le dugu-tigi (chef de village), issu de la famille la plus ancienne du village. La famille étendue (lu) constitue l'unité de base, dirigée par le fa (chef de famille). Les communautés sont autonomes et auto-gouvernées, le chef agissant comme premier parmi ses pairs, assisté d'un conseil d'anciens de la classe supérieure. La tradition de l'empire du Mali a instauré un titre royal (mansa = roi/empereur) pour les grands dirigeants politiques. La Kangaba maintient une des plus anciennes dynasties mondiales.",
+      "clanOrganization": "Structure clanique patrilinéaire. Castes héréditaires endogames : horon/foro (libres, principalement agriculteurs et nobles), nyamakala/nyamolo (artisans-griots, incluant forgerons, cordonniers, potiers, sculpteurs, griots/jalolu), et jonw/jongo (anciens esclaves, descendants de captifs). Les castes Jakhanke (clercs islamiques) ont une identité particulière depuis le 13e siècle. Les mariages hors caste étaient traditionnellement interdits. Le clan Keïta (descendants de Soundiata) occupe une place particulière dans la hiérarchie sociale.",
+      "ageClassSystems": "Système d'initiation à la puberté (Kuyangwoo) : les jeunes garçons (4-14 ans) subissent des rites de passage incluant la circoncision, puis passent plusieurs semaines à l'écart du village pour apprendre les responsabilités d'adulte. À leur retour, ils sont célébrés comme nouveaux membres adultes de la communauté. Les femmes ont également leurs rites d'initiation. La société secrète masculine Komo organise des degrés d'initiation pour les hommes adultes.",
+      "roleOfLineages": "Les lignages patrilinéaires (dominent l'appartenance clanique, les droits fonciers, la succession politique et les alliances matrimoniales. La généalogie est fondamentale : les griots (jalolu/jeli) conservent et récitent les généalogies des grandes familles sur des générations. L'autorité politique et spirituelle se transmet de père en fils dans les familles fondatrices de villages. Le marabout (alpha/almaami) est souvent issu d'un lignage spécialisé dans les études coraniques.",
+      "religiousAuthority": "Islam sunnite malékite dominant depuis le 12e siècle pour les groupes orientaux, depuis le 18e-19e siècles pour les groupes occidentaux (via les jihads fula). Le marabout (alpha, almaami, ou marabou) joue un rôle central : il écrit des versets coraniques dans des pochettes de cuir (gris-gris/talismans), est consulté pour les décisions importantes et contrôle les esprits via des formules protectrices. Les oulémas islamiques structurent l'éducation coranique (daara). Les griots (jalolu) maintiennent la mémoire historique et culturelle. Les confréries soufies (Tijaniyya, Qadiriyya) ont une influence significative."
+    },
+    "languages": {
+      "mainLanguage": "Malinké / Maninka / Mandinka (branche Manding des langues mandé)",
+      "isoCodes": ["man", "emk", "mnk", "mlq", "mku", "msc", "mwk"],
+      "dialects": [
+        "Eastern Maninkakan (emk) — Haute-Guinée et est du Mali, 3,1 millions de locuteurs en Guinée",
+        "Mandinka (mnk) — Gambie, Sénégal (Casamance), Guinée-Bissau, 1,3 millions de locuteurs",
+        "Western Maninkakan (mlq) — Sénégal occidental et Gambie",
+        "Konyanka Maninka (mku) — Guinée",
+        "Sankaran Maninka (msc) — Guinée",
+        "Kita Maninkakan (mwk) — région de Kita, Mali",
+        "Dialecte de Kankan (Wudala) — comprehensible par tous les locuteurs guinéens"
+      ],
+      "vehicularRole": "Le malinké/mandinka est une des principales linguas francas de l'Afrique de l'Ouest. Le bambara (langue sœur) est la langue nationale du Mali parlée par 80% de la population. Le mandinka est la principale langue de Gambie. L'ensemble des variantes (macrolangue man) compte environ 15 millions de locuteurs natifs. Ecriture : alphabet latin (officiel dans tous les pays concernés), alphabet arabe/Ajami (traditionnel et très pratiqué dans les communautés islamiques), N'Ko (alphabet panmandingue, inventé en 1949, utilisé en Guinée-Bissau, nord-est Guinée)."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation à la puberté (Kuyangwoo) : garçons (circoncision + séjour en brousse de 3-4 semaines pour apprendre les responsabilités d'adulte) et filles (initiation féminine séparée, dont excision dans de nombreuses communautés). Cérémonie de nomination du nouveau-né le huitième jour après la naissance (prénom choisi parmi les ancêtres importants de la famille). Mariage organisé par la famille : la famille du prétendant envoie des noix de kola aux anciens de la famille de la promise ; polygamie jusqu'à quatre épouses (si égale capacité de prise en charge) ; la première épouse détient l'autorité sur les co-épouses. Pèlerinage à La Mecque (Hajj) comme accomplissement spirituel majeur. Cérémonies de griots (jaliya) lors des grandes occasions familiales et politiques. Cérémonie annuelle des pluies (sacrifice d'un taureau noir aux esprits ancestraux). Célébrations islamiques majeures (Ramadan, Tabaski/Aïd-el-Kébir, Maouloud/Mawlid).",
+      "symbols": "Kora (instrument des griots) : symbole musical identitaire par excellence. Épée de Soundiata Keïta : symbole de la royauté et de la fondation de l'empire du Mali. N'Ko (écriture panmandé) : symbole d'identité culturelle et littéraire. Boubou (grand vêtement traditionnel) et bonnet brodé comme symboles du statut social. Fétiches et gris-gris islamiques (talismans coraniques portés par les marabouts). Djembe : tambour emblématique des célébrations communautaires.",
+      "artsAndMusic": "Tradition des griots (jalolu/jali) : les griots sont les gardiens de la mémoire historique orale, des généalogies et des épopées. Ils accompagnent leur narration à la kora (harpe-luth à 21 cordes, faite d'une gourde coupée en deux, d'une peau de vache ou chèvre et de cordes en nylon, avec une caisse de résonance percée de trous pour les pièces de monnaie) — instrument emblématique des Malinké. Le n'goni (ancêtre du banjo africain-américain). Djembé (grand tambour conique). Balafon (xylophone africain). Tradition épique : épopée de Soundiata (Sunjata Fasa) chantée et récitée par les griots de Kela (école officielle, performée tous les sept ans). La Charte du Mandé (1222) — considérée comme l'un des premiers textes de droits de l'homme — fait partie de la tradition orale. Artisanat : tissage de bogolan (tissu teint à la boue), bijoux en or et argent, maroquinerie (cordonniers-griots), poterie, sculpture (notamment masques d'initiation Komo). Danse traditionnelle lors des cérémonies d'initiation et des fêtes.",
+      "spiritualities": "Islam sunnite malékite largement dominant (90%+ dans la plupart des pays). L'islam a été adopté progressivement depuis le 11e siècle, d'abord par les élites commerçantes et royales, puis par l'ensemble de la population via les jihads soufis du 18e-19e siècle. Syncrétisme profond : les pratiques islamiques coexistent avec des croyances animistes préislamiques persistantes (culte des esprits de la terre, sacrifices propitiatoires, fétiches protecteurs, médecine traditionnelle/maraboutisme). La société secrète Komo (masculine) maintient des rituels d'initiation préislamiques incluant des masques et des croyances en la nyama (force spirituelle). En Guinée-Bissau, seulement 35% des Mandinka pratiquent l'islam, plus de 20% sont chrétiens, 15% suivent des croyances traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Empire du Ghana (Wagadu) : ancêtres soninké, 1er millénaire CE, Mande diaspora de l'Atlantique au Niger. Empire du Mali : fondé par Soundiata Keïta en 1235 après la bataille de Kirina ; apogée sous Mansa Musa (1307-1332) qui contrôlait une superficie équivalant à l'Europe occidentale ; université de Sankore à Tombouctou fondée au 12e siècle ; empire couvrant le Mali, la Mauritanie, le Sénégal, la Gambie, la Guinée, la Guinée-Bissau, le Burkina Faso et la Côte d'Ivoire. Kaabu : empire mandé en Sénégambie (duché malinké). Wassoulou : empire de résistance de Samori Touré contre la colonisation française (19e siècle). Quatorze royaumes mandinka le long du fleuve Gambie (début 19e siècle). Kangaba : une des plus anciennes dynasties du monde (13 siècles de règne quasi-ininterrompu).",
+      "relationsWithNeighbors": "Relations commerciales intenses avec les peuples Wolof (tensions avec l'empire Djolof), Fula/Peul (alliances et conflits, jihads du Fouta Djalon), Soninké (langue mère du groupe mandé), Bambara (frères linguistiques, tensions politiques). Les Malinké ont historiquement été des peuples marchands majeurs établissant des réseaux commerciaux transsahariens (or, sel, cuir, esclaves). Influence culturelle et islamique sur les peuples voisins non-mandé (Wolof, Sérère, Diola, Bété).",
+      "conflictsOrAlliances": "Bataille de Kirina (1235) : Soundiata Keïta défait Soumaoro Kanté (roi Soussou), fondant l'empire du Mali. Conflits avec les Wolof de l'empire Djolof pour le contrôle du commerce sénégambien. Jihads fula contre les Mandinka de l'ouest (18e-19e siècles, Imamat du Fouta Djalon). Empire du Wassoulou de Samori Touré contre la colonisation française (1882-1898, Samori Touré déporté aux Gabon). Traite transatlantique : les Mandinka de Sénégambie représentaient environ 33% des esclaves déportés vers les Amériques aux 18e-19e siècles depuis cette région (environ 0,76 million depuis la Sénégambie).",
+      "diaspora": "Diaspora historique aux Amériques (traite transatlantique, 16e-19e siècles) : les Malinké/Mandinka sont l'un des groupes africains les mieux identifiés dans les Amériques. Kunta Kinteh (ancêtre fictionnalisé par Alex Haley dans Roots) est un Mandinka capturé en Gambie. Influence majeure sur l'heritage africain-américain au Brésil, dans le sud des États-Unis et dans les Caraïbes. Diaspora contemporaine : importantes communautés en France (Guinéens, Maliens, Sénégalais), au Royaume-Uni, aux États-Unis et au Portugal (Guinéens-Bissau). La Gambie et la Guinée-Bissau comptent d'importantes diasporas mondiales. Migration économique intra-africaine vers la Côte d'Ivoire, le Ghana et l'Afrique du Sud."
+    },
+    "demography": {
+      "totalPopulation": 13000000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur Wikipedia (Mandinka people : environ 15 millions), 101 Last Tribes (7,75 millions de Malinke stricto sensu), CIA World Factbook (profils pays), Ethnologue (macrolangue man), Joshua Project. Note : les chiffres varient selon que l'on inclut uniquement les Malinke/Maninka de Guinee-Mali (sens strict) ou l'ensemble du groupe Manding incluant les Mandinka de Gambie-Senegal. Projections 2025.",
+      "distributionByCountry": [
+        {
+          "country": "MLI",
+          "population": 1500000,
+          "note": "Maninka du Mali, region de Kangaba, Kita et Kayes. Les Bambara (proches) representent aussi une partie importante."
+        },
+        {
+          "country": "GIN",
+          "population": 3500000,
+          "note": "Maninka de Haute-Guinee (region de Kankan), groupe ethnique le plus important de Guinee (environ 30%)."
+        },
+        {
+          "country": "SEN",
+          "population": 1200000,
+          "note": "Mandinka de Casamance et du Sénégal oriental."
+        },
+        {
+          "country": "GMB",
+          "population": 600000,
+          "note": "Mandinka : groupe ethnique majoritaire de Gambie (environ 35% de la population)."
+        },
+        {
+          "country": "CIV",
+          "population": 1000000,
+          "note": "Malinke du nord ivoirien, souvent integres aux reseaux Dioula."
+        },
+        {
+          "country": "BFA",
+          "population": 400000,
+          "note": "Malinke-Dioula du Burkina Faso."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Mandinka people. https://en.wikipedia.org/wiki/Mandinka_people",
+      "Wikipedia EN — Maninka language. https://en.wikipedia.org/wiki/Maninka_language",
+      "Wikipedia EN — Mandinka language. https://en.wikipedia.org/wiki/Mandinka_language",
+      "Britannica — Malinke. https://www.britannica.com/topic/Malinke",
+      "101 Last Tribes — Malinke people. https://www.101lasttribes.com/tribes/malinke.html",
+      "Joshua Project — Western Maninka in Mali. https://joshuaproject.net/people_groups/13510/ML",
+      "Peoples of the World — Mandinka. https://www.peoplesoftheworld.org/text?people=Mandinka",
+      "Niane, Djibril Tamsir — Soundjata ou l'epopee mandingue. Paris : Presence Africaine, 1960.",
+      "Levtzion, Nehemia — Ancient Ghana and Mali. Londres : Methuen, 1973.",
+      "SIL Ethnologue — Mandingo macrolanguage (man). https://www.ethnologue.com/language/man/"
+    ]
+  }
+}

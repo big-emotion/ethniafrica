@@ -1,0 +1,68 @@
+{
+  "id": "PPL_ANTAMBAHOAKA",
+  "nameMain": "Antambahoaka",
+  "languageFamilyId": "FLG_AUSTRONESIENNE",
+  "currentCountries": ["MDG"],
+  "content": {
+    "appellations": {
+      "mainName": "Antambahoaka",
+      "selfAppellation": "Antambahoaka",
+      "exonyms": ["Antambahoaka (terme signifiant \"ceux du peuple\")"],
+      "linguisticFamily": "FLG_AUSTRONESIENNE",
+      "ethnoLinguisticGroup": "Malayo-polynésien",
+      "historicalRegion": "Sud-est de Madagascar",
+      "currentCountries": ["MDG"]
+    },
+    "ethnicities": [
+      "Antambahoaka du Nord",
+      "Antambahoaka du Sud",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Antambahoaka sont originaires du sud-est de Madagascar. Leur présence remonte aux migrations austronésiennes et à la fusion avec les populations bantoues. Groupe relativement petit avec des traditions uniques.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts. Traditions culturelles spécifiques.",
+      "externalInfluences": "Contacts avec les marchands arabes, swahilis, européens. Influence du christianisme et de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de fokonolona (communautés villageoises).",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Importance des ancêtres (razana).",
+      "religiousAuthority": "Autorité des mpisikidy (devins), des pasteurs chrétiens, et des oulémas musulmans. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Malgache (dialecte antambahoaka)",
+      "vehicularRole": "Le malgache antambahoaka est parlé par la majorité des Antambahoaka. Le français est également utilisé."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Famadihana (retournement des morts)",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (circoncision, fêtes de naissance)",
+      "source_3": "Cérémonies spécifiques aux Antambahoaka",
+      "Symboles": "Symboles culturels antambahoaka, symboles liés à la mer, symboles chrétiens et musulmans.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (tissage, vannerie)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles, christianisme et islam. Culte des ancêtres (razana)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora antambahoaka dans les grandes villes malgaches et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 100000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements malgaches, CIA World Factbook, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Malagasy language (mlg)",
+      "CIA World Factbook – Madagascar",
+      "Recensements malgaches",
+      "Études anthropologiques sur les peuples malgaches"
+    ]
+  }
+}

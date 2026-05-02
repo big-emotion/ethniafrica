@@ -1,0 +1,23 @@
+{
+  "id": "PPL_EBIRA",
+  "nameMain": "",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Ebira / Igbira",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "historicalRegion": "Nigeria (État de Kogi, centre)",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (igb)", "Kogi State Cultural Archives"]
+  }
+}

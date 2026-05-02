@@ -1,0 +1,100 @@
+{
+  "id": "PPL_LUNDA_NORTE",
+  "nameMain": "Lunda (Norte)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["AGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Lunda de Lunda Norte",
+      "selfAppellation": "Aluunda / Ruund (groupe Lunda central) ; Balunda (terme courant)",
+      "exonyms": [
+        "Lunda Norte (désignation administrative angolaise)",
+        "Lunda-Chokwe (catégorie ethno-politique angolaise regroupant Lunda et Chokwe)"
+      ],
+      "originOfExonyms": "Lunda Norte est d'abord le nom de la province angolaise (Lunda du Nord) qui désigne aussi les Lunda qui y vivent. Le terme hyphenisé Lunda-Chokwe, apparu vers 1920, désigne l'ensemble ethno-linguistique nord-angolais après le métissage historique Lunda-Chokwe. Les Lunda se désignent eux-mêmes Aluunda ou Ruund.",
+      "whyProblematic": "La catégorie Lunda-Chokwe (4e groupe ethnique angolais, environ 8% de la population) mélange Lunda (Ruund) et Chokwe, deux peuples de même origine lointaine mais de langues et cultures distinctes. En Angola, leur identité ethnique a été politisée : les organisations FNLC (1977-1978) et ATCR (1950-1960) revendiquèrent une nation Lunda Tchokwe indépendante.",
+      "contemporaryUsage": "Le terme Lunda Norte désigne couramment les Lunda de la province éponyme. La langue de la province est principalement le ruund (lunda) et le cokwe (chokwe). Le portugais est langue officielle nationale et administrative.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone L — L52 Lunda/Ruund)",
+      "historicalRegion": "Province de Lunda Norte, Angola (capitale Dundo) — région du fleuve Cuango et de ses affluents",
+      "currentCountries": ["AGO"]
+    },
+    "ethnicities": [
+      "Ruund (Lunda centraux, descendants directs des sujets de l'Empire Mwata Yamvo)",
+      "Shinje (Lunda de la région du Kwango, présents aussi dans le nord-est angolais)",
+      "Minungu (groupe de transition entre Lunda et Mbundu, province nord)",
+      "Badimba (sous-groupe Lunda-Chokwe de la province de Lunda Norte)",
+      "Komungo (petit groupe Lunda du nord de la province)",
+      "Chokwe/Tshokwe angolais (co-résidents historiques, liés aux Lunda par une origine commune)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Lunda de Lunda Norte sont les descendants des Ruund et des groupes lunda qui peuplaient la frange angolaise de l'Empire Lunda (17e-19e siècles), dont le coeur était au Katanga (actuelle RDC). La tradition orale rapporte que l'empire naquit du mariage de la princesse lunda Lweji (fille du chef Kundi) avec le chasseur luba Tchibinda Ilunga. Leurs enfants et alliés s'établirent dans la région de l'actuelle Lunda Norte. Les premiers diamants y furent découverts en 1912 dans la rivière Musalala (affluent du Chiumbue, près de l'actuelle ville de Dundo).",
+      "formationPeriod": "L'installation durable des Lunda dans la région de Lunda Norte remonte au 17e-18e siècle, lors de l'expansion de l'Empire Lunda vers le sud-ouest. La province actuelle de Lunda Norte (103 760 km²) fut créée par les Portugais ; la compagnie Diamang y obtint le monopole d'extraction des diamants en 1917. Après l'indépendance angolaise en 1975, la province de Lunda Norte devint un enjeu stratégique en raison de ses ressources diamantifères (Endiama, créée en 1984).",
+      "migrationRoutes": [
+        "Expansion de l'Empire Lunda vers le sud-ouest depuis le Katanga (17e-18e siècles)",
+        "Migration de groupes Tchinguri (ancêtres Chokwe, dissidents lunda) vers les sources du Cuango et du Cassai",
+        "Migrations forcées pendant la guerre civile angolaise (1975-2002) vers les villes de Dundo et Lucapa"
+      ],
+      "historicalSettlementZones": [
+        "Bassin du fleuve Cuango (Kwango) et de ses affluents (nord-est de l'Angola)",
+        "Région de Dundo (ancienne capitale de la compagnie Diamang, chef-lieu actuel de Lunda Norte)",
+        "Région de Lucapa et Chitato (municipalités de Lunda Norte)",
+        "Zone frontalière avec la RDC (Katanga/Kasai) et avec Lunda Sul"
+      ],
+      "unificationsOrDivisions": "Les Lunda de Lunda Norte se reconnurent longtemps sous l'autorité spirituelle du Mwata Yamvo au Katanga. La partition coloniale de 1884-1886 sépara les Lunda entre le Congo Belge et l'Angola portugais. En Angola, les Lunda furent regroupés administrativement avec les Chokwe sous le label Lunda-Chokwe. Les deux peuples eurent des relations oscillant entre domination Lunda (16e-19e siècles), puis domination Chokwe (fin 19e siècle), puis coexistence coloniale forcée.",
+      "externalInfluences": "Alliance commerciale avec les marchands portugais via l'Angola (ivoire, esclaves, 17e-19e siècles). Conquête et domination Chokwe (1885-1887). Colonisation portugaise (20e siècle) : compagnie Diamang (1917-1977), missions catholiques et protestantes. Guerre civile angolaise (1975-2002) : la région fut une zone d'affrontements MPLA-UNITA. Exploitation diamantifère par Endiama depuis 1984.",
+      "majorHistoricalEvents": "16e-17e siècles : formation de l'Empire Lunda avec centre au Katanga, extension vers l'Angola. 1885-1887 : invasions Chokwe, chute de Musumba, fin de la domination Lunda. 1884 : partition coloniale (Angola portugais). 1912 : découverte des premiers diamants à Musalala. 1917 : création de la Diamang (monopole diamantifère). 1936 : fondation du Musée de Dundo (ethnographie Lunda-Chokwe). 1950-1960 : création de l'ATCR revendiquant une nation Lunda Tchokwe. 1975 : indépendance angolaise. 1977-1978 : invasions du Shaba (FNLC) depuis Lunda Norte. 2002 : fin de la guerre civile."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "L'autorité politique traditionnelle des Lunda de Lunda Norte relève de chefferies héréditaires matrilinéaires reconnaissant l'autorité suprême symbolique du Mwata Yamvo. Le chef local (mwine ou soba) administre son territoire avec un conseil d'anciens (macotas). Les décisions sont prises par consensus entre le chef et ses macotas. L'État angolais reconnaît les chefferies traditionnelles (sobados) comme niveau d'administration de base depuis l'indépendance.",
+      "clanOrganization": "Organisation matrilinéaire : les titres, les terres et les biens précieux se transmettent par la ligne maternelle. Les clans (mikowa) sont l'unité de base de l'organisation sociale. Le mariage est exogame par rapport au clan de la mère. Des relations de joking (plaisanterie rituelle) existent entre certains clans alliés.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les matrilignées déterminent l'affiliation clanique, l'héritage des titres et des biens. Le chef de lignage (mwine wa mukowa) gère les conflits internes et représente le lignage devant le chef de village. L'autorité politique et la légitimité sont conférées par la matrilignée royale.",
+      "religiousAuthority": "Le supreme dieu Nzambi (aussi Kalunga) n'est pas prié directement. Les esprits des ancêtres (mizimu) sont médiateurs entre les hommes et Nzambi. Les devins (nganga) diagnostiquent les causes spirituelles des malheurs et prescrivent les rites d'apaisement. La divination par paniers et oracles de friction est pratiquée. Les missions catholiques et protestantes (depuis l'époque Diamang) ont christianisé une large partie de la population ; les Lunda-Chokwe angolais sont majoritairement chrétiens, pratiquant un syncrétisme avec les croyances traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Lunda / Ruund (Cilunda)",
+      "isoCodes": ["lun"],
+      "dialects": [
+        "Ruund (variante centrale, dialecte de référence en Lunda Norte)",
+        "Cokwe / Kioku (dialecte Chokwe, co-dominant dans la province)",
+        "Badimba (variante Lunda-Chokwe locale de Lunda Norte)",
+        "Komungo (petit parler lunda nord de la province)"
+      ],
+      "vehicularRole": "Dans la province de Lunda Norte, le lunda (ruund) et le chokwe (cokwe) sont les principales langues locales. Le portugais est la langue officielle de l'enseignement, de l'administration et du commerce. La radio nationale angolaise diffuse en lunda et en chokwe pour les provinces orientales. Le lunda est reconnu comme langue nationale angolaise."
+    },
+    "culture": {
+      "majorRites": "Initiation masculine (mukanda) : circoncision des garçons, période de réclusion dans la brousse, instruction par les anciens sur les responsabilités d'adulte et les savoirs traditionnels. Retour célébré par danses et festins communautaires. Initiation féminine (ciputu ou mwali) : à la puberté, réclusion dans la maison, instruction par les femmes aînées, fin marquée par le bain cérémoniel, chants, danses et port de nouveaux vêtements. Danse Akixi et Cikuza : exécutées principalement lors du mukanda (initiation masculine). Danse Cikungu : exécutée lors de l'investiture des grands chefs traditionnels. Rites funéraires et de succession des chefs (plantation d'arbres dans un bosquet sacré).",
+      "symbols": "Le lukano (bracelet de bois sacré du Mwata Yamvo) est le symbole du pouvoir suprême. Le Musée de Dundo (fondé en 1936 par la Diamang sous l'ethnologue José Redinha) conserve et symbolise le patrimoine Lunda-Chokwe. Les masques de chefferie (kalelwa, mwana pwo, cikungu) sont les symboles du pouvoir rituel et de la continuité ancestrale. Les diamants de la région sont un symbole ambivalent de richesse et de conflits historiques.",
+      "artsAndMusic": "Sculpture sur bois : masques de chefferie (cikungu, kalelwa) et d'initiation (mukanda), statues d'ancêtres, sièges cérémoniels décorés, récipients sculptés. La sculpture Lunda-Chokwe est reconnue internationalement pour sa qualité artistique et sa richesse symbolique. Musicalement : tambours ngoma, cloche double ngongi, lamellophone likembe. Danses cérémonielles : akixi, cikuza (initiation), cikungu (investiture des chefs). Vannerie décorative de divination. Musée de Dundo : centre de conservation et d'étude de l'art Lunda-Chokwe (ethnographie, archéologie, histoire naturelle).",
+      "spiritualities": "Nzambi est le dieu créateur inaccessible directement ; les ancêtres sont les intermédiaires. Les esprits des ancêtres (mizimu) peuvent causer maladies et malheurs ou accorder protection et fertilité. La divination (kulowa — paniers sacrés, oracles par friction) est indispensable pour identifier les causes spirituelles des malheurs. Le christianisme (catholique et protestant) est dominant depuis le 20e siècle, mais coexiste en syncrétisme avec les croyances ancestrales. Les chefs traditionnels exercent aussi un rôle de médiateurs spirituels entre les vivants et les ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le territoire de Lunda Norte était partie intégrante de l'Empire Lunda (Mwata Yamvo, 17e-19e siècles), dont la périphérie angolaise était administrée par des chefs locaux (sobas) tributaires du Mwata Yamvo au Katanga. La province de Lunda Norte fut aussi le théâtre de la résistance Lunda-Chokwe à la colonisation portugaise (révolte des Luchazes sous Quelendende, 1916). Après l'indépendance (1975), la province devint un enjeu stratégique de la guerre civile angolaise (MPLA contre UNITA).",
+      "relationsWithNeighbors": "Relations historiques ambivalentes avec les Chokwe : d'abord peuple tributaire de l'Empire Lunda, les Chokwe renversèrent la domination lunda en 1887. Coexistence forcée sous le label Lunda-Chokwe depuis 1920. Relations transfrontalières avec les Lunda du Katanga (RDC) et les Lunda de Lunda Sul. Contacts avec les Nganguela (à l'est), les Mbundu (à l'ouest) et les peuples du Kasai (au nord).",
+      "conflictsOrAlliances": "Domination Chokwe (1885-1887) : invasions armées mettant fin à la suprématie Lunda dans la région. Résistance à la colonisation portugaise (1916 : révolte des Luchazes sous Quelendende). 1950-1960 : Association ATCR revendiquant la reconnaissance de la nation Lunda Tchokwe. Guerres civiles (1975-2002) : la province fut un théâtre d'affrontements entre MPLA et UNITA. 1977-1978 : invasions du Shaba (FNLC) depuis Lunda Norte vers la RDC.",
+      "diaspora": "Les Lunda de Lunda Norte forment une diaspora interne en Angola dans les villes de Luanda, Malanje et Benguela. Des communautés transfrontalières existent dans les provinces du Katanga (RDC) voisines. Pendant la guerre civile (1975-2002), de nombreux Lunda angolais se réfugièrent dans les provinces zambiennes du Nord-Ouest et de Luapula."
+    },
+    "demography": {
+      "totalPopulation": 300000,
+      "referenceYear": 2025,
+      "source": "La province de Lunda Norte compte environ 862 566 habitants (recensement angolais). Les Lunda stricto sensu représentent environ 30-40% de cette population (le reste étant Chokwe et autres). Estimation 2025 basée sur les projections INE Angola, CIA World Factbook Angola, et EPR Atlas Angola.",
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 300000,
+          "note": "Province de Lunda Norte (capitale Dundo), avec présence dans les municipalités de Chitato, Lucapa, Cuango, Capenda Camulemba"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Lunda Norte Province. https://en.wikipedia.org/wiki/Lunda_Norte_Province",
+      "Wikipedia EN — Lunda Empire. https://en.wikipedia.org/wiki/Lunda_Empire",
+      "Country Studies — Angola, Lunda-Chokwe. https://countrystudies.us/angola/62.htm",
+      "EPR Atlas — Ethnicity in Angola. https://growup.ethz.ch/atlas/pdf/Angola.pdf",
+      "Scribd — Introduction Lunda Tshokwe (traduction). https://www.scribd.com/document/912218309/INTRODUCTION-LUNDA-TSHOKWE",
+      "SIL Ethnologue — Lunda (lun). https://www.ethnologue.com/language/lun/",
+      "CIA World Factbook — Angola. https://www.cia.gov/the-world-factbook/countries/angola/"
+    ]
+  }
+}

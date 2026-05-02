@@ -1,0 +1,99 @@
+{
+  "id": "PPL_MBETE",
+  "nameMain": "Mbete",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["GAB", "COG", "COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Mbete",
+      "selfAppellation": "Mbete",
+      "exonyms": [
+        "Mbede",
+        "Mbedi",
+        "Ambete",
+        "Bamba",
+        "Bambete",
+        "Obamba",
+        "Umbete"
+      ],
+      "originOfExonyms": "Les variantes Mbede et Mbedi sont des transcriptions alternatives du nom. Obamba designe generalement un sous-groupe ou est parfois utilise de maniere interchangeable avec Mbete. Ambete est une forme avec le prefixe de classe nominale bantoue. La confusion avec les Kota dans les classifications coloniales provient d'une erreur du missionnaire suedois Efraim Andersson qui les avait classes parmi les Bakota.",
+      "whyProblematic": "Un debat historiographique important entoure l'assimilation des Obamba et Mbete au groupe Kota. Marie-Claude Dupre (1980) s'y est opposee, et l'historien gabonais Guy Claver Loubamono-Bessacque (2017) a confirme que les Obamba sont des Mbete et non des Kota : ils parlent le mbede et non le kota, et leurs migrations viennent de l'est (moyenne Sangha) tandis que les Kota viennent du nord.",
+      "contemporaryUsage": "Mbete ou Mbede sont les termes les plus utilises dans les publications scientifiques. Obamba est utilise dans le contexte congolais. Les Mbete se reconnaissent comme un peuple distinct des Kota.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu equatorial, groupe B30 (classification Guthrie)",
+      "historicalRegion": "Sud-est du Gabon, sud-ouest de la Republique du Congo, region entre Lastourville, Okondja, Mossendjo et Zanaga, limite foret-savane",
+      "currentCountries": ["GAB", "COG", "COD"]
+    },
+    "ethnicities": ["Mbete", "Obamba"],
+    "origins": {
+      "ancientOrigins": "Les Mbete font partie du vaste groupe de peuples ayant migre depuis le Cameroun au cours des trois derniers siecles vers le sud. Selon l'historien gabonais Guy Claver Loubamono-Bessacque, leurs deplacements du XVIIIe au XIXe siecle trouvent leur origine a l'est, sur la moyenne Sangha. Ils ont ensuite migre en empruntant les vallees de l'Ivindo et de l'Ogooue.",
+      "formationPeriod": "Consolidation de l'identite Mbete entre le XVIIIe et le XIXe siecle lors de leurs migrations depuis la moyenne Sangha vers le Gabon et le Congo actuels.",
+      "migrationRoutes": [
+        "Depuis la moyenne Sangha (est) vers l'ouest",
+        "Via les vallees de l'Ivindo (province de l'Ogooue-Ivindo au Gabon)",
+        "Le long du fleuve Ogooue jusqu'a la region de Franceville",
+        "Vers le nord de Mossendjo et Zanaga (Republique du Congo)"
+      ],
+      "historicalSettlementZones": [
+        "Sud-est du Gabon (region autour de Lastourville, Okondja, Franceville sur le fleuve Ogooue)",
+        "Sud de la riviere Likouala, region d'Owando (Republique du Congo)",
+        "Zone de Mossendjo et Zanaga (Republique du Congo)",
+        "Limite foret-savane selon la carte de Soret (1955)"
+      ],
+      "unificationsOrDivisions": "Le peuple Mbete forme un large cluster de peuples sans organisation politique centralisee. Le sous-groupe Obamba est etroitement lie aux Mbete. Des debats ethnographiques ont oppose les historiens sur la distinction Mbete-Kota depuis les erreurs de classification coloniales. La limite entre les sous-groupes Mbete reste parfois imprecise en raison des mouvements de population continus dans la region.",
+      "externalInfluences": "Influence coloniale française sur les deux territoires (Gabon et Congo-Brazzaville). Contact avec les missionnaires suedois au Gabon (Efraim Andersson ayant cree la confusion initiale avec les Kota). L'administration coloniale a parfois regroupe les Obamba avec des groupes Teke, creant des confusions persistantes.",
+      "majorHistoricalEvents": "Classifications coloniales erronees assimilant les Mbete aux Kota (XIXe-debut XXe siecle). Travaux de Marie-Claude Dupre (1980) remettant en cause cette classification. Publication de 'Les forets natales : Arts d'Afrique equatoriale atlantique' par Guy Claver Loubamono-Bessacque (2017) definitivement distinguant Mbete et Kota. Independances du Gabon (1960) et de la Republique du Congo (1960)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Pas d'organisation politique centralisee. Societes secretes nombreuses et puissantes structurant la vie sociale et politique. Organisation par villages sous l'autorite de chefs locaux.",
+      "clanOrganization": "Organisation clanique bantoue. Les lignages constituent la base de l'organisation sociale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role fondamental dans la transmission du statut et dans les rites funeraires, notamment le culte des reliques ancestrales conservees dans des statues reliquaires.",
+      "religiousAuthority": "Culte des ancetres au coeur de la vie religieuse. Les societes secretes etaient nombreuses et puissantes. Pratique contemporaine du christianisme (catholique et protestant) souvent combine au culte ancestral."
+    },
+    "languages": {
+      "mainLanguage": "Mbete (mbede, mbere)",
+      "isoCodes": ["mdt"],
+      "dialects": ["Obamba"],
+      "vehicularRole": "La langue mbete (mbede) comptait environ 105 900 locuteurs en 2000 : 60 400 en Republique du Congo et 45 500 au Gabon. Le français est la langue officielle du Gabon et de la Republique du Congo. Le lingala et le munukutuba servent de langues vehiculaires en Republique du Congo."
+    },
+    "culture": {
+      "majorRites": "Culte des ancetres avec rites funeraires elabores impliquant les statues reliquaires. Societes secretes nombreuses et puissantes. Les reliques des ancetres (os longs de chasseurs importants) etaient conservees dans des cavites dorsales des statues ou dans des paniers places pres des statues.",
+      "symbols": "L'art plastique Mbete est le symbole culturel le plus connu : statues reliquaires a structure cubiste, tetes et bustes sculptes places devant la maison du chef. La coiffure en boucles horizontales partageee par une crete centrale est un motif caracteristique. Le visage peint en blanc est un element symbolique funeraire.",
+      "artsAndMusic": "L'art sculptural mbete est remarquable et figure dans de nombreuses collections museales. Trois types de sculptures : tetes, bustes et figures entieres. Les statues reliquaires a structure cubiste presentent un front proeminent surplombant un visage creuse, une bouche rectangulaire et des traits sculptes largement. Les epaules sont projetees en avant. Les statues sont parfois pourvues d'une cavite rectangulaire dorsale accessible par une petite porte. Les tetes et bustes etaient probablement places sur des poteaux devant la maison du chef avec une fonction apotropaique et emblematique.",
+      "spiritualities": "Culte des ancetres : religion traditionnelle centrale. Christianisme (catholique et protestant) pratique couramment, souvent en syntherese avec le culte ancestral. Les Mbete sont fondamentalement des adorateurs des ancetres selon Joshua Project, qui souligne que les chretiens Mbete continuent generalement d'honorer les esprits ancestraux."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume ou chefferie centralise. Chefferies villageoises locales. Les societes secretes jouaient un role de regulation sociale et politique important.",
+      "relationsWithNeighbors": "Proches des Kota geographiquement (Gabon et Congo), bien que distincts culturellement et linguistiquement. Relations avec les peuples Teke dans la region de Mossendjo-Zanaga. Voisins des Nzebi et d'autres peuples du Gabon oriental.",
+      "conflictsOrAlliances": "Confusion historiographique prolongee avec les Kota due aux erreurs de classification coloniales. Les Mbete ont constamment affirme leur identite distincte, notamment les Obamba refusant d'etre assimiles aux Bakota.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 260000,
+      "referenceYear": 2025,
+      "source": "101lasttribes.com cite Olson (1996) : plus de 250 000 ; estimation 2025 basee sur croissance demographique",
+      "distributionByCountry": [
+        {
+          "country": "COG",
+          "population": 150000,
+          "note": "Sud-ouest de la Republique du Congo, region de Mossendjo, Owando, Zanaga"
+        },
+        {
+          "country": "GAB",
+          "population": 110000,
+          "note": "Sud-est du Gabon, region de Lastourville, Okondja, Franceville"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia FR – Mbete (peuple) (https://fr.wikipedia.org/wiki/Mbete_(peuple))",
+      "101 Last Tribes – Mbete people (https://www.101lasttribes.com/tribes/mbete.html)",
+      "Joshua Project – Mbede in Gabon (https://joshuaproject.net/people_groups/10277/GB)",
+      "Dupre, Marie-Claude – L'art kota est-il vraiment kota ?, 1980",
+      "Loubamono-Bessacque, Guy Claver – Les forets natales : Arts d'Afrique equatoriale atlantique, 2017",
+      "Olson, James S. – The Peoples of Africa: An Ethnohistorical Dictionary, Greenwood, 1996, p. 366-367",
+      "Perrois, Louis – Ambete reliquary figures (Eliot Elisofon)"
+    ]
+  }
+}

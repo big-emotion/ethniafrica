@@ -1,0 +1,139 @@
+{
+  "id": "PPL_SCT_MACRO",
+  "nameMain": "Peuples Soudaniques Centraux (macro-groupe)",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["COD", "UGA", "SDN", "SSD", "CAF", "TCD", "COG"],
+  "content": {
+    "appellations": {
+      "mainName": "Peuples Soudaniques Centraux",
+      "selfAppellation": "Pas de denomination collective partagee ; chaque groupe se designe par son propre nom (Lugbara, Mangbetu, Sara, Azande, Banda, Madi, Moru, etc.)",
+      "exonyms": [
+        "Central Sudanic peoples (anglophone)",
+        "Central Sudanic languages (classification linguistique Greenberg 1963)"
+      ],
+      "originOfExonyms": "Le terme Soudanique Central a ete cree par le linguiste Joseph Greenberg en 1963 pour classifier un ensemble de langues parlees dans la region du Soudan central geographique. Ce terme designe donc en premier lieu une famille linguistique, mais il est utilise par extension pour designer les peuples locuteurs de ces langues.",
+      "whyProblematic": "Le terme Soudanique Central est une categorie linguistique et non une categorie ethnique ou culturelle. Les peuples ainsi designes n'ont pas de conscience d'appartenir a un groupe commun et presentent une tres grande diversite culturelle, sociale et historique. Certaines classifications (Blench 2023, Starostin 2016) remettent en cause la coherence interne de cette famille, notamment pour sa branche occidentale (Bongo-Bagirmi).",
+      "contemporaryUsage": "Employe dans les publications linguistiques et anthropologiques pour designer l'ensemble des peuples parlant des langues de la famille Soudanique Centrale. Non utilise dans la vie courante par les membres de ces groupes.",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Macro-groupe Soudanique Central (classification linguistique Greenberg)",
+      "historicalRegion": "Bassin du Haut-Nil, nord-est de la RDC, sud-ouest du Soudan, RCA, sud du Tchad, nord de l'Ouganda",
+      "currentCountries": ["COD", "UGA", "SDN", "SSD", "CAF", "TCD", "COG"]
+    },
+    "ethnicities": [
+      "Lugbara (nord-ouest de l'Ouganda et nord-est de la RDC)",
+      "Mangbetu (nord-est de la RDC, connus pour leurs arts et leur royaume)",
+      "Sara (sud du Tchad et nord RCA, le groupe le plus nombreux)",
+      "Azande (Zande) (nord-est RDC, RCA, Soudan du Sud)",
+      "Banda (RCA, groupe tres numereux)",
+      "Madi (nord de l'Ouganda et Soudan du Sud)",
+      "Moru (Soudan du Sud occidental)",
+      "Bongo (Soudan du Sud)",
+      "Barma (Bagirmi, Tchad)",
+      "Lendu (nord-est RDC)",
+      "Logo (nord-est RDC et Soudan du Sud)",
+      "Keliko (Soudan du Sud et nord de l'Ouganda)",
+      "Mamvu (nord-est RDC)",
+      "Yulu (RCA et Soudan du Sud)",
+      "Kresh (Aja) (Soudan du Sud et RCA)",
+      "Avukaya (Soudan du Sud)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples Soudaniques Centraux sont originaires de la vaste region du Haut-Nil et du nord-est du Congo. Leurs langues constituent une famille dont la profondeur historique est estimee a plusieurs millenaires. La classification linguistique de Greenberg (1963) les a reunis dans cette famille sur la base de traits grammaticaux et lexicaux communs. Les recherches recentes (Blench 2023, Starostin 2016) maintiennent la coherence de la branche orientale (Lendu-Mangbetu, Moru-Madi) tout en questionnant la branche occidentale (Bongo-Bagirmi incluant les langues Sara).",
+      "formationPeriod": "La diversification des langues soudaniques centrales est datee de plusieurs millénaires, possiblement 5 000 a 8 000 ans avant notre ere. Les groupes ont diverge et se sont differencies en migrations successives depuis un berceau probablement situe dans la region Nil-Congo. Les contacts avec les peuples nilotiques, bantous et sahariens ont profondement marque chaque groupe.",
+      "migrationRoutes": [
+        "Dispersion depuis un berceau proto-soudanien central vers le nord-est de la RDC et le Soudan du Sud (groupes orientaux : Lendu, Mangbetu, Moru-Madi)",
+        "Extension vers le Tchad et la RCA (groupes occidentaux : Sara, Bagirmi, Bongo)",
+        "Penetration en Ouganda du nord (Lugbara, Madi)"
+      ],
+      "historicalSettlementZones": [
+        "Branche orientale : nord-est de la RDC (Mangbetu, Lendu, Mamvu, Logo), nord de l'Ouganda (Lugbara, Madi), Soudan du Sud occidental (Moru, Avukaya, Madi)",
+        "Branche occidentale : sud du Tchad et nord RCA (Sara et ses dialectes), RCA (Banda, Kresh, Yulu), Soudan du Sud (Bongo, Jur, Avukaya)",
+        "Frontiere RDC-SSD-CAF : Azande (Zande)"
+      ],
+      "unificationsOrDivisions": "Aucune unite politique ou culturelle ne regroupe l'ensemble des peuples soudaniques centraux. Chaque groupe a son histoire propre. Certains ont developpe des royaumes importants (Mangbetu, Azande), d'autres sont restes en chefferies locales (Lugbara, Madi, Moru). La diversite des systemes politiques et des organisations sociales est une caracteristique centrale du macro-groupe.",
+      "externalInfluences": "Contacts et conflits avec les peuples nilotiques (Dinka, Nuer, Acholi) et bantous (Mongo, Bito). Razzias arabes du Soudan pour l'esclavage (19e siecle), affectant particulierement les Azande et les Sara. Partage colonial entre puissances europeennes (Belgique, France, Angleterre) qui a divise plusieurs groupes entre plusieurs Etats. Christianisation depuis le 19e siecle (catholicisme, protestantisme). Islamisation partielle (Sara du nord, Barma/Bagirmi).",
+      "majorHistoricalEvents": "Royaume Mangbetu dans le nord-est du Congo (19e siecle), celebre pour ses arts et son organisation etatique. Expansion de l'empire Azande (18e-19e siecles) sous la dynasty Avungara. Razzias arabes et zanzibarites du 19e siecle. Partage colonial de la region (Conference de Berlin 1884-1885). Independances nationales (Congo 1960, Tchad 1960, Ouganda 1962, RCA 1960, Soudan 1956). Guerres civiles post-independance affectant de nombreux groupes."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Extreme diversite : du royaume centralise tres elabore (Mangbetu au 19e siecle, Azande avec la dynasty Avungara) aux chefferies decentralisees et egalitaires (Lugbara, Madi). Les Mangbetu ont developpe une cour royale, une hierarchie administrative et un art d'etat raffine. Les Sara en revanche s'organisaient sans autorite supra-tribale, par clans patrilineaires autonomes. La grande majorite des groupes est organise en chefferies lignageres avec des conseils d'anciens.",
+      "clanOrganization": "La structure clanique patrilineaire est dominante dans l'ensemble du macro-groupe, avec des variantes (Mangbetu : structure fortement hierarchisee avec classe noble ; Lugbara et Madi : structure egalitaire segmentaire ; Azande : classe nobiliaire Avungara distincte du reste de la population).",
+      "ageClassSystems": "Les systemes de classes d'age sont presents dans plusieurs groupes (Sara : yondo, Lugbara, Madi). Ils structurent l'acces aux droits politiques, militaires et sociaux et creent des solidarites horizontales transcendant les lignages.",
+      "roleOfLineages": "Les lignages patrilineaires sont l'unite sociale fondamentale dans la quasi-totalite des groupes. Ils determinent l'acces a la terre, les alliances matrimoniales, les obligations de vengeance et la transmission des rituels.",
+      "religiousAuthority": "Diversite : specialistes religieux traditionnels (devins, guerisseurs, pretres du culte des ancetres) dans l'ensemble des groupes. Les Azande accordent une place centrale aux oracles (benge, termites, rubbing-board). Les Sara ont leurs pretres du yondo. Les Lugbara ont leurs prophetes (adro). Depuis la colonisation, missions catholiques et protestantes tres actives ; majorite des groupes aujourd'hui chretienne dans les zones urbaines."
+    },
+    "languages": {
+      "mainLanguage": "Langues soudaniques centrales (famille en deux branches principales : orientale Lendu-Mangbetu et occidentale Bongo-Bagirmi)",
+      "isoCodes": ["lgg", "mdu", "zne", "sba", "yul", "ldi", "sba"],
+      "dialects": [
+        "Branche orientale (Lendu-Mangbetu) : Mangbetu (mdu), Lendu (ldi), Ngiti, Lugbara (lgg), Madi, Logo, Keliko, Avukaya, Moru, Mamvu",
+        "Branche occidentale (Bongo-Bagirmi) : Ngambay/Sara (sba), Sar, Mbay, Gulay, Bongo, Barma/Bagirmi, Yulu (yul), Kresh",
+        "Zande (zne) — langue du peuple Azande, parfois rattachee a une branche propre ou au Niger-Congo"
+      ],
+      "vehicularRole": "Aucune langue soudanienne centrale ne joue un role vehiculaire pan-groupe. Le sango (vehiculaire a base ngbandi) est la langue officielle de la RCA. Le ngambay est la langue de commerce du sud du Tchad. Le lugbara est la plus grande langue indigene du nord de l'Ouganda. Le francais, l'arabe, l'anglais et le swahili sont utilises comme langues officielles selon les pays."
+    },
+    "culture": {
+      "majorRites": "Grande diversite de rites d'initiation (yondo sara, rites Lugbara, ceremonies Mangbetu) marquant les transitions de vie. Rites funeraires elabores avec ceremonies de deuil prolongees dans la plupart des groupes. Ceremonies agricoles liees au sorgho et au mil (principales cultures). Rites de chasse propitiatoires. Ordalies et consultations d'oracles (notamment Azande) pour resoudre les conflits et identifier les sorciers.",
+      "symbols": "Diversite symbolique : lance (virilite et guerre) dans la plupart des groupes ; masques et figurines en bois (Mangbetu, Logo) ; couteaux de jet (shongo azande) symbolisant le prestige guerrier ; coiffures elongees (Mangbetu, deformation cranienne) pour marquer le statut noble ; scarifications corporelles (Sara, Azande) indiquant l'appartenance clanique et le passage initiatique.",
+      "artsAndMusic": "Le Mangbetu est celebre pour ses arts de cour raffines : poterie anthropomorphe, harpes en bois sculpte, coffrets en ivoire, tresser. Les Azande sont connus pour leurs couteaux de jet (shongo) multi-lames en acier travaille et leurs instruments de musique (sanza/mbira, tambours). Les Sara pratiquent les danses initiatiques (yondo). Les Lugbara et Madi ont des traditions musicales de tambours. Litterature orale (contes du filou Ture chez les Azande, epopees initiatiques chez les Sara) transmise de generation en generation.",
+      "spiritualities": "Croyances animistes generalisees : veneration des ancetres, culte des esprits de la nature, recours aux devins et guerisseurs. Chez les Azande, le systeme de sorcellerie (mangu, substance hereditaire) et les oracles (benge, termites) constituent un systeme explicatif coherent des infortunes quotidiennes. Les Lugbara ont une cosmologie structuree autour d'un etre supreme (Digwari) et des esprits ancestraux (orindi). Les Sara pratiquaient un culte solaire antique. Depuis la colonisation, christianisation majority ; islam present parmi les Sara du nord, les Barma et autres groupes proches des zones musulmanes du Tchad et du Soudan."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume Mangbetu (nord-est du Congo, 19e siecle) etait un Etat centralise elabore avec une cour royale, une hierachie administrative, un art palatial raffine (decrit par les voyageurs europeens comme l'un des royaumes les plus organises d'Afrique centrale). L'Empire Azande s'est developpe au 18e-19e siecle sous la dynasty Avungara par conquete et assimilation des peuples voisins. Les Sara n'ont pas forme de royaume centralise mais ont domine politiquement le Tchad post-independance. Les Barma (Bagirmi) ont fonde le Sultanat du Bagirmi (16e-19e siecles), un des grands Etats du Tchad precolonial.",
+      "relationsWithNeighbors": "Relations complexes entre les differents groupes : alliances et conflits cycliques. Les Azande ont assimile de nombreux peuples voisins dans leur expansion. Les Sara ont resiste aux razzias des emirats du nord. Les Mangbetu ont domine leurs voisins Mamvu, Medje et Lese. Les Lugbara ont eu des relations conflictuelles avec les peuples nilotiques (Acholi, Alur). Relations commerciales longue distance entre les groupes riverains et les peuples de savane.",
+      "conflictsOrAlliances": "Conquetes azande (18e-19e siecles) vers l'est et le nord. Guerres Mangbetu contre les Zande. Resistance des Sara aux razzias du Bagirmi et du Ouaddai. Conflits Lugbara-Alur en Ouganda. Partage colonial entre puissances europeennes (Belgique, France, Angleterre, 1880-1910), qui a divise plusieurs groupes entre Etats differents. Guerres civiles postcoloniales affectant la plupart des groupes (Congo 1960-2024, Tchad 1965-1982, Soudan du Sud 2011-).",
+      "diaspora": "Diasporas urbaines et regionales dans les capitales nationales (Kinshasa, N'Djamena, Bangui, Kampala, Djouba). Diaspora tchadienne (dont Sara) en France. Populations refugiees en Ouganda, RDC et Soudan du Sud suite aux guerres civiles."
+    },
+    "demography": {
+      "totalPopulation": 15000000,
+      "referenceYear": 2025,
+      "source": "Estimation cumulee pour l'ensemble des peuples de la famille soudanienne centrale. Sources : SIL Ethnologue (2024), CIA World Factbook, recensements nationaux (Tchad, RCA, Ouganda, RDC, Soudan du Sud). Le plus grand groupe, les Sara, compte environ 3,8 millions. Les Lugbara 2 millions en Ouganda/RDC. Les Azande 1,1 a 2 millions. Les Banda 1,5 millions en RCA. Les autres groupes varient de quelques milliers (Yulu, Kresh) a plusieurs centaines de milliers (Madi, Moru, Mangbetu).",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 4000000,
+          "note": "Principalement les Sara et leurs sous-groupes (sud du Tchad)"
+        },
+        {
+          "country": "CAF",
+          "population": 3000000,
+          "note": "Sara, Banda, Yulu, Kresh et autres groupes"
+        },
+        {
+          "country": "COD",
+          "population": 4000000,
+          "note": "Mangbetu, Lendu, Logo, Mamvu, Azande et autres dans le nord-est"
+        },
+        {
+          "country": "UGA",
+          "population": 2000000,
+          "note": "Lugbara, Madi, Keliko dans le nord"
+        },
+        {
+          "country": "SSD",
+          "population": 1500000,
+          "note": "Azande, Moru, Bongo, Madi, Avukaya, Yulu"
+        },
+        {
+          "country": "SDN",
+          "population": 300000,
+          "note": "Groupes frontaliers Yulu, Kresh et autres"
+        },
+        {
+          "country": "COG",
+          "population": 200000,
+          "note": "Petits groupes dans le nord du Congo-Brazzaville"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Central Sudanic languages. https://en.wikipedia.org/wiki/Central_Sudanic_languages",
+      "Greenberg, Joseph H. The Languages of Africa. Indiana University Press, 1963.",
+      "Blench, Roger. Classification of Central Sudanic (2023). Manuscrit de travail.",
+      "Starostin, George. Glottolog classification of Central Sudanic. 2016. https://glottolog.org",
+      "SIL Ethnologue — Central Sudanic family. https://www.ethnologue.com",
+      "CIA World Factbook — Democratic Republic of the Congo, Central African Republic, Chad, Uganda, South Sudan. https://www.cia.gov/the-world-factbook/",
+      "Evans-Pritchard, E.E. Witchcraft, Oracles and Magic Among the Azande. Oxford University Press, 1937.",
+      "Vansina, Jan. Kingdoms of the Savanna. University of Wisconsin Press, 1966."
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "id": "PPL_BONO",
+  "nameMain": "Bono",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Bono",
+      "selfAppellation": "Abono woo",
+      "exonyms": ["Brong", "Abron"],
+      "originOfExonyms": "Bono est l'ethnonyme propre du groupe. Brong est la forme anglaise utilisee par les administrateurs coloniaux britanniques et reprise dans l'ancienne denomination de la region Brong-Ahafo (aujourd'hui scindee en Bono, Bono East et Ahafo). Abron est utilise en Cote d'Ivoire pour designer les Bono etablis dans l'est ivoirien. Abono woo signifie pionniers ou premier-ne de la terre en bono-twi.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Bono est officialise au Ghana depuis la creation de la region Bono en 2018 (anciennement partie de Brong-Ahafo). Les Bono se designent eux-memes comme Bonofoɔ. Le terme Brong reste present dans les anciens textes historiques.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan",
+      "historicalRegion": "Zone de transition foret-savane du centre du Ghana, bassin du Tain et du Volta Noir",
+      "currentCountries": ["GHA", "CIV"]
+    },
+    "ethnicities": ["Bono", "Brong", "Abron"],
+    "origins": {
+      "ancientOrigins": "Les Bono constituent l'un des premiers foyers de developpement de la civilisation akan. Leur origine est tracee a une grotte sacree appelee Amowi, situee pres de la ville moderne de Techiman, sous la direction d'Asaman, premier chef. Le groupe fonda le premier etablissement connu sous le nom de Yefiri (nous sortons). Les traditions orales insistent sur l'autochthonie et le developpement indigene dans la zone foret-savane, rejetant les theories coloniales d'origine saharienne, egyptienne ou nord-africaine. Les preuves archeologiques attestent d'une presence longue duree, d'une activite de fonte du fer et d'un developpement culturel datant d'au moins 300 de notre ere sur les sites d'Amowi, Bono Manso et Begho.",
+      "formationPeriod": "Developpement culturel dari au moins 300 CE. Bono Manso et Begho emergent comme sites majeurs a partir du XIIe siecle. Begho connait son apogee entre le XIIe et le XVIIIe siecle. En 1471, lorsque les Portugais visitent la cote du Ghana, Bono Manso et Begho sont deja des villes importantes d'Afrique de l'Ouest.",
+      "migrationRoutes": [
+        "Emergence depuis la grotte d'Amowi (pres de Techiman actuel)",
+        "Etablissement initial a Yefiri (nous sortons)",
+        "Fondation de Bono Manso comme capital politique et rituel",
+        "Creation du centre commercial de Begho au carrefour des routes transsahariennes"
+      ],
+      "historicalSettlementZones": [
+        "Techiman et ses environs (Ghana central)",
+        "Bono Manso (site archeologique du berceau akan)",
+        "Begho (ancienne cite commerciale, XVIIe-XVIIIe siecles)",
+        "Region Bono du Ghana actuel: Sunyani, Techiman, Dormaa",
+        "Est de la Cote d'Ivoire (communautes abron)"
+      ],
+      "unificationsOrDivisions": "Organisation initiale en confederation de clans matrilineaires autour de centres rituels. Apres la destruction de Bono Manso par les forces asante en 1722-1723, le capital se deplace a Techiman. Sous l'epoque coloniale britannique, les Etats bono (Techiman, Dormaa, Wenchi) sont reconnus comme paramountcies. En 1952, les chefs bono (Techiman, Dormaa, Drobo) se retirent du Conseil de la Confederation asante pour protester contre la domination asante.",
+      "externalInfluences": "Contacts avec les marchands mande et haoussa via Begho (routes transsahariennes). Influences islamiques via le quartier des marchands musulmans (Kramo) a Begho. Commerce avec les Portugais sur la cote des le XVe siecle. Invasion asante en 1722-1723 (destruction de Bono Manso) et en 1877 (destruction de Techiman). Creation de la region Brong-Ahafo par les Britanniques en 1959, separant les Bono de la region Ashanti.",
+      "majorHistoricalEvents": "Au moins 300 CE: Etablissements d'Amowi et Bono Manso. XIIe siecle: Essor de Begho comme cite commerciale. 1471: Visite des Portugais sur la cote du Ghana. 1722-1723: Destruction de Bono Manso par Opoku Ware I (Asante). 1877: Deuxieme invasion asante; destruction de Techiman. 1935-1938: La plupart des Etats bono rejoignent le Conseil de la Confederation asante. 1952: Retrait des chefs bono du Conseil asante. 1959: Creation de la region Brong-Ahafo, separation administrative de la region Ashanti."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie matrilineaire: la reine mere (ɔhemaa) nomme le roi (ɔhene) et garantit la maintenance de la lignee royale (abusua). Le roi et la reine mere sont les chefs spirituels et administratifs. Le systeme repose sur la veneration des tabourets ancestraux, les libations et les maisons rituelles pour la legitimite de l'Etat. Apres la conquete asante, relocalisation du capital a Techiman, preservation de la chefferie, de la succession matrilineaire et des pratiques rituelles.",
+      "clanOrganization": "Sept ou huit clans matrilineaires (abusua), chacun avec des totems, des tabous et des recits d'origine. Les premiers abusua etablirent des etablissements autonomes autour de centres rituels. Le systeme abusua (clan matrilineaire) et ntoro (heritage spirituel paternel) sont les elements fondamentaux de l'organisation akan, consideres comme originaires des Bono.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les clans matrilineaires structurent la selection des dirigeants, la maintenance des sanctuaires et les obligations sociales. Les abusua fondateurs assignent des roles specifiques: pretres, guerriers, administrateurs. Le ntoro (heritage spirituel transmis par le pere) complete le systeme d'organisation sociale.",
+      "religiousAuthority": "Veneration des tabourets ancestraux, libations et maisons de sanctuaires comme fondements de la legitimite de l'Etat. Sites comme Amowi, Bono Manso et Begho sont consideres comme des points d'origine sacree. L'islam est present depuis le contact avec les marchands mande-musulmans via Begho."
+    },
+    "languages": {
+      "mainLanguage": "Bono Twi (Abron)",
+      "isoCodes": ["abr"],
+      "dialects": ["Bono Twi", "Abron (Cote d'Ivoire)", "Brong"],
+      "vehicularRole": "Le bono twi est parle par environ 1,2 million de personnes au Ghana, principalement dans les regions Bono, Bono East et Ahafo, et par plus de 300 000 locuteurs dans l'est de la Cote d'Ivoire. C'est un dialecte du continuum akan. La Bible Society du Ghana a entrepris la traduction de la Bible en bono. L'anglais est la langue officielle de l'education et de l'administration."
+    },
+    "culture": {
+      "majorRites": "Festivals royaux associes aux tabourets ancestraux. Rites de libation et de veneration des ancetres dans les maisons de sanctuaires. Funerailles avec ceremonies de cour royale et musique. Ceremonies d'investiture royale. Festival de l'igname (Yam festival) celebre la recolte et renforce la cohesion communautaire.",
+      "symbols": "Regalia royaux: parapluies ceremonials, tabourets, insignes en or, trompes en ivoire, chasse-mouches, epees en or. Symboles adinkra: ideogrammes philosophiques originaires des Bono (la tradition orale attribue la creation des adinkra au roi des Jaman, en Cote d'Ivoire actuelle). Poids a or (goldweights) et balances. Poterie et metallurgie locales.",
+      "artsAndMusic": "Tissage: gagawuga, kyenkyen, kente (le tissage du kente serait originaire des Bono-Akan). Musique: Kete, Adowa, fontomfrom (tambours parlants, originellement bono-akan) lors des festivals, funerailles et ceremonies royales. Artisanat: poterie, metallurgie, forgeage, balances et poids a or. Les fontomfrom et la seperewa (harpe-luth) sont des instruments originairement bono-akan adoptes par les Ashanti.",
+      "spiritualities": "Religion akan traditionnelle: veneration d'Amowi comme lieu d'origine sacre, des ancetres (nsamanfo), libations regulieres. Expansion de l'islam depuis le contact avec les marchands mande (quartier Kramo a Begho). Christianisme present depuis la periode coloniale. Syncretsime entre traditions ancestrales akan et pratiques des religions monotheistes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Etat Bono (ou Bonoman): premier Etat akan constitue, considere par les historiens comme le berceau de la civilisation akan. Capital politique et rituel: Bono Manso (ville urbaine deja etablie en 1471). Centre commercial: Begho (XIIe-XVIIIe siecles). Etats contemporains reconnus: Techiman, Dormaa, Wenchi, et autres paramountcies de la region Bono.",
+      "relationsWithNeighbors": "Commerce avec les marchands mande et haoussa via Begho sur les routes transsahariennes. Echanges de l'or, des noix de kola et de l'ivoire contre du sel, des textiles, des perles et des alliages de cuivre provenant de Djenne, Tombouctou, l'Afrique du Nord, le pays haoussa et le coude du Niger. Relations d'autorite sur les autres groupes akan emergents (les Ashanti adoptent des instruments musicaux et des symboles culturels bono-akan).",
+      "conflictsOrAlliances": "Destruction de Bono Manso par les Asante sous Opoku Ware I (1722-1723). Deuxieme destruction de Techiman par les Asante en 1877. Withdrawal from the Asante Confederacy Council in 1952. Creation d'une region distincte en 1959 (Brong-Ahafo) separant les Bono des Asante administrativement.",
+      "diaspora": "Communautes abron etablies dans l'est de la Cote d'Ivoire (plus de 300 000 locuteurs). Bono Manso est un site de memoire pour les Africains de la diaspora (presence dans la route de la traite atlantique des esclaves). Migrations internes vers les villes ghanéennes (Kumase, Accra)."
+    },
+    "demography": {
+      "totalPopulation": 1500000,
+      "referenceYear": 2025,
+      "source": "Recensement Ghana 2021: Region Bono 1 208 965 habitants (Bono constitute 73,3% de la population, soit environ 886 000). Locuteurs du bono twi: environ 1,2 million au Ghana + 300 000 en Cote d'Ivoire (Wikipedia bono dialect). Estimation totale groupe ethnique: 1,5 million",
+      "distributionByCountry": [
+        { "country": "GHA", "population": 1200000 },
+        { "country": "CIV", "population": 300000 }
+      ]
+    },
+    "sources": [
+      "Bono people – Wikipedia EN (https://en.wikipedia.org/wiki/Bono_people)",
+      "Bono dialect – Wikipedia EN (https://en.wikipedia.org/wiki/Bono_dialect)",
+      "Bono Region – BRCC Ghana (https://brcc.gov.gh/major-settlements/)",
+      "Bono Region Population Statistics – Citypopulation.de (https://www.citypopulation.de/en/ghana/admin/07__bono/)",
+      "Ghana Statistical Service, Population and Housing Census 2021 (https://census2021.statsghana.gov.gh)",
+      "Posnansky, Merrick – Aspects of Early West African Trade, World Archaeology, 5(2), 1973",
+      "Stahl, Ann Brower – Making History in Banda: Anthropological Visions of Africa's Past, Cambridge University Press, 2001"
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "id": "PPL_SENGA",
+  "nameMain": "Senga",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB", "MWI"],
+  "content": {
+    "appellations": {
+      "mainName": "Senga",
+      "selfAppellation": "Senga",
+      "exonyms": ["Asenga"],
+      "originOfExonyms": "Le nom Senga serait derive du tumbuka: ne pas confondre avec les Nsenga, un peuple distinct de l'est de la Zambie et du Mozambique. Selon les traditions orales, le nom aurait ete donne par les Tumbuka lors de la migration du groupe dans la vallee de la Luangwa.",
+      "whyProblematic": "Le nom Senga est souvent confondu avec Nsenga, un peuple distinct. Les Senga sont un sous-groupe de la famille tumbuka, tandis que les Nsenga sont un groupe ethnolinguistique independant.",
+      "contemporaryUsage": "Le nom Senga est utilise dans les recensements officiels zambiens. Le groupe reside principalement dans le district de Chama, province de Muchinga, Zambie.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu, groupe Chewa-Sena, sous-groupe de la famille tumbuka",
+      "historicalRegion": "Vallee de la Luangwa, province de Muchinga (anciennement province orientale), Zambie",
+      "currentCountries": ["ZMB", "MWI"]
+    },
+    "ethnicities": ["Senga"],
+    "origins": {
+      "ancientOrigins": "Les Senga sont un peuple bantou qui a migre depuis la partie meridionale du Congo actuel (probablement le Katanga / Uluwa), au sein des grandes migrations bantoues issues des royaumes Luba et Lunda de Mwatayamvo. Ils se seraient separes des Bisa lors de leur migration vers l'est, traversant les regions bisa pour s'installer dans la vallee de la Luangwa.",
+      "formationPeriod": "La separation d'avec les Bisa et la constitution d'une identite senga distincte est estimee aux alentours de 1700 apres J.-C. La migration etait conduite par Chibeza Kambombo, Kampate Tembwe et Kamponje Lundu. Les Senga et les Nsenga se sont separes au lieu-dit Masipi Pool lors de cette migration.",
+      "migrationRoutes": [
+        "Depuis Uluwa (Katanga, Congo) vers l'est",
+        "Traversee des territoires bisa",
+        "Passage par Mphalakasanga Hill et Masipi Pool",
+        "Installation finale dans la vallee de la Luangwa et sur la colline Mparausenga"
+      ],
+      "historicalSettlementZones": [
+        "District de Chama, province de Muchinga (anciennement province orientale), Zambie",
+        "Vallee de la Luangwa, est de la Zambie",
+        "Nord du Malawi (quelques groupes)"
+      ],
+      "unificationsOrDivisions": "Lors de la migration, le groupe s'est divise a Masipi Pool: Chibeza Kambombo, Kampata Tembwe et Kamponje Lundu ont continue vers l'est (Senga), tandis que Maole Chikwa et Kasusulu Chifunda sont restes puis ont migre vers le sud pour devenir les Nsenga. Ulterieurement, des disputes de succession ont engendre de nouvelles chefferies senga independantes.",
+      "externalInfluences": "Integration culturelle avec les Tumbuka par les mariages mixtes (les hommes senga prenaient des femmes tumbuka). Influence des Ngoni qui ont raide la region au XIXe siecle. Contact avec les missionnaires ecossais de Livingstonia a partir de 1897-1899. Domination coloniale britannique en Rhodesie du Nord.",
+      "majorHistoricalEvents": "Arrivee dans la vallee de la Luangwa (vers 1700). Etablissement de la premiere chefferie a Kambombo. Developpement du commerce en ivoire en partenariat avec les Tumbuka (qui utilisaient les defenses comme sieges ou cales-pots). Raids ngoni au XIXe siecle. Contact avec Donald Fraser et d'autres missionnaires en 1897-1898. Etablissement de trois ecoles dans les villages senga en 1899."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme hierarchique avec chef supreme (senior chief), chefs (chiefs), chefs de groupe (group headmen) et chefs de village (village headmen). Le chef supreme herite sa position de son oncle maternel (systeme matrilineaire). Actuellement, le chef supreme est le Senior Chief Kambombo, avec les chefs subordonnes Chifunda, Chikwa et Tembwe dans le district de Chama.",
+      "clanOrganization": "Les clans principaux sont: Goma (clan du chef supreme Kambombo), Ng'uni, Kumwenda, Nyirenda, Lungu, Zimba et Miti. Les chefs de village sont choisis parmi les membres du clan du chef local. Le clan Goma, appele ainsi parce que le groupe a echoue a gravir le sommet de Mparausenga Hill (en tumbuka: tagoma, ne pas pouvoir gravir), est le clan fondateur.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Systeme matrilineaire: la succession des chefferies passe par les neveux (fils des soeurs). La prise de femmes tumbuka par les hommes senga a signifie que les chefferies senga sont theoriquement passees aux neveux d'origine tumbuka, creant une integration socioculturelle complexe. La societe senga et la societe bisa sont toutes deux matrilineaires.",
+      "religiousAuthority": "Pratiques religieuses traditionnelles (ethnoreligion) avec veneration des ancetres. Influence chretienne significative depuis les missions ecossaises de Livingstonia a partir de 1897. Aujourd'hui, le christianisme est la religion dominante (75 % selon Joshua Project)."
+    },
+    "languages": {
+      "mainLanguage": "Tumbuka (Chitumbuka)",
+      "isoCodes": ["tum"],
+      "dialects": ["Senga (dialecte du tumbuka)"],
+      "vehicularRole": "Les Senga parlent le tumbuka (Chitumbuka) comme langue principale, dont le senga est un dialecte distinct qui partage aussi une souche commune avec le bisa et le bemba. L'anglais est la langue officielle de la Zambie. Le senga est classe comme dialecte tumbuka par Ethnologue et les sources academiques, bien que distinct du tumbuka standard."
+    },
+    "culture": {
+      "majorRites": "Ceremonie traditionnelle Kulonga: festival annuel des recoltes des Tumbuka dans le district de Lundazi, sous la direction du chef Mphamba, celebrant le stockage des recoltes et rendant grace pour la securite alimentaire. Ceremonie Kwenje: evenement annuel dans le district de Chama sous le chef Kambombo, marquant la fin de la saison des recoltes avec des danses traditionnelles dont le mganda (danse militaire).",
+      "symbols": "La colline Mparausenga est un symbole fondateur de l'identite senga. Le commerce de l'ivoire a ete un element constitutif de leur puissance historique. Les graines portees dans les cheveux du conseiller Mulopwe lors de la migration fondatrice sont un symbole de survie et de renouveau.",
+      "artsAndMusic": "Danses traditionnelles: ingoma, vimbuza, muganda, chiwoda. Le mganda est une danse militaire qui a evolue depuis que des hommes tumbuka et senga ont servi dans l'armee britannique pendant la periode coloniale. Les Senga etaient reputes pour leurs talents de danseurs (source de jalousie lors de leur passage en territoire bisa).",
+      "spiritualities": "Religion traditionnelle africaine (ethnoreligion) avec veneration des ancetres et pratiques spirituelles liees a la terre et aux cycles agricoles. Adoption progressive du christianisme depuis les missions ecossaises (Livingstonia) a partir de 1897. Aujourd'hui, environ 75 % des Senga se declarent chretiens."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferie de Kambombo comme chefferie fondatrice et suprema. Chefferies subsidiaires de Chifunda, Chikwa et Tembwe dans l'actuel district de Chama. Certains groupes senga au nord du Malawi se sont volontairement places sous autorite ngoni pour eviter les raids.",
+      "relationsWithNeighbors": "Relations commerciales etroites avec les Tumbuka (commerce d'ivoire). Les Senga ont acquis les defenses d'elephant des Tumbuka (qui ne connaissaient pas leur valeur) et les ont exportees vers l'est, devenant riches et puissants. Les Tumbuka etaient consideres comme un peuple tributaire des Senga. Contacts avec les Bisa lors de la migration. Raids ngoni au XIXe siecle.",
+      "conflictsOrAlliances": "Alliance commerciale et politique avec les Tumbuka pour le commerce de l'ivoire. Raids et pression des Ngoni au XIXe siecle, conduisant certains groupes senga a se refugier sous l'autorite ngoni. Contact pacifique avec les missionnaires ecossais de Livingstonia a partir de 1897.",
+      "diaspora": "Presence de Senga en Zambie (principalement Chama/Muchinga) et dans le nord du Malawi. Selon Joshua Project, la population mondiale totale senga est d'environ 213 000 personnes."
+    },
+    "demography": {
+      "totalPopulation": 213000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025",
+      "distributionByCountry": [
+        { "country": "ZMB", "population": 175000 },
+        { "country": "MWI", "population": 38000 }
+      ]
+    },
+    "sources": [
+      "Senga in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/19620/ZA)",
+      "Senga of Zambia (PGID: PG015625) – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg015625/)",
+      "Senga people – 101 Last Tribes (https://www.101lasttribes.com/tribes/senga.html)",
+      "Senga – Zambia's Traditional History (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/senga/)",
+      "Tumbuka people – Wikipedia (https://en.wikipedia.org/wiki/Tumbuka_people)",
+      "Partners in Bible Translation – Senga Survey 2015 (http://partnersinbibletranslation.org/wp-content/uploads/2018/03/SengaSurvey_2015.pdf)"
+    ]
+  }
+}

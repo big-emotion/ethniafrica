@@ -1,0 +1,84 @@
+{
+  "id": "PPL_GBANDI",
+  "nameMain": "Gbandi",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["LBR", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Gbandi",
+      "selfAppellation": "Gbandi",
+      "exonyms": ["Bandi", "Bande", "Gbande", "Gbunde"],
+      "originOfExonyms": "Le nom Gbandi signifie force de calcul ou chaud en langue gbandi, prononce Gbaa-ndi avec accent sur la premiere syllabe. Les variantes Bandi et Bande sont les formes usuelles dans la litterature coloniale britannique et dans les documents administratifs liberiens.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Gbandi est la forme privilegiee par le peuple lui-meme et dans la litterature academique recente. Bandi est couramment utilise dans les textes administratifs liberiens et dans les references linguistiques (code ISO bza). Les deux formes sont en usage.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mande-Sud-Ouest (sous-groupe Mende-Bandi)",
+      "historicalRegion": "Comte de Lofa, nord-ouest du Liberia",
+      "currentCountries": ["LBR", "GIN"]
+    },
+    "ethnicities": ["Gbandi"],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale, les Gbandi ont migre depuis le Soudan (region africaine) a la fin du XVIIe siecle. Une hypothese complementaire evoque une migration anterieure depuis la Guinee au milieu du XVIe siecle, en tant que refugies politiques fuyant l'expansion Mandingo. Les Loko de Sierra Leone sont consideres comme une ramification du peuple Gbandi.",
+      "formationPeriod": "Formation identitaire distincte entre le XVIe et le XVIIe siecle, au cours des grandes migrations mande en Afrique de l'Ouest. Installation durable dans le comte de Lofa au Liberia.",
+      "migrationRoutes": [
+        "Migration depuis la region soudanaise ou depuis la Guinee vers le nord-ouest du Liberia actuel via les contreforts du massif de Fouta Djalon"
+      ],
+      "historicalSettlementZones": [
+        "Comte de Lofa, district de Kolahun, nord-ouest du Liberia"
+      ],
+      "unificationsOrDivisions": "Le peuple Gbandi ne formait pas d'etat centralise. L'organisation politique reposait sur des conseils de representants villageois. L'autorite liberienne s'est imposee apres 1907 avec l'etablissement du gouvernement central de Monrovia.",
+      "externalInfluences": "Pression de l'expansion Mandingo au XVIe siecle. Contact avec les peuples Kissi, Mende, Gola, Kuwaa et Loma. Influence coloniale americano-liberienne a partir du XIXe siecle. Influence islamique et chretienne au XXe siecle.",
+      "majorHistoricalEvents": "Migration depuis le Soudan ou la Guinee (XVIe-XVIIe siecle). Resistance a l'expansion Mandingo. Integration au sein de l'Etat liberia apres 1847. Developpement d'une cooperative agricole florissante a Kolahun avant la guerre civile. Exode massif vers la Guinee et la Sierra Leone lors des deux guerres civiles liberiennes (1989-1996 et 1999-2003)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe sans chef unique centrali. Le pouvoir etait distribue entre les representants des villages et les aines, qui deliberaient collectivement. L'autorite gbandi reposait sur le consensus et le respect des ancetres plutot que sur une hierarchie formelle.",
+      "clanOrganization": "Societe organisee autour de lignages. L'individualisme est percu comme une menace pour la cohesion communautaire. Les mariages sont generalement arranges des l'enfance et le mari verse une dot a la famille de l'epouse.",
+      "ageClassSystems": "Existence de societes secretes masculines et feminines regissant les rites de passage. La societe Poro (masculine) et la societe Sande (feminine), communes aux peuples Mande-Fu de la region, structurent l'initiation et les responsabilites sociales.",
+      "roleOfLineages": "Les lignages sont les unites fondamentales de l'organisation sociale et economique. L'appartenance lignagere determine les droits fonciers, les alliances matrimoniales et le statut social. Les enfants sont consideres comme des reincarnations des ancetres de la famille.",
+      "religiousAuthority": "L'autorite religieuse est exercee par les aines des lignages et par les membres des societes secretes. Le polythisme traditionnel et le culte des ancetres coexistent avec l'islam et le christianisme."
+    },
+    "languages": {
+      "mainLanguage": "Gbandi (Bandi)",
+      "isoCodes": ["bza"],
+      "dialects": [
+        "Tahamba",
+        "Wawana",
+        "Wulukoha",
+        "Hasala",
+        "Lukasa",
+        "Hembeh"
+      ],
+      "vehicularRole": "La langue gbandi est exclusivement parlee au Liberia, sans extension significative dans les pays voisins (bien que des locuteurs se trouvent en Guinee). Le dialecte Tahamba est utilise comme standard litteraire. Similarite lexicale de 96 % entre les dialectes et de 83 % avec le mende voisin. L'anglais est la langue officielle du Liberia et sert de vehiculaire. Le gbandi n'est pas parlé en dehors du Liberia selon Ethnologue."
+    },
+    "culture": {
+      "majorRites": "Les rites de passage masculins et feminins sont organises par les societes secretes Poro et Sande. Les funerailles sont des moments centraux de la vie sociale : la mort est interpretee comme l'appel des ancetres, l'oeuvre d'une sorciere, ou la consequence de la sorcellerie interieure. Le culte des ancetres structure la vie quotidienne.",
+      "symbols": "Les ancetres occupent la place symbolique la plus haute dans la cosmologie gbandi. Le nom du pere transmis aux enfants est un symbole majeur de continuite. La honte infligee aux ancetres par un comportement malveillant est la faute sociale la plus grave.",
+      "artsAndMusic": "La langue gbandi est riche en proverbes, poemes, rythmes dialectaux et contes. La tradition orale est le principal vecteur de transmission culturelle. L'agriculture du riz dans les marais et sur les collines est a la fois une activite economique et un element identitaire fort.",
+      "spiritualities": "Religion polytheiste traditionnelle centree sur le culte des ancetres et la croyance en la reincarnation. Les ancetres sont tenus en haute estime : provoquer leur deshonneur par un comportement malveillant ou mensonger est l'acte le plus reprehensible. Vision de la mort : soit les ancetres ont appele la personne, soit elle a ete tuee par une sorciere, soit par la sorciere en elle-meme. Coexistence avec l'islam (10 %) et le christianisme (10 %), mais 80 % pratiquent les religions traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Aucun royaume centralise n'est atteste. L'organisation politique traditionnelle Gbandi est de type segmentaire et consensuelle, fondee sur des conseils de representants villageois et des aines.",
+      "relationsWithNeighbors": "Relations commerciales historiques avec les Mende, Lorma et Kissi (sel et autres marchandises avant l'arrivee des colons americano-liberiens). Tensions recurrentes avec les Mandingo, que les Gbandi appellent Gbandi Muslims et percoivent comme accapareurs de terres. Encadrement par les peuples Kissi, Mende, Gola, Kuwaa et Loma.",
+      "conflictsOrAlliances": "Migration commune avec les Mende depuis la Guinee au XVIe siecle. Alliance avec les autres peuples Mande-Fu contre l'expansion Mandingo. Resistance a l'autorite americano-liberienne jusqu'en 1907. Exode massif lors des guerres civiles liberiennes (1989-2003).",
+      "diaspora": "Presence communautaire en Guinee et en Sierra Leone (notamment les Loko, ramification des Gbandi). Diaspora aux Etats-Unis et en Europe, organisee notamment autour de l'association Gbandi Landers Association in the Americas."
+    },
+    "demography": {
+      "totalPopulation": 180000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2024 (165 000 au Liberia, 15 000 en Guinee), Facebook community post 2025 (estimation 165 000 au Liberia). Total estime toutes zones confondues.",
+      "distributionByCountry": [
+        { "country": "LBR", "population": 165000 },
+        { "country": "GIN", "population": 15000 }
+      ]
+    },
+    "sources": [
+      "Gbandi people – Wikipedia EN (https://en.wikipedia.org/wiki/Gbandi_people)",
+      "Gbandi language – Wikipedia EN (https://en.wikipedia.org/wiki/Gbandi_language)",
+      "Bandi in Liberia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/16125/LI)",
+      "Minority Rights Group – Liberia, 2024 (https://minorityrights.org/country/liberia/)",
+      "The Gbandi Language: Editor's Note – Gbandi Landers Association in the Americas (http://www.gbandilanders.com/advocacy-organization-about/the-gbandi-language-editors-note)",
+      "Grossmann – Discourse Grammar of Bandi, SIL International / The Swiss Bay",
+      "Liberia Population and Housing Census 2022 – LISGIS (https://www.lisgis.gov.lr/document/LiberiaCensus2022Report.pdf)"
+    ]
+  }
+}

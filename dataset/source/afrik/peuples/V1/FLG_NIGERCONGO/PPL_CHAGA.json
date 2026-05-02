@@ -1,0 +1,73 @@
+{
+  "id": "PPL_CHAGA",
+  "nameMain": "Chaga",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Chaga",
+      "selfAppellation": "Wachaga",
+      "exonyms": [
+        "Chagga (variante coloniale), Chaga (terme utilisé par les Européens)"
+      ],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone E)",
+      "historicalRegion": "Pentes sud et est du Kilimandjaro",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": [
+      "Rombo",
+      "Machame",
+      "Siha/Kibosho",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Installation ancienne sur les pentes du Kilimandjaro. Les Chaga sont originaires des pentes sud et est du Kilimandjaro en Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone E) de la famille Niger-Congo.",
+      "unificationsOrDivisions": "Création de chefferies puissantes. Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Influence agricole (bananeraies en terrasses). Contacts avec les peuples bantous voisins, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferies : Mangi (chefs), bandes lignagères. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique très marquée. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Kichaga",
+      "vehicularRole": "Le kichaga est parlé par la majorité des Chaga. Le swahili, l'anglais et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Rituels liés à la terre et aux ancêtres",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (initiation, fêtes de naissance)",
+      "source_3": "Cérémonies liées à l'agriculture",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels chaga, symboles chrétiens.",
+      "Arts et musique": "",
+      "source_4": "Musiques et danses de montagne",
+      "source_5": "Musique traditionnelle",
+      "source_6": "Danse traditionnelle",
+      "source_7": "Poésie orale",
+      "source_8": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora chaga dans les grandes villes tanzaniennes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 2000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements tanzaniens, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Kichaga language (jmc)",
+      "CIA World Factbook – Tanzania",
+      "Recensements tanzaniens",
+      "Études anthropologiques sur les peuples bantous",
+      "Archives du Kilimandjaro"
+    ]
+  }
+}

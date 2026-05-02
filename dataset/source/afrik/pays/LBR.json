@@ -1,0 +1,454 @@
+{
+  "id": "LBR",
+  "nameFr": "République du Libéria (Republic of Liberia)",
+  "nameOfficial": "République du Libéria (Republic of Liberia)",
+  "etymology": "Le nom \"Libéria\" vient du latin \"liber\" (libre), en référence à la fondation du pays comme colonie pour les esclaves affranchis des États-Unis. Le nom a été donné par l'American Colonization Society (Société américaine de colonisation) qui a fondé la colonie en 1822.",
+  "nameOriginActor": "Le nom \"Libéria\" a été donné par l'American Colonization Society lors de la fondation de la colonie en 1822. Le nom signifie \"terre de la liberté\" en latin, en référence à la libération des esclaves afro-américains. Le nom a été officialisé à l'indépendance en 1847.",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel du Libéria était peuplé de diverses sociétés sans nom unifié. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Migrations de peuples mandé, krou et atlantiques vers la région. Développement de chefferies et royaumes locaux. Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de chefferies et royaumes autonomes : chefferies Kpelle, Bassa, Grebo, Gio, Mano, Krahn, Gola, Kru, Klao, Mandingo, et autres peuples autochtones. Les Européens utilisaient des termes génériques pour désigner la région (Côte des Grains, Côte du Poivre).",
+      "colonization": "1822-1847 : Colonie de l'American Colonization Society (ACS). Les Américains ont fondé la colonie du Libéria en 1822 pour y installer des esclaves affranchis des États-Unis. Le territoire était administré par l'ACS jusqu'à l'indépendance en 1847.",
+      "contemporary": "1847 : Indépendance du Libéria (26 juillet 1847), proclamation de la République du Libéria. Le Libéria est le premier pays africain à avoir proclamé son indépendance. Le nom \"Libéria\" est officialisé."
+    },
+    "kingdoms": [
+      {
+        "name": "Chefferies Kpelle",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Kpelle"],
+        "politicalCenters": ["Chefferies traditionnelles (intérieur)"],
+        "historicalRole": "Chefferies Kpelle puissantes, système lignager, traditions forestières. Résistance à la colonisation américaine. Rôle politique majeur dans le Libéria contemporain."
+      },
+      {
+        "name": "Chefferies Bassa",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Bassa"],
+        "politicalCenters": [
+          "Chefferies traditionnelles (côte",
+          "centre et sud)"
+        ],
+        "historicalRole": "Chefferies Bassa, l'un des peuples les plus anciens de la côte libérienne, sociétés initiatiques traditionnelles, masques et rituels. Interaction avec les missions afro-américaines au XIXe siècle. Rôle important dans le Libéria moderne."
+      },
+      {
+        "name": "Chefferies Grebo",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Grebo"],
+        "politicalCenters": ["Chefferies traditionnelles (côte sud-est)"],
+        "historicalRole": "Chefferies Grebo, traditions côtières, résistance à la colonisation américaine."
+      },
+      {
+        "name": "Chefferies Gio",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Gio"],
+        "politicalCenters": ["Chefferies traditionnelles (nord)"],
+        "historicalRole": "Chefferies Gio, traditions forestières, structures lignagères."
+      },
+      {
+        "name": "Chefferies Mano",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Mano"],
+        "politicalCenters": ["Chefferies traditionnelles (nord)"],
+        "historicalRole": "Chefferies Mano, traditions forestières, structures lignagères."
+      },
+      {
+        "name": "Chefferies Krahn",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Krahn"],
+        "politicalCenters": ["Chefferies traditionnelles (est)"],
+        "historicalRole": "Chefferies Krahn, traditions forestières, structures lignagères."
+      },
+      {
+        "name": "Chefferies Gola",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Gola"],
+        "politicalCenters": ["Chefferies traditionnelles (ouest)"],
+        "historicalRole": "Chefferies Gola, traditions forestières, structures lignagères."
+      },
+      {
+        "name": "Colonie de l'American Colonization Society",
+        "period": "1822 - 1847",
+        "dominantPeoples": [
+          "Afro-Américains (Américano-Libériens)",
+          "peuples autochtones sous domination"
+        ],
+        "politicalCenters": ["Monrovia (capitale coloniale)"],
+        "historicalRole": "Colonie de l'ACS, installation d'esclaves affranchis des États-Unis, développement de l'administration coloniale, résistance des peuples autochtones. Développement du mouvement indépendantiste."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Kpelle",
+        "selfAppellation": "Kpelle",
+        "exonyms": [
+          "Kpelle (terme utilisé par les Européens)",
+          "\"Guerzé\" (terme utilisé au Libéria",
+          "alternatif)"
+        ],
+        "peopleId": "PPL_KPELLE",
+        "mainRegion": "Intérieur du Libéria",
+        "languages": ["Kpelle (kpe", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Kpelle\" est l'auto-appellation. \"Guerzé\" est un terme alternatif accepté au Libéria. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Bassa",
+        "selfAppellation": "Bassa",
+        "exonyms": ["Bassa (terme utilisé par les Européens)"],
+        "peopleId": "PPL_BASSA_LIBERIA",
+        "mainRegion": "Côte libérienne (centre et sud)",
+        "languages": ["Bassa (bsq", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Bassa\" est l'auto-appellation. Pas de terme péjoratif connu. L'un des peuples les plus anciens de la côte libérienne."
+      },
+      {
+        "name": "Grebo",
+        "selfAppellation": "Grebo",
+        "exonyms": ["Grebo (terme utilisé par les Européens)"],
+        "peopleId": "PPL_GREBO",
+        "mainRegion": "Côte sud-est",
+        "languages": ["Grebo (grb", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_KROU",
+        "appellationRemarks": "\"Grebo\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Gio",
+        "selfAppellation": "Gio",
+        "exonyms": ["Gio (terme utilisé par les Européens)"],
+        "peopleId": "PPL_GIO",
+        "mainRegion": "Nord du Libéria",
+        "languages": ["Gio (gej", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Gio\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Mano",
+        "selfAppellation": "Mano",
+        "exonyms": ["Mano (terme utilisé par les Européens)"],
+        "peopleId": "PPL_MANO",
+        "mainRegion": "Nord du Libéria",
+        "languages": ["Mano (mev", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Mano\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Kru",
+        "selfAppellation": "Kru",
+        "exonyms": ["Kru (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KRU",
+        "mainRegion": "Côte du Libéria",
+        "languages": ["Kru (klu", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_KROU",
+        "appellationRemarks": "\"Kru\" est l'auto-appellation. Pas de terme péjoratif connu. Navigateurs et pêcheurs, célébrité maritime historique. Résistance forte aux Européens."
+      },
+      {
+        "name": "Gola",
+        "selfAppellation": "Gola",
+        "exonyms": ["Gola (terme utilisé par les Européens)"],
+        "peopleId": "PPL_GOLA",
+        "mainRegion": "Ouest du Libéria",
+        "languages": ["Gola (gol", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Gola\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Vai",
+        "selfAppellation": "Vai",
+        "exonyms": ["Vai (terme utilisé par les Européens)"],
+        "peopleId": "PPL_VAI",
+        "mainRegion": "Côte ouest du Libéria",
+        "languages": ["Vai (vai", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Vai\" est l'auto-appellation. Pas de terme péjoratif connu. Inventeurs de l'écriture Vai, un des rares systèmes d'écriture indigènes d'Afrique."
+      },
+      {
+        "selfAppellation": "Mandinka / Mandiŋka",
+        "exonyms": [
+          "Mandingo (terme utilisé par les Européens)",
+          "Mandinka (terme alternatif)",
+          "\"Mandingo\" (terme historique",
+          "parfois péjoratif)"
+        ],
+        "peopleId": "PPL_MANDINKA",
+        "mainRegion": "Toutes les régions du Libéria",
+        "languages": ["Mandinka (mnk", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Mandinka\" ou \"Mandiŋka\" est l'auto-appellation. \"Mandingo\" est un terme historique qui peut avoir une connotation péjorative dans certains contextes et doit être évité.",
+        "name": "- Auto-appellation"
+      },
+      {
+        "name": "Loma",
+        "selfAppellation": "Loma",
+        "exonyms": ["Loma (terme utilisé par les Européens)"],
+        "peopleId": "PPL_LOMA",
+        "mainRegion": "Nord du Libéria",
+        "languages": ["Loma (lom", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Loma\" est l'auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Kissi",
+        "selfAppellation": "Kissi",
+        "exonyms": ["Kissi (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KISSI",
+        "mainRegion": "Nord du Libéria",
+        "languages": ["Kissi (kqs", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Kissi\" est l'auto-appellation. Pas de terme péjoratif connu. Lié aux Kissi de Guinée/Sierra Leone."
+      },
+      {
+        "name": "Mandingo / Mandinka",
+        "selfAppellation": "Mandinka / Mandiŋka",
+        "exonyms": [
+          "Mandingo (terme utilisé par les Européens)",
+          "Mandinka (terme alternatif)",
+          "\"Mandingo\" (terme historique",
+          "parfois péjoratif)"
+        ],
+        "peopleId": "PPL_MANDINKA",
+        "mainRegion": "Toutes les régions du Libéria",
+        "languages": ["Mandinka (mnk", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Mandinka\" ou \"Mandiŋka\" est l'auto-appellation. \"Mandingo\" est un terme historique qui peut avoir une connotation péjorative dans certains contextes et doit être évité."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes (Kru, Klao, Loma, Vai, etc.)",
+        "exonyms": ["Variées selon les groupes"],
+        "mainRegion": "Diverses régions du Libéria",
+        "languages": ["Langues diverses", "anglais"],
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation (Kru, Klao, Loma, Vai, etc.). Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Dei",
+        "selfAppellation": "Dei",
+        "exonyms": ["Dei (terme utilisé par les Européens)"],
+        "peopleId": "PPL_DEI",
+        "mainRegion": "Côte du Libéria",
+        "languages": ["Dei", "anglais"],
+        "languageFamily": "FLG_ATLANTIQUE",
+        "appellationRemarks": "\"Dei\" est l'auto-appellation. Pas de terme péjoratif connu. Anciens habitants côtiers."
+      },
+      {
+        "name": "Mende",
+        "selfAppellation": "Mende",
+        "exonyms": ["Mende (terme utilisé par les Européens)"],
+        "peopleId": "PPL_MENDE",
+        "mainRegion": "Diverses régions du Libéria",
+        "languages": ["Mende (men", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_MANDE",
+        "appellationRemarks": "\"Mende\" est l'auto-appellation. Pas de terme péjoratif connu. Migrants transfrontaliers."
+      },
+      {
+        "name": "Américano-Libériens",
+        "selfAppellation": "Américano-Libériens / Congo People",
+        "exonyms": [
+          "Américano-Libériens (terme utilisé par les Européens)",
+          "\"Congo People\" (terme utilisé au Libéria",
+          "parfois péjoratif)"
+        ],
+        "peopleId": "PPL_AMERICANO_LIBERIENS",
+        "mainRegion": "Zones urbaines, côte (Monrovia)",
+        "languages": ["Anglais (eng", "ISO 639-3)", "créole libérien"],
+        "languageFamily": "FLG_CREOLE",
+        "appellationRemarks": "\"Américano-Libériens\" est l'auto-appellation. \"Congo People\" est un terme utilisé au Libéria qui peut avoir une connotation péjorative dans certains contextes et doit être évité. Descendants d'esclaves affranchis des États-Unis."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Anglais",
+          "isoCode": "eng",
+          "isPrimary": true
+        },
+        {
+          "name": "Kpelle",
+          "isoCode": "kpe"
+        },
+        {
+          "name": "Bassa",
+          "isoCode": "bsq"
+        },
+        {
+          "name": "Grebo",
+          "isoCode": "grb"
+        },
+        {
+          "name": "Gio",
+          "isoCode": "gej"
+        },
+        {
+          "name": "Mano",
+          "isoCode": "mev"
+        },
+        {
+          "name": "Kru",
+          "isoCode": "klu"
+        },
+        {
+          "name": "Vai",
+          "isoCode": "vai"
+        },
+        {
+          "name": "Gola",
+          "isoCode": "gol"
+        },
+        {
+          "name": "Loma",
+          "isoCode": "lom"
+        },
+        {
+          "name": "Kissi",
+          "isoCode": "kqs"
+        },
+        {
+          "name": "Mandinka",
+          "isoCode": "mnk"
+        },
+        {
+          "name": "Mende",
+          "isoCode": "men"
+        },
+        {
+          "name": "langues diverses"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique du Libéria (plus de 20 ethnies). Traditions mandé (Kpelle, Bassa, Gio, Mano, Vai, Loma, Mandingo, Mende, griots, kora, musique mandingue). Traditions krou (Grebo, Kru, masques, rituels). Traditions atlantiques (Gola, Kissi, Dei, traditions côtières). Traditions afro-américaines (Américano-Libériens, culture créole libérienne). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Sociétés initiatiques traditionnelles (Bassa, autres peuples). Le système d'écriture Vai est un élément unique en Afrique de l'Ouest.",
+      "dominantReligions": "Christianisme (protestantisme majoritaire, catholicisme, églises indépendantes africaines), islam (minorité, Mandingo), religions traditionnelles africaines (syncrétisme fréquent, culte des ancêtres, masques, rituels)",
+      "lifestyles": "Agriculture (riz, manioc, cultures vivrières), exploitation forestière (bois précieux), exploitation minière (fer, diamants, or), pêche (côtière), commerce et activités urbaines (zones urbaines, Monrovia). Urbanisation modérée. Économie basée sur l'agriculture, l'exploitation forestière, l'exploitation minière, et les services. Dépendance économique importante.",
+      "socialOrganization": "Organisation en chefferies traditionnelles (Kpelle, Bassa, Grebo, Gio, Mano, Kru, Vai, Gola, Loma, Kissi, Mandingo, Mende, Dei), structures claniques patrilinéaires. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Sociétés initiatiques traditionnelles (Bassa, autres peuples). Traditions d'initiation et de passage à l'âge adulte. Hiérarchie sociale entre Américano-Libériens et peuples autochtones (historique, en déclin). Les Kpelle, Bassa, Grebo, Kru et Vai sont les groupes structurels anciens.",
+      "regionalRelations": "Relations historiques avec la Sierra Leone (commerce, migrations, frontière), la Guinée (Kpelle, commerce, frontière), la Côte d'Ivoire (commerce, frontière). Intégration dans la CEDEAO (Communauté économique des États de l'Afrique de l'Ouest). Relations commerciales et culturelles transfrontalières. Relations avec les États-Unis (fondation, diaspora, commerce)."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par les peuples mandé, krou et atlantiques. Migrations vers la région. Développement de chefferies locales.",
+      "middleAges": "Migrations continues. Développement de structures politiques locales. Contacts avec les peuples voisins.",
+      "precolonial": "Consolidation des chefferies Kpelle, Bassa, Grebo, Gio, Mano, Kru, Vai, Gola, Loma, Kissi, Mandingo, Mende, Dei. Les Vai développent un des rares systèmes d'écriture indigènes (l'écriture Vai). Les Kru, connus comme marins, résistent fortement aux Européens. Commerce régional et côtier. Contacts avec les Européens (Portugais, Britanniques, Américains). Commerce des esclaves le long de la côte. Les Portugais appellent la zone \"Grain Coast\" (Côte du Poivre) pour le commerce de malaguetta.",
+      "colonization": "1822 : Fondation de la colonie du Libéria par l'American Colonization Society (ACS). Période coloniale américaine (1822-1847), installation d'esclaves affranchis des États-Unis, développement de l'administration coloniale, résistance des peuples autochtones. Développement du mouvement indépendantiste.",
+      "independenceStruggle": "1840s : Mouvement pour l'indépendance mené par les dirigeants américano-libériens. 1847 : Indépendance du Libéria (26 juillet 1847), proclamation de la République du Libéria. Le Libéria est le premier pays africain à avoir proclamé son indépendance. Joseph Jenkins Roberts devient premier président.",
+      "postIndependence": "1847-1980 : Domination politique des Américano-Libériens, présidence de plusieurs présidents américano-libériens. Les Américano-Libériens ont dominé l'État pendant plus d'un siècle. 1980 : Coup d'État, présidence de Samuel Doe (1980-1990), fin de la domination américano-libérienne. 1989-2003 : Guerres civiles libériennes, conflits ethniques, instabilité politique. 2003-présent : Transition démocratique, élection d'Ellen Johnson Sirleaf (2006-2018, première femme présidente d'Afrique), puis George Weah (2018-2024). Défis : pauvreté, reconstruction post-conflit, développement économique, réconciliation nationale. Le Libéria est l'un des pays les plus pauvres d'Afrique. La société est marquée par une dualité historique entre autochtones et descendants d'esclaves affranchis."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Liberia",
+      "CIA World Factbook – Liberia",
+      "ONU / UNFPA – Démographie Libéria 2025",
+      "Recensements libériens",
+      "Études anthropologiques sur les peuples du Libéria",
+      "Études historiques sur la fondation du Libéria et l'American Colonization Society"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Kpelle",
+          "population": 1040000,
+          "percentageInCountry": 20,
+          "peopleId": "PPL_KPELLE",
+          "region": "Intérieur du Libéria",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Bassa",
+          "population": 675000,
+          "percentageInCountry": 13,
+          "peopleId": "PPL_BASSA_LIBERIA",
+          "region": "Côte libérienne (centre et sud)",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Grebo",
+          "population": 520000,
+          "percentageInCountry": 10,
+          "peopleId": "PPL_GREBO",
+          "region": "Côte sud-est",
+          "languageFamily": "FLG_KROU"
+        },
+        {
+          "name": "Gio / Dan",
+          "population": 415000,
+          "percentageInCountry": 8,
+          "peopleId": "PPL_GIO",
+          "region": "Nord du Libéria",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Mano",
+          "population": 365000,
+          "percentageInCountry": 7,
+          "peopleId": "PPL_MANO",
+          "region": "Nord du Libéria",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Kru",
+          "population": 365000,
+          "percentageInCountry": 7,
+          "peopleId": "PPL_KRU",
+          "region": "Côte du Libéria",
+          "languageFamily": "FLG_KROU"
+        },
+        {
+          "name": "Vai",
+          "population": 310000,
+          "percentageInCountry": 6,
+          "peopleId": "PPL_VAI",
+          "region": "Côte ouest du Libéria",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Gola",
+          "population": 260000,
+          "percentageInCountry": 5,
+          "peopleId": "PPL_GOLA",
+          "region": "Ouest du Libéria",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Loma",
+          "population": 155000,
+          "percentageInCountry": 3,
+          "peopleId": "PPL_LOMA",
+          "region": "Nord du Libéria",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Kissi",
+          "population": 210000,
+          "percentageInCountry": 4,
+          "peopleId": "PPL_KISSI",
+          "region": "Nord du Libéria",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Mandingo / Mandinka",
+          "population": 105000,
+          "percentageInCountry": 2,
+          "peopleId": "PPL_MANDINKA",
+          "region": "Toutes les régions du Libéria",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Dei",
+          "population": 105000,
+          "percentageInCountry": 2,
+          "peopleId": "PPL_DEI",
+          "region": "Côte du Libéria",
+          "languageFamily": "FLG_ATLANTIQUE"
+        },
+        {
+          "name": "Mende",
+          "population": 105000,
+          "percentageInCountry": 2,
+          "peopleId": "PPL_MENDE",
+          "region": "Diverses régions du Libéria",
+          "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Américano-Libériens",
+          "population": 105000,
+          "percentageInCountry": 2,
+          "peopleId": "PPL_AMERICANO_LIBERIENS",
+          "region": ""
+        }
+      ]
+    }
+  }
+}

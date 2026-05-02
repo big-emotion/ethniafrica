@@ -1,0 +1,101 @@
+{
+  "id": "PPL_GUMUZ",
+  "nameMain": "Gumuz",
+  "languageFamilyId": "FLG_NILOSAHARIENNE",
+  "currentCountries": ["ETH", "SDN"],
+  "content": {
+    "appellations": {
+      "mainName": "Gumuz",
+      "selfAppellation": "Bega",
+      "exonyms": ["Gumaz", "Gumz", "Shanqella", "Shanquella"],
+      "originOfExonyms": "Bega signifie simplement peuple dans la langue gumuz. Shanqella ou Shanquella est un terme collectif utilise par les Ethiopiens des hautes terres pour designer les peuples nilotiques le long de la frontiere ethio-soudanaise, mentionne des 1790 par James Bruce dans ses Voyages a la decouverte des sources du Nil.",
+      "whyProblematic": "Le terme Shanqella est considere pejoratif car il etait employe par les peuples des hautes terres (Amhara, Agaw) qui asservissaient les Gumuz et autres peuples des basses terres. Il efface les identites individuelles de chaque peuple.",
+      "contemporaryUsage": "Gumuz est l'appellation officielle en Ethiopie. La region Benishangul-Gumuz porte leur nom. Bega est l'auto-denomination dans la langue vernaculaire.",
+      "linguisticFamily": "FLG_NILOSAHARIENNE",
+      "ethnoLinguisticGroup": "Nilo-saharien, classification interne controverse (souvent considere comme isole ou proche des langues komanes selon Bender)",
+      "historicalRegion": "Benishangul-Gumuz (ouest de l'Ethiopie), region soudanaise de Fazoglo et Fazogli",
+      "currentCountries": ["ETH", "SDN"]
+    },
+    "ethnicities": ["Gumuz"],
+    "origins": {
+      "ancientOrigins": "Les traditions orales des Gumuz indiquent qu'ils habitaient les parties occidentales de la province du Gojjam (Ethiopie) avant d'en etre chasses par leurs voisins Amhara et Agaw, qui les reduisaient en esclavage. Ils se sont ensuite refugies dans les basses terres du Nil Bleu et de ses affluents. James Bruce les decrit en 1790 comme chassant avec des arcs et des fleches, une pratique qui survit de nos jours.",
+      "formationPeriod": "Occupation precoloniale des zones de savane buissonneuse entre l'Ethiopie et le Soudan depuis des siecles. Deplacements forces vers les basses terres avant le XIXe siecle sous la pression des peuples des hautes terres.",
+      "migrationRoutes": [
+        "Retrait depuis les hautes terres de l'ancien Gojjam vers les basses terres du Nil Bleu",
+        "Extension le long de la frontiere ethio-soudanaise jusqu'a la region de Fazoglo et Fazogli (Soudan)",
+        "Certains groupes ont ete emmenes comme esclaves au sud de Welkite (Ethiopie), ou leurs descendants parlaient encore la langue en 1984"
+      ],
+      "historicalSettlementZones": [
+        "Kamashi Zone et Metekel Zone (region Benishangul-Gumuz, Ethiopie)",
+        "Basses terres du Nil Bleu et de ses affluents",
+        "Region de Fazoglo et Fazogli (Soudan), a l'est d'Er Roseires"
+      ],
+      "unificationsOrDivisions": "Pas de structure politique unifiee historique. Les Gumuz sont organises en clans independants. Des vendetta entre clans sont resolues par une institution de reconciliation appelee mangema ou michu selon la region.",
+      "externalInfluences": "Esclavage pratique par les peuples des hautes terres ethiopiennes jusqu'aux annees 1940. Depuis les annees 1980, recolonisation par des migrants des hautes terres (Amhara, Agaw, Oromo, Shinasha) dans le cadre de programmes de reinstallation, repoussant les Gumuz de leurs terres traditionnelles. Irrigation et investissements agricoles ont accru la pression fonciere.",
+      "majorHistoricalEvents": "Mentionne comme Shanquella par James Bruce (1790) chassant avec arcs et fleches. Esclavage jusqu'aux annees 1940 en Ethiopie. Depossession fonciere progressive depuis les annees 1980. Conflit de Metekel depuis 2019 : milices gumuz impliquees dans des affrontements contre Amhara, Agaw, Oromo et Shinasha civils."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe acephale traditionnelle sans autorite politique centrale. Organisation clanique avec resolution des conflits interclaniques par l'institution mangema (nord) ou michu (sud). Les disputes graves sont reglees par mediation communautaire.",
+      "clanOrganization": "Tous les Gumuz sont organises en clans. Les vendetta entre clans sont courantes et resolues par le mangema ou le michu. Organisation clanique patrilineaire.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lineages definissent les droits fonciers et les relations de mariage. Le mariage par echange de soeurs est pratique, similaire aux Uduk soudanais.",
+      "religiousAuthority": "Specialistes rituels appeles gafea. Croyance en esprits (mus'a) residant dans les maisons, greniers, champs, arbres et montagnes. Islamisation partielle dans les zones proches de la frontiere soudanaise."
+    },
+    "languages": {
+      "mainLanguage": "Gumuz",
+      "isoCodes": ["guk"],
+      "dialects": [
+        "Guba",
+        "Wenbera",
+        "Sirba",
+        "Agalo",
+        "Yaso",
+        "Mandura",
+        "Dibate",
+        "Metemma",
+        "Gumuz du Nord",
+        "Gumuz du Sud"
+      ],
+      "vehicularRole": "Le gumuz est la langue maternelle du groupe, parlee en Ethiopie et au Soudan. Ecrite avec l'alphabet latin et l'alphasyllabaire gueze. L'amharique est utilise comme langue nationale en Ethiopie. L'arabe soudanais est parle par les Gumuz proches de la frontiere soudanaise islamises."
+    },
+    "culture": {
+      "majorRites": "Mariage par echange de soeurs (pratique similaire aux Uduk). Rites avec les specialistes gafea pour traiter avec les esprits mus'a. Scarifications corporelles (custom en voie de disparition sous la pression gouvernementale et de l'education). Ceremonies agricoles liees aux cycles du sorgho.",
+      "symbols": "Greniers a cereales decores de petites boules d'argile imitant des seins feminins, symbolisant la fertilite. La poterie feminine est un art central.",
+      "artsAndMusic": "Fabrication de poteries en terre cuite par les femmes pour la cuisine (porridge nga) et la fermentation (biere de sorgho kea). Artisanat de la chasse (arcs, fleches). Instruments musicaux traditionnels non specifiquement documentes.",
+      "spiritualities": "La plupart maintiennent des pratiques religieuses traditionnelles. Croyance en esprits (mus'a) omnipresents dans l'environnement naturel et domestique. Specialistes rituels gafea. Islamisation partielle des groupes proches du Soudan. Quelques chretiens. Syncretisme frequent."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaumes ni de chefferies centralises dans la tradition historique gumuz. Organisation politique diffuse fondee sur les clans et la resolution communautaire des conflits.",
+      "relationsWithNeighbors": "Relations conflictuelles historiques avec les Amhara et les Agaw (hautes terres), qui les ont chasses de leurs terres ancestrales et les ont reduits en esclavage. Liens culturels avec les Uduk du Soudan (pratique du mariage par echange de soeurs). Tensions contemporaines avec les migrants des hautes terres (Oromo, Shinasha) et conflits dans la zone de Metekel depuis 2019.",
+      "conflictsOrAlliances": "Longue histoire d'asservissement par les peuples des hautes terres ethiopiennes jusqu'aux annees 1940. Conflits fonciers depuis les annees 1980 avec l'arrivee de migrants dans la region. Conflit de Metekel (depuis 2019) : affrontements intercommunautaires graves impliquant des milices gumuz.",
+      "diaspora": "Presence des deux cotes de la frontiere ethio-soudanaise. Quelques groupes au sud de Welkite en Ethiopie, descendants d'anciens esclaves."
+    },
+    "demography": {
+      "totalPopulation": 250000,
+      "referenceYear": 2025,
+      "source": "Wikipedia (Gumuz people) 2025 ; recensement ethiopien 2007 : 159 418 ; estimation soudanaise region Fazogli : 88 000",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 160000,
+          "note": "Principalement dans les zones Kamashi et Metekel (region Benishangul-Gumuz)"
+        },
+        {
+          "country": "SDN",
+          "population": 90000,
+          "note": "Region de Fazoglo et Fazogli, est d'Er Roseires, bords du Nil Bleu"
+        }
+      ]
+    },
+    "sources": [
+      "Gumuz people – Wikipedia (https://en.wikipedia.org/wiki/Gumuz_people)",
+      "Gumuz language – Wikipedia (https://en.wikipedia.org/wiki/Gumuz_language)",
+      "Gumuz (langue) – Wikipedia FR (https://fr.wikipedia.org/wiki/Gumuz)",
+      "Gumuz Language (GUK) – Ethnologue, SIL International (https://www.ethnologue.com/language/guk/)",
+      "Benishangul-Gumuz Region – Wikipedia (https://en.wikipedia.org/wiki/Benishangul-Gumuz_Region)",
+      "Wolde-Selassie Abbute, Gumuz and Highland Resettlers – Ethiopian Studies, 2004",
+      "Bender, M. L. – Gumuz: A Sketch of Grammar and Lexicon, Afrika und Ubersee, 62-1, 1979, p. 38-69",
+      "Ahland, Colleen – A grammar of Northern and Southern Gumuz (these de PhD), University of Oregon, 2004"
+    ]
+  }
+}

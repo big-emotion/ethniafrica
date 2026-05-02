@@ -1,0 +1,79 @@
+{
+  "id": "PPL_MAMBWE",
+  "nameMain": "Mambwe",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA", "ZMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Mambwe",
+      "selfAppellation": "Mambwe",
+      "exonyms": ["Wamambwe"],
+      "originOfExonyms": "Wamambwe est la forme swahilie avec le prefixe Wa- designant un peuple. Cimambwe designe la langue (prefixe Ci- pour langue en bantou).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Mambwe est utilise en Tanzanie et en Zambie. En Tanzanie, ils sont principalement dans le district de Kalambo (region de Rukwa). En Zambie, ils se concentrent dans les districts de Mbala et Senga Hill (Province du Nord). Les Mambwe et les Lungu de Tafuna sont souvent traites comme un seul groupe ethnique.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu, groupe Tanganyika (apparentes aux Fipa, Namwanga, Iwa, Lungu)",
+      "historicalRegion": "Extremite meridionale du lac Tanganyika, Province du Nord de Zambie et region de Rukwa, Tanzanie",
+      "currentCountries": ["TZA", "ZMB"]
+    },
+    "ethnicities": ["Mambwe", "Lungu de Tafuna"],
+    "origins": {
+      "ancientOrigins": "Les Mambwe communs (ainsi que les Lungu de Tafuna) forment un meme groupe ethnique ayant migre depuis le nord-est africain avec les Fipa, les Namwanga et d'autres peuples du Tanganyika. La lignee royale fut fondee par Changala, qui venait de Kola (Angola) et etait Mulua (apparente aux Luba). Avant l'arrivee de Changala, les Mambwe vivaient sous l'autorite de chefs de clans sans organisation politique centrale.",
+      "formationPeriod": "Changala arriva avec des leopards de chasse, impressionna le chef de clan Chindo (du clan Simwinga) et epousa sa fille, devenant ainsi chef. Son fils fut Mwimbe, son petit-fils Nsokolo wa Chisenga, ancetre de la chefferie Nsokolo. La chefferie Mambwe s'est ainsi constituee par alliance entre la lignee royale venue d'Angola et les clans indigenes.",
+      "migrationRoutes": [
+        "Depuis le nord-est africain vers le Tanganyika (communs Mambwe)",
+        "Depuis Kola (Angola) vers le pays Mambwe (lignee royale de Changala)",
+        "Etablissement au sud du pays Mambwe pres du territoire de Chindo (clan Simwinga)"
+      ],
+      "historicalSettlementZones": [
+        "Districts de Mbala et Senga Hill, Province du Nord, Zambie",
+        "District de Kalambo, region de Rukwa, Tanzanie meridionale",
+        "Extremite meridionale du lac Tanganyika"
+      ],
+      "unificationsOrDivisions": "Les chefferies Mambwe ne s'unifirerent jamais sous Nsokolo : elles se combattirent entre elles et chercherent des alliances exterieures. Mphande rejoignit les Ngoni contre Nsokolo ; ce dernier s'allia aux Bemba contre les Ngoni et Mphande. Sous la colonisation, les Britanniques utiliserent Kimialile (Nsokolo aveugle par son frere Kosi, exil en Tanzanie) comme agent administratif principal, centralisant l'autorite.",
+      "externalInfluences": "Les raids Bemba (plus nombreux et unis) constituaient la principale menace externe. L'arrivee des Britanniques a Abercorn (Mbala) en 1893 interrompit les guerres Bemba et stabilisa la region. Musante Mpande II assassina ses freres Nsokolo II et III. Les Ngoni (allies de Mphande) furent aussi une menace au XIXe siecle.",
+      "majorHistoricalEvents": "Guerres recurrentes avec les Bemba : sieges, captures, executions de chefs. Chieftaine Chitongwe assiege puis bouilli par les Bemba (Chitapankwa). Les Mambwe tuerent les chefs bemba Chilangwa et Mpangamina. Arrivee des Britanniques a Abercorn (1893) : pacification progressive et utilisation de Kimialile comme chef principal. Pacification des Bemba par les Britanniques (1898). L'anthropologue William Watson dit d'eux : Ils ont tendance a considerer les etrangers avec mefiance, attitude justifiee par leur histoire. Bien qu'insulaires, ils sont robustes, resilients et cherisent leur independance si souvent assaillie."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Avant l'arrivee de Changala, les Mambwe vivaient sous des chefs de clans sans chef central. Apres, la chefferie Nsokolo s'etablit comme paramountcy, mais sans unification reelle : les chefferies (Nsokolo, Muti, Chitongwe, Musante Mpande II, Mphande, Kela, Fwambo, Mpenza, Chivuta, Kimialile, Kosi) restaient autonomes et en conflit. Les Britanniques consoliderent l'autorite autour de Kimialile (Nsokolo) comme chef principal.",
+      "clanOrganization": "Les Mambwe sont organises en clans exogames, disperses, patrilineaires, prefixes par Si- (Pere de) pour les hommes et Na- (Mere de) pour les femmes. Principaux clans : Sikazwe, Sichula (grenouille, clan royal), Sichilima (cultivateurs), Simpemba (argile blanche), Simwinga (chasseurs), Simpasa (hache), Simutowe (chenille), Simutami, Silavwe, Mwambazi, Sikasote, Sichivula, Simpungwe, Sinyangwe, Sinchangwa, Simfukwe, Sinjela, Sikapite, Simazuo, Simbao, Simukoko, Simbeya, Siluamba, Simpokolwe, Musukuma, Sinzumwa, Silungwe, Simunyola, Sikaumbwe, Simuyemba. Les trois clans Sichilima, Simpemba et Simwinga (qui epouserent des femmes de Changala) ont une relation de plaisanterie avec le clan royal Sichula.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le clan royal Sichula (totem : grenouille) est le seul qui peut fournir des chefs. Les clans Sichilima, Simpemba et Simwinga sont dits avoir donne des chefs au pays (via les mariages de Changala). Les noms de clans representent objets naturels, objets manufactures ou notions abstraites. Les memes clans se retrouvent chez les Lungu, Namwanga et Iwa.",
+      "religiousAuthority": "Les shrines (kavua) dans chaque village sont dedies aux ancetres des chefs locaux. Les elements naturels (collines, grottes, rochers, mares permanentes) sont divinises comme mayao ou maleza, associes aux esprits (imipasi) des titulaires locaux, selon une hierarchie politique. Apres la recolte, une partie est deposee aux shrines pour remercier les esprits."
+    },
+    "languages": {
+      "mainLanguage": "Mambwe (Cimambwe)",
+      "isoCodes": ["mgr"],
+      "dialects": ["Lungu", "Fipa-Mambwe"],
+      "vehicularRole": "Le cimambwe est un dialecte du mambwe-lungu (ISO 639-3 : mgr). Les Mambwe et les Lungu parlent une langue commune avec de legeres differences dialectales. Le cimambwe s'appelle aussi Fipa-Mambwe lorsque parle par les Fipa. Le swahili est la langue nationale de Tanzanie et sert de vehiculaire."
+    },
+    "culture": {
+      "majorRites": "La ceremonie Umutomolo (partagee avec les Lungu de Tafuna) celebre la bonne recolte et prie pour les pluies. Elle a lieu le dernier samedi de juin sur les rives du lac Chila a Mbala. Les femmes des chefs apportent des echantillons de nourriture pour que les chefs les benissent et remercient les esprits ancestraux. Les chefs gotent la nourriture avant les sujets. La ceremonie inclut danses et musiques traditionnelles.",
+      "symbols": "La grenouille (totem du clan royal Sichula) est le symbole le plus important. Les shrines (kavua) representes dans chaque village symbolisent le lien avec les ancetres. Les stockades (villages fortifies) etaient les symboles de la resistance Mambwe contre les raids Bemba.",
+      "artsAndMusic": "La danse traditionnelle Nsimba est la plus connue. Les instruments s'appellent Vingwengwe. Des artistes modernes issus de la tradition Mambwe-Lungu incluent Kalambo hit parade, Solo Kalenge et Esther Namunga qui interpretent la musique traditionnelle Mambwe-Lungu.",
+      "spiritualities": "La majorite des Mambwe contemporains sont chretiens (nombreux Temoins de Jehovah ou catholiques). La religion traditionnelle reconnait Leza comme dieu supreme createur de la terre et de toutes choses, mais distant et non adore directement. Le culte est adresse aux esprits des ancetres chefs (imipasi yamwene yafwe). Les elements naturels (collines, grottes, rochers, mares) sont divinises comme mayao ou maleza et associes a des esprits hierarchises selon le statut politique. Une partie de la recolte est laissee au shrine apres les moissons. En cas de catastrophe (secheresse, maladies, invasions de criquets) les esprits sont sollicites."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La chefferie de Nsokolo est la principale chefferie Mambwe. D'autres chefferies autonomes coexistaient : Muti (au Tanganyika, descendant de Funda frere de Nsokolo wa Chisenga), Chitongwe (Mphande V), Musante Mpande II, Kela, Fwambo, Mpenza, Chivuta. Ces chefferies ne formerent jamais un royaume unifie.",
+      "relationsWithNeighbors": "Apparentes aux Lungu de Tafuna (meme groupe ethnique de base, a peine distinguables), aux Fipa, Namwanga et autres peuples du Tanganyika. Ennemis traditionnels des Bemba (guerres ameres, raids repetes ; les Britanniques auraient pu sauver les Mambwe de l'extinction selon certains historiens). Alliance de Nsokolo avec les Bemba contre les Ngoni et Mphande. Les Senga offrirent refuge a Mphande et Chivuta.",
+      "conflictsOrAlliances": "Guerres Bemba-Mambwe : sieges, exodes, executions de chefs mambwe. Mphande allie aux Ngoni contre Nsokolo. Nsokolo allie aux Bemba contre les Ngoni/Mphande. Harry Johnson instaura la paix (novembre 1889). Les Bemba furent repousses par les Mambwe (Fwambo 1892, region de Nsokolo avril 1893). Les Britanniques pacifierent les Bemba en 1898.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 430000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur 63 000 Mambwe en Tanzanie (1987) et 262 800 Mambwe et Lungu combines en Zambie (1993). Projections 2025 tenant compte de la croissance demographique.",
+      "distributionByCountry": [
+        { "country": "ZMB", "population": 320000 },
+        { "country": "TZA", "population": 110000 }
+      ]
+    },
+    "sources": [
+      "Mambwe people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Mambwe_people)",
+      "Mambwe-Lungu language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Mambwe-Lungu_language)",
+      "Mambwe-Lungu Language (MGR) – Ethnologue, SIL International (https://www.ethnologue.com/language/mgr/)",
+      "List of all tribes in Tanzania – Tuko.co.ke, 2024 (https://www.tuko.co.ke/facts-lifehacks/guides/543850-list-tribes-tanzania-languages-home-regions/)",
+      "Watson, W. – Tribal Cohesion in a Money Economy: A Study of the Mambwe People of Northern Rhodesia, Manchester University Press, 1958"
+    ]
+  }
+}

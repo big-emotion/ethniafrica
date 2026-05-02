@@ -1,0 +1,39 @@
+# Nom du peuple
+- Nom principal : Papel
+- Auto-appellation : Pepel / Papei
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Région historique : Guinée-Bissau (littoral)
+- Identifiant : PPL_PAPEL
+
+# 1. Ethnies incluses
+- Papel du centre
+- Papel littoraux
+
+# 2. Origines
+- Peuplement côtiers ancien.
+- Communautés proches des Manjak et Mancanha.
+
+# 3. Organisation
+- Société à base lignagère.
+- Rôle fort des sociétés d’initiation.
+
+# 4. Langue
+- Papel
+- ISO : pbo
+
+# 5. Culture
+- Masques et rites d’initiation.
+- Cultes des bois sacrés.
+- Artisanat en bois et en fibres.
+
+# 6. Histoire
+- Forte résistance à la pénétration portugaise.
+- Rôle politique important en Guinée-Bissau moderne.
+
+# 7. Démographie
+- Population : 210 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (pbo)
+- Guinea-Bissau Ethnic Registry

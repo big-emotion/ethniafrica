@@ -1,0 +1,111 @@
+{
+  "id": "PPL_HABESHA",
+  "nameMain": "Habesha",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": ["ETH", "ERI"],
+  "content": {
+    "appellations": {
+      "mainName": "Habesha",
+      "selfAppellation": "Habesha (አበሻ — amharique ; ሓበሻ — tigrinya) / Habeshat (forme plurielle en ge'ez : ሐበሠተ)",
+      "exonyms": [
+        "Abyssiniens (terme historique europeen, derive de l'arabe al-Habash)",
+        "Ethiopiens (terme geographique moderne, parfois employe comme synonyme)",
+        "Habash (terme arabe medieval designant les habitants des hauts plateaux ethiopiens et eritreens)"
+      ],
+      "originOfExonyms": "Le terme Habesha vient du mot ge'ez et de l'arabe al-Habash, utilise des le 3e siecle dans les inscriptions sabaeennes pour designer le royaume d'Aksum et ses habitants. Les eruditeurs europeens ont derive Abyssinie de ce terme. L'origine exacte du mot est debattue : certains le relient a un peuple ou une tribu appeles Habashat migrant d'Arabie du Sud ; d'autres y voient un terme indigene dessinant les habitants des hauts plateaux.",
+      "whyProblematic": "Le terme Habesha est polysemique et son contenu varie selon le contexte. Dans son sens restrictif classique, il designe les peuples chretiens orthodoxes semitiques des hauts plateaux (Amhara, Tigrayens, Tigrinya d'Erythree). Dans son sens elargi, il peut inclure les Gurage, Argobba et Harari. Les musulmans des hauts plateaux (Jeberti, notamment) ont historiquement refuse ce terme. Dans la diaspora ethiopienne et eritreenne, le terme est utilise comme identifiant supra-national commun, usage non universellement accepte par les membres des groupes subalternises.",
+      "contemporaryUsage": "Le terme Habesha est largement utilise dans la diaspora ethiopienne et eritreenne en Amerique du Nord, en Europe et dans le Golfe comme identifiant pan-ethnique. En Ethiopie et en Erythree, son usage varie selon la region, la generation et la religion. Les chretiens orthodoxes des hauts plateaux s'identifient generalement comme Habesha. Certains Tigrayens utilisent le terme de maniere restrictive pour designer uniquement les locuteurs du tigrinya.",
+      "linguisticFamily": "FLG_SEMITIQUE",
+      "ethnoLinguisticGroup": "Semitiques ethiopiens (Ethio-semitiques) — ensemble des peuples locuteurs de langues semitiques des hauts plateaux ethiopiens et eritreens",
+      "historicalRegion": "Hauts plateaux ethiopiens et eritreens — du Tigray (nord) au Shewa (sud) et des hauts plateaux de l'Erythree actuelle",
+      "currentCountries": ["ETH", "ERI"]
+    },
+    "ethnicities": [
+      "Amhara — groupe semitique du nord-ouest de l'Ethiopie, locuteurs de l'amharique, cœur de l'empire ethiopien, environ 22-24 millions en Ethiopie",
+      "Tigrayens (ትግርኛ Tigrinya) — groupe semitique du nord de l'Ethiopie (region Tigray), locuteurs du tigrinya",
+      "Tigrinya d'Erythree — groupe semitique des hauts plateaux eritreens, locuteurs du tigrinya, distinct des Tigrayens par la nationalite",
+      "Tigre (ትግሬ) — groupe semitique des basses terres eritreenes, locuteurs du tigre (langue distincte du tigrinya)",
+      "Gurage — ensemble de groupes semitiques du centre-sud de l'Ethiopie, dont les chretiens orthodoxes s'identifient comme Habesha",
+      "Argobba — groupe semitique minoritaire du Shewa et Wollo, musulman, parfois inclus dans les classifications habesha",
+      "Harari (Adare) — groupe semitique de Harar, parfois inclus comme Habesha dans les classifications larges",
+      "Gafat — peuple semitique eteint du bassin du Nil bleu, considere comme Habesha historiquement",
+      "Ge'ez (liturgique, eteint comme langue vernaculaire)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Habesha descendent des habitants des hauts plateaux du nord de l'Ethiopie et de l'Erythree, dont la civilisation est documentee depuis le royaume de D'mt (8e siecle av. J.-C.) et surtout le royaume d'Aksum (1er-12e siecle apr. J.-C.). Une hypothese classique postulait une migration de la tribu Habashat depuis l'Arabie du Sud meridionale vers les hauts plateaux vers 1000 av. J.-C. Des etudes linguistiques recentes utilisant des methodes bayesiennes de phylogenetique computationnelle suggerent une introduction unique de l'ethio-semitique depuis l'Arabie du Sud il y a environ 2 800 ans, suivie d'une diversification rapide dans la Corne de l'Afrique. L'ADN des populations confirme un apport genetique arabe sur un substrat cushitique local.",
+      "formationPeriod": "L'identite habesha s'est construite progressivement autour de l'Eglise orthodoxe ethiopienne Tewahedo (adoptee au 4e siecle apr. J.-C. sous le roi Ezana d'Aksum), de l'ecriture ge'ez (abugida) et du mode de vie agraire des hauts plateaux. La periode medievale (12e-17e siecles) voit la consolidation de l'identite habesha sous les dynasties zagwe et salomonide. L'empire ethiopien unifie sous Tewodros II (1855), Yohannes IV (1872) et Menelik II (1889) renforce cette identite commune, tout en masquant les tensions internes entre Amhara et Tigrayens.",
+      "migrationRoutes": [
+        "Apports semitiques depuis l'Arabie du Sud via la mer Rouge (vers 800 av. J.-C.) — attestes par des inscriptions sabaeennes et des artefacts a Yeha",
+        "Extension des peuples semitiques depuis les hauts plateaux du nord (Tigray-Erythree) vers le sud (Amhara, Shewa) au cours du premier millenaire",
+        "Migrations depuis le Tigray vers le Shewa aux 7e-12e siecles, lors du declin d'Aksum et de la montee des dynasties amhara"
+      ],
+      "historicalSettlementZones": [
+        "Hauts plateaux du Tigray et d'Erythree — berceau de la civilisation aksumite et du christianisme ethiopien",
+        "Hauts plateaux de l'Amhara (Gojjam, Begemder, Wello, Shewa septentrional) — cœur de l'empire ethiopien medieval",
+        "Shewa meridional — expansion salomonide a partir du 13e siecle",
+        "Diaspora mondiale : Etats-Unis (notamment Washington D.C., Minneapolis, Atlanta), Canada, Europe, Golfe arabe"
+      ],
+      "unificationsOrDivisions": "L'empire ethiopien (Solomonide) a ete le principal vecteur d'unification habesha depuis 1270 sous Yekuno Amlak. Les divisions entre Amhara et Tigrayens ont ete persistantes : les Tigrayens ont regente brievement avec Yohannes IV (1872-1889) avant que le pouvoir ne revienne aux Amhara sous Menelik II. La separation de l'Erythree en 1993 a cree une frontiere entre les communautes Habesha d'Ethiopie et d'Erythree. Le conflit du Tigray (2020-2022) a profondement fracture les relations entre Amhara et Tigrayens.",
+      "externalInfluences": "Influences sabaeennes et himyarites d'Arabie du Sud (1er millenaire av. J.-C.). Christianisme copte egyptien (4e siecle) : base doctrinale de l'Eglise Tewahedo. Islam (7e siecle) : arrivee des premiers compagnons du Prophete en Abyssinie (Hijra en 615), puis expansion progressive. Invasion de l'imam Ahmad Gragn (1529-1543) : devastation des hauts plateaux. Presence ottomane sur la cote (16e-19e siecles). Colonisation italienne de l'Erythree (1890-1941) et occupation de l'Ethiopie (1936-1941) : traumatisme fondateur.",
+      "majorHistoricalEvents": "Adoption du christianisme par le roi Ezana d'Aksum (vers 340 apr. J.-C.) — premiere grande monarchie africaine chretienne. Construction des obelisques et palais d'Aksum (1er-8e siecles). Declin d'Aksum (7e-12e siecles) et emergence de la dynaste zagwe avec les eglises rupestres de Lalibela (12e siecle). Restauration de la dynaste salomonide par Yekuno Amlak (1270). Invasion d'Ahmed Gragn (1529-1543). Victoire contre l'Italie a la bataille d'Adoua (1896). Federation puis annexion de l'Erythree (1952-1962). Famine de 1984-1985 et chute du Derg. Independence de l'Erythree (1993). Guerre Ethiopia-Erythree (1998-2000). Conflit du Tigray (2020-2022)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le systeme traditionnel habesha est le systeme imperial ethiopien (negusate) avec l'Empereur (Negus Negast — Roi des Rois) comme chef supremo, assiste par une noblesse (mekwanint). L'organisation feodale classique distingue les nobles (ras, dejazmatch, fitawrari), les paysans libres (gebbar) et les serviteurs (gered). Le systeme foncier rist (droits fonciers hereditaires collectifs) est specifique aux Amhara et Tigrayens. Le gouvernement local est organise en provinces (kilil) subdivisees en districts.",
+      "clanOrganization": "Les Amhara et Tigrayens sont organises en lignages patrilineaires. Les Amhara utilisent le systeme du zemed (parentele elargie) et du ye'abat sim (nom de lignage paternel). Les Tigrayens ont une organisation clanique plus marquee, avec des clans distincts comme les Enderta, Agame, Tembien et Akele Guzay. La noblesse habesha se definit par des genealogies remontant a Salomon et la reine de Saba (tradition du Kebra Nagast).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite, le statut social, les droits fonciers et les alliances matrimoniales. Les mariages sont soigneusement negocies entre familles pour preserver le statut social. La notion de rist (droit foncier collectif des descendants) est centrale dans les societes amhara et tigrayenne. Le nom patronymique ethiopien (prenom du fils + prenom du pere) est un marqueur fort de lignage.",
+      "religiousAuthority": "L'Eglise orthodoxe ethiopienne Tewahedo est l'institution religieuse la plus influente, avec environ 40 millions de fideles en Ethiopie. Son autorite s'etend depuis le patriarche d'Addis-Abeba jusqu'aux papes locaux, priests (qes), diacres et moines. Les monasteres (notamment Debre Damo, Lalibela, Axoum) sont des centres spirituels et intellectuels majeurs. L'Eglise orthodoxe eritreenne Tewahedo, autocephale depuis 1993, joue un role analogue en Erythree. L'islam est la seconde religion, avec les Jeberti comme communaute de marchands islamises des hauts plateaux."
+    },
+    "languages": {
+      "mainLanguage": "Amharique (am) et Tigrinya (ti) — langues principales du groupe habesha",
+      "isoCodes": ["amh", "tir", "gez", "tig"],
+      "dialects": [
+        "Amharique (amh) — langue semitique meridionale, langue officielle de l'Ethiopie, environ 32 millions de locuteurs natifs et 25 millions de deuxieme langue",
+        "Tigrinya (tir) — langue semitique septentrionale, langue officielle de l'Erythree et d'usage officiel dans la region Tigray, environ 10 millions de locuteurs",
+        "Ge'ez (gez) — langue liturgique classique, ancetre du tigrinya et du tigre, utilise dans les services de l'Eglise Tewahedo",
+        "Tigre (tig) — langue semitique des basses terres eritreennes, apparentee au ge'ez, environ 1 million de locuteurs"
+      ],
+      "vehicularRole": "L'amharique est la langue officielle de l'Ethiopie, langue vehiculaire nationale et lingua franca entre toutes les ethnies ethiopiennes. Le tigrinya est l'une des langues officielles de l'Erythree avec l'arabe. Le ge'ez est exclusivement liturgique (similaire au latin dans l'Eglise catholique). L'ecriture ge'ez (fidel / fidal), l'un des plus anciens alphabets en usage continu, est utilisee pour l'amharique, le tigrinya et le ge'ez."
+    },
+    "culture": {
+      "majorRites": "Les rites majeurs habesha sont structures par le calendrier de l'Eglise Tewahedo : Timkat (Epiphanie ethiopienne, commemoration du bapteme du Christ, 19 janvier selon le calendrier ethiopien) — procession des tabots (repliques de l'Arche de l'Alliance) ; Meskel (Fete de la Croix Vraie, 27 septembre) — grandes croix ceremoniales enflammees dans les places publiques ; Gena (Noel ethiopien, 7 janvier) ; jeune de 55 jours avant Paque (Fasika). Le bapteme (boys 40 jours, girls 80 jours apres la naissance), la circoncision masculine, et le mariage religieux sont des rites de passage essentiels. Les guerres sont precedees de ceremonies religieuses de benediction.",
+      "symbols": "La croix ethiopienne (en differentes formes selon les regions et les eglises) est le symbole religieux central. Le Lion de Juda (Anbessa Ze Yehuda) — associe a la maison salomonide et represente sur l'ancien drapeau imperial — demeure un symbole culturel fort. Le drapeau tricolore ethiopien (vert, jaune, rouge) est un symbole pan-africain historique. Les eglises rupestres de Lalibela (12e siecle), les obelisques d'Aksum et le Kebra Nagast (epopee nationale sur Salomon, la reine de Saba et l'Arche de l'Alliance) sont des symboles civilisationnels majeurs. Le vêtement traditionnel (habesha kemis pour les femmes, costume habesha pour les hommes) en chiffon blanc avec broderies colorees est un marqueur identitaire fort.",
+      "artsAndMusic": "La musique liturgique (zema) chantee en ge'ez est au cœur de la tradition musicale habesha. La danse eskista (danse des epaules) est la forme la plus celebre de danse traditionnelle, pratiquee par les Amhara et Tigrayens. La peinture religieuse sur parchemin (icones ethiopiennes aux yeux caracteristiques de profil) est une tradition artistique millenaire. La litterature en ge'ez et en amharique (Kebra Nagast, Fetha Nagast, Chants du Roi Dawit) constitue un patrimoine ecrit remarquable. L'architecture religieuse (eglises rupestres, eglises circulaires, monasteres perches) est une expression artistique majeure. La cuisine habesha (injera au teff, wat epice, tej miel fermante, tella biere traditionnelle) est une expression culturelle centrale partagee.",
+      "spiritualities": "Le christianisme orthodoxe ethiopien Tewahedo est la religion dominante du groupe habesha, caracterise par le monophysisme chalcedonien (Miaphysisme), un canon biblique elargi (81 livres), des pratiques judaiques residuelles (circumcision, abstinence du porc, Shabat observe en plus du dimanche), la veneration du roi Salomon et de l'Arche de l'Alliance (chaque eglise possede une replica du tabot). L'islam est la seconde religion, pratique notamment par les Jeberti (marchands musulmans des hauts plateaux) et une partie des Tigrayens et Amhara de certaines regions. Les Beta Israel (Falachas) pratiquaient un judaisme unique jusqu'a leur emigration massive en Israel (Operations Moise, 1984 ; Salomon, 1991). Des croyances pre-chretiennes liees aux esprits zar persistent dans certaines communautes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume de D'mt (8e-5e siecles av. J.-C.) est la plus ancienne entite politique documentee des hauts plateaux. Le royaume d'Aksum (1er-12e siecles apr. J.-C.) est l'une des quatre grandes civilisations de l'Antiquite tardive, avec Rome, Perse et Chine ; il controle les routes commerciales de la mer Rouge et s'etend au Yemen et en Egypte meridionale. La dynaste zagwe (11e-13e siecles) construit les eglises rupestres de Lalibela. La dynaste salomonide (1270-1974) gouverne l'Ethiopie pendant sept siecles jusqu'a Haile Selassie (depose 1974). L'empire ethiopien resist a la colonisation europeenne (victoire d'Adoua contre l'Italie, 1896), element fondateur du pan-africanisme.",
+      "relationsWithNeighbors": "Relations commerciales anciennes avec l'Arabie du Sud, l'Egypte, Rome et l'Inde via les ports de la mer Rouge (Adulis, Zeila, Massawa). Conflits recurrents avec les sultanats islamiques du Harar (Adal, Ifat) et avec les Oromo (migrations, 16e-17e siecles). Relations avec l'Egypte ottomane et l'Empire ottoman (16e-19e siecles). Guerres coloniales contre l'Italie (1895-1896 ; 1935-1941). Tensions et guerres avec la Somalie (Ogaden, 1977-1978). Guerre avec l'Erythree (1998-2000). Relations ethiopio-eritreennes complexes depuis l'independance en 1993.",
+      "conflictsOrAlliances": "Guerre contre la Perse au Yemen sous Kaleb (6e siecle). Guerre contre Ahmad ibn Ibrahim al-Ghazi (Ahmed Gragn, 1529-1543) : quasi-destruction de l'empire, sauve par l'intervention portugaise. Conflits avec les Oromo (16e-19e siecles). Victoire d'Adoua (1896) — premiere victoire africaine contre une puissance coloniale europeenne. Occupation italienne (1936-1941). Guerre eritreenne d'independance (1961-1991). Guerre Ethiopie-Somalie (1977-1978). Guerre Ethiopie-Erythree (1998-2000). Conflit du Tigray (2020-2022) : fracture intra-habesha majeure opposant le gouvernement federal (Amhara allie) au TPLF tigrayen.",
+      "diaspora": "La diaspora habesha est l'une des plus importantes d'Afrique subsaharienne. Les Etats-Unis accueillent entre 300 000 et 500 000 Ethiopiens et Eritreens (Washington D.C., Minnesota, Californie, Georgie). Le Canada, la Grande-Bretagne, les Pays-Bas, la Suede, l'Allemagne et l'Australie ont des communautes significatives. Les pays du Golfe accueillent plusieurs centaines de milliers de travailleurs migrants ethiopiens et eritreens. La famine de 1984-1985 et les conflits politiques ont ete les principaux moteurs d'emigration. La diaspora joue un role economique (transferts de fonds) et politique (notamment pendant le conflit du Tigray) tres important."
+    },
+    "demography": {
+      "totalPopulation": 40000000,
+      "referenceYear": 2025,
+      "source": "Estimation macro-groupe basee sur CIA World Factbook (Ethiopie 2025 : 131 millions ; Erythree : 3,7 millions), recensements ethiopien (CSA 2007) et eritreen, et estimations de SIL Ethnologue 2024. Le groupe habesha au sens strict (Amhara + Tigrayens Ethiopie + Tigrinya Erythree) est estime a 35-40 millions. Le chiffre varie selon la definition inclusive ou restrictive du terme.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 36000000,
+          "note": "Amhara (env. 22-24 millions), Tigrayens (env. 7-8 millions), autres groupes habesha inclus (Gurage chretiens, Argobba)"
+        },
+        {
+          "country": "ERI",
+          "population": 2000000,
+          "note": "Tigrinya d'Erythree (environ 50% de la population eritreenne, soit env. 1,8-2 millions)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Habesha peoples. https://en.wikipedia.org/wiki/Habesha_peoples",
+      "Wikipedia EN — Amhara people. https://en.wikipedia.org/wiki/Amhara_people",
+      "ZeHabesha — Fascinating History and Culture of the Habesha People. https://zehabesha.com/fascinating-history-and-culture-of-habesha-people/",
+      "Marcus, Harold G. — A History of Ethiopia. University of California Press, 2002.",
+      "Pankhurst, Richard — The Ethiopians: A History. Blackwell, 2001.",
+      "Ethnologue — Amharic (amh). https://www.ethnologue.com/language/amh",
+      "Ethnologue — Tigrinya (tir). https://www.ethnologue.com/language/tir",
+      "CIA World Factbook — Ethiopia. https://www.cia.gov/the-world-factbook/countries/ethiopia/",
+      "CIA World Factbook — Eritrea. https://www.cia.gov/the-world-factbook/countries/eritrea/"
+    ]
+  }
+}

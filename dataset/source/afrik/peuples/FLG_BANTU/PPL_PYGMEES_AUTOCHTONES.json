@@ -1,0 +1,87 @@
+{
+  "id": "PPL_PYGMEES_AUTOCHTONES",
+  "nameMain": "Peuples autochtones des forets d'Afrique centrale (Baka, Bagyeli, Bedzan)",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CMR", "GAB", "COG", "CAF"],
+  "content": {
+    "appellations": {
+      "mainName": "Peuples autochtones des forets / Chasseurs-cueilleurs forestiers",
+      "selfAppellation": "Baka (se disent Baka ou Bayaka), Bagyeli (se disent Bagyeli ou Bakola), Bedzan (se disent Bedzan ou Medzan)",
+      "exonyms": [
+        "Pygmees (terme anthropologique colonial)",
+        "Autochtones",
+        "Twa (terme generique parfois applique abusivement)",
+        "Aka (variante pour les Baka du Congo)"
+      ],
+      "originOfExonyms": "Le terme Pygmees vient du grec pyrgme, designant une mesure de longueur (de la phalange au coude), utilisee dans les textes antiques pour designer des peuples de petite taille. Herodote (~500 av. J.-C.) mentionne des Pygmees en Afrique de l'Ouest. Le terme a ete recupere par l'anthropologie coloniale au XIXe siecle pour designer l'ensemble des chasseurs-cueilleurs forestiers d'Afrique centrale.",
+      "whyProblematic": "Le terme Pygmee est considere comme devalorisant et colonial. Il est percu comme un attribut physique reducteur et nie l'identite culturelle et ethnique propre a chaque groupe. Il a ete utilise historiquement pour justifier discrimination et exclusion sociale. Les organisations de droits des peuples autochtones (Forest Peoples Programme, IWGIA) recommandent d'utiliser les noms propres de chaque groupe : Baka, Bagyeli, Bedzan, Aka, Mbuti, etc.",
+      "contemporaryUsage": "Le terme Pygmee est progressivement abandonne au profit des auto-appellations specifiques. Au Cameroun, les termes officiels et militants privilegient Peuples autochtones ou Chasseurs-cueilleurs forestiers. Les organisations internationales (ONU, UNESCO, Greenpeace Afrique) utilisent Peuples autochtones.",
+      "linguisticFamily": "FLG_BANTU (langues baka et bagyeli), avec influences de langues du bassin du Congo",
+      "ethnoLinguisticGroup": "Chasseurs-cueilleurs forestiers d'Afrique centrale ; trois groupes principaux au Cameroun : Baka, Bagyeli/Bakola, Bedzan/Medzan",
+      "historicalRegion": "Forets tropicales du bassin du Congo : sud-est et est du Cameroun, nord du Gabon, nord de la Republique du Congo, sud-ouest de la Republique centrafricaine",
+      "currentCountries": ["CMR", "GAB", "COG", "CAF"]
+    },
+    "ethnicities": ["Baka", "Bagyeli", "Bakola", "Bedzan", "Medzan"],
+    "origins": {
+      "ancientOrigins": "Les etudes genetiques indiquent que les ancetres des chasseurs-cueilleurs forestiers d'Afrique centrale se sont separes des autres populations humaines il y a au moins 60 000 ans, constituant parmi les lignees humaines les plus anciennes d'Afrique. Des sources antiques grecques (Herodote, Homere) font reference a des peuples de petite stature en Afrique subsaharienne. Leurs ancetres ont toujours habite les forets denses d'Afrique centrale, accumulant des connaissances ecologiques exceptionnelles.",
+      "formationPeriod": "Presence attestee dans les forets du bassin du Congo depuis des millenaires. L'identite ethnique distincte des Baka, Bagyeli et Bedzan s'est cristallisee au contact progressif avec les peuples agriculteurs bantu arrivant depuis le nord et l'ouest.",
+      "migrationRoutes": [
+        "Forets du bassin du Congo (stabilite historique relative)",
+        "Mouvements saisonniers a l'interieur des forets selon les ressources disponibles"
+      ],
+      "historicalSettlementZones": [
+        "Forets du sud et de l'est du Cameroun (Baka)",
+        "Zone cotiere du sud-ouest Cameroun entre Kribi et le Mont Cameroun (Bagyeli/Bakola)",
+        "Zone de la Haute-Sanaga au centre-nord Cameroun (Bedzan/Medzan)",
+        "Nord du Gabon et de la Republique du Congo (Baka)"
+      ],
+      "unificationsOrDivisions": "Les trois groupes principaux du Cameroun (Baka, Bagyeli, Bedzan) sont distincts et ne constituent pas une entite politique unifiee. Ils partagent un mode de vie de chasseurs-cueilleurs semi-nomades et des discriminations communes de la part des populations agricoles voisines.",
+      "externalInfluences": "Contact de longue date avec les agriculteurs bantu (relations de dependance economique et d'echanges inegaux). Colonisation europeenne ayant impose des limites territoriales ignorant les droits fonciers autochtones. Expansion de l'exploitation forestiere industrielle depuis le XXe siecle. Politiques de conservation (aires protegees, reserves) ayant restreint l'acces aux territoires ancestraux.",
+      "majorHistoricalEvents": "Creation de nombreuses aires protegees au Cameroun et dans la region ayant reduit les territoires de chasse. Sedentarisation forcee ou incitee depuis les annees 1970-1980. Absence de reconnaissance juridique des droits fonciers autochtones au Cameroun (confirmee par le droit national encore en 2025 selon Greenpeace Afrique). Inscription de la Reserve de faune du Dja (UNESCO, 1987) sans consultation adequately des communautes Baka riveraines."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation egalitaire et consensuelle au sein des groupes familiaux. Prise de decision collective par consensus, absence de hierarchie politique formalisee. Pas de chefferies institutionnalisees (contrairement aux Bantu voisins).",
+      "clanOrganization": "Organisation en groupes familiaux elargis mobiles, reorientant les alliances selon les ressources et les saisons. Les Baka vivent en campements (mondundu) de plusieurs families.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lineages transmettent les savoirs ecologiques, les pratiques de chasse et les rituels. La transmission orale est fondamentale dans une culture essentiellement non ecrite.",
+      "religiousAuthority": "Mediateurs rituels charges de la communication avec les esprits de la foret (notamment Jengi chez les Baka). L'autorite spirituelle est distribuee et non centralisee."
+    },
+    "languages": {
+      "mainLanguage": "Baka (groupe principal du Cameroun)",
+      "isoCodes": ["bkc", "bbk"],
+      "dialects": ["Bagyeli (Bakola)", "Bedzan (Medzan)", "Bayaka (Congo)"],
+      "vehicularRole": "Les communautes utilisent souvent la langue des populations Bantu voisines (Fang, Bulu, Ewondo) comme lingua franca pour les echanges commerciaux, ainsi que le francais dans le contexte camerounais. Les langues autochtones sont transmises oralement au sein des communautes."
+    },
+    "culture": {
+      "majorRites": "Jengi (Baka) : ceremonie d'initiation des jeunes hommes a l'age adulte, impliquant une rencontre avec l'esprit de la foret Jengi qui se manifeste vetu de raphia. Luma : chants de remerciement a Jengi apres une chasse fructueuse. Mbouamboua : danse rituelle pratiquee lors des deces pour eloigner la malediction. Les Baka quittent le campement apres un deces et s'etablissent ailleurs.",
+      "symbols": "La foret est le symbole central de l'identite et de la spiritualite. Jengi, l'esprit de la foret, est la figure tutellaire des Baka. Le miel (poki) est hautement valorise culturellement et economiquement.",
+      "artsAndMusic": "Musique polyphonique vocale d'une grande sophistication, avec techniques de contrepoint et de vocalises caracteristiques ; etudiee et admiree par des musicologues du monde entier. Les femmes Baka pratiquent des chants collectifs importants pour la cohesion sociale. Instruments de musique : arc musical, tambours, sifflets. Anthropologue Shiho Hattori a repertorie environ 100 instruments et outils culturels baka.",
+      "spiritualities": "Croyance en Jengi, esprit tutellaire de la foret, intermediaire entre le dieu supreme Komba et les Baka. Jengi est omnipresent dans la foret et punit les transgresseurs. Le culte de Jengi integre la chasse, la vie communautaire, les rites de passage et les funerailles. La foret est sacree et source de toute vie."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaumes ni de chefferies institutionnalisees. Les groupes vivent en communautes autonomes sans structures d'etat.",
+      "relationsWithNeighbors": "Relations de dependance economique et d'echanges inegaux avec les agriculteurs bantu voisins (Fang, Bulu, Ewondo au Cameroun). Les Baka fournissent produits de la foret (fruits, plantes medicinales, miel) en echange de produits manufactures et alimentaires. Cette relation est souvent asymetrique, les Baka etant marginalises et parfois traites comme serviteurs (indentured servants). Discriminations frequentes ; comparaisons degradantes aux animaux rapportees par des chercheurs.",
+      "conflictsOrAlliances": "Conflits recurrents avec les gardes eco-forestiers et la conservation imposee (restrictions d'acces aux forets ancestrales). Soutien de Forest Peoples Programme, IWGIA, Greenpeace Afrique, UNESCO pour la defense de leurs droits. En 2010, des leaders Baka et Bagyeli ont participe au Chelsea Flower Show de Londres pour sensibiliser sur leurs droits.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 100000,
+      "referenceYear": 2025,
+      "source": "Baka : environ 40 000 a 70 000 au Cameroun, Gabon et Congo (Ritimo/Forest Peoples Programme, 2020). Bagyeli : quelques milliers. Bedzan : quelques centaines. Estimation totale pour le Cameroun : environ 100 000 personnes tous groupes confondus.",
+      "distributionByCountry": [
+        { "country": "CMR", "population": 75000 },
+        { "country": "GAB", "population": 15000 },
+        { "country": "COG", "population": 8000 },
+        { "country": "CAF", "population": 2000 }
+      ]
+    },
+    "sources": [
+      "Baka people (Cameroon and Gabon) – Wikipedia (https://en.wikipedia.org/wiki/Baka_people_(Cameroon_and_Gabon))",
+      "La Conservation et le peuple Baka au Cameroun – Ritimo, 2020 (https://www.ritimo.org/Violence-corruption-et-fausses-promesses-La-Conservation-et-le-peuple-Baka-au)",
+      "Gardiens de la foret : les Baka et l'esprit vivant du Dja – UNESCO, 2025 (https://www.unesco.org/fr/articles/gardiens-de-la-foret-les-baka-et-lesprit-vivant-du-dja)",
+      "Statut des Peuples Autochtones – Greenpeace Afrique, 2025 (https://www.greenpeace.org/africa/fr/les-blogs/58654/peuples-autochtones-trois-decennies-dattente-pour-une-reconnaissance-legale-et-juridique/)",
+      "Les Baka : Territoires et Modes de Vie Traditionnels – IWGIA, Pyhala Aili (https://iwgia.org/images/publications/0584_informe_13_fre_opt.pdf)",
+      "Des leaders Baka et Bagyeli exposent les problemes – Forest Peoples Programme, 2010 (https://www.forestpeoples.org/fr/publications-resources/news/article/des-leaders-baka-et-bagyeli-exposent-les-problemes-de-leur-forets-aupres-des-medias-et-du-public/)"
+    ]
+  }
+}

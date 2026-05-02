@@ -1,0 +1,114 @@
+{
+  "id": "PPL_BERI",
+  "nameMain": "Beri",
+  "languageFamilyId": "FLG_SAHARIEN",
+  "currentCountries": ["TCD", "SDN", "LBY"],
+  "content": {
+    "appellations": {
+      "mainName": "Beri",
+      "selfAppellation": "Beri",
+      "exonyms": [
+        "Zaghawa (terme arabe, utilise dans la litterature et par les peuples arabophones voisins)",
+        "Zakhawa",
+        "Soghaua",
+        "Zeghawa",
+        "Zoghaua",
+        "Duguwa (nom utilise dans la chronique royale du Kanem-Bornu, le Girgam)"
+      ],
+      "originOfExonyms": "Le terme Zaghawa est un exonyme d'origine arabe, utilise des les premieres sources islamiques du 9e siecle (al-Ya'qubi). Le mot Beri est l'endonyme du peuple, signifiant simplement les personnes ou les gens dans leur propre langue. La langue zaghawa est appelee Beria (beri + a, suffixe de bouche/langue en zaghawa). L'appellation Duguwa dans le Girgam du Kanem-Bornu designe probablement les ancetres zaghawa.",
+      "whyProblematic": "L'usage de Zaghawa peut creer une confusion avec le terme englobant Beri qui inclut egalement les Bideyat et les Bertis. Dans le contexte du conflit du Darfour (depuis 2003), le terme Zaghawa est souvent associe a une identite politique et combattante, ce qui simplifie a l'exces une identite ethnique complexe.",
+      "contemporaryUsage": "Le terme Beri est l'appellation propre utilisee par le peuple. Zaghawa est utilise dans la litterature academique, les medias internationaux et par les populations arabophones. En politique tchadienne et soudanaise, les Zaghawa/Beri sont un groupe ethnique politiquement influent depuis l'ere du president Idriss Deby (lui-meme Zaghawa).",
+      "linguisticFamily": "FLG_SAHARIEN",
+      "ethnoLinguisticGroup": "Groupe saharien oriental (branche nilo-saharienne)",
+      "historicalRegion": "Dar Zaghawa (terre des Zaghawa), a cheval sur le nord-est du Tchad et l'ouest du Soudan (Darfour); anciennement aussi Kanem et regions autour du lac Tchad",
+      "currentCountries": ["TCD", "SDN", "LBY"]
+    },
+    "ethnicities": [
+      "Beria (Zaghawa proprement dits, clan principal au Tchad et au Soudan)",
+      "Tuba ou Biria / Brogat (sous-groupe Bideyat selon la classification arabe, zone Ennedi/nord-est du Tchad)",
+      "Dirong et Guruf (sous-groupes dans les cantons Dirong et Gourouf, sous-prefecture d'Iriba, Tchad)",
+      "Kube / Kobe (sous-groupe majeur : clans Kapka, Kige, Kuba; zone Iriba et Dar Fur soudanais)",
+      "Wegi / Twer (sous-groupe majoritairement soudanais, Dar Fur du Nord; environ 100 000 personnes)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Beri (Zaghawa) sont mentionnes dans les sources islamiques des le 9e siecle. Al-Ya'qubi (892 ap. J.-C.) les decrit vivant dans le Kanem et exercant une hegemonie sur de nombreuses societes du Sahel entre le lac Tchad et le Darfour. Les textes du 8e siecle les mentionnent conjointement aux Toubou, suggérant une origine commune ou une relation ancienne entre les deux peuples. Des le 1er millenaire, ils commercaient avec les regions du Nil et du Maghreb.",
+      "formationPeriod": "Aux 11e-12e siecles, les rois zaghawa avaient accepte l'islam et leur royaume etait bien etabli autour d'un systeme d'oasis, avec les villes de Kanem, Manan et Anjimi mentionnees par le geographe al-Idrisi. Vers 1270, Ibn Sa'id al-Maghribi note que Manan fut la capitale du royaume de Kanem avant la conquete par la dynasitie Sayfawa. Apres leur delogement du Kanem, les Zaghawa se retirerent dans leur Dar Zaghawa, conservant une identite distincte.",
+      "migrationRoutes": [
+        "Presence ancestrale autour du Kanem et du lac Tchad (avant le 8e siecle)",
+        "Repli progressif vers le Dar Zaghawa (nord-est du Tchad, ouest du Soudan/Darfour) apres la montee en puissance de la dynasitie Sayfawa du Kanem-Bornu (13e-14e siecles)",
+        "Extension vers le Darfour soudanais (notamment dialecte Wegi/Twer, environ 100 000 locuteurs)"
+      ],
+      "historicalSettlementZones": [
+        "Kanem (autour du lac Tchad, avant le 13e siecle)",
+        "Dar Zaghawa (nord-est du Tchad : regions d'Iriba, Bao Bilia, Kalaïti, Ennedi)",
+        "Darfour du Nord et de l'Ouest (Soudan : Kornoye, Kutum, Ambodu)",
+        "Fezzan et Libye du sud-est (communaute plus reduite)"
+      ],
+      "unificationsOrDivisions": "Les Beri sont organises en groupes dialectaux et claniques distincts (Beria, Tuba/Bideyat, Dirong, Guruf, Kube, Wegi) qui partagent une identite commune malgre leurs differences regionales. La stratification sociale comprend une noblesse guerriere, des marchands, une caste artisanale hereditaire (Hadaheed : forgerons, potiers, tanneurs, musiciens) et historiquement des esclaves. Les castes Hadaheed sont endogames et considerees d'un rang inferieur.",
+      "externalInfluences": "Islamisation progressive a partir du 11e siecle (acceptee nominalement d'abord, puis plus profonde a partir du 13e-17e siecle). Influence de la confrerie tijaniste (Tariqa Tijaniyya) dans le Darfour, connue pour sa piete. Implication dans les guerres civiles tchadiennes (1960s-2000s). Role central dans le conflit du Darfour (depuis 2003), avec des Zaghawa des deux cotes (gouvernement soudanais et rebellion). Pression des milices arabes Janjaweed contre les communautes zaghawa au Soudan.",
+      "majorHistoricalEvents": "8e-9e siecles : mentions dans les sources islamiques, hegemonie sur le Sahel central. 11e siecle : islamisation des rois zaghawa. 13e siecle : delogement du Kanem par la dynasitie Sayfawa; retrait dans le Dar Zaghawa. 14e siecle : naissance du Darfour comme entite independante. Epoque coloniale : incorporation dans les territoires de l'AOF (Tchad) et de l'Anglo-Egypte (Soudan). 2003-present : participation au conflit du Darfour; 100 000 refugies zaghawa au Tchad. Politique contemporaine : Idriss Deby (president du Tchad 1990-2021) etait Zaghawa; sa mort au combat en 2021 marque une rupture politique majeure."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation clanique avec chefs de clan (sultan, melk) ayant une autorite sur les terres, les puits et les paturages. Les chefs exercent des fonctions judiciaires selon la loi coutumiere et islamique. La societe est organisee en hierarchie : nobles et guerriers au sommet, puis marchands, puis castes artisanales hereditaires (Hadaheed), et anciennement esclaves. L'influence politique des Zaghawa au niveau national tchadien et soudanais est considerable.",
+      "clanOrganization": "Structure clanique patrilineaire. Les clans principaux sont : Beria (Kige), Tuba (Bideyat), Kube (Koba), Wegi (Twer), Dirong et Guruf. Les castes Hadaheed (artisans) comprennent forgerons, potiers, tanneurs et musiciens; elles sont endogames et hereditaires. Les non-Hadaheed refusent de manger avec les Hadaheed, qui sont consideres socialement inferieurs.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique, les droits sur les terres, puits et paturages, et les alliances matrimoniales. Les liens maternels jouent egalement un role dans les alliances interclaniques. Le mariage est generalement exogame au niveau du clan proche.",
+      "religiousAuthority": "Islam sunnite de rite malekite, predominant. Les zaghawa maintiennent des rites pre-islamiques comme le karama (sacrifice rituel d'animaux pour eloigner les mauvais esprits), integre dans la pratique islamique. La confrerie tijaniste est influente dans le Darfour. Les oulémas locaux jouent un role important dans la resolution des conflits et l'administration de la justice."
+    },
+    "languages": {
+      "mainLanguage": "Zaghawa / Beria (langue zaghawa; endonyme : Beria signifiant langue des Beri)",
+      "isoCodes": ["zag"],
+      "dialects": [
+        "Tuba / Bideyat (clans Biria et Brogat; environ 15 000 locuteurs; nord-est du Tchad, Ennedi)",
+        "Dirong-Guruf (clans Dirong et Guruf; environ 4 000 locuteurs; cantons Dirong et Gourouf, Tchad)",
+        "Kube / Kobe (clans Kapka, Kige, Kuba; environ 25 000 locuteurs; region d'Iriba, Tchad et Dar Fur soudanais)",
+        "Wegi / Twer (clan Wegi; environ 100 000 locuteurs; Dar Fur du Nord, Soudan)"
+      ],
+      "vehicularRole": "La langue zaghawa (beria) est estimee a environ 447 400 locuteurs natifs au total (Ethnologue). L'arabe tchadien et l'arabe soudanais servent de langues vehiculaires. En Libye, les Zaghawa utilisent l'arabe libyen. Le francais est utilise dans l'administration au Tchad, l'anglais au Soudan."
+    },
+    "culture": {
+      "majorRites": "Celebrations islamiques majeures : Ramadan, Aid el-Fitr, Aid el-Adha, Mawlid. Ceremonies de mariage traditionnelles sur plusieurs jours avec dot en betail, chants et danses specifiques. Circoncision masculine comme rite de passage. Karama : sacrifice rituel d'animaux (herite des pratiques pre-islamiques) pour eloigner les mauvais esprits lors d'evenements importants. Rites funeraires islamiques (inhumation rapide, condoleances sur plusieurs jours). Hajj (pelerinage a La Mecque) valorise socialement.",
+      "symbols": "Le chameau et le betail (mouton de race zaghawa) sont des symboles de richesse et de statut. Les routes caravanierres trans-sahariennes sont un heritage identitaire important. Les oasis constituent le coeur de la vie clanique (propriete collective, gestion des puits et des palmeraies). L'ecriture zaghawa (script propre en cours de developpement et de standardisation) est un symbole d'identite culturelle contemporaine.",
+      "artsAndMusic": "Poesie orale et chants epiques celebrant les exploits guerriers et les ancetres. Musique des Hadaheed (percussionnistes et musiciens de caste) lors des ceremonies de mariage et celebrations. Artisanat : forgerons (production d'outils et d'armes), poterie feminine, travail du cuir et de la sellerie pour les caravanes, tissage. Broderies et decorations sur tentes et vetements. Les tambours jouent un role important dans les celebrations collectives.",
+      "spiritualities": "Islam sunnite malekite, pratique dominant depuis le 11e-13e siecle. La conversion en masse a partir du 17e siecle et l'influence tijaniste dans le Darfour ont approfondi la pratique islamique. Les pratiques pre-islamiques persistent : karama (sacrifice rituel pour eloigner les mauvais esprits), croyances en des esprits locaux et des forces naturelles. Le respect des ancetres et des saints locaux (marabouts) complement la pratique islamique officielle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume zaghawa constitue l'une des entites politiques les plus anciennes du Sahel central, mentionnee des le 8e siecle. Les Zaghawa exercerent une hegemonie sur la region entre le lac Tchad et le Darfour avant la montee en puissance de la dynasitie Sayfawa (Kanem-Bornu). Le Darfour fut un etat distinct sous influence zaghawa a partir du 14e siecle, selon Ibn Khaldun et al-Maqrizi. Dans le cadre du Kanem-Bornu, les Zaghawa sont identifies comme les Duguwa dans la chronique royale (Girgam).",
+      "relationsWithNeighbors": "Relations historiques complexes avec les peuples toubou (probablement d'origine commune), les Fur du Darfour (alliés dans les conflits recents), les Kanouri et Kanembu du Kanem-Bornu (relations alternant commerce et confrontation), les Arabes du Sahel (tensions ethno-politiques, particulierement au Soudan). Les Zaghawa ont domine les routes caravanierres trans-sahariennes a leur apogee, echangeant avec le Nil et le Maghreb.",
+      "conflictsOrAlliances": "Hegemonie sur le Sahel central avant le 13e siecle. Delogement du Kanem par les Sayfawa. Crise du Darfour (depuis 2003) : les Zaghawa ont ete victimes des milices Janjaweed; environ 100 000 ont fui au Tchad comme refugies. Des leaders zaghawa ont aussi dirige des mouvements rebelles (Khalil Ibrahim, JEM). Au Tchad, les Zaghawa ont occupe des positions dominantes dans l'appareil d'Etat sous Idriss Deby (1990-2021), creant des tensions avec d'autres groupes ethniques.",
+      "diaspora": "Refugies dans les camps de deplaces du Darfour soudanais et de l'est du Tchad depuis le conflit de 2003. Diaspora dans les capitales tchadienne (N'Djamena) et soudanaise (Khartoum, Omdurman). Communaute plus reduite en Libye et dans les pays occidentaux. Recrutement d'enfants soldats dans les mouvements rebelles signale par des organisations internationales."
+    },
+    "demography": {
+      "totalPopulation": 550000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Wikipedia Zaghawa people (384 150 personnes) et Ethnologue (447 400 locuteurs de zaghawa en 2024), avec projection demographique tchadienne et soudanaise. La population totale Beri incluant les sous-groupes dialectaux (Tuba/Bideyat, Kube, Wegi, Dirong-Guruf) est estimee a environ 550 000 en 2025. Joshua Project indique 10 000 en Libye. Les flux de refugies rendent les estimations difficiles.",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 300000,
+          "note": "Principalement dans la region de Wadi Fira (Iriba, Kobé), la prefecture de l'Ennedi et le nord-est du Tchad"
+        },
+        {
+          "country": "SDN",
+          "population": 240000,
+          "note": "Principalement dans le Darfour du Nord (dialecte Wegi/Twer environ 100 000, plus d'autres sous-groupes pres de la frontiere tchadienne)"
+        },
+        {
+          "country": "LBY",
+          "population": 10000,
+          "note": "Communaute dans le sud de la Libye (Joshua Project 2025)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Zaghawa people. https://en.wikipedia.org/wiki/Zaghawa_people",
+      "Wikipedia EN — Zaghawa language. https://en.wikipedia.org/wiki/Zaghawa_language",
+      "Unicode Consortium — Zaghawa Script Proposal (ISO 639-3 : zag). https://www.unicode.org/L2/L2024/24004r-zaghawa-proposal.pdf",
+      "Joshua Project — Zaghawa in Libya. https://joshuaproject.net/people_groups/16080/LY",
+      "Minority Rights Group — Chad ethnic groups. https://minorityrights.org/country/chad/",
+      "Ethnologue — Zaghawa (ZAG). https://www.ethnologue.com/language/zag/",
+      "Daoud Hari — The Translator. Random House, 2008.",
+      "Halima Bashir & Damien Lewis — Tears of the Desert. Hodder & Stoughton, 2008."
+    ]
+  }
+}

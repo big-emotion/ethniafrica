@@ -1,0 +1,80 @@
+{
+  "id": "PPL_AKA",
+  "nameMain": "Aka",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CAF", "COG"],
+  "content": {
+    "appellations": {
+      "mainName": "Aka",
+      "selfAppellation": "Aka (ou BaAka)",
+      "exonyms": ["Biaka", "Bayaka", "Babenzele", "Ba'Aka", "Baaka", "Mbenga"],
+      "originOfExonyms": "Le terme 'Biaka' ou 'BaAka' est une variante du nom propre. 'Babenzele' designe un sous-groupe specifique. 'Mbenga' est un terme generique englobant les Aka et les Baka du Cameroun. 'Pygmees' est un terme colonial aujourd'hui considere pejoratif.",
+      "whyProblematic": "Le terme 'Pygmee' est consideree offensant car il renvoie a une categorisation coloniale basee sur la taille et nie l'identite propre de ces peuples. Les Aka preferent etre designes par leur nom propre.",
+      "contemporaryUsage": "Les termes 'Aka', 'BaAka' et 'Ba'Aka' sont utilises dans la litterature scientifique et par les organisations de defense des droits. Le terme 'Bayaka' est repandu au Congo-Brazzaville. L'UNESCO emploie 'Ba'Aka' dans ses documents officiels.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Mbenga (peuples de la foret d'Afrique centrale)",
+      "historicalRegion": "Forets du sud-ouest de la Republique centrafricaine et nord de la Republique du Congo",
+      "currentCountries": ["CAF", "COG"]
+    },
+    "ethnicities": ["Aka", "Ba'Aka", "Babenzele"],
+    "origins": {
+      "ancientOrigins": "Les Aka sont l'un des peuples les plus anciens d'Afrique centrale. Des etudes genetiques et linguistiques indiquent que les populations pygmees d'Afrique centrale de l'Ouest descendent d'un groupe ancestral commun qui a subsiste intact jusqu'il y a environ 2 800 ans, date a laquelle des agriculteurs bantous envahirent leur territoire et les fragmenterent. Les recherches montrent que les Aka et les Baka partageaient une histoire linguistique commune, formant un groupe appele Baakaa il y a environ 500 ans, vivant a l'est du bassin du Congo. Les Aka ont ensuite adopte la langue des agriculteurs bantous installes dans la region.",
+      "formationPeriod": "Formation du groupe distinctif estimee a partir de 2 800 ans avant le present, suite a la pression des migrations bantoues vers l'Afrique centrale.",
+      "migrationRoutes": [
+        "Migration depuis le bassin oriental du Congo vers le sud-ouest de la RCA",
+        "Expansion dans le nord de la Republique du Congo",
+        "Contacts progressifs avec les peuples agriculteurs bantous (appeles Ngandu) des les premiers siecles de l'ere commune"
+      ],
+      "historicalSettlementZones": [
+        "Forets equatoriales du sud-ouest de la Republique centrafricaine (regions de Lobaye, Sangha-Mbaere)",
+        "Nord de la Republique du Congo (zone du Parc national Dzanga-Sangha)"
+      ],
+      "unificationsOrDivisions": "Les Aka ne forment pas une entite politique unifiee. Ils vivent en petits groupes nomades affilies a des villages d'agriculteurs bantous voisins. Au XVIIIe siecle, la traite des esclaves provoqua la migration de plusieurs tribus dans les territoires Aka.",
+      "externalInfluences": "Contacts anciens et permanents avec les peuples agriculteurs bantous voisins (Ngandu). La colonisation francaise (1910-1940) dans l'Afrique equatoriale francaise a perturbe leur mode de vie : les tribus voisines furent forcees a la production de caoutchouc, augmentant la demande en gibier aupres des Aka. Les annees 1930 ont vu la pression francaise pour les installer en bord de routes, que la majorite refusa.",
+      "majorHistoricalEvents": "XIXe siecle : role de chasseurs d'elephants majeurs pour le commerce de l'ivoire via les tribus intermediaires. 1910-1940 : integration dans le systeme colonial de l'Afrique equatoriale francaise. 2003 : les traditions orales Aka proclamees Chefs-d'oeuvre du patrimoine oral et immateriel de l'humanite par l'UNESCO. 2012-2013 : violences liees a la crise centrafricaine ciblent des membres de la communaute ; meurtres signales par l'ONU."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe egalitaire sans hierarchie formelle. Les decisions sont prises collectivement. Quelques roles de leadership reconnus : kombeti (chef de groupe local), tuma (chasseur d'elephants), nganga (grand guerisseur). Ces roles sont occupes par des hommes dans la communaute etudiee par Barry Hewlett.",
+      "clanOrganization": "Organisation en petits groupes locaux nomades. L'identite de groupe est definie par la parente et les liens matrimoniaux. Selon la region, l'identification s'etend aux familles et clans des agriculteurs voisins (Ngandu) avec lesquels les Aka entretiennent des relations de symbiose.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les liens de parente et d'alliance matrimoniale structurent les groupes locaux. La mobilite permet aux individus de rejoindre des parents dans d'autres regions.",
+      "religiousAuthority": "Le nganga (guerisseur principal) joue un role spirituel central. Les pratiques religieuses sont animistes, centrees sur la foret comme espace sacre et source de vie."
+    },
+    "languages": {
+      "mainLanguage": "Aka (diaka)",
+      "isoCodes": ["axk"],
+      "dialects": ["Babenzele", "Bayaka"],
+      "vehicularRole": "Les Aka parlent leur propre langue (de la famille bantoue C10) ainsi que la langue des peuples agriculteurs bantous auxquels ils sont affilies (environ 15 groupes differents). Le langage des signes, la paralangue, le chant et l'imitation des sons de la foret constituent egalement des elements essentiels de leur identite linguistique."
+    },
+    "culture": {
+      "majorRites": "Rites centres sur la foret et la chasse. Chasse a l'elephant (tuma) autrefois pratique de prestige majeur. Chasse au filet impliquant hommes, femmes et enfants. Cueillette du miel, activite hautement valorisee. Ceremonies de passage et de guerison conduites par le nganga.",
+      "symbols": "La foret est le symbole et l'espace identitaire central : les Aka se definissent comme 'peuple de la foret' par opposition aux 'gens du village'. L'elephant, le miel et les filets de chasse sont des symboles culturels forts.",
+      "artsAndMusic": "Musique polyphonique complexe classee parmi les plus elaborees du monde, etudiee par les ethnomusicologues Simha Arom et Michelle Kisliuk. Les chants polyphoniques Ba'Aka ont ete inscrits sur la Liste representative du patrimoine culturel immateriel de l'UNESCO en 2003. La musique Aka est presente sur des albums internationaux dont 'African Rhythms' (2003) et 'Echoes of the Forest' (1995). La danse accompagne systematiquement la musique.",
+      "spiritualities": "Animisme centre sur la foret. Croyance en des esprits de la foret. Le nganga (guerisseur) communique avec le monde spirituel. Pratiques magiques liees a la chasse et a la guerison."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Aka n'ont pas developpe de royaumes ou de chefferies hierarchiques. Leur organisation egalitaire et nomade exclut les structures politiques centralisees.",
+      "relationsWithNeighbors": "Relations de symbiose et de dependance mutuelle avec les peuples agriculteurs bantous voisins (collectivement appeles Ngandu). Les Aka echangent gibier, miel et produits forestiers contre manioc, plantains, ignames, mais, concombres, courges, gombo, papaye, mangue, ananas, huile de palme et riz. Cette relation, bien qu'inegale et marquee par une discrimination profonde des Ngandu envers les Aka, est ancienne et permanente.",
+      "conflictsOrAlliances": "Les Aka ont generalement evite les conflits en se retractant dans la foret. Pendant la crise centrafricaine (2012-2013), des membres de la communaute ont ete cibles par des milices Seleka et anti-balaka.",
+      "diaspora": "Presence limitee hors des forets d'Afrique centrale. Quelques membres installes en bordure de routes ou dans des villages missionaires suite aux pressions coloniales et postcoloniales."
+    },
+    "demography": {
+      "totalPopulation": 30000,
+      "referenceYear": 2025,
+      "source": "Minority Rights Group International (estimation 8 000-20 000 pour les Ba'Aka en RCA seuls) ; Culture and the Mind, Universite de Sheffield (estimation totale 30 000-40 000)",
+      "distributionByCountry": [
+        { "country": "CAF", "population": 20000 },
+        { "country": "COG", "population": 10000 }
+      ]
+    },
+    "sources": [
+      "Aka people – Wikipedia EN (https://en.wikipedia.org/wiki/Aka_people)",
+      "Aka in Central African Republic – Minority Rights Group International, 2018 (https://minorityrights.org/communities/aka/)",
+      "Culture and the Mind – Aka fieldsites, Universite de Sheffield (https://cultureandmind.sites.sheffield.ac.uk/fieldsites/aka)",
+      "Kisliuk, Michelle – Seize the Dance! BaAka Musical Life and the Ethnography of Performance, Oxford University Press, 2000",
+      "Verdu, Paul et al. – Origins and Genetic Diversity of Pygmy Hunter-Gatherers from Western Central Africa, Science, 2009 (https://www.science.org/content/article/short-history-african-pygmies)",
+      "UNESCO – Polyphonic Singing of the Ba'Aka, Intangible Cultural Heritage (https://ich.unesco.org)",
+      "Discover Afrika – The BAaka peoples (https://discover-afrika.com/baaka-peoples/)"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "PPL_ZENATA",
+  "nameMain": "",
+  "languageFamilyId": "FLG_BERBERE",
+  "currentCountries": ["DZA", "MAR", "TUN"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "— (macro-groupe historique)",
+      "linguisticFamily": "FLG_BERBERE",
+      "historicalRegion": "Maghreb oriental et central (DZA, MAR, TUN)",
+      "currentCountries": ["DZA", "MAR", "TUN"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": {},
+    "sources": ["Ibn Khaldoun", "CNRS Berbère"]
+  }
+}

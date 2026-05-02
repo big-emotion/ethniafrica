@@ -1,0 +1,110 @@
+{
+  "id": "PPL_BETI",
+  "nameMain": "Béti",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["CMR", "GNQ"],
+  "content": {
+    "appellations": {
+      "mainName": "Béti",
+      "selfAppellation": "Beti be Nanga (les seigneurs / les gens de Nanga)",
+      "exonyms": [
+        "Beti-Pahouin (categorie coloniale englobante)",
+        "Pahuin",
+        "Pangwe (denomination allemande)"
+      ],
+      "originOfExonyms": "Le terme Beti (be-ti signifiant les seigneurs en langue ewondo-bulu) est l'appellation interne federant les sous-groupes ewondo, bulu, eton et fang du sud Cameroun. Le terme Pahouin ou Pahuin est un exonyme d'origine probablement duala ou bassa utilise par les colonisateurs europeens pour designer l'ensemble de ce groupe bantou. Pangwe est la denomination allemande utilisee durant la colonisation allemande du Cameroun (1884-1916).",
+      "whyProblematic": "La categorie Beti-Pahouin est une construction coloniale regroupant des sous-groupes aux identites distinctes. Les Ewondo se considerent avant tout Ewondo (Kolo), les Bulu comme Bulu, etc. L'identite Beti comme entite supraethnique federatrice est une construction savante et politique du XXe siecle.",
+      "contemporaryUsage": "Beti est utilise en Cameroun pour designer les populations bantou du Centre et du Sud Cameroun partageant les langues du groupe A70. Le terme est politiquement charge au Cameroun, les Beti (et notamment les Bulu-Ewondo) etant associes au pouvoir politique depuis l'independance.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone A, groupe A70 — Beti-Pahuin)",
+      "historicalRegion": "Plateau du Centre-Sud Cameroun — du fleuve Sanaga au nord jusqu'a la frontiere avec la Guinee equatoriale au sud",
+      "currentCountries": ["CMR", "GNQ"]
+    },
+    "ethnicities": [
+      "Ewondo (Kolo) — centres sur Yaounde, parles dans les divisions Est-Mefou, Mfoundi, Nyong-et-So",
+      "Bane — sous-groupe proche des Ewondo",
+      "Eton (Iton) — principalement division de la Lekie, Sa'a et Obala ; subdivises en Eton-Beti, Eton-Beloua, Beloua-Eton",
+      "Bulu — Sangmelima, Kribi, Ebolowa ; vallees du Dja et du Nyong",
+      "Mvog-Nyenge — sous-groupe Beti du Centre-Cameroun",
+      "Bran (Brang ou Brong) — sous-groupe Beti",
+      "Mbida-Mbane — sous-groupe Beti",
+      "Populations en cours de pahuinisation : Manguissa, Yekaba, Bamvele, Evuzok, Batchanga-Tsinga, Omvang, Yetude"
+    ],
+    "origins": {
+      "ancientOrigins": "Les recherches historiques et genetiques situent l'origine des Beti dans le sud de l'Adamaoua camerounais (region actuelle de Ngaoundal-Tibati). Des vestiges archeologiques des Bantu A70 ont ete exhumes dans la region du Haut-Sanaga (sites de Saaka, Awae, Zoetele, Oteteck). Les mythes fondateurs evoquent une separation des Fang, Bulu et Beti a partir d'un groupe commun, les trois entites etant en fuite devant un peuple hostile appele les Rouges (probablement les Baya). Le terme Beti Be Nanga (gens de Nanga) suggere un ancetre mythique eponyme commun partage avec les Basaa (Ngue Nanga).",
+      "formationPeriod": "Les Enoa et les Bene furent les premiers Beti a traverser le fleuve Sanaga depuis le nord pour s'etablir dans les forets du Centre Cameroun, vers 1680-1685. Les Bulu et l'ensemble Beti-Bulu migrerent vers le sud de la Sanaga au milieu du XIXe siecle, pousses par les invasions des Baare-Tchamba. La colonisation allemande (1884-1916) puis francaise (1916-1960) a consacre l'identite Beti comme categorie administrative.",
+      "migrationRoutes": [
+        "Depuis le sud de l'Adamaoua camerounais via la region du Mbam vers le Centre Cameroun (Enoa et Bene, vers 1680)",
+        "Depuis le Haut-Sanaga vers le Centre et le Sud Cameroun (Bulu-Beti, XIXe siecle)",
+        "Expansion vers la Guinee equatoriale (Rio Muni) pour les sous-groupes meridionaux"
+      ],
+      "historicalSettlementZones": [
+        "Centre et Sud du Cameroun (plateau forestier au sud de la Sanaga)",
+        "Region de Yaounde et ses environs (Ewondo-Kolo)",
+        "Divisions de Sangmelima, Ebolowa, Kribi (Bulu)",
+        "Division de la Lekie, Sa'a, Obala (Eton)",
+        "Rio Muni (Guinee equatoriale) pour sous-groupes meridionaux"
+      ],
+      "unificationsOrDivisions": "Identite beti federant une vingtaine de sous-groupes patriclaniques. La conscience d'une unite culturelle Beti existe mais ne s'est jamais traduite en organisation politique unitaire precoloniale. Les clans (ayong) avec leurs noms totems distincts constituent les unites d'identite fondamentales. La colonisation et l'independance du Cameroun ont renforce l'identite Beti comme communaute politique influente.",
+      "externalInfluences": "Pression des Baare-Tchamba et des Fulbe (jihad d'Usman Dan Fodio, debut XIXe siecle) ayant provoque les grandes migrations vers le sud. Contacts avec les missions chretiennes protestantes et catholiques allemandes puis francaises. Influence sur la langue et la religion via la christianisation sous colonisation. Emergence du Bikutsi (style musical Beti-Ewondo) au XXe siecle.",
+      "majorHistoricalEvents": "Fondation de Yaounde comme poste militaire allemand en 1888 sur les terres ewondo. Independance du Cameroun en 1960 : les premiers presidentes Ahidjo (peul) puis Paul Biya (bulu, depuis 1982) illustrent le role central des Beti dans la politique camerounaise. L'association culturelle Nkul Beti joue un role cle dans la preservation de l'identite beti."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe structuree par les lignages patrilineaires et les chefferies villageoises. Plusieurs familles d'un lignage commun vivent ensemble dans un village ; plusieurs villages apparentes forment un clan. Les clans ont nominalement un chef qui est aussi une autorite religieuse. Pas de royaumes centralisees precoloniaux : le village et le clan constituent les unites politiques fondamentales.",
+      "clanOrganization": "Structure patrilineaire avec des clans totamiques (ayong). Systeme exogame : mariage interdit au sein du clan paternel. Polygamie traditionnellement acceptee. Organisation en families etendues patriarcales. Un lien fort unit l'oncle maternel et le neveu (vestige probable d'une matrilinearite anterieure). Les clans portent le prefixe Mvog- ou Nzoa- devant le nom de l'ancetre.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Gardiens des terres ancestrales et du patrimoine rituel. Les lignages (ayong) determinent l'identite sociale, les alliances matrimoniales et les droits fonciers. Chaque lignage trace sa descendance a un ancetre masculin commun. La cohesion du lignage est maintenue par des echanges cerimonieux et des obligations mutuelles.",
+      "religiousAuthority": "Specialistes des cultes aux ancetres. Chefs de clan detenant une autorite a la fois politique et spirituelle. Depuis la colonisation, forte presence de pasteurs protestants et de pretres catholiques. Syncretisme repandu : pratiques religieuses traditionnelles (visites aux guerisseurs, ceremonies ancestrales) coexistent avec la foi chretienne."
+    },
+    "languages": {
+      "mainLanguage": "Ewondo, Bulu, Eton (langues du groupe A70)",
+      "isoCodes": ["ewo", "bum", "eto", "bxp", "beb"],
+      "dialects": [
+        "Ewondo (ewo) — parle a Yaounde et Centre-Cameroun, 578 000 locuteurs, sert de lingua franca a Yaounde",
+        "Bulu (bum) — parle a Sangmelima, Ebolowa, Kribi, environ 174 000 locuteurs",
+        "Eton (eto) — parle a Sa'a, Obala (division de la Lekie), environ 500 000 locuteurs en 1982",
+        "Bebil (bxp) — dialecte proche du bulu, region de l'Est",
+        "Bebele (beb) — variete proche du bulu"
+      ],
+      "vehicularRole": "L'ewondo est la langue vehiculaire du Centre-Sud Cameroun et sert de lingua franca a Yaounde et dans les provinces Centre et Sud. Il a ete employe dans la traduction de la Bible et dans les medias camerounais. Le francais est la langue officielle au Cameroun. Les langues beti du groupe A70 sont partiellement intelligibles entre elles. L'espagnol est langue officielle en Guinee equatoriale ou certains sous-groupes beti sont presents."
+    },
+    "culture": {
+      "majorRites": "Initiations masculines et cultes des ancetres centraux dans la vie ceremonielle. Ceremonies de mariage avec versement de dot et negociations claniques. Rites de passage de l'enfance a l'age adulte. Ceremonies agricoles liees aux cycles de l'igname et du cacao. Le So (ou Soo) est un rite d'initiation secret ewondo qui marque le passage a l'age adulte pour les hommes. Funerailles collectives avec veillees, chants et danses.",
+      "symbols": "Masques en bois sculptes et ivoire, particulierement notes pour leur expressivite. Sculptures en steatite. Instruments de musique (tambours, xylophones). Symboles de lignages graves dans les maisons ancestrales. Les grandes cases des notables (nda bot) comme symbole de l'autorite clanique.",
+      "artsAndMusic": "Le Bikutsi est le style musical issu du groupe Ewondo-Beti, caracterise par un rythme a six temps et des percussions de xylophones (mvet ou balafon). Il est devenu un genre musical national camerounais avec des artistes tels que Les Tetes Brulees. Chants polyphoniques traditionnels accompagnant les ceremonies. Tambours de foret (tam-tam) utilises pour la communication a distance. Sculpture sur bois et ivoire (masques, statuettes ancestrales). Artisanat de poterie, de tissage et de vannerie. Poesie orale (mvett) transmise par des griots-bardes specialises.",
+      "spiritualities": "Ancestralite : les ancetres des lignages exercent une influence active sur les vivants et doivent etre propitie. Forets sacrees associees aux esprits des ancetres. Systeme de croyances autour des beka (mauvais esprits) et des guerisseurs traditionnels (nganga). La majorite des Beti se declare chretienne (catholiques et protestants). Syncretisme important : beaucoup frequentent l'eglise le dimanche tout en consultant des guerisseurs traditionnels ou en participant a des societes secretes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaumes centralises precoloniaux chez les Beti. Chefferies villageoises et claniques comme unite de pouvoir. Yaounde (Efoulan) fut une chefferie ewondo avant de devenir poste militaire allemand en 1888, puis capitale du Cameroun independant. Sous la colonisation allemande puis francaise, des chefferies superieures furent creees sur ordre administratif.",
+      "relationsWithNeighbors": "Relations ancestrales (parfois conflictuelles) avec les Basaa et Bakoko au nord-ouest, les Maka a l'est, les Baka (pygmees) avec qui existent des relations de dependance traditionnelle. Processus de pahuinisation des populations voisines (Manguissa, Bamvele, Evuzok). Relations commerciales avec les populations cotieres (Bassa, Duala) pour les echanges avec les Europeens.",
+      "conflictsOrAlliances": "Conflits historiques avec les populations repoussees lors des migrations bantoues (Kele, Kota). Resistance partielle a la conquete coloniale allemande (1884-1916). Sous la colonisation francaise, emergence de l'elite ewondo scolarisee et chretienne associee au pouvoir. Depuis l'independance (1960), les Beti (et notamment les Bulu du Sud) sont associes au pouvoir politique sous Paul Biya.",
+      "diaspora": "Diaspora beti camerounaise en France (Paris, Lyon), en Belgique, aux Etats-Unis. Migration economique vers les centres urbains camerounais (Douala, Bafoussam). Association culturelle diasporique Nkul Beti Chicago et equivalents en Europe."
+    },
+    "demography": {
+      "totalPopulation": 5500000,
+      "referenceYear": 2025,
+      "source": "Wikipedia (Beti-Pahuin peoples) : plus de 8 millions d'individus au debut du XXIe siecle pour l'ensemble Beti-Pahuin (incluant les Fang de Guinee equatoriale et du Gabon). Pour les Beti stricto sensu (Ewondo, Bulu, Eton et sous-groupes camerounais sans les Fang), estimation a 5,5 millions en 2025, coherente avec les chiffres Ethnologue (Ewondo : 578 000 en 1982 x croissance ; Eton : 500 000 en 1982) et la proportion beti dans la population camerounaise actuelle (environ 27 millions).",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 5400000,
+          "note": "Principalement regions Centre et Sud du Cameroun : Yaounde, Sangmelima, Ebolowa, Kribi, Sa'a, Obala"
+        },
+        {
+          "country": "GNQ",
+          "population": 100000,
+          "note": "Sous-groupes beti meridionaux dans le nord du Rio Muni"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Beti-Pahuin peoples. https://en.wikipedia.org/wiki/Beti-Pahuin_peoples",
+      "Wikipedia EN — Beti people. https://en.wikipedia.org/wiki/Beti_people",
+      "Sociology International Journal — The Fang-Bulu-Beti (1665-1850). https://medcraveonline.com/SIJ/the-fang-bulu-beti-1665-1850-origin-and-migrations-in-central-africa.html",
+      "Glottolog — Beti (Cameroon) group. https://glottolog.org/resource/languoid/id/beti1250",
+      "Nkul Beti Chicago — Rediscovering the Beti People. https://nkulbetichicago.org/building-bridges-uniting-the-cameroonian-diaspora/",
+      "SIL Ethnologue — Ewondo (ewo). https://www.ethnologue.com/language/ewo/",
+      "SIL Ethnologue — Bulu (bum). https://www.ethnologue.com/language/bum/"
+    ]
+  }
+}

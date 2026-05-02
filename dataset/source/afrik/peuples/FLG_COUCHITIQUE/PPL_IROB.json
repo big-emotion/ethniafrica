@@ -1,0 +1,79 @@
+{
+  "id": "PPL_IROB",
+  "nameMain": "Irob",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH", "ERI"],
+  "content": {
+    "appellations": {
+      "mainName": "Irob",
+      "selfAppellation": "Irob",
+      "exonyms": ["Erob", "Saho chrétiens du Tigray"],
+      "originOfExonyms": "Le nom Irob viendrait du mot saho Oroba, signifiant bienvenue chez nous selon les anciens Irob. Le terme Erob est une variante orthographique commune en ge'ez.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Irob est officiellement utilisé dans l'administration éthiopienne pour désigner le woreda Irob dans la région du Tigray. La communauté diasporique utilise également ce nom dans ses associations internationales."
+    },
+    "ethnicities": ["Irob", "Saho"],
+    "origins": {
+      "ancientOrigins": "Les Irob sont une branche chrétienne du peuple Saho, groupe cushitique oriental dont les origines remontent à une extension septentrionale des Afar qui s'établirent dans les contreforts orientaux de l'Akele Guzai entre le IXe et le XIIe siècle. Leur ancêtre fondateur Summe, fils de Neguse Worede-Mehret, aurait migré depuis Tsira'e dans le Kilite Awla'elo (Tigray) il y a environ 700 ans.",
+      "formationPeriod": "La communauté Irob se constitua comme entité distincte du reste des Saho principalement en raison de son adoption du christianisme (orthodoxe puis catholique) et de son intégration progressive dans la sphère culturelle tigréenne. Cette différenciation s'est cristallisée entre le XIVe et le XVIIe siècle.",
+      "migrationRoutes": [
+        "Migration depuis Tsira'e (Kilite Awla'elo, Tigray) vers le nord-est, vers les hauts plateaux de l'Agame"
+      ],
+      "historicalSettlementZones": [
+        "Irobland (woreda Irob), nord-est du Tigray, Ethiopie",
+        "Debub Region, Eritree (minorité)"
+      ],
+      "unificationsOrDivisions": "Les Irob sont divisés en trois grandes maisons (Are) : Adgadi-Are et Hasaballa, majoritairement chrétiens orthodoxes, et Buknaiti-Are, majoritairement catholique. Ces subdivisions structurent la vie sociale et politique du groupe.",
+      "externalInfluences": "Les Irob sont une communauté biculturelle : ils partagent la langue saho et certaines structures sociales (système de clans Mela, titre Ona pour les chefs régionaux) avec les Saho musulmans voisins, tandis que leur culture matérielle, leurs rites de mariage, leur habillement, leurs danses et leur alimentation s'apparentent davantage aux Tigrigna-phones des peuples d'Agame.",
+      "majorHistoricalEvents": "La famille des Shum Agame Woldu, d'origine Irob, a dominé la politique du Tigray à partir du Zemene Mesafint. Leurs descendants incluent le Dejazmach Subagadis (dont le pouvoir s'étendait à l'Erythrée actuelle) et l'Empereur Yohannes IV. Durant l'invasion italienne, les patriotes Irob menés par Dejazmach Ayele Sebhat et Kassa Sebhat ont résisté depuis le mont Asimba. Lors de la guerre des frontières érythro-éthiopienne (1998-2000), la localité d'Aiga fut le théâtre de combats importants. En janvier 2021, au moins 52 civils Irob furent tués par des soldats érythréens lors de la guerre du Tigray."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Système fondé sur une assemblée publique (baito) egalitaire qui délégue le pouvoir à un conseil des anciens. Les chefs régionaux portent le titre de Ona. Les Irob ont conservé leur autonomie politique locale jusqu'au XVIIIe siècle, date à laquelle ils commencèrent à s'intégrer dans les affaires politiques du Tigray.",
+      "clanOrganization": "Organisation en trois grandes maisons (Are) : Adgadi-Are, Buknaiti-Are et Hasaballa. La structure de clans porte le nom de Mela, partagée avec les Saho voisins.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires structurent l'appartenance aux trois Are et déterminent les alliances matrimoniales et les responsabilités communautaires.",
+      "religiousAuthority": "L'Église catholique romaine exerce une influence importante dans le sous-groupe Buknaiti-Are, tandis que l'Église orthodoxe éthiopienne Tewahedo prédomine chez les Adgadi-Are et les Hasaballa. La capitale Alitena abrite une cathédrale catholique."
+    },
+    "languages": {
+      "mainLanguage": "Saho (ssy)",
+      "isoCodes": ["ssy"],
+      "dialects": [
+        "dialecte méridional (Irob-Saho)",
+        "dialecte central",
+        "dialecte septentrional"
+      ],
+      "vehicularRole": "La plupart des Irob sont bilingues saho-tigrigna. L'amharique est la langue nationale de l'administration éthiopienne. Le saho est langue d'enseignement dans les écoles primaires en Erythrée."
+    },
+    "culture": {
+      "majorRites": "Les cérémonies de mariage Irob combinent des éléments saho (tente de mariage, chants) et tigrigna (festins communautaires). La tradition orale Adar désigne un genre poétique distinctif. Les danses Hora et Alkafo, traditionnellement liées à la préparation au combat, sont aujourd'hui exécutées lors des cérémonies et mariages.",
+      "symbols": "Le mont Asimba est un symbole de résistance nationale et de fierté Irob. Alitena, capitale traditionnelle, est le centre spirituel de la communauté catholique.",
+      "artsAndMusic": "Tradition de poésie orale (Adar), chants cérémoniels, danses Hora et Alkafo. Les Irob sont réputés pour la qualité de leur miel et de leur tej (hydromel), dont la réputation dépasse les frontières locales.",
+      "spiritualities": "La majorité des Irob professe le catholicisme romain (Buknaiti-Are) ou le christianisme orthodoxe éthiopien (Adgadi-Are, Hasaballa). La communauté catholique entretient des liens anciens avec la Mission catholique d'Alitena."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Irob n'ont pas constitué un royaume indépendant mais ont joué un rôle politique de premier plan dans le Tigray via la famille des Shum Agame Woldu, dont est issu l'Empereur Yohannes IV (r. 1872-1889).",
+      "relationsWithNeighbors": "Relations bilatérales avec les Saho musulmans au nord et à l'est (langue partagée, structures claniques communes), et avec les peuples tigrigna-phones chrétiens à l'ouest et au sud (culture matérielle partagée). Relations tendues avec les Afar à l'est et au sud. Frontière politique litigieuse avec l'Erythrée depuis 1998.",
+      "conflictsOrAlliances": "Participation à la résistance anti-italienne depuis le mont Asimba (années 1930-1940). Irobland servit de base arrière pour l'EPRP et le TPLF dans les années 1970-1980. La guerre Ethiopie-Erythrée (1998-2000) a durement touché la région, et la guerre du Tigray (2020-2022) a provoqué des massacres de civils Irob par des forces érythréennes.",
+      "diaspora": "Une diaspora Irob est active en Europe et en Amérique du Nord, notamment via l'Irob Advocacy Association qui documente et dénonce les violations des droits humains commises dans la région."
+    },
+    "demography": {
+      "totalPopulation": 202000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Saho, Irob en Ethiopie : 62 000 ; en Erythrée : 140 000)",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 62000, "percentage": 31 },
+        { "country": "ERI", "population": 140000, "percentage": 69 }
+      ]
+    },
+    "sources": [
+      "Irob people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Irob_people)",
+      "Saho people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Saho_people)",
+      "Saho language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Saho_language)",
+      "The Irob People – IRROB.ORG, 2018 (https://irrob.org/irob-history/the-irob-people/)",
+      "Saho, Irob in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14641/ET)",
+      "Saho Archive – History, Language and Culture of the Saho, 2023 (https://www.sahoarchive.org/history/)",
+      "Saho Language (SSY) – Ethnologue, SIL International, 2025 (https://www.ethnologue.com/language/ssy/)",
+      "Cushitic Language Groups – Ethiopia Country Studies, US Library of Congress (https://countrystudies.us/ethiopia/50.htm)"
+    ]
+  }
+}

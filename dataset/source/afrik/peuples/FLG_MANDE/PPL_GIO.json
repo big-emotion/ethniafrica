@@ -1,0 +1,83 @@
+{
+  "id": "PPL_GIO",
+  "nameMain": "Gio",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["LBR", "CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Gio",
+      "selfAppellation": "Dan",
+      "exonyms": ["Gio", "Yacouba", "Yakouba", "Mano-Dan"],
+      "originOfExonyms": "Gio est un exonyme donne par le peuple Bassa et signifie esclave en langue bassa. Ce terme est considere comme pejoratif par le peuple lui-meme. Yacouba (ou Yakouba) est le nom officiel utilise en Cote d'Ivoire. Dan est le nom que le peuple se donne lui-meme et qu'il prefere.",
+      "whyProblematic": "Le terme Gio est juge derogratoire par le peuple Dan car il derive du mot bassa signifiant esclave. L'usage de Dan est prefere dans les contextes academiques et par les membres du groupe eux-memes.",
+      "contemporaryUsage": "Dan est le nom endonymique prefere. Gio reste tres utilise au Liberia dans les contextes administratifs, journalistiques et courants. Yacouba est la denomination officielle en Cote d'Ivoire. Les deux pays utilisent des termes differents pour designer le meme peuple.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mande-Sud",
+      "historicalRegion": "Nord-est du Liberia (comte de Nimba) et nord-ouest de la Cote d'Ivoire (region de Man)",
+      "currentCountries": ["LBR", "CIV"]
+    },
+    "ethnicities": ["Dan", "Gio"],
+    "origins": {
+      "ancientOrigins": "Les Dan sont originaires de la region du Soudan occidental (actuel Mali et Guinee). Des le VIIIe siecle, les Dan et les Mano etaient situes dans la savane du nord de la Cote d'Ivoire. Ils sont etroitement lies aux Maghan du Ghana Empire et aux Gbara du Mali Empire, dont ils se considerent descendants. Au Xe siecle, des bouleversements politiques, une croissance demographique et l'appauvrissement des terres ont provoque leur migration vers le sud, au-dela du massif du Nimba, dans les hautes forets.",
+      "formationPeriod": "Formation identitaire distincte entre le VIIIe et le XIe siecle dans la savane du nord ivoirien. Migration vers les zones forestieres du nord-est liberien et du nord-ouest ivoirien entre le Xe et le XVe siecle.",
+      "migrationRoutes": [
+        "Depuis le Soudan occidental (actuel Mali et Guinee) vers la savane du nord de la Cote d'Ivoire, puis migration vers le sud au Xe siecle au-dela du massif du Nimba vers le nord-est du Liberia actuel et le nord-ouest de la Cote d'Ivoire"
+      ],
+      "historicalSettlementZones": [
+        "Comte de Nimba, nord-est du Liberia",
+        "Region de Man, nord-ouest de la Cote d'Ivoire (plus grande agglomeration : ville de Man)",
+        "Grand Gedeh County, Liberia"
+      ],
+      "unificationsOrDivisions": "Les villages Dan maintenaient un haut degre d'independance politique. En cas de guerre, ils s'alliaient dans des confederations liees a des clans via la societe du Leopard (Gor). Ils s'allierent avec leurs voisins Mande pour envahir la region cotiere, repoussant certains peuples atlantiques et les Kru. Apres 1847, le gouvernement de Monrovia les a progressivement pacifies ; la paix fut etablie et des controles administratifs mis en place au debut du XXe siecle.",
+      "externalInfluences": "Influence des empires Ghana et Mali sur les origines. Pression des peuples voisins Krahn, Kpelle et Mano. Influence de l'administration americano-liberienne apres 1847. Role important dans la guerre civile liberienne de 1989-1996 (le NPFL de Charles Taylor a recrute massivement parmi les Gio et Mano).",
+      "majorHistoricalEvents": "Migration depuis le Soudan occidental (VIIIe-Xe siecle). Alliance avec les voisins Mande pour repousser les Kru vers la cote. Resistance aux chefs de guerre Americo-liberiens avec des figures comme Grougbay Zobaneeay, Kipko Toh'ah-Gbeu et Bho'Yaah. Role central dans la guerre civile liberienne : les Gio et les Mano ont constitue le noyau du NPFL de Charles Taylor apres la purge du gouvernement Doe contre la communaute Gio."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme politique decentralise : chaque village maintient une forte autonomie. L'autorite reelle appartient au conseil des aines qui assiste le chef de village ou de ville. Les chefs de quartier sont choisis pour etre le male le plus age ou le plus assertif de la famille. En temps de guerre, les villages s'alliaient sous une organisation centralisee occasionnelle.",
+      "clanOrganization": "Les villages sont divises en quartiers (quarters), chacun abritant une famille etendue ou un lignage. Les clans regroupent plusieurs villages sous un gouvernement central. L'organisation sociale est patrilineaire et polygame.",
+      "ageClassSystems": "Les hommes sont initias dans une societe secrete masculine (bon, l'ecole de brousse) lors de l'adolescence, qui les prepare a la vie adulte, aux mysteres du monde spirituel et aux regles de la societe dan. Les femmes possedent une societe similaire.",
+      "roleOfLineages": "Les lignages patrilineaires constituent les unites sociales et economiques fondamentales. Les groupes de descendants d'un ancetre commun en ligne paternelle habitent dans des sections distinctes du village, appelees quartiers.",
+      "religiousAuthority": "L'autorite religieuse est exercee par les aines des societes secretes et par les maitres des masques. Le divin (Zlan) est inaccessible directement ; c'est Zu (la force independante ou Esprit saint) qui mediate entre les humains et le divin, invoquee lors des mascarades et des divinations."
+    },
+    "languages": {
+      "mainLanguage": "Dan",
+      "isoCodes": ["daf"],
+      "dialects": [
+        "Dan du Liberia (Gio)",
+        "Dan de Cote d'Ivoire (Yacouba)",
+        "Kla-Dan"
+      ],
+      "vehicularRole": "Le dan est la langue maternelle des Gio/Dan au Liberia et des Yacouba en Cote d'Ivoire. L'anglais est utilise comme vehiculaire au Liberia, le francais en Cote d'Ivoire. Le dioula sert de langue commerciale en Cote d'Ivoire."
+    },
+    "culture": {
+      "majorRites": "Les rites de passage masculins sont organises par la societe secrete Gor (Dan pour leopard), societe de peacekeeping. Les mascarades (Ge ou Gle) constituent le principal vecteur rituel : elles invoquent et controlent les esprits tuteiaires de la brousse (masques) pour regler les conflits, faire respecter les regles et corriger les comportements deviants. Les animaux blancs sont reserves aux occasions rituelles speciales et aux sacrifices pour l'expiation des peches.",
+      "symbols": "Les masques sont l'expression artistique et symbolique la plus importante de la culture Dan. Ils representent pratiquement tous les aspects de la societe : education, competion, guerre, paix, regulation sociale et divertissement. La societe Gor (leopard) symbolise la paix et la mediation, a distinguer de la brutale societe Ekpe du Nigeria.",
+      "artsAndMusic": "Les Dan sont reconnus pour leur excellence en sculpture de bois, notamment les masques (enorme variete de formes et de fonctions), les cuilleres en bois stylisees et les plateaux de jeu de mancala. Leurs masques sont parmi les plus documentes et les plus estimes du continent africain.",
+      "spiritualities": "Religion traditionnelle complexe. Zlan est le Dieu supreme createur de l'univers, inatteignable par les humains. Zu est la puissance independante ou Esprit saint de Zlan, presente dans tous les aspects de l'univers, invoquee pour obtenir aide et protection. La majorite croit en la reincarnation : le Zu ou esprit d'une personne peut passer dans une autre personne ou dans un animal apres la mort. Communication avec les esprits par les mascarades, les divinations et les reves."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Aucun royaume centralise n'est atteste dans la tradition Dan. L'organisation politique etait decentralisee, les villages s'alliant occasionnellement en confederations en temps de guerre via la societe du Leopard (Gor).",
+      "relationsWithNeighbors": "Voisins principaux : Krahn, Kpelle et Mano. Les Dan entretinrent longtemps une reputation de guerriers farouches. Ils s'allierent avec leurs voisins Mande pour envahir la region cotiere, repoussant les Kru. Relations commerciales avec les Gouro et les Guere (Ngere) en Cote d'Ivoire. Tensions persistantes entre Gio/Mano et les Mandingo (Liberia).",
+      "conflictsOrAlliances": "Alliance avec les Mande voisins pour repousser les Kru vers la cote. Resistance a l'autorite americano-liberienne jusqu'au debut du XXe siecle. Role majeur dans la guerre civile liberienne : le NPFL de Charles Taylor recruta massivement parmi les Gio et les Mano apres les purges du regime Doe contre ces communautes en 1989.",
+      "diaspora": "Communaute Dan/Yacouba presente en Cote d'Ivoire (nord-ouest, region de Man) et au Liberia (comte de Nimba). Diaspora urbaine a Monrovia et Abidjan. Emigration vers les Etats-Unis et l'Europe suite aux guerres civiles liberiennes."
+    },
+    "demography": {
+      "totalPopulation": 700000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN – Dan people (700 000 membres dans les deux pays). Liberia 2008 census : 276 293 Gio au Liberia (Minority Rights Group). Estimation globale 2025 stable.",
+      "distributionByCountry": [
+        { "country": "LBR", "population": 320000 },
+        { "country": "CIV", "population": 380000 }
+      ]
+    },
+    "sources": [
+      "Dan people – Wikipedia EN (https://en.wikipedia.org/wiki/Dan_people)",
+      "Dan, Da in Liberia – Joshua Project (https://joshuaproject.net/people_groups/11485/LI)",
+      "Dan | History, Culture & Religion – Encyclopaedia Britannica (https://www.britannica.com/topic/Dan-African-people)",
+      "Minority Rights Group – Liberia, 2024 (https://minorityrights.org/country/liberia/)",
+      "Dan people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/dan.html)",
+      "Dan Tribe – Gateway Africa Safaris (https://www.gateway-africa.com/tribe/dan_tribe.html)",
+      "Liberia Population and Housing Census 2022 – LISGIS (https://www.lisgis.gov.lr/document/LiberiaCensus2022Report.pdf)"
+    ]
+  }
+}

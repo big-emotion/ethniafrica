@@ -1,0 +1,77 @@
+{
+  "id": "PPL_SHINASHA",
+  "nameMain": "Shinasha",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Shinasha",
+      "selfAppellation": "Boro",
+      "exonyms": ["Bworo", "Boro", "Borna", "Scinacia", "Amuru"],
+      "originOfExonyms": "Boro et Bworo sont les termes anciens et autodesignations du groupe. Shinasha est le nom exterieur le plus repandu dans la litterature et les documents officiels ethiopiens. Borna designe principalement la langue dans les classifications linguistiques (Ethnologue, SIL). Amuru est un nom alternatif note par le Joshua Project.",
+      "whyProblematic": "La denomination Shinasha peut preter a confusion car elle est utilisee de maniere interchangeable avec Boro et Bworo, qui sont les termes preferes par le groupe lui-meme. Dans la litterature scientifique, Boro est souvent utilise comme nom de la langue.",
+      "contemporaryUsage": "Le terme Shinasha est employe officiellement dans la constitution de la region Benishangul-Gumuz, ou il est reconnu comme l'un des cinq groupes ethniques indigenes de la region. Les Shinasha detiennent 11 sieges (sur 100) a l'assemblee regionale.",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "Omotique du Nord (Gonga), parfois classe dans le groupe linguistique Cushitique du fait de proximites areales",
+      "historicalRegion": "Zone de Metekel, region Benishangul-Gumuz, nord-ouest de l'Ethiopie",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": ["Shinasha", "Boro"],
+    "origins": {
+      "ancientOrigins": "Les Shinasha font partie des peuples les plus anciennement etablis du nord-ouest ethiopien. Selon la tradition orale documentee par le Joshua Project, leurs ancetres (les Amatis) seraient originaires de Canaan, ayant migre via l'Egypte avant de s'etablir dans la region de Metekel. Les Shinasha sont aussi classes comme appartenant au groupe linguistique Gonga (omotique du nord), partage avec les Kafa et les Anfillo.",
+      "formationPeriod": "Presence documentee dans la region au moins depuis le debut du XIXe siecle. En 1901, l'explorateur americain Oscar T. Crosby rencontra un groupe de 600 Shinasha vivant entre les rivieres Durra et Wombera. Avant 1898, les Shinasha etaient un peuple autonome gouverne par des chefs (chieftains).",
+      "migrationRoutes": [
+        "Migration legendaire depuis Canaan via l'Egypte (tradition orale)",
+        "Implantation historique dans la region de Metekel, nord du fleuve Abbay (Nil Bleu)"
+      ],
+      "historicalSettlementZones": [
+        "Zone de Metekel, Benishangul-Gumuz (districts de Dangur, Bullen, Dibate, Wenbera)",
+        "Presence documentee a Wellega, Ilubabor et regions voisines",
+        "Extension transfrontaliere dans la region de Fazoghli, Soudan"
+      ],
+      "unificationsOrDivisions": "Incorporation dans l'empire ethiopien centralise en 1898, mettant fin a leur autonomie politique. La creation de la region Benishangul-Gumuz en 1992 leur a confere un statut officiel d'indigenes.",
+      "externalInfluences": "Assimilation par les Oromo sur une grande echelle selon les sources academiques. Influence amhara et oromo au fil des siecles. Conflits recurrents avec les Gumuz pour l'acces aux terres et aux ressources. Menace liee a la construction du Grand Barrage de la Renaissance Ethiopienne (GERD) sur le Nil Bleu, a 40 km de la frontiere soudanaise.",
+      "majorHistoricalEvents": "Rencontre avec Oscar T. Crosby en 1901. Incorporation dans l'empire ethiopien en 1898. Creation de la region Benishangul-Gumuz en 1992. Massacre de civils Shinasha par des milices Gumuz le 23 decembre 2020 a Bakuji, dans le woreda de Bulen (207 morts selon les rapports)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation politique traditionnelle sous l'autorite de chefs (chieftains). Les Shinasha etaient un peuple autonome avant 1898. Depuis la creation de la region Benishangul-Gumuz en 1992, ils participent aux institutions regionales avec 11 sieges a l'assemblee.",
+      "clanOrganization": "Structure clanique patrilineaire. La langue shinasha (Borna) appelle elle-meme les clans Borenona'a (langue du Boro-Shinasha). Les relations interclaniques regulent les mariages et les droits fonciers.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique et les droits sur les terres ancestrales. La notion d'indigeneite est cruciale dans le systeme federaliste ethnique ethiopien pour l'acces aux ressources.",
+      "religiousAuthority": "Autorite religieuse traditionnelle coexistant avec le christianisme orthodoxe ethiopien (Tewahido), adopte par la majorite des Shinasha Boro selon le Joshua Project."
+    },
+    "languages": {
+      "mainLanguage": "Shinasha (Borna/Boro)",
+      "isoCodes": ["bwo"],
+      "dialects": ["Amuru", "Wenbera", "Gamila", "Guba"],
+      "vehicularRole": "La langue shinasha (Boro, code ISO bwo) est la langue maternelle du groupe. Elle est parlee dans des zones dispersees au nord de l'Abbay (Nil Bleu). L'amharique est utilise comme langue de l'administration et de l'education. La langue est consideree comme vulnerableen raison du faible nombre de locuteurs (36 000 selon le recensement de 2007) par rapport a l'effectif ethnique, temoignant d'une assimilation linguistique en cours."
+    },
+    "culture": {
+      "majorRites": "La fete du Nouvel An Shinasha, appelee Gaaro, est un element culturel distinctif documente dans la recherche academique. Les rites agricoles de debut et fin de saison des pluies sont centraux dans la vie communautaire.",
+      "symbols": "L'usage intensif des plantes tuberacees indigenes, a la fois comme aliment et comme medicine traditionnelle, est une caracteristique culturelle distinctive des Shinasha, etudiee par l'Universite de Bahir Dar en 2017. Le betail et les activites agricoles (agriculture de subsistance) constituent les fondements de l'identite materielle.",
+      "artsAndMusic": "La tradition orale transmet l'histoire et les valeurs du groupe. Des pratiques de necromance (pretentions de pouvoirs magiques pour influencer les groupes voisins) ont ete rapportees par Crosby en 1901, temoignant d'une reputation de pouvoirs spirituels.",
+      "spiritualities": "Christianisme orthodoxe ethiopien (Tewahido) majoritaire selon le Joshua Project. Certaines pratiques spirituelles traditionnelles persistent, notamment les croyances en des pouvoirs de controle des elements naturels (pluie, secheresse)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Shinasha etaient gouvernes par des chefs (chieftains) avant leur incorporation dans l'empire ethiopien en 1898. Ils constituaient un peuple autonome dans la region de Metekel. Depuis 1992, ils sont reconnus comme l'un des cinq peuples indigenes de la region Benishangul-Gumuz.",
+      "relationsWithNeighbors": "Relations historiquement tendues avec les Gumuz et les Oromo pour la competition des terres et des ressources. Relations de commerce et d'echange avec les Amhara. Conflits recurrents avec les settlers (colons) des hautes terres arrivant depuis les annees 1980. Les Shinasha ont subi des attaques de milices Gumuz, notamment le massacre de decembre 2020.",
+      "conflictsOrAlliances": "Tensions historiques avec les Gumuz, Oromo et Amhara pour les terres de la zone de Metekel. Massacre du 23 decembre 2020 a Bakuji (woreda de Bulen) : 207 civils Shinasha tues par des milices Gumuz. Conflits lies a la demarcation des frontieres ethniques, a l'exploitation des terres agricoles et aux projets d'investissements fonciers.",
+      "diaspora": "Presence de quelques groupes Shinasha arabophones au Soudan (region de Fazoghli), selon un chercheur senior du Centre d'Etudes Africaines de Leiden."
+    },
+    "demography": {
+      "totalPopulation": 139000,
+      "referenceYear": 2025,
+      "source": "Estimation Wikipedia 2025 (139 000 individus). Recensement ethiopien 1994 : 32 698. Ethnologue 2007 : 37 500 locuteurs de la langue Boro. Estimation du professeur d'anthropologie sociale : 51 000 (2007). Joshua Project : 93 000. Estimation senior researcher African Studies Centre Leiden : 70 000.",
+      "distributionByCountry": [{ "country": "ETH", "population": 139000 }]
+    },
+    "sources": [
+      "Shinasha people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Shinasha_people)",
+      "Shinasha language – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Shinasha_language)",
+      "Boro, Shinasha in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10304)",
+      "Situation of the Shinasha ethnic group – Immigration and Refugee Board of Canada / Ecoi.net, 2014 (https://www.ecoi.net/en/document/1292401.html)",
+      "Marginalization and persecution in Ethiopia's Benishangul-Gumuz – Ethiopia Insight, 2021 (https://www.ethiopia-insight.com/2021/08/10/marginalization-and-persecution-in-ethiopias-benishangul-gumuz/)",
+      "In historical perspectives in Africa: A case study of Shinasha tribe – IJAMTES, Abebe Ano, 2018 (https://www.ijamtes.org/gallery/227.%20aug%20ijmte%20-%20942.pdf)",
+      "The Shinasha people – The Tribal Society, 2024 (https://thetribalsociety.com/the-shinasha-people/)"
+    ]
+  }
+}

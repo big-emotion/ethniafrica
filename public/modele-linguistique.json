@@ -1,0 +1,58 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "famille_linguistique",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "FLG_XXXXX",
+  "nameFr": "<Nom français de la famille>",
+  "nameEn": "<English name>",
+  "content": {
+    "decolonialHeader": {
+      "linkWithFamily": "<Lien avec la famille parente — ex: Sous-branche de FLG_NIGERCONGO>",
+      "historicalAppellations": ["<Appellation historique 1>"],
+      "originOfHistoricalTerm": "<Origine du terme historique — qui l'a créé, quand, pourquoi>",
+      "whyProblematic": "<Pourquoi le terme pose problème (si applicable)>",
+      "selfAppellation": "<Auto-appellation des locuteurs ou linguistes contemporains>",
+      "contemporaryUsage": "<Définition et usage contemporains de la famille>",
+      "geographicArea": "<Aires géographiques — liste séparée par virgules, SANS tirets>",
+      "numberOfLanguages": 0,
+      "totalSpeakers": 0
+    },
+    "generalInfo": {
+      "branches": ["<Sous-groupe 1>", "<Sous-groupe 2>"],
+      "geographicArea": "<Aires géographiques>",
+      "numberOfLanguages": 0,
+      "totalSpeakers": 0
+    },
+    "associatedPeoples": [
+      { "name": "<Nom du peuple>", "peopleId": "PPL_XXXXX" },
+      { "name": "<Nom du peuple>", "peopleId": "PPL_XXXXX" },
+      { "name": "<Nom du peuple>", "peopleId": "PPL_XXXXX" },
+      { "name": "<Nom du peuple>", "peopleId": "PPL_XXXXX" },
+      { "name": "<Nom du peuple>", "peopleId": "PPL_XXXXX" }
+    ],
+    "linguisticCharacteristics": {
+      "typology": "<Ordre des mots, morphologie, type (agglutinante, isolante, etc.)>",
+      "phonologicalFeatures": "<Systèmes tonals, consonnes spécifiques, voyelles>",
+      "relationsWithNeighbors": "<Emprunts lexicaux, influences mutuelles>",
+      "keyInnovations": "<Traits linguistiques distinctifs de cette famille>"
+    },
+    "historyAndOrigins": {
+      "probableOrigin": "<Théories archéologiques, linguistiques, génétiques sur l'origine>",
+      "emergencePeriod": "<Datation de l'émergence et de la classification>",
+      "diffusion": "<Routes migratoires et phases d'expansion>",
+      "historicalBreaks": "<Événements majeurs ayant fragmenté ou unifié la famille>",
+      "contactZones": "<Régions de brassage linguistique et culturel>",
+      "majorEvents": "<Colonisation, empires, migrations ayant influencé la famille>"
+    },
+    "distribution": {
+      "totalSpeakers": 0,
+      "distributionByCountry": {
+        "ISO1": 0,
+        "ISO2": 0
+      }
+    },
+    "sources": ["<Titre – Auteur/URL>"]
+  }
+}

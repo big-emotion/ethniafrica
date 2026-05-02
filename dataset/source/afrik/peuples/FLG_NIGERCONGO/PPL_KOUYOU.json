@@ -1,0 +1,92 @@
+{
+  "id": "PPL_KOUYOU",
+  "nameMain": "Kouyou",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["COG"],
+  "content": {
+    "appellations": {
+      "mainName": "Kouyou",
+      "selfAppellation": "Kouyou",
+      "exonyms": ["Koyo", "Ekoyo"],
+      "originOfExonyms": "Le terme Kouyou (ou Koyo) est la designation usuelle en francais et en anglais pour ce peuple du nord du Congo-Brazzaville. La variante Ekoyo est l'autonym linguistique utilise dans les classifications grammaticales. Le terme n'a pas de connotation pejorative particuliere.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Kouyou est utilise dans les documents administratifs congolais et dans les recensements. Le groupe est identifie comme faisant partie du grand ensemble Mbochi de la region du nord du Congo.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (groupe Mbochi, zone C, sous-groupe C.24)",
+      "historicalRegion": "Cuvette congolaise, region d'Owando (departement de la Cuvette, nord de la Republique du Congo)",
+      "currentCountries": ["COG"]
+    },
+    "ethnicities": [
+      "Kouyou de la rive droite de la Likouala-aux-Herbes, region d'Owando",
+      "Kouyou septentrionaux, proches du confluent Sangha-Congo",
+      "Kouyou meridionaux, zones de savane boisee entre Owando et Fort-Rousset",
+      "Groupes mixtes Kouyou-Mbochi des agglomerations urbaines (Owando, Brazzaville)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kouyou sont un peuple bantou appartenant au sous-groupe linguistique Mbochi (zone C.24 de la classification Guthrie). Comme l'ensemble des Bantous, leurs ancetres sont originaires de la region Cameroun-Nigeria et ont migrate vers l'Afrique centrale en plusieurs vagues a partir d'environ 2000 avant J.-C. Les Kouyou se sont etablis dans la cuvette congolaise, en bordure de la foret equatoriale du nord du Congo-Brazzaville, notamment autour d'Owando (anciennement Fort-Rousset), leur principal centre urban.",
+      "formationPeriod": "L'identite kouyou distincte s'est probablement consolidee entre le 15e et le 18e siecle, au sein du reseau de peoples bantous de la cuvette congolaise. Ils partagent une proximite linguistique et culturelle avec les Mbochi voisins, avec qui ils constituent un ensemble ethnolinguistique coherent dans le departement de la Cuvette.",
+      "migrationRoutes": [
+        "Migration ancestrale bantou depuis la region Nigeria-Cameroun vers le bassin du Congo (2000-1000 av. J.-C.)",
+        "Implantation progressive dans la foret equatoriale et les savanes de la cuvette congolaise",
+        "Deplacement vers les berges des rivieres Likouala-aux-Herbes et Sangha pour l'acces aux ressources halieutiques"
+      ],
+      "historicalSettlementZones": [
+        "Region d'Owando (chef-lieu du departement de la Cuvette, nord Congo-Brazzaville)",
+        "Berges de la Likouala-aux-Herbes et affluents",
+        "Zones de foret-galerie et de savane boisee du centre-nord du Congo",
+        "Quelques groupes dans les quartiers nord de Brazzaville (diaspora urbaine)"
+      ],
+      "unificationsOrDivisions": "Organisation en groupes claniques distincts partageant une identite linguistique et culturelle commune. Les Kouyou font partie de la large federation Mbochi qui regroupe plusieurs peuples du nord du Congo, sans unite politique centrale traditionnelle mais avec des liens historiques forts.",
+      "externalInfluences": "Contacts avec les commerçants arabes et swahilis avant la colonisation europeenne. Presence europeenne (francaise) a partir du 19e siecle avec l'etablissement de Fort-Rousset (aujourd'hui Owando). Evangelisation chretienne au 20e siecle, principalement catholique et protestante. Integration dans l'economie nationale congolaise via l'exploitation forestiere et miniere.",
+      "majorHistoricalEvents": "Inclusion dans la sphere d'influence du Royaume Teke au Moyen Age. Contacts avec les premiers explorateurs europeens au 19e siecle (Brazza, Savorgnan de Brazza). Resistance et adaptation lors de la colonisation francaise. Independance du Congo en 1960. Role politique du groupe Mbochi (dont les Kouyou font partie) dans l'histoire politique post-independance du Congo, notamment avec Denis Sassou Nguesso, originaire de la region Mbochi."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation traditionnelle en chefferies (nkani ou chef de village) avec une structure de conseil d'anciens. Chaque village est gouverne par un chef hereditaire qui arbitre les conflits, coordonne les travaux collectifs et represente la communaute vis-a-vis de l'exterieur. Au-dessus des chefs de village se trouvaient parfois des chefs de secteur couvrant plusieurs hameaux. Le systeme est de type segmentaire, sans etat centralise fort.",
+      "clanOrganization": "Societe patrilineaire organisee en clans (mvila) portant le nom d'un ancetre fondateur. Les clans regissent les mariages (exogamie clanique obligatoire), l'heritage foncier et la solidarite economique. Les clans sont divises en lignages (ntinu), chaque lignage reconnaissant un ancetre commun sur plusieurs generations.",
+      "ageClassSystems": "Existence de classes d'age regissant les droits et les devoirs sociaux. Les jeunes hommes passent par des etapes d'initiation avant d'acceder au statut d'adulte et de pouvoir participer aux decisions villageoises.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'acces a la terre, les droits de mariage et les obligations funeraires. Le chef de lignage est le gardien des traditions ancestrales et l'interlocuteur principal lors des ceremonies rituelles. La solidarite de lignage est un pilier de la vie economique et sociale.",
+      "religiousAuthority": "Autorite des guerisseurs-devins (nganga) reconnus pour leur capacite a communiquer avec les esprits ancestraux et a diagnostiquer les maladies. Presence de feticheurs charges de la protection des villages et des recoltes. Syncrétisme avec le christianisme (catholicisme et protestantisme), les eglises jouant un role social croissant depuis l'independance."
+    },
+    "languages": {
+      "mainLanguage": "Kouyou (Koyo, Ekoyo)",
+      "isoCodes": ["koh"],
+      "dialects": [
+        "Kouyou septentrional (parle autour d'Owando et vers le nord)",
+        "Kouyou meridional (parle vers Fort-Rousset et la frontiere avec le groupe Mbochi central)"
+      ],
+      "vehicularRole": "Le kouyou (ISO 639-3 : koh) est classe dans le groupe Mbochi des langues bantoues (zone C.24 selon Guthrie). Il est principalement parle dans le departement de la Cuvette, autour d'Owando. Le langue est classee comme menacee (statut 6b selon l'echelle EGIDS), avec environ quelques milliers de locuteurs. Le lingala et le français servent de langues vehiculaires pour les communications interethniques et administratives."
+    },
+    "culture": {
+      "majorRites": "Les Kouyou pratiquent des rites d'initiation masculins marquant le passage a l'age adulte, au cours desquels les jeunes garcons apprennent les savoirs traditionnels, les techniques de chasse, de peche et d'agriculture ainsi que les valeurs morales du groupe. Les ceremonies funeraires sont elaborees et comportent plusieurs jours de deuil avec danses, chants et repas collectifs. Les rites de guerison font appel aux nganga (guerisseurs-devins) qui invoquent les ancetres et utilisent des plantes medicinales. Les fetes agricoles marquent le debut et la fin des saisons de culture du manioc et d'autres cultures vivrieres.",
+      "symbols": "Symboles lies a la forge traditionnelle (les Kouyou sont connus pour leur travail du metal), masques utilises lors des ceremonies d'initiation et de communication avec les ancetres, objets-fétiche des nganga (statuettes, cornes, colliers de protection). La pirogue est un symbole central de la vie economique et de l'identite kouyou, peuple de riviere.",
+      "artsAndMusic": "La musique traditionnelle kouyou utilise des tambours (ngoma), des xylophones, des hochets et des instruments a cordes artisanaux. Les chants polyphoniques accompagnent les fetes, les travaux collectifs et les ceremonies rituelles. La forge artisanale est une tradition importante : les forgerons kouyou fabriquent des outils, des armes et des objets rituels. La poterie feminine et le tissage de nattes et de paniers constituent d'autres formes d'artisanat local. La tradition orale (contes, proverbes, recits genealogiques) est le principal vecteur de transmission du patrimoine culturel.",
+      "spiritualities": "La religion traditionnelle kouyou est centree sur le culte des ancetres (bakulu), dont les esprits continuent d'influencer la vie des vivants et auxquels des offrandes sont regulierement faites. Existence de spirits de la nature (esprits de la foret, de la riviere) qui doivent etre propitiatoires avant toute activite de chasse, de peche ou de defrichement. Le nganga (devin-guerisseur) joue un role central en tant que mediateur entre le monde des vivants et celui des esprits. Le christianisme (catholicisme, eglises protestantes, eglises de reveil) est aujourd'hui pratique par la majorite des Kouyou, souvent en combinaison avec les croyances traditionnelles (syncretisme)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Kouyou n'ont pas forme de royaume centralise mais etaient organises en chefferies independantes liees par des alliances et des echanges commerciaux. Leur region faisait partie de la sphere d'influence du grand ensemble politique Teke avant la colonisation. A l'epoque coloniale, les chefferies kouyou ont ete reconnues et integrees dans l'administration française indirecte de l'AEF (Afrique Equatoriale Française).",
+      "relationsWithNeighbors": "Relations etroites avec les Mbochi voisins, avec qui ils partagent une origine linguistique commune et des pratiques culturelles similaires. Contacts commerciaux avec les Aka (pygmees) de la foret pour l'echange de produits forestiers contre des biens agricoles. Relations historiques avec les peuples Ubangi du nord (mentionnes par Britannica comme groupe aparente). Echanges avec les commerçants de la riviere Congo.",
+      "conflictsOrAlliances": "Conflits locaux pour le controle des zones de peche et de chasse avant la colonisation. Integration dans le cadre administratif colonial français de l'AEF, avec des resistances sporadiques contre la taxation et le travail force. Participation a la vie politique congolaise post-independance, notamment via l'appartenance au grand ensemble ethnique Mbochi qui a produit plusieurs figures politiques importantes, dont le president Denis Sassou Nguesso.",
+      "diaspora": "Presence de Kouyou dans les grandes villes du Congo, en particulier a Brazzaville et Pointe-Noire, suite aux migrations economiques du 20e siecle. Quelques membres de la diaspora congolaise en France (Paris) et dans d'autres pays europeens maintiennent des liens avec leur communaute d'origine."
+    },
+    "demography": {
+      "totalPopulation": 10000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Glottolog (statut 6b, langue menacee), SIL Ethnologue (koh), Britannica (mention du groupe Ubangi/Kouyou), recensement de la Republique du Congo 2007 et projections. Les chiffres precis sont difficiles a etablir en l'absence de recensement ethnique detaille.",
+      "distributionByCountry": [
+        {
+          "country": "COG",
+          "population": 10000,
+          "note": "Departement de la Cuvette, region d'Owando et environs. Quelques centaines en milieu urbain (Brazzaville, Pointe-Noire)."
+        }
+      ]
+    },
+    "sources": [
+      "Encyclopaedia Britannica - Republic of the Congo: People. https://www.britannica.com/place/Republic-of-the-Congo/People",
+      "Glottolog 5.2 - Koyo (koh). https://glottolog.org/resource/languoid/id/koyo1242",
+      "SIL Ethnologue - Koyo language (koh). https://www.ethnologue.com/language/koh/",
+      "Expeditions Ducret - Ethnic Groups of Congo. https://www.expeditions-ducret.com/ethnic-groups-of-congo/",
+      "Wikipedia FR - Bantous. https://fr.wikipedia.org/wiki/Bantous",
+      "Guthrie, Malcolm. Comparative Bantu. Gregg Press, 1967-71. (Classification zone C.24)"
+    ]
+  }
+}

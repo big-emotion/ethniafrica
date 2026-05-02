@@ -1,0 +1,116 @@
+{
+  "id": "PPL_MASA",
+  "nameMain": "Masa",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["TCD", "CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Masa",
+      "selfAppellation": "Masa / Masana",
+      "exonyms": [
+        "Massa",
+        "Masana",
+        "Banana",
+        "Yagoua",
+        "Kirdi (terme exterieur, desapprouve)"
+      ],
+      "originOfExonyms": "Le terme Banana vient de la reputation d'hospitalite des Masa : il signifie amical en certaines langues voisines. Yagoua designe la ville principale de leur territoire (Yagoua, Cameroun). Kirdi est un terme pejoratif d'origine arabo-peule signifiant paien, utilise pour designer les peuples non-muslmans du nord du Cameroun — terme rejete par les populations concernees. Masana est l'endonyme collectif le plus repandu.",
+      "whyProblematic": "Le terme Kirdi est considere desapprouvant et stigmatisant. Il a ete utilise par l'administration coloniale et par les populations islamises pour designer les peuples non-musulmans ou partiellement musulmans du nord du Cameroun et du sud du Tchad.",
+      "contemporaryUsage": "Masa ou Masana sont les termes preferes par le groupe lui-meme. Le terme Massa (avec double s) est souvent utilise dans la litterature francophone scientifique. Yagoua designe couramment les Masa du nord du Cameroun.",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique branche Masa (branche distincte du tchadique avec 8 a 10 langues)",
+      "historicalRegion": "Plaines inondables du Logone et du Mayo-Kebbi (Tchad et Cameroun septentrional)",
+      "currentCountries": ["TCD", "CMR"]
+    },
+    "ethnicities": [
+      "Masa du Nord (Yagwa) — autour de Yagoua, Cameroun, dialecte Yagwa",
+      "Masa Central — le long du Logone ; varietes Yagwa, Domo, Walya, Bugudum",
+      "Masa de l'Ouest (Gizay) — autour de Guere, departement de Mayo-Danay",
+      "Masa Wina (Viri) — anciens Tupuri ayant adopte la langue Masa",
+      "Masa du Tchad — region du Mayo-Kebbi Est et du Logone oriental",
+      "Musey — groupe apparente du Tchad (parfois classe separement)",
+      "Munjuk (Muzuk) — sous-groupe partageant le territoire et bilingue Masa-Munjuk"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale masa, le peuple serait originaire du Yemen, ayant migre vers l'Egypte puis le Soudan avant de rejoindre la region du lac Tchad. Vers 800 de l'ere commune, les Masa auraient quitte le Soudan pour les rives du lac Tchad, puis traversé le fleuve Logone pour s'installer au Cameroun afin d'echapper aux marchands d'esclaves. Les Masa sont consideres apparentes aux peuples Tikar et Bamileke selon certaines traditions. La presente Masa dans la region du Mayo-Kebbi et du Logone est attestee depuis plusieurs siecles. Les Musgum (voisins) revendiquent une origine Masa partielle via l'union d'un prince Kotoko et d'une femme Masa.",
+      "formationPeriod": "L'identite masa s'est forgee autour de l'exploitation des plaines inondables du Logone — peche, agriculture du sorgho et elevage bovin. La pratique du gurna (engraissement rituel du betail et des jeunes hommes) est une institution culturelle ancienne qui distingue les Masa de leurs voisins. En 1881, le sheik Hayatu Balda declencha un jihad contre les Masa, Musgum et Sumeya, ce qui n'empecha pas les Masa de preserver leur identite culturelle.",
+      "migrationRoutes": [
+        "Migration traditionnelle : Yemen → Egypte → Soudan → lac Tchad → fleuve Logone",
+        "Expansion le long des rives du Logone des deux cotes de la frontiere Tchad-Cameroun",
+        "Mouvement vers les plaines du Mayo-Kebbi (Tchad) et le departement de Mayo-Danay (Cameroun)"
+      ],
+      "historicalSettlementZones": [
+        "Rives du fleuve Logone (frontiere Tchad-Cameroun) des deux cotes",
+        "Departement de Mayo-Danay, Far North Region, Cameroun (Yagoua, Kalfou, Wina, Yele, Guere)",
+        "Region du Mayo-Kebbi Est, Tchad (Bongor et environs)",
+        "Plaines du Logone oriental (Tchad)"
+      ],
+      "unificationsOrDivisions": "Les Masa sont divises en plusieurs sous-groupes dialectaux (Yagwa, Domo, Walya, Bugudum, Gizay, Wina/Viri) qui se reconnaissent une identite commune. Les affrontements entre Masa du Cameroun et Masa du Tchad pour le betail constituent une forme de tension inter-communautaire, mais aussi de reconnaissance d'une identite partagee fondee sur les memes valeurs.",
+      "externalInfluences": "Le jihad de Hayatu Balda (1881) contre les non-Muslmans de la region a echoue a islamiser completement les Masa. L'administration coloniale allemande (Cameroun, 1884-1916), puis francaise (1916-1960) et la colonisation francaise au Tchad ont restructure les rapports politiques. L'introduction des cultures de rente (riz, coton) a partiellement modifie l'economie agricole traditionnelle. Les missions chretiennes ont contribue a la christianisation d'une partie des Masa.",
+      "majorHistoricalEvents": "Jihad de Hayatu Balda contre les peuples non-musulmans du Mayo-Kebbi (1881). Periode coloniale allemande puis francaise au Cameroun. Inscription de la pratique Guruna au patrimoine culturel immateriel de l'UNESCO en 2025. Les rivalites inter-masa autour du betail ont provoque des affrontements recurrents a travers les siecles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Masa sont organises en villages diriges par des chefs locaux. L'organisation politique est relativement decentralisee, avec une autorite villageoise fondee sur des anciens et des chefs de clans. La chefferie n'a pas de dimension monarchique forte. Le prestige social est davantage lie a la richesse en betail et a la participation aux guerres honorifiques qu'a l'heredite politique seule.",
+      "clanOrganization": "Structure clanique patrilineaire. Les clans sont des groupes de descendance qui regissent les alliances matrimoniales et les droits fonciers. La dot (bride price) est payee en bovins, ce qui confere au betail un role central dans les rapports sociaux.",
+      "ageClassSystems": "Les jeunes hommes participent au gurna, retraite collective qui constitue de facto un systeme d'encadrement des classes d'age. Pendant la retraite, les jeunes apprennent la lutte, la musique, la danse, l'artisanat et les valeurs communautaires sous la supervision d'aines.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance communautaire, les droits d'acces aux terres de culture et aux zones de peche sur le Logone. Les decisions importantes (mariage, conflit, usage des terres) impliquent les anciens du lignage.",
+      "religiousAuthority": "Les pratiques religieuses combinent traditions animistes, islam et christianisme selon les individus et les zones. Dans les communautes tradiconnelles, des specialistes rituels (guerisseurs, devins) jouent un role d'intermediaires avec le monde spirituel. Les imams exercent l'autorite dans les communautes muslim, et les pasteurs chretiens dans les communautes evangelisees."
+    },
+    "languages": {
+      "mainLanguage": "Masana (Massa, Masa)",
+      "isoCodes": ["mcn"],
+      "dialects": [
+        "Bongor — variete du nord du Tchad",
+        "Bugudum (Budugum) — variete centrale",
+        "Domo — variete centrale du Logone",
+        "Gizay — variete occidentale (autour de Guere)",
+        "Gumay — variete centrale",
+        "Ham — variete du nord",
+        "Walia (Walya) — variete du Logone central",
+        "Wina (Viri) — variete occidentale (anciens Tupuri)",
+        "Yagwa — variete du nord (Yagoua)",
+        "Muzuk — variete du Guidigis (Mayo-Kani), bilingue avec Munjuk"
+      ],
+      "vehicularRole": "Le masana est parle par environ 200 000 locuteurs au Cameroun et une population significative au Tchad (total estime 266 000 a 469 000 locuteurs). Il est la langue vehiculaire intra-communautaire. L'arabe tchadien est utilise comme lingua franca au Tchad, le francais comme langue officielle dans les deux pays. Le fulfude (peul) est egalement present dans la region."
+    },
+    "culture": {
+      "majorRites": "Le Guruna (ou Guru walla) est la pratique culturelle la plus emblematique des Masa : c'est une retraite pastorale, socio-culturelle et artistique annuelle. Les jeunes hommes (et garcons) se retirent avec leur betail dans un campement eloigne du village. Pendant plusieurs semaines, ils apprennent la lutte (bori), la musique, la danse, l'artisanat et les valeurs de la communaute. Les jeunes filles participent en apportant de la nourriture et en preparant les decorations, mais ne passent pas la nuit au camp. La pratique inclut un aspect d'engraissement : les participants boivent de grandes quantites de lait et de sang pour prendre du poids et de la force, signe de sante et de virilite. Le Guruna a ete inscrit sur la Liste representative du patrimoine culturel immateriel de l'humanite de l'UNESCO en 2025. Autres rites importants : ceremonies de mariage avec paiement de la dot en bovins, funerailles communautaires, benedictions des semailles de sorgho, combats collectifs ritualises (bori) entre groupes pour l'honneur et le betail.",
+      "symbols": "Le zebu (boeuf) est le symbole central de la culture masa : richesse, prestige, dot, instrument de sacrifice et signe de virilite. Le Guruna (retraite annuelle) est le symbole vivant de la transmission culturelle. Le fleuve Logone est le symbole du territoire masa, source de vie, de peche et d'identite. Les combats collectifs ritualises (bori) symbolisent l'honneur et la bravoure communautaire. La force physique et la corpulence sont signes de sante et de prestige masculin.",
+      "artsAndMusic": "Musique instrumentale : flutes, harpes, percussions (tambours divers). Chants collectifs accompagnant les travaux, les ceremonies et le Guruna. Danse de combat et danse collective dans le cadre du Guruna et des fetes communautaires. Artisanat du tissage : les Masa sont reputes pour leur maitrise du tissage qui permet aussi la fabrication d'engins de peche varies. Fabrication de casques (de combat ritualise) en cuir et de massues. Poterie pour usage quotidien. Broderie et parure feminine. La litterature orale (contes, proverbes, genealogies) est transmise oralement lors des veillees.",
+      "spiritualities": "La religion des Masa est synchretique. Environ 45% sont musulmans sunnites et 45% sont chretiens (dont 30% catholiques ou protestants et 15% evangeliques). Les pratiques animistes traditionnelles persistent, notamment les rites de benediction des terrains de culture et des eaux de peche, les sacrifices d'animaux, la consultation de guerisseurs et devins. La croyance aux ancetres et aux esprits de la nature (riviere, terre) est toujours presente. Les tensions entre communautes de croyances differentes sont parfois sources de conflits."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Masa n'ont pas developpe de structures monarchiques centralisees. Leur systeme politique est base sur des chefferies villageoises et des alliances inter-clans. Ils ont maintenu leur independance culturelle face a l'expansionisme islamique (jihad de 1881) et face a la colonisation. Les Masa ont resiste activement a l'esclavage colonial (traite atlantique et arabe), refusant de vendre leurs membres.",
+      "relationsWithNeighbors": "Relations complexes avec les Musgum (voisins, partiellement d'origine masa selon tradition), les Kotoko, les Arabes du Tchad et les Peuls de la region. Les affrontements avec les Masa de l'autre rive du Logone (frontiere Cameroun-Tchad) autour du betail sont un trait culturel caracteristique. Relations commerciales de peche avec les peuples voisins du Logone.",
+      "conflictsOrAlliances": "Resistance au jihad de Hayatu Balda (1881). Resistance partielle a la domination des marchands d'esclaves (traites arabe et atlantique). Les combats ritualises (bori) entre groupes masa sont une forme institutionnalisee de gestion des conflits inter-communautaires, avec des regles strictes (secourir les blesses, ne pas frapper un homme a terre, cesser avant la nuit tombee).",
+      "diaspora": "Migration interne vers Yagoua, Bongor, N'Djamena et Maroua. Emigration vers les grandes villes camerounaises et tchadiennes. Presence de communautes masa dans les capitales africaines et en Europe (France principalement)."
+    },
+    "demography": {
+      "totalPopulation": 400000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN — Masa people (266 000 a 469 000). SIL Ethnologue — Masana (mcn) : 103 000 locuteurs au Cameroun. UNESCO ICH — Guruna (2025). Joshua Project — Masa in Chad. Estimation 2025 : 400 000 en tenant compte de la repartition binationale et de la croissance demographique.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 250000,
+          "note": "Far North Region, departement de Mayo-Danay : arrondissements de Yagoua, Kalfou, Wina, Yele, Guere"
+        },
+        {
+          "country": "TCD",
+          "population": 150000,
+          "note": "Region du Mayo-Kebbi Est (Bongor et environs), Logone oriental"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Masa people. https://en.wikipedia.org/wiki/Masa_people",
+      "Wikipedia EN — Massa language. https://en.wikipedia.org/wiki/Massa_language",
+      "UNESCO ICH — Guruna, pratique des retraites pastorales (2025). https://ich.unesco.org/en/RL/guruna-a-practice-of-pastoral-socio-cultural-and-artistic-retreats-centered-on-livestock-among-the-massa-02260",
+      "SIL Ethnologue — Masana (mcn). https://www.ethnologue.com/language/mcn/",
+      "Joshua Project — Masa in Chad. https://joshuaproject.net/people_groups/13560/CD",
+      "Study.com — Chadic Languages. https://study.com/academy/lesson/chadic-languages-overview-origin-composition-speaks.html",
+      "Biogreat TV — History of the Masa tribe of Cameroon and Chad (YouTube). https://www.youtube.com/watch?v=JsYP_8AIsxw",
+      "Tokna Massana Facebook group — Guruna/Guru walla. https://www.facebook.com/groups/toknamassana.officiel/"
+    ]
+  }
+}

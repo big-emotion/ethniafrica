@@ -1,0 +1,103 @@
+{
+  "id": "PPL_FANTE",
+  "nameMain": "Fante",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Fante",
+      "selfAppellation": "Mfantse / Mfantsefo",
+      "exonyms": [
+        "Fanti (variante orthographique europeenne)",
+        "Fante (terme utilise par les colonisateurs europeens et adopte dans la litterature academique)"
+      ],
+      "originOfExonyms": "Le nom Fante est derive de l'expression akan Fa-atsew signifiant la moitie qui est partie, faisant reference a la separation des Fante des autres groupes akan autour de 1250 ap. J.-C. a Krako (Techiman actuel). Fanti est une variante orthographique anglaise fixee au XIXe siecle.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Fante est l'appellation standard en anglais comme en akan. Les locuteurs se designent eux-memes comme Mfantse (singulier) ou Mfantsefo (pluriel). La langue fante est l'un des trois dialectes litteraires de l'akan (avec l'asante et l'akuapem) et est officiellement enseigne dans les ecoles du Ghana.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Kwa (sous-groupe Akan, branche cotiere)",
+      "historicalRegion": "Cote centrale du Ghana (Regions Central et Western), autour de Cape Coast, Elmina, Mankessim, Anomabo et Winneba",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": [
+      "Borbor Fante (Akan) : migrants d'origine tekyiman, fondateurs des etats de Abora, Ekumfi, Enyanmaim, Mankessim, Nkusukum",
+      "Etsii Fante (Guan) : population aborigene ayant adopte la langue et la culture akan ; etats de Eguafo, Fetu, Asebu, Oguaa (Cape Coast), Elmina, Moree, Otsir",
+      "Fante du Central Region (autour de Cape Coast, Mankessim, Saltpond)",
+      "Fante du Western Region (Sekondi, Shama, Komenda)",
+      "Fante d'Anomabo (communaute historiquement liee au commerce atlantique)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Fante sont un sous-groupe akan forme de deux composantes : les Borbor Fante d'ascendance akan, originaires de Tekyiman (Brong Ahafo), et les Etsii Fante d'ascendance guan, population aborigene de la cote. La Confederation Fante telle qu'elle existe est un melange de ces deux peuples. L'identite fante s'est construite autour du site sacre de Mankessim, capitale spirituelle et politique fondee en 1252 selon la tradition orale.",
+      "formationPeriod": "La separation des Fante des autres Akan remonte a environ 1250 ap. J.-C. a Krako (Techiman actuel). La migration fut conduite par trois guerriers : Obrumankoma (la baleine), Odapagyan (l'aigle) et Oson (l'elephant). Les deux premiers moururent en cours de route ; leurs depouilles embaumees furent portees jusqu'a Mankessim. Le pretre chef Komfo Amona y planta une lance sacree (Akyin-Enyim) qui, selon la tradition, ne peut etre arrachee par aucune main mortelle. A partir de Mankessim, les Borbor Fante s'etendirent pour etablir les etats d'Abora, Ekumfi, Enyanmaim et Nkusukum entre le XVe et XVIIe siecles.",
+      "migrationRoutes": [
+        "Tekyiman (Brong Ahafo) — point de depart de la migration Borbor Fante, vers 1250",
+        "Kwaman — etape intermediaire de la migration Borbor Fante",
+        "Mankessim — capitale fondatrice (1252), centre politique et spirituel de la confederation"
+      ],
+      "historicalSettlementZones": [
+        "Mankessim (capitale historique et spirituelle, Central Region)",
+        "Cape Coast/Oguaa (ancien centre politique et commercial)",
+        "Anomabo (port atlantique majeur du XVIIIe siecle)",
+        "Elmina, Komenda, Shama (villes cotieres historiques)",
+        "Region cotiere du Central et du Western Ghana (de Gomoa a l'est jusqu'au Western Region a l'ouest)"
+      ],
+      "unificationsOrDivisions": "Les Fante etaient organises en confederation d'etats independants, chacun dirige par un chef paramount. Une structure federale complexe permettait une mobilisation collective en cas de guerre. La Confederation Fante moderne, etablie en 1868, fut la premiere tentative africaine de gouvernement constitutionnel en Afrique de l'Ouest, avec une constitution ecrite, un conseil executif et un systeme judiciaire federal. La confederation s'effondra en 1873 sous la pression britannique et fut incorporee dans la Cote-de-l'Or britannique.",
+      "externalInfluences": "Contacts intensifs avec les marchands europeens (Portugais, Neerlandais, Anglais, Danois, Suedois) a partir du XVe siecle. Commerce atlantique (esclaves, or, ivoire) faisant des Fante les intermediaires incontournables entre l'interieur et la cote. Influence britannique dominante au XIXe siecle, conduisant au Pacte de 1844 et finalement a l'annexion de 1873. L'islam a une presence tres minoritaire chez les Fante, largement christianises.",
+      "majorHistoricalEvents": "1252 : fondation de Mankessim. 1624 : premier traite avec les Hollandais (Brafo Ambro). 1690s : guerre civile interne, victoire de l'Abora. 1715 : alliance defensive a Abora contre la menace ashanti. 1806-1816 : invasions ashanti, chute de Fanteland. 1824 : Premiere Guerre Anglo-Ashanti, mort du gouverneur Sir Charles MacCarthy a la bataille de Nsamankow. 1826 : bataille de Dodowa, victoire fante-britannique sur les Ashanti. 1831 : traite restaurant l'independance fante. 1844 : Pacte de 1844 avec les Britanniques. 1868 : formation de la Confederation Fante a Mankessim. 1873 : effondrement et annexion britannique."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de gouvernement federal complexe : les divers etats fante coexistent en alliance. Chaque etat est dirige par un chef paramount (Omanhen). En temps de guerre, une armee de l'Union est mobilisee, commandee par le chef paramount d'Abura (Tufuhen, maitre des armes). Le sacre du premier Omanhen de Mankessim se fait pres de la lance sacree Akyin-Enyim ; les grands electeurs consultent le sanctuaire. La Confederation Fante de 1868 avait une constitution ecrite, un roi-president (fonctions judiciaires et ceremoniales), un Conseil Executif elu, un tribunal federal et un impot par tete.",
+      "clanOrganization": "Societe matrilineaire pour l'heritage et la succession aux charges publiques (caracteristique akan adoptee par les Etsii). Organisation en 12 clans patrilineaires Ntoro (determines par le pere) pour les noms de famille et la genealogie paternelle. Les hommes fante en age de combattre appartiennent a la compagnie Asafo de leur pere. Les compagnies Asafo sont des groupes guerriers structurant la societe fante : a Cape Coast, il y a 7 compagnies (Bentsir, Anafo, Ntin, Nkum, Brofomba, Akrampa, Amanful), chacune dirigee par un Supi (capitaine superieur).",
+      "ageClassSystems": null,
+      "roleOfLineages": "La succession aux charges et l'heritage des biens s'effectuent en ligne matrilineaire (abusua). La paternite est tracee via les clans Ntoro patrilineaires. La double appartenance (matrilineaire pour les biens et charges, patrilineaire pour le nom et l'asafo) est caracteristique de la societe fante.",
+      "religiousAuthority": "Le grand pretre feticheur (Komfo) de Mankessim consulte l'oracle a la lance sacree Akyin-Enyim pour les grandes decisions. Le sanctuaire de Nananom Mpow (bois sacre ou sont enterres Obrumankoma et Odapagyan) est le centre spirituel supreme. La majorite des Fante sont chretiens aujourd'hui (protestantisme et catholicisme), avec une minorite de croyants en religions traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Fante (fat)",
+      "isoCodes": ["fat"],
+      "dialects": [
+        "Agona (Central Region)",
+        "Anomabo (variete cotiere historique)",
+        "Abura (variete du Central Region)",
+        "Gomoa (variete de l'est du pays fante)",
+        "Fante 1 : utilise une /w/ syllabique finale, distinguant kaw (danser) et ka (mordre)",
+        "Fante 2 : ces deux mots sont homophones"
+      ],
+      "vehicularRole": "Le fante est parle par plus de 6 millions de personnes au Ghana (2025), principalement dans les regions Central et Western, ainsi qu'a Tema. Il est l'un des trois dialectes litteraires de l'akan (avec l'asante et l'akuapem), mutuellement intelligibles. Parle aussi dans des communautes etablies en Cote d'Ivoire, au Liberia, en Gambie et en Angola (migrations de peche). L'anglais est la langue officielle du Ghana."
+    },
+    "culture": {
+      "majorRites": "Fetu Afahye (Festival d'Oguaa) : festival annuel de la recolte de l'igname a Cape Coast, celebre le premier samedi de septembre ; commemore une epidemie historique ayant ravage la ville, rappelle l'obligation de nettoyage des villes pour prevenir les maladies ; les compagnies Asafo y jouent un role central avec leurs uniformes et drapeaux. Nananom Mpow : ceremonies annuelles au bois sacre de Mankessim, site de sepulture d'Obrumankoma et Odapagyan, ancetres fondateurs ; seul le chef pretre peut y entrer pour consulter les oracles. Mariages traditionnels : ceremonies matrilineaires impliquant des negociations de dot entre les families. Funerailles : rituel social majeur, marque de fastes et de rassemblement communautaire. Akyin-Enyim : ceremonies d'installation des nouveaux chefs (Omanhen) devant la lance sacree de Mankessim ; les grands electeurs y consultent les ancetres.",
+      "symbols": "Lance sacree Akyin-Enyim (signifiant en face du dieu) de Mankessim — symbole de fondation et d'autorite spirituelle supreme. Arbre Ebisa-dua (arbre oracle) plante par les migrants fondateurs depuis leur patrie d'origine. Nananom Mpow (bois sacre des ancetres) — symbole de continuite spirituelle avec les fondateurs. Drapeaux Asafo : etendards elabores a scenes figuratives et designs alludant aux evenements historiques ou proverbes ; chaque compagnie a ses couleurs designees. Sanctuaires Posuban : structures en beton intricatement concus et peints de couleurs vives, servant de postes militaires et religieux pour les compagnies Asafo.",
+      "artsAndMusic": "Drapeaux Asafo (asafo flags) : textile d'art reconnu au plan international, broderies avec scenes narratives et proverbes visuels, chaque compagnie ayant un registre iconographique distinct. Sanctuaires Posuban : architecture ceremonielle monumentale des compagnies Asafo, reconnus comme patrimoine culturel. Musique traditionnelle : fontomfrom (grands tambours de cour), atumpan (tambours messagers), gyil (xylophone). Danse : fontomfrom (dance royale), apatampa (danse de femmes), asafo dances lors des festivals. Tissage kente : tissu de prestige akan tisse en bandes multicolores. Sculpture : tabourets de chef, bois sculpt, figurines akua'ba (poupees de fertilite). Poesie orale : proverbes (ebe), contes (anansesem), discours royaux par griots (okyeame). Cuisine : kenkey (boulette de mais fermentee), banku (pate de mais/manioc), tilapia et fruits de mer, ampesi (igname bouillie) ; plats regionaux caracteristiques.",
+      "spiritualities": "Religion traditionnelle (Akom) : pantheon de divinites (obosom) avec Nyame (dieu supreme) et Asase Yaa (deesse de la terre). Veneration des ancetres comme mediateurs entre les vivants et le divin. Role important des devins (okomfo) et des pretres feticheurs (komfo). Majorite chretienne aujourd'hui (protestantisme majoritaire, puis catholicisme). Minorite de confession islamique sunnite. Syncretisme repandu entre christianisme et croyances traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Confederation d'etats Borbor Fante : Abora, Ekumfi, Enyanmaim, Mankessim, Nkusukum. Etats Etsii Fante : Eguafo (Oman Panyin, le plus ancien), Fetu, Asebu, Oguaa (Cape Coast), Elmina, Moree, Otsir. La Confederation Fante formelle (1868-1873) fut l'une des premieres tentatives de gouvernement constitutionnel en Afrique subsaharienne avec une constitution ecrite en 1871 — precedant de plusieurs decennies la plupart des constitutions africaines contemporaines.",
+      "relationsWithNeighbors": "Guerres recurrentes avec l'Empire Ashanti (mi-XIXe siecle) pour defendre leur flanc nord et les routes commerciales directes vers la cote. Les Fante servaient d'intermediaires entre les Etats de l'interieur et les marchands europeens, accumulant richesses et influence. Alliance avec les Anglais contre les Hollandais (allies des Ashanti). Conflits avec les Neerlandais. Etablissement de communautes Fante en Gambie, Liberia, Cote d'Ivoire et Angola au cours du dernier demi-siecle (expeditions de peche).",
+      "conflictsOrAlliances": "1624 : traite avec les Hollandais contre les Portugais. 1697 : basculement vers une alliance avec les Anglais contre les Hollandais. 1715 : alliance defensive d'Abora contre la menace ashanti/kabesera. 1806 : invasion ashanti, defaite fante. 1824 : Premiere Guerre Anglo-Ashanti ; le gouverneur MacCarthy est tue a Nsamankow. 1826 : victoire fante-anglaise a la bataille de Dodowa. 1831 : traite restaurant l'independance. 1844 : Pacte de 1844 avec les Britanniques. 1867 : traite Anglo-Neerlandais percue comme alliance Anglo-Ashanti, declenchant la formation de la Confederation. Fevrier 1868 : mobilisation de 15 000 soldats, blocage des Hollandais a Komenda, siege d'Elmina. 1873 : effondrement de la Confederation sous pression britannique.",
+      "diaspora": "Diaspora fante dans les grandes villes ghaneennes (Accra, Kumasi, Tema) et dans les pays occidentaux (Royaume-Uni, Etats-Unis, Canada). Influence culturelle fante notable aux Antilles britanniques et neerlandaises (descendants des Fante asservis et debarques dans ces colonies). Communautes de peche etablies en Gambie, Liberia, Cote d'Ivoire, Angola."
+    },
+    "demography": {
+      "totalPopulation": 4500000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN — Fante people (4,5 millions, 13% de la population du Ghana) ; Fante language Wikipedia (plus de 6 millions de locuteurs dont L2) ; World Population Review Ghana 2025 : 35 064 300 habitants, langue fante 11,6%",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 4500000,
+          "note": "Regions Central et Western du Ghana ; aussi presents a Tema et dans les grandes villes ghaneennes ; plus grand sous-groupe akan apres les Ashanti"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Fante people. https://en.wikipedia.org/wiki/Fante_people",
+      "Wikipedia EN — Fante language. https://en.wikipedia.org/wiki/Fante_language",
+      "Wikipedia EN — Fante Confederacy. https://en.wikipedia.org/wiki/Fante_Confederacy",
+      "Wikipedia EN — Asafo. https://en.wikipedia.org/wiki/Asafo",
+      "SIL Ethnologue — Fante language (fat). https://www.ethnologue.com/language/fat/",
+      "World Population Review — Ghana Population 2025. https://worldpopulationreview.com/countries/ghana",
+      "CIA World Factbook — Ghana. https://www.cia.gov/the-world-factbook/countries/ghana/",
+      "Recensement national du Ghana, Ghana Statistical Service. https://statsghana.gov.gh/"
+    ]
+  }
+}

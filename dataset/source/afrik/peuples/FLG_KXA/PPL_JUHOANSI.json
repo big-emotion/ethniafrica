@@ -1,0 +1,113 @@
+{
+  "id": "PPL_JUHOANSI",
+  "nameMain": "Ju|'hoansi",
+  "languageFamilyId": "FLG_KXA",
+  "currentCountries": ["NAM", "BWA"],
+  "content": {
+    "appellations": {
+      "mainName": "Ju|'hoansi",
+      "selfAppellation": "Ju|'hoansi",
+      "exonyms": [
+        "!Kung du Sud",
+        "Southeastern !Kung",
+        "!Xun meridional",
+        "Zhu/'hoasi",
+        "Dobe Bushmen",
+        "Nyae Nyae Bushmen",
+        "Kung-Tsumkwe"
+      ],
+      "originOfExonyms": "Le terme Bushmen fut impose par les colons europeens et porte une connotation derogative. Le terme !Kung, utilise plus largement pour l'ensemble du continuum dialectal Ju, fut applique aux Ju|'hoansi comme sous-groupe meridional. L'endonyme Ju|'hoansi signifie litteralement les vrais gens en langue ju|'hoan, le suffixe -si marquant le pluriel. La notation |' indique une combinaison d'un clic dental avec une occlusive glottale.",
+      "whyProblematic": "Le terme Bushmen est considere comme offensant dans les contextes officiels bien que certains membres de la communaute l'aient reapproprie. L'appellation !Kung cree une confusion avec les groupes !Xun du nord. L'emploi de San comme terme collectif gomme les differences significatives entre les dizaines de groupes distincts.",
+      "contemporaryUsage": "Ju|'hoansi est le terme prefere par la communaute et adopte dans les contextes academiques et politiques. Le Nyae Nyae Conservancy (Namibie) utilise officiellement ce terme. Les Ju|'hoansi du Botswana se designent parfois comme ǂKx'aoǁ'ae selon la variete dialectale locale.",
+      "linguisticFamily": "FLG_KXA",
+      "ethnoLinguisticGroup": "Kx'a (branche Ju, variete sud-orientale)",
+      "historicalRegion": "Nyae Nyae (nord-est de la Namibie) et Dobe (nord-ouest du Botswana), bassin du Kalahari",
+      "currentCountries": ["NAM", "BWA"]
+    },
+    "ethnicities": [
+      "Ju|'hoansi de Nyae Nyae (Namibie, Otjozondjupa) — communaute la plus documentee, base du Nyae Nyae Conservancy",
+      "Ju|'hoansi de Tsumkwe (Namibie) — groupe central autour de la capitale administrative du Bushmanland",
+      "Ju|'hoansi de Dobe (Botswana, district de Ghanzi) — etudies intensivement par Richard Lee et Megan Biesele",
+      "ǂKx'aoǁ'ae (Botswana) — variete dialectale distincte, parfois consideree sous-groupe",
+      "Ju|'hoansi d'Epukiro (Namibie, Omaheke) — groupe meridional",
+      "Ju|'hoansi de Rundu (Namibie) — communaute le long du fleuve Okavango"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ju|'hoansi comptent parmi les populations humaines genetiquement les plus anciennes sur Terre. Les etudes genetiques (haplogroupe mtDNA L0d) indiquent une divergence des autres lignees humaines remontant a 100 000 a 200 000 ans selon certaines analyses. Leur presence dans le nord-est de la Namibie et le nord-ouest du Botswana est attestee depuis des dizaines de milliers d'annees. Les Ju|'hoansi sont la branche sud-orientale du continuum dialectal Ju (!Kung), dont la zone historique s'etend sur le Kalahari septentrional entre l'Angola, la Namibie et le Botswana.",
+      "formationPeriod": "L'identite specifique Ju|'hoansi comme groupe meridional du continuum Ju s'est consolidee autour des regions de Nyae Nyae (Namibie) et Dobe (Botswana). Ces regions, relativement isolees, permirent aux Ju|'hoansi de maintenir leur mode de vie de chasseurs-cueilleurs jusqu'aux annees 1960-1970. Sous l'administration sud-africaine du Sud-Ouest africain (Namibie), ils furent recrutes comme trackers militaires dans les annees 1970-1980 (SADF), bouleversant leur structure sociale.",
+      "migrationRoutes": [
+        "Population autochtone du Kalahari, sans migration fondatrice documentee",
+        "Mobilite saisonniere traditionnelle suivant les sources d'eau et les ressources alimentaires dans un territoire defini (n!ore)",
+        "Deplacements forces vers des reservations gouvernementales sous les administrations coloniales et post-coloniales"
+      ],
+      "historicalSettlementZones": [
+        "Nyae Nyae (nord-est de la Namibie, region Otjozondjupa) — territoire central historique",
+        "Dobe (nord-ouest du Botswana, district de Ghanzi) — territoire documenté par les anthropologues de Harvard",
+        "Zones autour de Tsumkwe (Namibie) — etablissement semi-permanent recent",
+        "Bushmanland (Namibie) — reserve administrative creee sous l'administration sud-africaine"
+      ],
+      "unificationsOrDivisions": "Les Ju|'hoansi sont organises en bandes autonomes (groupes de chasse) occupant des territoires ancestraux definis appeles n!ore. Chaque n!ore comprend typiquement un groupe de quelques families liees par la parente et les liens hxaro. L'administration sud-africaine du Sud-Ouest africain les recruta massivement dans l'armee (SADF) dans les annees 1970-1980, creant des tensions post-independance avec le gouvernement SWAPO. Apres l'independance namibienne (1990), le Nyae Nyae Farmers Cooperative (aujourd'hui Nyae Nyae Conservancy) fut fonde pour defendre leurs droits fonciers.",
+      "externalInfluences": "Contacts historiques avec les peuples Bantu (Herero, Tswana) et Khoekhoegowab (Khoekhoe). Administration coloniale allemande (SWA) puis sud-africaine avec impact croissant apres 1915. Recrutement massif dans l'armee sud-africaine (SADF) dans les annees 1970-1980 comme trackers, introduisant l'economie monetaire dans une societe egalitaire. Independence namibienne (1990) et politique SWAPO marginale vis-a-vis des San. Projets de developpement des ONG (Nyae Nyae Development Foundation, Marshall expedition de Harvard) depuis les annees 1950. Sedentarisation croissante depuis les annees 1970.",
+      "majorHistoricalEvents": "Expeditions Marshall (Harvard/Smithsonian, annees 1950-1960) : premier contact academique et filmographique intensif avec les Ju|'hoansi de Nyae Nyae. Etudes anthropologiques de Richard Lee et Irven DeVore (Harvard Kalahari Project, 1963+) a Dobe, fondatrices de l'anthropologie des chasseurs-cueilleurs. Recrutement dans la SADF namibienne (annees 1970-1980), perturbation majeure de la structure sociale. Independance namibienne (1990) et reconnaissance par le gouvernement SWAPO avec ambivalence envers les ex-soldats San. Creation du Nyae Nyae Conservancy (1998) : premier territoire gere par les Ju|'hoansi. Lutte juridique botswanaise des San du CKGR (2006) avec resonance pour les Ju|'hoansi."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation egalisatrice fondee sur la bande (groupe de parenté elargi de 10 a 30 personnes) occupant un territoire specifique (n!ore). Decisions prises par consensus, sans autorite coercitive permanente. Les vieillards et les bons chasseurs ont une influence morale mais pas de pouvoir politique. Les anthropologues qualifient ce systeme de societe d'aplatissement : tout comportement visant a l'accumulation ou au commandement est activement decourage par l'ironie et les moqueries.",
+      "clanOrganization": "Organisation en bandes fluides dont la composition varie selon la saison et les ressources. Les droits sur les territoires de chasse (n!ore) sont transmis bilateralement. Le systeme hxaro d'echange reciproque de cadeaux cree des reseaux d'obligations mutuelles entre individus de differentes bandes, assurant une forme d'assurance sociale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages bilatéraux : un individu peut appartenir au n!ore de son pere ou de sa mere et y exercer des droits. Les noms propres sont limites et partages selon un systeme complexe de jonction : deux personnes portant le meme nom etablissent une relation sociale particuliere (ko). Ce systeme de denomination lie les individus a travers les generations.",
+      "religiousAuthority": "Autorite des guerisseurs (n/om kxao, litteralement maitres du n/um). Le n/um est une energie de guerison localisee dans le bas du ventre des guerisseurs qui, lors de la danse de transe (ǃkia), s'echauffe, monte le long de la colonne et permet au guerisseur de voir et soigner les maladies. Environ la moitie des hommes et un tiers des femmes adultes sont reconnus comme guerisseurs. Les femmes accedent au n/um par le biais du tambour de danse (gwah)."
+    },
+    "languages": {
+      "mainLanguage": "Ju|'hoan (Ju|'hoansi)",
+      "isoCodes": ["ktz"],
+      "dialects": [
+        "Tsumkwe Ju|'hoan (Namibie) — dialecte central de reference, le mieux documente",
+        "Epukiro Ju|'hoan (Namibie, Omaheke) — dialecte meridional",
+        "Rundu Ju|'hoan (Namibie) — variete du nord-ouest",
+        "ǂKx'aoǁ'ein (Botswana) — dialecte botswanais distinct, parfois classe separement",
+        "Dobe Ju|'hoan (Botswana) — variete de la region de Dobe"
+      ],
+      "vehicularRole": "Le ju|'hoan est la langue maternelle des Ju|'hoansi et est classe comme stable par SIL Ethnologue (2024), ce qui le distingue favorablement de la plupart des autres langues San. Il est utilise comme langue d'instruction dans des ecoles de base au Nyae Nyae (Namibie). L'afrikaans, l'anglais et le setswana sont utilises selon les contextes regionaux. Le Joshua Project estime la population des locuteurs Kung-Tsumkwe a environ 72 000 individus (2025) toutes varietes confondues."
+    },
+    "culture": {
+      "majorRites": "La danse de transe (ǃkia) est le rite central de la vie ceremonielle Ju|'hoansi : elle debute au coucher du soleil et peut durer toute la nuit. Les femmes forment un cercle, tapent dans leurs mains selon des rythmes specifiques et chantent des chants de medicine (n/om songs) transmis par les esprits. Les hommes dansent autour d'elles ; les guerisseurs entrent progressivement en transe, leur energie de guerison (n/um) s'echauffe, monte le long de la colonne vertebrale et explose dans la tete (kia). En kia, les guerisseurs voient les maladies, argumentent avec les esprits des morts (!gangwasi) et extraient les maladies par l'imposition des mains et les frictions. Rites de passage : premiere menstruation (rite de l'eland, interdisant a une jeune fille tout contact avec des hommes et impliquant des chants speciaux), ceremonie du premier gibier tue par un jeune chasseur (scarifications et partage rituel), mariage (arrangement parental et cohabitation progressive), mort (enterrement rapide et tabou sur le nom du defunt). Systeme hxaro : echange ritualisé de cadeaux non alimentaires entre partenaires de differentes bandes, creant des obligations de reciprocite et des droits d'hospitalite sur des territoires etrangers.",
+      "symbols": "Le motif de l'eland (antilope geante) comme animal sacre central par excellence, associe aux ceremonies de puberte feminine et de guerison. Le n/um (energie de guerison) comme concept central de la cosmologie. Art rupestre du Kalahari (peintures et gravures) representant des etres mi-hommes mi-antilopes (therianthropes) interpretes comme des representations de l'etat de transe. Arcs asymetriques et fleches empoisonnees (venin de chrysalide de Diamphidia) comme symboles de l'identite masculine. Colliers de coquilles d'oeuf d'autruche (ethe) comme ornements et monnaie d'echange.",
+      "artsAndMusic": "Les chants de medicine (n/om songs) sont le coeur de la vie musicale : chaque guerisseur possede son propre chant, revele en reve par les esprits, qui sert a activer son n/um. Polyphonie vocale caracteristique avec des vocalisations complexes incluant des clicks phonemiques. Arc musical utilise pour la musique individuelle contemplative. Tambour de danse pour les ceremonies feminines. Chants narratifs (contes) transmettant les mythes d'origine, les regles de comportement social et les connaissances ecologiques du Kalahari. Les contes de Mantis (Kaggen) et d'autres figures mythologiques constituent un repertoire litteraire oral riche. La tradition de conte-veille (veld stories) tenue autour des feux de camp est fondamentale dans la transmission culturelle. Art rupestre : bien que les Ju|'hoansi contemporains ne produisent plus d'art rupestre, leurs ancetres en sont les auteurs ; les guerisseurs actuels peuvent parfois interpreter ces images comme des representations d'etats de transe.",
+      "spiritualities": "Cosmologie a deux divinites : un grand dieu createur (!Xu ou Gao Na, vivant a l'est) et un dieu inferieur malveillant (Khaudum ou !Gara, vivant a l'ouest et cause des souffrances et de la mort). Les esprits des morts (!gangwasi) constituent le principal danger spirituel : jaloux des vivants, ils tentent d'emporter les ames des malades. C'est contre eux que les guerisseurs combattent en transe. Le n/um (energie de guerison) est presente dans certaines plantes, animaux (notamment l'eland) et dans les guerisseurs entraines. La danse de transe est le principal dispositif d'acces a ce pouvoir. Influence du christianisme dans certaines communautes, notamment en Namibie."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Aucune organisation etatique ou chefferie permanente. Les Ju|'hoansi representent le modele classique de la societe de bande egalisatrice sans accumulation ni pouvoir coercitif. Leur organisation est fondee sur le partage obligatoire des ressources, la mobilite et la flexibilite des affiliations de groupe.",
+      "relationsWithNeighbors": "Relations d'echange et de coexistence historiques avec les peuples Bantu voisins (Herero, Tswana) : les Ju|'hoansi fournissaient gibier et services de trackers contre du betail, du fer et des produits agricoles. Relations d'arrangement de mariage avec d'autres bandes Ju|'hoansi creant des reseaux d'alliance trans-regionaux. Sous l'administration coloniale allemande et sud-africaine, marginalisation progressive et spoliation des terres. Relations ambivalentes avec le gouvernement namibien post-independance du fait du recrutement dans la SADF. Les Ju|'hoansi du Botswana (Dobe) firent l'objet de politiques de sedentarisation forcee a partir des annees 1970 et d'integration dans le systeme de pasteuri (mafisa) tswana.",
+      "conflictsOrAlliances": "Recrutement massif dans l'armee sud-africaine (SADF) comme trackers pendant la guerre d'independance namibienne (1966-1990), creant des tensions durables avec le gouvernement SWAPO post-independance. Cela les distingue des autres San et complique leur integration dans la Namibie independante. Luttes juridiques et politiques pour le droit a la terre dans les deux pays depuis les annees 1990. Creation du Nyae Nyae Conservancy (1998, Namibie) comme victoire partielle dans la reconnaissance des droits fonciers.",
+      "diaspora": "Pas de diaspora historique au sens migratoire traditionnel. Dispersement involontaire force par les politiques de sedentarisation et de reservation. Certains Ju|'hoansi vivent dans des villes namibiennes (Tsumkwe, Windhoek) et botswanaises (Ghanzi) dans des conditions marginalisees. Un nombre limite travaille dans des lodges ecotouristiques et des musees vivants comme le Ju|'hoansi Living Museum pres de Tsumkwe."
+    },
+    "demography": {
+      "totalPopulation": 15000,
+      "referenceYear": 2025,
+      "source": "Estimations combinant : SIL Ethnologue (ktz, stable, 10 000 a 1 million), Joshua Project (72 100 pour Kung-Tsumkwe toutes variantes confondues, 2025), UNESCO Tentative List San Living Cultural Landscape (environ 1 600 Ju|'hoansi dans le district de Tsumkwe, Namibie), et travaux de Richard Lee sur les Dobe. La population strictement Ju|'hoansi (sans les autres varietes !Kung) est estimee entre 12 000 et 18 000 individus.",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 10000,
+          "note": "Principalement Nyae Nyae et Tsumkwe (Otjozondjupa), regions d'Omaheke et de Rundu"
+        },
+        {
+          "country": "BWA",
+          "population": 5000,
+          "note": "District de Ghanzi (Dobe, |Xai|xai), nord-ouest du Botswana"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Ju|'hoan language. https://en.wikipedia.org/wiki/Ju%C7%80%CA%BChoan_language",
+      "SIL Ethnologue — Ju|'hoansi language (ktz). https://www.ethnologue.com/language/ktz/",
+      "Glottolog — South-Eastern Ju (ktz). https://glottolog.org/resource/languoid/id/juho1239",
+      "Joshua Project — Ju'hoan language resources. https://joshuaproject.net/languages/ktz",
+      "UNESCO Tentative List — San Living Cultural Landscape (Tsumkwe District). https://whc.unesco.org/en/tentativelists/6096/",
+      "Peoples of the World — The Indigenous Juhoansi People. https://www.peoplesoftheworld.org/text?people=Juhoansi",
+      "Lee, Richard B. & DeVore, Irven (1976). Kalahari Hunter-Gatherers. Harvard University Press.",
+      "Cultural Survival Quarterly — Progress or Poverty? The Dobe Ju|'hoansi. https://www.culturalsurvival.org/publications/cultural-survival-quarterly/progress-or-poverty-dobe-juhoansi",
+      "Shamwari Game Reserve — Ju/'hoansi Tracking Cultural Experience. https://www.shamwari.com/cultural-experience/"
+    ]
+  }
+}

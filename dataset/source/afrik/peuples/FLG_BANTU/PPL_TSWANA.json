@@ -1,0 +1,113 @@
+{
+  "id": "PPL_TSWANA",
+  "nameMain": "Tswana",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["BWA", "ZAF", "NAM"],
+  "content": {
+    "appellations": {
+      "mainName": "Tswana",
+      "selfAppellation": "Batswana (pl.), Motswana (sg.)",
+      "exonyms": [
+        "Tswana (terme europeen)",
+        "Bechuana / Bechuanas (forme coloniale archaique)",
+        "Chuana, Coana, Cuana, Sechuana (variantes coloniales)"
+      ],
+      "originOfExonyms": "Le terme Bechuana fut utilise par les colonisateurs britanniques, donnant son nom au Bechuanaland (actuel Botswana). Setswana designe la langue, Batswana le peuple.",
+      "whyProblematic": "Le terme Batswana designe aussi tous les citoyens du Botswana, independamment de leur ethnicite. Il convient de distinguer les Tswana ethniques des citoyens botswanais au sens civique.",
+      "contemporaryUsage": "Batswana est l'autodesignation ethnique courante. En Afrique du Sud, les sous-groupes s'identifient souvent par leur clan (Bakgatla, Barolong, Bafokeng, etc.).",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantous de la zone S (Sotho-Tswana), groupe Sotho meridional",
+      "historicalRegion": "Plateau du Kalahari, bassin du Vaal, hauts plateaux d'Afrique australe (Botswana, Afrique du Sud septentrional, Namibie orientale)",
+      "currentCountries": ["BWA", "ZAF", "NAM"]
+    },
+    "ethnicities": [
+      "Bakwena (Botswana, clan du Crocodile)",
+      "Bangwaketse (Botswana meridional, sous Makaba II au XIXe s.)",
+      "Bangwato / Bangwaketse du Nord (Botswana central)",
+      "Batawana (Botswana nord-ouest, delta de l'Okavango)",
+      "Barolong (Afrique du Sud, Nord-Ouest et Etat Libre, capitale Mahikeng)",
+      "Bakgatla-ba-kgafela (Afrique du Sud, Nord-Ouest, zone Pilanesberg)",
+      "Bahurutshe (Afrique du Sud, district de Ngaka Modiri Molema, Zeerust)",
+      "Batlhaping (Afrique du Sud, Nord-Ouest et Cap-Nord, Taung)",
+      "Bafokeng / Royal Bafokeng Nation (Afrique du Sud, Phokeng-Rustenburg)",
+      "Tlharo et Kgalagadi (Namibie, environ 6 000 personnes)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les ancetres des Batswana s'installerent dans la region allant du fleuve Vaal au Botswana vers 600 de notre ere (consensus academique). Ils developperent un complexe agropastoral base sur l'elevage bovin. Le site de Toutswe (Botswana oriental, 600-1300 CE) illustre leurs premiers etablissements. Ils commercaient via le Limpopo avec l'ocean Indien (ivoire, or, perles asiatiques). Les Batswana font partie du groupe ethnolinguistique Sotho-Tswana.",
+      "formationPeriod": "Entre le VIIe et le XIVe siecle, formation de chefferies distinctes (merafe) sur le plateau. Le site de Kaditshwene (fin XVe s.) etait une capitale manufacturiere et commercante de ~10 000 habitants. Au XVe-XIXe siecle, etablissement de grandes agglomerations comme Kweneng Ruins (Suikerbosrand, Afrique du Sud).",
+      "migrationRoutes": [
+        "Expansion depuis le bassin du Vaal vers le nord et l'ouest (plateau du Kalahari)",
+        "Periode du Difaqane/Mfecane (1815-1840) : raids et deplacements dus aux migrations nguni; les Tswana se reorganiserent en etats plus forts (Bangwaketse, Bakwena, Bangwato)",
+        "Reinstallation dans les districts arides du Kalahari pour proteger les troupeaux bovins durant le Difaqane"
+      ],
+      "historicalSettlementZones": [
+        "Botswana sud et est (Gaborone, Kanye, Serowe, Maun)",
+        "Provinces du Nord-Ouest, Gauteng, Cap-Nord et Etat Libre (Afrique du Sud)",
+        "Namibie orientale (district de Gobabis, environ 6 000 personnes)"
+      ],
+      "unificationsOrDivisions": "Organisation en merafe (chefferies) independantes sous des dikgosi (chefs). Pas d'empire unifie mais alliances et rivalites entre clans. Le systeme du kgotla (assemblee publique) assurait la cohesion locale. La colonisation britannique du Bechuanaland (1885) preserva en partie les structures traditionnelles.",
+      "externalInfluences": "Contacts anciens avec les Khoisan (San et Khoikhoi). Commerce avec les Shona via le Limpopo. Influence decisive des missionnaires europeens au XIXe s. (Robert Moffat, 1826 : premier ecrit en Setswana ; traduction complete de la Bible en 1857). Guerre Batswana-Boer et Bataille de Dimawe (1852-1860). Protectorat britannique du Bechuanaland (1885-1966). Politique de l'apartheid et creation du bantoustan de Bophuthatswana (1977-1994) en Afrique du Sud.",
+      "majorHistoricalEvents": "1824 : les Bangwaketse dominent la region sous Makaba II. 1852-1860 : conflit avec les Boers, paix de Potchefstroom. 1885 : protectorat britannique du Bechuanaland. 1966 : independance du Botswana. 1977-1994 : bantoustan de Bophuthatswana en Afrique du Sud."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en merafe (chefferies) sous des dikgosi (chefs) hereditaires assistés de conseils d'anciens. Le kgotla est l'assemblee publique traditionnelle pour resoudre les conflits, prendre des decisions collectives et assurer la justice coutumiere (officiellement reconnu au Botswana). La devise botswanaise Pula incarne le systeme de consensualisme (therisanyo). Le kgosi gouverne selon le principe botho : une personne se definit par ses relations avec les autres.",
+      "clanOrganization": "Structure clanique patrilineaire. Chaque morafe (chefferie) porte le prefix Ba- (peuple de). Les clans principaux au Botswana : Bakwena, Bangwaketse, Bangwato, Batawana, Barolong, Batlhaping, Bafokeng, Bakgatla, Tlharo. En Afrique du Sud : Bahurutshe, Bakgatla-ba-kgafela, Barolong, Batlhaping, Bafokeng (Royal Bafokeng Nation avec 4 milliards USD d'actifs via le platine de Rustenburg).",
+      "ageClassSystems": "Systeme des mephato (classes d'age) : garçons de 16 ans circoncis en camp isole (bogwane, puis bogwera), puis presentes au kgotla avec un nom de regiment et des armes. Certains clans maintiennent les classes d'age feminines (bojale). Le systeme a ete partiel-lement erode par la colonisation et le christianisme mais connu une revitalisation recente (Bakgatla, Balete).",
+      "roleOfLineages": "Lignages patrilineaires determinant l'heritage, la succession et les alliances. Les mariages entre cousins (cognatiques) renforcaient les alliances entre lignages. Le bogadi (dot en betail) legitime l'union et etablit les droits sur les enfants.",
+      "religiousAuthority": "Autorite des kgosi en matiere spirituelle et politique. Mediation aupres du Modimo (Dieu supreme) et des badimo (esprits ancestraux) par des libations (go phasa) et rituels de purification (go fola). Pasteurs chretiens tres influents depuis le XIXe s. (syncrétisme marque)."
+    },
+    "languages": {
+      "mainLanguage": "Setswana (tswana)",
+      "isoCodes": ["tsn"],
+      "dialects": [
+        "Setswana du Botswana (dialecte standard, base des ecrits officiels)",
+        "Setswana du Nord-Ouest (Afrique du Sud) — variations selon les clans : Bakgatla, Barolong, Bakwena, Batlhaping, Bahurutshe, Bafokeng, Batlokwa, Bataung, Batswapong",
+        "Kgalagadi / Sekhalahari (parle par des groupes apparentes en Namibie et Botswana occidental)"
+      ],
+      "vehicularRole": "Langue officielle du Botswana et l'une des 11 langues officielles d'Afrique du Sud. Parlee par environ 8,2 millions de locuteurs au total. Dominant dans les domaines public, officiel et social au Botswana. L'anglais et l'afrikaans sont co-utilises en Afrique du Sud et en Namibie. Premiere traduction complete d'une Bible en langue sub-saharienne en Setswana (1857)."
+    },
+    "culture": {
+      "majorRites": "Bojale (initiation feminine) : formation en classes d'age feminines aux chants, responsabilites et preparation au mariage. Bogwera (initiation masculine) : circoncision en camp isole, integration dans un regiment d'age (mephato). Bogadi : ceremonie de mariage avec echange de betail pour legitimer l'union. Seswaa : repas collectif de viande pile servi lors des mariages et funerailles. Libations (go phasa) aux ancetres pour les pluies et la protection. Yennayer (calendrier agricole traditionnel).",
+      "symbols": "La pluie (pula) est le symbole supreme et le mot de bienvenue national au Botswana. Le crocodile (kwena) est le totem du clan dominant. Leteisi (tissu en coton colore) pour les celebrations. Mogagolwane (couverture a carreaux) pour les femmes mariees lors des ceremonies. La vache comme richesse et lien social fondamental (bogadi).",
+      "artsAndMusic": "Musique principalement vocale avec percussions (moropa, tambours). Instruments : setinkane (mini-piano lamellaire), segankure/segaba (arc musical type erhu), phala (sifflet de celebration). Clapotis des mains (hommes sur phathisi en peau de chevre). Rap tswana contemporain (Motswako). Artisanat : vannerie en palmier mokola avec teintures vegetales (paniers de stockage, plateaux a grain), poterie en argile (jarres d'eau, biere, cuisine), travail du bois (usten-siles, chaises, tambours), ouvrages en cuir. Astronomie traditionnelle : Milky Way appele Molalatladi, Venus Mphatlalatsana.",
+      "spiritualities": "Monotheisme traditionnel avec Modimo comme Dieu supreme. Badimo (esprits ancestraux) comme intermediaires entre les vivants et Dieu, invoques par des libations (go phasa) et rituels. Botho comme philosophie de vie (motho ke motho ka batho : une personne est une personne grace aux autres). Fort syncrétisme avec le christianisme (protestantisme et catholicisme, missions depuis 1820). Philosophie de la pluie (pula) comme benediction divine."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferie des Bangwaketse sous Makaba II (1820s, dominant la region via l'elevage et les raids). Alliance des Bakwena, Bangwaketse, Bangwato et Batawana pour le commerce de l'ivoire (1840s-1850s). Protectorat du Bechuanaland (1885) : les chefs Khama III, Sebele et Bathoen negocie-rent directement a Londres la protection britannique contre l'annexion rhodesienne (1895). Royal Bafokeng Nation (Afrique du Sud) : chef ancestrale maintenant un fonds souverain de 4 milliards USD via les redevances minieres de platine.",
+      "relationsWithNeighbors": "Contacts anciens avec les San (Khoisan) dont certains furent integres ou subjugues. Alliances commerciales avec les Shona via le Limpopo (commerce d'ivoire et de perles). Rivalites avec les Ndebele et les Zulu durant le Difaqane. Relations tendues avec les colons boers au XIXe s. (bataille de Dimawe, 1852). Cooperation diplomatique pour obtenir le protectorat britannique (1885).",
+      "conflictsOrAlliances": "Guerre Batswana-Boer (1852-1860), paix de Potchefstroom. Resistance a l'incorporation dans la Rhodesie du Sud de Cecil Rhodes (1895). Politique de l'apartheid : creation du bantoustan de Bophuthatswana (1977-1994, reincorpore en Afrique du Sud en 1994). Botswana independant depuis 1966 : modele de democratie et de croissance en Afrique.",
+      "diaspora": "Tswana presents dans les grandes villes d'Afrique du Sud (Johannesburg, Pretoria, Kimberley) et au Botswana (Gaborone, Francistown). Communautes en Namibie (environ 6 000, district de Gobabis). Diaspora dans les pays occidentaux (Europe du Nord, Royaume-Uni, Etats-Unis) principalement via la migration economique et universitaire."
+    },
+    "demography": {
+      "totalPopulation": 8200000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue 2024 : ~8,2 millions de locuteurs de Setswana. Wikipedia/Botswana 2011 : ~85% de la population du Botswana sont Tswana ethniques. Namibia Tourism Board 2025 : ~6 000 Tswana en Namibie. Estimations projections 2025.",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 2000000,
+          "notes": "~79-85% de la population nationale (2,56 M total en 2025)"
+        },
+        {
+          "country": "ZAF",
+          "population": 6000000,
+          "notes": "Plus de 4 M de locuteurs Setswana (2012); provinces Nord-Ouest, Gauteng, Cap-Nord, Etat Libre"
+        },
+        {
+          "country": "NAM",
+          "population": 6500,
+          "notes": "Groupes Tlhaping, Kgalagadi et Tlharo; district de Gobabis"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Tswana people : https://en.wikipedia.org/wiki/Tswana_people",
+      "Wikipedia EN — Tswana language : https://en.wikipedia.org/wiki/Tswana_language",
+      "SIL Ethnologue — Tswana (tsn) : https://www.ethnologue.com/language/tsn/",
+      "Namibia Tourism Board — Tswana people in Namibia (2025) : https://www.facebook.com/NamibiaTourismBoard/posts/the-smallest-cultural-group-in-namibia",
+      "CIA World Factbook — Botswana : https://www.cia.gov/the-world-factbook/countries/botswana/",
+      "CIA World Factbook — South Africa : https://www.cia.gov/the-world-factbook/countries/south-africa/",
+      "Academia.edu — Setswana Dialects and Inter-Dialectical Variation in Botswana : https://www.academia.edu/41715929/Setswana_Dialects_and_Inter_Dialectical_Variation_in_the_Republic_of_Botswana"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+# Nom du peuple
+- Nom principal : Wolof
+- Auto-appellation : Wolof
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Région historique : Sénégal (Cayor, Baol), GMB, MRT
+- Identifiant : PPL_WOLOF
+
+# 1. Ethnies incluses
+- Wolof du Cayor
+- Wolof du Baol
+- Wolof de Gambie
+
+# 2. Origines
+- Apparition historique dans la vallée du fleuve Sénégal.
+- Expansion progressive vers l’ouest et le sud.
+
+# 3. Organisation
+- Structure sociale en ordres (anciens systèmes : geer, jaam, etc.).
+- Chefferies traditionnelles.
+
+# 4. Langue
+- Wolof
+- ISO : wol
+
+# 5. Culture
+- Musiques mbalax.
+- Textiles traditionnels.
+- Fort syncrétisme religieux islamique et pré-islamique.
+
+# 6. Histoire
+- Royaumes wolofs : Djolof, Cayor, Baol.
+- Rôle central dans l’histoire précoloniale et coloniale du Sénégal.
+
+# 7. Démographie
+- Population : 7 902 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (wol)
+- Sénégal ANSD 2023
+- Djolof Historical Records

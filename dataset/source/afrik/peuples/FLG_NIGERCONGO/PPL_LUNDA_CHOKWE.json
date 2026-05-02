@@ -1,0 +1,94 @@
+{
+  "id": "PPL_LUNDA_CHOKWE",
+  "nameMain": "Lunda-Chokwe",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["AGO", "COD", "ZMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Lunda-Chokwe",
+      "selfAppellation": "Lunda-Chokwe",
+      "exonyms": ["Lunda Tchokwe", "Ruund-Cokwe"],
+      "originOfExonyms": "Lunda-Chokwe est une designation administrative et ethnographique hyphenee apparue vers 1920 pour designer l'ensemble forme par l'imbrication des peuples Lunda (Ruund) et Chokwe (Cokwe/Tchokwe) dans le nord-est de l'Angola et les zones limitrophes du Congo et de la Zambie. Le trait d'union reflete la fusion progressive de ces deux entites historiquement distinctes. Lunda designe les sujets de l'Empire Lunda (Ruund). Chokwe (Tchokwe en portugais, Cokwe) designe le peuple qui a renverse l'Empire Lunda au 19e siecle.",
+      "whyProblematic": "La denomination Lunda-Chokwe recouvre une realite composite. Les trois grandes langues du groupe (Ruund, Lunda et Chokwe) ne sont pas mutuellement intelligibles. Des distinctions importantes existent: les Ruund (Lunda du Nord) originaires du Katanga, les Lunda du Sud (dont les Ndembu en Zambie et au Zimbabwe), et les Chokwe (originaires du sud de l'Empire Lunda). PPL_LUNDA_CHOKWE est une fiche complementaire a PPL_CHOKWE: elle designe un ensemble regional et identitaire post-1920 distinct de la fiche Chokwe seule, qui se concentre sur ce peuple specifique. Les Chokwe sont traites dans PPL_CHOKWE; la presente fiche documente l'ensemble Lunda-Chokwe tel que defini dans le contexte angolais (Lunda Norte, Lunda Sul, Moxico).",
+      "contemporaryUsage": "Terme administratif et ethnographique utilise en Angola pour designer les populations des provinces de Lunda Norte, Lunda Sul, et Moxico. Representent environ 8% de la population angolaise selon les estimations de 1988. Terme utilise dans les analyses politiques de la guerre civile angolaise pour designer les alliances ethno-regionales.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou central (groupe Ciokwe-Luchazi / Ruund), Niger-Congo",
+      "historicalRegion": "Angola nord-est (Lunda Norte, Lunda Sul), Katanga/Shaba (RDC), nord-ouest Zambie",
+      "currentCountries": ["AGO", "COD", "ZMB"]
+    },
+    "ethnicities": [
+      "Lunda (Ruund)",
+      "Chokwe (Cokwe)",
+      "Ndembu",
+      "Minungu",
+      "Shinji"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Lunda (Ruund) sont originaires de la region de la riviere Kalanyi dans l'actuelle RDC. Ils ont fonde le Royaume de Lunda au 17e siecle sous leur souverain le Mwata Yamvo (ou Mwaant Yav), avec la capitale Musumba. Les Chokwe etaient a l'origine l'un des douze clans de l'Empire Lunda, situes a la peripherie meridionale de l'empire pres des sources des rivieres Cuango et Cassai. Partages par une ancestralite commune issue des migrations Lunda du 16e siecle, les deux peuples ont des chefs hereditaires derivant d'un meme fonds ancestral.",
+      "formationPeriod": "L'Empire Lunda est fonde au 17e siecle. La categorie Lunda-Chokwe en tant qu'ensemble composite emerge vers 1920, apres un siecle d'intermariages et d'interpenétration entre Ruund et Chokwe dans les zones de contact angolo-congolaises.",
+      "migrationRoutes": [
+        "Les Lunda (Ruund): depuis la riviere Kalanyi (RDC) vers le Katanga, l'est de l'Angola et le nord-ouest de la Zambie",
+        "Les Chokwe: depuis le sud de l'Empire Lunda (sources Cuango-Cassai) vers le nord (expansion commerciale et militaire du 19e siecle)",
+        "Expansion Chokwe vers le nord, absorbant les communautes Ruund et envahissant la capitale de l'empire affaibli au Katanga"
+      ],
+      "historicalSettlementZones": [
+        "Provinces de Lunda Norte et Lunda Sul, Angola",
+        "Province de Moxico, Angola",
+        "Province du Shaba (Katanga), RDC",
+        "Province du Nord-Ouest, Zambie"
+      ],
+      "unificationsOrDivisions": "Le melange Lunda-Chokwe resulte d'un processus historique: apres l'expansion Chokwe du 19e siecle, une population mixte emergea dans les zones de l'est angolais et du sud congolais. L'intermelange continua jusqu'aux environs de 1920, date a laquelle le label hyphenee Lunda-Chokwe fut adopte. Les membres commencerent a se percevoir (dans certains contextes) comme un seul peuple. Cependant, des communautes virtuellement homogenes de Chokwe, Ruund ou Lunda du Sud subsistent dans les deux pays.",
+      "externalInfluences": "Decoupage colonial (1884-1891): le territoire Lunda-Chokwe fut divise entre l'Angola portugais, l'Etat independant du Congo de Leopold II et la Rhodesie du Nord britannique. Independance de l'Angola (1975): les Lunda-Chokwe urbains du nord tendaient a soutenir le MPLA; les Chokwe ruraux du sud tendaient vers l'UNITA. Guerre civile angolaise (1975-2002): forces UNITA actives dans les provinces de Lunda et Moxico. Mines de diamants de Lunda Norte exploitees depuis les annees 1920 (compagnie emplooyant 18 000 personnes avant l'independance).",
+      "majorHistoricalEvents": "17e siecle: fondation du Royaume de Lunda sous le Mwata Yamvo. 19e siecle: expansion Chokwe, declin de l'Empire Lunda. 1887: fin de l'Empire Lunda, envahi par les Chokwe armes de fusils. 1884-1894: partage colonial, le territoire Lunda-Chokwe divise entre Angola, Congo et Zambie. 1920: emergence de la categorie Lunda-Chokwe. 1975-2002: guerre civile angolaise; exode de familles Lunda-Chokwe vers le Shaba (Zaire). 1977-1978: refugies katangais (locuteurs lunda) forment le FNLC et utilisent l'est angolais comme base pour les invasions du Shaba."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Cote Lunda: Empire centralise sous le Mwata Yamvo (capital Musumba). Le roi Lunda avait vingt a trente epouses. L'autorite imperiale s'etendait par conquetes et alliances, generant des royaumes tributaires. Cote Chokwe: organisation en chefferies (mwanangana = 'surveillant de la terre'). Les tribunaux de village (anciens males), les tribunaux de chef et les tribunaux de district coexistaient. Le chef est le representant de Kalunga (dieu supreme), considere comme un lion. Apres la fusion Lunda-Chokwe, la structure politique est hybride: chefferies locales Chokwe et vestiges de l'autorite Lunda.",
+      "clanOrganization": "Societe matrilineaire (Chokwe) ou la femme s'installe chez la famille du mari apres le mariage. La polygynie etait pratiquee, surtout par les chefs. Cote Lunda, la succession au titre de Mwata Yamvo suivait des regles specifiques au sein de la famille royale elargie.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires (Chokwe) determinent la succession a la chefferie et les droits rituels. Les esclaves captures dans les peuples vaincus pouvaient etre integres a la societe Lunda apres avoir prouve leur loyaute (en rapportant la tete d'un ennemi, le collier de fer symbolisant l'esclavage etait retire).",
+      "religiousAuthority": "Les chefs Chokwe sont les representants de Kalunga/Nzambi (dieu supreme createur). Les mahamba (esprits ancestraux et de la nature) sont veneres via des cultes dedies. Les cimbanda (exorcistes-guerisseurs) traitent les maladies causees par les esprits. Les sanctuaires ancestraux kachipango contiennent sculptures et objets rituels. La religion traditionnelle coexiste avec le christianisme adopte progressivement depuis la periode coloniale."
+    },
+    "languages": {
+      "mainLanguage": "Chokwe (Cokwe)",
+      "isoCodes": ["cjk", "lun"],
+      "dialects": [
+        "Ruund (Lunda du Nord)",
+        "Chilunda (Lunda du Sud)",
+        "Ndembu"
+      ],
+      "vehicularRole": "Le chokwe (ISO cjk) est une lingua franca dans l'est de l'Angola et langue nationale. En Angola, plus de 2 millions de locuteurs natifs. Le lunda (ISO lun, Chilunda) est parle principalement en RDC et Zambie. Le ruund est la langue historique des fondateurs de l'empire. Les trois langues majeures (Ruund, Lunda, Chokwe) sont distinctes et non mutuellement intelligibles, bien qu'ayant emprunte des termes politiques du ruund. Le portugais est officiel en Angola; le francais en RDC; l'anglais en Zambie."
+    },
+    "culture": {
+      "majorRites": "Mukanda (cote Chokwe): initiation masculine a la puberte, incluant la circoncision, supervision par les vilombola, education religieuse, sexuelle, artisanale et traditionnelle, duree de quelques mois a un an; les inities sont 'renés' a la sortie. Ukule: initiation feminine individuelle avec scarifications abdominales et lombaires, peintures corporelles. Cultes des mahamba (esprits): offrandes, sacrifices, prières pour la protection. Ceremonies royales Lunda presidees par le Mwata Yamvo. Fetes liees aux recoltes et au cycle agricole.",
+      "symbols": "Le Tabouret d'Or (Sika Dwa) de l'Asante a ete cree avec l'aide du pretre Guan, illustrant les connexions symboliques regionaux. Cote Chokwe: les masques makishi sont les symboles identitaires majeurs; le lion symbolise le pouvoir royal; les figures sculptees Cikungu personnifient la puissance collective des ancetres Chokwe. Cote Lunda: le Mwata Yamvo et sa capitale Musumba symbolisent l'empire. Les mines de diamants de Lunda Norte sont devenues un symbole economique moderne.",
+      "artsAndMusic": "Les Chokwe sont mondialement reconnus pour leur art: masques (cikungu, cihongo, pwo/mwana pwo), sculptures (Chibinda Ilunga, mwana po, ngombo), mobilier royal (trones, sceptres, tabourets ngunja), artisanat (paniers, poterie). Les sculpteurs professionnels (songi) creent des objets de prestige et rituels sur commande. L'art Chokwe est present dans les grands musees europeens; des restitutions ont ete effectuees vers le Musee National de Dundo (Angola). La musique et la danse accompagnent toutes les ceremonies d'initiation et rituels.",
+      "spiritualities": "Culte des ancetres (mahamba) central dans la vie spirituelle Chokwe-Lunda. Kalunga ou Nzambi est le dieu createur supreme, non adresse directement mais via les esprits ancestraux. Rituel de purification (argile blanche symbolisant l'innocence). Syncretisme avec le christianisme depuis la periode coloniale portugaise: les pratiques spirituelles traditionnelles coexistent avec le christianisme. Le chef Chokwe represente Kalunga sur terre."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Empire Lunda: fonde au 17e siecle, s'etendant sur 150 000 km2 en 1680 et jusqu'a 300 000 km2 au 19e siecle; gouverne par le Mwata Yamvo depuis Musumba; tributaires: Luvale, Kasanje et autres groupes periferiques. Royaume Chokwe: emerge dans la seconde moitie du 19e siecle; les Chokwe armes de fusils envahissent la capitale Lunda affaiblie en 1887 et etablissent leur propre royaume. Royaume Uni de Lunda-Tchokwe: entite politique revendiquee dans le contexte post-colonial (superficie comparable a l'Espagne, 501 922 km2; 4,5 millions d'habitants selon recensement 2011 de cet entite).",
+      "relationsWithNeighbors": "Voisins: Luba (allies historiques des Lunda), Pende, Mbangani, Kete (nord Chokwe), Lwena/Luvale, Luchazi, Mbwela (est Chokwe), Ovimbundu, Imbangala, Songo (ouest Chokwe), Kwanyama (sud Chokwe). Commerce intense avec les Portugais, Arabes et Swahili via les routes d'ivoire et d'esclaves. Relations de vassalite avec de nombreux peuples de la region sous l'Empire Lunda.",
+      "conflictsOrAlliances": "Attaques contre les Mbundu (apres 1608). Expansion Chokwe et invasion de la capitale Lunda (1887). Implication dans la guerre civile angolaise: les Lunda-Chokwe du nord (urbains) proches du MPLA; les Chokwe ruraux du sud proches de l'UNITA. Invasions du Shaba (Zaire) par le FNLC en 1977-1978, utilisant l'est angolais comme base arriere. Les refugies katangais Lunda en Angola dans les annees 1980.",
+      "diaspora": "Refugies Lunda-Chokwe en RDC (province du Shaba) dans les annees 1980 suite a l'insurrection UNITA. Retours progressifs en Angola apres les accords de paix (2002). Communautes Ndembu en Zambie et au Zimbabwe."
+    },
+    "demography": {
+      "totalPopulation": 5500000,
+      "referenceYear": 2025,
+      "source": "Estimation 2025 basee sur: Lunda (Ruund+Sud) environ 2,5 millions (Angola 800k, RDC 1,1M, Zambie 600k selon Wikipedia); Chokwe environ 1,3-2 millions (Angola 2M locuteurs natifs selon Wikipedia 2024); categorie Lunda-Chokwe d'Angola estimee a 8% de la population angolaise soit ~2,8M en 2025 (population Angola ~37M); estimation totale ensemble Lunda-Chokwe toutes composantes: environ 5,5 millions.",
+      "distributionByCountry": [
+        { "country": "AGO", "population": 3000000 },
+        { "country": "COD", "population": 1800000 },
+        { "country": "ZMB", "population": 700000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Lunda people (https://en.wikipedia.org/wiki/Lunda_people)",
+      "Wikipedia EN – Chokwe people (https://en.wikipedia.org/wiki/Chokwe_people)",
+      "Wikipedia EN – Lunda Empire (https://en.wikipedia.org/wiki/Lunda_Empire)",
+      "Wikipedia EN – Chokwe language (https://en.wikipedia.org/wiki/Chokwe_language)",
+      "Country Studies US – Angola: Lunda-Chokwe (https://countrystudies.us/angola/62.htm)",
+      "Britannica – Lunda empire (https://www.britannica.com/place/Lunda-empire)",
+      "Joshua Project – Chokwe in Angola (https://joshuaproject.net/people_groups/11365/AO)",
+      "Africa Federation – United Kingdom of Lunda Tchokwe (http://www.africafederation.net/Lunda_Tchockwe.htm)"
+    ]
+  }
+}

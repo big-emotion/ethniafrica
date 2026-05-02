@@ -1,0 +1,101 @@
+{
+  "id": "PPL_KREDA",
+  "nameMain": "Kreda",
+  "languageFamilyId": "FLG_SAHARIEN",
+  "currentCountries": ["TCD"],
+  "content": {
+    "appellations": {
+      "mainName": "Kreda",
+      "selfAppellation": "Kreda (Kréda)",
+      "exonyms": [
+        "Kréda (orthographe française)",
+        "Gorane ou Gourane (exonyme arabe désignant les Daza dont les Kreda font partie)"
+      ],
+      "originOfExonyms": "Le terme Gorane ou Gourane est un exonyme d'origine arabe utilisé pour désigner les Daza et leurs sous-groupes, dont les Kreda. Il est d'usage courant en arabe tchadien mais n'est pas l'appellation préférée par les groupes eux-mêmes. Kréda est la forme française de Kreda, utilisée dans la littérature coloniale et contemporaine.",
+      "whyProblematic": "Les Kreda sont souvent subsumés sous l'appellation générique Daza ou Toubou dans les sources, ce qui rend difficile leur identification statistique distincte. La frontière entre Kreda et autres sous-groupes Daza est parfois floue dans la littérature.",
+      "contemporaryUsage": "Le terme Kreda est utilisé au Tchad pour désigner ce sous-groupe daza du Bahr el Ghazal. Les Kreda ne se reconnaissent pas nécessairement dans l'appellation générique Toubou, préférant leur identité spécifique de Daza ou Kreda.",
+      "linguisticFamily": "FLG_SAHARIEN",
+      "ethnoLinguisticGroup": "Saharien (Daza / Toubou du sud, branche Tebu)",
+      "historicalRegion": "Bahr el Ghazal (Tchad nord-ouest), entre le lac Tchad et le massif du Tibesti",
+      "currentCountries": ["TCD"]
+    },
+    "ethnicities": [
+      "Kreda du Bahr el Ghazal (sous-groupe Daza principal de cette région, le plus nombreux des Daza)",
+      "Kecherda (sous-groupe Daza voisin du Kanem)",
+      "Djagada (sous-groupe Daza du Kanem)",
+      "Doza (sous-groupe Daza du Borkou)",
+      "Annakaza (sous-groupe Daza du Borkou)",
+      "Kokorda (sous-groupe Daza du Borkou)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kreda sont un sous-groupe des Daza, eux-mêmes sous-groupe méridional des Toubou (Tebu). Les Toubou sont mentionnés dans les sources islamiques dès le 8e siècle dans un texte d'Ibn Qutaybah. Le 9e siècle voit Al-Khwarizmi mentionner les Daza. Les Kreda et leurs parents Daza sont des populations de langue nilo-saharienne (branche Tebu) qui occupent depuis des millénaires les zones sahélo-sahariennes du Tchad central et septentrional. Ils partagent une origine commune avec les Teda du Tibesti, dont ils constituent la branche méridionale.",
+      "formationPeriod": "L'identité Kreda comme sous-groupe distinct des Daza est ancienne et liée à l'occupation historique du Bahr el Ghazal. Les Kreda sont identifiés dans les études ethnographiques coloniales françaises (début 20e siècle) comme le plus grand sous-groupe daza. Leur territoire de transhumance couvre le Bahr el Ghazal, corridor saharien entre le lac Tchad et le Tibesti.",
+      "migrationRoutes": [
+        "Nomadisme saisonnier nord-sud entre les pâturages sahariens du Tibesti et les zones plus humides du Bahr el Ghazal",
+        "Transhumance vers le sud jusqu'aux abords du lac Tchad lors des saisons sèches",
+        "Migrations ponctuelles vers le Niger et le Soudan lors de conflits ou sécheresses"
+      ],
+      "historicalSettlementZones": [
+        "Bahr el Ghazal (région principale, couloir reliant le lac Tchad au Tibesti)",
+        "Kanem (préfecture, nord-est du lac Tchad)",
+        "Borkou (région du Tibesti méridional)"
+      ],
+      "unificationsOrDivisions": "Les Daza, dont les Kreda font partie, se divisent en plus d'une douzaine de sous-groupes distincts selon les régions. Malgré leur héritage linguistique commun avec les Teda (les deux parlent des langues Tebu), Teda et Daza ne se considèrent pas comme appartenant à un même groupe. Les Kreda maintiennent une identité spécifique liée à leur territoire du Bahr el Ghazal et à leurs lignages propres.",
+      "externalInfluences": "Islamisation progressive (islam sunnite malékite) à partir du 11e siècle via les contacts avec l'empire du Kanem-Bornu et les commerçants arabes des routes transsahariennes. Contacts avec les Arabes nomades (Arabes Choa) et les peuples du lac Tchad. Colonisation française (premier quart du 20e siècle) et création de cantons administratifs. Indépendance du Tchad en 1960 et intégration aux structures étatiques tchadiennes.",
+      "majorHistoricalEvents": "Participation aux guerres civiles tchadiennes (1965-2000) : les Daza (dont les Kreda) furent impliqués dans les conflits armés du nord du Tchad. Libération des esclaves (agara) dans le Borkou en 1953 par accord avec l'administration française. Sécheresses et famines sahéliennes (1973, 1984-1985) ayant fortement affecté les populations pastorales du Bahr el Ghazal."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies claniques et cantons. La société Daza (dont les Kreda) est patrilinéaire ; le mâle aîné dirige le lignage. La chefferie de canton (créée par l'administration coloniale française en 1936) constitue l'unité administrative de base. Les chefs de clan (alifa ou ardo) maintiennent une autorité morale et judiciaire. Les décisions importantes sont prises collectivement par les anciens des clans.",
+      "clanOrganization": "Société clanique patrilinéaire. Chaque clan Kreda possède des droits sur des oasis, des pâturages et des puits spécifiques. La seconde unité de parenté après la famille est le clan (deuxième ordre de parenté clanique). Les liens maternels sont également reconnus. Les artisans (Azza ou Aza) forment une caste endogame à statut inférieur, présente chez les Kreda comme chez tous les Toubou-Daza.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent les droits aux ressources (pâturages, oasis, puits, palmiers dattiers) et les alliances matrimoniales. La propriété des ressources (parcelles cultivées, arbres, droits sur les puits, parts de récolte) est répartie entre clans, oasis, familles et individus selon des règles coutumières complexes. Le mariage entre cousins proches est pratiqué par certains clans Daza du Kanem et du Bahr el Ghazal.",
+      "religiousAuthority": "Islam sunnite malékite, adopté progressivement depuis le 11e siècle. Les imams de village jouent un rôle de référence morale et juridique. Coutumes juridiques basées sur la loi islamique : les meurtres sont réglés par les familles selon la règle de la diya (prix du sang, goroga en dazaga). Le pèlerinage à La Mecque confère un prestige social particulier."
+    },
+    "languages": {
+      "mainLanguage": "Dazaga (langue des Daza, dont les Kreda)",
+      "isoCodes": ["dzg"],
+      "dialects": [
+        "Daza (dialecte principal)",
+        "Kara (dialecte principal secondaire)",
+        "Kaga (dialecte)",
+        "Kanobo (dialecte)",
+        "Taruge (dialecte)",
+        "Azza (dialecte de la caste artisanale, mutalement intelligible)"
+      ],
+      "vehicularRole": "Le dazaga (ISO 639-3 : dzg) est une langue nilo-saharienne de la branche Tebu-Saharan, parlée par les Daza dont les Kreda sont le plus grand sous-groupe. Il compte environ 380 000 locuteurs natifs (Ethnologue/Lewis et al. 2015), principalement au Tchad (environ 330 000) et au Niger (environ 50 000). Le dazaga est la langue la plus couramment parlée dans la région BET (Borkou-Ennedi-Tibesti) au Tchad. La majorité des Teda comprend et parle le dazaga, bien que l'inverse ne soit pas toujours vrai. L'arabe tchadien et le français sont utilisés comme langues secondes."
+    },
+    "culture": {
+      "majorRites": "Rites islamiques : circoncision masculine (rite de passage obligatoire), mariage islamique avec dot en bétail (chameaux, chèvres) ou argent, funérailles selon le rite islamique (inhumation rapide). Rites pastoraux : cérémonies liées au calendrier de transhumance (départ et retour des troupeaux), bénédictions des troupeaux. Célébrations des fêtes islamiques (Aïd el-Fitr, Aïd el-Adha) avec prières collectives, sacrifices et repas communautaires. Le Hajj est particulièrement valorisé.",
+      "symbols": "Le chameau (dromadaire) est le symbole central de richesse, de prestige et de mobilité des Kreda et de tous les Daza. Il constitue la principale forme de dot et de monnaie d'échange. Les chèvres et les bovins (dans les zones méridionales) complètent les symboles de richesse pastorale. Le sel et le natron (exploités et commercialisés) sont des symboles de l'activité économique traditionnelle.",
+      "artsAndMusic": "Poésie orale et chants accompagnant le travail pastoral et les cérémonies (chants de mariage, chants de deuil). Musique de percussion (tambours) lors des fêtes et célébrations. Artisanat : tressage de paniers, vannerie, fabrication de selles et de harnais en cuir pour les chameaux, confection de tentes nomades. Tissage de tapis et de nattres. Les femmes fabriquent des bijoux en argent. Architecture : maisons rectangulaires en banco à toit de chaume dans les villages permanents du Bahr el Ghazal ; tentes (toiles et nattes) pour les phases de nomadisme.",
+      "spiritualities": "Islam sunnite malékite, pratiqué depuis le 11e siècle. Pratiques syncrétiques : recours aux marabouts pour la protection des troupeaux et des voyages (amulettes coraniques). Croyances en des esprits de la nature liés aux oasis et aux sources d'eau. Règles coutumières juridiques : les meurtres sont réglés entre familles (diya : prix du sang, goroga en dazaga) avant recours éventuel à la justice islamique formelle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Kreda et les Daza n'ont pas fondé d'empire centralisé comparable à l'empire du Kanem-Bornu. Leur organisation politique traditionnelle est clanique et décentralisée. Ils ont coexisté avec l'empire du Kanem-Bornu qui contrôlait les routes commerciales traversant leur territoire. Les chefferies de canton, créées par l'administration coloniale française en 1936 (notamment la chefferie de Kamaya dans le Borkou), ont structuré l'organisation administrative locale.",
+      "relationsWithNeighbors": "Relations de complémentarité économique avec les sédentaires du lac Tchad (Kanembu, Arabes Choa) auxquels ils vendent bétail, sel et natron contre des céréales et produits manufacturés. Relations souvent tendues avec les Teda du nord (Tibesti) malgré l'origine commune. Interactions avec les Zaghawa à l'est et les Arabes nomades. Participation aux réseaux commerciaux transsahariens (sel de Bilma, natron du Bahr el Ghazal).",
+      "conflictsOrAlliances": "Implication dans les guerres civiles tchadiennes (1965-2000). Les Daza du Tibesti et du Bahr el Ghazal, dont les Kreda, ont soutenu diverses factions dans les conflits armés tchadiens. Le président tchadien Hissène Habré (1982-1990) était d'origine Dazagra (branche Daza du Tibesti), illustrant le poids politique des Daza. Conflits récurrents avec les éleveurs arabes pour les droits aux pâturages et aux points d'eau.",
+      "diaspora": "Communautés kreda et daza dans les grandes villes tchadiennes (Faya-Largeau, N'Djaména). Quelques milliers de Daza à Omdurman (Soudan) selon les sources ethnographiques. Migrations économiques liées aux sécheresses sahéliennes (1973, 1984)."
+    },
+    "demography": {
+      "totalPopulation": 100000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur SIL Ethnologue (Dazaga : 380 000 locuteurs totaux pour l'ensemble des Daza, dont les Kreda sont le plus grand sous-groupe). Country Studies US / Chad (Kreda identifiés comme le plus grand sous-groupe Daza). La population Kreda proprement dite est estimée entre 80 000 et 120 000 personnes au Tchad.",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 100000,
+          "note": "Bahr el Ghazal, Kanem, et transhumance dans le Borkou. Plus grand sous-groupe Daza du Tchad."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Toubou people. https://en.wikipedia.org/wiki/Toubou_people",
+      "Wikipedia EN — Daza language. https://en.wikipedia.org/wiki/Daza_language",
+      "Country Studies US — Chad, Nilo-Saharan Languages. https://countrystudies.us/chad/19.htm",
+      "SIL Ethnologue — Dazaga language (dzg). https://www.ethnologue.com/language/dzg/",
+      "Walters — A Grammar Sketch of Dazaga. https://theswissbay.ch/pdf/Books/Linguistics/Mega%20linguistics%20pack/African/Nilo-Saharan/Daza;%20A%20Grammar%20Sketch%20of%20Dazaga%20(Walters).pdf",
+      "Localizely ISO 639-3 — dzg: Dazaga. https://localizely.com/iso-639-3-list/",
+      "CIA World Factbook — Chad. https://www.cia.gov/the-world-factbook/countries/chad/"
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "id": "PPL_BUDUMA",
+  "nameMain": "Buduma",
+  "languageFamilyId": "FLG_SAHARIEN",
+  "currentCountries": ["TCD", "NGA", "CMR", "NER"],
+  "content": {
+    "appellations": {
+      "mainName": "Buduma",
+      "selfAppellation": "Yedina",
+      "exonyms": [
+        "Buduma (terme utilise par les populations continentales et dans la litterature)",
+        "Boudouma (variante orthographique francophone)",
+        "Gens des roseaux (traduction approximative de l'endonyme Yedina ou du terme Buduma)"
+      ],
+      "originOfExonyms": "Le terme Buduma signifie en kanouri ou kanembu les gens des roseaux (bud = roseau, uma = gens), faisant reference a leur habitat lacustre et a leur usage intensif du papyrus pour construire bateaux et habitations. L'endonyme est Yedina. Le terme Buduma est utilise par les peuples continentaux voisins (Kanembou, Kanouri, Arabes) et a ete adopte dans la litterature coloniale et academique.",
+      "whyProblematic": "L'appellation Buduma est un exonyme qui definit ce peuple par son environnement (les roseaux du lac Tchad) plutot que par son identite propre. Leur reputation historique de raiders (attaques sur les troupeaux des voisins) a nourri des stereotypes negatifs qui persistent partiellement. La regression du lac Tchad depuis les annees 1970 pose de graves questions identitaires et de survie pour ce peuple aquatique.",
+      "contemporaryUsage": "Les deux termes Buduma et Yedina sont utilises. Buduma domine dans la litterature academique, les medias et les recensements officiels. Yedina est prefere par les membres du groupe comme leur endonyme. La reconnaissance officielle de leur particularite culturelle est croissante face aux defis environnementaux du lac Tchad.",
+      "linguisticFamily": "FLG_SAHARIEN",
+      "ethnoLinguisticGroup": "Groupe tchadique (Afro-Asiatique, branche Biu-Mandara), distinct de la branche nilo-saharienne des autres peuples sahariens de la zone",
+      "historicalRegion": "Iles et rives septentrionales du lac Tchad; historiquement zone d'influence du Kanem-Bornu; lac Tchad et son archipel d'iles",
+      "currentCountries": ["TCD", "NGA", "CMR", "NER"]
+    },
+    "ethnicities": [
+      "Kuri (premier grand groupe; gere aussi un type de betail a cornes creuses portant leur nom)",
+      "Buduma proprement dits (second grand groupe principal)",
+      "Guria (plus grand sous-groupe parmi les Buduma)",
+      "Mehul",
+      "Maibuloa",
+      "Budjia",
+      "Madjigodjia",
+      "Ursawa",
+      "Media",
+      "Siginda"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Buduma revendiquent une descendance des peuples de la civilisation Sao (culture proto-tchadique, 6e siecle av. J.-C. au 16e siecle ap. J.-C.) et du Kanem-Bornu. La legende orale evoque des ancetres gigantesques (les Sao) venus s'installer dans les iles du lac Tchad. Des chercheurs comme Guy Immega soulignent des possibles liens culturels avec l'Egypte ancienne : les pirogues en papyrus des Buduma (appelees kadai en yedina) sont similaires aux embarcations de papyrus egyptiennes, leur harpe Biram (a cinq cordes) ressemble a la harpe en arc egyptienne antique, et leurs bovins Kuri sont adaptes au milieu aquatique comme les bovins representés dans l'art egyptien ancien.",
+      "formationPeriod": "Aux 9e-16e siecles, lors de la domination du Kanem-Bornu sur la region du lac Tchad, la plupart des peuples voisins s'assimilerent ou fusionnerent avec l'entite politique centrale. Les Buduma, au contraire, se replierent dans les iles les plus inaccessibles du lac, proteges par l'etendue d'eau et les reseaux de roseaux. Cette isolation volontaire a preserve leur identite culturelle distincte et leur mode de vie aquatique particulier.",
+      "migrationRoutes": [
+        "Installation ancestrale dans les iles et rives du lac Tchad (epoque pre-coloniale)",
+        "Deplacements saisonniers d'ile en ile selon le niveau du lac et la disponibilite des paturages pour les troupeaux de bovins Kuri",
+        "Contacts commerciaux periodiques avec les populations continentales pour echanger poisson seche et autres produits du lac"
+      ],
+      "historicalSettlementZones": [
+        "Archipel des iles du lac Tchad (principalement cote tchadienne)",
+        "Rives nord et nord-ouest du lac Tchad",
+        "Bords lacustres au Nigeria (region de Borno)",
+        "Zone frontiere au Niger et au Cameroun (communautes plus reduites)"
+      ],
+      "unificationsOrDivisions": "Les Buduma sont divises en deux grands groupes (Kuri et Buduma proprement dits), eux-memes subdivises en de nombreux sous-groupes (Guria, Mehul, Maibuloa, Budjia, Madjigodjia, Ursawa, Media, Siginda) et en clans. La forte mobilite entre les iles rend les delimitations difficiles. La regression du lac Tchad (perte d'environ 90% de sa superficie depuis les annees 1960) fragmente les communautes et accelere la sedentarisation forcee.",
+      "externalInfluences": "Integration progressive (et partielle) dans la sphere politique du Kanem-Bornu (9e-16e siecles). Islamisation par des missionnaires islamiques pendant la periode coloniale francaise. Colonisation europeenne (Tchad francais, Nigeria britannique) avec demarcation arbitraire des frontieres coupant le lac en quatre territoires nationaux. Regression drastique du lac Tchad depuis les annees 1970 (secheresse, irrigation intensive) : impact majeur sur le mode de vie traditionnel.",
+      "majorHistoricalEvents": "Epoque Sao : ancetres mythiques des Buduma. 9e-16e siecles : integration dans la peripherie du Kanem-Bornu. Periode pre-coloniale : raids des Buduma sur les troupeaux des voisins continentaux, creant une reputation de guerriers redoutables. Colonisation : partage du lac Tchad entre France (Tchad), Royaume-Uni (Nigeria), Allemagne puis France (Cameroun), et France (Niger). Independances des quatre pays riverains (1960). Sécheresse et regression du lac (annees 1970-present) : la superficie du lac est passee de 25 000 km2 (1963) a moins de 2 500 km2 (2001). Presence de Boko Haram dans la zone du lac Tchad depuis les annees 2010 : perturbation majeure de la vie des communautes lacustres."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies insulaires avec chefs de village ou d'ile exercant une autorite locale. Les conseils d'anciens participent aux decisions importantes. L'eloignement geographique des iles a favorise une forte autonomie communautaire et une faible integration dans les structures d'Etat centrales. Le chef (mai) est souvent un chef religieux et civil combine.",
+      "clanOrganization": "Structure clanique patrilineaire avec deux grands groupes (Kuri et Buduma) subdivises en sous-clans. Chaque lignage a des droits sur certaines zones de peche, des paturages insulaires et des points d'acces a l'eau. Les unions matrimoniales renforcent les liens entre clans et iles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite clanique et les droits d'acces aux ressources lacustres (zones de peche, paturages). Les femmes jouent un role important dans la transformation et le commerce du poisson seche. La mobilite inter-insulaire est reglee par les affiliations claniques.",
+      "religiousAuthority": "Islam sunnite adopte lors de la periode coloniale par les missionnaires islamiques; pratique mixte avec des elements animistes persistants. Les croyances et rituels traditionnels lies au lac (esprits de l'eau, ceremonies de peche) se maintiennent en syncretisme avec l'islam. Les imams et chefs religieux jouent un role social important."
+    },
+    "languages": {
+      "mainLanguage": "Yedina (Buduma)",
+      "isoCodes": ["bdm"],
+      "dialects": [
+        "Dialecte Kuri (variante associee au grand groupe Kuri)",
+        "Dialecte Buduma proprement dit (variante du groupe principal)",
+        "Varietes regionales au Nigeria (Yedina, recense separement parfois)"
+      ],
+      "vehicularRole": "Le yedina (buduma) est la langue maternelle des Buduma et la langue d'usage interne. Il appartient a la branche tchadique Biu-Mandara de la famille afro-asiatique (et non au groupe nilo-saharien des autres peuples sahariens). Le kanouri et le kanembou sont utilises dans les echanges avec les peuples continentaux. L'arabe tchadien est la langue vehiculaire regionale. Le francais (Tchad, Niger, Cameroun) et l'anglais (Nigeria) sont les langues officielles des Etats riverains. Le nombre total de locuteurs est estime a environ 128 000-200 000."
+    },
+    "culture": {
+      "majorRites": "Ceremonies islamiques (Ramadan, Aid el-Fitr, Aid el-Adha). Rites lies a la peche : ceremonies d'ouverture de la saison de peche, offrandes symboliques aux esprits du lac avant les grandes sorties de peche. Rites de passage : circoncision masculine, ceremonies de mariage avec dot en betail (bovins Kuri). Funerailles islamiques adaptees au milieu insulaire. Ceremonies de passage d'une ile a l'autre lors des transhumances bovines saisonnieres.",
+      "symbols": "La pirogue en papyrus (kadai) est le symbole central de l'identite buduma : mode de transport, outil de travail et marqueur culturel. Les bovins Kuri (a cornes creuses bulbeuses permettant de flotter) sont un symbole de richesse unique au monde et emblematiques de l'identite buduma. Le lac Tchad lui-meme est la terre-mere symbolique et spirituelle du peuple. Les roseaux de papyrus (bud) ont donne leur nom au peuple et representent leur adaptation ingenieuse au milieu lacustre.",
+      "artsAndMusic": "La harpe Biram (arc musical a cinq cordes, similaire a la harpe en arc egyptienne antique) est l'instrument musical traditionnel majeur des Buduma, joue lors des ceremonies et celebrations. Des enregistrements de musique sacrée buduma et de concerts de harpe Biram ont ete realises par le chercheur Guy Immega dans les annees 1960-1970. Poesie orale et chants sacres (chants sacres des Buduma avec traditions reel-to-reel documentees). Construction de pirogues en papyrus : art artisanal majeur, secrets de fabrication transmis de generation en generation. Vannerie et nattes en roseaux. Transformation et conservation du poisson (fumage, sechage). Decoration des pirogues et des habitations.",
+      "spiritualities": "Islam sunnite, adopte progressivement lors de la periode coloniale, pratique dans toutes les communautes buduma. Maintien de croyances et pratiques pre-islamiques liees au lac : croyance en des esprits de l'eau et des forces naturelles du lac, ceremonies propitiatoires avant la peche, tabous alimentaires et comportementaux lies a la vie lacustre. Syncretisme islamique-animiste similaire a celui d'autres peuples du lac Tchad. La tradition orale evoque l'origine divine de leurs ancetres Sao."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Buduma n'ont pas forme de royaume centralise; leur organisation politique est restee au niveau des chefferies insulaires et des communautes de village. Ils ont maintenu une independance de facto en raison de leur isolement geographique dans les iles du lac. Historiquement inclus dans la sphere d'influence peripherique du Kanem-Bornu sans integration formelle. Les Buduma sont mentionnes parmi les groupes Kanembu/Bornu/Buduma qui representent environ 9,8% de la population tchadienne (Minority Rights Group).",
+      "relationsWithNeighbors": "Relations historiquement conflictuelles avec les peuples continentaux (Kanembou, Kanouri, Arabes) en raison des raids buduma sur les troupeaux. Relations commerciales avec les populations de la rive (echange de poisson seche et produits lacustres contre cereales, sel et biens manufactures). Coexistence parfois tendue avec les Daza/Toubou et Wodaabe-Fulani des bords du lac. Relations actuelles plus pacifiques et commerciales.",
+      "conflictsOrAlliances": "Epoque pre-coloniale : raids des Buduma sur les troupeaux des voisins, leur valant la reputation de raiders redoutables. Periode coloniale : resistance passive a l'integration dans les structures administratives. Periode post-independance : marginalisation des populations lacustres dans les politiques de developpement. Depuis les annees 2010 : presence de Boko Haram dans le bassin du lac Tchad affectant gravement les communautes buduma (attaques, deplacements forces, recrutement force).",
+      "diaspora": "La regression du lac Tchad force une partie croissante des Buduma a s'installer sur les rives continentales et dans les villes (N'Djamena, Maiduguri, Diffa). Cette sedentarisation forcee constitue une rupture culturelle majeure. Des organisations internationales (UNHCR, FAO) travaillent avec les communautes lacustres deplacees par la double pression Boko Haram / regression du lac."
+    },
+    "demography": {
+      "totalPopulation": 155000,
+      "referenceYear": 2025,
+      "source": "Wikipedia (Buduma people) : 128 800 total (dont 123 000 au Tchad, 5 300 au Nigeria, 500 au Cameroun). Estimation 2025 avec croissance demographique d'environ 3% par an au Tchad et au Nigeria. Le Niger est inclus dans les pays de residence (populations lacustres frontieres) bien que peu documente. Total estime a 150 000-160 000 en 2025.",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 140000,
+          "note": "Principalement dans les iles et rives nord du lac Tchad, prefectures du Lac et de Hadjer-Lamis"
+        },
+        {
+          "country": "NGA",
+          "population": 11000,
+          "note": "Etat de Borno, region du lac Tchad (Nigeria)"
+        },
+        {
+          "country": "CMR",
+          "population": 1000,
+          "note": "Extreme-nord du Cameroun, bords du lac Tchad"
+        },
+        {
+          "country": "NER",
+          "population": 3000,
+          "note": "Region de Diffa, bords du lac Tchad cote nigerien"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Buduma people. https://en.wikipedia.org/wiki/Buduma_people",
+      "Wikipedia EN — Yedina language (Buduma language). https://en.wikipedia.org/wiki/Buduma_language",
+      "ISO 639-3 — Buduma (bdm). https://localizely.com/iso-639-3-list/",
+      "Guy Immega — The Buduma Culture of Lake Chad. Mother Tongue Editions. https://mothertongue.us/pdfs/The_Buduma_Culture_of_Lake_Chad_by_Guy_Immega.pdf",
+      "Wikipedia EN — Kuri cattle. https://en.wikipedia.org/wiki/Kuri_cattle",
+      "Minority Rights Group — Chad. https://minorityrights.org/country/chad/",
+      "YouTube — The Buduma people, the water nomads of the Lake Chad. https://www.youtube.com/watch?v=5fIDlqgiOl8",
+      "CIA World Factbook — Chad. https://www.cia.gov/the-world-factbook/countries/chad/"
+    ]
+  }
+}

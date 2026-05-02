@@ -1,0 +1,108 @@
+{
+  "id": "PPL_IBIBIO",
+  "nameMain": "Ibibio",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Ibibio",
+      "selfAppellation": "Ibibio",
+      "exonyms": [
+        "Ibom (appellation historique)",
+        "Calabar (terme colonial groupant Ibibio et Efik)",
+        "Efik-Ibibio (désignation linguistique)"
+      ],
+      "originOfExonyms": "Le terme Ibom fait référence à leur ancêtre éponyme et à leur premier lieu d'établissement (Ibom, actuel Arochukwu). Le terme Calabar est une appellation coloniale britannique regroupant plusieurs peuples du delta du Cross River. Efik-Ibibio est la désignation linguistique moderne englobant la famille dialectale.",
+      "whyProblematic": "Le regroupement colonial sous le terme Calabar a effacé la distinction entre Ibibio et Efik, peuples distincts bien que proches linguistiquement et culturellement.",
+      "contemporaryUsage": "Ibibio est l'appellation standard dans le Nigeria contemporain. La création de l'État d'Akwa Ibom en 1987 a renforcé l'identité ibibio comme groupe politique distinct.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bénoué-Congo, branche Cross River (Efik-Ibibio)",
+      "historicalRegion": "Delta du Cross River, sud-est du Nigeria (actuel État d'Akwa Ibom, État de Cross River, partie orientale de l'État d'Abia)",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Ibibio proprement dits (Ibibio de l'Est ou Ibibio central)",
+      "Annang (Ibibio de l'Ouest)",
+      "Enyong (Ibibio du Nord)",
+      "Eket (Ibibio du Sud)",
+      "Uruan (Ibibio riverain)",
+      "Oron",
+      "Ibeno",
+      "Efik (peuple proche, parfois considéré comme sous-groupe, fondateurs de Old Calabar)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les ancêtres des Ibibio sont originaires du nord-est de l'Afrique, traversant le Sahara vert avant la dessication de celui-ci vers 3500 av. J.-C. Ils font partie des premiers groupes proto-bantous à s'installer en Afrique de l'Ouest. Leur migration vers la région du Cross River serait associée à l'expansion de l'agriculture sahelienne au Néolithique africain. Ils comptent parmi les peuples les plus anciennement établis dans le sud du Nigeria, leur présence dans la région étant estimée à environ 1000 av. J.-C., voire 7000 av. J.-C. selon certaines sources.",
+      "formationPeriod": "L'origine la plus acceptée situe le foyer originel des Ibibio à Usak Edet (Isanguele) au Cameroun, d'où le groupe migra vers le Nigeria. Après leur arrivée, ils s'établirent d'abord à Uruan puis au site d'Ibom (Arochukwu), fondé par leur ancêtre éponyme Ibom. Des guerres avec les Igbo (Aro-Igbo-Ibibio) entre 1550 et 1720 les contraignirent à se déplacer vers leur territoire actuel.",
+      "migrationRoutes": [
+        "Migration depuis le nord-est de l'Afrique via le Sahara vert (avant 3500 av. J.-C.)",
+        "Arrivée au Cameroun (Usak Edet/Isanguele), foyer originel documenté",
+        "Migration vers le Nigeria : établissement à Uruan, puis à Ibom (Arochukwu)",
+        "Déplacement vers le sud suite aux guerres aro-igbo-ibibio (XVIIe-XVIIIe siècles)"
+      ],
+      "historicalSettlementZones": [
+        "État d'Akwa Ibom (concentration principale)",
+        "État de Cross River (partie occidentale)",
+        "Partie orientale de l'État d'Abia"
+      ],
+      "unificationsOrDivisions": "Les Ibibio ne formèrent jamais un État centralisé unique. Chaque communauté était gouvernée par un Obong Ikpaisong (roi-prêtre). L'Ibibio Union, fondée à l'époque coloniale, demanda la reconnaissance britannique comme nation souveraine. La création de l'État d'Akwa Ibom le 23 septembre 1987 constitua l'accomplissement politique majeur de l'identité ibibio.",
+      "externalInfluences": "Contacts avec les commerçants européens dès le XVIIe siècle (traite des esclaves via le port de Calabar). Colonisation britannique à partir de 1885 (protectorat d'Old Calabar). Christianisation par les missionnaires (notamment Samuel Bill, fondateur de la Qua Iboe Church). Influence de l'islam dans certaines communautés du nord."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chaque communauté ibibio est gouvernée par un Obong Ikpaisong (roi-prêtre constitutionnel et religieux), assisté des Mbong Ekpuk (chefs de familles). L'ensemble forme le conseil traditionnel (Afe, Asan ou Esop Ikpaisong). L'Obong fait appliquer ses décisions par les membres des sociétés Ekpo ou Obon, qui agissent comme messagers des esprits et forces de police. Le système repose sur le consensus traditionnel.",
+      "clanOrganization": "Structure clanique patrilinéaire. Les communautés sont composées de grandes familles (ekpuk) liées par le sang. Chaque famille est dirigée par son chef (Mbong Ekpuk). Avant l'abolition de l'esclavage par les Britanniques, la société distinguait les libres (amanisong), les étrangers/immigrés (ududung) et les esclaves (ifn).",
+      "ageClassSystems": "Les rites de passage marquent les transitions de vie : naissance, initiation (ekpo pour les hommes), mariage, mort. Le statut dans la société Ekpo détermine en partie la position sociale et politique d'un homme.",
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'identité, les droits fonciers et les alliances matrimoniales. Le statut dans les sociétés secrètes (Ekpo, Idiong) est partiellement héréditaire mais aussi lié à la richesse.",
+      "religiousAuthority": "L'Obong Ikpaisong est à la fois roi et grand prêtre : il officie les libations et sacrifices à Abasi Enyong (Dieu du Ciel), Abasi Isong (Dieu de la Terre) et Abasi Ibom (Être Suprême). Les prêtres des sociétés Ekpo, Idiong et Ekong maintiennent l'autorité religieuse dans leurs domaines respectifs. Les devins (Mbia Idiong) jouent un rôle dans la consultation des esprits et la détermination du destin (essien emana)."
+    },
+    "languages": {
+      "mainLanguage": "Ibibio",
+      "isoCodes": ["ibb"],
+      "dialects": [
+        "Ibibio central (Ibibio proprement dit)",
+        "Annang (Ibibio de l'Ouest)",
+        "Enyong (Ibibio du Nord)",
+        "Eket (Ibibio du Sud)",
+        "Oron",
+        "Ibeno",
+        "Itu Mbon Uso",
+        "Iwere",
+        "Nkari",
+        "Ito"
+      ],
+      "vehicularRole": "L'ibibio est parlé par l'ensemble des sous-groupes ibibio, bien que les variations dialectales soient parfois significatives. L'efik, dialecte prestigieux des Efik d'Old Calabar, est utilisé comme lingua franca dans la région de Cross River depuis le XIXe siècle et est la variante première à être mise par écrit. L'anglais est langue officielle du Nigeria, utilisé dans l'administration et l'éducation. Le pidgin english nigérian est très répandu."
+    },
+    "culture": {
+      "majorRites": "La société Ekpo est l'institution rituelle et politique centrale : active de juin à décembre, elle régit la vie communautaire par ses mascarades et ses règles. Pendant la saison Ekpo, certaines activités sont interdites et les crimes sanctionnés plus sévèrement. Les rites d'initiation marquent l'entrée des hommes dans les grades de l'Ekpo. Les rites de passage (naissance, puberté, mariage, mort) structurent la vie sociale. La pratique de l'engraissement des jeunes femmes avant le mariage (fattening room) constituait un rite de féminité. La peinture corporelle odung accompagne les événements majeurs (mariage, naissance, initiation, mort). Le New Yam Festival célèbre les prémices de la récolte d'ignames.",
+      "symbols": "Les masques Ekpo sont le symbole artistique et religieux le plus puissant : ils représentent les ancêtres ou des esprits, et porter un masque Ekpo c'est abandonner son identité terrestre pour revêtir une identité ancestrale. Les masques jouent avec les contrastes : masques féminins clairs et délicats, masques masculins sombres et volontairement déformés. Le point (dot) est le symbole ultime de la beauté en culture ibibio. Les terres sacrées (akai) avec leurs bosquets inviolables symbolisent la frontière entre le monde des vivants et celui des esprits.",
+      "artsAndMusic": "Les Ibibio sont réputés pour leurs sculptures sur bois, notamment les masques Ekpo (en bois ukot léger). Leurs masques sont caractéristiques par leur mâchoire inférieure articulée, leurs proportions délibérément distordues et la représentation de maladies (gangosa, calvitie). La poterie, le tissage du raphia et la vannerie sont des traditions artisanales importantes. Ikot Ekpene est le principal centre d'artisanat. L'art corporel (peinture odung et iduot, coiffures élaborées) est central dans la culture ibibio. La musique traditionnelle inclut tambours, flûtes et chants collectifs lors des cérémonies Ekpo. La littérature orale (contes, proverbes) est un vecteur essentiel de la culture.",
+      "spiritualities": "La religion traditionnelle ibibio (Inam) est centrée sur le panthéon Abasi : Abasi Enyong (Dieu du Ciel), Abasi Isong (Dieu de la Terre), Abasi Ibom (Être Suprême). La croyance en obot (création individuelle de chaque personne par Dieu) et en essien emana (destin) structure la vision du monde. Le culte des ancêtres est fondamental : après la mort, les défunts poursuivent une existence similaire à la vie terrestre dans le monde des esprits. Les sociétés secrètes Ekpo, Idiong et Ekong maintiennent l'ordre moral et social. L'influence chrétienne (protestantisme, notamment la Qua Iboe Church et les Eglises pentecôtistes) est aujourd'hui dominante."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Ibibio ne formèrent pas de royaumes centralisés mais des chefferies autonomes. Ils entretinrent des relations étroites avec le royaume d'Old Calabar (Efik), centre commercial majeur du golfe du Bénin. L'Ibibio Union de l'époque coloniale demanda la reconnaissance comme nation souveraine. La création de l'État d'Akwa Ibom (1987) représente leur réalisation politique contemporaine.",
+      "relationsWithNeighbors": "Relations complexes avec les Igbo : guerres (Aro-Igbo-Ibibio, XVIe-XVIIIe siècles) mais aussi liens commerciaux et culturels. Relations étroites avec les Efik (langue et culture communes). Contacts avec les commerçants européens via Old Calabar dès le XVIIe siècle. Implication dans la traite atlantique des esclaves (victimes et intermédiaires).",
+      "conflictsOrAlliances": "Guerres avec les Igbo et la Confédération Aro (XVIe-XVIIIe siècles). Pacification britannique imposée par la force à partir de 1885. Résistance à la colonisation britannique. Revendication d'un État distinct pendant la période coloniale. Participation à la guerre civile nigériane (Biafra, 1967-1970) : l'État d'Akwa Ibom se trouvait dans la zone de conflit.",
+      "diaspora": "Diaspora ibibio significative dans les grandes villes nigérianes (Lagos, Abuja, Port Harcourt). Présence dans les pays anglophones (États-Unis, Royaume-Uni, Canada) et dans d'autres pays d'Afrique de l'Ouest."
+    },
+    "demography": {
+      "totalPopulation": 5000000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2024 (NGA, groupe ibibio), estimations basées sur le recensement nigérian de 2006 et projections 2025, SIL Ethnologue — Ibibio (ibb), CIA World Factbook Nigeria",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 5000000,
+          "note": "Principalement dans l'État d'Akwa Ibom, l'État de Cross River et la partie orientale de l'État d'Abia"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Ibibio people. https://en.wikipedia.org/wiki/Ibibio_people",
+      "Britannica — Ibibio people, language and culture. https://www.britannica.com/topic/Ibibio",
+      "Joshua Project — Ibibio in Nigeria. https://joshuaproject.net/people_groups/12171/NI",
+      "Study.com — Ibibio people: history, culture and language. https://study.com/academy/lesson/ibibio-origin-language-culture-people.html",
+      "SIL Ethnologue — Ibibio (ibb). https://www.ethnologue.com/language/ibb/",
+      "Udo, Edet A. — Who Are the Ibibio? Calabar: Scholars Press, 1983.",
+      "Offiong, Daniel A. — Witchcraft, Sorcery, Magic and Social Order among the Ibibio of Nigeria. Enugu: Fourth Dimension Publishers, 1991."
+    ]
+  }
+}

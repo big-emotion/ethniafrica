@@ -1,0 +1,93 @@
+{
+  "id": "PPL_LEBOU",
+  "nameMain": "Lébou",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["SEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Lébou",
+      "selfAppellation": "Lébou",
+      "exonyms": [
+        "Lebou (transcription anglophone)",
+        "Lebu (autre variante orthographique)",
+        "Lebou Pêcheurs (désignation populaire liée à leur activité principale)"
+      ],
+      "originOfExonyms": "Le terme Lébou est à la fois l'endonyme et l'exonyme, les deux désignations coïncidant. Le nom est utilisé par les Wolof, les Sérères et les Français depuis l'époque coloniale pour désigner cette communauté du Cap-Vert. L'ethnographe P. Mercier et G. Balandier ont popularisé le terme dans leur ouvrage de référence Les Pêcheurs Lebou du Sénégal (1952).",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Lébou est couramment utilisé en français et en anglais pour désigner ce peuple. Il est reconnu dans les recensements sénégalais comme groupe ethnique distinct. La République théocratique lébou maintient une autonomie juridique spéciale reconnue par l'État sénégalais.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Atlantique (sous-branche sénégambienne du Niger-Congo) — proche des Wolof et Sérères",
+      "historicalRegion": "Presqu'île du Cap-Vert — site de Dakar, Sénégal",
+      "currentCountries": ["SEN"]
+    },
+    "ethnicities": [
+      "Lébou de Yoff — quartier de Dakar, capitale politico-religieuse lébou (fondée en 1430)",
+      "Lébou de Ouakam — communauté côtière du nord de la presqu'île",
+      "Lébou de Ngor — communauté insulaire et côtière",
+      "Lébou de Cambérène — communauté de la côte nord de Dakar",
+      "Lébou de Rufisque — communauté de la périphérie est de Dakar"
+    ],
+    "origins": {
+      "ancientOrigins": "L'identité lébou, distincte des communautés wolof et sérère voisines, remonte au moins au début du 15e siècle, antérieure à l'arrivée des explorateurs européens. La date traditionnelle de fondation de Yoff est 1430. Les traditions lébou placent leurs origines, comme celles des Wolof et des Sérères, au nord du fleuve Sénégal. Des Lébou se trouvaient au lac Guiers au 16e siècle et se sont établis dans la presqu'île du Cap-Vert vers 1700, en supplantant quelques communautés mandinka qui s'y trouvaient.",
+      "formationPeriod": "L'identité lébou se consolide entre le 15e et le 18e siècle. En 1776, une rébellion maraboutique éclate dans le Cayor (État wolof qui dominait la région). Lorsqu'elle est réprimée, des musulmans défaits se réfugient chez les Lébou. En 1790, Dial Diop dirige ces marabouts pour déclarer l'indépendance vis-à-vis du Cayor. Après 20 ans de guerre, le Cayor reconnaît en 1812 leur indépendance et Diop est proclamé serigne (chef spirituel). Cette République théocratique lébou conserve une autonomie juridique particulière jusqu'à aujourd'hui.",
+      "migrationRoutes": [
+        "Origine au nord du fleuve Sénégal, puis descente vers le lac Guiers au 16e siècle",
+        "Établissement progressif sur la presqu'île du Cap-Vert vers 1700, en déplaçant les communautés mandinka présentes"
+      ],
+      "historicalSettlementZones": [
+        "Presqu'île du Cap-Vert — Yoff, Ouakam, Ngor, Cambérène (nord de la presqu'île)",
+        "Dakar-Médina et quartiers côtiers de la ville de Dakar",
+        "Rufisque et périphérie est de Dakar",
+        "Lac Guiers (Sénégal) — zone d'implantation historique avant le Cap-Vert (16e siècle)"
+      ],
+      "majorHistoricalEvents": "Fondation traditionnelle de Yoff en 1430. Accueil des réfugiés maraboutiques de la révolte du Cayor en 1776. Déclaration d'indépendance vis-à-vis du Cayor en 1790 par Dial Diop. Reconnaissance de l'indépendance par le Cayor en 1812 et proclamation du premier serigne. Intégration progressive dans le territoire colonial français après l'établissement de Dakar comme capitale (1857). Déplacement et réduction des terres lébou lors du développement urbain de Dakar au 20e siècle. Les Lébou habitaient la presqu'île bien avant que Dakar ne devienne la capitale nationale du Sénégal en 1958."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La République théocratique lébou (Lebou Republic) est une institution politique unique qui maintient une autonomie juridique spéciale. L'autorité est confiée à deux assemblées : le Diambouri Ndakarou (assemblée de Dakar) et le Diambouri Pintch (assemblée des quartiers). Les chefs de quartier élisent le serigne (chef spirituel, issu des familles aristocratiques lébou), qui sert de cour d'appel de dernier ressort. Le diaraf règle les litiges fonciers et successoraux. Le Ndeyedy Rew est une sorte de ministre de l'intérieur et des affaires extérieures, gérant historiquement les relations avec les Français.",
+      "clanOrganization": "Organisation en familles patrilinéaires étendues comprenant non seulement les vivants mais aussi les esprits ancestraux associés. Les familles aristocratiques lébou fournissent les candidats au serigne. La société lébou valorise la piété et le respect des anciens. Distinction traditionnelle entre les familles de pêcheurs et les familles de propriétaires terriens.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'appartenance familiale, les droits fonciers et la participation à la gouvernance coutumière. Les familles aristocratiques maintiennent un rôle privilégié dans l'élection du serigne. Les ancêtres (esprits familiaux) sont intégrés à la vie communautaire et invoqués lors des cérémonies.",
+      "religiousAuthority": "Double autorité religieuse : islam sunnite (majorité des Lébou) et confrérie Layene (secte théocratique lébou dont le siège est à Layene, dans le quartier Yoff de Dakar). Le serigne de la communauté cumule autorité politique et religieuse. La confrérie Layene, fondée au 19e siècle, est une confrérie soufie spécifiquement lébou. L'islam coexiste avec des pratiques spirituelles traditionnelles, notamment le N'depp."
+    },
+    "languages": {
+      "mainLanguage": "Lébou Wolof (Lebou Oulof)",
+      "isoCodes": ["wol"],
+      "dialects": [
+        "Lébou Wolof — dialecte propre aux Lébou, inintelligible pour les locuteurs du wolof standard malgré la parenté",
+        "Wolof standard — maîtrisé par tous les Lébou comme seconde langue (bilinguisme universel)"
+      ],
+      "vehicularRole": "Le lébou wolof est la langue maternelle de la communauté lébou, considéré comme la source du wolof standard selon certains linguistes. Son originalité est masquée par le fait que tous les Lébou sont bilingues en wolof standard. Le lébou wolof est classé comme dialecte du wolof (code ISO 639-3 : wol) dans Ethnologue et Glottolog, mais est inintelligible pour les locuteurs du wolof standard. Le français est la langue officielle du Sénégal et de l'éducation."
+    },
+    "culture": {
+      "majorRites": "Le N'depp (ou Ndeup) est la cérémonie rituelle la plus emblématique des Lébou : séance d'exorcisme et de purification impliquant musique de tambours (tam-tams dan), chants, danses et sacrifices d'animaux destinés aux esprits protecteurs de la mer (appelés rab). Le N'depp est organisé pour soigner des personnes possédées par des esprits malveillants ou pour demander protection collective. Avant la cérémonie, un guérisseur consulte des oracles pour déterminer les sacrifices appropriés (lait caillé, mouton, chèvre selon les cas). Le rituel se déroule en procession vers la mer, le sacrificateur utilisant le sang de l'animal et d'autres éléments pour implorer la paix. Rites de passage : naissance (cérémonie de présentation de l'enfant), mariage (combinant traditions lébou et pratiques islamiques), funérailles. Prières collectives islamiques lors des fêtes religieuses.",
+      "symbols": "La mer et la pirogue sont les symboles identitaires fondamentaux des Lébou, peuple de pêcheurs depuis des siècles. Layene (quartier de Yoff) est le centre spirituel de la communauté et siège de la confrérie Layene. Le filet de pêche est un symbole d'unité communautaire. Les conques marines sont utilisées dans les cérémonies rituelles pour appeler les esprits de la mer.",
+      "artsAndMusic": "Musique de tam-tams (tambours dan) jouant les rythmes rituels du N'depp, transmis de génération en génération par des spécialistes. Danses cérémonielles collectives lors du N'depp, où les participants entrent en transe pour dialoguer avec les esprits. Musique de la confrérie Layene avec ses chants soufis spécifiques. Artisanat de la pêche : fabrication et décoration de pirogues, confection de filets. Tissage et broderie traditionnels pour les vêtements de cérémonie. Littérature orale : contes, proverbes et récits historiques transmis oralement.",
+      "spiritualities": "Islam majoritaire sunnite, pratiqué par la quasi-totalité des Lébou, avec une forte influence des confréries soufies, notamment la Layene (confrérie proprement lébou fondée à Yoff au 19e siècle par Seydina Limamou Laye, considéré comme le Mahdi par ses adeptes). Croyances animistes traditionnelles maintenues en parallèle : culte des esprits de la mer (rab), des ancêtres familiaux et des génies protecteurs des lieux. Le N'depp est la manifestation principale de ce syncrétisme. Les familles lébou intègrent les esprits ancestraux comme membres à part entière de la communauté familiale."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La République théocratique lébou, fondée en 1812 sous Dial Diop (premier serigne), est une institution politique unique en Afrique de l'Ouest : une petite théocratie urbaine maintenant son autonomie dans l'environnement de la capitale sénégalaise. Elle conserve une autonomie juridique spéciale reconnue par l'État sénégalais. Avant la fondation de la République, la presqu'île était sous la suzeraineté du Damel du Cayor (État wolof).",
+      "relationsWithNeighbors": "Relations de distinctions et de compétition avec les Wolof : les Lébou parlent un dialecte wolof mais maintiennent une identité distincte. Relations avec les Sérères, dont ils partagent certaines traditions spirituelles (rapport aux rab, esprits). Relations avec les Mandinka (déplacés de la presqu'île vers 1700). Relations avec les commerçants luso-français à Dakar depuis le 15e siècle. Relations tendues puis apaisées avec le Cayor wolof, qui reconnut leur indépendance en 1812.",
+      "conflictsOrAlliances": "Guerre d'indépendance contre le Cayor (1790-1812) aboutissant à la reconnaissance de l'autonomie lébou. Alliance tactique avec les marabouts réfugiés de la révolte du Cayor (1776-1790), qui forma le noyau de la République lébou. Résistance passive aux pressions de l'administration coloniale française qui cherchait à s'approprier les terres du Cap-Vert pour le développement de Dakar.",
+      "diaspora": "Présence lébou concentrée sur la presqu'île du Cap-Vert. Migration interne vers les nouveaux quartiers de Dakar, où les Lébou ont perdu une grande partie de leurs terres ancestrales au profit du développement urbain colonial et postcolonial. Les Lébou ont développé depuis les années 1980 une activité importante dans l'immobilier et la construction à Dakar, compensant partiellement la perte des terres agricoles."
+    },
+    "demography": {
+      "totalPopulation": 120000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur les données de recensement du Sénégal et les études ethnographiques. La population lébou est concentrée sur la presqu'île du Cap-Vert (Dakar). En l'absence de données de recensement ethnique détaillées récentes au Sénégal, l'estimation de 100 000 à 150 000 personnes est retenue, en cohérence avec les études anthropologiques et les projections démographiques locales.",
+      "distributionByCountry": [
+        {
+          "country": "SEN",
+          "population": 120000,
+          "note": "Presqu'île du Cap-Vert : Yoff, Ouakam, Ngor, Cambérène, Médina (Dakar) et Rufisque"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Lebu people. https://en.wikipedia.org/wiki/Lebu_people",
+      "Wikipedia EN — Lebu Wolof language. https://en.wikipedia.org/wiki/Lebu_Wolof",
+      "Senegal Shuttle — Ndeup: exploring Lebou culture. https://www.senegal-shuttle.com/ndeup-in-senegal/",
+      "NBC News — Senegal tribe swaps fishing boats for surfboards. https://www.nbcnews.com/id/wbna9503277",
+      "Glottolog — Lebu Wolof. https://glottolog.org/resource/languoid/id/lebu1234"
+    ]
+  }
+}

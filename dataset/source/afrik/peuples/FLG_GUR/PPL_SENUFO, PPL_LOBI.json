@@ -1,0 +1,174 @@
+{
+  "id": "PPL_SENUFO",
+  "nameMain": "Senufo",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["CIV", "MLI", "BFA", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Senufo",
+      "selfAppellation": "Syenambele",
+      "exonyms": ["Senoufo", "Siena", "Senefo", "Sene"],
+      "originOfExonyms": "Senufo et Senoufo sont des exonymes d'origine externe, utilises par les populations voisines et les colonisateurs europeens. Syenambele est l'une des formes d'auto-designation interne. Chaque sous-groupe utilise ses propres noms pour se designer.",
+      "whyProblematic": "Le terme Senufo designe en realite un groupe heterogene de peuples parlant des langues apparentees mais distinctes, divises en au moins trois grandes branches (nord, centre, sud) et plusieurs dizaines de sous-groupes. L'homogeneisation sous un seul nom peut masquer cette diversite interne.",
+      "contemporaryUsage": "Senufo reste le terme generique dominant dans les contextes academiques, touristiques et politiques. Les membres du groupe se designent souvent par le nom de leur sous-groupe specifique (Djimini, Palaka, Tagwana, Tyebari, etc.).",
+      "linguisticFamily": "FLG_GUR",
+      "ethnoLinguisticGroup": "Branche Senufo de la famille Gur (Niger-Congo), regroupant plus de 30 dialectes",
+      "historicalRegion": "Nord de la Cote d'Ivoire (autour de Korhogo), sud-est du Mali (region de Sikasso), ouest du Burkina Faso",
+      "currentCountries": ["CIV", "MLI", "BFA", "GHA"]
+    },
+    "ethnicities": [
+      "Senufo du nord (Supide/Kenedougou, Odienne)",
+      "Senufo du centre (Senari, autour de Korhogo)",
+      "Senufo du sud (plus de 2 millions, Cote d'Ivoire)",
+      "Nafana (Ghana, nord-ouest)",
+      "Palaka (separee du tronc commun avant le XIVe siecle)",
+      "Djimini",
+      "Tagwana",
+      "Tyebari"
+    ],
+    "origins": {
+      "ancientOrigins": "La ville de Korhogo, dans le nord de la Cote d'Ivoire, est liee aux Senufo depuis le XIIIe siecle. Les Palaka se sont separes du groupe principal avant le XIVe siecle. Vers le XIVe siecle, la fondation de Kong comme etape commerciale Bambara declencha des migrations vers le sud, l'ouest et le nord, creant les divisions actuelles.",
+      "formationPeriod": "Emergence progressive du groupe entre le XVe et le XVIe siecle. Les Senufo sont consideres comme l'un des groupes ethniques les plus anciens de la Cote d'Ivoire, s'y etant etablis des le XVIIe siecle au plus tard.",
+      "migrationRoutes": [
+        "Migration vers le sud depuis Kong (fondee comme etape Bambara, XIVe siecle)",
+        "Migration vers le nord-ouest (Supide/Kenedougou, region d'Odienne)",
+        "Expansion dans la vallee du Baoule-Sangha et les zones entre la Volta noire, la Bagoe et la Bani"
+      ],
+      "historicalSettlementZones": [
+        "Nord de la Cote d'Ivoire (region de Korhogo, Katiola)",
+        "Sud-est du Mali (region de Sikasso, locuteurs Supyire)",
+        "Ouest du Burkina Faso (locuteurs Karaboro)",
+        "Nord-ouest du Ghana (sous-groupe Nafana)"
+      ],
+      "unificationsOrDivisions": "Pas d'unite politique generalisee ; les villages sont independants les uns des autres. Au XIXe siecle, les Senufo constituerent une part significative du royaume Kenedougou (capitale Sikasso). La domination de Daoula Ba Traore (1840-1877) tenta une islamisation forcee, provoquant des destructions de villages (Guiembe, Nielle, 1875). Le royaume fut dissous en 1898 avec la conquete coloniale francaise.",
+      "externalInfluences": "Influence Bambara (commerce via Kong). Islamisation progressive depuis le XVIIIe siecle dans les sous-groupes meridionaux (environ 20 % de musulmans). Influences des royaumes voisins Asante et Baule. Esclavage pratique dans les deux sens : acheteurs/vendeurs d'esclaves aupres des marchands musulmans, Asante et Baule ; et victimes de raids esclavagistes.",
+      "majorHistoricalEvents": "XIVe siecle : fondation de Kong et debut des migrations. XVIIe-XIXe siecle : integration au royaume Kenedougou sous les Traore. 1875 : destruction de villages par Daoula Ba Traore pour resistance a l'islam. 1883-1898 : guerres contre les Zarma et contre-attaques. 1898 : dissolution du royaume Kenedougou et debut de la colonisation francaise."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Villages independants sans autorite politique centralisee generalisee. Organisation matrilineaire pour la succession et l'heritage des biens, malgre une patriarcat dans la famille elargie. Quatre societes a role de gouvernance et d'education : Poro (hommes), Sandogo (femmes, divination), Wambele et Tyekpa.",
+      "clanOrganization": "Systeme de castes (Katioula) : agriculteurs (Fo no) au sommet, suivis des artisans (forgerons Kule, sculpteurs Kpeene, fondeurs Tyeli, potiers, travailleurs du cuir), endogames et hereditaires. L'appartenance a une caste est hereditaire ; les artisans sont socialement meprisees mais rituellement complementaires aux agriculteurs.",
+      "ageClassSystems": "La societe Poro structure les classes d'age masculines a travers des initiations elaborees dans la foret sacree. Chaque grade initiatique correspond a une classe d'age avec des droits et obligations specifiques.",
+      "roleOfLineages": "Filiation matrilineaire pour la succession et l'heritage. Mariage de cousin arrange, polygynie commune. Les lignages matrilineaires determinent l'appartenance aux societes Poro et Sandogo.",
+      "religiousAuthority": "La societe Poro est la principale autorite religieuse et sociale masculine, presidee symboliquement par l'ancestresse Nerejao. La societe Sandogo est l'autorite feminine de divination. La deesse Maleeo (Mere Ancienne) guide les inities du Poro."
+    },
+    "languages": {
+      "mainLanguage": "Langues Senufo (groupe de langues Gur)",
+      "isoCodes": ["sef", "spp", "sep", "sea"],
+      "dialects": [
+        "Senari / Cebaara (sef) : langue principale, Cote d'Ivoire, environ 1 million de locuteurs",
+        "Supyire / Suppire (spp) : Mali (region de Sikasso) et nord de la CIV",
+        "Senufo Karaboro (Burkina Faso)",
+        "Djimini (Cote d'Ivoire)",
+        "Palaka/Kpalaga (Cote d'Ivoire)",
+        "Nafaanra (Ghana)"
+      ],
+      "vehicularRole": "Les langues senufo sont vehiculaires au sein du groupe. Le dioula est utilise comme langue de commerce interregionale. Le francais est la langue administrative au Mali, en Cote d'Ivoire et au Burkina Faso. Ensemble, les langues senufo comptent entre 800 000 et 1 million de locuteurs."
+    },
+    "culture": {
+      "majorRites": "Poro : societe secrete masculine d'initiation dans la foret sacree ; garantit la relation entre le monde des vivants et des ancetres ; utilise des masques, des figurines et du materiel rituel ; initiations a plusieurs grades (7-8 ans d'apprentissage). Sandogo : ordre secret feminin de divination. Tyekpa : ceremonies funeraires (sculpture dansee sur la tete). Funerailles elaborees avec masques et musique. Les artisans sont inities separement pour la fabrication d'objets rituels.",
+      "symbols": "Les masques Senufo sont parmi les plus connus d'Afrique de l'Ouest (inspirerent Picasso et Leger). Figurines caryatides (forme feminine comme beauties spirituelles mediatrice). L'oiseau calao (figure Sejen) est un symbole essentiel du Poro. Le tissu Korhogo (motifs anthropomorphes et zoomorphes en peinture brune sur toile de coton blanc) est un art textile emblematique.",
+      "artsAndMusic": "Sculpture sur bois (masques, figurines) specialisee par sous-groupes (Kulubele sculpteurs, Kpeembele fondeurs de laiton, Djelebele travail du cuir, Numu forgerons). Bijoux en laiton imitant la faune. Musique instrumentale (aeróphones, chordophones, membranophones) specialite des Fejembele (chasseurs-musiciens-fossoyeurs-devins). Le tissu de Korhogo est reconnu internationalement.",
+      "spiritualities": "Animisme majoritaire avec elements ancestraux et naturels. Etre supreme dual : Maleeo/Katieleo (Mere Ancienne feminine) et Kolotyolo/Koulotiolo (Dieu createur masculin). Contact avec des esprits intermediaires. Environ 20 % de musulmans dans le sous-groupe meridional. Tradition animiste maintenue parallelement a l'islam dans certains sous-groupes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Participation significative au royaume Kenedougou (XVIIe-XIXe siecle, capitale Sikasso), sous la dynastie des Traore. Les Senufo du nord (Supide/Kenedougou pres d'Odienne) aiderent a fonder un important royaume ouest-africain. L'empire de Kong (etabli par les Dioula) integra certains groupes Senufo a partir du XVIIIe siecle.",
+      "relationsWithNeighbors": "Commerce avec les marchands Bambara et Dioula. Resistance aux tentatives d'islamisation forcee par les rois Traore et les missions Dioula. Conflits avec les Zarma (1883-1898). Relations commerciales et esclavagistes avec les Asante et les Baule. Cohabitation multiethique dans les zones commerciales du Sudano-Sahel.",
+      "conflictsOrAlliances": "Guerres avec les royaumes Gwiriko et Kenedougou au XIXe siecle. Resistance a l'islamisation. Conflits avec les Zarma (1883-1898). Soumission a la domination coloniale francaise en 1898.",
+      "diaspora": "Presence Senufo dans les grandes villes de Cote d'Ivoire (Abidjan, Bouake) et du Mali (Bamako) suite aux migrations economiques contemporaines."
+    },
+    "demography": {
+      "totalPopulation": 3500000,
+      "referenceYear": 2025,
+      "source": "Estimation 2013 : plus de 3 millions (Wikipedia EN) ; 1,5 million (Garber, 1987) ; 2,7 millions (Ethnologue, 15e ed.) ; estimation 2025 tenant compte de la croissance demographique",
+      "distributionByCountry": [
+        { "country": "CIV", "population": 2600000 },
+        { "country": "MLI", "population": 800000 },
+        { "country": "BFA", "population": 80000 },
+        { "country": "GHA", "population": 20000 }
+      ]
+    },
+    "sources": [
+      "Senufo people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Senufo_people)",
+      "Senufo – Britannica (https://www.britannica.com/topic/Senufo)",
+      "Lobi people – Wikipedia EN (https://en.wikipedia.org/wiki/Lobi_people)",
+      "Lobi (peuple) – Wikipedia FR (https://fr.wikipedia.org/wiki/Lobi_(peuple))",
+      "Cebaara language ISO 639-3 sef – Wikipedia EN (https://en.wikipedia.org/wiki/Cebaara_language)",
+      "Supyire ISO 639-3 spp – Glottolog (https://glottolog.org/resource/languoid/id/supy1237)",
+      "Senoufo Central in Burkina Faso – Joshua Project (https://joshuaproject.net/people_groups/14937/UV)",
+      "Lobi in Burkina Faso – Joshua Project (https://joshuaproject.net/people_groups/print/13082/UV)",
+      "Learn More : Lobi – Pacific Lutheran University African Art Collection (https://www.plu.edu/africanartcollection/figures/lobi-1/learn-more-lobi-1/)"
+    ]
+  },
+  "_lobi_companion": {
+    "id": "PPL_LOBI",
+    "nameMain": "Lobi",
+    "languageFamilyId": "FLG_GUR",
+    "currentCountries": ["BFA", "CIV", "GHA"],
+    "note": "Fiche complementaire incluse dans ce fichier conformement au nom du fichier source PPL_SENUFO, PPL_LOBI.json",
+    "content": {
+      "appellations": {
+        "mainName": "Lobi",
+        "selfAppellation": "Miiwo",
+        "exonyms": ["Lobiri", "Lobiri", "Lober", "Lobis"],
+        "originOfExonyms": "Le nom Lobi vient de deux mots lobiri : lou (foret) et bi (enfants), signifiant litteralement enfants de la foret. Lobiri designe a la fois le peuple et la langue.",
+        "whyProblematic": "Lobi est un terme generique designant plusieurs groupes apparentes (Lobi proprement dits, Birfor, Dagara, Dorossy, Dyan, Gan, Tenbo/Loron). Le terme Birifor est parfois employe de facon interchangeable avec Lobi au Ghana.",
+        "contemporaryUsage": "Lobi est utilise dans les contextes officiels du Burkina Faso et de la Cote d'Ivoire. Le Lobi et ses sous-groupes sont reconnus dans les recensements nationaux des trois pays."
+      },
+      "origins": {
+        "ancientOrigins": "Origine dans le Ghana actuel. A partir de 1770, des vagues successives de Lobi traverserent le fleuve Mouhoun (Volta noire) pour s'installer dans le sud du Burkina Faso et ulterieurement en Cote d'Ivoire, fuyant les razzias esclavagistes de la region de Wa.",
+        "formationPeriod": "Migrations depuis le Ghana vers le Burkina Faso a partir de 1770. Etablissement progressif en Cote d'Ivoire au cours du XIXe siecle.",
+        "migrationRoutes": [
+          "Migration depuis la region de Wa (Ghana) vers le sud du Burkina Faso a partir de 1770",
+          "Extension ulterieure vers le nord-est de la Cote d'Ivoire (region de Bouna)"
+        ],
+        "historicalSettlementZones": [
+          "Sud du Burkina Faso (Gaoua, Diebougou)",
+          "Nord-est de la Cote d'Ivoire (Bouna, parc national de la Comoe)",
+          "Nord-ouest du Ghana (Lawra, Wa, Kampte)"
+        ],
+        "unificationsOrDivisions": "Societe sans pouvoir centralise. Le Gan est le seul sous-groupe disposant d'une organisation politique royale centralisee. Les autres groupes sont dits acephales.",
+        "externalInfluences": "Pression constante des royaumes Gwiriko et Kenedougou au XIXe siecle. Resistance a la colonisation francaise pendant plus de 30 ans (guerilla utilisant fleches empoisonnees et pieges). Convention franco-britannique de 1898 partageant le territoire Lobi sans leur consentement.",
+        "majorHistoricalEvents": "1770 : debut des migrations depuis le Ghana. 1815 : offensive de Bakary Ouattara (frere du fondateur de l'empire Guiriko). 1898 : convention franco-britannique plaçant le pays Lobi sous juridiction francaise. 1902 : essaim d'abeilles utilise contre les soldats du lieutenant Schwartz a Niobini. XIXe-XXe siecle : resistance coloniale de plus de 30 ans."
+      },
+      "organization": {
+        "traditionalPoliticalSystem": "Societe acephale rejetant toute autorite politique centralisee. Deux figures d'autorite : le chef de la Terre (intermediaire entre esprits et humains, responsable des ceremonies) et le chef de l'Arc (chef de guerre). A Bouna (CIV), tentative recente de chefferie centralisee contestee.",
+        "clanOrganization": "Foyers nucleaires au sein de soukalas (maisons-forteresses). Le thildar (devin du village) et le dithildar (pretre du village, un par village) sont les figures spirituelles de reference.",
+        "roleOfLineages": "Societe patrilineaire. Les droits fonciers et les responsabilites rituelles sont transmis par la ligne paternelle.",
+        "religiousAuthority": "Le thildar est le devin central, communiquant avec les thila (esprits de la nature qui habitent des zones naturelles et des objets manufactures comme les bateba). Thangba yu est l'etre supreme createur, distant, ne pouvant etre prie directement."
+      },
+      "languages": {
+        "mainLanguage": "Lobiri (Miiwo)",
+        "isoCodes": ["lob"],
+        "dialects": [
+          "Miiwo (Lobiri proprement dit, Burkina Faso et CIV)",
+          "Birifor (Ghana et nord du Burkina Faso)",
+          "Djan",
+          "Gan"
+        ],
+        "vehicularRole": "Le lobiri est la langue vehiculaire interne. Plus de 440 000 locuteurs au debut des annees 1990 (286 000 au Burkina Faso, 156 000 en CIV). Le dioula et le francais sont utilises pour les echanges exterieurs."
+      },
+      "culture": {
+        "majorRites": "Dyoro/Joro : ceremonie d'initiation tenue tous les sept ans sur les rives de la Volta noire ; principale celebration collective et identitaire. Ceremonies dirigees par le thildar : communication avec les thila (esprits). Sacrifices aux autels domestiques et villageois. Celebrations des naissances, mariages et deces. Fete de la pluie avec danses.",
+        "symbols": "Les bateba (figures anthropomorphes en bois) sont le symbole artistique et spirituel le plus connu. Les soukalas (maisons-forteresses a entree par le toit autour de Bouna) sont l'embleme architectural. Le Mouhoun (Volta noire) est un symbole migratoire fondamental.",
+        "artsAndMusic": "Sculpture sur bois des bateba (figures dites ordinaires, dangereuses, pensives, lascives) utilisees dans les sanctuaires des thila. Figurines en laiton portees sur le corps. Poteries rituelles et objets de culte. Les musiciens Wala sont reputes pour leurs joueurs de xylophone aux funerailles.",
+        "spiritualities": "Animisme integre. Thangba yu (ou Thangba) : etre supreme createur et distant, avant la corruption du monde par la violence et la desobeissance. Les thila (esprits de la nature) sont des etres ambivalents exigeant des offrandes regulieres pour des actions protectrices. Le thildar interprete les soser (regles imposees par les thila). Pas d'influence islamique significative chez les Lobi proprement dits."
+      },
+      "historicalRole": {
+        "kingdomsOrChiefdoms": "Pas de royaumes formalises. Seul le sous-groupe Gan dispose d'une chefferie royale centralisee. L'ensemble du groupe Lobi est defini par le refus de la centralisation politique.",
+        "relationsWithNeighbors": "Relations commerciales avec les Gan et Koulango. Culture proche des Birifor et Dagari. Victimes de raids esclavagistes des royaumes Gwiriko et Kenedougou. Resistance continue aux pressions exterieures.",
+        "conflictsOrAlliances": "Resistance prolongee a la colonisation francaise (plus de 30 ans de guerilla, flèches empoisonnees, pieges). Attaque au moyen d'essaims d'abeilles contre les soldats français (1902). Resistance economique (refus de convertir les cauris en monnaie coloniale) et religieuse (malediction sur les collaborateurs).",
+        "diaspora": "Migrations economiques vers les grandes villes du Burkina Faso (Ouagadougou) et de Cote d'Ivoire (Abidjan) au XXe et XXIe siecles."
+      },
+      "demography": {
+        "totalPopulation": 1250000,
+        "referenceYear": 2025,
+        "source": "Wikipedia EN : un peu plus de 1 000 000 ; 2,4% de la population du Burkina Faso ; 250 000 en CIV et 250 000 au Ghana ; estimation 2025 avec croissance demographique",
+        "distributionByCountry": [
+          { "country": "BFA", "population": 900000 },
+          { "country": "CIV", "population": 250000 },
+          { "country": "GHA", "population": 100000 }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+# Nom du peuple
+- Nom principal : Dawro
+- Auto-appellation : Dawuro
+- Famille linguistique : Afro-asiatique – Omotique (FLG_OMOTIQUE)
+- Groupe : Omotique nord
+- Région historique : Dawro Zone (Éthiopie)
+- ID : PPL_DAWRO
+
+# 1. Ethnies incluses
+- Dawro des hautes terres
+- Sous-groupes du Dawro sud
+
+# 2. Origines
+- Ancienne entité politique (royaume Dawro).
+- Liens avec Wolayta et Kafa.
+
+# 3. Organisation
+- Clans et familles étendues.
+- Chefferies locales.
+
+# 4. Langue
+- Dawro
+- ISO : dwr
+
+# 5. Culture
+- Musique *kundo*.
+- Rites agricoles.
+
+# 6. Histoire
+- Royaume Dawro jusqu’au XIXe siècle.
+- Conflits et alliances locales.
+
+# 7. Démographie
+- Population : 950 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (dwr)
+- Dawro Zone Cultural Office

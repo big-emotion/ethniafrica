@@ -1,0 +1,86 @@
+{
+  "id": "PPL_AIZI",
+  "nameMain": "Aizi",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Aizi",
+      "selfAppellation": "Ahizi (endonyme, egalement orthographie Ahizi ou Aizi selon les sources)",
+      "exonyms": [
+        "Ahizi (variante orthographique francisee)",
+        "Pepehiri (nom utilise dans les traditions orales eotile pour designer les Aizi)",
+        "Pepehili-Betibe (designation des locuteurs de l'Aporo au sein de l'espace aizi)"
+      ],
+      "originOfExonyms": "Le terme Aizi est la forme francaise standardisee de l'endonyme Ahizi. Pepehiri est une designation externe issue des traditions orales eotile qui designait les ancetres des Aizi lors de leur passage en pays eotile au XIVe siecle.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Aizi est couramment employe dans l'administration ivoirienne et la litterature academique. Le terme Ahizi est prefere par les locuteurs natifs. Les Aizi sont parfois regroupes avec les Alladjan et les Adioukrou sous l'appellation locale des peuples lagunaires de la region de Jacqueville.",
+      "linguisticFamily": "FLG_KROU",
+      "ethnoLinguisticGroup": "Kru (branche lagunaire)",
+      "historicalRegion": "Pourtour occidental de la lagune Ebrie, departement de Jacqueville, Cote d'Ivoire",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": [
+      "Aizi (trois sous-groupes linguistiques : Lelou, Mobou, Tiagbamrin / Aproumu)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Aizi sont un peuple lagunaire de Cote d'Ivoire dont la tradition orale atteste une origine dida-krou : leurs ancetres seraient venus de l'est, depuis le pays eotile, et auraient transited par la region de Lozoua (pays dida) avant de s'installer sur les rives occidentales de la lagune Ebrie. Une frange des Aizi soutient une origine orientale eotile-akan.",
+      "formationPeriod": "XIVe-XVIIIe siecles. Les Pèpèhiri (ancetres des Aizi) auraient traverse le pays eotile au XIVe siecle, s'y etablissant longuement avant de migrer vers leurs sites actuels. A la suite de la conquete coloniale du pays eotile par le royaume agni-sanwi en 1754, des groupes eotile rejoignirent les Aizi sur leurs sites actuels, renforçant des liens fraternels historiques.",
+      "migrationRoutes": [
+        "Migration depuis l'est (pays eotile, region de la lagune Aby) vers l'ouest de la lagune Ebrie",
+        "Passage par le pays dida (localite de Lozoua) pour certains groupes",
+        "Installation progressive sur les treize villages actuels autour de la lagune Ebrie"
+      ],
+      "historicalSettlementZones": [
+        "Pourtour occidental de la lagune Ebrie (departement de Jacqueville)",
+        "Ile et bordures lagunaires entre les Alladjan (cordon littoral) et les Adioukrou (arriere-pays)"
+      ],
+      "unificationsOrDivisions": "Le pays aizi est divise en trois sous-groupes dialectaux : les Lelou (nord-ouest), les Mobou (centre) et les Aproumu/Tiagbamrin (est). Ces groupes partagent une identite commune mais se distinguent linguistiquement. Les Pèpèhili-Betibe, locuteurs de l'Aporo proche du Betine (langue eotile), forment une entite particuliere au sein de l'espace aizi.",
+      "externalInfluences": "Contact linguistique avec les Ebrie ayant conduit certains groupes aizi (notamment ceux proches de Grand-Bassam) a adopter la langue ebrie des le debut du XIXe siecle. Influence akan dans certains villages du sud. La colonisation française a impose des decoupages administratifs modifiant les regroupements traditionnels.",
+      "majorHistoricalEvents": "XIVe siecle : passage des Pèpèhiri en pays eotile. 1754 : guerre de conquete du pays eotile par le royaume agni-sanwi, provoquant un flux de refugies eotile vers les villages aizi. Periode coloniale : integration a l'administration française de Cote d'Ivoire. Contemporain : inscription des Aizi dans les dynamiques lagunaires du Grand Abidjan."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation segmentaire par villages et lignages, sans chefferie centralisee forte. Chaque village est dirige par un chef de village (chef de terre) reconnu pour son lignage fondateur. Les decisions importantes sont prises en conseil de notables et d'anciens.",
+      "clanOrganization": "Organisation par lignages patrilineaires relies aux villages fondateurs. Chaque village aizi possede son contingent de Pèpèhili-Betibe, indiquant une coexistence de lignages d'origines differentes (eotile, dida-krou) au sein du meme espace.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages fondateurs determinent la propriete symbolique de la terre et les droits d'acces aux ressources lagunaires. La tradition orale de chaque village retrace la genealogie du lignage fondateur pour legitimiser le peuplement du site.",
+      "religiousAuthority": "Pratiques animistes centrees sur le culte des ancetres et les forces de la lagune. Presence importante du christianisme aujourd'hui (91 % des Aizi Aproumu et Mobou se declarent chretiens selon Joshua Project)."
+    },
+    "languages": {
+      "mainLanguage": "Aizi (trois langues distinctes : Tiagbamrin, Mobumrin, Aproumu)",
+      "isoCodes": ["ahi", "ahm", "ahp"],
+      "dialects": [
+        "Aizi Tiagbamrin (ahi) : parle dans les villages lelou du nord-ouest",
+        "Aizi Mobumrin (ahm) : parle dans les villages mobou du centre",
+        "Aizi Aproumu / Apro (ahp) : parle dans les villages du groupe est, classe en kwa et non en kru contrairement aux deux autres"
+      ],
+      "vehicularRole": "La langue ebrie sert de langue de communication inter-ethnique dans la region lagunaire d'Abidjan. Le français est la langue d'administration et d'enseignement. Les trois langues aizi sont classees comme stables ou en cours de documentation (traductions bibliques en cours selon Joshua Project)."
+    },
+    "culture": {
+      "majorRites": "Rites lagunaires de benediction des pirogues et de la peche, essentiels a l'economie traditionnelle. Ceremonies liees au cycle agricole et au culte des ancetres. Festival annuel des peuples lagunaires de Jacqueville (3A : Alladjan, Adioukrou, Ahizi) celebrant l'identite commune des communautes lagunaires.",
+      "symbols": "La lagune Ebrie est le symbole central de l'identite aizi : les Aizi et les Eotile sont designes comme les seuls vrais lagunaires de Cote d'Ivoire, leurs villages etant situes exclusivement en bordure immediate de lagune ou sur des iles lagunaires.",
+      "artsAndMusic": "Musiques et danses lagunaires transmises oralement. Pirogue traditionnelle comme element identitaire central. Chants collectifs lors des ceremonies de village.",
+      "spiritualities": "Animisme traditionnel avec culte des ancetres et des forces naturelles de la lagune. Croyance en esprits des eaux et de la foret. Christianisme majoritaire aujourd'hui, integre aux pratiques locales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation en chefferies villageoises autonomes relies par des alliances de lignages. Relations historiques etroites avec les Eotile (peuple frere selon la tradition orale).",
+      "relationsWithNeighbors": "Relations historiques de fraternite et d'alliance avec les Eotile (lagune Aby). Coexistence avec les Alladjan sur le cordon littoral et les Adioukrou dans l'arriere-pays. Contacts et parfois absorption linguistique par les Ebrie a proximite d'Abidjan.",
+      "conflictsOrAlliances": "Alliance de refuge lors de la guerre agni-sanwi contre les Eotile en 1754 : les Aizi accueillirent leurs freres eotile fuyant la conquete. Resistance a la penetration coloniale française dans la region lagunaire au XIXe siecle.",
+      "diaspora": "Presence en milieu urbain abidjanais, notamment dans les communes de Jacqueville, Grand-Lahou et Abidjan. Migrations vers la capitale liees a la scolarisation et a l'emploi depuis l'independance."
+    },
+    "demography": {
+      "totalPopulation": 32800,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : Aizi Aproumu 12 000, Aizi Mobumrin 3 800, Aizi Tiagbamrin 17 000 (total cumule).",
+      "distributionByCountry": [{ "country": "CIV", "population": 32800 }]
+    },
+    "sources": [
+      "Ethnologue – Aizi subgroup (https://www.ethnologue.com/subgroup/938/)",
+      "Ethnologue – Aizi Tiagbamrin (ahi) (https://www.ethnologue.com/language/ahi/)",
+      "Pete Eric – Aizi et Eotile : deux peuples lagunaires aux liens historiques anciens, Revue Akofena, janvier 2025 (https://www.revue-akofena.com/wp-content/uploads/2025/01/07-ActColl-Eric-PETE_077-088.pdf)",
+      "Azagni Blath Esther – Les betibe et la formation des villages aizi de langue lelou (XIIIe-debut XXe siecles), Ziglôbitha (https://www.ziglobitha.org/wp-content/uploads/2021/11/03-Blath-Esther-AZAGNI-pp31-52.pdf)",
+      "Joshua Project – Cote d'Ivoire people groups (https://joshuaproject.net/countries/iv)",
+      "Wikipedia – Apro language (https://en.wikipedia.org/wiki/Apro_language)"
+    ]
+  }
+}

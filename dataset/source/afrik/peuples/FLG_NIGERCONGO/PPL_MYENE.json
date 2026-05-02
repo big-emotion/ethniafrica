@@ -1,0 +1,99 @@
+{
+  "id": "PPL_MYENE",
+  "nameMain": "Myene",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GAB"],
+  "content": {
+    "appellations": {
+      "mainName": "Myene",
+      "selfAppellation": "Omyene / Myene",
+      "exonyms": ["Myéné", "Omyènè", "Pangwe"],
+      "originOfExonyms": "Le nom Omyene est un endonyme dérivé de l'expression mye ne (je dis que), qui introduit les affirmations dans la tradition orale. Le terme Myene est la forme francisée la plus répandue, utilisée depuis le contact avec les explorateurs portugais au 15e siècle et systématisée par l'administration coloniale française.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Myene et Omyene sont utilisés indifféremment dans les sources académiques et officielles. Les locuteurs se désignent par le nom de leur sous-groupe (Mpongwe, Orungu, Galwa, etc.) ou par le terme générique Omyene. Le terme a été documenté pour la première fois en 1602 par le commerçant hollandais Pieter de Marées.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou étroit (zone B10-B11, Guthrie)",
+      "historicalRegion": "Littoral gabonais, estuaire du Gabon, embouchures des fleuves Ogooué et Remboué ; provinces de l'Estuaire et de l'Ogooué-Maritime",
+      "currentCountries": ["GAB"]
+    },
+    "ethnicities": [
+      "Mpongwe (Pongoué) — clans de l'estuaire du Gabon, autour de Libreville ; intermédiaires commerciaux historiques",
+      "Orungu — clans du cap Lopez et des embouchures de l'Ogooué, autour de Port-Gentil ; organisateurs du commerce atlantique",
+      "Galwa (Galloa) — clans de la région de Lambaréné, intérieur fluvial de l'Ogooué",
+      "Nkomi — clans du lagon Fernan Vaz, au sud de Port-Gentil",
+      "Adyumba (Adjumba) — clans du lac Azingo et de la région de Lambaréné",
+      "Enenga — clans du lac Zilé, région intérieure de Lambaréné"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Myene sont l'un des groupes bantous les plus anciennement installés sur le littoral de l'actuel Gabon. Ils font partie des migrations bantoues qui ont colonisé l'Afrique centrale en progressant depuis le bassin du Congo vers le littoral atlantique. Selon les traditions orales, la migration principale débuta vers le 13e siècle. Des communautés mpongwe étaient établies autour de l'estuaire du Gabon depuis au moins 2 000 ans selon certaines sources, devenant plus concentrées à partir du 16e siècle pour profiter des échanges avec les Européens.",
+      "formationPeriod": "L'identité myene se structure progressivement entre le 13e et le 17e siècle avec l'installation des différents sous-groupes sur le littoral gabonais. Au 15e siècle, lorsque les explorateurs portugais atteignent la région, les communautés myene sont déjà solidement établies sur la côte et les estuaires. L'unité linguistique du cluster myene est reconnue par la linguistique moderne mais les sous-groupes maintiennent des identités distinctes.",
+      "migrationRoutes": [
+        "Migration bantoue depuis l'intérieur du bassin congolais vers le littoral atlantique gabonais (13e-15e siècles)",
+        "Expansion des clans mpongwe depuis l'estuaire du Gabon vers les rives de l'Ogooué",
+        "Établissement des clans orungu autour du cap Lopez pour contrôler les embouchures de l'Ogooué"
+      ],
+      "historicalSettlementZones": [
+        "Estuaire du Gabon — Libreville et environs (Mpongwe)",
+        "Cap Lopez et embouchures de l'Ogooué — Port-Gentil (Orungu)",
+        "Lambaréné et lac Azingo (Galwa, Adyumba, Enenga)",
+        "Lagon Fernan Vaz (Nkomi)",
+        "Rives du fleuve Remboué"
+      ],
+      "unificationsOrDivisions": "Les Myene n'ont jamais constitué une entité politique unifiée. Chaque sous-groupe (Mpongwe, Orungu, Galwa, Nkomi, Adyumba, Enenga) est organisé en clans indépendants. Les Mpongwe comptaient en 1840 entre 6 000 et 7 000 personnes libres et 6 000 esclaves, répartis en une vingtaine de clans avec des rivalités interclaniques qui permirent à la France d'établir son emprise.",
+      "externalInfluences": "Premier contact avec les Portugais au 15e siècle. Dès le 16e siècle, les Mpongwe devinrent intermédiaires dans la traite des esclaves entre la côte et l'intérieur. En 1839 et 1841, les rois Denis et Louis signèrent des accords avec la France ; le roi R'Ogouarowe (roi Glass) résista jusqu'en 1845, soumis après bombardement. En 1844, l'introduction de missionnaires catholiques français accéléra l'acculturation. La variole ravagea la population : en 1884, seuls 3 000 Mpongwe survivaient. La fin de la traite négrière ruina le royaume Orungu dans les années 1870."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Société organisée en clans (ikanda) dirigés par des chefs de clan (otali). Les villages étaient gouvernés par des chefs (nkani). La prise de décision reposait sur le consensus des anciens du clan. Les rois mpongwe (comme le roi Denis ou le roi Glass) avaient une autorité sur leurs clans respectifs mais il n'existait pas de pouvoir central unifié. Les Orungu développèrent un royaume organisé autour du contrôle commercial du cap Lopez dont la puissance reposait sur la traite des esclaves par l'embouchure de l'Ogooué.",
+      "clanOrganization": "La société myene est organisée en clans matrilinéaires (ikanda). La filiation et l'héritage se transmettent par la ligne maternelle, contrairement à la plupart des peuples bantous voisins. Le clan constitue l'unité foncière et sociale de base. L'appartenance clanique détermine l'identité, les droits sur la terre, les obligations rituelles et les alliances matrimoniales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le lignage maternel (ikanda) structure l'organisation sociale et foncière. Les enfants appartiennent au clan de la mère. Le chef de clan (otali) gère les biens communs du clan et arbitre les conflits internes. Les ancêtres claniques jouent un rôle central dans les rituels et la légitimation de l'autorité.",
+      "religiousAuthority": "Avant la christianisation, les Myene pratiquaient des religions autochtones centrées sur le culte des ancêtres, les esprits de la nature et une cosmologie complexe incluant une divinité créatrice. Les missionnaires catholiques et protestants s'implantèrent dès le 19e siècle. Aujourd'hui la majorité des Myene se déclare chrétienne (catholique ou protestante) tout en maintenant des pratiques traditionnelles. Le prêtre, ethnographe et écrivain André Raponda-Walker (1871-1968), lui-même mpongwe, documenta les traditions religieuses gabonaises."
+    },
+    "languages": {
+      "mainLanguage": "Omyene (Myene)",
+      "isoCodes": ["mye"],
+      "dialects": [
+        "Mpongwe (Pongoué) — dialecte de Libreville, le mieux documenté ; servit de lingua franca commerciale au 19e siècle ; tradition écrite développée par les missionnaires",
+        "Orungu (Myen'Orungu) — dialecte de Port-Gentil et du cap Lopez (B11b)",
+        "Galwa (Galloa) — dialecte de Lambaréné (B11c)",
+        "Nkomi — dialecte du lagon Fernan Vaz",
+        "Adyumba (Adjumba) — dialecte du lac Azingo",
+        "Enenga — dialecte du lac Zilé"
+      ],
+      "vehicularRole": "L'omyene est parlé par environ 46 000 locuteurs au Gabon, principalement dans les provinces de l'Ogooué-Maritime et du Moyen-Ogooué. C'est l'un des groupes de langues bantoues les plus divergents. Le mpongwe servit de lingua franca dans le commerce côtier au 19e siècle. Aujourd'hui le français (langue officielle du Gabon) domine dans l'éducation et l'administration, mais l'omyene reste vivace pour les expressions culturelles et les cérémonies. La langue est classée stable par Ethnologue."
+    },
+    "culture": {
+      "majorRites": "Rites de passage liés à la naissance, l'initiation, le mariage et la mort. Les funérailles incluent des veillées prolongées, des chants et des deuils collectifs impliquant tout le clan. Rites agraires et de pêche invoquant les esprits ancestraux pour assurer de bonnes récoltes et captures. Cérémonies de levée de deuil après la période de retraite du veuf ou de la veuve. La cérémonie d'ivili marque le retour à la vie sociale après le deuil.",
+      "symbols": "La pirogue (canot) est un symbole central de la culture myene, peuple de pêcheurs et de commerçants maritimes. Les masques cérémoniels en bois sculpté sont utilisés lors des rites d'initiation et des funérailles. Les textiles et parures sont des marqueurs d'identité clanique. Les sites ancestraux et les sanctuaires claniques constituent des lieux sacrés.",
+      "artsAndMusic": "Les Myene sont réputés pour leur maîtrise de la sculpture sur bois, notamment la taille de pirogues et de masques cérémoniels. Leurs styles artistiques ont influencé les traditions gabonaises plus larges en sculpture et en fabrication de masques. Musique traditionnelle accompagnant les cérémonies funèbres et d'initiation avec tambours et chants polyphoniques. Tradition orale riche : proverbes, contes et récits historiques transmis oralement (awanawintche). André Raponda-Walker publia un dictionnaire et une grammaire du mpongwe en 1934, première documentation systématique de la langue.",
+      "spiritualities": "Cosmologie traditionnelle centrée sur le culte des ancêtres : les esprits des défunts (manes) continuent d'influencer les vivants et requièrent des offrandes rituelles. Croyance en un Dieu créateur suprême et en des esprits de la nature habitant les fleuves, les forêts et les animaux. Pratiques de divination pour communiquer avec les ancêtres et diagnostiquer les causes de malheurs. Depuis le 19e siècle, la majorité des Myene s'est convertie au christianisme (catholique et protestant), mais le syncrétisme avec les croyances traditionnelles demeure courant. Le Bwiti, culte initiatique gabonais utilisant l'iboga, est présent dans la région mais davantage associé aux peuples de l'intérieur."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Mpongwe n'ont pas formé un royaume unifié mais des confédérations de clans. Toutefois, les Orungu organisèrent un véritable royaume dont la puissance reposait sur le contrôle du commerce des esclaves par l'embouchure de l'Ogooué (cap Lopez). Ce royaume Orungu s'effondra rapidement dans les années 1870 avec la fin de la traite négrière. Les chefs mpongwe (rois Denis, Louis, Glass) étaient des partenaires commerciaux reconnus par les Européens et furent les premiers à signer des traités avec la France (1839, 1841).",
+      "relationsWithNeighbors": "Les Mpongwe jouèrent le rôle d'intermédiaires commerciaux entre les peuples de l'intérieur (Bakèlè, Séké, Fang) et les négociants européens depuis le 15e siècle. Cette position stratégique fut érodée au 19e siècle lorsque les Européens établirent des contacts directs avec l'intérieur. L'arrivée massive des Fang (peuple le plus important du Gabon actuel) dans la région au 19e siècle transforma l'équilibre des forces, les Fang devenant le groupe dominant.",
+      "conflictsOrAlliances": "Rivalités interclaniques mpongwe qui permirent à la France de s'imposer en divisant les chefs. Le roi R'Ogouarowe résista jusqu'en 1845 avant d'être soumis par bombardement naval français. Les Orungu maintinrent leur résistance à l'abolition de la traite négrière jusqu'aux années 1870. La variole introduite par les Européens décima la population mpongwe, qui passa de plusieurs dizaines de milliers à 3 000 individus vers 1884.",
+      "diaspora": "Les Myene se sont concentrés dans les zones urbaines de Libreville et Port-Gentil depuis le début du 20e siècle. Les Mpongwe, dotés d'une éducation missionnaire précoce, devinrent des cadres de l'administration coloniale puis indépendante. Communautés dispersées dans les grandes villes gabonaises pour l'accès à l'emploi et l'éducation. Petite diaspora à Paris et dans les capitales d'Afrique de l'Ouest."
+    },
+    "demography": {
+      "totalPopulation": 90000,
+      "referenceYear": 2025,
+      "source": "Estimations 2025 basées sur : Ethnologue SIL — Myene (mye) : environ 46 000 locuteurs (2011) avec croissance démographique projetée ; Wikipedia Myene people ; Britannica Gabon ; projection 2025 tenant compte d'une croissance démographique du Gabon d'environ 2,5% par an",
+      "distributionByCountry": [
+        {
+          "country": "GAB",
+          "population": 90000,
+          "note": "Concentrés dans les provinces de l'Estuaire (Libreville) et de l'Ogooué-Maritime (Port-Gentil) ; présence à Lambaréné (Moyen-Ogooué)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Myene people. https://en.wikipedia.org/wiki/Myene_people",
+      "Wikipedia EN — Myene language. https://en.wikipedia.org/wiki/Myene_language",
+      "Omniglot — Myene language and alphabet. https://www.omniglot.com/writing/myene.htm",
+      "Ethnologue SIL — Myene (mye). https://www.ethnologue.com/language/mye/",
+      "Britannica — Gabon. https://www.britannica.com/place/Gabon",
+      "Soul-O-Travels — Gabonese Republic History (Mpongwe and Orungu historical kingdoms). https://soul-o-travels.com/gabonese-republic-history/",
+      "Raponda-Walker, André. Dictionnaire mpongwe-français. Mission Catholique, 1934."
+    ]
+  }
+}

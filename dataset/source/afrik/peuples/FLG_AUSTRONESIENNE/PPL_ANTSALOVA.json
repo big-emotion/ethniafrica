@@ -1,0 +1,94 @@
+{
+  "id": "PPL_ANTSALOVA",
+  "nameMain": "Antsalova",
+  "languageFamilyId": "FLG_AUSTRONESIENNE",
+  "currentCountries": ["MDG"],
+  "content": {
+    "appellations": {
+      "mainName": "Antsalova",
+      "selfAppellation": "Antsalova",
+      "exonyms": [
+        "Antsalova (terme géographique désignant à la fois la ville et le peuple de la région)"
+      ],
+      "originOfExonyms": "Le nom Antsalova est un toponyme malgache désignant la commune et le district homonymes de la région Melaky, à l'ouest de Madagascar. Il s'applique par extension aux populations vivant dans cette zone.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme est utilisé de manière géographique et ethnique pour désigner les habitants de la commune d'Antsalova et des environs dans la région Melaky.",
+      "linguisticFamily": "FLG_AUSTRONESIENNE",
+      "ethnoLinguisticGroup": "Malayo-polynésien — groupe occidental malgache (sakalava-antsalova)",
+      "historicalRegion": "Région Melaky, ouest de Madagascar — vallée de la rivière Soahany, district d'Antsalova, province de Mahajanga",
+      "currentCountries": ["MDG"]
+    },
+    "ethnicities": [
+      "Antsalova du Nord (groupes proches de la zone forestière de Maningoza)",
+      "Antsalova du Sud (groupes des plaines du Soahany)",
+      "Groupes pastoraux éleveurs de zébus (dominants avec 76% de la population active dans l'élevage)",
+      "Groupes agriculteurs rizicoles (20% de la population active dans l'agriculture)",
+      "Pêcheurs de la rivière Soahany (3% de la population active dans la pêche)",
+      "Communautés proches des Sakalava Menabe et Sakalava Boina (influences culturelles partagées)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les populations de la région d'Antsalova s'inscrivent dans le mouvement migratoire austronésien qui a peuplé Madagascar entre le Ve et le VIIe siècle de notre ère, depuis le sud de Bornéo (région des Banjar et Ma'anyan). Ces Austronésiens ont fusionné progressivement avec des populations bantoues venues de la côte est-africaine. Dans la région de Melaky, les groupes ancestraux sont intimement liés à la sphère culturelle sakalava, puissante confédération royale de l'ouest malgache.",
+      "formationPeriod": "La région d'Antsalova s'est structurée sous l'influence du royaume Sakalava Menabe (fondé aux XVIe-XVIIe siècles), puis du royaume Boina au nord. L'identité antsalova, principalement géographique, s'est consolidée au fil des siècles dans un territoire dominé par l'élevage extensif de zébus et la culture rizicole.",
+      "migrationRoutes": [
+        "Migration austronésienne depuis le sud de Bornéo via les côtes est-africaines vers Madagascar (Ve-VIIe siècle ap. J.-C.)",
+        "Expansion bantoue depuis la côte mozambicaine (VIIe-XIIe siècle ap. J.-C.)",
+        "Mouvements internes sakalava depuis le littoral vers l'intérieur de la région Melaky"
+      ],
+      "historicalSettlementZones": [
+        "Vallée de la rivière Soahany et plaines environnantes",
+        "District d'Antsalova, région Melaky (capitale régionale : Maintirano)",
+        "Zone de contact entre forêt sèche à l'est et plaines d'élevage à l'ouest",
+        "Proximité de la réserve de Maningoza et du parc du Tsingy de Bemaraha"
+      ],
+      "unificationsOrDivisions": "L'organisation en groupes territoriaux distincts reflète la structure politique sakalava basée sur des chefferies lignagères (fanjakana). Les communautés antsalova se sont regroupées autour de la commune d'Antsalova comme centre administratif et commercial depuis la période coloniale française.",
+      "externalInfluences": "Influence du Sultanat de Bima (Sumbawa) et des commerçants arabes et swahilis sur la côte ouest malgache depuis le XVIe siècle. Contacts avec les marchands européens (Français, Britanniques) à partir du XVIIe siècle. Colonisation française (1896-1960) avec introduction d'une administration centralisée. Influence du christianisme (missions protestantes et catholiques).",
+      "majorHistoricalEvents": "Conquête partielle de la région Menabe par le royaume Merina de Radama I au XIXe siècle. Résistance des groupes sakalava locaux. Intégration dans l'administration coloniale française à partir de 1896. Indépendance malgache en 1960."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles (fanjakana) de type sakalava. Le chef (ampanjaka) détient une autorité politico-religieuse héréditaire. Système de fokonolona (assemblée villageoise) pour la gestion des affaires communautaires. La commune d'Antsalova constitue aujourd'hui l'unité administrative centrale du district.",
+      "clanOrganization": "Structure clanique patrilinéaire organisée en groupes de descendance (firazanana). Les clans se réclament d'ancêtres fondateurs communs et maintiennent des droits sur des terres et des zébus. L'organisation en familles étendues (fianakaviana) est la cellule de base de la vie sociale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires (firazanana) définissent l'identité sociale, les droits fonciers, les alliances matrimoniales et les obligations rituelles envers les ancêtres (razana). Le respect des fady (tabous lignagers) est fondamental à l'identité de chaque groupe de descendance.",
+      "religiousAuthority": "Autorité des mpisikidy (devins-guérisseurs) pour la divination, les soins et la médiation avec les ancêtres. Importance des ombiasy (sages-guérisseurs) dans les rites de passage et les cérémonies agricoles. Pasteurs et prêtres chrétiens (protestants et catholiques) depuis la période coloniale. Syncrétisme marqué entre croyances traditionnelles et christianisme."
+    },
+    "languages": {
+      "mainLanguage": "Malgache occidental (dialecte de la région Melaky, proche du sakalava)",
+      "isoCodes": ["mlg", "skg"],
+      "dialects": [
+        "Dialecte antsalova — variété du malgache occidental parlée dans la région Melaky",
+        "Sakalava Menabe — dialecte voisin influençant les parlers locaux",
+        "Malgache standard (plt) utilisé à l'école et dans l'administration",
+        "Français : langue officielle seconde, utilisée dans l'enseignement et l'administration"
+      ],
+      "vehicularRole": "Le malgache occidental (proche du sakalava) est la langue vernaculaire principale des populations d'Antsalova. Le malgache standard (merina) est utilisé dans l'administration et l'enseignement primaire et secondaire disponible localement. Le français est la langue d'enseignement supérieur et de l'administration nationale."
+    },
+    "culture": {
+      "majorRites": "Famadihana (retournement des ancêtres) : cérémonie périodique de réinhumation des ancêtres dans de nouveaux linceuls de soie, occasion de réunion familiale et de célébration. Sambatra (circoncision) : rite de passage masculin organisé collectivement, accompagné de sacrifices de zébus et de festivités communautaires. Cérémonies agricoles liées aux semailles et aux récoltes de riz. Rites de naissance et de mariage selon les coutumes sakalava-malgaches. Sacrifice de zébus lors des grandes occasions (funérailles, mariages, vœux aux ancêtres).",
+      "symbols": "Le zébu est le symbole central de la richesse, du prestige social et de la relation aux ancêtres dans la région d'Antsalova (76% de la population active dans l'élevage). Le riz (vary) symbolise la vie et la prospérité. Les tombeaux familiaux (fasana) ornés de cornes de zébus sont des marqueurs identitaires importants. La rivière Soahany est un repère géographique et symbolique de la communauté.",
+      "artsAndMusic": "Musique traditionnelle malgache de la côte ouest : genres proches du salegy sakalava (rythme festif de l'ouest). Instruments traditionnels : valiha (cithare en bambou), jejy voatavo (cithare sur calebasse), sodina (flûte), amponga (tambour). Tissage traditionnel : lambamena (tissus de soie ou de raphia utilisés dans les cérémonies funéraires), nattes et paniers en fibres végétales. Sculpture sur bois : décoration des tombeaux et des maisons avec des motifs géométriques et zoomorphes. Poésie orale (hainteny) transmise par les anciens.",
+      "spiritualities": "Syncrétisme entre les croyances traditionnelles malgaches et le christianisme (protestantisme et catholicisme). Culte des ancêtres (razana) : les ancêtres sont des intermédiaires entre les vivants et Zanahary (divinité créatrice). Croyance aux fady (tabous) : interdits alimentaires, comportementaux et territoriaux hérités des ancêtres. Rôle des mpisikidy (devins) et des ombiasy dans la divination et la guérison. Culte des sampy (idoles protectrices) dans certaines communautés traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La région d'Antsalova a été historiquement intégrée à la sphère d'influence du royaume Sakalava Menabe, l'un des plus puissants royaumes de l'ouest malgache, fondé au XVIe siècle et atteignant son apogée aux XVIIe-XVIIIe siècles. La chefferie locale d'Antsalova dépendait des structures politiques sakalava avant la colonisation française.",
+      "relationsWithNeighbors": "Relations commerciales et parfois conflictuelles avec les Sakalava Menabe au sud et les Sakalava Boina au nord. Contacts avec les Tsimihety à l'est. Échanges commerciaux avec les marchands côtiers (Vezo, Ara) pour le commerce du bétail, du riz et des produits forestiers. Proximité culturelle avec les peuples de la région Melaky.",
+      "conflictsOrAlliances": "Intégration partielle dans la sphère d'influence du royaume Merina au XIXe siècle, sous la pression de Radama I. Résistance des chefferies sakalava locales. Période coloniale française (1896-1960) : soumission à l'administration coloniale, réorganisation des structures politiques traditionnelles.",
+      "diaspora": "Diaspora antsalova principalement interne à Madagascar : migrations vers Maintirano (capitale régionale), Mahajanga (capitale provinciale), Antananarivo et d'autres villes malgaches pour des raisons économiques et éducatives. Faible présence dans la diaspora internationale malgache (France, Réunion, Canada)."
+    },
+    "demography": {
+      "totalPopulation": 120000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur le recensement de la commune d'Antsalova (58 280 habitants en 2018, INSTAT Madagascar) extrapolées au district et aux zones d'influence, CIA World Factbook Madagascar (2025), projections démographiques UNFPA Madagascar",
+      "distributionByCountry": [{ "country": "MDG", "population": 120000 }]
+    },
+    "sources": [
+      "Wikipedia — Antsalova (commune), https://en.wikipedia.org/wiki/Antsalova (consulté 2025)",
+      "Wikipedia — Sakalava people, https://en.wikipedia.org/wiki/Sakalava_people (consulté 2025)",
+      "Wikipedia — Malagasy peoples, https://en.wikipedia.org/wiki/Malagasy_peoples (consulté 2025)",
+      "Ethnologue — Malagasy macrolanguage (mlg), https://www.ethnologue.com/language/mlg/ (consulté 2025)",
+      "CIA World Factbook — Madagascar, https://www.cia.gov/the-world-factbook/countries/madagascar/ (consulté 2025)",
+      "INSTAT Madagascar — Recensements communaux, https://www.instat.mg (consulté 2025)",
+      "Beaujard, Philippe. Les mondes de l'océan Indien. Paris : Armand Colin, 2012.",
+      "Kusuma, Pradiptajati et al. Malagasy Genetic Ancestry. Molecular Biology and Evolution, 2016. https://pmc.ncbi.nlm.nih.gov/articles/PMC4989113/"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+# Nom du peuple
+- Nom principal : Klao / Krao
+- Auto-appellation : Klao / Kru
+- Famille linguistique : Niger-Congo – Krou (FLG_KROU)
+- Région historique : LBR, Côte d’Ivoire
+- Identifiant peuple : PPL_KLAO
+
+# 1. Ethnies incluses
+- Klao du Liberia
+- Klao littoraux de Côte d’Ivoire
+
+# 2. Origines
+- Peuple maritime ancien
+- Liens culturels forts avec les Kroumen
+
+# 3. Organisation
+- Systèmes lignagers
+- Autorité coutumière
+
+# 4. Langue
+- Klao / Kru
+- ISO : klu
+
+# 5. Culture
+- Navigation, pirogues
+- Masques et danses
+- Musiques maritimes
+
+# 6. Histoire
+- Participation aux réseaux maritimes atlantiques
+- Influence culturelle le long de la côte libérienne
+
+# 7. Démographie
+- Population : 93 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (klu)
+- Liberia Coastal Cultural Archive

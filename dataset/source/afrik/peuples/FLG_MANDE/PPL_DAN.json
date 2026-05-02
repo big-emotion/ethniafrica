@@ -1,0 +1,97 @@
+{
+  "id": "PPL_DAN",
+  "nameMain": "Dan",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["CIV", "LBR", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Dan",
+      "selfAppellation": "Dan (le nom que le peuple se donne a lui-meme ; signifie les gens dans la langue dan)",
+      "exonyms": [
+        "Yacouba ou Yakuba (appellation francophone utilisee en Cote d'Ivoire, surtout dans la region de Man)",
+        "Gio (terme utilise au Liberia, derive du bassa signifiant esclave, considere comme pejoratif)",
+        "Yakubasa",
+        "Da",
+        "Gyo"
+      ],
+      "originOfExonyms": "Yacouba est une adaptation francophone du terme mandingue Jakuba. Le terme Gio est un exonyme bassa utilise au Liberia pour designer les Dan ; le sens de esclave le rend devalorisant aux yeux des Dan eux-memes. Dan est la forme preferee par le peuple.",
+      "whyProblematic": "Gio est pejoratif car etymologiquement lie au terme esclave en bassa. Son usage perdure dans les documents officiels liberiens et dans certaines sources academiques anglophones malgre la preference des Dan pour leur propre ethnonyme.",
+      "contemporaryUsage": "Dan est l'appellation academique internationale standard et celle preferee par le peuple. Yacouba reste tres utilise en Cote d'Ivoire dans la vie quotidienne et dans les medias. Gio est encore courant au Liberia dans les documents officiels et la presse.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mande du Sud (branche du Mande meridional)",
+      "historicalRegion": "Region des Montagnes, ouest de la Cote d'Ivoire (villes de Man, Danane, Biankouma, Zouan-Hounien, Sipilou) ; comte de Nimba, nord-est du Liberia",
+      "currentCountries": ["CIV", "LBR", "GIN"]
+    },
+    "ethnicities": [
+      "Dan",
+      "Kla-Dan (groupe dialectal distinct, Cote d'Ivoire)"
+    ],
+    "origins": {
+      "ancientOrigins": "Peuple mande du Sud etabli depuis des siecles dans les zones montagneuses et forestieres a la frontiere de la Cote d'Ivoire et du Liberia. Les traditions orales evoquent des origines dans la region du Mande (actuel Mali/Guinee) et des migrations anciennes vers le sud.",
+      "formationPeriod": "Presence attestee dans la region de Man (Cote d'Ivoire) depuis au moins plusieurs siecles avant la colonisation. Les premieres descriptions ethnographiques datent du debut du XXe siecle (M. Vendeix, 1924 ; H. Himmelheber, annees 1930-1940).",
+      "migrationRoutes": [
+        "Migration probable depuis la region du Mande (Guinee/Mali) vers le sud, avant le XVe siecle",
+        "Installation dans la zone forestiere montagnarde de l'ouest ivoirien (region de Man)",
+        "Extension vers le nord-est du Liberia (comte de Nimba, district de Tappita)"
+      ],
+      "historicalSettlementZones": [
+        "Region de Man et Tonkpi (Cote d'Ivoire) : principales villes Dan (Man, Danane, Biankouma, Zouan-Hounien, Sipilou)",
+        "Comte de Nimba, nord-est du Liberia (communaute Dan/Gio)",
+        "Quelques centaines de locuteurs en Guinee forestiere"
+      ],
+      "unificationsOrDivisions": "Les Dan ne constituent pas une unite politique centralisee. Ils sont organises en villages independants lies par une culture commune centree sur la societe des masques. Le groupe Kla-Dan est suffisamment distinct pour etre parfois classe comme langue separee (Glottolog) ; ses locuteurs refusent l'identite commune avec les Yacouba.",
+      "externalInfluences": "Contact avec les peuples voisins Krahn, Kpelle, Mano et Guere. Influence de l'islam par les reseaux commerciaux mandingues, mais majorite de la population pratiquant les religions traditionnelles. Colonisation francaise et insertion dans l'economie de plantation ivoirienne. Influence de l'Eglise chretienne (missions protestantes et catholiques) depuis le XXe siecle.",
+      "majorHistoricalEvents": "Presence dans la region de Man documentee depuis au moins le XIXe siecle ; annexion a la colonie francaise de Cote d'Ivoire (fin XIXe siecle) ; cercle de Man sous administration coloniale (rapports de M. Vendeix, 1924) ; deplacements lies aux crises politiques ivoiriennes (2002-2011, guerre civile)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe organisee autour de la societe des masques (ge). Les masques ne sont pas de simples objets rituels mais des entites spirituelles et des institutions politiques. Chaque masque a un statut, une fonction et un territoire d'action precis. Les chefs de village et les anciens exercent l'autorite civile, mais les masques ont une autorite spirituelle et judiciaire.",
+      "clanOrganization": "Organisation en villages autonomes. Pas de systeme clanique rigide sur le modele sahelienn. L'appartenance villageoise prime sur l'appartenance lignagere dans l'organisation sociale courante.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires controlent la transmission des masques et des savoirs rituels. Le role des aines dans la transmission culturelle est central.",
+      "religiousAuthority": "Les masques ge incarnent des puissances spirituelles (esprits de la foret et des ancetres) et jouent le role de magistrats, guerisseurs et mediateurs sociaux. Des specialistes rituels (ge-da, maitres des masques) detiennent l'autorite sur ces entites."
+    },
+    "languages": {
+      "mainLanguage": "Dan (langue mande du Sud)",
+      "isoCodes": ["dnj", "daf"],
+      "dialects": [
+        "Dan oriental ou Gweetaawu (Cote d'Ivoire, est de la region de Man)",
+        "Dan occidental ou Blowo (Cote d'Ivoire, ouest de la region de Man)",
+        "Gio ou Dan liberien (comte de Nimba, Liberia)",
+        "Kla-Dan (Cote d'Ivoire, parfois classe comme langue distincte ; code ISO lda)"
+      ],
+      "vehicularRole": "Le dan n'est pas une langue vehiculaire hors de la communaute. Le francais est la langue officielle en Cote d'Ivoire ; l'anglais au Liberia. Le dioula est utilise comme vehiculaire commercial dans la region de Man. Environ 2 millions de locuteurs dan au total."
+    },
+    "culture": {
+      "majorRites": "La societe des masques (ge) est l'institution culturelle centrale : les masques accompagnent tous les moments importants de la vie sociale (initiation, justice, guerison, funérailles, guerre). Rites d'initiation masculine (non publiquement documentes). Performances de masques lors de festivites et de reglement de conflits. Les masques feminins (ge ga) interviennent pour apaiser les conflits entre femmes.",
+      "symbols": "Les masques sculpts en bois et en metal sont le symbole culturel le plus reconnu des Dan. Les cuillers a visage feminin (wunkirmian) sont des objets de prestige lies aux femmes les plus hospitalieres. Les poulies de metier a tisser Dan sont reputees pour leur qualite artistique.",
+      "artsAndMusic": "Sculpture sur bois de renommee internationale : masques (dont les masques course, masques de juge, masques chanteurs, masques echassiers), cuillers ceremoniales et poulies de metier a tisser. Musique de masque documentee par Hugo Zemp (Musique dan : la musique dans la pensee et la vie sociale d'une societe africaine, 1971). Litterature orale riche. Films ethnographiques de Hans Himmelheber (Maskentreiben, Singmaske gegon in Maple).",
+      "spiritualities": "Croyance en esprits de la foret (ge) qui peuvent s'incarner dans les masques. Les masques sont des mediateurs entre le monde des vivants et celui des esprits. Religion traditionnelle animiste majoritaire. Presence chretienne (protestants, catholiques) et islamique dans les villes. La spiritualite dan est profondement liee a la foret et aux forces naturelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de chefferie ou de royaume centralise. Organisation politique decentralisee par village. La societe des masques joue un role unificateur en assurant la regulation sociale et la cohesion intercommunautaire.",
+      "relationsWithNeighbors": "Relations avec les Kpelle, Krahn, Mano, Guere et Toura. Les Dan ont entretenu des echanges commerciaux avec les reseaux mandingues (ivoire, kola). Tensions historiques avec certains groupes voisins reglees par les masques mediateurs.",
+      "conflictsOrAlliances": "Participation aux conflits regionaux lors des guerres civiles liberienne (1989-2003) et ivoirienne (2002-2011). Au Liberia, les Dan/Gio furent associes au clan de Charles Taylor lors du premier conflit civil. En Cote d'Ivoire, la region de Man et la communaute dan furent touchees par les operations militaires de 2002-2007.",
+      "diaspora": "Communautes dan a Abidjan et dans les principales villes ivoiriennes. Refugies dan au Liberia (suite a la crise de 2002) et en Guinee. Population dan estimee a 297 000 au Liberia (Joshua Project 2025)."
+    },
+    "demography": {
+      "totalPopulation": 2230000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (Dan en Cote d'Ivoire : 1 932 000 ; Liberia : 297 000 ; Guinee estimee) ; Wikipedia FR (3 millions en 2021)",
+      "distributionByCountry": [
+        { "country": "CIV", "population": 1900000 },
+        { "country": "LBR", "population": 297000 },
+        { "country": "GIN", "population": 2000 }
+      ]
+    },
+    "sources": [
+      "Dan (peuple) – Wikipedia FR (https://fr.wikipedia.org/wiki/Dan_(peuple))",
+      "Dan language – Wikipedia EN (https://en.wikipedia.org/wiki/Dan_language)",
+      "Dan, Da in Liberia – Joshua Project 2025 (https://joshuaproject.net/people_groups/11485/LI)",
+      "Minority Rights Group – Liberia (https://minorityrights.org/country/liberia/)",
+      "Daniel B. Reed, Dan Ge Performance: Masks and Music in Contemporary Cote d'Ivoire, Indiana University Press, 2003",
+      "Hugo Zemp, Musique dan : la musique dans la pensee et la vie sociale d'une societe africaine, Mouton, La Haye, 1971",
+      "Dan – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/dann1241)",
+      "101 Last Tribes – The Dan (https://www.101lasttribes.com/tribes/dan.html)"
+    ]
+  }
+}

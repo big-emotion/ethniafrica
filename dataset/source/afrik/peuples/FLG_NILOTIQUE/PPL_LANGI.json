@@ -1,0 +1,86 @@
+{
+  "id": "PPL_LANGI",
+  "nameMain": "Langi",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["UGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Langi",
+      "selfAppellation": "Langi (pluriel) ; Lango (singulier et forme usuelle en anglais)",
+      "exonyms": ["Lango", "Miro", "Umiro"],
+      "originOfExonyms": "Le terme Lango (singulier de Langi) est la forme la plus usitee en anglais et dans la litterature coloniale britannique. Miro et Umiro sont des variantes attestees dans certaines sources ethnographiques du XIXe et debut XXe siecle. Le nom Lango apparait egalement dans les vocabulaires des Teso, Kumam, Karamojong, Jie et Labwor, refletant une origine commune dans la race Lango antique.",
+      "whyProblematic": "Le terme Lango peut preter a confusion avec d'autres peuples portant un nom similaire (notamment les Lango du Soudan du Sud, groupe distinct). Par ailleurs, la question de l'appartenance ethnolinguistique des Langi a longtemps ete debattue : certains chercheurs les classaient parmi les Nilotiques de l'Ouest (groupe Luo) alors que des etudes plus recentes, corroborees par l'evenement de reunion Ateker de novembre 2024, les rattachent aux Nilo-Hamites Ateker.",
+      "contemporaryUsage": "Langi est le terme officiel utilise en Ouganda. La region administrative Lango recouvre les districts d'Amolatar, Alebtong, Apac, Dokolo, Kole, Lira, Oyam, Otuke et Kwania. La Lango Cultural Foundation est l'institution representative officielle avec plus de 148 clans enregistres.",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique oriental, groupe Ateker (Nilo-Hamite)",
+      "historicalRegion": "Nord-centre de l'Ouganda (ancienne province du Lango)",
+      "currentCountries": ["UGA"]
+    },
+    "ethnicities": ["Langi"],
+    "origins": {
+      "ancientOrigins": "Les Langi sont principalement un groupe ethnique Ateker, connu aussi sous le nom de Nilo-Hamites. Selon la tradition orale, ils faisaient partie de la grande race Lango lors de la periode migratoire, avant que ce groupe se fragmente en plusieurs entites distinctes entrant en Ouganda. Le nom Lango se retrouve dans les vocabulaires des Teso, Kumam, Karamojong, Jie et Labwor, ce qui temoigne d'une ancienne appartenance commune. Hutchinson (1902) les decrivait comme l'une des nations principales de l'ancien royaume de Bunyoro, les rattachant aux peuples de stock Galla (hamitique) plutot qu'aux Nilotiques noirs. Des recherches recentes (notamment la reunion Ateker d'Ouganda de novembre 2024) confirment leur appartenance au groupe Ateker plutot qu'aux peuples Luo.",
+      "formationPeriod": "Migration et installation dans le nord-centre de l'Ouganda probablement entre le XVe et le XVIIe siecle, sous la conduite de leaders tels qu'Ongora Okubal qui amena les Langi dans leur territoire actuel. La rencontre avec les Banyoro au XVIIe-XVIIIe siecle est attestee dans les traditions orales (leader Agoro Abwango tue au Bunyoro).",
+      "migrationRoutes": [
+        "Migration depuis les regions du Soudan du Sud (comptes oraux vers la periode du XVe-XVIIe siecle), sous l'influence de la race Lango ancestrale partageant un tronc commun avec les Teso, Kumam, Karamojong et Jie",
+        "Installation progressive dans les plaines au nord du Nil Victoria (Somerset Nile), entre Foweira et Magungo, puis expansion vers l'est jusqu'a la vallee du Chol",
+        "Deplacements secondaires vers les zones urbaines (Lira, Gulu, Kampala) au XXe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Nord-centre de l'Ouganda (Lango Sub-Region)",
+        "Districts de Lira, Apac, Dokolo, Amolatar, Oyam, Kole, Alebtong, Otuke, Kwania",
+        "Rives du Nil Victoria entre Foweira et Magungo"
+      ],
+      "unificationsOrDivisions": "Societe traditionnellement decentralisee sans chef supreme. L'unite culturelle s'est renforcee autour du titre de Won Nyaci (chef culturel supreme) a partir des annees 1960, cree pour federer les clans face aux raids karamojong. La Lango Cultural Foundation coordonne aujourd'hui plus de 148 clans enregistres. En novembre 2024, le gouvernement ougandais a officialise la reunion des Langi avec les peuples Ateker lors d'un evenement historique.",
+      "externalInfluences": "Contacts et conflits avec les Banyoro (Bunyoro Kingdom) au nord. Pression des Karamojong (raids de betail) qui ont motive des formes d'union defensives. Influence coloniale britannique post-1910 avec la creation d'une administration formelle de chefs de sous-comtes et de comtes. Influence de l'islam et du christianisme depuis le XIXe siecle.",
+      "majorHistoricalEvents": "Aide aux rois Kabalega (Bunyoro) et Mwanga (Buganda) dechus qui traverserent le Nil en passant par le territoire langi (recit d'Obol Ario, clan Apac Okwero Ngec Ayita). Administration coloniale britannique apres 1910 avec Icaya Ogwangguji, premier chef (Jago) de Lira, elu Rwot du comte d'Erute en 1918 et promu Rwot Adwong, recompense par le titre MBE en 1956. Independance de l'Ouganda (1962) : Milton Obote, Langi, premier ministre puis president. Reunification avec les peuples Ateker en novembre 2024."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe stateless (sans Etat centralise) fondee sur des structures claniques patrilineaires. Les decisions relevaient de conseils d'anciens et de chefs militaires temporaires choisis en temps de guerre, leur autorite cessant a la fin du conflit. Le jon jago administrait un territoire d'environ 80 km2, suivi des chefs de comte (rwot) couvrant environ 260 km2. L'imposition coloniale apres 1910 a cree une administration formelle avec sous-chefs, chefs de comte et commissaires de district. Le chef culturel actuel est Michael Moses Odongo Okune.",
+      "clanOrganization": "Plus de 148 clans enregistres aupres de la Lango Cultural Foundation. Chaque clan possede un leader (Awitong, litteralement pointe de lance du clan) selectionne historiquement pour sa prouesse militaire. Au-dessus de l'Awitong existe le Rwot (chef au niveau geographique). La creation du titre Won Nyaci dans les annees 1960 vise a feder tous les clans au niveau supreme. Les clans importants comprennent l'Oki (dont le Rwot Olet Apar) et l'Apac Okwero Ngec Ayita.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Organisation patrilineaire et patrilocale : les hommes resident pres de leurs peres, creant des regroupements de parents patrilineaires dans chaque quartier. Les femmes s'integrent au lignage de leur mari apres le mariage et se decrivent souvent comme des etrangeres dans leur communaute d'accueil. La tenure fonciere traditionnelle lie la terre aux ancetres masculins du lignage.",
+      "religiousAuthority": "Croyance traditionnelle en Jok, force spirituelle universelle associee aux ancetres, veneree dans des sanctuaires et pres d'arbres sacres par des prieres et sacrifices. Chaque individu possede un esprit gardien et une ame metaphysique. Aujourd'hui, islam et christianisme coexistent avec les croyances traditionnelles dans la vie religieuse langi."
+    },
+    "languages": {
+      "mainLanguage": "Lango (Lang'o)",
+      "isoCodes": ["laj"],
+      "dialects": [],
+      "vehicularRole": "Le lang'o est la langue maternelle de la quasi-totalite des Langi. Il appartient au groupe des langues luo occidentales nilotiques, bien que l'appartenance ethnique des Langi soit desormais reconnue comme Ateker. Le lang'o compte environ 1 490 000 locuteurs selon le recensement ougandais de 2002. Le swahili et l'anglais servent de langues vehiculaires nationales en Ouganda."
+    },
+    "culture": {
+      "majorRites": "Ceremonies de mariage traditionnelles impliquant une dot en betail substantielle. Rites funeraires respectant le culte des ancetres (Jok). Rituels agricoles et d'elevage. Ceremonial change documente par Curley (1973) et Hayley (1947) sur les rites de passage et la religion langi. Mariage comme prerequis a l'union religieuse dans le contexte contemporain.",
+      "symbols": "La coiffure elaboree en forme de casque (prevailing fashion decrite par Hutchinson en 1902) etait un marqueur identitaire distinctif. La lance (symbolisee dans le titre Awitong, pointe de lance) est symbole d'autorite clanique.",
+      "artsAndMusic": "Danses traditionnelles Okeme et Abuda pratiquees lors des fonctions culturelles, mariages et ceremonies. Litterature orale riche (recits de migration, legendes de leaders militaires). Artisanat en perles et ornementation corporelle (colliers, brassards, chevilleres decrits par Hutchinson).",
+      "spiritualities": "Veneration des ancetres via Jok (force spirituelle universelle) ; prieres et sacrifices aux sanctuaires et arbres sacres. Recours a des pratiques de chasse aux sorcieres (Ray Abrahams, 1985). Adoption progressive du christianisme (catholique, protestant) et de l'islam tout en maintenant des pratiques traditionnelles. Croyance en un esprit gardien individuel et une ame metaphysique."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation en chefferies claniques decentralisees avec autorite des Rwot (chefs) et des Awitong. Role de maillon essentiel entre les peuples Ateker de l'est ougandais et les peuples nilotiques du nord. Aide accordee aux rois exiles de Bunyoro (Kabalega) et Buganda (Mwanga) au XIXe siecle.",
+      "relationsWithNeighbors": "Guerriers reconnus craingnant de leurs voisins (Driberg). Conflits reguliers avec les Banyoro (Agoro Abwango tue en pays Bunyoro). Pression des Karamojong (raids de betail) a l'est. Voisinage avec les Acholi au nord, les Teso a l'est, les Bunyoro et Buganda au sud-ouest. La recherche recente (ACHOLI IS LANGO) suggere une profonde connexion ancestrale entre Langi et Acholi.",
+      "conflictsOrAlliances": "Conflits avec les Banyoro. Defense contre les raids karamojong. Sous la colonisation britannique, cooperation avec l'administration (Icaya Ogwangguji, chef MBE). Independance de l'Ouganda liee au president Milton Obote (Langi), deux mandats (1962-1971 et 1980-1985). Reunion historique avec les peuples Ateker en novembre 2024.",
+      "diaspora": "Presence dans les grandes villes ougandaises (Kampala, Gulu, Mbale). Diaspora limitee a l'etranger, principalement en Europe et en Amerique du Nord parmi les migrants ougandais."
+    },
+    "demography": {
+      "totalPopulation": 2884000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN (Lango people) et estimations Uganda Bureau of Statistics 2024 ; recensement ougandais 2014 et projections 2025 ; Facebook post estimations ethniques Uganda 2025 (2 131 495 Langi, 6,3% de la population)",
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 2884000,
+          "note": "Concentres dans la Lango Sub-Region : districts d'Amolatar, Alebtong, Apac, Dokolo, Kole, Lira, Oyam, Otuke et Kwania"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Lango people (https://en.wikipedia.org/wiki/Lango_people)",
+      "Wikipedia FR – Lango (peuple) (https://fr.wikipedia.org/wiki/Lango_(peuple))",
+      "Driberg J.H. – The Lango, a Nilotic tribe of Uganda, T.F. Unwin, Londres, 1923",
+      "Tosh J. – Clan Leaders and Colonial Chiefs in Lango, Clarendon Press, Oxford, 1978",
+      "Hayley T.T.S. – The Anatomy of Lango Religion and Groups, Negro Universities Press, 1970 (1e ed. 1947)",
+      "Curley R.T. – Elders, Shades and Women: Ceremonial Change in Lango, Uganda, University of California Press, 1973",
+      "Encyclopaedia Britannica – Lango (https://www.britannica.com/topic/Lango)",
+      "Cross-Cultural Foundation Uganda – Culture and the Rights of Women and Girls in Lango, 2019",
+      "SIL Ethnologue – Lango language [laj] (https://www.ethnologue.com/language/laj/)"
+    ]
+  }
+}

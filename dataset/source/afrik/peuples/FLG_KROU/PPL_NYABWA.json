@@ -1,0 +1,104 @@
+{
+  "id": "PPL_NYABWA",
+  "nameMain": "Nyabwa",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Nyabwa",
+      "selfAppellation": "Nyabwa / Nyaboua",
+      "exonyms": [
+        "Niaboua",
+        "Nyaboa",
+        "Nyabwa-Nyedebwa",
+        "Nyedebwa (Niedeboua)",
+        "Kouzié"
+      ],
+      "originOfExonyms": "Niaboua est la forme francisee du nom utilisee par l'administration coloniale française et reprise dans la litterature ethnographique. Nyedebwa ou Niedeboua designe le sous-groupe situe plus au nord, entre Lobo et Sassandra (departement de Vavoua), linguistiquement tres proche (similitude lexicale 90%). Kouzie est un troisieme dialecte mineur.",
+      "whyProblematic": "La denomination Niaboua recouvre en realite plusieurs entites distinctes — Nyabwa, Nyedebwa, Kouzie — dont les limites sont parfois confondues dans les sources. Les Niaboua et les Niedeboua se considerent parents issus d'une meme souche, mais forment des groupes residentiels separes.",
+      "contemporaryUsage": "Nyabwa est le nom prefere par les specialistes et dans la litterature linguistique (code ISO nwb). Niaboua reste courant dans les sources francophones et ivoiriennes. Le groupe est peu connu hors de Cote d'Ivoire.",
+      "linguisticFamily": "FLG_KROU",
+      "ethnoLinguisticGroup": "Krou occidental (branche Wee-Nyabwa)",
+      "historicalRegion": "Centre-ouest de la Cote d'Ivoire, entre le Sassandra et le Bandama",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": [
+      "Bliabo — tribu installée dans la partie meridionale du pays nyabwa",
+      "Nyatcha (Bapenyinu) — tribu dont le totem est le buffle",
+      "Djosso (Blabo-Zokoanyinu) — tribu dont le totem est la panthere",
+      "Frebo — tribu de la region de Vavoua/Issia",
+      "Monosso — tribu de la region de Zoukougbeu"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale recueillie par D. Paulme dans le village de Zakogbeu, l'ancetre fondateur des Nyabwa se nommait Goze. Apres avoir fui le Liberia actuel a la suite d'une guerre, il trouva refuge chez des populations nommees les gens de Koueze (probablement les Bakoue). De ses trois fils, Niabo fut l'ancetre des Niaboua, Gbalo celui des Bete, et Zakie celui des Wobe. Ce recit d'origine commune avec les Bete et les Wobe est corrobore par la forte similitude culturelle entre ces groupes.",
+      "formationPeriod": "La mise en place des populations nyabwa resulte de mouvements de population a partir du XVIIe siecle. Deux processus coexistent : un mouvement spontane lie a la croissance demographique (creation de nouveaux lignages-villages) et un mouvement plus organise visant a structurer l'espace et absorber des elements etrangers. Le groupe krou s'est forme a partir de groupes venus du Liberia (Zibiao, Mao), de lignages de l'est et surtout de groupes autochtones etablis entre le Bandama et le Sassandra.",
+      "migrationRoutes": [
+        "Depuis le Liberia actuel vers le centre-ouest ivoirien via les vallees forestieres",
+        "Mouvements secondaires de segmentation lineagere : creation de nouveaux villages nommes d'apres leur fondateur (ex. Ibobli = chez Ibo)"
+      ],
+      "historicalSettlementZones": [
+        "Departements de Zoukougbeu et Issia (zone Nyabwa principale)",
+        "Departement de Vavoua entre Lobo et Sassandra (Nyedebwa — 6 villages isoles)",
+        "Sous-prefectures d'Issia, Buyo, Zoukougbeu, Daloua"
+      ],
+      "unificationsOrDivisions": "Societe sans Etat centralise, organisee sur la base de patrilinéages segmentaires. Le pays nyabwa compte 189 lignages repartis entre 52 villages, regroupes en 5 tribus (Bliabo, Nyatcha, Djosso, Frebo, Monosso). Niaboua et Niedeboua maintiennent des liens de parente et des echanges, sans fusion politique.",
+      "externalInfluences": "Emprunts culturels et rituels aux Guere/We voisins, notamment le culte du gle, les masques et la societe secrete kwi. Ces elements furent introduits chez les Nyabwa puis transmis aux Bete a l'est. Contacts avec l'administration coloniale française depuis la fin du XIXe siecle. Pratique de l'ordalie (epreuve judiciaire par le gopo/Elaeophorbia drupifera) partagee avec les Guere.",
+      "majorHistoricalEvents": "Resistance aux razzias esclavagistes Mandingues avant la colonisation. Integration dans l'administration coloniale française du Haut-Sassandra apres 1893. Periode de decolonisation ivoirienne (1960) avec integration progressive dans l'Etat ivoirien. La region du centre-ouest a ete marquee par la crise politico-militaire ivoirienne des annees 2000-2011."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe sans Etat, sans pouvoir politique centralise. Chaque village est l'expression d'un lignage fonde par un ancetre eponyme. Les chefs de lignage occupent une position d'aines ; la seniorite confere le pouvoir dans un systeme ou parente et autorite sont etroitement liees. Le village porte le nom de son fondateur. Les decisions importantes sont prises collectivement par les aines.",
+      "clanOrganization": "Organisation en 189 lignages repartis entre 52 villages. Chaque village descend en principe d'un ancetre commun. Les 5 tribus (Bliabo, Nyatcha, Djosso, Frebo, Monosso) regroupent des ensembles de lignages partageant des interdits alimentaires collectifs (totem). Ex. : panthere pour les Djosso-Zokoanyinu, buffle pour les Nyatcha-Bapenyinu, gazelle pour les Bahon (Bliabo et Djosso).",
+      "ageClassSystems": "Systeme d'initiation par tranches d'age : les garçons post-pubertaires participent collectivement au rite de circoncision klinlo dans la foret sacree klin koulaé, suivi d'une retraite initiatique de plusieurs mois. La societe des hommes-pantheres (blale) accueille des inities pre-pubertaires pour une formation de deux mois. La societe klaogbeu (danse guerriere d'exorcisme) est accessible volontairement des 20 ans.",
+      "roleOfLineages": "Les lignages patrilineaires sont l'unite de base de l'organisation sociale et fonciere. Ils determinent l'identite, l'acces a la terre, les alliances matrimoniales et les obligations cerimoniales. L'appartenance clanique est marquee par les interdits alimentaires totémiques communs a tout le lignage.",
+      "religiousAuthority": "Le chef de terre (ex. Torou Sean Rodolphe a Garobo) assure les relations avec les entites spirituelles locales. Les maitres des societes initiatiques (blale, klaogbeu, kwi) exercent une autorite religieuse et pedagogique. Les masques sacres (gla klagba, yadi gla) sont gardes par des familles specifiques et interpretes par des inities designes."
+    },
+    "languages": {
+      "mainLanguage": "Nyabwa (Niaboua)",
+      "isoCodes": ["nwb"],
+      "dialects": [
+        "Nyabwa (dialecte principal, region de Zoukougbeu/Issia/Buyo)",
+        "Nyedebwa (Niedeboua) — nord, departement de Vavoua, similitude lexicale 90% avec Nyabwa",
+        "Kouzie — troisieme variete mineure"
+      ],
+      "vehicularRole": "Le nyabwa est parle par environ 15 000 a 70 000 personnes en Cote d'Ivoire (estimations variables selon les sources : SIL 1993 donnait 42 700 dont 32 500 Nyabwa, 7 700 Nyedebwa, 2 500 Kouzie). La similitude lexicale avec le We meridional (gxx) est de 74-80%, ce qui en fait une langue soeur proche. Le francais est utilise dans l'education et l'administration. Statut AES : en developpement (Glottolog 5.3)."
+    },
+    "culture": {
+      "majorRites": "Klinlo (circoncision collective) : rite de passage masculin organise dans la foret sacree klin koulaé ; les garçons post-pubertaires y resident plusieurs mois ; retour en procession chantee et dansee, suivi par les chefs de village. Blale (hommes-pantheres) : societe initiatique annuelle ; les inities (blahon) sortent le corps huile et tatoue, brandissant des armes pour demontrer leur invulnerabilite ; duree de deux mois. Klaogbeu : danse guerriere d'exorcisme pour inities volontaires ; utilise tambours bedre/keke, cloche gle, sifflet begbo ; invocations aux divinites. Kwi : societe secrete anti-sorcellerie a entree tardive (25-35 ans) ; utilise le mirliton diblakpa et des poemes sacres. Leli/sin : jeunes filles isolees des 4 ans, lancees en l'air lors de ceremonies ; librees a 13 ans au son du tambour-de-bois goule. Ordalie : epreuve judiciaire par la seve du gopo (Elaeophorbia drupifera) appliquee dans l'oeil. Rite agraire : consommation des premiers grains de riz en famille pour eviter la famine.",
+      "symbols": "Les masques sont l'expression symbolique centrale de la culture nyabwa. Quatre types hierarchises : gla klagba (masque sacre et guerrier, lent et majestueux, benisseur, porte le totem du village, parle le guere) ; lete hi gla ou tchatcha (masque danseur, poids superieur a 40 kg) ; bleblegla ou gboto klagba (masque chanteur a face feminine, recoit des dons) ; tchekpe (masque comique imitant les comportements deviants). Les couleurs symboliques sont le noir (pouvoir) et le rouge (autorite). Les interdits alimentaires totémiques (panthere, buffle, gazelle selon les tribus) sont des marqueurs identitaires clans.",
+      "artsAndMusic": "Art essentiellement religieux, domine par la sculpture sur bois des masques ; les Nyabwa fabriquent des masques horribles visant a creer une atmosphere de crainte sacree propice a la communion avec les entites occultes. Instruments : idiophones (sable/ziangloe hochets-sonnailles, kodji double hochet, gogohoun cloche, gbe li xylophone a 7 lames sur troncs de bananes, goule slit drum, pete lamellophone a 6 lames) ; membranophones (doule, djoudjouleo, zagbadi, gogoba, bedre, kpiei, keke, gla gbolo — percussions de peau de biche, de mouton ou de vache) ; cordophones (dodo, arc-en-bouche ou guitare artisanale a 3 cordes) ; aeropho nes (guingbo cor d'antilope, gbakobei ocarina en fruit, pegkou/tron sifflet en bois, begbo sifflet en corne de biche, doblakpa mirliton en patte de touraco). Genres vocaux : tohourou (eloges du masque chanteur), dissabre ou lepolo (chant a deux solistes en alternance), yaka (recitals poetiques aux funerailles), aloukou (danse de jeunesse). Les musiciens ne forment pas une caste ; tout le monde peut jouer sauf dans les contextes sacres ; les poetes yaka-pohi portent couronne de dents de panthere et amulettes. Certains genres disparaissent (pete, gbeli, bro, klinlo).",
+      "spiritualities": "Peuple essentiellement animiste. Culte du gle ou gre : divinite protectrice et justiciere representee par une tete humaine monstrueuse modelee en argile, dotee de crocs d'hippopotame et couronnee de plumes d'aigle, hibou ou calao ; placee sur la tete d'un enfant ou d'une femme, elle induit une transe ; peut prendre des aspects malefiques (envoûtement). Ce culte est partage avec les Guere et les Bakwe, emprunte aux voisins de l'ouest. Croyances en les esprits locaux (genies des forets, des rivieres) et en les ames des ancetres. La societe secrete kwi est consacree a la recherche de verite et a la lutte contre la sorcellerie. Pratiques divinatoires empruntees aux Guere. Influence croissante du christianisme (protestantisme et catholicisme) depuis la colonisation. Tres peu de musulmans dans cette region forestiere."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaumes ni de chefferies centralisees. La societe nyabwa est un exemple de societe segmentaire sans Etat : chaque village est autonome, gouverne par ses aines et son chef de lignage. La notion de chef superieur est absente de la tradition politique nyabwa originelle. L'integration dans les structures administratives ivoiriennes depuis l'independance (1960) a introduit des chefs de village officiels.",
+      "relationsWithNeighbors": "Relations etroites et complexes avec les Weo/Guere a l'ouest (partage du Sassandra comme frontiere ; emprunts culturels majeurs dont le masque, le kwi, le leli). Parente mythique avec les Bete a l'est (ancetre commun selon la tradition orale). Relations avec les Niedeboua au nord, consideres comme proches parents. Echanges commerciaux et rituels avec les groupes voisins dans le contexte d'une Cote d'Ivoire multi-ethnique.",
+      "conflictsOrAlliances": "Resistance aux razzias esclavagistes mandingues avant la colonisation française. Resistance a la penetration coloniale française dans le Haut-Sassandra jusqu'a la soumission vers 1915. Pendant la crise ivoirienne (2002-2011), la region du centre-ouest a connu des violences intercommunautaires affectant les Nyabwa. Alliance culturelle historique avec les Guere/We par emprunt rituel et ceremonie commun.",
+      "diaspora": "Diaspora limitee, principalement dans les grandes villes ivoiriennes (Abidjan, Daloa, San Pedro) par migration economique et exode rural. Pas de diaspora internationale significative documentee."
+    },
+    "demography": {
+      "totalPopulation": 70000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue 1993 : 42 700 (32 500 Nyabwa + 7 700 Nyedebwa + 2 500 Kouzie). Royal Museum for Central Africa (2012) : environ 15 000 Niaboua dans les departements de Zoukougbeu et Issia. Estimation 2025 (croissance demographique ivoirienne) : 60 000-70 000. Mission Atlas Project : 57 000 Niaboua.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 70000,
+          "note": "Departements de Zoukougbeu (Djosso, Monosso), Issia (Nyatcha, Frebo), Vavoua (Nyedebwa — 6 villages isoles entre Lobo et Sassandra)"
+        }
+      ]
+    },
+    "sources": [
+      "Aka Konin — L'art musical chez les Niaboua, un peuple krou du centre-ouest de la Cote d'Ivoire. MRAC Tervuren, 2012. https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/documents-social-sciences-humanities/niaboua.pdf",
+      "Glottolog 5.3 — Nyabwa (nyab1255). https://glottolog.org/resource/languoid/id/nyab1255",
+      "SIL Ethnologue — Nyabwa language (nwb). https://www.ethnologue.com/language/nwb/",
+      "Wikipedia EN — Nyabwa language. https://en.wikipedia.org/wiki/Nyabwa_language",
+      "Day Translations — Ivory Coast Language Profile. https://www.daytranslations.com/blog/guide/ivory-coast/4/",
+      "Mission Atlas Project — Cote d'Ivoire Country Profile. http://www.worldmap.org/uploads/9/3/4/4/9344303/cote_divoire_country_profile.pdf",
+      "Wikipedia FR — Langues krou. https://fr.wikipedia.org/wiki/Langues_krou",
+      "Refworld/MRGI — World Directory of Minorities and Indigenous Peoples, Cote d'Ivoire. https://www.refworld.org/reference/countryrep/mrgi/2008/en/65159",
+      "Ethnologue — Subgroup Nyabwa. https://www.ethnologue.com/subgroup/971/",
+      "Wikipedia EN — Kru languages. https://en.wikipedia.org/wiki/Kru_languages",
+      "Ze Ze Beke (P.) — Les Interdits alimentaires chez les Nyabwa de Cote d'Ivoire, cit. in Aka Konin 2012.",
+      "Holas (B.) — Arts de la Cote d'Ivoire, les tresors du musee d'Abidjan. Vevey, Musee des Beaux-Arts, 1969 (p. 184 : masques niaboua)."
+    ]
+  }
+}

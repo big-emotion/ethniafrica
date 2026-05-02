@@ -1,0 +1,103 @@
+{
+  "id": "PPL_KUNAMA",
+  "nameMain": "Kunama",
+  "languageFamilyId": "FLG_NILOSAHARIENNE",
+  "currentCountries": ["ERI", "ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Kunama",
+      "selfAppellation": "Kunama",
+      "exonyms": ["Cunama", "Baada", "Shanqella des Dubani"],
+      "originOfExonyms": "Cunama est la forme ancienne du nom, utilisee par le geographe arabe Ya'qubi vers 872 apr. J.-C. L'expression Shanqella des Dubani est employe par l'empereur ethiopien Iyasu Ier en 1692 pour designer les Kunama lors de son expedition dans la vallee du Mareb. Baada est le terme utilise dans des sources historiques pour les raids qui leur etaient infliges.",
+      "whyProblematic": "Le terme Shanqella est pejoratif, utilise par les peuples des hautes terres ethiopiennes pour designer les populations des basses terres qu'ils asservissaient et razzaient.",
+      "contemporaryUsage": "Kunama est l'appellation officielle en Erythree et en Ethiopie. Le Kunama Special Wereda est une circonscription legislative d'Ethiopie portant leur nom. En Erythree, les Kunama constituent environ 2 % de la population.",
+      "linguisticFamily": "FLG_NILOSAHARIENNE",
+      "ethnoLinguisticGroup": "Nilo-saharien, sous-groupe Kunama-Nara (Komuz), a l'interieur de la famille nilo-saharienne mais distant des autres langues du groupe",
+      "historicalRegion": "Region de Gash-Barka (Erythree), plaines du Gash-Setit, nord de l'Ethiopie (Tigray)",
+      "currentCountries": ["ERI", "ETH"]
+    },
+    "ethnicities": ["Kunama"],
+    "origins": {
+      "ancientOrigins": "Les Kunama ont des origines ancestrales dans les terres d'Erythree et sont l'un des peuples les plus anciennement attestes dans la region. La premiere mention ecrite est celle du geographe arabe Ya'qubi (vers 872 apr. J.-C.), qui, s'appuyant sur des rapports de voyageurs, signale la tribu Cunama aux frontieres orientales du royaume d'Alodia (Nubie). Ibn Hawqal (Xe siecle) les decrit vivant dans la vallee de la Barka, combattant avec des arcs, des fleches empoisonnees et des lances (sans boucliers), et venerant un dieu appele Anna.",
+      "formationPeriod": "Peuple autochtone d'Erythree presente depuis au moins le IXe siecle de notre ere dans les sources arabes. Organisation sociale et culturelle etablie de longue date dans les plaines du Gash-Setit.",
+      "migrationRoutes": [
+        "Presence dans la vallee du Gash-Barka depuis l'Antiquite",
+        "Deplacements forces par les razzias abyssiniennes vers des zones refuges",
+        "Migration de 4 000 Kunama vers l'Ethiopie lors de la guerre ethio-erythreenne (1998-2000)",
+        "Reinstallation de certains Kunama aux Etats-Unis (documentaire Home Across Lands)"
+      ],
+      "historicalSettlementZones": [
+        "Plaines de Gash-Setit (region Gash-Barka, Erythree)",
+        "Vallee de la Barka",
+        "Zones frontalieres entre le Gash et le Setit",
+        "Province du Tigray (Ethiopie), notamment Tahtay Adiyabo"
+      ],
+      "unificationsOrDivisions": "Societe matrilineaire organisee en clans (Alaka, Lakka, Serma, Kara, Nataka). Gouvernance par un conseil d'anciens selon Ibn Hawqal (Xe siecle). Pas de chefferie centralisee traditionnelle. Fractures induites par les conflits erythreens : certains ont soutenu l'Ethiopie pendant la guerre d'independance, d'autres ont rejoint le FPLE (EPLF) dans les annees 1980.",
+      "externalInfluences": "Razzias et esclavage par les Abyssins de Wolkait, Adiyabo et Seraye, mentionnes dans les traditions orales. En 1886, le seigneur de guerre tigrinien Ras Alula a tue les deux tiers des populations kunama et nara au nord du Mareb. Colonisation italienne (annees 1890) mettant fin aux razzias. Pendant la guerre d'independance erythreenne, les Kunama ont ete la seule ethnie d'Erythree a soutenir constamment la domination ethiopienne. Politique erythreenne apres l'independance : toute la terre est propriete de l'Etat, favorisant les grandes fermes commerciales au detriment des Kunama.",
+      "majorHistoricalEvents": "Mentionne par Ya'qubi (872), Ibn Hawqal (Xe siecle). Expedition d'Iyasu Ier contre les Kunama en 1692 (massacre, pillage). 1886 : massacre par Ras Alula. 1940s : raids d'Hamid Idris Awate, destruction de villages. 1962 : raid par le FLE, fuite vers le Tigray. 1977 : milice kunama aux cotes de l'Ethiopie. 1998-2000 : 4 000 Kunama fuient en Ethiopie lors de la guerre frontaliere."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Gouvernance par un conseil d'anciens (mentionne par Ibn Hawqal au Xe siecle). Societe egalitaire sans chef hereditaire centralise. Decisions prises collectivement par les anciens du village.",
+      "clanOrganization": "Cinq clans principaux : Alaka, Lakka, Serma, Kara, Nataka. Organisation matrilineaire : l'enfant appartient au clan de la mere, les parents sont reconnus uniquement du cote maternel.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Societe matrilineaire stricte : un enfant n'est membre de la societe que si sa mere est Kunama. La filiation matrilineaire determine l'appartenance clanique, l'heritage et les droits sociaux. Role prominent des femmes dans la vie sociale.",
+      "religiousAuthority": "Venerent un dieu appele Anna (Xe siecle selon Ibn Hawqal). Conversion progressive au christianisme (catholicisme romain principalement) et a l'islam aux XIXe-XXe siecles. Maintien de certaines croyances traditionnelles en parallele."
+    },
+    "languages": {
+      "mainLanguage": "Kunama",
+      "isoCodes": ["kun"],
+      "dialects": [
+        "Barka",
+        "Marda",
+        "Aimara",
+        "Odasa",
+        "Tika",
+        "Lakatakura",
+        "Sokodasa",
+        "Takazze-Setit",
+        "Tigray",
+        "Ilit",
+        "Bitama"
+      ],
+      "vehicularRole": "Le kunama est la langue maternelle du groupe, appartenant a la famille nilo-saharienne (distant des autres langues du groupe). En 1985, le FPLE a decide d'utiliser l'alphabet latin pour toutes les langues non semitiques d'Erythree, incluant le kunama. Le tigrigna et l'arabe sont les langues officielles d'Erythree. L'amharique est utilise en Ethiopie."
+    },
+    "culture": {
+      "majorRites": "Pratiques ancestrales de chasse et de cueillette, agriculture a la houe. Ceremonies autour du betail (elevage de vaches, activite centrale de la societe kunama). Traditions de reconciliation inter-clanique par le conseil des anciens.",
+      "symbols": "Les plaines fertiles du Gash-Setit sont connues comme le grenier de l'Erythree. Le betail a une valeur symbolique et economique centrale.",
+      "artsAndMusic": "Traditions musicales et de danse documentees dans le contexte des ceremonies communautaires. Artisanat traditionnel lie a la vie pastorale et agricole.",
+      "spiritualities": "Majorite Islamisee ou christianisee (catholicisme principalement) depuis la fin du XIXe et debut du XXe siecle. Une minorite maintient les croyances traditionnelles. Venerent ancestralement le dieu Anna. Societe matrilineaire avec fort role social des femmes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Gouvernance traditionnelle par conseil d'anciens. Les Kunama ont longtemps ete domines et marginalises par des groupes plus puissants (Abyssins, Tigriniens, puis Erythreens). La region du Gash-Setit, leur terre ancestrale, est aujourd'hui sous pression du gouvernement erythreen qui considere toute la terre comme propriete de l'Etat.",
+      "relationsWithNeighbors": "Linguistiquement et culturellement proches des Nara. Relations historiquement conflictuelles avec les Tigriniens, les Tigres et les peuples des hautes terres abyssiniennes. Les Kunama ont subi de nombreuses incursions (razzias pour esclaves, grain et betail) de la part de leurs voisins.",
+      "conflictsOrAlliances": "Long historique de razzias et massacres (Ras Alula 1886, Hamid Idris Awate 1940s, FLE 1962). Pendant la guerre d'independance erythreenne, les Kunama ont ete la seule ethnie d'Erythree soutenant l'Ethiopie de maniere constante. En 1977, milice kunama aux cotes des Ethiopiens. En 1998-2000, 4 000 Kunama fuient en Ethiopie.",
+      "diaspora": "Refugees en Ethiopie (Tigray), notamment environ 10 000 en 2022. Diaspora aux Etats-Unis (objet du documentaire Home Across Lands). Presence mineure au Soudan."
+    },
+    "demography": {
+      "totalPopulation": 270000,
+      "referenceYear": 2025,
+      "source": "Omna Tigray 2022 (260 200 total) ; Joshua Project 2024 (129 000 en Erythree, 9 300 en Ethiopie) ; IWGIA 2025 (2 % de la population erythreenne)",
+      "distributionByCountry": [
+        {
+          "country": "ERI",
+          "population": 260000,
+          "note": "Principalement dans la region Gash-Barka, entre les rivieres Gash et Setit"
+        },
+        {
+          "country": "ETH",
+          "population": 10000,
+          "note": "Principalement dans le Tigray (Tahtay Adiyabo et autres zones)"
+        }
+      ]
+    },
+    "sources": [
+      "Kunama people – Wikipedia (https://en.wikipedia.org/wiki/Kunama_people)",
+      "Kunama language – Wikipedia (https://en.wikipedia.org/wiki/Kunama_language)",
+      "Kunama Language (KUN) – Ethnologue, SIL International (https://www.ethnologue.com/language/kun/)",
+      "Kunama in Eritrea – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12850/er)",
+      "Kunama in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12850/ET)",
+      "The Kunama – Omna Tigray, 2022 (https://omnatigray.org/slide-deck/the-kunama/)",
+      "The Indigenous World 2025: Eritrea – IWGIA, 2025 (https://iwgia.org/en/eritrea/5623-iw-2025-eritrea.html)"
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "id": "PPL_NDEBELE_MACRO",
+  "nameMain": "Ndebele (Macro)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["ZWE"],
+  "content": {
+    "appellations": {
+      "mainName": "Ndebele (Macro)",
+      "selfAppellation": "Ndebele",
+      "exonyms": [
+        "Ndebele (terme utilisé par les Européens), parfois appelés « Matabele » (terme historique)"
+      ],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone S)",
+      "historicalRegion": "ZWE, Afrique du Sud",
+      "currentCountries": ["ZWE"]
+    },
+    "ethnicities": [
+      "Ndebele du Zimbabwe",
+      "Ndebele d'Afrique du Sud",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ndebele sont originaires de la région du Zimbabwe et de l'Afrique du Sud. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone S). Ancien royaume Ndebele.",
+      "unificationsOrDivisions": "Organisation en royaume traditionnel (ancien royaume Ndebele). Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (ancien royaume Ndebele). Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Ndebele",
+      "vehicularRole": "Le ndebele est parlé par la majorité des Ndebele. L'anglais et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de mariage traditionnelles",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à l'agriculture",
+      "source_3": "Cérémonies religieuses chrétiennes",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels ndebele, symboles chrétiens",
+      "Arts et musique": "",
+      "source_4": "Peinture murale traditionnelle",
+      "source_5": "Musique traditionnelle",
+      "source_6": "Danse traditionnelle",
+      "source_7": "Poésie orale",
+      "source_8": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora ndebele dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 2000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Ndebele languages (nde, nbl)",
+      "CIA World Factbook – Country profiles",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples bantous"
+    ]
+  }
+}

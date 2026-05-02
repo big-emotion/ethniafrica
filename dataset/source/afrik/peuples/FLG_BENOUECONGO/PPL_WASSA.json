@@ -1,0 +1,84 @@
+{
+  "id": "PPL_WASSA",
+  "nameMain": "Wassa",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Wassa",
+      "selfAppellation": "Wasa",
+      "exonyms": ["Wasa", "Wasaw", "Wassa"],
+      "originOfExonyms": "Wasa est la forme locale et la graphie Ethnologue ; Wassa est la forme administrative coloniale britannique ; Wasaw apparait dans certaines sources historiques. Les Portugais, qui n'arrivaient pas a prononcer Wasa, utilisaient une forme alteree lors de leurs premiers contacts vers 1514-1524.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Wassa est la forme officielle dans les decoupages administratifs ghaneeens (Wassa Amenfi, Wassa Fiase, Wassa East). Wasa est utilise par Ethnologue pour la langue. Les deux formes coexistent dans l'usage courant.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan (branche Tano central)",
+      "historicalRegion": "Western Region du Ghana",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Wassa", "Wassa Amenfi", "Wassa Fiase"],
+    "origins": {
+      "ancientOrigins": "Les Wassa sont un sous-groupe Akan dont les origines remontent au Bonoland. Selon l'historienne Eva Meyerowitz, les Wassa seraient parmi ceux qui ont fonde la ville de Bono-Takyiman apres la destruction du royaume de Kania par Djakpa. Ils auraient ensuite migre vers le sud pour s'etablir dans la Western Region actuelle. Comme tous les Akan, ils auraient migre depuis le nord de l'Afrique et le Sahel vers le 11e siecle.",
+      "formationPeriod": "15e-17e siecles. Les Wassa sont decrits comme l'un des peuples les plus puissants de la Gold Coast lors des premiers contacts europeens (Portugais vers 1514-1524). Les deux royaumes Wassa (Wassa Fiase et Wassa Amenfi) sont constitues avant le 18e siecle.",
+      "migrationRoutes": [
+        "Sahel/nord Afrique vers le Bonoland (migrations Akan 11e siecle)",
+        "Bonoland (Bono-Takyiman) vers le sud-ouest",
+        "Installation dans la Western Region actuelle, entre les fleuves Ankobra et Pra"
+      ],
+      "historicalSettlementZones": [
+        "Western Region du Ghana (territoire de 9 638 km2)",
+        "Wassa Amenfi (sous-region occidentale, capitale Manso Amenfi)",
+        "Wassa Fiase (sous-region orientale, capitale Daboase)",
+        "Tarkwa, Bogoso, Akyempim, Prestea (zones minieres)"
+      ],
+      "unificationsOrDivisions": "La Wassa Traditional Area est historiquement divisee en deux royaumes : Wassa Amenfi et Wassa Fiase. A partir de 1734, Wassa Fiase devint vassal de l'Asante, ainsi que Wassa Amenfi. Apres l'expedition punitive asante de 1826, les deux royaumes rejoignirent le protectorat britannique de la Gold Coast. Aujourd'hui la zone est couverte par sept assembles de districts/municipalites.",
+      "externalInfluences": "Contacts precoces avec les Portugais (vers 1514), puis les Hollandais et les Britanniques pour le commerce de l'or. Pressions repetees de l'Empire asante (18e-19e siecles). Les Wassa sont entoures par les Nzema et Ahanta (sud), les Aowin et Sefwi (ouest et nord), les Denkyira et Fante (est). La presence de riches gisements auriferes a constamment attire des convoitises exterieures.",
+      "majorHistoricalEvents": "Premiers contacts avec les Portugais vers 1514 qui s'inclinaient devant leurs rois. Les Twifo ont participe a une campagne asante contre Wassa (1726) dirigee par Kodwo Abbe Tekki. Wassa et Aowin ont raid-e les villages asante (1719-1721). Coalition Fante-Wassa-Twifo contre l'Asante (1765). Soumission a l'Asante (1734), puis intégration dans le protectorat britannique (1826). Decouverte industrielle de l'or a Tarkwa par les Britanniques (fin 19e siecle)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie akan dirigee par un Omanhene (chef paramount) president le Wassa Traditional Area. Le systeme de gouvernance melange chefferie traditionnelle (gestion des lois coutumières et des litiges fonciers) et assemblees de districts modernes. Les terres communautaires sont gerees par les chefs et les chefs de famille.",
+      "clanOrganization": "Organisation matrilineaire de type akan. Les terres communales sont gerees sous autorite des chefs et des chefs de lignage. La succession et l'heritage passent par la ligne maternelle.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires (abusua) constituent l'unite de base de la structure sociale. Les chefs de famille participent avec les chefs de village et le chef paramount a la gouvernance coutumiere. Les communautes tributaires contribuaient historiquement en produits agricoles et en service militaire.",
+      "religiousAuthority": "Autorite religieuse traditionnelle liee aux ancetres et aux forces naturelles de la foret tropicale. Ceremonies liees a l'Akwasidae (festival periodique akan honnorant les ancetres). Majorite chretienne contemporaine."
+    },
+    "languages": {
+      "mainLanguage": "Wasa (Wassa)",
+      "isoCodes": ["wss"],
+      "dialects": ["Amenfi", "Fianse"],
+      "vehicularRole": "Le Wasa est une langue du groupe Tano central, etroitement apparentee a l'Akan. Il est parle par environ 273 000 personnes dans le sud-ouest du Ghana, principalement dans les districts de Wassa Amenfi West et Wassa Amenfi East. Ses deux principaux dialectes sont l'Amenfi et le Fianse. Il est classe comme langue stable (Ethnologue, code wss)."
+    },
+    "culture": {
+      "majorRites": "Festival Wassa Akwasidae : celebration periodique honorant les ancetres et les divinites, commune a la tradition akan. Ceremonies de chefferie liees aux tabourets ancestraux (nnua). Rituels lies aux activites minieres et agricoles.",
+      "symbols": "L'or est le symbole central de l'identite wassa : les Wassa sont credites d'avoir enseigne l'extraction et la fonte de l'or au Ghana. Le tissage du kente et les ornements en or symbolisent le statut social. La foret tropicale et ses ressources sont intimement liees a l'identite territoriale wassa.",
+      "artsAndMusic": "Riche tradition de musique et de danse avec des instruments comme le tambour djembe et le fontomfrom. Expertise reconnue en sculpture sur bois et en orfevrerie (creations en or finement travaillees). Vetements en kente (tissu colore tisse avec des motifs symboliques). Les Wassa sont credites d'avoir ete parmi les premiers orfevres d'or du Ghana.",
+      "spiritualities": "Religion traditionnelle akan : culte du dieu supreme (Nyame/Onyame) et des ancetres. Respect des anciens (sagesse, connaissance, guidance). Forte cohesion communautaire et familiale elargie. Christianisme majoritaire aujourd'hui."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Deux royaumes akan historiques : Wassa Fiase (capitale Daboase, sous-region orientale) et Wassa Amenfi (capitale Manso Amenfi, sous-region occidentale). Les deux royaumes ont maintenu leur autonomie face aux pressions asante au 18e siecle avant de devenir vassaux de l'Asante a partir de 1734, puis de rejoindre le protectorat britannique en 1826.",
+      "relationsWithNeighbors": "Les Wassa ont des relations historiques etroites avec les Twifo (allies contre l'Aowin en 1726 et coalise contre l'Asante en 1765), les Fante (coalition anti-asante), les Nzema et les Ahanta (voisins du sud), les Sefwi et les Aowin (voisins du nord et de l'ouest).",
+      "conflictsOrAlliances": "Coalition avec Wassa, Twifo et Aowin pour des raids contre les villages asante (1719-1721). Campagne asante contre Wassa menee avec l'aide des Twifo (1726). Coalition Fante-Wassa-Twifo contre l'Asante (1765). Soumission a l'Asante (1734). Alliance avec les Britanniques et integration dans le protectorat (1826).",
+      "diaspora": "Principalement concentree dans les villes minieres de la Western Region (Tarkwa, Bogoso, Prestea) et dans les grandes villes ghaneeennes. Les opportunites minieres (or) ont attire une forte immigration dans la region wassa, rendant les Wassa parfois minoritaires dans certaines zones de leur territoire traditionnel."
+    },
+    "demography": {
+      "totalPopulation": 800000,
+      "referenceYear": 2021,
+      "source": "Wikipedia (Wasa people) : 618 421 (recensement 2010) ; projection 2019 estimee ; Ethnologue : 273 000 locuteurs de la langue wasa. Estimation 2021 environ 800 000 pour l'ensemble du groupe ethnique (tous districts).",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 800000,
+          "note": "Western Region (7 districts : Tarkwa-Nsuaem, Prestea-Huni Valley, Mpohor, Wassa Amenfi Central, Wassa Amenfi East, Wassa Amenfi West, Wassa East), estimation 2021"
+        }
+      ]
+    },
+    "sources": [
+      "Wasa people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Wasa_people)",
+      "Wasa language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Wasa_language)",
+      "Wasa Language (WSS) – Ethnologue (https://www.ethnologue.com/language/wss/)",
+      "Languages of Ghana – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Languages_of_Ghana)",
+      "Akan Heritage – History of Wassa (https://akanheritage.com.gh/history.html)",
+      "Kingdom of Twifo – Wikipedia (https://en.wikipedia.org/wiki/Kingdom_of_Twifo)"
+    ]
+  }
+}

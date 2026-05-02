@@ -1,0 +1,121 @@
+{
+  "id": "PPL_HUTU_BURUNDI",
+  "nameMain": "Hutu du Burundi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["BDI", "RWA", "TZA", "UGA", "COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Hutu du Burundi",
+      "selfAppellation": "Abahutu",
+      "exonyms": [
+        "Bahutu",
+        "Wahutu",
+        "Barundi (designation générique des habitants du Burundi)"
+      ],
+      "originOfExonyms": "Le terme Hutu est d'origine interne, désignant historiquement les agriculteurs sédentaires par opposition aux Tutsi éleveurs. Sous la colonisation belge, ce terme fut inscrit sur des cartes d'identité ethniques à partir des années 1920, cristallisant une catégorie sociale en identité ethnique rigide.",
+      "whyProblematic": "La catégorisation Hutu/Tutsi fut instrumentalisée par la colonisation belge pour diviser la population du Burundi et du Rwanda, transformant des distinctions socio-économiques fluides en identités raciales héréditaires. Cette rigidification coloniale a alimenté les violences politiques postcoloniales.",
+      "contemporaryUsage": "Le terme Abahutu reste en usage courant au Burundi. Le gouvernement burundais du CNDD-FDD, issu des rangs hutu, est au pouvoir depuis 2005. Le Burundi ne supprime pas officiellement les catégories ethniques de son état civil, contrairement au Rwanda.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantous des Grands Lacs (Rwanda-Rundi)",
+      "historicalRegion": "Plateaux et collines du Burundi, région des Grands Lacs d'Afrique",
+      "currentCountries": ["BDI", "RWA", "TZA", "UGA", "COD"]
+    },
+    "ethnicities": [
+      "Hutu des hautes terres du centre du Burundi",
+      "Hutu des plaines de l'Imbo (plaine de la Rusizi)",
+      "Hutu des collines rurales (inselbergs et plateaux)",
+      "Banyarwanda hutus de la RDC (Nord-Kivu, territoire de Masisi et Rutshuru)",
+      "Banyabwisha (Hutu de la chefferie de Bwisha, Nord-Kivu)",
+      "Bafumbira (Hutu de la region de Kisoro, Ouganda)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Hutu sont un peuple bantou établi dans la région des Grands Lacs d'Afrique centrale depuis plus d'un millénaire, descendants de la grande expansion bantoue venue d'Afrique centrale équatoriale (région du Cameroun-Nigeria actuel). Avant l'arrivée des Tutsi éleveurs, les Hutu occupaient les plateaux et collines du Burundi en tant qu'agriculteurs sédentaires. Le royaume du Burundi fut fondé au XVe siècle sous un roi (Mwami) d'origine tutsi, mais intégrant la majorité hutu dans une structure politique hiérarchisée.",
+      "formationPeriod": "Les identités Hutu et Tutsi se sont progressivement consolidées entre le XVe et le XIXe siècle, à mesure que se structurait la monarchie burundaise. Sous la colonisation allemande (protectorat de 1884) puis belge (mandat SDN 1919, tutelle ONU 1946), les distinctions sociales furent rigidifiées en catégories ethniques héréditaires avec l'imposition de cartes d'identité raciales.",
+      "migrationRoutes": [
+        "Expansion bantoue depuis le bassin du Congo vers les plateaux des Grands Lacs (1er millénaire CE)",
+        "Mouvements internes entre les collines du Burundi, du Rwanda et de l'Ouganda",
+        "Exodes de réfugiés vers la Tanzanie, l'Ouganda et le Congo suite aux violences politiques (1972, 1988, 1993)"
+      ],
+      "historicalSettlementZones": [
+        "Plateaux centraux du Burundi (Bututsi, Butare)",
+        "Plaine de l'Imbo (basse Rusizi, lac Tanganyika)",
+        "Collines de Buyenzi, Bururi, Gitega, Ngozi",
+        "Nord-Kivu (RDC) : territoires de Masisi, Rutshuru, Walikale"
+      ],
+      "unificationsOrDivisions": "La catégorie Hutu recouvre une grande diversité de lignages et de clans sans centralisation politique propre : les Hutu étaient intégrés dans la monarchie du Mwami. Les oppositions politiques entre Hutu et Tutsi se sont accentuées à l'indépendance (1962), conduisant à plusieurs cycles de violence (1965, 1972, 1988, 1993). L'Accord d'Arusha (2000) a instauré un partage du pouvoir et une période de transition.",
+      "externalInfluences": "La colonisation allemande puis belge a profondément reconfiguré les rapports sociaux : imposition de cartes d'identité ethniques, soutien à la monarchie tutsi, introduction du christianisme (majorité catholique), administration indirecte. L'indépendance du Burundi (1962) a transféré le pouvoir sans résoudre les tensions héritées.",
+      "majorHistoricalEvents": "1972 : massacre de masse d'environ 100 000 Hutu et 300 000 réfugiés sous le régime de Michel Micombero. 1993 : assassination du président Melchior Ndadaye (premier président hutu élu), déclenchant des violences interethniques causant plus de 300 000 morts selon l'ONU. 2000 : Accord d'Arusha sous médiation Nelson Mandela. 2005 : investiture de Pierre Nkurunziza (CNDD-FDD), parti issu de la rébellion hutu."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Hutu du Burundi étaient intégrés dans la monarchie burundaise sous l'autorité du Mwami (roi). L'organisation locale reposait sur des chefferies (chefs de colline) et des conseils d'anciens. Les grands chefs (baganwa) formaient l'aristocratie qui gérait les terres et les relations entre Hutu et Tutsi. L'organisation politique hutu en tant que telle était décentralisée, articulée autour des unités familiales et des lignages.",
+      "clanOrganization": "Organisation en clans (ubwoko) patrilinéaires et en familles étendues (inzu). Les principaux lignages hutu incluent les Abahanza, Abasigwa, Abasanze, et d'autres groupes de collines. L'appartenance clanique détermine les alliances matrimoniales, les droits fonciers et les solidarités sociales.",
+      "ageClassSystems": "Le système des générations (ibirongozi) structurait les classes d'âge ; les hommes d'un même groupe d'initiation partageaient des obligations mutuelles d'entraide et de solidarité.",
+      "roleOfLineages": "Les lignages patrilinéaires assurent la transmission des terres agricoles (ingaragu), la mémoire généalogique et la gestion des rites funéraires. Le chef de lignage (umukuru w'inzu) arbitre les conflits internes et représente la famille auprès des autorités.",
+      "religiousAuthority": "Anciens et prêtres traditionnels (abapfumu) pour les rites et la divination. La religion traditionnelle burundaise (Imana comme dieu suprême) coexiste depuis la colonisation avec le catholicisme, largement majoritaire au Burundi (60-65% de catholiques). Les abashingantahe (sages garants de la justice) constituent une autorité morale traditionnelle transversale aux ethnies."
+    },
+    "languages": {
+      "mainLanguage": "Kirundi (ikirundi)",
+      "isoCodes": ["run"],
+      "dialects": [
+        "Kinyarwanda (variante rwandaise du rwanda-rundi, intercompréhensible avec le kirundi)",
+        "Kinyabwisha (parler des Banyarwanda du Nord-Kivu)",
+        "Kifumbira (parler des Bafumbira d'Ouganda)"
+      ],
+      "vehicularRole": "Le kirundi est la langue nationale et officielle du Burundi, partagee par Hutu, Tutsi et Twa sans distinction. Il appartient au sous-groupe rwanda-rundi de la famille bantoue (zone JD60). Le kirundi est langue d'enseignement à l'école primaire. Le français est langue officielle co-administrative. Le swahili est vehiculaire dans les zones frontalières avec la Tanzanie et le Congo."
+    },
+    "culture": {
+      "majorRites": "Les rites majeurs incluent les cérémonies d'initiation des jeunes (ukubandwa, rites de passage à l'âge adulte), les funérailles (avec veillée, chants et prières à Imana), et les cérémonies agricoles liées aux semailles et aux récoltes. L'umuganuro (fête des prémices du sorgho) est une grande fête annuelle traditionnelle du Burundi réunissant Hutu et Tutsi. Le mariage traditionnel comporte des phases de négociation de la dot (inkwano) en vaches et bières.",
+      "symbols": "La vache (inka) occupe une place centrale dans la symbolique burundaise : richesse, prestige, dot, sacrifice rituel. Le tambour royal (karyenda) est le symbole suprême de la royauté burundaise et de l'unité nationale. Les collines (imisozi) représentent l'ancrage territorial et identitaire des familles hutu.",
+      "artsAndMusic": "Les tambours royaux ingoma constituent l'expression musicale la plus emblématique du Burundi, pratiquée par des confréries spécialisées (abatimbo). Les danses traditionnelles (intore pour les hommes, avec sauts et lances) sont pratiquées lors des cérémonies. La musique vocale polyphonique (inanga, chants d'umuduri) accompagne la vie quotidienne. L'artisanat inclut la vannerie fine (imigongo, paniers tressés), la poterie et le travail du cuir.",
+      "spiritualities": "La religion traditionnelle burundaise reconnaît Imana comme dieu créateur unique et bienveillant. Les ancêtres (imitiima) sont vénérés comme intercesseurs. Le culte de possession kubandwa (centré sur le génie Kiranga) est pratiqué pour la guérison et la divination. Aujourd'hui, la grande majorité des Hutu du Burundi est chrétienne (catholique principalement, avec une présence protestante croissante). Une minorité musulmane existe dans les zones frontalières."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Hutu du Burundi étaient intégrés comme sujets agricoles dans le royaume du Burundi (fondé au XVe siècle), structuré autour du Mwami et de l'aristocratie baganwa. Des chefferies hutu locales subsistaient en zones périphériques. Dans le Nord-Kivu, la collectivité-secteur de Bwisha était dirigée par le Mwami Daniel Ndeze, autorité hutu reconnue.",
+      "relationsWithNeighbors": "Les Hutu du Burundi ont entretenu des relations complexes avec les Tutsi (dominance politique) et les Twa (minorité artisane). Des échanges économiques et culturels existaient avec les peuples voisins : Havu, Shi, Tembo (Congo), Nyamwezi et Ha (Tanzanie). Les Hima d'Ouganda partagent des similitudes culturelles avec les pasteurs tutsi.",
+      "conflictsOrAlliances": "Cycles de violences politico-ethniques postcoloniales : 1965 (tentative de coup d'État hutu), 1972 (génocide des Hutu sous Micombero, ~100 000 morts), 1988 (massacres au nord Burundi), 1993 (assassinat de Ndadaye, ~300 000 morts). Guerres civiles 1993-2005. Accord d'Arusha (2000) et cessez-le-feu. Intégration des anciens rebelles CNDD-FDD dans les institutions.",
+      "diaspora": "Diaspora importante au Rwanda, en Tanzanie (camps de réfugiés de Mtabila, Lukole), en Ouganda, au Congo (Nord-Kivu). Communautés en Europe occidentale (Belgique, France), en Amérique du Nord. La communauté des Banyarwanda hutus au Nord-Kivu (RDC) est estimée à plus de 2 millions de personnes."
+    },
+    "demography": {
+      "totalPopulation": 10500000,
+      "referenceYear": 2025,
+      "source": "Estimation 2025 : environ 85% des 14,4 millions de Burundais (source UNFPA 2025) sont Hutu, soit ~12,2 millions au Burundi. La diaspora en RDC (Nord-Kivu) comptait 2 millions en 2019 (Wikipedia FR, recensement). Population totale Hutu toutes régions (Burundi, Rwanda, DRC, Ouganda, Tanzanie) estimée à 26 millions en 2019 (Wikipedia FR). Estimation Burundi seul : ~12,2 millions en 2025.",
+      "distributionByCountry": [
+        {
+          "country": "BDI",
+          "population": 12200000,
+          "note": "environ 85% des 14,4M de Burundais"
+        },
+        {
+          "country": "COD",
+          "population": 2000000,
+          "note": "Banyarwanda hutus du Nord-Kivu (estimation 2019)"
+        },
+        {
+          "country": "TZA",
+          "population": 1865000,
+          "note": "estimation 2019, réfugiés et communautés installées"
+        },
+        {
+          "country": "UGA",
+          "population": 1500000,
+          "note": "estimation 2019, Bafumbira et réfugiés"
+        },
+        {
+          "country": "RWA",
+          "population": 500000,
+          "note": "estimation, réfugiés et résidents"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Hutu. https://en.wikipedia.org/wiki/Hutu",
+      "Wikipedia FR — Hutu. https://fr.wikipedia.org/wiki/Hutu",
+      "Wikipedia EN — Demographics of Burundi. https://en.wikipedia.org/wiki/Demographics_of_Burundi",
+      "UNFPA — Burundi Population 2025. https://www.unfpa.org/data/world-population/BI",
+      "Ethnologue (SIL) — Rundi [run]. https://www.ethnologue.com/language/run/",
+      "World Population Review — Burundi Population 2026. https://worldpopulationreview.com/countries/burundi",
+      "Rapport de la Commission internationale d'enquête pour le Burundi (ONU, 1996) — contexte génocide 1993",
+      "Accord d'Arusha pour la Paix et la Réconciliation au Burundi, 2000. https://peacemaker.un.org/burundi-arusha-agreement2000"
+    ]
+  }
+}

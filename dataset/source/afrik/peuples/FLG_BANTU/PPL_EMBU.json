@@ -1,0 +1,95 @@
+{
+  "id": "PPL_EMBU",
+  "nameMain": "Embu",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["KEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Embu",
+      "selfAppellation": "Aembu",
+      "exonyms": ["Waembu"],
+      "originOfExonyms": "Waembu est la forme swahilie du pluriel, utilisee par les populations voisines et dans les documents coloniaux.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Embu designe a la fois le peuple, leur langue (Kiembu) et la ville chef-lieu du comte de Embu.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou des Hautes Terres de l'Est (groupe Thagicu)",
+      "historicalRegion": "Pentes sud-est du Mont Kenya (Kirinyaga), province orientale du Kenya",
+      "currentCountries": ["KEN"]
+    },
+    "ethnicities": [
+      "Embu proper (versants sud du Mont Kenya)",
+      "Mbeere (zone semi-aride au sud-est, rattaches administrativement depuis 1996)",
+      "Clan Muturi",
+      "Clan Iruma",
+      "Clan Kina",
+      "Clan Igandu",
+      "Clan Gicuku",
+      "Clan Matau",
+      "Clan Ngai",
+      "Clan Kithami",
+      "Clan Njuki",
+      "Clan Rwamba"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Aembu sont un peuple bantou dont les traditions orales situent l'origine mythique dans un bosquet appele Mwenendega, pres de la ville de Runyenjes. Selon la mythologie, Dieu (Ngai) crea Mwenendega et lui donna une epouse, Ciurunjii ou Nthara, au bord de la riviere Gogo. Leurs descendants peuplerent progressivement l'ensemble du territoire embu. Linguistiquement, les Aembu appartiennent au sous-groupe bantou Thagicu, etroitement apparentes aux Kikuyu, Meru et Kamba.",
+      "formationPeriod": "Formation du groupe entre le XVe et le XVIIe siecle, dans le contexte des grandes migrations bantoues depuis la cote swahilie vers l'interieur des terres du Kenya.",
+      "migrationRoutes": [
+        "Migration depuis la cote est-africaine (Pwani) vers l'interieur du Kenya",
+        "Remontee vers le nord-ouest en suivant les contreforts du Mont Kenya",
+        "Installation definitive sur les pentes sud-est du Kirinyaga (Mont Kenya)"
+      ],
+      "historicalSettlementZones": [
+        "Cote swahilie (origine lointaine selon traditions orales et evidence linguistique)",
+        "Contreforts orientaux du Kenya central",
+        "Pentes sud-est du Mont Kenya, region d'Embu"
+      ],
+      "unificationsOrDivisions": "Les Aembu et les Mbeere formaient historiquement un ensemble culturel plus large avant leur separation administrative en 1996, les Mbeere ayant obtenu leur propre district.",
+      "externalInfluences": "Contacts avec les commerçants arabes et swahilis sur la cote, puis avec la colonisation britannique. Participation active a la resistance Mau Mau (1952-1960). Influence du christianisme depuis le debut du XXe siecle.",
+      "majorHistoricalEvents": "Repulsion des invasions Kamba et Masai. Participation au soulèvement Mau Mau contre la colonisation britannique. Appartenance a la GEMA (Gikuyu-Embu-Meru Association), alliance politique des peuples du Mont Kenya apres l'independance."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe sans chef central: governance par des conseils d'anciens (athamaki) representant les clans. Les decisions importantes etaient prises collectivement par les hommes ages inities. Le systeme de classes d'age (mariika) structurait la vie sociale et politique.",
+      "clanOrganization": "Organisation en clans patrilineaires (miryango). Les principaux clans incluent Muturi, Iruma, Kina, Igandu, Gicuku, Matau, Ngai, Kithami, Njuki et Rwamba. Chaque clan possede ses propres lignages et interdits alimentaires.",
+      "ageClassSystems": "Systeme de classes d'age (mariika/riika): les jeunes hommes sont circoncis ensemble et forment une classe d'age qui progressera collectivement vers les statuts de guerriers (anake), puis d'anciens (athamaki). Ce systeme regit les responsabilites militaires, civiles et religieuses.",
+      "roleOfLineages": "Les lignages patrilineaires (nyomba) determinent l'heritage, le droit a la terre et les alliances matrimoniales. L'exogamie clanique est la regle.",
+      "religiousAuthority": "Anciens et specialistes rituels (athamaki). Les sacrifices a Ngai (Dieu) etaient effectues sous la direction des anciens sur des autels familiaux ou sur des collines sacrees. Aujourd'hui, les pasteurs chretiens ont largement remplace les autorites religieuses traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Kiembu (Embu)",
+      "isoCodes": ["ebu"],
+      "dialects": [
+        "Embu proprement dit (versants du Mont Kenya)",
+        "Mbeere (Kimbeere, parle par les Mbeere au sud-est)",
+        "Kiruguru (Kiruguru, dialecte des zones proches du Mont Kenya, reconnaissable a son accent)"
+      ],
+      "vehicularRole": "Le Kiembu est la langue maternelle de l'ensemble des Aembu. Le kiswahili et l'anglais sont utilises comme langues officielles du Kenya et comme vehiculaires dans le commerce et l'education. Le Kiembu est mutellement intelligible avec le Kikuyu et le Kimeru."
+    },
+    "culture": {
+      "majorRites": "Circoncision masculine (irua): rite de passage central marque par une periode de retraite et d'education, intégrant les jeunes hommes dans leur classe d'age (riika). Initiation feminine liee a la puberte, precedant le mariage. Rites agricoles et libations aux ancetres (ithamba) effectuees par les hommes ages sur des autels familiaux pour solliciter la benediction de Ngai et des esprits ancestraux. Ceremonies funeraires avec periodes de deuil et offrandes.",
+      "symbols": "Le Mont Kenya (Kirinyaga) est le lieu sacre supreme, demeure de Ngai. Le figuier sacre (mugumo) est un lieu de priere et de sacrifice. Les calebasses (pour les libations), les animaux sacrificiels (chevres, moutons) et les parures des initiés sont des symboles culturels importants.",
+      "artsAndMusic": "Musique et danse pour celebrations regionales et evenements quotidiens, avec demonstrations d'agilite et d'acrobatie rappelant le style Kamba. Poterie traditionnelle, vannerie et fabrication de bijoux en perles. Cuisine traditionnelle: Mukimo (bananes ou pommes de terre ecrasees avec legumes), Githere (mais et haricots), Ucuru (bouillie fermentee de mil ou sorgho), Nyama cia gwakia (viande rotie), Mutura (saucisse de chevre). Poesie orale et contes transmis par les anciens.",
+      "spiritualities": "Croyance en un Dieu unique (Ngai ou Murungu) invisible et omnipotent, residant au sommet du Mont Kenya. Les esprits des ancetres servent d'intercesseurs entre les vivants et Ngai. Les libations et offrandes familiales maintiennent le lien avec les ancetres. Aujourd'hui, la majorite des Aembu sont chretiens (catholiques, protestants, evangeliques), certains pratiquant un syncretisme avec les croyances traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Systeme de gouvernance decentralise par conseils d'anciens et classes d'age. Des notables locaux (athamaki) etaient reconnus pour leur sagesse et leur richesse (mesuree en epouses, enfants et betail). Le chef Muruatetu, par exemple, avec ses 16 epouses, fut un notable respecte servant egalement d'officier pour le gouvernement colonial puis independant.",
+      "relationsWithNeighbors": "Relations etroites avec les Kikuyu (a l'ouest), les Meru (au nord) et les Kamba (a l'est et au sud), peuples apparentes linguistiquement et culturellement. Alliance politique post-coloniale au sein de la GEMA (Gikuyu-Embu-Meru Association). Conflits historiques avec les Masai et les Kamba qui ont tente d'envahir le territoire embu, sans succes.",
+      "conflictsOrAlliances": "Retraite des invasions masai et kamba avec succes. Participation active au soulèvement Mau Mau (1952-1960) contre la colonisation britannique. Alliance au sein de la GEMA dans le Kenya post-independant.",
+      "diaspora": "Diaspora embu dans les grandes villes kenyanes (Nairobi, Mombasa) et dans les pays du Golfe et en Occident, liee aux migrations de travail contemporaines."
+    },
+    "demography": {
+      "totalPopulation": 404801,
+      "referenceYear": 2025,
+      "source": "Kenya National Bureau of Statistics, recensement 2019 (population ethnique Embu: 404 801). Population du comte de Embu (608 599) inclut Mbeere et autres. Projection 2025 estimee.",
+      "distributionByCountry": [{ "country": "KEN", "population": 404801 }]
+    },
+    "sources": [
+      "Wikipedia EN – Embu people: https://en.wikipedia.org/wiki/Embu_people",
+      "Wikipedia EN – Embu language: https://en.wikipedia.org/wiki/Embu_language",
+      "Kenya National Bureau of Statistics – Kenya Population and Housing Census 2019: https://www.knbs.or.ke/",
+      "Ethnologue – Kiembu (ebu): https://www.ethnologue.com/language/ebu/",
+      "CityPopulation – Embu County: https://www.citypopulation.de/en/kenya/sub/admin/14__embu/",
+      "StatsKenya – Tribe and Ethnicity in Kenya: https://statskenya.co.ke/at-stats-kenya/about/tribe-and-ethnicity-in-kenya-number-of-people-by-tribe/93/",
+      "Blue Gecko – Embu and Mbeere introduction, Traditional Music and Cultures of Kenya: http://www.bluegecko.org/kenya/tribes/embu/index.htm"
+    ]
+  }
+}

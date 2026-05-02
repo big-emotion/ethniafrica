@@ -1,0 +1,110 @@
+{
+  "id": "PPL_MANGBETU",
+  "nameMain": "Mangbetu",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Mangbetu",
+      "selfAppellation": "Nemangbetu (ou Amangbetu)",
+      "exonyms": [
+        "Mangbetu",
+        "Mambetto",
+        "Kingbetu",
+        "Monbuttu (forme ancienne utilisée par Schweinfurth)"
+      ],
+      "originOfExonyms": "Le terme Mangbetu (Nemangbetu dans la langue) est l'ethnonyme propre du peuple. Les formes Mambetto et Monbuttu sont des transcriptions européennes du 19e siècle, notamment celle de Georg Schweinfurth (1870). Le terme Kingbetu est une autre variante documentée dans les sources coloniales.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Mangbetu est universellement adopté dans les sources académiques et populaires. Il désigne à la fois le peuple, sa langue et son style artistique distinctif, reconnaissable notamment par la représentation des têtes allongées (lipombo) dans les objets d'art.",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Soudanique central, branche Mangbetu (Mangbetuique)",
+      "historicalRegion": "Nord-est de la République Démocratique du Congo, région du Haut-Uele et du Bas-Uele ; entre les rivières Uele, Nepoko et Bomokandi",
+      "currentCountries": ["COD"]
+    },
+    "ethnicities": [
+      "Mabiti (clan d'élite fondateur du royaume, 18e siècle)",
+      "Medje (sous-groupe le plus nombreux, au sud d'Isiro)",
+      "Mangbetu propre (nord d'Isiro, subregion Haut-Uele)",
+      "Makere (autour de Zobia, Bas-Uele)",
+      "Malele (territoire de Poko)",
+      "Mapopoi / Popoi (région de Panga et de la rivière Aruwimi)",
+      "Nabulu / Aberu (Bafwasamoa, nord de Nia-Nia)",
+      "Lombi (territoire de Bafwasende, traité comme langue distincte par Ethnologue)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Mangbetu sont originaires du Soudan du Sud, d'où ils migrèrent vers le sud à partir de l'an 1000 environ. En arrivant dans leur habitat actuel (plus humide et forestier que leurs terres d'origine), ils furent profondément influencés par les locuteurs bantu voisins, empruntant une grande partie de leur vocabulaire relatif à leur nouvel environnement. Dès le début du 18e siècle, ils formaient plusieurs petits clans vivant en contact avec des groupes bantu qui migraient du sud vers le nord.",
+      "formationPeriod": "A la fin du 18e siècle, un groupe d'élites parlant mangbetu, principalement issu du clan Mabiti, prit le contrôle des autres clans et les unifia en un royaume. Leur maîtrise de la forge du fer et du cuivre (pour armes et ornements) leur donna probablement un avantage militaire et économique. Au début du 19e siècle, sous le roi Nabiembali, le royaume atteignit son apogée. En 1859, les fils de Nabiembali se révoltèrent, le tuèrent et fondèrent leurs propres royaumes indépendants.",
+      "migrationRoutes": [
+        "Migration du Soudan du Sud vers le nord-est de l'actuelle RDC (environ an 1000)",
+        "Expansion territoriale sous Nabiembali vers le nord (jusqu'à la rivière Uele, actuelle Niangara)",
+        "Intégration dans l'Etat Indépendant du Congo (1892) puis dans le Congo belge"
+      ],
+      "historicalSettlementZones": [
+        "Haut-Uele (zone principale, nord d'Isiro, autour de Nangazizi et des collectivités Azanga, Ganga, Tapili, Medanoma, Ndei, Mboli)",
+        "Bas-Uele (groupes Makere autour de Zobia)",
+        "Territoire de Poko (groupe Malele : Balele, Niapu, Kisanga)",
+        "Région de Medje (Mongomassi et collectivité Medje, au sud d'Isiro)",
+        "Aruwimi (groupe Mapopoi)"
+      ],
+      "unificationsOrDivisions": "L'unification des clans mangbetu fut réalisée à la fin du 18e siècle par le clan Mabiti. Le roi Nabiembali étendit ensuite le royaume par conquêtes et mariages politiques (épouses locales, fils acceptés comme chefs dans les peuples conquis : Madi, Bangba, Mayogo, Mayvu, Makango, Barambo). La révolte de 1859, où les fils de Nabiembali le détrônèrent (selon l'Encyclopaedia Africana, son fils aîné Tuba le renversa), fragmenta le royaume en de nombreuses petites chefferies concurrentes, affaiblies par les razzias esclavagistes égyptiennes et soudanaises.",
+      "externalInfluences": "Influence bantu (emprunt massif de vocabulaire lors de l'arrivée en zone forestière, environ an 1000). Expédition du botaniste Georg Schweinfurth (1870) : première description européenne détaillée du royaume. Razzias esclavagistes turco-égyptiennes (2e moitié 19e s.). Intégration dans l'État Indépendant du Congo de Léopold II (1892). Colonisation belge. Expédition américaine Herbert Lang du AMNH (1909-1915) : collecte de 49 tonnes de matériaux culturels et plus de 4 000 objets d'art.",
+      "majorHistoricalEvents": "Fin 18e siècle : unification des clans par les élites Mabiti. Début 19e siècle : expansion du royaume sous Nabiembali (conquêtes des Madi, Bangba, Mayogo, etc.). 1859 : révolte des fils de Nabiembali, fragmentation du royaume. 1870 : visite de Georg Schweinfurth ; il décrit le roi Mbunza, son palais de Nangazizi et la culture mangbetu comme 'aristocratiques' et 'élégants'. Fin 19e siècle : soumission aux razzias égyptiennes puis à la domination mahdiste. 1892 : intégration dans l'État Indépendant du Congo. 1909-1915 : expédition du AMNH (Herbert Lang), collecte massive d'objets. 1950s : déclin du lipombo sous l'influence de l'occidentalisation."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Royaume centralisé sous un roi (nabo) entouré d'une cour aristocratique. Le roi légitimait ses conquêtes par des mariages avec des femmes locales, permettant à ses fils d'être acceptés comme chefs dans les peuples conquis. Les insignes royaux comprenaient des ornements en cuivre et ivoire, des armes cérémonielles et des instruments de musique. Après la fragmentation de 1859, les royaumes successifs maintinrent des structures cheffales similaires.",
+      "clanOrganization": "Organisation clanique avec le clan Mabiti dominant politiquement. Les autres clans (Medje, Makere, Malele, etc.) constituent des unités linguistiques et territoriales distinctes. La connaissance de la forge du fer et du cuivre constituait un marqueur de prestige et de pouvoir.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilinéaires. La légitimité royale était transmise patrilinéairement, avec la complication des fils de femmes conquises : Nabiembali utilisait la polygynie comme outil politique pour intégrer les peuples vaincus via ses descendants.",
+      "religiousAuthority": "Les chefs et rois combinaient autorité politique et religieuse. Le culte des ancêtres constituait un élément central de la vie spirituelle. Intégration progressive du christianisme pendant la période coloniale belge."
+    },
+    "languages": {
+      "mainLanguage": "Mangbetu (Nemangbetu)",
+      "isoCodes": ["mdj"],
+      "dialects": [
+        "Medje (Mɛdʒɛ) — dialecte le plus parlé et le mieux compris, au sud d'Isiro",
+        "Mangbetu propre — nord d'Isiro (Haut-Uele)",
+        "Makere — autour de Zobia (Bas-Uele)",
+        "Malele — territoire de Poko",
+        "Mapopoi / Popoi — région de Panga et Aruwimi",
+        "Nabulu / Aberu — Bafwasamoa",
+        "Lombi — territoire de Bafwasende (divergent, traité comme langue à part par Ethnologue)"
+      ],
+      "vehicularRole": "Le mangbetu (ISO 639-3 : mdj) est l'une des langues soudaniques centrales les plus importantes en nombre de locuteurs en RDC. Environ la moitié de la population locale parle également le bangala, dialecte de la lingua franca lingala, utilisé pour le commerce dans la région du Haut-Uele. Le français est la langue officielle de la RDC. Le dialecte Medje est le plus largement compris et fut utilisé dans l'éducation et les missions."
+    },
+    "culture": {
+      "majorRites": "Cérémonies royales : les insignes du pouvoir (marteau royal, ornements en cuivre et ivoire) étaient transmis lors de rituels d'investiture. Rites liés au lipombo (déformation crânienne) : les têtes des nourrissons étaient bandées serré pour obtenir la forme allongée caractéristique, pratique considérée comme un idéal de beauté mangbetu. Ce rite commença à disparaître dans les années 1950 avec l'influence de l'occidentalisation. Rites agricoles et funéraires liés au culte des ancêtres.",
+      "symbols": "Le lipombo (tête allongée, liée par bandage serré dès la naissance) est le symbole le plus distinctif de l'aristocratie mangbetu. La coiffure tumburu (fleur de roseau évasée, portée exclusivement par les femmes de la classe dirigeante) accentuait visuellement la forme allongée de la tête. Les ornements royaux en cuivre et ivoire et les armes cérémonielles constituaient des insignes de pouvoir. Les motifs géométriques nakira (compétition de génie artistique géométrique) ornaient les objets de prestige.",
+      "artsAndMusic": "Les Mangbetu sont réputés pour une tradition artistique de haut niveau, caractéristique de la cour royale. La harpe figurative domu (cithare à archet avec tête humaine sculptée à l'extrémité du manche) est leur instrument emblématique, certaines atteignant plus de 100 000 dollars aux enchères. Les autres instruments de cour incluent trompettes, cloches, timbales, gongs et instruments à cinq cordes. Poterie : jarres céramiques aux formes complexes, utilisées pour l'eau, la bière et l'huile. Sculpture : objets anthropomorphes (boîtes, tabourets, armes, harpes avec têtes à têtes allongées) produits pour la cour royale et, depuis la période coloniale, pour les visiteurs et collectionneurs européens. Forge : armes et ornements en fer et cuivre de haute qualité. L'American Museum of Natural History (AMNH) collecta plus de 4 000 objets lors de l'expédition Herbert Lang (1909-1915), formant l'une des plus grandes collections d'art mangbetu au monde.",
+      "spiritualities": "Culte des ancêtres constitutif de la vie sociale et religieuse. La royauté combinait autorité politique et religieuse. Cosmogonie centree sur le monde des esprits ancestraux. Les Mangbetu adoptèrent progressivement le christianisme (catholique) pendant la période coloniale belge. Croyances animistes : esprits des lieux et des ancêtres intervenant dans la vie quotidienne."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume Mangbetu est l'une des entités politiques les plus documentées du nord-est du Congo. Fondé à la fin du 18e siècle par le clan Mabiti, il atteignit son apogée sous Nabiembali (circa 1815-1860). Son fils Mbunza établit sa capitale à Nangazizi, un palais entièrement en bois rivalisant avec les plus grandes structures ligneuses du monde, décrit par Schweinfurth en 1870. Après la fragmentation de 1859, plusieurs royaumes successeurs coexistèrent jusqu'à l'intégration coloniale (1892).",
+      "relationsWithNeighbors": "Les Mangbetu conquirent et assimilèrent plusieurs peuples voisins (Madi, Bangba, Mayogo, Mayvu, Makango, Barambo) via une politique de mariages royaux. Ils entretinrent des relations commerciales avec les peuples bantu voisins (Mabodo, Buan) dont ils empruntèrent une large part du vocabulaire relatif à leur nouveau milieu forestier. Leurs rivaux incluaient les Azande et leurs alliés (menace permanente sur la frontière nord du royaume).",
+      "conflictsOrAlliances": "Expansion conquérante sous Nabiembali (début 19e s.). Révolte interne des fils (1859) : fragmentation en chefferies concurrentes. Razzias esclavagistes turco-égyptiennes (2e moitié 19e s.) : les trafiquants exploitèrent les conflits internes pour capturer des esclaves. Soumission à la domination mahdiste puis intégration dans l'État Indépendant du Congo de Léopold II (1892).",
+      "diaspora": "Pas de diaspora significative documentée à l'extérieur de la RDC. Les Mangbetu restent concentrés dans le Haut-Uele et le Bas-Uele (nord-est de la RDC). Une migration vers les grandes villes congolaises (Kisangani, Kinshasa) a accompagné l'urbanisation postcoloniale."
+    },
+    "demography": {
+      "totalPopulation": 600000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (SIL International) — Mangbetu (mdj), langue centrale soudanique, RDC. Estimation 2025 basée sur les données Ethnologue et Joshua Project pour la province du Haut-Uele. Les sources varient entre 200 000 et 700 000 selon les dialectes inclus.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 600000,
+          "note": "Province du Haut-Uele (principalement autour d'Isiro et Niangara) et Bas-Uele, nord-est de la RDC"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Mangbetu people. https://en.wikipedia.org/wiki/Mangbetu_people",
+      "Wikipedia EN — Mangbetu language. https://en.wikipedia.org/wiki/Mangbetu_language",
+      "Ethnologue (SIL International) — Mangbetu (mdj). https://www.ethnologue.com/language/mdj/",
+      "Smarthistory — Figurative Harp (Domu), Mangbetu peoples. https://smarthistory.org/figurative-harp-domu/",
+      "Khan Academy — Figurative Harp (Domu) (Mangbetu peoples). https://www.khanacademy.org/humanities/art-africa/central-africa/democratic-republic-of-the-congo/a/figurative-harp-domu-mengbetu-peoples",
+      "AMNH Digital Collections — Harp, Mangbetu, American Museum Congo Expedition (1909-1915). https://digitalcollections.amnh.org/archive/Harp--Mangbetu----2URM1TGW6CBO.html",
+      "Encyclopaedia Africana — Nabiembali. https://encyclopaediaafricana.com/nabiembali/",
+      "African History Extra — Kingdoms at the forest's edge: a history of Mangbetu (ca. 1750-1895). https://www.africanhistoryextra.com/p/kingdoms-at-the-forests-edge-a-history",
+      "The Metropolitan Museum of Art — Figurative Harp (Domu). https://www.metmuseum.org/art/collection/search/319553"
+    ]
+  }
+}

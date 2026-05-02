@@ -1,0 +1,80 @@
+{
+  "id": "PPL_DENKYIRA",
+  "nameMain": "Denkyira",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Denkyira",
+      "selfAppellation": "Denkyira",
+      "exonyms": ["Denkira", "Denchira", "Inguira", "Dinkira"],
+      "originOfExonyms": "Denkira et Denchira sont des variantes orthographiques europeennes (neerlandaises et anglaises) du meme nom, issues des relations commerciales avec les marchands europeens sur la cote du Ghana aux XVIIe-XVIIIe siecles. Inguira est une variante ancienne relevee dans les archives coloniales neerlandaises.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Denkyira est le nom officiel utilise dans les denominations administratives du Ghana contemporain: Upper Denkyira East Municipal (chef-lieu Dunkwa-on-Offin) et Upper Denkyira West (chef-lieu Diaso) dans la Region Centrale. Le terme est maintenu dans les institutions traditionnelles (chefferie paramountcy de Jukwaa).",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Akan",
+      "historicalRegion": "Bassin de l'Ofin et du Pra, foret meridionale du Ghana actuel",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Denkyira"],
+    "origins": {
+      "ancientOrigins": "Les racines ancestrales du Denkyira remontent a Bonoman, dans la zone de transition foret-savane du sud du Ghana. Les premiers colons s'etablirent pres de Nkyiraa dans la zone bono avant de s'installer dans la region de l'Adansi. Pendant leur periode formative, ils etaient politiquement subordonnes a l'Etat d'Adansi. Les lignages fondateurs originaires des villes adansi de Kokobiante, Dompoase et Akrokerri. Le clan Agona (qui mena ensuite le royaume) se deplaca vers l'ouest depuis la patrie adansi vers la region entre Asokwa et le corridor Obuasi-Akrofuom.",
+      "formationPeriod": "Fin du XVIe et debut du XVIIe siecle. La formation du royaume fut motivee par des pressions internes (disputes de succession, croissance demographique) et externes (menaces voisines et ambition expansionniste du Denkyira lui-meme). La capitale fut etablie a Abankeseso (aussi appelee Ntibanso), pres de la confluence des rivieres Oda et Ofe.",
+      "migrationRoutes": [
+        "Origine dans la region de Bonoman (zone foret-savane du Ghana meridional)",
+        "Premier etablissement pres de Nkyiraa dans la zone bono",
+        "Migration vers la region d'Adansi",
+        "Deplacement du clan Agona vers l'ouest jusqu'au couloir Asokwa-Obuasi-Akrofuom",
+        "Fondation de la capitale Abankeseso au confluent des rivieres Oda et Ofe"
+      ],
+      "historicalSettlementZones": [
+        "Abankeseso (capitale historique, aussi appelee Ntibanso, detruite en 1701)",
+        "Bassin de l'Ofin et du Pra (Ghana meridional)",
+        "Dunkwa-on-Offin (capitale administrative moderne apres 1823)",
+        "Jukwaa (coeur spirituel et ceremonial de la chefferie actuelle)"
+      ],
+      "unificationsOrDivisions": "Polite centralisee et expansionniste au XVIIe siecle. Systeme de commandement tripartite: Aile droite (Akumatire), Aile gauche (Kyeremfem), Avant-garde (Agona Adontendom), chacune dirigee par un Osafohene responsable de l'administration civile et militaire. Apres 1823: monarchie non souveraine avec fonctions administratives a Dunkwa-on-Offin et tabouret paramount a Jukwaa (centre spirituel et ceremonial).",
+      "externalInfluences": "Commerce avec les Europeens des annees 1690: Neerlandais, Anglais et Brandebourgeois se rendirent a Abankeseso en 1692; un representant resident fut nomme sur la cote. Soumission a l'empire Asante apres 1701. Alliance avec la Confederation fante (sous protection britannique) en 1868 contre l'Asante. Administration coloniale britannique integrante apres 1902.",
+      "majorHistoricalEvents": "Milieu XVIIe siecle: Conquete de l'Adansi (c.1659); domination du bassin Ofin-Pra sous Boamponsem (r. c.1650s-1694). 1692: Visite diplomatique des marchands europeens a Abankeseso. 1690s: Campagnes militaires contre l'Asen et Twifo-Heman. 1694: Mort de Boamponsem, succes par Ntim Gyakari. 1701: Bataille de Feyiase; defaite decisive; mort de Ntim Gyakari; sac d'Abankeseso par les Asante; saisie du tresor Sikadan. 1706-1707: Rebellion echouee contre l'Asante. 1823-1824: Rebellion contre la suzerainete asante; defaite; migration du sud de l'Ofin vers Dunkwa-on-Offin et Jukwaa sous Denkyirahene Kwadwo Tibo. 1868: Alliance avec la Confederation fante. 2 decembre 2016: Deces d'Odeefuo Boa Amponsem III."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Polite centralisee avec systeme de commandement tripartite: Aile droite (Akumatire), Aile gauche (Kyeremfem) et Avant-garde (Agona Adontendom), chacune dirigee par un Osafohene cumant fonctions civiles et militaires. La capitale Abankeseso etait decrite comme une ville de soixante-dix-sept rues et sept ruisseaux. Tresor royal: Sikadan (maison de l'or). Apres 1701, reorganisation en monarchie non souveraine. Actuellement: chefferie paramountcy a Jukwaa, capitale administrative a Dunkwa-on-Offin.",
+      "clanOrganization": "Le clan Agona est le clan dirigeant principal, originaire de la region d'Adansi. Coexistence avec la lignee Abiradzi d'Assin Kushia via metissage intermarriage. Structure matrilineaire akan standard.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires structurent la succession royale et l'organisation sociale. Le clan Agona detient l'autorite politique supreme. Le systeme de tabourets sacres (Abankamdwa stool, Sasatia knife, Executioner's Sword formalises sous Boa Amponsem I) est le fondement symbolique de l'autorite royale.",
+      "religiousAuthority": "Theologie politique du royaume divin: les symboles de royaute (tabouret Abankamdwa, couteau Sasatia, Epee de l'executeur) fondent l'autorite divine du roi. Pratiques de libation et veneration ancestrale akan. Coexistence avec le christianisme depuis l'ere coloniale."
+    },
+    "languages": {
+      "mainLanguage": "Twi (dialecte denkyira)",
+      "isoCodes": ["twi"],
+      "dialects": ["Denkyira Twi", "Akan du centre"],
+      "vehicularRole": "Les Denkyira parlent une variante du Twi, langue centrale du groupe akan. Le twi sert de langue vehiculaire dans le sud du Ghana. L'anglais est la langue officielle de l'administration et de l'education au Ghana."
+    },
+    "culture": {
+      "majorRites": "Rites d'investiture royale avec tabourets sacres. Ceremonies funeraires avec veilles communautaires. Libations ancestrales regulieres. Rites de passage akan communs (puberte, mariage). Le proverbe Adanse nkotowa nkotowa obiara da ne ben (Adanse est une multitude de petits crabes, chacun dans son trou) temoigne d'un heritage philosophique partagé.",
+      "symbols": "Tabouret royal Abankamdwa: symbole fondateur de l'autorite royale. Couteau Sasatia et Epee de l'executeur (formalises sous Boa Amponsem I): regalia royaux absorbes par la cour asante apres 1701. Tresor Sikadan (maison de l'or): centre economique et spirituel du royaume.",
+      "artsAndMusic": "Arts et artisanat akan: orfèvrerie en or, tissage de kente, sculpture sur bois. Traditions musicales akan communes: percussion, instruments a vent en corne et ivoire lors des ceremonies royales.",
+      "spiritualities": "Religion akan traditionnelle centree sur la royaute sacree et la veneration des ancetres. Les regalia royaux (tabourets, epees) sont consideres comme des vecteurs du pouvoir ancestral. Christianisme largement adopte depuis la periode coloniale. Islam present dans certaines communautes commercantes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume du Denkyira (XVIIe siecle - 1701): puissance dominante du bassin Ofin-Pra avant sa defaite face a l'Asante. Capitale: Abankeseso (soixante-dix-sept rues et sept ruisseaux). Souverains connus: Awurade Basa, Boamponsem (Boa Amponsem I, r. c.1650s-1694), Ntim Gyakari (tue a Feyiase 1701), Kwadwo Tibo (migration post-1823), Odeefuo Boa Amponsem III (decede decembre 2016). Chefferie paramountcy actuelle basee a Jukwaa.",
+      "relationsWithNeighbors": "Domination des Etats voisins par tribut, subjugation militaire et prise d'otages issus des communautes subordonnees. Controle de l'Assin, de l'Adansi et d'autres polities akan. Commerce direct avec les marchands europeens sur la cote (Neerlandais, Anglais, Brandebourgeois). Rivalite avec l'Asante naissant (pays tributaire jusqu'a la revolte de 1701).",
+      "conflictsOrAlliances": "Conquete de l'Adansi vers 1659. Campagnes contre l'Asen et Twifo-Heman (1690s). Defaite decisive face a l'Asante a la bataille de Feyiase (1701): mort du Denkyirahene Ntim Gyakari, sac d'Abankeseso, saisie du tresor Sikadan. La bataille de Feyiase est le moment fondateur de l'empire Asante. Rebellion echouee 1706-1707. Nouvelle rebellion 1823-1824, suivie d'une migration vers le sud. Alliance avec la Confederation fante (1868) sous protection britannique contre l'Asante.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2025,
+      "source": "Recensement Ghana 2021: Upper Denkyira East Municipal (Dunkwa-on-Offin) 91 025, Upper Denkyira West (Diaso) 91 025 (citypopulation.de). Population ethnique Denkyira estimee a environ 200 000 personnes dans la region centrale du Ghana.",
+      "distributionByCountry": [{ "country": "GHA", "population": 200000 }]
+    },
+    "sources": [
+      "Kingdom of Denkyira – Wikipedia EN (https://en.wikipedia.org/wiki/Denkyira)",
+      "Akan language – Wikipedia EN (https://en.wikipedia.org/wiki/Akan_language)",
+      "Upper Denkyira West – Citypopulation.de (https://www.citypopulation.de/en/ghana/admin/central/0217__upper_denkyira_west/)",
+      "Ghana Statistical Service, Population and Housing Census 2021 (https://census2021.statsghana.gov.gh)",
+      "Oral Traditions of Denkyira – in The Akan People: A Documentary History, Markus Wiener Publishers (https://markuswiener.com/table_of_contents/akan-people/)",
+      "Fynn, John K. – Asante and Its Neighbours 1700-1807, Longman, 1971"
+    ]
+  }
+}

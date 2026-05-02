@@ -1,0 +1,41 @@
+# Nom du peuple
+- Nom principal : Aït Yafelman / Aït Ouirra (groupe confédéré)
+- Auto-appellation : Ayt Yeflman, Ayt Wrirra
+- Appellations historiques : groupements masmouda / sanhaja selon zones
+- Famille linguistique : Afro-asiatique – Berbère (Amazigh) (FLG_BERBERE)
+- Région : Moyen Atlas et Haut Atlas (Maroc)
+- ID : PPL_AIT_HDZ
+
+# 1. Ethnies incluses
+- Aït Yafelman
+- Aït Ouirra
+- Aït Sukhman
+- Divers groupes montagnards amazighs
+
+# 2. Origines
+- Regroupement de confédérations amazighes montagnardes anciennes.
+- Héritage masmouda et sanhaja.
+
+# 3. Organisation
+- Systèmes claniques montagnards.
+- Pastoralisme transhumant.
+
+# 4. Langues
+- Tamazight du Moyen Atlas
+- ISO : tzm
+
+# 5. Culture
+- Musiques ahidous.
+- Rites agropastoraux.
+
+# 6. Histoire
+- Participation aux révoltes du Moyen Atlas.
+- Rôle dans les dynamiques politiques régionales.
+
+# 7. Démographie
+- Population : 800 000
+- Année : 2025
+
+# 8. Sources
+- IRCAM
+- Ethnologie du Moyen Atlas

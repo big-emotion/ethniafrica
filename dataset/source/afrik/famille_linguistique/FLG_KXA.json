@@ -1,0 +1,64 @@
+{
+  "id": "FLG_KXA",
+  "nameFr": "Kx'a",
+  "nameEn": "Kx'a",
+  "content": {
+    "decolonialHeader": {
+      "whyProblematic": " **PREUVES - Auteurs coloniaux problématiques :** - Joseph Greenberg (1963) dans *The Languages of Africa* a créé la catégorie \"Khoisan\" comme macro-famille regroupant toutes les langues à clics d'Afrique australe sans preuve génétique solide. *(Définition : une langue à clic est une langue utilisant des consonnes à clics comme phonèmes distinctifs. Les clics sont des sons produits en créant une occlusion dans la bouche et en relâchant l'air, produisant un son distinctif. Les langues à clics sont principalement présentes en Afrique australe et orientale, avec des inventaires variant de quelques clics à plus de 50 phonèmes clics distincts.)*",
+      "selfAppellation": "Kx'a",
+      "contemporaryUsage": " Petite famille linguistique à clics d'Afrique australe, reconnue académiquement en 2010, regroupant les langues Juu (dialectes Ju|'hoan et variétés apparentées) et ǂHoan. Parlée principalement par les populations autochtones Ju|'hoan et ǂHoan dans le nord du désert du Kalahari. Classification basée sur des reconstructions phonologiques systématiques démontrant une relation génétique entre les deux branches.",
+      "historicalAppellations": "Kx'a",
+      "originOfHistoricalTerm": " Le terme « Kx'a » a été introduit par Henry Honken et Bernd Heine en 2010 dans leur ouvrage \"The Kx'a Family: A New Khoisan Genealogy\" publié dans le *Journal of Asian and African Studies* (vol. 79, p. 5–36). Le terme est basé sur le mot reconstruit *kxʼà* signifiant \"terre\" ou \"sol\", partagé par les deux branches de la famille (Juu et ǂHoan). Cette reconstruction phonologique systématique a démontré la relation génétique entre les langues Ju (ex. Ju|'hoan) et ǂHoan, formant une famille distincte."
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Nord du désert du Kalahari : principalement en Namibie (régions de Tsumkwe, Grootfontein, Otjozondjupa) et au Botswana (régions de Ghanzi, Kgalagadi, Ngamiland). Présence minoritaire en Angola (province de Cuando Cubango). Zones arides et semi-arides du Kalahari central et septentrional.",
+      "numberOfLanguages": 2,
+      "totalSpeakers": null
+    },
+    "associatedPeoples": [
+      {
+        "name": "Ju|'hoansi",
+        "peopleId": "PPL_JUHOANSI"
+      },
+      {
+        "name": "ǂHoan",
+        "peopleId": "PPL_HOAN"
+      },
+      {
+        "name": "Autres groupes ju minoritaires",
+        "peopleId": "PPL_SAN"
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " **OBLIGATOIRE - Exemples CONCRETS :** **Ordre des mots :** Structure généralement SVO (sujet-verbe-objet) en Ju|'hoan, avec variations selon le contexte pragmatique.",
+      "phonologicalFeatures": " **Détails précis :** **Inventaires de clics :** Extrêmement riches, parmi les plus complexes au monde.",
+      "relationsWithNeighbors": " **Exemples concrets d'emprunts avec mots précis :** **Emprunts aux langues Khoe :**",
+      "keyInnovations": " **Traits spécifiques avec exemples :** **Clics bilabiaux :** Innovation phonologique rare, particulièrement développée en ǂHoan (ǂʼAmkoe). - Le clic bilabial ʘ est présent dans ǂHoan mais absent ou rare dans d'autres familles linguistiques."
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " **QUI a classé ? Citer linguistes/archéologues/généticiens avec œuvres et dates :** **Théorie linguistique :**",
+      "emergencePeriod": " **QUAND en deux temporalités :** **(1) Émergence historique de la FLG :** - Les langues Kx'a sont parlées depuis plusieurs millénaires en Afrique australe.",
+      "diffusion": " **Afficher TOUTES les théories disponibles (Théorie 1, Théorie 2, etc. avec auteurs) :** **Théorie 1 - Origine autochtone du Kalahari (majoritaire) :** - Les populations Kx'a sont indigènes au Kalahari central et septentrional.",
+      "contactZones": " **Répondre à \"OÙ\" - Localiser géographiquement (régions, villes, côtes, routes précises) :** **Zones de métissage linguistique spécifiques :** **Nord Botswana :**",
+      "majorEvents": " **Chronologie avec dates précises :**"
+    },
+    "distribution": {
+      "totalSpeakers": null,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "Honken, H. & Heine, B. (2010) – *The Kx'a Family: A New Khoisan Genealogy*. *Journal of Asian and African Studies*, vol. 79, p. 5–36.",
+      "Sands, B. (1998) – *The Linguistic Relationship between the Khoisan Languages*. In *Language and Linguistics in Southern Africa: Studies in the History of Language and Society*. Witwatersrand University Press.",
+      "Traill, A. (1998) – *The Khoisan Languages*. In *The Cambridge Encyclopedia of the World's Ancient Languages*. Cambridge University Press.",
+      "Westphal, E. O. J. (1963) – *The linguistic prehistory of southern Africa: Bush, Kwadi, Hottentot, and Bantu linguistic relationships*. *Africa*, vol. 33, no. 3, p. 237–265.",
+      "Greenberg, J. H. (1963) – *The Languages of Africa*. Indiana University Press.",
+      "SIL International (2025) – *Ethnologue: Languages of the World*. [https://www.ethnologue.com/](https://www.ethnologue.com/)",
+      "United Nations (2025) – *World Population Prospects*. [https://population.un.org/wpp/](https://population.un.org/wpp/)",
+      "UNESCO (2025) – *Atlas of the World's Languages in Danger*. [http://www.unesco.org/languages-atlas/](http://www.unesco.org/languages-atlas/)",
+      "Heine, B. & Nurse, D. (2000) – *African Languages: An Introduction*. Cambridge University Press.",
+      "Henn, B. M., Gignoux, C. R., Jobin, M., Granka, J. M., Macpherson, J. M., Kidd, J. M., ... & Mountain, J. L. (2011) – *Hunter-gatherer genomic diversity suggests a southern African origin for modern humans*. *Proceedings of the National Academy of Sciences*, vol. 108, no. 13, p. 5154–5162.",
+      "Tishkoff, S. A., Reed, F. A., Friedlaender, F. R., Ehret, C., Ranciaro, A., Froment, A., ... & Williams, S. M. (2009) – *The genetic structure and history of Africans and African Americans*. *Science*, vol. 324, no. 5930, p. 1035–1044."
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "id": "PPL_HAYA",
+  "nameMain": "Haya",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Haya",
+      "selfAppellation": "Bahaya",
+      "exonyms": [
+        "Wahaya (terme swahili collectif)",
+        "Ziba (denomination historique europeenne)",
+        "Bumbira (denomination regionale)"
+      ],
+      "originOfExonyms": "Le terme Wahaya est la forme swahili du collectif. Ziba derive du royaume Kiziba, l'un des neuf royaumes haya. Bumbira est un exonyme regional.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Haya est le terme courant en anglais et en swahili pour designer ce peuple. Bahaya est l'endonyme prefere.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou des Grands Lacs (Zone J, groupe JE.22)",
+      "historicalRegion": "Buhaya - rive occidentale du lac Victoria, region de Kagera, nord-ouest de la Tanzanie",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": [
+      "Haya du royaume de Kiziba (rive du lac Victoria)",
+      "Haya du royaume de Kyamtwara",
+      "Haya du royaume de Kihanja",
+      "Haya du royaume de Ihangiro",
+      "Haya du royaume de Bukara",
+      "Haya du royaume de Bugabo",
+      "Haya du royaume de Mishenye",
+      "Haya du royaume de Biharamulo",
+      "Haya du royaume de Karagwe"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Haya sont associes a la culture Urewe, l'une des plus anciennes cultures a l'Age du Fer en Afrique subsaharienne (Ve siecle av. J.-C. - VIe siecle ap. J.-C.). Des fouilles archeologiques ont revele des fourneaux de fonte d'acier carbone a Kataruka (sous un arbre-sanctuaire Kaiija), dates par carbone 14 entre 1500 et 2000 ans. Cette technologie de prechauffage permettait d'atteindre des temperatures superieures a 1400 degres Celsius, anticipant de pres de 19 siecles le procede open-hearth europeen. Les ancetres des Haya venaient selon la tradition orale de l'Ouganda occidental, une region qu'ils auraient quittee en raison de guerres incessantes.",
+      "formationPeriod": "Du XVIIe siecle au debut de la periode coloniale, les peuples de la region etaient organises en royaumes centralisés. Le clan royal Bahinda, descendant du roi Ruhinda d'Ankole, fonda plusieurs dynasties haya au XVIIe siecle (royaume de Kyamtwara, fonde apres l'entree de Rugomora Mahe). Le clan Bakama gouvernait le royaume de Kiziba. A leur apogee, on comptait jusqu'a neuf royaumes haya distincts.",
+      "migrationRoutes": [
+        "Ouganda occidental vers la region de Kagera via les rives du lac Victoria"
+      ],
+      "historicalSettlementZones": [
+        "Region de Bukoba (districts de Bukoba Urban et Bukoba Rural)",
+        "Districts de Misenyi, Muleba, Karagwe, Ngara et Biharamulo",
+        "Rive occidentale du lac Victoria"
+      ],
+      "unificationsOrDivisions": "L'organisation en neuf royaumes (Kiziba, Kyamtwara, Ihangiro, Kihanja, Bukara, Bugabo, Mishenye, Biharamulo, Karagwe) perdurait jusqu'a la colonisation allemande (1890). Ces royaumes furent tous abolis en 1963 par le gouvernement tanzanien apres l'independance, le president Nyerere les jugeant contraires a l'unite nationale.",
+      "externalInfluences": "L'essor du royaume Buganda au nord exerca une influence profonde : les Haya chercherent a s'en faire des allies-protecteurs. Les Allemands coloniserent la region en 1890 et introduisirent la culture du cafe arabica en 1904. Les missionnaires lutheriens furent les premiers a s'installer dans la region. Le catolicisme donna au monde le premier cardinal africain, Laurian Rugambwa, originaire de la region haya.",
+      "majorHistoricalEvents": "Production d'acier carbone il y a 2000 ans (decouverte par l'anthropologue Peter Schmidt et le metallurgiste Donald Avery, Brown University, publiee dans Science en 1978). Colonisation allemande (1890). Introduction du cafe arabica comme culture commerciale (1904). Abolition des royaumes haya en 1963."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en royaumes centralisés (ebihanje) gouvernes chacun par un roi (mukama). Le roi nommait des nobles (balangira, princes) aux postes administratifs. La hierarchie comprenait : le roi (mukama), le premier ministre (omukuru we kibuga), les ministres (batongole), le conseil (lukiiko), les chefs de comtés (bami b'enshozi) et les chefs de villages (bakungu). Un petit nombre de clans nobles patriclinéaires dirigeait une grande majorite de clans roturiers.",
+      "clanOrganization": "Les Haya etaient traditionnellement organises en environ 130 clans patrilineaires (oluganda), chacun possedant son propre totem (generalement un animal). Des interdictions alimentaires et comportementales s'appliquaient au totem de chaque clan. Les clans controlaient la tenure fonciere avant l'epoque des dynasties. Certains clans avaient des fonctions specifiques : les Batunda (gardes royaux), les Bashonde (brasseurs royaux), les Baihuzi (cuisiniers royaux). Les clans etaient exogames et disposes en groupes territoriaux.",
+      "ageClassSystems": "Systeme de classes d'age (omuteko) : les garcons de 10-12 ans entraient dans une classe d'age pour environ 3 ans, recevant une instruction morale, sportive, militaire et historique. Environ 50 % etaient renvoyés a l'issue de cette formation. Les jeunes filles pouvaient etre envoyees a la cour du roi (buzana).",
+      "roleOfLineages": "Les lignages patrilineaires determinaient l'identite, les alliances matrimoniales et la succession. Chaque famille exploitait individuellement une ferme heritee des ancetres. Les villages etaient formes de groupes de menages adjacents sur des terres cultivees en permanence.",
+      "religiousAuthority": "Autorite des pretres, pretresses et mediums lies aux croyances bachwezi (esprits royaux des ancetres). La maison de divination (buchwankwanzi) guidait les decisions de guerre et de raids. Les guerisseurs (omufumu) utilisaient herbes et pouvoir spirituel. Syncrétisme avec le christianisme (lutheranisme puis catholicisme dominant depuis le XXe siecle)."
+    },
+    "languages": {
+      "mainLanguage": "Kihaya (Oruhaya)",
+      "isoCodes": ["hay"],
+      "dialects": [
+        "Ruhaya (variante centrale)",
+        "Ekihaya (variante regionale)",
+        "Kihaya (nom swahili de la langue)",
+        "Rashi (dialecte JE.221 selon Maho 2009, le plus proche du haya)"
+      ],
+      "vehicularRole": "Le kihaya est la langue premiere de tous les Haya de la region de Kagera. Le swahili est la langue nationale de la Tanzanie et de l'enseignement secondaire. L'anglais est utilise dans l'enseignement superieur et les affaires. Le kihaya est classe comme 'stable' par SIL Ethnologue (niveau 5 - en developpement). Il est apparente au nyambo, au nyoro-tooro et au nkore-kiga, qui forment ensemble le groupe Rutara des langues bantou des Grands Lacs."
+    },
+    "culture": {
+      "majorRites": "Cérémonie de la nouvelle lune (mensuelle) : festins, alcool de banane (orubisi), offrandes aux dieux et aux regalia du roi defunt. Rite de passage masculin (omuteko) : instruction morale et militaire des garcons de 10-12 ans. Rite de croissance (koshobekera) : offrandes de bananes pour la sante de l'enfant. Offrandes aux sanctuaires familiaux (ekikalo) : biere de banane, bananes crues, grains de cafe seches. Ceremonies funeraires : musique de louange au defunt, consolation des endeuilles, rites de purification des esprits. Pactes de sang traditionnels (kikago) : une feve de cafe fendue, du sang du nombril, place dans la bouche de l'autre.",
+      "symbols": "Le cafe robusta (plante sacree et vehicule de pactes de sang ; les grains sont maches et offerts aux ancetres). Les tambours royaux (enkoito, rythmes specifiques selon les occasions). Les regalia royaux (regalia du roi defunt, sacres lors des rites de la nouvelle lune). Le lac Victoria (espace sacre et identitaire). La forge et les fourneaux de fonte (heritage de la production d'acier carbone il y a 2000 ans).",
+      "artsAndMusic": "Poesie de louange (ebyebugo) : recitations heroiques et genealogiques prononcees lors des mariages, inaugurations royales et ceremonies importantes. Chants funeraires executés pour louer le defunt, consoler les endeuilles et tenir les veilleurs eveilles. Danses de guerre (omutoro). Musique ceremonielle aux tambours (enkoito). Musique enregistree par l'ethnomusicologue Hugh Tracey en 1952 et conservee par l'International Library of African Music. Artisanat : poterie traditionnelle, tissage de nattes et de paniers. Architecture : palais royaux elabores et villages organises sur terres cultivees en permanence.",
+      "spiritualities": "Croyances bachwezi : veneration des esprits des ancetres royaux (bachwezi), mediums et devins, pretres et pretresses. Maisons de divination (buchwankwanzi) pour les decisions collectives importantes. Guerisseurs (omufumu) combinant herbes medicinales et pouvoir spirituel. Syncrétisme marque avec le christianisme depuis le XIXe siecle (lutheranisme : premieres missions dans la region, puis catholicisme romain). Importance des ancetres dans la vie quotidienne : offrandes regulieres aux sanctuaires familiaux."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Neuf royaumes haya historiques : Kiziba (clan Bakama), Kyamtwara (clan Bankango, puis Bahinda sous Rugomora Mahe au XVIIe siecle), Ihangiro, Kihanja (fonde fin XVIIIe siecle apres la scission de Kyamtwara, clan Bahinda), Bukara (fonde fin XVIIIe siecle, clan Bahinda), Petit Kyamtwara (clan Bankango), Bugabo (clan Bankango), Mishenye (ajoute apres l'accord anglo-allemand de 1890), Karagwe. Tous gouvernes par un mukama issu d'un clan noble. La region comptait entre 3 et 8 royaumes simultanes selon les periodes. Tous abolis en 1963.",
+      "relationsWithNeighbors": "Relations complexes avec le royaume Buganda au nord, qui exploitait les divisions internes haya pour asseoir son influence. Contacts et echanges commerciaux avec les Nyambo voisins. Relations avec les peuples nilotiques de la region des Grands Lacs.",
+      "conflictsOrAlliances": "Alliance avec le Buganda contre les ennemis communs. Sous colonisation allemande (1890-1919), les royaumes haya furent maintenus sous administration indirecte. Les Allemands appreciaient les Haya et s'appuyerent sur leurs structures politiques. Sous domination britannique (1919-1961), poursuite de l'administration indirecte. Abolition des royaumes par le gouvernement Nyerere en 1963.",
+      "diaspora": "Diaspora haya dans les grandes villes tanzaniennes (Dar es Salaam, Arusha, Mwanza). Emigration vers les pays du Golfe persique, l'Europe et l'Amerique du Nord depuis les annees 1980. La region de Kagera fut fortement affectee par l'epidemie de VIH/SIDA dans les annees 1980-1990, entrainant des deplacements de population."
+    },
+    "demography": {
+      "totalPopulation": 1700000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue 2024 (environ 1,2 million de locuteurs en 1991, croissance demographique tanzanienne estimee a 2,9% par an). Joshua Project 2024 (Haya, Ziba in Tanzania). Recensements tanzaniens (la region de Kagera comptait 2 003 888 habitants en 2003). Estimations 2025 basees sur la projection demographique.",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 1700000,
+          "note": "Principalement dans la region de Kagera (Bukoba Urban, Bukoba Rural, Misenyi, Muleba)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Haya people : https://en.wikipedia.org/wiki/Haya_people",
+      "Wikipedia EN - Haya language : https://en.wikipedia.org/wiki/Haya_language",
+      "SIL Ethnologue - Haya language (hay) : https://www.ethnologue.com/language/hay/",
+      "Glottolog - Haya : https://glottolog.org/resource/languoid/id/haya1250",
+      "Peter Schmidt & Donald Avery, 'Complex iron smelting and prehistoric culture in Tanzania', Science, 1978 : https://pubmed.ncbi.nlm.nih.gov/17830304/",
+      "Joshua Project - Haya, Ziba in Tanzania : https://joshuaproject.net/people_groups/12075/TZ",
+      "University of Missouri - DICE cross-cultural database : https://dice.missouri.edu/assets/docs/niger-congo/Haya.pdf",
+      "BLAC Foundation - Self-Praise Verses in Haya Ethnic Groups : https://www.blacfoundation.org/pdf/historia_yake.pdf",
+      "TIME Magazine - 'Africa's Ancient Steelmakers', 25 septembre 1978 : https://time.com/archive/6845911/science-africas-ancient-steelmakers/"
+    ]
+  }
+}

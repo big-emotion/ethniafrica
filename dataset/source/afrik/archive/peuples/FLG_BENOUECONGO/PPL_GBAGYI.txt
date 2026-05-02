@@ -1,0 +1,38 @@
+# Nom du peuple
+- Nom principal : Gbagyi / Gwari
+- Auto-appellation : Gbagyi
+- Famille linguistique : Niger-Congo – Bénoué-Congo (FLG_BENOUECONGO)
+- Région historique : Nigeria (FCT Abuja, NER State, Kaduna)
+- Identifiant peuple : PPL_GBAGYI
+
+# 1. Ethnies incluses
+- Gbagyi Ogu
+- Gbagyi Nkwa
+- Gbagyi du centre et du nord
+
+# 2. Origines
+- Ancien peuple agricole de la ceinture centrale du Nigeria.
+
+# 3. Organisation
+- Société lignagère
+- Chefferies traditionnelles
+
+# 4. Langue
+- Gbagyi
+- ISO : gbr
+
+# 5. Culture
+- Poterie réputée
+- Masques cérémoniels
+- Agriculture (igname, mil)
+
+# 6. Histoire
+- Présents dans la région d’Abuja avant sa création comme capitale.
+
+# 7. Démographie
+- Population : 3 500 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (gbr)
+- Central Nigeria Cultural Documentation

@@ -1,0 +1,75 @@
+{
+  "id": "PPL_KARA",
+  "nameMain": "Kara",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Kara",
+      "selfAppellation": "Abakara",
+      "exonyms": ["Regi", "Wakara"],
+      "originOfExonyms": "Abakara est la denomination en langue kikerewe pour les habitants d'Ukara, signifiant les gens anciens, refletant que leur date d'arrivee et leurs lieux d'origine etaient inconnus meme de leurs voisins Kerewe. Regi est un nom alternatif utilise par Ethnologue et SIL (code ISO reg). Wakara est la forme swahilie.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Kara est utilise dans les classifications ethnolinguistiques internationales (Ethnologue, Joshua Project). Les habitants se nomment Abakara en langue locale et Wakara en swahili.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu des Grands Lacs, groupe des lacs centraux de Tanzanie",
+      "historicalRegion": "Ile d'Ukara, district d'Ukerewe, region de Mwanza, Tanzanie (lac Victoria)",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Kara"],
+    "origins": {
+      "ancientOrigins": "Les Kara sont etablis sur l'ile d'Ukara depuis une epoque inconnue, meme de leurs voisins Kerewe qui les appellaient Abakara (les anciens). Leur origine precise reste non documentee par les sources historiques, mais leur appartenance au groupe bantou des Grands Lacs est attestee linguistiquement.",
+      "formationPeriod": "Indetermine. La communaute Kara est attestee sur l'ile d'Ukara depuis au moins plusieurs siecles, constituant une identite ethnique et linguistique distincte.",
+      "migrationRoutes": [
+        "Installation sur l'ile d'Ukara (lac Victoria) depuis le continent, date inconnue"
+      ],
+      "historicalSettlementZones": [
+        "Ile d'Ukara (80 km carre), district d'Ukerewe, lac Victoria",
+        "Ile d'Ukerewe (zone cotiere sud-est)",
+        "Rive sud-est du lac Victoria"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": "Contacts frequents avec les Kerewe d'Ukerewe (marche principal). Introduction du poisson-Nil qui a decime les 500 especes de poissons indigenes, affectant l'economie de peche. L'education en swahili a l'ecole introduit la langue nationale chez les jeunes generations.",
+      "majorHistoricalEvents": "L'ile d'Ukara est reputee pour son systeme agraire intensif unique, documente au XXe siecle. En 2018, une tragedie du bac entre Ukara et Ukerewe a fait au moins 136 morts. L'ile reste enclavee, accessible uniquement par ferry depuis Ukerewe."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation villageoise traditionnelle. L'ile ne comptait que huit villages au debut du XXIe siecle. Structure de gouvernance locale informelle, rattachee administrativement au district d'Ukerewe.",
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": "La structure sociale est centree sur des familles proprietaires de terres arables privees. La propriete fonciere privee, rare dans la region, est une caracteristique sociale distinctive des Kara.",
+      "religiousAuthority": "Predominance du christianisme. Les croyances religieuses traditionnelles (animisme) subsistent dans certaines familles, incluant des pratiques de guerison traditionnelle."
+    },
+    "languages": {
+      "mainLanguage": "Kara (Regi)",
+      "isoCodes": ["reg"],
+      "dialects": [],
+      "vehicularRole": "La langue Kara (code Glottolog kara1481, code Guthrie JE.252) est parlée uniquement sur l'ile d'Ukara et ses alentours immediats. Les Kara comprennent bien la langue jita des iles voisines. Le swahili est enseigne a l'ecole et compris par les jeunes generations."
+    },
+    "culture": {
+      "majorRites": "Pratiques de guerison traditionnelle par des guerisseurs (healers) reconnus sur l'ile d'Ukara, certaines familles etant reputees pour des pouvoirs surnaturels. Ceremonies religieuses chretiennes predominantes dans la vie communautaire.",
+      "symbols": "Le systeme agraire intensif d'Ukara est emblematique de l'identite Kara. La Pierre Dansante (Dancing Stone) d'Ukara est un site culturel remarquable. L'Arbre Crocodile et le Couteau de la Verite sont des lieux cites dans les traditions orales.",
+      "artsAndMusic": "Traditions musicales et de danse liees aux ceremonies. Agriculture intensive de manioc, mais, haricots, patates douces, riz et millet. Peche sur le lac Victoria (desormais diminuee par l'introduction du poisson-Nil).",
+      "spiritualities": "Le christianisme est la religion dominante. Des croyances animistes tradicionnelles persistent, notamment des pratiques de prediction et de guerison attribuees a certaines familles. Des pouvoirs surnaturels sont associes a certains lieux de l'ile selon les traditions orales."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume connu. L'ile d'Ukara etait administrativement rattachee au chef (mukama) de l'ile d'Ukerewe sous le systeme traditionnel Kerewe.",
+      "relationsWithNeighbors": "Relations commerciales regulieres avec les Kerewe d'Ukerewe (marche principal). Les Kara se deplacent frequemment vers Ukerewe pour les echanges commerciaux. Voisinage avec les groupes Jita et Zinza autour du lac Victoria.",
+      "conflictsOrAlliances": null,
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 282000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025",
+      "distributionByCountry": [{ "country": "TZA", "population": 282000 }]
+    },
+    "sources": [
+      "Kara people (Tanzania) – Wikipedia (https://en.wikipedia.org/wiki/Kara_people_(Tanzania))",
+      "Kara language (Tanzania) – Wikipedia (https://en.wikipedia.org/wiki/Kara_language_(Tanzania))",
+      "Kara, Regi in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/19160)",
+      "Ukara Island – Wikipedia (https://en.wikipedia.org/wiki/Ukara_Island)",
+      "About Tribal Chiefs and Cultures – Ukerewe District (http://mpayukaji.blogspot.com/2022/06/about-tribal-chiefs-and-cultures.html)",
+      "Kara (Tanzania) – Glottolog 5.3, code kara1481 (https://glottolog.org)"
+    ]
+  }
+}

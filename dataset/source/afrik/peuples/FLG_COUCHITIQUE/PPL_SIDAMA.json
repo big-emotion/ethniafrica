@@ -1,0 +1,98 @@
+{
+  "id": "PPL_SIDAMA",
+  "nameMain": "Sidama",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Sidama",
+      "selfAppellation": "Sidaama",
+      "exonyms": [
+        "Sidamo (terme generique, parfois pejoratif)",
+        "Sidaminya (nom amharique de la langue)"
+      ],
+      "originOfExonyms": "Le terme Sidama etait, selon l'historien Lapiso Gedelebo, une designation demenigrante utilisee par les Oromo pour designer les peuples non-oromo. Les premiers ecrits europeens utilisaient Sidamo comme terme collectif pour tous les peuples Couchitiques et Omotiques du sud-ouest de l'Ethiopie. Les Sidama preferent leur auto-designation Sidaama.",
+      "whyProblematic": "Le terme Sidamo etait un terme generique englobant de nombreux peuples distincts du sud de l'Ethiopie, masquant l'identite specifique des Sidama. Son usage peut preter a confusion avec la province administrative Sidamo (plus vaste que le territoire sidama).",
+      "contemporaryUsage": "Sidama est l'appellation officielle depuis la creation de la region Sidama (Sidama National Regional State) en 2019. L'auto-designation Sidaama est utilisee dans la langue sidama. La langue s'appelle Sidaamu-Afoo (bouche du Sidaama).",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "Couchitique oriental des hautes terres (Highland East Cushitic)",
+      "historicalRegion": "Sidama (sud de l'Ethiopie), entre la ville de Shashamene au nord et Dilla au sud, autour du lac Hawassa ; province historique de Bali (origine ancestrale, pres de la riviere Dawa)",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Yemericho : huit clans, premiers colons du territoire actuel autour du lac Hawassa, statut de purete superieure (agna), proprietes foncieres importantes",
+      "Aletta : douze clans, majorite numerique",
+      "Clans Hollo-Garbicho et Sawola (nord, tentatives de resistance a Menelik II)",
+      "Clans Aletta du sud (tentatives de resistance a Menelik II)",
+      "Clan Yanase (soumission immediate a Menelik II)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Sidama vivaient originellement dans la province historique de Bali, aux environs de la riviere Dawa. Au debut du XVIe siecle, ils ont ete chassés de cette region par les Oromo lors de leurs grandes migrations. Ils ont ensuite conduit un exode vers l'ouest en direction de leur territoire actuel autour du lac Hawassa. La zone etait alors habitee par un groupe appele les Hofa, qui ont ete a leur tour deloges par les Sidama.",
+      "formationPeriod": "L'identite sidama s'est consolidee autour du lac Hawassa. Tout au long de leur histoire, deux groupes de clans ont rivalise pour le pouvoir politique : les Yemericho (huit clans, premiers colons, consideree plus pur) et les Aletta (douze clans, majorite numerique). Les Sidama ont ete incorpores de force dans l'empire ethiopien lors de l'Agar Maqnat, sous Menelik II.",
+      "migrationRoutes": [
+        "Migration forcee depuis la province de Bali (pres de la riviere Dawa) vers l'ouest",
+        "Installation dans la zone du lac Hawassa apres delogement des Hofa",
+        "Migration urbaine vers Hawassa, Shashamene et Addis-Abeba (epoque contemporaine)"
+      ],
+      "historicalSettlementZones": [
+        "Territoire sidama actuel : entre Shashamene (nord) et Dilla (sud), zone du lac Hawassa",
+        "Province historique de Bali (ancienne region d'origine)",
+        "Region Sidama (depuis 2019), dixieme etat regional de l'Ethiopie"
+      ],
+      "unificationsOrDivisions": "Division traditionnelle entre deux grandes confederations claniques (Yemericho et Aletta) qui ont rivalise pour le pouvoir tout au long de l'histoire. La majorite des clans s'est soumise a Menelik II sans combattre, acceptant de payer un tribut. Les clans de Hollo-Garbicho, Sawola et certains Aletta ont tente de defendre leur territoire mais ont ete vaincus par manque de coordination.",
+      "externalInfluences": "Expansion oromo du XVIe siecle (delogement de Bali). Incorporation dans l'empire ethiopien sous Menelik II (fin XIXe siecle). Arrivee de missionnaires europeens protestants dans les annees 1960 (christianisation massive). Regime communiste Derg (1974-1991). Federation ethnique ethiopienne post-1991. Referendum d'autonomie du 20 novembre 2019 (98,5% pour l'etatisation).",
+      "majorHistoricalEvents": "Delogement de Bali par les Oromo (XVIe siecle). Incorporation dans l'empire ethiopien sous Menelik II. Creation de la zone Sidama au sein de la region SNNPR. Inscription du festival Fichee-Chambalaalla au patrimoine immateriel de l'UNESCO (2015). Referendum du 20 novembre 2019 : creation de la region Sidama (dixieme etat regional ethiopien) apres un vote de 98,5% en faveur de l'etatisation."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La nation Sidama etait administree selon le systeme Moote (chefferie). Le systeme Luwa est un systeme de classes d'age structurant les aspects administratifs et culturels de la societe sidama, notamment les activites de defense, la gouvernance et les ceremonies.",
+      "clanOrganization": "Organisation en deux grandes confederations : les Yemericho (huit clans, premiers colons, statut superieur de purete/agna, grandes proprietes foncieres) et les Aletta (douze clans, majorite numerique). Chaque clan avait son propre territoire et ses propres chefs qui se livraient des guerres entre eux.",
+      "ageClassSystems": "Systeme Luwa : systeme de classes d'age traditionnel impliquant des aspects administratifs et culturels. Il regle les activites de defense, la gouvernance communautaire et les ceremonies. Les classes d'age progressent ensemble a travers des grades successifs. L'institution Songo est une assemblee traditionnelle liee au systeme Luwa.",
+      "roleOfLineages": "Les lignages determinent l'appartenance aux deux confederations claniques (Yemericho ou Aletta), le statut social, les droits fonciers et le degre de purete (agna). L'institution Yakka est un ombudsman pour les affaires feminines.",
+      "religiousAuthority": "Autorite des elders dans les institutions traditionnelles (Songo, Luwa, Yakka). Influence majeure des Eglises protestantes depuis les annees 1960. Le festival Fichee-Chambalaalla est determine par des astrologues (connaissance du calendrier lunaire) qui annoncent la date aux clans."
+    },
+    "languages": {
+      "mainLanguage": "Sidaamu-Afoo (sidama)",
+      "isoCodes": ["sid"],
+      "dialects": [
+        "Variete des hautes terres orientales (consideree plus pure par ses locuteurs)",
+        "Variete des basses terres"
+      ],
+      "vehicularRole": "Le sidama (code ISO 639-3 : sid) est une langue afroasiatique de la branche Highland East Cushitic. Selon le recensement de 1994, 99,5% des Sidama le parlent comme langue maternelle. Le nombre de locuteurs est estime a 2,9 millions (recensement 2007) a plus de 4 millions selon des estimations recentes. La langue a ete ecrite en alphabet ethiopique jusqu'en 1993, puis en alphabet latin. Le taux d'alphabetisation en sidama L1 est de 1 a 5%, en L2 de 20%. Plus de 100 000 locuteurs en seconde langue."
+    },
+    "culture": {
+      "majorRites": "Fichee-Chambalaalla : festival du Nouvel An Sidama, inscrit au patrimoine immateriel de l'UNESCO en 2015. Il commémore une femme sidama qui rendait visite a ses parents une fois par an apres son mariage, apportant le buurisame (repas prepare a partir de fausse banane, lait et beurre) partage avec les voisins. Les astrologues determinent chaque annee la date correcte, annoncee par les chefs de clan. La celebration comprend chants traditionnels, danses, partage du buurisame, et conseils des chefs de clan (travail, respect des aines, protection des arbres indigenes). Ceremonies de circoncision masculine. Ceremonies de mariage avec rituels specifiques. Systeme Luwa structurant les rites de passage masculins. Institution Yakka pour les ceremonies liees aux femmes.",
+      "symbols": "L'ensete (wesse ou fausse banane) est la plante staple symbolique de la culture sidama. Le buurisame (repas rituel du Fichee) symbolise le partage, la solidarite et le lien avec les ancetres. Le systeme de calendrier lunaire (15 jours Tunsicho/obscurite et 15 jours Agana/clair de lune) est un symbole de la connaissance autochtone. Le cafe est un produit identitaire majeur (le Sidama est la deuxieme region productrices de cafe en Ethiopie, fournissant la majorite du cafe Starbucks).",
+      "artsAndMusic": "Chants traditionnels et danses lors du Fichee-Chambalaalla et des autres ceremonies. Poesie orale transmise par les elders lors des assemblees Songo. Hairstyling traditionnel feminin transmis de mere en fille lors du Fichee. Artisanat local. Gastronomie distinctive : wesse (plante de base), buurisame (fausse banane, lait, beurre), viande bovine (forte tradition culturelle autour de la possession de betail), cafe (culture du khat secondaire). Possession par des esprits (pratique documentee par les anthropologues Irene et John Hamer) : les personnes possedees des deux sexes peuvent devenir guerisseurs.",
+      "spiritualities": "Jusqu'aux annees 1960, la majorite pratiquait des croyances traditionnelles. L'arrivee des missionnaires europeens a entraine une conversion massive au protestantisme : 66,8% de protestants, 14,9% de croyances traditionnelles, 7,7% de musulmans, 4,6% de catholiques, 2,3% d'orthodoxes ethiopiens (recensement 1994). Croyances traditionnelles centrees sur Waaqa (Dieu createur). Possession spirituelle documentee, plus frequente chez les femmes, interpretée par les anthropologues comme une compensation pour la deprivation sociale."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Administration traditionnelle par le systeme Moote (chefferie). Absence d'un royaume centralise unique : rivalite entre les confederations Yemericho et Aletta pour le pouvoir. Les chefs de clan dirigeaient leurs territoires respectifs et se livraient des guerres entre eux.",
+      "relationsWithNeighbors": "Voisins principaux : Gedeo (sud), Oromo Guji (sud-est), Oromo Arsi (est et nord-est), Wolayta (ouest), Kambata et Alaba (nord-ouest). La riviere Bilate forme la frontiere occidentale. Commerce du cafe avec les marchands nationaux et internationaux. Relations avec Shashamane (principale ville voisine au nord).",
+      "conflictsOrAlliances": "Delogement par les Oromo de la province de Bali (XVIe siecle). Incorporation dans l'empire ethiopien sous Menelik II : la plupart des clans se sont soumis sans combattre, certains (Hollo-Garbicho, Sawola, Aletta) ont resiste mais ont manque de coordination. Mobilisation politique intense pour l'autonomie regionale (1990s-2019). Referendum du 20 novembre 2019 : 98,5% pour la creation d'un etat regional independant.",
+      "diaspora": "Migration vers les villes (Hawassa capitale regionale, Shashamene, Addis-Abeba). Migration internationale limitee (etudes, emploi). Hawassa est devenue une metropole regionale en pleine croissance (555 480 habitants en projection 2022)."
+    },
+    "demography": {
+      "totalPopulation": 5702000,
+      "referenceYear": 2025,
+      "source": "Recensement ethiopien 2007 : 3,81 millions (4,01% de la population nationale). Population de la region Sidama en projection 2022 : 4 623 162 (Ethiopian Statistics Service). Joshua Project (2025) : 5 702 000. Cinquieme groupe ethnique le plus peuple d'Ethiopie.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 5702000,
+          "note": "Region Sidama (depuis 2019), entre Shashamene et Dilla, autour du lac Hawassa. Capital regionale : Hawassa."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Sidama people. https://en.wikipedia.org/wiki/Sidama_people",
+      "Wikipedia EN — Sidama language. https://en.wikipedia.org/wiki/Sidama_language",
+      "Wikipedia EN — Fichee-Chambalaalla. https://en.wikipedia.org/wiki/Fichee-Chambalaalla",
+      "UNESCO ICH — Fichee-Chambalaalla, New Year festival of the Sidama people (2015). https://ich.unesco.org/en/RL/fichee-chambalaalla-new-year-festival-of-the-sidama-people-01054",
+      "Joshua Project — Sidama in Ethiopia. https://joshuaproject.net/people_groups/14630",
+      "SIL Ethnologue — Sidama (sid). https://www.ethnologue.com",
+      "Glottolog — Sidama (sida1246). https://glottolog.org",
+      "CityPopulation.de — Sidama Region. https://www.citypopulation.de/en/ethiopia/admin/ET08__sidama/",
+      "Academia.edu — Fichee-Chambalalla as a Sidama New Year Festival and World Intangible Cultural Heritage, 2022. https://www.academia.edu/83996948"
+    ]
+  }
+}

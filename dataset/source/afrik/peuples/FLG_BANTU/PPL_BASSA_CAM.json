@@ -1,0 +1,105 @@
+{
+  "id": "PPL_BASSA_CAM",
+  "nameMain": "Bassa du Cameroun",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Bassa du Cameroun",
+      "selfAppellation": "Basaa (Bàsáa)",
+      "exonyms": [
+        "Bassa (transcription coloniale)",
+        "Basa",
+        "Bassa-Bakoko (etiquette coloniale allemande aggregant artificielement Bassa et Bakoko)"
+      ],
+      "originOfExonyms": "Bassa est une transcription coloniale du terme endonyme bàsáa. Bassa-Bakoko est une classification coloniale allemande regroupant artificiellement les Bassa et les Bakoko, deux peuples distincts, pour des raisons administratives de simplification. Les Bassa se designent eux-memes comme Bàsáa (avec marques tonales) et leur langue comme Hɔp ɓasàa.",
+      "whyProblematic": "Bassa-Bakoko est reducteur car il amalgame deux peuples distincts sous une meme etiquette coloniale, niant leurs specificites culturelles respectives. Le terme a aussi ete utilise pour justifier des politiques de travail force sur le chemin de fer Douala-Yaounde.",
+      "contemporaryUsage": "Basaa ou Bàsáa est universellement accepte dans les contextes contemporains. Bàsáa (avec tons marques) est prefere dans les contextes linguistiques et academiques. Le terme Hɔp ɓasàa designe la langue elle-meme.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantous du littoral et du centre camerounais (groupe A, zone A40 selon la classification de Guthrie)",
+      "historicalRegion": "Littoral et Centre du Cameroun (Sanaga-Maritime, Nkam, Nyong-et-Kelle, region d'Edea, Eseka, Yabassi)",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Bassa de Nyong-et-Kelle — groupe central, region d'Eseka et Makak",
+      "Bassa de Sanaga-Maritime — groupe cotier, region d'Edea et Dizangue",
+      "Bassa de Nkam — groupe occidental, region de Yabassi (dialectes peripheriques : Yabasi, Dibuum)",
+      "Bassa du Wouri — groupe urbain, region de Douala",
+      "Yabakalag, Balimba, Yassoukoum, Pongo — groupes de la basse vallee de la Sanaga",
+      "Bikôk, Ndôg Njee, Ngase d'Edea, Yabi — groupes ayant traverse la Sanaga",
+      "Bambimbi, Basso Ba Likol — groupes restes a Ngog Lituba (le rocher perce, lieu fondateur)"
+    ],
+    "origins": {
+      "ancientOrigins": "La tradition orale bassa place les origines du peuple en Egypte ancienne ou en Nubie, a la frontiere de l'Egypte et du Soudan, pres du Nil. Apres des invasions (pharaoniques, ethiopiennes, arabes) et des catastrophes naturelles (inondations), les ancetres Bassa ont quitte la vallee du Nil en traversant le Sahara vers le sud-ouest. Ils se sont etablis au Kanem-Bornou, puis dans la vallee du Logone sur les hauts plateaux de l'Adamaoua.",
+      "formationPeriod": "Les griots bassa definissent trois periodes historiques : Kwan (des origines jusqu'au XIXe siecle avant notre ere), Kôba (du XIXe siecle av. J.-C. jusqu'au XVe siecle, periode legendaire), et Len (du XVe siecle a nos jours). L'identite bassa s'est cristallisee autour du site fondateur de Ngog Lituba (le rocher perce) — Bon ba ngok lituba signifie les enfants du rocher perce — sur la rive droite de la Liwa, affluent de la Sanaga.",
+      "migrationRoutes": [
+        "De la vallee du Nil vers le Sahara, puis vers le Kanem-Bornou et la vallee du Logone (Adamaoua)",
+        "Du Logone vers Guelingdeng, puis les monts Mandara (a la jonction Cameroun-Nigeria-Tchad)",
+        "Des monts Mandara vers le centre du Cameroun, en suivant les tributaires de la Sanaga jusqu'a Ngog Lituba (rive droite de la Liwa)",
+        "De Ngog Lituba (XVe siecle) vers la cote atlantique, le long de la Sanaga et du Nkam"
+      ],
+      "historicalSettlementZones": [
+        "Ngog Lituba (site fondateur, actuel departement de Nyong-et-Kelle)",
+        "Basse vallee de la Sanaga (Edea, Eseka, Makak)",
+        "Rive du Nkam (Yabassi) et de ses affluents",
+        "Cote atlantique camerounaise (region du Wouri, Douala)"
+      ],
+      "unificationsOrDivisions": "Les Bassa ne se sont jamais constitues en un etat centralise. Ils etaient organises en groupes de lignages autonomes unis par une origine commune et l'attachement symbolique a Ngog Lituba. Les conquetes coloniales allemandes (1885-1907) ont provoque une dispersion et une reorganisation politique. Les Bassa ont joue un role central dans le mouvement d'independance camerounais avec l'Union des Populations du Cameroun (UPC) et la figure de Ruben Um Nyobe.",
+      "externalInfluences": "Premiers contacts avec les Portugais (1472-1578) qui ont introduit l'avocat, la papaye, le cacao et la canne a sucre depuis Sao Tome et Fernando Po. Commercants hollandais et anglais le long de la cote. Colonisation allemande (1884-1916) avec imposition du travail force sur le chemin de fer Douala-Yaounde. Administration francaise (1916-1960) avec le systeme de l'indigenat. Influences chretiennes protestantes (Presbyteriens, Baptistes) et catholiques depuis le XIXe siecle.",
+      "majorHistoricalEvents": "Bataille de Kan (resistance anti-coloniale 1885-1907). Participation forcee a la construction du chemin de fer Mittel Kamerun. Role majeur dans l'UPC (Union des Populations du Cameroun) mene par Ruben Um Nyobe (1913-1958, assassine par l'armee francaise). Independence du Cameroun le 1er janvier 1960."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en groupes de lignages (mvog) autonomes, sans autorite centrale unique. Chaque groupe de lignage etait dirige par un chef hereditaire (mbom mvog). Durant la colonisation allemande, des chefs furent imposes ou reconnus pour faciliter l'administration : Mahop ma Mbom, Ikong Yap, Kumaya, Ngwem, Balema, Bimai, Toko Ngango, Mbome Pep, Matip ma Ndombol, Matip ma Matip, Eone Eone, parmi d'autres.",
+      "clanOrganization": "Organisation en clans matrilineaires et patrilineaires selon les sous-groupes. Les villages (mbog) regroupent plusieurs familles de lignage commun. L'appartenance au lignage (mvog) determine les droits fonciers et les obligations rituelles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le lignage (mvog) est l'unite sociale fondamentale. La notion de Nka kunde (liberation nationale encore a venir) est une valeur culturelle transmise par les lignages en reference a la resistance anti-coloniale.",
+      "religiousAuthority": "Autorites rituelles detenues par les anciens et les specialistes du culte aux ancetres. Le Nyambéisme est une tradition spirituelle propre aux Bassa, centree sur la communication avec les esprits ancestraux et la nature. Les Jengu (ou Miengu) sont des esprits des eaux veneres sur la cote. Ces pratiques coexistent avec le christianisme (majoritairement protestant) introduit par les missions depuis la fin du XIXe siecle."
+    },
+    "languages": {
+      "mainLanguage": "Basaa (Bàsáa, Hɔp ɓasàa)",
+      "isoCodes": ["bas"],
+      "dialects": [
+        "Bakem — dialecte central",
+        "Bon — dialecte de la region de Nyong-et-Kelle",
+        "Bibeng — dialecte meridional",
+        "Diboum — dialecte peripherique occidental (commune de Nkondjok)",
+        "Yabasi — dialecte peripherique nord-ouest (commune de Yabassi)",
+        "Log, Mpo — variantes dialectales mineures"
+      ],
+      "vehicularRole": "Le Basaa est parle par environ 300 000 a 800 000 locuteurs dans les regions du Centre et du Littoral du Cameroun, principalement dans les departements du Nyong-et-Kelle, de la Sanaga-Maritime et du Nkam. Il est utilise dans les medias locaux (radio, television communautaire). Le Basaa est enseigne dans certaines ecoles primaires et fait l'objet d'une litterature ecrite (poesie, chants epiques, romans). Il coexiste avec le francais (langue officielle) comme langue vehiculaire regionale."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation (ceremonies de passage a l'age adulte, distinctes pour les garcons et les filles). Ceremonies funeraires elaborees avec utilisation de masques sculptes, de statues en bois et de rites de purification. Ceremonies agricoles et de benediction des recoltes. Rites du Nyambéisme : ceremonies de communication avec les ancetres, invocations des Jengu (esprits des eaux). Rites de mariage impliquant la negociation de la dot (nkap) et des ceremonies de benediction familiale.",
+      "symbols": "Ngog Lituba (le rocher perce) est le symbole identitaire fondamental du peuple Bassa, lieu de rassemblement et reference mythique de l'unite. Les masques (en bois sculpte, a valeur ceremonielle et spirituelle), les statues ancestrales et les sculptures figurent parmi les symboles culturels majeurs. Les Jengu (esprits de l'eau) sont representes dans l'art rituel cotier.",
+      "artsAndMusic": "L'Assiko est la danse et musique urbaine Bassa la plus connue, nee a Edea et rayonnant dans tout le Cameroun. La N'gola et la Ma-Kune sont d'autres styles musicaux Bassa. La musique rurale utilise des tambours (ngul), des xylophones (mendzang), des flutes et des cloches. Les Bassa sont reconnus pour leurs chants epiques (bikutsi vocal propre au peuple), leur poesie orale et la richesse de leur tradition narrative (griots). L'artisanat comprend la sculpture sur bois (masques, statues rituelles), la ceramique et le travail du raphia. La cuisine traditionnelle inclut la sauce Bongo'o et la Mintoumba (pain de manioc cuit dans des feuilles de bananier).",
+      "spiritualities": "Le Nyambéisme est la tradition spirituelle originelle des Bassa, centree sur le culte des ancetres et la communication avec les esprits de la nature. Les Jengu (Miengu) sont des esprits de l'eau et de la cote adores par les Bassa cotiers. L'animisme et la croyance en la coexistence du monde spirituel et du monde physique perdurent. Les anciens transmettent la sagesse et l'histoire par la narration orale. Depuis le XIXe siecle, le christianisme protestant (Presbyteriens, Eglise Evangelique du Cameroun) est majoritaire, avec une presence catholique importante."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Bassa n'ont pas developpe de royaume centralise. Leur organisation politique etait fondee sur des groupes de lignages autonomes (mvog) reunis par une origine et une culture communes. Pendant la colonisation allemande, un systeme de chefferies administratives a ete impose. Des chefs comme Mahop ma Mbom et Matip ma Matip ont negocie avec l'administration coloniale.",
+      "relationsWithNeighbors": "Relations d'echange avec les Bakoko (voisins cotiers), les Bassa de Nkam et les peuples du plateau central. Contacts commerciaux avec les Duala, les Bakossi et les peuples de l'interieur. Les Portugais (1472) ont introduit de nouvelles cultures alimentaires. Les Bassa ont ete deplaces de leurs territoires cotiers par les Duala et les premiers commercants europeens.",
+      "conflictsOrAlliances": "Resistance anti-coloniale pendant la colonisation allemande (Bataille de Kan, 1885-1907). Role majeur dans l'UPC (Union des Populations du Cameroun), mouvement nationaliste le plus radical du Cameroun. Ruben Um Nyobe (Mpodol Ion, le porte-parole de la nation en Bassa) a mene une resistance pacifique avant d'etre assassine par l'armee francaise le 13 septembre 1958, pres de son village natal de Boumnyebel (Nyong-et-Kelle).",
+      "diaspora": "Presence Bassa significative a Douala, Yaounde et autres grandes villes camerounaises. Migrations liees a l'exode rural vers les zones urbaines du littoral et du centre. Interactions historiques ayant donne lieu a des communautes Bassa en Afrique de l'Ouest et centrale (Benin, Senegal, DRC)."
+    },
+    "demography": {
+      "totalPopulation": 900000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur Ethnologue (SIL International 2024 : 230 000 a 300 000 locuteurs du Basaa comme langue maternelle), Wikipedia EN (environ 800 000 individus), et Joshua Project. La population totale d'identification ethnique Bassa depasse les chiffres de locuteurs stricts, estimee entre 800 000 et 1 million en 2025.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 900000,
+          "note": "Regions du Littoral (Edea, Douala, Yabassi) et du Centre (Eseka, Makak, Nyong-et-Kelle)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bassa people (Cameroon) : https://en.wikipedia.org/wiki/Bassa_people_(Cameroon)",
+      "Wikipedia EN — Basaa language : https://en.wikipedia.org/wiki/Basaa_language",
+      "Wikipedia EN — Ruben Um Nyobe : https://en.wikipedia.org/wiki/Ruben_Um_Nyob%C3%A8",
+      "SIL Ethnologue — Basaa language (bas) : https://www.ethnologue.com/language/bas/",
+      "Glottolog — Basaa (basa1284) : https://glottolog.org/resource/languoid/id/basa1284",
+      "Joshua Project — Bassa Cameroon people group : https://joshuaproject.net/people_groups/10367",
+      "UNESCO — Liste du patrimoine oral (traditions et expressions orales Bassa)"
+    ]
+  }
+}

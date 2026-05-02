@@ -1,0 +1,99 @@
+{
+  "id": "PPL_ANNANG",
+  "nameMain": "Annang",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Annang",
+      "selfAppellation": "Annang",
+      "exonyms": ["Anaang", "Ànnang", "Owo Annang", "Agwo Annang"],
+      "originOfExonyms": "Anaang est la graphie scientifique normalisée utilisée en linguistique et dans les publications académiques. Ànnang représente la graphie avec ton marqué. Owo Annang (homme/femme d'Annang) et Agwo Annang (nous les Annang) sont des auto-désignations courantes. Selon l'anthropologue Peter Farb, le nom Annang signifie ceux qui parlent bien dans cette communauté.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Annang est la graphie la plus utilisée dans les documents gouvernementaux et politiques. Anaang est préférée dans les publications linguistiques et académiques. Les deux formes coexistent dans la littérature.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Cross-River (sous-groupe Ibibioide, famille Niger-Congo)",
+      "historicalRegion": "Ancienne Province Annang (Divisions d'Abak et Ikot Ekpene) et partie de la Division d'Opobo, ancienne Région Orientale du Nigeria — aujourd'hui Akwa Ibom State",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Abiakpo — clan venu d'Eka Abiakpo, parmi les premiers à s'installer dans le territoire annang septentrional",
+      "Ukana — clan ayant rejoint les Abiakpo",
+      "Utu — clan annang du LGA Oruk Anam",
+      "Ekpu — clan des zones centrales d'Annang",
+      "Ebom — clan associé à Nyama, regroupés sous le nom Otoro par l'administration coloniale britannique",
+      "Nyama — clan du territoire méridional annang",
+      "Ika-Annang — communauté du LGA Ika, intimement liée à l'identité annang"
+    ],
+    "origins": {
+      "ancientOrigins": "Le groupe haploïde paternel dominant chez les Anaang est E1b1a1-M2, commun aux peuples d'Afrique subsaharienne occidentale. Les ancêtres des Anaang seraient originaires du nord-est de l'Afrique et auraient traversé le Sahara vert (African Humid Period). Leur mouvement progressif vers la région de la Cross River est associé à l'expansion de l'agriculture sahélienne lors du Néolithique africain, après la dessiccation du Sahara vers 3500 avant J.-C. La tradition orale affirme une origine égyptienne, une migration via le Ghana (où Anaang signifie quatrième fils en twi), puis un passage par les hauts plateaux du Cameroun avant l'installation sur la côte sud-est du Nigeria.",
+      "formationPeriod": "Le peuple annang occupe son territoire actuel depuis des millénaires avant l'arrivée des Européens. La formation de l'identité clanique organisée (Iman) est antérieure à la colonisation. La première mention écrite date du milieu du XIXe siècle (compte rendu de Sigismund Koelle sur des esclaves libérés à Sierra Leone, vers 1854).",
+      "migrationRoutes": [
+        "Migration depuis le nord-est de l'Afrique (Egypte) à travers le Sahara vers l'Afrique de l'Ouest préhistorique",
+        "Séjour parmi les Akan du Ghana (nom twi Anaang : quatrième fils)",
+        "Migration vers l'est jusqu'aux hauts plateaux du Cameroun",
+        "Installation finale sur la côte sud-est du Nigeria (actuel Akwa Ibom State)"
+      ],
+      "historicalSettlementZones": [
+        "LGA Abak (Akwa Ibom State)",
+        "LGA Essien Udim (Akwa Ibom State)",
+        "LGA Etim Ekpo (Akwa Ibom State)",
+        "LGA Ika (Akwa Ibom State)",
+        "LGA Ikot Ekpene (Akwa Ibom State) — capitale politique des Annang",
+        "LGA Obot Akara (Akwa Ibom State)",
+        "LGA Oruk Anam (Akwa Ibom State)",
+        "LGA Ukanafun (Akwa Ibom State)"
+      ],
+      "unificationsOrDivisions": "Organisation en clans (abie) liés par un serment de solidarité à leur arrivée sur le territoire. Lors de la colonisation britannique, les Divisions d'Abak et d'Ikot Ekpene furent regroupées en Province Annang. La Guerre civile nigériane (1967-1970) a causé un génocide dans la communauté annang et a entravé leur représentation politique dans l'État d'Akwa Ibom créé en 1987.",
+      "externalInfluences": "Pression du roi Jaja d'Opobo au XIXe siècle (guerres Ikot Udo Obong). Administration coloniale britannique : poste militaire à Ikot Ekpene en 1904; interdiction de la religion Idiong; exécutions de masse (77 Annang innocents exécutés entre 1945-1948). Proximité de la Confédération Aro (Arochukwu) et de l'oracle Ibini Ukpabi. Guerre civile nigériane (1967-1970).",
+      "majorHistoricalEvents": "Occupation millénaire de la côte sud-est du Nigeria; guerres Ikot Udo Obong (XIXe siècle) avec le roi Jaja d'Opobo; intervention britannique et exil de Jaja (1887); poste militaire à Ikot Ekpene (1904); interdiction de l'Idiong et exécutions massives (1945-1948); Guerre civile nigériane et génocide annang (1967-1970); création d'Akwa Ibom State (1987); revendications non satisfaites pour un Etat Annang."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Système basé sur l'assemblée des anciens (Afe Ichong / Afe Isong) comme organe législatif, et sur le chef (Abong Ichong / Obong) comme chef exécutif dont l'autorité est limitée par l'Afe. Les chefs peuvent être nommés par l'Afe ou occuper un poste héréditaire. Le système est décentralisé, sans autorité centrale unique au-dessus du niveau clanique.",
+      "clanOrganization": "Hiérarchie sociale : Ilip/Idip (womb, même mère ou père) -> Ufok (maison, famille nucléaire) -> Ekpuk (famille étendue) -> Ilung (village) -> Abie (clan). Les clans sont structurés autour de lignages fondateurs (Iman) remontant aux ancêtres originels. Le marché Obo est le marché central de tout le territoire annang.",
+      "ageClassSystems": "Nombreuses sociétés et associations (Ulim / Udim) pour hommes et femmes. L'appartenance à plusieurs Ulim et les accomplissements associés mesurent la valeur sociale d'un individu. Sociétés féminines : abi-de, Nyaama, Isong Iban. Culte Iyong (prêtresses femmes Abia Iyong). Société guerrière Oko (guerriers invulnérables aux armes blanches, très active dans les années 1950).",
+      "roleOfLineages": "Les lignages (Ekpuk) organisent la succession aux titres, la propriété foncière et l'appartenance clanique. La société était semi-matrilinéaire à l'origine (les enfants portaient le nom de la mère); la colonisation et le christianisme ont patriarchalisé progressivement le système. La première fille née (Aliaha) conserve un statut de prestige particulier.",
+      "religiousAuthority": "Prêtres de la religion Idiong (système divinatoire traditionnel annang, interdit par les Britanniques). Prêtresses du culte Iyong. Association Ekpo (esprits ancestraux, masques ekpo, organisation masculine à grande influence). Depuis 1919, clergé chrétien (Mission Méthodiste anglaise pionnière); aujourd'hui multiplication de nombreuses dénominations."
+    },
+    "languages": {
+      "mainLanguage": "Annang (Anaang)",
+      "isoCodes": ["anw"],
+      "dialects": [
+        "Abak — dialecte du LGA Abak",
+        "Ikot Ekpene — dialecte de la capitale annang",
+        "Ika — dialecte du LGA Ika (Ika-Annang)",
+        "Ukanafun — dialecte du LGA Ukanafun",
+        "Etim Ekpo — dialecte du LGA Etim Ekpo",
+        "Obot Akara — dialecte du LGA Obot Akara"
+      ],
+      "vehicularRole": "L'annang est mutuellement intelligible avec l'ibibio, l'efik et l'oron (langues cousines du groupe Akwa Akpa). L'anglais est la langue officielle du Nigeria. Le pidgin nigérian est utilisé pour les communications interethniques. L'annang est enseigné à l'université d'Uyo."
+    },
+    "culture": {
+      "majorRites": "Mascarade Ekpo après la récolte de l'igname, pour marquer la visite des esprits ancestraux; les masques iliok (grotesques, dangereux) ne peuvent être vus que par les membres de l'Ekpo; les masques mfon représentent le bel esprit. Salle d'engraissement (fattening room) : les jeunes filles vierges (mbobo) y séjournent avant le mariage, nourries, instruites sur la vie conjugale. Rites de divination de l'Idiong (interdits sous la colonisation, pratiqués clandestinement). Rite de la Confrérie Oko (guerriers invulnérables). Cérémonies de naming (naissance), de mariage et de funérailles.",
+      "symbols": "La capacité oratoire et l'usage des proverbes (Eru-unam-mkpo) sont des symboles de prestige social : un orateur accompli est désigné Akwo Anaang (l'homme de l'Annang / le chanteur d'Annang). Le Marché Obo constitue le centre symbolique et économique du territoire annang.",
+      "artsAndMusic": "Sculpture de masques : masques iliok (ekpo, grotesques, bois) et masques mfon (beaux esprits). Peinture murale traditionnelle. Artisanat en raphia (Ikot Ekpene est la Raffia City du Nigeria, réputée mondialement pour ses produits en raphia). Cuisine traditionnelle : Afang Soup, Alitan Soup, Ekpang Nkwukwor, White Soup (Affia Efere), Abak Atama. Chants et percussions lors des cérémonies claniques.",
+      "spiritualities": "Religion traditionnelle Idiong : croyance en Awasi-Ibom (Abasi Ibom, être suprême auto-engendré au-delà des nuages), Awasi Anyong (dieu du ciel), Awasi Isong (dieu de la terre) et Inyang-Ibom (l'océan). Libations lors des fonctions publiques invoquant Awasi Anyong et Awasi Isong. Ekpo (esprits ancestraux). Christianisme dominant depuis les missions méthodistes (1919), avec multiplication de dénominations; l'Etat d'Akwa Ibom est souvent décrit comme ayant des Eglises pour principale industrie."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en clans autonomes (abie) sans royaume centralisé. Capitale politique : Ikot Ekpene (LGA Ikot Ekpene). Chefs de clan (Abong Ichong) disposant d'une autorité limitée par le conseil des anciens. Résistance de l'Aro Confederacy de proximité via le maintien d'une indépendance guerrière (guerriers Oko).",
+      "relationsWithNeighbors": "Parenté étroite avec les Ibibio (deuxième groupe ethnique du Akwa Ibom après les Ibibio), les Efik de Cross River State et les Oron. Commerce avec le roi Jaja d'Opobo (conflits à la fin du XIXe siècle). Frontière avec les Igbo Ngwa au nord, nécessitant des guerres de protection territoriale. Présence autrefois en Sierra Leone (esclaves libérés de Nkwot/Abak).",
+      "conflictsOrAlliances": "Guerres Ikot Udo Obong contre le roi Jaja d'Opobo (fin XIXe siècle). Alliance avec les Britanniques contre Jaja (1887). Résistance aux pratiques coloniales. Génocide durant la Guerre civile nigériane (1967-1970). Revendications répétées (non satisfaites) de création d'un Etat Annang dans la fédération nigériane.",
+      "diaspora": "Présence annang dans les grandes villes nigérianes (Lagos, Port Harcourt, Abuja, Calabar). Diaspora en Grande-Bretagne et aux États-Unis. Communautés historiques en Sierra Leone (esclaves libérés de Nkwot à Waterloo). Présence ancienne en Guinée équatoriale (Fernando Po) et au Cameroun."
+    },
+    "demography": {
+      "totalPopulation": 3294000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) indique une population de 3 294 000 Anaang au Nigeria. Wikipedia Anaang people cite 2,6 millions. Les Annang sont le deuxième groupe ethnique d'Akwa Ibom State (population totale d'environ 5,5 millions en 2016 selon Wikipedia). Les huit LGAs annang représentent environ 8 des 31 LGAs de l'Etat.",
+      "distributionByCountry": [{ "country": "NGA", "population": 3294000 }]
+    },
+    "sources": [
+      "Wikipedia, Anaang people (en). https://en.wikipedia.org/wiki/Anaang_people (consulté 2025)",
+      "Ethnologue, Anaang (ANW). https://www.ethnologue.com/language/anw/ (consulté 2025)",
+      "Joshua Project, Anaang in Nigeria. https://joshuaproject.net/people_groups/10305 (consulté 2025)",
+      "Glottolog, Anaang. https://glottolog.org/resource/languoid/id/anaa1238 (consulté 2025)",
+      "101 Last Tribes, Annang people — Africa. http://www.101lasttribes.com/tribes/annang.html (consulté 2025)",
+      "Wikipedia, Akwa Ibom State (en). https://en.wikipedia.org/wiki/Akwa_Ibom_State (consulté 2025)",
+      "Ette, Mercy. Annang People: History and Culture. Uyo: University of Uyo Press, 2008."
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "id": "PPL_SUKUMA",
+  "nameMain": "Sukuma",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Sukuma",
+      "selfAppellation": "Sukuma",
+      "exonyms": ["Sukuma (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone F)",
+      "historicalRegion": "Tanzanie",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": [
+      "Sukuma du Nord",
+      "Sukuma du Sud",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Sukuma sont originaires de la région de la Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone F).",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Sukuma",
+      "vehicularRole": "Le sukuma est parlé par la majorité des Sukuma. Le swahili, l'anglais et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de mariage traditionnelles",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à l'agriculture",
+      "source_3": "Cérémonies religieuses chrétiennes",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels sukuma, symboles chrétiens",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora sukuma dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 5000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Sukuma language (suk)",
+      "CIA World Factbook – Tanzania",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples bantous"
+    ]
+  }
+}

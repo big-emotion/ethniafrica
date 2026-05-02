@@ -1,0 +1,91 @@
+{
+  "id": "PPL_GOUROUNSI",
+  "nameMain": "Gourounsi",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["BFA", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Gourounsi",
+      "selfAppellation": "Gurunsi",
+      "exonyms": ["Gurunsi", "Grunshi", "Grusi", "Gourounsi"],
+      "originOfExonyms": "Le nom Gurunsi (variante : Grunshi) est d'origine Djerma (Zarma) et signifie littéralement 'ceux à qui le fer ne pénètre pas', allusion aux médecines traditionnelles qui, selon la croyance Djerma, rendaient les guerriers Gurunsi invulnérables aux armes en fer lors des razzias du XIXe siècle. La transcription française Gourounsi est la forme adoptée dans l'administration coloniale et encore courante au Burkina Faso.",
+      "whyProblematic": "Le terme Gourounsi est un nom générique imposé de l'extérieur par les Mossi et les Djerma pour désigner un ensemble de groupes distincts ne partageant ni langue commune ni identité ethnique unifiée. Les sous-groupes (Kassena, Nankani, Lyele, Nuna, Sisaala, Ko, Frafra, Talensi, etc.) ne se reconnaissent pas toujours dans ce terme parapluie.",
+      "contemporaryUsage": "Utilisé principalement dans les contextes administratifs et touristiques au Burkina Faso, notamment pour désigner l'ensemble des peuples Gur du Centre-Ouest et du Centre-Sud. En anglais, la graphie Gurunsi ou Grusi prévaut dans la littérature académique et les organisations de développement."
+    },
+    "ethnicities": [
+      "Kassena",
+      "Nankani",
+      "Lyele",
+      "Nuna",
+      "Sisaala",
+      "Ko",
+      "Frafra",
+      "Talensi",
+      "Nabt"
+    ],
+    "origins": {
+      "ancientOrigins": "Les peuples regroupés sous le terme Gourounsi sont présents dans leur zone actuelle depuis au moins 1100 ap. J.-C., selon les traditions orales et les données archéologiques. Ils viendraient du Soudan occidental (région sahélienne) et auraient migré progressivement vers le sud pour s'installer dans les plaines de la Volta.",
+      "formationPeriod": "La confédération informelle de villages Gourounsi se consolide comme entité collective à partir du XVe siècle, en réaction aux razzias des États Mossi voisins. Chaque sous-groupe maintient cependant son identité distincte.",
+      "migrationRoutes": [
+        "Migration depuis le Soudan occidental vers la région de la Volta à partir du XIe siècle",
+        "Installation progressive dans le bassin nord de la Volta Blanche (actuel nord du Ghana et centre-ouest du Burkina Faso)"
+      ],
+      "historicalSettlementZones": [
+        "Centre-ouest et centre-sud du Burkina Faso (Tiébélé, Léo, Réo, Sapouy)",
+        "Nord du Ghana (région Upper West, Upper East)"
+      ],
+      "unificationsOrDivisions": "Les Gourounsi ne constituent pas un groupe politiquement unifié mais un ensemble de communautés de villages indépendantes organisées comme strongholds défensifs. La partition coloniale de 1897-1898 (traité franco-britannique) divisa les communautés Gourounsi entre la Haute-Volta française (Burkina Faso) et la Gold Coast britannique (Ghana), entraînant une divergence culturelle et politique durable entre les deux côtés de la frontière.",
+      "externalInfluences": "Les raids des royaumes Mossi (XVe-XIXe siècles) contraignirent les Gourounsi à développer des villages fortifiés. À la fin du XIXe siècle, l'émir Djerma Baba Ato Zato (dit Babatu) recruta des guerriers Gourounsi et établit l'Émirat Zabarima dans l'extrême nord du Ghana et le sud du Burkina Faso. La triple compétition coloniale franco-britanno-allemande aboutit à l'annexion des terres Gourounsi par la France en 1897.",
+      "majorHistoricalEvents": "1897 : annexion française des terres Gourounsi après les protectorats de Yatenga (1895) et Ouagadougou (1896). 1898 : accord franco-britannique fixant la frontière entre Haute-Volta et Gold Coast, divisant les communautés Gourounsi. Fin XIXe siècle : incursions de l'émir Babatu et constitution de l'Émirat Zabarima affectant directement les communautés Gourounsi du nord Ghana."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Pas d'autorité politique centralisée. Les Gourounsi vivent dans des communautés villageoises indépendantes organisées comme strongholds défensifs. L'absence de pouvoir centralisé distingue les Gourounsi des royaumes voisins (Mossi, Dagomba). Chaque village est dirigé par des anciens et des chefs de terre.",
+      "clanOrganization": "Organisation clanique patrilinéaire au sein de chaque sous-groupe. Les clans contrôlent l'accès à la terre et assurent la médiation des conflits internes. Les liens claniques entre villages favorisent les alliances défensives.",
+      "roleOfLineages": "Les lignages fondateurs détiennent les droits sur la terre et les fonctions rituelles. La légitimité des chefs de terre est liée à l'appartenance aux lignages autochtones qui ont défriché la terre.",
+      "religiousAuthority": "Les chefs de terre (earth priests) jouent un rôle central dans la vie religieuse et rituelle. Les communautés Gourounsi pratiquent majoritairement des religions traditionnelles africaines. La présence chrétienne est notable (évangélisation protestante et catholique), et une minorité est musulmane."
+    },
+    "languages": {
+      "mainLanguage": "Langues Gourounsi (groupe de langues Gur apparentées)",
+      "isoCodes": ["ksv", "nkq", "lye", "nob", "ssl", "xko", "frf"],
+      "dialects": [
+        "Kassem (Kassena) – ksv",
+        "Nankani – nkq",
+        "Lyele – lye",
+        "Nuni (Nuna) – nob",
+        "Sisaala – ssl",
+        "Ko – xko",
+        "Farefare (Frafra) – frf"
+      ],
+      "vehicularRole": "Il n'existe pas de langue commune à l'ensemble des Gourounsi. Chaque sous-groupe possède sa propre langue Gur. Le mooré (langue Mossi) et le français (Burkina Faso) ou l'anglais (Ghana) servent de langues véhiculaires intercommunautaires. La langues Gourounsi les plus parlées sont le Lyele (Burkina Faso) et le Kassem (partagé entre Burkina Faso et Ghana)."
+    },
+    "culture": {
+      "majorRites": "Festivals agricoles liés au cycle du mil et du sorgho. Rites d'initiation à l'âge adulte. Cérémonies funéraires élaborées avec musique et danses. Rites annuels de purification de la terre conduits par les chefs de terre.",
+      "symbols": "Les maisons décorées des Kassena (sous-groupe Gourounsi) de Tiébélé constituent le symbole culturel le plus connu : construites par les hommes en argile et terre, elles sont recouvertes de motifs géométriques colorés peints par les femmes. Ces décorations murales transmettent des significations symboliques et identitaires.",
+      "artsAndMusic": "Art architectural majeur : maisons-forteresses en banco (argile) à Tiébélé, classées parmi les patrimoines culturels de la région. Peintures murales géométriques (noires, rouges, blanches) réalisées par les femmes Kassena. Musique rythmique liée aux cérémonies. Poterie et tissage traditionnels.",
+      "spiritualities": "Animisme et culte des ancêtres prépondérants. Croyance en des esprits de la nature et de la terre auxquels des offrandes sont faites lors de cérémonies collectives. Présence croissante du christianisme (catholique et protestant) et de l'islam dans les zones urbaines."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Gourounsi n'ont pas constitué de royaumes centralisés. Ils ont résisté, sans se soumettre totalement, à la domination Mossi, aux invasions Djerma et à la colonisation, grâce à leur organisation en villages fortifiés et à leurs alliances claniques.",
+      "relationsWithNeighbors": "Relations historiquement conflictuelles avec les royaumes Mossi qui les raziaient pour l'esclavage. Confrontation avec l'émir Djerma Babatu à la fin du XIXe siècle. Coexistence, parfois tendue, avec les Peuls transhumants. Relations commerciales avec les Dioula.",
+      "conflictsOrAlliances": "Résistance aux raids Mossi (XVe-XIXe siècles). Incorporation partielle dans l'armée de Babatu. Résistance aux puissances coloniales lors de la partition de 1897-1898. Conflits intercommunautaires liés à l'accès à la terre.",
+      "diaspora": "Migrations économiques vers Ouagadougou (Burkina Faso), Accra (Ghana) et les grandes villes d'Afrique de l'Ouest. Diaspora internationale en Europe (France, Royaume-Uni) et en Amérique du Nord."
+    },
+    "demography": {
+      "totalPopulation": 4700000,
+      "referenceYear": 2025,
+      "source": "Estimation basée sur le recensement Burkina Faso 2021 (Gourounsi = 5,9% de 23,4M = 1,38M BFA) et données Ghana Statistical Service 2021 (Gurunsi environ 3,5% de 32M = 1,12M GHA). Chiffre plus large incluant tous les sous-groupes : estimation Wikipedia EN (BFA 3 500 000 ; GHA 1 200 000)",
+      "distributionByCountry": [
+        { "country": "BFA", "population": 3500000 },
+        { "country": "GHA", "population": 1200000 }
+      ]
+    },
+    "sources": [
+      "Gurunsi people – Wikipedia EN, 2006, mis à jour 2024 (https://en.wikipedia.org/wiki/Gurunsi_people)",
+      "Gurunsi people – 101 Last Tribes (https://www.101lasttribes.com/tribes/gurunsi.html)",
+      "Demographics of Burkina Faso – Wikipedia EN (https://en.wikipedia.org/wiki/Demographics_of_Burkina_Faso)",
+      "Burkina Faso people groups – Joshua Project, 2025 (https://joshuaproject.net/countries/uv)",
+      "The Gurunsi (Kassena) tribe – Tiébélé, Untamed Travelling (https://www.untamedtravelling.com/en/destinations/africa/burkina-faso/gurunsi)",
+      "Gourounsi – Wikipedia FR, 2006 (https://fr.wikipedia.org/wiki/Gourounsi)"
+    ]
+  }
+}

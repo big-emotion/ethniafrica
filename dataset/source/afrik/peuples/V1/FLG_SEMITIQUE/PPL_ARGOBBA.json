@@ -1,0 +1,27 @@
+{
+  "id": "PPL_ARGOBBA",
+  "nameMain": "",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Argobba",
+      "linguisticFamily": "FLG_SEMITIQUE",
+      "historicalRegion": "Shewa, Afar, Amhara (vallées semi-arides)",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": ["Argobba du Shewa", "Argobba du Harar"],
+    "origins": null,
+    "organization": null,
+    "languages": {},
+    "culture": {
+      "source_0": "Islam sunnite majoritaire.",
+      "source_1": "Architecture vernaculaire en pierre.",
+      "source_2": "Traditions marchandes anciennes."
+    },
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethiopian CSA", "Ethnologue (agj)"]
+  }
+}

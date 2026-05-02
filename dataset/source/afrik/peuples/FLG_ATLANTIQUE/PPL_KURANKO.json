@@ -1,0 +1,102 @@
+{
+  "id": "PPL_KURANKO",
+  "nameMain": "Kuranko",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["SLE", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Kuranko",
+      "selfAppellation": "Kuranko",
+      "exonyms": [
+        "Koranko",
+        "Kolanko",
+        "Kooranko",
+        "Koronko",
+        "Kouranko",
+        "Kulanko",
+        "Kurako",
+        "Kuronko",
+        "Kuranke",
+        "Karanko"
+      ],
+      "originOfExonyms": "Variantes orthographiques et phonetiques du nom Kuranko selon les langues de contact (anglais, francais, mandinka). Le terme designe egalement les locuteurs de la langue kuranko.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Kuranko est utilise couramment en Sierra Leone et en Guinee. Koranko est la forme la plus repandue dans la litterature anglophone.",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "ethnoLinguisticGroup": "Mande (branche mandingue), classe sous FLG_ATLANTIQUE dans ce jeu de donnees",
+      "historicalRegion": "Hauts plateaux du nord-est de la Sierra Leone (district de Koinadugu, chefferie de Sengbe) et sud de la Guinee",
+      "currentCountries": ["SLE", "GIN"]
+    },
+    "ethnicities": [
+      "Marah (clan fondateur, tous les Kuranko sont issus des Marah selon la tradition orale)",
+      "Kagbo",
+      "Sanoh",
+      "Kaloko",
+      "Koroma",
+      "Dorre (Dore)",
+      "Groupe de Kamadugu (Sengbe Chiefdom, Koinadugu District)",
+      "Groupe de Kholifa (chefferie encore existante)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kuranko sont originaires du Mande (actuel Mali), ou ils constituaient une branche de l'empire mandingue. Ils sont une branche des Malinke (Mandeka) ayant migre vers l'ouest et le sud apres des luttes de succession au sein de l'empire.",
+      "formationPeriod": "Migration principale vers le 17e siecle. Le guerrier Mansa Kama (vers 1650-1720) est considere comme le fondateur du pays kuranko en Sierra Leone, ayant etabli la ville de Kamadugu dans l'actuel Sengbe Chiefdom.",
+      "migrationRoutes": [
+        "Du Mande (Mali) vers les savanes de l'Afrique de l'Ouest",
+        "Descente vers le nord-est de la Sierra Leone via la Guinee",
+        "Extension vers l'ouest sous Mansa Kama jusqu'a Koya (Freetown)"
+      ],
+      "historicalSettlementZones": [
+        "Hauts plateaux du nord-est de la Sierra Leone (district de Koinadugu)",
+        "Chefferies de Sengbe, Kholifa, et Rowala en Sierra Leone",
+        "Sud de la Guinee (region forestiere)"
+      ],
+      "unificationsOrDivisions": "Mansa Kama unifia les groupes kuranko autour de Rowala, qui devint le centre du pays kuranko. Il etendit son autorite sur la Sierra Leone jusqu'a Foredugu et le port de Koya.",
+      "externalInfluences": "Contacts avec l'islam via des alfa (clercs islamiques) des la fin du 17e siecle. Influences mandingues et susu marquees. Melanges tribaux importants avec les populations voisines.",
+      "majorHistoricalEvents": "Fondation de Kamadugu par Mansa Kama (fin 17e siecle). Participation au commerce trans-regional entre le Mali et la cote ouest-africaine. Pression coloniale britannique au 19e siecle en Sierra Leone."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chaque village kuranko est dirige par un chef (chef de village) et un conseil d'anciens. Les chefferies principales (chiefdoms) sont dirigees par des chefs supremes (paramount chiefs). L'organisation est hierarchisee autour de lignages patrilineaires.",
+      "clanOrganization": "Organisation en clans patrilineaires (patronymes). Les Marah sont le clan fondateur. Les differents groupes possedent leurs propres chefs, traditions et heritage. Les clans Kagbo, Sanoh, Kaloko et Koroma jouent egalement des roles importants.",
+      "ageClassSystems": "A la puberte, garcons et filles passent un rituel d'initiation (biriye) marquant l'entree dans l'age adulte. Les garcons sont circoncis et rejoignent des associations secretes. Les Gbansogoron (perceurs de joues) sont une association masculine demontrant le courage par l'endurance physique.",
+      "roleOfLineages": "Les lignages patrilineaires definissent l'appartenance clanique, les droits fonciers et les alliances matrimoniales. Le mariage polygame est pratique, avec paiement de dot.",
+      "religiousAuthority": "Autorite religieuse partagee entre chefs traditionnels, anciens et leaders islamiques (imams). Les societes secretes feminines (Bondo/Segere) ont une autorite propre dans les affaires des femmes."
+    },
+    "languages": {
+      "mainLanguage": "Kuranko (Koranko)",
+      "isoCodes": ["knk"],
+      "dialects": [
+        "Dialectes locaux correspondant aux differents groupements sociaux au sein de la region kuranko",
+        "Variations entre Sierra Leone et Guinee"
+      ],
+      "vehicularRole": "Le kuranko est compris par les locuteurs du mandinka et du susu, langues proches. Il sert de vehiculaire local dans les zones kuranko du nord-est de la Sierra Leone. Le krio (creole) est utilise comme langue de contact plus large."
+    },
+    "culture": {
+      "majorRites": "Initiation a la puberte (biriye) : circoncision pour les garcons, entree dans des associations secretes, droit de porter certains vetements et de se marier. Pour les filles, utilisation de la societe secrete Bondo (Sande) qui prepare les jeunes femmes a l'age adulte, traite des questions de fertilite, morale et comportement. La societe Segere soutient les droits des femmes adultes. L'association Gbansogoron demonstre le courage masculin par l'endurance physique.",
+      "symbols": "Le vautour, la chauve-souris et le chat noir sont des symboles de sorcellerie. Certains animaux servent de metaphores morales : le chien symbolise l'absence de foi, le singe le vol, le serpent la trahison. Les esprits de la brousse (Nyenne) sont une presence symbolique centrale dans la cosmologie kuranko.",
+      "artsAndMusic": "La tradition orale est centrale : chants, recits historiques et contes sont transmis par les anciens. La musique accompagne les ceremonies d'initiation et les rites de passage. Les artisans kuranko produisent des objets de tissage, de forge et de travail du bois. Ibrahim Francis Marah et Aminata Kamissoko sont des musiciens kuranko connus.",
+      "spiritualities": "Religion traditionnelle dominante : croyance aux esprits de la brousse (Nyenne), etres quasi-humains habitant les forets, rivieres et montagnes. Les Nyenne peuvent rendre les femmes steriles, provoquer la folie ou apporter la prosperite. Des sacrifices leur sont adresses lors du defrichement agricole. Culte des ancetres important. Islam presente mais pratique de facon nominale par moins d'un tiers des Kuranko en Sierra Leone. Croyances synchretiques frequentes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Fondation de Kamadugu par Mansa Kama (vers 1680-1720), qui devint le centre politique du pays kuranko. Chefferie de Kholifa, encore existante. Extension de l'autorite kuranko de Rowala jusqu'a Foredugu et Koya en Sierra Leone.",
+      "relationsWithNeighbors": "Relations de cohabitation et de metissage avec les Mandinka, Susu et Fula voisins. Les Kuranko ont maintenu une identite ethnique distincte malgre les melanges tribaux importants. Tensions historiques avec les groupes expansionnistes Susu.",
+      "conflictsOrAlliances": "Alliances commerciales sur les routes reliant le Mali aux ports de la cote ouest-africaine. Batailles menees par Mansa Kama pour securiser la route commerciale vers Freetown. Resistance aux pression coloniales britanniques au 19e siecle.",
+      "diaspora": "Presence kuranko principalement en Sierra Leone (district de Koinadugu) et en Guinee du sud. Migration interne vers Freetown et d'autres villes de Sierra Leone depuis le 20e siecle. Faible diaspora internationale."
+    },
+    "demography": {
+      "totalPopulation": 597000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 473 000 en Sierra Leone, 124 000 en Guinee. Total estime : 597 000. Ethnologue (27e ed., 2024) : population entre 10 000 et 1 million de locuteurs.",
+      "distributionByCountry": [
+        { "country": "SLE", "population": 473000 },
+        { "country": "GIN", "population": 124000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Kuranko people : https://en.wikipedia.org/wiki/Kuranko_people",
+      "Joshua Project - Kuranko in Sierra Leone (2025) : https://joshuaproject.net/people_groups/12872/SL",
+      "Joshua Project - Kuranko in Guinea (2025) : https://joshuaproject.net/people_groups/12872/GV",
+      "Ethnologue - Kuranko language (knk) : https://www.ethnologue.com/language/knk/",
+      "Wikipedia EN - Kuranko language : https://en.wikipedia.org/wiki/Kuranko_language"
+    ]
+  }
+}

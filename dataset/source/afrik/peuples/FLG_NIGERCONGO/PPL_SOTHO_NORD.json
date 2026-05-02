@@ -1,0 +1,111 @@
+{
+  "id": "PPL_SOTHO_NORD",
+  "nameMain": "Sotho (Nord)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["ZAF"],
+  "content": {
+    "appellations": {
+      "mainName": "Sotho du Nord (Pedi)",
+      "selfAppellation": "Bapedi / Basotho ba Lebowa",
+      "exonyms": [
+        "Pedi (désignation dominante en anglais)",
+        "Northern Sotho (appellation officielle coloniale et post-apartheid)",
+        "Transvaal Sotho (ancien terme colonial)",
+        "Marota / Dikgoshi (noms historiques des groupes constituants)",
+        "Sepedi (désigne parfois la langue ou le peuple)"
+      ],
+      "originOfExonyms": "Pedi désigne à l'origine le clan dominant des Maroteng, dirigeants de la paramountcy Pedi. Par extension, il désigne aujourd'hui l'ensemble des locuteurs de Northern Sotho (Sepedi) en Afrique du Sud. Northern Sotho est le terme officiel adopté par le Parlement sudafricain. Le terme Basotho ba Lebowa rappelle le homeland de l'apartheid. Bapedi signifie littéralement famille du roi.",
+      "whyProblematic": "Sepedi désigne à la fois le dialecte du clan Pedi (sensu stricto) et la langue standard Northern Sotho dans son ensemble (sensu lato). Cette ambiguité cause des confusions dans la littérature académique et officielle. Les locuteurs du lowveld (Lobedu, Pulana, Pai) peuvent ne pas s'identifier comme Pedi. La constitution sud-africaine reconnaît Sepedi comme langue officielle pour l'ensemble du Northern Sotho.",
+      "contemporaryUsage": "Le terme Pedi ou Bapedi est le plus couramment utilisé en anglais et dans la vie quotidienne. Sepedi est la désignation officielle de la langue dans la Constitution sud-africaine. La communauté est l'une des plus grandes en Afrique du Sud avec environ 6 millions de locuteurs de Sepedi.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Zone S (Sotho-Tswana, Northern Sotho, S32)",
+      "historicalRegion": "Transvaal du Nord (Sekhukhuneland, Limpopo), bassins des rivières Olifants (Lepelle) et Steelpoort (Tubatse)",
+      "currentCountries": ["ZAF"]
+    },
+    "ethnicities": [
+      "Bapedi (Maroteng) — clan dominant, anciens rois de la paramountcy Pedi; région de Sekhukhuneland",
+      "Batau — gens du lion, clan de la région de Sekhukhuneland",
+      "Babirwa — groupe lié au Botswana, nord-est du Limpopo",
+      "Bakgatla — sous-groupe kgatla du Limpopo (distinct des Bakgatla ba Kgafela du Botswana)",
+      "Lobedu (Balobedu) — groupe du Greater Tzaneen; connus pour leur reine de la pluie (Modjadji); dialecte khelobedu distinct",
+      "Baphalaborwa (Malatji) — région de Phalaborwa, mineurs et fondeurs traditionnels",
+      "Pulana (Bapulana) — région de Bushbuckridge; dialecte Sepulane",
+      "Bahananwa (Ga-Mmalebogo) — nord du Limpopo, près de Bochum",
+      "Bakone (Ga-Matlala) — groupe du Limpopo central"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bapedi partagent leurs ancêtres avec les Sotho du Sud et les Tswana, issus de migrations depuis l'Afrique des Grands Lacs (Afrique de l'Est) le long du Zimbabwe occidental. Ils s'installèrent dans la région du Transvaal septentrional (actuel Limpopo) vers le 15e-16e siècle. La tribu fondée par Thobela s'établit le long de la rivière Steelpoort (Tubatse) environ deux siècles avant les grandes descriptions historiques du 19e siècle. Des cartes portugaises antiques mentionnent le royaume Biri dans la région. La paramountcy Pedi se consolida dans la seconde moitié du 18e siècle sous le clan Maroteng.",
+      "formationPeriod": "L'identité Bapedi comme entité politique cohérente émergea au 18e siècle avec la centralisation du clan Maroteng. Thulare I (gouverné vers 1780-1820) unifia de nombreuses tribus, fondant l'empire Marota qui s'étendait de Rustenburg au Vaal. Sekwati I repoussa Mzilikazi (années 1820-1830). Sekhukhune I (1861-1882) porta l'empire à son apogée, résistant victorieusement aux Boers (1876) avant d'être défait par les Britanniques en 1879. Le homeland Lebowa fut créé pendant l'apartheid (1972) pour regrouper les locuteurs du Northern Sotho.",
+      "migrationRoutes": [
+        "Migration proto-sotho depuis l'Afrique des Grands Lacs via le Zimbabwe occidental, 15e-16e siècles",
+        "Installation dans le bassin de la rivière Steelpoort (Olifants et Tubatse), Transvaal Nord",
+        "Expansion de la paramountcy Pedi vers Rustenburg, puis Vaal River sous Thulare I",
+        "Migrations de travail vers les mines de Kimberley (1867) et le Rand (1886)"
+      ],
+      "historicalSettlementZones": [
+        "Sekhukhuneland (entre Olifants et Steelpoort, Limpopo) — zone centrale de la paramountcy",
+        "Monts Leolo (Limpopo) — forteresses naturelles de Sekhukhune I",
+        "Greater Tzaneen (Lobedu, Lowveld)",
+        "Phalaborwa (Malatji, mineurs de cuivre traditionnels)",
+        "Bushbuckridge (Pulana, Sepulana)",
+        "Lebowa homeland — recréation administrative de l'apartheid (1972-1994)"
+      ],
+      "unificationsOrDivisions": "La paramountcy Pedi constitua l'unification politique maximale du Northern Sotho au 19e siècle, avant la conquête britannique (1879). Les multiples groupes (Lobedu, Baphalaborwa, Pulana) maintinrent des identités distinctes sous une appartenance linguistique commune. L'apartheid imposa le homeland Lebowa (1972), regroupant artificiellement des groupes. La fin de l'apartheid (1994) et la reintégration au Limpopo ont reformulé l'identité.",
+      "externalInfluences": "Invasions de Mzilikazi (Matabele, années 1820-1830) : le chef Sekwati I repoussa plusieurs attaques. Pression des Boers du Transvaal (ZAR) depuis les années 1840; guerre Pedi-ZAR (1876 : victoire Pedi). Conquête britannique (1879) : Wolseley défait Sekhukhune I. Colonisation britannique, administration de la BSAC, puis Union d'Afrique du Sud. Apartheid et création du homeland Lebowa (1972-1994). Démocratie post-apartheid depuis 1994."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le système kgoro constitue la base de l'organisation sociale et politique. Le kgoro est un groupe d'agnats centré autour d'une cour collective (espace central servant de lieu de réunion, kraal à bétail, cimetière et sanctuaire des ancêtres). Au sommet, le kgosigolo (roi ou paramount chief) ou kgoshi dirige. Les grands groupes de kgoros forment des chefferies. La succession est patrilinéaire, au fils aîné de la première épouse principale.",
+      "clanOrganization": "Identité clanique définie par des totems animaux (sello/seboko) héréditaires : tau (lion), kwena (crocodile), kolobe (cochon sauvage), noko (porc-épic), kgabo (singe), nare (buffle), tlou (éléphant). Les clans sont exogames. Les soeurs de clan (dikgadi) jouent un rôle rituel important. Le mariage préférentiel avec la cousine croisée (fille de l'oncle maternel) renforce les alliances inter-kgoro et maximise la réutilisation du bohadi (bridewealth en bétail).",
+      "ageClassSystems": "Les mephato (régiments/classes d'âge) sont fondamentaux. L'initiation masculine (koma) se tient environ tous les cinq ans; les garçons (mašoboro/bašemane) y passent par la circoncision et une période de formation intense. Les initiés forment un mephato ayant une loyauté mutuelle permanente. L'initiation féminine en ditswa-bothuku regroupait les filles environ deux ans après les garçons. Ces institutions sont encore pratiquées, finançant les chefs et les écoles d'initiation privées.",
+      "roleOfLineages": "La filiation est strictement patrilinéaire. La maison (ntlo) hérite de la propriété du père; le fils aîné est traditionnellement héritier-custodien. La maison de l'oncle paternel (kgadi) joue un rôle rituel central (représentation dans les sacrifices ancestraux, autorité morale). Les chefs subordonnés prennent leurs épouses principales dans la maison royale (Maroteng), ce qui crée un réseau de dépendance et d'alliance.",
+      "religiousAuthority": "Les ancêtres (badimo) sont des intermédiaires actifs avec Modimo (Dieu/Créateur, appelé aussi Mmopi). La communication avec les ancêtres se fait par l'incensum (brûler des herbes aromatiques, go phasa), les offrandes de bière et de nourriture, et les sacrifices animaux. Le ngaka (diviner/guérisseur) est appelé par possession (malopo) ou héritage patrilinéaire depuis un grand-père. La kgadi (soeur du père) est indispensable aux rituels familiaux. Le christianisme (Eglises indépendantes africaines, pentecôtisme) coexiste avec les pratiques ancestrales."
+    },
+    "languages": {
+      "mainLanguage": "Sepedi (Northern Sotho)",
+      "isoCodes": ["nso"],
+      "dialects": [
+        "Bapedi (Highveld-Sotho sensu stricto) — dialecte du Sekhukhuneland, base du standard",
+        "Lobedu (Khelobedu) — dialecte du Greater Tzaneen, associé à la reine de la pluie Modjadji; parfois classé dialecte distinct",
+        "Sepulana — parlé à Bushbuckridge; dialecte du lowveld",
+        "Phalaborwa (Malatji) — variété du nord-est Limpopo",
+        "Pretoria Sotho — variété urbaine mêlée de zulu et de fanagalo"
+      ],
+      "vehicularRole": "Sepedi est l'une des 11 langues officielles d'Afrique du Sud. Environ 6 millions de locuteurs (10 % de la population sud-africaine, recensement 2022), 4e langue la plus parlée. Principalement dans les provinces du Limpopo, Gauteng et Mpumalanga. Langue d'enseignement dans les premières années du primaire au Limpopo. Présence médiatique : Thobela FM (SABC Radio), chaînes télévisées publiques."
+    },
+    "culture": {
+      "majorRites": "Koma (initiation masculine) : retraite périodique de plusieurs semaines, circoncision, formation militaire et sociale, intégration au mephato (classe d'âge); encore pratiquée aujourd'hui. Initiation féminine (koma ya basadi, ditswa-bothuku) : rite de passage correspondant, formation aux rôles féminins adultes. Bohadi (bridewealth) : compensation matrimoniale en bétail, structurant les alliances familiales. Go phasa (rite d'invocation ancestrale) : offrandes de bière (bjala) et de nourriture, fumigation pour communiquer avec les ancêtres. Rites funéraires : sacrifice animal, veillée, repas communautaire.",
+      "symbols": "Tau (lion), totem du clan royal Maroteng. Kgoro (cour centrale du village) : symbole de l'organisation sociale et politique. Sekhukhune (montagne-forteresse dans le Limpopo) : symbole de résistance nationale. Pipes et tabacs traditionnels. Peintures murales géométriques des maisons (tradition féminine). Modjadji (reine de la pluie Lobedu) : figure symbolique nationale connue internationalement.",
+      "artsAndMusic": "Mmino wa Setso (musique traditionnelle à 6 notes) : pipes (dinaka) en aluminium ou roseau jouées en ensemble; chants polyphoniques. Kiba/Dinaka : ensemble masculin de pipes à mélodie descendante (instrument national emblématique); transposé en version féminine avec danse des genoux (kosha ya dikhuru, secouement vigoureux du torse à genoux). Mpepetlwane (musique des jeunes filles). Mmatshidi (musique des anciens). Fabrication de tambours en bois, travail du métal (Baphalaborwa, forgerons traditionnels de cuivre). Beadwork et perles. Peintures murales géométriques des maisons.",
+      "spiritualities": "Badimo (esprits ancestraux) comme intercesseurs vers Modimo (Dieu créateur). Ngaka (diviner) : patrilinéaire, homme ou femme, appelé par possession (malopo) ou héritage. Kgadi (soeur du père) : autorité rituelle féminine indispensable aux cérémonies familiales. Sacrifices animaux et offrandes de bière comme formes de communication avec les ancêtres. Christianisme présent via Eglises indépendantes africaines (ZCC — Zion Christian Church, fondée en 1924 à Moria, capitale spirituelle dans le Limpopo) et Eglises protestantes historiques. La ZCC est l'une des plus grandes Eglises d'Afrique avec environ 12 millions de membres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Paramountcy Pedi (empire Marota) : fondée par le clan Maroteng, consolidée sous Thulare I (c.1780-1820), culminant sous Sekhukhune I (1861-1882). A son apogée, elle s'étendait de Rustenburg au Vaal. Victoire contre les Boers du ZAR (1876) — unique victoire africaine notable. Défaite par les Britanniques (Sir Garnet Wolseley, novembre 1879); Sekhukhune I emprisonné puis assassiné (1882). Terre ancestrale réduite à la Geluk Location (1885). Homeland Lebowa (1972-1994) sous l'apartheid.",
+      "relationsWithNeighbors": "Relations et conflits avec les Swazi (sud-est). Relations complexes avec les Tsonga/Shangaan (Lowveld oriental). Raids des Ndebele/Matabele (Mzilikazi, 1820-1830), repoussés par Sekwati I. Alliance tactique avec les Swazi contre les Bapedi (contexte de la guerre anglo-zouloue). Relation historique avec les Tswana (Bakgatla) à l'ouest. Conflits fonciers avec les fermiers boers du Transvaal tout au long du 19e siècle.",
+      "conflictsOrAlliances": "Résistance aux raids de Mzilikazi (1823-1840). Guerres Pedi-ZAR (1876 : Bapedi victorieux à la bataille de Malaletsi contre les Boers). Invasion britannique et défaite (novembre 1879); Sekhukhune I capturé. Assassinat de Sekhukhune I par Mampuru II (1882) aidé par les Britanniques. Intégration au Transvaal britannique (1902). Apartheid et résistance: les Bapedi fournirent d'importants cadres à l'ANC; Peter Mokaba, Cyril Ramaphosa (origines limpopo) sont des figures de la libération.",
+      "diaspora": "Les Bapedi ont migré massivement depuis les années 1880 vers les mines d'or du Rand (Johannesburg, Ekurhuleni) et les mines de platine de Rustenburg. Environ 40 % des hommes adultes étaient absents comme travailleurs migrants dans les années 1960. Communautés importantes à Johannesburg, Soweto, Pretoria (Attridgeville, Ga-Rankuwa). Migrations à l'international limitées. Le lien avec le Sekhukhuneland (Limpopo) reste fort comme foyer identitaire."
+    },
+    "demography": {
+      "totalPopulation": 6000000,
+      "referenceYear": 2025,
+      "source": "Statistics South Africa, Census 2022 (5,97 millions de locuteurs sepedi, 10 % de la population, 4e langue SA); South Africa Gateway (southafrica-info.com, données Census 2022, publiées mars 2025); PeopleGroups.org (Northern Sotho of South Africa : 4,24 millions, estimation plus conservative). Population de la province du Limpopo : 5,9 millions (2022 SA Census).",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 6000000,
+          "note": "Principalement dans la province du Limpopo (Sekhukhuneland, Greater Tzaneen, Phalaborwa), Gauteng (Pretoria, Johannesburg), Mpumalanga (Bushbuckridge)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Pedi people (Northern Sotho). https://en.wikipedia.org/wiki/Pedi_people",
+      "Wikipedia EN — Northern Sotho (Sepedi language). https://en.wikipedia.org/wiki/Sepedi",
+      "Ethnologue (SIL) — Northern Sotho (nso). https://www.ethnologue.com/language/nso/",
+      "Statistics South Africa — Census 2022 Cultural Dynamics (mars 2025). https://www.statssa.gov.za",
+      "South Africa Gateway — Languages of South Africa (2025). https://southafrica-info.com/arts-culture/the-languages-of-south-africa/",
+      "PeopleGroups.org — Northern Sotho of South Africa. https://peoplegroups.org/people_groups/pg033365/",
+      "Monnig, H.O. — The Pedi. Pretoria: Van Schaik, 1967.",
+      "Delius, Peter — The Land Belongs to Us: The Pedi Polity, the Boers and the British in the Nineteenth-Century Transvaal. Berkeley: University of California Press, 1984.",
+      "Qiraat Africa — Pedi people of South Africa (2024). https://qiraatafrican.com/en/14630/pedi-people-of-south-africa/"
+    ]
+  }
+}

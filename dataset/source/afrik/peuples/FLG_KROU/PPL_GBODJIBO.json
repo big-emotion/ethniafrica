@@ -1,0 +1,94 @@
+{
+  "id": "PPL_GBODJIBO",
+  "nameMain": "Gbodjibo",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Gbodjibo",
+      "selfAppellation": "Gbodjibo",
+      "exonyms": [
+        "Gbodjibo (terme utilisé dans la littérature académique et administrative ivoirienne)"
+      ],
+      "originOfExonyms": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Gbodjibo est utilisé de façon courante dans la région et la littérature ivoirienne pour désigner ce sous-groupe krou de Côte d'Ivoire. Il est également associé à la localité de Godjiboué en pays Godié, sous-préfecture de Sago, région de Sassandra, ce qui témoigne de la proximité géographique et culturelle entre ces deux groupes krou voisins.",
+      "linguisticFamily": "FLG_KROU",
+      "ethnoLinguisticGroup": "Krou oriental (branche Dida-Guébie)",
+      "historicalRegion": "Région forestière du centre-sud de la Côte d'Ivoire, zone de Gagnoa, Gnagbodougnoa et Lakota, à la jonction des espaces bété et dida",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": [
+      "Gbodjibo du Nord – sous-groupe septentrional, région de Gagnoa",
+      "Gbodjibo du Sud – sous-groupe méridional, zone de Lakota",
+      "Gbodjibo de Gnagbodougnoa – groupe du village principal, dont environ deux tiers des habitants sont locuteurs gbodjibo ; le tiers restant est composé de locuteurs Lobi déplacés lors de la crise nationale ivoirienne des années 1990",
+      "Sous-groupes claniques régionaux rattachés au continuum Dida-Gbodjibo-Guébie"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Gbodjibo font partie du continuum ethnolinguistique krou du centre-sud ivoirien, apparenté aux Dida avec qui ils partagent des origines migratoires communes issues du grand mouvement krou. Selon les traditions orales krou, ces populations descendent des groupes ayant migré depuis les régions forestières libériennes et guinéennes vers la Côte d'Ivoire entre le 13e et le 15e siècle. Le Gbodjibo est classifié dans la branche orientale des langues krou, très proche du dida de Lakota et du guébie (Gaɓogbo), occupant une position géographique et linguistique intermédiaire entre ces deux langues.",
+      "formationPeriod": "La formation d'une identité gbodjibo distincte s'est opérée par différenciation progressive au sein du continuum dida-krou, sur plusieurs siècles de résidence dans la zone forestière du centre-sud ivoirien, entre les espaces bété à l'est et gouro au nord.",
+      "migrationRoutes": [
+        "Depuis la zone libéro-guinéenne vers les forêts du centre-sud de la Côte d'Ivoire, selon le schéma migratoire commun aux peuples krou",
+        "Dispersion progressive dans les villages forestiers de la zone Gagnoa-Lakota à partir des établissements initiaux"
+      ],
+      "historicalSettlementZones": [
+        "Village de Gnagbodougnoa, principal centre gbodjibo, situé à environ 30 km au sud-ouest de Gagnoa et 30 km à l'est de Lakota",
+        "Région forestière du centre-sud de la Côte d'Ivoire, zone autour de Gagnoa et Lakota",
+        "Forêts tropicales humides du bassin du Sassandra"
+      ],
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts partageant une identité culturelle et linguistique commune avec les Dida. Pas d'unité politique centralisée. La présence de locuteurs Lobi déplacés dans le village de Gnagbodougnoa illustre les recompositions démographiques récentes.",
+      "externalInfluences": "Contacts avec les peuples voisins Bété, Dida, Guébie et Gouro. Influence du christianisme depuis la période coloniale. Intégration progressive dans l'économie ivoirienne (cacao, café). Pression démographique exercée par les déplacés internes lors des crises politiques ivoiriennes.",
+      "majorHistoricalEvents": "Les Gbodjibo ont partagé la résistance à la colonisation française commune aux peuples krou du centre-sud ivoirien. Ils ont été intégrés aux structures politiques et administratives ivoiriennes après l'indépendance de 1960. Le village de Gnagbodougnoa, principal centre gbodjibo, a accueilli des locuteurs Lobi déplacés lors de la crise nationale ivoirienne des années 1990."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles villageoises, avec des conseils d'anciens assurant la gouvernance communautaire. Système proche de celui des Dida et Bété voisins : décentralisation, absence d'autorité politique supravillageoise permanente. Le chef villageois joue un rôle d'arbitrage des conflits, de représentation de la communauté et de garde des traditions.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages. Les clans partagent généralement un ancêtre commun et des interdits alimentaires spécifiques. L'appartenance clanique détermine les droits fonciers et l'identité sociale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'identité, les droits fonciers et les alliances matrimoniales. L'héritage et les responsabilités rituelles sont transmis au sein des lignages. Chaque lignage possède des interdits alimentaires spécifiques et maintient le culte des ancêtres fondateurs. Le mariage exogamique est la règle : on se marie en dehors du lignage.",
+      "religiousAuthority": "Autorité des prêtres traditionnels et des anciens en matière religieuse et spirituelle. Ils assurent la médiation entre le monde des vivants et celui des ancêtres, gardent les objets sacrés et président les rites communautaires. Influence croissante du christianisme au 20e siècle, mais pratiques traditionnelles maintenues en parallèle."
+    },
+    "languages": {
+      "mainLanguage": "Gbodjibo (langue krou, branche orientale)",
+      "isoCodes": ["gbb"],
+      "dialects": [
+        "Dialecte septentrional (Gbodjibo du Nord), parlé dans la zone de Gagnoa",
+        "Dialecte méridional (Gbodjibo du Sud), parlé dans la zone de Lakota"
+      ],
+      "vehicularRole": "Le gbodjibo est parlé par les membres de la communauté dans sept villages de la région, le plus grand (Gnagbodougnoa) comptant environ 1 000 habitants, dont deux tiers de locuteurs gbodjibo. Le français est la langue de l'éducation et de l'administration ivoirienne. Le dioula sert de langue véhiculaire régionale. Les travaux de classification krou (Berkeley 2020, Language Science Press) soulignent la position intermédiaire du gbodjibo entre le bété de Gagnoa (environ 150 000 locuteurs) et le dida de Lakota (environ 94 000 locuteurs)."
+    },
+    "culture": {
+      "majorRites": "Cérémonies d'initiation marquant le passage de l'enfance à l'âge adulte : séparation, réclusion en forêt, épreuves physiques et morales, réintégration dans la communauté sous un nouveau statut. Rites de passage associés aux étapes clés de la vie (naissance, puberté, mariage, mort). Funérailles comportant plusieurs étapes rituelles : veille, annonce au conseil de famille, règlement des dettes et affaires du défunt, repas communautaire. Cérémonies de réconciliation interclaniques. Rites agricoles avant les semailles : invocations pour la protection des récoltes et la baraka.",
+      "symbols": "Symboles culturels gbodjibo liés au monde naturel de la forêt tropicale, aux ancêtres fondateurs des clans et aux forces de la nature. Les objets rituels (masques, statuettes, objets fétiche) utilisés lors des cérémonies d'initiation constituent le patrimoine matériel sacré. L'identité gbodjibo est également symbolisée par le territoire forestier et les lieux sacrés associés aux ancêtres.",
+      "artsAndMusic": "Musique traditionnelle rythmée par des percussions (tam-tams, instruments à membranes) et des instruments à vent. Danses communautaires célébrées lors des événements festifs et funèbres. Tradition orale vivante : conteurs transmettant histoire, généalogies et récits mythiques de génération en génération. Artisanat : poterie, tissage de pagnes, sculpture sur bois. Ces pratiques s'inscrivent dans le continuum culturel des peuples krou du centre-sud ivoirien, avec des influences des masques bété voisins et des pagnes en raphia dida.",
+      "spiritualities": "Croyances animistes fondées sur le culte des ancêtres et la vénération des forces naturelles (esprits de la forêt, de l'eau, de la terre). Croyance en un Dieu créateur suprême, selon le schéma commun aux peuples krou (Nyesoa ou désignation locale équivalente). Les ancêtres défunts restent présents dans le monde des vivants et peuvent influencer les événements. Le fétiche sert de lien entre le monde des esprits et celui des vivants. Influence croissante du christianisme (protestantisme et catholicisme) depuis la colonisation. Certains rites traditionnels persistent parallèlement aux pratiques chrétiennes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles villageoises sans royauté ou structure politique centralisée. Intégration progressive dans les structures politiques ivoiriennes depuis l'indépendance (1960). Les chefs traditionnels servent d'intermédiaires entre la communauté et les autorités étatiques.",
+      "relationsWithNeighbors": "Relations de voisinage avec les Bété, les Dida, les Guébie et les Gouro. Échanges commerciaux et culturels dans la zone forestière du centre-sud. Pactes d'alliance et de non-agression avec les peuples voisins, selon les traditions krou de cohabitation dans la forêt guinéo-ivoirienne.",
+      "conflictsOrAlliances": "Intégration dans les réseaux d'alliances krou du centre-sud ivoirien. Pactes de paix et de non-agression avec les voisins. Participation aux dynamiques politiques ivoiriennes post-indépendance (1960). Relations intercommunautaires affectées par les crises politiques ivoiriennes des années 1990 et 2002-2011.",
+      "diaspora": "Diaspora gbodjibo dans les grandes villes ivoiriennes (Abidjan, Gagnoa, San-Pédro) liée à l'exode rural et aux opportunités économiques urbaines. Maintien de liens avec les communautés d'origine."
+    },
+    "demography": {
+      "totalPopulation": 20000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur SIL Ethnologue (langue gbodjibo, code gbb), recensements ivoiriens et études linguistiques sur les peuples krou. Groupe de petite taille au sein du continuum dida-krou. La population exacte est difficile à isoler des statistiques régionales ivoiriennes.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 20000,
+          "note": "Région forestière du centre-sud de la Côte d'Ivoire, principalement autour de Gnagbodougnoa (30 km au sud-ouest de Gagnoa, 30 km à l'est de Lakota) et villages environnants"
+        }
+      ]
+    },
+    "sources": [
+      "SIL Ethnologue – Gbodjibo language (gbb). https://www.ethnologue.com/",
+      "Glottolog – Classification des langues krou. https://glottolog.org/",
+      "Language Science Press – Classification of Guébie within Kru (inclut données sur Gbodjibo). https://langsci-press.org/catalog/view/120/277/1090-2",
+      "UC Berkeley Linguistics – Guébie (Côte d'Ivoire) Language Snapshot. https://lx.berkeley.edu/publications/gu%C3%A9bie-c%C3%B4te-d%E2%80%99ivoire-ivory-coast-language-snapshot",
+      "Wikipedia FR – Krou (peuple). https://fr.wikipedia.org/wiki/Krou_(peuple)",
+      "Minority Rights Group – Krou in Côte d'Ivoire. https://minorityrights.org/communities/krou/",
+      "Joshua Project – Côte d'Ivoire people groups. https://joshuaproject.net/countries/iv",
+      "SearchWorks Stanford – Dynamique des institutions coutumières dida de Côte d'Ivoire. https://searchworks.stanford.edu/view/11373252"
+    ]
+  }
+}

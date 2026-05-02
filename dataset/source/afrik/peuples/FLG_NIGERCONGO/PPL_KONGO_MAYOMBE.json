@@ -1,0 +1,110 @@
+{
+  "id": "PPL_KONGO_MAYOMBE",
+  "nameMain": "Kongo (Mayombe)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["COG", "AGO", "COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Kongo (Mayombe)",
+      "selfAppellation": "Bayombe (pluriel), Muyombe (singulier)",
+      "exonyms": ["Yombe", "Kongo du Mayombe", "Bayombe de la foret"],
+      "originOfExonyms": "Le terme Yombe (ou Bayombe) designe le peuple kongo habitant la foret du Mayombe (ou Mayumbe), une region de collines forestieres s'etendant de la bouche du Congo vers le nord-ouest. Le nom Mayombe est d'origine locale (peut-etre du nom d'un chef ou d'un lieu). L'histoire orale Yombe trace leurs origines au clan Mbenza, migrant depuis le Gabon avant le 15e siecle. Le terme Palo Mayombe, utilise pour la religion afro-cubaine derivee du kongo, temoigne du rayonnement culturel des Bayombe dans la diaspora.",
+      "whyProblematic": "Le terme Kongo du Mayombe regroupe des populations reparties entre trois Etats (Republique du Congo, Angola/Cabinda, RDC) avec des dialectes locaux differencies. Les Yombe du Congo-Brazzaville, de Cabinda et du Kongo Central (RDC) ont des identites qui se recoupent mais ne sont pas identiques. La foret du Mayombe, habitat principal du groupe, est un ecosysteme menace par l'exploitation forestiere.",
+      "contemporaryUsage": "Les Bayombe s'identifient d'abord comme Yombe, puis comme Bakongo au sens large. Le terme Yombe est utilise dans les contextes academiques, artistiques (en reference a l'art Yombe) et dans la denomination de la religion afro-cubaine Palo Mayombe. En Republique du Congo, les Yombe sont classes parmi les sous-groupes Bakongo du sud-ouest.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Zone H (groupe H.16c, Kiyombe)",
+      "historicalRegion": "Foret du Mayombe : region de collines boisees de la cote atlantique de l'Afrique centrale, couvrant le Kouilou (Congo-Brazzaville), le Bas-Congo (RDC), l'enclave de Cabinda (Angola) et une bande du Gabon meridional",
+      "currentCountries": ["COG", "AGO", "COD"]
+    },
+    "ethnicities": [
+      "Yombe du Kouilou (Congo-Brazzaville) : sous-groupe principal, region autour de Dolisie et du Kouilou",
+      "Yombe de Cabinda (Angola) : populations de la partie angolaise de la foret du Mayombe",
+      "Yombe du Kongo Central (RDC) : populations de l'extreme nord-ouest de la province du Kongo Central",
+      "Manyanga : peuple voisin et parent, qui a migre dans la region aux 16e-17e siecles et s'est partiellement assimile aux Yombe",
+      "Bwende : autre sous-groupe kongo de la region du Mayombe, installe dans la zone aux 17e siecle"
+    ],
+    "origins": {
+      "ancientOrigins": "L'histoire orale des Yombe indique une migration sud du clan Mbenza depuis l'actuel Gabon avant le 15e siecle. Les sources orales et ecrites les associent au royaume historique de Mayomba (Mayombe), qui aurait flouri au 16e siecle dans la region. Ils font partie du grand ensemble bantou (Zone H) qui s'est repandu en Afrique centrale occidentale depuis les Grassfields du Cameroun ou des regions de la grande foret congolaise entre 1000 av. J.-C. et 500 ap. J.-C.",
+      "formationPeriod": "L'identite yombe distincte se consolide entre le 15e et le 17e siecle. Durant les 16e et 17e siecles, les migrations des Manyanga puis des Bwende dans la region ont conduit a des assimilations. A la fin du 17e siecle, les expansions Kongo et Solongo ont force les Yombe a se retirer des berges du fleuve Congo vers l'interieur de la foret. Leur identite specifique est renforcee par leur adaptation a l'ecosysteme forestier du Mayombe.",
+      "migrationRoutes": [
+        "Migration du clan Mbenza depuis le Gabon vers le sud, avant le 15e siecle (sources orales)",
+        "Retrait vers l'interieur de la foret du Mayombe sous la pression des expansions Kongo et Solongo (fin 17e siecle)",
+        "Assimilation progressive des Manyanga et Bwende arrivant dans la region (16e-17e siecles)",
+        "Exportation dans la diaspora atlantique via la traite negriere (16e-19e siecles), donnant naissance au Palo Mayombe cubain"
+      ],
+      "historicalSettlementZones": [
+        "Foret du Mayombe (Kouilou, Congo-Brazzaville) : habitat forestier principal",
+        "Plateaux et collines du Mayombe (Cabinda, Angola) : zone Yombe de l'enclave",
+        "Extreme nord-ouest du Kongo Central (RDC)",
+        "Villes de Dolisie, Nkayi et Pointe-Noire (Congo-Brazzaville) : urbanisation progressive"
+      ],
+      "unificationsOrDivisions": "Les Yombe forment un sous-groupe relativement coherent, uni par la langue kiyombe et les traditions culturelles communes. Ils sont cependant fragmentes entre trois pays par les frontieres coloniales, ce qui limite les echanges inter-communautaires. Aucune structure politique unifiee supra-locale n'existe entre les Yombe des differents pays. Les chefferies locales (nsi) restent les unites politiques fondamentales.",
+      "externalInfluences": "Contact avec les marchands europeens via les ports de Cabinda et de la cote du Kouilou (16e siecle). Christianisation progressive, plus tardive que chez les Kongo du littoral. Exploitation de la foret du Mayombe par les compagnies coloniales, perturbant les modes de vie forestiers. En Angola, les Yombe ont ete touches par la guerre civile angolaise (1975-2002). La menace sur la foret du Mayombe (exploitation forestiere, agriculture) affecte directement leurs modes de vie.",
+      "majorHistoricalEvents": "16e siecle : floraison du royaume de Mayomba et integration dans les circuits commerciaux atlantiques. 16e-19e siecles : traite negriere touchant les Yombe, contribuant a la creation du Palo Mayombe cubain. Fin 17e siecle : repli des Yombe vers l'interieur de la foret. 1885-1960 : colonisation partageant les Yombe entre Congo francais, Angola portugais et Congo belge. 1975-2002 : guerre civile angolaise affectant les Yombe de Cabinda. Depuis 1980 : deforestation acceleree du Mayombe."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe yombe est organisee autour de neuf clans (basant tous leur genealogie sur les neuf filles de l'ancetre Mbaangala). La structure politique est decentralisee : des chefs de terre (fumu nsi) locaux, aux pouvoirs a la fois judiciaires et religieux, gouvernent des communautes villageoises. Historiquement, les Yombe ont reconnu un chef supreme, mais aujourd'hui les chefs sont localises. Le chef de clan (mfumu makanda) est elu par les membres du clan sur la base de sa richesse et de ses qualites oratoires.",
+      "clanOrganization": "Les Yombe reconnaissent neuf clans matrilineaires principaux, tous traces a Mbaangala (ancetre commun) qui avait neuf filles fondatrices. La descent se fait par la ligne maternelle. Chaque clan a son chef (mfumu makanda), ses regles morales propres et ses terres ancestrales. Les affiliations claniques sont plus importantes que les appartenances villageoises dans la structuration sociale. La patrilinearite pour certains droits (terres de culture) coexiste avec la matrilinearite pour l'heritage du statut.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le lignage matrilineaire (kanda) determine les droits sur les terres ancestrales, l'identite sociale, les alliances matrimoniales et les successions. Les hommes transmettent leur statut a leurs neveux uterins. Les conflits entre lignages sont arbitres par les chefs de clan et parfois par les nganga. La cohesion du lignage est renforcee lors des grandes ceremonies (funerailles, mariages, initiations).",
+      "religiousAuthority": "Les nganga (pretres-guerisseurs) ont une importance particuliere chez les Yombe de la foret du Mayombe. Leur connaissance des plantes medicinales de la foret dense leur confere une autorite rituelle importante. Les Yombe sont connus pour leurs figures de nkisi nkonde (figures de clou), certaines des plus spectaculaires de l'art kongo. Ces figures sont activees par le nganga pour enforcer des serments, proteger les communautes ou punir les injustices. Le catholicisme et les eglises evangeliques sont bien implantes en zone urbaine."
+    },
+    "languages": {
+      "mainLanguage": "Kiyombe (Yombe)",
+      "isoCodes": ["yom"],
+      "dialects": [
+        "Kiyombe du Kouilou (Congo-Brazzaville) : variete principale, classee H16c",
+        "Kiyombe de Cabinda (Angola) : variete angolaise, proche mais avec specificites phonologiques",
+        "Kiyombe du Kongo Central (RDC) : variete de la zone frontaliere nord-ouest",
+        "Ibinda (Cabinda) : variete kongo specifique a Cabinda, parfois distinguee du Kiyombe"
+      ],
+      "vehicularRole": "Le kiyombe (ISO 639-3 : yom) est la langue vernaculaire des Bayombe. Il est classe H16c dans la classification Guthrie des langues bantoues. C'est l'une des varietes de kikongo les moins mutuellement intelligibles avec le Kisikongo central. Le francais est langue officielle en Republique du Congo (zone majoritaire des Yombe), le portugais en Angola. Le Kituba sert de vehiculaire dans les marches du sud du Congo. Des sources indiquent qu'un Nouveau Testament en kiyombe est disponible (Joshua Project)."
+    },
+    "culture": {
+      "majorRites": "Rites initiatiques : l'initiation des garcons comprend une periode de retraite en foret avec apprentissage des valeurs du clan. Rites funeraires : ceremonies elaborees de plusieurs jours, veillees nocturnes avec chants et danses. L'enterrement doit avoir lieu dans le village ancestral du defunt. Les Yombe sont connus pour leur tradition de pleureuses rituelles professionnelles. Rites de serments : l'activation d'un nkisi nkonde par un nganga pour valider un serment ou identifier un coupable est une pratique juridico-rituelle importante. Des lames ou des clous sont enfonces dans la figure pour materialiser l'engagement ou la sanction.",
+      "symbols": "Les nkisi nkonde (figures de clou) yombe sont parmi les oeuvres les plus connues de l'art africain. Ces figures en bois sont percees de pointes de metal (clous, lames) qui representent les serments, les contrats ou les maledictions qui leur ont ete confies. Chaque pointe correspond a un accord conclu par l'intermediaire du nganga. Ces figures ont ete exportees dans les Ameriques via la diaspora et ont influence l'art africain-americain et les pratiques du Palo Mayombe cubain. La couleur blanche (kaolin, mpemba) symbolise le monde des ancetres.",
+      "artsAndMusic": "Sculpture : les Yombe produisent des sculptures figuratives parmi les plus sophistiquees du monde kongo. Les nkisi nkonde (figures de clou), les statues de maternite (maman avec enfant), les couvercles sculptes et les statuettes de chefs sont des pieces phares. Les figures de maternite yombe (nkisi ya mukheto) representant une mere et son enfant sont reconnues comme des chefs-d'oeuvre de la sculpture africaine. Musique : les tambours ngoma accompagnent tous les rites. Le chant choral polyphonique est une tradition forte. Artisanat : la vannerie, le tissage de raphia, la poterie feminine et la fabrication d'instruments de musique sont des pratiques maintenues.",
+      "spiritualities": "La cosmologie yombe s'inscrit dans le cadre kongo general : Nzambi (dieu supreme), culte des ancetres (bakulu), esprits de l'eau (simbi), minkisi (charmes). Les nganga de la foret du Mayombe sont reputes comme de grands maitres spirituels, leur acces aux plantes rares de la foret dense leur conferant des pouvoirs exceptionnels. Le Palo Mayombe cubain est une religion afro-americaine directement derivee des traditions kongo-yombe transportees via la traite negriere. Le catholicisme est present depuis la colonisation. Le kimbanguisme a egalement des adherents dans la region."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Yombe sont historiquement associes au royaume de Mayomba (Mayombe), qui aurait flouri au 16e siecle dans la region forestiere. Ce royaume participait au commerce atlantique via les ports cotiers. Apres l'affaiblissement de ce royaume, les Yombe ont vecu sous des chefferies locales autonomes, sans structure politique centralisee. Ils ont maintenu des relations tributaires ou commerciales avec le Royaume de Loango et le Royaume du Kongo selon les periodes.",
+      "relationsWithNeighbors": "Les Yombe ont entretenu des relations complexes avec les Vili (Bavili) sur la cote, les Sundi au nord, les Solongo et Kongo au sud et a l'est. Les expansions Kongo et Solongo a la fin du 17e siecle ont force les Yombe a se retirer de la cote et des berges du fleuve vers l'interieur forestier. Des relations commerciales existent avec les peuples de la foret congolaise comme les Pygmees (Babongo) qui habitent egalement le Mayombe. Les Yombe ont absorbe des elements des Manyanga et Bwende qui ont migre dans leur territoire.",
+      "conflictsOrAlliances": "Fin 17e siecle : repli force sous la pression des expansions Kongo et Solongo. 16e-19e siecles : integration dans le commerce de la traite atlantique via les ports de Loango et de Cabinda. 1885-1960 : partage colonial entre Congo francais, Angola portugais et Congo belge. 1975-2002 : les Yombe de Cabinda touches par les conflits autour de la question de l'independance de Cabinda et par la guerre civile angolaise. Conflits recents lies a l'exploitation forestiere et au depostillage des terres ancestrales.",
+      "diaspora": "Les traditions du Palo Mayombe (Cuba), une religion afro-americaine directement derivee des croyances kongo-yombe, temoignent de la deportation massive de Bayombe dans les Ameriques entre le 16e et le 19e siecles. Des communautes de Yombe vivent dans les villes du Congo-Brazzaville (Dolisie, Pointe-Noire, Brazzaville) et en Angola (Luanda). Des Yombe font partie de la diaspora bakongo en Europe, notamment en France et en Belgique."
+    },
+    "demography": {
+      "totalPopulation": 600000,
+      "referenceYear": 2025,
+      "source": "Estimations consolidees : Yombe du Congo-Brazzaville (region du Kouilou, Niari) : environ 350 000 personnes. Yombe de Cabinda et du Kongo Central (RDC) : environ 250 000 personnes. Source principale : zyama.com African Art Museum (population Yombe estimee a 350 000 pour la zone RDC-Congo). Joshua Project (kiyombe, yom). Minority Rights Group International. Données ajustées pour 2025 selon la croissance demographique regionale.",
+      "distributionByCountry": [
+        {
+          "country": "COG",
+          "population": 350000,
+          "note": "Principalement dans la region du Kouilou (Dolisie, Nkayi) et la foret du Mayombe congolaise. Font partie des Bakongo (41% de la population nationale)."
+        },
+        {
+          "country": "AGO",
+          "population": 200000,
+          "note": "Foret du Mayombe de la province de Cabinda principalement. Font partie de la majorite bakongo de l'enclave."
+        },
+        {
+          "country": "COD",
+          "population": 50000,
+          "note": "Extreme nord-ouest de la province du Kongo Central, zone frontaliere avec le Congo-Brazzaville."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Mayombe. https://en.wikipedia.org/wiki/Mayombe",
+      "Wikipedia EN — Kongo people. https://en.wikipedia.org/wiki/Kongo_people",
+      "Wikipedia EN — Kongo language (Kiyombe H16c). https://en.wikipedia.org/wiki/Kongo_language",
+      "Wikipedia EN — Yombe. https://en.wikipedia.org/wiki/Yombe",
+      "African Art Museum (zyama.com) — Yombe People. http://www.zyama.com/Iowa/Peoples/Yombe%20People.htm",
+      "SIL Ethnologue — Kiyombe (yom). https://www.ethnologue.com/language/yom/",
+      "Joshua Project — Kiyombe language resources. https://joshuaproject.net/countries/cf",
+      "Minority Rights Group International — Republic of Congo. https://minorityrights.org/country/republic-of-congo/",
+      "Berggorilla & Regenwald Direkthilfe — Mayombe forest. https://www.berggorilla.org/en/gorillas/protected-areas-for-gorillas/protected-areas-for-gorillas/the-struggle-for-survival-in-the-maiombe-forest-continues/",
+      "VCU Scholars Compass — Transformation of Kongo Minkisi (Palo Mayombe). https://scholarscompass.vcu.edu/cgi/viewcontent.cgi?article=1077&context=etd"
+    ]
+  }
+}

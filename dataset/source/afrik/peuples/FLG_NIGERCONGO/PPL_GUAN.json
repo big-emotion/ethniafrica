@@ -1,0 +1,114 @@
+{
+  "id": "PPL_GUAN",
+  "nameMain": "Guan",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA", "TGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Guan",
+      "selfAppellation": "Guan",
+      "exonyms": ["Guang", "Guan"],
+      "originOfExonyms": "Le terme Guan ou Guang est utilise de facon interchangeable. Il s'agit d'un terme collectif designant un ensemble de sous-groupes linguistiquement apparentes. Le terme n'a pas d'origine exonyme specifique identifiee; il est utilise a la fois par les membres du groupe et les observateurs exterieurs.",
+      "whyProblematic": "Le terme Guan designe en realite un ensemble heterogene de peuples partageant une parente linguistique plutot qu'une identite ethnique unique. Certains sous-groupes comme les Etsii sont assimiles aux Fante et ne se reconnaissent plus necessairement comme Guan.",
+      "contemporaryUsage": "Le terme Guan est utilise officiellement par le Ghana Statistical Service dans les recensements. Il designe une categorie englobant de nombreux sous-groupes distincts presents dans 12 regions du Ghana.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Guan (groupe ethno-linguistique Niger-Congo, branche Kwa)",
+      "historicalRegion": "Centre et nord du Ghana, vallee de la Volta",
+      "currentCountries": ["GHA", "TGO"]
+    },
+    "ethnicities": [
+      "Gonja",
+      "Akyode",
+      "Krachi",
+      "Nkonya",
+      "Logba",
+      "Anum",
+      "Larteh",
+      "Akposo",
+      "Etsii",
+      "Nawuri",
+      "Nyagbo",
+      "Ntsumburu",
+      "Buem",
+      "Avatime",
+      "Tafi"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Guan sont consideres comme les premiers habitants du Ghana meridional actuel. Ils seraient originaires des regions de savane du Ghana et du Burkina Faso, peuplees par les Mossi-Dagbon. Des traditions orales et etudes linguistiques situent leur presence en Afrique de l'Ouest bien avant les grandes migrations akan.",
+      "formationPeriod": "Migration principale vers 1000 apres J.-C. depuis la region Mossi-Dagbon du Ghana et du Burkina Faso actuels vers le sud du Ghana. Les Gonja, un sous-groupe guan du nord, sont des colons tardifs qui envahirent le Dagbon oriental dans les annees 1600.",
+      "migrationRoutes": [
+        "Migration depuis la region Mossi-Dagbon (Ghana/Burkina Faso actuels) vers 1000 apr. J.-C.",
+        "Descente vers le sud le long de la vallee de la Volta",
+        "Dispersion progressive dans toutes les regions du Ghana meridional",
+        "Sous-groupe Gonja: migration ulterieure au 17e siecle vers le nord du Ghana via le Volta noir"
+      ],
+      "historicalSettlementZones": [
+        "Region orientale du Ghana: Anum, Boso, Larteh, Okere, Kyerepong",
+        "Region Oti: Akyode, Krachi, Buem, Nkonya, Likpe, Santrokofi, Akpafu",
+        "Region Volta: Avatime, Logba, Nyagbo, Tafi",
+        "Region centrale: Efutu, Awutu-Senya, Bawjiase (Etsii)",
+        "Nord du Ghana et Brong Ahafo: Gonja et Nawuri",
+        "Grande Accra: Kpeshie (assimiles)"
+      ],
+      "unificationsOrDivisions": "Le groupe Guan n'a jamais forme une entite politique unifiee. Il s'agit d'un ensemble de sous-groupes linguistiquement apparentes mais politiquement distincts. Certains sous-groupes comme les Etsii ont ete assimiles a la Confederation Fante. D'autres, comme les Gonja, ont fonde leurs propres royaumes.",
+      "externalInfluences": "Assimilation progressive par les grands groupes ethniques voisins (Akan, Ewe, Dagbani) selon la region. Les Guan ont generalement adopte les langues des groupes majoritaires tout en preservant la leur a la maison. Influence mande et haoussa sur les Gonja du nord.",
+      "majorHistoricalEvents": "Les Guan furent les premiers residents du territoire aujourd'hui appele Ghana. Leur premier contact avec les peuples Akan et Ga date de plusieurs siecles. Les Gonja (sous-groupe guan) envahirent le Dagbon oriental dans les annees 1600, capturant Daboya et de nombreuses villes. Okomfo Anokye, pretre et legislateur du 17e siecle co-fondateur de l'Empire Ashanti, etait d'origine Guan."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Pas de systeme politique unifie pour l'ensemble des Guan. Chaque sous-groupe possede ses propres structures de gouvernance. Les chefferies Guan ont des chefs dont la descendance est souvent issue d'envahisseurs mande. Il existe aussi des chefs parmi les roturiers qui parlent les langues Tano. Les Guan vivent generalement en groupes compacts de villages d'environ 300 personnes.",
+      "clanOrganization": "Organisation clanique variable selon les sous-groupes. Les Guan sont generalement tres tolerants et vivent en tant que roturiers dans leurs differents environnements, adoptant souvent les langues des groupes majoritaires locaux.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages varient selon les sous-groupes. Dans les chefferies Guan, la descendance matrilineaire et patrilineaire coexistent selon les traditions locales.",
+      "religiousAuthority": "Traditions religieuses syncrétiques melant animisme, christianisme et islam selon les regions et sous-groupes. Okomfo Anokye, figure spirituelle majeure du 17e siecle, etait d'origine Guan."
+    },
+    "languages": {
+      "mainLanguage": "Langues Guan (groupe de langues Kwa, Niger-Congo)",
+      "isoCodes": ["gjn", "nko", "eto", "avu", "lgq", "awn"],
+      "dialects": [
+        "Gikyode (Akyode)",
+        "Anii (Anum, Basila)",
+        "Ikpana (Logba)",
+        "Ngbanya (Gonja)",
+        "Nawuri",
+        "Larteh"
+      ],
+      "vehicularRole": "Les Guan parlent generalement la langue du groupe majoritaire de leur region tout en conservant leur propre langue a la maison. Certaines langues Guan, notamment l'Anii-Basila, sont influencees par les grandes langues regionales. Les langues Guan forment une branche distincte au sein des langues Kwa."
+    },
+    "culture": {
+      "majorRites": "Les pratiques rituelles varient selon les sous-groupes. Traditions agricoles et de peche dans les regions de la Volta. Ceremonies de chefferie maintenues par les groupes ayant preserve leurs structures politiques propres.",
+      "symbols": "La diversite linguistique et culturelle est la caracteristique distinctive des Guan. L'arbre de l'iroko (fromager) est symboliquement associe aux Guan dans certaines traditions orales.",
+      "artsAndMusic": "Riche tradition orale transmise par les anciens. Artisanat textile, poterie et sculpture selon les sous-groupes. Traditions musicales propres a chaque communaute Guan.",
+      "spiritualities": "Pratiques religieuses syncrétiques: animisme traditionnel, christianisme (majoritaire dans le sud) et islam (majoritaire chez les Gonja du nord). La figure spirituelle majeure du 17e siecle Okomfo Anokye, co-fondateur de l'Empire Ashanti, est d'origine Guan."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Guan n'ont pas forme de royaume unifie. Chaque sous-groupe a ses propres chefferies. Le plus notable est le Royaume de Gonja (fonde en 1675 par Ndewura Jakpa). Les Etsii du centre s'integrerent dans la Confederation Fante.",
+      "relationsWithNeighbors": "Les Guan sont generalement tres tolerants et s'integrent comme roturiers dans leurs environnements. Certains groupes furent assimiles par les Akan, Ewe et d'autres grands groupes. Les Gonja (nord) eurent des relations conflictuelles avec le Dagbon au 17e siecle. Les Guan du sud eurent des echanges denses avec les peuples Akan voisins.",
+      "conflictsOrAlliances": "Invasion du Dagbon oriental par les Gonja dans les annees 1600, capturant Daboya et de nombreuses villes. Alliance des Etsii avec la Confederation Fante. Dispersion pacifique de la plupart des sous-groupes Guan au fil des siecles.",
+      "diaspora": "Les Guan sont distribues dans 12 des 16 regions du Ghana actuel. Presence minoritaire au Togo (Akposo). Peu de diaspora internationale documentee."
+    },
+    "demography": {
+      "totalPopulation": 1260000,
+      "referenceYear": 2025,
+      "source": "Ghana Statistical Service, recensement 2021: les Guan representent 3,7% de la population du Ghana (30,8 millions); estimation 2025 ajustee au taux de croissance annuel du Ghana (env. 2,2%)",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 1250000,
+          "note": "Presents dans 12 regions sur 16; majorite dans les regions Oti, Est, Volta, Centre et Nord"
+        },
+        {
+          "country": "TGO",
+          "population": 10000,
+          "note": "Sous-groupe Akposo, nord-ouest du Togo"
+        }
+      ]
+    },
+    "sources": [
+      "Guan people – Wikipedia, en.wikipedia.org/wiki/Guan_people (consulte 2025)",
+      "Guang people – 101 Last Tribes, www.101lasttribes.com/tribes/guang.html (consulte 2025)",
+      "Ghana Statistical Service – 2021 Population and Housing Census, census2021.statsghana.gov.gh (2022)",
+      "Gonja people – Wikipedia, en.wikipedia.org/wiki/Gonja_people (consulte 2025)",
+      "City Population – Guan District Ghana, www.citypopulation.de/en/ghana/admin/oti/1509__guan/ (2021)"
+    ]
+  }
+}

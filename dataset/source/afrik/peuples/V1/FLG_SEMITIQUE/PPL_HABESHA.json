@@ -1,0 +1,78 @@
+{
+  "id": "PPL_HABESHA",
+  "nameMain": "Habesha",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": ["ETH", "ERI"],
+  "content": {
+    "appellations": {
+      "mainName": "Habesha",
+      "selfAppellation": "Habesha (አበሻ) / Habeshat",
+      "exonyms": [
+        "Abyssin (terme historique européen), ETHns (terme géographique moderne)"
+      ],
+      "linguisticFamily": "FLG_SEMITIQUE",
+      "ethnoLinguisticGroup": "Sémitiques méridionaux (éthiosémitiques)",
+      "historicalRegion": "Hauts plateaux éthiopiens et érythréens",
+      "currentCountries": ["ETH", "ERI"]
+    },
+    "ethnicities": [
+      "Amhara",
+      "Tigréens (Tigray)",
+      "Tigré (Érythrée)",
+      "Guragé",
+      "Argobba",
+      "Harari",
+      "Gafat (éteint)",
+      "Geez (éteint, langue liturgique)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Habesha sont originaires des hauts plateaux d'Éthiopie et d'Érythrée. Leur présence dans la région remonte à l'Antiquité, avec des liens avec l'Arabie du Sud (Saba/Himyar).",
+      "unificationsOrDivisions": "Formation de l'empire éthiopien unifiant différents groupes habesha. Divisions historiques entre Tigréens et Amhara. Séparation Éthiopie/Érythrée en 1993.",
+      "externalInfluences": "Influences sabéennes, grecques, coptes, et plus tard arabes. Christianisme orthodoxe éthiopien comme élément unificateur."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Système impérial éthiopien avec empereur (Negus Negast). Organisation féodale traditionnelle avec noblesse (mekwanint) et paysannerie.",
+      "clanOrganization": "Structure clanique et lignagère importante, particulièrement chez les Tigréens et les Amhara. Organisation en familles étendues.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et le statut social. Importance de la généalogie et des origines nobles.",
+      "religiousAuthority": "Autorité de l'Église orthodoxe éthiopienne (Tewahedo). Rôle central des prêtres et des monastères dans la vie sociale et culturelle."
+    },
+    "languages": {
+      "mainLanguage": "Amharique, Tigrinya, Guragé, Harari",
+      "vehicularRole": "L'amharique est la langue officielle de l'Éthiopie et langue véhiculaire majeure. Le tigrinya est langue officielle en Érythrée. Le guèze est utilisé comme langue liturgique."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses orthodoxes éthiopiennes (Timkat, Meskel, Gena)",
+      "source_1": "Cérémonies de mariage traditionnelles",
+      "source_2": "Rites de passage (baptême, circoncision)",
+      "source_3": "Fêtes religieuses suivant le calendrier éthiopien",
+      "Symboles": "Croix éthiopienne, Lion de Juda, drapeau tricolore éthiopien, architecture des églises rupestres de Lalibela.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle éthiopienne (zema, chant liturgique)",
+      "source_5": "Danse traditionnelle (eskista)",
+      "source_6": "Peinture religieuse (icônes éthiopiennes)",
+      "source_7": "Architecture religieuse (églises rupestres, monastères)",
+      "source_8": "Littérature en guèze et amharique",
+      "Spiritualités": "Christianisme orthodoxe éthiopien (Tewahedo) majoritaire. Minorités musulmanes et juives (Beta Israel). Rôle central de la religion dans la culture habesha."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Importante diaspora habesha aux États-Unis, Canada, Europe, et autres pays. Communautés établies dans les grandes villes mondiales."
+    },
+    "demography": {
+      "totalPopulation": 35000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur CIA World Factbook, recensements éthiopiens et érythréens, et études démographiques"
+    },
+    "sources": [
+      "A History*",
+      "The Evolution of a Multiethnic Society*",
+      "SIL Ethnologue – Amharic, Tigrinya languages",
+      "CIA World Factbook – Ethiopia, Eritrea",
+      "Marcus, Harold G. – *A History of Ethiopia*",
+      "An Introduction to Country and People*"
+    ]
+  }
+}

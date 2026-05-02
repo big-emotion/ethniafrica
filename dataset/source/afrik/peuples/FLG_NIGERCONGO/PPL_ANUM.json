@@ -1,0 +1,79 @@
+{
+  "id": "PPL_ANUM",
+  "nameMain": "Anum",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Anum",
+      "selfAppellation": "Anum",
+      "exonyms": ["Anum-Boso"],
+      "originOfExonyms": "L'appellation Anum-Boso associe les deux communautes guang du bassin du Volta moyen, Anum et Boso, qui partagent la meme langue (gua) et une histoire commune. Anum designe le groupe principal et la ville ; Boso est la communaute adjacente au nord.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Anum est utilise seul pour la ville et la communaute ; Anum-Boso dans les sources academiques et les fiches de groupes de peuples pour designer l'ensemble ethno-linguistique.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Guan (Guang), branche Kwa du Niger-Congo",
+      "historicalRegion": "District d'Asuogyaman, region Est du Ghana, rive est du lac Volta",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Anum", "Anum-Boso"],
+    "origins": {
+      "ancientOrigins": "Les Anum appartiennent au bloc ethnique guan, considere comme parmi les premiers habitants du Ghana moderne, ayant migre vers l'an 1000 depuis la region mossi de l'actuel Burkina Faso en descendant vers le sud via la vallee de la Volta. Les fondateurs de Boso (groupe frere) viendraient originellement de Dan pres d'Atebubu dans le bassin de la Sene-Pru. Le premier representant Anum arrive sur le site actuel en 1724, envoye par son aine Kolihue depuis Nyanawase pour trouver leurs amis guan et etablir un peuplement independant.",
+      "formationPeriod": "1724-1728 : etablissement du site d'Osase (actuel Anum) ; consolidation comme communaute independante guan apres la rupture avec l'Akwamu.",
+      "migrationRoutes": [
+        "Depuis la region mossi (actuel Burkina Faso) vers le sud via la vallee de la Volta (migration guan, vers l'an 1000)",
+        "Depuis Dan pres d'Atebubu (bassin de la Sene-Pru) vers la cote, avec etablissement a Afutu pres de Simpa",
+        "Depuis Nyanawase (Akwamufie) vers Osase (actuel Anum) sous la conduite de Kwasi Anyane en 1724",
+        "Migration temporaire vers le bassin du Volta moyen en 1869-1871 lors de l'invasion asante d'Adu Bofour"
+      ],
+      "historicalSettlementZones": [
+        "Osase (devenu Anum), district d'Asuogyaman, region Est du Ghana",
+        "Rive est du lac Volta",
+        "Asikuma (sous la paramount de Anum)"
+      ],
+      "unificationsOrDivisions": "Les Anum, allies aux Boso, ont cherche a establir un peuplement guan independant de l'Akwamu depuis 1724. La suzerainete de l'Akwamu s'est etendue sur Anum, Boso, Peki et Awsome jusqu'en 1833, date ou ces communautes s'unirent pour renverser le joug akwamu. Les Anum et Boso sont devenus matrilineaux par adoption, contrairement a la majorite des zones guanophones.",
+      "externalInfluences": "Suzerainete de l'Akwamu (XVIIIe siecle) ; acculturation akan (Asante) influencant la structure politique (introduction de l'omanhene) ; afflux d'immigrants akan porteurs de tabourets ancestraux (Asante Ejisu, Akyem Begoro, Asante Mampon, etc.) ; invasion asante d'Adu Bofour (1869) ; colonisation britannique.",
+      "majorHistoricalEvents": "1724 : arrivee de Kwasi Anyane, premier representant Anum sur le site d'Osase. 1728 : arrivee du reste du groupe Anum. 1833 : renversement de la suzerainete Akwamu. 1869 : invasion de l'armee asante (40 000 soldats sous le general Adu Bofour, soutenu par 10 000 guerriers anlo) ; les Anum se refugient dans le bassin du Volta moyen. 1871 : retour apres le depart des forces asante. La divinite Letsu (qui abhorre l'effusion de sang) a attire de nombreux refugies akan sur le site d'Anum."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferie de type akan (adoptee sous influence akwamu et asante) : paramountcy d'Anum avec un omanhene (chef suzerain) ; Asikuma est une ville sous la paramount d'Anum. Le chef de la localite de Boso voisine a ete installe sur ordre de l'Akwamu Akoto pour unifier politiquement les communautes guan selon le modele akan.",
+      "clanOrganization": "Organisation clanique ; les Anum-Boso sont devenus matrilineaux par adoption (contrairement a la majorite des communautes guanophones qui sont patrilineaires). Presence de clans porteurs de tabourets ancestraux : Abrade-Stool, Asafo Agyei Stool (Asante Ejisu), Agyeman Koboa Stool (Akyem Begoro), Osafo Afari Stool (Asante Mampon).",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires (par adoption akan) gouvernent la succession et les droits fonciers. Des clans fondateurs distincts (Amoakade de Bono Takyiman, etc.) ont rejoint le groupe initial.",
+      "religiousAuthority": "La divinite Letsu (qui abhorre l'effusion de sang) est le culte protecteur le plus important d'Anum, ayant attire des refugies et confere une reputation de havre de paix. Le christianisme est majoritaire (environ 80% selon Joshua Project)."
+    },
+    "languages": {
+      "mainLanguage": "Gua (Guang)",
+      "isoCodes": ["gwx"],
+      "dialects": [],
+      "vehicularRole": "La langue gua est parlee par les communautes de Larteh, Okere, Anum et Boso dans la region Est du Ghana. L'anglais est la langue officielle du Ghana. Le twi (akan) est largement utilise comme vehiculaire regional."
+    },
+    "culture": {
+      "majorRites": "Culte de la divinite Letsu, divinite locale qui abhorre l'effusion de sang et a attire de nombreux refugies akan. Ceremonies liees aux tabourets ancestraux (stools), heritage de l'influence akan.",
+      "symbols": "La divinite Letsu et son sanctuaire sont le symbole spirituel central de la communaute Anum. Le tabouret ancestral (stool) est le symbole du pouvoir politique.",
+      "artsAndMusic": null,
+      "spiritualities": "Croyances animistes centrees sur la divinite Letsu ; forte presence chretienne (protestantisme majoritaire, environ 80% de la population). Memoire des tabourets ancestraux apportes par les immigrants akan."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Paramountcy d'Anum dans le district d'Asuogyaman ; Asikuma sous la paramount d'Anum. Les Anum ont ete sous la suzerainete de l'Akwamu (dont la suzerainete s'etendait sur Anum, Boso, Peki et Awsome) jusqu'en 1833.",
+      "relationsWithNeighbors": "Alliance strategique avec les Boso (meme groupe ethnolinguistique guan) pour s'affranchir de l'Akwamu. Relations tendues mais aussi de cohabitation avec les Akwamu et les Asante. Alliance en 1867-1869 entre Akwamu, Kumase et Anlo, ayant contraint les Anum et leurs voisins a l'exil temporaire.",
+      "conflictsOrAlliances": "Rupture avec l'Akwamu (1724-1728) ; participation aux coalitions anti-asante (1833, renversement du joug akwamu) ; fuite lors de l'invasion asante de 1869 ; coalition des communautes guang (organises par Dompreh Kwadwo d'Akyem Kotoku) contre l'armee asante.",
+      "diaspora": "Une branche des Anum a migre vers Asamankese (region Est) et y a fonde Anum-Asamankese, une des deux communautes composant Asamankese Township."
+    },
+    "demography": {
+      "totalPopulation": 83000,
+      "referenceYear": 2025,
+      "source": "PeopleGroups.org (2025) : environ 83 000 personnes pour l'ensemble Anum-Boso. Joshua Project (version imprimee) indiquait 24 000 pour Anum-Boso seuls.",
+      "distributionByCountry": [{ "country": "GHA", "population": 83000 }]
+    },
+    "sources": [
+      "Wikipedia EN - Anum (https://en.wikipedia.org/wiki/Anum)",
+      "Wikipedia EN - Gua language (https://en.wikipedia.org/wiki/Gua_language)",
+      "PeopleGroups.org - Anum-Boso of Ghana (https://peoplegroups.org/people_groups/pg013261/)",
+      "Joshua Project - Anum-Boso in Ghana (https://joshuaproject.net/people_groups/print/10357/GH)",
+      "Justice Ghana - The Story of Boso, Kwame Ampene (http://www.justiceghana.com/index.php/2012-01-24-13-47-49/6644-the-story-of-boso)",
+      "Ghana Web - The historic town of Anum-Asamankese, 2021 (https://www.ghanaweb.com/GhanaHomePage/NewsArchive/The-historic-town-of-Anum-Asamankese-1166749)",
+      "101 Last Tribes - Guang people (https://www.101lasttribes.com/tribes/guang.html)"
+    ]
+  }
+}

@@ -11,20 +11,12 @@ vi.mock("@/lib/supabase/queries/afrik/peoples", () => ({
   getAfrikPeoplesByLanguageFamily: vi.fn(),
 }));
 
-vi.mock("next/cache", () => ({
-  unstable_cache: vi.fn((fn) => fn),
-}));
-
 import {
   getAllAfrikPeoples,
   getAfrikPeopleById,
   getAfrikPeoplesByLanguageFamily,
 } from "@/lib/supabase/queries/afrik/peoples";
 
-/**
- * TDD Phase: RED
- * Test: People Service - business logic for peoples
- */
 describe("People Service", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -40,7 +32,7 @@ describe("People Service", () => {
         content: {},
       }));
 
-      (getAllAfrikPeoples as any).mockResolvedValue(mockPeoples);
+      vi.mocked(getAllAfrikPeoples).mockResolvedValue(mockPeoples);
 
       const result = await getPeoples(1, 5);
 
@@ -48,6 +40,7 @@ describe("People Service", () => {
       expect(Array.isArray(result.data)).toBe(true);
       expect(result.data.length).toBe(5);
       expect(result.total).toBe(10);
+      expect(getAllAfrikPeoples).toHaveBeenCalled();
     });
 
     it("should handle pagination correctly", async () => {
@@ -59,9 +52,9 @@ describe("People Service", () => {
         content: {},
       }));
 
-      (getAllAfrikPeoples as any).mockResolvedValue(mockPeoples);
-
+      vi.mocked(getAllAfrikPeoples).mockResolvedValue(mockPeoples);
       const page1 = await getPeoples(1, 2);
+      vi.mocked(getAllAfrikPeoples).mockResolvedValue(mockPeoples);
       const page2 = await getPeoples(2, 2);
 
       expect(page1.data.length).toBe(2);
@@ -79,7 +72,7 @@ describe("People Service", () => {
         content: {},
       };
 
-      (getAfrikPeopleById as any).mockResolvedValue(mockPeople);
+      vi.mocked(getAfrikPeopleById).mockResolvedValue(mockPeople);
 
       const people = await getPeopleById("PPL_SHONA");
 
@@ -89,7 +82,7 @@ describe("People Service", () => {
     });
 
     it("should return null for non-existent people", async () => {
-      (getAfrikPeopleById as any).mockResolvedValue(null);
+      vi.mocked(getAfrikPeopleById).mockResolvedValue(null);
 
       const people = await getPeopleById("PPL_NONEXISTENT");
 
@@ -109,7 +102,7 @@ describe("People Service", () => {
         },
       ];
 
-      (getAfrikPeoplesByLanguageFamily as any).mockResolvedValue(mockPeoples);
+      vi.mocked(getAfrikPeoplesByLanguageFamily).mockResolvedValue(mockPeoples);
 
       const peoples = await getPeoplesByLanguageFamily("FLG_BANTU");
 

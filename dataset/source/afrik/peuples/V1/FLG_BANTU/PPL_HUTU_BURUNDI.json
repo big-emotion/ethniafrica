@@ -1,0 +1,61 @@
+{
+  "id": "PPL_HUTU_BURUNDI",
+  "nameMain": "Hutu du Burundi",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["BDI", "RWA", "TZA", "UGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Hutu du Burundi",
+      "selfAppellation": "Abahutu",
+      "exonyms": [
+        "Hutu (terme historique non péjoratif) ; « races du Burundi » (catégorisation coloniale problématique)"
+      ],
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantous des Grands Lacs (Burundi)",
+      "historicalRegion": "Plateaux du Burundi",
+      "currentCountries": ["BDI", "RWA", "TZA", "UGA"]
+    },
+    "ethnicities": [
+      "Hutu des hautes terres du Burundi",
+      "Hutu des plaines et collines rurales",
+      "À préciser (lignages régionaux)"
+    ],
+    "origins": {
+      "ancientOrigins": "Peuplement bantou installé dans l’espace burundais depuis plus d’un millénaire.",
+      "migrationRoutes": [
+        "Mouvements internes autour des collines et plateaux."
+      ],
+      "unificationsOrDivisions": "Catégorie socio-culturelle homogène mais diverse clans.",
+      "externalInfluences": "Colonisation allemande et belge → transformations sociales profondes."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferies locales ; intégration dans la monarchie burundaise.",
+      "clanOrganization": "Clans lignagers (ubwoko).",
+      "roleOfLineages": "Structure familiale, transmission foncière et rituelle.",
+      "religiousAuthority": "Anciens, prêtres traditionnels (abapfumu)."
+    },
+    "languages": {
+      "mainLanguage": "Kirundi (bantou)",
+      "vehicularRole": "Langue commune à Hutu, Tutsi, Twa."
+    },
+    "culture": {
+      "Rites": "Funérailles, initiations, rites agricoles.",
+      "Symboles": "Vache (importance économique et symbolique).",
+      "Arts et musique": "Tambours royaux (ingoma), danses.",
+      "Spiritualités": "Croyances traditionnelles + christianisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Intégration dans le royaume du Burundi (Mwami).",
+      "conflictsOrAlliances": "Tensions politico-ethniques coloniales et postcoloniales.",
+      "diaspora": "Présente dans RWA, TZA, UGA."
+    },
+    "demography": {
+      "source": "peuple_demographie_globale.csv (PPL_HUTU_BURUNDI)"
+    },
+    "sources": [
+      "Archives du Burundi",
+      "Ethnologue (run)",
+      "Littérature anthropologique sur les Grands Lacs"
+    ]
+  }
+}

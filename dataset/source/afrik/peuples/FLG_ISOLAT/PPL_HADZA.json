@@ -1,0 +1,78 @@
+{
+  "id": "PPL_HADZA",
+  "nameMain": "Hadza",
+  "languageFamilyId": "FLG_ISOLAT",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Hadza",
+      "selfAppellation": "Hadzabe",
+      "exonyms": ["Wahadzabe (en swahili)", "Kindiga", "Tindiga", "Kangeju"],
+      "originOfExonyms": "Wahadzabe est la forme swahili prefixee du nom propre Hadzabe. Kindiga et Tindiga sont des termes utilises par les populations voisines Datooga et Isanzu. Kangeju fut employe dans la litterature coloniale allemande.",
+      "whyProblematic": "Les termes exterieurs comme Kindiga peuvent etre perçus comme pejoratifs car imposes par des voisins pasteurs. La denomination Hadza est aujourd'hui acceptee internationalement et utilisee par le groupe lui-meme en contexte swahili.",
+      "contemporaryUsage": "Hadzabe est l'auto-designation preferee. Hadza est couramment utilise dans les publications scientifiques et institutionnelles. Le swahili national les nomme Wahadzabe.",
+      "linguisticFamily": "FLG_ISOLAT",
+      "ethnoLinguisticGroup": "Isolat linguistique sans parentele etablie avec une autre famille de langues",
+      "historicalRegion": "Bassin du lac Eyasi, Rift central, region d'Arusha, nord de la Tanzanie",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Hadza", "Hadzabe"],
+    "origins": {
+      "ancientOrigins": "Les Hadza sont consideres comme les descendants de la population de chasseurs-cueilleurs aborigene pre-Bantou de Tanzanie. Des preuves archeologiques et genetiques suggerent une occupation continue de leur territoire actuel depuis au moins 50 000 ans (debut du Later Stone Age). Leur zone d'habitation se situe a environ 50 km d'Olduvai et 40 km de Laetoli, deux des sites paleontologiques majeurs de l'histoire humaine. Ils n'ont pas de proches parents genetiques connus.",
+      "formationPeriod": "Occupation continue documentee depuis le Later Stone Age. Jusqu'aux environs de 500 av. J.-C., la Tanzanie etait exclusivement habitee par des chasseurs-cueilleurs similaires aux Hadza. Les premiers eleveurs cushitiques arriverent vers 500 av. J.-C., suivis de l'expansion bantoue vers 500 apr. J.-C. et des pasteurs nilotiques au XVIIIe siecle.",
+      "migrationRoutes": [
+        "Pas de migrations historiques majeures documentees ; le groupe est considere autochtone de la region du lac Eyasi",
+        "Deplacements saisonniers entre les zones de Dunduhina (ouest du lac Eyasi), Tlhiika (lac Eyasi-Yaeda), Siponga (est de Yaeda) et Mangola (nord de Yaeda)"
+      ],
+      "historicalSettlementZones": [
+        "Bassin du lac Eyasi, district de Karatu, region d'Arusha, Tanzanie",
+        "Plateau du Serengeti et vallee de Yaeda",
+        "Pentes du mont Oldeani"
+      ],
+      "unificationsOrDivisions": "Societe egalitaire sans unite politique centralisee. Les bandes (camps) de 20 a 30 individus sont l'unite de base ; elles peuvent atteindre 100 personnes en saison des fruits sauvages. Les Hadza se divisent en plusieurs sous-groupes geographiques correspondant aux zones de chasse saisonnieres.",
+      "externalInfluences": "Contacts croissants depuis le XIXe siecle avec les Isanzu (Bantou, raids pour l'esclavage jusqu'aux annees 1870 puis mariages mixtes), les Maasai (expansion et raids a la fin du XIXe siecle), les Datooga (occupation des paturages) et les Sukuma (echanges commerciaux). Tentatives coloniales britanniques de sedentarisation en 1927, 1939 et gouvernementales tanzaniennes en 1965 et 1990, toutes largement echouees.",
+      "majorHistoricalEvents": "Premier contact europeen avec Oscar Baumann (1894, indirect). Etudes ethnologiques menees depuis les annees 1960 (James Woodburn). En 2007, location de 6 500 km2 de terres Hadza a la famille Al Nahyan (Emirats arabes unis) pour la chasse sportive, annulee apres protestations internationales. Etudes de metabolisme et d'activite physique par Herman Pontzer (Universite de Duke), revelant le paradoxe Hadza (activite physique elevee mais meme depense calorique que les Occidentaux sedentaires)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe egalitaire et non hierarchique. Aucune autorite tribale ou gouvernementale reconstitutive. Les decisions sont prises par consensus lors de discussions collectives. Le conflit est resolu par le deplacement du camp.",
+      "clanOrganization": "Pas de clans formes au sens classique. Filiation bilaterale : chaque individu trace des liens de parente des deux cotes. Pas de differences de statut significatives (les anciens beneficient d'un respect modere). Les femmes jouissent d'une position relativement egale aux hommes.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Pas de lignages formels. La residence est ambilocale avec une legerement preference matrilocale. L'elevage communautaire des enfants est pratique.",
+      "religiousAuthority": "Pas d'autorite religieuse formelle. Les decisions rituelles (rites epeme, ceremonies) sont prises collectivement par les hommes adultes qualifies (epeme men)."
+    },
+    "languages": {
+      "mainLanguage": "Hadzane (Hadza)",
+      "isoCodes": ["hts"],
+      "dialects": [
+        "Pas de dialectes distincts documentes ; variations regionales mineures entre zones de peche et de chasse"
+      ],
+      "vehicularRole": "Le hadzane est la langue maternelle exclusive du groupe. Le swahili est largement appris comme deuxieme langue avec les contacts exterieurs. La maitrise du hadzane est le marqueur identitaire principal pour determiner si quelqu'un est Hadza. La langue est classee vulnerable par l'UNESCO mais pas en danger d'extinction immediate."
+    },
+    "culture": {
+      "majorRites": "Epeme : rite de passage a l'age adulte masculin pour les chasseurs ayant tue un grand gibier (vers 20-25 ans) ; donne droit a la consommation exclusive de certains organes (reins, poumons, coeur, cou, langue, parties genitales de phacochere, girafe, buffle, gnou ou lion). Danse epeme mensuelle a la nouvelle lune : les femmes chantent separement pendant que les hommes dansent dans l'obscurite quasi totale avec coiffes de plumes d'autruche, grelots et cape. Maitoko : ceremonie feminine (moins frequente).",
+      "symbols": "L'arc et les fleches empoisonnees (poison issu de l'Adenium coetaneum) sont le symbole identitaire des hommes. Le baobab (Adansonia digitata) est central dans l'alimentation et la cosmologie. L'oiseau guide-miel (Indicator indicator) est associe a des mythes de mutualismes culturels.",
+      "artsAndMusic": "Tradition orale riche avec quatre epoques mythologiques (akakaanebee, xhaaxhaanebee, hamakwanebee, hamayishonebee). Peintures rupestres dans la region considerees comme l'oeuvre des ancetres (datees d'au moins 2 000 ans). Chants collectifs lors des ceremonies epeme.",
+      "spiritualities": "Pas de religion formelle structuree. Priere aux figures solaire (Ishoko) et lunaire (Haine) lors des chasses. Croyance que les defunts rejoignent Ishoko. Les mythes evoquent des geants ancestraux (Sengani) et des heros culturels. Pas de croyance en une vie apres la mort clairement articulee."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Aucun royaume ou chefferie formalise. La societe Hadza a toujours ete organisee sur la base de bandes egalitaires sans centralisation politique.",
+      "relationsWithNeighbors": "Relations mixtes : hostiles avec les Maasai (raids au XIXe siecle), les Isanzu (capture pour l'esclavage jusqu'aux annees 1870) et les Datooga actuels (competition pour les terres et paturages). Amicales avec les Sukuma (echanges d'outils contre droits de chasse a l'elephant). Relations commerciales limitees avec les agriculteurs de Mangola.",
+      "conflictsOrAlliances": "Evictions progressives de leurs terres ancestrales par l'expansion agricole, l'elevage et les concessions touristiques. Resistance pacifique et tentatives de recours juridiques pour la preservation du territoire traditionnel.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 1400,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN (2015 : 1 200-1 300) ; Visit Natives 2024 : 1 200-1 500 ; estimation mediane 2025",
+      "distributionByCountry": [{ "country": "TZA", "population": 1400 }]
+    },
+    "sources": [
+      "Hadza people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Hadza_people)",
+      "Hadza language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Hadza_language)",
+      "Hadza – Glottolog 5.3, ISO 639-3 hts (https://glottolog.org/resource/languoid/id/hadz1240)",
+      "The Ultimate Guide to the Hadza People of Tanzania – Visit Natives, 2024 (https://www.visitnatives.com/post/who-are-the-hadzabe-hunter-gatherers-in-lake-eyasi-tanzania)",
+      "Woodburn, J. – Hunters and Gatherers : the Material Culture of the Nomadic Hadza, 1970, British Museum",
+      "Pontzer, H. et al. – Constrained Total Energy Expenditure and Metabolic Adaptation to Physical Activity in Adult Humans, Current Biology, 2016"
+    ]
+  }
+}

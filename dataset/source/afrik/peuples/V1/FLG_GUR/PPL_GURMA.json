@@ -1,0 +1,23 @@
+{
+  "id": "PPL_GURMA",
+  "nameMain": "",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["BFA", "NER", "BEN", "TGO"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Gulimanceba / Gourmantché",
+      "linguisticFamily": "FLG_GUR",
+      "historicalRegion": "BFA, NER, BEN, TGO",
+      "currentCountries": ["BFA", "NER", "BEN", "TGO"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (gux)", "Burkina Faso Est — Archives culturelles"]
+  }
+}

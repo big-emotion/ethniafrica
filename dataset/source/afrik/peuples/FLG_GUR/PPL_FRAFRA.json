@@ -1,0 +1,99 @@
+{
+  "id": "PPL_FRAFRA",
+  "nameMain": "Frafra",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["GHA", "BFA"],
+  "content": {
+    "appellations": {
+      "mainName": "Frafra",
+      "selfAppellation": "Farefare",
+      "exonyms": ["Frafra", "Gurune", "Gurunsi", "Gurenne"],
+      "originOfExonyms": "L'appellation Frafra est un terme colonial, corruption de la salutation quotidienne Ya fare fare? (Comment va votre peine, votre travail ?) que les missionnaires chrétiens et administrateurs britanniques entendirent lors de leur premier contact avec des agriculteurs Frafra. Selon une autre version, le terme vient de la formule de bienvenue furra furra criée en frappant dans les mains. Le terme Farefare est l'endonymme propre au groupe, tandis que Gurune et Gurunsi désignent le cluster linguistique et culturel plus large dont font partie les Frafra.",
+      "whyProblematic": "Le terme Frafra peut avoir des connotations péjoratives dans l'usage local. Il ne désigne pas un groupe ethniquement homogène mais un ensemble de peuples distincts (Gurensi, Talensi, Nabdam, Kusasi) regroupés sous ce label colonial en raison de leurs similarités culturelles et linguistiques.",
+      "contemporaryUsage": "Frafra est couramment utilisé dans le discours public ghanéen et dans les médias. Farefare est le terme préféré par les membres du groupe eux-mêmes. Gurune est utilisé pour désigner plus spécifiquement la langue et les locuteurs du dialecte principal.",
+      "linguisticFamily": "FLG_GUR",
+      "ethnoLinguisticGroup": "Gur central, cluster Mabia (Oti-Volta oriental)",
+      "historicalRegion": "Partie nord-est de la région Upper East du Ghana (districts de Bolgatanga, Bongo, Talensi-Nabdan) et zone frontalière avec le Burkina Faso",
+      "currentCountries": ["GHA", "BFA"]
+    },
+    "ethnicities": [
+      "Gurensi (ou Gurene, Gurune) — groupe central, dont la langue Gurune donne son nom au dialecte principal",
+      "Talensi — groupe ethniquement distinct, principal bourg de Tongo, majoritairement bilingues en langue Frafra",
+      "Nabdam — groupe distinct avec sa propre variété linguistique",
+      "Kusasi (ou Kusaal) — groupe apparenté occupant le district de Bawku, parfois inclus dans l'ensemble Frafra"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Frafra font partie du vaste ensemble des peuples Gurunsi qui peuplent le sud du Burkina Faso et le nord-est du Ghana. La tradition orale et certains chercheurs indiquent que les Farefare ont migré depuis le Burkina Faso vers leur zone d'habitat actuelle. D'autres sources situent l'origine dans la zone de Navrongo (Ghana). Les Frafra sont liés aux autres peuples Gurunsi par une histoire commune, une langue et une structure politique acéphale similaires. Leur histoire diffère de celle de leurs voisins du nord (Nuna, Bwa, Winiama du Burkina Faso) en raison de leur appartenance à la sphère coloniale britannique plutôt que française.",
+      "formationPeriod": "L'identité Frafra en tant que groupe regroupé sous un label commun s'est constituée principalement à l'époque coloniale. Précolonialement, chaque groupe (Gurensi, Talensi, Nabdam, Kusasi) fonctionnait de manière autonome selon un modèle acéphale basé sur le lignage. L'administration coloniale britannique, nécessitant des interlocuteurs politiques, imposa des structures de chefferies extérieures à la tradition de ces groupes.",
+      "migrationRoutes": [
+        "Migration depuis le sud du Burkina Faso vers l'Upper East du Ghana (période précoloniale, itinéraire approximatif)",
+        "Mouvements internes liés à la pression démographique et aux conflits fonciers (XIXe et XXe siècles)"
+      ],
+      "historicalSettlementZones": [
+        "Districts de Bolgatanga, Bongo, Talensi et Nabdam de la région Upper East du Ghana",
+        "Zone frontalière avec le Burkina Faso, province de Nahouri (notamment Tiébélé et la région de Pô)",
+        "Présence dans les grandes villes ghanéennes (Accra, Kumasi, Tamale) suite aux migrations économiques"
+      ],
+      "unificationsOrDivisions": "Les groupes Frafra n'ont jamais formé de structure politique unifiée. Leur organisation acéphale traditionnelle repose sur le lignage et l'autorité des anciens (conseils d'anciens). La tendaana (custodien de la terre, chef religieux-politique) est la seule autorité structurante dépassant le cadre familial. Les sous-groupes (Gurensi, Talensi, Nabdam, Kusasi) maintiennent chacun leur identité propre tout en étant regroupés sous l'appellation Frafra dans le discours public.",
+      "externalInfluences": "Administration coloniale britannique imposant des structures de chefferies (nécessité d'interlocuteurs pour l'organisation du travail et du transport). Mission catholique et protestante (évangélisation active dès le XXe siècle). Pression démographique et dégradation environnementale accélérées depuis les années 1980 (diminution des jachères, érosion des sols). Migration économique vers le sud du Ghana comme rite de passage social informel.",
+      "majorHistoricalEvents": "La migration saisonnière vers le sud du Ghana est devenue un phénomène structurant depuis le début du XXe siècle. Dans les années 1980, des programmes de maîtrise des mouches onchocercoses (simulies) dans la région de Bongo causèrent le déplacement d'agriculteurs. La croissance démographique a fait passer la population de la zone d'occupation principale de 77 885 habitants en 2000 à 84 545 en 2010 selon les recensements ghanéens."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La société Frafra est traditionnellement acéphale : elle ne connaît pas de chefferies centralisées précoloniales. L'autorité repose sur les conseils des anciens (membres les plus âgés de chaque lignage) et sur des leaders religieux. Les décisions importantes sont prises collectivement par ces conseils. La colonisation britannique a introduit des chefferies artificielles pour faciliter l'administration, mais celles-ci n'ont pas de légitimité traditionnelle ancienne.",
+      "clanOrganization": "La société est organisée par lignages patrilinéaires. La famille étendue maintient une maison collective avec des objets rituels de lignage (biens communaux hérités, offrant protection et cohésion sociale). Le système de lignage détermine l'accès à la terre et les obligations cérémonielles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le fils ainé organise les rites mortuaires (wuure, funérailles différées ayant lieu 1 à 3 ans après le décès). Les objets rituels de la maison familiale (magiques, communaux) sont hérités et transmis dans le lignage. La migration pour le travail est valorisée comme rite de passage vers l'âge adulte masculin.",
+      "religiousAuthority": "La tendaana (custodien de la terre) est le principal responsable religieux et politique. Vêtue de peaux d'animaux et d'un bonnet de corde noire, la tendaana est chargée d'enterrer les défunts, de déterminer le calendrier agricole, de distribuer les terres pour la culture et d'offrir des sacrifices à la terre-divinité. Les sanctuaires de la divinité suprême (présents dans chaque village) et les autels ancestraux structurent la vie spirituelle."
+    },
+    "languages": {
+      "mainLanguage": "Farefare (Gurene, Gurune)",
+      "isoCodes": ["gur"],
+      "dialects": [
+        "Gurune (ou Gurene) — dialecte central, parlé par les Gurensi, bourg principal de Bolgatanga",
+        "Nankani — variété parlée dans le district de Navrongo",
+        "Booni (Nabdam) — variété des Nabdam",
+        "Tallensi — variété des Talensi (locuteurs souvent bilingues en Gurune)"
+      ],
+      "vehicularRole": "Le Farefare (Gurene) est reconnu comme langue nationale du Ghana. Il est parlé par plus de 600 000 personnes dans la région Upper East du Ghana et dans le sud du Burkina Faso. La langue est proche du Mossi (Moore), langue nationale du Burkina Faso. Le Haoussa est utilisé comme langue secondaire et commerciale en raison de la forte influence haoussa sur les peuples de la région."
+    },
+    "culture": {
+      "majorRites": "Les funérailles (wuure) constituent l'événement rituel majeur des Frafra, célébré de 1 à 3 ans après le décès lors de la saison sèche. La cérémonie débute par des cris nocturnes (3 fois pour un homme, 4 fois pour une femme) et l'entrée en procession d'hommes en tenue de guerre avec des tambours jusqu'au lever du soleil. Le lendemain (fagba), les vêtements du défunt sont exposés : à l'extérieur pour un homme, à l'intérieur pour une femme. La durée varie selon le statut (une semaine pour un chef masculin ou une femme senior). Le corps est inhumé le jour du décès (lavé et habillé), porté autour de la maison 3 fois (homme) ou 4 fois (femme) avant la mise en terre. Les hommes sont inhumés face à l'est, les femmes face à l'ouest. Les initiations à l'agriculture, les cérémonies de mariage (avec dot en bétail : 3 vaches ou 2 vaches + 7 moutons) et les rites de chasse saisonniers complètent le calendrier cérémoniel.",
+      "symbols": "La poterie féminine est porteuse de symbolisme culturel fort : les quatre motifs principaux (yie, zanlenga, wanzageze, tana) codifient des significations liées au cycle de vie féminin, au mariage et au statut social. La scarification (torso, visage) est un marqueur identitaire familial et individuel, traditionnellement effectuée entre 4 et 6 ans. Le casque de calebasse des chasseurs et guerriers (orné de cauris, crins et plumes) symbolise le statut et la bravoure.",
+      "artsAndMusic": "La poterie est l'art féminin principal des Frafra, liée symboliquement à la terre et à la fertilité. Les quatre motifs gurensi (yie, zanlenga, wanzageze, tana) véhiculent des significations rituelles et sociales. L'architecture traditionnelle est décorée de peintures et bas-reliefs géométriques, notamment les maisons de Tiébélé au Burkina Faso, reconnaissance internationale du style architectural gurunsi. Les bijoux en laiton fondu, les sculptures anthropomorphes (argile et bois) pour honorer les esprits et les objets personnels ornementaux (bracelets en ivoire et os, chevilles en laiton) constituent les arts traditionnels. La musique funèbre à base de tambours accompagne les wuure. La littérature orale Frafra comprend contes, proverbes et récits historiques.",
+      "spiritualities": "La cosmologie Frafra reconnaît une divinité suprême créatrice (dont le sanctuaire est au coeur de chaque village), la terre comme déité (à laquelle sacrifices et offrandes sont régulièrement adressés par la tendaana), et les ancêtres comme forces équilibrantes entre le monde des vivants et celui des morts. Les funérailles déterminent le statut ancestral du défunt (ancêtre femme Ma, ancêtre homme So), selon le sexe, l'âge, le clan et le rôle de chef. Des sanctuaires (jingili) sont présents dans les maisons pour les offrandes familiales. Islam et christianisme sont présents mais une majorité pratique toujours la religion traditionnelle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Frafra n'ont pas formé de royaumes ni de chefferies centralisées dans leur tradition précoloniale. Leur modèle acéphale les distingue des royaumes voisins comme Dagbon (Dagomba) et Mamprugu (Mamprusi). L'administration coloniale britannique introduisit des chefferies de liaison (servants to the British as sergeants-major) sans base dans la tradition politique locale.",
+      "relationsWithNeighbors": "Les Frafra entretiennent une parenté à plaisanterie (joking relationship) historique avec les Dagaaba (Dagara), fondée sur une ancêtre commun mythique. Cette relation se manifeste par des plaisanteries, échanges de cadeaux et entraide réciproque. Les relations avec les Kasem (Kassena), les Builsa et autres peuples de l'Upper East sont généralement pacifiques. Les Talensi, parfois inclus dans l'ensemble Frafra, maintiennent une identité distincte tout en pratiquant le bilinguisme.",
+      "conflictsOrAlliances": "Les conflits historiques majeurs des Frafra sont liés aux raids esclavagistes des royaumes voisins (Dagbon, Mamprugu, Mossi) qui ciblaient les sociétés acéphales moins capables d'organiser une résistance militaire centralisée. La résistance aux razzias était assurée au niveau des villages fortifiés. Des tensions foncières persistent au XXIe siècle en raison de la forte pression démographique.",
+      "diaspora": "Une diaspora Frafra significative s'est constituée dans les grandes villes ghanéennes (Accra, Kumasi, Sunyani, Cape Coast, Tamale) suite aux migrations économiques saisonnières, progressivement converties en installations permanentes. La migration était considérée comme un rite de passage vers l'âge adulte masculin. Une diaspora moins nombreuse existe en Europe (notamment au Royaume-Uni)."
+    },
+    "demography": {
+      "totalPopulation": 1050000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur Joshua Project (Gur Farefare Ghana : 600 000 ; Burkina Faso : 65 000 ; total 665 000 en 2024), 101lasttribes/Peoplegroups.org (total groupe Frafra : 994 500 en 2023 dans 2 pays). Population projetée 2025 avec taux de croissance Ghana (2,2%) et Burkina Faso (2,8%).",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 980000,
+          "note": "Principalement régions Upper East (districts Bolgatanga, Bongo, Talensi, Nabdam) et présence dans les grandes villes du sud du Ghana (Accra, Kumasi, Tamale)"
+        },
+        {
+          "country": "BFA",
+          "population": 70000,
+          "note": "Sud du Burkina Faso, province de Nahouri, zone de Tiébélé et région de Pô"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Frafra people. https://en.wikipedia.org/wiki/Frafra_people",
+      "101lasttribes — Frafra people. https://www.101lasttribes.com/tribes/frafra.html",
+      "101lasttribes — Gurenne people. https://www.101lasttribes.com/tribes/gurenne.html",
+      "Joshua Project — Gur, Farefare in Ghana. https://joshuaproject.net/people_groups/19121/GH",
+      "GhanaWeb — FraFra people. https://www.ghanaweb.com/GhanaHomePage/tribes/frafra.php",
+      "GhanaWeb — What you need to know about the Frafra people. https://www.ghanaweb.com/GhanaHomePage/NewsArchive/What-you-need-to-know-about-the-Frafra-people-of-Ghana-West-Africa-1011064",
+      "Folklore.ee — The Dagaaba-Frafra Joking Relationship. https://www.folklore.ee/folklore/vol14/dagaaba.htm",
+      "Wikipedia EN — Upper East Region. https://en.wikipedia.org/wiki/Upper_East_Region"
+    ]
+  }
+}

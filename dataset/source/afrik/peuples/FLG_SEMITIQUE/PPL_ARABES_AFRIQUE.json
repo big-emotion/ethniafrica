@@ -1,0 +1,194 @@
+{
+  "id": "PPL_ARABES_AFRIQUE",
+  "nameMain": "Arabes d'Afrique",
+  "languageFamilyId": "FLG_SEMITIQUE",
+  "currentCountries": [
+    "MAR",
+    "DZA",
+    "TUN",
+    "LBY",
+    "EGY",
+    "SDN",
+    "MRT",
+    "TCD",
+    "DJI",
+    "SOM",
+    "COM"
+  ],
+  "content": {
+    "appellations": {
+      "mainName": "Arabes d'Afrique",
+      "selfAppellation": "Al-Arab (العرب)",
+      "exonyms": [
+        "Arabes du Maghreb (désignation régionale)",
+        "Maures (terme historique pour les Arabes et Berbères islamisés d'Afrique du Nord et d'Afrique de l'Ouest, notamment en Mauritanie)",
+        "Shuwa (Arabes tchadiens et nigérians)",
+        "Jallaba (Arabes commerçants du Soudan)",
+        "Somali Arab, Swahili Arab (Corne et côte est-africaine)"
+      ],
+      "originOfExonyms": "Le terme Maure vient du latin Maurus (habitant de la Maurétanie antique) et a été utilisé par les Européens pour désigner l'ensemble des populations arabophones ou arabes d'Afrique du Nord et d'Espagne. En Mauritanie, Maure (Bidan) désigne les Arabes-Berbères arabophones. Jallaba désigne les commerçants arabes du Soudan. Le terme Shuwa (ou Chouwa) désigne les Arabes pasteurs du Tchad, du Cameroun et du Nigeria.",
+      "whyProblematic": "La notion d'Arabes d'Afrique est une macro-catégorie regroupant des populations très diverses ayant en commun l'arabe comme langue et l'islam comme religion, mais dont les origines génétiques, les cultures et les histoires locales sont très différentes. Une grande partie des populations dites arabes d'Afrique du Nord sont en réalité de souche berbère ayant adopté la langue arabe et l'islam suite à l'islamisation (7e-11e siècles) et aux grandes migrations arabes (Banu Hilal, Banu Sulaym, 11e siècle).",
+      "contemporaryUsage": "Le terme Arabes d'Afrique est utilisé dans les contextes académiques et politiques pour distinguer les populations arabophones du continent africain des Arabes du Moyen-Orient. Les individus se désignent le plus souvent par leur appartenance nationale (Marocain, Égyptien, Soudanais) ou tribale (Banu Hilal, Juhyna, Hassaniya) plutôt que comme Arabes d'Afrique.",
+      "linguisticFamily": "FLG_SEMITIQUE",
+      "ethnoLinguisticGroup": "Semitique central (arabe, branche sémitique des langues afroasiatiques)",
+      "historicalRegion": "Péninsule arabique (origines), Afrique du Nord (Maghreb, Egypte), Sahara, Afrique de l'Est (Corne, côte swahili), Sahel",
+      "currentCountries": [
+        "MAR",
+        "DZA",
+        "TUN",
+        "LBY",
+        "EGY",
+        "SDN",
+        "MRT",
+        "TCD",
+        "DJI",
+        "SOM",
+        "COM"
+      ]
+    },
+    "ethnicities": [
+      "Arabes du Maghreb : Banu Hilal et Banu Sulaym (11e siècle, installés en Tunisie, Algérie, Libye), Beni Hassan (Mauritanie, Sahara occidental, sud du Maroc), Ma'qil (Maroc, Algérie méridionale)",
+      "Arabes d'Egypte : Arabes qahtanides (origine sud-arabique) et adnanides (nord-arabique), constituant la majorité de la population égyptienne",
+      "Arabes du Soudan : Juhyna (tribus du centre et du nord du Soudan), Baggara (Arabes pasteurs du Kordofan et du Darfour), Jallaba (commerçants du Nil)",
+      "Arabes de Mauritanie (Bidan) : arabes et berbères arabises, parlant le hassaniya, descendants des Ma'qil et de la tribu Beni Hassan",
+      "Arabes du Tchad (Shuwa/Chouwa) : Hassaounas (arrives par le nord via la Libye), Djobeinas (arrives de la vallee du Nil entre le 14e et le 19e siècle), Misseries, Salamat, Ouled Sliman",
+      "Arabes de Djibouti : minorité arabe (yemenites, omanais) établis dans la Corne de l'Afrique depuis l'époque préislamique",
+      "Arabes de Somalie : minorité commerçante, principalement à Mogadiscio, Berbera et Kismayo, descendants de marchands du Golfe persique",
+      "Arabes des Comores : arabes omanais et yemenites établis dans l'archipel des Comores depuis le 10e siècle, intégrés à la société comorienne",
+      "Bédouins sahariens : tribus nomades du Sahara (Chaamba, Tuareg arabisés, Toubous arabisés), en transition entre nomadisme et sédentarisation",
+      "Arabes swahili (Oman, Zanzibar) : présents sur la côte est-africaine mais moins représentés dans les pays listés ici"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Arabes sont originaires de la péninsule arabique (Arabie). Les premières migrations arabes vers l'Afrique du Nord précèdent l'Islam : des commerçants et tribus arabes étaient présents en Égypte et dans la Corne de l'Afrique avant le 7e siècle. L'expansion arabe islamique a commencé avec la conquête de l'Égypte par Amr ibn al-As (639-642) puis celle du Maghreb sous la bannière du califat rashidoun (647), de la conquête de Carthage (698) jusqu'à la conquête de l'Hispanie (711). Les migrations arabes post-islamiques les plus importantes furent : les troupes omeyyades (50 000 soldats arabes installés dans les villes du Maghreb, 7e-8e siècles), les Andalous expulsés d'Espagne (818, 1492, 1609), et surtout la grande migration des Banu Hilal et Banu Sulaym envoyés par les Fatimides contre les Zirides (11e siècle, environ 1 million de nomades).",
+      "formationPeriod": "La constitution des identités arabes africaines distinctes s'est faite entre le 7e et le 16e siècle. Les populations berbères d'Afrique du Nord ont été progressivement arabisées linguistiquement (sans nécessairement changer de composition génétique), un processus accéléré par les migrations hilaliennes du 11e siècle. En Afrique subsaharienne (Mauritanie, Tchad, Soudan, Somalie), les Arabes se sont installés comme commerçants transsahariens et pasteurs, formant des groupes distincts.",
+      "migrationRoutes": [
+        "Conquête islamique de l'Égypte (639-642) et du Maghreb (647-711)",
+        "Migration des Banu Hilal et Banu Sulaym en Ifriqiya (Tunisie et Algérie orientale) au 11e siècle",
+        "Expansion des tribus Ma'qil et Beni Hassan vers le Maroc, l'Algérie méridionale et la Mauritanie (13e-14e siècles)",
+        "Islamisation de la Corne de l'Afrique par des commerçants arabes du Golfe persique (10e-15e siècles)",
+        "Arrivée des Arabes hassaounas au Tchad par le nord (Libye) et des Djobeinas par l'est (vallée du Nil) entre le 14e et le 19e siècle",
+        "Expulsion des Moriscos d'Espagne (1609) : 275 000 à 300 000 Arabes et Maures établis au Maroc, Algérie, Tunisie"
+      ],
+      "historicalSettlementZones": [
+        "Maghreb (MAR, DZA, TUN, LBY) : zone d'arabisation la plus ancienne et la plus complète",
+        "Egypte (EGY) : présence arabe depuis la conquête de 639, arabisation progressive des Coptes",
+        "Vallée du Nil soudanais (SDN) : Arabes juhyna, shaygiyya et baggara",
+        "Mauritanie (MRT) : Bidan (Arabes-Berbères arabisés), majoritaires",
+        "Zone du lac Tchad (TCD) : Arabes Shuwa du Tchad, Cameroun, Nigeria, Niger",
+        "Corne de l'Afrique (DJI, SOM) : minorités arabes commerçantes dans les villes portuaires",
+        "Comores (COM) : aristocratie arabe comorienne (Shirazi d'origine omanaise et persane)"
+      ],
+      "unificationsOrDivisions": "Les Arabes d'Afrique forment une macro-catégorie extrêmement diverse. Ils partagent la langue arabe (sous diverses formes dialectales) et l'islam, mais leurs identités primaires sont tribales, régionales et nationales. La Ligue arabe (fondée en 1945) constitue une organisation transnationale regroupant la plupart des États arabes africains. Les dialectes arabes africains (darija marocain, algérien, tunisien, libyen, masri égyptien, arabe soudanais, hassaniya mauritanien, arabe tchadien, arabe de Djibouti) sont souvent mutuellement peu intelligibles.",
+      "externalInfluences": "Islamisation (7e-11e siècles) comme vecteur principal d'arabisation. Conquêtes ottomanes (16e siècle) : contrôle de l'Égypte, du Maghreb central et oriental. Colonisation française (Maghreb, Mauritanie, Tchad) et britannique (Égypte, Soudan) : impact sur les structures politiques. Nationalisme arabe (Nasserisme, Ba'athisme, 1950s-1970s). Mondialisation et flux pétroliers (Libye, Algérie) : reconfigurations identitaires contemporaines.",
+      "majorHistoricalEvents": "639-711 : conquête arabe de l'Égypte, du Maghreb et de l'Hispanie. 11e siècle : grande migration des Banu Hilal et Banu Sulaym en Afrique du Nord. 1236-1492 : déclin de l'Andalousie islamique, émigrations successives vers l'Afrique du Nord. 1517 : conquête ottomane de l'Égypte. 1644-1674 : guerre de Char Bouba, arabisation de la Mauritanie et du Sahara occidental. 1830-1962 : colonisation française du Maghreb. 1882-1956 : occupation britannique de l'Égypte. 1956-1962 : indépendances des États arabes d'Afrique. 1958 : Nasser fonde la République arabe unie (Égypte-Syrie). 2003 : crise du Darfour (milices arabes janjaweed contre populations africaines). 2010-2011 : Printemps arabe (Tunisie, Égypte, Libye)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation tribale (qabila) avec cheikhs (chefs tribaux) et conseils tribaux pour les groupes nomades et semi-nomades. Dans les États modernes arabes d'Afrique, les systèmes politiques varient : monarchies constitutionnelles (Maroc), républiques présidentielles (Algérie, Tunisie, Égypte, Soudan, Mauritanie), États faillis ou en transition (Libye, Somalie). La tribu reste une unité politique importante, surtout en Libye, en Mauritanie, au Tchad et en Somalie.",
+      "clanOrganization": "Structure tribale (qabila) et clanique (ashira, fakhdh) importante, notamment chez les Bédouins, les Baggara et les Shuwa. Les tribus sont organisées en confédérations. La généalogie (nasab) est centrale : chaque arabe peut en théorie retracer sa lignée jusqu'aux ancêtres fondateurs (quraysh, qahtanides ou adnanides). En Mauritanie, les Bidan (arabes blancs) se distinguent des Haratines (anciens esclaves noirs arabisés) selon un système de castes.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilinéaires (nasab) déterminant l'identité, les alliances matrimoniales et les droits fonciers. Les généalogies (shajarah) sont transmises oralement et par écrit. En Mauritanie et dans la zone saharo-sahélienne, les lignages nobles (hassani, guerriers) se distinguent des lignages religieux (zawaya, marabouts) et des castes d'artisans (griots, forgerons) et des anciens esclaves.",
+      "religiousAuthority": "Autorité des oulémas (savants religieux) et des imams dans les mosquées. Les confréries soufies jouent un rôle majeur en Mauritanie (Tijaniyya, Qadiriyya), au Soudan (Ansar, Khatmiyya) et au Maroc (Tijaniyya, Rahmaniyya). L'école malékite est dominante au Maghreb et en Afrique de l'Ouest et centrale ; l'école chaféite en Egypte et dans la Corne ; l'école hanafite en Libye et Tunisie influencées par les Ottomans. Des minorités ibadites (Mzab en Algérie, Djebel Nafusa en Libye) et chiites (Liban diaspora) sont présentes."
+    },
+    "languages": {
+      "mainLanguage": "Arabe (dialectes regionaux varies) : langue afroasiatique, branche sémitique",
+      "isoCodes": ["arb", "ary", "arq", "aeb", "ayl", "apd", "shu", "aao"],
+      "dialects": [
+        "Darija marocain (ary) : dialecte arabe du Maroc, fortement influencé par le berbère et le français",
+        "Arabe algérien (arq) : dialecte d'Algérie, variations régionales (oranais, algerois, constantinois)",
+        "Arabe tunisien (aeb) : dialecte de Tunisie, proches de l'arabe libyen oriental",
+        "Arabe libyen (ayl) : dialecte de Libye, variantes tripolitaine et cyrénaïque",
+        "Arabe masri (arz) : dialecte égyptien, le plus parlé et compris du monde arabe",
+        "Arabe soudanais (apd) : dialecte du Soudan du Nord, proche de l'arabe masri",
+        "Hassaniya (mey) : dialecte arabe de Mauritanie et du Sahara occidental, issu du Ma'qil",
+        "Arabe tchadien (shu) : dialecte des Arabes Shuwa du Tchad, Cameroun, Nigeria, Niger",
+        "Arabe saharien algérien (aao) : dialecte des oasis sahariennes d'Algérie (Chaamba)"
+      ],
+      "vehicularRole": "L'arabe standard moderne (arb) est la langue officielle commune à tous les États arabes d'Afrique, utilisée dans l'administration, l'éducation, les médias et la diplomatie. Les dialectes régionaux sont utilisés dans la vie quotidienne. L'arabe est langue co-officielle avec le français (Maroc, Algérie, Tunisie, Mauritanie, Tchad, Djibouti), avec d'autres langues locales (tifinagh, oromo, tigrinya) ou avec l'anglais (Soudan). L'arabe est deuxième langue la plus répandue au monde pour le nombre de locuteurs natifs."
+    },
+    "culture": {
+      "majorRites": "Pratiques islamiques universelles : Hajj (pèlerinage à La Mecque), Ramadan (jeune d'un mois), Aïd al-Fitr (fête de rupture du jeune), Aïd al-Adha (fête du sacrifice avec immolation d'un mouton), prières des cinq temps. Circoncision masculine universelle. Mariage islamique (nikah) avec dot (mahr). Funérailles islamiques : inhumation rapide (dans les 24h), prières sur le mort. Célébration du mawlid (naissance du Prophète). Rites de passage : khitan (circoncision), mariage, départ et retour du Hajj. En Mauritanie et au Sahara : rituel de thé (tradition des trois thés symbolisant l'amour et la vie). En Egypte : Sham el-Nessim (fête du printemps d'origine pharaonique). Au Soudan : cérémonies soufies (zikr, hadra).",
+      "symbols": "Croissant et étoile : symbole islamique présent sur plusieurs drapeaux arabes africains. Calligraphie arabe : art majeur, présent sur les monuments, les manuscrits, les tapis et les bijoux. Architecture islamique : mosquées (Grande Mosquée de Kairouan, Mosquée al-Azhar du Caire, Djingareyber de Tombouctou), médinas, minarets. Le dromadaire : animal emblématique des Arabes nomades du Sahara. La tente bédouine (khaima) : symbole de l'hospitalité arabe. Le café et le thé (thé sahraoui aux trois passes en Mauritanie) : symboles d'hospitalité.",
+      "artsAndMusic": "Musique classique arabe (maqam) et populaire : Oum Kalthoum (Egypte), Fairouz (Liban diaspora), musique gnawa (Maroc), chaabi (Algérie), malouf (Tunisie, Libye), musique hassaniya mauritanienne, musique soudanaise (haqibah). Danse : raqs sharqi (Egypte), danse bédouine (ardah), danse gnawa. Poésie : qasida classique (tradition de la jahiliyya, poésie pré-islamique), zadjal (poésie populaire maghrebine), shi'r al-nabati (poésie bédouine du Golfe). Calligraphie islamique (khatt) comme art majeur. Architecture : madrasa, hammam, caravansérail, cité médiévale (médina). Artisanat : tapis berbéro-arabes (Maroc, Algérie), broderies (Fes, Tunis), bijoux en argent et or, poterie de Nabeul, travail du cuivre et du laiton.",
+      "spiritualities": "Islam sunnite majoritaire : école malékite (Maghreb, Mauritanie, Afrique de l'Ouest et centrale), école chaféite (Egypte, Corne de l'Afrique), école hanafite (influence ottomane en Libye et Tunisie). Soufisme : confréries (tariqas) importantes, notamment la Tijaniyya (Maghreb, Sahel), Qadiriyya (Mauritanie, Tchad), Rahmaniyya (Algérie), Ansar et Khatmiyya (Soudan). Minorités ibadites (Algérie, Libye). Christianisme copte en Egypte (environ 10 % de la population). Islam populaire : culte des saints (zawiya, dargah), baraka des chérifs (descendants du Prophète), amulets et incantations. Rôle de l'islam comme marqueur identitaire central pour les Arabes d'Afrique."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Arabes d'Afrique ont fondé ou dominé de nombreux empires et dynasties majeures : Califat fatimide (Egypte, 10e-12e siècles), Almoravides (Sahara-Maghreb, 11e siècle), Almohades (Maghreb et Andalousie, 12e-13e siècles), Dynasties hafside (Tunisie), zayyanide (Algérie) et marinide (Maroc), Sultanat de Sokoto (Fulani arabisés, Nigeria, 19e siècle), Sultanat du Darfour (Soudan, 17e-20e siècles), Imamat d'Oman et empire maritime omanais (présence en Afrique de l'Est, Zanzibar). Les Alaouites (Maroc, depuis 1666) et les dynasties successives en Egypte (jusqu'aux Nassériens).",
+      "relationsWithNeighbors": "Les Arabes d'Afrique ont entretenu des relations complexes avec les Berbères (Imazighen) d'Afrique du Nord (arabisation, mariage, résistance), les peuples noirs d'Afrique subsaharienne (commerce transsaharien, islamisation, conflits esclavagistes), les Coptes d'Egypte (coexistence souvent tendue), les Toubou, Zaghawa et Peuls du Sahel. Le commerce transsaharien des esclaves, de l'or et des épices a été un vecteur majeur des contacts entre les Arabes et les peuples africains subsahariens pendant plus d'un millénaire.",
+      "conflictsOrAlliances": "7e-8e siècles : conquête arabe de l'Afrique du Nord, résistance berbère (Kahina, Kusayla). 11e siècle : invasion hilalienne, dévastation de l'Ifriqiya. 1912-1962 : résistance anticoloniale française (Maroc, Algérie, Tunisie, Mauritanie). 1952 : révolution de Nasser en Egypte. 1954-1962 : guerre d'Algérie. 1967 : guerre des Six Jours. 1973 : guerre du Kippour. 2003 : crise du Darfour, milices janjaweed arabes contre populations africaines. 2010-2011 : Printemps arabe (renversement de Ben Ali en Tunisie, Moubarak en Egypte, Kadhafi en Libye). Conflits sahéliens contemporains (Mali, Niger, Tchad).",
+      "diaspora": "Importante diaspora arabe en Europe (France : 4-5 millions de Maghrébins, Allemagne, Pays-Bas, Belgique, Espagne), en Amérique du Nord (États-Unis, Canada), en Australie et dans d'autres pays africains. En France, la communauté maghrébine (Arabes et Berbères du Maghreb) est estimée à 6-7 millions de personnes. Des communautés arabes égyptiennes importantes sont présentes en Italie et dans les pays du Golfe. La diaspora soudanaise est établie au Canada, aux États-Unis et en Europe, notamment après la crise du Darfour."
+    },
+    "demography": {
+      "totalPopulation": 185000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur CIA World Factbook (profils des pays arabes africains 2025), ONU Population Data 2025, recensements nationaux. Egypte 107M (90 % arabes), Algérie 46M (70-80 % arabes), Maroc 37M (67-70 % arabes), Soudan 48M (70 % arabes), Tunisie 12M (98 % arabes), Libye 7M (90 % arabes), Mauritanie 5M (30 % Bidan arabes), Tchad 18M (9,7 % arabes), Djibouti 1M (minorité arabe), Somalie 17M (minorité arabe commerçante). Note : distinctions ethniques et arabophones difficiles à séparer dans certains cas.",
+      "distributionByCountry": [
+        {
+          "country": "EGY",
+          "population": 96000000,
+          "note": "Arabes masri, environ 90 % de la population (hors Coptes et Nubiens)"
+        },
+        {
+          "country": "DZA",
+          "population": 32000000,
+          "note": "Arabes, environ 70-80 % de la population ; Berbères (Imazighen) environ 20-30 %"
+        },
+        {
+          "country": "SDN",
+          "population": 34000000,
+          "note": "Arabes environ 70 % de la population ; tribus arabes du Nil et Baggara"
+        },
+        {
+          "country": "MAR",
+          "population": 25000000,
+          "note": "Arabes et Arabisés, environ 67-70 % de la population"
+        },
+        {
+          "country": "TUN",
+          "population": 12000000,
+          "note": "Arabes et Berbères arabisés, environ 98 % de la population"
+        },
+        {
+          "country": "LBY",
+          "population": 6500000,
+          "note": "Arabes et Berbères, environ 90-97 % de la population"
+        },
+        {
+          "country": "MRT",
+          "population": 1500000,
+          "note": "Bidan (arabes blancs), environ 30 % de la population"
+        },
+        {
+          "country": "TCD",
+          "population": 1750000,
+          "note": "Arabes Shuwa, environ 9,7 % de la population"
+        },
+        {
+          "country": "DJI",
+          "population": 100000,
+          "note": "Minorite arabe commerçante dans les villes"
+        },
+        {
+          "country": "SOM",
+          "population": 300000,
+          "note": "Minorité arabe dans les villes portuaires (Mogadiscio, Berbera, Kismayo)"
+        },
+        {
+          "country": "COM",
+          "population": 100000,
+          "note": "Arabes omanais et yéménites intégrés dans la société comorienne"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Maghrebi Arabs. https://en.wikipedia.org/wiki/Arabs_in_Africa",
+      "Wikipedia EN - Banu Hilal. https://en.wikipedia.org/wiki/Banu_Hilal",
+      "Hourani, Albert - A History of the Arab Peoples. Harvard University Press, 1991.",
+      "Lapidus, Ira M. - A History of Islamic Societies. Cambridge University Press, 2002.",
+      "SIL Ethnologue - Arabic language varieties. https://www.ethnologue.com/subgroups/arabic-1/",
+      "CIA World Factbook - Country profiles (EGY, DZA, MAR, TUN, LBY, SDN, MRT, TCD, DJI, SOM). https://www.cia.gov/the-world-factbook/",
+      "ONU Population Division - World Population Prospects 2024. https://population.un.org/wpp/",
+      "Djimadoumadji Naidongarti - Les peuples preislamiques et precoloniaux du Tchad. ACAREF, 2024.",
+      "Minority Rights Group - Mauritania, Sudan, Chad profiles. https://minorityrights.org/"
+    ]
+  }
+}

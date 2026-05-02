@@ -1,0 +1,130 @@
+{
+  "id": "PPL_KXOE",
+  "nameMain": "Khwe",
+  "languageFamilyId": "FLG_KHOE",
+  "currentCountries": ["BWA", "NAM"],
+  "content": {
+    "appellations": {
+      "mainName": "Khwe",
+      "selfAppellation": "Khwe",
+      "exonyms": [
+        "Kxoe",
+        "Barakwena",
+        "Barakwengo",
+        "Mbarakwena",
+        "Hukwe",
+        "Water Bushmen",
+        "Khwedam",
+        "Xun"
+      ],
+      "originOfExonyms": "Le terme Barakwena (ou Mbarakwena) est un exonyme pejoratif utilise par d'autres groupes bantous pour designer les Khwe. Kxoe est une orthographe alternative de Khwe. Xun et Hukwe sont des variantes regionales. Water Bushmen est un surnom colonial faisant reference a leur habitat autour des zones aquatiques de l'Okavango.",
+      "whyProblematic": "Les termes Barakwena, Mbarakwena et Water Bushmen sont consideres pejoratifs ou reducteurs. La denomination Bushmen est egalement rejetee par beaucoup de membres du groupe. La declaration de Penduka (2000) recommande l'orthographe Khwe comme appellation standardisee.",
+      "contemporaryUsage": "Le terme Khwe est prefere et recommande par la declaration de Penduka (2000) du groupe de travail WIMSA sur la standardisation des langues Ju et Khoe. Kxoe reste utilise dans la litterature academique. L'appellation Basarwa est utilisee au Botswana pour l'ensemble des San.",
+      "linguisticFamily": "FLG_KHOE",
+      "ethnoLinguisticGroup": "Khoe central (branche Kalahari Khoe, famille Khoe-Kwadi)",
+      "historicalRegion": "Region de l'Okavango (delta et franges nord), Caprivi occidental (Namibie), Kalahari septentrional (Botswana)",
+      "currentCountries": ["BWA", "NAM"]
+    },
+    "ethnicities": [
+      "Khwe de l'Okavango (Botswana) — installes dans le delta et la region de Gudigoa",
+      "Khwe du Caprivi occidental (Namibie, region de Zambezi) — installes pres de Mutciku sur l'Okavango",
+      "Buga-Khwe — sous-groupe du nord-ouest",
+      "llXo-Khwe — sous-groupe oriental",
+      "Buma-Khwe — sous-groupe du Caprivi",
+      "llXom-Khwe — variante dialectale distincte"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Khwe sont l'un des groupes indigenes les plus anciens d'Afrique australe, appartenant au vaste ensemble Khoisan. Leurs ancetres habitaient la region des collines de Tsodilo dans le delta de l'Okavango depuis plusieurs milliers d'annees, bien avant la migration bantoue (il y a environ 5 000 ans). Les Khwe et d'autres groupes Khoe occupaient autrefois un vaste espace de l'Afrique australe subsaharienne. Le contact avec les premiers locuteurs bantous durant la migration bantoue leur a laisse de nombreux emprunts lexicaux.",
+      "formationPeriod": "La formation d'une identite Khwe distincte remonte a la pre-migration bantoue. L'isolement relatif dans les zones marecageuses et les forets de l'Okavango et du Caprivi a preserve une identite et une langue propres. Jusqu'aux annees 1970, les communautes Khwe vivaient dans des zones relativement inaccessibles de Namibie, Angola, Zambie et Botswana.",
+      "migrationRoutes": [
+        "Repli progressif vers les zones marecageuses de l'Okavango sous la pression des groupes bantous (Herero, Mbukushu) depuis le premier millenaire",
+        "Migration forcee : en 1990, quelque 4 000 Khwe (dont d'anciens membres du 31e bataillon de l'armee namibienne) ont ete deplaces vers Schmidtsdrift en Afrique du Sud",
+        "Reinstallation a Platfontein (pres de Kimberley, Afrique du Sud) en 2003 apres une revendication fonciere"
+      ],
+      "historicalSettlementZones": [
+        "Collines de Tsodilo, delta de l'Okavango (Botswana) — zone ancestrale documentee",
+        "Caprivi occidental (region de Zambezi, Namibie) — principale zone de residence en Namibie, autour de Mutciku sur l'Okavango",
+        "Nord du Botswana (Gudigoa, Maun) — communautes importantes",
+        "Bandes de territoire en Angola meridional et en Zambie occidentale",
+        "Platfontein pres de Kimberley (Afrique du Sud) — communaute issue de deplacements post-independance"
+      ],
+      "unificationsOrDivisions": "Les Khwe sont organises en groupes locaux autonomes plutot qu'en entite politique unifiee. La declaration de Penduka (2000) a cree une premiere base de standardisation linguistique commune pour Khwe, llAni et Buga. La classification du groupe de travail WIMSA les associe dans la famille Khoe centrale. En Namibie, leur dispersion dans la region de Zambezi les oppose parfois aux groupes bantous voisins (Mbukushu, Lozi) pour l'acces aux ressources.",
+      "externalInfluences": "Contact avec des groupes bantous (Mbukushu, Lozi, Herero) qui ont fortement influence la langue et le mode de vie. Missions chretiennes (catholiques et protestantes) limitees au debut du XXe siecle. Sous la domination coloniale allemande puis sud-africaine, les Khwe du Caprivi ont ete recrutes comme traceurs et combattants par les forces de securite namibiennes. L'independance namibienne (1990) et l'abandon de ces roles militaires ont conduit a des deplacements importants.",
+      "majorHistoricalEvents": "Pendant la guerre d'independance namibienne (1966-1989), des Khwe ont servi dans le 31e bataillon de la SWATF (South West Africa Territorial Force), ce qui les a mis en conflit avec la SWAPO et a complique leur reinsertion apres l'independance. En 1990, environ 4 000 Khwe ont ete deplaces vers Schmidtsdrift en Afrique du Sud. En 2003, la majorite a ete reinstallee a Platfontein. En Botswana, les Khwe de l'Okavango font l'objet de pressions croissantes liees a la sedentarisation et au passage du mode de vie de chasseurs-cueilleurs a une vie villageoises, perdant progressivement leur langue au profit du setswana."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en groupes de familles elargies (bandes) de chasseurs-cueilleurs, avec un chef de bande (kxao ou headman) dont l'autorite repose sur le prestige et le consensus plutot que sur la coercition. Les decisions importantes sont prises collectivement lors d'assemblees de village. L'organisation traditionnelle est non hierarchique, fondee sur le partage et la reciprocite.",
+      "clanOrganization": "Les Khwe s'organisent en groupes d'appartenance localises (band groups), definis par la residence et les liens de parente. Il n'existe pas de clans formels au sens strict, mais des groupes de parente patrilineaires determines par la filiation du pere, regulant les alliances matrimoniales.",
+      "ageClassSystems": "Pas de systeme d'age formalise, mais la seniorite (age) joue un role important dans le respect social et l'autorite des anciens. Les anciens (kxao) sont des depositaires du savoir traditionnel, des recits et des pratiques spirituelles.",
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance au groupe et guident les regles de mariage (exogamie). La transmission des droits sur les territoires de chasse et de cueillette suit les lignages paternels. Les femmes integrent le groupe du mari apres le mariage.",
+      "religiousAuthority": "L'autorite religieuse repose sur le guerisseur-chamane (n/om-kxao), specialiste du trance dance (danse de guerison), capable d'entrer en contact avec le monde des esprits pour guerir les malades et contrer les forces malefiques. Les anciens jouent egalement un role religieux en maintenant la memoire des recits mythologiques."
+    },
+    "languages": {
+      "mainLanguage": "Khwe (Kxoe, Khwedam)",
+      "isoCodes": ["xuu"],
+      "dialects": [
+        "Buga-Khwe — dialecte du nord-ouest, associe au groupe Buga",
+        "llXo-Khwe — dialecte oriental",
+        "Buma-Khwe — dialecte du Caprivi occidental",
+        "llXom-Khwe — variante distincte reconnu par la declaration de Penduka"
+      ],
+      "vehicularRole": "Le khwe est parle par environ 8 000 locuteurs repartis au Botswana, en Namibie, en Angola, en Zambie et en Afrique du Sud. La langue est menacee : au Botswana, notamment a Maun et Khwai, de nombreux Khwe ont adopte le setswana comme langue maternelle. En Namibie, le khwe n'est pas enseigne dans l'education formelle et ne beneficie pas d'un statut officiel. La declaration de Penduka (2000) a recommande une orthographe standardisee. Un dictionnaire a ete publie par Christa Kilian-Hatz et un recueil de contes en 1999."
+    },
+    "culture": {
+      "majorRites": "La danse de guerison (trance dance) est le rite central de la vie spirituelle et communautaire des Khwe et de l'ensemble des San. Lors de ceremonies collectives tenues autour d'un feu, les femmes s'assoient en cercle en chantant et frappant des mains pendant que les guerisseurs-chamanes dansent jusqu'a l'etat de transe. Dans cet etat altere, le chamane est cense liberer l'energie curative (n/om) pour soigner les malades. Les rites de passage marquent les etapes cles : naissance, puberte, mariage et mort. A la puberte des filles, un rite de seclusion (eland bull dance) est pratique ; les garcons passent par un apprentissage des techniques de chasse. Les ceremonies funeraires comprennent l'inhumation rapide et une periode de deuil communautaire. Des interdits alimentaires et de comportement entourent ces periodes de transition.",
+      "symbols": "L'eland (grand koudou) est l'animal symbolique central, associe a la puissance spirituelle et a la guerison. Les dessins rupestres des collines de Tsodilo (site UNESCO, Botswana), realises par les ancetres des peuples Khoe-San, constituent le patrimoine symbolique le plus visible. Les motifs geometriques et animaliers des peintures rupestres de Tsodilo sont intimement lies aux visions chamaniques induites lors de la danse de transe. Les perles de verre et d'ostrich egg-shell (coquille d'oeuf d'autruche) constituent des ornements symboliques importants.",
+      "artsAndMusic": "La musique est centrale dans la vie des Khwe. Les femmes chantent en polyphonie (yodel et clapping) lors des danses de guerison pour aider les chamanes a entrer en transe. Les instruments traditionnels comprennent le bow musical (arc a bouche), le thumb piano (mbira), des hochets et des grelots de coques de chrysalide attaches aux jambes des danseurs pour marquer le rythme. Les Khwe pratiquent la narration orale (contes, mythes, recits d'animaux), qui joue un role fondamental dans l'education des enfants et la transmission culturelle. L'artisanat inclut la confection de bijoux en coquilles d'oeuf d'autruche, de sacs en peau, d'arcs et de fleches, et de nattes tressees.",
+      "spiritualities": "La cosmologie Khwe repose sur la croyance en un dieu createur superieur (//Gauwa ou Hishe selon les groupes) associe au ciel et a la pluie, et en un ensemble d'esprits ancestraux (//gauwasi) pouvant causer maladie et malheur. Le monde des esprits est accessible lors des transes chamaniques. La guerison spirituelle est la principale fonction religieuse : les chamanes interviennent pour contrer l'action des esprits malefiques et restaurer l'equilibre vital. Le culte de la lune et des astres est present dans les mythes. L'influence chretienne (protestantisme) s'est progressivement exercee depuis le XXe siecle, creant un syncrétisme avec les croyances traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Khwe n'ont pas developpe de royaumes ou de chefferies centralisees. Leur organisation en bandes de chasseurs-cueilleurs ne favorise pas la concentration du pouvoir. Des chefs de bande informels ont toujours joue un role de mediation et de representation vis-a-vis des autorites coloniales et post-coloniales.",
+      "relationsWithNeighbors": "Les Khwe ont entretenu des relations complexes avec les groupes bantous voisins (Mbukushu, Lozi, Herero), souvent caracterisees par des rapports de dependance ou de subordination. Ils echangeaient du gibier, des produits de cueillette et du travail contre des biens manufactures et du betail. Au Botswana, ils ont ete assimiles dans la sphere d'influence des chefferies tswana. Des groupes Khwe ont ete recrutes comme traceurs et combattants par les Europeens au cours de la periode coloniale.",
+      "conflictsOrAlliances": "Pendant la guerre d'independance namibienne (1966-1989), des membres Khwe ont servi dans le 31e bataillon SWATF de l'armee sud-africaine, creant des tensions durables avec la SWAPO et les Ovambo. Apres l'independance namibienne en 1990, ces ex-combattants et leurs familles (environ 4 000 personnes) ont ete deplaces vers l'Afrique du Sud, victimes de represailles. En Botswana, les Khwe sont affectes par les politiques de relocalisation du gouvernement hors des zones protegees.",
+      "diaspora": "Une communaute Khwe importante (environ 3 000-4 000 personnes) reside a Platfontein, pres de Kimberley en Afrique du Sud, suite aux deplacements de 1990-2003. Cette diaspora involontaire maintient des liens culturels et linguistiques avec les communautes d'origine mais est confrontee a une integration difficile dans la societe sud-africaine."
+    },
+    "demography": {
+      "totalPopulation": 9400,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 9 400 individus recenses dans tous les pays. Glottolog/Ethnologue (SIL) : environ 8 000 locuteurs. Namibie : environ 3 700 locuteurs (estimation SIL). Botswana : environ 2 000 individus (Joshua Project BC : 2 000). Afrique du Sud (Platfontein) : 3 000-4 000. Angola et Zambie : quelques centaines.",
+      "distributionByCountry": [
+        {
+          "country": "NAM",
+          "population": 3700,
+          "note": "Region de Zambezi (Caprivi occidental), autour de Mutciku et des rives de l'Okavango"
+        },
+        {
+          "country": "BWA",
+          "population": 2000,
+          "note": "Delta de l'Okavango, region de Gudigoa et Maun, nord du Botswana"
+        },
+        {
+          "country": "ZAF",
+          "population": 3500,
+          "note": "Platfontein pres de Kimberley, suite aux deplacements post-independance namibienne"
+        },
+        {
+          "country": "AGO",
+          "population": 150,
+          "note": "Sud de l'Angola, frontieres de la region de Zambezi"
+        },
+        {
+          "country": "ZMB",
+          "population": 50,
+          "note": "Ouest de la Zambie, frontieres de la region de Zambezi"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Khwe language. https://en.wikipedia.org/wiki/Khwe_language",
+      "Glottolog 5.3 — Kxoe (kxoe1243), ISO 639-3 : xuu. https://glottolog.org/resource/languoid/id/kxoe1243",
+      "Joshua Project — Kxoe, Xun in Botswana. https://joshuaproject.net/people_groups/10676/BC",
+      "Kilian-Hatz, Christa. Khwe Dictionary. Koln : Rudiger Koppe Verlag, 2003.",
+      "Kilian-Hatz, Christa & Naude, David. Khwe Folktales. Koln, 1999.",
+      "IWGIA — The Indigenous World 2025 : Namibia. https://iwgia.org/en/namibia/5634-iw-2025-namibia.html",
+      "UNESCO — Tsodilo Hills World Heritage Site. https://whc.unesco.org/en/list/1021/",
+      "Brenzinger, Matthias. Language endangerment in Africa. In Encyclopedia of Language and Linguistics, 2011.",
+      "SciELO — The case of Khoisan languages of Botswana. http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S2224-33802019000300012",
+      "Wikipedia EN — San peoples. https://en.wikipedia.org/wiki/San_peoples"
+    ]
+  }
+}

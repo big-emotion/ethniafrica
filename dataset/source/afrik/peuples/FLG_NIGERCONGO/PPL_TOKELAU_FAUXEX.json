@@ -1,0 +1,67 @@
+{
+  "id": "PPL_TOKELAU_FAUXEX",
+  "nameMain": "Tokelau (Faux exonyme)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "Tokelau (Faux exonyme)",
+      "selfAppellation": null,
+      "exonyms": ["Tokelau", "Union Islands (ancien nom colonial)"],
+      "originOfExonyms": "Tokelau est un territoire polynésien du Pacifique Sud. Le mot signifie nord-nord-est ou vent du nord en polynésien. Ce terme ne désigne aucun groupe ethnique africain et n'appartient pas à la famille Niger-Congo.",
+      "whyProblematic": "Ce fichier est une erreur de classification. Tokelau désigne un territoire non autogouverné du Pacifique Sud, dépendance de la Nouvelle-Zélande, composé de trois atolls coralliens (Atafu, Nukunonu, Fakaofo). Les Tokelauans sont un peuple polynésien parlant une langue austronésienne (tokelauais, ISO 639-3 : tkl), sans aucun lien avec les peuples niger-congolais d'Afrique. Ce fichier ne correspond à aucun peuple africain réel et doit être supprimé ou reclassifié hors du dataset EthniAfrica.",
+      "contemporaryUsage": "Tokelau est un territoire de Nouvelle-Zélande. Sa population est d'environ 1 500 habitants répartis sur les trois atolls, plus environ 7 000 Tokelauans vivant en Nouvelle-Zélande. Le terme ne s'applique à aucune communauté africaine.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": null,
+      "historicalRegion": null,
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": {
+      "ancientOrigins": "Tokelau designe un territoire polynésien du Pacifique Sud, et non un peuple africain. Les habitants de Tokelau sont des Polynésiens culturellement et linguistiquement apparentés aux Samoans. Aucune origine africaine n'est attestée. Ce fichier représente une erreur d'inclusion dans la base de données EthniAfrica.",
+      "formationPeriod": null,
+      "migrationRoutes": [],
+      "historicalSettlementZones": [],
+      "unificationsOrDivisions": null,
+      "externalInfluences": null,
+      "majorHistoricalEvents": null
+    },
+    "organization": {
+      "traditionalPoliticalSystem": null,
+      "clanOrganization": null,
+      "ageClassSystems": null,
+      "roleOfLineages": null,
+      "religiousAuthority": null
+    },
+    "languages": {
+      "mainLanguage": null,
+      "isoCodes": [],
+      "dialects": [],
+      "vehicularRole": null
+    },
+    "culture": {
+      "majorRites": null,
+      "symbols": null,
+      "artsAndMusic": null,
+      "spiritualities": null
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": null,
+      "conflictsOrAlliances": null,
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 0,
+      "referenceYear": 2025,
+      "source": "Non applicable. Ce fichier ne correspond a aucun peuple africain.",
+      "distributionByCountry": []
+    },
+    "sources": [
+      "Wikipedia EN – Tokelau (https://en.wikipedia.org/wiki/Tokelau)",
+      "Wikipedia EN – Tokelauan language (https://en.wikipedia.org/wiki/Tokelauan_language)",
+      "New Zealand Ministry of Foreign Affairs and Trade – Tokelau (https://www.mfat.govt.nz/en/countries-and-regions/australia-and-pacific/tokelau)",
+      "Britannica – Tokelau, Polynesian Territory, New Zealand (https://www.britannica.com/place/Tokelau)"
+    ]
+  }
+}

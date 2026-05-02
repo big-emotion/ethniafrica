@@ -1,0 +1,44 @@
+# Nom du peuple
+- Nom principal : Wolayta
+- Auto-appellation : Wolaytta / Wolaita
+- Exonymes historiques : Wolamo (ancien terme éthiopien, connotation extérieure et parfois péjorative)
+- Pourquoi « Wolamo » pose problème :
+  - exonyme utilisé par des administrations extérieures
+  - associé à une stratification ancienne désavantageuse
+- Famille linguistique : Afro-asiatique – Omotique (FLG_OMOTIQUE)
+- Groupe : Omotique nord
+- Région : Wolayta Zone (Éthiopie)
+- ID peuple : PPL_WOLAYTA
+
+# 1. Ethnies incluses
+- Wolayta du nord
+- Wolayta du sud
+
+# 2. Origines
+- Ancien royaume de Wolayta.
+- Peuplement sédentaire agricole très ancien.
+
+# 3. Organisation
+- Structure clanique hiérarchisée.
+- Importance des anciennes familles royales.
+
+# 4. Langue
+- Wolayta
+- ISO : wal
+
+# 5. Culture
+- Danse *walqaa*.
+- Gastronomie basée sur l’enset.
+- Textile traditionnel.
+
+# 6. Histoire
+- Royaume puissant jusqu’au XIXe siècle.
+- Relations avec Sidama, Kafa, Dawro.
+
+# 7. Démographie
+- Population : 2 060 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (wal)
+- Wolayta Zone Cultural Office

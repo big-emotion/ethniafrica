@@ -1,0 +1,115 @@
+{
+  "id": "PPL_ADJA",
+  "nameMain": "Adja-Ewe",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["BEN", "TGO", "GHA", "NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Adja-Ewe",
+      "selfAppellation": "Adja (pour le sous-groupe Adja) ; Eʋe ou Eʋeawo (pour les Ewe)",
+      "exonyms": [
+        "Aja",
+        "Aja-Tado",
+        "Ewe",
+        "Eve",
+        "Evhe",
+        "Ewhe",
+        "Eibe",
+        "Eoue",
+        "Ephe",
+        "Krepe",
+        "Krepi",
+        "Vhe",
+        "Bayikpe",
+        "Bubutubi",
+        "Ehoue",
+        "Wegbe"
+      ],
+      "originOfExonyms": "Les variantes Krepe et Krepi sont d'origine europeenne (danoise et britannique), utilisees pour designer les Ewe du Ghana. Les formes Eve, Evhe, Ehwe resultent de transcriptions phonetiques differentes du meme endonyme ewe. Aja-Tado (anciennement Azame) refere a la cite-mere historique. Les Europeens du 17e-19e siecle utilisaient diverses retranscriptions de l'endonyme.",
+      "whyProblematic": "La distinction entre Adja et Ewe est historiquement complexe : les Ewe sont issus des Adja (la plupart des Gbe-locuteurs tracent leurs origines a Aja-Tado), mais constituent aujourd'hui un groupe distinct plusieurs fois plus nombreux. Le terme Adja-Ewe peut designer le continuum culturel et linguistique commun ou etre reduit a tort au seul sous-groupe Adja.",
+      "contemporaryUsage": "Adja designe specifiquement les populations vivant dans le sud-ouest du Benin et a la frontiere togolaise, autour de l'ancienne cite de Tado. Ewe designe le grand groupe reparti au Ghana, Togo et Benin, parfois appele nation Ewe ou Evedukou.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Groupe Gbe (langues volta-nigeriennes, branche des langues Kwa/Niger-Congo)",
+      "historicalRegion": "Sud-ouest du Benin (Mono, Couffo), sud du Togo, sud-est du Ghana (Region Volta), frontiere Benin-Togo",
+      "currentCountries": ["BEN", "TGO", "GHA", "NGA"]
+    },
+    "ethnicities": [
+      "Adja",
+      "Ewe",
+      "Anlo Ewe",
+      "Mina",
+      "Tongu",
+      "Vedome (Danyi)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les ancetres des Adja et des Ewe sont les premiers habitants de la region de Tado sur la riviere Mono (Togo actuel), dont certains remonteraient a des populations ironworkers Akpafu et Alu avant le 1er millenaire. Vers l'an 1000, ils furent rejoints par des communautes venues du nord-ouest, probablement du royaume de Za (Gao, Niger) dispersees apres les invasions berberes vers 1010 CE. Au 13e siecle, des migrants Aja venus de l'est (possiblement des rives occidentales du fleuve Niger au Nigeria) forment avec les autochtones l'ethnie Adja et fondent le Royaume de Tado. Les traditions orales evoquent aussi des origines en region de Kétou (Benin), Oyo (Nigeria) ou la vallee du Nil.",
+      "formationPeriod": "Formation du Royaume de Tado vers l'an 1000 ; apogee aux 15e-17e siecles. Dispersion des Ewe a partir du 16e siecle depuis Notsie (Togo), surnommee le berceau des Ewe. Au 17e siecle, les Ewe traversent l'Ouest jusqu'a la rive gauche de la Volta.",
+      "migrationRoutes": [
+        "Niger (confluent Niger-Benoue, est) -> Tado (Mono, Togo) : avant le 11e siecle",
+        "Tado -> Notsie (Togo) : 15e-16e siecles, suite a des conflits",
+        "Notsie -> Ghana (Region Volta), Togo meridional, Benin meridional : 16e-17e siecles",
+        "Ewe Anlo -> cotes du Nigeria (zone Badagry) : 18e siecle, pecheurs s'installant pres de Lagos"
+      ],
+      "historicalSettlementZones": [
+        "Tado et vallee du Mono (Togo/Benin)",
+        "Notsie (Togo central)",
+        "Region Volta, Ghana (6 millions actuellement)",
+        "Sud du Togo (3 millions)",
+        "Sud-ouest du Benin, departements du Mono et Couffo (600 000 environ)",
+        "Badagry et Lagos (Nigeria)"
+      ],
+      "unificationsOrDivisions": "Vers 1600, trois freres divisent le territoire : Kokpon fonde le Grand Ardra (Allada), Do-Aklin s'installe a Abomey (royaume du Dahomey) et Te-Agbanlin cree le Petit Ardra (Porto-Novo). Les Ewe se distinguent des Adja par leur dispersion vers le sud et l'ouest suite a des conflits de ressources et de succession.",
+      "externalInfluences": "Contacts avec les empires du Mali et du Songhai via les migrants de Gao. Pression de l'Empire Oyo du 17e au 19e siecle sur les royaumes Aja. Traite atlantique des esclaves (les Adja, Fon et Ewe representaient une part majeure des captifs exportes depuis le golfe de Benin avant la fin du 18e siecle). Colonisation allemande sur le Togo (1884), francaise sur le Benin/Togo et britannique sur le Ghana.",
+      "majorHistoricalEvents": "Fondation du Royaume de Tado vers 1000 ; divisions dynastiques vers 1600 ; conquete d'Allada par le Dahomey en 1724 (8 000 personnes reduites en esclavage, dont les parents de Toussaint Louverture) ; guerre Ewe contre les troupes danoises en 1784 (Fort Prinzenstein) ; conquete francaise du Dahomey en 1893 ; partition du Togo entre France et Grande-Bretagne apres 1914 ; fetes commemoratives annuelles de l'exode depuis Notsie (Hogbetsotso pour les Anlo Ewe, Agbogbo-Za)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en royautes traditionnelles et chefferies de clans. Le Royaume de Tado (dit Azame puis Aja-Tado) fut le premier Etat centralise, fonctionne comme confederation-empire aux 15e-17e siecles. Chaque groupe Ewe ou Adja possede des chefferies locales. L'Etat ewe d'Anlo (Ghana) a une liste de dirigeants depuis 1468. Le Royaume de Notsie est un autre centre politique historique majeur. Cephas Bansah est un exemple moderne de roi ewe au Ghana.",
+      "clanOrganization": "Organisation en clans identifies par des signes corporels traditionnels (scarifications sur le visage, boucles d'oreilles specifiques, cicatrices sur la joue) selon les sous-groupes, bien que ces pratiques aient presque disparu avec la mondialisation. Sous-groupes principaux : Anlo Ewe, Mina, Anecho, Vedome (Danyi), Tongu.",
+      "roleOfLineages": "Systeme de filiation patrilineaire dominant avec des elements de parenté bilatérale. Les lignages determinent l'appartenance clanique, le droit a la terre et la transmission du statut politique.",
+      "religiousAuthority": "Sacerdoce vaudou (Vodun) : la religion Vodun, qui serait originaire des Adja selon certaines sources, est fondamentale. Pretres-sacrificateurs traditionnels. Culte de la deesse creatrice Mawu (ou Yesu). L'Awormezi (tabouret paramount) de l'Etat Anlo est l'objet de rituel fondamental pour la legitimite politique."
+    },
+    "languages": {
+      "mainLanguage": "Adja-Gbe (pour les Adja) et Ewe (pour les Ewe)",
+      "isoCodes": ["ajg", "ee"],
+      "dialects": [
+        "Tagobe (Adja du Togo uniquement)",
+        "Dogobe (Adja du Benin uniquement)",
+        "Hwegbe (Adja des deux pays)",
+        "Anlo Ewe",
+        "Tongu Ewe",
+        "Mina (Gen)"
+      ],
+      "vehicularRole": "L'ewe est une langue vehiculaire importante dans le sud-est du Ghana et le sud du Togo. De nombreux Adja sont trilingues : francais, fongbe (lingua franca du Benin meridional) et ewe. L'ewe a ete mise par ecrit en 1891 par des missionnaires allemands (Westermann, Schlegel). Wikipedia existe en ewe."
+    },
+    "culture": {
+      "majorRites": "Hogbetsotso : fete annuelle de l'exode depuis Notsie, celebree par les Anlo Ewe du Ghana, commemorant la liberation de la tyrannie du roi Agokoli de Notsie. Agbogbo-Za : fete de l'exode depuis Notsie celebree au Togo. Ceremonies Vodun avec sacerdoce specialise. Systeme de prenoms determines par les circonstances de la naissance : jour de naissance, sexe, rang dans la fratrie, heure, gemeaute (ex. Kofi = garcon ne un vendredi ; Afiwa = fille nee un vendredi ; Agossou/Agossi = naissance par le siege).",
+      "symbols": "Pagnes kita (kente) traditionnels reputes. Tambours sacres et instruments de musique rituels. Tabouret royal Awormezi de l'Etat Anlo. Signes corporels traditionnels (scarifications, boucles d'oreilles specifiques par clan).",
+      "artsAndMusic": "Musique ewe reconnue mondialement pour ses rythmes complexes (Kaganu, proche des techniques afro-caraibeennes). Instruments : gon (cloches), sistres, tambours varies. Danse Agbadja (danse traditionnelle majeure). Production de pagnes kente artisanaux. Agriculture : mais, riz, haricots, mil, palmier a huile (balais, huile de palme, paniers). Plat ghaneen Banku.",
+      "spiritualities": "Religion traditionnelle Vodun (Vaudou) dont les Adja sont consideres comme les originateurs. Culte de Mawu (deesse creatrice du monde) ou Yesu. Croyances dans les esprits et divinites Vodun. Christianisme tres repandu (majorite de la population est desormais chretienne), avec coexistence des pratiques traditionnelles. Islam minoritaire chez certains sous-groupes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume de Tado (Aja-Tado, fonde vers 1000, zenith 15e-17e siecles). Grand Ardra / Allada (branche Kokpon). Royaume du Dahomey / Abomey (branche Do-Aklin ; melange Aja-Fon). Porto-Novo / Ajatche (branche Te-Agbanlin, capitale actuelle du Benin). Etat ewe d'Anlo (Ghana, dirigeants depuis 1468). Royaume de Notsie (Togo).",
+      "relationsWithNeighbors": "Relations avec les peuples Akan : les Ewe ont ete partiellement integres aux ethnies Akyem, Akwamu, Akuapem, Attie par migrations, brassages et guerres (17e siecle). Bonnes relations avec les peuples Kotafon et Xlwa. Relations ambivalentes avec les Europeens avant la traite negriere : parfois victimes de raids, parfois fournisseurs de captifs de guerre.",
+      "conflictsOrAlliances": "Guerre contre les troupes danoises en 1784 (Fort Prinzenstein). Conquete d'Allada par le Dahomey en 1724. Oppression sous le roi Agokoli de Notsie (a l'origine de la fuite des Ewe). Partition coloniale du Togo entre France et Angleterre apres 1919, separant des communautes Ewe.",
+      "diaspora": "Les Adja, Ewe et Fon representaient une part majeure des esclaves exportes depuis le Bight of Benin vers les Ameriques avant la fin du 18e siecle, notamment Haiti (dont les parents de Toussaint Louverture etaient des Adja d'Allada). Communautes Ewe dans les zones urbaines de Cotonou, Lome, Lagos, Libreville, Accra. Migration de peche des Anlo Ewe vers la zone de Badagry/Lagos au 18e siecle."
+    },
+    "demography": {
+      "totalPopulation": 10000000,
+      "referenceYear": 2025,
+      "source": "Wikipedia FR (Ewe) : environ 6 millions au Ghana (sud-est), 3 millions au Togo (sud), 600 000 au Benin. Adja : environ 500 000 (zone frontiere Benin-Togo). Total Adja-Ewe estime a 10 millions en 2025.",
+      "distributionByCountry": [
+        { "country": "GHA", "population": 6000000 },
+        { "country": "TGO", "population": 3000000 },
+        { "country": "BEN", "population": 800000 },
+        { "country": "NGA", "population": 200000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia FR - Ewe (peuple) (https://fr.wikipedia.org/wiki/Ewe_(peuple))",
+      "Wikipedia EN - Aja people (https://en.wikipedia.org/wiki/Adja_people)",
+      "Ethnologue - Aja-Gbe (ajg) (https://www.ethnologue.com/language/ajg/)",
+      "Ethnologue - Ewe (ee) (https://www.ethnologue.com/language/ee/)",
+      "Wikipedia EN - Ewe people (https://en.wikipedia.org/wiki/Ewe_people)"
+    ]
+  }
+}

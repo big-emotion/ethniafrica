@@ -1,0 +1,116 @@
+{
+  "id": "PPL_KPELLE",
+  "nameMain": "Kpelle",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["GIN", "LBR"],
+  "content": {
+    "appellations": {
+      "mainName": "Kpelle",
+      "selfAppellation": "Kpelleh / Kpɛlɛɛ",
+      "exonyms": [
+        "Guerze (français, utilisé en Guinée)",
+        "Kpwesi",
+        "Kpessi",
+        "Mpessi",
+        "Berlu",
+        "Gbelle",
+        "Bere",
+        "Gizima",
+        "Buni",
+        "Sprd"
+      ],
+      "originOfExonyms": "Le terme Guerze est l'exonyme français utilisé en Guinée pour désigner les Kpelle guinéens, principalement dans la région de Nzérékoré. Les autres termes (Kpwesi, Mpessi, etc.) sont des variantes orthographiques ou des déformations utilisées dans les premiers écrits coloniaux et anthropologiques.",
+      "whyProblematic": "Le terme Guerze (utilisé en Guinée francophone) et Kpelle (utilisé au Libéria anglophone) désignent le même peuple mais sont souvent traités comme des groupes distincts dans les sources coloniales et certaines classifications, créant une confusion dans la littérature académique.",
+      "contemporaryUsage": "Kpelle est le terme officiel en usage au Libéria. Guerze est encore utilisé en Guinée dans les contextes administratifs et courants, bien que Kpelle tende à s'imposer comme appellation unifiée dans la littérature académique internationale.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mandé méridional (Southern Mande)",
+      "historicalRegion": "Région forestière de Guinée (Guinée Forestière, capitale Nzérékoré) et plateau central du Libéria (comté de Bong, comté de Lofa)",
+      "currentCountries": ["GIN", "LBR"]
+    },
+    "ethnicities": [
+      "Kpelle du Libéria (comté de Bong — groupe le plus important)",
+      "Kpelle de Guinée / Guerze (région de Nzérékoré)",
+      "Kpelle de Côte d'Ivoire (présence mineure dans le nord-ouest ivoirien)",
+      "Sous-groupe Diepolu-Kpelle (ceux qui vivent derrière la rivière Die, dans l'ouest du comté de Bong)",
+      "Sous-groupes Luangkori, Tengia et Warn (Kpelle de l'ouest du comté de Bong, avec variante tonale distincte)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Kpelle sont un peuple mandé méridional originaire de la région du Soudan occidental (actuel Mali). Certains historiens libériens et des traditions orales indiquent que les Kpelle, comme les Loma, Gbandi, Mahn et Mende, ont commencé à migrer depuis Kumba (actuel Ghana), où ils participaient à la construction de l'empire du Mali, vers le début du 16e siècle. Leur langue appartient au groupe Mande de la famille Niger-Congo.",
+      "formationPeriod": "L'identité kpelle distincte s'est cristallisée lors de la grande vague migratoire mane du 15e-16e siècle, quand des groupes mandé méridionaux ont pénétré les zones forestières côtières de l'Afrique de l'Ouest. L'installation dans les hauts plateaux du centre du Libéria et les zones forestières de Guinée a façonné leur culture agraire.",
+      "migrationRoutes": [
+        "Depuis le Soudan occidental (Mali) vers le sud-ouest",
+        "Passage par le Ghana septentrional (Kumba) vers le 15e-16e siècle",
+        "Descente vers la côte ouest-africaine : Guinée et Libéria actuels",
+        "Établissement dans le plateau central du Libéria (comté de Bong) et la Guinée Forestière"
+      ],
+      "historicalSettlementZones": [
+        "Comté de Bong, Libéria (principal foyer, ville de Gbarnga)",
+        "Comtés de Bomi, Gbarpolu et Lofa, Libéria",
+        "Région de Nzérékoré, Guinée (Guinée Forestière)",
+        "Zones limitrophes avec la Côte d'Ivoire et la Sierra Leone"
+      ],
+      "unificationsOrDivisions": "Les Kpelle ne formaient pas un État centralisé mais étaient organisés en clans et villages autonomes sous des chefs locaux. Leurs dialectes varient entre les comtés libériens et la Guinée, mais tous partagent une identité culturelle commune. L'unité se manifeste principalement à travers la société secrète Poro pour les hommes et Sande pour les femmes.",
+      "externalInfluences": "Contacts avec les peuples Vai et Mandingo musulmans (commerce). Influence des missionnaires protestants américains et européens au Libéria (19e-20e siècles). Colonisation indirecte via le gouvernement americo-libérien qui traitait les Kpelle comme peuple de l'intérieur. Influence de l'administration coloniale française en Guinée. Christianisme protestant (majoritaire) et islam (minoritaire) introduits progressivement.",
+      "majorHistoricalEvents": "Migrations des peuples mane au 16e siècle (dont font partie les ancêtres kpelle). Soumission progressive au gouvernement americo-libérien (19e siècle). Rébellion de 1915-1916 (résistance des peuples de l'intérieur du Libéria). Conflit ethnoreligieux de Nzérékoré en juillet 2013 entre Kpelle (chrétiens/animistes) et Konianke (musulmans, proches des Mandinka), faisant au moins 54 morts. Guerres civiles libériennes (1989-2003) ayant gravement touché les régions kpelle."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles dirigées par des chefs paramountains (paramount chiefs) qui agissent comme médiateurs entre le gouvernement national et leurs communautés. Chaque groupe tribal avait historiquement son propre chef gérant les intérêts collectifs. Les chefs de ville (town chiefs) assurent la gouvernance villageoise quotidienne. L'anthropologue Caroline Bledsoe a caractérisé l'organisation sociale kpelle comme fondée sur la richesse en personnes (wealth in people), soulignant l'importance des réseaux de dépendance sociale.",
+      "clanOrganization": "Structure clanique patrilinéaire. Les clans principaux (Kpelle de Luangkori, Tengia, Warn) conservent des variations dialectales distinctes mais partagent la même ascendance. Organisation en familles étendues constituant l'unité économique de base, avec participation collective aux travaux agricoles.",
+      "ageClassSystems": "Le système Poro organise implicitement des classes d'âge masculine : les garçons entre 7 et 20 ans sont initiés collectivement, créant une cohorte d'initiés partageant la même identité générationnelle. Ce système structure les relations d'autorité et de solidarité entre générations.",
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'appartenance clanique, les droits fonciers et les alliances matrimoniales. L'unité domestique est la cellule de base : un homme, ses épouses et ses enfants travaillent ensemble la terre. La transmission des savoirs agricoles et rituels s'effectue au sein du lignage paternel.",
+      "religiousAuthority": "La société secrète Poro (pour les hommes) et son équivalent féminin Sande (Bundu) exercent une autorité religieuse et sociale fondamentale. Le Grand Masque (Great Masked Figure) personnifie le Poro et n'apparait en public que déguisé. Les prêtres traditionnels et divinateurs assurent la médiation avec les esprits. Les pasteurs protestants et, plus rarement, les imams jouent un rôle croissant."
+    },
+    "languages": {
+      "mainLanguage": "Kpelle (Kpɛlɛɛ)",
+      "isoCodes": ["kpe", "xpe", "gkp"],
+      "dialects": [
+        "Kpelle du Libéria (xpe) — parlé par environ 500 000 personnes au Libéria, langue d'enseignement scolaire",
+        "Kpelle de Guinée / Guerze (gkp) — parlé par environ 500 000 personnes dans la Guinée Forestière",
+        "Variante de Luangkori-Tengia-Warn (ouest du comté de Bong, Libéria) — tonalité distincte",
+        "Dialecte de Diepolu (comté de Bong, Libéria)"
+      ],
+      "vehicularRole": "Le kpelle est la plus grande langue ethnique du Libéria et l'une des principales langues de Guinée Forestière. Au Libéria, il est enseigné dans les écoles primaires des régions kpelle (comté de Bong). L'anglais est la langue officielle du Libéria et sert dans l'administration et l'éducation supérieure. En Guinée, le français est langue officielle. Le kpelle est classifié en macrolangue (kpe) par l'ISO 639, avec deux codes individuels : xpe (Libéria) et gkp (Guinée). Une écriture syllabique kpelle a été inventée dans les années 1930 par le chef Gbili de Sanoyea (comté de Bong)."
+    },
+    "culture": {
+      "majorRites": "Initiation masculine Poro : entre 7 et 20 ans, les garçons sont initiés collectivement dans des bosquets sacrés situés en forêt, loin des villages. Ils y apprennent les responsabilités d'adulte, les lois communautaires, les techniques de survie et les secrets de la société. L'initiation dure plusieurs semaines ou mois. Les initiés sont considérés comme symboliquement morts et renés. Initiation féminine Sande (Bundu) : les filles à la puberté rejoignent la société secrète féminine dans un espace séparé pour apprendre les arts ménagers, les traditions culturelles et recevoir l'excision. Rites funéraires avec veillées et cérémonies collectives. Cérémonies agricoles marquant la saison des pluies (planting season) et les récoltes. Rites de naissance et de nomination des enfants.",
+      "symbols": "Grand Masque du Poro (personnification de la société secrète masculine, n'apparait en public que masqué). Masques gbetu (masques casques en bois) utilisés lors des cérémonies Poro des Kpelle du Sud. Masques sowei de la société Sande représentant l'idéal de beauté féminine. Zither encadrée (framed zither) instrument emblématique. Script syllabique kpelle (inventé par Gbili, années 1930) comme symbole d'identité culturelle.",
+      "artsAndMusic": "Musique traditionnelle divisée en deux catégories : cérémonielle (liée aux rites Poro, Sande, funéraires et agricoles) et non-cérémonielle. Instruments : zither encadrée (instrument soliste emblématique), ensembles de cors (horn ensemble), percussions (tambours), gbegbetele (instrument des initiés Poro). Chants polyphoniques collectifs lors des initiations. Tradition de chants de travail agricole. Contes et épopées orales transmis par les anciens. Chants topicaux (topical songs) des médecins traditionnels. Artisanat : tissage de vêtements, sculpture de masques rituels, poterie. Cuisine basée sur le riz (culture principale), accompagné de soupes épicées et de fufu.",
+      "spiritualities": "Croyances animistes traditionnelles fondées sur la vénération des esprits ancestraux et des forces naturelles. Le Poro et le Sande maintiennent un cosmos spiritual complexe avec des esprits de la forêt, des masques-esprits et des rituels de protection. Christianisme protestant majoritaire (introduit par les missionnaires américains et européens au 19e-20e siècle) ; les Kpelle du Libéria sont en large majorité chrétiens. Islam minoritaire, présent surtout dans les zones commerçantes et en contact avec les Mandingo et Konianke. Syncrétisme fréquent : les pratiques chrétiennes ou islamiques coexistent avec les rituels Poro/Sande et les croyances animistes traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Kpelle n'ont pas développé de royaume centralisé mais ont organisé des confédérations de chefferies tribales autonomes. Historiquement, chaque groupe kpelle disposait de son propre chef reconnu par les gouvernements coloniaux (France en Guinée, États-Unis indirectement via le gouvernement americo-libérien). Depuis l'indépendance du Libéria (1847, formellement 1944 avec la constitution révisée) et de la Guinée (1958), les Kpelle sont intégrés dans les structures politiques nationales, tout en maintenant leurs chefferies traditionnelles reconnues par l'État.",
+      "relationsWithNeighbors": "Commerce traditionnel avec les peuples Vai et Mandingo musulmans (échanges de produits agricoles contre marchandises). Relations pacifiques avec les Loma, Gbandi et Mahn (autres peuples mandé méridionaux du Libéria). Tensions et conflits avec les Konianke (groupe proche des Mandinka, musulmans) ayant culminé dans les affrontements de Nzérékoré en juillet 2013 (54 morts). Relations commerciales avec des marchands libanais et des volontaires étrangers.",
+      "conflictsOrAlliances": "Résistances aux tentatives de contrôle du gouvernement americo-libérien au 19e siècle. Rébellion de 1915-1916 des peuples de l'intérieur du Libéria. Affrontements ethnoreligieux de Nzérékoré (Guinée, juillet 2013) entre Kpelle et Konianke. Guerres civiles libériennes de 1989-1996 et 1999-2003 (dirigées par Charles Taylor et d'autres seigneurs de guerre) ayant causé d'importants déplacements de population dans les régions kpelle.",
+      "diaspora": "Diaspora kpelle dans les capitales du Libéria (Monrovia) et de la Guinée (Conakry, Nzérékoré comme grande métropole régionale kpelle). Réfugiés libériens (dont des Kpelle) ayant fui les guerres civiles vers la Sierra Leone, la Côte d'Ivoire, le Ghana et les États-Unis (communauté libérienne en diaspora, principalement Minnesota et Rhode Island). Présence en Côte d'Ivoire dans le nord-ouest."
+    },
+    "demography": {
+      "totalPopulation": 1200000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur SIL Ethnologue (kpe : macrolangue avec xpe et gkp), CIA World Factbook (Libéria : Kpelle groupe le plus large ~20% de la population libérienne estimée à 5,5 millions en 2025 ; Guinée : Guerze environ 500 000), Joshua Project et recensements nationaux libériens et guinéens. Projections 2025.",
+      "distributionByCountry": [
+        {
+          "country": "LBR",
+          "population": 700000,
+          "note": "Groupe ethnique le plus important du Libéria, environ 20% de la population. Principalement dans les comtés de Bong, Bomi, Gbarpolu et Lofa."
+        },
+        {
+          "country": "GIN",
+          "population": 500000,
+          "note": "Connus comme Guerze en Guinée. Concentrés dans la région de Nzérékoré (Guinée Forestière), troisième ville de Guinée."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kpelle people. https://en.wikipedia.org/wiki/Kpelle_people",
+      "Wikipedia EN — Kpelle language. https://en.wikipedia.org/wiki/Kpelle_language",
+      "SIL Ethnologue — Kpelle macrolanguage (kpe). https://www.ethnologue.com/language/kpe/",
+      "SIL Ethnologue — Liberia Kpelle (xpe). https://www.ethnologue.com/language/xpe/",
+      "eHRAF World Cultures — Kpelle. https://ehrafworldcultures.yale.edu/cultures/fd06/summary",
+      "Union of Todeeans in the Americas — History, Migrations and Kingdom of the Kpelle. https://www.utaliberia.org/charity-organization-history-migrations-and-kingdom-of-the-kpelle",
+      "Smithsonian Folkways — Music of the Kpelle of Liberia. https://folkways.si.edu/music-of-the-kpelle-of-liberia/world/album/smithsonian",
+      "Britannica — Poro (secret society). https://www.britannica.com/topic/Poro",
+      "101 Last Tribes — Kpelle people. https://www.101lasttribes.com/tribes/kpelle.html",
+      "CIA World Factbook — Liberia. https://www.cia.gov/the-world-factbook/countries/liberia/"
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "id": "PPL_FULA_FORET",
+  "nameMain": "Fula (Foret)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GIN", "CIV", "CMR", "GAB"],
+  "content": {
+    "appellations": {
+      "mainName": "Fula (Foret)",
+      "selfAppellation": "Fulbe (pluriel), Pullo (singulier)",
+      "exonyms": [
+        "Peul forestier (francais)",
+        "Fulani forestier (anglais)",
+        "Fulbe ladde (Fula nomades de la foret — autonymie interne)"
+      ],
+      "originOfExonyms": "Peul forestier et Fulani forestier sont des designations coloniales et academiques distinguant les Fula installes dans les zones forestieres de leurs cousins saheliens. L'expression Fulbe ladde (gens de la foret/brousse) est utilisee en interne pour designer les Fula nomades et semi-nomades des zones forestieres par opposition aux Fulbe wuro (gens des villages), plus sedentarises.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Les Fula des zones forestieres sont reconnus dans les recensements nationaux comme Peul ou Fulani selon les pays. La Guinee forestiere (region sud-est de la Guinee) est une zone de forte presence Fula. Ces populations sont souvent distinguees dans la litterature anthropologique sous le terme de Fulbe de la foret ou Peul du Fouta Djallon meridional.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Atlantique-Congo (branche senegambienne, sous-famille Niger-Congo)",
+      "historicalRegion": "Zones forestieres d'Afrique de l'Ouest et centrale : Guinee forestiere, nord de la Cote d'Ivoire, lisiere forestiere du Cameroun meridional, frontiere nord du Gabon",
+      "currentCountries": ["GIN", "CIV", "CMR", "GAB"]
+    },
+    "ethnicities": [
+      "Fulbe Kpele / Peul de Guinee forestiere (region de Nzerekore, GIN) — semi-sedentarises",
+      "Fulbe de Cote d'Ivoire septentrionale (region des Savanes, lisiere forestiere)",
+      "Fulbe Mbororo forestiers du Cameroun meridional (Fulbe pastoraux penetrant les lisières forestieres)",
+      "Fulbe du Gabon septentrional (Fulbe migrants depuis le Cameroun et la Guinee)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Fula des zones forestieres sont des descendants de Fula saheliens qui ont migre progressivement vers le sud en suivant leurs troupeaux, attires par les paturages des lisières forestieres. Leur etablissement dans les zones forestieres de Guinee remonte en partie aux migrations des Fulbe de Fouta Djallon vers les hautes terres guineennes, et de la a la Guinee forestiere au sud. Les Mbororo du Cameroun meridional et du Gabon sont des pastoraux Adamaoua qui ont pousse leurs troupeaux dans les forets et savanes forestieres.",
+      "formationPeriod": "L'identite de Fula forestiers s'est construite progressivement, a mesure que des groupes fula saheliens ou de montagne s'installaient dans les zones forestieres. En Guinee forestiere, le processus d'installation est documente a partir du XVIIIe-XIXe siecles, en lien avec l'expansion de l'influence du Fouta Djallon vers le sud. Au Cameroun et au Gabon, les Mbororo pastoraux se sont etablis dans les lisières forestieres principalement au XXe siecle.",
+      "migrationRoutes": [
+        "Fouta Djallon (Guinee centrale) vers la Guinee forestiere (region de Nzerekore) — migration vers le sud",
+        "Adamaoua (Cameroun/Nigeria) vers les lisières forestières du Cameroun meridional",
+        "Cameroun meridional vers le nord du Gabon (migrations Mbororo au XXe siecle)",
+        "Sahel malien/ivoirien vers les zones de savane forestière nord de Cote d'Ivoire"
+      ],
+      "historicalSettlementZones": [
+        "Guinee forestiere (region administrative de Nzerekore, GIN)",
+        "Savanes du nord de la Cote d'Ivoire (Korhogo, Odienne, Bondoukou)",
+        "Lisiere forestiere du Cameroun meridional et adamawa",
+        "Nord du Gabon (Woleu-Ntem, frontieres avec Cameroun)"
+      ],
+      "unificationsOrDivisions": "Les Fula forestiers forment un ensemble peu centralise, souvent organises en petits groupes de bergers ou en communautes villages adaptant leur mode de vie a l'environnement forestier. Ils maintiennent une identite fulbe commune (langue, pulaaku), tout en adaptant leurs pratiques aux contraintes de la foret (remplacement partiel des bovins par les petits ruminants, diversification avec l'agriculture).",
+      "externalInfluences": "Contacts avec les peuples forestiers autochtones (Kpelle, Loma, Guerze en Guinee ; Bete, Senufo en Cote d'Ivoire ; Baka Pygmees, Fang, Beti au Cameroun/Gabon). Adaptation aux economies forestieres (huile de palme, cacao, bois). L'islam sunnite malekite reste central, comme chez l'ensemble des Fula.",
+      "majorHistoricalEvents": "XVIIIe-XIXe siecles : extension de l'influence du Fouta Djallon (Guinee) vers le sud, favorisant la migration Fula dans la Guinee forestiere. XIXe-XXe siecles : migrations des Mbororo depuis l'Adamaoua vers les lisières forestières du Cameroun et du Gabon. 1958 : independance de la Guinee sous Sekou Toure (Fulbe du Fouta Djallon persecutes sous son regime, exodes vers Senegal, Cote d'Ivoire, Europe). Conflits ruraux recurrents entre Fula (eleveurs) et agriculteurs autochtones en Guinee forestiere et en Cote d'Ivoire."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies locales dirigees par un Ardo (chef de groupe pastoral ou de village). Conseil des anciens pour la gouvernance locale. Dans les zones forestieres, l'autorite est moins formalisee que dans les Etats islamiques saheliens (Fouta, Sokoto) ; les communautes Fula forestieres s'appuient davantage sur des accords locaux avec les chefs autochtones. A Nzerekore (Guinee forestiere), un chef Fula reconnu par l'administration represente la communaute.",
+      "clanOrganization": "Structure clanique patrilineaire identique aux autres Fula. Organisation en familles etendues et lignages. Les noms de famille (Diallo, Balde, Barry, Sow, Bah, Jallow) signalent les origines regionales et les lignages. Le boeuf reste le marqueur de richesse et de statut, meme si dans les zones tres forestieres les Fula ont souvent adapte leur elevage aux caprins et aux ovins.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite, l'heritage et les alliances. Le pulaaku (code de conduite fula) s'applique : modestie, patience, hospitalite, courage. La solidarite de lignage est renforcee par la dispersion spatiale des groupes forestiers.",
+      "religiousAuthority": "Autorite des oulemas et imams locaux. L'islam sunnite malekite est central. Des mosquees sont presentes dans toutes les communautes Fula forestieres, meme les plus isolees. Confréries soufies (Tijaniyya, Qadiriyya) actives. Quelques pratiques syncrétiques avec les religions autochtones forestieres dans certaines communautes."
+    },
+    "languages": {
+      "mainLanguage": "Pular / Fulfulde",
+      "isoCodes": ["fuf", "fub"],
+      "dialects": [
+        "Pular / Fuuta Jallon (fuf) — variete principale en Guinee forestiere, issue du Fouta Djallon",
+        "Fulfulde Adamawa / Fombinaare (fub) — variete parlee par les Mbororo du Cameroun et du Gabon meridional",
+        "Varietes de transition selon les zones de contact"
+      ],
+      "vehicularRole": "Le pular/fulfulde est la langue d'identite et de communication interne des Fula forestiers. En Guinee, le pular est la langue maternelle d'environ 40% de la population et sert de lingua franca commerciale dans une grande partie du pays. En Cote d'Ivoire et au Cameroun, le francais est la langue d'administration. Au Gabon, le francais est officiel. Les Fula forestiers sont generalement bilingues ou multilingues (pular + francais + langue locale autochtone)."
+    },
+    "culture": {
+      "majorRites": "Celebrations islamiques obligatoires : Ramadan (jeune mensuel), Aïd el-Fitr (fin du Ramadan), Aïd el-Adha (fete du sacrifice), Mawlid (naissance du Prophete). Circoncision masculine : rite de passage majeur, generalement entre 7 et 15 ans ; celebrations familiales et communautaires. Ceremonies de naissance (imposition du nom au 7e jour). Mariages : phases ritualisees (kabbal — mariage par procuration, koowgal — premiere rencontre officielle), dot en betail, celebrations multi-jours. Ceremonies pastorales liees au betail : depart et retour des troupeaux, guerison des animaux, celebration des premieres naissances. Rites funeraires selon la tradition islamique (inhumation dans les 24h, prieres collectives, condoleances de 3 jours).",
+      "symbols": "Le betail (bovins) reste le symbole de richesse et de statut social des Fula forestiers, meme si adapte aux contraintes forestieres (petits ruminants en zone de foret dense). Poesie elogieuse (diogal) recitee lors des ceremonies par les griots (Awlube). Calligraphie arabe et Ajami. Perles, bracelets, colliers comme ornements de statut. La tenue vestimentaire islamique : boubous brodes, voiles pour les femmes.",
+      "artsAndMusic": "Instruments musicaux : hoddu (luth fula), riti (violon monocorde a archet), tambours (buuba, bawdi), flute pastorale. Chants : zaghareet (youyou), chants de bergers, poesie elogieuse (diogal). Artisanat : calebasses gravees par les femmes, tressage, vannerie, fabrication de couvre-calebasses (mbeedu). Tissage et broderie de boubous. La danse Yaake, bien que surtout pratiquee par les Wodaabe du Sahel, reste connue dans la diaspora Fula forestiere lors des grandes reunions. Cuisine : kossam (lait fermente), bouillie de mil (nyiiri) avec sauce takai, riz, ignames, cassava selon la region forestiere.",
+      "spiritualities": "Islam sunnite malekite : religion de la quasi-totalite des Fula forestiers. Pratiques islamiques quotidiennes (cinq prieres, vendredi a la mosquee). Confréries soufies : Tijaniyya et Qadiriyya actives dans les communautes Fula forestieres. Education coranique : ecoles coraniques presentes meme dans les communautes rurales. Quelques traces de syncretisme avec les religions autochtones forestieres dans certaines communautes isolees. Les femmes Fula forestieres portent le voile (hijab) conformement aux prescriptions islamiques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Fula forestiers n'ont pas developpe d'Etat autonome dans les zones forestieres. Ils se rattachent a l'autorite historique du Fouta Djallon (GIN) pour les groupes guineens, ou de l'Adamaoua (CMR/NGA) pour les Mbororo du Cameroun et du Gabon. Leur prestige politique dans les zones forestieres vient de leur affiliation a ces grands etats islamiques fula et de leur role de marchands et d'intermediaires commerciaux.",
+      "relationsWithNeighbors": "Relations complexes avec les peuples forestiers autochtones : contacts commerciaux (bovins contre produits forestiers), tensions recurrentes liees aux paturages et aux acces aux terres. En Guinee forestiere, les Fula (Peul) et les peuples autochtones Kpelle, Loma, Guerze ont coexiste, parfois en tension. En Cote d'Ivoire septentrionale, tensions periodiques avec les agriculteurs Senufo et Mande. Au Cameroun meridional, les Mbororo coexistent avec les Baka Pygmees et les peuples bantoues forestiers.",
+      "conflictsOrAlliances": "Conflits agriculteurs-eleveurs recurrents en Guinee forestiere, en Cote d'Ivoire et au Cameroun : destruction de cultures par les troupeaux, contestation des droits fonciers. Apres l'independance de la Guinee (1958), les Fula du Fouta Djallon furent persecutes sous le regime de Sekou Toure (Mandingue) : exodes massifs vers le Senegal, la Cote d'Ivoire, la France et la diaspora internationale. En Cote d'Ivoire, les tensions ethniques des annees 1990-2000 (crise ivoirienne) ont affecte les Peul du nord.",
+      "diaspora": "La diaspora Fula des zones forestieres se fond dans la grande diaspora fula mondiale. Les exils politiques de Guinee (post-1958) ont constitue une diaspora significative en Cote d'Ivoire, au Senegal, en France et au Royaume-Uni. Migration economique vers les grandes villes (Conakry, Abidjan, Yaounde, Libreville)."
+    },
+    "demography": {
+      "totalPopulation": 2000000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur : Joshua Project Fulbe Futa in Guinea (4 979 000 au total, fraction forestiere estimee) ; CIA World Factbook Guinee, Cote d'Ivoire, Cameroun ; UNFPA Afrique de l'Ouest ; Ethnologue (fuf, fub) ; estimations experts pour la fraction forestiere des populations Fula totales des pays concernes",
+      "distributionByCountry": [
+        {
+          "country": "GIN",
+          "population": 1200000,
+          "note": "Guinee forestiere (region de Nzerekore) et Haute Guinee : fraction des Fulbe qui se sont etendu au sud du Fouta Djallon dans les zones forestieres"
+        },
+        {
+          "country": "CIV",
+          "population": 400000,
+          "note": "Savane forestière du nord de la Cote d'Ivoire (regions des Savanes, Worodougou), commerçants et pastoraux"
+        },
+        {
+          "country": "CMR",
+          "population": 300000,
+          "note": "Mbororo pastoraux ayant penetré dans les lisières forestieres du Cameroun meridional, region du Centre et du Sud"
+        },
+        {
+          "country": "GAB",
+          "population": 100000,
+          "note": "Fulbe migrants depuis le Cameroun, installes dans la province du Woleu-Ntem et les zones frontieres"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Fula people (sections Fulbe Futa Jallon et Mbororo). https://en.wikipedia.org/wiki/Fula_people",
+      "Joshua Project — Fulbe Futa in Guinea (population 4 979 000 GIN). https://joshuaproject.net/people_groups/11769/gv",
+      "African Voice Newspaper — The Fula of Guinea. https://africanvoiceonline.co.uk/the-fula-of-guinea/",
+      "SIL Ethnologue — Pular (fuf). https://www.ethnologue.com/language/fuf/",
+      "SIL Ethnologue — Fulfulde Adamawa (fub). https://www.ethnologue.com/language/fub/",
+      "CIA World Factbook — Guinea. https://www.cia.gov/the-world-factbook/countries/guinea/",
+      "CIA World Factbook — Cote d'Ivoire. https://www.cia.gov/the-world-factbook/countries/cote-divoire/",
+      "UNFPA — Afrique de l'Ouest population data. https://www.unfpa.org/"
+    ]
+  }
+}

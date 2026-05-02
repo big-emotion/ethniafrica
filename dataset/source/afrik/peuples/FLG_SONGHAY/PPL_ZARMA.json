@@ -1,0 +1,135 @@
+{
+  "id": "PPL_ZARMA",
+  "nameMain": "Zarma",
+  "languageFamilyId": "FLG_SONGHAY",
+  "currentCountries": ["NER", "NGA", "BEN", "BFA", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Zarma",
+      "selfAppellation": "Zarma (ou Zerma)",
+      "exonyms": [
+        "Djerma",
+        "Dyerma",
+        "Zabarma",
+        "Zabarmawa",
+        "Adzerma",
+        "Jerma"
+      ],
+      "originOfExonyms": "Le terme Djerma est la transcription francaise historique de Zarma, utilisant l'orthographe francaise pour le son [z] initial. La forme Zarma est celle que les locuteurs eux-memes utilisent. Le terme Zabarmawa ou Zabarma, utilise au Nigeria et au Ghana, vient de Zabarma (pays zarma). Le nom Zarma serait derive de Za-Hama, les descendants de Za, en reference a la dynaste fondatrice Za (ou Zuwa) de l'empire Songhay, dont les Zarma se reclament.",
+      "whyProblematic": "Les Zarma et les Songhay sont souvent regroupes sous l'etiquette Zarma-Songhay au Niger, ce qui efface leur distinction historique et identitaire. Les Zarma se distinguent des Songhay par leurs origines migratoires, leur installation dans le Niger occidental independamment de l'empire, et une culture et des pratiques religieuses specifiques (yenendi, holey). Par ailleurs, le terme Djerma, d'usage colonial, est percu negativement par certains membres du groupe.",
+      "contemporaryUsage": "Le terme Zarma est aujourd'hui la designation officielle au Niger. Le zarma est l'une des huit langues nationales du Niger. Les Zarma representent environ 21,2% de la population nigerienne (2024), soit le deuxieme groupe apres les Haoussa, et constituent la majorite de la population de Niamey. Ils sont aussi presents au Nigeria (Zabarmawa), au Benin, au Burkina Faso, au Ghana, en Cote d'Ivoire et au Togo.",
+      "linguisticFamily": "FLG_SONGHAY",
+      "ethnoLinguisticGroup": "Songhay meridional — Zarma, groupe le plus large de la famille songhay",
+      "historicalRegion": "Niger occidental : regions de Niamey, Dosso, Tillabery, Zarmaganda (plateau de Zarma nord) et Dallol Bosso — le long du fleuve Niger au Niger",
+      "currentCountries": ["NER", "NGA", "BEN", "BFA", "GHA"]
+    },
+    "ethnicities": [
+      "Zarma proprement dits (Niger occidental) — groupe majoritaire autour de Niamey, Dosso et Tillabery",
+      "Kurtey — sous-groupe des iles du Niger occidental, parfois distingue des Zarma",
+      "Sorko — pecheurs zarma et songhay du fleuve Niger",
+      "Gabda — sous-groupe zarma avec des distinctions historiques",
+      "Tinga — sous-groupe zarma a traditions specifiques",
+      "Kalles — sous-groupe aux origines potentiellement berberes ou touaregues",
+      "Golles — sous-groupe zarma",
+      "Loqas — sous-groupe zarma",
+      "Zabermawa (Zabarma) — diaspora zarma au Nigeria (Kebbi, Yobe, Niger States) et au Ghana"
+    ],
+    "origins": {
+      "ancientOrigins": "Les traditions orales zarma placent leurs origines dans la region de la boucle du Niger au Mali, certains recits les decrivant comme d'origine mande ou soninke. L'historien Dierk Lange a soutenu que les Zarma etaient la classe dirigeante de l'empire de Gao avant d'etre detruits par la dynaste Sonni (fondatrice de l'empire Songhay). D'autres chercheurs les considerent comme faisant partie de l'ensemble ethnique songhay depuis les origines. Le nom Za-Hama (descendants de Za) suggere un lien avec la dynaste Za de Kukiya et Gao. Au 14e siecle, les Zarma auraient ete evinces par les Sonni avant de migrer vers le Niger actuel.",
+      "formationPeriod": "La migration zarma vers le Niger occidental s'est produite progressivement durant la periode de l'empire Songhay (15e-16e siecles). Selon la tradition orale, elle fut conduite par Mali Bero, qui se deplace avec son peuple apres un conflit avec des voisins touaregs, en voyageant magiquement sur le fond d'un grenier a mil. Les Zarma s'installerent d'abord dans la Zarmaganda (plateau zarma, Niger), puis etendirent leur presence vers le sud dans le Dallol Bosso et Dosso au 17e siecle. La fondation du sultanat de Dosso vers 1750 fut l'etape politique cle de leur consolidation.",
+      "migrationRoutes": [
+        "Migration depuis la zone de Gao et de la boucle du Niger (Mali) vers le sud-est, 15e-16e siecles",
+        "Etablissement dans la Zarmaganda (plateau du nord-ouest niger), 16e siecle",
+        "Extension vers le Dallol Bosso et Dosso, 17e siecle",
+        "Fondation du sultanat de Dosso vers 1750",
+        "Raids et expansion vers le Liptako (Burkina Faso) au 19e siecle via des armees zarma en jihad"
+      ],
+      "historicalSettlementZones": [
+        "Zarmaganda — plateau historique de la Zarma, nord-ouest du Niger (departement de Tillabery)",
+        "Dallol Bosso — vallee fertile du Niger occidental (departements de Dosso et Niamey)",
+        "Dosso — capitale du sultanat zarma, centre politique historique",
+        "Niamey — capitale du Niger, majoritairement zarma",
+        "Regions de Say, Torodi, Ouallam (Niger occidental)",
+        "Nord du Benin (Malanville et environs) et zones du Liptako (Burkina Faso)"
+      ],
+      "unificationsOrDivisions": "Les Zarma sont divises en de nombreuses chefferies dont la plus importante est le sultanat de Dosso (fonde ca. 1750, dirige par le Zarmakoy). Les rivalites entre chefferies furent frequentes aux 18e-19e siecles. La cooperation avec les Francais a partir de 1898 centralisa le pouvoir autour du Zarmakoy de Dosso. Les Zarma conservent une identite forte distincte des Songhay et des Haoussa, fondee sur leur histoire de guerriers et de marchands.",
+      "externalInfluences": "Heritage de l'empire Songhay. Contacts et conflits avec les Touareg au nord et les Peuls (Fulani) au sud-est. Pression du califat de Sokoto au 19e siecle (Dosso tomba brievement sous la tutelle du sous-emirat de Gando, 1849-1856). Conquete francaise (1898) : alliance du Zarmakoy Attikou avec les Francais. Islamisation progressive depuis l'empire; syncreti avec le culte des esprits holey bien documente. Migrations de travail vers le Ghana (Accra) depuis le 19e siecle.",
+      "majorHistoricalEvents": "15e-16e siecles : migration zarma vers le Niger occidental. Ca. 1750 : fondation du sultanat de Dosso par Zarmakoy Aboubacar. 1821 : Dosso conduit la resistance a l'expansion du califat de Sokoto. 1849-1856 : Dosso sous influence de l'emirat de Gando (Sokoto). 1856-1865 : Zarmakoy Kossom refonde l'unite zarma. 1898 : Zarmakoy Attikou s'allie aux Francais qui s'installent a Dosso. 1923 : transfert de la capitale coloniale de Zinder a Niamey (en territoire zarma). 1958-1959 : Zarmakoy Seydou, vice-president et ministre de la Justice. 1960 : independance du Niger. Les presidents nigeriens sont majoritairement d'origine zarma jusqu'aux annees 1990."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le sultanat de Dosso (Zarmakoy) est la chefferie supreme zarma, reconnue par l'Etat nigerian. Le Zarmakoy est elu par un conseil de chefs de canton et doit etre confirme par le gouvernement. En dessous, les chefs de canton (koytye) dirigent des territories regroupant plusieurs villages. Les chefs de village (kara koy) ont l'autorite locale. Les conseils de village reglent les litiges cotidiens. Ce systeme d'autorite indirecte fut maintenu et renforce sous la colonisation francaise qui en fit l'un des exemples les plus avances de l'administration indirecte en Afrique francophone.",
+      "clanOrganization": "Societe stratifiee : nobles (koy — classe des chefs), paysans libres (horso zarma libre), artisans (gabibi — forgerons, tisserands, griots), anciens captifs (banza). Les griots (jesere) sont une caste specialisee, endogame, conservant et transmettant la memoire historique lors des ceremonies. La stratification est hereditaire et l'endogamie de caste est la norme. Selon J.P. Olivier de Sardan, les esclaves constituaient historiquement jusqu'aux deux tiers de la population totale zarma-songhay en periode precoloniale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires (windi) determinent le statut social, l'heritage foncier, les droits politiques et les alliances matrimoniales. Les unions avec les cousins croises sont preferees. Le zima (pretre des esprits) ne transmet pas forcement son role a ses descendants biologiques — c'est l'une des exceptions a la logique patrilineaire. La propriete des troupeaux (bovins, chameaux, chevres) est patrilineaire.",
+      "religiousAuthority": "L'imam (marabout, alfa) exerce l'autorite islamique (ecole malekite). Le marabout joue un role de guerisseur, de conseiller et d'auteur d'amulettes coraniques (gris-gris). Le zima est le pretre des esprits holey, qui animent les ceremonies de possession (yenendi, holey hori). Les deux autorites (islamique et traditionnelle) coexistent dans les memes communautes."
+    },
+    "languages": {
+      "mainLanguage": "Zarma (Zarma Ciine / Zarma Sanni)",
+      "isoCodes": ["dje"],
+      "dialects": [
+        "Zarma de Niamey et du Dallol Bosso — dialecte de prestige, centre administratif",
+        "Zarma de Dosso — variete avec quelques specificites phonologiques (ton dipping note par Tersis)",
+        "Zarma de la Zarmaganda — variete du plateau nord-ouest",
+        "Zarma de Tillabery — variete proche du Songhoyboro Ciine",
+        "Zarma du Nigeria (Zabarmawa) — variete parlee au Kebbi State, avec influences haoussa"
+      ],
+      "vehicularRole": "Le zarma est la deuxieme langue du Niger apres le haoussa et la principale langue de Niamey et du Niger occidental. Il est l'une des huit langues nationales officielles du Niger. Avec plus de 6 millions de locuteurs selon Ethnologue (2024), c'est la plus repandue des langues songhay. Il sert de lingua franca commerciale dans tout le Niger occidental et dans les villes cotieres de l'Afrique de l'Ouest (Accra, Abidjan). Il est enseigne dans le primaire au Niger et utilise dans les medias (radio, television nationale). L'ecriture zarma utilise soit l'alphabet latin soit l'Ajami (alphabet arabe adapte)."
+    },
+    "culture": {
+      "majorRites": "Yenendi (ceremonies de rafraichissement) : grande ceremonie zarma et songhay tenue a la fin de la saison chaude (avril-mai) pour appeler la pluie, impliquant de la musique, des danses et la possession par les esprits (notamment Dongo, esprit du tonnerre). Holey hori (ceremonies de possession) : pratiques therapeutiques et religieuses lors desquelles des mediums (des zima) entrent en transe et sont possedes par des esprits holey pour diagnostiquer et guerir les maladies. Circoncision (laasu) : rite de passage masculin celebre communautairement avec fetes et dons. Ceremonies de nommage (sununte) au 7e jour. Mariage en plusieurs etapes (dot, ceremonies, installation). Funerailles islamiques avec condoleances collectives de 3 jours.",
+      "symbols": "Le Zarmakoy de Dosso et son palais symbolisent l'unite politique zarma. Le cheval (heritage guerrier zarma, certains descendant de cavaliers islamiques) est un symbole de noblesse. Les instruments du griot (jesere) — le gooje (violon monocorde) — symbolisent la memoire collective. Les nattes et paniers decores en palmier doum symbolisent l'artisanat feminin zarma. Le fleuve Niger est le symbole cosmologique central.",
+      "artsAndMusic": "Musique des griots (jesere) : gooje (violon monocorde en calebasse), garaya (luth a 2 cordes), kuunde (calebasse-tambour renversee dans l'eau). Chants epiques genealogiques lors des ceremonies. Danses de possession holey lors des yenendi et holey hori. Vannerie et cordonnerie feminines : nattes et paniers en feuilles de doum-palmier, teintures aux couleurs vives, objet de commerce. Tissage de couvertures en bandes (realise par les descendants de captifs Rimaibe). Poterie. Broderie et couture de boubous. Les Zarma sont connus dans toute l'Afrique de l'Ouest pour le commerce ambulant de tissus (les migrants sont appeles enfants de la foret ou enfants du sud).",
+      "spiritualities": "Islam sunnite malekite dominant, pratique depuis l'empire Songhay. Persistance du culte des esprits holey : pantheon syncreti comprenant Dongo (foudre et pluie), Harakoy Dikko (fleuve Niger), Moussa Nyori (brousse), Genji Kwari (esprits blancs, touaregs), esprits de la colonisation (Hauka). Les zima president les ceremonies de possession. Yenendi : ceremonie de rafraichissement pour appeler la pluie, documentee par l'ethnologue Jean Rouch. Culte Hauka documente dans le film Les Maitres fous (1955) de Jean Rouch, decrivant des possessions par des esprits de la colonisation chez des migrants zarma-songhay a Accra."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le sultanat de Dosso (fonde ca. 1750 par Zarmakoy Aboubacar du clan Taguru) est la principale entite politique zarma historique. Il survit ceremonielement a ce jour. Zarmakoy Kossom (1856-1865) unifia l'ensemble de la Zarma orientale. Le Zarmakoy de Dosso devint un pilier de l'administration coloniale francaise, recevant en contrepartie des pouvoirs etendus — l'un des exemples les plus elabores d'administration indirecte en Afrique francophone. En 1923, la capitale coloniale fut deplacee de Zinder a Niamey, en territoire zarma. L'emirat zarma des Zabarma fonda au 19e siecle un etat militaire sur le plateau voltaique (Burkina Faso actuel, nord Ghana), sous le commandement de Babatu.",
+      "relationsWithNeighbors": "Relations historiques de tension et de commerce avec les Touareg au nord (conflits pour les terres et l'eau), avec les Peuls (Fulani, eleveurs louant les paturages zarma), avec les Haoussa a l'est (commerce, rivalite politique), avec les Mossi au sud-ouest (contacts commerciaux). Les Zarma ont fourni une grande partie des elites politiques du Niger post-independance.",
+      "conflictsOrAlliances": "Guerres intercommunautaires zarma aux 18e-19e siecles pour le controle des terres fertiles du Dallol Bosso. Resistance au califat de Sokoto (1821). Alliance du Zarmakoy de Dosso avec les Francais (1898). L'emir zarma Babatu (fin 19e siecle) conquit une grande partie du nord du Ghana actuel et du Burkina Faso. Revolte de 1906 dans la region de Dosso reprimee avec l'aide zarma. Independance (1960) : les presidents Diori Hamani (1960-1974) et Ali Saibou (1987-1993) sont d'origine zarma.",
+      "diaspora": "Tradition historique de migration commerciale vers les villes cotieres : les Zarma sont connus dans tout le Golfe de Guinee comme commercants de tissus (les Zabarma du Ghana et de Cote d'Ivoire). Migration vers Niamey (forte presence dans la capitale). Diaspora en France (region parisienne), aux Etats-Unis et en Europe. Travailleurs migrants saisonniers vers Abidjan, Accra, Lagos depuis le 19e siecle."
+    },
+    "demography": {
+      "totalPopulation": 5500000,
+      "referenceYear": 2025,
+      "source": "CIA World Factbook Niger 2024 : Zarma-Songhay 21,2% d'une population de 27,9 millions = 5,9 millions. Crystal Clear Translation 2024 : environ 4,92 millions de Zarma au Niger. SIL Ethnologue (dje) : plus de 6 millions de locuteurs zarma. Estimation 2025 : 5 a 5,5 millions au Niger (croissance demographique elevee, Niger TFR ~ 6 enfants/femme). Population nigerianne et de la diaspora incluse.",
+      "distributionByCountry": [
+        {
+          "country": "NER",
+          "population": 5000000,
+          "note": "Regions de Niamey (majorite), Dosso, Tillabery, Zarmaganda — environ 21% de la population du Niger"
+        },
+        {
+          "country": "NGA",
+          "population": 200000,
+          "note": "Zabarmawa dans les Etats de Kebbi, Yobe et Niger (Nigeria)"
+        },
+        {
+          "country": "BEN",
+          "population": 80000,
+          "note": "Nord du Benin (Malanville, Kandi et environs)"
+        },
+        {
+          "country": "BFA",
+          "population": 60000,
+          "note": "Nord-est du Burkina Faso (region du Sahel, plateau voltaique)"
+        },
+        {
+          "country": "GHA",
+          "population": 50000,
+          "note": "Communautes Zabarma dans le nord du Ghana (heritage des conquerants zarma du 19e siecle)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Zarma people. https://en.wikipedia.org/wiki/Zarma_people",
+      "Wikipedia EN – Zarma language. https://en.wikipedia.org/wiki/Zarma_language",
+      "Wikipedia EN – Dosso Kingdom. https://en.wikipedia.org/wiki/Dosso_Kingdom",
+      "SIL Ethnologue – Zarma (dje). https://www.ethnologue.com/language/dje/",
+      "Crystal Clear Translation – The Zarma Language. https://crystalcleartranslation.com/the-zarma-language-one-of-the-fascinating-songhay-languages/",
+      "101 Last Tribes – Zarma people. https://www.101lasttribes.com/tribes/zarma.html",
+      "Olivier de Sardan, Jean-Pierre. Concepts et conceptions songhay-zarma. Paris : Nubia, 1982.",
+      "Rouch, Jean. La Religion et la magie songhay. PUF, Paris, 1960.",
+      "Rouch, Jean. Les Maitres fous (film documentaire). CNRS/Films de la Pleiade, 1955.",
+      "CIA World Factbook – Niger. https://www.cia.gov/the-world-factbook/countries/niger/"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "id": "PPL_BETE",
+  "nameMain": "Bete et We",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Bete et We",
+      "selfAppellation": "Bete (ou Bhete, Magwe selon la tradition orale) ; We (endonyme signifiant litteralement hommes qui pardonnent facilement)",
+      "exonyms": [
+        "Guere (nom donne par l'administration coloniale française aux We du sud, issu d'une mauvaise interpretation de traducteurs locaux)",
+        "Wobe (nom donne aux We du nord par l'administration coloniale)",
+        "Krou (terme generique europeen applique aux deux peuples et a leurs voisins)",
+        "Beti, Betia, Betegnan, Kpwe, Magwe, Shien (variantes ethnonymiques historiques des Bete)"
+      ],
+      "originOfExonyms": "L'ethnonyme Bete est d'origine inconnue selon la litterature academique. Guere et Wobe sont des designations creees par l'administration coloniale française : avant la colonisation, les We vivant dans les forets de la frontiere libero-ivoirienne ne se distinguaient pas en deux sous-groupes ; la division resulte d'une erreur d'interpretation lors des premieres enquetes coloniales (les Guere etant au sud, les Wobe au nord). Le terme Krou fut utilise par les Europeens pour designer l'ensemble des peuples cotieres entre Monrovia et Grand-Lahou.",
+      "whyProblematic": "Guere et Wobe sont des designations coloniales qui fractionnent artificiellement le groupe We. Les termes Krou ou Kru sont parfois employes de maniere trop generique pour designer des sous-groupes distincts. L'ethnonyme Bete a ete constitue sous la colonisation pour des populations qui se definissaient plutot par leurs lignages ou leurs villages.",
+      "contemporaryUsage": "Bete et We sont les denominations officielles utilisees en Cote d'Ivoire. We englobe desormais Guere et Wobe dans la litterature academique et militante. Bete est largement revendique comme identite ethnique dans la vie politique ivoirienne.",
+      "linguisticFamily": "FLG_KROU",
+      "ethnoLinguisticGroup": "Kru",
+      "historicalRegion": "Centre-ouest et ouest de la Cote d'Ivoire, region forestiere des fleuves Sassandra et Bandama",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": [
+      "Bete (93 tribus ou sous-groupes dont Niabré, Logobre, Nékédi, Zédi, Zabia, Guébié, Gbadi, Paccolo)",
+      "We / Guere (concentres dans le departement de Guiglo)",
+      "We / Wobe (proches linguistiquement et culturellement des Guere)"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon les recherches de Tety Antoine Gauze, confirmees par les historiens Jean-Noel Loucou et le Pr. Guessan Kouadio, les Bete se sont installes au nord-ouest de leur habitat actuel, entre les fleuves Bandama et Sassandra, vers la fin du Neolithique. La tradition orale designe les Bete sous l'appellation generique Magwe, les considerant comme les parents directs des We, avec qui ils partagent un ancetre commun nomme Gadi. Les We (Guere et Wobe) seraient les vestiges linguistiques les plus intacts du vieux fonds kru, ayant migre tres tot depuis l'interieur vers la foret ivoirienne.",
+      "formationPeriod": "Etablissement progressif entre le XVIe et le XVIIe siecle dans leurs territoires actuels, sous la pression de mouvements de populations venus du nord (Manding, Akan). Selon le Minority Rights Group, les Bete ont migre dans leur zone actuelle au XVIIe siecle.",
+      "migrationRoutes": [
+        "Bete : depuis les zones nord entre Bandama et Sassandra vers le centre-ouest forestier actuel",
+        "We : depuis l'interieur kru vers les zones frontalieres libero-ivoiriennes, puis vers l'ouest de la Cote d'Ivoire",
+        "Replois successifs sous la pression des mouvements manding et akan vers le sud et l'ouest"
+      ],
+      "historicalSettlementZones": [
+        "Bete : triangle Daloa-Soubre-Gagnoa, boucle du cacao (environ 30 000 km²)",
+        "We/Guere : departement de Guiglo, Moyen-Cavally",
+        "We/Wobe : zone nord de la region des Montagnes, frontaliere de la Guinee"
+      ],
+      "unificationsOrDivisions": "Les Bete forment 93 tribus ou clans organises en deux grandes branches linguistiques (bete oriental : Gagnoa et Sokuya ; bete occidental : Daloa, Godie, Guiberoua). Les We ne se divisaient pas en Guere et Wobe avant la colonisation ; cette division est une creation administrative française. Les Guere et les Kran (Krahn) du Liberia sont le meme peuple We separe par la frontiere nationale.",
+      "externalInfluences": "Influence akan (Baule) au nord sur l'organisation sociale des Bete de Gagnoa. Influence mandingue sur les zones de contact avec les Dan/Yacouba. Pression commerciale et fonciere europeenne ayant transforme les Bete en producteurs de cafe et de cacao dans la seconde moitie du XIXe siecle. Immigration massive de Dioulas, Voltaiques et Baule dans la zone bete durant la periode coloniale.",
+      "majorHistoricalEvents": "Resistance aux raids esclavagistes des negriers (XVIIIe siecle). Resistance acharnee a la colonisation française jusqu'en 1936, avec la figure emblematique de Zokou Gbeouli. 1950 : mort du senateur Biaka Boda, renforçant la mefiance bete envers le PDCI. 1970 : assassinat du docteur Kragbe Gnagbe lors d'une tentative de multipartisme. Ascension politique de Laurent Gbagbo (Bete) et crise politico-militaire ivoirienne 2002-2011."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Bete : organisation segmentaire basee sur des conseils de sages, des chefferies segmentaires et une gestion communautaire des decisions (guerre, justice, terres). Valorisation des libertes individuelles et de la parole libre. We : confederations gouvernant les villages, la plus importante etant la confederation guerriere dirigee par un chef militaire jouant aussi le role d'autorite civile. Au niveau inferieur, chaque village avait un chef ayant merite sa position par le travail et la chance a la chasse.",
+      "clanOrganization": "Bete : organisation majoritairement patrilineaire avec presences de matriclans (lele) chez certains sous-groupes (Zedi, Zabia, Gbadi). Les lele se comptent de 6 a 8 par village et portent des noms d'ancetres feminines mythiques (Gatoua, Tekpetoua, Medetoua, Datoua, Litoua, Doutoua). We : unites patrilineaires familiales dirigees par un patriarche supervisant les mariages, les conflits et la vie religieuse.",
+      "ageClassSystems": "Systemes de classes d'age chez les We : les ages de femmes et d'hommes jouent un role social prominent. Les societes d'initiation feminines ont ete maintenues. Des societes feminines de chefferie existent chez les Guere, trait culturel remarquable.",
+      "roleOfLineages": "Chez les Bete, le lignage determine l'acces a la terre, la justice et l'identite sociale. Le chef de lignage arbitre les conflits et organise les ceremonies. Chez les We, la famille patrilineaire est l'unite de base ; le patriarche y exerce une autorite en matiere matrimoniale, judiciaire et religieuse.",
+      "religiousAuthority": "Bete : culte du bagnon (figure de sage rituelle, presente dans chaque village, designee selon des criteres physiques et moraux, consultee pour les decisions importantes). Croyance en un dieu createur (Lago ou Lago Tape) et en des forces spirituelles de gestion quotidienne. We : masques sacres jouant le role d'intermediaires entre les hommes, les ancetres et les dieux ; les masques constituent le sommet du pantheon sacre we."
+    },
+    "languages": {
+      "mainLanguage": "Bete (plusieurs langues distinctes) et We (We meridional et We septentrional)",
+      "isoCodes": ["bev", "btg", "bet", "gxx", "wec"],
+      "dialects": [
+        "Bete de Daloa (bev) : branche occidentale",
+        "Bete de Gagnoa (btg) : branche orientale",
+        "Bete de Guiberoua (bet) : branche occidentale",
+        "Sokuya : branche orientale proche du bete de Gagnoa",
+        "We meridional / Guere (gxx) : parle par les We du sud (Guere)",
+        "We occidental / Wobe (wec) : parle par les We du nord (Wobe)"
+      ],
+      "vehicularRole": "Le bete est la langue la plus parlee de la famille kru en Cote d'Ivoire et sert de langue vehiculaire dans le centre-ouest ivoirien. Le français est la langue officielle et d'enseignement. Le bete (langue de Daloa) est mentionne parmi les langues les plus parlees du pays avec le baule et le dioula. L'alphabet syllabaire bete de 448 pictogrammes (cree par l'artiste Frederic Bruly Bouabre) reste une reference culturelle unique mais non standardisee pour l'enseignement."
+    },
+    "culture": {
+      "majorRites": "Culte du bagnon (Bete) : sage rituel de chaque village, respecte et consulte pour les decisions importantes de la communaute. Trance dance we et ceremonies masquees (We) : les masques presidenten aux recoltes, aux initiations, aux funerailles et aux reglement de conflits. Semaine artistique tournante (pepe ou tite) chez les Bete, rassemblant plusieurs villages pour des prestations culturelles. Rites de puberite pour les hommes et les femmes dans les deux groupes.",
+      "symbols": "Masques we : le masque est une institution sacree centrale dans la civilisation guere/wobe. Il est constitue d'un headdress, d'un visage en bois sculpte, d'une jupe en fibres vegetales et de tissus pour le corps ; l'ensemble represente un esprit immortel cree par Dieu pour organiser, proteger et divertir. Pagne traditionnel bete (tapa ou gloko) obtenu par traitement de l'ecorce d'arbre. Ecriture bete : alphabet syllabaire de Frederic Bruly Bouabre.",
+      "artsAndMusic": "Bete : rythmes musicaux towoulou, alloukou, ziglibithy (cree par Ernesto Djedje, chanteur bete celebre), gbegbe. Balafon, percussions locales. Danse Ziglibithy inscrite comme fierté culturelle. We : sculpteurs de masques puissants incrustes de coquilles cauries, clochettes, clous et plumes pour renforcer leur pouvoir. Trois categories de masques : sacres (defense contre les esprits mauvais), guerriers (courage des ancetres), joyeux (chants et danses festifs).",
+      "spiritualities": "Bete : animisme bipolaire avec un dieu createur (Lago) et des forces spirituelles de gestion pratique (sante, desordre social) ; presence du christianisme et de pratiques syncrétiques. We : animisme intense ou tout est divise entre le village (controle par l'homme) et la brousse (non controlee) ; les esprits de la brousse doivent prendre forme corporelle (le masque) pour participer a la vie villageoise ; les masques sont les principaux intermediaires entre les hommes et le divin."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Ni les Bete ni les We n'ont forme de royaume centralise. Leurs organisations politiques sont segmentaires et decentralisees. Les Bete ont experimente des formes de democratie locale avant la colonisation (conseils de sages). Les We sont gouvernes par des confederations villageoises, dont la confederation guerriere est la plus importante.",
+      "relationsWithNeighbors": "Bete : contacts avec les Akan (Baule au nord), les Dan/Yacouba a l'ouest, les Dida au sud. Les Bete ont longtemps constitue l'un des principaux groupes de travailleurs de plantation de la colonie. We : relations etroites avec les Dan/Yacouba (voisins montagnards partageant certains costumes traditionnels). Les Guere de Cote d'Ivoire et les Kran (Krahn) du Liberia sont ethniquement et culturellement le meme peuple.",
+      "conflictsOrAlliances": "Bete : resistance acharnee a la colonisation française jusqu'en 1936. Soulèvement de Kragbe Gnagbe en 1970. Implication dans les crises politiques ivoiriennes post-1990 (premier president du multipartisme : Laurent Gbagbo). We : avant la colonisation, groupes guerriers autonomes defenseurs de leur territoire contre les envahisseurs exterieurs. Conflits avec les voisins Dan lies aux dynamiques regionales.",
+      "diaspora": "Bete : forte presence a Abidjan et dans les villes du centre-ouest (Daloa, Gagnoa). Migration vers les zones de culture cafeiere et cacaoyere. We : diaspora principalement interne a la Cote d'Ivoire, avec presence a Abidjan et dans les regions voisines. Les guerres civiles ivoiriennes 2002-2011 ont provoque des deplacements internes importants dans la zone we (region de l'Ouest)."
+    },
+    "demography": {
+      "totalPopulation": 1900000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : Bete Daloa 300 000, Bete Gagnoa 394 000, Bete occidental 300 000 (sous-total Bete ≈ 994 000). Guere / We meridional : 551 000 (Peoplegroups.org 2023 ; 562 000 selon 101lasttribes 2023). We occidental / Wobe : estimation 57 000 (Joshua Project). Total cumule Bete + We = environ 1 900 000.",
+      "distributionByCountry": [{ "country": "CIV", "population": 1900000 }]
+    },
+    "sources": [
+      "Wikipedia – Betes (fr) (https://fr.wikipedia.org/wiki/B%C3%A9t%C3%A9s)",
+      "Wikipedia – Bete people (en) (https://en.wikipedia.org/wiki/B%C3%A9t%C3%A9_people)",
+      "101 Last Tribes – Guere / We (https://www.101lasttribes.com/tribes/guere.html)",
+      "Minority Rights Group – Krou in Cote d'Ivoire (https://minorityrights.org/communities/krou/)",
+      "Wikipedia – Kru people (https://en.wikipedia.org/wiki/Kru_people)",
+      "Joshua Project – Bete Gagnoa in Cote d'Ivoire (https://joshuaproject.net/people_groups/19365)",
+      "Joshua Project – Guere in Cote d'Ivoire (https://joshuaproject.net/people_groups/11124)",
+      "Culture de la Cote d'Ivoire – Wikipedia (https://fr.wikipedia.org/wiki/Culture_de_la_C%C3%B4te_d%27Ivoire)"
+    ]
+  }
+}

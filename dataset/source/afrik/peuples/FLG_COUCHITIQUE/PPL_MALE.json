@@ -1,0 +1,72 @@
+{
+  "id": "PPL_MALE",
+  "nameMain": "Male",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Male",
+      "selfAppellation": "Maale",
+      "exonyms": ["Maale", "Malie"],
+      "originOfExonyms": "Male est la transcription simplifiee utilisee dans la litterature ethnologique et administrative, notamment dans les publications de l'ISO 639-3. Maale est la forme phonetiquement plus proche de l'auto-designation du peuple (le pluriel de leur nom propre etant mallo, et leur langue etant appelee mallo mucci). Malie est une variante orthographique mineure.",
+      "whyProblematic": "La graphie Male peut preter a confusion avec le mot commun francais ou anglais designant le sexe masculin. La forme Maale est preferee dans la litterature anthropologique internationale (notamment dans les travaux de Donald Donham).",
+      "contemporaryUsage": "Les deux formes Male et Maale coexistent dans la litterature. Le groupe se designe lui-meme en utilisant la racine mallo (pluriel) et maale (singulier). L'administration ethiopienne utilise generalement la forme Male pour le woreda et le peuple.",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "Omotic septentrional, cluster Ometo",
+      "historicalRegion": "Zone de l'Omo meridional, frontiere entre les regions nord-omo et sud-omo, sud de l'Ethiopie",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": ["Maale"],
+    "origins": {
+      "ancientOrigins": "Les Maale sont un peuple omotique ancien dont l'occupation du territoire de la zone d'Omo meridional est attestee de longue date. Leur langue, le male (mallo mucci), appartient au groupe Ometo septentrional, apparente au wolayita, au gamo, au gofa et au koorete. La tradition orale maale fait reference a une organisation politique monarchique ancienne centree sur la figure du roi rituel.",
+      "formationPeriod": null,
+      "migrationRoutes": [],
+      "historicalSettlementZones": [
+        "Woreda de Maale, Zone de l'Omo meridional (South Omo Zone), Region des Nations, Nationalites et Peuples du Sud (SNNPR), sud de l'Ethiopie"
+      ],
+      "unificationsOrDivisions": null,
+      "externalInfluences": "Les Maale ont maintenu leur langue et leurs traditions de facon remarquable malgre les pressions exterieures. L'expansion de l'Empire ethiopien sous Menelik II a la fin du XIXe siecle, puis les regimes succeessifs (imperial, Derg, EPRDF), ont progressivement influence les structures politiques et economiques de la communaute. Les missions protestantes (a partir des annees 1970-1980) ont introduit le christianisme evangelique.",
+      "majorHistoricalEvents": "L'etude anthropologique de Donald Donham, qui a vecu plusieurs annees chez les Maale dans les annees 1970-1980 (periode pre- et post-revolution), constitue le principal travail de reference sur ce peuple. La Revolution ethiopienne de 1974 a profondement modifie les structures sociales et politiques traditionnelles, notamment l'institution royale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie rituelle centree sur un roi dont le role est essentiellement ceremoniel et propitiatoire. Le roi (dont la designation n'est pas specifiee dans les sources disponibles) occupe une place centrale dans les rituels de fertilite et de bien-etre collectif. L'institution royale a ete documentee par Donald Donham comme une structure politique et rituelle complexe.",
+      "clanOrganization": "Organisation clanique patrilineaire structurant les droits fonciers, les regles de mariage et les obligations cerimoniales.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires organisent l'heritage, le mariage et la participation aux rituels collectifs. L'exogamie clanique est la norme.",
+      "religiousAuthority": "Le roi occupe une fonction rituelle centrale dans la vie religieuse traditionnelle maale. Le concept d'ashtime (categorie de genre specifique dont le devoir etait de permettre au roi d'accomplir ses fonctions rituelles a l'ecart de la sexualite feminine lors des moments cles du calendrier rituel) atteste de l'imbrication etroite entre organisation politique et autorite religieuse traditionnelle."
+    },
+    "languages": {
+      "mainLanguage": "Male (Maale, Mallo mucci)",
+      "isoCodes": ["mdy"],
+      "dialects": [],
+      "vehicularRole": "La langue male (ISO 639-3: mdy) est maintenue avec vigueur par la communaute malgre les pressions exterieures. C'est une langue omotique du groupe Ometo septentrional (Afro-Asiatique), apparentee au wolayita, au gamo et au gofa. L'amharique sert de langue administrative et de communication interethnique. La proximite des langues ari (a l'ouest) et kamba (au nord-est) implique des contacts multilinguistiques."
+    },
+    "culture": {
+      "majorRites": "Les pratiques rituelles liees au cycle agricole et pastoral sont centrales. Les ceremonies de fertilite impliquant le roi sont documentees. La pratique de l'ashtime (une categorie de genre rituelle specifique) constitue un element culturel distinctif, lie aux rituels royaux. Les Maale pratiquent l'elevage pastoral (bovins pour le lait et la richesse) et l'agriculture (mais, arachides, sorgho). Les rites de passage et les rituels de mariage sont regis par des codes stricts.",
+      "symbols": "Le betail (bovins) symbolise la richesse, le statut social et les relations matrimoniales. La langue elle-meme, maintenue avec tenacite malgre les pressions exterieures, est un symbole fort de l'identite culturelle maale.",
+      "artsAndMusic": "Les pratiques artistiques incluent la decoration corporelle et les ornements traditionnels. La tradition orale (contes, chants, proverbes) constitue le principal vecteur de transmission culturelle. L'apiculture est une activite economique et culturelle importante dans les zones de montagne.",
+      "spiritualities": "Religion traditionnelle centree sur un systeme de croyances animistes lies aux forces naturelles et aux ancetres. Le roi joue un role de mediateur rituel entre la communaute et les puissances surnaturelles. Le christianisme evangelique (protestantisme) s'est implante depuis les annees 1970-1980 et est aujourd'hui la religion majoritaire, bien que certaines pratiques traditionnelles perdurent."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Monarchie rituelle traditionnelle dont le roi occupait une fonction a la fois politique et cerimoniellement centrale dans la vie de la communaute. L'institution royale a ete profondement affectee par la Revolution ethiopienne de 1974 et les reformes foncières du regime Derg.",
+      "relationsWithNeighbors": "Les Maale sont borde au nord par les zones Gamo et Gofa, au sud par le woreda de BennaTsemay (zone de l'Omo meridional), a l'est par la zone d'Aleze et a l'ouest par la zone Ari. Des contacts et echanges existent avec les Ari, les Kamba, les Tsamako (au sud-est) et les Banna (au sud-ouest).",
+      "conflictsOrAlliances": null,
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 168000,
+      "referenceYear": 2025,
+      "source": "Joshua Project, 2025 (https://joshuaproject.net/people_groups/13451) ; Maale Woreda Office of Finance and Plan Development, 2025 (cite dans Wikipedia)",
+      "distributionByCountry": [{ "country": "ETH", "population": 168000 }]
+    },
+    "sources": [
+      "Maale people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Maale_people)",
+      "Male in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13451)",
+      "Male (Ethiopia) – Glottolog 5.1 (https://glottolog.org/resource/languoid/id/male1284)",
+      "Male (Ethiopia) – ISO 639-3 / Swordshare Map (https://map.swordshare.com/mdy)",
+      "The Maale people – The Tribal Society, 2024 (https://thetribalsociety.com/the-maale-people/)",
+      "Maale Tribe – Local Tour Ethiopia (https://localtourethiopia.com/attractions/southern-omo-valley-tribes/maale/)",
+      "Donham, Donald L. – Revolution and modernity in Maale: Ethiopia, 1974 to 1987 – Comparative Studies in Society and History, 1992"
+    ]
+  }
+}

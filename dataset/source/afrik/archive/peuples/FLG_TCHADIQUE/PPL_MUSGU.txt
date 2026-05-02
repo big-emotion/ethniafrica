@@ -1,0 +1,37 @@
+# Nom du peuple
+- Nom principal : Musgum
+- Auto-appellation : Músgum / Mulwi
+- Appellations historiques : Musgou (forme coloniale française)
+- Famille linguistique : Afro-asiatique – Tchadique (FLG_TCHADIQUE)
+- Région historique : Bassin du Logone (Cameroun–Tchad)
+- Identifiant peuple : PPL_MUSGU
+
+# 1. Ethnies incluses
+- Musgum du Cameroun
+- Musgum du Tchad
+
+# 2. Origines
+- Population agricole des plaines du Logone.
+- Adaptation aux zones d’inondation périodique.
+
+# 3. Organisation
+- Chefferies locales.
+- Systèmes communautaires hydriques.
+
+# 4. Langue
+- Mulwi / Musgum (ISO : mug)
+
+# 5. Culture
+- Habitat en cases tokozé (architecture conique).
+- Pêche traditionnelle, agriculture.
+
+# 6. Histoire
+- Interactions anciennes avec Kotoko, Giziga, Tupuri.
+
+# 7. Démographie
+- Population : 310 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (mug)
+- Cameroonian Ethnic Atlas

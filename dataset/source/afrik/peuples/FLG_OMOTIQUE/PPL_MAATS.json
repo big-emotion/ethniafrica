@@ -1,0 +1,92 @@
+{
+  "id": "PPL_MAATS",
+  "nameMain": "Maale",
+  "languageFamilyId": "FLG_OMOTIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Maale",
+      "selfAppellation": "Maale (prononce /mɑːle/), le pluriel est Mallo",
+      "exonyms": ["Male", "Maale", "Maalé", "Malé"],
+      "originOfExonyms": "Le terme Male ou Maale est à la fois l'endonyme et l'exonyme. Le terme Maats, parfois utilisé dans les archives du projet EthniAfrica, est une variante orthographique ancienne ou un nom alternatif local. La langue est officiellement désignée Male (Ethiopia) avec le code ISO mdy.",
+      "whyProblematic": "Ne pas confondre avec les Malle (habitants de la zone Malle Awaki), voisins distincts avec une organisation politique et une économie différentes. Le terme Male est identique à d'autres ethnonymes africains sans lien, d'où la nécessité d'utiliser Maale pour la désambiguïsation.",
+      "contemporaryUsage": "Le terme Maale est utilisé dans la littérature académique et par les locuteurs eux-mêmes. La zone administrative est appelée woreda Maale (Maale Woreda), dans la zone Debub Omo. L'amharique est utilisé dans l'administration et l'éducation.",
+      "linguisticFamily": "FLG_OMOTIQUE",
+      "ethnoLinguisticGroup": "Omotique du Nord (branche Maale, groupe Ometo-Gimira)",
+      "historicalRegion": "Zone Debub Omo (ex-South Omo), Etat régional de l'Ethiopie du Sud — woreda Maale, à la frontière des régions nord et sud de l'Omo",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Maale de la zone montagneuse (altitude, horticulture prédominante)",
+      "Maale des basses terres (élevage et apiculture prédominants)",
+      "Lignages nobles et roturiers organisés selon la hiérarchie du roi sacré",
+      "Ashtime (catégorie de genre distincte, rôle rituel lié au roi)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Maale sont un peuple omotique de l'Ethiopie du Sud, dont la présence dans la zone Omo est attestée depuis plusieurs siècles. Leur langue, le maale (ISO mdy), appartient à la branche Nord-Omotique (Ometo-Gimira) de la famille afro-asiatique. Selon les traditions orales et les travaux de Donald Donham, les Maale se distinguent par une institution de royauté sacrée (roi rituel) qui structure l'ensemble de leur vie sociale et religieuse. La production principale repose sur l'horticulture en altitude (maïs, arachide, sorgho) et l'élevage de bovins dans les zones basses.",
+      "formationPeriod": "L'identité maale s'est consolidée autour de l'institution du roi sacré (le roi maale exerce une fonction rituelle centrale liée à la fertilité de la terre et à la protection contre les influences féminines lors des rituels). Cette organisation politique et religieuse est documentée depuis au moins le 19e siècle par les voyageurs et ethnographes, et en profondeur par Donham à partir des années 1970.",
+      "migrationRoutes": [
+        "Population autochtone de la zone Omo, sans migration fondatrice bien documentée",
+        "Contacts historiques avec les Ari à l'ouest, les Kamba au nord-est, les Tsamako au sud-est et les Banna au sud-ouest"
+      ],
+      "historicalSettlementZones": [
+        "Woreda Maale, zone Debub Omo (Lemogento comme siège administratif)",
+        "Zone frontalière nord-Omo et sud-Omo, bordée au nord par les zones Gamo et Gofa",
+        "Hautes terres (horticulture) et basses terres (pastoralisme)"
+      ],
+      "unificationsOrDivisions": "Les Maale sont organisés autour d'une royauté sacrée à fonctions rituelles (le roi est protégé de la sexualité féminine lors des moments clés du calendrier rituel par l'intermédiaire des ashtime). La société distingue des lignages nobles et roturiers. La séparation du woreda Maale d'avec le woreda Bako Gazer est une division administrative récente.",
+      "externalInfluences": "Incorporation dans l'empire éthiopien à la fin du 19e siècle. Influence du christianisme protestant et de l'Eglise orthodoxe éthiopienne. Contact avec les langues et cultures cushitiques et sémitiques voisines. Malgré ces pressions, les Maale maintiennent vigoureusement leur langue, utilisée dans les contextes sociaux, religieux et administratifs locaux.",
+      "majorHistoricalEvents": "Incorporation à l'empire éthiopien sous Menelik II (fin 19e siècle). Revolution éthiopienne de 1974 : Donham documente le passage des rois rituels maale au statut de propriétaires terriens éthiopiens (From ritual kings to Ethiopian landlords in Maale, 1986). Période marxiste-léniniste (1974-1987) : transformations profondes de la structure sociale traditionnelle documentées par Donham (Revolution and modernity in Maale, 1992)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Institution du roi sacré (roi rituel maale) dont la fonction est essentiellement cultuelle et symbolique : garantir la fertilité de la terre et du bétail, protéger la communauté des forces néfastes. Le roi est entouré de tabous stricts concernant sa personne, sa nourriture et ses contacts. Les décisions communautaires sont prises par un conseil d'anciens. Après 1974, le roi a progressivement perdu son statut rituel pour devenir propriétaire terrien comme les autres.",
+      "clanOrganization": "Organisation en lignages patrilinéaires. La société distingue des catégories nobles, roturières et artisanales. La hiérarchie sociale est liée à la proximité avec le roi sacré.",
+      "ageClassSystems": "Système de classes d'âge moins formalisé que chez les peuples nilotiques voisins, mais les rites de passage (naissance, puberté, mariage, mort) structurent l'accès aux rôles sociaux.",
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'identité, les droits fonciers et les alliances matrimoniales. L'exogamie clanique est de règle. La maison (foyer) est l'unité économique de base.",
+      "religiousAuthority": "Le roi sacré cumule pouvoir rituel et autorité religieuse. Les anciens assurent la mémoire des pratiques cérémonielles. Influence croissante du christianisme protestant (missions évangéliques actives dans la région). L'institution ashtime (catégorie de genre rituelle permettant au roi d'accomplir ses fonctions sans contact avec la sexualité féminine) est documentée par Donham et fait l'objet de débats académiques."
+    },
+    "languages": {
+      "mainLanguage": "Maale (aussi orthographié Male)",
+      "isoCodes": ["mdy"],
+      "dialects": [
+        "Maale des hautes terres (zone montagneuse, usage horticulture)",
+        "Maale des basses terres (zone de pâturages, élevage)"
+      ],
+      "vehicularRole": "Le maale (mdy) est parlé comme première langue par la quasi-totalité des Maale, avec un fort taux de monolinguisme. La langue est utilisée dans les contextes sociaux, religieux et administratifs locaux. Des plans d'introduction du maale comme langue d'enseignement sont en cours. L'amharique est la langue de l'administration nationale et de l'éducation formelle. L'amharique et parfois l'anglais sont utilisés comme langues véhiculaires régionales. Joshua Project (2016) estime à 168 000 les locuteurs du Male (mdy)."
+    },
+    "culture": {
+      "majorRites": "Rites de passage : naissance (ceremonies de nomination), puberté, mariage (arrangements familiaux, dot en bétail), mort (inhumation avec rites spécifiques selon le statut social). Rituels du roi sacré : le roi participe à des cérémonies annuelles liées à la fertilité agricole et à la protection de la communauté ; ces rites sont au coeur de la vie cérémonielle maale. Rite ashtime : catégorie rituelle de genre permettant au roi de maintenir sa pureté rituelle lors de moments cérémoniels clés en évitant tout contact avec la sexualité féminine. Rites agraires : prières et offrandes avant les semailles et à la récolte pour la baraka et la protection des cultures.",
+      "symbols": "Le bétail (bovins) est le principal symbole de richesse et de statut social. Les ornements corporels et les coiffures distinguent les categories sociales. Le roi sacré est entouré d'insignes rituels spécifiques (regalia). Les bijoux et scarifications peuvent indiquer le statut matrimonial ou social.",
+      "artsAndMusic": "Musique vocale et instrumentale lors des cérémonies (mariages, funérailles, rites du roi). Poésie orale transmettant la généalogie et les traditions. Artisanat : poterie feminine, vannerie, travail du cuir. Chants collectifs lors des travaux agricoles communautaires (culture du maïs, du sorgho). Danse lors des cérémonies de mariage et des rites de passage.",
+      "spiritualities": "Croyances religieuses traditionnelles centrées sur la figure du roi sacré, garant de la fertilité de la terre et du bétail. Croyance en des esprits et forces surnaturelles influençant la vie quotidienne et agricole. L'ashtime joue un rôle de médiateur rituel. Influence croissante du christianisme protestant (missions évangéliques) et de l'Eglise orthodoxe éthiopienne depuis la seconde moitié du 20e siècle. Les pratiques traditionnelles et chrétiennes coexistent souvent dans une forme de syncrétisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Institution de la royauté sacrée maale : le roi (titre spécifique) exerce une autorité rituelle centrale, garant de la fertilité collective. Bien documentée par l'anthropologue Donald Donham dans plusieurs articles et ouvrages (Work and Power in Maale, Ethiopia, 1994 ; From ritual kings to Ethiopian landlords in Maale, 1986). La révolution éthiopienne de 1974 a transformé les rois rituels en propriétaires terriens ordinaires.",
+      "relationsWithNeighbors": "Les Maale entretiennent des relations d'échange et de voisinage avec les Ari (à l'ouest), les Kamba (au nord-est), les Tsamako (au sud-est) et les Banna (au sud-ouest). Des relations commerciales portent sur le bétail, les céréales et les produits agricoles. Des tensions territoriales ont existé historiquement avec les groupes voisins, réglées par des mécanismes traditionnels d'arbitrage.",
+      "conflictsOrAlliances": "Incorporation forcée dans l'empire éthiopien sous Menelik II (fin 19e siècle). Les Maale ont subi les transformations imposées par le système du gobbar (tribut). Pendant la période du Derg (1974-1991), la collectivisation et les réformes agraires ont profondément modifié la structure sociale traditionnelle.",
+      "diaspora": "Présence de Maale dans les villes éthiopiennes (Addis-Abeba, Jimma, Arba Minch) suite aux migrations économiques internes. Diaspora internationale limitée, principalement vers des pays occidentaux (Etats-Unis, Europe) pour des raisons d'études ou d'asile politique."
+    },
+    "demography": {
+      "totalPopulation": 95000,
+      "referenceYear": 2025,
+      "source": "Estimations composites : Maale Woreda Office of Finance and Plan Development (2025) : ~22 000 pour le seul woreda Maale ; Joshua Project / Ethnologue (2016) : 168 000 locuteurs du Male (mdy) ; The Tribal Society (2024) : ~95 000 en tenant compte de la diaspora urbaine. L'estimation retenue est 95 000 pour l'ensemble du groupe ethno-linguistique en 2025.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 95000,
+          "note": "Principalement dans le woreda Maale, zone Debub Omo, et dans les villes éthiopiennes"
+        }
+      ]
+    },
+    "sources": [
+      "Donham, Donald L. Work and Power in Maale, Ethiopia. Columbia University Press, 1994.",
+      "Donham, Donald L. From ritual kings to Ethiopian landlords in Maale. In The Southern Marches of Imperial Ethiopia, 1986.",
+      "Donham, Donald L. Revolution and modernity in Maale: Ethiopia, 1974 to 1987. Comparative Studies in Society and History, 34(1), 1992.",
+      "Wikipedia EN — Maale people. https://en.wikipedia.org/wiki/Maale_people",
+      "Wikipedia EN — Maale language. https://en.wikipedia.org/wiki/Maale_language",
+      "Glottolog — Male (Ethiopia), glottocode male1284, ISO 639-3: mdy. https://glottolog.org/resource/languoid/id/male1284",
+      "Joshua Project — Male in Ethiopia. https://joshuaproject.net/people_groups/13451",
+      "Local Tour Ethiopia — Maale Tribe. https://localtourethiopia.com/attractions/southern-omo-valley-tribes/maale/"
+    ]
+  }
+}

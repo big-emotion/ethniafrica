@@ -1,0 +1,251 @@
+{
+  "id": "AGO",
+  "nameFr": "République d'Angola (República de Angola)",
+  "nameOfficial": "République d'Angola (República de Angola)",
+  "etymology": "Le nom \"Angola\" dérive de \"Ngola\", titre des rois du royaume Ndongo. Les Portugais ont utilisé ce terme pour désigner la région qu'ils colonisaient à partir du XVIe siècle. \"Ngola\" était le titre royal du souverain du royaume Ndongo, l'un des royaumes précoloniaux les plus puissants de la région.",
+  "nameOriginActor": "Le nom provient du royaume Ndongo et de son titre royal \"Ngola\". Les Portugais ont adopté et généralisé ce terme lors de la colonisation à partir de 1575. Le nom a été officialisé comme \"Colónia de Angola\" pendant la période coloniale portugaise (1575-1975).",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel de l'Angola était peuplé de peuples Khoisan (San et Khoikhoi), premiers habitants de la région, sans nom unifié pour l'ensemble du territoire. Les peuples autochtones avaient leurs propres noms pour leurs territoires et royaumes.",
+      "middleAges": "Développement de royaumes bantous puissants : royaume Kongo (XIVe-XVIIe siècles), royaume Ndongo (XVe-XVIIe siècles), royaume Matamba, royaumes Ovimbundu, et Empire Lunda (XVIe-XIXe siècles). Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de royaumes et chefferies autonomes : royaume Kongo, royaume Ndongo, royaume Matamba, royaumes Ovimbundu, Empire Lunda. Les Portugais utilisaient le terme \"Angola\" basé sur le titre \"Ngola\" des rois du Ndongo.",
+      "colonization": "1575-1975 : Colónia de Angola (période coloniale portugaise). Les Portugais ont fondé la colonie d'Angola en 1575 avec Luanda comme capitale. Le territoire était administré comme une colonie portugaise pendant près de 400 ans.",
+      "contemporary": "1975 : République populaire d'Angola (proclamée à l'indépendance le 11 novembre 1975). Depuis les années 1990 : République d'Angola (nom officiel actuel). Le pays a connu une longue guerre civile (1975-2002) entre le MPLA (Mouvement populaire de libération de l'Angola) et l'UNITA (Union nationale pour l'indépendance totale de l'Angola)."
+    },
+    "kingdoms": [
+      {
+        "name": "Royaume Kongo",
+        "period": "XIVe siècle - XVIIe siècle (apogée), déclin progressif jusqu'au XIXe siècle",
+        "dominantPeoples": ["Kongo (Bakongo)"],
+        "politicalCenters": [
+          "Mbanza Kongo (capitale historique",
+          "aujourd'hui en Angola)",
+          "São Salvador"
+        ],
+        "historicalRole": "Royaume Kongo puissant et centralisé, contacts précoces avec les Portugais dès le XVe siècle, conversion au christianisme, commerce avec l'Europe, déclin progressif face à la traite des esclaves et aux conflits internes."
+      },
+      {
+        "name": "Royaume Ndongo",
+        "period": "XVe siècle - XVIIe siècle",
+        "dominantPeoples": ["Ambundu (Mbundu)"],
+        "politicalCenters": ["Kabasa (capitale)", "région de Luanda"],
+        "historicalRole": "Royaume Ndongo puissant, résistance à la colonisation portugaise sous la reine Nzinga (Njinga Mbande, 1583-1663), guerre contre les Portugais, alliance avec le royaume Matamba, source du nom \"Angola\" (dérivé de \"Ngola\", titre royal)."
+      },
+      {
+        "name": "Royaume Matamba",
+        "period": "XVIe siècle - XIXe siècle",
+        "dominantPeoples": ["Ambundu", "populations locales"],
+        "politicalCenters": ["Matamba (capitale)"],
+        "historicalRole": "Royaume Matamba, refuge de la reine Nzinga après la chute du Ndongo, résistance à la colonisation portugaise, maintien de l'indépendance jusqu'au XIXe siècle."
+      },
+      {
+        "name": "Royaumes Ovimbundu",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Ovimbundu"],
+        "politicalCenters": [
+          "Hauts plateaux du centre-sud de l'Angola",
+          "chefferies traditionnelles"
+        ],
+        "historicalRole": "Royaumes Ovimbundu organisés en chefferies, agriculture développée, commerce régional, résistance à la colonisation, groupe ethnique le plus nombreux de l'Angola contemporain."
+      },
+      {
+        "name": "Empire Lunda",
+        "period": "XVIe siècle - XIXe siècle",
+        "dominantPeoples": ["Lunda", "Tshokwe (Chokwe)"],
+        "politicalCenters": [
+          "Mwata Yamvo (capitale)",
+          "expansion sur Angola",
+          "RDC et Zambie"
+        ],
+        "historicalRole": "Empire Lunda puissant et expansionniste, contrôle d'un vaste territoire transfrontalier, commerce à longue distance, art chokwe renommé, déclin face à la colonisation européenne."
+      },
+      {
+        "name": "Colónia de Angola",
+        "period": "1575 - 1975",
+        "dominantPeoples": [
+          "Tous les peuples angolais sous domination portugaise"
+        ],
+        "politicalCenters": ["Luanda (capitale coloniale)"],
+        "historicalRole": "Colonie portugaise pendant près de 400 ans, exploitation économique (esclavage, ressources naturelles), résistance des peuples autochtones, développement du mouvement indépendantiste au XXe siècle."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Ovimbundu",
+        "selfAppellation": "Ovimbundu",
+        "exonyms": [
+          "Ovimbundu (terme utilisé par les Européens et les Portugais)"
+        ],
+        "peopleId": "PPL_OVIMBUNDU",
+        "mainRegion": "Hauts plateaux du centre-sud de l'Angola",
+        "languages": ["Umbundu (umb", "ISO 639-3)", "portugais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Ovimbundu\" est l'auto-appellation du peuple et est utilisé de manière respectueuse. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Ambundu",
+        "selfAppellation": "Ambundu",
+        "exonyms": [
+          "Ambundu",
+          "Mbundu (termes utilisés par les Européens et les Portugais)"
+        ],
+        "peopleId": "PPL_AMBUNDU",
+        "mainRegion": "Région de Luanda et centre-nord de l'Angola",
+        "languages": ["Kimbundu (kmb", "ISO 639-3)", "portugais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Ambundu\" est l'auto-appellation du peuple. \"Mbundu\" est une variante exonyme acceptée. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Kongo",
+        "selfAppellation": "Bakongo",
+        "exonyms": [
+          "Kongo",
+          "Bakongo (termes utilisés par les Européens et les Portugais)"
+        ],
+        "peopleId": "PPL_KONGO",
+        "mainRegion": "Nord de l'Angola (notamment Cabinda), frontière avec la RDC et le Congo",
+        "languages": ["Kikongo (kon", "ISO 639-3)", "portugais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "\"Bakongo\" est l'auto-appellation (pluriel), \"Kongo\" est l'exonyme le plus courant. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Lunda",
+        "selfAppellation": "Lunda",
+        "exonyms": ["Lunda (terme utilisé par les Européens)"],
+        "peopleId": "PPL_LUNDA",
+        "mainRegion": "Nord-est de l'Angola (Lunda Norte, Lunda Sul), frontière avec la RDC et la Zambie",
+        "languages": ["Lunda (lun", "ISO 639-3)", "portugais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "Le terme \"Lunda\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Tshokwe",
+        "selfAppellation": "Tshokwe",
+        "exonyms": ["Tshokwe", "Chokwe (termes utilisés par les Européens)"],
+        "peopleId": "PPL_TSHOKWE",
+        "mainRegion": "Est de l'Angola, frontière avec la RDC et la Zambie",
+        "languages": ["Tshokwe / Chokwe (cjk", "ISO 639-3)", "portugais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "\"Tshokwe\" est l'auto-appellation, \"Chokwe\" est une variante exonyme acceptée. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Nyaneka-Nkhumbi",
+        "selfAppellation": "Nyaneka, Nkhumbi",
+        "exonyms": [
+          "Nyaneka-Nkhumbi (terme utilisé par les Européens et les Portugais)"
+        ],
+        "peopleId": "PPL_NYANEKA_NKHUMBI",
+        "mainRegion": "Sud-ouest de l'Angola",
+        "languages": ["Nyaneka", "Nkhumbi", "portugais"],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "\"Nyaneka\" et \"Nkhumbi\" sont les auto-appellations des deux groupes principaux. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Ganguela",
+        "selfAppellation": "Ganguela (terme générique pour plusieurs groupes)",
+        "exonyms": [
+          "Ganguela (terme utilisé par les Européens et les Portugais)"
+        ],
+        "peopleId": "PPL_GANGUELA",
+        "mainRegion": "Est de l'Angola",
+        "languages": [
+          "Langues ganguela (plusieurs langues bantoues)",
+          "portugais"
+        ],
+        "languageFamily": "FLG_NIGERCONGO",
+        "appellationRemarks": "\"Ganguela\" est un terme générique utilisé pour désigner plusieurs groupes ethniques de l'est de l'Angola. Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Khoisan",
+        "selfAppellation": "San, Khoikhoi (selon les groupes)",
+        "exonyms": [
+          "\"Bushmen\" (terme colonial péjoratif",
+          "à éviter)",
+          "\"Hottentots\" (terme colonial péjoratif",
+          "à éviter)",
+          "Khoisan (terme académique)"
+        ],
+        "peopleId": "PPL_SAN",
+        "mainRegion": "Sud de l'Angola, zones arides et semi-arides",
+        "languages": ["Langues khoïsan (plusieurs langues)", "portugais"],
+        "languageFamily": "FLG_KHOE",
+        "appellationRemarks": "Les termes \"Bushmen\" et \"Hottentots\" sont des exonymes coloniaux péjoratifs et doivent être évités. \"San\" et \"Khoikhoi\" sont les auto-appellations respectives. \"Khoisan\" est un terme académique utilisé pour désigner l'ensemble des peuples de cette famille linguistique. Les Khoisan sont les premiers habitants de l'Angola et de l'Afrique australe."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Portugais",
+          "isoCode": "por",
+          "isPrimary": true
+        },
+        {
+          "name": "Umbundu",
+          "isoCode": "umb"
+        },
+        {
+          "name": "Kimbundu",
+          "isoCode": "kmb"
+        },
+        {
+          "name": "Kikongo",
+          "isoCode": "kon"
+        },
+        {
+          "name": "Lunda",
+          "isoCode": "lun"
+        },
+        {
+          "name": "Tshokwe / Chokwe",
+          "isoCode": "cjk"
+        },
+        {
+          "name": "Nyaneka"
+        },
+        {
+          "name": "Nkhumbi"
+        },
+        {
+          "name": "langues ganguela"
+        },
+        {
+          "name": "langues khoïsan"
+        }
+      ],
+      "culturalTraditions": "Diversité culturelle importante reflétant la mosaïque ethnique de l'Angola. Traditions bantoues (Ovimbundu, Ambundu, Kongo, Lunda, Tshokwe), traditions khoïsan (San, Khoikhoi). Art chokwe renommé (sculptures, masques). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles.",
+      "dominantReligions": "Christianisme (catholicisme majoritaire, protestantisme en croissance), croyances traditionnelles africaines (syncrétisme fréquent), islam (minoritaire, surtout dans les zones urbaines)",
+      "lifestyles": "Agriculture (hauts plateaux, Ovimbundu), élevage (Nyaneka-Nkhumbi), chasse-cueillette (Khoisan), commerce et activités urbaines (zones côtières, Luanda). Urbanisation croissante depuis l'indépendance. Économie basée sur le pétrole et les diamants.",
+      "socialOrganization": "Organisation en chefferies traditionnelles (Ovimbundu, Ambundu), royaumes historiques (Kongo, Ndongo, Lunda), structures claniques patrilinéaires et matrilinéaires selon les groupes. Importance des lignages et des familles étendues. Rôle des conseils d'anciens.",
+      "regionalRelations": "Relations historiques avec la RDC (Kongo, Lunda, Tshokwe), le Congo, la Zambie (Lunda, Tshokwe), la Namibie (Ovambo, Khoisan). Intégration dans la SADC (Communauté de développement de l'Afrique australe). Relations commerciales et culturelles transfrontalières."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par les peuples Khoisan (San et Khoikhoi), premiers habitants de la région. Arrivée des peuples bantous à partir du Ier millénaire de notre ère, expansion progressive vers le sud et l'est.",
+      "middleAges": "Formation et apogée du royaume Kongo (XIVe-XVIIe siècles), royaume Ndongo (XVe-XVIIe siècles), royaume Matamba, royaumes Ovimbundu, Empire Lunda (XVIe-XIXe siècles). Développement de réseaux commerciaux régionaux et transatlantiques.",
+      "precolonial": "Contacts précoces avec les Portugais dès le XVe siècle (royaume Kongo). Commerce avec l'Europe, introduction du christianisme. Résistance à la colonisation portugaise (reine Nzinga du Ndongo et Matamba, XVIIe siècle). Traite des esclaves transatlantique, impact démographique et social majeur.",
+      "colonization": "1575 : Fondation de la colonie portugaise d'Angola par Paulo Dias de Novais, établissement de Luanda. Période coloniale portugaise longue (1575-1975), exploitation économique, résistance des peuples autochtones. XXe siècle : Développement du mouvement indépendantiste, formation du MPLA (Mouvement populaire de libération de l'Angola) et de l'UNITA (Union nationale pour l'indépendance totale de l'Angola).",
+      "independenceStruggle": "1961-1974 : Guerre d'indépendance contre le Portugal, menée par le MPLA, l'UNITA et le FNLA (Front national de libération de l'Angola). 1974 : Révolution des Œillets au Portugal, fin de la dictature portugaise. 1975 : Indépendance de l'Angola (11 novembre 1975), proclamation de la République populaire d'Angola.",
+      "postIndependence": "1975-2002 : Guerre civile angolaise entre le MPLA (soutenu par l'URSS et Cuba) et l'UNITA (soutenu par les États-Unis et l'Afrique du Sud). Conflit long et destructeur, millions de déplacés et de réfugiés. 2002 : Fin de la guerre civile après la mort de Jonas Savimbi (leader de l'UNITA). Période de reconstruction et de développement économique (pétrole, diamants). Défis de développement, pauvreté, inégalités sociales."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Angola",
+      "CIA World Factbook – Angola",
+      "ONU / UNFPA – Démographie Angola 2025",
+      "Governance in West Central Africa Before 1600\"",
+      "Early Mbundu States in Angola\"",
+      "Heywood, Linda M. – \"Contested Power in Angola, 1840s to the Present\"",
+      "Recensements angolais",
+      "Études anthropologiques sur les peuples bantous et khoïsan d'Angola"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Ovimbundu",
+          "population": 13000000,
+          "percentageInCountry": 37,
+          "peopleId": "PPL_OVIMBUNDU",
+          "region": "Hauts plateaux du centre-sud de l'Angola"
+        }
+      ]
+    }
+  }
+}

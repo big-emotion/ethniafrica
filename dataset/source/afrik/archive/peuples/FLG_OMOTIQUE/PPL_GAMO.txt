@@ -1,0 +1,39 @@
+# Nom du peuple
+- Nom principal : Gamo
+- Auto-appellation : Gamo
+- Famille linguistique : Afro-asiatique – Omotique (FLG_OMOTIQUE)
+- Groupe : Omotique nord
+- Région : Gamo Zone (Éthiopie)
+- ID peuple : PPL_GAMO
+
+# 1. Ethnies incluses
+- Tribu Gamo nord
+- Gamo sud
+- Groupes lacustres du sud-ouest
+
+# 2. Origines
+- Héritiers des anciens royaumes omotiques.
+- Culture agropastorale.
+
+# 3. Organisation
+- Castes artisanales.
+- Conseils d’anciens.
+
+# 4. Langue
+- Gamo
+- ISO : gmo
+
+# 5. Culture
+- Tissage renommé.
+- Musique à percussions.
+
+# 6. Histoire
+- Relations fortes avec Gedeo, Wolayta.
+
+# 7. Démographie
+- Population : 1 700 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (gmo)
+- Gamo Studies

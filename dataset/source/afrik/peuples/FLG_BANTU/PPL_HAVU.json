@@ -1,0 +1,94 @@
+{
+  "id": "PPL_HAVU",
+  "nameMain": "Havu",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Havu",
+      "selfAppellation": "Bahavu",
+      "exonyms": [
+        "Havu (denomination europeenne)",
+        "Kihavu (denomination de la langue)"
+      ],
+      "originOfExonyms": "Le terme Bahavu (Ba- est le prefixe bantou de personne au pluriel) est le terme utilise par le peuple lui-meme. Havu est la forme abregee adoptee par les ethnographes et administrateurs europeens. Un individu est un Muhavu, la langue est le Kihavu ou Gihavu.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Bahavu est le terme prefere dans le contexte congolais. Havu reste en usage dans la litterature academique et les sources etrangeres.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantou des Grands Lacs (zone J, sous-groupe Shi-Hunde, JD.52)",
+      "historicalRegion": "Est de la RDC: ile d'Idjwi (lac Kivu) et territoire de Kalehe (Sud-Kivu)",
+      "currentCountries": ["COD"]
+    },
+    "ethnicities": [
+      "Bahavu du Nord (ile d'Idjwi, territoire d'Idjwi)",
+      "Bahavu du Sud (ile d'Idjwi, secteur sud)",
+      "Bahavu de Kalehe (chiefdom de Buhavu, rive occidentale du lac Kivu)",
+      "Bahavu de Buzi (groupement de Buzi, Kalehe)",
+      "Bahavu de Mbinga Nord (Kalehe)",
+      "Bahavu de Mbinga Sud (Kalehe)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bahavu sont un peuple bantou de la zone J (Grands Lacs) dont les origines remontent aux grandes migrations bantoues qui peuplerent la region des Grands Lacs il y a plusieurs siecles. Ils sont etroitement apparentes aux Bashi (meme famille linguistique Shi-Hunde), qui occupent les territoires voisins de Kabare, Walungu et Mwenga au Sud-Kivu. Les Bahavu se sont installes principalement sur l'ile d'Idjwi et sur les rives du lac Kivu dans l'actuel territoire de Kalehe.",
+      "formationPeriod": "Formation des royaumes havu dans la region du lac Kivu entre le XVIIIe et le debut du XIXe siecle, periode documentee par l'historien David Newbury (Kings and Clans: Ijwi Island and the Lake Kivu Rift, 1780-1840).",
+      "migrationRoutes": [
+        "Migrations bantoues ancestrales depuis le nord-ouest vers la region des Grands Lacs",
+        "Installation sur l'ile d'Idjwi (lac Kivu) et les rives ouest du lac",
+        "Expansion vers le territoire de Kalehe sur la rive occidentale du lac Kivu"
+      ],
+      "historicalSettlementZones": [
+        "Ile d'Idjwi (lac Kivu): principal territoire havu, 95% de population bahavu",
+        "Territoire de Kalehe (chiefdom de Buhavu): rive occidentale du lac Kivu",
+        "Region entre la riviere Ulindi et le lac Kivu (Sud-Kivu)",
+        "Ville de Goma (presence moins importante)"
+      ],
+      "unificationsOrDivisions": "Organisation historique en royaumes (le royaume d'Idjwi et le royaume de Mpinga dans le Kalehe actuel). Ces royaumes etaient subdivises en chefferies. Le territoire de Kalehe est administrativement divise en deux chiefdoms: Buhavu et Buloho. Le chiefdom de Buhavu, le plus peuple, comprend sept groupements majoritairement habites par les Bahavu.",
+      "externalInfluences": "Contacts avec les peuples nilotiques voisins (Tutsi, Hutu de l'est). Influence majeure du christianisme, notamment du catholicisme depuis l'epoque coloniale belge. Conflits armes recurrents dans le Sud-Kivu depuis les annees 1990 (guerres du Congo), avec l'ile d'Idjwi constituant un sanctuaire de paix remarquable protege par sa position lacustre. Traduction du livre de Luc en kihavu (2023).",
+      "majorHistoricalEvents": "Etablissement des royaumes havu sur l'ile d'Idjwi et dans le Kalehe aux XVIIIe-XIXe siecles. Colonisation belge du Congo (1885-1960). Independance de la RDC en 1960. Guerres du Congo (1996-2003) et conflits subsequents dans le Sud-Kivu; l'ile d'Idjwi est demeuree relativement a l'ecart des combats. Mouvements de deplacement internes frequents dans le Kalehe."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en royaumes et chefferies traditionnelles (mwami: titre du chef suprememe). Le systeme est hierarchique: le mwami est l'autorite supreme, seconde par des chefs de chefferies (bashami) et des chefs de groupements. Des conseils d'anciens (bashomba) participent a la gouvernance. Le chiefdom de Buhavu dans le territoire de Kalehe est l'entite administrative traditionnelle la plus importante sur le continent.",
+      "clanOrganization": "Structure clanique patrilineaire. Les clans (muryango) tracent leur descendance par la ligne masculine. L'organisation en familles etendues (nda) forme la cellule de base de la societe. Le clan determine l'appartenance sociale, les droits fonciers et les obligations de solidarite et d'entraide.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite sociale, le droit a la terre et les alliances matrimoniales. La solidarite entre membres d'un meme lignage est une obligation fondamentale. Les ancetres du lignage sont veneres et invoques pour leur protection.",
+      "religiousAuthority": "Autorite des chefs traditionnels (mwami, bashami) qui combinent pouvoir politique et religieux. Autorite des tradipraticiens et guerisseurs (abafumu) pour les soins et la mediation avec le monde des esprits. Depuis la colonisation belge, l'Eglise catholique exerce une influence dominante; plusieurs denominations protestantes sont egalement actives sur l'ile d'Idjwi. Syncretisme entre croyances traditionnelles et christianisme."
+    },
+    "languages": {
+      "mainLanguage": "Kihavu (Havu)",
+      "isoCodes": ["hav"],
+      "dialects": [
+        "Kihavu d'Idjwi (parle sur l'ile d'Idjwi, forme la plus preservee)",
+        "Kihavu de Kalehe (parle sur la rive ouest du lac Kivu, territoire de Kalehe)",
+        "Gihavu (variante orthographique pour la meme langue)"
+      ],
+      "vehicularRole": "Le Kihavu est la langue maternelle de l'ensemble des Bahavu. Il est parle par environ 510 000 personnes (donnees SIL 2002). Sur l'ile d'Idjwi, c'est la langue dominante bien que le swahili soit egalement parle. A Goma, les Bahavu d'origine ethnique utilisent moins le kihavu. Le français est la langue officielle de la RDC, le swahili est la langue vehiculaire regionale. Le kihavu est etroitement apparente au shi (langue des Bashi voisins), classe en JD.52 (Guthrie)."
+    },
+    "culture": {
+      "majorRites": "Ceremonies de mariage traditionnelles comprenant des negociations de dot (inkwa) entre familles, suivies de festivites communautaires avec chants et danses. Rites de passage: initiations marquant la transition de l'enfance a l'age adulte, ceremonies de naissance avec rituels de protection du nouveau-ne et de la mere. Ceremonies agricoles liees aux cycles de semaille et de recolte, importantes dans cette societe a economie agropastorale. Rituels funeraires: periodes de deuil avec veillees, chants et rassemblements familiaux elargis. Ceremonies chretiennes (messes, celebrations de Paques, Noel) integrees dans la vie communautaire.",
+      "symbols": "Le lac Kivu et l'ile d'Idjwi comme espace identitaire fondamental des Bahavu. Les symboles lies a l'agriculture (houe, semences) et a l'elevage (betail). Les insignes royaux du mwami (lance, tambour royal, peau de leopard) comme symboles d'autorite. Les motifs geometriques dans l'artisanat (vannerie, poterie). Les symboles chretiens (croix, rosaire) tres presents dans la vie quotidienne.",
+      "artsAndMusic": "Musique traditionnelle comprenant des chants polyphoniques accompagnes de tambours (ngoma) et d'autres percussions. Danse traditionnelle pratiquee lors des ceremonies et celebrations. Poesie orale: transmission des genealogies royales, des epopees et des proverbes par les griots. Artisanat: poterie feminine, vannerie (nattes, paniers), travail du fer traditionnel (aujourd'hui rare). Chants chretiens en kihavu tres developpes dans les communautes catholiques et protestantes de l'ile d'Idjwi.",
+      "spiritualities": "Syncrétisme entre croyances traditionnelles bantou et christianisme. Religion traditionnelle: croyance en un etre supreme (Imana) et en des esprits ancestraux qui intercedent entre les vivants et le divin; les ancetres sont honores par des libations et des ceremonies. La figure du tradipraticien (mufumu) mediatise les relations avec le monde spirituel et assure la guerison. Aujourd'hui, la grande majorite des Bahavu se declare catholique, sous l'influence de l'Eglise belge; des denominations protestantes et evangeliques sont egalement actives. L'ile d'Idjwi est parfois decrite comme une enclave de paix relative dans le contexte des conflits du Sud-Kivu, ce qui renforce le sentiment d'une identite culturelle distincte."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Bahavu ont constitue des royaumes lacustres autour du lac Kivu: le royaume d'Idjwi (ile) et le royaume de Mpinga (actuel territoire de Kalehe). Ces royaumes etaient organises autour de la figure du mwami (roi) et subdivises en chefferies. Le chiefdom de Buhavu, dans le territoire de Kalehe, reste une entite administrative et culturelle importante avec sept groupements. L'ile d'Idjwi, a 70 km de longueur, constitue l'un des symboles les plus forts de l'identite havu.",
+      "relationsWithNeighbors": "Les Bahavu sont etroitement apparentes aux Bashi (langue mutellement intelligible, meme famille Shi-Hunde) qui occupent les territoires voisins de Kabare, Walungu, Mwenga et Idjwi. Ils coexistent avec les Tembo, Rongeronge, Twa, Hutu et Tutsi dans le territoire de Kalehe. Des contacts historiques avec les peuples de la rive rwandaise du lac Kivu.",
+      "conflictsOrAlliances": "Les guerres du Congo (1996-2003, puis conflits recurrents) ont profondement affecte le Sud-Kivu. Le territoire de Kalehe a connu des vagues de deplacement importants (plus de 434 000 deplaces internes en 2018-2022 dans le seul territoire). L'ile d'Idjwi a constitue un refuge precieux du fait de sa position lacustre, echappant aux groupes armes. Alliance culturelle et linguistique avec les Bashi.",
+      "diaspora": "Diaspora havu dans les grandes villes congolaises (Bukavu, Goma, Kinshasa) et dans les pays occidentaux (Belgique, France, Canada), liee aux vagues de deplacement dues aux conflits du Sud-Kivu et a la migration economique."
+    },
+    "demography": {
+      "totalPopulation": 510000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue – Havu (hav): 510 000 locuteurs natifs (donnees 2002). Population de l'ile d'Idjwi: 250 000 a 350 000 habitants (dont 95% Bahavu). Territoire de Kalehe: 933 181 habitants (recensement 2022), dont les Bahavu constituent le groupe dominant dans le chiefdom de Buhavu. Estimation globale 2025 basee sur taux de croissance de la RDC.",
+      "distributionByCountry": [{ "country": "COD", "population": 510000 }]
+    },
+    "sources": [
+      "Wikipedia EN – Havu language: https://en.wikipedia.org/wiki/Havu_language",
+      "Wikipedia EN – Idjwi: https://en.wikipedia.org/wiki/Idjwi",
+      "Wikipedia EN – Kalehe Territory: https://en.wikipedia.org/wiki/Kalehe_Territory",
+      "Wikipedia EN – South Kivu: https://en.wikipedia.org/wiki/South_Kivu",
+      "Joshua Project – Havu in Congo DRC: https://joshuaproject.net/people_groups/12071",
+      "SIL Ethnologue – Havu (hav): https://www.ethnologue.com/language/hav/",
+      "Newbury, David S. – Kings and Clans: Ijwi Island and the Lake Kivu Rift, 1780-1840. Madison: University of Wisconsin Press, 1991. https://archive.org/details/kingsclansijwiis0000newb",
+      "PeopleGroups.org – Havu (hav): https://peoplegroups.org/language/hav/"
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "id": "PPL_OGBRI",
+  "nameMain": "Ogbia",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Ogbia",
+      "selfAppellation": "Ogbia",
+      "exonyms": ["Ogbinya", "AgBeya", "Abaya"],
+      "originOfExonyms": "Ogbinya is a variant form used in ethnographic records. AgBeya and Abaya are alternative names found in linguistic literature for the Ogbia language.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Ogbia is the standard name used both locally and in official Nigerian administrative contexts, referring to both the people and the Local Government Area of Bayelsa State.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Benue-Congo, Cross River branch, Central Delta subgroup",
+      "historicalRegion": "Niger Delta, Ogbia Local Government Area, Bayelsa State, Nigeria",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Abureni Clan",
+      "Anyama Clan",
+      "Kolo Creek Clan (Agholo)",
+      "Oloibiri Clan",
+      "Okoroma (closely related group)",
+      "Ogbogolo (historically affiliated)"
+    ],
+    "origins": {
+      "ancientOrigins": "Oral traditions record that the Ogbia people descend from an ancestor named Ogbeyan said to have come from Benin (Edo region). He fathered two sons, Okoroma and Olei, whose descendants formed the main Ogbia clans. Some accounts suggest a migration from the south and northeast of the Niger Delta. Linguistic evidence points to connections with Bantu-family languages, and some scholars associate Ogbia origins with broader Central Delta population movements.",
+      "formationPeriod": "The Ogbia Kingdom coalesced as a distinct political and cultural entity during the pre-colonial period, prior to British penetration of the Niger Delta in the late 19th century.",
+      "migrationRoutes": [
+        "From the eastern Niger Delta southward and northeastward into present-day Bayelsa State",
+        "Traditions reference passage through Iselema (Warri area) from Benin"
+      ],
+      "historicalSettlementZones": [
+        "Ogbia Local Government Area, Bayelsa State",
+        "Communities along Kolo Creek, Oloibiri, Anyama, Immiringi, Otuoke, Elebele, and surrounding areas"
+      ],
+      "unificationsOrDivisions": "The Ogbia are organized as a kingdom with a single paramount traditional ruler called Obanobhan, who presides over village heads across four main clans. This centralized title coexists with the decentralized clan structure.",
+      "externalInfluences": "Sustained contact with neighboring Nembe (Ijaw) people through centuries-long barter trade shaped cultural and linguistic exchanges. Colonial British administration restructured local governance from the late 19th century onward.",
+      "majorHistoricalEvents": "Oloibiri, in Ogbia territory, was the site of Nigeria's first commercial oil discovery in 1956, which transformed the economic and environmental landscape of the area. Ogbia previously shared a Local Government Area with Nembe until 1991."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "The Ogbia Kingdom is headed by a paramount traditional ruler holding the title Obanobhan, selected by community consensus rather than hereditary succession. Village heads manage local affairs beneath the Obanobhan. The system is non-monarchical in the strict sense, emphasizing communal selection.",
+      "clanOrganization": "The Ogbia are divided into four main clans: Abureni, Anyama, Kolo Creek (Agholo) and Oloibiri. Each clan contains numerous communities administered by village heads.",
+      "ageClassSystems": "Age-grade associations exist and regulate community labor, festivals, and social responsibilities.",
+      "roleOfLineages": "Patrilineal descent structures organize land tenure, inheritance, and social identity. Extended family compounds form the basis of community life.",
+      "religiousAuthority": "Prior to Christianity, each town or village maintained its own deity without a single national deity for the whole kingdom. Christian churches, particularly Anglican, now dominate, with Catholic and Pentecostal congregations also present."
+    },
+    "languages": {
+      "mainLanguage": "Ogbia (ogb)",
+      "isoCodes": ["ogb"],
+      "dialects": [
+        "Agholo (Kolo)",
+        "Oloibiri",
+        "Amorokeni",
+        "Anyama",
+        "Otakeme",
+        "Otuelei",
+        "Otuokpoti"
+      ],
+      "vehicularRole": "Ogbia serves as the primary community language within Ogbia LGA. Nigerian Pidgin English is used as an inter-ethnic trade language across the Niger Delta. The Ogbia and Nembe communities interact using each other's languages in barter markets, creating a degree of functional bilingualism."
+    },
+    "culture": {
+      "majorRites": "Key life ceremonies include naming rites for newborns, initiation into adulthood, and funerary observances. Annual festivals tied to agricultural cycles and the commemoration of community founders are observed. Masquerade traditions and chieftaincy coronation ceremonies carry spiritual and social significance.",
+      "symbols": "The paramount title Obanobhan and its associated regalia symbolize unity across the four clans. Traditional canoes reflect the riverine identity of the Ogbia as a farming and fishing people.",
+      "artsAndMusic": "Traditional music uses drums, flutes, and communal singing. Dance forms accompany festivals and rites of passage. Ogbia women are known for crafting pottery and weaving. The barter market at Ogbia Township is itself a cultural institution, where Ogbia farmers exchange agricultural produce (cocoyam, cassava, plantain) with Nembe fishermen.",
+      "spiritualities": "Pre-Christian religion centered on village-level deities, with no overarching national deity. Ancestral veneration and belief in protective spirits of the land were central. Today, Anglican Christianity is predominant, supplemented by Pentecostal and Catholic congregations, while elements of traditional belief persist."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "The Ogbia Kingdom with its Obanobhan paramount rulership has governed local affairs since the pre-colonial era. The kingdom encompasses the Ogbia Local Government Area of Bayelsa State.",
+      "relationsWithNeighbors": "Long-standing barter trade with the neighboring Nembe people, exchanging Ogbia farm produce for Nembe fish, has sustained peaceful inter-community ties for centuries. Linguistic and cultural ties also connect Ogbia with the Odual people of Rivers State and the Ogbogolo of Ahoada-West.",
+      "conflictsOrAlliances": "The discovery of oil at Oloibiri in 1956 brought both economic attention and environmental strain. Community relations with oil companies and the Nigerian federal government have at times been contentious, as across much of the Niger Delta.",
+      "diaspora": "Ogbia migrants are present in Nigerian urban centers, particularly Port Harcourt and Yenagoa. Notable from the community is Goodluck Jonathan, former President of Nigeria (2010-2015), who is of Ogbia heritage."
+    },
+    "demography": {
+      "totalPopulation": 450000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) estimates approximately 449,000 Ogbia; the 2006 Nigerian national census recorded approximately 350,000. Projection to 2025 based on average Nigerian population growth rate of approximately 2.5% per annum. All Ogbia are in Nigeria.",
+      "distributionByCountry": [{ "country": "NGA", "population": 450000 }]
+    },
+    "sources": [
+      "Wikipedia, Ogbia language: https://en.wikipedia.org/wiki/Ogbia_language",
+      "Wikipedia, Ogbia (kingdom and LGA): https://en.wikipedia.org/wiki/Ogbia",
+      "Wikipedia, Ijaw people: https://en.wikipedia.org/wiki/Ijaw_people",
+      "Lawson-Ikuru, M. (2024). Barter In Ogbia And Nembe: An Indigenous Language Preservation And Promotion System. IOSR Journal of Humanities and Social Science, 29(9), 39-44. http://iosrjournals.org/iosr-jhss/papers/Vol.29-Issue9/Ser-13/F2909133944.pdf",
+      "Joshua Project, Ogbia Ogbinya in Nigeria: https://joshuaproject.net/people_groups/14124",
+      "WALS Online, Language Ogbia (ISO 639-3: ogb): https://wals.info/languoid/lect/wals_code_ogb"
+    ]
+  }
+}

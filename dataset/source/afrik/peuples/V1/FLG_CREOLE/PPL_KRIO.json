@@ -1,0 +1,68 @@
+{
+  "id": "PPL_KRIO",
+  "nameMain": "Krio",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["SLE"],
+  "content": {
+    "appellations": {
+      "mainName": "Krio",
+      "selfAppellation": "Krio",
+      "exonyms": ["Krio (terme utilisé pour les créoles de Sierra Leone)"],
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Créole afro-anglais",
+      "historicalRegion": "Sierra Leone",
+      "currentCountries": ["SLE"]
+    },
+    "ethnicities": [
+      "Krio de Freetown",
+      "Krio des provinces",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Krio sont un peuple créole formé à partir du contact entre les populations africaines libérées (notamment les \"Nova Scotians\" et les \"Maroons\" de Jamaïque) et les colons britanniques à partir du XVIIIe siècle. Leur présence dans la région remonte à plusieurs siècles.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique créole commune.",
+      "externalInfluences": "Contacts avec les populations africaines locales, influence du christianisme protestant et des croyances traditionnelles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en communautés créoles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure basée sur les familles créoles. Organisation en familles étendues.",
+      "roleOfLineages": "Lignages déterminant l'identité et les alliances. Importance de l'héritage créole.",
+      "religiousAuthority": "Autorité des prêtres protestants et des chefs religieux. Influence du protestantisme et des croyances traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Krio (créole de Sierra Leone)",
+      "vehicularRole": "Le krio est parlé par la majorité des Krio. Il sert de lingua franca en Sierra Leone. L'anglais est utilisé dans l'éducation et l'administration."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Célébrations religieuses protestantes",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Festivals traditionnels créoles",
+      "source_3": "Cérémonies de réconciliation",
+      "Symboles": "Symboles culturels créoles, symboles protestants.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle créole",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat",
+      "Spiritualités": "Protestantisme majoritaire. Croyances traditionnelles préservées dans certaines communautés."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en communautés créoles. Intégration dans les structures politiques sierra-léonaises.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora krio importante dans les grandes villes sierra-léonaises et dans les pays occidentaux (Royaume-Uni, États-Unis)."
+    },
+    "demography": {
+      "totalPopulation": 500000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements sierra-léonais, CIA World Factbook, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Krio language (kri)",
+      "CIA World Factbook – Sierra Leone",
+      "Recensements sierra-léonais",
+      "Études anthropologiques sur les peuples créoles"
+    ]
+  }
+}

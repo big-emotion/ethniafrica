@@ -1,0 +1,114 @@
+{
+  "id": "PPL_CHOKWE",
+  "nameMain": "Chokwe",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["AGO", "COD", "ZMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Chokwe",
+      "selfAppellation": "Chokwe",
+      "exonyms": [
+        "Tshokwe",
+        "Tchokwe",
+        "Kioko",
+        "Cokwe",
+        "Ciokwe",
+        "Bajokwe",
+        "Chibokwe",
+        "Kibokwe",
+        "Badjok",
+        "Djok",
+        "Quioco",
+        "Bachokwe",
+        "Jokwe"
+      ],
+      "originOfExonyms": "Les nombreux exonymes refletent les influences coloniales : Quioco et Chiboque proviennent du portugais (colonisation de l'Angola) ; Kioko de l'administration belge du Congo ; Tshokwe et Tchokwe sont des formes orthographiques franco-belges. Badjok et Djok sont des formes utilisees par les voisins Lunda.",
+      "whyProblematic": "La multitude de noms cree des confusions dans les sources historiques et museographiques. La repartition entre trois Etats (Angola, RDC, Zambie) a engendre trois nomenclatures administratives differentes pour le meme peuple.",
+      "contemporaryUsage": "Chokwe est la forme standard en anglais et en anglais academique. Tchokwe et Tshokwe prevalent dans les sources francophones et les musees europeens. Cokwe et Ciokwe sont utilises dans les publications angolaises (langue portugaise).",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (sous-groupe Benue-Congo)",
+      "historicalRegion": "Haut-Zambeze, Haut-Kasai, Angola oriental",
+      "currentCountries": ["AGO", "COD", "ZMB"]
+    },
+    "ethnicities": ["Chokwe"],
+    "origins": {
+      "ancientOrigins": "Les Chokwe sont issus de l'un des douze clans constitutifs de l'Empire Lunda (XVIIe-XVIIIe siecle, Angola). Leur mythe d'origine est lie a Chibinda Ilunga, chasseur d'origine Luba, fils du roi Luba Kalala Ilunga, qui epousa Lueji, souveraine Lunda : leur union donna naissance aux souverains Mwata Yamvo de l'Empire Lunda et fonda la lignee royale commune des peuples Lunda, Chokwe, Luvale et Luchazi.",
+      "formationPeriod": "La differentiation Chokwe au sein du complexe Lunda s'effectue entre le XVIe et le XVIIIe siecle. L'autonomisation definitive resulte d'une serie de disputes civiles, notamment le refus de payer tribut au roi Lunda. En 1900, les Chokwe avaient renverse le royaume Lunda (Mwata Yanvo).",
+      "migrationRoutes": [
+        "Migrations Lunda vers le sud au XVIe-XVIIe siecle, engendrant les peuples du Haut-Zambeze et du Haut-Kasai",
+        "Expansion militaire et commerciale Chokwe au XIXe siecle vers le nord de l'Angola, le Congo et l'ouest de la Zambie",
+        "Mobilite jusqu'au XXe siecle entre l'Angola oriental, le Katanga (RDC) et la Zambie occidentale"
+      ],
+      "historicalSettlementZones": [
+        "Angola oriental (provinces du Moxico, Lunda Norte, Lunda Sul)",
+        "Sud-est de la RDC (Kasai, Katanga occidental)",
+        "Nord-ouest de la Zambie"
+      ],
+      "unificationsOrDivisions": "Scission originelle d'avec le complexe Lunda au XVIIe siecle. Expansion maximale au XIXe siecle. Decline des grandes chefferies au XIXe siecle suite a la variole et d'autres epidemies. Division en trois colonies (portugaise, belge, britannique) par la colonisation europeenne, fragmentant les structures politiques.",
+      "externalInfluences": "Commerce caravanier avec les Portugais (acces aux armes a feu et aux produits manufactures). Raids esclavagistes arabo-swahilis (Tippu Tip, Hamad bin Muhammad el Murjebi) depuis l'est. Colonisation europeenne a partir de la fin du XIXe siecle, qui mit fin aux arts de cour et appauvrissant les arts rituels.",
+      "majorHistoricalEvents": "Renversement du royaume Lunda (Mwata Yanvo) vers 1900. Expansion territoriale et esclavagiste du XIXe siecle. Guerre civile angolaise (1975-2002) touchant fortement les regions Chokwe. Reconnaissance de la langue chokwe comme langue nationale de l'Angola."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme mixte : villages organises en cours avec anciens masculins pour les litiges fonciers, familiaux, de vol et de sorcellerie. Trois niveaux juridiques : tribunaux du village, tribunaux du chef, tribunaux de district. La chefferie est representee par le Mwanangana (intendant de la terre), considere comme representant du dieu Kalunga/Nzambi, figure sacree et maitresse absolue protegee par les esprits ancestraux.",
+      "clanOrganization": "Issus originellement de l'un des douze clans Lunda. Societe matrilineaire (la filiation et l'heritage suivent la ligne maternelle), mais la femme emmenage chez la famille du mari apres le mariage. La polygynie etait historiquement pratiquee, generalement limitee aux chefs ou familles aisees.",
+      "ageClassSystems": "Initiation masculine mukanda : au moment de la puberte, les garçons sont circoncis en camp isole en foret pendant plusieurs mois a un an ; education a la religion, a la sexualite, aux metiers et aux traditions ; supervision par les vilombola. Initiation feminine ukule : individuelle, a l'ecart du village, scarification de l'abdomen et du bas du dos, peintures corporelles, processions et danses.",
+      "roleOfLineages": "La descendance matrilineaire determine l'heritage et l'appartenance clanique. Les liens de parenté avec la lignee royale Lunda (via Chibinda Ilunga et Lueji) confèrent un prestige particulier. Les transactions matrimoniales impliquent les lignages matrilineaires (dots, remboursements).",
+      "religiousAuthority": "Culte des ancetres (mahamba) et du dieu supreme Kalunga/Nzambi. Le cimbanda (exorciste/guerisseur) est l'autorite spirituelle principale. Les rituels de possession sont conduits par des specialistes. Le christianisme s'est diffuse massivement a l'epoque coloniale avec retention des rites de passage et des pratiques spirituelles traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Chokwe (Kichokwe, Tshokwe, Cokwe)",
+      "isoCodes": ["cjk"],
+      "dialects": [
+        "Variantes regionales entre Angola, RDC et Zambie ; distinction entre ecole stylistique de Moxico (nuancee, realiste) et ecole de Musamba (schematique, rigide) dans l'art, refletant des varietes regionales"
+      ],
+      "vehicularRole": "Langue nationale officielle de l'Angola. Lingua franca dans les regions orientales de l'Angola. Langue de communication inter-ethnique dans les regions du Kasai (RDC) et de la province du Nord-Ouest (Zambie). Environ 2,5 millions de locuteurs selon Common Crawl 2024."
+    },
+    "culture": {
+      "majorRites": "Mukanda : initiation masculine par circumcision en camp forestier isole, duree de plusieurs mois a un an, education religieuse, sexuelle, artisanale et traditionnelle, supervision par les vilombola. Ukule : initiation feminine individuelle (scarification, peintures corporelles, processions et danses). Rituels mahamba : possession par esprits ancestraux/naturels, percussions, chants, danses, transe, offrandes. Purification par argile blanche. Rituels de deuil avec sculptures et objets ancestraux.",
+      "symbols": "Chibinda Ilunga, heros mythique fondateur, represente en sculpture royale. Masques : cikungu/makishi wa mwanangana (ancetres du chef) ; makishi a ku mukanda (initiation) ; makishi a kuhangana (danse) ; Cihongo/Cimyanji (richesse et justice) ; Pwo/Mwana Pwo (fertilite feminine, danse par homme). Trônes ngunjur, sceptres, lances, pipes, mortiers a tabac sont les insignes royaux sculptes. Symbolisme animal : oiseaux, chauves-souris, lapins, babouins, lions, oryctéropes, pangolins (nkaka = grand-pere).",
+      "artsAndMusic": "Art reconnu mondialement : sculptures (statues, trones, masques, figurines), paniers, poterie, ivoire. Collections dans les plus grands musees europeens (Musee royal de l'Afrique centrale de Tervuren, Brooklyn Museum, Museum Rietberg, Tropenmuseum). Deux grandes ecoles stylistiques : Moxico (realiste) et Musamba (schematique). Sculpteurs professionnels songi et fuli. Instruments de musique lors des rituels de possession. Chants et danses masquees.",
+      "spiritualities": "Religion traditionnelle polythéiste : hamba (esprits ancestraux et naturels, representes par des arbres, termitières, figurines, masques). Dieu supreme Kalunga/Nzambi. Culte de possession (mahamba yipwiya, mahamba makulwana). Autels kachipango avec sculptures et objets. Christianisme syncrétique diffuse depuis l'epoque coloniale, avec retention des rites de passage et des pratiques rituelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Membres fondateurs de l'Empire Lunda (XVIIe-XVIIIe siecle). Autonomisation et renversement du royaume Lunda (Mwata Yanvo) vers 1900. Domination politique et linguistique du nord-est de l'Angola sur les onze autres tribus de la region. Chefferies du Haut-Zambeze et Haut-Kasai en relation avec les peuples Luchazi, Lunda, Ndembu, Luvale. Decline des grandes chefferies au XIXe siecle suite aux epidemies.",
+      "relationsWithNeighbors": "Voisins nord : Lunda, Pende, Mbangani, Kete. Voisins est : Minungu, Lwena/Luvale, Luchazi, Mbwela, Mbunda. Voisins ouest : Holo, Mbundu, Imbangala, Songo, Ovimbundu. Voisins sud : Kwanyama. Les Chokwe partageaient traditions et langues apparentees avec nombre de ces voisins. Les artistes Chokwe etaient attaches a la cour Lunda et produisaient l'art de cour.",
+      "conflictsOrAlliances": "Esclavage : les Chokwe etaient divises en maitres et esclaves ; ils esclavagerent des voisins et vendaient des captifs aux ports portugais, tout en subissant les raids des Arabes swahilis (Tippu Tip). Insurrection militaire reactionnaire contre les Europeens et les Arabes (XIXe siecle) qui leur permit d'etendre leur territoire. Guerre civile angolaise (1975-2002) : devastation des regions Chokwe.",
+      "diaspora": "Diffusion au nord de l'Angola, en RDC (Kasai, Katanga) et en Zambie occidentale (province du Nord-Ouest) au cours des expansions du XIXe siecle. Migrations liees a la guerre civile angolaise. Artistes Chokwe dans les villes angolaises (Luanda) et congolaises."
+    },
+    "demography": {
+      "totalPopulation": 4162000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2024, total tous pays (joshuaproject.net/people_groups/11365) : Angola 2 496 000, RDC 1 520 000, Namibie 9 700, Zambie 136 000",
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 2496000,
+          "note": "Angola oriental, provinces du Moxico, Lunda Norte, Lunda Sul ; langue nationale"
+        },
+        {
+          "country": "COD",
+          "population": 1520000,
+          "note": "RDC, regions du Kasai et Katanga occidental"
+        },
+        {
+          "country": "ZMB",
+          "population": 136000,
+          "note": "Zambie, province du Nord-Ouest"
+        },
+        {
+          "country": "NAM",
+          "population": 9700,
+          "note": "Namibie, presence minoritaire"
+        }
+      ]
+    },
+    "sources": [
+      "Chokwe people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Chokwe_people)",
+      "Tchokwes – Wikipedia FR, 2024 (https://fr.wikipedia.org/wiki/Tchokw%C3%A9s)",
+      "Chokwe people group – Joshua Project, 2024 (https://joshuaproject.net/people_groups/11365)",
+      "Chokwe in Angola – Joshua Project, 2024 (https://joshuaproject.net/people_groups/11365/AO)",
+      "Chokwe in Zambia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/11365/ZA)",
+      "Chokwe language ISO 639-3 cjk – Common Crawl / web-languages, 2024 (https://github.com/commoncrawl/web-languages/blob/main/living/chokwe.md)"
+    ]
+  }
+}

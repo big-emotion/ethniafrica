@@ -1,0 +1,84 @@
+{
+  "id": "PPL_ANNOBON",
+  "nameMain": "Annobonais",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["GNQ"],
+  "content": {
+    "appellations": {
+      "mainName": "Annobonais",
+      "selfAppellation": "Ambonenses",
+      "exonyms": [
+        "Annobonese (anglais)",
+        "Annoboneses (espagnol)",
+        "Fa d'Ambu (désigne le groupe par sa langue)"
+      ],
+      "originOfExonyms": "Le nom Annobón vient du portugais Ano Bom (bonne année), donné par les explorateurs portugais qui atteignirent l'île le 1er janvier 1473. Le terme Fa d'Ambu est parfois utilisé pour désigner le peuple par métonymie avec sa langue créole.",
+      "whyProblematic": "Aucun terme à proprement parler problématique, mais le rattachement à la Guinée Équatoriale (peuple Fang majoritaire) est source de tensions politiques vives. Les Annobonais considèrent avoir peu en commun culturellement avec le reste du pays.",
+      "contemporaryUsage": "Le terme Annobonais est employé couramment en français et dans les sources académiques. En espagnol (langue officielle de la Guinée Équatoriale), on dit Annoboneses. Sur l'île, les habitants se désignent surtout par leur langue : Fa d'Ambu.",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Créole portugais du golfe de Guinée",
+      "historicalRegion": "Île d'Annobón, golfe de Guinée (province d'Annobón, Guinée Équatoriale)",
+      "currentCountries": ["GNQ"]
+    },
+    "ethnicities": ["Annobonais", "Forros (ancienne classe d'affranchis)"],
+    "origins": {
+      "ancientOrigins": "L'île d'Annobón était inhabitée avant la colonisation portugaise au XVe siècle. Les Portugais y installèrent des esclaves africains originaires principalement d'Angola et de Sao Tomé pour exploiter le bois et cultiver le coton et la canne à sucre. Ces esclaves, appelés escravos de regate, constituent les premiers membres de la société annobonaise. Des unions entre hommes portugais et femmes africaines donnèrent naissance aux forros (esclaves sur le point d'être libérés), qui développèrent une identité distincte et constituèrent les fondateurs du peuple annobonais.",
+      "formationPeriod": "XVe-XVIIIe siècles. L'identité annobonaise se forma progressivement à partir de 1474, s'accélérant avec l'émergence d'une langue créole propre au XVIe siècle et la période d'autonomie de fait au XVIIIe siècle après le retrait des puissances coloniales.",
+      "migrationRoutes": [
+        "Angola et Sao Tomé vers l'île d'Annobón (esclaves africains importés par les Portugais, XVe-XVIIe siècles)",
+        "Quelques apports ibériques (Portugais puis Espagnols) jusqu'au XIXe siècle"
+      ],
+      "historicalSettlementZones": [
+        "Île d'Annobón (17 km2, golfe de Guinée)",
+        "San Antonio de Palé (ville principale de l'île)",
+        "Malabo (capitale de Guinée Équatoriale, où vit une communauté significative d'Annobonais)"
+      ],
+      "unificationsOrDivisions": "Après le transfert de l'île au Portugal en 1474, une organisation sociale en castes émergea : familles dirigeantes, hommes libres et anciens esclaves. Lors du transfert à l'Espagne en 1778, la population se révolta et expulsa les Espagnols. Une période d'anarchie puis d'autonomie suivit, gouvernée par un conseil de cinq notables (Vidjil) jusqu'au rétablissement de l'autorité espagnole au XIXe siècle.",
+      "externalInfluences": "La colonisation portugaise a laissé une empreinte linguistique majeure (la langue Fa d'Ambu est un créole à base portugaise). La colonisation espagnole (officiellement depuis 1778) a imposé l'espagnol comme langue administrative et scolaire. La proximité géographique et culturelle de Sao Tomé-et-Principe renforce les liens avec les autres peuples créoles du golfe de Guinée (Forros, Angolars, Principenses).",
+      "majorHistoricalEvents": "1473 : découverte de l'île par les Portugais le 1er janvier (Ano Bom). 1474 : colonisation par des esclaves angolais via Sao Tomé. XVIe siècle : émergence de la langue Fa d'Ambu et des forros. 1778 : cession à l'Espagne par le traité d'El Pardo ; révolte des habitants. XVIIIe-XIXe siècles : autonomie de fait sous le Vidjil (conseil d'anciens). 1909 : intégration à la colonie espagnole d'Elobey, Annobón et Corisco. 1968 : indépendance de la Guinée Équatoriale ; Annobón rattaché contre son gré. 1972-1979 : isolement imposé par le dictateur Francisco Macías Nguema ; épidémie de choléra estimée avoir décimé près de la moitié de la population. 1993 : révolte contre le gouvernement central ; exécutions extrajudiciaires ; emprisonnement de militants à la prison de Black Beach. 2022 : déclaration unilatérale d'indépendance par le mouvement Ambo Legadu (non reconnue)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le Vidjil (ou Viyil) est l'institution traditionnelle d'Annobón : un conseil d'anciens et de notables qui se réunissait sur la place publique pour prendre les décisions importantes. Cette assemblée a gouverné l'île de manière autonome pendant une grande partie du XVIIIe et du XIXe siècles, constituant selon l'historien Baltasar Fra-Molinero le seul territoire d'Afrique de l'Ouest à avoir joui d'un gouvernement local non blanc composé d'un conseil élu.",
+      "clanOrganization": "Organisation sociale en trois castes historiques : familles nobles (anciens forros, détentrices du pouvoir), hommes libres et descendants d'anciens esclaves. Les familles les plus importantes élisaient l'autorité suprême lors des réunions du Vidjil.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignées familiales ayant accès aux fonctions de direction au sein du Vidjil détenaient un statut héréditaire. La polygynie était traditionnellement pratiquée par les familles aisées, bien qu'aujourd'hui limitée par les difficultés économiques.",
+      "religiousAuthority": "Les prêtres catholiques exercent une autorité religieuse significative, héritée de la mission catholique portugaise. Les anciens conservent un rôle spirituel dans les pratiques syncrétiques mêlant catholicisme et croyances animistes locales."
+    },
+    "languages": {
+      "mainLanguage": "Fa d'Ambu (créole portugais)",
+      "isoCodes": ["fab"],
+      "dialects": [
+        "Fa d'Ambu de l'île d'Annobón (plus conservateur)",
+        "Fa d'Ambu de Malabo (sous influence espagnole croissante)"
+      ],
+      "vehicularRole": "Le Fa d'Ambu est la langue maternelle et identitaire des Annobonais, parlé dans tous les contextes quotidiens sur l'île. L'espagnol est utilisé uniquement dans les contextes officiels (école, administration). Environ 100 % des hommes adultes sont bilingues (Fa d'Ambu et espagnol). Le Fa d'Ambu n'a aucun statut officiel en Guinée Équatoriale malgré son rôle central. Il est génétiquement apparenté aux autres créoles du golfe de Guinée : Forro (Sao Tomé), Angolar et Principense."
+    },
+    "culture": {
+      "majorRites": "La chasse traditionnelle à la baleine est l'une des pratiques les plus emblématiques : les hommes harponnent les baleines depuis des pirogues lors de leur migration annuelle dans les eaux d'Annobón. Certaines femmes donnent naissance dans l'océan selon une coutume locale. Les célébrations catholiques (Noël, Semaine Sainte) sont des événements communautaires majeurs, mêlés de pratiques rituelles d'origine africaine.",
+      "symbols": "Le Vidjil (conseil d'anciens et lieu de réunion) est le symbole de l'autonomie politique annobonaise. L'océan et la pêche constituent des éléments identitaires centraux. La langue Fa d'Ambu est le marqueur identitaire le plus fort du peuple.",
+      "artsAndMusic": "La musique et la danse occupent une place centrale lors des cérémonies religieuses, des mariages et des fêtes. Les rythmes combinent influences africaines et européennes. La narration orale (contes et histoires de l'île) est une tradition vivante. La sculpture en bois et la construction de pirogues sont des savoir-faire traditionnels locaux. L'artiste Estrella Alfaro est l'une des figures culturelles contemporaines les plus connues de l'île.",
+      "spiritualities": "Catholicisme dominant, introduit par les missionnaires portugais et renforcé par les Espagnols. Présence d'une mission catholique romaine et d'une église des Assemblées de Dieu. Le syncrétisme est répandu : les pratiques animistes (vénération des esprits, rituels liés à la nature et à la mer) se mêlent aux pratiques chrétiennes. Certaines sources estiment que moins de 30 % des habitants se considèrent pleinement chrétiens, la majorité pratiquant une forme de religion traditionnelle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume au sens strict. L'organisation du Vidjil constituait la forme de gouvernement autonome la plus structurée, représentant un rare exemple de gouvernance locale non coloniale en Afrique de l'Ouest du XVIIIe siècle.",
+      "relationsWithNeighbors": "Relations culturelles fortes avec Sao Tomé-et-Principe (175 km), dont l'île partage l'héritage linguistique créole portugais. Relations historiquement tendues avec le gouvernement central de Guinée Équatoriale (dominé par le peuple Fang). L'île a des affinités culturelles et géographiques bien plus proches de Sao Tomé que du continent équato-guinéen.",
+      "conflictsOrAlliances": "Résistance répétée à la colonisation espagnole (XVIIIe-XIXe siècles). Sous Macías Nguema, l'île fut isolée de 1972 à 1979 et une épidémie de choléra décima une part importante de la population sans assistance de l'État. En 1993, une révolte populaire fut réprimée par l'armée ; deux personnes furent tuées extrajudiciairement et des militants emprisonnés à Black Beach. En 2022, le mouvement Ambo Legadu proclama l'indépendance de la République d'Annobón, une déclaration sans reconnaissance internationale.",
+      "diaspora": "Une communauté annobonaise importante vit à Malabo (capitale de la Guinée Équatoriale) et en Espagne (surtout à Madrid), notamment des militants et des exilés politiques. La plupart des Annobonais ayant quitté l'île l'ont fait pour des raisons économiques ou politiques."
+    },
+    "demography": {
+      "totalPopulation": 9200,
+      "referenceYear": 2025,
+      "source": "Joshua Project, 2025 (9 200 locuteurs de Fa d'Ambu en Guinée Équatoriale) ; recensement 2015 de Guinée Équatoriale (5 323 habitants sur l'île d'Annobón) ; APiCS Online (estimation de 4 500 à 5 000 locuteurs du Fa d'Ambu)",
+      "distributionByCountry": [{ "country": "GNQ", "population": 9200 }]
+    },
+    "sources": [
+      "Annobón – Wikipedia (anglais), 2024 (https://en.wikipedia.org/wiki/Annob%C3%B3n)",
+      "Fa d'Ambu in Equatorial Guinea – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11173/EK)",
+      "Survey chapter: Fa d'Ambô – APiCS Online (Atlas of Pidgin and Creole Language Structures) (https://apics-online.info/surveys/38)",
+      "Fa d'Ambô (Equatorial Guinea) – Language Documentation and Description Journal, 2021 (https://www.lddjournal.org/article/id/1262/)",
+      "Annobonese tribe: History, Culture and Traditions – Rumbo Malabo, 2025 (https://rumbomalabo.com/en/annobon/)",
+      "Annobon Was Free a Century Before Haiti – New Lines Magazine, 2025 (https://newlinesmag.com/spotlight/annobon-was-free-a-century-before-haiti-can-it-find-independence-again/)",
+      "Annobón, the African island that wants independence – El País, 2025 (https://english.elpais.com/international/2025-08-30/annobon-the-african-island-that-wants-independence-or-to-be-part-of-argentina.html)"
+    ]
+  }
+}

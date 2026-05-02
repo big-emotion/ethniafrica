@@ -1,0 +1,37 @@
+# Nom du peuple
+- Nom principal : Macro-peuple amazigh (Berbères)
+- Auto-appellation : Imazighen (pluriel)
+- Appellations historiques :
+  - « Berbères » (terme colonial, problématique ; imposé par les sources grecques et européennes)
+- Famille linguistique : Afro-asiatique – Berbère (FLG_BERBERE)
+- Région historique : Tout le Maghreb et Sahara
+- ID : PPL_AMAZIGH_MACRO
+
+# 1. Ethnies incluses
+- Tous les peuples amazighs du Maghreb (Kabyles, Chaouis, Chleuhs, Rifains, Mozabites, Touaregs, etc.)
+
+# 2. Origines
+- Populations libyques antiques.
+- Langues amazighes attestées depuis l’Antiquité.
+
+# 3. Organisation
+- Non applicable (ensemble trop vaste et non homogène).
+
+# 4. Langues
+- Ensemble des langues amazighes.
+
+# 5. Culture
+- Culture amazighe commune : tifinagh, Yennayer, traditions pastorales / montagnardes.
+
+# 6. Histoire
+- Présence depuis la protohistoire.
+- Grandes dynasties : Almohades, Almoravides, Zianides.
+
+# 7. Démographie
+- Population : 0 (macro-groupe historique non comptabilisé)
+- Année : 2025
+
+# 8. Sources
+- Ibn Khaldoun
+- CNRS Berbère
+- Encyclopédies amazighes

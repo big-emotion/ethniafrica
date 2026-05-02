@@ -1,0 +1,114 @@
+{
+  "id": "PPL_ZAGHAWA",
+  "nameMain": "Zaghawa",
+  "languageFamilyId": "FLG_SAHARIEN",
+  "currentCountries": ["TCD", "SDN"],
+  "content": {
+    "appellations": {
+      "mainName": "Zaghawa",
+      "selfAppellation": "Beri",
+      "exonyms": [
+        "Zaghawa (terme arabe)",
+        "Kegi",
+        "Soghaua",
+        "Zeghawa",
+        "Zoghaua",
+        "Awlad Mana"
+      ],
+      "originOfExonyms": "Le terme Zaghawa est un exonyme arabe attesté depuis le 9e siècle (al-Yaqubi). Le terme Beri (ou Kegi) est l'endonyme utilisé par les locuteurs eux-mêmes. Dans la littérature ethnologique, le terme Beri englobe les Zaghawa, les Bideyat et les Berti, trois peuples proches parlant des langues apparentées.",
+      "whyProblematic": "Le terme Zaghawa est un exonyme arabe que le groupe lui-même rejette partiellement au profit de Beri. La confusion avec les Bideyat (considérés tantôt comme un sous-groupe zaghawa, tantôt comme un groupe distinct) complexifie l'ethnonymie. Les sources arabes médiévales utilisaient Zaghawa pour désigner l'empire qu'ils dirigeaient, puis le peuple, créant une ambiguité historique.",
+      "contemporaryUsage": "Le terme Zaghawa est le plus utilisé dans les sources françaises, anglaises et arabes contemporaines, ainsi que dans les médias lors de la crise du Darfour. Les membres du groupe se désignent eux-mêmes comme Beri dans leur propre langue. Depuis 1990, les Zaghawa dominent la politique tchadienne via la présidence d'Idriss Déby Itno (clan Bidayat des Zaghawa, 1990-2021) et de son fils Mahamat Déby (depuis 2021).",
+      "linguisticFamily": "FLG_SAHARIEN",
+      "ethnoLinguisticGroup": "Saharien oriental (branche nilo-saharienne)",
+      "historicalRegion": "Dar Zaghawa (nord-est du Tchad et nord-ouest du Soudan, Darfour), plateau de l'Ennedi, région du Kanem",
+      "currentCountries": ["TCD", "SDN"]
+    },
+    "ethnicities": [
+      "Kube (Kobé, sous-groupe principal ; clans Kapka, Kige, Kuba ; zones : Iriba au Tchad, nord du Darfour au Soudan)",
+      "Wegi (Twer en arabe ; sous-groupe le plus nombreux, 100 000 locuteurs ; principalement en Darfour, Soudan : Ambodu, Kornoye, Kutum)",
+      "Tuba (Bideyat en arabe ; clans Biria et Brogat ; 15 000 locuteurs ; Ennedi, Tchad et nord du Darfour)",
+      "Dirong-Guruf (clans Dirong et Guruf ; 4 000 locuteurs ; cantons Dirong et Gourouf au Tchad)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Zaghawa (Beri) sont un peuple nilo-saharien dont la présence dans la zone Sahel-Sahara entre le lac Tchad et le Darfour est attestée depuis au moins le 8e siècle de l'ère commune. Al-Yaqubi les mentionne en 872 comme un peuple puissant du Sahel. Les sources médiévales arabes (al-Kindi, Ibn Hawqal, al-Bakri, al-Idrisi, Yaqut al-Hamawi) décrivent les Zaghawa comme un peuple de pasteurs nomades dont les rois étaient considérés comme des dieux par leurs sujets, vivant dans des huttes de roseaux et de chaume. Le Girgam (chronique de l'empire Kanem-Bornu) identifie les Zaghawa à la dynastie Duguwa, les fondateurs présumés de l'empire du Kanem.",
+      "formationPeriod": "L'empire Zaghawa, centré sur Manan (capitale identifiée à Njimi dans l'actuel Tchad), a dominé le Sahel entre le lac Tchad et le Darfour du 8e au 11e siècle. Ils ont perdu leur hégémonie avec la montée en puissance de la dynastie Sayfawa islamique (Kanem-Bornu) qui les a déplacés. Les Zaghawa ont ensuite maintenu une présence dans leurs terres ancestrales (Dar Zaghawa) à l'est du Kanem. La conversion à l'islam en masse a eu lieu entre le 13e et le début du 17e siècle selon les sources, avec une accélération dans les années 1940.",
+      "migrationRoutes": [
+        "Peuple autochtone du Sahel nord-africain, origines liées au Sahara vert (période humide avant 3000 av. J.-C.)",
+        "Expansion historique de l'ouest (Ennedi, Kanem) vers l'est (Darfour, Soudan) suivant les routes pastorales",
+        "Migrations forcées en raison de la crise du Darfour (2003-) : environ 100 000 Zaghawa ont fui au Tchad comme réfugiés"
+      ],
+      "historicalSettlementZones": [
+        "Dar Zaghawa (nord-est du Tchad, régions du Wadi Fira et Ennedi) : coeur historique du peuple",
+        "Iriba et sa région (cantons Kapka, Kobé, Tchad) : centre politique contemporain des Zaghawa tchadiens",
+        "Darfour septentrional et occidental (Soudan) : zone principale des Zaghawa soudanais (Wegi/Twer)",
+        "Région de l'Ennedi (Tchad) : zone des Bideyat/Tuba",
+        "Kanem et lac Tchad : zone historique de l'empire zaghawa"
+      ],
+      "unificationsOrDivisions": "Les Zaghawa sont divisés en quatre dialectes principaux (Kube/Kobé, Wegi/Twer, Tuba/Bideyat, Dirong-Guruf) et en nombreux clans. La frontière tchado-soudanaise divise le groupe en deux sous-ensembles politiquement distincts. Les Zaghawa tchadiens ont dominé la politique de N'Djamena depuis 1990 sous la présidence Déby. Les Zaghawa soudanais du Darfour sont victimes de violences et de déplacements depuis 2003. Les Bideyat sont tantôt considérés comme un sous-groupe zaghawa, tantôt comme un peuple distinct.",
+      "externalInfluences": "Empire Kanem-Bornu (11e-19e siècles) : rôle fondateur dans l'histoire zaghawa puis puissance rivale. Islamisation progressive (13e-17e siècles). Sultanat du Darfour (17e-19e siècles) : les Zaghawa du Soudan ont vécu sous l'autorité du sultanat Fur. Colonisation franco-britannique (fin 19e-début 20e siècle) : division du territoire zaghawa par la frontière tchado-soudanaise. Crise du Darfour (depuis 2003) : violences des milices janjaweed arabes, intervention internationale, persécutions.",
+      "majorHistoricalEvents": "872 : première mention par al-Yaqubi. 11e siècle : les rois zaghawa se convertissent à l'islam (selon certaines sources). 13e siècle : Muhammad al-Idrisi décrit leur influence. 1270 : selon Ibn Said al-Maghribi, Manan fut la capitale du Kanem jusqu'à la conquête sayfawa. 14e siècle : al-Maqrizi mentionne le Darfour comme État indépendant. 1989 : coup d'État d'Omar al-Bachir au Soudan, des Zaghawa islamistes participent à la sécurité. 1990 : Idriss Déby (clan Bidayat des Zaghawa) renverse Hissène Habré et prend le pouvoir au Tchad. 2003 : début de la crise du Darfour, les Zaghawa soudanais sont victimes des milices janjaweed. 2006 : Khalil Ibrahim (JEM) et Gibrîl Ibrahim lancent des rébellions soudanaises depuis le Tchad. 2021 : mort d'Idriss Déby Itno lors de combats contre des rebelles ; son fils Mahamat Déby (Zaghawa) lui succède à la tête du Tchad."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La société zaghawa traditionnelle est organisée en chefferies (sultanats locaux) dirigées par des sultans issus de familles nobles (la strate supérieure composée de nobles et de guerriers). L'autorité politique est exercée par des sultans reconnus par l'administration tchadienne ou soudanaise. Les premières sources arabes qualifiaient les rois zaghawa de rois forgerons avec une arrogance incommensurable, signe de leur statut quasi-divin aux yeux de leurs sujets.",
+      "clanOrganization": "La société zaghawa est fortement stratifiée. La strate supérieure comprend les nobles (guerriers) et les marchands-commerçants. En dessous se trouvent les artisans (Hadaheed/Hadahid), castes endogames héréditaires pratiquant la forge, la chasse, la poterie, le travail du cuir et la musique (batteurs). La strate inférieure comprenait historiquement les esclaves. Les castes artisanales ne mangent pas avec les autres et n'ont pas de relations sociales hors de leur caste : si on est né forgeron, on restera toujours forgeron.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Lignages patrilinéaires organisant l'identité clanique, les alliances matrimoniales et les droits fonciers. La société pastorale nomade traditionnelle est organisée en clans (troupeaux de chevaux, d'ânes, de chèvres et de moutons). Chaque clan dispose de droits d'accès à des pâturages et points d'eau. Les nobles zaghawa contrôlaient historiquement les routes du commerce transsaharien.",
+      "religiousAuthority": "Islam sunnite malékite, adopté en masse à partir du 13e siècle (certaines sources disent les années 1940 pour un islam populaire de masse). Les Zaghawa sont connus pour leur piété en Darfour (selon les sources). Subsistent des rites pré-islamiques : le karama (sacrifice animal rituel pour chasser les mauvais esprits) est maintenu parallèlement aux pratiques islamiques. Les oulémas et imams exercent l'autorité religieuse officielle."
+    },
+    "languages": {
+      "mainLanguage": "Zaghawa (Beria), langue nilo-saharienne de la branche saharienne orientale",
+      "isoCodes": ["zag"],
+      "dialects": [
+        "Kube (Kobé) : dialecte central, 25 000 locuteurs, Iriba et alentours (Tchad) et nord du Darfour (Soudan)",
+        "Wegi (Twer en arabe) : dialecte le plus parlé, environ 100 000 locuteurs, principalement en Darfour septentrional (Soudan)",
+        "Tuba (Bideyat en arabe) : 15 000 locuteurs, Ennedi (Tchad) et nord du Darfour (Soudan)",
+        "Dirong-Guruf : 4 000 locuteurs, cantons Dirong et Gourouf (Tchad)"
+      ],
+      "vehicularRole": "Le zaghawa (ISO zag) est parlé par environ 447 400 locuteurs natifs (toutes variétés confondues). Il appartient à la branche saharienne orientale du nilo-saharien (avec le berti). L'arabe tchadien et l'arabe soudanais sont utilisés comme langues véhiculaires commerciales et d'intergroupe. Le français est la langue officielle au Tchad, l'arabe au Soudan. L'écriture zaghawa utilise un syllabaire propre (visuel dans Unicode)."
+    },
+    "culture": {
+      "majorRites": "Islam sunnite : cinq prières quotidiennes, jeûne du Ramadan, Aïd al-Fitr et Aïd al-Adha, Hajj. Circoncision masculine rite de passage. Mariage : dot négociée, cérémonie islamique. Rites pré-islamiques maintenus en parallèle : le karama (sacrifice animal collectif pour écarter les mauvais esprits et obtenir la bénédiction des ancêtres). Funérailles islamiques : inhumation rapide, prières collectives, condoléances. Rites de transhumance marquant le départ et le retour des troupeaux.",
+      "symbols": "Le chameau et le cheval, animaux emblématiques des Zaghawa comme commerçants et guerriers, leur permettant de dominer des routes du commerce transsaharien. La race de mouton Zaghawa, élevée par eux et connue sous ce nom chez les Arabes. Les cultures vivrières (mil, sorgho, sésame, melons, potirons, arachides, gombo) symbolisant l'adaptation à l'environnement sahélien. L'écriture zaghawa (syllabaire propre), signe d'une identité culturelle forte.",
+      "artsAndMusic": "Artisanat : les castes Hadaheed produisent des objets en fer (forge), des poteries, des objets en cuir et pratiquent la chasse spécialisée. Musique : les Hadaheed sont aussi musiciens, notamment batteurs (percussions) lors des fêtes. Deux clips musicaux populaires zaghawa contemporains : Zaghawa Girl (Beri Teli, par Majid Kurbiya) et Let's Go Youth (par Haydar wad Fa). Poésie orale en langue zaghawa. Tissage et artisanat textile. Architecture : tentes portatives pour les nomades, maisons en pisé dans les zones sédentarisées.",
+      "spiritualities": "Islam sunnite malékite, pratiqué depuis le 13e siècle (conversion en masse dans les années 1940 pour les régions les plus isolées). Les Zaghawa sont réputés pieux en Darfour. Syncrétisme : maintien du karama (sacrifice animal pré-islamique pour chasser les mauvais esprits), croyances aux djinns. Culte des ancêtres. L'appartenance à l'islam constitue un facteur identitaire fort, notamment dans le contexte des tensions ethniques au Darfour où les Zaghawa sont désignés comme Africains par opposition aux Arabes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Zaghawa sont considérés comme les fondateurs présumés de l'empire Kanem (8e-11e siècles), l'un des plus anciens empires d'Afrique subsaharienne. Leur capital Manan (Njimi) fut le coeur du pouvoir avant la conquête Sayfawa islamique. Les Zaghawa ont maintenu une hégémonie sur les peuples du Sahel entre le lac Tchad et le Darfour. Des sultans zaghawa locaux ont gouverné le Dar Zaghawa (Tchad et Soudan) jusqu'à l'époque coloniale. Le clan Bidayat des Zaghawa a fourni le président Idriss Déby Itno au Tchad (1990-2021) et son fils Mahamat Déby (depuis 2021).",
+      "relationsWithNeighbors": "Les Zaghawa ont entretenu des relations complexes avec les Toubou (voisins au nord-ouest, parfois alliés, parfois rivaux), les Fur (Darfour, alliés lors de la crise), les populations arabes du Tchad et du Soudan (rivalités foncières et ethniques), les Kanembou et Kanuri (héritage du Kanem-Bornu). Au Soudan, les Zaghawa ont d'abord participé au régime de Bachir puis s'en sont distanciés. Khalil Ibrahim (JEM) et Gibril Ibrahim (chefs rebelles zaghawa soudanais) ont opéré depuis le Tchad avec le soutien de Déby.",
+      "conflictsOrAlliances": "1989-1998 : des islamistes zaghawa participent au régime Bachir au Soudan (sécurité, police, forces de défense populaire). 1990 : Idriss Déby (Bidayat/Zaghawa) renverse Hissène Habré avec le soutien de la Libye et du Soudan. 1998 : rupture d'al-Turabi avec Bachir, fracture au sein de la coalition zaghawa soudanaise. 2003 : début de la crise du Darfour ; les Zaghawa soudanais sont ciblés par les milices janjaweed arabes soutenues par Khartoum ; 100 000 Zaghawa fuient au Tchad. 2006 : tentative de coup d'État contre Déby avec soutien de Khartoum (tentative de prise de N'Djamena). 2021 : mort d'Idriss Déby Itno lors de combats contre les rebelles du FACT.",
+      "diaspora": "La crise du Darfour (depuis 2003) a produit une importante diaspora zaghawa au Tchad (environ 100 000 réfugiés), dans les pays occidentaux (Europe, Amérique du Nord) et dans les pays du Golfe. Les Zaghawa soudanais sont présents en Libye, en Égypte et en Éthiopie. Une diaspora est également présente aux États-Unis (environ 250 personnes selon Joshua Project), en France et au Royaume-Uni via des canaux de demande d'asile liés à la crise du Darfour."
+    },
+    "demography": {
+      "totalPopulation": 450000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue : 447 400 locuteurs natifs du zaghawa (toutes variétés). Joshua Project : 384 150 personnes d'ethnie zaghawa. Estimations pour 2025 ajustées sur la base de la croissance démographique tchadienne et soudanaise (environ 3 % par an). Note : les estimations varient ; certaines sources citent moins de 2 % de la population tchadienne (soit environ 300 000 sur 18 millions en 2020).",
+      "distributionByCountry": [
+        {
+          "country": "TCD",
+          "population": 250000,
+          "note": "Principalement dans les régions du Wadi Fira (Iriba), Ennedi, et les grandes villes (N'Djamena)"
+        },
+        {
+          "country": "SDN",
+          "population": 170000,
+          "note": "Darfour septentrional et occidental (Kutum, Kornoye, Ambodu) et camp de réfugiés"
+        },
+        {
+          "country": "LBY",
+          "population": 10000,
+          "note": "Principalement dans les villes du sud libyen (Koufra)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Zaghawa people. https://en.wikipedia.org/wiki/Zaghawa_people",
+      "Wikipedia EN - Zaghawa language. https://en.wikipedia.org/wiki/Zaghawa_language",
+      "Wikipedia EN - Idriss Deby. https://en.wikipedia.org/wiki/Idriss_D%C3%A9by",
+      "SIL Ethnologue - Zaghawa (zag). https://www.ethnologue.com/language/zag/",
+      "Joshua Project - Zaghawa people groups. https://joshuaproject.net/people_groups/16080/",
+      "Immigration and Refugee Board of Canada - Goranes et Zaghawa du Tchad (2013). https://www.ecoi.net/de/dokument/2021474.html",
+      "Brookings Institution - The death of Chadian President Deby (2021). https://www.brookings.edu/articles/the-death-of-chadian-president-idris-deby-itno-threatens-stability-in-the-region/",
+      "Minority Rights Group - Chad. https://minorityrights.org/country/chad/"
+    ]
+  }
+}

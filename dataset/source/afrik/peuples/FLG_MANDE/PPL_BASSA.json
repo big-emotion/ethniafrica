@@ -1,0 +1,105 @@
+{
+  "id": "PPL_BASSA",
+  "nameMain": "Bassa",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["LBR", "CIV", "SLE"],
+  "content": {
+    "appellations": {
+      "mainName": "Bassa",
+      "selfAppellation": "Bassa",
+      "exonyms": ["Bassa", "Gboboh", "Adbassa", "Bambog-Mbog"],
+      "originOfExonyms": "Le nom Bassa derive selon la tradition orale de Bassa Sooh Nyombe signifiant les gens du Pere Pierre. Les premiers commercants europeens n'ayant pu prononcer la phrase complete, la forme abregee Bassa s'est imposee dans la litterature occidentale. Les variantes Gboboh et Adbassa sont des designations internes.",
+      "whyProblematic": "Le terme Bassa est parfois confondu avec le peuple Bassa du Cameroun (famille afro-asiatique, bantoue), qui est une entite entierement distincte. La classification dans FLG_MANDE est approximative : les Bassa du Liberia sont linguistiquement Kru (Niger-Congo, famille kru), non Mande, bien qu'ils interagissent etroitement avec les peuples mande.",
+      "contemporaryUsage": "Le terme Bassa est universellement utilise au Liberia pour designer ce peuple. Ils se designent eux-memes comme Bassa et parlent le bassa (bsq). Ils constituent le deuxieme groupe ethnique du Liberia.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Kru (Niger-Congo), confederation des peuples kru du Liberia et de la Cote d'Ivoire",
+      "historicalRegion": "Cote liberienne centrale (Grand Bassa, Rivercess, Margibi, Montserrado)",
+      "currentCountries": ["LBR", "CIV", "SLE"]
+    },
+    "ethnicities": [
+      "Bassa forestiers de l'interieur (Forest Bassa) : maintien des pratiques traditionnelles et rituelles",
+      "Bassa cotiers (Coastal Bassa) : influence du christianisme et de l'economie de traite depuis le XVe siecle",
+      "Glebo : sous-groupe interne de l'arriere-pays",
+      "Clans patrilineaires varies selon les comtes de Grand Bassa, Rivercess et Margibi"
+    ],
+    "origins": {
+      "ancientOrigins": "La tradition orale et les evidences linguistiques suggerent une origine dans la vallee du Nil (Egypte ou Nubie ancienne), designee sous le nom d'Empire Adbassa dans les recits oraux. Les proto-Bassa auraient commence leur migration vers l'ouest vers le VIe siecle av. J.-C.",
+      "formationPeriod": "Migration progressive a travers le Sahara, le Kanem-Bornou et la vallee du Logone. Intermingling avec des populations bantoues et niger-congo le long des routes. Etablissement sur la cote liberienne entre le XVe et le XVIe siecle. Premier contact avec les explorateurs portugais en 1472.",
+      "migrationRoutes": [
+        "Vallee du Nil vers l'ouest a travers la region sahelo-soudanaise",
+        "Kanem-Bornou et vallee du Logone",
+        "Progression vers le sud-ouest jusqu'a la foret tropicale liberienne",
+        "Installation definitive sur la cote atlantique (XVe-XVIe s.)"
+      ],
+      "historicalSettlementZones": [
+        "Grand Bassa County (foyer historique central)",
+        "Rivercess County (arriere-pays forestier)",
+        "Margibi County",
+        "Montserrado County (dont Monrovia, capitale)"
+      ],
+      "unificationsOrDivisions": "Organisation en clans lineaires independants, chaque village etant gouverne par un chef hereditaire. Pas d'etat centralise. Resistance aux empiètements des colons americoliberiens a partir de 1822.",
+      "externalInfluences": "Contact avec les Portugais (1472) : introduction du manioc et de la canne a sucre. Arrivee des esclaves affranchis americains (1822) et fondation de Liberia : conflits et integration progressive. Influence des Kpelle et Dei : adoption des societes d'initiation Gree-Gree Bush (ecoles de brousse). Influence des Mende : adoption de la societe feminine Sande (Bondo). Christianisme (XIXe-XXe s.) : premiere Bible traduite en bassa en 1922. Revitalisation de l'ecriture indigene Vah (Ehni Ka Se Fa) au debut du XXe siecle.",
+      "majorHistoricalEvents": "1472 : premier contact avec les Portugais. 1822 : arrivee des premiers colons americoliberiens en terre bassa. 1847 : fondation du Liberia comme premiere republique africaine, dominant les Bassa comme citoyens de second rang. 1890s : redecouverte de l'ecriture Vah parmi les descendants bassa de la diaspora au Bresil et aux Antilles. 1922 : premiere traduction de la Bible en bassa. Guerres civiles liberians (1989-2003) : impact severe sur les communautes bassa de Monrovia et Grand Bassa."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en villages semi-autonomes sous l'autorite de chefs hereditaires (chiefs). Chaque village constitue une unite politique de base avec son propre chef. La confederation de villages est rare et circonstancielle. Les societes secretes (Port Society pour les hommes, Sande/Bondo pour les femmes) assurent une fonction de gouvernance parallele, de socialisation et de resolution des conflits.",
+      "clanOrganization": "Societe patrilineaire organisee en clans lineaires independants. L'appartenance clanique determine l'identite, les droits fonciers et les alliances matrimoniales. Les noms sont attribues selon la lignee, les totems et les circonstances de naissance. Les femmes dominent les marches locaux et jouent un role economique central.",
+      "ageClassSystems": "Systeme des ecoles de brousse Gree-Gree (adopte des voisins Dei et Kpelle) : seclusion initiatique des jeunes garcons dans la foret, enseignement des valeurs morales, techniques de chasse, et scarification comme marque de passage a l'age adulte. Les filles passent par la societe Sande (Bondo) pour une initiation equivalente.",
+      "roleOfLineages": "Les lignages patrilineaires determinant les alliances, les droits d'acces aux terres agricoles et aux zones de peche, et les obligations ceremoniales. Les ancetres sont invoques lors des ceremonies funebres pour assurer leur bienveillance. Les finials en laiton (batons ancestraux) representent l'ancetre mythique Sma Vlen.",
+      "religiousAuthority": "Autorite traditionnelle detenue par les officiants des societes Sande (sowei : officiant portant le masque-casque) et Port Society. Pratique du Gri-Gri (amulettes protectrices). Depuis le XIXe siecle, coexistence du christianisme (majoritaire aujourd'hui) avec les croyances traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Bassa (bsq)",
+      "isoCodes": ["bsq"],
+      "dialects": [
+        "Bassa cotier (zones de Grand Bassa et Montserrado, influence anglophone)",
+        "Bassa forestier (zones de Rivercess et Margibi, plus conservateur)"
+      ],
+      "vehicularRole": "Le bassa est la langue premiere d'environ 1 million de personnes au Liberia, ou il est la langue majoritaire de Monrovia. L'anglais liberien est la langue officielle et d'enseignement. Le bassa possede un systeme d'ecriture propre revitalise, le Vah (Ehni Ka Se Fa), reactualise au debut du XXe siecle par Thomas Flo Lewis, bien que peu utilise aujourd'hui."
+    },
+    "culture": {
+      "majorRites": "Ecoles de brousse Gree-Gree (initiation masculine) : seclusion en foret, enseignement des valeurs guerrieres et communautaires, scarification, musique rituelle. Societe feminine Sande (Bondo) : initiation feminine, port du masque-casque sowei representant l'esprit ancestral feminin des eaux, enseignement des savoirs feminins. Ceremonies funeraires : dances masquees et inhumation en terres ancestrales, invocation des ancetres via les finials en laiton. Mariage par dot (bride-wealth) : echanges de tissu, outils et biens entre familles. Ceremonies saisonnieres agricoles : ceremonies de semailles et de recolte, sacrifices.",
+      "symbols": "Masques Bassa en bois sculpte : faces angulaires specifiques, distingues des peuples voisins. Hiérarchie des masques selon leur fonction : masques terrifiants (esprits de la foret sombre), masques-portraits (beaute et ancestralite), masques sowei de la Sande (beaute feminine idealisee). Finials en laiton (hauts du baton de l'ancetre Sma Vlen). Masques miniatures en laiton Ma go (petites tetes) produits pour les voisins Dan. Scarification comme marque d'identite et de passage initiatique.",
+      "artsAndMusic": "Sculpture sur bois : masques aux visages angulaires, tresses sculptees, bonnets tresses. Fonderie a la cire perdue : masques miniatures en laiton (ma go) et finials de batons rituels. Ecriture Vah (Ehni Ka Se Fa) : systeme d'ecriture indigene a base de signes, revitalise au XXe siecle, unique en Afrique de l'Ouest pour sa perennite. Musique rituelle : percussions, chants lors des ceremonies Sande et des veillees funeraires. Artisanat : tissage du country cloth (tissu indigo traditionnel), poterie.",
+      "spiritualities": "Religion traditionnelle a base morale et ethique, venerant les ancetres et les esprits surnaturels. Concept d'un Etre Supreme bienveillant et vengeur, premier ancetre puissant, fusionne avec la conception chretienne de Dieu depuis la colonisation. Les masques Sande representent l'esprit ancestral feminin primordial residant dans les eaux. Divination et pratiques de guerison via les societes secretes. Christianity majoritaire aujourd'hui (diverses denominations protestantes et catholiques), avec retention d'elements de la religion traditionnelle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas d'organisation etatique centralisee. Confederation de villages semi-autonomes sous chefs hereditaires. Resistance aux empiètements des colons americoliberiens (1822-1847) et integration progressive dans l'Etat liberian sous statut inferieur.",
+      "relationsWithNeighbors": "Relations etroites avec les Kpelle (adoption des ecoles Gree-Gree), les Dei (initiation), les Mende (Sande/Bondo). Echanges artisanaux avec les Dan : production de masques miniatures en laiton (ma go) pour les Dan apres l'interdiction de la bijouterie en laiton (1938). Tension historique avec les colons americoliberiens (Americo-Liberians) qui dominaient politiquement et economiquement les populations autochtones.",
+      "conflictsOrAlliances": "Resistance aux empiètements des colons americoliberiens aux XIXe-XXe siecles. Implication dans les guerres civiles liberians (1989-2003) : les zones bassa de Monrovia et Grand Bassa furent particulierement touchees. Les Bassa furent victimes de violences de la part de diverses factions armees.",
+      "diaspora": "Presence de descendants bassa parmi les descendants africains au Bresil et aux Antilles (trace de la redecouverte de l'ecriture Vah dans les annees 1890). Communautes bassa dans les grandes villes du Liberia (Monrovia notamment). Refugies en Sierra Leone et en Cote d'Ivoire lors des guerres civiles."
+    },
+    "demography": {
+      "totalPopulation": 1050000,
+      "referenceYear": 2025,
+      "source": "Wikipedia — Bassa people (Liberia) : environ 1,05 million, 18 % de la population liberienne, deuxieme groupe apres les Kpelle. Liberia Census 2022, Ethnologue (bsq), Joshua Project.",
+      "distributionByCountry": [
+        {
+          "country": "LBR",
+          "population": 1020000,
+          "note": "Grand Bassa, Rivercess, Margibi, Montserrado (Monrovia)"
+        },
+        {
+          "country": "CIV",
+          "population": 20000,
+          "note": "Communautes dans l'ouest de la Cote d'Ivoire"
+        },
+        {
+          "country": "SLE",
+          "population": 10000,
+          "note": "Freetown et zones frontalieres"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bassa people (Liberia). https://en.wikipedia.org/wiki/Bassa_people_(Liberia)",
+      "Wikipedia EN — Bassa language. https://en.wikipedia.org/wiki/Bassa_language",
+      "SIL Ethnologue — Bassa (bsq). https://www.ethnologue.com/language/bsq/",
+      "West Africa Democracy Radio — The Bassa Tribe of Liberia (2023). https://wadr.org/the-bassa-tribe-of-liberia/",
+      "Minority Rights Group — Liberia. https://minorityrights.org/country/liberia/",
+      "Sage Reference — Encyclopedia of African Religion, Bassa. https://sk.sagepub.com/ency/edvol/africanreligion/chpt/bassa",
+      "Liberia Census 2022 (General Population and Housing Census, Liberia Institute of Statistics).",
+      "StudyGuides.com — Bassa (People). https://studyguides.com/study-methods/study-guide/cmfwvocp53ouk016qheb0w9jc"
+    ]
+  }
+}

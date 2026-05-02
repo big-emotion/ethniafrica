@@ -1,0 +1,109 @@
+{
+  "id": "PPL_PAPEL",
+  "nameMain": "Papel",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GNB", "SEN", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Papel",
+      "selfAppellation": "Papel / Papei",
+      "exonyms": ["Pepel", "Pelels", "Oium", "Moium"],
+      "originOfExonyms": "Le terme Papel est une adaptation portugaise du nom que ce peuple se donne lui-meme. Les formes Pepel et Pelels sont des variantes orthographiques utilisees dans la litterature coloniale. Oium et Moium sont des designations employes par d'autres groupes de la region.",
+      "whyProblematic": "La confusion orthographique entre Papel et Pepel dans la litterature historique et contemporaine peut generer des ambiguites. Le terme est parfois employe specifiquement pour les habitants de Bissau et de Biombo, alors qu'il designe un groupe plus large.",
+      "contemporaryUsage": "Papel est le terme officiel utilise en Guinee-Bissau. Pepel est encore employe dans certaines sources academiques et missionnaires. La communaute se designe elle-meme principalement comme Papel.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Atlantique occidental (Niger-Congo), sous-groupe Bak (apparente aux Manjak, Mankagne et Balante)",
+      "historicalRegion": "Region de Biombo et peninsule de Bissau — cote atlantique de l'actuelle Guinee-Bissau",
+      "currentCountries": ["GNB", "SEN", "GIN"]
+    },
+    "ethnicities": [
+      "Clan N'nssassun (Bossassun) — ligne de Punguenhum (soeur de Mecau), representee par le Leopard ; detenteurs de la royaute et de la noblesse ; noms de famille 'Le'",
+      "Clan N'nso (Bosso) — ligne de Mala, representee par la Grenouille ; specialistes de l'agriculture, region de Bandim ; noms 'Co'",
+      "Clan N'ndjukomo (Bodjukumo) — ligne d'Intsoma, representee par la Hyene ; guerriers redoutes, deuxieme clan en importance ; noms 'Ca'",
+      "Clan N'nsafinte (Bosafinte) — ligne de Djokom, representee par le Lievre ; region de Safim, Biombo ; noms 'Te'",
+      "Clan N'niga (Boiga) — ligne de Kliker, representee par la Chevre ; region de Calequir ; noms 'Sa'",
+      "Clan N'nssuzu (Bossuzu) — ligne d'Intende, representee par le Fourmilier ; region de Mindara ; noms 'Dju'",
+      "Clan N'nttat (Bottat) — ligne d'Intchipolo, representee par le Singe ; region de Bissalanca, grimpeurs-extracteurs de vin de palme ; noms 'Indi'"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale, les Papel descendent de Mecau, fils d'un roi du royaume de Quinara (au sud du fleuve Geba), qui decouvrit les terres fertiles de Bissau lors d'une partie de chasse et decida de s'y etablir. Il ramena sa soeur enceinte Punguenhum et ses six epouses, fondant ainsi les sept clans principaux par leur descendance. Des etudes genetiques (ADN) indiquent une origine partiellement est-africaine (haplogroupe L3e2b plus exclusivement Papel, ressemblant a des haplogroups d'Afrique de l'Est et centrale), suggerant une migration ancienne depuis l'Afrique de l'Est. La presence du haplogroupe U5b1b dans la population Papel evoque egalement des liens avec l'expansion post-glaciaire nord-africaine.",
+      "formationPeriod": "Le royaume de Bissau fut etabli par les Papel avant les premiers contacts europeens (fin du 16e siecle). Ils figurent parmi les plus anciens peuples de la region cotiere de l'actuelle Guinee-Bissau, avec les Jola, Manjak, Balante et Biafada. La migration mandinka (13e siecle) et fula (15e siecle) vers la region cotieres a pousse ces peuples vers la cote et l'archipel des Bijagos.",
+      "migrationRoutes": [
+        "Migration fondatrice depuis le royaume de Quinara vers la peninsule de Bissau",
+        "Extension vers la region de Biombo (Safim, Quinhamel, Biombo)",
+        "Migration genetique ancienne depuis l'Afrique de l'Est attestee par les etudes ADN"
+      ],
+      "historicalSettlementZones": [
+        "Peninsule de Bissau et ville de Bissau (zone d'origine principale)",
+        "Region de Biombo — Safim, Quinhamel, Biombo, Bor",
+        "Casamance (Senegal meridional) : communautes papel en diaspora",
+        "Guinee (Conakry) : petites communautes"
+      ],
+      "unificationsOrDivisions": "Le Royaume de Bissau etait organise en un systeme de royaute unique avec des Etats vassaux dans la region de Biombo, tous lies par la royaute papel et le systeme matrilineaire de succession. Des rivalites de succession ont marque l'histoire du royaume, notamment apres la mort de Bacompol Co (1696) entre Incinha Te et Toro Co. La resistance collective aux Portugais a cimente l'identite Papel jusqu'a la conquete definitive en 1915.",
+      "externalInfluences": "Premiers contacts portugais a la fin du 16e siecle (Andre Alvares de Almada). Relations commerciales privilegiees avec les Portugais et les Lançados (1600-1700). Conversion au catholicisme du roi Bacompol Co (1694), premier roi chretien de Bissau. Conflits recurrents avec les Portugais (1694-1915). Missionnaires catholiques a partir de 1683. Independance de la Guinee-Bissau (1973-1974) apres la guerre de liberation du PAIGC (1963-1974).",
+      "majorHistoricalEvents": "Rencontre fondatrice avec les Portugais et relations commerciales (1605-1694). Conversion au catholicisme du roi Bacompol Co et construction d'un fort portugais (1694). Mort de Bacompol Co (1696) et crise de succession. Conflits armes contre les Portugais (1692-1753, 1844, 1884-1886, 1891, 1894, 1904, 1915). Resistance heroique du roi N'Kanande Ka capture et execute par Teixeira Pinto (1915) — fin de l'independance papel. Les guerres contro les Papel furent parmi les plus sanglantes de la campagne de pacification de la Guinee portugaise selon le general Abdul Injai."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie hereditaire matrilineaire : le trône de Bissau se transmet au fils de la soeur maternelle du roi (neveu uterin), ou a defaut au parent masculin le plus proche de la ligne maternelle. Les individus heritent du nom de clan de leur mere (bien que le nom du pere puisse egalement etre adopte en temps modernes). Les Etats vassaux de Biombo reconnaissaient la suzerainete du Roi de Bissau. Le conseil des anciens et des notables assistait le roi dans les decisions importantes.",
+      "clanOrganization": "Sept clans matrilineaires (issus des sept femmes fondatrices), chacun associe a un animal totemique, a une region geographique, a une profession ou specialite distinctive et a un prefixe de nom de famille. La succession au trone revient au clan Bossassun (leopard). Le systeme des clans determine les interdits alimentaires, les alliances matrimoniales et les obligations rituelles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires definissent l'appartenance clanique, la succession au pouvoir et les droits fonciers. Le lignage du leopard (Bossassun) detient le monopole de la royaute. Les etudes ADN confirment une conservation forte des lignages matrilineaires (haplogroupe L3e2b) dans la population, indiquant une faible intermarriage avec les populations non-papel.",
+      "religiousAuthority": "L'animisme traditionnel (culte des esprits et des ancetres, denomination locale parfois appelee spiritisme ou religion des xinas) reste vivant malgre la predominance du catholicisme. Les chefs religieux traditionnels maintiennent les rites autour des sanctuaires d'esprits regionaux (comme Mama Djombo de Cobiana). Les tambours sacres bombolom (utilises pour annoncer les deces et les ceremonies de deuil) sont des objets cerimonials fondamentaux. La ceremonie funèbre Toka Chur (tenue de quelques mois a plusieurs annees apres l'inhumation) est un marqueur de prestige social important."
+    },
+    "languages": {
+      "mainLanguage": "Papel (Papei)",
+      "isoCodes": ["pbo"],
+      "dialects": [
+        "Papel de Bissau — variete principale, ville et peninsule de Bissau",
+        "Papel de Biombo — parle dans la region de Biombo (Safim, Quinhamel)",
+        "Papel de Casamance — variete de la communaute en Casamance (Senegal)"
+      ],
+      "vehicularRole": "Le papel est parle par environ 130 000 a 183 000 personnes principalement en Guinee-Bissau. C'est une langue locale sans role vehiculaire etendu. Le kriol (creole portugais de Guinee-Bissau) est la langue vehiculaire nationale, parle par presque toute la population. Le portugais est la langue officielle. Les Papel ont adopte des noms de famille portugais (Pereira, Lopes, Vieira, Correia, Monteiro, Ca) depuis la colonisation."
+    },
+    "culture": {
+      "majorRites": "Ceremonies d'initiation masculine (fanado) marquant l'entree dans l'age adulte, incluant circoncision et enseignement des valeurs culturelles ; acces restreint selon l'appartenance ethnique. Ceremonies de deuil en deux temps : inhumation puis Toka Chur (commemoration publique tenue de quelques mois a plusieurs annees plus tard), evenement social majeur conférant du prestige a la famille qui l'organise. Ceremonies d'intronisation royale avec transmission symbolique de la couronne (Incinha Te alla chercher la couronne du roi de Guinala pour son propre couronnement). Rituels de consultation des esprits (xinas) dans les sanctuaires pour la protection de la communaute.",
+      "symbols": "Le leopard est le symbole du clan royal (Bossassun) et de la royaute papel. Le bombolom (tambour parlant sacre) symbole de l'identite culturelle de la cote guineenne, utilise pour annoncer les deces et les ceremonies. Le tissu porte-message (comb cloth) — textile long et large offert lors des hommages importants — est parmi les objets culturels les plus precieux. Les xinas (images ou objets animistes) sont des symboles spirituels traditionnels.",
+      "artsAndMusic": "Fabrication de tissus de haute qualite (les Pepeis et Manjacos sont reconnus comme tisserands experts en Guinee-Bissau). Confection de pirogues de guerre (canots de guerre papel celebres dans les batailles navales du 19e siecle contre les Portugais). Poterie traditionnelle. Musique et danse traditionnelles lors des ceremonies d'initiation et de deuil. Poesie orale et traditions narratives sur l'histoire des clans et des rois. Le bombolom comme instrument de communication coded a longue distance.",
+      "spiritualities": "Religion traditionnelle (spiritisme ou animisme) centree sur la consultation des esprits (djinns locaux ou esprits des ancetres) par l'intermediaire de sanctuaires regionaux (Mama Djombo de Cobiana etant le plus celebre de la region). Ce systeme de spiritualite diffus, non hierarchique et non doctrinal, permet une adhesion simultanee au catholicisme ou a l'islam. La veneration des ancetres occupe une place centrale. La ceramonie Toka Chur est un rituel commemoratif majeur. La majorite des Papel sont chretiens catholiques aujourd'hui, tout en maintenant des pratiques animistes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume de Bissau fut l'un des Etats politiques cotieres les plus importants de la region avant la colonisation. Fonde par Mecau, il controlait la peninsule de Bissau et les Etats vassaux du Biombo. Les rois de Bissau negociaient directement avec les puissances europeennes (Portugais, Francais, Anglais, Americains) et contrôlaient l'acces au commerce de la region. La royaute etait matrilineaire : le fils de la soeur maternelle succedait.",
+      "relationsWithNeighbors": "Relations commerciales et diplomatiques avec les peuples voisins : Balante (sans institutions royales, decentralises), Biafada (royaumes tributaires des Mandinka), Manjak et Mankagne (allies linguistiques et culturels proches). Les Papel etaient proches des Lançados (descendants de Portugais et d'Africains) installes a Bissau. Relations de mefiance avec les Bijagos (pirates des iles, pillant la cote).",
+      "conflictsOrAlliances": "Alliance privilegiee avec les Portugais (1605-1694) sous le règne de Bacompol Co, incluant la construction d'un fort et l'exclusion d'autres puissances. Rupture progressive apres 1696 et guerres recurrentes contre les Portugais jusqu'en 1915. Les Papel aiderent les Portugais a reprendre le Fort de Cacheu en 1680. Resistance farouche lors des campagnes de pacification portugaises (guerres de 1844, 1884-1886, 1891-1915). Execution du roi N'Kanande Ka (1915) : fin de la resistance organisee. Participation a la lutte d'independance de la Guinee-Bissau (1963-1974) via le PAIGC.",
+      "diaspora": "Diaspora papel dans les centres urbains de Guinee-Bissau, notamment Bissau. Communautes en Casamance (Senegal meridional) et en Guinee. Emigration vers le Portugal, la France et d'autres pays europeens depuis l'independance."
+    },
+    "demography": {
+      "totalPopulation": 192000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN (Papel people) : ~183 000 en Guinee-Bissau + ~9 000 hors du pays (2012). Britannica (Biombo) : les Pepel sont le groupe principal de la region de Biombo. Projections 2025 sur base des donnees 2006-2012 et croissance demographique de la Guinee-Bissau.",
+      "distributionByCountry": [
+        {
+          "country": "GNB",
+          "population": 183000,
+          "note": "Principalement region de Biombo et ville de Bissau (Bandim, Safim, Quinhamel)"
+        },
+        {
+          "country": "SEN",
+          "population": 6000,
+          "note": "Casamance (Ziguinchor et environs)"
+        },
+        {
+          "country": "GIN",
+          "population": 3000,
+          "note": "Guinee (Conakry et regions frontalieres)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Papel people. https://en.wikipedia.org/wiki/Papel_people",
+      "101 Last Tribes — Papel people. https://101lasttribes.com/tribes/papel.html",
+      "Joshua Project — Papel in Guinea-Bissau. https://joshuaproject.net/people_groups/14307/PU",
+      "PeopleGroups.org — Papel of Guinea-Bissau. https://peoplegroups.org/people_groups/pg013472/",
+      "Britannica — Biombo region. https://www.britannica.com/place/Biombo-region-Guinea-Bissau",
+      "Wikipedia EN — Guinea-Bissau. https://en.wikipedia.org/wiki/Guinea-Bissau",
+      "PoLAR — Guinea-Bissau Cultural Heritage: Materiality, Frontier and Communication (2024). https://polarjournal.org/2024/09/21/guinea-bissau-cultural-heritage-materiality-frontier-and-communication/",
+      "Africana Journal — Regional Spirit Shrines and Ethnic Relations in Guinea-Bissau. https://www.africabib.org/rec.php?RID=166928704",
+      "SIL Ethnologue — Papel language, code pbo. https://www.ethnologue.com/language/pbo/"
+    ]
+  }
+}

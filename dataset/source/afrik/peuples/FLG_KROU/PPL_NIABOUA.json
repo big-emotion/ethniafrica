@@ -1,0 +1,83 @@
+{
+  "id": "PPL_NIABOUA",
+  "nameMain": "Niaboua",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Niaboua",
+      "selfAppellation": "Nyabwa",
+      "exonyms": ["Niaboua", "Niabua", "Nyaboa", "Nyabwa-Nyedebwa", "Nybwa"],
+      "originOfExonyms": "Niaboua est la transcription française de Nyabwa, le nom par lequel le peuple se désigne lui-même. Les variantes Niabua, Nyaboa reflètent des approximations phonétiques utilisées par les administrateurs coloniaux et les sources anglophones. Nyabwa-Nyedebwa est une désignation élargie qui inclut les Niédéboua (sous-groupe apparent).",
+      "whyProblematic": "La dénomination Niaboua désigne strictement le sous-groupe le plus important (Zoukougbeu et Ibogué), mais est souvent utilisée par extension pour désigner l'ensemble des Nyabwa (groupe composé de quatre sous-groupes : Niaboua, Kouzié, Niédéboua, Zombo).",
+      "contemporaryUsage": "Niaboua est le terme officiel en Côte d'Ivoire. Nyabwa est la forme préconisée par les linguistes. Les membres du groupe se reconnaissent collectivement sous les deux appellations.",
+      "linguisticFamily": "FLG_KROU",
+      "ethnoLinguisticGroup": "Nyabwa-Krou (groupe krou du centre-ouest ivoirien)",
+      "historicalRegion": "Centre-ouest de la Côte d'Ivoire, départements de Daloa, Issia, Vavoua et Soubré (région du Gôh-Djiboua et Sassandra-Marahoué)",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": ["Niaboua", "Nyabwa"],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale collectée par D. Paulme à Zakogbeu (Zoukougbeu), l'ancêtre le plus reculé des Niaboua est Goze, qui aurait fui le Liberia actuel à la suite d'une guerre et trouvé refuge chez les gens de Kouézé (Bakoué). De ses trois fils, l'aîné Niabo est le père des Niaboua, le deuxième Gbalo celui des Bété, et le troisième Zakie l'aïeul des Wobé (Guéré). Les Nyabwa appartiennent au groupe krou, lui-même issu de migrations depuis l'actuel Liberia.",
+      "formationPeriod": "XVe-XVIIe siecle. Les Krou commencèrent à occuper leur habitat actuel au XVIIe siècle sous la pression conjuguée des Manding et des Akan. Les Nyabwa se sont installés en Côte d'Ivoire depuis le XVe siècle, à partir de groupes venus du Liberia (Zibiao, Mao), de l'Est et du Nord-Est entre les rivières Bandama et Sassandra.",
+      "migrationRoutes": [
+        "Liberia actuel (origine ancestrale) vers le centre-ouest ivoirien",
+        "Expansion entre le Bandama et le Sassandra aux XVe-XVIIe siècles"
+      ],
+      "historicalSettlementZones": [
+        "Zoukougbeu et Ibogué (région de Daloa et Issia, sous-groupe Niaboua)",
+        "Zaïbo (région de Daloa, sous-groupe Zombo)",
+        "Dania (région de Vavoua, sous-groupe Niédéboua)",
+        "Buyo (région de Soubré, sous-groupe Kouzié)"
+      ],
+      "unificationsOrDivisions": "Les Nyabwa sont divisés en quatre sous-groupes : Niaboua (Zoukougbeu/Ibogué), Kouzié (Buyo), Niédéboua (Dania) et Zombo (Zaïbo). Le pays niaboua proprement dit compte cinq tribus : Bliabo, Nyatcha, Djosso, Frèbo et Monosso, réparties entre 52 villages et 189 lignages.",
+      "externalInfluences": "Influences culturelles des Guéré/Wè (institutions du glé, kwi, blahon, masques introduits chez les Niaboua et répercutés chez les Bété). Colonisation française et développement des cultures de rente (café, cacao) aux XXe siècle. Afflux de migrants agricoles (Dioula, Mossi, Burkinabè) dans la région. Violences liées au Mouvement patriotique de Côte d'Ivoire (2002-2011) dans le village de Pelezi.",
+      "majorHistoricalEvents": "Migration fondatrice depuis le Liberia (avant le XVe s.). Pression Manding/Akan forçant la consolidation des territoires krou au XVIIe s. Colonisation française (fin XIXe-début XXe s.). Crise politico-militaire ivoirienne (2002-2011) : violences dans des villages niaboua dont Pelezi."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Société sans État : pas de pouvoir politique centralisé. Organisation sur la base de patrilignages ; les chefs de lignages exercent l'autorité en tant qu'aînés (la séniorité confère le pouvoir). Parenté et autorité sont étroitement liées.",
+      "clanOrganization": "Cinq tribus (Bliabo, Nyatcha, Djosso, Frèbo, Monosso) regroupant 189 lignages répartis entre 52 villages. Le village niaboua naît d'un jiligba (campement de culture) devenu résidence définitive d'un fondateur (exemple : Ibobli ou Iboguhé signifie chez Ibo). Niaboua et Niédéboua se tiennent pour parents proches issus de la même souche.",
+      "ageClassSystems": "Plusieurs sociétés secrètes structurent la vie sociale : kwi (justicière, recherche des sorciers), hommes-panthères (blahon/blahi, initiation en bois sacré), klaogbeu (exorcisme et guerrière), klinlo (circoncision collective en forêt sacrée), saïbo (guérison), brô (exorcisme des femmes), lèli/sin (jongleurs, initiation des enfants et filles, importé des Guéré).",
+      "roleOfLineages": "Le patrilignage est l'unité sociale fondamentale. Les 189 lignages du pays niaboua organisent les droits fonciers, les mariages (exogamie de lignage) et l'accès à l'autorité. Les interdits alimentaires sont spécifiques à chaque village, lignage ou sous-tribu.",
+      "religiousAuthority": "Autorité exercée par les gardiens du culte du glé (divinité protectrice et justicière, empruntée aux Guéré et Bakwé). Le glé est matérialisé par une tête humaine monstrueuse modelée en argile avec crocs d'hippopotame et couronne de plumes (aigle, hibou, calao). Présence de cérémonies d'ordalie avec la sève de gopo (Elaeophorbia drupifera). Culte agraire (prémices du riz)."
+    },
+    "languages": {
+      "mainLanguage": "nyabwa",
+      "isoCodes": ["nwb"],
+      "dialects": [
+        "niaboua (Zoukougbeu-Ibogué)",
+        "kouzié (Buyo)",
+        "niédéboua (Dania)",
+        "zombo (Zaïbo)"
+      ],
+      "vehicularRole": "Le nyabwa est la langue maternelle de l'ensemble des sous-groupes nyabwa. Environ 42 700 locuteurs recensés en 1993 (Ethnologue). Langue krou de la famille nigéro-congolaise, non enseignée à l'école. Le français est la langue officielle. Le dioula est utilisé comme langue véhiculaire dans les échanges commerciaux."
+    },
+    "culture": {
+      "majorRites": "Pratiques animistes centrant sur le culte du glé (divinité protectrice/justicière), les épreuves d'ordalie (sève de gopo), le culte agraire des prémices du riz, et de nombreuses sociétés secrètes (kwi, blahon, klaogbeu, klinlo, saïbo, brô, lèli/sin). Les interdits alimentaires (panthère, buffle, gazelle selon les clans) constituent un marqueur identitaire fort.",
+      "symbols": "Les masques jouent un rôle central dans la religion et la société niaboua. Ils se divisent en masques sacrés/guerriers (gla klagba, gnonkpo gla, yadi gla, au sommet de la hiérarchie), masques danseurs (létéhi gla, mahi gla, tchatcha, déni kachia), masques chanteurs (bléblé gla, tohourou, gbôto klagba) et masques comiques (tchèkpè). Couleurs symboliques : noir (puissance), rouge (autorité).",
+      "artsAndMusic": "Riche patrimoine musical documenté (Aka Konin, 2012). Instruments : idiophones (hochets sablé/ziangloué, cloches gogohoun/glè, xylophone gbeli), membranophones (de nombreux tambours : doulè, zôkouabo, kpléi, gla gbolo), cordophones (arc-bouche dôdô, guitare artisanale), aérophones (trompe guingbo, ocarina gbakôbéi, flûte dôpléto, sifflets). Genres musicaux : tohourou (sagesse, funérailles), yaka (poèmes épiques/fables), aloukou, déima. Musique vocale responsoriale (coryphée/choeur). Des genres sont aujourd'hui disparus ou désuets.",
+      "spiritualities": "Animisme traditionnel : peuple essentiellement animiste. Culte du glé emprunté aux Guéré et Bakwé. Pratiques divinatoires. Croyance en des forces de la nature et des génies locaux. Les chants du yadi gla sont chantés en langue guéré, témoignant des emprunts aux voisins. Présence du christianisme et de l'islam en progression au XXIe siècle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume ni de chefferie centralisée. Organisation en villages-lignages décentralisés. Le pays niaboua occupe une position médiane entre les Bété (est) et les Wè/Guéré (ouest), dans l'aire culturelle krou.",
+      "relationsWithNeighbors": "Relations intenses avec les Guéré/Wè (emprunts institutionnels majeurs : glé, kwi, blahon, masques, lèli/sin). Relations de parenté avec les Niédéboua, les Kouzié, les Zombo. Interactions avec les Bété à l'est. Influences reçues des Kissi et des Bakwé (source du glé).",
+      "conflictsOrAlliances": "Résistance à la pression Manding/Akan aux XVIIe-XVIIIe siècles. Tensions et violences durant la crise ivoirienne (2002-2011) : massacres dans le village de Pelezi par des milices du Mouvement patriotique de Côte d'Ivoire (MPCI) de Guillaume Soro.",
+      "diaspora": "Présence de Nyabwa à Abidjan et dans les grandes villes ivoiriennes, sans diaspora internationale significative documentée."
+    },
+    "demography": {
+      "totalPopulation": 98000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : 98 000 Nyabwa-Nyedebwa en Côte d'Ivoire (https://joshuaproject.net/people_groups/14076). Environ 15 000 Niaboua (sous-groupe strict) selon Aka Konin 2012 (Royal Museum for Central Africa).",
+      "distributionByCountry": [{ "countryCode": "CIV", "population": 98000 }]
+    },
+    "sources": [
+      "Aka Konin, L'art musical chez les Niaboua, un peuple krou du centre-ouest de la Cote d'Ivoire – Royal Museum for Central Africa, 2012 (https://www.africamuseum.be/sites/default/files/media/docs/research/publications/rmca/online/documents-social-sciences-humanities/niaboua.pdf)",
+      "Nyabwa (peuple) – Wikipédia FR, consulté 2025 (https://fr.wikipedia.org/wiki/Nyabwa_(peuple))",
+      "Nyabwa-Nyedebwa in Côte d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14076)",
+      "Ethnologue – Nyabwa language (nwb), SIL International, 2024 (https://www.ethnologue.com/language/nwb/)",
+      "Niaboua of Côte d'Ivoire – PeopleGroups.org, consulté 2025 (https://peoplegroups.org/people_groups/pg013118/)",
+      "Zézé-Béké (P.), Les interdits alimentaires chez les Nyabwa de Côte d'Ivoire – Journal des africanistes, 1989, tome 59, fascicule 1-2, p. 229",
+      "Krou (peuple) – Wikipédia FR, consulté 2025 (https://fr.wikipedia.org/wiki/Krou_(peuple))"
+    ]
+  }
+}

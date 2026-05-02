@@ -1,0 +1,103 @@
+{
+  "id": "PPL_BOBO",
+  "nameMain": "Bobo",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["BFA", "MLI"],
+  "content": {
+    "appellations": {
+      "mainName": "Bobo",
+      "selfAppellation": "Bobo",
+      "exonyms": [
+        "Bobo Madare",
+        "Bobo Fing (Bobo Noir)",
+        "Bobo-Dioulasso (designation de la ville)",
+        "Bobo Madaré (forme officielle)"
+      ],
+      "originOfExonyms": "Le terme Bobo est l'autodesignation du groupe. Bobo Fing (litteralement Bobo Noir) designe le sous-groupe de Bobo-Dioulasso, pour le distinguer des Bobo Oule (Bobo Rouge, en realite les Bwa, un groupe gur different) et des Bobo Gbe (Bobo Blanc). Madare est une particule de distinction ajoutee dans la litterature coloniale francaise. Le terme Konabere designe le dialecte nord.",
+      "whyProblematic": "Une confusion persistante existe entre les Bobo (vrais Bobo, peuple mande) et les Bwa (Bobo-Oule), peuple gur que les Bambara appellent aussi Bobo. Ces deux groupes sont linguistiquement et ethniquement distincts. La confusion est perpetuee dans certains travaux d'art africain et dans l'administration coloniale.",
+      "contemporaryUsage": "Bobo ou Bobo Madare est le terme standard dans la litterature academique et dans l'administration burkinabe. Le nom Bobo-Dioulasso (deuxieme ville du Burkina Faso) derive partiellement du nom du peuple Bobo.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Mande (branche Mande occidentale du nord-ouest, sous-groupe Soninke-Bobo)",
+      "historicalRegion": "Ouest du Burkina Faso et sud du Mali — region de Bobo-Dioulasso, villes de Fo, Kouka et Boura",
+      "currentCountries": ["BFA", "MLI"]
+    },
+    "ethnicities": [
+      "Bobo-Fing (Bobo Noir) — concentres a Bobo-Dioulasso et ses environs, Burkina Faso",
+      "Bobo-Oule (Bobo Rouge, Tara) — principalement au Mali (ne pas confondre avec les Bwa)",
+      "Bobo Gbe (Bobo Blanc ou Kian/Tian) — sous-groupe de Bobo, Burkina Faso",
+      "Jola Bobo, Nienige et Lilas (Kadenba) — sous-groupes apparentes",
+      "Clans agricoles de base sans nom propre specifique, constitues autour d'ancetres communs (wakoma)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bobo constituent une agregation ancienne de plusieurs peuples rassembles autour d'un noyau de clans qui ne preservent aucune tradition orale d'immigration dans la region. Ils sont consideres comme une extension meridionale des peuples mande du Mali plutot qu'un groupe intrusif ayant recemment penetre la region. Leur langue et leur culture sont plus proches des Bamana (Bambara) et des Minianka (Mamara Senoufo) voisins du nord et de l'ouest que des Gurunsi et des Mossi voltaiques. Plus de 41% des lignages bobo revendiquent une origine etrangere tout en se disant egalement autochtones.",
+      "formationPeriod": "Les Bobo sont etablis dans la region depuis au moins 800 apr. J.-C. selon certaines estimations. L'arrive progressive dans la region depuis le nord (Mali actuel) est attestee par leur appartenance linguistique mande. D'autres peuples comme les Zara ont migre dans la region, influencant les Bobo et etant partiellement absorbes dans la societe agricole bobo. A l'aube de la colonisation francaise, les communautes bobo vivaient dans de grands villages densement peuples, librement federes par une maison guerriere.",
+      "migrationRoutes": [
+        "Migration probable depuis le nord (zone mande malienne) vers les plateaux du Haut-Bassin, estimee avant 800 apr. J.-C."
+      ],
+      "historicalSettlementZones": [
+        "Bobo-Dioulasso et ses environs (coeur du territoire bobo, Burkina Faso)",
+        "Villes de Fo et Kouka (nord du territoire, Burkina Faso)",
+        "Boura (extreme nord, Mali)"
+      ],
+      "unificationsOrDivisions": "Les Bobo sont organises en villages autonomes sans structure politique supralocale. Chaque village est gouverne par les relations entre lignages patrilineaires. Il n'existe pas de chef supreme ou de royaume centralise. La colonisation francaise et la construction de la ligne ferroviaire de Bobo-Dioulasso en 1934 ont desintegre les systemes de travail collectif cooperatif (corporations matrilineaires) qui liaient la societe bobo.",
+      "externalInfluences": "Contacts anciens avec les peuples bamana (Bambara), senufo, lobi et bwa voisins. L'islam a penetre la region depuis le nord via les reseaux commerciaux mande (Dioula) : environ 41% des Bobo seraient musulmans. Influence chretienne par les missions dans le sud. La colonisation francaise (1890s-1960) a profondement transforme les structures economiques et sociales via l'impot colonial, le travail force et l'economie monetaire.",
+      "majorHistoricalEvents": "Construction du chemin de fer vers Bobo-Dioulasso en 1934 : disruption des systemes cooperatifs de production. Independence de la Haute-Volta (actuel Burkina Faso) en 1960. Periode de Thomas Sankara (1983-1987) : politique d'integration nationale affectant les identites ethniques traditionnelles."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe fondamentalement decentralisee, sans chef centralise. Le concept de placement du pouvoir politique entre les mains d'un individu est etranger aux Bobo. Chaque village est organise selon les relations entre lignages patrilineaires individuels. Les anciens de lignage assurent la gouvernance locale par consensus.",
+      "clanOrganization": "Le lignage (wakoma) est le bloc de construction sociale fondamental. Wakoma signifie litteralement pere du lignage, derive du mot wasa (maison). Le wakoma est aussi appele sapro, terme designant les ancetres. Chaque clan possede un totem (animal ou plante sacre) : lors des presentations, un Bobo donne son prenom, son nom de clan, puis le totem qu'il respecte. Organisation en familles etendues patrilineaires cohabitant dans une meme maison.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le lignage (wakoma) unit tous les descendants d'un ancetre commun et comprend les personnes vivant dans une maison commune. Il determine l'identite sociale, les droits fonciers, les alliances matrimoniales et les obligations rituelles. Les terres agricoles sont collectivement gerees par le lignage. Les decisions importantes (mariages, conflits, ceremonies) relevent de l'autorite du wakoma.",
+      "religiousAuthority": "Specialistes du culte de Wuro (dieu createur inaccessible) et de Dwo (divinite mediatrice). Porteurs de masques (initiateurs) assurant la revelation de Dwo lors des ceremonies masquees. Dans les zones islamises, autorite des imams et oulémas. Syncretisme repandu entre animisme traditionnel, islam et christianisme selon les sous-groupes et les regions."
+    },
+    "languages": {
+      "mainLanguage": "Bobo Madare",
+      "isoCodes": ["bwq", "bbo"],
+      "dialects": [
+        "Bobo Madare meridional (bwq) — parle principalement a Bobo-Dioulasso et au sud du territoire bobo (Burkina Faso)",
+        "Bobo Madare septentrional / Konabere (bbo) — parle au nord du territoire (Burkina Faso) et dans la zone de Boura (Mali)",
+        "Sous-dialectes regionaux : Jere, Kukoma, Kure, Sankuma, Tankri, Yaba (Nord) ; Benge, Sogokiré (Sud)"
+      ],
+      "vehicularRole": "Le bobo madare meridional (bwq) et le bobo madare septentrional (bbo) ne partagent que 20 a 30% d'intelligibilite mutuelle selon l'Ethnologue et sont traites comme des langues separees. La langue bobo est une langue mande de la branche Soninke-Bobo. Le français est la langue officielle au Burkina Faso et au Mali. Le dioula (variante du bambara) sert de lingua franca dans les echanges commerciaux de la region de Bobo-Dioulasso."
+    },
+    "culture": {
+      "majorRites": "Ceremonies agricoles majeures : le but principal de la culture bobo est de restaurer l'equilibre naturel que l'activite humaine (notamment l'agriculture qui transgresse la frontiere village/brousse) perturbe inevitablement. Des offrandes et des sacrifices sont accomplis regulierement pour remedier a ces desequilibres. Ceremonies de masques de Dwo : Dwo, fils du dieu createur Wuro, habite un masque jusqu'a ce qu'il soit porte ; son esprit possede alors le porteur qui peut communiquer la volonte de Dwo a la communaute. Rites de passage masculins avec initiation a l'age adulte marques par des masques en feuilles, fibres, tissus et bois. Ceremonies de mariage avec negociations entre lignages et versement de compensations. Rites funeraires avec offrandes aux ancetres.",
+      "symbols": "Masques sacres en feuilles, fibres, tissus et bois (masques tere) — formes d'incarnation de Dwo lors des ceremonies d'initiation masculine. Wuro : principe cosmique supreme non represente figurativement (aniconique). Dwo : fils de Wuro, accessible a l'homme via les masques. Totems claniques (animaux ou plantes sacres propres a chaque lignage). Le sorgho rouge et le mil comme symboles de la subsistance et de la relation a la terre.",
+      "artsAndMusic": "Masques faconnes en feuilles, fibres, tissus et bois, portes avec des costumes elabores lors des ceremonies masculines d'initiation — parmi les plus caracteristiques de l'art de l'Afrique de l'Ouest soudanienne. Musique de percussions (tambours, balafons) accompagnant les ceremonies de masques. Artisanat du tissage du coton (coton cultive localement vendu aux fabriques de Koudougou). Poterie feminine. Poesie orale et chants collectifs lors des celebrations agricoles. Travail cooperatif collectif (desintegre par la colonisation) comme forme de creation culturelle et sociale.",
+      "spiritualities": "Cosmogonie dualiste : Wuro est le dieu createur supreme, responsable de l'ordonnancement de toutes choses en paires opposees (homme/esprits, male/femelle, village/brousse, culture/nature). Ces equilibres sont precaires et l'activite humaine les menace constamment. Dwo est le fils de Wuro, intermediaire entre l'humanite et le divin, revele physiquement lors des ceremonies de masques. Quand Dwo choisit de vivre dans un masque et que celui-ci est porte, son esprit est saisi par l'esprit du porteur qui peut alors communiquer sa volonte. La majorite des Bobo restent fideles a cette religion animiste traditionnelle. Une minorite significative (environ 41%) est musulmane (influence des reseaux commerciaux mande-dioula). Quelques communautes chretiennes existent dans le sud du territoire (notamment au Mali a Mandiakuy)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Bobo n'ont jamais developpe de royaumes centralises ni de chefferies supra-villageoises. Leur organisation sociale radicalement decentralisee s'est toujours opposee a la concentration du pouvoir politique en une seule personne. Les villages etaient confederes de facon souple par des maisons guerrieres mais restaient autonomes pour leurs affaires internes. Bobo-Dioulasso, bien que portant leur nom, a ete davantage un centre commercial dioula qu'une capitale politique bobo.",
+      "relationsWithNeighbors": "Relations avec les Bamana (Bambara) du nord et de l'ouest, culturellement les plus proches. Contacts avec les Senufo et Minianka (Mamara Senoufo). Frontieres culturelles avec les Gurunsi et Mossi a l'est (peuples gur, moins apparentes). Contacts avec les Lobi au sud. Absorption partielle des Zara dans la societe agricole bobo. Confusion frequente entretenue avec les Bwa (Bobo-Oule, peuple gur appele Bobo par les Bambara).",
+      "conflictsOrAlliances": "Resistances a la penetration coloniale francaise a la fin du XIXe siecle. La colonisation et l'imposition de la taxe de capitation, du travail force et de l'economie monetaire a desintegre les structures cooperatives matrilineaires. Construction de la ligne de chemin de fer en 1934 : impact social majeur sur la cohesion de la societe bobo. Independance de la Haute-Volta (1960) : integration progressive dans l'Etat nation burkinabe.",
+      "diaspora": "Migration economique des Bobo vers les centres urbains de Bobo-Dioulasso (deuxieme ville du Burkina Faso) et vers Ouagadougou. Presence en Cote d'Ivoire (migrations de travail). Diaspora burkinabe en France et en Europe, incluant des membres de la communaute bobo."
+    },
+    "demography": {
+      "totalPopulation": 680000,
+      "referenceYear": 2025,
+      "source": "101 Last Tribes (2024) : population mondiale superieure a 679 500 dans 3 pays (People Groups.org). Wikipedia et Gateway Africa citent environ 110 000 (chiffre tres sous-estime, sans doute limite aux Bobo-Fing). SIL Ethnologue — bwq (Bobo Madare meridional) : 150 000 locuteurs (Global Recordings Network). En combinant les deux varietes linguistiques et en projetant sur 2025, estimation retenue a 680 000.",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 650000,
+          "note": "Grande majorite, concentres a Bobo-Dioulasso et environs, villes de Fo et Kouka, ouest du Burkina Faso"
+        },
+        {
+          "country": "MLI",
+          "population": 30000,
+          "note": "Principalement Boura et zone frontiere nord, quelques communautes dans le sud du Mali"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bobo people. https://en.wikipedia.org/wiki/Bobo_people",
+      "Wikipedia EN — Bobo language. https://en.wikipedia.org/wiki/Bobo_language",
+      "101 Last Tribes — Bobo people. https://www.101lasttribes.com/tribes/bobo.html",
+      "Glottolog — Northern Bobo Madaré (bbo). https://glottolog.org/resource/languoid/id/nort2819",
+      "Gateway Africa Safaris — Bobo Tribe. https://www.gateway-africa.com/tribe/bobo_tribe.html",
+      "Pacific Lutheran University — Bobo Tere Mask. https://www.plu.edu/africanartcollection/masks/tere-mask/learn-more-tere-mask/",
+      "SIL Ethnologue — Bobo Madaré Southern (bwq). https://www.ethnologue.com/language/bwq/",
+      "Joshua Project — Bobo Madare in Burkina Faso. https://joshuaproject.net/people_groups/10902"
+    ]
+  }
+}

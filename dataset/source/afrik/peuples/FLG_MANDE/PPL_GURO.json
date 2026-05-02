@@ -1,0 +1,88 @@
+{
+  "id": "PPL_GURO",
+  "nameMain": "Guro",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Guro",
+      "selfAppellation": "Kweni",
+      "exonyms": [
+        "Gouro",
+        "Guro",
+        "Guros",
+        "Gwio",
+        "Koueni",
+        "Kouen",
+        "Kweni",
+        "Kwenis",
+        "Kweny",
+        "Lo",
+        "Lorube",
+        "Dipa"
+      ],
+      "originOfExonyms": "Le nom Guro (ou Gouro) a ete donne par le peuple Baule voisin ; c'est un exonyme baule. Le peuple se designe lui-meme sous le nom de Kweni. Lo et Lorube sont des appellations regionales. Dipa est une autre variante attestee.",
+      "whyProblematic": "DOUBLON PROBABLE : PPL_GURO et PPL_GOURO designent le meme peuple. Guro et Gouro sont deux orthographes du meme exonyme baule designant les Kweni de Cote d'Ivoire. La fiche PPL_GOURO est la fiche principale ; PPL_GURO est un doublon issu d'une indexation variant orthographique. Il est recommande de fusionner les deux fiches ou de marquer PPL_GURO comme alias de PPL_GOURO.",
+      "contemporaryUsage": "Guro est la graphie en usage dans la litterature anglophone et dans les references linguistiques (Ethnologue, Glottolog). Gouro est predominant dans la litterature francophone. Les deux formes referent au meme peuple Kweni de Cote d'Ivoire.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mande-Sud",
+      "historicalRegion": "Centre-ouest de la Cote d'Ivoire, vallee du Bandama, regions de Haut-Sassandra, Marahoue et Fromager",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": ["Guro", "Kweni"],
+    "origins": {
+      "ancientOrigins": "Les Guro (Kweni) sont originaires du nord et du nord-ouest de leur territoire actuel. Ils descendent de groupes Mande meridionaux. La tradition orale les relie a l'empire du Mali precolonial, dont ils seraient issus apres sa desintegration, ayant migre vers le sud pour fuir l'expansion Mandinka.",
+      "formationPeriod": "Les Guro furent refoules vers leur emplacement actuel dans la seconde moitie du XVIIIe siecle sous la pression des invasions mande venant du nord et du nord-ouest.",
+      "migrationRoutes": [
+        "Depuis le nord et nord-ouest (region sahelienne) vers les vallees du Bandama au centre-ouest de la Cote d'Ivoire au cours de la seconde moitie du XVIIIe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Vallee du Bandama, regions de Haut-Sassandra, Marahoue et Fromager, Cote d'Ivoire",
+        "Sous-prefectures de Zuénoula, Vavoua, Gouitafla, Bouafle, Sinfra et Oume"
+      ],
+      "unificationsOrDivisions": "Les Guro constituent un peuple segmentaire sans Etat centralise, a filiation patrilineaire et a residence patrivirilocale. Les villages sont composes de plusieurs lignages patrilineaires, unites sociales et economiques fondamentales. En l'absence de chef institue, le chef de lignage le plus eminent est reconnu comme preeminent.",
+      "externalInfluences": "Pression des invasions mande au XVIIIe siecle. Interactions intenses avec les Baule a l'est, dont la culture a mutuellement influence les deux peuples. Contact avec les Bete a l'ouest. Influence coloniale francaise a partir de la fin du XIXe siecle.",
+      "majorHistoricalEvents": "Deplacement vers le centre-ouest ivoirien au XVIIIe siecle. Resistance a la penetration coloniale francaise. Independance ivoirienne (1960). Reconnaissance internationale du masque-danse Zaouli."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe segmentaire sans Etat ni chefferie centralisee. L'autorite est exercee par les aines des lignages, qui forment un conseil villageois. Le chef de lignage le plus eminent represente le village pour les affaires exterieures et la resolution des litiges.",
+      "clanOrganization": "Les villages sont composes de plusieurs lignages patrilineaires constituant les unites sociales et economiques fondamentales, diriges par leurs membres les plus ages.",
+      "ageClassSystems": "Societes secretes masculines (Je) et feminines (Kne) regissant les rites de passage et la vie sociale. Les masques sont portes par ces societes lors des ceremonies initiatiques et rituelles.",
+      "roleOfLineages": "Les lignages patrilineaires organisent la vie sociale, les droits fonciers, les alliances matrimoniales et les pratiques rituelles. La residence est patrivirilocale.",
+      "religiousAuthority": "Un maitre de la terre effectue des sacrifices pour le benefice du village. Chaque village a un devin consulte avant les decisions importantes. L'autorite rituelle est exercee par les aines et les societes secretes."
+    },
+    "languages": {
+      "mainLanguage": "Guro (Gouro)",
+      "isoCodes": ["goa"],
+      "dialects": ["Gouro", "Oume"],
+      "vehicularRole": "Le guro (kweni) est la langue maternelle des Guro/Gouro, parlee par environ un million de personnes en Cote d'Ivoire. Il joue un role vehiculaire regional dans le centre-ouest ivoirien. Le francais est la langue officielle et sert de vehiculaire national. Le gouro est aussi parle par de nombreux Gban (Gagou) qui l'ont adopte comme premiere langue."
+    },
+    "culture": {
+      "majorRites": "Les masques occupent une place centrale dans la vie rituelle. Les danses sacrees (Dje, Djin, Loh, Vroh) et profanes (Zaouli, Djela, Flaly, Bei Peenin, Pawe) structurent la vie ceremonielle. Le Zaouli est la manifestation la plus connue : masque, costume et danse. Les fetes de funerailles sont des occasions majeures de sorties de masques.",
+      "symbols": "Cinq animaux sont reveres : l'antilope (grace et vitesse, mythe de l'enseignement de l'agriculture), l'hyene, le leopard, le crocodile et l'elephant. Les masques (gu, flali, elephant, a sept cornes) sont les objets symboliques les plus importants. Le pagne traditionnel est appele le kamandjena.",
+      "artsAndMusic": "Les Guro sont reconnus comme sculpteurs de bois hors pair. Leurs masques, tres colores dans leur forme contemporaine, sont tres estimes dans le marche de l'art africain international. Beaucoup de masques et de statuettes attribues aux Baule sont en realite l'oeuvre de sculpteurs guro. Le repertoire de chants est riche et varie, exprime lors des enterrements et des ceremonies de masques.",
+      "spiritualities": "Religion traditionnelle centree sur de nombreux cultes et divinites, un maitre de la terre, un devin villageois et les societes secretes Je et Kne. Coexistence avec le christianisme et l'islam."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Aucun royaume ni chefferie centralisee n'est atteste. Organisation segmentaire sans Etat.",
+      "relationsWithNeighbors": "Influences artistiques mutuelles intenses avec les Baule. Contacts avec les Bete a l'ouest. Acculturation des Gban aux Guro (adoption de la langue gouro par les Gban). Presences commerciales gouros importantes a Abidjan.",
+      "conflictsOrAlliances": "Retraite vers le centre-ouest ivoirien au XVIIIe siecle sous la pression des invasions mande. Integration dans l'Etat colonial francais a la fin du XIXe siecle.",
+      "diaspora": "Diaspora commerciale active a Abidjan. Presence dans les grandes villes ivoiriennes."
+    },
+    "demography": {
+      "totalPopulation": 800000,
+      "referenceYear": 2025,
+      "source": "Meme population que PPL_GOURO (doublon orthographique). Estimation 2025 fondee sur Omniglot, 101 Last Tribes et Wikipedia EN Guro language (environ 1 million de locuteurs).",
+      "distributionByCountry": [{ "country": "CIV", "population": 800000 }]
+    },
+    "sources": [
+      "Gouro (peuple) – Wikipedia FR (https://fr.wikipedia.org/wiki/Gouro_(peuple))",
+      "Guro language – Wikipedia EN (https://en.wikipedia.org/wiki/Guro_language)",
+      "Guro | Traditional Arts, Mask Carving & Rituals – Encyclopaedia Britannica (https://www.britannica.com/topic/Guro)",
+      "Guro people – 101 Last Tribes (https://www.101lasttribes.com/tribes/guro.html)",
+      "Gouro, Kweni in Cote d'Ivoire – Joshua Project (https://joshuaproject.net/people_groups/12007)",
+      "Guro language and alphabet – Omniglot, 2025 (https://www.omniglot.com/writing/guro.htm)",
+      "Guro Language (GOA) – Ethnologue, SIL International (https://www.ethnologue.com/language/goa/)"
+    ]
+  }
+}

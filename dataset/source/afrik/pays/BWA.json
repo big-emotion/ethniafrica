@@ -1,0 +1,212 @@
+{
+  "id": "BWA",
+  "nameFr": "République du Botswana (Republic of Botswana)",
+  "nameOfficial": "République du Botswana (Republic of Botswana)",
+  "etymology": "Le nom \"Botswana\" dérive de \"Tswana\", le nom du peuple majoritaire, avec le préfixe \"Bo-\" qui signifie \"pays de\" en setswana. \"Botswana\" signifie donc \"pays des Tswana\". Le nom a été adopté à l'indépendance en 1966 pour remplacer \"Bechuanaland\", nom colonial britannique.",
+  "nameOriginActor": "Le nom \"Botswana\" a été choisi par les dirigeants tswana à l'indépendance en 1966. Il remplace \"Bechuanaland\", nom colonial britannique dérivé de \"Bechuana\" (ancienne orthographe de \"Tswana\"). Le nom \"Botswana\" reflète l'identité du peuple majoritaire (Batswana).",
+  "content": {
+    "historicalNames": {
+      "antiquity": "Le territoire actuel du Botswana était peuplé de peuples Khoisan (San et Khoikhoi), premiers habitants de la région, sans nom unifié pour l'ensemble du territoire. Les peuples autochtones avaient leurs propres noms pour leurs territoires.",
+      "middleAges": "Arrivée et expansion des peuples bantous (Tswana) dans la région. Développement de chefferies tswana. Contacts entre peuples bantous et Khoisan. Pas de nom unifié pour l'ensemble du territoire.",
+      "precolonial": "Mosaïque de chefferies tswana autonomes (Bakwena, Bangwato, Bangwaketse, Batawana, etc.). Peuples Khoisan (San) dans le désert du Kalahari. Les Européens utilisaient le terme \"Bechuanaland\" pour désigner la région.",
+      "colonization": "1885-1966 : Protectorat du Bechuanaland (British Bechuanaland Protectorate). Les Britanniques ont établi le protectorat en 1885 pour protéger les chefferies tswana contre l'expansion boer et allemande. Le territoire était administré depuis le Cap (Afrique du Sud) puis depuis Londres. Pas de colonisation de peuplement britannique importante.",
+      "contemporary": "1966 : Indépendance du Botswana (30 septembre 1966), proclamation de la République du Botswana. Le nom \"Botswana\" remplace \"Bechuanaland\". Le pays a connu une stabilité politique remarquable depuis l'indépendance, avec une démocratie multipartite et une économie basée sur les diamants."
+    },
+    "kingdoms": [
+      {
+        "name": "Chefferies Tswana",
+        "period": "Précolonial - présent",
+        "dominantPeoples": ["Tswana (Batswana)"],
+        "politicalCenters": [
+          "Gaborone (capitale moderne)",
+          "chefferies traditionnelles (Bakwena",
+          "Bangwato",
+          "Bangwaketse",
+          "Batawana",
+          "etc.)"
+        ],
+        "historicalRole": "Chefferies tswana organisées en structures politiques traditionnelles. Système de kgotla (assemblée traditionnelle). Résistance à la colonisation. Rôle majeur dans l'indépendance du Botswana."
+      },
+      {
+        "name": "Protectorat du Bechuanaland",
+        "period": "1885 - 1966",
+        "dominantPeoples": [
+          "Tous les peuples botswanais sous protectorat britannique"
+        ],
+        "politicalCenters": [
+          "Mafikeng (capitale administrative",
+          "en Afrique du Sud)",
+          "puis Gaborone (à partir de 1965)"
+        ],
+        "historicalRole": "Protectorat britannique, administration indirecte (respect des chefferies traditionnelles). Pas de colonisation de peuplement. Développement du mouvement indépendantiste au XXe siècle. Menace d'annexion par l'Afrique du Sud évitée."
+      }
+    ],
+    "majorPeoples": [
+      {
+        "name": "Tswana",
+        "selfAppellation": "Batswana (pluriel), Motswana (singulier)",
+        "exonyms": [
+          "Tswana (terme utilisé par les Européens)",
+          "Batswana",
+          "\"Bechuana\" (ancienne orthographe coloniale",
+          "dépassée)"
+        ],
+        "peopleId": "PPL_TSWANA",
+        "mainRegion": "Tout le Botswana (peuple majoritaire)",
+        "languages": ["Setswana / Tswana (tsn", "ISO 639-3)", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Batswana\" est l'auto-appellation (pluriel), \"Tswana\" est l'exonyme le plus courant. \"Bechuana\" est une ancienne orthographe coloniale dépassée. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Kgalagadi",
+        "selfAppellation": "Kgalagadi",
+        "exonyms": ["Kgalagadi (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KGALAGADI",
+        "mainRegion": "Désert du Kalahari (Botswana)",
+        "languages": ["Kgalagadi (xkv", "ISO 639-3)", "setswana", "anglais"],
+        "languageFamily": "FLG_KHOE",
+        "appellationRemarks": "Le terme \"Kgalagadi\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "San",
+        "selfAppellation": "Variées selon les groupes (Ju|'hoansi, ǂHoan, etc.)",
+        "exonyms": [
+          "\"Bushmen\" (terme colonial péjoratif",
+          "à éviter)",
+          "\"San\" (terme générique",
+          "parfois utilisé)",
+          "\"Khoisan\" (terme académique)"
+        ],
+        "peopleId": "PPL_SAN",
+        "mainRegion": "Désert du Kalahari (Botswana)",
+        "languages": [
+          "Langues khoïsan (plusieurs langues)",
+          "setswana",
+          "anglais"
+        ],
+        "languageFamily": "FLG_KXA",
+        "appellationRemarks": "Les termes \"Bushmen\" et \"Hottentots\" sont des exonymes coloniaux péjoratifs et doivent être évités. \"San\" est un terme générique parfois utilisé, mais chaque groupe a sa propre auto-appellation (Ju|'hoansi, ǂHoan, etc.). \"Khoisan\" est un terme académique utilisé pour désigner l'ensemble des peuples de cette famille linguistique. Les San sont les premiers habitants du Botswana et de l'Afrique australe."
+      },
+      {
+        "name": "Kalanga",
+        "selfAppellation": "Kalanga",
+        "exonyms": ["Kalanga (terme utilisé par les Européens)"],
+        "peopleId": "PPL_KALANGA",
+        "mainRegion": "Nord-est du Botswana, frontière avec le Zimbabwe",
+        "languages": ["Kalanga (kck", "ISO 639-3)", "setswana", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Kalanga\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Herero",
+        "selfAppellation": "Ovaherero",
+        "exonyms": ["Herero (terme utilisé par les Européens)", "Ovaherero"],
+        "peopleId": "PPL_HERERO",
+        "mainRegion": "Nord-ouest du Botswana, frontière avec la Namibie",
+        "languages": ["Otjiherero (her", "ISO 639-3)", "setswana", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "\"Ovaherero\" est l'auto-appellation (pluriel), \"Herero\" est l'exonyme le plus courant. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Mbukushu",
+        "selfAppellation": "Mbukushu",
+        "exonyms": ["Mbukushu (terme utilisé par les Européens)"],
+        "peopleId": "PPL_MBUKUSHU",
+        "mainRegion": "Nord du Botswana (Okavango), frontière avec la Namibie et l'Angola",
+        "languages": ["Mbukushu (mhw", "ISO 639-3)", "setswana", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Mbukushu\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Yeyi",
+        "selfAppellation": "Yeyi",
+        "exonyms": ["Yeyi (terme utilisé par les Européens)"],
+        "peopleId": "PPL_YEYI",
+        "mainRegion": "Nord du Botswana (Okavango)",
+        "languages": ["Yeyi (yey", "ISO 639-3)", "setswana", "anglais"],
+        "languageFamily": "FLG_BANTU",
+        "appellationRemarks": "Le terme \"Yeyi\" est l'auto-appellation du peuple. Pas de terme péjoratif connu."
+      },
+      {
+        "name": "Autres peuples",
+        "selfAppellation": "Variées selon les groupes",
+        "exonyms": ["Variées selon les groupes"],
+        "peopleId": "PPL_SHUA",
+        "mainRegion": "Diverses régions du Botswana",
+        "languages": ["Langues khoïsan", "setswana", "anglais"],
+        "languageFamily": "FLG_KHOE",
+        "appellationRemarks": "Chaque groupe a sa propre auto-appellation. Pas de terme péjoratif connu."
+      }
+    ],
+    "culture": {
+      "mainLanguages": [
+        {
+          "name": "Setswana / Tswana",
+          "isoCode": "tsn"
+        },
+        {
+          "name": "anglais",
+          "isoCode": "eng",
+          "isPrimary": true
+        },
+        {
+          "name": "Kgalagadi",
+          "isoCode": "xkv"
+        },
+        {
+          "name": "langues khoïsan"
+        },
+        {
+          "name": "Kalanga",
+          "isoCode": "kck"
+        },
+        {
+          "name": "Otjiherero",
+          "isoCode": "her"
+        },
+        {
+          "name": "Mbukushu",
+          "isoCode": "mhw"
+        },
+        {
+          "name": "Yeyi",
+          "isoCode": "yey"
+        }
+      ],
+      "culturalTraditions": "Traditions tswana dominantes (kgotla, assemblées traditionnelles). Traditions khoisan (chasse-cueillette, art rupestre). Traditions herero (élevage, vêtements traditionnels). Musique et danse traditionnelles variées. Cérémonies de passage, rites d'initiation, fêtes traditionnelles. Art rupestre san (patrimoine mondial UNESCO).",
+      "dominantReligions": "Christianisme (protestantisme majoritaire, catholicisme), religions traditionnelles africaines (syncrétisme fréquent), croyances khoisan traditionnelles",
+      "lifestyles": "Agriculture et élevage (Tswana, Herero), chasse-cueillette (San), commerce et activités urbaines (zones urbaines, Gaborone). Urbanisation croissante. Économie basée sur les diamants, l'élevage (bovins), et le tourisme (safaris, désert du Kalahari).",
+      "socialOrganization": "Organisation en chefferies traditionnelles tswana (kgotla, assemblées traditionnelles). Structure clanique patrilinéaire. Importance des lignages et des familles étendues. Rôle des conseils d'anciens. Organisation égalitaire chez les San (chasseurs-cueilleurs).",
+      "regionalRelations": "Relations historiques avec l'Afrique du Sud (commerce, migrations), la Namibie (frontière, peuples transfrontaliers), le Zimbabwe (Kalanga, commerce). Intégration dans la SADC (Communauté de développement de l'Afrique australe). Relations commerciales et culturelles transfrontalières. Dépendance économique historique de l'Afrique du Sud."
+    },
+    "historicalFacts": {
+      "ancientPeriods": "Peuplement initial par les peuples Khoisan (San et Khoikhoi), premiers habitants de la région, présence depuis des dizaines de milliers d'années. Art rupestre san (patrimoine mondial UNESCO).",
+      "middleAges": "Arrivée et expansion des peuples bantous (Tswana) dans la région à partir du Ier millénaire de notre ère. Développement de chefferies tswana. Contacts entre peuples bantous et Khoisan. Développement de réseaux commerciaux régionaux.",
+      "precolonial": "Consolidation des chefferies tswana (Bakwena, Bangwato, Bangwaketse, Batawana, etc.). Système de kgotla (assemblée traditionnelle). Résistance aux raids boers et aux pressions extérieures. Peuples Khoisan (San) dans le désert du Kalahari, mode de vie de chasseurs-cueilleurs.",
+      "colonization": "1885 : Établissement du protectorat du Bechuanaland par les Britanniques pour protéger les chefferies tswana contre l'expansion boer et allemande. Période du protectorat britannique (1885-1966), administration indirecte (respect des chefferies traditionnelles). Pas de colonisation de peuplement britannique importante. Menace d'annexion par l'Afrique du Sud évitée grâce à la résistance des chefs tswana. XXe siècle : Développement du mouvement indépendantiste, formation de partis politiques.",
+      "independenceStruggle": "1960s : Mouvement pour l'indépendance mené par les dirigeants tswana (Seretse Khama, etc.). 1965 : Transfert de la capitale de Mafikeng (Afrique du Sud) à Gaborone. 1966 : Indépendance du Botswana (30 septembre 1966), proclamation de la République du Botswana. Le nom \"Botswana\" remplace \"Bechuanaland\".",
+      "postIndependence": "1966-présent : Stabilité politique remarquable, démocratie multipartite, présidence de Seretse Khama (1966-1980). Découverte et exploitation des diamants (années 1970), transformation économique. Développement économique et social, amélioration des indicateurs de développement. Défis : VIH/sida, inégalités sociales, dépendance aux diamants. Le Botswana est considéré comme un modèle de démocratie et de développement en Afrique."
+    },
+    "sources": [
+      "SIL Ethnologue – Languages of Botswana",
+      "CIA World Factbook – Botswana",
+      "ONU / UNFPA – Démographie Botswana 2025",
+      "Schapera, Isaac – \"A Handbook of Tswana Law and Custom\"",
+      "Parsons, Neil – \"A New History of Southern Africa\"",
+      "UNESCO – Art rupestre san du Botswana (patrimoine mondial)",
+      "Recensements botswanais",
+      "Études anthropologiques sur les peuples du Botswana"
+    ],
+    "demographics": {
+      "peoples": [
+        {
+          "name": "Tswana",
+          "population": 1800000,
+          "percentageInCountry": 79,
+          "peopleId": "PPL_TSWANA",
+          "region": "Tout le Botswana (peuple majoritaire)"
+        }
+      ]
+    }
+  }
+}

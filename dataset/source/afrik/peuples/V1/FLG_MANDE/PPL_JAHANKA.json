@@ -1,0 +1,22 @@
+{
+  "id": "PPL_JAHANKA",
+  "nameMain": "",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["MLI", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Jahanka",
+      "linguisticFamily": "FLG_MANDE",
+      "currentCountries": ["MLI", "GIN"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Manding Studies", "Ethnographic Islamic Networks (Sahel)"]
+  }
+}

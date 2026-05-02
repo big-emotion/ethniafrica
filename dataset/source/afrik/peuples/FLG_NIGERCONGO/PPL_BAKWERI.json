@@ -1,0 +1,106 @@
+{
+  "id": "PPL_BAKWERI",
+  "nameMain": "Bakweri",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Bakweri",
+      "selfAppellation": "Kwe",
+      "exonyms": [
+        "Kpwe",
+        "Mokpwe",
+        "Kwedi",
+        "Kweli",
+        "Vakweli",
+        "Bekwiri",
+        "Bakweli"
+      ],
+      "originOfExonyms": "Le terme Bakweri est un exonyme derive du prefixe bantou ba- (pluriel) suivi de Kwe, le nom que le peuple se donne. Les colonisateurs europeens et administrateurs camerounais ont adopte Bakweri comme denomination officielle. Kpwe et Mokpwe sont des variantes du nom vernaculaire.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Bakweri est largement utilise en anglais et en francais. Les locuteurs se desinent eux-memes comme Kwe. Le nom Mokpwe est celui de leur langue selon la classification linguistique internationale.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Sawabantu (Zone A, sous-groupe Sawa)",
+      "historicalRegion": "Versants sud et est du Mont Cameroun (Fako), region du Sud-Ouest du Cameroun",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [
+      "Gbea Bakweri (clan ayant mene la revolte de 1891)",
+      "Bakweri de Buea (groupe central, ancienne capitale)",
+      "Bomboko (groupe cotier au sud-est, pecheurs et agriculteurs)",
+      "Bomboko interieur (Bomboko du nord-ouest du territoire bakweri)",
+      "Wovea (groupe cotier au sud de la division Fako)",
+      "Isubu (Isuwu, proches voisins bilingues Duala-Mokpwe)",
+      "Maumu et Bojongo (villages revendiquant une filiation distincte, possibles groupes absorbes)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bakweri sont un peuple bantou appartenant au sous-groupe Sawabantu (peuples cotiers du Cameroun, Zone A). La tradition orale rapporte qu ils descendent de Mokuri ou Mokule, frere de l ancetre Ewale des Duala, ce qui indique une origine commune avec les peuples Sawa du littoral. Ils sont partis de la region de Bomboko (lac Barombi, pres de Kumba) pour migrer vers le massif du Mont Cameroun, attires par la fertilite des sols volcaniques et les ressources cynégetiques.",
+      "formationPeriod": "La presence bakweri sur les pentes du Mont Cameroun est attestee a partir d environ 1750 par des preuves genealogiques. L identite bakweri s est consolidee autour de la colonisation des pentes du volcan, avec Buea comme principal centre de peuplement.",
+      "migrationRoutes": [
+        "Origines dans la region de Bomboko (lac Barombi) pres de Kumba, probablement sous l effet de pressions demographiques venant du Nigeria",
+        "Migration vers les pentes est et sud du Mont Cameroun (Fako), occupation progressive entre 650 et 1000 metres d altitude",
+        "Diffusion de Buea vers plus de 100 villages sur les contreforts et jusqu a 4000 metres de hauteur"
+      ],
+      "historicalSettlementZones": [
+        "Versants est et sud du Mont Cameroun (Fako), region de Buea",
+        "Plaine cotiere et creeks entre Limbe et le fleuve Mungo",
+        "Bomboko cotier (cote sud-est, division Fako)",
+        "Wovea (cote sud, division Fako)",
+        "Villes de Limbe, Tiko, Muyuka (zones urbaines mixtes)"
+      ],
+      "unificationsOrDivisions": "Les Bakweri sont organises en clans territoriaux distincts (dont le clan Gbea, les groupes de Buea, Bomboko, Wovea) sans unite politique centralisee avant la colonisation. Les Allemands ont unifie administrativement le territoire en 1884-1894. La resistance menee par le chef Kavala Kenya puis Kuv a Likenye (mort en 1894) a cree une conscience identitaire commune face au colonisateur.",
+      "externalInfluences": "Contact avec les marchands portugais depuis 1472. Colonisation allemande a partir de 1884 : expropriation des terres pour les grandes plantations de bananes et de cafe (gestion CDC, Cameroon Development Corporation). Mandat britannique depuis 1918 : integration au Nigeria, puis autonomie du Southern Cameroons. Influence du christianisme evangelique (baptiste) depuis les annees 1970. Afflux de travailleurs bamileke et igbo du Nigeria sur les plantations, sources de tensions ethniques et de perte demographique relative.",
+      "majorHistoricalEvents": "En 1891, le clan Gbea Bakweri se souleva contre l interdiction allemande de l ordalie par le poison (systeme de justice traditionnelle). En decembre 1894, les Allemands raserent Buea et tuerent le chef Kuv a Likenye, soumettant le peuple. Les Allemands transfererent leur capitale a Buea en 1901 et developperent les plantations. Sous mandat britannique, E. M. L. Endeley, un Bakweri, fut le premier Premier ministre du Southern Cameroons de 1954 a 1959. Le Bakweri Land Claims Committee (BLCC) continue de reclamer les terres ancestrales expropriees grees par la CDC."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "La societe bakweri etait dirigee par des chefs (chiefs) et des notables (headmen) au sommet d une hierarchie tribale. Des conseils d anciens et des societes secretes (Liengu, Maalé, Mbwaya, Nganya) exercaient les fonctions deliberatives et judiciaires. Sous la colonisation britannique, la politique d indirect rule renforça le pouvoir des chefs bakweri a Buea. Aujourd hui, ces figures ont peu de pouvoir effectif.",
+      "clanOrganization": "La societe traditionnelle etait divisee en trois strates : les Bakweri de souche (droits fonciers pleins), les non-Bakweri ou descendants d esclaves, et les esclaves proprement dits. L organisation est clanique avec des maisons et lignages reconnaissant un ancetre masculin commun. Les societes secretes (Liengu de l eau, Nganya, societe de l elephant Maalé) structurent la vie sociale masculine.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La filiation est patrilineaire : le fils aine herite des biens du pere. Les lignages determinent les droits fonciers, l identite sociale et les alliances matrimoniales. Le mariage est traditionnellement polygame (desormais rare du fait de la christianisation) et impliquait une dot : la femme etait consideree sous l autorite de la famille du mari.",
+      "religiousAuthority": "Depuis les annees 1970, les Bakweri sont majoritairement christianises, avec une predominance des denominations evangeliques, notamment l Eglise baptiste. Des remnants du culte ancestral precolonial subsistent : les ancetres sont croyus habiter un monde parallele et agir comme mediateurs entre les vivants et Dieu. Les societes secretes conservent une autorité religieuse et ceremonielle."
+    },
+    "languages": {
+      "mainLanguage": "Mokpwe (Kpwe)",
+      "isoCodes": ["bri"],
+      "dialects": [
+        "Kole (Bakole, mutuelle intelligibilite avec Mokpwe)",
+        "Mboko (Wumboko, mutuelle intelligibilite probable)"
+      ],
+      "vehicularRole": "Le Mokpwe est parle par environ 25 000 locuteurs natifs (2025, estimation SIL) et sert de langue commerciale entre plusieurs groupes voisins, notamment les Isubu qui sont bilingues Duala-Mokpwe. En milieu urbain et scolaire, le Cameroonian Pidgin English (CPE) et l anglais standard dominent. Le français et l anglais sont langues officielles du Cameroun. Le tambour et le cor ont des langages codes specifiques aux Bakweri."
+    },
+    "culture": {
+      "majorRites": "Libations aux ancetres : verser de l eau ou des boissons sur la tombe lors d evenements importants est le rite central. Le sasa est pratique le 3e jour apres un deces : des animaux sont sacrifies pour apaiser le mort si des offenses ont ete commises. Des incantations sacrees sont prononcees par les anciens pour consulter les defunts. Rites de passage au sein des societes secretes masculines (Liengu, Nganya, Maalé) : initiation, endurance, transmission des valeurs. Ceremonies agricoles liees aux recoltes sur les pentes du volcan. Mariages traditionnels avec dot et festivites collectives.",
+      "symbols": "Le Mont Cameroun (Fako) est le symbole territorial et spirituel central. Les elements de la mer et des forets sont sacres, habites par des esprits. L elephant est un totem des societes secretes masculines (Maalé), symbole de force et de protection. Les totems de clans determinent les interdits alimentaires et les affiliations.",
+      "artsAndMusic": "La musique et la danse culminent lors des deux grands festivals annuels de decembre. Le Ngondo est un festival Sawa (a l origine duala) ouvert a tous les peuples cotiers : il inclut des combats armes, des courses de pirogues, des pageants de beaute et des luttes traditionnelles, avec comme objectif la communication avec les ancetres. Le Mpo o reunit Bakoko, Bakweri et Limba a Edea en decembre pour commémorer les ancetres. Les Bakweri sont tisserands habiles (chapeaux et chemises). Ils utilisent un langage du tambour pour diffuser les nouvelles du clan et un langage de cor specifique a leur groupe. L artisanat comprend la poterie et le travail du bois.",
+      "spiritualities": "Syncrétisme entre le christianisme evangelique baptiste (dominant depuis les annees 1970) et les croyances ancestrales precoloniales. Les ancetres habitent un monde parallele et intercedent entre les vivants et Dieu. La mer et les forets sont des espaces spirituels : des esprits y resident et exercent une influence sur le quotidien. Les societes secretes (Liengu de la sirene des eaux, Nganya, Maalé) maintiennent les rituels traditionnels. Le culte de la mer (Liengu) est particulierement important pour ce peuple cotier."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "L organisation politique precoloniale bakweri etait fondee sur des chefferies territoriales independantes. Le chef Kavala Kenya mena la resistance contre les Allemands en 1891. Le chef Kuv a Likenye dirigeait Buea au moment de la conquete allemande definitive (1894). Sous mandat britannique, les chefs bakweri de Buea obtinrent une autonomie relative via l indirect rule. La famille du Premier ministre E. M. L. Endeley illustre la continuite d une elite politique bakweri moderne.",
+      "relationsWithNeighbors": "Les Bakweri font partie du cluster Sawa (peuples cotiers du Cameroun) et partagent des traditions avec les Duala (ancetre commun Ewale-Mokule) et les Isubu. Les Bakweri etaient fournisseurs de matieres premieres pour les tribus cotieres qui servaient d intermediaires commerciaux avec les Europeens. L afflux de Bamileke (pour les plantations) et d Igbo du Nigeria crea des tensions ethniques et une marginalisation demographique bakweri dans leurs propres terres.",
+      "conflictsOrAlliances": "Revolte du clan Gbea en 1891 contre l interdiction de l ordalie par poison. Resistance armee sous Kavala Kenya (1891, victoire initiale) puis Kuv a Likenye (1894, defaite et destruction de Buea). Sous l occupation britannique : conflit permanent pour la recuperation des terres expropriees par les plantations (CDC). Le Bakweri Land Claims Committee (BLCC) porte cette revendication fonciere depuis l independance du Cameroun (1960-1961).",
+      "diaspora": "Diaspora bakweri dans les grandes villes camerounaises, notamment Douala et Yaounde. Presence dans la diaspora anglophone camerounaise au Royaume-Uni, aux Etats-Unis et au Canada. La marginalisation economique dans leur region d origine pousse de nombreux Bakweri vers les centres urbains."
+    },
+    "demography": {
+      "totalPopulation": 60000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur SIL Ethnologue (bri, environ 25 000 locuteurs natifs de Mokpwe en 2010, projection 2025 avec croissance demographique), 101LastTribes, et studies anthropologiques. Population totale Bakweri (incluant non-locuteurs et groupes absorbes) estimee entre 50 000 et 70 000.",
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 60000,
+          "note": "Concentres dans la region du Sud-Ouest, division Fako : Buea, Limbe, Tiko, Muyuka, plus de 100 villages sur les pentes du Mont Cameroun"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kwe people. https://en.wikipedia.org/wiki/Kwe_people",
+      "Wikipedia EN — Kpwe language. https://en.wikipedia.org/wiki/Kpwe_language",
+      "Glottolog — Mokpwe (bri). https://glottolog.org/resource/languoid/id/mokp1239",
+      "SIL Ethnologue — Mokpwe language (ISO 639-3 : bri). https://www.ethnologue.com/language/bri/",
+      "101LastTribes — Bakweri people. https://www.101lasttribes.com/tribes/bakweri.html",
+      "Fako America — Bakweri Culture and Heritage. https://fakoamerica.org/bakweri-culture-and-heritage/",
+      "Vocal Media — The Bakweri Clan History of Cameroon. https://vocal.media/history/the-bakweri-clan-history-of-cameroon",
+      "Ardener, Edwin. Coastal Bantu of the Cameroons. London: International African Institute, 1956."
+    ]
+  }
+}

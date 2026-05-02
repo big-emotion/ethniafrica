@@ -1,0 +1,94 @@
+{
+  "id": "PPL_LIMBA",
+  "nameMain": "Limba",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["SLE", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Limba",
+      "selfAppellation": "Limba",
+      "exonyms": [
+        "Hulimba (nom de leur langue)",
+        "Malimba (forme utilisee dans certaines associations culturelles)"
+      ],
+      "originOfExonyms": "Le terme Hulimba designe la langue parlee par le peuple Limba. Malimba est utilise par certaines organisations de developpement communautaire en Sierra Leone.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Limba est d'usage courant en Sierra Leone. Les sous-groupes sont designes par leur dialecte ou region d'origine (Tonko Limba, Sela Limba, Wara-Wara Limba, etc.).",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "ethnoLinguisticGroup": "Groupe Mel (branche meridionale des langues atlantiques), parfois classe independamment dans les langues atlantiques du Niger-Congo",
+      "historicalRegion": "Nord de la Sierra Leone (montagnes Wara Wara, districts de Bombali, Koinadugu, Port Loko, Tonkolili)",
+      "currentCountries": ["SLE", "GIN"]
+    },
+    "ethnicities": [
+      "Tonko Limba (vallee de la Seli River, district de Bombali)",
+      "Sela Limba (district de Bombali)",
+      "Wara-Wara Limba (montagnes Wara Wara, district de Koinadugu)",
+      "Keleng Limba",
+      "Biriwa Limba (chefferie de Biriwa, district de Port Loko)",
+      "Safroko Limba (district de Bombali)",
+      "Kamuke Limba"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Limba sont consideres comme le peuple le plus ancien de Sierra Leone, sans tradition migratoire connue. Ils se considerent les premiers habitants et premiers souverains du territoire. La montagne Kakoya (chefferie Wara-Wara Bafodia) est tenue pour leur foyer ancestral spirituel, lieu ou les morts retourneraient. Une figure en bois ancienne decouverte dans une grotte de Kakoya est aujourd'hui conservee au British Museum.",
+      "formationPeriod": "Presence attestee en Sierra Leone depuis des temps immemoriaux selon la tradition orale. Aucune tradition de migration depuis l'exterieur. Les historiens considerent les Limba comme un groupe autochtone formant un continuum demographique pluricentenaire dans les zones montagneuses du nord.",
+      "migrationRoutes": [],
+      "historicalSettlementZones": [
+        "Montagnes Wara Wara (district de Koinadugu)",
+        "Districts de Bombali, Port Loko, Tonkolili en Sierra Leone",
+        "Zone de Freetown et Western Area (migrations internes coloniales et post-coloniales)"
+      ],
+      "unificationsOrDivisions": "Les Limba sont organises en chefferies autonomes (chiefdoms) sans unite politique centralisee. Le chef Alimamy Suluku de Bumban (district de Bombali) est la figure politique limba la plus celebre du 19e siecle.",
+      "externalInfluences": "Pression des Susu, Fula et Mandinka aux 16e-19e siecles, ayant force les Limba a se refugier dans les zones montagneuses. Influence de l'islam via les Fula et Mandinka. Influence chretienne via les missions protestantes (Church Missionary Society) a partir du 19e siecle. Traite des esclaves atlantique : des milliers de Limba vendus a Bunce Island aux 16e-18e siecles.",
+      "majorHistoricalEvents": "Vente comme esclaves au commerce atlantique via Bunce Island (16e-18e siecles). Resistances aux expansions susu, fula et mandinka. Chefferie d'Alimamy Suluku de Bumban (19e siecle). Independance de la Sierra Leone (1961) : les Limba ont fourni plusieurs chefs d'Etat (Siaka Stevens, Joseph Momoh, Ernest Bai Koroma)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies (chiefdoms) dirigees par des chefs supremes (paramount chiefs) et des conseils d'anciens. Les Limba predominent dans 16 des 190 chefferies rurales de Sierra Leone. Societe a structure matrilineaire : la filiation passe par les meres, qui sont les gardiennes de l'honneur familial.",
+      "clanOrganization": "Organisation en lignages matrilineaires. Les femmes jouent un role de premier plan dans la gouvernance et la preservation culturelle. Les anciens constituent le conseil de decision pour les affaires communautaires.",
+      "ageClassSystems": "Participation a la societe secrete feminine Bondo (Sande), qui prepare les jeunes filles a l'age adulte (fertilite, morale, comportement). Rites de passage pour les garcons. Classes d'age structurant les responsabilites communautaires.",
+      "roleOfLineages": "La matrilinearite definit la succession, l'heritage et les droits fonciers. Les femmes sont les custodes de l'honneur familial et des traditions rituelles.",
+      "religiousAuthority": "Autorite partagee entre chefs traditionnels, anciens et leaders religieux (imams pour les musulmans, pasteurs pour les chretiens). Les specialistes rituels traditionnels maintiennent les pratiques liees aux ancetres et aux esprits Krifi."
+    },
+    "languages": {
+      "mainLanguage": "Hulimba (Limba Ouest-Central)",
+      "isoCodes": ["lia", "lma"],
+      "dialects": [
+        "Tonko (vallee de la Seli River)",
+        "Sela",
+        "Kamuke",
+        "Wara-Wara",
+        "Keleng",
+        "Biriwa",
+        "Safroko"
+      ],
+      "vehicularRole": "Le limba ouest-central (lia) est une langue officielle dans les parties de Sierra Leone ou il est parle. Le krio sert de langue vehiculaire au niveau national. Le limba est classe dans le groupe Mel de la famille atlantique, branche distincte des langues voisines."
+    },
+    "culture": {
+      "majorRites": "Societe secrete Bondo (Sande) pour les femmes : rites de passage vers l'age adulte, formation sur la fertilite, la morale et le comportement, soutien tout au long de la vie des membres. Culte du fusil mystique (witch gun), instrument spirituel utilise pour detecter et neutraliser la sorcellerie. Pelerinage au village de Kakoya (Wara-Wara Bafodia Chiefdom), foyer ancestral spirituel : selon la croyance, tous les Limba y retournent apres la mort.",
+      "symbols": "La montagne Kakoya est le symbole identitaire et spirituel central des Limba. Les masques en cuivre sont utilises lors des ceremonies funeraires. La figure en bois ancienne de Kakoya (British Museum) symbolise la profondeur historique du peuple.",
+      "artsAndMusic": "Artisans maitres : sculptures sur bois, masques cerimonieux (masques en cuivre pour funerailles), textiles tisses, ouvrages en cuir symboliques. La musique est fondee sur le tambour et ancre les ceremonies, rites de passage et festivals. Les danses sont des expressions communautaires de joie, memoire et unite (mariages, recoltes). Contes oraux (parables, chansons, recits historiques) transmis par les anciens. Cuisine traditionnelle : riz, manioc, ragouts d'arachide.",
+      "spiritualities": "Pratiques traditionnelles : culte du dieu Kanu Masala et de divinites mineures. Croyances aux esprits Krifi. Creation de sanctuaires, amulettes et rituels. La majorite des Limba sont musulmans (Province du Nord principalement), avec des pratiques synchretiques importantes : les musulmans limba maintiennent des aspects de la religion traditionnelle. Les Limba du sud sont davantage chretiens (influence missionnaire protestante)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Limba sont les probables premiers souverains du territoire de Sierra Leone selon la tradition orale. Chefferie d'Alimamy Suluku de Bumban (district de Bombali, 19e siecle), figure politique majeure documentee par le professeur Cecil Magbailey-Fyle. Predominance dans 16 des 190 chefferies rurales de Sierra Leone.",
+      "relationsWithNeighbors": "Relations conflictuelles et de cohabitation avec les Susu, Fula et Mandinka aux 16e-19e siecles. Les Limba ont maintenu leur identite distincte malgre les pressions exterieures en se refugiant dans les zones montagneuses. Relations commerciales avec les marchands de la cote.",
+      "conflictsOrAlliances": "Resistances aux expansions susu, fula et mandinka. Victimes de la traite atlantique (16e-18e siecles) via Bunce Island. Luttes de defense territoriale dans les Wara Wara au 19e siecle.",
+      "diaspora": "Dispersion interne en Sierra Leone : migration vers Freetown et les zones urbaines depuis l'epoque coloniale. Presence dans toutes les provinces de Sierra Leone aujourd'hui. Faible diaspora internationale. Nombreux Limba dans les milieux politiques et professionnels en Sierra Leone."
+    },
+    "demography": {
+      "totalPopulation": 579200,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : Limba Ouest (577 000 en Sierra Leone), Limba Est (2 100 en Sierra Leone et Guinee). Sierra Leone 2025 (World Population Review) : 8 819 790 habitants, Limba represente environ 8-12,4% de la population. Ethnologue : Limba Ouest-Central (lia) langue officielle regionale en Sierra Leone.",
+      "distributionByCountry": [
+        { "country": "SLE", "population": 577800 },
+        { "country": "GIN", "population": 1400 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Limba people (Sierra Leone) : https://en.wikipedia.org/wiki/Limba_people_(Sierra_Leone)",
+      "Joshua Project - Limba West in Sierra Leone : https://joshuaproject.net/people_groups/print/16038/SL",
+      "Right for Education - The Rich Cultural Heritage of the Limba Tribe (2025) : https://rightforeducation.org/2025/05/30/the-rich-cultural-heritage-of-the-limba-tribe-in-sierra-leone/",
+      "Ethnologue - Limba, West-Central (lia) : https://www.ethnologue.com/language/lia/",
+      "Ethnologue - Limba, East (lma) : https://www.ethnologue.com/language/lma/"
+    ]
+  }
+}

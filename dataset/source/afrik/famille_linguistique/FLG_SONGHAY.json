@@ -1,0 +1,66 @@
+{
+  "id": "FLG_SONGHAY",
+  "nameFr": "Songhay / Sonrai",
+  "nameEn": "Songhay",
+  "content": {
+    "decolonialHeader": {
+      "selfAppellation": "Songhay",
+      "contemporaryUsage": "Le terme est maintenant largement accepté en linguistique (SIL Ethnologue, Glottolog, UNESCO) pour désigner cette famille linguistique, bien que son affiliation génétique (Nilo-saharien vs famille indépendante) reste débattue.",
+      "historicalAppellations": "Songhay",
+      "originOfHistoricalTerm": " Le nom vient de l'ancien Empire Songhay (XVe–XVIe siècles) basé à Gao. Les populations zarma et songhay se nomment *Soŋay*, *Soŋai*, *Sonrai* selon les dialectes. L'origine académique du terme remonte aux classifications linguistiques modernes :"
+    },
+    "generalInfo": {
+      "branches": [],
+      "geographicArea": "Vallée moyenne du Niger (Mali–Niger), s'étendant vers l'est jusqu'au Bénin et le nord du Nigeria, et vers le nord dans le Sahara central (Algérie méridionale, nord du Mali).",
+      "numberOfLanguages": 10,
+      "totalSpeakers": 3500000
+    },
+    "associatedPeoples": [
+      {
+        "name": "Songhay / Sonrai",
+        "peopleId": "PPL_SONGHAI"
+      },
+      {
+        "name": "Zarma (Djerma)",
+        "peopleId": "PPL_ZARMA"
+      },
+      {
+        "name": "Dendi",
+        "peopleId": "PPL_DENDI"
+      }
+    ],
+    "linguisticCharacteristics": {
+      "typology": " Langues majoritairement SOV (Sujet-Objet-Verb), peu de flexion, usage de particules grammaticales pour exprimer TAM (Temps-Aspect-Mode). **EXEMPLES CONCRETS** :",
+      "phonologicalFeatures": " Systèmes phonologiques variant selon les variétés, avec certaines conservant le ton et d'autres l'ayant perdu. **DÉTAILS PRÉCIS** :",
+      "relationsWithNeighbors": " Influences fortes des langues mandé (Bambara, Malinké), contacts prolongés avec les langues tchadiques (Hausa), emprunts au berbère dans les régions sahariennes. **EXEMPLES CONCRETS D'EMPRUNTS** :"
+    },
+    "historyAndOrigins": {
+      "probableOrigin": " Plusieurs théories coexistent concernant l'origine géographique et génétique des langues songhay. **QUI A CLASSÉ ? CITATIONS COMPLÈTES** :",
+      "emergencePeriod": " **DEUX TEMPORALITÉS** :",
+      "diffusion": " **TOUTES LES THÉORIES DISPONIBLES AVEC AUTEURS** :",
+      "contactZones": " **RÉPONDRE À \"OÙ\" – LOCALISER GÉOGRAPHIQUEMENT** :",
+      "majorEvents": " **CHRONOLOGIE AVEC DATES PRÉCISES** :"
+    },
+    "distribution": {
+      "totalSpeakers": 3500000,
+      "distributionByCountry": {}
+    },
+    "sources": [
+      "[Greenberg, J.H.] ([1963]) – *The Languages of Africa*. [Bloomington : Indiana University Press]",
+      "[Nicolaï, R.] ([1981]) – *Les dialectes du songhay: contribution à l'étude des changements linguistiques*. [Paris : SELAF]",
+      "[Nicolaï, R.] ([1990]) – *Parentés linguistiques (à propos du songhay)*. [Paris : Éditions du CNRS]",
+      "[Nicolaï, R.] ([2003]) – *La force des choses ou l'épreuve 'nilo-saharienne': questions sur les reconstructions archéologiques et l'évolution des langues*. [Köln : Rüdiger Köppe Verlag]",
+      "[Bender, L.] ([1996]) – *The Nilo-Saharan Languages: A Comparative Essay*. [München : Lincom Europa]",
+      "[Heath, J.] ([1998]) – *A Grammar of Koyra Chiini: the Songhay of Timbuktu*. Mouton Grammar Library. [Berlin : Mouton de Gruyter]",
+      "[Heath, J.] ([1999]) – *A Grammar of Koyraboro (Koroboro) Senni: The Songhay of Gao, Mali*. [Köln : Rüdiger Köppe Verlag]",
+      "[Heath, J.] ([2005]) – *Tondi Songway Kiini (Songhay, Mali): reference grammar and TSK–English–French dictionary*. [Stanford : CSLI Publications]",
+      "[Lacroix, P.-F.] ([1969]) – *L'ensemble songhay-jerma: problèmes et thèmes de travail*. Actes du 8ᵉ Congrès de la SLAO.",
+      "[Lacroix, P.-F.] ([1980]) – *Emghedeshie, 'Songhay language of Agades': à travers les documents de Barth*. Itinérances, Vol. 1. [Société des Africanistes]",
+      "[Dimmendaal, G.] ([2008]) – *Language Ecology and Linguistic Diversity on the African Continent*. [In : Language and Linguistics Compass]",
+      "[SIL Ethnologue] ([2025]) – *Languages of Niger / Mali / Benin / Burkina Faso / Nigeria*. [https://www.ethnologue.com/]",
+      "[Glottolog] ([2025]) – *Songhay Overview*. [https://glottolog.org/resource/languoid/id/song1297]",
+      "[UNESCO] ([2025]) – *Atlas des langues en danger dans le monde*. [https://www.unesco.org/]",
+      "[Wikipedia] ([2025]) – *Songhay languages / Zarma language / Dendi language*. [https://en.wikipedia.org/wiki/Songhay_languages]"
+    ]
+  }
+}

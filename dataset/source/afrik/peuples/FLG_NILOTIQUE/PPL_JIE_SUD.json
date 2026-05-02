@@ -1,0 +1,93 @@
+{
+  "id": "PPL_JIE_SUD",
+  "nameMain": "Jiye",
+  "languageFamilyId": "FLG_NILOTIQUE",
+  "currentCountries": ["SSD"],
+  "content": {
+    "appellations": {
+      "mainName": "Jiye",
+      "selfAppellation": "Jiye",
+      "exonyms": [
+        "Jie du Sud",
+        "Donyiro",
+        "Jiye (variante orthographique courante)"
+      ],
+      "originOfExonyms": "Le terme Jiye est la forme utilisée au Soudan du Sud pour désigner ce groupe, distinct des Jie d'Ouganda (PPL_JIE). Les deux noms partagent la même origine et reflètent la séparation historique des deux communautés au 18e siècle environ. L'administration soudanaise ne considérait pas historiquement les Jiye comme un peuple distinct, les traitant comme une section des Toposa.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Jiye est utilisé en anglais et en arabe soudanais. La communauté est officiellement reconnue comme un groupe ethnique distinct au sein du comté de Pibor (Etat de Jonglei, Soudan du Sud) depuis la fin du conflit civil soudanais.",
+      "linguisticFamily": "FLG_NILOTIQUE",
+      "ethnoLinguisticGroup": "Nilotique oriental — cluster Ateker (ou cluster Karamojong), sous-groupe Teso-Turkana",
+      "historicalRegion": "Collines de Kassangor (Kathangor), à la frontière entre les anciens districts de Kapoeta et Jonglei, province d'Equatoria oriental, Soudan du Sud",
+      "currentCountries": ["SSD"]
+    },
+    "ethnicities": [
+      "Section territoriale des collines de Kassangor (habitat traditionnel historique au Soudan du Sud)",
+      "Section de Boma (groupe réfugié dans la zone de Boma, territoire Murle)",
+      "Section des plaines au sud des collines de Kassangor (en voie d'assimilation par les Toposa)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Jiye sont un rameau des Jie d'Ouganda (Najie), dont ils se séparèrent au cours du 18e siècle environ, probablement à la suite de querelles claniques. Ils partagent avec les Jie d'Ouganda, les Karamojong, les Turkana, les Toposa et les Nyangatom une origine commune au sein du cluster Ateker (nilotique oriental), remontant à une migration depuis l'Abyssinie (Ethiopie) vers 1600-1700 apr. J.-C. Les Jiye s'établirent dans la zone des collines de Kassangor, à la frontière entre les anciens districts de Kapoeta et Jonglei, en Equatoria oriental (aujourd'hui Etat de Jonglei, Soudan du Sud).",
+      "formationPeriod": "Identité jiye distincte formée au cours du 18e siècle après la séparation d'avec les Jie d'Ouganda. L'histoire des Jiye n'a fait l'objet d'aucune étude scientifique spécialisée (selon la littérature disponible à ce jour). Leur zone d'habitat traditionnelle est documentée depuis au moins un siècle au cœur des collines de Kassangor.",
+      "migrationRoutes": [
+        "Migration originelle depuis l'Abyssinie (Ethiopie) avec le proto-groupe Ateker, vers 1600-1700",
+        "Séparation d'avec les Jie d'Ouganda au 18e siècle et déplacement vers les collines de Kassangor (Soudan du Sud)",
+        "Migrations forcées récentes vers la zone de Boma (territoire Murle) en raison des conflits avec les Toposa et des sécheresses"
+      ],
+      "historicalSettlementZones": [
+        "Collines de Kassangor (Kathangor), à la frontière Kapoeta-Jonglei, Equatoria oriental, Soudan du Sud",
+        "Plaines du pied du plateau de Boma",
+        "Zone de Boma (refuge lors des sécheresses et conflits avec les Toposa)"
+      ],
+      "unificationsOrDivisions": "La pression des Toposa (démographiquement plus nombreux) a provoqué une fracture au sein des Jiye : deux sections territoriales ont quitté l'habitat traditionnel et cherché refuge à Boma (zone Murle) depuis plus d'une décennie. Les deux autres sections restées au sud des collines de Kassangor sont en voie d'incorporation par les Toposa (Jiye par clan, Toposa par tribu). La deuxième guerre civile soudanaise (1983-2005) a profondément perturbé les modes de subsistance jiye.",
+      "externalInfluences": "Pression démographique et territoriale des Toposa (voisins du sud). Conflits avec les Murle (au nord). Impact de la deuxième guerre civile soudanaise (1983-2005). Sécheresses récurrentes amplifiées par les changements climatiques. Présence de missions chrétiennes. Intégration progressive dans l'administration du comté de Pibor, Etat de Jonglei.",
+      "majorHistoricalEvents": "18e siècle : séparation d'avec les Jie d'Ouganda et établissement aux collines de Kassangor. 1983-2005 : seconde guerre civile soudanaise : les Jiye souffrent particulièrement, leur zone se trouvant à la croisée des zones d'influence des armées nord et sud-soudanaises. 2002 : étude montrant que la subsistance jiye dépend de 20% de chasse supplémentaire et 15% de moins de bétail comparé à avant 1983. Début 21e siècle : deux sections jiye se réfugient à Boma. Après 2011 : intégration dans le Soudan du Sud indépendant et reconnaissance comme groupe ethnique distinct au sein du comté de Pibor."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Absence d'organisation politique centralisée, similaire aux Toposa (peuple le plus proche). L'autorité est exercée par des chefs (chiefs), des sous-chefs, des anciens (elders), des devins et des médecins-sorciers qui détiennent à la fois des pouvoirs administratifs et spirituels. Les décisions sont prises collectivement par les anciens lors de réunions villageoises auxquelles participent les hommes adultes.",
+      "clanOrganization": "Société organisée en lignages agnatiqu exogames (les clans et sous-clans ne se marient pas entre eux). Les Jiye partagent certains totems et marques corporelles avec les Toposa, reflétant leur proximité culturelle et leur origine commune dans le cluster Ateker.",
+      "ageClassSystems": "Système de classes d'âge hérité du cluster Ateker, similaire à celui des Jie d'Ouganda et des Karamojong, organisé autour de l'élevage du bétail et des activités guerrières. Les jeunes hommes constituent la classe des guerriers (warriors) chargés de la protection du bétail et des raids.",
+      "roleOfLineages": "Lignages patrilinéaires structurant l'identité, les droits sur les troupeaux et les alliances matrimoniales. Les hommes adultes participent aux réunions, assemblées et fonctions claniques pour la prise de décision communautaire.",
+      "religiousAuthority": "Autorité exercée par des devins et des médecins-sorciers traditionnels qui jouent un rôle dans la résolution des conflits et la protection spirituelle de la communauté. Christianisme introduit par des missions depuis la fin du 20e siècle."
+    },
+    "languages": {
+      "mainLanguage": "Jiye (dialecte du ngakarimojong-toposa, famille nilotique orientale)",
+      "isoCodes": ["kdj"],
+      "dialects": [
+        "Jiye (dialecte parlé au Soudan du Sud, variante du ngakarimojong, mutuellement intelligible avec le toposa)"
+      ],
+      "vehicularRole": "Les Jiye parlent une langue mutuellement intelligible avec le toposa, elle-même proche du ngakarimojong (ISO 639-3 : kdj). Des variations dialectales liées aux conflits et au développement séparé des deux communautés ont été signalées. L'arabe soudanais est la langue véhiculaire officielle au Soudan du Sud dans les zones de contact avec l'administration. L'anglais est la langue officielle du gouvernement du Soudan du Sud depuis l'indépendance de 2011."
+    },
+    "culture": {
+      "majorRites": "Culture orale transmise par les chants, les danses, la musique, les poèmes et le folklore. Rites liés aux principales activités sociales : mariage, chasse, raids de bétail, guerre. Le mariage est l'événement social le plus important et implique une dot en bétail et des cérémonies communautaires. Rituels liés aux cycles de l'élevage transhumant : déplacements des troupeaux selon les saisons des pluies et les pâturages disponibles.",
+      "symbols": "Le bétail est le symbole central de la richesse et du prestige social, comme chez tous les peuples du cluster Ateker. Scarifications corporelles sur le ventre pour les femmes, plus importantes pour les hommes, comme marques identitaires. Percements de la lèvre supérieure et inférieure chez les femmes. Ornements de perles (dominante bleue) et boucles d'oreilles portés par les femmes. Soin particulier apporté par les jeunes hommes à leur coiffure.",
+      "artsAndMusic": "Tradition musicale et orale vivante transmise par les chants, la poésie, les contes et le folklore. Danses traditionnelles lors des événements sociaux (mariages, victoires de chasse, cérémonies). Artisanat lié à l'élevage et à la guerre : fabrication de lances, d'arcs et de boucliers. Ornements en cuir, perles et métal fabriqués par les femmes. Culture matérielle essentiellement nomade-pastorale.",
+      "spiritualities": "Croyances spirituelles communes au cluster Ateker, fondées sur la vénération d'une divinité céleste suprême et le respect des ancêtres. Les devins et médecins-sorciers traditionnels jouent un rôle de médiation entre le monde des vivants et celui des esprits. Christianisme introduit par des missions depuis la fin du 20e siècle. Syncrétisme religieux entre croyances traditionnelles et pratiques chrétiennes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Jiye n'ont pas développé de structure politique centralisée. Leur organisation acéphale est comparable à celle des Toposa et des autres groupes du cluster Ateker. Ils ont historiquement été comptés comme une section des Toposa par l'administration soudanaise avant d'obtenir une reconnaissance distincte.",
+      "relationsWithNeighbors": "Voisins du sud : les Nyangatom et les Toposa (culturellement et linguistiquement très proches). Voisins du nord et de l'est : les Murle (moins apparentés) et les Kachipo. Le vol de bétail et la compétition pour l'eau et les pâturages définissent les relations avec tous ces groupes. La pression des Toposa (plus nombreux) a forcé les Jiye à se déplacer vers le nord dans la région de Pibor. Les Jiye de Boma ont préféré une alliance avec les Murle (malgré une exploitation) plutôt qu'avec les Toposa.",
+      "conflictsOrAlliances": "Conflits récurrents avec les Toposa (raids de bétail, concurrence pour l'eau et les pâturages) : principal facteur de déstabilisation de la communauté jiye. Relations difficiles avec les Murle au nord mais alliance de fait pour la section jiye réfugiée à Boma. Impacts graves de la deuxième guerre civile soudanaise (1983-2005) : la zone jiye était au croisement des zones d'influence des belligérants. Sécheresses récurrentes aggravées par les migrations des Turkana du Kenya vers les zones toposa, poussant les Toposa sur les terres jiye.",
+      "diaspora": "Déplacements internes forcés au Soudan du Sud en raison des conflits avec les Toposa et des sécheresses. Une partie des Jiye s'est réfugiée dans la zone de Boma (territoire Murle). Peu de diaspora internationale documentée compte tenu de la petite taille et de l'isolement de la communauté."
+    },
+    "demography": {
+      "totalPopulation": 12000,
+      "referenceYear": 2025,
+      "source": "Estimations de terrain : la population ne dépasse pas 12 000 personnes selon les chercheurs (contre l'estimation OMS de 52 000, jugée surestimée). Données très incomplètes et contradictoires. La communauté est officiellement comptée parmi les groupes ethniques du comté de Pibor, Etat de Jonglei, Soudan du Sud.",
+      "distributionByCountry": [
+        {
+          "country": "SSD",
+          "population": 12000,
+          "note": "Concentrés autour des collines de Kassangor et dans la zone de Boma, comté de Pibor, Etat de Jonglei, Soudan du Sud"
+        }
+      ]
+    },
+    "sources": [
+      "Blog Trip Down Memory Lane — Jiye people: Small Nilotic but Fierce Fighters in South Sudan (2013). https://kwekudee-tripdownmemorylane.blogspot.com/2013/08/jiye-people-small-nilotic-but-fierce.html",
+      "Facebook — Jiye people, South Sudan (Nimule, Eastern Equatorial State). https://www.facebook.com/groups/275114380263865/posts/701811924260773/",
+      "Wikipedia EN — Karamojong people. https://en.wikipedia.org/wiki/Karamojong_people",
+      "Swordshare Map — Ng'akarimojong ISO 639-3 kdj (inclut Jiye comme nom alternatif). https://map.swordshare.com/kdj",
+      "Kara-Tunga — Karamoja Bibliography. https://www.kara-tunga.com/karamoja-bibliography/",
+      "Wikipedia EN — Jie (Uganda). https://en.wikipedia.org/wiki/Jie_(Uganda)"
+    ]
+  }
+}

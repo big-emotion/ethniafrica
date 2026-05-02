@@ -1,0 +1,216 @@
+# PRÉREQUIS_OFFICIELS_DU_PROJET_AFRIK
+# VERSION 4.0 — Document maître (Architecture + Workflow + Identifiants)
+
+
+========================================================
+0. OBJECTIF DU DOCUMENT
+========================================================
+
+Ce document établit :
+
+• l'architecture du projet Afrik  
+• les identifiants uniques  
+• le référentiel linguistique  
+• la classification famille linguistique → langue → peuple → pays  
+• les sources officielles  
+• la méthodologie démographique  
+• les règles de nommage  
+• les fichiers maîtres CSV  
+• le workflow global  
+• les fichiers de suivi du workflow
+
+
+========================================================
+1. IDENTIFIANTS UNIQUES AFRIK
+========================================================
+
+ID pays : ISO 3166-1 alpha-3  
+ID famille linguistique : FLG_xxxx  
+ID langue : code ISO 639-3  
+ID peuple : PPL_xxxx  
+
+
+========================================================
+2. RÉFÉRENTIEL LINGUISTIQUE AFRIK
+========================================================
+
+Références obligatoires :
+
+• ISO 639-3  
+• Glottolog  
+• Ethnologue (SIL)  
+• UNESCO  
+• African Language Atlas  
+
+Chaque langue doit indiquer :
+
+• nom  
+• code ISO  
+• famille linguistique  
+• sous-famille  
+• nombre de locuteurs  
+
+
+========================================================
+3. HIÉRARCHIE AFRIK
+========================================================
+
+Niveau 1 — Famille linguistique (FLG_*)  
+Niveau 2 — Langue (code ISO 639-3)  
+Niveau 3 — Peuple (PPL_*)  
+Niveau 4 — Pays (ISO 3166-1 alpha-3)  
+
+
+========================================================
+4. TERMES PÉJORATIFS / COLONIAUX
+========================================================
+
+Obligatoire :
+
+• conserver  
+• contextualiser  
+• expliquer origine  
+• expliquer problème  
+• donner auto-appellation  
+• ne jamais présenter comme neutre  
+
+
+========================================================
+5. MÉTHODOLOGIE DÉMOGRAPHIQUE
+========================================================
+
+Population pays = ONU / UNFPA (2025)  
+% peuples par pays = Banque Mondiale / SIL / UNESCO + anthropologie (⚠️ CIA abandonné)  
+Somme = 100 %  
+Chaque peuple = population totale (tous pays)  
+Langue = total locuteurs  
+
+
+========================================================
+6. SOURCES AUTORISÉES
+========================================================
+
+--- DÉMOGRAPHIE & POPULATIONS ---
+
+ONU (WPP) – UNFPA – Banque Mondiale (Open Data)  
+Afrobarometer – AfDB (Portail Open Data for Africa)  
+Bureaux nationaux de recensement (ex. BUCREP Cameroun)  
+Our World in Data [agrégateur — tracer vers source primaire]  
+Mozilla Data Collective — Factbook JSON [snapshot CIA janv. 2026, CC0, import unique]  
+
+⚠️ CIA World Factbook : ABANDONNÉ (hors service depuis le 4 févr. 2026).  
+   Utiliser Banque Mondiale + recensements nationaux à la place.  
+
+--- LINGUISTIQUE & CLASSIFICATION ---
+
+Ethnologue (SIL, 28e éd.) – Glottolog (v5.3) – ISO 639-3  
+UNESCO – Catalogue of Endangered Languages (ELCat)  
+WALS (World Atlas of Language Structures)  
+African Language Atlas (ALAf)  
+
+⚠️ UNESCO Atlas des langues en danger : HORS LIGNE (en cours de refonte en WAL).  
+   Utiliser Glottolog AES + ELCat comme sources primaires d'endangerment.  
+   Surveiller le relancement du World Atlas of Languages (WAL).  
+
+--- HISTOIRE & ETHNOGRAPHIE ---
+
+IWGIA – Vansina – Ehret – Hiernaux  
+Encyclopaedia Africana – ASCL Leiden  
+JSTOR (Journal of African History, History in Africa)  
+African Online Digital Library (AODL)  
+D-PLACE / Ethnographic Atlas de Murdock (via Max Planck Institute)  
+
+--- RECHERCHE AFRICAINE & DÉCOLONIALE ---
+
+CODESRIA (Dakar) — réseau panafricain de sciences sociales  
+AJOL — African Journals Online (667+ revues africaines, 27 pays)  
+
+⚠️ Encyclopaedia Britannica : DÉPRIORITISÉE — biais occidentaux, non évaluée par les pairs.  
+   Acceptable comme référence tertiaire uniquement.  
+
+--- DONNÉES GÉNOMIQUES & MIGRATIONS ---
+
+H3Africa (Human Heredity & Health in Africa)  
+African Genome Variation Project (AGVP)  
+African Genomic Variation Database (AGVD / AfriGen-D)  
+
+--- GÉOSPATIAL ---
+
+AfricaMap (Harvard Center for Geographic Analysis)  
+Murdock 1959 — carte ethnolinguistique numérisée (~950 polygones Afrique)  
+GREG Dataset (8 969 polygones mondiaux de groupes ethniques)  
+GeoEPR Dataset (GREG + relevance politique, 1946–2005)  
+
+--- PATRIMOINE CULTUREL ---
+
+UNESCO ICH (Patrimoine Culturel Immatériel)  
+Google Arts & Culture — Africa  
+African Digital Heritage  
+DISA (Digital Innovation South Africa)  
+
+--- SOURCES À NE PAS CITER COMME SOURCES PRIMAIRES ---
+
+Wikipedia (FR/EN) : couche de découverte uniquement — toujours remonter aux références citées  
+Atlasocio.com : agrégateur — toutes ses données proviennent d'ONU/Banque Mondiale/autres  
+South African History Online (SAHO) : biais géographique Afrique du Sud  
+
+
+========================================================
+7. FICHIERS CSV MAÎTRES
+========================================================
+
+famille_linguistique.csv  
+peuple_demographie_globale.csv  
+pays_demographie.csv  
+
+
+========================================================
+8. RÈGLES DE NOMMAGE
+========================================================
+
+Fichiers TXT :  
+- Familles linguistiques : FLG_xxxxx.txt  
+- Peuples : PPL_xxxxx.txt (organisés par famille linguistique)  
+- Pays : [code ISO 3166-1 alpha-3].txt  
+
+ID : MAJUSCULES, sans espaces
+
+
+========================================================
+9. COHÉRENCE TXT ↔ CSV
+========================================================
+
+Tout TXT doit avoir une entrée correspondante dans les CSV.  
+Tous les ID doivent être identiques partout.  
+
+
+========================================================
+10. WORKFLOW AFRIK + FICHIERS DE SUIVI
+========================================================
+
+Étapes obligatoires :
+
+1. Familles linguistiques  
+2. Langues  
+3. Peuples  
+4. Pays  
+5. Démographies CSV  
+6. Validation  
+7. Publication  
+
+FICHIERS DE SUIVI OBLIGATOIRES :
+
+1. WORKFLOW_AFRIK_STATUS.md  
+   → checklist humaine  
+
+2. workflow_status.csv  
+   → suivi machine  
+   → statuts : pending / in_progress / done  
+
+Aucune étape du workflow ne peut être considérée comme terminée  
+si elle n’est pas reflétée dans ces deux fichiers.
+
+
+========================================================
+FIN DU DOCUMENT — PRÉREQUIS_AFRIK.txt (VERSION 4.0)
+========================================================

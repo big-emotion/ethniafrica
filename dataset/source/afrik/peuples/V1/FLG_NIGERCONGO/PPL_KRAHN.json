@@ -1,0 +1,73 @@
+{
+  "id": "PPL_KRAHN",
+  "nameMain": "Krahn",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["CIV", "LBR"],
+  "content": {
+    "appellations": {
+      "mainName": "Krahn",
+      "selfAppellation": "Krahn",
+      "exonyms": [
+        "Krahn (terme utilisé par les Européens), parfois appelés « Guéré » en Côte d'Ivoire"
+      ],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Krou occidental",
+      "historicalRegion": "Libéria, CIV",
+      "currentCountries": ["CIV", "LBR"]
+    },
+    "ethnicities": [
+      "Krahn du Libéria",
+      "Krahn de Côte d'Ivoire",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Krahn sont originaires de la région du Libéria et de la Côte d'Ivoire. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe krou occidental.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune. Relations avec les Guéré.",
+      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies dirigées par des chefs traditionnels. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Rôle important des croyances traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Krahn",
+      "vehicularRole": "Le krahn est parlé par la majorité des Krahn. L'anglais, le français et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Masques glé",
+      "source_1": "Rituels du bois sacré",
+      "source_2": "Chants polyphoniques",
+      "source_3": "Cérémonies de mariage traditionnelles",
+      "source_4": "Rites de passage (initiation, fêtes de naissance)",
+      "source_5": "Célébrations culturelles krahn",
+      "Symboles": "Masques glé, symboles liés à l'agriculture, symboles culturels krahn",
+      "Arts et musique": "",
+      "source_6": "Masques glé",
+      "source_7": "Rituels du bois sacré",
+      "source_8": "Chants polyphoniques",
+      "source_9": "Musique traditionnelle",
+      "source_10": "Danse traditionnelle",
+      "Spiritualités": "Croyances traditionnelles, syncrétisme avec le christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies indépendantes.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora krahn dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 300000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Krahn language (khr)",
+      "CIA World Factbook – Country profiles",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples krou"
+    ]
+  }
+}

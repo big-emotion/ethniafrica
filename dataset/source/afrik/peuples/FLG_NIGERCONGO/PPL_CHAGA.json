@@ -1,0 +1,104 @@
+{
+  "id": "PPL_CHAGA",
+  "nameMain": "Chaga",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Chaga",
+      "selfAppellation": "Wachaga",
+      "exonyms": [
+        "Chagga (variante orthographique coloniale)",
+        "Dschagga (graphie allemande de la periode coloniale)"
+      ],
+      "originOfExonyms": "Le terme Chagga ou Chaga est un exonyme d'origine bantoue utilise par les populations cotieres et les voyageurs europeens pour designer le peuple des pentes du Kilimandjaro. Les colons allemands, qui administrerent le Tanganyika jusqu'en 1919, orthographiaient Dschagga. Le terme Wachaga est la forme swahilisee du nom collectif.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Chagga est la denomination usuelle en anglais et en swahili. Wachaga est utilise en contexte tanzanien. Chaga tend a etre prefere dans les publications scientifiques recentes.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone E, groupe E.62)",
+      "historicalRegion": "Pentes meridionales et orientales du Kilimandjaro, region de Kilimanjaro (Tanzanie du nord-est)",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": [
+      "Machame (versant sud-ouest, pentes fertiles du Kilimandjaro)",
+      "Marangu (versant sud-est, ancienne capitale chieftaine de Meli)",
+      "Rombo (versant est, proche de la frontiere keniane)",
+      "Moshi (centre administratif, basse plaine)",
+      "Kibosho (versant central, ancien royaume de Mangi Sina)",
+      "Siha (versant occidental, royaumes de Samake, Nguni et Kyuu)",
+      "Uru (versant nord, traditions specifiques de l'ouest)",
+      "Mwika et Vunjo (versant est, groupes distincts)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Chaga descendent de plusieurs groupes bantous qui ont migre depuis la region de la Zambie et du Malawi actuels vers les contreforts du Kilimandjaro aux alentours du 11e siecle de notre ere. Leurs ancetres ont trouve dans les pentes fertiles de la montagne sainte un refuge propice a l'agriculture intensive en terrasses, notamment la culture de la banane. Des influences extérieures sont documentees : le peuple Ongamo, aujourd'hui integre aux Chaga, a transmis des pratiques comme les classes d'age (rika) et la deesse Ruwa. Des traditions orales mentionnent aussi la presence anterieures de pygmees nommes Wakoningo.",
+      "formationPeriod": "Entre le 11e et le 15e siecle, les differents clans migrants se sont constitues en chefferies (umangi) autonomes sur les versants du Kilimandjaro. A la fin du 19e siecle, on denombrait 37 royaumes independants. La colonisation allemande (1885-1918) puis britannique (1919-1961) a progressivement reduit leur nombre : les Britanniques reconnaissaient encore 15 chefferies en 1964. L'identite chaga unifiee s'est consolidee sous la pression coloniale et dans la resistance a celle-ci.",
+      "migrationRoutes": [
+        "Migration principale depuis la Zambie et le Malawi vers le nord en longeant le Rift Est-africain",
+        "Influences depuis les Usambara (Shambaa), le pays Kamba (Kenya) et les Maasai (plaines)",
+        "Integration des Ongamo venus du nord-est (Kenya actuel)"
+      ],
+      "historicalSettlementZones": [
+        "Pentes sud et est du Kilimandjaro (region de Kilimanjaro, Tanzanie)",
+        "Versants de 1000 a 2000 metres d'altitude, zone de foret montagnarde et de savane arboree",
+        "Plaine de Moshi et region administrative de Kilimanjaro"
+      ],
+      "unificationsOrDivisions": "Les Chaga ne se sont jamais unifies en un seul royaume. Ils sont restes organises en chefferies (umangi) distinctes dirigees par des Mangi (rois/chefs). Les Britanniques nommerent en 1951 Mangi Marealle II comme premier Mangi Mkuu (chef paramount), mais cette tentative d'unification politique demeura limitee. Les identites de versant (Machame, Rombo, Marangu, etc.) restent vivaces.",
+      "externalInfluences": "Commerce swahili depuis les ports de Mombasa et Pangani (echanges de fer, ivoire, esclaves). Influence des Maasai voisins (elevage, guerriers). Colonisation allemande (1885-1918) : introduction du christianisme, des ecoles protestantes et catholiques. Colonisation britannique (1919-1961) : integration administrative. Le christianisme est aujourd'hui dominant parmi les Chaga.",
+      "majorHistoricalEvents": "A la fin du 19e siecle, Mangi Rindi de Moshi et Mangi Sina de Kibosho etaient les chefs les plus puissants, entretenanent des relations ambigues avec les explorateurs europeens et les commerçants arabes. Mangi Meli de Moshi organisa une resistance contre les Allemands et fut pendu en 1900. Cette resistance est devenue un symbole national tanzanien. Le recensement colonial allemand de 1900 estimait 28 000 foyers sur le Kilimandjaro."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de royaumes (umangi) diriges par un Mangi (chef/roi). Le Mangi cumule les pouvoirs politiques, militaires et religieux. Il est conseille par des anciens et des dignitaires de clan. En dessous du Mangi, des chefs de mtaa (sous-chiefdom/paroisse) administrent les subdivisions territoriales. Par 1899, 37 royaumes autonomes existaient sur les pentes du Kilimandjaro.",
+      "clanOrganization": "Societe patrilineaire organisee en clans (inkoo). Chaque mtaa regroupe plusieurs clans. Les forgerons (fundis) constituent une caste distincte avec un statut social particulier. L'identite clanique determine les alliances matrimoniales et les droits fonciers.",
+      "ageClassSystems": "Systeme de classes d'age (rika) adopte sous influence Ongamo. Les garçons sont circoncis collectivement au sein d'une meme cohorte d'age declaree par le Mangi. Ces groupes generationnels creent une solidarite masculine traversant les clivages claniques.",
+      "roleOfLineages": "Lignages patrilineaires determinant l'identite, les droits a la terre et les alliances matrimoniales. Le foyer patrilineaire (nyumba) est l'unite de base. L'heritage se transmet de pere en fils. Les ancetres (washirikina) sont veneres comme protecteurs du lignage.",
+      "religiousAuthority": "Avant la colonisation, les Mangi cumulaient l'autorite religieuse, communiquant avec la divinite supreme Ruwa via des rites et des sacrifices. Les guerisseurs traditionnels (waganga) jouent encore un role dans la medecine et les rites. Aujourd'hui, l'autorite religieuse est principalement exercee par les pasteurs protestants (lutheriens, KKKT) et les pretres catholiques, le christianisme etant majoritaire chez les Chaga."
+    },
+    "languages": {
+      "mainLanguage": "Kichagga (groupe de langues Chaga)",
+      "isoCodes": ["jmc", "old", "vun", "rom", "xki"],
+      "dialects": [
+        "Kimachame (Machame, versant sud-ouest) — dialecte de reference",
+        "Kimarangu (Marangu, versant sud-est)",
+        "Kirombo (Rombo, versant est, frontiere Kenya)",
+        "Kivunjo (Vunjo, versant est central)",
+        "Kisiha (Siha, versant ouest) — dialecte archaisant avec traditions propres",
+        "Ngasseni — dialecte tres divergent, parfois inintelligible pour les autres locuteurs Chaga"
+      ],
+      "vehicularRole": "Les langues chaga constituent un ensemble dialectal sans unite entierement codifiee. Le swahili est la langue vehiculaire officielle en Tanzanie et domine dans l'administration, l'education et le commerce. Les langues chaga se maintiennent dans les villages et la famille. L'anglais est utilise dans l'enseignement superieur."
+    },
+    "culture": {
+      "majorRites": "Circoncision masculine (initiation des garçons vers 14 ans ou par cohorte d'age rika declaree par le Mangi) : seclusion en foret plusieurs mois, transmission des savoirs, serments, fetes. Circoncision feminine (shinga) avant la puberte : seclusion de 3 mois, instruction sur la procreation et les roles feminins, danses d'emergence. Rites funéraires : inhumation dans la hutte pour les personnes mariees ayant des enfants (mari pres de l'entree droite, femme a gauche), sacrifice d'un boeuf ou d'une chevre, veille de 4 jours, depot des os dans le bosquet ancestral de bananiers 1 a 2 ans apres. Rites agricoles : prieres et offrandes avant les semailles, invocations aux ancetres pour proteger les recoltes de bananiers et de mais.",
+      "symbols": "Le masale (Dracaena fragrans) est la plante sacree centrale : symbole de paix, de benediction et de reconciliation, plantee autour des maisons et des tombes, portee en colliers et bracelets lors des rites. Le Kilimandjaro lui-meme (Kibo) est sacre, residence de la divinite Ruwa. Le feu symbolise la vie nourriciere et la puissance destructrice. Les boucliers avec motifs geometriques identifient les classes d'age. La masale et le beurre de vache servent a oindre les corps lors des ceremonies.",
+      "artsAndMusic": "Musique de montagne avec percussions (tambours de diverses tailles), chants polyphoniques lors des ceremonies de mariage, d'initiation et des funérailles. Poesie orale (nyimbo) transmise par les anciens. Artisanat : poterie feminine (canaris, recipients de stockage), forge masculine (lances en ebene, couteaux, ornements en cuivre, fer et laiton), sculpture de pipes et de recipients en bois decores. Vetements traditionnels de cour : coiffes en fourrure de colobe noir et blanc, capes en plumes d'autruche, ceintures de perles. Peinture corporelle au beurre et a l'ocre rouge lors des ceremonies.",
+      "spiritualities": "Croyance pre-chretienne en une divinite supreme, Ruwa (ou Iruva a l'ouest : Machame, Masama), assimilee au soleil et residant au sommet du Kilimandjaro. Ruwa n'est pas createur mais liberateur et pourvoyeur, accessible par la priere et le sacrifice. Veneration des ancetres (lejdud/washirikina) qui protegent les vivants depuis l'au-dela et sont propitiés par des offrandes alimentaires. Cosmovisión : le naturel et le surnaturel sont interconnectes, les maladies et malheurs resultent d'une conduite incorrecte ou de l'action d'esprits malveillants. Depuis le 19e siecle, le christianisme (lutheranisme, catholicisme) est devenu dominant, mais un syncretisme persistant integre la veneration des ancetres et certaines pratiques rituelles traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Chaga ont developpe un systeme de royaumes (umangi) independants sur les pentes du Kilimandjaro, avec des Mangi (rois) hereditaires. Les royaumes les plus puissants au 19e siecle etaient Machame (Mangi Rengua, puis Shangali), Kibosho (Mangi Sina, le plus puissant de son epoque), Moshi (Mangi Rindi, puis Meli — pendu par les Allemands en 1900) et Marangu (Mangi Marealle, qui collabora avec les Allemands). A leur apogee, certains Mangi controlaient d'importantes routes commerciales vers la cote swahilie.",
+      "relationsWithNeighbors": "Relations commerciales intensives avec les marchands swahilis des ports de Mombasa et Pangani (ivoire, fer, esclaves). Echanges et tensions avec les Maasai des plaines (commerce de betail, conflits ponctuels). Contacts avec les Pare du sud (source de fer pour la forge chaga), les Kamba du Kenya et les Shambaa des Usambara. Les Chaga fournissaient vivres aux caravanes commerciales traversant la region.",
+      "conflictsOrAlliances": "Conflits interclaniques permanents entre les royaumes chaga du 16e au 19e siecle. Resistance contre la colonisation allemande : Mangi Meli de Moshi organisa une coalition de chefs et fut pendu le 16 mars 1900 apres la defaite militaire. Les Chaga ont par la suite joue un role majeur dans le nationalisme tanzanien. Certains royaumes comme Marangu collaborerent avec les Allemands pour obtenir un avantage sur leurs rivaux.",
+      "diaspora": "Depuis la seconde moitie du 20e siecle, les Chaga ont migre en grand nombre vers Dar es Salaam, Arusha et d'autres villes tanzaniennes, formant des communautes urbaines influentes dans les affaires, l'enseignement et la fonction publique. Une diaspora chaga existe en Europe (Royaume-Uni, Allemagne) et en Amerique du Nord."
+    },
+    "demography": {
+      "totalPopulation": 2000000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2024 : 1 387 000 locuteurs Chagga en Tanzanie. Ethnologue (SIL) estimation 2024. Recensement tanzanien 2022 (projections 2025). Le chiffre de 2 millions integre les differentes varietes dialectales (Chaga sensu lato) et les membres de la diaspora urbaine.",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 2000000,
+          "note": "Region de Kilimanjaro (Moshi, Rombo, Mwanga, Same) et diaspora urbaine a Dar es Salaam et Arusha"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Chagga people. https://en.wikipedia.org/wiki/Chagga_people",
+      "Joshua Project — Chagga in Tanzania. https://joshuaproject.net/people_groups/11289/TZ",
+      "Ethnologue (SIL) — Chaga language subgroup E.621. https://www.ethnologue.com/subgroup/4196/",
+      "Thomson Treks — The People of Kilimanjaro: History of the Chagga. https://www.thomsontreks.com/blog/tribes-of-kilimanjaro/",
+      "Kathleen M. Stahl, History of the Chagga People of Kilimanjaro. Mouton, La Haye, 1964. (review: Cambridge University Press)",
+      "Institute of Current World Affairs — The People of Kilimanjaro. http://www.icwa.org/wp-content/uploads/2015/10/IMW-16.pdf",
+      "CIA World Factbook — Tanzania. https://www.cia.gov/the-world-factbook/countries/tanzania/",
+      "Wikipedia EN — Chaga languages. https://en.wikipedia.org/wiki/Chaga_languages"
+    ]
+  }
+}

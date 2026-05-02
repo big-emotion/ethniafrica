@@ -1,0 +1,91 @@
+{
+  "id": "PPL_BILEN",
+  "nameMain": "Bilen",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ERI"],
+  "content": {
+    "appellations": {
+      "mainName": "Bilen",
+      "selfAppellation": "Bilen / Blin / Bilin",
+      "exonyms": ["Bogos", "Northern Agaw", "Bogo"],
+      "originOfExonyms": "Bogos est un ancien exonyme utilise notamment par les sources europeennes du 19e siecle pour designer les Bilen et leur region (la zone de Bogos ou Bogos). Northern Agaw reflète leur appartenance au rameau agaw des langues couchitiques, le distinguant des Agaw du centre de l'Ethiopie. Le terme Belen en saho signifie chretien, ce qui suggere une origine possible du nom.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Bilen est le nom officiel reconnu par le gouvernement erythreen pour ce groupe ethnique, l'un des neuf groupes officiels d'Erythree. Blin est la forme alternative utilisee dans certaines sources academiques.",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "Couchitiques centraux — sous-groupe Agaw (Central Cushitic, Agaw branch)",
+      "historicalRegion": "Region centrale d'Erythree, ville de Keren (capitale de la province d'Anseba) et environs jusqu'au sud vers Asmara ; region historiquement connue sous le nom de Bogos",
+      "currentCountries": ["ERI"]
+    },
+    "ethnicities": [
+      "Bet Tarqe (sous-tribu principale, cinq Hissat : Beit Hidat, Bet Abay, Bet Adi, Bet Hail, Bet Libanos)",
+      "Bet Tawqe (sous-tribu principale, six Hissat, originaires de Hamasien, integres au 14e siecle)",
+      "Hissat — unites claniques subdivisees en groupes de parente plus petits"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale locale, les Bilen ont migre vers le plateau erythreen depuis la region de Lasta (nord de l'Ethiopie actuelle) aux environs du 9e ou 10e siecle, conduits par leur chef fondateur Gebre Tarqe. D'autres sources les font venir du Kush (centre Soudan) au 8e siecle, s'installant a Merara puis Wag et Lasta. Une deuxieme vague migratoire aurait eu lieu lors de la chute de la dynastie Zagwe en 1270.",
+      "formationPeriod": "Les Bilen sont mentionnes pour la premiere fois dans un texte du 14e siecle, les Actes d'Ewostatewos. Au 14e siecle, le sous-groupe Bet Tawqe, originaire du Hamasien, s'integra aux Bilen. Jusqu'a la fin du Zemene Mesafint, les Bilen etaient largement autonomes, acceptant la suzerainete du gouverneur chretien du Hamasien. Nombre d'entre eux se convertirent a l'islam en reaction aux raids egyptiens du 19e siecle.",
+      "migrationRoutes": [
+        "Migration depuis Lasta (Ethiopie du nord) vers le plateau erythreen au 9e-10e siecle",
+        "Possible deuxieme vague lors de la chute de la dynastie Zagwe en 1270",
+        "Integration du Bet Tawqe depuis Hamasien au 14e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Region centrale d'Erythree, autour de Keren (province d'Anseba)",
+        "Zone au sud vers Asmara",
+        "Region historique de Bogos"
+      ],
+      "unificationsOrDivisions": "Les Bilen sont divises en deux sous-tribus principales, Bet Tarqe et Bet Tawqe, chacune subdivisee en clans (Hissat). L'administration italienne (1888-1941) maintenait la gouvernance traditionnelle par les clans, mais tenta sans succes en 1932 de nommer des chefs uniques pour chaque sous-tribu. La diversite religieuse (islam/christianisme) n'a pas entraine de conflits internes majeurs.",
+      "externalInfluences": "Autorite nominale de certains empereurs ethiopiens (tradition locale). Domination Funj (stabilite relative). Raids de Dejazmach Wube Haile Maryam (1844-1849). Raids egyptiens (1850, 1854, 1862-63, 1867) : les Egyptiens occupent Keren en 1872 sous Werner Munzinger. Missions catholiques lazaristes (Giovanni Stella) dans les annees 1850 : influence catholique durable. Protectorat francais de facto dans les annees 1860. Annexion italienne (1888) : Keren incorporee dans la Zona di Cheren d'Erythree italienne (1890). Guerre d'independance erythreenne (1961-1991).",
+      "majorHistoricalEvents": "Premiere mention ecrite dans les Actes d'Ewostatewos au 14e siecle. Occupation de Keren par Werner Munzinger le 2 juillet 1872. Traite anglo-egyptien de Hewett (1884) : Bogos cede au negus Yohannes IV d'Ethiopie. Annexion italienne (1888) et incorporation a l'Erythree italienne (1890). Resistance a la nomination de leaders uniques par les Italiens en 1932. Soutien ferme au Front de Liberation de l'Erythree (ELF) pendant la guerre d'independance (1961-1991). Independance de l'Erythree en 1993."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de gouvernance clanique traditionnel maintenu sous la colonisation italienne. La societe est organisee autour des Hissat (clans) et de leurs chefs. Les anciens de l'Eglise jouent un role dans la discipline des jeunes. Les delinquants peuvent etre envoyes dans les ecoles d'internat des eglises. La resolution des conflits se fait au niveau clanique et communautaire.",
+      "clanOrganization": "Deux sous-tribus : Bet Tarqe (cinq Hissat) et Bet Tawqe (six Hissat). Chaque Hissat est divise en groupes de parente plus petits. L'appartenance au clan determine les droits fonciers : seuls les hommes prets a se marier recoivent de la terre pour construire une maison. Les femmes et les etrangers n'ont pas de droits fonciers.",
+      "ageClassSystems": "Transition informelle vers l'age adulte marquee par des rites : la punition des enfants de moins de 10 ans est du ressort des meres, et de 10 a 19 ans du ressort des peres et des proches. L'adulthood est celebre lors de la fete Sere-mere.",
+      "roleOfLineages": "Les lignages clanique structurent les droits de propriete, les alliances matrimoniales et la gouvernance. Le mariage est arrange par les familles (sans choix des futurs epoux) et les enfants peuvent etre promises des le ventre de leur mere. En cas de divorce initie par l'homme, la femme garde la maison ; en cas de divorce mutuel, les biens sont partages a parts egales.",
+      "religiousAuthority": "Autorite partagee entre cheikhs islamiques (musulmans) et autorites de l'Eglise catholique (chretiens). Les anciens de l'Eglise participent a la discipline des jeunes. Les missions catholiques lazaristes ont laisse une empreinte durable a Keren depuis les annees 1850."
+    },
+    "languages": {
+      "mainLanguage": "Bilen (Blin)",
+      "isoCodes": ["byn"],
+      "dialects": [
+        "Bilen standard (parle dans et autour de Keren)",
+        "Variantes locales entre les deux sous-tribus Bet Tarqe et Bet Tawqe"
+      ],
+      "vehicularRole": "Le bilen est la langue maternelle des Bilen. Beaucoup parlent egalement le tigre et le tigrinya (langues semitiques d'Erythree). Les Bilen chretiens ont souvent une bonne comprehension du tigrinya (environ 60%). Les Bilen musulmans utilisent le tigre a environ 70%. Les jeunes emploient egalement des mots et expressions arabes dans leurs echanges quotidiens. Le bilen est classe dans la branche agaw des couchitiques centraux."
+    },
+    "culture": {
+      "majorRites": "La fete Sere-mere est la celebration annuelle du betail, tenue le 16 septembre. Trois jours avant, la communaute collecte des excretions de vache et du beurre qu'elle melange. Le soir de la fete, deux hommes portant une branche de plante aux fleurs jaunes et le melange beurre-fumier visitent tous les enclos du territoire. Les jeunes filles preparent du pain et du lait pour les jeunes gens. La maturation d'un garcon est symbolisee par le deliement de ses mains et le don de chaussures, suivi de la coupe de ses cheveux. Dans les familles aisees, un oncle lui offre une boucle d'oreille en or. Le mariage est arrange des la naissance et comporte une serie de ceremonies (le troisieme jour de l'engagement, la mere de la fille distribue des legumineuses cuites aux voisins pour que les petits-enfants se multiplient comme le sable de la mer).",
+      "symbols": "Boucle d'oreille nasale portee par les femmes (signe de statut social). Le medeq (sandales en cuir, avant l'arrivee des Italiens). La maison traditionnelle augudo (habitation cylindrique). Le higag (natte tapissant les murs interieurs de l'augudo). La boisson rituelle debob, utilisee lors des mariages, fetes et commemorations, se conservant jusqu'a quatre mois.",
+      "artsAndMusic": "Traditions culinaires distinctives : produits laitiers (curd) comme aliment de base, shiro, viande reservee aux fetes (Paque, Nouvel An, fete patronale negdet). Boissons rituelles : debob, massa, berzi. Artisanat textile : matelas, nattes, couvre-lits. Chants et danses lors des fetes religieuses (fetes patronales, Paque, Nouvel An). Traditions orales et poetiques. Les Bilen sont reconnus pour leur hospitalite et leur sens de la coexistence.",
+      "spiritualities": "Les Bilen pratiquent l'islam et le christianisme en proportions quasi egales (environ moitie-moitie). Les Bilen musulmans (sunni) habitent principalement les zones rurales et ont fusionne avec les Tigre voisins. Les Bilen chretiens (principalement catholiques, avec d'autres denominations) habitent les zones urbaines et ont fusionne avec les Tigrinya. La diversite religieuse est un facteur de coexistence pacifique : les fetes sont celebrees par les deux communautes avec une relative tolerance. Certaines pratiques relèvent d'une religion traditionnelle combinee aux pratiques islamiques et chretiennes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise documente. Autonomie relative sous la suzerainete nominale de diverses puissances (gouverneurs ethiopiens, Funj, Egyptiens). L'Eglise catholique et les missions lazaristes ont joue un role de quasi-autorite institutionnelle a Keren a partir des annees 1850.",
+      "relationsWithNeighbors": "Relations de coexistence et d'echange avec les Tigrinya des zones urbaines (Bilen chretiens) et avec les Tigre des zones rurales (Bilen musulmans). Conflicts traditionnels avec des groupes de pillards du Barka (anciens sujets egyptiens), pour lesquels l'Egypte payait des reparations distribuees aux Bilen. Liens historiques forts avec les Ethiopiens (autorité nominale de certains empereurs).",
+      "conflictsOrAlliances": "Raids de Dejazmach Wube Haile Maryam (1844-1849). Raids egyptiens (1850-1867). Occupation egyptienne sous Munzinger (1872-1875). Ras Alula a pille les Bilen et attaque le fort egyptien de Sanhit a Keren. Alliance avec la France (protectorat de facto dans les annees 1860). Annexion italienne (1888). Soutien ferme au Front de Liberation de l'Erythree (ELF) pendant la guerre d'independance, mais sous-representation dans le EPLF et les gouvernements post-independance.",
+      "diaspora": "Communautes bilen dans la diaspora erythreenne (Europe, Etats-Unis, Canada, Arabie Saoudite), suite aux migrations economiques et aux deplacements de la guerre d'independance et des conflits posterieurs."
+    },
+    "demography": {
+      "totalPopulation": 186000,
+      "referenceYear": 2025,
+      "source": "eHRAF World Cultures (2022) : 186 278 Bilen, environ 3% de la population erythreenne (6 209 262). Wikipedia (2006) : 91 000. Joshua Project : 116 000 locuteurs. Estimation 2025 retenant les donnees les plus recentes de l'eHRAF.",
+      "distributionByCountry": [
+        {
+          "country": "ERI",
+          "population": 186000,
+          "note": "Principalement dans la region d'Anseba, autour de Keren et au sud vers Asmara ; minorite dans certaines zones d'Ethiopie et de Djibouti selon Wikipedia"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Bilen people. https://en.wikipedia.org/wiki/Bilen_people",
+      "eHRAF World Cultures — Bilen (mn06) summary. https://ehrafworldcultures.yale.edu/cultures/mn06/summary",
+      "Joshua Project — Bilen in Eritrea. https://joshuaproject.net/people_groups/10848",
+      "Eritrea Ministry of Information — Customs and Beliefs of the Bilen (Part I). https://shabait.com/2010/10/08/customs-and-beliefs-of-the-bilenpart-i/",
+      "Trip Down Memory Lane — Bilen People: Eritrean Ethnic Group. https://kwekudee-tripdownmemorylane.blogspot.com/2014/02/bilen-people-eritrean-ethnic-group-that.html",
+      "Wikipedia EN — Demographics of Eritrea. https://en.wikipedia.org/wiki/Demographics_of_Eritrea",
+      "SIL Ethnologue — Bilen language (byn). https://www.ethnologue.com/language/byn/"
+    ]
+  }
+}

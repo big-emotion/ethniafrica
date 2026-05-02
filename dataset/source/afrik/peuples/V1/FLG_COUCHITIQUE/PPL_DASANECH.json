@@ -1,0 +1,35 @@
+{
+  "id": "PPL_DASANECH",
+  "nameMain": "Dasanach",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH", "KEN", "SDN"],
+  "content": {
+    "appellations": {
+      "mainName": "Dasanach",
+      "selfAppellation": "Daasanach",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "Couchitique oriental",
+      "historicalRegion": "Bassin inférieur de l’Omo (Éthiopie – Kenya – Sud Soudan)",
+      "currentCountries": ["ETH", "KEN", "SDN"]
+    },
+    "ethnicities": [
+      "Daasanach de l’Omo",
+      "Daasanach de Marsabit (Kenya)",
+      "Groupes semi-nomades de la frontière soudanaise"
+    ],
+    "origins": {},
+    "organization": {},
+    "languages": {},
+    "culture": {
+      "source_0": "Rituels d’initiation masculine.",
+      "source_1": "Pastoralisme (chèvres, bovins, chameaux).",
+      "source_2": "Habits en perles, ornements métalliques.",
+      "source_3": "Importante tradition d’oralité."
+    },
+    "historicalRole": {},
+    "demography": {
+      "source": "peuple_demographie_globale.csv"
+    },
+    "sources": ["Ethnologue (dsh)", "East African Pastoral Ethnography"]
+  }
+}

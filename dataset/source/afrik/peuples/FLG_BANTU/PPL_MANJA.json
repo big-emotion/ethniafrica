@@ -1,0 +1,103 @@
+{
+  "id": "PPL_MANJA",
+  "nameMain": "Manja",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CAF", "CMR", "TCD"],
+  "content": {
+    "appellations": {
+      "mainName": "Manja",
+      "selfAppellation": "Mandja",
+      "exonyms": [
+        "Mandja",
+        "Mandjia",
+        "Mandija",
+        "Mandzia",
+        "Mandjias",
+        "Manza"
+      ],
+      "originOfExonyms": "Les variantes orthographiques proviennent de transcriptions coloniales françaises du nom autochtone Mandja. Le terme Manza est parfois utilisé comme synonyme, bien qu'il designe strictement la langue.",
+      "whyProblematic": "La confusion entre Manza (langue) et Mbanza (peuple distinct de RCA, Congo-Brazzaville et RDC) est frequente dans les sources coloniales et certaines publications contemporaines.",
+      "contemporaryUsage": "Le nom Mandija est le plus repandu dans les publications scientifiques francophones. Manja est couramment utilise dans les sources anglophones. En Centrafrique, le peuple se designe lui-meme comme Mandja.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Adamawa-Ubangi",
+      "historicalRegion": "Centre et nord-est de la Republique Centrafricaine, regions de Ouham et Gribingui",
+      "currentCountries": ["CAF", "CMR", "TCD"]
+    },
+    "ethnicities": ["Manja", "Mandija"],
+    "origins": {
+      "ancientOrigins": "Les Manja (Mandija) sont originaires de la region du lac Tchad, au nord. Les preuves linguistiques indiquent qu'au cours des 2 000 derniers annees, ils ont migre vers leur territoire actuel depuis le nord-est, deplacant les groupes de chasseurs nomades qui y vivaient auparavant. Leur tradition orale corrobore cette these : ils seraient partis de la region du lac Tchad avec leurs voisins Ngbaka et Gbaya pour fuir les negriers.",
+      "formationPeriod": "La migration et l'installation dans le centre de la RCA semblent s'etre achevees avant l'arrivee des Europeens a la fin du XIXe siecle. La distinction ethnique Mandija est probablement consolidee entre le XVIIe et le XIXe siecle.",
+      "migrationRoutes": [
+        "Du lac Tchad vers le sud-ouest",
+        "A travers le nord-est centrafricain vers le centre du pays",
+        "Migration parallele avec les Gbaya et les Ngbaka"
+      ],
+      "historicalSettlementZones": [
+        "Centre de la Republique Centrafricaine",
+        "Region de Ouham",
+        "Region de Gribingui",
+        "Nord-est du pays pres de la frontiere tchadienne"
+      ],
+      "unificationsOrDivisions": "Le peuple Mandija n'a pas eu de structure politique centralisee. Les rassemblements se faisaient ponctuellement sous l'autorite de chefs regionaux lors de conflits ou d'affrontements. Ils sont etroitement associes au groupe Gbaya avec lequel ils partageaient des territoires de chasse.",
+      "externalInfluences": "Influence des negriers arabes qui ont pousse leur migration depuis le nord. Influence coloniale française depuis la fin du XIXe siecle. Le sango, langue vehiculaire nationale de la RCA, a integre des elements du mandja.",
+      "majorHistoricalEvents": "Fuite des negriers depuis la region du lac Tchad. Contact avec l'administration coloniale française a la fin du XIXe siecle. L'ancien Premier ministre centrafricain Elie Dote appartient a la communaute Mandija du Centre-Nord."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation decentralisee en petits regroupements de maisons relativement isoles et independants les uns des autres. Absence de chef politique supreme. Les rassemblements pouvaient etre decides par certains chefs regionaux lors de guerres ou d'affrontements.",
+      "clanOrganization": "Organisation par familles elargies. Le membre male le plus age de chaque famille elargie est reconnu comme chef de la cellule familiale. Polygamie pratiquee : les hommes epousent souvent plusieurs femmes, chacune ayant sa propre maison.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le systeme de lignage joue un role central dans l'organisation sociale. La premiere epouse est honoree et exerce souvent une influence considerable sur son mari. La faible densite de population et l'epaisseur de la foret environnante obligent chaque petite communaute a etre autosuffisante.",
+      "religiousAuthority": "La religion mandija est centree sur les ancetres. Les figures ancestrales importantes sont representees dans des sculptures auxquelles des offrandes sont faites. L'ancetre Ngakola, qui vivait parmi les Manja avec sa femme Ngandala et sa fille Yamisi, est particulierement venere pour son pouvoir de donner et de prendre la vie."
+    },
+    "languages": {
+      "mainLanguage": "Mandja (manza)",
+      "isoCodes": ["mzv"],
+      "dialects": [],
+      "vehicularRole": "Langue maternelle d'environ 220 000 locuteurs en RCA (estimation 1996). Le sango est utilise comme langue vehiculaire nationale par les Mandija, comme par l'ensemble des Centrafricains."
+    },
+    "culture": {
+      "majorRites": "La religion mandija est centree sur le culte des ancetres. Des offrandes sont faites aux figures ancestrales pour obtenir leurs benedictions. Le culte de l'ancetre Ngakola, qui avait le pouvoir de donner et de prendre la vie, est particulierement important et se manifeste dans plusieurs sculptures.",
+      "symbols": "Les sculptures representant les ancetres constituent les principaux symboles religieux et culturels. Le style artistique mandija est proche de celui des Ngbaka et Ngbandi, mais les figures mandija ne presentent pas les epais motifs de scarification qui caracterisent leurs voisins.",
+      "artsAndMusic": "L'art mandija est principalement representatif des ancetres. Les objets presents dans les collections museales sont rares et sont censes representer les ancetres. Les sculptures de l'ancetre Ngakola se trouvent dans plusieurs collections museales. La musique et la danse accompagnent les ceremonies rituelles.",
+      "spiritualities": "Animisme centre sur le culte des ancetres. Le christianisme est la religion principale aujourd'hui (94,5% de chretiens selon Joshua Project). Certaines communautes pratiquent l'islam. Les croyances animistes traditionnelles perdurent souvent en syntherese avec le christianisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume ou chefferie centralise. Organisation en chefferies locales et familles elargies. Les chefs regionaux pouvaient rallier les communautes en cas de conflits.",
+      "relationsWithNeighbors": "Etroitement lies aux Gbaya avec lesquels ils ont migre depuis le lac Tchad et partage des territoires de chasse. Voisins des Ngbaka. Appartiennent au cluster linguistique et culturel Gbaya-Manza-Ngbaka.",
+      "conflictsOrAlliances": "Alliance historique avec les Gbaya et les Ngbaka lors de la migration depuis le lac Tchad pour fuir les negriers. Soumission a l'administration coloniale française a partir de la fin du XIXe siecle.",
+      "diaspora": "Petites communautes Mandija presentes au Cameroun et au Tchad, issues de la dynamique migratoire historique."
+    },
+    "demography": {
+      "totalPopulation": 354000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 (population mondiale estimee) ; PeopleGroups.org 2026 estime 412 000",
+      "distributionByCountry": [
+        {
+          "country": "CAF",
+          "population": 338000,
+          "note": "Troisieme groupe ethnique du pays, environ 13% de la population centrafricaine"
+        },
+        {
+          "country": "CMR",
+          "population": 10000,
+          "note": "Petites communautes dans le nord du Cameroun"
+        },
+        {
+          "country": "TCD",
+          "population": 6000,
+          "note": "Quelques communautes pres de la frontiere centrafricaine"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Mandja people (https://en.wikipedia.org/wiki/Mandja_people)",
+      "Wikipedia FR – Mandija (https://fr.wikipedia.org/wiki/Mandija)",
+      "Joshua Project – Manja in Central African Republic, 2025 (https://joshuaproject.net/people_groups/13514/CT)",
+      "101 Last Tribes – Mandja people (https://www.101lasttribes.com/tribes/mandja.html)",
+      "PeopleGroups.org – Manja of Central African Republic (https://peoplegroups.org/people_groups/pg012889/)",
+      "Vergiat, Antonin Marius – Moeurs et coutumes des Manjas, Payot, Paris, 1937",
+      "Gaud, Fernand – Les Mandja (Congo francais), A. de Wit, Bruxelles, 1911",
+      "Olson, James Stuart – The Peoples of Africa: An Ethnohistorical Dictionary, Greenwood, 1996"
+    ]
+  }
+}

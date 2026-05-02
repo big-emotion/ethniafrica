@@ -1,0 +1,101 @@
+{
+  "id": "PPL_EBIRA",
+  "nameMain": "Ebira",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Ebira",
+      "selfAppellation": "Ebira",
+      "exonyms": ["Igbira", "Igbirra", "Ebirra", "Egbira", "Ibira"],
+      "originOfExonyms": "Les variantes Igbira, Igbirra, Egbira et Ibira sont des orthographes coloniales et populaires issues de la translitteration approximative par les administrateurs britanniques. Le nom officiel Ebira a ete gazette par la Republique federale du Nigeria le 14 juillet 2022, sur initiative de l'Ohiku-Ebira Descendants Union (OEDU).",
+      "whyProblematic": "Les variantes anciennes (Igbira, Egbira) sont desormais obsoletes depuis la gazette officielle de 2022. Leur usage dans les documents academiques et administratifs anterieurs peut preter a confusion.",
+      "contemporaryUsage": "Le nom Ebira est l'orthographe officielle et universellement utilisee depuis 2022. Les variantes anciennes subsistent dans les sources historiques mais ne sont plus en usage courant.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Nupoid (branche Benue-Congo, Niger-Congo)",
+      "historicalRegion": "Ebiraland — region centre du Nigeria, au sud-ouest de la confluence Niger-Benue (Kogi State central)",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Ebira Tao (Opete) — groupe principal, predominant dans les LGA d'Adavi, Ajaokuta, Okehi, Okene, Ogori/Magongo (Kogi State)",
+      "Ebira Koto — present dans les LGA de Koton Karfe, Bassa et Lokoja (Kogi), Abaji (FCT), Akoko-Edo (Edo State)",
+      "Ebira Toto (Panda) — etablis dans le LGA de Toto (Nasarawa State), souvent orthographies Egbura",
+      "Ebira Etuno (Igarra) — communaute d'Igarra town (Akoko-Edo, Edo State), langue apparentee mais distincte",
+      "Eganyi — sous-groupe du LGA d'Ajaokuta (Kogi State)",
+      "Ebira Miyakan — l'une des trois branches officiellement reconnues dans la gazette de 2022",
+      "Clans Adavi — descendants des cinq fils d'Ohizi (Adaviruku) : progeniteurs des cinq clans traditionnels d'Adavi"
+    ],
+    "origins": {
+      "ancientOrigins": "Des recherches recentes suggerent que les Ebira occupent le centre du Nigeria depuis environ 4000 av. J.-C. Le site de travail du fer d'Ife-Ijummu (Kogi State) a ete date de 260 av. J.-C., associant les Ebira a la culture de Nok et aux traditions de l'Age du fer en Afrique centrale. Les traditions orales tracent l'origine du peuple depuis les Jukuns de l'Etat de Kwararafa, au nord de la Benue (Taraba State actuel).",
+      "formationPeriod": "Apres une cohabitation de pres de 300 ans avec les Igala a Idah, une dispute entraina la separation des deux groupes vers le XVe-XVIe siecle. Les Ebira traverserent le fleuve Niger vers le sud-ouest, s'etablissant d'abord a Ebira Opete (pres d'Ajaokuta). Entre 1680 et 1750, ils se fractionnerent en plusieurs groupes qui coloniserent Okehi, Upai, Eikaoku et d'autres localites.",
+      "migrationRoutes": [
+        "Kwararafa (Taraba) vers le territoire igala a Idah",
+        "D'Idah vers Itobe, puis traversee du Niger vers Ebira Opete (Ajaokuta)",
+        "D'Opete vers les collines d'Okehi, Upai, Eikaoku, puis dispersion dans le Kogi central",
+        "Groupes dissidents vers Nasarawa (Toto LGA), FCT (Abaji), Edo State (Igarra)"
+      ],
+      "historicalSettlementZones": [
+        "Zone de la confluence Niger-Benue (Kogi central)",
+        "Okene et sa region — centre administratif historique",
+        "Nasarawa State (LGA de Toto)",
+        "FCT — ville d'Abaji",
+        "Igarra, Edo State (Etuno)"
+      ],
+      "unificationsOrDivisions": "Les Ebira ne formerent jamais un royaume centralise unitaire. Ils s'organiserent en communautes claniques semi-autonomes. La creation du titre d'Ohinoyi sous l'administration coloniale britannique (Attah Ibrahim, 1917) constitua la premiere figure d'autorite centrale. La gazette federale de 2022 unifia formellement les trois branches (Opete, Miyakan, Etuno) sous le nom commun Ebira.",
+      "externalInfluences": "Resistance aux jihadistes foulani (1865-1880) sous Achigidi Okino contre Ajinomoh de Bida/Ilorin — les Ebira ne furent jamais conquis. Colonisation britannique en 1903 avec nomination de responsables locaux. Ibrahim (Attah Ibrahim) aida la diffusion de l'islam dans la region depuis 1917.",
+      "majorHistoricalEvents": "Guerre Idah-Benin (vers 1519-1521) provoquant la dispersion des groupes Ebira. Resistance aux jihadistes peuls (1865-1880). Colonisation britannique (1903). Exil d'Ibrahim Attah (1954). Creation du Kogi State (1991), separant les Ebira de Kwara. Gazette officielle du nom Ebira (14 juillet 2022)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme republicain base sur la gerontocratie et les conseils de lineages. Chaque clan (Iresu) etait dirige par un Otaru (chef de clan). Les decisions etaient prises colligalement par les anciens masculins. Il n'existait pas de royaute centrale avant la periode coloniale. L'administration britannique nomma des Attah puis des Ohinoyi comme chefs supremes, titre desormais symbolique et ceremoniel.",
+      "clanOrganization": "Organisation patrilineaire en composes (Ohuoje : familles patrilineaires liees), composes exterieurs (Ovovu) et lineages (Abara : ensemble de plusieurs composes). Les clans portent des symboles animaux distinctifs (leopard, crocodile, python, buffle). Chaque clan conduit ses affaires de maniere semi-autonome sous autorite des anciens.",
+      "ageClassSystems": "Les institutions d'ancetres (cultes Eku oba, Eku echichi, Akatapa, Eku irahu) conferaient une legitimite politique et religieuse aux anciens. L'institution Iragba et le culte des mascarades servirent d'instruments de gouvernance et de discipline collective.",
+      "roleOfLineages": "Les lineages (Abara) constituaient l'unite de base de l'organisation sociale et politique. Le chef de famille (aîne masculin) etait a la fois pourvoyeur, chef religieux et protecteur. Les disputes entre lineages etaient arbitrees par les conseils d'anciens.",
+      "religiousAuthority": "Le chef-pretre etait installe par l'Ekuoba apres un rituel initiatique comportant une ceremonie symbolique de mort et de renaissance. Ses fonctions etaient liees a l'Iragba (institution politico-religieuse). La divinite supreme Ohomorihi (dieu de la pluie celeste) punissait et recompensait les communautes. Des divinites mineures (ori) et les esprits ancestraux structuraient la vie religieuse quotidienne."
+    },
+    "languages": {
+      "mainLanguage": "Ebira (igbirra)",
+      "isoCodes": ["igb"],
+      "dialects": [
+        "Ebira Tao (dialecte Okene) — dialecte central, standard utilise dans les medias et l'edition",
+        "Ebira Koto (Okpoto) — parle au nord-est de la confluence Niger-Benue, documente depuis Sterk (1978)",
+        "Etuno (Tunọ) — parle a Igarra (Edo State), considere comme une variete proche mais distincte",
+        "Ebira Toto — parle dans le LGA de Toto, Nasarawa State, souvent orthographie Egbura",
+        "Igara — variete recensee par Glottolog"
+      ],
+      "vehicularRole": "Langue regionale dans le centre du Nigeria (Kogi State). L'ebira est enseigne dans les ecoles primaires et diffuse a la radio et la television au niveau de l'Etat. L'anglais et le pidgin nigerien servent de langues vehiculaires plus larges."
+    },
+    "culture": {
+      "majorRites": "Le festival Ekuechi est le rite majeur annuel des Ebira, celebre de la fin novembre a janvier selon chaque clan. Ekue signifie ancetres et chi signifie descendre : les esprits ancestraux reviennent parmi les vivants par l'intermediaire des mascarades (Eku). Les mascarades Eku'rahu, portant des masques, chantent, tambourinent et recitent des messages des ancetres. Le festival marque la fin de l'annee et le debut du cycle agricole suivant. D'autres rites incluent les ceremonies d'installation du chef-pretre (mort symbolique et renaissance par l'Ekuoba) et les rites de passage (circoncision, mariage).",
+      "symbols": "L'Opete (siege ceremoniel) est le principal symbole d'autorite et d'identite ebira, rapporte de Kwararafa lors de la migration et conserve a Opete (Ajaokuta). Chaque clan possede un animal totemique (leopard, crocodile, python, buffle). Les mascarades Eku representent le lien entre le monde des vivants et celui des ancetres.",
+      "artsAndMusic": "Les Ebira sont reconnus pour leur tissage traditionnel (tissus en coton a motifs geometriques, commerce regional important depuis le XIXe siecle). Le travail du fer est ancestral, lie a la tradition de l'Age du fer de Nok. La musique des festivals Ekuechi associe tambours, chants collectifs et recitation rythmee. L'artisanat comprend la sculpture sur bois, la poterie et le travail des metaux.",
+      "spiritualities": "Religion traditionnelle centree sur la divinite supreme Ohomorihi (dieu celeste de la pluie), les divinites mineures (ori) et le culte des ancetres. Le monde des esprits ancestraux communique avec les vivants par les mascarades Eku lors du festival Ekuechi. L'islam sunnite est la religion majoritaire (environ 74 % selon Joshua Project 2025), adopte progressivement depuis le XVIIIe siecle, notamment sous l'influence d'Attah Ibrahim. Le christianisme est minoritaire (10-50 %)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Ebira ne formerent pas de royaume centralise. Ils s'organiserent en confederation de communautes claniques semi-autonomes. L'Etat de Kwararafa (Jukun) fut leur berceau mythologique. Sous la colonisation britannique, le titre d'Ohinoyi d'Ebiraland fut cree comme chef supreme, revetu par Ibrahim (Attah Ibrahim, 1917-1954), Sani Omolori, et leurs successeurs.",
+      "relationsWithNeighbors": "Relations historiques avec les Igala (cohabitation de 300 ans, puis separation conflictuelle). Voisinage avec les Yoruba (a l'ouest), les Igala (a l'est), les Etsako (au sud). Contacts commerciaux avec les Haoussa-Peuls du nord. L'Ebiraland est au nord d'Etsako, a l'est du pays yoruba et a l'ouest du pays igala.",
+      "conflictsOrAlliances": "Resistance farouche aux jihads peuls (1865-1880) : la ville d'Igu (Koton Karfe) fut surnommee terre forte car elle resista a toutes les tentatives de conquete. Guerre avec Idah (vers 1519-1521) ayant accelere la migration ebira. Colonisation britannique (1903) sans resistance decisive. Intrigues politiques ayant conduit a l'exil d'Ibrahim Attah en 1954.",
+      "diaspora": "Forte presence ebira dans le Territoire de la Capitale Federale (FCT), notamment a Abaji, et dans d'autres Etats nigerians (Lagos, Abuja). Des communautes sont etablies au Royaume-Uni, aux Etats-Unis et dans d'autres pays de la diaspora nigeriane."
+    },
+    "demography": {
+      "totalPopulation": 2700000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : 2 527 000 Ebira au Nigeria. Wikipedia (Ebira language) : environ 2 millions de locuteurs dans la Middle Belt. Projection 2025 estimee a 2 700 000 en tenant compte du taux de croissance nigerien (environ 3 % par an). Les Ebira constituent le deuxieme groupe ethnique du Kogi State selon le recensement de 2006.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 2700000,
+          "note": "Kogi State (principal), Nasarawa, FCT, Edo State"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia — Ebira people. https://en.wikipedia.org/wiki/Ebira_people",
+      "Wikipedia — Ebira language. https://en.wikipedia.org/wiki/Ebira_language",
+      "Joshua Project — Ebira in Nigeria (2025). https://joshuaproject.net/people_groups/12188",
+      "101 Last Tribes — The Ebira people of Nigeria. https://www.101lasttribes.com/tribes/ebira.html",
+      "Qiraat Africa — The Ebira people of Nigeria (2025). https://qiraatafrican.com/en/15647/the-ebira-people-of-nigeria/",
+      "Federal Republic of Nigeria Official Gazette, 14 juillet 2022 — Orthographe officielle du nom Ebira.",
+      "Ethnologue (SIL International) — Ebira language, code igb. https://www.ethnologue.com/"
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "id": "PPL_GBAYA",
+  "nameMain": "Gbaya",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CAF", "CMR", "COG", "COD", "SSD"],
+  "content": {
+    "appellations": {
+      "mainName": "Gbaya",
+      "selfAppellation": "Gbaya (terme utilise par le groupe lui-meme) ; aussi Gbeya ou Baya selon les sous-groupes",
+      "exonyms": [
+        "Gbaya",
+        "Gbeya",
+        "Baya",
+        "Gbaya-Manza-Ngbaka (designation linguistique)"
+      ],
+      "originOfExonyms": "Le terme Gbaya est utilise a la fois comme endonyme et exonyme. Les sous-groupes se designent eux-memes par des noms specifiques (Bokoto, Kara, Kaka, Buli, Bwaka). La denomination Baya est frequemment utilisee en Republique centrafricaine dans les textes administratifs francais.",
+      "whyProblematic": "Le terme Gbaya designe un ensemble de groupes linguistiquement et culturellement apparentes mais non completement homogenes. La famille linguistique Gbaya-Manza-Ngbaka appartient aux langues oubanguiennes (Niger-Congo), ce qui remet en question leur classification dans FLG_BANTU au sens strict. Certains linguistes les classent parmi les langues adamawa-oubanguiennes.",
+      "contemporaryUsage": "Les Gbaya (Baya) sont officiellement reconnus comme le plus grand groupe ethnique de la Republique centrafricaine, representant environ 33% de la population. Le terme Gbaya est utilise dans les recensements officiels et les analyses politiques du pays.",
+      "linguisticFamily": "Niger-Congo, sous-groupe Adamawa-Oubanguien",
+      "ethnoLinguisticGroup": "Gbaya-Manza-Ngbaka",
+      "historicalRegion": "Ouest et centre de la Republique centrafricaine, est-centre du Cameroun",
+      "currentCountries": ["CAF", "CMR", "COG", "COD", "SSD"]
+    },
+    "ethnicities": [
+      "Gbaya Bokoto",
+      "Gbaya Kara",
+      "Gbaya Kaka",
+      "Gbaya Buli",
+      "Gbaya Bwaka",
+      "Gbaya-Bossangoa",
+      "Gbaya du Sud-Ouest"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Gbaya sont presents en Afrique centrale depuis au moins le XVIe siecle. Des recherches archeologiques ont determine leur lieu d'origine dans la basse vallee du fleuve Lobaye. Des traditions orales plus recentes indiquent que les Gbeya seraient venus de l'est de l'Afrique, a travers le Soudan, pour fuir les conquetes arabes des XVe-XVIe siecles.",
+      "formationPeriod": "XVIe-XIXe siecles. Au debut du XIXe siecle, plusieurs tribus gbaya migrerent vers l'est de l'actuel Cameroun.",
+      "migrationRoutes": [
+        "Migration depuis la basse vallee du Lobaye vers l'ouest de la RCA (origine archeologique)",
+        "Migrations vers le Cameroun oriental au debut du XIXe siecle",
+        "Fuite vers le sud depuis le nord du Nigeria haoussa au debut du XIXe siecle sous la pression du djihad d'Usman dan Fodio"
+      ],
+      "historicalSettlementZones": [
+        "Ouest et centre de la Republique centrafricaine (region de Bossangoa, Bouar, Berberati, Carnot)",
+        "Cameroun oriental (region de l'Est, Bertoua)",
+        "Nord du Congo-Brazzaville",
+        "Nord-ouest de la RDC",
+        "Sud du Soudan du Sud"
+      ],
+      "unificationsOrDivisions": "Les guerres du XIXe siecle contre les Foulani du califat de Sokoto (razzias esclavagistes) ont contraint certains clans gbaya a accepter la hegemonie foulanie, tandis que d'autres se federaient sous des chefs de guerre comme Bafio pour resister. L'arrivee des Europeens crea de nouvelles fragmentations. Les sous-groupes contemporains (Bokoto, Kara, Buli, Kaka, Bwaka) refletent l'integration de peuples vaincus ou assimiles lors des migrations.",
+      "externalInfluences": "XIXe siecle : razzias esclavagistes foulanes depuis le nord du Cameroun actuel. 1892 : premier contact avec les Europeens lors de l'exploration de l'explorateur francais Antoine Mizon remontant la Sangha. Debut XXe siecle : incorporation dans le Kamerun allemand, repression des resistances, urbanisation forcee et collecte du caoutchouc obligatoire (a partir de 1912). 1914-1918 : la France, la Grande-Bretagne et la Belgique envahissent le Kamerun allemand.",
+      "majorHistoricalEvents": "XVIe s. : presence attestee en Afrique centrale. XIXe s. : guerres contre les Foulani, raides esclavagistes intenses. 1892 : premier contact europeen (Antoine Mizon). 1910 : toutes les tribus resistantes sont soumises par l'Allemagne, leurs chefs pendus. 1912 : introduction de la collecte obligatoire du caoutchouc. 1914-1918 : la Premiere Guerre mondiale detruit villages et structures sociales. 1928-1931 : grande revolte Gbaya sous la direction du prophete Karnu (aussi appele Barka Ngainoumbey) contre le travail force pour le chemin de fer Congo-Ocean ; Karnu tue rapidement mais la revolte dura trois ans. 1949 : dernier cas documente de cannibalisme rituel pres de Bertoua. Annees 1990 : integration accrue de leaders gbaya dans les administrations gouvernementales."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en clans au sein d'une structure communautaire hierarchique. Les Gbaya n'ont pas developpe de royaume centralise ; leur organisation politique traditionnelle reposait sur des chefs de clan et des conseils d'anciens. Les decisions importantes etaient prises collectivement. La guerre et la resistance etaient coordonnees par des chefs de guerre ponctuels (comme Bafio et Karnu au XIXe et XXe siecles).",
+      "clanOrganization": "Societe divisee en clans patrilineaires. Les sous-groupes principaux (Bokoto, Kara, Kaka, Buli, Bwaka) correspondent a des entites claniques et refletent l'integration de peuples vaincus lors des migrations du XIXe siecle.",
+      "roleOfLineages": "Les lineages patrilineaires structurent l'acces a la terre et les alliances matrimoniales. Les anciens de lignage jouent un role central dans la resolution des conflits et dans la transmission des savoirs traditionnels.",
+      "religiousAuthority": "Avant le christianisme, les Gbaya pratiquaient l'animisme sous differentes formes : ngaanga (contact avec les esprits), zembe, sereze et unzimara. Les guerisseurs-devins (ngaanga) detenaient l'autorite religieuse. Aujourd'hui, environ 50% sont protestants, 33% catholiques, 12% suivent les croyances indigenes et 3% sont musulmans. La sorcellerie (dua) reste pratiquee. Le prophetisme (Karnu, 1928) montre la permanence des figures d'autorite religieuse charismatique."
+    },
+    "languages": {
+      "mainLanguage": "Gbaya (langue oubanguienne)",
+      "isoCodes": ["gba", "gbp"],
+      "dialects": [
+        "Gbaya-Bossangoa (gbp) - code Ethnologue specifique",
+        "Gbaya du Sud-Ouest",
+        "Gbaya du Nord-Ouest (Cameroun)",
+        "Kaka",
+        "Bwaka"
+      ],
+      "vehicularRole": "Le gbaya est parle par environ 23,8% de la population de la RCA, en faisant la langue la plus parlee dans ce pays devant le banda (23,5%) et le mandjia (14,8%). Le sango est la langue vehiculaire nationale de la RCA. En Cameroun, le gbaya est pratique dans la region de l'Est."
+    },
+    "culture": {
+      "majorRites": "Agriculture en essarts (slash and burn/swidden) : la foret est defrichee, brulee puis abandonnee apres quelques annees. Pratiques martiales : les recits et rituels emploient des armes a double tranchant (epees) et des couteaux a lancer (kuiga) ; la culture gbaya valorise les traditions d'arts martiaux de combat a mains nues et avec armes de poing. Fabrication de biere de miel (kuri). Prophetisme de Karnu comme rite de resistance collective memorise dans la tradition orale.",
+      "symbols": "Les armes traditionnelles (epees a double tranchant, couteaux de jet) sont des symboles de la culture martiale gbaya et de la resistance aux envahisseurs. Le miel et sa transformation en kuri symbolisent l'hospitalite et les moments de celebration communautaire.",
+      "artsAndMusic": "Agriculture vivriere centree sur le manioc (aliment de base, prepare en bouillie : kam), le mais, l'igname, les arachides, le tabac, le cafe et le riz. Artisanat textile et forge. Traditions orales riches incluant des recits de migrations et de guerres. Les techniques de combat (arts martiaux avec armes locales) constituent un patrimoine culturel transmis.",
+      "spiritualities": "Animisme traditionnel (ngaanga, zembe, sereze, unzimara) avec guerisseurs-devins. Cannibalisme rituel cible sur les ennemis vaincus ou les esclaves, consider disparu au XXe siecle (dernier cas documente 1949). Synchretisme chretien-animiste predominant aujourd'hui. Prophetisme messianique (Karnu, 1928) lie a la resistance anticoloniale. La sorcellerie (dua) est socialement reconnue comme explication du malheur."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Gbaya n'ont pas forme de royaume centralise. Leur organisation politique en chefferies de clans etait decentralisee. Des chefs de guerre ponctuels (Bafio au XIXe s., Karnu en 1928) emergeaient lors de crises. Depuis l'independance, des personnalites gbaya ont accede aux plus hautes fonctions de l'Etat centrafricain (Francois Bozize, president ; Alexandre Banza, ministre ; Michel Gbezera-Bria, Premier ministre).",
+      "relationsWithNeighbors": "Relations conflictuelles avec les Foulani esclavagistes du nord du Cameroun au XIXe siecle. Assimilation et integration de peuples vaincus (Bokoto, Kaka, Bwaka) lors des migrations. Relations avec les Banda et Mandjia en RCA. Tensions contemporaines liees aux conflits armes en RCA.",
+      "conflictsOrAlliances": "Guerres recurrentes contre les Foulani du califat de Sokoto (XIXe s.). Resistance a la colonisation allemande (annees 1900-1910). Grande revolte anti-coloniale de 1928-1931 (Guerre de Kongo-Wara, du nom du couteau de jet) sous Karnu contre le travail force pour le chemin de fer Congo-Ocean. Participation aux guerres civiles contemporaines en RCA (groupes armes Seleka et anti-Balaka, 2012-2023).",
+      "diaspora": "Presence gbaya dans plusieurs pays d'Afrique centrale : RCA, Cameroun, Congo-Brazzaville, RDC et Soudan du Sud. La diaspora est essentiellement sous-regionale ; migration interne vers Bangui et les centres urbains de RCA."
+    },
+    "demography": {
+      "totalPopulation": 1200000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN (estimation haute) : 1,2 million (estimations basses : 685 100 dont 358 000 au Cameroun). CAR : ~33% de la population centrafricaine de ~5,6M = ~1,8M selon World Atlas/UNFPA",
+      "distributionByCountry": [
+        {
+          "country": "CAF",
+          "population": 1000000,
+          "note": "Plus grand groupe ethnique de la RCA (~33% de la population)"
+        },
+        {
+          "country": "CMR",
+          "population": 220000,
+          "note": "Region de l'Est, principalement Gbaya du Nord-Ouest (Joshua Project 2025)"
+        },
+        {
+          "country": "COG",
+          "population": 30000,
+          "note": "Nord de la Republique du Congo"
+        },
+        {
+          "country": "COD",
+          "population": 20000,
+          "note": "Nord-ouest de la RDC"
+        }
+      ]
+    },
+    "sources": [
+      "Gbaya people – Wikipedia EN (https://en.wikipedia.org/wiki/Gbaya_people)",
+      "Gbaya – Encyclopaedia Britannica (https://www.britannica.com/topic/Gbaya)",
+      "Gbaya-Bossangoa in Central African Republic – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11844)",
+      "Gbaya, Northwest in Cameroon – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10742/CM)",
+      "Gbaya, Southwest in Central African Republic – Joshua Project (https://joshuaproject.net/people_groups/11843)",
+      "What Is The Ethnic Composition of the Central African Republic – WorldAtlas, 2019 (https://www.worldatlas.com/articles/what-is-the-ethnic-composition-of-the-population-of-central-african-republic.html)",
+      "Gbaya-Bossangoa Language (GBP) – Ethnologue (https://www.ethnologue.com/language/gbp/)"
+    ]
+  }
+}

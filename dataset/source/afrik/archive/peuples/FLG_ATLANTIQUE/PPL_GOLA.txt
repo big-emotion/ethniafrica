@@ -1,0 +1,40 @@
+# Nom du peuple
+- Nom principal : Gola
+- Auto-appellation : Gola
+- Famille linguistique : Niger-Congo – Atlantique (FLG_ATLANTIQUE)
+- Région historique : Liberia et Sierra Leone (zones forestières)
+- Pays actuels : LBR (principal), SLE
+- Identifiant peuple : PPL_GOLA
+
+# 1. Ethnies incluses
+- Gola de l’Est
+- Gola de l’Ouest
+
+# 2. Origines
+- Peuple ancien des forêts de Haute Guinée.
+- Lien historique avec les systèmes à sociétés secrètes.
+
+# 3. Organisation
+- Chefferies lignagères.
+- Société secrète *Poro*.
+
+# 4. Langue
+- Gola
+- ISO : gol
+
+# 5. Culture
+- Masques rituels *Poro*.
+- Musiques forestières.
+- Artisanat en bois.
+
+# 6. Histoire
+- Réseau d’interactions anciennes avec Kissi, Mende et Krio.
+- Rôle politique local avant la période coloniale.
+
+# 7. Démographie
+- Population : 345 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (gol)
+- Sierra Leone & Liberia Cultural Studies

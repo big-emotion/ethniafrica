@@ -1,0 +1,73 @@
+{
+  "id": "PPL_SHEKO",
+  "nameMain": "Sheko",
+  "languageFamilyId": "FLG_NILOSAHARIENNE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Sheko",
+      "selfAppellation": "Sheko",
+      "exonyms": ["Shak", "Shako", "Shekka", "Shekko", "Tschako"],
+      "originOfExonyms": "Les variations orthographiques (Shak, Shako, Tschako) refletent des transcriptions europeennes et amhariques du nom propre du peuple. Le nom Shekka est parfois confondu avec celui des Shekacho (Shekecho), un peuple distinct du meme district.",
+      "whyProblematic": "Le nom Sheko est souvent confondu avec celui des Shekacho, un groupe numeriquement plus important partageant la zone de Sheka dans l'ouest de l'Ethiopie. Les deux peuples sont distincts linguistiquement et culturellement malgre leur proximite geographique. Les recensements ethiopiens les comptabilisent parfois separement, parfois ensemble.",
+      "contemporaryUsage": "Sheko est le nom officiellement reconnu par le gouvernement ethiopien pour designer ce groupe ethnique de la region Peoples du Sud-Ouest (anciennement SNNPR). Le woreda de Sheko dans la zone de Bench Maji porte leur nom.",
+      "linguisticFamily": "FLG_NILOSAHARIENNE",
+      "ethnoLinguisticGroup": "Branche omotique nord, groupe Dizoid (avec le Dizi et le Nayi)",
+      "historicalRegion": "Zone de Bench Maji (ou Bench Sheko), region du Sud-Ouest ethiopien, entre Tepi et Mizan Teferi",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": ["Sheko"],
+    "origins": {
+      "ancientOrigins": "Les Sheko font partie du groupe des peuples omotiques du sud-ouest de l'Ethiopie. Leurs langues (sheko, dizi, nayi) forment un sous-groupe Dizoid au sein de la branche omotique nord de la famille afro-asiatique. Ils sont attestes depuis des siecles dans les forets de la zone de Sheka, l'un des ecosystemes forestiers les mieux preserves d'Ethiopie.",
+      "formationPeriod": "La formation de l'identite sheko est ancienne et precedera la colonisation ethiopienne. Les Sheko resistere a l'integration a l'empire ethiopien lors des campagnes d'expansion d'Addis-Abeba a la fin du XIXe siecle.",
+      "migrationRoutes": [],
+      "historicalSettlementZones": [
+        "Zone de Bench Maji (Bench Sheko), entre Tepi et Mizan Teferi",
+        "Forets de la zone de Sheka, massif du Kaffa (sud-ouest ethiopien)"
+      ],
+      "unificationsOrDivisions": "Les Sheko vivaient de maniere relativement autonome dans les forets du sud-ouest jusqu'a l'incorporation dans l'empire ethiopien au XIXe siecle. Des resistances a l'administration imperiale puis aux gouvernements successifs sont documentees.",
+      "externalInfluences": "L'arrivee des missionnaires protestants au XXe siecle a profondement modifie les pratiques religieuses. L'administration amhara a introduit la langue amharique et les institutions etatiques modernes. La deforestation progressive de la zone de Sheka depuis les annees 1980 menace le mode de vie traditionnel.",
+      "majorHistoricalEvents": "Incorporation a l'empire ethiopien sous Menelik II (fin XIXe siecle). Politique de resistance documentee sous l'Ethiopie imperiale. Recensement ethiopien de 2007 : 37 576 personnes d'ethnie Sheko, essentiellement rurales. Creation de la region des peuples du Sud-Ouest ethiopien (2021), separee de la SNNPR, reconnait l'identite des peuples minoritaires dont les Sheko."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferie patrilineaire traditionnelle avec des positions hereditaires appelees kaibab. Ces chefs locaux gèrent les conflits intra-communautaires, presidaient les rituels et representaient les Sheko face aux autorites exterieures.",
+      "clanOrganization": "Organisation clanique patrilineaire. Les clans determinent les alliances matrimoniales et l'acces aux ressources forestieres et agricoles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires definissent la transmission des chefferies, des terres et des droits rituels. Le systeme hereditaire des kaibab est transmis de pere en fils.",
+      "religiousAuthority": "Les pratiques traditionnelles impliquent des intermediaires rituels lies aux chefferies. Le protestantisme evangelique est desormais majoritaire (Joshua Project : majorite evangelique). L'Eglise orthodoxe ethiopienne est egalement presente."
+    },
+    "languages": {
+      "mainLanguage": "Sheko",
+      "isoCodes": ["she"],
+      "dialects": [],
+      "vehicularRole": "La langue sheko (ISO 639-3 : she) appartient au groupe Dizoid de la branche omotique nord de la famille afro-asiatique. Elle partage des caracteristiques avec le Dizi (mdx) et le Nayi (noz). La plupart des Sheko parlent aussi l'amharique et le gimira (bench). La langue est utilisee oralement dans la vie quotidienne et domestique mais n'est pas enseignee a l'ecole. L'education formelle se fait en amharique et en anglais, ce qui la rend vulnerable a terme."
+    },
+    "culture": {
+      "majorRites": "Rites agricoles lies au cycle du sorgho et de l'igname. Ceremonies de mariage polygames, les unions avec les Bench etant frequentes. Pratiques rituelles liees a la foret, environnement sacre traditionnel. Rites de passage marques par la communaute clanique.",
+      "symbols": "La foret de Sheka est un element identitaire central, consideree comme ressource et espace sacre. Les cultures de base (ensete, cafe, igname) sont des marqueurs identitaires forts.",
+      "artsAndMusic": "Traditions orales de contes et de chants. Techniques de culture de l'igname par repiquage dans les zones reculees, distinctes des pratiques des zones centrales. Artisanat lie au travail de la foret.",
+      "spiritualities": "Christianisme protestant evangelique majoritaire (officiellement depuis le XXe siecle). Persistance de pratiques animistes et de croyances en esprits de la foret et des ancetres. L'Eglise protestante est desormais le principal cadre d'organisation spirituelle et sociale."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Systeme de chefferies locales (kaibab) sans centralisation en royaume unifie. Les chefferies Sheko etaient des entites politiques autonomes avant l'incorporation a l'empire ethiopien.",
+      "relationsWithNeighbors": "Relations commerciales et matrimoniales avec les Bench (peuple gimira). Coexistence avec les Shekacho dans la zone de Sheka. Tensions historiques avec les autorites imperiales ethiopiennes qui ont cherche a soumettre et integrer les peuples forestiers du sud-ouest.",
+      "conflictsOrAlliances": "Resistance documentee a l'administration imperiale ethiopienne. Episodes de tension lors de l'application des politiques d'etat dans la region (collectivisation sous Mengistu, puis redistribution des terres).",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 70000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : 70 000 ; Peoplegroups.org 2025 : environ 57 500 ; recensement ethiopien 2007 : 37 576",
+      "distributionByCountry": [{ "country": "ETH", "population": 70000 }]
+    },
+    "sources": [
+      "Wikipedia – Sheko language, 2024 (https://en.wikipedia.org/wiki/Sheko_language)",
+      "Wikipedia – Sheko (woreda), 2024 (https://en.wikipedia.org/wiki/Sheko_(woreda))",
+      "Joshua Project – Sheko in Ethiopia, 2025 (https://joshuaproject.net/people_groups/14902)",
+      "Languages in Danger – Sheko (http://languagesindanger.eu/book-of-knowledge/list-of-languages/sheko/)",
+      "Immigration and Refugee Board of Canada – Ecoi.net : Ethiopia: Situation of the Shekha ethnic group, 2015 (https://www.ecoi.net/en/document/1297530.html)",
+      "Wiktionary – ISO 639-3 codes/Africa : Sheko = she (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
+      "Peoplegroups.org – Sheko of Ethiopia PG011640 (https://peoplegroups.org/people_groups/pg011640/)"
+    ]
+  }
+}

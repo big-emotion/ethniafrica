@@ -1,0 +1,114 @@
+{
+  "id": "PPL_TSHUWA",
+  "nameMain": "Tshwa",
+  "languageFamilyId": "FLG_KHOE",
+  "currentCountries": ["BWA", "ZWE"],
+  "content": {
+    "appellations": {
+      "mainName": "Tshwa",
+      "selfAppellation": "Tshwa",
+      "exonyms": [
+        "Tsoa",
+        "Tshuwau",
+        "Kua",
+        "Hiechware",
+        "Hietshware",
+        "Cire Cire",
+        "Tjwao",
+        "Sesarwa",
+        "Sarwa"
+      ],
+      "originOfExonyms": "Tshuwau (ou Tshwa, Tsoa) designe l'ensemble dialectal. Kua est une variante orthographique du meme son [tʃwa]. Hiechware (ou Hietshware, Hietjo) est un exonyme parfois applique aussi au Shua (langue-soeur). Sesarwa est le nom donne par les Tswana (langue bantoue) pour designer l'ensemble des San, signifiant ceux qui appartiennent aux gens du bush. Sarwa en est une variante. Tjwao est le nom utilise au Zimbabwe pour la variante locale, seule langue khoisan reconnue constitutionnellement au Zimbabwe. Cire Cire designe une variante parlee autour de Nata.",
+      "whyProblematic": "Le terme Sesarwa ou Sarwa est considere pejoratif par de nombreux membres du groupe car il implique une subordination aux Tswana. Basarwa (pluriel tswana) est le terme officiel utilise au Botswana pour l'ensemble des San, mais est aussi juge reducteur. L'appellation Bushmen est generalement rejetee.",
+      "contemporaryUsage": "Tshwa et Tsoa sont les termes academiques les plus utilises. Tshuwau est le nom utilise dans les ressources linguistiques (code ISO hio). Les locuteurs tshwa se reconnaissent dans la categorie San/Basarwa au Botswana. Au Zimbabwe, la variante Tjwao (Koisan) est constitutionnellement reconnue comme langue officielle.",
+      "linguisticFamily": "FLG_KHOE",
+      "ethnoLinguisticGroup": "Kalahari Khoe oriental (branche East Kalahari Khoe, famille Khoe-Kwadi, sous-groupe Ost-Kxoe)",
+      "historicalRegion": "Bassin oriental du Kalahari (Botswana centre-oriental), region de Nata, nord-est du Botswana, Matabeleland (Zimbabwe occidental)",
+      "currentCountries": ["BWA", "ZWE"]
+    },
+    "ethnicities": [
+      "Tsoa (Tshwa central) — sous-groupe principal du Botswana, aussi appele Hiechware",
+      "Kua (Cua, Tyhua) — sous-groupe apparente, peut-etre dialecte Tsoa",
+      "Cire Cire — variante parlee autour de Nata (Botswana nord-est)",
+      "Tjwao (Tshwao) — variante du Zimbabwe (Matabeleland), seule langue khoisan du Zimbabwe",
+      "Tsua — sous-groupe du bassin oriental du Kalahari",
+      "Gabake-Ntshori (G//abake) — sous-groupe de l'est du Botswana"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Tshwa sont parmi les peuples autochtones les plus anciens du Botswana et du Zimbabwe occidental, issus des chasseurs-cueilleurs Khoisan qui ont occupe les savanes du Kalahari oriental depuis des milliers d'annees. Leur langue, proche du Shua, appartient a la branche Kalahari Khoe oriental de la famille Khoe-Kwadi. Les Tshwa etaient autrefois repandus sur une zone plus large du Kalahari avant la pression des peuples bantous (Shona, Tswana) du premier millenaire.",
+      "formationPeriod": "L'identite Tshwa distincte s'est formee dans le bassin oriental du Kalahari. La presence des Tshwa dans la region de Nata et du Matabeleland est documentee depuis les premiers contacts avec les explorateurs et missionnaires europeens au XIXe siecle. La branche zimbabweenne (Tjwao) s'est separee en suivant des voies migratoires vers le nord-est, jusqu'en Matabeleland (Zimbabwe).",
+      "migrationRoutes": [
+        "Extension vers le nord-est du Botswana et le sud-ouest du Zimbabwe (Matabeleland) depuis le Kalahari oriental ancestral",
+        "Repli progressif vers les zones marginales du Kalahari sous la pression des groupes tswana et shona"
+      ],
+      "historicalSettlementZones": [
+        "Kalahari oriental (Botswana, region de Central District) — zone ancestrale principale",
+        "Region de Nata et ses environs (nord-est du Botswana) — zone documentee des Cire Cire",
+        "Matabeleland (Zimbabwe occidental) — presence des Tjwao, seule langue khoisan au Zimbabwe",
+        "Marges du Kalahari entre Botswana et Zimbabwe"
+      ],
+      "unificationsOrDivisions": "Les Tshwa ne forment pas une entite politique unifiee mais un ensemble de sous-groupes dialectalement proches partageant une identite culturelle. La proximite linguistique avec les Shua (langue-soeur Ost-Kxoe) cree parfois une confusion categorielle entre les deux groupes. La variante zimbabweenne Tjwao a developpe une trajectoire autonome, etant la seule langue khoisan reconnue constitutionnellement au Zimbabwe.",
+      "externalInfluences": "Contact historique avec les peuples tswana (Botswana) et shona (Zimbabwe), qui ont souvent reduit les Tshwa a un statut de serfs ou de main-d'oeuvre agricole. Missions chretiennes (lutheriennes, catholiques) depuis le XIXe siecle. Politique botswanaise d'assimilation via le setswana comme seule langue nationale. Au Zimbabwe, la reconnaissance constitutionnelle du Tjwao (Koisan) est une exception regionale notable. Pressions liees aux parcs nationaux et aux programmes de developpement rural.",
+      "majorHistoricalEvents": "La reconnaissance constitutionnelle du Koisan (Tjwao) au Zimbabwe est un evenement notable pour la branche zimbabweenne des Tshwa. En Botswana, l'arret de la Cour supreme de 2006 reconnaissant le droit des San a vivre dans leurs terres a eu un effet limite sur les Tshwa. Les relocalisation forcees hors des zones protegees (parc de Makgadikgadi, zone de chasse de Nata) ont affecte des communautes Tshwa. L'Organisation pour les minorites indigenes d'Afrique australe (WIMSA) a documente la situation des Tshwa."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en petits groupes de bandes de chasseurs-cueilleurs, avec une autorite de headman fondee sur le consensus et la seniorite. Pas de chefferie formelle ni d'organisation hierarchique. Les decisions collectives sont prises lors de reunions de groupe. Depuis la sedentarisation, des representants de village reconnus par les autorites locales ont emerge comme intermediaires avec le gouvernement.",
+      "clanOrganization": "Les Tshwa s'organisent en groupes de parente localises avec une filiation patrilineaire predominante, determinant les droits d'usage des territoires de chasse et de cueillette. Les alliances matrimoniales se font preferentiellement entre groupes Tshwa et apparentes. La mobilite saisonniere entre territories de chasse etait traditionnellement regulee par ces groupes de parente.",
+      "ageClassSystems": "La connaissance et l'experience, liees a l'age, determinent le statut dans la societe Tshwa. Les anciens sont les gardiens de la memoire territoriale et des savoirs ecologiques (localisation des points d'eau, especes comestibles et medicinales, techniques de chasse). L'initiation des jeunes aux techniques de chasse et aux connaissances spirituelles est transmise progressivement par les anciens.",
+      "roleOfLineages": "Les lignages patrilineaires gouvernent l'appartenance au groupe et les regles d'alliance matrimoniale. La transmission des droits sur les zones de chasse et de cueillette suit la ligne paternelle. Les femmes maintiennent des liens de solidarite avec leur groupe d'origine, creant des reseaux d'entraide supra-locaux.",
+      "religiousAuthority": "Le chamane-guerisseur est la figure d'autorite spirituelle centrale. Il preside les danses de transe, les ceremonies de passage et les rituels de chasse. Les anciens transmettent les recits cosmologiques et mythologiques. Dans les communautes sedentarisees sous influence chretienne, des leaders d'eglises ont pris une place croissante."
+    },
+    "languages": {
+      "mainLanguage": "Tshwa (Tsoa, Tshuwau)",
+      "isoCodes": ["hio", "tyu"],
+      "dialects": [
+        "Tsoa (Hiechware) — dialecte principal du Botswana, aussi appele Tshwa central",
+        "Kua (Cua, Tyhua) — code ISO tyu, peut-etre dialecte de Tsoa ou langue-soeur tres proche",
+        "Cire Cire — variante parlee autour de Nata (Botswana nord-est)",
+        "Tjwao (Tshwao) — variante du Zimbabwe (Matabeleland), seule langue khoisan reconnue au Zimbabwe"
+      ],
+      "vehicularRole": "Le Tshwa est classe comme menace (threatened) par Glottolog, avec environ 781 locuteurs pour la variete Tshuwau (code hio) et un effectif total de plusieurs milliers en incluant le Kua (tyu). La langue n'a pas de statut officiel au Botswana et n'est pas enseignee. Elle cede progressivement devant le setswana. Au Zimbabwe, le Tjwao est reconnu constitutionnellement comme langue nationale (Koisan), ce qui en fait l'exception la mieux protegee du groupe dialectal. L'ordre des mots est principalement SOV (sujet-objet-verbe), caracteristique des langues Kalahari Khoe."
+    },
+    "culture": {
+      "majorRites": "La danse de transe (healing dance ou trance dance) est le rite spirituel central des Tshwa, comme pour l'ensemble des peuples San. Des ceremonies nocturnes reunissent la communaute autour d'un feu : les femmes chantent en polyphonie et frappent des mains pour aider les chamanes a entrer en transe, leur permettant d'acceder au monde des esprits et de guerir les malades. Les rites de passage comprennent : la naissance (seclusion de la mere et de l'enfant), la puberte des filles (seclusion et danse ceremonielle), le premier gibier du jeune homme (rite de passage vers la maturite masculine), le mariage (negociations inter-bandes, echange de cadeaux) et la mort (inhumation rapide avec interdits alimentaires de deuil). Les ceremonies de chasse (prieres et invocations avant le depart, rite de premiere mise a mort) constituent des pratiques rituelles importantes.",
+      "symbols": "L'eland (grande antilope) est l'animal sacre central, associe a la puissance spirituelle et a l'energie de transe. Les peintures rupestres du Kalahari, oeuvre des ancetres Khoisan, constituent le patrimoine symbolique majeur. Les ornements en perles de coquilles d'oeuf d'autruche sont des symboles d'identite et d'appartenance. Les hochets portes lors des danses rituelles ont une charge symbolique forte. Le feu communautaire (foyer du campement) est le centre symbolique de la vie sociale.",
+      "artsAndMusic": "La musique Tshwa est caracterisee par le chant polyphonique des femmes (avec des techniques de yodel et d'overtone singing) et l'accompagnement rythmique par frappement des mains lors des danses de transe. Les instruments comprennent l'arc a bouche, le thumb piano (lamellophone), des hochets en coques de chrysalide et des grelots. La narration orale est la principale forme d'expression artistique : les contes mythologiques, les recits de creation et les histoires d'animaux sont transmis de generation en generation autour du feu. L'artisanat comprend la confection de bijoux en perles d'oeuf d'autruche, d'arcs et fleches en bois et tendons, de sacs en peau, et de nattes tressees.",
+      "spiritualities": "La cosmologie Tshwa partage les fondements de celle de l'ensemble des San : croyance en une divinite superieure bienfaisante (//Gauwa ou Hishe), et en des esprits des morts (//gauwasi) qui peuvent troubler les vivants. L'energie spirituelle (n/om) circule dans la nature et les etres vivants, et peut etre mobilisee lors des transes shamaniques pour guerir. La lune et les astres occupent une place importante dans la cosmologie. Un syncrétisme avec le christianisme est present dans les communautes sedentarisees en contact avec les missions protestantes depuis le XIXe siecle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Tshwa n'ont jamais developpe de royaumes ni de chefferies centralisees. Leur organisation en bandes mobiles de chasseurs-cueilleurs exclut toute forme de concentration durable du pouvoir. Ils sont absents des archives historiques coloniales comme acteurs politiques independants, toujours mentionnes en marge des chefferies tswana ou shona.",
+      "relationsWithNeighbors": "Les Tshwa ont ete progressivement subjugues par les groupes tswana (Botswana) et shona (Zimbabwe), qui les utilisaient comme main-d'oeuvre agricole et pastorale. Des echanges existaient : gibier, miel sauvage et plantes medicinales contre du betail, du metal et des produits cultures. La subordination aux chefferies tswana a entraine la perte progressive de leurs terres et de leur mode de vie traditionnel.",
+      "conflictsOrAlliances": "La politique coloniale britannique au Bechuanaland (Botswana) et en Rhodesie (Zimbabwe) a considere les Tshwa comme des sujets des chefferies bantoues voisines, sans leur reconnaitre de droits territoriaux propres. Apres l'independance, cette marginalisation a persiste dans les politiques botswanaises et zimbabweennes. L'organisation Survival International a soutenu les droits des Tshwa dans le cadre des luttes pour les droits des San au Botswana.",
+      "diaspora": "Une migration interne existe vers les centres urbains du Botswana (Francistown, Maun, Gaborone) ou des Tshwa deracinés se retrouvent dans une marginalite économique. La branche zimbabweenne (Tjwao de Matabeleland) constitue une communaute culturellement distincte sans former une diaspora au sens strict."
+    },
+    "demography": {
+      "totalPopulation": 5000,
+      "referenceYear": 2025,
+      "source": "Glottolog classe Tshuwau (hio) comme menace avec 781 locuteurs (estimate Brenzinger 2011). Kua (tyu) est classe comme menace (1 translation needed, Joshua Project). Estimation totale des Tshwa et assimiles : 3 000-6 000 individus au Botswana et au Zimbabwe. Botswana Joshua Project (2025) inclut les Kua (1 100 individus) parmi les groupes San documentés.",
+      "distributionByCountry": [
+        {
+          "country": "BWA",
+          "population": 4500,
+          "note": "Kalahari oriental, region de Nata, district de Central, zones frontieres avec le Zimbabwe"
+        },
+        {
+          "country": "ZWE",
+          "population": 500,
+          "note": "Matabeleland occidental, communaute Tjwao, seule langue khoisan du Zimbabwe constitutionnellement reconnue"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Tshwa language. https://en.wikipedia.org/wiki/Tshwa_language",
+      "Glottolog 5.3 — Northern Tshwa (tsoa1238), ISO 639-3 : hio. https://glottolog.org/resource/languoid/id/tsoa1238",
+      "Wiktionary — ISO 639-3 codes Africa : hio Tshuwau, tyu Kua. https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+      "SIL Ethnologue — Tshuwau (hio). https://www.ethnologue.com/language/hio/",
+      "SciELO — The case of Khoisan languages of Botswana. http://www.scielo.org.za/scielo.php?script=sci_arttext&pid=S2224-33802019000300012",
+      "Joshua Project — Botswana countries. https://joshuaproject.net/countries/bc",
+      "Wikipedia EN — Khoe languages. https://en.wikipedia.org/wiki/Khoe_languages",
+      "Wikipedia EN — Khoisan languages. https://en.wikipedia.org/wiki/Khoisan_languages",
+      "Brenzinger, Matthias. Language endangerment in Africa, 2011.",
+      "IWGIA — Indigenous World 2025. https://iwgia.org/"
+    ]
+  }
+}

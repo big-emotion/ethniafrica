@@ -1,0 +1,42 @@
+# Nom du peuple
+- Nom principal : Kambata
+- Auto-appellation : Kambata
+- Famille linguistique : Afro-asiatique – Couchitique (FLG_COUCHITIQUE)
+- Groupe : Couchitique oriental
+- Région historique : Kembata-Tembaro (Éthiopie)
+- Pays actuels : ETH
+- ID peuple : PPL_KAMBATA
+
+# 1. Ethnies incluses
+- Kambata
+- Tembaro
+- Alaba (proches culturalement)
+
+# 2. Origines
+- Groupe couchitique ancien de la vallée du Rift.
+- Histoire partagée avec Alaba et Hadiya.
+
+# 3. Organisation
+- Conseil des anciens.
+- Structures lignagères.
+
+# 4. Langue
+- Kambaata
+- ISO : ktb
+
+# 5. Culture
+- Rites agricoles saisonniers.
+- Musiques régionales.
+- Cuisine à base d’enset.
+
+# 6. Histoire
+- Région intégrée au royaume hawié.
+- Mouvements politiques régionaux contemporains.
+
+# 7. Démographie
+- Population : 1 400 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (ktb)
+- Kembata-Tembaro Cultural Office

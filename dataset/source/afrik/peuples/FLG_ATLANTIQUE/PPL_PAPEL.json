@@ -1,0 +1,105 @@
+{
+  "id": "PPL_PAPEL",
+  "nameMain": "Papel",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["GNB", "SEN", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Papel",
+      "selfAppellation": "Pepel / Papei / Oium / Moium",
+      "exonyms": ["Pepel", "Papei", "Pelels", "Oium", "Moium", "Papels"],
+      "originOfExonyms": "Le terme Papel est la designation portugaise adoptee des le XVIe siecle. L'endonyme Oium ou Moium (Oyum) designe le peuple dans sa propre langue. Pepel est la variante la plus repandue dans les sources anglophones et francophones modernes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Papel et Pepel sont utilises de maniere interchangeable en Guinee-Bissau. L'ancien president Nino Vieira etait membre de cette ethnie. Le quartier de Bissau appele Chao de Pepel porte le nom du peuple.",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "ethnoLinguisticGroup": "Bak (sous-famille Papel, branche atlantique Niger-Congo), proche des Mankagnes et Manjak",
+      "historicalRegion": "Region de Biombo et ile de Bissau (Guinee-Bissau littorale), royaume historique de Bissau",
+      "currentCountries": ["GNB", "SEN", "GIN"]
+    },
+    "ethnicities": [
+      "Clan N'nssassun (pluriel Bossassun), ligne de Punguenhum, detenteurs du commandement royal, representes par le Leopard, noms de famille Le, region de Bissau",
+      "Clan N'nsso (pluriel Bosso), ligne de Mala, agriculteurs, representes par la Grenouille, noms de famille Co, region de Bandim (Bissau)",
+      "Clan N'ndjukomo (pluriel Bodjukumo), ligne d'Intsoma, guerriers, representes par la Hyene, noms de famille Ca, region d'Alto Crim (Bissau)",
+      "Clan N'nsafinte (pluriel Bosafinte), ligne de Djokom, representes par le Lievre, noms de famille Te, region de Safim (Biombo)",
+      "Clan N'niga (pluriel Boiga), ligne de Kliker, representes par la Chevre, noms de famille Sa, region de Calequir (Bissau)",
+      "Clan N'nssuzu (pluriel Bossuzu), ligne d'Intende, representes par l'Oryctérope, noms de famille Dju, region de Mindara (Bissau)",
+      "Clan N'nttat (pluriel Bottat), ligne d'Intchipolo, grimpeurs de palmiers et producteurs de vin de palme, representes par le Singe, noms de famille Indi, region de Bissalanca (Bissau)"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale, le fondateur Mecau, fils d'un roi du royaume de Quinara au sud du fleuve Geba, s'etablit a Bissau lors d'une expedition de chasse, attire par la fertilite des terres. Il fit venir sa soeur enceinte Punguenhum et six epouses, dont descendirent les sept clans principaux. Des etudes genetiques montrent une lignee paternelle distincte avec des haplogroupes E1-M33 et L3e2b, suggerant une migration depuis l'Afrique de l'Est et une arrivee relativement recente en Guinee-Bissau.",
+      "formationPeriod": "Formation du royaume de Bissau avant le XVIe siecle. Premier contact europeen documente en 1605 avec le roi Equende. Consolidation du pouvoir papel entre le XVIIe et le debut du XXe siecle.",
+      "migrationRoutes": [
+        "Migration presumee depuis le royaume de Quinara (sud du fleuve Geba) vers l'ile et la peninsule de Bissau",
+        "Expansion vers la region de Biombo sur le continent",
+        "Presence en Casamance (Senegal) documentee depuis la periode coloniale"
+      ],
+      "historicalSettlementZones": [
+        "Ile et ville de Bissau (Guinee-Bissau)",
+        "Region de Biombo, dont la capitale Quinhame et les localites de Safim, Bandim, Antula, Prabis",
+        "Casamance meridionale (Senegal)"
+      ],
+      "unificationsOrDivisions": "Le royaume de Bissau et ses Etats vassaux dans le Biombo utilisaient une succession matrilineaire : le fils de la soeur maternelle du souverain heritait du trone. En 1694, le roi Bacompol Co se convertit au catholicisme, devenant le premier roi chretien de Bissau, ce qui crea une division entre les factions pro-portugaises et traditionalistes.",
+      "externalInfluences": "Contact intensif avec les Portugais des le XVIe siecle. La conversion de Bacompol Co au catholicisme en 1694 et l'envoi de son fils Manuel a Lisbonne symbolisent l'influence portugaise. Les Papel refuserent cependant de fournir main-d'oeuvre ou materiaux pour la construction des forts portugais. Influence genetique possible de migrations d'Afrique de l'Est (haplogroupe L3e2b) et d'Afrique du Nord ou d'Europe (haplogroupe U5b1b).",
+      "majorHistoricalEvents": "Guerres contre les Portugais de 1684 a 1915 : batailles majeures en 1844, 1884-1885, 1891, 1894, 1904 et 1915. Mort du roi N'Kanande Ka en 1915 (torture et enterrement vivant par Teixeira Pinto), marquant la fin de la resistance Papel. Participation active a la traite negriere comme exportateurs d'esclaves en echange d'ivoire et de cire. La communaute afro-portugaise Lancado joua un role d'intermediaire entre Papel et Europeens."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Monarchie avec succession matrilineaire : le fils de la soeur maternelle du roi heritait du pouvoir, ou le parent masculin le plus proche dans la lignee maternelle des grands-parents du roi. Le roi de Bissau exercait une autorite sur des Etats vassaux dans le Biombo. Tous les traders europeens etaient soumis a une taxe payable au roi de Bissau.",
+      "clanOrganization": "Sept clans principaux (N'nssassun, N'nsso, N'ndjukomo, N'nsafinte, N'niga, N'nssuzu, N'nttat), chacun associe a un animal totemique, un territoire historique et des noms de famille specifiques. L'appartenance clanique se transmettait traditionnellement par la mere, bien que le nom du pere ait pu etre adopte ulterieurement.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages claniques determinent les droits, les fonctions et le statut social. Le clan Bossassun (N'nssassun) est hereditairement charge des fonctions royales et nobles (Jagras en creole bissau-guineen).",
+      "religiousAuthority": "Majorite catholique, avec des pratiques animistes persistantes. Le culte des ancetres est central : la ceremonie Toka Chur, organisee de quelques mois a plusieurs annees apres les funerailles, confere un prestige social important. Les premiers missionnaires catholiques etaient presents a Bissau entre 1683 et 1686."
+    },
+    "languages": {
+      "mainLanguage": "Papel (Pepel, Papei, Oium/Moium ; ISO 639-3 : pbo)",
+      "isoCodes": ["pbo"],
+      "dialects": [
+        "Dialecte de Biombo (uyomq, region sud-ouest)",
+        "Dialecte de Safim (safli, region nord-est)"
+      ],
+      "vehicularRole": "Le papel est la langue maternelle de la communaute papel de Guinee-Bissau. Il appartient a la famille Bak (Niger-Congo, branche atlantique) et est proche des langues Mankagnes et Mandjak. En 2022, environ 160 000 locuteurs sont recenses. Le creole bissau-guineen (Kriol) est utilise comme langue vehiculaire inter-ethnique. L'ecriture est en alphabet latin."
+    },
+    "culture": {
+      "majorRites": "La ceremonie funeraire Toka Chur est un rite essentiel de la culture papel, organise de quelques mois a plusieurs annees apres l'enterrement, avec une importance sociale et prestige lie a son organisation. Les danses rituelles et ceremonies ancestrales sont perpetuees dans la region de Biombo. Culte des ancetres central a la vie spirituelle.",
+      "symbols": "Chaque clan papal est associe a un animal totemique : Leopard (Bossassun), Grenouille (Bosso), Hyene (Bodjukumo), Lievre (Bosafinte), Chevre (Boiga), Oryctérope (Bossuzu), Singe (Bottat). Ces animaux representent les caracteristiques et fonctions historiques de chaque lignee.",
+      "artsAndMusic": "Danses rituelles et musiques ceremoniales perpetuees dans la region de Biombo. Les noms de famille d'origine portugaise (Pereira, Lopes, Vieira, Correia, Monteiro, Ca) refletent le syncrétisme culturel propre aux Papel. Les guerriers Papel etaient reputes pour leur maitrise des pirogues de guerre sur le fleuve Geba.",
+      "spiritualities": "La majorite des Papel est catholique romaine, heritage direct de la conversion de Bacompol Co en 1694 et des missions portugaises subsequentes. Une part significative pratique l'animisme ou un syncrétisme catholico-animiste. Le culte des ancetres reste une composante spirituelle fondamentale independamment de l'affiliation religieuse formelle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume de Bissau, dont les rois exercaient leur autorite sur l'ile de Bissau et des Etats vassaux dans le Biombo. Le royaume controlait l'acces commercial a l'un des meilleurs ports naturels de la cote ouest-africaine. Les noms des rois Papel documentees : Equende (1605, 1663), Bacompol Co (1687-1696, premier roi chretien), Incinha Te, Palan Co, N'Kanande Ka (mort en 1915).",
+      "relationsWithNeighbors": "Relations complexes avec les Balanta et les Manjacos. Les Papel et les Balanta s'allierent contre les Portugais en 1844. Linguistiquement et culturellement proches des Mankagnes et Manjak. Conflits historiques avec les Biafada. Presence a Casamance (Senegal) temoigne d'une expansion regionale.",
+      "conflictsOrAlliances": "Longue resistance anti-coloniale contre les Portugais (1684-1915), consideree parmi les plus sanglantes de toute la campagne de pacification de la Guinee-Bissau. Alliance tactique avec les Balanta en 1844. Aide aux Portugais lors de la liberation du fort de Cacheu en 1680. Les guerres de 1891, 1894 et 1904 furent des victoires locales Papel. La defaite finale de 1915 mit fin a la resistance apres la mort du roi N'Kanande Ka.",
+      "diaspora": "Presence en Casamance (Senegal) et en Guinee. Environ 9 000 Papel vivent hors de la Guinee-Bissau selon les estimations. Quartier Chao de Pepel a Bissau comme centre communautaire historique."
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Wikipedia EN (Papel people, 183 000 en Guinee-Bissau selon le recensement de 2009) et les estimations de 7% de la population de Guinee-Bissau (2 249 515 en 2025, source Worldometer). Papel language (Wikipedia) indique 160 000 locuteurs en 2022. Les Papel representent environ 7-8% de la population de la Guinee-Bissau, auxquels s'ajoutent les communautes en Casamance et Guinee.",
+      "distributionByCountry": [
+        {
+          "country": "GNB",
+          "population": 185000,
+          "note": "Region de Biombo (capitale Quinhame), ile et ville de Bissau. Environ 79 000 locuteurs a Bissau seule."
+        },
+        {
+          "country": "SEN",
+          "population": 10000,
+          "note": "Casamance (region de Ziguinchor)"
+        },
+        {
+          "country": "GIN",
+          "population": 5000,
+          "note": "Conakry et zones frontalieres"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN, Papel people : https://en.wikipedia.org/wiki/Papel_people",
+      "Wikipedia EN, Papel language : https://en.wikipedia.org/wiki/Papel_language",
+      "Ethnologue, Papel (pbo) : https://www.ethnologue.com/language/pbo",
+      "Glottolog, Papel : https://glottolog.org/resource/languoid/id/pape1239",
+      "Joshua Project, Papel in Guinea-Bissau : https://joshuaproject.net/people_groups/14307/PU",
+      "Les Pepels (ou Papels) - Guinee-Bissau : https://www.guinee-bissau.net/papels.php",
+      "Britannica, Biombo region : https://www.britannica.com/place/Biombo-region-Guinea-Bissau"
+    ]
+  }
+}

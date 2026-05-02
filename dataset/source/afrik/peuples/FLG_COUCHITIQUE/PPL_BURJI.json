@@ -1,0 +1,100 @@
+{
+  "id": "PPL_BURJI",
+  "nameMain": "Burji",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH", "KEN"],
+  "content": {
+    "appellations": {
+      "mainName": "Burji",
+      "selfAppellation": "Burje / Dhaashi",
+      "exonyms": [
+        "Amara-Burji (terme utilise dans certaines sources)",
+        "Bembala / Bambala (noms alternatifs de la langue)"
+      ],
+      "originOfExonyms": "Burje est l'appellation propre en langue burji. Dhaashi est un autonym linguistique. Le terme Amara-Burji apparait dans des sources comme Joshua Project pour distinguer les Burji d'Ethiopie.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Burji est couramment utilise en anglais, amharique et swahili. Les locuteurs se designent comme Burje ou Dhaashi. Au Kenya, la communaute burji souffre d'une marginalisation documentee : le recensement de 1978 les avait elimines comme groupe distinct, avant de les readmettre en 1989.",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "Couchitiques des hautes terres orientales (Highland East Cushitic)",
+      "historicalRegion": "Sud de l'Ethiopie — montagnes au sud des lacs Abaya et Chamo, zone de Burji (region SNNPR, puis region Ethiopie du Sud) ; nord du Kenya (Marsabit, Moyale)",
+      "currentCountries": ["ETH", "KEN"]
+    },
+    "ethnicities": [
+      "Burji d'Ethiopie (Gara Burji et zones voisines du sud d'Oromia)",
+      "Gubba (second grand groupe de l'entite Amara-Burji)",
+      "Burji du Kenya (Marsabit, Moyale, Nairobi)"
+    ],
+    "origins": {
+      "ancientOrigins": "Trois hypotheses coexistent sur les origines des Burji. La plus acceptee par les anciens situe leur lieu d'origine a Liban, une region situee entre les rivieres Dawwa et Gannale, autour de l'actuelle Negele Borenna (carrefour Ethiopia-Kenya-Somalie). Les ancetres de trois nationalites cohabiterent dans ce Worra Liban : les Oromo (Borana), les Burji et les Konso, adorant ensemble le meme Dieu du ciel (Wonnto). Une deuxieme hypothese fait venir les Burji du nord de l'Ethiopie (region Amhara), passant par la zone Halaba et la riviere Gidabo vers le sud-est. Une troisieme hypothese les situe a l'origine dans la region centrale de l'Ethiopie (Halaba-Sidama).",
+      "formationPeriod": "Apres la separation d'avec les Borana et les Konso dans le Worra Liban, le premier chef burji, le roi Ammarro, etablit un nouvel Etat appele Biya Ammarro dans le lieu-dit Abbunno (nord-est de l'actuelle ville de Yavelo), il y a environ 700 ans. Les Burji etablirent des relations avec les Gedeo (voisins de Yebasire, Gattallo, Tore) et les Kore (peuple Ba'ad, voisins trouves en escaladant les montagnes entre les deux rifts). Burji et Kore formerent un Etat commun appele Ammarro avant de se separer il y a environ 300 ans.",
+      "migrationRoutes": [
+        "Migration depuis Worra Liban (autour de Negele Borenna) vers le nord et l'ouest, s'etablissant dans la zone de Gara Burji",
+        "Migration secondaire vers le Kenya (debut du 20e siecle) : les Burji sont arrives a Marsabit a l'initiative du commissaire britannique du district de Marsabit"
+      ],
+      "historicalSettlementZones": [
+        "Gara Burji (zone principale en Ethiopie, sud du lac Chamo et de l'Abaya)",
+        "Zone de Burji (region Ethiopie du Sud, anciennement SNNPR)",
+        "Zone Borana (Yabelo, Mega, Hidlola, Moyale) et zone West Guji (Bule Hora) en Oromia",
+        "Marsabit et Moyale (Kenya du Nord)",
+        "Nairobi (diaspora kenya)"
+      ],
+      "unificationsOrDivisions": "Les Burji sont divises en deux grands groupes (Burji et Gubba) formant l'entite Amara-Burji. Ils partageaient un Etat commun avec les Kore (peuple Amaro) avant une separation il y a environ 300 ans. La dispersion vers le Kenya au debut du 20e siecle a cree une seconde communaute distincte.",
+      "externalInfluences": "Relations historiques avec les Borana, Konso, Gedeo et Kore. Domination ethiopienne a partir du 19e siecle. Presence coloniale britannique au Kenya ayant facilite l'implantation burji a Marsabit. Islamisation progressive au Kenya (majorite sunnite) et christianisation en Ethiopie (orthodoxe et evangelique). Globalisation et modernisation menacant les traditions.",
+      "majorHistoricalEvents": "Fondation de Biya Ammarro par le roi Ammarro il y a environ 700 ans. Formation d'un Etat commun Ammarro avec les Kore. Separation et constitution d'entites distinctes il y a environ 300 ans. Migration vers le Kenya au debut du 20e siecle. Exclusion du recensement kenyan de 1978, reintegration en 1989, nouvelle exclusion en 1999. Marginalisation documentee par Cultural Survival (2010). Publication du Nouveau Testament en burji en 1993."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en cinq institutions de gouvernance indigene : Woma (conseil des anciens), Dayna (institution juridique), Masha (institution executive), Jal'aba (representants territoriaux) et Hayoo (institution religieuse). Ces cinq institutions constituent le systeme politique traditionnel burji, documente dans les etudes academiques recentes (Jilo Wolde Bulcha, 2024).",
+      "clanOrganization": "Structure patrilineaire organisee autour de clans et de lignages. Les deux grands groupes (Burji et Gubba) constituent la charpente de l'organisation sociale. Organisation clanique regissant les mariages, les droits fonciers et les alliances.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires transmettent l'identite, les droits fonciers et les responsabilites sociales. La connaissance genealogique est indispensable pour les alliances matrimoniales et la participation aux institutions de gouvernance.",
+      "religiousAuthority": "Autorite des anciens religieux (institution Hayoo) pour les pratiques traditionnelles. Autorite des imams pour les Burji musulmans (majorite au Kenya). Autorite des pasteurs et pretres pour les Burji chretiens (majorite en Ethiopie)."
+    },
+    "languages": {
+      "mainLanguage": "Burji (Dhashete / Burjatee)",
+      "isoCodes": ["bji"],
+      "dialects": [
+        "Burji d'Ethiopie (Dhashete) — parle dans le Gara Burji",
+        "Burji du Kenya — avec des influences du swahili, du borana et de l'anglais"
+      ],
+      "vehicularRole": "Le burji (code ISO bji, aussi appele Bembala ou Bambala dans certaines sources) comptait environ 49 000 locuteurs en Ethiopie et 36 900 au Kenya selon les recensements de 2007-2009, soit environ 86 000 au total. Des estimations recentes (EveryLanguage.com) donnent 150 000 a 200 000 locuteurs. Il appartient au groupe Highland East Cushitic. La langue a une affinite lexicale de plus de 41% avec le sidama. Le burji presente une similitude lexicale avec le kambaata et le sidama, ses voisins couchitiques. L'amharique, l'oromo, le swahili et l'anglais sont utilises selon les contextes nationaux."
+    },
+    "culture": {
+      "majorRites": "Ceremonies d'initiation et de transition de classe d'age. Rites de naissance, mariage et funerailles. Pratiques de sacrifice a Wonnto (Dieu supreme) pour obtenir protection et pardon. Offrandes d'animaux (moutons ou chevres males) pour se proteger des mauvais esprits (Yarra Ayyaana). Priere bipartite: l'invocation commence par Wonnto...wonnto, puis aboo...aboo (pere) ou endoo...endoo (mere), en reference a Dieu puis aux ancetres communs.",
+      "symbols": "Wonnto (Dieu supreme du ciel) comme concept symbolique fondateur. Les ancetres communs (aboo) comme mediateurs entre les vivants et le divin. La langue Dhashete comme vecteur identitaire. L'agriculture du teff et des haricots Buraa Burjee comme identite economique et culturelle.",
+      "artsAndMusic": "Musique traditionnelle burji avec style distinctif reconnu en Ethiopie et au Kenya (Joshua Project). Recueil de proverbes burji traduits en anglais, francais et swahili, disponible en ligne. Publication du Nouveau Testament en burji (1993) temoignant de l'existence d'une litterature ecrite. Artisanat : poterie, tissage. Traditions d'agriculture intensive sur terrasses (fermiers du desert : les Burji sont reputes experts agricoles, comparables aux Konso voisins).",
+      "spiritualities": "Croyance traditionnelle centree sur DhetHila'aley-Wonnto (Dieu supreme unique du ciel), qualifie de Buba-ntau-maanoWonnto (le Pere), Bubintaa-Dantaa-Wonnto (le Createur), Bubintaa-Dahntaa-Wonnto (le Tout-Puissant) et Dhugaat-aaWonnto (le Veritable). Croyance aux ancetres communs comme entites mediateurs habitant un etat divin, protecteurs des vivants et de leurs valeurs ethiques. Croyance aux esprits (Dansaa Ayyaana, bon esprit venant de Dieu ; Yarra Ayyaana, mauvais esprit). Les Murrumi sont les mediums des mauvais esprits. En Ethiopie : majorite orthodoxe ethiopienne et evangelique. Au Kenya : majorite sunnite musulmane. Syncretisme courant entre croyances traditionnelles et religions abrahamiques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Fondation de l'Etat Biya Ammarro sous le roi Ammarro, il y a environ 700 ans. Formation d'un Etat commun Amaro avec les Kore (peuple Ba'ad). Chefferies traditionnelles regies par les cinq institutions de gouvernance (Woma, Dayna, Masha, Jal'aba, Hayoo).",
+      "relationsWithNeighbors": "Cohabitation historique avec les Borana et les Konso dans le Worra Liban. Relations etroites (fraternite, mariage, partage spirituel) avec les Gedeo et les Kore. Au Kenya, les Burji vivent aux cotes des Borana, Gabra, Rendile et Garri de Marsabit.",
+      "conflictsOrAlliances": "Separation pacifique d'avec les Borana et les Konso suite a un desaccord ancestral. Formation et dissolution de l'Etat commun avec les Kore il y a environ 300 ans. Migration au Kenya facilitee par les Britanniques au debut du 20e siecle, creant une situation de minorite marginalisee. Exclusion des recensements kenyans a plusieurs reprises (1978, 1999), denoncee par Cultural Survival.",
+      "diaspora": "Les Burji du Kenya constituent une diaspora interne issue de la migration du debut du 20e siecle depuis Yavelo (Ethiopie) vers Marsabit. Ils sont concentres a Marsabit, Moyale et Nairobi, ou ils se sont distingues comme acteurs economiques majeurs de la province orientale superieure du Kenya. Diaspora internationale dans les pays occidentaux, limitee."
+    },
+    "demography": {
+      "totalPopulation": 165000,
+      "referenceYear": 2025,
+      "source": "Recensements ethiopiens et kenyans 2007-2009 : 49 000 en Ethiopie, 36 900 au Kenya (Ethnologue/Wikipedia). PeopleGroups.org (2025) : 115 000 en Ethiopie. EveryLanguage.com : 150 000-200 000 locuteurs. Estimation consolidee 2025 : environ 165 000.",
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 130000,
+          "note": "Zone de Burji (sud de l'Ethiopie, region Ethiopie du Sud), zones Borana et West Guji (Oromia), pres des lacs Abaya et Chamo"
+        },
+        {
+          "country": "KEN",
+          "population": 35000,
+          "note": "Principalement Marsabit, Moyale (Kenya du Nord) et Nairobi ; acteurs economiques reconnus dans la province orientale superieure"
+        }
+      ]
+    },
+    "sources": [
+      "Jilo Wolde Bulcha — History and Culture of Burji People in Ethiopia. American Research Journal of History and Culture, Vol 10 No.1, 2024. https://arjonline.org/papers/arjhc/v10-i1/2.pdf",
+      "Cultural Survival — Burji Recognition in the Kenya Constitution. 2010. https://www.culturalsurvival.org/publications/cultural-survival-quarterly/burji-recognition-kenya-constitution",
+      "Joshua Project — Burji in Ethiopia. https://joshuaproject.net/people_groups/11027/ET",
+      "Wikipedia EN — Burji language. https://en.wikipedia.org/wiki/Burji_language",
+      "Simple English Wikipedia — Burji language. https://simple.wikipedia.org/wiki/Burji_language",
+      "Google Arts and Culture / National Museums of Kenya — Burji Farmers of the Desert. https://artsandculture.google.com/story/burji-farmers-of-the-desert-the-story-of-the-expert-agriculturalist-national-museums-of-kenya/GwWxLDJUezlLIA",
+      "SIL Ethnologue — Burji language (bji). https://www.ethnologue.com/language/bji/"
+    ]
+  }
+}

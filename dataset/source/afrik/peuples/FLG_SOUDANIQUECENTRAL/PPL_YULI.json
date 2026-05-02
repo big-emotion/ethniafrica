@@ -1,0 +1,103 @@
+{
+  "id": "PPL_YULI",
+  "nameMain": "Yulu",
+  "languageFamilyId": "FLG_SOUDANIQUECENTRAL",
+  "currentCountries": ["CAF", "SSD", "SDN"],
+  "content": {
+    "appellations": {
+      "mainName": "Yulu",
+      "selfAppellation": "Yulu",
+      "exonyms": ["Youlou (graphie francaise)", "Yulo"],
+      "originOfExonyms": "Le nom Yulu est a la fois l'endonyme et l'exonyme. La graphie Youlou est utilisee dans les documents francophones. Le nom est derive selon la tradition du mot designant leur territoire ancestral autour de la colline Yulu (Jebel Yulu) dans l'actuel Soudan du Sud.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Yulu est le terme couramment utilise dans la litterature linguistique et anthropologique. Le groupe est peu connu et rarement mentionne dans les sources grand public.",
+      "linguisticFamily": "FLG_SOUDANIQUECENTRAL",
+      "ethnoLinguisticGroup": "Soudanique central, branche Bongo-Bagirmi (sous-groupe Yulu-Binga)",
+      "historicalRegion": "Collines de Jebel Yulu (Bahr el Ghazal occidental, Soudan du Sud), vallee de la riviere Yata, Ouanda Djalle (RCA)",
+      "currentCountries": ["CAF", "SSD", "SDN"]
+    },
+    "ethnicities": [
+      "Yulu proprement dit (locuteurs de la langue yulu autour de Jebel Yulu et dans la vallee de la Yata)",
+      "Binga (sous-groupe apparente, present en RDC et Soudan du Sud, classe sous Yulu-Binga)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Yulu ne sont pas autochtones de leur region actuelle. Leur mythologie fondatrice et les traditions orales indiquent qu'ils ont migre depuis la region du Nil Bleu, en empruntant une longue route vers le nord-ouest a travers le Darfour. Ils font partie de la branche Bongo-Bagirmi de la famille soudanienne centrale et sont classes sous le sous-groupe Yulu-Binga par les linguistes (Glottolog : yulu1243).",
+      "formationPeriod": "Selon les traditions orales, les Yulu ont sejourn brievement au Jebel Mara (massif du Darfour) vers l'an 1795 environ, avant d'etre chasses par les pressions des Fur. Sous la direction de leur chef Koko (ou Koom), ils ont alors migre vers l'ouest pour s'etablir dans la vallee de la riviere Yata et les environs de Jebel Yulu. Des dispersions ulterieures, provoquees par les razzias des marchands d'esclaves arabes (Zubayr Pasha et autres), ont pousse certains groupes vers l'ouest dans l'actuelle RCA.",
+      "migrationRoutes": [
+        "Origine legendaire dans la region du Nil Bleu",
+        "Migration a travers le Darfour, avec sejour au Jebel Mara vers 1795",
+        "Etablissement dans la vallee de la riviere Yata et la region de Jebel Yulu (Bahr el Ghazal occidental)",
+        "Dispersion dans l'actuelle RCA (sous-prefecture d'Ouanda Djalle) suite aux razzias des esclavagistes arabes au 19e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Jebel Yulu et vallee de la riviere Yata (Bahr el Ghazal occidental, Soudan du Sud)",
+        "Kafia Kingi et ses environs (zone de contact Soudan/Soudan du Sud)",
+        "Sous-prefectures d'Ouanda Djalle et Ouadda (RCA)",
+        "Darfour meridional (Soudan) pour la diaspora de guerre"
+      ],
+      "unificationsOrDivisions": "Les Yulu etaient traditionnellement organises en clans sous l'autorite d'un chef supreme. Cette organisation a ete gravement affaiblie par les razzias des marchands d'esclaves arabes du 19e siecle (Zubayr Pasha et ses associes), les conflits avec les Azande voisins, et les guerres civiles successives au Soudan du Sud. Le groupe est aujourd'hui disperse en plusieurs fragments dans trois pays.",
+      "externalInfluences": "Razzias devastatrices des marchands d'esclaves arabes au 19e siecle, notamment de Zubayr Pasha Rahma Mansur. Conflits recurrents avec les Azande, voisins plus puissants au sud. Islamisation et arabisation depuis les contacts avec les negociants arabes : adoption de l'arabe comme langue seconde et de l'islam sunnite. Influence de l'administration coloniale anglo-egyptienne puis soudanaise. Guerres civiles du Soudan (1955-1972, 1983-2005) et du Soudan du Sud (2013-) provoquant de nouvelles migrations et dispersions.",
+      "majorHistoricalEvents": "Vers 1795 : etablissement au Jebel Mara puis expulsion par les Fur. Premiere moitie du 19e siecle : etablissement dans la vallee de la Yata sous le chef Koko. Deuxieme moitie du 19e siecle : razzias devastatrices des esclavagistes arabes (Zubayr Pasha). Conference de Rejaf de 1928 : le yulu est inclus dans les langues pour lesquelles un systeme d'ecriture latin est standardise. Independance du Soudan (1956) puis du Soudan du Sud (2011) : integration forcee dans des Etats pluriethniques. Enquete de 2013 : presence confirmee de Yulu ethniques au comte de Raja, Soudan du Sud."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies clanique traditionelle. A l'apogee de leur cohesion, les differents clans Yulu etaient federes sous l'autorite d'un chef supreme (koom) dont la legitimite etait a la fois politique et religieuse. Les guerres et dispersions ont fragmente cette structure : la dispersion dans plusieurs parties du Bahr el Ghazal occidental et du Darfour meridional a affaibli les liens sociaux, l'autorite traditionnelle et le leadership.",
+      "clanOrganization": "Differents clans Yulu avaient chacun leurs propres chefs de clan, places sous l'autorite globale du chef supreme (koom). Les liens interclans ont ete gravement deteriores par les dispersions successives liees aux razzias et aux guerres.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'appartenance clanique et les alliances. La pratique de l'heritage de la femme (epouse du frere defunt reprise par un frere survivant) est attestee, comme dans d'autres communautes du Soudan du Sud, indiquant un systeme patrilineaire fort.",
+      "religiousAuthority": "Pratique du Sunni islam, adopte en consequence du contact avec les marchands arabes. Conservation paralele de croyances traditionnelles africaines : port de charmes et d'amulettes, croyance en des esprits, recours a des mediums, devins et guerisseurs. Pratiques de mariage, funerailles et denominations d'enfants selon les traditions islamiques."
+    },
+    "languages": {
+      "mainLanguage": "Yulu (youl)",
+      "isoCodes": ["yul"],
+      "dialects": [
+        "Variete de Soudan du Sud (Bahr el Ghazal, autour de Jebel Yulu)",
+        "Variete de RCA (sous-prefectures d'Ouanda Djalle et Ouadda)"
+      ],
+      "vehicularRole": "Le yulu est une langue minoritaire et en danger (estimee a 7 000-13 000 locuteurs). Il est classe dans la branche Bongo-Bagirmi de la famille soudanienne centrale (Glottolog yulu1243). La langue a ete repertoriee et incluse dans la standardisation de l'ecriture latine des langues de la region lors de la Conference de Rejaf en 1928. De nombreux Yulu ont adopte l'arabe comme langue principale, notamment au Soudan, ou les generations instruites preferent l'arabe. En RCA, certains parlent le sango vehiculaire."
+    },
+    "culture": {
+      "majorRites": "Rites de mariage impliquant une longue preparation (1-2 ans de travaux agricoles pour constituer la dot) et une negociation formelle entre les families. Le premier-ne appartient a la famille de la mere et est pris en charge par ses oncles maternels vers l'age de 7 ans. Les ceremonies de nomination de l'enfant ont lieu 7 jours apres la naissance. Les funerailles sont differees jusqu'a ce que tous les membres de la famille proches soient arrives, meme si cela prend plusieurs jours. Les enfants ne peuvent pas voir le corps du defunt (protection contre les mauvais reves). L'heritage de la femme (levirat) est pratique : apres la mort du mari, la famille decide quel homme du lignage reprend la veuve.",
+      "symbols": "Le miel est un produit emblematique de l'economie yulu, la production de miel etant l'une de leurs activites principales. La colline de Jebel Yulu est le symbole territorial et identitaire central du groupe.",
+      "artsAndMusic": "Artisanat domestique lie a l'agriculture et la chasse (outils, corbeilles, nattes). Traditions orales transmises oralement de generation en generation comprenant des recits des migrations depuis le Nil Bleu, des contes sur les conflits avec les Fur et les razzias arabes, et des genealogies clanique. Musique vocale et percussive lors des ceremonies.",
+      "spiritualities": "Syncrétisme entre l'islam sunnite (adopte au contact des marchands arabes) et les croyances animistes traditionnelles africaines. Croyances en des esprits pouvant causer maladies et malheurs. Recours a des mediums, devins et autres specialistes spirituels. Port de charmes et amulettes protegeant contre les forces malveillantes. Celebrations islamiques des naissances, mariages et funerailles selon les traditions muslimanes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Yulu n'ont pas developpe de royaume centralise. Leur organisation en chefferies clanique etait de taille reduite. Le chef Koko (Koom) est la figure la plus marquante de leur histoire collective, ayant guide le groupe lors de son etablissement dans la vallee de la Yata au debut du 19e siecle.",
+      "relationsWithNeighbors": "Conflits recurrents et violents avec les Azande (voisins plus puissants) qui ont contribue a desorganiser la societe yulu. Relations commerciales et parfois conflictuelles avec les Fur (qui les ont chasses du Jebel Mara). Contacts avec les marchands arabes soudanais qui ont islamise et arabise une partie du groupe mais aussi organise des razzias contre eux.",
+      "conflictsOrAlliances": "Expulsion du Jebel Mara par les Fur (vers 1795). Razzias des marchands d'esclaves arabes du 19e siecle (Zubayr Pasha) qui ont provoque la dispersion et la desintegration sociale du groupe. Conflits avec les Azande dans la zone de contact. Guerres civiles du Soudan (1955-2005) et du Soudan du Sud (2013-2020) provoquant de nouvelles migrations de Yulu vers le Darfour septentrional.",
+      "diaspora": "Diaspora de guerre dans le Darfour septentrional (Soudan) ou de nombreux Yulu ont fui les conflits du Soudan du Sud. Petits groupes disperses entre la RCA, le Soudan du Sud et le Soudan."
+    },
+    "demography": {
+      "totalPopulation": 15000,
+      "referenceYear": 2025,
+      "source": "SIL Ethnologue (2024) : 7 000 a 13 000 locuteurs (environ 4 000 en RCA, 3 000 au Soudan). PeopleGroups.org : 8 100 au Soudan, 4 000 en RCA. Wikipedia Yulu language (7 000-13 000). South Sudan ethnic groups list : 2 500 au Soudan du Sud. Total estime a environ 15 000 en 2025 en tenant compte de la croissance demographique.",
+      "distributionByCountry": [
+        {
+          "country": "CAF",
+          "population": 6000,
+          "note": "Sous-prefectures d'Ouanda Djalle et Ouadda, region nord-est de la RCA"
+        },
+        {
+          "country": "SSD",
+          "population": 4000,
+          "note": "Bahr el Ghazal occidental, comtes de Raja, region de Jebel Yulu"
+        },
+        {
+          "country": "SDN",
+          "population": 5000,
+          "note": "Darfour meridional et occidental, diaspora de guerre"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Yulu language. https://en.wikipedia.org/wiki/Yulu_language",
+      "Wikipedia EN — Yulu people. https://en.wikipedia.org/wiki/Yulu_people",
+      "101 Last Tribes — Yulu people. https://www.101lasttribes.com/tribes/yulu.html",
+      "Glottolog — Yulu-Binga (yulu1243). https://glottolog.org/glottolog?iso=yul",
+      "SIL Ethnologue — Yulu (yul). https://www.ethnologue.com/language/yul/",
+      "Joshua Project — Yulu in Central African Republic. https://joshuaproject.net/people_groups/16070/CT",
+      "PeopleGroups.org — Yulu of Sudan. https://peoplegroups.org/people_groups/pg012172/",
+      "Wikipedia EN — List of ethnic groups in South Sudan. https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_South_Sudan"
+    ]
+  }
+}

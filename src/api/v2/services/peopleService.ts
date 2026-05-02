@@ -2,7 +2,6 @@
  * People Service - Business logic for peoples
  */
 
-import { unstable_cache } from "next/cache";
 import {
   getAllAfrikPeoples,
   getAfrikPeopleById,
@@ -11,13 +10,6 @@ import {
 import type { People } from "@/types/afrik";
 import type { PaginatedResult } from "./countryService";
 
-// Cache with 24h revalidation
-const getCachedAllPeoples = unstable_cache(
-  async () => getAllAfrikPeoples(),
-  ["afrik-peoples-all"],
-  { revalidate: 86400 }
-);
-
 /**
  * Get paginated list of peoples
  */
@@ -25,7 +17,7 @@ export async function getPeoples(
   page: number = 1,
   perPage: number = 20
 ): Promise<PaginatedResult<People>> {
-  const all = await getCachedAllPeoples();
+  const all = await getAllAfrikPeoples();
   const start = (page - 1) * perPage;
   const data = all.slice(start, start + perPage);
   return { data, total: all.length };
@@ -33,26 +25,18 @@ export async function getPeoples(
 
 /**
  * Get a single people by PPL_ ID
+ * Note: Individual items use direct query for now (less critical than lists)
  */
 export async function getPeopleById(id: string): Promise<People | null> {
-  const cachedGetPeople = unstable_cache(
-    async () => getAfrikPeopleById(id),
-    [`afrik-people-${id}`],
-    { revalidate: 86400 }
-  );
-  return await cachedGetPeople();
+  return await getAfrikPeopleById(id);
 }
 
 /**
  * Get peoples by language family
+ * Note: Filtered queries use direct query for now (less critical than lists)
  */
 export async function getPeoplesByLanguageFamily(
   familyId: string
 ): Promise<People[]> {
-  const cachedGetPeoplesByFamily = unstable_cache(
-    async () => getAfrikPeoplesByLanguageFamily(familyId),
-    [`afrik-peoples-by-family-${familyId}`],
-    { revalidate: 86400 }
-  );
-  return await cachedGetPeoplesByFamily();
+  return await getAfrikPeoplesByLanguageFamily(familyId);
 }

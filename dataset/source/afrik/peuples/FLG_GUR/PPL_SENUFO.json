@@ -1,0 +1,132 @@
+{
+  "id": "PPL_SENUFO",
+  "nameMain": "Senufo",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["CIV", "MLI", "BFA", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Senufo",
+      "selfAppellation": "Senufo / Syénfo / Syénambélé",
+      "exonyms": ["Senoufo", "Siena", "Sienambele", "Syen"],
+      "originOfExonyms": "Le terme Senufo est la forme française et internationale la plus repandue (Senoufo en orthographe française). L'endonyme Syénambélé signifie les gens du nord ou les gens de Syen. Korhogo, ville principale du nord de la Cote d'Ivoire, est historiquement le centre culturel et commercial du monde Senufo.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Senufo et Senoufo sont tous deux couramment employes en anglais et en français. Les locuteurs se designent selon leur sous-groupe (Cebaara, Supyire, Djimini, etc.). L'identite Senufo est federee autour des institutions du Poro (societe secrete masculine) et du Sandogo (societe féminine).",
+      "linguisticFamily": "FLG_GUR",
+      "ethnoLinguisticGroup": "Senufo (branche propre de l'Atlantic-Congo, parfois integree dans Gur), Niger-Congo",
+      "historicalRegion": "Nord de la Cote d'Ivoire (region de Korhogo), sud-est du Mali (region de Sikasso), ouest du Burkina Faso",
+      "currentCountries": ["CIV", "MLI", "BFA", "GHA"]
+    },
+    "ethnicities": [
+      "Cebaara (Tyebaala), plus grand sous-groupe (environ 860 000), nord de la Cote d'Ivoire",
+      "Supyire (Suppire, Shempire), sous-groupe du Mali (environ 460 000)",
+      "Mamara (Minyanka, Mianka), nord du Mali (environ 740 000)",
+      "Djimini (Dyimini), Cote d'Ivoire meridionale du groupe (environ 96 000)",
+      "Tagwana (Tagouna), Cote d'Ivoire (environ 140 000)",
+      "Nafaanra (Nafana), sous-groupe en Cote d'Ivoire et nord-ouest du Ghana (environ 61 000)",
+      "Kpalaga (Palaka), Cote d'Ivoire (environ 8 000)",
+      "Nanerigé, Burkina Faso (environ 50 000)",
+      "Karaboro (Eastern et Western), Burkina Faso",
+      "Nyarafolo, Cote d'Ivoire (environ 60 000)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Senufo emergent comme groupe distinct entre le 14e et le 16e siecle. Le sous-groupe Palaka se separa du tronc commun Senufo avant le 14e siecle. La fondation de la ville de Kong comme station commerciale Bambara (vers le 14e siecle) marqua un point cle dans les migrations Senufo. La ville de Korhogo est liee aux Senufo depuis le 13e siecle. Les Senufo sont mentionnes dans les sources orales et arabes comme habitants stables du nord de la Cote d'Ivoire avant l'arrivee des marchands mande et arabes.",
+      "formationPeriod": "Les migrations des 14e-16e siecles depuis un tronc commun central vers le sud, l'ouest et le nord ont produit les divisions actuelles du groupe Senufo. La fondation du royaume de Kénédougou au 17e siecle (capitale Sikasso) est une periode structurante pour la politique Senufo. La dissolution du royaume en 1898 suite a la conquete française a marque la fin de la periode pre-coloniale.",
+      "migrationRoutes": [
+        "Dispersion depuis un foyer central vers le nord de la Cote d'Ivoire (14e-16e siecle)",
+        "Migration de la branche Palaka separee avant le 14e siecle",
+        "Migrations vers le Burkina Faso (Tiembara dans le departement de Kiembara) suite aux guerres pre-coloniales",
+        "Extension vers le nord-ouest du Ghana (sous-groupe Nafana)"
+      ],
+      "historicalSettlementZones": [
+        "Nord de la Cote d'Ivoire (Korhogo, Boundiali, Ferkessédougou, Katiola)",
+        "Sud-est du Mali (region de Sikasso, Koutiala)",
+        "Ouest du Burkina Faso (Bobo-Dioulasso, Diebougou)",
+        "Nord-ouest du Ghana (Nafana, region de Brong-Ahafo)"
+      ],
+      "unificationsOrDivisions": "Il n'existe pas de structure politique unifiee pour l'ensemble des Senufo. Les villages sont independants les uns des autres. L'unite est assuree par les institutions rituellesdu Poro (societe secrete masculine pan-Senufo) et du Sandogo (societe feminine de divination). Les linguistes identifient environ 15 langues Senufo distinctes reparties en trois branches : Nord (Suppire-Mamara), Centre (Senari, Karaboro) et Sud (Tagwana-Djimini).",
+      "externalInfluences": "L'islamisation, commencee a la periode Kénédougou (17e-19e siecle), a ete resistee par la population generale, seuls les chefs et rois convertissant. Les marchands musulmans mande et hausa ont ete integres dans les communautes Senufo au 18e siecle. La colonisation française (1898, dissolution du Kénédougou) a transforme les structures politiques. Le Poro et le Sandogo ont maintenu la cohesion culturelle face aux pressions exterieures.",
+      "majorHistoricalEvents": "Fondation du royaume de Kénédougou par les Traore (17e siecle), capital Sikasso. 1840-1877 : regne de Daoula Ba Traore, tente d'imposer l'islam, destruction de villages (Guiembe, Nielle, 1875). 1883-1898 : guerres avec les Zarma. 1898 : dissolution du Kénédougou par les Français. Les arts Senufo (masques, sculptures) influencerent Pablo Picasso et Fernand Léger dans leur exploration du cubisme au debut du 20e siecle. L'artisanat Senufo est aujourd'hui reconnu patrimoine culturel d'envergure internationale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chaque village Senufo est independant. La gouvernance est assuree par la societe secrete masculine Poro, qui garantit la relation entre le monde vivant et les ancetres, et assure les fonctions educatives et judiciaires. L'ancêtre du Poro est Nerejao. Le Sandogo (societe feminine) gouverne la divination. La hierarchie des castes place les agriculteurs (Fo no) au-dessus des artisans.",
+      "clanOrganization": "L'organisation est matrilineaire pour les questions de filiation et d'heritage. La societe est structuree en castes endogames (Katioula) : agriculteurs (Fo no), artisans forgerons (Kule), sculpteurs sur bois (Kpeene), fondeurs de laiton (Tyeli), potiers, travailleurs du cuir. Les artisans sont socialement inferieurs aux agriculteurs. Les Kulubele (sculpteurs), Fonombele (forgerons), Kpeembele (fondeurs), Djelebele (maroquiniers) sont des sous-groupes artisans specifiques.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La filiation matrilineaire determine l'appartenance clanique et l'heritage. Les familles etendues sont dirigees par les patriarches. Le Poro regroupe les hommes en classes d'age qui passent ensemble par les initiations dans la foret sacree. Le mariage entre cousins est pratique. La polygynie est courante.",
+      "religiousAuthority": "Le Poro est l'autorite religieuse masculine supreme, garantissant le lien entre vivants et ancetres. Nerejao est l'ancetre-chef du Poro. Le Sandogo (societe de divination feminine) est dirige par des femmes qui communiquent avec les ancetres ; des hommes y accedent par heritage matrilineaire. La divinite supremes est double : Ancient Mother Maleeo (Katieleo) et Createur male Kolotyolo (Koulotiolo). La deesse Maleeo est associee au Poro, son partenaire Kolocolo au Sandogo."
+    },
+    "languages": {
+      "mainLanguage": "Langues Senufo (groupe d'environ 15 langues apparentees)",
+      "isoCodes": [
+        "sef",
+        "spp",
+        "myk",
+        "dyi",
+        "tgw",
+        "nfr",
+        "plr",
+        "seq",
+        "sev",
+        "xrb",
+        "kza"
+      ],
+      "dialects": [
+        "Cebaara / Tyebaala (sef, Cote d'Ivoire, env. 860 000 locuteurs)",
+        "Supyire / Shempire (spp, Mali, env. 460 000 locuteurs)",
+        "Mamara / Minyanka (myk, Mali, env. 740 000 locuteurs)",
+        "Djimini / Dyimini (dyi, Cote d'Ivoire, env. 96 000 locuteurs)",
+        "Tagwana (tgw, Cote d'Ivoire, env. 140 000 locuteurs)",
+        "Nafaanra (nfr, Cote d'Ivoire et Ghana, env. 61 000 locuteurs)",
+        "Kpalaga / Palaka (plr, Cote d'Ivoire, env. 8 000 locuteurs)"
+      ],
+      "vehicularRole": "Il n'existe pas de langue Senufo unifiee : environ 15 langues distinctes sont partagees au sein du groupe, reparties en trois branches principales (Nord, Centre, Sud). Le Cebaara est la variete la plus parlée. Ces langues appartiennent a la branche Senufo de l'Atlantic-Congo (Niger-Congo) ; certains linguistes les classent dans Gur, d'autres en font une branche autonome. Le français est la langue vehiculaire administrative pour les Senufo de Cote d'Ivoire, de Guinee et du Burkina Faso."
+    },
+    "culture": {
+      "majorRites": "Le Poro est l'institution initiatique masculine centrale : les jeunes hommes passent plusieurs annees dans la foret sacree ou des masques, figurines et equipements rituels sont utilises. L'initiation en foret sacree dure plusieurs semaines ou mois et inclut un isolement, des enseignements moraux, artistiques et pratiques. Le Sandogo supervise les rites de divination des femmes (et de certains hommes par heritage matrilineaire). Le Tyekpa est une societe a ceremonies funeraires avec des sculptures de danse (caryatides) utilisees lors des funerailles. Le Wambele est une societe de sorcellerie. Le mariage arrange entre cousins (polygynie) est encadre par des rites familiaux specifiques.",
+      "symbols": "L'oiseau Senufo (Calao ou oiseau Sejen, oiseau des origines mythiques du Poro) est le symbole identitaire le plus fort : sculptures de calao sont parmi les pieces d'art les plus reconnaissables. Les masques du Poro symbolisent le lien avec les ancetres et la puissance spirituelle. Les caryatides (figures feminines, mediateurs spirituels) sont utilisees dans les ceremonies Poro et Sandogo. Le tambour ceremoniel Senufo est un autre symbole d'autorite rituelle. Le tissu de Korhogo (coton teint avec des motifs d'animaux peints) est un embleme artisanal reconnu.",
+      "artsAndMusic": "Les Senufo sont mondialement reconnus pour leur art plastique : sculptures sur bois (masques du Poro, figurines caryatides, oiseaux Sejen), fonte de laiton (figurines de bijoux imitant la faune), travail du cuir. L'apprentissage artistique est long (7 a 8 ans), progressant des objets profanes aux objets rituels. Les masques Senufo ont inspire les artistes europeens (Picasso, Léger) dans le developpement du cubisme au debut du 20e siecle. La musique inclut des aerophonies (flutes, cors), cordophonies et membranophones. Le tissu de Korhogo (batik peint a la boue ou encre noire avec animaux et motifs geometriques) est un art textile de reputation internationale.",
+      "spiritualities": "La spiritualite Senufo est fondamentalement animiste, centree sur les ancetres, les esprits de la nature et une divinite supremes duale (Maleeo et Kolotyolo). Le Poro garantit le lien avec les ancetres (Nerejao, ancetre du Poro). Le Sandogo permet la divination pour contacter les ancetres et interpreter les signes du monde invisible. La plupart des Senufo du nord (Supyire, Nanerigé) ont resiste a l'islamisation ; environ 20% des Senufo du sud sont musulmans. Les forgerons (Djelebele) ont souvent adopte l'islam mais maintiennent les pratiques animistes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le royaume de Kénédougou (pays de la plaine, 17e-19e siecle, capitale Sikasso) est le principal etat historique Senufo. Fonde par la famille Traore, il fut domine par des rois en partie convertis a l'islam. Le royaume fut dissous en 1898 lors de la conquete française. La ville de Kong (fondee comme station commerciale bambara vers le 14e siecle) fut un important centre commercial lié a l'expansion Senufo. La ville de Korhogo (datant du 13e siecle) est le coeur culturel contemporain des Senufo.",
+      "relationsWithNeighbors": "Les Senufo septentroinaux ont challenge les missionnaires et marchands musulmans, tandis que les Senufo meridionaux ont permis leur installation au 18e siecle. Des guerres avec les Zarma (1883-1898) ont marque la fin du Kénédougou. Le commerce d'esclaves avec les marchands arabes, les Asante et les Baoulé a ete pratique. Des communautes refugiees de groupes voisins ont parfois investi les terres Senufo. La tradition de la fonderie de laiton est partagee avec des peuples voisins.",
+      "conflictsOrAlliances": "Les guerres du Kénédougou au 19e siecle (Daoula Ba Traore attaquant des villages, 1875). Guerres contre les Zarma (1883-1898). Conquest française du Kénédougou (1898). Le Poro et le Sandogo ont joue un role de resistance culturelle contre les pressions d'islamisation et de colonisation. La traite des esclaves a impacte certains groupes Senufo comme victimes et perpetrateurs.",
+      "diaspora": "Migrations de travail depuis les regions seches Senufo vers les zones urbaines de Cote d'Ivoire (Abidjan, Bouake). Presence de Senufo dans les villes du Mali meridional (Bamako). Le sous-groupe Nafana est etabli en permanence dans le nord-ouest du Ghana."
+    },
+    "demography": {
+      "totalPopulation": 4000000,
+      "referenceYear": 2025,
+      "source": "Wikipedia EN - Senufo people (2013) : plus de 3 millions. Ethnologue (15e edition) estimait 2,7 millions. Garber (1987) : 1,5 million. Les estimations les plus recentes (2024-2025) portent le total a environ 4 millions en appliquant les taux de croissance demographique regionaux. CIA World Factbook (Burkina Faso 2024) : Senufo = 4,5% des 23 millions = environ 1 million au Burkina Faso.",
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 2500000,
+          "note": "Nord de la Cote d'Ivoire, principalement region de Korhogo, Katiola, Boundiali, Ferkessédougou"
+        },
+        {
+          "country": "MLI",
+          "population": 900000,
+          "note": "Sud-est du Mali (Sikasso), Supyire et Mamara"
+        },
+        {
+          "country": "BFA",
+          "population": 550000,
+          "note": "Ouest du Burkina Faso (4,5% de la population), Karaboro, Nanerigé"
+        },
+        {
+          "country": "GHA",
+          "population": 70000,
+          "note": "Nord-ouest du Ghana (sous-groupe Nafana, region de Brong-Ahafo)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Senufo people. https://en.wikipedia.org/wiki/Senufo_people",
+      "Wikipedia EN - Senufo languages. https://en.wikipedia.org/wiki/Senufo_languages",
+      "Ethnologue - Cebaara Senufo (sef). https://www.ethnologue.com/language/sef/",
+      "Britannica - Senufo. https://www.britannica.com/topic/Senufo",
+      "Wiktionary - ISO 639-3 codes Africa (Senufo). https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+      "Joshua Project - Senoufo, Southern in Cote d'Ivoire. https://joshuaproject.net/people_groups/15066/IV",
+      "CIA World Factbook - Burkina Faso. https://www.cia.gov/the-world-factbook/countries/burkina-faso/"
+    ]
+  }
+}

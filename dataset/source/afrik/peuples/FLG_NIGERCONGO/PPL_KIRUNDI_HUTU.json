@@ -1,0 +1,113 @@
+{
+  "id": "PPL_KIRUNDI_HUTU",
+  "nameMain": "Hutu",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["BDI", "RWA", "COD", "UGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Hutu",
+      "selfAppellation": "Abahutu",
+      "exonyms": [
+        "Hutu (terme repris par les administrateurs coloniaux belges et allemands)",
+        "Bahutu (forme avec prefixe Ba-, usitee en swahili et en langues de la region)"
+      ],
+      "originOfExonyms": "L'etymologie de Hutu est debattue. Ernest Viaene (1910) proposa le sens d'esclave, ce que refuta Rene Bourgeois, suggereant au contraire que le terme signifiait seigneurs en reference aux Twa pygmees qui leur etaient subordonnes. Chez les Mongo de RDC, les dirigeants bantous des Twa sont appeles Bahoto ou Bawoto (cognate de Bahutu), signifiant seigneurs. La forme Abahutu (singulier : Muhutu) est l'appellation propre en kinyarwanda et kirundi.",
+      "whyProblematic": "Le terme Hutu fut instrumentalise par la colonisation belge : les Belges institutionnaliserent la distinction Hutu-Tutsi par des cartes d'identite ethniques obligatoires (annees 1920), creant une hierarchie raciale artificielle sur la base du nombre de vaches possedees. Cette categorisation contribua directement aux violences ethniques ulterieures, notamment au genocide de 1994. Depuis 1994, le Rwanda a officiellement supprime la categorisation ethnique dans les documents d'etat.",
+      "contemporaryUsage": "En usage courant regional et international. Au Rwanda, le gouvernement deconseille l'usage de la categorisation ethnique depuis 1994, promouvant une identite Munyarwanda nationale. Au Burundi, le terme reste en usage dans les contextes politiques et sociaux, le pays ayant connu des crises ethniques recurrentes.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou des Grands Lacs (Zone J, Rwanda-Rundi)",
+      "historicalRegion": "Rwanda, Burundi et region des Grands Lacs — hauts plateaux et collines du rift Albertin",
+      "currentCountries": ["BDI", "RWA", "COD", "UGA"]
+    },
+    "ethnicities": [
+      "Hutu du Rwanda (Abahutu b'u Rwanda) — majorite historique (~85 % de la population)",
+      "Hutu du Burundi (Abahutu b'Uburundi) — majorite (~85 % de la population)",
+      "Hutu de RDC (Banyarwanda hutu des provinces de Kivu)",
+      "Hutu d'Ouganda (communautes refugiees en Ouganda)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Abahutu sont un peuple bantou dont les ancetres emigrerent en Afrique centrale vers la region des Grands Lacs lors de la grande expansion bantou (entre le 1er et le 5e siecle de l'ere commune). Genetiquement, les Hutu presentent une majorite de lignees paternelles E1b1a (83 %) typiques des Bantou d'Afrique de l'Ouest et centrale, avec des influences couchitiques et nilo-sahariennes mineures. Apres leur arrivee dans la region, ils devinrent principalement agriculteurs sidentaires, tandis que les Tutsi pastoralistes et les Twa chasseurs-cueilleurs constituaient les autres composantes de la societe.",
+      "formationPeriod": "La distinction sociale Hutu-Tutsi-Twa se consolida progressivement avec la formation des royaumes du Rwanda et du Burundi (12e-15e siecles). Les Hutu, agriculteurs, fournirent la main-d'oeuvre agricole et les corvees, tandis que les Tutsi pastoralistes controlerent progressivement le pouvoir politique. Le systeme clienteliste ubuhake liait les Hutu aux Tutsi proprietaires de betail. La colonisation belge radicalisa ces distinctions en les bureaucratisant.",
+      "migrationRoutes": [
+        "Migration bantou depuis l'Afrique centrale (region Congo) vers les Grands Lacs entre le 1er et le 5e siecle",
+        "Dispersion vers la RDC (Kivu) au cours des migrations historiques et des crises politiques du 20e siecle",
+        "Exodes massifs de refugies lors des crises de 1959, 1972, 1993-1994 vers les pays voisins (Ouganda, Tanzanie, RDC, Zambie)"
+      ],
+      "historicalSettlementZones": [
+        "Rwanda — totalite du territoire, majorite numerique sur toutes les collines",
+        "Burundi — totalite du territoire, majoritaires dans les regions nord et centrales",
+        "RDC — provinces du Nord-Kivu et du Sud-Kivu (Banyarwanda hutu)",
+        "Ouganda — regions frontalieres de l'ouest (refugies et communautes installees)"
+      ],
+      "unificationsOrDivisions": "Historiquement, les Hutu n'etaient pas organises en royaume unifie ; ils vivaient sous l'autorite des royaumes Nyiginya (Rwanda) et Ntare (Burundi) domines par les dynasties tutsies. La revolution sociale rwandaise de 1959 donna le pouvoir politique aux Hutu au Rwanda. Au Burundi, les Tutsi conserverent le controle du gouvernement et de l'armee jusqu'aux accords d'Arusha (2000). Les divisions internes entre Hutu extremistes et moderes furent particulierement visibles en 1994.",
+      "externalInfluences": "Colonisation allemande (1884-1916) : administration indirecte via les rois tutsis. Colonisation belge (1916-1962) : institutionnalisation des categories ethniques, politique pro-tutsi dans l'administration, evangelisation catholique. Revolution rwandaise de 1959 : retournement de la hierarchie ethnique au Rwanda. Genocides de 1972 (Burundi, contre les Hutu) et de 1994 (Rwanda, commis par des extremistes hutu contre les Tutsi). Accords d'Arusha (2000) au Burundi : partage du pouvoir.",
+      "majorHistoricalEvents": "1959 : revolution sociale rwandaise (Hutu prennent le pouvoir, exode de Tutsi). 1962 : independance du Rwanda sous direction Hutu ; independance du Burundi sous Tutsi. 1972 : genocide selectif des elites Hutu au Burundi par l'armee tutsie (environ 100 000 morts). 1973 : coup d'etat de Habyarimana au Rwanda. 1993 : assassinat du president hutu Melchior Ndadaye au Burundi. Avril-juillet 1994 : genocide commis par des extremistes hutu contre les Tutsi au Rwanda (800 000 a 1 000 000 morts). 1994-2003 : guerres des Grands Lacs en RDC impliquant des forces hutu (FDLR). 2000 : accords d'Arusha pour le Burundi. 2000s-2010s : processus gacaca au Rwanda."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Avant la formation des royaumes centralises, les Hutu etaient organises en chefferies locales (inzu) independantes dirigees par des chefs hereditaires. Avec l'emergence des royaumes Rwanda et Burundi, les Hutu furent integres dans un systeme centralise ou ils occupaient le bas de la hierarchie politique. La cellule de base etait la colline (umusozi) regroupant plusieurs familles agricoles. Le conseil des anciens (ubukonde) regulait les litiges locaux.",
+      "clanOrganization": "Les Hutu sont organises en clans agnatiques (ubwoko). Les principaux clans traversent les frontieres ethniques Hutu-Tutsi (un clan peut avoir des membres des deux groupes). Les solidarites claniques ont parfois attenue les tensions ethniques. Parmi les clans importants : Abacyaba, Abaha, Abagesera, Abasindi.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'heritage foncier, les droits sur les terres cultivees (ubukonde) et les alliances matrimoniales. La dot (inkwano) en betail est negociee entre familles. La residence est patrilocale.",
+      "religiousAuthority": "Les devins et guerisseurs (abapfumu) etaient les autorites spirituelles traditionnelles. Le culte Kubandwa (possession rituelle en l'honneur de Ryangombe) etait largement pratique. L'Eglise catholique romaine est aujourd'hui dominante (~50-60 % de la population), suivi des denominations protestantes. Un syncretisme maintient les rites de communication avec les ancetres."
+    },
+    "languages": {
+      "mainLanguage": "Kirundi (Burundi) / Kinyarwanda (Rwanda)",
+      "isoCodes": ["run", "kin"],
+      "dialects": [
+        "Kirundi standard (Burundi, langue nationale officielle)",
+        "Kinyarwanda standard (Rwanda, langue nationale officielle)",
+        "Dialectes regionaux du Kivu (kinyarwanda de RDC)"
+      ],
+      "vehicularRole": "Le kirundi et le kinyarwanda sont des dialectes d'un meme continuum linguistique (Rwanda-Rundi, Zone J des langues bantou), mutuellement intelligibles. Le kirundi est langue officielle du Burundi avec le français et l'anglais. Le kinyarwanda est langue officielle du Rwanda avec le français (officiellement depriorise depuis 2008) et l'anglais. Les deux langues servent de lingua franca dans leurs pays respectifs. Les Hutu des zones frontalieres sont souvent bilingues kirundi-kinyarwanda."
+    },
+    "culture": {
+      "majorRites": "Kwita izina (denomination de l'enfant) : ceremonie de nomination d'un nouveau-ne en presence de la famille etendue, presentant l'enfant aux ancetres et a la communaute. Gusaba (demande en mariage) : rituel de negociation de la dot entre familles, incluant la presentation des representants familiaux et les echanges de cadeaux. Umuganura (fete des premices) : celebration agricole de gratitude a la fin des recoltes. Kubandwa : culte de possession en l'honneur de Ryangombe, pratique de guerison et de protection, commun aux Hutu et aux Tutsi. Funerailles (imuhana) : ceremonies d'inhumation rapide avec rites de purification de la famille en deuil.",
+      "symbols": "La houe (isuka) est le symbole de l'identite paysanne hutu, refletant leur vocation agricole historique. La colline (umusozi) est l'unite d'organisation sociale et d'appartenance identitaire. Le sorgho et la banane (matiere premiere du biere igisagara) sont centraux dans l'alimentation et les echanges coutumiers. Le tambour (ingoma) marque les celebrations communautaires.",
+      "artsAndMusic": "Musique : chants de travail agricole, de mariage et de deuil ; tambours (ingoma) pour les celebrations et les rites. Danse : danses collectives lors des ceremonies de mariage, de circoncision et de fetes communautaires. Poesie orale : recit des genealogies, proverbes (imigani) et enigmes (ibisakuzo). Artisanat : poterie (fabrication de jarres uturenge pour la biere et le stockage), tissage de nattes et de paniers (agaseke, ibiseke), sculpture. La biere de sorgho (impeke) et la biere de banane (urwagwa) jouent un role social et ceremoniel important.",
+      "spiritualities": "La cosmologie traditionnelle reconnait Imana comme Dieu supreme createur et source de toute fecondite. Les ancetres (abazimu) intercedent entre les vivants et Imana. Le culte Kubandwa, consacre a Ryangombe (chef des esprits imandwa), etait pratique communement par les Hutu et les Tutsi et permettait de demander protection, guerison et fecondite par la possession rituelle. Depuis la colonisation, le catholicisme romain est la religion majoritaire, suivi des denominations protestantes. Un syncretisme actif maintient les rites ancestraux, notamment lors des naissances, mariages et deuils."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Historiquement, les Hutu n'avaient pas de royaumes independants distincts dans la region des Grands Lacs. Ils etaient integres dans les royaumes du Rwanda (Nyiginya) et du Burundi (Ntare), ou ils occupaient le bas de la hierarchie politique en tant qu'agriculteurs sous l'autorite des dynasties tutsies. Des chefferies hutu locales existaient avant la centralisation des royaumes. Depuis 1959 au Rwanda et depuis 1993 au Burundi (puis les accords d'Arusha 2000), les Hutu ont acces aux plus hauts niveaux du pouvoir.",
+      "relationsWithNeighbors": "Relations historiques de clientelisme et de dependance vis-a-vis des Tutsi (systeme ubuhake). Relations avec les Twa : les Hutu etaient dominants par rapport aux Twa dans la hierarchie sociale traditionnelle. Interactions avec les peuples de RDC (Hunde, Nande, Bashi) dans les zones frontalieres, souvent tendues autour des droits fonciers et de la nationalite. Relations avec l'Ouganda : communautes hutu refugiees dans l'ouest ougandais.",
+      "conflictsOrAlliances": "1959-1962 : revolution sociale rwandaise, violences anti-tutsies. 1972 : genocide des elites hutu au Burundi par l'armee (100 000 morts). 1993 : assassinat du president hutu Melchior Ndadaye par des officiers tutsis au Burundi ; contre-violence. Avril-juillet 1994 : genocide commis par le gouvernement hutu extremiste rwandais (Interahamwe) contre les Tutsi (800 000 a 1 000 000 de morts). Post-1994 : Forces democratiques de liberation du Rwanda (FDLR), milice hutu operant depuis la RDC. 2000-2015 : integration progressive au sein du gouvernement burundais (accords d'Arusha).",
+      "diaspora": "La diaspora hutu est principalement situee en Tanzanie, en Ouganda, en RDC, au Congo-Brazzaville, en Zambie, ainsi qu'en Europe (Belgique, France, Suisse) et en Amerique du Nord. Une partie importante des refugies hutu du genocide de 1994 et de ses suites se trouverait toujours en RDC (FDLR et familles associees) et en Tanzanie."
+    },
+    "demography": {
+      "totalPopulation": 22200000,
+      "referenceYear": 2025,
+      "source": "UNFPA Burundi 2025 (14,4 millions, ~85 % Hutu = ~12,2 millions) ; UNFPA Rwanda 2025 (14,6 millions, ~85 % Hutu = ~12,4 millions, donnees historiques avant suppression des categories) ; estimation croisee corrigee",
+      "distributionByCountry": [
+        {
+          "country": "BDI",
+          "population": 12200000,
+          "note": "Environ 85 % de la population burundaise (14,4 millions en 2025) — principalement agriculteurs dans les collines"
+        },
+        {
+          "country": "RWA",
+          "population": 12400000,
+          "note": "Environ 85 % de la population rwandaise (14,6 millions en 2025) selon les donnees demographiques historiques, categories officielles supprimees depuis 1994"
+        },
+        {
+          "country": "COD",
+          "population": 800000,
+          "note": "Banyarwanda hutu dans les provinces du Nord-Kivu et du Sud-Kivu"
+        },
+        {
+          "country": "UGA",
+          "population": 200000,
+          "note": "Refugies et communautes hutu dans l'ouest ougandais"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Hutu. https://en.wikipedia.org/wiki/Hutu",
+      "Britannica — Hutu. https://www.britannica.com/topic/Hutu",
+      "UNFPA — Burundi Population 2025. https://www.unfpa.org/data/world-population/BI",
+      "UNFPA — Rwanda Population 2025. https://www.unfpa.org/data/world-population/RW",
+      "USHMM — Divided by Ethnicity : Rwanda. https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
+      "Qiraat Africa — The Hutu people of the African Great Lakes. https://qiraatafrican.com/en/13614/the-hutu-people-of-the-african-great-lakes/",
+      "World Population Review — Burundi 2025. https://worldpopulationreview.com/countries/burundi",
+      "SIL Ethnologue — Kirundi (run). https://www.ethnologue.com/language/run"
+    ]
+  }
+}

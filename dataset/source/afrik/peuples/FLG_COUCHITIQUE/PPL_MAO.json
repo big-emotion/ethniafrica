@@ -1,0 +1,90 @@
+{
+  "id": "PPL_MAO",
+  "nameMain": "Mao",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Mao",
+      "selfAppellation": "Mao",
+      "exonyms": ["Nao", "Mawo", "Manno", "Manjo", "Anfillo", "Sit Shwala"],
+      "originOfExonyms": "Le terme Mao a historiquement fonctionne comme une etiquette sociopolitique appliquee a diverses populations subordonnees dans l'ouest ethiopien, plutot que comme un nom ethnique unifie. Nao, Mawo et Manno sont des variantes dialectales ou orthographiques. Manjo est un terme parfois utilise de maniere pejorative pour designer les groupes marginalises associes aux Mao dans certaines regions. Anfillo est le nom territorial et ethnique du groupe Mao meridional (Southern Mao) ayant adopte la langue Omotic Kefoid. Sit Shwala est une auto-designation utilisee par les locuteurs du Mao Koman dans la region de Begi.",
+      "whyProblematic": "La denomination Mao recouvre en realite plusieurs groupes linguistiquement distincts: les Mao omotiques (Hozo, Sezo, Bambasi, Ganza) et les Mao komaniques (groupe linguistique different). La correspondance entre identite ethnique et langue n'est pas systematique, certains groupes s'identifiant comme Mao tout en parlant une langue Koman, et vice versa. L'Anfillo meridional est un groupe Mao qui a abandonne sa langue omotique au profit de l'Oromo.",
+      "contemporaryUsage": "Mao est utilise dans la litterature ethnographique et linguistique pour designer un ensemble de peuples de l'ouest ethiopien aux marges de la frontiere soudanaise. Dans le contexte administratif ethiopien, les groupes Mao sont disperses entre la region de Benishangul-Gumuz et la zone du Mirab Welega (Oromia).",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "Omotic (branche Mao, incluant les sous-groupes Bambasi, Hozo/Seze, Ganza) et Koman (Nilo-Saharien pour le Mao komanophone); affiliation contestee",
+      "historicalRegion": "Quest de l'Ethiopie, region de Benishangul-Gumuz et zone du Mirab Welega (Oromia), aux marges de la frontiere avec le Soudan",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Mao (Hozo)",
+      "Mao (Sezo/Seze)",
+      "Mao (Bambasi/Northern Mao)",
+      "Mao (Ganza)",
+      "Anfillo (Southern Mao)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Mao sont considered comme l'un des groupes omotiques les plus divergents et les plus anciennement separes du reste de la famille omotique. Bender (2000, 2003) les positionnait comme une branche primaire et precoce de l'Omotic, suggerant une separation tres ancienne du proto-omotique. Les langues mao omotiques (Hozo, Sezo, Bambasi, Ganza) temoignent d'une longue periode d'isolement relatif dans les zones forestieres et marecageuses de l'ouest ethiopien, entrecoupee de contacts intenses avec les locuteurs komaniques voisins.",
+      "formationPeriod": "La formation du royaume Gonga d'Anfillo au tournant du XVIe et XVIIe siecle a profondement remodele les identites mao: les Mao meridionaux (Anfillo) ont ete incorpores comme serfs ou clients dependants des elites Kefoid (Gonga), ce qui a provoque un abandon progressif de leur langue omotique originelle au profit des langues kefoides, puis de l'oromo.",
+      "migrationRoutes": [
+        "Zone des montagnes de Guma Gara Arba et marais du Dabus (Mao omotique), Oromia occidentale",
+        "Woreda de Bambasi, region de Benishangul-Gumuz (Mao septentrional/Bambasi)",
+        "Vallee de la riviere Didessa et woreda de Belo Jegonfoy (migration recente de locuteurs Bambasi)"
+      ],
+      "historicalSettlementZones": [
+        "Woreda de Bambasi, zone d'Asosa, region de Benishangul-Gumuz",
+        "Environs de Begi, zone du Mirab Welega, region d'Oromia",
+        "Etat du Nil Bleu (Soudan), pour le groupe Ganza"
+      ],
+      "unificationsOrDivisions": "L'etablissement du Royaume Gonga d'Anfillo a la fin du XVIe siecle (a la suite des migrations kefoides vers l'ouest provoquees par les expansions oromo dans le bassin du Gibe vers 1560-1570) a entraene une integration asymetrique des Mao meridionaux sous domination kefoid. Les Mao ont ainsi forme une categorie sociale subordonnee (serfs, clients) au sein de la structure politique gonga, favorisant un bilinguisme generalise puis un abandon linguistique.",
+      "externalInfluences": "Contact intensif et de longue date avec les langues komaniques voisines (Kwama, Ganza/Koma) a provoque d'importantes restructurations linguistiques par contact. L'expansion oromo dans le Mirab Welega a progressivement reduit l'aire des locuteurs mao omotiques. La domination kefoid (Busasi) au XVIIe siecle a pousse les Mao meridionaux (Anfillo) a fuir vers Anfillo et a adopter l'oromo. L'islamisation partielle est documentee chez les Mao du nord (Bambasi region).",
+      "majorHistoricalEvents": "Formation du Royaume Gonga d'Anfillo au XVIe-XVIIe siecle et subordination des Mao meridionaux. Fuite des Anfillo vers la region de Wellega suite aux persecutions des Busasi. Adoption de l'oromo par les Anfillo au contact des Oromo de Wellega. Migrations recentes de locuteurs Bambasi vers la vallee du Didessa lors de troubles politiques recents."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en communautes villageoises autonomes sans structure politique centralisee. Les Mao ont historiquement occupe des positions subordonnees vis-a-vis des royaumes voisins (Gonga, Kefa, puis domination oromo).",
+      "clanOrganization": "Organisation en clans patriliniaires. Le clan Kur est documente comme l'un des clans principaux du Mao komanophone dans la region de Begi. L'intermariage entre les groupes Sezo et Hozo est documente, ainsi qu'avec les groupes komaniques voisins.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages claniques determinent les regles d'intermariage et les obligations de reciprocite. Des relations de maitres-clients (Mao fournissant des produits forestiers aux populations agricoles) ont structure historiquement les echanges economiques.",
+      "religiousAuthority": null
+    },
+    "languages": {
+      "mainLanguage": "Langues mao (groupe: Hozo, Sezo, Bambasi, Ganza)",
+      "isoCodes": ["hoz", "sze", "myf", "gza"],
+      "dialects": [
+        "Hozo (Mao de Begi)",
+        "Sezo/Seze (Mao de Begi)",
+        "Mawes Aas'e/Bambasi (Mao septentrional)",
+        "Ganza (aussi parle au Soudan)"
+      ],
+      "vehicularRole": "Les quatre langues mao omotiques sont distinctes et peu intelligibles entre elles. Hozo et Sezo forment un sous-groupe (Mao de Begi) parle dans la zone de Mirab Welega (Oromia). Bambasi (Mao septentrional) est parle dans la region de Benishangul-Gumuz. Ganza est parle a la frontiere ethiopio-soudanaise. L'oromo sert de lingua franca dans la zone de Mirab Welega, l'amharique dans la region de Benishangul-Gumuz. Le Mao meridional (Anfillo) a entierement adopte l'oromo comme langue maternelle."
+    },
+    "culture": {
+      "majorRites": "La culture materielle et les pratiques rituelles des Mao sont peu documentees dans la litterature accessible. Les pratiques agro-forestieres de cueillette, de chasse et d'agriculture constituent le cadre de vie traditionnel. Les Anfillo (Mao meridionaux oromanises) pratiquent l'agriculture (mais, durra, teff, orge, haricots, cafe, enset) et tirent un usage important du miel et de la cire d'abeille.",
+      "symbols": "Le miel et la cire d'abeilles sont des produits symboliques et economiques importants pour les communautes Anfillo-Mao. La foret et les ressources forestieres constituent l'environnement symbolique central des groupes Mao.",
+      "artsAndMusic": null,
+      "spiritualities": "Les Anfillo (Mao meridional oromanise) croient en un etre supreme nomme Yere, assiste de deux entites: Sanci Gai (createur du peuple Anfillo, invoque lors des epidemies) et Karifo (seigneur de la pluie). Les Mao septentrionaux (Bambasi) sont en majorite musulmans. Les Mao de Begi (Hozo, Sezo) sont en majorite chretiens dans la vallee du Didessa et de tradition mixte pres de Begi."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": null,
+      "relationsWithNeighbors": "Les Mao ont entretenu des relations de maitres-clients avec les populations agricoles voisines, echangeant des produits forestiers contre des biens manufactures ou des cereales. Les contacts linguistiques et culturels avec les locuteurs komaniques (Kwama, Ganza) et les locuteurs kefoides (Anfillo-Gonga) ont profondement marque leur identite. La coexistence avec les Oromo dans le Mirab Welega a conduit a une assimilation progressive.",
+      "conflictsOrAlliances": "Les Mao meridionaux ont subi une severe repression et l'esclavage sous la domination Busasi (Kefa) au XVIIe siecle, ce qui les a forces a fuir vers la region d'Anfillo. Les relations asymetriques avec les Oromo de Wellega ont favorise l'abandon linguistique et culturel progressif des Anfillo. Les Mao septentrionaux ont maintenu une identite distincte dans les zones plus isolees de Benishangul-Gumuz.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 31400,
+      "referenceYear": 2025,
+      "source": "Estimations composites: Hozo 6000 (Mao languages – Wikipedia), Sezo/Seze 13000 (estimations linguistiques), Bambasi/Northern Mao 4500 (Joshua Project 2025, https://joshuaproject.net/people_groups/14023), Ganza quelques centaines en Ethiopie; total approche 31400",
+      "distributionByCountry": [{ "country": "ETH", "population": 31400 }]
+    },
+    "sources": [
+      "Mao languages – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Mao_languages)",
+      "Mao, Northern in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14023)",
+      "Oromo, Anfillo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10318)",
+      "Omotic languages – Encyclopaedia Britannica, 2024 (https://www.britannica.com/topic/Omotic-languages)",
+      "Omotic languages – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Omotic_languages)",
+      "The Mao and Komo Languages in the Begi-Tongo area in Western Ethiopia – Journals of Dartmouth College, 2013 (https://journals.dartmouth.edu/cgi-bin/WebObjects/Journals.woa/xmlpage/1/article/447)",
+      "Omotic Features in the Mao Group and Internal Coherence – Ahland, CSULB (https://www.csulb.edu/sites/default/files/2025/documents/OmoticFeaturesMaoGroup.Final_Ahland.pdf)",
+      "Mao – Summary – eHRAF World Cultures (https://ehrafworldcultures.yale.edu/cultures/mp19/summary)"
+    ]
+  }
+}

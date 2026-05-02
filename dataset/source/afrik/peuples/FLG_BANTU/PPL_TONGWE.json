@@ -1,0 +1,88 @@
+{
+  "id": "PPL_TONGWE",
+  "nameMain": "Tongwe",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Tongwe",
+      "selfAppellation": "Batongwe",
+      "exonyms": ["Tong", "Bende-Tongwe"],
+      "originOfExonyms": "Batongwe est l'auto-denomination avec le prefixe de pluriel Ba-. Le terme Bende-Tongwe regroupe les Tongwe et leurs proches voisins Bende, dont la langue est presque identique a 90% de similarite lexicale. Les Tongwe etablis dans la region de Rukwa ont ete administrativement renommes Bende apres l'independance tanzanienne.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Tongwe est utilise dans les recensements tanzaniens et dans la litterature academique. La denomination Batongwe est privilegiee par la communaute elle-meme. Suite aux relocalisations forcees de l'ere Nyerere, certains Tongwe se sont identifies comme Bende dans les regions ou ils ont ete deplaces.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu, Zone F (Guthrie F.10)",
+      "historicalRegion": "Rive orientale du lac Tanganyika, Tanzanie occidentale",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Tongwe", "Batongwe"],
+    "origins": {
+      "ancientOrigins": "Les Tongwe sont consideres comme l'un des groupes Bantu les plus anciens de l'Afrique orientale. Pousses hors du Congo par l'expansion bantoue, ils se sont installes dans ce qui constitue aujourd'hui l'ouest de la Tanzanie, vraisemblablement vers 500 avant notre ere selon les estimations archeologiques et linguistiques. Leur territoire traditionnel, les montagnes Mahale, constituait leur foyer culturel original.",
+      "formationPeriod": "Vers 500 avant notre ere, apres la traversee du lac Tanganyika depuis le Congo oriental. La communaute Tongwe-Bende forme un clade linguistique distinct de la zone F bantoue, ce qui suggere une separation et une installation dans la region remontant a plusieurs siecles.",
+      "migrationRoutes": [
+        "Depuis le Congo oriental vers la rive orientale du lac Tanganyika",
+        "Installation dans les montagnes Mahale (coeur culturel traditionnel)",
+        "Dispersion vers Uvinza, Ilagala et les villages du couloir Kigoma-Mpanda apres les relocalisations de 1973"
+      ],
+      "historicalSettlementZones": [
+        "Montagnes Mahale (foyer culturel traditionnel, aujourd'hui parc national)",
+        "Foret de Ntakata (nouveau foyer depuis 2015)",
+        "Districts de Kigoma et Uvinza, region de Kigoma",
+        "Villages: Uvinza, Ilagala, Mahanga, Sunuka, Kaparamsenga, Mgambazi, Rukoma, Igalula, Mgambo, Mkonkwa, Ikuburu, Rubalizi, Sibwesi, Kalya, Kashaguru"
+      ],
+      "unificationsOrDivisions": "Les Tongwe et les Bende constituent deux communautes distinctes mais etroitement liees, partageant les memes structures politiques traditionnelles et les memes rituels. Apres l'independance de la Tanzanie, les Tongwe de la region de Rukwa ont ete administrativement renommes Bende. La creation du parc national de Mahale (1985) et celle du parc de Katavi ont provoque de nouvelles divisions dans la communaute.",
+      "externalInfluences": "La politique d'Ujamaa de Julius Nyerere (1973) a force les Tongwe a quitter les montagnes Mahale pour etre integres dans le systeme de villages collectifs. Les creations successives de parcs nationaux (Mahale en 1985, Katavi) ont entrainne des relocalisations supplementaires. La presence de populations refugiees du Burundi et de la RDC dans la region a modifie le tissu social local.",
+      "majorHistoricalEvents": "1973: relocalisation forcee des Tongwe des montagnes Mahale dans le cadre de l'Ujamaa de Nyerere. 1985: creation du parc national de Mahale, rendant impossible tout espoir de retour. 2002: creation du Tongwe Trust avec pour objectif de faire reconnaitre la foret de Ntakata comme nouveau territoire culturel. 2015: reconnaissance officielle de la foret de Ntakata comme foyer culturel des Tongwe."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme clanique decentralise. Les Tongwe vivent traditionnellement en clans de 5 a 30 personnes, chaque clan etant dirige par son propre mwami (chef). Les structures politiques sont partagees avec les Bende voisins. Il n'existe pas de chef supreme englobant l'ensemble du peuple Tongwe.",
+      "clanOrganization": "Organisation en clans forestiers. Chaque clan possede son propre tabou (interdit clanique) et est dirige par un mwami. Les clans sont lies au territoire forestier de Ntakata, qui constitue le cadre spirituel, social et economique de la communaute.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages claniques determinant l'appartenance territoriale et l'acces aux ressources forestieres. Les ancetres et les esprits des grands guerisseurs et chefs Tongwe sont veneres comme protecteurs du territoire.",
+      "religiousAuthority": "Tradition animiste et spiritualiste forte: les legendes et esprits des grands guerisseurs (waganga) et des chefs et reines Tongwe sont considered comme presences actives dans les forets, montagnes, lacs et cours d'eau. L'islam s'est repandu parmi de nombreux Tongwe, introduit par des missionnaires musulmans qui affirmaient que les chretiens les rejetaient. Des pratiques animistes persistent en parallele."
+    },
+    "languages": {
+      "mainLanguage": "Tongwe (Sitongwe)",
+      "isoCodes": ["tny"],
+      "dialects": [
+        "Bende (Sibende, code ISO bdp, 90% de similarite lexicale avec le Tongwe)"
+      ],
+      "vehicularRole": "Le Tongwe (Sitongwe) appartient a la zone F bantoue (Guthrie F.10) et forme avec le Bende un clade linguistique distinct. La langue vehiculaire nationale est le Swahili (kiswahili), utilise dans les echanges inter-ethniques et l'education. En 2025, le nombre de locuteurs du Tongwe est estime a environ 71 000 selon Joshua Project."
+    },
+    "culture": {
+      "majorRites": "Rituels lies aux esprits des ancetres et aux forces de la foret. Les sites funeraires, les lieux de ceremonies et les objets sacres sont preserves dans la foret de Ntakata, consideree comme sacree. Les ceremonies de passages (naissance, initiation, deces) sont encadrees par les structures claniques.",
+      "symbols": "La foret de Ntakata est le symbole central de l'identite Tongwe: 'Nous sommes avec et de la foret'. Les pirogues (canoes) representent le lien avec le lac Tanganyika. Le miel, recolte dans les ruches traditionnelles installees dans la foret, est un produit symbolique et economique important.",
+      "artsAndMusic": "Fabrication de pirogues (canoes): les Tongwe sont reputes comme des constructeurs de pirogues particulierement habiles, la navigation sur le lac Tanganyika etant leur mode de deplacements traditionnel principal. Artisanat de la poterie. Pratiques de cueillette de plantes medicinales transmises de generation en generation.",
+      "spiritualities": "Animisme profondement ancre dans la relation au territoire forestier. Veneration des esprits des ancetres (grands guerisseurs, chefs et reines legendaires) presents dans les lieux naturels (forets, montagnes, lacs, cours d'eau). Pratiques de sorcellerie et de guerison traditionnelle tres reputees dans la region de Kigoma: les Tongwe sont largement connus pour leurs traditions de sorcellerie (uchawi). L'islam s'est developpe au sein de la communaute depuis le 20e siecle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaume centralise. Organisation en chefferies claniques independantes, chacune dirigee par un mwami. Les Tongwe et les Bende partagent les memes structures politiques traditionnelles.",
+      "relationsWithNeighbors": "Relations etroites avec les Bende (parfois decrits par les Tongwe comme 'notre petit frere'). Contacts avec les communautes du lac Tanganyika et les populations de la region de Kigoma. La proximite du Burundi et de la RDC a introduit des influences culturelles et des flux migratoires dans la region.",
+      "conflictsOrAlliances": "Opposition aux politiques gouvernementales de relocalisation forcee (Ujamaa 1973, parcs nationaux 1985 et 1990), qui ont profondement marque la memoire collective Tongwe. Mefiance institutionnelle envers le gouvernement tanzanien et envers les etrangers (Occidentaux inclus) liee aux relocalisations repetes.",
+      "diaspora": "Communaute concentree dans la region de Kigoma (Tanzanie occidentale), dispersee dans des villages multiethniques. Presence dans les villes de Kigoma et Uvinza. Superficie du territoire Tongwe-land actuel: environ 5 000 km2 le long de la rive orientale du lac Tanganyika."
+    },
+    "demography": {
+      "totalPopulation": 71000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2024-2025 (71 000 locuteurs du Tongwe). Population 2000 estimee a 31 551 par Wikipedia EN.",
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 71000,
+          "note": "Region de Kigoma, districts de Kigoma et Uvinza, Tanzanie occidentale"
+        }
+      ]
+    },
+    "sources": [
+      "Tongwe people – Wikipedia (https://en.wikipedia.org/wiki/Tongwe_people)",
+      "Joshua Project, Tongwe in Tanzania (https://joshuaproject.net/people_groups/15555)",
+      "Tongwe Trust (http://www.tongwetrust.org)",
+      "Wild Philanthropy, Ntakata Tanzania: introducing the Tongwe Trust (https://wildphilanthropy.com/ntakata-tanzania-introducing-the-tongwe-trust-and-the-tongwe-of-ntakata-forest/)",
+      "Cambridge University Press, Culture and subsistence ecology of the Tongwe (https://www.cambridge.org/core/books/mahale-chimpanzees/culture-and-subsistence-ecology-of-the-tongwe-and-their-significance-in-chimpanzee-research/D5ABAE77990DCDEA81B9CC7EE3CD4E39)",
+      "Tongwe language – Wikipedia, ISO tny (https://en.wikipedia.org/wiki/Tongwe_language)",
+      "Ethnologue, Tongwe language TNY (https://www.ethnologue.com/language/tny/)",
+      "101 Last Tribes, Tongwe people (https://www.101lasttribes.com/tribes/tongwe.html)"
+    ]
+  }
+}

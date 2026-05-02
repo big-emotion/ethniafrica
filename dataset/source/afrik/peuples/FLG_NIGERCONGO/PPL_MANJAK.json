@@ -1,0 +1,119 @@
+{
+  "id": "PPL_MANJAK",
+  "nameMain": "Manjak",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GNB", "SEN", "GMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Manjak",
+      "selfAppellation": "Manjaku",
+      "exonyms": [
+        "Manjaco (portugais)",
+        "Mandjak (français)",
+        "Njaago (wolof)",
+        "Manjago (jola)",
+        "Manjaco (portugais)",
+        "Mancagne (terme parfois confondu avec les Mankanya voisins)"
+      ],
+      "originOfExonyms": "Manjaku est l'appellation en langue propre, signifiant littéralement Je te dis (selon la tradition orale). Manjaco est la transcription portugaise utilisée depuis la colonisation. Mandjak est la version française. Njaago est le terme wolof. Ces formes sont toutes phonétiquement proches et désignent le même groupe.",
+      "whyProblematic": "Le terme Mancagne est parfois confondu avec les Manjak, mais désigne en réalité les Mankanya, un groupe distinct (bien que culturellement et linguistiquement proche). Les deux groupes partagent certaines caractéristiques (langue bak, agriculture de bolanhas, animisme) mais sont ethniquement séparés. Les sources coloniales portugaises ont parfois amalgamé ces groupes.",
+      "contemporaryUsage": "Manjak (ou Manjaco) est le terme standard en Guinée-Bissau, en France et en linguistique. Mandjak est la forme sénégalaise. La langue manjak (mandjak, ISO 639-3 : mfv) est reconnue comme langue nationale en Guinée-Bissau. La communauté diasporique en France est importante, notamment dans l'industrie automobile en région parisienne.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bak (branche des langues atlantiques du Niger-Congo)",
+      "historicalRegion": "Péninsule définie par le fleuve Cacheu, l'Atlantique et le fleuve Mansoa, districts de Calequisse et Caio, région de Cacheu, nord-ouest de la Guinée-Bissau",
+      "currentCountries": ["GNB", "SEN", "GMB"]
+    },
+    "ethnicities": [
+      "Manjak de Bassarel (zone principale, Cacheu, Guinée-Bissau — centre politique historique)",
+      "Manjak de Babok (zone côtière, Cacheu, Guinée-Bissau)",
+      "Manjak de Calequisse et Caio (districts historiques des deux grands groupes migratoires)",
+      "Manjak de Casamance (Sénégal, communautés établies au 20e siècle)",
+      "Manjak du Sénégal (Dakar, Ziguinchor, Bignona)",
+      "Manjak de Gambie"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Manjak sont un peuple autochtone de la péninsule nord-ouest de la Guinée-Bissau, délimitée par le fleuve Cacheu au nord, l'Atlantique à l'ouest et le fleuve Mansoa au sud. Les premières sources écrites (portugaises, fin 15e siècle) décrivent une société stable et bien organisée avec un système semi-féodal structuré autour de la production rizicole. Les Manjak développèrent un système agricole unique (les bolanhas) : digues, canaux de drainage et rizières inondées dans les mangroves côtières, dont la complexité impressionna les explorateurs portugais.",
+      "formationPeriod": "L'organisation politique manjak précoloniale était centrée sur le Roi de Bassarel, chef d'une fédération de territoires. La structure sociale et politique était robuste avant la colonisation, selon les premières sources portugaises. Cette organisation fut maintenue jusqu'en 1913, date à laquelle des troupes peules et mandingues sous commandement portugais attaquèrent et soumirent le territoire. La domination coloniale totale s'établit entre 1913 et 1974.",
+      "migrationRoutes": [
+        "Migrations économiques vers le Sénégal français (puis français de Casamance) et la Gambie britannique dès les années 1920-1940 (fuite de la colonisation portugaise et recherche d'opportunités)",
+        "Migration vers Dakar et d'autres centres urbains sénégalais (un tiers des actifs manjak étaient travailleurs migrants dès les années 1950)",
+        "Migration vers la France, particulièrement dans l'industrie automobile en région parisienne (depuis les années 1960-1970)",
+        "Exode pendant la guerre d'indépendance (1963-1974) : jeunes hommes vers le Sénégal pour stabilité et travail"
+      ],
+      "historicalSettlementZones": [
+        "Péninsule entre le fleuve Cacheu et le fleuve Mansoa (nord-ouest de la Guinée-Bissau)",
+        "Districts de Calequisse et Caio, région de Cacheu",
+        "Zones de Bassarel et Babok (centres culturels et rituels traditionnels)",
+        "Casamance et Dakar (Sénégal) — implantations diasporiques depuis le 20e siècle",
+        "Région parisienne (France) — communauté diasporique importante"
+      ],
+      "unificationsOrDivisions": "La fédération précoloniale des Manjak était organisée autour du Roi de Bassarel, auquel rapportaient les chefs de villages locaux. Cette structure fut démantelée par la colonisation portugaise (après 1913). Après l'indépendance de la Guinée-Bissau (1974), le gouvernement supprima l'autorité du roi et les titres de propriété aristocratiques sur les rizières (redistribuées aux agriculteurs). Les Manjak se caractérisent par une certaine apathie politique et une focalisation sur l'autogestion communautaire.",
+      "externalInfluences": "Contact avec les Portugais dès la fin du 15e siècle; tribute versé aux chefs manjak par les Portugais de Cacheu dans un premier temps. Conquête militaire par les troupes portugaises (1913-1914). Christianisation par les missionnaires catholiques portugais. Massacre du port de Pidjiguiti (1959, Bissau) impliquant de nombreux Manjak, déclenchant la formation du PAIGC. Indépendance de la Guinée-Bissau (1974). Décisions du Kambatch de 1986 : réformes sociales auto-imposées.",
+      "majorHistoricalEvents": "Premiers contacts avec les Portugais de Cacheu (fin 15e-début 16e siècle). Conquête militaire portugaise (1913-1914) : fin de l'autonomie. Massacre de Pidjiguiti (3 août 1959) : plus de 50 dockers africains tués (dont de nombreux Manjak) lors d'une grève à Bissau; cet événement catalysa la formation du PAIGC et la guerre d'indépendance. Indépendance de la Guinée-Bissau (24 septembre 1974). Kambatch de 1986 : cérémonie d'initiation-débat qui abolit le service prénuptial (groom service) et le culte de divination féminine. Montée en puissance de la diaspora sportive (footballeurs Mendy, Gomis, Fati, Bafétimbi Gomis, Benjamin Mendy, Edouard Mendy, Ferland Mendy)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Système semi-féodal centré sur la production rizicole : les villages sont regroupés en unités dont les chefs (propriétaires fonciers locaux) versent une part de leur récolte à des supérieurs, eux-mêmes tributaires des chefs des zones de Bassarel et Caio, qui reconnaissaient l'autorité du Roi de Bassarel. Ce roi présidait une fédération de territoires et maintenait un niveau de vie supérieur grâce à une fiscalité lourde sur les producteurs de riz. Après 1974, cette structure fut officiellement démantelée.",
+      "clanOrganization": "La société manjak est organisée en villages, eux-mêmes subdivisés en quartiers (banju : espaces des jeunes hommes non mariés pour discussion villageoise) et en composés de familles étendues. L'organisation rituelle tourne autour de sanctuaires (pitchap : poteaux sculptés représentant collectivement les ancêtres) distribués à tous les niveaux : composé familial, quartier, village, région d'initiation. Les régions d'initiation (groupes de villages voisins) ont chacune un bosquet sacré.",
+      "ageClassSystems": "Le Kambatch est l'institution initiatique masculine la plus emblématique : cérémonie tous les quarts de siècle (~25 ans) au cours de laquelle les hommes sont initiés au groupe et engagent un débat de style parlementaire sur les coutumes à maintenir, réviser ou abolir. Lors du Kambatch de 1986, les hommes décidèrent d'abolir le service prénuptial (pratique où le fiancé travaillait les champs de la belle-famille pendant plusieurs années) et le culte de divination féminine. Les banju (espaces de discussions des jeunes hommes) préparaient socialement les jeunes à ces responsabilités.",
+      "roleOfLineages": "Les lignages déterminent les droits fonciers sur les rizières (bolanhas) et les relations d'alliance matrimoniale. Le mariage était traditionnellement précédé d'un service prénuptial (groom service, aboli en 1986 par le Kambatch) : le fiancé travaillait les champs de la famille de la future épouse pendant quelques années. L'exogamie entre certains groupes est pratiquée. Le culte des ancêtres (pitchap) structure les obligations rituelles entre lignages.",
+      "religiousAuthority": "Les sanctuaires d'ancêtres (pitchap : poteaux sculptés en bois) sont gérés par les chefs de famille ou de lignage. Les offrandes (eau puis vin de palme) sont versées; seul un homme peut initier la conversation avec les ancêtres; les femmes relaient ensuite leurs requêtes. Les ancêtres sont perçus comme des égaux relatifs de la société, subjugués dans ses normes, et non comme des guides moraux. Les prêtres catholiques exercent une autorité importante depuis la christianisation coloniale."
+    },
+    "languages": {
+      "mainLanguage": "Manjak (Manjaku)",
+      "isoCodes": ["mfv"],
+      "dialects": [
+        "Dialecte de Bassarel (centre culturel et rituel, nord-ouest de la Guinée-Bissau)",
+        "Dialecte de Babok (zone côtière, Cacheu)",
+        "Dialecte de Casamance (locuteurs diasporiques au Sénégal)"
+      ],
+      "vehicularRole": "Le manjak (mandjak, ISO 639-3 : mfv) est une langue nationale de la Guinée-Bissau, appartenant au groupe bak des langues atlantiques (Niger-Congo), proche des langues mankanya (mancagne) et papel. Il est parlé par environ 200 000 à 500 000 personnes (Guinée-Bissau, Sénégal, Gambie, France). Le créole portugais (kriol, crioulo da Guiné-Bissau) est la principale lingua franca en Guinée-Bissau. En Sénégal, le wolof est la langue véhiculaire des Manjak de la diaspora."
+    },
+    "culture": {
+      "majorRites": "{\"kambatch\": \"Cérémonie initiatique masculine tous les 25 ans : les hommes sont initiés au groupe et tiennent une assemblée débattant des coutumes à conserver, modifier ou abolir. Lors du Kambatch de 1986, le service prénuptial et le culte de divination féminine ont été abolis. C'est l'institution culturelle la plus distinctive des Manjak.\", \"funeraryRites\": \"Les funérailles sont considérées comme essentielles pour assurer aux ancêtres une bienveillance envers les vivants. Les Manjak qui migrent en ville retournent dans leur village natal pour participer aux rites funéraires. Des dépenses importantes (temps et argent) sont consacrées à ces rituels, même de l'étranger. Drums battent, chants funèbres et veillées accompagnent les défunts. Les ancêtres morts à l'étranger sont censés renaître dans le sanctuaire pitchap du village natal.\", \"ancestorShrines\": \"Les pitchap sont des sanctuaires familiaux constitués de poteaux de bois sculptés, représentation collective (et non individuelle) des ancêtres. Des offrandes d'eau puis de vin de palme sont versées. L'homme initie la conversation rituelle; la femme relaie les demandes quotidiennes. Ces sanctuaires sont présents dans tous les composés de la zone de Bassarel/Babok; rares en dehors.\", \"scarification\": \"La scarification féminine (intricat motifs sur le torse et les seins) était une pratique courante avant les années 1960. Elle était décorative selon le gouverneur Antonio de Carvalho Viegas (1936) et décline depuis l'influence portugaise. La majorité des femmes âgées portent encore ces marques.\"}",
+      "symbols": "Les poteaux sculptés pitchap (sanctuaires d'ancêtres) sont le symbole spirituel le plus emblématique de la culture manjak. Les bolanhas (rizières aménagées dans les mangroves, avec digues et canaux) représentent l'ingéniosité agricole et l'identité territoriale du peuple. Le tissu manjak (textile tissé en bandes, motifs géométriques, utilisé dans des tenues cérémonielles et en mode contemporain au Sénégal) est un marqueur culturel fort.",
+      "artsAndMusic": "{\"textile\": \"Le tissage manjak (mandjak) est une tradition artisanale emblématique. Des bandes de tissu étroites aux motifs géométriques colorés sont assemblées pour former des pagnes et des tenues cérémonielles. Ce textile est très prisé au Sénégal et a été revalorisé par des designers contemporains (notamment la maison TËSSS à Dakar).\", \"music\": \"La musique traditionnelle inclut des tambours (percussions) et des chants collectifs lors des cérémonies (funerailles, Kambatch, mariages). Des instruments à vent (flûtes) accompagnent les rites. Les chants sont souvent en forme responsorial (soliste-chœur).\", \"oralLiterature\": \"Les Manjak ont une riche tradition orale : contes, proverbes et récits historiques transmis au sein des banju (espaces des jeunes hommes). Les griots (moins présents que chez les Mandingue) transmettent certains récits généalogiques.\", \"football\": \"La diaspora manjak a produit de nombreux footballeurs de classe mondiale, reflétant la forte implantation communautaire en France et au Sénégal : Ansu Fati (Espagne), Edouard Mendy (Sénégal/Chelsea), Ferland Mendy (France/Real Madrid), Benjamin Mendy (France), Bafétimbi Gomis (France), Alfred Gomis (Sénégal), Kafétien Gomis (France, saut en longueur).\"}",
+      "spiritualities": "{\"ancestorCult\": {\"description\": \"Le culte des ancêtres est au cœur de la spiritualité traditionnelle manjak. Les ancêtres (esprits des défunts) sont perçus comme jaloux, vindicatifs mais capables d'apporter chance ou malchance. Les vivants entretiennent une relation de negotiation avec ces esprits : offrandes données aux ancêtres comme salaire en échange de bénédictions. Les Manjak se considèrent comme les employeurs de ces esprits-travailleurs. La qualité des funérailles conditionne la nature bienveillante ou malveillante de l'esprit.\", \"pitchap\": \"Sanctuaires d'ancêtres familiaux, poteaux sculptés représentant les ancêtres collectivement. Offrandes rituelles d'eau et de vin de palme.\"}, \"christianity\": {\"specificPractices\": \"La majorité des Manjak se définit comme catholique (héritage de la mission catholique portugaise). Des pratiques animistes coexistent avec le catholicisme dans un syncrétisme courant. Les jeunes urbains sont de plus en plus sceptiques vis-à-vis des pratiques animistes.\", \"minorityIslam\": \"Une minorité pratique l'islam, surtout parmi les communautés en contact avec des populations musulmanes (Sénégal, Gambie).\"}, \"divination\": \"Le culte de divination (femmes comme vases pour les esprits mauvais fournissant des informations sur l'infertilité et la mortalité infantile) a été officiellement aboli lors du Kambatch de 1986 par vote masculin. Il était jugé non prouvé et potentiellement exploiteur.\"}"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La fédération précoloniale des Manjak était dirigée par le Roi de Bassarel, chef suprême d'une organisation semi-féodale centrée sur la production rizicole. Ce système semi-étatique était stable et bien documenté par les Portugais. Des entités voisines plus petites (royaumes manjak défunts) avaient une protection coloniale portugaise à l'époque préindépendance. Ce système fut détruit par la conquête militaire portugaise de 1913-1914 et officiellement aboli après l'indépendance de 1974.",
+      "relationsWithNeighbors": "Les Manjak entretiennent des liens étroits avec les peuples bak voisins : les Mankanya (Mancagne/Braam, voisins au sud-est, langues et agriculture similaires), les Papel (voisins, affinités linguistiques et culturelles), les Feloop (sous-groupe Jola, voisins au nord-ouest). Des relations commerciales et rituelles existent aussi avec les Mandingue et les Peuls voisins. Les Manjak de la diaspora en Sénégal interagissent fortement avec les Wolof, Serer et Diola.",
+      "conflictsOrAlliances": "Résistance à la colonisation portugaise jusqu'en 1913. Participation au massacre de Pidjiguiti (1959) : de nombreux dockers manjak furent tués dans une grève réprimée dans le sang, ce qui catalysa la fondation du PAIGC et la guerre d'indépendance guinéenne. Les Manjak participèrent peu directement à la guérilla d'indépendance (beaucoup étaient déjà en Sénégal), préférant la migration à l'engagement armé. Après 1974, tensions avec le gouvernement PAIGC qui supprima les structures traditionnelles.",
+      "diaspora": "La diaspora manjak est l'une des plus importantes d'Afrique de l'Ouest relativement à la taille du groupe. Dès les années 1920-1940, un cinquième des Manjak travaillaient hors de la Guinée portugaise; dès les années 1950, un tiers des actifs étaient migrants. Les principales destinations sont Dakar (Sénégal, important quartier manjak), Ziguinchor (Casamance) et la France (région parisienne, industrie automobile). La diaspora finançait les importations du village en contrepartie des obligations rituelles (funérailles, cérémonies). Les Manjak de France ont produit une génération remarquable de footballeurs professionnels."
+    },
+    "demography": {
+      "totalPopulation": 510000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (Sénégal, consulté 2024) : population mondiale 510 000, dont 173 000 au Sénégal. Wikipedia (Manjak people) : environ 14% de la population de la Guinée-Bissau (~230 000 sur 1,6M). SIL Ethnologue — Manjak (mfv). Les estimations totales varient entre 200 000 et 510 000 selon les sources et la définition du groupe.",
+      "distributionByCountry": [
+        {
+          "country": "GNB",
+          "population": 230000,
+          "note": "Environ 14% de la population de la Guinée-Bissau; zone de Bassarel, Babok, Calequisse, Caio (Cacheu)"
+        },
+        {
+          "country": "SEN",
+          "population": 200000,
+          "note": "Diaspora à Dakar, Ziguinchor, Bignona (Casamance); importantes communautés établies depuis le 20e siècle"
+        },
+        {
+          "country": "GMB",
+          "population": 47000,
+          "note": "Communautés diasporiques en Gambie (Joshua Project : 47 000)"
+        },
+        {
+          "country": "FRA",
+          "population": 30000,
+          "note": "Diaspora en France, principalement en région parisienne (industrie automobile)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Manjak people. https://en.wikipedia.org/wiki/Manjak_people",
+      "Joshua Project — Mandyak, Manjago in Senegal. https://joshuaproject.net/people_groups/print/13493/SG",
+      "Van Binsbergen, Wim — Migration and religion in Manjak society. http://m.quest-journal.net/shikanda/african_religion/socio.htm",
+      "SIL Ethnologue — Mandjak (mfv). https://www.ethnologue.com/language/mfv",
+      "Gail Pellett Productions — Senegal, Tissu Mandjak. https://gailpellettproductions.com/senegal-wow/",
+      "Wikipedia EN — Mankanya people. https://en.wikipedia.org/wiki/Mankanya_people"
+    ]
+  }
+}

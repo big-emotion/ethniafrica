@@ -1,0 +1,92 @@
+{
+  "id": "PPL_NYANGBO",
+  "nameMain": "Nyangbo",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Nyangbo",
+      "selfAppellation": "Batrugbu (pluriel) / Atrugbu (singulier)",
+      "exonyms": [
+        "Nyangbo",
+        "Ngangbo",
+        "Nyagbo",
+        "Tutrugbu (nom de la langue)"
+      ],
+      "originOfExonyms": "Nyangbo est le nom exonymique donne par les voisins et adopte dans la litterature academique et administrative ghanéenne. Les Nyangbo se designent eux-memes comme Batrugbu et appellent leur langue Tutrugbu. Nyagbo est une variante orthographique courante.",
+      "whyProblematic": "La confusion entre le nom du peuple (Nyangbo/Nyagbo/Batrugbu) et la langue (Tutrugbu/Nyangbo/Nyagbo) est frequente dans la litterature. Ethnologue traite Nyangbo (Tutrugbu, code nyb) et Tafi (Tegbo, code tcd) comme deux langues separees malgre leur intelligibilite partielle (67 % entre les deux varietes). Le nom Nyangbo est parfois employe pour designer l'ensemble Nyangbo-Tafi.",
+      "contemporaryUsage": "Le terme Nyangbo est utilise dans les documents officiels ghanéens et la litterature academique. Les locuteurs preferent Batrugbu pour se designer et Tutrugbu pour leur langue. L'orthographe Nyagbo est preferee dans certaines publications locales (Daybreak Ghana).",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Ghana-Togo Mountain languages (GTM) / Kwa / Volta-Congo",
+      "historicalRegion": "District d'Afadzato Sud (Afadzato Anyigbe), Region Volta, Ghana du sud-est",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Nyangbo (Batrugbu)"],
+    "origins": {
+      "ancientOrigins": "La tradition orale des Nyangbo (Batrugbu) situe leurs ancetres (xwiale - forefathers) a proximite du peuple Efutu (Fetu) dans le nord-ouest de l'actuel Cape Coast. Ils se sont ensuite installes sur la cote d'Accra, dans la zone aujourd'hui connue sous le nom d'Osu. Les Nyangbo sont generalement consideres comme un peuple Guan des montagnes Ghana-Togo, faisant partie des peuples refugies dans les montagnes pour preserver leur independance.",
+      "formationPeriod": "La formation de l'identite Nyangbo telle qu'elle est etablie aujourd'hui remonte a l'installation sur les montagnes Eweto (frontiere Ghana-Togo), vraisemblablement entre le XVIIe et le XVIIIe siecle, sous la pression des guerres Akwamu et des migrations environnantes.",
+      "migrationRoutes": [
+        "Nord-ouest de Cape Coast (pres d'Efutu) vers Osu (cote d'Accra)",
+        "Osu vers Adzina pres d'Akosombo (Region Est)",
+        "Adzina vers Tɔsrɔ̃ɛ (15 km au sud d'Anum, pres du fleuve Volta)",
+        "Tɔsrɔ̃ɛ vers les montagnes Agu en Togo (territoire appele Agunyagbo)",
+        "Agunyagbo vers le pied de la chaine Akwapim-Togo (Eweto) : installation definitive a Sroe/Esroe sur le sommet de la montagne"
+      ],
+      "historicalSettlementZones": [
+        "Neuf communautes de la zone traditionnelle Nyangbo, district d'Afadzato Sud, Region Volta, Ghana",
+        "Communautes : Esroe (Sroe/Banya), Fiafe (Fiaxoe), Konda (Begbe), Kume (Okum), Agɔdɔme (Orgodome), Odumasi (Odumase), Emli (Bazɛ), Anyigbe (Bamale), Gagbefe (Gbahu)",
+        "3 communautes (Sroe, Konda, Fiafe) situees sur la montagne Eweto, a la frontiere Ghana-Togo"
+      ],
+      "unificationsOrDivisions": "Une tension de legitimite historique oppose les Nyangbo (Batrugbu) et le peuple Emli concernant l'autochtonie sur le sommet de la montagne. Les Emli affirment avoir precede les huit communautes Nyangbo. Cette question d'autochtonie reste un sujet de contention (Adjoe 2011 ; Essegbey 2011). Le paramountcy est installe a Gagbefe plutot qu'a Sroe (foyer historique) pour des raisons d'accessibilite administrative.",
+      "externalInfluences": "Influence importante de l'ewe (langue dominante regionale), conduisant a un bilinguisme generalise. Les montagnes Ghana-Togo ont historiquement offert un refuge aux peuples fuyant la guerre et l'esclavage (Nugent 2005). L'evangelisation chretienne et l'education formelle en anglais ont transforme les pratiques culturelles depuis la periode coloniale.",
+      "majorHistoricalEvents": "Fuite devant les guerres d'expansion Akwamu (XVIIIe siecle) qui poussa les Nyangbo depuis la vallee de la Volta vers les montagnes Agu en Togo puis vers leur emplacement actuel. Le festival Budzugbu commemore cet exode fondateur. Le projet de documentation linguistique de Tutrugbu (CoLang, Max Planck Institute / James Essegbey) a permis de preserver la memoire culturelle de ce petit groupe."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferie avec un chef supreme (paramount chief) appele Ashuigbagbla (le pere de tous les citoyens Nyangbo). Le paramountcy est localise a Gagbefe pour des raisons d'accessibilite. Chaque communaute villageoise dispose de sa propre structure cheffale.",
+      "clanOrganization": "Organisation par communautes correspondant aux neuf villages de la zone traditionnelle. Les fondateurs legendaires de chaque clan sont commemores lors du festival Budzugbu. Le chasseur-guerrier Kalẽgbe est la figure fondatrice qui decouvrit le site de Sroe/Esroe.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages claniques transmettent l'histoire orale et la tradition de fondation des communautes. La culture agroforestiere (cocoa, plantain, banane, taro, manioc) est transmise par les generations. Les anciens jouent un role central dans la resolution des conflits.",
+      "religiousAuthority": "Chretiente dominante. Les pratiques religieuses traditionnelles persistent en parallele. Le festival Budzugbu est a la fois commemoratif et cultuel."
+    },
+    "languages": {
+      "mainLanguage": "Tutrugbu (Nyangbo)",
+      "isoCodes": ["nyb"],
+      "dialects": [],
+      "vehicularRole": "Le Tutrugbu (nyb) est une langue tonale a trois niveaux de tons et deux tons contours, parlee dans les neuf communautes de la zone traditionnelle Nyangbo. C'est une langue menacee par l'ewe, langue regionale dominante. L'anglais est la langue d'enseignement. Le tutrugbu n'est pas enseigne formellement dans les ecoles. Selon un recensement informel de 2008, seuls 2 176 des 4 405 habitants vivent dans des zones ou le tutrugbu est encore parle comme langue quotidienne."
+    },
+    "culture": {
+      "majorRites": "Le festival Budzugbu (signifiant nous nous sommes enfin installes) est la celebration culturelle majeure. Il commeore la migration fondatrice depuis les enclaves Efutu-Awutu de la Region Centrale, le passage par les montagnes Agu en Togo, et l'installation dans la Region Volta. Le festival honore egalement les peres fondateurs du Nyangbo State.",
+      "symbols": "Les montagnes et les grottes historiques constituent des symboles identitaires forts. Le site de Sroe/Esroe, premier etablissement au sommet, est le lieu sacre originel. La source Kahyweh decouverte par Kalẽgbe est liee a la fondation mythique. La vue panoramique appele amitodzi (sommet de la montagne) sur le lac Volta et la riviere Dayi constitue un lieu patrimonial.",
+      "artsAndMusic": "Traditions orales incluant recits historiques, proverbes et chants. L'histoire de la migration fondatrice est transmise oralement de generation en generation. Pratiques musicales liees aux festivites communautaires.",
+      "spiritualities": "Spiritualite traditionnelle Guan combinee au christianisme. La culture des montagnes (refuge, autochthonie) est une composante centrale de l'identite spirituelle. Le festival Budzugbu a une dimension spirituelle de gratitude pour la survie et l'installation definitive du peuple."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Nyangbo State : entite politique traditionnelle dirigee par l'Ashuigbagbla (paramount chief). Organisation en neuf communautes villageois avec un paramountcy central a Gagbefe. Le Nyangbo Traditional Area est une chefferie reconnue par l'administration ghanéenne.",
+      "relationsWithNeighbors": "Proximite avec les Akpafu (au nord), les Avatime (au nord-est), les Tafi (au nord-ouest) et les communautes Ewe (au sud). Les Nyangbo font partie des peuples des montagnes Ghana-Togo (GTM), aux cotes d'Animere, Kebu, Tuwuli, Igo, Ikposo, Siwu (Lolobi/Akpafu), Likpe (Sɛkpɛle), Lelemi, Avatime. La contention sur l'autochtonie avec le peuple Emli est documentee.",
+      "conflictsOrAlliances": "La fuite devant les guerres Akwamu (XVIIIe siecle) est l'evenement historique fondateur. Les montagnes Ghana-Togo ont servi de refuge (Nugent 2005). La frontiere Ghana-Togo divise physiquement certaines communautes Nyangbo, dont trois villages sont sur le versant de la montagne Eweto.",
+      "diaspora": "Une diaspora Nyangbo existe : en 2008, environ 2 229 des 4 405 personnes recensees vivaient hors des zones ou le tutrugbu est parle quotidiennement, temoignant d'une migration interne vers les villes ou d'autres regions du Ghana."
+    },
+    "demography": {
+      "totalPopulation": 11000,
+      "referenceYear": 2025,
+      "source": "Estimation fondee sur Nyangbo-Tafi language (2003) : 11 000 locuteurs (Wikiwand/Wikipedia). Recensement informel CoLang 2008 : 4 405 personnes dans les neuf communautes. Joshua Project : Nyagbo (11 000 speakers). Estimation 2025 en tenant compte de la croissance demographique du Ghana.",
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 11000,
+          "note": "Neuf communautes du district d'Afadzato Sud, Region Volta, Ghana du sud-est"
+        }
+      ]
+    },
+    "sources": [
+      "Daybreak Ghana – History of the Nyagbo, 2021 (https://daybreakgh.org/history-of-the-nyagbo/)",
+      "CoLang Institute – Tutrugbu (Nyangbo) (https://www.colanginstitute.org/content/tutrugbu-nyangbo)",
+      "Joshua Project – Nyangbo, Tutrugbu in Ghana (https://joshuaproject.net/people_groups/14089/GH)",
+      "Ethnologue – Nyagbo Language (NYB) (https://www.ethnologue.com/language/nyb/)",
+      "Wikipedia EN – Nyangbo-Tafi language (https://en.wikipedia.org/wiki/Nyangbo-Tafi_language)",
+      "Max Planck Institute / The Language Archive – Nyangbo project (https://archive.mpi.nl/tla/islandora/object/tla:1839_00_0000_0000_000E_1930_2)",
+      "Essegbey, James – Tutrugbu (Nyangbo) language and culture, 2013 (https://journals.openedition.org/lla/729)",
+      "Nugent, Paul – Smugglers, Secessionists and Loyal Citizens on the Ghana-Togo Frontier, 2002"
+    ]
+  }
+}

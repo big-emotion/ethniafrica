@@ -1,0 +1,123 @@
+{
+  "id": "PPL_NGONI",
+  "nameMain": "Ngoni",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MWI", "TZA", "ZMB", "MOZ"],
+  "content": {
+    "appellations": {
+      "mainName": "Ngoni",
+      "selfAppellation": "Ngoni / Abangoni / Angoni",
+      "exonyms": [
+        "Angoni",
+        "Wangoni",
+        "Mangoni",
+        "Zulus du Nord (terme ancien)",
+        "Nguni du Nord"
+      ],
+      "originOfExonyms": "Ngoni est la forme locale du terme Nguni (groupe linguistique bantu de KwaZulu-Natal dont les Ngoni sont originaires). Les formes Angoni, Wangoni et Mangoni sont les déclinaisons swahili et chewa du même ethnonyme. Le terme Zulus du Nord fut utilisé par les missionnaires et administrateurs coloniaux pour souligner l'origine zoulou de ces migrants du Mfecane.",
+      "whyProblematic": "Le terme Ngoni désigne aujourd'hui un groupe hybride issu du métissage entre les Nguni d'origine (Zulou) et les peuples locaux conquis ou assimilés (Tumbuka, Chewa, Nsenga, Tonga, Nyasa, Ngonde). En 1906, rares étaient les individus de pure ascendance Ngoni. Le terme renvoie davantage à une identité politique et culturelle construite lors de la migration qu'à une ethnicité strictement définie.",
+      "contemporaryUsage": "Les Ngoni se reconnaissent comme tels au Malawi (districts de Mzimba, Ntcheu, Mchinji), en Zambie (district de Chipata), en Tanzanie (district de Songea/Matema) et au Mozambique (province de Niassa). Leur identité est marquée par la fierté de leur origine guerrière zoulou et la pratique de la danse ingoma. La plupart parlent aujourd'hui les langues locales (chewa, tumbuka, nsenga) plus que le chingoni.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Nguni (Zone S, branche déportée vers les Zones N et P)",
+      "historicalRegion": "Originaires de KwaZulu-Natal (Afrique du Sud) ; établis depuis le XIXe siècle au Malawi (Mzimba, Ntcheu, Mchinji), Zambie (Chipata), Tanzanie (Songea) et Mozambique (province de Niassa)",
+      "currentCountries": ["MWI", "TZA", "ZMB", "MOZ"]
+    },
+    "ethnicities": [
+      "Jere Ngoni (ou Jele, branche de Zwangendaba, établie au Malawi-Nord/Mzimba et Zambie/Chipata)",
+      "Maseko Ngoni (branche distincte, établie au Malawi-Centre, Ntcheu et Dedza ; assimilée aux Chewa)",
+      "Mpezeni Ngoni (sous-groupe de Zambie, Chipata, sous Paramount Chief Mpezeni, descendants de Mpezeni fils de Zwangendaba)",
+      "Mombera Ngoni (sous-groupe du Malawi-Nord, district de Mzimba, sous Chief Mombera)",
+      "Gwangara / Songea Ngoni (Tanzanie méridionale, district de Songea, province de Ruvuma)",
+      "Gomani Ngoni (Malawi-Centre, district de Ntcheu, branche Maseko)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Ngoni descendent des Nguni de KwaZulu-Natal, notamment du clan Jele (Gumbi) dirigé par Zwangendaba Gumbi (vers 1780-1848). En 1819, après la bataille de la rivière Mhlatuze, l'alliance emaNcwangeni (dont faisait partie le clan Jele) fut défaite par les Zoulou sous Mabaso. Zwangendaba et ses followers, refusant la soumission à Shaka, commencèrent une longue migration vers le nord. Les Ngoni sont donc des Nguni ayant quitté l'Afrique du Sud à l'ère du Mfecane (grande dispersion) et ayant absorbé de nombreux peuples lors de leur marche vers le nord.",
+      "formationPeriod": "La nation Ngoni se forme progressivement entre 1819 et 1848. Les Ngoni intégraient systématiquement les populations conquises : les hommes étaient recrutés dans les régiments, les femmes prises en mariage. Ils rarement étaient plus de 1 000 lors de la traversée du Zambèze (20 novembre 1835). Après la mort de Zwangendaba (1848), des disputes successorales fragmentèrent la nation en plusieurs branches qui fondèrent chacune un royaume distinct en Zambie, au Malawi et en Tanzanie.",
+      "migrationRoutes": [
+        "KwaZulu-Natal (départ vers 1819-1820) : nord-ouest en direction du Mozambique",
+        "Mozambique (côte et intérieur) : traversée vers le Zimbabwe actuel",
+        "Zimbabwe (Matabeleland) : évitement des Ndebele de Mzilikazi qui s'y étaient établis",
+        "Traversée du Zambèze (20 novembre 1835, date précise donnée par des documents missionnaires)",
+        "Plateau de Fipa (actuelle Tanzanie-Zambie) : mort de Zwangendaba à Mapupo (1848)",
+        "Dispersion après 1848 : Jere/Jele vers Mzimba (Malawi-Nord) et Chipata (Zambie) ; Maseko vers Ntcheu (Malawi-Centre) ; Gwangara vers Songea (Tanzanie-Sud)"
+      ],
+      "historicalSettlementZones": [
+        "District de Mzimba (Malawi-Nord) : Jere Ngoni, capitale traditionnelle Ekwendeni/Mzimba",
+        "District de Chipata (Zambie-Est) : Mpezeni Ngoni, capitale Chipata (anciennement Fort Jameson)",
+        "District de Ntcheu et Dedza (Malawi-Centre) : Maseko Ngoni (Gomani)",
+        "District de Songea, province de Ruvuma (Tanzanie-Sud) : Gwangara Ngoni",
+        "Province de Niassa (Mozambique-Nord) : groupes Ngoni du Mozambique"
+      ],
+      "unificationsOrDivisions": "Après la mort de Zwangendaba (1848 à Mapupo, Tanzanie), ses fils se disputèrent la succession. Ses suivants et les Maseko Ngoni fondèrent sept royaumes distincts en Zambie et au Malawi. Les principales branches : Jere/Jele (Malawi-Nord), Maseko (Malawi-Centre), Mpezeni (Zambie-Est), Gwangara (Tanzanie). Ces branches maintinrent une identité commune Ngoni mais des structures politiques distinctes et des alliances séparées avec les puissances coloniales.",
+      "externalInfluences": "Mfecane (1817-1840) : catalyseur de la migration. Contacts avec les Portugais du Mozambique lors de la traversée. Contacts avec les Ndebele de Mzilikazi au Zimbabwe (évités). Missionnaires écossais (Free Church of Scotland, Livingstonia Mission, dès 1875 au Malawi-Nord) : évangélisation, éducation, documentation de la culture Ngoni. Colonisation britannique : Nyasaland (Malawi), Rhodésie du Nord (Zambie), Tanganyika (Tanzanie). 1897 : défaite de Mpezeni face à la British South Africa Company. Indépendances nationales (1961-1964).",
+      "majorHistoricalEvents": "1819 : bataille de la rivière Mhlatuze, début de la migration. 1835 (20 novembre) : traversée du Zambèze. 1848 : mort de Zwangendaba à Mapupo, scission en plusieurs branches. 1875 : arrivée de la mission de Livingstonia dans le Malawi-Nord (documentation des Ngoni). 1879 : Maseko Ngoni battent les Yao au Malawi-Centre. 1897 : Mpezeni résiste avec 4 000 guerriers contre la BSAC, défaite et signature du traité (Paramount Chief Mpezeni reconnu). 1898 : Gomani Ngoni exécuté par les Britanniques pour résistance. 1921 : au Nyasaland seul, 245 833 personnes se réclament Ngoni. Festivals Nc'wala (Zambie) et Ingoma (Malawi) célébrés annuellement aujourd'hui."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Système monarchique centralisé hérité des Zoulou : le chef suprême porte le titre inkosi ya makosi (roi des rois). Les états Ngoni sont divisés en plusieurs segments sous la direction nominale de reines-régentes (notamment dans les royaumes de Zwangendaba). Les villages sont grands et compacts, entourant un enclos à bœufs central. Aujourd'hui, les titres de Paramount Chief (Mpezeni en Zambie, Mombera/Gomani au Malawi) sont reconnus par les gouvernements nationaux.",
+      "clanOrganization": "Structure patrilinéaire héritée des Nguni/Zoulou, avec clans (izibongo/isibongo) définissant l'identité. Mariage exogame (clans différents). Les clans Ngoni originels incluent notamment : Maseko, Jele, Gama, Sibande, Ndlovu, Dube, Thole, Nkambule. Les peuples assimilés (Tumbuka, Chewa, Nsenga) adoptèrent souvent un nom de clan Ngoni pour accéder au statut de membre à part entière.",
+      "ageClassSystems": "Système de régiments militaires (amabutho) hérité des Zoulou : classes d'âge organisées en régiments résidant dans des kraals royaux. Les hommes ne pouvaient se marier qu'avec la permission collective accordée au régiment. Ce système a progressivement disparu avec la sédentarisation et la colonisation.",
+      "roleOfLineages": "Les lignages patrilinéaires déterminent le rang social et les alliances. L'état Ngoni absorbait les captifs et les populations locales dans ses structures : les hommes étaient intégrés dans les régiments, les femmes dans les foyers. Après plusieurs générations, les descendants de captifs devenaient membres à part entière. Ainsi le groupe est devenu progressivement plus culturel qu'ethnique.",
+      "religiousAuthority": "Le chef suprême (inkosi ya makosi) est aussi chef spirituel de la nation. Les pratiques divinatoires (izangoma, devins-guérisseurs zoulou) coexistent avec l'influence croissante des missions chrétiennes (Free Church of Scotland, Livingstonia Mission). Le christianisme (protestantisme presbytérien et réformé) est aujourd'hui majoritaire dans les communautés Ngoni du Malawi et de Zambie."
+    },
+    "languages": {
+      "mainLanguage": "Chingoni (dialecte nguni/zoulou, de moins en moins parlé) / Chewa (Malawi, Zambie) / Tumbuka (Malawi-Nord)",
+      "isoCodes": ["ngo", "nya", "tum"],
+      "dialects": [
+        "Chingoni / Ngoni (ngo) : dialecte nguni, aujourd'hui surtout utilisé dans les poèmes rituels de louange (izibongo) et les cérémonies ; peu de locuteurs natifs courants",
+        "Chichewa / Nyanja (nya) : langue adoptée par les Ngoni du Malawi-Centre (Maseko Ngoni)",
+        "Tumbuka (tum) : langue adoptée par les Jere Ngoni du Malawi-Nord (Mzimba)",
+        "Nsenga : adoptée par certains groupes Ngoni de Zambie et Mozambique"
+      ],
+      "vehicularRole": "Le chingoni (ISO 639-3 : ngo) est une langue bantoue de Zambie, Tanzanie et Mozambique, membre du sous-groupe nguni. Au Malawi, la variante est parfois appelée dialecte du zoulou. La plupart des Ngoni sont aujourd'hui plurilingues : ils parlent la langue locale (chewa, tumbuka, nsenga) au quotidien, et réservent le chingoni aux contextes rituels et cérémonials. La langue zoulou (base du chingoni) fut retirée des programmes scolaires du Nyasaland en 1933."
+    },
+    "culture": {
+      "majorRites": "Ingoma (danse guerrière) : héritée de la tradition zoulou, pratiquée lors des cérémonies de rite de passage (puberté, mariage), des fêtes de récolte et des commémorations guerrières. Filles et garçons dansent ensemble dans certaines variantes. Nc'wala : festival de première récolte célébré fin février à Mutenguleni (25 km de Chipata, Zambie), rassemblant les Ngoni de Zambie sous le Paramount Chief Mpezeni (offrandes de premières récoltes au chef, chants et danses). Initiations : rites de passage masculins et féminins hérités de la tradition nguni, avec circoncision dans certains groupes. Cérémonies funèbres : sacrifice de bœufs, chants d'éloge (izibongo) pour les défunts illustres.",
+      "symbols": "Le bœuf (inkomo) est central : richesse, dot (lobola), offrande sacrificielle et enclos communautaire (kraal à bœufs au centre du village). Le bouclier guerrier (isihlangu) et la sagaie (umkhonto) symbolisent l'héritage militaire zoulou. Les chants de louange (izibongo) préservés lors des cérémonies sont les symboles de la mémoire identitaire. L'inkosi ya makosi (chef des chefs) incarne l'unité de la nation Ngoni.",
+      "artsAndMusic": "Ingoma : danse collective en ligne ou en cercle, accompagnée de battements de pieds, de claquements de mains et de chants, sans instruments à percussion dans la forme la plus pure (héritière directe de la tradition zoulou). Izibongo : poésie orale de louange chantée en chingoni lors des cérémonies royales. Musique vocale polyphonique lors des rites collectifs. Artisanat : travail du cuir (boucliers, vêtements), forge (sagaies, houes), poterie, tissage de nattes. Les Quinze contes populaires Ngoni (retranscrits par Margaret Read en 1939) constituent le patrimoine littéraire oral documenté.",
+      "spiritualities": "Croyance aux esprits ancestraux nguni (amadlozi) : les ancêtres protègent et guident les vivants, particulièrement invoqués lors des cérémonies royales et des fêtes de première récolte. Les izangoma (devins-guérisseurs) maintiennent leur rôle de médiateurs spirituels. Christianisme dominant depuis la fin du XIXe siècle : presbyterianisme (Free Church of Scotland, Livingstonia Mission fondée 1875) est le courant le plus répandu au Malawi-Nord et en Zambie-Est. Des Églises africaines indépendantes (adventistes, zionistes) pratiquent un syncrétisme christianisme-ancestralité."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Sept royaumes Ngoni ont été fondés après la mort de Zwangendaba (1848) : au Malawi (Jere/Mzimba sous Mombera, Maseko/Ntcheu sous Gomani, Mpezeni/Mchinji) et en Zambie (Chipata sous Mpezeni, le plus puissant). En Tanzanie méridionale, les Gwangara Ngoni fondèrent un État autour de Songea. Le Paramount Chief Mpezeni (Zambie) et le Paramount Chief Gomani (Malawi) sont les autorités traditionnelles les plus reconnues aujourd'hui.",
+      "relationsWithNeighbors": "Les Ngoni imposèrent leur domination aux peuples locaux par la conquête et l'assimilation forcée : Tumbuka, Chewa, Nsenga, Tonga, Nyasa, Ngonde furent intégrés à la structure Ngoni. Les raids de bœufs et de femmes contre les Chewa, Yao et autres groupes furent constants au XIXe siècle. Progressivement, les Ngoni adoptèrent les langues et certaines coutumes des peuples conquis, devenant un groupe ethnique hybride. Relations avec les missionnaires écossais de Livingstonia (dès 1875) : évangélisation et documentation de la culture.",
+      "conflictsOrAlliances": "1879 : défaite des Yao par les Maseko Ngoni au Malawi-Centre. 1897 : Mpezeni (Zambie) résiste avec 4 000 guerriers contre la BSAC de Cecil Rhodes, défaite ; traité signé permettant sa reconnaissance comme Paramount Chief. 1898 : exécution du chef Gomani Ngoni par les Britanniques du Nyasaland pour résistance armée. 19e siècle : raids contre les Chewa (un hunter britannique décrit en 1897 dix femmes tuées et 22 capturées lors d'un raid Mpezeni). Alliance progressive avec les missions écossaises comme moyen de résistance culturelle à la colonisation.",
+      "diaspora": "La migration Ngoni est elle-même la diaspora originelle : déplacement de KwaZulu-Natal à travers le Mozambique, le Zimbabwe, la Zambie, le Malawi et la Tanzanie entre 1819 et 1850 environ. Aujourd'hui, des communautés Ngoni sont présentes dans les villes de Lilongwe et Blantyre (Malawi), Lusaka et Chipata (Zambie), Dar es Salaam (Tanzanie). Une diaspora internationale s'est développée en Grande-Bretagne et dans les pays du Commonwealth."
+    },
+    "demography": {
+      "totalPopulation": 2000000,
+      "referenceYear": 2025,
+      "source": "Estimations fondées sur : recensement du Malawi 2018 (district de Mzimba : ~700 000 hab., Ntcheu : ~600 000 hab., dont une part importante de Ngoni) ; Zambie Eastern Province (Chipata district, majorité Ngoni) ; Tanzania (Songea, Ruvuma province). Joshua Project et Ethnologue [ngo] estiment entre 300 000 et 500 000 locuteurs chingoni actifs. La population revendiquant une identité Ngoni au sens large dépasse 2 millions.",
+      "distributionByCountry": [
+        {
+          "country": "MWI",
+          "population": 1200000,
+          "note": "Districts de Mzimba (Jere Ngoni, Malawi-Nord), Ntcheu, Dedza et Mchinji (Maseko Ngoni, Malawi-Centre)"
+        },
+        {
+          "country": "ZMB",
+          "population": 500000,
+          "note": "District de Chipata et province de l'Est (Mpezeni Ngoni, descendants de Zwangendaba)"
+        },
+        {
+          "country": "TZA",
+          "population": 200000,
+          "note": "Province de Ruvuma, district de Songea (Gwangara/Songea Ngoni)"
+        },
+        {
+          "country": "MOZ",
+          "population": 100000,
+          "note": "Province de Niassa (nord du Mozambique), groupes Ngoni issus de la migration"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Ngoni people. https://en.wikipedia.org/wiki/Ngoni_people",
+      "Uvelaphi Africa — Ngoni People. https://uvelaphi.africa/cultures/ngoni.html",
+      "Britannica — Mfecane. https://www.britannica.com/event/Mfecane",
+      "South African History Online — Mfecane. https://sahistory.org.za/article/mfecane-understanding-period-transformation-southern-africa",
+      "Nation Online Malawi — Understanding Maseko and Jere Ngoni. https://mwnation.com/understanding-maseko-jere-ngoni/",
+      "YouTube — Ingoma, Ngoni Dance with Brian Nyirenda. https://www.youtube.com/watch?v=aHPMWp8wE6w",
+      "JSTOR — My Ngoni of Malawi (Jele and Maseko Ngoni). https://www.jstor.org/stable/27328061",
+      "Ethnologue (SIL) — Ngoni [ngo]. https://www.ethnologue.com/language/ngo"
+    ]
+  }
+}

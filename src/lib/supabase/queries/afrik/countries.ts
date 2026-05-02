@@ -3,6 +3,7 @@
  */
 
 import { createServerClient } from "../../server";
+import { logger } from "@/lib/api/logger";
 import type { Country } from "@/types/afrik";
 
 /**
@@ -23,7 +24,7 @@ export async function getAllAfrikCountries(
   const { data, error } = await query;
 
   if (error) {
-    console.error("Error fetching AFRIK countries:", error);
+    logger.error("Error fetching AFRIK countries", error);
     throw error;
   }
 
@@ -56,7 +57,7 @@ export async function getAfrikCountryById(
       // Not found
       return null;
     }
-    console.error(`Error fetching AFRIK country ${iso}:`, error);
+    logger.error(`Error fetching AFRIK country ${iso}`, error);
     throw error;
   }
 
@@ -87,7 +88,7 @@ export async function searchAfrikCountries(query: string): Promise<Country[]> {
     .order("name_fr");
 
   if (error) {
-    console.error("Error searching AFRIK countries:", error);
+    logger.error("Error searching AFRIK countries", error);
     throw error;
   }
 

@@ -1,0 +1,100 @@
+{
+  "id": "PPL_AFRICAINS_D_ORIGINE_RECENTE",
+  "nameMain": "Africains d'origine recente (Cap-Vert)",
+  "languageFamilyId": "FLG_ATLANTIQUE",
+  "currentCountries": ["CPV"],
+  "content": {
+    "appellations": {
+      "mainName": "Africains d'origine recente",
+      "selfAppellation": "Imigrantes africanos (en portugais capverdien) ; appellations propres aux differentes origines nationales",
+      "exonyms": [
+        "Migrants africains",
+        "Imigrantes da Africa subsaariana",
+        "Trabalhadores africanos"
+      ],
+      "originOfExonyms": "Ces termes sont des designations administratives et journalistiques portugaises, utilisees par les institutions capverdiennes pour distinguer les immigrants africains recents des populations creoles historiques de l'archipel.",
+      "whyProblematic": "La categorie Africains d'origine recente est une construction administrative et statistique, non une identite ethnique. Elle regroupe des individus d'origines tres diverses (Senegalais, Gambiens, Guineans, Bissau-Guineens, Sierra-Leonais, etc.). L'archipel du Cap-Vert, d'abord pays d'emigration, est devenu depuis les annees 2010 un pays de transit et de destination pour les migrants d'Afrique de l'Ouest.",
+      "contemporaryUsage": "Terme utilise dans les recensements et rapports officiels capverdiens, notamment dans l'enquete de 2021 sur les etrangers et immigrants (AAI-INE). Le Cap-Vert accueille des migrants essentiellement en provenance du Senegal, de Gambie, de Guinee, de Guinee-Bissau, du Sierra Leone et du Mali.",
+      "linguisticFamily": "FLG_ATLANTIQUE",
+      "ethnoLinguisticGroup": "Multiples groupes : Mandingue, Wolof, Peul/Fula, Sousou, Temne, Mende et autres langues ouest-africaines",
+      "historicalRegion": "Zones urbaines du Cap-Vert, principalement Santiago (Praia), Sal, Boa Vista et Sao Vicente",
+      "currentCountries": ["CPV"]
+    },
+    "ethnicities": [
+      "Senegalais (diverse ethnies : Wolof, Serer, Diola, Peul)",
+      "Gambiens",
+      "Guineans (Soussou, Malinke, Peul)",
+      "Bissau-Guineans (Balanta, Fula, Mandinga, Papel)",
+      "Sierra-Leonais (Temne, Mende)",
+      "Maliens (Bambara, Songhai, Peul)"
+    ],
+    "origins": {
+      "ancientOrigins": "Le Cap-Vert est un archipel decouverte en 1456 par les Portugais, colonise a partir de 1462 avec des esclaves d'Afrique de l'Ouest. La population historique creole (Criolo) est le produit de ce metissage. Les flux migratoires recents d'Afrique subsaharienne vers le Cap-Vert sont un phenomene contemporain, principalement du XXe siecle finissant et du XXIe siecle.",
+      "formationPeriod": "Fin du XXe siecle - debut XXIe siecle. L'acceleration des migrations vers le Cap-Vert est notable depuis les annees 2000-2010, liee a la croissance economique de l'archipel (tourisme) et au role de transit vers l'Europe.",
+      "migrationRoutes": [
+        "Migration depuis le Senegal, la Gambie et la Guinee-Bissau par voie maritime vers l'archipel",
+        "Migration de travail depuis l'Afrique de l'Ouest liee au secteur touristique (Sal, Boa Vista)",
+        "Arrivees de migrants en situation irreguliere, notamment des Senegalais fuyant la situation en Casamance",
+        "Routes irregulieres de migrants tentes d'atteindre les Canaries ou l'Europe continentale"
+      ],
+      "historicalSettlementZones": [
+        "Ile de Santiago (capitale Praia) : 44% des immigrants etrangers",
+        "Ile de Sal : 21% des immigrants etrangers (economie touristique)",
+        "Ile de Boa Vista : 12% des immigrants etrangers",
+        "Ile de Sao Vicente : 11% des immigrants etrangers"
+      ],
+      "unificationsOrDivisions": "Il n'existe pas d'organisation collective des immigrants africains au Cap-Vert. Chaque communaute nationale maintient ses propres reseaux de solidarite informels.",
+      "externalInfluences": "Croissance du tourisme dans les iles du Cap-Vert attirant une main-d'oeuvre d'Afrique de l'Ouest. Instabilite politique dans les pays voisins (Guinee-Bissau, Senegal/Casamance) generant des flux de refugies. Le Cap-Vert est depuis les annees 2010 un point de depart pour des traversees irregulières vers les Canaries et l'Europe.",
+      "majorHistoricalEvents": "Independance du Cap-Vert en 1975 et naissance d'une politique migratoire nationale. Recensement de 2021 indiquant 10869 etrangers residant au Cap-Vert, soit 2% de la population totale. Arrivees croissantes de migrants en situation irreguliere depuis 2020, soutenues par des dispositifs d'accueil des Unites Locales d'Immigration (ULI)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Pas de systeme politique traditionnel specifique : ces groupes maintiennent les structures politiques et communautaires de leurs pays d'origine. Certaines communautes (Senegalais, Gambiens) ont des associations de migrants au Cap-Vert.",
+      "clanOrganization": "Organisation selon les structures claniques et communautaires propres a chaque origine nationale (clans Wolof, structures lignageres Mandingue, organisations Peul, etc.).",
+      "roleOfLineages": "Les solidarites lignageres et villageoises jouent un role important dans les reseaux d'accueil et de soutien des nouveaux migrants au Cap-Vert.",
+      "religiousAuthority": "Majorite musulmane (pour les migrants du Senegal, Gambie, Guinee-Bissau et Mali). Certains migrants de Sierra Leone ou de Guinee peuvent etre chretiens ou animistes. Les imams et leaders communautaires islamiques jouent un role de mediation sociale."
+    },
+    "languages": {
+      "mainLanguage": "Kriolu capverdien (langue vehiculaire locale) ; portugais (langue officielle) ; langues d'origine",
+      "isoCodes": ["kea", "por"],
+      "dialects": [
+        "Wolof (migrants senegalais)",
+        "Mandinka (migrants gambiens et guineans)",
+        "Pulaar/Fula (migrants peuls)",
+        "Kriol guineen (migrants de Guinee-Bissau)",
+        "Soussou (migrants de Guinee-Conakry)"
+      ],
+      "vehicularRole": "Le kriolu capverdien (langue creole a base portugaise) sert de langue d'integration locale. Le portugais est obligatoire pour l'acces aux services administratifs. L'anglais est utilise dans les zones touristiques."
+    },
+    "culture": {
+      "majorRites": "Pratiques religieuses islamiques (priere du vendredi, Ramadan, rites de passage selon les traditions de chaque groupe d'origine). Maintien des coutumes du pays d'origine lors des grandes fetes communautaires.",
+      "symbols": "Pratique de la musique et de la danse d'Afrique de l'Ouest dans les communautes de migrants. Cuisines nationales maintenues dans les foyers. Tenues vestimentaires traditionnelles lors des ceremonies.",
+      "artsAndMusic": "Musique et danse propres a chaque groupe d'origine (musique manding, griots, musiques peules). Echanges culturels avec la culture creole capverdienne (morna, batuque, funaná).",
+      "spiritualities": "Islam sunnite majoritaire. Pratiques animistes residuelles integrees dans certaines ceremonies. Pratiques chretiennes chez les migrants de Sierra Leone et de certaines regions de Guinee."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Sans objet dans le contexte capverdien contemporain. Les structures politiques traditionnelles de chaque groupe d'origine restent references dans les pays d'origine.",
+      "relationsWithNeighbors": "Relations avec la population creole capverdienne dans un contexte d'integration sociale progressive. Tensions occasionnelles liees aux conditions de vie precaires des migrants irreguliers. Cooperation des autorites capverdiennes avec l'OIM pour la gestion des arrivees.",
+      "conflictsOrAlliances": "Pas de conflits intercommunautaires majeurs repertories au Cap-Vert. Certains migrants font face a des conditions de travail precaires, notamment dans le secteur de la construction et du tourisme.",
+      "diaspora": "La plupart de ces migrants aspirent a poursuivre leur route vers l'Europe (Canaries, Portugal). Une partie s'installe definitivement au Cap-Vert pour des raisons economiques, constituant une communaute de residents etrangers estimee a 10869 personnes (recensement AAI-INE 2021)."
+    },
+    "demography": {
+      "totalPopulation": 10869,
+      "referenceYear": 2025,
+      "source": "Recensement AAI-INE Cap-Vert 2021 (etrangers et immigrants residant au Cap-Vert) ; Migration Partnership Facility 2024",
+      "distributionByCountry": [
+        {
+          "country": "CPV",
+          "population": 10869,
+          "note": "2% de la population totale du Cap-Vert (2021). Concentres a Santiago (44%), Sal (21%), Boa Vista (12%), Sao Vicente (11%). Principales origines : Senegal, Gambie, Guinee, Guinee-Bissau, Sierra Leone, Mali"
+        }
+      ]
+    },
+    "sources": [
+      "Migration Partnership Facility – Cabo Verde's Local Immigration Units Support Migrants Arriving by Boat, 2024 (https://www.migrationpartnershipfacility.eu/news/answering-the-call-cabo-verdes-local-immigration-units-support-migrants-arriving-by-boat)",
+      "Wikipedia – Demographics of Cape Verde (https://en.wikipedia.org/wiki/Demographics_of_Cape_Verde)",
+      "Wikipedia – Cape Verdeans (https://en.wikipedia.org/wiki/Cape_Verdeans)",
+      "Migration Policy Institute – Cabo Verde country profile (https://www.migrationpolicy.org/country-resource/cabo-verde)",
+      "AAI-INE Cap-Vert – Enquete sur les etrangers et immigrants residant au Cap-Vert, 2022"
+    ]
+  }
+}

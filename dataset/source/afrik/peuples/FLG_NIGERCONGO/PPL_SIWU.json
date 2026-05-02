@@ -1,0 +1,79 @@
+{
+  "id": "PPL_SIWU",
+  "nameMain": "Siwu",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Siwu",
+      "selfAppellation": "Mawu",
+      "exonyms": ["Akpafu", "Lolobi", "Akpafu-Mawu"],
+      "originOfExonyms": "Siwu designe la langue et la culture des Mawu; Akpafu et Lolobi sont les noms des deux sous-groupes geographiques principaux, separes par la chaine montagneuse de la region. Akpafu vient du nom du territoire traditionnel; Lolobi designe le groupe oriental.",
+      "whyProblematic": "La denomination Siwu peut etre confondue avec Siwi (langue berbere d'Egypte). Le terme Akpafu est parfois employe exclusivement pour les villages occidentaux, excluant Lolobi.",
+      "contemporaryUsage": "Mawu est l'endonyme utilise par les locuteurs; Siwu designe la langue dans les publications academiques et les travaux de traduction biblique de Wycliffe. Akpafu et Lolobi restent en usage comme denominations communautaires dans l'Oti Region du Ghana.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Kwa, Langues Ghana-Togo montagne (groupe Buem)",
+      "historicalRegion": "Region montagneuse de la Volta orientale, Oti Region (Ghana)",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Mawu (Akpafu)", "Mawu (Lolobi)"],
+    "origins": {
+      "ancientOrigins": "Les Mawu/Akpafu sont un peuple de la montagne installe depuis des siecles dans les collines de la Volta orientale. Selon leurs traditions orales, ils descendent de groupes Guan qui ont migre depuis l'Adansi et la region d'Akyem Abuakwa, traversant la Volta pour s'etablir dans les collines du Buem. Ils sont renommes pour leur ancienne industrie siderurgique.",
+      "formationPeriod": "Avant le 19e siecle; la visite du pasteur David Asante en janvier 1887 constitue la premiere description ecrite du peuple Akpafu. L'industrie du fer etait deja tres developpee a cette epoque. Les Lolobi et les Akpafu se sont separes il y a plus d'un siecle a la suite d'un desaccord entre chefs.",
+      "migrationRoutes": [
+        "Depuis l'Adansi et l'Akyem Abuakwa (Ghana central) vers le nord-est",
+        "Traversee de la Volta a Agyade (aujourd'hui sous le lac Volta)",
+        "Installation dans les collines du Buem (Oti Region actuelle)"
+      ],
+      "historicalSettlementZones": [
+        "Collines Akpafu (villages de Todzi, Odomi, Mempeasem, Sokpoo, Adoko)",
+        "Zone Lolobi (villages de Kumasi, Ashiambi, Huyeasem)",
+        "Jasikan Municipal District, Oti Region"
+      ],
+      "unificationsOrDivisions": "Les Akpafu (ouest des montagnes) et les Lolobi (est) constituent deux communautes dialectales distinctes separees par un conflit dont la cause est oubliee. Leur reunion a ete facilitee par la traduction commune du Nouveau Testament en siwu (dediee en 2009).",
+      "externalInfluences": "Contacts avec les peuples Ewe et Twi voisins; adoption partielle du Twi comme vehiculaire. Effondrement de l'industrie siderurgique traditionnelle a la fin du 19e siecle avec l'arrivee de l'acier europeen bon marche.",
+      "majorHistoricalEvents": "Visite historique du pasteur David Asante en 1887, premiere description ecrite. Effondrement de l'industrie du fer fin 19e siecle. Traduction et publication du Nouveau Testament en siwu en 2009 par Wycliffe Bible Translators."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferie traditionnel: Akpafu-Todzi est le village capital de l'aire traditionnelle Akpafu et son chef est le chef paramount de l'ensemble Akpafu. Chaque village possede son propre chef subordonné.",
+      "clanOrganization": "Organisation en communautes villageoises au sein de deux sous-groupes (Akpafu et Lolobi) avec des doyens de lignage (anciens) jouant un role deliberatif central.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La filiation est organisee de facon patrilineaire. Les lignages controlent l'acces a la terre et a la direction communautaire.",
+      "religiousAuthority": "Pratique traditionnelle des religions indigenes avec culte des ancetres; presence croissante du christianisme depuis la deuxieme moitie du 20e siecle. Le chef assume aussi une fonction rituelle."
+    },
+    "languages": {
+      "mainLanguage": "Siwu",
+      "isoCodes": ["akp"],
+      "dialects": ["Kawu Akpafu (occidental)", "Kawu Lolobi (oriental)"],
+      "vehicularRole": "Le siwu est parle comme langue maternelle dans huit villages de l'Oti Region. L'ewe et l'anglais sont les vehiculaires regionaux; les offices religieux sont souvent en ewe. Le Nouveau Testament en siwu (2009) a contribue a revitaliser l'usage de la langue dans les cultes et l'alphabetisation."
+    },
+    "culture": {
+      "majorRites": "Celebration religieuse communautaire avec sermons et chants en siwu dans les eglises villageoises. Ceremonies ancestrales. Foires et marches ou les femmes vendent les produits agricoles.",
+      "symbols": "Les anciennes mines de fer et les sites de forge sont des marques identitaires importantes, visibles notamment a Akpafu-Todzi. Les maisons a toit plat en terre battue (abã) distinguent les villages Mawu des habitations a toit de chaume.",
+      "artsAndMusic": "Tradition siderurgique (forge, fabrication d'outils: houes, coupe-coupe, ciseaux) avec techniques artisanales transmises de generation en generation. Agriculture: riz, cacao, mais, manioc, igname, plantain. Les femmes vendent les surplus aux marches locaux.",
+      "spiritualities": "Religion traditionnelle avec culte des ancetres; le christianisme est tres repandu (99 000 locuteurs recenses chretiens selon Joshua Project). Croyance que Dieu comprend et repond aux prieres en siwu, moteur du mouvement de traduction biblique."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferie traditionnelle d'Akpafu avec Akpafu-Todzi comme capitale. Le chef paramount d'Akpafu preside les cinq villages Akpafu.",
+      "relationsWithNeighbors": "Relations historiques avec les peuples Buem, Santrokofi, Likpe et Lolobi, forgeant ensemble le groupe linguistique des Ghana-Togo Mountain languages. Echanges commerciaux avec les peuples de la plaine (vente d'outils en fer, achat de nourriture et peaux).",
+      "conflictsOrAlliances": "Les Akpafu et les Lolobi se sont eloignes pendant plusieurs decennies a la suite d'un conflit entre chefs. Leur reconciliation a ete operee dans le cadre du projet de traduction biblique commun (2009).",
+      "diaspora": "La plupart des jeunes adultes quittent les villages pour les grandes villes a la recherche d'emplois, privilegiant l'anglais ou l'ewe. Cela a contribue au declin progressif de l'usage du siwu avant la revitalisation par la traduction biblique."
+    },
+    "demography": {
+      "totalPopulation": 103000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2024: Akpafu, Lolobi in Ghana 99 000. Wikipedia Siwu language: estimations entre 10 000 et 23 000 locuteurs natifs (donnees 2000s). Estimation 2025 basee sur la croissance demographique de 2,2% par an appliquee aux 99 000 du Joshua Project.",
+      "distributionByCountry": [{ "country": "GHA", "population": 103000 }]
+    },
+    "sources": [
+      "Wikipedia EN – Siwu language (https://en.wikipedia.org/wiki/Siwu_language)",
+      "Wikipedia EN – Akpafu-Todzi (https://en.wikipedia.org/wiki/Akpafu-Todzi)",
+      "Joshua Project – Akpafu, Lolobi in Ghana (https://joshuaproject.net/people_groups/10227)",
+      "Wycliffe Bible Translators – A Story of Restoration: The Siwu of Ghana (https://wycliffe.org/blog/posts/a-story-of-restoration-the-siwu-of-ghana)",
+      "The Ideophone – H.B.K. Ogbete, A history of the Akpafus (https://ideophone.org/ogbete-1998-history-akpafu/)",
+      "The Ideophone – A visit to Akpafu by David Asante, 1887 (https://ideophone.org/akpafu-david-asante-1887/)",
+      "Ethnologue – Siwu AKP (https://www.ethnologue.com/language/akp/)",
+      "ISO 639-3 – code akp: Siwu (https://iso639-3.sil.org/code/akp)"
+    ]
+  }
+}

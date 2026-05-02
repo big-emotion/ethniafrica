@@ -1,0 +1,87 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_GIDOLE",
+  "nameMain": "Dirasha",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Dirasha",
+      "selfAppellation": "Dirasha",
+      "exonyms": [
+        "Gidole",
+        "Gardulla",
+        "Diraasha",
+        "Dirayta",
+        "Diraytata",
+        "Dhirasha",
+        "Ghidole",
+        "Dirashitata"
+      ],
+      "originOfExonyms": "Le nom Gidole est emprunté au nom de la ville administrative de la zone, Gidole, qui est l'éponyme connu des outsiders et des administrations. Gardulla désignait l'ancienne capitale administrative de la zone, aujourd'hui la ville la plus haute. Aucun de ces exonymes n'est considéré comme péjoratif ; ils reflètent des variantes orthographiques ou administratives du même peuple.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Dirasha est l'auto-désignation officielle reconnue par l'État éthiopien depuis la réforme du fédéralisme ethnique de 1991. La zone administrative porte désormais le nom de Dirashe Zone dans la région South Ethiopia Regional State. Gidole reste utilisé dans les publications étrangères et missionnaires."
+    },
+    "ethnicities": ["Dirasha", "Mossiye", "Kussume", "Masholle"],
+    "origins": {
+      "ancientOrigins": "Les Dirasha appartiennent à la branche Konso-Gidole du couchitique oriental (Afroasiatique). Leur présence dans les collines à l'ouest et au sud du lac Chamo est attestée depuis plusieurs siècles. Ils sont linguistiquement proches des Konso et des Gawwada, formant un continuum dialectal connu sous le nom de Komos-Dirasha-Dobase.",
+      "formationPeriod": "La formation du groupe Dirasha comme entité distincte remonte à l'époque précoloniale, antérieure aux conquêtes d'Iyasu Ier et de Menelik II. La zone de Gardulla était déjà un centre administratif traditionnel avant l'intégration dans l'Empire éthiopien à la fin du XIXe siècle.",
+      "migrationRoutes": [
+        "Les traditions orales associent les Dirasha à un peuplement ancien dans les collines du massif de Gardulla, à l'ouest du lac Chamo, sans migration historique documentée depuis des zones éloignées."
+      ],
+      "historicalSettlementZones": [
+        "Collines et massif de Gardulla, Dirashe Zone, South Ethiopia Regional State",
+        "Plaines au sud et à l'est des collines, dans la vallée du bas Omo"
+      ],
+      "unificationsOrDivisions": "Le groupe Dirasha coexiste au sein de la zone Dirashe avec trois autres groupes autochtones : les Mossiye, les Kussume et les Masholle. Les Dirasha représentent la majorité ethnique et linguistique, constituant environ 45 % de la population de la zone selon le recensement de 2007.",
+      "externalInfluences": "Les Dirasha ont entretenu des contacts historiques avec les Konso, les Gawwada et les Oromo, dont ils empruntent certains termes. L'Église orthodoxe éthiopienne s'est implantée dans la région dès 1920, suivie par des missionnaires évangéliques vers 1950. La traduction biblique en langue dirasha a débuté en 2003.",
+      "majorHistoricalEvents": "Incorporation dans l'Empire éthiopien sous Menelik II à la fin du XIXe siècle. Sous le fédéralisme ethnique post-1991, les Dirasha ont obtenu une zone administrative propre (Dirashe Zone) ainsi qu'un woreda spécial (Dirashe Special Woreda), reconnaissant leur identité distincte."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation communautaire traditionnelle fondée sur des structures claniques. L'autorité politique et spirituelle était assurée par des chefs de clans. Le système a été intégré dans les structures administratives éthiopiennes successives depuis la conquête de Menelik II.",
+      "clanOrganization": "La société dirasha est structurée en clans patrilinéaires. Les principaux groupes ethniques intégrés dans la zone sont les Dirasha, Mossiye, Kussume et Masholle, chacun disposant de territoires et de structures claniques propres.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires régissent les droits fonciers, les alliances matrimoniales et les responsabilités rituelles. Le mariage exogamique à l'intérieur de la zone est courant entre les différents clans.",
+      "religiousAuthority": "Coexistence de la religion traditionnelle (culte des esprits, rites de fertilité) avec le christianisme orthodoxe éthiopien (présent depuis 1920) et le protestantisme évangélique (Église évangélique éthiopienne Mekane Yesus, principale depuis 1950). Selon le recensement de 2007, 50 % de la population de la zone est protestante, 34 % orthodoxe et 13 % animiste."
+    },
+    "languages": {
+      "mainLanguage": "Dirasha (gdl)",
+      "isoCodes": ["gdl"],
+      "dialects": ["Diraytata", "Dirayta", "Dirashitata"],
+      "vehicularRole": "L'amharique est la langue d'instruction scolaire et de l'administration centrale. L'oromo et le konso sont utilisés comme langues véhiculaires secondaires dans certaines interactions commerciales. Le dirasha est la langue maternelle de 47 à 55 % des habitants de la zone selon les recensements."
+    },
+    "culture": {
+      "majorRites": "Les rites de fertilité et le culte des esprits constituent le coeur de la religion traditionnelle dirasha. Les rituels agraires accompagnent les cycles de sorgho, principal aliment de base stocké dans des chambres souterraines pendant jusqu'à dix ans. Les instruments musicaux traditionnels incluent les Shonqaa, Mayra, Kulluutot, Filla et Lollat.",
+      "symbols": "Les terrasses agricoles construites sur les pentes du massif de Gardulla constituent un élément identitaire fort, témoignant d'un savoir-faire ancestral de conservation des sols et de l'eau. La montagne de Gardulla, à 2 561 mètres d'altitude, est le point de référence géographique et symbolique du peuple.",
+      "artsAndMusic": "Les Dirasha utilisent plusieurs instruments de musique traditionnels lors des cérémonies et fêtes : Shonqaa, Mayra, Kulluutot, Filla et Lollat. La tradition orale est centrale dans la transmission des savoirs culturels.",
+      "spiritualities": "La religion traditionnelle implique le culte des esprits (spirit worship) et des rites de fertilité. Elle coexiste aujourd'hui avec le christianisme protestantdominant. La traduction de la Bible en langue dirasha a débuté en 2003, seules des portions existent à ce jour."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La ville de Gardulla était le centre administratif traditionnel avant la colonisation éthiopienne. La zone de Dirashe est reconnue comme zone administrative distincte depuis la réforme fédéraliste de 1991.",
+      "relationsWithNeighbors": "Les Dirasha maintiennent des relations de voisinage avec les Konso au sud-est, les Gawwada à l'ouest (qui représentent 28 % de la population de la zone), les Gamo au nord et les Oromo dans les plaines. Des échanges commerciaux et linguistiques existent de longue date avec ces groupes.",
+      "conflictsOrAlliances": "Les conflits historiques pour les terres fertiles des collines de Gardulla ont façonné la composition multiethnique actuelle de la zone. L'intégration dans l'Empire éthiopien à la fin du XIXe siècle a mis fin aux autonomies locales traditionnelles.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 117000,
+      "referenceYear": 2025,
+      "source": "PeopleGroups.org 2023, estimation 2025 – Dirasha (Gidole) of Ethiopia (https://peoplegroups.org/people_groups/pg011583/)",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 117000, "percentage": 100 }
+      ]
+    },
+    "sources": [
+      "Dirasha language – Wikipedia, 2008 (https://en.wikipedia.org/wiki/Dirasha_language)",
+      "Dirashe Zone – Wikipedia, 2006 (https://en.wikipedia.org/wiki/Dirashe_Zone)",
+      "Dirasha in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11887)",
+      "Gidole of Ethiopia – PeopleGroups.org, 2023 (https://peoplegroups.org/people_groups/pg011583/)",
+      "Dirasha language and alphabet – Omniglot, 2024 (https://www.omniglot.com/writing/dirasha.htm)",
+      "Appendix ISO 639-3 codes Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
+      "Dirasha people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/dirasha.html)"
+    ]
+  }
+}

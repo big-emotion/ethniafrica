@@ -1,0 +1,76 @@
+{
+  "id": "PPL_LWIMBI",
+  "nameMain": "Lwimbi",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["AGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Lwimbi",
+      "selfAppellation": "Luimbi",
+      "exonyms": ["Luimbi", "Luimbe", "Lwimbe", "Chiluimbi"],
+      "originOfExonyms": "Le nom Luimbi (ou Lwimbi) designe ce peuple et sa langue dans toutes les sources. La forme Chiluimbi est le nom de la langue avec le prefixe de classe Bantu chi-/ki-. Luimbe et Lwimbe sont des variantes orthographiques. Les sources coloniales portuguaises utilisaient frequemment Luimbi.",
+      "whyProblematic": "La denomination Lwimbi peut etre confondue avec Luimbi ou Luimbe selon les sources. Le groupe est souvent classe dans la categorie ethnographique generique Ganguela utilisee par les Portugais pour de nombreux peuples distincts de l'est angolais. Cette categorisation peut masquer l'identite propre des Lwimbi.",
+      "contemporaryUsage": "Luimbi est la forme la plus frequente dans les sources academiques anglophones et dans les bases de donnees ethnolinguistiques. Lwimbi est utilisee dans les fiches EthniAfrica et certaines sources francophones. Le terme Ganguela reste utilise de maniere generique pour l'ensemble du groupe culturel auquel les Luimbi appartiennent.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantu central-occidental, sous-groupe Ngangela-Nyemba (Ganguela)",
+      "historicalRegion": "Centre de l'Angola, vallee du Kwanza (provinces de Bie et de Moxico)",
+      "currentCountries": ["AGO"]
+    },
+    "ethnicities": ["Lwimbi", "Luimbi"],
+    "origins": {
+      "ancientOrigins": "Les Lwimbi (Luimbi) sont un peuple Bantu dont les ancetres ont migre vers l'Angola central au cours des grandes migrations Bantu. Selon certaines sources, ils font partie des groupes apparentes au peuple Mbunda dont les expansions sud ont donne naissance a treize ethnies descendantes dont les Luimbi. Ils ont maintenu un mode de vie traditionnel en relative isolation dans leur territoire central angolais.",
+      "formationPeriod": "Les Luimbi se sont etablis dans la vallee du Kwanza centrale de l'Angola sur une periode qui remonte probablement au 15e ou 16e siecle, dans le cadre des mouvements Bantu vers le centre et le sud de l'Angola. Leur culture et leur langue propres se sont developpees en interaction avec les groupes voisins (Nkangala, Mbwela, Chokwe).",
+      "migrationRoutes": [
+        "Migration Bantu ancestrale depuis le nord et nord-est vers le centre de l'Angola",
+        "Etablissement le long de la vallee du Kwanza, de sa source jusqu'au confluent avec la riviere Luandu"
+      ],
+      "historicalSettlementZones": [
+        "Centre de l'Angola, vallee du Kwanza (entre les latitudes 10 deg 30' et 14 deg S)",
+        "Region d'environ 200 km du nord au sud et 50 a 160 km d'est en ouest, entre les longitudes 17 et 19 deg E",
+        "Village capital de Chaneka mbala"
+      ],
+      "unificationsOrDivisions": "Les Luimbi ont maintenu leur coherence ethnique et linguistique malgre la pression des Chokwe qui ont tendance a infiltrer leur territoire par le sud et le nord. A l'est, ils sont separes des Chokwe par une zone de 240 km de 'pays de la faim' (sandy but fertile region considered cursed by a former king). La colonisation portugaise et les guerres successives (guerre d'independance 1961-1974, guerre civile 1975-2002) ont affecte leur territoire.",
+      "externalInfluences": "Pression des Chokwe infiltrant progressivement le territoire Luimbi par le sud et le nord. Contact avec les missionnaires chretiens des le 19e siecle (Frederick Arnot, missionnaire ecossais, mentionnait leur capitale Chaneka mbala en 1889). Colonisation portugaise (20e siecle). Guerre civile angolaise (1975-2002) ayant perturbe les structures sociales traditionnelles.",
+      "majorHistoricalEvents": "1889 : mention de la capitale Chaneka mbala par le missionnaire ecossais Frederick Arnot. 20e siecle : colonisation portugaise et contacts avec des missionnaires et chercheurs europeens (dont Cecil W. Scott qui vecut 12 ans parmi eux). 1961-1974 : guerre d'independance angolaise. 1975-2002 : guerre civile angolaise perturbant profondement les communautes Luimbi."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies locales. La capitale traditionnelle est le village de Chaneka mbala, dont le chef portait le titre de Kambonge ('Petit Fort'). Les decisions sont prises par le chef en consultation avec les anciens du village.",
+      "clanOrganization": "Societe organisee en clans Bantu avec transmission de l'identite et des droits selon les regles de filiation propres au groupe. Les Luimbi ont maintenu des structures villageoises traditionnelles.",
+      "ageClassSystems": "Rites d'initiation masculins et feminins, en lien avec d'autres peuples Ganguela de la region. Les pratiques initiatiques font partie integrante de la transition vers l'age adulte.",
+      "roleOfLineages": "Les lignages jouent un role central dans l'acces aux terres, la resolution des conflits et la transmission des savoirs culturels et rituels. L'anciennete d'etablissement dans une zone confere des droits particuliers.",
+      "religiousAuthority": "Specialistes spirituels traditionnels. Le christianisme represente aujourd'hui la religion principale (60% des Luimbi selon le Joshua Project), avec 30% d'evangeliques. Des pratiques traditionnelles animistes coexistent avec les pratiques chretiennes dans certaines communautes."
+    },
+    "languages": {
+      "mainLanguage": "Luimbi (Chiluimbi)",
+      "isoCodes": ["lje"],
+      "dialects": ["Luimbe", "Lwimbe"],
+      "vehicularRole": "Le Luimbi est une langue Bantu mineure parlee uniquement en Angola central. Il est apparente aux langues Nkangala et Mbwela, elles-memes proches des langues Ganguela. Le portugais est la langue officielle de l'Angola et sert de vehiculaire pour l'education, l'administration et les echanges inter-ethniques. Le Luimbi est utilise dans la vie villageoise et les ceremonies. Des enregistrements audio en Luimbi existent pour la traduction biblique."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation lies aux transitions de l'age adulte pour les hommes et les femmes, similaires aux pratiques Ganguela regionales. Ceremonies ancestrales preservees malgre les influences exterieures.",
+      "symbols": "Symboles lies a la nature (riviere Kwanza, animaux locaux) et aux ancetres fondateurs. La zone de 'pays de la faim' a l'est du territoire Luimbi est associee a la malediction d'un ancien roi et fait partie de la memoire collective.",
+      "artsAndMusic": "Traditions de vannerie, sculpture et instruments de musique a percussion communs aux peuples Ganguela. Les arts sont lies aux ceremonies communautaires et aux rites de passage.",
+      "spiritualities": "Animisme traditionnel avec croyance en des esprits ancestraux et des forces naturelles. Pratiques de guerison traditionnelle. Le christianisme est devenu predominant (60% adherents selon Joshua Project 2025), mais des elements de la spiritualite traditionnelle persistent, notamment dans les zones rurales isolees."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferie locale centree sur Chaneka mbala comme capitale traditionnelle. Les Luimbi ont maintenu leur autonomie relative grace a leur position geographique centrale en Angola et a la zone de 'pays de la faim' les separant des Chokwe a l'est.",
+      "relationsWithNeighbors": "Les Luimbi sont apparentes aux Nkangala et Mbwela (langues proches). Pression progressive des Chokwe infiltrant leur territoire. Contacts avec les Luvale et d'autres peuples Ganguela a l'est. Les Luimbi sont mentionnes comme l'un des groupes ethniques composes par les Ganguela dans les sources coloniales et academiques.",
+      "conflictsOrAlliances": "Relatif isolement historique maintenu grace a la zone de 'pays de la faim' a l'est. Pression des Chokwe (consideres comme agressifs et autrefois cannibales selon les sources du debut du 20e siecle). Resistance passive a la colonisation portugaise.",
+      "diaspora": "Population essentiellement sedentaire dans leur territoire ancestral de la vallee du Kwanza. Des deplacements ont pu survenir pendant la guerre civile angolaise (1975-2002). Retour progressif sur les terres ancestrales apres le retour de la paix en 2002."
+    },
+    "demography": {
+      "totalPopulation": 128000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : 128 000 Luimbi en Angola (population mondiale identique, groupe exclusivement angolais).",
+      "distributionByCountry": [{ "country": "AGO", "population": 128000 }]
+    },
+    "sources": [
+      "Joshua Project – Luimbi in Angola, 2025 (https://joshuaproject.net/people_groups/13146)",
+      "Wikipedia – Luimbi language (https://en.wikipedia.org/wiki/Luimbi_language)",
+      "Cambridge Core – A Note on the Luimbi of Central Angola, Scott Cecil W., Africa, Vol. 25, 1955 (https://www.cambridge.org/core/journals/africa/article/note-on-the-luimbi-of-central-angola/09A0A3E33535EA2E734174EBF255D11A)",
+      "Wikipedia – Ganguela (https://en.wikipedia.org/wiki/Ganguela)",
+      "101 Last Tribes – Ganguela people (https://www.101lasttribes.com/tribes/ganguela.html)",
+      "Wikipedia – Mbunda people (https://en.wikipedia.org/wiki/Mbunda_people)"
+    ]
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "PPL_GBAN",
+  "nameMain": "Gban",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["CIV"],
+  "content": {
+    "appellations": {
+      "mainName": "Gban",
+      "selfAppellation": "Gban",
+      "exonyms": ["Gagou", "Gagu", "Gagous", "Gagus", "Gagon", "Kagou", "Gba"],
+      "originOfExonyms": "Le nom Gagou derive de l'expression ka-go ou kagou qui signifie Allez-vous en en langue locale, refletant les relations de rejet avec les peuples voisins. Le terme Gba est atteste dans les travaux anthropologiques de Chauveau.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Gban est prefere par le peuple lui-meme. Gagou reste en usage dans la litterature ethnologique et administrative francaise. Les deux formes coexistent en Cote d'Ivoire.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Mande-Sud",
+      "historicalRegion": "Centre-ouest de la Cote d'Ivoire, departement d'Oume",
+      "currentCountries": ["CIV"]
+    },
+    "ethnicities": ["Gban"],
+    "origins": {
+      "ancientOrigins": "Les Gban (Gagou) sont consideres comme l'un des peuples les plus anciens de la foret du centre-ouest de la Cote d'Ivoire. Ils occupaient vraisemblablement la region du departement d'Oume bien avant les migrations mande du XVIIIe siecle. Certains anthropologues ont note leur stature plus petite et leur culture de chasse et cueillette, ayant suscite des hypotheses sur d'eventuelles origines pygmoides, bien que non confirmees.",
+      "formationPeriod": "Presence attestee dans la foret du centre-ouest ivoirien anterieurement au XVIIIe siecle. Ils furent refoules au XVIIIe siecle par les Kweni (Gouro) du sud qui fuyaient eux-memes les peuples Baule.",
+      "migrationRoutes": [],
+      "historicalSettlementZones": [
+        "Departement d'Oume, sous-prefectures de Diegonefla, Tonla et Guepahouo, centre-ouest de la Cote d'Ivoire"
+      ],
+      "unificationsOrDivisions": "Le peuple Gban n'a pas constitue d'entite politique centralisee. Les villages originaux comptaient en moyenne plus de 500 habitants. Ils furent progressivement refoules et fragmentes sous la pression des peuples voisins aux XVIIIe et XIXe siecles.",
+      "externalInfluences": "Pression migratoire des Gouro (Kweni) au XVIIIe siecle. Acculturation progressive aux Gouro, si bien que la plupart des Gban parlent desormais le gouro comme premiere langue. Contact avec les Bete, les Dida et les Dioula.",
+      "majorHistoricalEvents": "Refoulement au XVIIIe siecle par les Kweni du sud. Interdiction par l'autorite militaire coloniale de la ceremonie des 15 ans (fete de couronne), principale ceremonie d'initiation du peuple Gban, pratiquement disparue depuis la periode coloniale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation segmentaire sans chef centralise. Les villages etaient administres par des conseils d'aines. Le pouvoir politique etait diffus et reposait sur les chefs de lignages.",
+      "clanOrganization": "Societe a filiation bilineaire avec nomenclature de type Crow, selon les travaux de Chauveau. Les lignages constituent les unites sociales et economiques fondamentales.",
+      "ageClassSystems": "La ceremonie des 15 ans (fete de couronne) constituait le rite de passage principal, interdite pendant la colonisation et pratiquement disparue depuis.",
+      "roleOfLineages": "Les lignages bilineaires organisent la vie sociale, economique et rituelle. L'appartenance lignagere determine les droits fonciers et les alliances matrimoniales.",
+      "religiousAuthority": "Autorite rituelle exercee par les aines de lignages. Croyances animistes centrees sur les esprits naturels et les ancetres."
+    },
+    "languages": {
+      "mainLanguage": "Gban",
+      "isoCodes": ["ggu"],
+      "dialects": ["N'da", "Bokwa", "Bokabo", "Tuka"],
+      "vehicularRole": "Le gban est la langue maternelle du peuple Gban (Gagou). En raison de l'acculturation progressive aux Gouro voisins, de nombreux Gban parlent desormais le gouro comme premiere langue. Le francais est utilise dans les contextes scolaires et administratifs. Le dioula sert de langue de commerce dans la region."
+    },
+    "culture": {
+      "majorRites": "La ceremonie des 15 ans ou fete de couronne etait le principal rite d'initiation du peuple Gban. Elle a ete interdite par l'autorite militaire coloniale et a pratiquement disparu. Les pratiques animistes liees aux ancetres et aux esprits de la nature persistent.",
+      "symbols": "Les symboles culturels Gban sont lies a la foret, a la chasse et aux esprits naturels. La confection de vetements en ecorce d'arbre est attestee comme pratique culturelle distinctive.",
+      "artsAndMusic": "Les Gban pratiquent la confection de vetements en ecorce, technique distinctive parmi les peuples de la foret ivoirienne. La tradition orale est transmise par les aines.",
+      "spiritualities": "Religion animiste traditionnelle centree sur le culte des ancetres et des esprits de la nature. Croyance en une essence spirituelle presente dans les animaux, les plantes et les objets inanimes. Une part de la population a adopte le christianisme catholique ou protestant sous l'influence missionnaire."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Aucun royaume ni chefferie centralise n'est atteste. L'organisation politique traditionnelle Gban est de type segmentaire, sans pouvoir centralise.",
+      "relationsWithNeighbors": "Relations de tension historique avec les Gouro (Kweni) qui les ont refoules au XVIIIe siecle. Contacts commerciaux avec les Bete, les Dida et les Dioula. Acculturation progressive aux Gouro au XXe siecle.",
+      "conflictsOrAlliances": "Refoulement par les Kweni au XVIIIe siecle dans le contexte des migrations mande. Resistance a la penetration coloniale francaise, marquee notamment par l'interdiction de la ceremonie des 15 ans.",
+      "diaspora": "Presence concentree dans le departement d'Oume. Une partie de la communaute se rend a Gagnoa pour le commerce. Diaspora urbaine limitee."
+    },
+    "demography": {
+      "totalPopulation": 85000,
+      "referenceYear": 2025,
+      "source": "Estimation 2025 fondee sur Joshua Project (79 400 en 2023) et Wikipedia EN (61 000 en 2015), avec projection de croissance.",
+      "distributionByCountry": [{ "country": "CIV", "population": 85000 }]
+    },
+    "sources": [
+      "Gagou (peuple) – Wikipedia FR (https://fr.wikipedia.org/wiki/Gagou_(peuple))",
+      "Gagu people – Wikipedia EN (https://en.wikipedia.org/wiki/Gagu_people)",
+      "Gagu in Cote d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11799)",
+      "Gagu people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/gagu.html)",
+      "Gban language (GGU) – Ethnologue, SIL International (https://www.ethnologue.com/language/ggu/)",
+      "Gban language – Wikipedia EN, 2012 (https://en.wikipedia.org/wiki/Gban_language)",
+      "Tauxier, Louis – Negres gouro et gagou : Centre de la Cote d'Ivoire, Librairie orientaliste P. Geuthner, 1924",
+      "Chauveau, Jean-Pierre – Les Gba ou Gagou de Cote d'Ivoire : Un Systeme de parente bilineaire a nomenclature de type Crow, ORSTOM"
+    ]
+  }
+}

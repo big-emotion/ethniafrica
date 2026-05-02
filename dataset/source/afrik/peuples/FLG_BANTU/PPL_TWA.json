@@ -1,0 +1,109 @@
+{
+  "id": "PPL_TWA",
+  "nameMain": "Twa",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["RWA", "BDI", "COD", "UGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Twa",
+      "selfAppellation": "Batwa (pluriel), Mutwa (singulier)",
+      "exonyms": ["Batwa", "Abatwa", "Ge-Sera", "Pygmees des Grands Lacs"],
+      "originOfExonyms": "Batwa est la forme la plus courante avec le prefixe bantu de pluriel Ba-. Abatwa est la forme en kinyarwanda/kirundi (prefixe Aba-). Ge-Sera est un terme local moins repandu. Le terme 'Pygmee' (Pygmy en anglais) provient du grec 'pygmaios' (haut d'une coudee) et a ete applique par les colonisateurs europeens. Ce terme designe a l'origine les petites estatues humaines de l'antiquite grecque, applique aux populations de petite stature d'Afrique centrale.",
+      "whyProblematic": "Le terme 'Pygmee' est considere comme pejoratif et deshumanisant par de nombreuses organisations de defenses des droits des peuples autochtones, dont l'IWGIA (International Work Group for Indigenous Affairs) et le Forum Permanent de l'ONU sur les Questions Autochtones. Il reduit les individus a une caracteristique physique (stature) et nie leur identite culturelle et linguistique. L'auto-denomination Batwa ou Twa est preferred par les communautes et les organisations de defense des droits. Au Rwanda, suite au genocide de 1994, toute denomination ethnique est officiellement proscrite, ce qui cree une tension entre protection de l'identite Batwa et interdiction legale des categories ethniques.",
+      "contemporaryUsage": "Twa et Batwa sont les termes acceptes dans les contextes academiques, onusiens et dans les communications des organisations de defense des droits des peuples autochtones. L'IWGIA et le Forest Peoples Programme utilisent systematiquement Batwa. Au Rwanda, le gouvernement utilise le terme 'peuples historiquement marginalises' pour eviter la denomination ethnique. Au Burundi, les Twa sont reconnus comme l'une des trois composantes ethniques (avec les Hutu et les Tutsi).",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Peuples autochtones Bantu, region des Grands Lacs",
+      "historicalRegion": "Region des Grands Lacs (forets de montagne et zones humides)",
+      "currentCountries": ["RWA", "BDI", "COD", "UGA"]
+    },
+    "ethnicities": ["Twa", "Batwa", "Abatwa"],
+    "origins": {
+      "ancientOrigins": "Les Twa des Grands Lacs sont generalement consideres comme la population la plus ancienne encore presente dans la region, predecesseurs des Hutu et Tutsi arives plus tard. Ils ont traditionnelement vecu comme chasseurs-cueilleurs semi-nomades dans les forets de montagne. Des hypotheses suggerent qu'ils pourraient etre arrives dans la region en meme temps que les Hutu ou qu'ils descendent de populations de chasseurs-cueilleurs anterieure a l'expansion bantoue. Leur lien avec les forets de montagne (massifs du Congo-Nile, forets de Bwindi, de Nyungwe, des Virunga) est documente depuis plusieurs siecles.",
+      "formationPeriod": "Presence attestee dans la region des Grands Lacs depuis au moins plusieurs siecles avant les premieres descriptions europeennes (19e siecle). Tradition orale et textes rwandais anciens les mentionnent comme les habitants originels des forets avant l'arrivee des agriculteurs Hutu.",
+      "migrationRoutes": [
+        "Presence originelle dans les forets de montagne d'Afrique centrale (foret d'Ituri, Congo)",
+        "Expansion vers les forets du Rwanda, Burundi, Uganda et est du Congo",
+        "Dispersions forcees depuis les annees 1970 suite aux expulsions des forets pour la creation de parcs nationaux et de plantations"
+      ],
+      "historicalSettlementZones": [
+        "Foret de Bwindi Impenetrable (Uganda, jusqu'en 1991)",
+        "Parc national des Volcans (Rwanda, jusqu'aux annees 1970)",
+        "Foret de Nyungwe (Rwanda, jusqu'aux annees 1980)",
+        "Parc national de Kahuzi-Biega (RDC, jusqu'en 1975)",
+        "Foret de Gishwati (Rwanda)",
+        "Zones humides et marecages du Rwanda, Burundi et est du Congo"
+      ],
+      "unificationsOrDivisions": "Les Twa ne forment pas une entite politique unifiee mais une constellation de petites communautes dispersees dans quatre pays. Ils partagent une identite culturelle et un statut de peuple autochtone marginalise. Des organisations comme la CAURWA au Rwanda et UOBDU en Uganda cherchent a federer les communautes Twa pour la defense de leurs droits.",
+      "externalInfluences": "L'arrivee des Hutu (agriculteurs Bantu) a progressivement marginalise les Twa en leur attribuant un statut social inferieur. Les royaumes tutssi leur ont parfois accorde des roles particuliers a la cour. La colonisation europeenne et la creation de reserves et parcs nationaux ont entraine les premieres grandes expulsions. Les conflits armes (Rwanda 1994, Congo) ont dramatiquement fragilise les communautes Twa.",
+      "majorHistoricalEvents": "Annees 1970-1980: expulsions massives des forets pour la creation de parcs nationaux (Volcans, Nyungwe au Rwanda; Bwindi, Mgahinga en Uganda; Kahuzi-Biega en RDC). 1994: genocide rwandais, environ 30% de la population Twa du Rwanda est exterminees. 2019: retour de ~6 000 Batwa dans le parc de Kahuzi-Biega (RDC) suivi de violences des gardes du parc (armes, viols, mutilations). Juillet 1994: premiere participation des Batwa rwandais au Groupe de travail de l'ONU sur les Populations Autochtones."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation traditionnelle en petits groupes de chasseurs-cueilleurs semi-nomades, sans chefferie centralisee. Prise de decision collective au sein des groupes familiaux. Historiquement, certains Twa avaient des fonctions particulieres a la cour des rois tutsi (potiers, entertainers, parfois executeurs). Ces roles de cour constituaient une forme d'integration sociale asymetrique, non une autonomie politique.",
+      "clanOrganization": "Organisation en petits groupes familiaux mobiles. Pas de systeme clanique formalise comparable aux groupes agricoles voisins. L'appartenance de groupe est determinee par la proximite familiale et le partage du territoire forestier.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les liens familiaux determinent l'appartenance aux groupes de chasse et de collecte. La transmission des savoirs (chasse, botanique, poterie) se fait au sein des lignages. La poterie constitue un marqueur identitaire fort: les Twa sont les potiers par excellence dans la region des Grands Lacs, une specialisation qui les distingue des autres groupes pygmees africains.",
+      "religiousAuthority": "Pratiques spirituelles animistes liees au monde forestier et aux forces naturelles. Veneration des ancetres. Certaines communautes Twa ont adopte le christianisme, notamment en Uganda et au Rwanda. Les pratiques traditionnelles de soin par les plantes medicinals de la foret constituaient une forme d'autorite spirituelle et medicale."
+    },
+    "languages": {
+      "mainLanguage": "Kinyarwanda / Kirundi selon le pays",
+      "isoCodes": ["kin", "run"],
+      "dialects": [
+        "Dialectes Twa du Kinyarwanda (Rwanda)",
+        "Dialectes Twa du Kirundi (Burundi)",
+        "Dialectes Twa du Kiga (Uganda)",
+        "Dialectes Twa du Tembo (RDC)"
+      ],
+      "vehicularRole": "Les Twa des Grands Lacs parlent des dialectes des langues bantoues dominantes de leurs pays respectifs: le Kinyarwanda (kin, ISO 639-3) au Rwanda, le Kirundi (run) au Burundi, le Kiga (cgg) en Uganda, le Tembo (tbt) ou d'autres langues bantoues locales en RDC. Les Twa n'ont pas de langue propre independante dans la region des Grands Lacs, a la difference de certains groupes pygmees de la foret equatoriale (Baka, Aka). Cette adoption des langues bantoues environnantes reflete des siecles d'integration culturelle partielle avec les groupes agriculteurs voisins."
+    },
+    "culture": {
+      "majorRites": "Rites de chasse et de collecte en foret, aujourd'hui largement perdus suite aux expulsions des zones forestieres. Ceremonies liees aux passages de vie (naissance, puberte, mariage, deces). La poterie constitue a la fois une pratique economique et un element rituel de l'identite Twa: le processus de collecte de l'argile, son traitement et la fabrication des vases sont charges de dimension sociale et spirituelle.",
+      "symbols": "La foret est le symbole central et l'espace vital traditionnel des Twa. La poterie est le symbole identitaire principal, notamment au Rwanda ou elle represente le seul metier traditionnel encore partiellement praticable. La stature physique (generalement moins elevee que les voisins) est un symbole ambivalent: constitutive de leur identite selon les categories exterieures, mais source de stigmatisation.",
+      "artsAndMusic": "Chants et danses traditionnels lies aux activites de chasse et de collecte, pratiques lors des ceremonies communautaires. La poterie artisanale est l'art traditionnel le plus notable des Twa des Grands Lacs, les distinguant des autres groupes pygmees d'Afrique qui pratiquent plutot l'echange de viande contre des biens. En Uganda, les Twa (Batwa) sont promus comme attraction touristique culturelle autour du parc de Bwindi.",
+      "spiritualities": "Animisme traditionnel centree sur le monde forestier: les arbres, les cours d'eau, les animaux et les espaces naturels sont habites de forces spirituelles. Veneration des ancetres. En Uganda et au Rwanda, une partie significative des Twa s'est convertie au christianisme, notamment evangelique, depuis les annees 1980-1990. Les pratiques de guerison par les plantes medicinales forestieres constituent un heritage spirituel et medical menace par la perte d'acces aux forets."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaumes ou chefferies Twa independants. Historiquement, certains Twa avaient des positions privilegiees a la cour des rois tutsi comme potiers, musiciens, bouffons ou parfois executeurs. Cette integration partielle a la cour royale leur conferait un statut ambigu: reconnus pour leurs savoirs particuliers mais stigmatises socialement.",
+      "relationsWithNeighbors": "Relations historiquement asymetriques avec les Hutu et les Tutsi: les Twa occupaient le rang social le plus bas dans la hierarchie sociale traditionnelle des royaumes des Grands Lacs. Ils faisaient l'objet de discriminations et d'interdits (les Hutu et Tutsi refusaient par exemple de manger avec les Twa ou de manger leurs aliments). Au Rwanda, la croyance que dormir avec une femme Twa guerissait les maux de dos illustre la nature complexe et exploitatrice de ces relations.",
+      "conflictsOrAlliances": "Victims du genocide rwandais de 1994 (environ 30% de la population Twa exterminees). Victimes des conflits armes en RDC (notamment dans le parc de Kahuzi-Biega). Expulsion violente du parc de Kahuzi-Biega en 2019 avec usage d'armes automatiques et de viols par les gardes du parc appuyes par l'armee congolaise. Participation depuis 1994 au mouvement international des peuples autochtones via l'ONU.",
+      "diaspora": "Les Twa sont disperses dans quatre pays (Rwanda, Burundi, RDC, Uganda) en petites communautes marginalisees. Au Rwanda, depuis 2005, les politiques foncieres menacent les zones humides ou les Batwa collectaient l'argile pour la poterie. La majorite des Twa sont aujourd'hui sans terres et vivent dans une extreme pauvrete. En Uganda, 40% des Batwa dependaient de la mendicite comme source principale de revenus en 2007 selon les enquetes du Minority Rights Group."
+    },
+    "demography": {
+      "totalPopulation": 120000,
+      "referenceYear": 2025,
+      "source": "IWGIA et Minority Rights Group International. En 2000, la population totale etait estimee a ~80 000 personnes. En 2008, le Burundi seul comptait 78 071 Twa. Estimations pour 2025: Rwanda ~33 000, Burundi ~80 000-85 000, Uganda ~6 700, RDC ~15 000-20 000. Total estime entre 100 000 et 150 000 personnes.",
+      "distributionByCountry": [
+        {
+          "country": "BDI",
+          "population": 80000,
+          "note": "Plus grande population Twa des Grands Lacs, ~1% de la population nationale (estimation 2008: 78 071)"
+        },
+        {
+          "country": "RWA",
+          "population": 25000,
+          "note": "~1% de la population nationale, ~33 000 selon certaines estimations"
+        },
+        {
+          "country": "COD",
+          "population": 10000,
+          "note": "Est du Congo, notamment region de Kahuzi-Biega"
+        },
+        {
+          "country": "UGA",
+          "population": 6000,
+          "note": "Sud-ouest de l'Uganda, ancienne zone de Bwindi et Echuya; estimation 6 705 selon Minority Rights Group"
+        }
+      ]
+    },
+    "sources": [
+      "Great Lakes Twa – Wikipedia (https://en.wikipedia.org/wiki/Great_Lakes_Twa)",
+      "Minority Rights Group International, Twa in Rwanda (https://minorityrights.org/communities/twa-2/)",
+      "Minority Rights Group International, Twa Women, Twa Rights in the Great Lakes Region, Dorothy Jackson, 2003 (https://minorityrights.org/resources/twa-women-twa-rights-in-the-great-lakes-region-of-africa/)",
+      "Jerome Lewis, The Batwa Pygmies of the Great Lakes Region, MRG Report, 2000 (https://citizenshiprightsafrica.org/wp-content/uploads/2001/03/Lewis-Batwa-report-MRG-2000.pdf)",
+      "UNPO, Rapport UPR Rwanda 23e session – situation des Batwa (https://upr-info.org/sites/default/files/documents/2015-10/unpo_upr23_rwa_e_main.pdf)",
+      "Africa Public Service Delivery and Performance Review, Civic and political rights of the Batwa in Uganda, 2018 (https://apsdpr.org/index.php/apsdpr/article/view/162/280)",
+      "Voice of America, The Twa: The Forgotten People of the Great Lakes, 2006 (https://www.voanews.com/a/a-13-2006-05-25-voa13/325093.html)",
+      "101 Last Tribes, Twa Great Lakes (https://www.101lasttribes.com/tribes/twa_great_lakes.html)",
+      "IWGIA (International Work Group for Indigenous Affairs), profil des Batwa des Grands Lacs (https://www.iwgia.org)"
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "id": "PPL_JAHANKA",
+  "nameMain": "Jahanka",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GIN", "SEN", "GMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Jahanka",
+      "selfAppellation": "Jahanka / Diakhanke",
+      "exonyms": [
+        "Jakhanke (orthographe anglaise frequente)",
+        "Diakhanke / Diakhanka / Diakhanke (orthographe française)",
+        "Jahanke / Jahonque / Dyakanke / Diakanke / Diakhankesare (variantes orthographiques regionales)"
+      ],
+      "originOfExonyms": "Le nom Jahanka derive probablement du nom de la ville fondatrice de Jakha (ou Ja), situee sur le Bafing (affluent du Senegal). En français, les variantes Diakhanke et Diakhanka predominent. Le terme s'est cristallise dans la litterature academique africaine au cours du XXe siecle, notamment avec les travaux de Lamin Sanneh.",
+      "whyProblematic": "La multiplicite des orthographes (au moins dix variantes documentees) cree des confusions dans les bases de donnees linguistiques et demographiques. Leur classification comme sous-groupe des Soninke est debattue : leur langue est plus proche du mandinka que du soninke, refletant des siecles de migration et d'acculturation linguistique.",
+      "contemporaryUsage": "Jahanka et Jakhanke sont les formes les plus repandues dans la litterature anglophone et francophone contemporaine. Les Jahanka se designent eux-memes comme Jahanka ou Diakhanke selon le pays de residence et la langue vehiculaire.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Mande occidental (groupe Manding, branche Ouest-Manding) ; branche Mande du Niger-Congo",
+      "historicalRegion": "Senegambie et Haute-Guinee : region de Jakha sur le Bafing (Guinee), Bundu (Senegal oriental), Futa Jallon (Guinee), Dentilia, Bambuk (region frontiere Mali-Senegal-Guinee)",
+      "currentCountries": ["GIN", "SEN", "GMB"]
+    },
+    "ethnicities": [
+      "Communautes de Guinee : groupe principal, centrees sur le Futa Jallon et la Haute-Guinee",
+      "Communautes du Senegal : dissiminee dans le Bundu (Senegal oriental), Dentilia et la region de Tambacounda",
+      "Communautes de Gambie (est) : villages de la region de Upper River Division",
+      "Clans d'origine Soninke : Diakhanke clans traces a Dinga, ancetre legendaire du Wagadu",
+      "Clans de la tradition de Suwari : disciples et descendants spirituels de Sheikh Al-Hajj Salim Suwari (mort vers 1525)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Jahanka sont d'origine soninke, leurs traditions genealogiques remontant a Dinga, ancetre fondateur de la dynastique regnante du Wagadu (Ghana). Leur islamisation precoce a commence apres le contact avec les commerçants Almoravides d'Afrique du Nord en 1065, lorsque des nobles soninke de Takrur (sur le fleuve Senegal) embrasserent l'islam. Ils revendiquent une filiation spirituelle avec les compagnons (sahabas) du Prophete venus islamiser l'Afrique du Nord. Leur ville d'origine est Jakha, sur le Bafing (affluent du Senegal en Guinee), et Jahaba, sur le Bafing.",
+      "formationPeriod": "Depuis le XVe siecle, les communautes cleircales jahanka ont constitue une partie integrale de la Senegambie. Leurs villages jouissaient souvent d'un statut d'asile et d'independance judiciaire accordes par les souverains locaux. En 1525, la mort de leur grand saint Sheikh Al-Hajj Salim Suwari (ou Suware) consolida leur identite specifique comme caste clericale islamique distincte des groupes Mande guerriers. Apres 1725, au moins quinze villages jahanka existaient dans la region du Bundu (Senegal).",
+      "migrationRoutes": [
+        "Depuis Ja (Niger) et Jahaba (Bafing) vers le Bundu, Futa Jallon et la Senegambie (XVe-XVIIe siecles)",
+        "Dispersion en villages clericaux autonomes a travers le Futa Jallon (Guinee), le Bambouk (Senegal-Mali), le Dentilia",
+        "Presence attestee a la cote gambienne lors des negociations avec les Portugais au XVIe siecle"
+      ],
+      "historicalSettlementZones": [
+        "Futa Jallon (Guinee) : zone de concentration principale des Jahanka",
+        "Bundu (Senegal oriental, region de Tambacounda) : region historique avec au moins 15 villages en 1725",
+        "Dentilia et Bambouk (frontiere Guinee-Senegal-Mali)",
+        "Est de la Gambie : Upper River Division, villages cleircaux"
+      ],
+      "unificationsOrDivisions": "Les Jahanka ne forment pas d'entite politique unifiee ; ils sont organises en villages independants les uns des autres et des chefs locaux. L'identite commune est basee sur leur vocation clericale islamique partagee, leur filiation spirituelle a Suwari et leur refus doctrinal du jihad arme. Cette dispersion en villages autonomes a permis leur survie face aux pressions politiques et militaires des Etats voisins.",
+      "externalInfluences": "Contact precoce avec les commerçants musulmans almoravides (XIe siecle) qui initia leur islamisation. Interactions commerciales avec les Portugais sur la Gambie (XVIe siecle). Pression des jihads peuls au Futa Jallon (XVIIIe siecle), face auxquels les Jahanka opposaient leur pacifisme et se relocalisaient si menaces. Influence des dynasties Soninke et Manding sur leur culture. Colonisation française (Senegal, Guinee) et britannique (Gambie) au XIXe-XXe siecles.",
+      "majorHistoricalEvents": "Islamisation des nobles soninke de Takrur apres 1065. Formation de l'identite clericale jahanka sous Sheikh Al-Hajj Salim Suwari (XVe siecle, mort vers 1525). Presence comme intermediaires commerciaux lors des premiers contacts portugais sur la Gambie (XVIe siecle). Expansion en 15 villages dans le Bundu avant 1725. Resistance pacifique aux jihads peuls du Futa Jallon (XVIIIe-XIXe siecles). Integration dans les Etats coloniaux français et britanniques."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les villages jahanka jouissaient historiquement d'une autonomie politique negociee avec les souverains locaux, qui leur accordaient privileges de sanctuaire, independance judiciaire et exemption de service militaire en echange de leur role d'enseignants islamiques et de gardiens de la paix. Les villages etaient independants les uns des autres, sans hierarchie politique supralocale. La gouvernance interne relevait des oulémas (docteurs de la loi islamique) et du murshid (maitre soufi).",
+      "clanOrganization": "La societe jahanka est fondee sur des lignages patrilineaires clericaux (modinu — troisieme caste dans la stratification Soninke) qui transmettent le savoir islamique de pere en fils. L'endogamie clericale est une caracteristique fondamentale : les Jahanka epousent preferentiellement au sein de leur communaute clericale pour preserver la transmission des savoirs.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages determinent l'acces a la formation islamique superieure, le droit d'enseigner (ijaza ou sanad) et la legitimite clericale. Chaque lignage peut remonter sa genealogie spirituelle a Suwari et, plus loin, aux compagnons du Prophete. Le statut de marabout (almaami) et la reputation d'erudit islamique se transmettent dans les familles clericales.",
+      "religiousAuthority": "L'autorite religieuse est entierement islamique. Le murshid (maitre soufi) dirige la communaute spirituelle. Les Jahanka adherent a la jurisprudence malekite (fiqh maliki) et sont affilies aux ordres soufis (principalement Tijaniyya et Qadiriyya). Leur curriculum comprend la tajwid (recitation coranique), les sciences du hadith, la jurisprudence (usul al-fiqh), la grammaire arabe et l'exegese coranique (tafsir). Le diplome (ijaza) n'est delivre qu'apres la maitrise et la copie manuscrite de 28 livres, habilitant ensuite a ouvrir sa propre ecole coranique (karanta)."
+    },
+    "languages": {
+      "mainLanguage": "Jahanka (Diakhanke)",
+      "isoCodes": ["jad"],
+      "dialects": [
+        "Jahanka de Guinee : variete principale, appelee parfois Maninka-Jahanka, mutuellement intelligible avec le Maninka standard",
+        "Jahanka de Gambie : variete proche du Mandinka de Senegambie",
+        "Jahanka de Guinee-Bissau et Senegal : considere par certains linguistes comme un dialecte du Kassonke (Xasonka)"
+      ],
+      "vehicularRole": "Le jahanka est une variete du groupe Manding (Mande occidental), partiellement intelligible avec le mandinka et mutuellement comprehensible entre locuteurs de differentes communautes Jahanka. En Guinee, le maninka standard sert de vehiculaire complementaire ; en Gambie, le mandinka standard. Le français et l'anglais sont langues d'administration selon le pays. L'arabe classique est utilise comme langue d'enseignement religieux dans toutes les communautes."
+    },
+    "culture": {
+      "majorRites": "Mawlid an-Nabi : celebration de l'anniversaire du Prophete, point culminant de l'annee liturgique jahanka, rassemblant les communautes pour des recitations coraniques et chants religieux (nasheeds). Id al-Fitr et Id al-Adha : grandes fetes de l'Eid celebrees collectivement avec prieres, repas communautaires et distribution d'aumones. Rites d'initiation soufie : admission progressive dans les enseignements secrets (batin) de la communaute sous l'autorite du murshid. Remise de l'ijaza (diplome d'enseignement) : ceremonie marquant la fin du cursus coranique apres la maitrise de 28 ouvrages et leur copie manuscrite. Circoncision masculine : rite islamique pratique dans l'enfance. Ceremonies funeraires islamiques : inhumation rapide, lectures coraniques, deuil collectif de trois jours.",
+      "symbols": "Le Livre (Coran) : symbole central de l'identite jahanka en tant que peuple du Livre et gardiens du savoir islamique. L'amulette (gri-gri coranique) : protections confectionnees par les marabouts jahanka pour les fideles, contenant des versets coraniques. La karanta (ecole coranique) : symbole de la mission educative des Jahanka. Le chapelet de priere islamique (subha). Le turban blanc du marabout.",
+      "artsAndMusic": "Recitation coranique (tilawa) : art majeur des Jahanka, avec maitrise des sept styles de recitation (tajwid). Nasheeds et chants devotionnels en arabe et en jahanka lors des ceremonies religieuses. Calligraphie arabe : art de la copie manuscrite des textes sacres (28 ouvrages copies a la main pour obtenir l'ijaza). Enseignement oral de la poesie islamique classique. Architecture de mosquees et d'ecoles coraniques dans les villages jahanka. Tissage traditionnel et artisanat (travail du cuir pour les grisgris).",
+      "spiritualities": "Les Jahanka sont quasi-unanimement sunnites de rite malekite (99-100% selon Joshua Project), parmi les peuples d'Afrique subsaharienne les plus orthodoxement engages dans l'islam sunnite. Ils tracent leur filiation spirituelle directement aux sahabas (compagnons) du Prophete. Ils sont fideles a la doctrine de Sheikh Al-Hajj Salim Suwari (mort vers 1525) : pacifisme, refus du jihad arme, priorite donnee a l'education islamique et a la coexistence avec les non-musulmans. Affilies aux ordres soufis Tijaniyya et Qadiriyya. Pratique des sciences occultes (interpretation des reves, confection d'amulettes coraniques) par les marabouts."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Jahanka ne formerent jamais de royaume ou d'Etat politique propre, maintenant deliberement leur separation des affaires politiques. Leur influence s'exercait par le prestige religieux et educatif. Ils furent la caste clericale incontournable de la Senegambie, fournissant enseignants, juges islamiques et conseillers spirituels aux souverains locaux sans jamais revendiquer le pouvoir temporel.",
+      "relationsWithNeighbors": "Les Jahanka maintenaient des relations de complementarite symbiotique avec les souverains locaux (Soninke, Manding, Peul, Mandinka) qui leur accordaient protection et autonomie en echange de legitimation islamique et d'education religieuse. Leur pacifisme doctrinal les distingua des jihads peuls du XVIIIe siecle. Ils ont contribue a la diffusion de l'islam parmi les Manding, les Dyula et les Mandinka depuis le XVe siecle.",
+      "conflictsOrAlliances": "Les Jahanka pratiquaient le deplacement de village plutot que la resistance armee quand ils etaient menaces. Lors des jihads du Futa Jallon (XVIIIe siecle), certaines communautes jahanka se relocalisèrent pour preserver leur independance. Ils n'ont pas de tradition militaire propre, leur protection etant assuree par les souverains allies.",
+      "diaspora": "Dispersion historique en villages isoles a travers la Senegambie et la Haute-Guinee depuis le XVe siecle. Les Jahanka contemporains se trouvent principalement en Guinee, au Senegal (region de Tambacounda), en Gambie (Upper River Division), avec de petits groupes en Guinee-Bissau et au Mali."
+    },
+    "demography": {
+      "totalPopulation": 130000,
+      "referenceYear": 2025,
+      "source": "Joshua Project : Jahanka en Guinee (population principale, estimee), Jahanka en Gambie (6 300), Jahanka au Senegal ; estimation totale entre 100 000 et 150 000. Sources : Joshua Project (https://joshuaproject.net/people_groups/12311/GV), Wikipedia Jakhanke, Ethnologue SIL (jad).",
+      "distributionByCountry": [
+        {
+          "country": "GIN",
+          "population": 100000,
+          "note": "Groupe principal concentre dans le Futa Jallon et la Haute-Guinee"
+        },
+        {
+          "country": "SEN",
+          "population": 23700,
+          "note": "Region de Tambacounda, Bundu et Dentilia"
+        },
+        {
+          "country": "GMB",
+          "population": 6300,
+          "note": "East Gambia, Upper River Division, villages clericaux"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Jakhanke. https://en.wikipedia.org/wiki/Jakhanke",
+      "Wikipedia EN — Jahanka language. https://en.wikipedia.org/wiki/Jahanka_language",
+      "Ethnologue SIL — Jahanka (jad). https://localizely.com/language-code/jad/",
+      "Joshua Project — Jahanka in Guinea. https://joshuaproject.net/people_groups/12311/GV",
+      "Joshua Project — Jahanka in Gambia. https://joshuaproject.net/people_groups/12311/GA",
+      "An ka taa — Resources for learning Diakhanke (Jahanka). https://www.ankataa.com/blog/2023/7/15/resources-for-learning-diakhanke-aka-jahanka",
+      "Sanneh, Lamin O. — The Jakhanke Muslim Clerics: A Religious and Historical Study of Islam in Senegambia. University Press of America, 1989.",
+      "Levtzion, Nehemia — Muslims and Chiefs in West Africa. Oxford: Clarendon Press, 1968.",
+      "Glottolog — Jahanka. https://glottolog.org/resource/languoid/id/jaha1242",
+      "Curtin, Philip D. — Economic Change in Precolonial Africa: Senegambia in the Era of the Slave Trade. University of Wisconsin Press, 1975."
+    ]
+  }
+}

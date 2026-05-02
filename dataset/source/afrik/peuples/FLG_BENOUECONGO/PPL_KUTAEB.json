@@ -1,0 +1,102 @@
+{
+  "id": "PPL_KUTAEB",
+  "nameMain": "Kuteb",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["NGA", "CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Kuteb",
+      "selfAppellation": "Kuteb / Kutep",
+      "exonyms": ["Kutep", "Kutev", "Mbarike", "Ati"],
+      "originOfExonyms": "Le terme Kuteb (ou Kutep) est le nom autochtone du peuple. Mbarike est un nom alternatif utilise dans certaines sources exterieures. Ati est une designation regionale. Le nom derive traditionnellement du fondateur eponyme Kuteb, considere comme l'ancetre commun des douze clans du peuple.",
+      "whyProblematic": "La confusion entre Kuteb et les peuples voisins (Jukun, Chamba, Tiv) est frequente dans les sources coloniales et postcoloniales en raison des imbrications historiques et des conflits interethniques dans la region de Takum. L'orthographe varie entre Kuteb et Kutep selon les sources.",
+      "contemporaryUsage": "Le terme Kuteb est la forme la plus couramment utilisee dans la litterature academique et administrative nigeriane. Il designe a la fois le peuple et la langue (Kuteb ou Kutep, ISO kub).",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Jukunoid (Benue-Congo)",
+      "historicalRegion": "Bassin de la Benue — region de Takum (Taraba State, Nigeria)",
+      "currentCountries": ["NGA", "CMR"]
+    },
+    "ethnicities": [
+      "Clan Lumbu — l'un des douze clans fondateurs",
+      "Clan Ticwo — clan fondateur",
+      "Clan Rufu — clan fondateur",
+      "Clan Askaen — clan fondateur",
+      "Clan Bika (Zwika) — clan fondateur",
+      "Clan Rubur — clan fondateur",
+      "Clan Tswaen — clan fondateur",
+      "Clan Acha — clan fondateur",
+      "Clan Likam — famille royale principale, partage le droit de succession a la chefferie supreme",
+      "Clan Cwumam — clan fondateur",
+      "Clan Rucwu — clan fondateur",
+      "Clan Akente — seconde famille royale, alterne avec Likam pour la chefferie supreme"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon la tradition orale, les Kuteb migrerent depuis l'Egypte vers l'an 1000 ap. J.-C., parcourant plusieurs regions africaines avant d'atteindre leur emplacement actuel vers 1510. Cette migration de longue duree est caracteristique des traditions d'origine de plusieurs peuples de la region du Middle Belt nigerian. Le fondateur eponyme Kuteb aurait ete le premier Kwe (chef-pretre), etablissant les structures politiques et religieuses du peuple.",
+      "formationPeriod": "Vers 1510, installation definitive dans la region de Takum (actuel Taraba State). La structuration en douze clans remonte a la fondation du peuple par Kuteb, qui fut le premier Kwe Kukwen (chef-pretre paramount). Le systeme de rotation de la chefferie supreme entre les familles Likam et Akente est une convention ancienne de la nation kuteb.",
+      "migrationRoutes": [
+        "Egypte (tradition orale, vers 1000 ap. J.-C.)",
+        "Migration vers l'Afrique sub-saharienne sur plusieurs siecles",
+        "Passage par plusieurs regions du bassin tchadien et de la vallee de la Benue",
+        "Installation definitive dans la region de Takum (Taraba State) vers 1510"
+      ],
+      "historicalSettlementZones": [
+        "Takum Local Government Area (Taraba State) — zone principale",
+        "Ussa LGA (Taraba State)",
+        "Yangtu SDA (Taraba State)",
+        "Mbarikam (Teekum/Ikam) — siege du Kwe Kukwen et capitale traditionnelle",
+        "Quelques villages dans le nord-ouest du Cameroun"
+      ],
+      "unificationsOrDivisions": "La nation kuteb est federale dans sa structure : les douze clans jouissent d'une autonomie relative, mais reconnaissent la suzerainete du Kwe Kukwen. La decision d'alterner la chefferie supreme entre les familles Likam et Akente est une convention antique visant a proteger l'integrite de la nation contre les pretentions d'une seule lignee. La colonisation britannique (vers 1900) plaça les Kuteb sous l'autorite du souverain jukun de Wukari Federation, creant des tensions persistantes. En 1975, le gouverneur Gomwalk modifia la loi sur les chefferies, suscitant des crises.",
+      "externalInfluences": "La colonisation britannique introduisit les Kuteb dans le systeme administratif de la Wukari Federation en les placant sous l'autorite du chef Jukun (Aku Uka), ce que les Kuteb vecurent comme une domination etrangere. Les conflits avec les Jukun, Chamba, Tiv et Haoussa ont marque l'histoire recente du groupe. L'islamisation et l'evangelisation chretienne ont modifie les pratiques religieuses traditionnelles.",
+      "majorHistoricalEvents": "Vers 1900 : soumission britannique et placement sous la federation de Wukari. 1914 : le Kwe Kukwen obtient le titre de Kwe Takum et est reconnu chef de troisieme classe. 1963-1996 : regne du dernier Ukwe Takum Ali Ibrahim. 1975 : modification controversee de la loi sur la chefferie par le gouverneur Gomwalk. 1991 : crise ethnique entre Kuteb et Jukun. 1997 : violences communautaires a Takum (7 morts, 7 maisons incendiees). 1998 : Comite de paix du gouvernement de Taraba State. 2006 et 2008 : nouveaux affrontements violents."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme theocratique federal. Le Kwe Kukwen (chef-pretre supreme) resident a Mbarikam Hill (Teekum/Ikam) dirige la nation avec un conseil d'anciens appele Ndufu. Les Akwen sont les pretres mineurs, chefs des autres clans. Le systeme est federal : chaque clan jouit d'une autonomie pour maintenir la paix et proteger ses membres, mais se soumet a l'autorite collective du Kwe Kukwen pour les affaires nationales et la resolution des litiges inter-claniques.",
+      "clanOrganization": "Douze clans principaux reconnus comme enfants de Kuteb : Lumbu, Ticwo, Rufu, Askaen, Bika (Zwika), Rubur, Tswaen, Acha, Likam, Cwumam, Rucwu et Akente. Le Conseil Ndufu represente ces clans et les familles etendues majeures. Chaque clan a son propre Ukwe (chef de clan). La succession a la chefferie supreme est limitee aux familles Likam et Akente, qui alternent par convention.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Le systeme de lignage est central dans la politique kuteb. L'appartenance au clan determine les droits politiques locaux. La legitimite du Kwe Kukwen repose sur son appartenance aux deux familles royales (Likam ou Akente), et sa residence obligatoire a Teekum (Mbarikam Hill) sanctionne sa legitimite territoriale et spirituelle.",
+      "religiousAuthority": "Le Kwe Kukwen et les Akwen exercent une double autorite politique et sacerdotale. Le Kwe Kukwen est a la fois chef d'Etat et grand pretre de la nation. La pratique du Kuchichebe (festival annuel de benediction des terres) illustre le role religieux central du chef. La croyance en un etre supreme createur du monde et dispensateur de la sante, de la pluie et de la recolte coexiste avec le culte des idoles familiales."
+    },
+    "languages": {
+      "mainLanguage": "Kuteb (Kutep)",
+      "isoCodes": ["kub"],
+      "dialects": [
+        "Kuteb central — variete de Takum LGA",
+        "Kuteb de Ussa LGA",
+        "Kuteb de Yangtu SDA",
+        "Variete de Cameroun — quelques milliers de locuteurs trans-frontaliers"
+      ],
+      "vehicularRole": "La langue kuteb (ISO kub) est une langue jukunoid de la famille Benue-Congo. Elle est parlée principalement dans les LGA de Takum et Ussa (Taraba State, Nigeria) et par quelques milliers de locuteurs au Cameroun. Le haoussa, le tiv et l'anglais sont les principales langues vehiculaires dans la region. La langue kuteb a 27 phonemes consonantiques, 12 voyelles et cinq tons (bas, moyen, haut, tombant, montant)."
+    },
+    "culture": {
+      "majorRites": "Le Kuchichebe est le festival annuel traditionnel de benediction des terres, celebre pour assurer la fertilite de la prochaine recolte. Ce rite agraire fut interdit a une certaine periode par les autorites. La circoncision masculine est pratiquee comme rite de passage. Les fonctions sacerdotales du Kukwen et des Akwen structurent le calendrier rituel : les pretres maintiennent des cultes specifiques transmis depuis Kuteb, le fondateur eponyme.",
+      "symbols": "La colline de Mbarikam (Teekum) est le symbole territorial et spirituel central de la nation kuteb, siege du chef-pretre supreme. Les idoles familiales (family idols) sont des symboles de la connexion ancestrale et spirituelle des foyers kuteb. Le titre de Kwe Kukwen incarne la continuite de la souverainete kuteb face aux pressions exterieures.",
+      "artsAndMusic": "Les Kuteb pratiquent l'agriculture, la chasse et la peche dans le bassin fertile de la riviere Benue. La tradition orale est une forme artistique importante, incluant les recits de la migration depuis l'Egypte et les genealogies claniques. Les danses et chants rituels accompagnent les ceremonies du Kuchichebe et les rites de passage. La poterie et l'artisanat local sont des activites traditionnelles documentees.",
+      "spiritualities": "Croyance en un etre supreme (dieu createur) qui apporte la sante, la pluie et les recoltes. Culte parallele des idoles familiales (objects ancestraux sacres). La fonction sacerdotale est au coeur de l'organisation sociale : les chefs politiques sont aussi des pretres. Aujourd'hui, la majorite des Kuteb du Nigeria sont chretiens (notamment evangeliques). La religion traditionnelle a une prise plus forte sur les communautes kuteb du Cameroun."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La nation kuteb etait dirigee par le Kwe Kukwen, chef-pretre a la fois souverain politique et religieux, resident a Mbarikam Hill. Le titre de Kwe Takum (troisieme classe) fut accorde par les Britanniques en 1914. Les Kuteb ont maintenu leur propre organisation politique face aux tentatives d'incorporation dans la Wukari Federation jukun. L'alternance entre Likam et Akente pour la succession a la chefferie supreme reflete une sophistication institutionnelle visant a prevenir les conflits dynastiques.",
+      "relationsWithNeighbors": "Relations complexes avec les Jukun voisins (tensions sur la chefferie de Takum), les Chamba, les Tiv et les Haoussa. Les Kuteb ont percu la domination jukun comme illégitime depuis la reorganisation coloniale de 1900. Des conflits recurrents avec les Tiv sur les ressources terriennes ont ponctue le XXe et le XXIe siecles. Des villages kuteb existent aussi au Cameroun, montrant une presence trans-frontaliere.",
+      "conflictsOrAlliances": "1900 : soumission a la Wukari Federation sous pression coloniale britannique. 1914 : le Kwe Kukwen force a quitter Takum et resider ailleurs suite aux pressions des ethnies Haoussa, Tiv, Chamba et Kukun. 1975 : modification forcee des droits de succession par le gouverneur Gomwalk, ajoutant des Jukun et Chamba au comite d'election. 1991 : crise ethnique Jukun-Kuteb. 1997 : violence a Takum. 2000 : affrontements Jukun/Chamba-Tiv (plus de 250 villages brules). 2006 : violences Kuteb-Tiv. 2008 : nouvelle crise a Takum (environ 20 morts).",
+      "diaspora": "La presence kuteb se limite principalement a la zone de Takum au Nigeria (LGA Takum et Ussa, Taraba State) avec quelques villages trans-frontaliers au Cameroun. La migration vers des centres urbains comme Jalingo (capitale de Taraba State), Kaduna et d'autres villes nigeriane est documentee, mais la diaspora reste modeste par rapport aux grands peuples nigerianes."
+    },
+    "demography": {
+      "totalPopulation": 620000,
+      "referenceYear": 2025,
+      "source": "Wikipedia (c. 602,000 total population). Un rapport de 2007 estimait le nombre de Kuteb a environ 100,000, mais cette estimation est consideree comme sous-evaluee. Les projections recentes (Wikipedia, Joshua Project, Ethnologue SIL 2024) donnent environ 600,000 personnes. Population principalement au Nigeria (Taraba State), avec quelques milliers au Cameroun.",
+      "distributionByCountry": [
+        { "country": "NGA", "population": 610000 },
+        { "country": "CMR", "population": 10000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kuteb people : https://en.wikipedia.org/wiki/Kuteb_people",
+      "Wikipedia EN — Kuteb language : https://en.wikipedia.org/wiki/Kuteb_language",
+      "Ethnologue (SIL) — Kutep (kub) : https://www.ethnologue.com/language/kub/",
+      "Joshua Project — Kuteb in Nigeria : https://joshuaproject.net/people_groups/12889/NI",
+      "Taraba State Government — Comprehensive brief on the Chieftaincy Stool of Takum Chiefdom Taraba State (1997), reference historique interne.",
+      "Roger Blench — Documentation linguistique du kuteb (tons et phonologie), Universite de Cambridge.",
+      "SIL International — Ethnologue 26th edition (2023), langue kub (Kutep) : https://www.ethnologue.com/language/kub/"
+    ]
+  }
+}

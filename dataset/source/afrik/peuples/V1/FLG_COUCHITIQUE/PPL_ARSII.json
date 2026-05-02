@@ -1,0 +1,72 @@
+{
+  "id": "PPL_ARSII",
+  "nameMain": "Arsi (Arsii)",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Arsi (Arsii)",
+      "selfAppellation": "Arsi Oromo",
+      "exonyms": [
+        "Arsi (terme utilisé par les Européens), parfois classés comme sous-groupe Oromo"
+      ],
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "Couchitiques orientaux (Oromoid)",
+      "historicalRegion": "Sud-est de l'Éthiopie (région Oromia)",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": [
+      "Arsi du Nord",
+      "Arsi du Sud",
+      "Arsi de l'Est",
+      "Arsi de l'Ouest"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Arsi sont un sous-groupe des Oromo, originaires de la région du sud-est de l'Éthiopie. Leur présence dans la région remonte à plusieurs siècles.",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les autres Oromo.",
+      "externalInfluences": "Contacts avec les peuples sémitiques (Amhara), influence de l'islam et du christianisme orthodoxe éthiopien."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles (gadaa system). Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances. Système gadaa (classes d'âge) important.",
+      "religiousAuthority": "Autorité des prêtres traditionnels et des chefs religieux. Influence de l'islam et du christianisme orthodoxe éthiopien."
+    },
+    "languages": {
+      "mainLanguage": "Oromo (dialecte Arsi)",
+      "vehicularRole": "L'oromo est parlé par la majorité des Arsi. L'amharique est utilisé dans l'éducation et l'administration. L'anglais est également utilisé."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies du système gadaa",
+      "source_1": "Rites de passage (naissance, puberté, mariage, mort)",
+      "source_2": "Festivals traditionnels",
+      "source_3": "Cérémonies de réconciliation",
+      "Symboles": "Symboles culturels oromo, système gadaa.",
+      "Arts et musique": "",
+      "source_4": "Musique traditionnelle oromo",
+      "source_5": "Danse traditionnelle",
+      "source_6": "Poésie orale",
+      "source_7": "Artisanat",
+      "Spiritualités": "Croyances traditionnelles oromo. Influence croissante de l'islam et du christianisme orthodoxe éthiopien."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Organisation en chefferies traditionnelles. Intégration dans la structure politique éthiopienne.",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora arsi dans les grandes villes éthiopiennes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 2500000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements éthiopiens, CIA World Factbook, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Oromo language (orm)",
+      "CIA World Factbook – Ethiopia",
+      "Baxter, P.T.W. – *Being and Becoming Oromo*",
+      "A History 1570-1860*",
+      "Recensements éthiopiens"
+    ]
+  }
+}

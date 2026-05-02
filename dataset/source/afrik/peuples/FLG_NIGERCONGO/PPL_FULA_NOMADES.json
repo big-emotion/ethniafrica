@@ -1,0 +1,126 @@
+{
+  "id": "PPL_FULA_NOMADES",
+  "nameMain": "Fula (Nomades)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["NER", "NGA", "CMR", "TCD", "CAF"],
+  "content": {
+    "appellations": {
+      "mainName": "Fula (Nomades)",
+      "selfAppellation": "Fulbe (pluriel), Pullo (singulier)",
+      "exonyms": [
+        "Mbororo (terme Haoussa/Fulfude, parfois pejoratif, signifiant ceux qui vivent dans les camps a betail)",
+        "Bororo (variante de Mbororo, utilisee par les colons europeens et les voisins sedentaires)",
+        "Wodaabe (sous-groupe nomade specifique; signifie gens du tabou en fulfude)",
+        "Cattle Fulani (terme anglophone colonial)"
+      ],
+      "originOfExonyms": "Mbororo est un terme d'origine haoussa et fulfude designe les Fula pasteurs nomades en opposition aux Fula sedentarises. Il est parfois pejoratif. Wodaabe est un autonyme du sous-groupe le plus connu des nomades; en fulfude, wodaa signifie tabou et Wodaabe designe ceux qui respectent les tabous, soulignant leur isolement de la culture fula urbaine et leur revendication de traditions plus anciennes.",
+      "whyProblematic": "La distinction entre Fula nomades et sedentaires est culturellement et politiquement sensible. Les Mbororo sont souvent marginalises dans les Etats-nations contemporains. Leur mode de vie pastoral transfrontalier genere des conflits avec les agriculteurs sedentaires au Sahel et en Afrique centrale.",
+      "contemporaryUsage": "Le terme Fula nomades designe principalement les Fulbe Mbororo et Wodaabe, populations pastorales mobiles du Sahel central et oriental. Ils se distinguent des Fula sedentarises par leur adherence au code pulaaku pastoral et leur refus de la sedentarisation.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Atlantique-Congo (branche senegambienne, sous-groupe Fulbe Mbororo et Wodaabe)",
+      "historicalRegion": "Sahel central et oriental : du Niger meridional au nord du Cameroun, est du Tchad et nord-ouest de la Republique centrafricaine",
+      "currentCountries": ["NER", "NGA", "CMR", "TCD", "CAF"]
+    },
+    "ethnicities": [
+      "Fulbe Wodaabe (sous-groupe nomade specifique du Niger et du Tchad; gens du tabou)",
+      "Fulbe Mbororo Aku'en (identifies par la couleur rouge de leur betail)",
+      "Fulbe Mbororo Bodaabe (identifies par leur troupeau de betail a robe sombre)",
+      "Fulbe Mbororo Jafun'en (sous-groupe migrant entre le Niger, le Cameroun et la RCA)",
+      "Fulbe Adamawa nomades (pasteurs mobiles du Cameroun et de l'est du Nigeria)",
+      "Fulbe Bagirmi (pasteurs du Tchad et de la RCA)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Fula nomades font partie du groupe Atlantique-Congo de la famille Niger-Congo. Leurs origines sont debattues : certains historiens les relient a des populations proto-berberes ou cushitiques venues d'Afrique du Nord-Est et melees a des populations ouest-africaines dans la vallee du Senegal. D'apres des traditions orales et linguistiques, les ancetres des Fula venaient de Futa Toro (vallee du Senegal) et de Futa Jallon (actuelle Guinee). Les Wodaabe se considerent eux-memes comme les heritiers d'un mode de vie pastoral plus ancien que celui des Fula islamises et sedentarises.",
+      "formationPeriod": "L'identite des Fula nomades s'est consolidee entre le 14e et le 18e siecle, au fur et a mesure de leurs migrations vers l'est. Au 17e siecle, la majorite des Fula du Sahel avaient adopte l'islam, mais les groupes nomades, notamment les Wodaabe, ont maintenu des pratiques culturelles et spirituelles pre-islamiques melees a un islam partiel.",
+      "migrationRoutes": [
+        "Depuis Futa Toro (vallee du Senegal) vers l'est : Macina (Mali), region de Sokoto (Nigeria), nord du Cameroun",
+        "Migration vers le Bornou et le Tchad aux 17e-18e siecles",
+        "Penetration en Republique centrafricaine et extension vers le Soudan du Sud au 19e-20e siecle",
+        "Transhumance saisonniere annuelle entre les patures de saison seche au sud et les patures de saison des pluies au nord"
+      ],
+      "historicalSettlementZones": [
+        "Niger meridional (region de Diffa, Tahoua, Agadez)",
+        "Nord-est du Nigeria (Adamawa, Borno, Taraba)",
+        "Nord du Cameroun (Adamaoua, Nord, Extreme-Nord)",
+        "Sud et centre du Tchad",
+        "Nord-ouest de la Republique centrafricaine (Nana-Mambere, Ouham-Pende)"
+      ],
+      "unificationsOrDivisions": "Les Fula nomades ne forment pas un etat centralise. Les Wodaabe sont divises en plusieurs sous-clans identities par la robe de leur betail (Aku'en, Bodaabe, Jafun'en). L'unite est culturelle et linguistique, fondee sur le code pulaaku, non politique. Les decisions de mouvement au sein d'un groupe de lignage sont discutees par un conseil d'hommes (suura), bien que chaque chef de menage reste libre de ses deplacements.",
+      "externalInfluences": "Influence partielle de l'islam (accepte entre le 16e et le 18e siecle; les Wodaabe conservent des pratiques pre-islamiques). Contacts et conflits recurrents avec les agriculteurs sedentaires Haoussa, Kanuri, Sara et Banda. Pression coloniale europeenne et decolonisation ayant impose des frontieres traversant leurs zones de transhumance. Depuis les annees 1970, les grandes secheresses sahelo-soudaniennes ont force nombre de groupes vers le sud.",
+      "majorHistoricalEvents": "Au 16e siecle, le savant al-Maghili convertit les elites Haoussa, Fula et Tuareg du nord du Nigeria. Au 17e siecle, les Fula de l'Ouest adoptent massivement l'islam. Les secheresses du Sahel (1972-1974, 1984-1985) ont provoque des vagues de migration vers les pays cotes. Depuis les annees 2000, les conflits entre eleveurs nomades et agriculteurs sedentaires se sont intensifies au Sahel, en lien avec la deterioration des paturages et la proliferation des armes."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe pastorale acephale organisee en groupes de lignage mobiles. L'unite de base est le wuro (campement familial), regroupe autour d'un homme et de ses proches. Plusieurs wuro se deplacent en groupes appeles ruga. Les decisions collectives sont prises par un conseil d'hommes adultes (suura). Dans les pays comme le Cameroun, certains groupes Mbororo sont organises sous des Lamidats (Fuigil, Lompta, Sabga, Didango) avec des chefs communautaires appeles Ardo.",
+      "clanOrganization": "Structure clanique patrilineaire. Les clans Wodaabe et Mbororo sont identifies par la robe et le type de leur betail. L'appartenance clanique determine les alliances matrimoniales et les droits de paturage. Les prets de betail (habana'i) sont une institution sociale redistributive qui renforce les liens interclaniques.",
+      "ageClassSystems": "Systeme generationnel informel. Les jeunes hommes participent aux festivals de beaute (Gerewol/Guerewol) comme rite de passage vers l'age adulte et comme moment de recherche d'epouse.",
+      "roleOfLineages": "Les lignages patrilineaires structurent l'organisation du campement (wuro), les droits de paturage et les alliances matrimoniales. Le mariage endogame (preferentiellement avec cousins croises ou paralleles) est valorise pour preserver le pulaaku et les troupeaux. L'heritage du betail est strictement patrilineaire.",
+      "religiousAuthority": "Islam sunnite malekite adopte partiellement, melange de pratiques pre-islamiques notamment chez les Wodaabe. Les Wodaabe conservent des rites ancestraux de protection des troupeaux et des ceremonies de beaute (Gerewol) non islamiques. Pas de clerc religieux permanent dans les campements nomades; recours occasionnel a des marabouts itinerants."
+    },
+    "languages": {
+      "mainLanguage": "Fulfude (Fulfulde) et ses variantes dialectales selon la zone",
+      "isoCodes": ["ful", "fub", "fuq", "fuv"],
+      "dialects": [
+        "Fulfude Adamawa / Fombinaare (Nord-Cameroun, Adamawa Nigeria, est du Tchad, RCA) - code fub",
+        "Fulfude Central-Est Niger / Fuq (Niger central et oriental, Tchad occidental) - code fuq",
+        "Fulfude Nigerian / Woylaare (nord Nigeria, Niger meridional) - code fuv",
+        "Wodaabe speak a conservative Fulfude dialect close to the eastern variants"
+      ],
+      "vehicularRole": "Le fulfude est la langue maternelle des Fula nomades. Il sert de langue d'identite ethnique forte. Dans les zones de contacts, les Mbororo parlent egalement le haoussa (Nigeria, Niger), l'arabe tchadien (Tchad), le sango (RCA) ou le français comme langues de communication avec les sedentaires et les autorites etatiques."
+    },
+    "culture": {
+      "majorRites": "Gerewol (Guerewol) : festival annuel de beaute et de courtisation des Wodaabe, se tenant a la fin de la saison des pluies (septembre). Les jeunes hommes se maquillent, portent des ornements elabores et executent la danse Yaake en ligne pour etre choisis par de jeunes femmes. Le festival le plus connu se tient a In-Gall (nord-ouest du Niger), lors de la Cure Salee. Sharo : epreuve de flagellation publique lors des mariages pour tester le courage, la discipline et l'endurance du marie. Habbanaya : ceremonie de pret de betail avec celebration familiale, fondatrice de liens sociaux interclaniques. Rites islamiques partiels : celebration de l'Aid, du Ramadan et du Maoulid chez certains groupes. Rites de transhumance et de protection des troupeaux : ceremonies de bénédiction des troupeaux au depart et a l'arrivee des migrations saisonnieres. Circoncision male comme rite de passage vers l'age adulte.",
+      "symbols": "Le betail (zebus a longues cornes) est le symbole supreme de richesse, de statut et d'identite. Le code pulaaku (ensemble de valeurs comportementales : munyal/patience, semteende/modestie, hakkilo/sagesse, sagata/courage) est le symbole moral central de l'identite Fula nomade. Les calebasses decorees (mbeedu), les tresses feminines avec pieces d'ambre et de monnaie, les robes brodees, les bijoux (bracelets et boucles d'oreilles en or ou en cuivre) sont des symboles culturels distinctifs. Les Wodaabe se designent eux-memes comme solli ladde (oiseaux de la brousse) pour souligner leur lien a la nature.",
+      "artsAndMusic": "Musique vocale collective polyphonique et repetitive, avec frappement des mains, pieds et clochettes, caracteristique du Gerewol Wodaabe. Instruments : tambours (buuba, bawdi), flute de roseau, hoddu (luth a peau pince similaire au banjo), riiti (instrument a archet monocorde). Chants de bergers (sifflets et chants personnels, chants de travail pastoral). Artisanat feminin : calebasses gravees et decorees, nattes tressees, couvertures tissees, coiffes brodees. Bijoux en cuivre rouge et en argent fabriques par les femmes. La Cooperative Artisana Bororo (WoDaaBe), fondee en 1994 au Niger, commercialise l'artisanat Wodaabe. Contes et histoire orale recites par les griots Awlube.",
+      "spiritualities": "Islam sunnite malekite partiel, avec maintien de pratiques pre-islamiques chez les Wodaabe. Les Wodaabe reconnaissent Alla (Dieu) mais conservent des rites ancestraux de protection contre les mauvais esprits et les maladies du betail. Croyance en des forces surnaturelles liees aux animaux sauvages et aux espaces naturels. La notion de pulaaku est a la fois code culturel et quasi-spirituel : elle distingue les Fula nomades de leurs voisins sedentaires et constitue une frontiere identitaire absolue."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Fula nomades (Mbororo, Wodaabe) n'ont pas fonde de royaumes centralises. Toutefois, sous le systeme des Lamidats du Cameroun (dont Fuigil, Lompta, Sabga, Didango), certains groupes Mbororo sont organises en chefferies de type semi-institutionnel. Les Fulbe Bagirmi du Tchad sont historiquement lies au Sultanat du Baguirmi (17e-19e siecles).",
+      "relationsWithNeighbors": "Relations economiques complementaires traditionnelles avec les agriculteurs sedentaires Haoussa, Kanuri, Sara, Banda et Gbagyi : echanges de lait, de betail et de fumier contre des cereales. Ces relations se sont degradees depuis les annees 1970-1980 en raison de la pression demographique, de la degradation des terres et de la competition fonciere. Des conflits violents recurrents entre eleveurs Mbororo et agriculteurs sedentaires touchent le Cameroun, la RCA, le Tchad et le Nigeria.",
+      "conflictsOrAlliances": "Participation partielle des Fulbe nomades aux jihads fula du 19e siecle (Sokoto, Massina), bien que les groupes les plus nomades aient maintenu une autonomie vis-a-vis des etats islamiques. Au 20e siecle, les conflits avec les gouvernements nationaux autour des droits de paturage et de la taxe sur le betail (jangali) ont ete recurrents. En RCA, les groupes Mbororo ont ete impliques dans des conflits armes depuis 2012.",
+      "diaspora": "Migration progressive vers les villes d'Afrique de l'Ouest et centrale depuis les secheresses des annees 1970-1980. Des communautes Mbororo sont presentes dans les capitales regionales (Ngaoundere, Ndjamena, Bangui, Niamey). Une petite diaspora existe en Europe (France, Belgique) principalement issue de l'emigration economique."
+    },
+    "demography": {
+      "totalPopulation": 4000000,
+      "referenceYear": 2025,
+      "source": "Estimations combinees : SIL Ethnologue (2024), UNHCR (populations pastorales), recensements nationaux Niger/Nigeria/Cameroun/Tchad/RCA, etudes de Mette Bovin (Nomads Who Cultivate Beauty, 2001) et travaux de l'IIED sur les pasteurs saheliens. Les Wodaabe seuls etaient estimes a environ 100 000 individus en 2001 (Wikipedia). Population totale des groupes nomades Fula estimee entre 3,5 et 5 millions selon les sources.",
+      "distributionByCountry": [
+        {
+          "country": "NER",
+          "population": 1200000,
+          "note": "Niger meridional et central; Wodaabe et Mbororo Jafun'en"
+        },
+        {
+          "country": "NGA",
+          "population": 900000,
+          "note": "Nord-est Nigeria (Adamawa, Borno, Taraba); Fulbe Adamawa nomades"
+        },
+        {
+          "country": "CMR",
+          "population": 800000,
+          "note": "Adamaoua, Nord, Extreme-Nord; Mbororo sous Lamidats"
+        },
+        {
+          "country": "TCD",
+          "population": 700000,
+          "note": "Sud et centre du Tchad; Fulbe Bagirmi et Wodaabe"
+        },
+        {
+          "country": "CAF",
+          "population": 400000,
+          "note": "Nord-ouest RCA (Nana-Mambere, Ouham-Pende); Mbororo Jafun'en"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN - Wodaabe. https://en.wikipedia.org/wiki/Wodaabe",
+      "Wikipedia EN - Fula people. https://en.wikipedia.org/wiki/Fula_people",
+      "Wikipedia EN - Guerewol. https://en.wikipedia.org/wiki/Gu%C3%A9rewol",
+      "SIL Ethnologue - Fulah macrolanguage (ful). https://www.ethnologue.com/language/ful/",
+      "Africa Geographic - The Wodaabe Nomads of the North (2019). https://africageographic.com/stories/the-wodaabe-nomads-north/",
+      "Bovin, Mette. Nomads Who Cultivate Beauty: Wodaabe Dances and Visual Arts in Niger. Uppsala : Nordiska Afrikainstitutet, 2001.",
+      "Kirk-Greene, A.H.M. Mutumin Kirki: The Concept of the Good Man in Hausa. Bloomington, 1974.",
+      "IIED - Pastoralism and climate change in the Sahel. https://www.iied.org/pastoralism",
+      "ISO 639-3 codes for Fulah variants. https://en.wikipedia.org/wiki/ISO_639:f"
+    ]
+  }
+}

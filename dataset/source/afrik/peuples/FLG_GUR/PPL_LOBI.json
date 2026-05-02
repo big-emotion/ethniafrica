@@ -1,0 +1,107 @@
+{
+  "id": "PPL_LOBI",
+  "nameMain": "Lobi",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["BFA", "CIV", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Lobi",
+      "selfAppellation": "Lobiri / Lobi",
+      "exonyms": ["Lobi-Dagarti", "LoDagaa", "LoWiilisi", "Lobi-Wala"],
+      "originOfExonyms": "Le nom Lobi viendrait de deux mots de la langue lobiri : lou (foret) et bi (enfants), signifiant ainsi enfants de la foret. Le terme Lobi-Dagarti (ou LoDagaa) est utilise dans la litterature academique pour designer un ensemble plus large incluant les Lobi proprement dits, les Birifor et d'autres groupes apparentes. LoWiilisi est un terme interne utilise par les Birifor pour designer les Lobi propres (autour de Gaoua).",
+      "whyProblematic": "Lobi est un terme generique recouvrant plusieurs groupes ethniques etroitement apparentes mais distincts (Lobi propres, Birifor, Dagara, Dyan, Gan, Tenbo/Loron, Dorossy). La confusion est frequente entre les Lobi propres et l'ensemble du groupe Lobi-Dagarti. Au Ghana, les Lobi sont souvent comptes comme partie du groupe Mole-Dagomba, rendant leur quantification difficile.",
+      "contemporaryUsage": "Lobi est le terme officiel en francais (Cote d'Ivoire, Burkina Faso) et en anglais (Ghana). Lobiri designe la langue. Gaoua (Burkina Faso) est considered la capitale culturelle lobi. Le musee de Gaoua est consacre a la culture lobi.",
+      "linguisticFamily": "FLG_GUR",
+      "ethnoLinguisticGroup": "Gur (sous-groupe Lobi-Voltaique), apparente aux Kulango et aux Dagara",
+      "historicalRegion": "Region au carrefour du Ghana, du Burkina Faso et de la Cote d'Ivoire (Black Volta / Mouhoun), centree sur Gaoua (Burkina Faso, Sud-Ouest)",
+      "currentCountries": ["BFA", "CIV", "GHA"]
+    },
+    "ethnicities": [
+      "Lobi propres (LoWiilisi) : groupe central autour de Gaoua (Burkina Faso, Sud-Ouest)",
+      "Birifor (LoBirifor) : a l'est des Lobi propres, parlant le dagara, presents au Burkina Faso et au Ghana",
+      "Dagara : autour de Dano (Burkina Faso), apparentes aux Lobi",
+      "Dyan (Jaa) : groupe apparente dans la region",
+      "Gan : seul groupe Lobi ayant une societe politiquement centralisee et royale",
+      "Tenbo / Loron (Lorhon, Teese, Teguessie, Thuuna) : groupe apparente",
+      "Dorossy : groupe apparente de la region"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Lobi sont originaires de ce qui est aujourd'hui le Ghana. Le nom Lobi (enfants de la foret) evoque leur environnement originel. Ils font partie du vaste ensemble Lobi-Dagarti (LoDagaa) qui s'etend entre 9 et 11 degres de latitude nord et 2,5 a 4 degres de longitude ouest, a cheval sur le Ghana, le Burkina Faso et la Cote d'Ivoire. Le fleuve Mouhoun (Black Volta) constitue une frontiere symbolique et historique majeure : les Lobi le traverserent pour fuir les razzias d'esclaves dans leur Ghana d'origine.",
+      "formationPeriod": "A partir de 1770 environ, de nombreux Lobi ont migre depuis le Ghana vers le sud du Burkina Faso (Haute-Volta), puis vers la Cote d'Ivoire. Cette grande migration s'est faite en fuyant les razzias d'esclaves. Le directeur du musee de Gaoua resume : le Lobi est agriculteur, chasseur et eleveur, mais avant tout guerrier. La conquete francaise de 1897-1903 est un autre moment fondateur de l'histoire lobi collective.",
+      "migrationRoutes": [
+        "Depuis le Ghana originel vers le sud du Burkina Faso en traversant le fleuve Mouhoun (Black Volta) d'est en ouest, a partir de 1770 environ, pour fuir les razzias d'esclaves",
+        "Du Burkina Faso vers le nord-est de la Cote d'Ivoire (Bouna), apres etablissement au Burkina",
+        "Migrations contemporaines de Lobi depuis Bouna (Cote d'Ivoire) vers Bondoukou, provoquant des conflits avec les Kulango"
+      ],
+      "historicalSettlementZones": [
+        "Ghana : districts de Lawra, Wa et Bole (Gold Coast originel)",
+        "Burkina Faso : Sud-Ouest (departement du Poni, Gaoua, Diebougou) ; zones entre 9 et 11 degres N et 2,5-4 degres O",
+        "Cote d'Ivoire : nord-est (districts de Bondoukou et Bouna, departement du Bouna)"
+      ],
+      "unificationsOrDivisions": "La societe lobi est fondamentalement acephale (absence de chef centralise) sauf chez les Gan. Il n'existe pas de chef au sens propre dans la societe lobi : le tyuordaarkuun (chef du menage) donne l'autorisation d'entrer dans la maison. Le thildaar (devin du village) peut agir comme dithildaar (pretre du village, un par village) et interprete les regles soser pour la communaute. La cohesion sociale est assuree par la ceremonie d'initiation joro (ou dyoro) tenue tous les sept ans, qui est le principal facteur d'identite commune.",
+      "externalInfluences": "Razzias des empires Gwiriko et Kenedougou aux XIXe siecle. Offensive de Bakary Ouattara (frere du fondateur de l'empire Guiriko) en 1815 (Bakary tue par une fleche empoisonnee). Continuation des raids par Karakara avec une attaque devastatrice en 1850. Juin 1898 : accord franco-britannique placant le pays lobi sous juridiction francaise. 1897-1903 : invasion coloniale francaise, resistee par les fleches empoisonnees lobi, soumission seulement en 1903. Introduction du christianisme et de l'islam au XXe siecle.",
+      "majorHistoricalEvents": "Vers 1770 : grande migration depuis le Ghana vers le Burkina Faso en traversant le Mouhoun. 1815 : offensive de Bakary Ouattara, repoussee (Bakary tue). 1850 : attaque devastatrice de Karakara. Juin 1898 : accord franco-britannique. 1897 : annexion francaise des terres lobi. 1903 : soumission finale apres resistance par fleches empoisonnees. Annees 1970-1980 : decouverte de l'art lobi sur le marche de l'art occidental. 2016 : exposition The Discovery of the Individual a Lutherstadt Wittenberg sur l'art lobi. Annees 1990-2000 : conflits entre Lobi migrants et Kulango autour de Bondoukou (Cote d'Ivoire)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Societe fondamentalement acephale : il n'existe pas de chef politique central sauf chez les Gan (seul sous-groupe a societe royale centralisee). Le tyuordaarkuun (chef du menage) est l'autorite de base ; il donne l'autorisation d'entrer dans la concession. Les disputes et decisions collectives s'organisent par consensus au niveau du village. La descendance est bilineaire (double descent).",
+      "clanOrganization": "La societe est organisee en clans gouvernes par la tradition du clan. Chaque clan possede ses propres regles et ses rapports aux esprits thila. La societe est regie par les regles soser interpretees par le thildaar (devin du village). Plusieurs thildaar peuvent coexister dans un meme village (jusqu'a 50 et plus a la fois), ce qui reflete la decentralisation de l'autorite spirituelle.",
+      "ageClassSystems": "L'initiation collective joro (ou dyoro) tenue tous les sept ans constitue le principal rite de passage collectif et le facteur d'identite commun entre les differents sous-groupes lobi. Les Lobi qui convertissent au christianisme ou a l'islam brulernt ou vendent leurs fetiches, rompant symboliquement avec le systeme initiatique.",
+      "roleOfLineages": "La descendance est bilineaire. Les lignages structurent l'organisation sociale et les droits fonciers. Le patrimoine est transmis selon les regles specifiques de chaque sous-groupe. Les concessions soukhala (grandes constructions rectangulaires ou polygonales) abritent l'unite familiale etendue, chaque femme disposant de sa propre chambre.",
+      "religiousAuthority": "Le thildaar (devin du village) et le dithildaar (pretre du village, un seul par village) constituent l'autorite religieuse locale. Ils interpretent les regles soser imposees par les thila (esprits ambivalents). Le devin interagit avec les thila dans le thilduu (chambre-sanctuaire domestique) et dans le dithil (sanctuaire de village). Les interactions regulieres avec les esprits via des offrandes et des sacrifices sont necessaires pour maintenir une relation productive avec le monde spirituel."
+    },
+    "languages": {
+      "mainLanguage": "Lobi (Lobiri / Miwa)",
+      "isoCodes": ["lob"],
+      "dialects": [
+        "Lobiri (Miwa) : variante principale parlee au Burkina Faso et en Cote d'Ivoire par les Lobi propres",
+        "Birifor : parle par les LoBirifor (apparente au dagara, majoritairement au Ghana)",
+        "Lobi du Ghana : utilise de facon interchangeable avec Birifor, surtout au Ghana"
+      ],
+      "vehicularRole": "Le lobi (lob) est une langue gur (Niger-Congo) parlee au Burkina Faso et en Cote d'Ivoire. Stable selon l'Ethnologue (code ISO 639-3 : lob). Le birifor est parle par une partie importante du groupe au Ghana. Le français est la langue officielle en Cote d'Ivoire et au Burkina Faso. Le mooré (moore) et le dioula servent de vehiculaires regionaux."
+    },
+    "culture": {
+      "majorRites": "La ceremonie d'initiation joro (ou dyoro) est le rite fondateur de l'identite lobi, tenue tous les sept ans : elle unifie les differents sous-groupes et assure la transmission des valeurs et interdits soser. Les interactions regulieres avec les esprits thila via des offrandes (sacrifice) au niveau des sanctuaires domestiques (thilduu) et villageois (dithil) constituent les rites quotidiens fondamentaux. Les rites funeraires incluent le devoir de faire retourner l'esprit du defunt de l'autre cote du Mouhoun pour rejoindre les ancetres honorables dans l'ancien monde (tradition lobi). Les rites de mariage (poles de mariage en bois de karite : environ 3 metres, bandes noires de teinture, fourche au sommet avec tissu blanc ou rouge selon le statut de la mariee, places le long des chemins vers la concession) sont des ceremonies distinctives. Les sacrifices expiatoires et les offrandes aux thila sont pratiques pour obtenir leur protection et leurs bienfaits.",
+      "symbols": "Le fleuve Mouhoun (Black Volta) est le symbole central de la tradition lobi : frontiere entre ce monde et le suivant, lieu de l'exodus historique depuis le Ghana. Les bateba (figures anthropomorphes de sanctuaire en bois) sont des symboles spirituels majeurs, internationalement reconnus dans le marche de l'art. Les concessions soukhala (grandes constructions en banco, toit plat, murs horizontaux, petites ouvertures) sont un symbole d'identite architecturale distinctif. Les poles de mariage en bois de karite (avec les bandes noires, le tissu de la fourche et les feuilles medicinales) sont des symboles matrimoniaux codifies. Les thila (esprits ambivalents des objets naturels et manufactures) constituent le fondement symbolique de la cosmologie lobi.",
+      "artsAndMusic": "L'art lobi est internationalement reconnu, notamment depuis les annees 1970 dans le monde occidental. Les bateba (figures anthropomorphes de sanctuaire) sont la forme la plus celebre : chaque sculpteur et atelier est identifiable du fait de l'ordre social acephale qui permet une plus grande diversite artistique individuelle. Le sanctuaire de Tyohepte Pale a ete reconstitue au Musee du quai Branly a Paris. Une exposition speciale sur l'art lobi, The Discovery of the Individual, s'est tenue a Lutherstadt Wittenberg en 2016. L'architecture des soukhala (concessions en banco aux toits plats, avec echelle en forme de Y pour acceder au toit et au grenier) constitue un art architectural distinctif. La poterie (grandes jarres empilees comme signe de statut), le tissage et d'autres artisanats complementent le patrimoine artistique. La musique et les danses cerimoniales accompagnent les rites joro et les ceremonies funeraires.",
+      "spiritualities": "La cosmologie lobi est centree sur Thangba Yu, le Dieu createur distant, inaccessible directement et dependant des thila comme intermediaires. Les thila sont des esprits ambivalents (bons ou mauvais selon les circonstances) habitant des zones naturelles et des objets manufactures (notamment les bateba) ; ils harnaissent des pouvoirs surnaturels et sont soumis aux vertus et vices mortels. Les kontuoursi sont d'autres types d'esprits. Le thildaar (devin) interprete les messages des thila et dirige les offrandes et sacrifices. Les esprits des morts doivent retourner de l'autre cote du Mouhoun pour rejoindre les ancetres honorables (cosmologie funeraire). L'islam, present dans la region depuis le XIVe siecle, n'a converti qu'une petite partie des Lobi. Le christianisme s'est implante au XXe siecle. Les Lobi convertis brulent ou vendent leurs fetiches rituels en signe de rupture avec la religion traditionnelle."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Lobi propres n'ont pas forme de royaumes centralises (societe acephale). Seul le sous-groupe Gan possede une societe royale centralisee. Les Lobi etaient gouvernes au niveau local par la tradition du clan sans chef supreme. La resistance a toute domination externe (empires Gwiriko et Kenedougou, colonisateurs francais) a ete une caracteristique historique fondamentale : ils n'ont jamais ete completement vaincus.",
+      "relationsWithNeighbors": "Les Kulango sont les voisins les plus proches : anciens ennemis, ils partagent aujourd'hui la meme region et ont des langues, coutumes, croyances et modes de vie similaires. Des conflits periodiques entre Lobi migrants (depuis Bouna) et Kulango de Bondoukou ont eclate dans les annees 1990-2000 autour de l'acces aux terres agricoles. Relations hostiles historiques avec les empires Gwiriko et Kenedougou (raids au XIXe siecle). Relations tendues avec les colonisateurs francais et britanniques.",
+      "conflictsOrAlliances": "Resistance aux raids des empires Gwiriko et Kenedougou (XIXe siecle) : Bakary Ouattara tue par une fleche empoisonnee en 1815 lors d'une offensive ; attaque devastatrice de Karakara en 1850 mais les Lobi ne furent jamais completement vaincus. Resistance a la conquete coloniale francaise (1897) par les fleches empoisonnees ; soumission finale en 1903 seulement. Conflits avec les Kulango autour de Bondoukou en Cote d'Ivoire (annees 1990-2000) pour l'acces aux terres agricoles.",
+      "diaspora": "Des migrations lobi vers les villes du Burkina Faso (Ouagadougou) et de Cote d'Ivoire (Abidjan) ont cree des communautes urbaines. Les migrations agricoles vers Bondoukou ont engendre des tensions avec les Kulango autochtones. La diaspora lobi internationale est limitee mais presente en France (ancienne puissance coloniale)."
+    },
+    "demography": {
+      "totalPopulation": 617000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2024) : 356 000 au Burkina Faso, 250 000 en Cote d'Ivoire (total mondial 617 000 pour les Lobi propres). Wikipedia EN (Lobi people) : plus d'un million pour l'ensemble du groupe lobi au sens large (Lobi propres, Birifor, Dagara etc.). Environ 250 000 au Ghana et en Cote d'Ivoire selon Wikipedia. Estimation 2025 pour les Lobi propres (lob) : environ 617 000.",
+      "distributionByCountry": [
+        {
+          "country": "BFA",
+          "population": 356000,
+          "note": "Sud-Ouest du Burkina Faso : departement du Poni (Gaoua, capitale culturelle), Diebougou, region du Boucle du Mouhoun"
+        },
+        {
+          "country": "CIV",
+          "population": 250000,
+          "note": "Nord-est de la Cote d'Ivoire : districts de Bondoukou et Bouna (departement de Bouna)"
+        },
+        {
+          "country": "GHA",
+          "population": 11000,
+          "note": "Districts de Lawra, Wa et Bole (Upper West et Savannah Region) ; souvent comptes dans d'autres groupes ethniques"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Lobi people. https://en.wikipedia.org/wiki/Lobi_people",
+      "Wikipedia EN — Lobi language. https://en.wikipedia.org/wiki/Lobi_language",
+      "Britannica — Lobi. https://www.britannica.com/topic/Lobi",
+      "Joshua Project — Lobi in all countries. https://joshuaproject.net/people_groups/13082",
+      "Ethnologue — Lobi Language (LOB). https://www.ethnologue.com/language/lob/",
+      "Glottolog — Lobi. https://glottolog.org/resource/languoid/id/lobi1245",
+      "Encyclopedia.com — Lobi-Dagarti Peoples. https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/lobi-dagarti-peoples",
+      "101 Last Tribes — Lobi people. https://www.101lasttribes.com/tribes/lobi.html"
+    ]
+  }
+}

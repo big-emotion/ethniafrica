@@ -1,0 +1,40 @@
+# Nom du peuple
+- Nom principal : Dangme
+- Auto-appellation : Dangme / Adaŋme
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Gã-Dangme) (FLG_BENOUECONGO)
+- Région historique : Ghana (Greater Accra Region, Dangme East)
+- Identifiant peuple : PPL_DANGME
+
+# 1. Ethnies incluses
+- Ada
+- Krobo
+- Shai
+
+# 2. Origines
+- Ancien peuple côtier de la Gold Coast.
+- Parenté directe avec les Gã (Accra).
+
+# 3. Organisation
+- Chefferies traditionnelles
+- Rites initiatiques *Dipo*
+
+# 4. Langue
+- Dangme
+- ISO : ada
+
+# 5. Culture
+- Festival *Ngmayem*
+- Rituels de la jeune fille (Dipo)
+- Musiques Ga-Dangme
+
+# 6. Histoire
+- Relations anciennes avec les Ewe et les Akan.
+- Région stratégique du littoral ghanéen.
+
+# 7. Démographie
+- Population : 850 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (ada)
+- Ghana Coastal Heritage Archives

@@ -1,0 +1,76 @@
+{
+  "id": "PPL_SAGALA",
+  "nameMain": "Sagala",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Sagala",
+      "selfAppellation": "Sagara",
+      "exonyms": ["Sagara", "Kwifa", "Ziraha", "Wakutu"],
+      "originOfExonyms": "Sagara et Sagala sont deux formes du meme nom, la distinction entre r et l etant absente dans la plupart des langues bantoues. Kwifa et Ziraha sont des noms alternatifs utilises localement. Wakutu est le terme swahili designe parfois applique au groupe.",
+      "whyProblematic": "La confusion orthographique entre Sagala et Sagara est frequente dans les sources. Il ne faut pas confondre avec le peuple Sagalla du Kenya (langue tga), qui est un groupe distinct apparente aux Chaga.",
+      "contemporaryUsage": "Le nom Sagara est utilise dans les recensements officiels tanzaniens et les publications academiques. Sagala est la forme retenue par Ethnologue pour la langue (code sbm).",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu, groupe Zigula-Zaramo (West Ruvu), centre-est de la Tanzanie",
+      "historicalRegion": "Region de Morogoro (district de Kilosa) et region de Dodoma (district de Mpwapwa), Tanzanie centrale",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Sagala", "Sagara"],
+    "origins": {
+      "ancientOrigins": "Les Sagala sont un groupe bantou matrilineaire dont les traditions orales rapportent une migration depuis Uzungwa dans la region d'Uhehe, remontant vers le nord par la vallee de la Ruaha. Leur ancetre fabuleux est Kidanamhale, un membre du peuple Bena. Les ancetres lointains des locuteurs du proto-Ruvu sont arrives dans le centre-est de la Tanzanie il y a environ 2 000 ans.",
+      "formationPeriod": "L'identite sagala distincte s'est formee progressivement au cours du premier millenaire dans le centre-est de la Tanzanie. La langue sagala appartient au groupe West Ruvu (Bantu G39) aux cotes du Vidunda et du Gogo.",
+      "migrationRoutes": [
+        "Depuis Uzungwa (Uhehe) vers le nord par la vallee de la Ruaha",
+        "Installation dans les zones montagneuses du district de Kilosa"
+      ],
+      "historicalSettlementZones": [
+        "District de Kilosa, region de Morogoro (zone meridionale)",
+        "District de Mpwapwa, region de Dodoma (zone sud-est)",
+        "Region d'Iringa"
+      ],
+      "unificationsOrDivisions": "Lors de l'indirect rule britannique, les Sagala avaient plusieurs chefs de village et deux chefs principaux. Ces roles furent supprimes lors de l'independance du Tanganyika en 1961. Le commerce caravanier a entraine un afflux important d'Africains immigres dans la region.",
+      "externalInfluences": "Commerce caravanier vers la cote swahili au XIXe siecle, avec afflux d'Africains et d'Arabes immigres. Influence coloniale britannique avec l'indirect rule. Developpement de grandes plantations de sisal dans l'Usagara au XXe siecle. Contact avec les Kaguru et les Luguru pour les rites de pluie.",
+      "majorHistoricalEvents": "Residence traditionnelle en communautes fortifiees organisees autour de lignages matrilineaires. Conversion significative a l'islam et au catholicisme romain au cours du XXe siecle. Installation de colonies de travailleurs immigres liees aux plantations de sisal."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme decentralise base sur des lignages matrilineaires locaux. Pendant l'indirect rule britannique: plusieurs chefs de village (headmen) et deux chefs principaux, roles supprimes en 1961 a l'independance. Un leader (mwenyegoha) etait designe par le chef du lignage local sagala comme porte-parole aupres des etrangers.",
+      "clanOrganization": "Division en matri-clans (idali ou ikungugo): Bena, Nyonga, Simikwa, Nzelu, Nyagatwa, Hanila, Mpwombwe, Kami, Himbila, Zimimiza, Mlali, Mwenda, Dete, Gwana, Hafimwa, Ponda, Saganza, Mongela. Les noms de clans correspondent partiellement a ceux des Kaguru, Ngulu et Luguru, temoignant d'une parenté historique.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les matrilineages locaux detiennent la terre et ont droit a sa distribution. Quelques anciens de lignage dirigeaient des villages centres sur leurs soeurs et filles; la majorite des hommes residaient en dehors de leur communaute d'origine (residence uxorilocale). Le systeme de propitiation des esprits des ancetres matrilineaires est au coeur de la plupart des rituels.",
+      "religiousAuthority": "Propitiation des esprits des ancetres matrilineaires dans la plupart des rites et celebrations. Lors des secheresses, des faiseurs de pluie kaguru et luguru etaient sollicites. De nombreux rites de lignage etaient conduits par des partenaires de plaisanterie (watani)."
+    },
+    "languages": {
+      "mainLanguage": "Sagala (Kisagala)",
+      "isoCodes": ["sbm"],
+      "dialects": [],
+      "vehicularRole": "Le swahili est la langue nationale et vehiculaire en Tanzanie; les Sagala sont en grande partie bilingues en swahili. La langue sagala est consideree comme menacee par Ethnologue: elle n'est plus transmise normalement aux jeunes generations. Elle n'est pas enseignee dans les ecoles. Selon des recensements academiques, la langue comptait 106 331 locuteurs."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation: circoncision masculine (peu courante dans le passe, maintenant generalisee); petites incisions genitales pour les filles a la puberte, pratiquees par la muhunga. Nyemi: rites pour les filles. Rites funebres avec heritage matrilineaire des veuves. Mariage avec service a la belle-famille (bride-service). Propitiation des ancetres matrilineaires lors de toutes les celebrations importantes.",
+      "symbols": "Liens avec les esprits des ancetres matrilineaires comme axe spirituel central. Scarifications decoratives du front et des cotes de la tete (pratique historique). Tailles de dents en triangle (pratique historique). Le tablier feminin (usambu) et le kilt en ecorce masculin (ilupato) etaient les vetements traditionnels.",
+      "artsAndMusic": "Traditions orales riches. Rites et chants lies aux cycles agricoles et aux ceremonies communautaires.",
+      "spiritualities": "Culte traditionnel des ancetres matrilineaires avec rites propitiaires. Contacts avec des specialistes religieux (faiseurs de pluie) des peuples voisins. Conversion significative au catholicisme romain et, dans une moindre mesure, a l'islam. Selon certaines sources, la population sagala est majoritairement catholique romaine; d'autres indiquent une presence significative de l'islam et de la religion traditionnelle africaine."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Absence de royaume centralise. Organisation en communautes fortifiees organisees autour de lignages matrilineaires. Sous l'indirect rule britannique: plusieurs chefs de village et deux chefs principaux, supprimes en 1961.",
+      "relationsWithNeighbors": "Relations avec les Kaguru et les Luguru pour les rites de pluie. Noms de clans communs avec les Kaguru, Ngulu et Luguru, temoignant d'une parenté historique ancienne. La region a accueilli d'importantes colonies de travailleurs et de commercants arabes et africains en raison du commerce caravanier.",
+      "conflictsOrAlliances": "Tradition de vie en communautes fortifiees suggerant une necessite de defense historique. Le commerce caravanier a apporte des tensions et des changements sociaux importants.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 223000,
+      "referenceYear": 2025,
+      "source": "PeopleGroups.org 2025",
+      "distributionByCountry": [{ "country": "TZA", "population": 223000 }]
+    },
+    "sources": [
+      "Sagara people – Wikipedia, 2006 (https://en.wikipedia.org/wiki/Sagara_people)",
+      "Sagala Language (SBM) – Ethnologue, SIL International (https://www.ethnologue.com/language/sbm/)",
+      "Jenkins, Orville – The Sagara (Sagala) People of Tanzania, Dr. Orville Jenkins (http://orvillejenkins.com/profiles/sagara.html)",
+      "Sagara in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/14636)",
+      "Sagara of Tanzania (PGID: PG015032) – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg015032/)",
+      "Bollaert, Flore – The synchronic phonology and nominal morphology of Sagala (Bantu G39, Tanzania): A preliminary study – Universiteit Gent, 2018 (https://www.africanstudies.ugent.be/wp-content/uploads/2018/03/BA-Thesis-Flore-Bollaert.pdf)"
+    ]
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "id": "PPL_TERA",
+  "nameMain": "Tera",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Tera",
+      "selfAppellation": "Nyimatli (ou Nymalti)",
+      "exonyms": ["Tera", "Terawa (pluriel en haoussa)", "Nyimatli"],
+      "originOfExonyms": "Le nom Tera est un exonyme utilise par les voisins et l'administration coloniale britannique. Les locuteurs se designent eux-memes sous le nom de Nyimatli (aussi ecrit Nymalti), terme qui designe a la fois le peuple et sa langue. Le nom Tera est d'usage courant dans la litterature ethnographique et administrative.",
+      "whyProblematic": "La classification du tera comme unique langue ou comme ensemble dialectal est debattue. Roger Blench (2006) considere le dialecte Pidlimdi (Hinna) comme une langue distincte. Le terme Terawa, forme plurielle en haoussa, est parfois utilise pour designer le groupe.",
+      "contemporaryUsage": "Le terme Tera est utilise en anglais et dans la litterature scientifique. Les locuteurs utilisent Nyimatli pour se designer eux-memes. La langue est enseignee sous le nom de Tera dans les programmes de developpement de la langue maternelle.",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Tchadique biu-mandara (branche occidentale de la famille afro-asiatique tchadique)",
+      "historicalRegion": "Gombe et Borno, nord-est du Nigeria (basin de la riviere Gongola, terre de Tera)",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Nyimatli (groupe principal du nord de l'Etat de Gombe : Yamaltu/Deba, Funakaye, Akko)",
+      "Pidlimdi ou Hinna (dialecte de Bayo et Kwaya Kusar, Etat de Borno, parfois considere langue distincte)",
+      "Bura Kokura (dialecte distinct du groupe tera)",
+      "Tera de Zambuk (communaute de la region de Zambuk, organisatrice du festival Ngwarda)",
+      "Tera de Kwadon, Lubo, Difa, Kwali, Kurba et Deba (groupes villageois du bassin de la Gongola)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Tera sont parmi les premiers habitants de la region de Gombe avant le XVIIIe siecle. Selon leur tradition orale, ils ont migre depuis le Moyen-Orient (Yemen) avec d'autres peuples comme les Babur, Jukun, Bolewa, Tula, Waja, Tangale, Kanakuru et Kare-Kare. Ils ont sejourn? dans le bassin du Lac Tchad (region de Kanem-Borno) pendant plusieurs siecles avant de se deplacer vers leur territoire actuel.",
+      "formationPeriod": "La migration vers le territoire actuel s'est probablement produite autour de 900-1000 de notre ere, ou plus tard vers 1484, lors du transfert de la capitale kanouri de Kanem a Ngarzargamu sous le Mai Ali Gaji. Les Tera ont alors progresse vers l'ouest en passant par les zones Babur et Bura avant d'atteindre la region de Gombe, ou ils ont occupe les rives de la riviere Gongola.",
+      "migrationRoutes": [
+        "Moyen-Orient (Yemen) vers le bassin du Lac Tchad (tradition orale)",
+        "Bassin Kanem-Borno vers Shani (zone Biu actuelle, Borno)",
+        "Shani vers les rives de la riviere Gongola (Gwani, Hinna, Liji, Kalshingi, Zambuk, Bage, Kurba, Doho, Deba)"
+      ],
+      "historicalSettlementZones": [
+        "Rives de la riviere Gongola (etablissements historiques : Gwani, Hinna, Liji, Kalshingi, Zambuk, Bage, Kurba, Doho, Deba)",
+        "Nord et est de l'Etat de Gombe (LGAs Yamaltu/Deba, Funakaye, Akko)",
+        "Est de l'Etat de Borno (LGAs Bayo, Kwaya Kusar)",
+        "Region de Kwadon (celebre pour son marche de legumes)"
+      ],
+      "unificationsOrDivisions": "Les Tera n'ont pas forme d'entite politique unifiee. Ils sont organises en communautes villageoises et cantonales distinctes sous autorite de chefs traditionnels (kuji) et de dignitaires (galadima). L'emirat de Gombe (etabli au XIXe siecle) a progressivement integre les Tera dans son espace administratif, tout en laissant subsister les structures claniques locales.",
+      "externalInfluences": "Contacts avec les Haoussa a l'ouest et les Kanuri a l'est, qui ont influence la langue vehiculaire et les pratiques islamiques. Influence de l'emirat de Gombe a partir du XIXe siecle. Colonisation britannique (Nigeria colonial). Des ethnologues classifient parfois les Tera comme un rameau des Bolewa, bien que les Tera revendiquent une origine arabique independante. Evangelisation chretienne a partir de 1930 (traduction de l'Evangile de Jean par des missionnaires).",
+      "majorHistoricalEvents": "Occupation des rives de la Gongola avant l'etablissement de l'emirat de Gombe (XVIIIe siecle). Traduction du premier texte chretien en tera (Evangile de Jean, 1930) par des missionnaires. Alphabetisation partielle dans les annees 1930 sous l'impulsion d'Ayuba Nyagham, inspecteur de l'education. Production du film Jesus en langue tera par des traducteurs locaux. Traduction du Nouveau Testament (Mewar Alqawarng) par la communaute chretienne tera."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies villageoises et cantonales. Le kuji (chef de district ou de canton) est l'autorite traditionnelle principale. Le galadima est un dignitaire qui represente le kuji lors des ceremonies. Les decisions communautaires sont prises lors d'assemblees de village au palais du chef. La region est integree dans la structure emirale de Gombe.",
+      "clanOrganization": "Structure patrilineaire. Les communautes sont organisees en families etendues partageant un ancetre commun. Les travaux communautaires (agriculture, recolte, construction de maisons) sont organises par le systeme de solidarite villageoise (entraide mutuelle), actuellement en declin.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite sociale, l'heritage des terres agricoles et les alliances matrimoniales. Les mariages au sein de la communaute tera sont privilegies pour preserver l'identite culturelle.",
+      "religiousAuthority": "La majorite des Tera sont musulmans sunnites. L'autorite religieuse islamique est exercee par des imams et oulémas locaux. Environ 40% des Tera sont chretiens nominaux (heritage des missions du debut du XXe siecle). La croyance traditionnelle en Gwando, dieu de la pluie, a coexiste avec l'islam et le christianisme, bien qu'elle soit aujourd'hui marginalisee. L'Eglise locale joue un role actif dans la documentation de la langue et la traduction biblique."
+    },
+    "languages": {
+      "mainLanguage": "Tera (Nyimatli, code ISO 639-3 : ttr)",
+      "isoCodes": ["ttr"],
+      "dialects": [
+        "Nyimatli (dialecte principal, nord de l'Etat de Gombe)",
+        "Pidlimdi ou Hinna (dialecte de Bayo et Kwaya Kusar, Borno, parfois classifie comme langue separee selon Blench 2006)",
+        "Bura Kokura (variante dialectale distincte)"
+      ],
+      "vehicularRole": "Le tera est parle comme langue maternelle par plus de 100 000 locuteurs (recensement 2006). Il est utilise dans la vie familiale, villageoise et dans les marches locaux. Le haoussa est la langue vehiculaire principale pour les echanges interethniques et l'education. L'anglais est utilise dans les niveaux superieurs d'education et dans les affaires. La langue est classee comme menacee par l'UNESCO malgre sa vitalite relative, en raison de la pression du haoussa et de l'anglais. Un Nouveau Testament est disponible en tera ainsi qu'un film en langue maternelle."
+    },
+    "culture": {
+      "majorRites": "Festival annuel de la recolte Ngwarda : celebration post-recolte du mil, organise sous la direction du chef de district (Kuji Zambuk), durant 3 a 4 jours avec danses, musique, repas collectifs et boisson traditionnelle (burukutu). Cinq danses distinctes sont executees : Ngwarda, Ngumba (danse de force pour les jeunes), Leu-leu, Garwa, Bansuwey. Rites de passage islamiques et traditionnels : mariage avec dot, naissance, circoncision. Les participants aux danses portent des costumes traditionnels specifiques (gown blanc avec noir, turban orange ou rouge pour les hommes ; wrapper noir et buba blanche pour les femmes).",
+      "symbols": "Marques tribales faciales (scarifications des sourcils jusqu'au menton et sur le visage), caracteristiques des Tera et partagees avec d'autres peuples de l'Etat de Gombe. Ces marques sont aujourd'hui considerees comme une pratique en voie de disparition. La riviere Gongola et les collines Bima constituent des references geographiques et identitaires importantes.",
+      "artsAndMusic": "Tradition musicale et choregraphique riche : sept types de pas de danse distinctifs documentees (Lew-lew, Damburti, Gamto, Dan-ali, Bare, Garwa, Bansuwe). Les danseurs traditionnels tera (anciennement appeles Yan Club, maintenant Ngorda) ont represente la communaute a l'etranger. Cuisine traditionnelle : Njonguli (mil et haricots), Tunkdi-marge (bouillie de mil), Gorvengdi (tuwo de sorgho rouge), Malfuri (farine de manioc frais). Artisanat : tissage (les Tera sont des tisserands connus), peche, agriculture du sorgho, mil, mais, riz, ble et arbres fruitiers. Production cotonniere commerciale recente.",
+      "spiritualities": "Majorite musulmane sunnite. Minorite chretienne significative (environ 40%, heritage des missions de 1930). Croyance traditionnelle en Gwando, dieu de la pluie, dont le culte est partage avec les Bolewa, Waja et Jukun voisins. Celebration des fetes islamiques (Ramadan, Aïd) et chretiennes. Le Nouveau Testament est disponible en tera depuis les annees 2000 sous le nom Mewar Alqawarng, accompagne de psaumes et cantiques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Tera n'ont pas fonde de royaume independant. Ils etaient parmi les premiers occupants de la region de Gombe avant l'etablissement de l'emirat de Gombe au XIXe siecle, sous la domination Fulani. Les chefferies traditionnelles tera (kuji) ont maintenu leur autorite locale au sein de la structure emirale.",
+      "relationsWithNeighbors": "Les Tera ont des liens historiques et culturels etroits avec les Bolewa (certains ethnologues les classent comme rameau des Bolewa), les Waja et les Jukun, avec lesquels ils partagent des pratiques artistiques et le culte de Gwando. Ils sont separes des Haoussa a l'ouest et des Kanuri a l'est, peuples avec lesquels ils ont des relations commerciales et linguistiques (usage du haoussa comme langue vehiculaire).",
+      "conflictsOrAlliances": "Les Tera ont ete parmi les premiers occupants de Gombe avant l'etablissement de l'emirat Fulani. La fondation de l'emirat de Gombe au XIXe siecle a soumis les Tera a une autorite emirale, mais leurs chefferies traditionnelles ont survecu. Les tensions communautaires modernes liees a la competition fonciere et aux conversions religieuses (islam vs christianisme) affectent la cohesion sociale.",
+      "diaspora": "Migration limitee vers les villes de Gombe et d'autres centres urbains nigerians. Pas de diaspora internationale significative documentee. La pression demographique et economique entraine une migration interne vers les villes, avec risque de perte linguistique pour les generations suivantes."
+    },
+    "demography": {
+      "totalPopulation": 187000,
+      "referenceYear": 2025,
+      "source": "Recensement national nigerien 2006 (plus de 101 000 locuteurs de tera), Peoplegroups.org 2024 (187 000 Tera au Nigeria). Projection 2025 conforme a la croissance demographique nigerienne.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 187000,
+          "note": "Principalement dans les LGAs Yamaltu/Deba, Funakaye et Akko (Etat de Gombe), et Bayo et Kwaya Kusar (Etat de Borno)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN – Tera people. https://en.wikipedia.org/wiki/Tera_people",
+      "Wikipedia EN – Tera language. https://en.wikipedia.org/wiki/Tera_language",
+      "Ethnologue SIL – Tera language (ttr). https://www.ethnologue.com/language/ttr/",
+      "Joshua Project – Tera in Nigeria. https://joshuaproject.net/people_groups/15440",
+      "101 Last Tribes – Tera people. https://101lasttribes.com/tribes/tera.html",
+      "Triumph Newspapers – Ngwarda annual harvesting festival of Tera people, 2024. https://triumphnewspapers.ng/ngwarda-annual-harvesting-festival-of-tera-people-in-zambuk-gombe-state/",
+      "Tench, Paul. A New Orthography in Tera. https://www.paultenchdocs.co.uk/wp-content/uploads/2014/02/A-New-Orthography-in-Tera.pdf",
+      "GRN Journal – A Case Study of Tera (Nymalti) Language of North-East, Nigeria. https://www.grnjournal.us/index.php/STEM/article/download/5681/5052/10074",
+      "Blench, Roger. 2006. Afro-Asiatic Languages. Cambridge University Press.",
+      "Peoplegroups.org – Tera in Nigeria, population 2024."
+    ]
+  }
+}

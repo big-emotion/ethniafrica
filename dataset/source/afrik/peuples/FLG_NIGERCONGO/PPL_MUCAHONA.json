@@ -1,0 +1,76 @@
+{
+  "id": "PPL_MUCAHONA",
+  "nameMain": "Mucahona",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["AGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Mucahona",
+      "selfAppellation": "Ovahakaona",
+      "exonyms": ["Hakaona", "Muhakaona", "Mucawana", "Mucawama", "Muhacaona"],
+      "originOfExonyms": "Le terme Mucahona est la forme portugaise de l'endonymique Ovahakaona ou Hakaona. Les formes Mucawana et Mucawama designent le meme groupe dans certaines sources de voyageurs. Les Hakaona sont parfois appeles les Himba noirs en reference a leur parente culturelle avec les Himba de Namibie.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Hakaona est privilegie dans la litterature anglophone recente. Mucahona reste en usage dans les sources de langue portugaise et angolaises. Le terme Mucawana apparait frequemment dans les recits de voyageurs visitant la region d'Oncocua.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Herero (sous-groupe bantou)",
+      "historicalRegion": "Sud-Ouest Angola (province de Cunene)",
+      "currentCountries": ["AGO"]
+    },
+    "ethnicities": ["Hakaona", "Ovahakaona"],
+    "origins": {
+      "ancientOrigins": "Les Mucahona sont un sous-groupe des Herero, peuple bantou d'Afrique australe. Comme les autres groupes Herero d'Angola (Himba, Kuvale, Zemba), ils sont issus des migrations bantoues qui ont atteint l'Afrique du Sud-Ouest entre le XVe et le XVIIIe siecle. Leur territoire autour d'Oncocua est isole par les deserts et les montagnes du reste du pays, ce qui a preserve leur mode de vie traditionnel.",
+      "formationPeriod": "XVIIe-XVIIIe siecle, dans le contexte des migrations Herero depuis l'Afrique de l'Est vers l'Afrique australe.",
+      "migrationRoutes": [
+        "Migration depuis l'Afrique de l'Est via la region des Grands Lacs",
+        "Implantation dans la region d'Oncocua (Cunene) apres le franchissement de la riviere Cunene depuis le sud"
+      ],
+      "historicalSettlementZones": [
+        "Region d'Oncocua (province de Cunene)",
+        "Villages de Soba, Elola et Moimba",
+        "Zones boisees et collines rocheuses autour d'Oncocua, pres de la riviere Cunene"
+      ],
+      "unificationsOrDivisions": "Les Mucahona font partie du vaste ensemble Herero aux cotes des Himba, Kuvale, Zemba, Tjavikwa et Tjimba. En Angola, ils occupent un territoire distinct de celui des Himba mais partagent des pratiques culturelles proches.",
+      "externalInfluences": "Influence des peuples voisins Himba et Mutua. Pression coloniale portugaise limitee en raison de l'isolement geographique de la region d'Oncocua. Influence croissante du tourisme depuis les annees 2000.",
+      "majorHistoricalEvents": "La region d'Oncocua a ete relativement epargnee par la guerre civile angolaise (1975-2002) en raison de son eloignement des zones de ressources minerales et petrolieres. La secheresse recurrente dans le Cunene depuis les annees 2000 constitue le principal defi contemporain."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation tribale fondee sur des clans dirigés par l'homme le plus age du clan (soba). Systeme de bilateral descent: chaque membre appartient a deux clans, un par le pere et un par la mere.",
+      "clanOrganization": "Organisation bilineaire: les fils vivent dans le clan paternel, les filles rejoignent le clan du mari apres le mariage. L'heritage de la richesse (bétail) suit la ligne maternelle: un fils herite du bétail de son oncle maternel, non de son pere.",
+      "ageClassSystems": "Rite de passage marque la transition de garcon a homme au moment du mariage. Pour les femmes, le statut de femme accomplie est acquis apres la maternite.",
+      "roleOfLineages": "Les lignages determinent l'heritage, le mariage et la residence. Le mariage implique une transaction en bétail entre les familles. La polygamie est courante, l'homme moyen ayant deux epouses.",
+      "religiousAuthority": "Autorite spirituelle exercee par des medecins traditionnels (les hommes Hakaona sont reputes pour leur savoir-faire en medecine traditionnelle). Le culte du dieu supreme Mukuru et des ancetres structure la vie religieuse."
+    },
+    "languages": {
+      "mainLanguage": "Herero (Otjiherero)",
+      "isoCodes": ["her"],
+      "dialects": ["Otjihakaona (dialecte Hakaona de l'Otjiherero)"],
+      "vehicularRole": "L'herero est la langue maternelle et vehiculaire du groupe. Le portugais est utilise pour les contacts avec l'administration angolaise. L'herero est mutellement comprehensible avec les dialectes Himba et Kuvale."
+    },
+    "culture": {
+      "majorRites": "Circoncision des garcons avant la puberte comme rite de passage. Mariage arrange par le pere des la puberte des filles. Ceremonies funeraires impliquant le sacrifice de betail. Rituels de guerison conduits par les medecins traditionnels.",
+      "symbols": "Coiffure feminine elaboree au moyen d'un melange de bouse de vache, de graisse et d'herbes aromatiques (otjize: cendre, beurre et ocre). Bandeau de cuir porte par les hommes maries pour proteger leur coiffure. Bracelets et chevilles en corne de vache decores de motifs geometriques ou d'animaux. Porte-bebe en cuir de vache orne de perles. Headdress kapapo en cuir decore de perles et de laiton.",
+      "artsAndMusic": "Les femmes Hakaona sont reconnues comme d'excellentes artisanes: fabrication de bracelets, chevilles et porte-bebes. Confection de poupees en bois et cheveux. Chant et claquements de mains lors des celebrations (danse Mucuwana). Musique rythmique collective lors des fetes communautaires.",
+      "spiritualities": "Monotheisme: culte du dieu supreme Mukuru et des ancetres du clan. Medecine traditionnelle occupant une place centrale, les hommes etant consideres comme des guerisseurs reconnus. Pratiques animistes complementaires (esprits de la nature). Syncrétisme avec le christianisme dans les zones proches des missions."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies locales (sobas) integrees dans la structure plus large des Herero. Les Mucahona n'ont pas constitue un royaume independant mais participent au systeme politique Herero fonde sur les clans et le bétail.",
+      "relationsWithNeighbors": "Relations ambivalentes avec les Himba: les Hakaona sont parfois employes pour garder les troupeaux Himba en signe de soumission sociale. Relations commerciales avec les Mutua voisins. Contacts avec les Mucubal dans la region de Namibe.",
+      "conflictsOrAlliances": "Tensions latentes liees au vol de bétail entre groupes voisins (Mucubal, Muhimba). La region d'Oncocua constitue un carrefour entre plusieurs groupes Herero qui traversent la frontiere angolo-namibienne.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 7000,
+      "referenceYear": 2025,
+      "source": "101lasttribes.com – Hakaona people (estimation anthropologique, Joan Riera)",
+      "distributionByCountry": [{ "country": "AGO", "population": 7000 }]
+    },
+    "sources": [
+      "Hakaona people – AFRICA 101 Last Tribes (https://www.101lasttribes.com/tribes/hakaona.html)",
+      "Africanlanders – The southern tribes of Angola (https://africanlanders.com/en/angola-en/angola-the-southern-tribes-of-angola/)",
+      "Kumakonda African Travel Experience – Tribes of Angola (https://kumakonda.com/tribes-of-angola/)",
+      "Herero people – Wikipedia, The Free Encyclopedia (https://en.wikipedia.org/wiki/Herero_people)",
+      "Ovaherero People – OvaHerero Genocide Foundation (https://ogfnamibia.org/ovaherero-people/)",
+      "Barbieri et al. – The maternal genetic history of the Angolan Namib Desert, bioRxiv (2017) (https://www.biorxiv.org/content/10.1101/162230v1.full)"
+    ]
+  }
+}

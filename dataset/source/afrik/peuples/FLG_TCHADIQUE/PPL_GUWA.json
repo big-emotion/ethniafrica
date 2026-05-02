@@ -1,0 +1,88 @@
+{
+  "id": "PPL_GUWA",
+  "nameMain": "Guwa",
+  "languageFamilyId": "FLG_TCHADIQUE",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Guwa",
+      "selfAppellation": "Guwa",
+      "exonyms": [
+        "Gwa (forme abregee utilisee dans la litterature linguistique)",
+        "Gwa de Saminaka (designation geographique locale)"
+      ],
+      "originOfExonyms": "Le terme Guwa est l'autodenomination du groupe. La forme Gwa apparait dans la litterature linguistique (Ethnologue, Glottolog). Le qualificatif de Saminaka Gwa renvoie a leur village principal, Saminaka Gwa, dans la zone gouvernementale locale de Toro, etat de Bauchi.",
+      "whyProblematic": "Le nom Guwa/Gwa peut etre confondu avec d'autres groupes africains portant des appellations similaires (Gwa de Cote d'Ivoire, Guwa d'Australie designe une langue eteinte). Le petit nombre de locuteurs et l'absence de documentation etendue rendent l'identite du groupe peu connue hors du Nigeria.",
+      "contemporaryUsage": "Le terme Guwa est utilise localement. Les Guwa se considerent comme un peuple distinct malgre leur integration croissante dans la sphere culturelle haoussa et islamique.",
+      "linguisticFamily": "FLG_TCHADIQUE",
+      "ethnoLinguisticGroup": "Bantoid (groupe Jarawan, sous-groupe Lame-Gwa), parfois classe sous influence tchadique",
+      "historicalRegion": "Saminaka Gwa, zone gouvernementale locale de Toro, etat de Bauchi, Nigeria central",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": [
+      "Guwa de Saminaka (vieux village)",
+      "Guwa de Saminaka Nouvelle (nouveau village etabli pres des zones de chasse)",
+      "Sous-groupes locaux des villages de Toro LGA"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Guwa sont un petit peuple autochtone de l'etat de Bauchi, dans la region centrale du Nigeria. Leurs traditions orales rapportent qu'ils excellaient comme chasseurs et se sont etablis dans un premier village avant de fonder un nouveau village plus pres de leurs zones de chasse dans la foret interieure. Leur nom de langue Gwa appartient au groupe Jarawan (Lame-Gwa) de la famille Bantoid (Benue-Congo), mais le groupe vit dans un environnement demographiquement domine par les langues tchadiques et haoussa.",
+      "formationPeriod": "Les traditions orales ne permettent pas de dater precisement la formation du groupe. L'etablissement du nouveau village de Saminaka Gwa est posterieur a leur premier site, consequemment a leur adaptation a une economie de chasse intensifiee. Depuis plusieurs generations, la fertilite des terres les a orientes vers l'agriculture.",
+      "migrationRoutes": [
+        "Peuplement autochtone de la region de Toro LGA (Bauchi State)",
+        "Mouvement interne depuis un premier site vers Saminaka Gwa (vieux) puis vers le nouveau Saminaka Gwa, plus proche des zones de chasse et de terres fertiles"
+      ],
+      "historicalSettlementZones": [
+        "Saminaka Gwa (vieux village), region de Toro LGA, Bauchi State",
+        "Nouveau Saminaka Gwa (village actuel), Toro LGA, Bauchi State",
+        "Presence dans plusieurs villages de la zone de Toro selon les recensements"
+      ],
+      "unificationsOrDivisions": "Les Guwa forment un groupe compact peu divise. Leur petite taille demographique favorise une cohesion identitaire, malgre l'assimilation progressive par la culture haoussa dominante dans la region.",
+      "externalInfluences": "Contacts prolonges avec les Haoussa, dont la culture influence de plus en plus les Guwa (langue vehiculaire, habillement, pratiques sociales). Introduction de l'islam par les voisins haoussa et fulbe, resultant en un islam populaire syncretique melant pratiques islamiques et croyances ancestrales. Domination coloniale britannique puis integration dans l'etat nigerian post-independance.",
+      "majorHistoricalEvents": "L'histoire des Guwa est marquee par leur adaptation progressive de l'economie de chasse vers l'agriculture sedentaire. L'islamisation graduelle de la region de Bauchi depuis l'epoque du jihad de Usman dan Fodio (1804-1808) a affecte leur systeme de croyances. La creation de l'etat de Bauchi en 1976 et les politiques nigerianes de developpement rural ont transforme leur mode de vie."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferie villageoise avec un chef (mai gari) responsable des affaires locales et de la resolution des conflits. Le systeme est similaire aux chefferies de petits groupes de la region de Bauchi.",
+      "clanOrganization": "Structure clanique patrilineaire. Organisation en familles etendues et lignages. Les decisions importantes sont prises collectivement par les anciens du clan.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires determinent l'identite, les droits fonciers et les alliances matrimoniales. Les jeunes hommes travaillent sur les exploitations familiales jusqu'au mariage.",
+      "religiousAuthority": "L'autorite religieuse est de type syncretique : officiellement islamique, mais les pratiques quotidiennes restent influencees par les dieux ancestraux et les croyances pre-islamiques. Les chefs spirituels locaux maintiennent un role dans les ceremonies traditionnelles a cote des imams."
+    },
+    "languages": {
+      "mainLanguage": "Gwa (langue Guwa)",
+      "isoCodes": ["gwb"],
+      "dialects": ["Parler de Saminaka Gwa (variete principale documentee)"],
+      "vehicularRole": "Le gwa est la langue maternelle de la communaute guwa. Le haoussa est largement utilise comme langue vehiculaire dans les echanges avec les groupes voisins et pour le commerce. L'anglais est la langue officielle de l'administration nigeriane."
+    },
+    "culture": {
+      "majorRites": "Celebrations religieuses islamiques (Ramadan, Aid-el-Fitr, Aid-el-Kabir). Ceremonies de mariage traditionnelles avec negociation de la dot. Rites de passage (naissance, puberté, mariage). Sacrifices rituels (chevres et moutons) lors des ceremonies importantes. Les rites de chasse etaient autrefois centraux dans la vie culturelle et ont progressivement cede la place aux pratiques agricoles.",
+      "symbols": "Les outils de chasse (arcs, fleches) et les pratiques de preparation des carcasses d'animaux sont des symboles culturels historiques. Les dieux ancestraux locaux veneres dans des espaces rituels naturels (forets, grottes) constituent un patrimoine spirituel.",
+      "artsAndMusic": "Musique traditionnelle et danse. Poesie orale transmise de generation en generation. Artisanat : poterie, tissage de nattes (chaque natte prend environ quatre jours a realiser), vannerie. L'huile de palme est un produit central de l'economie locale et de la culture materielle. Fabrication et vente de nattes sur les marches locaux.",
+      "spiritualities": "Religion syncretique melant islam sunnite et croyances traditionnelles. Les Guwa se considerent officiellement musulmans mais leurs pratiques quotidiennes sont influencees par les divinites ancestrales veneres avant l'islamisation. Culte de dieux mineurs propres a chaque village, veneres dans des espaces rituels en plein air (clairières circulaires dans des bosquets accessibles par des avenues de palmiers). Croyances en les esprits des ancetres et en des forces naturelles protectrices ou malevoles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Guwa n'ont pas constitue de royaume ou de sultanat propre. Ils etaient gouvernes par de petites chefferies villageoises locales. Leur region a ete historiquement sous l'influence de l'emirat de Bauchi, issu du jihad de Usman dan Fodio (1804-1808).",
+      "relationsWithNeighbors": "Les Guwa ont coexiste avec les groupes haoussa, fulbe et les autres petits peuples de la region de Toro LGA. Leurs relations avec les Haoussa ont ete marquees par l'assimilation culturelle progressive. Des echanges commerciaux ont lieu avec les populations voisines sur les marches locaux.",
+      "conflictsOrAlliances": "La region de Bauchi a connu les turbulences du jihad du XIXe siecle et des conflits inter-ethniques. Les Guwa, peuple de petite taille, ont generalement ete spectateurs ou victimes de ces conflits plutot qu'acteurs principaux.",
+      "diaspora": "Les Guwa n'ont pas de diaspora significative documentee hors du Nigeria. Une migration interne vers les grandes villes nigerianes (Bauchi, Abuja, Jos) est probable mais non quantifiee."
+    },
+    "demography": {
+      "totalPopulation": 5000,
+      "referenceYear": 2025,
+      "source": "Estimations basees sur SIL Ethnologue (language gwb, Jarawan group), donnees de recensement nigerian et etudes de terrain de la region de Toro LGA, Bauchi State. Le groupe est de tres petite taille.",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 5000,
+          "note": "Saminaka Gwa et environs, zone gouvernementale locale de Toro, etat de Bauchi"
+        }
+      ]
+    },
+    "sources": [
+      "SIL Ethnologue — Jarawan subgroup (Gwa gwb). https://www.ethnologue.com/subgroup/622/",
+      "101 Last Tribes — Gwa people of Nigeria. https://www.101lasttribes.com/tribes/gwa.html",
+      "Wikipedia EN — Jarawan languages. https://en.wikipedia.org/wiki/Jarawan_languages",
+      "Glottolog — Languages of Nigeria. https://glottolog.org/glottolog?country=NG",
+      "CIA World Factbook — Nigeria. https://www.cia.gov/the-world-factbook/countries/nigeria/"
+    ]
+  }
+}

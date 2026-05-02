@@ -1,0 +1,23 @@
+{
+  "id": "PPL_DYULA",
+  "nameMain": "",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["BFA", "MLI"],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Jula / Dyula",
+      "linguisticFamily": "FLG_MANDE",
+      "historicalRegion": "Côte d’Ivoire, BFA, MLI",
+      "currentCountries": ["BFA", "MLI"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (dyu)", "Manding Historical Archives"]
+  }
+}

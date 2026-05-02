@@ -1,0 +1,23 @@
+{
+  "id": "PPL_NUPE",
+  "nameMain": "",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": [],
+  "content": {
+    "appellations": {
+      "mainName": "",
+      "selfAppellation": "Nupe / Nufawa",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "historicalRegion": "Nigeria (Niger State, Kwara State)",
+      "currentCountries": []
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (nke)", "Bida Emirate Historical Records"]
+  }
+}

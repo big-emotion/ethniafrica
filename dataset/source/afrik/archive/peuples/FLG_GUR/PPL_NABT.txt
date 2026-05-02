@@ -1,0 +1,36 @@
+# Nom du peuple
+- Nom principal : Nabit
+- Auto-appellation : Nabit
+- Famille linguistique : Niger-Congo – Gur (FLG_GUR)
+- Région : Ghana (Upper East)
+- Identifiant peuple : PPL_NABT
+
+# 1. Ethnies incluses
+- Nabit de Bongo
+- Nabit des villages ruraux
+
+# 2. Origines
+- Branche gur proche des Frafra et Talensi.
+
+# 3. Organisation
+- Systèmes lignagers
+- Leadership local
+
+# 4. Langue
+- Nabit
+- ISO : nbt (proposé, non officiel)
+
+# 5. Culture
+- Rituels agraires
+- Habitations traditionnelles circulaires
+
+# 6. Histoire
+- Relations anciennes avec les Kusasi et Mamprusi.
+
+# 7. Démographie
+- Population : 45 000
+- Année : 2025
+
+# 8. Sources
+- Ghana Upper East Studies
+- Ethnographic Reports

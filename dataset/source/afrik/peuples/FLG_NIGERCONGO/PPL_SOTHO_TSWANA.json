@@ -1,0 +1,129 @@
+{
+  "id": "PPL_SOTHO_TSWANA",
+  "nameMain": "Sotho-Tswana",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["LSO", "BWA", "ZAF", "ZWE", "NAM"],
+  "content": {
+    "appellations": {
+      "mainName": "Sotho-Tswana",
+      "selfAppellation": "Basotho / Batswana / Bapedi (selon le sous-groupe)",
+      "exonyms": [
+        "Sotho-Tswana (terme académique linguistique)",
+        "Western Sotho (autre désignation du Tswana)",
+        "Sotho peoples (terme collectif anglophone)"
+      ],
+      "originOfExonyms": "Le terme Sotho-Tswana est un terme académique créé par les linguistes pour désigner un groupe de langues bantoues étroitement apparentées du sous-groupe S.30 de la classification de Guthrie (1967-1971). Il ne correspond pas à un groupe ethnique unifié, mais à un macro-groupe ethno-linguistique incluant les Basotho du Sud, les Bapedi (Sotho du Nord) et les Batswana.",
+      "whyProblematic": "La désignation Sotho-Tswana est un artefact académique linguistique. Les peuples inclus ne se reconnaissent pas nécessairement comme un groupe unique. Les tensions identitaires entre Tswana (qui se considèrent distincts des Sotho) et Basotho (qui utilisent le même terme Basotho pour désigner les habitants du Lesotho) peuvent créer des confusions.",
+      "contemporaryUsage": "Le terme est utilisé principalement dans les contextes linguistiques et académiques. Dans le quotidien, les membres de ce macro-groupe s'identifient à leur sous-groupe spécifique : Basotho (Lesotho et Free State), Batswana (Botswana et Afrique du Sud), Bapedi ou Basotho sa Leboa (Limpopo, Afrique du Sud).",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Sotho-Tswana (Zone S, sous-groupe S.30)",
+      "historicalRegion": "Plateau du Highveld (Afrique du Sud), Lesotho, Botswana, Limpopo",
+      "currentCountries": ["LSO", "BWA", "ZAF", "ZWE", "NAM"]
+    },
+    "ethnicities": [
+      "Basotho du Sud (Sesotho sa Borwa, Lesotho et Free State sud-africain)",
+      "Batswana (Setswana, Botswana et Afrique du Sud du Nord-Ouest)",
+      "Bapedi (Sepedi/Sesotho sa Leboa, Limpopo, Afrique du Sud)",
+      "Bakololo / Kololo (anciens conquérants du Barotseland, Zambie-Zimbabwe)",
+      "Bafokeng (Afrique du Sud, Nord-Ouest)",
+      "Bakgatla (Botswana et Afrique du Sud)",
+      "Bahurutshe (Botswana et Afrique du Sud)",
+      "Batlokwa (groupe de transition, Lesotho-Afrique du Sud)",
+      "Bakwena (clan du crocodile, Botswana et Lesotho)"
+    ],
+    "origins": {
+      "ancientOrigins": "Le proto-groupe Sotho-Tswana descend de peuples bantous ayant migré depuis l'Afrique du Nord-Est vers le Ve siècle de l'ère commune. Les archéologues et linguistes situent leur présence dans le sud de l'Afrique entre 1300 et 1500 apr. J.-C., avec des origines migratoires proches de la région des Grands Lacs d'Afrique orientale. La poterie retrouvée en Afrique australe suggère que les ancêtres des Tswana vivaient dans la région entre 1300 et 1500 apr. J.-C.",
+      "formationPeriod": "Vers 1500, les Sotho-Tswana s'étaient divisés en trois groupes linguistiques apparentés : les ancêtres des Basotho (Sotho du Sud et du Nord), les ancêtres des Batswana (Sotho occidental), et d'autres sous-groupes. Au XVIIe siècle, plusieurs royaumes Sotho-Tswana couvraient le plateau méridional de l'Afrique. Le XIXe siècle vit la cristallisation des identités séparées lors du Difaqane et de la colonisation.",
+      "migrationRoutes": [
+        "Migration bantoue depuis l'Afrique centrale (Cameroun) vers l'est et le sud (1000 av. J.-C.-500 apr. J.-C.)",
+        "Présence dans la région des Grands Lacs avant la dispersion vers le sud",
+        "Établissement sur le plateau du Highveld en Afrique du Sud (XIVe-XVIe siècle)",
+        "Difaqane (années 1820-1830) : migrations forcées liées aux guerres zouloues"
+      ],
+      "historicalSettlementZones": [
+        "Plateau du Highveld (actuels Free State, Gauteng, Limpopo, Nord-Ouest, Afrique du Sud)",
+        "Lesotho (Basotho du Sud)",
+        "Botswana (Batswana, majoritaires à 79%)",
+        "Province du Limpopo, Afrique du Sud (Bapedi)",
+        "Province du Nord-Ouest, Afrique du Sud (Batswana et Bafokeng)"
+      ],
+      "unificationsOrDivisions": "Le macro-groupe Sotho-Tswana n'a jamais formé une unité politique unique. Les trois grandes branches (Sotho du Sud, Sotho du Nord/Pedi, Tswana) se sont développées séparément. Le Difaqane du XIXe siècle accentua les divisions : Moshoeshoe I unifia les Basotho du Sud au Lesotho, tandis que les Batswana se regroupèrent au Botswana sous différentes chefferies tribales (Ngwato, Kwena, Ngwaketse, Kgatla, etc.). La colonisation britannique consolida ces identités séparées.",
+      "externalInfluences": "Contacts avec les Zoulous lors du Difaqane. Colonisation britannique (Basutoland, Bechuanaland). Influence des missionnaires chrétiens (PEMS pour les Basotho, LMS pour les Batswana). Politique d'apartheid en Afrique du Sud. Migrations économiques vers les mines d'or et de diamants d'Afrique du Sud.",
+      "majorHistoricalEvents": "XIVe siècle : séparation du proto-groupe Sotho-Tswana. 1820-1830 : Difaqane ; Moshoeshoe I unifie les Basotho. 1868 : protectorat de Basutoland. 1885 : protectorat du Bechuanaland (Batswana). 1910 : Union d'Afrique du Sud (Bapedi et Batswana sud-africains). 1966 : indépendances du Lesotho et du Botswana."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les trois sous-groupes partagent une organisation en chefferies héréditaires (morena/kgosi selon le groupe). Chez les Batswana, le kgosi (chef) gouverne une communauté-tribu (morafe) avec un conseil consultatif (kgotla, assemblée de tous les hommes adultes). Chez les Basotho, le morena règne par consensus avec des chefs subordonnés. Le système kgotla des Batswana est reconnu dans la constitution du Botswana comme institution formelle (Ntlo ya Dikgosi).",
+      "clanOrganization": "Structure clanique patrilinéaire avec totems claniques. Chez les Batswana, les clans principaux incluent : Bakwena (crocodile), Bangwato (nyala), Bangwaketse, Bakgatla (singe), Batawana. Chez les Basotho : Bakwena, Bataung (lion), Baphuthi, Bafokeng. Les mariages exogames (hors du clan) sont la norme.",
+      "ageClassSystems": "Le système lebollo (Basotho) et bojale/bogwera (Batswana) organise les classes d'âge par initiation. Les initiés d'une même session forment une classe permanente avec des obligations mutuelles, un rang social et des noms collectifs.",
+      "roleOfLineages": "Les lignages patrilinéaires déterminent l'appartenance clanique, les droits fonciers, les alliances matrimoniales et les obligations cérémonielles. La bridewealth (bohali chez les Basotho, bogadi chez les Batswana) formalise les alliances entre lignages.",
+      "religiousAuthority": "Les chefs traditionnels exercent une autorité cérémonialo-religieuse sur les rites ancestraux. Les pasteurs chrétiens ont une influence majeure depuis le XIXe siècle (PEMS pour Basotho, London Missionary Society pour Batswana). Syncrétisme entre traditions ancestrales et christianisme."
+    },
+    "languages": {
+      "mainLanguage": "Sesotho / Setswana / Sepedi (trois langues principales du groupe S.30)",
+      "isoCodes": ["sot", "tsn", "nso"],
+      "dialects": [
+        "Sesotho (Sotho du Sud, S.33) : parlé au Lesotho et dans le Free State sud-africain",
+        "Setswana (Sotho occidental, S.31) : parlé au Botswana (langue nationale) et en Afrique du Sud (Nord-Ouest)",
+        "Sepedi / Sesotho sa Leboa (Sotho du Nord, S.32) : parlé dans la province du Limpopo",
+        "Kgalagadi (S.311) : dialecte intermédiaire parlé dans le Kalahari",
+        "Silozi (Kololo, Zambie) : langue dérivée du sesotho parlée en Zambie occidentale"
+      ],
+      "vehicularRole": "Le setswana est la langue nationale et officielle du Botswana (parlé par environ 79% de la population). Le sesotho est langue officielle du Lesotho et d'Afrique du Sud. Le sepedi est parlé par 10% de la population sud-africaine (6 millions). Ensemble, les langues Sotho-Tswana sont parlées par plus de 20 millions de personnes en Afrique australe. En Afrique du Sud, les langues Sotho-Tswana comptent environ 16 millions de locuteurs."
+    },
+    "culture": {
+      "majorRites": "Initiation masculine : lebollo (Basotho) et bogwera (Batswana), rites de passage vers l'âge adulte incluant la circoncision, l'isolement en camp initiatique, l'instruction des responsabilités sociales et des valeurs culturelles. Initiation féminine : bojale (Batswana) et lebollo la basadi (Basotho). Bogadi/Bohali : cérémonie de bridewealth (paiement en bétail ou espèces) pour sceller les mariages. Rites funéraires incluant une période de deuil communautaire. Cérémonies de bénédiction des champs et des semences avant les cultures.",
+      "symbols": "Mokorotlo (chapeau conique basotho, symbole national du Lesotho figurant sur le drapeau). Couverture de laine kobo (Basotho). Kgotla (arbre à palabres des Batswana, espace de gouvernance et justice). Boeuf (richesse et monnaie sociale). Phoko/Plume de grue (coiffe cérémonielle des guerriers). Cheval basotho (mobilité historique des Basotho en montagne).",
+      "artsAndMusic": "Lithoko (poésie de louange orale basotho). Maboko (poésie de louange tswana). Famo (genre musical populaire basotho des camps de mineurs, avec accordéon). Setapa et tsutsube (danses traditionnelles tswana). Mokhibo (danse des épaules féminine basotho). Musique chorale traditionnelle chrétienne très développée (compositeurs Mohapeloa, Moerane). Artisanat : poterie, tissage de nattes et tapis, broderie de perles (mereo), travail du cuir. Peintures murales géométriques sur argile (motifs Ndebele-Basotho).",
+      "spiritualities": "Culte des ancêtres (balimo chez les Basotho, badimo chez les Batswana) : les esprits ancestraux veillent sur les vivants et peuvent causer des troubles si négligés ; invoqués lors de rituels et de sacrifices d'animaux. Divination (thobela/ditaola) pratiquée par des spécialistes (ngaka/dingaka). Syncrétisme entre traditions ancestrales et christianisme majoritaire (protestants, catholiques, Zionistes). Le culte Badimo coexiste avec les pratiques chrétiennes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Royaume du Lesotho (fondé par Moshoeshoe I, XVIIIe-XIXe siècle). Chefferies tswana majeures : Ngwato (Serowe, Botswana), Kwena (Molepolole), Ngwaketse (Kanye), Kgatla (Mochudi), Tawana (Maun) ; chacune avec un Kgosi héréditaire. Royaume des Bapedi sous Sekhukhune I (Limpopo, résistance aux Boers). Kololo : sous Sebetwane, conquirent le Barotseland (actuelle Zambie occidentale) en 1845.",
+      "relationsWithNeighbors": "Relations complexes avec les Zoulous (conflits du Difaqane). Alliance avec la Grande-Bretagne (protectorats de Basutoland et Bechuanaland). Relations tendues avec les Boers (guerres Free State-Basotho, guerre des Boers). Coopération avec les missionnaires chrétiens (PEMS, LMS) comme conseillers étrangers et enseignants. Le Botswana indépendant entretient des relations économiques étroites avec l'Afrique du Sud.",
+      "conflictsOrAlliances": "Guerres du Difaqane (1820-1830). Guerres Free State-Basotho (1858, 1865-1868). Résistance de Sekhukhune Ier contre les Boers (1876-1879). Gun War (1880-1881, Basotho). Alliance des Batswana avec la Grande-Bretagne contre les Boers (1899-1902). Les chefferies tswana du Bechuanaland demandèrent et obtinrent la protection britannique (1885) pour éviter l'annexion par les Boers.",
+      "diaspora": "Diaspora basotho importante en Afrique du Sud (travailleurs migrants dans les mines depuis le XIXe siècle). Communautés tswana dispersées dans les provinces du Nord-Ouest, Gauteng, Free State d'Afrique du Sud. Diaspora internationale (Royaume-Uni, Europe, Amérique du Nord) depuis le XXe siècle."
+    },
+    "demography": {
+      "totalPopulation": 20000000,
+      "referenceYear": 2025,
+      "source": "Estimation composite : Sesotho (Lesotho 2,3M + Afrique du Sud 4,9M = 7,2M) ; Setswana (Botswana 79% de 2,6M = 2,1M + Afrique du Sud 5M = 7,1M) ; Sepedi (Afrique du Sud 6M). Total estimé : environ 20 millions. Sources : Ethnologue SIL (2024), recensements nationaux Botswana 2011, Lesotho 2016, Afrique du Sud 2011.",
+      "distributionByCountry": [
+        {
+          "country": "ZAF",
+          "population": 16000000,
+          "note": "Sesotho (4,9M), Setswana (5M), Sepedi (6M) ; provinces Free State, Gauteng, Nord-Ouest, Limpopo"
+        },
+        {
+          "country": "LSO",
+          "population": 2300000,
+          "note": "Basotho, 99,7% de la population"
+        },
+        {
+          "country": "BWA",
+          "population": 2100000,
+          "note": "Batswana, 79% de la population du Botswana (2024)"
+        },
+        {
+          "country": "ZWE",
+          "population": 300000,
+          "note": "Locuteurs sesotho/setswana minoritaires"
+        },
+        {
+          "country": "NAM",
+          "population": 100000,
+          "note": "Communautés tswana dans le Caprivi et les régions frontalières"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Sotho-Tswana languages. https://en.wikipedia.org/wiki/Sotho%E2%80%93Tswana_languages",
+      "Wikipedia EN — Tswana people. https://en.wikipedia.org/wiki/Tswana_people",
+      "Wikipedia EN — Sotho people. https://en.wikipedia.org/wiki/Sotho_people",
+      "EBSCO Research Starters — Tswana people. https://www.ebsco.com/research-starters/ethnic-and-cultural-studies/tswana-people",
+      "SIL Ethnologue — Tswana (tsn). https://www.ethnologue.com/language/tsn/",
+      "SIL Ethnologue — Sesotho (sot). https://www.ethnologue.com/language/sot/",
+      "SIL Ethnologue — Northern Sotho (nso). https://www.ethnologue.com/language/nso/",
+      "Wikipedia EN — Botswana. https://en.wikipedia.org/wiki/Botswana",
+      "South Africa Gateway — Languages of South Africa. https://southafrica-info.com/arts-culture/the-languages-of-south-africa/"
+    ]
+  }
+}

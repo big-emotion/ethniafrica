@@ -1,0 +1,45 @@
+# Nom du peuple
+- Nom principal : Kroumen
+- Auto-appellation : Krumen / Kroomen
+- Appellations historiques :
+  - « Kroomen » (terme colonial anglais, non péjoratif ; utilisé pour les marins Kru)
+- Famille linguistique : Niger-Congo – Krou (FLG_KROU)
+- Région historique : Côte d’Ivoire (littoral sud-ouest), LBR
+- Identifiant peuple : PPL_KROUMEN
+
+# 1. Ethnies incluses
+- Kroumen de Tabou
+- Kroumen de Grabo
+- Kroumen du Liberia
+
+# 2. Origines
+- Branche maritime du groupe Kru.
+- Historiquement spécialisés dans la navigation et le service maritime.
+
+# 3. Organisation
+- Lignages familiaux
+- Chefferies locales
+- Compagnonnages maritimes
+
+# 4. Langue
+- Kroumen
+- ISO : kde (proche du Grebo et du Klao)
+
+# 5. Culture
+- Navigation traditionnelle
+- Danses maritimes
+- Objets sculptés en bois
+- Rituels liés à la mer
+
+# 6. Histoire
+- Recrutés dès le XIXe siècle par les navires européens (Krumen sailors).
+- Rôle majeur dans la navigation atlantique ouest-africaine.
+
+# 7. Démographie
+- Population : 171 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (kde)
+- Liberia Maritime Cultural Records
+- Côte d’Ivoire Littoral Archives

@@ -1,0 +1,97 @@
+{
+  "id": "PPL_YAO_MOZ",
+  "nameMain": "Yao (Mozambique)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MOZ"],
+  "content": {
+    "appellations": {
+      "mainName": "Yao (Mozambique)",
+      "selfAppellation": "Wayao",
+      "exonyms": ["Yao", "Ajawa", "Wayao", "Achawa"],
+      "originOfExonyms": "Le terme Yao derive du nom d'une colline dans l'actuelle province de Niassa au Mozambique, ou se trouve le village ancestral de Chiconono entre les rivieres Lujenda et Luchelingo. Le mot Yao est le pluriel d'un substantif signifiant colline deboisee. Les Portugais utilisaient les variantes Ajawa ou Achawa. Wayao (avec le prefixe wa- du swahili) est l'appellation regionale.",
+      "whyProblematic": "Les Yao du Mozambique partagent un ethnyme et une culture avec les Yao du Malawi et de Tanzanie, rendant difficile la delimitation de groupes distincts par frontieres nationales. La politique coloniale portugaise a impose une evangelisation chretienne que les Yao ont majoritairement rejetee au profit de l'islam, creant une identite de resistance qui perdure.",
+      "contemporaryUsage": "Le terme Yao (Wayao) est utilise en portugais, en swahili et en ciyawo au Mozambique. Les Yao du Mozambique habitent principalement la province de Niassa dans le nord-ouest du pays, ou ils forment environ 40 % de la population de Lichinga (capitale provinciale). Ils sont reconnus comme groupe ethnique distinct dans les statistiques mozambicaines.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone P, groupe P21)",
+      "historicalRegion": "Province de Niassa, nord du Mozambique — patrie ancestrale entre les rivieres Rovuma et Lugenda",
+      "currentCountries": ["MOZ"]
+    },
+    "ethnicities": [
+      "Yao de Niassa — groupe principal, province de Niassa, autour de Lichinga et du lac Niassa (lac Malawi)",
+      "Yao de Chiconono — descendants du village ancestral dans les montagnes de Niassa, coeur ethno-geographique",
+      "Yao de Massangulo — sous-groupe du nord de la province de Niassa",
+      "Yao des rives du lac Niassa — peche et commerce, en contact avec les Chewa et Lomwe du Malawi",
+      "Makale — sous-groupe linguistique yao du Mozambique (dialecte Makale)",
+      "Massaninga — sous-groupe linguistique yao du Mozambique (dialecte Massaninga)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Yao du Mozambique sont le groupe yao originel, dont le centre ethno-geographique ancestral est situe dans le village de Chiconono, dans la province de Niassa au nord-ouest du Mozambique, entre les rivieres Lujenda et Luchelingo. Leur presence dans cette region remonte a plusieurs siecles. Avant le contact arabe, les Yao etaient principalement agriculteurs et maitres forgerons, produisant des outils en fer. Des royaumes yao ont emerge dans la province de Niassa des le 15e siecle, actifs dans le commerce bien avant l'arrivee des Europeens. Ils sont de la branche bantoue Zone P.",
+      "formationPeriod": "L'identite yao mozambicaine s'est affirmee entre le 17e et le 19e siecle, a mesure que les Yao devenaient les principaux intermediaires commerciaux entre l'interieur de l'Afrique et les ports arabes et swahili de l'ocean Indien (Kilwa, Zanzibar, Mozambique Island). La conversion collective a l'islam entre 1870 et la premiere Guerre mondiale a cimenté leur identite culturelle specifique face aux colonisateurs portugais qui promouvaient le christianisme.",
+      "migrationRoutes": [
+        "Routes commerciales depuis Chiconono vers la cote swahili de Kilwa et Mozambique Island, actives depuis le 17e siecle",
+        "Expansion vers le sud du lac Niassa et les regions frontalières avec le Malawi actuel au 18e siecle",
+        "Certains groupes Yao ont migre vers le Malawi et la Tanzanie a partir des annees 1830 (famine et pression des Makua)"
+      ],
+      "historicalSettlementZones": [
+        "Province de Niassa — zone principale au nord-ouest du Mozambique",
+        "Village de Chiconono — berceau ancestral dans les montagnes de Niassa",
+        "Rives orientales du lac Niassa (lac Malawi) — peche et commerce lacustre",
+        "District de Lichinga — capitale provinciale de Niassa, environ 40 % de population yao",
+        "Region de la Lugenda et Rovuma — zones de contact avec la Tanzanie"
+      ],
+      "unificationsOrDivisions": "Les Yao du Mozambique etaient organises en plusieurs grandes chefferies (sultanats) rivaux : Mataka, Machemba et d'autres lignages royaux controlaient differentes zones. La conversion a l'islam a constitue le principal ciment identitaire. La colonisation portugaise et l'etablissement de la Compagnie du Niassa (Niassa Company, 1891) ont fragmente l'organisation politique traditionnelle et reduit les Yao au statut de travailleurs dans un systeme de plantation.",
+      "externalInfluences": "Contact avec les marchands arabes et swahili depuis le 17e siecle — adoption progressive de l'islam, de l'architecture swahili, du tissu et de la ceramique de commerce. La Compagnie portugaise du Niassa (etablie en 1891) a systematiquement detruit le systeme agricole et commercial indigene yao au profit d'une economie de plantation. La resistance yao a l'evangelisation chretienne portugaise a renforce leur identite islamique. Influence allemande dans la zone tanzanienne limitrophe (contre laquelle les Yao ont aussi resiste).",
+      "majorHistoricalEvents": "Au 15e siecle, des royaumes yao emergent dans la province de Niassa, actifs dans le commerce de l'ivoire. Au 17e siecle, les Yao deviennent des intermediaires majeurs du commerce cote-interieur avec les Arabes. En 1870, la conversion a l'islam s'accelere dans les chefferies yao. En 1890, le chef Machemba declare au commandant allemand qu'il est ouvert au commerce mais pas a la soumission politique. En 1891, la Compagnie du Niassa etablit son emprise sur le territoire yao, transformant les agriculteurs independants en travailleurs de plantation. En 1895, le chef Makunganya (Hassan bin Omari) est execute par les Allemands en Tanzanie. La conversion collective a l'islam est achevee vers 1920."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Yao du Mozambique etaient gouvernes par de puissantes chefferies (sultanats) dont les chefs portaient le titre de sultan apres leur conversion a l'islam. Les sultanats de Mataka et Machemba etaient parmi les plus influents. Chaque sultanat controlait des routes commerciales et des territoires agricoles. Apres la colonisation portugaise, ces structures ont ete affaiblies mais pas eliminees ; des chefs locaux (regulados) ont ete integres dans l'administration coloniale indirecte.",
+      "clanOrganization": "La societe yao est matrilineaire : l'identite, la terre et le statut social sont transmis par la ligne maternelle. La residence est matrilocale — le mari s'installe dans le village de sa femme. Les clans (nyumba) sont des unites matrilineaires etendues. Le chef du clan maternel (oncle maternel, malume) exerce une autorite importante sur les jeunes. La polygamie est repandue et les taux de divorce eleves.",
+      "ageClassSystems": "Des rites d'initiation masculins (unyago ou jando) et feminins (chinamwali) marquent le passage a l'age adulte. Les garcons sont circumcis et formes collectivement par des tuteurs (anankungwi) pendant plusieurs semaines. Ces rites transmettent les valeurs culturelles, islamiques et les responsabilites de l'age adulte.",
+      "roleOfLineages": "Les lignages matrilineaires (nyumba) determinent l'appartenance, les droits fonciers et les alliances. L'oncle maternel (malume) est le tuteur traditionnel des enfants apres le divorce de leurs parents. La filiation maternelle prime pour l'heritage des terres et du titre.",
+      "religiousAuthority": "Les oulémas et cheikhs islamiques exercent une autorite religieuse centrale dans les communautes yao du Mozambique. Des madrasa (khalwa) dispensent l'education coranique. Les sultanats yao employaient des scribes arabes pour la gestion administrative et commerciale, ce qui a favorise la penetration de l'islam cultivé (litterature, droit, education). L'islam populaire des Yao du Mozambique est syncrétise avec des croyances animistes traditionnelles."
+    },
+    "languages": {
+      "mainLanguage": "Ciyawo (Chiyao)",
+      "isoCodes": ["yao"],
+      "dialects": [
+        "Makale — dialecte principal du Mozambique, parle dans la province de Niassa autour du lac Niassa",
+        "Massaninga — second dialecte mozambicain, zone centrale de la province de Niassa",
+        "Chiconono — variante locale de la zone ancestrale yao"
+      ],
+      "vehicularRole": "Le ciyawo est parle par environ 495 000 locuteurs au Mozambique selon Ethnologue (2024). Les Yao du Mozambique parlent aussi le portugais (langue officielle du Mozambique) et parfois le swahili. Le ciyawo mozambicain presente des variantes dialectales (Makale, Massaninga) differentes du dialecte Mangochi du Malawi. La langue est bantoue Zone P, proche du makua et du lomwe. L'education formelle se fait en portugais, mais les madrasa locales enseignent en arabe et ciyawo."
+    },
+    "culture": {
+      "majorRites": "{\"initiationRites\": {\"maleInitiation\": \"Le rite masculin unyago (ou jando) comprend la circoncision et un retrait en brousse de plusieurs semaines. Les garcons recoivent un enseignement sur les responsabilites islamiques et les codes moraux de l'age adulte sous la direction d'instructeurs (anankungwi). Le rite se termine par une celebration communautaire. La musique de ngoma (tambour) accompagne les ceremonies.\", \"femaleInitiation\": \"Le rite feminin chinamwali marque la puberte des filles et comprend un enseignement par des femmes ainies (nankungwi) sur les roles feminins, la fertilite et la sexualite. Les filles sont reintegrees comme adultes au terme de la ceremonie.\"}, \"funeraryRites\": {\"burial\": \"Inhumation rapide (dans les 24h) selon le rite islamique. Le corps est lave et enveloppe dans un linceul blanc (kafan). Prieres funeraires (Salat al-Janazah) recitees. Deuil de trois jours.\", \"postFuneraryCeremonies\": \"Commemorations au 3e, 7e et 40e jour avec repas collectifs et recitations coraniques. Les invocations ancestrales (amasoka) coexistent avec les pratiques islamiques en contexte de folk islam.\"}, \"agriculturalRites\": {\"fieldPreparation\": \"Des prieres et invocations aux ancetres precedent les semailles. La technique de chasse au miel guidee par l'oiseau indicateur (honeyguide) est une pratique culturelle distinctive : les Yao utilisent un appel traditionnel (brrrr-hmm) pour communiquer avec l'oiseau, transmis de pere en fils.\"}, \"healingRites\": {\"herbalism\": \"Les Yao du Mozambique sont reconnus comme guerisseurs. Leurs guerisseurs traditionnels (asing'anga) utilisent des plantes medicinales locales. Les maladies sont classifiees en maladies physiques et spirituelles (ndaka — liees aux contacts entre personnes rituellement froides et chaudes ; undubidwa — affectant les nourrissons allaites). Des charmes islamiques (hirizi) fabriques par les cheikhs coexistent avec les remedes traditionnels.\"}}",
+      "symbols": "Le croissant islamique et la mosquee sont des symboles identitaires centraux pour les Yao du Mozambique. La colline ancestrale de Yao (Chiconono, province de Niassa) est un lieu symbolique d'origine. Les tissus kanga et les vetements islamiques (kanzu, kofia) portent une signification identitaire forte. La pirogue du lac Niassa represente la tradition de peche et de commerce.",
+      "artsAndMusic": "{\"musicalInstruments\": \"Ngoma (tambour), nyanga (flute en roseau), instruments a percussion utilises lors des initiations et celebrations communautaires.\", \"dances\": \"Beni — danse collective d'influence swahili-arabe pratiquee lors des celebrations. Manganje — danse d'initiation masculine. Malipenga — danse communautaire festive.\", \"songs\": \"Chants coraniques (nasheed) en arabe et en ciyawo. Chants de mariage et de celebration islamique. Chants de travail agricole.\", \"crafts\": \"Poterie feminine (jarres, recipients). Tissage de nattes et paniers. Broderie de vetements islamiques. Construction de pirogues pour la peche lacustre.\", \"gastronomy\": \"Regime base sur le mais (nsima), le riz, le poisson du lac Niassa, les haricots et le manioc. L'influence arabe se manifeste dans la preparation du riz aux epices et dans les plats de celebration (Eid al-Fitr, Eid al-Adha). Les Yao suivent les interdits alimentaires islamiques (halal).\"}",
+      "spiritualities": "{\"supremeDeity\": {\"endonym\": \"Amanani / Mulungu / Allah\", \"attributes\": \"Dieu unique assimile a Allah apres l'islamisation. La tradition pre-islamique reconnaissait Amanani (aussi appele Achipinga ou Wakalakatele), accessible par l'intermediaire des esprits ancestraux (amasoka). Sous l'arbre msolo, les Yao invoquaient la protection divine via ces intermediaires.\"}, \"intermediateEntities\": [{\"name\": \"Amasoka\", \"description\": \"Esprits ancestraux servant d'intermediaires entre les hommes et Dieu. Invocations sous l'arbre msolo. Ces croyances perdurent en syncrétisme avec l'islam populaire des Yao mozambicains.\"}, {\"name\": \"Simbi et Nzambi a Tsi\", \"description\": \"Esprits aquatiques et terrestres invoques dans certains contextes rituels, distincts des divinites strictement islamiques.\"}], \"cosmology\": \"Les Yao pratiquent un islam populaire (folk Islam) integrant des elements animistes ancestraux. La maladie peut etre attribuee a des violations de tabous (ndaka, undubidwa), a des maledictions ou a des causes physiques. Les guerisseurs traditionnels et les charmes islamiques coexistent.\", \"islam\": {\"specificPractices\": \"Islam sunnite, avec une influence soufie dans certaines regions. Les sultans yao ont adopte l'islam des le milieu du 19e siecle, suivi de leur peuple. Les madrasa et khalwa locales transmettent l'education coranique. Les interdits alimentaires halal sont respectes. Celebrations d'Eid al-Fitr, Eid al-Adha et du Mawlid.\"}}"
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Yao du Mozambique ont developpe de puissants sultanats au 19e siecle. Le sultanat de Mataka controlait de vastes territoires dans la province de Niassa et les routes commerciales vers la cote. Le chef Machemba etait une figure de resistance face aux Allemands dans la zone tanzanienne. La Compagnie du Niassa (1891) a supplante ces structures apres la colonisation portugaise. Ces sultanats etaient caracterises par une combinaison de pouvoir politique islamique et de maitrise des reseaux commerciaux cote-interieur.",
+      "relationsWithNeighbors": "Les Yao du Mozambique entretenaient des relations commerciales etroites avec les marchands arabes et swahili de Kilwa, Zanzibar et de l'ile de Mozambique. Leurs relations avec les Makua (ou Makhuwa) etaient souvent conflictuelles — les Makua auraient attaque les Yao, provoquant partiellement leurs migrations vers le Malawi. La Compagnie du Niassa a mis les Yao en competition avec d'autres groupes ethniques pour les ressources et le travail.",
+      "conflictsOrAlliances": "Les sultans yao ont activement resiste a la colonisation portugaise et allemande. En 1890, le chef Machemba refuse la soumission a l'autorite allemande dans une declaration celebre. En 1891, la Compagnie du Niassa etablit son emprise sur le territoire yao mozambicain, provoquant une resistance armee. Les Yao ont resiste a l'imposition du christianisme par les Portugais, percus comme repressentant une menace economique et culturelle. En 1895, le chef Makunganya est execute par les Allemands en Tanzanie apres une longue resistance.",
+      "diaspora": "Une diaspora yao existe dans les villes mozambicaines (Maputo, Nampula) et dans les pays voisins (Malawi, Tanzanie, Zimbabwe, Zambie) pour des raisons economiques. Les migrations de travail vers les mines et les fermes d'Afrique du Sud ont eu lieu au cours du 20e siecle. La communaute yao maintient ses liens culturels islamiques dans la diaspora."
+    },
+    "demography": {
+      "totalPopulation": 500000,
+      "referenceYear": 2025,
+      "source": "Ethnologue (SIL International, 2024) — 495 000 locuteurs du ciyawo au Mozambique. Joshua Project 2024 — estimation minimum de 450 000 Yao au Mozambique. Ils forment environ 40 % de la population de Lichinga (capitale de la province de Niassa). Gordon-Conwell Center for Global Christianity — Niassa Dossier 2020.",
+      "distributionByCountry": [
+        {
+          "country": "MOZ",
+          "population": 500000,
+          "note": "Concentres dans la province de Niassa (nord-ouest du Mozambique), principalement autour de Lichinga et des rives est du lac Niassa. Quelques communautes dans d'autres provinces du nord."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Yao people (East Africa). https://en.wikipedia.org/wiki/Yao_people_(East_Africa)",
+      "Ethnologue — Yao language (yao). https://www.ethnologue.com/language/yao/",
+      "Joshua Project — Yao in Mozambique. https://joshuaproject.net/people_groups/15988/MZ",
+      "Gordon-Conwell Center for Global Christianity — Niassa, Mozambique: The Makhuwa-Shirima and Yao (2020). https://www.gordonconwell.edu/center-for-global-christianity/wp-content/uploads/sites/13/2020/08/Niassa-Dossier.pdf",
+      "Qiraat Africa — The Yao/Wayao people of Lake Malawi. https://qiraatafrican.com/en/19883/the-yao-wayao-people-of-lake-malawi/",
+      "Wikipedia EN — Yao language. https://en.wikipedia.org/wiki/Yao_language",
+      "CIA World Factbook — Mozambique. https://www.cia.gov/the-world-factbook/countries/mozambique/"
+    ]
+  }
+}

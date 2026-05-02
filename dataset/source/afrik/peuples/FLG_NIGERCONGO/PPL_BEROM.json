@@ -1,0 +1,79 @@
+{
+  "id": "PPL_BEROM",
+  "nameMain": "Berom",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["NGA"],
+  "content": {
+    "appellations": {
+      "mainName": "Berom",
+      "selfAppellation": "Wòrom",
+      "exonyms": ["Birom", "Burum"],
+      "originOfExonyms": "La forme Birom est une variante orthographique anglophone utilisee par l'administration coloniale britannique. Burum apparait dans certaines sources ethnographiques anciennes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Berom est aujourd'hui standard dans les publications officielles nigerianes et les travaux academiques. Birom reste courant dans les sources historiques.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Plateau (branche Benue-Congo)",
+      "historicalRegion": "Plateau du Jos, Nigeria central",
+      "currentCountries": ["NGA"]
+    },
+    "ethnicities": ["Berom"],
+    "origins": {
+      "ancientOrigins": "Les Berom sont un peuple autochtone du Plateau de Jos. Des liens avec la culture Nok (200 av. J.-C. - 1000 apr. J.-C.) sont etablis par les chercheurs, faisant des Berom l'un des groupes les plus anciennement attestes du Nigeria central. Leur langue appartient au rameau Plateau de la famille Benue-Congo.",
+      "formationPeriod": "Presence attestee sur le Plateau de Jos depuis la periode Nok (ier millenaire av. J.-C.). La configuration politique autonome precoloniale etait fondee sur des groupes territoriaux independants avant la centralisation imposee en 1935.",
+      "migrationRoutes": [
+        "Etablissement originel sur les hauteurs du Plateau de Jos ; expansion vers les plaines du sud de l'Etat de Kaduna pendant la periode coloniale britannique, notamment depuis le district de Za'ang vers Fadan Karshe."
+      ],
+      "historicalSettlementZones": [
+        "Plateau de Jos (Riyom, Jos North, Jos South, Gwol/Barkin Ladi)",
+        "Sud de l'Etat de Kaduna (Fadan Karshe)"
+      ],
+      "unificationsOrDivisions": "En periode precoloniale, les Berom etaient organises en groupes politiques autonomes par region. En 1935, l'administration coloniale britannique crea le titre de Gbong Gwom Jos (chef paramount) et en 1952 reunit les chefferies locales sous cette autorite unifiee.",
+      "externalInfluences": "La colonisation britannique reorganisa profondement la gouvernance Berom : imposition de chefs haoussa a la Native Authority de Jos, creation du Gbong Gwom Jos, enregistrement des chefferies locales par Gazette en 1918.",
+      "majorHistoricalEvents": "Creation du titre de Gbong Gwom Jos en 1935 par l'administration coloniale. Publication du premier dictionnaire Berom. Conflits intercommunautaires sur le Plateau de Jos depuis les annees 2000, avec deplacement de populations Berom dans leurs propres terres ancestrales."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de chefferies autonomes par region en periode precoloniale. Depuis 1935, institution du Gbong Gwom Jos comme chef paramount de l'ensemble des Berom. Le Berom Tribal Council (conseil de chefs locaux) gere les affaires au sein de la Native Authority de Jos.",
+      "clanOrganization": "Organisation par districts et villages avec chefs locaux (chefs de Riyom, Vwang, Kuru, Zawan, Gyel, Bachit, Bangai, Lwa, Sop, Jol, Wereng Kwi, Gwo). Les chefs de Buji, Naraguta, Jos et Bukuru sont reconnus par Gazette colonial.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages sont lies aux districts d'origine ; les communautes de Fadan Karshe (Kaduna) tracent leur ascendance au district de Za'ang sur le Plateau de Jos. L'appartenance lignagere determine la participation aux festivals et aux rituels collectifs.",
+      "religiousAuthority": "Autorite religieuse chretienne preponderante (COCIN, Eglise catholique romaine). Le Berom Language and Translation Board (BLTB) et le Berom Outreach Ministries (BOM) encadrent la vie spirituelle communautaire."
+    },
+    "languages": {
+      "mainLanguage": "Berom (Lêm Bèrom / Cèn Bèrom)",
+      "isoCodes": ["bom"],
+      "dialects": ["Cen", "Nincut", "Tahoss"],
+      "vehicularRole": "Langue maternelle exclusive pour la majorite des Berom ruraux. Glissement vers le haoussa signale dans les milieux urbains (Jos). Utilise dans les eglises COCIN et pour la traduction biblique."
+    },
+    "culture": {
+      "majorRites": "Cycle de festivals agricoles et de chasse : Mandyeng (mars-avril, rite d'entree en saison des pluies, communautes issues de Riyom) ; Nshok (mars-avril, ouverture de saison associant chasse et agriculture) ; Worongchun (avril-mai, festival des semailles) ; Vwana/Buna (aout, recolte du fonio) ; Mado (octobre-novembre, chasse pour la prosperite, partage avec les Che) ; Behwol (fevrier-mars, chasse partagee avec Che, Boze, Anaguta, Izere) ; Nzem Berom (avril, festival hebdomadaire d'identite culturelle Berom depuis 1980-1981).",
+      "symbols": "La plante ryep (cactus Euphorbia kamerunica) est l'embleme vegetal du peuple. La couleur verte symbolise les cactus, le bordeaux le tee (poudre locale). Les noms masculins (Gyang, Pam, Dung, Davou, Chuwang) derivent souvent d'animaux de chasse, notamment les especes de cephalophes (duikers), refletant l'importance culturelle de la chasse.",
+      "artsAndMusic": "Riche tradition musicale : xylophones (kundung/yom bi tok), cithares (yom kwo, yom waya, yom shi), tambours (bing barrel, bing shi gourde, rwey bing conique reserve a la royaute, kalangu en sablier), flutes (ju, ju shelo), trompes (bwo nyama transversale). Instruments de grattage : gwak/gwashak fabrique a partir de cactus seche. Costumes de danse : shang (ornement de fibre), bong (chapeau de danse), gawat (chasse-mouches).",
+      "spiritualities": "Croyance en Dagwi, Dieu createur assimile au Dieu judeo-christo-islamique. Christianisme majoritaire : plus de 95 % membres de la COCIN ou de l'Eglise catholique romaine. Chants chretiens en langue berom produits par le BLTB."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Absence de royaume centralise en periode precoloniale ; gouvernance par chefferies territoriales autonomes. Institution du Gbong Gwom Jos (1935) comme chefferie paramount sous administration britannique. Premiers Gbong Gwom : Dachung Gyang (1935-1941), Da Rwang Pam (1947-1969), Da Fom Bot (1969-2002), Da Victor Dung Pam (2004-2009), Da Jacob Gyang Buba (2009-present).",
+      "relationsWithNeighbors": "Festivals de chasse partages avec les Che (Mado), les Boze, Anaguta et Izere (Behwol). Tensions historiques avec l'administration coloniale qui imposa des chefs haoussa sur la Native Authority de Jos, en contradiction avec les structures politiques Berom. Conflits intercommunautaires recurrents sur le Plateau de Jos avec les pasteurs Fulani depuis les annees 2000.",
+      "conflictsOrAlliances": "Sous domination coloniale britannique, les Berom furent soumis a une autorite haoussa dans la Native Authority, source de tensions durables. Depuis 2000, les affrontements entre agriculteurs Berom et eleveurs Fulani ont cause des milliers de morts et des deplacements massifs sur le Plateau de Jos.",
+      "diaspora": "Communautes Berom etablies dans le sud de l'Etat de Kaduna (Fadan Karshe, issue du district de Za'ang) depuis la periode coloniale. Presence dans les villes nigerianes, notamment Abuja et Lagos."
+    },
+    "demography": {
+      "totalPopulation": 1508000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2024 (joshuaproject.net/people_groups/10811) ; estimation Wikipedia 2010 (1 million locuteurs)",
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 1508000,
+          "note": "Principalement Plateau State (Riyom, Jos North, Jos South, Barkin Ladi) et sud de l'Etat de Kaduna"
+        }
+      ]
+    },
+    "sources": [
+      "Berom people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Berom_people)",
+      "Berom language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Berom_language)",
+      "Berom in Nigeria – Joshua Project, 2024 (https://joshuaproject.net/people_groups/10811)",
+      "Berom – Glottolog 5.3, ISO 639-3 bom (https://glottolog.org/resource/languoid/id/bero1242)",
+      "Berom Language (BOM) – Ethnologue, SIL International (https://www.ethnologue.com/language/bom/)"
+    ]
+  }
+}

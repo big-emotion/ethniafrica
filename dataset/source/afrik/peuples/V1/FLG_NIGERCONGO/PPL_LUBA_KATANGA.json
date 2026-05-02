@@ -1,0 +1,70 @@
+{
+  "id": "PPL_LUBA_KATANGA",
+  "nameMain": "Luba (Katanga)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Luba (Katanga)",
+      "selfAppellation": "Baluba",
+      "exonyms": ["« Luba » (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone L)",
+      "historicalRegion": "RDC (Katanga)",
+      "currentCountries": ["COD"]
+    },
+    "ethnicities": [
+      "Luba du Katanga central",
+      "Luba du Katanga oriental",
+      "Luba du Katanga occidental",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Luba du Katanga sont originaires de la région du Katanga en RDC. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone L). Ancien royaume Luba.",
+      "unificationsOrDivisions": "Organisation en royaume traditionnel (ancien royaume Luba). Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune avec les Luba du Kasaï.",
+      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en royaume traditionnel (ancien royaume Luba). Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique patrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages patrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Luba-Katanga",
+      "vehicularRole": "Le luba-katanga est parlé par la majorité des Luba du Katanga. Le français et d'autres langues sont également utilisés."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de mariage traditionnelles",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à l'agriculture",
+      "source_3": "Cérémonies religieuses chrétiennes",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels luba, symboles chrétiens",
+      "Arts et musique": "",
+      "source_4": "Sculpture sur bois (masques, statues)",
+      "source_5": "Musique traditionnelle",
+      "source_6": "Danse traditionnelle",
+      "source_7": "Poésie orale",
+      "source_8": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora luba dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 3000000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Luba-Katanga language (lub)",
+      "CIA World Factbook – RDC",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples bantous"
+    ]
+  }
+}

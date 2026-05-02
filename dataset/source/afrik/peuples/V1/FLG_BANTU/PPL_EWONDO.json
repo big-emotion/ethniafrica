@@ -1,0 +1,24 @@
+{
+  "id": "PPL_EWONDO",
+  "nameMain": "Ewondo",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Ewondo",
+      "selfAppellation": "Ewondo",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Macro-groupe Beti-Pahouin",
+      "historicalRegion": "Centre du Cameroun (Yaoundé)",
+      "currentCountries": ["CMR"]
+    },
+    "ethnicities": [],
+    "origins": null,
+    "organization": null,
+    "languages": null,
+    "culture": null,
+    "historicalRole": null,
+    "demography": null,
+    "sources": ["Ethnologue (ewo)", "Archives Pahouin"]
+  }
+}

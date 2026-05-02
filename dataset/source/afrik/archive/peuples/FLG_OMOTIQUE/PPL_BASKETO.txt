@@ -1,0 +1,37 @@
+# Nom du peuple
+- Nom principal du peuple : Basketo
+- Auto-appellation : Basketo / Basketto
+- Famille linguistique : Afro-asiatique – Omotique (FLG_OMOTIQUE)
+- Groupe : Omotique nord
+- Région : Basketo Zone (Éthiopie)
+- ID peuple : PPL_BASKETO
+
+# 1. Ethnies incluses
+- Basketo du centre
+- Sous-groupes ruraux
+
+# 2. Origines
+- Peuple ancien du sud-ouest éthiopien.
+- Fort ancrage agricole.
+
+# 3. Organisation
+- Conseils d’anciens.
+- Systèmes lignagers.
+
+# 4. Langue
+- Basketo
+- ISO : bst
+
+# 5. Culture
+- Cérémonies de saison.
+- Tissages artisanaux.
+
+# 6. Histoire
+- Relations anciennes avec Gamo et Wolayta.
+
+# 7. Démographie
+- Population : 125 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (bst)

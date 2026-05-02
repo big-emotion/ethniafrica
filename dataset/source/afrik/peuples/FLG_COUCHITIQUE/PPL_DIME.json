@@ -1,0 +1,78 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_DIME",
+  "nameMain": "Dime",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Dime",
+      "selfAppellation": "Dime",
+      "exonyms": ["Dima", "Dimme", "Dimi"],
+      "originOfExonyms": "Dima est une variante orthographique fréquente dans la littérature linguistique éthiopienne et internationale. Dimme est utilisé dans certaines sources missionaires et anthropologiques anciennes. Ces variantes reflètent les différences de romanisation de la langue locale.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Dime est le nom officiel utilisé dans l'administration éthiopienne et dans la recherche académique. Le Endangered Languages Project catalogue cette langue et ce peuple sous Dimé. La communauté utilise le nom Dime ou Dima en auto-référence."
+    },
+    "ethnicities": ["Dime"],
+    "origins": {
+      "ancientOrigins": "Les Dime sont un peuple autochtone du sud de l'Éthiopie. Leur tradition orale ne suggère aucune migration depuis un territoire extérieur : ils considèrent avoir toujours occupé leur territoire montagneux actuel. Linguistiquement, leur langue appartient à la branche Omotic du sud de la famille afro-asiatique, groupe historiquement rattaché au Couchitique occidental avant que Fleming et Bender n'arguent pour une famille distincte dans les années 1970. Note : bien que classés ici sous FLG_COUCHITIQUE, les Dime sont strictement Omotic selon la linguistique contemporaine.",
+      "formationPeriod": "Avant leur incorporation forcée dans l'Empire éthiopien dans les années 1890, les Dime sont estimés avoir numbéré entre 50 000 et 100 000 personnes, sur la base de leurs propres déclarations et des terrasses abandonnées sur les collines qui témoignent d'une ancienne densité de population. La domination impériale éthiopienne et ses abus ont causé un effondrement démographique massif.",
+      "migrationRoutes": [],
+      "historicalSettlementZones": [
+        "Ancien district administratif du Nord Omo, actuelle Zone de Selamago, Région des Nations, Nationalités et Peuples du Sud (SNNPRS), Éthiopie",
+        "Flancs du mont Smith (altitude maximale 2 533 m), point culminant de leur territoire",
+        "Territoire de moins de 20 km de largeur et 55 km de longueur, orienté nord-sud"
+      ],
+      "unificationsOrDivisions": "Les Dime ont une similarité lexicale de 47% avec les Banna, témoignant de liens historiques avec ce groupe Omotic voisin. Ils partagent également des connexions culturelles avec les Dizi/Maji, les Sheko, le Nao, les Gimira (She, Bench, Mere), les Tsara (Chara), les Aari et certains sous-groupes des Basketo.",
+      "externalInfluences": "L'incorporation forcée dans l'Empire éthiopien sous Menelik II dans les années 1890 a provoqué une dépopulation massive due aux abus du système gebbar, aux razzias esclavagistes, aux famines et aux maladies. En 1974, la population ne dépassait probablement pas 20 000 personnes, contre 50 000 à 100 000 avant la conquête impériale. L'absence de système d'écriture et d'écoles locales enseignant la langue Dime constitue la principale menace contemporaine pour la survie de cette langue.",
+      "majorHistoricalEvents": "Incorporation forcée dans l'Empire éthiopien dans les années 1890, entraînant un effondrement démographique catastrophique. Recensement de 1994 : 6 197 Dime enregistrés en Éthiopie. Recensement de 2007 : 891 personnes seulement, reflétant soit une assimilation accélérée soit des problèmes de recensement. La langue Dime est classée comme en danger (threatened) par le Endangered Languages Project (ELCAT : 2 218 locuteurs estimés)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Avant leur conquête, les Dime vivaient dans un territoire de montagne défendu et relativement autonome. Leur organisation sociale repose sur des anciens de clan et des pratiques religieuses communautaires centrées sur le culte du Dieu suprême Saagu. La société est structurée par des relations de parenté et des hiérarchies rituelles.",
+      "clanOrganization": "La société Dime comprend des unités claniques dont les relations sont codifiées par des rituels d'alliance (Naali). Le processus d'alliance Naali nécessite deux rituels distincts dans les maisons des deux parties, séparés par trois mois à un an. Des objets rituels appelés kofu sont brisés et partagés lors de ces cérémonies, et les deux parties ne peuvent pas se parler directement jusqu'à l'accomplissement du second rituel.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Des personnages rituels spécialisés appelés geima jouent des rôles d'assistants auprès des chefs (koichiezi) et servent d'intermédiaires lors des funérailles. Les geima sont prédéterminés pour servir un chef particulier. Leur rôle mémoriel est central : les anciens geima conservent la mémoire des événements passés, les généalogies précises et les noms des Saiklyasu successifs.",
+      "religiousAuthority": "Les Dime adorent un Être suprême Créateur appelé Saagu, à la fois désigné comme Dieu et comme ciel. Les anciens versent des libations et offrent des prières à Saagu en cas de besoin. La cosmologie Dime inclut un mythe d'origine selon lequel le ciel et la terre étaient autrefois proches jusqu'à ce que la tromperie et le vol n'en provoquent la séparation, entraînant la mort."
+    },
+    "languages": {
+      "mainLanguage": "Dime (dim)",
+      "isoCodes": ["dim"],
+      "dialects": ["Us'a", "Gerfa"],
+      "vehicularRole": "La langue Dime (ISO 639-3 : dim, Glottolog : dime1237) appartient à la branche Omotic du sud de la famille afro-asiatique. Elle se divise en au moins deux dialectes : Us'a et Gerfa. Phonologiquement, le Dime se distingue parmi les langues Omotic par ses fricatives vélaires et uvulaires phonémiques. La langue n'a pas de système d'écriture et n'est pas enseignée dans les écoles locales, ce qui constitue un facteur de déclin. L'amharique est la langue véhiculaire nationale. Le Dime a une similarité lexicale de 47% avec le Banna."
+    },
+    "culture": {
+      "majorRites": "Les rituels d'alliance Naali créent des liens formels entre individus ou familles et nécessitent deux cérémonies successives avec des objets rituels (kofu) brisés et partagés. Ces alliances sont protégées par des interdits de communication directe pendant la période inter-rituelle. Les funérailles des chefs (koichiezi) sont supervisées par les geima désignés à cet effet.",
+      "symbols": "Le mont Smith (2 533 m) est le point culminant et le repère géographique central du territoire Dime. Le kofu (objet rituel brisé lors des alliances Naali) est un symbole matériel important des liens sociaux. Le miel d'abeilles, que les Dime produisent comme activité économique, est également culturellement valorisé.",
+      "artsAndMusic": null,
+      "spiritualities": "La religion Dime est centrée sur le culte de Saagu, Être suprême créateur et omniscient. Les pratiques incluent des libations et des prières des anciens. La mythologie cosmologique Dime relie les troubles sociaux (tromperie, vol) à la séparation du ciel et de la terre et à l'origine de la mort humaine. Une présence chrétienne évangélique est documentée (Joshua Project : 87% de chrétiens, 33,7% d'évangéliques)."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Avant la conquête éthiopienne, le territoire Dime était divisé en plus de vingt chefferies (clans) aux frontières et alliances mouvantes, selon l'anthropologue Haberland. Ces chefferies portaient les noms suivants, distribuées du sud-est au nord-ouest : Kolu, Adi, Muy, Tsiski, Maji (Kyerts, Gelkamo, Kuri), Wor, Say, Mash, Gobi, Aro, Duku, Dami, Kanta, Ezkolu, Kasi, Beru, Gay, Garo, Jabba, Bay.",
+      "relationsWithNeighbors": "Les voisins les plus proches des Dize sont les Me'en au nord et les peuples souvent appelés Surma au sud et à l'ouest. Les langues des Me'en et Surma appartiennent à la branche Surmic du Nilo-Saharien, contrairement au Dizin omotic. Des connexions culturelles existent avec les Dizi, les Sheko, les Nao, les Gimira, les Chara (Tsara), les Aari et les Basketo.",
+      "conflictsOrAlliances": "L'incorporation forcée dans l'Empire éthiopien sous Menelik II dans les années 1890 a été la rupture historique majeure pour les Dime. Les abus du système gebbar (servage), les razzias esclavagistes et les famines ont décimé la population. L'anthropologue Haberland documente que cette période a non seulement réduit les effectifs mais a profondément ébranlé toute la culture Dime.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 7000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2024 : 7 400 / Recensement éthiopien 2007 : 891 / ELCAT Endangered Languages Project : 2 218 locuteurs / Estimation composite 2025",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 7000, "percentage": 100 }
+      ]
+    },
+    "sources": [
+      "Dime language – Wikipedia EN, 2008 (https://en.wikipedia.org/wiki/Dime_language)",
+      "Dime in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/11559/ET)",
+      "Dimé – Endangered Languages Project ELCAT (http://elcat.colo.hawaii.edu/lang/5247)",
+      "Dime Language (DIM) – Ethnologue (https://www.ethnologue.com/language/dim/)",
+      "Appendix ISO 639-3 codes/Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
+      "Dizi people – 101 Last Tribes (https://www.101lasttribes.com/tribes/dizi.html)",
+      "Ethiopians – Wikipedia EN, recensements 1994 et 2007 (https://en.wikipedia.org/wiki/Ethiopians)",
+      "Omotic languages – Encyclopaedia Britannica (https://www.britannica.com/topic/Omotic-languages)"
+    ]
+  }
+}

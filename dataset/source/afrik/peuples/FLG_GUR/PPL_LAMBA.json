@@ -1,0 +1,82 @@
+{
+  "id": "PPL_LAMBA",
+  "nameMain": "Lamba",
+  "languageFamilyId": "FLG_GUR",
+  "currentCountries": ["TGO", "BEN", "GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Lamba",
+      "selfAppellation": "Lama",
+      "exonyms": ["Lamba", "Namba", "Losso"],
+      "originOfExonyms": "Les Lamba se désignent eux-mêmes et désignent leur langue par le terme Lama. La forme Lamba est la transcription française introduite par l'administration coloniale allemande puis française et qui demeure en usage officiel au Togo et au Bénin. Le terme Namba est une variante régionale. L'appellation Losso a été attribuée par les coloniaux à tous les habitants du District de Doufelgou (dont les Lamba et les Nawdba), et les Lamba de cette zone sont encore fréquemment appelés Losso, bien que Lama et Losso soient des populations distinctes aux langues différentes.",
+      "whyProblematic": "La confusion entre Lamba (Lama) et Losso dans le District de Doufelgou résulte d'une classification coloniale erronée. Ces deux populations ont exercé une influence mutuelle mais leurs langues sont différentes et ne se ressemblent pas. Par ailleurs, les Lamba du Togo ne doivent pas être confondus avec les Lamba de la RDC (peuple Bantu distinct).",
+      "contemporaryUsage": "L'appellation Lamba est utilisée dans l'administration togolaise et béninoise. Lama est l'endonyme préféré dans les contextes linguistiques et culturels. La distinction avec les Losso est reconnue dans les études ethnographiques contemporaines."
+    },
+    "ethnicities": ["Lamba", "Lama"],
+    "origins": {
+      "ancientOrigins": "Les Lamba sont considérés comme autochtones de leur zone de résidence actuelle, descendants de l'ancien peuple Lama. Des mégalithes et des poteries anciennes attestent de leur présence très ancienne dans les montagnes du Togo et la vallée de la Kéran. Comme les Kabre voisins et apparentés, ils revendiquent une ascendance de l'ancien peuple Lama autochtone.",
+      "formationPeriod": "Peuplement ancien et stable dans les montagnes du nord Togo. La société Lamba se forme sans chef centralisé : avant la colonisation, il n'existait que des chefs rituels au niveau de chaque groupe familial, et des groupes de voisinage (tegu) formés pour la défense commune. Les classes d'âge constituent le principal mécanisme d'organisation collective.",
+      "migrationRoutes": [
+        "Migrations vers le sud du Togo le long de la route nationale No. 1 (axe Sokodé-Notsé) en quête de terres fertiles",
+        "Migration vers les capitales (Lomé, Cotonou) pour l'emploi salarié",
+        "Présence diasporique dans les régions Centrale et des Plateaux du Togo"
+      ],
+      "historicalSettlementZones": [
+        "Centre et ouest du District de Kéran, région de Kara (nord du Togo)",
+        "Chaîne de Défalé, Monts du Togo",
+        "Parties occidentale et orientale du District de Doufelgou (Niamtougou : villages de Yaka et Agbandé)",
+        "Département de l'Atakora (autour de Boucoumbé) et Donga (Djougou, Bassila), nord du Bénin"
+      ],
+      "unificationsOrDivisions": "Les Lamba sont subdivisés en quatre groupes régionaux distincts. Les communautés de Lamba et de Losso sont souvent imbriquées géographiquement, source de confusion historique. La colonisation allemande puis française a introduit une hiérarchie de chefs qui intègre les communautés Lamba dans l'administration nationale togolaise.",
+      "externalInfluences": "Influence des coloniaux allemands (armée coloniale) puis français sur l'organisation politique (introduction d'une chefferie formelle). Présence missionnaire chrétienne. Pression d'islamisation limitée. Migrations économiques vers le sud du Togo et les capitales régionales ont diversifié les contacts culturels.",
+      "majorHistoricalEvents": "Présence dans les armées coloniales allemandes, britanniques et françaises. Après les indépendances, service dans les armées togolaise et béninoise. Introduction par les coloniaux allemands d'une hiérarchie de chefs reprise et développée par l'administration française, structurant les communautés dans l'administration nationale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Société égalitaire sans autorité politique centralisée avant la colonisation. Seuls des chefs rituels existaient au niveau de chaque groupe familial. Des groupes de voisinage (tegu) s'unissaient ponctuellement pour la défense ou l'attaque. La colonisation allemande, puis française, a introduit une hiérarchie de chefferie formelle qui intègre les communautés Lamba à l'administration nationale du Togo.",
+      "clanOrganization": "Descente patrilinéaire. Les homesteads (foyers) sont séparés les uns des autres par des champs, chaque famille constituant une unité économique autonome. L'organisation sociale est fortement influencée par les classes d'âge (age-sets).",
+      "roleOfLineages": "Les lignages patrilinéaires structurent l'héritage foncier, la transmission des droits et des responsabilités. La gestion des terres et les relations intrafamiliales relèvent des chefs de famille patrilinéaires.",
+      "religiousAuthority": "Pratiques animistes traditionnelles. Les chefs rituels familiaux gèrent les relations avec les ancêtres et les esprits. La religion traditionnelle reste majoritaire, avec une présence chrétienne significative dans les zones évangélisées."
+    },
+    "languages": {
+      "mainLanguage": "Lama",
+      "isoCodes": ["lam"],
+      "dialects": [
+        "Parler du District de Kéran (Kanté)",
+        "Parler du District de Doufelgou (Niamtougou)",
+        "Parler de l'Atakora (Boucoumbé, Bénin)",
+        "Parler de la Donga (Djougou, Bénin)"
+      ],
+      "vehicularRole": "Le Lama est une collection de dialectes étroitement apparentés regroupés sous un même code ISO (lam). La langue la plus proche est le Kabiyé, parlé dans les districts de Kozah et Binah. Lama et Kabiyé sont classés dans le groupe Grusi oriental des langues Gur (Niger-Congo). Ce cluster linguistique (Lama, Kabiyé, Tem/Cotokoli, Bagou-Koussountou, Lukpa, Delo, Chala) représente 28% de la population du Togo, second groupe le plus parlé après le cluster Gbé. Le français (Togo) et l'anglais servent de langues officielles."
+    },
+    "culture": {
+      "majorRites": "Luttes traditionnelles (wrestling) pratiquées par les garçons de la première classe d'âge : pratique caractéristique des Lamba et des Kabre, connue dans tout le Togo. Les classes d'âge structurent les étapes de la vie sociale et rituelle. Cérémonies agricoles liées au mil et au sorgho. Rites funéraires et de deuil.",
+      "symbols": "La lutte traditionnelle est le symbole identitaire le plus fort. Le mil et le sorgho, base alimentaire, symbolisent la subsistance et la cohésion communautaire. Les mégalithes et poteries anciennes témoignent de l'ancienneté de la présence Lama.",
+      "artsAndMusic": "Statuettes Lamba mentionnées dans les collections anthropologiques ; utilisées principalement dans trois contextes rituels. Art de la parole et tradition orale. Brassage de bière épaisse de sorgho à faible teneur alcoolique (pratique culturale importante). Musique liée aux rites d'âge et aux cérémonies agricoles.",
+      "spiritualities": "Animisme traditionnel prépondérant. Culte des ancêtres. Chefs rituels au niveau familial gérant les relations avec les esprits. Présence chrétienne (catholique, protestante) croissante. Présence islamique minoritaire."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Lamba n'ont pas constitué de royaumes centralisés. La société était fondée sur l'égalitarisme et les structures de défense coopérative entre villages voisins. La chefferie formelle est une création coloniale.",
+      "relationsWithNeighbors": "Voisinage étroit avec les Kabre (peuple apparenté, langue proche). Coexistence et influence mutuelle avec les Losso (Nawdba) du District de Doufelgou. Relations avec les Kotokoli (Tem) dans la région de Sokodé. Les Lamba ont migré vers les zones de peuplement d'autres groupes ethniques au sud du Togo.",
+      "conflictsOrAlliances": "Alliances défensives entre groupes de voisinage (tegu) contre des menaces extérieures. Participation aux armées coloniales allemandes, britanniques et françaises. Service post-indépendance dans les armées nationales togolaise et béninoise.",
+      "diaspora": "Migrations internes au Togo vers l'axe Sokodé-Notsé et vers Lomé. Diaspora à Cotonou (Bénin). Présence dans les zones frontalières du Ghana. Communautés diasporiques dans les régions Centrale et des Plateaux du Togo."
+    },
+    "demography": {
+      "totalPopulation": 451000,
+      "referenceYear": 2025,
+      "source": "Joshua Project – Lama people group in all countries (2025) : Togo 333 000, Bénin 114 000, Ghana 3 600",
+      "distributionByCountry": [
+        { "country": "TGO", "population": 333000 },
+        { "country": "BEN", "population": 114000 },
+        { "country": "GHA", "population": 3600 }
+      ]
+    },
+    "sources": [
+      "Lamba people – Wikipedia EN, 2008 (https://en.wikipedia.org/wiki/Lamba_people)",
+      "Lama people group in all countries – Joshua Project, 2025 (https://joshuaproject.net/people_groups/18887)",
+      "Lama in Togo – Joshua Project, 2024 (https://joshuaproject.net/people_groups/18887/TO)",
+      "Lamba people – Africa 101 Last Tribes (http://www.101lasttribes.com/tribes/lamba_togo.html)",
+      "Togo – Wikipedia EN (section Adele and Lamba peoples) (https://en.wikipedia.org/wiki/Togo)",
+      "Togo people groups – Joshua Project (https://joshuaproject.net/countries/to)"
+    ]
+  }
+}

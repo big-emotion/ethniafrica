@@ -1,0 +1,119 @@
+{
+  "id": "PPL_SUSU",
+  "nameMain": "Susu",
+  "languageFamilyId": "FLG_MANDE",
+  "currentCountries": ["GIN", "SLE", "SEN", "GNB", "GMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Susu",
+      "selfAppellation": "Sosoxui / Soso / Susu",
+      "exonyms": ["Soussou", "Susa", "Sosoe", "Sosokhoui"],
+      "originOfExonyms": "Le terme Soussou est la transcription francaise du nom soninke/mande d'origine, utilise notamment dans les sources coloniales et francophones de Guinee. Sosoe et Sosokhoui sont des variantes phonetiques du nom propre que ce peuple se donne lui-meme (Sosoxui). Le mot Susu ou Soso derive selon certaines sources du terme Susuwi, signifiant cheval ou cavalier dans la langue, reference possible a une elite guerriere montee.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Susu et Soussou sont les termes les plus utilises en Guinee et en Sierra Leone respectivement dans les contextes francophones et anglophones. Soso est la forme la plus proche de l'endonyme. La Guinee tire son nom du mot susu designant femme selon une etymologie couramment citee.",
+      "linguisticFamily": "FLG_MANDE",
+      "ethnoLinguisticGroup": "Soso-Yalunka (branche Mande de la famille Niger-Congo)",
+      "historicalRegion": "Guinee cotiere et plateau du Fouta-Djalon (Guinee actuelle); Conakry, Kindia, Dubreka, Kambia (Sierra Leone)",
+      "currentCountries": ["GIN", "SLE", "SEN", "GNB", "GMB"]
+    },
+    "ethnicities": [
+      "Susu de la region de Conakry (cote atlantique de Guinee, groupe le plus nombreux et dominant)",
+      "Susu de Kindia (centre commercial et politique historique, chef Morlaye Sylla documente au 19e siecle)",
+      "Susu de Dubreka (royaume de Dubreka, fonde par Soumba Toumany; Bale Demba signe le protectorat francais en 1880)",
+      "Susu de Kambia (nord-ouest de la Sierra Leone, district de Kambia)",
+      "Susu du Fouta-Djalon (groupes avant la separation avec les Yalunka au 18e siecle)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Susu sont consideres comme issus des Soninkes de l'Empire de Wagadu (Ghana antique). Initialement, ils etaient une fraction soninke constituee de forgerons qui refusaient de se convertir a l'islam, trait distinctif dans un contexte de forte islamisation. Ils partagent un ancetre commun avec les Yalunka (Dialonke), dont ils se sont separes sous la pression des invasions peules au 18e siecle.",
+      "formationPeriod": "Au 12e siecle, lors du declin de l'Empire du Ghana, les Susu migrerent vers le sud et fonderent une capitale appelee Soso (ou Sosso) dans la region montagneuse de Koulikoro (Mali actuel). Ils formerent l'Empire du Sosso sous Soumaoro Kante (13e siecle) avant d'etre defaits par l'Empire du Mali (bataille de Kirina, vers 1235). Au 15e siecle, avec la desintegration de l'Empire du Mali, ils migrerent vers l'ouest vers le plateau du Fouta-Djalon de Guinee, alors habite par les Yalunka.",
+      "migrationRoutes": [
+        "Migration depuis Wagadu (Empire du Ghana) vers le sud, fondation de Sosso pres de Koulikoro (12e siecle)",
+        "Repli vers l'ouest apres la defaite de l'Empire du Sosso (13e siecle, bataille de Kirina)",
+        "Migration vers le Fouta-Djalon (15e siecle) avec la desintegration de l'Empire du Mali",
+        "Expansion vers le sud et l'ouest a la suite des invasions peules (18e siecle): vers la cote atlantique guinéenne",
+        "Assimilation et absorption des peuples cotieres (Nalu, Baga, Landouma) dans la region de Conakry"
+      ],
+      "historicalSettlementZones": [
+        "Sosso/Koulikoro (Mali actuel): capital originelle de l'Empire du Sosso (12e siecle)",
+        "Fouta-Djalon (Guinee): habitation commune avec les Yalunka avant la separation (15e-18e siecle)",
+        "Plaines cotieres de Guinee: Conakry, Dubreka, Kindia, Boffa, Forechiah (apres 18e siecle)",
+        "Estuaire de la cote atlantique jusqu'au nord de la Sierra Leone (district de Kambia)",
+        "Region de Kambia et nord-ouest de la Sierra Leone"
+      ],
+      "unificationsOrDivisions": "Les Yalunka et les Susu etaient une meme entite dans le Fouta-Djalon avant le 18e siecle. Les invasions peules (jihad de la Guinee, a partir des annees 1720) les separerent: les Susu se deplacarent vers le sud et les plaines cotieres, tandis que les Yalunka resterent dans les montagnes. Les Susu absorberent et assimilerent les peuples cotieres (Nalu, Baga, Landouma) au cours de leur expansion. Les chefferies de Dubreka et Kindia etaient les principaux centres politiques susu avant la colonisation francaise.",
+      "externalInfluences": "Jihad peul du Fouta-Djalon (a partir de 1722): principale pression qui poussa les Susu vers les plaines cotieres et accelera leur conversion a l'islam. Les Portugais (15e-16e siecle) documentent les premiers peuples susu et yalunka: Valentim Fernandes et Duarte Pacheco Pereira (1505-1508) decrivent le royaume animiste de Jalo Concho. Colonisation francaise (fin du 19e siecle): les Susu demanderent le soutien francais contre les Temne (alliés aux Britanniques), conduisant les regions susu a rejoindre l'empire colonial francais. Role politique important en Guinee independante.",
+      "majorHistoricalEvents": "Formation de l'Empire du Sosso sous Soumaoro Kante (12e-13e siecle). Bataille de Kirina et defaite du Sosso (vers 1235). Premiere mention historique europeenne du peuple par Valentim Fernandes et Duarte Pacheco Pereira (1505-1508). Jihad peul du Fouta-Djalon (1720s): catalyseur de la migration susu vers la cote. Royaume de Dubreka: Bale Demba signe un accord de protectorat avec la France (1880). Dubreka et Kindia comme centres politiques susu sous la colonisation. Independance de la Guinee (1958): la Guinee est le seul territoire d'Afrique de l'Ouest francophone a voter Non a l'adhesion a la Communaute francaise sous de Gaulle, sous Alpha Conde et Sekou Toure (groupe ethnique peul/soussou dominant dans la capitale)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme politique decentralise base sur l'autorite des lignages, la legitimite islamique et les reseaux commerciaux. Organisation en chefferies autonomes (chefferies de Dubreka et Kindia comme centres majeurs). Le manga (chef) de Dubreka etait le titre donne au dirigeant de la chefferie de Dubreka. Societe patrilineaire. Les Susu ont joue un role politique important en Guinee moderne.",
+      "clanOrganization": "Systeme de castes (nyamakala, naxamala selon les regions, galabbolalauba) lié a l'esclavage historique en Sierra Leone. Castes artisanales: forgerons (ancetre fondateur), travailleurs du cuir, musiciens, bijoutiers, charpentiers, bardes (Yeliba). Les forgerons ont une origine particuliere dans l'identite susu (clan fondateur de forgerons). Familles etendues vivant proches et s'entraidant dans les activites sociales et economiques.",
+      "ageClassSystems": "La societe Bondo (variante de la societe Sande) organise l'initiation des jeunes filles: elle instille les attitudes relatives a l'age adulte, discute de la fertilite, de la moralite et de la sexualite correcte, et veille au bien-etre de ses membres tout au long de leur vie.",
+      "roleOfLineages": "Societe patrilineaire: les hommes travaillent les champs de riz, peche et commerce; les femmes cuisinent, s'occupent des enfants et font du petit commerce (legumes). Les lignages determinent le statut social et les alliances. Les hommes vivent avec leurs familles etendues dans des maisons de boue ou de blocs de ciment.",
+      "religiousAuthority": "Islam sunnite profondement enracine (plus de 99% de musulmans selon Joshua Project). Converti de l'animisme aux 17e-18e siecles sous l'influence des jihads peuls du Fouta-Djalon. La pratique islamique structure toute la vie sociale: prieres, jeune du Ramadan, Aid el-Fitr (celebre avec habits traditionnels et bazin) comme fete principale. Les imams et marabouts exercent une autorite morale et religieuse centrale. La societe Bondo maintient des pratiques de socialisation traditionnelles complementaires a l'islam."
+    },
+    "languages": {
+      "mainLanguage": "Susu (Sosoxui)",
+      "isoCodes": ["sus"],
+      "dialects": [
+        "Susu de la cote (Conakry, Dubreka, Kindia): dialecte de reference, influence de nombreuses langues de contact",
+        "Susu de l'interieur (Fouta-Djalon occidental): conserve des traits plus archaiques",
+        "Susu de la Sierra Leone (district de Kambia): variante avec influences temne et krio"
+      ],
+      "vehicularRole": "Le susu est l'une des langues nationales de la Guinee et la principale langue vehiculaire de la region cotiere (Conakry et ses environs). En Sierra Leone, il est parle dans le district de Kambia au nord-ouest. Le susu a historiquement servi de langue de commerce le long de la cote guinéenne. Il est etroitement apparente au yalunka (dialonke). La Guinee (pays) tire son nom du mot susu pour femme selon une etymologie couramment citee."
+    },
+    "culture": {
+      "majorRites": "Mariage arrange au sein des reseaux familiaux elargis; polygynie pratiquee selon les traditions islamiques. Societe Bondo (feminine): initiation des jeunes filles a l'age adulte, transmission des valeurs de fertilite, moralite et relations sociales; la societe veille au bien-etre de ses membres tout au long de leur vie. Circumcision masculine: rite de passage important marque par des festivites communautaires. Celebrations islamiques: le Ramadan est central, l'Aid el-Fitr est la fete la plus importante, celebree avec les habits traditionnels et les bazins (tissus de qualite). Le Hajj est tres valorise socialement.",
+      "symbols": "Le bazin (tissu de coton brillant): port lors des grandes occasions islamiques et des ceremonies, symbole du statut et de la rigueur religieuse. Les maisons en boue ou blocs de ciment entourees de familles etendues symbolisent la centralite de la famille. Le riz (culture principale) est le symbole de la subsistance et de l'identite agricole susu.",
+      "artsAndMusic": "Musique traditionnelle, danse et narration orale au coeur de la vie culturelle susu: ces pratiques preservent l'histoire, les valeurs sociales et les pratiques religieuses. Les bardes (Yeliba) appartiennent a la caste des musiciens et griots, gardiens de la memoire historique et genealogique. Musiciens notables: Mohamed Bangoura (percussionniste), Momo Wandel Soumah, Macire Sylla. Artisanat: les femmes produisent de l'huile de palme; artisanat de forge (culture des forgerons comme clan fondateur). Caste d'artisans specialises: bijoutiers, travailleurs du cuir, charpentiers.",
+      "spiritualities": "Islam sunnite (plus de 99% selon Joshua Project): religion absolument dominante, adoptee progressivement sous l'influence des jihads peuls du Fouta-Djalon (17e-18e siecle) apres une longue periode d'animisme. L'identite susu est profondement liee a l'islam; les fetes, les pratiques matrimoniales, l'education et la vie publique sont organises autour de la foi islamique. La societe Bondo maintient des pratiques traditionnelles de socialisation et de protection des femmes complementaires a l'islam. Des traces marginales de croyances animistes anterieures subsistent dans certaines pratiques de protection et de magie."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Empire du Sosso (12e-13e siecle): forme par les ancetres soninke-susu, gouverne par Soumaoro Kante (Sumanguru Kante); detruisit l'Empire du Ghana et domina une grande partie de l'Afrique de l'Ouest avant d'etre defait par Soundiata Keita. Royaume de Dubreka (fonde par Soumba Toumany): chefferie susu importante sur la cote guinéenne; son dirigeant Bale Demba conclut un accord de protectorat avec la France en 1880. Kindia: grand centre politique et commercial susu, chef Morlaye Sylla documente dans les archives francaises du 19e siecle. Royaume de Jalo Concho: documente par les Portugais (1505-1508), premier Etat susu-yalunka mentionne dans les sources europeennes.",
+      "relationsWithNeighbors": "Relations historiques etroites avec les Yalunka (meme groupe avant la separation au 18e siecle). Assimilation des peuples cotieres (Nalu, Baga, Landouma) lors de l'expansion vers la cote atlantique. Conflits avec les Manes (15e-16e siecle, documentes par les Portugais). Guerres des Temne (fin 18e-19e siecle): les Temne s'allierent aux Britanniques contre les Susu; les Susu rechercherent le soutien francais, conduisant les regions susu a rejoindre l'empire colonial francais. Influence des Peuls (jihad, raids esclavagistes du Fouta-Djalon, conversion a l'islam). Contacts commerciaux avec les Mandinka (dont la langue influenca le susu) et les Soninkes.",
+      "conflictsOrAlliances": "Defaite de l'Empire du Sosso par Soundiata Keita (bataille de Kirina, vers 1235). Pression jihad peul du Fouta-Djalon (1720s et suivantes): causa la migration vers la cote et la conversion a l'islam. Alliance avec la France pour contrer la pression britannique et temne (fin 19e siecle). Accord de protectorat de Dubreka avec la France (1880). Incorporation dans l'empire colonial francais de Guinee (Guinee francaise).",
+      "diaspora": "Petites communautes susu en Guinee-Bissau (6 400 selon Joshua Project), au Senegal (55 000), en Gambie (5 200) et dans d'autres pays d'Afrique de l'Ouest. Pas de diaspora transatlantique historique massive documentee comparable a d'autres groupes mande. Migration vers les grandes villes de Guinee (Conakry) et vers l'etranger pour l'education et l'emploi."
+    },
+    "demography": {
+      "totalPopulation": 2858000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025): 2 857 600 total dans 5 pays (Guinee 2 585 000, Sierra Leone 206 000, Senegal 55 000, Gambie 5 200, Guinee-Bissau 6 400). PeopleGroups.org (2025): Susu de Guinee environ 2 760 000. Statistiques consolidees des deux sources.",
+      "distributionByCountry": [
+        {
+          "country": "GIN",
+          "population": 2585000,
+          "note": "Guinee: region cotiere (Conakry, Dubreka, Kindia, Coyah, Forecariah), groupe dominant de la capitale"
+        },
+        {
+          "country": "SLE",
+          "population": 206000,
+          "note": "Nord-ouest de la Sierra Leone, principalement district de Kambia"
+        },
+        {
+          "country": "SEN",
+          "population": 55000,
+          "note": "Senegal, communautes marchandes dans les villes"
+        },
+        {
+          "country": "GNB",
+          "population": 6400,
+          "note": "Guinee-Bissau, petites communautes"
+        },
+        {
+          "country": "GMB",
+          "population": 5200,
+          "note": "Gambie, communautes minoritaires"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Susu people. https://en.wikipedia.org/wiki/Susu_people",
+      "Wikipedia EN — Susu language. https://en.wikipedia.org/wiki/Susu_language",
+      "Joshua Project — Susu people group all countries (2025). https://joshuaproject.net/people_groups/15141",
+      "Joshua Project — Susu in Guinea-Bissau (2026). https://joshuaproject.net/people_groups/15141/PU",
+      "PeopleGroups.org — Susu of Guinea (PG013431). https://peoplegroups.org/people_groups/pg013431/",
+      "SIL Ethnologue — Susu language (sus). https://www.ethnologue.com/language/sus/",
+      "Rosetta Panglossia — Susu Language (sus). https://rosettapanglossia.longnow.org/index.php?title=Susu_Language_%28sus%29",
+      "SIL CEDS — ISO 639-3: Susu = sus. https://ceds.ed.gov/iso639-3LanguageCodev7.aspx"
+    ]
+  }
+}

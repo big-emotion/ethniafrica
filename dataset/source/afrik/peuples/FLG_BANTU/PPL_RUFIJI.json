@@ -1,0 +1,83 @@
+{
+  "id": "PPL_RUFIJI",
+  "nameMain": "Rufiji",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Rufiji",
+      "selfAppellation": "Warufiji",
+      "exonyms": [
+        "Waruiji",
+        "Fiji (forme abregee)",
+        "Rufiji-Ndengereko (classification linguistique)"
+      ],
+      "originOfExonyms": "Le nom Rufiji derive du fleuve Rufiji (Riviere Rufiji), l'un des plus grands fleuves de Tanzanie dont la vallee est le territoire ancestral du peuple. Le prefixe Wa- designe en swahili un peuple. La forme abregee Fiji est parfois utilisee dans certaines sources coloniales.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Rufiji est utilise couramment dans les contextes officiels tanzaniens et scientifiques. Warufiji est la forme swahili officielle.",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Bantu, sous-groupe Rufiji-Ruvuma, branche des langues de la cote nord-est du bassin du Congo",
+      "historicalRegion": "Delta du fleuve Rufiji, district de Rufiji, region de Pwani, cote centrale de Tanzanie",
+      "currentCountries": ["TZA"]
+    },
+    "ethnicities": ["Rufiji", "Warufiji"],
+    "origins": {
+      "ancientOrigins": "Les Rufiji font partie du sous-groupe linguistique Rufiji-Ruvuma du bantu de la cote nord-est. Leurs ancetres appartiennent aux proto-Ruvu, populations bantu qui s'etablirent dans la region du centre-est de la Tanzanie entre le VIe et le XIe siecle. Des etudes linguistiques (Rhonda M. Gonzales, 2008) indiquent que les proto-Ruvu, descendants des proto-Kaskazi du bassin des Grands Lacs, ont peuple la region de la vallee du Rufiji et du Ruvu depuis l'Antiquite tardive. La region etait deja peuplee de locuteurs bantu depuis l'ere de la metropole commerciale de Rhapta (I-VIIe siecles apr. J.-C.), situee probablement dans le delta du Rufiji.",
+      "formationPeriod": "L'identite rufiji comme groupe distinct s'est probablement consolidee apres la fragmentation des proto-Est-Ruvu (IXe-Xe siecles) qui ont donne naissance aux Rufiji, Ndengereko et groupes apparentes.",
+      "migrationRoutes": [
+        "Bassin des Grands Lacs (proto-Kaskazi) vers la cote est-africaine",
+        "Valle du Ruvu et Wami vers le delta du Rufiji"
+      ],
+      "historicalSettlementZones": [
+        "Delta du fleuve Rufiji (district de Rufiji, region de Pwani)",
+        "Zone littorale entre les collines Matumbi et la cote",
+        "Pres de Kibiti, Mchukivi et Bungu",
+        "Zones de mangroves du delta (22 villages dans le delta, selon le recensement 2015)"
+      ],
+      "unificationsOrDivisions": "Les Rufiji partagent des liens linguistiques proches avec les Ndengereko, Matumbi et Ngindo. Le delta du Rufiji a ete un carrefour commercial important depuis l'Antiquite. La revolution Maji Maji (1905-1907) a profondement marque la region : la revolte a eclate pres du fleuve Rufiji, dirigee initialement par les Matumbi de Nandete sous Kinjikitile Ngwale.",
+      "externalInfluences": "Commerce arabe via le delta du Rufiji depuis le XVIIIe siecle (poles de mangroves). Colonisation allemande (1885-1919). Revolte Maji Maji (1905-1907) contre le regime colonial allemand. Colonisation britannique (1919-1961). Depuis les annees 1980, modification du debit du fleuve Rufiji (crues de 1980 ayant change son cours vers le delta nord), permettant l'agriculture rizicole dans le delta.",
+      "majorHistoricalEvents": "Le delta du Rufiji est evoque comme site probable de la metropole de Rhapta (Ier siecle) selon l'Histoire de la Tanzanie. La revolte Maji Maji (1905-1907), une des plus grandes resistances a la colonisation en Afrique orientale, a debute dans la region du fleuve Rufiji. Le RAMSAR site Rufiji-Mafia-Kilwa (la plus grande foret de mangroves d'Afrique de l'Est, 52 255 hectares) est situe dans le delta."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation villageoise avec des chefs locaux. Pas de royaume centralise documente. Systeme d'organisation communautaire base sur les clans et les anciens.",
+      "clanOrganization": "Organisation clanique avec des lignages matrilineaires (caracteristique commune aux peuples du sous-groupe Est-Ruvu selon les etudes linguistiques de Gonzales). L'unite *ikungugo (groupement elargi de clans) est attestee chez les proto-Ouest-Ruvu apparentes.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lineages organisent l'acces aux terres agricoles et aux ressources de peche. La transmission des savoirs de peche et de gestion des mangroves se fait par les lineages.",
+      "religiousAuthority": "Ceremonies rituelles appelees *-tambiko (propitiation et reconciliation), terme partage avec tous les descendants proto-Ruvu. Islam sunnite dominant actuellement."
+    },
+    "languages": {
+      "mainLanguage": "Rufiji",
+      "isoCodes": ["rui"],
+      "dialects": [],
+      "vehicularRole": "Le swahili est la langue vehiculaire et nationale. Le rufiji est parle localement dans le district de Rufiji et les zones adjacentes. L'islam sunnite a renforce l'usage de l'arabe pour les pratiques religieuses."
+    },
+    "culture": {
+      "majorRites": "Ceremonies rituelles de propitiation ancestrale (tambiko). Pratiques liees aux cycles de peche et de riziculture dans le delta. Islam sunnite dominant avec integrations de pratiques traditionnelles.",
+      "symbols": "Le fleuve Rufiji et son delta sont le symbole central de l'identite rufiji. La foret de mangroves (mikoko en swahili, terme derive du son ko-ko du bois fendu selon la tradition locale) est un element identitaire fort.",
+      "artsAndMusic": "Artisanat lie aux ressources du delta : construction de pirogues, exploitation des mangroves. La peche est une activite culturellement centrale, transmise de generation en generation. Architecture en materiau local dans les villages du delta.",
+      "spiritualities": "Islam sunnite majoritaire, introduit par le commerce arabe depuis le XVIIIe-XIXe siecles. Persistance de croyances animistes liees aux esprits du fleuve et des ancetres. Les ceremonies *-tambiko de propitiation sont encore pratiquees."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferies locales sans royaume centralise. La region du Rufiji a toujours ete un carrefour de peuples distincts (Rufiji, Ndengereko, Matumbi, Ngindo).",
+      "relationsWithNeighbors": "Liens etroits avec les peuples linguistiquement apparentes : Ndengereko, Matumbi, Ngindo. Contact historique avec les marchands arabes utilisant le delta pour le commerce des poles de mangroves depuis le XVIIIe siecle.",
+      "conflictsOrAlliances": "Participation a la revolte Maji Maji (1905-1907), l'une des plus importantes resistances anti-coloniales de l'Afrique orientale allemande. La region du Rufiji etait un foyer de resistance. En 2006-2007, arrivee de pasteurs de la region de Mbarali (Mbeya) expulses, creant des conflits fonciers dans les villages d'Ikwiriri et Utete.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 250000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur le recensement 1987 (200 000 selon Wikipedia Rufiji people) et la croissance demographique tanzanienne. Le delta compte environ 12 000 personnes dependant directement de l'ecosysteme (recensement 2015, Wetlands International).",
+      "distributionByCountry": [{ "country": "TZA", "population": 250000 }]
+    },
+    "sources": [
+      "Rufiji people – Wikipedia (https://en.wikipedia.org/wiki/Rufiji_people)",
+      "Rufiji language – Wikipedia (https://en.wikipedia.org/wiki/Rufiji_language)",
+      "Rufiji of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg050319/)",
+      "RUFIJI DELTA: A HUB FOR MANGROVES – Wetlands International East Africa, 2018 (https://eastafrica.wetlands.org/rufiji-delta-a-hub-for-mangroves/)",
+      "A Tapestry of the Ruvu Past – Rhonda M. Gonzales, Columbia University Press / Gutenberg-E, 2008 (http://www.gutenberg-e.org/gonzales/pdf/gonzales-chapter6.pdf)",
+      "History of Tanzania – Wikipedia (https://en.wikipedia.org/wiki/History_of_Tanzania)",
+      "Rufiji – Indigenous Africa, 2020 (https://indigenousafrica.org/rufiji/)",
+      "ISO 639-3 Language Codes – National Center for Education Statistics (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)"
+    ]
+  }
+}

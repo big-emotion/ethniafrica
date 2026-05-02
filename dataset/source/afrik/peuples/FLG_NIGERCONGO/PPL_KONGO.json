@@ -1,0 +1,137 @@
+{
+  "id": "PPL_KONGO",
+  "nameMain": "Kongo",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["COG", "AGO", "GAB", "COD"],
+  "content": {
+    "appellations": {
+      "mainName": "Kongo",
+      "selfAppellation": "Bakongo (pluriel), Mukongo (singulier), Bisi Kongo, EsiKongo",
+      "exonyms": [
+        "Kongo (terme europeen, issu du nom du royaume)",
+        "Bacongo (variante orthographique)",
+        "Makongo"
+      ],
+      "originOfExonyms": "Le terme Kongo derive du nom du royaume du Kongo, fonde au 14e siecle. Les Europeens l'ont adopte des leur premiere rencontre avec le royaume en 1483. Le terme Bakongo, avec le prefixe bantou Ba- (pluriel de personnes), s'est impose au 20e siecle pour designer l'ensemble de la communaute parlant le kikongo.",
+      "whyProblematic": "Le terme Bakongo recouvre des realites tres diverses : il designe a la fois les descendants directs du royaume du Kongo et les locuteurs du kikongo au sens large, incluant des groupes comme les Vili, les Lari ou les Yombe qui ont des identites propres distinctes. La colonisation a fixe des frontieres qui ont fragmente le peuple kongo entre quatre Etats.",
+      "contemporaryUsage": "Le terme Bakongo est couramment utilise en francais, portugais et en kikongo. Il s'applique aux populations de l'Angola du Nord-Ouest, du sud de la Republique du Congo, de l'ouest de la RDC et du sud-ouest du Gabon. Les sous-groupes privilegient souvent leurs appellations specifiques (Lari, Vili, Yombe, Sundi, etc.).",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou Zone H (groupe H.10-H.16)",
+      "historicalRegion": "Region du Bas-Congo : embouchure du fleuve Congo, Angola du Nord-Ouest, sud de la Republique du Congo, ouest de la RDC, sud-ouest du Gabon",
+      "currentCountries": ["COG", "AGO", "GAB", "COD"]
+    },
+    "ethnicities": [
+      "Beembe (Congo-Brazzaville, region de la Bouenza)",
+      "Bwende (Kongo Central, RDC)",
+      "Vili / Bavili (littoral, Pointe-Noire, Gabon)",
+      "Sundi (region de la Soyo et du Pool)",
+      "Yombe / Bayombe (foret du Mayombe, Congo, Angola, Gabon)",
+      "Dondo (region de Boko, Congo-Brazzaville)",
+      "Lari / Laari (region du Pool, Brazzaville)",
+      "Koongo / Kisikongo (region de Mbanza Kongo, Angola)",
+      "Manianga (Kongo Central, RDC)",
+      "Ntandu (Kongo Central, RDC)",
+      "Ndibu (Kongo Central, RDC)",
+      "Zombo / Bazombo (Angola, nord-ouest)",
+      "Woyo (Cabinda, Angola)",
+      "Solongo / Nsolongo (bande cotiere angola-RDC)",
+      "Kunyi (Niari, Congo-Brazzaville)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Bakongo descendent des populations bantoues qui ont migre depuis la region des Grands Lacs africains vers l'Afrique centrale occidentale entre 1000 av. J.-C. et 500 ap. J.-C. Des preuves archeologiques attestent d'une culture de la metallurgie du fer en Afrique centro-occidentale des 350 av. J.-C. Par le 13e siecle, trois grandes federations d'Etats existaient dans le bassin occidental du Congo : les Sept Royaumes de Kongo dia Nlaza a l'est, Mpemba au sud, et la confederation de Vungu, Kakongo et Ngoyo a l'ouest. Ces entites ont ete absorbees dans le Royaume du Kongo.",
+      "formationPeriod": "Le Royaume du Kongo est fonde vers 1380 par l'alliance entre Nimi a Nzima, souverain de Mpemba Kasi et de Vungu, et Nsaku Lau, souverain du royaume de Mbata. Son fils Lukeni lua Nimi (vers 1380-1420) etend le royaume vers le sud. L'identite Bakongo unifiee se consolide sous la monarchie du Kongo jusqu'au 17e siecle, avant d'etre fragmentee par la traite des esclaves et la colonisation.",
+      "migrationRoutes": [
+        "Migration banto de la region des Grands Lacs vers l'Afrique centrale occidentale (1er millenaire ap. J.-C.)",
+        "Expansion du Royaume du Kongo depuis Mbanza Kongo (actuel nord de l'Angola) vers le nord (fleuve Congo) et l'est (riviere Kwango)",
+        "Dispersion post-1665 apres la bataille de Mbwila et l'effondrement du royaume central",
+        "Migration de la diaspora atlantique via la traite negriere vers les Ameriques (16e-19e siecles)"
+      ],
+      "historicalSettlementZones": [
+        "Mbanza Kongo (actuel nord de l'Angola) : capitale historique du royaume",
+        "Region du Bas-Congo / Kongo Central (RDC) : coeur du territoire kongo",
+        "Region du Pool et du littoral sud (Republique du Congo) : zone Lari et Vili",
+        "Cabinda (Angola) : enclave peuplee par les Kongo Woyo et Kakongo",
+        "Foret du Mayombe (Congo, Angola, Gabon) : territoire Yombe",
+        "Nord de Luanda (Angola) : presence Kongo dans les provinces de Zaire et Uige"
+      ],
+      "unificationsOrDivisions": "Le Royaume du Kongo (14e-19e siecles) regroupait six provinces principales : Nsundi, Mpangu, Mbata, Soyo, Mbamba et Mpemba, sous l'autorite du Manikongo (Mwene Kongo). Des royaumes vassaux existaient : Loango, Kakongo, Ngoyo, Ndongo, Matamba. La bataille de Mbwila en 1665 contre les Portugais tue le roi Antonio I et declenche 40 ans de guerre civile entre les factions Kinlaza et Kimpanzu. La colonisation europeenne (1880-1960) fragmente le peuple kongo entre le Congo belge, le Moyen-Congo francais et l'Angola portugais.",
+      "externalInfluences": "Premier contact avec les Portugais en 1483 via Diogo Cao. Christianisation progressive depuis 1491 (bapteme du roi Nzinga a Nkuwu, alias Joao I). Integration dans le commerce atlantique d'ivoire et de cuivre, puis dans la traite negriere (16e-19e siecles). Resistance a la colonisation belge et francaise (fin 19e-debut 20e siecles). Mouvements messianiques : Antonianism de Dona Beatriz Kimpa Vita (debut 18e siecle), Kimbanguisme (Simon Kimbangu, 1921), Alliance des Bakongo (ABAKO, mouvement nationaliste congolais, annees 1950).",
+      "majorHistoricalEvents": "1483 : arrivee de Diogo Cao et premier contact avec les Portugais. 1491 : bapteme du Manikongo Nzinga a Nkuwu. 1509-1543 : regne d'Afonso I, apogee du royaume chretien du Kongo. 1568 : invasion des Jaga. 1665 : bataille de Mbwila, mort d'Antonio I, debut du declin. 1700-1706 : prophetesse Dona Beatriz Kimpa Vita prone la restauration du royaume ; brulee vive. 1878-1908 : partage colonial (EIC, AEF, Angola portugaise). 1921 : fondation du Kimbanguisme par Simon Kimbangu en RDC. 1956 : fondation de l'ABAKO par Joseph Kasa-Vubu."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Le Royaume du Kongo etait gouverne par le Manikongo (Mwene Kongo), elu par un conseil royal de 12 membres (ne mbanda-mbanda) repartis en trois categories : bureaucrates, electeurs et matriarches. L'unite de base etait le village (vata ou libata) dirige par un nkuluntu. Les villages etaient regroupes en petits Etats (wene) dirige par un mwene ou mani. Le roi nommait les gouverneurs provinciaux pour des mandats de trois ans. Au niveau local, les chefferies traditionnelles (sous-groupes) conservent un systeme de conseil des anciens.",
+      "clanOrganization": "La societe kongo est organisee en clans matrilineaires (makanda, singulier kanda). La descendance, l'identite et l'heritage sont determines par la ligne maternelle, ce qui distingue les Bakongo de nombreux autres peuples bantous. Chaque kanda possede ses propres regles sociales, terres ancestrales et chef de clan (mfumu makanda), elu selon sa richesse et ses qualites oratoires.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages matrilineaires (makanda) structurent l'organisation sociale, fonciere et politique. L'heritage des titres et des terres passe par la ligne maternelle. Ce systeme de descente matrilineaire est fondamental : un homme ne peut transmettre son statut a ses propres enfants, mais a ses neveux uterins. Les tensions entre clans rivaux ont ete une source majeure de conflits dynastiques au sein du Royaume du Kongo.",
+      "religiousAuthority": "Les nganga (guerisseurs-pretres, singulier nganga) sont les intercesseurs entre le monde des vivants et celui des morts. Ils manipulent les minkisi (charmes sacres, singulier nkisi) pour la guerison, la protection et la justice. Le kimbanguisme, fonde en 1921 par Simon Kimbangu, est devenu une eglise independante africaine majeure (Eglise de Jesus-Christ sur la Terre par son Prophete Simon Kimbangu) avec plusieurs millions de fideles en RDC, Congo et Angola."
+    },
+    "languages": {
+      "mainLanguage": "Kikongo",
+      "isoCodes": ["kon", "kng", "yom", "ldi", "vif"],
+      "dialects": [
+        "Koongo / Kisikongo (kng) : dialecte central, region de Mbanza Kongo (Angola)",
+        "Kiyombe / Yombe (yom) : dialecte de la foret du Mayombe",
+        "Laari / Ladi (ldi) : dialecte du Pool, region de Brazzaville",
+        "Civili / Vili (vif) : dialecte du littoral, Pointe-Noire et Gabon",
+        "Kimanianga : dialecte du Kongo Central (RDC)",
+        "Kintandu / Ntandu : dialecte du Kongo Central occidental",
+        "Ibinda / Woyo : dialecte de Cabinda",
+        "Kituba / Kikongo ya Leta : creole a base kikongo, langue vehiculaire en RDC et Congo"
+      ],
+      "vehicularRole": "Le kikongo (macrolangue, ISO 639-3 : kon) est parle par environ 7 millions de locuteurs natifs en Angola, RDC, Congo et Gabon, plus 5 millions de locuteurs secondaires. Le Kituba (kikongo ya leta), creole a base de kikongo, est l'une des quatre langues nationales de la RDC et est largement utilise en Republique du Congo. Le kikongo a exerce une influence sur plusieurs langues creoles des Ameriques : Palenquero (Colombie), Saramaccan (Suriname), creoles haïtien et jamaïcain."
+    },
+    "culture": {
+      "majorRites": "Rites d'initiation : la circoncision (lukumbu) est pratiquee pour les garcons comme rite de passage vers l'age adulte, accompagnee d'une periode de retraite et d'enseignement des regles sociales. Rites funeraires : le deuil (lufwa) implique des ceremonies de plusieurs jours, des veillees (mabilu), des repas collectifs et des lamentations rituelles (misambu). Les ancetres sont pries de proteger les vivants. Rites agricoles : invocations avant les semailles et les recoltes (mfumu nsi, chef de terre, preside les ceremonies). Rites de guerison : les nganga utilisent les minkisi (charmes sacres) pour diagnostiquer et traiter les maladies, distinguant celles d'origine naturelle de celles causees par des forces spirituelles (ndoki, sorcellerie).",
+      "symbols": "Le Dikenga (ou Yowa), cosmogramme kongo : cercle divise en quatre par une croix representant les quatre moments du soleil (lever, zenith, coucher, minuit) correspondant aux quatre stades de la vie (naissance, maturite, mort, renaissance). Ce symbole fondamental organise la cosmologie kongo et a ete retrouve dans des sites de la diaspora africaine-americaine. Le nkisi nkonde : figure de clou en bois, percee de lames ou de pointes, activee par un nganga pour enforcer des serments ou punir des injustes. La couleur blanche symbolise la mort et le monde des ancetres (mpemba, kaolin blanc).",
+      "artsAndMusic": "Sculpture : les minkisi figuratifs (nkisi nkonde, nkisi mbumba) sont parmi les oeuvres les plus celebres de l'art africain, faits de bois et ornes de substances medicinales, tissu, clous ou metaux. Poterie feminine traditionnelle. Musique : le likembe (sanza ou mbira, instrument a lamelles) est un instrument traditionnel kongo. La rumba congolaise, influencee par les rythmes kongo apportes en Cuba via la diaspora, est revenue en Afrique centrale et a influence la musique moderne (soukous). Arsenio Rodriguez, musicien afro-cubain fondateur de la rumba moderne, etait d'origine kongo. Danse : les danses collectives accompagnent tous les rites (mariages, funerailles, moissons). Litterature orale : contes (nsamu), proverbes (madiela) et chants rituels constituent un riche patrimoine oral.",
+      "spiritualities": "La cosmologie kongo est dualiste : le monde des vivants (nza yayi) et le monde des morts (mpemba) sont des miroirs l'un de l'autre, separes par l'eau (kalunga). Nzambi (ou Nzambi Mpungu) est le dieu supreme, createur tout-puissant. Les simbi sont des esprits aquatiques gardiens des sources et des cours d'eau. Les nkita et les kilundu sont d'autres categories d'esprits. Les ancetres (bakulu) jouent un role essentiel comme protecteurs et comme juges des actions des vivants. Le kimbanguisme, mouvement syncrétique fonde par Simon Kimbangu en 1921, melange christianisme et traditions kongo et compte plusieurs millions de fideles. Le catholicisme est profondement enracine depuis le 16e siecle, souvent en syncrétisme avec les croyances traditionnelles."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Le Royaume du Kongo (vers 1380-1914) fut l'un des Etats les plus puissants d'Afrique subsaharienne precoloniale. A son apogee, il couvrait 130 000 km2 et comptait plus de 500 000 habitants dans son coeur territorial, 780 000 pour l'ensemble du royaume. Sa capitale Mbanza Kongo (rebaptisee Sao Salvador) etait une metropole de 100 000 habitants au 17e siecle. Le royaume etait divise en six provinces principales (Nsundi, Mpangu, Mbata, Soyo, Mbamba, Mpemba) et contrôlait des royaumes vassaux (Loango, Kakongo, Ngoyo, Ndongo, Matamba). Des royaumes kongo post-Mbwila ont survecu comme Loango au nord du fleuve Congo.",
+      "relationsWithNeighbors": "Relations commerciales et parfois conflictuelles avec les Teke au nord, les Mbundu (Kimbundu) au sud en Angola, les Chokwe et Lunda a l'est. Alliance, puis tensions croissantes avec le Portugal (1483-1665). Alliance avec les Pays-Bas contre le Portugal (1641-1648). Relations complexes avec les Ovimbundu et les Ndongo. En periode contemporaine, rivalites politiques entre les sous-groupes kongo (Lari vs Vili en Republique du Congo, Bakongo vs MPLA en Angola).",
+      "conflictsOrAlliances": "1491 : alliance et christianisation avec le Portugal sous Joao I. 1509 : victoire d'Afonso I sur son demi-frere Mpanzu a Kitima, consolidant le pouvoir avec soutien portugais. 1568 : invasion des Jaga (Yaka), alliance kongo-portugaise pour repousser l'invasion. 1641-1648 : alliance kongo-neerlandaise, prise de Luanda par les Hollandais. 1665 : bataille de Mbwila (Ulanga), defaite kongo face au Portugal, mort d'Antonio I. 40 ans de guerre civile entre factions Kinlaza et Kimpanzu. 1670 : victoire kongo a Kitombo contre le Portugal. 1921 : fondation du kimbanguisme, repression coloniale belge. 1956-1960 : ABAKO de Joseph Kasa-Vubu, role central dans l'independance du Congo-Leopoldville.",
+      "diaspora": "La traite atlantique a deporte des centaines de milliers de Bakongo vers les Ameriques entre le 16e et le 19e siecle, notamment au Bresil, en Angola, Cuba et dans les colonies francaises. Leur influence est perceptible dans des traditions comme le Palo Mayombe cubain, le Candomble Bantu bresilien, le Kumina jamaicain, le Hoodoo americain et le Winti surinamien. Le cosmogramme kongo (Dikenga) a ete retrouve dans des eglises africaines-americaines historiques. En periode contemporaine, d'importantes communautes bakongo vivent dans les capitales d'Afrique centrale (Kinshasa, Brazzaville, Luanda) et dans la diaspora en Europe et en Amerique du Nord."
+    },
+    "demography": {
+      "totalPopulation": 10000000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025) : population globale Kongo estimee a 6 700 000 (definition restreinte aux locuteurs du Koongo/kng). En incluant tous les sous-groupes (Lari, Vili, Yombe, Manianga, Ntandu, Woyo, Zombo, etc.), les estimations atteignent 10 a 12 millions. Sources : SIL Ethnologue (2024), Minority Rights Group International, CIA World Factbook, recensements nationaux Angola, RDC et Congo.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 4500000,
+          "note": "Province du Kongo Central (Bas-Congo) : environ 5 441 000 habitants (Joshua Project 2025), dont 70-80% Bakongo. Presence aussi a Kinshasa (diaspora importante)."
+        },
+        {
+          "country": "COG",
+          "population": 2600000,
+          "note": "Groupe ethnique le plus important du pays (environ 41% de la population, soit ~2,6 millions). Concentres au sud : regions du Pool, Kouilou, Niari, Bouenza, Lekoumou. Sous-groupes principaux : Lari, Vili, Yombe, Sundi, Beembe."
+        },
+        {
+          "country": "AGO",
+          "population": 2500000,
+          "note": "Environ 13% de la population angolaise. Provinces du Nord-Ouest : Cabinda, Uige, Zaire, nord de Bengo et de Cuanza Norte. Sous-groupes : Koongo (Kisikongo), Zombo, Woyo, Solongo."
+        },
+        {
+          "country": "GAB",
+          "population": 400000,
+          "note": "Sud-ouest du Gabon, provinces de Nyanga et Ngounie. Sous-groupe principal : Vili (Bavili). Presence minoritaire."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Kongo people. https://en.wikipedia.org/wiki/Kongo_people",
+      "Wikipedia EN — Kingdom of Kongo. https://en.wikipedia.org/wiki/Kingdom_of_Kongo",
+      "Wikipedia EN — Kongo language. https://en.wikipedia.org/wiki/Kongo_language",
+      "SIL Ethnologue — Kongo macrolanguage (kon). https://www.ethnologue.com/language/kon/",
+      "SIL Ethnologue — Koongo (kng). https://www.ethnologue.com/language/kng/",
+      "Joshua Project — Kongo in Congo (Democratic Republic). https://joshuaproject.net/people_groups/12774/CG",
+      "Minority Rights Group International — Republic of Congo. https://minorityrights.org/country/republic-of-congo/",
+      "Minority Rights Group International — Bakongo and Cabindans in Angola. https://minorityrights.org/communities/bakongo-and-cabindans/",
+      "EBSCO Research Starters — Kongo (historical kingdom). https://www.ebsco.com/research-starters/history/kongo-historical-kingdom",
+      "101 Last Tribes — Kongo People. https://www.101lasttribes.com/tribes/kongo.html",
+      "Bamoun Collection — Between Two Worlds (minkisi). https://www.thebamouncollection.com/between-two-worlds",
+      "Immigration and Refugee Board of Canada — Bakongo in Angola (2024). https://www.ecoi.net/en/document/2110281.html"
+    ]
+  }
+}

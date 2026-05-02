@@ -1,0 +1,100 @@
+{
+  "id": "PPL_KHOIKHOI",
+  "nameMain": "Khoikhoi",
+  "languageFamilyId": "FLG_KHOE",
+  "currentCountries": ["ZAF", "NAM", "BWA"],
+  "content": {
+    "appellations": {
+      "mainName": "Khoikhoi",
+      "selfAppellation": "Khoekhoe",
+      "exonyms": [
+        "Hottentots (terme colonial, desormais offensant)",
+        "Khoisan (terme groupant Khoikhoi et San, accepte academiquement)"
+      ],
+      "originOfExonyms": "Hottentots est un terme neerlandais d'origine onomatopeique introduit par les premiers colons europeens au XVIIe siecle, faisant allusion aux clics de la langue khoikhoe. Il est aujourd'hui considere comme offensant et pejoratif. Khoisan est un terme scientifique compose (Khoi + San) pour designer l'ensemble des peuples autochtones pratiquant des langues a clics d'Afrique australe.",
+      "whyProblematic": "Hottentots est une insulte qui a ete utilisee pour dehumaniser les Khoikhoi pendant la periode coloniale et l'apartheid. Son emploi est deconseille dans tous les contextes contemporains. Khoikhoi signifie litteralement Hommes des hommes ou Vrais hommes en khoekhoegowab.",
+      "contemporaryUsage": "Khoekhoe est la graphie namibienne officielle. Khoikhoi est la forme la plus courante dans les publications scientifiques francophones et anglophones. Les sous-groupes modernes (Nama, Damara, Griqua) utilisent generalement leurs propres noms specifiques.",
+      "linguisticFamily": "FLG_KHOE",
+      "ethnoLinguisticGroup": "Famille Khoe-Kwadi ; branche Khoekhoegowab (Nama-Damara)",
+      "historicalRegion": "Afrique australe : Cap occidental et oriental (Afrique du Sud), Grand Namaqualand (Namibie), Botswana",
+      "currentCountries": ["ZAF", "NAM", "BWA"]
+    },
+    "ethnicities": [
+      "Nama (Namibie, Afrique du Sud, Botswana)",
+      "Damara (Namibie)",
+      "Griqua (Afrique du Sud)",
+      "Oorlam (Namibie, Afrique du Sud)",
+      "Cape Khoe (Afrique du Sud occidentale et orientale)"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Khoikhoi ont diverge des autres lignees humaines il y a 100 000 a 200 000 ans selon les etudes genetiques. Ils sont originaires du nord du Botswana actuel, d'ou ils se sont progressivement deplaces vers le sud, atteignant le Cap il y a environ 2 000 ans. L'expansion vers le sud fut rendue possible par l'elevage de moutons, de chevres et de bovins qui leur assura une alimentation stable, leur permettant de coloniser des regions auparavant occupees par des chasseurs-cueilleurs.",
+      "formationPeriod": "Culture pastorale etablie il y a environ 2 000 ans au Cap. Les agriculteurs Bantous arriverent dans la region au IIIe siecle apr. J.-C., poussant les pasteurs Khoikhoi vers les zones occidentales. Les contacts europeens commencerent avec les Portugais au XVe siecle.",
+      "migrationRoutes": [
+        "Migration depuis le nord du Botswana vers le sud au cours des deux derniers millenaires",
+        "Expansion vers le Cap occidental il y a environ 2 000 ans",
+        "Migrations Oorlam au XVIIIe siecle depuis le Cap vers le Namaqualand et la Namibie actuelle",
+        "Migrations Griqua au XIXe siecle vers le Griqualand occidental puis oriental"
+      ],
+      "historicalSettlementZones": [
+        "Grand Namaqualand, Namibie centrale (Nama, Damara)",
+        "Cap occidental et oriental, Afrique du Sud (Cape Khoe)",
+        "Namaqualand (au sud du fleuve Orange), Afrique du Sud septentrionale",
+        "Griqualand occidental et oriental, Afrique du Sud (Griqua)",
+        "Botswana central et meridional"
+      ],
+      "unificationsOrDivisions": "Les Khoikhoi ne formerent jamais d'entite politique unifiee. Ils se diviserent en nombreux clans et groupes independants : Khoikhoi septentrionaux (Nama et Damara/Nuu-khoen) et meridionaux (Cape Khoe). Les migrations Oorlam et la formation des Griqua au XIXe siecle creerent de nouveaux groupes a identite propre.",
+      "externalInfluences": "Contacts violents avec les Portugais des le XVe siecle (bataille de Salt River, 1510 : mort du vice-roi Francisco de Almeida). Installation de la Compagnie neerlandaise des Indes orientales (VOC) au Cap en 1652 : conflits fonciers, epidemies de variole decimant la population, migrations forcees vers le nord. Genocide allemand de 1904-1907 en Afrique du Sud-Ouest (genocide des Herero et Nama) : plus de 10 000 Nama, soit plus de la moitie de leur population, perirent.",
+      "majorHistoricalEvents": "1510 : Bataille de Salt River (mort du vice-roi portugais). 1738 : Fondation de la mission de Genadendal par Georg Schmidt. 1829-1856 : Etablissement de Kat River reserve de populations Khoe-parlantes. 1904-1907 : Genocide allemand (plus de 10 000 Nama morts). 1994 : Fin de l'apartheid. Depuis 1994 : revendications de terres, restitution des restes humains conserves dans des musees europeens, revitalisation culturelle."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en clans (kaptijnschaft) sous la direction d'un chef (kaptijn ou gaob) dont le pouvoir etait limite par le conseil des anciens. L'autorite etait transmise de facon semi-hereditaire mais soumise a l'approbation des hommes libres du clan. Les clans Oorlam developperent des structures politiques plus militarisees au XIXe siecle.",
+      "clanOrganization": "Nombreux clans distincts : Khoikhoi septentrionaux (Nama) incluant le Khaikhaouen (Nation rouge), le Witbooi, les Bondelswarts, les Topnaars, le Fransman Nama, les Veldschoendragers, etc. Cape Khoe : Chainouoqua, Cochoqua, Hessequa, Goringhaiqua, Damasonqua, Gonaqua. Griqua : Xirikua (Griqua), Rehoboth Basters.",
+      "ageClassSystems": null,
+      "roleOfLineages": "La societe Khoikhoi est organisee en lignages patrilineaires. La descendance et l'heritage sont traces par la ligne paternelle. Les groupes Strandlopers (Goringhaicona) constituaient une categorie particuliere de Khoikhoi sedentarises pecheurs.",
+      "religiousAuthority": "La religion traditionnelle reconnait Thigoab (Tsui'goab) comme createur et gardien de la sante, et Gamab (ou Gaunab) comme principe du mal et de la maladie. De nombreux Khoikhoi se sont convertis au christianisme depuis le XVIIIe siecle ; les Nama de Namibie comptent une part significative de musulmans."
+    },
+    "languages": {
+      "mainLanguage": "Khoekhoegowab (Nama-Damara)",
+      "isoCodes": ["naq"],
+      "dialects": [
+        "Nama (Namibie, Afrique du Sud, Botswana)",
+        "Damara (Nuu, Namibie)",
+        "Korana (kqz, Afrique du Sud)",
+        "Xiri (xii, Afrique du Sud)",
+        "Cap Khoe (Afrique du Sud, partiellement eteint)"
+      ],
+      "vehicularRole": "Le khoekhoegowab (code ISO naq) est la langue vehiculaire standardisee en Namibie sur la base des varietes Nama et Damara. Il est langue nationale constitutionnellement reconnue en Namibie. En Afrique du Sud, de nombreux Nama parlent l'afrikaans comme langue principale. La langue possede des consonnes clics caracteristiques (clicks dentaux, alveolaires, palataux, alveolaires lateraux et alveolaires fricatifs)."
+    },
+    "culture": {
+      "majorRites": "Transhumance pastorale traditionnelle (toujours pratiquee dans le Richtersveld, Afrique du Sud, classe au patrimoine mondial de l'UNESCO). Ceremonies de guerison. Rituels lies au cycle lunaire (la lune est manifestation physique de l'etre supreme dans la mythologie Khoikhoi). Musique de chant gutturale.",
+      "symbols": "Les grands troupeaux de bovins Nguni etaient le symbole de richesse et de statut. Le cuir et l'ocre rouge sont des elements decoratifs identitaires. L'etoile Mu Scorpii est nommee d'apres l'expression Khoikhoe Xami di mura (yeux du lion) dans la nomenclature astronomique.",
+      "artsAndMusic": "Musique vocale avec techniques de yodel et de clics. Instruments : arc musical (musical bow), flute nasale, tambours. Chants collectifs lors des ceremonies. Artisanat du cuir et de l'os. Les femmes ornaient leurs vetements d'ecusson de cuir et de perles.",
+      "spiritualities": "Religion traditionnelle centree sur Tsui'goab (createur, garant de la sante et de la prosperite) et Gaunab (principe du mal, cause des maladies et de la mort). La lune est la manifestation physique de l'etre supreme. Nombreuses conversions au christianisme depuis le XVIIIe siecle (missions de Genadendal, Rhenish Mission). Communautes musulmanes significatives chez les Nama de Namibie."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Pas de royaumes centralises mais des confederations de clans sous autorite de chefs (gaob). Le groupe Oorlam de Jonker Afrikaner domina le centre de la Namibie actuelle dans les annees 1840-1860. Les Griqua etablirent des etats semi-formalises au Griqualand occidental et oriental au XIXe siecle (dynasties Kok et Waterboer) avant d'etre annexes par les Britanniques.",
+      "relationsWithNeighbors": "Relations complexes avec les San (chasse-cueilleurs), souvent regroupes avec eux sous le terme Khoisan. Contacts commerciaux et culturels avec les peuples Bantous (Xhosa, Herero). Resistance active contre les colonisateurs europeens (Portugais, Neerlandais VOC, Britanniques, Allemands). Guerres entre Oorlam et Nama-Herero dans la Namibie du XIXe siecle.",
+      "conflictsOrAlliances": "Guerre des Khoikhoi contre la VOC (1659-1660 et 1673-1677). Genocide de Namibie alemande 1904-1907 (genocide des Herero et Nama). Rebellion Khoikhoi de Kat River (1850). Soutien des Khoikhoi aux Britanniques dans la Septieme Guerre de Frontiere (1846-1847) sous Andries Botha. Apartheid (1948-1994) : classification forcee comme Coloured.",
+      "diaspora": "Migrations Oorlam et Griqua au XIXe siecle constituent une forme de diaspora interne. Sous l'apartheid, des milliers de Khoikhoi furent deplaces de force par le Group Areas Act. La diaspora contemporaine se retrouve dans les villes sud-africaines (Cape Town, Kimberley, Johannesburg)."
+    },
+    "demography": {
+      "totalPopulation": 1000000,
+      "referenceYear": 2025,
+      "source": "Namibia Tourism Board (2024) : environ 1 million dont 200 000 en Namibie et 800 000 en Afrique du Sud ; IWGIA 2024 : population indigene Khoisan d'Afrique du Sud estimee a environ 1% de la population totale (~590 000 dont Khoikhoi et San)",
+      "distributionByCountry": [
+        { "country": "ZAF", "population": 800000 },
+        { "country": "NAM", "population": 200000 },
+        { "country": "BWA", "population": 15000 }
+      ]
+    },
+    "sources": [
+      "Khoekhoe – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Khoikhoi)",
+      "Nama people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Nama_people)",
+      "Glottopedia – Khoekhoe, ISO 639-3 : naq (http://www.glottopedia.de/index.php/Khoekhoe)",
+      "The Indigenous World 2024 : South Africa – IWGIA (https://iwgia.org/en/south-africa/5358-iw-2024-southafrica.html)",
+      "Namibia Tourism Board – Nama people 2024 (https://www.facebook.com/NamibiaTourismBoard/posts/1000733048753092/)",
+      "Ethnologue – Nama subgroup : naq, kqz, xii (https://www.ethnologue.com/subgroup/4292/)",
+      "Richtersveld Cultural and Botanical Landscape – UNESCO World Heritage (https://whc.unesco.org/en/list/1265)"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+# Nom du peuple
+- Nom principal : Nupe
+- Auto-appellation : Nupe / Nufawa
+- Famille linguistique : Niger-Congo – Bénoué-Congo (FLG_BENOUECONGO)
+- Région historique : Nigeria (Niger State, Kwara State)
+- Identifiant peuple : PPL_NUPE
+
+# 1. Ethnies incluses
+- Nupe de Bida
+- Nupe Kokoli
+- Nupe Yagba (éléments)
+
+# 2. Origines
+- Peuple du centre-nord nigérian.
+- Fondateurs du royaume Nupe (Bida).
+
+# 3. Organisation
+- Monarchie : Etsu Nupe
+- Structures lignagères
+
+# 4. Langue
+- Nupe
+- ISO : nke
+
+# 5. Culture
+- Masques et danses
+- Célébrations *Etsu Nupe*
+- Poterie, ferronnerie, tissage
+
+# 6. Histoire
+- Royaume puissant au XIXᵉ siècle.
+- Forte influence dans la vallée Niger-Benue.
+
+# 7. Démographie
+- Population : 3 900 000
+- Année : 2025
+
+# 8. Sources
+- Ethnologue (nke)
+- Bida Emirate Historical Records

@@ -1,0 +1,73 @@
+{
+  "id": "PPL_MURSI",
+  "nameMain": "Mursi",
+  "languageFamilyId": "FLG_COUCHITIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Mursi",
+      "selfAppellation": "Mun",
+      "exonyms": ["Murzi", "Murzu", "Dama", "Merdu", "Meritu"],
+      "originOfExonyms": "Le terme Mursi est l'appellation externe generalement utilisee dans les sources academiques et medias internationaux. Le terme Mun est l'auto-designation du peuple. Les formes Murzi et Murzu sont des variantes orthographiques. Dama, Merdu et Meritu sont des noms alternatifs documentes dans la litterature linguistique.",
+      "whyProblematic": "Le gouvernement ethiopien regroupe les Mursi avec les Me'en et les Kwegu sous le nom collectif Surma, ce qui efface les distinctions identitaires propres a chaque groupe.",
+      "contemporaryUsage": "Le nom Mursi est universellement utilise dans les sources internationales. Les Mursi se referent a eux-memes comme Mun. Leur langue est connue sous le nom de tugo ou mursi.",
+      "linguisticFamily": "FLG_COUCHITIQUE",
+      "ethnoLinguisticGroup": "Nilo-saharien, branche Surmic (surma du sud-est); classe avec les Me'en, les Suri et les Kwegu",
+      "historicalRegion": "Vallee de l'Omo inferieure, Ethiopie du sud-ouest (zone Debub Omo)",
+      "currentCountries": ["ETH"]
+    },
+    "ethnicities": ["Mursi", "Mun"],
+    "origins": {
+      "ancientOrigins": "Les Mursi sont un peuple surmic etabli dans la vallee de l'Omo inferieure, en Ethiopie du sud-ouest. Leur territoire ancestral est delimite par les montagnes entre la riviere Omo et son affluent la Mago. Cette region est l'une des plus isolees d'Ethiopie. Les Mursi font partie de l'ensemble des peuples de la vallee de l'Omo, zone de contact migratoire de longue date entre des peuples aux origines diverses.",
+      "formationPeriod": "L'identite mursi est ancienne, consolidee bien avant les recensements modernes. Leurs traditions et institutions sociales (classes d'age, pretrise du komoru) constituent un systeme coherent de longue date.",
+      "migrationRoutes": [],
+      "historicalSettlementZones": [
+        "Vallee de l'Omo inferieure, entre la riviere Omo et son affluent la Mago",
+        "Zone Debub Omo, region South Ethiopia Regional State"
+      ],
+      "unificationsOrDivisions": "Les Mursi sont organises en clans dont les plus connus sont les Komorte (clan de la pretrise), les Garikuli et les Bumai. Le groupe est petit et relativement homogene sur le plan territorial.",
+      "externalInfluences": "Pression croissante liee au tourisme de masse dans la vallee de l'Omo depuis les annees 1990. Le barrage Gibe III (achevement 2015) a modifie le regime de crue de l'Omo, affectant l'agriculture de decrue dont dependent les Mursi. Le projet sucrier de la societe ethiopienne du sucre a empiete sur les terres occupees par les Mursi.",
+      "majorHistoricalEvents": "Conflits avec le parc national de l'Omo: la fondation African Parks a ete accusee de coercition pour forcer les Mursi a ceder des terres sans compensation. En 2007, African Parks a annonce son retrait sous la pression des militants. En juillet 2008, les Mursi ont declare leur territoire zone de conservation communautaire et lance un tourisme communautaire. En 2015, le barrage Gibe III a ete mis en service, perturbant les cycles de crue dont depend leur agriculture."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme politique base sur des classes d'age (age sets): les hommes sont regroupes en classes qui progressent ensemble dans les differentes etapes de la vie. Le Jalaba est un role politique informel. L'autorite politique est collegiale et non centralisee.",
+      "clanOrganization": "Organisation clanique avec trois grands clans principaux: Komorte (clan de la pretrise par excellence), Garikuli et Bumai (qui comprennent egalement des familles a vocation sacerdotale).",
+      "ageClassSystems": "Systeme de classes d'age tres developpe: les hommes forment des classes d'age nommees (age sets) et progressent a travers des grades (age grades). Les femmes mariees partagent le grade de leur mari. Ce systeme est un element central de l'identite et de l'organisation politique mursi.",
+      "roleOfLineages": "Les lignages determinent l'appartenance clanique et le statut social. Le clan Komorte fournit le pretrespretre-roi (Komoru), charge du bien-etre du groupe et de la communication avec le divin.",
+      "religiousAuthority": "Le Komoru est la principale autorite religieuse et rituelle. Ce titre est hereditaire et son detenteur incarne le bien-etre collectif du groupe (bhuran). Il communique avec la force superieure Tumwi, effectue des rituels publics pour la pluie, la protection contre les maladies et les attaques. Il ne doit pas quitter le territoire mursi."
+    },
+    "languages": {
+      "mainLanguage": "Mursi (tugo)",
+      "isoCodes": ["muz"],
+      "dialects": [],
+      "vehicularRole": "Le mursi est la langue maternelle exclusive du groupe. Il appartient a la branche surmic sud-est des langues nilo-sahariennes. Il est etroitement apparente au suri (plus de 80 % de cognats), au me'en et au kwegu. Deux orthographes coexistent: l'une basee sur l'amharique (incompatible avec les structures vocaliques mursi), l'autre en alphabet latin (developpee par David Turton et Moges Yigezu de l'Universite d'Addis Abeba). L'amharique est utilise comme langue vehiculaire avec l'exterieur."
+    },
+    "culture": {
+      "majorRites": "Les plateaux labiaux (dhebi a tugoin) sont la pratique culturelle la plus connue des Mursi: la levre inferieure des jeunes filles est percee vers l'age de 15-16 ans et progressivement agrandie pour accueillir un disque de poterie ou de bois. C'est un symbole de beaute, d'identite et de statut. Les duels ceremonials masculins (thagine) sont une forme de violence ritualisee, tres valorisee et populaire, notamment chez les jeunes hommes non maries. Ils constituent un marqueur cle de l'identite mursi.",
+      "symbols": "Le plateau labial (dhebi a tugoin) est le symbole visuel le plus distinctif des Mursi et est devenu une attraction touristique majeure. Les scarifications corporelles et les ornements d'oreilles (rondelles de bois pour les hommes) sont egalement caracteristiques.",
+      "artsAndMusic": "La culture materielle mursi comprend la production de poteries, de perles et d'ornements corporels. Les femmes portent les plateaux labiaux lors des danses et pour attirer les touristes. La peinture corporelle est pratiquee lors des ceremonies.",
+      "spiritualities": "Les Mursi croient en une force superieure appelee Tumwi, generalement situee dans le ciel et se manifestant parfois sous la forme d'un arc-en-ciel ou d'un oiseau (ahi a tumwin). Ce systeme de croyance est classe parmi les religions animistes. Une mission chretienne (Serving in Mission) est presente et a introduit le christianisme, fournissant education et soins medicaux. La traduction de portions des Ecritures en mursi est en cours."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Mursi n'ont pas forme de royaume centralise. Ils etaient organises en communautes autonomes sous l'autorite du Komoru (pretrespretre-roi) et du systeme de classes d'age. L'absence d'etat centralise leur a permis de maintenir une forte autonomie culturelle.",
+      "relationsWithNeighbors": "Voisins des peuples Aari, Banna, Mekan, Karo, Kwegu, Nyangatom et Suri. La vallee de l'Omo est un espace de contacts entre des peuples aux langues et cultures tres differentes. Les Mursi entretiennent des relations d'echange, de competition et parfois de conflit avec leurs voisins.",
+      "conflictsOrAlliances": "Conflits recurrents avec les Nyangatom pour le controle des paturages et des ressources en eau. Tensions avec les autorites ethiopiennes et les investisseurs dans le cadre du projet sucrier Kuraz (societe ethiopienne du sucre) qui a empiete sur leurs terres.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 14000,
+      "referenceYear": 2025,
+      "source": "Joshua Project (2025): 14 000; recensement ethiopien 2007 (CSA): 11 500 Mursi",
+      "distributionByCountry": [{ "country": "ETH", "population": 14000 }]
+    },
+    "sources": [
+      "Mursi people – Wikipedia (https://en.wikipedia.org/wiki/Mursi_people)",
+      "Mursi language – Wikipedia (https://en.wikipedia.org/wiki/Mursi_language)",
+      "Mursi in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13887)",
+      "Worku Firew – A Grammar of Mursi, a Nilo-Saharan Language of Ethiopia (these JCU / Brill), 2020-2021 (https://researchonline.jcu.edu.au/65453/)",
+      "Lip-plates – Mursi Online (https://www.mursi.org/introducing-the-mursi/Body%20Decoration/lip-plates)",
+      "Omo Valley Tribes – Survival International (https://survivalinternational.org/peoples/omovalley)",
+      "ISO 639-3: muz (Mursi) – SIL International / Ethnologue"
+    ]
+  }
+}

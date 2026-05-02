@@ -1,0 +1,69 @@
+{
+  "id": "PPL_MAKONDE",
+  "nameMain": "Makonde",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["MOZ", "TZA"],
+  "content": {
+    "appellations": {
+      "mainName": "Makonde",
+      "selfAppellation": "Makonde",
+      "exonyms": ["Makonde (terme utilisé par les Européens)"],
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone P)",
+      "historicalRegion": "MOZ, TZA",
+      "currentCountries": ["MOZ", "TZA"]
+    },
+    "ethnicities": [
+      "Makonde du Mozambique",
+      "Makonde de Tanzanie",
+      "Sous-groupes régionaux"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Makonde sont originaires de la région du Mozambique et de la Tanzanie. Leur présence dans la région remonte à plusieurs siècles. Ils font partie du groupe bantou (Zone P).",
+      "unificationsOrDivisions": "Organisation en groupes territoriaux distincts mais partageant une identité culturelle et linguistique commune.",
+      "externalInfluences": "Contacts avec les peuples voisins, influence du christianisme et de l'islam."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en chefferies traditionnelles. Système de conseils d'anciens pour la gouvernance.",
+      "clanOrganization": "Structure clanique matrilinéaire. Organisation en familles étendues et lignages.",
+      "roleOfLineages": "Lignages matrilinéaires déterminant l'identité et les alliances.",
+      "religiousAuthority": "Autorité des chefs religieux traditionnels, des oulémas musulmans et des pasteurs chrétiens. Syncrétisme religieux."
+    },
+    "languages": {
+      "mainLanguage": "Makonde",
+      "vehicularRole": "Le makonde est parlé par la majorité des Makonde. Le portugais, le swahili et d'autres langues sont également utilisés selon les pays."
+    },
+    "culture": {
+      "Rites majeurs": "",
+      "source_0": "Cérémonies de mariage traditionnelles",
+      "source_1": "Rites de passage (initiation, fêtes de naissance)",
+      "source_2": "Cérémonies liées à l'agriculture",
+      "source_3": "Cérémonies religieuses islamiques et chrétiennes",
+      "Symboles": "Symboles liés à l'agriculture, symboles culturels makonde, symboles islamiques et chrétiens",
+      "Arts et musique": "",
+      "source_4": "Sculpture sur bois (masques, statues)",
+      "source_5": "Musique traditionnelle",
+      "source_6": "Danse traditionnelle",
+      "source_7": "Poésie orale",
+      "source_8": "Artisanat (poterie, tissage)",
+      "Spiritualités": "Syncrétisme entre croyances traditionnelles, islam et christianisme. Rôle important des ancêtres."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "",
+      "relationsWithNeighbors": "",
+      "conflictsOrAlliances": "",
+      "diaspora": "Diaspora makonde dans les grandes villes et dans les pays occidentaux."
+    },
+    "demography": {
+      "totalPopulation": 1500000,
+      "referenceYear": 2025,
+      "source": "Estimations basées sur recensements, SIL Ethnologue, et études démographiques"
+    },
+    "sources": [
+      "SIL Ethnologue – Makonde language (kde)",
+      "CIA World Factbook – Country profiles",
+      "Recensements nationaux",
+      "Études anthropologiques sur les peuples bantous"
+    ]
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "id": "PPL_JUKUN",
+  "nameMain": "Jukun",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["NGA", "CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Jukun",
+      "selfAppellation": "Wapa / Apa-Juku",
+      "exonyms": [
+        "Kwararafa",
+        "Kororofa",
+        "Kororofawa",
+        "Apang",
+        "Kpazo",
+        "Kpe",
+        "Kwe",
+        "Gwana",
+        "Njikum"
+      ],
+      "originOfExonyms": "Le terme Kwararafa ou Kororofa est utilise par les Haoussa pour designer les Jukun et leur confederation historique. Apang est employe par les Kam, Kpazo par les Chamba, Kpe par les Mumuye et Kwe par les Jen. Le terme Jukun lui-meme derive du mot jukun apa-juku signifiant hommes ou peuple.",
+      "whyProblematic": "Le terme Kwararafa designe a la fois le peuple jukun et leur ancien empire, ce qui peut preter a confusion. Le nom Jukun couvre plusieurs groupes dialectaux distincts (Wapa, Wanu, Jiba) qui ne se reconnaissent pas tous sous ce denominateur commun.",
+      "contemporaryUsage": "Le nom Jukun est generalement accepte dans la litterature academique et administrative nigeriane. Les membres du groupe se designent eux-memes comme Wapa (region de Wukari) ou Jiba (region de Kona). Le terme Apa est egalement utilise comme autodesignation.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Jukunoid (Benue-Congo)",
+      "historicalRegion": "Bassin de la Benue et vallee du Gongola (nord-centre du Nigeria) — territoire de la confederation de Kwararafa",
+      "currentCountries": ["NGA", "CMR"]
+    },
+    "ethnicities": [
+      "Jukun Wapa — groupe principal etabli autour de Wukari (Taraba State), siege du Wukari Federation et de l'Aku Uka",
+      "Jukun Wanu — pecheurs etablis le long des rives des fleuves Benue et Niger (Taraba, Benue et Nasarawa States)",
+      "Jukun Jiba (Kona) — groupe de la region de Kona, se designe comme Jiba",
+      "Jukun de Donga — branche du sud de Taraba State",
+      "Jukun de Takum — branche liee historiquement aux Kuteb",
+      "Jukun de Pindiga — sous-groupe nordique (Gombe State)",
+      "Jukun Wase Tofa — sous-groupe de Wase (Plateau State)",
+      "Kwona — section ancienne citee dans les traditions bornouan des 1250 ap. J.-C. le long du Gongola"
+    ],
+    "origins": {
+      "ancientOrigins": "Selon les traditions orales jukun, le peuple serait originaire du Yémen et aurait migre vers l'Afrique subsaharienne sous la conduite d'un ancetre nomme Agadu. L'anthropologue C.K. Meek a recueilli une tradition parallele qui associe les Jukun aux Kanuri dans une migration commune depuis le Yémen, passant par le Wadai et Ngazargamu, capitale du Kanem-Bornou. Une autre tradition situe leur arrivee dans la region du bassin du Gongola vers le milieu du XIIIe siecle.",
+      "formationPeriod": "XIIIe - XVIe siecle. Les Jukun auraient constitue leur confederation (Kwararafa) a partir du XIIIe siecle. Selon certains historiens comme Webster, les Jukun proprement dits n'auraient domina la structure politique de la federation que vers le XVIIe siecle. En 1250, la section Kwona etait deja etablie le long de la riviere Gongola selon les traditions bornouan rapportees par H.R. Palmer.",
+      "migrationRoutes": [
+        "Yemen (tradition orale) vers Kordofan (Soudan)",
+        "Kordofan vers Fitri et Mandara",
+        "Mandara vers la vallee du Gongola (Nigeria nord-est)",
+        "Gongola vers le bassin de la Benue (Taraba State actuel)",
+        "Etablissement final autour de Wukari comme capital successeur"
+      ],
+      "historicalSettlementZones": [
+        "Bassin du Gongola (Gombe/Adamawa actuels)",
+        "Vallee de la Benue (Taraba, Benue, Nasarawa)",
+        "Region de Wukari (siege historique de la confederation)",
+        "Zones de Donga, Takum et Pindiga",
+        "Parties du nord-ouest du Cameroun"
+      ],
+      "unificationsOrDivisions": "La confederation de Kwararafa regroupait plusieurs peuples sous l'autorite spirituelle et politique du roi divin Aku. A la fin du XVIIIe siecle et au debut du XIXe siecle, la confederation se desintegra sous les attaques des Chamba allies aux forces fulani. Les populations jukun se fragmenterent alors en plusieurs groupes regionaux distincts (Wukari, Donga, Takum, Kona, Wase, Pindiga), avec le Wukari Federation comme successeur principal.",
+      "externalInfluences": "La jihad fulani du XIXe siecle (mouvement de Sokoto sous Shehu Usman dan Fodio) transforma profondement la structure politique jukun. L'emirat de Muri (fonde en 1817) incorpora des territoires jukun. La colonisation britannique (vers 1900) plaça les Jukun sous l'autorite administrative de divers emirs fulani et redefinit les frontieres locales.",
+      "majorHistoricalEvents": "La confederation de Kwararafa atteignit son apogee au XVIIe siecle. En 1653, Kwararafa envahit Kano et en detruisit une porte (Kofan Kawayi). En 1673, les Jukun s'emparerent de Kano. Des attaques furent menees contre Katsina (entre 1670 et 1684) et contre Ngazargamu, capitale du Kanem-Bornou (entre 1645 et 1684). Sultan Muhammad Bello (XIXe siecle) clasait Kwararafa parmi les sept plus grands royaumes du Soudan."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme de royaute divine. Le roi (Aku ou Aku Uka) est considere comme le representant de Dieu sur terre, detenant une autorite d'abord spirituelle. Son conseil de nobles est conduit par l'Achuwo. L'Aku peut etre juge et sa charge remise en cause si les affaires du peuple se degradent (mauvaise recolte, defaite militaire). Le Wukari Federation, conduit par l'Aku Uka de Wukari, est aujourd'hui le centre principal de l'identite jukun.",
+      "clanOrganization": "L'unite de base est la famille elargie (head, epouses, enfants, cousins et leurs familles). Le chef de chaque unite familiale est automatiquement considere comme chef (chief) et pretre domestique responsable des fonctions cultuelles de son foyer. Les principales branches regionales (Wapa, Wanu, Jiba) maintiennent des organisations politiques propres sous des chefs locaux.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages jouent un role fondamental dans l'organisation sociale et politique. L'appartenance lignagere determine l'acces au pouvoir local. La succession au titre d'Aku Uka est reglee au sein de lignages royaux specifiques.",
+      "religiousAuthority": "L'Aku exerce une autorite religieuse centrale : il est pretre-roi, mediateur entre les vivants et le monde spirituel. Les chefs de famille jouent egalement un role sacerdotal domestique. Avant la christianisation et l'islamisation, les Jukun pratiquaient une religion traditionnelle basee sur le culte royal, les esprits de la nature et les ancetres. Le village de Wukari est un lieu de pelerinage et de depots des tributs agraires en hommage a l'Yaku Keji."
+    },
+    "languages": {
+      "mainLanguage": "Jukun (dialecte Wukari-Wapa comme variete de prestige)",
+      "isoCodes": ["jbu", "jwi"],
+      "dialects": [
+        "Wukari (Wapa) — dialecte de prestige, region de Wukari",
+        "Donga — region de Donga (Taraba State)",
+        "Kona (Jiba) — region de Kona, mutuellemet intelligible avec Gwana",
+        "Gwana et Pindiga — tres proches de Kona, consideres comme un meme dialecte par Meek",
+        "Jibu — code ISO jwi",
+        "Wase Tofa — sous-dialecte de Wase (Plateau State)"
+      ],
+      "vehicularRole": "La langue jukun (en particulier la variete de Wukari) a servi de langue de prestige et de communication inter-ethnique dans la confederation de Kwararafa. Aujourd'hui, le haoussa et l'anglais sont les principales langues vehiculaires dans les zones jukun. Certains locuteurs jukun utilisent le jukun comme langue d'identite ethnique dans les zones pluriethniques."
+    },
+    "culture": {
+      "majorRites": "La societe jukun est profondement marquee par le culte royal. Des tributs agricoles (produits de la recolte) sont apportes a l'Yaku Keji de Wukari comme hommage symbolique pour la paix et la prosperite. Le chef de famille exerce des fonctions cultuelles en maintenant les rites de son foyer. Les rites de passage (naissance, mariage, mort) impliquent des ceremonies communautaires. La circoncision masculine est pratiquee.",
+      "symbols": "Le roi divin (Aku) incarne le principal symbole de l'identite jukun. Les noms traditionnels Api, Pi, Biepi (lieu des herbes ou lieu des maisons) designent l'ancienne capitale et evoquent l'attachement territorial. Les mines de sel de la region jukun etaient un symbole de prospérité economique.",
+      "artsAndMusic": "Les Jukun pratiquaient la poterie, la forge (blacksmiths) et le brassage de biere. La fabrication et la vente de biere constituaient une activite economique importante. La peche est une tradition centrale du groupe Jukun Wanu. Les instruments de musique traditionnels comprennent les tambours utilises lors des ceremonies royales et communautaires. La tradition orale (recits epiques sur Kwararafa, genealogies royales) est un art tres valorise.",
+      "spiritualities": "Avant l'islamisation et la christianisation, les Jukun pratiquaient une religion traditionnelle centree sur la royaute sacree, la veneration des ancetres et les esprits de la nature. L'Aku etait considere comme un intermediaire divin. Aujourd'hui, la majorite des Jukun sont chretiens, notamment dans les zones rurales de Taraba State. Une minorite est musulmane et une partie conserve des pratiques religieuses traditionnelles syncrétiques."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "La confederation de Kwararafa (Kororofa) fut l'une des grandes puissances politiques de l'Afrique de l'Ouest precoloniale, s'etendant du XIIIe au XVIIIe siecle dans le bassin de la Benue. A son apogee au XVIIe siecle, elle exercait une suzerainete sur une vaste region incluant Kano, Bornou, Idoma, Igbira et Igala. Le Sultan Muhammad Bello du califat de Sokoto la clasait parmi les sept plus grands royaumes du Soudan. Apres son declin, le Wukari Federation devint l'Etat successeur jukun, toujours dirige par l'Aku Uka de Wukari.",
+      "relationsWithNeighbors": "Les Jukun entretinrent des relations complexes avec leurs voisins. Ils menerent des campagnes militaires contre les cites haoussa (Kano, Katsina, Zaria) et contre le Kanem-Bornou. Ils exercises une influence culturelle sur de nombreux peuples du Middle Belt (Alago, Agatu, Rendere, Goemai) qui retracent leur origine a Kwararafa. Les tensions avec les Tiv, qui migrent massivement dans les territoires jukun depuis le XIXe siecle avec l'aide des colonisateurs britanniques, persistent jusqu'a aujourd'hui. Des conflits violents avec les Kuteb et les Chamba ont marque les XXe et XXIe siecles.",
+      "conflictsOrAlliances": "Alliance strategique avec plusieurs peuples au sein de la confederation de Kwararafa. Conflits recurrents avec les cites haoussa (invasions de Kano en 1653 et 1673). Attaques contre Katsina (1260, 1670-1684) et Bornou (1645-1684). Au XIXe siecle, confrontation avec les forces fulani et chamba, entraînnant l'effondrement de la confederation. En 1991, crise ethnique entre Jukun et Kuteb. En 2000, affrontements avec les Tiv (plus de 250 villages brules). En 2008, nouvelle crise violente a Takum.",
+      "diaspora": "Suite aux jihads fulani et aux bouleversements coloniaux, des groupes jukun se sont disperses dans plusieurs Etats du nord-centre du Nigeria (Taraba, Benue, Nasarawa, Plateau, Adamawa, Bauchi, Gombe) et dans le nord-ouest du Cameroun. La migration moderne a conduit des Jukun vers des centres urbains comme Kaduna, Abuja et Lagos."
+    },
+    "demography": {
+      "totalPopulation": 250000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur Wikipedia (>209,600 reference), Joshua Project (Jukun-Kona : 6,400), Ethnologue (SIL International), et projections demographiques Nigeria 2025. La population totale des locuteurs jukun (toutes varietes) est estimee entre 210,000 et 300,000 personnes, principalement au Nigeria (Taraba, Benue, Nasarawa, Adamawa States) avec une minorite au Cameroun.",
+      "distributionByCountry": [
+        { "country": "NGA", "population": 235000 },
+        { "country": "CMR", "population": 15000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Jukun people (West Africa) : https://en.wikipedia.org/wiki/Jukun_people_(West_Africa)",
+      "ThinkAfrica.net — Federation of Kwararafa (13th-18th Century) : https://thinkafrica.net/kwararafa/",
+      "RSIS International — The Jukun-Muri Relations: Pre-Colonial Dynamics (2025) : https://rsisinternational.org/journals/ijriss/articles/the-jukun-muri-relations-pre-colonial-dynamics/",
+      "Ethnologue (SIL) — Jukun Takum (jbu) : https://www.ethnologue.com/language/jbu/",
+      "Joshua Project — Jukun Kona in Nigeria : https://joshuaproject.net/people_groups/12770",
+      "Meek, C.K. (1931). A Sudanese Kingdom: An Ethnographical Study of the Jukun-speaking Peoples of Nigeria. London: Kegan Paul.",
+      "ASJP Database — Jukun Takum, ISO 639-3 jbu : https://asjp.clld.org/languages/JUKUN_TAKUM"
+    ]
+  }
+}

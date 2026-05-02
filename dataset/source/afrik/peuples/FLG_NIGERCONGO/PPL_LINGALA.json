@@ -1,0 +1,121 @@
+{
+  "id": "PPL_LINGALA",
+  "nameMain": "Lingala (locuteurs)",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["COD", "COG", "CAF", "AGO"],
+  "content": {
+    "appellations": {
+      "mainName": "Lingala (locuteurs)",
+      "selfAppellation": "Bangala / Lingala",
+      "exonyms": [
+        "Bangala (nom colonial errone applique aux peuples du fleuve Congo)",
+        "Ngala",
+        "Wangala"
+      ],
+      "originOfExonyms": "Le terme Bangala fut adopte par les Europeens des 1876 comme designation pratique mais inexacte pour tous les Congolais de la region du fleuve. Le nom Lingala fut cree vers 1901-1902 par les missionnaires catholiques CICM (Scheutistes) pour designer la langue standardisee issue du Bobangi, en remplacement du terme Bangala juge trop ambigu.",
+      "whyProblematic": "Lingala designe avant tout une langue vehiculaire plutot qu'un groupe ethnique homogene. Les peuples qui la parlent comme langue maternelle constituent une constellation de groupes rivulaires distincts (Bangala, Budja, Ngombe, Poto, Boloki, Libinza, Ngbandi) regroupes sous une identite linguistique commune construite en partie par la colonisation belge.",
+      "contemporaryUsage": "Lingala est l'une des quatre langues nationales de la RDC et langue officielle de facto de l'armee nationale. Elle est egalement reconnue comme vehiculaire au Congo-Brazzaville. Elle est associee a la musique soukous/ndombolo et a la culture populaire congolaise a travers le monde. Environ 59% de la population de la RDC l'utilise selon une enquete de 2021.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Bantou (Zone C, sous-groupe Bobangi-Lingala)",
+      "historicalRegion": "Bassin du Congo, region de la Mongala et du Moyen-Congo (Province de l'Equateur, RDC)",
+      "currentCountries": ["COD", "COG", "CAF", "AGO"]
+    },
+    "ethnicities": [
+      "Bangala proprement dits (Bamangala, Mongala) — peuples des rives de la Mongala et du Moyen-Congo",
+      "Budja — groupe de la Province de l'Equateur, locuteurs historiques du nord-ouest congolais",
+      "Ngombe — peuples riverains du Congo partageant la culture et le vehiculaire lingala",
+      "Poto — groupe du nord-ouest de la RDC, l'un des sous-groupes Bangala originaux",
+      "Boloki (Baloki) — peuples riverains proches des confluents Ubangi-Congo",
+      "Libinza — groupe de la Province de l'Equateur ayant contribue a la formation du lingala",
+      "Ngbandi lingalaphones — peuples sudaniques du nord-ouest adoptan le lingala comme vehiculaire"
+    ],
+    "origins": {
+      "ancientOrigins": "Les groupes ethniques parlant lingala comme langue premiere sont issus des peuples Bobangi, riverains du Congo entre Stanley Pool (Kinshasa) et la confluence Congo-Ubangi. Le Bobangi etait deja une langue de commerce importante avant 1880 le long des sections occidentales du fleuve Congo. Ces peuples appartiennent a la branche bantou du groupe Niger-Congo (Zone C) et sont etablis dans la region depuis plusieurs siecles, pratiquant la peche, l'agriculture et le commerce fluvial.",
+      "formationPeriod": "L'identite linguistique lingala s'est forgee principalement entre 1880 et 1920 sous la pression coloniale belge. Avant 1880, le Bobangi etait vehiculaire. Entre 1880 et 1884, les troupes europeennes et africaines au service du roi Leopold II ont simplifie et restructure le Bobangi, creant un pidgin appele 'langue du fleuve' ou 'Bangala'. Entre 1901 et 1915, les missionnaires catholiques CICM ont standardise cette langue sous le nom de Lingala, la diffusant via leur reseau scolaire.",
+      "migrationRoutes": [
+        "Peuples autochtones du bassin du Congo, sans migration fondatrice documentee recente",
+        "Expansion du lingala vers Kinshasa (Leopoldville) depuis les annees 1880, suivant le reseau colonial",
+        "Diffusion vers Brazzaville et le Congo-Brazzaville dans la premiere moitie du 20e siecle",
+        "Expansion vers la CAF (Centrafrique) comme langue commerciale transfrontaliere"
+      ],
+      "historicalSettlementZones": [
+        "Rives du fleuve Congo entre Kinshasa et la confluence Congo-Ubangi (Province de l'Equateur, RDC)",
+        "Region de la Mongala (nord de l'Equateur, RDC) — berceau historique des Bangala",
+        "Kinshasa et sa region metropolitaine — principal centre de diffusion moderne",
+        "Brazzaville et le nord du Congo-Brazzaville",
+        "Province du Bas-Uele (nord-est RDC), ou une variete de Bangala reste vehiculaire"
+      ],
+      "unificationsOrDivisions": "Les peuples lingalaphones ne forment pas une unite ethnique politique. Ils sont unis par la langue vehiculaire et certains traits culturels partages. Le Bangala du nord-est (Bas-Uele) et le Lingala de Kinshasa sont des varietes divergentes. La popularite mondiale de la musique soukous chantee en lingala a renforce un sentiment de communaute culturelle.",
+      "externalInfluences": "Colonisation belge (1885-1960) : le lingala fut impose comme langue administrative et militaire dans tout le Congo belge. Evangelisation catholique (CICM) et protestante : standardisation du lingala ecrit. Regime Mobutu (1965-1997) : le lingala fut promeut langue du parti unique et de l'armee, renforçant son prestige politique. Musique soukous congolaise (depuis les annees 1950) : vecteur de diffusion internationale.",
+      "majorHistoricalEvents": "1884 : creation du poste de Bangala Station (Nouvelle-Anvers, aujourd'hui Mankanza) — berceau du pidgin Bangala. 1901-1902 : standardisation du Lingala par le missionnaire Egide De Boeck (CICM). 1908 : le Congo belge passe sous autorite de l'Etat belge. 1960 : independance du Congo belge (devenu RDC). 1965-1997 : le regime Mobutu fait du lingala la langue privilegiee du pouvoir et de l'armee. 2021 : enquete nationale montrant que 59% de la population de RDC utilise le lingala."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les groupes Bangala/lingalaphones s'organisaient traditionnellement en villages sous l'autorite d'un chef (nyampara ou chef de village) dont le pouvoir etait limite par une assemblee des hommes adultes. Il n'existait pas de chefferie centralisee au-dela du niveau du district regroupe. Plusieurs villages pouvaient s'unir sous un chef de district jouant le role de juge, generalement l'homme le plus influent ou le plus riche. Sous la colonisation belge, des chefferies administratives furent creees.",
+      "clanOrganization": "Organisation patrilineaire en clans et familles etendues. Les villages etaient divises en 'quartiers' correspondant souvent a des barrios claniques. Chaque clan reconnait un ancetre commun masculin. La terre etait propriete communale du village, mais les individus disposaient de droits d'usufruit sur les terres qu'ils defrichaient. Les palmiers et certains droits de peche etaient detenus individuellement.",
+      "ageClassSystems": "Des rites de passage existaient, notamment la circoncision (pour les garcons) et l'excision (pour les filles) pratiquees comme rites de passage vers l'age adulte. Ces ceremonies etaient accompagnees de festivites familiales et communautaires.",
+      "roleOfLineages": "Les lignages patrilineaires determinaient l'identite sociale, les droits fonciers et les alliances matrimoniales. L'aine heriterait du titre de son pere et d'une part plus importante des biens. La polygamie etait pratiquee. Les classes sociales incluaient les notables (chefs de district et hommes riches), les hommes libres ordinaires et historiquement des esclaves.",
+      "religiousAuthority": "Les chefs religieux traditionnels coexistaient avec les autorites politiques. L'evangelisation catholique (CICM) et protestante a profondement transforme les pratiques religieuses. Aujourd'hui, le christianisme (catholique et protestant) domine, mais les croyances animistes persistent, notamment le respect des ancetres (bakulu) et l'existence d'esprits de la nature."
+    },
+    "languages": {
+      "mainLanguage": "Lingala (Lingala)",
+      "isoCodes": ["lin"],
+      "dialects": [
+        "Lingala classique/litteraire (lingala ya litatiki) — variete normee par les missionnaires CICM, utilisee dans l'enseignement et les medias officiels, systeme a sept voyelles",
+        "Lingala de Kinshasa (lingala parle) — variete urbaine dominante, systeme a cinq voyelles, fortement influence par le français, la plus repandue dans les chansons",
+        "Lingala de l'Equateur (nord-ouest) — variete regionale plus proche du lingala classique, zone d'influence CICM",
+        "Bangala (nord-est) — variete du Bas-Uele, encore appelee Bangala localement, langue vehiculaire du nord-est (non mutuellement intelligible avec le lingala de Kinshasa)",
+        "Lingala ya Bayankee (Yanke) — sociolecte de Kinshasa utilise par les jeunes des rues et vendeurs informels"
+      ],
+      "vehicularRole": "Le lingala est l'une des quatre langues nationales de la RDC avec le kikongo-kituba, le swahili et le tshiluba. Il est la langue vehiculaire principale de l'ouest et du nord-ouest de la RDC, et la langue de facto de la capitale Kinshasa et de son agglomeration de 16 millions d'habitants. Langue officielle de l'armee nationale congolaise. Au Congo-Brazzaville, il est vehiculaire dans le centre et le nord. Total estime a 40 millions de locuteurs (20 millions de locuteurs maternels, 20 millions comme seconde langue), selon Wikipedia et APiCS (2024)."
+    },
+    "culture": {
+      "majorRites": "Rites de passage : circoncision masculine et excision feminine comme rites d'entree dans l'age adulte, accompagnes de festivites familiales et communautaires. Ceremonies funeraires : hommages collectifs aux defunts (bakulu), veillees mortuaires musicales. Ceremonies de mariage : dot (lobola) negociee entre families, celebrations collectives avec musique et danse. Ceremonies agricoles saisonnieres : offrandes aux ancetres avant les semailles et apres la recolte. Rites catholiques et protestants largement integres a la vie quotidienne depuis la colonisation.",
+      "symbols": "Le fleuve Congo comme symbole identitaire fondateur — les peuples Bangala se definissent comme 'peuples du fleuve'. La pirogue (bwato) symbole de la vie riveraine et du commerce. Le tam-tam (ngoma) comme instrument de communication et de rituel. Les palmiers rafiia et les produits du fleuve comme symboles de richesse et d'identite.",
+      "artsAndMusic": "Soukous (encore appele rumba congolaise) : genre musical ne dans les annees 1940 a Kinshasa, chante presque exclusivement en lingala, diffuse sur tout le continent africain et dans la diaspora mondiale. Parmi les artistes emblematiques : Franco Luambo, Papa Wemba, Koffi Olomide, Ferre Gola. Ndombolo : danse derivee du soukous, tres populaire en Afrique centrale. Musique traditionnelle : sanza (piano a pouces), tam-tam (ngoma), flutes, chants polyphoniques. Arts plastiques : sculpture sur bois, poterie, tressage de raphia. Litterature orale : contes (makambo), proverbes (masamu), epopees transmises par les griots.",
+      "spiritualities": "Les croyances traditionnelles reposent sur le culte des ancetres (bakulu) qui veillent sur les vivants, le respect des esprits de la nature et la pratique de la sorcellerie (kindoki). La cosmologie inclut un dieu supreme createur (Nzambe) agissant par l'intermediaire des ancetres et des esprits. Le christianisme (catholicisme et protestantisme) domine depuis la colonisation belge et est profondement integre a la culture lingala. Les eglises de reveil d'inspiration africaine (Kimbanguisme, eglises de guerison) jouent un role social majeur. Un syncretisme vivant melange croyances traditionnelles et christianisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les peuples Bangala/lingalaphones ne formaient pas de royaumes centralises avant la colonisation. Ils s'organisaient en federations de villages sous des chefs locaux. La Station Bangala (Nouvelle-Anvers, aujourd'hui Mankanza), etablie en 1884 sur les rives de la Mongala, devint le principal centre administratif colonial de la region et le berceau de la langue lingala. Les Bangala etaient reconnus comme guerriers et commercants efficaces le long du fleuve Congo.",
+      "relationsWithNeighbors": "Les peuples Bangala entretenaient des relations commerciales intenses avec les autres groupes riverains (Bobangi, Mongo, Ngombe) et avec les peuples de l'interieur, echangeant poisson et produits du fleuve contre produits agricoles. Des tensions existaient avec les groupes Ngbandi et Ngbaka du nord. Sous la colonisation, les Bangala furent parfois utilises comme auxiliaires militaires et commerciaux par les Belges, ce qui crea des tensions avec d'autres peuples congolais.",
+      "conflictsOrAlliances": "Les peuples du fleuve Congo participerent aux guerres coloniales de resistance contre l'Etat Independant du Congo de Leopold II (1885-1908), marquees par des atrocites documentees (coupures de mains, travail force). Les guerres civiles congolaises post-independance (1960, 1996-2003) affecterent profondement les regions lingalaphones. Le regime Mobutu (1965-1997) s'appuya sur les Lingala-speakers, creant des tensions avec les autres groupes linguistiques (swahiliphones, kikongophones).",
+      "diaspora": "La diaspora congolaise lingalophone est presente en Belgique (notamment Bruxelles, 150 000 a 200 000 Congolais), en France (Paris, Lyon), aux Etats-Unis (Washington DC), au Canada et en Afrique du Sud. La musique soukous chantee en lingala a cree une presence culturelle mondiale. Des communautes lingalaphones significatives se trouvent dans les grandes villes d'Afrique centrale : Lubumbashi, Kisangani, Goma (RDC), Brazzaville, Pointe-Noire (Congo), Bangui (CAF)."
+    },
+    "demography": {
+      "totalPopulation": 40000000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur les donnees de Wikipedia (Lingala, 2024), APiCS Online (Survey Lingala), SIL Ethnologue (code lin), et l'enquete nationale RDC 2021. Le chiffre de 40 millions inclut 20 millions de locuteurs maternels et 20 millions de locuteurs en seconde langue. La population ethnique Bangala stricto sensu est nettement plus reduite (estimee a quelques millions). Les locuteurs de la RDC representent la grande majorite.",
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 34000000,
+          "note": "Majorite des locuteurs lingala; langue vehiculaire de Kinshasa et du nord-ouest (Equateur, Mongala, Nord-Ubangi). Environ 59% de la population congolaise (112 millions en 2025) utilise le lingala."
+        },
+        {
+          "country": "COG",
+          "population": 4500000,
+          "note": "Congo-Brazzaville : vehiculaire dans le centre et le nord, notamment a Brazzaville. Environ 60% des 5,9 millions d'habitants l'utilisent."
+        },
+        {
+          "country": "CAF",
+          "population": 800000,
+          "note": "Centrafrique : utilise comme langue commerciale transfrontaliere dans les regions proches du Congo."
+        },
+        {
+          "country": "AGO",
+          "population": 300000,
+          "note": "Angola : communautes lingalaphones dans la region de Cabinda et diaspora congolaise."
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Lingala. https://en.wikipedia.org/wiki/Lingala",
+      "APiCS Online — Survey chapter: Lingala (Koen Bostoen et al.). https://apics-online.info/surveys/60",
+      "Britannica — Lingala language. https://www.britannica.com/topic/Lingala-language",
+      "Joshua Project — Lingala in Congo, Democratic Republic of. https://joshuaproject.net/people_groups/13068/CG",
+      "SIL Ethnologue — Lingala (lin). https://www.ethnologue.com/language/lin/",
+      "Translators Without Borders — The four National Languages of DRC. https://translatorswithoutborders.org/wp-content/uploads/2020/07/The-four-National-Languages-of-DRC-EN.pdf",
+      "CLEAR Global — Four national languages of DRC (2022). https://clearglobal.org/four-national-languages-drc/",
+      "101 Last Tribes — Bangala people. https://www.101lasttribes.com/tribes/bangala.html"
+    ]
+  }
+}

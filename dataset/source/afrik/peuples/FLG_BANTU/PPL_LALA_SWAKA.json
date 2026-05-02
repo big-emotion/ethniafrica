@@ -1,0 +1,73 @@
+{
+  "id": "PPL_LALA_SWAKA",
+  "nameMain": "Lala-Swaka",
+  "languageFamilyId": "FLG_BANTU",
+  "currentCountries": ["ZMB"],
+  "content": {
+    "appellations": {
+      "mainName": "Lala-Swaka",
+      "selfAppellation": "Swaka",
+      "exonyms": ["Ba-Swaka", "Maswaka", "Swaka of Zambia"],
+      "originOfExonyms": "Le nom Swaka designe ce sous-groupe lala installe dans le district de Mkushi. Maswaka designe leur territoire historique. Le prefixe Ba- est le pluriel bantu pour designer un peuple.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le nom Swaka est utilise en Zambie pour identifier ce sous-groupe dans le district de Mkushi, province Centrale. La designation Lala-Swaka souligne son lien avec le groupe lala plus large. PeopleGroups.org les recense sous le nom Swaka of Zambia (PGID PG015635).",
+      "linguisticFamily": "FLG_BANTU",
+      "ethnoLinguisticGroup": "Lala-Bisa (Bantu zone M, Sabi)",
+      "historicalRegion": "District de Mkushi, province Centrale, Zambie",
+      "currentCountries": ["ZMB"]
+    },
+    "ethnicities": ["Lala-Swaka"],
+    "origins": {
+      "ancientOrigins": "Les Swaka, comme l'ensemble du groupe Lala, sont reputes descendants du Royaume Luba-Lunda dans l'actuelle Republique Democratique du Congo. Leur sous-groupe est particulierement associe au district de Mkushi dans la province Centrale de Zambie.",
+      "formationPeriod": "La chefferie swaka sous le lignage Mwewa est attestee a l'epoque precoloniale. Selon Munday (1940, 1950), les chefs swaka derivent du lignage Mwewa qui, apres la conquete lala, changea son clan de Bena Ng'ona au clan Nyendwa (Vulve).",
+      "migrationRoutes": [
+        "Depuis le bassin du Congo (heritage luba-lunda), installation dans la region de Mkushi via les migrations lala de l'Afrique centrale orientale"
+      ],
+      "historicalSettlementZones": [
+        "District de Mkushi, province Centrale de Zambie",
+        "Region de Luano"
+      ],
+      "unificationsOrDivisions": "Les Swaka ont ete places sous l'autorite du lignage Mushili des chefs Lala apres une conquete dirigee par le chef Bwashi. Le dialecte swaka est suffisamment divergent pour etre parfois classe comme langue distincte (Nurse 2003, Maho 2009).",
+      "externalInfluences": "Influence lala dominante par conquete politique et assimilation linguistique partielle. Contact avec les missions chretiennes et l'administration coloniale britannique en Rhodesie du Nord.",
+      "majorHistoricalEvents": "Conquete du territoire swaka par le lignage Mushili des Lala, dirige par le chef Bwashi. Participation a la ceremonie Ichibwela Mushi aux cotes des Lala et des Bisa."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Chefferie traditionnelle. Le chef Chitina est l'un des chefs Swaka actuellement reconnus dans le district de Mkushi. La chefferie swaka s'inscrit dans le systeme lala plus large dirige par le chef superieur Muchinda.",
+      "clanOrganization": "Organisation en clans exogames. Les chefs swaka appartiennent au clan Nyendwa (Vulve), issu du lignage Mwewa. Les clans portent des noms d'animaux, de plantes ou d'elements naturels, communs au systeme clanique des peuples de l'Afrique centrale orientale matrilineaire.",
+      "roleOfLineages": "Le lignage Mwewa est central dans la legitimite des chefs swaka. La filiation matrilineaire structure les droits a la chefferie et les alliances matrimoniales.",
+      "religiousAuthority": "Autorite spirituelle des chefs. Veneration des esprits ancestraux. Participation aux ceremonies collectives de remerciement aux ancetres."
+    },
+    "languages": {
+      "mainLanguage": "Swaka (dialecte du Lala-Bisa)",
+      "isoCodes": ["leb"],
+      "dialects": ["Swaka"],
+      "vehicularRole": "Le swaka est classe comme dialecte divergent du lala-bisa (ISO 639-3 : leb) par Nurse (2003), et comme langue distincte par Maho (2009). Il est parle dans le district de Mkushi. La langue lala-bisa (864 000 locuteurs selon Joshua Project) sert de vehiculaire dans la region. Le bemba est utilise comme langue de communication plus large."
+    },
+    "culture": {
+      "majorRites": "La ceremonie Ichibwela Mushi (ou Chibwelamushi) est la principale celebration culturelle, partagee avec les Lala et les Bisa du district de Mkushi. Elle se tient en septembre et marque le retour aux villages apres la saison agricole. Litteralement retour au village depuis les fermes, cette fete de recolte rend grace aux esprits ancestraux pour les bonnes pluies et l'abondance. Elle rassemble 19 chefs seniors des communautes Lala et Swaka.",
+      "symbols": "Les costumes traditionnels, les scultures, les haches et les houes artisanales sont presents lors de l'Ichibwela Mushi. Les danses en costumes rouges vibrants sont caracteristiques de la ceremonie.",
+      "artsAndMusic": "Danses, drames, chants traditionnels lors de l'Ichibwela Mushi. La biere locale (katata, katubi) et les aliments cultives localement font partie des offrandes ceremoniales.",
+      "spiritualities": "Veneration des esprits ancestraux comme source de fertilite, de pluie et de protection. Les ceremonies agricoles constituent le principal cadre d'expression religieuse traditionnelle. Adoption progressive du christianisme."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Chefferie swaka integree au systeme lala plus large. Le chef superieur Muchinda supervise l'ensemble des chefferies lala et swaka. Le chef Chitina est un chef swaka actuel du district de Mkushi.",
+      "relationsWithNeighbors": "Les Swaka partagent une identite culturelle et linguistique proche des Lala et des Bisa, avec qui ils celebrent l'Ichibwela Mushi. Selon les sources academiques, la region de Bukanda est delimitee par les Aushi au nord, les Lala et Swaka a l'est et au sud, et les Lamba a l'ouest.",
+      "conflictsOrAlliances": "Les Swaka furent conquis par le lignage Mushili des Lala, sous le chef Bwashi, qui etendit son territoire vers Maswaka. Cette conquete politica masquee par une adoption mythologique commune (mythe Chipimpi). Alliance ceremonielle avec les Lala et Bisa dans le cadre de l'Ichibwela Mushi.",
+      "diaspora": null
+    },
+    "demography": {
+      "totalPopulation": 127000,
+      "referenceYear": 2025,
+      "source": "PeopleGroups.org, PGID PG015635 (https://peoplegroups.org/people_groups/pg015635/)",
+      "distributionByCountry": [{ "country": "ZMB", "population": 127000 }]
+    },
+    "sources": [
+      "Swaka of Zambia – PeopleGroups.org, PGID PG015635 (https://peoplegroups.org/people_groups/pg015635/)",
+      "Lala-Bisa language – Wikipedia EN (https://en.wikipedia.org/wiki/Lala-Bisa_language)",
+      "Lala people – Wikipedia EN (https://en.wikipedia.org/wiki/Lala_people)",
+      "Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory – Brian Siegel, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
+      "Ichibwela Mushi – Luano Town Council (https://www.luanocouncil.gov.zm/?page_id=2517)",
+      "Chief Chitina of the Lala-Swaka people of Mkushi District – QFM Zambia, 2025 (https://www.facebook.com/qfmzambia/videos/chief-chitina-of-the-lala-swaka-people-of-mkushi-district-central-province-has-p/2234345853678729/)"
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "id": "PPL_MAHN",
+  "nameMain": "Mahn",
+  "languageFamilyId": "FLG_KROU",
+  "currentCountries": ["LBR", "GIN"],
+  "content": {
+    "appellations": {
+      "mainName": "Mahn",
+      "selfAppellation": "Maan",
+      "exonyms": [
+        "Mano",
+        "Mah",
+        "Manon",
+        "Mawe",
+        "Mah-Yacouba",
+        "Maa",
+        "Manne"
+      ],
+      "originOfExonyms": "Le terme Mano est l'exonyme colonial anglophone et français le plus courant, notamment en usage au Liberia. Mah ou Maan est l'auto-désignation. Yacouba (ou Mah-Yacouba) est un autre exonyme employé en Guinée, renvoyant à leur proche parenté avec les Dan/Yacouba. Mahn est la forme orthographiée francophone.",
+      "whyProblematic": "La confusion entre Mahn/Mano et les groupes Dan (Yacouba/Gio) vient de leurs origines communes mandé et de leurs liens culturels étroits. Les deux groupes cohabitent dans le comté de Nimba (Liberia) et sont parfois regroupés sous Mano-Dan.",
+      "contemporaryUsage": "Mano est la dénomination la plus répandue dans la littérature scientifique et les médias. Maan est préféré par les locuteurs eux-mêmes. Au Liberia, le terme Mano est officiel dans les documents administratifs.",
+      "linguisticFamily": "FLG_KROU",
+      "ethnoLinguisticGroup": "Mande du Sud (groupe krou élargi, branche mandé)",
+      "historicalRegion": "Comté de Nimba (nord-est du Liberia), préfectures de Nzérékoré, Lola et Yomou (Guinée forestière)",
+      "currentCountries": ["LBR", "GIN"]
+    },
+    "ethnicities": ["Mahn", "Mano", "Maan"],
+    "origins": {
+      "ancientOrigins": "Les Mahn descendent des peuples mandé. Leurs ancêtres appartenaient au clan Soumano/Danhou Maghan de la Gbara, au sein de l'empire du Mali. Après la fragmentation de cet empire, ils migrèrent vers la Guinée forestière où ils formèrent un royaume dans la région de Youmou. Selon la tradition orale recueillie par John Gbatu (1919-2010), le nom Nimba vient du mot mano Niemba/Nyamba Tun signifiant les collines sur lesquelles les jeunes filles glissent et tombent.",
+      "formationPeriod": "XIIIe-XVIIe siecle : premières migrations depuis le Soudan occidental vers l'empire du Mali, puis vers la Guinée forestière (XIIIe-XIVe siècles), avec une vague principale vers le Liberia aux XVIe-XVIIe siècles sous la pression des Mandingos qui poussèrent les Kpellé vers le sud et à leur tour les Mandé-Mahn plus au sud.",
+      "migrationRoutes": [
+        "Soudan occidental vers empire du Mali",
+        "Empire du Mali vers Guinée forestière (région de Youmou)",
+        "Guinée vers Liberia (fin XIXe siècle, lors de l'occupation française de la Guinée)",
+        "Expansion vers comté de Nimba (Liberia) et préfectures de Nzérékoré, Lola, Yomou (Guinée)"
+      ],
+      "historicalSettlementZones": [
+        "Comté de Nimba, nord-est du Liberia (Ganta, Yekepa, Sanniquellie, Scalepea)",
+        "Préfectures de Nzérékoré, Lola et Yomou, Guinée forestière"
+      ],
+      "unificationsOrDivisions": "Les Mahn et les Dan (Gio/Yacouba) sont les deux peuples majeurs du comté de Nimba. Ils partagent des origines communes et des liens culturels très forts ; les Dan sont traditionnellement désignés comme les petits frères des Mahn. Lors de la guerre civile libérienne, les Mahn de Guinée ont accueilli leurs frères libériens fuyant les combats.",
+      "externalInfluences": "Influence de la colonisation française en Guinée (ayant provoqué la migration de nombreux Mahn vers le Liberia à la fin du XIXe siècle). Au Liberia, influence coloniale américano-libérienne et évangélisation chrétienne depuis le XIXe siècle (mission de Ganta fondée par le Dr George Way Harley). L'Islam a aussi pénétré dans certaines communautés.",
+      "majorHistoricalEvents": "Participation à la défense de l'empire du Mali contre les envahisseurs nord-africains (XVIe-XVIIe s.). Colonisation française de la Guinée (fin XIXe s.) provoquant l'exode vers le Liberia. Guerre civile libérienne (1989-2003) : le comté de Nimba, foyer mahn, fut l'un des territoires les plus touchés ; les Mahn firent l'objet de violences ethniques ; solidarité des Mahn de Guinée envers les réfugiés libériens."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation clanique sans État centralisé. Les Mahn sont structurés en villages-clans dirigés par des chefs villageois élus ou désignés par les anciens. Les décisions importantes sont prises en conseil des anciens.",
+      "clanOrganization": "Société patrilinéaire organisée en clans (et lignages). Les mariages inter-claniques renforcent les alliances entre communautés. Les Mahn et les Dan/Gio constituent les deux clans dominants du comté de Nimba.",
+      "ageClassSystems": "Les Mahn pratiquent deux institutions traditionnelles d'initiation : le Poro (école des hommes), société secrète masculine gérant les initiations, la justice et la guerre, et le Sande (école des femmes), société secrète féminine supervisant l'initiation des filles et les rites de passage.",
+      "roleOfLineages": "Les lignages patrilinéaires organisent la transmission des terres, des biens et de l'autorité. Le système de parenté est déterminant dans les alliances matrimoniales et politiques.",
+      "religiousAuthority": "Autorité religieuse partagée entre les anciens gardiens des rites animistes (Poro, Sande), les pratiques d'invocation de Wala/Ya'ala (créateur suprême associé au mont Nimba), et les leaders chrétiens depuis le XIXe siècle. La mission de Ganta (fondée par le Dr Harley) a joué un rôle majeur dans la christianisation."
+    },
+    "languages": {
+      "mainLanguage": "maan (mano)",
+      "isoCodes": ["mev"],
+      "dialects": [
+        "maan (Liberia)",
+        "maan (Guinée)",
+        "variantes locales des préfectures de Lola et Yomou"
+      ],
+      "vehicularRole": "Le maan est la langue maternelle de la communauté mahn, parlée dans le comté de Nimba (Liberia) et les préfectures de Nzérékoré, Lola et Yomou (Guinée). L'anglais est la langue officielle au Liberia ; le français en Guinée. Le maan est une langue à trois tons (haut, médian, bas) classée dans la famille mandé du groupe nigéro-congolais. Environ 390 000 locuteurs en 2012 selon Omniglot."
+    },
+    "culture": {
+      "majorRites": "Les deux institutions cardinales sont le Poro (société secrète masculine) et le Sande (société secrète féminine). Le Poro gère l'initiation des hommes en forêt sacrée (retraite de plusieurs mois), la transmission des savoirs guerriers, juridiques et spirituels. Le Sande supervise l'initiation féminine. Les cérémonies de passage à l'âge adulte sont des moments communautaires majeurs.",
+      "symbols": "Le mont Nimba (Niemba/Nyamba Tun en mano) est le symbole territorial et spirituel le plus fort ; la communauté y rendait traditionnellement un culte à Wala (dieu créateur). Les masques du Poro et du Sande sont des objets sacrés centraux. Le Dr George Way Harley acquit et préserva de nombreux masques mahn, constituant une collection au Cleveland Museum of Art.",
+      "artsAndMusic": "Les Mahn sont reconnus comme d'excellents musiciens, guerriers et artisans. Leurs traditions artistiques comprennent la sculpture de masques, la vannerie, le tissage et la fabrication d'instruments. La musique vocale et instrumentale accompagne toutes les cérémonies du Poro et du Sande. La transmission des savoirs passe par des chants, contes et épopées orales.",
+      "spiritualities": "Animisme traditionnel centré sur Wala (dieu créateur céleste) et des esprits de la nature associés aux montagnes, forêts et cours d'eau. Croyance en des petits êtres de la brousse (gobelins/génies) pouvant nuire aux humains. Pratique de la sorcellerie. Depuis le XIXe siècle, christianisme (méthodiste, catholique) largement répandu au Liberia. Islam présent dans une minorité de la communauté."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Mahn ne formèrent pas un royaume unifié. Ils organisèrent un État embryonnaire dans la région de Youmou (Guinée) avant leur migration vers le Liberia. En pays mahn, le Poro joue un rôle quasi-étatique de régulation sociale et politique.",
+      "relationsWithNeighbors": "Relations étroites et fraternelles avec les Dan (Gio/Yacouba), considérés comme leurs petits frères. Relations commerciales et matrimoniales avec les Kpellé, les Kissi et les Grebo. En Guinée, relations avec les Mandingos qui les avaient poussés à migrer vers le Liberia.",
+      "conflictsOrAlliances": "Résistance à l'avancée mandingue (XVIe-XVIIe s.). Alliance avec les Dan pour défendre le comté de Nimba lors de la guerre civile libérienne (1989-2003). Tensions inter-ethniques pendant la guerre civile : les milices NPFL de Charles Taylor, composées notamment de Dan, entrèrent en conflit avec des communautés mahn. Les Mahn de Guinée apportèrent un soutien humanitaire et militaire à leurs frères libériens.",
+      "diaspora": "Diaspora libérienne et guinéenne dans les capitales (Monrovia, Conakry) et à l'étranger (États-Unis, Europe) suite à la guerre civile. Les Mahn de la diaspora entretiennent des associations culturelles."
+    },
+    "demography": {
+      "totalPopulation": 499000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : 377 000 Maan au Liberia, 122 000 en Guinée, total 499 000 (https://joshuaproject.net/people_groups/16121/GV). Wikipedia Mano people : 472 000 à 510 000 estimés.",
+      "distributionByCountry": [
+        { "countryCode": "LBR", "population": 377000 },
+        { "countryCode": "GIN", "population": 122000 }
+      ]
+    },
+    "sources": [
+      "Mano people – Wikipedia EN, consulté 2025 (https://en.wikipedia.org/wiki/Mano_people)",
+      "Mano language – Wikipedia EN, consulté 2025 (https://en.wikipedia.org/wiki/Mano_language)",
+      "Maan in Guinea – Joshua Project, 2025 (https://joshuaproject.net/people_groups/16121/GV)",
+      "Maan in Liberia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/16121/LI)",
+      "Omniglot – Mano language and alphabet, 2021 (https://www.omniglot.com/writing/mano.htm)",
+      "Ethnologue – Maan language (mev), SIL International, 2024 (https://www.ethnologue.com/language/mev/)",
+      "Kru people – Wikipedia EN, consulté 2025 (https://en.wikipedia.org/wiki/Kru_people)"
+    ]
+  }
+}

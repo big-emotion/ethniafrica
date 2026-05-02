@@ -1,0 +1,99 @@
+{
+  "id": "PPL_ORON",
+  "nameMain": "Oron",
+  "languageFamilyId": "FLG_BENOUECONGO",
+  "currentCountries": ["NGA", "CMR"],
+  "content": {
+    "appellations": {
+      "mainName": "Oron",
+      "selfAppellation": "Oron / Oro",
+      "exonyms": [
+        "Akpakip Oro",
+        "Oro Ukpabang",
+        "Tom Shott people (historical European label)"
+      ],
+      "originOfExonyms": "Akpakip Oro means the people of the Oron nation in the Oro language. Tom Shott was a colonial designation used by early Portuguese and Spanish explorers to denote the resilience and stubbornness of the Oron people, who refused to participate in the slave trade.",
+      "whyProblematic": "The Tom Shott designation is now obsolete and considered reductive. Some outsiders confuse Oron with the neighboring Ibibio, from whom the Oron are distinct.",
+      "contemporaryUsage": "Oron is the standard usage in official Nigerian administrative contexts and in the Oron Museum designation. Akpakip Oro is the self-designating political term used within the community.",
+      "linguisticFamily": "FLG_BENOUECONGO",
+      "ethnoLinguisticGroup": "Benue-Congo, Cross River branch",
+      "historicalRegion": "Lower Cross River basin, Akwa Ibom State and Cross River State, Nigeria; western coast of Cameroon",
+      "currentCountries": ["NGA", "CMR"]
+    },
+    "ethnicities": [
+      "Idua (Asang) group",
+      "Okobo group",
+      "Ebughu group",
+      "Enwang group",
+      "Effiat group",
+      "Oro Ukpabang group",
+      "Etta clan",
+      "Afaha Ukwong clan"
+    ],
+    "origins": {
+      "ancientOrigins": "Oron oral traditions identify Abang Okpo as the founding ancestor, with origins traced to ancient Kemet (Egypt) prior to the Arab and Islamic presence. The community categorically rejects the colonial classification as a sub-group of the Ibibio. Archaeological evidence from Ekpu Oro ancestral carvings found in the Oron Museum dates Oron presence to approximately 2370 BCE. The predominant paternal haplogroup is E1b1a1-M2, suggesting ancient northeastern African ancestry connected to the Green Sahara period.",
+      "formationPeriod": "Oron communities began consolidating in their current riverine territories of the lower Cross River basin during the pre-colonial era, with distinct clan identities established by at least the early first millennium CE.",
+      "migrationRoutes": [
+        "From northeastern Africa southwestward through the Sahel during the desiccation of the Sahara circa 3500 BCE",
+        "Migration through Usahadit (Cameroon) and Bakassi Peninsula",
+        "Settlement along the Cross River estuary and Atlantic coast"
+      ],
+      "historicalSettlementZones": [
+        "Western bank of the Cross River estuary, Akwa Ibom State",
+        "Coastal and riverine communities of Oron, Okobo, Mbo, Urue-Offong/Oruko, and Udung Uko LGAs",
+        "Extensions into Cross River State and southwestern Cameroon"
+      ],
+      "unificationsOrDivisions": "The Oron Union, founded in 1925, served as a unifying sociopolitical and cultural institution. Colonial and post-independence government restructuring fragmented the Oron Nation across five LGAs and two Nigerian states. The geopolitical divisions weakened collective political representation.",
+      "externalInfluences": "Ancestral ties with the Efik of Calabar, the Andoni, and the Ibibio shaped cultural exchanges. Early European contact from the 16th century introduced trade, colonial governance, and Protestant Christianity (Methodist Boys High School established in Oron in 1905, one of Nigeria's oldest schools). The Biafran War (1967-1970) caused significant destruction of Ekpu Oro ancestral figures.",
+      "majorHistoricalEvents": "The Oron Museum, Nigeria's first museum east of the Niger, preserves hundreds of Ekpu Oro carvings. Oron became a Division in 1970 and a Local Government Area in 1976. Subsequent LGA creations in 1989, 1991, and 1996 subdivided the original territory into five separate units."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Pre-colonial Oron society was organized through village councils (Isong) of family and lineage heads. Ekpe, a powerful secret society of seven grades (Nyamkpe, Nkanda, Usongo, Ekpeyong, Esa, Ibang, and Eyamba), later became the legislative, executive, and policing system. The supreme head of Ekpe was the Offong Ekpie. Post-colonial governance introduced elected officials while traditional councils retained cultural authority.",
+      "clanOrganization": "The Oron Nation is composed of nine clans organized into afaha (clan territories): Afaha Ukwong, Ebughu, Afaha Ibighi, Effiat, Etta, Afaha Oki-uso, Afaha Idua, Afaha Okpo, and Afaha Ubodung. These are grouped into six main constituent peoples: Idua, Okobo, Ebughu, Enwang, Effiat, and Oro Ukpabang.",
+      "ageClassSystems": "Age-grade associations called Nka regulate community duties. Nka Mkparawa acted as a warriors grade; Nka Ndito Isong (for both sexes) enforced unity and development; Nka Nlapp served youths; Nka Ikponwi served elders. These maintained roads, bridges, and market cleanliness.",
+      "roleOfLineages": "Patrilineal lineage structures govern property, inheritance, and the carving and custody of Ekpu Oro ancestral figures. Each family maintained a shrine with an Ekpu figure representing the ancestral father, serving as spiritual intermediary.",
+      "religiousAuthority": "Pre-Christian religion recognized a supreme deity Abazi Odung Oyong (God of the Sky), alongside a hierarchy of lesser deities (Abazi Utei for farming, Abazi Okoro for the compound, Abazi Inam for prosperity, Abazi Esuk for the river) and ancestral cults. Ekung (male warrior-elder society) and Awan-idit (Akata) maintained moral order. Christianity became dominant through Methodist, Presbyterian, and Anglican missions from the early 20th century."
+    },
+    "languages": {
+      "mainLanguage": "Oro (orx)",
+      "isoCodes": ["orx"],
+      "dialects": [
+        "Oron Central",
+        "Okobo",
+        "Udung Uko",
+        "Mbo",
+        "Urue-Offong/Oruko"
+      ],
+      "vehicularRole": "Oro (Oron language) is the primary community language. Many Oron people are also fluent in Efik, which serves as a wider regional language across Akwa Ibom and Cross River States. Ibibio and Annang are also widely understood due to dialectal proximity. English is used in formal contexts."
+    },
+    "culture": {
+      "majorRites": "The Ekpu Oro ritual is central: wooden ancestral figures carved from the Oko tree are kept in family shrines and invoked during naming ceremonies, marriages, communal decisions, and funerary observances. Libations, prayers, and periodic renewal of the Ekpu figures maintain ancestral bonds. Wrestling (Mbok), historically associated with the founding ancestor Abang Okpo, remains a traditional martial art and cultural performance.",
+      "symbols": "Ekpu Oro ancestral figurines are the defining cultural symbol of the Oron people, representing lineage memory, spiritual heritage, and communal history. Beaded regalia and the Ofod Ukod Anwang bridal attire are important markers of female identity and status.",
+      "artsAndMusic": "Oron is renowned for its wooden sculpture tradition, particularly the Ekpu Oro figures, now housed in the Oron Museum (the first national museum east of the Niger River). Song, folklore, and dance are central to clan festivals. Traditional cuisine includes Otong soup (unique to Oron), Afang, Edikang Ikong, and Ekpang Nkukwo (called Ototoo in Oron). Traditional dress features raffia-fiber garments and later local fabrics with beads (Ngwa).",
+      "spiritualities": "Oron traditional religion is hierarchically structured: Abazi Odung Oyong (supreme sky deity) presides over lesser deities, ancestral spirits, clan Olughu (sacred forces), Ndem (water spirits), and Mbiam (oath-enforcement spirits). Christianity is now predominant, but ancestral veneration and traditional festival observances continue alongside church practice."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "The Oron Nation functioned as a decentralized confederacy of nine clans governed by councils of elders and the Ekpe society. The Oron Union (1925) formalized collective political representation. No single paramount traditional ruler existed; authority was distributed across clan chiefs and Ekpe officials.",
+      "relationsWithNeighbors": "Ancestrally related to the Efik, Ibibio, Andoni (Obolo), and Ibeno peoples. Historical distinctions from the Ibibio are strongly emphasized in Oron oral traditions. Trade and cultural exchange with Efik of Calabar introduced the Ekpe society to Oron communities. Relations with neighboring groups were complex, shaped by both alliance and inter-communal competition.",
+      "conflictsOrAlliances": "The Oron people famously refused to sell their kinsmen into slavery during the Atlantic slave trade era, earning the European label Tom Shotts Town. European explorers documented this resistance from the 16th-19th centuries. During the Biafran War (1967-1970), Oron communities suffered civilian losses, and the Oron Museum's Ekpu collection was partially destroyed or dispersed.",
+      "diaspora": "Oron communities exist in Cross River State and across Nigerian urban centers. Small Oron diaspora communities are found in the United Kingdom and North America, particularly among professionals who emigrated after the civil war era."
+    },
+    "demography": {
+      "totalPopulation": 750000,
+      "referenceYear": 2025,
+      "source": "The 1983 estimate placed Oron population at over 600,000. The 101 Last Tribes source cited over 400,000 in the Oron Nation alone circa 2005. Joshua Project (2024) lists Oro language speakers at approximately 165,000, though this figure undercounts the full Oron population which includes those with varying degrees of language retention. Projection to 2025 applying a 2.5% annual growth rate to the 1983 baseline yields an estimate in the range of 750,000 across Nigeria and Cameroon.",
+      "distributionByCountry": [
+        { "country": "NGA", "population": 740000 },
+        { "country": "CMR", "population": 10000 }
+      ]
+    },
+    "sources": [
+      "Wikipedia, Oron people: https://en.wikipedia.org/wiki/Oron_people",
+      "Wikipedia, Ekpu Oro: https://en.wikipedia.org/wiki/Ekpu_Oro",
+      "101 Last Tribes, Oron people: https://www.101lasttribes.com/tribes/oron.html",
+      "Joshua Project, Oron in Nigeria: https://joshuaproject.net/people_groups/14222",
+      "National Repository of Nigeria, A history of Oron people: https://nigeriareposit.nln.gov.ng/items/3093c34c-b4b8-44d9-b271-cd508b224529/full",
+      "Nwednyin.org, Oron Museum: https://www.nwednyin.org/articles/oron-museum"
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "id": "PPL_KRIO",
+  "nameMain": "Krio",
+  "languageFamilyId": "FLG_CREOLE",
+  "currentCountries": ["SLE"],
+  "content": {
+    "appellations": {
+      "mainName": "Krio",
+      "selfAppellation": "Krio pipul",
+      "exonyms": [
+        "Sierra Leone Creole",
+        "Creole (Sierra Leone)",
+        "Saro (designation des Krio installes au Nigeria au 19e siecle)",
+        "Aku (pour les Krio islamises, distincts des Krio chretiens)"
+      ],
+      "originOfExonyms": "Le terme Krio est la forme creolisee de Creole en langue krio. Saro est une deformation de Sierra Leone utilisee au Nigeria pour designer les Krio installes a Lagos et Abeokuta. Aku designe les Krio d'origine yoruba musulmane reinstalles en Sierra Leone depuis les navires negriers.",
+      "whyProblematic": "La distinction entre Krio (chretiens, descendants de plusieurs vagues de Liberated Africans) et Aku (musulmans d'origine yoruba) cree une ambiguite ethnonymique. Le terme Creole peut porter une connotation de privilege colonial en Sierra Leone.",
+      "contemporaryUsage": "Krio est le terme courant et accepte. Les Krio representent environ 1,2 a 4 % de la population sierra-leonaise selon les sources. La langue krio sert de lingua franca a l'ensemble du pays (90 % des Sierra-Leonais la parlent).",
+      "linguisticFamily": "FLG_CREOLE",
+      "ethnoLinguisticGroup": "Creole afro-anglais de Sierra Leone",
+      "historicalRegion": "Freetown et zone occidentale de Sierra Leone (Western Area)",
+      "currentCountries": ["SLE"]
+    },
+    "ethnicities": [
+      "Nova Scotians ou Settlers : descendants des Loyalistes noirs americains arrives en 1792 (1200 personnes depuis la Nouvelle-Ecosse)",
+      "Jamaican Maroons : descendants des Marrons jamaiquains deportes en Sierra Leone en 1800 (550 personnes)",
+      "Black Poor ou Old Settlers : Africains-Americains et Afro-Caribbeens arrives en 1787 (411 personnes fondant Granville Town puis Freetown)",
+      "Liberated Africans (Recaptives) : esclaves liberes des navires negriers entre 1808 et 1860, d'origines Yoruba, Igbo, Akan, Bakongo, Ewe, Hausa, Mandingue, Mende, Temne",
+      "Saro : Krio installes au Nigeria (Lagos, Abeokuta, Calabar) au 19e siecle"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Krio n'ont pas d'origine africaine unique : ils constituent un peuple creole issu du metissage de plusieurs vagues de depossedes africains reunis a Freetown entre 1787 et 1885. Leurs ancetres comprennent des Africains-Americains (Loyalistes noirs de la guerre d'Independance), des Marrons jamaiquains, et des esclaves liberes (Recaptives) de multiples ethnies ouest et centre-africaines (Yoruba, Igbo, Akan, Bakongo, Ewe, Hausa, Mende, Temne). La fondation de la colonie de Sierra Leone par des abolitionnistes britanniques en 1787 est l'acte fondateur de cette identite.",
+      "formationPeriod": "L'identite krio se cristallise entre 1792 (fondation de Freetown par les Nova Scotians) et les annees 1870-1885, lorsque la fusion des differentes vagues de Liberated Africans avec les Settlers et Maroons produit une identite ethnique, linguistique et culturelle coherente. La langue krio emerge comme langue native dans cette periode.",
+      "migrationRoutes": [
+        "Angleterre vers Sierra Leone (1787) : les Black Poor (anciens esclaves de Londres)",
+        "Nouvelle-Ecosse (Canada) vers Sierra Leone (1792) : les Nova Scotian Settlers",
+        "Jamaique vers Sierra Leone (1800) : les Jamaican Maroons (deportes de Trelawny Town)",
+        "Navires negriers vers Freetown (1807-1860) : Liberated Africans captures sur les routes atlantiques"
+      ],
+      "historicalSettlementZones": [
+        "Freetown (Province occidentale, Sierra Leone) : coeur historique du peuplement krio",
+        "Villages fondateurs autour de Freetown : Granville Town, Gloucester, Leicester, Regent, Charlotte, Bathurst",
+        "Lagos, Abeokuta, Calabar, Onisha (Nigeria) : diaspora Saro du 19e siecle",
+        "Banjul (Gambie), Conakry (Guinee), Accra, Cape Coast (Ghana), Limbe (Cameroun)",
+        "Fernando Po (actuelle Guinee equatoriale) : Krio Fernandinos"
+      ],
+      "unificationsOrDivisions": "Les differentes vagues (Nova Scotians, Maroons, Recaptives) ont maintenu des identites distinctes jusqu'aux annees 1870. La fusion progressive, favorisee par la langue krio, les mariages mixtes et la religion chretienne, a produit une identite commune. Toutefois, une distinction sociale a longtemps separe les Nova Scotians et Maroons (classes superieures) des Recaptives (classes inferieures).",
+      "externalInfluences": "Influence britannique majeure : education, religion protestante, droit, architecture victorienne. Influence africaine substantielle : Yoruba (mythes, noms de jumeaux Taiwo/Kehinde, musique gumbe), Akan (contes Anansi), Bakongo, Igbo dans la langue et les traditions. Influence jamaicaine des Maroons (musique babichu, pratiques commemoratives). Le mouvement abolitionniste britannique a joue un role fondateur.",
+      "majorHistoricalEvents": "1787 : fondation de Granville Town par les Black Poor. 11 mars 1792 : fondation officielle de Freetown par les Nova Scotians sous le Coton Tree. 1807 : abolition de la traite negriere britannique ; debut de l'installation massive de Recaptives. 1808 : Sierra Leone devient colonie de la Couronne ; Freetown centre de l'escadron de suppression de la traite. 1827 : fondation du Fourah Bay College, premier college universitaire en Afrique subsaharienne. 1961 : independance de la Sierra Leone. 1991-2002 : guerre civile sierra-leonaise ; exode krio vers l'etranger."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation en communautes de quartiers (districts) a Freetown, chaque quartier ayant ses propres associations de familles et ses eglises. Pas de systeme chenal traditionnel africain : les Krio se sont rapidement integres dans les structures administratives et juridiques britanniques comme classe dirigeante coloniale. Les grandes familles (prominent families) forment un reseau d'influence.",
+      "clanOrganization": "Pas de clans au sens strict : les familles fondatrices constituent le coeur du reseau social krio. Parmi les familles Nova Scotians notables : Ball, Burden, George, Peters, Preston, Snowball. Parmi les familles Maroon : Jarrett, Smith, Horton, Cole, Porter. Les Recaptives ont apporte des noms yoruba, igbo et akan.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages de premier rang (Nova Scotians, Maroons) conferaient un statut social superieur. Les mariages etaient vus comme des contrats entre familles (un suitor ne pouvait approcher une jeune femme sans l'accord parental — coutume du put stop ou gej). L'identite krio se transmet par les deux parents mais les noms de famille paternels dominent.",
+      "religiousAuthority": "Autorite des pasteurs protestants (anglicanisme dominant, methodisme fort). Le Fourah Bay College, fonde en 1827, a forme des clerges et educateurs pour toute l'Afrique de l'Ouest. Les familles jouent un role central dans la vie religieuse. L'Eglise Saint Georges Cathedral et l'Eglise Trinity sont des lieux emblematiques de la vie krio a Freetown."
+    },
+    "languages": {
+      "mainLanguage": "Krio (creole anglais de Sierra Leone)",
+      "isoCodes": ["kri"],
+      "dialects": [
+        "Krio de Freetown : variete prestige, plus proche de l'anglais",
+        "Krio des provinces : varietes regionales avec influences des langues locales (Temne, Mende)",
+        "Krio de diaspora : varietes parlees au Gambie, Nigeria, Ghana, Cameroun, avec adaptations locales"
+      ],
+      "vehicularRole": "Le krio est la lingua franca de la Sierra Leone, parle par plus de 90 % de la population (environ 8 millions de locuteurs secondaires en 2025). Il est langue maternelle d'environ 500 000 personnes. Depuis les annees 1990, utilise comme langue d'instruction dans certaines ecoles primaires de Freetown. Les radios et televisisions diffusent largement en krio. L'anglais est la langue officielle de l'Etat et de l'education superieure."
+    },
+    "culture": {
+      "majorRites": "Naissance : ceremony pull-na-doh (ou komojadé) le septieme jour apres la naissance, equivalent du bapteme africain ; le bebe est presente a la famille et reoit son nom. Noms de jumeaux d'origine yoruba : premier jumeau Taiwo (Taiye, goutant le monde en premier), deuxieme Kehinde (venu en dernier mais ayant les droits de l'aine). Mariage : ceremony du put stop ou gej (demande formelle avec cadeaux incluant Bible, kola, argent, bague) ; eve du mariage (bachelor's eve) ; mariage a l'eglise en tenue occidentale ; ashobis (fetes ou tous les invites portent le meme tissu). Mort et deuil : retournement des tableaux et couverture des miroirs a l'annonce du deces ; veille avec chants spirituals (shouts negro) pour s'assurer que le mort n'est pas en transe ; corps lave, enveloppe dans des linceuls, expose, transport a l'eglise puis au cimetiere ; festins awujoh les 3e, 7e et 40e jours apres le deces ; pull mooning (fin de deuil) un an apres la mort, en blanc, visite au cimetiere.",
+      "symbols": "Le Coton Tree de Freetown (grand fromager sous lequel les Nova Scotians ont celebre leur thanksgiving le 11 mars 1792) : symbole fondateur de la nation krio. Le tambour gumbe : instrument central de la musique krio, relie aux ancetres maroons de Jamaique. Les robes victoriennes adaptees (kabba slut, petticoat, wool slippers) et le chapeau haut de forme pour les hommes : heritage culturel visible. La langue krio elle-meme comme symbole identitaire.",
+      "artsAndMusic": "Musique gumbe (ou goombay) : genre musical creole d'origine jamaicaine maroon, a caractere nationalist et spirituel ; utilise le tambour gumbe, la maracash (bouteille de verre + objet metallique) et la scie raclée ; melange avec des genres contemporains. Contes Anansi : histoires de l'araignee espiegle venues des Akan et Ewe via les Maroons et Recaptives yoruba ; transmises oralement en krio. Architecture victorienne creole : maisons en bois sur fondations en pierre, toits en bardeau, lucarnes, fenetes en encorbellement, balcons ; heritage des Nova Scotians (annees 1790). Poesie et litterature en krio : Thomas Decker (traductions de Shakespeare en krio, annees 1960) ; traduction de la Bible en krio (Nouveau Testament 1986, Ancien Testament 2013 par Lutheran Bible Translators).",
+      "spiritualities": "Protestantisme ecrasant (plus de 98 % nominalement ou pratiquant) : Eglise anglicane (dominante), Eglise methodiste, Eglise baptiste, Eglise de la Comtesse de Huntingdon. Le Fourah Bay College (1827) a fait des Krio les principaux agents de l'evangelisation chretienne en Afrique de l'Ouest (6 des 10 clerges anglicans noirs entre 1840 et 1900 etaient krio). Pratiques syncrétiques : certaines familles maintiennent les festins awujoh pour propitier les ancetres (heritage des Recaptives africains). Petite minorite catholique (eglise Saint Antoine de Brookfields, Cathedrale du Sacre-Coeur). Les Aku (Krio islamises d'origine yoruba) pratiquent l'islam sunnite tout en partageant la langue krio."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Krio n'ont pas forme de royaume ou chefferie propre : leur organisation politique s'est inseree dans le cadre colonial britannique. Ils ont occupe des positions dominantes dans l'administration, le commerce et l'education coloniale sierra-leonaise et ouest-africaine au 19e siecle. Le Fourah Bay College (1827) en fit le principal vivier intellectuel de l'Afrique de l'Ouest britannique.",
+      "relationsWithNeighbors": "Relations ambivalentes avec les ethnies sierra-leonaises de l'interieur (Temne, Mende, Limba) : dominance culturelle et economique krio sous la colonisation, ressentiment croissant apres l'independance. Relations fraternelles avec les Americo-Liberiens du Liberia (groupe analogue). Forte influence sur les communautes cotieres du Nigeria, Ghana, Cameroun et Guinee equatoriale via la diaspora Saro.",
+      "conflictsOrAlliances": "Alliance permanente avec l'administration coloniale britannique (les Krio administrent une grande partie de l'Afrique de l'Ouest pour la Couronne). Tension avec les groupes de l'interieur lors des guerres frontieres du 19e siecle. Marginalisation politique progressive apres l'independance (1961) au profit des majorites Temne et Mende. Exil de nombreux Krio lors de la guerre civile (1991-2002).",
+      "diaspora": "Diaspora Saro au Nigeria (Lagos, Abeokuta, Calabar, Onisha) au 19e-20e siecles : influence majeure sur les elites yoruba et igbo. Communautes historiques en Gambie (Aku people), Ghana (Accra, Cape Coast), Cameroun (Limbe), Guinee equatoriale (Krio Fernandinos). Diaspora contemporaine importante aux Etats-Unis (Washington DC, Maryland, Virginie, New York) et au Royaume-Uni ; migrations liees a la guerre civile (1991-2002). Krio Descendants Union (New York) et Creole/Krio Heritage Society maintiennent l'identite."
+    },
+    "demography": {
+      "totalPopulation": 500000,
+      "referenceYear": 2025,
+      "source": "Kreol Magazine 2025 (environ 500 000 locuteurs natifs) ; Wikipedia EN Sierra Leone Creole people (1,2 % de la population, soit environ 90 000-100 000 ethniquement krio, mais jusqu'a 500 000 selon SIL Ethnologue pour la langue maternelle) ; CIA World Factbook Sierra Leone 2024. La population ethniquement krio est distincte de l'ensemble des locuteurs krio.",
+      "distributionByCountry": [
+        {
+          "country": "SLE",
+          "population": 450000,
+          "note": "Principalement a Freetown et dans la zone occidentale (Western Area)"
+        },
+        {
+          "country": "GBR",
+          "population": 30000,
+          "note": "Diaspora au Royaume-Uni, principalement a Londres"
+        },
+        {
+          "country": "USA",
+          "population": 20000,
+          "note": "Diaspora aux Etats-Unis (Washington DC, Maryland, New York)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Sierra Leone Creole people. https://en.wikipedia.org/wiki/Sierra_Leone_Creole_people",
+      "Wikipedia EN — Krio language. https://en.wikipedia.org/wiki/Krio_language",
+      "Creole Heritage Organization California — The Krios: An Abridged History. https://cho-ca.org/the-krios-an-abridged-history",
+      "BBC News — The story of Sierra Leone's Krio people. https://www.bbc.com/news/world-africa-49726461",
+      "Kreol Magazine — Krio: The Creole Language That Unites Sierra Leone. https://kreolmagazine.com/krio-the-creole-language-that-unites-sierra-leone/",
+      "EBSCO Research Starters — Sierra Leone Creole people. https://www.ebsco.com/research-starters/history/sierra-leone-creole-people",
+      "SIL Ethnologue — Krio language (kri). https://www.ethnologue.com/language/kri/"
+    ]
+  }
+}

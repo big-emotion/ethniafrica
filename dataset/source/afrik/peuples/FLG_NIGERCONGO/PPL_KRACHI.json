@@ -1,0 +1,80 @@
+{
+  "id": "PPL_KRACHI",
+  "nameMain": "Krachi",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Krachi",
+      "selfAppellation": "Krakye",
+      "exonyms": ["Krachi", "Krachie", "Kaakye", "Ka-akye", "Kete-Krachi"],
+      "originOfExonyms": "Selon la tradition orale, lorsque les ancetres krakye voulaient quitter leurs seigneurs akyem en raison des tributs excessifs, ces derniers les teaserent en disant Ka-akye-won, signifiant ils sont devenus insolvables en akan. Ce mot a ete corrompu en Ka-Akye puis anglicise en Krachi par l'administration coloniale. Kete-Krachi est le nom de la capitale, Kete etant le quartier commercial adjacent au quartier traditionnel Krachikrom.",
+      "whyProblematic": "Le nom Krachi est une anglicisation coloniale de l'endonyme Krakye ou Kaakye. L'utilisation du nom de la ville (Kete-Krachi) pour designer le peuple entier cree parfois une confusion entre lieu et groupe ethnique.",
+      "contemporaryUsage": "Krachi est la designation officielle utilisee par les administrations ghaneennes et dans la litterature academique. Krakye est la forme preferred par les membres du groupe eux-memes. Kaakye est une variante orthographique parfois utilisee.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Guan (Niger-Congo, Kwa)",
+      "historicalRegion": "Oti Region (ex-Volta Region nord), Ghana central-nord",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Krachi", "Krakye"],
+    "origins": {
+      "ancientOrigins": "Les Krachi sont un peuple d'origine Guan. Leur histoire orale les presente comme des Esti qui vivaient autrefois pres d'Awutu sur la cote du Ghana. Ils migrent ensuite vers Larteh Akuapem pour rejoindre d'autres communautes Guan, avant de remonter vers le nord. Le Dente, l'esprit oraculaire central de leur religion, avait egalement son foyer d'origine a Larteh Akuapem selon la tradition. Krachi est une amalgamation de peuples d'origine Guan provenant de Larteh et de Prang.",
+      "formationPeriod": "Etablissement dans la region du Volta vers le XVIe-XVIIe siecle. Organisation en Etat bien structure avant l'arrivee des Allemands en 1896. Formation du nom Krachi (Ka-Akye) lors des tensions avec les suzerains akyem, probablement au XVIIe ou XVIIIe siecle.",
+      "migrationRoutes": [
+        "Migration initiale depuis la cote (Awutu) vers Larteh Akuapem",
+        "Migration depuis Larteh Akuapem vers le nord, region du Volta",
+        "Etablissement definitif dans la region de Kete-Krachi sur le fleuve Volta"
+      ],
+      "historicalSettlementZones": [
+        "Kete-Krachi (capitale), District de Krachi West, Region Oti",
+        "Dambai, District de Krachi East, Region Oti",
+        "Boamator et environs du lac Volta",
+        "Zone de confluence entre le Volta Blanc et le Volta Noir"
+      ],
+      "unificationsOrDivisions": "Avant 1896, Krachi est un Etat bien organise domine par l'influence theocratique du sanctuaire Dente. Le clan Gyamboae est le premier a s'installer sur le territoire, ce qui confere a son chef le titre de proprietaire terrien avec autorite sur les autres chefferies. Chaque chef de clan est cependant independant dans la gestion de ses affaires. En 1896, les Allemands prennent le controle administratif du Togoland, incluant Krachi.",
+      "externalInfluences": "Conquetes ashanti avant 1874 : les Krachi furent soumis aux Ashanti; ils recouvrent leur independance apres l'affaiblissement ashanti de 1874. Culture fortement influencee par les Ashanti. Apres 1874, les Krachi passent successivement sous administration britannique et allemande. En 1896, ils sont incorpores dans le Togoland allemand. Apres la Premiere Guerre mondiale, la zone est administree par les Britanniques.",
+      "majorHistoricalEvents": "Soumission a la suzerainete ashanti (XVIIIe-XIXe siecle); independance apres 1874 lors de l'affaiblissement de l'Etat ashanti; administration allemande du Togoland a partir de 1896; tensions entre la partie islamique et la partie krachi sous administration allemande; acquisition britannique du Togoland nord apres 1914; formation du Ghana independant en 1957; creation de la Region Oti en 2019 avec Dambai pour capitale regionale."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Systeme theocratique historique : le pretres du sanctuaire Dente exerçait l'autorite supreme sur les chefs et le peuple. L'autorite civile a ensuite ete devolue au Krachiwura, chef seculier de l'Etat de Kete-Krachi. Hierarchie traditionnelle : Chef Paramount (Krachiwura, actuellement Nana Mprah Besemuna III), chefs divisionnaires, sous-divisionnaires, Adikrofo et anciens, assistes par les Reine-meres. Les chefs se referencent aux stools (sieges royaux) comme symboles d'autorite.",
+      "clanOrganization": "Le clan Gyamboae, premier occupant du territoire, detient le titre de proprietaire de la terre (landowner) avec autorite ceremonielle sur les autres chefferies. Chaque clan dirige ses propres affaires traditionelles de maniere independante.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages claniques determinent l'appartenance aux chefferies et les droits fonciers. Les ceremonies de purification des stools (sieges) de la terre sont effectuees par les chefs de clan lors des grandes occasions comme la fete des ignames.",
+      "religiousAuthority": "Le sanctuaire Dente (Krachi Dente) est la plus ancienne institution religieuse de la region. Le pretres du Dente exercait historiquement un pouvoir theocratique sur les chefs et la population. L'oracle du Dente, loge dans une grotte forestiere, etait consulte par des personnes venues de tout le Ghana, du Togo, du Benin, du Nigeria, de la Cote d'Ivoire et du Burkina Faso. Le Dente prohibait le meurtre et la violence sous toutes leurs formes."
+    },
+    "languages": {
+      "mainLanguage": "Krachie",
+      "isoCodes": ["kye"],
+      "dialects": [],
+      "vehicularRole": "Le Krachie (kye) est une langue Guan du groupe Niger-Congo (Kwa). Parle dans la region de Krachi West et Krachi East (Region Oti). L'anglais est utilise comme langue officielle et d'enseignement. Le twi (akan) est compris par de nombreux Krachi en raison de l'influence historique ashanti."
+    },
+    "culture": {
+      "majorRites": "Festival des ignames (Yam Festival) : celebration annuelle en septembre pour accueillir le nouvel igname et rendre graces pour la bonne recolte; manifestations culturelles presidees par le Krachiwura. Ceremonies de purification des stools de la terre. Rites oraculaires au sanctuaire Dente. Rites funeraires : reenterrement ceremoniel des esclaves pour restaurer leur dignite spirituelle.",
+      "symbols": "Le sanctuaire Dente (oracle dans une grotte forestiere) est le symbole spirituel et culturel central des Krachi. Les stools (sieges royaux) symbolisent l'autorite chiefly. La ville de Kete-Krachi est historiquement un carrefour commercial (sel, esclaves, beurre de karite).",
+      "artsAndMusic": "Jeux traditionnels : Ampe, Alikoto, Oware, Chempe, Zanzama, Alasa, Pilolo, Chaskele. Danses et chants lors des festivals. Traditions orales transmises par les anciens et les chefs.",
+      "spiritualities": "Religion traditionnelle centree sur le culte Dente (OKESEPONG, le Grand Okese) : adoration ancestrale, culte des esprits, reverence pour les elements naturels (rivieres, forets). Le Dente interdit le meurtre et la violence. L'oracle Dente a diffuse son influence dans les regions cotieres du Togo et du Ghana oriental, notamment via les esclaves krachi deportes. Christianisme et islam presents chez une part significative de la population contemporaine."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Etat de Kete-Krachi : organise autour du sanctuaire Dente avec un pouvoir theocratique jusqu'a la devolution a l'autorite civile du Krachiwura. Chef Paramount actuel : Nana Mprah Besemuna III. Historiquement un carrefour commercial important de la region du Volta (sel, esclaves, beurre de karite).",
+      "relationsWithNeighbors": "Soumission historique a la suzerainete ashanti avant 1874. Influence culturelle ashanti persistante. Relations avec les Adele, Achode, Nchumburu, Nawuri, Yeji, Pai et autres peuples de la Region Oti. Commerce avec les populations du Togo, Benin et Nigeria via le sanctuaire Dente.",
+      "conflictsOrAlliances": "Resistance et finalement soumission aux conquetes ashanti. Recouvrement de l'independance apres 1874. Administration bilaterale britannique-allemande apres 1874. Sous domination allemande a partir de 1896. Tensions entre la partie islamique (zongo) et la partie krachi de Kete-Krachi sous l'administration allemande.",
+      "diaspora": "Deportation d'esclaves krachi vers les marches cotieres du Ghana et du Togo durant la traite negriere; transmission du culte Dente dans les regions cotieres du Togo et du Ghana oriental via les esclaves deportes."
+    },
+    "demography": {
+      "totalPopulation": 200000,
+      "referenceYear": 2025,
+      "source": "Estimation basee sur le recensement ghanen 2021 : Krachi West 61 128 habitants, Krachi East 110 435 habitants, Krachi Nchumuru environ 40 000 habitants; projection 2025 avec taux de croissance moyen ghanen 2,2%/an.",
+      "distributionByCountry": [{ "country": "GHA", "population": 200000 }]
+    },
+    "sources": [
+      "National Commission on Culture Ghana – Oti Region : Krachi history and culture (https://ghanaculture.gov.gh/oti-region/)",
+      "Krachi Dente Worship – Preface and Introduction (https://www.hypertextile.net/blakhud/dente/dente0.htm)",
+      "Kete Krachi – Wikipedia EN (https://en.wikipedia.org/wiki/Kete_Krachi)",
+      "Krache in Ghana – Joshua Project (https://joshuaproject.net/people_groups/12832/GH)",
+      "Krachi West district population – CityPopulation.de (https://www.citypopulation.de/en/ghana/admin/oti/1505__krachi_west/)",
+      "Krachi East Municipality – Department of Urban Roads Ghana (https://dur.gov.gh/oti/)",
+      "Paramount Chief of Krachi Traditional Area Visits Institute of African Studies, UG, 2025 (https://ias.ug.edu.gh/content/paramount-chief-krachi-traditional-area-visits-institute-african-studies)",
+      "Glottolog : Krache, ISO 639-3 : kye (https://glottolog.org/resource/languoid/id/krac1238)"
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "id": "PPL_LARTEH",
+  "nameMain": "Larteh",
+  "languageFamilyId": "FLG_NIGERCONGO",
+  "currentCountries": ["GHA"],
+  "content": {
+    "appellations": {
+      "mainName": "Larteh",
+      "selfAppellation": "Gua",
+      "exonyms": ["Kyerepong", "Okere", "Late", "Lete", "Lɛtɛ"],
+      "originOfExonyms": "Le nom Larteh est derive de deux mots ga signifiant 'pierre de feu' (fire stone). Lɛtɛ est la forme vernaculaire designant a la fois la ville et la langue. Kyerepong (ou Okere) designe le groupe Guan des collines d'Akuapem dont les Larteh font partie; Okere est le terme utilise par les Akan voisins. Gua est le nom que le peuple se donne a lui-meme.",
+      "whyProblematic": "Le terme Larteh peut designer a la fois la ville, la langue et le peuple, entrainant des confusions dans la litterature. Kyerepong designe un ensemble plus large comprenant plusieurs communautes Guan des collines d'Akuapem (Abiriw, Dawu, Awukugua, Adukrom, Apirede, Abonse). Certaines sources distinguent Larteh et Kyerepong comme deux groupes distincts au sein de l'Akuapem State.",
+      "contemporaryUsage": "Larteh est le nom couramment utilise en anglais pour ce peuple et sa ville dans la Region Est du Ghana. Le terme Gua est prefere par les locuteurs natifs. L'Akuapem State regroupe administrativement Larteh avec d'autres communautes Guan et Akan.",
+      "linguisticFamily": "FLG_NIGERCONGO",
+      "ethnoLinguisticGroup": "Guan du Sud (Kwa, Niger-Congo), sous-groupe Guang",
+      "historicalRegion": "Collines d'Akuapem, Region Est, Ghana",
+      "currentCountries": ["GHA"]
+    },
+    "ethnicities": ["Larteh", "Gua", "Kyerepong"],
+    "origins": {
+      "ancientOrigins": "Les Larteh font partie des peuples Guan, consideres comme les premiers habitants du sud du Ghana actuel. Ils sont natifs du Ghana depuis au moins 1500 av. J.-C. selon les archives archeologiques. Selon la tradition orale, ils vivaient autrefois dans les savanes du nord, vendant de la poterie, des epices et de l'or dans la region des Mossi. Quand l'Empire du Ghana a decline, ils ont ete attaques par des Berberes du nord. Apres 200 ans de paix relative, ils subissent au 16e siecle l'invasion des guerriers Mandingues de l'Empire Songhay venus s'emparer de leur or. Une partie des Larteh se deplaca alors vers le sud et le sud-est.",
+      "formationPeriod": "Presence documentee depuis 1500 av. J.-C. Migration vers les collines d'Akuapem achevee vers le 16e-17e siecle.",
+      "migrationRoutes": [
+        "Migration depuis les savanes du nord (region des Mossi) vers le Ghana actuel aux alentours de 1000-1200 ap. J.-C.",
+        "Les Kyerepon originent de l'etat de Kania en Gonja, et ont colonise les collines d'Akuapem et les plaines d'Accra",
+        "Fondation d'une ville dans la region de Nsawam en 1515",
+        "Deplacement vers les collines d'Akuapem entre le 14e et le 16e siecle"
+      ],
+      "historicalSettlementZones": [
+        "Collines d'Akuapem (Akuapem Hills), Region Est, Ghana",
+        "Larteh-Kubease et Larteh-Akuapem, district de Nsawam-Adoagyiri"
+      ],
+      "unificationsOrDivisions": "Les Larteh font partie de l'Akuapem State, une confederation qui regroupe des peuples Guan et Akan. Les Guan-Kyerepon etaient des vassaux du royaume d'Akwamu de 1640 a 1731, avant de rejoindre la confederation d'Akuapem. Sous la suzerainete Akan, la plupart des chefferies Guan ont conserve une autonomie culturelle et religieuse.",
+      "externalInfluences": "Domination successive du royaume d'Akwamu (17e-18e siecles) puis des Akan (Asante, Dankyira). Influence europeenne (colonisation britannique) via la Gold Coast. Missions chretiennes actives depuis le 19e siecle. Influence des Ga-Dangme voisins (mariage, commerce, toponymie).",
+      "majorHistoricalEvents": "11e siecle: installation des Guan dans le sud du Ghana. 1515: fondation d'une ville Guan-Kyerepon pres de Nsawam. 1640-1731: vassalite du royaume d'Akwamu. 18e siecle: integration dans la confederation d'Akuapem. Festival Odwira: celebration annuelle en septembre-octobre marquant les origines et l'unite du peuple Larteh."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Les Larteh sont organises sous un systeme de chefferie Guan au sein de l'Akuapem State. La chefferie Larteh est distincte des chefferies Akan voisines; le chef (Ohene) est issu de lignages Guan. L'Akuapem State est une confederation rare au Ghana reunissant des chefs Guan (patrilineaires) et Akan (matrilineaires). Le chef de Larteh preside les affaires de la communaute en cooperation avec le conseil des anciens.",
+      "clanOrganization": "Organisation clanique Guan avec predominance de la patrilinearite, contrairement aux groupes Akan matrilineaires voisins. Les clans gèrent les droits fonciers ancestraux et les affiliations rituelles.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilineaires controlent la succession a la chefferie et la propriete fonciere. Les liens de parente definissent aussi l'appartenance aux associations rituelles, notamment celles liees au culte des divinites traditionnelles.",
+      "religiousAuthority": "Les pretres et pretresses des cultes traditionnels (notamment le culte Tigare et d'autres oracles) exercent une autorite religieuse significative. Les Larteh sont reconnus comme un centre important de la religion traditionnelle Guan, accueillant des oracles consultes bien au-dela de leur territoire. La religion chretienne est aussi presente (environ un quart de la population)."
+    },
+    "languages": {
+      "mainLanguage": "Larteh (Lɛtɛ)",
+      "isoCodes": ["lar"],
+      "dialects": ["Boso", "Cherepon (Kyerepong)"],
+      "vehicularRole": "Le twi (akan) et l'anglais servent de langues vehiculaires avec les groupes voisins. Le larteh (ISO lar) est une langue Guan du Sud, branche Kwa du Niger-Congo. Le cherepon (ISO cth) est la langue des Kyerepong, proche mais distincte du larteh."
+    },
+    "culture": {
+      "majorRites": "Festival Odwira : celebration annuelle en septembre-octobre rassemblant les Larteh du Ghana et de la diaspora; ceremonies rituelles, activites recreatives, exposition d'art traditionnel; themes de victoire, gratitude et recolte. Rites de passage marques par des ceremonies clanique liees aux naissances, mariages et funerailles.",
+      "symbols": "La pierre de feu (origine etymologique du nom Larteh) est un symbole identitaire. Les insignes de la chefferie Guan (tabouret chiefly, umbrella) distinguent l'autorite traditionnelle.",
+      "artsAndMusic": "Art traditionnel expose lors de l'Odwira. Artisanat Guan incluant la poterie (heritage des anciens echanges commerciaux). Musique rituelle accompagnant les ceremonies. Des personnalites notables issues des Larteh ont contribue a la medicine, au droit et a la politique ghanéenne.",
+      "spiritualities": "Religion traditionnelle Guan dominante, centree sur le culte des ancetres et des divinites de la terre. Presence de sanctuaires oraculaires consultes regionalement. Christianisme pratique par environ un quart de la population. Coexistence des traditions animistes et chretiennes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Larteh (Guan-Kyerepon) faisaient partie de l'ancien etat de Kania en Gonja. Ils ont fonde des towns sur les plaines d'Accra et les collines d'Akuapem. Integres dans la confederation d'Akuapem State, ils ont contribue de maniere decisive a la fondation du royaume Asante: le pretre Kyerepon Okomfo Anokye a joue un role crucial dans la creation du Tabouret d'Or (Sika Dwa), symbole de la nation asante.",
+      "relationsWithNeighbors": "Relations de voisinage avec les Ga-Dangme (mariages mixtes, echanges fonciers), les Krobo (integration de populations bannies pour non-accomplissement du Dipo), et les Akan (Akwamu, Asante). Commerce actif avec les royaumes du nord (Songhay, Mali) dans l'antiquite.",
+      "conflictsOrAlliances": "Periode de vassalite sous Akwamu (1640-1731). Alliance avec les Akan pour former l'Akuapem State au 18e siecle. Resistance aux invasions mandingues du Songhay au 16e siecle.",
+      "diaspora": "Les Larteh de la diaspora (dans d'autres pays) participent au festival Odwira annuel, maintenant les liens culturels avec la communaute d'origine."
+    },
+    "demography": {
+      "totalPopulation": 130000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 : 130 000 au Ghana. Population totale tous pays : 130 000.",
+      "distributionByCountry": [{ "country": "GHA", "population": 130000 }]
+    },
+    "sources": [
+      "Joshua Project – Larteh, Gua in Ghana (https://joshuaproject.net/people_groups/11948)",
+      "Wikipedia EN – Akuapem people (https://en.wikipedia.org/wiki/Akuapem_people)",
+      "Wikipedia EN – Guan people (https://en.wikipedia.org/wiki/Guan_people)",
+      "Sabinet – An Account of Lɛtɛ Language Context (https://journals.co.za/doi/10.4314/contjas.v11i1.1)",
+      "Medwin Publishers – The Guan-Kyerepon in the Suzerainty of the Asante 1635-1750 (https://medwinpublishers.com/PhIJ/the-guan-kyerepon-in-the-suzerainty-of-the-asante-1635-1750.pdf)",
+      "Swordshare Map – Larteh Language ISO lar (https://map.swordshare.com/lar)",
+      "ISO 639-3 Code lar – Larteh (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)"
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "id": "PPL_RIFAIN",
+  "nameMain": "Rifain",
+  "languageFamilyId": "FLG_BERBERE",
+  "currentCountries": ["MAR"],
+  "content": {
+    "appellations": {
+      "mainName": "Rifain",
+      "selfAppellation": "Imazighen n Arrif (Irifiyen)",
+      "exonyms": [
+        "Riffians",
+        "Rifians",
+        "Rif Berbers",
+        "Northern Shilha",
+        "Tarifit speakers"
+      ],
+      "originOfExonyms": "Le terme Rif vient de l'arabe signifiant bord de la zone cultivée (arif, rif). Le mot rif est attesté chez les géographes arabes médiévaux pour désigner cette bande côtière du nord du Maroc. Northern Shilha est un terme générique utilisé par les anthropologues pour désigner les Berbères du nord marocain (Rif, Jbala, Ghomara). Rifians ou Riffians sont les formes anglaises courantes.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Rifain est en usage courant en français et en arabe marocain. En tarifit, les locuteurs se désignent comme Irifiyen ou plus génériquement Imazighen. Le terme Rif (Arrif) désigne à la fois la région géographique et le peuple. Depuis 2016, un mouvement de protestation (Hirak du Rif) a renforcé la conscience identitaire rifaine.",
+      "linguisticFamily": "FLG_BERBERE",
+      "ethnoLinguisticGroup": "Berbère zénète septentrional (Tarifit, Rif)",
+      "historicalRegion": "Rif (Arrif) — chaîne montagneuse côtière du nord-est du Maroc, provinces de Nador, Al Hoceima, Driouch",
+      "currentCountries": ["MAR"]
+    },
+    "ethnicities": [
+      "Beni Uriaghel (Ait Waryaghar) — confédération centrale du Rif, région d'Al Hoceima, berceau de la résistance rifaine d'Abdelkrim",
+      "Beni Iznasen — confédération de l'est du Rif, près de la frontière algérienne (Oujda, Berkane)",
+      "Beni Snous — groupe rifain en Algérie occidentale (Tlemcen)",
+      "Temsamane — confédération du Rif central",
+      "Ikbadene — groupe du Rif oriental",
+      "Beni Said — groupe du Rif occidental",
+      "Beni Tuzin — confédération proche de Nador",
+      "Ait Teftecht — groupe du Rif central",
+      "Beni Ammart — groupe côtier du Rif"
+    ],
+    "origins": {
+      "ancientOrigins": "Les Rifains sont les descendants des Berbères autochtones du nord du Maroc, présents bien avant les conquêtes phéniciennes et romaines. Ils appartiennent à la grande famille berbère masmuda-zénète qui peuplait le Maghreb septentrional depuis la préhistoire. Leurs ancêtres sont documentés dès le 1er millénaire av. J.-C. comme habitants de la côte méditerranéenne africaine.",
+      "formationPeriod": "L'identité rifaine distincte s'est consolidée au premier millénaire de l'ère commune sous l'organisation en confédérations tribales. La résistance à la conquête arabe (7e-8e siècle) et l'islamisation progressive ont renforcé la cohésion rifaine. La période almoravide (11e siècle) a marqué la mémoire collective, avec la chanson traditionnelle Ayara Liyara commémorant la destruction causée par Yusuf ibn Tachfin.",
+      "migrationRoutes": [
+        "Populations autochtones du Rif, sans migration documentée vers la région",
+        "Mouvements internes entre zones côtières et zones montagnardes selon les saisons"
+      ],
+      "historicalSettlementZones": [
+        "Chaîne montagneuse du Rif (Arrif), côte méditerranéenne du nord du Maroc",
+        "Provinces actuelles de Nador, Al Hoceima, Driouch, Berkane, Taza",
+        "Débordements en Algérie occidentale (Oran, Tlemcen) — environs 126 000 locuteurs en 2010",
+        "Diaspora en Espagne (Melilla et autres villes), Pays-Bas, Belgique"
+      ],
+      "unificationsOrDivisions": "Les Rifains sont organisés en 19 groupes ou unités sociales : cinq à l'ouest (côte méditerranéenne), sept au centre, cinq à l'est, et deux dans la zone désertique du sud-est. Un groupe central est arabophone, de même que certaines sections des cinq groupes occidentaux. La République du Rif (1921-1926) représente la seule tentative d'unification politique moderne.",
+      "externalInfluences": "Conquête arabe et islamisation (7e-8e siècle). Almoravides (1067, reconquis). Protectorat espagnol sur le nord du Maroc (1912-1956). Armes chimiques espagnoles pendant la guerre du Rif (1920s). Intégration dans le Maroc indépendant (1956) et tensions avec le pouvoir central (révoltes de 1958, 2016-2017).",
+      "majorHistoricalEvents": "En 1921, Mohamed Abdelkrim el-Khattabi et son frère Mohamed Amar infligèrent aux Espagnols la défaite désastreuse d'Anoual (juillet 1921), tuant environ 8 000 soldats. En septembre 1921, la République du Rif fut proclamée, première république berbère moderne. En 1925-1926, coalition hispano-française (450 000 soldats) avec usage d'armes chimiques (ypérite) contra Abdelkrim, qui se rendit en mai 1926. En 1958, révolte rifaine contre le gouvernement marocain, suivie d'une répression militaire. En 2016-2017, mouvement Hirak du Rif, protestations populaires contre la hogra (mépris étatique)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation tribale basée sur 19 groupes ou unités sociales, chacun disposant de sa propre structure de gouvernance. Patriarcat : l'homme le plus âgé du foyer commande et est responsable des décisions. Système de confédérations tribales autour d'un chef (amghar) élu ou désigné par les anciens. La tajmaat (assemblée villageoise) règle les affaires communautaires selon le droit coutumier (izref).",
+      "clanOrganization": "Chacun des 19 groupes sociaux constitue une entité clanale avec ses propres coutumes. L'organisation est patrilinéaire et patrilocale. La société est fondée sur un code d'honneur structurant (hospitalité, solidarité, vengeance des offenses). La migration temporaire est acceptée et institutionnalisée.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Société patrilinéaire stricte : l'héritage et la filiation passent par les pères. Les femmes assurent conjointement la garde des enfants et des malades sans discrimination interne. La migration économique masculine vers l'Europe est un phénomène structurel depuis les années 1960.",
+      "religiousAuthority": "Islam sunnite malékite quasi-universel chez les Rifains. La religion structure la vie sociale : prières, jeûne du Ramadan, fêtes islamiques. Certaines pratiques syncrétiques berbères coexistent avec l'orthodoxie islamique. L'imam de la mosquée villageoise joue un rôle social central."
+    },
+    "languages": {
+      "mainLanguage": "Tarifit (Tmaziht / Tarifiyt) — langue berbère zénète septentrionale",
+      "isoCodes": ["rif"],
+      "dialects": [
+        "Dialecte d'Al Hoceima (Beni Uriaghel, central)",
+        "Dialecte de Nador (est)",
+        "Dialecte de Driouch",
+        "Dialecte de Berkane (Beni Iznasen, est)",
+        "Dialecte de Temsamane",
+        "Dialecte de Taza (sud-est)"
+      ],
+      "vehicularRole": "Le tarifit est la langue maternelle d'environ 4,3 millions de locuteurs selon Omniglot (données 2016 : 4,24 millions au Maroc, 126 000 en Algérie en 2010). Beaucoup de Rifains sont bilingues (tarifit et arabe marocain), certains parlent aussi l'espagnol dans les zones proches de Melilla. Le tarifit est difficile à comprendre pour un locuteur kabyle ou chleuh. Depuis 2003, le tifinagh est l'alphabet officiel pour l'écriture du berbère au Maroc. C'est une langue zénète du groupe berbère nord."
+    },
+    "culture": {
+      "majorRites": "Rites de passage : circoncision masculine (tahara), mariage selon les coutumes tribales avec dot (mahr). Fête de Yennayer (Nouvel An berbère, 13 janvier). Célébrations islamiques (Aïd al-Fitr, Aïd al-Adha, Mawlid). Rites agricoles liés aux cultures en terrasses : bénédictions des semailles. Chants rituels en lien avec les événements historiques, notamment Ayara Liyara qui commémore les deuils du 11e siècle.",
+      "symbols": "La chanson traditionnelle Ayara Liyara (accompagnée de couplets izran et de tambourins addjun) symbolise la résistance et la mémoire collective rifaine. L'agriculture en terrasses sur les pentes escarpées du Rif est un marqueur identitaire. Le haik (vêtement féminin traditionnel à rayures). La djellaba masculine. Abdelkrim el-Khattabi est le héros national par excellence.",
+      "artsAndMusic": "Musique traditionnelle avec bendir et addjun (tambourins), accompagnant des chants collectifs (izran, couplets). Danse collective lors des fêtes. Artisanat féminin : tissage de tapis à motifs géométriques, broderies. Poterie traditionnelle. Artisanat de la pêche (sardines) sur la côte méditerranéenne. Oralité forte : poésie épique, contes, proverbes en tarifit. Art culinaire de montagne : couscous d'orge (imensi), viande séchée.",
+      "spiritualities": "Islam sunnite malékite dominant. Pratiques berbères syncrétiques en milieu rural : culte des saints (maraboutisme), fêtes saisonnières amazighes, usage d'amulettes protectrices. La résistance à l'arabisation culturelle constitue une forme de spiritualité identitaire, exprimée notamment par les mouvements amazighs contemporains."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "République du Rif (1921-1926) — première république berbère de l'ère moderne, proclamée par Abdelkrim el-Khattabi après la victoire d'Anoual (1921) sur les forces espagnoles. Elle contrôlait une grande partie du Rif, dotée d'un gouvernement, d'une constitution, d'une diplomatie et d'une armée organisée. Ce fut la première entité étatique rifaine de l'histoire moderne.",
+      "relationsWithNeighbors": "Relations commerciales avec les villes arabes du Maroc. Contacts avec l'Espagne (protectorat espagnol 1912-1956, Melilla toujours sous souveraineté espagnole). Commerce de sardines avec les marchés méditerranéens. Tension historique avec le pouvoir central marocain (Makhzen). Liens avec les communautés rifaines en Algérie (Beni Snous, Tlemcen).",
+      "conflictsOrAlliances": "Résistance à la conquête arabe (7e-8e siècle). Destruction almoravide (1067), commémorée dans la chanson Ayara Liyara. Résistance au protectorat espagnol : guerre du Rif (1920-1926) dirigée par Abdelkrim el-Khattabi, qui infligea la défaite d'Anoual aux Espagnols (1921), et utilisation d'armes chimiques (ypérite) par l'armée espagnole et française. Révolte rifaine contre le gouvernement marocain (1958), réprimée militairement. Mouvement Hirak du Rif (2016-2017), violemment réprimé.",
+      "diaspora": "Grande diaspora rifaine en Europe, principalement aux Pays-Bas (plus de 300 000), en Belgique (environ 250 000), en Espagne (communautés à Melilla, Barcelone, Madrid). Migration économique massive depuis les années 1960. Les remises d'argent constituent une source économique majeure pour les familles du Rif. Communauté rifaine importante à Amsterdam (Slotervaart) et dans d'autres villes néerlandaises. Intégration à la société européenne tout en maintenant une forte identité rifaine."
+    },
+    "demography": {
+      "totalPopulation": 5000000,
+      "referenceYear": 2025,
+      "source": "Omniglot : environ 4,24 millions de locuteurs du tarifit au Maroc (2016), 126 000 en Algérie (2010). Estimation 2025 (Maroc + Algérie + diaspora européenne) : environ 5 millions de personnes d'identité rifaine. Ethnologue (rif), Joshua Project, Britannica.",
+      "distributionByCountry": [
+        {
+          "country": "MAR",
+          "population": 4400000,
+          "note": "Provinces de Nador, Al Hoceima, Driouch, Berkane, Taza et diaspora dans les villes marocaines"
+        },
+        {
+          "country": "DZA",
+          "population": 130000,
+          "note": "Oran, Tlemcen (Beni Snous et autres groupes rifains)"
+        }
+      ]
+    },
+    "sources": [
+      "Wikipedia EN — Riffians. https://en.wikipedia.org/wiki/Riffians",
+      "Wikipedia EN — Tarifit. https://en.wikipedia.org/wiki/Tarifit",
+      "Wikipedia EN — Republic of the Rif. https://en.wikipedia.org/wiki/Republic_of_the_Rif",
+      "Britannica — Rif people. https://www.britannica.com/topic/Rif-people",
+      "Ethnologue — Tarifit (rif). https://www.ethnologue.com/language/rif/",
+      "Omniglot — Riffian language and alphabet. https://www.omniglot.com/writing/riffian.htm",
+      "Joshua Project — Berber, Rif in Morocco. https://joshuaproject.net/people_groups/10803/MO",
+      "Glottopedia — Rif Berber. http://www.glottopedia.org/index.php/Rif_Berber",
+      "IRCAM (Institut Royal de la Culture Amazighe). https://www.ircam.ma/"
+    ]
+  }
+}

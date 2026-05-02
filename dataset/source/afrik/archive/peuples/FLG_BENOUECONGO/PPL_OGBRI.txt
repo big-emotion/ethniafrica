@@ -1,0 +1,37 @@
+# Nom du peuple
+- Nom principal : Ogbia / Ogbré
+- Auto-appellation : Ogbia
+- Famille linguistique : Niger-Congo – Bénoué-Congo (Ijoïde) (FLG_BENOUECONGO)
+- Région historique : Nigeria (Bayelsa State)
+- Identifiant peuple : PPL_OGBRI
+
+# 1. Ethnies incluses
+- Ogbia central
+- Ogbia fluvial
+
+# 2. Origines
+- Groupe ijoïde du delta du Niger oriental.
+
+# 3. Organisation
+- Chefferies locales
+- Clans lignagers
+
+# 4. Langue
+- Ogbia
+- ISO : ogb
+
+# 5. Culture
+- Rituels liés à l’eau
+- Danses de masques
+- Navigation fluviale
+
+# 6. Histoire
+- Région d’anciennes chefferies proches de Nembe.
+
+# 7. Démographie
+- Population : 235 000
+- Année : 2025
+
+# 8. Sources
+- Niger Delta Cultural Documentation
+- Ethnologue (ogb)
