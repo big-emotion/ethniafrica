@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   refine:
-    uses: big-emotion/ferry/.github/workflows/refine.yml@v1
+    uses: big-emotion/ferry/.github/workflows/refine.yml@v0.5.0
     with:
       ticket_key: ${{ github.event.client_payload.ticket_key }}
       event_id: ${{ github.event.client_payload.event_id }}
