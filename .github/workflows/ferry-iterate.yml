@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   iterate:
-    uses: big-emotion/ferry/.github/workflows/iterate.yml@main
+    uses: big-emotion/ferry/.github/workflows/iterate.yml@v0.5.3
     with:
       ticket_key: ${{ github.event.client_payload.ticket_key }}
       event_id: ${{ github.event.client_payload.event_id }}
