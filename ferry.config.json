@@ -1,0 +1,6 @@
+{
+  "git": {
+    "base_branch": "recette",
+    "target_branch": "recette"
+  }
+}
