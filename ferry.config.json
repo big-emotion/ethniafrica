@@ -2,5 +2,8 @@
   "git": {
     "base_branch": "recette",
     "target_branch": "recette"
+  },
+  "limits": {
+    "max_tokens_per_run": 1000000
   }
 }
