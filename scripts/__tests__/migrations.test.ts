@@ -154,8 +154,29 @@ describe("Migration 011: API Keys", () => {
     expect(content).toMatch(/ALTER TABLE api_keys ENABLE ROW LEVEL SECURITY/i);
   });
 
-  it("should have public read policies", () => {
+  it("should not expose key_hash via a public SELECT USING (true) policy", () => {
     const content = readMigrationFile(filename);
-    expect(content).toMatch(/FOR SELECT USING \(true\)/i);
+    // key_hash must not appear in any unrestricted public-read policy
+    expect(content).not.toMatch(
+      /CREATE POLICY[^;]*FOR SELECT USING \(true\)[^;]*;/i
+    );
+  });
+
+  it("should define a public view that excludes key_hash", () => {
+    const content = readMigrationFile(filename);
+    expect(content).toMatch(/CREATE OR REPLACE VIEW api_keys_public/i);
+    // key_hash column must not be selected in the public view
+    const viewBlock = content.match(
+      /CREATE OR REPLACE VIEW api_keys_public AS[\s\S]+?FROM api_keys;/i
+    );
+    expect(viewBlock).not.toBeNull();
+    expect(viewBlock![0]).not.toMatch(/key_hash/i);
+  });
+
+  it("should declare update_updated_at_column idempotently", () => {
+    const content = readMigrationFile(filename);
+    expect(content).toMatch(
+      /CREATE OR REPLACE FUNCTION update_updated_at_column\(\)/i
+    );
   });
 });

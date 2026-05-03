@@ -2,6 +2,18 @@
 -- Creates table for API keys for external access
 
 -- =============================================================================
+-- Function: update_updated_at_column (idempotent guard)
+-- Purpose: Ensure the trigger function exists even if migration 010 was skipped
+-- =============================================================================
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = NOW();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- =============================================================================
 -- Table: api_keys
 -- Purpose: API keys for external access
 -- =============================================================================
@@ -41,7 +53,27 @@ CREATE INDEX IF NOT EXISTS idx_api_keys_expires_at ON api_keys (expires_at);
 
 ALTER TABLE api_keys ENABLE ROW LEVEL SECURITY;
 
-CREATE POLICY "api_keys_read_public" ON api_keys FOR SELECT USING (true);
+-- Public read is intentionally restricted: key_hash must never be exposed.
+-- Only the owning user may read their own rows via RLS.
+-- A public-facing view (api_keys_public) omits key_hash for anonymous reads.
+CREATE POLICY "api_keys_read_owner" ON api_keys
+    FOR SELECT USING (auth.uid() = user_id);
+
+-- Public view that deliberately excludes key_hash
+CREATE OR REPLACE VIEW api_keys_public AS
+    SELECT
+        id,
+        name,
+        key_prefix,
+        user_id,
+        permissions,
+        rate_limit,
+        is_active,
+        last_used_at,
+        expires_at,
+        created_at,
+        updated_at
+    FROM api_keys;
 
 -- =============================================================================
 -- Trigger: Auto-update updated_at on row update
