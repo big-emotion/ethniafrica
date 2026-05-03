@@ -8,7 +8,10 @@
 -- ============================================
 
 -- Function to calculate the next revision number for an entity
--- Returns 1 if no previous revisions exist, otherwise max + 1
+-- Returns 1 if no previous revisions exist, otherwise max + 1.
+-- Uses SELECT … FOR UPDATE on the highest existing row to prevent a TOCTOU race
+-- where two concurrent callers could both read the same MAX and then both attempt
+-- to INSERT the same revision_number, violating UNIQUE(entity_type, entity_id, revision_number).
 CREATE OR REPLACE FUNCTION mz_next_revision_number(
   p_entity_type TEXT,
   p_entity_id VARCHAR(50)
@@ -17,12 +20,23 @@ RETURNS INTEGER AS $$
 DECLARE
   next_num INTEGER;
 BEGIN
+  -- Lock the row with the highest revision_number for this entity so that a
+  -- concurrent transaction must wait until we commit before it can read MAX().
+  -- If no rows exist yet the FOR UPDATE finds nothing and we safely return 1.
+  PERFORM id
+  FROM mz_revisions
+  WHERE entity_type = p_entity_type
+    AND entity_id = p_entity_id
+  ORDER BY revision_number DESC
+  LIMIT 1
+  FOR UPDATE;
+
   SELECT COALESCE(MAX(revision_number), 0) + 1
   INTO next_num
   FROM mz_revisions
   WHERE entity_type = p_entity_type
     AND entity_id = p_entity_id;
-  
+
   RETURN next_num;
 END;
 $$ LANGUAGE plpgsql;
