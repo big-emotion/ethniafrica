@@ -1,5 +1,6 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi, afterEach } from "vitest";
 import {
+  assertEuDsn,
   scrubEmail,
   truncateIpToSlash24,
   beforeSend,
@@ -7,6 +8,45 @@ import {
 import type { Event, Breadcrumb } from "@sentry/nextjs";
 
 describe("pii-scrubber", () => {
+  describe("assertEuDsn", () => {
+    afterEach(() => {
+      vi.unstubAllEnvs();
+    });
+
+    it("should not throw when DSN is undefined", () => {
+      expect(() => assertEuDsn(undefined)).not.toThrow();
+    });
+
+    it("should not throw for a valid EU DSN hostname", () => {
+      expect(() =>
+        assertEuDsn("https://o123456.ingest.de.sentry.io/456789")
+      ).not.toThrow();
+    });
+
+    it("should warn (not throw) in non-production when DSN uses US hostname", () => {
+      vi.stubEnv("NODE_ENV", "development");
+      const warnSpy = vi.spyOn(console, "warn").mockImplementation(() => {});
+      expect(() =>
+        assertEuDsn("https://o123456.ingest.sentry.io/456789")
+      ).not.toThrow();
+      expect(warnSpy).toHaveBeenCalledWith(
+        expect.stringContaining("ingest.de.sentry.io")
+      );
+      warnSpy.mockRestore();
+    });
+
+    it("should throw in production when DSN uses US hostname", () => {
+      vi.stubEnv("NODE_ENV", "production");
+      expect(() =>
+        assertEuDsn("https://o123456.ingest.sentry.io/456789")
+      ).toThrow(/ingest\.de\.sentry\.io/);
+    });
+
+    it("should not throw for a malformed DSN (URL parse error)", () => {
+      expect(() => assertEuDsn("not-a-url")).not.toThrow();
+    });
+  });
+
   describe("scrubEmail", () => {
     it("should replace email addresses with [EMAIL_REDACTED]", () => {
       expect(scrubEmail("test@example.com")).toBe("[EMAIL_REDACTED]");
@@ -163,6 +203,62 @@ describe("pii-scrubber", () => {
       const result = beforeSend(event);
 
       expect(result?.breadcrumbs?.[0]?.category).toBe("navigation");
+    });
+
+    it("should scrub emails from exception value strings", () => {
+      const event: Event = {
+        exception: {
+          values: [
+            {
+              type: "Error",
+              value: "user test@example.com failed login",
+            },
+          ],
+        },
+      };
+
+      const result = beforeSend(event);
+
+      expect(result?.exception?.values?.[0]?.value).toBe(
+        "user [EMAIL_REDACTED] failed login"
+      );
+    });
+
+    it("should truncate IPs in exception value strings", () => {
+      const event: Event = {
+        exception: {
+          values: [
+            {
+              type: "Error",
+              value: "Request from 192.168.1.55 was rejected",
+            },
+          ],
+        },
+      };
+
+      const result = beforeSend(event);
+
+      expect(result?.exception?.values?.[0]?.value).toBe(
+        "Request from 192.168.1.0 was rejected"
+      );
+    });
+
+    it("should scrub multiple exception values", () => {
+      const event: Event = {
+        exception: {
+          values: [
+            { type: "Error", value: "caused by: admin@corp.com" },
+            { type: "TypeError", value: "no PII here" },
+          ],
+        },
+      };
+
+      const result = beforeSend(event);
+
+      expect(result?.exception?.values?.[0]?.value).toBe(
+        "caused by: [EMAIL_REDACTED]"
+      );
+      expect(result?.exception?.values?.[1]?.value).toBe("no PII here");
     });
 
     it("should handle events with no sensitive data", () => {

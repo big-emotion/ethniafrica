@@ -7,13 +7,16 @@
  */
 import * as Sentry from "@sentry/nextjs";
 
-import { beforeSend } from "@/lib/sentry/pii-scrubber";
+import { assertEuDsn, beforeSend } from "@/lib/sentry/pii-scrubber";
+
+const dsn = process.env.NEXT_PUBLIC_SENTRY_DSN;
+
+// Enforce EU data residency at startup (GDPR NFR34/AR28/AR38).
+// Production builds will throw if the DSN does not target ingest.de.sentry.io.
+assertEuDsn(dsn);
 
 Sentry.init({
-  dsn: process.env.NEXT_PUBLIC_SENTRY_DSN,
-
-  // EU data residency
-  // The DSN should point to EU: ingest.de.sentry.io
+  dsn,
 
   // Enable performance monitoring (sample rate for production)
   tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 1.0,
@@ -23,9 +26,6 @@ Sentry.init({
 
   // PII scrubbing via beforeSend hook
   beforeSend: beforeSend as Parameters<typeof Sentry.init>[0]["beforeSend"],
-
-  // Enable deduplication (default behavior)
-  integrations: [],
 
   // Only enable in production
   enabled:

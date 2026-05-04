@@ -4,9 +4,16 @@
 // Configure 30-day retention in Sentry dashboard settings
 
 import * as Sentry from "@sentry/nextjs";
+import { assertEuDsn } from "@/lib/sentry/pii-scrubber";
+
+const dsn = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
+
+// Enforce EU data residency at startup (GDPR NFR34/AR28/AR38).
+// Production builds will throw if the DSN does not target ingest.de.sentry.io.
+assertEuDsn(dsn);
 
 Sentry.init({
-  dsn: process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN,
+  dsn,
 
   // Performance monitoring - lower sample rate for production
   tracesSampleRate: process.env.NODE_ENV === "production" ? 0.1 : 1.0,

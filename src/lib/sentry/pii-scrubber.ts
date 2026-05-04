@@ -1,5 +1,38 @@
 import type { Event, EventHint } from "@sentry/nextjs";
 
+/**
+ * Asserts that the provided Sentry DSN uses the EU data-region ingestion
+ * hostname (`ingest.de.sentry.io`), enforcing GDPR data-residency at
+ * startup rather than relying solely on documentation.
+ *
+ * Throws in production; logs a warning in other environments so local dev
+ * is not blocked when NEXT_PUBLIC_SENTRY_DSN is unset.
+ */
+export function assertEuDsn(dsn: string | undefined): void {
+  if (!dsn) return; // SDK will skip init when DSN is absent; nothing to validate
+  try {
+    const { hostname } = new URL(dsn);
+    if (!hostname.endsWith("ingest.de.sentry.io")) {
+      const message =
+        `Sentry DSN hostname "${hostname}" does not use the EU data region ` +
+        "(expected *.ingest.de.sentry.io). " +
+        "Data may be routed to US infrastructure, violating GDPR NFR34/AR28/AR38.";
+      if (process.env.NODE_ENV === "production") {
+        throw new Error(message);
+      } else {
+        // eslint-disable-next-line no-console
+        console.warn(`[sentry] ${message}`);
+      }
+    }
+  } catch (err) {
+    if (err instanceof TypeError) {
+      // URL parse failure — DSN is malformed; let Sentry report that separately
+      return;
+    }
+    throw err;
+  }
+}
+
 // Email regex pattern - matches common email formats
 const EMAIL_REGEX = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
 
@@ -105,6 +138,19 @@ export function beforeSend(event: Event, hint?: EventHint): Event | null {
         scrubbedEvent.request.headers[key] = scrubbedValue;
       }
     }
+  }
+
+  // Scrub exception values (error message strings)
+  if (scrubbedEvent.exception?.values) {
+    scrubbedEvent.exception = {
+      ...scrubbedEvent.exception,
+      values: scrubbedEvent.exception.values.map((exceptionValue) => {
+        if (exceptionValue.value) {
+          return { ...exceptionValue, value: scrubString(exceptionValue.value) };
+        }
+        return exceptionValue;
+      }),
+    };
   }
 
   // Scrub breadcrumbs
