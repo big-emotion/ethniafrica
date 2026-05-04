@@ -1,15 +1,10 @@
-import { NextRequest } from "next/server";
-import { cookies } from "next/headers";
-import { getSessionCookieOptions } from "@/lib/auth/admin";
+import { createServerSupabaseClient } from "@/lib/supabase/auth-server";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   try {
-    const cookieStore = await cookies();
-    const cookieOptions = getSessionCookieOptions();
-
-    // Supprimer le cookie de session
-    cookieStore.delete(cookieOptions.name);
+    const supabase = await createServerSupabaseClient();
+    await supabase.auth.signOut();
 
     return jsonWithCors(
       { success: true, message: "Logout successful" },
