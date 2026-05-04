@@ -1,4 +1,4 @@
-.PHONY: unit-tests integration-tests api-tests all-tests test
+.PHONY: unit-tests integration-tests api-tests all-tests test format format-check lint type-check check
 
 # Test commands as specified in TDD plan
 unit-tests:
@@ -33,7 +33,14 @@ type-check:
 lint:
 	npm run lint
 
-# Run all checks (lint + type-check + tests)
-check: lint type-check all-tests
+# Formatting
+format:
+	npm run format
+
+format-check:
+	npm run format:check
+
+# Run all checks (lint + type-check + format + tests)
+check: lint type-check format-check all-tests
 	@echo "✅ All checks passed!"
 
