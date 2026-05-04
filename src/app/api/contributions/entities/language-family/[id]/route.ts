@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { getAfrikLanguageFamilyById } from "@/lib/supabase/queries/afrik/languageFamilies";
+import { logger } from "@/lib/api/logger";
 
 export async function GET(
   _request: NextRequest,
@@ -21,7 +22,7 @@ export async function GET(
       name_en: family.nameEn || "",
     });
   } catch (error) {
-    console.error("Error loading language family:", error);
+    logger.error("Error loading language family", error);
     return jsonWithCors(
       { error: "Failed to load language family" },
       { status: 500 }

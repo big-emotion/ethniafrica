@@ -5,6 +5,7 @@ import {
   incrementDataVersion,
   DATA_VERSION_KEYS,
 } from "@/lib/cache/dataVersion";
+import { logger } from "@/lib/api/logger";
 
 /**
  * POST /api/admin/revalidate
@@ -56,7 +57,7 @@ export async function POST(request: NextRequest) {
           incrementDataVersion(versionKey);
         }
       } catch (error) {
-        console.error(`Error revalidating tag "${tag}":`, error);
+        logger.error(`Error revalidating tag "${tag}"`, error);
       }
     }
 
@@ -66,7 +67,7 @@ export async function POST(request: NextRequest) {
       invalidatedTags,
     });
   } catch (error) {
-    console.error("Error in revalidate endpoint:", error);
+    logger.error("Error in revalidate endpoint", error);
     return jsonWithCors(
       { error: "Failed to revalidate cache" },
       { status: 500 }
