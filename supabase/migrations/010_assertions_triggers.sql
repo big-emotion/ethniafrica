@@ -60,17 +60,17 @@ CREATE OR REPLACE FUNCTION audit_assertion_changes()
 RETURNS TRIGGER AS $$
 BEGIN
   IF TG_OP = 'INSERT' THEN
-    INSERT INTO audit_log (action, entity_type, entity_id, metadata)
-    VALUES ('assertion_created', 'assertion', NEW.id::TEXT, 
+    INSERT INTO audit_log (action, entity_type, entity_id, actor_id, metadata)
+    VALUES ('assertion_created', 'assertion', NEW.id::TEXT, auth.uid(),
             jsonb_build_object('entity_type', NEW.entity_type, 'entity_id', NEW.entity_id));
   ELSIF TG_OP = 'UPDATE' THEN
-    INSERT INTO audit_log (action, entity_type, entity_id, metadata)
-    VALUES ('assertion_updated', 'assertion', NEW.id::TEXT,
+    INSERT INTO audit_log (action, entity_type, entity_id, actor_id, metadata)
+    VALUES ('assertion_updated', 'assertion', NEW.id::TEXT, auth.uid(),
             jsonb_build_object('entity_type', NEW.entity_type, 'entity_id', NEW.entity_id,
                               'old_value', OLD.value, 'new_value', NEW.value));
   ELSIF TG_OP = 'DELETE' THEN
-    INSERT INTO audit_log (action, entity_type, entity_id, metadata)
-    VALUES ('assertion_deleted', 'assertion', OLD.id::TEXT,
+    INSERT INTO audit_log (action, entity_type, entity_id, actor_id, metadata)
+    VALUES ('assertion_deleted', 'assertion', OLD.id::TEXT, auth.uid(),
             jsonb_build_object('entity_type', OLD.entity_type, 'entity_id', OLD.entity_id));
   END IF;
   RETURN COALESCE(NEW, OLD);
