@@ -14,9 +14,17 @@ export default defineConfig({
         "node_modules/",
         "dist/",
         ".next/",
-        "**/*.config.{ts,js}",
+        "**/*.config.{ts,js,mjs}",
         "**/*.d.ts",
+        "src/test/",
+        "src/stories/",
       ],
+      thresholds: {
+        statements: 70,
+        branches: 60,
+        functions: 70,
+        lines: 70,
+      },
     },
   },
   resolve: {

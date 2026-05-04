@@ -2,11 +2,15 @@
   "name": "ethniafrique-atlas",
   "private": true,
   "version": "1.1.0",
+  "packageManager": "npm@10.8.2",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "type-check": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
@@ -20,14 +24,15 @@
     "build-storybook": "storybook build",
     "test:a11y": "npx playwright install chromium && tsx scripts/a11y-test.ts",
     "openapi:generate": "tsx scripts/generate-openapi-spec.ts",
-    "openapi:diff": "tsx scripts/openapi-diff.ts"
+    "openapi:diff": "tsx scripts/openapi-diff.ts",
+    "prepare": "husky"
   },
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "*.{ts,tsx,js,jsx}": [
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{json,md,yml,yaml}": [
+    "*.{json,md,yml,yaml,css}": [
       "prettier --write"
     ]
   },
@@ -92,6 +97,8 @@
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.10.1",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
     "@eslint/js": "^9.32.0",
     "@playwright/test": "^1.49.0",
     "@storybook/addon-a11y": "^8.6.17",
