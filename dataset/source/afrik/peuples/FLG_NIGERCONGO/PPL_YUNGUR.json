@@ -1,7 +1,7 @@
 {
   "id": "PPL_YUNGUR",
   "nameMain": "Yungur",
-  "languageFamilyId": "FLG_ADAMAWA_UBANGI",
+  "languageFamilyId": "FLG_NIGERCONGO",
   "currentCountries": ["NGA"],
   "content": {
     "appellations": {
@@ -23,7 +23,7 @@
       "originOfExonyms": "Le nom Yungur est a l'origine un exonyme donne par les voisins de ce peuple. Il est aujourd'hui regulierement utilise par les Bena eux-memes lorsqu'ils s'expriment dans d'autres langues. Le terme Lala est utilise pour les Bena du nord (sous-groupe autour de Yang et Bodwai) mais n'est pas recommande. Purra est un terme general pour les Bena du nord.",
       "whyProblematic": "La coexistence de plusieurs noms (Yungur, Bena, Bena-Yungur) peut preter a confusion. Depuis les travaux de Kleinewillinghöfer (1993), la denomination Bena-Yungur est privilegiee par les linguistes pour designer l'ensemble dialectal, afin de distinguer les Bena-Yungur des Lala qui se nomment aussi Bena.",
       "contemporaryUsage": "Yungur est le nom courant utilise dans les medias nigerians et les publications administratives de l'Etat d'Adamawa. Le terme Bena est utilise par la communaute elle-meme. La chieftaincy Yungur a ete restauree recemment avec l'intronisation du 26e Gubo Yungur en 2025.",
-      "linguisticFamily": "FLG_ADAMAWA_UBANGI",
+      "linguisticFamily": "FLG_NIGERCONGO",
       "ethnoLinguisticGroup": "Groupe Bena-Mboi (branche Bena-Yungur), famille Adamawa, sous-famille Niger-Congo",
       "historicalRegion": "Nord-est du Nigeria, Etat d'Adamawa, dans les montagnes a l'est du bas-Gongola, au sud de la riviere Hawal et au nord du Benue",
       "currentCountries": ["NGA"]

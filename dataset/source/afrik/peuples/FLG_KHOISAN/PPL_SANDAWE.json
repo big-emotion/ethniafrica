@@ -1,7 +1,7 @@
 {
   "id": "PPL_SANDAWE",
   "nameMain": "Sandawe",
-  "languageFamilyId": "FLG_ISOLAT",
+  "languageFamilyId": "FLG_KHOISAN",
   "currentCountries": ["TZA"],
   "content": {
     "appellations": {
@@ -14,7 +14,7 @@
       "originOfExonyms": "Usandawe est le terme utilise dans les rapports coloniaux allemands pour designer le territoire rocheux habite par le peuple (Pays des Sandawe). Le terme Sandawe lui-meme est utilise a la fois comme auto-designation et comme exonyme dans la litterature scientifique.",
       "whyProblematic": "Le terme Sandawe ne presente pas de probleme particulier d'utilisation contemporaine. Il est accepte par le groupe lui-meme et dans les publications academiques.",
       "contemporaryUsage": "Sandawe est utilise sans ambiguite dans les contextes officiels tanzaniens, les publications linguistiques et les profils ethnographiques internationaux (Joshua Project, Ethnologue).",
-      "linguisticFamily": "FLG_ISOLAT",
+      "linguisticFamily": "FLG_KHOISAN",
       "ethnoLinguisticGroup": "Isolat linguistique possedant des clics ; debat scientifique sur une possible parente avec les langues Khoe d'Afrique australe",
       "historicalRegion": "District de Chemba (ward de Kwamtoro), region de Dodoma, centre de la Tanzanie",
       "currentCountries": ["TZA"]
@@ -71,8 +71,7 @@
       "Sandawe language – Wikipedia EN / Ethnologue code SAD (https://en.wikipedia.org/wiki/Sandawe_language)",
       "Sandawe in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14720)",
       "Sandawe – Britannica, 2026 (https://www.britannica.com/topic/Sandawe)",
-      "Sandawe language (SAD) – Ethnologue SIL (https://www.ethnologue.com/language/sad/)",
-      "von Prince, T. – Gegen Araber und Wahehe, 1914"
+      "Sandawe language (SAD) – Ethnologue SIL (https://www.ethnologue.com/language/sad/)"
     ]
   }
 }

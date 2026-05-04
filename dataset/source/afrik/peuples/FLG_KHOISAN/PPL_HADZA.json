@@ -1,7 +1,7 @@
 {
   "id": "PPL_HADZA",
   "nameMain": "Hadza",
-  "languageFamilyId": "FLG_ISOLAT",
+  "languageFamilyId": "FLG_KHOISAN",
   "currentCountries": ["TZA"],
   "content": {
     "appellations": {
@@ -11,7 +11,7 @@
       "originOfExonyms": "Wahadzabe est la forme swahili prefixee du nom propre Hadzabe. Kindiga et Tindiga sont des termes utilises par les populations voisines Datooga et Isanzu. Kangeju fut employe dans la litterature coloniale allemande.",
       "whyProblematic": "Les termes exterieurs comme Kindiga peuvent etre perçus comme pejoratifs car imposes par des voisins pasteurs. La denomination Hadza est aujourd'hui acceptee internationalement et utilisee par le groupe lui-meme en contexte swahili.",
       "contemporaryUsage": "Hadzabe est l'auto-designation preferee. Hadza est couramment utilise dans les publications scientifiques et institutionnelles. Le swahili national les nomme Wahadzabe.",
-      "linguisticFamily": "FLG_ISOLAT",
+      "linguisticFamily": "FLG_KHOISAN",
       "ethnoLinguisticGroup": "Isolat linguistique sans parentele etablie avec une autre famille de langues",
       "historicalRegion": "Bassin du lac Eyasi, Rift central, region d'Arusha, nord de la Tanzanie",
       "currentCountries": ["TZA"]
