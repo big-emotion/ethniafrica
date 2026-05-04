@@ -2,6 +2,7 @@ import { ImageResponse } from "next/og";
 import fs from "node:fs";
 import path from "node:path";
 import { getTranslation } from "@/lib/translations";
+import { CANONICAL_DOMAIN } from "@/lib/brand";
 
 export const size = {
   width: 1200,
@@ -13,7 +14,7 @@ export const runtime = "nodejs";
 
 // Footer component for OG images
 function Footer() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ethniafrica.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || `https://${CANONICAL_DOMAIN}`;
   const domain = siteUrl.replace(/^https?:\/\//, "");
 
   return (
