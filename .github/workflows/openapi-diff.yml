@@ -1,0 +1,63 @@
+name: OpenAPI — Breaking-change diff
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  diff:
+    name: openapi-diff
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Generate current spec (PR)
+        run: npx tsx scripts/generate-openapi-spec.ts /tmp/current.json
+
+      - name: Generate baseline spec (base ref)
+        run: |
+          set -euo pipefail
+          BASE_REF="${{ github.base_ref }}"
+          git fetch --no-tags --depth=1 origin "$BASE_REF"
+          # openapiV2.ts is self-contained (only imports swagger-jsdoc).
+          # Swap it for the base version, regenerate, then restore.
+          cp src/lib/api/openapiV2.ts /tmp/openapiV2.current.ts
+          if git show "origin/${BASE_REF}:src/lib/api/openapiV2.ts" > /tmp/openapiV2.base.ts 2>/dev/null; then
+            cp /tmp/openapiV2.base.ts src/lib/api/openapiV2.ts
+            npx tsx scripts/generate-openapi-spec.ts /tmp/baseline.json
+            cp /tmp/openapiV2.current.ts src/lib/api/openapiV2.ts
+          else
+            echo "::notice::No baseline openapiV2.ts on origin/${BASE_REF} — skipping diff."
+            echo '{}' > /tmp/baseline.json
+          fi
+
+      - name: Diff specs (fail on breaking changes)
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          set -euo pipefail
+          # Honor `api-breaking: true` trailer in PR title or body, in addition
+          # to the commit-message check the script already performs.
+          if printf '%s\n%s\n' "$PR_TITLE" "$PR_BODY" | grep -qiE '^api-breaking:[[:space:]]*true'; then
+            export API_BREAKING=true
+            echo "::notice::api-breaking: true detected in PR — allowing breaking changes."
+          fi
+          npx tsx scripts/openapi-diff.ts /tmp/baseline.json
