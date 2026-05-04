@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
-import { isAdminAuthenticated } from "@/lib/auth/admin";
+import { getCurrentUser, isAdmin } from "@/lib/auth/supabase-auth";
 
 /**
  * Route API admin pour accepter/rejeter une contribution
@@ -49,10 +49,16 @@ export async function PATCH(
 ) {
   const { id } = await params;
   try {
-    // Vérifier l'authentification
-    const authenticated = await isAdminAuthenticated();
-    if (!authenticated) {
+    // Vérifier l'authentification Supabase
+    const user = await getCurrentUser();
+    if (!user) {
       return jsonWithCors({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    // Vérifier le rôle admin
+    const adminCheck = await isAdmin(user.id);
+    if (!adminCheck) {
+      return jsonWithCors({ error: "Forbidden" }, { status: 403 });
     }
 
     const body = await request.json();
