@@ -5,13 +5,14 @@
  */
 
 import { getAllAfrikCountries } from "@/lib/supabase/queries/afrik/countries";
+import { logger } from "@/lib/api/logger";
 
 export async function GET() {
   try {
     const data = await getAllAfrikCountries();
     return Response.json(data);
   } catch (error) {
-    console.error("Error in internal countries route:", error);
+    logger.error("Error in internal countries route", error);
     return Response.json(
       { error: "Failed to fetch countries" },
       { status: 500 }

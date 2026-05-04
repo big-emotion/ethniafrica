@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { getAfrikPeopleById } from "@/lib/supabase/queries/afrik/peoples";
+import { logger } from "@/lib/api/logger";
 
 export async function GET(
   _request: NextRequest,
@@ -19,7 +20,7 @@ export async function GET(
       current_countries: people.currentCountries,
     });
   } catch (error) {
-    console.error("Error loading people:", error);
+    logger.error("Error loading people", error);
     return jsonWithCors({ error: "Failed to load people" }, { status: 500 });
   }
 }

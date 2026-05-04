@@ -5,6 +5,7 @@ import { corsOptionsResponse } from "@/lib/api/cors";
 import { getAllAfrikCountries } from "@/lib/supabase/queries/afrik/countries";
 import { getAllAfrikPeoples } from "@/lib/supabase/queries/afrik/peoples";
 import { getAllAfrikLanguageFamilies } from "@/lib/supabase/queries/afrik/languageFamilies";
+import { logger } from "@/lib/api/logger";
 
 function escapeCSV(value: string | string[] | undefined | null): string {
   if (!value) return "";
@@ -184,7 +185,7 @@ export async function GET(request: NextRequest) {
       );
     }
   } catch (error) {
-    console.error("Error generating download:", error);
+    logger.error("Error generating download", error);
     return applyCorsHeaders(
       new NextResponse(
         JSON.stringify({ error: "Failed to generate download" }),

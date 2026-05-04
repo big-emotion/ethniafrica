@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { getPendingContributions } from "@/lib/supabase/admin-queries";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { isAdminAuthenticated } from "@/lib/auth/admin";
+import { logger } from "@/lib/api/logger";
 
 /**
  * Route API pour lister les contributions en attente (admin)
@@ -17,7 +18,7 @@ export async function GET(request: NextRequest) {
     const contributions = await getPendingContributions();
     return jsonWithCors(contributions);
   } catch (error) {
-    console.error("Error fetching contributions:", error);
+    logger.error("Error fetching contributions", error);
     return jsonWithCors(
       { error: "Failed to fetch contributions" },
       { status: 500 }
