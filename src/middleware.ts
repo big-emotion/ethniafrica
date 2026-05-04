@@ -1,9 +1,18 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function middleware(_request: NextRequest) {
-  const response = NextResponse.next();
+export function middleware(request: NextRequest) {
+  // Generate a cryptographically random nonce for CSP per request
+  const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
+
+  const response = NextResponse.next({
+    request: {
+      headers: new Headers({
+        ...Object.fromEntries(request.headers),
+        "x-nonce": nonce,
+      }),
+    },
+  });
 
   // Strict-Transport-Security: enforce HTTPS
   response.headers.set(
@@ -17,10 +26,11 @@ export function middleware(_request: NextRequest) {
   // Referrer-Policy: control referrer information
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
 
-  // Content-Security-Policy: Next.js 16 compatible CSP
+  // Content-Security-Policy: nonce-based, compatible with Next.js 16 hashed-script model.
+  // 'unsafe-inline' is intentionally absent; Next.js will honour the nonce for its own scripts.
   const csp = [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline'",
+    `script-src 'self' 'nonce-${nonce}'`,
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data:",
     "frame-ancestors 'self'",
@@ -39,6 +49,6 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
      */
-    "/((?!_next/static|_next/image|favicon.ico).*)",
+    "/((?!_next/static|_next/image|favicon\\.ico).*)",
   ],
 };
