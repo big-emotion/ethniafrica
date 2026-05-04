@@ -22,6 +22,7 @@ import type {
 } from "@/types/afrik-frontend";
 
 import { CACHE_KEYS } from "@/lib/cache/clientCache";
+import { logger } from "@/lib/api/logger";
 
 // ==========================================
 // CONSTANTS
@@ -89,7 +90,7 @@ export async function getLanguageFamilies(
 
     if (!response.ok) {
       const error = await handleFetchError(response, "load language families");
-      console.error("[getLanguageFamilies] Error:", error);
+      logger.error("[getLanguageFamilies] Error", error);
       return { data: [], meta: createEmptyMeta(page, perPage) };
     }
 
@@ -118,7 +119,7 @@ export async function getLanguageFamilies(
       meta: transformMeta(result.meta, page, perPage),
     };
   } catch (error) {
-    console.error("[getLanguageFamilies] Exception:", error);
+    logger.error("[getLanguageFamilies] Exception", error);
     return { data: [], meta: createEmptyMeta(page, perPage) };
   }
 }
@@ -142,7 +143,7 @@ export async function getLanguageFamily(
         response,
         `load language family ${id}`
       );
-      console.error("[getLanguageFamily] Error:", error);
+      logger.error("[getLanguageFamily] Error", error);
       return null;
     }
 
@@ -172,7 +173,7 @@ export async function getLanguageFamily(
 
     return detail;
   } catch (error) {
-    console.error(`[getLanguageFamily] Exception for ${id}:`, error);
+    logger.error("[getLanguageFamily] Exception", error, { id });
     return null;
   }
 }
@@ -208,7 +209,7 @@ export async function getPeoples(
 
     if (!response.ok) {
       const error = await handleFetchError(response, "load peoples");
-      console.error("[getPeoples] Error:", error);
+      logger.error("[getPeoples] Error", error);
       return { data: [], meta: createEmptyMeta(page, perPage) };
     }
 
@@ -252,7 +253,7 @@ export async function getPeoples(
       meta: transformMeta(result.meta, page, perPage),
     };
   } catch (error) {
-    console.error("[getPeoples] Exception:", error);
+    logger.error("[getPeoples] Exception", error);
     return { data: [], meta: createEmptyMeta(page, perPage) };
   }
 }
@@ -271,7 +272,7 @@ export async function getPeople(id: string): Promise<PeopleDetail | null> {
         return null;
       }
       const error = await handleFetchError(response, `load people ${id}`);
-      console.error("[getPeople] Error:", error);
+      logger.error("[getPeople] Error", error);
       return null;
     }
 
@@ -305,7 +306,7 @@ export async function getPeople(id: string): Promise<PeopleDetail | null> {
 
     return detail;
   } catch (error) {
-    console.error(`[getPeople] Exception for ${id}:`, error);
+    logger.error("[getPeople] Exception", error, { id });
     return null;
   }
 }
@@ -328,7 +329,7 @@ export async function getCountries(
 
     if (!response.ok) {
       const error = await handleFetchError(response, "load countries");
-      console.error("[getCountries] Error:", error);
+      logger.error("[getCountries] Error", error);
       return { data: [], meta: createEmptyMeta(page, perPage) };
     }
 
@@ -354,7 +355,7 @@ export async function getCountries(
       meta: transformMeta(result.meta, page, perPage),
     };
   } catch (error) {
-    console.error("[getCountries] Exception:", error);
+    logger.error("[getCountries] Exception", error);
     return { data: [], meta: createEmptyMeta(page, perPage) };
   }
 }
@@ -373,7 +374,7 @@ export async function getCountry(iso: string): Promise<CountryDetail | null> {
         return null;
       }
       const error = await handleFetchError(response, `load country ${iso}`);
-      console.error("[getCountry] Error:", error);
+      logger.error("[getCountry] Error", error);
       return null;
     }
 
@@ -405,7 +406,7 @@ export async function getCountry(iso: string): Promise<CountryDetail | null> {
 
     return detail;
   } catch (error) {
-    console.error(`[getCountry] Exception for ${iso}:`, error);
+    logger.error("[getCountry] Exception", error, { iso });
     return null;
   }
 }
@@ -442,7 +443,7 @@ export async function search(
 
     if (!response.ok) {
       const error = await handleFetchError(response, "search");
-      console.error("[search] Error:", error);
+      logger.error("[search] Error", error);
       return [];
     }
 
@@ -465,7 +466,7 @@ export async function search(
 
     return data;
   } catch (error) {
-    console.error("[search] Exception:", error);
+    logger.error("[search] Exception", error);
     return [];
   }
 }
@@ -520,7 +521,7 @@ export async function getStats(): Promise<GlobalStats> {
       lastUpdated: new Date().toISOString(),
     };
   } catch (error) {
-    console.error("[getStats] Exception:", error);
+    logger.error("[getStats] Exception", error);
     return {
       totalLanguageFamilies: 0,
       totalPeoples: 0,

@@ -1,6 +1,7 @@
 import { NextRequest } from "next/server";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { getAfrikCountryById } from "@/lib/supabase/queries/afrik/countries";
+import { logger } from "@/lib/api/logger";
 
 export async function GET(
   _request: NextRequest,
@@ -19,7 +20,7 @@ export async function GET(
       name_origin_actor: country.nameOriginActor || "",
     });
   } catch (error) {
-    console.error("Error loading country:", error);
+    logger.error("Error loading country", error);
     return jsonWithCors({ error: "Failed to load country" }, { status: 500 });
   }
 }
