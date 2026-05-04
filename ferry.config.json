@@ -5,5 +5,8 @@
   },
   "limits": {
     "max_tokens_per_run": 1000000
+  },
+  "setup": {
+    "pre_agent_command": "npm ci"
   }
 }
