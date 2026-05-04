@@ -71,10 +71,6 @@ NEXT_PUBLIC_SUPABASE_URL=https://[project-ref].supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=[anon-key]
 SUPABASE_SERVICE_ROLE_KEY=[service-role-key]
 USE_SUPABASE=true
-
-# Admin authentication
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=[secure-password]
 ```
 
 #### 1.3 Seeding the first admin user
@@ -294,8 +290,6 @@ En cas de problème en production :
 
 ### Optionnelles
 
-- `ADMIN_USERNAME` : Nom d'utilisateur admin (défaut: "admin")
-- `ADMIN_PASSWORD` : Mot de passe admin
 - `NEXT_PUBLIC_SITE_URL` : URL du site
 - `CORS_ALLOWED_ORIGIN` : Origine CORS autorisée
 
