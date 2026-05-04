@@ -18,7 +18,9 @@
     "all-tests": "vitest run",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test:a11y": "npx playwright install chromium && tsx scripts/a11y-test.ts"
+    "test:a11y": "npx playwright install chromium && tsx scripts/a11y-test.ts",
+    "openapi:generate": "tsx scripts/generate-openapi-spec.ts",
+    "openapi:diff": "tsx scripts/openapi-diff.ts"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
