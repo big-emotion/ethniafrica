@@ -51,6 +51,10 @@ const eslintConfig = [
       // guard against future console.* regressions in these files (NFR33, AR28).
       "src/lib/afrik/**/*.ts",
       "src/lib/afrikLoader.ts",
+      // Auth and Supabase utilities are server-side only; enforce logger usage
+      // so future console.* regressions in these directories fail lint (NFR33).
+      "src/lib/auth/**/*.ts",
+      "src/lib/supabase/**/*.ts",
     ],
     rules: {
       "no-console": "error",
