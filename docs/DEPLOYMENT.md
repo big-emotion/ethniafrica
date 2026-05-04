@@ -77,6 +77,30 @@ ADMIN_USERNAME=admin
 ADMIN_PASSWORD=[secure-password]
 ```
 
+#### 1.3 Seeding the first admin user
+
+After applying the user_roles migration (008), seed the first admin user:
+
+1. **Have the admin user sign up first**
+   - The user must create their account via the login page
+   - They can use magic link or OAuth (Google, etc.)
+
+2. **Run the seed script**
+
+   ```bash
+   # Using environment variable
+   ADMIN_EMAIL=admin@example.com npx tsx scripts/seedAdmin.ts
+
+   # Or using CLI argument
+   npx tsx scripts/seedAdmin.ts admin@example.com
+   ```
+
+3. **Verify the admin role**
+   - Check the `user_roles` table in Supabase Dashboard
+   - The user should have a row with `role = 'admin'`
+
+**Note:** The recommended first admin email for documentation purposes is `admin@ethniafrica.com`. Replace with your actual admin email.
+
 #### 1.4 Migration des données enrichies
 
 1. **Préparer les fichiers sources**
@@ -210,8 +234,10 @@ tsx scripts/verifyDeployment.ts
 - [ ] Migration 001 appliquée
 - [ ] Migration 002 appliquée
 - [ ] Migration 003 appliquée
+- [ ] Migration 008 appliquée (user_roles)
 - [ ] Vérification des migrations (`tsx scripts/verifyDeployment.ts`)
 - [ ] Variables d'environnement staging configurées
+- [ ] First admin user seeded (`npx tsx scripts/seedAdmin.ts admin@example.com`)
 - [ ] Données enrichies migrées
 - [ ] Vérification finale (`tsx scripts/verifyDeployment.ts`)
 - [ ] Tests fonctionnels passés
@@ -223,8 +249,10 @@ tsx scripts/verifyDeployment.ts
 - [ ] Migration 001 vérifiée/appliquée
 - [ ] Migration 002 appliquée
 - [ ] Migration 003 appliquée
+- [ ] Migration 008 appliquée (user_roles)
 - [ ] Vérification des migrations (`tsx scripts/verifyDeployment.ts`)
 - [ ] Variables d'environnement production vérifiées
+- [ ] First admin user seeded (`npx tsx scripts/seedAdmin.ts admin@example.com`)
 - [ ] Données enrichies migrées
 - [ ] Vérification finale (`tsx scripts/verifyDeployment.ts`)
 - [ ] Tests fonctionnels passés
