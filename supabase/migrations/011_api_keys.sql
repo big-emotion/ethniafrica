@@ -39,7 +39,8 @@ COMMENT ON COLUMN api_keys.revoked_at IS 'Timestamp when the key was revoked';
 -- =============================================================================
 ALTER TABLE api_keys ENABLE ROW LEVEL SECURITY;
 
-CREATE POLICY api_keys_read_public ON api_keys FOR SELECT USING (true);
+-- Key owners can read their own keys; key_hash is never exposed to other users
+CREATE POLICY api_keys_read_owner ON api_keys FOR SELECT USING (auth.uid() = user_id);
 -- Note: No write policies = write denied by default with RLS enabled
 
 -- =============================================================================

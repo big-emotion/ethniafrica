@@ -175,7 +175,16 @@ CREATE TABLE IF NOT EXISTS audit_log (
 COMMENT ON TABLE audit_log IS 'System-wide audit log for tracking all actions';
 
 ALTER TABLE audit_log ENABLE ROW LEVEL SECURITY;
-CREATE POLICY audit_log_read_public ON audit_log FOR SELECT USING (true);
+-- Audit log contains actor_id, ip_address, and entity_id; restrict to admins only
+CREATE POLICY audit_log_read_admin ON audit_log FOR SELECT
+  USING (
+    EXISTS (
+      SELECT 1 FROM user_roles
+      WHERE user_roles.user_id = auth.uid()
+        AND user_roles.role = 'admin'
+        AND user_roles.revoked_at IS NULL
+    )
+  );
 -- Note: No write policies = write denied by default with RLS enabled
 
 CREATE INDEX IF NOT EXISTS idx_audit_log_action ON audit_log(action);
