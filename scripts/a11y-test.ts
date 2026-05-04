@@ -1,12 +1,25 @@
 import { chromium, Browser, Page } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
-import { spawn, ChildProcess } from "child_process";
-import { existsSync } from "fs";
-import { join, resolve } from "path";
-import { readdir } from "fs/promises";
+import { createServer, Server } from "http";
+import { createReadStream, existsSync } from "fs";
+import { stat } from "fs/promises";
+import { join, extname, resolve } from "path";
 
 const STORYBOOK_STATIC_DIR = resolve(__dirname, "../storybook-static");
 const STORYBOOK_PORT = 6006;
+
+const MIME: Record<string, string> = {
+  ".html": "text/html",
+  ".js": "application/javascript",
+  ".css": "text/css",
+  ".json": "application/json",
+  ".png": "image/png",
+  ".svg": "image/svg+xml",
+  ".ico": "image/x-icon",
+  ".woff": "font/woff",
+  ".woff2": "font/woff2",
+  ".ttf": "font/ttf",
+};
 
 interface AxeViolation {
   id: string;
@@ -23,43 +36,43 @@ interface StoryEntry {
   title: string;
 }
 
-async function startStaticServer(): Promise<ChildProcess> {
+async function startStaticServer(): Promise<Server> {
   return new Promise((resolve, reject) => {
-    const server = spawn("npx", ["http-server", STORYBOOK_STATIC_DIR, "-p", String(STORYBOOK_PORT), "-s"], {
-      stdio: ["ignore", "pipe", "pipe"],
-      shell: true,
-    });
+    const server = createServer(async (req, res) => {
+      let urlPath = req.url?.split("?")[0] || "/";
+      if (urlPath === "/") urlPath = "/index.html";
+      const filePath = join(STORYBOOK_STATIC_DIR, urlPath);
 
-    let started = false;
-
-    server.stdout?.on("data", (data: Buffer) => {
-      if (!started && data.toString().includes("Available on")) {
-        started = true;
-        // Give server a moment to be fully ready
-        setTimeout(() => resolve(server), 500);
+      try {
+        const info = await stat(filePath);
+        if (info.isDirectory()) {
+          const contentType = "text/html";
+          res.writeHead(200, { "Content-Type": contentType });
+          createReadStream(join(filePath, "index.html")).pipe(res);
+          return;
+        }
+        const ext = extname(filePath);
+        const contentType = MIME[ext] || "application/octet-stream";
+        res.writeHead(200, { "Content-Type": contentType });
+        createReadStream(filePath).pipe(res);
+      } catch {
+        res.writeHead(404);
+        res.end("Not found");
       }
     });
 
-    server.stderr?.on("data", (data: Buffer) => {
-      console.error(`Server stderr: ${data.toString()}`);
+    server.listen(STORYBOOK_PORT, "127.0.0.1", () => {
+      resolve(server);
     });
 
     server.on("error", reject);
-
-    // Timeout if server doesn't start
-    setTimeout(() => {
-      if (!started) {
-        server.kill();
-        reject(new Error("Server failed to start within timeout"));
-      }
-    }, 30000);
   });
 }
 
 async function getStoryIds(page: Page): Promise<StoryEntry[]> {
   await page.goto(`http://localhost:${STORYBOOK_PORT}/index.json`);
   const content = await page.textContent("body");
-  
+
   if (!content) {
     throw new Error("Could not fetch stories index");
   }
@@ -82,7 +95,6 @@ async function getStoryIds(page: Page): Promise<StoryEntry[]> {
 }
 
 async function runA11yTests(): Promise<void> {
-  // Check if storybook-static exists
   if (!existsSync(STORYBOOK_STATIC_DIR)) {
     console.error("❌ storybook-static directory not found.");
     console.error("   Please run 'npm run build-storybook' first.");
@@ -91,6 +103,7 @@ async function runA11yTests(): Promise<void> {
 
   console.log("🚀 Starting static server for Storybook...");
   const server = await startStaticServer();
+  console.log(`✅ Server listening at http://localhost:${STORYBOOK_PORT}`);
 
   let browser: Browser | null = null;
   let hasViolations = false;
@@ -107,23 +120,20 @@ async function runA11yTests(): Promise<void> {
 
     for (const story of stories) {
       const storyUrl = `http://localhost:${STORYBOOK_PORT}/iframe.html?id=${story.id}&viewMode=story`;
-      
+
       process.stdout.write(`🔍 Testing: ${story.title} - ${story.name}... `);
 
       try {
         await page.goto(storyUrl, { waitUntil: "networkidle" });
-        
-        // Wait for Storybook to render
+
         await page.waitForSelector("#storybook-root", { timeout: 10000 }).catch(() => {
           // Some stories might not have this selector, continue anyway
         });
 
-        // Run axe accessibility checks
         const results = await new AxeBuilder({ page })
           .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
           .analyze();
 
-        // Filter for serious and critical violations only
         const seriousViolations = results.violations.filter(
           (v) => v.impact === "serious" || v.impact === "critical"
         );
@@ -143,7 +153,6 @@ async function runA11yTests(): Promise<void> {
       }
     }
 
-    // Print violation summary
     if (violationSummary.length > 0) {
       console.log("\n" + "=".repeat(80));
       console.log("ACCESSIBILITY VIOLATION SUMMARY");
@@ -158,11 +167,11 @@ async function runA11yTests(): Promise<void> {
           console.log(`     ${violation.help}`);
           console.log(`     📎 ${violation.helpUrl}`);
           console.log(`     Affected elements:`);
-          
+
           for (const node of violation.nodes.slice(0, 3)) {
             console.log(`       - ${node.target.join(" > ")}`);
           }
-          
+
           if (violation.nodes.length > 3) {
             console.log(`       ... and ${violation.nodes.length - 3} more`);
           }
@@ -172,17 +181,15 @@ async function runA11yTests(): Promise<void> {
       console.log("\n" + "=".repeat(80));
     }
 
-    // Final summary
     console.log("\n📊 Test Summary:");
     console.log(`   Stories tested: ${stories.length}`);
     console.log(`   Stories with violations: ${violationSummary.length}`);
     console.log(`   Total violations: ${violationSummary.reduce((acc, s) => acc + s.violations.length, 0)}`);
-
   } finally {
     if (browser) {
       await browser.close();
     }
-    server.kill();
+    server.close();
   }
 
   if (hasViolations) {
