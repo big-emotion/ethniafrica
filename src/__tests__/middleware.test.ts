@@ -52,7 +52,14 @@ describe("middleware", () => {
     const response = middleware(request);
 
     expect(response).toBeDefined();
-    expect(mockNextResponse.headers.set).toHaveBeenCalledTimes(4);
+    expect(mockHeaders.get("Strict-Transport-Security")).toBe(
+      "max-age=31536000; includeSubDomains; preload"
+    );
+    expect(mockHeaders.get("X-Content-Type-Options")).toBe("nosniff");
+    expect(mockHeaders.get("Referrer-Policy")).toBe(
+      "strict-origin-when-cross-origin"
+    );
+    expect(mockHeaders.get("Content-Security-Policy")).toBeDefined();
   });
 
   it("should set Strict-Transport-Security header correctly", () => {
@@ -97,9 +104,18 @@ describe("middleware", () => {
     const cspValue = cspCall![1];
 
     expect(cspValue).toContain("default-src 'self'");
-    expect(cspValue).toContain("style-src 'self' 'unsafe-inline'");
     expect(cspValue).toContain("img-src 'self' data:");
     expect(cspValue).toContain("frame-ancestors 'self'");
+
+    // style-src must use nonce, not unsafe-inline
+    const styleSrcDirective = cspValue
+      .split(";")
+      .map((d: string) => d.trim())
+      .find((d: string) => d.startsWith("style-src"));
+    expect(styleSrcDirective).toBeDefined();
+    expect(styleSrcDirective).not.toContain("'unsafe-inline'");
+    expect(styleSrcDirective).toMatch(/'nonce-[^']+'/);
+    expect(styleSrcDirective).toContain("'self'");
   });
 
   it("should not include 'unsafe-inline' in script-src", () => {

@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
   // Generate a cryptographically random nonce for CSP per request
-  const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
+  const nonce = btoa(crypto.randomUUID());
 
   const response = NextResponse.next({
     request: {
@@ -31,7 +31,7 @@ export function middleware(request: NextRequest) {
   const csp = [
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}'`,
-    "style-src 'self' 'unsafe-inline'",
+    `style-src 'self' 'nonce-${nonce}'`,
     "img-src 'self' data:",
     "frame-ancestors 'self'",
   ].join("; ");
