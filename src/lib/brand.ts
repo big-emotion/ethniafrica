@@ -20,6 +20,12 @@
  *
  * All environment variables use the `NEXT_PUBLIC_` prefix to ensure they are
  * available in both server and client contexts in Next.js.
+ *
+ * > **Important — build-time inlining**: Next.js statically replaces
+ * > `NEXT_PUBLIC_*` references at **compile time**. This means that after
+ * > changing any of these environment variables, **a fresh build is required**
+ * > for the new values to take effect. Hot-swapping the env var on a running
+ * > server without rebuilding will have no effect.
  */
 
 /** The main product name displayed throughout the application */

@@ -64,5 +64,23 @@ describe("brand", () => {
       const { SITE_LOCALE } = await import("../brand");
       expect(SITE_LOCALE).toBe("en");
     });
+
+    it("should override ATTRIBUTION_STRING via NEXT_PUBLIC_ATTRIBUTION_STRING", async () => {
+      process.env.NEXT_PUBLIC_ATTRIBUTION_STRING = "Made with love for Africa";
+      const { ATTRIBUTION_STRING } = await import("../brand");
+      expect(ATTRIBUTION_STRING).toBe("Made with love for Africa");
+    });
+
+    it("should override OG_TITLE via NEXT_PUBLIC_OG_TITLE", async () => {
+      process.env.NEXT_PUBLIC_OG_TITLE = "Custom OG Title";
+      const { OG_TITLE } = await import("../brand");
+      expect(OG_TITLE).toBe("Custom OG Title");
+    });
+
+    it("should override OG_DESCRIPTION via NEXT_PUBLIC_OG_DESCRIPTION", async () => {
+      process.env.NEXT_PUBLIC_OG_DESCRIPTION = "Custom OG description text";
+      const { OG_DESCRIPTION } = await import("../brand");
+      expect(OG_DESCRIPTION).toBe("Custom OG description text");
+    });
   });
 });
