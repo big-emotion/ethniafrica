@@ -4,6 +4,7 @@
  */
 
 import { cookies } from "next/headers";
+import { logger } from "@/lib/api/logger";
 
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
@@ -19,7 +20,7 @@ export function verifyAdminCredentials(
   password: string
 ): boolean {
   if (!ADMIN_USERNAME || !ADMIN_PASSWORD) {
-    console.error("Admin credentials not configured");
+    logger.error("Admin credentials not configured");
     return false;
   }
 

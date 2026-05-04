@@ -2,6 +2,7 @@
  * Requêtes admin Supabase pour la modération
  */
 import { createAdminClient } from "./admin";
+import { logger } from "@/lib/api/logger";
 
 export interface Contribution {
   id: string;
@@ -30,7 +31,7 @@ export async function getPendingContributions(): Promise<Contribution[]> {
     .order("created_at", { ascending: false });
 
   if (error) {
-    console.error("Error fetching pending contributions:", error);
+    logger.error("Error fetching pending contributions", error);
     throw error;
   }
 
@@ -48,7 +49,7 @@ export async function getAllContributions(): Promise<Contribution[]> {
     .order("created_at", { ascending: false });
 
   if (error) {
-    console.error("Error fetching contributions:", error);
+    logger.error("Error fetching contributions", error);
     throw error;
   }
 
@@ -72,7 +73,7 @@ export async function getContributionById(
     if (error.code === "PGRST116") {
       return null;
     }
-    console.error("Error fetching contribution:", error);
+    logger.error("Error fetching contribution", error);
     throw error;
   }
 

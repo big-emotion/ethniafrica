@@ -5,6 +5,7 @@
 import { readFileSync, readdirSync } from "fs";
 import { join } from "path";
 import type { Country, ParsedFile } from "@/types/afrik";
+import { logger } from "@/lib/api/logger";
 
 const COUNTRIES_PATH = join(process.cwd(), "dataset/source/afrik/pays");
 const countryCache = new Map<string, Country>();
@@ -52,7 +53,7 @@ export async function loadAllCountries(): Promise<Country[]> {
     }
     return countries;
   } catch (error) {
-    console.error("Failed to load countries:", error);
+    logger.error("Failed to load countries", error);
     return [];
   }
 }

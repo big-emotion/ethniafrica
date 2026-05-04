@@ -5,6 +5,7 @@
 import { readFileSync, readdirSync, statSync } from "fs";
 import { join } from "path";
 import type { People, ParsedFile } from "@/types/afrik";
+import { logger } from "@/lib/api/logger";
 
 const PEOPLES_PATH = join(process.cwd(), "dataset/source/afrik/peuples");
 const peopleCache = new Map<string, People>();
@@ -73,7 +74,7 @@ export async function loadAllPeoples(): Promise<People[]> {
     }
     return peoples;
   } catch (error) {
-    console.error("Failed to load peoples:", error);
+    logger.error("Failed to load peoples", error);
     return [];
   }
 }
@@ -94,7 +95,7 @@ export async function loadPeoplesByLanguageFamily(
     }
     return peoples;
   } catch (error) {
-    console.error(`Failed to load peoples for family ${familyId}:`, error);
+    logger.error(`Failed to load peoples for family ${familyId}`, error);
     return [];
   }
 }
