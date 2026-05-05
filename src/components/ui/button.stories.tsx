@@ -56,7 +56,7 @@ export const AllSizes: Story = {
       <Button size="sm">Petit</Button>
       <Button size="default">Normal</Button>
       <Button size="lg">Grand</Button>
-      <Button size="icon">
+      <Button size="icon" aria-label="Rechercher">
         <Search />
       </Button>
     </div>
