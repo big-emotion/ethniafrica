@@ -1,8 +1,9 @@
 import { Language } from "@/types/shared";
+import { PRODUCT_NAME, ATTRIBUTION_STRING } from "@/lib/brand";
 
 export const translations = {
   fr: {
-    title: "Atlas des Peuples d'Afrique",
+    title: PRODUCT_NAME,
     subtitle:
       "Encyclopédie des peuples, langues et familles linguistiques dans 55 pays africains",
     byCountry: "Par Pays",
@@ -32,7 +33,7 @@ export const translations = {
     viewDetails: "Voir Détails",
     close: "Fermer",
     whyThisSite: "Pourquoi ce site ?",
-    madeWithEmotion: "Fait avec émotion pour l'Afrique",
+    madeWithEmotion: ATTRIBUTION_STRING,
   },
 };
 

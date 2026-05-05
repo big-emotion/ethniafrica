@@ -1,5 +1,6 @@
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { getAllAfrikCountries } from "@/lib/supabase/queries/afrik/countries";
+import { logger } from "@/lib/api/logger";
 
 export async function GET() {
   try {
@@ -11,7 +12,7 @@ export async function GET() {
       })),
     });
   } catch (error) {
-    console.error("Error loading countries:", error);
+    logger.error("Error loading countries", error);
     return jsonWithCors({ error: "Failed to load countries" }, { status: 500 });
   }
 }

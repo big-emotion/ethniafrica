@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { getCurrentUser, isAdmin } from "@/lib/auth/supabase-auth";
+import { logger } from "@/lib/api/logger";
 
 /**
  * Route API admin pour accepter/rejeter une contribution
@@ -87,7 +88,7 @@ export async function PATCH(
       .single();
 
     if (error) {
-      console.error("Error updating contribution:", error);
+      logger.error("Error updating contribution", error);
       if (error.code === "PGRST116") {
         return jsonWithCors(
           { error: "Contribution not found" },
@@ -105,7 +106,7 @@ export async function PATCH(
       try {
         await mergeContribution(data);
       } catch (mergeError) {
-        console.error("Error merging contribution:", mergeError);
+        logger.error("Error merging contribution", mergeError);
         // Rollback status update
         await supabase
           .from("contributions")
@@ -130,7 +131,7 @@ export async function PATCH(
       contribution: data,
     });
   } catch (error) {
-    console.error("Error in admin contributions API:", error);
+    logger.error("Error in admin contributions API", error);
     return jsonWithCors({ error: "Internal server error" }, { status: 500 });
   }
 }

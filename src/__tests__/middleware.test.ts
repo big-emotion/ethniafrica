@@ -1,9 +1,8 @@
 import { describe, it, expect, vi, beforeEach, type Mock } from "vitest";
 import { NextRequest } from "next/server";
-import { middleware } from "../middleware";
+import { middleware, config } from "../middleware";
 import { createServerClient } from "@supabase/ssr";
 
-// Mock @supabase/ssr
 vi.mock("@supabase/ssr", () => ({
   createServerClient: vi.fn(),
 }));
@@ -17,7 +16,6 @@ describe("middleware", () => {
   beforeEach(() => {
     vi.clearAllMocks();
 
-    // Setup chain: from().select().eq()
     mockEq.mockResolvedValue({ data: [], error: null });
     mockSelect.mockReturnValue({ eq: mockEq });
     mockFrom.mockReturnValue({ select: mockSelect });
@@ -28,108 +26,199 @@ describe("middleware", () => {
       },
       from: mockFrom,
     });
-  });
 
-  it("redirects unauthenticated user to login with redirect param", async () => {
     mockGetUser.mockResolvedValue({ data: { user: null }, error: null });
-
-    const request = new NextRequest("http://localhost:3000/admin/dashboard");
-    const response = await middleware(request);
-
-    expect(response.status).toBe(307);
-    expect(response.headers.get("location")).toBe(
-      "http://localhost:3000/admin/login?redirect=%2Fadmin%2Fdashboard"
-    );
   });
 
-  it("redirects authenticated non-admin user to /forbidden", async () => {
-    mockGetUser.mockResolvedValue({
-      data: { user: { id: "user-123" } },
-      error: null,
-    });
-    mockEq.mockResolvedValue({ data: [{ role: "reader" }], error: null });
+  describe("admin auth", () => {
+    it("redirects unauthenticated user to login with redirect param", async () => {
+      const request = new NextRequest("http://localhost:3000/admin/dashboard");
+      const response = await middleware(request);
 
-    const request = new NextRequest("http://localhost:3000/admin/dashboard");
-    const response = await middleware(request);
-
-    expect(response.status).toBe(307);
-    expect(response.headers.get("location")).toBe(
-      "http://localhost:3000/forbidden"
-    );
-    expect(mockFrom).toHaveBeenCalledWith("user_roles");
-    expect(mockSelect).toHaveBeenCalledWith("role");
-    expect(mockEq).toHaveBeenCalledWith("user_id", "user-123");
-  });
-
-  it("allows authenticated admin user to pass through", async () => {
-    mockGetUser.mockResolvedValue({
-      data: { user: { id: "admin-123" } },
-      error: null,
-    });
-    mockEq.mockResolvedValue({ data: [{ role: "admin" }], error: null });
-
-    const request = new NextRequest("http://localhost:3000/admin/dashboard");
-    const response = await middleware(request);
-
-    // Should be a NextResponse.next() response, not a redirect
-    expect(response.status).toBe(200);
-    expect(response.headers.get("location")).toBeNull();
-  });
-
-  it("allows access to /admin/login without authentication", async () => {
-    mockGetUser.mockResolvedValue({ data: { user: null }, error: null });
-
-    const request = new NextRequest("http://localhost:3000/admin/login");
-    const response = await middleware(request);
-
-    // Should pass through without redirect
-    expect(response.status).toBe(200);
-    expect(response.headers.get("location")).toBeNull();
-  });
-
-  it("handles user with multiple roles including admin", async () => {
-    mockGetUser.mockResolvedValue({
-      data: { user: { id: "multi-role-user" } },
-      error: null,
-    });
-    mockEq.mockResolvedValue({
-      data: [{ role: "reader" }, { role: "admin" }],
-      error: null,
+      expect(response.status).toBe(307);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/admin/login?redirect=%2Fadmin%2Fdashboard"
+      );
     });
 
-    const request = new NextRequest("http://localhost:3000/admin/settings");
-    const response = await middleware(request);
+    it("redirects authenticated non-admin user to /forbidden", async () => {
+      mockGetUser.mockResolvedValue({
+        data: { user: { id: "user-123" } },
+        error: null,
+      });
+      mockEq.mockResolvedValue({ data: [{ role: "reader" }], error: null });
 
-    expect(response.status).toBe(200);
-    expect(response.headers.get("location")).toBeNull();
-  });
+      const request = new NextRequest("http://localhost:3000/admin/dashboard");
+      const response = await middleware(request);
 
-  it("handles database error when fetching roles", async () => {
-    mockGetUser.mockResolvedValue({
-      data: { user: { id: "user-123" } },
-      error: null,
+      expect(response.status).toBe(307);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/forbidden"
+      );
+      expect(mockFrom).toHaveBeenCalledWith("user_roles");
+      expect(mockSelect).toHaveBeenCalledWith("role");
+      expect(mockEq).toHaveBeenCalledWith("user_id", "user-123");
     });
-    mockEq.mockResolvedValue({ data: null, error: new Error("DB error") });
 
-    const request = new NextRequest("http://localhost:3000/admin/dashboard");
-    const response = await middleware(request);
+    it("allows authenticated admin user to pass through", async () => {
+      mockGetUser.mockResolvedValue({
+        data: { user: { id: "admin-123" } },
+        error: null,
+      });
+      mockEq.mockResolvedValue({ data: [{ role: "admin" }], error: null });
 
-    // Should redirect to forbidden when roles can't be fetched
-    expect(response.status).toBe(307);
-    expect(response.headers.get("location")).toBe(
-      "http://localhost:3000/forbidden"
-    );
+      const request = new NextRequest("http://localhost:3000/admin/dashboard");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("location")).toBeNull();
+    });
+
+    it("allows access to /admin/login without authentication", async () => {
+      const request = new NextRequest("http://localhost:3000/admin/login");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("location")).toBeNull();
+    });
+
+    it("handles user with multiple roles including admin", async () => {
+      mockGetUser.mockResolvedValue({
+        data: { user: { id: "multi-role-user" } },
+        error: null,
+      });
+      mockEq.mockResolvedValue({
+        data: [{ role: "reader" }, { role: "admin" }],
+        error: null,
+      });
+
+      const request = new NextRequest("http://localhost:3000/admin/settings");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("location")).toBeNull();
+    });
+
+    it("handles database error when fetching roles", async () => {
+      mockGetUser.mockResolvedValue({
+        data: { user: { id: "user-123" } },
+        error: null,
+      });
+      mockEq.mockResolvedValue({ data: null, error: new Error("DB error") });
+
+      const request = new NextRequest("http://localhost:3000/admin/dashboard");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(307);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/forbidden"
+      );
+    });
+
+    it("refreshes session on non-admin routes", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      expect(mockGetUser).toHaveBeenCalled();
+      expect(response.status).toBe(200);
+    });
   });
 
-  it("refreshes session on non-admin routes", async () => {
-    mockGetUser.mockResolvedValue({ data: { user: null }, error: null });
+  describe("security headers", () => {
+    it("sets Strict-Transport-Security on pass-through responses", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
 
-    const request = new NextRequest("http://localhost:3000/some-page");
-    const response = await middleware(request);
+      expect(response.headers.get("Strict-Transport-Security")).toBe(
+        "max-age=31536000; includeSubDomains; preload"
+      );
+    });
 
-    // Should call getUser to refresh session
-    expect(mockGetUser).toHaveBeenCalled();
-    // Should pass through (not redirect)
-    expect(response.status).toBe(200);
+    it("sets X-Content-Type-Options on pass-through responses", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      expect(response.headers.get("X-Content-Type-Options")).toBe("nosniff");
+    });
+
+    it("sets Referrer-Policy on pass-through responses", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      expect(response.headers.get("Referrer-Policy")).toBe(
+        "strict-origin-when-cross-origin"
+      );
+    });
+
+    it("sets Content-Security-Policy with required directives", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy");
+      expect(csp).toBeDefined();
+      expect(csp).toContain("default-src 'self'");
+      expect(csp).toContain("img-src 'self' data:");
+      expect(csp).toContain("frame-ancestors 'self'");
+    });
+
+    it("does not include 'unsafe-inline' in script-src or style-src", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy")!;
+      const directives = csp.split(";").map((d) => d.trim());
+
+      const scriptSrc = directives.find((d) => d.startsWith("script-src"));
+      const styleSrc = directives.find((d) => d.startsWith("style-src"));
+
+      expect(scriptSrc).toBeDefined();
+      expect(scriptSrc).not.toContain("'unsafe-inline'");
+      expect(scriptSrc).toMatch(/'nonce-[^']+'/);
+      expect(styleSrc).toBeDefined();
+      expect(styleSrc).not.toContain("'unsafe-inline'");
+      expect(styleSrc).toMatch(/'nonce-[^']+'/);
+    });
+
+    it("generates a different nonce for each request", async () => {
+      const request1 = new NextRequest("http://localhost:3000/page1");
+      const response1 = await middleware(request1);
+      const nonce1 = response1.headers
+        .get("Content-Security-Policy")!
+        .match(/'nonce-([^']+)'/)?.[1];
+
+      const request2 = new NextRequest("http://localhost:3000/page2");
+      const response2 = await middleware(request2);
+      const nonce2 = response2.headers
+        .get("Content-Security-Policy")!
+        .match(/'nonce-([^']+)'/)?.[1];
+
+      expect(nonce1).toBeDefined();
+      expect(nonce2).toBeDefined();
+      expect(nonce1).not.toBe(nonce2);
+    });
+  });
+});
+
+describe("config", () => {
+  it("exports a config with matcher", () => {
+    expect(config).toBeDefined();
+    expect(config.matcher).toBeDefined();
+  });
+
+  it("matcher excludes static assets and includes app routes", () => {
+    const rawPattern = Array.isArray(config.matcher)
+      ? config.matcher[0]
+      : String(config.matcher);
+    const regex = new RegExp(`^${rawPattern}$`);
+
+    expect(regex.test("/")).toBe(true);
+    expect(regex.test("/api/health")).toBe(true);
+    expect(regex.test("/about")).toBe(true);
+    expect(regex.test("/some/nested/page")).toBe(true);
+
+    expect(regex.test("/_next/static/chunk.js")).toBe(false);
+    expect(regex.test("/_next/static/css/main.css")).toBe(false);
+    expect(regex.test("/_next/image?url=foo")).toBe(false);
+    expect(regex.test("/favicon.ico")).toBe(false);
   });
 });

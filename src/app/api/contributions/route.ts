@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { createServerClient } from "@/lib/supabase/server";
 import { contributionSchema } from "@/lib/validations/contribution";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
+import { logger } from "@/lib/api/logger";
 
 /**
  * @swagger
@@ -84,7 +85,7 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (error) {
-      console.error("Error creating contribution:", error);
+      logger.error("Error creating contribution", error);
       return jsonWithCors(
         { error: "Failed to create contribution" },
         { status: 500 }
@@ -100,7 +101,7 @@ export async function POST(request: NextRequest) {
       { status: 201 }
     );
   } catch (error) {
-    console.error("Error in contributions API:", error);
+    logger.error("Error in contributions API", error);
     return jsonWithCors({ error: "Internal server error" }, { status: 500 });
   }
 }

@@ -2,9 +2,31 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import type { UserRole } from "@/lib/auth/supabase-auth";
 
+function applySecurityHeaders(response: NextResponse, nonce: string) {
+  response.headers.set(
+    "Strict-Transport-Security",
+    "max-age=31536000; includeSubDomains; preload"
+  );
+  response.headers.set("X-Content-Type-Options", "nosniff");
+  response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+
+  const csp = [
+    "default-src 'self'",
+    `script-src 'self' 'nonce-${nonce}'`,
+    `style-src 'self' 'nonce-${nonce}'`,
+    "img-src 'self' data:",
+    "frame-ancestors 'self'",
+  ].join("; ");
+  response.headers.set("Content-Security-Policy", csp);
+}
+
 export async function middleware(request: NextRequest) {
+  const nonce = btoa(crypto.randomUUID());
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-nonce", nonce);
+
   let supabaseResponse = NextResponse.next({
-    request,
+    request: { headers: requestHeaders },
   });
 
   const supabase = createServerClient(
@@ -20,7 +42,7 @@ export async function middleware(request: NextRequest) {
             request.cookies.set(name, value)
           );
           supabaseResponse = NextResponse.next({
-            request,
+            request: { headers: requestHeaders },
           });
           cookiesToSet.forEach(({ name, value, options }) =>
             supabaseResponse.cookies.set(name, value, options)
@@ -30,32 +52,27 @@ export async function middleware(request: NextRequest) {
     }
   );
 
-  // Refresh session on all requests
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
   const { pathname } = request.nextUrl;
-
-  // Check if this is an admin route (excluding /admin/login)
-  const isAdminRoute = pathname.startsWith("/admin") && pathname !== "/admin/login";
+  const isAdminRoute =
+    pathname.startsWith("/admin") && pathname !== "/admin/login";
 
   if (isAdminRoute) {
-    // Redirect unauthenticated users to login
     if (!user) {
       const loginUrl = new URL("/admin/login", request.url);
       loginUrl.searchParams.set("redirect", pathname);
       return NextResponse.redirect(loginUrl);
     }
 
-    // Check if user has admin role
     const { data: roleData, error } = await supabase
       .from("user_roles")
       .select("role")
       .eq("user_id", user.id);
 
     if (error || !roleData) {
-      // Redirect to forbidden on error
       return NextResponse.redirect(new URL("/forbidden", request.url));
     }
 
@@ -69,6 +86,7 @@ export async function middleware(request: NextRequest) {
     }
   }
 
+  applySecurityHeaders(supabaseResponse, nonce);
   return supabaseResponse;
 }
 

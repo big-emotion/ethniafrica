@@ -8,6 +8,7 @@ import {
 import "@/index.css";
 import { Providers } from "./providers";
 import { TypeformPreload } from "@/components/TypeformPreload";
+import { PRODUCT_NAME, OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -39,18 +40,17 @@ export const metadata: Metadata = {
       return url.startsWith("http") ? url : `http://${url}`;
     })()
   ),
-  title: "Atlas des Peuples d'Afrique | Dictionnaire des Ethnies d'Afrique",
+  title: `${PRODUCT_NAME} | Dictionnaire des Ethnies d'Afrique`,
   description:
     "Encyclopédie des peuples, langues et familles linguistiques dans les 55 pays africains. Explorez la diversité culturelle et linguistique du continent.",
-  authors: [{ name: "Atlas des Peuples d'Afrique" }],
+  authors: [{ name: PRODUCT_NAME }],
   icons: {
     icon: "/favicon.ico",
     apple: "/favicon.ico",
   },
   openGraph: {
-    title: "Atlas des Peuples d'Afrique",
-    description:
-      "Encyclopédie des peuples, langues et familles linguistiques d'Afrique",
+    title: OG_TITLE,
+    description: OG_DESCRIPTION,
     type: "website",
     images: ["/opengraph-image"],
   },

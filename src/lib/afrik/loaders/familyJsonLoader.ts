@@ -5,6 +5,7 @@
 import { readFileSync, readdirSync } from "fs";
 import { join } from "path";
 import type { LanguageFamily, ParsedFile } from "@/types/afrik";
+import { logger } from "@/lib/api/logger";
 
 const FAMILIES_PATH = join(
   process.cwd(),
@@ -54,12 +55,12 @@ export async function loadAllLanguageFamilies(): Promise<LanguageFamily[]> {
       if (result.success && result.data) {
         families.push(result.data);
       } else if (!result.success) {
-        console.error(`Failed to load ${familyId}:`, result.errors);
+        logger.error(`Failed to load ${familyId}`, undefined, { errors: result.errors });
       }
     }
     return families;
   } catch (error) {
-    console.error("Failed to load language families:", error);
+    logger.error("Failed to load language families", error);
     return [];
   }
 }

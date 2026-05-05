@@ -1,4 +1,9 @@
 {
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
   "id": "PPL_GAMO",
   "nameMain": "Gamo",
   "languageFamilyId": "FLG_OMOTIQUE",
@@ -6,92 +11,69 @@
   "content": {
     "appellations": {
       "mainName": "Gamo",
-      "selfAppellation": "Gamo",
-      "exonyms": ["Gamu", "Gemu", "Gereze", "Dache"],
-      "originOfExonyms": "Le nom Gamo derive du mot gammo qui signifie lion en langue gamo. Des exonymes comme Gemu ou Gereze sont utilises par les populations voisines et dans la litterature ethnographique ancienne.",
+      "selfAppellation": "Gamo (Gaammo)",
+      "exonyms": ["Gemu"],
+      "originOfExonyms": "Le nom Gamo est similaire au mot Gaammo dans leur propre langue, signifiant lion ; ce nom reflète l'identité héroïque du peuple. L'exonyme Gemu est utilisé dans certaines classifications linguistiques.",
       "whyProblematic": null,
-      "contemporaryUsage": "Le terme Gamo est utilise couramment par les locuteurs eux-memes et dans les documents officiels ethiopiens. Depuis 2000, la langue gamo est officiellement reconnue par le gouvernement ethiopien pour l'enseignement scolaire.",
-      "linguisticFamily": "FLG_OMOTIQUE",
-      "ethnoLinguisticGroup": "Omotique central (groupe Ometo)",
-      "historicalRegion": "Hauts plateaux de Gamo (Gamo Highlands), zone Gamo Gofa, SNNPR, sud-ouest de l'Ethiopie",
-      "currentCountries": ["ETH"]
+      "contemporaryUsage": "Le terme Gamo est utilisé dans les documents officiels éthiopiens, dans la nomenclature administrative (zone Gamo) et dans les médias. La province de Gamo-Gofa, dont ils partageaient le nom avec les Gofa, a été réorganisée en 2019 lors de la séparation des Gofa."
     },
-    "ethnicities": [
-      "Dorze — sous-groupe renomme pour le tissage et les grandes cases en bambou, district de Chencha",
-      "Kucha — sous-groupe du district de Kucha",
-      "Kamba — sous-groupe du district de Kamba",
-      "Bonke — sous-groupe du district de Bonke",
-      "Birbir — sous-groupe district de Birbir Mariam",
-      "Boroda — sous-groupe de la zone meridionale",
-      "Dita — sous-groupe du district de Dita, connu pour ses poteries"
-    ],
+    "ethnicities": ["Gamo"],
     "origins": {
-      "ancientOrigins": "Les Gamo sont l'un des peuples omotiques les plus anciens des hauts plateaux du sud de l'Ethiopie. Ils appartiennent a la branche Ometo de la famille omotique nord, elle-meme rattachee au phylum afro-asiatique. Leur territoire ancestral, les Gamo Highlands, est occupe depuis au moins plusieurs millenaires. La tradition orale gamo rapporte une origine mythique liee a un ancetre eponyme.",
-      "formationPeriod": "L'identite gamo distincte s'est consolidee sur les hauts plateaux au cours du premier millenaire de l'ere commune. Les Gamo, avec les Gofa voisins, formerent l'entite politico-culturelle qui donna son nom a l'ancienne province de Gamo Gofa. La zone fut reorganisee administrativement en 2019, avec la separation de la zone Gofa.",
+      "ancientOrigins": "Les Gamo sont l'un des peuples Omotic des hautes terres du sud de l'Éthiopie. Leur nom, évoquant le lion (Gaammo), renvoie à une tradition guerrière ancienne. Ils occupent les hautes terres de Gamo depuis des siècles et constituent l'un des principaux groupes ethniques de la région.",
+      "formationPeriod": "Formation ancienne dans les hautes terres du sud de l'Éthiopie ; la tradition écrite et les systèmes de gouvernance locaux (Dere) attestent d'une organisation sociale élaborée bien avant l'intégration à l'empire éthiopien.",
       "migrationRoutes": [
-        "Populations autochtones des hauts plateaux du sud-ouest ethiopien, sans migration fondatrice externe documentee",
-        "Certaines traditions orales evoquent des mouvements de populations depuis les hautes terres vers les piedmonts du lac Abaya"
+        "Hautes terres de Gamo (plateau du sud de l'Éthiopie)",
+        "Migration commerciale et professionnelle vers Addis-Abeba au cours du XXe et XXIe siècles"
       ],
       "historicalSettlementZones": [
-        "Hauts plateaux de Gamo (Gamo Highlands), notamment autour de Chencha et Arba Minch",
-        "Zone Gamo Gofa puis zone Gamo apres 2019",
-        "Diaspora urbaine a Addis-Abeba (quartier de Shiro Meda notamment)"
+        "Hautes terres de Gamo (zone Gamo, État du Sud de l'Éthiopie)",
+        "Plus de 42 communautés dont Chencha, Bonke, Kucha, Garbansa, Zargula, Kamba, Dorze, Birbir, Ochello, Boroda, Ganta, Dita, Kogo"
       ],
-      "unificationsOrDivisions": "Les Gamo etaient traditionnellement organises en unites territoriales appelees Derie, chacune avec ses propres leaders (Haleka, Huduga, Kawo). La colonisation par l'Empire ethiopien a la fin du 19e siecle a introduit de nouvelles structures administratives, mais les institutions traditionnelles ont perdure. La zone Gamo Gofa fut divisee en 2019 en zones Gamo et Gofa.",
-      "externalInfluences": "Incorporation dans l'Empire ethiopien a la fin du 19e siecle. Arrivee des missions chretiennes protestantes au 20e siecle, qui apporterent tensions et transformations culturelles. Influence de l'etat ethiopien moderne dans l'administration et l'education.",
-      "majorHistoricalEvents": "Absorption dans l'Empire d'Abyssinie sous Menelik II a la fin du 19e siecle. Creation de la province de Gamo Gofa au 20e siecle. Effondrement du regime Derg en 1991 et creation de la SNNPR. Reorganisation administrative de 2019 creant la zone Gamo distincte. En 2024, des efforts ont ete lances pour inscrire le forum culturel Dubusha au patrimoine de l'UNESCO."
+      "unificationsOrDivisions": "Les Gamo ont partagé la province de Gamo-Gofa avec les Gofa jusqu'en 2019, date à laquelle les Gofa se sont constitués en zone séparée. La zone Gamo demeure leur territoire administratif principal.",
+      "externalInfluences": "Influence croissante du christianisme orthodoxe éthiopien et, plus récemment, des missions protestantes (Qale Hiwot, Mulu Wengel) qui ont provoqué des tensions avec les gardiens des traditions culturelles, notamment autour des bosquets sacrés.",
+      "majorHistoricalEvents": "Introduction de l'enseignement de la langue gamo dans les écoles reconnue par le gouvernement éthiopien en 2000. Les activités missionnaires protestantes ont causé des perturbations sociales et des violences autour des sites sacrés traditionnels."
     },
     "organization": {
-      "traditionalPoliticalSystem": "Les Gamo sont organises en unites territoriales appelees Derie. Chaque Derie possede un lieu de reunion sacre appele Dubusha, place en hauteur dans le village pour etre visible de tous. La hierarchie traditionnelle comprend les Haleka (leaders de secteur), les Huduga (chefs de niveau superieur) et au sommet le Kawo (roi ou chef supreme des Deries). Les decisions importantes sont prises lors d'assemblees communautaires au Dubusha. Cette institution de dialogue et de justice est toujours fonctionnelle et candidate au patrimoine UNESCO.",
-      "clanOrganization": "La societe gamo est stratifiee en castes : les agriculteurs libres (manna), et des groupes d'artisans a statut inferieur incluant les forgerons (tuma), les potiers et les tanneurs. Les tisseurs (souvent du sous-groupe Dorze) occupent une place sociale specifique. Les artisans dependaient principalement de leur production artisanale pour leur subsistance.",
-      "ageClassSystems": "Les classes d'age jouent un role dans l'organisation sociale et les rituels, bien que moins formalise que chez certains peuples voisins cushitiques.",
-      "roleOfLineages": "Les lignages patrilineaires structurent l'organisation sociale, les droits fonciers et les alliances matrimoniales. L'identite de clan determine les obligations communautaires et les roles rituels.",
-      "religiousAuthority": "Les Sagga sont des leaders religieux traditionnels charges des rituels et de la mediation avec le divin. Les traditions orales et mythologiques transmises par les anciens fondent l'autorite morale communautaire. Depuis le 20e siecle, les Eglises protestantes et l'Eglise orthodoxe ethiopienne jouent un role croissant."
+      "traditionalPoliticalSystem": "Système de gouvernance traditionnel dit Dere, fondé sur des assemblées publiques (dubushaa) tenues en plein air. Le dubushaa est le forum délibératif central de la société Gamo : les conflits y sont résolus, l'information locale échangée et les traditions préservées. Les anciens (eqaa) sont les gardiens rituels des bosquets sacrés.",
+      "clanOrganization": "Organisation en clans patrilinéaires ; la société Gamo est structurée par une hiérarchie sociale stricte avec un système de castes : les artisans (fabricants de meules, potiers) forment une caste spécialisée qui dépend principalement de la production artisanale.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires déterminent les droits fonciers, les droits rituels sur les bosquets sacrés et la transmission des savoirs artisanaux (tissage).",
+      "religiousAuthority": "Des leaders rituels héréditaires (eqaa) supervisent les cérémonies dans les bosquets sacrés (kashaa) ; des chefs traditionnels tels que Makko Wareo exercent un rôle de gardien spirituel de la montagne et de la communauté."
     },
     "languages": {
       "mainLanguage": "Gamo (gmv)",
       "isoCodes": ["gmv"],
-      "dialects": [
-        "Dorze — dialecte du sous-groupe Dorze, parfois considere comme langue distincte (ISO doz)",
-        "Kucha — variante du district de Kucha",
-        "Bonke — variante du district de Bonke"
-      ],
-      "vehicularRole": "Le gamo est parle par environ 1,1 million de locuteurs (recensement ethiopien 2007). Il appartient au groupe Ometo central de la branche omotique nord. Depuis 2000, il est reconnu par le gouvernement ethiopien pour l'enseignement primaire. L'amharique est utilise pour l'administration et l'education superieure. Le gamo est classe Educational (niveau 4) par Ethnologue/Glottolog."
+      "dialects": ["Gemo", "Gofa", "Dawro"],
+      "vehicularRole": "L'amharique est la langue administrative et d'enseignement supérieur. La langue gamo est enseignée dans les écoles primaires depuis 2000 et bénéficie d'un statut de langue régionale dans la zone Gamo."
     },
     "culture": {
-      "majorRites": "Les Gamo pratiquent des rites de passage structures autour de la naissance, de la puberte, du mariage et de la mort. Le Dubusha est le cadre institutionnel ou se deroulent les ceremonies publiques, les transitions de pouvoir et les reconciliations communautaires. Les serments sur la place sacree du Dubusha ont force obligatoire. Le Meskel (fete de la Vraie Croix, celebree en septembre-octobre) est un evenement religieux majeur lie a la tradition chretienne orthodoxe, marque par des feux de joie et des rassemblements communautaires. Des sacrifices et offrandes sont realises lors des ceremonies agraires pour proteger les recoltes.",
-      "symbols": "Le lion (gammo) est l'animal symbolique eponyme du peuple gamo. Le metier a tisser est un symbole central de l'identite culturelle gamo, notamment celle du sous-groupe Dorze. Les etoffes tissees — Kuta, Gabi, Buluko et Dunguza — sont des symboles de statut, de rituel et d'identite. Le Dubusha (lieu de reunion sacre en hauteur) est un symbole de justice et de cohesion communautaire.",
-      "artsAndMusic": "Les Gamo sont celebres dans toute l'Ethiopie pour leur tradition de tissage manuel. Les hommes du sous-groupe Dorze produisent des etoffes en coton (shamma, gabi, kuta, buluko, dunguza) aux motifs geometriques complexes, sur des metiers a tisser artisanaux. La ville de Chencha est le principal centre de production textile. Ces etoffes sont vendues jusqu'a Addis-Abeba et exportees. Les poteries traditionnelles (fabriquees par les femmes du groupe caste des potiers) ont des formes et decorations caracteristiques. La musique traditionnelle inclut des chants collectifs accompagnes de percussions lors des ceremonies. La poesie orale et la narration par les anciens constituent un patrimoine immatériel important.",
-      "spiritualities": "Traditionnellement, les croyances gamo etaient ancrees dans une religion traditionnelle africaine centree sur la nature, les esprits ancestraux et un etre supreme. Les Sagga (pretres traditionnels) etaient les intermediaires entre les vivants et les forces spirituelles. La mythologie gamo rapporte que le Saint-Esprit transmit des regles de vie communautaire aux ancetres, fondant ainsi l'autorite du Dubusha. Aujourd'hui, la majorite des Gamo sont chretiens — membres de l'Eglise orthodoxe ethiopienne Tewahedo ou de confessions protestantes (P'ent'ay). Des pratiques synchretiques persistent, notamment dans les rituels agraires et familiaux."
+      "majorRites": "Cérémonies de la pluie et rituels de réconciliation (dubushaa) ; rites agricoles de remerciement ; rituels dans les bosquets sacrés (kashaa) supervisés par les eqaa ; cérémonie du feu symbolisant le lien entre le passé et l'avenir. Les balee (prairies de deuil) entourant les bosquets sont des zones tampon réservées aux lamentations funèbres.",
+      "symbols": "Les 272 bosquets sacrés protégés sur les hautes terres de Gamo sont le symbole central de l'identité culturelle Gamo ; considérés comme les cheveux gris des anciens (symbole paternel et protecteur). Les maisons traditionnelles en forme de ruche et les textiles aux motifs colorés (kuta, gabi, buluko, dunguza) sont des emblèmes identitaires.",
+      "artsAndMusic": "Les Gamo sont réputés pour leur tissage de coton : vêtements traditionnels kuta, gabi, buluko et dunguza. Musique et danse sont au coeur des cérémonies et fêtes. La conservation des ressources génétiques agricoles est une pratique culturelle remarquable : plus de 65 variétés d'orge, plus de 12 variétés de blé, plus de 100 variétés d'enset, des dizaines de variétés de manioc, taro et igname.",
+      "spiritualities": "Animisme originel étroitement lié à la nature et à la terre ; bosquets sacrés comme espaces rituels et sites de médecine traditionnelle. Aujourd'hui, la majorité est membre de l'Église orthodoxe éthiopienne Tewahedo ou du protestantisme (P'ent'ay). Des tensions persistent entre le christianisme évangélique et les gardiens de la tradition."
     },
     "historicalRole": {
-      "kingdomsOrChiefdoms": "Les Gamo etaient organises en chefferies territoriales (Derie) gouvernees par des Kawo. Il n'existait pas de royaume centralise unique comparable au Royaume de Kaffa voisin, mais un systeme de chefferies confederees sur les hauts plateaux. Les Gamo et Gofa voisins constituaient une entite politique et culturelle distincte reconnue dans la geographie administrative de l'Empire ethiopien (province de Gamo Gofa).",
-      "relationsWithNeighbors": "Les Gamo entretiennent des relations historiques avec les Gofa, Dawro, Wolaytta et Dorze (sous-groupe). Des liens commerciaux et culturels existent avec les Konso et d'autres peuples du rift. Les Koore (Koorete) sont consideres dans la tradition orale comme un groupe issu d'une migration depuis les hauts plateaux gamo au 14e siecle.",
-      "conflictsOrAlliances": "Incorporation dans l'Empire ethiopien sous Menelik II a la fin du 19e siecle. Tensions periodiques avec l'administration centrale liees a l'autonomie culturelle et aux droits fonciers. Les activites missionnaires chretiennes au 20e siecle ont cree des tensions dans la societe traditionnelle gamo.",
-      "diaspora": "Une importante diaspora gamo s'est installee a Addis-Abeba, notamment dans le quartier de Shiro Meda, ou les tisseurs gamo-dorze sont presents depuis des generations. Des communautes gamo existent dans d'autres villes ethiopiennes (Hawassa, Arba Minch). Une emigration vers l'etranger reste limitee."
+      "kingdomsOrChiefdoms": "Les Gamo n'ont pas constitué un royaume centralisé ; leur gouvernance traditionnelle repose sur le système Dere d'assemblées décentralisées. Ils ont co-donné leur nom à la province de Gamo-Gofa, réorganisée en 2019.",
+      "relationsWithNeighbors": "Les Dorze sont considérés comme les cousins des Gamo, issus de la même souche Gamo-Gofa. Relations commerciales avec les marchés d'Addis-Abeba où les Gamo vendent fruits et textiles.",
+      "conflictsOrAlliances": "Les activités missionnaires chrétiennes ont provoqué des conflits autour des bosquets sacrés, conduisant parfois à des violences lorsque des sanctuaires ont été menacés ou détruits et des églises construites sur des terres sacrées.",
+      "diaspora": "Une diaspora commerciale gamo est active à Addis-Abeba, notamment dans le commerce des fruits (bananes, mangues, pommes, papayes) et des textiles traditionnels."
     },
     "demography": {
-      "totalPopulation": 1500000,
+      "totalPopulation": 2128000,
       "referenceYear": 2025,
-      "source": "Recensement ethiopien 2007 : 1 104 360 personnes identifiees comme Gamo (1,5% de la population ethiopienne). Projections 2025 basees sur un taux de croissance annuel de 2,6% (CSA Ethiopie). World Population Review 2026 indique les Gamo a 1,5% de la population ethiopienne estimee a 135 millions en 2025.",
+      "source": "Joshua Project 2025 ; recensement éthiopien 2007 : 1 104 360 personnes (1,56 % de la population éthiopienne)",
       "distributionByCountry": [
-        {
-          "country": "ETH",
-          "population": 1500000,
-          "note": "Zone Gamo (SNNPR puis South Ethiopia State), principalement Chencha, Arba Minch, Kucha, Bonke. Diaspora urbaine a Addis-Abeba (Shiro Meda)."
-        }
+        { "country": "ETH", "population": 2128000, "percentage": 100 }
       ]
     },
     "sources": [
-      "Wikipedia EN — Gamo people. https://en.wikipedia.org/wiki/Gamo_people",
-      "Wikipedia EN — Gamo-Gofa-Dawro language. https://en.wikipedia.org/wiki/Gamo-Gofa-Dawro_language",
-      "Glottolog — Gamo (gamo1243). https://glottolog.org/resource/languoid/id/gamo1243",
-      "SIL Ethnologue — Gamo language [gmv]. https://www.ethnologue.com/language/gmv/",
-      "Ethiopian Central Statistical Agency — Summary and Statistical Report of the 2007 Population and Housing Census. Addis Ababa, 2008.",
-      "AllAfrica / Ethiopian Herald — Ethiopia: Gamo Dubusha - The Indigenous Culture As an Exquisite Cultural Heritage. 2024. https://allafrica.com/stories/202410290483.html",
-      "PubMed/Heliyon — Gamo's cultural forum-Dubussha as a tool for social change communication. 2024. https://pubmed.ncbi.nlm.nih.gov/38509906/",
-      "SAGE Publications — Gamo Religion, in Encyclopedia of African Religion. https://sk.sagepub.com/ency/edvol/download/africanreligion/chpt/gamo-religion.pdf",
-      "World Population Review — Ethiopia Population 2026. https://worldpopulationreview.com/countries/ethiopia"
+      "Gamo people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Gamo_people)",
+      "Gamo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11814/ET)",
+      "Gamo Language (GMV) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/gmv/)",
+      "Gamo Highlands – Ethiopia – Sacred Land Film Project, 2009 (https://sacredland.org/gamo-highlands-ethiopia/)",
+      "Gamo-Gofa-Dawro language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Gamo-Gofa-Dawro_language)",
+      "Gamo's cultural forum – Dubussha as a tool for social change communication – Heliyon / ScienceDirect, 2024 (https://www.sciencedirect.com/science/article/pii/S2405844024037058)",
+      "Demographics of Ethiopia – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Demographics_of_Ethiopia)"
     ]
   }
 }

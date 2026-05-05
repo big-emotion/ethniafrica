@@ -1,5 +1,6 @@
 import { createServerSupabaseClient } from "@/lib/supabase/auth-server";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
+import { logger } from "@/lib/api/logger";
 
 export async function POST() {
   try {
@@ -11,7 +12,7 @@ export async function POST() {
       { status: 200 }
     );
   } catch (error) {
-    console.error("Error in admin logout API:", error);
+    logger.error("Error in admin logout API", error);
     return jsonWithCors({ error: "Internal server error" }, { status: 500 });
   }
 }
