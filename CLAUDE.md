@@ -153,9 +153,11 @@ Schema: `supabase/migrations/006_afrik_schema.sql`
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key  # server-side only
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=your_secure_password
 ```
+
+### Authentication
+
+Admin authentication uses Supabase Auth with OAuth (GitHub, Google) and magic-link. Role-based access control is managed via the `user_roles` table with the following role enum values: `reader`, `contributor`, `moderator`, `admin`, `advisor`.
 
 ### Code Style
 
