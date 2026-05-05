@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 import { withSentryConfig } from "@sentry/nextjs";
 
 const nextConfig: NextConfig = {
+  experimental: {
+    authInterrupts: true,
+  },
   turbopack: {
     root: __dirname,
   },
