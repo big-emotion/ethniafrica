@@ -6,6 +6,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { useEffect } from "react";
 import { Language } from "@/types/shared";
 import Script from "next/script";
+import { ATTRIBUTION_STRING } from "@/lib/brand";
 
 export default function ReportErrorPage() {
   const params = useParams();
@@ -52,7 +53,7 @@ export default function ReportErrorPage() {
           </>
         ),
       },
-      footer: "Fait avec émotion pour l'Afrique",
+      footer: ATTRIBUTION_STRING,
     },
   };
 

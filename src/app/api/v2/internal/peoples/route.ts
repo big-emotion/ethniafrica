@@ -5,13 +5,14 @@
  */
 
 import { getAllAfrikPeoples } from "@/lib/supabase/queries/afrik/peoples";
+import { logger } from "@/lib/api/logger";
 
 export async function GET() {
   try {
     const data = await getAllAfrikPeoples();
     return Response.json(data);
   } catch (error) {
-    console.error("Error in internal peoples route:", error);
+    logger.error("Error in internal peoples route", error);
     return Response.json({ error: "Failed to fetch peoples" }, { status: 500 });
   }
 }

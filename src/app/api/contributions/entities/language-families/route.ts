@@ -1,5 +1,6 @@
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { getAllAfrikLanguageFamilies } from "@/lib/supabase/queries/afrik/languageFamilies";
+import { logger } from "@/lib/api/logger";
 
 export async function GET() {
   try {
@@ -12,7 +13,7 @@ export async function GET() {
       })),
     });
   } catch (error) {
-    console.error("Error loading language families:", error);
+    logger.error("Error loading language families", error);
     return jsonWithCors(
       { error: "Failed to load language families" },
       { status: 500 }
