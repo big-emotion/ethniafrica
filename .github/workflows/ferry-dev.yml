@@ -1,7 +1,14 @@
 # Managed by ferry-init. Re-run `npx -p @big-emotion/ferry ferry-init` to update.
 # Required secrets: FERRY_JIRA_BASE_URL, FERRY_JIRA_EMAIL, FERRY_JIRA_API_TOKEN,
-#                   ANTHROPIC_API_KEY, FERRY_REVIEW_TRANSITION_ID
+#                   FERRY_REVIEW_TRANSITION_ID
+#                   ANTHROPIC_API_KEY  — required when FERRY_DEV_PROVIDER=anthropic (default)
+#                   OPENAI_API_KEY     — required when FERRY_DEV_PROVIDER=openai
+#                   GOOGLE_API_KEY     — required when FERRY_DEV_PROVIDER=google
 # Required variables: FERRY_AUDIT_ISSUE (GitHub Issue number for the audit log)
+# Optional variables: FERRY_DEV_PROVIDER (default: anthropic; also: openai, google)
+#                     FERRY_DEV_MODEL (default: claude-sonnet-4-6; use model ID matching your provider)
+#
+# Note: MCP server support is not available for non-Anthropic providers in the Developer agent.
 
 name: Ferry — Dev
 
@@ -25,7 +32,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Validate event envelope
-        uses: big-emotion/ferry/.github/actions/ferry-envelope-validate@v0.9.0
+        uses: big-emotion/ferry/.github/actions/ferry-envelope-validate@v0.10.0
         with:
           payload: ${{ toJson(github.event.client_payload) }}
 
@@ -52,7 +59,7 @@ jobs:
 
       - name: Run Developer agent
         id: run-developer
-        uses: big-emotion/ferry/.github/actions/ferry-run-developer@v0.9.0
+        uses: big-emotion/ferry/.github/actions/ferry-run-developer@v0.10.0
         with:
           payload: ${{ toJson(github.event.client_payload) }}
           jira_base_url: ${{ secrets.FERRY_JIRA_BASE_URL }}
@@ -60,6 +67,8 @@ jobs:
           jira_api_token: ${{ secrets.FERRY_JIRA_API_TOKEN }}
           ferry_review_transition_id: ${{ secrets.FERRY_REVIEW_TRANSITION_ID }}
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+          google_api_key: ${{ secrets.GOOGLE_API_KEY }}
           github_token: ${{ github.token }}
           github_repo: ${{ github.repository }}
           ferry_dev_model: claude-sonnet-4-6
@@ -76,7 +85,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Emit audit line
-        uses: big-emotion/ferry/.github/actions/ferry-emit-audit@v0.9.0
+        uses: big-emotion/ferry/.github/actions/ferry-emit-audit@v0.10.0
         with:
           ticket: ${{ github.event.client_payload.ticket_key }}
           phase: dev
