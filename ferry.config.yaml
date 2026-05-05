@@ -1,0 +1,17 @@
+git:
+  base_branch: recette
+  target_branch: recette
+
+limits:
+  max_tokens_per_run: 5000000
+
+setup:
+  pre_agent_command: npm ci
+
+models:
+  review:
+    provider: anthropic
+    model: claude-opus-4-7
+  iterate:
+    provider: anthropic
+    model: claude-opus-4-7

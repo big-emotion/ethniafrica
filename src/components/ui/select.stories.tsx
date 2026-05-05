@@ -20,7 +20,7 @@ type Story = StoryObj<typeof Select>;
 export const Default: Story = {
   render: () => (
     <Select>
-      <SelectTrigger className="w-56">
+      <SelectTrigger className="w-56" aria-label="Famille linguistique">
         <SelectValue placeholder="Choisir une famille..." />
       </SelectTrigger>
       <SelectContent>
@@ -37,9 +37,9 @@ export const Default: Story = {
 export const WithLabel: Story = {
   render: () => (
     <div className="w-64 space-y-2">
-      <label className="text-sm font-medium">Famille linguistique</label>
+      <label htmlFor="select-famille" className="text-sm font-medium">Famille linguistique</label>
       <Select>
-        <SelectTrigger>
+        <SelectTrigger id="select-famille" aria-label="Famille linguistique">
           <SelectValue placeholder="Sélectionner..." />
         </SelectTrigger>
         <SelectContent>
@@ -55,7 +55,7 @@ export const WithLabel: Story = {
 export const Disabled: Story = {
   render: () => (
     <Select disabled>
-      <SelectTrigger className="w-56">
+      <SelectTrigger className="w-56" aria-label="Famille linguistique (non disponible)">
         <SelectValue placeholder="Non disponible" />
       </SelectTrigger>
       <SelectContent>
