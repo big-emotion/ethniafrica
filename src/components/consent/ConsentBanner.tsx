@@ -30,16 +30,32 @@ export function ConsentBanner() {
     [localAnalytics, localFunctional, consentState.preferences.analytics, consentState.preferences.functional]
   );
 
+  // Remember the element that had focus before the banner appeared so we can
+  // restore it when the banner is dismissed (WCAG 2.1 success criterion 2.4.3).
+  const triggerElementRef = useRef<Element | null>(null);
+
   // Focus trap and keyboard handling
   useEffect(() => {
     if (!showBanner || !bannerRef.current) return;
 
+    // Capture the element that currently has focus so we can restore it later.
+    triggerElementRef.current = document.activeElement;
+
     // Focus the first button when banner appears
     firstFocusableRef.current?.focus();
+
+    const banner = bannerRef.current;
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         rejectAll();
+        // Restore focus to the element that was focused before the banner opened.
+        if (
+          triggerElementRef.current instanceof HTMLElement ||
+          triggerElementRef.current instanceof SVGElement
+        ) {
+          triggerElementRef.current.focus();
+        }
         return;
       }
 
@@ -61,8 +77,10 @@ export function ConsentBanner() {
       }
     };
 
-    document.addEventListener('keydown', handleKeyDown);
-    return () => document.removeEventListener('keydown', handleKeyDown);
+    // Attach to the banner element so the listener fires on the same node the
+    // test fires events on, and is automatically scoped to the dialog.
+    banner.addEventListener('keydown', handleKeyDown);
+    return () => banner.removeEventListener('keydown', handleKeyDown);
   }, [showBanner, rejectAll]);
 
   const handleSavePreferences = useCallback(() => {

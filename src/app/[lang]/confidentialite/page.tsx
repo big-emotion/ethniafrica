@@ -206,7 +206,11 @@ export default function PrivacyPolicyPage() {
     },
   };
 
-  const t = content[language];
+  const t = content[language as keyof typeof content];
+
+  // Guard against an undefined translation (e.g. unsupported language on first
+  // render before the useEffect sync fires).
+  if (!t) return null;
 
   return (
     <PageLayout
