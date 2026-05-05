@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import {
   PieChart,
   Pie,
@@ -145,6 +145,11 @@ const FamilyPieChart = ({
     return sorted;
   }, [data]);
 
+  const inertRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    inertRef.current?.setAttribute("inert", "");
+  }, []);
+
   return (
     <Card>
       <CardHeader>
@@ -161,32 +166,32 @@ const FamilyPieChart = ({
             "Pie chart showing population distribution by language family"
           }
         >
-          <div aria-hidden="true" className="h-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <PieChart>
-              <Pie
-                data={sortedData}
-                cx="50%"
-                cy="50%"
-                innerRadius={60}
-                outerRadius={100}
-                paddingAngle={2}
-                dataKey="value"
-                label={({ name, percent }) =>
-                  `${name} (${(percent * 100).toFixed(0)}%)`
-                }
-                labelLine={false}
-              >
-                {sortedData.map((_, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={COLORS[index % COLORS.length]}
-                  />
-                ))}
-              </Pie>
-              <Tooltip content={<PieTooltip />} />
-            </PieChart>
-          </ResponsiveContainer>
+          <div ref={inertRef} className="h-full">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={sortedData}
+                  cx="50%"
+                  cy="50%"
+                  innerRadius={60}
+                  outerRadius={100}
+                  paddingAngle={2}
+                  dataKey="value"
+                  label={({ name, percent }) =>
+                    `${name} (${(percent * 100).toFixed(0)}%)`
+                  }
+                  labelLine={false}
+                >
+                  {sortedData.map((_, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Pie>
+                <Tooltip content={<PieTooltip />} />
+              </PieChart>
+            </ResponsiveContainer>
           </div>
         </div>
       </CardContent>
