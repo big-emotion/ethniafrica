@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "peuple",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "PPL_DORZE",
+  "nameMain": "Dorze",
+  "languageFamilyId": "FLG_OMOTIQUE",
+  "currentCountries": ["ETH"],
+  "content": {
+    "appellations": {
+      "mainName": "Dorze",
+      "selfAppellation": "Dorze",
+      "exonyms": ["Dorze"],
+      "originOfExonyms": "Le nom Dorze est à la fois l'ethnonyme et l'endonyme ; il est utilisé uniformément dans les sources amhariques et dans la littérature ethnographique. Aucun exonyme péjoratif n'est documenté.",
+      "whyProblematic": null,
+      "contemporaryUsage": "Le terme Dorze est utilisé dans les documents officiels éthiopiens, par les agences touristiques et dans la presse nationale pour désigner ce peuple réputé pour son artisanat textile."
+    },
+    "ethnicities": ["Dorze"],
+    "origins": {
+      "ancientOrigins": "Les Dorze font partie des communautés Gamo des hautes terres du sud de l'Éthiopie. Ils se considèrent comme un groupe distinct au sein de l'ensemble Gamo, avec lequel ils partagent une origine commune dans les hautes terres de la région anciennement connue sous le nom de Gamo-Gofa.",
+      "formationPeriod": "La communauté Dorze s'est constituée comme groupe distinct au sein de l'ensemble Gamo avant la période coloniale ; son identité est ancrée dans la tradition de tissage et dans les villages des hautes terres de Chencha.",
+      "migrationRoutes": [
+        "Hautes terres de Gamo vers les contreforts autour de Chencha et Arba Minch",
+        "Migration secondaire vers Addis-Abeba (quartiers de Burayu et Sebeta) au cours du XXe siècle"
+      ],
+      "historicalSettlementZones": [
+        "Hautes terres de Chencha (zone Gamo, ancienne province Gamo-Gofa)",
+        "Région d'Arba Minch",
+        "Rives de l'Omo et escarpements surplombant le lac Abaya"
+      ],
+      "unificationsOrDivisions": "Les Dorze sont organisés en 12 kebeles (localités administratives) dans le woreda de Chencha ; ils forment un sous-ensemble distinct de la grande famille Gamo tout en maintenant une identité culturelle propre.",
+      "externalInfluences": "Intégration progressive dans l'Empire éthiopien à la fin du XIXe siècle ; exposition à l'Église orthodoxe éthiopienne et, plus récemment, aux missions protestantes.",
+      "majorHistoricalEvents": "En 2018, des violences intercommunautaires avec des voisins Oromo ont provoqué la mort d'au moins 60 personnes et le déplacement de plus de 15 000 Dorze résidant dans la région de Burayu (Addis-Abeba)."
+    },
+    "organization": {
+      "traditionalPoliticalSystem": "Organisation communautaire fondée sur des conseils d'anciens au niveau du village (kebele) ; les Dorze font partie du système de gouvernance traditionnel Gamo dit Dere, où des assemblées publiques règlent les affaires collectives.",
+      "clanOrganization": "Les Dorze sont organisés en clans patrilinéaires ; le village de Dorze compte 14 kebeles de locuteurs recensés par le linguiste Alemayehu Abebe en 1992.",
+      "ageClassSystems": null,
+      "roleOfLineages": "Les lignages patrilinéaires régissent les droits fonciers, les mariages et la transmission des savoirs artisanaux du tissage.",
+      "religiousAuthority": "Les prêtres de l'Église orthodoxe éthiopienne jouent un rôle spirituel central depuis la conversion progressive de la communauté ; des pratiques animistes locales subsistent."
+    },
+    "languages": {
+      "mainLanguage": "Dorze (doz)",
+      "isoCodes": ["doz"],
+      "dialects": [],
+      "vehicularRole": "L'amharique est utilisé comme langue véhiculaire dans les échanges commerciaux et administratifs. La langue dorze est menacée (statut AES 6b selon Ethnologue 2025) ; le nombre de jeunes locuteurs monolingues diminue."
+    },
+    "culture": {
+      "majorRites": "Cérémonies de passage liées au calendrier agricole et à la vie du clan ; rites funéraires et de mariage encadrés par les anciens. La confection et le port de textiles traditionnels marquent les temps forts de la vie sociale.",
+      "symbols": "Les maisons en forme de ruche ou d'éléphant construites en bambou local constituent le symbole architectural emblématique des Dorze ; elles peuvent durer jusqu'à 80 ans et sont progressivement déplacées à mesure que les termites rongent leur base.",
+      "artsAndMusic": "Les Dorze sont renommés dans toute l'Éthiopie pour leur tissage de coton aux couleurs vives : vêtements traditionnels (kuta, gabi, shamma), vendus sur les marchés de la région et à Addis-Abeba. Leur musique polyphonique à plusieurs voix fait un usage sophistiqué du hocket (entrelacement vocal). Les femmes tissent le coton et préparent le kocho (pain d'enset).",
+      "spiritualities": "Tradition animiste originelle progressivement supplantée par l'Église orthodoxe éthiopienne Tewahedo, à laquelle appartient la majorité de la communauté aujourd'hui ; présence croissante de missions protestantes."
+    },
+    "historicalRole": {
+      "kingdomsOrChiefdoms": "Les Dorze n'ont pas constitué de royaume indépendant ; ils ont fait partie de la zone d'influence des chefferies Gamo avant l'intégration dans l'empire éthiopien.",
+      "relationsWithNeighbors": "Les Dorze se considèrent comme les cousins des Gamo et maintiennent des relations commerciales avec eux ; ils sont voisins des Otchollo sur les hautes terres de Gamo. Des tensions avec des communautés Oromo voisines se sont manifestées en 2018.",
+      "conflictsOrAlliances": "Violences intercommunautaires de 2018 avec des voisins Oromo dans la région de Burayu (Addis-Abeba) : plus de 60 morts et plus de 15 000 déplacés selon les sources policières.",
+      "diaspora": "Une communauté dorze significative s'est installée en périphérie d'Addis-Abeba, notamment dans les quartiers de Burayu et Sebeta, où beaucoup exercent leur métier de tisserand."
+    },
+    "demography": {
+      "totalPopulation": 45000,
+      "referenceYear": 2025,
+      "source": "Joshua Project 2025 ; Ethnologue (doz) 1994 census : 28 990 personnes dont 9 905 monolingues",
+      "distributionByCountry": [
+        { "country": "ETH", "population": 45000, "percentage": 100 }
+      ]
+    },
+    "sources": [
+      "Dorze people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Dorze_people)",
+      "Dorze language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Dorze_language)",
+      "Dorze in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11614)",
+      "Dorze language (DOZ) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/doz/)",
+      "Glottolog : Dorze (dorz1235) – Hammarstrom et al., 2025 (https://glottolog.org/resource/languoid/id/dorz1235)",
+      "Experience Traditional Dorze Village Life in Ethiopia – Hoblets On The Go, 2025 (https://hobletsonthego.com/where-weve-been/africa/ethiopia/dorze-village/)",
+      "A Tour of The Omo Valley: Meet Southern Ethiopia's Cotton Weavers – Absolute Ethiopia Tours, 2025 (https://absoluteethiopia.com/a-tour-of-the-omo-valley-meet-southern-ethiopias-cotton-weavers/)"
+    ]
+  }
+}
