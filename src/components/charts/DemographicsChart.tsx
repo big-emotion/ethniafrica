@@ -161,6 +161,7 @@ const FamilyPieChart = ({
             "Pie chart showing population distribution by language family"
           }
         >
+          <div aria-hidden="true" className="h-full">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie
@@ -186,6 +187,7 @@ const FamilyPieChart = ({
               <Tooltip content={<PieTooltip />} />
             </PieChart>
           </ResponsiveContainer>
+          </div>
         </div>
       </CardContent>
     </Card>

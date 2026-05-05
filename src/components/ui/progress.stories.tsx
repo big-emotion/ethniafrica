@@ -16,7 +16,7 @@ type Story = StoryObj<typeof Progress>;
 
 export const Default: Story = {
   args: { value: 60 },
-  render: (args) => <Progress {...args} className="w-64" />,
+  render: (args) => <Progress {...args} className="w-64" aria-label="Progression" />,
 };
 
 export const AllValues: Story = {
@@ -33,7 +33,7 @@ export const AllValues: Story = {
             <span>{label}</span>
             <span className="text-muted-foreground">{value}%</span>
           </div>
-          <Progress value={value} />
+          <Progress value={value} aria-label={label} />
         </div>
       ))}
     </div>
@@ -42,10 +42,10 @@ export const AllValues: Story = {
 
 export const Zero: Story = {
   args: { value: 0 },
-  render: (args) => <Progress {...args} className="w-64" />,
+  render: (args) => <Progress {...args} className="w-64" aria-label="Progression" />,
 };
 
 export const Full: Story = {
   args: { value: 100 },
-  render: (args) => <Progress {...args} className="w-64" />,
+  render: (args) => <Progress {...args} className="w-64" aria-label="Progression" />,
 };
