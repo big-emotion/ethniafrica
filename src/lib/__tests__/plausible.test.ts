@@ -45,4 +45,11 @@ describe("buildPlausibleSrc", () => {
     process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN = "";
     expect(buildPlausibleSrc()).toBe("");
   });
+
+  it("strips trailing slash from NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN", () => {
+    process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN = "example.com";
+    process.env.NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN =
+      "https://stats.example.com/";
+    expect(buildPlausibleSrc()).toBe("https://stats.example.com/js/script.js");
+  });
 });
