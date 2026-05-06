@@ -91,8 +91,6 @@ Copiez `env.dist` vers `.env.local` et configurez :
 - `NEXT_PUBLIC_SUPABASE_URL` : URL de votre projet Supabase
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY` : Clé anonyme Supabase
 - `SUPABASE_SERVICE_ROLE_KEY` : Clé de service Supabase (pour les opérations admin)
-- `ADMIN_USERNAME` : Nom d'utilisateur pour l'interface admin
-- `ADMIN_PASSWORD` : Mot de passe pour l'interface admin
 
 ## API publique
 
@@ -328,18 +326,23 @@ Merci de:
 
 L'application dispose d'une interface d'administration pour modérer les contributions :
 
-- **Page de login** : `/admin/login` - Authentification par username/password
+- **Page de login** : `/admin/login` - Authentification via Supabase Auth (magic-link, GitHub, Google OAuth)
 - **Gestion des contributions** : `/admin/contributions` - Liste et modération des contributions en attente
 - **Sécurité** : Authentification par session avec cookies httpOnly et sécurisés
 
 ### Configuration admin
 
-Configurez les variables d'environnement dans `.env.local` :
+L'authentification admin utilise Supabase Auth avec OAuth (GitHub, Google) et magic-link.
 
-```env
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=your_secure_password_here
-```
+**Première configuration admin :**
+1. Assurez-vous que les migrations Supabase (notamment 008_user_roles.sql) sont appliquées
+2. Connectez-vous une première fois via `/admin/login` pour créer votre compte
+3. Exécutez le script de seed pour assigner le rôle admin :
+   ```bash
+   ADMIN_EMAIL=votre_email@exemple.com npx tsx scripts/seedAdmin.ts
+   ```
+
+**Rôles disponibles :** reader, contributor, moderator, admin, advisor
 
 ## Changelog
 
@@ -357,7 +360,7 @@ ADMIN_PASSWORD=your_secure_password_here
 - **Backend Supabase** : Intégration complète de Supabase pour le stockage des données
 - **Système de contributions** : Formulaire de contribution pour ajouter/modifier des groupes ethniques
 - **Interface admin** : Page d'administration sécurisée pour modérer les contributions
-- **Authentification admin** : Système d'authentification par username/password avec sessions sécurisées
+- **Authentification admin** : Système d'authentification via Supabase Auth avec sessions sécurisées
 - **Cache optimisé** : Mise en cache côté client (localStorage) et serveur pour améliorer les performances
 - **Navigation hiérarchique** : Navigation améliorée avec sélection et surbrillance des éléments
 - **Traductions** : Système de traduction pour les noms d'entités (régions, pays, ethnies)
