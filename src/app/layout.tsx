@@ -9,6 +9,7 @@ import "@/index.css";
 import { Providers } from "./providers";
 import { TypeformPreload } from "@/components/TypeformPreload";
 import { PRODUCT_NAME, OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
+import PlausibleScript from "@/components/PlausibleScript";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -72,6 +73,9 @@ export default function RootLayout({
       className={`${inter.variable} ${playfairDisplay.variable} ${fraunces.variable} ${nunitoSans.variable}`}
       suppressHydrationWarning
     >
+      <head>
+        <PlausibleScript />
+      </head>
       <body className="font-sans antialiased">
         <TypeformPreload />
         <Providers>{children}</Providers>
