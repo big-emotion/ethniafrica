@@ -1192,15 +1192,17 @@ async function main() {
   fs.writeFileSync(reportPath, JSON.stringify(allLegacyResults, null, 2));
   console.log(`\n📄 Rapport détaillé sauvegardé: ${reportPath}`);
 
-  // Mettre à jour le workflow_status.csv
+  // Mettre à jour le workflow_status.csv (si présent)
   const workflowStatusPath = path.join(PUBLIC_ROOT, "workflow_status.csv");
-  const workflowContent = fs.readFileSync(workflowStatusPath, "utf-8");
-  const updatedContent = workflowContent.replace(
-    /validation,pending/g,
-    `validation,${totalErrors === 0 ? "done" : "in_progress"}`
-  );
-  fs.writeFileSync(workflowStatusPath, updatedContent);
-  console.log("✅ workflow_status.csv mis à jour");
+  if (fs.existsSync(workflowStatusPath)) {
+    const workflowContent = fs.readFileSync(workflowStatusPath, "utf-8");
+    const updatedContent = workflowContent.replace(
+      /validation,pending/g,
+      `validation,${totalErrors === 0 ? "done" : "in_progress"}`
+    );
+    fs.writeFileSync(workflowStatusPath, updatedContent);
+    console.log("✅ workflow_status.csv mis à jour");
+  }
 
   process.exit(totalErrors > 0 || newCheckFailed ? 1 : 0);
 }
