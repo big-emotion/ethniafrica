@@ -15,7 +15,16 @@ import * as fs from "fs";
 import * as path from "path";
 import { parse } from "csv-parse/sync";
 
-interface ValidationResult {
+// ─── Exported ValidationResult (FR26-FR31) ───────────────────────────────────
+
+export interface ValidationResult {
+  ok: boolean;
+  errors: string[];
+  warnings: string[];
+}
+
+// Legacy internal result shape (used by existing validation functions only)
+interface LegacyValidationResult {
   category: string;
   status: "success" | "warning" | "error";
   message: string;
@@ -176,8 +185,8 @@ function hasEnrichedOrigins(content: string): boolean {
 }
 
 // Validation 1: IDs cohérents
-function validateIDs(): ValidationResult[] {
-  const results: ValidationResult[] = [];
+function validateIDs(): LegacyValidationResult[] {
+  const results: LegacyValidationResult[] = [];
   const errors: string[] = [];
   const warnings: string[] = [];
 
@@ -306,8 +315,8 @@ function validateIDs(): ValidationResult[] {
 }
 
 // Validation 2: Langue → famille linguistique
-function validateLanguageFamily(): ValidationResult[] {
-  const results: ValidationResult[] = [];
+function validateLanguageFamily(): LegacyValidationResult[] {
+  const results: LegacyValidationResult[] = [];
   const errors: string[] = [];
 
   const famillesCSV = loadCSV(
@@ -362,8 +371,8 @@ function validateLanguageFamily(): ValidationResult[] {
 }
 
 // Validation 3: Peuple → pays
-function validatePeuplePays(): ValidationResult[] {
-  const results: ValidationResult[] = [];
+function validatePeuplePays(): LegacyValidationResult[] {
+  const results: LegacyValidationResult[] = [];
   const errors: string[] = [];
   const warnings: string[] = [];
 
@@ -549,8 +558,8 @@ function validatePeuplePays(): ValidationResult[] {
 }
 
 // Validation 4: Termes coloniaux contextualisés
-function validateColonialTerms(): ValidationResult[] {
-  const results: ValidationResult[] = [];
+function validateColonialTerms(): LegacyValidationResult[] {
+  const results: LegacyValidationResult[] = [];
   const filesWithoutContext: string[] = [];
 
   // Vérifier les familles linguistiques
@@ -608,8 +617,8 @@ function validateColonialTerms(): ValidationResult[] {
 }
 
 // Validation 5: Sections TXT complètes
-function validateCompleteSections(): ValidationResult[] {
-  const results: ValidationResult[] = [];
+function validateCompleteSections(): LegacyValidationResult[] {
+  const results: LegacyValidationResult[] = [];
   const incompleteFiles: string[] = [];
 
   const requiredSections = {
@@ -722,8 +731,8 @@ function validateCompleteSections(): ValidationResult[] {
 }
 
 // Validation 6: Origines et appellations enrichies
-function validateEnrichedOrigins(): ValidationResult[] {
-  const results: ValidationResult[] = [];
+function validateEnrichedOrigins(): LegacyValidationResult[] {
+  const results: LegacyValidationResult[] = [];
   const notEnriched: string[] = [];
 
   // Vérifier les peuples
@@ -759,33 +768,326 @@ function validateEnrichedOrigins(): ValidationResult[] {
   return results;
 }
 
-// Fonction principale
-function main() {
+// ─── New validation functions (FR26-FR31) ────────────────────────────────────
+
+/** Collect all PPL JSON files under peuples/, returning {flgFolder, file, fullPath} */
+function collectPplFiles(
+  datasetRoot: string
+): Array<{ flgFolder: string; file: string; fullPath: string }> {
+  const peuplesDir = path.join(datasetRoot, "peuples");
+  if (!fs.existsSync(peuplesDir)) return [];
+
+  const results: Array<{ flgFolder: string; file: string; fullPath: string }> =
+    [];
+  const entries = fs.readdirSync(peuplesDir, { withFileTypes: true });
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    const subDir = path.join(peuplesDir, entry.name);
+    const jsonFiles = fs.readdirSync(subDir).filter((f) => f.endsWith(".json"));
+    for (const file of jsonFiles) {
+      results.push({
+        flgFolder: entry.name,
+        file,
+        fullPath: path.join(subDir, file),
+      });
+    }
+  }
+  return results;
+}
+
+/** Return the set of FLG ids that have a corresponding JSON file */
+function loadFlgIds(datasetRoot: string): Set<string> {
+  const flgDir = path.join(datasetRoot, "famille_linguistique");
+  if (!fs.existsSync(flgDir)) return new Set();
+  return new Set(
+    fs
+      .readdirSync(flgDir)
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => path.basename(f, ".json"))
+  );
+}
+
+/**
+ * FR26 – Every subdirectory in peuples/ must correspond to an existing FLG JSON file.
+ */
+export function checkFlgFolderMatch(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const peuplesDir = path.join(datasetRoot, "peuples");
+  if (!fs.existsSync(peuplesDir)) {
+    return { ok: true, errors: [], warnings: [] };
+  }
+
+  const flgIds = loadFlgIds(datasetRoot);
+  const subDirs = fs
+    .readdirSync(peuplesDir, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => d.name);
+
+  for (const dir of subDirs) {
+    if (!flgIds.has(dir)) {
+      errors.push(
+        `peuples/${dir}: no matching FLG JSON file in famille_linguistique/`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * FR27 – No two PPL JSON files may share the same `id` field.
+ */
+export function checkPplDuplicates(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const seen = new Map<string, string>(); // id → first file path
+
+  for (const { fullPath } of collectPplFiles(datasetRoot)) {
+    let data: { id?: string };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${fullPath}: could not parse JSON`);
+      continue;
+    }
+    if (!data.id) continue;
+    if (seen.has(data.id)) {
+      errors.push(
+        `Duplicate PPL id "${data.id}" in ${fullPath} (first seen in ${seen.get(data.id)})`
+      );
+    } else {
+      seen.set(data.id, fullPath);
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * FR28 – For each pays JSON, the sum of peoples[].percentageInCountry must be [95, 105].
+ */
+export function checkPopulationSums(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const paysDir = path.join(datasetRoot, "pays");
+  if (!fs.existsSync(paysDir)) {
+    return { ok: true, errors: [], warnings: [] };
+  }
+
+  const jsonFiles = fs.readdirSync(paysDir).filter((f) => f.endsWith(".json"));
+  for (const file of jsonFiles) {
+    const fullPath = path.join(paysDir, file);
+    let data: {
+      id?: string;
+      content?: {
+        demographics?: {
+          peoples?: Array<{ percentageInCountry?: number }>;
+        };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const peoples = data?.content?.demographics?.peoples;
+    if (!peoples || peoples.length === 0) continue;
+
+    const sum = peoples.reduce(
+      (acc, p) => acc + (p.percentageInCountry ?? 0),
+      0
+    );
+    if (sum < 95 || sum > 105) {
+      const countryId = data.id ?? path.basename(file, ".json");
+      errors.push(
+        `${countryId}: population percentages sum to ${sum.toFixed(2)}% (expected 95–105%)`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * FR29 – ISO code validity:
+ *   - content.languages.isoCodes entries must match /^[a-z]{3}$/ (ISO 639-3)
+ *   - content.demography.distributionByCountry[].country must match /^[A-Z]{3}$/ (ISO 3166-1 α-3)
+ */
+export function checkIsoValidity(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const iso639Regex = /^[a-z]{3}$/;
+  const iso3166Regex = /^[A-Z]{3}$/;
+
+  for (const { file, fullPath } of collectPplFiles(datasetRoot)) {
+    let data: {
+      content?: {
+        languages?: { isoCodes?: unknown[] };
+        demography?: {
+          distributionByCountry?: Array<{ country?: unknown }>;
+        };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    // Check ISO 639-3 language codes
+    const isoCodes = data?.content?.languages?.isoCodes ?? [];
+    for (const code of isoCodes) {
+      if (typeof code !== "string" || !iso639Regex.test(code)) {
+        errors.push(
+          `${file}: invalid ISO 639-3 language code "${code}" (expected 3 lowercase letters)`
+        );
+      }
+    }
+
+    // Check ISO 3166-1 α-3 country codes
+    const distribution = data?.content?.demography?.distributionByCountry ?? [];
+    for (const entry of distribution) {
+      const country = (entry as { country?: unknown }).country;
+      if (typeof country !== "string" || !iso3166Regex.test(country)) {
+        errors.push(
+          `${file}: invalid ISO 3166-1 α-3 country code "${country}" (expected 3 uppercase letters)`
+        );
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * FR30 + FR31 – Source URL resolvability (nightly only).
+ * Skipped unless process.env.CHECK_SOURCE_URLS === "true".
+ * Writes results to dataset/source-url-health.log (relative to datasetRoot's parent).
+ */
+export async function checkSourceUrls(
+  datasetRoot: string
+): Promise<ValidationResult> {
+  if (process.env.CHECK_SOURCE_URLS !== "true") {
+    return { ok: true, errors: [], warnings: [] };
+  }
+
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const urlRegex = /https?:\/\/[^\s"')]+/g;
+
+  // Collect unique URLs from all PPL sources
+  const uniqueUrls = new Set<string>();
+  for (const { fullPath } of collectPplFiles(datasetRoot)) {
+    let data: { content?: { sources?: unknown[] } };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      continue;
+    }
+    const sources = data?.content?.sources ?? [];
+    for (const source of sources) {
+      if (typeof source !== "string") continue;
+      const matches = source.match(urlRegex);
+      if (matches) {
+        for (const url of matches) uniqueUrls.add(url);
+      }
+    }
+  }
+
+  // HEAD-check each URL
+  const logLines: string[] = [];
+  const controller = new AbortController();
+
+  for (const url of uniqueUrls) {
+    const ts = new Date().toISOString();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+    try {
+      const res = await fetch(url, {
+        method: "HEAD",
+        signal: controller.signal,
+      });
+      clearTimeout(timeoutId);
+      if (res.ok) {
+        logLines.push(`[${ts}] OK ${url}`);
+      } else {
+        logLines.push(`[${ts}] FAIL ${url} (HTTP ${res.status})`);
+        errors.push(`URL unreachable (HTTP ${res.status}): ${url}`);
+      }
+    } catch (err) {
+      clearTimeout(timeoutId);
+      logLines.push(`[${ts}] FAIL ${url} (${(err as Error).message})`);
+      errors.push(`URL unreachable: ${url}`);
+    }
+  }
+
+  // Write log file: dataset/source-url-health.log (sibling to source/)
+  const logPath = path.join(datasetRoot, "..", "source-url-health.log");
+  fs.mkdirSync(path.dirname(logPath), { recursive: true });
+  fs.appendFileSync(
+    logPath,
+    logLines.join("\n") + (logLines.length ? "\n" : "")
+  );
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * Orphan fiches – PPL files whose parent folder doesn't exist as a FLG JSON.
+ * (Complements FR26 from the PPL perspective.)
+ */
+export function checkOrphanFiches(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const flgIds = loadFlgIds(datasetRoot);
+
+  for (const { flgFolder, file, fullPath } of collectPplFiles(datasetRoot)) {
+    if (!flgIds.has(flgFolder)) {
+      errors.push(
+        `${file}: orphan PPL file – parent folder "${flgFolder}" has no matching FLG JSON (${fullPath})`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+// ─── main() ──────────────────────────────────────────────────────────────────
+
+async function main() {
   console.log("🔍 Validation des données AFRIK - Étape 6\n");
   console.log("=".repeat(60));
 
-  const allResults: ValidationResult[] = [];
+  const allLegacyResults: LegacyValidationResult[] = [];
 
-  // Exécuter toutes les validations
+  // Exécuter toutes les validations legacy
   console.log("\n1️⃣ Validation des IDs cohérents...");
-  allResults.push(...validateIDs());
+  allLegacyResults.push(...validateIDs());
 
   console.log("2️⃣ Validation Langue → famille linguistique...");
-  allResults.push(...validateLanguageFamily());
+  allLegacyResults.push(...validateLanguageFamily());
 
   console.log("3️⃣ Validation Peuple → pays...");
-  allResults.push(...validatePeuplePays());
+  allLegacyResults.push(...validatePeuplePays());
 
   console.log("4️⃣ Validation termes coloniaux contextualisés...");
-  allResults.push(...validateColonialTerms());
+  allLegacyResults.push(...validateColonialTerms());
 
   console.log("5️⃣ Validation sections TXT complètes...");
-  allResults.push(...validateCompleteSections());
+  allLegacyResults.push(...validateCompleteSections());
 
   console.log("6️⃣ Validation origines et appellations enrichies...");
-  allResults.push(...validateEnrichedOrigins());
+  allLegacyResults.push(...validateEnrichedOrigins());
 
-  // Afficher les résultats
+  // Afficher les résultats legacy
   console.log("\n" + "=".repeat(60));
   console.log("\n📊 RÉSULTATS DE LA VALIDATION\n");
 
@@ -793,7 +1095,7 @@ function main() {
   let totalWarnings = 0;
   let totalSuccess = 0;
 
-  for (const result of allResults) {
+  for (const result of allLegacyResults) {
     const icon =
       result.status === "success"
         ? "✅"
@@ -819,6 +1121,62 @@ function main() {
     }
   }
 
+  // ── New integrity checks (FR26-FR31) ──────────────────────────────────────
+  console.log("\n" + "=".repeat(60));
+  console.log("\n🔬 INTEGRITY CHECKS (FR26-FR31)\n");
+
+  const datasetRoot = AFRIK_ROOT;
+  const newChecks: Array<{ name: string; result: ValidationResult }> = [];
+
+  console.log("FR26 – FLG folder match...");
+  newChecks.push({
+    name: "FR26 FLG folder match",
+    result: checkFlgFolderMatch(datasetRoot),
+  });
+
+  console.log("FR27 – PPL duplicates...");
+  newChecks.push({
+    name: "FR27 PPL duplicates",
+    result: checkPplDuplicates(datasetRoot),
+  });
+
+  console.log("FR28 – Population sums...");
+  newChecks.push({
+    name: "FR28 Population sums",
+    result: checkPopulationSums(datasetRoot),
+  });
+
+  console.log("FR29 – ISO validity...");
+  newChecks.push({
+    name: "FR29 ISO validity",
+    result: checkIsoValidity(datasetRoot),
+  });
+
+  console.log("Orphan fiches...");
+  newChecks.push({
+    name: "Orphan fiches",
+    result: checkOrphanFiches(datasetRoot),
+  });
+
+  if (process.env.CHECK_SOURCE_URLS === "true") {
+    console.log("FR30/31 – Source URL check (nightly)...");
+    newChecks.push({
+      name: "FR30/31 Source URLs",
+      result: await checkSourceUrls(datasetRoot),
+    });
+  }
+
+  let newCheckFailed = false;
+  for (const { name, result } of newChecks) {
+    const icon = result.ok ? "✅" : "❌";
+    console.log(`${icon} ${name}`);
+    if (!result.ok) {
+      newCheckFailed = true;
+      result.errors.forEach((e) => console.log(`   ❌ ${e}`));
+    }
+    result.warnings.forEach((w) => console.log(`   ⚠️  ${w}`));
+  }
+
   console.log("\n" + "=".repeat(60));
   console.log(`\n📈 RÉSUMÉ:`);
   console.log(`   ✅ Succès: ${totalSuccess}`);
@@ -831,7 +1189,7 @@ function main() {
     "../dataset/source/afrik/logs/validation_report.json"
   );
   fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-  fs.writeFileSync(reportPath, JSON.stringify(allResults, null, 2));
+  fs.writeFileSync(reportPath, JSON.stringify(allLegacyResults, null, 2));
   console.log(`\n📄 Rapport détaillé sauvegardé: ${reportPath}`);
 
   // Mettre à jour le workflow_status.csv
@@ -844,7 +1202,17 @@ function main() {
   fs.writeFileSync(workflowStatusPath, updatedContent);
   console.log("✅ workflow_status.csv mis à jour");
 
-  process.exit(totalErrors > 0 ? 1 : 0);
+  process.exit(totalErrors > 0 || newCheckFailed ? 1 : 0);
 }
 
-main();
+// Only run main when this file is executed directly (not when imported by tests)
+if (typeof require !== "undefined" && require.main === module) {
+  main();
+} else if (
+  typeof process !== "undefined" &&
+  process.argv[1] &&
+  (process.argv[1].endsWith("validateAfrikData.ts") ||
+    process.argv[1].endsWith("validateAfrikData.js"))
+) {
+  main();
+}
