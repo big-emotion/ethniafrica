@@ -970,7 +970,8 @@ export function checkIsoValidity(datasetRoot: string): ValidationResult {
 /**
  * FR30 + FR31 – Source URL resolvability (nightly only).
  * Skipped unless process.env.CHECK_SOURCE_URLS === "true".
- * Writes results to dataset/source-url-health.log (relative to datasetRoot's parent).
+ * Writes results to dataset/source-url-health.log (two levels above datasetRoot,
+ * i.e. path.join(datasetRoot, "../..", "source-url-health.log")).
  */
 export async function checkSourceUrls(
   datasetRoot: string
@@ -1002,11 +1003,11 @@ export async function checkSourceUrls(
     }
   }
 
-  // HEAD-check each URL
+  // HEAD-check each URL with a fresh AbortController per request
   const logLines: string[] = [];
-  const controller = new AbortController();
 
   for (const url of uniqueUrls) {
+    const controller = new AbortController();
     const ts = new Date().toISOString();
     const timeoutId = setTimeout(() => controller.abort(), 5000);
     try {
@@ -1028,8 +1029,9 @@ export async function checkSourceUrls(
     }
   }
 
-  // Write log file: dataset/source-url-health.log (sibling to source/)
-  const logPath = path.join(datasetRoot, "..", "source-url-health.log");
+  // Write log file: dataset/source-url-health.log
+  // datasetRoot = <repo>/dataset/source/afrik  →  go up two levels to reach dataset/
+  const logPath = path.join(datasetRoot, "../..", "source-url-health.log");
   fs.mkdirSync(path.dirname(logPath), { recursive: true });
   fs.appendFileSync(
     logPath,

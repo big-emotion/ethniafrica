@@ -1,6 +1,6 @@
-import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdirSync, writeFileSync, rmSync, existsSync } from "fs";
-import { join } from "path";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
+import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from "fs";
+import { join, resolve } from "path";
 import {
   checkFlgFolderMatch,
   checkPplDuplicates,
@@ -349,6 +349,35 @@ describe("validateAfrikData – new integrity checks", () => {
       expect(result.ok).toBe(true);
 
       delete process.env.CHECK_SOURCE_URLS;
+    });
+
+    it("writes source-url-health.log two levels above datasetRoot (dataset/ sibling)", async () => {
+      // Build a fake datasetRoot mimicking <repo>/dataset/source/afrik
+      // tmpDir acts as the repo root; datasetRoot = tmpDir/dataset/source/afrik
+      const fakeDatasetRoot = join(tmpDir, "dataset", "source", "afrik");
+      mkdirSync(join(fakeDatasetRoot, "peuples"), { recursive: true });
+
+      // Expected log location: tmpDir/dataset/source-url-health.log
+      const expectedLogPath = resolve(
+        fakeDatasetRoot,
+        "../..",
+        "source-url-health.log"
+      );
+
+      // Verify the resolved path is indeed <repo>/dataset/source-url-health.log
+      expect(expectedLogPath).toBe(
+        join(tmpDir, "dataset", "source-url-health.log")
+      );
+
+      // Trigger a run (no PPL files → no URLs → log still written if it would be)
+      // We only need to verify the path arithmetic; no network calls needed.
+      process.env.CHECK_SOURCE_URLS = "true";
+      await checkSourceUrls(fakeDatasetRoot);
+      delete process.env.CHECK_SOURCE_URLS;
+
+      // Log file should exist at the expected path (even if empty, it gets written)
+      // (appendFileSync is called with empty content when there are no URLs)
+      expect(existsSync(expectedLogPath)).toBe(true);
     });
   });
 
