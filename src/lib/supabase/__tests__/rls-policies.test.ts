@@ -1,183 +1,366 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+/**
+ * RLS Policy Integration Test Suite — migrations 008–011
+ *
+ * Runs against a real Supabase/Postgres instance (local dev stack or CI).
+ * Set the following env vars before running:
+ *   TEST_SUPABASE_URL        — e.g. http://127.0.0.1:54321
+ *   TEST_SUPABASE_ANON_KEY   — JWT with role=anon
+ *   TEST_SUPABASE_SERVICE_KEY — service-role key (bypasses RLS; used for fixture setup)
+ *   TEST_JWT_READER          — signed JWT with app_metadata.role=reader
+ *   TEST_JWT_CONTRIBUTOR     — signed JWT with app_metadata.role=contributor
+ *   TEST_JWT_MODERATOR       — signed JWT with app_metadata.role=moderator
+ *   TEST_JWT_ADMIN           — signed JWT with app_metadata.role=admin
+ *
+ * These are emitted automatically by `supabase start`; see README §Testing.
+ *
+ * AC coverage:
+ *   • For each of 9 tables × 5 roles: one SELECT + one INSERT attempt.
+ *   • Disallowed operations return Postgres error code 42501 (insufficient_privilege).
+ *   • Allowed operations return error: null.
+ *   • Suite target: ≤ 60 s.
+ */
+
+import { createClient, SupabaseClient } from "@supabase/supabase-js";
+import { describe, it, expect, beforeAll, afterAll } from "vitest";
 
 // ---------------------------------------------------------------------------
-// RLS policy matrix — derived from migrations 008-011
+// Environment / connection helpers
 // ---------------------------------------------------------------------------
 
-type Role = "anon" | "reader" | "contributor" | "moderator" | "admin";
-type Operation = "read" | "write";
+const SUPABASE_URL =
+  process.env.TEST_SUPABASE_URL ?? "http://127.0.0.1:54321";
 
-interface PolicyEntry {
+const ANON_KEY = process.env.TEST_SUPABASE_ANON_KEY ?? "";
+const SERVICE_KEY = process.env.TEST_SUPABASE_SERVICE_KEY ?? "";
+
+/** Build a Supabase client authenticated with an explicit JWT. */
+function clientWithJwt(jwt: string): SupabaseClient {
+  return createClient(SUPABASE_URL, ANON_KEY, {
+    global: { headers: { Authorization: `Bearer ${jwt}` } },
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+}
+
+/** Anonymous (unauthenticated) client. */
+function anonClient(): SupabaseClient {
+  return createClient(SUPABASE_URL, ANON_KEY, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+}
+
+/** Service-role client — bypasses RLS; used only for fixture setup/teardown. */
+function serviceClient(): SupabaseClient {
+  return createClient(SUPABASE_URL, SERVICE_KEY, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
+}
+
+// ---------------------------------------------------------------------------
+// Skip guard
+// ---------------------------------------------------------------------------
+
+const SKIP =
+  !ANON_KEY ||
+  !SERVICE_KEY ||
+  !process.env.TEST_JWT_READER ||
+  !process.env.TEST_JWT_CONTRIBUTOR ||
+  !process.env.TEST_JWT_MODERATOR ||
+  !process.env.TEST_JWT_ADMIN;
+
+// ---------------------------------------------------------------------------
+// Policy matrix
+// ---------------------------------------------------------------------------
+// Derived directly from migrations 008–011.
+//
+// read.allowed  — whether a SELECT returns rows (not an RLS error)
+// write.allowed — whether an INSERT succeeds (not an RLS error)
+//
+// Key insight from migrations:
+//   • sources, assertions, confidence_scores, flags, revisions,
+//     editorial_doctrine — public SELECT policy, no write policy ⟹
+//     all roles can read, nobody can write.
+//   • audit_log — SELECT only for users whose uid() is in user_roles with
+//     role='admin', no write policy.
+//   • user_roles — SELECT for own row, ALL for admins, no plain write policy.
+//   • api_keys — SELECT for own row (auth.uid() = user_id), no write policy.
+// ---------------------------------------------------------------------------
+
+type RoleKey = "anon" | "reader" | "contributor" | "moderator" | "admin";
+
+interface OpPolicy {
   allowed: boolean;
 }
 
-type PolicyMatrix = Record<
-  string,
-  Record<Role, Record<Operation, PolicyEntry>>
->;
-
-const ALL_ROLES: Role[] = [
-  "anon",
-  "reader",
-  "contributor",
-  "moderator",
-  "admin",
-];
-
-function publicReadPolicy(): Record<Role, Record<Operation, PolicyEntry>> {
-  const entry: Record<Role, Record<Operation, PolicyEntry>> = {} as Record<
-    Role,
-    Record<Operation, PolicyEntry>
-  >;
-  for (const role of ALL_ROLES) {
-    entry[role] = { read: { allowed: true }, write: { allowed: false } };
-  }
-  return entry;
+interface TablePolicy {
+  read: OpPolicy;
+  write: OpPolicy;
 }
+
+type PolicyMatrix = Record<string, Record<RoleKey, TablePolicy>>;
+
+const ALLOW: OpPolicy = { allowed: true };
+const DENY: OpPolicy = { allowed: false };
 
 const POLICY_MATRIX: PolicyMatrix = {
-  sources: publicReadPolicy(),
-  assertions: publicReadPolicy(),
-  confidence_scores: publicReadPolicy(),
-  flags: publicReadPolicy(),
-  revisions: publicReadPolicy(),
-  editorial_doctrine: publicReadPolicy(),
-  user_roles: publicReadPolicy(),
+  sources: {
+    anon:        { read: ALLOW, write: DENY },
+    reader:      { read: ALLOW, write: DENY },
+    contributor: { read: ALLOW, write: DENY },
+    moderator:   { read: ALLOW, write: DENY },
+    admin:       { read: ALLOW, write: DENY },
+  },
+  assertions: {
+    anon:        { read: ALLOW, write: DENY },
+    reader:      { read: ALLOW, write: DENY },
+    contributor: { read: ALLOW, write: DENY },
+    moderator:   { read: ALLOW, write: DENY },
+    admin:       { read: ALLOW, write: DENY },
+  },
+  confidence_scores: {
+    anon:        { read: ALLOW, write: DENY },
+    reader:      { read: ALLOW, write: DENY },
+    contributor: { read: ALLOW, write: DENY },
+    moderator:   { read: ALLOW, write: DENY },
+    admin:       { read: ALLOW, write: DENY },
+  },
+  flags: {
+    anon:        { read: ALLOW, write: DENY },
+    reader:      { read: ALLOW, write: DENY },
+    contributor: { read: ALLOW, write: DENY },
+    moderator:   { read: ALLOW, write: DENY },
+    admin:       { read: ALLOW, write: DENY },
+  },
+  revisions: {
+    anon:        { read: ALLOW, write: DENY },
+    reader:      { read: ALLOW, write: DENY },
+    contributor: { read: ALLOW, write: DENY },
+    moderator:   { read: ALLOW, write: DENY },
+    admin:       { read: ALLOW, write: DENY },
+  },
+  editorial_doctrine: {
+    anon:        { read: ALLOW, write: DENY },
+    reader:      { read: ALLOW, write: DENY },
+    contributor: { read: ALLOW, write: DENY },
+    moderator:   { read: ALLOW, write: DENY },
+    admin:       { read: ALLOW, write: DENY },
+  },
+  // audit_log — SELECT restricted to admins only (see migration 008)
   audit_log: {
-    anon: { read: { allowed: false }, write: { allowed: false } },
-    reader: { read: { allowed: false }, write: { allowed: false } },
-    contributor: { read: { allowed: false }, write: { allowed: false } },
-    moderator: { read: { allowed: false }, write: { allowed: false } },
-    admin: { read: { allowed: true }, write: { allowed: false } },
+    anon:        { read: DENY,  write: DENY },
+    reader:      { read: DENY,  write: DENY },
+    contributor: { read: DENY,  write: DENY },
+    moderator:   { read: DENY,  write: DENY },
+    admin:       { read: ALLOW, write: DENY },
   },
-  // api_keys: owner-only read; in mock: admin is treated as owner, others denied
+  // user_roles — SELECT for own row; admin can do ALL.
+  // Non-admin authenticated users with no rows of their own get empty results
+  // (not an RLS error) — allowed:true means "no RLS error", not "rows returned".
+  user_roles: {
+    anon:        { read: DENY,  write: DENY },
+    reader:      { read: ALLOW, write: DENY },
+    contributor: { read: ALLOW, write: DENY },
+    moderator:   { read: ALLOW, write: DENY },
+    admin:       { read: ALLOW, write: ALLOW },
+  },
+  // api_keys — SELECT for own rows only; no write policy.
   api_keys: {
-    anon: { read: { allowed: false }, write: { allowed: false } },
-    reader: { read: { allowed: false }, write: { allowed: false } },
-    contributor: { read: { allowed: false }, write: { allowed: false } },
-    moderator: { read: { allowed: false }, write: { allowed: false } },
-    admin: { read: { allowed: true }, write: { allowed: false } },
+    anon:        { read: DENY,  write: DENY },
+    reader:      { read: ALLOW, write: DENY },
+    contributor: { read: ALLOW, write: DENY },
+    moderator:   { read: ALLOW, write: DENY },
+    admin:       { read: ALLOW, write: DENY },
   },
 };
 
 // ---------------------------------------------------------------------------
-// RLS error constant
+// Minimal valid insert payloads per table
+// The service client seeds these before the suite; each test issues its own
+// INSERT with the role-under-test to verify the write policy.
 // ---------------------------------------------------------------------------
 
-const RLS_ERROR = {
-  code: "42501",
-  message: "new row violates row-level security policy",
+const INSERT_PAYLOADS: Record<string, Record<string, unknown>> = {
+  sources: { title: "RLS test source", type: "test" },
+  assertions: {
+    entity_type: "test",
+    entity_id: "rls-test",
+    field_path: "test.field",
+    value: { v: 1 },
+  },
+  confidence_scores: { score: 0.9, methodology: "rls-test" },
+  flags: {
+    entity_type: "test",
+    entity_id: "rls-test",
+    flag_type: "inaccurate",
+  },
+  revisions: { entity_type: "test", entity_id: "rls-test" },
+  editorial_doctrine: {
+    key: `rls-write-test-${Date.now()}`,
+    title: "RLS write test",
+    content: "test",
+  },
+  audit_log: { action: "rls-test-write" },
+  user_roles: { role: "reader" },
+  api_keys: {
+    key_hash: `rls-test-hash-${Date.now()}`,
+    name: "rls-test-key",
+  },
 };
 
 // ---------------------------------------------------------------------------
-// Mock Supabase client factory
+// Postgres RLS error codes
 // ---------------------------------------------------------------------------
 
-vi.mock("@supabase/supabase-js", () => {
-  return {
-    createClient: vi.fn(),
-  };
-});
+/** Postgres error code for "insufficient_privilege" (RLS violation). */
+const RLS_ERROR_CODE = "42501";
 
-function createMockSupabaseClient(role: Role) {
-  const fromMock = (tableName: string) => {
-    const tablePolicy = POLICY_MATRIX[tableName];
-
-    const selectMock = vi.fn(() => {
-      const readAllowed = tablePolicy?.[role]?.read?.allowed ?? false;
-      if (readAllowed) {
-        return Promise.resolve({ data: [], error: null });
-      }
-      return Promise.resolve({ data: null, error: { ...RLS_ERROR } });
-    });
-
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const insertMock = vi.fn((_row: any) => {
-      // Writes are always denied by RLS
-      return Promise.resolve({ data: null, error: { ...RLS_ERROR } });
-    });
-
-    return {
-      select: selectMock,
-      insert: insertMock,
-    };
-  };
-
-  return {
-    from: vi.fn((tableName: string) => fromMock(tableName)),
-    auth: {
-      uid: vi.fn(() => (role === "anon" ? null : `uid-${role}`)),
-    },
-  };
+/** Supabase REST API returns HTTP 403 / 401 for RLS denials on INSERT; the
+ *  error code surfaced by postgrest is PGRST301 or the underlying pg code. */
+function isRlsError(error: { code?: string; message?: string } | null): boolean {
+  if (!error) return false;
+  return (
+    error.code === RLS_ERROR_CODE ||
+    // PostgREST wraps the Postgres error; message contains the code string
+    (error.message?.includes("42501") ?? false) ||
+    // HTTP-level denial codes used by PostgREST
+    error.code === "PGRST301" ||
+    error.code === "PGRST116"
+  );
 }
-
-// ---------------------------------------------------------------------------
-// Helpers
-// ---------------------------------------------------------------------------
-
-const ALL_TABLES = Object.keys(POLICY_MATRIX);
 
 // ---------------------------------------------------------------------------
 // Test suite
 // ---------------------------------------------------------------------------
 
-describe("RLS Policy Suite — migrations 008-011", () => {
-  // Top-level: verify RLS is enabled on all 9 tables
-  it("RLS is enabled on all 9 tables from migrations 008-011", () => {
-    expect(ALL_TABLES).toHaveLength(9);
-    expect(ALL_TABLES).toEqual(
-      expect.arrayContaining([
-        "sources",
-        "assertions",
-        "confidence_scores",
-        "flags",
-        "revisions",
-        "editorial_doctrine",
-        "user_roles",
-        "audit_log",
-        "api_keys",
-      ])
+describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
+  if (SKIP) {
+    it.skip(
+      "skipped: TEST_SUPABASE_URL / TEST_SUPABASE_ANON_KEY / TEST_SUPABASE_SERVICE_KEY / TEST_JWT_* env vars not set",
+      () => {},
     );
+    return;
+  }
+
+  let svc: SupabaseClient;
+
+  // Seed a source row so confidence_scores / assertions foreign keys resolve.
+  let seededSourceId: string | null = null;
+  let seededAssertionId: string | null = null;
+
+  beforeAll(async () => {
+    svc = serviceClient();
+
+    // Seed a source row
+    const { data: sourceRow } = await svc
+      .from("sources")
+      .insert({ title: "RLS seed source", type: "seed" })
+      .select("id")
+      .single();
+    seededSourceId = sourceRow?.id ?? null;
+
+    // Seed an assertion row (needed for confidence_scores FK)
+    if (seededSourceId) {
+      const { data: assertionRow } = await svc
+        .from("assertions")
+        .insert({
+          entity_type: "seed",
+          entity_id: "seed",
+          field_path: "seed",
+          value: { v: 0 },
+          source_id: seededSourceId,
+        })
+        .select("id")
+        .single();
+      seededAssertionId = assertionRow?.id ?? null;
+    }
   });
 
-  // ---------------------------------------------------------------------------
-  // Per-table suites
-  // ---------------------------------------------------------------------------
+  afterAll(async () => {
+    if (!svc) return;
+    // Clean up seeded rows — cascades handle FK children
+    if (seededAssertionId) {
+      await svc.from("assertions").delete().eq("id", seededAssertionId);
+    }
+    if (seededSourceId) {
+      await svc.from("sources").delete().eq("id", seededSourceId);
+    }
+  });
 
-  for (const tableName of ALL_TABLES) {
-    describe(tableName, () => {
-      // --- READ ---
-      for (const role of ALL_ROLES) {
-        const readAllowed = POLICY_MATRIX[tableName][role].read.allowed;
+  // Build role → client map at describe time (env vars already checked above)
+  const roleClients: Record<RoleKey, () => SupabaseClient> = {
+    anon:        () => anonClient(),
+    reader:      () => clientWithJwt(process.env.TEST_JWT_READER!),
+    contributor: () => clientWithJwt(process.env.TEST_JWT_CONTRIBUTOR!),
+    moderator:   () => clientWithJwt(process.env.TEST_JWT_MODERATOR!),
+    admin:       () => clientWithJwt(process.env.TEST_JWT_ADMIN!),
+  };
 
-        if (readAllowed) {
-          it(`role=${role}: read is allowed`, async () => {
-            const client = createMockSupabaseClient(role);
-            const result = await client.from(tableName).select();
-            expect(result.error).toBeNull();
-            expect(result.data).toBeDefined();
-          });
+  const tables = Object.keys(POLICY_MATRIX) as (keyof typeof POLICY_MATRIX)[];
+  const roles = Object.keys(roleClients) as RoleKey[];
+
+  for (const table of tables) {
+    for (const role of roles) {
+      const policy = POLICY_MATRIX[table][role];
+
+      // ---- READ -------------------------------------------------------
+      it(`${table} | ${role} | SELECT — ${policy.read.allowed ? "allowed" : "denied"}`, async () => {
+        const client = roleClients[role]();
+        const { error } = await client
+          .from(table)
+          .select("id")
+          .limit(1);
+
+        if (policy.read.allowed) {
+          expect(error, `Expected no error for ${role} SELECT on ${table}`).toBeNull();
         } else {
-          it(`role=${role}: read is denied with RLS error`, async () => {
-            const client = createMockSupabaseClient(role);
-            const result = await client.from(tableName).select();
-            expect(result.error).not.toBeNull();
-            expect(result.error?.code).toBe("42501");
-            expect(result.data).toBeNull();
-          });
+          expect(
+            isRlsError(error),
+            `Expected RLS error (42501) for ${role} SELECT on ${table}, got: ${JSON.stringify(error)}`,
+          ).toBe(true);
         }
-      }
+      });
 
-      // --- WRITE ---
-      for (const role of ALL_ROLES) {
-        it(`role=${role}: write is denied with RLS error`, async () => {
-          const client = createMockSupabaseClient(role);
-          const result = await client.from(tableName).insert({ id: "test" });
-          expect(result.error).not.toBeNull();
-          expect(result.error?.code).toBe("42501");
-          expect(result.data).toBeNull();
-        });
-      }
-    });
+      // ---- WRITE ------------------------------------------------------
+      it(`${table} | ${role} | INSERT — ${policy.write.allowed ? "allowed" : "denied"}`, async () => {
+        const client = roleClients[role]();
+
+        // Build payload; patch in FK ids where needed
+        const basePayload = { ...INSERT_PAYLOADS[table] };
+        if (table === "confidence_scores" && seededAssertionId) {
+          basePayload.assertion_id = seededAssertionId;
+        }
+        if (table === "assertions" && seededSourceId) {
+          basePayload.source_id = seededSourceId;
+        }
+        // Make keys unique per run to avoid unique-constraint false failures
+        if (table === "editorial_doctrine") {
+          (basePayload as Record<string, unknown>).key =
+            `rls-write-${role}-${Date.now()}`;
+        }
+        if (table === "api_keys") {
+          (basePayload as Record<string, unknown>).key_hash =
+            `rls-hash-${role}-${Date.now()}`;
+        }
+
+        const { data, error } = await client
+          .from(table)
+          .insert(basePayload)
+          .select("id")
+          .single();
+
+        if (policy.write.allowed) {
+          expect(error, `Expected no error for ${role} INSERT on ${table}`).toBeNull();
+          expect(data).not.toBeNull();
+          // Clean up the row we just inserted
+          if (data?.id) {
+            await svc.from(table).delete().eq("id", data.id);
+          }
+        } else {
+          expect(
+            isRlsError(error),
+            `Expected RLS error (42501) for ${role} INSERT on ${table}, got: ${JSON.stringify(error)}`,
+          ).toBe(true);
+        }
+      });
+    }
   }
 });
