@@ -7,8 +7,10 @@
  *       Returns a shared, read-only public API key.
  *       Public keys are rate-limited and can only perform read operations.
  *       Partner and admin keys must be requested via the admin UI.
+ *       No authentication required for this endpoint.
  *     tags:
  *       - API v2 - Keys
+ *     security: []
  *     responses:
  *       201:
  *         description: Public key issued successfully
