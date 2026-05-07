@@ -22,8 +22,6 @@ cp env.dist .env.local
 NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 SUPABASE_SERVICE_ROLE_KEY=your_service_role_key   # server-side only — never expose
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=your_secure_password
 ```
 
 Never commit `.env*`. Stage files explicitly on commit (avoid `git add -A` / `git add .`).
