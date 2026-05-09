@@ -1,0 +1,79 @@
+name: Quarterly Backup Drill Reminder
+
+on:
+  schedule:
+    - cron: '0 9 1 1,4,7,10 *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (log only, do not create issue)'
+        required: false
+        default: 'false'
+
+jobs:
+  open-drill-reminder:
+    name: Open quarterly drill reminder issue
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Compute drill quarter label
+        id: quarter
+        run: |
+          YEAR=$(date +%Y)
+          MONTH=$(date +%-m)
+          if [ "$MONTH" -le 3 ]; then
+            QUARTER="Q1"
+          elif [ "$MONTH" -le 6 ]; then
+            QUARTER="Q2"
+          elif [ "$MONTH" -le 9 ]; then
+            QUARTER="Q3"
+          else
+            QUARTER="Q4"
+          fi
+          echo "label=${YEAR}-${QUARTER}" >> "$GITHUB_OUTPUT"
+          echo "year=${YEAR}" >> "$GITHUB_OUTPUT"
+          echo "quarter=${QUARTER}" >> "$GITHUB_OUTPUT"
+
+      - name: Create reminder issue
+        if: ${{ github.event.inputs.dry_run != 'true' }}
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const year     = '${{ steps.quarter.outputs.year }}';
+            const quarter  = '${{ steps.quarter.outputs.quarter }}';
+            const title    = `[Drill] Quarterly Supabase restore drill — ${year} ${quarter}`;
+            const body = [
+              '## Quarterly Restore Drill Reminder',
+              '',
+              `**Quarter:** ${year} ${quarter}`,
+              '',
+              '### Checklist',
+              '',
+              '- [ ] Verify PITR is still enabled with >= 7-day retention (`docs/infra-backup.md`)',
+              '- [ ] Update `docs/infra-backup.md` with fresh screenshot (timestamped within 7 days)',
+              '- [ ] Provision throwaway Supabase project in eu-central-1',
+              '- [ ] Restore most recent backup into throwaway project',
+              '- [ ] Run `npx tsx scripts/validateAfrikData.ts` against throwaway project',
+              '- [ ] Record wall-clock time and output in `docs/runbooks/restore-drill-<YYYY-MM-DD>.md`',
+              '- [ ] Delete throwaway project',
+              '- [ ] Open PR with updated drill document',
+              '',
+              '### References',
+              '',
+              '- Restore procedure: `docs/runbooks/restore-procedure.md`',
+              '- Previous drills: `docs/runbooks/`',
+              '- AR21 (data durability), AR37 (operational trustworthiness)',
+            ].join('\n');
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['area:operations', 'type:drill'],
+            });
+
+      - name: Dry run log
+        if: ${{ github.event.inputs.dry_run == 'true' }}
+        run: |
+          echo "DRY RUN: Would create issue for ${{ steps.quarter.outputs.year }} ${{ steps.quarter.outputs.quarter }}"
