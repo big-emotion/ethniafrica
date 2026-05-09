@@ -37,58 +37,81 @@ export function getRateLimitIdentifier(request: NextRequest): {
   return { identifier: `ip:${ip}`, apiKey: null };
 }
 
-// Lazy-initialise the Redis client once
-let redis: Redis | null = null;
-function getRedis(): Redis {
-  if (!redis) {
-    redis = new Redis({
-      url: process.env.UPSTASH_REDIS_REST_URL!,
-      token: process.env.UPSTASH_REDIS_REST_TOKEN!,
-    });
-  }
-  return redis;
+/** All per-tier Ratelimit instances, created together in one synchronous pass */
+interface Limiters {
+  redis: Redis;
+  ip: Ratelimit;
+  public: Ratelimit;
+  partner: Ratelimit;
 }
 
-// Cached limiters
-let ipLimiter: Ratelimit | null = null;
-let publicLimiter: Ratelimit | null = null;
-let partnerLimiter: Ratelimit | null = null;
+let limiters: Limiters | null = null;
+
+/**
+ * Reset the cached limiter bundle. Only intended for use in unit tests.
+ * @internal
+ */
+export function _resetLimitersForTest(): void {
+  limiters = null;
+}
+
+/**
+ * Return the cached Limiters bundle, creating it on first call.
+ * Initialisation is synchronous so it is inherently race-free in the
+ * single-threaded JS runtime — no two callers can observe `limiters === null`
+ * and both proceed to construct new instances.
+ *
+ * Throws immediately with a clear message when required env vars are absent,
+ * so the catch block in applyRateLimit can correctly distinguish a
+ * configuration error from a transient Upstash failure.
+ */
+function getLimiters(): Limiters {
+  if (limiters !== null) return limiters;
+
+  const url = process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+
+  if (!url || !token) {
+    throw new Error(
+      "Upstash env vars not configured: UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN are required"
+    );
+  }
+
+  const redis = new Redis({ url, token });
+
+  limiters = {
+    redis,
+    ip: new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(60, "1 m"),
+      prefix: "rl:ip",
+    }),
+    public: new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(600, "1 m"),
+      prefix: "rl:public",
+    }),
+    partner: new Ratelimit({
+      redis,
+      limiter: Ratelimit.slidingWindow(6000, "1 m"),
+      prefix: "rl:partner",
+    }),
+  };
+
+  return limiters;
+}
 
 /** Return the appropriate Ratelimit instance for the request, or null for admin (unrestricted) */
 export function getRateLimiter(apiKey: string | null): Ratelimit | null {
   if (apiKey !== null) {
     const tier = getApiKeyTier(apiKey);
     if (tier === "admin") return null;
-    if (tier === "partner") {
-      if (!partnerLimiter) {
-        partnerLimiter = new Ratelimit({
-          redis: getRedis(),
-          limiter: Ratelimit.slidingWindow(6000, "1 m"),
-          prefix: "rl:partner",
-        });
-      }
-      return partnerLimiter;
-    }
+    if (tier === "partner") return getLimiters().partner;
     // public tier
-    if (!publicLimiter) {
-      publicLimiter = new Ratelimit({
-        redis: getRedis(),
-        limiter: Ratelimit.slidingWindow(600, "1 m"),
-        prefix: "rl:public",
-      });
-    }
-    return publicLimiter;
+    return getLimiters().public;
   }
-
   // No API key — IP-based
-  if (!ipLimiter) {
-    ipLimiter = new Ratelimit({
-      redis: getRedis(),
-      limiter: Ratelimit.slidingWindow(60, "1 m"),
-      prefix: "rl:ip",
-    });
-  }
-  return ipLimiter;
+  return getLimiters().ip;
 }
 
 /**

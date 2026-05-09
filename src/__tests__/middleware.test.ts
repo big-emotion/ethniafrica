@@ -1,215 +1,221 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, type Mock } from "vitest";
+import { NextRequest } from "next/server";
+import { middleware, config } from "../middleware";
+import { createServerClient } from "@supabase/ssr";
 
-// Mock NextResponse before importing middleware
-const mockHeaders = new Map<string, string>();
-const mockRequestHeaders = new Map<string, string>();
-
-const mockNextResponse = {
-  headers: {
-    set: vi.fn((key: string, value: string) => {
-      mockHeaders.set(key, value);
-    }),
-    get: vi.fn((key: string) => mockHeaders.get(key)),
-  },
-};
-
-vi.mock("next/server", () => ({
-  NextResponse: {
-    next: vi.fn(
-      (init?: { request?: { headers?: Headers } }) => {
-        // Capture request headers forwarded by middleware (e.g. x-nonce)
-        if (init?.request?.headers) {
-          for (const [key, value] of init.request.headers.entries()) {
-            mockRequestHeaders.set(key, value);
-          }
-        }
-        return mockNextResponse;
-      }
-    ),
-  },
+vi.mock("@supabase/ssr", () => ({
+  createServerClient: vi.fn(),
 }));
 
-import { middleware, config } from "../middleware";
-
 describe("middleware", () => {
+  const mockGetUser = vi.fn();
+  const mockFrom = vi.fn();
+  const mockSelect = vi.fn();
+  const mockEq = vi.fn();
+
   beforeEach(() => {
-    mockHeaders.clear();
-    mockRequestHeaders.clear();
-    vi.clearAllMocks();
-  });
-
-  const createMockRequest = (url = "https://example.com/test") => {
-    const headers = new Headers({ host: "example.com" });
-    return {
-      url,
-      nextUrl: new URL(url),
-      headers,
-    } as unknown as Parameters<typeof middleware>[0];
-  };
-
-  it("should return a response with all required security headers", () => {
-    const request = createMockRequest();
-    const response = middleware(request);
-
-    expect(response).toBeDefined();
-    expect(mockHeaders.get("Strict-Transport-Security")).toBe(
-      "max-age=31536000; includeSubDomains; preload"
-    );
-    expect(mockHeaders.get("X-Content-Type-Options")).toBe("nosniff");
-    expect(mockHeaders.get("Referrer-Policy")).toBe(
-      "strict-origin-when-cross-origin"
-    );
-    expect(mockHeaders.get("Content-Security-Policy")).toBeDefined();
-  });
-
-  it("should set Strict-Transport-Security header correctly", () => {
-    const request = createMockRequest();
-    middleware(request);
-
-    expect(mockNextResponse.headers.set).toHaveBeenCalledWith(
-      "Strict-Transport-Security",
-      "max-age=31536000; includeSubDomains; preload"
-    );
-  });
-
-  it("should set X-Content-Type-Options header correctly", () => {
-    const request = createMockRequest();
-    middleware(request);
-
-    expect(mockNextResponse.headers.set).toHaveBeenCalledWith(
-      "X-Content-Type-Options",
-      "nosniff"
-    );
-  });
-
-  it("should set Referrer-Policy header correctly", () => {
-    const request = createMockRequest();
-    middleware(request);
-
-    expect(mockNextResponse.headers.set).toHaveBeenCalledWith(
-      "Referrer-Policy",
-      "strict-origin-when-cross-origin"
-    );
-  });
-
-  it("should set Content-Security-Policy header with correct directives", () => {
-    const request = createMockRequest();
-    middleware(request);
-
-    const cspCall = vi
-      .mocked(mockNextResponse.headers.set)
-      .mock.calls.find((call) => call[0] === "Content-Security-Policy");
-
-    expect(cspCall).toBeDefined();
-    const cspValue = cspCall![1];
-
-    expect(cspValue).toContain("default-src 'self'");
-    expect(cspValue).toContain("img-src 'self' data:");
-    expect(cspValue).toContain("frame-ancestors 'self'");
-
-    // style-src must use nonce, not unsafe-inline
-    const styleSrcDirective = cspValue
-      .split(";")
-      .map((d: string) => d.trim())
-      .find((d: string) => d.startsWith("style-src"));
-    expect(styleSrcDirective).toBeDefined();
-    expect(styleSrcDirective).not.toContain("'unsafe-inline'");
-    expect(styleSrcDirective).toMatch(/'nonce-[^']+'/);
-    expect(styleSrcDirective).toContain("'self'");
-  });
-
-  it("should not include 'unsafe-inline' in script-src", () => {
-    const request = createMockRequest();
-    middleware(request);
-
-    const cspCall = vi
-      .mocked(mockNextResponse.headers.set)
-      .mock.calls.find((call) => call[0] === "Content-Security-Policy");
-
-    expect(cspCall).toBeDefined();
-    const cspValue = cspCall![1];
-
-    // 'unsafe-inline' must be absent from script-src (hashed/nonce model)
-    const scriptSrcDirective = cspValue
-      .split(";")
-      .map((d) => d.trim())
-      .find((d) => d.startsWith("script-src"));
-
-    expect(scriptSrcDirective).toBeDefined();
-    expect(scriptSrcDirective).not.toContain("'unsafe-inline'");
-  });
-
-  it("should include a per-request nonce in script-src and forward it via x-nonce header", () => {
-    const request = createMockRequest();
-    middleware(request);
-
-    const cspCall = vi
-      .mocked(mockNextResponse.headers.set)
-      .mock.calls.find((call) => call[0] === "Content-Security-Policy");
-
-    expect(cspCall).toBeDefined();
-    const cspValue = cspCall![1];
-
-    // script-src must contain a nonce directive
-    const nonceMatch = cspValue.match(/'nonce-([^']+)'/);
-    expect(nonceMatch).not.toBeNull();
-    const nonceInCsp = nonceMatch![1];
-
-    // The same nonce must be forwarded to the document via x-nonce request header
-    const forwardedNonce = mockRequestHeaders.get("x-nonce");
-    expect(forwardedNonce).toBeDefined();
-    expect(forwardedNonce).toBe(nonceInCsp);
-  });
-
-  it("should generate a different nonce for each request", () => {
-    const request1 = createMockRequest("https://example.com/page1");
-    middleware(request1);
-    const cspCall1 = vi
-      .mocked(mockNextResponse.headers.set)
-      .mock.calls.find((call) => call[0] === "Content-Security-Policy");
-    const nonce1 = cspCall1![1].match(/'nonce-([^']+)'/)?.[1];
-
-    mockHeaders.clear();
-    mockRequestHeaders.clear();
     vi.clearAllMocks();
 
-    const request2 = createMockRequest("https://example.com/page2");
-    middleware(request2);
-    const cspCall2 = vi
-      .mocked(mockNextResponse.headers.set)
-      .mock.calls.find((call) => call[0] === "Content-Security-Policy");
-    const nonce2 = cspCall2![1].match(/'nonce-([^']+)'/)?.[1];
+    mockEq.mockResolvedValue({ data: [], error: null });
+    mockSelect.mockReturnValue({ eq: mockEq });
+    mockFrom.mockReturnValue({ select: mockSelect });
 
-    expect(nonce1).toBeDefined();
-    expect(nonce2).toBeDefined();
-    expect(nonce1).not.toBe(nonce2);
+    (createServerClient as Mock).mockReturnValue({
+      auth: {
+        getUser: mockGetUser,
+      },
+      from: mockFrom,
+    });
+
+    mockGetUser.mockResolvedValue({ data: { user: null }, error: null });
+  });
+
+  describe("admin auth", () => {
+    it("redirects unauthenticated user to login with redirect param", async () => {
+      const request = new NextRequest("http://localhost:3000/admin/dashboard");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(307);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/admin/login?redirect=%2Fadmin%2Fdashboard"
+      );
+    });
+
+    it("redirects authenticated non-admin user to /forbidden", async () => {
+      mockGetUser.mockResolvedValue({
+        data: { user: { id: "user-123" } },
+        error: null,
+      });
+      mockEq.mockResolvedValue({ data: [{ role: "reader" }], error: null });
+
+      const request = new NextRequest("http://localhost:3000/admin/dashboard");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(307);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/forbidden"
+      );
+      expect(mockFrom).toHaveBeenCalledWith("user_roles");
+      expect(mockSelect).toHaveBeenCalledWith("role");
+      expect(mockEq).toHaveBeenCalledWith("user_id", "user-123");
+    });
+
+    it("allows authenticated admin user to pass through", async () => {
+      mockGetUser.mockResolvedValue({
+        data: { user: { id: "admin-123" } },
+        error: null,
+      });
+      mockEq.mockResolvedValue({ data: [{ role: "admin" }], error: null });
+
+      const request = new NextRequest("http://localhost:3000/admin/dashboard");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("location")).toBeNull();
+    });
+
+    it("allows access to /admin/login without authentication", async () => {
+      const request = new NextRequest("http://localhost:3000/admin/login");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("location")).toBeNull();
+    });
+
+    it("handles user with multiple roles including admin", async () => {
+      mockGetUser.mockResolvedValue({
+        data: { user: { id: "multi-role-user" } },
+        error: null,
+      });
+      mockEq.mockResolvedValue({
+        data: [{ role: "reader" }, { role: "admin" }],
+        error: null,
+      });
+
+      const request = new NextRequest("http://localhost:3000/admin/settings");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("location")).toBeNull();
+    });
+
+    it("handles database error when fetching roles", async () => {
+      mockGetUser.mockResolvedValue({
+        data: { user: { id: "user-123" } },
+        error: null,
+      });
+      mockEq.mockResolvedValue({ data: null, error: new Error("DB error") });
+
+      const request = new NextRequest("http://localhost:3000/admin/dashboard");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(307);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/forbidden"
+      );
+    });
+
+    it("refreshes session on non-admin routes", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      expect(mockGetUser).toHaveBeenCalled();
+      expect(response.status).toBe(200);
+    });
+  });
+
+  describe("security headers", () => {
+    it("sets Strict-Transport-Security on pass-through responses", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      expect(response.headers.get("Strict-Transport-Security")).toBe(
+        "max-age=31536000; includeSubDomains; preload"
+      );
+    });
+
+    it("sets X-Content-Type-Options on pass-through responses", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      expect(response.headers.get("X-Content-Type-Options")).toBe("nosniff");
+    });
+
+    it("sets Referrer-Policy on pass-through responses", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      expect(response.headers.get("Referrer-Policy")).toBe(
+        "strict-origin-when-cross-origin"
+      );
+    });
+
+    it("sets Content-Security-Policy with required directives", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy");
+      expect(csp).toBeDefined();
+      expect(csp).toContain("default-src 'self'");
+      expect(csp).toContain("img-src 'self' data:");
+      expect(csp).toContain("frame-ancestors 'self'");
+    });
+
+    it("does not include 'unsafe-inline' in script-src or style-src", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+
+      const csp = response.headers.get("Content-Security-Policy")!;
+      const directives = csp.split(";").map((d) => d.trim());
+
+      const scriptSrc = directives.find((d) => d.startsWith("script-src"));
+      const styleSrc = directives.find((d) => d.startsWith("style-src"));
+
+      expect(scriptSrc).toBeDefined();
+      expect(scriptSrc).not.toContain("'unsafe-inline'");
+      expect(scriptSrc).toMatch(/'nonce-[^']+'/);
+      expect(styleSrc).toBeDefined();
+      expect(styleSrc).not.toContain("'unsafe-inline'");
+      expect(styleSrc).toMatch(/'nonce-[^']+'/);
+    });
+
+    it("generates a different nonce for each request", async () => {
+      const request1 = new NextRequest("http://localhost:3000/page1");
+      const response1 = await middleware(request1);
+      const nonce1 = response1.headers
+        .get("Content-Security-Policy")!
+        .match(/'nonce-([^']+)'/)?.[1];
+
+      const request2 = new NextRequest("http://localhost:3000/page2");
+      const response2 = await middleware(request2);
+      const nonce2 = response2.headers
+        .get("Content-Security-Policy")!
+        .match(/'nonce-([^']+)'/)?.[1];
+
+      expect(nonce1).toBeDefined();
+      expect(nonce2).toBeDefined();
+      expect(nonce1).not.toBe(nonce2);
+    });
   });
 });
 
 describe("config", () => {
-  it("should export a config with matcher", () => {
+  it("exports a config with matcher", () => {
     expect(config).toBeDefined();
     expect(config.matcher).toBeDefined();
   });
 
-  it("should have a matcher that excludes static assets and includes app routes", () => {
-    const matcher = config.matcher;
-    expect(matcher).toBeDefined();
-
-    // Extract the regex string from the single-element matcher array
-    const rawPattern = Array.isArray(matcher) ? matcher[0] : String(matcher);
-
-    // Build a RegExp from the Next.js matcher pattern string
-    // The pattern is a path-to-regexp style pattern wrapped in a capturing group
+  it("matcher excludes static assets and includes app routes", () => {
+    const rawPattern = Array.isArray(config.matcher)
+      ? config.matcher[0]
+      : String(config.matcher);
     const regex = new RegExp(`^${rawPattern}$`);
 
-    // --- Paths that SHOULD be matched (app routes) ---
     expect(regex.test("/")).toBe(true);
     expect(regex.test("/api/health")).toBe(true);
     expect(regex.test("/about")).toBe(true);
     expect(regex.test("/some/nested/page")).toBe(true);
 
-    // --- Paths that MUST NOT be matched (static assets) ---
     expect(regex.test("/_next/static/chunk.js")).toBe(false);
     expect(regex.test("/_next/static/css/main.css")).toBe(false);
     expect(regex.test("/_next/image?url=foo")).toBe(false);

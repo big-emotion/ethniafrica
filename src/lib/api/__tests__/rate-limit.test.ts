@@ -43,6 +43,7 @@ import {
   getApiKeyTier,
   getRateLimiter,
   applyRateLimit,
+  _resetLimitersForTest,
 } from "@/lib/api/rate-limit";
 import * as SentryMock from "@sentry/nextjs";
 import { logger } from "@/lib/api/logger";
@@ -121,6 +122,8 @@ describe("getRateLimitIdentifier", () => {
 
 describe("getRateLimiter", () => {
   beforeEach(() => {
+    vi.clearAllMocks();
+    _resetLimitersForTest();
     vi.stubEnv("RATE_LIMIT_ADMIN_KEYS", "admin-key-1");
     vi.stubEnv("RATE_LIMIT_PARTNER_KEYS", "partner-key-1");
     vi.stubEnv("UPSTASH_REDIS_REST_URL", "https://example.upstash.io");
@@ -151,7 +154,8 @@ describe("getRateLimiter", () => {
 describe("applyRateLimit", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    // After clearAllMocks, restore constructor mocks so lazy singletons work
+    _resetLimitersForTest();
+    // After clearAllMocks, restore constructor mocks so singletons are re-created correctly
     restoreConstructorMocks();
     vi.stubEnv("UPSTASH_REDIS_REST_URL", "https://example.upstash.io");
     vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "test-token");
