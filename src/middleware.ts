@@ -1,7 +1,14 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { applyRateLimit } from "@/lib/api/rate-limit";
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
+  // Apply rate limiting for /api/v2/* routes
+  if (request.nextUrl.pathname.startsWith("/api/v2/")) {
+    const rateLimitResponse = await applyRateLimit(request);
+    if (rateLimitResponse) return rateLimitResponse;
+  }
+
   // Generate a cryptographically random nonce for CSP per request
   const nonce = btoa(crypto.randomUUID());
 
