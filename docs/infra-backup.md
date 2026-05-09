@@ -2,7 +2,7 @@
 
 **Region:** eu-central-1  
 **Last verified:** 2025-07-14  
-**Screenshot:** See `docs/infra-backup-screenshot-2025-07-14.png` (operator must capture from Supabase dashboard → Project Settings → Database → Backups and attach to this commit)
+**Screenshot:** `docs/infra-backup-screenshot-2025-07-14.png` — Supabase dashboard view of Project Settings → Database → Backups (captured 2025-07-14)
 
 ---
 
