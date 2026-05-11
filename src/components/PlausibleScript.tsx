@@ -18,6 +18,11 @@ import { useConsent } from "@/hooks/use-consent";
  *
  * Returns null (no DOM output) when analytics consent has not been granted
  * or when NEXT_PUBLIC_PLAUSIBLE_DOMAIN is absent.
+ *
+ * NOTE: NEXT_PUBLIC_* variables are inlined by Next.js at BUILD TIME.
+ * NEXT_PUBLIC_PLAUSIBLE_DOMAIN and NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN must
+ * be present in the build environment — setting them only at runtime (e.g.
+ * via Docker env) will not take effect in the client bundle.
  */
 export default function PlausibleScript() {
   const domain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
@@ -31,7 +36,6 @@ export default function PlausibleScript() {
     <Script
       src={src}
       data-domain={domain}
-      data-api="/api/event"
       crossOrigin="anonymous"
       strategy="lazyOnload"
     />

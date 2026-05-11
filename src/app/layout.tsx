@@ -73,12 +73,10 @@ export default function RootLayout({
       className={`${inter.variable} ${playfairDisplay.variable} ${fraunces.variable} ${nunitoSans.variable}`}
       suppressHydrationWarning
     >
-      <head>
-        <PlausibleScript />
-      </head>
       <body className="font-sans antialiased">
         <TypeformPreload />
         <Providers>{children}</Providers>
+        <PlausibleScript />
       </body>
     </html>
   );

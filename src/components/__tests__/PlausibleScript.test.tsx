@@ -10,7 +10,6 @@ type ScriptMockProps = {
   crossOrigin?: CrossOriginValue;
   strategy?: string;
   "data-domain"?: string;
-  "data-api"?: string;
   [key: string]: unknown;
 };
 
@@ -23,7 +22,6 @@ vi.mock("next/script", () => ({
     src,
     crossOrigin,
     "data-domain": dataDomain,
-    "data-api": dataApi,
     strategy: _strategy,
     ...rest
   }: ScriptMockProps) => (
@@ -32,7 +30,6 @@ vi.mock("next/script", () => ({
       src={src}
       crossOrigin={crossOrigin}
       data-domain={dataDomain}
-      data-api={dataApi}
     />
   ),
 }));
@@ -142,13 +139,6 @@ describe("PlausibleScript", () => {
       render(<PlausibleScript />);
       const script = document.querySelector("script");
       expect(script?.getAttribute("crossorigin")).toBe("anonymous");
-    });
-
-    it("sets data-api attribute for proxying", async () => {
-      const { default: PlausibleScript } = await import("../PlausibleScript");
-      render(<PlausibleScript />);
-      const script = document.querySelector("script");
-      expect(script).toHaveAttribute("data-api");
     });
 
     it("uses NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN as script base when set", async () => {
