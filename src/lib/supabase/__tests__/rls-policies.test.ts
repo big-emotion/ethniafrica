@@ -89,6 +89,9 @@ type RoleKey = "anon" | "reader" | "contributor" | "moderator" | "admin";
 
 interface OpPolicy {
   allowed: boolean;
+  /** Explains the expected row-count semantics when this is not obvious from
+   *  allowed:true/false alone (e.g. empty result vs. non-empty, per-row filtering). */
+  note?: string;
 }
 
 interface TablePolicy {
@@ -100,6 +103,23 @@ type PolicyMatrix = Record<string, Record<RoleKey, TablePolicy>>;
 
 const ALLOW: OpPolicy = { allowed: true };
 const DENY: OpPolicy = { allowed: false };
+
+// Per-row filtering: authenticated users may SELECT but see only their own rows.
+// Test JWTs have no seeded entry in these tables → zero rows returned, no RLS error.
+// allowed:true means "no 42501 RLS error", not "rows returned".
+// Ref: migration 008_user_roles.sql policy "Users can read their own roles":
+//   USING (auth.uid() = user_id)
+const USER_ROLES_ALLOW_READ: OpPolicy = {
+  allowed: true,
+  note: "migration 008_user_roles.sql: USING (auth.uid() = user_id) — zero rows expected because test JWT has no seeded user_roles entry; error: null confirms RLS does not block the query",
+};
+
+// Ref: migration 011_api_keys.sql policy api_keys_read_owner:
+//   USING (auth.uid() = user_id)
+const API_KEYS_ALLOW_READ: OpPolicy = {
+  allowed: true,
+  note: "migration 011_api_keys.sql: api_keys_read_owner USING (auth.uid() = user_id) — zero rows expected because test JWT has no seeded api_keys entry; error: null confirms RLS does not block the query",
+};
 
 const POLICY_MATRIX: PolicyMatrix = {
   sources: {
@@ -152,23 +172,23 @@ const POLICY_MATRIX: PolicyMatrix = {
     moderator:   { read: DENY,  write: DENY },
     admin:       { read: ALLOW, write: DENY },
   },
-  // user_roles — SELECT for own row; admin can do ALL.
-  // Non-admin authenticated users with no rows of their own get empty results
-  // (not an RLS error) — allowed:true means "no RLS error", not "rows returned".
+  // user_roles — SELECT for own row (auth.uid() = user_id); admin can do ALL.
+  // See USER_ROLES_ALLOW_READ note for why ALLOW yields zero rows in tests.
   user_roles: {
-    anon:        { read: DENY,  write: DENY },
-    reader:      { read: ALLOW, write: DENY },
-    contributor: { read: ALLOW, write: DENY },
-    moderator:   { read: ALLOW, write: DENY },
-    admin:       { read: ALLOW, write: ALLOW },
+    anon:        { read: DENY,              write: DENY },
+    reader:      { read: USER_ROLES_ALLOW_READ, write: DENY },
+    contributor: { read: USER_ROLES_ALLOW_READ, write: DENY },
+    moderator:   { read: USER_ROLES_ALLOW_READ, write: DENY },
+    admin:       { read: USER_ROLES_ALLOW_READ, write: ALLOW },
   },
-  // api_keys — SELECT for own rows only; no write policy.
+  // api_keys — SELECT for own rows only (auth.uid() = user_id); no write policy.
+  // See API_KEYS_ALLOW_READ note for why ALLOW yields zero rows in tests.
   api_keys: {
-    anon:        { read: DENY,  write: DENY },
-    reader:      { read: ALLOW, write: DENY },
-    contributor: { read: ALLOW, write: DENY },
-    moderator:   { read: ALLOW, write: DENY },
-    admin:       { read: ALLOW, write: DENY },
+    anon:        { read: DENY,            write: DENY },
+    reader:      { read: API_KEYS_ALLOW_READ, write: DENY },
+    contributor: { read: API_KEYS_ALLOW_READ, write: DENY },
+    moderator:   { read: API_KEYS_ALLOW_READ, write: DENY },
+    admin:       { read: API_KEYS_ALLOW_READ, write: DENY },
   },
 };
 
@@ -214,16 +234,18 @@ const INSERT_PAYLOADS: Record<string, Record<string, unknown>> = {
 const RLS_ERROR_CODE = "42501";
 
 /** Supabase REST API returns HTTP 403 / 401 for RLS denials on INSERT; the
- *  error code surfaced by postgrest is PGRST301 or the underlying pg code. */
+ *  error code surfaced by postgrest is PGRST301 or the underlying pg code.
+ *  PGRST116 ("no rows returned for .single()") is intentionally excluded —
+ *  it signals a query-shape mismatch, not an RLS denial, and would cause DENY
+ *  tests to pass even when no RLS policy exists on the table. */
 function isRlsError(error: { code?: string; message?: string } | null): boolean {
   if (!error) return false;
   return (
     error.code === RLS_ERROR_CODE ||
     // PostgREST wraps the Postgres error; message contains the code string
     (error.message?.includes("42501") ?? false) ||
-    // HTTP-level denial codes used by PostgREST
-    error.code === "PGRST301" ||
-    error.code === "PGRST116"
+    // HTTP-level denial code used by PostgREST for INSERT denials
+    error.code === "PGRST301"
   );
 }
 
@@ -256,21 +278,29 @@ describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
       .select("id")
       .single();
     seededSourceId = sourceRow?.id ?? null;
+    if (!seededSourceId) {
+      throw new Error(
+        "beforeAll: seeding sources failed — seededSourceId is null; RLS suite cannot run reliably",
+      );
+    }
 
     // Seed an assertion row (needed for confidence_scores FK)
-    if (seededSourceId) {
-      const { data: assertionRow } = await svc
-        .from("assertions")
-        .insert({
-          entity_type: "seed",
-          entity_id: "seed",
-          field_path: "seed",
-          value: { v: 0 },
-          source_id: seededSourceId,
-        })
-        .select("id")
-        .single();
-      seededAssertionId = assertionRow?.id ?? null;
+    const { data: assertionRow } = await svc
+      .from("assertions")
+      .insert({
+        entity_type: "seed",
+        entity_id: "seed",
+        field_path: "seed",
+        value: { v: 0 },
+        source_id: seededSourceId,
+      })
+      .select("id")
+      .single();
+    seededAssertionId = assertionRow?.id ?? null;
+    if (!seededAssertionId) {
+      throw new Error(
+        "beforeAll: seeding assertions failed — seededAssertionId is null; confidence_scores INSERT tests would produce NOT NULL errors instead of RLS errors",
+      );
     }
   });
 
@@ -310,7 +340,8 @@ describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
           .limit(1);
 
         if (policy.read.allowed) {
-          expect(error, `Expected no error for ${role} SELECT on ${table}`).toBeNull();
+          const hint = policy.read.note ? ` (${policy.read.note})` : "";
+          expect(error, `Expected no error for ${role} SELECT on ${table}${hint}`).toBeNull();
         } else {
           expect(
             isRlsError(error),
