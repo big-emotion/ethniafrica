@@ -13,6 +13,7 @@
 
 import * as fs from "fs";
 import * as path from "path";
+import { pathToFileURL } from "url";
 import { parse } from "csv-parse/sync";
 
 // ─── Exported ValidationResult (FR26-FR31) ───────────────────────────────────
@@ -984,7 +985,9 @@ export async function checkSourceUrls(
   const warnings: string[] = [];
   const urlRegex = /https?:\/\/[^\s"')]+/g;
 
-  // Collect unique URLs from all PPL sources
+  // Collect unique URLs from all PPL sources.
+  // FR30 targets "verified fiches" — the current PPL JSON schema has no `verified` field,
+  // so all fiches are swept. Add a filter here if a `verified` field is introduced.
   const uniqueUrls = new Set<string>();
   for (const { fullPath } of collectPplFiles(datasetRoot)) {
     let data: { content?: { sources?: unknown[] } };
@@ -1209,14 +1212,7 @@ async function main() {
   process.exit(totalErrors > 0 || newCheckFailed ? 1 : 0);
 }
 
-// Only run main when this file is executed directly (not when imported by tests)
-if (typeof require !== "undefined" && require.main === module) {
-  main();
-} else if (
-  typeof process !== "undefined" &&
-  process.argv[1] &&
-  (process.argv[1].endsWith("validateAfrikData.ts") ||
-    process.argv[1].endsWith("validateAfrikData.js"))
-) {
+// ESM-compatible direct invocation guard: true when run via tsx/node, false when imported by tests
+if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
   main();
 }
