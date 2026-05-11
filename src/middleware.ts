@@ -99,6 +99,9 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
+    // Explicitly include all /api/v2/* routes so the rate-limiting gate is
+    // never accidentally excluded by the negative-lookahead pattern below.
+    "/api/v2/(.*)",
     /*
      * Match all request paths except for the ones starting with:
      * - _next/static (static files)

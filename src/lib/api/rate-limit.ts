@@ -117,9 +117,24 @@ export function getRateLimiter(apiKey: string | null): Ratelimit | null {
 /**
  * Apply rate limiting to a request.
  * Returns null if the request is allowed (pass-through), or a NextResponse(429) if limited.
- * Fails open (returns null) if Upstash is unreachable.
+ * Returns a 500 response when required env vars are absent (misconfiguration, not transient failure).
+ * Fails open (returns null) if Upstash is transiently unreachable.
  */
 export async function applyRateLimit(request: NextRequest): Promise<NextResponse | null> {
+  // Guard against misconfiguration before entering the try/catch. A missing env var
+  // is a deployment error — failing open here would silently disable all rate limiting.
+  if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+    logger.error(
+      "Rate limit misconfigured: UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN are required",
+      undefined,
+      { tag: "rate_limit_misconfigured" }
+    );
+    Sentry.captureException(
+      new Error("Rate limit misconfigured: missing Upstash env vars")
+    );
+    return NextResponse.json({ error: "internal_server_error" }, { status: 500 });
+  }
+
   try {
     const { identifier, apiKey } = getRateLimitIdentifier(request);
     const limiter = getRateLimiter(apiKey);

@@ -72,6 +72,8 @@ function restoreConstructorMocks() {
   MockRatelimit.mockImplementation(function () {
     return { limit: mockLimit } as unknown as Ratelimit;
   });
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  vi.mocked(Ratelimit.slidingWindow).mockReturnValue({ type: "sliding" } as any);
 }
 
 describe("getApiKeyTier", () => {
@@ -149,6 +151,14 @@ describe("getRateLimiter", () => {
     const limiter = getRateLimiter(null);
     expect(limiter).not.toBeNull();
   });
+
+  it("initialises all three limiters with correct slidingWindow arguments", () => {
+    getRateLimiter(null); // triggers getLimiters() which calls slidingWindow for all tiers
+    expect(Ratelimit.slidingWindow).toHaveBeenCalledWith(60, "1 m");
+    expect(Ratelimit.slidingWindow).toHaveBeenCalledWith(600, "1 m");
+    expect(Ratelimit.slidingWindow).toHaveBeenCalledWith(6000, "1 m");
+    expect(Ratelimit.slidingWindow).toHaveBeenCalledTimes(3);
+  });
 });
 
 describe("applyRateLimit", () => {
@@ -214,5 +224,29 @@ describe("applyRateLimit", () => {
     const result = await applyRateLimit(req);
     expect(result).toBeNull();
     expect(mockLimit).not.toHaveBeenCalled();
+  });
+
+  it("calls limiter.limit with key: prefix for Bearer token requests", async () => {
+    mockLimit.mockResolvedValue({ success: true, limit: 600, remaining: 599, reset: Date.now() + 60000 });
+    const req = makeRequest({ authHeader: "Bearer public-key" });
+    await applyRateLimit(req);
+    expect(mockLimit).toHaveBeenCalledWith("key:public-key");
+  });
+
+  it("calls limiter.limit with ip: prefix for unauthenticated requests", async () => {
+    mockLimit.mockResolvedValue({ success: true, limit: 60, remaining: 59, reset: Date.now() + 60000 });
+    const req = makeRequest({ ip: "10.0.0.1" });
+    await applyRateLimit(req);
+    expect(mockLimit).toHaveBeenCalledWith("ip:10.0.0.1");
+  });
+
+  it("returns 500 when Upstash env vars are missing", async () => {
+    _resetLimitersForTest();
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
+    const req = makeRequest({ ip: "1.2.3.4" });
+    const result = await applyRateLimit(req);
+    expect(result).not.toBeNull();
+    expect(result!.status).toBe(500);
   });
 });
