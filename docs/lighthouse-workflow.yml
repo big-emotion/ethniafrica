@@ -6,7 +6,7 @@ name: Lighthouse CI — Mobile Performance
 
 on:
   pull_request:
-    branches: [main]
+    branches: [recette, main]
 
 permissions:
   contents: read
