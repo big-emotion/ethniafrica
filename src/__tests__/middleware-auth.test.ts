@@ -19,6 +19,7 @@ const { mockNextResponseNext, mockNextResponseJson, mockResponseHeaders } =
             }),
             get: vi.fn((key: string) => mockResponseHeaders.get(key)),
           },
+          cookies: { set: vi.fn() },
           _requestHeaders: init?.request?.headers,
         };
         return resp;
@@ -39,6 +40,20 @@ vi.mock("next/server", () => ({
     next: mockNextResponseNext,
     json: mockNextResponseJson,
   },
+}));
+
+// Mock @supabase/ssr createServerClient used for admin route protection
+vi.mock("@supabase/ssr", () => ({
+  createServerClient: vi.fn(() => ({
+    auth: {
+      getUser: vi.fn().mockResolvedValue({ data: { user: null }, error: null }),
+    },
+    from: vi.fn().mockReturnValue({
+      select: vi.fn().mockReturnValue({
+        eq: vi.fn().mockResolvedValue({ data: [], error: null }),
+      }),
+    }),
+  })),
 }));
 
 import { validateApiKey } from "@/lib/api/auth";

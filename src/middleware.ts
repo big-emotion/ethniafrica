@@ -1,8 +1,7 @@
-import { createClient } from "@supabase/supabase-js";
+import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { validateApiKey } from "@/lib/api/auth";
-
-type UserRole = "reader" | "contributor" | "moderator" | "admin" | "advisor";
+import type { UserRole } from "@/lib/auth/supabase-auth";
 
 function applySecurityHeaders(response: NextResponse, nonce: string) {
   response.headers.set(
@@ -11,6 +10,7 @@ function applySecurityHeaders(response: NextResponse, nonce: string) {
   );
   response.headers.set("X-Content-Type-Options", "nosniff");
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+
   const csp = [
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}'`,
@@ -23,6 +23,9 @@ function applySecurityHeaders(response: NextResponse, nonce: string) {
 
 export async function middleware(request: NextRequest) {
   const nonce = btoa(crypto.randomUUID());
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-nonce", nonce);
+
   const { pathname } = request.nextUrl;
 
   // --- API v2 authentication ---
@@ -60,41 +63,41 @@ export async function middleware(request: NextRequest) {
   }
 
   // --- Admin route protection ---
+  let supabaseResponse = NextResponse.next({
+    request: { headers: requestHeaders },
+  });
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll();
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) =>
+            request.cookies.set(name, value)
+          );
+          supabaseResponse = NextResponse.next({
+            request: { headers: requestHeaders },
+          });
+          cookiesToSet.forEach(({ name, value, options }) =>
+            supabaseResponse.cookies.set(name, value, options)
+          );
+        },
+      },
+    }
+  );
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
   const isAdminRoute =
     pathname.startsWith("/admin") && pathname !== "/admin/login";
+
   if (isAdminRoute) {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        auth: {
-          autoRefreshToken: false,
-          persistSession: false,
-          detectSessionInUrl: false,
-          storage: {
-            getItem(key: string) {
-              const direct = request.cookies.get(key)?.value;
-              if (direct !== undefined) return direct;
-              // Reassemble chunked cookies used by @supabase/ssr
-              const chunks: string[] = [];
-              for (let i = 0; ; i++) {
-                const chunk = request.cookies.get(`${key}.${i}`)?.value;
-                if (chunk === undefined) break;
-                chunks.push(chunk);
-              }
-              return chunks.length > 0 ? chunks.join("") : null;
-            },
-            setItem() {},
-            removeItem() {},
-          },
-        },
-      }
-    );
-
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
-
     if (!user) {
       const loginUrl = new URL("/admin/login", request.url);
       loginUrl.searchParams.set("redirect", pathname);
@@ -113,29 +116,26 @@ export async function middleware(request: NextRequest) {
     const roles: UserRole[] = roleData.map(
       (record: { role: UserRole }) => record.role
     );
-    if (!roles.includes("admin")) {
+    const isAdmin = roles.includes("admin");
+
+    if (!isAdmin) {
       return NextResponse.redirect(new URL("/forbidden", request.url));
     }
   }
 
-  // --- Standard path: nonce + security headers ---
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-nonce", nonce);
-  const response = NextResponse.next({
-    request: { headers: requestHeaders },
-  });
-  applySecurityHeaders(response, nonce);
-  return response;
+  applySecurityHeaders(supabaseResponse, nonce);
+  return supabaseResponse;
 }
 
 export const config = {
   matcher: [
     /*
-     * Match all request paths except:
+     * Match all request paths except for the ones starting with:
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
+     * - public files (public folder)
      */
-    "/((?!_next/static|_next/image|favicon\\.ico).*)",
+    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
   ],
 };
