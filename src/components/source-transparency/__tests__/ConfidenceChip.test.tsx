@@ -4,10 +4,10 @@ import { ConfidenceChip } from "../ConfidenceChip";
 
 describe("ConfidenceChip", () => {
   beforeEach(() => {
-    // Clear sessionStorage between tests so the one-shot pulse logic is consistent.
     if (typeof sessionStorage !== "undefined") {
       sessionStorage.clear();
     }
+    document.getElementById("afh-chip-keyframes")?.remove();
   });
 
   describe("rendering with complete data", () => {
@@ -20,7 +20,6 @@ describe("ConfidenceChip", () => {
         />
       );
 
-      // Visible pill text — should contain the canonical separator and the ISO short date.
       expect(
         screen.getByText(/87\s*%\s*·\s*4\s*sources\s*·\s*vérifié\s*2025-09-21/i)
       ).toBeInTheDocument();
@@ -35,9 +34,7 @@ describe("ConfidenceChip", () => {
         />
       );
 
-      // No <svg> icons in the chip.
       expect(container.querySelector("svg")).toBeNull();
-      // No image either.
       expect(container.querySelector("img")).toBeNull();
     });
   });
@@ -53,16 +50,28 @@ describe("ConfidenceChip", () => {
       );
 
       const button = screen.getByRole("button");
-      // Long FR date for 2025-09-21 is "21 septembre 2025".
       expect(button).toHaveAttribute(
         "aria-label",
         "ouvrir la chaîne de sources pour cette assertion (confiance 87 %, 4 sources, vérifiée le 21 septembre 2025)"
       );
     });
+
+    it("renders the long French date in a TZ-stable way (no off-by-one)", () => {
+      render(
+        <ConfidenceChip
+          confidenceScore={87}
+          sourceCount={4}
+          lastHumanAuditAt="2025-09-21"
+        />
+      );
+
+      const button = screen.getByRole("button");
+      expect(button.getAttribute("aria-label")).toMatch(/21 septembre 2025/);
+    });
   });
 
   describe("keyboard interaction", () => {
-    it("invokes onOpen when Enter is pressed", () => {
+    it("invokes onOpen exactly once when activated (native click fired by Enter/Space)", () => {
       const onOpen = vi.fn();
       render(
         <ConfidenceChip
@@ -75,7 +84,9 @@ describe("ConfidenceChip", () => {
 
       const button = screen.getByRole("button");
       button.focus();
+      // Simulate the browser's native activation: keydown then click (no double-fire).
       fireEvent.keyDown(button, { key: "Enter" });
+      fireEvent.click(button);
 
       expect(onOpen).toHaveBeenCalledTimes(1);
     });
@@ -107,7 +118,6 @@ describe("ConfidenceChip", () => {
         />
       );
 
-      // No inline style or class should mention 'red' / 'destructive' / 'alarm'.
       const html = container.innerHTML.toLowerCase();
       expect(html).not.toMatch(/\bred\b/);
       expect(html).not.toMatch(/destructive/);
@@ -140,7 +150,6 @@ describe("ConfidenceChip", () => {
         />
       );
 
-      // It should be a link (anchor), not a chip button.
       expect(screen.queryByRole("button")).toBeNull();
       expect(screen.getByText(/voir les sources/i)).toBeInTheDocument();
     });
@@ -170,8 +179,8 @@ describe("ConfidenceChip", () => {
     });
   });
 
-  describe("tap target", () => {
-    it("wrapper has padding so the tap target is comfortable (>=44px via padding utility)", () => {
+  describe("tap target (WCAG 2.5.5 / 2.5.8)", () => {
+    it("button carries 44x44 min sizing utilities directly", () => {
       render(
         <ConfidenceChip
           confidenceScore={87}
@@ -180,12 +189,82 @@ describe("ConfidenceChip", () => {
         />
       );
 
-      // The button (the actual tappable element) must carry inline-min sizing/padding
-      // to guarantee a 44x44 tap target even when the visual pill is small.
       const button = screen.getByRole("button");
-      // We assert the class list mentions tap-padding utilities; we don't measure pixels in happy-dom.
       const classes = button.className;
-      expect(classes).toMatch(/min-h|min-w|p-/);
+      expect(classes).toContain("min-h-[44px]");
+      expect(classes).toContain("min-w-[44px]");
+    });
+  });
+
+  describe("per-chip session pulse", () => {
+    it("records the chip id in sessionStorage on first render", () => {
+      render(
+        <ConfidenceChip
+          id="chip-a"
+          confidenceScore={87}
+          sourceCount={4}
+          lastHumanAuditAt="2025-09-21"
+        />
+      );
+
+      const raw = sessionStorage.getItem("afh-chip-pulsed-ids");
+      expect(raw).not.toBeNull();
+      expect(JSON.parse(raw!)).toContain("chip-a");
+    });
+
+    it("tracks distinct ids independently — each new chip id is added to the set", () => {
+      const { rerender } = render(
+        <ConfidenceChip
+          id="chip-a"
+          confidenceScore={87}
+          sourceCount={4}
+          lastHumanAuditAt="2025-09-21"
+        />
+      );
+      rerender(
+        <ConfidenceChip
+          id="chip-b"
+          confidenceScore={87}
+          sourceCount={4}
+          lastHumanAuditAt="2025-09-21"
+        />
+      );
+
+      const raw = sessionStorage.getItem("afh-chip-pulsed-ids");
+      expect(raw).not.toBeNull();
+      const ids = JSON.parse(raw!);
+      expect(ids).toContain("chip-a");
+      expect(ids).toContain("chip-b");
+    });
+  });
+
+  describe("keyframes injection", () => {
+    it("injects the keyframes <style> only once even with multiple chips", () => {
+      render(
+        <>
+          <ConfidenceChip
+            id="chip-1"
+            confidenceScore={87}
+            sourceCount={4}
+            lastHumanAuditAt="2025-09-21"
+          />
+          <ConfidenceChip
+            id="chip-2"
+            confidenceScore={87}
+            sourceCount={4}
+            lastHumanAuditAt="2025-09-21"
+          />
+          <ConfidenceChip
+            id="chip-3"
+            confidenceScore={87}
+            sourceCount={4}
+            lastHumanAuditAt="2025-09-21"
+          />
+        </>
+      );
+
+      const styles = document.querySelectorAll("style#afh-chip-keyframes");
+      expect(styles.length).toBe(1);
     });
   });
 });
