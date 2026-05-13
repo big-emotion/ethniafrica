@@ -100,32 +100,14 @@ Before presenting the output:
 - IDs: no immutable ID was modified.
 - Plain text: no markdown leaked into fiche prose.
 
-Then emit the proposal in this shape:
+Then emit the proposal using these sections, in order:
 
-````
-## Target
-<ID> — <human name>
-
-## Action
-<enrich|critique|compare|synthesize|audit>
-
-## Findings / Proposed changes
-<numbered list with diff>
-
-## Updated JSON (full fiche, strict model)
-```json
-{ ... }
-````
-
-## Sources cited
-
-<numbered list, each line: Title – Author, Year (URL, access date)>
-
-## Open questions / data still missing
-
-<bullet list — be explicit about what could not be sourced>
-
-```
+- Heading `## Target` — `<ID> — <human name>`
+- Heading `## Action` — one of: enrich, critique, compare, synthesize, audit
+- Heading `## Findings / Proposed changes` — numbered list with diff
+- Heading `## Updated JSON (full fiche, strict model)` — a fenced ` ```json ` block containing the full fiche
+- Heading `## Sources cited` — numbered list, each line `Title – Author, Year (URL, access date)`
+- Heading `## Open questions / data still missing` — bullet list, explicit about what could not be sourced
 
 The JSON block is the patch-ready artifact. The human applies it manually to the source `.json` (and then runs `tsx scripts/migrateAfrikToDatabase.ts` to sync DB).
 
@@ -152,4 +134,7 @@ Load these on demand:
 ## Scripts
 
 - `scripts/transcribe.sh <audio_or_video>` — auto-detects whisper.cpp / openai-whisper / OpenAI API and transcribes
+
+```
+
 ```
