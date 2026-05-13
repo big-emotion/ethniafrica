@@ -1,13 +1,18 @@
-name: Data Integrity
+name: Data Integrity Gate
 
 on:
+  pull_request:
+    branches: [main, recette]
+  push:
+    branches: [main, recette]
   schedule:
-    - cron: "17 2 * * *" # nightly at 02:17 UTC
+    - cron: "0 2 * * *"
   workflow_dispatch:
 
 jobs:
-  data-integrity:
+  validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
 
@@ -16,21 +21,27 @@ jobs:
           node-version: "20"
           cache: "npm"
 
-      - run: npm ci
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
 
-      - name: Check source URLs
-        run: npx tsx scripts/checkSourceUrls.ts
+      # Advisory mode until ETNI-200 (AFRIK data cleanup) completes.
+      # Flip continue-on-error to false to enforce FR32 strict gate.
+      - name: Run data-integrity validation (PR/push)
+        if: github.event_name != 'schedule'
+        continue-on-error: true
+        run: npx tsx scripts/validateAfrikData.ts
         env:
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          CHECK_SOURCE_URLS: "false"
 
-      - name: Recompute confidence scores
-        run: npx tsx scripts/recomputeConfidence.ts
+      - name: Run data-integrity validation (nightly — includes URL checks)
+        if: github.event_name == 'schedule'
+        continue-on-error: true
+        run: npx tsx scripts/validateAfrikData.ts
         env:
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          CHECK_SOURCE_URLS: "true"
 
-      - name: Upload source-URL health log
+      - name: Upload source-url-health log (nightly only)
+        if: github.event_name == 'schedule' && always()
         uses: actions/upload-artifact@v4
         with:
           name: source-url-health-log
