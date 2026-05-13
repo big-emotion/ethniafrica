@@ -94,6 +94,13 @@ ALTER TABLE IF EXISTS assertions
   ADD COLUMN IF NOT EXISTS superseded_by     UUID REFERENCES assertions(id) ON DELETE SET NULL;
 
 -- 2c. Backfill `statement` from the legacy JSONB `value` column.
+--      NOTE (lossy fallback): when `jsonb_typeof(value)` is a string we unwrap
+--      it via `#>> '{}'`, producing clean prose. For any other JSONB type
+--      (object, array, number, boolean, null) we fall back to `value::text`,
+--      which writes the *raw JSON representation* (e.g. `{"v":1}`, `[1,2]`)
+--      directly into `statement`. This is intentional for a one-shot backfill
+--      so no data is silently dropped, but downstream readers should NOT
+--      mistake those rows for authored prose. ETNI-22 is the canonical record.
 DO $$
 BEGIN
   IF EXISTS (
@@ -263,14 +270,38 @@ BEGIN
 END $$;
 
 -- 3d. Collapse any duplicates on (entity_type, entity_id) before adding the
---      unique constraint. Keep the highest score per entity (idempotent on
---      already-unique data).
-DELETE FROM confidence_scores cs
-USING confidence_scores cs2
-WHERE cs.entity_type IS NOT NULL
-  AND cs.entity_type = cs2.entity_type
-  AND cs.entity_id   = cs2.entity_id
-  AND cs.ctid < cs2.ctid;
+--      unique constraint. Keep the highest score per entity (NULLs sort last),
+--      breaking ties by physical position (ctid) for determinism.
+--
+--      Idempotency: this block only runs while the legacy `assertion_id`
+--      column still exists, i.e. on the very first apply of this migration.
+--      Once 3e drops `assertion_id`, subsequent re-runs short-circuit and
+--      avoid the full self-join scan on a clean post-migration database.
+DO $$
+BEGIN
+  IF EXISTS (
+    SELECT 1 FROM information_schema.columns
+    WHERE table_name = 'confidence_scores' AND column_name = 'assertion_id'
+  ) THEN
+    EXECUTE $sql$
+      DELETE FROM confidence_scores cs
+      USING (
+        SELECT DISTINCT ON (entity_type, entity_id) ctid
+        FROM confidence_scores
+        WHERE entity_type IS NOT NULL
+        ORDER BY entity_type, entity_id, score DESC NULLS LAST, ctid
+      ) keep
+      WHERE cs.entity_type IS NOT NULL
+        AND cs.ctid <> keep.ctid
+        AND EXISTS (
+          SELECT 1 FROM confidence_scores cs2
+          WHERE cs2.entity_type = cs.entity_type
+            AND cs2.entity_id   = cs.entity_id
+            AND cs2.ctid <> cs.ctid
+        )
+    $sql$;
+  END IF;
+END $$;
 
 -- 3e. Drop legacy columns (in order: drop FK/index dependents first).
 ALTER TABLE IF EXISTS confidence_scores DROP COLUMN IF EXISTS assertion_id;
@@ -335,8 +366,27 @@ BEGIN
 END $$;
 
 -- The original UNIQUE(key) constraint travels with the column under its old
--- name; drop it so the (slug, version) composite unique below is canonical.
-ALTER TABLE editorial_doctrine DROP CONSTRAINT IF EXISTS editorial_doctrine_key_key;
+-- name; drop *any* single-column UNIQUE on `key`/`slug` so the (slug, version)
+-- composite unique below is canonical. We scan pg_constraint dynamically
+-- rather than hard-coding `editorial_doctrine_key_key`, since the constraint
+-- name depends on PG's auto-naming and may differ across environments.
+DO $$
+DECLARE
+  con record;
+BEGIN
+  FOR con IN
+    SELECT c.conname
+    FROM pg_constraint c
+    JOIN pg_class      t ON t.oid = c.conrelid
+    JOIN pg_attribute  a ON a.attrelid = t.oid AND a.attnum = ANY (c.conkey)
+    WHERE t.relname = 'editorial_doctrine'
+      AND c.contype = 'u'
+      AND cardinality(c.conkey) = 1
+      AND a.attname IN ('key', 'slug')
+  LOOP
+    EXECUTE format('ALTER TABLE editorial_doctrine DROP CONSTRAINT %I', con.conname);
+  END LOOP;
+END $$;
 
 -- 4c. Rename `content` → `mdx_source` (preserves data).
 DO $$
