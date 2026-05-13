@@ -15,8 +15,12 @@ export type ApiKeyTier = "public" | "partner" | "admin";
  * - All other authenticated keys are "public" tier
  */
 export function getApiKeyTier(apiKey: string): ApiKeyTier {
-  const adminKeys = (process.env.RATE_LIMIT_ADMIN_KEYS ?? "").split(",").filter(Boolean);
-  const partnerKeys = (process.env.RATE_LIMIT_PARTNER_KEYS ?? "").split(",").filter(Boolean);
+  const adminKeys = (process.env.RATE_LIMIT_ADMIN_KEYS ?? "")
+    .split(",")
+    .filter(Boolean);
+  const partnerKeys = (process.env.RATE_LIMIT_PARTNER_KEYS ?? "")
+    .split(",")
+    .filter(Boolean);
   if (adminKeys.includes(apiKey)) return "admin";
   if (partnerKeys.includes(apiKey)) return "partner";
   return "public";
@@ -120,10 +124,22 @@ export function getRateLimiter(apiKey: string | null): Ratelimit | null {
  * Returns a 500 response when required env vars are absent (misconfiguration, not transient failure).
  * Fails open (returns null) if Upstash is transiently unreachable.
  */
-export async function applyRateLimit(request: NextRequest): Promise<NextResponse | null> {
+export async function applyRateLimit(
+  request: NextRequest
+): Promise<NextResponse | null> {
   // Guard against misconfiguration before entering the try/catch. A missing env var
   // is a deployment error — failing open here would silently disable all rate limiting.
-  if (!process.env.UPSTASH_REDIS_REST_URL || !process.env.UPSTASH_REDIS_REST_TOKEN) {
+  if (
+    !process.env.UPSTASH_REDIS_REST_URL ||
+    !process.env.UPSTASH_REDIS_REST_TOKEN
+  ) {
+    if (process.env.NODE_ENV !== "production") {
+      logger.warn(
+        "Rate limit disabled: UPSTASH env vars missing (non-production fail-open)",
+        { tag: "rate_limit_dev_skip" }
+      );
+      return null;
+    }
     logger.error(
       "Rate limit misconfigured: UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN are required",
       undefined,
@@ -132,7 +148,10 @@ export async function applyRateLimit(request: NextRequest): Promise<NextResponse
     Sentry.captureException(
       new Error("Rate limit misconfigured: missing Upstash env vars")
     );
-    return NextResponse.json({ error: "internal_server_error" }, { status: 500 });
+    return NextResponse.json(
+      { error: "internal_server_error" },
+      { status: 500 }
+    );
   }
 
   try {
@@ -160,7 +179,9 @@ export async function applyRateLimit(request: NextRequest): Promise<NextResponse
 
     return response;
   } catch (error) {
-    logger.error("Rate limit check failed", error, { tag: "rate_limit_unavailable" });
+    logger.error("Rate limit check failed", error, {
+      tag: "rate_limit_unavailable",
+    });
     Sentry.captureException(error);
     // Fail open
     return null;
