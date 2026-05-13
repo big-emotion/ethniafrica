@@ -42,8 +42,21 @@ const options: swaggerJsdoc.Options = {
         name: "API v2 - Language Families",
         description: "Opérations sur les familles linguistiques (API v2)",
       },
+      {
+        name: "API v2 - Keys",
+        description: "API key management (issuance)",
+      },
     ],
     components: {
+      securitySchemes: {
+        BearerAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "API Key",
+          description:
+            "API key issued via /api/v2/keys/issue (public tier) or the admin UI (partner/admin tiers). Pass as Authorization: Bearer <key>.",
+        },
+      },
       schemas: {
         PaginationMeta: {
           type: "object",
@@ -192,6 +205,7 @@ const options: swaggerJsdoc.Options = {
         },
       },
     },
+    security: [{ BearerAuth: [] }],
   },
   apis: ["./src/app/api/v2/**/*.ts"],
 };

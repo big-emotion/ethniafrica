@@ -101,7 +101,7 @@ Strict models in `public/modele-*.txt` are prescriptive — never skip, rename, 
 ## 6. Security
 
 - Admin routes protected by `src/middleware.ts` (session cookie check) — login at `/admin/login`, POST to `/api/admin/login`, logout at `/api/admin/logout`. Contribution moderation at `/admin/contributions`.
-- Secrets via env: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`.
+- Secrets via env: `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`. Admin authentication uses Supabase Auth with OAuth (GitHub, Google) and magic-link.
 - Never commit `.env*`. Never import `admin.ts` from client code.
 
 ## 7. Build & Deployment
