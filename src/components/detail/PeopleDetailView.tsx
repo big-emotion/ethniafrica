@@ -23,6 +23,8 @@ import {
 import type { PeopleDetail, CountryDistribution } from "@/types/afrik-frontend";
 import { getPeople } from "@/lib/afrikLoader";
 import { DemographicsChart } from "@/components/charts/DemographicsChart";
+import { hasActiveSourceFlag } from "@/lib/flags-client";
+import { SourceVerifyBadge } from "@/components/ui/source-verify-badge";
 
 interface PeopleDetailViewProps {
   peopleId: string;
@@ -49,6 +51,7 @@ export const PeopleDetailView = ({
   const [people, setPeople] = useState<PeopleDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [sourceFlag, setSourceFlag] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -79,15 +82,20 @@ export const PeopleDetailView = ({
 
     loadPeople();
 
+    // Story 0.20 (FR31): check whether an auto unreachable_source flag is
+    // currently open for this fiche so we can show a "source à vérifier"
+    // badge in the Sources tab. Failure is silent (badge hidden).
+    hasActiveSourceFlag("people", peopleId).then((flag) => {
+      if (!cancelled) setSourceFlag(flag);
+    });
+
     return () => {
       cancelled = true;
     };
   }, [peopleId, language]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat("fr-FR").format(
-      Math.round(num)
-    );
+    return new Intl.NumberFormat("fr-FR").format(Math.round(num));
   };
 
   const getTabLabels = () => {
@@ -174,8 +182,7 @@ export const PeopleDetailView = ({
             {people.currentCountries && people.currentCountries.length > 0 && (
               <Badge variant="outline" className="gap-1">
                 <MapPin className="h-3 w-3" />
-                {people.currentCountries.length}{" "}
-                {"pays"}
+                {people.currentCountries.length} {"pays"}
               </Badge>
             )}
           </div>
@@ -554,8 +561,7 @@ export const PeopleDetailView = ({
                     {people.culture.divinitiesAndSpirits && (
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
-                          A.{" "}
-                          {"Divinités et esprits"}
+                          A. {"Divinités et esprits"}
                         </h4>
                         {people.culture.divinitiesAndSpirits.supremeDeity && (
                           <div className="ml-4">
@@ -571,9 +577,7 @@ export const PeopleDetailView = ({
                         )}
                         {people.culture.divinitiesAndSpirits.ancestors && (
                           <div className="ml-4">
-                            <span className="font-medium">
-                              {"Ancêtres :"}
-                            </span>{" "}
+                            <span className="font-medium">{"Ancêtres :"}</span>{" "}
                             {people.culture.divinitiesAndSpirits.ancestors
                               .roleOfAncestors || "—"}
                           </div>
@@ -595,8 +599,7 @@ export const PeopleDetailView = ({
                             {people.culture.cosmology.worldStructure
                               .upperWorld && (
                               <p className="text-sm">
-                                •{" "}
-                                {"Monde supérieur :"}{" "}
+                                • {"Monde supérieur :"}{" "}
                                 {
                                   people.culture.cosmology.worldStructure
                                     .upperWorld
@@ -606,8 +609,7 @@ export const PeopleDetailView = ({
                             {people.culture.cosmology.worldStructure
                               .terrestrialWorld && (
                               <p className="text-sm">
-                                •{" "}
-                                {"Monde terrestre :"}{" "}
+                                • {"Monde terrestre :"}{" "}
                                 {
                                   people.culture.cosmology.worldStructure
                                     .terrestrialWorld
@@ -617,8 +619,7 @@ export const PeopleDetailView = ({
                             {people.culture.cosmology.worldStructure
                               .underworld && (
                               <p className="text-sm">
-                                •{" "}
-                                {"Monde souterrain :"}{" "}
+                                • {"Monde souterrain :"}{" "}
                                 {
                                   people.culture.cosmology.worldStructure
                                     .underworld
@@ -634,8 +635,7 @@ export const PeopleDetailView = ({
                     {people.culture.personAndNature && (
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
-                          C.{" "}
-                          {"Personne et nature"}
+                          C. {"Personne et nature"}
                         </h4>
                         {people.culture.personAndNature.totemicAnimals &&
                           people.culture.personAndNature.totemicAnimals.length >
@@ -684,8 +684,7 @@ export const PeopleDetailView = ({
                     {people.culture.ritesAndPractices && (
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
-                          D.{" "}
-                          {"Rites et pratiques"}
+                          D. {"Rites et pratiques"}
                         </h4>
                         {people.culture.ritesAndPractices.initiationRites && (
                           <div className="ml-4">
@@ -715,16 +714,14 @@ export const PeopleDetailView = ({
                     {people.culture.symbolsAndArts && (
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
-                          E.{" "}
-                          {"Arts et culture matérielle"}
+                          E. {"Arts et culture matérielle"}
                         </h4>
                         {people.culture.symbolsAndArts.artsAndMusic && (
                           <div className="ml-4 space-y-1">
                             {people.culture.symbolsAndArts.artsAndMusic
                               .musicalInstruments && (
                               <p className="text-sm">
-                                •{" "}
-                                {"Instruments :"}{" "}
+                                • {"Instruments :"}{" "}
                                 {
                                   people.culture.symbolsAndArts.artsAndMusic
                                     .musicalInstruments
@@ -779,8 +776,7 @@ export const PeopleDetailView = ({
                     {people.culture.contemporarySpirituality && (
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
-                          F.{" "}
-                          {"Spiritualités contemporaines"}
+                          F. {"Spiritualités contemporaines"}
                         </h4>
                         {people.culture.contemporarySpirituality
                           .christianity && (
@@ -992,14 +988,19 @@ export const PeopleDetailView = ({
                 <CardTitle className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5" />
                   {"Sources"}
+                  {sourceFlag && <SourceVerifyBadge />}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 {people.sources && people.sources.length > 0 ? (
                   <ul className="list-disc list-inside space-y-1">
                     {people.sources.map((source, idx) => (
-                      <li key={idx} className="text-sm">
-                        {source}
+                      <li
+                        key={idx}
+                        className="text-sm flex items-center gap-2 flex-wrap"
+                      >
+                        <span>{source}</span>
+                        {sourceFlag && <SourceVerifyBadge />}
                       </li>
                     ))}
                   </ul>

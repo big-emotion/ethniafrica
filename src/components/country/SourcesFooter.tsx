@@ -1,8 +1,12 @@
+import { SourceVerifyBadge } from "@/components/ui/source-verify-badge";
+
 interface SourcesFooterProps {
   sources: string; // Already joined by " · "
+  /** Story 0.20 (FR31): show a "source à vérifier" badge when truthy. */
+  hasSourceFlag?: boolean;
 }
 
-export function SourcesFooter({ sources }: SourcesFooterProps) {
+export function SourcesFooter({ sources, hasSourceFlag }: SourcesFooterProps) {
   if (!sources) return null;
 
   return (
@@ -14,13 +18,14 @@ export function SourcesFooter({ sources }: SourcesFooterProps) {
       }}
     >
       <p
-        className="text-[10px] font-extrabold uppercase mb-[6px]"
+        className="text-[10px] font-extrabold uppercase mb-[6px] flex items-center gap-2 flex-wrap"
         style={{
           letterSpacing: "0.12em",
           color: "var(--country-earth)",
         }}
       >
-        Sources &amp; Références
+        <span>Sources &amp; Références</span>
+        {hasSourceFlag && <SourceVerifyBadge />}
       </p>
       <p>{sources}</p>
     </div>

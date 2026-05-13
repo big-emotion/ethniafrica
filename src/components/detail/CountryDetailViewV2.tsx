@@ -7,6 +7,7 @@ import { AlertTriangle } from "lucide-react";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import { getCountry } from "@/lib/afrikLoader";
 import { transformCountryData } from "@/lib/countryDataTransformer";
+import { hasActiveSourceFlag } from "@/lib/flags-client";
 import {
   CountryHero,
   EtymologyBlock,
@@ -35,6 +36,7 @@ export const CountryDetailViewV2 = ({
   const [country, setCountry] = useState<CountryDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [sourceFlag, setSourceFlag] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -64,6 +66,11 @@ export const CountryDetailViewV2 = ({
     };
 
     loadCountry();
+
+    // Story 0.20 (FR31): "source à vérifier" badge si flag actif.
+    hasActiveSourceFlag("country", countryId).then((flag) => {
+      if (!cancelled) setSourceFlag(flag);
+    });
 
     return () => {
       cancelled = true;
@@ -338,7 +345,7 @@ export const CountryDetailViewV2 = ({
       {/* 8. Sources Footer (outside content padding) */}
       {data.sources && (
         <div className="px-3 md:px-4 xl:px-5 mt-[10px] md:mt-[14px] xl:mt-4">
-          <SourcesFooter sources={data.sources} />
+          <SourcesFooter sources={data.sources} hasSourceFlag={sourceFlag} />
         </div>
       )}
     </div>

@@ -1,0 +1,38 @@
+name: Data Integrity
+
+on:
+  schedule:
+    - cron: "17 2 * * *" # nightly at 02:17 UTC
+  workflow_dispatch:
+
+jobs:
+  data-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - run: npm ci
+
+      - name: Check source URLs
+        run: npx tsx scripts/checkSourceUrls.ts
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+      - name: Recompute confidence scores
+        run: npx tsx scripts/recomputeConfidence.ts
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+      - name: Upload source-URL health log
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-url-health-log
+          path: dataset/source-url-health.log
+          if-no-files-found: ignore
