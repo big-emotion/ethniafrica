@@ -3,8 +3,16 @@ name: Editorial Rules Gate
 on:
   pull_request:
     branches: [main, recette]
+    paths:
+      - "dataset/source/afrik/**"
+      - "scripts/ci/checkEditorialRules.ts"
+      - ".github/workflows/editorial-rules.yml"
   push:
     branches: [main, recette]
+    paths:
+      - "dataset/source/afrik/**"
+      - "scripts/ci/checkEditorialRules.ts"
+      - ".github/workflows/editorial-rules.yml"
   workflow_dispatch:
 
 jobs:

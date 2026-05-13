@@ -6,10 +6,12 @@ import {
   checkAutonym,
   checkSourcesCount,
   checkDoctrineLinkCardSnapshot,
+  escapeWorkflowCommand,
   extractAutonym,
   extractConfidence,
   extractClassificationStatus,
   extractSources,
+  formatAnnotation,
   runEditorialRules,
   type Fiche,
   type RuleResult,
@@ -382,6 +384,73 @@ describe("runEditorialRules — end-to-end", () => {
       r.findings.some((f) => f.rule === "json-parse" && f.severity === "error")
     ).toBe(true);
     expect(r.exitCode).toBe(1);
+  });
+});
+
+describe("escapeWorkflowCommand", () => {
+  it("escapes % first to avoid double-escaping later substitutions", () => {
+    expect(escapeWorkflowCommand("100%")).toBe("100%25");
+  });
+
+  it("escapes carriage return and newline", () => {
+    expect(escapeWorkflowCommand("a\r\nb")).toBe("a%0D%0Ab");
+  });
+
+  it("escapes colon and comma", () => {
+    expect(escapeWorkflowCommand("a,b:c")).toBe("a%2Cb%3Ac");
+  });
+
+  it("escapes all special chars together with correct ordering", () => {
+    // % must be escaped first; a literal `%0A` in the input becomes `%250A`,
+    // not a real newline.
+    expect(escapeWorkflowCommand("%0A\n,:")).toBe("%250A%0A%2C%3A");
+  });
+});
+
+describe("formatAnnotation — workflow-command safety", () => {
+  it("escapes commas and colons in the title", () => {
+    const r: RuleResult = {
+      rule: "autonym-required",
+      severity: "error",
+      file: "dataset/source/afrik/peuples/FLG_BANTU/PPL_X.json",
+      slug: "PPL_X,evil::injection",
+      message: "boom",
+    };
+    const line = formatAnnotation(r);
+    // The raw `,` and `::` must not appear inside the title segment — they
+    // would otherwise let a crafted slug forge a fake annotation field.
+    expect(line).toContain(
+      "title=autonym-required%3A%3APPL_X%2Cevil%3A%3Ainjection"
+    );
+    expect(line).not.toContain("title=autonym-required::PPL_X,");
+  });
+
+  it("escapes newlines and percent signs in the message", () => {
+    const r: RuleResult = {
+      rule: "sources-count",
+      severity: "warning",
+      file: "x.json",
+      slug: "PPL_Y",
+      message: "line1\nline2 100%",
+    };
+    const line = formatAnnotation(r);
+    expect(line).toContain("%0A");
+    expect(line).toContain("100%25");
+    expect(line).not.toMatch(/\n/);
+  });
+
+  it("preserves file path with forward slashes and does not escape it", () => {
+    const r: RuleResult = {
+      rule: "autonym-required",
+      severity: "error",
+      file: "dataset/source/afrik/peuples/FLG_BANTU/PPL_X.json",
+      slug: "PPL_X",
+      message: "msg",
+    };
+    const line = formatAnnotation(r);
+    expect(line).toContain(
+      "file=dataset/source/afrik/peuples/FLG_BANTU/PPL_X.json"
+    );
   });
 });
 

@@ -310,6 +310,20 @@ function loadFiche(fullPath: string, repoRoot: string): LoadedFiche {
 
 // ───── PR-annotation emitter ──────────────────────────────────────────────
 
+/**
+ * Escape characters that have special meaning in GitHub Actions workflow
+ * commands. The `%` substitution MUST run first to avoid double-escaping.
+ * See https://docs.github.com/actions/reference/workflow-commands-for-github-actions
+ */
+export function escapeWorkflowCommand(s: string): string {
+  return s
+    .replace(/%/g, "%25")
+    .replace(/\r/g, "%0D")
+    .replace(/\n/g, "%0A")
+    .replace(/:/g, "%3A")
+    .replace(/,/g, "%2C");
+}
+
 export function formatAnnotation(r: RuleResult): string {
   const tag =
     r.severity === "error"
@@ -319,7 +333,9 @@ export function formatAnnotation(r: RuleResult): string {
         : "::notice";
   // Posix-style separator for GitHub Actions annotations.
   const file = r.file.split(path.sep).join("/");
-  return `${tag} file=${file},title=${r.rule}::${r.slug} — ${r.message}`;
+  const title = escapeWorkflowCommand(`${r.rule}::${r.slug}`);
+  const message = escapeWorkflowCommand(`${r.slug} — ${r.message}`);
+  return `${tag} file=${file},title=${title}::${message}`;
 }
 
 // ───── Runner ─────────────────────────────────────────────────────────────
@@ -403,6 +419,11 @@ async function main(): Promise<void> {
     process.stdout.write(line + "\n");
   }
   process.stderr.write(summarize(result.findings) + "\n");
+  // Ensure stdout is flushed before exit; process.exit() can otherwise drop
+  // buffered annotation lines and break GitHub Actions parsing.
+  await new Promise<void>((resolve) =>
+    process.stdout.write("", () => resolve())
+  );
   process.exit(result.exitCode);
 }
 
