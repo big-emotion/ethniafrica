@@ -41,7 +41,10 @@ build
 *.tsbuildinfo.*
 
 # Claude Code
-.claude/
+.claude/*
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/afrik-curator/
 .entire/
 
 # Editor directories and files

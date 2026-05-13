@@ -74,17 +74,15 @@ Shared utilities: `src/api/v2/utils/validation.ts` (param validation), `src/api/
 
 ### AFRIK Data Pipeline
 
-Source `.txt` files are parsed and loaded into Supabase:
+Source `.json` files (AFRIK JSON v2 format) are loaded into Supabase:
 
 ```
-dataset/source/afrik/                          → Raw .txt files (strict model format)
-  ├── famille_linguistique/FLG_*.txt
-  ├── peuples/FLG_*/PPL_*.txt
-  └── pays/*.txt
-      ↓ parsed by
-src/lib/afrik/parsers/{entity}Parser.ts        → Parse .txt to structured data
+dataset/source/afrik/                          → Raw .json files (strict model format)
+  ├── famille_linguistique/FLG_*.json
+  ├── peuples/FLG_*/PPL_*.json
+  └── pays/*.json
       ↓ loaded by
-src/lib/afrik/loaders/{entity}Loader.ts        → Load into Supabase
+src/lib/afrik/loaders/{entity}JsonLoader.ts    → Load into Supabase
       ↓ stored in
 Supabase tables: afrik_familles_linguistiques, afrik_langues, afrik_peuples, afrik_pays
 ```
@@ -127,11 +125,11 @@ Schema: `supabase/migrations/006_afrik_schema.sql`
 
 ### Working with AFRIK Data
 
-1. **Always use strict models** from `public/modele-*.txt` — never skip, rename, or add sections
+1. **Always use strict models** from `public/modele-*.json` — never skip, rename, or add sections
 2. **Never invent data** — use authorized sources only (UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA)
 3. **Demographics**: 2025 reference year, populations must sum to exactly 100% per country
 4. **Colonial terms**: Keep but explain why problematic; provide auto-appellations (endonyms)
-5. **Consistency**: TXT demographics must match database records
+5. **Consistency**: Source JSON demographics must match database records
 
 ### Adding API Routes
 
