@@ -198,14 +198,18 @@ const POLICY_MATRIX: PolicyMatrix = {
 // ---------------------------------------------------------------------------
 
 const INSERT_PAYLOADS: Record<string, Record<string, unknown>> = {
-  sources: { title: "RLS test source", type: "test" },
+  sources: { title: "RLS test source", tier: "primary" },
   assertions: {
     entity_type: "test",
     entity_id: "rls-test",
     field_path: "test.field",
-    value: { v: 1 },
+    statement: "RLS test assertion",
   },
-  confidence_scores: { score: 0.9, methodology: "rls-test" },
+  confidence_scores: {
+    entity_type: "test",
+    entity_id: "rls-test",
+    score: 0.9,
+  },
   flags: {
     entity_type: "test",
     entity_id: "rls-test",
@@ -213,9 +217,9 @@ const INSERT_PAYLOADS: Record<string, Record<string, unknown>> = {
   },
   revisions: { entity_type: "test", entity_id: "rls-test" },
   editorial_doctrine: {
-    key: `rls-write-test-${Date.now()}`,
+    slug: `rls-write-test-${Date.now()}`,
     title: "RLS write test",
-    content: "test",
+    mdx_source: "test",
   },
   audit_log: { action: "rls-test-write" },
   user_roles: { role: "reader" },
@@ -272,7 +276,7 @@ describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
     // Seed a source row
     const { data: sourceRow } = await svc
       .from("sources")
-      .insert({ title: "RLS seed source", type: "seed" })
+      .insert({ title: "RLS seed source", tier: "primary" })
       .select("id")
       .single();
     seededSourceId = sourceRow?.id ?? null;
@@ -282,22 +286,25 @@ describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
       );
     }
 
-    // Seed an assertion row (needed for confidence_scores FK)
+    // Seed an assertion row. After migration 014 the confidence_scores table
+    // is entity-scoped (no FK on assertion_id), so this row is no longer a
+    // strict prerequisite — we keep it to exercise assertion INSERT/SELECT
+    // shape and to back fill `source_ids` against the seeded source.
     const { data: assertionRow } = await svc
       .from("assertions")
       .insert({
         entity_type: "seed",
         entity_id: "seed",
         field_path: "seed",
-        value: { v: 0 },
-        source_id: seededSourceId,
+        statement: "seed assertion",
+        source_ids: [seededSourceId],
       })
       .select("id")
       .single();
     seededAssertionId = assertionRow?.id ?? null;
     if (!seededAssertionId) {
       throw new Error(
-        "beforeAll: seeding assertions failed — seededAssertionId is null; confidence_scores INSERT tests would produce NOT NULL errors instead of RLS errors"
+        "beforeAll: seeding assertions failed — seededAssertionId is null"
       );
     }
   });
@@ -354,15 +361,14 @@ describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
 
         // Build payload; patch in FK ids where needed
         const basePayload = { ...INSERT_PAYLOADS[table] };
-        if (table === "confidence_scores" && seededAssertionId) {
-          basePayload.assertion_id = seededAssertionId;
-        }
+        // After migration 014, assertions use a UUID[] source_ids column
+        // and confidence_scores is entity-scoped (no assertion_id FK).
         if (table === "assertions" && seededSourceId) {
-          basePayload.source_id = seededSourceId;
+          basePayload.source_ids = [seededSourceId];
         }
-        // Make keys unique per run to avoid unique-constraint false failures
+        // Make slugs/keys unique per run to avoid unique-constraint false failures
         if (table === "editorial_doctrine") {
-          (basePayload as Record<string, unknown>).key =
+          (basePayload as Record<string, unknown>).slug =
             `rls-write-${role}-${Date.now()}`;
         }
         if (table === "api_keys") {
