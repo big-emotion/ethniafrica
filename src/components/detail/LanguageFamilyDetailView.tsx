@@ -5,6 +5,7 @@ import { Language } from "@/types/shared";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { ClassificationBadge } from "@/components/ui/classification-badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
@@ -85,9 +86,7 @@ export const LanguageFamilyDetailView = ({
   };
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat("fr-FR").format(
-      Math.round(num)
-    );
+    return new Intl.NumberFormat("fr-FR").format(Math.round(num));
   };
 
   const getTabLabels = () => {
@@ -134,9 +133,10 @@ export const LanguageFamilyDetailView = ({
       <div className="p-6 space-y-6">
         {/* Header */}
         <div className="space-y-2">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <Languages className="h-8 w-8 text-primary" />
             <h1 className="text-2xl font-bold">{displayName}</h1>
+            <ClassificationBadge status={family.classificationStatus} />
           </div>
           <p className="text-sm text-muted-foreground">{family.id}</p>
 
@@ -145,23 +145,20 @@ export const LanguageFamilyDetailView = ({
             {family.generalInfo?.totalSpeakers && (
               <Badge variant="secondary" className="gap-1">
                 <Users className="h-3 w-3" />
-                {formatNumber(family.generalInfo.totalSpeakers)}{" "}
-                {"locuteurs"}
+                {formatNumber(family.generalInfo.totalSpeakers)} {"locuteurs"}
               </Badge>
             )}
             {family.generalInfo?.numberOfLanguages && (
               <Badge variant="secondary" className="gap-1">
                 <Languages className="h-3 w-3" />
-                {family.generalInfo.numberOfLanguages}{" "}
-                {"langues"}
+                {family.generalInfo.numberOfLanguages} {"langues"}
               </Badge>
             )}
             {family.associatedPeoples &&
               family.associatedPeoples.length > 0 && (
                 <Badge variant="secondary" className="gap-1">
                   <Users className="h-3 w-3" />
-                  {family.associatedPeoples.length}{" "}
-                  {"peuples"}
+                  {family.associatedPeoples.length} {"peuples"}
                 </Badge>
               )}
             {family.generalInfo?.geographicArea && (
@@ -185,25 +182,19 @@ export const LanguageFamilyDetailView = ({
             <CardContent className="text-sm space-y-2">
               {family.decolonialHeader.whyProblematic && (
                 <p>
-                  <strong>
-                    {"Pourquoi problématique :"}
-                  </strong>{" "}
+                  <strong>{"Pourquoi problématique :"}</strong>{" "}
                   {family.decolonialHeader.whyProblematic}
                 </p>
               )}
               {family.decolonialHeader.selfAppellation && (
                 <p>
-                  <strong>
-                    {"Auto-appellation :"}
-                  </strong>{" "}
+                  <strong>{"Auto-appellation :"}</strong>{" "}
                   {family.decolonialHeader.selfAppellation}
                 </p>
               )}
               {family.decolonialHeader.contemporaryUsage && (
                 <p>
-                  <strong>
-                    {"Usage contemporain :"}
-                  </strong>{" "}
+                  <strong>{"Usage contemporain :"}</strong>{" "}
                   {family.decolonialHeader.contemporaryUsage}
                 </p>
               )}

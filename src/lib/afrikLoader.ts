@@ -161,6 +161,8 @@ export async function getLanguageFamily(
       nameEn: apiData.nameEn || apiData.name_en,
       createdAt: apiData.createdAt || apiData.created_at,
       updatedAt: apiData.updatedAt || apiData.updated_at,
+      classificationStatus:
+        apiData.classificationStatus ?? apiData.classification_status ?? null,
       // Content sections
       decolonialHeader: apiData.content?.decolonialHeader,
       generalInfo: apiData.content?.generalInfo,
@@ -292,6 +294,8 @@ export async function getPeople(id: string): Promise<PeopleDetail | null> {
         apiData.currentCountries || apiData.current_countries || [],
       createdAt: apiData.createdAt || apiData.created_at,
       updatedAt: apiData.updatedAt || apiData.updated_at,
+      classificationStatus:
+        apiData.classificationStatus ?? apiData.classification_status ?? null,
       // 8 AFRIK sections from content
       appellations: apiData.content?.appellations,
       ethnicities: apiData.content?.ethnicities,

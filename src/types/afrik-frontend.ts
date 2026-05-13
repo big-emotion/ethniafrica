@@ -12,6 +12,7 @@ import type {
   LanguageFamilyId,
   PeopleId,
   LanguageId,
+  ClassificationStatus,
   // Content sections
   AppellationsSection,
   OriginsSection,
@@ -73,6 +74,9 @@ export interface LanguageFamilyDetail {
   nameEn?: string;
   createdAt?: string;
   updatedAt?: string;
+
+  // Editorial classification status (migration 009)
+  classificationStatus?: ClassificationStatus | null;
 
   // Section: En-tête décolonial
   decolonialHeader?: DecolonialHeader;
@@ -147,6 +151,9 @@ export interface PeopleDetail {
   currentCountries: CountryId[];
   createdAt?: string;
   updatedAt?: string;
+
+  // Editorial classification status (migration 009)
+  classificationStatus?: ClassificationStatus | null;
 
   // Section 1: Appellations
   appellations?: AppellationsSection;
@@ -470,6 +477,7 @@ export type {
   LanguageFamilyId,
   PeopleId,
   LanguageId,
+  ClassificationStatus,
   AppellationsSection,
   OriginsSection,
   OrganizationSection,

@@ -4,7 +4,7 @@
 
 import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
-import type { LanguageFamily } from "@/types/afrik";
+import type { ClassificationStatus, LanguageFamily } from "@/types/afrik";
 
 /**
  * Get all AFRIK language families with optional pagination
@@ -35,6 +35,8 @@ export async function getAllAfrikLanguageFamilies(
     id: row.id,
     nameFr: row.name_fr,
     nameEn: row.name_en || undefined,
+    classificationStatus:
+      (row.classification_status as ClassificationStatus | null) ?? null,
     content: row.content || {},
     createdAt: row.created_at ? new Date(row.created_at) : undefined,
     updatedAt: row.updated_at ? new Date(row.updated_at) : undefined,
@@ -68,6 +70,8 @@ export async function getAfrikLanguageFamilyById(
     id: data.id,
     nameFr: data.name_fr,
     nameEn: data.name_en || undefined,
+    classificationStatus:
+      (data.classification_status as ClassificationStatus | null) ?? null,
     content: data.content || {},
     createdAt: data.created_at ? new Date(data.created_at) : undefined,
     updatedAt: data.updated_at ? new Date(data.updated_at) : undefined,
@@ -100,6 +104,8 @@ export async function searchAfrikLanguageFamilies(
     id: row.id,
     nameFr: row.name_fr,
     nameEn: row.name_en || undefined,
+    classificationStatus:
+      (row.classification_status as ClassificationStatus | null) ?? null,
     content: row.content || {},
     createdAt: row.created_at ? new Date(row.created_at) : undefined,
     updatedAt: row.updated_at ? new Date(row.updated_at) : undefined,

@@ -5,6 +5,7 @@ import { Language } from "@/types/shared";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
+import { ClassificationBadge } from "@/components/ui/classification-badge";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
@@ -85,9 +86,7 @@ export const PeopleDetailView = ({
   }, [peopleId, language]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat("fr-FR").format(
-      Math.round(num)
-    );
+    return new Intl.NumberFormat("fr-FR").format(Math.round(num));
   };
 
   const getTabLabels = () => {
@@ -136,9 +135,10 @@ export const PeopleDetailView = ({
       <div className="p-6 space-y-6">
         {/* Header */}
         <div className="space-y-2">
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <Users className="h-8 w-8 text-primary" />
             <h1 className="text-2xl font-bold">{people.nameMain}</h1>
+            <ClassificationBadge status={people.classificationStatus} />
           </div>
           {people.appellations?.selfAppellation &&
             people.appellations.selfAppellation !== people.nameMain && (
@@ -174,8 +174,7 @@ export const PeopleDetailView = ({
             {people.currentCountries && people.currentCountries.length > 0 && (
               <Badge variant="outline" className="gap-1">
                 <MapPin className="h-3 w-3" />
-                {people.currentCountries.length}{" "}
-                {"pays"}
+                {people.currentCountries.length} {"pays"}
               </Badge>
             )}
           </div>
@@ -554,8 +553,7 @@ export const PeopleDetailView = ({
                     {people.culture.divinitiesAndSpirits && (
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
-                          A.{" "}
-                          {"Divinités et esprits"}
+                          A. {"Divinités et esprits"}
                         </h4>
                         {people.culture.divinitiesAndSpirits.supremeDeity && (
                           <div className="ml-4">
@@ -571,9 +569,7 @@ export const PeopleDetailView = ({
                         )}
                         {people.culture.divinitiesAndSpirits.ancestors && (
                           <div className="ml-4">
-                            <span className="font-medium">
-                              {"Ancêtres :"}
-                            </span>{" "}
+                            <span className="font-medium">{"Ancêtres :"}</span>{" "}
                             {people.culture.divinitiesAndSpirits.ancestors
                               .roleOfAncestors || "—"}
                           </div>
@@ -595,8 +591,7 @@ export const PeopleDetailView = ({
                             {people.culture.cosmology.worldStructure
                               .upperWorld && (
                               <p className="text-sm">
-                                •{" "}
-                                {"Monde supérieur :"}{" "}
+                                • {"Monde supérieur :"}{" "}
                                 {
                                   people.culture.cosmology.worldStructure
                                     .upperWorld
@@ -606,8 +601,7 @@ export const PeopleDetailView = ({
                             {people.culture.cosmology.worldStructure
                               .terrestrialWorld && (
                               <p className="text-sm">
-                                •{" "}
-                                {"Monde terrestre :"}{" "}
+                                • {"Monde terrestre :"}{" "}
                                 {
                                   people.culture.cosmology.worldStructure
                                     .terrestrialWorld
@@ -617,8 +611,7 @@ export const PeopleDetailView = ({
                             {people.culture.cosmology.worldStructure
                               .underworld && (
                               <p className="text-sm">
-                                •{" "}
-                                {"Monde souterrain :"}{" "}
+                                • {"Monde souterrain :"}{" "}
                                 {
                                   people.culture.cosmology.worldStructure
                                     .underworld
@@ -634,8 +627,7 @@ export const PeopleDetailView = ({
                     {people.culture.personAndNature && (
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
-                          C.{" "}
-                          {"Personne et nature"}
+                          C. {"Personne et nature"}
                         </h4>
                         {people.culture.personAndNature.totemicAnimals &&
                           people.culture.personAndNature.totemicAnimals.length >
@@ -684,8 +676,7 @@ export const PeopleDetailView = ({
                     {people.culture.ritesAndPractices && (
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
-                          D.{" "}
-                          {"Rites et pratiques"}
+                          D. {"Rites et pratiques"}
                         </h4>
                         {people.culture.ritesAndPractices.initiationRites && (
                           <div className="ml-4">
@@ -715,16 +706,14 @@ export const PeopleDetailView = ({
                     {people.culture.symbolsAndArts && (
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
-                          E.{" "}
-                          {"Arts et culture matérielle"}
+                          E. {"Arts et culture matérielle"}
                         </h4>
                         {people.culture.symbolsAndArts.artsAndMusic && (
                           <div className="ml-4 space-y-1">
                             {people.culture.symbolsAndArts.artsAndMusic
                               .musicalInstruments && (
                               <p className="text-sm">
-                                •{" "}
-                                {"Instruments :"}{" "}
+                                • {"Instruments :"}{" "}
                                 {
                                   people.culture.symbolsAndArts.artsAndMusic
                                     .musicalInstruments
@@ -779,8 +768,7 @@ export const PeopleDetailView = ({
                     {people.culture.contemporarySpirituality && (
                       <div className="space-y-2">
                         <h4 className="font-semibold text-primary">
-                          F.{" "}
-                          {"Spiritualités contemporaines"}
+                          F. {"Spiritualités contemporaines"}
                         </h4>
                         {people.culture.contemporarySpirituality
                           .christianity && (
