@@ -60,31 +60,10 @@ ALTER TABLE confidence_scores
   ADD COLUMN IF NOT EXISTS last_human_audit_at TIMESTAMPTZ,
   ADD COLUMN IF NOT EXISTS recomputed_at TIMESTAMPTZ DEFAULT NOW();
 
--- A unique (entity_type, entity_id) constraint is required for ON CONFLICT
--- upserts in recompute_confidence. ETNI-22 should have created it; we create
--- it here only if absent.
-DO $$
-BEGIN
-  IF NOT EXISTS (
-    SELECT 1 FROM pg_indexes
-    WHERE schemaname = current_schema()
-      AND indexname = 'confidence_scores_entity_unique'
-  ) THEN
-    -- Note: we cannot create a UNIQUE index on potentially-NULL columns
-    -- before backfill, so only create it when both columns are present and
-    -- the table is empty enough to allow it.
-    BEGIN
-      CREATE UNIQUE INDEX confidence_scores_entity_unique
-        ON confidence_scores (entity_type, entity_id)
-        WHERE entity_type IS NOT NULL AND entity_id IS NOT NULL;
-    EXCEPTION WHEN OTHERS THEN
-      -- Index creation failures (e.g. duplicate rows on old shape) are
-      -- non-fatal here: ETNI-22's migration 014 is expected to deliver the
-      -- proper constraint. We continue without aborting.
-      RAISE NOTICE 'Could not create confidence_scores_entity_unique: %', SQLERRM;
-    END;
-  END IF;
-END $$;
+-- The (entity_type, entity_id) UNIQUE constraint required for ON CONFLICT
+-- upserts in recompute_confidence is delivered by migration 014 (ETNI-22)
+-- as a full UNIQUE constraint. 014 is a hard prerequisite for 015 — we do
+-- not attempt to create the constraint defensively here.
 
 
 -- =============================================================================
@@ -132,17 +111,26 @@ BEGIN
   END IF;
 
   -- Source count + average source quality, derived from assertions linked to
-  -- this entity. Source "quality" is read from the sources.metadata JSONB
-  -- under the key 'quality' (range 0..1). NULL quality is excluded from the
-  -- average — the count below counts distinct sources backing this entity.
+  -- this entity. Post-014, assertions reference sources via source_ids UUID[]
+  -- (LATERAL UNNEST) and source "quality" is derived from sources.tier
+  -- (primary=1.0, secondary=0.7, tertiary=0.4, ai-enriched=0.2). The count
+  -- below counts distinct sources backing this entity.
   SELECT
     COUNT(DISTINCT s.id)::INTEGER,
-    AVG(NULLIF((s.metadata ->> 'quality')::DECIMAL, 0))::DECIMAL(3,2)
+    AVG(
+      CASE s.tier
+        WHEN 'primary'     THEN 1.0
+        WHEN 'secondary'   THEN 0.7
+        WHEN 'tertiary'    THEN 0.4
+        WHEN 'ai-enriched' THEN 0.2
+      END
+    )::DECIMAL(3,2)
   INTO
     v_source_count,
     v_avg_source_quality
   FROM assertions a
-  LEFT JOIN sources s ON s.id = a.source_id
+  LEFT JOIN LATERAL UNNEST(COALESCE(a.source_ids, '{}'::UUID[])) AS src_id ON true
+  LEFT JOIN sources s ON s.id = src_id
   WHERE a.entity_type = p_entity_type
     AND a.entity_id   = p_entity_id;
 
@@ -187,27 +175,25 @@ BEGIN
     )
   )::DECIMAL(3,2);
 
-  -- Upsert. Uses (entity_type, entity_id) as the conflict target; the unique
-  -- partial index created above (or by ETNI-22) backs this.
+  -- Upsert. Uses (entity_type, entity_id) as the conflict target; the
+  -- full UNIQUE constraint created by ETNI-22 (migration 014) backs this.
+  -- Note: 014 removed the `methodology` column from confidence_scores.
   INSERT INTO confidence_scores (
     entity_type, entity_id, score, source_count, avg_source_quality,
-    open_flag_count, last_human_audit_at, recomputed_at, methodology
+    open_flag_count, last_human_audit_at, recomputed_at
   )
   VALUES (
     p_entity_type, p_entity_id, v_score, v_source_count, v_avg_source_quality,
-    v_open_flag_count, v_last_audit, v_now,
-    'v1: 0.5*sources + 0.3*quality + 0.2*recency - 0.1*flags'
+    v_open_flag_count, v_last_audit, v_now
   )
   ON CONFLICT (entity_type, entity_id)
-  WHERE entity_type IS NOT NULL AND entity_id IS NOT NULL
   DO UPDATE SET
     score               = EXCLUDED.score,
     source_count        = EXCLUDED.source_count,
     avg_source_quality  = EXCLUDED.avg_source_quality,
     open_flag_count     = EXCLUDED.open_flag_count,
     last_human_audit_at = COALESCE(EXCLUDED.last_human_audit_at, confidence_scores.last_human_audit_at),
-    recomputed_at       = EXCLUDED.recomputed_at,
-    methodology         = EXCLUDED.methodology;
+    recomputed_at       = EXCLUDED.recomputed_at;
 END;
 $$;
 
@@ -397,7 +383,7 @@ BEGIN
       RAISE EXCEPTION
         'Integrity check failed: UPDATE on %.% requires an assertion row '
         'for field_path "%". Insert into assertions(entity_type, entity_id, '
-        'field_path, value, source_id) first, or set LOCAL '
+        'field_path, statement, source_ids) first, or set LOCAL '
         'app.bypass_assertion_check = ''true'' for a logged DBA override.',
         TG_TABLE_NAME, v_entity_id, v_field_path
         USING ERRCODE = 'check_violation',
@@ -499,10 +485,10 @@ RETURNS TRIGGER
 LANGUAGE plpgsql
 AS $$
 DECLARE
-  v_was_open BOOLEAN := (OLD.status = 'open');
-  v_is_open  BOOLEAN := (NEW.status = 'open');
+  v_was_open BOOLEAN := (OLD.status IS NOT DISTINCT FROM 'open');
+  v_is_open  BOOLEAN := (NEW.status IS NOT DISTINCT FROM 'open');
 BEGIN
-  IF v_was_open <> v_is_open
+  IF v_was_open IS DISTINCT FROM v_is_open
      AND NEW.entity_type IS NOT NULL
      AND NEW.entity_id   IS NOT NULL
   THEN
