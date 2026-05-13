@@ -9,7 +9,10 @@
  */
 import { createAdminClient } from "@/lib/supabase/admin";
 
-const PBKDF2_ITERATIONS = 100_000;
+// OWASP 2023 recommendation for PBKDF2-SHA256.
+// Legacy hashes encoded with lower iteration counts still validate because
+// the stored format embeds the per-key iteration count.
+const PBKDF2_ITERATIONS = 600_000;
 const SALT_BYTES = 16;
 const KEY_PREFIX_LENGTH = 20;
 

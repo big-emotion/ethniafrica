@@ -18,6 +18,7 @@ function applySecurityHeaders(response: NextResponse, nonce: string) {
     `style-src 'self' 'nonce-${nonce}'`,
     "img-src 'self' data:",
     "frame-ancestors 'self'",
+    "connect-src 'self' https://*.supabase.co https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io",
   ].join("; ");
   response.headers.set("Content-Security-Policy", csp);
 }

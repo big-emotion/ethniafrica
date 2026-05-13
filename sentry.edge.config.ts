@@ -4,7 +4,7 @@
 // Configure 30-day retention in Sentry dashboard settings
 
 import * as Sentry from "@sentry/nextjs";
-import { assertEuDsn } from "@/lib/sentry/pii-scrubber";
+import { assertEuDsn, beforeSend } from "@/lib/sentry/pii-scrubber";
 
 const dsn = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
 
@@ -20,6 +20,9 @@ Sentry.init({
 
   // Debug mode for development
   debug: process.env.NODE_ENV === "development",
+
+  // PII scrubbing via beforeSend hook (mirrors server config).
+  beforeSend: beforeSend as Parameters<typeof Sentry.init>[0]["beforeSend"],
 
   // Only enable in production or when DSN is explicitly set
   enabled: process.env.NODE_ENV === "production" || !!process.env.SENTRY_DSN,

@@ -30,6 +30,8 @@ vi.mock("@/lib/api/logger", () => ({
   logger: {
     error: vi.fn(),
     info: vi.fn(),
+    warn: vi.fn(),
+    debug: vi.fn(),
   },
 }));
 
@@ -57,7 +59,9 @@ const MockRatelimit = vi.mocked(Ratelimit);
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const MockRedis = vi.mocked(Redis as any);
 
-function makeRequest(opts: { ip?: string; authHeader?: string; path?: string } = {}) {
+function makeRequest(
+  opts: { ip?: string; authHeader?: string; path?: string } = {}
+) {
   const url = `http://localhost${opts.path ?? "/api/v2/peoples"}`;
   const headers: Record<string, string> = {};
   if (opts.ip) headers["x-forwarded-for"] = opts.ip;
@@ -68,12 +72,16 @@ function makeRequest(opts: { ip?: string; authHeader?: string; path?: string } =
 /** Restore constructor mocks so lazy singletons can be created after clearAllMocks */
 function restoreConstructorMocks() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  MockRedis.mockImplementation(function () { return {} as any; });
+  MockRedis.mockImplementation(function () {
+    return {} as any;
+  });
   MockRatelimit.mockImplementation(function () {
     return { limit: mockLimit } as unknown as Ratelimit;
   });
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  vi.mocked(Ratelimit.slidingWindow).mockReturnValue({ type: "sliding" } as any);
+  vi.mocked(Ratelimit.slidingWindow).mockReturnValue({
+    type: "sliding",
+  } as any);
 }
 
 describe("getApiKeyTier", () => {
@@ -159,6 +167,30 @@ describe("getRateLimiter", () => {
     expect(Ratelimit.slidingWindow).toHaveBeenCalledWith(6000, "1 m");
     expect(Ratelimit.slidingWindow).toHaveBeenCalledTimes(3);
   });
+
+  it("reads tier RPMs and window from env vars when set", () => {
+    vi.stubEnv("RATE_LIMIT_IP_RPM", "120");
+    vi.stubEnv("RATE_LIMIT_PUBLIC_RPM", "1200");
+    vi.stubEnv("RATE_LIMIT_PARTNER_RPM", "12000");
+    vi.stubEnv("RATE_LIMIT_WINDOW", "30 s");
+    _resetLimitersForTest();
+    getRateLimiter(null);
+    expect(Ratelimit.slidingWindow).toHaveBeenCalledWith(120, "30 s");
+    expect(Ratelimit.slidingWindow).toHaveBeenCalledWith(1200, "30 s");
+    expect(Ratelimit.slidingWindow).toHaveBeenCalledWith(12000, "30 s");
+  });
+
+  it("falls back to defaults when env vars hold invalid values", () => {
+    vi.stubEnv("RATE_LIMIT_IP_RPM", "not-a-number");
+    vi.stubEnv("RATE_LIMIT_PUBLIC_RPM", "-5");
+    vi.stubEnv("RATE_LIMIT_PARTNER_RPM", "");
+    vi.stubEnv("RATE_LIMIT_WINDOW", "garbage");
+    _resetLimitersForTest();
+    getRateLimiter(null);
+    expect(Ratelimit.slidingWindow).toHaveBeenCalledWith(60, "1 m");
+    expect(Ratelimit.slidingWindow).toHaveBeenCalledWith(600, "1 m");
+    expect(Ratelimit.slidingWindow).toHaveBeenCalledWith(6000, "1 m");
+  });
 });
 
 describe("applyRateLimit", () => {
@@ -227,26 +259,47 @@ describe("applyRateLimit", () => {
   });
 
   it("calls limiter.limit with key: prefix for Bearer token requests", async () => {
-    mockLimit.mockResolvedValue({ success: true, limit: 600, remaining: 599, reset: Date.now() + 60000 });
+    mockLimit.mockResolvedValue({
+      success: true,
+      limit: 600,
+      remaining: 599,
+      reset: Date.now() + 60000,
+    });
     const req = makeRequest({ authHeader: "Bearer public-key" });
     await applyRateLimit(req);
     expect(mockLimit).toHaveBeenCalledWith("key:public-key");
   });
 
   it("calls limiter.limit with ip: prefix for unauthenticated requests", async () => {
-    mockLimit.mockResolvedValue({ success: true, limit: 60, remaining: 59, reset: Date.now() + 60000 });
+    mockLimit.mockResolvedValue({
+      success: true,
+      limit: 60,
+      remaining: 59,
+      reset: Date.now() + 60000,
+    });
     const req = makeRequest({ ip: "10.0.0.1" });
     await applyRateLimit(req);
     expect(mockLimit).toHaveBeenCalledWith("ip:10.0.0.1");
   });
 
-  it("returns 500 when Upstash env vars are missing", async () => {
+  it("returns 500 when Upstash env vars are missing in production", async () => {
     _resetLimitersForTest();
+    vi.stubEnv("NODE_ENV", "production");
     vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
     vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
     const req = makeRequest({ ip: "1.2.3.4" });
     const result = await applyRateLimit(req);
     expect(result).not.toBeNull();
     expect(result!.status).toBe(500);
+  });
+
+  it("fails open (returns null) when Upstash env vars are missing in non-production", async () => {
+    _resetLimitersForTest();
+    vi.stubEnv("NODE_ENV", "development");
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
+    const req = makeRequest({ ip: "1.2.3.4" });
+    const result = await applyRateLimit(req);
+    expect(result).toBeNull();
   });
 });

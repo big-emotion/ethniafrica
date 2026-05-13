@@ -84,7 +84,7 @@ dataset/source/afrik/                          → Raw .json files (strict model
       ↓ loaded by
 src/lib/afrik/loaders/{entity}JsonLoader.ts    → Load into Supabase
       ↓ stored in
-Supabase tables: afrik_familles_linguistiques, afrik_langues, afrik_peuples, afrik_pays
+Supabase tables: afrik_language_families, afrik_languages, afrik_peoples, afrik_countries
 ```
 
 ### AFRIK Methodology
@@ -116,8 +116,8 @@ Languages: `fr` (default), `en`, `es`, `pt`. Pages under `src/app/[lang]/`.
 
 ### Database Tables
 
-**AFRIK**: `afrik_familles_linguistiques`, `afrik_langues`, `afrik_peuples`, `afrik_pays`
-**System**: `contributions`
+**AFRIK** (canonical English names per migration 006): `afrik_language_families`, `afrik_languages`, `afrik_peoples`, `afrik_countries`, `afrik_people_countries`
+**System**: `contributions`, `api_keys`, `user_roles`, `audit_log`
 
 Schema: `supabase/migrations/006_afrik_schema.sql`
 
