@@ -45,11 +45,17 @@ export async function middleware(request: NextRequest) {
       ? authHeader.slice("Bearer ".length).trim()
       : "";
 
-    if (!rawKey) {
+    // Fail open in non-production so the same-origin frontend can call
+    // /api/v2/* without an API key during local development.
+    const devBypass = !rawKey && process.env.NODE_ENV !== "production";
+
+    if (!rawKey && !devBypass) {
       return NextResponse.json({ error: "missing_api_key" }, { status: 401 });
     }
 
-    const result = await validateApiKey(rawKey);
+    const result = devBypass
+      ? ({ valid: true, apiKeyId: "dev-bypass" } as const)
+      : await validateApiKey(rawKey);
 
     if (result.valid === false) {
       return NextResponse.json({ error: result.reason }, { status: 401 });
