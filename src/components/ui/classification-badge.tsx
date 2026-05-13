@@ -35,7 +35,8 @@ const STATUS_COLORS: Record<ClassificationStatus, { fg: string; bg: string }> =
       bg: "var(--country-green-bg)",
     },
     contested: {
-      fg: "var(--country-gold)",
+      // WCAG AA: darker than --country-gold to reach 4.5:1 on --country-gold-bg
+      fg: "#7A5807",
       bg: "var(--country-gold-bg)",
     },
     "colonial-legacy": {
@@ -43,7 +44,8 @@ const STATUS_COLORS: Record<ClassificationStatus, { fg: string; bg: string }> =
       bg: "var(--country-colonial-bg)",
     },
     reconstructive: {
-      fg: "var(--country-terracotta)",
+      // WCAG AA: darker than --country-terracotta to reach 4.5:1 on --country-terracotta-bg
+      fg: "#A03F1A",
       bg: "var(--country-terracotta-bg)",
     },
   };
