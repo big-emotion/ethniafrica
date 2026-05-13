@@ -3,6 +3,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { getCurrentUser, isAdmin } from "@/lib/auth/supabase-auth";
 import { logger } from "@/lib/api/logger";
+import { auditLog } from "@/lib/audit/log";
 
 /**
  * Route API admin pour accepter/rejeter une contribution
@@ -74,6 +75,15 @@ export async function PATCH(
 
     const supabase = createAdminClient();
 
+    // Capture pre-update state for the audit_log "before" snapshot. We
+    // tolerate a null response: the subsequent UPDATE will surface a 404
+    // (PGRST116) if the row does not exist.
+    const { data: previous } = await supabase
+      .from("contributions")
+      .select()
+      .eq("id", id)
+      .single();
+
     // Update contribution status
     const status = action === "approve" ? "approved" : "rejected";
     const { data, error } = await supabase
@@ -124,6 +134,21 @@ export async function PATCH(
         );
       }
     }
+
+    // Emit audit_log entry only after the mutation (and any merge) succeeds.
+    // The helper swallows its own failures so this can never break the
+    // response.
+    await auditLog.write({
+      actorId: null,
+      action:
+        action === "approve" ? "contribution.approve" : "contribution.reject",
+      targetType: "contribution",
+      targetId: id,
+      before: previous ?? undefined,
+      after: data ?? undefined,
+      ip: request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? null,
+      userAgent: request.headers.get("user-agent") ?? null,
+    });
 
     return jsonWithCors({
       success: true,
