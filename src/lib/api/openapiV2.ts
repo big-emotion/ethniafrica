@@ -46,6 +46,11 @@ const options: swaggerJsdoc.Options = {
         name: "API v2 - Keys",
         description: "API key management (issuance)",
       },
+      {
+        name: "API v2 - Module #0",
+        description:
+          "Source Transparency Fabric — sources, confidence scores, editorial doctrine",
+      },
     ],
     components: {
       securitySchemes: {
@@ -200,6 +205,208 @@ const options: swaggerJsdoc.Options = {
             error: {
               type: "string",
               example: "Resource not found",
+            },
+          },
+        },
+        // -----------------------------------------------------------------
+        // Module #0 — Source Transparency Fabric (ETNI-29)
+        // -----------------------------------------------------------------
+        ApiResponseMeta: {
+          type: "object",
+          description:
+            "Envelope meta block for Module #0 responses. Always carries license + attribution (AR8). Optionally includes pagination, confidence score, and pinned-version URL.",
+          properties: {
+            license: { type: "string", example: "CC-BY-SA-4.0" },
+            attribution: {
+              type: "string",
+              example: "Africa History — africahistory.org",
+            },
+            confidence: {
+              type: "number",
+              nullable: true,
+              example: 73,
+              description: "Score 0–100 if applicable",
+            },
+            pinned_url: {
+              type: "string",
+              nullable: true,
+              example: "https://africahistory.org/peuples/yoruba@v4",
+            },
+            pagination: {
+              $ref: "#/components/schemas/PaginationMeta",
+            },
+          },
+          required: ["license", "attribution"],
+        },
+        ApiErrorEntry: {
+          type: "object",
+          description:
+            "Error taxonomy entry returned inside the envelope `errors[]` array.",
+          properties: {
+            code: {
+              type: "string",
+              enum: ["VALIDATION_ERROR", "NOT_FOUND", "INTERNAL_ERROR"],
+              example: "NOT_FOUND",
+            },
+            message: { type: "string", example: "Source not found" },
+            field: {
+              type: "string",
+              nullable: true,
+              description:
+                "Field path that triggered the error (validation only)",
+            },
+          },
+          required: ["code", "message"],
+        },
+        ApiErrorEnvelope: {
+          type: "object",
+          description: "Envelope returned on any non-2xx Module #0 response.",
+          properties: {
+            data: { type: "null" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              minItems: 1,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        Source: {
+          type: "object",
+          description:
+            "Canonical bibliographic entry. Columns marked nullable depend on migration 014 (ETNI-22).",
+          properties: {
+            id: { type: "string", format: "uuid" },
+            type: {
+              type: "string",
+              nullable: true,
+              enum: ["primary", "secondary", "tertiary", "ai", null],
+            },
+            title: { type: "string" },
+            url: { type: "string", nullable: true },
+            pinnedUrl: { type: "string", nullable: true },
+            year: { type: "integer", nullable: true },
+            author: { type: "string", nullable: true },
+            publisher: { type: "string", nullable: true },
+            resolvable: { type: "boolean", nullable: true },
+            lastVerifiedAt: {
+              type: "string",
+              format: "date-time",
+              nullable: true,
+            },
+          },
+          required: ["id", "title"],
+        },
+        SourceResponse: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/Source" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+        },
+        SourceListResponse: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/Source" },
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+        },
+        ConfidenceRecord: {
+          type: "object",
+          description:
+            "Pre-computed confidence record for a Module #1 fiche. Populated by the `recompute_confidence(entity_type, entity_id)` Postgres function.",
+          properties: {
+            entityType: {
+              type: "string",
+              enum: ["people", "language-family"],
+            },
+            entityId: { type: "string", example: "PPL_SHONA" },
+            score: {
+              type: "number",
+              nullable: true,
+              minimum: 0,
+              maximum: 100,
+              example: 73,
+            },
+            sourceCount: { type: "integer", minimum: 0 },
+            avgSourceQuality: {
+              type: "number",
+              nullable: true,
+              minimum: 0,
+              maximum: 1,
+            },
+            lastHumanAuditAt: {
+              type: "string",
+              format: "date-time",
+              nullable: true,
+            },
+            openFlagCount: { type: "integer", minimum: 0 },
+            recomputedAt: {
+              type: "string",
+              format: "date-time",
+              nullable: true,
+            },
+          },
+          required: ["entityType", "entityId", "sourceCount", "openFlagCount"],
+        },
+        ConfidenceResponse: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/ConfidenceRecord" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+        },
+        DoctrineEntry: {
+          type: "object",
+          description: "Editorial-doctrine row (MDX source stored in DB).",
+          properties: {
+            slug: {
+              type: "string",
+              enum: [
+                "review_policy",
+                "naming_convention",
+                "ai_disclosure",
+                "license_attribution",
+              ],
+            },
+            title: { type: "string" },
+            mdxSource: { type: "string" },
+            version: { type: "integer", minimum: 1 },
+            publishedAt: {
+              type: "string",
+              format: "date-time",
+              nullable: true,
+            },
+          },
+          required: ["slug", "title", "mdxSource", "version"],
+        },
+        DoctrineResponse: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/DoctrineEntry" },
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
             },
           },
         },
