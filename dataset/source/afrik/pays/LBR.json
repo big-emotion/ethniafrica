@@ -169,7 +169,7 @@
           "\"Mandingo\" (terme historique",
           "parfois péjoratif)"
         ],
-        "peopleId": "PPL_MANDINKA",
+        "peopleId": "PPL_MALINKE",
         "mainRegion": "Toutes les régions du Libéria",
         "languages": ["Mandinka (mnk", "ISO 639-3)", "anglais"],
         "languageFamily": "FLG_MANDE",
@@ -180,7 +180,7 @@
         "name": "Loma",
         "selfAppellation": "Loma",
         "exonyms": ["Loma (terme utilisé par les Européens)"],
-        "peopleId": "PPL_LOMA",
+        "peopleId": "PPL_TOMA_LOMA",
         "mainRegion": "Nord du Libéria",
         "languages": ["Loma (lom", "ISO 639-3)", "anglais"],
         "languageFamily": "FLG_MANDE",
@@ -205,7 +205,7 @@
           "\"Mandingo\" (terme historique",
           "parfois péjoratif)"
         ],
-        "peopleId": "PPL_MANDINKA",
+        "peopleId": "PPL_MALINKE",
         "mainRegion": "Toutes les régions du Libéria",
         "languages": ["Mandinka (mnk", "ISO 639-3)", "anglais"],
         "languageFamily": "FLG_MANDE",
@@ -405,7 +405,7 @@
           "name": "Loma",
           "population": 155000,
           "percentageInCountry": 3,
-          "peopleId": "PPL_LOMA",
+          "peopleId": "PPL_TOMA_LOMA",
           "region": "Nord du Libéria",
           "languageFamily": "FLG_MANDE"
         },
@@ -421,7 +421,7 @@
           "name": "Mandingo / Mandinka",
           "population": 105000,
           "percentageInCountry": 2,
-          "peopleId": "PPL_MANDINKA",
+          "peopleId": "PPL_MALINKE",
           "region": "Toutes les régions du Libéria",
           "languageFamily": "FLG_MANDE"
         },

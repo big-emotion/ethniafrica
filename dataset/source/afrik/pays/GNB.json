@@ -80,7 +80,7 @@
           "\"Mandingo\" (terme historique",
           "parfois péjoratif)"
         ],
-        "peopleId": "PPL_MANDINKA",
+        "peopleId": "PPL_MALINKE",
         "mainRegion": "Toutes les régions de la Guinée-Bissau",
         "languages": ["Mandinka (mnk", "ISO 639-3)", "portugais", "créole"],
         "languageFamily": "FLG_MANDE",
@@ -233,7 +233,7 @@
           "name": "Mandinka",
           "population": 290000,
           "percentageInCountry": 14,
-          "peopleId": "PPL_MANDINKA",
+          "peopleId": "PPL_MALINKE",
           "region": "Toutes les régions de la Guinée-Bissau",
           "languageFamily": "FLG_MANDE"
         },
