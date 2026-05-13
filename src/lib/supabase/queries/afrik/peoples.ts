@@ -4,7 +4,7 @@
 
 import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
-import type { People } from "@/types/afrik";
+import type { ClassificationStatus, People } from "@/types/afrik";
 
 /**
  * Build a map of people_id -> country_ids[] from a batch query
@@ -41,6 +41,8 @@ function mapRowsToPeoples(
     nameMain: row.name_main as string,
     languageFamilyId: row.language_family_id as string,
     currentCountries: relationsMap.get(row.id as string) || [],
+    classificationStatus:
+      (row.classification_status as ClassificationStatus | null) ?? null,
     content: (row.content as Record<string, unknown>) || {},
     createdAt: row.created_at ? new Date(row.created_at as string) : undefined,
     updatedAt: row.updated_at ? new Date(row.updated_at as string) : undefined,

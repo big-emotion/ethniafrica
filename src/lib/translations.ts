@@ -34,7 +34,34 @@ export const translations = {
     close: "Fermer",
     whyThisSite: "Pourquoi ce site ?",
     madeWithEmotion: ATTRIBUTION_STRING,
+    classification: {
+      consensual: {
+        label: "Consensuel",
+        tooltip:
+          "Classification largement consensuelle dans la littérature scientifique.",
+      },
+      contested: {
+        label: "Contesté",
+        tooltip: "Classification faisant l'objet de débats académiques.",
+      },
+      "colonial-legacy": {
+        label: "Héritage colonial",
+        tooltip:
+          "Catégorie héritée de la période coloniale, conservée et expliquée selon notre cadre éditorial.",
+      },
+      reconstructive: {
+        label: "Reconstructif",
+        tooltip:
+          "Classification reconstruite à partir de sources fragmentaires.",
+      },
+    },
   },
 };
 
 export const getTranslation = (lang: Language) => translations[lang];
+
+/**
+ * Localized labels and tooltips for the `classification_status` enum.
+ * Used by the ClassificationBadge component (ETNI-178).
+ */
+export const classificationLabels = translations.fr.classification;

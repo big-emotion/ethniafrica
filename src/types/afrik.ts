@@ -38,6 +38,25 @@ export type LanguageId = string;
 export type PeopleId = string;
 
 // ==========================================
+// CLASSIFICATION STATUS
+// ==========================================
+
+/**
+ * Epistemic status of a classification.
+ * Mirrors the `classification_status` enum defined in migration 009.
+ *
+ * - `consensual`: Widely accepted classification among scholars
+ * - `contested`: Classification that is debated among scholars
+ * - `colonial-legacy`: Classification inherited from colonial-era categorizations
+ * - `reconstructive`: Classification being actively reconstructed / decolonized
+ */
+export type ClassificationStatus =
+  | "consensual"
+  | "contested"
+  | "colonial-legacy"
+  | "reconstructive";
+
+// ==========================================
 // CORE ENTITIES (with stable IDs)
 // ==========================================
 
@@ -70,6 +89,9 @@ export interface LanguageFamily {
   id: LanguageFamilyId; // FLG_xxxxx (IMMUTABLE)
   nameFr: string;
   nameEn?: string;
+
+  // Editorial classification status (migration 009)
+  classificationStatus?: ClassificationStatus | null;
 
   // Variable content stored in JSONB (evolutionary)
   content: LanguageFamilyContent;
@@ -109,6 +131,9 @@ export interface People {
   // Critical relations
   languageFamilyId: LanguageFamilyId; // FLG_xxxxx
   currentCountries: CountryId[]; // ISO codes
+
+  // Editorial classification status (migration 009)
+  classificationStatus?: ClassificationStatus | null;
 
   // Variable content stored in JSONB (evolutionary)
   content: PeopleContent;
