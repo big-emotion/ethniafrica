@@ -335,7 +335,8 @@ L'application dispose d'une interface d'administration pour modérer les contrib
 L'authentification admin utilise Supabase Auth avec OAuth (GitHub, Google) et magic-link.
 
 **Première configuration admin :**
-1. Assurez-vous que les migrations Supabase (notamment 008_user_roles.sql) sont appliquées
+
+1. Assurez-vous que les migrations Supabase (notamment 007a_user_roles.sql) sont appliquées
 2. Connectez-vous une première fois via `/admin/login` pour créer votre compte
 3. Exécutez le script de seed pour assigner le rôle admin :
    ```bash
