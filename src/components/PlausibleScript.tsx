@@ -1,0 +1,43 @@
+"use client";
+
+import Script from "next/script";
+import { buildPlausibleSrc } from "@/lib/plausible";
+import { useConsent } from "@/hooks/use-consent";
+
+/**
+ * PlausibleScript — Client Component
+ *
+ * Injects the Plausible Analytics script only after the user has granted
+ * analytics consent (AR26, AR37, NFR42).  No cookies are set; no user IDs
+ * or fingerprints are collected.  DNT is respected automatically by
+ * Plausible's own script.
+ *
+ * Uses strategy="lazyOnload" so Next.js defers injection until the browser
+ * is idle — non-render-blocking by design.  The `defer` prop is omitted
+ * because next/script manages its own injection timing and ignores it.
+ *
+ * Returns null (no DOM output) when analytics consent has not been granted
+ * or when NEXT_PUBLIC_PLAUSIBLE_DOMAIN is absent.
+ *
+ * NOTE: NEXT_PUBLIC_* variables are inlined by Next.js at BUILD TIME.
+ * NEXT_PUBLIC_PLAUSIBLE_DOMAIN and NEXT_PUBLIC_PLAUSIBLE_CUSTOM_DOMAIN must
+ * be present in the build environment — setting them only at runtime (e.g.
+ * via Docker env) will not take effect in the client bundle.
+ */
+export default function PlausibleScript() {
+  const domain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
+  const { consentState } = useConsent();
+
+  if (!domain || !consentState.preferences.analytics) return null;
+
+  const src = buildPlausibleSrc();
+
+  return (
+    <Script
+      src={src}
+      data-domain={domain}
+      crossOrigin="anonymous"
+      strategy="lazyOnload"
+    />
+  );
+}
