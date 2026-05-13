@@ -2,7 +2,18 @@
   "id": "PPL_MALINKE",
   "nameMain": "Malinké",
   "languageFamilyId": "FLG_MANDE",
-  "currentCountries": ["MLI", "GIN", "SEN", "GMB", "CIV", "BFA"],
+  "currentCountries": [
+    "MLI",
+    "GIN",
+    "SEN",
+    "GMB",
+    "CIV",
+    "BFA",
+    "GNB",
+    "LBR",
+    "SLE",
+    "GHA"
+  ],
   "content": {
     "appellations": {
       "mainName": "Malinké",
@@ -22,7 +33,18 @@
       "linguisticFamily": "FLG_MANDE",
       "ethnoLinguisticGroup": "Mandé occidental (Western Mande, branche Manding)",
       "historicalRegion": "Manden / Mandé (actuel sud du Mali et nord-est de la Guinée) — berceau de l'empire du Mali. Aujourd'hui dispersés du Sénégal à la Côte d'Ivoire.",
-      "currentCountries": ["MLI", "GIN", "SEN", "GMB", "CIV", "BFA"]
+      "currentCountries": [
+        "MLI",
+        "GIN",
+        "SEN",
+        "GMB",
+        "CIV",
+        "BFA",
+        "GNB",
+        "LBR",
+        "SLE",
+        "GHA"
+      ]
     },
     "ethnicities": [
       "Malinké du Mali (Kankan Maninka, Bambara apparentés)",

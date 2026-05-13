@@ -57,7 +57,7 @@
           "\"Mandingo\" (terme historique",
           "parfois péjoratif)"
         ],
-        "peopleId": "PPL_MANDINKA",
+        "peopleId": "PPL_MALINKE",
         "mainRegion": "Toutes les régions de la Gambie, majoritaires",
         "languages": ["Mandinka (mnk", "ISO 639-3)", "anglais"],
         "languageFamily": "FLG_MANDE",
@@ -207,7 +207,7 @@
           "name": "Mandinka",
           "population": 900000,
           "percentageInCountry": 34,
-          "peopleId": "PPL_MANDINKA",
+          "peopleId": "PPL_MALINKE",
           "region": "Toutes les régions de la Gambie, majoritaires (vallée du fleuve)",
           "languageFamily": "FLG_MANDE"
         },
