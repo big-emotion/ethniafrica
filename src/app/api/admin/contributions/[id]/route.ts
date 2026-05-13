@@ -175,31 +175,29 @@ async function mergeContribution(contribution: Contribution) {
 
   switch (type) {
     case "new_people":
-      await supabase.from("afrik_peuples").insert(proposed_payload);
+      await supabase.from("afrik_peoples").insert(proposed_payload);
       break;
     case "update_people":
       await supabase
-        .from("afrik_peuples")
+        .from("afrik_peoples")
         .update(proposed_payload)
         .eq("id", proposed_payload.id);
       break;
     case "new_country":
-      await supabase.from("afrik_pays").insert(proposed_payload);
+      await supabase.from("afrik_countries").insert(proposed_payload);
       break;
     case "update_country":
       await supabase
-        .from("afrik_pays")
+        .from("afrik_countries")
         .update(proposed_payload)
         .eq("id", proposed_payload.id);
       break;
     case "new_language_family":
-      await supabase
-        .from("afrik_familles_linguistiques")
-        .insert(proposed_payload);
+      await supabase.from("afrik_language_families").insert(proposed_payload);
       break;
     case "update_language_family":
       await supabase
-        .from("afrik_familles_linguistiques")
+        .from("afrik_language_families")
         .update(proposed_payload)
         .eq("id", proposed_payload.id);
       break;
