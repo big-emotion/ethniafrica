@@ -75,8 +75,10 @@ export default function RootLayout({
     >
       <body className="font-sans antialiased">
         <TypeformPreload />
-        <Providers>{children}</Providers>
-        <PlausibleScript />
+        <Providers>
+          {children}
+          <PlausibleScript />
+        </Providers>
       </body>
     </html>
   );
