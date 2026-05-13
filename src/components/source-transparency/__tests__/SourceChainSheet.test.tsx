@@ -131,8 +131,37 @@ describe("SourceChainSheet", () => {
     const link = screen.getByTestId("source-url-src-1");
     expect(link.className).toMatch(/line-through/);
     expect(screen.getByTestId("source-broken-badge-src-1")).toHaveTextContent(
-      /lien non résolu — signalé 2026-04-10/i
+      /lien non résolu — signalé le 10 avril 2026/i
     );
+  });
+
+  it("renders broken-link URL as a span (not an anchor) to prevent navigation", () => {
+    renderSheet({
+      sources: [
+        {
+          ...baseSource,
+          brokenAt: "2026-04-10",
+        },
+      ],
+    });
+    const el = screen.getByTestId("source-url-src-1");
+    expect(el.tagName.toLowerCase()).toBe("span");
+    expect(el).toHaveAttribute("aria-disabled", "true");
+    expect(el).not.toHaveAttribute("href");
+  });
+
+  it("renders javascript: URLs as a plain span (safeUrl guard)", () => {
+    renderSheet({
+      sources: [
+        {
+          ...baseSource,
+          url: "javascript:alert('xss')",
+        },
+      ],
+    });
+    const el = screen.getByTestId("source-url-src-1");
+    expect(el.tagName.toLowerCase()).toBe("span");
+    expect(el).not.toHaveAttribute("href");
   });
 
   it("calls onOpenChange(false) when Escape is pressed", () => {
@@ -205,5 +234,39 @@ describe("SourceChainSheet", () => {
   it("returns null when open is false", () => {
     const { container } = renderSheet({ open: false });
     expect(container.querySelector('[role="dialog"]')).toBeNull();
+  });
+
+  it("opens only the first sheet instance when the URL hash matches the anchor", async () => {
+    window.history.replaceState(null, "", "/?#chip-shared");
+    const onOpenChangeA = vi.fn();
+    const onOpenChangeB = vi.fn();
+    const propsBase: Omit<SourceChainSheetProps, "onOpenChange"> = {
+      open: false,
+      assertion: {
+        statement: "shared",
+        confidenceScore: 0.5,
+        sourceCount: 1,
+        lastHumanAuditAt: null,
+      },
+      sources: [baseSource],
+      anchorId: "chip-shared",
+    };
+    render(
+      <>
+        <SourceChainSheet {...propsBase} onOpenChange={onOpenChangeA} />
+        <SourceChainSheet {...propsBase} onOpenChange={onOpenChangeB} />
+      </>
+    );
+    expect(onOpenChangeA).toHaveBeenCalledWith(true);
+    expect(onOpenChangeB).not.toHaveBeenCalled();
+    window.history.replaceState(null, "", "/");
+  });
+});
+
+describe("LazySourceChainSheet", () => {
+  it("imports cleanly from the dedicated lazy file", async () => {
+    const mod = await import("../SourceChainSheet.lazy");
+    expect(mod.LazySourceChainSheet).toBeDefined();
+    expect(typeof mod.LazySourceChainSheet).toBe("function");
   });
 });

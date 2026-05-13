@@ -80,6 +80,13 @@ const TIER_ORDER: SourceTier[] = [
 
 const CITE_DELAY_MS = 4000;
 
+/**
+ * Tracks anchors that have already been auto-opened by URL-hash on first mount,
+ * so that mounting multiple `SourceChainSheet` instances on the same fiche
+ * doesn't open every one of them when the user follows a shareable link.
+ */
+const openedAnchors = new Set<string>();
+
 /* -------------------------------------------------------------------------- */
 /*  Hooks                                                                      */
 /* -------------------------------------------------------------------------- */
@@ -149,10 +156,14 @@ function useUrlAnchorSync(
   onOpenChange: (open: boolean) => void
 ) {
   // Read the initial hash and open the sheet if it matches.
+  // Guard with a module-level registry so only the first mount per anchorId
+  // triggers the auto-open — multiple sheets with the same anchor must not
+  // all open at once.
   React.useEffect(() => {
     if (typeof window === "undefined") return;
     const currentHash = window.location.hash.replace(/^#/, "");
-    if (currentHash === anchorId && !open) {
+    if (currentHash === anchorId && !open && !openedAnchors.has(anchorId)) {
+      openedAnchors.add(anchorId);
       onOpenChange(true);
     }
     // Intentionally run only once on mount.
@@ -160,16 +171,29 @@ function useUrlAnchorSync(
   }, []);
 
   // Write the hash when the sheet opens / closes.
+  // Per-anchor guard: only rewrite the URL when the current hash is empty or
+  // already matches this instance's anchor. Without this guard, mounting
+  // multiple sheets on one fiche would strip an unrelated hash on every
+  // open/close cycle.
   React.useEffect(() => {
     if (typeof window === "undefined") return;
-    const { pathname, search } = window.location;
-    const target = open
-      ? `${pathname}${search}#${anchorId}`
-      : `${pathname}${search}`;
-    try {
-      window.history.replaceState(null, "", target);
-    } catch {
-      /* no-op in tests */
+    const { pathname, search, hash } = window.location;
+    if (open) {
+      if (hash === `#${anchorId}` || hash === "") {
+        const target = `${pathname}${search}#${anchorId}`;
+        try {
+          window.history.replaceState(null, "", target);
+        } catch {
+          /* no-op in tests */
+        }
+      }
+    } else if (hash === `#${anchorId}`) {
+      const target = `${pathname}${search}`;
+      try {
+        window.history.replaceState(null, "", target);
+      } catch {
+        /* no-op in tests */
+      }
     }
   }, [open, anchorId]);
 }
@@ -191,12 +215,53 @@ function groupByTier(sources: Source[]): Record<SourceTier, Source[]> {
   return out;
 }
 
+/**
+ * Returns the URL only if it parses to an `http:` or `https:` scheme.
+ * Defends against `javascript:` or `data:` schemes coming from contributor
+ * sources. Returns `null` otherwise (including for malformed URLs).
+ */
+export function safeUrl(raw: string | undefined | null): string | null {
+  if (!raw) return null;
+  try {
+    const parsed = new URL(raw);
+    if (parsed.protocol === "http:" || parsed.protocol === "https:") {
+      return parsed.toString();
+    }
+    return null;
+  } catch {
+    return null;
+  }
+}
+
+const FR_DATE_FORMATTER = new Intl.DateTimeFormat("fr-FR", {
+  dateStyle: "long",
+});
+
+/**
+ * Formats an ISO date (YYYY-MM-DD) as a long French date. Uses a TZ-stable
+ * parser to avoid off-by-one errors on date-only inputs. Returns the raw
+ * input on parse failure.
+ */
+export function formatBrokenDate(iso: string): string {
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
+  if (!match) return iso;
+  const [, yearStr, monthStr, dayStr] = match;
+  const year = Number(yearStr);
+  const month = Number(monthStr);
+  const day = Number(dayStr);
+  const date = new Date(year, month - 1, day);
+  if (Number.isNaN(date.getTime())) return iso;
+  return FR_DATE_FORMATTER.format(date);
+}
+
 /* -------------------------------------------------------------------------- */
 /*  Sub-components                                                             */
 /* -------------------------------------------------------------------------- */
 
 function SourceItem({ source }: { source: Source }) {
   const isBroken = Boolean(source.brokenAt);
+  const sanitizedUrl = safeUrl(source.url);
+  const renderAsLink = !isBroken && sanitizedUrl !== null;
 
   return (
     <li
@@ -218,27 +283,35 @@ function SourceItem({ source }: { source: Source }) {
         {[source.author, source.year, source.page].filter(Boolean).join(" · ")}
       </p>
       {source.url ? (
-        <a
-          data-testid={`source-url-${source.id}`}
-          href={source.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={cn(
-            "inline-block break-all text-xs underline underline-offset-2",
-            isBroken
-              ? "line-through text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]"
-              : "text-[var(--afh-accent,var(--country-accent,#1d4ed8))]"
-          )}
-        >
-          {source.url}
-        </a>
+        renderAsLink ? (
+          <a
+            data-testid={`source-url-${source.id}`}
+            href={sanitizedUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block break-all text-xs underline underline-offset-2 text-[var(--afh-accent,var(--country-accent,#1d4ed8))]"
+          >
+            {source.url}
+          </a>
+        ) : (
+          <span
+            data-testid={`source-url-${source.id}`}
+            aria-disabled="true"
+            className={cn(
+              "inline-block break-all text-xs underline underline-offset-2 text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]",
+              isBroken && "line-through"
+            )}
+          >
+            {source.url}
+          </span>
+        )
       ) : null}
-      {isBroken ? (
+      {isBroken && source.brokenAt ? (
         <span
           data-testid={`source-broken-badge-${source.id}`}
           className="inline-flex items-center rounded-full bg-[var(--afh-warn-bg,#fef3c7)] px-2 py-0.5 text-[11px] font-medium text-[var(--afh-warn-fg,#92400e)]"
         >
-          lien non résolu — signalé {source.brokenAt}
+          lien non résolu — signalé le {formatBrokenDate(source.brokenAt)}
         </span>
       ) : null}
     </li>
@@ -413,10 +486,10 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
         </section>
 
         {/* 5. Revision link (conditional) */}
-        {revisionUrl ? (
+        {revisionUrl && safeUrl(revisionUrl) ? (
           <section data-testid="section-revision">
             <a
-              href={revisionUrl}
+              href={safeUrl(revisionUrl) as string}
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs underline underline-offset-2 text-[var(--afh-accent,var(--country-accent,#1d4ed8))]"
@@ -462,25 +535,3 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
 SourceChainSheet.displayName = "SourceChainSheet";
 
 export default SourceChainSheet;
-
-/* -------------------------------------------------------------------------- */
-/*  Lazy wrapper for code-splitting                                            */
-/* -------------------------------------------------------------------------- */
-
-const LazyInner = React.lazy(() => import("./SourceChainSheet"));
-
-/**
- * Lazy-loaded wrapper. Consumers should use this from fiche pages to keep the
- * sheet bundle out of the initial chunk.
- */
-export const LazySourceChainSheet: React.FC<SourceChainSheetProps> = (
-  props
-) => {
-  // Only mount the lazy chunk once the consumer has indicated intent to open.
-  if (!props.open) return null;
-  return (
-    <React.Suspense fallback={null}>
-      <LazyInner {...props} />
-    </React.Suspense>
-  );
-};
