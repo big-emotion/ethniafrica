@@ -27,6 +27,8 @@ import { getLanguageFamily } from "@/lib/afrikLoader";
 import { getLocalizedRoute } from "@/lib/routing";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { hasActiveSourceFlag } from "@/lib/flags-client";
+import { SourceVerifyBadge } from "@/components/ui/source-verify-badge";
 
 interface LanguageFamilyDetailViewProps {
   familyId: string;
@@ -42,6 +44,7 @@ export const LanguageFamilyDetailView = ({
   const [family, setFamily] = useState<LanguageFamilyDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [sourceFlag, setSourceFlag] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -71,6 +74,11 @@ export const LanguageFamilyDetailView = ({
     };
 
     loadFamily();
+
+    // Story 0.20 (FR31): badge "source à vérifier" si flag actif.
+    hasActiveSourceFlag("language_family", familyId).then((flag) => {
+      if (!cancelled) setSourceFlag(flag);
+    });
 
     return () => {
       cancelled = true;
@@ -511,14 +519,19 @@ export const LanguageFamilyDetailView = ({
                 <CardTitle className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5" />
                   {"Sources"}
+                  {sourceFlag && <SourceVerifyBadge />}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 {family.sources && family.sources.length > 0 ? (
                   <ul className="list-disc list-inside space-y-1">
                     {family.sources.map((source, idx) => (
-                      <li key={idx} className="text-sm">
-                        {source}
+                      <li
+                        key={idx}
+                        className="text-sm flex items-center gap-2 flex-wrap"
+                      >
+                        <span>{source}</span>
+                        {sourceFlag && <SourceVerifyBadge />}
                       </li>
                     ))}
                   </ul>

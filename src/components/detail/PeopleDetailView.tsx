@@ -24,6 +24,8 @@ import {
 import type { PeopleDetail, CountryDistribution } from "@/types/afrik-frontend";
 import { getPeople } from "@/lib/afrikLoader";
 import { DemographicsChart } from "@/components/charts/DemographicsChart";
+import { hasActiveSourceFlag } from "@/lib/flags-client";
+import { SourceVerifyBadge } from "@/components/ui/source-verify-badge";
 
 interface PeopleDetailViewProps {
   peopleId: string;
@@ -50,6 +52,7 @@ export const PeopleDetailView = ({
   const [people, setPeople] = useState<PeopleDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [sourceFlag, setSourceFlag] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -79,6 +82,13 @@ export const PeopleDetailView = ({
     };
 
     loadPeople();
+
+    // Story 0.20 (FR31): check whether an auto unreachable_source flag is
+    // currently open for this fiche so we can show a "source à vérifier"
+    // badge in the Sources tab. Failure is silent (badge hidden).
+    hasActiveSourceFlag("people", peopleId).then((flag) => {
+      if (!cancelled) setSourceFlag(flag);
+    });
 
     return () => {
       cancelled = true;
@@ -980,14 +990,19 @@ export const PeopleDetailView = ({
                 <CardTitle className="flex items-center gap-2">
                   <BookOpen className="h-5 w-5" />
                   {"Sources"}
+                  {sourceFlag && <SourceVerifyBadge />}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 {people.sources && people.sources.length > 0 ? (
                   <ul className="list-disc list-inside space-y-1">
                     {people.sources.map((source, idx) => (
-                      <li key={idx} className="text-sm">
-                        {source}
+                      <li
+                        key={idx}
+                        className="text-sm flex items-center gap-2 flex-wrap"
+                      >
+                        <span>{source}</span>
+                        {sourceFlag && <SourceVerifyBadge />}
                       </li>
                     ))}
                   </ul>
