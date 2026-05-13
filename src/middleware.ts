@@ -2,6 +2,7 @@ import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { validateApiKey } from "@/lib/api/auth";
 import type { UserRole } from "@/lib/auth/supabase-auth";
+import { applyRateLimit } from "@/lib/api/rate-limit";
 
 function applySecurityHeaders(response: NextResponse, nonce: string) {
   response.headers.set(
@@ -22,6 +23,12 @@ function applySecurityHeaders(response: NextResponse, nonce: string) {
 }
 
 export async function middleware(request: NextRequest) {
+  // Apply rate limiting for /api/v2/* routes before any other logic
+  if (request.nextUrl.pathname.startsWith("/api/v2/")) {
+    const rateLimitResponse = await applyRateLimit(request);
+    if (rateLimitResponse) return rateLimitResponse;
+  }
+
   const nonce = btoa(crypto.randomUUID());
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-nonce", nonce);
@@ -129,6 +136,9 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
+    // Explicitly include all /api/v2/* routes so the rate-limiting gate is
+    // never accidentally excluded by the negative-lookahead pattern below.
+    "/api/v2/(.*)",
     /*
      * Match all request paths except for the ones starting with:
      * - _next/static (static files)
