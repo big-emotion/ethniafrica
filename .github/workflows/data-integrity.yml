@@ -1,0 +1,45 @@
+name: Data Integrity Gate
+
+on:
+  pull_request:
+    branches: [main, recette]
+  push:
+    branches: [main, recette]
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: Run data-integrity validation (PR/push)
+        if: github.event_name != 'schedule'
+        run: npx tsx scripts/validateAfrikData.ts
+        env:
+          CHECK_SOURCE_URLS: "false"
+
+      - name: Run data-integrity validation (nightly — includes URL checks)
+        if: github.event_name == 'schedule'
+        run: npx tsx scripts/validateAfrikData.ts
+        env:
+          CHECK_SOURCE_URLS: "true"
+
+      - name: Upload source-url-health log (nightly only)
+        if: github.event_name == 'schedule' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: source-url-health-log
+          path: dataset/source-url-health.log
+          if-no-files-found: ignore
