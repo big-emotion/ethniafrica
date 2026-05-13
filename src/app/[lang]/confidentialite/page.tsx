@@ -91,6 +91,11 @@ export default function PrivacyPolicyPage() {
             location: "Mondial (clauses contractuelles types)",
           },
         ],
+        residencyNote:
+          "Le détail technique de la résidence des données (régions, méthodes de vérification, attestation datée) est documenté dans le dépôt :",
+        residencyLinkLabel: "docs/infra-data-residency.md",
+        residencyLinkUrl:
+          "https://github.com/big-emotion/ethniafrica/blob/main/docs/infra-data-residency.md",
       },
 
       retention: {
@@ -310,6 +315,19 @@ export default function PrivacyPolicyPage() {
               </div>
             ))}
           </div>
+
+          <p className="text-sm text-muted-foreground">
+            {t.processors.residencyNote}{" "}
+            <a
+              href={t.processors.residencyLinkUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-4 hover:text-primary"
+            >
+              {t.processors.residencyLinkLabel}
+            </a>
+            .
+          </p>
         </section>
 
         {/* 4. Durée de conservation */}
