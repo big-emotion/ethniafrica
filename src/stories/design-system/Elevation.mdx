@@ -1,0 +1,55 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design System/Elevation" />
+
+# Elevation — `--afh-elev-*`
+
+Six-step scale, warm earth-toned shadows. Defined in
+`src/styles/tokens/elevation.css`.
+
+<div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))",
+    gap: "2rem",
+    margin: "2rem 0",
+    background: "var(--afh-bg)",
+    padding: "2rem",
+    borderRadius: "12px",
+  }}
+>
+  {[
+    ["--afh-elev-0",    "var(--afh-elev-0)",    "None"],
+    ["--afh-elev-1",    "var(--afh-elev-1)",    "Subtle hover"],
+    ["--afh-elev-2",    "var(--afh-elev-2)",    "Resting card"],
+    ["--afh-elev-3",    "var(--afh-elev-3)",    "Raised card"],
+    ["--afh-elev-4",    "var(--afh-elev-4)",    "Popover / sticky"],
+    ["--afh-elev-5",    "var(--afh-elev-5)",    "Dialog / modal"],
+    ["--afh-elev-warm", "var(--afh-elev-warm)", "Hero / featured"],
+  ].map(([token, shadow, role]) => (
+    <div key={token} style={{ textAlign: "center" }}>
+      <div
+        style={{
+          height: "80px",
+          background: "var(--afh-surface)",
+          borderRadius: "12px",
+          boxShadow: shadow,
+          marginBottom: "0.75rem",
+        }}
+      />
+      <code style={{ fontSize: "12px", display: "block" }}>{token}</code>
+      <span style={{ fontSize: "11px", color: "var(--afh-text-soft)" }}>{role}</span>
+    </div>
+  ))}
+</div>
+
+## Focus ring
+
+`--afh-ring-focus` — a two-layer outline that survives over any background.
+
+```css
+:focus-visible {
+  box-shadow: var(--afh-ring-focus);
+  outline: none;
+}
+```

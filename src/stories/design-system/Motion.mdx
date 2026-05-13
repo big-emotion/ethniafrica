@@ -1,0 +1,88 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design System/Motion" />
+
+# Motion — `--afh-duration-*` / `--afh-ease-*`
+
+Defined in `src/styles/tokens/motion.css`.
+
+## Durations
+
+| Token | Value | Suggested use |
+| --- | --- | --- |
+| `--afh-duration-instant` | 0.01 ms | Reduced-motion fallback |
+| `--afh-duration-fast` | 120 ms | Micro-feedback (tap, hover) |
+| `--afh-duration-base` | 200 ms | Default UI transitions |
+| `--afh-duration-slow` | 320 ms | State changes (open/close) |
+| `--afh-duration-fade` | 400 ms | Cross-fades, content swaps |
+| `--afh-duration-pageload` | 600 ms | Page-level fades |
+
+## Easings
+
+| Token | Curve |
+| --- | --- |
+| `--afh-ease-linear` | linear |
+| `--afh-ease-in` | `cubic-bezier(0.4, 0, 1, 1)` |
+| `--afh-ease-out` | `cubic-bezier(0, 0, 0.2, 1)` |
+| `--afh-ease-in-out` | `cubic-bezier(0.4, 0, 0.2, 1)` |
+| `--afh-ease-default` | `ease` |
+
+## Composed transitions
+
+| Token | What it animates |
+| --- | --- |
+| `--afh-transition-color` | `color`, `background-color`, `border-color` |
+| `--afh-transition-opacity` | `opacity` |
+| `--afh-transition-transform` | `transform` |
+| `--afh-transition-all` | `all` (debug / quick prototypes) |
+
+## Reduced-motion contract
+
+When `prefers-reduced-motion: reduce` is set, the motion tokens **collapse to
+0.01 ms** and every composed transition is rewritten to `opacity 0.01ms linear`.
+No transforms run. This is enforced at the token layer — callers do not have to
+write extra media queries.
+
+Test it in DevTools → Rendering → "Emulate CSS prefers-reduced-motion".
+
+```css
+/* Caller code stays simple */
+.fade-in {
+  transition: var(--afh-transition-opacity);
+}
+/* Both motion-on and motion-reduce users get a sane experience. */
+```
+
+## Live demo
+
+<div
+  style={{
+    display: "flex",
+    gap: "1rem",
+    alignItems: "center",
+    padding: "1.5rem",
+    background: "var(--afh-bg-warm)",
+    borderRadius: "12px",
+    margin: "1.5rem 0",
+  }}
+>
+  <button
+    type="button"
+    style={{
+      padding: "8px 16px",
+      background: "var(--afh-terracotta)",
+      color: "white",
+      border: "none",
+      borderRadius: "6px",
+      cursor: "pointer",
+      transition: "var(--afh-transition-all)",
+    }}
+    onMouseEnter={(e) => (e.currentTarget.style.transform = "translateY(-2px)")}
+    onMouseLeave={(e) => (e.currentTarget.style.transform = "translateY(0)")}
+  >
+    Hover me
+  </button>
+  <span style={{ fontSize: "12px", color: "var(--afh-text-soft)" }}>
+    Uses `--afh-transition-all` · respects reduced-motion.
+  </span>
+</div>

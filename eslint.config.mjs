@@ -13,12 +13,47 @@
 // `@next/next/no-html-link-for-anchor` and the full `@next/next` plugin rule
 // set.  No Next.js rules are lost; only the `next lint` wrapper is bypassed.
 // -----------------------------------------------------------------------------
+import { createRequire } from "node:module";
 import nextConfig from "eslint-config-next";
 import tsConfig from "eslint-config-next/typescript";
+
+// ETNI-21: load the Africa History plugin (CommonJS, lives under eslint/).
+const require = createRequire(import.meta.url);
+const afhPlugin = require("./eslint/plugins/afh.js");
 
 const eslintConfig = [
   ...nextConfig,
   ...tsConfig,
+
+  // ETNI-21: ESLint custom-rule sources must remain CommonJS (the ESLint
+  // plugin API is CJS). Globally ignore them so we don't fight no-require-imports.
+  {
+    ignores: ["eslint/**"],
+  },
+
+  // ===========================================================================
+  // ETNI-21 / UX-DR49 rule 3: --afh-error misuse detector
+  // ---------------------------------------------------------------------------
+  // The `--afh-error` token is reserved for components whose filename signals
+  // an error / invalid / broken context. The rule fires elsewhere to keep the
+  // design-system warning vocabulary unambiguous.
+  // ===========================================================================
+  {
+    files: [
+      "src/components/**/*.{ts,tsx,js,jsx}",
+      "src/app/**/*.{ts,tsx,js,jsx}",
+    ],
+    ignores: [
+      "**/*.stories.*",
+      "**/*.test.*",
+      "**/__tests__/**",
+      "**/*.mdx",
+    ],
+    plugins: { afh: afhPlugin },
+    rules: {
+      "afh/afh-error-misuse": "error",
+    },
+  },
 
   // =============================================================================
   // NFR33, AR28: Enforce structured logging via @/lib/api/logger
