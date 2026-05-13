@@ -1,5 +1,7 @@
 import type { NextConfig } from "next";
 import { withSentryConfig } from "@sentry/nextjs";
+import createMDX from "@next/mdx";
+import remarkGfm from "remark-gfm";
 
 const nextConfig: NextConfig = {
   experimental: {
@@ -8,9 +10,19 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: __dirname,
   },
+  // Recognize .md / .mdx alongside default page extensions
+  pageExtensions: ["ts", "tsx", "md", "mdx"],
 };
 
-export default withSentryConfig(nextConfig, {
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [remarkGfm],
+    rehypePlugins: [],
+  },
+});
+
+export default withSentryConfig(withMDX(nextConfig), {
   // Suppress source map upload logs during dev
   silent: !process.env.CI,
 
