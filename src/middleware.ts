@@ -1,5 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { validateApiKey } from "@/lib/api/auth";
 import type { UserRole } from "@/lib/auth/supabase-auth";
 
 function applySecurityHeaders(response: NextResponse, nonce: string) {
@@ -25,6 +26,43 @@ export async function middleware(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-nonce", nonce);
 
+  const { pathname } = request.nextUrl;
+
+  // --- API v2 authentication ---
+  if (
+    pathname.startsWith("/api/v2/") &&
+    !pathname.startsWith("/api/v2/keys/issue")
+  ) {
+    const authHeader = request.headers.get("Authorization") ?? "";
+    const rawKey = authHeader.startsWith("Bearer ")
+      ? authHeader.slice("Bearer ".length).trim()
+      : "";
+
+    if (!rawKey) {
+      return NextResponse.json({ error: "missing_api_key" }, { status: 401 });
+    }
+
+    const result = await validateApiKey(rawKey);
+
+    if (result.valid === false) {
+      return NextResponse.json({ error: result.reason }, { status: 401 });
+    }
+
+    const requestWithKey = NextResponse.next({
+      request: {
+        headers: new Headers({
+          ...Object.fromEntries(request.headers),
+          "x-nonce": nonce,
+          "x-api-key-id": result.apiKeyId,
+        }),
+      },
+    });
+
+    applySecurityHeaders(requestWithKey, nonce);
+    return requestWithKey;
+  }
+
+  // --- Admin route protection ---
   let supabaseResponse = NextResponse.next({
     request: { headers: requestHeaders },
   });
@@ -56,7 +94,6 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { pathname } = request.nextUrl;
   const isAdminRoute =
     pathname.startsWith("/admin") && pathname !== "/admin/login";
 
