@@ -1045,6 +1045,109 @@ export async function checkSourceUrls(
 }
 
 /**
+ * FR32 – population/percentageInCountry consistency.
+ *
+ * For each entry under `content.demographics.peoples` in `pays/*.json`,
+ * if BOTH `population` and `percentageInCountry` are present, the implied
+ * percentage `(population / country_total) × 100` must agree with the stated
+ * `percentageInCountry` within 2 percentage points.
+ *
+ * Registered as `soft: true` (warning, not failure) for now: the country
+ * page transformer (`src/lib/countryDataTransformer.ts`) reads
+ * `p.population` directly to compute per-row counts and `totalPopulation`.
+ * Deleting drifting `population` values today collapses those values to 0
+ * on the country page. Flip to a hard gate once the transformer is updated
+ * to derive population from `percentageInCountry × country total`.
+ *
+ * Country totals are loaded from `public/pays_demographie.csv`
+ * (UN/UNFPA 2025). If a country has no row in that CSV, the check is skipped
+ * for that country with a warning (no invented data). Issue #129 owns ZAF.
+ *
+ * Per issue #130 KISS option 2, the `population` field is the optional one:
+ * when both are present and drift > 2 pp, delete `population`. See
+ * `scripts/checkPopulationPercentageDrift.ts`.
+ */
+const FR32_DRIFT_PP = 2;
+const FR32_ZAF_SOFT = new Set(["ZAF"]); // owned by issue #129
+
+export function checkPopulationPercentageDrift(
+  datasetRoot: string,
+  paysCsvPath: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const paysDir = path.join(datasetRoot, "pays");
+  if (!fs.existsSync(paysDir)) {
+    return { ok: true, errors, warnings };
+  }
+
+  // Load country totals from CSV (id_pays → population_totale_2025).
+  const totals = new Map<string, number>();
+  if (fs.existsSync(paysCsvPath)) {
+    const rows = loadCSV(paysCsvPath);
+    for (const row of rows) {
+      const id = row.id_pays;
+      const pop = Number(row.population_totale_2025);
+      if (id && Number.isFinite(pop) && pop > 0) totals.set(id, pop);
+    }
+  } else {
+    warnings.push(
+      `FR32: country totals CSV not found at ${paysCsvPath} — check skipped`
+    );
+    return { ok: true, errors, warnings };
+  }
+
+  const files = fs.readdirSync(paysDir).filter((f) => f.endsWith(".json"));
+  for (const file of files) {
+    const id = path.basename(file, ".json");
+    const total = totals.get(id);
+    if (!total) {
+      warnings.push(
+        `FR32 ${id}: no row in pays_demographie.csv — drift check skipped (no invented total)`
+      );
+      continue;
+    }
+
+    let data: {
+      content?: {
+        demographics?: {
+          peoples?: Array<{
+            name?: string;
+            population?: number;
+            percentageInCountry?: number;
+          }>;
+        };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(path.join(paysDir, file), "utf-8"));
+    } catch {
+      warnings.push(`FR32 ${file}: could not parse JSON`);
+      continue;
+    }
+
+    const peoples = data?.content?.demographics?.peoples ?? [];
+    for (const entry of peoples) {
+      if (typeof entry?.population !== "number") continue;
+      if (typeof entry?.percentageInCountry !== "number") continue;
+      const implied = (entry.population / total) * 100;
+      const drift = Math.abs(implied - entry.percentageInCountry);
+      if (drift > FR32_DRIFT_PP) {
+        const msg = `FR32 ${id}/${entry.name ?? "(unnamed)"}: population ${entry.population} implies ${implied.toFixed(2)}% but percentageInCountry is ${entry.percentageInCountry}% (drift ${drift.toFixed(2)} pp > ${FR32_DRIFT_PP} pp threshold) — drop the population field (see scripts/checkPopulationPercentageDrift.ts)`;
+        if (FR32_ZAF_SOFT.has(id)) {
+          warnings.push(msg + " [soft: owned by issue #129]");
+        } else {
+          errors.push(msg);
+        }
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
  * Orphan fiches – PPL files whose parent folder doesn't exist as a FLG JSON.
  * (Complements FR26 from the PPL perspective.)
  */
@@ -1163,6 +1266,16 @@ async function main() {
   newChecks.push({
     name: "FR29 ISO validity",
     result: checkIsoValidity(datasetRoot),
+  });
+
+  console.log("FR32 – population/percentageInCountry drift...");
+  newChecks.push({
+    name: "FR32 population/percentageInCountry drift",
+    result: checkPopulationPercentageDrift(
+      datasetRoot,
+      path.join(PUBLIC_ROOT, "pays_demographie.csv")
+    ),
+    soft: true,
   });
 
   console.log("Orphan fiches...");
