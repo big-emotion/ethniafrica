@@ -72,15 +72,19 @@
       "totalPopulation": 32800,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 : Aizi Aproumu 12 000, Aizi Mobumrin 3 800, Aizi Tiagbamrin 17 000 (total cumule).",
-      "distributionByCountry": [{ "country": "CIV", "population": 32800 }]
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 32800
+        }
+      ]
     },
     "sources": [
       "Ethnologue – Aizi subgroup (https://www.ethnologue.com/subgroup/938/)",
       "Ethnologue – Aizi Tiagbamrin (ahi) (https://www.ethnologue.com/language/ahi/)",
       "Pete Eric – Aizi et Eotile : deux peuples lagunaires aux liens historiques anciens, Revue Akofena, janvier 2025 (https://www.revue-akofena.com/wp-content/uploads/2025/01/07-ActColl-Eric-PETE_077-088.pdf)",
       "Azagni Blath Esther – Les betibe et la formation des villages aizi de langue lelou (XIIIe-debut XXe siecles), Ziglôbitha (https://www.ziglobitha.org/wp-content/uploads/2021/11/03-Blath-Esther-AZAGNI-pp31-52.pdf)",
-      "Joshua Project – Cote d'Ivoire people groups (https://joshuaproject.net/countries/iv)",
-      "Wikipedia – Apro language (https://en.wikipedia.org/wiki/Apro_language)"
+      "Joshua Project – Cote d'Ivoire people groups (https://joshuaproject.net/countries/iv)"
     ]
   }
 }

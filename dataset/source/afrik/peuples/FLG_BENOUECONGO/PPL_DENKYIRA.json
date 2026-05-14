@@ -66,11 +66,14 @@
       "totalPopulation": 200000,
       "referenceYear": 2025,
       "source": "Recensement Ghana 2021: Upper Denkyira East Municipal (Dunkwa-on-Offin) 91 025, Upper Denkyira West (Diaso) 91 025 (citypopulation.de). Population ethnique Denkyira estimee a environ 200 000 personnes dans la region centrale du Ghana.",
-      "distributionByCountry": [{ "country": "GHA", "population": 200000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 200000
+        }
+      ]
     },
     "sources": [
-      "Kingdom of Denkyira – Wikipedia EN (https://en.wikipedia.org/wiki/Denkyira)",
-      "Akan language – Wikipedia EN (https://en.wikipedia.org/wiki/Akan_language)",
       "Upper Denkyira West – Citypopulation.de (https://www.citypopulation.de/en/ghana/admin/central/0217__upper_denkyira_west/)",
       "Ghana Statistical Service, Population and Housing Census 2021 (https://census2021.statsghana.gov.gh)",
       "Oral Traditions of Denkyira – in The Akan People: A Documentary History, Markus Wiener Publishers (https://markuswiener.com/table_of_contents/akan-people/)",

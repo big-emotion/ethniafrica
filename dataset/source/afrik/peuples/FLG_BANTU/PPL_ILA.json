@@ -61,11 +61,14 @@
       "totalPopulation": 215000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (https://joshuaproject.net/people_groups/12208)",
-      "distributionByCountry": [{ "country": "ZMB", "population": 215000 }]
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 215000
+        }
+      ]
     },
     "sources": [
-      "Ila people – Wikipedia (https://en.wikipedia.org/wiki/Ila_people)",
-      "Ila language – Wikipedia (https://en.wikipedia.org/wiki/Ila_language)",
       "Ila in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12208)",
       "Ila – Encyclopaedia Britannica, 1998 (https://www.britannica.com/topic/Ila-people)",
       "Ila – eHRAF World Cultures, Yale University (https://ehrafworldcultures.yale.edu/cultures/fq06/summary)",

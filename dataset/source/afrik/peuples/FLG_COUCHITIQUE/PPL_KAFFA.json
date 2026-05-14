@@ -62,13 +62,14 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (Kafa in Ethiopia : 1 293 000). Le recensement éthiopien de 2007 indiquait une proportion de 1,2% de la population nationale.",
       "distributionByCountry": [
-        { "country": "ETH", "population": 1293000, "percentage": 100 }
+        {
+          "country": "ETH",
+          "population": 1293000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Kafficho people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kafficho_people)",
-      "Kingdom of Kaffa – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kingdom_of_Kaffa)",
-      "Kafa language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kafa_language)",
       "Kafa – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/kafa1242)",
       "Kafa in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12408)",
       "XLIII Coffee – Kaffa Coffee and the Journey from the Ethiopian Rainforest, 2025 (https://xliiicoffee.com/en/journal/kaffa-coffee-ethiopian-forest-journey/)",

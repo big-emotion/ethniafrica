@@ -66,16 +66,18 @@
       "totalPopulation": 75000,
       "referenceYear": 2025,
       "source": "Estimation basee sur les 59 000 habitants recenses entre 2000 et 2018 (Wikipedia FR), avec extrapolation selon le fort taux de croissance demographique signale ; estimation precedente de 22 000 locuteurs en 1993 (Ethnologue).",
-      "distributionByCountry": [{ "country": "CIV", "population": 75000 }]
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 75000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia FR - Wan (peuple) (https://fr.wikipedia.org/wiki/Wan_(peuple))",
-      "Wikipedia EN - Wan language (https://en.wikipedia.org/wiki/Wan_language)",
       "KOFFI Kouakou Sylvain - The Wan and their migrations in Cote d'Ivoire, Revue ASTR-Ghana / e.f.u.a editions, 2024 (https://edition-efua.acaref.net/wp-content/uploads/sites/6/2024/11/7-KOFFI-Kouakou-Sylvain.pdf)",
       "Ravenhill P. L. - The Wan Language, LLACAN-CNRS (https://llacan.cnrs.fr/PDF/AutresMandenkan/ravenhil1.PDF)",
       "Joshua Project - Wan, Nwa in Cote d'Ivoire (https://joshuaproject.net/people_groups/15848)",
-      "Ethnologue - Wan Language (WAN) (https://www.ethnologue.com/language/wan/)",
-      "Goli (dance) - Wikipedia EN (https://en.wikipedia.org/wiki/Goli_(dance))"
+      "Ethnologue - Wan Language (WAN) (https://www.ethnologue.com/language/wan/)"
     ]
   }
 }

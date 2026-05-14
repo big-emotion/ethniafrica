@@ -64,15 +64,18 @@
       "totalPopulation": 10000,
       "referenceYear": 2025,
       "source": "Estimation (peuple très minoritaire, pas de données officielles récentes disponibles). Parc National des Iles Ehotilé : 550 ha + chenaux, 6 îles principales.",
-      "distributionByCountry": [{ "country": "CIV", "population": 10000 }]
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 10000
+        }
+      ]
     },
     "sources": [
-      "Ehotilé – Wikipédia (https://fr.wikipedia.org/wiki/Ehotil%C3%A9)",
       "Polet, Jean – Recherches archéologiques sur les peuplements lagunaires de Côte d'Ivoire, 1988",
       "Retord, G.L. – Domaine linguistique Eotilé, 1970",
       "Kakou Foba, Antoine – Le parler de Vitré, 2009",
-      "Parc National des Iles Ehotilé, Côte d'Ivoire – Décret N074-179 (https://joshuaproject.net/people_groups/12190)",
-      "Langues kwa – Wikipédia (https://fr.wikipedia.org/wiki/Langues_kwa)"
+      "Parc National des Iles Ehotilé, Côte d'Ivoire – Décret N074-179 (https://joshuaproject.net/people_groups/12190)"
     ]
   }
 }

@@ -63,15 +63,19 @@
       "referenceYear": 2025,
       "source": "Estimation basee sur les donnees linguistiques de Maniacky (2008) et les classifications ethnographiques coloniales; population exacte non recensee separement.",
       "distributionByCountry": [
-        { "country": "AGO", "population": 10000 },
-        { "country": "COD", "population": 5000 }
+        {
+          "country": "AGO",
+          "population": 10000
+        },
+        {
+          "country": "COD",
+          "population": 5000
+        }
       ]
     },
     "sources": [
       "Maniacky, Jacky – Nyinungu (better known in the literature as Minungu): a Bantu language spoken on both sides of the border between Angola and DRC, WOCAL 6, Cologne (2008) (https://www.uni-koeln.de/phil-fak/afrikanistik/wocal/schedule/abstracts/6-4-2%20Jacky%20Maniacky.pdf)",
       "Angola Country Study – Lunda-Chokwe, Library of Congress Federal Research Division (https://countrystudies.us/angola/62.htm)",
-      "Chokwe people – Wikipedia, The Free Encyclopedia (https://en.wikipedia.org/wiki/Chokwe_people)",
-      "Languages of Angola – Wikipedia, The Free Encyclopedia (https://en.wikipedia.org/wiki/Languages_of_Angola)",
       "Royal Museum for Central Africa – Annual Report 2011, Tervuren (https://www.africamuseum.be/sites/default/files/media/about-us/annual-reports/doc/annualreport2011nl.pdf)",
       "Angolan Language Ecologies: Contacts in Northeastern Angola, CIBIO University of Porto (2025) (https://www.cibio.up.pt/en/events/angolan-language-ecologies-contexts-of-contact-change-and-normalization/)"
     ]

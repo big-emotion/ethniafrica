@@ -73,15 +73,18 @@
       "totalPopulation": 38000,
       "referenceYear": 2025,
       "source": "Joshua Project (2025): 38 000; recensement ethiopien 2007 (CSA): 19 698 Mossiye; Wycliffe Bible Translators profile: 21 000 locuteurs (2020-2023)",
-      "distributionByCountry": [{ "country": "ETH", "population": 38000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 38000
+        }
+      ]
     },
     "sources": [
       "Harlow, Erika – Phonology of Mosiye (these, Trinity Western University / Arca), 2013 (https://arcabc.ca/islandora/object/twu:319)",
-      "Bussa language – Wikipedia (https://en.wikipedia.org/wiki/Bussa_language)",
       "Mosiye in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11581)",
       "Mosiye 2 Profile – Wycliffe Bible Translators, 2020-2023 (https://www.wycliffe.org/Main%20Uploads/Projects/PDF/Mosiye%202%20Profile%20WEB.pdf)",
       "Dobase of Ethiopia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg011570/)",
-      "List of ethnic groups in Ethiopia – Wikipedia (https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_Ethiopia)",
       "ISO 639-3: dox (Bussa/Mositacha) – SIL International / Ethnologue",
       "Appendix: ISO 639-3 codes/Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)"
     ]

@@ -67,12 +67,15 @@
       "totalPopulation": 631000,
       "referenceYear": 2025,
       "source": "Wikipedia (estimation ~631 000 ; 355 000 en 1993 ; 134 406 au recensement 1957)",
-      "distributionByCountry": [{ "country": "TZA", "population": 631000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 631000
+        }
+      ]
     },
     "sources": [
-      "Zigua people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Zigua_people)",
       "Zigula Language (ZIW) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/ziw/)",
-      "Zigula language – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Zigula_language)",
       "Grottanelli, V.L. – Peoples of Africa, 1963",
       "Moyo wa Uzigua na Nguu – Historical Society Records, Tanzania, 1938"
     ]

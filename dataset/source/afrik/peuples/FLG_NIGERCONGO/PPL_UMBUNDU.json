@@ -78,17 +78,20 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2024 : 8 895 000 en Angola + 5 000 en Namibie. Wikipedia : 37-38% de la population angolaise (estimation 2025 : ~38 millions d'habitants). Estimation 2025 basee sur 37% de 39 millions = environ 14 400 000.",
       "distributionByCountry": [
-        { "country": "AGO", "population": 14395000 },
-        { "country": "NAM", "population": 5000 }
+        {
+          "country": "AGO",
+          "population": 14395000
+        },
+        {
+          "country": "NAM",
+          "population": 5000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN – Ovimbundu (https://en.wikipedia.org/wiki/Ovimbundu)",
-      "Wikipedia EN – Demographics of Angola (https://en.wikipedia.org/wiki/Demographics_of_Angola)",
       "Joshua Project – Ovimbundu, Umbundu in Angola (https://joshuaproject.net/people_groups/15706/AO)",
       "Minority Rights Group – Ovimbundu in Angola (https://minorityrights.org/communities/ovimbundu/)",
       "eHRAF World Cultures – Ovimbundu summary (https://ehrafworldcultures.yale.edu/cultures/fp13/summary)",
-      "Simple Wikipedia – Umbundu (https://simple.wikipedia.org/wiki/Umbundu)",
       "Localizely – Umbundu language code umb (https://localizely.com/language-code/umb/)"
     ]
   }

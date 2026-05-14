@@ -2,10 +2,7 @@
   "id": "PPL_FON",
   "nameMain": "Fon",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": [
-    "BEN",
-    "TGO"
-  ],
+  "currentCountries": ["BEN", "TGO"],
   "content": {
     "appellations": {
       "mainName": "Fon",
@@ -21,10 +18,7 @@
       "linguisticFamily": "FLG_BENOUECONGO",
       "ethnoLinguisticGroup": "Gbe oriental (branche Kwa du Niger-Congo)",
       "historicalRegion": "Sud et centre du Bénin (ancien Dahomey) ; région d'Abomey, Ouidah, Allada",
-      "currentCountries": [
-        "BEN",
-        "TGO"
-      ]
+      "currentCountries": ["BEN", "TGO"]
     },
     "ethnicities": [
       "Fon proprement dits (Agbomenu) — région d'Abomey, plateau central du Bénin",
@@ -60,9 +54,7 @@
     },
     "languages": {
       "mainLanguage": "Fon (Fɔ̀ngbè)",
-      "isoCodes": [
-        "fon"
-      ],
+      "isoCodes": ["fon"],
       "dialects": [
         "Fongbe proprement dit (Abomey-Bohicon, standard)",
         "Goun (Porto-Novo) — variante distincte",
@@ -100,7 +92,6 @@
       ]
     },
     "sources": [
-      "Wikipedia EN — Fon people : https://en.wikipedia.org/wiki/Fon_people",
       "SIL Ethnologue — Fon language (fon) : https://www.ethnologue.com/language/fon/",
       "Joshua Project — Fon in Benin : https://joshuaproject.net/people_groups/11222/BN",
       "Encyclopaedia Britannica — Fon : https://www.britannica.com/topic/Fon-people",

@@ -78,13 +78,17 @@
       "referenceYear": 2025,
       "source": "Wikipedia (FR) cite environ 26 000 Toura au recensement ivoirien de 2001. Estimation de 38 500 locuteurs de la langue toura en Cote d'Ivoire (1993). Avec la croissance demographique (environ 2,5% annuel en CIV), estimation 2025 : 50 000 personnes.",
       "distributionByCountry": [
-        { "country": "CIV", "population": 48000 },
-        { "country": "GIN", "population": 2000 }
+        {
+          "country": "CIV",
+          "population": 48000
+        },
+        {
+          "country": "GIN",
+          "population": 2000
+        }
       ]
     },
     "sources": [
-      "Wikipedia – Toura (peuple) (FR), 2024 (https://fr.wikipedia.org/wiki/Toura_(peuple))",
-      "Wikipedia – Tura language (EN), 2024 (https://en.wikipedia.org/wiki/Tura_language)",
       "Glottolog – Dan-Toura (dant1235), 2024 (https://glottolog.org/resource/languoid/id/dant1235)",
       "Omniglot – Dan language and alphabet, 2024 (https://www.omniglot.com/writing/dan.htm)",
       "Landinfo – Report Cote d'Ivoire: Ethnicity, Ivoirite and Conflict, 2006 (https://www.landinfo.no/asset/514/1/514_1.pdf)",

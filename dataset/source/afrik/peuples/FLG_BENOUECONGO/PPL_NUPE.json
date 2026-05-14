@@ -80,11 +80,14 @@
       "totalPopulation": 5500000,
       "referenceYear": 2025,
       "source": "Wikipedia (environ 4,5 millions principalement au Niger State). Estimations recentes sur les reseaux sociaux nigerians (2024) : 7 millions dans le monde. Estimation retenue : environ 5,5 millions en 2025 (principalement Niger State, avec des communautes importantes dans Kwara, Kogi, FCT, Kaduna, Kano, Lagos). Les Nupe constituent le groupe ethnique dominant du Niger State.",
-      "distributionByCountry": [{ "country": "NGA", "population": 5500000 }]
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 5500000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN — Nupe people : https://en.wikipedia.org/wiki/Nupe_people",
-      "Wikipedia EN — Nupe language : https://en.wikipedia.org/wiki/Nupe_language",
       "Britannica — Nupe : https://www.britannica.com/topic/Nupe",
       "Ethnologue (SIL) — Nupe-Nupe-Tako (nup) : https://www.ethnologue.com/subgroup/2027/",
       "ASJP Database — Nupe, ISO 639-3 nup : https://asjp.clld.org/languages/NUPE",

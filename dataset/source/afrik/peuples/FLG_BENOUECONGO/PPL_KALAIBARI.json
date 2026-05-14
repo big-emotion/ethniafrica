@@ -78,14 +78,17 @@
       "referenceYear": 2025,
       "source": "Joshua Project (population en 2024 : 579,000 au Nigeria, 632,000 tous pays confondus). Wikipedia indique 448,000 (estimation anterieure). Projections 2025 estimees a environ 632,000 au Nigeria principalement, avec une petite communaute au Ghana. La langue kalabari avait 258,000 locuteurs en 2005 selon Ethnologue, mais la population ethnique est plus large.",
       "distributionByCountry": [
-        { "country": "NGA", "population": 620000 },
-        { "country": "GHA", "population": 12000 }
+        {
+          "country": "NGA",
+          "population": 620000
+        },
+        {
+          "country": "GHA",
+          "population": 12000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Kalabari tribe : https://en.wikipedia.org/wiki/Kalabari_tribe",
-      "Wikipedia EN — Kalabari Kingdom : https://en.wikipedia.org/wiki/Kalabari_Kingdom",
-      "Wikipedia EN — Kalabari language : https://en.wikipedia.org/wiki/Kalabari_language",
       "Joshua Project — Kalabari in Nigeria (ijn) : https://joshuaproject.net/people_groups/12441/NI",
       "Alagoa, E.J. (2009). A History of the Niger Delta. Port Harcourt: Onyoma Research Publications.",
       "Ethnologue (SIL) — Kalabari (ijn) : https://www.ethnologue.com/language/ijn/",

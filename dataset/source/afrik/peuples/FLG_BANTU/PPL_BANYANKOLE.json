@@ -77,13 +77,21 @@
       "referenceYear": 2025,
       "source": "Facebook Ethnic Groups of Uganda 2025 (estimation 4,2 millions, 8,2% de la population ougandaise) ; Joshua Project – Banyankore in Uganda",
       "distributionByCountry": [
-        { "country": "UGA", "population": 4150000 },
-        { "country": "TZA", "population": 30000 },
-        { "country": "RWA", "population": 20000 }
+        {
+          "country": "UGA",
+          "population": 4150000
+        },
+        {
+          "country": "TZA",
+          "population": 30000
+        },
+        {
+          "country": "RWA",
+          "population": 20000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN – Nkole people (https://en.wikipedia.org/wiki/Nkole_people)",
       "101 Last Tribes – Banyankole people (http://www.101lasttribes.com/tribes/banyankole.html)",
       "Joshua Project – Banyankore in Uganda (https://joshuaproject.net/people_groups/12103/UG)",
       "Encyclopedia.com – Banyankole (https://www.encyclopedia.com/places/africa/uganda-political-geography/banyankole)",

@@ -83,13 +83,17 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2025) estimates 5,200,000 Tiv in Nigeria and 10,000 in Cameroon, for a total of approximately 5,210,000. Ethnologue (2024) records over 5.2 million Tiv speakers. Minority Rights Group and various academic sources cite 2.4-2.5% of Nigeria's total population. Projection to 2025 based on these figures yields approximately 5.3 million total.",
       "distributionByCountry": [
-        { "country": "NGA", "population": 5290000 },
-        { "country": "CMR", "population": 10000 }
+        {
+          "country": "NGA",
+          "population": 5290000
+        },
+        {
+          "country": "CMR",
+          "population": 10000
+        }
       ]
     },
     "sources": [
-      "Wikipedia, Tiv people: https://en.wikipedia.org/wiki/Tiv_people",
-      "Wikipedia, Tiv language: https://en.wikipedia.org/wiki/Tiv_language",
       "Minority Rights Group, Tiv in Nigeria: https://minorityrights.org/communities/tiv/",
       "Joshua Project, Tiv people group all countries: https://joshuaproject.net/people_groups/15505",
       "Agaku, J.M. (2008). The Girinya Dance Theatre of the Tiv People of Nigeria. International Journal of Intangible Heritage. https://www.ijih.org/volumes/article/32",

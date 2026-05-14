@@ -71,14 +71,16 @@
       "referenceYear": 2025,
       "source": "PeopleGroups.org (2025), recoupé avec le recensement zambien de 2010 (Lala : 3,1% de la population)",
       "distributionByCountry": [
-        { "country": "ZMB", "population": 635000, "percentage": 100 }
+        {
+          "country": "ZMB",
+          "population": 635000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Lala people – Wikipedia (https://en.wikipedia.org/wiki/Lala_people)",
       "Mkandawire, S.B. & Daka, H. – Cultural Preservation Literacy in Zambia: A Case Study of the Lala People of Serenje District, University of Zambia (https://dspace.unza.zm/server/api/core/bitstreams/c53ebc1e-2380-4aff-9b69-2b4d9fd13057/content)",
       "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
-      "Demographics of Zambia – Wikipedia (https://en.wikipedia.org/wiki/Demographics_of_Zambia)",
       "PeopleGroups.org – Lala of Zambia (https://peoplegroups.org/people_groups/pg015588/)",
       "Ethnologue – Lala-Bisa Language (LEB) (https://www.ethnologue.com/language/leb/)",
       "Joshua Project – Zambia People Groups (https://joshuaproject.net/countries/ZA)"

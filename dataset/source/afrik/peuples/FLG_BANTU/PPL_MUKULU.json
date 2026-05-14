@@ -56,12 +56,16 @@
       "totalPopulation": 40500,
       "referenceYear": 2025,
       "source": "PeopleGroups.org 2025 (langue Mukulu moz : 40 500 locuteurs)",
-      "distributionByCountry": [{ "country": "ZMB", "population": 40500 }]
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 40500
+        }
+      ]
     },
     "sources": [
       "Mukulu of Zambia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015611/)",
       "Mukulu in Zambia – Joshua Project (https://joshuaproject.net/people_groups/13860)",
-      "List of Zambian tribes – Wikipedia EN (https://en.wikipedia.org/wiki/List_of_Zambian_tribes)",
       "ISO 639-3 codes Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)"
     ]
   }

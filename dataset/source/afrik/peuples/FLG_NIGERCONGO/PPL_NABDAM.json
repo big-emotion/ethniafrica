@@ -73,11 +73,14 @@
       "totalPopulation": 55000,
       "referenceYear": 2025,
       "source": "Estimation basee sur le recensement ghaneen de 2021 (district de Nabdam : 51 861 habitants, Ghana Statistical Service). Population 2025 estimee avec croissance annuelle de 2,2%. Chiffre conservateur tenant compte que la population du district ne se compose pas uniquement d'ethnies Nabdam.",
-      "distributionByCountry": [{ "country": "GHA", "population": 55000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 55000
+        }
+      ]
     },
     "sources": [
-      "Nabdam District – Wikipedia EN (https://en.wikipedia.org/wiki/Nabdam_(district))",
-      "Nabit language – Wikipedia EN (https://en.wikipedia.org/wiki/Nabit_language)",
       "Blakk Rasta – Story of the Nabdam people, YouTube, 2025 (https://www.youtube.com/watch?v=h6GcSiCZkMA)",
       "Mamprusi People – The Nangodi Traditional Area, Facebook, 2020 (https://www.facebook.com/mamprusiPeople/posts/the-nangodi-traditional-area)",
       "Ghana Statistical Service – Population and Housing Census 2021 (https://www.statsghana.gov.gh)",

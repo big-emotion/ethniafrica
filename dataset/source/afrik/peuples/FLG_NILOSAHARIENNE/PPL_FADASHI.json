@@ -64,13 +64,14 @@
       "referenceYear": 2025,
       "source": "Estimation 2025 basée sur le recensement éthiopien 1994 (741 personnes déclarées Fadashi ; 8 715 locuteurs du dialecte Fadashi au sein de la population Berta totale de 208 759) et croissance démographique projetée ; Joshua Project / Berta Benishangul ETH",
       "distributionByCountry": [
-        { "country": "ETH", "population": 12000, "percentage": 100 }
+        {
+          "country": "ETH",
+          "population": 12000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Berta people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Berta_people)",
-      "Fadashi language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Fadashi_language)",
-      "Berta languages – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Berta_languages)",
       "Berta language (WTI) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/wti/)",
       "Berta, Benishangul in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10793/ET)",
       "1994 Population and Housing Census of Ethiopia – IPUMS / World Bank (https://microdata.worldbank.org/catalog/2746)",

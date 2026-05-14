@@ -59,12 +59,15 @@
       "totalPopulation": 2800,
       "referenceYear": 2025,
       "source": "Joshua Project, 2025 (https://joshuaproject.net/people_groups/12547)",
-      "distributionByCountry": [{ "country": "ETH", "population": 2800 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 2800
+        }
+      ]
     },
     "sources": [
       "Karo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12547)",
-      "Karo language (Ethiopia) – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Karo_language_(Ethiopia))",
-      "Karo people (Ethiopia) – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Karo_people_(Ethiopia))",
       "Karo (Ethiopia) – Glottolog 5.1, 2024 (https://glottolog.org/resource/languoid/id/karo1297)",
       "A Look at the Kara Tribe, Ethiopia's Famous Body Painters – Absolute Ethiopia Tours, 2025 (https://absoluteethiopia.com/a-look-at-the-kara-tribe-ethiopias-famous-body-painters/)",
       "Omotic languages – Encyclopaedia Britannica, 2024 (https://www.britannica.com/topic/Omotic-languages)"

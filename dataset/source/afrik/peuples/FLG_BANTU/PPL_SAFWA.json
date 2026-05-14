@@ -62,11 +62,14 @@
       "totalPopulation": 518000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025",
-      "distributionByCountry": [{ "country": "TZA", "population": 518000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 518000
+        }
+      ]
     },
     "sources": [
-      "Safwa people – Wikipedia, 2006 (https://en.wikipedia.org/wiki/Safwa_people)",
-      "Safwa language – Wikipedia (https://en.wikipedia.org/wiki/Safwa_language)",
       "Safwa in Tanzania Profile – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14634/TZ)",
       "Safwa Language (SBK) – Ethnologue, SIL International (https://www.ethnologue.com/language/sbk/)",
       "Roth, Tim – Master Wungu Thesis – Canada Institute of Linguistics, 2012 (https://www.canil.ca/wordpress/wp-content/uploads/2016/09/2012-Roth-Tim.pdf)",

@@ -67,15 +67,17 @@
       "totalPopulation": 250000,
       "referenceYear": 2025,
       "source": "Estimation basee sur le recensement 1987 (200 000 selon Wikipedia Rufiji people) et la croissance demographique tanzanienne. Le delta compte environ 12 000 personnes dependant directement de l'ecosysteme (recensement 2015, Wetlands International).",
-      "distributionByCountry": [{ "country": "TZA", "population": 250000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 250000
+        }
+      ]
     },
     "sources": [
-      "Rufiji people – Wikipedia (https://en.wikipedia.org/wiki/Rufiji_people)",
-      "Rufiji language – Wikipedia (https://en.wikipedia.org/wiki/Rufiji_language)",
       "Rufiji of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg050319/)",
       "RUFIJI DELTA: A HUB FOR MANGROVES – Wetlands International East Africa, 2018 (https://eastafrica.wetlands.org/rufiji-delta-a-hub-for-mangroves/)",
       "A Tapestry of the Ruvu Past – Rhonda M. Gonzales, Columbia University Press / Gutenberg-E, 2008 (http://www.gutenberg-e.org/gonzales/pdf/gonzales-chapter6.pdf)",
-      "History of Tanzania – Wikipedia (https://en.wikipedia.org/wiki/History_of_Tanzania)",
       "Rufiji – Indigenous Africa, 2020 (https://indigenousafrica.org/rufiji/)",
       "ISO 639-3 Language Codes – National Center for Education Statistics (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)"
     ]

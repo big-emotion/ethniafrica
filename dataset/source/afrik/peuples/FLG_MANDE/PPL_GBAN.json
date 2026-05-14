@@ -57,15 +57,17 @@
       "totalPopulation": 85000,
       "referenceYear": 2025,
       "source": "Estimation 2025 fondee sur Joshua Project (79 400 en 2023) et Wikipedia EN (61 000 en 2015), avec projection de croissance.",
-      "distributionByCountry": [{ "country": "CIV", "population": 85000 }]
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 85000
+        }
+      ]
     },
     "sources": [
-      "Gagou (peuple) – Wikipedia FR (https://fr.wikipedia.org/wiki/Gagou_(peuple))",
-      "Gagu people – Wikipedia EN (https://en.wikipedia.org/wiki/Gagu_people)",
       "Gagu in Cote d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11799)",
       "Gagu people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/gagu.html)",
       "Gban language (GGU) – Ethnologue, SIL International (https://www.ethnologue.com/language/ggu/)",
-      "Gban language – Wikipedia EN, 2012 (https://en.wikipedia.org/wiki/Gban_language)",
       "Tauxier, Louis – Negres gouro et gagou : Centre de la Cote d'Ivoire, Librairie orientaliste P. Geuthner, 1924",
       "Chauveau, Jean-Pierre – Les Gba ou Gagou de Cote d'Ivoire : Un Systeme de parente bilineaire a nomenclature de type Crow, ORSTOM"
     ]

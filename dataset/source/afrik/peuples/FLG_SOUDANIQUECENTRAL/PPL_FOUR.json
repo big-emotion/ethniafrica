@@ -77,14 +77,21 @@
       "referenceYear": 2025,
       "source": "Wikipedia FR (6 500 000 au Soudan, 20 000 au Tchad, 3 500 en Egypte) ; Joshua Project (1 392 000 pour le sous-groupe Fur/Forok au Soudan) ; estimation globale integrant deplacement interne lie au conflit",
       "distributionByCountry": [
-        { "country": "SDN", "population": 6450000 },
-        { "country": "TCD", "population": 40000 },
-        { "country": "EGY", "population": 10000 }
+        {
+          "country": "SDN",
+          "population": 6450000
+        },
+        {
+          "country": "TCD",
+          "population": 40000
+        },
+        {
+          "country": "EGY",
+          "population": 10000
+        }
       ]
     },
     "sources": [
-      "Wikipedia FR, Fours (peuple) – Wikimedia Foundation (https://fr.wikipedia.org/wiki/Fours_(peuple))",
-      "Wikipedia EN, Fur people – Wikimedia Foundation (https://en.wikipedia.org/wiki/Fur_people)",
       "Joshua Project, Fur/Forok in Sudan – Joshua Project 2024 (https://joshuaproject.net/people_groups/11779/SU)",
       "Ethnologue, Fur (fvr) – SIL International 2024 (https://www.ethnologue.com/language/fvr/)",
       "UK Government, Country policy and information note: non-Arab Darfuris – GOV.UK, aout 2024 (https://www.gov.uk/government/publications/sudan-country-policy-and-information-notes/country-policy-and-information-note-non-arab-darfuri-august-2024-accessible)",

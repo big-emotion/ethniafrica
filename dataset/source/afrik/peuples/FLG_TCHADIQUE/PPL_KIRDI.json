@@ -111,14 +111,21 @@
       "referenceYear": 2025,
       "source": "CIA World Factbook : 11% de la population du Cameroun (~30 millions en 2025, soit environ 3,3 millions) ; Wikipedia EN : Fali plus de 250 000, Mafa quelques centaines de milliers, Bata 13 500. Estimation globale consolidee incluant Nigeria et Tchad.",
       "distributionByCountry": [
-        { "country": "CMR", "population": 3000000 },
-        { "country": "NGA", "population": 350000 },
-        { "country": "TCD", "population": 150000 }
+        {
+          "country": "CMR",
+          "population": 3000000
+        },
+        {
+          "country": "NGA",
+          "population": 350000
+        },
+        {
+          "country": "TCD",
+          "population": 150000
+        }
       ]
     },
     "sources": [
-      "Wikipedia FR, Kirdi – Wikimedia Foundation (https://fr.wikipedia.org/wiki/Kirdi)",
-      "Wikipedia EN, Kirdi – Wikimedia Foundation (https://en.wikipedia.org/wiki/Kirdi)",
       "Qiraat Africa, The Kirdi People of West and Central Africa – Qiraat Africa, aout 2024 (https://qiraatafrican.com/en/12847/the-kirdi-people-of-west-central-africa/)",
       "CIA World Factbook, Cameroon – CIA 2024 (https://www.cia.gov/the-world-factbook/countries/cameroon/)",
       "Jean Hurault, Quelques aspects de la structure sociale des montagnards kirdi du nord Cameroun – Bulletin de l'IFAN, Dakar, serie B, 1958, p.111-122",

@@ -66,12 +66,17 @@
       "referenceYear": 2025,
       "source": "Wikipedia EN – Dan people (700 000 membres dans les deux pays). Liberia 2008 census : 276 293 Gio au Liberia (Minority Rights Group). Estimation globale 2025 stable.",
       "distributionByCountry": [
-        { "country": "LBR", "population": 320000 },
-        { "country": "CIV", "population": 380000 }
+        {
+          "country": "LBR",
+          "population": 320000
+        },
+        {
+          "country": "CIV",
+          "population": 380000
+        }
       ]
     },
     "sources": [
-      "Dan people – Wikipedia EN (https://en.wikipedia.org/wiki/Dan_people)",
       "Dan, Da in Liberia – Joshua Project (https://joshuaproject.net/people_groups/11485/LI)",
       "Dan | History, Culture & Religion – Encyclopaedia Britannica (https://www.britannica.com/topic/Dan-African-people)",
       "Minority Rights Group – Liberia, 2024 (https://minorityrights.org/country/liberia/)",

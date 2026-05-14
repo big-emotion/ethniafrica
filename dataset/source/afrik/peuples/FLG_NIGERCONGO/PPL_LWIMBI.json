@@ -62,15 +62,17 @@
       "totalPopulation": 128000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 : 128 000 Luimbi en Angola (population mondiale identique, groupe exclusivement angolais).",
-      "distributionByCountry": [{ "country": "AGO", "population": 128000 }]
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 128000
+        }
+      ]
     },
     "sources": [
       "Joshua Project – Luimbi in Angola, 2025 (https://joshuaproject.net/people_groups/13146)",
-      "Wikipedia – Luimbi language (https://en.wikipedia.org/wiki/Luimbi_language)",
       "Cambridge Core – A Note on the Luimbi of Central Angola, Scott Cecil W., Africa, Vol. 25, 1955 (https://www.cambridge.org/core/journals/africa/article/note-on-the-luimbi-of-central-angola/09A0A3E33535EA2E734174EBF255D11A)",
-      "Wikipedia – Ganguela (https://en.wikipedia.org/wiki/Ganguela)",
-      "101 Last Tribes – Ganguela people (https://www.101lasttribes.com/tribes/ganguela.html)",
-      "Wikipedia – Mbunda people (https://en.wikipedia.org/wiki/Mbunda_people)"
+      "101 Last Tribes – Ganguela people (https://www.101lasttribes.com/tribes/ganguela.html)"
     ]
   }
 }

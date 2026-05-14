@@ -64,11 +64,14 @@
       "totalPopulation": 1400,
       "referenceYear": 2025,
       "source": "Wikipedia EN (2015 : 1 200-1 300) ; Visit Natives 2024 : 1 200-1 500 ; estimation mediane 2025",
-      "distributionByCountry": [{ "country": "TZA", "population": 1400 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 1400
+        }
+      ]
     },
     "sources": [
-      "Hadza people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Hadza_people)",
-      "Hadza language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Hadza_language)",
       "Hadza – Glottolog 5.3, ISO 639-3 hts (https://glottolog.org/resource/languoid/id/hadz1240)",
       "The Ultimate Guide to the Hadza People of Tanzania – Visit Natives, 2024 (https://www.visitnatives.com/post/who-are-the-hadzabe-hunter-gatherers-in-lake-eyasi-tanzania)",
       "Woodburn, J. – Hunters and Gatherers : the Material Culture of the Nomadic Hadza, 1970, British Museum",

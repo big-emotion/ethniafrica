@@ -75,13 +75,17 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 : 377 000 au Liberia, 122 000 en Guinee. Wikipedia estime 472 000 a 510 000. Mano representent environ 7,9 % de la population du Liberia (recensement 2008).",
       "distributionByCountry": [
-        { "country": "LBR", "population": 377000 },
-        { "country": "GIN", "population": 122000 }
+        {
+          "country": "LBR",
+          "population": 377000
+        },
+        {
+          "country": "GIN",
+          "population": 122000
+        }
       ]
     },
     "sources": [
-      "Wikipedia – Mano people (EN), 2024 (https://en.wikipedia.org/wiki/Mano_people)",
-      "Wikipedia – Mano language (EN), 2024 (https://en.wikipedia.org/wiki/Mano_language)",
       "Joshua Project – Maan in Liberia, 2025 (https://joshuaproject.net/people_groups/16121/LI)",
       "Joshua Project – Maan in Guinea, 2025 (https://joshuaproject.net/people_groups/16121/GV)",
       "101 Last Tribes – Mano people of Liberia and Guinea (https://www.101lasttribes.com/tribes/mano.html)",

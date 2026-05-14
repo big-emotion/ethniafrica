@@ -78,14 +78,17 @@
       "totalPopulation": 199000,
       "referenceYear": 2025,
       "source": "Joshua Project (2025) : 199 000 pour le Cameroun. Wikipedia EN : environ 200 000. Note : les estimations oscillent entre 160 000 et 200 000 selon les sources ; le chiffre Joshua Project (2025) est retenu.",
-      "distributionByCountry": [{ "country": "CMR", "population": 199000 }]
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 199000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN – Bakossi people : https://en.wikipedia.org/wiki/Bakossi_people",
       "Joshua Project – Bakossi in Cameroon (2025) : https://joshuaproject.net/people_groups/10595",
       "Glottolog – Akoose (bss) : https://glottolog.org/resource/languoid/id/akoo1248",
       "SIL International – Akoose-English dictionary (2012) : https://searchworks.stanford.edu/view/10770615",
-      "Wikipedia EN – Manenguba languages : https://en.wikipedia.org/wiki/Manenguba_languages",
       "Balz, Heinrich (1984). Where the Faith Has to Live: Studies in Bakossi Society and Religion. Berlin: Reimer Verlag.",
       "CIA World Factbook – Cameroon : https://www.cia.gov/the-world-factbook/countries/cameroon/"
     ]

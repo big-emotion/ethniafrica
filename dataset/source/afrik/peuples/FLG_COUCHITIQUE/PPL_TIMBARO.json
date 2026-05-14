@@ -66,16 +66,17 @@
       "totalPopulation": 190000,
       "referenceYear": 2025,
       "source": "Joshua Project 2024 ; recensement ethiopien 2007 : 480 573 habitants dans le woreda special de Tembaro (toutes ethnies confondues)",
-      "distributionByCountry": [{ "country": "ETH", "population": 190000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 190000
+        }
+      ]
     },
     "sources": [
-      "Tembaro special woreda – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Tembaro_special_woreda)",
-      "Kambaata people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kambaata_people)",
-      "Kambaata language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kambaata_language)",
       "Tembaro in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/20201)",
       "Andashe, Abayneh – A History of Religions and Religious Processes Among the Tembaro People, Southern Ethiopia 1891-1974, Jimma University, 2014 (https://repository.ju.edu.et/bitstream/handle/123456789/5233/)",
-      "Ethnohistory and Culture of Tambaro of Southwest Ethiopia – Academia.edu, 2014 (https://www.academia.edu/7866560/Ethnohistory_and_Culture_of_Tambaro_of_Southwest_Ethiopia)",
-      "Kembata Zone – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kembata_Zone)"
+      "Ethnohistory and Culture of Tambaro of Southwest Ethiopia – Academia.edu, 2014 (https://www.academia.edu/7866560/Ethnohistory_and_Culture_of_Tambaro_of_Southwest_Ethiopia)"
     ]
   }
 }

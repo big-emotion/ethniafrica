@@ -64,12 +64,16 @@
       "totalPopulation": 200000,
       "referenceYear": 2025,
       "source": "Estimation basee sur le recensement ghanen 2021 : Krachi West 61 128 habitants, Krachi East 110 435 habitants, Krachi Nchumuru environ 40 000 habitants; projection 2025 avec taux de croissance moyen ghanen 2,2%/an.",
-      "distributionByCountry": [{ "country": "GHA", "population": 200000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 200000
+        }
+      ]
     },
     "sources": [
       "National Commission on Culture Ghana – Oti Region : Krachi history and culture (https://ghanaculture.gov.gh/oti-region/)",
       "Krachi Dente Worship – Preface and Introduction (https://www.hypertextile.net/blakhud/dente/dente0.htm)",
-      "Kete Krachi – Wikipedia EN (https://en.wikipedia.org/wiki/Kete_Krachi)",
       "Krache in Ghana – Joshua Project (https://joshuaproject.net/people_groups/12832/GH)",
       "Krachi West district population – CityPopulation.de (https://www.citypopulation.de/en/ghana/admin/oti/1505__krachi_west/)",
       "Krachi East Municipality – Department of Urban Roads Ghana (https://dur.gov.gh/oti/)",

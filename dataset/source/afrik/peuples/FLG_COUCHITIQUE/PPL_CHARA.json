@@ -61,12 +61,14 @@
       "referenceYear": 2025,
       "source": "Wikipedia Chara people (estimation 16 500, recensement 1994 : 6 984) / Ethnologue Tsaara : 13 000 locuteurs – estimation 2025 avec croissance modérée",
       "distributionByCountry": [
-        { "country": "ETH", "population": 20000, "percentage": 100 }
+        {
+          "country": "ETH",
+          "population": 20000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Chara people – Wikipedia EN, 2014 (https://en.wikipedia.org/wiki/Chara_people)",
-      "Chara language – Wikipedia EN, 2008 (https://en.wikipedia.org/wiki/Chara_language)",
       "Tsaara Language (CRA) – Ethnologue (https://www.ethnologue.com/language/cra/)",
       "Chara – Ethnologue subgroup (https://www.ethnologue.com/subgroup/1107/)",
       "Chara – Glottolog 5.2 (https://glottolog.org/resource/languoid/id/char1269)",

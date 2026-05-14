@@ -67,17 +67,21 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2025) : 900 personnes en Guinee-Bissau. La langue kasanga (ccj) est classee comme en danger critique (Ethnologue, 2024) avec un tres petit nombre de locuteurs. Le US Department of State (2005) estimait les locuteurs Cassanga a environ 0,04% de la population de Guinee-Bissau, soit moins de 1 000 personnes.",
       "distributionByCountry": [
-        { "country": "GNB", "population": 800 },
-        { "country": "SEN", "population": 100 }
+        {
+          "country": "GNB",
+          "population": 800
+        },
+        {
+          "country": "SEN",
+          "population": 100
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN - Kasanga language : https://en.wikipedia.org/wiki/Kasanga_language",
       "Ethnologue - Kasanga language (ccj) : https://www.ethnologue.com/language/ccj/",
       "Joshua Project - Kasanga, Haal in Guinea-Bissau : https://joshuaproject.net/people_groups/print/12555/PU",
       "Minority Rights Group - Guinea-Bissau (2024) : https://minorityrights.org/country/guinea-bissau/",
-      "US State Department - Guinea-Bissau Background Note : https://2009-2017.state.gov/outofdate/bgn/guineabissau/47466.htm",
-      "Wikipedia EN - Casamance (origine du nom, royaume de Kasa) : https://en.wikipedia.org/wiki/Casamance"
+      "US State Department - Guinea-Bissau Background Note : https://2009-2017.state.gov/outofdate/bgn/guineabissau/47466.htm"
     ]
   }
 }

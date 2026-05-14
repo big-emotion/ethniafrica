@@ -72,11 +72,14 @@
       "totalPopulation": 150000,
       "referenceYear": 2025,
       "source": "Estimation basee sur 98 000 en 1987 (Wikipedia Kwere people) et la tendance demographique tanzanienne. Le recensement de 1967 comptait 48 132 Ngh'wele. Les recensements post-1967 en Tanzanie ne relevent plus l'appartenance ethnique.",
-      "distributionByCountry": [{ "country": "TZA", "population": 150000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 150000
+        }
+      ]
     },
     "sources": [
-      "Kwere people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kwere_people)",
-      "Kwere language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kwere_language)",
       "Kwere in Tanzania – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12923)",
       "Kwere people – 101 Last Tribes (https://www.101lasttribes.com/tribes/kwere.html)",
       "Kwere Tribe – Gateway Africa (https://www.gateway-africa.com/tribe/kwere_tribe.html)",

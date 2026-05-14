@@ -80,16 +80,20 @@
       "referenceYear": 2025,
       "source": "Peoplegroups.org (2024) : 9 200 000 Kimbundu Mbundu en Angola. Estimation corroboree par Britannica (2 420 000 fin XXe siecle) et les taux de croissance angolais (3,2%/an). Les Ambundu representent environ 25% de la population angolaise (39 millions en 2025 selon UNFPA).",
       "distributionByCountry": [
-        { "country": "AGO", "population": 9200000 },
-        { "country": "COD", "population": 30000 }
+        {
+          "country": "AGO",
+          "population": 9200000
+        },
+        {
+          "country": "COD",
+          "population": 30000
+        }
       ]
     },
     "sources": [
-      "Ambundu – Wikipedia EN (https://en.wikipedia.org/wiki/Ambundu)",
       "Mbundu – Encyclopaedia Britannica (https://www.britannica.com/topic/Mbundu)",
       "Mbundu people – Africa 101 Last Tribes (https://www.101lasttribes.com/tribes/mbundu.html)",
       "Kimbundu in Angola – Joshua Project (https://m.joshuaproject.net/people_groups/print/13154/AO)",
-      "Kimbundu languages – Wikipedia EN (https://en.wikipedia.org/wiki/Kimbundu_languages)",
       "ISO 639-3 : kmb (Kimbundu) – SIL International / Ethnologue",
       "UNFPA Angola Population 2025 (https://www.unfpa.org/data/world-population/AO)"
     ]

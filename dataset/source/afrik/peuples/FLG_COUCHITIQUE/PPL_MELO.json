@@ -57,11 +57,15 @@
       "totalPopulation": 29000,
       "referenceYear": 2025,
       "source": "Joshua Project (2025), estimation basee sur le recensement ethiopien de 2007 et les projections demographiques",
-      "distributionByCountry": [{ "country": "ETH", "population": 29000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 29000
+        }
+      ]
     },
     "sources": [
       "Melo language – Ethnologue (SIL International), 18e edition, 2015 (https://www.ethnologue.com/language/mfx/)",
-      "Melo language – Wikipedia (https://en.wikipedia.org/wiki/Melo_language)",
       "Melo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13668)",
       "Melo language resources – Joshua Project, 2025 (https://joshuaproject.net/languages/mfx)",
       "ISO 639-3 Language Codes – SIL International / CEDS (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)",

@@ -69,11 +69,14 @@
       "totalPopulation": 468000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025",
-      "distributionByCountry": [{ "country": "TZA", "population": 468000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 468000
+        }
+      ]
     },
     "sources": [
-      "Kaguru people – Wikipedia (https://en.wikipedia.org/wiki/Kaguru_people)",
-      "Kagulu language – Wikipedia (https://en.wikipedia.org/wiki/Kagulu_language)",
       "Kagulu, Northern Sagara in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12414)",
       "Kaguru – DICE Database, University of Missouri (https://dice.missouri.edu/assets/docs/niger-congo/Kaguru.pdf)",
       "Kagulu – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/kagu1239)",

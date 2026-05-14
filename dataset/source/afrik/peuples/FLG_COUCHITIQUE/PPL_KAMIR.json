@@ -68,13 +68,14 @@
       "referenceYear": 2025,
       "source": "Omniglot (Xamtanga, 2023) : environ 213 000 locuteurs. Agaw languages Wikipedia : 143 000 locuteurs (Agaw languages, 2024). Estimation 2025 retenue : 213 000 selon source Omniglot.",
       "distributionByCountry": [
-        { "country": "ETH", "population": 213000, "percentage": 100 }
+        {
+          "country": "ETH",
+          "population": 213000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Xamtanga language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Xamtanga_language)",
-      "Agaw people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Agaw_people)",
-      "Agaw languages – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Agaw_languages)",
       "Xamtanga language, alphabet and pronunciation – Omniglot, 2023 (https://www.omniglot.com/writing/xamtanga.htm)",
       "Xamtanga Language (XAN) – Ethnologue, SIL International, 2025 (https://www.ethnologue.com/language/xan/)",
       "Xamtanga – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/xamt1239)",

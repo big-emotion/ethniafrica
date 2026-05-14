@@ -69,19 +69,26 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (population en Angola : 21 000). L'ensemble des Lunda (toutes branches confondues) totalise environ 1,45 million en RDC, 800 000 en Angola et 600 000 en Zambie selon Wikipedia/Lunda people.",
       "distributionByCountry": [
-        { "country": "AGO", "population": 21000 },
-        { "country": "ZMB", "population": 60000 },
-        { "country": "COD", "population": 15000 }
+        {
+          "country": "AGO",
+          "population": 21000
+        },
+        {
+          "country": "ZMB",
+          "population": 60000
+        },
+        {
+          "country": "COD",
+          "population": 15000
+        }
       ]
     },
     "sources": [
       "Joshua Project – Lunda, Ndembu in Angola, 2025 (https://joshuaproject.net/people_groups/13276)",
       "101 Last Tribes – Ndembu people (https://www.101lasttribes.com/tribes/ndembu.html)",
-      "Wikipedia – Lunda people (https://en.wikipedia.org/wiki/Lunda_people)",
       "Turner, Victor W. – The Forest of Symbols: Aspects of Ndembu Ritual, Cornell University Press, 1967",
       "Turner, Victor W. – Colour Classification in Ndembu Ritual, Africa, 1966 (https://gwern.net/doc/psychology/vision/1966-turner.pdf)",
-      "Britannica – Ndembu, 2025 (https://www.britannica.com/topic/Ndembu)",
-      "Culture of Angola – Wikipedia (https://en.wikipedia.org/wiki/Culture_of_Angola)"
+      "Britannica – Ndembu, 2025 (https://www.britannica.com/topic/Ndembu)"
     ]
   }
 }

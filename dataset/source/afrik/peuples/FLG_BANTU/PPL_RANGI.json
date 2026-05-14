@@ -68,11 +68,14 @@
       "totalPopulation": 880000,
       "referenceYear": 2022,
       "source": "Wikipedia – Rangi people, 2022 (estimation 880 000) ; Joshua Project estime 463 000 locuteurs Rangi en 2025 ; Rangi language Wikipedia : 270 000 a 410 000 locuteurs",
-      "distributionByCountry": [{ "country": "TZA", "population": 880000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 880000
+        }
+      ]
     },
     "sources": [
-      "Rangi people – Wikipedia (https://en.wikipedia.org/wiki/Rangi_people)",
-      "Rangi language – Wikipedia (https://en.wikipedia.org/wiki/Rangi_language)",
       "Rangi in Tanzania – Joshua Project (https://www.joshuaproject.net/people_groups/14519)",
       "Exploring contact in Rangi- and Alagwa-speaking communities – Gibson & Mous, LHEAF 2024 (https://lheaf.org/wp-content/uploads/2024/04/gibsonmous_exploring-contact-in-rangi-and-alagwa_lheaf.pdf)",
       "Why Rangi Christians Continue to Practice African Traditional Religion – Cox, DIU 2007 (https://diu.edu/documents/gialens/Vol2-3/Cox-Why-Rangi-Christians-Practice-ATR.pdf)",

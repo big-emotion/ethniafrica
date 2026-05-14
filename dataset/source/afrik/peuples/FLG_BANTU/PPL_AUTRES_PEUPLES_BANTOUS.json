@@ -87,16 +87,19 @@
       "totalPopulation": 800000,
       "referenceYear": 2025,
       "source": "Britannica – Gabon ethnic groups ; CIA World Factbook – Gabon (estimation des groupes minoritaires hors Fang, Sira-Punu, Nzebi, Mbete)",
-      "distributionByCountry": [{ "country": "GAB", "population": 800000 }]
+      "distributionByCountry": [
+        {
+          "country": "GAB",
+          "population": 800000
+        }
+      ]
     },
     "sources": [
       "Britannica – Gabon (https://www.britannica.com/place/Gabon)",
-      "Bantu peoples – Wikipedia EN (https://en.wikipedia.org/wiki/Bantu_peoples)",
       "Fang people – 101 Last Tribes (https://www.101lasttribes.com/tribes/fang.html)",
       "Joshua Project – Fang in Gabon (https://joshuaproject.net/people_groups/11187/GB)",
       "Institut Pasteur – Histoire migratoire des peuples Bantous, 2017 (https://www.pasteur.fr/fr/espace-presse/documents-presse/histoire-migratoire-peuples-bantous)",
-      "CNRS Editions – Langue et histoire des Bantu (https://books.openedition.org/editionscnrs/3955)",
-      "Wikipedia FR – Bantous (https://fr.wikipedia.org/wiki/Bantous)"
+      "CNRS Editions – Langue et histoire des Bantu (https://books.openedition.org/editionscnrs/3955)"
     ]
   }
 }

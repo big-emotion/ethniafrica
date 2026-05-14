@@ -76,10 +76,14 @@
       "totalPopulation": 3100000,
       "referenceYear": 2025,
       "source": "Recensement kenyan 2019 (2,7 millions de locuteurs Ekegusii), estimation 2025",
-      "distributionByCountry": [{ "country": "KEN", "population": 3100000 }]
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 3100000
+        }
+      ]
     },
     "sources": [
-      "Gusii people – Wikipedia (https://en.wikipedia.org/wiki/Gusii_people)",
       "Gusii – Encyclopaedia Britannica (https://www.britannica.com/topic/Gusii)",
       "Ekegusii – Minority and Minoritized Languages and Cultures, Texas State University Press, 2023 (https://pressbooks.txst.edu/minoritylanguages/part/ekegusii/)",
       "Gusii history – Traditional Music and Cultures of Kenya, Jens Finke, 2003 (https://www.bluegecko.org/kenya/tribes/gusii/history.htm)",

@@ -57,10 +57,14 @@
       "totalPopulation": 168000,
       "referenceYear": 2025,
       "source": "Joshua Project, 2025 (https://joshuaproject.net/people_groups/13451) ; Maale Woreda Office of Finance and Plan Development, 2025 (cite dans Wikipedia)",
-      "distributionByCountry": [{ "country": "ETH", "population": 168000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 168000
+        }
+      ]
     },
     "sources": [
-      "Maale people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Maale_people)",
       "Male in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13451)",
       "Male (Ethiopia) – Glottolog 5.1 (https://glottolog.org/resource/languoid/id/male1284)",
       "Male (Ethiopia) – ISO 639-3 / Swordshare Map (https://map.swordshare.com/mdy)",

@@ -90,14 +90,21 @@
       "referenceYear": 2025,
       "source": "Estimations aggregees : Joshua Project (Jola-Fonyi : 535 000 toutes regions; sous-groupes Karon, Bayot, Gusilay, Banjal, Bliss supplementaires); Minority Rights Group (environ 4% de la population senegalaise); Ethnologue (dyo, eja, bda). Chiffre global estime a 700 000 personnes en comptant tous les sous-groupes.",
       "distributionByCountry": [
-        { "country": "SEN", "population": 550000 },
-        { "country": "GMB", "population": 100000 },
-        { "country": "GNB", "population": 50000 }
+        {
+          "country": "SEN",
+          "population": 550000
+        },
+        {
+          "country": "GMB",
+          "population": 100000
+        },
+        {
+          "country": "GNB",
+          "population": 50000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Jola people. https://en.wikipedia.org/wiki/Jola_people",
-      "Wikipedia FR — Diolas. https://fr.wikipedia.org/wiki/Diolas",
       "Joshua Project — Jola-Fonyi in Senegal. https://joshuaproject.net/people_groups/11568/SG",
       "Minority Rights Group — Diola (Jola) in Senegal. https://minorityrights.org/communities/diola-jola/",
       "Ethnologue — Jola-Fogny (dyo). https://www.ethnologue.com/language/dyo/",

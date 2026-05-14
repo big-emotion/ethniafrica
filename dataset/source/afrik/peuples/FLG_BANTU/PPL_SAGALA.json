@@ -62,10 +62,14 @@
       "totalPopulation": 223000,
       "referenceYear": 2025,
       "source": "PeopleGroups.org 2025",
-      "distributionByCountry": [{ "country": "TZA", "population": 223000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 223000
+        }
+      ]
     },
     "sources": [
-      "Sagara people – Wikipedia, 2006 (https://en.wikipedia.org/wiki/Sagara_people)",
       "Sagala Language (SBM) – Ethnologue, SIL International (https://www.ethnologue.com/language/sbm/)",
       "Jenkins, Orville – The Sagara (Sagala) People of Tanzania, Dr. Orville Jenkins (http://orvillejenkins.com/profiles/sagara.html)",
       "Sagara in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/14636)",

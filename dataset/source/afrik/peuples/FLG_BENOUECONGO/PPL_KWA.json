@@ -65,15 +65,17 @@
       "totalPopulation": 12000,
       "referenceYear": 2025,
       "source": "Estimation (pas de données officielles disponibles, peuple très minoritaire parmi les 48 ethnies de Côte d'Ivoire). Source : Kouassi Magloire Koroko, Regards croisés sur un peuple ivoirien peu connu : les Gwa, Djiboul, 2024.",
-      "distributionByCountry": [{ "country": "CIV", "population": 12000 }]
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 12000
+        }
+      ]
     },
     "sources": [
       "Kouassi Magloire Koroko – Regards croisés sur un peuple ivoirien peu connu : les Gwa, Djiboul, 2024 (http://djiboul.org/wp-content/uploads/2024/01/Tire-a-part-Kouassi-Magloire-KOROKO.pdf)",
-      "Langues kwa – Wikipédia (https://fr.wikipedia.org/wiki/Langues_kwa)",
-      "Kwa languages – Wikipedia (https://en.wikipedia.org/wiki/Kwa_languages)",
       "Kwa Languages – EBSCO Research Starters (https://www.ebsco.com/research-starters/language-and-linguistics/kwa-languages)",
-      "Côte d'Ivoire – Ethnic groups and languages – Country Studies (https://countrystudies.us/ivory-coast/20.htm)",
-      "Akan people – Wikipedia (https://en.wikipedia.org/wiki/Akan_people)"
+      "Côte d'Ivoire – Ethnic groups and languages – Country Studies (https://countrystudies.us/ivory-coast/20.htm)"
     ]
   }
 }

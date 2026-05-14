@@ -66,13 +66,17 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2025) : 217 000 en Zambie + 285 000 en Tanzanie",
       "distributionByCountry": [
-        { "country": "ZMB", "population": 217000 },
-        { "country": "TZA", "population": 285000 }
+        {
+          "country": "ZMB",
+          "population": 217000
+        },
+        {
+          "country": "TZA",
+          "population": 285000
+        }
       ]
     },
     "sources": [
-      "Mwanga people – Wikipedia EN (https://en.wikipedia.org/wiki/Mwanga_people)",
-      "Mwanga language – Wikipedia EN, ISO 639-3: mwn (https://en.wikipedia.org/wiki/Mwanga_language)",
       "Namwanga people – Chalo Chatu, Zambia encyclopedia (https://chalochatu.org/Namwanga_people)",
       "History of the Namwanga people of Nakonde – ICUTVZM (https://icutvzm.com/articles/history-of-the-namwanga-people-of-nakonde)",
       "Nyamwanga in Zambia – Joshua Project, population 217 000 (https://joshuaproject.net/people_groups/13901/ZA)",

@@ -74,15 +74,25 @@
       "referenceYear": 2025,
       "source": "Joshua Project / PeopleGroups.org 2025",
       "distributionByCountry": [
-        { "country": "NAM", "population": 47000 },
-        { "country": "BWA", "population": 40000 },
-        { "country": "AGO", "population": 20000 },
-        { "country": "ZMB", "population": 13000 }
+        {
+          "country": "NAM",
+          "population": 47000
+        },
+        {
+          "country": "BWA",
+          "population": 40000
+        },
+        {
+          "country": "AGO",
+          "population": 20000
+        },
+        {
+          "country": "ZMB",
+          "population": 13000
+        }
       ]
     },
     "sources": [
-      "Mbukushu – Wikipedia EN (https://en.wikipedia.org/wiki/Mbukushu)",
-      "Mbukushu language – Wikipedia EN (https://en.wikipedia.org/wiki/Mbukushu_language)",
       "Mbukushu people – 101 Last Tribes (https://www.101lasttribes.com/tribes/mbukushu.html)",
       "Mbukushu, Gova in Namibia – Joshua Project (https://joshuaproject.net/people_groups/print/13639/WA)",
       "Ethnologie des Mbunza / histoire Kavango – LCFN Namibia (https://www.lcfn.info/mbunza/information/ethnology)",

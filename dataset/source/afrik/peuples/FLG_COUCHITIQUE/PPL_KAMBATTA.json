@@ -57,17 +57,18 @@
       "referenceYear": 2025,
       "source": "Recensement éthiopien 2007 : 630 236 Kambaata (90,89% dans le SNNPR). Estimation 2025 par projection du taux de croissance démographique éthiopien (~2,4% annuel).",
       "distributionByCountry": [
-        { "country": "ETH", "population": 900000, "percentage": 100 }
+        {
+          "country": "ETH",
+          "population": 900000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Kambaata people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kambaata_people)",
-      "Kambaata language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kambaata_language)",
       "Kambaata Language (KTB) – Ethnologue, SIL International, 2025 (https://www.ethnologue.com/language/ktb/)",
       "Kambata in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12468)",
       "Kambata of Ethiopia – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg011602/)",
-      "Cushitic Language Groups Ethiopia – Country Studies, US Library of Congress (https://countrystudies.us/ethiopia/50.htm)",
-      "Cushitic languages – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Cushitic_languages)"
+      "Cushitic Language Groups Ethiopia – Country Studies, US Library of Congress (https://countrystudies.us/ethiopia/50.htm)"
     ]
   }
 }

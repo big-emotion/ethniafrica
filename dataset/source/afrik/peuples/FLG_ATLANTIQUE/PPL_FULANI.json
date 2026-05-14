@@ -84,18 +84,41 @@
       "referenceYear": 2025,
       "source": "Estimations basees sur Wikipedia (25-40 millions), ScienceDirect 2025 (environ 25 millions), CIA World Factbook et recensements nationaux. Le chiffre de 35 millions represente une estimation centrale pour les pays couverts par cette fiche (SEN, GIN, MLI, BFA, NER, CMR, TCD).",
       "distributionByCountry": [
-        { "country": "NGA", "population": 11000000 },
-        { "country": "GIN", "population": 4500000 },
-        { "country": "SEN", "population": 3500000 },
-        { "country": "MLI", "population": 3000000 },
-        { "country": "CMR", "population": 2800000 },
-        { "country": "NER", "population": 2500000 },
-        { "country": "BFA", "population": 1800000 },
-        { "country": "TCD", "population": 1500000 }
+        {
+          "country": "NGA",
+          "population": 11000000
+        },
+        {
+          "country": "GIN",
+          "population": 4500000
+        },
+        {
+          "country": "SEN",
+          "population": 3500000
+        },
+        {
+          "country": "MLI",
+          "population": 3000000
+        },
+        {
+          "country": "CMR",
+          "population": 2800000
+        },
+        {
+          "country": "NER",
+          "population": 2500000
+        },
+        {
+          "country": "BFA",
+          "population": 1800000
+        },
+        {
+          "country": "TCD",
+          "population": 1500000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Fula people (Fulani). https://en.wikipedia.org/wiki/Fula_people",
       "SIL Ethnologue — Fulfulde dialects. https://www.ethnologue.com/language/ful/",
       "Joshua Project — Fulani, Maasina in Mali. https://joshuaproject.net/people_groups/11773/ml",
       "ScienceDirect — Population history and admixture of the Fulani people from the Sahel (2025). https://www.sciencedirect.com/science/article/pii/S0002929724004579",

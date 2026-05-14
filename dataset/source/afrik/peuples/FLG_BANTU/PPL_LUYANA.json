@@ -62,11 +62,14 @@
       "totalPopulation": 5700,
       "referenceYear": 2025,
       "source": "Joshua Project (luyana proprement dit : 5 700 personnes en Zambie). Le groupe Luyana elargi (incluant Kwandi, Kwangwa) compte 2 900 locuteurs selon le recensement zambien de 2010. Ces chiffres refletent le luyana strict, la majorite des descendants etant aujourd'hui recenses comme Lozi.",
-      "distributionByCountry": [{ "country": "ZMB", "population": 5700 }]
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 5700
+        }
+      ]
     },
     "sources": [
-      "Lozi Kingdom – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Lozi_Kingdom)",
-      "Luyana language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Luyana_language)",
       "Luyana Language (LYN) – Ethnologue, SIL International (https://www.ethnologue.com/language/lyn/)",
       "Luyana in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13166/ZA)",
       "How the Luyana people came to be known as Barotse – Barotse Network, Facebook, 2022 (https://www.facebook.com/Barotsenetwork/posts/4986331461405612/)",

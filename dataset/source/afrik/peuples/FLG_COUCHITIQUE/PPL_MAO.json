@@ -74,14 +74,17 @@
       "totalPopulation": 31400,
       "referenceYear": 2025,
       "source": "Estimations composites: Hozo 6000 (Mao languages – Wikipedia), Sezo/Seze 13000 (estimations linguistiques), Bambasi/Northern Mao 4500 (Joshua Project 2025, https://joshuaproject.net/people_groups/14023), Ganza quelques centaines en Ethiopie; total approche 31400",
-      "distributionByCountry": [{ "country": "ETH", "population": 31400 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 31400
+        }
+      ]
     },
     "sources": [
-      "Mao languages – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Mao_languages)",
       "Mao, Northern in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14023)",
       "Oromo, Anfillo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10318)",
       "Omotic languages – Encyclopaedia Britannica, 2024 (https://www.britannica.com/topic/Omotic-languages)",
-      "Omotic languages – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Omotic_languages)",
       "The Mao and Komo Languages in the Begi-Tongo area in Western Ethiopia – Journals of Dartmouth College, 2013 (https://journals.dartmouth.edu/cgi-bin/WebObjects/Journals.woa/xmlpage/1/article/447)",
       "Omotic Features in the Mao Group and Internal Coherence – Ahland, CSULB (https://www.csulb.edu/sites/default/files/2025/documents/OmoticFeaturesMaoGroup.Final_Ahland.pdf)",
       "Mao – Summary – eHRAF World Cultures (https://ehrafworldcultures.yale.edu/cultures/mp19/summary)"

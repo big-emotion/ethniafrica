@@ -82,14 +82,21 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2025) : 271 000 en Guinee-Bissau, 179 000 au Senegal, 47 000 en Gambie, 25 000 en France. Total mondial : 522 000. Wikipedia (Manjak language) : 315 300 locuteurs en 2006 (184 000 en Guinee-Bissau, 105 000 au Senegal, 26 300 en Gambie).",
       "distributionByCountry": [
-        { "country": "GNB", "population": 271000 },
-        { "country": "SEN", "population": 179000 },
-        { "country": "GMB", "population": 47000 }
+        {
+          "country": "GNB",
+          "population": 271000
+        },
+        {
+          "country": "SEN",
+          "population": 179000
+        },
+        {
+          "country": "GMB",
+          "population": 47000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN - Manjak people : https://en.wikipedia.org/wiki/Manjak_people",
-      "Wikipedia EN - Manjak language : https://en.wikipedia.org/wiki/Manjak_language",
       "Joshua Project - Mandyak, Manjago in Guinea-Bissau : https://joshuaproject.net/people_groups/13493/PU",
       "Ethnologue - Mandjak (mfv) : https://www.ethnologue.com/language/mfv/",
       "Glottolog - mand1419 Manjak : https://glottolog.org/resource/languoid/id/mand1419"

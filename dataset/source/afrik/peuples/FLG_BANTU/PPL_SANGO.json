@@ -77,12 +77,17 @@
       "referenceYear": 2025,
       "source": "Estimations SIL Ethnologue (2024) pour les locuteurs sango natifs : 450 000 locuteurs natifs en 1988, projetés à environ 450 000-500 000 en 2025 pour l'ethnie sango proprement dite. A distinguer des 3 millions de locuteurs du sango lingua franca en RCA. Joshua Project (CAF, 2024). CIA World Factbook — Central African Republic.",
       "distributionByCountry": [
-        { "country": "CAF", "population": 380000 },
-        { "country": "COD", "population": 70000 }
+        {
+          "country": "CAF",
+          "population": 380000
+        },
+        {
+          "country": "COD",
+          "population": 70000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Sango people : https://en.wikipedia.org/wiki/Sango_people",
       "101 Last Tribes — Sango people : https://www.101lasttribes.com/tribes/sango.html",
       "Oubangui Medias — Le peuple Ngbandi, le cas des Sango et Yakoma : https://oubanguimedias.com/2022/05/27/le-peuple-ngbandi-le-cas-des-sango-et-yakoma-photo-dun-village-sango-en-1905/",
       "APiCS Online — Survey chapter: Sango (lingua franca) : https://apics-online.info/surveys/59",

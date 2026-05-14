@@ -71,12 +71,14 @@
       "referenceYear": 2025,
       "source": "PeopleGroups.org 2023, estimation 2025 – Dirasha (Gidole) of Ethiopia (https://peoplegroups.org/people_groups/pg011583/)",
       "distributionByCountry": [
-        { "country": "ETH", "population": 117000, "percentage": 100 }
+        {
+          "country": "ETH",
+          "population": 117000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Dirasha language – Wikipedia, 2008 (https://en.wikipedia.org/wiki/Dirasha_language)",
-      "Dirashe Zone – Wikipedia, 2006 (https://en.wikipedia.org/wiki/Dirashe_Zone)",
       "Dirasha in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11887)",
       "Gidole of Ethiopia – PeopleGroups.org, 2023 (https://peoplegroups.org/people_groups/pg011583/)",
       "Dirasha language and alphabet – Omniglot, 2024 (https://www.omniglot.com/writing/dirasha.htm)",

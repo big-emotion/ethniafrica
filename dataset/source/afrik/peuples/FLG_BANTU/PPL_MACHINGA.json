@@ -61,10 +61,14 @@
       "totalPopulation": 55000,
       "referenceYear": 2025,
       "source": "Estimation basee sur 36 000 personnes en 1987 (Wikipedia Machinga people) avec croissance demographique tanzanienne moyenne.",
-      "distributionByCountry": [{ "country": "TZA", "population": 55000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 55000
+        }
+      ]
     },
     "sources": [
-      "Machinga people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Machinga_people)",
       "Machinga Language (MVW) – Ethnologue, SIL International (https://www.ethnologue.com/language/mvw/)",
       "Machinga People and their Culture in Tanzania – My Free School Tanzania, 2014 (http://myfreeschooltanzania.blogspot.com/2014/10/machinga-people-and-their-culture-in.html)",
       "Machinga in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13190)",

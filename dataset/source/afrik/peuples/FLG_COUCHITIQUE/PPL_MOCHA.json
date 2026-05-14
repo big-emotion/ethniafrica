@@ -65,13 +65,16 @@
       "totalPopulation": 149000,
       "referenceYear": 2025,
       "source": "Joshua Project (2025), base sur le recensement ethiopien 2007 (77 561 Shekacho) et projections demographiques",
-      "distributionByCountry": [{ "country": "ETH", "population": 149000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 149000
+        }
+      ]
     },
     "sources": [
-      "Shakacho language – Wikipedia (https://en.wikipedia.org/wiki/Shakacho_language)",
       "Shekka in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14887)",
       "Shekkacho – EthiopiaScripture.org, 2023 (https://www.ethiopiascripture.org/en/languages/s/shekkacho)",
-      "Sheka Zone – Wikipedia (https://en.wikipedia.org/wiki/Sheka_Zone)",
       "Situation of the Shekha ethnic group – Immigration and Refugee Board of Canada / Ecoi.net, 2015 (https://www.ecoi.net/en/document/1297530.html)",
       "Statistical Data on Sheka and Keffa Zones – MTU Sociology / CSA Ethiopia, 2007 (https://mtusociology.github.io)",
       "Leslau, Wolf – Mocha, A Tone Language of The Kafa Group in South-Western Ethiopia, Africa, 1958",

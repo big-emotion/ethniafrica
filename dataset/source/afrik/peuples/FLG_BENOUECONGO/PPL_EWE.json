@@ -2,31 +2,19 @@
   "id": "PPL_EWE",
   "nameMain": "Ewe",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": [
-    "GHA",
-    "TGO",
-    "BEN"
-  ],
+  "currentCountries": ["GHA", "TGO", "BEN"],
   "content": {
     "appellations": {
       "mainName": "Ewe",
       "selfAppellation": "Eʋeawó (les gens Ewe), Eʋe",
-      "exonyms": [
-        "Evhe",
-        "Efe",
-        "Gbe (terme générique pour locuteurs Gbe)"
-      ],
+      "exonyms": ["Evhe", "Efe", "Gbe (terme générique pour locuteurs Gbe)"],
       "originOfExonyms": "Le nom Ewe est utilisé par les colonisateurs européens et les voisins. L'autoappellation Eʋe signifie simplement le peuple ou la communauté en langue ewe.",
       "whyProblematic": null,
       "contemporaryUsage": "Le terme Ewe est aujourd'hui universellement utilisé au Ghana, au Togo et au Bénin pour désigner ce peuple.",
       "linguisticFamily": "FLG_BENOUECONGO",
       "ethnoLinguisticGroup": "Gbe (branche Kwa du Niger-Congo)",
       "historicalRegion": "Ewedukpo (pays Ewe) : sud-est du Ghana (région Volta), sud du Togo et frontière Togo-Bénin",
-      "currentCountries": [
-        "GHA",
-        "TGO",
-        "BEN"
-      ]
+      "currentCountries": ["GHA", "TGO", "BEN"]
     },
     "ethnicities": [
       "Anlo Ewe (Aŋlɔ) — côte sud-est du Ghana, groupe littoral dominant",
@@ -64,9 +52,7 @@
     },
     "languages": {
       "mainLanguage": "Ewe (Eʋegbe)",
-      "isoCodes": [
-        "ewe"
-      ],
+      "isoCodes": ["ewe"],
       "dialects": [
         "Anlo (Aŋlɔ) — dialecte littoral, base de la norme écrite",
         "Tongu (Tɔŋu) — dialecte des plaines de la Volta",
@@ -110,7 +96,6 @@
       ]
     },
     "sources": [
-      "Wikipedia EN — Ewe people : https://en.wikipedia.org/wiki/Ewe_people",
       "SIL Ethnologue — Ewe language (ewe) : https://www.ethnologue.com/language/ewe/",
       "Joshua Project — Ewe people group : https://joshuaproject.net/people_groups/11169",
       "Encyclopaedia Britannica — Ewe : https://www.britannica.com/topic/Ewe-people",

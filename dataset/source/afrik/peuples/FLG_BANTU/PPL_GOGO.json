@@ -73,12 +73,14 @@
       "totalPopulation": 3035000,
       "referenceYear": 2025,
       "source": "PeopleGroups.org (2025): environ 3 035 000 Wagogo en Tanzanie. Estimation Wikipedia 1992: 1 300 000. Recensement tanzanien 2022: region de Dodoma 3 085 625 habitants (Gogo majoritaires, avec Rangi, Sandawe et Burungi). National Bureau of Statistics Tanzania.",
-      "distributionByCountry": [{ "country": "TZA", "population": 3035000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 3035000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN – Gogo people: https://en.wikipedia.org/wiki/Gogo_people",
-      "Wikipedia EN – Gogo language: https://en.wikipedia.org/wiki/Gogo_language",
-      "Wikipedia EN – Dodoma Region: https://en.wikipedia.org/wiki/Dodoma_Region",
       "Ethnologue – Gogo (gog): https://www.ethnologue.com/language/gog/",
       "PeopleGroups.org – Gogo of Tanzania: https://peoplegroups.org/people_groups/pg014928/",
       "National Bureau of Statistics Tanzania – 2022 Population and Housing Census: https://www.nbs.go.tz/",

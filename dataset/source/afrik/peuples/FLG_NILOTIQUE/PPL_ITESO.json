@@ -78,13 +78,17 @@
       "referenceYear": 2025,
       "source": "Uganda Bureau of Statistics, recensement 2024 : 3 146 079 en Ouganda ; Joshua Project 2025 : 499 000 au Kenya et 4 461 000 au total (toutes localisations)",
       "distributionByCountry": [
-        { "country": "UGA", "population": 3146000 },
-        { "country": "KEN", "population": 499000 }
+        {
+          "country": "UGA",
+          "population": 3146000
+        },
+        {
+          "country": "KEN",
+          "population": 499000
+        }
       ]
     },
     "sources": [
-      "Wikipedia – Teso people (Iteso), 2024 (https://en.wikipedia.org/wiki/Iteso_people)",
-      "Wikipedia – Teso language (Ateso), 2024 (https://en.wikipedia.org/wiki/Teso_language)",
       "Joshua Project – Iteso in Kenya, 2025 (https://joshuaproject.net/people_groups/15448/KE)",
       "Uganda Bureau of Statistics – National Population and Housing Census 2024 (https://www.ubos.org/wp-content/uploads/2024/12/National-Population-and-Housing-Census-2024-Final-Report-Volume-1-Main.pdf)",
       "Encyclopedia.com – Iteso (https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/iteso)",

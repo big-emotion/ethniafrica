@@ -78,14 +78,21 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (Dan en Cote d'Ivoire : 1 932 000 ; Liberia : 297 000 ; Guinee estimee) ; Wikipedia FR (3 millions en 2021)",
       "distributionByCountry": [
-        { "country": "CIV", "population": 1900000 },
-        { "country": "LBR", "population": 297000 },
-        { "country": "GIN", "population": 2000 }
+        {
+          "country": "CIV",
+          "population": 1900000
+        },
+        {
+          "country": "LBR",
+          "population": 297000
+        },
+        {
+          "country": "GIN",
+          "population": 2000
+        }
       ]
     },
     "sources": [
-      "Dan (peuple) – Wikipedia FR (https://fr.wikipedia.org/wiki/Dan_(peuple))",
-      "Dan language – Wikipedia EN (https://en.wikipedia.org/wiki/Dan_language)",
       "Dan, Da in Liberia – Joshua Project 2025 (https://joshuaproject.net/people_groups/11485/LI)",
       "Minority Rights Group – Liberia (https://minorityrights.org/country/liberia/)",
       "Daniel B. Reed, Dan Ge Performance: Masks and Music in Contemporary Cote d'Ivoire, Indiana University Press, 2003",

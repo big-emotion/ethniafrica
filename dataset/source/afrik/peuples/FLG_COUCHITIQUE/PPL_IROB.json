@@ -61,14 +61,19 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (Saho, Irob en Ethiopie : 62 000 ; en Erythrée : 140 000)",
       "distributionByCountry": [
-        { "country": "ETH", "population": 62000, "percentage": 31 },
-        { "country": "ERI", "population": 140000, "percentage": 69 }
+        {
+          "country": "ETH",
+          "population": 62000,
+          "percentage": 31
+        },
+        {
+          "country": "ERI",
+          "population": 140000,
+          "percentage": 69
+        }
       ]
     },
     "sources": [
-      "Irob people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Irob_people)",
-      "Saho people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Saho_people)",
-      "Saho language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Saho_language)",
       "The Irob People – IRROB.ORG, 2018 (https://irrob.org/irob-history/the-irob-people/)",
       "Saho, Irob in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14641/ET)",
       "Saho Archive – History, Language and Culture of the Saho, 2023 (https://www.sahoarchive.org/history/)",

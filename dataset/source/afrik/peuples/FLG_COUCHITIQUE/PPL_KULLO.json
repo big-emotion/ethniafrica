@@ -62,13 +62,15 @@
       "totalPopulation": 1044000,
       "referenceYear": 2025,
       "source": "Joshua Project, 2025 (https://joshuaproject.net/people_groups/12839)",
-      "distributionByCountry": [{ "country": "ETH", "population": 1044000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 1044000
+        }
+      ]
     },
     "sources": [
-      "Dawro people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Dawro_people)",
       "Dawro in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12839)",
-      "Dawro Zone – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Dawro_Zone)",
-      "Gamo-Gofa-Dawro language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Gamo-Gofa-Dawro_language)",
       "The Case of the Dawro in Ethiopia – Jimma University Journals, 2021 (https://journals.ju.edu.et/index.php/ejssls/article/download/4751/1723/)",
       "Overview of Dawuro Zone, Ethiopia – Scribd, 2025 (https://www.scribd.com/document/809814043/chapter1-4)",
       "Dawro – Dawrotsuwa Language Info – Swordshare Map (https://map.swordshare.com/dwr)"

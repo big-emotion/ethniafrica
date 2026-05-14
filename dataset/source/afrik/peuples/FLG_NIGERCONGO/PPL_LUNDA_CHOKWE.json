@@ -75,16 +75,21 @@
       "referenceYear": 2025,
       "source": "Estimation 2025 basee sur: Lunda (Ruund+Sud) environ 2,5 millions (Angola 800k, RDC 1,1M, Zambie 600k selon Wikipedia); Chokwe environ 1,3-2 millions (Angola 2M locuteurs natifs selon Wikipedia 2024); categorie Lunda-Chokwe d'Angola estimee a 8% de la population angolaise soit ~2,8M en 2025 (population Angola ~37M); estimation totale ensemble Lunda-Chokwe toutes composantes: environ 5,5 millions.",
       "distributionByCountry": [
-        { "country": "AGO", "population": 3000000 },
-        { "country": "COD", "population": 1800000 },
-        { "country": "ZMB", "population": 700000 }
+        {
+          "country": "AGO",
+          "population": 3000000
+        },
+        {
+          "country": "COD",
+          "population": 1800000
+        },
+        {
+          "country": "ZMB",
+          "population": 700000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN – Lunda people (https://en.wikipedia.org/wiki/Lunda_people)",
-      "Wikipedia EN – Chokwe people (https://en.wikipedia.org/wiki/Chokwe_people)",
-      "Wikipedia EN – Lunda Empire (https://en.wikipedia.org/wiki/Lunda_Empire)",
-      "Wikipedia EN – Chokwe language (https://en.wikipedia.org/wiki/Chokwe_language)",
       "Country Studies US – Angola: Lunda-Chokwe (https://countrystudies.us/angola/62.htm)",
       "Britannica – Lunda empire (https://www.britannica.com/place/Lunda-empire)",
       "Joshua Project – Chokwe in Angola (https://joshuaproject.net/people_groups/11365/AO)",

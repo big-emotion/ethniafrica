@@ -80,16 +80,25 @@
       "referenceYear": 2025,
       "source": "Wikipedia FR cite plus de 5 millions de locuteurs de soussou au debut des annees 2000 (3 millions en Guinee en 2001, 1 million en Sierra Leone en 2006). Guinee 2018 : Susu = 21,2% de la population guinéenne (~2,7M). Estimation 2025 basee sur croissance demographique (2,76% annuel en Guinee).",
       "distributionByCountry": [
-        { "country": "GIN", "population": 2800000 },
-        { "country": "SLE", "population": 350000 },
-        { "country": "GNB", "population": 30000 },
-        { "country": "SEN", "population": 20000 }
+        {
+          "country": "GIN",
+          "population": 2800000
+        },
+        {
+          "country": "SLE",
+          "population": 350000
+        },
+        {
+          "country": "GNB",
+          "population": 30000
+        },
+        {
+          "country": "SEN",
+          "population": 20000
+        }
       ]
     },
     "sources": [
-      "Wikipedia – Susu people (EN), 2024 (https://en.wikipedia.org/wiki/Susu_people)",
-      "Wikipedia – Soussou (peuple) (FR), 2024 (https://fr.wikipedia.org/wiki/Soussou_(peuple))",
-      "Wikipedia – Susu language (EN), 2024 (https://en.wikipedia.org/wiki/Susu_language)",
       "101 Last Tribes – Susu people (https://www.101lasttribes.com/tribes/susu.html)",
       "Ethnologue – Susu Language (SUS) (https://www.ethnologue.com/language/sus/)",
       "Indiana University Center for Language Technology – Susu Language Portal (https://celt.indiana.edu/portal/Susu/index.html)",

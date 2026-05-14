@@ -67,13 +67,17 @@
       "referenceYear": 2025,
       "source": "Recensement Ghana 2021: Region Bono 1 208 965 habitants (Bono constitute 73,3% de la population, soit environ 886 000). Locuteurs du bono twi: environ 1,2 million au Ghana + 300 000 en Cote d'Ivoire (Wikipedia bono dialect). Estimation totale groupe ethnique: 1,5 million",
       "distributionByCountry": [
-        { "country": "GHA", "population": 1200000 },
-        { "country": "CIV", "population": 300000 }
+        {
+          "country": "GHA",
+          "population": 1200000
+        },
+        {
+          "country": "CIV",
+          "population": 300000
+        }
       ]
     },
     "sources": [
-      "Bono people – Wikipedia EN (https://en.wikipedia.org/wiki/Bono_people)",
-      "Bono dialect – Wikipedia EN (https://en.wikipedia.org/wiki/Bono_dialect)",
       "Bono Region – BRCC Ghana (https://brcc.gov.gh/major-settlements/)",
       "Bono Region Population Statistics – Citypopulation.de (https://www.citypopulation.de/en/ghana/admin/07__bono/)",
       "Ghana Statistical Service, Population and Housing Census 2021 (https://census2021.statsghana.gov.gh)",

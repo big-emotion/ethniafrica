@@ -60,11 +60,14 @@
       "totalPopulation": 104000,
       "referenceYear": 2025,
       "source": "PeopleGroups.org (estimation ~104 000, 2025) ; Mpimbwe District : Wapimbwe representent environ 20% des 215 438 habitants recenses en 2022 (Tanzania National Bureau of Statistics)",
-      "distributionByCountry": [{ "country": "TZA", "population": 104000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 104000
+        }
+      ]
     },
     "sources": [
-      "Pimbwe language – Wikipedia (https://en.wikipedia.org/wiki/Pimbwe_language)",
-      "Mpimbwe District – Wikipedia (https://en.wikipedia.org/wiki/Mpimbwe_District)",
       "A Sustainable Future for the Pimbwe – Cultural Survival Quarterly, 2010 (https://www.culturalsurvival.org/publications/cultural-survival-quarterly/sustainable-future-pimbwe-peoples-mpimbwe-fund)",
       "Pimbwe in Tanzania – Joshua Project (https://www.joshuaproject.net/people_groups/14394)",
       "Pimbwe of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015021/)",

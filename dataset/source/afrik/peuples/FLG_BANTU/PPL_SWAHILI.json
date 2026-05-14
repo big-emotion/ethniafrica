@@ -86,19 +86,33 @@
       "referenceYear": 2025,
       "source": "La population waswahili au sens ethnique strict (communautes historiques de la cote) est estimee a 1 a 2 millions. A distinguer des locuteurs du swahili comme langue vehiculaire (100-200 millions). Source : Wikipedia Swahili people (2024), Joshua Project profils Swahili Kenya/Tanzanie. La distinction entre Waswahili ethniques et locuteurs swahili rend les estimations difficiles.",
       "distributionByCountry": [
-        { "country": "KEN", "population": 700000 },
-        { "country": "TZA", "population": 900000 },
-        { "country": "COM", "population": 200000 },
-        { "country": "MOZ", "population": 150000 },
-        { "country": "COD", "population": 30000 },
-        { "country": "UGA", "population": 20000 }
+        {
+          "country": "KEN",
+          "population": 700000
+        },
+        {
+          "country": "TZA",
+          "population": 900000
+        },
+        {
+          "country": "COM",
+          "population": 200000
+        },
+        {
+          "country": "MOZ",
+          "population": 150000
+        },
+        {
+          "country": "COD",
+          "population": 30000
+        },
+        {
+          "country": "UGA",
+          "population": 20000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Swahili people : https://en.wikipedia.org/wiki/Swahili_people",
-      "Wikipedia EN — Swahili language : https://en.wikipedia.org/wiki/Swahili_language",
-      "Wikipedia EN — Swahili coast : https://en.wikipedia.org/wiki/Swahili_coast",
-      "Wikipedia EN — Kilwa Sultanate : https://en.wikipedia.org/wiki/Kilwa_Sultanate",
       "SIL Ethnologue — Swahili (swa) : https://www.ethnologue.com/language/swa/",
       "UNESCO World Heritage — Stone Town of Zanzibar : https://whc.unesco.org/en/list/173/",
       "Joshua Project — Swahili in United States : https://joshuaproject.net/people_groups/15145/US",

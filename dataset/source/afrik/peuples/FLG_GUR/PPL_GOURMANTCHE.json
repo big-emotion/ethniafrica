@@ -73,11 +73,26 @@
       "referenceYear": 2025,
       "source": "Joshua Project – Gourma people group in all countries (2025)",
       "distributionByCountry": [
-        { "country": "BFA", "population": 1248000 },
-        { "country": "TGO", "population": 351000 },
-        { "country": "NER", "population": 86000 },
-        { "country": "BEN", "population": 74000 },
-        { "country": "NGA", "population": 46000 }
+        {
+          "country": "BFA",
+          "population": 1248000
+        },
+        {
+          "country": "TGO",
+          "population": 351000
+        },
+        {
+          "country": "NER",
+          "population": 86000
+        },
+        {
+          "country": "BEN",
+          "population": 74000
+        },
+        {
+          "country": "NGA",
+          "population": 46000
+        }
       ]
     },
     "sources": [
@@ -86,7 +101,6 @@
       "Gurmantche language (gux) – Ethnologue / SIL Global, 2026 (https://www.ethnologue.com/language/gux/)",
       "Gourmanchéma – Omniglot, 2022 (https://www.omniglot.com/writing/gourmanchema.htm)",
       "L'organisation politique dans le Gulma avant la pénétration coloniale – LeFaso.net, 2024 (https://lefaso.net/spip.php?article132239)",
-      "Gurma people – Wikipedia EN, 2005, mis à jour 2024 (https://en.wikipedia.org/wiki/Gourmantche_people)",
       "Histoire et organisation du royaume Gourmantché – Scribd / auteur non précisé, 2026 (https://fr.scribd.com/document/846146509/le-royaume-de-Gourmantche)",
       "Gourmantché Ethnoanthropology: A Theory of Human Being – Swanson R. A., 1985"
     ]

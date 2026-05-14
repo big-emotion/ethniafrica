@@ -64,11 +64,14 @@
       "totalPopulation": 70000,
       "referenceYear": 2025,
       "source": "101lasttribes.com – Cubal people; Lastplaces.com – The Cubal tribe of Angola (estimation ethnographique)",
-      "distributionByCountry": [{ "country": "AGO", "population": 70000 }]
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 70000
+        }
+      ]
     },
     "sources": [
-      "Mucubal people – Wikipedia, The Free Encyclopedia (https://en.wikipedia.org/wiki/Mucubal_people)",
-      "Mucubais – Wikipedia (version portugaise) (https://pt.wikipedia.org/wiki/Mucubais)",
       "Cubal people – AFRICA 101 Last Tribes (https://www.101lasttribes.com/tribes/cubal.html)",
       "The Cubal tribe of Angola – Last Places (https://lastplaces.com/en/travel-is-knowledge/cubal-tribe-of-angola/)",
       "Kumakonda African Travel Experience – Tribes of Angola (https://kumakonda.com/tribes-of-angola/)",

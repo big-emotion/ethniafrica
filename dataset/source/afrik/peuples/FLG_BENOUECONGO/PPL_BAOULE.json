@@ -63,14 +63,16 @@
       "totalPopulation": 5000000,
       "referenceYear": 2025,
       "source": "Wikipedia EN Baoulé people (5 millions); certaines estimations recentes evoquent jusqu'a 8 millions (Facebook Mey3asanteni, aout 2025) sur une population ivoirienne de 31,5 millions (2024)",
-      "distributionByCountry": [{ "country": "CIV", "population": 5000000 }]
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 5000000
+        }
+      ]
     },
     "sources": [
-      "Baoulé people – Wikipedia EN (https://en.wikipedia.org/wiki/Baoul%C3%A9_people)",
-      "Baoulé language – Wikipedia EN (https://en.wikipedia.org/wiki/Baoul%C3%A9_language)",
       "Ethnologue – Baoulé Language (BCI) (https://www.ethnologue.com/language/bci/)",
       "ISO 639-3 code bci – SIL International / CEDS (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)",
-      "Ivory Coast – Wikipedia EN (https://en.wikipedia.org/wiki/Ivory_Coast)",
       "Vogel, Susan M. – Baule: African Art, Western Eyes, Yale University Press, 1997"
     ]
   }

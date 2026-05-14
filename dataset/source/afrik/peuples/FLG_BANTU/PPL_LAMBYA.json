@@ -62,14 +62,21 @@
       "referenceYear": 2025,
       "source": "Omniglot (59 500 au Malawi + 30 400 en Tanzanie + 17 000 en Zambie = ~107 000 en 2006, projection 2025 estimee a 200 000) ; Wikipedia EN (85 000 en 2001)",
       "distributionByCountry": [
-        { "country": "MWI", "population": 110000 },
-        { "country": "TZA", "population": 70000 },
-        { "country": "ZMB", "population": 20000 }
+        {
+          "country": "MWI",
+          "population": 110000
+        },
+        {
+          "country": "TZA",
+          "population": 70000
+        },
+        {
+          "country": "ZMB",
+          "population": 20000
+        }
       ]
     },
     "sources": [
-      "Lambya people – Wikipedia EN (https://en.wikipedia.org/wiki/Lambya_people)",
-      "Lambya language – Wikipedia EN (https://en.wikipedia.org/wiki/Lambya_language)",
       "The Establishment and Expansion of the Lambya Kingdom c1600-1750 – African Studies Review, Cambridge University Press, 1993 (https://www.cambridge.org/core/journals/african-studies-review/article/establishment-and-expansion-of-the-lambya-kingdom-c16001750/2A73651C94DF84588BD88A712D777AAF)",
       "Lambya language and alphabet – Omniglot (https://www.omniglot.com/writing/lambya.htm)",
       "Lambya, Rambia in Zambia – Joshua Project (https://joshuaproject.net/people_groups/12970/ZA)",

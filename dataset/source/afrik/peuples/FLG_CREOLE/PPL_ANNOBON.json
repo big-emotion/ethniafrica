@@ -69,10 +69,14 @@
       "totalPopulation": 9200,
       "referenceYear": 2025,
       "source": "Joshua Project, 2025 (9 200 locuteurs de Fa d'Ambu en Guinée Équatoriale) ; recensement 2015 de Guinée Équatoriale (5 323 habitants sur l'île d'Annobón) ; APiCS Online (estimation de 4 500 à 5 000 locuteurs du Fa d'Ambu)",
-      "distributionByCountry": [{ "country": "GNQ", "population": 9200 }]
+      "distributionByCountry": [
+        {
+          "country": "GNQ",
+          "population": 9200
+        }
+      ]
     },
     "sources": [
-      "Annobón – Wikipedia (anglais), 2024 (https://en.wikipedia.org/wiki/Annob%C3%B3n)",
       "Fa d'Ambu in Equatorial Guinea – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11173/EK)",
       "Survey chapter: Fa d'Ambô – APiCS Online (Atlas of Pidgin and Creole Language Structures) (https://apics-online.info/surveys/38)",
       "Fa d'Ambô (Equatorial Guinea) – Language Documentation and Description Journal, 2021 (https://www.lddjournal.org/article/id/1262/)",

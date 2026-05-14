@@ -63,12 +63,15 @@
       "totalPopulation": 35000,
       "referenceYear": 2025,
       "source": "Estimation 2025 fondee sur le recensement ethiopien de 2007 et les donnees de l'Atlas of Humanity (34 000 en 2016). Recensement 1998 : 20 622 (estimation). Estimation 2016 : environ 32 000 (Wikipedia / Surma people).",
-      "distributionByCountry": [{ "country": "ETH", "population": 35000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 35000
+        }
+      ]
     },
     "sources": [
-      "Surma people (Suri) – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Surma_people)",
       "Suri Tribe – Atlas of Humanity (https://www.atlasofhumanity.com/suri)",
-      "Surmic languages – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Surmic_languages)",
       "Why the Surma People of Ethiopia Wear Lip Plates – Africa Rebirth, 2024 (https://www.africarebirth.com/the-origin-and-significance-of-wearing-lip-plates-among-ethiopias-surma-people/)",
       "The Surma Tribe of Ethiopia, History, Culture and Facts – Kabira Safaris, 2025 (https://kabirasafaris.com/surma/)",
       "Suri people – 101 Last Tribes (https://www.101lasttribes.com/tribes/suri.html)",

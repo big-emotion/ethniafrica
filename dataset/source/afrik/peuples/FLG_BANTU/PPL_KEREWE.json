@@ -60,11 +60,14 @@
       "totalPopulation": 241000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025",
-      "distributionByCountry": [{ "country": "TZA", "population": 241000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 241000
+        }
+      ]
     },
     "sources": [
-      "Kerewe language – Wikipedia (https://en.wikipedia.org/wiki/Kerewe_language)",
-      "Kerewe people – Wikipedia (https://en.wikipedia.org/wiki/Kerewe_people)",
       "Kerewe in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12637)",
       "Kerewe – Encyclopaedia Britannica (https://www.britannica.com/topic/Kerewe)",
       "Kerewe language – Lugha Yangu, 2023 (https://lughayangu.com/kerewe)",

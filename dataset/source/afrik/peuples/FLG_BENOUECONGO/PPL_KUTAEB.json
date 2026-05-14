@@ -85,13 +85,17 @@
       "referenceYear": 2025,
       "source": "Wikipedia (c. 602,000 total population). Un rapport de 2007 estimait le nombre de Kuteb a environ 100,000, mais cette estimation est consideree comme sous-evaluee. Les projections recentes (Wikipedia, Joshua Project, Ethnologue SIL 2024) donnent environ 600,000 personnes. Population principalement au Nigeria (Taraba State), avec quelques milliers au Cameroun.",
       "distributionByCountry": [
-        { "country": "NGA", "population": 610000 },
-        { "country": "CMR", "population": 10000 }
+        {
+          "country": "NGA",
+          "population": 610000
+        },
+        {
+          "country": "CMR",
+          "population": 10000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Kuteb people : https://en.wikipedia.org/wiki/Kuteb_people",
-      "Wikipedia EN — Kuteb language : https://en.wikipedia.org/wiki/Kuteb_language",
       "Ethnologue (SIL) — Kutep (kub) : https://www.ethnologue.com/language/kub/",
       "Joshua Project — Kuteb in Nigeria : https://joshuaproject.net/people_groups/12889/NI",
       "Taraba State Government — Comprehensive brief on the Chieftaincy Stool of Takum Chiefdom Taraba State (1997), reference historique interne.",

@@ -62,11 +62,14 @@
       "totalPopulation": 350000,
       "referenceYear": 2025,
       "source": "Estimation basee sur Wikipedia EN (135 000 en 1995) et recensement Ghana 2021: Assin North 174 545, Assin South, Assin Central (Fosu Municipal), total districts assin environ 300 000-350 000",
-      "distributionByCountry": [{ "country": "GHA", "population": 350000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 350000
+        }
+      ]
     },
     "sources": [
-      "Assin People – Wikipedia EN (https://en.wikipedia.org/wiki/Assin_People)",
-      "Kingdom of Assin – Wikipedia EN (https://en.wikipedia.org/wiki/Kingdom_of_Assin)",
       "Ghana Statistical Service, Population and Housing Census 2021 (https://census2021.statsghana.gov.gh)",
       "Daaku, Kwame – Oral Traditions of Assin, in The Akan People: A Documentary History, Markus Wiener Publishers",
       "Modern Ghana – Discover the historic colonial treasures in Assin area, 2021 (https://www.modernghana.com/news/1110502/discover-the-historic-colonial-treasures-in-assin.html)"

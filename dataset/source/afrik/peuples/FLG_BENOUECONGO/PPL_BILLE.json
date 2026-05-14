@@ -74,12 +74,14 @@
       "totalPopulation": 85000,
       "referenceYear": 2025,
       "source": "Wikipedia (Bille Kingdom, 2016) : environ 77 000 personnes pour l'ensemble du royaume, dont 41 000 à Bille Town. Joshua Project : 54 000 (estimation conservatrice). Projection 2025 d'environ 85 000 en appliquant le taux de croissance nigérian (2,5% annuel depuis 2016).",
-      "distributionByCountry": [{ "country": "NGA", "population": 85000 }]
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 85000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN : Bille kingdom https://en.wikipedia.org/wiki/Bille_kingdom",
-      "Wikipedia EN : Bille, Nigeria https://en.wikipedia.org/wiki/Bille,_Nigeria",
-      "Wikipedia EN : Ijaw languages https://en.wikipedia.org/wiki/Ijaw_languages",
       "Ijaw Heritage TV : Origin of the Bille Ijaw People https://ijawheritagetv.com/2024/09/18/origin-of-the-bille-ijaw-people/",
       "Joshua Project : Bile, Billanchi in Nigeria https://joshuaproject.net/people_groups/10847",
       "Ethnologue : Bille Language (BIL) https://www.ethnologue.com/language/bil/",

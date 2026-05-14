@@ -79,11 +79,14 @@
       "referenceYear": 2025,
       "source": "Estimation 2025 basée sur le recensement éthiopien 1994 (33 971 personnes dans le cluster Gawwada dont 27 477 monolingues) et croissance démographique projetée ; Ethnologue (gwd) et 101 Last Tribes",
       "distributionByCountry": [
-        { "country": "ETH", "population": 50000, "percentage": 100 }
+        {
+          "country": "ETH",
+          "population": 50000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Gawwada language – Wikipedia / Ale language, 2024 (https://en.wikipedia.org/wiki/Gawwada_language)",
       "Gawwada people – 101 Last Tribes (https://www.101lasttribes.com/tribes/gawwada.html)",
       "Gawwada, Ale in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11836)",
       "ISO 639-3 gwd : Gawwada – CEDS / National Center for Education Statistics (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)",

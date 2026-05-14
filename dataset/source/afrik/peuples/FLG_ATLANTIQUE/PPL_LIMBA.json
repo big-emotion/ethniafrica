@@ -79,12 +79,17 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2025) : Limba Ouest (577 000 en Sierra Leone), Limba Est (2 100 en Sierra Leone et Guinee). Sierra Leone 2025 (World Population Review) : 8 819 790 habitants, Limba represente environ 8-12,4% de la population. Ethnologue : Limba Ouest-Central (lia) langue officielle regionale en Sierra Leone.",
       "distributionByCountry": [
-        { "country": "SLE", "population": 577800 },
-        { "country": "GIN", "population": 1400 }
+        {
+          "country": "SLE",
+          "population": 577800
+        },
+        {
+          "country": "GIN",
+          "population": 1400
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN - Limba people (Sierra Leone) : https://en.wikipedia.org/wiki/Limba_people_(Sierra_Leone)",
       "Joshua Project - Limba West in Sierra Leone : https://joshuaproject.net/people_groups/print/16038/SL",
       "Right for Education - The Rich Cultural Heritage of the Limba Tribe (2025) : https://rightforeducation.org/2025/05/30/the-rich-cultural-heritage-of-the-limba-tribe-in-sierra-leone/",
       "Ethnologue - Limba, West-Central (lia) : https://www.ethnologue.com/language/lia/",

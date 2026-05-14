@@ -68,13 +68,21 @@
       "referenceYear": 2025,
       "source": "Estimation basee sur Wikipedia (700 000 locuteurs Dagaare du Sud au Ghana, 388 000 locuteurs Dagara au Burkina Faso en 2001) + croissance demographique",
       "distributionByCountry": [
-        { "country": "GHA", "population": 780000 },
-        { "country": "BFA", "population": 410000 },
-        { "country": "CIV", "population": 10000 }
+        {
+          "country": "GHA",
+          "population": 780000
+        },
+        {
+          "country": "BFA",
+          "population": 410000
+        },
+        {
+          "country": "CIV",
+          "population": 10000
+        }
       ]
     },
     "sources": [
-      "Dagaaba people – Wikipedia (https://en.wikipedia.org/wiki/Dagaaba_people)",
       "Ethnologue – Southern Dagaare [dga] (https://www.ethnologue.com/language/dga/)",
       "Joshua Project – Dagara in Burkina Faso (https://joshuaproject.net/people_groups/11465)",
       "Joshua Project – Ghana People Groups (https://joshuaproject.net/countries/gh)",

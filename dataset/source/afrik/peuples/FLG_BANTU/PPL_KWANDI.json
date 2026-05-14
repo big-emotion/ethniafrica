@@ -60,14 +60,17 @@
       "totalPopulation": 15000,
       "referenceYear": 2025,
       "source": "Estimation. Les Kwandi sont un petit groupe de la Province Occidentale de Zambie, integres dans le recensement Lozi. Donnees specifiques non disponibles dans les sources officielles. La langue Kwangwa/Kwandi compte 2 400 locuteurs selon le recensement zambien de 2010 (source Wikipedia Kwangwa language).",
-      "distributionByCountry": [{ "country": "ZMB", "population": 15000 }]
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 15000
+        }
+      ]
     },
     "sources": [
       "Kwangwa – Zambia's Traditional History, 2020 (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/lozi/kwangwa/)",
       "History of the Kwangwa people – Facebook/Barotsenetwork, 2023 (https://www.facebook.com/groups/759153900821468/posts/10082861068450658/)",
-      "Kwangwa language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kwangwa_language)",
       "About Zambia – Western Province Provincial Administration (https://www.wes.gov.zm/?page_id=1186)",
-      "Languages of Zambia – Wikipedia (https://en.wikipedia.org/wiki/Languages_of_Zambia)",
       "Understanding the history of Lozi people – Facebook, 2022 (https://www.facebook.com/groups/759153900821468/posts/8230979013638882/)"
     ]
   }

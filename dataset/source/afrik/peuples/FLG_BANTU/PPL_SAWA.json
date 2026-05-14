@@ -93,11 +93,14 @@
       "totalPopulation": 3204840,
       "referenceYear": 2025,
       "source": "Estimations AFRIK basees sur Wikipedia FR (article Sawa, peuple, 2025) : 3 204 840 habitants soit 12% de la population camerounaise de 26 707 000. Donnees demographiques camerounaises (BUCREP, Banque Mondiale). Ethnologue (SIL International) pour les langues Sawa (duala : 300 000 locuteurs natifs). Joshua Project (donnees ethnographiques). La region Littoral compte environ 3,5 millions d'habitants (2021).",
-      "distributionByCountry": [{ "country": "CMR", "population": 3204840 }]
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 3204840
+        }
+      ]
     },
     "sources": [
-      "Wikipedia FR — Sawa (peuple) : https://fr.wikipedia.org/wiki/Sawa_(peuple)",
-      "Wikipedia EN — Duala people : https://en.wikipedia.org/wiki/Duala_people",
       "Sawa Convention North America — History of Sawa : https://www.sawaconna.org/historyofsawa",
       "Sawa Convention North America — Histoire des Sawa (FR) : https://www.sawaconna.org/fr/historyofsawa",
       "Le Tamtam du Mboa — L'organisation traditionnelle de la societe Sawa : https://tamtamdumboa.com/lorganisation-traditionnelle-de-la-societe-sawa/",

@@ -61,17 +61,19 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2024 : 7 400 / Recensement éthiopien 2007 : 891 / ELCAT Endangered Languages Project : 2 218 locuteurs / Estimation composite 2025",
       "distributionByCountry": [
-        { "country": "ETH", "population": 7000, "percentage": 100 }
+        {
+          "country": "ETH",
+          "population": 7000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Dime language – Wikipedia EN, 2008 (https://en.wikipedia.org/wiki/Dime_language)",
       "Dime in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/11559/ET)",
       "Dimé – Endangered Languages Project ELCAT (http://elcat.colo.hawaii.edu/lang/5247)",
       "Dime Language (DIM) – Ethnologue (https://www.ethnologue.com/language/dim/)",
       "Appendix ISO 639-3 codes/Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
       "Dizi people – 101 Last Tribes (https://www.101lasttribes.com/tribes/dizi.html)",
-      "Ethiopians – Wikipedia EN, recensements 1994 et 2007 (https://en.wikipedia.org/wiki/Ethiopians)",
       "Omotic languages – Encyclopaedia Britannica (https://www.britannica.com/topic/Omotic-languages)"
     ]
   }

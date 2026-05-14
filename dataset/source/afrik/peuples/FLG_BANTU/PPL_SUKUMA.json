@@ -78,14 +78,16 @@
       "totalPopulation": 11800000,
       "referenceYear": 2025,
       "source": "Joshua Project (2024) : 11 788 000 Sukuma en Tanzanie. Wikipedia (Sukuma people, 2024) : environ 10 millions soit 16% de la population tanzanienne (source originale). Recensement tanzanien 2022 : population totale 61,7 millions. Estimation retenue pour 2025 : 11,8 millions (croissance demographique tanzanienne environ 3% annuelle). Les Sukuma sont le plus grand groupe ethnique de Tanzanie, devant les Nyamwezi (~3 millions), les Chagga et les Haya (chacun >1 million). Ils representent environ 16% de la population nationale. Source principale : Joshua Project (2024), cite dans Wikipedia EN.",
-      "distributionByCountry": [{ "country": "TZA", "population": 11800000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 11800000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN — Sukuma people : https://en.wikipedia.org/wiki/Sukuma_people",
-      "Wikipedia EN — Sukuma language : https://en.wikipedia.org/wiki/Sukuma_language",
       "Joshua Project — Sukuma in Tanzania : https://joshuaproject.net/people_groups/15112",
       "SIL Ethnologue — Sukuma (suk) : https://www.ethnologue.com/language/suk/",
-      "Wikipedia EN — Demographics of Tanzania : https://en.wikipedia.org/wiki/Demographics_of_Tanzania",
       "CIA World Factbook — Tanzania : https://www.cia.gov/the-world-factbook/countries/tanzania/",
       "National Bureau of Statistics Tanzania — 2022 Population and Housing Census : https://www.nbs.go.tz/",
       "Glottolog — Sukuma (suku1261) : https://glottolog.org/resource/languoid/id/suku1261",

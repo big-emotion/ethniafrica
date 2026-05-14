@@ -69,16 +69,19 @@
       "totalPopulation": 13000,
       "referenceYear": 2025,
       "source": "Estimation basee sur les donnees Facebook communautaires (12 800 personnes, environ 0,4 % de la population liberienne) et le recensement de 1962 (5 465 personnes selon le Liberian Studies Journal), avec projection pour 2025.",
-      "distributionByCountry": [{ "country": "LBR", "population": 13000 }]
+      "distributionByCountry": [
+        {
+          "country": "LBR",
+          "population": 13000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia – Kuwaa language (https://en.wikipedia.org/wiki/Kuwaa_language)",
       "Ethnologue – Kuwaa Language (BLH) (https://www.ethnologue.com/language/blh/)",
       "Joshua Project – Kuwaa, Belle in Liberia (https://joshuaproject.net/people_groups/12894)",
       "Lughayangu – Kuwaa Belle Kowaao Kwaa language dictionary (https://lughayangu.com/kuwaa)",
       "AfricaBib – A Kuwaa (Belle) Wordlist, Liberian Studies Journal (https://www.africabib.org/rec.php?RID=188860991)",
-      "Modern Ghana – Historicity Of Liberia Before The Arrival Of The Settler (https://www.modernghana.com/news/966909/historicity-of-liberia-before-the-arrival-of-the.html)",
-      "Kru languages – Wikipedia (https://en.wikipedia.org/wiki/Kru_languages)"
+      "Modern Ghana – Historicity Of Liberia Before The Arrival Of The Settler (https://www.modernghana.com/news/966909/historicity-of-liberia-before-the-arrival-of-the.html)"
     ]
   }
 }

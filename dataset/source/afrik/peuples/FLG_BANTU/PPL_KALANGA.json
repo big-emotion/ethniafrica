@@ -80,14 +80,21 @@
       "referenceYear": 2025,
       "source": "Kalanga language – Wikipedia 2015 (700 000 Zimbabwe, 850 000 Botswana) ; PeopleGroups.org 2025",
       "distributionByCountry": [
-        { "country": "ZWE", "population": 700000 },
-        { "country": "BWA", "population": 850000 },
-        { "country": "ZAF", "population": 80000 }
+        {
+          "country": "ZWE",
+          "population": 700000
+        },
+        {
+          "country": "BWA",
+          "population": 850000
+        },
+        {
+          "country": "ZAF",
+          "population": 80000
+        }
       ]
     },
     "sources": [
-      "Kalanga people – Wikipedia (https://en.wikipedia.org/wiki/Kalanga_people)",
-      "Kalanga language – Wikipedia (https://en.wikipedia.org/wiki/Kalanga_language)",
       "The History of Kalanga People – TG Silundika Cultural Community Centre, 2025 (https://tgsilundikaculturalcommunitycentre.org/the-history-of-kalanga-people/)",
       "Kalanga in Botswana – Joshua Project, 2026 (https://joshuaproject.net/people_groups/12446/BC)",
       "Kalanga – DICE Database, University of Missouri (https://dice.missouri.edu/assets/docs/niger-congo/Kalanga.pdf)",
