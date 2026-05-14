@@ -1,0 +1,42 @@
+name: Editorial Rules Gate
+
+on:
+  pull_request:
+    branches: [main, recette]
+    paths:
+      - "dataset/source/afrik/**"
+      - "scripts/ci/checkEditorialRules.ts"
+      - ".github/workflows/editorial-rules.yml"
+  push:
+    branches: [main, recette]
+    paths:
+      - "dataset/source/afrik/**"
+      - "scripts/ci/checkEditorialRules.ts"
+      - ".github/workflows/editorial-rules.yml"
+  workflow_dispatch:
+
+jobs:
+  editorial-rules:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      # Enforces three decolonial-posture rules on AFRIK fiches:
+      #   1. autonym required at confidence >= medium (warning otherwise)
+      #   2. >= 2 sources when classification_status is contested or
+      #      colonial-legacy
+      #   3. DoctrineLinkCard snapshot presence — graceful skip when ETNI-28
+      #      is not yet merged
+      # PR annotations are emitted on stdout in GitHub Actions
+      # workflow-command format.
+      - name: Run editorial-rules gate
+        run: npx tsx scripts/ci/checkEditorialRules.ts

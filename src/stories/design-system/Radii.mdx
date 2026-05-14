@@ -1,0 +1,42 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design System/Radii" />
+
+# Radii — `--afh-radius-*`
+
+Defined in `src/styles/tokens/radius.css`. Soft, organic curves echoing the
+earth / terracotta aesthetic.
+
+<div
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
+    gap: "1.5rem",
+    margin: "1.5rem 0",
+  }}
+>
+  {[
+    ["--afh-radius-0",    "0"],
+    ["--afh-radius-sm",   "4px"],
+    ["--afh-radius-md",   "6px"],
+    ["--afh-radius-base", "12px"],
+    ["--afh-radius-lg",   "14px"],
+    ["--afh-radius-xl",   "16px"],
+    ["--afh-radius-2xl",  "20px"],
+    ["--afh-radius-3xl",  "28px"],
+    ["--afh-radius-full", "9999px"],
+  ].map(([token, value]) => (
+    <div key={token} style={{ textAlign: "center" }}>
+      <div
+        style={{
+          height: "80px",
+          background: "var(--afh-terracotta)",
+          borderRadius: value,
+          marginBottom: "0.5rem",
+        }}
+      />
+      <code style={{ fontSize: "12px", display: "block" }}>{token}</code>
+      <span style={{ fontSize: "11px", color: "var(--afh-text-soft)" }}>{value}</span>
+    </div>
+  ))}
+</div>

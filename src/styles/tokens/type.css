@@ -1,0 +1,95 @@
+/* ============================================================
+   Africa History — Typography Tokens
+   ETNI-21 · UX-DR2, UX-DR3, UX-DR48
+   ------------------------------------------------------------
+   Fraunces (--font-fraunces) and Nunito Sans (--font-nunito-sans)
+   are loaded by `src/app/layout.tsx` via `next/font/google` —
+   these tokens layer a 9-role scale on top.
+
+   9-role scale: hero / h1 / h2 / h3 / body / small / caption /
+                 micro / nano
+
+   Mobile-first base (430 px) with two scale-up breakpoints:
+     · tablet  ≥ 768 px
+     · desktop ≥ 1200 px
+
+   Density profiles (UX-DR48):
+     reading    — generous line-height (1.65), public fiches
+     moderation — compact (1.45), admin tables
+     developer  — monospaced lookalike (1.35), debug surfaces
+   ============================================================ */
+
+:root {
+  /* ─── Font families ───────────────────────────────────────── */
+  --afh-font-display: var(--font-fraunces), "Fraunces", Georgia, serif;
+  --afh-font-body:
+    var(--font-nunito-sans), "Nunito Sans", system-ui, sans-serif;
+  --afh-font-mono:
+    "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, monospace;
+
+  /* ─── 9-role scale · mobile (≥ 430 px base) ───────────────── */
+  --afh-text-hero: 34px;
+  --afh-text-h1: 24px;
+  --afh-text-h2: 18px;
+  --afh-text-h3: 16px;
+  --afh-text-body: 14px;
+  --afh-text-small: 12px;
+  --afh-text-caption: 11px;
+  --afh-text-micro: 10px;
+  --afh-text-nano: 9px;
+
+  /* ─── Weights ─────────────────────────────────────────────── */
+  --afh-weight-regular: 400;
+  --afh-weight-medium: 500;
+  --afh-weight-semibold: 600;
+  --afh-weight-bold: 700;
+  --afh-weight-heavy: 800;
+  --afh-weight-black: 900;
+
+  /* ─── Line-heights ────────────────────────────────────────── */
+  --afh-leading-tight: 1.2;
+  --afh-leading-snug: 1.35;
+  --afh-leading-normal: 1.5;
+  --afh-leading-relaxed: 1.65;
+
+  /* ─── Letter-spacing ──────────────────────────────────────── */
+  --afh-tracking-tight: -0.01em;
+  --afh-tracking-normal: 0;
+  --afh-tracking-wide: 0.05em;
+  --afh-tracking-wider: 0.1em;
+
+  /* ─── Density profiles (UX-DR48) ──────────────────────────── */
+  --afh-density-reading: var(--afh-leading-relaxed);
+  --afh-density-moderation: var(--afh-leading-snug);
+  --afh-density-developer: var(--afh-leading-snug);
+}
+
+/* ─── Tablet (≥ 768 px) ───────────────────────────────────── */
+@media (min-width: 768px) {
+  :root {
+    --afh-text-hero: 44px;
+    --afh-text-h1: 30px;
+    --afh-text-h2: 22px;
+    --afh-text-h3: 18px;
+    --afh-text-body: 15px;
+    --afh-text-small: 13px;
+    --afh-text-caption: 12px;
+    --afh-text-micro: 11px;
+    --afh-text-nano: 10px;
+  }
+}
+
+/* ─── Desktop (≥ 1200 px) ─────────────────────────────────── */
+@media (min-width: 1200px) {
+  :root {
+    --afh-text-hero: 56px;
+    --afh-text-h1: 36px;
+    --afh-text-h2: 24px;
+    --afh-text-h3: 20px;
+    --afh-text-body: 16px;
+    --afh-text-small: 14px;
+    --afh-text-caption: 12px;
+    --afh-text-micro: 11px;
+    --afh-text-nano: 10px;
+  }
+}
