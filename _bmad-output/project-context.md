@@ -153,7 +153,7 @@ _This file contains critical rules and patterns that AI agents must follow when 
   - **Tier 3 (forbidden)**: Wikipedia articles themselves, blogs, social media, AI-generated content, secondary aggregators without their own primary sources.
   - Each `sources` entry must record `tier: 1` or `tier: 2`. Tier-2 entries must record the Wikipedia language versions cross-checked in `notes`.
 - **Database table names** (canonical, per migration `006_afrik_schema.sql`): `afrik_language_families`, `afrik_languages`, `afrik_peoples`, `afrik_countries`, `afrik_people_countries`. The French names (`afrik_familles_linguistiques`, `afrik_langues`, `afrik_peuples`, `afrik_pays`) do NOT exist in the DB — using them causes runtime failures.
-- **Demographics**: 2025 reference year; populations must sum to **exactly 100%** per country.
+- **Demographics**: 2025 reference year; populations must sum to 100% per country. Validator `scripts/validateAfrikData.ts` FR28 hard-gates at **[95, 105]%** and emits a soft warning **FR28-strict** for any fiche outside **[99, 101]%** (the doctrinal target). The hard gate will be tightened to [99, 101]% once every fiche fits inside it. New / updated fiches must aim for [99, 101]%. Rationale: `docs/adr/0001-fr28-demographic-tolerance.md`.
 - **Colonial terms**: keep but explain why problematic; always provide auto-appellations (endonyms).
 - **Consistency**: TXT demographics MUST match database records.
 
