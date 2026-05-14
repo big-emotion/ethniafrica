@@ -73,12 +73,14 @@
       "totalPopulation": 1100000,
       "referenceYear": 2025,
       "source": "Recensement CSA Ethiopie 2007 : 940 000 locuteurs silt'e natifs ; Zone Silt'e 2007 : 750 398 habitants dont 97,35% Silt'e ; estimation 2025 avec croissance demographique",
-      "distributionByCountry": [{ "country": "ETH", "population": 1100000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 1100000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN, Silt'e people – Wikimedia Foundation (https://en.wikipedia.org/wiki/Silt%27e_people)",
-      "Wikipedia EN, Silt'e language – Wikimedia Foundation (https://en.wikipedia.org/wiki/Silt%27e_language)",
-      "Wikipedia EN, Silt'e Zone – Wikimedia Foundation (https://en.wikipedia.org/wiki/Silt%CA%BCe_Zone)",
       "Joshua Project, Silt'e in Ethiopia – Joshua Project 2024 (https://joshuaproject.net/people_groups/11677)",
       "Ethnologue, Silt'e (stv) – SIL International 2024 (https://www.ethnologue.com/language/stv/)",
       "Glottolog, Silt'e – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/silt1241)",

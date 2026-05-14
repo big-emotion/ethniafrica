@@ -59,10 +59,14 @@
       "totalPopulation": 106000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (https://www.joshuaproject.net/clusters/341)",
-      "distributionByCountry": [{ "country": "TZA", "population": 106000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 106000
+        }
+      ]
     },
     "sources": [
-      "Isanzu people – Wikipedia (https://en.wikipedia.org/wiki/Isanzu_people)",
       "Isanzu in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12260)",
       "Isanzu Language – Ethnologue (https://www.ethnologue.com/language/isn/)",
       "Isanzu – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/isan1243)",

@@ -59,10 +59,14 @@
       "totalPopulation": 11000,
       "referenceYear": 2025,
       "source": "Joshua Project / Peoplegroups.org 2024 (11 000 pour le groupe Nyangbo, Tutrugbu au Ghana). Essegbey 2021 signale environ 2 000 residents dans les villages d'origine.",
-      "distributionByCountry": [{ "country": "GHA", "population": 11000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 11000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN – Nyangbo-Tafi language (https://en.wikipedia.org/wiki/Nyangbo-Tafi_language)",
       "Glottolog – Nyangbo (nyb), 2024 (https://glottolog.org/resource/languoid/id/nyan1302)",
       "Joshua Project – Nyangbo, Tutrugbu in Ghana (https://joshuaproject.net/people_groups/14089/GH)",
       "James Essegbey – Tutrugbu (Nyangbo) language and culture, Language Science Press, 2019 ; recension in Linguistique et Langues Africaines, 2021 (https://journals.openedition.org/lla/729)",

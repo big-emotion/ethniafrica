@@ -107,16 +107,18 @@
           "population": 110000,
           "note": "estimation communautes frontieres"
         },
-        { "country": "UGA", "population": 8280, "note": "estimation 2019" }
+        {
+          "country": "UGA",
+          "population": 8280,
+          "note": "estimation 2019"
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Kamba people. https://en.wikipedia.org/wiki/Kamba_people",
       "Ethnologue (SIL) — Kamba [kam]. https://www.ethnologue.com/language/kam/",
       "Kenya National Bureau of Statistics — Kenya Population and Housing Census 2019. https://www.knbs.or.ke/2019-kenya-population-and-housing-census/",
       "Gateway Africa — Kuba Tribe. https://www.gateway-africa.com/tribe/kuba_tribe.html",
       "Lexvo.org — ISO 639-3 kam (Kamba). http://www.lexvo.org/page/iso639-3/kam",
-      "Wikipedia EN — Kamba language. https://en.wikipedia.org/wiki/Kamba_language",
       "Joshua Project — Kamba people. https://joshuaproject.net/people_groups/11484/KE"
     ]
   }

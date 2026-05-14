@@ -67,19 +67,25 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2025) – Lala-Bisa in Zambia (864 000) ; Bisa in Zambia : 436 000 (categories distinctes selon Joshua Project)",
       "distributionByCountry": [
-        { "country": "ZMB", "population": 864000, "percentage": 88 },
-        { "country": "COD", "population": 113000, "percentage": 12 }
+        {
+          "country": "ZMB",
+          "population": 864000,
+          "percentage": 88
+        },
+        {
+          "country": "COD",
+          "population": 113000,
+          "percentage": 12
+        }
       ]
     },
     "sources": [
-      "Lala-Bisa language – Wikipedia (https://en.wikipedia.org/wiki/Lala-Bisa_language)",
       "Joshua Project – Lala-Bisa in Zambia (https://joshuaproject.net/people_groups/19057/ZA)",
       "Joshua Project – Bisa in Zambia (https://joshuaproject.net/people_groups/10875)",
       "Bisa – Zambia's Traditional History (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/bisa/)",
       "Bisa people – Africa 101 Last Tribes (https://www.101lasttribes.com/tribes/bisa.html)",
       "Ethnologue – Lala-Bisa Language LEB (https://www.ethnologue.com/language/leb/)",
-      "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
-      "Demographics of Zambia – Wikipedia (https://en.wikipedia.org/wiki/Demographics_of_Zambia)"
+      "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)"
     ]
   }
 }

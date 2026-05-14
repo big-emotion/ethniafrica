@@ -76,12 +76,14 @@
       "totalPopulation": 400000,
       "referenceYear": 2025,
       "source": "Estimation basee sur les recensements ghaneens 2021 : Lower Manya Krobo 79 647, Upper Manya Krobo 70 676, Yilo Krobo Municipal 91 456 (donnees citypopulation.de et globalpopulations.com). Population totale Krobo estimee a environ 380 000-400 000 en 2025 apres projection avec taux de croissance ghanen 2,2%/an.",
-      "distributionByCountry": [{ "country": "GHA", "population": 400000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 400000
+        }
+      ]
     },
     "sources": [
-      "Krobo people – Wikipedia EN (https://en.wikipedia.org/wiki/Krobo_people)",
-      "Dangme language – Wikipedia EN (https://en.wikipedia.org/wiki/Dangme_language)",
-      "Upper Manya Krobo District – Wikipedia EN (https://en.wikipedia.org/wiki/Upper_Manya_Krobo_District)",
       "Adangme (Dangme) – Glottolog 5.3, ISO 639-3 : ada (https://glottolog.org/resource/languoid/id/adan1247)",
       "Lower Manya Krobo population – CityPopulation.de (https://www.citypopulation.de)",
       "Yilo Krobo Municipal population 2021 – Ghana Statistical Service (https://microdata.statsghana.gov.gh)",

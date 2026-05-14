@@ -80,11 +80,14 @@
       "totalPopulation": 404801,
       "referenceYear": 2025,
       "source": "Kenya National Bureau of Statistics, recensement 2019 (population ethnique Embu: 404 801). Population du comte de Embu (608 599) inclut Mbeere et autres. Projection 2025 estimee.",
-      "distributionByCountry": [{ "country": "KEN", "population": 404801 }]
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 404801
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN – Embu people: https://en.wikipedia.org/wiki/Embu_people",
-      "Wikipedia EN – Embu language: https://en.wikipedia.org/wiki/Embu_language",
       "Kenya National Bureau of Statistics – Kenya Population and Housing Census 2019: https://www.knbs.or.ke/",
       "Ethnologue – Kiembu (ebu): https://www.ethnologue.com/language/ebu/",
       "CityPopulation – Embu County: https://www.citypopulation.de/en/kenya/sub/admin/14__embu/",

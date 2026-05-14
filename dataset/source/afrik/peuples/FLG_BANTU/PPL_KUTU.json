@@ -61,11 +61,14 @@
       "totalPopulation": 119000,
       "referenceYear": 2025,
       "source": "Estimation basee sur PeopleGroups.org (119 000 en 2023) et SwordsShare/Joshua Project (148 000 locuteurs de la langue kdc). Population en croissance depuis l'estimation de 45 000 en 1987.",
-      "distributionByCountry": [{ "country": "TZA", "population": 119000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 119000
+        }
+      ]
     },
     "sources": [
-      "Kutu people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kutu_people)",
-      "Kutu language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kutu_language)",
       "Kutu in Tanzania – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12891)",
       "Kutu people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/kutu.html)",
       "Kutu of Tanzania – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg014969/)",

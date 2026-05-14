@@ -79,13 +79,17 @@
       "referenceYear": 2025,
       "source": "Bariba people – Wikipedia EN, 2024 (environ 1 million, 70 % au Bénin = ~700 000, 4e groupe ethnique, 9,2 % de la population béninoise) ; population du Bénin estimée à ~14,5 millions en 2025",
       "distributionByCountry": [
-        { "country": "BEN", "population": 770000 },
-        { "country": "NGA", "population": 330000 }
+        {
+          "country": "BEN",
+          "population": 770000
+        },
+        {
+          "country": "NGA",
+          "population": 330000
+        }
       ]
     },
     "sources": [
-      "Bariba people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Bariba_people)",
-      "Bariba language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Bariba_language)",
       "Baatonum (BBA) – Ethnologue (SIL International) (https://www.ethnologue.com/language/bba/)",
       "The Bariba people of West Africa – Qiraat Africa, 2025 (https://qiraatafrican.com/en/16491/the-bariba-people-of-west-africa/)",
       "Binary personal naming system of the Baatombu people in Nigeria – Onoma Journal, Williams A., 2023 (https://onomajournal.org/wp-content/uploads/2024/01/Onoma-58-3.03-Williams-final.pdf)",

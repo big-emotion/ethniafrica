@@ -73,15 +73,17 @@
       "totalPopulation": 85000,
       "referenceYear": 2025,
       "source": "Estimation basee sur le recensement ghaneen de 2021 (district de Krachi Nchumuru : 79 934 hab., Ghana Statistical Service). Le groupe Nchumuru est egalement present dans d'autres districts (Kpandai, Nkwanta). Estimation globale 2025 avec taux de croissance annuel de 2,2%.",
-      "distributionByCountry": [{ "country": "GHA", "population": 85000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 85000
+        }
+      ]
     },
     "sources": [
-      "Nawuri language – Wikipedia EN (https://en.wikipedia.org/wiki/Nawuri_language)",
-      "Nchumbulu language – Wikipedia EN (https://en.wikipedia.org/wiki/Nchumbulu_language)",
       "Nchumburu, Kyombaron in Ghana – Joshua Project (https://joshuaproject.net/people_groups/13266)",
       "Nawuri in Ghana – Joshua Project (https://joshuaproject.net/people_groups/13261)",
       "Krachi Nchumuru District – City Population 2021 (https://www.citypopulation.de/en/ghana/admin/oti/1508__krachi_nchumuru/)",
-      "Languages of Ghana – Wikipedia EN (https://en.wikipedia.org/wiki/Languages_of_Ghana)",
       "Ghana people groups, languages and religions – Joshua Project (https://joshuaproject.net/countries/gh)"
     ]
   }

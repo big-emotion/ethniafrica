@@ -65,17 +65,24 @@
       "referenceYear": 2025,
       "source": "Joshua Project – Lama people group in all countries (2025) : Togo 333 000, Bénin 114 000, Ghana 3 600",
       "distributionByCountry": [
-        { "country": "TGO", "population": 333000 },
-        { "country": "BEN", "population": 114000 },
-        { "country": "GHA", "population": 3600 }
+        {
+          "country": "TGO",
+          "population": 333000
+        },
+        {
+          "country": "BEN",
+          "population": 114000
+        },
+        {
+          "country": "GHA",
+          "population": 3600
+        }
       ]
     },
     "sources": [
-      "Lamba people – Wikipedia EN, 2008 (https://en.wikipedia.org/wiki/Lamba_people)",
       "Lama people group in all countries – Joshua Project, 2025 (https://joshuaproject.net/people_groups/18887)",
       "Lama in Togo – Joshua Project, 2024 (https://joshuaproject.net/people_groups/18887/TO)",
       "Lamba people – Africa 101 Last Tribes (http://www.101lasttribes.com/tribes/lamba_togo.html)",
-      "Togo – Wikipedia EN (section Adele and Lamba peoples) (https://en.wikipedia.org/wiki/Togo)",
       "Togo people groups – Joshua Project (https://joshuaproject.net/countries/to)"
     ]
   }

@@ -61,15 +61,18 @@
       "totalPopulation": 32000,
       "referenceYear": 2025,
       "source": "PeopleGroups.org 2025 : environ 32 000 personnes ; recensement ethiopien 2007 : 20 046 Tsamai",
-      "distributionByCountry": [{ "country": "ETH", "population": 32000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 32000
+        }
+      ]
     },
     "sources": [
-      "Tsamai people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Tsamai_people)",
       "Tsemay in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/15589)",
       "Tsamai of Ethiopia – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg011650/)",
       "Tsamai language (tsb) – Ethnologue, SIL International, 2022 (https://www.ethnologue.com/language/tsb/)",
-      "Tsemai people – 101 Last Tribes (https://www.101lasttribes.com/tribes/tsemai.html)",
-      "List of ethnic groups in Ethiopia – Wikipedia, 2024 (https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_Ethiopia)"
+      "Tsemai people – 101 Last Tribes (https://www.101lasttribes.com/tribes/tsemai.html)"
     ]
   }
 }

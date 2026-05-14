@@ -12,11 +12,10 @@ on:
 
 jobs:
   claude-review:
-    # Optional: Filter by PR author
-    # if: |
-    #   github.event.pull_request.user.login == 'external-contributor' ||
-    #   github.event.pull_request.user.login == 'new-developer' ||
-    #   github.event.pull_request.author_association == 'FIRST_TIME_CONTRIBUTOR'
+    # Dependabot PRs don't receive repo secrets (CLAUDE_CODE_OAUTH_TOKEN), so the
+    # action errors out on env-var validation. Skip the job for dependabot to keep
+    # those PRs mergeable; security review still applies to human-authored PRs.
+    if: github.actor != 'dependabot[bot]'
 
     runs-on: ubuntu-latest
     permissions:
@@ -27,7 +26,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 1
 

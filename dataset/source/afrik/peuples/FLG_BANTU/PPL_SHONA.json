@@ -83,15 +83,17 @@
       "referenceYear": 2025,
       "source": "Wikipedia EN (Shona people, 2024) estime la population totale a environ 22,6 millions en definition large (tous les locuteurs du cluster shona). Joshua Project (2024) : Shona du Zimbabwe environ 14,9 millions. Ethnologue (SIL, 2022) : plus de 14 millions de locuteurs du chiShona (varietes centrales uniquement). Recensement Zimbabwe 2022 : population totale 15,1 millions dont plus de 70% Shona. Estimation retenue pour 2025 : 15 millions (Shona du Zimbabwe et Mozambique au sens strict, excluant sous-groupes Kalanga et Ndau que certains auteurs comptent separement). CIA World Factbook : les Shona representent 82% des 98% de la population zimbabweenne qui est africaine.",
       "distributionByCountry": [
-        { "country": "ZWE", "population": 13500000 },
-        { "country": "MOZ", "population": 1500000 }
+        {
+          "country": "ZWE",
+          "population": 13500000
+        },
+        {
+          "country": "MOZ",
+          "population": 1500000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Shona people : https://en.wikipedia.org/wiki/Shona_people",
-      "Wikipedia EN — Shona language : https://en.wikipedia.org/wiki/Shona_language",
-      "Wikipedia EN — Great Zimbabwe : https://en.wikipedia.org/wiki/Great_Zimbabwe",
-      "Wikipedia EN — Kingdom of Great Zimbabwe : https://en.wikipedia.org/wiki/Kingdom_of_Great_Zimbabwe",
       "Ethnologue SIL — Shona (sna) : https://www.ethnologue.com/language/sna/",
       "Joshua Project — Shona in Zimbabwe : https://joshuaproject.net/people_groups/14917/ZI",
       "Encyclopaedia Britannica — Shona : https://www.britannica.com/topic/Shona",

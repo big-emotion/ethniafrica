@@ -78,16 +78,23 @@
       "referenceYear": 2025,
       "source": "PeopleGroups.org (2025): 1 390 000 Bulu au Cameroun. Estimation 101lasttribes.com: 660 000 se considèrent Bulu, plus de 800 000 locuteurs de la langue. Britannica (fin XXe s.): environ 660 000.",
       "distributionByCountry": [
-        { "country": "CMR", "population": 1350000 },
-        { "country": "GNQ", "population": 25000 },
-        { "country": "GAB", "population": 15000 }
+        {
+          "country": "CMR",
+          "population": 1350000
+        },
+        {
+          "country": "GNQ",
+          "population": 25000
+        },
+        {
+          "country": "GAB",
+          "population": 15000
+        }
       ]
     },
     "sources": [
       "Encyclopaedia Britannica, article Bulu: https://www.britannica.com/topic/Bulu",
       "101 Last Tribes, Bulu people: http://www.101lasttribes.com/tribes/bulu.html",
-      "Wikipedia, Beti-Pahuin peoples: https://en.wikipedia.org/wiki/Beti-Pahuin_peoples",
-      "Wikipedia, Bulu language: https://en.wikipedia.org/wiki/Bulu_language",
       "Ethnologue, Bulu (bum): https://www.ethnologue.com/language/bum/",
       "PeopleGroups.org, Bulu of Cameroon: https://peoplegroups.org/people_groups/pg012558/"
     ]

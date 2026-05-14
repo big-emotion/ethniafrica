@@ -65,8 +65,14 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025",
       "distributionByCountry": [
-        { "country": "ZMB", "population": 175000 },
-        { "country": "MWI", "population": 38000 }
+        {
+          "country": "ZMB",
+          "population": 175000
+        },
+        {
+          "country": "MWI",
+          "population": 38000
+        }
       ]
     },
     "sources": [
@@ -74,7 +80,6 @@
       "Senga of Zambia (PGID: PG015625) – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg015625/)",
       "Senga people – 101 Last Tribes (https://www.101lasttribes.com/tribes/senga.html)",
       "Senga – Zambia's Traditional History (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/senga/)",
-      "Tumbuka people – Wikipedia (https://en.wikipedia.org/wiki/Tumbuka_people)",
       "Partners in Bible Translation – Senga Survey 2015 (http://partnersinbibletranslation.org/wp-content/uploads/2018/03/SengaSurvey_2015.pdf)"
     ]
   }

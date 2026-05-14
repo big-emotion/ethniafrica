@@ -81,16 +81,25 @@
       "referenceYear": 2025,
       "source": "Estimation basée sur 101lasttribes.com (environ 13 millions), Wikipedia Chewa people (7,9 millions selon estimation 2024 pour le groupe ethnique strict), et projections Ethnologue (nya). Les Chewa sont le groupe ethnique le plus important du Malawi (environ 6 millions) et sont significativement représentés en Zambie et au Mozambique.",
       "distributionByCountry": [
-        { "country": "MWI", "population": 7000000 },
-        { "country": "ZMB", "population": 3500000 },
-        { "country": "MOZ", "population": 1200000 },
-        { "country": "ZWE", "population": 300000 }
+        {
+          "country": "MWI",
+          "population": 7000000
+        },
+        {
+          "country": "ZMB",
+          "population": 3500000
+        },
+        {
+          "country": "MOZ",
+          "population": 1200000
+        },
+        {
+          "country": "ZWE",
+          "population": 300000
+        }
       ]
     },
     "sources": [
-      "Wikipedia, Chewa people: https://en.wikipedia.org/wiki/Chewa_people",
-      "Wikipedia, Chewa language: https://en.wikipedia.org/wiki/Chewa_language",
-      "Wikipedia, Nyau: https://en.wikipedia.org/wiki/Nyau",
       "Encyclopaedia Britannica, Chewa: https://www.britannica.com/topic/Chewa-people",
       "101 Last Tribes, Chewa people: https://www.101lasttribes.com/tribes/chewa.html",
       "Ethnologue, Chichewa (nya): https://www.ethnologue.com/language/nya/",

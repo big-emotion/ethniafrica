@@ -75,13 +75,21 @@
       "referenceYear": 2025,
       "source": "Omniglot 2025: environ 431 000 locuteurs (400 000 en Angola, 29 600 en Zambie, 1 400 en Namibie). 101 Last Tribes: total mondial 811 400. Estimation 2025 incluant non-locuteurs: environ 820 000.",
       "distributionByCountry": [
-        { "country": "AGO", "population": 760000 },
-        { "country": "ZMB", "population": 50000 },
-        { "country": "NAM", "population": 10000 }
+        {
+          "country": "AGO",
+          "population": 760000
+        },
+        {
+          "country": "ZMB",
+          "population": 50000
+        },
+        {
+          "country": "NAM",
+          "population": 10000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN – Luchazi (https://en.wikipedia.org/wiki/Luchazi)",
       "Omniglot – Luchazi language and alphabet (https://www.omniglot.com/writing/luchazi.htm)",
       "101 Last Tribes – Luchazi people (https://www.101lasttribes.com/tribes/luchazi.html)",
       "Orville Jenkins – The Luchazi: A Cultural Profile (http://orvillejenkins.com/profiles/luchazi.html)",

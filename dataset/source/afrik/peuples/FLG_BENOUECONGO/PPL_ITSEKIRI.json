@@ -94,11 +94,14 @@
           "population": 30000,
           "note": "Diaspora aux Etats-Unis"
         },
-        { "country": "CAN", "population": 10000, "note": "Diaspora au Canada" }
+        {
+          "country": "CAN",
+          "population": 10000,
+          "note": "Diaspora au Canada"
+        }
       ]
     },
     "sources": [
-      "Wikipedia — Itsekiri people : https://en.wikipedia.org/wiki/Itsekiri_people",
       "Ethnologue (SIL International) — Isekiri language (its) : https://www.ethnologue.com/language/its/",
       "Britannica — Itsekiri : https://www.britannica.com/topic/Itsekiri",
       "Itsekiri National Association of Washington, D.C. — Itsekiri Language and Culture : https://www.itsekirinawb.org/itsekiri-language-and-culture",

@@ -80,12 +80,14 @@
       "totalPopulation": 1469000,
       "referenceYear": 2025,
       "source": "Joshua Project (2025) : Nyoro language 1 469 000 locuteurs. Ethnologue (SIL) : Nyoro (nyo), Ouganda. Recensement ougandais 2002 : 670 000 locuteurs. Bunyoro-Kitara Kingdom (1997 projections) : 800 000 à 1 400 000 habitants dans le Bunyoro. Estimation 2025 retenue : 1 469 000.",
-      "distributionByCountry": [{ "country": "UGA", "population": 1469000 }]
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 1469000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN – Banyoro (Nyoro people) : https://en.wikipedia.org/wiki/Banyoro",
-      "Wikipedia EN – Bunyoro : https://en.wikipedia.org/wiki/Bunyoro",
-      "Wikipedia EN – Nyoro language : https://en.wikipedia.org/wiki/Nyoro_language",
       "Joshua Project – Banyoro, Nyoro in Uganda (2025) : https://joshuaproject.net/people_groups/14103",
       "Bunyoro-Kitara Kingdom – History : http://www.bunyoro-kitara.org/7.html",
       "SIL Ethnologue – Nyoro language (nyo) : https://www.ethnologue.com/language/nyo/",

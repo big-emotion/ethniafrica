@@ -64,17 +64,20 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 : 398 000 en Angola, environ 160 000 en Zambie. Peoplegroups.org 2023 estime 1 593 000 au total dans 3 pays (incluant les diasporas urbaines).",
       "distributionByCountry": [
-        { "country": "AGO", "population": 398000 },
-        { "country": "ZMB", "population": 162000 }
+        {
+          "country": "AGO",
+          "population": 398000
+        },
+        {
+          "country": "ZMB",
+          "population": 162000
+        }
       ]
     },
     "sources": [
       "Joshua Project – Luvale, Lwena in Angola, 2025 (https://joshuaproject.net/people_groups/13168/AO)",
-      "Wikipedia – Luvale people (https://en.wikipedia.org/wiki/Luvale_people)",
       "101 Last Tribes – Luvale people (https://www.101lasttribes.com/tribes/luvale.html)",
-      "Gateway Africa Safaris – Luvale Tribe (https://www.gateway-africa.com/tribe/luvale_tribe.html)",
-      "Wikipedia – Ganguela (https://en.wikipedia.org/wiki/Ganguela)",
-      "Wikipedia – Culture of Angola (https://en.wikipedia.org/wiki/Culture_of_Angola)"
+      "Gateway Africa Safaris – Luvale Tribe (https://www.gateway-africa.com/tribe/luvale_tribe.html)"
     ]
   }
 }

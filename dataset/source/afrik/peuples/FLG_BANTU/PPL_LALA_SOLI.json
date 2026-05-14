@@ -60,10 +60,14 @@
       "totalPopulation": 150000,
       "referenceYear": 2025,
       "source": "Estimation basee sur le recensement zambien 2010 et les projections PeopleGroups.org",
-      "distributionByCountry": [{ "country": "ZMB", "population": 150000 }]
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 150000
+        }
+      ]
     },
     "sources": [
-      "Soli people – Wikipedia EN (https://en.wikipedia.org/wiki/Soli_people)",
       "Before Lusaka: A Brief History of the Soli and Lenje Peoples – Explore Lusaka, 2025 (https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples)",
       "Zambia – Ethnic Groups, Languages, Religions – Encyclopaedia Britannica, 2026 (https://www.britannica.com/place/Zambia/People)",
       "Soli language – Glottolog 5.3, SIL International (https://glottolog.org/resource/languoid/id/soli1239)",

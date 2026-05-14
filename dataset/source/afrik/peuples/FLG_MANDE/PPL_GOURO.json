@@ -73,11 +73,14 @@
       "totalPopulation": 800000,
       "referenceYear": 2025,
       "source": "Estimation fondee sur Omniglot (500 000 locuteurs gouro vers 2020), 101 Last Tribes (plus de 500 000), Guro language Wikipedia (environ 1 million de locuteurs). Population ethnique estimee a 800 000 en 2025.",
-      "distributionByCountry": [{ "country": "CIV", "population": 800000 }]
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 800000
+        }
+      ]
     },
     "sources": [
-      "Gouro (peuple) – Wikipedia FR (https://fr.wikipedia.org/wiki/Gouro_(peuple))",
-      "Guro language – Wikipedia EN (https://en.wikipedia.org/wiki/Guro_language)",
       "Guro | Traditional Arts, Mask Carving & Rituals – Encyclopaedia Britannica (https://www.britannica.com/topic/Guro)",
       "Guro people – 101 Last Tribes (https://www.101lasttribes.com/tribes/guro.html)",
       "Gouro, Kweni in Cote d'Ivoire – Joshua Project (https://joshuaproject.net/people_groups/12007)",

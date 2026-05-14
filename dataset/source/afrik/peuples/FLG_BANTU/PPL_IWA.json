@@ -61,11 +61,14 @@
       "totalPopulation": 9300,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (https://www.joshuaproject.net/clusters/341)",
-      "distributionByCountry": [{ "country": "TZA", "population": 9300 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 9300
+        }
+      ]
     },
     "sources": [
-      "Mwanga people – Wikipedia (https://en.wikipedia.org/wiki/Mwanga_people)",
-      "Mwanga language – Wikipedia (https://en.wikipedia.org/wiki/Mwanga_language)",
       "Iwa of Zambia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015580/)",
       "Bantu, Central-Tanzania People Cluster – Joshua Project, 2025 (https://www.joshuaproject.net/clusters/341)",
       "Nyamwanga Language – Ethnologue (https://www.ethnologue.com/language/mwn/)",

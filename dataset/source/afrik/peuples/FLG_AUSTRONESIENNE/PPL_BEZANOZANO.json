@@ -78,15 +78,17 @@
       "totalPopulation": 270000,
       "referenceYear": 2025,
       "source": "Estimations basées sur Joshua Project (271 000 personnes, profil 2025), Wikipedia (environ 100 000 en 2013), projections démographiques INSTAT Madagascar et UNFPA. Le chiffre de Joshua Project intègre la population bezanozano au sens large incluant les résidents de l'Ankay d'origine bezanozano.",
-      "distributionByCountry": [{ "country": "MDG", "population": 270000 }]
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 270000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia — Bezanozano, https://en.wikipedia.org/wiki/Bezanozano (consulté 2025)",
       "Joshua Project — Bezanozano in Madagascar, https://joshuaproject.net/people_groups/print/10822/MA (consulté 2025)",
       "PeopleGroups.org — Bezanozano of Madagascar, https://peoplegroups.org/people_groups/pg015296/ (consulté 2025)",
       "101 Last Tribes — Bezanozano, https://www.101lasttribes.com/tribes/bezanozano.html (consulté 2025)",
-      "Wikipedia — Bezanozano dialect, https://en.wikipedia.org/wiki/Bezanozano_dialect (consulté 2025)",
-      "Wikipedia — Malagasy language (dialecte bezanozano sous plt), https://en.wikipedia.org/wiki/Malagasy_language (consulté 2025)",
       "CIA World Factbook — Madagascar, https://www.cia.gov/the-world-factbook/countries/madagascar/ (consulté 2025)",
       "Beaujard, Philippe. Les mondes de l'océan Indien. Paris : Armand Colin, 2012."
     ]

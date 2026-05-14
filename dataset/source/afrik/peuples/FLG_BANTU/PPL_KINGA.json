@@ -63,10 +63,14 @@
       "totalPopulation": 296000,
       "referenceYear": 2025,
       "source": "Joshua Project / PeopleGroups.org (2025)",
-      "distributionByCountry": [{ "country": "TZA", "population": 296000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 296000
+        }
+      ]
     },
     "sources": [
-      "Kinga language – Wikipedia (https://en.wikipedia.org/wiki/Kinga_language)",
       "Kinga in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12699)",
       "Kinga – TanzaniaScripture.com, 2021 (https://tanzaniascripture.com/languages/kinga/)",
       "Kinga people – Tanzania Tourist Board / Facebook, 2024 (https://www.facebook.com/TanzaniaTouristBoard/posts/811743427661675/)",

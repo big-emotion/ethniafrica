@@ -82,16 +82,26 @@
       "referenceYear": 2025,
       "source": "Estimations basees sur Ethnologue (ffm : Fulfulde Maasina), Joshua Project (Fulani Maasina dans plusieurs pays : Mali, Cote d'Ivoire, Ghana, Burkina Faso), recensements maliens et projections AFRIK. Le chiffre inclut les locuteurs du fulfulde maasina et les Fulbe sedentarises du delta interieur du Niger.",
       "distributionByCountry": [
-        { "country": "MLI", "population": 1600000 },
-        { "country": "CIV", "population": 200000 },
-        { "country": "GHA", "population": 120000 },
-        { "country": "BFA", "population": 80000 }
+        {
+          "country": "MLI",
+          "population": 1600000
+        },
+        {
+          "country": "CIV",
+          "population": 200000
+        },
+        {
+          "country": "GHA",
+          "population": 120000
+        },
+        {
+          "country": "BFA",
+          "population": 80000
+        }
       ]
     },
     "sources": [
       "Ba, Amadou Hampâté & Daget, Jacques — L'Empire peul du Macina (1818-1853). IFAN/Mouton, 1962.",
-      "Wikipedia FR — Empire du Macina. https://fr.wikipedia.org/wiki/Empire_peul_du_Macina",
-      "Wikipedia EN — Fula people (Fulbe Massina section). https://en.wikipedia.org/wiki/Fula_people",
       "Joshua Project — Fulani, Maasina in Mali. https://joshuaproject.net/people_groups/11773/ml",
       "SIL Ethnologue — Fulfulde, Maasina (ffm). https://www.ethnologue.com/language/ffm/",
       "Seydou, Christiane — La poesie pastorale peule. Karthala, 1977.",

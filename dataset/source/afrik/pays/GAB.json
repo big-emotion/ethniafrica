@@ -189,14 +189,15 @@
       "ONU / UNFPA – Démographie Gabon 2025",
       "Recensements gabonais",
       "Études anthropologiques sur les peuples du Gabon",
-      "Études sur l'art gabonais (masques, sculptures)"
+      "Études sur l'art gabonais (masques, sculptures)",
+      "CIA World Factbook – Gabon (ethnic groups, 2021 est.)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Fang",
           "population": 1200000,
-          "percentageInCountry": 50,
+          "percentageInCountry": 32,
           "peopleId": "PPL_FANG",
           "region": "Nord du Gabon (forêts équatoriales)",
           "languageFamily": "FLG_BANTU"
@@ -204,14 +205,22 @@
         {
           "name": "Punu",
           "population": 240000,
-          "percentageInCountry": 10,
+          "percentageInCountry": 11.5,
           "peopleId": "PPL_PUNU",
           "region": "Sud du Gabon",
           "languageFamily": "FLG_BANTU"
         },
         {
           "name": "Nzebi",
-          "peopleId": "PPL_N"
+          "peopleId": "PPL_N",
+          "percentageInCountry": 9
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 47
         }
       ]
     }

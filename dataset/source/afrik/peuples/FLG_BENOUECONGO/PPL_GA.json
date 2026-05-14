@@ -80,12 +80,14 @@
       "totalPopulation": 1500000,
       "referenceYear": 2025,
       "source": "Recensement ghanaen 2021 : la Grande Accra compte 1 316 003 Ga-Dangme sur 5 455 692 habitants. Les Ga (sous-groupe) représentent environ 50-60% des Ga-Dangme, soit entre 700 000 et 800 000 en Grande Accra. Population totale Ga (incluant diaspora interne nationale) estimée à 1,5 million en 2025 (Ghana Statistical Service, SIL Ethnologue).",
-      "distributionByCountry": [{ "country": "GHA", "population": 1500000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 1500000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN — Ga-Adangbe : https://en.wikipedia.org/wiki/Ga-Adangbe",
-      "Wikipedia EN — Ga language : https://en.wikipedia.org/wiki/Ga_language",
-      "Wikipedia EN — Greater Accra Region : https://en.wikipedia.org/wiki/Greater_Accra_Region",
       "SIL Ethnologue — Ga language (gaa) : https://www.ethnologue.com/language/gaa/",
       "African Roots Travel — Ga Homowo Festival : https://www.africanrootstravel.com/post/the-origin-story-of-homowo-hooting-at-hunger",
       "Ghana Statistical Service — Greater Accra Region Census 2021 : https://www.citypopulation.de/en/ghana/admin/03__greater_accra/",

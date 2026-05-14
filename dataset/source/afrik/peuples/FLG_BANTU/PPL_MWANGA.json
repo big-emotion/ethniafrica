@@ -63,13 +63,17 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (population mondiale Nyamwanga : 502 000)",
       "distributionByCountry": [
-        { "country": "ZMB", "population": 217000 },
-        { "country": "TZA", "population": 285000 }
+        {
+          "country": "ZMB",
+          "population": 217000
+        },
+        {
+          "country": "TZA",
+          "population": 285000
+        }
       ]
     },
     "sources": [
-      "Mwanga people – Wikipedia EN (https://en.wikipedia.org/wiki/Mwanga_people)",
-      "Mwanga language – Wikipedia EN (https://en.wikipedia.org/wiki/Mwanga_language)",
       "Nyamwanga in Zambia – Joshua Project (https://joshuaproject.net/people_groups/13901/ZA)",
       "Namwanga language – Chalo Chatu, Zambia online encyclopedia (https://chalochatu.org/Namwanga_language)",
       "African Cultures by Young Africans: Namwanga Tribe – Afrikan Princess (https://afrikanprincess.com/2015/12/03/african-cultures-by-young-africans-namwanga/)",

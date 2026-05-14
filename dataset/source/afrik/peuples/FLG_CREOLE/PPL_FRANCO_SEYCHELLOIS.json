@@ -75,10 +75,14 @@
       "totalPopulation": 17000,
       "referenceYear": 2025,
       "source": "Wikipedia – Franco-Seychellois (environ 17 000 personnes ou 14 % de la population seychelloise d'ascendance française) ; World Population Review (1,8 % de 132 779 Seychellois en 2025 = environ 2 400 s'identifiant comme Français de souche, mais 14 % d'ascendance française selon Wikipedia)",
-      "distributionByCountry": [{ "country": "SYC", "population": 17000 }]
+      "distributionByCountry": [
+        {
+          "country": "SYC",
+          "population": 17000
+        }
+      ]
     },
     "sources": [
-      "Franco-Seychellois – Wikipedia (anglais), 2024 (https://en.wikipedia.org/wiki/Franco-Seychellois)",
       "Seychelles Population – Seyvillas (https://www.seyvillas.com/en/guide/at-a-glance/population)",
       "We, the people of Seychelles – The Nation (Seychelles), 2022 (https://www.nation.sc/articles/15689/we-the-people-of-seychelles)",
       "Seychelles Population 2026 – World Population Review (https://worldpopulationreview.com/countries/seychelles)",

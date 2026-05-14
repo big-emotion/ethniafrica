@@ -67,12 +67,17 @@
       "referenceYear": 2025,
       "source": "Peoplegroups.org 2024 : 40 500 en Ethiopie ; 101 Last Tribes : 6 000 au Soudan du Sud ; total estime 2025 : environ 46 500",
       "distributionByCountry": [
-        { "country": "ETH", "population": 40500 },
-        { "country": "SSD", "population": 6000 }
+        {
+          "country": "ETH",
+          "population": 40500
+        },
+        {
+          "country": "SSD",
+          "population": 6000
+        }
       ]
     },
     "sources": [
-      "Wikipedia – Nyangatom people, 2024 (https://en.wikipedia.org/wiki/Nyangatom_people)",
       "101 Last Tribes – Nyangatom, 2024 (https://www.101lasttribes.com/tribes/nyangatom.html)",
       "Joshua Project – Nyangatom in Ethiopia, 2024 (https://joshuaproject.net/people_groups/11610/et)",
       "Peoplegroups.org – Nyangatom of Ethiopia PG011628 (https://peoplegroups.org/people_groups/pg011628/)",

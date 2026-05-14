@@ -63,12 +63,15 @@
       "totalPopulation": 130000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 : 130 000 au Ghana. Population totale tous pays : 130 000.",
-      "distributionByCountry": [{ "country": "GHA", "population": 130000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 130000
+        }
+      ]
     },
     "sources": [
       "Joshua Project – Larteh, Gua in Ghana (https://joshuaproject.net/people_groups/11948)",
-      "Wikipedia EN – Akuapem people (https://en.wikipedia.org/wiki/Akuapem_people)",
-      "Wikipedia EN – Guan people (https://en.wikipedia.org/wiki/Guan_people)",
       "Sabinet – An Account of Lɛtɛ Language Context (https://journals.co.za/doi/10.4314/contjas.v11i1.1)",
       "Medwin Publishers – The Guan-Kyerepon in the Suzerainty of the Asante 1635-1750 (https://medwinpublishers.com/PhIJ/the-guan-kyerepon-in-the-suzerainty-of-the-asante-1635-1750.pdf)",
       "Swordshare Map – Larteh Language ISO lar (https://map.swordshare.com/lar)",

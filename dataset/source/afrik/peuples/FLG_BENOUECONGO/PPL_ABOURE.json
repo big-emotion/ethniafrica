@@ -80,12 +80,15 @@
       "totalPopulation": 121000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (121 000) ; Wikipedia FR estime 78 000 dans les zones rurales principales ; Ethnologue 2017 : 93 000 locuteurs",
-      "distributionByCountry": [{ "country": "CIV", "population": 121000 }]
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 121000
+        }
+      ]
     },
     "sources": [
-      "Aboure (peuple) – Wikipedia FR, 2025 (https://fr.wikipedia.org/wiki/Abour%C3%A9_(peuple))",
       "Abure, Eyive in Cote d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10141/IV)",
-      "Abure language – Wikipedia EN, 2025 (https://en.wikipedia.org/wiki/Abure_language)",
       "Ayemou, K.F. – Aboure et Eotile : deux peuples lies par l'histoire (XVIIe-debut XXe siecles), Ziglobitha, 2021 (https://www.ziglobitha.org/wp-content/uploads/2021/11/01-Kadjomou-Ferdinand-AYEMOU-pp01-16.pdf)",
       "Classes d'age, chefferie et organisation dualiste : les Aboure – JSTOR (https://www.jstor.org/stable/4392603)",
       "Cote d'Ivoire people groups – Joshua Project (https://joshuaproject.net/countries/iv)"

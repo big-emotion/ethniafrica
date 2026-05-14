@@ -91,11 +91,14 @@
       "totalPopulation": 2000000,
       "referenceYear": 2025,
       "source": "Estimation basée sur Wikipedia Afemai people (~420 000 selon une estimation ancienne, population projetée en 2025); Edo State population totale d'environ 4,7 millions en 2022 (Presidency.gov.ng), les Afemai représentant environ un tiers à deux cinquièmes de la population de l'Edo North. Les données exactes ne sont pas disponibles car le Nigeria ne publie pas de statistiques ethniques détaillées dans ses recensements.",
-      "distributionByCountry": [{ "country": "NGA", "population": 2000000 }]
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 2000000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia, Afemai people (en). https://en.wikipedia.org/wiki/Afemai_people (consulté 2025)",
-      "Wikipedia, Afenmai language (en). https://en.wikipedia.org/wiki/Afenmai_language (consulté 2025)",
       "Ethnologue, Etsako (ETS). https://www.ethnologue.com/language/ets/ (consulté 2025)",
       "AFESANCOM, The Afemai People of Edo State Nigeria. https://www.afesancommunitymaroc.com/the-afemai-people-of-edo-state-nigeria/ (consulté 2025)",
       "The African Archives, Afemai Culture. https://theafricanarchives.org/index?article=afemai-culture- (consulté 2025)",

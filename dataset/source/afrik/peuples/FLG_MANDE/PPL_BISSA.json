@@ -78,15 +78,29 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (Busanga : Burkina Faso 721 000, Cote d'Ivoire 173 000) ; Wikipedia EN Bissa people (total estime 1,7 million)",
       "distributionByCountry": [
-        { "country": "BFA", "population": 721000 },
-        { "country": "CIV", "population": 173000 },
-        { "country": "GHA", "population": 280000 },
-        { "country": "TGO", "population": 17000 },
-        { "country": "NGA", "population": 15000 }
+        {
+          "country": "BFA",
+          "population": 721000
+        },
+        {
+          "country": "CIV",
+          "population": 173000
+        },
+        {
+          "country": "GHA",
+          "population": 280000
+        },
+        {
+          "country": "TGO",
+          "population": 17000
+        },
+        {
+          "country": "NGA",
+          "population": 15000
+        }
       ]
     },
     "sources": [
-      "Bissa people – Wikipedia EN (https://en.wikipedia.org/wiki/Bissa_people)",
       "Busanga in Burkina Faso – Joshua Project 2025 (https://joshuaproject.net/people_groups/11042/UV)",
       "Busanga people group in all countries – Joshua Project 2025 (https://joshuaproject.net/people_groups/11042)",
       "Daniel McFarland, Historical Dictionary of Upper Volta, Metuchen, Scarecrow Press, 1978",

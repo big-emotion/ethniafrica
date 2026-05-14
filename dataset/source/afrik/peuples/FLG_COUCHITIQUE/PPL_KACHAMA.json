@@ -61,11 +61,14 @@
       "referenceYear": 2025,
       "source": "Ethnologue (kcx) : population inférieure à 10 000 ; environ 1 000 monolingues. Estimation 2025 basée sur Ethnologue et Wikipedia.",
       "distributionByCountry": [
-        { "country": "ETH", "population": 9000, "percentage": 100 }
+        {
+          "country": "ETH",
+          "population": 9000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Kachama-Ganjule language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kachama-Ganjule_language)",
       "Kachama-Ganjule Language (KCX) – Ethnologue, SIL International, 2025 (https://www.ethnologue.com/language/kcx/)",
       "Kachama, Ganjule in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12400)",
       "Blench, R. (2006). Afroasiatic Languages: Omotic sub-group classification.",

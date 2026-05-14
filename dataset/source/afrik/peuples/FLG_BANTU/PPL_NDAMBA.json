@@ -66,10 +66,14 @@
       "totalPopulation": 350000,
       "referenceYear": 2025,
       "source": "Peoplegroups.org (2024) : 295 000 ; Wikipedia (2022) : 500 000 ; estimation mediane 2025",
-      "distributionByCountry": [{ "country": "TZA", "population": 350000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 350000
+        }
+      ]
     },
     "sources": [
-      "Ndamba people – Wikipedia EN (https://en.wikipedia.org/wiki/Ndamba_people)",
       "Ndamba in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13271)",
       "Ndamba tribe – Hadzabetribe.com (https://www.hadzabetribe.com/ndamba-tribe/)",
       "Ndamba – Glottolog 5.3, ISO 639-3: ndj (https://glottolog.org/resource/languoid/id/ndam1239)",

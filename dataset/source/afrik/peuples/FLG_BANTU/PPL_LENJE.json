@@ -69,11 +69,14 @@
       "totalPopulation": 395000,
       "referenceYear": 2025,
       "source": "PeopleGroups.org PGID PG015590 (395 000) ; Wikipedia EN (240 000 - 310 000)",
-      "distributionByCountry": [{ "country": "ZMB", "population": 395000 }]
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 395000
+        }
+      ]
     },
     "sources": [
-      "Lenje people – Wikipedia EN (https://en.wikipedia.org/wiki/Lenje_people)",
-      "Lenje language – Wikipedia EN (https://en.wikipedia.org/wiki/Lenje_language)",
       "Lenje in Zambia – Joshua Project, PGID 13039 (https://joshuaproject.net/people_groups/13039)",
       "Lenje of Zambia – PeopleGroups.org, PGID PG015590 (https://peoplegroups.org/people_groups/pg015590/)",
       "Before Lusaka: A Brief History of the Soli and Lenje Peoples – Explore Lusaka, 2025 (https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples)",

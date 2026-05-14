@@ -66,12 +66,17 @@
       "referenceYear": 2025,
       "source": "PeopleGroups.org 2025",
       "distributionByCountry": [
-        { "country": "TZA", "population": 30000 },
-        { "country": "KEN", "population": 7000 }
+        {
+          "country": "TZA",
+          "population": 30000
+        },
+        {
+          "country": "KEN",
+          "population": 7000
+        }
       ]
     },
     "sources": [
-      "Segeju people – Wikipedia, 2006 (https://en.wikipedia.org/wiki/Segeju_people)",
       "Segeju Language (SEG) – Ethnologue, SIL International (https://www.ethnologue.com/language/seg/)",
       "Segeju in Tanzania Profile – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14816/TZ)",
       "Segeju in Kenya Profile – Joshua Project, 2024 (https://joshuaproject.net/people_groups/14816/KE)",

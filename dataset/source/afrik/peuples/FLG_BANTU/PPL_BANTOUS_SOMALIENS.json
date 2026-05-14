@@ -87,13 +87,21 @@
       "referenceYear": 2025,
       "source": "Wikipedia EN – Somali Bantus (estimation 1 000 000 a 1 500 000 en Somalie) ; Minority Rights Group – Bantu in Somalia (2024)",
       "distributionByCountry": [
-        { "country": "SOM", "population": 1170000 },
-        { "country": "KEN", "population": 20000 },
-        { "country": "USA", "population": 13000 }
+        {
+          "country": "SOM",
+          "population": 1170000
+        },
+        {
+          "country": "KEN",
+          "population": 20000
+        },
+        {
+          "country": "USA",
+          "population": 13000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN – Somali Bantus (https://en.wikipedia.org/wiki/Somali_Bantus)",
       "Minority Rights Group – Bantu in Somalia, 2024 (https://minorityrights.org/communities/bantu/)",
       "Gosha people – 101 Last Tribes (https://www.101lasttribes.com/tribes/gosha.html)",
       "The Somali Bantu: Their History and Culture – Cultural Orientation Resource Exchange (http://www.culturalorientation.net/content/download/1359/7917/version/2/file/The+Somali+Bantu.pdf)",

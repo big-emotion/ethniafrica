@@ -67,18 +67,23 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2025) – Lamba : 436 000 en Zambie + 45 000 en RDC. Zambia 2010 census : Lamba 2,1% de la population.",
       "distributionByCountry": [
-        { "country": "ZMB", "population": 436000, "percentage": 91 },
-        { "country": "COD", "population": 45000, "percentage": 9 }
+        {
+          "country": "ZMB",
+          "population": 436000,
+          "percentage": 91
+        },
+        {
+          "country": "COD",
+          "population": 45000,
+          "percentage": 9
+        }
       ]
     },
     "sources": [
-      "Lamba people (Zambia) – Wikipedia (https://en.wikipedia.org/wiki/Lamba_people_(Zambia))",
-      "Lamba language – Wikipedia (https://en.wikipedia.org/wiki/Lamba_language)",
       "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
       "Joshua Project – Zambia People Groups, Lamba (https://joshuaproject.net/countries/ZA)",
       "Ethnologue – Lamba Language LAM (https://www.ethnologue.com/language/lam/)",
       "Lamba language – Chalo Chatu, Zambia Encyclopedia (http://chalochatu.org/Lamba_language)",
-      "Demographics of Zambia – Wikipedia (https://en.wikipedia.org/wiki/Demographics_of_Zambia)",
       "AfricaBib – Chipimpi, vulgar clans, and Lala-Lamba ethnohistory (https://www.africabib.org/rec.php?RID=326712321)"
     ]
   }

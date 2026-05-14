@@ -71,14 +71,24 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2024 / Wikipedia Oromo people / 101 Last Tribes, estimation composite",
       "distributionByCountry": [
-        { "country": "ETH", "population": 980000, "percentage": 82 },
-        { "country": "KEN", "population": 210000, "percentage": 17 },
-        { "country": "SOM", "population": 10000, "percentage": 1 }
+        {
+          "country": "ETH",
+          "population": 980000,
+          "percentage": 82
+        },
+        {
+          "country": "KEN",
+          "population": 210000,
+          "percentage": 17
+        },
+        {
+          "country": "SOM",
+          "population": 10000,
+          "percentage": 1
+        }
       ]
     },
     "sources": [
-      "Boorana – Wikipedia EN (https://en.wikipedia.org/wiki/Boorana)",
-      "Oromo people – Wikipedia EN (https://en.wikipedia.org/wiki/Oromo_people)",
       "Oromo, Borana in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/19651/ET)",
       "Borana people – 101 Last Tribes (https://www.101lasttribes.com/tribes/borana.html)",
       "The Gadaa System of the Oromo People – Participedia (https://participedia.net/method/the-gadaa-system-of-the-oromo-people)",

@@ -71,11 +71,14 @@
       "totalPopulation": 12000,
       "referenceYear": 2025,
       "source": "National Bureau of Statistics Seychelles, recensement 2022 (9,0 % d'une population de ~132 000 habitants estimée en 2025, World Population Review)",
-      "distributionByCountry": [{ "country": "SYC", "population": 12000 }]
+      "distributionByCountry": [
+        {
+          "country": "SYC",
+          "population": 12000
+        }
+      ]
     },
     "sources": [
-      "Indo-Seychellois – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Indo-Seychellois)",
-      "Demographics of Seychelles – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Demographics_of_Seychelles)",
       "247th Anniversary of Arrival of First Indian Settlers to Seychelles – Seychelles Nation, 2017 (https://www.nation.sc/archive/255508/247th-anniversary-of-arrival-of-first-indian-settlers-to-seychelles-remembered)",
       "Seychelles Population 2026 – World Population Review, 2025 (https://worldpopulationreview.com/countries/seychelles)",
       "Population of Overseas Indians – Ministry of External Affairs of India, 2023 (https://mea.gov.in/images/attach/nris-and-pios_1.pdf)",

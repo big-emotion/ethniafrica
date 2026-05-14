@@ -63,11 +63,14 @@
       "totalPopulation": 250000,
       "referenceYear": 2025,
       "source": "Estimation basee sur le recensement ghaneen de 2021 (Nanumba North Municipal : 188 680 hab., Nanumba South District : 112 000 hab. env., Ghana Statistical Service) et la population Joshua Project 2024 (83 000). Compte tenu du fait que les deux districts sont multi-ethniques, estimation conservatrice de la population specifiquement Nanumba projetee en 2025.",
-      "distributionByCountry": [{ "country": "GHA", "population": 250000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 250000
+        }
+      ]
     },
     "sources": [
-      "Nanumba people – Wikipedia EN (https://en.wikipedia.org/wiki/Nanumba_people)",
-      "Konkomba-Nanumba conflict – Wikipedia EN (https://en.wikipedia.org/wiki/Konkomba%E2%80%93Nanumba_conflict)",
       "Nanumba in Ghana – Joshua Project (https://joshuaproject.net/people_groups/13950)",
       "Nanumba North Municipal – City Population 2021 (https://www.citypopulation.de/en/ghana/admin/northern/0803__nanumba_north_municipal/)",
       "Political Anthropology of History: The Case of Nanun, Northern Ghana – Sociostudies.org (https://www.sociostudies.org/journal/articles/250568/)",

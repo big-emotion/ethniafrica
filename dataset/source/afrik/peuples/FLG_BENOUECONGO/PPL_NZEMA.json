@@ -66,14 +66,18 @@
       "referenceYear": 2025,
       "source": "Peoplegroups.org (2023) : 658 000 Nzema dans le monde. Wikipedia Nzema people : environ 328 700 (estimation antérieure) dont 262 000 au Ghana et 66 700 en Côte d'Ivoire.",
       "distributionByCountry": [
-        { "country": "GHA", "population": 570000 },
-        { "country": "CIV", "population": 88000 }
+        {
+          "country": "GHA",
+          "population": 570000
+        },
+        {
+          "country": "CIV",
+          "population": 88000
+        }
       ]
     },
     "sources": [
-      "Nzema people – Wikipedia (https://en.wikipedia.org/wiki/Nzema_people)",
       "Nzema – 101 Last Tribes (https://www.101lasttribes.com/tribes/nzema.html)",
-      "Fort Apollonia – Wikipedia (https://en.wikipedia.org/wiki/Fort_Apollonia)",
       "Nzema Language (NZI) – Ethnologue (https://www.ethnologue.com/language/nzi/)",
       "Valsecchi, Pierluigi – Calendar and the annual festival in Nzema: notes on time and history, 1999",
       "Valsecchi, Pierluigi – Power and State Formation in West Africa: Appolonia from the Sixteenth to the Eighteenth Century, trans. Allan Cameron, Palgrave (https://www.jstor.org/stable/43305147)",

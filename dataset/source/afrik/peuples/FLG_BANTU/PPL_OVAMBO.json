@@ -81,17 +81,20 @@
       "referenceYear": 2025,
       "source": "CIA World Factbook (Namibie, 2023) : les Ovambo représentent environ 49,5% de la population namibienne (~3,1M). Angola : minorité d'environ 2% (~700 000). Estimations SIL Ethnologue (2024) pour les locuteurs oshiwambo. Recensement national namibien (2011, NSA). Projection 2025.",
       "distributionByCountry": [
-        { "country": "NAM", "population": 1500000 },
-        { "country": "AGO", "population": 600000 }
+        {
+          "country": "NAM",
+          "population": 1500000
+        },
+        {
+          "country": "AGO",
+          "population": 600000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Ovambo people : https://en.wikipedia.org/wiki/Ovambo_people",
-      "Wikipedia EN — Ovambo language : https://en.wikipedia.org/wiki/Ovambo_language",
       "SIL Ethnologue — Kwanyama (kua) : https://www.ethnologue.com/language/kua",
       "SIL Ethnologue — Ndonga (ndo) : https://www.ethnologue.com/language/ndo",
       "CIA World Factbook — Namibia : https://www.cia.gov/the-world-factbook/countries/namibia/",
-      "Wikipedia EN — SWAPO : https://en.wikipedia.org/wiki/SWAPO",
       "South African History Archive — The Namibian struggle for independence 1966-1990 : https://sahistory.org.za/article/namibian-struggle-independence-1966-1990-historical-background",
       "Namibia Statistics Agency — Population and Housing Census 2011 : https://nsa.org.na"
     ]

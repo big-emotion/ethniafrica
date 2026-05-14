@@ -75,11 +75,14 @@
       "totalPopulation": 15000,
       "referenceYear": 2025,
       "source": "Population totale STP estimée à ~234 000-242 000 en 2025 (SaoTomeExpert) ; les Tongas constituent une fraction des groupes ethniques locaux, proportions non chiffrées séparément dans les recensements récents ; estimation basée sur les proportions historiques",
-      "distributionByCountry": [{ "country": "STP", "population": 15000 }]
+      "distributionByCountry": [
+        {
+          "country": "STP",
+          "population": 15000
+        }
+      ]
     },
     "sources": [
-      "São Tomé and Príncipe – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe)",
-      "Demographics of São Tomé and Príncipe – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Demographics_of_S%C3%A3o_Tom%C3%A9_and_Pr%C3%ADncipe)",
       "São Tomé and Príncipe – Minority Rights Group, 2024 (https://minorityrights.org/country/sao-tome-and-principe/)",
       "Population and Demographics – SaoTomeExpert, 2022 (https://www.saotomeexpert.pt/en/sao-tome-and-principe-factsheet-population-demographics/)",
       "People and Culture of Príncipe Island – SaoTomeExpert (https://www.saotomeexpert.pt/en/sao-tome-people-culture-of-principe-island/)",

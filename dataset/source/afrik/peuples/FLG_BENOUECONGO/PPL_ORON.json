@@ -83,13 +83,17 @@
       "referenceYear": 2025,
       "source": "The 1983 estimate placed Oron population at over 600,000. The 101 Last Tribes source cited over 400,000 in the Oron Nation alone circa 2005. Joshua Project (2024) lists Oro language speakers at approximately 165,000, though this figure undercounts the full Oron population which includes those with varying degrees of language retention. Projection to 2025 applying a 2.5% annual growth rate to the 1983 baseline yields an estimate in the range of 750,000 across Nigeria and Cameroon.",
       "distributionByCountry": [
-        { "country": "NGA", "population": 740000 },
-        { "country": "CMR", "population": 10000 }
+        {
+          "country": "NGA",
+          "population": 740000
+        },
+        {
+          "country": "CMR",
+          "population": 10000
+        }
       ]
     },
     "sources": [
-      "Wikipedia, Oron people: https://en.wikipedia.org/wiki/Oron_people",
-      "Wikipedia, Ekpu Oro: https://en.wikipedia.org/wiki/Ekpu_Oro",
       "101 Last Tribes, Oron people: https://www.101lasttribes.com/tribes/oron.html",
       "Joshua Project, Oron in Nigeria: https://joshuaproject.net/people_groups/14222",
       "National Repository of Nigeria, A history of Oron people: https://nigeriareposit.nln.gov.ng/items/3093c34c-b4b8-44d9-b271-cd508b224529/full",

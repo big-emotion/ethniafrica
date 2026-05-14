@@ -234,7 +234,8 @@
       "Early Mbundu States in Angola\"",
       "Heywood, Linda M. – \"Contested Power in Angola, 1840s to the Present\"",
       "Recensements angolais",
-      "Études anthropologiques sur les peuples bantous et khoïsan d'Angola"
+      "Études anthropologiques sur les peuples bantous et khoïsan d'Angola",
+      "CIA World Factbook – Angola (ethnic groups, 2000 est.)"
     ],
     "demographics": {
       "peoples": [
@@ -244,6 +245,13 @@
           "percentageInCountry": 37,
           "peopleId": "PPL_OVIMBUNDU",
           "region": "Hauts plateaux du centre-sud de l'Angola"
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 63
         }
       ]
     }

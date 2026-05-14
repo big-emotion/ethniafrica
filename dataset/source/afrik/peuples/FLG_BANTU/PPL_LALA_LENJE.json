@@ -80,18 +80,19 @@
       "referenceYear": 2025,
       "source": "Wikipedia Lenje people (240 000-310 000) ; Zambia 2010 census : Lenje 1,6% de la population zambienne",
       "distributionByCountry": [
-        { "country": "ZMB", "population": 275000, "percentage": 100 }
+        {
+          "country": "ZMB",
+          "population": 275000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Lenje people – Wikipedia (https://en.wikipedia.org/wiki/Lenje_people)",
-      "Lenje language – Wikipedia (https://en.wikipedia.org/wiki/Lenje_language)",
       "Glottolog – Lenje (lenj1248) (https://glottolog.org/resource/languoid/id/lenj1248)",
       "Joshua Project – Lenje in Zambia (https://joshuaproject.net/people_groups/13039)",
       "PeopleGroups.org – Lenje of Zambia PG015590 (https://peoplegroups.org/people_groups/pg015590/)",
       "Explore Lusaka – Before Lusaka: A Brief History of the Soli and Lenje Peoples (https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples)",
-      "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory (reference aux Lenje), 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
-      "Demographics of Zambia – Wikipedia (https://en.wikipedia.org/wiki/Demographics_of_Zambia)"
+      "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory (reference aux Lenje), 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)"
     ]
   }
 }

@@ -78,18 +78,23 @@
       "referenceYear": 2025,
       "source": "Wikipedia FR et EN – Franco-Mauriciens ; FairMoove (2 % de la population de Maurice estimée à 1 268 000 en 2025 = environ 25 000 personnes)",
       "distributionByCountry": [
-        { "country": "MUS", "population": 22000 },
-        { "country": "ZAF", "population": 2000 },
-        { "country": "FRA", "population": 1000 }
+        {
+          "country": "MUS",
+          "population": 22000
+        },
+        {
+          "country": "ZAF",
+          "population": 2000
+        },
+        {
+          "country": "FRA",
+          "population": 1000
+        }
       ]
     },
     "sources": [
-      "Franco-Mauriciens – Wikipedia (français), 2024 (https://fr.wikipedia.org/wiki/Franco-Mauriciens)",
-      "Franco-Mauritians – Wikipedia (anglais), 2024 (https://en.wikipedia.org/wiki/Franco-Mauritians)",
-      "Demographics of Mauritius – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Demographics_of_Mauritius)",
       "The Franco-Mauritian Elite: Power and Anxiety in the Face of Change – American Anthropological Association, 2018 (https://anthrobookforum.americananthro.org/the-franco-mauritian-elite-power-and-anxiety-in-the-face-of-change/)",
       "Les Franco-Mauriciens : une diaspora pollinisée – Revue Européenne des Migrations Internationales, Université de Poitiers (https://journals.openedition.org/remi/4215)",
-      "Religion in Mauritius – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Religion_in_Mauritius)",
       "Mauritius Population 2026 – Worldometer, 2025 (https://www.worldometers.info/world-population/mauritius-population/)"
     ]
   }

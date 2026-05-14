@@ -69,13 +69,21 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2024 (52 000 en Erythree), Wikipedia EN (187 500 en Erythree, 68 000 au Soudan selon 2005), PeopleGroups.org (151 000 au Soudan), estimation globale consolidee ~300 000",
       "distributionByCountry": [
-        { "country": "ERI", "population": 80000 },
-        { "country": "SDN", "population": 200000 },
-        { "country": "EGY", "population": 20000 }
+        {
+          "country": "ERI",
+          "population": 80000
+        },
+        {
+          "country": "SDN",
+          "population": 200000
+        },
+        {
+          "country": "EGY",
+          "population": 20000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN, Rashaida people – Wikimedia Foundation (https://en.wikipedia.org/wiki/Rashaida_people)",
       "Joshua Project, Rashaida in Eritrea – Joshua Project 2024 (https://joshuaproject.net/people_groups/14523/ER)",
       "PeopleGroups.org, Rashaida of Sudan – PeopleGroups.org 2025 (https://peoplegroups.org/people_groups/pg012130/)",
       "Last Places, The Rashaida tribe, the most conservative tribe in Eritrea – Last Places 2024 (https://lastplaces.com/en/travel-is-knowledge/rashaida-tribe-eritrea-sudan/)",

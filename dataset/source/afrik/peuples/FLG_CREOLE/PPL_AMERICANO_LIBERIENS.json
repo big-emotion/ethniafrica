@@ -76,13 +76,21 @@
       "referenceYear": 2025,
       "source": "Wikipedia – Americo-Liberian people (estimation 2009 de 150 000 sur 3,5 millions de Libériens, soit environ 3-5 % de la population totale estimée à 5,5 millions en 2025)",
       "distributionByCountry": [
-        { "country": "LBR", "population": 120000 },
-        { "country": "USA", "population": 25000 },
-        { "country": "GBR", "population": 5000 }
+        {
+          "country": "LBR",
+          "population": 120000
+        },
+        {
+          "country": "USA",
+          "population": 25000
+        },
+        {
+          "country": "GBR",
+          "population": 5000
+        }
       ]
     },
     "sources": [
-      "Americo-Liberian people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Americo-Liberian_people)",
       "Americo-Liberians – BlackPast.org, 2025 (https://blackpast.org/global-african-history/americo-liberians/)",
       "Americo-Liberian in Liberia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10292/LI)",
       "Liberians: An Introduction to their History and Culture – HartfordInfo.org, 2003 (http://www.hartfordinfo.org/issues/wsd/immigrants/liberians.pdf)",

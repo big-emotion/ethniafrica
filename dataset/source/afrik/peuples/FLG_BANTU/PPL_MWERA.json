@@ -64,13 +64,16 @@
       "totalPopulation": 700000,
       "referenceYear": 2025,
       "source": "Estimation basee sur Joshua Project (2024) et Wikipedia (469 000 en 2001, croissance demographique tanzanienne de ~3% par an)",
-      "distributionByCountry": [{ "country": "TZA", "population": 700000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 700000
+        }
+      ]
     },
     "sources": [
-      "Mwera people – Wikipedia EN (https://en.wikipedia.org/wiki/Mwera_people)",
       "The Mwera People – Religion, Society, Culture – UnitedRepublicofTanzania.com (https://unitedrepublicoftanzania.com/the-people-of-tanzania/daily-life-in-tanzania-and-social-customs/major-tanzania-ethnic-groups/how-many-tanzania-tribes-biggest/the-mwera-people-religion-society-culture/)",
       "Mwera in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13906)",
-      "Mwera language – Wikipedia EN, ISO 639-3: mwe (https://en.wikipedia.org/wiki/Mwera_language)",
       "Mwera – Significance and symbolism, Wisdomlib (Maji Maji) (https://www.wisdomlib.org/concept/mwera)"
     ]
   }

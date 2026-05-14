@@ -86,11 +86,14 @@
       "totalPopulation": 1900000,
       "referenceYear": 2025,
       "source": "Recensement kenyan 2019 (Kenya National Bureau of Statistics) : comte de Meru 1 545 714 habitants ; Tharaka-Nithi (inclut Tharaka, Mwimbi, Muthambi, Chuka) environ 365 330 habitants. Population totale Ameru (tous sous-groupes, 2019) : environ 1 700 000-1 900 000. Estimations 2025 avec croissance demographique. Tsammalex / SIL : environ 2 millions de locuteurs du kimeru.",
-      "distributionByCountry": [{ "country": "KEN", "population": 1900000 }]
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 1900000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN — Meru people : https://en.wikipedia.org/wiki/Meru_people",
-      "Wikipedia EN — Meru language : https://en.wikipedia.org/wiki/Meru_language",
       "SIL Ethnologue — Meru (mer) : https://tsammalex.clld.org/languages/mer",
       "Kenya National Bureau of Statistics — 2019 Kenya Population and Housing Census : https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Volume-4-Distribution-of-Population-by-Socio-Economic-Characteristics.pdf",
       "CityPopulation — Meru County Kenya : https://www.citypopulation.de/en/kenya/sub/admin/12__meru/",

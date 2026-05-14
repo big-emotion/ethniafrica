@@ -63,11 +63,14 @@
       "totalPopulation": 21000,
       "referenceYear": 2025,
       "source": "Joshua Project / PeopleGroups.org (2025)",
-      "distributionByCountry": [{ "country": "TZA", "population": 21000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 21000
+        }
+      ]
     },
     "sources": [
-      "Kisi people – Wikipedia, 2023 (https://en.wikipedia.org/wiki/Kisi_people)",
-      "Kisi language (Tanzania) – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kisi_language_(Tanzania))",
       "Kisi in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12720)",
       "Kisi – Omniglot, 2021 (https://www.omniglot.com/writing/kisi.htm)",
       "Kisi – Ethnologue (https://www.ethnologue.com/language/kiz/)",

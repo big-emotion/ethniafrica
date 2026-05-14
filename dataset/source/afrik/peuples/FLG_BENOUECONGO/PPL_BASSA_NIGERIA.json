@@ -71,14 +71,17 @@
       "totalPopulation": 175000,
       "referenceYear": 2025,
       "source": "Recensement nigérian 2006 : environ 140 000 individus (Bassa Nge Community of North America). Projection 2025 estimée à environ 175 000 en appliquant le taux de croissance nigérian moyen (2,5% annuel). Les chiffres exacts sont difficiles à vérifier car le Nigeria ne distingue pas tous les sous-groupes ethniques dans ses recensements officiels.",
-      "distributionByCountry": [{ "country": "NGA", "population": 175000 }]
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 175000
+        }
+      ]
     },
     "sources": [
       "Bassa Nge Community of North America : Our History https://www.bassangecommunityna.org/our-ministries",
-      "Wikipedia EN : Bassa people (Nigeria) https://en.wikipedia.org/wiki/Bassa_people_(Nigeria)",
       "Facebook Historical Nigeria : The Bassa Nge people https://www.facebook.com/HistoricalNigeria/posts/the-bassa-nge-people-are-an-ethnic-group-in-nigeria",
       "Glottolog : Nupoid (classification linguistique) https://glottolog.org/resource/languoid/id/nupo1239",
-      "Wikipedia EN : Middle Belt Nigeria https://en.wikipedia.org/wiki/Middle_Belt",
       "Ethnologue : Nupe-Nupe-Tako (NUP) https://www.ethnologue.com/language/nup/",
       "YouTube : The History of Bassa Nigeria https://www.youtube.com/watch?v=UVGnthv_d7w"
     ]

@@ -63,13 +63,17 @@
       "referenceYear": 2025,
       "source": "Estimation a partir de 168 000 locuteurs en Zambie (2006, Ethnologue) et 180 000 en Angola (2024, Wikipedia Luvale language). Projections 2025 tenant compte de la croissance demographique.",
       "distributionByCountry": [
-        { "country": "ZMB", "population": 350000 },
-        { "country": "AGO", "population": 220000 }
+        {
+          "country": "ZMB",
+          "population": 350000
+        },
+        {
+          "country": "AGO",
+          "population": 220000
+        }
       ]
     },
     "sources": [
-      "Luvale people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Luvale_people)",
-      "Luvale language – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Luvale_language)",
       "Luvale Language (LUE) – Ethnologue, SIL International (https://www.ethnologue.com/language/lue/)",
       "Luvale, Lwena in Angola – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13168/AO)",
       "Luvale in Zambia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13166/ZA)"

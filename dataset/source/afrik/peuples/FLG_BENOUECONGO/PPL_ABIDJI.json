@@ -62,10 +62,14 @@
       "totalPopulation": 111000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (111 000)",
-      "distributionByCountry": [{ "country": "CIV", "population": 111000 }]
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 111000
+        }
+      ]
     },
     "sources": [
-      "Abidji – Wikipedia FR, 2025 (https://fr.wikipedia.org/wiki/Abidji)",
       "Abidji – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10127/IV)",
       "Le peuple Abidji – Rezo-Ivoire, 2011 (https://rezoivoire.net/ivoire/patrimoine/3811/le-peuple-abidji.html)",
       "Le Dipri chez les Abidji de Cote d'Ivoire – Revue du GRALIFAH, J.J. Essoh et M. Yeo, 2024 (https://www.revuedugralifah.com/wp-content/uploads/2024/12/13-J-J-ESSOH-et-M-YEO-_170-180.pdf)",

@@ -78,11 +78,14 @@
       "totalPopulation": 10000,
       "referenceYear": 2025,
       "source": "Estimations locales citées dans Hakka people – Wikipedia EN, 2025 (environ 10 000 en 2025 contre 35 000 en 2008) ; Mauritians of Chinese origin – Wikipedia EN, 2024",
-      "distributionByCountry": [{ "country": "MUS", "population": 10000 }]
+      "distributionByCountry": [
+        {
+          "country": "MUS",
+          "population": 10000
+        }
+      ]
     },
     "sources": [
-      "Mauritians of Chinese origin – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Mauritians_of_Chinese_origin)",
-      "Hakka people – Wikipedia EN, 2025 (https://en.wikipedia.org/wiki/Hakka_people)",
       "Han Chinese, Hakka in Mauritius – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12054/MP)",
       "The Hakka Chinese – Banana Writers, 2016 (https://www.bananawriters.com/thehakkachinese)",
       "Chinese Mauritians: Paradise Island's Next Dodo? – The Yale Globalist, 2013 (https://globalist.yale.edu/uncategorized/chinese-mauritians-paradise-islands-next-dodo/)",

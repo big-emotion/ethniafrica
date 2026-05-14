@@ -75,17 +75,20 @@
       "referenceYear": 2025,
       "source": "Estimation basée sur le recensement Burkina Faso 2021 (Gourounsi = 5,9% de 23,4M = 1,38M BFA) et données Ghana Statistical Service 2021 (Gurunsi environ 3,5% de 32M = 1,12M GHA). Chiffre plus large incluant tous les sous-groupes : estimation Wikipedia EN (BFA 3 500 000 ; GHA 1 200 000)",
       "distributionByCountry": [
-        { "country": "BFA", "population": 3500000 },
-        { "country": "GHA", "population": 1200000 }
+        {
+          "country": "BFA",
+          "population": 3500000
+        },
+        {
+          "country": "GHA",
+          "population": 1200000
+        }
       ]
     },
     "sources": [
-      "Gurunsi people – Wikipedia EN, 2006, mis à jour 2024 (https://en.wikipedia.org/wiki/Gurunsi_people)",
       "Gurunsi people – 101 Last Tribes (https://www.101lasttribes.com/tribes/gurunsi.html)",
-      "Demographics of Burkina Faso – Wikipedia EN (https://en.wikipedia.org/wiki/Demographics_of_Burkina_Faso)",
       "Burkina Faso people groups – Joshua Project, 2025 (https://joshuaproject.net/countries/uv)",
-      "The Gurunsi (Kassena) tribe – Tiébélé, Untamed Travelling (https://www.untamedtravelling.com/en/destinations/africa/burkina-faso/gurunsi)",
-      "Gourounsi – Wikipedia FR, 2006 (https://fr.wikipedia.org/wiki/Gourounsi)"
+      "The Gurunsi (Kassena) tribe – Tiébélé, Untamed Travelling (https://www.untamedtravelling.com/en/destinations/africa/burkina-faso/gurunsi)"
     ]
   }
 }

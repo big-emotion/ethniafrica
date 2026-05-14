@@ -67,13 +67,17 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2024 (165 000 au Liberia, 15 000 en Guinee), Facebook community post 2025 (estimation 165 000 au Liberia). Total estime toutes zones confondues.",
       "distributionByCountry": [
-        { "country": "LBR", "population": 165000 },
-        { "country": "GIN", "population": 15000 }
+        {
+          "country": "LBR",
+          "population": 165000
+        },
+        {
+          "country": "GIN",
+          "population": 15000
+        }
       ]
     },
     "sources": [
-      "Gbandi people – Wikipedia EN (https://en.wikipedia.org/wiki/Gbandi_people)",
-      "Gbandi language – Wikipedia EN (https://en.wikipedia.org/wiki/Gbandi_language)",
       "Bandi in Liberia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/16125/LI)",
       "Minority Rights Group – Liberia, 2024 (https://minorityrights.org/country/liberia/)",
       "The Gbandi Language: Editor's Note – Gbandi Landers Association in the Americas (http://www.gbandilanders.com/advocacy-organization-about/the-gbandi-language-editors-note)",

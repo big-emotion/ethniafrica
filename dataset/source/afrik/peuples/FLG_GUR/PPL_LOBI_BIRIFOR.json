@@ -73,14 +73,21 @@
       "referenceYear": 2025,
       "source": "Joshua Project : Lobi 617 000 (BFA 356 000, CIV 250 000, GHA 11 000) + Birifor 200 000 (Wikipedia EN, PeopleGroups.org BFA 271 000). Chiffre combiné estimé Lobi + Birifor.",
       "distributionByCountry": [
-        { "country": "BFA", "population": 627000 },
-        { "country": "CIV", "population": 260000 },
-        { "country": "GHA", "population": 21000 }
+        {
+          "country": "BFA",
+          "population": 627000
+        },
+        {
+          "country": "CIV",
+          "population": 260000
+        },
+        {
+          "country": "GHA",
+          "population": 21000
+        }
       ]
     },
     "sources": [
-      "Lobi (peuple) – Wikipedia FR, 2005 (https://fr.wikipedia.org/wiki/Lobi_(peuple))",
-      "Birifor people – Wikipedia EN, 2018 (https://en.wikipedia.org/wiki/Birifor_people)",
       "Lobi people group in all countries – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13082)",
       "Lobi in Burkina Faso – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13082/UV)",
       "Birifor, Southern in Côte d'Ivoire – Joshua Project (https://joshuaproject.net/people_groups/10869/IV)",

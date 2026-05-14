@@ -82,14 +82,21 @@
       "referenceYear": 2025,
       "source": "Namibia Tourism Board (2024) : environ 1 million dont 200 000 en Namibie et 800 000 en Afrique du Sud ; IWGIA 2024 : population indigene Khoisan d'Afrique du Sud estimee a environ 1% de la population totale (~590 000 dont Khoikhoi et San)",
       "distributionByCountry": [
-        { "country": "ZAF", "population": 800000 },
-        { "country": "NAM", "population": 200000 },
-        { "country": "BWA", "population": 15000 }
+        {
+          "country": "ZAF",
+          "population": 800000
+        },
+        {
+          "country": "NAM",
+          "population": 200000
+        },
+        {
+          "country": "BWA",
+          "population": 15000
+        }
       ]
     },
     "sources": [
-      "Khoekhoe – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Khoikhoi)",
-      "Nama people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Nama_people)",
       "Glottopedia – Khoekhoe, ISO 639-3 : naq (http://www.glottopedia.de/index.php/Khoekhoe)",
       "The Indigenous World 2024 : South Africa – IWGIA (https://iwgia.org/en/south-africa/5358-iw-2024-southafrica.html)",
       "Namibia Tourism Board – Nama people 2024 (https://www.facebook.com/NamibiaTourismBoard/posts/1000733048753092/)",

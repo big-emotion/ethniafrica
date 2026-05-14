@@ -75,16 +75,29 @@
       "referenceYear": 2025,
       "source": "Les Tutsi constituaient historiquement environ 14-15% de la population rwandaise (CIA World Factbook avant 2017, USHMM). Le Rwanda comptant environ 14,6 millions d'habitants en 2025, la population tutsi est estimée à environ 2,1-2,2 millions. Le gouvernement rwandais ne publie plus de statistiques ethniques depuis 1994. Au Burundi, les Tutsi représentent environ 14% de 13 millions d'habitants. Estimation également basée sur SIL Ethnologue et données de la Banque Mondiale.",
       "distributionByCountry": [
-        { "country": "RWA", "population": 2100000 },
-        { "country": "BDI", "population": 1700000 },
-        { "country": "COD", "population": 450000 },
-        { "country": "UGA", "population": 200000 },
-        { "country": "TZA", "population": 50000 }
+        {
+          "country": "RWA",
+          "population": 2100000
+        },
+        {
+          "country": "BDI",
+          "population": 1700000
+        },
+        {
+          "country": "COD",
+          "population": 450000
+        },
+        {
+          "country": "UGA",
+          "population": 200000
+        },
+        {
+          "country": "TZA",
+          "population": 50000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Tutsi : https://en.wikipedia.org/wiki/Tutsi",
-      "Wikipedia EN — Origins of Hutu, Tutsi and Twa : https://en.wikipedia.org/wiki/Origins_of_Hutu,_Tutsi_and_Twa",
       "United Nations — 1994 Genocide against the Tutsi in Rwanda : https://www.un.org/en/preventgenocide/rwanda/historical-background.shtml",
       "US Holocaust Memorial Museum — Rwanda (Divided by Ethnicity) : https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
       "Canadian Museum for Human Rights — What led to the genocide against the Tutsi : https://humanrights.ca/story/what-led-genocide-against-tutsi-rwanda",

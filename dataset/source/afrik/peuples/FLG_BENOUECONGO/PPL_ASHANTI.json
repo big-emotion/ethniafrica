@@ -62,15 +62,21 @@
       "referenceYear": 2025,
       "source": "Estimation basee sur Wikipedia EN (upwards of 10 million Asante people) et recensement Ghana 2021 (region Ashanti: 5,4 millions habitants, majorite akan-asante)",
       "distributionByCountry": [
-        { "country": "GHA", "population": 9500000 },
-        { "country": "GBR", "population": 300000 },
-        { "country": "USA", "population": 200000 }
+        {
+          "country": "GHA",
+          "population": 9500000
+        },
+        {
+          "country": "GBR",
+          "population": 300000
+        },
+        {
+          "country": "USA",
+          "population": 200000
+        }
       ]
     },
     "sources": [
-      "Asante people – Wikipedia EN (https://en.wikipedia.org/wiki/Ashanti_people)",
-      "Ashanti Empire – Wikipedia EN (https://en.wikipedia.org/wiki/Ashanti_Empire)",
-      "Twi language – Wikipedia EN (https://en.wikipedia.org/wiki/Twi_language)",
       "Ghana Statistical Service, Population and Housing Census 2021 (https://census2021.statsghana.gov.gh)",
       "Rattray, Robert Sutherland – Ashanti, Oxford University Press, 1923",
       "McCaskie, T. C. – State and Society in Pre-colonial Asante, Cambridge University Press, 1995"

@@ -66,13 +66,16 @@
       "totalPopulation": 505000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (505 000 pour le Nigeria) ; Eket LGA : 172 856 (recensement 2006), 218 438 (estimation 2013, Akwa Ibom Ministry of Economic Development)",
-      "distributionByCountry": [{ "country": "NGA", "population": 505000 }]
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 505000
+        }
+      ]
     },
     "sources": [
-      "Eket people – Wikipedia EN (https://en.wikipedia.org/wiki/Eket_people)",
       "Eket in Nigeria – Joshua Project (https://joshuaproject.net/people_groups/11731)",
       "Ekit – Glottolog (https://glottolog.org/resource/languoid/id/ekit1246)",
-      "Ibibio language – Wikipedia EN (https://en.wikipedia.org/wiki/Ibibio_language)",
       "City Facts – Eket, Akwa Ibom, Nigeria (https://www.city-facts.com/eket/population)",
       "Abasiattai, M.B. – History of the Cross River Region of Nigeria, Unical Press, 1988"
     ]

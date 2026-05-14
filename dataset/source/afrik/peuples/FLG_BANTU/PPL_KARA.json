@@ -61,13 +61,15 @@
       "totalPopulation": 282000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025",
-      "distributionByCountry": [{ "country": "TZA", "population": 282000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 282000
+        }
+      ]
     },
     "sources": [
-      "Kara people (Tanzania) – Wikipedia (https://en.wikipedia.org/wiki/Kara_people_(Tanzania))",
-      "Kara language (Tanzania) – Wikipedia (https://en.wikipedia.org/wiki/Kara_language_(Tanzania))",
       "Kara, Regi in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/19160)",
-      "Ukara Island – Wikipedia (https://en.wikipedia.org/wiki/Ukara_Island)",
       "About Tribal Chiefs and Cultures – Ukerewe District (http://mpayukaji.blogspot.com/2022/06/about-tribal-chiefs-and-cultures.html)",
       "Kara (Tanzania) – Glottolog 5.3, code kara1481 (https://glottolog.org)"
     ]

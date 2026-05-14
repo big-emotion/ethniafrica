@@ -75,11 +75,14 @@
       "totalPopulation": 1200000,
       "referenceYear": 2025,
       "source": "Estimation basee sur les donnees du recensement angolais et les estimations de la Banque mondiale. La categorie Ganguela representait environ 6% de la population angolaise selon les statistiques coloniales. Population de l'Angola 2025 environ 37 millions. Chiffre inferieur a celui de PPL_GANGUELA (1 500 000) car PPL_NGANGUELA se concentre sur le territoire angolais sans inclure les Mbunda de Zambie deja comptabilises dans PPL_GANGUELA.",
-      "distributionByCountry": [{ "country": "AGO", "population": 1200000 }]
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 1200000
+        }
+      ]
     },
     "sources": [
-      "Ganguela / Nganguela – Wikipedia EN (https://en.wikipedia.org/wiki/Ganguela)",
-      "Luchazi – Wikipedia EN (https://en.wikipedia.org/wiki/Luchazi)",
       "Luchazi Language Blog – Signification du terme Nganguela (https://luchazilanguage.blogspot.com)",
       "Ganguela Facts for Kids – Kiddle (https://kids.kiddle.co/Ganguela)",
       "Nkangala Language – Ethnologue (https://www.ethnologue.com/language/nkn/)",

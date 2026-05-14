@@ -80,14 +80,17 @@
       "referenceYear": 2025,
       "source": "Ethnologue/SIL : 552 000 totaux (261 000 en Guinee, 291 000 au Liberia). Omniglot (2020) : 299 000 locuteurs du Loma au Liberia. Recensement guineen 2018 : Toma = 1,6% de la population guinéenne (~230 000). Recensement liberien 2008 : Lorma = 5,1% (~265 000). Estimation 2025 avec croissance demographique.",
       "distributionByCountry": [
-        { "country": "GIN", "population": 270000 },
-        { "country": "LBR", "population": 290000 }
+        {
+          "country": "GIN",
+          "population": 270000
+        },
+        {
+          "country": "LBR",
+          "population": 290000
+        }
       ]
     },
     "sources": [
-      "Wikipedia – Loma people (EN), 2024 (https://en.wikipedia.org/wiki/Loma_people)",
-      "Wikipedia – Loma (peuple) (FR), 2024 (https://fr.wikipedia.org/wiki/Loma_(peuple))",
-      "Wikipedia – Loma language (EN), 2024 (https://en.wikipedia.org/wiki/Loma_language)",
       "Omniglot – Loma language and alphabet, 2025 (https://www.omniglot.com/writing/loma.htm)",
       "Yale Linguistics – Promouvoir la Culture Loma (article sur les politiques linguistiques en Guinee), 2024 (https://ling.yale.edu/media/478/download?inline)",
       "101 Last Tribes – Loma people (https://www.101lasttribes.com/tribes/loma.html)",

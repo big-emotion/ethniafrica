@@ -73,12 +73,17 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2025) : 180 000 au Benin ; 101 Last Tribes : 176 000 dont 140 000 au Benin et 36 000 au Togo ; estimation combinee 2025 tenant compte de la croissance demographique",
       "distributionByCountry": [
-        { "country": "BEN", "population": 180000 },
-        { "country": "TGO", "population": 40000 }
+        {
+          "country": "BEN",
+          "population": 180000
+        },
+        {
+          "country": "TGO",
+          "population": 40000
+        }
       ]
     },
     "sources": [
-      "Tammari people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Betammaribe)",
       "Otammari in Benin – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14985/BN)",
       "Koutammakou, the Land of the Batammariba – UNESCO World Heritage, 2004 (https://whc.unesco.org/en/list/1140)",
       "Pays Betammaribe and Pays Tamberma – African Landers, 2024 (https://africanlanders.com/en/benin-en/benin-and-togo-pays-betammaribe-and-pays-tamberma-a-tribal-group-with-unique-constructions/)",

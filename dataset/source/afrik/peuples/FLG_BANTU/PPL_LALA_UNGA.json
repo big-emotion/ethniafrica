@@ -59,13 +59,17 @@
       "totalPopulation": 50000,
       "referenceYear": 2025,
       "source": "Estimation basee sur Joshua Project PGID 15714 et sources ethnographiques ; chiffres precis non publies",
-      "distributionByCountry": [{ "country": "ZMB", "population": 50000 }]
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 50000
+        }
+      ]
     },
     "sources": [
       "Unga in Zambia – Joshua Project, PGID 15714 (https://joshuaproject.net/people_groups/15714)",
       "The Unga People: The Only Zambians With English Surnames – Paul Shalala Blog, 2015 (http://paulshalala.blogspot.com/2015/11/the-unga-people-only-zambians-with.html)",
       "BaTwa populations from Zambia retain ancestry of past hunter-gatherers – Nature Communications, 2024 (https://pmc.ncbi.nlm.nih.gov/articles/PMC11344834/)",
-      "Lala people – Wikipedia EN (https://en.wikipedia.org/wiki/Lala_people)",
       "Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory – Brian Siegel, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
       "A History of the Unga People of the Bangweulu Swamps – Daily Nation News review, 2021 (https://www.facebook.com/dailynationews/posts/book-review-a-history-of-the-unga-people-of-the-bangweulu-swamps/2212642275532412/)"
     ]

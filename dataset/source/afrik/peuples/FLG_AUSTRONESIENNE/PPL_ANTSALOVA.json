@@ -78,12 +78,14 @@
       "totalPopulation": 120000,
       "referenceYear": 2025,
       "source": "Estimations basées sur le recensement de la commune d'Antsalova (58 280 habitants en 2018, INSTAT Madagascar) extrapolées au district et aux zones d'influence, CIA World Factbook Madagascar (2025), projections démographiques UNFPA Madagascar",
-      "distributionByCountry": [{ "country": "MDG", "population": 120000 }]
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 120000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia — Antsalova (commune), https://en.wikipedia.org/wiki/Antsalova (consulté 2025)",
-      "Wikipedia — Sakalava people, https://en.wikipedia.org/wiki/Sakalava_people (consulté 2025)",
-      "Wikipedia — Malagasy peoples, https://en.wikipedia.org/wiki/Malagasy_peoples (consulté 2025)",
       "Ethnologue — Malagasy macrolanguage (mlg), https://www.ethnologue.com/language/mlg/ (consulté 2025)",
       "CIA World Factbook — Madagascar, https://www.cia.gov/the-world-factbook/countries/madagascar/ (consulté 2025)",
       "INSTAT Madagascar — Recensements communaux, https://www.instat.mg (consulté 2025)",

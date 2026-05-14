@@ -65,15 +65,18 @@
       "totalPopulation": 2000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 : Kwadia en Cote d'Ivoire, 1 800 personnes. Ethnologue : moins de 10 000 locuteurs (kwp). Estimation 2025 tenant compte de la croissance demographique ivoirienne.",
-      "distributionByCountry": [{ "country": "CIV", "population": 2000 }]
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 2000
+        }
+      ]
     },
     "sources": [
       "Ethnologue – Kodia Language (KWP) (https://www.ethnologue.com/language/kwp/)",
       "Joshua Project – Cote d'Ivoire people groups, Kwadia (https://joshuaproject.net/countries/iv)",
-      "Wikipedia – Krou (peuple) (https://fr.wikipedia.org/wiki/Krou_(peuple))",
       "Landinfo – Report Cote d'Ivoire: Ethnicity, Ivoirité and Conflict (https://www.landinfo.no/asset/514/1/514_1.pdf)",
-      "Facebook – Ethnies de CI : peuple Kodia (https://www.facebook.com/ethniesdeCI/posts/3360851760603000/)",
-      "Demographics of Ivory Coast – Wikipedia (https://en.wikipedia.org/wiki/Demographics_of_Ivory_Coast)"
+      "Facebook – Ethnies de CI : peuple Kodia (https://www.facebook.com/ethniesdeCI/posts/3360851760603000/)"
     ]
   }
 }

@@ -61,11 +61,14 @@
       "totalPopulation": 167000,
       "referenceYear": 2025,
       "source": "Joshua Project / PeopleGroups.org (2025)",
-      "distributionByCountry": [{ "country": "TZA", "population": 167000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 167000
+        }
+      ]
     },
     "sources": [
-      "Konongo people – Wikipedia (https://en.wikipedia.org/wiki/Konongo_people)",
-      "Konongo-Ruwila language – Wikipedia (https://en.wikipedia.org/wiki/Konongo%E2%80%93Ruwila_language)",
       "Konongo in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12785)",
       "Konongo of Tanzania – IMB International Mission Board (https://www.imb.org/55-in-5-resource/konongo-of-tanzania/)",
       "Konongo of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg014967/)",

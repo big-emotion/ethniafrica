@@ -64,10 +64,14 @@
       "totalPopulation": 180000,
       "referenceYear": 2025,
       "source": "Estimation basee sur les donnees historiques : le groupe Nyaneka-Humbe (Nyaneka-Nkhumbi) representait 3% de la population angolaise en 1988 (US Angola Country Studies). Population de l'Angola en 2025 estimee a environ 37 millions (Banque mondiale). 3% = environ 1,1M pour l'ensemble Nyaneka-Nkhumbi. Les Nkhumbi sont un des quatre sous-groupes ; estimation proportionnelle conservatrice.",
-      "distributionByCountry": [{ "country": "AGO", "population": 180000 }]
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 180000
+        }
+      ]
     },
     "sources": [
-      "Nkumbi language – Wikipedia EN (https://en.wikipedia.org/wiki/Nkumbi_language)",
       "Nkhumbi in Angola – Joshua Project (https://joshuaproject.net/people_groups/13417)",
       "The Nyaneka-Nkhumbi – Capoeira History (https://capoeirahistory.com/the-nyaneka-nkhumbi/)",
       "Nyaneka in Angola – Joshua Project (https://joshuaproject.net/people_groups/14084)",

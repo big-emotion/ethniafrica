@@ -201,12 +201,30 @@
       "ONU – Données démographiques 2025",
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples sud-africains",
-      "Études historiques sur l'apartheid et la transition démocratique"
+      "Études historiques sur l'apartheid et la transition démocratique",
+      "Statistics South Africa – Census 2022 Statistical Release P0301.4 (Figure 2.3: Percentage distribution by population group, 1996–2022) – https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf"
     ],
     "demographics": {
       "peoples": [
         {
-          "name": "Autres peuples"
+          "name": "Africains noirs",
+          "percentageInCountry": 81.4
+        },
+        {
+          "name": "Métis (Coloureds)",
+          "percentageInCountry": 8.2
+        },
+        {
+          "name": "Blancs",
+          "percentageInCountry": 7.3
+        },
+        {
+          "name": "Indiens / Asiatiques",
+          "percentageInCountry": 2.7
+        },
+        {
+          "name": "Autres / Non spécifié",
+          "percentageInCountry": 0.4
         }
       ]
     }

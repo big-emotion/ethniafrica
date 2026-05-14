@@ -110,17 +110,18 @@
       "totalPopulation": 29600000,
       "referenceYear": 2025,
       "source": "Estimations basées sur CIA World Factbook Madagascar (2025 : environ 29-30 millions d'habitants), Britannica (population ranking 51e au monde en 2025, projection 33,4 millions en 2030), UNFPA Madagascar, INSTAT Madagascar (Institut National de la Statistique). Le total du macro-groupe correspond à l'ensemble de la population malgache, tous groupes austronésiens confondus.",
-      "distributionByCountry": [{ "country": "MDG", "population": 29600000 }]
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 29600000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia — Malagasy peoples, https://en.wikipedia.org/wiki/Malagasy_peoples (consulté 2025)",
-      "Wikipedia — Malagasy language, https://en.wikipedia.org/wiki/Malagasy_language (consulté 2025)",
       "Britannica — Malagasy peoples, https://www.britannica.com/topic/Malagasy-peoples (consulté 2025)",
       "Ethnologue — Malagasy macrolanguage (mlg), https://www.ethnologue.com/language/mlg/ (consulté 2025)",
       "Kusuma, P. et al. Malagasy Genetic Ancestry Comes from an Historical Malay Trading. Molecular Biology and Evolution, 2016. https://pmc.ncbi.nlm.nih.gov/articles/PMC4989113/",
       "RAIS Conference — The Ethnicity and Identity of the Malagasy People. https://rais.education/wp-content/uploads/2022/07/0203.pdf",
-      "Wikipedia — Austronesian peoples, https://en.wikipedia.org/wiki/Austronesian_peoples (consulté 2025)",
-      "Wikipedia — Culture of Madagascar, https://en.wikipedia.org/wiki/Culture_of_Madagascar (consulté 2025)",
       "CIA World Factbook — Madagascar, https://www.cia.gov/the-world-factbook/countries/madagascar/ (consulté 2025)",
       "Beaujard, Philippe. Les mondes de l'océan Indien (2 vol.). Paris : Armand Colin, 2012.",
       "INSTAT Madagascar — Institut National de la Statistique, https://www.instat.mg (consulté 2025)"

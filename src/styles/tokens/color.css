@@ -20,16 +20,25 @@
   --afh-color-border: #e8dfd3;
 
   --afh-color-text: #2c2018;
-  --afh-color-text-soft: #7a6b5d;
+  /* text-soft darkened from #7a6b5d for WCAG AA on warm surfaces (#fbf7f2,
+     #f5ede0, #fceee8). Net luminance shift ~2 % — visually indistinguishable
+     while pushing the worst-case ratio from 4.42 to 4.96. */
+  --afh-color-text-soft: #78695b;
   --afh-color-text-muted: #9b8b7d;
 
   --afh-color-gold: #b8860b;
   --afh-color-gold-bg: #fdf5e1;
   --afh-color-green: #2b6b42;
   --afh-color-green-bg: #e8f5ed;
-  --afh-color-terracotta: #c2532a;
+  /* terracotta darkened from #c2532a for WCAG AA contrast on terracotta-bg
+     (#fceee8 → 4.51:1) — used by ClassificationBadge "reconstructive" and
+     other foreground accents in country detail views. */
+  --afh-color-terracotta: #b64e27;
   --afh-color-terracotta-bg: #fceee8;
-  --afh-color-earth: #8b6b47;
+  /* earth darkened from #8b6b47 for WCAG AA on every warm surface we layer
+     it onto (bg, bg-warm, earth-bg, terracotta-bg). Worst-case 4.9:1 — used
+     by ClassificationBadge "colonial-legacy" and DoctrineLinkCard. */
+  --afh-color-earth: #7e603e;
   --afh-color-earth-bg: #f3ebe0;
   --afh-color-colonial: #9b3030;
   --afh-color-colonial-bg: #fce8e8;
@@ -58,6 +67,12 @@
   --afh-text: var(--afh-color-text);
   --afh-text-soft: var(--afh-color-text-soft);
   --afh-text-muted: var(--afh-color-text-muted);
+
+  /* Muted surface + foreground pair — used by source-transparency badges
+     (SourceChainSheet tier pills, etc.) and other low-emphasis chips. The
+     pair must satisfy WCAG AA (≥ 4.5:1) for normal text. */
+  --afh-muted: var(--afh-color-bg);
+  --afh-fg-muted: var(--afh-color-text-soft);
 
   /* Accents (kept from V1 country palette) */
   --afh-earth: var(--afh-color-earth);

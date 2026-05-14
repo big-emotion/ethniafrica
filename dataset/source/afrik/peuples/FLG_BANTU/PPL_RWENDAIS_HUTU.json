@@ -75,16 +75,29 @@
       "referenceYear": 2025,
       "source": "Les Hutu constituaient historiquement environ 84-85% de la population rwandaise (CIA World Factbook avant 2017, USHMM). Le Rwanda comptant environ 14,6 millions d'habitants en 2025 (Banque Mondiale), la population hutu est estimée à environ 10,5 millions. Le gouvernement rwandais ne publie plus de statistiques ethniques depuis 1994. Estimation également basée sur les données du Burundi (environ 85% de Hutu sur 13 millions d'hab.) et de la diaspora en RDC.",
       "distributionByCountry": [
-        { "country": "RWA", "population": 10500000 },
-        { "country": "BDI", "population": 10500000 },
-        { "country": "COD", "population": 1000000 },
-        { "country": "UGA", "population": 200000 },
-        { "country": "TZA", "population": 150000 }
+        {
+          "country": "RWA",
+          "population": 10500000
+        },
+        {
+          "country": "BDI",
+          "population": 10500000
+        },
+        {
+          "country": "COD",
+          "population": 1000000
+        },
+        {
+          "country": "UGA",
+          "population": 200000
+        },
+        {
+          "country": "TZA",
+          "population": 150000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Hutu : https://en.wikipedia.org/wiki/Hutu",
-      "Wikipedia EN — Origins of Hutu, Tutsi and Twa : https://en.wikipedia.org/wiki/Origins_of_Hutu,_Tutsi_and_Twa",
       "United Nations — 1994 Genocide against the Tutsi in Rwanda : https://www.un.org/en/preventgenocide/rwanda/historical-background.shtml",
       "US Holocaust Memorial Museum — Rwanda : https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
       "Musée de l'Holocauste Montréal — Le génocide contre les Tutsi au Rwanda : https://museeholocauste.ca/en/resources-training/the-genocide-against-the-tutsi-in-rwanda/",

@@ -91,17 +91,29 @@
       "referenceYear": 2025,
       "source": "Wikipedia – Songhai people (2024) : environ 8,4 millions ; Britannica : plus de 3 millions pour la seule boucle du Niger (les Zarma representant plus de 2 millions au Niger seul)",
       "distributionByCountry": [
-        { "country": "NER", "population": 4500000 },
-        { "country": "MLI", "population": 2000000 },
-        { "country": "BEN", "population": 800000 },
-        { "country": "BFA", "population": 600000 },
-        { "country": "NGA", "population": 500000 }
+        {
+          "country": "NER",
+          "population": 4500000
+        },
+        {
+          "country": "MLI",
+          "population": 2000000
+        },
+        {
+          "country": "BEN",
+          "population": 800000
+        },
+        {
+          "country": "BFA",
+          "population": 600000
+        },
+        {
+          "country": "NGA",
+          "population": 500000
+        }
       ]
     },
     "sources": [
-      "Wikipedia – Songhai people, 2024 (https://en.wikipedia.org/wiki/Songhai_people)",
-      "Wikipedia – Songhai Empire, 2024 (https://en.wikipedia.org/wiki/Songhai_Empire)",
-      "Wikipedia – Songhay languages, 2024 (https://en.wikipedia.org/wiki/Songhay_languages)",
       "Britannica – Songhai (ethnolinguistic group), 2026 (https://www.britannica.com/topic/Songhai)",
       "Britannica – Songhai Empire, 2024 (https://www.britannica.com/place/Songhai-empire)",
       "Glottolog – Koyraboro Senni ISO 639-3 : ses (https://glottolog.org/resource/languoid/id/koyr1242)",

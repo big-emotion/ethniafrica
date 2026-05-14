@@ -67,14 +67,17 @@
       "totalPopulation": 106000,
       "referenceYear": 2025,
       "source": "Joshua Project – Kuvale language resources (https://joshuaproject.net/languages/olu)",
-      "distributionByCountry": [{ "country": "AGO", "population": 106000 }]
+      "distributionByCountry": [
+        {
+          "country": "AGO",
+          "population": 106000
+        }
+      ]
     },
     "sources": [
-      "Kuvale language – Wikipedia, The Free Encyclopedia (https://en.wikipedia.org/wiki/Kuvale_language)",
       "Kuvale language resources – Joshua Project (https://joshuaproject.net/languages/olu)",
       "Rull et al. – Genome-wide variation in the Angolan Namib Desert reveals unique Pre-Bantu ancestry, Science Advances (2023) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10516492/)",
       "Barbieri et al. – The maternal genetic history of the Angolan Namib Desert, bioRxiv (2017) (https://www.biorxiv.org/content/10.1101/162230v1.full)",
-      "Herero people – Wikipedia, The Free Encyclopedia (https://en.wikipedia.org/wiki/Herero_people)",
       "Ovaherero People – OvaHerero Genocide Foundation (https://ogfnamibia.org/ovaherero-people/)",
       "Angola – AFRICA 101 Last Tribes (https://www.101lasttribes.com/countries/angola.html)",
       "Wild Images Photography Tours – Angola: Hidden Tribes of the South Tour Report 2022 (https://www.wildimages-phototours.com/reports/angola-2022/)"

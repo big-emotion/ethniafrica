@@ -64,11 +64,14 @@
       "totalPopulation": 83000,
       "referenceYear": 2025,
       "source": "PeopleGroups.org (2025) : environ 83 000 personnes pour l'ensemble Anum-Boso. Joshua Project (version imprimee) indiquait 24 000 pour Anum-Boso seuls.",
-      "distributionByCountry": [{ "country": "GHA", "population": 83000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 83000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN - Anum (https://en.wikipedia.org/wiki/Anum)",
-      "Wikipedia EN - Gua language (https://en.wikipedia.org/wiki/Gua_language)",
       "PeopleGroups.org - Anum-Boso of Ghana (https://peoplegroups.org/people_groups/pg013261/)",
       "Joshua Project - Anum-Boso in Ghana (https://joshuaproject.net/people_groups/print/10357/GH)",
       "Justice Ghana - The Story of Boso, Kwame Ampene (http://www.justiceghana.com/index.php/2012-01-24-13-47-49/6644-the-story-of-boso)",

@@ -83,16 +83,29 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (Jula : Cote d'Ivoire 2 229 000, Burkina Faso 2 456 000, Mali 143 000, Ghana 93 000, Guinee-Bissau 16 000)",
       "distributionByCountry": [
-        { "country": "CIV", "population": 2229000 },
-        { "country": "BFA", "population": 2456000 },
-        { "country": "MLI", "population": 143000 },
-        { "country": "GHA", "population": 93000 },
-        { "country": "GNB", "population": 16000 }
+        {
+          "country": "CIV",
+          "population": 2229000
+        },
+        {
+          "country": "BFA",
+          "population": 2456000
+        },
+        {
+          "country": "MLI",
+          "population": 143000
+        },
+        {
+          "country": "GHA",
+          "population": 93000
+        },
+        {
+          "country": "GNB",
+          "population": 16000
+        }
       ]
     },
     "sources": [
-      "Dioula (peuple) – Wikipedia FR (https://fr.wikipedia.org/wiki/Dioula_(peuple))",
-      "Dyula people – Wikipedia EN (https://en.wikipedia.org/wiki/Dyula_people)",
       "Jula in Cote d'Ivoire – Joshua Project 2025 (https://joshuaproject.net/people_groups/12375/IV)",
       "Jula people group in all countries – Joshua Project 2025 (https://joshuaproject.net/people_groups/12375)",
       "Ethnologue, Jula [dyu] (https://www.ethnologue.com/language/dyu/)",

@@ -195,7 +195,8 @@
       "Parsons, Neil – \"A New History of Southern Africa\"",
       "UNESCO – Art rupestre san du Botswana (patrimoine mondial)",
       "Recensements botswanais",
-      "Études anthropologiques sur les peuples du Botswana"
+      "Études anthropologiques sur les peuples du Botswana",
+      "CIA World Factbook – Botswana (ethnic groups)"
     ],
     "demographics": {
       "peoples": [
@@ -205,6 +206,13 @@
           "percentageInCountry": 79,
           "peopleId": "PPL_TSWANA",
           "region": "Tout le Botswana (peuple majoritaire)"
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 21
         }
       ]
     }

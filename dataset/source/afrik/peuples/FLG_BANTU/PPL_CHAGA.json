@@ -85,10 +85,14 @@
       "totalPopulation": 2000000,
       "referenceYear": 2025,
       "source": "Estimation basée sur Wikipedia Chagga people (800 000 en 1988), PeopleGroups.org et Joshua Project (projections 2023-2025). Les Chagga sont le troisième groupe ethnique de Tanzanie.",
-      "distributionByCountry": [{ "country": "TZA", "population": 2000000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 2000000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia, Chaga people: https://en.wikipedia.org/wiki/Chaga_people",
       "Climb Mount Kilimanjaro, Beliefs and Ceremonies of the Chagga: https://www.climbmountkilimanjaro.com/about-the-mountain/the-chagga/beliefs-and-ceremonies/",
       "Thomson Treks, The People of Kilimanjaro: https://www.thomsontreks.com/blog/tribes-of-kilimanjaro/",
       "Kilimanjaro Centre, Cultural Traditions of the Chagga: https://mt-kilimanjaro.com/cultural-traditions-of-the-chagga-tribe-near-kilimanjaro/",

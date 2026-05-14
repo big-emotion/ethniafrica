@@ -62,11 +62,14 @@
       "totalPopulation": 2350000,
       "referenceYear": 2025,
       "source": "Estimate basee sur Peoplegroups.org 2024 (2 275 000) et Omniglot 2025 (plus d'un million de locuteurs), avec projection de croissance demographique congolaise",
-      "distributionByCountry": [{ "country": "COD", "population": 2350000 }]
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 2350000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN – Tetela people (https://en.wikipedia.org/wiki/Tetela_people)",
-      "Wikipedia EN – Tetela language (https://en.wikipedia.org/wiki/Tetela_language)",
       "Omniglot – Tetela language and alphabet, 2025 (https://www.omniglot.com/writing/tetela.htm)",
       "101 Last Tribes – Tetela people, 2024 (https://www.101lasttribes.com/tribes/tetela.html)",
       "South African History Online – Patrice Emery Lumumba, 2014 (https://sahistory.org.za/people/patrice-emery-lumumba)",

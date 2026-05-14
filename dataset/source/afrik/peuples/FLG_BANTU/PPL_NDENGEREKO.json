@@ -65,10 +65,14 @@
       "totalPopulation": 290000,
       "referenceYear": 2025,
       "source": "Peoplegroups.org (2024) : 290 000 ; IMB flyer (2020) : 285 000 ; Prayafrica.org : 250 000+",
-      "distributionByCountry": [{ "country": "TZA", "population": 290000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 290000
+        }
+      ]
     },
     "sources": [
-      "Ndengereko language – Wikipedia EN, ISO 639-3: ndg (https://en.wikipedia.org/wiki/Ndengereko_language)",
       "Ndengereko of Tanzania – Pray Africa (https://prayafrica.org/project/ndengereko-of-tanzania/)",
       "Ndengereko – 101 Last Tribes (https://www.101lasttribes.com/tribes/ndengereko.html)",
       "Ndengereko in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13279)",

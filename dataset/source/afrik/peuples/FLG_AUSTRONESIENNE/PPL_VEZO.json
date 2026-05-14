@@ -78,11 +78,14 @@
       "totalPopulation": 407000,
       "referenceYear": 2025,
       "source": "Joshua Project (2025) : 407 000 individus pour Madagascar ; Ethnologue (SIL) : Malagasy sakalava (skg) ; CIA World Factbook Madagascar. Note : les données varient entre 200 000 et 500 000 selon les définitions retenues (ethnie ou locuteurs du dialecte vezo).",
-      "distributionByCountry": [{ "country": "MDG", "population": 407000 }]
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 407000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN – Vezo people : https://en.wikipedia.org/wiki/Vezo",
-      "Wikipedia FR – Peuple Vezo : https://fr.wikipedia.org/wiki/Peuple_Vezo",
       "Joshua Project – Vezo in Madagascar (2025) : https://joshuaproject.net/people_groups/14648/MA",
       "SIL Ethnologue – Sakalava Malagasy (skg) : https://www.ethnologue.com/language/skg/",
       "Mada Expeditions – Le peuple Vezo de Madagascar, entre tradition et modernité (2023) : https://madaexpeditions.com/sous-le-ciel-de-madagascar-la-vie-du-peuple-vezo-entre-tradition-et-modernite/",

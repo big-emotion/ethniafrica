@@ -64,11 +64,14 @@
       "totalPopulation": 90000,
       "referenceYear": 2025,
       "source": "Joshua Project (2025) : 90 000 ; Ethnologue (SAD) : environ 60 000 locuteurs ; PeopleGroups.org (2025) : 197 000 (estimation haute) ; estimation mediane retenue : 90 000",
-      "distributionByCountry": [{ "country": "TZA", "population": 90000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 90000
+        }
+      ]
     },
     "sources": [
-      "Sandawe people – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Sandawe_people)",
-      "Sandawe language – Wikipedia EN / Ethnologue code SAD (https://en.wikipedia.org/wiki/Sandawe_language)",
       "Sandawe in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14720)",
       "Sandawe – Britannica, 2026 (https://www.britannica.com/topic/Sandawe)",
       "Sandawe language (SAD) – Ethnologue SIL (https://www.ethnologue.com/language/sad/)"

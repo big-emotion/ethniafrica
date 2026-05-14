@@ -64,11 +64,14 @@
       "totalPopulation": 150000,
       "referenceYear": 2025,
       "source": "Estimation basée sur 150 000 locuteurs de l'atchan (2017, Wikipedia Ebrié language) et données INSEE/INS Côte d'Ivoire (98 285 autochtones en 1998, représentant environ 0,5 % de la population nationale)",
-      "distributionByCountry": [{ "country": "CIV", "population": 150000 }]
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 150000
+        }
+      ]
     },
     "sources": [
-      "Ébriés – Wikipédia (https://fr.wikipedia.org/wiki/%C3%89bri%C3%A9s)",
-      "Ebrié language – Wikipedia (https://en.wikipedia.org/wiki/Ebri%C3%A9_language)",
       "Urbanisation de la métropole abidjanaise et la mise en minorité des autochtones Ebrié – Oura, Revue de Cinq Continents, 2013 (https://www.ssoar.info/ssoar/bitstream/handle/document/38292/ssoar-cinqcon-2013-8-oura-Urbanisation_de_la_metropole_abidjanaise.pdf)",
       "Tchaman society – Katherine R. Russell, 2025 (https://www.krrussell.com/research/fieldwork/tchaman-society)",
       "Kyama, Ebrie in Côte d'Ivoire – Joshua Project (https://joshuaproject.net/people_groups/12930)",

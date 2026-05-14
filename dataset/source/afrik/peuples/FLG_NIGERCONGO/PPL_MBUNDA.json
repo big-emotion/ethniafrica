@@ -88,19 +88,29 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 : 380 000 en Angola et 183 000 en Zambie, total 563 000. Des communautes supplementaires existent en Namibie (region de Kavango) et en RDC (entre Kwilu et Kasai).",
       "distributionByCountry": [
-        { "country": "AGO", "population": 380000 },
-        { "country": "ZMB", "population": 183000 },
-        { "country": "NAM", "population": 8000 },
-        { "country": "COD", "population": 5000 }
+        {
+          "country": "AGO",
+          "population": 380000
+        },
+        {
+          "country": "ZMB",
+          "population": 183000
+        },
+        {
+          "country": "NAM",
+          "population": 8000
+        },
+        {
+          "country": "COD",
+          "population": 5000
+        }
       ]
     },
     "sources": [
-      "Wikipedia – Mbunda people (https://en.wikipedia.org/wiki/Mbunda_people)",
       "Joshua Project – Mbunda in Angola, 2025 (https://joshuaproject.net/people_groups/13643/AO)",
       "Joshua Project – Mbunda in Zambia, 2025 (https://joshuaproject.net/people_groups/13643/ZA)",
       "The Mbunda Royal Establishment Zambia – The History of the Mbunda People (https://mbundaroyalestablishmentzambia.wordpress.com/the-history-of-the-mbunda-people/)",
-      "Qiraat Africa – Mbunda people of Angola and Zambia (https://qiraatafrican.com/en/19885/mbunda-people-of-angola-and-zambia/)",
-      "Wikipedia – Ganguela (https://en.wikipedia.org/wiki/Ganguela)"
+      "Qiraat Africa – Mbunda people of Angola and Zambia (https://qiraatafrican.com/en/19885/mbunda-people-of-angola-and-zambia/)"
     ]
   }
 }

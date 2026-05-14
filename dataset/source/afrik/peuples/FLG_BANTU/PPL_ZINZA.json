@@ -64,11 +64,14 @@
       "totalPopulation": 453000,
       "referenceYear": 2025,
       "source": "Joshua Project 2024 (453 000 locuteurs) ; 213 972 au recensement CPPI 1999 ; 138 000 estimation 1987",
-      "distributionByCountry": [{ "country": "TZA", "population": 453000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 453000
+        }
+      ]
     },
     "sources": [
-      "Zinza people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Zinza_people)",
-      "Zinza language – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Zinza_language)",
       "Zinza in Tanzania – Joshua Project, 2024 (https://joshuaproject.net/people_groups/16108)",
       "Zinza of Tanzania – People Profile, Dr. Orville Jenkins, 2006 (http://orvillejenkins.com/profiles/zinza.html)",
       "Zinza – Glottolog 5.3, zinz1238 (https://glottolog.org/resource/languoid/id/zinz1238)",

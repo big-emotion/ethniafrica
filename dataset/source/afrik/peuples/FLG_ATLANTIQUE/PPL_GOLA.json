@@ -74,14 +74,17 @@
       "referenceYear": 2025,
       "source": "Wikipedia (2015 : 278 000 locuteurs du gola); Joshua Project (Gola in Sierra Leone : 213 000 total toutes regions, dont 17 000 en Sierra Leone); Liberia Census (Gola representent 4,4% de la population liberienne estimee a 5,4 millions en 2025, soit environ 240 000 au Liberia). Estimation globale 2025 : environ 310 000 personnes.",
       "distributionByCountry": [
-        { "country": "LBR", "population": 293000 },
-        { "country": "SLE", "population": 17000 }
+        {
+          "country": "LBR",
+          "population": 293000
+        },
+        {
+          "country": "SLE",
+          "population": 17000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Gola people. https://en.wikipedia.org/wiki/Gola_people",
-      "Wikipedia EN — Gola language. https://en.wikipedia.org/wiki/Gola_language",
-      "Wikipedia EN — Sande society. https://en.wikipedia.org/wiki/Sande_society",
       "Joshua Project — Gola in Sierra Leone. https://joshuaproject.net/people_groups/11920/SL",
       "101 Last Tribes — Gola people. https://www.101lasttribes.com/tribes/gola.html",
       "SIL Ethnologue — Gola language (gol). https://www.ethnologue.com/language/gol/",

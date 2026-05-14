@@ -205,7 +205,8 @@
       "ONU – Données démographiques 2025",
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples nigérians",
-      "Études historiques sur les royaumes précoloniaux"
+      "Études historiques sur les royaumes précoloniaux",
+      "CIA World Factbook – Nigeria (ethnic groups, 2018 est.)"
     ],
     "demographics": {
       "peoples": [
@@ -213,61 +214,78 @@
           "name": "Hausa-Fulani",
           "peopleId": "PPL_HAUSA",
           "region": "Nord",
-          "languageFamily": "FLG_TCHADIQUE"
+          "languageFamily": "FLG_TCHADIQUE",
+          "percentageInCountry": 36
         },
         {
           "name": "Yoruba",
           "peopleId": "PPL_YORUBA",
           "region": "Sud-Ouest",
-          "languageFamily": "FLG_BENOUECONGO"
+          "languageFamily": "FLG_BENOUECONGO",
+          "percentageInCountry": 15.5
         },
         {
           "name": "Igbo",
           "peopleId": "PPL_IGBO",
           "region": "Sud-Est",
-          "languageFamily": "FLG_BENOUECONGO"
+          "languageFamily": "FLG_BENOUECONGO",
+          "percentageInCountry": 15.2
         },
         {
           "name": "Ijaw",
           "peopleId": "PPL_IJAW",
           "region": "Delta du Niger",
-          "languageFamily": "FLG_NIGERCONGO"
+          "languageFamily": "FLG_NIGERCONGO",
+          "percentageInCountry": 1.8
         },
         {
           "name": "Kanuri",
           "peopleId": "PPL_KANURI",
           "region": "Nord-Est (Borno)",
-          "languageFamily": "FLG_SAHARIENNE"
+          "languageFamily": "FLG_SAHARIENNE",
+          "percentageInCountry": 2.4
         },
         {
           "name": "Tiv",
           "peopleId": "PPL_TIV",
           "region": "Centre-Est (Benue)",
-          "languageFamily": "FLG_NIGERCONGO"
+          "languageFamily": "FLG_NIGERCONGO",
+          "percentageInCountry": 2.4
         },
         {
           "name": "Ibibio-Efik",
           "peopleId": "PPL_IBIBIO",
           "region": "Sud-Est (Cross River, Akwa Ibom)",
-          "languageFamily": "FLG_NIGERCONGO"
+          "languageFamily": "FLG_NIGERCONGO",
+          "percentageInCountry": 1.8
         },
         {
           "name": "Edo / Bini",
           "peopleId": "PPL_EDO",
           "region": "Sud (Edo State)",
-          "languageFamily": "FLG_BENOUECONGO"
+          "languageFamily": "FLG_BENOUECONGO",
+          "percentageInCountry": 1.7
         },
         {
           "name": "Nupe",
           "peopleId": "PPL_NUPE",
           "region": "Centre (Niger State)",
-          "languageFamily": "FLG_NIGERCONGO"
+          "languageFamily": "FLG_NIGERCONGO",
+          "percentageInCountry": 1.5
         },
         {
           "name": "Gbagyi / Gwari",
           "peopleId": "PPL_GBAGYI",
           "region": "Centre (FCT Abuja, Niger State, Kaduna)",
-          "languageFamily": "FLG_BENOUECONGO"
+          "languageFamily": "FLG_BENOUECONGO",
+          "percentageInCountry": 1.2
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 20.5
         }
       ]
     }

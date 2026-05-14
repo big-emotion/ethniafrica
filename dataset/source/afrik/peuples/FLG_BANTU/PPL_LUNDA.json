@@ -87,15 +87,21 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2024) : Lunda en RDC 259 000, en Zambie 496 000, en Angola 420 000 — total 1 175 000. Wikipedia (sources diverses) : environ 1 100 000 en RDC, 600 000 en Zambie, 800 000 en Angola. Les estimations varient selon les criteres d'inclusion des sous-groupes.",
       "distributionByCountry": [
-        { "country": "COD", "population": 259000 },
-        { "country": "ZMB", "population": 496000 },
-        { "country": "AGO", "population": 420000 }
+        {
+          "country": "COD",
+          "population": 259000
+        },
+        {
+          "country": "ZMB",
+          "population": 496000
+        },
+        {
+          "country": "AGO",
+          "population": 420000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Lunda people : https://en.wikipedia.org/wiki/Lunda_people",
-      "Wikipedia EN — Lunda Empire : https://en.wikipedia.org/wiki/Lunda_Empire",
-      "Wikipedia EN — Lunda language : https://en.wikipedia.org/wiki/Lunda_language",
       "SIL Ethnologue — Lunda (lun) : https://www.ethnologue.com/language/lun/",
       "Joshua Project — Lunda in Angola : https://joshuaproject.net/people_groups/13153/AO",
       "Joshua Project — Lunda in DRC : https://joshuaproject.net/people_groups/13153/CG",

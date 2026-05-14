@@ -79,15 +79,25 @@
       "referenceYear": 2025,
       "source": "Estimation basée sur Ethnologue (SIL International, 2024, code ajg) signalant plus d'un million de locuteurs; Peoples Dispatch (2025) cite 1,3 million de locuteurs en Afrique de l'Ouest; Wikipedia Aja people (en) estime environ 500 000 Adja stricto sensu dans la zone frontalière Togo-Bénin, la population totale incluant la diaspora urbaine étant plus élevée.",
       "distributionByCountry": [
-        { "country": "BEN", "population": 750000 },
-        { "country": "TGO", "population": 450000 },
-        { "country": "NGA", "population": 60000 },
-        { "country": "GAB", "population": 40000 }
+        {
+          "country": "BEN",
+          "population": 750000
+        },
+        {
+          "country": "TGO",
+          "population": 450000
+        },
+        {
+          "country": "NGA",
+          "population": 60000
+        },
+        {
+          "country": "GAB",
+          "population": 40000
+        }
       ]
     },
     "sources": [
-      "Wikipedia, Aja people (en). https://en.wikipedia.org/wiki/Aja_people (consulté 2025)",
-      "Wikipedia, Adja language (en). https://en.wikipedia.org/wiki/Adja_language (consulté 2025)",
       "Ethnologue, Aja (AJG). https://www.ethnologue.com/language/ajg/ (consulté 2025)",
       "Joshua Project, Aja in Togo. https://joshuaproject.net/people_groups/10158/TO (consulté 2025)",
       "PeopleGroups.org, Adja of Togo (PGID: PG014304). https://peoplegroups.org/people_groups/pg014304/ (consulté 2025)",

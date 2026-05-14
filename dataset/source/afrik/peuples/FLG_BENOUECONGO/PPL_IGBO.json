@@ -95,7 +95,11 @@
           "population": 200000,
           "note": "Communautes diasporiques"
         },
-        { "country": "GBN", "population": 50000, "note": "Diaspora en Gabon" },
+        {
+          "country": "GBN",
+          "population": 50000,
+          "note": "Diaspora en Gabon"
+        },
         {
           "country": "GBR",
           "population": 115000,
@@ -107,9 +111,6 @@
       "Achebe, Chinua — Things Fall Apart (1958), roman fondateur sur la societe igbo pre-coloniale",
       "Uchendu, Victor — The Igbo of Southeast Nigeria (1965), etude anthropologique classique",
       "Isichei, Elizabeth — A History of the Igbo People (1976)",
-      "Wikipedia — Igbo people : https://en.wikipedia.org/wiki/Igbo_people",
-      "Wikipedia — Odinani : https://en.wikipedia.org/wiki/Odinani",
-      "Wikipedia — Biafra : https://en.wikipedia.org/wiki/Biafra",
       "Ethnologue (SIL International) — Igbo language (ibo) : https://www.ethnologue.com/language/ibo/",
       "Nwala, T. Uzodinma — Igbo Philosophy (1985)",
       "BeingAfrican.org — Music and Dance in Igbo Culture : https://beingafrican.org/culture-panel/music-and-dance-in-igbo-culture/"

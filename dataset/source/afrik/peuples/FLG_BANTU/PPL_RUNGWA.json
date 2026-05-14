@@ -62,11 +62,14 @@
       "totalPopulation": 59000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025",
-      "distributionByCountry": [{ "country": "TZA", "population": 59000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 59000
+        }
+      ]
     },
     "sources": [
-      "Rungwa people – Wikipedia, 2023 (https://en.wikipedia.org/wiki/Rungwa_people)",
-      "Rungwa language – Wikipedia, 2012 (https://en.wikipedia.org/wiki/Rungwa_language)",
       "Rungwa in Tanzania Profile – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14594/TZ)",
       "Rungwa Language (RNW) – Ethnologue, SIL International (https://www.ethnologue.com/language/rnw/)",
       "Waters, Tony – Social Organization and Social Status in Nineteenth and Twentieth Century Rukwa, Tanzania – African Studies Quarterly, Vol. 11, No. 1, 2009 (https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf)",

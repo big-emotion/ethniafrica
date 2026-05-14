@@ -67,13 +67,18 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (Kaonde en Zambie : 454 000 locuteurs primaires)",
       "distributionByCountry": [
-        { "country": "ZMB", "population": 454000 },
-        { "country": "COD", "population": 50000 }
+        {
+          "country": "ZMB",
+          "population": 454000
+        },
+        {
+          "country": "COD",
+          "population": 50000
+        }
       ]
     },
     "sources": [
       "Kaonde – Britannica (https://www.britannica.com/topic/Kaonde)",
-      "Kaonde language – Wikipedia (https://en.wikipedia.org/wiki/Kaonde_language)",
       "The Kaonde People – Lugha Yangu, 2022 (https://lughayangu.com/post/the-kaonde-people)",
       "History – Kaonde Archives (https://kaondewordpress.wordpress.com/history/)",
       "Culture – Kaonde Archives (https://kaondewordpress.wordpress.com/culture/)",

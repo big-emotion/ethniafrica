@@ -122,22 +122,57 @@
       "referenceYear": 2025,
       "source": "Estimations agregees : Wikipedia (entre 25 et 40 millions), UNFPA Sahel, CIA World Factbook (profils nationaux), recensements nationaux. Projection 2025 estimee a 40 millions en incluant toutes les composantes (Torobe, Wodaabe, Mbororo, Toucouleur, etc.).",
       "distributionByCountry": [
-        { "country": "NGA", "population": 14000000 },
-        { "country": "GIN", "population": 5000000 },
-        { "country": "SEN", "population": 4000000 },
-        { "country": "MLI", "population": 3500000 },
-        { "country": "CMR", "population": 3000000 },
-        { "country": "NER", "population": 2500000 },
-        { "country": "BFA", "population": 2000000 },
-        { "country": "SDN", "population": 2000000 },
-        { "country": "TCD", "population": 1500000 },
-        { "country": "MRT", "population": 1000000 },
-        { "country": "CAF", "population": 700000 },
-        { "country": "SLE", "population": 800000 }
+        {
+          "country": "NGA",
+          "population": 14000000
+        },
+        {
+          "country": "GIN",
+          "population": 5000000
+        },
+        {
+          "country": "SEN",
+          "population": 4000000
+        },
+        {
+          "country": "MLI",
+          "population": 3500000
+        },
+        {
+          "country": "CMR",
+          "population": 3000000
+        },
+        {
+          "country": "NER",
+          "population": 2500000
+        },
+        {
+          "country": "BFA",
+          "population": 2000000
+        },
+        {
+          "country": "SDN",
+          "population": 2000000
+        },
+        {
+          "country": "TCD",
+          "population": 1500000
+        },
+        {
+          "country": "MRT",
+          "population": 1000000
+        },
+        {
+          "country": "CAF",
+          "population": 700000
+        },
+        {
+          "country": "SLE",
+          "population": 800000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Fula people. https://en.wikipedia.org/wiki/Fula_people",
       "SIL Ethnologue — Fulfulde language (ful). https://www.ethnologue.com/language/ful/",
       "Last, Murray — The Sokoto Caliphate. Longman, 1967.",
       "Riesman, Paul — Freedom in Fulani Social Life. University of Chicago Press, 1977.",

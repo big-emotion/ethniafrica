@@ -235,7 +235,8 @@
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples congolais",
       "Études historiques sur les royaumes précoloniaux",
-      "Ethnologie du Congo"
+      "Ethnologie du Congo",
+      "CIA World Factbook – Democratic Republic of the Congo (ethnic groups)"
     ],
     "demographics": {
       "peoples": [
@@ -342,7 +343,15 @@
           "name": "Lingala (locuteurs)",
           "peopleId": "PPL_LINGALA",
           "region": "Kinshasa, Équateur, Province orientale",
-          "languageFamily": "FLG_NIGERCONGO"
+          "languageFamily": "FLG_NIGERCONGO",
+          "percentageInCountry": 0
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 30
         }
       ]
     }

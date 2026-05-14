@@ -65,17 +65,23 @@
       "referenceYear": 2025,
       "source": "Les Ndowe representent environ 3,6 % de la population de Guinee equatoriale (1 853 559 hab. en 2025 selon Wikipedia). Estimation incluant les groupes au Cameroun et au Gabon. La population totale est estimee entre 100 000 et 120 000 personnes.",
       "distributionByCountry": [
-        { "country": "GNQ", "population": 67000 },
-        { "country": "CMR", "population": 30000 },
-        { "country": "GAB", "population": 18000 }
+        {
+          "country": "GNQ",
+          "population": 67000
+        },
+        {
+          "country": "CMR",
+          "population": 30000
+        },
+        {
+          "country": "GAB",
+          "population": 18000
+        }
       ]
     },
     "sources": [
       "Ndowe people – 101 Last Tribes (https://www.101lasttribes.com/tribes/ndowe.html)",
       "Ndowe Tribe : History, Culture and Legacy – Rumbo Malabo (https://rumbomalabo.com/en/ndowe/)",
-      "Demographics of Equatorial Guinea – Wikipedia EN (https://en.wikipedia.org/wiki/Demographics_of_Equatorial_Guinea)",
-      "Equatorial Guinea – Wikipedia EN (https://en.wikipedia.org/wiki/Equatorial_Guinea)",
-      "Benga people – Wikipedia EN (https://en.wikipedia.org/wiki/Benga_people)",
       "Benga language and alphabet – Omniglot (https://www.omniglot.com/writing/benga.htm)",
       "What are the different tribes of Equatorial Guinea – SAIGA Tours (https://www.saigatours.com/article/what-are-the-different-tribes-of-equatorial-guinea)",
       "Equatorial Guinea – South African History Online (https://sahistory.org.za/place/equatorial-guinea)"

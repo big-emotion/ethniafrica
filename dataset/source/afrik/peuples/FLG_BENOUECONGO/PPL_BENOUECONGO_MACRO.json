@@ -118,24 +118,48 @@
       "referenceYear": 2025,
       "source": "Ethnologue (SIL International, 2017) : environ 350 à 500 millions de locuteurs de langues bénoué-congo. Britannica et Benue-Congo Languages Research Starters (EBSCO) : environ 500 millions de personnes parlant des langues bénoué-congo. Ce chiffre inclut l'ensemble de l'Afrique subsaharienne parlant des langues bantu et non-bantu de la famille.",
       "distributionByCountry": [
-        { "country": "NGA", "population": 130000000 },
-        { "country": "COD", "population": 100000000 },
-        { "country": "TZA", "population": 65000000 },
-        { "country": "KEN", "population": 55000000 },
-        { "country": "ZAF", "population": 60000000 },
-        { "country": "UGA", "population": 50000000 },
-        { "country": "MOZ", "population": 33000000 },
-        { "country": "CMR", "population": 28000000 },
-        { "country": "AGO", "population": 34000000 }
+        {
+          "country": "NGA",
+          "population": 130000000
+        },
+        {
+          "country": "COD",
+          "population": 100000000
+        },
+        {
+          "country": "TZA",
+          "population": 65000000
+        },
+        {
+          "country": "KEN",
+          "population": 55000000
+        },
+        {
+          "country": "ZAF",
+          "population": 60000000
+        },
+        {
+          "country": "UGA",
+          "population": 50000000
+        },
+        {
+          "country": "MOZ",
+          "population": 33000000
+        },
+        {
+          "country": "CMR",
+          "population": 28000000
+        },
+        {
+          "country": "AGO",
+          "population": 34000000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN : Benue-Congo languages https://en.wikipedia.org/wiki/Benue%E2%80%93Congo_languages",
       "Britannica : Benue-Congo languages https://www.britannica.com/topic/Benue-Congo-languages",
       "EBSCO Research Starters : Benue-Congo Languages https://www.ebsco.com/research-starters/language-and-linguistics/benue-congo-languages",
       "LanguagesGulper : Benue-Congo Languages https://www.languagesgulper.com/eng/Benue.html",
-      "Wikipedia EN : Bantu expansion https://en.wikipedia.org/wiki/Bantu_expansion",
-      "Wikipedia EN : Tiv people https://en.wikipedia.org/wiki/Tiv_people",
       "Ethnologue (SIL International, 2017) : 976 langues bénoué-congo https://www.ethnologue.com"
     ]
   }

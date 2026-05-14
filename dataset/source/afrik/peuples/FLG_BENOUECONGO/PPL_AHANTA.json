@@ -60,15 +60,16 @@
       "totalPopulation": 200000,
       "referenceYear": 2025,
       "source": "Ghana Statistical Service, recensement 2021 : Ahanta West Municipal District = 153 140 habitants (dont Akan 140 413 soit ~91%). Population Ahanta estimee a environ 200 000 en incluant les zones de Sekondi-Takoradi et autres districts de Western Region (2025).",
-      "distributionByCountry": [{ "country": "GHA", "population": 200000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 200000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN - Ahanta people (https://en.wikipedia.org/wiki/Ahanta_people)",
-      "Wikipedia EN - Ahanta language (https://en.wikipedia.org/wiki/Ahanta_language)",
       "Ethnologue - Ahanta (AHA) (https://www.ethnologue.com/language/aha/)",
-      "Wikipedia EN - Kundum Festival (https://en.wikipedia.org/wiki/Kundum_Festival)",
-      "Ghana Statistical Service - 2021 Population and Housing Census, Ahanta West Municipal District (https://datacommons.org/place/wikidataId/Q399949)",
-      "Wikipedia EN - Ahanta West Municipal District (https://en.wikipedia.org/wiki/Ahanta_West_Municipal_District)"
+      "Ghana Statistical Service - 2021 Population and Housing Census, Ahanta West Municipal District (https://datacommons.org/place/wikidataId/Q399949)"
     ]
   }
 }

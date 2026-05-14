@@ -62,11 +62,14 @@
       "totalPopulation": 139000,
       "referenceYear": 2025,
       "source": "Estimation Wikipedia 2025 (139 000 individus). Recensement ethiopien 1994 : 32 698. Ethnologue 2007 : 37 500 locuteurs de la langue Boro. Estimation du professeur d'anthropologie sociale : 51 000 (2007). Joshua Project : 93 000. Estimation senior researcher African Studies Centre Leiden : 70 000.",
-      "distributionByCountry": [{ "country": "ETH", "population": 139000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 139000
+        }
+      ]
     },
     "sources": [
-      "Shinasha people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Shinasha_people)",
-      "Shinasha language – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Shinasha_language)",
       "Boro, Shinasha in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10304)",
       "Situation of the Shinasha ethnic group – Immigration and Refugee Board of Canada / Ecoi.net, 2014 (https://www.ecoi.net/en/document/1292401.html)",
       "Marginalization and persecution in Ethiopia's Benishangul-Gumuz – Ethiopia Insight, 2021 (https://www.ethiopia-insight.com/2021/08/10/marginalization-and-persecution-in-ethiopias-benishangul-gumuz/)",

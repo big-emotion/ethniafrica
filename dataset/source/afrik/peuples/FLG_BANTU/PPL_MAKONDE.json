@@ -77,18 +77,21 @@
       "referenceYear": 2025,
       "source": "Wikipedia EN (donnees 2001) : 1 140 000 en Tanzanie, 233 358 au Mozambique (recensement 1997). SIL Ethnologue — Makonde (kde). Estimations 2025 tenant compte de la croissance demographique : environ 1 500 000 en Tanzanie, 300 000 au Mozambique, total approximatif 1 800 000.",
       "distributionByCountry": [
-        { "country": "TZA", "population": 1500000 },
-        { "country": "MOZ", "population": 300000 }
+        {
+          "country": "TZA",
+          "population": 1500000
+        },
+        {
+          "country": "MOZ",
+          "population": 300000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Makonde people : https://en.wikipedia.org/wiki/Makonde_people",
-      "Wikipedia EN — Makonde language : https://en.wikipedia.org/wiki/Makonde_language",
       "SIL Ethnologue — Makonde (kde) : https://www.ethnologue.com/language/kde/",
       "Ethnologue Free — Makonde central group : https://www.ethnologue.com/subgroup/54/",
       "CIA World Factbook — Tanzania : https://www.cia.gov/the-world-factbook/countries/tanzania/",
       "CIA World Factbook — Mozambique : https://www.cia.gov/the-world-factbook/countries/mozambique/",
-      "George Lilanga — artiste makonde : https://en.wikipedia.org/wiki/George_Lilanga",
       "UNESCO — Patrimoine culturel de l'Afrique de l'Est : https://en.unesco.org/"
     ]
   }

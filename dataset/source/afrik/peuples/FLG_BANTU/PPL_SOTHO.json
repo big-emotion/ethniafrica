@@ -82,15 +82,25 @@
       "referenceYear": 2025,
       "source": "Lesotho : population estimee a 2,36 millions en 2025 (Worldometer / Nations Unies), dont 99,7% Basotho. Afrique du Sud : environ 4 millions de locuteurs sesotho comme premiere langue (recensement 2011, Statistics South Africa). Population totale estimee incluant la diaspora : 6 a 7 millions. Source : Wikipedia Sotho people (2024), Worldometer Lesotho 2025, Statistics South Africa 2011.",
       "distributionByCountry": [
-        { "country": "LSO", "population": 2350000 },
-        { "country": "ZAF", "population": 3500000 },
-        { "country": "BWA", "population": 80000 },
-        { "country": "ZMB", "population": 60000 }
+        {
+          "country": "LSO",
+          "population": 2350000
+        },
+        {
+          "country": "ZAF",
+          "population": 3500000
+        },
+        {
+          "country": "BWA",
+          "population": 80000
+        },
+        {
+          "country": "ZMB",
+          "population": 60000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Sotho people : https://en.wikipedia.org/wiki/Sotho_people",
-      "Wikipedia EN — Sotho language : https://en.wikipedia.org/wiki/Sotho_language",
       "Worldometer — Lesotho population 2025 : https://www.worldometers.info/world-population/lesotho-population/",
       "Statistics South Africa — Census 2011 : http://www.statssa.gov.za/census/census_2011/",
       "Joshua Project — Basotho profile : https://joshuaproject.net/people_groups/10271",

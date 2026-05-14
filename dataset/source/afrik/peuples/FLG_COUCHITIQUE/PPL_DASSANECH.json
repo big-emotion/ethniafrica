@@ -78,20 +78,29 @@
       "referenceYear": 2025,
       "source": "Recensement éthiopien 2007 : 48 067 en Éthiopie / Horn of Africa Evangelical Mission : 66 200 en Éthiopie / estimation composite 2025 incluant populations au Kenya et au Soudan du Sud",
       "distributionByCountry": [
-        { "country": "ETH", "population": 68000, "percentage": 85 },
-        { "country": "KEN", "population": 10000, "percentage": 13 },
-        { "country": "SSD", "population": 2000, "percentage": 2 }
+        {
+          "country": "ETH",
+          "population": 68000,
+          "percentage": 85
+        },
+        {
+          "country": "KEN",
+          "population": 10000,
+          "percentage": 13
+        },
+        {
+          "country": "SSD",
+          "population": 2000,
+          "percentage": 2
+        }
       ]
     },
     "sources": [
-      "Daasanach people – Wikipedia EN, 2006 (https://en.wikipedia.org/wiki/Daasanach_people)",
-      "Daasanach language – Wikipedia EN, 2008 (https://en.wikipedia.org/wiki/Daasanach_language)",
       "Daasanach in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/14549/ET)",
       "Daasanach – Glottolog 5.2 (https://glottolog.org/resource/languoid/id/daas1238)",
       "Daasanach Language (DSH) – Ethnologue (https://www.ethnologue.com/language/dsh/)",
       "Daasanach of Ethiopia – Horn of Africa Evangelical Mission (https://hornofafrica.org/wp-content/uploads/2019/12/Daasanach.pdf)",
-      "The Daasanach Tribe: Nomads of the Omo-Turkana Basin – Begin North Adventures, 2025 (https://beginnorthadventures.com/daasanach-tribe/)",
-      "Ethiopians – Wikipedia EN, recensement 2007 (https://en.wikipedia.org/wiki/Ethiopians)"
+      "The Daasanach Tribe: Nomads of the Omo-Turkana Basin – Begin North Adventures, 2025 (https://beginnorthadventures.com/daasanach-tribe/)"
     ]
   }
 }
