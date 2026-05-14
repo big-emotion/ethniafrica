@@ -126,10 +126,28 @@ Schema: `supabase/migrations/006_afrik_schema.sql`
 ### Working with AFRIK Data
 
 1. **Always use strict models** from `public/modele-*.json` — never skip, rename, or add sections
-2. **Never invent data** — use authorized sources only (UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA)
+2. **Never invent data** — every claim must be backed by a verifiable primary source (see [Source Tier Policy](#source-tier-policy))
 3. **Demographics**: 2025 reference year, populations must sum to exactly 100% per country
 4. **Colonial terms**: Keep but explain why problematic; provide auto-appellations (endonyms)
 5. **Consistency**: Source JSON demographics must match database records
+
+### Source Tier Policy
+
+A claim is acceptable only if it can be cited at **Tier 1** or **Tier 2**. Otherwise, **remove the claim**.
+
+**Tier 1 — Authorized canon (preferred).** Cite directly:
+UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA.
+
+**Tier 2 — Primary source surfaced via Wikipedia (fallback).** Wikipedia is a _meta-source_, not a citable source. To use it as a discovery tool:
+
+1. Open the article in **≥2 language versions** (prefer EN + FR + the language(s) of the people/country concerned).
+2. Locate the **primary source** (peer-reviewed paper, official government/IGO document, academic publication, archival record) that backs the claim.
+3. Cite the **primary source URL/reference directly** — never the Wikipedia article.
+4. If no language version of Wikipedia provides a primary source for the claim, **remove the claim**.
+
+**Tier 3 — Forbidden.** Never cite as a `sources` entry: Wikipedia articles themselves, blogs, social media, forum posts, AI-generated content, secondary aggregators without their own primary sources.
+
+**In every `sources` block**, each entry must record `tier: 1` or `tier: 2`. Tier-2 entries must include the path through Wikipedia (which language version(s) cross-checked) in the `notes` field so the chain is auditable.
 
 ### Adding API Routes
 
