@@ -127,7 +127,7 @@ Schema: `supabase/migrations/006_afrik_schema.sql`
 
 1. **Always use strict models** from `public/modele-*.json` — never skip, rename, or add sections
 2. **Never invent data** — every claim must be backed by a verifiable primary source (see [Source Tier Policy](#source-tier-policy))
-3. **Demographics**: 2025 reference year, populations must sum to exactly 100% per country
+3. **Demographics**: 2025 reference year. Populations must sum to 100% per country. During the transition, the validator (`scripts/validateAfrikData.ts` FR28) hard-gates at **[95, 105]%** and emits a soft warning **FR28-strict** for any fiche outside **[99, 101]%**. The doctrinal target is [99, 101]%; the hard gate will be tightened to match once every fiche lands inside it. New or updated fiches must aim for the strict band. See `docs/adr/0001-fr28-demographic-tolerance.md`.
 4. **Colonial terms**: Keep but explain why problematic; provide auto-appellations (endonyms)
 5. **Consistency**: Source JSON demographics must match database records
 

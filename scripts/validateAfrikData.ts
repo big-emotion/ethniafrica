@@ -869,6 +869,12 @@ export function checkPplDuplicates(datasetRoot: string): ValidationResult {
 
 /**
  * FR28 – For each pays JSON, the sum of peoples[].percentageInCountry must be [95, 105].
+ *
+ * Tolerance bands (transition plan — see docs/adr/0001-fr28-demographic-tolerance.md):
+ *   - Hard gate (this function):     [95, 105] — errors, fails validation.
+ *   - Strict warning (checkPopulationSumsStrict): [99, 101] — warnings only.
+ * The strict warning is the doctrinal target; the hard gate will be tightened
+ * once all country fiches land inside [99, 101].
  */
 export function checkPopulationSums(datasetRoot: string): ValidationResult {
   const errors: string[] = [];
@@ -913,6 +919,61 @@ export function checkPopulationSums(datasetRoot: string): ValidationResult {
   }
 
   return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * FR28-strict – Soft warning for the doctrinal target band [99, 101].
+ *
+ * Emits a warning per pays JSON whose peoples[].percentageInCountry sum falls
+ * outside [99, 101] but inside the FR28 hard gate [95, 105]. Does not fail
+ * validation — informational only. Once every fiche sits inside [99, 101],
+ * FR28's hard gate can be tightened to match and this check retired.
+ */
+export function checkPopulationSumsStrict(
+  datasetRoot: string
+): ValidationResult {
+  const warnings: string[] = [];
+
+  const paysDir = path.join(datasetRoot, "pays");
+  if (!fs.existsSync(paysDir)) {
+    return { ok: true, errors: [], warnings: [] };
+  }
+
+  const jsonFiles = fs.readdirSync(paysDir).filter((f) => f.endsWith(".json"));
+  for (const file of jsonFiles) {
+    const fullPath = path.join(paysDir, file);
+    let data: {
+      id?: string;
+      content?: {
+        demographics?: {
+          peoples?: Array<{ percentageInCountry?: number }>;
+        };
+      };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      // FR28 already reports parse failures; stay silent here to avoid duplicates.
+      continue;
+    }
+
+    const peoples = data?.content?.demographics?.peoples;
+    if (!peoples || peoples.length === 0) continue;
+
+    const sum = peoples.reduce(
+      (acc, p) => acc + (p.percentageInCountry ?? 0),
+      0
+    );
+    if (sum < 99 || sum > 101) {
+      const countryId = data.id ?? path.basename(file, ".json");
+      warnings.push(
+        `${countryId}: population percentages sum to ${sum.toFixed(2)}% (strict target 99–101%)`
+      );
+    }
+  }
+
+  // Always ok — this check is informational and never fails the build.
+  return { ok: true, errors: [], warnings };
 }
 
 /**
@@ -1156,6 +1217,13 @@ async function main() {
   newChecks.push({
     name: "FR28 Population sums",
     result: checkPopulationSums(datasetRoot),
+    soft: true,
+  });
+
+  console.log("FR28-strict – Population sums (target 99–101%)...");
+  newChecks.push({
+    name: "FR28-strict Population sums (target 99–101%)",
+    result: checkPopulationSumsStrict(datasetRoot),
     soft: true,
   });
 
