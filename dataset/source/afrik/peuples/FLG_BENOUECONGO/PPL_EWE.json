@@ -2,19 +2,31 @@
   "id": "PPL_EWE",
   "nameMain": "Ewe",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["GHA", "TGO", "BEN"],
+  "currentCountries": [
+    "GHA",
+    "TGO",
+    "BEN"
+  ],
   "content": {
     "appellations": {
       "mainName": "Ewe",
       "selfAppellation": "Eʋeawó (les gens Ewe), Eʋe",
-      "exonyms": ["Evhe", "Efe", "Gbe (terme générique pour locuteurs Gbe)"],
+      "exonyms": [
+        "Evhe",
+        "Efe",
+        "Gbe (terme générique pour locuteurs Gbe)"
+      ],
       "originOfExonyms": "Le nom Ewe est utilisé par les colonisateurs européens et les voisins. L'autoappellation Eʋe signifie simplement le peuple ou la communauté en langue ewe.",
       "whyProblematic": null,
       "contemporaryUsage": "Le terme Ewe est aujourd'hui universellement utilisé au Ghana, au Togo et au Bénin pour désigner ce peuple.",
       "linguisticFamily": "FLG_BENOUECONGO",
       "ethnoLinguisticGroup": "Gbe (branche Kwa du Niger-Congo)",
       "historicalRegion": "Ewedukpo (pays Ewe) : sud-est du Ghana (région Volta), sud du Togo et frontière Togo-Bénin",
-      "currentCountries": ["GHA", "TGO", "BEN"]
+      "currentCountries": [
+        "GHA",
+        "TGO",
+        "BEN"
+      ]
     },
     "ethnicities": [
       "Anlo Ewe (Aŋlɔ) — côte sud-est du Ghana, groupe littoral dominant",
@@ -52,7 +64,9 @@
     },
     "languages": {
       "mainLanguage": "Ewe (Eʋegbe)",
-      "isoCodes": ["ewe"],
+      "isoCodes": [
+        "ewe"
+      ],
       "dialects": [
         "Anlo (Aŋlɔ) — dialecte littoral, base de la norme écrite",
         "Tongu (Tɔŋu) — dialecte des plaines de la Volta",
@@ -81,10 +95,18 @@
       "referenceYear": 2025,
       "source": "Estimations basées sur Joshua Project (2024 : Ghana 4 548 000, Togo 1 973 000, Bénin 181 000, Burkina Faso 45 000, autres pays env. 50 000), Wikipedia (Ghana 6,0 M, Togo 3,1 M — chiffres plus larges), CIA World Factbook. La discordance reflète des définitions variables du groupe (locuteurs natifs vs appartenance ethnique étendue). Estimation consolidée 2025 : 7 millions.",
       "distributionByCountry": [
-        { "country": "GHA", "population": 4600000 },
-        { "country": "TGO", "population": 2100000 },
-        { "country": "BEN", "population": 200000 },
-        { "country": "Autres", "population": 100000 }
+        {
+          "country": "GHA",
+          "population": 4600000
+        },
+        {
+          "country": "TGO",
+          "population": 2100000
+        },
+        {
+          "country": "BEN",
+          "population": 200000
+        }
       ]
     },
     "sources": [

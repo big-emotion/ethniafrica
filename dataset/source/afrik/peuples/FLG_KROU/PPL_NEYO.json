@@ -2,21 +2,34 @@
   "id": "PPL_NEYO",
   "nameMain": "Neyo",
   "languageFamilyId": "FLG_KROU",
-  "currentCountries": ["CIV"],
+  "currentCountries": [
+    "CIV"
+  ],
   "content": {
     "appellations": {
       "mainName": "Neyo",
       "selfAppellation": "Néyo",
-      "exonyms": ["Néouolé", "Neyau", "Néwolé", "Gwibwen", "Towi"],
+      "exonyms": [
+        "Néouolé",
+        "Neyau",
+        "Néwolé",
+        "Gwibwen",
+        "Towi"
+      ],
       "originOfExonyms": "L'ethnonyme Néyo est probablement la contraction de Néné-yo (les enfants de Néné), désignant les descendants des premiers occupants de l'embouchure du Sassandra, les Gnagbia (aujourd'hui disparus). Une autre interprétation fait de Nè yo une expression signifiant enfants de la même mère et donc frères, en référence à la diversité d'origines des groupes fondateurs. Néouolé et Neyau sont des variantes orthographiques anciennes utilisées par les explorateurs et administrateurs coloniaux français.",
       "whyProblematic": null,
       "contemporaryUsage": "Néyo est la forme officielle en Côte d'Ivoire et dans les publications scientifiques. Gwibwen et Towi sont des désignations alternatives utilisées dans certaines sources linguistiques.",
       "linguisticFamily": "FLG_KROU",
       "ethnoLinguisticGroup": "Krou oriental (sous-groupe krou de Côte d'Ivoire)",
       "historicalRegion": "Sous-préfecture et commune de Sassandra, région du Gbôklè, sud-ouest de la Côte d'Ivoire",
-      "currentCountries": ["CIV"]
+      "currentCountries": [
+        "CIV"
+      ]
     },
-    "ethnicities": ["Neyo", "Néyo"],
+    "ethnicities": [
+      "Neyo",
+      "Néyo"
+    ],
     "origins": {
       "ancientOrigins": "Les Néyo ont des origines multiples et disparates. L'entité néyo s'est constituée entre le XVe siècle et la fin du XIXe siècle, de part et d'autre de l'embouchure du Sassandra, à partir de groupements venus des pays Krou, Guéré, Bété, Bakwè et Godié. Ces groupes furent attirés par les possibilités commerciales de la côte, depuis que les Portugais jetèrent l'ancre devant le rio Sao Andre en 1471. La tradition désigne les Gnagbia comme les premiers occupants de l'embouchure, dont les Néyo seraient les enfants symboliques.",
       "formationPeriod": "XVe-XIXe siecle : formation progressive par agrégation de groupes d'origines diverses (krou, guéré, bété, bakwè, godié) autour des opportunités commerciales de l'embouchure du Sassandra.",
@@ -41,7 +54,9 @@
     },
     "languages": {
       "mainLanguage": "néyo",
-      "isoCodes": ["ney"],
+      "isoCodes": [
+        "ney"
+      ],
       "dialects": [
         "néyo (parler de la sous-préfecture de Sassandra)",
         "variantes entre les cantons Kébé et Neyo"
@@ -64,7 +79,12 @@
       "totalPopulation": 19500,
       "referenceYear": 2025,
       "source": "101lasttribes.com (2023) : environ 19 500 personnes (Peoplegroups.org 2023). Wikipedia FR : moins de 10 000 dans les villages, mais diaspora non comptabilisée. Joshua Project : entre 3 000 et 10 000 dans les 25 villages côtiers.",
-      "distributionByCountry": [{ "countryCode": "CIV", "population": 19500 }]
+      "distributionByCountry": [
+        {
+          "population": 19500,
+          "country": "CIV"
+        }
+      ]
     },
     "sources": [
       "Néyo (peuple) – Wikipédia FR, consulté 2025 (https://fr.wikipedia.org/wiki/N%C3%A9yo_(peuple))",

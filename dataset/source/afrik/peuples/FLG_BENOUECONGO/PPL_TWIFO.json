@@ -2,19 +2,28 @@
   "id": "PPL_TWIFO",
   "nameMain": "Twifo",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["GHA"],
+  "currentCountries": [
+    "GHA"
+  ],
   "content": {
     "appellations": {
       "mainName": "Twifo",
       "selfAppellation": "Tu a anko",
-      "exonyms": ["Kuiforo", "Cuffroo", "Twifu", "Chufoman"],
+      "exonyms": [
+        "Kuiforo",
+        "Cuffroo",
+        "Twifu",
+        "Chufoman"
+      ],
       "originOfExonyms": "Les formes Kuiforo et Cuffroo apparaissent dans les sources hollandaises du 17e siecle comme tentatives de rendre phonetiquement le nom Twifo. L'auto-designation Tu a anko signifie litteralement ceux qui ne sont pas partis (Twi : tu = migration, a anko = n'a pas bouge), rappelant que les Twifo sont restes a Hemang quand les autres clans Aduana en sont partis.",
       "whyProblematic": null,
       "contemporaryUsage": "Twifo est le nom officiel des districts administratifs Twifo Heman Lower Denkyira et Twifo Ati Morkwa (Central Region, Ghana). Le terme est pleinement integre dans l'administration ghaneeenne.",
       "linguisticFamily": "FLG_BENOUECONGO",
       "ethnoLinguisticGroup": "Akan (groupe Aduana, dialecte Twi)",
       "historicalRegion": "Central Region, Ghana (bassin du Pra et de l'Ofin)",
-      "currentCountries": ["GHA"]
+      "currentCountries": [
+        "GHA"
+      ]
     },
     "ethnicities": [
       "Twifo",
@@ -49,7 +58,9 @@
     },
     "languages": {
       "mainLanguage": "Twi (dialecte akan)",
-      "isoCodes": ["tw"],
+      "isoCodes": [
+        "twi"
+      ],
       "dialects": [
         "Twifo Twi (l'un des premiers dialectes akan selon la tradition orale)"
       ],

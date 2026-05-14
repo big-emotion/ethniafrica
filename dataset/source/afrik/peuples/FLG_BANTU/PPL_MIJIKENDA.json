@@ -2,19 +2,27 @@
   "id": "PPL_MIJIKENDA",
   "nameMain": "Mijikenda",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["KEN"],
+  "currentCountries": [
+    "KEN"
+  ],
   "content": {
     "appellations": {
       "mainName": "Mijikenda",
       "selfAppellation": "Wamijikenda",
-      "exonyms": ["Nyika", "Nika", "Wanyika"],
+      "exonyms": [
+        "Nyika",
+        "Nika",
+        "Wanyika"
+      ],
       "originOfExonyms": "Le terme Mijikenda vient du swahili : miji (tribus/villages) + kenda (neuf), signifiant litteralement 'neuf tribus' ou 'neuf villages'. L'exonyme Nyika ou Nika, utilise historiquement par les populations swahilies et arabes cotieres, signifie 'gens de la brousse' ou 'gens de l'arriere-pays'.",
       "whyProblematic": "Le terme Nyika/Nika est pejoratif (signifiant 'gens de la brousse') et fut impose par les populations swahilies et arabes. Son usage est aujourd'hui evite dans les contextes officiels et academiques.",
       "contemporaryUsage": "Le terme Mijikenda est utilise officiellement au Kenya pour designer ce groupe de neuf peuples bantu de la cote. Le terme Wamijikenda est l'auto-designation collective courante. Les neuf sous-groupes gardent egalement leurs denominations individuelles (Giriama, Digo, Duruma, etc.).",
       "linguisticFamily": "FLG_BANTU",
       "ethnoLinguisticGroup": "Bantu de la cote kenyane",
       "historicalRegion": "Cote du Kenya, entre les rivieres Sabaki au nord et Umba au sud, de la frontiere tanzanienne a la frontiere somalienne",
-      "currentCountries": ["KEN"]
+      "currentCountries": [
+        "KEN"
+      ]
     },
     "ethnicities": [
       "Giriama",
@@ -55,7 +63,6 @@
       "isoCodes": [
         "nyf",
         "dav",
-        "ribe",
         "gir",
         "dig",
         "chw",
@@ -92,7 +99,12 @@
       "totalPopulation": 3000000,
       "referenceYear": 2025,
       "source": "Estimations 2025 basees sur le recensement kenyan 2019 (2 488 691) et projections demographiques",
-      "distributionByCountry": [{ "country": "KEN", "population": 3000000 }]
+      "distributionByCountry": [
+        {
+          "country": "KEN",
+          "population": 3000000
+        }
+      ]
     },
     "sources": [
       "Mijikenda peoples – Wikipedia EN (https://en.wikipedia.org/wiki/Mijikenda_peoples)",

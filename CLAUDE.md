@@ -184,6 +184,11 @@ Admin authentication uses Supabase Auth with OAuth (GitHub, Google) and magic-li
 
 - **Never add `Co-Authored-By` trailers** to commits, PRs, or MRs
 
+### GitHub Actions
+
+- **SHA-pin every third-party action.** Tags are mutable; a compromised release can substitute malicious code. Format: `uses: org/action@<40-char-sha>  # <semver>`.
+- Dependabot is configured (`.github/dependabot.yml`) to bump pinned SHAs weekly. Review changelogs before merging.
+
 ## Jira
 
 - **Project**: ETNI

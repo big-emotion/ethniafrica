@@ -2,21 +2,30 @@
   "id": "PPL_SOLI",
   "nameMain": "Soli",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["ZMB"],
+  "currentCountries": [
+    "ZMB"
+  ],
   "content": {
     "appellations": {
       "mainName": "Soli",
       "selfAppellation": "Basoli (pluriel), Musoli (singulier)",
-      "exonyms": ["Soli"],
+      "exonyms": [
+        "Soli"
+      ],
       "originOfExonyms": "Le nom Soli est d'origine incertaine. Les Basoli constituent l'un des 72 groupes ethniques officiellement reconnus en Zambie. Le terme Basoli designe les membres du groupe en langue locale.",
       "whyProblematic": null,
       "contemporaryUsage": "Le terme Soli ou Basoli est utilise dans les contextes officiels et academiques zambiens. La ville de Lusaka et la province portent les noms derives du chef Soli Lusaaka, dont le village se trouvait a l'emplacement de l'actuelle poste centrale de Lusaka.",
       "linguisticFamily": "FLG_BANTU",
       "ethnoLinguisticGroup": "Bantu Botatwe (groupe center-sud)",
       "historicalRegion": "Province de Lusaka, centre de la Zambie",
-      "currentCountries": ["ZMB"]
+      "currentCountries": [
+        "ZMB"
+      ]
     },
-    "ethnicities": ["Soli", "Basoli"],
+    "ethnicities": [
+      "Soli",
+      "Basoli"
+    ],
     "origins": {
       "ancientOrigins": "Les Basoli sont parmi les plus anciens habitants connus de la region de Lusaka. Selon les traditions orales et les recherches academiques, ils sont descendants de la grande expansion bantoue et seraient lies aux migrations du royaume Luba (actuelle Republique Democratique du Congo). Selon Manchishi (1990), les Basoli et les Sala faisaient partie des premiers Bantous pre-Luba-Lunda a s'installer en Zambie centrale, probablement vers 1500 dans la region de Chisamba.",
       "formationPeriod": "XVIe-XVIIIe siecles. Les Basoli s'installerent progressivement dans la region de Lusaka apres avoir ete deplaces de Chisamba vers 1700 par les Bene Mukuni (clan Bayeke du royaume Luba). Mbonshi est cite comme fondateur du chiefdom Soli. La ville et la province de Lusaka tirent leur nom du chef Soli Lusaaka.",
@@ -45,7 +54,9 @@
     },
     "languages": {
       "mainLanguage": "Soli (Cisoli)",
-      "isoCodes": ["sis"],
+      "isoCodes": [
+        "sis"
+      ],
       "dialects": [],
       "vehicularRole": "Le soli appartient au groupe linguistique Bantu Botatwe (avec le tonga, le lenje, l'ila, le sala et le toka-leya). Ces langues sont mutellement comprehensibles. Le nyanja est utilise comme langue d'enseignement dans la zone Soli a Lusaka. L'anglais est la langue officielle nationale. De nombreux Soli sont bilingues voire multilingues (soli, nyanja, anglais)."
     },
@@ -67,9 +78,9 @@
       "source": "PeopleGroups.org (2025): 155 000; Joshua Project estimait 75 000 (chiffres moins recents)",
       "distributionByCountry": [
         {
-          "countryCode": "ZMB",
           "population": 155000,
-          "notes": "Province de Lusaka, principalement dans le district de Chongwe et les quartiers periurbains de Lusaka"
+          "notes": "Province de Lusaka, principalement dans le district de Chongwe et les quartiers periurbains de Lusaka",
+          "country": "ZMB"
         }
       ]
     },

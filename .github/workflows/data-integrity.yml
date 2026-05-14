@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
         with:
           node-version: "20"
           cache: "npm"
@@ -24,25 +24,22 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      # Advisory mode until ETNI-200 (AFRIK data cleanup) completes.
-      # Flip continue-on-error to false to enforce FR32 strict gate.
+      # Enforced FR32 gate. Failures block the PR / push.
       - name: Run data-integrity validation (PR/push)
         if: github.event_name != 'schedule'
-        continue-on-error: true
         run: npx tsx scripts/validateAfrikData.ts
         env:
           CHECK_SOURCE_URLS: "false"
 
       - name: Run data-integrity validation (nightly — includes URL checks)
         if: github.event_name == 'schedule'
-        continue-on-error: true
         run: npx tsx scripts/validateAfrikData.ts
         env:
           CHECK_SOURCE_URLS: "true"
 
       - name: Upload source-url-health log (nightly only)
         if: github.event_name == 'schedule' && always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b # v4.5.0
         with:
           name: source-url-health-log
           path: dataset/source-url-health.log
