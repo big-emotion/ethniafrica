@@ -221,6 +221,10 @@
         {
           "name": "Indiens / Asiatiques",
           "percentageInCountry": 2.7
+        },
+        {
+          "name": "Autres / Non spécifié",
+          "percentageInCountry": 0.4
         }
       ]
     }
