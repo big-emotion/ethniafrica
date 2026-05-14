@@ -63,12 +63,16 @@
       "totalPopulation": 8000,
       "referenceYear": 2025,
       "source": "Joshua Project 2024: Tafi, Tegbo in Ghana 7 800 locuteurs. Estimation 2025 arrondie a 8 000 sur base de croissance de 2,2% par an.",
-      "distributionByCountry": [{ "country": "GHA", "population": 8000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 8000
+        }
+      ]
     },
     "sources": [
       "Joshua Project – Tafi, Tegbo in Ghana (https://joshuaproject.net/people_groups/15171)",
       "Ethnologue – Tafi Language TCD (https://www.ethnologue.com/language/tcd/)",
-      "Wikipedia – Nyangbo-Tafi language (https://en.wikipedia.org/wiki/Nyangbo-Tafi_language)",
       "Wikidata – Tafi Q36545 (https://www.wikidata.org/wiki/Q36545)",
       "Facebook – Migration history of Tafi Guans in the Volta Region (https://www.facebook.com/groups/369358884478832/posts/1388990782515632/)",
       "Ghana Volta Region – Modern Ghana demographics (https://www.modernghana.com/ghanahome/regions/volta.asp)",

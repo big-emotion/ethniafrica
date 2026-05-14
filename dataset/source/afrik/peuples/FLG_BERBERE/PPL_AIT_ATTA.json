@@ -84,11 +84,14 @@
       "totalPopulation": 500000,
       "referenceYear": 2025,
       "source": "L'ethnologue Claude Lefebure a estime la population des Ait Atta a 400 000 personnes en 2008. David Hart estimait 125 000 a 135 000 en 1960. En appliquant un taux de croissance demographique marocain d'environ 1,2% par an depuis 2008, la population en 2025 est estimee autour de 500 000 personnes, toutes au Maroc. Note : les recensements marocains ne distinguent pas les groupes tribaux ; les chiffres reposent sur des estimations ethnographiques.",
-      "distributionByCountry": [{ "country": "MAR", "population": 500000 }]
+      "distributionByCountry": [
+        {
+          "country": "MAR",
+          "population": 500000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia, Ait Atta: https://en.wikipedia.org/wiki/Ait_Atta",
-      "Wikipedia, Central Atlas Tamazight: https://en.wikipedia.org/wiki/Central_Atlas_Tamazight",
       "Hart, David. The Ait Atta of Southern Morocco: Daily Life and Recent History. Middle East and North African Studies Press, 1984. https://www.scribd.com/document/352703674/156167417-The-Ait-Atta-of-Southern-Morocco-Daily-Life-and-Recent-History-David-Hart-pdf",
       "Amazigh Ethnic Jewels Shop, Berber Tribes - The Ait Atta: https://www.amazigh.it/berber-tribe-ait-atta/",
       "University of New Mexico, A Comparison of Haratin and Ait Atta Indigenous Legal Systems: https://digitalrepository.unm.edu/cgi/viewcontent.cgi?article=1041&context=tlj",

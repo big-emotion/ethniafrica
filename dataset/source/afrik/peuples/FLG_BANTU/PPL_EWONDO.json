@@ -83,11 +83,14 @@
       "totalPopulation": 2050000,
       "referenceYear": 2025,
       "source": "PeopleGroups.org (2025): environ 2 050 000 Ewondo au Cameroun. Sources complementaires: Languages of Cameroon (Wikipedia): 578 000 locuteurs Ewondo recenses; Ethnologue (ewo). La difference s'explique par la definition ethnique versus linguistique. Estimation 2025 basee sur taux de croissance demographique camerounais.",
-      "distributionByCountry": [{ "country": "CMR", "population": 2050000 }]
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 2050000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN – Beti-Pahuin peoples: https://en.wikipedia.org/wiki/Beti-Pahuin_peoples",
-      "Wikipedia EN – Ewondo language: https://en.wikipedia.org/wiki/Ewondo_language",
       "Ethnologue – Ewondo (ewo): https://www.ethnologue.com/language/ewo/",
       "PeopleGroups.org – Ewondo of Cameroon: https://peoplegroups.org/people_groups/pg012592/",
       "African Music Library – Bikutsi genre: https://www.africanmusiclibrary.org/genre/Bikutsi",

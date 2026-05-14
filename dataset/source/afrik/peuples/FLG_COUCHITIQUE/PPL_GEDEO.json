@@ -70,15 +70,16 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 ; recensement éthiopien 2007 : 986 977 personnes (75,05 % dans le SNNPR, 24,84 % en Oromia) ; Ethnologue (drs) : environ 637 000 (1994 census)",
       "distributionByCountry": [
-        { "country": "ETH", "population": 1897000, "percentage": 100 }
+        {
+          "country": "ETH",
+          "population": 1897000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Gedeo people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Gedeo_people)",
-      "Gedeo language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Gedeo_language)",
       "Gedeo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11504)",
       "Gedeo language (DRS) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/drs/)",
-      "Gedeo-Guji clashes – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Gedeo%E2%80%93Guji_clashes)",
       "West Guji-Gedeo Conflict Displacement Flash Update – ReliefWeb / OCHA, mai 2018 (https://reliefweb.int/report/ethiopia/ethiopia-west-guji-gedeo-conflict-displacement-flash-update-1-9-may-2018)",
       "ISO 639-3 drs : Gedeo – CEDS / National Center for Education Statistics (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)"
     ]

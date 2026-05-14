@@ -77,11 +77,14 @@
       "totalPopulation": 230000,
       "referenceYear": 2025,
       "source": "Estimation basée sur Lugha Yangu (25 000 locuteurs natifs de mokpwe, 2025), Joshua Project et études démographiques camerounaises. Note : la population ethnique bakweri est plus large que le nombre de locuteurs du mokpwe en raison de l'assimilation linguistique à l'anglais et au pidgin. Les estimations oscillent entre 100 000 et 300 000 selon les critères d'identification retenus.",
-      "distributionByCountry": [{ "country": "CMR", "population": 230000 }]
+      "distributionByCountry": [
+        {
+          "country": "CMR",
+          "population": 230000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN – Bakweri people (Kwe people) : https://en.wikipedia.org/wiki/Bakweri_people",
-      "Wikipedia EN – Kpwe language : https://en.wikipedia.org/wiki/Kpwe_language",
       "Swordshare Map – Mokpwe (bri) : https://map.swordshare.com/bri",
       "Lugha Yangu – Bakweri/Kpwe/Mokpwe language : https://lughayangu.com/bakweri",
       "Joshua Project – Cameroon people groups : https://joshuaproject.net/countries/CM",

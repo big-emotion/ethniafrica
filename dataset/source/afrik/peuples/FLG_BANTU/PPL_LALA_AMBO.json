@@ -63,14 +63,17 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2025) – Ambo in Zambia",
       "distributionByCountry": [
-        { "country": "ZMB", "population": 5400, "percentage": 100 }
+        {
+          "country": "ZMB",
+          "population": 5400,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
       "Joshua Project – Ambo in Zambia (https://joshuaproject.net/people_groups/18917)",
       "Joshua Project – Zambia People Groups (https://joshuaproject.net/countries/ZA)",
       "Boswell, D. – Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
-      "Lala-Bisa language – Wikipedia (https://en.wikipedia.org/wiki/Lala-Bisa_language)",
       "Ethnologue – Lala-Bisa Language (LEB) (https://www.ethnologue.com/language/leb/)",
       "Stefaniszyn, B. – Social and Ritual Life of the Ambo of Northern Rhodesia, 1964",
       "AfricaBib – Chipimpi, vulgar clans, and Lala-Lamba ethnohistory (https://www.africabib.org/rec.php?RID=326712321)"

@@ -92,12 +92,14 @@
       "totalPopulation": 1401000,
       "referenceYear": 2025,
       "source": "Joshua Project (2025) : 1 401 000 individus au Ghana. Ethnologue/SIL International (2004) : environ 800 000 locuteurs de la langue dangme. Estimation de certaines sources communautaires : environ 2 000 000 de Dangme (sous-groupes inclus). Le chiffre Joshua Project 2025 (1 401 000) est retenu comme estimation de référence.",
-      "distributionByCountry": [{ "country": "GHA", "population": 1401000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 1401000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN : Ga-Adangbe https://en.wikipedia.org/wiki/Ga-Adangbe",
-      "Wikipedia EN : Dangme language https://en.wikipedia.org/wiki/Dangme_language",
-      "Wikipedia EN : Krobo people https://en.wikipedia.org/wiki/Krobo_people",
       "Joshua Project : Dangme in Ghana https://joshuaproject.net/countries/GH",
       "Ethnologue : Dangme (ADA) https://www.ethnologue.com/language/ada/",
       "Bureau of Ghana Languages : The Krobo People - Beads and Dipo Initiation Rite https://www.bgl.gov.gh/wp-content/uploads/Krobo_People_Beads_Dipo_Initiation_Rite.pdf",

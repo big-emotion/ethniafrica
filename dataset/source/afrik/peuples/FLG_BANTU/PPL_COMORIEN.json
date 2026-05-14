@@ -77,15 +77,21 @@
       "referenceYear": 2025,
       "source": "UNFPA 2025: 900 000 habitants pour l'Union des Comores. PopulationPyramid.net 2025: 882 847. ONU projection 2025: 1 041 150. Mayotte (MYT): environ 350 000 habitants dont une majorité d'origine comorienne. France métropolitaine: 200 000 à 350 000 Comoriens. Total estimé incluant diaspora: environ 1,2 million.",
       "distributionByCountry": [
-        { "country": "COM", "population": 900000 },
-        { "country": "MYT", "population": 200000 },
-        { "country": "FRA", "population": 100000 }
+        {
+          "country": "COM",
+          "population": 900000
+        },
+        {
+          "country": "MYT",
+          "population": 200000
+        },
+        {
+          "country": "FRA",
+          "population": 100000
+        }
       ]
     },
     "sources": [
-      "Wikipedia, Comoros: https://en.wikipedia.org/wiki/Comoros",
-      "Wikipedia, Demographics of the Comoros: https://en.wikipedia.org/wiki/Demographics_of_the_Comoros",
-      "Wikipedia, Comorians in France: https://en.wikipedia.org/wiki/Comorians_in_France",
       "Encyclopaedia Britannica, Comoros: https://www.britannica.com/place/Comoros",
       "UNFPA, Comoros Population 2025: https://www.unfpa.org/data/world-population/KM",
       "Joshua Project, Comorian in France: https://joshuaproject.net/people_groups/19179",

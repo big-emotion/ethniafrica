@@ -79,13 +79,14 @@
       "totalPopulation": 7000000,
       "referenceYear": 2025,
       "source": "Uganda Bureau of Statistics (UBOS), National Population and Housing Census 2024 : 15,3 % de la population ougandaise (45,9 millions) = environ 7 millions. Estimation Facebook/sources communautaires 2025 : 7 millions. Note : la fiche demographie_globale indiquait 8 499 000 (estimation antérieure).",
-      "distributionByCountry": [{ "country": "UGA", "population": 7000000 }]
+      "distributionByCountry": [
+        {
+          "country": "UGA",
+          "population": 7000000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN – Baganda : https://en.wikipedia.org/wiki/Baganda",
-      "Wikipedia EN – Clans of Baganda : https://en.wikipedia.org/wiki/Clans_of_Baganda",
-      "Wikipedia EN – Luganda language : https://en.wikipedia.org/wiki/Luganda",
-      "Wikipedia EN – Buganda kingdom : https://en.wikipedia.org/wiki/Buganda",
       "Uganda Bureau of Statistics (UBOS) – National Population and Housing Census 2024 : https://www.ubos.org/wp-content/uploads/2025/06/Buganda-Sub-Region-Census-2024-Profile.pdf",
       "SIL Ethnologue – Luganda (lug) : https://www.ethnologue.com/language/lug/",
       "Roscoe, John (1911). The Baganda: An Account of Their Native Customs and Beliefs. Macmillan.",

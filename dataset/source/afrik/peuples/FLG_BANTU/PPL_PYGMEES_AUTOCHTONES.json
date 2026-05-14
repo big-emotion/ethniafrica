@@ -69,14 +69,25 @@
       "referenceYear": 2025,
       "source": "Baka : environ 40 000 a 70 000 au Cameroun, Gabon et Congo (Ritimo/Forest Peoples Programme, 2020). Bagyeli : quelques milliers. Bedzan : quelques centaines. Estimation totale pour le Cameroun : environ 100 000 personnes tous groupes confondus.",
       "distributionByCountry": [
-        { "country": "CMR", "population": 75000 },
-        { "country": "GAB", "population": 15000 },
-        { "country": "COG", "population": 8000 },
-        { "country": "CAF", "population": 2000 }
+        {
+          "country": "CMR",
+          "population": 75000
+        },
+        {
+          "country": "GAB",
+          "population": 15000
+        },
+        {
+          "country": "COG",
+          "population": 8000
+        },
+        {
+          "country": "CAF",
+          "population": 2000
+        }
       ]
     },
     "sources": [
-      "Baka people (Cameroon and Gabon) – Wikipedia (https://en.wikipedia.org/wiki/Baka_people_(Cameroon_and_Gabon))",
       "La Conservation et le peuple Baka au Cameroun – Ritimo, 2020 (https://www.ritimo.org/Violence-corruption-et-fausses-promesses-La-Conservation-et-le-peuple-Baka-au)",
       "Gardiens de la foret : les Baka et l'esprit vivant du Dja – UNESCO, 2025 (https://www.unesco.org/fr/articles/gardiens-de-la-foret-les-baka-et-lesprit-vivant-du-dja)",
       "Statut des Peuples Autochtones – Greenpeace Afrique, 2025 (https://www.greenpeace.org/africa/fr/les-blogs/58654/peuples-autochtones-trois-decennies-dattente-pour-une-reconnaissance-legale-et-juridique/)",

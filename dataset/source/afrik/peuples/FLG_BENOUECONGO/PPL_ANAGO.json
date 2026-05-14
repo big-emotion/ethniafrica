@@ -80,14 +80,21 @@
       "referenceYear": 2025,
       "source": "Estimation basée sur Joshua Project (Yoruba in Togo : 148 000; Yoruba in Benin : population significative) et les données agrégées sur la population yoruba dans l'espace Bénin-Togo-Nigeria. Wikipedia Yoruba people indique des estimations de 500 000 à 600 000 Yoruba au Togo. La population anago au Bénin (Kétou, Porto-Novo, Adjara) est estimée à environ 300 000-400 000 personnes, avec environ 200 000 à la frontière nigériane.",
       "distributionByCountry": [
-        { "country": "BEN", "population": 400000 },
-        { "country": "TGO", "population": 350000 },
-        { "country": "NGA", "population": 200000 }
+        {
+          "country": "BEN",
+          "population": 400000
+        },
+        {
+          "country": "TGO",
+          "population": 350000
+        },
+        {
+          "country": "NGA",
+          "population": 200000
+        }
       ]
     },
     "sources": [
-      "Wikipedia, Yoruba people (en). https://en.wikipedia.org/wiki/Yoruba_people (consulté 2025)",
-      "Wikipedia, Nagos (en). https://en.wikipedia.org/wiki/Nagos (consulté 2025)",
       "Ethnologue, Yoruba (YOR). https://www.ethnologue.com/language/yor/ (consulté 2025)",
       "Joshua Project, Yoruba in Togo. https://joshuaproject.net/people_groups/16057/TO (consulté 2025)",
       "Joshua Project, Yoruba in Benin. https://joshuaproject.net/people_groups/16057/BN (consulté 2025)",

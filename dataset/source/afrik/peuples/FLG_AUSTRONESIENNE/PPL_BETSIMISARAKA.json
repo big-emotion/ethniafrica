@@ -81,15 +81,17 @@
       "totalPopulation": 3900000,
       "referenceYear": 2025,
       "source": "Estimations basées sur Ethnologue (SIL International, 2024 : environ 1 270 000 locuteurs betsimisaraka nord + 2 000 000 betsimisaraka sud), Britannica (deuxième groupe ethnique d'environ 15% de la population malgache estimée à 29-30 millions en 2025), Wikipedia (1,5 million en 2011). La projection 2025 intègre un taux de croissance annuel d'environ 2,6%.",
-      "distributionByCountry": [{ "country": "MDG", "population": 3900000 }]
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 3900000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia — Betsimisaraka people, https://en.wikipedia.org/wiki/Betsimisaraka_people (consulté 2025)",
       "Britannica — Betsimisaraka, https://www.britannica.com/topic/Betsimisaraka (consulté 2025)",
       "101 Last Tribes — Betsimisaraka, https://www.101lasttribes.com/tribes/betsimisaraka.html (consulté 2025)",
       "Joshua Project — Betsimisaraka North in Madagascar, https://joshuaproject.net/people_groups/10819 (consulté 2025)",
-      "Wikipedia — Northern Betsimisaraka Malagasy (bmm), https://en.wikipedia.org/wiki/Northern_Betsimisaraka (consulté 2025)",
-      "Wikipedia — Southern Betsimisaraka (bzc), https://en.wikipedia.org/wiki/Southern_Betsimisaraka (consulté 2025)",
       "Ethnologue — Northern Betsimisaraka Malagasy (bmm), https://www.ethnologue.com/language/bmm/ (consulté 2025)",
       "Ethnologue — Southern Betsimisaraka Malagasy (bzc), https://www.ethnologue.com/language/bzc/ (consulté 2025)",
       "CIA World Factbook — Madagascar, https://www.cia.gov/the-world-factbook/countries/madagascar/ (consulté 2025)",

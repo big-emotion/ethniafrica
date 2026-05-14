@@ -84,14 +84,17 @@
       "totalPopulation": 2100000,
       "referenceYear": 2025,
       "source": "Estimations basées sur Ethnologue (SIL International, 2024 — environ 1,5 million de locuteurs du dialecte betsileo dans les années 1990, projetés à 2,1 millions en 2025 au taux de croissance historique), CIA World Factbook Madagascar, INSTAT Madagascar, Britannica (troisième groupe ethnique du pays). Britannica 2025 confirme leur statut de troisième groupe en importance.",
-      "distributionByCountry": [{ "country": "MDG", "population": 2100000 }]
+      "distributionByCountry": [
+        {
+          "country": "MDG",
+          "population": 2100000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia — Betsileo people, https://en.wikipedia.org/wiki/Betsileo_people (consulté 2025)",
       "Britannica — Betsileo, https://www.britannica.com/topic/Betsileo (consulté 2025)",
       "101 Last Tribes — Betsileo, https://www.101lasttribes.com/tribes/betsileo.html (consulté 2025)",
       "Ethnologue — Plateau Malagasy (plt), https://www.ethnologue.com/language/plt/ (consulté 2025)",
-      "Wikipedia — Betsileo dialect, https://en.wikipedia.org/wiki/Betsileo_dialect (consulté 2025)",
       "Joshua Project — Betsileo in Madagascar, https://joshuaproject.net/people_groups/10818 (consulté 2025)",
       "LICCI — Betsileo people, Namoly Valley, https://www.licci.eu/wp-content/uploads/2024/01/betsileo-madagascar-leaflet.pdf (consulté 2025)",
       "Kusuma, P. et al. Malagasy Genetic Ancestry. Molecular Biology and Evolution, 2016. https://pmc.ncbi.nlm.nih.gov/articles/PMC4989113/",

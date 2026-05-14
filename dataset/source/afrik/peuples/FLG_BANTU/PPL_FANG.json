@@ -82,15 +82,25 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2025): population mondiale Fang estimee a 2 295 900. Distribution: Gabon 672 000 (Joshua Project), Guinee equatoriale environ 1 400 000 (85% de 1,65M d'habitants), Cameroun 111 000 locuteurs (Languages of Cameroon). Estimation Britannica fin XXe siecle: 3,32 millions (definition plus large incluant tous les Beti-Fang).",
       "distributionByCountry": [
-        { "country": "GNQ", "population": 1400000 },
-        { "country": "GAB", "population": 672000 },
-        { "country": "CMR", "population": 130000 },
-        { "country": "COG", "population": 8500 }
+        {
+          "country": "GNQ",
+          "population": 1400000
+        },
+        {
+          "country": "GAB",
+          "population": 672000
+        },
+        {
+          "country": "CMR",
+          "population": 130000
+        },
+        {
+          "country": "COG",
+          "population": 8500
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN – Fang people: https://en.wikipedia.org/wiki/Fang_people",
-      "Wikipedia EN – Fang language: https://en.wikipedia.org/wiki/Fang_language",
       "Encyclopaedia Britannica – Fang: https://www.britannica.com/topic/Fang-people",
       "Joshua Project – Fang in Gabon: https://joshuaproject.net/people_groups/print/11187/GB",
       "Metropolitan Museum of Art – Male Reliquary Figure (Nlo Bieri): https://www.metmuseum.org/art/collection/search/312334",

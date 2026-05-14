@@ -63,11 +63,15 @@
       "totalPopulation": 19000,
       "referenceYear": 2025,
       "source": "Joshua Project / Mission Infobank (2025): 19 000; recensement ethiopien 2007 (CSA): 9 796 Na'o dans le Goba Woreda; 3 656 locuteurs de nayi (1994)",
-      "distributionByCountry": [{ "country": "ETH", "population": 19000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 19000
+        }
+      ]
     },
     "sources": [
       "Gesese, Aemero – A History of Na'o People of Goba Warada, Kafa Zone, ca. 1897 to 1991 (these, Universite de Jimma), 2020 (https://repository.ju.edu.et/handle/123456789/5286)",
-      "Nayi language – Wikipedia (https://en.wikipedia.org/wiki/Nayi_language)",
       "Nao in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13951)",
       "Nao in Ethiopia – Mission Infobank / Joshua Project (https://www.missioninfobank.org/mib/index.php?main_page=document_general_info&products_id=37019)",
       "Nao of Ethiopia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg011624/)",

@@ -62,11 +62,14 @@
       "totalPopulation": 256000,
       "referenceYear": 2025,
       "source": "Joshua Project (2025), estimation basee sur les donnees de recensement tanzanien",
-      "distributionByCountry": [{ "country": "TZA", "population": 256000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 256000
+        }
+      ]
     },
     "sources": [
-      "Kimbu people – Wikipedia, 2006 (https://en.wikipedia.org/wiki/Kimbu_people)",
-      "Kimbu language – Wikipedia, 2011 (https://en.wikipedia.org/wiki/Kimbu_language)",
       "Kimbu, Yanzi in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12691)",
       "ISO 639-3 Language Code List – Wiktionary / Ethnologue (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
       "Tribes of Tanzania – Tuko.co.ke, 2024 (https://www.tuko.co.ke/facts-lifehacks/guides/543850-list-tribes-tanzania-languages-home-regions/)"

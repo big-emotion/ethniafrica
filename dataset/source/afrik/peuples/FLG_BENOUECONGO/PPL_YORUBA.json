@@ -94,20 +94,32 @@
       "referenceYear": 2025,
       "source": "Estimation basee sur peuple_demographie_globale.csv, recensements nationaux, SIL Ethnologue (2024 : environ 47 millions de locuteurs yoruba au Nigeria), Joshua Project, et etudes demographiques sur la diaspora yoruba. La population totale inclut Nigeria (environ 45 millions), Benin (environ 1,8 million), Togo (environ 450 000), Ghana (environ 150 000) et Sierra Leone (environ 7 300). Source secondaire : Yoruba Diaspora Studies, Encyclopedia Africana.",
       "distributionByCountry": [
-        { "country": "NGA", "population": 45500000 },
-        { "country": "BEN", "population": 1800000 },
-        { "country": "TGO", "population": 450000 },
-        { "country": "GHA", "population": 150000 },
-        { "country": "SLE", "population": 7300 }
+        {
+          "country": "NGA",
+          "population": 45500000
+        },
+        {
+          "country": "BEN",
+          "population": 1800000
+        },
+        {
+          "country": "TGO",
+          "population": 450000
+        },
+        {
+          "country": "GHA",
+          "population": 150000
+        },
+        {
+          "country": "SLE",
+          "population": 7300
+        }
       ]
     },
     "sources": [
       "Encyclopedia Africana ; Ife studies",
       "Ethnologue, Yoruba (yor): https://www.ethnologue.com/language/yor",
       "Glottolog, Yoruba: https://glottolog.org/resource/languoid/id/yoru1245",
-      "Wikipedia, Oyo Empire: https://en.wikipedia.org/wiki/Oyo_Empire",
-      "Wikipedia, Oduduwa: https://en.wikipedia.org/wiki/Oduduwa",
-      "Wikipedia, Oku people Sierra Leone: https://en.wikipedia.org/wiki/Oku_people_(Sierra_Leone)",
       "Joshua Project, Yoruba in Sierra Leone: https://joshuaproject.net/people_groups/16057/SL",
       "PeopleGroups.org, Yoruba of Sierra Leone: https://peoplegroups.org/people_groups/pg014300/",
       "UNESCO, Patrimoine culturel immateriel Ifa (2005) et Gelede (2003): https://ich.unesco.org/",

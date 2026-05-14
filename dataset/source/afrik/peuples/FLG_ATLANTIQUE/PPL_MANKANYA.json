@@ -83,14 +83,21 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2025) : 64 000 en Guinee-Bissau, 50 000 au Senegal, 2 600 en Gambie. Total mondial : 116 600. Ethnologue (2013, cite par Gaved 2020) : environ 75 000 locuteurs a travers le Senegal, la Guinee-Bissau et la Gambie. Site 101lasttribes.com : population globale 96 600.",
       "distributionByCountry": [
-        { "country": "GNB", "population": 64000 },
-        { "country": "SEN", "population": 50000 },
-        { "country": "GMB", "population": 2600 }
+        {
+          "country": "GNB",
+          "population": 64000
+        },
+        {
+          "country": "SEN",
+          "population": 50000
+        },
+        {
+          "country": "GMB",
+          "population": 2600
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN - Mankanya people : https://en.wikipedia.org/wiki/Mankanya_people",
-      "Wikipedia EN - Mankanya language : https://en.wikipedia.org/wiki/Mankanya_language",
       "Gaved T.J.D. - A grammar of Mankanya: An Atlantic language of Guinea-Bissau, Senegal and the Gambia. Leiden University, 2020 : https://scholarlypublications.universiteitleiden.nl/access/item:2969896/view",
       "Glottolog - Mankanya mank1251 : https://glottolog.org/resource/languoid/id/mank1251",
       "Joshua Project - Mankanya in Guinea-Bissau and all countries : https://joshuaproject.net/people_groups/13515"

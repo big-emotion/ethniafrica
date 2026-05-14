@@ -63,12 +63,17 @@
       "referenceYear": 2025,
       "source": "Minority Rights Group International (estimation 8 000-20 000 pour les Ba'Aka en RCA seuls) ; Culture and the Mind, Universite de Sheffield (estimation totale 30 000-40 000)",
       "distributionByCountry": [
-        { "country": "CAF", "population": 20000 },
-        { "country": "COG", "population": 10000 }
+        {
+          "country": "CAF",
+          "population": 20000
+        },
+        {
+          "country": "COG",
+          "population": 10000
+        }
       ]
     },
     "sources": [
-      "Aka people – Wikipedia EN (https://en.wikipedia.org/wiki/Aka_people)",
       "Aka in Central African Republic – Minority Rights Group International, 2018 (https://minorityrights.org/communities/aka/)",
       "Culture and the Mind – Aka fieldsites, Universite de Sheffield (https://cultureandmind.sites.sheffield.ac.uk/fieldsites/aka)",
       "Kisliuk, Michelle – Seize the Dance! BaAka Musical Life and the Ethnography of Performance, Oxford University Press, 2000",

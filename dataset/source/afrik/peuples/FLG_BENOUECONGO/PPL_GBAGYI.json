@@ -73,11 +73,14 @@
       "totalPopulation": 4000000,
       "referenceYear": 2025,
       "source": "Estimations très variables : Wikipedia EN (12 millions dans 4 États, 30 LGAs) ; Gbagyi Gone Global (15 millions) ; recensement nigérian 2016 (1,5 million, périmètre restreint au sens strict). L'écart reflète des définitions larges ou restrictives du groupe. Estimation 2025 consolidée (noyau Gbagyi-Gbari, 4 États : FCT, Niger, Kaduna, Nasarawa) : 4 millions.",
-      "distributionByCountry": [{ "country": "NGA", "population": 4000000 }]
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 4000000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN — Gbagyi people : https://en.wikipedia.org/wiki/Gbagyi_people",
-      "Wikipedia EN — Gwari language : https://en.wikipedia.org/wiki/Gwari_language",
       "SIL Ethnologue — Gbagyi language (gbr) : https://www.ethnologue.com/language/gbr/",
       "Qiraat Africa — The Gbagyi People of Nigeria (2025) : https://qiraatafrican.com/en/16334/the-gbagyi-people-of-nigeria/",
       "CEDS — ISO 639-3 Language Codes (Gbagyi : gbr) : https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",

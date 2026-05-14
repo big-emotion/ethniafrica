@@ -58,11 +58,14 @@
       "totalPopulation": 14000,
       "referenceYear": 2025,
       "source": "Joshua Project (2025): 14 000; recensement ethiopien 2007 (CSA): 11 500 Mursi",
-      "distributionByCountry": [{ "country": "ETH", "population": 14000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 14000
+        }
+      ]
     },
     "sources": [
-      "Mursi people – Wikipedia (https://en.wikipedia.org/wiki/Mursi_people)",
-      "Mursi language – Wikipedia (https://en.wikipedia.org/wiki/Mursi_language)",
       "Mursi in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13887)",
       "Worku Firew – A Grammar of Mursi, a Nilo-Saharan Language of Ethiopia (these JCU / Brill), 2020-2021 (https://researchonline.jcu.edu.au/65453/)",
       "Lip-plates – Mursi Online (https://www.mursi.org/introducing-the-mursi/Body%20Decoration/lip-plates)",

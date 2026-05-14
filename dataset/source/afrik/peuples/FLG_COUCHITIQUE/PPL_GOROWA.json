@@ -73,17 +73,18 @@
       "referenceYear": 2025,
       "source": "Estimation 2025 basée sur le recensement tanzanien 2014 et l'étude Harvey 2015 (132 748 locuteurs gorwaa) – Harvey A., Gorwaa Tanzania, Language Documentation and Description Journal (https://www.lddjournal.org/article/1200/galley/2445/download/)",
       "distributionByCountry": [
-        { "country": "TZA", "population": 145000, "percentage": 100 }
+        {
+          "country": "TZA",
+          "population": 145000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Gorowa people – Wikipedia, 2006 (https://en.wikipedia.org/wiki/Gorowa_people)",
-      "Gorowa language – Wikipedia (https://en.wikipedia.org/wiki/Gorowa_language)",
       "Harvey A., Gorwaa (Tanzania) – Language Documentation and Description Journal (https://www.lddjournal.org/article/1200/galley/2445/download/)",
       "Harvey A., Toward a description of the Gorwaa language, 2018 (https://andrewdtharvey.com/wp-content/uploads/2019/01/harvey-andrew-2018-the-gorwaa-noun-toward-a-description-of-the-gorwaa-language.pdf)",
       "Gorwaa Language (GOW) – Ethnologue (https://www.ethnologue.com/language/gow/)",
-      "Glottolog : Gorwaa goro1270 (https://glottolog.org/resource/languoid/id/goro1270)",
-      "Iraqw language – Wikipedia (https://en.wikipedia.org/wiki/Iraqw_language)"
+      "Glottolog : Gorwaa goro1270 (https://glottolog.org/resource/languoid/id/goro1270)"
     ]
   }
 }

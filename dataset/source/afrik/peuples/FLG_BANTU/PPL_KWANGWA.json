@@ -62,11 +62,15 @@
       "totalPopulation": 2400,
       "referenceYear": 2025,
       "source": "Recensement zambien 2010 : 2 400 locuteurs combines Kwanga et Kwandi (Wikipedia, Kwangwa language). Population totale du groupe ethnique non distinguee des Lozi dans les recensements recents.",
-      "distributionByCountry": [{ "country": "ZMB", "population": 2400 }]
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 2400
+        }
+      ]
     },
     "sources": [
       "Kwangwa – Zambia's Traditional History, 2020 (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/lozi/kwangwa/)",
-      "Kwangwa language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kwangwa_language)",
       "THE HISTORY OF THE KWANGWA PEOPLE – Facebook/Barotsenetwork, 2021 (https://www.facebook.com/Barotsenetwork/posts/the-history-of-the-kwangwa-peoplethe-kwangwas-are-an-offshoot-of-the-luyi-people/4009618459076922/)",
       "Nkoya People of Zambia – Alkebulan Movement, 2017 (https://panafricanrevoluntionmovement.wordpress.com/2017/10/26/nkoya-people-of-zambia/)",
       "About Zambia – Western Province Provincial Administration (https://www.wes.gov.zm/?page_id=1186)",

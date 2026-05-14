@@ -65,13 +65,21 @@
       "referenceYear": 2025,
       "source": "Estimation : les Anlo constituent le principal sous-groupe ewe du Ghana ; l'ensemble des Ewe du Ghana est estime a 4 548 000 (Joshua Project 2025). La population Anlo Ewe est estimee entre 800 000 et 1 000 000 personnes.",
       "distributionByCountry": [
-        { "country": "GHA", "population": 800000 },
-        { "country": "TGO", "population": 80000 },
-        { "country": "BEN", "population": 20000 }
+        {
+          "country": "GHA",
+          "population": 800000
+        },
+        {
+          "country": "TGO",
+          "population": 80000
+        },
+        {
+          "country": "BEN",
+          "population": 20000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN - Anlo Ewe (https://en.wikipedia.org/wiki/Anlo_Ewe)",
       "Art of the Motherland - The Anlo Ewe People of the Volta Region of Ghana, 2024 (https://artofthemotherland.com/the-anlo-ewe-people-of-the-volta-region-of-ghana-culture-society-and-history/)",
       "Modern Ghana - The Anlo Kingdom: A Tapestry of Tradition, Unity, and Civic Wisdom (https://www.modernghana.com/news/1448953/the-anlo-kingdom-a-tapestry-of-tradition-unity.html)",
       "Richard Hodges - Introduction to Anlo-Ewe Culture (https://www.richardhodges.com/ladzekpo/Intro.html)",

@@ -81,14 +81,17 @@
       "referenceYear": 2025,
       "source": "Minority Rights Group (2024) : 3 a 5 millions en Egypte ; Wikipedia Nubians (2024) : entre 3,5 et 5 millions pour l'Egypte seule ; estimation totale (Egypte + Soudan) : environ 5 millions",
       "distributionByCountry": [
-        { "country": "EGY", "population": 4000000 },
-        { "country": "SDN", "population": 1000000 }
+        {
+          "country": "EGY",
+          "population": 4000000
+        },
+        {
+          "country": "SDN",
+          "population": 1000000
+        }
       ]
     },
     "sources": [
-      "Wikipedia – Nubians, 2024 (https://en.wikipedia.org/wiki/Nubians)",
-      "Wikipedia – Nubian languages, 2024 (https://en.wikipedia.org/wiki/Nubian_languages)",
-      "Wikipedia – Kingdom of Kush, 2024 (https://en.wikipedia.org/wiki/Kingdom_of_Kush)",
       "Minority Rights Group – Nubians in Egypt, 2024 (https://minorityrights.org/communities/nubians/)",
       "Rilly, C. & de Voogt, A. – The Meroitic Language and Writing System, 2012",
       "Language Documentation and Description – Nobiin language snapshot (https://www.lddjournal.org/article/1214/galley/2458/download/)",

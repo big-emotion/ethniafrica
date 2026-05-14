@@ -64,12 +64,14 @@
       "referenceYear": 2025,
       "source": "Wikipedia Burunge language (28 000 locuteurs en 2007) / Wikipedia Burunge people (30 000 en 2007) – estimation 2025 incluant croissance démographique modérée et absorption partielle",
       "distributionByCountry": [
-        { "country": "TZA", "population": 35000, "percentage": 100 }
+        {
+          "country": "TZA",
+          "population": 35000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Burunge people – Wikipedia EN, 2006 (https://en.wikipedia.org/wiki/Burunge_people)",
-      "Burunge language – Wikipedia EN, 2008 (https://en.wikipedia.org/wiki/Burunge_language)",
       "Burunge – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/buru1320)",
       "Appendix ISO 639-3 codes/Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
       "Burunge – Encyclopedia Britannica (https://www.britannica.com/topic/Burunge)",

@@ -64,13 +64,17 @@
       "referenceYear": 2025,
       "source": "Estimation basee sur 63 000 Mambwe en Tanzanie (1987) et 262 800 Mambwe et Lungu combines en Zambie (1993). Projections 2025 tenant compte de la croissance demographique.",
       "distributionByCountry": [
-        { "country": "ZMB", "population": 320000 },
-        { "country": "TZA", "population": 110000 }
+        {
+          "country": "ZMB",
+          "population": 320000
+        },
+        {
+          "country": "TZA",
+          "population": 110000
+        }
       ]
     },
     "sources": [
-      "Mambwe people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Mambwe_people)",
-      "Mambwe-Lungu language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Mambwe-Lungu_language)",
       "Mambwe-Lungu Language (MGR) – Ethnologue, SIL International (https://www.ethnologue.com/language/mgr/)",
       "List of all tribes in Tanzania – Tuko.co.ke, 2024 (https://www.tuko.co.ke/facts-lifehacks/guides/543850-list-tribes-tanzania-languages-home-regions/)",
       "Watson, W. – Tribal Cohesion in a Money Economy: A Study of the Mambwe People of Northern Rhodesia, Manchester University Press, 1958"

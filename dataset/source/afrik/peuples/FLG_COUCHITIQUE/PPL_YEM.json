@@ -63,13 +63,14 @@
       "totalPopulation": 257000,
       "referenceYear": 2025,
       "source": "PeopleGroups.org 2025 : environ 257 000 personnes ; recensement ethiopien 2007 : 160 447 Yem ; projection CityPopulation.de 2022 : 116 044 dans le woreda Yem",
-      "distributionByCountry": [{ "country": "ETH", "population": 257000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 257000
+        }
+      ]
     },
     "sources": [
-      "Yem people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Yem_people)",
-      "Kingdom of Janjero (Yamma) – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Kingdom_of_Janjero)",
-      "Yem language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Yem_language)",
-      "Yem Zone – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Yem_Zone)",
       "Yem in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/16022)",
       "Yem of Ethiopia – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg011656/)",
       "Hebo: New Year Ritual of Yem People in South West Ethiopia – International Journal of Multidisciplinary and Current Research, 2019 (https://ijmmu.com/index.php/ijmmu/article/download/1207/898)",

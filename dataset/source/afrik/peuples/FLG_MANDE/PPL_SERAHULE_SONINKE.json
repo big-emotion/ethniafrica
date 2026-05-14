@@ -99,21 +99,41 @@
       "referenceYear": 2025,
       "source": "Wikipedia (EN) estime plus de 2 millions. Ethnologue/SIL estime 2,3 millions de locuteurs du soninke. Wikipedia (FR) cite 2 201 000 locuteurs en 2012. Estimation 2025 en tenant compte de la croissance demographique.",
       "distributionByCountry": [
-        { "country": "MLI", "population": 1100000 },
-        { "country": "SEN", "population": 450000 },
-        { "country": "MRT", "population": 180000 },
-        { "country": "GMB", "population": 200000 },
-        { "country": "BFA", "population": 120000 },
-        { "country": "GIN", "population": 40000 },
-        { "country": "GNB", "population": 20000 },
-        { "country": "CIV", "population": 60000 }
+        {
+          "country": "MLI",
+          "population": 1100000
+        },
+        {
+          "country": "SEN",
+          "population": 450000
+        },
+        {
+          "country": "MRT",
+          "population": 180000
+        },
+        {
+          "country": "GMB",
+          "population": 200000
+        },
+        {
+          "country": "BFA",
+          "population": 120000
+        },
+        {
+          "country": "GIN",
+          "population": 40000
+        },
+        {
+          "country": "GNB",
+          "population": 20000
+        },
+        {
+          "country": "CIV",
+          "population": 60000
+        }
       ]
     },
     "sources": [
-      "Wikipedia – Soninke people (EN), 2024 (https://en.wikipedia.org/wiki/Soninke_people)",
-      "Wikipedia – History of the Soninke people (EN), 2024 (https://en.wikipedia.org/wiki/History_of_the_Soninke_people)",
-      "Wikipedia – Soninke language (EN), 2024 (https://en.wikipedia.org/wiki/Soninke_language)",
-      "Wikipedia – Soninkés (FR), 2024 (https://fr.wikipedia.org/wiki/Sonink%C3%A9)",
       "Joshua Project – Soninke in Guinea, 2025 (https://joshuaproject.net/people_groups/14996/GV)",
       "101 Last Tribes – Soninke people (https://www.101lasttribes.com/tribes/soninke.html)",
       "Soninkara.com – Association culturelle soninke (https://www.soninkara.com)",

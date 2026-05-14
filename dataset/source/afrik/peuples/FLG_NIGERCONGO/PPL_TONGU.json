@@ -2,31 +2,21 @@
   "id": "PPL_TONGU",
   "nameMain": "Tongu",
   "languageFamilyId": "FLG_NIGERCONGO",
-  "currentCountries": [
-    "GHA"
-  ],
+  "currentCountries": ["GHA"],
   "content": {
     "appellations": {
       "mainName": "Tongu",
       "selfAppellation": "Tonu ou Tonu Ewe (en ewe : Tonu signifie bord d'un cours d'eau ; tor = riviere, ngu = pres de)",
-      "exonyms": [
-        "Tongu Ewe",
-        "Tonu",
-        "Tonguland"
-      ],
+      "exonyms": ["Tongu Ewe", "Tonu", "Tonguland"],
       "originOfExonyms": "Le terme Tongu vient du ewe tor-ngu, signifiant pres de la riviere. Il designe les communautes Ewe etablies le long du fleuve Volta et du lac Volta dans la region des Volta au Ghana. Appellation geographique devenue identite communautaire.",
       "whyProblematic": null,
       "contemporaryUsage": "Le terme Tongu est utilise officiellement dans les decoupages administratifs ghanéens (North Tongu District, Central Tongu District, South Tongu District). Il designe un sous-groupe Ewe distinct des Anlo (cote) et des Ewedome (interieur des terres). En 2024, les chefs traditionnels des 13 aires traditionnelles Tongu ont cree l'Union des Chefs Tongu.",
       "linguisticFamily": "FLG_NIGERCONGO",
       "ethnoLinguisticGroup": "Ewe (sous-famille Gbe, branche Kwa)",
       "historicalRegion": "Region du Volta, Ghana (rive du lac Volta)",
-      "currentCountries": [
-        "GHA"
-      ]
+      "currentCountries": ["GHA"]
     },
-    "ethnicities": [
-      "Tongu Ewe"
-    ],
+    "ethnicities": ["Tongu Ewe"],
     "origins": {
       "ancientOrigins": "Les Tongu sont un sous-groupe du peuple Ewe. Les Ewe descendent d'ancetres qui vivaient a Notsie (ou Nuatja), ville fortifiee du Togo actuel. Selon la tradition orale, c'est la tyrannie du roi Agokoli (Ago Akoli) au XVIIe siecle qui provoqua leur fuite et leur dispersion vers leurs territoires actuels. Les Ewe se designaient eux-memes sous le nom de Dogbo avant leur installation dans la region. Les Tongu constituent le groupe s'etant installe le long du fleuve Volta.",
       "formationPeriod": "XVIIe siecle (migration depuis Notsie). L'identite Tongu comme sous-groupe distinct emerge avec l'etablissement durable le long du Volta. Les 13 etats Tongu etaient a l'origine independants les uns des autres.",
@@ -52,14 +42,8 @@
     },
     "languages": {
       "mainLanguage": "Ewe (dialecte Tongu, dit Tonu)",
-      "isoCodes": [
-        "ewe"
-      ],
-      "dialects": [
-        "Tongu (Tonu)",
-        "Anlo",
-        "Ewedome"
-      ],
+      "isoCodes": ["ewe"],
+      "dialects": ["Tongu (Tonu)", "Anlo", "Ewedome"],
       "vehicularRole": "Le dialecte Tongu (Tonu) est l'une des trois variantes principales du ewe parle au Ghana. La langue ewe (ISO 639-1 : ee ; ISO 639-3 : ewe) appartient a la famille Gbe (Niger-Congo, Kwa). L'anglais est utilise comme langue officielle et vehiculaire nationale."
     },
     "culture": {
@@ -86,8 +70,6 @@
       ]
     },
     "sources": [
-      "Wikipedia EN – Ewe people (https://en.wikipedia.org/wiki/Ewe_people)",
-      "Wikipedia EN – Anlo Ewe (https://en.wikipedia.org/wiki/Anlo_Ewe)",
       "Ewe Association of Georgia – History of the Ewes (https://ewaga.org/about-us/history-of-the-ewes/)",
       "GhanaWeb – Volta Region: Tongu chiefs create a unitary traditional state, 2024 (https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Volta-Region-Tongu-chiefs-create-a-unitary-traditional-state-1947608)",
       "Ghana Statistical Service – 2021 Population and Housing Census (https://census2021.statsghana.gov.gh/)",

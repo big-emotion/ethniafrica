@@ -78,15 +78,17 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2025) : 838 000 à 839 000 individus. Ethnologue/SIL International (2017) : environ 500 000 locuteurs de la langue attié. PeopleGroups.org : 839 000. Recoupement avec données INS Côte d'Ivoire (RGPH 2014).",
       "distributionByCountry": [
-        { "country": "CIV", "population": 835000 },
-        { "country": "GHA", "population": 3000 }
+        {
+          "country": "CIV",
+          "population": 835000
+        },
+        {
+          "country": "GHA",
+          "population": 3000
+        }
       ]
     },
     "sources": [
-      "Wikipedia FR : Attié (peuple) https://fr.wikipedia.org/wiki/Atti%C3%A9_(peuple)",
-      "Wikipedia EN : Akan religion https://en.wikipedia.org/wiki/Akan_religion",
-      "Wikipedia EN : Religion in Ivory Coast https://en.wikipedia.org/wiki/Religion_in_Ivory_Coast",
-      "Wikipedia EN : Attié language https://en.wikipedia.org/wiki/Atti%C3%A9_language",
       "Ethnologue : Attié language (ATI) https://www.ethnologue.com/language/ati/",
       "Joshua Project : Attie in Côte d'Ivoire https://joshuaproject.net/people_groups/10483/IV",
       "UNESCO : Les savoir-faire liés à la fabrication de l'attiéké (2024) https://ich.unesco.org/fr/RL/les-savoir-faire-lies-a-la-fabrication-de-l-attieke-en-cote-d-ivoire-02086",

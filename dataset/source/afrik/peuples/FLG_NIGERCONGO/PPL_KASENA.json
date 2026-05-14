@@ -65,13 +65,17 @@
       "referenceYear": 2025,
       "source": "Estimation basee sur le recensement ghanen 2021 (Kassena Nankana East : 99 895 habitants, Kassena Nankana West : 90 735 habitants) et les donnees Joshua Project pour le Burkina Faso; projection 2025.",
       "distributionByCountry": [
-        { "country": "GHA", "population": 200000 },
-        { "country": "BFA", "population": 50000 }
+        {
+          "country": "GHA",
+          "population": 200000
+        },
+        {
+          "country": "BFA",
+          "population": 50000
+        }
       ]
     },
     "sources": [
-      "Kassena – Wikipedia EN (https://en.wikipedia.org/wiki/Kassena)",
-      "Kasena language – Wikipedia EN (https://en.wikipedia.org/wiki/Kasena_language)",
       "Kasem in Ghana – Joshua Project (https://joshuaproject.net/people_groups/12556/GH)",
       "Kasem in Burkina Faso – Joshua Project (https://joshuaproject.net/people_groups/print/12556/UV)",
       "Kasem – Glottolog 5.3, ISO 639-3 : xsm (https://glottolog.org/resource/languoid/id/kase1253)",

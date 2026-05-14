@@ -79,16 +79,19 @@
       "referenceYear": 2025,
       "source": "Wikipedia FR (Agni) : 953 339 en Cote d'Ivoire, 298 000 au Ghana. Total environ 1 251 339. Estimation 2025 : environ 1 280 000.",
       "distributionByCountry": [
-        { "country": "CIV", "population": 980000 },
-        { "country": "GHA", "population": 300000 }
+        {
+          "country": "CIV",
+          "population": 980000
+        },
+        {
+          "country": "GHA",
+          "population": 300000
+        }
       ]
     },
     "sources": [
-      "Wikipedia FR - Agnis (https://fr.wikipedia.org/wiki/Agni_(peuple))",
-      "Wikipedia EN - Anyin language (https://en.wikipedia.org/wiki/Anyin_language)",
       "Ethnologue - Anyin (ANY) (https://www.ethnologue.com/language/any/)",
-      "DICE Missouri - Agni (Anyin) database (https://dice.missouri.edu/assets/docs/niger-congo/Agni.pdf)",
-      "Wikipedia EN - Kingdom of Gyaman - relations Anyi (https://en.wikipedia.org/wiki/Kingdom_of_Gyaman)"
+      "DICE Missouri - Agni (Anyin) database (https://dice.missouri.edu/assets/docs/niger-congo/Agni.pdf)"
     ]
   }
 }

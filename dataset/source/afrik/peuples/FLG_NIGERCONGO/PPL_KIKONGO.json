@@ -85,18 +85,27 @@
       "referenceYear": 2025,
       "source": "Estimation composite : Kongo people Wikipedia (4 040 000 en 1975); projection demographique 2025 tenant compte des taux de croissance nationaux (RDC 2,9%/an, Congo 2,5%/an, Angola 3,2%/an). Les Bakongo representent environ 12% de la population de RDC (112 millions en 2025) et constituent le groupe majoritaire en Republique du Congo.",
       "distributionByCountry": [
-        { "country": "COD", "population": 6000000 },
-        { "country": "COG", "population": 2500000 },
-        { "country": "AGO", "population": 1200000 },
-        { "country": "GAB", "population": 300000 }
+        {
+          "country": "COD",
+          "population": 6000000
+        },
+        {
+          "country": "COG",
+          "population": 2500000
+        },
+        {
+          "country": "AGO",
+          "population": 1200000
+        },
+        {
+          "country": "GAB",
+          "population": 300000
+        }
       ]
     },
     "sources": [
-      "Kongo people – Wikipedia EN (https://en.wikipedia.org/wiki/Kongo_people)",
-      "Kongo language – Wikipedia EN (https://en.wikipedia.org/wiki/Kongo_language)",
       "The Bakongo: History, Spirituality, and Civilizational Legacy – Yaden Africa, 2025 (https://www.yaden-africa.com/bakongo/)",
       "Kongo People History, Language and Religion – Study.com (https://study.com/academy/lesson/kongo-people-history-kingdom-language-bakongo.html)",
-      "Demographics of the Democratic Republic of the Congo – Wikipedia EN (https://en.wikipedia.org/wiki/Demographics_of_the_Democratic_Republic_of_the_Congo)",
       "UNFPA Congo DRC Population 2025 (https://www.unfpa.org/data/world-population/CD)",
       "Glottolog : Kongo, ISO 639-3 : kon/kng (https://glottolog.org)"
     ]

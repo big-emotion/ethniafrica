@@ -62,15 +62,16 @@
       "totalPopulation": 8000,
       "referenceYear": 2025,
       "source": "Wikipedia EN (Logba people): environ 7 500 locuteurs de l'ikpana. Estimation 2025 : environ 8 000 personnes.",
-      "distributionByCountry": [{ "country": "GHA", "population": 8000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 8000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN – Logba people (https://en.wikipedia.org/wiki/Logba_people)",
-      "Wikipedia EN – Logba language (https://en.wikipedia.org/wiki/Logba_language)",
-      "Wikipedia EN – LGQ ISO code (https://en.wikipedia.org/wiki/LGQ)",
       "Joshua Project – Logba in Ghana (https://joshuaproject.net/people_groups/13083)",
       "International Development Publications – Serendipitous Socio-Cultural Dynamics of Logba Traditional Musical Ensembles in Ghana, 2015 (https://www.idpublications.org/wp-content/uploads/2014/12/SERENDIPITOUS-SOCIO-CULTURAL-DYNAMICS-OF-LOGBA-TRADITIONAL-MUSICAL-ENSEMBLES-IN-GHANA.pdf)",
-      "Wikipedia EN – Guan people (https://en.wikipedia.org/wiki/Guan_people)",
       "Rosetta Panglossia – Logba Language lgq (https://rosettapanglossia.longnow.org/index.php?title=Logba_Language_%28lgq%29)"
     ]
   }

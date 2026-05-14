@@ -76,12 +76,14 @@
       "totalPopulation": 450000,
       "referenceYear": 2025,
       "source": "Joshua Project (2024) estimates approximately 449,000 Ogbia; the 2006 Nigerian national census recorded approximately 350,000. Projection to 2025 based on average Nigerian population growth rate of approximately 2.5% per annum. All Ogbia are in Nigeria.",
-      "distributionByCountry": [{ "country": "NGA", "population": 450000 }]
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 450000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia, Ogbia language: https://en.wikipedia.org/wiki/Ogbia_language",
-      "Wikipedia, Ogbia (kingdom and LGA): https://en.wikipedia.org/wiki/Ogbia",
-      "Wikipedia, Ijaw people: https://en.wikipedia.org/wiki/Ijaw_people",
       "Lawson-Ikuru, M. (2024). Barter In Ogbia And Nembe: An Indigenous Language Preservation And Promotion System. IOSR Journal of Humanities and Social Science, 29(9), 39-44. http://iosrjournals.org/iosr-jhss/papers/Vol.29-Issue9/Ser-13/F2909133944.pdf",
       "Joshua Project, Ogbia Ogbinya in Nigeria: https://joshuaproject.net/people_groups/14124",
       "WALS Online, Language Ogbia (ISO 639-3: ogb): https://wals.info/languoid/lect/wals_code_ogb"

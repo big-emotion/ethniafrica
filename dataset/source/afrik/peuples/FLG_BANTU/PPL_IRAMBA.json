@@ -75,11 +75,14 @@
       "totalPopulation": 955000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (https://joshuaproject.net/clusters/341)",
-      "distributionByCountry": [{ "country": "TZA", "population": 955000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 955000
+        }
+      ]
     },
     "sources": [
-      "Iramba people – Wikipedia (https://en.wikipedia.org/wiki/Iramba_people)",
-      "Iramba language – Wikipedia (https://en.wikipedia.org/wiki/Iramba_language)",
       "Iramba, Nyilamba in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12245)",
       "Iramba – 101lasttribes.com (https://www.101lasttribes.com/tribes/iramba.html)",
       "Nilamba Language – Ethnologue (https://www.ethnologue.com/language/nim/)",

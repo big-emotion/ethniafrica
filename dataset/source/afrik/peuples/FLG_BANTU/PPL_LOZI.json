@@ -85,18 +85,29 @@
       "referenceYear": 2025,
       "source": "Joshua Project (2024) : 1 615 000 dans l'ensemble des pays. Wikipedia (citant diverses sources) : 1 562 000. Recensement zambien 2010 : environ 1 105 000 en Zambie seule (PeopleGroups.org). Estimations 2025 tenant compte de la croissance demographique zambienne.",
       "distributionByCountry": [
-        { "country": "ZMB", "population": 1300000 },
-        { "country": "NAM", "population": 100000 },
-        { "country": "BWA", "population": 80000 },
-        { "country": "AGO", "population": 80000 },
-        { "country": "ZWE", "population": 55000 }
+        {
+          "country": "ZMB",
+          "population": 1300000
+        },
+        {
+          "country": "NAM",
+          "population": 100000
+        },
+        {
+          "country": "BWA",
+          "population": 80000
+        },
+        {
+          "country": "AGO",
+          "population": 80000
+        },
+        {
+          "country": "ZWE",
+          "population": 55000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Lozi people : https://en.wikipedia.org/wiki/Lozi_people",
-      "Wikipedia EN — Kuomboka : https://en.wikipedia.org/wiki/Kuomboka",
-      "Wikipedia EN — Lozi Kingdom (Barotseland) : https://en.wikipedia.org/wiki/Barotseland",
-      "Wikipedia EN — Lozi language : https://en.wikipedia.org/wiki/Lozi_language",
       "SIL Ethnologue — Lozi (loz) : https://www.ethnologue.com/language/loz/",
       "Joshua Project — Lozi in Zambia : https://joshuaproject.net/people_groups/13127/ZA",
       "PeopleGroups.org — Lozi of Zambia : https://peoplegroups.org/people_groups/pg015593/",

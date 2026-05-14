@@ -61,17 +61,20 @@
       "referenceYear": 2025,
       "source": "Ethnologue (ABR) : environ 1,2 million de locuteurs au Ghana (Bono Region, Bono East Region) ; plus de 300 000 en Cote d'Ivoire (region du Zanzan/Bondoukou). Total estime a 1,5 million (2025).",
       "distributionByCountry": [
-        { "country": "GHA", "population": 1200000 },
-        { "country": "CIV", "population": 300000 }
+        {
+          "country": "GHA",
+          "population": 1200000
+        },
+        {
+          "country": "CIV",
+          "population": 300000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN - Bono people (https://en.wikipedia.org/wiki/Bono_people)",
-      "Wikipedia EN - Kingdom of Gyaman (https://en.wikipedia.org/wiki/Kingdom_of_Gyaman)",
       "Ethnologue - Abron language ABR (https://www.ethnologue.com/language/abr/)",
       "Joshua Project - Brong in Ghana (https://joshuaproject.net/people_groups/10971/GH)",
-      "Terray, Emmanuel - A History of the Abron Kingdom of Gyaman, Michigan State University, 1980 (https://pdfproc.lib.msu.edu/?file=%2FDMC%2FAfrican+Journals%2Fpdfs%2FInstitue+of+African+Studies+Research+Review%2F1980v12n1%2Fasrv012001002.pdf)",
-      "Wikipedia EN - Bono dialect (https://en.wikipedia.org/wiki/Bono_dialect)"
+      "Terray, Emmanuel - A History of the Abron Kingdom of Gyaman, Michigan State University, 1980 (https://pdfproc.lib.msu.edu/?file=%2FDMC%2FAfrican+Journals%2Fpdfs%2FInstitue+of+African+Studies+Research+Review%2F1980v12n1%2Fasrv012001002.pdf)"
     ]
   }
 }

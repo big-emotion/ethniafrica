@@ -75,15 +75,18 @@
       "totalPopulation": 300000,
       "referenceYear": 2025,
       "source": "Estimation basee sur Data Commons (population de Nembe LGA : 327,500 en 2024) et City-Facts (population de Nembe : 152,722 avec projections vers 170,777 en 2020). La population ethnique totale (incluant la diaspora interne) est estimee a environ 300,000 personnes en 2025, principalement dans les LGA de Nembe et Brass (Bayelsa State).",
-      "distributionByCountry": [{ "country": "NGA", "population": 300000 }]
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 300000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN — Nembe Kingdom : https://en.wikipedia.org/wiki/Nembe_people",
       "Data Commons — Nembe, Bayelsa State, Nigeria : https://datacommons.org/place/wikidataId/Q3510576",
       "City-Facts — Nembe, Bayelsa, Nigeria (population) : https://www.city-facts.com/nembe/population",
       "Alagoa, E.J. (2009). A History of the Niger Delta. Port Harcourt: Onyoma Research Publications.",
       "Ethnologue (SIL) — Southeast Ijo (nvm) : https://www.ethnologue.com/language/nvm/",
-      "Wikipedia EN — Southeast Ijo (dialecte nembe) : https://en.wikipedia.org/wiki/Nembe_language",
       "Guardian Nigeria — Modernising Ijaw language (mention de Kay Williamson et orthographe Nembe) : https://guardian.ng/art/modernising-ijaw-language/"
     ]
   }

@@ -80,12 +80,14 @@
       "totalPopulation": 13000000,
       "referenceYear": 2025,
       "source": "Joshua Project (2025) : Luba-Lulua (Luba-Kasai) en RDC : 12 070 000 ; total toutes branches environ 12 163 000. Britannica (fin 20e siecle) : 5 594 000. Estimations 2025 combinees Luba-Kasai et Luba-Katanga, tenant compte de la forte croissance demographique congolaise, suggerent une population totale de 12 a 14 millions.",
-      "distributionByCountry": [{ "country": "COD", "population": 13000000 }]
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 13000000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN — Luba people : https://en.wikipedia.org/wiki/Luba_people",
-      "Wikipedia EN — Luba Empire : https://en.wikipedia.org/wiki/Luba_Empire",
-      "Wikipedia EN — Luba-Kasai language : https://en.wikipedia.org/wiki/Luba_language",
       "Encyclopaedia Britannica — Luba : https://www.britannica.com/topic/Luba-people",
       "Joshua Project — Luba-Lulua in DRC : https://joshuaproject.net/people_groups/13134/CG",
       "SIL Ethnologue — Luba-Katanga (lub) : https://www.ethnologue.com/language/lub/",

@@ -63,14 +63,18 @@
       "totalPopulation": 4000,
       "referenceYear": 2025,
       "source": "Joshua Project – Ambo in Zambia (estimation), PeopleGroups.org",
-      "distributionByCountry": [{ "country": "ZMB", "population": 4000 }]
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 4000
+        }
+      ]
     },
     "sources": [
       "Zambia's Traditional History – Ambo (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/ambo/)",
       "Joshua Project – Ambo in Zambia (https://joshuaproject.net/people_groups/18917)",
       "PeopleGroups.org – Ambo of Zambia (https://peoplegroups.org/people_groups/pg015563/)",
       "Ethnologue – Lala-Bisa language (leb) (https://www.ethnologue.com/language/leb/)",
-      "Wikipedia EN – Languages of Zambia (https://en.wikipedia.org/wiki/Languages_of_Zambia)",
       "Britannica – Ambo people (https://www.britannica.com/topic/Ambo-people)"
     ]
   }

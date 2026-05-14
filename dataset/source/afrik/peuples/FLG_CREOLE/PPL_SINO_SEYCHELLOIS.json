@@ -75,13 +75,16 @@
       "totalPopulation": 1500,
       "referenceYear": 2025,
       "source": "Sino-Seychellois – Wikipedia EN, 2024 (estimation ~1 000 en 1999) ; Demographics of Seychelles – Wikipedia EN (1,1 % de la population) ; population seychelloise estimée à ~132 000 en 2025",
-      "distributionByCountry": [{ "country": "SYC", "population": 1500 }]
+      "distributionByCountry": [
+        {
+          "country": "SYC",
+          "population": 1500
+        }
+      ]
     },
     "sources": [
-      "Sino-Seychellois – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Sino-Seychellois)",
       "Orient and Ocean: The Chinese Community in Seychelles – Dennis Hardy et Wang Dongxia, Seychelles Research Journal Vol. 4, No. 2, 2022 (https://seychellesresearchjournal.com/wp-content/uploads/2022/07/orient_and_ocean-the_chinese_community_in_seychelles-dennis_hardy_and_wang_dongxia-srj-4-2.pdf)",
       "Han Chinese, Mandarin in Seychelles – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12051/SE)",
-      "Demographics of Seychelles – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Demographics_of_Seychelles)",
       "Seychelles – Multicultural, Indian Ocean, Creole – Encyclopaedia Britannica, 2024 (https://www.britannica.com/place/Seychelles/People)",
       "The Chinese in Seychelles Facts and Origins – My China Roots (https://www.mychinaroots.com/places/685204/seychelles)"
     ]

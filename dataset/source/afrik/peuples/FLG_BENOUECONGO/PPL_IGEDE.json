@@ -62,11 +62,14 @@
       "totalPopulation": 526000,
       "referenceYear": 2025,
       "source": "Joshua Project (526 000 locuteurs de l'igede) ; estimation 267 198 pour les deux LGA en 2006 (recensement nigérian)",
-      "distributionByCountry": [{ "country": "NGA", "population": 526000 }]
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 526000
+        }
+      ]
     },
     "sources": [
-      "Igede people – Wikipedia (https://en.wikipedia.org/wiki/Igede_people)",
-      "Igede Agba – Wikipedia (https://en.wikipedia.org/wiki/Igede_Agba)",
       "Igede Language (IGE) – Ethnologue (https://www.ethnologue.com/language/ige/)",
       "Igede in Nigeria – Joshua Project (https://joshuaproject.net/people_groups/12190)",
       "The Igede language (ISO 639-3 code: ige) – Notion (https://rural-aerosteon-31a.notion.site/the-igede-language-601a47d228634a3085b7d6c926ed8604)",

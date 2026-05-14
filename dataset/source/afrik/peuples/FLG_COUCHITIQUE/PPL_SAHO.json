@@ -74,13 +74,17 @@
       "referenceYear": 2025,
       "source": "Estimation 2025 fondee sur Joshua Project (202 000 en Erythree, 62 000 en Ethiopie) et les donnees de l'Eritrean Saho Advocacy Group (206 000 en Erythree en 2016). Total consolide pour 2025.",
       "distributionByCountry": [
-        { "country": "ERI", "population": 203000 },
-        { "country": "ETH", "population": 62000 }
+        {
+          "country": "ERI",
+          "population": 203000
+        },
+        {
+          "country": "ETH",
+          "population": 62000
+        }
       ]
     },
     "sources": [
-      "Saho people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Saho_people)",
-      "Irob people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Irob_people)",
       "Saho, Irob in Eritrea – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14641/er)",
       "Saho, Irob in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14641/ET)",
       "History of the Saho – Saho Archive, 2023 (https://www.sahoarchive.org/history/)",

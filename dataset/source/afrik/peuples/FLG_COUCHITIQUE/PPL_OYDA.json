@@ -60,15 +60,19 @@
       "totalPopulation": 87000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (estimation basee sur la croissance demographique depuis le recensement ethiopien de 2007 : 45 120 personnes)",
-      "distributionByCountry": [{ "country": "ETH", "population": 87000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 87000
+        }
+      ]
     },
     "sources": [
       "Oyda – DOBES Documentation of Endangered Languages, Max Planck Institute / JCU, 2013 (https://dobes.mpi.nl/projects/oyda/)",
       "Oyda Language (OYD) – Ethnologue / SIL International, 2024 (https://www.ethnologue.com/language/oyd/)",
       "Oyda in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14240)",
       "Glottolog 5.3 : Oyda (oyda1235) – Hammarstrom et al., 2024 (https://glottolog.org/resource/languoid/id/oyda1235)",
-      "Multi-media documentation of the Oyda Language – Amha A., JCU Research Online, 2013 (https://researchonline.jcu.edu.au/28529/1/28529_Amha_2013.pdf)",
-      "Omotic languages – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Omotic_languages)"
+      "Multi-media documentation of the Oyda Language – Amha A., JCU Research Online, 2013 (https://researchonline.jcu.edu.au/28529/1/28529_Amha_2013.pdf)"
     ]
   }
 }

@@ -78,14 +78,17 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 : 581 000 au Togo et 159 000 au Benin, total mondial 740 000. 101 Last Tribes / Peoplegroups.org 2023 estime 676 000 dans 2 pays. Recensement Togo 2010 (IPUMS) : 25 937. Recensement Benin 2013 (IPUMS) : 11 686. En 1996 : plus de 150 000 dont 60 000 Ane.",
       "distributionByCountry": [
-        { "country": "TGO", "population": 581000 },
-        { "country": "BEN", "population": 159000 }
+        {
+          "country": "TGO",
+          "population": 581000
+        },
+        {
+          "country": "BEN",
+          "population": 159000
+        }
       ]
     },
     "sources": [
-      "Wikipedia – Gen-Mina people (https://en.wikipedia.org/wiki/Gen-Mina_people)",
-      "Wikipedia – Gen language (https://en.wikipedia.org/wiki/Gen_language)",
-      "Wikipedia – Mina (peuple) (https://fr.wikipedia.org/wiki/Mina_(peuple))",
       "Joshua Project – Gen, Mina in Togo, 2025 (https://joshuaproject.net/people_groups/print/19053/TO)",
       "Joshua Project – Gen, Mina in Benin, 2025 (https://joshuaproject.net/people_groups/19053/BN)",
       "101 Last Tribes – Mina people (https://www.101lasttribes.com/tribes/mina.html)",

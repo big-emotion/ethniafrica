@@ -63,11 +63,14 @@
       "totalPopulation": 414000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (https://joshuaproject.net/people_groups/print/12363/TZ)",
-      "distributionByCountry": [{ "country": "TZA", "population": 414000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 414000
+        }
+      ]
     },
     "sources": [
-      "Jita people – Wikipedia (https://en.wikipedia.org/wiki/Jita_people)",
-      "Jita language – Wikipedia (https://en.wikipedia.org/wiki/Jita_language)",
       "Jita in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/print/12363/TZ)",
       "Jita Language – Ethnologue (https://www.ethnologue.com/language/jit/)",
       "Adventists and Jita Culture – ESDA Encyclopedia (https://encyclopedia.adventist.org/article?id=HF73)",

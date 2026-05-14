@@ -59,11 +59,14 @@
       "totalPopulation": 104000,
       "referenceYear": 2025,
       "source": "Joshua Project / Swordshare Map 2025 (estimation basee sur les donnees Joshua Project)",
-      "distributionByCountry": [{ "country": "TZA", "population": 104000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 104000
+        }
+      ]
     },
     "sources": [
-      "Mpoto people – Wikipedia EN (https://en.wikipedia.org/wiki/Mpoto_people)",
-      "Mpoto language – Wikipedia EN (https://en.wikipedia.org/wiki/Mpoto_language)",
       "Mpoto, Nyasa in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13846)",
       "Mpoto language ISO mpa – Swordshare Map (https://map.swordshare.com/mpa)",
       "Bantu, Central-Tanzania People Cluster – Joshua Project (https://www.joshuaproject.net/clusters/341)"

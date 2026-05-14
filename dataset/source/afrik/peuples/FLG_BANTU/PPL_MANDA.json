@@ -63,14 +63,16 @@
       "totalPopulation": 28000,
       "referenceYear": 2025,
       "source": "Estimation basee sur 22 000 personnes en 2002 (Wikipedia Manda people) avec croissance demographique tanzanienne.",
-      "distributionByCountry": [{ "country": "TZA", "population": 28000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 28000
+        }
+      ]
     },
     "sources": [
-      "Manda people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Manda_people)",
-      "Manda language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Manda-Matumba_language)",
       "Manda Language (MGS) – Ethnologue, SIL International (https://www.ethnologue.com/language/mgs/)",
       "Manda in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13482)",
-      "Tumbuka people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Tumbuka_people)",
       "Tumbuka – Encyclopaedia Britannica, 1998 (https://www.britannica.com/topic/Tumbuka)"
     ]
   }

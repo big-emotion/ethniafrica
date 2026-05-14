@@ -78,13 +78,14 @@
       "totalPopulation": 510000,
       "referenceYear": 2025,
       "source": "SIL Ethnologue – Havu (hav): 510 000 locuteurs natifs (donnees 2002). Population de l'ile d'Idjwi: 250 000 a 350 000 habitants (dont 95% Bahavu). Territoire de Kalehe: 933 181 habitants (recensement 2022), dont les Bahavu constituent le groupe dominant dans le chiefdom de Buhavu. Estimation globale 2025 basee sur taux de croissance de la RDC.",
-      "distributionByCountry": [{ "country": "COD", "population": 510000 }]
+      "distributionByCountry": [
+        {
+          "country": "COD",
+          "population": 510000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN – Havu language: https://en.wikipedia.org/wiki/Havu_language",
-      "Wikipedia EN – Idjwi: https://en.wikipedia.org/wiki/Idjwi",
-      "Wikipedia EN – Kalehe Territory: https://en.wikipedia.org/wiki/Kalehe_Territory",
-      "Wikipedia EN – South Kivu: https://en.wikipedia.org/wiki/South_Kivu",
       "Joshua Project – Havu in Congo DRC: https://joshuaproject.net/people_groups/12071",
       "SIL Ethnologue – Havu (hav): https://www.ethnologue.com/language/hav/",
       "Newbury, David S. – Kings and Clans: Ijwi Island and the Lake Kivu Rift, 1780-1840. Madison: University of Wisconsin Press, 1991. https://archive.org/details/kingsclansijwiis0000newb",

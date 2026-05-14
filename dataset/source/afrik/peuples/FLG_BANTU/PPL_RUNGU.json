@@ -66,11 +66,14 @@
       "totalPopulation": 59000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 : 59 000 ; PeopleGroups.org 2025 : environ 52 500-53 500 ; Wikipedia (1987) : 18 000 (recensement ancien)",
-      "distributionByCountry": [{ "country": "TZA", "population": 59000 }]
+      "distributionByCountry": [
+        {
+          "country": "TZA",
+          "population": 59000
+        }
+      ]
     },
     "sources": [
-      "Rungwa people – Wikipedia (https://en.wikipedia.org/wiki/Rungwa_people)",
-      "Rungwa language – Wikipedia (https://en.wikipedia.org/wiki/Rungwa_language)",
       "Rungwa in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/print/14594/TZ)",
       "Rungwa of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015029/)",
       "Rungwa – Language Info, Swordshare Map (https://map.swordshare.com/rnw)",

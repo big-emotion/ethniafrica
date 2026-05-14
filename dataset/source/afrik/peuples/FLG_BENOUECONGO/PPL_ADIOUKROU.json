@@ -73,12 +73,14 @@
       "totalPopulation": 155000,
       "referenceYear": 2025,
       "source": "Ethnologue (ADJ) : 140 000 locuteurs en 2017 ; estimation 2025 environ 155 000.",
-      "distributionByCountry": [{ "country": "CIV", "population": 155000 }]
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 155000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN - Adjoukrou people (https://en.wikipedia.org/wiki/Adjoukrou_people)",
-      "Wikipedia FR - Adioukrou (peuple) (https://fr.wikipedia.org/wiki/Adioukrou_(peuple))",
-      "Wikipedia FR - Adioukrou (langue) (https://fr.wikipedia.org/wiki/Adioukrou_(langue))",
       "Ethnologue - Adioukrou ADJ (https://www.ethnologue.com/language/adj/)",
       "Joshua Project - Adjoukrou in Cote d'Ivoire (https://joshuaproject.net/people_groups/10162/IV)",
       "Lebutu Socraf - Les Adjoukrou et la democratie (https://lebutusocraf.wordpress.com/2017/07/19/les-adjoukrou-et-la-democratie-lecon-dune-vie/)",

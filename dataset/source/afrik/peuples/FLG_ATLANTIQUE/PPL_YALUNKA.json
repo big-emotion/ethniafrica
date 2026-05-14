@@ -94,7 +94,11 @@
           "population": 52000,
           "note": "Nord-est, district de Koinadugu, ville de Falaba"
         },
-        { "country": "MLI", "population": 20000, "note": "Sud-ouest du Mali" },
+        {
+          "country": "MLI",
+          "population": 20000,
+          "note": "Sud-ouest du Mali"
+        },
         {
           "country": "SEN",
           "population": 5000,
@@ -103,9 +107,6 @@
       ]
     },
     "sources": [
-      "Wikipedia EN – Yalunka people : https://en.wikipedia.org/wiki/Yalunka_people",
-      "Wikipedia EN – Yalunka language : https://en.wikipedia.org/wiki/Yalunka_language",
-      "Wikipedia EN – Ethnic groups in Sierra Leone : https://en.wikipedia.org/wiki/Ethnic_groups_in_Sierra_Leone",
       "Joshua Project – Yalunka in Guinea : https://joshuaproject.net/people_groups/15967/GV",
       "Joshua Project – Yalunka in Sierra Leone : https://joshuaproject.net/people_groups/15967/SL",
       "Ethnologue – Yalunka (yal) : https://www.ethnologue.com/language/yal/",

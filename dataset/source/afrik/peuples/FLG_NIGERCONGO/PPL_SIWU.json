@@ -63,11 +63,14 @@
       "totalPopulation": 103000,
       "referenceYear": 2025,
       "source": "Joshua Project 2024: Akpafu, Lolobi in Ghana 99 000. Wikipedia Siwu language: estimations entre 10 000 et 23 000 locuteurs natifs (donnees 2000s). Estimation 2025 basee sur la croissance demographique de 2,2% par an appliquee aux 99 000 du Joshua Project.",
-      "distributionByCountry": [{ "country": "GHA", "population": 103000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 103000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN – Siwu language (https://en.wikipedia.org/wiki/Siwu_language)",
-      "Wikipedia EN – Akpafu-Todzi (https://en.wikipedia.org/wiki/Akpafu-Todzi)",
       "Joshua Project – Akpafu, Lolobi in Ghana (https://joshuaproject.net/people_groups/10227)",
       "Wycliffe Bible Translators – A Story of Restoration: The Siwu of Ghana (https://wycliffe.org/blog/posts/a-story-of-restoration-the-siwu-of-ghana)",
       "The Ideophone – H.B.K. Ogbete, A history of the Akpafus (https://ideophone.org/ogbete-1998-history-akpafu/)",

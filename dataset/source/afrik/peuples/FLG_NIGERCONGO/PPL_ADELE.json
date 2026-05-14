@@ -64,13 +64,17 @@
       "referenceYear": 2025,
       "source": "Omniglot (2023) : environ 37 400 locuteurs (26 400 au Togo, 11 000 au Ghana) ; recensement ghaneen de 1960 estimait 2 400 Adele au Ghana.",
       "distributionByCountry": [
-        { "country": "GHA", "population": 11000 },
-        { "country": "TGO", "population": 26400 }
+        {
+          "country": "GHA",
+          "population": 11000
+        },
+        {
+          "country": "TGO",
+          "population": 26400
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN - Adele people (https://en.wikipedia.org/wiki/Adele_people)",
-      "Wikipedia EN - Adele language (https://en.wikipedia.org/wiki/Adele_language)",
       "Omniglot - Adele language and alphabet, 2023 (https://www.omniglot.com/writing/adele.htm)",
       "Joshua Project - Adele in Ghana (https://joshuaproject.net/people_groups/10156/gh)",
       "Ethnologue - Adele Language (ADE) (https://www.ethnologue.com/language/ade/)",

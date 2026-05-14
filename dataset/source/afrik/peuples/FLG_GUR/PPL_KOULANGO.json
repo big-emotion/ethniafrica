@@ -74,13 +74,17 @@
       "referenceYear": 2025,
       "source": "Joshua Project – Kulango, Bouna people group in all countries (2025). Ethnologue : 470 000 locuteurs (2021).",
       "distributionByCountry": [
-        { "country": "CIV", "population": 327000 },
-        { "country": "GHA", "population": 37000 }
+        {
+          "country": "CIV",
+          "population": 327000
+        },
+        {
+          "country": "GHA",
+          "population": 37000
+        }
       ]
     },
     "sources": [
-      "Koulango (peuple) – Wikipedia FR, 2005 (https://fr.wikipedia.org/wiki/Koulango_(peuple))",
-      "Kulango language – Wikipedia EN, 2024 (https://en.wikipedia.org/wiki/Kulango_language)",
       "Kulango, Bouna in Côte d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10955/IV)",
       "Kulango, Bouna people group in all countries – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10955)",
       "TERROIR : L'histoire du peuple Koulango – Djasso.com, 2021 (https://djasso.com/terroir-voici-toute-lrhistoire-du-peuple-koulango-a16305741701.html)",

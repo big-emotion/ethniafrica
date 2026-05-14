@@ -59,12 +59,15 @@
       "totalPopulation": 127000,
       "referenceYear": 2025,
       "source": "PeopleGroups.org, PGID PG015635 (https://peoplegroups.org/people_groups/pg015635/)",
-      "distributionByCountry": [{ "country": "ZMB", "population": 127000 }]
+      "distributionByCountry": [
+        {
+          "country": "ZMB",
+          "population": 127000
+        }
+      ]
     },
     "sources": [
       "Swaka of Zambia – PeopleGroups.org, PGID PG015635 (https://peoplegroups.org/people_groups/pg015635/)",
-      "Lala-Bisa language – Wikipedia EN (https://en.wikipedia.org/wiki/Lala-Bisa_language)",
-      "Lala people – Wikipedia EN (https://en.wikipedia.org/wiki/Lala_people)",
       "Chipimpi, Vulgar Clans, and Lala-Lamba Ethnohistory – Brian Siegel, Furman University, 2008 (https://scholarexchange.furman.edu/cgi/viewcontent.cgi?article=1001&context=ant-publications)",
       "Ichibwela Mushi – Luano Town Council (https://www.luanocouncil.gov.zm/?page_id=2517)",
       "Chief Chitina of the Lala-Swaka people of Mkushi District – QFM Zambia, 2025 (https://www.facebook.com/qfmzambia/videos/chief-chitina-of-the-lala-swaka-people-of-mkushi-district-central-province-has-p/2234345853678729/)"

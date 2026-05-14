@@ -94,12 +94,17 @@
       "referenceYear": 2025,
       "source": "Estimation basee sur Wikipedia (>209,600 reference), Joshua Project (Jukun-Kona : 6,400), Ethnologue (SIL International), et projections demographiques Nigeria 2025. La population totale des locuteurs jukun (toutes varietes) est estimee entre 210,000 et 300,000 personnes, principalement au Nigeria (Taraba, Benue, Nasarawa, Adamawa States) avec une minorite au Cameroun.",
       "distributionByCountry": [
-        { "country": "NGA", "population": 235000 },
-        { "country": "CMR", "population": 15000 }
+        {
+          "country": "NGA",
+          "population": 235000
+        },
+        {
+          "country": "CMR",
+          "population": 15000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Jukun people (West Africa) : https://en.wikipedia.org/wiki/Jukun_people_(West_Africa)",
       "ThinkAfrica.net — Federation of Kwararafa (13th-18th Century) : https://thinkafrica.net/kwararafa/",
       "RSIS International — The Jukun-Muri Relations: Pre-Colonial Dynamics (2025) : https://rsisinternational.org/journals/ijriss/articles/the-jukun-muri-relations-pre-colonial-dynamics/",
       "Ethnologue (SIL) — Jukun Takum (jbu) : https://www.ethnologue.com/language/jbu/",

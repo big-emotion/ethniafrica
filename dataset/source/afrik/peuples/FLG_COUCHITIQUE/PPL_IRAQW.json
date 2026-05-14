@@ -66,12 +66,14 @@
       "referenceYear": 2025,
       "source": "Estimation démographique courante : environ 1 000 000 Iraqw (Wikipedia Iraqw people) ; Ethnologue 2021 : 460 000 locuteurs iraqw. La divergence reflète le taux d'expansion par absorption de groupes voisins. Estimation 2025 convergente avec le million – Iraqw people Wikipedia / Ethnologue (irk)",
       "distributionByCountry": [
-        { "country": "TZA", "population": 1000000, "percentage": 100 }
+        {
+          "country": "TZA",
+          "population": 1000000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Iraqw people – Wikipedia (https://en.wikipedia.org/wiki/Iraqw_people)",
-      "Iraqw language – Wikipedia (https://en.wikipedia.org/wiki/Iraqw_language)",
       "Iraqw Language (IRK) – Ethnologue (https://www.ethnologue.com/language/irk/)",
       "Iraqw – Glottolog iraq1241 (https://glottolog.org/resource/languoid/id/iraq1241)",
       "Harvey A., Gorwaa (Tanzania) – Language Documentation and Description Journal (https://www.lddjournal.org/article/1200/galley/2445/download/)",

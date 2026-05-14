@@ -65,14 +65,16 @@
       "referenceYear": 2025,
       "source": "Estimation 2025 basée sur le recensement CSA 2007 (363 009 Gofa en Éthiopie, 0,49 % de la population nationale) avec projection de croissance démographique éthiopienne – Wikipedia Gofa people / CSA Ethiopia",
       "distributionByCountry": [
-        { "country": "ETH", "population": 430000, "percentage": 100 }
+        {
+          "country": "ETH",
+          "population": 430000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Gofa people – Wikipedia, 2015 (https://en.wikipedia.org/wiki/Gofa_people)",
       "Gofa in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11916)",
       "The Advent of Modern State in Ethiopia and the Dynamics of Personal Names among the Gofa – Zekareas Y.H., Nordic Journal of African Studies, 2019 (https://www.njas.fi/njas/article/download/402/361/769)",
-      "Gamo-Gofa-Dawro language – Wikipedia (https://en.wikipedia.org/wiki/Gamo-Gofa-Dawro_language)",
       "Appendix ISO 639-3 codes Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
       "Local history of Ethiopia: Gof-Gomu – Bernhard Lindahl, Nordic Africa Institute, 2005 (https://nai.uu.se/download/18.39fca04516faedec8b248de6/1580829011897/ORTGOF05.pdf)"
     ]

@@ -84,15 +84,18 @@
       "totalPopulation": 3294000,
       "referenceYear": 2025,
       "source": "Joshua Project (2024) indique une population de 3 294 000 Anaang au Nigeria. Wikipedia Anaang people cite 2,6 millions. Les Annang sont le deuxième groupe ethnique d'Akwa Ibom State (population totale d'environ 5,5 millions en 2016 selon Wikipedia). Les huit LGAs annang représentent environ 8 des 31 LGAs de l'Etat.",
-      "distributionByCountry": [{ "country": "NGA", "population": 3294000 }]
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 3294000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia, Anaang people (en). https://en.wikipedia.org/wiki/Anaang_people (consulté 2025)",
       "Ethnologue, Anaang (ANW). https://www.ethnologue.com/language/anw/ (consulté 2025)",
       "Joshua Project, Anaang in Nigeria. https://joshuaproject.net/people_groups/10305 (consulté 2025)",
       "Glottolog, Anaang. https://glottolog.org/resource/languoid/id/anaa1238 (consulté 2025)",
       "101 Last Tribes, Annang people — Africa. http://www.101lasttribes.com/tribes/annang.html (consulté 2025)",
-      "Wikipedia, Akwa Ibom State (en). https://en.wikipedia.org/wiki/Akwa_Ibom_State (consulté 2025)",
       "Ette, Mercy. Annang People: History and Culture. Uyo: University of Uyo Press, 2008."
     ]
   }

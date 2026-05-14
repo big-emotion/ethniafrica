@@ -74,10 +74,14 @@
       "totalPopulation": 350000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 (350 000) ; Wikipedia FR evoque plus de 580 000 (estimation large incluant diaspora)",
-      "distributionByCountry": [{ "country": "CIV", "population": 350000 }]
+      "distributionByCountry": [
+        {
+          "country": "CIV",
+          "population": 350000
+        }
+      ]
     },
     "sources": [
-      "Abbey (peuple) – Wikipedia FR, 2025 (https://fr.wikipedia.org/wiki/Abbey_(peuple))",
       "Abe, Abbey – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10141/IV)",
       "Cote d'Ivoire people groups – Joshua Project, 2025 (https://joshuaproject.net/countries/iv)",
       "Global Recordings Network – Abe ISO aba (https://globalrecordings.net/af/country/iv)",

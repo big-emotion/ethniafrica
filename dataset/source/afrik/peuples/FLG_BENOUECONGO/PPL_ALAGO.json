@@ -84,15 +84,18 @@
       "totalPopulation": 115000,
       "referenceYear": 2025,
       "source": "Joshua Project (2024) indique une population de 115 000 Alago au Nigeria. Cette estimation est confirmée par la faible visibilité du groupe malgré son caractère de groupe ethnique dominant dans la zone méridionale du Nasarawa State. La publication académique d'Amirikpa Oyigbenu (2025) confirme la présence dans les LGAs d'Obi, Doma et Keana et les zones de développement adjacentes.",
-      "distributionByCountry": [{ "country": "NGA", "population": 115000 }]
+      "distributionByCountry": [
+        {
+          "country": "NGA",
+          "population": 115000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia, Alago language (en). https://en.wikipedia.org/wiki/Alago_language (consulté 2025)",
       "Ethnologue, Alago (ALA). https://www.ethnologue.com/language/ala/ (consulté 2025)",
       "Joshua Project, Alago Idoma Nokwu in Nigeria. https://joshuaproject.net/people_groups/10241 (consulté 2025)",
       "Oyigbenu, Amirikpa. The Threat of Endangerment and Extinction of Alago Language of Nasarawa State. International Journal of Language and Culture, 5(1), 2025, pp. 1-6. https://www.svedbergopen.com/files/1752662911_(1)_IJLC202509015611NG_(p_1-6).pdf",
       "International Policy Digest, The Underexplored Tapestry of Nigeria's Alago People (2023). https://intpolicydigest.org/the-platform/the-underexplored-tapestry-of-nigeria-s-alago-people/",
-      "Wikipedia, List of ethnic groups in Nigeria. https://en.wikipedia.org/wiki/List_of_ethnic_groups_in_Nigeria (consulté 2025)",
       "Wikidata, Alago (Q106490494). https://www.wikidata.org/wiki/Q106490494 (consulté 2025)"
     ]
   }

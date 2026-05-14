@@ -60,11 +60,14 @@
       "totalPopulation": 85000,
       "referenceYear": 2025,
       "source": "Estimation 2025 fondee sur le recensement ethiopien de 2007 (34 379 personnes selon le CSA) et les donnees Joshua Project/Horn of Africa Evangelical Mission (72 600 en estimation plus recente). Projection moderee pour 2025.",
-      "distributionByCountry": [{ "country": "ETH", "population": 85000 }]
+      "distributionByCountry": [
+        {
+          "country": "ETH",
+          "population": 85000
+        }
+      ]
     },
     "sources": [
-      "Kebena people – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Kebena_people)",
-      "Alaba-K'abeena language – Wikipedia, 2025 (https://en.wikipedia.org/wiki/Alaba-K%CA%BCabeena_language)",
       "K'abeena in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/print/21539/ET)",
       "Kebena of Ethiopia – Horn of Africa Evangelical Mission, 2019 (https://hornofafrica.org/wp-content/uploads/2019/12/Kabena.pdf)",
       "K'abeena phonology – Macrolinguistics and Microlinguistics, Yibekal Aemero, 2024 (https://mami.nyc/index.php/journal/article/view/31)",

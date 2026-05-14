@@ -64,12 +64,14 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 ; Ethnologue (doz) 1994 census : 28 990 personnes dont 9 905 monolingues",
       "distributionByCountry": [
-        { "country": "ETH", "population": 45000, "percentage": 100 }
+        {
+          "country": "ETH",
+          "population": 45000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Dorze people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Dorze_people)",
-      "Dorze language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Dorze_language)",
       "Dorze in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11614)",
       "Dorze language (DOZ) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/doz/)",
       "Glottolog : Dorze (dorz1235) – Hammarstrom et al., 2025 (https://glottolog.org/resource/languoid/id/dorz1235)",

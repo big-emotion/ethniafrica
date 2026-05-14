@@ -90,18 +90,24 @@
       "referenceYear": 2025,
       "source": "Le SIL International (Linton 2008) estime a environ 390 000 locuteurs des langues teke dans les trois pays (COG, COD, GAB). Joshua Project Teke du Nord en Gabon : 129 000 personnes. 101lasttribes.com : population principalement en RDC et COG, minorite au Gabon. Estimation totale pour 2025, incluant croissance demographique : environ 500 000 personnes. Les donnees par pays sont peu disponibles dans les recensements nationaux.",
       "distributionByCountry": [
-        { "country": "COG", "population": 250000 },
-        { "country": "COD", "population": 150000 },
-        { "country": "GAB", "population": 100000 }
+        {
+          "country": "COG",
+          "population": 250000
+        },
+        {
+          "country": "COD",
+          "population": 150000
+        },
+        {
+          "country": "GAB",
+          "population": 100000
+        }
       ]
     },
     "sources": [
-      "Wikipedia EN — Teke people : https://en.wikipedia.org/wiki/Teke_people",
-      "Wikipedia EN — Teke languages : https://en.wikipedia.org/wiki/Teke_languages",
       "101 Last Tribes — Teke people : https://www.101lasttribes.com/tribes/teke.html",
       "Joshua Project — Teke Northern in Gabon : https://joshuaproject.net/people_groups/14033/GB",
       "SIL International — Linton (2008), cote par 101lasttribes.com : 12 sous-groupes linguistiques, 390 000 locuteurs",
-      "Wikipedia EN — Makoko : https://en.wikipedia.org/wiki/Makoko",
       "CIA World Factbook — Republic of Congo : https://www.cia.gov/the-world-factbook/countries/congo-republic-of-the/",
       "CIA World Factbook — Democratic Republic of the Congo : https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/"
     ]

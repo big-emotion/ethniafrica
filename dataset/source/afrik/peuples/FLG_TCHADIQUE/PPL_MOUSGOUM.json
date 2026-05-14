@@ -80,19 +80,20 @@
       "referenceYear": 2025,
       "source": "Wikipedia – Musgum people, 2024 (estimation basee sur 140 000 au Cameroun et 24 400 au Tchad) ; Joshua Project, 2025",
       "distributionByCountry": [
-        { "country": "CMR", "population": 140000 },
-        { "country": "TCD", "population": 24400 }
+        {
+          "country": "CMR",
+          "population": 140000
+        },
+        {
+          "country": "TCD",
+          "population": 24400
+        }
       ]
     },
     "sources": [
-      "Musgum people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Musgum_people)",
-      "Mousgoum (peuple) – Wikipedia FR, 2024 (https://fr.wikipedia.org/wiki/Mousgoum_(peuple))",
-      "Musgu language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Musgu_language)",
-      "Mousgoum (langue) – Wikipedia FR, 2024 (https://fr.wikipedia.org/wiki/Mousgoum_(langue))",
       "Musgu Language (MUG) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/mug/)",
       "Musgum, Mulwi in Chad – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13840/cd)",
-      "Adaptive Architecture: Mousgoum dwellings Pouss, Cameroon – Radio Future Africa, s.d. (https://radio-future-africa.org/adaptive-architecture-mousgoum-dwellings-pouss-cameroon/)",
-      "Musgum mud hut – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Musgum_mud_hut)"
+      "Adaptive Architecture: Mousgoum dwellings Pouss, Cameroon – Radio Future Africa, s.d. (https://radio-future-africa.org/adaptive-architecture-mousgoum-dwellings-pouss-cameroon/)"
     ]
   }
 }

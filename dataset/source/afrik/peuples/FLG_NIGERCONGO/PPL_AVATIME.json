@@ -66,11 +66,14 @@
       "totalPopulation": 31000,
       "referenceYear": 2025,
       "source": "Wikipedia EN - Avatime language : 27 200 locuteurs natifs en 2013 ; 101 Last Tribes : environ 24 000 personnes, langue parlee par plus de 31 000 personnes au Ghana.",
-      "distributionByCountry": [{ "country": "GHA", "population": 31000 }]
+      "distributionByCountry": [
+        {
+          "country": "GHA",
+          "population": 31000
+        }
+      ]
     },
     "sources": [
-      "Wikipedia EN - Avatime people (https://en.wikipedia.org/wiki/Avatime_people)",
-      "Wikipedia EN - Avatime language (https://en.wikipedia.org/wiki/Avatime_language)",
       "101 Last Tribes - Avatime people (http://www.101lasttribes.com/tribes/avatime.html)",
       "Ethnologue - Avatime Language (AVN) (https://www.ethnologue.com/language/avn/)",
       "Joshua Project - Avatime, Sideme in Ghana (https://joshuaproject.net/people_groups/10496)",

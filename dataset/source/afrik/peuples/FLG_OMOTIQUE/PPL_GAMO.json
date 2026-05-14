@@ -63,17 +63,18 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 ; recensement éthiopien 2007 : 1 104 360 personnes (1,56 % de la population éthiopienne)",
       "distributionByCountry": [
-        { "country": "ETH", "population": 2128000, "percentage": 100 }
+        {
+          "country": "ETH",
+          "population": 2128000,
+          "percentage": 100
+        }
       ]
     },
     "sources": [
-      "Gamo people – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Gamo_people)",
       "Gamo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11814/ET)",
       "Gamo Language (GMV) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/gmv/)",
       "Gamo Highlands – Ethiopia – Sacred Land Film Project, 2009 (https://sacredland.org/gamo-highlands-ethiopia/)",
-      "Gamo-Gofa-Dawro language – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Gamo-Gofa-Dawro_language)",
-      "Gamo's cultural forum – Dubussha as a tool for social change communication – Heliyon / ScienceDirect, 2024 (https://www.sciencedirect.com/science/article/pii/S2405844024037058)",
-      "Demographics of Ethiopia – Wikipedia, 2024 (https://en.wikipedia.org/wiki/Demographics_of_Ethiopia)"
+      "Gamo's cultural forum – Dubussha as a tool for social change communication – Heliyon / ScienceDirect, 2024 (https://www.sciencedirect.com/science/article/pii/S2405844024037058)"
     ]
   }
 }
