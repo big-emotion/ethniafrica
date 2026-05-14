@@ -4,30 +4,31 @@
  * Story ETNI-30 (1.10) — renders an `editorial_doctrine` row from Supabase
  * as MDX via `next-mdx-remote/rsc`.
  *
- * Acceptance criteria:
- *   - Fetches the current (non-superseded, highest version) row by slug.
- *   - Renders mdx_source via MDXRemote with remark-gfm.
- *   - Shows version label "v{n} · publiée le {long French date}".
- *   - Shows a changelog link (static git-commit URL, MVP per AR34).
- *   - Calls notFound() for unknown slugs (calm 404).
- *
- * Changelog link approach (MVP):
- *   We point to the GitHub commit history of the seed migration file.
- *   For a richer changelog we will switch to per-version metadata once
- *   ETNI-22's reconciliation lands a `commit_sha` column.
+ * Security:
+ *   - mdx_source is sanitized with rehype-sanitize.
+ *   - MDXRemote receives an explicit components whitelist so arbitrary
+ *     JSX components in MDX cannot be evaluated.
+ *   - Supabase RLS on editorial_doctrine denies INSERT/UPDATE to anon
+ *     (only service_role bypasses RLS).
  */
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
+import rehypeSanitize from "rehype-sanitize";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { fetchDoctrineEntry } from "@/lib/doctrine/fetchDoctrineEntry";
 import { formatVersionLabel } from "@/lib/doctrine/formatVersionLabel";
 
-// MVP changelog: link to the migrations folder history on GitHub.
-// Override at deploy time via DOCTRINE_CHANGELOG_URL if needed.
+const DEFAULT_CHANGELOG_URL =
+  "https://github.com/big-emotion/ethniafrica/commits/HEAD/supabase/migrations/016_editorial_doctrine_seed.sql";
+
 const CHANGELOG_URL =
-  process.env.DOCTRINE_CHANGELOG_URL ??
-  "https://github.com/big-emotion/ethniafrica/commits/main/supabase/migrations/016_editorial_doctrine_seed.sql";
+  process.env.NEXT_PUBLIC_DOCTRINE_CHANGELOG_URL ?? DEFAULT_CHANGELOG_URL;
+
+// Explicit whitelist of components allowed inside MDX. Empty object means
+// MDX can only render standard HTML elements (after rehype-sanitize), not
+// arbitrary React components.
+const MDX_COMPONENTS = {};
 
 interface PageParams {
   lang: string;
@@ -80,9 +81,11 @@ export default async function DoctrineSlugPage({
         >
           <MDXRemote
             source={entry.mdxSource}
+            components={MDX_COMPONENTS}
             options={{
               mdxOptions: {
                 remarkPlugins: [remarkGfm],
+                rehypePlugins: [rehypeSanitize],
               },
             }}
           />
