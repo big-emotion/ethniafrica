@@ -25,10 +25,21 @@ export const confidenceEntityIdSchema = z
     message: "Invalid entity id format (expected PPL_* or FLG_*)",
   });
 
-export const confidenceParamsSchema = z.object({
-  entityType: confidenceEntityTypeSchema,
-  entityId: confidenceEntityIdSchema,
-});
+export const confidenceParamsSchema = z
+  .object({
+    entityType: confidenceEntityTypeSchema,
+    entityId: confidenceEntityIdSchema,
+  })
+  .superRefine((value, ctx) => {
+    const expectedPrefix = value.entityType === "people" ? "PPL_" : "FLG_";
+    if (!value.entityId.startsWith(expectedPrefix)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["entityId"],
+        message: `entityId prefix does not match entityType (expected ${expectedPrefix}* for ${value.entityType})`,
+      });
+    }
+  });
 
 export type ConfidenceParams = z.infer<typeof confidenceParamsSchema>;
 

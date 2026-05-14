@@ -3,7 +3,8 @@
  * GET /api/v2/sources
  *
  * Returns the paginated list of citation sources. Carries the AR18
- * Cache-Control header (`s-maxage=86400, immutable`) for edge caching.
+ * Cache-Control header (`public, s-maxage=86400, stale-while-revalidate=86400`)
+ * for edge caching with a graceful revalidation window.
  *
  * @swagger
  * /api/v2/sources:
@@ -32,7 +33,7 @@
  *           Cache-Control:
  *             schema:
  *               type: string
- *               example: "s-maxage=86400, immutable"
+ *               example: "public, s-maxage=86400, stale-while-revalidate=86400"
  *         content:
  *           application/json:
  *             schema:
@@ -58,7 +59,8 @@ import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
-const SOURCES_CACHE_CONTROL = "s-maxage=86400, immutable";
+const SOURCES_CACHE_CONTROL =
+  "public, s-maxage=86400, stale-while-revalidate=86400";
 
 export async function GET(request: NextRequest) {
   const startTime = Date.now();

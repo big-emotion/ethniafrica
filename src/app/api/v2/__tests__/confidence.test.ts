@@ -86,6 +86,40 @@ describe("GET /api/v2/confidence/[entityType]/[entityId]", () => {
     expect(body.errors[0].code).toBe("VALIDATION_ERROR");
   });
 
+  it("returns 400 when entityType is 'people' but entityId starts with FLG_", async () => {
+    const request = new NextRequest(
+      "http://localhost/api/v2/confidence/people/FLG_BANTU"
+    );
+    const response = await GET(request, {
+      params: Promise.resolve({
+        entityType: "people",
+        entityId: "FLG_BANTU",
+      }),
+    });
+    const body = await response.json();
+    expect(response.status).toBe(400);
+    expect(body.errors[0].code).toBe("VALIDATION_ERROR");
+    expect(body.errors[0].field).toBe("entityId");
+    expect(getConfidenceHandler).not.toHaveBeenCalled();
+  });
+
+  it("returns 400 when entityType is 'language-family' but entityId starts with PPL_", async () => {
+    const request = new NextRequest(
+      "http://localhost/api/v2/confidence/language-family/PPL_SHONA"
+    );
+    const response = await GET(request, {
+      params: Promise.resolve({
+        entityType: "language-family",
+        entityId: "PPL_SHONA",
+      }),
+    });
+    const body = await response.json();
+    expect(response.status).toBe(400);
+    expect(body.errors[0].code).toBe("VALIDATION_ERROR");
+    expect(body.errors[0].field).toBe("entityId");
+    expect(getConfidenceHandler).not.toHaveBeenCalled();
+  });
+
   it("returns 404 when no confidence row exists", async () => {
     vi.mocked(getConfidenceHandler).mockResolvedValue(null);
     const request = new NextRequest(

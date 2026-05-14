@@ -7,7 +7,12 @@ const options: swaggerJsdoc.Options = {
       title: "Ethniafrique Atlas API v2 - AFRIK",
       version: "2.0.0",
       description:
-        "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.",
+        "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n" +
+        "## Response envelope shapes\n\n" +
+        "Two envelope shapes coexist on `/api/v2/*` during the Module #0 rollout:\n\n" +
+        "- **Module #0 endpoints** (`/sources`, `/sources/{id}`, `/doctrine`, `/confidence/{entityType}/{entityId}`, and future `/assertions`) return the new envelope: `{ data, meta: { license, attribution, pagination?, confidence?, pinned_url? }, errors: [] }`. License and attribution are always present (AR8); `errors[]` is `[]` on success and populated on non-2xx responses.\n" +
+        "- **Legacy v2 endpoints** (`/peoples`, `/countries`, `/language-families`, `/search`) still use the older shape: `{ data, meta: { total, page, perPage, totalPages } }` for list responses and `{ data }` for item responses. They do not surface `license`, `attribution`, or an `errors` array.\n\n" +
+        "Both shapes are stable for the lifetime of v2. Convergence onto the Module #0 envelope across all endpoints is tracked as a separate follow-up ticket; until then, treat the envelope shape as endpoint-scoped.",
       contact: {
         name: "Ethniafrique Atlas",
         url: "https://github.com/big-emotion/ethniafrica",

@@ -75,7 +75,7 @@ describe("GET /api/v2/sources", () => {
 
     expect(response.status).toBe(200);
     expect(response.headers.get("Cache-Control")).toBe(
-      "s-maxage=86400, immutable"
+      "public, s-maxage=86400, stale-while-revalidate=86400"
     );
     expect(body.meta.license).toBe("CC-BY-SA-4.0");
     expect(body.errors).toEqual([]);
