@@ -16,10 +16,12 @@ export default defineConfig({
     // any `__tests__/known-failing/` directory to quarantine.
     //
     // Also exclude Playwright specs (run via `npm run e2e`, not Vitest).
+    // `.claude/**` excludes worktrees used by Claude Code parallel jobs.
     exclude: [
       "node_modules/",
       "dist/",
       ".next/",
+      ".claude/**",
       "e2e/**",
       "scripts/__tests__/migrateAfrikToDatabase.test.ts",
       "**/__tests__/known-failing/**",

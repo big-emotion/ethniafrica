@@ -2,7 +2,9 @@
   "id": "PPL_IBIBIO",
   "nameMain": "Ibibio",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["NGA"],
+  "currentCountries": [
+    "NGA"
+  ],
   "content": {
     "appellations": {
       "mainName": "Ibibio",
@@ -17,7 +19,9 @@
       "linguisticFamily": "FLG_BENOUECONGO",
       "ethnoLinguisticGroup": "Cross River inférieur (Lower Cross River, branche Bénoué-Congo du Niger-Congo)",
       "historicalRegion": "Sud-est du Nigeria : État d'Akwa Ibom, Cross River, est de l'État d'Abia",
-      "currentCountries": ["NGA"]
+      "currentCountries": [
+        "NGA"
+      ]
     },
     "ethnicities": [
       "Ibibio proprement dits (Ibibio Central / Ibibio de l'Enyong) — noyau originel",
@@ -55,7 +59,9 @@
     },
     "languages": {
       "mainLanguage": "Ibibio",
-      "isoCodes": ["ibb"],
+      "isoCodes": [
+        "ibb"
+      ],
       "dialects": [
         "Ibibio central (Nkari, Enyong, Itak, Nsit) — norme de référence",
         "Annang (Anang) — dialecte occidental, mutuelle intelligibilité avec l'ibibio central",
@@ -82,8 +88,10 @@
       "referenceYear": 2025,
       "source": "Estimations variables : WorldAtlas (4,5 millions, 3,5% de la population nigériane) ; Wikipedia Ibibio-Efik languages (locuteurs Ibibio 15 millions incluant L2) ; Facebook post 2024 (Mbon Ibibio Nigeria 8 080 000). En 2025, estimation du groupe Ibibio stricto sensu (excluant Annang, Eket, Efik) : 6 millions en NGA, avec des communautés à l'étranger (Cameroun 358 000 selon diverses sources).",
       "distributionByCountry": [
-        { "country": "NGA", "population": 5900000 },
-        { "country": "Autres (CMR, GHA, USA, GBR)", "population": 100000 }
+        {
+          "country": "NGA",
+          "population": 5900000
+        }
       ]
     },
     "sources": [

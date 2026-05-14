@@ -10,7 +10,10 @@ import { NextRequest } from "next/server";
 
 const mocks = vi.hoisted(() => {
   const auditLogWrite = vi.fn().mockResolvedValue(undefined);
-  const isAdminAuthenticated = vi.fn().mockResolvedValue(true);
+  const getCurrentUser = vi
+    .fn()
+    .mockResolvedValue({ id: "user-admin", email: "a@b.test" });
+  const isAdmin = vi.fn().mockResolvedValue(true);
 
   type Row = Record<string, unknown>;
   const state: { row: Row | null; rowError: unknown } = {
@@ -37,7 +40,8 @@ const mocks = vi.hoisted(() => {
 
   return {
     auditLogWrite,
-    isAdminAuthenticated,
+    getCurrentUser,
+    isAdmin,
     createAdminClient,
     fromMock,
     state,
@@ -48,8 +52,9 @@ vi.mock("@/lib/audit/log", () => ({
   auditLog: { write: mocks.auditLogWrite },
 }));
 
-vi.mock("@/lib/auth/admin", () => ({
-  isAdminAuthenticated: mocks.isAdminAuthenticated,
+vi.mock("@/lib/auth/supabase-auth", () => ({
+  getCurrentUser: mocks.getCurrentUser,
+  isAdmin: mocks.isAdmin,
 }));
 
 vi.mock("@/lib/supabase/admin", () => ({
@@ -74,8 +79,13 @@ function buildRequest(body: Record<string, unknown>): NextRequest {
 describe("PATCH /api/admin/contributions/[id]", () => {
   beforeEach(() => {
     mocks.auditLogWrite.mockClear();
-    mocks.isAdminAuthenticated.mockClear();
-    mocks.isAdminAuthenticated.mockResolvedValue(true);
+    mocks.getCurrentUser.mockClear();
+    mocks.getCurrentUser.mockResolvedValue({
+      id: "user-admin",
+      email: "a@b.test",
+    });
+    mocks.isAdmin.mockClear();
+    mocks.isAdmin.mockResolvedValue(true);
     mocks.createAdminClient.mockClear();
     mocks.fromMock.mockClear();
     mocks.state.row = {
@@ -130,7 +140,7 @@ describe("PATCH /api/admin/contributions/[id]", () => {
   });
 
   it("does not emit audit_log entry when unauthorized", async () => {
-    mocks.isAdminAuthenticated.mockResolvedValueOnce(false);
+    mocks.getCurrentUser.mockResolvedValueOnce(null);
 
     const response = await PATCH(buildRequest({ action: "approve" }), {
       params: Promise.resolve({ id: "abc-123" }),

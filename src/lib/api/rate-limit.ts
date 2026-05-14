@@ -51,6 +51,37 @@ interface Limiters {
 
 let limiters: Limiters | null = null;
 
+const DEFAULT_IP_RPM = 60;
+const DEFAULT_PUBLIC_RPM = 600;
+const DEFAULT_PARTNER_RPM = 6000;
+const DEFAULT_WINDOW = "1 m";
+
+/**
+ * Window strings accepted by @upstash/ratelimit (e.g. `"1 m"`, `"30 s"`).
+ * Limited to a closed set so a typo in the env var cannot silently disable
+ * limiting at runtime.
+ */
+type RateLimitWindow =
+  | `${number} ms`
+  | `${number} s`
+  | `${number} m`
+  | `${number} h`
+  | `${number} d`;
+
+function parsePositiveInt(value: string | undefined, fallback: number): number {
+  if (!value) return fallback;
+  const n = parseInt(value, 10);
+  return Number.isFinite(n) && n > 0 ? n : fallback;
+}
+
+function parseWindow(value: string | undefined): RateLimitWindow {
+  const candidate = (value ?? DEFAULT_WINDOW).trim();
+  if (/^\d+\s+(ms|s|m|h|d)$/.test(candidate)) {
+    return candidate as RateLimitWindow;
+  }
+  return DEFAULT_WINDOW as RateLimitWindow;
+}
+
 /**
  * Reset the cached limiter bundle. Only intended for use in unit tests.
  * @internal
@@ -83,21 +114,32 @@ function getLimiters(): Limiters {
 
   const redis = new Redis({ url, token });
 
+  const ipRpm = parsePositiveInt(process.env.RATE_LIMIT_IP_RPM, DEFAULT_IP_RPM);
+  const publicRpm = parsePositiveInt(
+    process.env.RATE_LIMIT_PUBLIC_RPM,
+    DEFAULT_PUBLIC_RPM
+  );
+  const partnerRpm = parsePositiveInt(
+    process.env.RATE_LIMIT_PARTNER_RPM,
+    DEFAULT_PARTNER_RPM
+  );
+  const window = parseWindow(process.env.RATE_LIMIT_WINDOW);
+
   limiters = {
     redis,
     ip: new Ratelimit({
       redis,
-      limiter: Ratelimit.slidingWindow(60, "1 m"),
+      limiter: Ratelimit.slidingWindow(ipRpm, window),
       prefix: "rl:ip",
     }),
     public: new Ratelimit({
       redis,
-      limiter: Ratelimit.slidingWindow(600, "1 m"),
+      limiter: Ratelimit.slidingWindow(publicRpm, window),
       prefix: "rl:public",
     }),
     partner: new Ratelimit({
       redis,
-      limiter: Ratelimit.slidingWindow(6000, "1 m"),
+      limiter: Ratelimit.slidingWindow(partnerRpm, window),
       prefix: "rl:partner",
     }),
   };

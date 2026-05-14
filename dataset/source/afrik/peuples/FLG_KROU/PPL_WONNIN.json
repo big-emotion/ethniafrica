@@ -2,21 +2,34 @@
   "id": "PPL_WONNIN",
   "nameMain": "Wonnin",
   "languageFamilyId": "FLG_KROU",
-  "currentCountries": ["CIV"],
+  "currentCountries": [
+    "CIV"
+  ],
   "content": {
     "appellations": {
       "mainName": "Wonnin",
       "selfAppellation": "Godié",
-      "exonyms": ["Godié", "Godie", "Goddie", "Godye", "Gwèdji"],
+      "exonyms": [
+        "Godié",
+        "Godie",
+        "Goddie",
+        "Godye",
+        "Gwèdji"
+      ],
       "originOfExonyms": "Le nom Godié est l'exonyme le plus courant, dérivé du terme Gwèdji signifiant chimpanzé-panthère en langue néyo. Ce surnom leur aurait été attribué par les Néyo, peuple voisin, pour décrire le caractère belliqueux des Godié. Wonnin est le nom propre que les membres du groupe utilisent parfois pour se désigner eux-mêmes. Goddie et Godye sont des variantes orthographiques anglophones.",
       "whyProblematic": "L'identité godié est parfois contestée : certaines sources (notamment le tourisme officiel ivoirien) ont tenté de rattacher les Godié aux Dida comme sous-groupe, ce que les Godié eux-mêmes récusent, affirmant constituer un groupe ethnique à part entière.",
       "contemporaryUsage": "Godié est le terme officiellement reconnu en Côte d'Ivoire et dans les publications académiques. Les membres du groupe revendiquent leur autonomie ethnique vis-à-vis des Dida.",
       "linguisticFamily": "FLG_KROU",
       "ethnoLinguisticGroup": "Krou du sud-ouest ivoirien",
       "historicalRegion": "Environs de Sassandra et de Fresco, axe Sassandra-Gagnoa et axe Sassandra-Lakota, département de Guéyo, sud-ouest de la Côte d'Ivoire",
-      "currentCountries": ["CIV"]
+      "currentCountries": [
+        "CIV"
+      ]
     },
-    "ethnicities": ["Wonnin", "Godié"],
+    "ethnicities": [
+      "Wonnin",
+      "Godié"
+    ],
     "origins": {
       "ancientOrigins": "Les Godié font partie du grand ensemble krou du sud-ouest de la Côte d'Ivoire. Comme les autres groupes krou, leurs ancêtres auraient migré depuis l'actuel Liberia vers le territoire ivoirien, il y a environ sept siècles (bas Moyen Age). Une tradition orale rapporte qu'un changement majeur d'organisation sociale (passage du matriarcat au patriarcat) suivit la mort d'un grand guerrier légendaire, dont la trahison par sa femme transforma les règles de succession.",
       "formationPeriod": "XVe-XVIIe siecle, période de consolidation des groupes krou sur le littoral et dans la forêt du sud-ouest ivoirien, sous la pression des Manding et des Akan.",
@@ -43,8 +56,12 @@
     },
     "languages": {
       "mainLanguage": "godié",
-      "isoCodes": ["god"],
-      "dialects": ["godié (variété krou du sud-ouest ivoirien)"],
+      "isoCodes": [
+        "god"
+      ],
+      "dialects": [
+        "godié (variété krou du sud-ouest ivoirien)"
+      ],
       "vehicularRole": "Le godié est la langue maternelle de la communauté godié, utilisée comme première langue par tous les membres de la communauté ethnique. C'est une variété de la famille des langues krou (nigéro-congolaises), stable selon l'Ethnologue. Le français est la langue officielle ; le dioula est la langue véhiculaire commerciale régionale. Un alphabet de la langue godié a été élaboré et des ressources linguistiques existent."
     },
     "culture": {
@@ -63,7 +80,12 @@
       "totalPopulation": 61000,
       "referenceYear": 2025,
       "source": "Joshua Project 2025 : 61 000 Godié en Côte d'Ivoire, unique pays de résidence (https://joshuaproject.net/people_groups/11913). Religion principale : christianisme (55% chrétiens, 9% évangéliques).",
-      "distributionByCountry": [{ "countryCode": "CIV", "population": 61000 }]
+      "distributionByCountry": [
+        {
+          "population": 61000,
+          "country": "CIV"
+        }
+      ]
     },
     "sources": [
       "Godié (Peuple) – Wikipédia FR, consulté 2025 (https://fr.wikipedia.org/wiki/Godi%C3%A9_(Peuple))",

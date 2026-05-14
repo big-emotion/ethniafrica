@@ -34,23 +34,23 @@
   --country-colonial-bg: var(--afh-color-colonial-bg);
 
   /* === COULEURS — Barre démographique === */
-  --country-demo-1: #D4A843;
-  --country-demo-2: #5B8DB8;
-  --country-demo-3: #6BAF8D;
-  --country-demo-4: #B87D5B;
-  --country-demo-5: #C2532A;
-  --country-demo-6: #8B6B47;
-  --country-demo-7: #7A6B5D;
-  --country-demo-8: #9B8B7D;
-  --country-demo-9: #A89B8D;
-  --country-demo-10: #5B6B7B;
-  --country-demo-other: #D5CCC0;
+  --country-demo-1: #d4a843;
+  --country-demo-2: #5b8db8;
+  --country-demo-3: #6baf8d;
+  --country-demo-4: #b87d5b;
+  --country-demo-5: #c2532a;
+  --country-demo-6: #8b6b47;
+  --country-demo-7: #7a6b5d;
+  --country-demo-8: #9b8b7d;
+  --country-demo-9: #a89b8d;
+  --country-demo-10: #5b6b7b;
+  --country-demo-other: #d5ccc0;
 
   /* === COULEURS — Hero === */
-  --country-hero-start: #2B6B42;
-  --country-hero-mid: #1B4D2E;
-  --country-hero-end: #142E1E;
-  --country-hero-highlight: #F5C842;
+  --country-hero-start: #2b6b42;
+  --country-hero-mid: #1b4d2e;
+  --country-hero-end: #142e1e;
+  --country-hero-highlight: #f5c842;
 
   /* === TYPOGRAPHIE (aliased to --afh-font-*) === */
   --country-font-display: var(--afh-font-display);
@@ -116,33 +116,111 @@
 }
 
 /* ── Etymology variants ── */
-.etym-split { display: flex; gap: 0; border-radius: var(--country-radius-base); overflow: hidden; border: 1px solid var(--country-border); }
-.etym-half { flex: 1; padding: 16px; text-align: center; }
-.etym-word { font-family: var(--country-font-display); font-size: 28px; font-weight: 900; margin-bottom: 2px; }
-.etym-lang { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 4px; opacity: 0.6; }
-.etym-def { font-size: 14px; font-weight: 600; }
-.etym-single { padding: 20px; border-radius: var(--country-radius-base); border: 1px solid var(--country-border); background: var(--country-gold-bg); text-align: center; }
-.etym-uncertain { padding: 16px; border-radius: var(--country-radius-base); border: 1px dashed var(--country-border); text-align: center; }
-.etym-note { font-size: 12px; color: var(--country-text-soft); margin-top: 8px; line-height: 1.4; font-style: italic; }
-.etym-hypothesis { margin-top: 10px; font-size: 11px; color: var(--country-text-soft); line-height: 1.5; font-style: italic; }
-.etym-hypothesis-tag { display: inline-flex; align-items: center; gap: 3px; font-size: 9px; font-weight: 700; padding: 2px 8px; border-radius: var(--country-radius-sm, 6px); background: var(--country-earth-bg); color: var(--country-earth); font-style: normal; margin-bottom: 4px; }
+.etym-split {
+  display: flex;
+  gap: 0;
+  border-radius: var(--country-radius-base);
+  overflow: hidden;
+  border: 1px solid var(--country-border);
+}
+.etym-half {
+  flex: 1;
+  padding: 16px;
+  text-align: center;
+}
+.etym-word {
+  font-family: var(--country-font-display);
+  font-size: 28px;
+  font-weight: 900;
+  margin-bottom: 2px;
+}
+.etym-lang {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+  opacity: 0.6;
+}
+.etym-def {
+  font-size: 14px;
+  font-weight: 600;
+}
+.etym-single {
+  padding: 20px;
+  border-radius: var(--country-radius-base);
+  border: 1px solid var(--country-border);
+  background: var(--country-gold-bg);
+  text-align: center;
+}
+.etym-uncertain {
+  padding: 16px;
+  border-radius: var(--country-radius-base);
+  border: 1px dashed var(--country-border);
+  text-align: center;
+}
+.etym-note {
+  font-size: 12px;
+  color: var(--country-text-soft);
+  margin-top: 8px;
+  line-height: 1.4;
+  font-style: italic;
+}
+.etym-hypothesis {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--country-text-soft);
+  line-height: 1.5;
+  font-style: italic;
+}
+.etym-hypothesis-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--country-radius-sm, 6px);
+  background: var(--country-earth-bg);
+  color: var(--country-earth);
+  font-style: normal;
+  margin-bottom: 4px;
+}
 
 @media (min-width: 768px) {
-  .etym-half { padding: 20px; }
-  .etym-word { font-size: 32px; }
-  .etym-def { font-size: 15px; }
+  .etym-half {
+    padding: 20px;
+  }
+  .etym-word {
+    font-size: 32px;
+  }
+  .etym-def {
+    font-size: 15px;
+  }
 }
 
 @media (min-width: 1280px) {
-  .etym-half { padding: 24px; }
-  .etym-word { font-size: 36px; }
-  .etym-def { font-size: 16px; }
+  .etym-half {
+    padding: 24px;
+  }
+  .etym-word {
+    font-size: 36px;
+  }
+  .etym-def {
+    font-size: 16px;
+  }
 }
 
 /* ── Animations ── */
 @keyframes countryFadeIn {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .country-fade-in {
   animation: countryFadeIn 0.4s ease both;

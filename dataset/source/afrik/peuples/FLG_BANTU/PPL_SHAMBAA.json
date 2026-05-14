@@ -2,21 +2,34 @@
   "id": "PPL_SHAMBAA",
   "nameMain": "Shambaa",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["TZA"],
+  "currentCountries": [
+    "TZA"
+  ],
   "content": {
     "appellations": {
       "mainName": "Shambaa",
       "selfAppellation": "Wasambaa (pluriel), Msambaa (singulier)",
-      "exonyms": ["Shambala", "Sambaa", "Sambala", "Sambara", "Schambala"],
+      "exonyms": [
+        "Shambala",
+        "Sambaa",
+        "Sambala",
+        "Sambara",
+        "Schambala"
+      ],
       "originOfExonyms": "Les exonymes derivent du nom du peuple et de sa langue. Wasambaa est le terme swahili designe le peuple. Shambala est la forme la plus repandue en anglais. Le territoire est appele Usambaa ou Usambara.",
       "whyProblematic": null,
       "contemporaryUsage": "Le terme Shambaa ou Shambala est utilise dans les contextes academiques et officiels. Les membres du groupe se designent eux-memes comme Wasambaa. Les collectifs de trois peuples apparentes (Bondei, Shambaa, Zigua) utilisent l'acronyme Boshazi.",
       "linguisticFamily": "FLG_BANTU",
       "ethnoLinguisticGroup": "Bantu de la cote nord-est (North East Coastal Bantu)",
       "historicalRegion": "Monts Usambara, region de Tanga, nord-est de la Tanzanie",
-      "currentCountries": ["TZA"]
+      "currentCountries": [
+        "TZA"
+      ]
     },
-    "ethnicities": ["Shambaa", "Wasambaa"],
+    "ethnicities": [
+      "Shambaa",
+      "Wasambaa"
+    ],
     "origins": {
       "ancientOrigins": "Les Shambaa sont etablis dans les monts Usambara depuis au moins plusieurs siecles. La plupart des lignages fondateurs revendiquent des origines dans les regions de Ngulu, Zigua, Pare et Taita. Le nom de leur territoire, Shambaai, signifie 'la ou les bananiers prosperent' en kisambaa, distinguant les hauteurs fertiles des plaines arides environnantes.",
       "formationPeriod": "La formation du peuple Shambaa comme entite politique distincte remonte au milieu du XVIIIe siecle, avec l'arrivee du premier roi Kilindi, Mbegha, venu de Ngulu. Avant cela, la region etait peuplee de clans independants partages entre Vugha et Bumbuli.",
@@ -44,7 +57,9 @@
     },
     "languages": {
       "mainLanguage": "Kisambaa (Shambala)",
-      "isoCodes": ["ksb"],
+      "isoCodes": [
+        "ksb"
+      ],
       "dialects": [
         "Dialecte de Lushoto (Usambara Occidental)",
         "Dialecte de Mlalo et Mtae (nord de l'Usambara)",
@@ -70,9 +85,9 @@
       "source": "Joshua Project (2025), PeopleGroups.org (2024)",
       "distributionByCountry": [
         {
-          "countryCode": "TZA",
           "population": 1461000,
-          "notes": "Principalement dans les districts de Lushoto, Korogwe, Bumbuli et Muheza, region de Tanga"
+          "notes": "Principalement dans les districts de Lushoto, Korogwe, Bumbuli et Muheza, region de Tanga",
+          "country": "TZA"
         }
       ]
     },

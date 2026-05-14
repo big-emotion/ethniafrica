@@ -2,21 +2,34 @@
   "id": "PPL_AKYEM",
   "nameMain": "Akyem",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["GHA"],
+  "currentCountries": [
+    "GHA"
+  ],
   "content": {
     "appellations": {
       "mainName": "Akyem",
       "selfAppellation": "Akyem",
-      "exonyms": ["Akim", "Great Akim", "Acchem", "Akan Grande"],
+      "exonyms": [
+        "Akim",
+        "Great Akim",
+        "Acchem",
+        "Akan Grande"
+      ],
       "originOfExonyms": "Les formes Akim et Great Akim sont d'origine europeenne (portugaise, hollandaise et anglaise), apparaissant dans les documents commerciaux du XVIIe siecle pour designer les royaumes akyem comme principale source d'or du Golfe de Guinee. La forme Acchem apparait dans les chroniques europeennes anterieures au XVIIIe siecle.",
       "whyProblematic": null,
       "contemporaryUsage": "Le nom Akyem est officialise dans les denominations administratives du Ghana (municipalites Abuakwa Nord, Abuakwa Sud, Akyemansa, West Akim). Les trois divisions historiques – Abuakwa, Kotoku et Bosome – restent des entites de chefferie actives avec leurs Omanhene respectifs.",
       "linguisticFamily": "FLG_BENOUECONGO",
       "ethnoLinguisticGroup": "Akan (sous-groupe Twi)",
       "historicalRegion": "Region orientale du Ghana, vallee du Birem-Pra, foret du Sud-Est",
-      "currentCountries": ["GHA"]
+      "currentCountries": [
+        "GHA"
+      ]
     },
-    "ethnicities": ["Akyem Abuakwa", "Akyem Kotoku", "Akyem Bosome"],
+    "ethnicities": [
+      "Akyem Abuakwa",
+      "Akyem Kotoku",
+      "Akyem Bosome"
+    ],
     "origins": {
       "ancientOrigins": "Les Akyem sont issus de trois communautes de la frontiere orientale de l'etat d'Adansi, qui faisaient partie du vaste reseau akan Accany (ou Arcania) qui incluait aussi Adanse et Denkyira. Leurs premiers etablissements connus sont Kokobiante, Akrokerri et Sebenso. La lignee royale d'Abuakwa descend du clan Asona. L'historien Willem Bosman (1705) notait qu'Akyem fournissait autant d'or que n'importe quel autre pays de la region.",
       "formationPeriod": "A partir de la seconde moitie du XVIIe siecle, les groupes akyem traversent graduellement la riviere Pra depuis l'interieur de l'Adanse. Abuakwa sous Aninkwatia s'installe d'abord a Sebenso, puis se deplace vers la riche vallee Birem-Pra. Kotoku et Bosome restent pres du lac Bosomtwe. Au milieu du XVIIe siecle, Akyem Abuakwa se constitue en monarchie centralisee ; le premier dirigeant connu est Aninkwatia, reigne depuis Banso.",
@@ -45,7 +58,10 @@
     },
     "languages": {
       "mainLanguage": "Akan (Twi, dialecte akyem)",
-      "isoCodes": ["aka", "tw"],
+      "isoCodes": [
+        "aka",
+        "twi"
+      ],
       "dialects": [
         "Akyem Twi (partie du groupe dialectal Asante-Akyem-Kwahu)",
         "Variantes locales entre Abuakwa, Kotoku et Bosome"

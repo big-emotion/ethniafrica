@@ -147,7 +147,8 @@ _This file contains critical rules and patterns that AI agents must follow when 
 #### AFRIK Data Discipline (Domain)
 
 - **Strict models**: `public/modele-*.txt` are prescriptive — never skip, rename, or invent sections.
-- **Authorized sources only**: UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA. Never invent data.
+- **Authorized sources only**: UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA. Never invent data. Wikipedia is NOT an authorized source.
+- **Database table names** (canonical, per migration `006_afrik_schema.sql`): `afrik_language_families`, `afrik_languages`, `afrik_peoples`, `afrik_countries`, `afrik_people_countries`. The French names (`afrik_familles_linguistiques`, `afrik_langues`, `afrik_peuples`, `afrik_pays`) do NOT exist in the DB — using them causes runtime failures.
 - **Demographics**: 2025 reference year; populations must sum to **exactly 100%** per country.
 - **Colonial terms**: keep but explain why problematic; always provide auto-appellations (endonyms).
 - **Consistency**: TXT demographics MUST match database records.

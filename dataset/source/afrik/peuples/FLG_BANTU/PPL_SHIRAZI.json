@@ -2,21 +2,39 @@
   "id": "PPL_SHIRAZI",
   "nameMain": "Shirazi",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": ["TZA", "KEN", "COM", "MOZ"],
+  "currentCountries": [
+    "TZA",
+    "KEN",
+    "COM",
+    "MOZ"
+  ],
   "content": {
     "appellations": {
       "mainName": "Shirazi",
       "selfAppellation": "Washirazi (pluriel swahili)",
-      "exonyms": ["Mbwera", "Afro-Shirazi", "Swahili Shirazi"],
+      "exonyms": [
+        "Mbwera",
+        "Afro-Shirazi",
+        "Swahili Shirazi"
+      ],
       "originOfExonyms": "Le nom Shirazi fait reference a la ville de Shiraz, dans la province persane du meme nom (Iran actuel), dont les Shirazi revendiquent l'ascendance. Le terme Mbwera est utilise localement sur la cote. Le terme Afro-Shirazi a ete employe notamment dans le contexte politique de Zanzibar au XXe siecle.",
       "whyProblematic": "L'identite Shirazi est debattue entre historiens. Certains la presentent comme une origine persane authentique (soutenue par des traditions orales et la Chronique de Kilwa), d'autres y voient une construction identitaire posterieure destinee a se distinguer des Arabes omanais arrivants au XIXe siecle, ou a masquer des origines serviles. Des preuves genetiques recentes attestent d'un metissage iranien reel, mais les preuves archeologiques d'une colonisation persane massive font defaut.",
       "contemporaryUsage": "Aujourd'hui, l'identite Shirazi designe les populations de la cote swahili et des iles (Zanzibar, Pemba, Comores) qui revendiquent une ascendance persane-africaine. A Zanzibar, le terme est surtout utilise en opposition aux Arabes omanais et aux migrants africains recents du continent.",
       "linguisticFamily": "FLG_BANTU",
       "ethnoLinguisticGroup": "Swahili (cote Est-africaine)",
       "historicalRegion": "Cote swahili, iles de Zanzibar, Pemba, Comores, Kilwa",
-      "currentCountries": ["TZA", "KEN", "COM", "MOZ"]
+      "currentCountries": [
+        "TZA",
+        "KEN",
+        "COM",
+        "MOZ"
+      ]
     },
-    "ethnicities": ["Shirazi", "Afro-Shirazi", "Swahili cotier"],
+    "ethnicities": [
+      "Shirazi",
+      "Afro-Shirazi",
+      "Swahili cotier"
+    ],
     "origins": {
       "ancientOrigins": "Deux theories principales s'affrontent. La premiere, basee sur les traditions orales et la Chronique de Kilwa, affirme que des immigrants venus de Shiraz (Iran) s'installerent sur la cote est-africaine a partir du Xe siecle. Selon la legende, un prince de Shiraz interpreta un reve comme un signe de malheur et s'embarqua avec six freres pour fonder des cites-etats sur la cote. La seconde theorie soutient que les Shirazi sont des Bantous de la cote qui, apres leur islamisation aux XIe-XIIe siecles, adopterent des genealogies persanes fictives pour se distinguer des autres populations et legitimer leur statut de musulmans.",
       "formationPeriod": "X-XIIe siecles pour les premieres installations selon la tradition orale. Selon l'anthropologue Helena Jerman, l'identite Washirazi s'est constituee apres l'arrivee de l'islam, probablement au XVIIe siecle.",
@@ -45,7 +63,9 @@
     },
     "languages": {
       "mainLanguage": "Swahili (dialectes cotiers)",
-      "isoCodes": ["swh"],
+      "isoCodes": [
+        "swh"
+      ],
       "dialects": [
         "Kiunguja (dialecte de Zanzibar)",
         "Kimvita (dialecte de Mombasa)",
@@ -72,24 +92,24 @@
       "source": "PeopleGroups.org (2025); Joshua Project estimait 760 000 en Tanzanie",
       "distributionByCountry": [
         {
-          "countryCode": "TZA",
           "population": 900000,
-          "notes": "Principalement a Zanzibar, Pemba et sur la cote continentale"
+          "notes": "Principalement a Zanzibar, Pemba et sur la cote continentale",
+          "country": "TZA"
         },
         {
-          "countryCode": "KEN",
           "population": 50000,
-          "notes": "Cote kenyane, region de Mombasa et Lamu"
+          "notes": "Cote kenyane, region de Mombasa et Lamu",
+          "country": "KEN"
         },
         {
-          "countryCode": "COM",
           "population": 30000,
-          "notes": "Archipel des Comores"
+          "notes": "Archipel des Comores",
+          "country": "COM"
         },
         {
-          "countryCode": "MOZ",
           "population": 13000,
-          "notes": "Cote nord du Mozambique"
+          "notes": "Cote nord du Mozambique",
+          "country": "MOZ"
         }
       ]
     },

@@ -74,7 +74,7 @@ Prérequis: Node.js 18+ et npm.
 ```bash
 npm install
 # Copier le fichier d'environnement
-cp env.dist .env.local
+cp .env.example .env.local
 # Configurer les variables d'environnement dans .env.local
 # (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY, etc.)
 
@@ -86,7 +86,7 @@ L'application démarre sur http://localhost:3000.
 
 ### Variables d'environnement
 
-Copiez `env.dist` vers `.env.local` et configurez :
+Copiez `.env.example` vers `.env.local` et configurez :
 
 - `NEXT_PUBLIC_SUPABASE_URL` : URL de votre projet Supabase
 - `NEXT_PUBLIC_SUPABASE_ANON_KEY` : Clé anonyme Supabase

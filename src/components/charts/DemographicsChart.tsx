@@ -371,5 +371,3 @@ export const DemographicsChart = ({
       return null;
   }
 };
-
-export default DemographicsChart;

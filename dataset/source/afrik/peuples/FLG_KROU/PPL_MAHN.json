@@ -2,7 +2,10 @@
   "id": "PPL_MAHN",
   "nameMain": "Mahn",
   "languageFamilyId": "FLG_KROU",
-  "currentCountries": ["LBR", "GIN"],
+  "currentCountries": [
+    "LBR",
+    "GIN"
+  ],
   "content": {
     "appellations": {
       "mainName": "Mahn",
@@ -22,9 +25,16 @@
       "linguisticFamily": "FLG_KROU",
       "ethnoLinguisticGroup": "Mande du Sud (groupe krou élargi, branche mandé)",
       "historicalRegion": "Comté de Nimba (nord-est du Liberia), préfectures de Nzérékoré, Lola et Yomou (Guinée forestière)",
-      "currentCountries": ["LBR", "GIN"]
+      "currentCountries": [
+        "LBR",
+        "GIN"
+      ]
     },
-    "ethnicities": ["Mahn", "Mano", "Maan"],
+    "ethnicities": [
+      "Mahn",
+      "Mano",
+      "Maan"
+    ],
     "origins": {
       "ancientOrigins": "Les Mahn descendent des peuples mandé. Leurs ancêtres appartenaient au clan Soumano/Danhou Maghan de la Gbara, au sein de l'empire du Mali. Après la fragmentation de cet empire, ils migrèrent vers la Guinée forestière où ils formèrent un royaume dans la région de Youmou. Selon la tradition orale recueillie par John Gbatu (1919-2010), le nom Nimba vient du mot mano Niemba/Nyamba Tun signifiant les collines sur lesquelles les jeunes filles glissent et tombent.",
       "formationPeriod": "XIIIe-XVIIe siecle : premières migrations depuis le Soudan occidental vers l'empire du Mali, puis vers la Guinée forestière (XIIIe-XIVe siècles), avec une vague principale vers le Liberia aux XVIe-XVIIe siècles sous la pression des Mandingos qui poussèrent les Kpellé vers le sud et à leur tour les Mandé-Mahn plus au sud.",
@@ -51,7 +61,9 @@
     },
     "languages": {
       "mainLanguage": "maan (mano)",
-      "isoCodes": ["mev"],
+      "isoCodes": [
+        "mev"
+      ],
       "dialects": [
         "maan (Liberia)",
         "maan (Guinée)",
@@ -76,8 +88,14 @@
       "referenceYear": 2025,
       "source": "Joshua Project 2025 : 377 000 Maan au Liberia, 122 000 en Guinée, total 499 000 (https://joshuaproject.net/people_groups/16121/GV). Wikipedia Mano people : 472 000 à 510 000 estimés.",
       "distributionByCountry": [
-        { "countryCode": "LBR", "population": 377000 },
-        { "countryCode": "GIN", "population": 122000 }
+        {
+          "population": 377000,
+          "country": "LBR"
+        },
+        {
+          "population": 122000,
+          "country": "GIN"
+        }
       ]
     },
     "sources": [

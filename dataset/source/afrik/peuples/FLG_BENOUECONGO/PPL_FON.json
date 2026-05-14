@@ -2,7 +2,10 @@
   "id": "PPL_FON",
   "nameMain": "Fon",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["BEN", "TGO"],
+  "currentCountries": [
+    "BEN",
+    "TGO"
+  ],
   "content": {
     "appellations": {
       "mainName": "Fon",
@@ -18,7 +21,10 @@
       "linguisticFamily": "FLG_BENOUECONGO",
       "ethnoLinguisticGroup": "Gbe oriental (branche Kwa du Niger-Congo)",
       "historicalRegion": "Sud et centre du Bénin (ancien Dahomey) ; région d'Abomey, Ouidah, Allada",
-      "currentCountries": ["BEN", "TGO"]
+      "currentCountries": [
+        "BEN",
+        "TGO"
+      ]
     },
     "ethnicities": [
       "Fon proprement dits (Agbomenu) — région d'Abomey, plateau central du Bénin",
@@ -54,7 +60,9 @@
     },
     "languages": {
       "mainLanguage": "Fon (Fɔ̀ngbè)",
-      "isoCodes": ["fon"],
+      "isoCodes": [
+        "fon"
+      ],
       "dialects": [
         "Fongbe proprement dit (Abomey-Bohicon, standard)",
         "Goun (Porto-Novo) — variante distincte",
@@ -81,9 +89,14 @@
       "referenceYear": 2025,
       "source": "Estimations basées sur Wikipedia EN (3 500 000), Joshua Project (2 368 000 au Bénin, 2 523 000 toutes zones), The World of Info (Bénin : 40% des 14,7M hab. = env. 5,8M pour le groupe Fon-Aja élargi). Estimation 2025 pour les Fon stricto sensu : 4 millions.",
       "distributionByCountry": [
-        { "country": "BEN", "population": 3700000 },
-        { "country": "TGO", "population": 200000 },
-        { "country": "Autres (NGA, GHA, FRA)", "population": 100000 }
+        {
+          "country": "BEN",
+          "population": 3700000
+        },
+        {
+          "country": "TGO",
+          "population": 200000
+        }
       ]
     },
     "sources": [

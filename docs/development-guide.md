@@ -12,7 +12,7 @@
 git clone https://github.com/big-emotion/ethniafrica.git
 cd ethniafrica
 npm install
-cp env.dist .env.local
+cp .env.example .env.local
 # Fill in .env.local (see below)
 ```
 
