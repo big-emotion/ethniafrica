@@ -1,0 +1,96 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Design System/Type" />
+
+# Typography — `--afh-text-*`
+
+Defined in `src/styles/tokens/type.css`. Two families layered on top of the
+`next/font/google` imports already wired in `src/app/layout.tsx`:
+
+| Family | Variable | Usage |
+| --- | --- | --- |
+| **Fraunces** | `--font-fraunces` / `--afh-font-display` | Hero, H1–H3 — editorial display |
+| **Nunito Sans** | `--font-nunito-sans` / `--afh-font-body` | Body, captions, UI |
+
+## 9-role scale
+
+Mobile-first, with two scale-up breakpoints (768 px tablet, 1200 px desktop).
+Sizes below are the **mobile** values.
+
+<div style={{ display: "grid", gap: "1.5rem", margin: "1.5rem 0" }}>
+  <div>
+    <div style={{ fontFamily: "var(--afh-font-display)", fontSize: "var(--afh-text-hero)", fontWeight: 700, lineHeight: 1.1 }}>
+      Hero · 34 px
+    </div>
+    <code>--afh-text-hero</code>
+  </div>
+  <div>
+    <div style={{ fontFamily: "var(--afh-font-display)", fontSize: "var(--afh-text-h1)", fontWeight: 700, lineHeight: 1.2 }}>
+      H1 · 24 px
+    </div>
+    <code>--afh-text-h1</code>
+  </div>
+  <div>
+    <div style={{ fontFamily: "var(--afh-font-display)", fontSize: "var(--afh-text-h2)", fontWeight: 700, lineHeight: 1.25 }}>
+      H2 · 18 px
+    </div>
+    <code>--afh-text-h2</code>
+  </div>
+  <div>
+    <div style={{ fontFamily: "var(--afh-font-display)", fontSize: "var(--afh-text-h3)", fontWeight: 600, lineHeight: 1.3 }}>
+      H3 · 16 px
+    </div>
+    <code>--afh-text-h3</code>
+  </div>
+  <div>
+    <div style={{ fontFamily: "var(--afh-font-body)", fontSize: "var(--afh-text-body)", lineHeight: 1.6 }}>
+      Body · 14 px — Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </div>
+    <code>--afh-text-body</code>
+  </div>
+  <div>
+    <div style={{ fontFamily: "var(--afh-font-body)", fontSize: "var(--afh-text-small)", lineHeight: 1.5 }}>
+      Small · 12 px
+    </div>
+    <code>--afh-text-small</code>
+  </div>
+  <div>
+    <div style={{ fontFamily: "var(--afh-font-body)", fontSize: "var(--afh-text-caption)", lineHeight: 1.45 }}>
+      Caption · 11 px
+    </div>
+    <code>--afh-text-caption</code>
+  </div>
+  <div>
+    <div style={{ fontFamily: "var(--afh-font-body)", fontSize: "var(--afh-text-micro)", lineHeight: 1.4, textTransform: "uppercase", letterSpacing: "0.1em" }}>
+      Micro · 10 px
+    </div>
+    <code>--afh-text-micro</code>
+  </div>
+  <div>
+    <div style={{ fontFamily: "var(--afh-font-body)", fontSize: "var(--afh-text-nano)", lineHeight: 1.4, textTransform: "uppercase", letterSpacing: "0.12em" }}>
+      Nano · 9 px
+    </div>
+    <code>--afh-text-nano</code>
+  </div>
+</div>
+
+## Density profiles (UX-DR48)
+
+`line-height` aliases that callers attach to body containers depending on context.
+
+| Token | Value | Use case |
+| --- | --- | --- |
+| `--afh-density-reading` | `1.65` | Public fiches, long-form articles |
+| `--afh-density-moderation` | `1.35` | Admin tables, contribution diffs |
+| `--afh-density-developer` | `1.35` | Debug surfaces, API explorer |
+
+## Weights
+
+| Variable | Value |
+| --- | --- |
+| `--afh-weight-regular` | 400 |
+| `--afh-weight-medium` | 500 |
+| `--afh-weight-semibold` | 600 |
+| `--afh-weight-bold` | 700 |
+| `--afh-weight-heavy` | 800 |
+| `--afh-weight-black` | 900 |

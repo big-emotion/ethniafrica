@@ -1,0 +1,52 @@
+/* ============================================================
+   Africa History — Spacing Tokens
+   ETNI-21 · UX-DR4
+   ------------------------------------------------------------
+   4 px base, T-shirt scale plus numeric aliases. Used for
+   padding, margin, gap, and absolute offsets across all L3
+   components.
+   ============================================================ */
+
+:root {
+  --afh-space-0: 0;
+  --afh-space-px: 1px;
+  --afh-space-xs: 4px; /* 1 ×  */
+  --afh-space-sm: 6px;
+  --afh-space-md: 8px; /* 2 ×  */
+  --afh-space-base: 10px;
+  --afh-space-lg: 12px; /* 3 ×  */
+  --afh-space-xl: 14px;
+  --afh-space-2xl: 16px; /* 4 ×  */
+  --afh-space-3xl: 18px;
+  --afh-space-4xl: 20px; /* 5 ×  */
+  --afh-space-5xl: 24px; /* 6 ×  */
+  --afh-space-6xl: 32px; /* 8 ×  */
+  --afh-space-7xl: 40px;
+  --afh-space-8xl: 48px;
+  --afh-space-9xl: 64px;
+  --afh-space-10xl: 96px;
+
+  /* Layout-level aliases (mobile-first containers) */
+  --afh-page-padding: 12px;
+  --afh-card-padding: 18px;
+  --afh-section-gap: 24px;
+  --afh-container-max: 430px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --afh-page-padding: 24px;
+    --afh-card-padding: 24px;
+    --afh-section-gap: 32px;
+    --afh-container-max: 720px;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --afh-page-padding: 32px;
+    --afh-card-padding: 32px;
+    --afh-section-gap: 48px;
+    --afh-container-max: 800px;
+  }
+}

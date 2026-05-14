@@ -1,0 +1,59 @@
+/* ============================================================
+   Africa History — Motion Tokens
+   ETNI-21 · UX-DR6, UX-DR49 rule 4
+   ------------------------------------------------------------
+   Durations, easings, and named transitions.
+
+   Accessibility: when `prefers-reduced-motion: reduce` is set,
+   every duration collapses to 0.01 ms and transforms are
+   neutralised — only opacity transitions remain. This is the
+   contract callers can rely on.
+   ============================================================ */
+
+:root {
+  /* Durations */
+  --afh-duration-instant: 0.01ms;
+  --afh-duration-fast: 120ms;
+  --afh-duration-base: 200ms;
+  --afh-duration-slow: 320ms;
+  --afh-duration-fade: 400ms;
+  --afh-duration-pageload: 600ms;
+
+  /* Easings */
+  --afh-ease-linear: linear;
+  --afh-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --afh-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --afh-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --afh-ease-default: ease;
+
+  /* Composed transitions */
+  --afh-transition-color:
+    color var(--afh-duration-base) var(--afh-ease-in-out),
+    background-color var(--afh-duration-base) var(--afh-ease-in-out),
+    border-color var(--afh-duration-base) var(--afh-ease-in-out);
+  --afh-transition-opacity: opacity var(--afh-duration-base)
+    var(--afh-ease-in-out);
+  --afh-transition-transform: transform var(--afh-duration-base)
+    var(--afh-ease-in-out);
+  --afh-transition-all: all var(--afh-duration-base) var(--afh-ease-in-out);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   prefers-reduced-motion · UX-DR49 rule 4
+   All durations → 0.01 ms · transforms neutralised · opacity only
+   ───────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --afh-duration-instant: 0.01ms;
+    --afh-duration-fast: 0.01ms;
+    --afh-duration-base: 0.01ms;
+    --afh-duration-slow: 0.01ms;
+    --afh-duration-fade: 0.01ms;
+    --afh-duration-pageload: 0.01ms;
+
+    --afh-transition-color: opacity 0.01ms linear;
+    --afh-transition-opacity: opacity 0.01ms linear;
+    --afh-transition-transform: opacity 0.01ms linear;
+    --afh-transition-all: opacity 0.01ms linear;
+  }
+}

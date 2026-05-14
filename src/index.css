@@ -1,4 +1,13 @@
-@import './styles/country-tokens.css';
+/* Africa History (--afh-*) token foundation — ETNI-21.
+   Imported BEFORE country-tokens.css so `--country-*` aliases
+   can layer on top during the one-release deprecation window. */
+@import "./styles/tokens/color.css";
+@import "./styles/tokens/type.css";
+@import "./styles/tokens/space.css";
+@import "./styles/tokens/elevation.css";
+@import "./styles/tokens/motion.css";
+@import "./styles/tokens/radius.css";
+@import "./styles/country-tokens.css";
 
 @tailwind base;
 @tailwind components;
@@ -45,7 +54,7 @@ All colors MUST be HSL.
     --ring: 18 70% 52%;
 
     --radius: 0.75rem;
-    
+
     /* Custom African-inspired tokens */
     --terracotta: 18 70% 52%;
     --terracotta-light: 18 65% 65%;
@@ -54,15 +63,15 @@ All colors MUST be HSL.
     --earth-light: 25 25% 45%;
     --ochre: 32 75% 55%;
     --sand: 35 40% 85%;
-    
+
     /* Gradients */
     --gradient-warm: linear-gradient(135deg, hsl(18 70% 52%), hsl(42 88% 58%));
     --gradient-earth: linear-gradient(180deg, hsl(35 35% 97%), hsl(35 40% 92%));
-    
+
     /* Shadows */
     --shadow-warm: 0 10px 40px -10px hsl(18 70% 52% / 0.2);
     --shadow-soft: 0 4px 20px -5px hsl(25 25% 15% / 0.08);
-    
+
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -111,7 +120,7 @@ All colors MUST be HSL.
     --border: 25 15% 24%;
     --input: 25 15% 24%;
     --ring: 18 70% 55%;
-    
+
     --terracotta: 18 70% 55%;
     --terracotta-light: 18 65% 68%;
     --gold: 42 85% 60%;
@@ -119,7 +128,7 @@ All colors MUST be HSL.
     --earth-light: 35 20% 65%;
     --ochre: 32 75% 58%;
     --sand: 35 15% 28%;
-    
+
     --shadow-warm: 0 10px 40px -10px hsl(18 70% 55% / 0.3);
     --shadow-soft: 0 4px 20px -5px hsl(0 0% 0% / 0.3);
     --sidebar-background: 240 5.9% 10%;
@@ -142,8 +151,13 @@ All colors MUST be HSL.
     @apply bg-background text-foreground font-sans antialiased;
     font-family: var(--font-inter), sans-serif;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-display;
     font-family: var(--font-playfair), serif;
   }
@@ -153,19 +167,19 @@ All colors MUST be HSL.
   .gradient-warm {
     background: var(--gradient-warm);
   }
-  
+
   .gradient-earth {
     background: var(--gradient-earth);
   }
-  
+
   .shadow-warm {
     box-shadow: var(--shadow-warm);
   }
-  
+
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
-  
+
   .transition-smooth {
     transition: var(--transition-smooth);
   }

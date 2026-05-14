@@ -1,0 +1,18 @@
+/* ============================================================
+   Africa History — Radius Tokens
+   ETNI-21
+   ------------------------------------------------------------
+   Soft, organic curves echoing earth/terracotta aesthetic.
+   ============================================================ */
+
+:root {
+  --afh-radius-0: 0;
+  --afh-radius-sm: 4px;
+  --afh-radius-md: 6px;
+  --afh-radius-base: 12px;
+  --afh-radius-lg: 14px;
+  --afh-radius-xl: 16px;
+  --afh-radius-2xl: 20px;
+  --afh-radius-3xl: 28px;
+  --afh-radius-full: 9999px;
+}
