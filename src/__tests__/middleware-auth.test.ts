@@ -1,8 +1,14 @@
-import { describe, it, expect, vi, beforeEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 
 // --- mock validateApiKey before importing middleware ---
 vi.mock("@/lib/api/auth", () => ({
   validateApiKey: vi.fn(),
+}));
+
+// Rate limiting is exercised by its own test file; here it must always
+// pass-through so the auth branch is the only thing under test.
+vi.mock("@/lib/api/rate-limit", () => ({
+  applyRateLimit: vi.fn().mockResolvedValue(null),
 }));
 
 // Use vi.hoisted so these are available when vi.mock factories run (hoisted to top)
@@ -156,6 +162,101 @@ describe("middleware - /api/v2/* authentication", () => {
       expect.anything()
     );
     expect(mockNextResponseNext).toHaveBeenCalled();
+  });
+
+  describe("same-origin bypass", () => {
+    // The same-origin gate only matters in production (NODE_ENV !== "production"
+    // already short-circuits via devBypass). Pin the env so the test exercises
+    // the real prod path rather than the developer fail-open.
+    beforeEach(() => {
+      vi.stubEnv("NODE_ENV", "production");
+    });
+
+    afterEach(() => {
+      vi.unstubAllEnvs();
+    });
+
+    it("bypasses API key requirement when Origin matches request host", async () => {
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        {
+          origin: "https://example.com",
+        }
+      );
+      await middleware(request);
+
+      expect(mockNextResponseJson).not.toHaveBeenCalled();
+      expect(mockNextResponseNext).toHaveBeenCalled();
+
+      const passedHeaders: Headers =
+        mockNextResponseNext.mock.calls[0][0]?.request?.headers;
+      expect(passedHeaders?.get("x-api-key-id")).toBe("same-origin");
+    });
+
+    it("bypasses API key requirement when Referer matches request host", async () => {
+      const request = createMockRequest(
+        "https://example.com/api/v2/language-families",
+        {
+          referer: "https://example.com/fr",
+        }
+      );
+      await middleware(request);
+
+      expect(mockNextResponseJson).not.toHaveBeenCalled();
+      expect(mockNextResponseNext).toHaveBeenCalled();
+    });
+
+    it("returns 401 when Origin is cross-origin", async () => {
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        {
+          origin: "https://attacker.com",
+        }
+      );
+      await middleware(request);
+
+      expect(mockNextResponseJson).toHaveBeenCalledWith(
+        { error: "missing_api_key" },
+        { status: 401 }
+      );
+    });
+
+    it("returns 401 when Referer is cross-origin", async () => {
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        {
+          referer: "https://attacker.com/page",
+        }
+      );
+      await middleware(request);
+
+      expect(mockNextResponseJson).toHaveBeenCalledWith(
+        { error: "missing_api_key" },
+        { status: 401 }
+      );
+    });
+
+    it("still validates Bearer token when both API key and same-origin headers are present", async () => {
+      vi.mocked(validateApiKey).mockResolvedValue({
+        valid: false,
+        reason: "invalid_api_key",
+      });
+
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        {
+          authorization: "Bearer bad-key",
+          origin: "https://example.com",
+        }
+      );
+      await middleware(request);
+
+      // Bearer key wins: a present-but-invalid key must not be masked by same-origin
+      expect(mockNextResponseJson).toHaveBeenCalledWith(
+        { error: "invalid_api_key" },
+        { status: 401 }
+      );
+    });
   });
 
   it("should extract the Bearer token and pass it to validateApiKey", async () => {
