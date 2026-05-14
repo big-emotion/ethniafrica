@@ -2,7 +2,10 @@
   "id": "PPL_FON",
   "nameMain": "Fon",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["BEN", "TGO"],
+  "currentCountries": [
+    "BEN",
+    "TGO"
+  ],
   "content": {
     "appellations": {
       "mainName": "Fon",
@@ -18,7 +21,10 @@
       "linguisticFamily": "FLG_BENOUECONGO",
       "ethnoLinguisticGroup": "Gbe oriental (branche Kwa du Niger-Congo)",
       "historicalRegion": "Sud et centre du Bénin (ancien Dahomey) ; région d'Abomey, Ouidah, Allada",
-      "currentCountries": ["BEN", "TGO"]
+      "currentCountries": [
+        "BEN",
+        "TGO"
+      ]
     },
     "ethnicities": [
       "Fon proprement dits (Agbomenu) — région d'Abomey, plateau central du Bénin",
@@ -54,7 +60,9 @@
     },
     "languages": {
       "mainLanguage": "Fon (Fɔ̀ngbè)",
-      "isoCodes": ["fon"],
+      "isoCodes": [
+        "fon"
+      ],
       "dialects": [
         "Fongbe proprement dit (Abomey-Bohicon, standard)",
         "Goun (Porto-Novo) — variante distincte",

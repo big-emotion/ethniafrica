@@ -1,10 +1,17 @@
--- Migration 014 — Enable Row Level Security on AFRIK tables
+-- Migration 017 — Enable Row Level Security on AFRIK tables
 --
 -- Context: migration 006 created the 5 AFRIK tables but never enabled RLS,
 -- leaving them open to INSERT/UPDATE/DELETE from anyone holding the public
 -- anon key (which ships in the browser bundle). All other tables in the
 -- schema (V1 entities, module-zero fabric, api_keys, user_roles) had RLS;
 -- AFRIK was the outlier.
+--
+-- Status (2026-05-14): equivalent statements were already applied to both
+-- ethniafrica (prod) and ethniafrica-staging out-of-band, under the name
+-- `afrik_enable_rls_public_read`. Verified: RLS enabled on all 5 tables,
+-- 1 SELECT policy each. This file is the canonical version-controlled
+-- record. All statements are idempotent (DROP POLICY IF EXISTS, ALTER
+-- TABLE ... ENABLE RLS), so re-applying is a safe no-op.
 --
 -- Policy: public read (SELECT) only. Writes are performed exclusively by
 -- the service-role key (which bypasses RLS) via:
