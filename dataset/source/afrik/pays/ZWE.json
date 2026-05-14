@@ -126,21 +126,30 @@
       "Wikipedia – Zimbabwe, Great Zimbabwe, Shona people, Ndebele people",
       "Études anthropologiques sur les peuples bantous du Zimbabwe",
       "Études historiques sur le royaume du Grand Zimbabwe",
-      "Recensements zimbabwéens"
+      "Recensements zimbabwéens",
+      "CIA World Factbook – Zimbabwe (ethnic groups, 2012 census)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Shona",
           "population": 13600000,
-          "percentageInCountry": 80,
+          "percentageInCountry": 82,
           "percentageInAfrica": 7.6,
           "peopleId": "PPL_SHONA",
           "region": "Toutes les régions (majoritaires dans les régions centrales, orientales et septentrionales)",
           "languageFamily": "FLG_BANTU"
         },
         {
-          "name": "Ndebele ("
+          "name": "Ndebele (",
+          "percentageInCountry": 14
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 4
         }
       ]
     }

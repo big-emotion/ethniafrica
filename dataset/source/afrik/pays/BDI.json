@@ -101,7 +101,8 @@
       "ONU – Données démographiques 2025",
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les Grands Lacs",
-      "Études historiques sur le royaume du Burundi"
+      "Études historiques sur le royaume du Burundi",
+      "CIA World Factbook – Burundi (ethnic groups)"
     ],
     "demographics": {
       "peoples": [
@@ -109,19 +110,22 @@
           "name": "Hutu (Burundi)",
           "peopleId": "PPL_HUTU_BURUNDI",
           "region": "Plateaux du Burundi",
-          "languageFamily": "FLG_BANTU"
+          "languageFamily": "FLG_BANTU",
+          "percentageInCountry": 85
         },
         {
           "name": "Tutsi (Burundi)",
           "peopleId": "PPL_TUTSI_BURUNDI",
           "region": "Plateaux du Burundi",
-          "languageFamily": "FLG_BANTU"
+          "languageFamily": "FLG_BANTU",
+          "percentageInCountry": 14
         },
         {
           "name": "Twa",
           "peopleId": "PPL_TWA",
           "region": "Forêts et zones rurales",
-          "languageFamily": "FLG_BANTU"
+          "languageFamily": "FLG_BANTU",
+          "percentageInCountry": 1
         }
       ]
     }

@@ -146,14 +146,15 @@
       "ONU – Données démographiques 2025",
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples sénégalais",
-      "Études historiques sur l'empire du Jolof"
+      "Études historiques sur l'empire du Jolof",
+      "CIA World Factbook – Senegal (ethnic groups, 2019 est.)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Wolof",
           "population": 7380000,
-          "percentageInCountry": 41,
+          "percentageInCountry": 39.7,
           "percentageInAfrica": 0.52,
           "peopleId": "PPL_WOLOF",
           "region": "Dakar, Thiès, Saint-Louis",
@@ -162,7 +163,7 @@
         {
           "name": "Peul / Fulani",
           "population": 4500000,
-          "percentageInCountry": 25,
+          "percentageInCountry": 27.5,
           "percentageInAfrica": 0.31,
           "peopleId": "PPL_FULA",
           "region": "Nord, vallée du fleuve Sénégal (Fouta Toro)",
@@ -171,7 +172,7 @@
         {
           "name": "Sérère",
           "population": 2700000,
-          "percentageInCountry": 15,
+          "percentageInCountry": 16,
           "percentageInAfrica": 0.19,
           "peopleId": "PPL_SERERE",
           "region": "Centre-Ouest (Fatick, Kaolack)",
@@ -180,10 +181,17 @@
         {
           "name": "Diola / Jola",
           "population": 900000,
-          "percentageInCountry": 5,
+          "percentageInCountry": 4.2,
           "percentageInAfrica": 0.06,
           "peopleId": "PPL_DIOLA",
           "region": "Casamance ("
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 10
         }
       ]
     }

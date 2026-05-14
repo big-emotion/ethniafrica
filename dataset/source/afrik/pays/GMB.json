@@ -199,14 +199,15 @@
       "ONU / UNFPA – Démographie Gambie 2025",
       "Recensements gambiens",
       "Études anthropologiques sur les peuples de la Gambie",
-      "Études historiques sur l'empire du Mali et la Sénégambie"
+      "Études historiques sur l'empire du Mali et la Sénégambie",
+      "CIA World Factbook – The Gambia (ethnic groups, 2013 est.)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Mandinka",
           "population": 900000,
-          "percentageInCountry": 34,
+          "percentageInCountry": 33.8,
           "peopleId": "PPL_MALINKE",
           "region": "Toutes les régions de la Gambie, majoritaires (vallée du fleuve)",
           "languageFamily": "FLG_MANDE"
@@ -214,7 +215,7 @@
         {
           "name": "Fula / Peul",
           "population": 580000,
-          "percentageInCountry": 22,
+          "percentageInCountry": 21.8,
           "peopleId": "PPL_FULA",
           "region": "Toutes les régions de la Gambie (zones pastorales)",
           "languageFamily": "FLG_ATLANTIQUE"
@@ -222,9 +223,16 @@
         {
           "name": "Wolof",
           "population": 320000,
-          "percentageInCountry": 12,
+          "percentageInCountry": 12.2,
           "peopleId": "PPL_WOLOF",
           "region": ""
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 32
         }
       ]
     }
