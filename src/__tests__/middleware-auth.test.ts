@@ -78,6 +78,14 @@ describe("middleware - /api/v2/* authentication", () => {
   beforeEach(() => {
     mockResponseHeaders.clear();
     vi.clearAllMocks();
+    // The auth gate is intentionally disabled outside production (devBypass).
+    // Pin NODE_ENV=production so this suite exercises the real gate rather
+    // than the dev fail-open.
+    vi.stubEnv("NODE_ENV", "production");
+  });
+
+  afterEach(() => {
+    vi.unstubAllEnvs();
   });
 
   it("should return 401 with missing_api_key when no Authorization header", async () => {
@@ -165,17 +173,6 @@ describe("middleware - /api/v2/* authentication", () => {
   });
 
   describe("same-origin bypass", () => {
-    // The same-origin gate only matters in production (NODE_ENV !== "production"
-    // already short-circuits via devBypass). Pin the env so the test exercises
-    // the real prod path rather than the developer fail-open.
-    beforeEach(() => {
-      vi.stubEnv("NODE_ENV", "production");
-    });
-
-    afterEach(() => {
-      vi.unstubAllEnvs();
-    });
-
     it("bypasses API key requirement when Origin matches request host", async () => {
       const request = createMockRequest(
         "https://example.com/api/v2/countries",

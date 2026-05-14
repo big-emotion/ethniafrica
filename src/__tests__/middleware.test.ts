@@ -298,20 +298,29 @@ describe("config", () => {
     expect(config.matcher).toBeDefined();
   });
 
-  it("matcher excludes static assets and includes app routes", () => {
-    const rawPattern = Array.isArray(config.matcher)
-      ? config.matcher[0]
-      : String(config.matcher);
-    const regex = new RegExp(`^${rawPattern}$`);
+  it("matcher includes /api/v2/* and the app catch-all, excludes static assets", () => {
+    expect(Array.isArray(config.matcher)).toBe(true);
+    const patterns = (config.matcher as string[]).map(
+      (p) => new RegExp(`^${p}$`)
+    );
 
-    expect(regex.test("/")).toBe(true);
-    expect(regex.test("/api/health")).toBe(true);
-    expect(regex.test("/about")).toBe(true);
-    expect(regex.test("/some/nested/page")).toBe(true);
+    const matchesAny = (path: string) => patterns.some((r) => r.test(path));
 
-    expect(regex.test("/_next/static/chunk.js")).toBe(false);
-    expect(regex.test("/_next/static/css/main.css")).toBe(false);
-    expect(regex.test("/_next/image?url=foo")).toBe(false);
-    expect(regex.test("/favicon.ico")).toBe(false);
+    // App routes
+    expect(matchesAny("/")).toBe(true);
+    expect(matchesAny("/api/health")).toBe(true);
+    expect(matchesAny("/about")).toBe(true);
+    expect(matchesAny("/some/nested/page")).toBe(true);
+
+    // /api/v2/* must match (rate-limit gate must always run there)
+    expect(matchesAny("/api/v2/countries")).toBe(true);
+    expect(matchesAny("/api/v2/peoples/PPL_YORUBA")).toBe(true);
+
+    // Static assets must not match
+    expect(matchesAny("/_next/static/chunk.js")).toBe(false);
+    expect(matchesAny("/_next/static/css/main.css")).toBe(false);
+    expect(matchesAny("/_next/image?url=foo")).toBe(false);
+    expect(matchesAny("/favicon.ico")).toBe(false);
+    expect(matchesAny("/logo.svg")).toBe(false);
   });
 });
