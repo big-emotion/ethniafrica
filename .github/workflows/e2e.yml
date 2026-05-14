@@ -1,0 +1,76 @@
+name: E2E — Playwright
+
+on:
+  pull_request:
+    branches: [main, recette]
+  push:
+    branches: [main, recette]
+
+permissions:
+  contents: read
+
+# E2E suite is mobile-first against the reference device profile (ASR-7).
+# Persona thresholds (Amina 10 s, Ngozi 30 s) are SLOs — they assume the
+# CPU + network throttle encoded in playwright.config.ts.
+jobs:
+  e2e:
+    name: Playwright
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    env:
+      # Test Supabase project — NEVER production credentials.
+      # Provide these as repository secrets pointing at a dedicated test
+      # project (or local Supabase CLI running in a separate job step).
+      NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.TEST_SUPABASE_URL }}
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.TEST_SUPABASE_SERVICE_ROLE_KEY }}
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.TEST_SUPABASE_ANON_KEY }}
+      CI: "true"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Build app
+        run: npm run build
+
+      - name: Start app
+        run: npx next start -p 3000 &
+        env:
+          PORT: 3000
+
+      - name: Wait for app
+        run: |
+          for i in 1 2 3 4 5 6 7 8 9 10 11 12; do
+            if curl -fsS http://localhost:3000/fr > /dev/null; then
+              echo "App ready"; exit 0
+            fi
+            echo "Waiting for app... ($i/12)"; sleep 5
+          done
+          echo "App did not become ready"; exit 1
+
+      - name: Run Playwright
+        run: npx playwright test
+        env:
+          BASE_URL: http://localhost:3000
+          SKIP_WEB_SERVER: "1"
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
