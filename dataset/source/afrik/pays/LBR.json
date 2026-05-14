@@ -333,14 +333,15 @@
       "ONU / UNFPA – Démographie Libéria 2025",
       "Recensements libériens",
       "Études anthropologiques sur les peuples du Libéria",
-      "Études historiques sur la fondation du Libéria et l'American Colonization Society"
+      "Études historiques sur la fondation du Libéria et l'American Colonization Society",
+      "CIA World Factbook – Liberia (ethnic groups, 2008 census)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Kpelle",
           "population": 1040000,
-          "percentageInCountry": 20,
+          "percentageInCountry": 20.3,
           "peopleId": "PPL_KPELLE",
           "region": "Intérieur du Libéria",
           "languageFamily": "FLG_MANDE"
@@ -348,7 +349,7 @@
         {
           "name": "Bassa",
           "population": 675000,
-          "percentageInCountry": 13,
+          "percentageInCountry": 13.4,
           "peopleId": "PPL_BASSA_LIBERIA",
           "region": "Côte libérienne (centre et sud)",
           "languageFamily": "FLG_MANDE"
@@ -372,7 +373,7 @@
         {
           "name": "Mano",
           "population": 365000,
-          "percentageInCountry": 7,
+          "percentageInCountry": 7.9,
           "peopleId": "PPL_MANO",
           "region": "Nord du Libéria",
           "languageFamily": "FLG_MANDE"
@@ -380,7 +381,7 @@
         {
           "name": "Kru",
           "population": 365000,
-          "percentageInCountry": 7,
+          "percentageInCountry": 6,
           "peopleId": "PPL_KRU",
           "region": "Côte du Libéria",
           "languageFamily": "FLG_KROU"
@@ -388,7 +389,7 @@
         {
           "name": "Vai",
           "population": 310000,
-          "percentageInCountry": 6,
+          "percentageInCountry": 4,
           "peopleId": "PPL_VAI",
           "region": "Côte ouest du Libéria",
           "languageFamily": "FLG_MANDE"
@@ -396,7 +397,7 @@
         {
           "name": "Gola",
           "population": 260000,
-          "percentageInCountry": 5,
+          "percentageInCountry": 4.4,
           "peopleId": "PPL_GOLA",
           "region": "Ouest du Libéria",
           "languageFamily": "FLG_ATLANTIQUE"
@@ -404,7 +405,7 @@
         {
           "name": "Loma",
           "population": 155000,
-          "percentageInCountry": 3,
+          "percentageInCountry": 5.1,
           "peopleId": "PPL_TOMA_LOMA",
           "region": "Nord du Libéria",
           "languageFamily": "FLG_MANDE"
@@ -412,7 +413,7 @@
         {
           "name": "Kissi",
           "population": 210000,
-          "percentageInCountry": 4,
+          "percentageInCountry": 4.8,
           "peopleId": "PPL_KISSI",
           "region": "Nord du Libéria",
           "languageFamily": "FLG_ATLANTIQUE"
@@ -420,7 +421,7 @@
         {
           "name": "Mandingo / Mandinka",
           "population": 105000,
-          "percentageInCountry": 2,
+          "percentageInCountry": 3.2,
           "peopleId": "PPL_MALINKE",
           "region": "Toutes les régions du Libéria",
           "languageFamily": "FLG_MANDE"
@@ -428,7 +429,7 @@
         {
           "name": "Dei",
           "population": 105000,
-          "percentageInCountry": 2,
+          "percentageInCountry": 0.3,
           "peopleId": "PPL_DEI",
           "region": "Côte du Libéria",
           "languageFamily": "FLG_ATLANTIQUE"
@@ -436,7 +437,7 @@
         {
           "name": "Mende",
           "population": 105000,
-          "percentageInCountry": 2,
+          "percentageInCountry": 1.3,
           "peopleId": "PPL_MENDE",
           "region": "Diverses régions du Libéria",
           "languageFamily": "FLG_MANDE"
@@ -444,9 +445,16 @@
         {
           "name": "Américano-Libériens",
           "population": 105000,
-          "percentageInCountry": 2,
+          "percentageInCountry": 2.5,
           "peopleId": "PPL_AMERICANO_LIBERIENS",
           "region": ""
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 4
         }
       ]
     }

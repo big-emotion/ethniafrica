@@ -103,7 +103,8 @@
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les Grands Lacs",
       "Études historiques sur le royaume du Rwanda",
-      "Commission nationale de lutte contre le génocide"
+      "Commission nationale de lutte contre le génocide",
+      "CIA World Factbook – Rwanda (ethnic groups, pre-1994 census)"
     ],
     "demographics": {
       "peoples": [
@@ -111,19 +112,22 @@
           "name": "Hutu (Rwandais)",
           "peopleId": "PPL_RWANDAIS_HUTU",
           "region": "Tout le Rwanda",
-          "languageFamily": "FLG_NIGERCONGO"
+          "languageFamily": "FLG_NIGERCONGO",
+          "percentageInCountry": 84
         },
         {
           "name": "Tutsi (Rwandais)",
           "peopleId": "PPL_RWANDAIS_TUTSI",
           "region": "Tout le Rwanda",
-          "languageFamily": "FLG_NIGERCONGO"
+          "languageFamily": "FLG_NIGERCONGO",
+          "percentageInCountry": 15
         },
         {
           "name": "Twa",
           "peopleId": "PPL_TWA",
           "region": "Forêts et zones rurales",
-          "languageFamily": "FLG_NIGERCONGO"
+          "languageFamily": "FLG_NIGERCONGO",
+          "percentageInCountry": 1
         }
       ]
     }

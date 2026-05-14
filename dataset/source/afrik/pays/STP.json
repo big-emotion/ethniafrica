@@ -140,14 +140,15 @@
       "SIL Ethnologue – Languages of São Tomé and Príncipe",
       "Recensements santoméens",
       "Études anthropologiques sur les peuples de São Tomé-et-Príncipe",
-      "Études historiques sur la colonisation portugaise et le développement des peuples créoles"
+      "Études historiques sur la colonisation portugaise et le développement des peuples créoles",
+      "CIA World Factbook – São Tomé and Príncipe (ethnic groups)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Forros",
           "population": 100000,
-          "percentageInCountry": 45.5,
+          "percentageInCountry": 50,
           "peopleId": "PPL_FORROS",
           "region": "Toutes les îles de São Tomé-et-Príncipe",
           "languageFamily": "FLG_CREOLE"
@@ -158,6 +159,13 @@
           "percentageInCountry": 4.5,
           "peopleId": "PPL_ANGOLAR",
           "region": ""
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 45
         }
       ]
     }

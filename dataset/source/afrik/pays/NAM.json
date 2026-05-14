@@ -237,7 +237,8 @@
       "SIL Ethnologue – Languages of Namibia",
       "Recensements namibiens",
       "Études anthropologiques sur les peuples de Namibie",
-      "Études historiques sur la colonisation allemande et sud-africaine, le génocide des Herero, la guerre d'indépendance"
+      "Études historiques sur la colonisation allemande et sud-africaine, le génocide des Herero, la guerre d'indépendance",
+      "CIA World Factbook – Namibia (ethnic groups)"
     ],
     "demographics": {
       "peoples": [
@@ -247,6 +248,13 @@
           "percentageInCountry": 50,
           "peopleId": "PPL_OVAMBO",
           "region": "Nord de la Namibie"
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 50
         }
       ]
     }

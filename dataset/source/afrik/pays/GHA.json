@@ -156,14 +156,15 @@
       "ONU – Données démographiques 2025",
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples ghanéens",
-      "Études historiques sur le royaume Ashanti"
+      "Études historiques sur le royaume Ashanti",
+      "CIA World Factbook – Ghana (ethnic groups, 2010 census)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Akan",
           "population": 17575000,
-          "percentageInCountry": 47.5,
+          "percentageInCountry": 45.7,
           "percentageInAfrica": 1.23,
           "peopleId": "PPL_AKAN",
           "region": "Centre, Sud, Ouest",
@@ -172,7 +173,7 @@
         {
           "name": "Mole-Dagbani",
           "population": 6160000,
-          "percentageInCountry": 16.6,
+          "percentageInCountry": 18.5,
           "percentageInAfrica": 0.43,
           "peopleId": "PPL_DAGOMBA",
           "region": "Nord",
@@ -181,7 +182,7 @@
         {
           "name": "Ewe",
           "population": 5140000,
-          "percentageInCountry": 13.9,
+          "percentageInCountry": 12.8,
           "percentageInAfrica": 0.36,
           "peopleId": "PPL_EWE",
           "region": "Volta (Est)",
@@ -190,7 +191,7 @@
         {
           "name": "Ga-Dangme",
           "population": 2740000,
-          "percentageInCountry": 7.4,
+          "percentageInCountry": 7.1,
           "percentageInAfrica": 0.19,
           "peopleId": "PPL_GA_DANGME",
           "region": "Grande Accra",
@@ -199,7 +200,7 @@
         {
           "name": "Guan",
           "population": 1630000,
-          "percentageInCountry": 4.4,
+          "percentageInCountry": 3.2,
           "percentageInAfrica": 0.11,
           "peopleId": "PPL_GUAN",
           "region": "Centre",
@@ -208,11 +209,18 @@
         {
           "name": "Gurma",
           "population": 1170000,
-          "percentageInCountry": 3.2,
+          "percentageInCountry": 6.4,
           "percentageInAfrica": 0.08,
           "peopleId": "PPL_GURMA",
           "region": "Nord-Est",
           "languageFamily": "FLG_NIGERCONGO"
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 6
         }
       ]
     }

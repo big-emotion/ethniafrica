@@ -88,7 +88,8 @@
       "Études anthropologiques sur les peuples bantous de l'océan Indien",
       "Comoros Cultural Studies",
       "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025"
+      "UNFPA – Projections démographiques 2025",
+      "CIA World Factbook – Comoros (ethnic groups)"
     ],
     "demographics": {
       "peoples": [
@@ -97,7 +98,15 @@
           "population": 900000,
           "peopleId": "PPL_COMORIEN",
           "region": "Archipel des Comores (Grande Comore, Anjouan, Mohéli)",
-          "languageFamily": "FLG_NIGERCONGO"
+          "languageFamily": "FLG_NIGERCONGO",
+          "percentageInCountry": 97
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 3
         }
       ]
     }

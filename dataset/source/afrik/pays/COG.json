@@ -133,13 +133,22 @@
       "ONU – Données démographiques 2025",
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples congolais",
-      "Études historiques sur le royaume Kongo et le royaume Tio"
+      "Études historiques sur le royaume Kongo et le royaume Tio",
+      "CIA World Factbook – Republic of the Congo (ethnic groups)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Kongo (Brazzaville)",
-          "peopleId": "PPL_KONGO_BRA"
+          "peopleId": "PPL_KONGO_BRA",
+          "percentageInCountry": 40
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 60
         }
       ]
     }

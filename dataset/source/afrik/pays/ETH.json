@@ -147,7 +147,8 @@
       "ONU – Données démographiques 2025",
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples éthiopiens",
-      "Études historiques sur l'empire d'Éthiopie et le royaume d'Axoum"
+      "Études historiques sur l'empire d'Éthiopie et le royaume d'Axoum",
+      "CIA World Factbook – Ethiopia (ethnic groups, 2007 census)"
     ],
     "demographics": {
       "peoples": [
@@ -155,37 +156,50 @@
           "name": "Oromo",
           "peopleId": "PPL_OROMO",
           "region": "Oromia (centre, est, sud)",
-          "languageFamily": "FLG_COUCHITIQUE"
+          "languageFamily": "FLG_COUCHITIQUE",
+          "percentageInCountry": 35.8
         },
         {
           "name": "Amhara",
           "peopleId": "PPL_AMHARA",
           "region": "Hautes terres du centre et du nord-ouest (Gojjam, Gondar, Wollo)",
-          "languageFamily": "FLG_SEMITIQUE"
+          "languageFamily": "FLG_SEMITIQUE",
+          "percentageInCountry": 24.1
         },
         {
           "name": "Somali",
           "peopleId": "PPL_SOMALI",
           "region": "Ogaden (Est)",
-          "languageFamily": "FLG_COUCHITIQUE"
+          "languageFamily": "FLG_COUCHITIQUE",
+          "percentageInCountry": 7.2
         },
         {
           "name": "Tigréens",
           "peopleId": "PPL_TIGRE",
           "region": "Tigray (Nord)",
-          "languageFamily": "FLG_SEMITIQUE"
+          "languageFamily": "FLG_SEMITIQUE",
+          "percentageInCountry": 5.7
         },
         {
           "name": "Sidama",
           "peopleId": "PPL_SIDAMA",
           "region": "Sidama (Sud)",
-          "languageFamily": "FLG_COUCHITIQUE"
+          "languageFamily": "FLG_COUCHITIQUE",
+          "percentageInCountry": 4.1
         },
         {
           "name": "Gurage",
           "peopleId": "PPL_GURAGE",
           "region": "Centre-Sud",
-          "languageFamily": "FLG_SEMITIQUE"
+          "languageFamily": "FLG_SEMITIQUE",
+          "percentageInCountry": 2.6
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 20
         }
       ]
     }

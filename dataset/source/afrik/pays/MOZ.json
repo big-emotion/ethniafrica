@@ -242,16 +242,24 @@
       "SIL Ethnologue – Languages of Mozambique",
       "Recensements mozambicains",
       "Études anthropologiques sur les peuples du Mozambique",
-      "Études historiques sur la colonisation portugaise et la guerre de libération"
+      "Études historiques sur la colonisation portugaise et la guerre de libération",
+      "CIA World Factbook – Mozambique (ethnic groups)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Makua",
           "population": 7000000,
-          "percentageInCountry": 23.3,
+          "percentageInCountry": 28,
           "peopleId": "PPL_MAKUA",
           "region": "Nord du Mozambique"
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 70
         }
       ]
     }
