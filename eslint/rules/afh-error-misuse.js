@@ -23,19 +23,45 @@
 
 "use strict";
 
+const path = require("node:path");
+
 const ALLOWED_NAME_TOKENS = ["error", "invalid", "broken"];
 const ERROR_TOKEN_RE = /--afh-error\b/;
+// Tailwind utility prefixes that can carry an `-afh-error` colour. This list is
+// intentionally broad — every colour-bearing utility family is covered so we
+// don't silently miss e.g. `from-afh-error` in a gradient.
 const TAILWIND_ERROR_RE =
-  /\b(?:bg|text|border|ring|shadow|fill|stroke|outline)-afh-error\b/;
+  /\b(?:bg|text|border|ring|shadow|fill|stroke|outline|from|via|to|divide|placeholder|accent|caret)-afh-error\b/;
 
 /**
+ * Word-boundary match of an allowed token against the **basename only**.
+ * Splitting the basename on non-alphanumeric characters keeps the match
+ * strict: `ErrorState.tsx` → ["ErrorState", "tsx"] → ["Error", "State"]
+ * via CamelCase split, so "error" matches. `InValidatorWidget.tsx` →
+ * ["InValidatorWidget"] → ["In", "Validator", "Widget"] — none of those
+ * tokens equals "invalid", so the file does NOT bypass the rule.
+ *
+ * Tokenisation:
+ *   1. Take basename only (ignore directory path entirely).
+ *   2. Split on non-alphanumeric chars (`-`, `_`, `.`, etc.).
+ *   3. Split each chunk on CamelCase boundaries.
+ *   4. Lowercase, then test against the allow-list exactly.
+ *
  * @param {string} filename
  * @returns {boolean}
  */
 function filenameImpliesErrorContext(filename) {
   if (!filename) return false;
-  const lower = filename.toLowerCase();
-  return ALLOWED_NAME_TOKENS.some((needle) => lower.includes(needle));
+  const base = path.basename(filename);
+  // Strip extensions (handles .stories.tsx, .test.ts, etc. defensively).
+  const stem = base.replace(/\..*$/, "");
+  // Split on non-alphanumeric, then on CamelCase boundaries.
+  const tokens = stem
+    .split(/[^A-Za-z0-9]+/)
+    .flatMap((chunk) => chunk.split(/(?=[A-Z])/))
+    .map((tok) => tok.toLowerCase())
+    .filter(Boolean);
+  return tokens.some((tok) => ALLOWED_NAME_TOKENS.includes(tok));
 }
 
 /** @type {import("eslint").Rule.RuleModule} */

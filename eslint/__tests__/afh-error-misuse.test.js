@@ -64,6 +64,35 @@ ruleTester.run("afh/afh-error-misuse", rule, {
       filename: "src/components/Hero.tsx",
       errors: [{ messageId: "misuse" }],
     },
+    {
+      // Regression: directory contains "error" but basename does not — must NOT bypass.
+      name: "Path-only 'error' must not bypass (issue 1)",
+      code: `const style = { color: "var(--afh-error)" };`,
+      filename: "src/components/error-states/SourceBadge.tsx",
+      errors: [{ messageId: "misuse" }],
+    },
+    {
+      // Regression: basename contains "invalid" as substring but the tokenised
+      // word is "Validator" — must NOT bypass (issue 2).
+      name: "Substring 'invalid' in 'InValidatorWidget' must not bypass (issue 2)",
+      code: `const style = { color: "var(--afh-error)" };`,
+      filename: "src/components/InValidatorWidget.tsx",
+      errors: [{ messageId: "misuse" }],
+    },
+    {
+      // Regression: gradient utility (`from-afh-error`) must be flagged (issue 4).
+      name: "Tailwind from-afh-error gradient is flagged",
+      code: 'const cls = "from-afh-error to-transparent";',
+      filename: "src/components/Hero.tsx",
+      errors: [{ messageId: "misuse" }],
+    },
+    {
+      // Regression: placeholder utility must be flagged (issue 4).
+      name: "Tailwind placeholder-afh-error is flagged",
+      code: 'const cls = "placeholder-afh-error";',
+      filename: "src/components/Hero.tsx",
+      errors: [{ messageId: "misuse" }],
+    },
   ],
 });
 

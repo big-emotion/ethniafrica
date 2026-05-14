@@ -2,30 +2,36 @@
    ETHNAFRICA — Country Page Design Tokens
    Variante C "Carte vivante"
    v1.0
+
+   ETNI-21 update: principal colour/typography tokens are now
+   aliased to their `--afh-*` equivalents (defined in
+   `src/styles/tokens/color.css` and `src/styles/tokens/type.css`).
+   Layout, animation, spacing and component-class tokens below
+   remain page-specific.
    ============================================================ */
 
 :root {
-  /* === COULEURS — Fond === */
-  --country-bg: #FBF7F2;
-  --country-bg-warm: #F5EDE0;
-  --country-card: #FFFFFF;
-  --country-border: #E8DFD3;
+  /* === COULEURS — Fond (aliased to --afh-color-* / --afh-*) === */
+  --country-bg: var(--afh-color-bg);
+  --country-bg-warm: var(--afh-color-bg-warm);
+  --country-card: var(--afh-color-card);
+  --country-border: var(--afh-color-border);
 
   /* === COULEURS — Texte === */
-  --country-text: #2C2018;
-  --country-text-soft: #7A6B5D;
+  --country-text: var(--afh-color-text);
+  --country-text-soft: var(--afh-color-text-soft);
 
-  /* === COULEURS — Sémantiques === */
-  --country-gold: #B8860B;
-  --country-gold-bg: #FDF5E1;
-  --country-green: #2B6B42;
-  --country-green-bg: #E8F5ED;
-  --country-terracotta: #C2532A;
-  --country-terracotta-bg: #FCEEE8;
-  --country-earth: #8B6B47;
-  --country-earth-bg: #F3EBE0;
-  --country-colonial: #9B3030;
-  --country-colonial-bg: #FCE8E8;
+  /* === COULEURS — Sémantiques (aliased to --afh-color-*) === */
+  --country-gold: var(--afh-color-gold);
+  --country-gold-bg: var(--afh-color-gold-bg);
+  --country-green: var(--afh-color-green);
+  --country-green-bg: var(--afh-color-green-bg);
+  --country-terracotta: var(--afh-color-terracotta);
+  --country-terracotta-bg: var(--afh-color-terracotta-bg);
+  --country-earth: var(--afh-color-earth);
+  --country-earth-bg: var(--afh-color-earth-bg);
+  --country-colonial: var(--afh-color-colonial);
+  --country-colonial-bg: var(--afh-color-colonial-bg);
 
   /* === COULEURS — Barre démographique === */
   --country-demo-1: #D4A843;
@@ -46,9 +52,9 @@
   --country-hero-end: #142E1E;
   --country-hero-highlight: #F5C842;
 
-  /* === TYPOGRAPHIE === */
-  --country-font-display: var(--font-fraunces), 'Fraunces', Georgia, serif;
-  --country-font-body: var(--font-nunito-sans), 'Nunito Sans', system-ui, sans-serif;
+  /* === TYPOGRAPHIE (aliased to --afh-font-*) === */
+  --country-font-display: var(--afh-font-display);
+  --country-font-body: var(--afh-font-body);
 
   /* Échelle typo (mobile-first) */
   --country-text-hero: 34px;

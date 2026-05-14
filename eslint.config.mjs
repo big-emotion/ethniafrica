@@ -26,9 +26,15 @@ const eslintConfig = [
   ...tsConfig,
 
   // ETNI-21: ESLint custom-rule sources must remain CommonJS (the ESLint
-  // plugin API is CJS). Globally ignore them so we don't fight no-require-imports.
+  // plugin API is CJS). Scope the no-require-imports relaxation to these
+  // files only — the files themselves still get parsed and linted for
+  // every other rule (we just allow `require(...)` here).
   {
-    ignores: ["eslint/**"],
+    files: ["eslint/**/*.{js,cjs,mjs,ts}"],
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
+      "@typescript-eslint/no-var-requires": "off",
+    },
   },
 
   // ===========================================================================
