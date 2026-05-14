@@ -138,28 +138,9 @@ CREATE POLICY editorial_doctrine_read_public ON editorial_doctrine FOR SELECT US
 -- Note: No write policies = write denied by default with RLS enabled
 
 -- =============================================================================
--- Table: user_roles
--- User role assignments
--- =============================================================================
-CREATE TABLE IF NOT EXISTS user_roles (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID NOT NULL,
-  role TEXT NOT NULL CHECK (role IN ('admin', 'editor', 'reviewer', 'contributor')),
-  granted_by UUID,
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  revoked_at TIMESTAMPTZ,
-  UNIQUE(user_id, role)
-);
-
-COMMENT ON TABLE user_roles IS 'User role assignments for access control';
-
-ALTER TABLE user_roles ENABLE ROW LEVEL SECURITY;
-CREATE POLICY user_roles_read_public ON user_roles FOR SELECT USING (true);
--- Note: No write policies = write denied by default with RLS enabled
-
--- =============================================================================
 -- Table: audit_log
 -- System-wide audit log
+-- Note: user_roles table is defined in 007a_user_roles.sql (enum-based schema)
 -- =============================================================================
 CREATE TABLE IF NOT EXISTS audit_log (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -182,7 +163,6 @@ CREATE POLICY audit_log_read_admin ON audit_log FOR SELECT
       SELECT 1 FROM user_roles
       WHERE user_roles.user_id = auth.uid()
         AND user_roles.role = 'admin'
-        AND user_roles.revoked_at IS NULL
     )
   );
 -- Note: No write policies = write denied by default with RLS enabled

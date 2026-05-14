@@ -379,5 +379,3 @@ export const SearchPageContent = () => {
     </PageLayout>
   );
 };
-
-export default SearchPageContent;

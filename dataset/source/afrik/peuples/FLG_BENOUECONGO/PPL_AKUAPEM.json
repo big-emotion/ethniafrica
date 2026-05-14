@@ -2,21 +2,33 @@
   "id": "PPL_AKUAPEM",
   "nameMain": "Akuapem",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": ["GHA"],
+  "currentCountries": [
+    "GHA"
+  ],
   "content": {
     "appellations": {
       "mainName": "Akuapem",
       "selfAppellation": "Akuapem",
-      "exonyms": ["Akwapim", "Akwapem", "Akuapim"],
+      "exonyms": [
+        "Akwapim",
+        "Akwapem",
+        "Akuapim"
+      ],
       "originOfExonyms": "Le nom Akuapem derive du twi Nkuu apem signifiant mille groupes, nom donne par le guerrier akan Nana Ansa Sasraku I d'Akwamu apres que sa force d'invasion eut ete repoussee par la confederation de peuples de la crete.",
       "whyProblematic": null,
       "contemporaryUsage": "Le nom Akuapem (ou Akwapim) est utilise officiellement dans les denominations administratives du Ghana, notamment dans les municipalites d'Akwapim Nord et Akwapim Sud de la region orientale. Il designe aujourd'hui l'ensemble de la population de la crete, qu'elle soit d'origine guan ou akan.",
       "linguisticFamily": "FLG_BENOUECONGO",
       "ethnoLinguisticGroup": "Akan (sous-groupe Twi)",
       "historicalRegion": "Crete de l'Akuapem, Region orientale du Ghana",
-      "currentCountries": ["GHA"]
+      "currentCountries": [
+        "GHA"
+      ]
     },
-    "ethnicities": ["Akuapem", "Guan", "Akan"],
+    "ethnicities": [
+      "Akuapem",
+      "Guan",
+      "Akan"
+    ],
     "origins": {
       "ancientOrigins": "Les Akuapem sont une confederation multiethnique composee de Guans patrilineaires parlant le volta-comoe, peuples autochtones de la crete, et d'Akan matrilineaires parlant le kwa, notamment des immigrants venus d'Akyem et de Mampong (egalement de Mampong ashanti). Ces groupes coexistaient sur la crete de l'Akuapem avant que le terme ne soit formalise.",
       "formationPeriod": "La confederation akuapem prend forme au debut du XVIIIe siecle, vers 1730, apres que des guerriers akyem et leurs allies eurent chasse les Akwamu de la region de la crete. La ville d'Akropong devint la capitale et le premier Akuapemhene fut Nana Owusu Akyem (egalement appele Ofori Dua).",
@@ -42,7 +54,10 @@
     },
     "languages": {
       "mainLanguage": "Akan (Twi, dialecte akuapem)",
-      "isoCodes": ["aka", "tw"],
+      "isoCodes": [
+        "aka",
+        "twi"
+      ],
       "dialects": [
         "Akuapem Twi (dialecte akan standard)",
         "Kyerepong (Okere, parle a Abiriw, Dawu, Awukugua, Adukrom, Apirede)",

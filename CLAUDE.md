@@ -74,19 +74,17 @@ Shared utilities: `src/api/v2/utils/validation.ts` (param validation), `src/api/
 
 ### AFRIK Data Pipeline
 
-Source `.txt` files are parsed and loaded into Supabase:
+Source `.json` files (AFRIK JSON v2 format) are loaded into Supabase:
 
 ```
-dataset/source/afrik/                          → Raw .txt files (strict model format)
-  ├── famille_linguistique/FLG_*.txt
-  ├── peuples/FLG_*/PPL_*.txt
-  └── pays/*.txt
-      ↓ parsed by
-src/lib/afrik/parsers/{entity}Parser.ts        → Parse .txt to structured data
+dataset/source/afrik/                          → Raw .json files (strict model format)
+  ├── famille_linguistique/FLG_*.json
+  ├── peuples/FLG_*/PPL_*.json
+  └── pays/*.json
       ↓ loaded by
-src/lib/afrik/loaders/{entity}Loader.ts        → Load into Supabase
+src/lib/afrik/loaders/{entity}JsonLoader.ts    → Load into Supabase
       ↓ stored in
-Supabase tables: afrik_familles_linguistiques, afrik_langues, afrik_peuples, afrik_pays
+Supabase tables: afrik_language_families, afrik_languages, afrik_peoples, afrik_countries
 ```
 
 ### AFRIK Methodology
@@ -118,8 +116,8 @@ Languages: `fr` (default), `en`, `es`, `pt`. Pages under `src/app/[lang]/`.
 
 ### Database Tables
 
-**AFRIK**: `afrik_familles_linguistiques`, `afrik_langues`, `afrik_peuples`, `afrik_pays`
-**System**: `contributions`
+**AFRIK** (canonical English names per migration 006): `afrik_language_families`, `afrik_languages`, `afrik_peoples`, `afrik_countries`, `afrik_people_countries`
+**System**: `contributions`, `api_keys`, `user_roles`, `audit_log`
 
 Schema: `supabase/migrations/006_afrik_schema.sql`
 
@@ -127,11 +125,29 @@ Schema: `supabase/migrations/006_afrik_schema.sql`
 
 ### Working with AFRIK Data
 
-1. **Always use strict models** from `public/modele-*.txt` — never skip, rename, or add sections
-2. **Never invent data** — use authorized sources only (UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA)
+1. **Always use strict models** from `public/modele-*.json` — never skip, rename, or add sections
+2. **Never invent data** — every claim must be backed by a verifiable primary source (see [Source Tier Policy](#source-tier-policy))
 3. **Demographics**: 2025 reference year, populations must sum to exactly 100% per country
 4. **Colonial terms**: Keep but explain why problematic; provide auto-appellations (endonyms)
-5. **Consistency**: TXT demographics must match database records
+5. **Consistency**: Source JSON demographics must match database records
+
+### Source Tier Policy
+
+A claim is acceptable only if it can be cited at **Tier 1** or **Tier 2**. Otherwise, **remove the claim**.
+
+**Tier 1 — Authorized canon (preferred).** Cite directly:
+UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA.
+
+**Tier 2 — Primary source surfaced via Wikipedia (fallback).** Wikipedia is a _meta-source_, not a citable source. To use it as a discovery tool:
+
+1. Open the article in **≥2 language versions** (prefer EN + FR + the language(s) of the people/country concerned).
+2. Locate the **primary source** (peer-reviewed paper, official government/IGO document, academic publication, archival record) that backs the claim.
+3. Cite the **primary source URL/reference directly** — never the Wikipedia article.
+4. If no language version of Wikipedia provides a primary source for the claim, **remove the claim**.
+
+**Tier 3 — Forbidden.** Never cite as a `sources` entry: Wikipedia articles themselves, blogs, social media, forum posts, AI-generated content, secondary aggregators without their own primary sources.
+
+**In every `sources` block**, each entry must record `tier: 1` or `tier: 2`. Tier-2 entries must include the path through Wikipedia (which language version(s) cross-checked) in the `notes` field so the chain is auditable.
 
 ### Adding API Routes
 
@@ -185,6 +201,11 @@ Admin authentication uses Supabase Auth with OAuth (GitHub, Google) and magic-li
 ### Git
 
 - **Never add `Co-Authored-By` trailers** to commits, PRs, or MRs
+
+### GitHub Actions
+
+- **SHA-pin every third-party action.** Tags are mutable; a compromised release can substitute malicious code. Format: `uses: org/action@<40-char-sha>  # <semver>`.
+- Dependabot is configured (`.github/dependabot.yml`) to bump pinned SHAs weekly. Review changelogs before merging.
 
 ## Jira
 

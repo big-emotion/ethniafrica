@@ -27,8 +27,7 @@ import { describe, it, expect, beforeAll, afterAll } from "vitest";
 // Environment / connection helpers
 // ---------------------------------------------------------------------------
 
-const SUPABASE_URL =
-  process.env.TEST_SUPABASE_URL ?? "http://127.0.0.1:54321";
+const SUPABASE_URL = process.env.TEST_SUPABASE_URL ?? "http://127.0.0.1:54321";
 
 const ANON_KEY = process.env.TEST_SUPABASE_ANON_KEY ?? "";
 const SERVICE_KEY = process.env.TEST_SUPABASE_SERVICE_KEY ?? "";
@@ -107,11 +106,11 @@ const DENY: OpPolicy = { allowed: false };
 // Per-row filtering: authenticated users may SELECT but see only their own rows.
 // Test JWTs have no seeded entry in these tables → zero rows returned, no RLS error.
 // allowed:true means "no 42501 RLS error", not "rows returned".
-// Ref: migration 008_user_roles.sql policy "Users can read their own roles":
+// Ref: migration 007a_user_roles.sql policy "Users can read their own roles":
 //   USING (auth.uid() = user_id)
 const USER_ROLES_ALLOW_READ: OpPolicy = {
   allowed: true,
-  note: "migration 008_user_roles.sql: USING (auth.uid() = user_id) — zero rows expected because test JWT has no seeded user_roles entry; error: null confirms RLS does not block the query",
+  note: "migration 007a_user_roles.sql: USING (auth.uid() = user_id) — zero rows expected because test JWT has no seeded user_roles entry; error: null confirms RLS does not block the query",
 };
 
 // Ref: migration 011_api_keys.sql policy api_keys_read_owner:
@@ -123,72 +122,72 @@ const API_KEYS_ALLOW_READ: OpPolicy = {
 
 const POLICY_MATRIX: PolicyMatrix = {
   sources: {
-    anon:        { read: ALLOW, write: DENY },
-    reader:      { read: ALLOW, write: DENY },
+    anon: { read: ALLOW, write: DENY },
+    reader: { read: ALLOW, write: DENY },
     contributor: { read: ALLOW, write: DENY },
-    moderator:   { read: ALLOW, write: DENY },
-    admin:       { read: ALLOW, write: DENY },
+    moderator: { read: ALLOW, write: DENY },
+    admin: { read: ALLOW, write: DENY },
   },
   assertions: {
-    anon:        { read: ALLOW, write: DENY },
-    reader:      { read: ALLOW, write: DENY },
+    anon: { read: ALLOW, write: DENY },
+    reader: { read: ALLOW, write: DENY },
     contributor: { read: ALLOW, write: DENY },
-    moderator:   { read: ALLOW, write: DENY },
-    admin:       { read: ALLOW, write: DENY },
+    moderator: { read: ALLOW, write: DENY },
+    admin: { read: ALLOW, write: DENY },
   },
   confidence_scores: {
-    anon:        { read: ALLOW, write: DENY },
-    reader:      { read: ALLOW, write: DENY },
+    anon: { read: ALLOW, write: DENY },
+    reader: { read: ALLOW, write: DENY },
     contributor: { read: ALLOW, write: DENY },
-    moderator:   { read: ALLOW, write: DENY },
-    admin:       { read: ALLOW, write: DENY },
+    moderator: { read: ALLOW, write: DENY },
+    admin: { read: ALLOW, write: DENY },
   },
   flags: {
-    anon:        { read: ALLOW, write: DENY },
-    reader:      { read: ALLOW, write: DENY },
+    anon: { read: ALLOW, write: DENY },
+    reader: { read: ALLOW, write: DENY },
     contributor: { read: ALLOW, write: DENY },
-    moderator:   { read: ALLOW, write: DENY },
-    admin:       { read: ALLOW, write: DENY },
+    moderator: { read: ALLOW, write: DENY },
+    admin: { read: ALLOW, write: DENY },
   },
   revisions: {
-    anon:        { read: ALLOW, write: DENY },
-    reader:      { read: ALLOW, write: DENY },
+    anon: { read: ALLOW, write: DENY },
+    reader: { read: ALLOW, write: DENY },
     contributor: { read: ALLOW, write: DENY },
-    moderator:   { read: ALLOW, write: DENY },
-    admin:       { read: ALLOW, write: DENY },
+    moderator: { read: ALLOW, write: DENY },
+    admin: { read: ALLOW, write: DENY },
   },
   editorial_doctrine: {
-    anon:        { read: ALLOW, write: DENY },
-    reader:      { read: ALLOW, write: DENY },
+    anon: { read: ALLOW, write: DENY },
+    reader: { read: ALLOW, write: DENY },
     contributor: { read: ALLOW, write: DENY },
-    moderator:   { read: ALLOW, write: DENY },
-    admin:       { read: ALLOW, write: DENY },
+    moderator: { read: ALLOW, write: DENY },
+    admin: { read: ALLOW, write: DENY },
   },
   // audit_log — SELECT restricted to admins only (see migration 008)
   audit_log: {
-    anon:        { read: DENY,  write: DENY },
-    reader:      { read: DENY,  write: DENY },
-    contributor: { read: DENY,  write: DENY },
-    moderator:   { read: DENY,  write: DENY },
-    admin:       { read: ALLOW, write: DENY },
+    anon: { read: DENY, write: DENY },
+    reader: { read: DENY, write: DENY },
+    contributor: { read: DENY, write: DENY },
+    moderator: { read: DENY, write: DENY },
+    admin: { read: ALLOW, write: DENY },
   },
   // user_roles — SELECT for own row (auth.uid() = user_id); admin can do ALL.
   // See USER_ROLES_ALLOW_READ note for why ALLOW yields zero rows in tests.
   user_roles: {
-    anon:        { read: DENY,              write: DENY },
-    reader:      { read: USER_ROLES_ALLOW_READ, write: DENY },
+    anon: { read: DENY, write: DENY },
+    reader: { read: USER_ROLES_ALLOW_READ, write: DENY },
     contributor: { read: USER_ROLES_ALLOW_READ, write: DENY },
-    moderator:   { read: USER_ROLES_ALLOW_READ, write: DENY },
-    admin:       { read: USER_ROLES_ALLOW_READ, write: ALLOW },
+    moderator: { read: USER_ROLES_ALLOW_READ, write: DENY },
+    admin: { read: USER_ROLES_ALLOW_READ, write: ALLOW },
   },
   // api_keys — SELECT for own rows only (auth.uid() = user_id); no write policy.
   // See API_KEYS_ALLOW_READ note for why ALLOW yields zero rows in tests.
   api_keys: {
-    anon:        { read: DENY,            write: DENY },
-    reader:      { read: API_KEYS_ALLOW_READ, write: DENY },
+    anon: { read: DENY, write: DENY },
+    reader: { read: API_KEYS_ALLOW_READ, write: DENY },
     contributor: { read: API_KEYS_ALLOW_READ, write: DENY },
-    moderator:   { read: API_KEYS_ALLOW_READ, write: DENY },
-    admin:       { read: API_KEYS_ALLOW_READ, write: DENY },
+    moderator: { read: API_KEYS_ALLOW_READ, write: DENY },
+    admin: { read: API_KEYS_ALLOW_READ, write: DENY },
   },
 };
 
@@ -199,14 +198,18 @@ const POLICY_MATRIX: PolicyMatrix = {
 // ---------------------------------------------------------------------------
 
 const INSERT_PAYLOADS: Record<string, Record<string, unknown>> = {
-  sources: { title: "RLS test source", type: "test" },
+  sources: { title: "RLS test source", tier: "primary" },
   assertions: {
     entity_type: "test",
     entity_id: "rls-test",
     field_path: "test.field",
-    value: { v: 1 },
+    statement: "RLS test assertion",
   },
-  confidence_scores: { score: 0.9, methodology: "rls-test" },
+  confidence_scores: {
+    entity_type: "test",
+    entity_id: "rls-test",
+    score: 0.9,
+  },
   flags: {
     entity_type: "test",
     entity_id: "rls-test",
@@ -214,9 +217,9 @@ const INSERT_PAYLOADS: Record<string, Record<string, unknown>> = {
   },
   revisions: { entity_type: "test", entity_id: "rls-test" },
   editorial_doctrine: {
-    key: `rls-write-test-${Date.now()}`,
+    slug: `rls-write-test-${Date.now()}`,
     title: "RLS write test",
-    content: "test",
+    mdx_source: "test",
   },
   audit_log: { action: "rls-test-write" },
   user_roles: { role: "reader" },
@@ -238,7 +241,9 @@ const RLS_ERROR_CODE = "42501";
  *  PGRST116 ("no rows returned for .single()") is intentionally excluded —
  *  it signals a query-shape mismatch, not an RLS denial, and would cause DENY
  *  tests to pass even when no RLS policy exists on the table. */
-function isRlsError(error: { code?: string; message?: string } | null): boolean {
+function isRlsError(
+  error: { code?: string; message?: string } | null
+): boolean {
   if (!error) return false;
   return (
     error.code === RLS_ERROR_CODE ||
@@ -255,10 +260,7 @@ function isRlsError(error: { code?: string; message?: string } | null): boolean 
 
 describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
   if (SKIP) {
-    it.skip(
-      "skipped: TEST_SUPABASE_URL / TEST_SUPABASE_ANON_KEY / TEST_SUPABASE_SERVICE_KEY / TEST_JWT_* env vars not set",
-      () => {},
-    );
+    it.skip("skipped: TEST_SUPABASE_URL / TEST_SUPABASE_ANON_KEY / TEST_SUPABASE_SERVICE_KEY / TEST_JWT_* env vars not set", () => {});
     return;
   }
 
@@ -274,32 +276,35 @@ describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
     // Seed a source row
     const { data: sourceRow } = await svc
       .from("sources")
-      .insert({ title: "RLS seed source", type: "seed" })
+      .insert({ title: "RLS seed source", tier: "primary" })
       .select("id")
       .single();
     seededSourceId = sourceRow?.id ?? null;
     if (!seededSourceId) {
       throw new Error(
-        "beforeAll: seeding sources failed — seededSourceId is null; RLS suite cannot run reliably",
+        "beforeAll: seeding sources failed — seededSourceId is null; RLS suite cannot run reliably"
       );
     }
 
-    // Seed an assertion row (needed for confidence_scores FK)
+    // Seed an assertion row. After migration 014 the confidence_scores table
+    // is entity-scoped (no FK on assertion_id), so this row is no longer a
+    // strict prerequisite — we keep it to exercise assertion INSERT/SELECT
+    // shape and to back fill `source_ids` against the seeded source.
     const { data: assertionRow } = await svc
       .from("assertions")
       .insert({
         entity_type: "seed",
         entity_id: "seed",
         field_path: "seed",
-        value: { v: 0 },
-        source_id: seededSourceId,
+        statement: "seed assertion",
+        source_ids: [seededSourceId],
       })
       .select("id")
       .single();
     seededAssertionId = assertionRow?.id ?? null;
     if (!seededAssertionId) {
       throw new Error(
-        "beforeAll: seeding assertions failed — seededAssertionId is null; confidence_scores INSERT tests would produce NOT NULL errors instead of RLS errors",
+        "beforeAll: seeding assertions failed — seededAssertionId is null"
       );
     }
   });
@@ -317,11 +322,11 @@ describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
 
   // Build role → client map at describe time (env vars already checked above)
   const roleClients: Record<RoleKey, () => SupabaseClient> = {
-    anon:        () => anonClient(),
-    reader:      () => clientWithJwt(process.env.TEST_JWT_READER!),
+    anon: () => anonClient(),
+    reader: () => clientWithJwt(process.env.TEST_JWT_READER!),
     contributor: () => clientWithJwt(process.env.TEST_JWT_CONTRIBUTOR!),
-    moderator:   () => clientWithJwt(process.env.TEST_JWT_MODERATOR!),
-    admin:       () => clientWithJwt(process.env.TEST_JWT_ADMIN!),
+    moderator: () => clientWithJwt(process.env.TEST_JWT_MODERATOR!),
+    admin: () => clientWithJwt(process.env.TEST_JWT_ADMIN!),
   };
 
   const tables = Object.keys(POLICY_MATRIX) as (keyof typeof POLICY_MATRIX)[];
@@ -334,18 +339,18 @@ describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
       // ---- READ -------------------------------------------------------
       it(`${table} | ${role} | SELECT — ${policy.read.allowed ? "allowed" : "denied"}`, async () => {
         const client = roleClients[role]();
-        const { error } = await client
-          .from(table)
-          .select("id")
-          .limit(1);
+        const { error } = await client.from(table).select("id").limit(1);
 
         if (policy.read.allowed) {
           const hint = policy.read.note ? ` (${policy.read.note})` : "";
-          expect(error, `Expected no error for ${role} SELECT on ${table}${hint}`).toBeNull();
+          expect(
+            error,
+            `Expected no error for ${role} SELECT on ${table}${hint}`
+          ).toBeNull();
         } else {
           expect(
             isRlsError(error),
-            `Expected RLS error (42501) for ${role} SELECT on ${table}, got: ${JSON.stringify(error)}`,
+            `Expected RLS error (42501) for ${role} SELECT on ${table}, got: ${JSON.stringify(error)}`
           ).toBe(true);
         }
       });
@@ -356,15 +361,14 @@ describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
 
         // Build payload; patch in FK ids where needed
         const basePayload = { ...INSERT_PAYLOADS[table] };
-        if (table === "confidence_scores" && seededAssertionId) {
-          basePayload.assertion_id = seededAssertionId;
-        }
+        // After migration 014, assertions use a UUID[] source_ids column
+        // and confidence_scores is entity-scoped (no assertion_id FK).
         if (table === "assertions" && seededSourceId) {
-          basePayload.source_id = seededSourceId;
+          basePayload.source_ids = [seededSourceId];
         }
-        // Make keys unique per run to avoid unique-constraint false failures
+        // Make slugs/keys unique per run to avoid unique-constraint false failures
         if (table === "editorial_doctrine") {
-          (basePayload as Record<string, unknown>).key =
+          (basePayload as Record<string, unknown>).slug =
             `rls-write-${role}-${Date.now()}`;
         }
         if (table === "api_keys") {
@@ -379,7 +383,10 @@ describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
           .single();
 
         if (policy.write.allowed) {
-          expect(error, `Expected no error for ${role} INSERT on ${table}`).toBeNull();
+          expect(
+            error,
+            `Expected no error for ${role} INSERT on ${table}`
+          ).toBeNull();
           expect(data).not.toBeNull();
           // Clean up the row we just inserted
           if (data?.id) {
@@ -388,7 +395,7 @@ describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
         } else {
           expect(
             isRlsError(error),
-            `Expected RLS error (42501) for ${role} INSERT on ${table}, got: ${JSON.stringify(error)}`,
+            `Expected RLS error (42501) for ${role} INSERT on ${table}, got: ${JSON.stringify(error)}`
           ).toBe(true);
         }
       });

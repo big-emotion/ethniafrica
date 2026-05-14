@@ -147,7 +147,12 @@ _This file contains critical rules and patterns that AI agents must follow when 
 #### AFRIK Data Discipline (Domain)
 
 - **Strict models**: `public/modele-*.txt` are prescriptive — never skip, rename, or invent sections.
-- **Authorized sources only**: UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA. Never invent data.
+- **Source Tier Policy** — every claim must cite Tier 1 or Tier 2; otherwise **remove the claim**.
+  - **Tier 1 (preferred)**: UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA — cite directly.
+  - **Tier 2 (fallback)**: Wikipedia is a _meta-source_, never citable itself. Use it only to locate the underlying **primary source** (peer-reviewed paper, official IGO/government document, academic publication). Cross-check the claim across **≥2 language versions** of Wikipedia. Cite the **primary source URL**, not the Wikipedia article. If no language version provides a primary source, **remove the claim**.
+  - **Tier 3 (forbidden)**: Wikipedia articles themselves, blogs, social media, AI-generated content, secondary aggregators without their own primary sources.
+  - Each `sources` entry must record `tier: 1` or `tier: 2`. Tier-2 entries must record the Wikipedia language versions cross-checked in `notes`.
+- **Database table names** (canonical, per migration `006_afrik_schema.sql`): `afrik_language_families`, `afrik_languages`, `afrik_peoples`, `afrik_countries`, `afrik_people_countries`. The French names (`afrik_familles_linguistiques`, `afrik_langues`, `afrik_peuples`, `afrik_pays`) do NOT exist in the DB — using them causes runtime failures.
 - **Demographics**: 2025 reference year; populations must sum to **exactly 100%** per country.
 - **Colonial terms**: keep but explain why problematic; always provide auto-appellations (endonyms).
 - **Consistency**: TXT demographics MUST match database records.

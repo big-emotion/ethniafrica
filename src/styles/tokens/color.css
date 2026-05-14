@@ -1,0 +1,104 @@
+/* ============================================================
+   Africa History — Color Tokens
+   ETNI-21 · Epic 1 (Source Transparency Fabric) · UX-DR1
+   ------------------------------------------------------------
+   Two-layer system:
+     L1 — raw palette (--afh-color-*)
+     L2 — semantic aliases (confidence / classification / source /
+          flag-state / surface / accents)
+
+   Existing --country-* tokens (src/styles/country-tokens.css) are
+   preserved unchanged for one release; selected --country-* are
+   re-aliased below to --afh-* values to keep callers in sync.
+   ============================================================ */
+
+:root {
+  /* ─── L1 · Raw palette ─────────────────────────────────────── */
+  --afh-color-bg: #fbf7f2;
+  --afh-color-bg-warm: #f5ede0;
+  --afh-color-card: #ffffff;
+  --afh-color-border: #e8dfd3;
+
+  --afh-color-text: #2c2018;
+  --afh-color-text-soft: #7a6b5d;
+  --afh-color-text-muted: #9b8b7d;
+
+  --afh-color-gold: #b8860b;
+  --afh-color-gold-bg: #fdf5e1;
+  --afh-color-green: #2b6b42;
+  --afh-color-green-bg: #e8f5ed;
+  --afh-color-terracotta: #c2532a;
+  --afh-color-terracotta-bg: #fceee8;
+  --afh-color-earth: #8b6b47;
+  --afh-color-earth-bg: #f3ebe0;
+  --afh-color-colonial: #9b3030;
+  --afh-color-colonial-bg: #fce8e8;
+
+  --afh-color-amber: #d4a843;
+  --afh-color-azure: #5b8db8;
+  --afh-color-sage: #6baf8d;
+  --afh-color-clay: #b87d5b;
+  --afh-color-slate: #5b6b7b;
+
+  /* Error palette — reserved for Error / Invalid / Broken UI only.
+     Enforced by eslint/rules/afh-error-misuse.js (UX-DR49 rule 3). */
+  --afh-color-error: #9b3030;
+  --afh-color-error-bg: #fce8e8;
+  --afh-color-error-border: #e5b8b8;
+
+  /* ─── L2 · Semantic aliases ────────────────────────────────── */
+
+  /* Surface */
+  --afh-bg: var(--afh-color-bg);
+  --afh-bg-warm: var(--afh-color-bg-warm);
+  --afh-surface: var(--afh-color-card);
+  --afh-border: var(--afh-color-border);
+
+  /* Text */
+  --afh-text: var(--afh-color-text);
+  --afh-text-soft: var(--afh-color-text-soft);
+  --afh-text-muted: var(--afh-color-text-muted);
+
+  /* Accents (kept from V1 country palette) */
+  --afh-earth: var(--afh-color-earth);
+  --afh-terracotta: var(--afh-color-terracotta);
+  --afh-gold: var(--afh-color-gold);
+
+  /* Confidence tier — applied to data lineage badges, sources, etc.
+     high  → 95–100 % corroborated by primary sources
+     mid   → 70–94 %  mixed primary + secondary
+     low   → < 70 %   single source or AI-flagged */
+  --afh-conf-high: var(--afh-color-green);
+  --afh-conf-high-bg: var(--afh-color-green-bg);
+  --afh-conf-mid: var(--afh-color-amber);
+  --afh-conf-mid-bg: var(--afh-color-gold-bg);
+  --afh-conf-low: var(--afh-color-clay);
+  --afh-conf-low-bg: var(--afh-color-earth-bg);
+
+  /* Classification state — fiche-level editorial status */
+  --afh-classification-stable: var(--afh-color-green);
+  --afh-classification-stable-bg: var(--afh-color-green-bg);
+  --afh-classification-contested: var(--afh-color-amber);
+  --afh-classification-contested-bg: var(--afh-color-gold-bg);
+  --afh-classification-disputed: var(--afh-color-colonial);
+  --afh-classification-disputed-bg: var(--afh-color-colonial-bg);
+
+  /* Source tier — authority signal for citations */
+  --afh-source-primary: var(--afh-color-green);
+  --afh-source-primary-bg: var(--afh-color-green-bg);
+  --afh-source-secondary: var(--afh-color-azure);
+  --afh-source-secondary-bg: #e6f0f7;
+  --afh-source-ai-flagged: var(--afh-color-clay);
+  --afh-source-ai-flagged-bg: var(--afh-color-earth-bg);
+
+  /* Flag state — moderation / report-error / open-issue surfaces */
+  --afh-flag-open: var(--afh-color-terracotta);
+  --afh-flag-open-bg: var(--afh-color-terracotta-bg);
+  --afh-flag-resolved: var(--afh-color-green);
+  --afh-flag-resolved-bg: var(--afh-color-green-bg);
+
+  /* Error — reserved (see L1 above) */
+  --afh-error: var(--afh-color-error);
+  --afh-error-bg: var(--afh-color-error-bg);
+  --afh-error-border: var(--afh-color-error-border);
+}

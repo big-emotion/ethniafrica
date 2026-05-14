@@ -293,6 +293,27 @@ En cas de problème en production :
 - `NEXT_PUBLIC_SITE_URL` : URL du site
 - `CORS_ALLOWED_ORIGIN` : Origine CORS autorisée
 
+### Rate limiting `/api/v2/*`
+
+En production, configurer Upstash Redis pour activer le rate limiting :
+
+- `UPSTASH_REDIS_REST_URL` : URL REST Upstash (requis en prod)
+- `UPSTASH_REDIS_REST_TOKEN` : Token Upstash (requis en prod)
+
+Quotas par tier (RPM = requêtes par minute, défauts conservent le comportement actuel) :
+
+- `RATE_LIMIT_IP_RPM` : quota requêtes anonymes par IP (défaut `60`)
+- `RATE_LIMIT_PUBLIC_RPM` : quota pour une clé API publique (défaut `600`)
+- `RATE_LIMIT_PARTNER_RPM` : quota pour une clé API partenaire (défaut `6000`)
+- `RATE_LIMIT_WINDOW` : fenêtre acceptée par `@upstash/ratelimit` (`"1 m"`, `"30 s"`, …)
+
+Routage par clé :
+
+- `RATE_LIMIT_PARTNER_KEYS` : liste de clés API (séparées par virgule) servies au tier partenaire
+- `RATE_LIMIT_ADMIN_KEYS` : liste de clés API admin (non rate-limitées)
+
+La configuration complète et commentée est dans `.env.example`.
+
 ## Dépannage
 
 ### Erreur "Missing Supabase environment variables"

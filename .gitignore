@@ -17,6 +17,12 @@ coverage
 *.lcov
 .nyc_output
 
+# Playwright
+playwright-report/
+test-results/
+.playwright-cache/
+storybook-static/
+
 # Next.js
 .next
 out
@@ -41,7 +47,10 @@ build
 *.tsbuildinfo.*
 
 # Claude Code
-.claude/
+.claude/*
+!.claude/skills/
+.claude/skills/*
+!.claude/skills/afrik-curator/
 .entire/
 
 # Editor directories and files

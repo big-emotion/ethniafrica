@@ -19,6 +19,110 @@ describe("hashApiKey", () => {
     expect(parseInt(parts[1])).toBeGreaterThan(0);
   });
 
+  it("should hash new keys at OWASP-recommended 600,000 iterations", async () => {
+    const hash = await hashApiKey("rotation-key");
+    const parts = hash.split(":");
+    expect(parseInt(parts[1], 10)).toBe(600_000);
+  });
+
+  it("should round-trip a key hashed with the current iteration count", async () => {
+    const hash = await hashApiKey("rt-key");
+    const updateEqMock = vi.fn().mockResolvedValue({ error: null });
+    const updateMock = vi.fn().mockReturnValue({ eq: updateEqMock });
+    const fromMock = vi.fn();
+    let n = 0;
+    fromMock.mockImplementation(() => {
+      n++;
+      if (n === 1) {
+        return {
+          select: vi.fn().mockReturnValue({
+            eq: vi.fn().mockReturnValue({
+              eq: vi.fn().mockReturnValue({
+                limit: vi.fn().mockResolvedValue({
+                  data: [
+                    {
+                      id: "uuid-rt",
+                      key_hash: hash,
+                      revoked_at: null,
+                      expires_at: null,
+                    },
+                  ],
+                  error: null,
+                }),
+              }),
+            }),
+          }),
+        };
+      }
+      return { update: updateMock };
+    });
+    (createAdminClient as ReturnType<typeof vi.fn>).mockReturnValue({
+      from: fromMock,
+    });
+    const result = await validateApiKey("rt-key");
+    expect(result).toEqual({ valid: true, apiKeyId: "uuid-rt" });
+  });
+
+  it("should still validate a key hashed with the legacy 100,000 iterations", async () => {
+    // Hash format: "pbkdf2v1:{iterations}:{base64_salt}:{hex_hash}"
+    // Build a legacy hash manually using a fixed salt and 100k iterations.
+    const enc = new TextEncoder();
+    const salt = new Uint8Array(16);
+    crypto.getRandomValues(salt);
+    const keyMaterial = await crypto.subtle.importKey(
+      "raw",
+      enc.encode("legacy-key"),
+      { name: "PBKDF2" },
+      false,
+      ["deriveBits"]
+    );
+    const derivedBits = await crypto.subtle.deriveBits(
+      { name: "PBKDF2", salt, iterations: 100_000, hash: "SHA-256" },
+      keyMaterial,
+      256
+    );
+    const hex = Array.from(new Uint8Array(derivedBits))
+      .map((b) => b.toString(16).padStart(2, "0"))
+      .join("");
+    const saltB64 = btoa(String.fromCharCode(...Array.from(salt)));
+    const legacyHash = `pbkdf2v1:100000:${saltB64}:${hex}`;
+
+    const updateEqMock = vi.fn().mockResolvedValue({ error: null });
+    const updateMock = vi.fn().mockReturnValue({ eq: updateEqMock });
+    const fromMock = vi.fn();
+    let n = 0;
+    fromMock.mockImplementation(() => {
+      n++;
+      if (n === 1) {
+        return {
+          select: vi.fn().mockReturnValue({
+            eq: vi.fn().mockReturnValue({
+              eq: vi.fn().mockReturnValue({
+                limit: vi.fn().mockResolvedValue({
+                  data: [
+                    {
+                      id: "uuid-legacy",
+                      key_hash: legacyHash,
+                      revoked_at: null,
+                      expires_at: null,
+                    },
+                  ],
+                  error: null,
+                }),
+              }),
+            }),
+          }),
+        };
+      }
+      return { update: updateMock };
+    });
+    (createAdminClient as ReturnType<typeof vi.fn>).mockReturnValue({
+      from: fromMock,
+    });
+    const result = await validateApiKey("legacy-key");
+    expect(result).toEqual({ valid: true, apiKeyId: "uuid-legacy" });
+  });
+
   it("should produce different hashes for the same input (random salt)", async () => {
     const hash1 = await hashApiKey("same-key");
     const hash2 = await hashApiKey("same-key");
@@ -92,12 +196,10 @@ describe("validateApiKey", () => {
       select: vi.fn().mockReturnValue({
         eq: vi.fn().mockReturnValue({
           eq: vi.fn().mockReturnValue({
-            limit: vi
-              .fn()
-              .mockResolvedValue({
-                data: null,
-                error: { message: "Connection error" },
-              }),
+            limit: vi.fn().mockResolvedValue({
+              data: null,
+              error: { message: "Connection error" },
+            }),
           }),
         }),
       }),

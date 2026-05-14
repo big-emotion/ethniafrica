@@ -103,7 +103,7 @@ ethniafrica/
 ├── next.config.ts, tailwind.config.ts, tsconfig.json, vitest.config.ts, eslint.config.mjs
 ├── Makefile                             make check = lint + type-check + tests
 ├── package.json                         (name: ethniafrique-atlas, v1.1.0)
-├── env.dist                             Env var template
+├── .env.example                         Canonical env var template
 ├── CLAUDE.md                            Project-wide agent rules
 └── README.md
 ```
