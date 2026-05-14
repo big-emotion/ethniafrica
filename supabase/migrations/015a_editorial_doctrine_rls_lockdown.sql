@@ -1,5 +1,5 @@
 -- =============================================================================
--- Migration: 015_editorial_doctrine_rls_lockdown.sql
+-- Migration: 015a_editorial_doctrine_rls_lockdown.sql
 -- Story: ETNI-30 — Editorial doctrine RLS lockdown
 -- =============================================================================
 --
