@@ -32,7 +32,10 @@ jobs:
 
       - name: Run Claude Code
         id: claude
-        uses: anthropics/claude-code-action@86eb26bf0139bdd75acd15ea5f00f45ee0a284c2 # v1
+        # Action enforces workflow-file byte-equality with the default branch
+        # for its app-token exchange, so SHA-pinning before main has the same
+        # SHA breaks app auth. Stay on the @v1 floating tag for this action.
+        uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 
