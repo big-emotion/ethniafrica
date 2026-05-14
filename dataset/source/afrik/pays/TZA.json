@@ -166,7 +166,8 @@
       "ONU – Données démographiques 2025",
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples tanzaniens",
-      "Études historiques sur les cités-États swahili"
+      "Études historiques sur les cités-États swahili",
+      "CIA World Factbook – Tanzania (ethnic groups)"
     ],
     "demographics": {
       "peoples": [
@@ -174,11 +175,20 @@
           "name": "Sukuma",
           "peopleId": "PPL_SUKUMA",
           "region": "Nord-Ouest (région du lac Victoria)",
-          "languageFamily": "FLG_NIGERCONGO"
+          "languageFamily": "FLG_NIGERCONGO",
+          "percentageInCountry": 16
         },
         {
           "name": "Swahili (Tanzanie)",
-          "peopleId": "PPL_SWAHILI_TAN"
+          "peopleId": "PPL_SWAHILI_TAN",
+          "percentageInCountry": 5
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 79
         }
       ]
     }

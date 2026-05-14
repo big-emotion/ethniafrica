@@ -202,14 +202,15 @@
       "ONU – Données démographiques 2025",
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples kenyans",
-      "Études historiques sur la colonisation et l'indépendance"
+      "Études historiques sur la colonisation et l'indépendance",
+      "CIA World Factbook – Kenya (ethnic groups, 2019 census)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Kikuyu",
           "population": 9300000,
-          "percentageInCountry": 17,
+          "percentageInCountry": 17.1,
           "percentageInAfrica": 0.65,
           "peopleId": "PPL_KIKUYU",
           "region": "Centre (Nyeri, Kiambu)",
@@ -218,7 +219,7 @@
         {
           "name": "Luhya",
           "population": 7700000,
-          "percentageInCountry": 14,
+          "percentageInCountry": 14.3,
           "percentageInAfrica": 0.54,
           "peopleId": "PPL_LUHYA",
           "region": "Ouest",
@@ -227,7 +228,7 @@
         {
           "name": "Kalenjin",
           "population": 7200000,
-          "percentageInCountry": 13,
+          "percentageInCountry": 13.4,
           "percentageInAfrica": 0.5,
           "peopleId": "PPL_KALENJIN",
           "region": "Rift Valley",
@@ -236,7 +237,7 @@
         {
           "name": "Luo",
           "population": 5600000,
-          "percentageInCountry": 10,
+          "percentageInCountry": 10.7,
           "percentageInAfrica": 0.39,
           "peopleId": "PPL_LUO",
           "region": "Nyanza",
@@ -245,7 +246,7 @@
         {
           "name": "Kamba",
           "population": 5600000,
-          "percentageInCountry": 10,
+          "percentageInCountry": 9.8,
           "percentageInAfrica": 0.39,
           "peopleId": "PPL_KAMBA",
           "region": "Sud-Est",
@@ -254,7 +255,7 @@
         {
           "name": "Somali",
           "population": 3300000,
-          "percentageInCountry": 6,
+          "percentageInCountry": 5.8,
           "percentageInAfrica": 0.23,
           "peopleId": "PPL_SOMALI",
           "region": "Nord-Est (Garissa, Wajir)",
@@ -263,7 +264,7 @@
         {
           "name": "Kisii",
           "population": 3300000,
-          "percentageInCountry": 6,
+          "percentageInCountry": 5.7,
           "percentageInAfrica": 0.23,
           "peopleId": "PPL_KISII",
           "region": "Sud-Ouest",
@@ -272,7 +273,7 @@
         {
           "name": "Meru",
           "population": 2200000,
-          "percentageInCountry": 4,
+          "percentageInCountry": 4.2,
           "percentageInAfrica": 0.15,
           "peopleId": "PPL_MERU",
           "region": "Mont Kenya",
@@ -281,7 +282,7 @@
         {
           "name": "Mijikenda",
           "population": 2700000,
-          "percentageInCountry": 5,
+          "percentageInCountry": 5.1,
           "percentageInAfrica": 0.19,
           "peopleId": "PPL_MIJIKENDA",
           "region": "Côte",
@@ -290,11 +291,18 @@
         {
           "name": "Maasai",
           "population": 1100000,
-          "percentageInCountry": 2,
+          "percentageInCountry": 2.5,
           "percentageInAfrica": 0.08,
           "peopleId": "PPL_MAASAI",
           "region": "Rift Valley",
           "languageFamily": "FLG_NILOTIQUE"
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 10
         }
       ]
     }

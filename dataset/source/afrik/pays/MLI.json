@@ -175,14 +175,15 @@
       "ONU – Données démographiques 2025",
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples maliens",
-      "Études historiques sur les empires du Ghana, du Mali et Songhai"
+      "Études historiques sur les empires du Ghana, du Mali et Songhai",
+      "CIA World Factbook – Mali (ethnic groups, 2018 est.)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Bambara",
           "population": 7700000,
-          "percentageInCountry": 35,
+          "percentageInCountry": 33.3,
           "percentageInAfrica": 0.54,
           "peopleId": "PPL_BAMBARA",
           "region": "Centre (Bamako, Ségou)",
@@ -191,7 +192,7 @@
         {
           "name": "Peul / Fulani",
           "population": 3740000,
-          "percentageInCountry": 17,
+          "percentageInCountry": 13.3,
           "percentageInAfrica": 0.26,
           "peopleId": "PPL_FULA",
           "region": "Macina, Mopti",
@@ -200,7 +201,7 @@
         {
           "name": "Dogon",
           "population": 1760000,
-          "percentageInCountry": 8,
+          "percentageInCountry": 8.7,
           "percentageInAfrica": 0.12,
           "peopleId": "PPL_DOGON",
           "region": "Plateau de Bandiagara",
@@ -209,7 +210,7 @@
         {
           "name": "Touareg",
           "population": 1980000,
-          "percentageInCountry": 9,
+          "percentageInCountry": 1.7,
           "percentageInAfrica": 0.14,
           "peopleId": "PPL_TUAREG",
           "region": "Nord (Ahaggar, Azawagh, Air, Adagh)",
@@ -218,7 +219,7 @@
         {
           "name": "Soninké",
           "population": 1760000,
-          "percentageInCountry": 8,
+          "percentageInCountry": 9.8,
           "percentageInAfrica": 0.12,
           "peopleId": "PPL_SONINKE",
           "region": "Kayes",
@@ -227,7 +228,7 @@
         {
           "name": "Songhai",
           "population": 1320000,
-          "percentageInCountry": 6,
+          "percentageInCountry": 5.9,
           "percentageInAfrica": 0.09,
           "peopleId": "PPL_SONGHAI",
           "region": "Gao, Tombouctou, région du Moyen Niger",
@@ -236,11 +237,18 @@
         {
           "name": "Malinké",
           "population": 1540000,
-          "percentageInCountry": 7,
+          "percentageInCountry": 8.8,
           "percentageInAfrica": 0.11,
           "peopleId": "PPL_MALINKE",
           "region": "Kangaba, Kita",
           "languageFamily": "FLG_MANDE"
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 18
         }
       ]
     }

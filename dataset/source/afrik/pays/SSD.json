@@ -163,14 +163,15 @@
       "SIL Ethnologue – Languages of South Sudan",
       "Recensements sud-soudanais",
       "Études anthropologiques sur les peuples du Soudan du Sud",
-      "Études historiques sur la colonisation britannique et égyptienne"
+      "Études historiques sur la colonisation britannique et égyptienne",
+      "CIA World Factbook – South Sudan (ethnic groups)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Dinka",
           "population": 4500000,
-          "percentageInCountry": 40,
+          "percentageInCountry": 35.8,
           "peopleId": "PPL_DINKA",
           "region": "Région du Nil Blanc, marais du Sudd",
           "languageFamily": "FLG_NILOTIQUE"
@@ -178,7 +179,7 @@
         {
           "name": "Nuer",
           "population": 1800000,
-          "percentageInCountry": 16,
+          "percentageInCountry": 15.6,
           "peopleId": "PPL_NUER",
           "region": "Région du Nil Blanc, zones marécageuses (Sudd)",
           "languageFamily": "FLG_NILOTIQUE"
@@ -186,13 +187,14 @@
         {
           "name": "Shilluk",
           "population": 500000,
-          "percentageInCountry": 4.5,
+          "percentageInCountry": 4,
           "peopleId": "PPL_SHILLUK",
           "region": "Région du Nil Blanc (Fashoda, Kodok)",
           "languageFamily": "FLG_NILOTIQUE"
         },
         {
-          "name": "Autres peuples"
+          "name": "Autres peuples",
+          "percentageInCountry": 44.6
         }
       ]
     }

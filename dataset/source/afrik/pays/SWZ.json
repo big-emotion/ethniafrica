@@ -96,13 +96,22 @@
       "Rank among the Swazi\"",
       "An Ethnographic Account of the Natives of the Swaziland Protectorate\"",
       "Recensements eswatinis",
-      "Études anthropologiques sur les peuples swazi"
+      "Études anthropologiques sur les peuples swazi",
+      "CIA World Factbook – Eswatini (ethnic groups)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Swazi",
-          "peopleId": "PPL_SWA"
+          "peopleId": "PPL_SWA",
+          "percentageInCountry": 97
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 3
         }
       ]
     }

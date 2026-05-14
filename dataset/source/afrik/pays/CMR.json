@@ -283,7 +283,8 @@
       "Politics and the Occult in Postcolonial Africa\"",
       "Archives du royaume Bamoun (Foumban)",
       "Recensements camerounais",
-      "Études anthropologiques sur les peuples du Cameroun"
+      "Études anthropologiques sur les peuples du Cameroun",
+      "CIA World Factbook – Cameroon (ethnic groups, 2018 est.)"
     ],
     "demographics": {
       "peoples": [
@@ -293,6 +294,13 @@
           "percentageInCountry": 22,
           "peopleId": "PPL_BETI",
           "region": "Centre-Sud du Cameroun (forêts équatoriales)"
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 78
         }
       ]
     }

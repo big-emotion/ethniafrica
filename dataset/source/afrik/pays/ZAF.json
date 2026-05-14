@@ -201,12 +201,14 @@
       "ONU – Données démographiques 2025",
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples sud-africains",
-      "Études historiques sur l'apartheid et la transition démocratique"
+      "Études historiques sur l'apartheid et la transition démocratique",
+      "Statistics South Africa – Census 2022 (population by population group)"
     ],
     "demographics": {
       "peoples": [
         {
-          "name": "Autres peuples"
+          "name": "Autres peuples",
+          "percentageInCountry": 100
         }
       ]
     }

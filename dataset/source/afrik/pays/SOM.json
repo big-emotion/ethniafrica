@@ -163,7 +163,8 @@
       "SIL Ethnologue – Languages of Somalia",
       "Recensements somaliens",
       "Études anthropologiques sur les peuples de Somalie",
-      "Études historiques sur la colonisation britannique et italienne"
+      "Études historiques sur la colonisation britannique et italienne",
+      "CIA World Factbook – Somalia (ethnic groups)"
     ],
     "demographics": {
       "peoples": [
@@ -178,7 +179,7 @@
         {
           "name": "Bantous somaliens",
           "population": 900000,
-          "percentageInCountry": 5,
+          "percentageInCountry": 10,
           "peopleId": "PPL_BANTOUS_SOMALIENS",
           "region": "Sud de la Somalie (vallée du Juba, vallée du Shabelle)",
           "languageFamily": "FLG_BANTU"
@@ -186,7 +187,7 @@
         {
           "name": "Arabes somaliens",
           "population": 450000,
-          "percentageInCountry": 2.5,
+          "percentageInCountry": 5,
           "peopleId": "PPL_ARABES_SOMALIENS",
           "region": ""
         }

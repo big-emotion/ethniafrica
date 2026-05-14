@@ -159,14 +159,15 @@
       "Zambia Statistics Agency",
       "Wikipedia – Zambia, Bemba people, Lozi people, Tonga people",
       "Études anthropologiques sur les peuples bantous de Zambie",
-      "Recensements zambiens"
+      "Recensements zambiens",
+      "CIA World Factbook – Zambia (ethnic groups, 2010 census)"
     ],
     "demographics": {
       "peoples": [
         {
           "name": "Bemba",
           "population": 4500000,
-          "percentageInCountry": 20.5,
+          "percentageInCountry": 21,
           "percentageInAfrica": 2.5,
           "peopleId": "PPL_BEMBA",
           "region": "Nord (Northern Province, Luapula, Copperbelt)",
@@ -174,7 +175,15 @@
         },
         {
           "name": "Tonga",
-          "peopleId": "PPL_TONGA_"
+          "peopleId": "PPL_TONGA_",
+          "percentageInCountry": 13.6
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "peopleId": null,
+          "region": "Divers",
+          "languageFamily": null,
+          "percentageInCountry": 65
         }
       ]
     }
