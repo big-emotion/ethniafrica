@@ -23,7 +23,26 @@ function applySecurityHeaders(response: NextResponse, nonce: string) {
   response.headers.set("Content-Security-Policy", csp);
 }
 
+// Canonical site locale. Any other 2-letter language segment is redirected
+// here to keep a single source of truth for crawlers and avoid duplicate
+// content under URLs like /en/* that render French anyway.
+const CANONICAL_LOCALE = "fr";
+const LOCALE_SEGMENT = /^\/([a-z]{2})(?=\/|$)/;
+
 export async function middleware(request: NextRequest) {
+  // FR-only canonical redirect: any /[2-letter-lang]/* segment that isn't /fr
+  // is permanently redirected to its /fr equivalent (preserves subpath + query).
+  const { pathname } = request.nextUrl;
+  const localeMatch = pathname.match(LOCALE_SEGMENT);
+  if (localeMatch && localeMatch[1] !== CANONICAL_LOCALE) {
+    const rest = pathname.slice(localeMatch[0].length).replace(/\/+$/, "");
+    const target = new URL(
+      `/${CANONICAL_LOCALE}${rest}${request.nextUrl.search}`,
+      request.nextUrl.origin
+    );
+    return NextResponse.redirect(target, 308);
+  }
+
   // Apply rate limiting for /api/v2/* routes before any other logic
   if (request.nextUrl.pathname.startsWith("/api/v2/")) {
     const rateLimitResponse = await applyRateLimit(request);
@@ -33,8 +52,6 @@ export async function middleware(request: NextRequest) {
   const nonce = btoa(crypto.randomUUID());
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-nonce", nonce);
-
-  const { pathname } = request.nextUrl;
 
   // --- API v2 authentication ---
   if (

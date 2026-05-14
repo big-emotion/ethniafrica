@@ -124,6 +124,99 @@ describe("middleware", () => {
     });
   });
 
+  describe("language redirect (FR-only)", () => {
+    it("redirects /en to /fr with 308 (permanent)", async () => {
+      const request = new NextRequest("http://localhost:3000/en");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe("http://localhost:3000/fr");
+    });
+
+    it("redirects /en/ to /fr (trailing slash normalized)", async () => {
+      const request = new NextRequest("http://localhost:3000/en/");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe("http://localhost:3000/fr");
+    });
+
+    it("redirects /en/peuples to /fr/peuples preserving subpath", async () => {
+      const request = new NextRequest("http://localhost:3000/en/peuples");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/peuples"
+      );
+    });
+
+    it("redirects /es/pays/zaf to /fr/pays/zaf preserving deep subpath", async () => {
+      const request = new NextRequest("http://localhost:3000/es/pays/zaf");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/pays/zaf"
+      );
+    });
+
+    it("preserves query string on language redirect", async () => {
+      const request = new NextRequest(
+        "http://localhost:3000/en/peuples?people=PPL_YORUBA"
+      );
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/peuples?people=PPL_YORUBA"
+      );
+    });
+
+    it("does not redirect /fr (already the canonical locale)", async () => {
+      const request = new NextRequest("http://localhost:3000/fr");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("location")).toBeNull();
+    });
+
+    it("does not redirect /fr/peuples", async () => {
+      const request = new NextRequest("http://localhost:3000/fr/peuples");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("location")).toBeNull();
+    });
+
+    it("does not redirect /admin (not a 2-letter segment)", async () => {
+      const request = new NextRequest("http://localhost:3000/admin/login");
+      const response = await middleware(request);
+
+      // /admin/login is allowed through without auth (per existing tests)
+      expect(response.status).toBe(200);
+    });
+
+    it("does not redirect /api/v2/* paths to a /fr/* equivalent", async () => {
+      const request = new NextRequest("http://localhost:3000/api/v2/peoples");
+      const response = await middleware(request);
+
+      // No language redirect; behavior governed by rate-limit / api auth
+      const location = response.headers.get("location");
+      if (location) {
+        expect(location).not.toMatch(/\/fr\//);
+      }
+    });
+
+    it("does not redirect /docs (4-letter, not a locale)", async () => {
+      const request = new NextRequest("http://localhost:3000/docs/api");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("location")).toBeNull();
+    });
+  });
+
   describe("security headers", () => {
     it("sets Strict-Transport-Security on pass-through responses", async () => {
       const request = new NextRequest("http://localhost:3000/some-page");
