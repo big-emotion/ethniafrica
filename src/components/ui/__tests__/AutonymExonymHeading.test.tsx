@@ -154,18 +154,27 @@ describe("AutonymExonymHeading", () => {
     expect(screen.queryByText("Yorùbá-Nago")).toBeNull();
   });
 
-  // 9. ipa prop: renders IPA with correct aria-label
-  it("renders IPA with correct aria-label when ipa is provided", () => {
-    render(
+  // 9. ipa prop: visual span is aria-hidden; sr-only span carries aria-label
+  it("renders IPA with aria-hidden visual text and sr-only phonetic label when ipa is provided", () => {
+    const { container } = render(
       <AutonymExonymHeading
         autonym="Yorùbá"
         autonymIso639_3="yor"
         ipa="jōrùbá"
       />
     );
-    const ipaEl = screen.getByText("[jōrùbá]");
-    expect(ipaEl).toBeInTheDocument();
-    expect(ipaEl).toHaveAttribute(
+
+    // Visual bracket text is present but hidden from AT
+    const visualIpa = screen.getByText("[jōrùbá]");
+    expect(visualIpa).toBeInTheDocument();
+    expect(visualIpa).toHaveAttribute("aria-hidden", "true");
+
+    // Screen-reader-only span has the descriptive aria-label
+    const srSpan = container.querySelector(
+      "span.sr-only[aria-label='Prononciation phonétique : jōrùbá']"
+    );
+    expect(srSpan).not.toBeNull();
+    expect(srSpan).toHaveAttribute(
       "aria-label",
       "Prononciation phonétique : jōrùbá"
     );

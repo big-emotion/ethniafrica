@@ -64,6 +64,27 @@ module.exports = {
           data: { name: match ? match[0] : text },
         });
       },
+
+      /**
+       * Catch string literals inside JSX expression containers, e.g.
+       *   <p>{"Yoruba"}</p>  or  <h1>{peopleName}</h1>  (the Literal case).
+       * Only `Literal` (quoted string) nodes are flagged — identifiers and
+       * expressions are intentionally out of scope for this static heuristic.
+       */
+      "JSXExpressionContainer > Literal"(node) {
+        if (typeof node.value !== "string") return;
+        const text = node.value.trim();
+        if (!text) return;
+        if (!PROPER_NOUN_RE.test(text)) return;
+        if (isInsideAutonymExonymHeading(node)) return;
+
+        const match = text.match(PROPER_NOUN_RE);
+        context.report({
+          node,
+          messageId: "noBarepeopleName",
+          data: { name: match ? match[0] : text },
+        });
+      },
     };
   },
 };

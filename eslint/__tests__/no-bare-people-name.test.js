@@ -42,6 +42,22 @@ ruleTester.run("no-bare-people-name", rule, {
     {
       code: `<AutonymExonymHeading autonym="x" autonymIso639_3="xyz"><span>Yoruba</span></AutonymExonymHeading>`,
     },
+    // Quoted string literal inside AutonymExonymHeading expression container — OK
+    {
+      code: `<AutonymExonymHeading autonym="x" autonymIso639_3="xyz">{"Yoruba"}</AutonymExonymHeading>`,
+    },
+    // Quoted string literal inside deeply nested AutonymExonymHeading — OK
+    {
+      code: `<AutonymExonymHeading autonym="x" autonymIso639_3="xyz"><span>{"Hausa"}</span></AutonymExonymHeading>`,
+    },
+    // Non-string literal (number) inside JSX expression container — OK
+    {
+      code: `<div>{42}</div>`,
+    },
+    // lowercase string literal in expression container — not a proper noun
+    {
+      code: `<div>{"hello world"}</div>`,
+    },
   ],
   invalid: [
     // Bare proper noun in JSX outside AutonymExonymHeading
@@ -56,6 +72,20 @@ ruleTester.run("no-bare-people-name", rule, {
     // Proper noun in a sibling element outside AutonymExonymHeading
     {
       code: `<section><h1>Igbo</h1></section>`,
+      errors: [{ messageId: "noBarepeopleName" }],
+    },
+    // Quoted string literal in JSX expression container outside AutonymExonymHeading
+    {
+      code: `<p>{"Yoruba"}</p>`,
+      errors: [{ messageId: "noBarepeopleName" }],
+    },
+    {
+      code: `<h1>{"Hausa people"}</h1>`,
+      errors: [{ messageId: "noBarepeopleName" }],
+    },
+    // Nested element with quoted string literal outside AutonymExonymHeading
+    {
+      code: `<section><span>{"Igbo"}</span></section>`,
       errors: [{ messageId: "noBarepeopleName" }],
     },
   ],
