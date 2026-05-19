@@ -209,7 +209,6 @@
       "peoples": [
         {
           "name": "Chewa",
-          "population": 6500000,
           "percentageInCountry": 34.3,
           "peopleId": "PPL_CHEWA",
           "region": "Centre du Malawi"

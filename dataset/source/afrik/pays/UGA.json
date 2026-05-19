@@ -218,7 +218,6 @@
       "peoples": [
         {
           "name": "Baganda",
-          "population": 8500000,
           "percentageInCountry": 17,
           "peopleId": "PPL_BAGANDA",
           "region": "Centre de l'Ouganda",
@@ -226,7 +225,6 @@
         },
         {
           "name": "Banyankole",
-          "population": 3500000,
           "percentageInCountry": 7,
           "peopleId": "PPL_BANYANKOLE",
           "region": "Sud-ouest de l'Ouganda",
@@ -234,7 +232,6 @@
         },
         {
           "name": "Basoga",
-          "population": 3000000,
           "percentageInCountry": 6,
           "peopleId": "PPL_BASOGA",
           "region": "Est de l'Ouganda",
@@ -242,7 +239,6 @@
         },
         {
           "name": "Acholi",
-          "population": 2000000,
           "percentageInCountry": 4,
           "peopleId": "PPL_ACHOLI",
           "region": "Nord de l'Ouganda",
@@ -250,7 +246,6 @@
         },
         {
           "name": "Banyoro",
-          "population": 1500000,
           "percentageInCountry": 3,
           "peopleId": "PPL_BANYORO",
           "region": "Ouest de l'Ouganda",
@@ -258,7 +253,6 @@
         },
         {
           "name": "Langi",
-          "population": 1500000,
           "percentageInCountry": 3,
           "peopleId": "PPL_LANGI",
           "region": "Nord de l'Ouganda",
@@ -266,7 +260,6 @@
         },
         {
           "name": "Batooro",
-          "population": 1000000,
           "percentageInCountry": 2,
           "peopleId": "PPL_BATOORO",
           "region": "Ouest de l'Ouganda",
@@ -274,7 +267,6 @@
         },
         {
           "name": "Autres peuples",
-          "population": 30000000,
           "percentageInCountry": 58,
           "region": "Diverses régions de l'Ouganda"
         }

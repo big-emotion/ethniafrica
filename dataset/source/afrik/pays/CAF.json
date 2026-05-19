@@ -198,7 +198,6 @@
       "peoples": [
         {
           "name": "Banda",
-          "population": 2000000,
           "percentageInCountry": 28.6,
           "peopleId": "PPL_BANDA",
           "region": "Centre et est de la RCA",
@@ -206,7 +205,6 @@
         },
         {
           "name": "Gbaya",
-          "population": 1500000,
           "percentageInCountry": 21.4,
           "peopleId": "PPL_GBAYA",
           "region": "Ouest de la RCA",
@@ -222,7 +220,6 @@
         },
         {
           "name": "Sango",
-          "population": 1000000,
           "percentageInCountry": 14.3,
           "peopleId": "PPL_SANGO",
           "region": "Toutes les régions de la RCA",
@@ -246,7 +243,6 @@
         },
         {
           "name": "Autres peuples",
-          "population": 1500000,
           "percentageInCountry": 21.4,
           "region": "Diverses régions de la RCA"
         }
