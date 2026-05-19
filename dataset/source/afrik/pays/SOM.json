@@ -170,7 +170,6 @@
       "peoples": [
         {
           "name": "Somali",
-          "population": 15300000,
           "percentageInCountry": 85,
           "peopleId": "PPL_SOMALI",
           "region": "Toute la Somalie",
@@ -178,7 +177,6 @@
         },
         {
           "name": "Bantous somaliens",
-          "population": 900000,
           "percentageInCountry": 10,
           "peopleId": "PPL_BANTOUS_SOMALIENS",
           "region": "Sud de la Somalie (vallée du Juba, vallée du Shabelle)",
@@ -186,7 +184,6 @@
         },
         {
           "name": "Arabes somaliens",
-          "population": 450000,
           "percentageInCountry": 5,
           "peopleId": "PPL_ARABES_SOMALIENS",
           "region": ""

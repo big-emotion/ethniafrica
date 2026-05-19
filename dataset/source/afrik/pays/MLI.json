@@ -182,7 +182,6 @@
       "peoples": [
         {
           "name": "Bambara",
-          "population": 7700000,
           "percentageInCountry": 33.3,
           "percentageInAfrica": 0.54,
           "peopleId": "PPL_BAMBARA",
@@ -191,7 +190,6 @@
         },
         {
           "name": "Peul / Fulani",
-          "population": 3740000,
           "percentageInCountry": 13.3,
           "percentageInAfrica": 0.26,
           "peopleId": "PPL_FULA",
@@ -200,7 +198,6 @@
         },
         {
           "name": "Dogon",
-          "population": 1760000,
           "percentageInCountry": 8.7,
           "percentageInAfrica": 0.12,
           "peopleId": "PPL_DOGON",
@@ -209,7 +206,6 @@
         },
         {
           "name": "Touareg",
-          "population": 1980000,
           "percentageInCountry": 1.7,
           "percentageInAfrica": 0.14,
           "peopleId": "PPL_TUAREG",
@@ -218,7 +214,6 @@
         },
         {
           "name": "Soninké",
-          "population": 1760000,
           "percentageInCountry": 9.8,
           "percentageInAfrica": 0.12,
           "peopleId": "PPL_SONINKE",
@@ -227,7 +222,6 @@
         },
         {
           "name": "Songhai",
-          "population": 1320000,
           "percentageInCountry": 5.9,
           "percentageInAfrica": 0.09,
           "peopleId": "PPL_SONGHAI",
@@ -236,7 +230,6 @@
         },
         {
           "name": "Malinké",
-          "population": 1540000,
           "percentageInCountry": 8.8,
           "percentageInAfrica": 0.11,
           "peopleId": "PPL_MALINKE",
