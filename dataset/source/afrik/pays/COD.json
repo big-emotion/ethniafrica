@@ -242,7 +242,6 @@
       "peoples": [
         {
           "name": "Luba",
-          "population": 18360000,
           "percentageInCountry": 18,
           "percentageInAfrica": 1.28,
           "peopleId": "PPL_LUBA",
@@ -251,7 +250,6 @@
         },
         {
           "name": "Kongo",
-          "population": 12240000,
           "percentageInCountry": 12,
           "percentageInAfrica": 0.86,
           "peopleId": "PPL_KONGO",
@@ -260,7 +258,6 @@
         },
         {
           "name": "Mongo",
-          "population": 17340000,
           "percentageInCountry": 17,
           "percentageInAfrica": 1.21,
           "peopleId": "PPL_MONGO",

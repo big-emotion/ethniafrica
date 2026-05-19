@@ -209,7 +209,6 @@
       "peoples": [
         {
           "name": "Kikuyu",
-          "population": 9300000,
           "percentageInCountry": 17.1,
           "percentageInAfrica": 0.65,
           "peopleId": "PPL_KIKUYU",

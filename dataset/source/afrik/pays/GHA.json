@@ -163,7 +163,6 @@
       "peoples": [
         {
           "name": "Akan",
-          "population": 17575000,
           "percentageInCountry": 45.7,
           "percentageInAfrica": 1.23,
           "peopleId": "PPL_AKAN",
@@ -172,7 +171,6 @@
         },
         {
           "name": "Mole-Dagbani",
-          "population": 6160000,
           "percentageInCountry": 18.5,
           "percentageInAfrica": 0.43,
           "peopleId": "PPL_DAGOMBA",
@@ -181,7 +179,6 @@
         },
         {
           "name": "Ewe",
-          "population": 5140000,
           "percentageInCountry": 12.8,
           "percentageInAfrica": 0.36,
           "peopleId": "PPL_EWE",
@@ -190,7 +187,6 @@
         },
         {
           "name": "Ga-Dangme",
-          "population": 2740000,
           "percentageInCountry": 7.1,
           "percentageInAfrica": 0.19,
           "peopleId": "PPL_GA_DANGME",
@@ -199,7 +195,6 @@
         },
         {
           "name": "Guan",
-          "population": 1630000,
           "percentageInCountry": 3.2,
           "percentageInAfrica": 0.11,
           "peopleId": "PPL_GUAN",
@@ -208,7 +203,6 @@
         },
         {
           "name": "Gurma",
-          "population": 1170000,
           "percentageInCountry": 6.4,
           "percentageInAfrica": 0.08,
           "peopleId": "PPL_GURMA",

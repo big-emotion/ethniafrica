@@ -1343,7 +1343,6 @@ async function main() {
       datasetRoot,
       path.join(PUBLIC_ROOT, "pays_demographie.csv")
     ),
-    soft: true,
   });
 
   console.log("Orphan fiches...");

@@ -8,9 +8,42 @@ import {
   checkIsoValidity,
   checkOrphanFiches,
   checkSourceUrls,
+  checkPopulationPercentageDrift,
 } from "../validateAfrikData";
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
+
+function writePaysCsv(
+  csvPath: string,
+  rows: Array<{ id_pays: string; population_totale_2025: number }>
+) {
+  mkdirSync(join(csvPath, ".."), { recursive: true });
+  const header = "id_pays,nom_pays,population_totale_2025,source,annee\n";
+  const body = rows
+    .map((r) => `${r.id_pays},"pays test",${r.population_totale_2025},"ONU",2025`)
+    .join("\n");
+  writeFileSync(csvPath, header + body + "\n");
+}
+
+function writePaysWithPopulation(
+  root: string,
+  isoCode: string,
+  peoples: Array<{
+    name: string;
+    population?: number;
+    percentageInCountry?: number;
+  }>
+) {
+  const dir = join(root, "pays");
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    join(dir, `${isoCode}.json`),
+    JSON.stringify({
+      id: isoCode,
+      content: { demographics: { peoples } },
+    })
+  );
+}
 
 function writeFLG(root: string, id: string) {
   const dir = join(root, "famille_linguistique");
@@ -378,6 +411,89 @@ describe("validateAfrikData – new integrity checks", () => {
       // Log file should exist at the expected path (even if empty, it gets written)
       // (appendFileSync is called with empty content when there are no URLs)
       expect(existsSync(expectedLogPath)).toBe(true);
+    });
+  });
+
+  // ── FR32 : checkPopulationPercentageDrift ─────────────────────────────────
+
+  describe("checkPopulationPercentageDrift (FR32)", () => {
+    let csvPath: string;
+
+    beforeEach(() => {
+      csvPath = join(tmpDir, "pays_demographie.csv");
+    });
+
+    it("returns ok:true when no entry has both population and percentageInCountry", () => {
+      writePaysCsv(csvPath, [{ id_pays: "KEN", population_totale_2025: 55000000 }]);
+      writePaysWithPopulation(tmpDir, "KEN", [
+        { name: "Kikuyu", percentageInCountry: 22 },
+        { name: "Luhya", percentageInCountry: 14 },
+      ]);
+
+      const result = checkPopulationPercentageDrift(tmpDir, csvPath);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    it("returns ok:true when drift is within 2 pp", () => {
+      writePaysCsv(csvPath, [{ id_pays: "KEN", population_totale_2025: 10000000 }]);
+      // implied = 2100000/10000000*100 = 21%, stated = 20%, drift = 1pp → ok
+      writePaysWithPopulation(tmpDir, "KEN", [
+        { name: "Kikuyu", population: 2100000, percentageInCountry: 20 },
+      ]);
+
+      const result = checkPopulationPercentageDrift(tmpDir, csvPath);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+
+    it("returns ok:false (hard error) when drift > 2 pp for a non-ZAF country", () => {
+      writePaysCsv(csvPath, [{ id_pays: "KEN", population_totale_2025: 10000000 }]);
+      // implied = 5000000/10000000*100 = 50%, stated = 20%, drift = 30pp → error
+      writePaysWithPopulation(tmpDir, "KEN", [
+        { name: "Kikuyu", population: 5000000, percentageInCountry: 20 },
+      ]);
+
+      const result = checkPopulationPercentageDrift(tmpDir, csvPath);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("KEN"))).toBe(true);
+      expect(result.errors.some((e) => e.includes("Kikuyu"))).toBe(true);
+    });
+
+    it("returns warning only (not error) for ZAF regardless of drift", () => {
+      writePaysCsv(csvPath, [{ id_pays: "ZAF", population_totale_2025: 10000000 }]);
+      // drift = 30pp — should warn but not error
+      writePaysWithPopulation(tmpDir, "ZAF", [
+        { name: "Zulu", population: 5000000, percentageInCountry: 20 },
+      ]);
+
+      const result = checkPopulationPercentageDrift(tmpDir, csvPath);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+      expect(result.warnings.some((w) => w.includes("ZAF"))).toBe(true);
+    });
+
+    it("returns warning only when country has no CSV row (no invented total)", () => {
+      writePaysCsv(csvPath, [{ id_pays: "KEN", population_totale_2025: 55000000 }]);
+      // NGR has no CSV row → skip with warning
+      writePaysWithPopulation(tmpDir, "NGR", [
+        { name: "Hausa", population: 1000000, percentageInCountry: 20 },
+      ]);
+
+      const result = checkPopulationPercentageDrift(tmpDir, csvPath);
+      expect(result.ok).toBe(true);
+      expect(result.warnings.some((w) => w.includes("NGR"))).toBe(true);
+    });
+
+    it("returns warning only when CSV file is missing", () => {
+      writePaysWithPopulation(tmpDir, "KEN", [
+        { name: "Kikuyu", population: 5000000, percentageInCountry: 20 },
+      ]);
+      const missingCsv = join(tmpDir, "nonexistent.csv");
+
+      const result = checkPopulationPercentageDrift(tmpDir, missingCsv);
+      expect(result.ok).toBe(true);
+      expect(result.warnings.some((w) => w.includes("not found"))).toBe(true);
     });
   });
 

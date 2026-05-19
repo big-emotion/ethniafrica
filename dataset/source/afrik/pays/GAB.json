@@ -196,7 +196,6 @@
       "peoples": [
         {
           "name": "Fang",
-          "population": 1200000,
           "percentageInCountry": 32,
           "peopleId": "PPL_FANG",
           "region": "Nord du Gabon (forêts équatoriales)",
@@ -204,7 +203,6 @@
         },
         {
           "name": "Punu",
-          "population": 240000,
           "percentageInCountry": 11.5,
           "peopleId": "PPL_PUNU",
           "region": "Sud du Gabon",

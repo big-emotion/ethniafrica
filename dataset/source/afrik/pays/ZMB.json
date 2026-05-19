@@ -165,7 +165,6 @@
       "peoples": [
         {
           "name": "Bemba",
-          "population": 4500000,
           "percentageInCountry": 21,
           "percentageInAfrica": 2.5,
           "peopleId": "PPL_BEMBA",

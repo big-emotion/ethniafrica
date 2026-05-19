@@ -95,7 +95,6 @@
       "peoples": [
         {
           "name": "Comorien",
-          "population": 900000,
           "peopleId": "PPL_COMORIEN",
           "region": "Archipel des Comores (Grande Comore, Anjouan, Mohéli)",
           "languageFamily": "FLG_NIGERCONGO",

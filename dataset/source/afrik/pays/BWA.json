@@ -202,7 +202,6 @@
       "peoples": [
         {
           "name": "Tswana",
-          "population": 1800000,
           "percentageInCountry": 79,
           "peopleId": "PPL_TSWANA",
           "region": "Tout le Botswana (peuple majoritaire)"
