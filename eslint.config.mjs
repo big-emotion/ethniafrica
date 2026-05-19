@@ -61,6 +61,25 @@ const eslintConfig = [
     },
   },
 
+  // ===========================================================================
+  // UX-DR49 rule 1: no-bare-people-name — decolonial posture
+  // ---------------------------------------------------------------------------
+  // Raw people/language name strings must be rendered inside
+  // <AutonymExonymHeading> so autonyms and exonyms are always presented with
+  // the correct cultural context.  Applies to the people and country component
+  // trees where such names are most likely to appear.
+  // ===========================================================================
+  {
+    files: [
+      "src/components/people/**/*.{ts,tsx,js,jsx}",
+      "src/components/country/**/*.{ts,tsx,js,jsx}",
+    ],
+    plugins: { afh: afhPlugin },
+    rules: {
+      "afh/no-bare-people-name": "error",
+    },
+  },
+
   // =============================================================================
   // NFR33, AR28: Enforce structured logging via @/lib/api/logger
   // =============================================================================
