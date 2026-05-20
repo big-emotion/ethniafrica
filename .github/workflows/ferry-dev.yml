@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Validate event envelope
-        uses: big-emotion/ferry/.github/actions/ferry-envelope-validate@v0.13.0
+        uses: big-emotion/ferry/.github/actions/ferry-envelope-validate@v0.13.1
         with:
           payload: ${{ toJson(github.event.client_payload) }}
 
@@ -52,7 +52,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Resolve execution path
         id: route
-        uses: big-emotion/ferry/.github/actions/ferry-route@v0.13.0
+        uses: big-emotion/ferry/.github/actions/ferry-route@v0.13.1
         with:
           payload: ${{ toJson(github.event.client_payload) }}
           role: developer
@@ -85,7 +85,7 @@ jobs:
 
       - name: Run Developer agent
         id: run-developer
-        uses: big-emotion/ferry/.github/actions/ferry-run-developer@v0.13.0
+        uses: big-emotion/ferry/.github/actions/ferry-run-developer@v0.13.1
         with:
           payload: ${{ toJson(github.event.client_payload) }}
           jira_base_url: ${{ secrets.FERRY_JIRA_BASE_URL }}
@@ -108,7 +108,7 @@ jobs:
       contents: write
       pull-requests: write
       issues: write
-      id-token: write # required by anthropics/claude-code-action@v1 OIDC auth
+      id-token: write # required for claude-code-action OIDC auth
     outputs:
       input_tokens: ${{ steps.cc-apply.outputs.input_tokens }}
       output_tokens: ${{ steps.cc-apply.outputs.output_tokens }}
@@ -119,7 +119,7 @@ jobs:
 
       - name: Prepare claude-code job
         id: cc-prepare
-        uses: big-emotion/ferry/.github/actions/ferry-cc-prepare@v0.13.0
+        uses: big-emotion/ferry/.github/actions/ferry-cc-prepare@v0.13.1
         with:
           payload: ${{ toJson(github.event.client_payload) }}
           role: developer
@@ -139,7 +139,7 @@ jobs:
 
       - name: Apply claude-code output
         id: cc-apply
-        uses: big-emotion/ferry/.github/actions/ferry-cc-apply@v0.13.0
+        uses: big-emotion/ferry/.github/actions/ferry-cc-apply@v0.13.1
         with:
           payload: ${{ toJson(github.event.client_payload) }}
           role: developer
@@ -163,7 +163,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
       - name: Emit audit line
-        uses: big-emotion/ferry/.github/actions/ferry-emit-audit@v0.13.0
+        uses: big-emotion/ferry/.github/actions/ferry-emit-audit@v0.13.1
         with:
           ticket: ${{ github.event.client_payload.ticket_key }}
           phase: dev
