@@ -132,7 +132,6 @@
       "peoples": [
         {
           "name": "Shona",
-          "population": 13600000,
           "percentageInCountry": 82,
           "percentageInAfrica": 7.6,
           "peopleId": "PPL_SHONA",

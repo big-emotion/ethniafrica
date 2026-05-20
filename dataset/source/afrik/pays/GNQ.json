@@ -176,7 +176,6 @@
       "peoples": [
         {
           "name": "Fang",
-          "population": 1200000,
           "percentageInCountry": 80,
           "peopleId": "PPL_FANG",
           "region": "Río Muni (continent, forêts équatoriales)",

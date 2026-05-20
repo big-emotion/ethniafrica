@@ -153,7 +153,6 @@
       "peoples": [
         {
           "name": "Wolof",
-          "population": 7380000,
           "percentageInCountry": 39.7,
           "percentageInAfrica": 0.52,
           "peopleId": "PPL_WOLOF",
@@ -162,7 +161,6 @@
         },
         {
           "name": "Peul / Fulani",
-          "population": 4500000,
           "percentageInCountry": 27.5,
           "percentageInAfrica": 0.31,
           "peopleId": "PPL_FULA",
@@ -171,7 +169,6 @@
         },
         {
           "name": "Sérère",
-          "population": 2700000,
           "percentageInCountry": 16,
           "percentageInAfrica": 0.19,
           "peopleId": "PPL_SERERE",
@@ -180,7 +177,6 @@
         },
         {
           "name": "Diola / Jola",
-          "population": 900000,
           "percentageInCountry": 4.2,
           "percentageInAfrica": 0.06,
           "peopleId": "PPL_DIOLA",

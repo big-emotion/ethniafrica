@@ -216,7 +216,6 @@
       "peoples": [
         {
           "name": "Balante",
-          "population": 540000,
           "percentageInCountry": 30,
           "peopleId": "PPL_BALANTA",
           "region": "Centre et littoral de la Guinée-Bissau",
@@ -224,7 +223,6 @@
         },
         {
           "name": "Fula / Peul",
-          "population": 375000,
           "percentageInCountry": 30,
           "peopleId": "PPL_FULA",
           "region": "Toutes les régions de la Guinée-Bissau",
@@ -232,7 +230,6 @@
         },
         {
           "name": "Mandinka",
-          "population": 290000,
           "percentageInCountry": 13,
           "peopleId": "PPL_MALINKE",
           "region": "Toutes les régions de la Guinée-Bissau",
@@ -240,7 +237,6 @@
         },
         {
           "name": "Papel",
-          "population": 210000,
           "percentageInCountry": 7,
           "peopleId": "PPL_PAPEL",
           "region": ""

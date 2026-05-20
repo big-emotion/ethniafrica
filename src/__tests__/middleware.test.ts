@@ -124,6 +124,99 @@ describe("middleware", () => {
     });
   });
 
+  describe("language redirect (FR-only)", () => {
+    it("redirects /en to /fr with 308 (permanent)", async () => {
+      const request = new NextRequest("http://localhost:3000/en");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe("http://localhost:3000/fr");
+    });
+
+    it("redirects /en/ to /fr (trailing slash normalized)", async () => {
+      const request = new NextRequest("http://localhost:3000/en/");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe("http://localhost:3000/fr");
+    });
+
+    it("redirects /en/peuples to /fr/peuples preserving subpath", async () => {
+      const request = new NextRequest("http://localhost:3000/en/peuples");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/peuples"
+      );
+    });
+
+    it("redirects /es/pays/zaf to /fr/pays/zaf preserving deep subpath", async () => {
+      const request = new NextRequest("http://localhost:3000/es/pays/zaf");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/pays/zaf"
+      );
+    });
+
+    it("preserves query string on language redirect", async () => {
+      const request = new NextRequest(
+        "http://localhost:3000/en/peuples?people=PPL_YORUBA"
+      );
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/peuples?people=PPL_YORUBA"
+      );
+    });
+
+    it("does not redirect /fr (already the canonical locale)", async () => {
+      const request = new NextRequest("http://localhost:3000/fr");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("location")).toBeNull();
+    });
+
+    it("does not redirect /fr/peuples", async () => {
+      const request = new NextRequest("http://localhost:3000/fr/peuples");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("location")).toBeNull();
+    });
+
+    it("does not redirect /admin (not a 2-letter segment)", async () => {
+      const request = new NextRequest("http://localhost:3000/admin/login");
+      const response = await middleware(request);
+
+      // /admin/login is allowed through without auth (per existing tests)
+      expect(response.status).toBe(200);
+    });
+
+    it("does not redirect /api/v2/* paths to a /fr/* equivalent", async () => {
+      const request = new NextRequest("http://localhost:3000/api/v2/peoples");
+      const response = await middleware(request);
+
+      // No language redirect; behavior governed by rate-limit / api auth
+      const location = response.headers.get("location");
+      if (location) {
+        expect(location).not.toMatch(/\/fr\//);
+      }
+    });
+
+    it("does not redirect /docs (4-letter, not a locale)", async () => {
+      const request = new NextRequest("http://localhost:3000/docs/api");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("location")).toBeNull();
+    });
+  });
+
   describe("security headers", () => {
     it("sets Strict-Transport-Security on pass-through responses", async () => {
       const request = new NextRequest("http://localhost:3000/some-page");
@@ -205,20 +298,29 @@ describe("config", () => {
     expect(config.matcher).toBeDefined();
   });
 
-  it("matcher excludes static assets and includes app routes", () => {
-    const rawPattern = Array.isArray(config.matcher)
-      ? config.matcher[0]
-      : String(config.matcher);
-    const regex = new RegExp(`^${rawPattern}$`);
+  it("matcher includes /api/v2/* and the app catch-all, excludes static assets", () => {
+    expect(Array.isArray(config.matcher)).toBe(true);
+    const patterns = (config.matcher as string[]).map(
+      (p) => new RegExp(`^${p}$`)
+    );
 
-    expect(regex.test("/")).toBe(true);
-    expect(regex.test("/api/health")).toBe(true);
-    expect(regex.test("/about")).toBe(true);
-    expect(regex.test("/some/nested/page")).toBe(true);
+    const matchesAny = (path: string) => patterns.some((r) => r.test(path));
 
-    expect(regex.test("/_next/static/chunk.js")).toBe(false);
-    expect(regex.test("/_next/static/css/main.css")).toBe(false);
-    expect(regex.test("/_next/image?url=foo")).toBe(false);
-    expect(regex.test("/favicon.ico")).toBe(false);
+    // App routes
+    expect(matchesAny("/")).toBe(true);
+    expect(matchesAny("/api/health")).toBe(true);
+    expect(matchesAny("/about")).toBe(true);
+    expect(matchesAny("/some/nested/page")).toBe(true);
+
+    // /api/v2/* must match (rate-limit gate must always run there)
+    expect(matchesAny("/api/v2/countries")).toBe(true);
+    expect(matchesAny("/api/v2/peoples/PPL_YORUBA")).toBe(true);
+
+    // Static assets must not match
+    expect(matchesAny("/_next/static/chunk.js")).toBe(false);
+    expect(matchesAny("/_next/static/css/main.css")).toBe(false);
+    expect(matchesAny("/_next/image?url=foo")).toBe(false);
+    expect(matchesAny("/favicon.ico")).toBe(false);
+    expect(matchesAny("/logo.svg")).toBe(false);
   });
 });

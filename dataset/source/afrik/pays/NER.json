@@ -210,7 +210,6 @@
       "peoples": [
         {
           "name": "Hausa",
-          "population": 11000000,
           "percentageInCountry": 53.1,
           "peopleId": "PPL_HAUSA",
           "region": "Sud du Niger",

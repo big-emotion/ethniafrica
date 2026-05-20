@@ -23,7 +23,45 @@ function applySecurityHeaders(response: NextResponse, nonce: string) {
   response.headers.set("Content-Security-Policy", csp);
 }
 
+// Canonical site locale. Any other 2-letter language segment is redirected
+// here to keep a single source of truth for crawlers and avoid duplicate
+// content under URLs like /en/* that render French anyway.
+const CANONICAL_LOCALE = "fr";
+const LOCALE_SEGMENT = /^\/([a-z]{2})(?=\/|$)/;
+
+// True when the request originates from the deployment itself — i.e. the
+// browser tab or server worker serving our own frontend. Used to let the
+// site call its own /api/v2/* without baking an API key into the bundle.
+// External clients (curl, partners, other origins) must still bring a key.
+function isSameOriginRequest(request: NextRequest): boolean {
+  const host = request.headers.get("host");
+  if (!host) return false;
+  for (const header of ["origin", "referer"] as const) {
+    const value = request.headers.get(header);
+    if (!value) continue;
+    try {
+      if (new URL(value).host === host) return true;
+    } catch {
+      // Malformed Origin/Referer — ignore and fall through to require a key.
+    }
+  }
+  return false;
+}
+
 export async function middleware(request: NextRequest) {
+  // FR-only canonical redirect: any /[2-letter-lang]/* segment that isn't /fr
+  // is permanently redirected to its /fr equivalent (preserves subpath + query).
+  const { pathname } = request.nextUrl;
+  const localeMatch = pathname.match(LOCALE_SEGMENT);
+  if (localeMatch && localeMatch[1] !== CANONICAL_LOCALE) {
+    const rest = pathname.slice(localeMatch[0].length).replace(/\/+$/, "");
+    const target = new URL(
+      `/${CANONICAL_LOCALE}${rest}${request.nextUrl.search}`,
+      request.nextUrl.origin
+    );
+    return NextResponse.redirect(target, 308);
+  }
+
   // Apply rate limiting for /api/v2/* routes before any other logic
   if (request.nextUrl.pathname.startsWith("/api/v2/")) {
     const rateLimitResponse = await applyRateLimit(request);
@@ -33,8 +71,6 @@ export async function middleware(request: NextRequest) {
   const nonce = btoa(crypto.randomUUID());
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("x-nonce", nonce);
-
-  const { pathname } = request.nextUrl;
 
   // --- API v2 authentication ---
   if (
@@ -50,13 +86,21 @@ export async function middleware(request: NextRequest) {
     // /api/v2/* without an API key during local development.
     const devBypass = !rawKey && process.env.NODE_ENV !== "production";
 
-    if (!rawKey && !devBypass) {
+    // Same-origin bypass: the deployment's own frontend calling /api/v2/* is
+    // implicitly authorized. IP-based rate limiting still applies. A present
+    // (even if invalid) Bearer key takes precedence so that bad tokens are
+    // rejected loudly rather than silently masked.
+    const sameOriginBypass = !rawKey && isSameOriginRequest(request);
+
+    if (!rawKey && !devBypass && !sameOriginBypass) {
       return NextResponse.json({ error: "missing_api_key" }, { status: 401 });
     }
 
     const result = devBypass
       ? ({ valid: true, apiKeyId: "dev-bypass" } as const)
-      : await validateApiKey(rawKey);
+      : sameOriginBypass
+        ? ({ valid: true, apiKeyId: "same-origin" } as const)
+        : await validateApiKey(rawKey);
 
     if (result.valid === false) {
       return NextResponse.json({ error: result.reason }, { status: 401 });
