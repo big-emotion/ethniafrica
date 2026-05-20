@@ -96,3 +96,6 @@ dataset/source/archive/
 
 # Logs générés (migration, validation)
 dataset/source/afrik/logs/
+
+# Ferry — local cache of audit issue comments (regenerated via gh api)
+ferry-audit.jsonl
