@@ -65,6 +65,7 @@ export interface PeopleCultureData {
   supremeDeity?: string;
   intermediates: string[];
   initiation?: string;
+  femaleInitiation?: string;
   funerary?: string;
   symbols: string[];
   music?: string;
@@ -129,11 +130,11 @@ export function formatPeoplePopulation(n: number): string {
 
 /**
  * Extract short display form from a selfAppellation string.
- * "Ọmọ Oòduà (singulier), Yorùbá (pluriel)" → "Ọmọ · Yorùbá"
+ * "Ọmọ Oòduà (singulier), Yorùbá (pluriel)" → "Ọmọ Oòduà · Yorùbá"
  */
 export function extractAppellationShort(selfAppellation?: string): string {
   if (!selfAppellation) return "";
-  const parts = selfAppellation.match(/(\S+)\s*\(/g);
+  const parts = selfAppellation.match(/([^(,]+?)\s*\(/g);
   if (parts) {
     return parts.map((p) => p.replace(/\s*\($/, "").trim()).join(" · ");
   }
@@ -204,6 +205,7 @@ export function transformPeopleCulture(
       supremeDeity: undefined,
       intermediates: [],
       initiation: undefined,
+      femaleInitiation: undefined,
       funerary: undefined,
       symbols: [],
       music: undefined,
@@ -229,6 +231,8 @@ export function transformPeopleCulture(
     supremeDeity,
     intermediates,
     initiation: culture.ritesAndPractices?.initiationRites?.maleInitiation,
+    femaleInitiation:
+      culture.ritesAndPractices?.initiationRites?.femaleInitiation,
     funerary: culture.ritesAndPractices?.funeraryRites?.wake,
     symbols,
     music: culture.symbolsAndArts?.artsAndMusic?.musicalInstruments,

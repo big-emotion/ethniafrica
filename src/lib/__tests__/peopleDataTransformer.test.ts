@@ -193,6 +193,12 @@ describe("extractAppellationShort", () => {
   it("trims whitespace", () => {
     expect(extractAppellationShort("  Moaga  ")).toBe("Moaga");
   });
+
+  it("preserves multi-word appellations before parentheses", () => {
+    expect(
+      extractAppellationShort("Ọmọ Oòduà (singulier), Yorùbá (pluriel)")
+    ).toBe("Ọmọ Oòduà · Yorùbá");
+  });
 });
 
 // ==========================================
@@ -330,6 +336,11 @@ describe("transformPeopleCulture", () => {
   it("extracts initiation rites", () => {
     const result = transformPeopleCulture(yorubaPeople.culture);
     expect(result.initiation).toContain("Ogboni");
+  });
+
+  it("extracts female initiation rites", () => {
+    const result = transformPeopleCulture(yorubaPeople.culture);
+    expect(result.femaleInitiation).toContain("puberté");
   });
 
   it("extracts funerary rites", () => {
