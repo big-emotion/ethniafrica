@@ -8,6 +8,8 @@ stepsCompleted:
   - step-02-generation-mode
   - step-03-author-tests
   - step-04-verify-red
+  - step-05-author-migration
+  - step-06-update-types
 generatedTestFiles:
   - src/lib/supabase/__tests__/per-assertion-data-model.test.ts
 inputDocuments:
@@ -19,8 +21,11 @@ inputDocuments:
   - src/lib/supabase/__tests__/rls-policies.test.ts
   - e2e/support/factories/fiche.ts
   - e2e/support/factories/flag.ts
-lastStep: step-04-verify-red
-lastSaved: 2026-05-14T07:35:48Z
+lastStep: step-06-update-types
+lastSaved: 2026-05-21T00:00:00Z
+migrationFile: supabase/migrations/018_per_assertion_fiche_revisions.sql
+typesFile: src/types/module-zero.ts
+jiraStory: ETNI-207
 architectRuling: 2026-05-14 — Winston — Option 1 (typed FK, nullable, anchor-required CHECK). See "Architectural ruling" section.
 ---
 
@@ -70,6 +75,12 @@ This file covers the **schema half** of the contract (the database side of R-2 /
 - **Skip guard:** suite is skipped (not failed) when `TEST_SUPABASE_ANON_KEY` / `TEST_SUPABASE_SERVICE_KEY` are absent, so `npm test` on a dev box without `supabase start` does not produce false red.
 
 ## Verification log
+
+### 2026-05-21 — ETNI-207 implementation (ferry/ETNI-207)
+
+Migration `018_per_assertion_fiche_revisions.sql` authored and merged into `ferry/ETNI-207`. TypeScript row types added in `src/types/module-zero.ts`. The migration creates `fiche_revisions`, wires `assertions.fiche_revision_id NOT NULL` (with backfill), adds `flags.assertion_id NULL` + `flags.assertion_field_path NULL`, adds `flags_has_anchor_check` CHECK, and creates the two required indexes. All steps are idempotent. The ATDD test file was not modified — it was authored as the red-phase gate and turns green only when the migration is applied to a live database. No polymorphic columns were introduced on `flags`, per the architectural ruling.
+
+---
 
 ### 2026-05-14 — initial author
 
