@@ -227,7 +227,10 @@
         },
         {
           "name": "Aït Yafelman",
-          "peopleId": "PPL_AIT_HD"
+          "percentageInCountry": 3.8,
+          "region": "Atlas marocain (confédérations amazighes centrales)",
+          "languageFamily": "FLG_BERBERE",
+          "peopleId": "PPL_AIT_HDZ"
         }
       ]
     }
