@@ -213,7 +213,7 @@ const INSERT_PAYLOADS: Record<string, Record<string, unknown>> = {
   flags: {
     entity_type: "test",
     entity_id: "rls-test",
-    flag_type: "inaccurate",
+    flag_kind: "inaccurate",
   },
   revisions: { entity_type: "test", entity_id: "rls-test" },
   editorial_doctrine: {
