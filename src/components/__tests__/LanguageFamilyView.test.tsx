@@ -1,20 +1,28 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { createElement } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { LanguageFamilyView } from "../views/LanguageFamilyView";
 import * as afrikLoader from "@/lib/afrikLoader";
-import type { LanguageFamilySummary } from "@/types/afrik-frontend";
 
-// Mock afrikLoader
 vi.mock("@/lib/afrikLoader", () => ({
   getAllLanguageFamilies: vi.fn(),
 }));
 
-// Mock useIsMobile hook
 vi.mock("@/hooks/use-mobile", () => ({
   useIsMobile: vi.fn(() => false),
 }));
 
-// Mock ResizeObserver for ScrollArea
+// SessionStorage mock for ConfidenceChip
+Object.defineProperty(window, "sessionStorage", {
+  value: {
+    getItem: vi.fn(() => null),
+    setItem: vi.fn(),
+    removeItem: vi.fn(),
+  },
+  writable: true,
+});
+
 class ResizeObserverMock {
   observe = vi.fn();
   unobserve = vi.fn();
@@ -22,24 +30,19 @@ class ResizeObserverMock {
 }
 global.ResizeObserver = ResizeObserverMock;
 
-const mockFamilies: LanguageFamilySummary[] = [
-  {
-    id: "FLG_BANTU",
-    nameFr: "Bantou",
-    nameEn: "Bantu",
-    peopleCount: 200,
-    totalSpeakers: 350000000,
-    geographicArea: "Sub-Saharan Africa",
-  },
-  {
-    id: "FLG_MANDE",
-    nameFr: "Mandé",
-    nameEn: "Mande",
-    peopleCount: 50,
-    totalSpeakers: 50000000,
-    geographicArea: "West Africa",
-  },
-];
+function createWrapper() {
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { retry: false } },
+  });
+  function Wrapper({ children }: { children: React.ReactNode }) {
+    return createElement(
+      QueryClientProvider,
+      { client: queryClient },
+      children
+    );
+  }
+  return Wrapper;
+}
 
 describe("LanguageFamilyView", () => {
   const mockOnFamilySelect = vi.fn();
@@ -54,7 +57,8 @@ describe("LanguageFamilyView", () => {
     );
 
     render(
-      <LanguageFamilyView language="fr" onFamilySelect={mockOnFamilySelect} />
+      <LanguageFamilyView language="fr" onFamilySelect={mockOnFamilySelect} />,
+      { wrapper: createWrapper() }
     );
 
     expect(
@@ -68,7 +72,8 @@ describe("LanguageFamilyView", () => {
     );
 
     render(
-      <LanguageFamilyView language="fr" onFamilySelect={mockOnFamilySelect} />
+      <LanguageFamilyView language="fr" onFamilySelect={mockOnFamilySelect} />,
+      { wrapper: createWrapper() }
     );
 
     expect(afrikLoader.getAllLanguageFamilies).toHaveBeenCalledTimes(1);

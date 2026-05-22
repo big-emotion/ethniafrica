@@ -1,20 +1,28 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen } from "@testing-library/react";
+import { createElement } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { PeopleView } from "../views/PeopleView";
 import * as afrikLoader from "@/lib/afrikLoader";
-import type { PeopleSummary } from "@/types/afrik-frontend";
 
-// Mock afrikLoader
 vi.mock("@/lib/afrikLoader", () => ({
   getAllPeoples: vi.fn(),
 }));
 
-// Mock useIsMobile hook
 vi.mock("@/hooks/use-mobile", () => ({
   useIsMobile: vi.fn(() => false),
 }));
 
-// Mock ResizeObserver for ScrollArea
+// SessionStorage mock for ConfidenceChip
+Object.defineProperty(window, "sessionStorage", {
+  value: {
+    getItem: vi.fn(() => null),
+    setItem: vi.fn(),
+    removeItem: vi.fn(),
+  },
+  writable: true,
+});
+
 class ResizeObserverMock {
   observe = vi.fn();
   unobserve = vi.fn();
@@ -22,28 +30,19 @@ class ResizeObserverMock {
 }
 global.ResizeObserver = ResizeObserverMock;
 
-const mockPeoples: PeopleSummary[] = [
-  {
-    id: "PPL_SHONA",
-    nameMain: "Shona",
-    selfAppellation: "vaShona",
-    languageFamilyId: "FLG_BANTU",
-    languageFamilyName: "Bantou",
-    totalPopulation: 15000000,
-    countryCount: 2,
-    currentCountries: ["ZWE", "MOZ"],
-  },
-  {
-    id: "PPL_ZULU",
-    nameMain: "Zulu",
-    selfAppellation: "amaZulu",
-    languageFamilyId: "FLG_BANTU",
-    languageFamilyName: "Bantou",
-    totalPopulation: 12000000,
-    countryCount: 1,
-    currentCountries: ["ZAF"],
-  },
-];
+function createWrapper() {
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { retry: false } },
+  });
+  function Wrapper({ children }: { children: React.ReactNode }) {
+    return createElement(
+      QueryClientProvider,
+      { client: queryClient },
+      children
+    );
+  }
+  return Wrapper;
+}
 
 describe("PeopleView", () => {
   const mockOnPeopleSelect = vi.fn();
@@ -57,7 +56,9 @@ describe("PeopleView", () => {
       () => new Promise(() => {})
     );
 
-    render(<PeopleView language="fr" onPeopleSelect={mockOnPeopleSelect} />);
+    render(<PeopleView language="fr" onPeopleSelect={mockOnPeopleSelect} />, {
+      wrapper: createWrapper(),
+    });
 
     expect(screen.getByText("Chargement des peuples...")).toBeInTheDocument();
   });
@@ -67,12 +68,14 @@ describe("PeopleView", () => {
       () => new Promise(() => {})
     );
 
-    render(<PeopleView language="fr" onPeopleSelect={mockOnPeopleSelect} />);
+    render(<PeopleView language="fr" onPeopleSelect={mockOnPeopleSelect} />, {
+      wrapper: createWrapper(),
+    });
 
     expect(afrikLoader.getAllPeoples).toHaveBeenCalledTimes(1);
   });
 
-  it("should receive languageFamilyId prop correctly", () => {
+  it("should accept languageFamilyId prop for filtering", () => {
     vi.mocked(afrikLoader.getAllPeoples).mockImplementation(
       () => new Promise(() => {})
     );
@@ -82,7 +85,8 @@ describe("PeopleView", () => {
         language="fr"
         onPeopleSelect={mockOnPeopleSelect}
         languageFamilyId="FLG_BANTU"
-      />
+      />,
+      { wrapper: createWrapper() }
     );
 
     expect(afrikLoader.getAllPeoples).toHaveBeenCalledTimes(1);
