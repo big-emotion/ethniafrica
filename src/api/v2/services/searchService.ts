@@ -1,16 +1,29 @@
 /**
- * Search Service - Search logic across all entities
+ * Search Service — business logic for search endpoints.
+ *
+ * ftsSearch: ETNI-38 FTS search (websearch_to_tsquery, confidence boost)
+ * search: legacy multi-entity search (backward compatibility)
  */
 
-import { searchAfrikAll } from "@/lib/supabase/queries/afrik/search";
-import type { SearchFilters, SearchResult } from "@/types/afrik";
+import {
+  ftsSearchPeoplesCountries,
+  searchAfrikAll,
+} from "@/lib/supabase/queries/afrik/search";
+import type {
+  SearchFilters,
+  SearchResult,
+  FtsSearchParams,
+  FtsSearchResponse,
+} from "@/types/afrik";
 
-/**
- * Search across countries, peoples, and language families
- * Uses Supabase queries for efficient database search
- */
+export async function ftsSearch(
+  params: FtsSearchParams
+): Promise<FtsSearchResponse> {
+  return ftsSearchPeoplesCountries(params);
+}
+
 export async function search(
   filters: SearchFilters = {}
 ): Promise<SearchResult[]> {
-  return await searchAfrikAll(filters);
+  return searchAfrikAll(filters);
 }
