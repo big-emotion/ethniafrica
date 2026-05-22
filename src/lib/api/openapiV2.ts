@@ -56,6 +56,11 @@ const options: swaggerJsdoc.Options = {
         description:
           "Source Transparency Fabric — sources, confidence scores, editorial doctrine",
       },
+      {
+        name: "API v2 - Feed",
+        description:
+          "Revision feed — cursor-paginated Atom + JSON feed of recent published revisions (FR38, AR19, NFR32)",
+      },
     ],
     components: {
       securitySchemes: {
@@ -522,6 +527,113 @@ const options: swaggerJsdoc.Options = {
               items: { $ref: "#/components/schemas/ApiErrorEntry" },
             },
           },
+        },
+        // -----------------------------------------------------------------
+        // Epic 3 — Revisions feed (ETNI-52)
+        // -----------------------------------------------------------------
+        FeedRevisionItem: {
+          type: "object",
+          description:
+            "A single published revision entry in the cross-entity revisions feed.",
+          properties: {
+            entity_type: {
+              type: "string",
+              enum: ["people", "country", "languageFamily"],
+              example: "people",
+            },
+            entity_id: {
+              type: "string",
+              example: "PPL_YORUBA",
+              description:
+                "Stable entity identifier (PPL_*, FLG_*, ISO 3166-1 alpha-3)",
+            },
+            slug: {
+              type: "string",
+              example: "ppl_yoruba",
+              description: "URL-friendly lowercase form of entity_id",
+            },
+            version: {
+              type: "integer",
+              minimum: 1,
+              example: 3,
+              description: "Monotonically increasing publication version",
+            },
+            published_at: {
+              type: "string",
+              format: "date-time",
+              nullable: true,
+              example: "2026-05-21T12:00:00.000Z",
+            },
+            pinned_url: {
+              type: "string",
+              example: "/api/v2/peoples/PPL_YORUBA/versions/3",
+              description: "Stable pinned-version URL (AR14)",
+            },
+            summary: {
+              type: "string",
+              nullable: true,
+              example: "Demographics update",
+              description: "Editorial reason for the revision, if provided",
+            },
+          },
+          required: [
+            "entity_type",
+            "entity_id",
+            "slug",
+            "version",
+            "pinned_url",
+          ],
+        },
+        FeedCursorPaginationMeta: {
+          type: "object",
+          description: "Cursor-based pagination meta for the revisions feed.",
+          properties: {
+            limit: {
+              type: "integer",
+              minimum: 1,
+              maximum: 100,
+              example: 20,
+            },
+            next_cursor: {
+              type: "string",
+              nullable: true,
+              example: "MjAyNi0wNS0yMVQxMjowMDowMC4wMDB...",
+              description:
+                "Opaque base64url cursor. Pass as ?cursor= on the next request. Null when no more pages.",
+            },
+          },
+          required: ["limit", "next_cursor"],
+        },
+        FeedRevisionListMeta: {
+          type: "object",
+          properties: {
+            license: { type: "string", example: "CC-BY-SA-4.0" },
+            attribution: {
+              type: "string",
+              example: "Africa History — africahistory.org",
+            },
+            pagination: {
+              $ref: "#/components/schemas/FeedCursorPaginationMeta",
+            },
+          },
+          required: ["license", "attribution", "pagination"],
+        },
+        FeedRevisionListResponse: {
+          type: "object",
+          description:
+            "Cursor-paginated list of published revisions across all entity types (JSON format).",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/FeedRevisionItem" },
+            },
+            meta: { $ref: "#/components/schemas/FeedRevisionListMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
         },
       },
     },
