@@ -154,7 +154,7 @@ describe("AutonymExonymHeading", () => {
     expect(screen.queryByText("Yorùbá-Nago")).toBeNull();
   });
 
-  // 9. ipa prop: visual span is aria-hidden; sr-only span carries aria-label
+  // 9. ipa prop: visual span is aria-hidden; sr-only span carries aria-label with no inner text
   it("renders IPA with aria-hidden visual text and sr-only phonetic label when ipa is provided", () => {
     const { container } = render(
       <AutonymExonymHeading
@@ -169,7 +169,8 @@ describe("AutonymExonymHeading", () => {
     expect(visualIpa).toBeInTheDocument();
     expect(visualIpa).toHaveAttribute("aria-hidden", "true");
 
-    // Screen-reader-only span has the descriptive aria-label
+    // Screen-reader-only span has the descriptive aria-label only — no inner text
+    // to prevent double-announcement on older AT (NVDA+Firefox) per ARIA 1.2 §6.3
     const srSpan = container.querySelector(
       "span.sr-only[aria-label='Prononciation phonétique : jōrùbá']"
     );
@@ -178,6 +179,7 @@ describe("AutonymExonymHeading", () => {
       "aria-label",
       "Prononciation phonétique : jōrùbá"
     );
+    expect(srSpan?.textContent).toBe("");
   });
 
   // 10. No ipa: IPA element absent
