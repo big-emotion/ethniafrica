@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
@@ -131,9 +132,7 @@ export const SearchPageContent = () => {
 
   // Format number
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat("fr-FR").format(
-      Math.round(num)
-    );
+    return new Intl.NumberFormat("fr-FR").format(Math.round(num));
   };
 
   // Get labels
@@ -205,28 +204,21 @@ export const SearchPageContent = () => {
 
   const pageTitle = "Recherche";
 
-  const pageSubtitle =
-    "Rechercher des familles linguistiques, peuples et pays";
+  const pageSubtitle = "Rechercher des familles linguistiques, peuples et pays";
 
-  const placeholderText =
-    "Tapez pour rechercher...";
+  const placeholderText = "Tapez pour rechercher...";
 
-  const filterByFamilyText =
-    "Filtrer par famille";
+  const filterByFamilyText = "Filtrer par famille";
 
-  const allFamiliesText =
-    "Toutes les familles";
+  const allFamiliesText = "Toutes les familles";
 
-  const clearFiltersText =
-    "Effacer les filtres";
+  const clearFiltersText = "Effacer les filtres";
 
   const resultsText = "résultats";
 
-  const noResultsText =
-    "Aucun résultat trouvé";
+  const noResultsText = "Aucun résultat trouvé";
 
-  const startSearchText =
-    "Commencez à taper pour rechercher...";
+  const startSearchText = "Commencez à taper pour rechercher...";
 
   return (
     <PageLayout
@@ -326,14 +318,13 @@ export const SearchPageContent = () => {
               <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
             </div>
           ) : results.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-64 text-center">
-              <Search className="h-12 w-12 text-muted-foreground mb-4 opacity-50" />
-              <p className="text-muted-foreground">
-                {query.trim() || selectedFamily
-                  ? noResultsText
-                  : startSearchText}
-              </p>
-            </div>
+            <EmptyState
+              message={
+                query.trim() || selectedFamily ? noResultsText : startSearchText
+              }
+              variant={query.trim() || selectedFamily ? "search" : "default"}
+              lang={language}
+            />
           ) : (
             <div className="space-y-3">
               {results.map((result, index) => (
