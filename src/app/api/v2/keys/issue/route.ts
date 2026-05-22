@@ -28,18 +28,30 @@
  *                   example: public
  *                 note:
  *                   type: string
+ *       400:
+ *         description: Invalid request parameters
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/Error'
+ *       403:
+ *         $ref: '#/components/responses/Forbidden'
  *       409:
  *         description: A public key already exists for this IP address
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
+ *       429:
+ *         $ref: '#/components/responses/RateLimited'
  *       500:
  *         description: Failed to issue key
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
+ *       503:
+ *         $ref: '#/components/responses/ServiceUnavailable'
  */
 import { NextRequest, NextResponse } from "next/server";
 import { hashApiKey, getKeyPrefix } from "@/lib/api/auth";

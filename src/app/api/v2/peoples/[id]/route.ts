@@ -42,6 +42,10 @@
  *               $ref: '#/components/schemas/Error'
  *             example:
  *               error: "Invalid people ID format"
+ *       401:
+ *         $ref: '#/components/responses/Unauthorized'
+ *       403:
+ *         $ref: '#/components/responses/Forbidden'
  *       404:
  *         description: Peuple non trouvé
  *         content:
@@ -50,12 +54,16 @@
  *               $ref: '#/components/schemas/Error'
  *             example:
  *               error: "People not found"
+ *       429:
+ *         $ref: '#/components/responses/RateLimited'
  *       500:
  *         description: Erreur serveur
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
+ *       503:
+ *         $ref: '#/components/responses/ServiceUnavailable'
  */
 
 import { NextRequest } from "next/server";
