@@ -95,6 +95,7 @@ describe("AFRIK Peoples Queries", () => {
       order: vi.fn(() => mockSupabase),
       range: vi.fn(() => mockSupabase),
       or: vi.fn(() => mockSupabase),
+      textSearch: vi.fn(() => mockSupabase),
     };
     vi.clearAllMocks();
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -182,10 +183,8 @@ describe("AFRIK Peoples Queries", () => {
 
   describe("getAfrikPeoplesByCountry", () => {
     it("should filter peoples by country", async () => {
-      let callCount = 0;
       mockSupabase.from.mockImplementation((table: string) => {
         if (table === "afrik_people_countries") {
-          callCount++;
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const relChain: any = {
             select: vi.fn(() => relChain),
@@ -234,8 +233,8 @@ describe("AFRIK Peoples Queries", () => {
   });
 
   describe("searchAfrikPeoples", () => {
-    it("should search peoples by name", async () => {
-      // For search, the chain is from().select().or().order()
+    it("should use FTS textSearch on search_vector with french config", async () => {
+      // Chain: from().select().textSearch().order()
       mockSupabase.from.mockImplementation((table: string) => {
         if (table === "afrik_people_countries") {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -254,7 +253,7 @@ describe("AFRIK Peoples Queries", () => {
       });
 
       mockSupabase.select.mockReturnValue(mockSupabase);
-      mockSupabase.or.mockReturnValue(mockSupabase);
+      mockSupabase.textSearch.mockReturnValue(mockSupabase);
       mockSupabase.order.mockResolvedValue({
         data: [
           {
@@ -269,8 +268,57 @@ describe("AFRIK Peoples Queries", () => {
 
       const result = await searchAfrikPeoples("Shona");
 
+      expect(mockSupabase.textSearch).toHaveBeenCalledWith(
+        "search_vector",
+        "Shona",
+        { type: "websearch", config: "french" }
+      );
       expect(result).toHaveLength(1);
       expect(result[0].id).toBe("PPL_SHONA");
+    });
+
+    it("should return stemmed matches via french dictionary", async () => {
+      mockSupabase.from.mockImplementation((table: string) => {
+        if (table === "afrik_people_countries") {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const relChain: any = {
+            select: vi.fn(() => relChain),
+            in: vi.fn(() =>
+              Promise.resolve({
+                data: [{ people_id: "PPL_KIKONGO", country_id: "COD" }],
+                error: null,
+              })
+            ),
+          };
+          return relChain;
+        }
+        return mockSupabase;
+      });
+
+      mockSupabase.select.mockReturnValue(mockSupabase);
+      mockSupabase.textSearch.mockReturnValue(mockSupabase);
+      mockSupabase.order.mockResolvedValue({
+        data: [
+          {
+            id: "PPL_KIKONGO",
+            name_main: "Kikongo",
+            language_family_id: "FLG_BANTU",
+            content: {},
+          },
+        ],
+        error: null,
+      });
+
+      // "kikongos" is the stemmed query; french dict should match "Kikongo"
+      const result = await searchAfrikPeoples("kikongos");
+
+      expect(mockSupabase.textSearch).toHaveBeenCalledWith(
+        "search_vector",
+        "kikongos",
+        { type: "websearch", config: "french" }
+      );
+      expect(result).toHaveLength(1);
+      expect(result[0].nameMain).toBe("Kikongo");
     });
   });
 });
