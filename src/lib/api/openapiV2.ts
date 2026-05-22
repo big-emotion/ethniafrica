@@ -377,6 +377,114 @@ const options: swaggerJsdoc.Options = {
             },
           },
         },
+        // -----------------------------------------------------------------
+        // Epic 3 — Pinned-version URLs (ETNI-51)
+        // -----------------------------------------------------------------
+        PeopleRevisionItem: {
+          type: "object",
+          description:
+            "A single published revision in the people revision history list.",
+          properties: {
+            version: {
+              type: "integer",
+              minimum: 1,
+              example: 3,
+              description: "Monotonically increasing publication version",
+            },
+            published_at: {
+              type: "string",
+              format: "date-time",
+              nullable: true,
+              example: "2026-05-21T10:00:00.000Z",
+            },
+            moderator_pseudonym: {
+              type: "string",
+              nullable: true,
+              example: "mod-aaaabbbb",
+              description:
+                "Privacy-preserving pseudonym derived from the moderator's internal id",
+            },
+            reason: {
+              type: "string",
+              nullable: true,
+              example: "Demographics update",
+            },
+            pinned_url: {
+              type: "string",
+              example: "/api/v2/peoples/PPL_YORUBA/versions/3",
+              description:
+                "Stable URL for this pinned version (AR14). Cache-Control: s-maxage=31536000, immutable.",
+            },
+          },
+          required: ["version", "pinned_url"],
+        },
+        CursorPaginationMeta: {
+          type: "object",
+          description: "Cursor-based pagination meta (no offset).",
+          properties: {
+            limit: {
+              type: "integer",
+              minimum: 1,
+              maximum: 100,
+              example: 20,
+            },
+            next_cursor: {
+              type: "integer",
+              nullable: true,
+              example: 4,
+              description:
+                "Version to pass as ?cursor= on the next request. Null when no more pages.",
+            },
+          },
+          required: ["limit", "next_cursor"],
+        },
+        PeopleRevisionListMeta: {
+          type: "object",
+          properties: {
+            license: { type: "string", example: "CC-BY-SA-4.0" },
+            attribution: {
+              type: "string",
+              example: "Africa History — africahistory.org",
+            },
+            pagination: { $ref: "#/components/schemas/CursorPaginationMeta" },
+          },
+          required: ["license", "attribution", "pagination"],
+        },
+        PeopleRevisionListResponse: {
+          type: "object",
+          description:
+            "Cursor-paginated list of published revisions ordered by version DESC.",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/PeopleRevisionItem" },
+            },
+            meta: { $ref: "#/components/schemas/PeopleRevisionListMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        PeopleVersionSnapshotResponse: {
+          type: "object",
+          description:
+            "Full published snapshot at a pinned version. Data is read from the immutable revision record, never from the live entity (AR14). Response is permanently cacheable (AR18).",
+          properties: {
+            data: {
+              type: "object",
+              description:
+                "Full denormalised entity state as stored at publication time (snapshot_jsonb)",
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
         DoctrineEntry: {
           type: "object",
           description: "Editorial-doctrine row (MDX source stored in DB).",
