@@ -44,12 +44,26 @@
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
+ *       401:
+ *         $ref: '#/components/responses/Module0Unauthorized'
+ *       403:
+ *         $ref: '#/components/responses/Module0Forbidden'
+ *       404:
+ *         description: People not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               $ref: '#/components/schemas/ApiErrorEnvelope'
+ *       429:
+ *         $ref: '#/components/responses/Module0RateLimited'
  *       500:
  *         description: Server error
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
+ *       503:
+ *         $ref: '#/components/responses/Module0ServiceUnavailable'
  */
 
 import { NextRequest } from "next/server";

@@ -1,0 +1,2286 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Ethniafrique Atlas API v2 - AFRIK",
+    "version": "2.0.0",
+    "description": "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n## Response envelope shapes\n\nTwo envelope shapes coexist on `/api/v2/*` during the Module #0 rollout:\n\n- **Module #0 endpoints** (`/sources`, `/sources/{id}`, `/doctrine`, `/confidence/{entityType}/{entityId}`, and future `/assertions`) return the new envelope: `{ data, meta: { license, attribution, pagination?, confidence?, pinned_url? }, errors: [] }`. License and attribution are always present (AR8); `errors[]` is `[]` on success and populated on non-2xx responses.\n- **Legacy v2 endpoints** (`/peoples`, `/countries`, `/language-families`, `/search`) still use the older shape: `{ data, meta: { total, page, perPage, totalPages } }` for list responses and `{ data }` for item responses. They do not surface `license`, `attribution`, or an `errors` array.\n\nBoth shapes are stable for the lifetime of v2. Convergence onto the Module #0 envelope across all endpoints is tracked as a separate follow-up ticket; until then, treat the envelope shape as endpoint-scoped.",
+    "contact": {
+      "name": "Ethniafrique Atlas",
+      "url": "https://github.com/big-emotion/ethniafrica"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Serveur de développement"
+    }
+  ],
+  "tags": [
+    {
+      "name": "API v2 - Search",
+      "description": "Recherche multi-entités (API v2)"
+    },
+    {
+      "name": "API v2 - Countries",
+      "description": "Opérations sur les pays (API v2)"
+    },
+    {
+      "name": "API v2 - Peoples",
+      "description": "Opérations sur les peuples (API v2)"
+    },
+    {
+      "name": "API v2 - Language Families",
+      "description": "Opérations sur les familles linguistiques (API v2)"
+    },
+    {
+      "name": "API v2 - Keys",
+      "description": "API key management (issuance)"
+    },
+    {
+      "name": "API v2 - Module #0",
+      "description": "Source Transparency Fabric — sources, confidence scores, editorial doctrine"
+    },
+    {
+      "name": "API v2 - Flags",
+      "description": "Content flags and moderation signals (planned)"
+    },
+    {
+      "name": "API v2 - Feed",
+      "description": "Revision feed (planned)"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "API Key",
+        "description": "API key issued via /api/v2/keys/issue (public tier) or the admin UI (partner/admin tiers). Pass as Authorization: Bearer <key>."
+      }
+    },
+    "responses": {
+      "Unauthorized": {
+        "description": "Invalid or missing API key",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "unauthorized": {
+                "value": {
+                  "error": "Unauthorized"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Forbidden": {
+        "description": "Valid key but insufficient tier permissions",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "forbidden": {
+                "value": {
+                  "error": "Forbidden"
+                }
+              }
+            }
+          }
+        }
+      },
+      "RateLimited": {
+        "description": "Rate limit exceeded",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "rateLimited": {
+                "value": {
+                  "error": "Too Many Requests"
+                }
+              }
+            }
+          }
+        }
+      },
+      "ServiceUnavailable": {
+        "description": "Backend temporarily unavailable",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "serviceUnavailable": {
+                "value": {
+                  "error": "Service Unavailable"
+                }
+              }
+            }
+          }
+        }
+      },
+      "Module0Unauthorized": {
+        "description": "Invalid or missing API key",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ApiErrorEnvelope"
+            }
+          }
+        }
+      },
+      "Module0Forbidden": {
+        "description": "Valid key but insufficient tier permissions",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ApiErrorEnvelope"
+            }
+          }
+        }
+      },
+      "Module0RateLimited": {
+        "description": "Rate limit exceeded",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ApiErrorEnvelope"
+            }
+          }
+        }
+      },
+      "Module0ServiceUnavailable": {
+        "description": "Backend temporarily unavailable",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/ApiErrorEnvelope"
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "PaginationMeta": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "number",
+            "examples": [100]
+          },
+          "page": {
+            "type": "number",
+            "examples": [1]
+          },
+          "perPage": {
+            "type": "number",
+            "examples": [20]
+          },
+          "totalPages": {
+            "type": "number",
+            "examples": [5]
+          }
+        }
+      },
+      "ApiResponseV2": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "Données de la réponse"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/PaginationMeta"
+          }
+        }
+      },
+      "SearchResult": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["country", "people", "language", "languageFamily"],
+            "examples": ["people"]
+          },
+          "id": {
+            "type": "string",
+            "examples": ["PPL_SHONA"]
+          },
+          "name": {
+            "type": "string",
+            "examples": ["Shona"]
+          },
+          "snippet": {
+            "type": "string",
+            "examples": ["Extrait du contenu..."]
+          },
+          "relevance": {
+            "type": "number",
+            "examples": [0.95]
+          }
+        }
+      },
+      "CountryV2": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Code ISO 3166-1 alpha-3",
+            "examples": ["ZWE"]
+          },
+          "nameFr": {
+            "type": "string",
+            "examples": ["Zimbabwe"]
+          },
+          "nameOfficial": {
+            "type": "string",
+            "examples": ["Republic of Zimbabwe"]
+          },
+          "etymology": {
+            "type": "string"
+          },
+          "content": {
+            "type": "object",
+            "description": "Contenu évolutif en JSONB"
+          }
+        }
+      },
+      "PeopleV2": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identifiant PPL_*",
+            "examples": ["PPL_SHONA"]
+          },
+          "nameMain": {
+            "type": "string",
+            "examples": ["Shona"]
+          },
+          "languageFamilyId": {
+            "type": "string",
+            "description": "Identifiant FLG_*",
+            "examples": ["FLG_BANTU"]
+          },
+          "currentCountries": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "examples": [["ZWE", "MOZ"]]
+          },
+          "content": {
+            "type": "object",
+            "description": "Contenu évolutif en JSONB"
+          }
+        }
+      },
+      "LanguageFamilyV2": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identifiant FLG_*",
+            "examples": ["FLG_BANTU"]
+          },
+          "nameFr": {
+            "type": "string",
+            "examples": ["Bantou"]
+          },
+          "nameEn": {
+            "type": "string",
+            "examples": ["Bantu"]
+          },
+          "content": {
+            "type": "object",
+            "description": "Contenu évolutif en JSONB"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "string",
+            "examples": ["Resource not found"]
+          }
+        }
+      },
+      "ApiResponseMeta": {
+        "type": "object",
+        "description": "Envelope meta block for Module #0 responses. Always carries license + attribution (AR8). Optionally includes pagination, confidence score, and pinned-version URL.",
+        "properties": {
+          "license": {
+            "type": "string",
+            "examples": ["CC-BY-SA-4.0"]
+          },
+          "attribution": {
+            "type": "string",
+            "examples": ["Africa History — africahistory.org"]
+          },
+          "confidence": {
+            "type": ["number", "null"],
+            "examples": [73],
+            "description": "Score 0–100 if applicable"
+          },
+          "pinned_url": {
+            "type": ["string", "null"],
+            "examples": ["https://africahistory.org/peuples/yoruba@v4"]
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/PaginationMeta"
+          }
+        },
+        "required": ["license", "attribution"]
+      },
+      "ApiErrorEntry": {
+        "type": "object",
+        "description": "Error taxonomy entry returned inside the envelope `errors[]` array.",
+        "properties": {
+          "code": {
+            "type": "string",
+            "enum": [
+              "VALIDATION_ERROR",
+              "NOT_FOUND",
+              "INTERNAL_ERROR",
+              "RATE_LIMITED",
+              "SERVICE_UNAVAILABLE"
+            ],
+            "examples": ["NOT_FOUND"]
+          },
+          "message": {
+            "type": "string",
+            "examples": ["Source not found"]
+          },
+          "field": {
+            "type": ["string", "null"],
+            "description": "Field path that triggered the error (validation only)"
+          }
+        },
+        "required": ["code", "message"]
+      },
+      "ApiErrorEnvelope": {
+        "type": "object",
+        "description": "Envelope returned on any non-2xx Module #0 response.",
+        "properties": {
+          "data": {
+            "type": "null"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiResponseMeta"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorEntry"
+            },
+            "minItems": 1
+          }
+        },
+        "required": ["data", "meta", "errors"]
+      },
+      "Source": {
+        "type": "object",
+        "description": "Canonical bibliographic entry. Columns marked nullable depend on migration 014 (ETNI-22).",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "type": {
+            "type": ["string", "null"],
+            "enum": ["primary", "secondary", "tertiary", "ai", null]
+          },
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": ["string", "null"]
+          },
+          "pinnedUrl": {
+            "type": ["string", "null"]
+          },
+          "year": {
+            "type": ["integer", "null"]
+          },
+          "author": {
+            "type": ["string", "null"]
+          },
+          "publisher": {
+            "type": ["string", "null"]
+          },
+          "resolvable": {
+            "type": ["boolean", "null"]
+          },
+          "lastVerifiedAt": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          }
+        },
+        "required": ["id", "title"]
+      },
+      "SourceResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Source"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiResponseMeta"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorEntry"
+            }
+          }
+        }
+      },
+      "SourceListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiResponseMeta"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorEntry"
+            }
+          }
+        }
+      },
+      "ConfidenceRecord": {
+        "type": "object",
+        "description": "Pre-computed confidence record for a Module #1 fiche. Populated by the `recompute_confidence(entity_type, entity_id)` Postgres function.",
+        "properties": {
+          "entityType": {
+            "type": "string",
+            "enum": ["people", "language-family"]
+          },
+          "entityId": {
+            "type": "string",
+            "examples": ["PPL_SHONA"]
+          },
+          "score": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "maximum": 100,
+            "examples": [73]
+          },
+          "sourceCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "avgSourceQuality": {
+            "type": ["number", "null"],
+            "minimum": 0,
+            "maximum": 1
+          },
+          "lastHumanAuditAt": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          },
+          "openFlagCount": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "recomputedAt": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          }
+        },
+        "required": ["entityType", "entityId", "sourceCount", "openFlagCount"]
+      },
+      "ConfidenceResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ConfidenceRecord"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiResponseMeta"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorEntry"
+            }
+          }
+        }
+      },
+      "PeopleRevisionItem": {
+        "type": "object",
+        "description": "A single published revision in the people revision history list.",
+        "properties": {
+          "version": {
+            "type": "integer",
+            "minimum": 1,
+            "examples": [3],
+            "description": "Monotonically increasing publication version"
+          },
+          "published_at": {
+            "type": ["string", "null"],
+            "format": "date-time",
+            "examples": ["2026-05-21T10:00:00.000Z"]
+          },
+          "moderator_pseudonym": {
+            "type": ["string", "null"],
+            "examples": ["mod-aaaabbbb"],
+            "description": "Privacy-preserving pseudonym derived from the moderator's internal id"
+          },
+          "reason": {
+            "type": ["string", "null"],
+            "examples": ["Demographics update"]
+          },
+          "pinned_url": {
+            "type": "string",
+            "examples": ["/api/v2/peoples/PPL_YORUBA/versions/3"],
+            "description": "Stable URL for this pinned version (AR14). Cache-Control: s-maxage=31536000, immutable."
+          }
+        },
+        "required": ["version", "pinned_url"]
+      },
+      "CursorPaginationMeta": {
+        "type": "object",
+        "description": "Cursor-based pagination meta (no offset).",
+        "properties": {
+          "limit": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100,
+            "examples": [20]
+          },
+          "next_cursor": {
+            "type": ["integer", "null"],
+            "examples": [4],
+            "description": "Version to pass as ?cursor= on the next request. Null when no more pages."
+          }
+        },
+        "required": ["limit", "next_cursor"]
+      },
+      "PeopleRevisionListMeta": {
+        "type": "object",
+        "properties": {
+          "license": {
+            "type": "string",
+            "examples": ["CC-BY-SA-4.0"]
+          },
+          "attribution": {
+            "type": "string",
+            "examples": ["Africa History — africahistory.org"]
+          },
+          "pagination": {
+            "$ref": "#/components/schemas/CursorPaginationMeta"
+          }
+        },
+        "required": ["license", "attribution", "pagination"]
+      },
+      "PeopleRevisionListResponse": {
+        "type": "object",
+        "description": "Cursor-paginated list of published revisions ordered by version DESC.",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PeopleRevisionItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/PeopleRevisionListMeta"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorEntry"
+            }
+          }
+        },
+        "required": ["data", "meta", "errors"]
+      },
+      "PeopleVersionSnapshotResponse": {
+        "type": "object",
+        "description": "Full published snapshot at a pinned version. Data is read from the immutable revision record, never from the live entity (AR14). Response is permanently cacheable (AR18).",
+        "properties": {
+          "data": {
+            "type": "object",
+            "description": "Full denormalised entity state as stored at publication time (snapshot_jsonb)"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiResponseMeta"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorEntry"
+            }
+          }
+        },
+        "required": ["data", "meta", "errors"]
+      },
+      "DoctrineEntry": {
+        "type": "object",
+        "description": "Editorial-doctrine row (MDX source stored in DB).",
+        "properties": {
+          "slug": {
+            "type": "string",
+            "enum": [
+              "review_policy",
+              "naming_convention",
+              "ai_disclosure",
+              "license_attribution"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "mdxSource": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "publishedAt": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          }
+        },
+        "required": ["slug", "title", "mdxSource", "version"]
+      },
+      "DoctrineResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DoctrineEntry"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiResponseMeta"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorEntry"
+            }
+          }
+        }
+      },
+      "FlagV2": {
+        "type": "object",
+        "description": "Content flag raised against an AFRIK fiche. Populated by moderators and contributors.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "entityType": {
+            "type": "string",
+            "enum": ["people", "language-family", "country"]
+          },
+          "entityId": {
+            "type": "string",
+            "examples": ["PPL_SHONA"]
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "factual_error",
+              "missing_source",
+              "outdated_data",
+              "other"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": ["open", "resolved", "dismissed"]
+          },
+          "body": {
+            "type": ["string", "null"]
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "resolvedAt": {
+            "type": ["string", "null"],
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "id",
+          "entityType",
+          "entityId",
+          "kind",
+          "status",
+          "createdAt"
+        ]
+      },
+      "FlagListResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/FlagV2"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiResponseMeta"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorEntry"
+            }
+          }
+        }
+      },
+      "FlagResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/FlagV2"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiResponseMeta"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorEntry"
+            }
+          }
+        }
+      },
+      "RevisionFeedItem": {
+        "type": "object",
+        "description": "A single revision event in the revision feed.",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "entityType": {
+            "type": "string",
+            "enum": ["people", "language-family", "country"]
+          },
+          "entityId": {
+            "type": "string",
+            "examples": ["PPL_SHONA"]
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "publishedAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "moderatorPseudonym": {
+            "type": ["string", "null"]
+          },
+          "reason": {
+            "type": ["string", "null"]
+          },
+          "pinnedUrl": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "entityType",
+          "entityId",
+          "version",
+          "publishedAt",
+          "pinnedUrl"
+        ]
+      },
+      "RevisionFeedResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RevisionFeedItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ApiResponseMeta"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ApiErrorEntry"
+            }
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/api/v2/flags": {
+      "get": {
+        "summary": "List content flags",
+        "description": "Returns a paginated list of content flags raised against AFRIK fiches. **Planned — not yet implemented.**",
+        "tags": ["API v2 - Flags"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          },
+          {
+            "in": "query",
+            "name": "perPage",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20
+            }
+          },
+          {
+            "in": "query",
+            "name": "entityType",
+            "schema": {
+              "type": "string",
+              "enum": ["people", "language-family", "country"]
+            },
+            "description": "Filter by entity type"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string",
+              "enum": ["open", "resolved", "dismissed"]
+            },
+            "description": "Filter by flag status"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of flags",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlagListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Module0Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Module0Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/Module0RateLimited"
+          },
+          "503": {
+            "$ref": "#/components/responses/Module0ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/flags/{id}": {
+      "get": {
+        "summary": "Get a single content flag",
+        "description": "Returns a single content flag by its UUID. **Planned — not yet implemented.**",
+        "tags": ["API v2 - Flags"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "Flag UUID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Flag envelope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FlagResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Module0Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Module0Forbidden"
+          },
+          "404": {
+            "description": "Flag not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/Module0RateLimited"
+          },
+          "503": {
+            "$ref": "#/components/responses/Module0ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/feed/revisions": {
+      "get": {
+        "summary": "Cross-entity revision feed",
+        "description": "Returns a reverse-chronological feed of published revisions across all entity types. Supports cursor-based pagination. **Planned — not yet implemented.**",
+        "tags": ["API v2 - Feed"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20
+            }
+          },
+          {
+            "in": "query",
+            "name": "cursor",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Opaque pagination cursor from the previous page's meta"
+          },
+          {
+            "in": "query",
+            "name": "entityType",
+            "schema": {
+              "type": "string",
+              "enum": ["people", "language-family", "country"]
+            },
+            "description": "Filter by entity type"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Revision feed envelope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RevisionFeedResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Module0Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Module0Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/Module0RateLimited"
+          },
+          "503": {
+            "$ref": "#/components/responses/Module0ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/confidence/{entityType}/{entityId}": {
+      "get": {
+        "summary": "Get confidence metadata for a fiche",
+        "description": "Returns the pre-computed confidence record for a people or language-family fiche.",
+        "tags": ["API v2 - Module #0"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "entityType",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["people", "language-family"]
+            }
+          },
+          {
+            "in": "path",
+            "name": "entityId",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^(PPL_[A-Z0-9_]+|FLG_[A-Z0-9_]+)$"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Confidence envelope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfidenceResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid params",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Module0Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Module0Forbidden"
+          },
+          "404": {
+            "description": "No confidence record found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/Module0RateLimited"
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/Module0ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/countries/{iso}": {
+      "get": {
+        "summary": "Détails d'un pays",
+        "description": "Retourne les détails complets d'un pays par son code ISO 3166-1 alpha-3",
+        "tags": ["API v2 - Countries"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "iso",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^[A-Z]{3}$"
+            },
+            "description": "Code ISO 3166-1 alpha-3 du pays",
+            "example": "ZWE"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Détails du pays",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/CountryV2"
+                    }
+                  }
+                },
+                "example": {
+                  "data": {
+                    "id": "ZWE",
+                    "nameFr": "Zimbabwe",
+                    "nameOfficial": "Republic of Zimbabwe",
+                    "etymology": "Nom dérivé de...",
+                    "content": {}
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Format de code ISO invalide",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "error": "Invalid country ISO code format"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "Pays non trouvé",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "error": "Country not found"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "description": "Erreur serveur",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/countries": {
+      "get": {
+        "summary": "Liste des pays (paginée)",
+        "description": "Retourne la liste paginée de tous les pays d'Afrique avec leurs données AFRIK",
+        "tags": ["API v2 - Countries"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            },
+            "description": "Numéro de page",
+            "example": 1
+          },
+          {
+            "in": "query",
+            "name": "perPage",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20
+            },
+            "description": "Nombre d'éléments par page (max 100)",
+            "example": 20
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Liste paginée des pays",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/CountryV2"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/PaginationMeta"
+                    }
+                  }
+                },
+                "example": {
+                  "data": [
+                    {
+                      "id": "ZWE",
+                      "nameFr": "Zimbabwe",
+                      "nameOfficial": "Republic of Zimbabwe"
+                    }
+                  ],
+                  "meta": {
+                    "total": 55,
+                    "page": 1,
+                    "perPage": 20,
+                    "totalPages": 3
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Paramètres de pagination invalides",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "description": "Erreur serveur",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/doctrine": {
+      "get": {
+        "summary": "List current editorial doctrine",
+        "description": "Returns the current version of every doctrine slug. Takes no query parameters.",
+        "tags": ["API v2 - Module #0"],
+        "responses": {
+          "200": {
+            "description": "Doctrine envelope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DoctrineResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Module0Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Module0Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/Module0RateLimited"
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/Module0ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/keys/issue": {
+      "get": {
+        "summary": "Issue a public read-only API key",
+        "description": "Issues a shared, IP-bound, read-only public API key.\nOne key per IP address — returns 409 if a key already exists for this IP.\nPublic keys are rate-limited and can only perform read operations.\nPartner and admin keys must be requested via the admin UI.\nNo authentication required for this endpoint.\n",
+        "tags": ["API v2 - Keys"],
+        "security": [],
+        "responses": {
+          "201": {
+            "description": "Public key issued successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "type": "string",
+                      "description": "Raw API key (shown only once)"
+                    },
+                    "tier": {
+                      "type": "string",
+                      "example": "public"
+                    },
+                    "note": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "409": {
+            "description": "A public key already exists for this IP address",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "description": "Failed to issue key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/language-families/{id}": {
+      "get": {
+        "summary": "Détails d'une famille linguistique",
+        "description": "Retourne les détails complets d'une famille linguistique par son identifiant FLG_*",
+        "tags": ["API v2 - Language Families"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^FLG_[A-Z_]+$"
+            },
+            "description": "Identifiant de la famille linguistique (format FLG_*)",
+            "example": "FLG_BANTU"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Détails de la famille linguistique",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/LanguageFamilyV2"
+                    }
+                  }
+                },
+                "example": {
+                  "data": {
+                    "id": "FLG_BANTU",
+                    "nameFr": "Bantou",
+                    "nameEn": "Bantu",
+                    "content": {}
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Format d'identifiant invalide",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "error": "Invalid language family ID format"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "Famille linguistique non trouvée",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "error": "Language family not found"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "description": "Erreur serveur",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/language-families": {
+      "get": {
+        "summary": "Liste des familles linguistiques (paginée)",
+        "description": "Retourne la liste paginée de toutes les familles linguistiques d'Afrique avec leurs données AFRIK",
+        "tags": ["API v2 - Language Families"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            },
+            "description": "Numéro de page",
+            "example": 1
+          },
+          {
+            "in": "query",
+            "name": "perPage",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20
+            },
+            "description": "Nombre d'éléments par page (max 100)",
+            "example": 20
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Liste paginée des familles linguistiques",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/LanguageFamilyV2"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/PaginationMeta"
+                    }
+                  }
+                },
+                "example": {
+                  "data": [
+                    {
+                      "id": "FLG_BANTU",
+                      "nameFr": "Bantou",
+                      "nameEn": "Bantu"
+                    }
+                  ],
+                  "meta": {
+                    "total": 24,
+                    "page": 1,
+                    "perPage": 20,
+                    "totalPages": 2
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Paramètres de pagination invalides",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "description": "Erreur serveur",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/peoples/{id}/revisions": {
+      "get": {
+        "summary": "Revision history for a people entity",
+        "description": "Cursor-paginated list of published revisions ordered by version DESC. Implements AR10, AR14.",
+        "tags": ["API v2 - Peoples"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^PPL_[A-Z_]+$"
+            },
+            "description": "People identifier (PPL_*)",
+            "example": "PPL_YORUBA"
+          },
+          {
+            "in": "query",
+            "name": "limit",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20
+            },
+            "description": "Maximum number of revisions per page"
+          },
+          {
+            "in": "query",
+            "name": "cursor",
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "description": "Version number of the last item from the previous page (exclusive upper bound)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Revision list envelope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeopleRevisionListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Module0Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Module0Forbidden"
+          },
+          "404": {
+            "description": "People not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/Module0RateLimited"
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/Module0ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/peoples/{id}": {
+      "get": {
+        "summary": "Détails d'un peuple",
+        "description": "Retourne les détails complets d'un peuple par son identifiant PPL_*",
+        "tags": ["API v2 - Peoples"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^PPL_[A-Z_]+$"
+            },
+            "description": "Identifiant du peuple (format PPL_*)",
+            "example": "PPL_SHONA"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Détails du peuple",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "$ref": "#/components/schemas/PeopleV2"
+                    }
+                  }
+                },
+                "example": {
+                  "data": {
+                    "id": "PPL_SHONA",
+                    "nameMain": "Shona",
+                    "languageFamilyId": "FLG_BANTU",
+                    "currentCountries": ["ZWE", "MOZ"],
+                    "content": {}
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Format d'identifiant invalide",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "error": "Invalid people ID format"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "404": {
+            "description": "Peuple non trouvé",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                },
+                "example": {
+                  "error": "People not found"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "description": "Erreur serveur",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/peoples/{id}/versions/{n}": {
+      "get": {
+        "summary": "Pinned-version snapshot for a people entity",
+        "description": "Returns the full published snapshot at version n. Data is read exclusively from the immutable revision record — never from the live entity (AR14). The response carries Cache-Control: s-maxage=31536000, immutable because pinned data never changes (AR18).\n",
+        "tags": ["API v2 - Peoples"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^PPL_[A-Z_]+$"
+            },
+            "description": "People identifier (PPL_*)",
+            "example": "PPL_YORUBA"
+          },
+          {
+            "in": "path",
+            "name": "n",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "description": "Version number",
+            "example": 3
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Pinned-version snapshot envelope",
+            "headers": {
+              "Cache-Control": {
+                "description": "s-maxage=31536000, immutable — pinned data never changes",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PeopleVersionSnapshotResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Module0Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Module0Forbidden"
+          },
+          "404": {
+            "description": "Version not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/Module0RateLimited"
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/Module0ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/peoples": {
+      "get": {
+        "summary": "Liste des peuples (paginée)",
+        "description": "Retourne la liste paginée de tous les peuples d'Afrique avec leurs données AFRIK",
+        "tags": ["API v2 - Peoples"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            },
+            "description": "Numéro de page",
+            "example": 1
+          },
+          {
+            "in": "query",
+            "name": "perPage",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20
+            },
+            "description": "Nombre d'éléments par page (max 100)",
+            "example": 20
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Liste paginée des peuples",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/PeopleV2"
+                      }
+                    },
+                    "meta": {
+                      "$ref": "#/components/schemas/PaginationMeta"
+                    }
+                  }
+                },
+                "example": {
+                  "data": [
+                    {
+                      "id": "PPL_SHONA",
+                      "nameMain": "Shona",
+                      "languageFamilyId": "FLG_BANTU",
+                      "currentCountries": ["ZWE", "MOZ"]
+                    }
+                  ],
+                  "meta": {
+                    "total": 592,
+                    "page": 1,
+                    "perPage": 20,
+                    "totalPages": 30
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Paramètres de pagination invalides",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "description": "Erreur serveur",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/search": {
+      "get": {
+        "summary": "Recherche multi-entités",
+        "description": "Recherche dans les pays, peuples, langues et familles linguistiques avec filtres optionnels",
+        "tags": ["API v2 - Search"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Terme de recherche",
+            "example": "Bantu"
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "schema": {
+              "type": "string",
+              "enum": ["country", "people", "language", "languageFamily"]
+            },
+            "description": "Filtrer par type d'entité",
+            "example": "people"
+          },
+          {
+            "in": "query",
+            "name": "languageFamilyId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filtrer par famille linguistique (format FLG_*)",
+            "example": "FLG_BANTU"
+          },
+          {
+            "in": "query",
+            "name": "countryId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filtrer par pays (code ISO 3166-1 alpha-3)",
+            "example": "ZWE"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Résultats de recherche",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/SearchResult"
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "data": [
+                    {
+                      "type": "people",
+                      "id": "PPL_SHONA",
+                      "name": "Shona",
+                      "snippet": "Peuple bantou du Zimbabwe...",
+                      "relevance": 0.95
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Paramètres de recherche invalides",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/RateLimited"
+          },
+          "500": {
+            "description": "Erreur serveur",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/sources/{id}": {
+      "get": {
+        "summary": "Get a single Module",
+        "tags": ["API v2 - Module #0"],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Source envelope",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SourceResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Module0Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Module0Forbidden"
+          },
+          "404": {
+            "description": "Source not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "429": {
+            "$ref": "#/components/responses/Module0RateLimited"
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/Module0ServiceUnavailable"
+          }
+        }
+      }
+    },
+    "/api/v2/sources": {
+      "get": {
+        "summary": "List Module",
+        "description": "Returns a paginated list of sources backing AFRIK assertions.",
+        "tags": ["API v2 - Module #0"],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "default": 1
+            }
+          },
+          {
+            "in": "query",
+            "name": "perPage",
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 20
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Paginated list of sources",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "type": "string",
+                  "example": "public, s-maxage=86400, stale-while-revalidate=86400"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SourceListResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Validation error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/Module0Unauthorized"
+          },
+          "403": {
+            "$ref": "#/components/responses/Module0Forbidden"
+          },
+          "429": {
+            "$ref": "#/components/responses/Module0RateLimited"
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ApiErrorEnvelope"
+                }
+              }
+            }
+          },
+          "503": {
+            "$ref": "#/components/responses/Module0ServiceUnavailable"
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ]
+}

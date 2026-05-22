@@ -11,7 +11,8 @@
  *   get:
  *     summary: List Module #0 citation sources
  *     description: Returns a paginated list of sources backing AFRIK assertions.
- *     tags: [API v2 - Module #0]
+ *     tags:
+ *       - "API v2 - Module #0"
  *     parameters:
  *       - in: query
  *         name: page
@@ -44,12 +45,20 @@
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
+ *       401:
+ *         $ref: '#/components/responses/Module0Unauthorized'
+ *       403:
+ *         $ref: '#/components/responses/Module0Forbidden'
+ *       429:
+ *         $ref: '#/components/responses/Module0RateLimited'
  *       500:
  *         description: Server error
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
+ *       503:
+ *         $ref: '#/components/responses/Module0ServiceUnavailable'
  */
 
 import { NextRequest } from "next/server";

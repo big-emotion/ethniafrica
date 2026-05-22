@@ -7,7 +7,8 @@
  *   get:
  *     summary: Get confidence metadata for a fiche
  *     description: Returns the pre-computed confidence record for a people or language-family fiche.
- *     tags: [API v2 - Module #0]
+ *     tags:
+ *       - "API v2 - Module #0"
  *     parameters:
  *       - in: path
  *         name: entityType
@@ -34,18 +35,26 @@
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
+ *       401:
+ *         $ref: '#/components/responses/Module0Unauthorized'
+ *       403:
+ *         $ref: '#/components/responses/Module0Forbidden'
  *       404:
  *         description: No confidence record found
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
+ *       429:
+ *         $ref: '#/components/responses/Module0RateLimited'
  *       500:
  *         description: Server error
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/ApiErrorEnvelope'
+ *       503:
+ *         $ref: '#/components/responses/Module0ServiceUnavailable'
  */
 
 import { NextRequest } from "next/server";
