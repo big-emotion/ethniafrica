@@ -172,16 +172,15 @@ export async function getAfrikPeoplesByCountry(
 }
 
 /**
- * Search AFRIK peoples by query
+ * Search AFRIK peoples using Postgres FTS on search_vector (websearch, french).
  */
 export async function searchAfrikPeoples(query: string): Promise<People[]> {
   const supabase = createServerClient();
-  const queryLower = query.toLowerCase();
 
   const { data, error } = await supabase
     .from("afrik_peoples")
     .select("*")
-    .or(`id.ilike.%${queryLower}%,name_main.ilike.%${queryLower}%`)
+    .textSearch("search_vector", query, { type: "websearch", config: "french" })
     .order("name_main");
 
   if (error) {
