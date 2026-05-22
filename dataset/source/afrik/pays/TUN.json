@@ -160,6 +160,9 @@
         },
         {
           "name": "Berbères de Tunisie",
+          "percentageInCountry": 2,
+          "region": "Sud de la Tunisie (Matmata, Douiret, Chenini), île de Djerba",
+          "languageFamily": "FLG_BERBERE",
           "peopleId": "PPL_AMA"
         }
       ]

@@ -241,6 +241,9 @@
         },
         {
           "name": "Mozabites",
+          "percentageInCountry": 1.4,
+          "region": "Vallée du Mzab (Ghardaïa)",
+          "languageFamily": "FLG_BERBERE",
           "peopleId": "PPL_MO"
         }
       ]

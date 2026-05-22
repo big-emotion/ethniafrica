@@ -164,6 +164,13 @@
           "percentageInCountry": 3,
           "peopleId": "PPL_ARABES_AFRIQUE",
           "region": ""
+        },
+        {
+          "name": "Autres groupes ethniques",
+          "percentageInCountry": 2,
+          "region": "Divers",
+          "peopleId": null,
+          "languageFamily": null
         }
       ]
     }
