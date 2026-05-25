@@ -127,6 +127,43 @@ const options: swaggerJsdoc.Options = {
             },
           },
         },
+        SearchResponseData: {
+          type: "object",
+          description:
+            "FTS search result data. Peoples and countries are returned in separate arrays, ranked by ts_rank_cd × confidence boost.",
+          properties: {
+            peoples: {
+              type: "array",
+              items: { $ref: "#/components/schemas/PeopleV2" },
+              description:
+                "Matching peoples ordered by confidence-boosted relevance",
+            },
+            countries: {
+              type: "array",
+              items: { $ref: "#/components/schemas/CountryV2" },
+              description: "Matching countries ordered by FTS relevance",
+            },
+            total: {
+              type: "integer",
+              description: "Combined count of peoples + countries returned",
+              example: 5,
+            },
+          },
+          required: ["peoples", "countries", "total"],
+        },
+        SearchResponse: {
+          type: "object",
+          description: "Module #0 envelope for /v2/search (ETNI-38)",
+          properties: {
+            data: { $ref: "#/components/schemas/SearchResponseData" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
         CountryV2: {
           type: "object",
           properties: {
