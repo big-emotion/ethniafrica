@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
+import type { ParagraphChipData } from "../ProseWithChip";
 import { AutonymExonymHeading } from "../AutonymExonymHeading";
 import { PeopleHero } from "../PeopleHero";
 import { PeopleOriginBlock } from "../PeopleOriginBlock";
@@ -396,9 +397,7 @@ describe("PeopleRelatedPeoplesSection", () => {
     const empty: PeopleRelatedData = {
       ethnicities: [],
     };
-    const { container } = render(
-      <PeopleRelatedPeoplesSection data={empty} />
-    );
+    const { container } = render(<PeopleRelatedPeoplesSection data={empty} />);
     expect(container.firstChild).toBeNull();
   });
 
@@ -438,9 +437,7 @@ describe("PeopleRelatedPeoplesSection", () => {
       ageClassSystems: "Système des grades d'âge (ẹgbẹ)",
     };
     render(<PeopleRelatedPeoplesSection data={data} />);
-    expect(
-      screen.getByText("Système des grades d'âge (ẹgbẹ)")
-    ).toBeTruthy();
+    expect(screen.getByText("Système des grades d'âge (ẹgbẹ)")).toBeTruthy();
   });
 });
 
@@ -508,9 +505,7 @@ describe("PeopleCountriesSection", () => {
       totalPopulation: 45000000,
       totalPopulationFormatted: "45M",
       referenceYear: 2025,
-      distributions: [
-        { country: "NGA", percentage: 89 },
-      ],
+      distributions: [{ country: "NGA", percentage: 89 }],
     };
     render(<PeopleCountriesSection data={data} />);
     expect(screen.getByText(/2025/)).toBeTruthy();
@@ -539,5 +534,161 @@ describe("PeopleSourcesFooter", () => {
   it("renders section header label", () => {
     render(<PeopleSourcesFooter sources="SIL Ethnologue 2025" />);
     expect(screen.getByText("Sources & Références")).toBeTruthy();
+  });
+});
+
+// ==========================================
+// Inline chip integration (ETNI-36, Story 2.4)
+// ==========================================
+
+const sampleChip: ParagraphChipData = {
+  chipId: "test-chip",
+  confidenceScore: 82,
+  sourceCount: 2,
+  lastHumanAuditAt: "2025-03-10",
+  assertionStatement: "Assertion de test.",
+  sources: [],
+};
+
+describe("PeopleOriginBlock — chip integration", () => {
+  it("renders chip (or fallback) for ancientOrigins when chip provided", async () => {
+    render(
+      <PeopleOriginBlock
+        data={{
+          ancientOrigins: "Texte origines.",
+          migrationRoutes: [],
+          historicalSettlementZones: [],
+        }}
+        chips={{ ancientOrigins: sampleChip }}
+      />
+    );
+    expect(screen.getByText("Texte origines.")).toBeTruthy();
+    await waitFor(() => {
+      const btn = screen.queryByRole("button");
+      const link = screen.queryByText("voir les sources");
+      expect(btn ?? link).toBeTruthy();
+    });
+  });
+
+  it("renders chip for formationPeriod when chip provided", async () => {
+    render(
+      <PeopleOriginBlock
+        data={{
+          formationPeriod: "VIIe siècle.",
+          migrationRoutes: [],
+          historicalSettlementZones: [],
+        }}
+        chips={{ formationPeriod: sampleChip }}
+      />
+    );
+    expect(screen.getByText("VIIe siècle.")).toBeTruthy();
+    await waitFor(() => {
+      expect(
+        screen.queryByRole("button") ?? screen.queryByText("voir les sources")
+      ).toBeTruthy();
+    });
+  });
+
+  it("still renders without chips when no chips prop passed", () => {
+    const { container } = render(
+      <PeopleOriginBlock
+        data={{
+          ancientOrigins: "Sans chip.",
+          migrationRoutes: [],
+          historicalSettlementZones: [],
+        }}
+      />
+    );
+    expect(screen.getByText("Sans chip.")).toBeTruthy();
+    expect(container.querySelector("p.people-section-body")).toBeTruthy();
+  });
+});
+
+describe("PeopleHistoryTimeline — chip integration", () => {
+  it("renders chip for kingdomsOrChiefdoms when chip provided", async () => {
+    render(
+      <PeopleHistoryTimeline
+        data={{ kingdomsOrChiefdoms: "Empire d'Oyo." }}
+        chips={{ kingdomsOrChiefdoms: sampleChip }}
+      />
+    );
+    expect(screen.getByText("Empire d'Oyo.")).toBeTruthy();
+    await waitFor(() => {
+      expect(
+        screen.queryByRole("button") ?? screen.queryByText("voir les sources")
+      ).toBeTruthy();
+    });
+  });
+
+  it("renders chip for diaspora when chip provided", async () => {
+    render(
+      <PeopleHistoryTimeline
+        data={{ diaspora: "Communauté au Brésil." }}
+        chips={{ diaspora: sampleChip }}
+      />
+    );
+    expect(screen.getByText("Communauté au Brésil.")).toBeTruthy();
+    await waitFor(() => {
+      expect(
+        screen.queryByRole("button") ?? screen.queryByText("voir les sources")
+      ).toBeTruthy();
+    });
+  });
+});
+
+describe("PeopleCultureGrid — chip integration", () => {
+  it("renders chip for music when chip provided", async () => {
+    render(
+      <PeopleCultureGrid
+        data={{ intermediates: [], symbols: [], music: "Dundun, bata." }}
+        chips={{ music: sampleChip }}
+      />
+    );
+    expect(screen.getByText("Dundun, bata.")).toBeTruthy();
+    await waitFor(() => {
+      expect(
+        screen.queryByRole("button") ?? screen.queryByText("voir les sources")
+      ).toBeTruthy();
+    });
+  });
+
+  it("renders chip for initiation when chip provided", async () => {
+    render(
+      <PeopleCultureGrid
+        data={{
+          intermediates: [],
+          symbols: [],
+          initiation: "Rites masculins.",
+        }}
+        chips={{ initiation: sampleChip }}
+      />
+    );
+    expect(screen.getByText("Rites masculins.")).toBeTruthy();
+    await waitFor(() => {
+      expect(
+        screen.queryByRole("button") ?? screen.queryByText("voir les sources")
+      ).toBeTruthy();
+    });
+  });
+});
+
+describe("PeopleLanguageSection — chip integration", () => {
+  it("renders chip for vehicularRole when chip provided", async () => {
+    render(
+      <PeopleLanguageSection
+        data={{
+          isoCodes: [],
+          dialects: [],
+          vehicularRole: "Langue véhiculaire.",
+        }}
+        chips={{ vehicularRole: sampleChip }}
+      />
+    );
+    expect(screen.getByText("Langue véhiculaire.")).toBeTruthy();
+    await waitFor(() => {
+      expect(
+        screen.queryByRole("button") ?? screen.queryByText("voir les sources")
+      ).toBeTruthy();
+    });
   });
 });

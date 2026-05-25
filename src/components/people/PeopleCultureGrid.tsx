@@ -1,10 +1,13 @@
 import type { PeopleCultureData } from "@/lib/peopleDataTransformer";
+import { ProseWithChip } from "./ProseWithChip";
+import type { CultureChips } from "./ProseWithChip";
 
 interface PeopleCultureGridProps {
   data: PeopleCultureData;
+  chips?: CultureChips;
 }
 
-export function PeopleCultureGrid({ data }: PeopleCultureGridProps) {
+export function PeopleCultureGrid({ data, chips }: PeopleCultureGridProps) {
   const hasContent =
     data.supremeDeity ||
     data.intermediates.length > 0 ||
@@ -48,21 +51,24 @@ export function PeopleCultureGrid({ data }: PeopleCultureGridProps) {
       {data.initiation && (
         <div>
           <p className="people-section-label">Initiation (hommes)</p>
-          <p className="people-section-body">{data.initiation}</p>
+          <ProseWithChip text={data.initiation} chip={chips?.initiation} />
         </div>
       )}
 
       {data.femaleInitiation && (
         <div>
           <p className="people-section-label">Initiation (femmes)</p>
-          <p className="people-section-body">{data.femaleInitiation}</p>
+          <ProseWithChip
+            text={data.femaleInitiation}
+            chip={chips?.femaleInitiation}
+          />
         </div>
       )}
 
       {data.funerary && (
         <div>
           <p className="people-section-label">Rites funéraires</p>
-          <p className="people-section-body">{data.funerary}</p>
+          <ProseWithChip text={data.funerary} chip={chips?.funerary} />
         </div>
       )}
 
@@ -82,14 +88,14 @@ export function PeopleCultureGrid({ data }: PeopleCultureGridProps) {
       {data.music && (
         <div>
           <p className="people-section-label">Musique & instruments</p>
-          <p className="people-section-body">{data.music}</p>
+          <ProseWithChip text={data.music} chip={chips?.music} />
         </div>
       )}
 
       {data.gastronomy && (
         <div>
           <p className="people-section-label">Gastronomie</p>
-          <p className="people-section-body">{data.gastronomy}</p>
+          <ProseWithChip text={data.gastronomy} chip={chips?.gastronomy} />
         </div>
       )}
 
@@ -103,13 +109,15 @@ export function PeopleCultureGrid({ data }: PeopleCultureGridProps) {
               </span>
             )}
             {data.islamPercentage != null && (
-              <span className="people-tag">
-                Islam {data.islamPercentage} %
-              </span>
+              <span className="people-tag">Islam {data.islamPercentage} %</span>
             )}
           </div>
           {data.syncretism && (
-            <p className="people-section-body mt-[6px]">{data.syncretism}</p>
+            <ProseWithChip
+              text={data.syncretism}
+              chip={chips?.syncretism}
+              className="people-section-body mt-[6px]"
+            />
           )}
         </div>
       )}

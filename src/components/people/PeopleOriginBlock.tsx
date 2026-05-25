@@ -1,10 +1,13 @@
 import type { PeopleOriginData } from "@/lib/peopleDataTransformer";
+import { ProseWithChip } from "./ProseWithChip";
+import type { OriginChips } from "./ProseWithChip";
 
 interface PeopleOriginBlockProps {
   data: PeopleOriginData;
+  chips?: OriginChips;
 }
 
-export function PeopleOriginBlock({ data }: PeopleOriginBlockProps) {
+export function PeopleOriginBlock({ data, chips }: PeopleOriginBlockProps) {
   const hasContent =
     data.ancientOrigins ||
     data.formationPeriod ||
@@ -21,14 +24,20 @@ export function PeopleOriginBlock({ data }: PeopleOriginBlockProps) {
       {data.ancientOrigins && (
         <div>
           <p className="people-section-label">Origines anciennes</p>
-          <p className="people-section-body">{data.ancientOrigins}</p>
+          <ProseWithChip
+            text={data.ancientOrigins}
+            chip={chips?.ancientOrigins}
+          />
         </div>
       )}
 
       {data.formationPeriod && (
         <div>
           <p className="people-section-label">Période de formation</p>
-          <p className="people-section-body">{data.formationPeriod}</p>
+          <ProseWithChip
+            text={data.formationPeriod}
+            chip={chips?.formationPeriod}
+          />
         </div>
       )}
 
@@ -62,21 +71,30 @@ export function PeopleOriginBlock({ data }: PeopleOriginBlockProps) {
       {data.unificationsOrDivisions && (
         <div>
           <p className="people-section-label">Unifications & divisions</p>
-          <p className="people-section-body">{data.unificationsOrDivisions}</p>
+          <ProseWithChip
+            text={data.unificationsOrDivisions}
+            chip={chips?.unificationsOrDivisions}
+          />
         </div>
       )}
 
       {data.externalInfluences && (
         <div>
           <p className="people-section-label">Influences extérieures</p>
-          <p className="people-section-body">{data.externalInfluences}</p>
+          <ProseWithChip
+            text={data.externalInfluences}
+            chip={chips?.externalInfluences}
+          />
         </div>
       )}
 
       {data.majorHistoricalEvents && (
         <div>
           <p className="people-section-label">Événements majeurs</p>
-          <p className="people-section-body">{data.majorHistoricalEvents}</p>
+          <ProseWithChip
+            text={data.majorHistoricalEvents}
+            chip={chips?.majorHistoricalEvents}
+          />
         </div>
       )}
     </div>

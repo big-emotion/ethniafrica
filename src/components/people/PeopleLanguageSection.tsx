@@ -1,10 +1,16 @@
 import type { PeopleLanguageData } from "@/lib/peopleDataTransformer";
+import { ProseWithChip } from "./ProseWithChip";
+import type { LanguageChips } from "./ProseWithChip";
 
 interface PeopleLanguageSectionProps {
   data: PeopleLanguageData;
+  chips?: LanguageChips;
 }
 
-export function PeopleLanguageSection({ data }: PeopleLanguageSectionProps) {
+export function PeopleLanguageSection({
+  data,
+  chips,
+}: PeopleLanguageSectionProps) {
   const hasContent =
     data.mainLanguage ||
     data.isoCodes.length > 0 ||
@@ -18,7 +24,9 @@ export function PeopleLanguageSection({ data }: PeopleLanguageSectionProps) {
       {data.mainLanguage && (
         <div>
           <p className="people-section-label">Langue principale</p>
-          <p className="people-section-body font-semibold">{data.mainLanguage}</p>
+          <p className="people-section-body font-semibold">
+            {data.mainLanguage}
+          </p>
         </div>
       )}
 
@@ -51,7 +59,10 @@ export function PeopleLanguageSection({ data }: PeopleLanguageSectionProps) {
       {data.vehicularRole && (
         <div>
           <p className="people-section-label">Rôle véhiculaire</p>
-          <p className="people-section-body">{data.vehicularRole}</p>
+          <ProseWithChip
+            text={data.vehicularRole}
+            chip={chips?.vehicularRole}
+          />
         </div>
       )}
     </div>
