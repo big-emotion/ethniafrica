@@ -22,7 +22,9 @@
 
 .people-section-body {
   font-size: 13px;
-  line-height: 1.55;
+  /* Reading-surface density: UX-DR2 line-height ≥ 1.6, line-length 65–75 ch */
+  line-height: 1.6;
+  max-width: 72ch;
   color: var(--country-text);
 }
 

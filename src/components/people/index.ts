@@ -1,4 +1,12 @@
 export { AutonymExonymHeading } from "./AutonymExonymHeading";
+export { ProseWithChip } from "./ProseWithChip";
+export type {
+  ParagraphChipData,
+  OriginChips,
+  HistoryChips,
+  CultureChips,
+  LanguageChips,
+} from "./ProseWithChip";
 export { PeopleHero } from "./PeopleHero";
 export { PeopleOriginBlock } from "./PeopleOriginBlock";
 export { PeopleLanguageSection } from "./PeopleLanguageSection";
