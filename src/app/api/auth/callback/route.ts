@@ -1,17 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServerSupabaseClient } from "@/lib/supabase/auth-server";
+import { logger } from "@/lib/api/logger";
 
 /**
  * GET /api/auth/callback
- * Handles OAuth and magic link callbacks from Supabase Auth.
- * Exchanges the auth code for a session and redirects to the intended destination.
+ * Handles OAuth and magic-link callbacks from Supabase Auth.
+ * Exchanges the auth code for a session, upserts the contributor profile,
+ * then redirects to the intended destination.
  */
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = request.nextUrl;
   const code = searchParams.get("code");
   const redirect = searchParams.get("redirect") || "/admin/contributions";
 
-  // Redirect to login if no code provided
   if (!code) {
     const errorUrl = new URL("/admin/login", origin);
     errorUrl.searchParams.set("error", "No authentication code provided");
@@ -20,7 +21,7 @@ export async function GET(request: NextRequest) {
 
   try {
     const supabase = await createServerSupabaseClient();
-    const { error } = await supabase.auth.exchangeCodeForSession(code);
+    const { data, error } = await supabase.auth.exchangeCodeForSession(code);
 
     if (error) {
       const errorUrl = new URL("/admin/login", origin);
@@ -28,10 +29,29 @@ export async function GET(request: NextRequest) {
       return NextResponse.redirect(errorUrl);
     }
 
-    // Successful authentication - redirect to intended destination
+    const user = data?.user;
+    if (user) {
+      const displayName =
+        user.user_metadata?.full_name ??
+        user.user_metadata?.name ??
+        user.email?.split("@")[0] ??
+        "contributor";
+
+      const { error: upsertError } = await supabase
+        .from("contributor_profiles")
+        .upsert(
+          { id: user.id, display_name: displayName },
+          { onConflict: "id", ignoreDuplicates: true }
+        );
+
+      if (upsertError) {
+        logger.error("Failed to upsert contributor profile", upsertError);
+      }
+    }
+
     return NextResponse.redirect(new URL(redirect, origin));
-  } catch (error) {
-    console.error("Auth callback error:", error);
+  } catch (err) {
+    logger.error("Auth callback error", err);
     const errorUrl = new URL("/admin/login", origin);
     errorUrl.searchParams.set("error", "Authentication failed");
     return NextResponse.redirect(errorUrl);
