@@ -7,6 +7,7 @@ import { AlertTriangle } from "lucide-react";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import { getCountry } from "@/lib/afrikLoader";
 import { transformCountryData } from "@/lib/countryDataTransformer";
+import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { hasActiveSourceFlag } from "@/lib/flags-client";
 import {
   CountryHero,
@@ -117,6 +118,11 @@ export const CountryDetailViewV2 = ({
     return "Retour";
   };
 
+  const breadcrumbs = [
+    { label: "Pays", href: "/fr/pays" },
+    { label: country.nameFr },
+  ];
+
   return (
     <div
       className="w-full pb-3 md:pb-4 xl:pb-5"
@@ -131,6 +137,9 @@ export const CountryDetailViewV2 = ({
         onBack={onBack}
         backLabel={getBackLabel()}
       />
+
+      {/* Breadcrumbs — below hero */}
+      <AfrikBreadcrumbs items={breadcrumbs} />
 
       {/* Content area */}
       <div className="px-3 md:px-4 xl:px-5 space-y-[10px] md:space-y-[14px] xl:space-y-4">
