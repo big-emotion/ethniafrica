@@ -61,6 +61,11 @@ const options: swaggerJsdoc.Options = {
         description:
           "Revision feed — cursor-paginated Atom + JSON feed of recent published revisions (FR38, AR19, NFR32)",
       },
+      {
+        name: "API v2 - Flags",
+        description:
+          "Contributor flags — submit editorial flags on AFRIK entities. Requires age confirmation (FR45, AR24).",
+      },
     ],
     components: {
       securitySchemes: {
@@ -671,6 +676,40 @@ const options: swaggerJsdoc.Options = {
             },
           },
           required: ["data", "meta", "errors"],
+        },
+        FlagCreateInput: {
+          type: "object",
+          required: ["entity_type", "entity_id", "flag_kind"],
+          properties: {
+            entity_type: {
+              type: "string",
+              example: "people",
+              description:
+                "AFRIK entity type (people, country, language, language_family)",
+            },
+            entity_id: {
+              type: "string",
+              example: "PPL_YORUBA",
+              description:
+                "Stable AFRIK identifier of the entity being flagged",
+            },
+            flag_kind: {
+              type: "string",
+              enum: [
+                "inaccurate",
+                "missing-source",
+                "broken-url",
+                "offensive",
+                "correction-proposal",
+                "other",
+              ],
+              example: "inaccurate",
+            },
+            reason_text: {
+              type: "string",
+              example: "Population figure appears outdated vs. 2024 census.",
+            },
+          },
         },
       },
     },

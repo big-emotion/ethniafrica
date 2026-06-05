@@ -12,6 +12,7 @@ export async function GET(request: NextRequest) {
   const { searchParams, origin } = request.nextUrl;
   const code = searchParams.get("code");
   const redirect = searchParams.get("redirect") || "/admin/contributions";
+  const ageConfirmed = searchParams.get("age_confirmed") === "1";
 
   if (!code) {
     const errorUrl = new URL("/admin/login", origin);
@@ -46,6 +47,18 @@ export async function GET(request: NextRequest) {
 
       if (upsertError) {
         logger.error("Failed to upsert contributor profile", upsertError);
+      }
+
+      if (ageConfirmed) {
+        const { error: updateError } = await supabase
+          .from("contributor_profiles")
+          .update({ age_confirmed_at: new Date().toISOString() })
+          .eq("id", user.id)
+          .is("age_confirmed_at", null);
+
+        if (updateError) {
+          logger.error("Failed to set age_confirmed_at", updateError);
+        }
       }
     }
 
