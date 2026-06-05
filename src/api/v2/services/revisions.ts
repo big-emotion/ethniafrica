@@ -108,6 +108,30 @@ export async function listPeopleRevisions(
   return { items, next_cursor };
 }
 
+export async function getLatestEntityRevisionVersion(
+  entityType: string,
+  entityId: string
+): Promise<number | null> {
+  const supabase = createServerClient();
+  const { data, error } = await supabase
+    .from("revisions")
+    .select("version")
+    .eq("entity_type", entityType)
+    .eq("entity_id", entityId)
+    .order("version", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+
+  if (error) {
+    throw new Error(
+      `Failed to get latest version for ${entityType}/${entityId}: ${error.message}`
+    );
+  }
+
+  if (!data) return null;
+  return (data as { version: number }).version;
+}
+
 export async function getPeopleRevisionSnapshot(
   entityId: string,
   version: number
