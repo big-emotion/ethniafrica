@@ -16,6 +16,7 @@ import {
   PeopleCountriesSection,
   PeopleSourcesFooter,
 } from "@/components/people";
+import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 
 interface PeopleDetailViewV2Props {
   peopleId: string;
@@ -77,7 +78,9 @@ export function PeopleDetailViewV2({
 
   useEffect(() => {
     let cancelled = false;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
+
     setError(null);
 
     getPeople(peopleId)
@@ -129,6 +132,19 @@ export function PeopleDetailViewV2({
 
   const data = transformPeopleData(people);
 
+  const breadcrumbs = [
+    { label: "Familles", href: "/fr/familles" },
+    ...(people.languageFamilyName
+      ? [
+          {
+            label: people.languageFamilyName,
+            href: `/fr/familles?family=${people.languageFamilyId}`,
+          },
+        ]
+      : []),
+    { label: data.hero.nameMain },
+  ];
+
   return (
     <div
       className="w-full pb-3 md:pb-4 xl:pb-5"
@@ -143,6 +159,9 @@ export function PeopleDetailViewV2({
         onBack={onBack}
         onFlagCtaClick={onFlagCtaClick}
       />
+
+      {/* 2. Breadcrumbs — below hero, small type */}
+      <AfrikBreadcrumbs items={breadcrumbs} />
 
       {/* Content area — max-width 800px reading surface */}
       <div

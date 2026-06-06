@@ -3,123 +3,91 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Language } from "@/types/shared";
-import { getTranslation } from "@/lib/translations";
-import { getLocalizedRoute, getPageFromRoute, PageType } from "@/lib/routing";
-import { Button } from "@/components/ui/button";
+import { getLocalizedRoute, getPageFromRoute } from "@/lib/routing";
 import Image from "next/image";
 
 interface DesktopNavBarProps {
   language: Language;
-  onLanguageChange: (lang: Language) => void;
+  onLanguageChange?: (lang: Language) => void;
 }
 
-export const DesktopNavBar = ({
-  language,
-  onLanguageChange: _onLanguageChange,
-}: DesktopNavBarProps) => {
-  const t = getTranslation(language);
+export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
   const pathname = usePathname();
 
-  // AFRIK v2 routes
   const familiesRoute = getLocalizedRoute(language, "families");
   const peoplesRoute = getLocalizedRoute(language, "peoples");
   const countriesRoute = getLocalizedRoute(language, "countries");
 
   const currentPage = getPageFromRoute(pathname);
   const isHome = pathname === `/${language}` || pathname === "/";
-  const isAbout = pathname === `/${language}/about` || pathname === "/about";
-  const isContribute =
-    pathname === `/${language}/contribute` || pathname === "/contribute";
-  const isReportError =
-    pathname === `/${language}/report-error` || pathname === "/report-error";
+  const isAbout = pathname.startsWith(`/${language}/about`);
+  const isDoctrine = pathname.startsWith(`/${language}/doctrine`);
+  const isApi = pathname.startsWith(`/docs/api`);
 
-  const isActive = (
-    pageType: PageType | "home" | "about" | "contribute" | "report-error"
-  ) => {
-    if (pageType === "home") return isHome;
-    if (pageType === "about") return isAbout;
-    if (pageType === "contribute") return isContribute;
-    if (pageType === "report-error") return isReportError;
-    return currentPage === pageType;
-  };
+  const navLinkClass = (active: boolean) =>
+    `px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+      active
+        ? "bg-primary text-primary-foreground"
+        : "text-muted-foreground hover:text-foreground hover:bg-accent"
+    }`;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-card border-b shadow-sm hidden lg:block">
+    <nav
+      className="fixed top-0 left-0 right-0 z-50 bg-card border-b shadow-sm hidden lg:block"
+      aria-label="Navigation principale"
+    >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          {/* Navigation links */}
-          <div className="flex items-center gap-2">
-            <Link href={`/${language}`}>
-              <Button
-                variant={isActive("home") ? "default" : "ghost"}
-                size="sm"
-                className="gap-2"
-              >
-                <Image
-                  src="/africa.png"
-                  alt="Africa"
-                  width={20}
-                  height={20}
-                  className="object-contain"
-                />
-                Accueil
-              </Button>
+        <div className="flex items-center gap-6 h-14">
+          {/* Logo */}
+          <Link
+            href={`/${language}`}
+            className="flex items-center gap-2 shrink-0"
+          >
+            <Image
+              src="/africa.png"
+              alt="EthniAfrica"
+              width={28}
+              height={28}
+              className="object-contain"
+            />
+          </Link>
+
+          {/* Inline nav: Pays · Peuples · Familles · À propos · Doctrine · API */}
+          <div className="flex items-center gap-1">
+            <Link
+              href={countriesRoute}
+              className={navLinkClass(currentPage === "countries")}
+            >
+              Pays
             </Link>
-            <Link href={familiesRoute}>
-              <Button
-                variant={isActive("families") ? "default" : "ghost"}
-                size="sm"
-              >
-                Familles linguistiques
-              </Button>
+            <Link
+              href={peoplesRoute}
+              className={navLinkClass(currentPage === "peoples")}
+            >
+              Peuples
             </Link>
-            <Link href={peoplesRoute}>
-              <Button
-                variant={isActive("peoples") ? "default" : "ghost"}
-                size="sm"
-              >
-                Peuples
-              </Button>
+            <Link
+              href={familiesRoute}
+              className={navLinkClass(currentPage === "families")}
+            >
+              Familles
             </Link>
-            <Link href={countriesRoute}>
-              <Button
-                variant={isActive("countries") ? "default" : "ghost"}
-                size="sm"
-              >
-                Pays
-              </Button>
+            <Link href={`/${language}/about`} className={navLinkClass(isAbout)}>
+              À propos
+            </Link>
+            <Link
+              href={`/${language}/doctrine`}
+              className={navLinkClass(isDoctrine)}
+            >
+              Doctrine
+            </Link>
+            <Link href="/docs/api/v2" className={navLinkClass(isApi)}>
+              API
             </Link>
           </div>
 
-          {/* Right side: About, Contribute, Report Error */}
-          <div className="flex items-center gap-2">
-            <Link href={`/${language}/about`}>
-              <Button
-                variant={isActive("about") ? "default" : "ghost"}
-                size="sm"
-              >
-                {t.whyThisSite}
-              </Button>
-            </Link>
-            <Button
-              variant={isActive("contribute") ? "default" : "ghost"}
-              size="sm"
-              onClick={() => {
-                window.location.href = `/${language}/contribute`;
-              }}
-            >
-              Contribuer
-            </Button>
-            <Button
-              variant={isActive("report-error") ? "default" : "ghost"}
-              size="sm"
-              onClick={() => {
-                window.location.href = `/${language}/report-error`;
-              }}
-            >
-              Signaler une erreur
-            </Button>
-          </div>
+          {/* Home indicator (visually hidden, semantic only) */}
+          <span className="sr-only">{isHome ? "Accueil" : ""}</span>
         </div>
       </div>
     </nav>
