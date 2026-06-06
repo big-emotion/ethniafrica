@@ -22,6 +22,9 @@ const content = {
     googleButton: "Continuer avec Google",
     consentLabel:
       "J'accepte de publier mes contributions sous licence CC-BY-SA-4.0 — mes corrections et signalements seront librement réutilisables.",
+    ageConfirmLabel:
+      "Je confirme avoir 16 ans ou plus (ou 13 ans avec l'accord d'un parent dans ma juridiction)",
+    ageConfirmLinkText: "politique de confidentialité — mineurs",
     orSeparator: "ou",
     magicLinkSent:
       "Vérifiez votre boîte mail — un lien de connexion vous a été envoyé.",
@@ -30,6 +33,7 @@ const content = {
     errors: {
       emailRequired: "L'adresse e-mail est requise.",
       consentRequired: "Vous devez accepter la licence CC-BY-SA-4.0.",
+      ageConfirmRequired: "cette confirmation est requise",
       generic: "Une erreur est survenue. Veuillez réessayer.",
     },
   },
@@ -43,13 +47,15 @@ export default function InscriptionPage() {
 
   const [email, setEmail] = useState("");
   const [consent, setConsent] = useState(false);
+  const [ageConfirmed, setAgeConfirmed] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">(
     "idle"
   );
   const [errorMsg, setErrorMsg] = useState("");
 
   const supabase = createBrowserSupabaseClient();
-  const redirectTo = `${typeof window !== "undefined" ? window.location.origin : ""}/api/auth/callback?redirect=/${lang}/compte/profil`;
+  const origin = typeof window !== "undefined" ? window.location.origin : "";
+  const redirectTo = `${origin}/api/auth/callback?redirect=/${lang}/compte/profil&age_confirmed=1`;
 
   async function handleMagicLink(e: React.FormEvent) {
     e.preventDefault();
@@ -60,6 +66,11 @@ export default function InscriptionPage() {
     }
     if (!consent) {
       setErrorMsg(t.errors.consentRequired);
+      setStatus("error");
+      return;
+    }
+    if (!ageConfirmed) {
+      setErrorMsg(t.errors.ageConfirmRequired);
       setStatus("error");
       return;
     }
@@ -80,6 +91,11 @@ export default function InscriptionPage() {
   async function handleOAuth(provider: "github" | "google") {
     if (!consent) {
       setErrorMsg(t.errors.consentRequired);
+      setStatus("error");
+      return;
+    }
+    if (!ageConfirmed) {
+      setErrorMsg(t.errors.ageConfirmRequired);
       setStatus("error");
       return;
     }
@@ -138,6 +154,32 @@ export default function InscriptionPage() {
                 className="text-sm leading-snug cursor-pointer"
               >
                 {t.consentLabel}
+              </Label>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <Checkbox
+                id="age-confirmed"
+                checked={ageConfirmed}
+                onCheckedChange={(v) => setAgeConfirmed(Boolean(v))}
+                aria-required="true"
+                aria-invalid={
+                  status === "error" && !ageConfirmed ? "true" : undefined
+                }
+              />
+              <Label
+                htmlFor="age-confirmed"
+                className="text-sm leading-snug cursor-pointer"
+              >
+                {t.ageConfirmLabel} —{" "}
+                <Link
+                  href={`/${lang}/politique-confidentialite#mineurs`}
+                  className="underline underline-offset-4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {t.ageConfirmLinkText}
+                </Link>
               </Label>
             </div>
 
