@@ -83,6 +83,7 @@ export interface PeopleRow {
   colorIndex: number;
   isOther?: boolean;
   groupedNames?: string[];
+  peopleId?: string;
 }
 
 export interface PeoplesData {
@@ -742,9 +743,10 @@ export function transformPeoples(
     };
   }
 
-  // Build endonym and pejorative maps from majorPeoples
+  // Build endonym, pejorative, and peopleId maps from majorPeoples
   const endonymMap = new Map<string, string>();
   const pejorativeMap = new Map<string, string>();
+  const peopleIdMap = new Map<string, string>();
 
   if (majorPeoples) {
     for (const p of majorPeoples) {
@@ -756,6 +758,9 @@ export function transformPeoples(
         if (pej) {
           pejorativeMap.set(p.name.toLowerCase(), pej);
         }
+      }
+      if (p.peopleId) {
+        peopleIdMap.set(p.name.toLowerCase(), p.peopleId);
       }
     }
   }
@@ -794,6 +799,7 @@ export function transformPeoples(
         ? shortenFamily(p.languageFamily)
         : undefined,
       colorIndex: colorIndex,
+      peopleId: p.peopleId ?? peopleIdMap.get(nameKey),
     });
 
     colorIndex++;
