@@ -39,7 +39,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Validate event envelope
         uses: big-emotion/ferry/.github/actions/ferry-envelope-validate@v1.1.2
@@ -57,7 +57,7 @@ jobs:
       reason: ${{ steps.route.outputs.reason }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Resolve execution path
         id: route
         uses: big-emotion/ferry/.github/actions/ferry-route@v1.1.2
@@ -83,7 +83,7 @@ jobs:
       cost_eur: ${{ steps.run-developer.outputs.cost_eur }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Install gitleaks
         shell: bash
@@ -120,7 +120,7 @@ jobs:
       actions: read # gh run view --log-failed / actions/runs
       id-token: write # required by anthropics/claude-code-action@v1 OIDC auth
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ vars.FERRY_INTEGRATION_BRANCH || 'main' }}
           fetch-depth: 0
@@ -155,7 +155,7 @@ jobs:
       pull-requests: write
       issues: read
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Resolve agent prompt
         id: prompt
         run: >-
@@ -190,7 +190,7 @@ jobs:
       issues: write
     steps:
       - name: Checkout repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Emit audit line
         uses: big-emotion/ferry/.github/actions/ferry-emit-audit@v1.1.2
         with:

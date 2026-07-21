@@ -1,11 +1,23 @@
 # Ferry consumer config. `ferry-init` / `ferry-update` read this file and skip
 # config generation when it already exists, so edits here are safe.
 #
-# Column names are matched verbatim against the Jira board. This project uses
-# the canonical pipeline except for the final column, which is "Ready to Merge"
-# rather than "To Merge" — the same string appears in the Jira automation rules
-# documented in ferry-jira-automation-setup.md. Change both together or the
-# Merger never fires.
+# Two different name spaces meet here — mixing them silently breaks the pipeline:
+#
+#   trigger_column   compared (case-insensitively) against the `to_status` the
+#                    Jira automation rule dispatches, i.e. the ETNI status name.
+#                    A miss is a *silent* no-op: the router logs "dispatch maps
+#                    to no agent" and exits green, so nothing looks broken.
+#   auto_transition* resolved against the transition target names returned by the
+#                    Jira REST API. A miss is a hard failure unless the matching
+#                    FERRY_*_TRANSITION_ID secret supplies a fallback id.
+#
+# The ETNI statuses are: REFINEMENT · READY FOR DEV · IN REVIEW · CHANGES
+# REQUESTED · TO MERGE. Note the last one is "TO MERGE", not "Ready to Merge".
+#
+# IN REVIEW is a built-in Jira status, so the REST API returns it localised
+# ("Revue en cours") while automation dispatches the English name. It therefore
+# never resolves by name and relies on the FERRY_REVIEW_TRANSITION_ID /
+# FERRY_ITER_TRANSITION_ID secrets — keep those set.
 execution_path: claude-code
 
 git:
@@ -19,17 +31,17 @@ workflow:
       trigger_column: Refinement
       auto_transition: null
     developer:
-      trigger_column: In Development
+      trigger_column: READY FOR DEV
       auto_transition: In Review
     reviewer:
       trigger_column: In Review
-      auto_transition_approve: Ready to Merge
+      auto_transition_approve: TO MERGE
       auto_transition_changes: Changes Requested
     iterator:
       trigger_column: Changes Requested
       auto_transition: In Review
     merger:
-      trigger_column: Ready to Merge
+      trigger_column: TO MERGE
 
 limits:
   max_tokens_per_run: 5000000
