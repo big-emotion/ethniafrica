@@ -14,7 +14,7 @@ import { normalizeString } from "@/lib/normalize";
 import type { PeopleSummary, LanguageFamilyId } from "@/types/afrik-frontend";
 import { getAllPeoples } from "@/lib/afrikLoader";
 import { useListView } from "@/hooks/use-list-view";
-import { AutonymExonymHeading } from "@/components/ui/autonym-exonym-heading";
+import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
 
@@ -113,6 +113,7 @@ export const PeopleView = ({
     >
       <div className="space-y-2">
         <AutonymExonymHeading
+          variant="compact"
           exonym={people.nameMain}
           autonym={people.selfAppellation}
           className="group-hover:[&_h3]:text-primary [&_h3]:transition-colors"
