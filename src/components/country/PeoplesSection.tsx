@@ -126,6 +126,12 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
               className="text-[11px] xl:text-[12px] italic"
               style={{ color: "var(--country-text-soft)" }}
             >
+              {/* UX-DR49 violation, knowingly left in place: the endonym is
+                  rendered subordinate to the exonym and without a lang
+                  attribute. Routing it through <AutonymExonymHeading> changes
+                  how peoples read on every country page, so it is a product
+                  decision rather than a lint fix — see ETNI-382. */}
+              {/* eslint-disable-next-line afh/no-bare-people-name */}
               {row.endonym}
             </span>
           )}
