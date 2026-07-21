@@ -86,22 +86,25 @@ Then <observable outcome>
 
      The bullet character is `•`. Indentation under each bullet is two spaces. -->
 
+<!-- prettier-ignore -->
 • REQ-042 — EDIT statement
-Current: "<verbatim current statement>"
-Proposed: "<new statement>"
-GWT changes: <which GWT blocks change, and how>
+  Current: "<verbatim current statement>"
+  Proposed: "<new statement>"
+  GWT changes: <which GWT blocks change, and how>
 
+<!-- prettier-ignore -->
 • DEC-018 — NEW
-Context: <why this decision is being recorded now>
-Decision: <the decision itself, one sentence>
-Alternatives: <options considered, briefly>
-Tradeoffs: <what we accept by choosing this option>
-Requirements satisfied: <REQ-xxx, REQ-yyy>
+  Context: <why this decision is being recorded now>
+  Decision: <the decision itself, one sentence>
+  Alternatives: <options considered, briefly>
+  Tradeoffs: <what we accept by choosing this option>
+  Requirements satisfied: <REQ-xxx, REQ-yyy>
 
+<!-- prettier-ignore -->
 • ARCH-007 — EDIT body
-Summary change: <one-line diff of the architecture contract>
-Source files (expected): <paths that should anchor this contract>
-Tests anchoring this contract: <test files / spec ids>
+  Summary change: <one-line diff of the architecture contract>
+  Source files (expected): <paths that should anchor this contract>
+  Tests anchoring this contract: <test files / spec ids>
 
 ## Dependencies
 
