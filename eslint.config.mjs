@@ -49,12 +49,7 @@ const eslintConfig = [
       "src/components/**/*.{ts,tsx,js,jsx}",
       "src/app/**/*.{ts,tsx,js,jsx}",
     ],
-    ignores: [
-      "**/*.stories.*",
-      "**/*.test.*",
-      "**/__tests__/**",
-      "**/*.mdx",
-    ],
+    ignores: ["**/*.stories.*", "**/*.test.*", "**/__tests__/**", "**/*.mdx"],
     plugins: { afh: afhPlugin },
     rules: {
       "afh/afh-error-misuse": "error",
@@ -142,6 +137,31 @@ const eslintConfig = [
     files: ["scripts/**/*.ts", "scripts/**/*.js"],
     rules: {
       "no-console": "off",
+    },
+  },
+
+  // ===========================================================================
+  // `any` is a warning in tests, an error everywhere else
+  // ---------------------------------------------------------------------------
+  // Test doubles for the Supabase client are deep, chained builder objects
+  // (`from().select().eq()...`). Reproducing those types by hand asserts
+  // nothing about the code under test and breaks whenever the SDK's internal
+  // types move, so `any` is the honest annotation there.
+  //
+  // It stays a warning rather than "off" so the count remains visible, and it
+  // stays an error in src/ — production code that reaches for `any` is exactly
+  // what the rule is for. Note tsconfig runs with strict: false, so `any` in a
+  // test is not hiding a check that would otherwise be enforced.
+  // ===========================================================================
+  {
+    files: [
+      "**/*.test.ts",
+      "**/*.test.tsx",
+      "**/__tests__/**/*.{ts,tsx}",
+      "**/test/**/*.{ts,tsx}",
+    ],
+    rules: {
+      "@typescript-eslint/no-explicit-any": "warn",
     },
   },
 ];

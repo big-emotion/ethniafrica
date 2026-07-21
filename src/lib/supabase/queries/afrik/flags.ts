@@ -32,12 +32,12 @@ export async function getActiveSourceFlags(
   const supabase = createServerClient();
   const { data, error } = await supabase
     .from("flags")
-    .select("id, flag_type, status, auto_generated")
+    .select("id, flag_kind, status, auto_generated")
     .eq("entity_type", entityType)
     .eq("entity_id", entityId)
-    .eq("flag_type", "unreachable_source")
+    .eq("flag_kind", "other")
     .eq("auto_generated", true)
-    .in("status", ["pending", "reviewed"]);
+    .in("status", ["open", "under_review"]);
 
   if (error) {
     logger.error(

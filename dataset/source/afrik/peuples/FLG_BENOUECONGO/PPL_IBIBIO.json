@@ -2,9 +2,7 @@
   "id": "PPL_IBIBIO",
   "nameMain": "Ibibio",
   "languageFamilyId": "FLG_BENOUECONGO",
-  "currentCountries": [
-    "NGA"
-  ],
+  "currentCountries": ["NGA"],
   "content": {
     "appellations": {
       "mainName": "Ibibio",
@@ -19,9 +17,7 @@
       "linguisticFamily": "FLG_BENOUECONGO",
       "ethnoLinguisticGroup": "Cross River inférieur (Lower Cross River, branche Bénoué-Congo du Niger-Congo)",
       "historicalRegion": "Sud-est du Nigeria : État d'Akwa Ibom, Cross River, est de l'État d'Abia",
-      "currentCountries": [
-        "NGA"
-      ]
+      "currentCountries": ["NGA"]
     },
     "ethnicities": [
       "Ibibio proprement dits (Ibibio Central / Ibibio de l'Enyong) — noyau originel",
@@ -59,9 +55,7 @@
     },
     "languages": {
       "mainLanguage": "Ibibio",
-      "isoCodes": [
-        "ibb"
-      ],
+      "isoCodes": ["ibb"],
       "dialects": [
         "Ibibio central (Nkari, Enyong, Itak, Nsit) — norme de référence",
         "Annang (Anang) — dialecte occidental, mutuelle intelligibilité avec l'ibibio central",

@@ -1,15 +1,38 @@
 /**
- * Search Handler - API handler for search
+ * Search Handler — API handlers for the /v2/search endpoint.
+ *
+ * ftsSearchHandler: ETNI-38 FTS handler returning the Module #0 envelope.
+ * searchHandler: legacy handler (backward compatibility).
  */
 
-import { search } from "../services/searchService";
-import type { SearchFilters, SearchResult } from "@/types/afrik";
+import { ftsSearch, search } from "../services/searchService";
+import { createApiResponse } from "../utils/response";
+import type {
+  SearchFilters,
+  SearchResult,
+  FtsSearchParams,
+} from "@/types/afrik";
+import type { ApiEnvelope } from "../utils/response";
 
-/**
- * Search across all entities
- */
+export interface FtsSearchData {
+  peoples: object[];
+  countries: object[];
+  total: number;
+}
+
+export async function ftsSearchHandler(
+  params: FtsSearchParams
+): Promise<ApiEnvelope<FtsSearchData>> {
+  const result = await ftsSearch(params);
+  return createApiResponse<FtsSearchData>({
+    peoples: result.peoples as object[],
+    countries: result.countries as object[],
+    total: result.total,
+  });
+}
+
 export async function searchHandler(
   filters: SearchFilters = {}
 ): Promise<SearchResult[]> {
-  return await search(filters);
+  return search(filters);
 }

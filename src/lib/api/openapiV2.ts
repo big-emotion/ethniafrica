@@ -56,6 +56,16 @@ const options: swaggerJsdoc.Options = {
         description:
           "Source Transparency Fabric — sources, confidence scores, editorial doctrine",
       },
+      {
+        name: "API v2 - Feed",
+        description:
+          "Revision feed — cursor-paginated Atom + JSON feed of recent published revisions (FR38, AR19, NFR32)",
+      },
+      {
+        name: "API v2 - Flags",
+        description:
+          "Contributor flags — submit editorial flags on AFRIK entities. Requires age confirmation (FR45, AR24).",
+      },
     ],
     components: {
       securitySchemes: {
@@ -126,6 +136,43 @@ const options: swaggerJsdoc.Options = {
               example: 0.95,
             },
           },
+        },
+        SearchResponseData: {
+          type: "object",
+          description:
+            "FTS search result data. Peoples and countries are returned in separate arrays, ranked by ts_rank_cd × confidence boost.",
+          properties: {
+            peoples: {
+              type: "array",
+              items: { $ref: "#/components/schemas/PeopleV2" },
+              description:
+                "Matching peoples ordered by confidence-boosted relevance",
+            },
+            countries: {
+              type: "array",
+              items: { $ref: "#/components/schemas/CountryV2" },
+              description: "Matching countries ordered by FTS relevance",
+            },
+            total: {
+              type: "integer",
+              description: "Combined count of peoples + countries returned",
+              example: 5,
+            },
+          },
+          required: ["peoples", "countries", "total"],
+        },
+        SearchResponse: {
+          type: "object",
+          description: "Module #0 envelope for /v2/search (ETNI-38)",
+          properties: {
+            data: { $ref: "#/components/schemas/SearchResponseData" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
         },
         CountryV2: {
           type: "object",
@@ -377,6 +424,114 @@ const options: swaggerJsdoc.Options = {
             },
           },
         },
+        // -----------------------------------------------------------------
+        // Epic 3 — Pinned-version URLs (ETNI-51)
+        // -----------------------------------------------------------------
+        PeopleRevisionItem: {
+          type: "object",
+          description:
+            "A single published revision in the people revision history list.",
+          properties: {
+            version: {
+              type: "integer",
+              minimum: 1,
+              example: 3,
+              description: "Monotonically increasing publication version",
+            },
+            published_at: {
+              type: "string",
+              format: "date-time",
+              nullable: true,
+              example: "2026-05-21T10:00:00.000Z",
+            },
+            moderator_pseudonym: {
+              type: "string",
+              nullable: true,
+              example: "mod-aaaabbbb",
+              description:
+                "Privacy-preserving pseudonym derived from the moderator's internal id",
+            },
+            reason: {
+              type: "string",
+              nullable: true,
+              example: "Demographics update",
+            },
+            pinned_url: {
+              type: "string",
+              example: "/api/v2/peoples/PPL_YORUBA/versions/3",
+              description:
+                "Stable URL for this pinned version (AR14). Cache-Control: s-maxage=31536000, immutable.",
+            },
+          },
+          required: ["version", "pinned_url"],
+        },
+        CursorPaginationMeta: {
+          type: "object",
+          description: "Cursor-based pagination meta (no offset).",
+          properties: {
+            limit: {
+              type: "integer",
+              minimum: 1,
+              maximum: 100,
+              example: 20,
+            },
+            next_cursor: {
+              type: "integer",
+              nullable: true,
+              example: 4,
+              description:
+                "Version to pass as ?cursor= on the next request. Null when no more pages.",
+            },
+          },
+          required: ["limit", "next_cursor"],
+        },
+        PeopleRevisionListMeta: {
+          type: "object",
+          properties: {
+            license: { type: "string", example: "CC-BY-SA-4.0" },
+            attribution: {
+              type: "string",
+              example: "Africa History — africahistory.org",
+            },
+            pagination: { $ref: "#/components/schemas/CursorPaginationMeta" },
+          },
+          required: ["license", "attribution", "pagination"],
+        },
+        PeopleRevisionListResponse: {
+          type: "object",
+          description:
+            "Cursor-paginated list of published revisions ordered by version DESC.",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/PeopleRevisionItem" },
+            },
+            meta: { $ref: "#/components/schemas/PeopleRevisionListMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        PeopleVersionSnapshotResponse: {
+          type: "object",
+          description:
+            "Full published snapshot at a pinned version. Data is read from the immutable revision record, never from the live entity (AR14). Response is permanently cacheable (AR18).",
+          properties: {
+            data: {
+              type: "object",
+              description:
+                "Full denormalised entity state as stored at publication time (snapshot_jsonb)",
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
         DoctrineEntry: {
           type: "object",
           description: "Editorial-doctrine row (MDX source stored in DB).",
@@ -412,6 +567,147 @@ const options: swaggerJsdoc.Options = {
             errors: {
               type: "array",
               items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+        },
+        // -----------------------------------------------------------------
+        // Epic 3 — Revisions feed (ETNI-52)
+        // -----------------------------------------------------------------
+        FeedRevisionItem: {
+          type: "object",
+          description:
+            "A single published revision entry in the cross-entity revisions feed.",
+          properties: {
+            entity_type: {
+              type: "string",
+              enum: ["people", "country", "languageFamily"],
+              example: "people",
+            },
+            entity_id: {
+              type: "string",
+              example: "PPL_YORUBA",
+              description:
+                "Stable entity identifier (PPL_*, FLG_*, ISO 3166-1 alpha-3)",
+            },
+            slug: {
+              type: "string",
+              example: "ppl_yoruba",
+              description: "URL-friendly lowercase form of entity_id",
+            },
+            version: {
+              type: "integer",
+              minimum: 1,
+              example: 3,
+              description: "Monotonically increasing publication version",
+            },
+            published_at: {
+              type: "string",
+              format: "date-time",
+              nullable: true,
+              example: "2026-05-21T12:00:00.000Z",
+            },
+            pinned_url: {
+              type: "string",
+              example: "/api/v2/peoples/PPL_YORUBA/versions/3",
+              description: "Stable pinned-version URL (AR14)",
+            },
+            summary: {
+              type: "string",
+              nullable: true,
+              example: "Demographics update",
+              description: "Editorial reason for the revision, if provided",
+            },
+          },
+          required: [
+            "entity_type",
+            "entity_id",
+            "slug",
+            "version",
+            "pinned_url",
+          ],
+        },
+        FeedCursorPaginationMeta: {
+          type: "object",
+          description: "Cursor-based pagination meta for the revisions feed.",
+          properties: {
+            limit: {
+              type: "integer",
+              minimum: 1,
+              maximum: 100,
+              example: 20,
+            },
+            next_cursor: {
+              type: "string",
+              nullable: true,
+              example: "MjAyNi0wNS0yMVQxMjowMDowMC4wMDB...",
+              description:
+                "Opaque base64url cursor. Pass as ?cursor= on the next request. Null when no more pages.",
+            },
+          },
+          required: ["limit", "next_cursor"],
+        },
+        FeedRevisionListMeta: {
+          type: "object",
+          properties: {
+            license: { type: "string", example: "CC-BY-SA-4.0" },
+            attribution: {
+              type: "string",
+              example: "Africa History — africahistory.org",
+            },
+            pagination: {
+              $ref: "#/components/schemas/FeedCursorPaginationMeta",
+            },
+          },
+          required: ["license", "attribution", "pagination"],
+        },
+        FeedRevisionListResponse: {
+          type: "object",
+          description:
+            "Cursor-paginated list of published revisions across all entity types (JSON format).",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/FeedRevisionItem" },
+            },
+            meta: { $ref: "#/components/schemas/FeedRevisionListMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        FlagCreateInput: {
+          type: "object",
+          required: ["entity_type", "entity_id", "flag_kind"],
+          properties: {
+            entity_type: {
+              type: "string",
+              example: "people",
+              description:
+                "AFRIK entity type (people, country, language, language_family)",
+            },
+            entity_id: {
+              type: "string",
+              example: "PPL_YORUBA",
+              description:
+                "Stable AFRIK identifier of the entity being flagged",
+            },
+            flag_kind: {
+              type: "string",
+              enum: [
+                "inaccurate",
+                "missing-source",
+                "broken-url",
+                "offensive",
+                "correction-proposal",
+                "other",
+              ],
+              example: "inaccurate",
+            },
+            reason_text: {
+              type: "string",
+              example: "Population figure appears outdated vs. 2024 census.",
             },
           },
         },

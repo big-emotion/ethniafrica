@@ -12,6 +12,7 @@ import {
 import { createServerClient } from "../../../server";
 
 describe("AFRIK Countries Queries", () => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let mockSupabase: any;
 
   beforeEach(() => {
@@ -23,8 +24,10 @@ describe("AFRIK Countries Queries", () => {
       order: vi.fn(() => mockSupabase),
       range: vi.fn(() => mockSupabase),
       or: vi.fn(() => mockSupabase),
+      textSearch: vi.fn(() => mockSupabase),
     };
     vi.clearAllMocks();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (createServerClient as any).mockReturnValue(mockSupabase);
   });
 
@@ -89,7 +92,7 @@ describe("AFRIK Countries Queries", () => {
   });
 
   describe("searchAfrikCountries", () => {
-    it("should search countries by query", async () => {
+    it("should use FTS textSearch on search_vector with french config", async () => {
       const mockData = [
         {
           id: "ZWE",
@@ -98,12 +101,40 @@ describe("AFRIK Countries Queries", () => {
         },
       ];
 
+      mockSupabase.textSearch.mockReturnValue(mockSupabase);
       mockSupabase.order.mockResolvedValue({ data: mockData, error: null });
 
       const result = await searchAfrikCountries("Zimbabwe");
 
+      expect(mockSupabase.textSearch).toHaveBeenCalledWith(
+        "search_vector",
+        "Zimbabwe",
+        { type: "websearch", config: "french" }
+      );
       expect(result).toHaveLength(1);
       expect(result[0].id).toBe("ZWE");
+    });
+
+    it("should return results mapped with nameFr field", async () => {
+      const mockData = [
+        {
+          id: "MLI",
+          name_fr: "République du Mali",
+          etymology: "De l'empire du Mali",
+          name_origin_actor: null,
+          content: {},
+          created_at: "2024-01-01T00:00:00Z",
+          updated_at: "2024-01-01T00:00:00Z",
+        },
+      ];
+
+      mockSupabase.textSearch.mockReturnValue(mockSupabase);
+      mockSupabase.order.mockResolvedValue({ data: mockData, error: null });
+
+      const result = await searchAfrikCountries("mali");
+
+      expect(result[0].nameFr).toBe("République du Mali");
+      expect(result[0].etymology).toBe("De l'empire du Mali");
     });
   });
 });

@@ -25,6 +25,7 @@ import type {
 } from "@/types/afrik-frontend";
 import { getLanguageFamily } from "@/lib/afrikLoader";
 import { getLocalizedRoute } from "@/lib/routing";
+import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { hasActiveSourceFlag } from "@/lib/flags-client";
@@ -136,9 +137,15 @@ export const LanguageFamilyDetailView = ({
   const tabLabels = getTabLabels();
   const displayName = family.nameFr;
 
+  const breadcrumbs = [
+    { label: "Familles", href: getLocalizedRoute(language, "families") },
+    { label: displayName },
+  ];
+
   return (
     <ScrollArea className="h-full">
       <div className="p-6 space-y-6">
+        <AfrikBreadcrumbs items={breadcrumbs} />
         {/* Header */}
         <div className="space-y-2">
           <div className="flex flex-wrap items-center gap-3">

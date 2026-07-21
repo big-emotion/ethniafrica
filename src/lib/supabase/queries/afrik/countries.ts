@@ -75,16 +75,15 @@ export async function getAfrikCountryById(
 }
 
 /**
- * Search AFRIK countries by query (full-text search on name_fr and content)
+ * Search AFRIK countries using Postgres FTS on search_vector (websearch, french).
  */
 export async function searchAfrikCountries(query: string): Promise<Country[]> {
   const supabase = createServerClient();
-  const queryLower = query.toLowerCase();
 
   const { data, error } = await supabase
     .from("afrik_countries")
     .select("*")
-    .or(`id.ilike.%${queryLower}%,name_fr.ilike.%${queryLower}%`)
+    .textSearch("search_vector", query, { type: "websearch", config: "french" })
     .order("name_fr");
 
   if (error) {

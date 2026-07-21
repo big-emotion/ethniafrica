@@ -8,6 +8,7 @@
 @import "./styles/tokens/motion.css";
 @import "./styles/tokens/radius.css";
 @import "./styles/country-tokens.css";
+@import "./styles/people-tokens.css";
 
 @tailwind base;
 @tailwind components;
@@ -163,7 +164,33 @@ All colors MUST be HSL.
   }
 }
 
+@keyframes afh-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 @layer utilities {
+  .afh-shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--afh-bg-warm) 25%,
+      color-mix(in srgb, var(--afh-bg-warm) 60%, white) 50%,
+      var(--afh-bg-warm) 75%
+    );
+    background-size: 200% 100%;
+    animation: afh-shimmer 1.6s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .afh-shimmer {
+      animation: none;
+    }
+  }
+
   .gradient-warm {
     background: var(--gradient-warm);
   }
