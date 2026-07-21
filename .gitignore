@@ -96,3 +96,6 @@ dataset/source/archive/
 
 # Logs générés (migration, validation)
 dataset/source/afrik/logs/
+# Agent runtime mirrors (local skill caches, not project source)
+.agents/
+.codex/
