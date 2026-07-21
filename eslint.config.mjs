@@ -59,15 +59,23 @@ const eslintConfig = [
   // ===========================================================================
   // UX-DR49 rule 1: no-bare-people-name — decolonial posture
   // ---------------------------------------------------------------------------
-  // Raw people/language name strings must be rendered inside
-  // <AutonymExonymHeading> so autonyms and exonyms are always presented with
-  // the correct cultural context.  Applies to the people and country component
-  // trees where such names are most likely to appear.
+  // People/language name bindings must be rendered through
+  // <AutonymExonymHeading> so autonyms keep their exonyms and lang attribute.
+  // Applies to the people and country component trees, where such names appear.
+  //
+  // AutonymExonymHeading itself is exempt: it is the sanctioned renderer, so
+  // its own implementation necessarily paints the name fields directly.
   // ===========================================================================
   {
     files: [
       "src/components/people/**/*.{ts,tsx,js,jsx}",
       "src/components/country/**/*.{ts,tsx,js,jsx}",
+    ],
+    ignores: [
+      "**/AutonymExonymHeading.tsx",
+      "**/*.stories.*",
+      "**/*.test.*",
+      "**/__tests__/**",
     ],
     plugins: { afh: afhPlugin },
     rules: {

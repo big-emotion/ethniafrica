@@ -22,71 +22,93 @@ const ruleTester = new RuleTester({
 
 ruleTester.run("no-bare-people-name", rule, {
   valid: [
-    // Inside AutonymExonymHeading as prop — OK
+    // --- The sanctioned way to render a people name -----------------------
     {
-      code: `<AutonymExonymHeading autonym="Yoruba" autonymIso639_3="yor" />`,
+      code: `<AutonymExonymHeading nameMain={data.nameMain} exonyms={data.exonyms} />`,
     },
-    // JSXText inside AutonymExonymHeading — OK
     {
-      code: `<AutonymExonymHeading autonym="x" autonymIso639_3="xyz">Yoruba</AutonymExonymHeading>`,
+      code: `<AutonymExonymHeading autonym={people.autonym} autonymIso639_3="yor" />`,
     },
-    // lowercase text — not a proper noun
+    // Name-bearing binding nested inside the heading's children
     {
-      code: `<div>hello world</div>`,
+      code: `<AutonymExonymHeading nameMain="x" exonyms={[]}><span>{data.nameMain}</span></AutonymExonymHeading>`,
     },
-    // empty / whitespace-only JSXText
-    {
-      code: `<div>   </div>`,
-    },
-    // Proper noun but nested inside AutonymExonymHeading deeper
-    {
-      code: `<AutonymExonymHeading autonym="x" autonymIso639_3="xyz"><span>Yoruba</span></AutonymExonymHeading>`,
-    },
-    // Quoted string literal inside AutonymExonymHeading expression container — OK
-    {
-      code: `<AutonymExonymHeading autonym="x" autonymIso639_3="xyz">{"Yoruba"}</AutonymExonymHeading>`,
-    },
-    // Quoted string literal inside deeply nested AutonymExonymHeading — OK
-    {
-      code: `<AutonymExonymHeading autonym="x" autonymIso639_3="xyz"><span>{"Hausa"}</span></AutonymExonymHeading>`,
-    },
-    // Non-string literal (number) inside JSX expression container — OK
-    {
-      code: `<div>{42}</div>`,
-    },
-    // lowercase string literal in expression container — not a proper noun
-    {
-      code: `<div>{"hello world"}</div>`,
-    },
+
+    // --- UI chrome must never trip the rule -------------------------------
+    // These are the false positives that made the previous heuristic
+    // (any capitalised word) unusable: 43 errors, none of them real.
+    { code: `<span>Retour</span>` },
+    { code: `<h2>Spiritualité</h2>` },
+    { code: `<button>Signaler une erreur</button>` },
+    { code: `<span>← Afrique</span>` },
+    { code: `<h3>Sources et références</h3>` },
+
+    // --- Bindings that carry something other than a people name -----------
+    { code: `<span>{data.languageFamilyName}</span>` },
+    { code: `<span>{country.name}</span>` },
+    { code: `<span>{data.currentCountries.length} pays</span>` },
+    { code: `<div>{42}</div>` },
+    // `length` is the final property, so the expression is a count, not a name
+    { code: `<span>{data.exonyms.length}</span>` },
+    // Iteratee of a collection that is not name-bearing
+    { code: `<>{kingdoms.map((k) => <span>{k}</span>)}</>` },
+
+    // --- Hardcoded literals are out of scope by design --------------------
+    // Telling "Yoruba" from "Retour" statically needs the AFRIK name corpus;
+    // this rule deliberately covers only data bindings. See the rule header.
+    { code: `<p>{"Yoruba"}</p>` },
+    { code: `<div>Yoruba</div>` },
   ],
+
   invalid: [
-    // Bare proper noun in JSX outside AutonymExonymHeading
+    // --- Direct member bindings -------------------------------------------
     {
-      code: `<div>Yoruba</div>`,
-      errors: [{ messageId: "noBarepeopleName" }],
+      code: `<h1>{data.nameMain}</h1>`,
+      errors: [{ messageId: "noBarePeopleName", data: { name: "nameMain" } }],
     },
     {
-      code: `<span>Hausa people</span>`,
-      errors: [{ messageId: "noBarepeopleName" }],
-    },
-    // Proper noun in a sibling element outside AutonymExonymHeading
-    {
-      code: `<section><h1>Igbo</h1></section>`,
-      errors: [{ messageId: "noBarepeopleName" }],
-    },
-    // Quoted string literal in JSX expression container outside AutonymExonymHeading
-    {
-      code: `<p>{"Yoruba"}</p>`,
-      errors: [{ messageId: "noBarepeopleName" }],
+      code: `<span>{people.selfAppellation}</span>`,
+      errors: [
+        { messageId: "noBarePeopleName", data: { name: "selfAppellation" } },
+      ],
     },
     {
-      code: `<h1>{"Hausa people"}</h1>`,
-      errors: [{ messageId: "noBarepeopleName" }],
+      code: `<p>{raw.appellations.autonym}</p>`,
+      errors: [{ messageId: "noBarePeopleName", data: { name: "autonym" } }],
     },
-    // Nested element with quoted string literal outside AutonymExonymHeading
+    // Bare identifier destructured from the data
     {
-      code: `<section><span>{"Igbo"}</span></section>`,
-      errors: [{ messageId: "noBarepeopleName" }],
+      code: `<h2>{nameMain}</h2>`,
+      errors: [{ messageId: "noBarePeopleName", data: { name: "nameMain" } }],
+    },
+
+    // --- Computed access: the collection carries the name ------------------
+    {
+      code: `<p>{data.exonyms[0]}</p>`,
+      errors: [{ messageId: "noBarePeopleName", data: { name: "exonyms" } }],
+    },
+
+    // --- Iteration over a name-bearing collection --------------------------
+    {
+      code: `<>{data.exonyms.map((exo) => <span>{exo}</span>)}</>`,
+      errors: [{ messageId: "noBarePeopleName", data: { name: "exonyms" } }],
+    },
+    {
+      code: `<>{alternateNames.map((n) => <li>{n}</li>)}</>`,
+      errors: [
+        { messageId: "noBarePeopleName", data: { name: "alternateNames" } },
+      ],
+    },
+
+    // --- Nested outside the heading ----------------------------------------
+    {
+      code: `<section><div><span>{data.nameMain}</span></div></section>`,
+      errors: [{ messageId: "noBarePeopleName", data: { name: "nameMain" } }],
+    },
+    // A sibling of the heading is still outside it
+    {
+      code: `<div><AutonymExonymHeading nameMain="x" exonyms={[]} /><span>{data.nameMain}</span></div>`,
+      errors: [{ messageId: "noBarePeopleName", data: { name: "nameMain" } }],
     },
   ],
 });
