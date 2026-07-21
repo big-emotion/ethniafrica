@@ -104,8 +104,7 @@ const relatedPeoples: PeopleRelatedData = {
   politicalSystem: "Monarchie traditionnelle sous un Oba (roi sacré)",
   clanOrganization:
     "Clans patrilinéaires (idile) organisés en quartiers (àdúgbò)",
-  ageClassSystems:
-    "Grades d'âge (ẹgbẹ) structurant la vie sociale et rituelle",
+  ageClassSystems: "Grades d'âge (ẹgbẹ) structurant la vie sociale et rituelle",
 };
 
 const countries: PeopleCountriesData = {
@@ -304,7 +303,8 @@ export const Origin_Empty: Story = {
             fontStyle: "italic",
           }}
         >
-          Section sans données — elle s&apos;omit silencieusement (retourne null).
+          Section sans données — elle s&apos;omit silencieusement (retourne
+          null).
         </p>
         <PeopleOriginBlock data={empty} />
       </div>

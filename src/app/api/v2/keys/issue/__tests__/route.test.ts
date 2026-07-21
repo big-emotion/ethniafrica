@@ -109,7 +109,10 @@ describe("GET /api/v2/keys/issue", () => {
   });
 
   it("should return 409 when an active public key already exists for this IP", async () => {
-    mockMaybySingle.mockResolvedValue({ data: { id: "existing-key-id" }, error: null });
+    mockMaybySingle.mockResolvedValue({
+      data: { id: "existing-key-id" },
+      error: null,
+    });
 
     const response = await GET(
       makeRequest({ "X-Forwarded-For": "203.0.113.1" })

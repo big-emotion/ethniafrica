@@ -1,9 +1,5 @@
 import { describe, it, expect, beforeEach, vi, type Mock } from "vitest";
-import {
-  isValidEmail,
-  findUserByEmail,
-  assignAdminRole,
-} from "../seedAdmin";
+import { isValidEmail, findUserByEmail, assignAdminRole } from "../seedAdmin";
 import { createAdminClient } from "@/lib/supabase/admin";
 
 // Mock the admin client
@@ -65,7 +61,10 @@ describe("seedAdmin", () => {
         error: null,
       });
 
-      const result = await findUserByEmail(mockSupabase, "notfound@example.com");
+      const result = await findUserByEmail(
+        mockSupabase,
+        "notfound@example.com"
+      );
 
       expect(result).toBeNull();
     });

@@ -48,10 +48,7 @@ export function AutonymExonymHeading({
       )}
 
       {exonyms.length > 0 && (
-        <div
-          data-exonyms="true"
-          className="flex flex-wrap gap-[5px] mt-[6px]"
-        >
+        <div data-exonyms="true" className="flex flex-wrap gap-[5px] mt-[6px]">
           {exonyms.map((e) => (
             <span
               key={e}

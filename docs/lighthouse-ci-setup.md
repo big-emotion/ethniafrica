@@ -14,11 +14,11 @@ The main Lighthouse CI configuration lives in `.lighthouserc.js` at the reposito
 
 ### Reference Routes
 
-| Route | Description |
-|-------|-------------|
-| `/` | Home page |
-| `/fr/pays/senegal` | Sample country fiche |
-| `/fr/peuples/wolof` | Sample people fiche |
+| Route               | Description          |
+| ------------------- | -------------------- |
+| `/`                 | Home page            |
+| `/fr/pays/senegal`  | Sample country fiche |
+| `/fr/peuples/wolof` | Sample people fiche  |
 
 ### Mobile Profile
 
