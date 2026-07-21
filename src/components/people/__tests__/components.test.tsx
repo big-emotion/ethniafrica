@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import type { ParagraphChipData } from "../ProseWithChip";
-import { AutonymExonymHeading } from "../AutonymExonymHeading";
 import { PeopleHero } from "../PeopleHero";
 import { PeopleOriginBlock } from "../PeopleOriginBlock";
 import { PeopleLanguageSection } from "../PeopleLanguageSection";
@@ -19,57 +18,6 @@ import type {
   PeopleRelatedData,
   PeopleCountriesData,
 } from "@/lib/peopleDataTransformer";
-
-// ==========================================
-// AutonymExonymHeading
-// ==========================================
-
-describe("AutonymExonymHeading", () => {
-  it("renders nameMain", () => {
-    render(
-      <AutonymExonymHeading nameMain="Yoruba" exonyms={[]} variant="hero" />
-    );
-    expect(screen.getByText("Yoruba")).toBeTruthy();
-  });
-
-  it("renders autonym when provided", () => {
-    render(
-      <AutonymExonymHeading
-        nameMain="Yoruba"
-        autonym="Ọmọ Oòduà"
-        exonyms={[]}
-        variant="hero"
-      />
-    );
-    expect(screen.getByText("Ọmọ Oòduà")).toBeTruthy();
-  });
-
-  it("does not render autonym section when absent", () => {
-    const { container } = render(
-      <AutonymExonymHeading nameMain="Yoruba" exonyms={[]} variant="hero" />
-    );
-    expect(container.querySelector("[data-autonym]")).toBeNull();
-  });
-
-  it("renders exonyms as individual pills", () => {
-    render(
-      <AutonymExonymHeading
-        nameMain="Yoruba"
-        exonyms={["Yariba", "Ioruba"]}
-        variant="hero"
-      />
-    );
-    expect(screen.getByText("Yariba")).toBeTruthy();
-    expect(screen.getByText("Ioruba")).toBeTruthy();
-  });
-
-  it("renders nothing for exonyms when list is empty", () => {
-    const { container } = render(
-      <AutonymExonymHeading nameMain="Yoruba" exonyms={[]} variant="section" />
-    );
-    expect(container.querySelector("[data-exonyms]")).toBeNull();
-  });
-});
 
 // ==========================================
 // PeopleHero

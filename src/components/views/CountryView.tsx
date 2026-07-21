@@ -19,7 +19,7 @@ import { normalizeString } from "@/lib/normalize";
 import type { CountrySummary } from "@/types/afrik-frontend";
 import { getAllCountries } from "@/lib/afrikLoader";
 import { useListView } from "@/hooks/use-list-view";
-import { AutonymExonymHeading } from "@/components/ui/autonym-exonym-heading";
+import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
 
@@ -184,6 +184,7 @@ export const CountryView = ({
               </span>
             )}
             <AutonymExonymHeading
+              variant="compact"
               exonym={country.nameFr}
               code={country.id}
               className="group-hover:[&_h3]:text-primary [&_h3]:transition-colors flex-1"
