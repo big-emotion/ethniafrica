@@ -1,9 +1,9 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { render, screen, act } from '@testing-library/react';
-import { renderHook } from '@testing-library/react';
-import { ConsentProvider, useConsent } from '../use-consent';
-import { CONSENT_STORAGE_KEY } from '@/lib/consent';
-import type { ConsentState } from '@/types/consent';
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+import { render, screen, act } from "@testing-library/react";
+import { renderHook } from "@testing-library/react";
+import { ConsentProvider, useConsent } from "../use-consent";
+import { CONSENT_STORAGE_KEY } from "@/lib/consent";
+import type { ConsentState } from "@/types/consent";
 
 // Mock localStorage
 const localStorageMock = (() => {
@@ -26,13 +26,13 @@ const localStorageMock = (() => {
   };
 })();
 
-Object.defineProperty(global, 'localStorage', { value: localStorageMock });
+Object.defineProperty(global, "localStorage", { value: localStorageMock });
 
 function wrapper({ children }: { children: React.ReactNode }) {
   return <ConsentProvider>{children}</ConsentProvider>;
 }
 
-describe('useConsent hook', () => {
+describe("useConsent hook", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     localStorageMock.clear();
@@ -42,8 +42,8 @@ describe('useConsent hook', () => {
     vi.resetAllMocks();
   });
 
-  describe('initial state', () => {
-    it('should show banner when no consent is stored', async () => {
+  describe("initial state", () => {
+    it("should show banner when no consent is stored", async () => {
       const { result } = renderHook(() => useConsent(), { wrapper });
 
       // Wait for useEffect to run
@@ -55,7 +55,7 @@ describe('useConsent hook', () => {
       expect(result.current.consentState.hasConsented).toBe(false);
     });
 
-    it('should not show banner when valid consent exists', async () => {
+    it("should not show banner when valid consent exists", async () => {
       const existingConsent: ConsentState = {
         hasConsented: true,
         preferences: {
@@ -82,8 +82,8 @@ describe('useConsent hook', () => {
     });
   });
 
-  describe('acceptAll', () => {
-    it('should set all preferences to true', async () => {
+  describe("acceptAll", () => {
+    it("should set all preferences to true", async () => {
       const { result } = renderHook(() => useConsent(), { wrapper });
 
       await act(async () => {
@@ -101,7 +101,7 @@ describe('useConsent hook', () => {
       expect(result.current.showBanner).toBe(false);
     });
 
-    it('should persist to localStorage', async () => {
+    it("should persist to localStorage", async () => {
       const { result } = renderHook(() => useConsent(), { wrapper });
 
       await act(async () => {
@@ -119,8 +119,8 @@ describe('useConsent hook', () => {
     });
   });
 
-  describe('rejectAll', () => {
-    it('should set analytics and functional to false', async () => {
+  describe("rejectAll", () => {
+    it("should set analytics and functional to false", async () => {
       const { result } = renderHook(() => useConsent(), { wrapper });
 
       await act(async () => {
@@ -138,7 +138,7 @@ describe('useConsent hook', () => {
       expect(result.current.showBanner).toBe(false);
     });
 
-    it('should keep essential as true', async () => {
+    it("should keep essential as true", async () => {
       const { result } = renderHook(() => useConsent(), { wrapper });
 
       await act(async () => {
@@ -153,8 +153,8 @@ describe('useConsent hook', () => {
     });
   });
 
-  describe('updatePreferences', () => {
-    it('should update specific categories', async () => {
+  describe("updatePreferences", () => {
+    it("should update specific categories", async () => {
       const { result } = renderHook(() => useConsent(), { wrapper });
 
       await act(async () => {
@@ -174,7 +174,7 @@ describe('useConsent hook', () => {
       expect(result.current.consentState.hasConsented).toBe(true);
     });
 
-    it('should always ensure essential is true', async () => {
+    it("should always ensure essential is true", async () => {
       const { result } = renderHook(() => useConsent(), { wrapper });
 
       await act(async () => {
@@ -194,8 +194,8 @@ describe('useConsent hook', () => {
     });
   });
 
-  describe('consent persistence', () => {
-    it('should persist across renders', async () => {
+  describe("consent persistence", () => {
+    it("should persist across renders", async () => {
       const { result, rerender } = renderHook(() => useConsent(), { wrapper });
 
       await act(async () => {
@@ -217,8 +217,8 @@ describe('useConsent hook', () => {
     });
   });
 
-  describe('expired consent', () => {
-    it('should show banner when consent is expired', async () => {
+  describe("expired consent", () => {
+    it("should show banner when consent is expired", async () => {
       // Create consent from 13 months ago
       const expiredDate = new Date();
       expiredDate.setMonth(expiredDate.getMonth() - 13);
@@ -249,16 +249,16 @@ describe('useConsent hook', () => {
     });
   });
 
-  describe('useConsent outside provider', () => {
-    it('should throw error when used outside ConsentProvider', () => {
+  describe("useConsent outside provider", () => {
+    it("should throw error when used outside ConsentProvider", () => {
       expect(() => {
         renderHook(() => useConsent());
-      }).toThrow('useConsent must be used within a ConsentProvider');
+      }).toThrow("useConsent must be used within a ConsentProvider");
     });
   });
 
-  describe('setShowBanner', () => {
-    it('should allow manual control of banner visibility', async () => {
+  describe("setShowBanner", () => {
+    it("should allow manual control of banner visibility", async () => {
       const { result } = renderHook(() => useConsent(), { wrapper });
 
       await act(async () => {

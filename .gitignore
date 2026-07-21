@@ -47,10 +47,18 @@ build
 *.tsbuildinfo.*
 
 # Claude Code
+# Local settings stay out; the project's own skills are versioned, so each one
+# is re-included explicitly. Personal and plugin-installed skills land in
+# .claude/skills/ too, which is why the default is ignore-everything.
 .claude/*
 !.claude/skills/
 .claude/skills/*
 !.claude/skills/afrik-curator/
+!.claude/skills/ethniafrica-audit/
+!.claude/skills/ethniafrica-bootstrap-confluence/
+!.claude/skills/ethniafrica-release/
+!.claude/skills/ethniafrica-spec/
+!.claude/skills/ethniafrica-ticket/
 .entire/
 
 # Editor directories and files
@@ -96,3 +104,6 @@ dataset/source/archive/
 
 # Logs générés (migration, validation)
 dataset/source/afrik/logs/
+# Agent runtime mirrors (local skill caches, not project source)
+.agents/
+.codex/

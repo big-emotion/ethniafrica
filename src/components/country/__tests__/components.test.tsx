@@ -53,15 +53,19 @@ describe("CountryHero", () => {
     expect(screen.getByText("BFA")).toBeTruthy();
   });
 
+  // The quote is rendered inside the guillemets alongside the highlight span,
+  // so it is never a text node of its own — getByText, which matches against a
+  // single element's whole text, cannot see it. Assert on the rendered text as
+  // a reader perceives it instead.
   it("renders meaning quote when present", () => {
-    render(<CountryHero data={baseHero} />);
-    expect(screen.getByText("patrie des hommes intègres")).toBeTruthy();
+    const { container } = render(<CountryHero data={baseHero} />);
+    expect(container.textContent).toContain("patrie des hommes intègres");
   });
 
   it("does not render meaning block when meaningQuote is absent", () => {
     const heroNoMeaning: HeroData = { ...baseHero, meaningQuote: undefined };
-    render(<CountryHero data={heroNoMeaning} />);
-    expect(screen.queryByText("patrie des hommes intègres")).toBeNull();
+    const { container } = render(<CountryHero data={heroNoMeaning} />);
+    expect(container.textContent).not.toContain("patrie des hommes intègres");
   });
 });
 

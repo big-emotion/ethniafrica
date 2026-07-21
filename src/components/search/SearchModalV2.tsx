@@ -75,9 +75,7 @@ export const SearchModalV2 = ({
   }, [searchQuery, activeTab]);
 
   const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat("fr-FR").format(
-      Math.round(num)
-    );
+    return new Intl.NumberFormat("fr-FR").format(Math.round(num));
   };
 
   const handleResultClick = (result: SearchResult) => {
