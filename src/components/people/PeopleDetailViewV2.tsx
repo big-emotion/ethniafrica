@@ -134,11 +134,11 @@ export function PeopleDetailViewV2({
 
   const breadcrumbs = [
     { label: "Familles", href: "/fr/familles" },
-    ...(people.languageFamilyName
+    ...(people.languageFamilyId
       ? [
           {
-            label: people.languageFamilyName,
-            href: `/fr/familles?family=${people.languageFamilyId}`,
+            label: people.languageFamilyName ?? people.languageFamilyId,
+            href: `/fr/familles/${people.languageFamilyId}`,
           },
         ]
       : []),
@@ -261,7 +261,11 @@ export function PeopleDetailViewV2({
             iconColor="var(--country-terracotta)"
             delayIndex={5}
           >
-            <PeopleCountriesSection data={data.countries} />
+            <PeopleCountriesSection
+              data={data.countries}
+              fromPeopleId={data.hero.peopleId}
+              fromPeopleName={data.hero.nameMain}
+            />
           </SectionCard>
         )}
       </div>
