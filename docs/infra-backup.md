@@ -8,23 +8,23 @@
 
 ## Point-In-Time Recovery (PITR)
 
-| Setting | Value |
-|---------|-------|
-| PITR enabled | ✅ Yes |
+| Setting          | Value                     |
+| ---------------- | ------------------------- |
+| PITR enabled     | ✅ Yes                    |
 | Retention window | 7 days (minimum required) |
-| Region | eu-central-1 |
+| Region           | eu-central-1              |
 
 PITR must be verified in the Supabase dashboard under:  
 **Project Settings → Database → Backups → Point-in-Time Recovery**
 
 ## Daily Logical Backups
 
-| Setting | Value |
-|---------|-------|
-| Daily backups enabled | ✅ Yes |
-| Backup type | Logical (pg_dump) |
-| Retention | 7 days |
-| Schedule | 00:00 UTC daily |
+| Setting               | Value             |
+| --------------------- | ----------------- |
+| Daily backups enabled | ✅ Yes            |
+| Backup type           | Logical (pg_dump) |
+| Retention             | 7 days            |
+| Schedule              | 00:00 UTC daily   |
 
 Daily backups are visible in:  
 **Project Settings → Database → Backups → Scheduled Backups**

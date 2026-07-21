@@ -2,11 +2,7 @@
   "id": "PPL_SUBIYA",
   "nameMain": "Subiya",
   "languageFamilyId": "FLG_BANTU",
-  "currentCountries": [
-    "NAM",
-    "ZMB",
-    "BWA"
-  ],
+  "currentCountries": ["NAM", "ZMB", "BWA"],
   "content": {
     "appellations": {
       "mainName": "Subiya",
@@ -24,17 +20,9 @@
       "linguisticFamily": "FLG_BANTU",
       "ethnoLinguisticGroup": "Bantu Botatwe (groupe sud-central)",
       "historicalRegion": "Bande de Caprivi (Namibie), district de Chobe (Botswana), Province Occidentale (Zambie)",
-      "currentCountries": [
-        "NAM",
-        "ZMB",
-        "BWA"
-      ]
+      "currentCountries": ["NAM", "ZMB", "BWA"]
     },
-    "ethnicities": [
-      "Subiya",
-      "Baikuhane",
-      "Masubia"
-    ],
+    "ethnicities": ["Subiya", "Baikuhane", "Masubia"],
     "origins": {
       "ancientOrigins": "Les Subiya sont un peuple bantou qui migra vers le sud depuis les regions septentrionales de l'Afrique. Selon les traditions orales, leurs origines les plus lointaines remontent a l'actuelle region nord de l'Afrique centrale. Avant leur migration vers la bande de Caprivi, ils s'installerent pres des plaines d'inondation du Kafue (actuelle Zambie). Le premier chef connu, Itenge, mena la migration depuis le nord et s'installa aux plaines du Kafue (regna jusqu'aux annees 1570).",
       "formationPeriod": "XVe-XVIe siecles. L'identite Subiya se cristallise sous le roi Ikuhane (1575-1600) qui migra depuis le Kafue vers la vallee du Zambeze puis vers la riviere Chobe. La confederation Itenge (du nom du premier roi) connut son apogee aux XVIIe-XVIIIe siecles avant d'etre affaiblie par les guerres contre les Luyi et ensuite par les Kololo.",
@@ -67,9 +55,7 @@
     },
     "languages": {
       "mainLanguage": "Chikuhane (Chisubia)",
-      "isoCodes": [
-        "sbs"
-      ],
+      "isoCodes": ["sbs"],
       "dialects": [
         "Subiya de Caprivi (Namibie)",
         "Chikwahane (Botswana)",

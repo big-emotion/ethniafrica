@@ -8,7 +8,7 @@
 
 ## Why
 
-The V1 schema (regions, countries v1, ethnic_groups, ethnic_group_*, languages v1, sources) has been removed from the application code (see `MEMORY.md` — "V1 → V2 Migration COMPLETED"). Migration 007 was committed but never applied to production. As a result:
+The V1 schema (regions, countries v1, ethnic*groups, ethnic_group*\*, languages v1, sources) has been removed from the application code (see `MEMORY.md` — "V1 → V2 Migration COMPLETED"). Migration 007 was committed but never applied to production. As a result:
 
 - Production still carries 7 dead V1 tables and unused enum values.
 - A fresh dev database (after `supabase db reset`) diverges from production.
