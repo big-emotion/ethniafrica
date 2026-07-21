@@ -1,4 +1,4 @@
-import { AutonymExonymHeading } from "./AutonymExonymHeading";
+import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import type { PeopleHeroData } from "@/lib/peopleDataTransformer";
 
@@ -76,7 +76,7 @@ export function PeopleHero({
           nameMain={data.nameMain}
           autonym={data.selfAppellation}
           exonyms={data.exonyms}
-          variant="hero"
+          variant="people-hero"
         />
 
         {/* Fiche-level ConfidenceChip + flag CTA */}
