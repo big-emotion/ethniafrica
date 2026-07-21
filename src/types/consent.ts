@@ -1,4 +1,4 @@
-export type ConsentCategory = 'essential' | 'analytics' | 'functional';
+export type ConsentCategory = "essential" | "analytics" | "functional";
 
 export interface ConsentPreferences {
   essential: boolean; // Always true, required

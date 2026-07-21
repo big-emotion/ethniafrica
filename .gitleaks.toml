@@ -1,0 +1,23 @@
+# Gitleaks configuration for the project CI surface. Extends the upstream
+# default ruleset; the allowlist exists only for repo-specific noise. An
+# allowlisted path is invisible to the scanner forever, so keep every entry
+# anchored and justified.
+title = "ethniafrica gitleaks config"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Global allowlist for known non-secret paths"
+paths = [
+  # Anchored so prefixes/suffixes (e.g. backup/package-lock.json) don't match.
+  '''^package-lock\.json$''',
+  # Matches .env.example at any directory level but NOT .env.example.local.
+  '''(^|/)\.env\.example$''',
+  # Next.js build cache: absent from CI checkouts, but --no-git ignores
+  # .gitignore, so local runs flag it without this.
+  '''(^|/)\.next/''',
+  # Local agent-runtime skill mirrors (gitignored, ~13MB of vendored prompts)
+  # trip generic-api-key rules on their example snippets.
+  '''^\.(agents|codex)/''',
+]

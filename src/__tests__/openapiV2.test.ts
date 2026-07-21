@@ -34,8 +34,11 @@ describe("OpenAPI v2 spec - BearerAuth security", () => {
 
     // Collect all operations on /api/v2/* paths excluding /api/v2/keys/issue
     const methods = ["get", "post", "put", "patch", "delete"];
-    const protectedOps: Array<{ path: string; method: string; security: unknown }> =
-      [];
+    const protectedOps: Array<{
+      path: string;
+      method: string;
+      security: unknown;
+    }> = [];
 
     for (const [path, pathItem] of Object.entries(paths)) {
       if (!path.startsWith("/api/v2/") || path === "/api/v2/keys/issue") {
@@ -44,7 +47,11 @@ describe("OpenAPI v2 spec - BearerAuth security", () => {
       for (const method of methods) {
         const op = (pathItem as Record<string, unknown>)[method];
         if (op) {
-          protectedOps.push({ path, method, security: (op as Record<string, unknown>).security });
+          protectedOps.push({
+            path,
+            method,
+            security: (op as Record<string, unknown>).security,
+          });
         }
       }
     }

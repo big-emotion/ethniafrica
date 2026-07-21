@@ -1,6 +1,35 @@
+# Ferry consumer config. `ferry-init` / `ferry-update` read this file and skip
+# config generation when it already exists, so edits here are safe.
+#
+# Column names are matched verbatim against the Jira board. This project uses
+# the canonical pipeline except for the final column, which is "Ready to Merge"
+# rather than "To Merge" — the same string appears in the Jira automation rules
+# documented in ferry-jira-automation-setup.md. Change both together or the
+# Merger never fires.
+execution_path: claude-code
+
 git:
   base_branch: recette
   target_branch: recette
+  working_branch_prefix: ferry/
+
+workflow:
+  agents:
+    refiner:
+      trigger_column: Refinement
+      auto_transition: null
+    developer:
+      trigger_column: In Development
+      auto_transition: In Review
+    reviewer:
+      trigger_column: In Review
+      auto_transition_approve: Ready to Merge
+      auto_transition_changes: Changes Requested
+    iterator:
+      trigger_column: Changes Requested
+      auto_transition: In Review
+    merger:
+      trigger_column: Ready to Merge
 
 limits:
   max_tokens_per_run: 5000000

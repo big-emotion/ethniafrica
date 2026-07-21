@@ -16,14 +16,14 @@ earth / terracotta aesthetic.
   }}
 >
   {[
-    ["--afh-radius-0",    "0"],
-    ["--afh-radius-sm",   "4px"],
-    ["--afh-radius-md",   "6px"],
+    ["--afh-radius-0", "0"],
+    ["--afh-radius-sm", "4px"],
+    ["--afh-radius-md", "6px"],
     ["--afh-radius-base", "12px"],
-    ["--afh-radius-lg",   "14px"],
-    ["--afh-radius-xl",   "16px"],
-    ["--afh-radius-2xl",  "20px"],
-    ["--afh-radius-3xl",  "28px"],
+    ["--afh-radius-lg", "14px"],
+    ["--afh-radius-xl", "16px"],
+    ["--afh-radius-2xl", "20px"],
+    ["--afh-radius-3xl", "28px"],
     ["--afh-radius-full", "9999px"],
   ].map(([token, value]) => (
     <div key={token} style={{ textAlign: "center" }}>
@@ -36,7 +36,9 @@ earth / terracotta aesthetic.
         }}
       />
       <code style={{ fontSize: "12px", display: "block" }}>{token}</code>
-      <span style={{ fontSize: "11px", color: "var(--afh-text-soft)" }}>{value}</span>
+      <span style={{ fontSize: "11px", color: "var(--afh-text-soft)" }}>
+        {value}
+      </span>
     </div>
   ))}
 </div>
