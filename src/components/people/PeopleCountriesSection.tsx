@@ -13,15 +13,16 @@ export function PeopleCountriesSection({ data }: PeopleCountriesSectionProps) {
       <div className="flex items-baseline gap-[6px] mb-[14px]">
         <span
           className="text-[28px] md:text-[32px] font-black leading-none tracking-tight"
-          style={{ fontFamily: "var(--country-font-display)", color: "var(--country-text)" }}
+          style={{
+            fontFamily: "var(--country-font-display)",
+            color: "var(--country-text)",
+          }}
         >
           {data.totalPopulationFormatted}
         </span>
         <span className="text-[12px] text-[color:var(--country-text-soft)]">
           habitants
-          {data.referenceYear && (
-            <> · {data.referenceYear}</>
-          )}
+          {data.referenceYear && <> · {data.referenceYear}</>}
         </span>
       </div>
 

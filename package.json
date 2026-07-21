@@ -1,17 +1,21 @@
 {
-  "name": "ethniafrique-atlas",
+  "name": "ethniafrica",
   "private": true,
   "version": "1.1.0",
   "packageManager": "npm@10.8.2",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint --cache --cache-strategy content --cache-location node_modules/.cache/eslint/ src scripts",
+    "lint:fix": "npm run lint -- --fix",
     "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "type-check": "tsc --noEmit",
+    "format:check": "prettier --check --cache --cache-strategy content .",
+    "typecheck": "tsc --noEmit",
+    "type-check": "npm run typecheck",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
@@ -32,15 +36,6 @@
     "openapi:generate": "tsx scripts/generate-openapi-spec.ts",
     "openapi:diff": "tsx scripts/openapi-diff.ts",
     "prepare": "husky"
-  },
-  "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md,yml,yaml,css}": [
-      "prettier --write"
-    ]
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",

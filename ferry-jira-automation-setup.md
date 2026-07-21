@@ -175,6 +175,43 @@ Custom body:
 
 ---
 
+### Rule: Ferry — Merge (column trigger)
+
+**Trigger:** When: Issue → Status changed → To status: `Ready to Merge`
+
+**Action:** Send web request
+
+- URL: `https://api.github.com/repos/big-emotion/ethniafrica/dispatches`
+- Method: `POST`
+- Web request body: Custom data
+
+Headers:
+| Name | Value | Secret? |
+|------|-------|---------|
+| `Accept` | `application/vnd.github+json` | No |
+| `Authorization` | `Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE` | **Yes** |
+| `X-GitHub-Api-Version` | `2022-11-28` | No |
+| `Content-Type` | `application/json` | No |
+
+Custom body:
+
+```json
+{
+  "event_type": "ferry-merge",
+  "client_payload": {
+    "version": "v1",
+    "event_id": "{{issue.key}}-{{issue.id}}",
+    "ticket_key": "{{issue.key}}",
+    "phase": "merge",
+    "source": "jira-column",
+    "ts": "{{now.jiraDate}}",
+    "issue_type": "{{issue.issuetype.name}}"
+  }
+}
+```
+
+---
+
 ## Security notes
 
 - Mark the `Authorization` header as **secret** in the Jira UI (toggle the lock icon).

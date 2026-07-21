@@ -1,5 +1,10 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { getUserRoles, hasRole, isAdmin, type UserRole } from "../supabase-auth";
+import {
+  getUserRoles,
+  hasRole,
+  isAdmin,
+  type UserRole,
+} from "../supabase-auth";
 
 // Mock the auth-server module
 vi.mock("../../supabase/auth-server", () => ({
@@ -136,7 +141,13 @@ describe("supabase-auth", () => {
     });
 
     it("should work with all valid role types", async () => {
-      const allRoles: UserRole[] = ["reader", "contributor", "moderator", "admin", "advisor"];
+      const allRoles: UserRole[] = [
+        "reader",
+        "contributor",
+        "moderator",
+        "admin",
+        "advisor",
+      ];
 
       const mockSupabase = {
         from: vi.fn().mockReturnValue({
@@ -183,7 +194,11 @@ describe("supabase-auth", () => {
         from: vi.fn().mockReturnValue({
           select: vi.fn().mockReturnValue({
             eq: vi.fn().mockResolvedValue({
-              data: [{ role: "moderator" }, { role: "admin" }, { role: "contributor" }],
+              data: [
+                { role: "moderator" },
+                { role: "admin" },
+                { role: "contributor" },
+              ],
               error: null,
             }),
           }),
