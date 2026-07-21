@@ -93,4 +93,15 @@ jobs:
           restore-keys: |
             nextjs-${{ hashFiles('package-lock.json') }}-
 
+      # The Supabase modules validate their configuration at module scope and
+      # throw when it is missing, which fails Next's page-data collection. The
+      # build only needs values that parse — it never queries Supabase — so the
+      # placeholders keep this gate running on Dependabot and fork PRs, where
+      # secrets are not exposed. Falling back rather than skipping the job is
+      # deliberate: a skipped job reports a neutral check, which branch
+      # protection and Ferry's merger would read as success.
       - run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co' }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-anon-key' }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY || 'placeholder-service-role-key' }}
