@@ -119,7 +119,7 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
                   rendered subordinate to the exonym and without a lang
                   attribute. Routing it through <AutonymExonymHeading> changes
                   how peoples read on every country page, so it is a product
-                  decision rather than a lint fix — tracked separately. */}
+                  decision rather than a lint fix — see ETNI-382. */}
               {/* eslint-disable-next-line afh/no-bare-people-name */}
               {row.endonym}
             </span>
