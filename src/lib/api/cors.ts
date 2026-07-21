@@ -6,7 +6,7 @@ const ALLOWED_ORIGIN =
 const ALLOWED_METHODS = "GET,OPTIONS";
 const ALLOWED_HEADERS = "Content-Type,Authorization";
 
-const applyCorsHeaders = (response: Response) => {
+export const applyCorsHeaders = (response: Response) => {
   response.headers.set("Access-Control-Allow-Origin", ALLOWED_ORIGIN);
   response.headers.set("Access-Control-Allow-Methods", ALLOWED_METHODS);
   response.headers.set("Access-Control-Allow-Headers", ALLOWED_HEADERS);

@@ -779,9 +779,25 @@ export interface SearchResult {
   type: "country" | "people" | "language" | "languageFamily";
   id: string;
   name: string;
-  snippet?: string; // Excerpt from content
+  snippet?: string;
   relevance?: number;
-  data?: Country | People | Language | LanguageFamily; // Full entity data
+  data?: Country | People | Language | LanguageFamily;
+}
+
+// ETNI-38 — /v2/search FTS params (websearch_to_tsquery, confidence boost)
+export interface FtsSearchParams {
+  q: string;
+  limit: number;
+  offset: number;
+  classificationStatus?: ClassificationStatus;
+  minConfidence?: number;
+  sinceVerifiedAfter?: string;
+}
+
+export interface FtsSearchResponse {
+  peoples: People[];
+  countries: Country[];
+  total: number;
 }
 
 // ==========================================

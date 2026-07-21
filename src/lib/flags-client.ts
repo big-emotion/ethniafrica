@@ -19,9 +19,9 @@ export async function hasActiveSourceFlag(
       .select("id")
       .eq("entity_type", entityType)
       .eq("entity_id", entityId)
-      .eq("flag_type", "unreachable_source")
+      .eq("flag_kind", "other")
       .eq("auto_generated", true)
-      .in("status", ["pending", "reviewed"])
+      .in("status", ["open", "under_review"])
       .limit(1);
     if (error) return false;
     return (data || []).length > 0;

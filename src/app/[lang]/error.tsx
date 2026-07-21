@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useId } from "react";
+import { ErrorState } from "@/components/ui/ErrorState";
 
 export default function Error({
   error,
@@ -14,15 +14,8 @@ export default function Error({
     console.error("Page error:", error);
   }, [error]);
 
-  return (
-    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4 p-8">
-      <h2 className="text-2xl font-bold">Something went wrong</h2>
-      <p className="text-muted-foreground text-center max-w-md">
-        An unexpected error occurred. Please try again.
-      </p>
-      <Button onClick={reset} variant="default">
-        Try again
-      </Button>
-    </div>
-  );
+  const id = useId();
+  const errorRefId = error.digest ?? id.replace(/:/g, "").toUpperCase();
+
+  return <ErrorState errorRef={errorRefId} onRetry={reset} />;
 }

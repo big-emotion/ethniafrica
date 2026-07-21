@@ -54,14 +54,35 @@ export interface AssertionRow {
 
 export interface FlagRow {
   id: string;
-  entity_type: string;
-  entity_id: string;
-  flag_type: string;
-  description: string | null;
-  status: "pending" | "reviewed" | "resolved" | "dismissed";
-  created_by: string | null;
+  entity_type: string | null;
+  entity_id: string | null;
+  flag_kind:
+    | "inaccurate"
+    | "missing-source"
+    | "broken-url"
+    | "offensive"
+    | "correction-proposal"
+    | "other";
+  reason_text: string | null;
+  status:
+    | "open"
+    | "under_review"
+    | "accepted"
+    | "rejected"
+    | "withdrawn"
+    | "duplicate";
+  contributor_id: string | null;
   severity: "low" | "medium" | "high" | "critical" | null;
   auto_generated: boolean;
+  counter_source_url: string | null;
+  counter_source_citation: string | null;
+  proposed_rewrite: string | null;
+  moderator_id: string | null;
+  moderator_notes: string | null;
+  resolved_at: string | null;
+  public_slug: string;
+  turnstile_token_verified: boolean;
+  updated_at: string | null;
   /** FK to assertions(id). NULL = entity-level flag. */
   assertion_id: string | null;
   /** Optional field path within the assertion being flagged. */

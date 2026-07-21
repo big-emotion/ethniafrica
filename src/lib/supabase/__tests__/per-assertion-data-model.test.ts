@@ -432,8 +432,8 @@ describe.skipIf(SKIP)("per-assertion data model contract (R-2 / ASR-4)", () => {
         .insert({
           entity_type: "people",
           entity_id: `PPL_TEST_${RUN_PREFIX}_C8`,
-          flag_type: "inaccurate",
-          description: "C8 ATDD flag",
+          flag_kind: "inaccurate",
+          reason_text: "C8 ATDD flag",
           assertion_id: assertionId,
         })
         .select("id, assertion_id")
@@ -473,8 +473,8 @@ describe.skipIf(SKIP)("per-assertion data model contract (R-2 / ASR-4)", () => {
         .insert({
           entity_type: "people",
           entity_id: `PPL_TEST_${RUN_PREFIX}_C8_orphan`,
-          flag_type: "inaccurate",
-          description: "C8 orphan flag",
+          flag_kind: "inaccurate",
+          reason_text: "C8 orphan flag",
           assertion_id: orphanAssertionId,
         })
         .select("id")

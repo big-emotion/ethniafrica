@@ -32,9 +32,9 @@ export const HeroMobile: Story = {
       description: {
         story:
           "Hero variant: autonym in `font-afh-display font-black` = Fraunces weight-900 " +
-          "(loaded via `next/font/google` with `weight: [\"300\",\"500\",\"700\",\"900\"]` " +
+          '(loaded via `next/font/google` with `weight: ["300","500","700","900"]` ' +
           "in `src/app/layout.tsx`; mapped to `--font-fraunces` CSS variable via " +
-          "`tailwind.config.ts` `fontFamily[\"afh-display\"]`). " +
+          '`tailwind.config.ts` `fontFamily["afh-display"]`). ' +
           "Exonym in `font-afh font-medium` = Nunito Sans weight-500.",
       },
     },

@@ -1,23 +1,21 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useCallback } from "react";
 import { Language } from "@/types/shared";
 import { getTranslation } from "@/lib/translations";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import {
-  Search,
-  Languages,
-  ChevronLeft,
-  ChevronRight,
-  Loader2,
-} from "lucide-react";
+import { Search, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { normalizeString, getNormalizedFirstLetter } from "@/lib/normalize";
+import { normalizeString } from "@/lib/normalize";
 import type { LanguageFamilySummary } from "@/types/afrik-frontend";
 import { getAllLanguageFamilies } from "@/lib/afrikLoader";
+import { useListView } from "@/hooks/use-list-view";
+import { AutonymExonymHeading } from "@/components/ui/autonym-exonym-heading";
+import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
+import { ClassificationBadge } from "@/components/ui/classification-badge";
 
 interface LanguageFamilyViewProps {
   language: Language;
@@ -36,133 +34,48 @@ export const LanguageFamilyView = ({
 }: LanguageFamilyViewProps) => {
   const t = getTranslation(language);
   const isMobile = useIsMobile();
-  const [search, setSearch] = useState<string>("");
-  const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [families, setFamilies] = useState<LanguageFamilySummary[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  const itemsPerPage = 10;
-  const maxItemsMobile = 10;
+  const getDisplayName = useCallback(
+    (family: LanguageFamilySummary) => family.nameFr,
+    []
+  );
 
-  useEffect(() => {
-    let cancelled = false;
+  const filterFn = useCallback(
+    (family: LanguageFamilySummary, normalizedSearch: string) =>
+      normalizeString(family.nameFr).includes(normalizedSearch) ||
+      normalizeString(family.id).includes(normalizedSearch),
+    []
+  );
 
-    setLoading(true);
-    setError(null);
+  const {
+    paginatedItems: paginatedFamilies,
+    totalPages,
+    currentPage,
+    setCurrentPage,
+    search,
+    setSearch,
+    selectedLetter,
+    setSelectedLetter,
+    availableLetters,
+    isLoading,
+    error,
+  } = useListView<LanguageFamilySummary>({
+    queryKey: ["language-families"],
+    queryFn: getAllLanguageFamilies,
+    getDisplayName,
+    filterFn,
+    isMobile,
+  });
 
-    const loadFamilies = async () => {
-      // Minimum loading time for UX
-      const minLoadingTime = Promise.all([
-        new Promise((resolve) => setTimeout(resolve, 300)),
-        (async () => {
-          try {
-            const data = await getAllLanguageFamilies();
-            if (!cancelled) {
-              setFamilies(data);
-            }
-          } catch (err) {
-            if (!cancelled) {
-              console.error("Error fetching language families:", err);
-              setError(
-                "Échec du chargement des familles linguistiques"
-              );
-            }
-          }
-        })(),
-      ]);
+  const formatNumber = (num: number): string =>
+    new Intl.NumberFormat("fr-FR").format(Math.round(num));
 
-      await minLoadingTime;
-      if (!cancelled) {
-        setLoading(false);
-      }
-    };
-
-    loadFamilies();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [language]);
-
-  const getFamilyDisplayName = (family: LanguageFamilySummary): string => {
-    return family.nameFr;
-  };
-
-  const filteredFamilies = useMemo(() => {
-    const normalizedSearch = normalizeString(search);
-    return families.filter((family) => {
-      const familyName = getFamilyDisplayName(family);
-      const matchesSearch =
-        normalizeString(familyName).includes(normalizedSearch) ||
-        normalizeString(family.id).includes(normalizedSearch);
-
-      if (selectedLetter) {
-        const normalizedFirstLetter = getNormalizedFirstLetter(familyName);
-        return matchesSearch && normalizedFirstLetter === selectedLetter;
-      }
-
-      return matchesSearch;
-    });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [families, search, selectedLetter, language]);
-
-  const paginatedFamilies = useMemo(() => {
-    if (isMobile) {
-      return filteredFamilies.slice(0, maxItemsMobile);
-    }
-    const start = (currentPage - 1) * itemsPerPage;
-    return filteredFamilies.slice(start, start + itemsPerPage);
-  }, [filteredFamilies, currentPage, isMobile, maxItemsMobile]);
-
-  const totalPages = Math.ceil(filteredFamilies.length / itemsPerPage);
-
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [selectedLetter, search]);
-
-  const availableLetters = useMemo(() => {
-    const letters = new Set<string>();
-    families.forEach((family) => {
-      const familyName = getFamilyDisplayName(family);
-      const normalizedFirstLetter = getNormalizedFirstLetter(familyName);
-      if (/[A-Z]/.test(normalizedFirstLetter)) {
-        letters.add(normalizedFirstLetter);
-      }
-    });
-    return Array.from(letters).sort();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [families, language]);
-
-  const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat("fr-FR").format(
-      Math.round(num)
-    );
-  };
-
-  const getLoadingText = (): string => {
-    return "Chargement des familles linguistiques...";
-  };
-
-  const getNoResultsText = (): string => {
-    return "Aucune famille linguistique trouvée";
-  };
-
-  const getPeoplesLabel = (): string => {
-    return "peuples";
-  };
-
-  const getSpeakersLabel = (): string => {
-    return "locuteurs";
-  };
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[400px] gap-3 py-8">
         <Loader2 className="h-10 w-10 animate-spin text-primary" />
         <p className="text-muted-foreground text-sm font-medium">
-          {getLoadingText()}
+          Chargement des familles linguistiques...
         </p>
       </div>
     );
@@ -171,7 +84,9 @@ export const LanguageFamilyView = ({
   if (error) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[400px] gap-3 py-8">
-        <p className="text-destructive text-sm font-medium">{error}</p>
+        <p className="text-destructive text-sm font-medium">
+          Échec du chargement des familles linguistiques
+        </p>
       </div>
     );
   }
@@ -184,27 +99,34 @@ export const LanguageFamilyView = ({
       } ${selectedFamilyId === family.id ? "border-2 border-primary" : ""}`}
       onClick={() => onFamilySelect(family)}
     >
-      <div className="flex items-start justify-between">
-        <div className="flex-1">
-          <div className="flex items-center gap-2 mb-2">
-            <Languages className="h-5 w-5 text-primary" />
-            <h3 className="font-semibold text-base group-hover:text-primary transition-colors">
-              {getFamilyDisplayName(family)}
-            </h3>
-          </div>
-          <div className="space-y-1 text-sm text-muted-foreground">
-            {family.peopleCount !== undefined && (
-              <div>
-                {family.peopleCount} {getPeoplesLabel()}
-              </div>
-            )}
-            {family.totalSpeakers !== undefined && (
-              <div>
-                {formatNumber(family.totalSpeakers)} {getSpeakersLabel()}
-              </div>
-            )}
-            {family.geographicArea && <div>{family.geographicArea}</div>}
-          </div>
+      <div className="space-y-2">
+        <AutonymExonymHeading
+          exonym={family.nameFr}
+          code={family.id}
+          className="group-hover:[&_h3]:text-primary [&_h3]:transition-colors"
+        />
+
+        <div className="flex items-center gap-2 flex-wrap">
+          {family.classificationStatus && (
+            <ClassificationBadge status={family.classificationStatus} />
+          )}
+          <ConfidenceChip
+            confidenceScore={null}
+            sourceCount={null}
+            lastHumanAuditAt={null}
+            variant="inline"
+            ariaSuffix={family.nameFr}
+          />
+        </div>
+
+        <div className="space-y-0.5 text-sm text-muted-foreground">
+          {family.peopleCount !== undefined && (
+            <div>{family.peopleCount} peuples</div>
+          )}
+          {family.totalSpeakers !== undefined && (
+            <div>{formatNumber(family.totalSpeakers)} locuteurs</div>
+          )}
+          {family.geographicArea && <div>{family.geographicArea}</div>}
         </div>
       </div>
     </Card>
@@ -216,7 +138,6 @@ export const LanguageFamilyView = ({
         hideSearchAndAlphabet ? "h-full flex flex-col" : ""
       }`}
     >
-      {/* Alphabetical navigation */}
       {!hideSearchAndAlphabet && (
         <>
           <div className="px-4 pt-4">
@@ -227,7 +148,7 @@ export const LanguageFamilyView = ({
                 className="h-8 w-8 p-0 text-xs"
                 onClick={() => setSelectedLetter(null)}
               >
-                {"Tous"}
+                Tous
               </Button>
               {ALPHABET.map((letter) => (
                 <Button
@@ -251,7 +172,6 @@ export const LanguageFamilyView = ({
             </div>
           </div>
 
-          {/* Search bar */}
           <div className="relative px-4">
             <Search className="absolute left-7 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
@@ -265,7 +185,6 @@ export const LanguageFamilyView = ({
         </>
       )}
 
-      {/* Families list */}
       {isMobile ? (
         <div
           className={`space-y-2 ${
@@ -274,7 +193,9 @@ export const LanguageFamilyView = ({
         >
           {paginatedFamilies.length === 0 ? (
             <div className="flex items-center justify-center h-64">
-              <p className="text-muted-foreground">{getNoResultsText()}</p>
+              <p className="text-muted-foreground">
+                Aucune famille linguistique trouvée
+              </p>
             </div>
           ) : (
             paginatedFamilies.map(renderFamilyCard)
@@ -293,7 +214,9 @@ export const LanguageFamilyView = ({
           >
             {paginatedFamilies.length === 0 ? (
               <div className="flex items-center justify-center h-64">
-                <p className="text-muted-foreground">{getNoResultsText()}</p>
+                <p className="text-muted-foreground">
+                  Aucune famille linguistique trouvée
+                </p>
               </div>
             ) : (
               paginatedFamilies.map(renderFamilyCard)
@@ -302,7 +225,6 @@ export const LanguageFamilyView = ({
         </ScrollArea>
       )}
 
-      {/* Pagination - desktop only */}
       {!isMobile && totalPages > 1 && (
         <div
           className={`flex items-center justify-center gap-2 ${
@@ -310,7 +232,7 @@ export const LanguageFamilyView = ({
           } pb-4 flex-shrink-0`}
         >
           <Button
-            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+            onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}
             variant="outline"
             size="sm"
@@ -321,7 +243,9 @@ export const LanguageFamilyView = ({
             {currentPage} / {totalPages}
           </span>
           <Button
-            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            onClick={() =>
+              setCurrentPage(Math.min(totalPages, currentPage + 1))
+            }
             disabled={currentPage === totalPages}
             variant="outline"
             size="sm"

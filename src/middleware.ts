@@ -1,7 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { validateApiKey } from "@/lib/api/auth";
-import type { UserRole } from "@/lib/auth/supabase-auth";
 import { applyRateLimit } from "@/lib/api/rate-limit";
 
 function applySecurityHeaders(response: NextResponse, nonce: string) {
@@ -152,32 +151,29 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
+  // /fr/admin/* is the moderator-gated admin area.
+  // /fr/admin/connexion is the public sign-in entry point and must be excluded.
   const isAdminRoute =
-    pathname.startsWith("/admin") && pathname !== "/admin/login";
+    pathname.startsWith("/fr/admin") && pathname !== "/fr/admin/connexion";
 
   if (isAdminRoute) {
     if (!user) {
-      const loginUrl = new URL("/admin/login", request.url);
+      const loginUrl = new URL("/fr/compte/connexion", request.url);
       loginUrl.searchParams.set("redirect", pathname);
       return NextResponse.redirect(loginUrl);
     }
 
-    const { data: roleData, error } = await supabase
-      .from("user_roles")
-      .select("role")
+    const { data: profileData, error } = await supabase
+      .from("contributor_profiles")
+      .select("moderator_role")
       .eq("user_id", user.id);
 
-    if (error || !roleData) {
-      return NextResponse.redirect(new URL("/forbidden", request.url));
-    }
+    const moderatorRole: string | undefined = profileData?.[0]?.moderator_role;
 
-    const roles: UserRole[] = roleData.map(
-      (record: { role: UserRole }) => record.role
-    );
-    const isAdmin = roles.includes("admin");
-
-    if (!isAdmin) {
-      return NextResponse.redirect(new URL("/forbidden", request.url));
+    if (error || !profileData || !moderatorRole || moderatorRole === "none") {
+      const homeUrl = new URL("/fr", request.url);
+      homeUrl.searchParams.set("message", "acces_moderateurs_requis");
+      return NextResponse.redirect(homeUrl);
     }
   }
 

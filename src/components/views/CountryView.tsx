@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useCallback } from "react";
 import { Language } from "@/types/shared";
 import { getTranslation } from "@/lib/translations";
 import { Card } from "@/components/ui/card";
@@ -11,14 +11,17 @@ import {
   Search,
   ChevronLeft,
   ChevronRight,
-  MapPin,
   Loader2,
   Users,
 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { normalizeString, getNormalizedFirstLetter } from "@/lib/normalize";
+import { normalizeString } from "@/lib/normalize";
 import type { CountrySummary } from "@/types/afrik-frontend";
 import { getAllCountries } from "@/lib/afrikLoader";
+import { useListView } from "@/hooks/use-list-view";
+import { AutonymExonymHeading } from "@/components/ui/autonym-exonym-heading";
+import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
+import { ClassificationBadge } from "@/components/ui/classification-badge";
 
 interface CountryViewProps {
   language: Language;
@@ -29,6 +32,72 @@ interface CountryViewProps {
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 
+/** Returns a flag emoji for an ISO 3166-1 alpha-3 country code. */
+function getFlagEmoji(iso3: string): string {
+  // Map ISO-3 to ISO-2 for flag emoji generation (regional indicator letters).
+  const map: Record<string, string> = {
+    AGO: "AO",
+    BEN: "BJ",
+    BWA: "BW",
+    BFA: "BF",
+    BDI: "BI",
+    CMR: "CM",
+    CPV: "CV",
+    CAF: "CF",
+    TCD: "TD",
+    COM: "KM",
+    COD: "CD",
+    COG: "CG",
+    CIV: "CI",
+    DJI: "DJ",
+    EGY: "EG",
+    GNQ: "GQ",
+    ERI: "ER",
+    SWZ: "SZ",
+    ETH: "ET",
+    GAB: "GA",
+    GMB: "GM",
+    GHA: "GH",
+    GIN: "GN",
+    GNB: "GW",
+    KEN: "KE",
+    LSO: "LS",
+    LBR: "LR",
+    LBY: "LY",
+    MDG: "MG",
+    MWI: "MW",
+    MLI: "ML",
+    MRT: "MR",
+    MUS: "MU",
+    MAR: "MA",
+    MOZ: "MZ",
+    NAM: "NA",
+    NER: "NE",
+    NGA: "NG",
+    RWA: "RW",
+    STP: "ST",
+    SEN: "SN",
+    SLE: "SL",
+    SOM: "SO",
+    ZAF: "ZA",
+    SSD: "SS",
+    SDN: "SD",
+    TZA: "TZ",
+    TGO: "TG",
+    TUN: "TN",
+    UGA: "UG",
+    ZMB: "ZM",
+    ZWE: "ZW",
+    DZA: "DZ",
+    SYC: "SC",
+  };
+  const iso2 = map[iso3.toUpperCase()];
+  if (!iso2) return "";
+  return Array.from(iso2)
+    .map((c) => String.fromCodePoint(0x1f1e6 + c.charCodeAt(0) - 65))
+    .join("");
+}
+
 export const CountryView = ({
   language,
   onCountrySelect,
@@ -37,124 +106,51 @@ export const CountryView = ({
 }: CountryViewProps) => {
   const t = getTranslation(language);
   const isMobile = useIsMobile();
-  const [search, setSearch] = useState<string>("");
-  const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [countries, setCountries] = useState<CountrySummary[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  const itemsPerPage = 10;
-  const maxItemsMobile = 10;
+  const getDisplayName = useCallback(
+    (country: CountrySummary) => country.nameFr,
+    []
+  );
 
-  useEffect(() => {
-    let cancelled = false;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setLoading(true);
-    setError(null);
+  const filterFn = useCallback(
+    (country: CountrySummary, normalizedSearch: string) =>
+      normalizeString(country.nameFr).includes(normalizedSearch) ||
+      normalizeString(country.id).includes(normalizedSearch) ||
+      (country.nameOfficial
+        ? normalizeString(country.nameOfficial).includes(normalizedSearch)
+        : false),
+    []
+  );
 
-    const loadCountries = async () => {
-      // Minimum loading time for UX
-      const minLoadingTime = Promise.all([
-        new Promise((resolve) => setTimeout(resolve, 300)),
-        (async () => {
-          try {
-            const data = await getAllCountries();
-            if (!cancelled) {
-              setCountries(data);
-            }
-          } catch (err) {
-            if (!cancelled) {
-              console.error("Error fetching countries:", err);
-              setError(
-                "Échec du chargement des pays"
-              );
-            }
-          }
-        })(),
-      ]);
+  const {
+    paginatedItems: paginatedCountries,
+    totalPages,
+    currentPage,
+    setCurrentPage,
+    search,
+    setSearch,
+    selectedLetter,
+    setSelectedLetter,
+    availableLetters,
+    isLoading,
+    error,
+  } = useListView<CountrySummary>({
+    queryKey: ["countries"],
+    queryFn: getAllCountries,
+    getDisplayName,
+    filterFn,
+    isMobile,
+  });
 
-      await minLoadingTime;
-      if (!cancelled) {
-        setLoading(false);
-      }
-    };
+  const formatNumber = (num: number): string =>
+    new Intl.NumberFormat("fr-FR").format(Math.round(num));
 
-    loadCountries();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [language]);
-
-  const filteredCountries = useMemo(() => {
-    const normalizedSearch = normalizeString(search);
-    return countries.filter((country) => {
-      const matchesSearch =
-        normalizeString(country.nameFr).includes(normalizedSearch) ||
-        normalizeString(country.id).includes(normalizedSearch) ||
-        (country.nameOfficial &&
-          normalizeString(country.nameOfficial).includes(normalizedSearch));
-
-      if (selectedLetter) {
-        const normalizedFirstLetter = getNormalizedFirstLetter(country.nameFr);
-        return matchesSearch && normalizedFirstLetter === selectedLetter;
-      }
-
-      return matchesSearch;
-    });
-  }, [countries, search, selectedLetter]);
-
-  const paginatedCountries = useMemo(() => {
-    if (isMobile) {
-      return filteredCountries.slice(0, maxItemsMobile);
-    }
-    const start = (currentPage - 1) * itemsPerPage;
-    return filteredCountries.slice(start, start + itemsPerPage);
-  }, [filteredCountries, currentPage, isMobile, maxItemsMobile]);
-
-  const totalPages = Math.ceil(filteredCountries.length / itemsPerPage);
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setCurrentPage(1);
-  }, [selectedLetter, search]);
-
-  const availableLetters = useMemo(() => {
-    const letters = new Set<string>();
-    countries.forEach((country) => {
-      const normalizedFirstLetter = getNormalizedFirstLetter(country.nameFr);
-      if (/[A-Z]/.test(normalizedFirstLetter)) {
-        letters.add(normalizedFirstLetter);
-      }
-    });
-    return Array.from(letters).sort();
-  }, [countries]);
-
-  const formatNumber = (num: number): string => {
-    return new Intl.NumberFormat("fr-FR").format(
-      Math.round(num)
-    );
-  };
-
-  const getLoadingText = (): string => {
-    return "Chargement des pays...";
-  };
-
-  const getNoResultsText = (): string => {
-    return "Aucun pays trouvé";
-  };
-
-  const getMajorPeoplesLabel = (): string => {
-    return "peuples majeurs";
-  };
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[400px] gap-3 py-8">
         <Loader2 className="h-10 w-10 animate-spin text-primary" />
         <p className="text-muted-foreground text-sm font-medium">
-          {getLoadingText()}
+          Chargement des pays...
         </p>
       </div>
     );
@@ -163,46 +159,66 @@ export const CountryView = ({
   if (error) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[400px] gap-3 py-8">
-        <p className="text-destructive text-sm font-medium">{error}</p>
+        <p className="text-destructive text-sm font-medium">
+          Échec du chargement des pays
+        </p>
       </div>
     );
   }
 
-  const renderCountryCard = (country: CountrySummary) => (
-    <Card
-      key={country.id}
-      className={`p-4 hover:shadow-md cursor-pointer transition-all group ${
-        hideSearchAndAlphabet ? "mx-0" : ""
-      } ${selectedCountryId === country.id ? "border-2 border-primary" : ""}`}
-      onClick={() => onCountrySelect(country)}
-    >
-      <div className="flex items-start justify-between">
-        <div className="flex-1">
-          <div className="flex items-center gap-2 mb-2">
-            <MapPin className="h-5 w-5 text-primary" />
-            <h3 className="font-semibold text-base group-hover:text-primary transition-colors">
-              {country.nameFr}
-            </h3>
-            <span className="text-xs text-muted-foreground">
-              ({country.id})
-            </span>
+  const renderCountryCard = (country: CountrySummary) => {
+    const flag = getFlagEmoji(country.id);
+    return (
+      <Card
+        key={country.id}
+        className={`p-4 hover:shadow-md cursor-pointer transition-all group ${
+          hideSearchAndAlphabet ? "mx-0" : ""
+        } ${selectedCountryId === country.id ? "border-2 border-primary" : ""}`}
+        onClick={() => onCountrySelect(country)}
+      >
+        <div className="space-y-2">
+          <div className="flex items-start gap-2">
+            {flag && (
+              <span className="text-2xl leading-none mt-0.5" aria-hidden="true">
+                {flag}
+              </span>
+            )}
+            <AutonymExonymHeading
+              exonym={country.nameFr}
+              code={country.id}
+              className="group-hover:[&_h3]:text-primary [&_h3]:transition-colors flex-1"
+            />
           </div>
-          <div className="space-y-1 text-sm text-muted-foreground">
+
+          <div className="flex items-center gap-2 flex-wrap">
+            {country.classificationStatus && (
+              <ClassificationBadge status={country.classificationStatus} />
+            )}
+            <ConfidenceChip
+              confidenceScore={null}
+              sourceCount={null}
+              lastHumanAuditAt={null}
+              variant="inline"
+              ariaSuffix={country.nameFr}
+            />
+          </div>
+
+          <div className="space-y-0.5 text-sm text-muted-foreground">
             {country.population !== undefined && (
-              <div>Population: {formatNumber(country.population)}</div>
+              <div>Population : {formatNumber(country.population)}</div>
             )}
             {country.majorPeoplesCount !== undefined &&
               country.majorPeoplesCount > 0 && (
                 <div className="flex items-center gap-1">
                   <Users className="h-3 w-3" />
-                  {country.majorPeoplesCount} {getMajorPeoplesLabel()}
+                  {country.majorPeoplesCount} peuples majeurs
                 </div>
               )}
           </div>
         </div>
-      </div>
-    </Card>
-  );
+      </Card>
+    );
+  };
 
   return (
     <div
@@ -210,7 +226,6 @@ export const CountryView = ({
         hideSearchAndAlphabet ? "h-full flex flex-col" : ""
       }`}
     >
-      {/* Alphabetical navigation */}
       {!hideSearchAndAlphabet && (
         <>
           <div className="px-4 pt-4">
@@ -221,7 +236,7 @@ export const CountryView = ({
                 className="h-8 w-8 p-0 text-xs"
                 onClick={() => setSelectedLetter(null)}
               >
-                {"Tous"}
+                Tous
               </Button>
               {ALPHABET.map((letter) => (
                 <Button
@@ -245,7 +260,6 @@ export const CountryView = ({
             </div>
           </div>
 
-          {/* Search bar */}
           <div className="relative px-4">
             <Search className="absolute left-7 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
@@ -259,7 +273,6 @@ export const CountryView = ({
         </>
       )}
 
-      {/* Countries list */}
       {isMobile ? (
         <div
           className={`space-y-2 ${
@@ -268,7 +281,7 @@ export const CountryView = ({
         >
           {paginatedCountries.length === 0 ? (
             <div className="flex items-center justify-center h-64">
-              <p className="text-muted-foreground">{getNoResultsText()}</p>
+              <p className="text-muted-foreground">Aucun pays trouvé</p>
             </div>
           ) : (
             paginatedCountries.map(renderCountryCard)
@@ -287,7 +300,7 @@ export const CountryView = ({
           >
             {paginatedCountries.length === 0 ? (
               <div className="flex items-center justify-center h-64">
-                <p className="text-muted-foreground">{getNoResultsText()}</p>
+                <p className="text-muted-foreground">Aucun pays trouvé</p>
               </div>
             ) : (
               paginatedCountries.map(renderCountryCard)
@@ -296,7 +309,6 @@ export const CountryView = ({
         </ScrollArea>
       )}
 
-      {/* Pagination - desktop only */}
       {!isMobile && totalPages > 1 && (
         <div
           className={`flex items-center justify-center gap-2 ${
@@ -304,7 +316,7 @@ export const CountryView = ({
           } pb-4 flex-shrink-0`}
         >
           <Button
-            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+            onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}
             variant="outline"
             size="sm"
@@ -315,7 +327,9 @@ export const CountryView = ({
             {currentPage} / {totalPages}
           </span>
           <Button
-            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+            onClick={() =>
+              setCurrentPage(Math.min(totalPages, currentPage + 1))
+            }
             disabled={currentPage === totalPages}
             variant="outline"
             size="sm"
