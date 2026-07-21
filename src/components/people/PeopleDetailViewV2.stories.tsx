@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { AutonymExonymHeading } from "./AutonymExonymHeading";
+import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { PeopleHero } from "./PeopleHero";
 import { PeopleOriginBlock } from "./PeopleOriginBlock";
 import { PeopleLanguageSection } from "./PeopleLanguageSection";
@@ -209,7 +209,7 @@ export const AutonymHeading_Mobile: Story = {
         nameMain="Yoruba"
         autonym="Ọmọ Oòduà · Yorùbá"
         exonyms={["Yariba", "Ioruba", "Yaruba"]}
-        variant="hero"
+        variant="people-hero"
       />
     </HeroBg>
   ),

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { PeopleLanguageData } from "@/lib/peopleDataTransformer";
 import { ProseWithChip } from "./ProseWithChip";
 import type { LanguageChips } from "./ProseWithChip";
@@ -15,12 +16,26 @@ export function PeopleLanguageSection({
     data.mainLanguage ||
     data.isoCodes.length > 0 ||
     data.dialects.length > 0 ||
-    data.vehicularRole;
+    data.vehicularRole ||
+    data.languageFamilyId;
 
   if (!hasContent) return null;
 
   return (
     <div className="space-y-[14px]">
+      {data.languageFamilyId && (
+        <div>
+          <p className="people-section-label">Famille linguistique</p>
+          <Link
+            href={`/fr/familles/${data.languageFamilyId}`}
+            className="people-section-body font-semibold hover:underline"
+            style={{ color: "var(--country-terracotta)" }}
+          >
+            {data.languageFamilyName ?? data.languageFamilyId}
+          </Link>
+        </div>
+      )}
+
       {data.mainLanguage && (
         <div>
           <p className="people-section-label">Langue principale</p>
