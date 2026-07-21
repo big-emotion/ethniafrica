@@ -61,7 +61,9 @@ export function PeopleHero({
 
           <div className="flex gap-[6px] flex-wrap justify-end">
             {data.languageFamilyName && (
-              <span className="people-hero-badge">{data.languageFamilyName}</span>
+              <span className="people-hero-badge">
+                {data.languageFamilyName}
+              </span>
             )}
             <span className="people-hero-badge">
               {data.currentCountries.length} pays

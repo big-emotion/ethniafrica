@@ -118,7 +118,7 @@ Le module **#0 Sources & Vérification** est transversal et conditionne tous les
 | **Solo dev** — vélocité limitée, bus factor de 1                                       | 🟠 Moyen        | Open source le code, attirer 1-2 contributeurs (design, data, sciences sociales) |
 | **Pas de modèle de revenus**                                                           | 🟠 Moyen        | Hébergement minimal, mécénat, petits dons, partenariats institutionnels          |
 | **Polémiques** sur classifications, endonymes contestés, traitement de la colonisation | 🟠 Moyen        | Doctrine éditoriale écrite, conseil scientifique léger, transparence des choix   |
-| **Renommage** mal géré (perte SEO, confusion existant ↔ nouveau)                      | 🟡 Faible-moyen | Plan de rebranding propre, redirections 301, communication                       |
+| **Renommage** mal géré (perte SEO, confusion existant ↔ nouveau)                       | 🟡 Faible-moyen | Plan de rebranding propre, redirections 301, communication                       |
 
 ## 9. Métriques de succès (proposées, à valider)
 

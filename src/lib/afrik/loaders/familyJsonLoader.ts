@@ -55,7 +55,9 @@ export async function loadAllLanguageFamilies(): Promise<LanguageFamily[]> {
       if (result.success && result.data) {
         families.push(result.data);
       } else if (!result.success) {
-        logger.error(`Failed to load ${familyId}`, undefined, { errors: result.errors });
+        logger.error(`Failed to load ${familyId}`, undefined, {
+          errors: result.errors,
+        });
       }
     }
     return families;

@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import {
   CONSENT_STORAGE_KEY,
   DEFAULT_PREFERENCES,
@@ -6,8 +6,8 @@ import {
   saveConsent,
   isConsentExpired,
   clearConsent,
-} from '../consent';
-import type { ConsentState } from '@/types/consent';
+} from "../consent";
+import type { ConsentState } from "@/types/consent";
 
 // Mock localStorage
 const localStorageMock = (() => {
@@ -30,9 +30,9 @@ const localStorageMock = (() => {
   };
 })();
 
-Object.defineProperty(global, 'localStorage', { value: localStorageMock });
+Object.defineProperty(global, "localStorage", { value: localStorageMock });
 
-describe('consent utilities', () => {
+describe("consent utilities", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     localStorageMock.clear();
@@ -42,13 +42,13 @@ describe('consent utilities', () => {
     vi.resetAllMocks();
   });
 
-  describe('getStoredConsent', () => {
-    it('should return null when no consent is stored', () => {
+  describe("getStoredConsent", () => {
+    it("should return null when no consent is stored", () => {
       const result = getStoredConsent();
       expect(result).toBeNull();
     });
 
-    it('should return stored consent when present', () => {
+    it("should return stored consent when present", () => {
       const mockConsent: ConsentState = {
         hasConsented: true,
         preferences: {
@@ -56,25 +56,28 @@ describe('consent utilities', () => {
           analytics: true,
           functional: false,
         },
-        consentDate: '2024-01-15T10:00:00.000Z',
+        consentDate: "2024-01-15T10:00:00.000Z",
       };
 
-      localStorageMock.setItem(CONSENT_STORAGE_KEY, JSON.stringify(mockConsent));
+      localStorageMock.setItem(
+        CONSENT_STORAGE_KEY,
+        JSON.stringify(mockConsent)
+      );
 
       const result = getStoredConsent();
       expect(result).toEqual(mockConsent);
     });
 
-    it('should return null for invalid JSON', () => {
-      localStorageMock.setItem(CONSENT_STORAGE_KEY, 'invalid-json');
+    it("should return null for invalid JSON", () => {
+      localStorageMock.setItem(CONSENT_STORAGE_KEY, "invalid-json");
 
       const result = getStoredConsent();
       expect(result).toBeNull();
     });
   });
 
-  describe('saveConsent', () => {
-    it('should persist consent to localStorage', () => {
+  describe("saveConsent", () => {
+    it("should persist consent to localStorage", () => {
       const consentState: ConsentState = {
         hasConsented: true,
         preferences: {
@@ -82,7 +85,7 @@ describe('consent utilities', () => {
           analytics: true,
           functional: true,
         },
-        consentDate: '2024-06-15T12:00:00.000Z',
+        consentDate: "2024-06-15T12:00:00.000Z",
       };
 
       saveConsent(consentState);
@@ -94,8 +97,8 @@ describe('consent utilities', () => {
     });
   });
 
-  describe('isConsentExpired', () => {
-    it('should return true for dates more than 12 months ago', () => {
+  describe("isConsentExpired", () => {
+    it("should return true for dates more than 12 months ago", () => {
       // 13 months ago
       const oldDate = new Date();
       oldDate.setMonth(oldDate.getMonth() - 13);
@@ -104,7 +107,7 @@ describe('consent utilities', () => {
       expect(result).toBe(true);
     });
 
-    it('should return false for recent dates', () => {
+    it("should return false for recent dates", () => {
       // 1 month ago
       const recentDate = new Date();
       recentDate.setMonth(recentDate.getMonth() - 1);
@@ -113,7 +116,7 @@ describe('consent utilities', () => {
       expect(result).toBe(false);
     });
 
-    it('should return false for dates exactly 11 months ago', () => {
+    it("should return false for dates exactly 11 months ago", () => {
       const elevenMonthsAgo = new Date();
       elevenMonthsAgo.setMonth(elevenMonthsAgo.getMonth() - 11);
 
@@ -121,7 +124,7 @@ describe('consent utilities', () => {
       expect(result).toBe(false);
     });
 
-    it('should return true for dates exactly 13 months ago', () => {
+    it("should return true for dates exactly 13 months ago", () => {
       const thirteenMonthsAgo = new Date();
       thirteenMonthsAgo.setMonth(thirteenMonthsAgo.getMonth() - 13);
 
@@ -130,32 +133,37 @@ describe('consent utilities', () => {
     });
   });
 
-  describe('clearConsent', () => {
-    it('should remove consent from localStorage', () => {
+  describe("clearConsent", () => {
+    it("should remove consent from localStorage", () => {
       const consentState: ConsentState = {
         hasConsented: true,
         preferences: DEFAULT_PREFERENCES,
         consentDate: new Date().toISOString(),
       };
 
-      localStorageMock.setItem(CONSENT_STORAGE_KEY, JSON.stringify(consentState));
+      localStorageMock.setItem(
+        CONSENT_STORAGE_KEY,
+        JSON.stringify(consentState)
+      );
 
       clearConsent();
 
-      expect(localStorageMock.removeItem).toHaveBeenCalledWith(CONSENT_STORAGE_KEY);
+      expect(localStorageMock.removeItem).toHaveBeenCalledWith(
+        CONSENT_STORAGE_KEY
+      );
     });
   });
 
-  describe('DEFAULT_PREFERENCES', () => {
-    it('should have essential as true', () => {
+  describe("DEFAULT_PREFERENCES", () => {
+    it("should have essential as true", () => {
       expect(DEFAULT_PREFERENCES.essential).toBe(true);
     });
 
-    it('should have analytics as false', () => {
+    it("should have analytics as false", () => {
       expect(DEFAULT_PREFERENCES.analytics).toBe(false);
     });
 
-    it('should have functional as false', () => {
+    it("should have functional as false", () => {
       expect(DEFAULT_PREFERENCES.functional).toBe(false);
     });
   });

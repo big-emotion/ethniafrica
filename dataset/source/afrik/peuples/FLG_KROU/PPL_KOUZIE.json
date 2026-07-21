@@ -2,32 +2,21 @@
   "id": "PPL_KOUZIE",
   "nameMain": "Kouzié",
   "languageFamilyId": "FLG_KROU",
-  "currentCountries": [
-    "CIV"
-  ],
+  "currentCountries": ["CIV"],
   "content": {
     "appellations": {
       "mainName": "Kouzié",
       "selfAppellation": "Kouzié",
-      "exonyms": [
-        "Kouzi",
-        "Kouzié",
-        "Kouyé"
-      ],
+      "exonyms": ["Kouzi", "Kouzié", "Kouyé"],
       "originOfExonyms": "Exonyme issu de la dénomination coloniale française reprise par les administrateurs du cercle de Soubré ; le nom Kouzié désigne à la fois le peuple et la localité autour de Buyo.",
       "whyProblematic": null,
       "contemporaryUsage": "Le terme Kouzié est utilisé par les locuteurs eux-mêmes et par les administrations ivoiriennes pour désigner ce sous-groupe nyabwa établi dans la région de la Nawa.",
       "linguisticFamily": "FLG_KROU",
       "ethnoLinguisticGroup": "Nyabwa (sous-groupe krou)",
       "historicalRegion": "Région de la Nawa, département de Buyo, sud-ouest de la Côte d'Ivoire",
-      "currentCountries": [
-        "CIV"
-      ]
+      "currentCountries": ["CIV"]
     },
-    "ethnicities": [
-      "Kouzié",
-      "Nyabwa"
-    ],
+    "ethnicities": ["Kouzié", "Nyabwa"],
     "origins": {
       "ancientOrigins": "Les Kouzié font partie du grand ensemble Nyabwa-Krou, dont les ancêtres auraient migré depuis l'actuel Liberia vers le XVe siècle. Selon la tradition orale, l'ancêtre Goze aurait fui une guerre au Liberia et trouvé refuge chez les gens de Kouézé, donnant naissance au rameau qui deviendra les Kouzié. Ils s'installèrent progressivement dans les vallées forestières entre le Sassandra et le Lobo.",
       "formationPeriod": "XVe-XVIIe siecle, sous la pression des expansions mandingue et akan qui poussèrent les groupes krou vers leurs territoires actuels.",
@@ -52,12 +41,8 @@
     },
     "languages": {
       "mainLanguage": "kouzié",
-      "isoCodes": [
-        "nwb"
-      ],
-      "dialects": [
-        "kouzié (parler nyabwa de la région de Buyo)"
-      ],
+      "isoCodes": ["nwb"],
+      "dialects": ["kouzié (parler nyabwa de la région de Buyo)"],
       "vehicularRole": "Le kouzié est la langue maternelle et vernaculaire de la communauté kouzié. Le français est utilisé comme langue officielle et d'enseignement. Le kouzié est classé comme langue vulnérable selon les critères UNESCO : 3 249 locuteurs recensés (RGPH 2014), langue transmise de génération en génération mais sans statut officiel de protection. Le dioula sert de langue véhiculaire dans les échanges commerciaux régionaux."
     },
     "culture": {

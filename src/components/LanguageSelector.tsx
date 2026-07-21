@@ -18,9 +18,7 @@ interface LanguageSelectorProps {
   onLanguageChange: (lang: Language) => void;
 }
 
-const languages = [
-  { code: "fr" as Language, name: "Français", flag: "🇫🇷" },
-];
+const languages = [{ code: "fr" as Language, name: "Français", flag: "🇫🇷" }];
 
 export const LanguageSelector = ({
   currentLang,
