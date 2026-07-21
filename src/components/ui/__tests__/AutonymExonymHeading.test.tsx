@@ -1,8 +1,12 @@
 /**
- * Tests for AutonymExonymHeading component.
+ * Tests for the unified AutonymExonymHeading component (ETNI-383).
  *
- * Covers autonym lang attribute, exonym rendering, variant class application,
- * alternateNames expand/collapse behaviour, IPA pronunciation, and required-only props.
+ * Consolidates the three previously-duplicated test suites:
+ * - ui/AutonymExonymHeading.tsx (hero/inline/card: lang attribute, ipa,
+ *   alternateNames expand/collapse)
+ * - ui/autonym-exonym-heading.tsx (compact: exonym/autonym/code badge)
+ * - people/AutonymExonymHeading.tsx (people-hero/people-section: nameMain,
+ *   autonym paragraph, exonym pills)
  */
 
 import { describe, it, expect } from "vitest";
@@ -10,7 +14,7 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 
-describe("AutonymExonymHeading", () => {
+describe("AutonymExonymHeading — hero/inline/card variants", () => {
   // 1. Renders autonym with correct lang attribute
   it("renders autonym with correct lang attribute", () => {
     render(<AutonymExonymHeading autonym="Yorùbá" autonymIso639_3="yor" />);
@@ -197,5 +201,118 @@ describe("AutonymExonymHeading", () => {
     expect(screen.getByText("Hausa")).toBeInTheDocument();
     // Default variant is hero → h1
     expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
+  });
+});
+
+describe("AutonymExonymHeading — compact variant (exonym/autonym/code)", () => {
+  it("renders the exonym (main name)", () => {
+    render(<AutonymExonymHeading variant="compact" exonym="Bantou" />);
+    expect(screen.getByText("Bantou")).toBeInTheDocument();
+  });
+
+  it("renders the code when provided", () => {
+    render(
+      <AutonymExonymHeading
+        variant="compact"
+        exonym="Bantou"
+        code="FLG_BANTU"
+      />
+    );
+    expect(screen.getByText("FLG_BANTU")).toBeInTheDocument();
+  });
+
+  it("does not render a code element when code is not provided", () => {
+    render(<AutonymExonymHeading variant="compact" exonym="Bantou" />);
+    expect(screen.queryByText(/FLG_/)).not.toBeInTheDocument();
+  });
+
+  it("renders the autonym when provided and different from exonym", () => {
+    render(
+      <AutonymExonymHeading variant="compact" exonym="Zulu" autonym="amaZulu" />
+    );
+    expect(screen.getByText("amaZulu")).toBeInTheDocument();
+  });
+
+  it("does not render a second name when autonym equals exonym", () => {
+    render(
+      <AutonymExonymHeading variant="compact" exonym="Zulu" autonym="Zulu" />
+    );
+    // only one element with text "Zulu" — the h3
+    const all = screen.getAllByText("Zulu");
+    expect(all).toHaveLength(1);
+  });
+
+  it("does not render autonym when it is null", () => {
+    render(
+      <AutonymExonymHeading variant="compact" exonym="Bantou" autonym={null} />
+    );
+    // Only the exonym heading should be present
+    expect(screen.getByText("Bantou")).toBeInTheDocument();
+    const italics = document.querySelectorAll("p.italic");
+    expect(italics).toHaveLength(0);
+  });
+
+  it("renders exonym as the accessible heading text", () => {
+    render(<AutonymExonymHeading variant="compact" exonym="Yoruba" />);
+    expect(screen.getByRole("heading", { name: "Yoruba" })).toBeInTheDocument();
+  });
+});
+
+describe("AutonymExonymHeading — people-hero/people-section variants", () => {
+  it("renders nameMain", () => {
+    render(
+      <AutonymExonymHeading
+        variant="people-hero"
+        nameMain="Yoruba"
+        exonyms={[]}
+      />
+    );
+    expect(screen.getByText("Yoruba")).toBeTruthy();
+  });
+
+  it("renders autonym when provided", () => {
+    render(
+      <AutonymExonymHeading
+        variant="people-hero"
+        nameMain="Yoruba"
+        autonym="Ọmọ Oòduà"
+        exonyms={[]}
+      />
+    );
+    expect(screen.getByText("Ọmọ Oòduà")).toBeTruthy();
+  });
+
+  it("does not render autonym section when absent", () => {
+    const { container } = render(
+      <AutonymExonymHeading
+        variant="people-hero"
+        nameMain="Yoruba"
+        exonyms={[]}
+      />
+    );
+    expect(container.querySelector("[data-autonym]")).toBeNull();
+  });
+
+  it("renders exonyms as individual pills", () => {
+    render(
+      <AutonymExonymHeading
+        variant="people-hero"
+        nameMain="Yoruba"
+        exonyms={["Yariba", "Ioruba"]}
+      />
+    );
+    expect(screen.getByText("Yariba")).toBeTruthy();
+    expect(screen.getByText("Ioruba")).toBeTruthy();
+  });
+
+  it("renders nothing for exonyms when list is empty", () => {
+    const { container } = render(
+      <AutonymExonymHeading
+        variant="people-section"
+        nameMain="Yoruba"
+        exonyms={[]}
+      />
+    );
+    expect(container.querySelector("[data-exonyms]")).toBeNull();
   });
 });

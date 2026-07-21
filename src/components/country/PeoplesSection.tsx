@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { PeoplesData, PeopleRow } from "@/lib/countryDataTransformer";
 import { AutonymExonymHeading } from "./AutonymExonymHeading";
 
@@ -110,7 +111,16 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
               endonym={row.endonym}
               exonym={row.name}
               lang={row.endonymLang}
+              href={row.peopleId ? `/fr/peuples/${row.peopleId}` : undefined}
             />
+          ) : row.peopleId && !row.groupedNames ? (
+            <Link
+              href={`/fr/peuples/${row.peopleId}`}
+              className="text-[14px] md:text-[15px] xl:text-[16px] font-bold leading-snug hover:underline"
+              style={{ fontFamily: "var(--country-font-body)" }}
+            >
+              {row.name}
+            </Link>
           ) : (
             <span
               className="text-[14px] md:text-[15px] xl:text-[16px] font-bold leading-snug"

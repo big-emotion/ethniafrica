@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 interface AutonymExonymHeadingProps {
   /** The name a people uses for itself — rendered as the primary name. */
   endonym: string;
@@ -5,19 +7,26 @@ interface AutonymExonymHeadingProps {
   exonym: string;
   /** ISO 639-3 code for the endonym's language, when known. */
   lang?: string;
+  /** Destination of the people fiche; omit for rows that have no fiche to open. */
+  href?: string;
 }
 
 /**
  * Renders an endonym/exonym pair with endonym primacy (UX-DR49 rule 1): the
  * endonym leads with at least the visual weight of the exonym, and carries a
  * `lang` attribute so assistive tech pronounces it correctly.
+ *
+ * When `href` is set the whole pair becomes the link target rather than the
+ * exonym alone, so navigating to the fiche does not reintroduce the primacy
+ * inversion this component exists to fix.
  */
 export function AutonymExonymHeading({
   endonym,
   exonym,
   lang,
+  href,
 }: AutonymExonymHeadingProps) {
-  return (
+  const names = (
     <>
       <span
         lang={lang}
@@ -33,5 +42,16 @@ export function AutonymExonymHeading({
         {exonym}
       </span>
     </>
+  );
+
+  if (!href) return names;
+
+  return (
+    <Link
+      href={href}
+      className="inline-flex items-baseline gap-[6px] flex-wrap hover:underline"
+    >
+      {names}
+    </Link>
   );
 }
