@@ -15,9 +15,16 @@
 
 name: Ferry — Dev
 
+# SUPERSEDED by ferry-router.yml, which handles every ferry-* dispatch type
+# including this one. The repository_dispatch trigger is removed so the two do
+# not both fire on the same Jira transition and run the agent twice.
+#
+# The file is kept, not deleted, so the legacy path is one `git revert` away
+# while the router is being proven on real tickets. Note the jobs below read
+# github.event.client_payload.*, which a manual workflow_dispatch run does not
+# provide — reverting this commit is the fallback, not running it by hand.
 on:
-  repository_dispatch:
-    types: [ferry-dev]
+  workflow_dispatch:
 
 # cancel-in-progress: false — writes .ferry/state.json, branch, and PR; cancellation mid-commit = state/branch divergence
 concurrency:
