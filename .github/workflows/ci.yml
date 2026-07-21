@@ -23,7 +23,7 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       # Scan contract: this is a per-PR gate, so it scans the working tree at
       # the PR's HEAD (--no-git), not the full commit history. Secrets in
@@ -46,7 +46,7 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v6
         with:
