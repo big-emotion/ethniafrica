@@ -127,6 +127,7 @@ const bfaCountry: CountryDetail = {
         region:
           "Plateau central du Burkina Faso (Ouagadougou, Yatenga, Tenkodogo)",
         languageFamily: "Niger-Congo – Gur (FLG_GUR)",
+        mainLanguageCode: "mos",
       },
       {
         name: "Peul / Fulani",
@@ -506,6 +507,15 @@ describe("transformPeoples", () => {
     );
     const autres = result.rows.find((r) => /\bautres\b/i.test(r.name));
     expect(autres).toBeUndefined();
+  });
+
+  it("maps mainLanguageCode to endonymLang for the lang attribute", () => {
+    const result = transformPeoples(
+      bfaCountry.demographics,
+      bfaCountry.majorPeoples
+    );
+    const mossi = result.rows.find((r) => r.name === "Mossi");
+    expect(mossi?.endonymLang).toBe("mos");
   });
 });
 
