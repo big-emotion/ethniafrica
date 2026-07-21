@@ -36,6 +36,23 @@ describe("PeoplesSection — navigation links to people fiches", () => {
     expect(link.getAttribute("href")).toBe("/fr/peuples/PPL_YORUBA");
   });
 
+  // ETNI-42 × ETNI-382: navigation and endonym primacy land on the same row.
+  // The link must cover the whole name pair so the endonym keeps leading it.
+  it("keeps endonym primacy inside the link to the fiche", () => {
+    render(<PeoplesSection data={baseData} />);
+    const link = screen.getByRole("link", { name: /Ọmọ Oòduà/i });
+
+    expect(link.getAttribute("href")).toBe("/fr/peuples/PPL_YORUBA");
+
+    const endonymEl = screen.getByText("Ọmọ Oòduà");
+    const exonymEl = screen.getByText("Yoruba");
+    expect(link.contains(endonymEl)).toBe(true);
+    expect(link.contains(exonymEl)).toBe(true);
+    expect(endonymEl.className).toMatch(/font-bold/);
+    expect(endonymEl.className).not.toMatch(/italic/);
+    expect(exonymEl.className).not.toMatch(/font-bold/);
+  });
+
   it("renders links for all rows that have peopleId", () => {
     render(<PeoplesSection data={baseData} />);
     const links = screen.getAllByRole("link");

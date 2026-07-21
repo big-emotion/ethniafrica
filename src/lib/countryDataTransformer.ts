@@ -74,6 +74,8 @@ export interface TimelineData {
 export interface PeopleRow {
   name: string;
   endonym?: string;
+  /** ISO 639-3 code for the endonym's language, for the `lang` attribute. */
+  endonymLang?: string;
   pejorativeTerm?: string;
   percentage: number;
   population: number;
@@ -790,6 +792,7 @@ export function transformPeoples(
     rows.push({
       name: p.name,
       endonym: endonymMap.get(nameKey),
+      endonymLang: p.mainLanguageCode,
       pejorativeTerm: pejorativeMap.get(nameKey),
       percentage: p.percentageInCountry || 0,
       population: p.population || 0,

@@ -73,6 +73,7 @@ const eslintConfig = [
     ],
     ignores: [
       "src/components/ui/AutonymExonymHeading.tsx",
+      "src/components/country/AutonymExonymHeading.tsx",
       "**/*.stories.*",
       "**/*.test.*",
       "**/__tests__/**",
