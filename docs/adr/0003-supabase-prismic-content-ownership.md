@@ -45,12 +45,12 @@ Prismic content must not be rendered.
 Each Prismic editorial document that decorates an AFRIK entity stores one
 required `afrik_id`. Its value is the exact canonical identifier from Supabase:
 
-| Entity            | Contract                | Example      |
-| ----------------- | ----------------------- | ------------ |
-| Linguistic family | AFRIK family identifier | `FLG_BANTU`  |
-| Language          | ISO 639-3 identifier    | `swa`        |
-| People            | AFRIK people identifier | `PPL_YORUBA` |
-| Country           | ISO 3166-1 alpha-3 code | `COM`        |
+| Entity            | Contract                | Example     |
+| ----------------- | ----------------------- | ----------- |
+| Linguistic family | AFRIK family identifier | `FLG_BANTU` |
+| Language          | ISO 639-3 identifier    | `swa`       |
+| People            | AFRIK people identifier | `PPL_BETE`  |
+| Country           | ISO 3166-1 alpha-3 code | `COM`       |
 
 `afrik_id` is a join key, not an editable label. It must preserve case and value
 exactly, must not be generated from a name or URL slug, and must not be replaced
@@ -59,19 +59,65 @@ change the link to Supabase. An editorial document whose `afrik_id` does not
 resolve to an existing entity is invalid and must not create an entity,
 relationship, or public API record.
 
+### Publication validation
+
+Before an editorial document can be published:
+
+1. Its `afrik_id` must be unique among overlays for that entity type.
+2. The identifier must resolve to exactly one canonical Supabase entity of the
+   expected type.
+3. The document model and content must contain no duplicate canonical fields,
+   including structured names, endonyms, relationships, demographics, factual
+   assertions, sources, confidence, or revision data.
+
+Several new or updated editorial pages may be bundled in a Prismic Release for
+coordinated publication. Releases cannot unpublish pages, so removals and
+emergency fallback use the individual unpublish flow.
+
 ### Read boundaries
 
 - Domain reads, AFRIK validation, search, exports, moderation, and audit flows
   read Supabase only.
 - Website entity pages read their canonical entity from Supabase first, then may
   look up one optional Prismic overlay by the exact `afrik_id`.
-- Missing, unpublished, invalid, or unavailable Prismic content must degrade to
-  the Supabase-backed presentation. It must not make an AFRIK entity unavailable.
-- Prismic reads may use the Next.js `prismic` cache tag with `force-cache`.
-  Published and unpublished changes may trigger a revalidation webhook for that
-  tag.
-- Full-site previews are an editorial-only view. They use Prismic's temporary
-  preview ref and cookie and do not change canonical Supabase reads.
+
+Supabase-only rendering is the safe baseline for every state:
+
+| Prismic overlay state               | Website entity page behavior                                       |
+| ----------------------------------- | ------------------------------------------------------------------ |
+| Present, published, and valid       | Render canonical Supabase data with the optional editorial overlay |
+| Missing                             | Render canonical Supabase data only                                |
+| Unpublished or archived             | Render canonical Supabase data only                                |
+| Invalid or non-resolving `afrik_id` | Ignore the overlay and render canonical Supabase data only         |
+| Prismic unavailable                 | Render canonical Supabase data only                                |
+
+An editorial failure must never make an AFRIK entity unavailable.
+
+### Cache boundaries and invalidation
+
+Supabase and Prismic use separate Next.js cache tags:
+
+| Source   | Tags                                                                 | Dependents                                                                   |
+| -------- | -------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Supabase | `afrik-peoples`, `afrik-language-families`, `afrik-countries`        | AFRIK reads, matching entity pages, and `/api/v2`                            |
+| Prismic  | `prismic` with `force-cache` for published editorial content         | Optional editorial overlays on combined entity pages                         |
+| Combined | The relevant `afrik-*` tag and the distinct `prismic` tag together   | Website entity pages that render canonical data plus an editorial overlay    |
+| API      | The relevant `afrik-*` tags only; never the `prismic` tag or content | `/api/v2` routes, handlers, services, and their public cache representations |
+
+Prismic publish and unpublish webhooks must call a server-only revalidation
+endpoint. The endpoint must validate the configured webhook secret before
+revalidating the `prismic` tag; invalid requests must have no cache effect.
+Only published Prismic content enters the shared `force-cache`. Draft content
+must never populate or replace a public shared cache entry.
+
+### Preview isolation
+
+A full-website preview uses Prismic's temporary preview ref and cookie to
+combine a draft editorial overlay with published canonical Supabase data.
+Preview responses must be private and `no-store`, bypassing public shared
+caches. A preview must not alter the canonical Supabase read, populate the
+published `prismic` cache, affect `/api/v2`, or become visible outside its
+preview session.
 
 ### Public API independence
 
@@ -79,6 +125,35 @@ The `/api/v2` service, handler, and route layers remain backed by Supabase. They
 must not query Prismic, expose Prismic document identifiers, merge editorial
 fields into responses, or fail because Prismic is unavailable. Adding or
 removing a Prismic overlay is therefore not a public API contract change.
+
+### Delivery and recovery lifecycle
+
+The delivery flow is:
+
+1. Validate uniqueness and resolution of `afrik_id` and reject canonical
+   duplicate fields.
+2. Preview the draft against published canonical Supabase data using the
+   isolated preview session.
+3. Publish the document, or optionally publish a Release containing coordinated
+   new and updated pages.
+4. Accept the publish webhook only after secret validation and revalidate the
+   `prismic` tag.
+5. Let the next public entity-page request compose fresh published Prismic
+   editorial content with its independently cached canonical Supabase data.
+
+Recovery never changes Supabase:
+
+- For immediate Supabase-only fallback, unpublish the affected Prismic document.
+  The secret-validated unpublish webhook revalidates the `prismic` tag so the
+  next public entity-page request omits the overlay.
+- To restore editorial content, restore the prior Prismic version as a draft,
+  validate and preview it, then republish it. The publish webhook revalidates the
+  `prismic` tag again.
+- A Prismic editorial action never rolls back identifiers, relationships,
+  demographics, assertions, revisions, audit records, or any other canonical
+  Supabase data.
+- `/api/v2` remains Supabase-only and unchanged during publication, unpublish,
+  restoration, Prismic downtime, and webhook processing.
 
 ### Credentials
 
