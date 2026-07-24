@@ -1,6 +1,7 @@
 "use client";
 
-import { useCallback } from "react";
+import { useDeferredValue, useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Language } from "@/types/shared";
 import { getTranslation } from "@/lib/translations";
 import { Card } from "@/components/ui/card";
@@ -10,10 +11,8 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Search, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { normalizeString } from "@/lib/normalize";
 import type { PeopleSummary, LanguageFamilyId } from "@/types/afrik-frontend";
-import { getAllPeoples } from "@/lib/afrikLoader";
-import { useListView } from "@/hooks/use-list-view";
+import { getPeoples } from "@/lib/afrikLoader";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
@@ -27,6 +26,7 @@ interface PeopleViewProps {
 }
 
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+const PEOPLES_PER_PAGE = 10;
 
 export const PeopleView = ({
   language,
@@ -37,47 +37,47 @@ export const PeopleView = ({
 }: PeopleViewProps) => {
   const t = getTranslation(language);
   const isMobile = useIsMobile();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [search, setSearch] = useState("");
+  const [selectedLetter, setSelectedLetter] = useState<string | null>(null);
+  const deferredSearch = useDeferredValue(search.trim());
 
-  const getDisplayName = useCallback(
-    (people: PeopleSummary) => people.nameMain,
-    []
-  );
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setCurrentPage(1);
+  }, [languageFamilyId]);
 
-  const filterFn = useCallback(
-    (people: PeopleSummary, normalizedSearch: string) => {
-      if (languageFamilyId && people.languageFamilyId !== languageFamilyId) {
-        return false;
-      }
-      return (
-        normalizeString(people.nameMain).includes(normalizedSearch) ||
-        normalizeString(people.id).includes(normalizedSearch) ||
-        (people.selfAppellation
-          ? normalizeString(people.selfAppellation).includes(normalizedSearch)
-          : false)
-      );
-    },
-    [languageFamilyId]
-  );
-
-  const {
-    paginatedItems: paginatedPeoples,
-    totalPages,
-    currentPage,
-    setCurrentPage,
-    search,
-    setSearch,
-    selectedLetter,
-    setSelectedLetter,
-    availableLetters,
-    isLoading,
-    error,
-  } = useListView<PeopleSummary>({
-    queryKey: ["peoples"],
-    queryFn: getAllPeoples,
-    getDisplayName,
-    filterFn,
-    isMobile,
+  const { data, isLoading, error } = useQuery({
+    queryKey: [
+      "peoples",
+      currentPage,
+      deferredSearch,
+      selectedLetter,
+      languageFamilyId,
+    ],
+    queryFn: () =>
+      getPeoples({
+        page: currentPage,
+        perPage: PEOPLES_PER_PAGE,
+        search: deferredSearch || undefined,
+        letter: selectedLetter || undefined,
+        languageFamilyId,
+      }),
+    placeholderData: (previousData) => previousData,
+    staleTime: 5 * 60 * 1000,
   });
+  const paginatedPeoples = data?.data ?? [];
+  const totalPages = data?.meta.totalPages ?? 0;
+
+  const handleSearchChange = (value: string) => {
+    setSearch(value);
+    setCurrentPage(1);
+  };
+
+  const handleLetterChange = (letter: string | null) => {
+    setSelectedLetter(letter);
+    setCurrentPage(1);
+  };
 
   const formatNumber = (num: number): string =>
     new Intl.NumberFormat("fr-FR").format(Math.round(num));
@@ -176,7 +176,7 @@ export const PeopleView = ({
                 variant={selectedLetter === null ? "default" : "outline"}
                 size="sm"
                 className="h-8 w-8 p-0 text-xs"
-                onClick={() => setSelectedLetter(null)}
+                onClick={() => handleLetterChange(null)}
               >
                 Tous
               </Button>
@@ -185,16 +185,8 @@ export const PeopleView = ({
                   key={letter}
                   variant={selectedLetter === letter ? "default" : "outline"}
                   size="sm"
-                  className={`h-8 w-8 p-0 text-xs ${
-                    availableLetters.includes(letter)
-                      ? ""
-                      : "opacity-30 cursor-not-allowed"
-                  }`}
-                  onClick={() =>
-                    availableLetters.includes(letter) &&
-                    setSelectedLetter(letter)
-                  }
-                  disabled={!availableLetters.includes(letter)}
+                  className="h-8 w-8 p-0 text-xs"
+                  onClick={() => handleLetterChange(letter)}
                 >
                   {letter}
                 </Button>
@@ -208,7 +200,7 @@ export const PeopleView = ({
               type="text"
               placeholder={t.searchPlaceholder}
               value={search}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => handleSearchChange(e.target.value)}
               className="pl-9"
             />
           </div>
@@ -251,7 +243,7 @@ export const PeopleView = ({
         </ScrollArea>
       )}
 
-      {!isMobile && totalPages > 1 && (
+      {totalPages > 1 && (
         <div
           className={`flex items-center justify-center gap-2 ${
             hideSearchAndAlphabet ? "px-0" : "px-4"
@@ -262,6 +254,7 @@ export const PeopleView = ({
             disabled={currentPage === 1}
             variant="outline"
             size="sm"
+            aria-label="Page précédente"
           >
             <ChevronLeft className="h-4 w-4" />
           </Button>
@@ -275,6 +268,7 @@ export const PeopleView = ({
             disabled={currentPage === totalPages}
             variant="outline"
             size="sm"
+            aria-label="Page suivante"
           >
             <ChevronRight className="h-4 w-4" />
           </Button>
