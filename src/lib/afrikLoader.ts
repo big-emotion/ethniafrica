@@ -167,7 +167,7 @@ export async function getLanguageFamily(
       // Content sections
       decolonialHeader: apiData.content?.decolonialHeader,
       generalInfo: apiData.content?.generalInfo,
-      associatedPeoples: apiData.content?.associatedPeoples,
+      associatedPeoples: apiData.associatedPeoples,
       linguisticCharacteristics: apiData.content?.linguisticCharacteristics,
       historyAndOrigins: apiData.content?.historyAndOrigins,
       distribution: apiData.content?.distribution,

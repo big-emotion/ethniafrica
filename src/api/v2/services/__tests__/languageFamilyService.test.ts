@@ -9,10 +9,15 @@ vi.mock("@/lib/supabase/queries/afrik/languageFamilies", () => ({
   getAfrikLanguageFamilyById: vi.fn(),
 }));
 
+vi.mock("@/lib/supabase/queries/afrik/peoples", () => ({
+  getAfrikPeoplesByLanguageFamily: vi.fn(),
+}));
+
 import {
   getAllAfrikLanguageFamilies,
   getAfrikLanguageFamilyById,
 } from "@/lib/supabase/queries/afrik/languageFamilies";
+import { getAfrikPeoplesByLanguageFamily } from "@/lib/supabase/queries/afrik/peoples";
 
 describe("Language Family Service", () => {
   beforeEach(() => {
@@ -56,29 +61,59 @@ describe("Language Family Service", () => {
   });
 
   describe("getLanguageFamilyById", () => {
-    it("should return a language family by FLG_ ID", async () => {
+    // @req REQ-033
+    it("should derive associated peoples from canonical people relationships", async () => {
       const mockFamily = {
-        id: "FLG_BANTU",
-        nameFr: "Bantou",
-        nameEn: "Bantu",
-        content: {},
+        id: "FLG_AFROASIATIQUE",
+        nameFr: "Afro-asiatique",
+        content: {
+          associatedPeoples: [
+            { name: "Stale JSONB people", peopleId: "PPL_STALE" },
+          ],
+        },
       };
+      const mockPeoples = [
+        {
+          id: "PPL_AMHARA",
+          nameMain: "Amhara",
+          languageFamilyId: "FLG_AFROASIATIQUE",
+          currentCountries: ["ETH"],
+          content: {},
+        },
+        {
+          id: "PPL_OROMO",
+          nameMain: "Oromo",
+          languageFamilyId: "FLG_AFROASIATIQUE",
+          currentCountries: ["ETH"],
+          content: {},
+        },
+      ];
 
       vi.mocked(getAfrikLanguageFamilyById).mockResolvedValue(mockFamily);
+      vi.mocked(getAfrikPeoplesByLanguageFamily).mockResolvedValue(mockPeoples);
 
-      const family = await getLanguageFamilyById("FLG_BANTU");
+      const family = await getLanguageFamilyById("FLG_AFROASIATIQUE");
 
-      expect(family).toBeDefined();
-      expect(family?.id).toBe("FLG_BANTU");
-      expect(family?.nameFr).toBe("Bantou");
+      const expectedReferences = [
+        { name: "Amhara", peopleId: "PPL_AMHARA" },
+        { name: "Oromo", peopleId: "PPL_OROMO" },
+      ];
+
+      expect(getAfrikPeoplesByLanguageFamily).toHaveBeenCalledWith(
+        "FLG_AFROASIATIQUE"
+      );
+      expect(family?.associatedPeoples).toEqual(expectedReferences);
+      expect(family?.content.associatedPeoples).toEqual(expectedReferences);
     });
 
-    it("should return null for non-existent language family", async () => {
+    // @req REQ-033
+    it("should return null without querying peoples for a missing family", async () => {
       vi.mocked(getAfrikLanguageFamilyById).mockResolvedValue(null);
 
       const family = await getLanguageFamilyById("FLG_NONEXISTENT");
 
       expect(family).toBeNull();
+      expect(getAfrikPeoplesByLanguageFamily).not.toHaveBeenCalled();
     });
   });
 });
