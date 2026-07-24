@@ -9,11 +9,13 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { CountryDetailViewV2 } from "@/components/detail/CountryDetailViewV2";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
+import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
 import {
   DoctrineLinkCard,
   isDoctrineSlug,
 } from "@/components/source-transparency/DoctrineLinkCard";
 
+// @req REQ-019
 export const revalidate = 3600;
 
 interface PageParams {
@@ -51,29 +53,18 @@ function CountrySnapshotFicheView({
         ? snapshotData.nameFr
         : entityId;
 
-  const publishedLabel = publishedAt
-    ? new Intl.DateTimeFormat("fr-FR", { dateStyle: "long" }).format(
-        new Date(publishedAt)
-      )
-    : null;
-
   return (
     <div data-testid="country-snapshot-view" className="space-y-4">
-      <div className="rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800">
-        <span className="font-medium">Version archivée&nbsp;v{version}</span>
-        {publishedLabel && (
-          <span className="ml-2 text-amber-700">
-            · publiée le {publishedLabel}
-          </span>
-        )}
-        <span className="mx-2 text-amber-400">·</span>
-        <a
-          href={`/${lang}/pays/${entityId}`}
-          className="underline hover:no-underline"
-        >
-          Voir la version actuelle
-        </a>
+      <div className="space-y-2">
+        <h1 className="text-2xl font-semibold">{nameFr}</h1>
+        <p className="text-sm text-muted-foreground font-mono">{entityId}</p>
       </div>
+
+      <PinnedVersionBanner
+        pinnedAt={publishedAt}
+        versionTag={String(version)}
+        liveUrl={`/${lang}/pays/${entityId}`}
+      />
 
       {confidence !== null && (
         <div className="px-1">
@@ -85,11 +76,6 @@ function CountrySnapshotFicheView({
           />
         </div>
       )}
-
-      <div className="space-y-2">
-        <h1 className="text-2xl font-semibold">{nameFr}</h1>
-        <p className="text-sm text-muted-foreground font-mono">{entityId}</p>
-      </div>
 
       <div className="prose prose-neutral max-w-none text-sm text-muted-foreground">
         <p>
@@ -109,6 +95,7 @@ function CountrySnapshotFicheView({
 // Page
 // ---------------------------------------------------------------------------
 
+// @req REQ-019
 export default async function PaysSlugPage({
   params,
 }: {

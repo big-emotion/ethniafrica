@@ -41,14 +41,35 @@ vi.mock("@/components/detail/CountryDetailViewV2", () => ({
 }));
 
 vi.mock("@/components/source-transparency/ConfidenceChip", () => ({
-  ConfidenceChip: () => <div data-testid="confidence-chip" />,
+  ConfidenceChip: ({ confidenceScore }: { confidenceScore: number | null }) => (
+    <div data-testid="confidence-chip" data-confidence={confidenceScore} />
+  ),
+}));
+
+vi.mock("@/components/source-transparency/PinnedVersionBanner", () => ({
+  PinnedVersionBanner: ({
+    pinnedAt,
+    versionTag,
+    liveUrl,
+  }: {
+    pinnedAt: string | null;
+    versionTag: string;
+    liveUrl: string;
+  }) => (
+    <aside
+      data-testid="pinned-version-banner"
+      data-pinned-at={pinnedAt ?? ""}
+      data-version-tag={versionTag}
+      data-live-url={liveUrl}
+    />
+  ),
 }));
 
 import PaysSlugPage from "../[slug]/page";
 
-async function renderPage(slug: string) {
+async function renderPage(slug: string, lang = "fr") {
   const ui = await PaysSlugPage({
-    params: Promise.resolve({ lang: "fr", slug }),
+    params: Promise.resolve({ lang, slug }),
   });
   return render(ui);
 }
@@ -56,6 +77,39 @@ async function renderPage(slug: string) {
 describe("/[lang]/pays/[slug] page", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+  });
+
+  // @req REQ-019
+  it("renders the frozen-version banner immediately after the snapshot heading", async () => {
+    mockGetRevisionSnapshot.mockResolvedValueOnce({
+      data: { name_fr: "République démocratique du Congo" },
+      version: 13,
+      published_at: "2026-02-14T11:30:00.000Z",
+      confidence: 84,
+      doctrine: null,
+    });
+
+    await renderPage("COD@v13");
+
+    const headingBlock = screen.getByRole("heading", {
+      name: "République démocratique du Congo",
+    }).parentElement;
+    const banner = screen.getByTestId("pinned-version-banner");
+
+    expect(headingBlock?.nextElementSibling).toBe(banner);
+    expect(banner).toHaveAttribute(
+      "data-pinned-at",
+      "2026-02-14T11:30:00.000Z"
+    );
+    expect(banner).toHaveAttribute("data-version-tag", "13");
+    expect(banner).toHaveAttribute("data-live-url", "/fr/pays/COD");
+    expect(screen.getByTestId("confidence-chip")).toHaveAttribute(
+      "data-confidence",
+      "84"
+    );
+    expect(
+      screen.getByText(/Ce contenu est une capture archivée/)
+    ).toBeInTheDocument();
   });
 
   // @req REQ-025
@@ -96,14 +150,16 @@ describe("/[lang]/pays/[slug] page", () => {
     ).not.toBeInTheDocument();
   });
 
+  // @req REQ-019
   // @req REQ-025
-  it("preserves the live country view", async () => {
+  it("preserves the live country view without a frozen-version banner", async () => {
     await renderPage("NGA");
 
     expect(screen.getByTestId("country-detail-live")).toHaveAttribute(
       "data-country-id",
       "NGA"
     );
+    expect(screen.queryByTestId("pinned-version-banner")).toBeNull();
     expect(mockGetRevisionSnapshot).not.toHaveBeenCalled();
   });
 
