@@ -120,7 +120,7 @@ Vitest + happy-dom. TDD is mandatory — red/green/refactor.
 - Parsers: `src/lib/afrik/parsers/__tests__/*.test.ts`
 - Components: colocated `*.test.tsx`
 
-Known pre-existing failures (6 in `scripts/__tests__/migrateAfrikToDatabase.test.ts`; 4 in handler tests — all Supabase mock issues). Do not "fix" without scope.
+Known pre-existing failures remain in 4 handler tests (Supabase mock issues). Do not fix them without scope.
 
 ## 9. Architectural Invariants
 

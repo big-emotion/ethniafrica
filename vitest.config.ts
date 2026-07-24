@@ -19,8 +19,7 @@ export default defineConfig({
     // gate cannot mask new regressions. Excluded files are NOT fixed here —
     // they remain in place until explicitly scoped.
     //
-    // 6 known failures (Supabase mock issues) live in migrateAfrikToDatabase.
-    // 4 additional handler-test failures exist; relocate them under
+    // 4 handler-test failures exist; relocate them under
     // any `__tests__/known-failing/` directory to quarantine.
     //
     // Also exclude Playwright specs (run via `npm run e2e`, not Vitest).
@@ -31,7 +30,6 @@ export default defineConfig({
       ".next/",
       ".claude/**",
       "e2e/**",
-      "scripts/__tests__/migrateAfrikToDatabase.test.ts",
       "**/__tests__/known-failing/**",
     ],
     coverage: {

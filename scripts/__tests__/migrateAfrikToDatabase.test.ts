@@ -1,196 +1,218 @@
-import { describe, it, expect, beforeEach, vi } from "vitest";
-import { migrateAfrikToDatabase } from "../migrateAfrikToDatabase";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+
+import afroasiaticFamily from "../../dataset/source/afrik/famille_linguistique/FLG_AFROASIATIQUE.json";
+import betePeople from "../../dataset/source/afrik/peuples/FLG_KROU/PPL_BETE.json";
+import coteDIvoire from "../../dataset/source/afrik/pays/CIV.json";
+import { createAdminClient } from "@/lib/supabase/admin";
+import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
 import { loadAllLanguageFamilies } from "@/lib/afrik/loaders/languageFamilyLoader";
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
-import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
-import { createAdminClient } from "@/lib/supabase/admin";
+import { migrateAfrikToDatabase } from "../migrateAfrikToDatabase";
+import type { LanguageFamily, People } from "@/types/afrik";
 
-// Mock the loaders
 vi.mock("@/lib/afrik/loaders/languageFamilyLoader");
 vi.mock("@/lib/afrik/loaders/peopleLoader");
 vi.mock("@/lib/afrik/loaders/countryLoader");
 vi.mock("@/lib/supabase/admin");
 
-describe("migrateAfrikToDatabase", () => {
-  const mockSupabase = {
-    from: vi.fn(() => mockSupabase),
-    upsert: vi.fn(() => Promise.resolve({ error: null })),
-  };
+const STAGING_URL = "https://ethniafrica-staging.supabase.co";
+// JSON imports retain narrower inferred fields than the evolutionary AFRIK types.
+const familyFixture = afroasiaticFamily as unknown as LanguageFamily;
+const peopleFixture = betePeople as unknown as People;
+const stagingTarget = {
+  target: "staging",
+  activeSupabaseUrl: STAGING_URL,
+  expectedStagingSupabaseUrl: STAGING_URL,
+};
 
+type TableName =
+  | "afrik_language_families"
+  | "afrik_peoples"
+  | "afrik_countries"
+  | "afrik_people_countries";
+
+interface DatabaseRow {
+  id?: string;
+  content?: unknown;
+  people_id?: string;
+  country_id?: string;
+  [key: string]: unknown;
+}
+
+interface UpsertOperation {
+  table: TableName;
+  row: DatabaseRow;
+}
+
+interface SupabaseDoubleOptions {
+  rows?: Partial<Record<TableName, DatabaseRow[]>>;
+  persistUpserts?: boolean;
+}
+
+function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
+  const rows: Record<TableName, DatabaseRow[]> = {
+    afrik_language_families: [...(options.rows?.afrik_language_families ?? [])],
+    afrik_peoples: [...(options.rows?.afrik_peoples ?? [])],
+    afrik_countries: [...(options.rows?.afrik_countries ?? [])],
+    afrik_people_countries: [...(options.rows?.afrik_people_countries ?? [])],
+  };
+  const operations: UpsertOperation[] = [];
+  const persistUpserts = options.persistUpserts ?? true;
+
+  const from = vi.fn((table: TableName) => ({
+    select: vi.fn(async () => ({ data: rows[table], error: null })),
+    upsert: vi.fn(async (row: DatabaseRow) => {
+      operations.push({ table, row });
+
+      if (persistUpserts) {
+        const key =
+          table === "afrik_people_countries"
+            ? `${row.people_id}:${row.country_id}`
+            : row.id;
+        const index = rows[table].findIndex((candidate) => {
+          const candidateKey =
+            table === "afrik_people_countries"
+              ? `${candidate.people_id}:${candidate.country_id}`
+              : candidate.id;
+          return candidateKey === key;
+        });
+
+        if (index === -1) {
+          rows[table].push(row);
+        } else {
+          rows[table][index] = row;
+        }
+      }
+
+      return { error: null };
+    }),
+  }));
+
+  return { client: { from }, operations };
+}
+
+function useSupabaseDouble(options: SupabaseDoubleOptions = {}) {
+  const database = createSupabaseDouble(options);
+  // The generated Supabase fluent type is wider than this focused test double.
+  vi.mocked(createAdminClient).mockReturnValue(
+    database.client as unknown as ReturnType<typeof createAdminClient>
+  );
+  return database;
+}
+
+describe("migrateAfrikToDatabase", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    (createAdminClient as any).mockReturnValue(mockSupabase);
+    vi.mocked(loadAllLanguageFamilies).mockResolvedValue([familyFixture]);
+    vi.mocked(loadAllPeoples).mockResolvedValue([peopleFixture]);
+    vi.mocked(loadAllCountries).mockResolvedValue([coteDIvoire]);
   });
 
-  describe("dry-run mode", () => {
-    it("should validate data without inserting", async () => {
-      const mockFamilies = [
-        {
-          id: "FLG_BANTU",
-          nameFr: "Bantou",
-          nameEn: "Bantu",
-          content: {},
+  it("validates the staging target before constructing the admin client", async () => {
+    await expect(
+      migrateAfrikToDatabase({
+        dryRun: true,
+        writeErrorReport: false,
+        target: {
+          target: "production",
+          activeSupabaseUrl: "https://ethniafrica-production.supabase.co",
+          expectedStagingSupabaseUrl: STAGING_URL,
         },
-      ];
-      const mockPeoples = [
-        {
-          id: "PPL_SHONA",
-          nameMain: "Shona",
-          languageFamilyId: "FLG_BANTU",
-          currentCountries: ["ZWE"],
-          content: {},
-        },
-      ];
-      const mockCountries = [
-        {
-          id: "ZWE",
-          nameFr: "Zimbabwe",
-          content: {},
-        },
-      ];
+      })
+    ).rejects.toThrow('Migration target must be exactly "staging"');
 
-      (loadAllLanguageFamilies as any).mockResolvedValue(mockFamilies);
-      (loadAllPeoples as any).mockResolvedValue(mockPeoples);
-      (loadAllCountries as any).mockResolvedValue(mockCountries);
-
-      const report = await migrateAfrikToDatabase(true);
-
-      expect(report.languageFamilies.total).toBe(1);
-      expect(report.languageFamilies.inserted).toBe(0);
-      expect(report.peoples.total).toBe(1);
-      expect(report.peoples.inserted).toBe(0);
-      expect(report.countries.total).toBe(1);
-      expect(report.countries.inserted).toBe(0);
-      expect(report.relations.total).toBe(1);
-      expect(report.relations.inserted).toBe(0);
-
-      // Should not call upsert in dry-run
-      expect(mockSupabase.upsert).not.toHaveBeenCalled();
-    });
+    expect(createAdminClient).not.toHaveBeenCalled();
   });
 
-  describe("insertion mode", () => {
-    it("should insert language families successfully", async () => {
-      const mockFamilies = [
-        {
-          id: "FLG_BANTU",
-          nameFr: "Bantou",
-          nameEn: "Bantu",
-          content: {},
-        },
-      ];
-
-      (loadAllLanguageFamilies as any).mockResolvedValue(mockFamilies);
-      (loadAllPeoples as any).mockResolvedValue([]);
-      (loadAllCountries as any).mockResolvedValue([]);
-
-      const report = await migrateAfrikToDatabase(false);
-
-      expect(report.languageFamilies.inserted).toBe(1);
-      expect(report.languageFamilies.errors).toHaveLength(0);
-      expect(mockSupabase.upsert).toHaveBeenCalled();
+  it("reports source/database drift in dry-run mode without writing", async () => {
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          { id: afroasiaticFamily.id, content: {} },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [{ id: betePeople.id, content: {} }],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
     });
 
-    it("should handle insertion errors gracefully", async () => {
-      const mockFamilies = [
-        {
-          id: "FLG_BANTU",
-          nameFr: "Bantou",
-          content: {},
-        },
-      ];
-
-      (loadAllLanguageFamilies as any).mockResolvedValue(mockFamilies);
-      (loadAllPeoples as any).mockResolvedValue([]);
-      (loadAllCountries as any).mockResolvedValue([]);
-
-      mockSupabase.upsert.mockResolvedValueOnce({
-        error: { message: "Duplicate key" },
-      });
-
-      const report = await migrateAfrikToDatabase(false);
-
-      expect(report.languageFamilies.inserted).toBe(0);
-      expect(report.languageFamilies.errors.length).toBeGreaterThan(0);
+    const report = await migrateAfrikToDatabase({
+      dryRun: true,
+      writeErrorReport: false,
+      target: stagingTarget,
     });
 
-    it("should insert in correct order (families → peoples → countries → relations)", async () => {
-      const mockFamilies = [{ id: "FLG_BANTU", nameFr: "Bantou", content: {} }];
-      const mockPeoples = [
-        {
-          id: "PPL_SHONA",
-          nameMain: "Shona",
-          languageFamilyId: "FLG_BANTU",
-          content: {},
-        },
-      ];
-      const mockCountries = [{ id: "ZWE", nameFr: "Zimbabwe", content: {} }];
-
-      (loadAllLanguageFamilies as any).mockResolvedValue(mockFamilies);
-      (loadAllPeoples as any).mockResolvedValue(mockPeoples);
-      (loadAllCountries as any).mockResolvedValue(mockCountries);
-
-      await migrateAfrikToDatabase(false);
-
-      // Verify order: families first, then peoples, then countries
-      const calls = mockSupabase.upsert.mock.calls;
-      expect(calls).toBeDefined();
-      expect(calls.length).toBeGreaterThanOrEqual(3);
-
-      const firstCall = calls[0] as any;
-
-      const secondCall = calls[1] as any;
-
-      const thirdCall = calls[2] as any;
-      expect(firstCall[0]?.id).toBe("FLG_BANTU");
-      expect(secondCall[0]?.id).toBe("PPL_SHONA");
-      expect(thirdCall[0]?.id).toBe("ZWE");
+    expect(report.verification.before).toMatchObject({
+      languageFamilies: { missing: [], stale: [afroasiaticFamily.id] },
+      peoples: { missing: [], stale: [betePeople.id] },
+      countries: { missing: [], stale: [coteDIvoire.id] },
+      hasDrift: true,
     });
-
-    it("should insert relations correctly", async () => {
-      const mockPeoples = [
-        {
-          id: "PPL_SHONA",
-          nameMain: "Shona",
-          languageFamilyId: "FLG_BANTU",
-          currentCountries: ["ZWE", "MOZ"],
-          content: {},
-        },
-      ];
-
-      (loadAllLanguageFamilies as any).mockResolvedValue([]);
-      (loadAllPeoples as any).mockResolvedValue(mockPeoples);
-      (loadAllCountries as any).mockResolvedValue([]);
-
-      const report = await migrateAfrikToDatabase(false);
-
-      expect(report.relations.total).toBe(2);
-      expect(report.relations.inserted).toBe(2);
-    });
+    expect(report.verification.after).toBeNull();
+    expect(database.operations).toHaveLength(0);
   });
 
-  describe("error handling", () => {
-    it("should handle missing foreign keys", async () => {
-      const mockPeoples = [
-        {
-          id: "PPL_SHONA",
-          nameMain: "Shona",
-          languageFamilyId: "FLG_NONEXISTENT",
-          content: {},
-        },
-      ];
-
-      (loadAllLanguageFamilies as any).mockResolvedValue([]);
-      (loadAllPeoples as any).mockResolvedValue(mockPeoples);
-      (loadAllCountries as any).mockResolvedValue([]);
-
-      mockSupabase.upsert.mockResolvedValueOnce({
-        error: { message: "Foreign key violation" },
-      });
-
-      const report = await migrateAfrikToDatabase(false);
-
-      expect(report.peoples.errors.length).toBeGreaterThan(0);
+  it("upserts complete source content in hierarchy order and verifies the result", async () => {
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          { id: afroasiaticFamily.id, content: {} },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [{ id: betePeople.id, content: {} }],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
     });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: stagingTarget,
+    });
+
+    expect(report.relations.errors).toEqual([]);
+    expect(report.relations.inserted).toBe(1);
+    expect(database.operations.map(({ table }) => table)).toEqual([
+      "afrik_language_families",
+      "afrik_peoples",
+      "afrik_countries",
+      "afrik_people_countries",
+    ]);
+    expect(database.operations[0].row.content).toEqual(
+      afroasiaticFamily.content
+    );
+    expect(database.operations[1].row.content).toEqual(betePeople.content);
+    expect(database.operations[2].row.content).toEqual(coteDIvoire.content);
+    expect(database.operations[0].row).not.toHaveProperty("created_at");
+    expect(database.operations[1].row).not.toHaveProperty("created_at");
+    expect(database.operations[2].row).not.toHaveProperty("created_at");
+    expect(report.verification.before.hasDrift).toBe(true);
+    expect(report.verification.after).toMatchObject({ hasDrift: false });
+    expect(report.verification.errors).toEqual([]);
+  });
+
+  it("reports residual drift when successful writes do not synchronize content", async () => {
+    useSupabaseDouble({
+      persistUpserts: false,
+      rows: {
+        afrik_language_families: [
+          { id: afroasiaticFamily.id, content: {} },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [{ id: betePeople.id, content: {} }],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: stagingTarget,
+    });
+
+    expect(report.verification.after?.hasDrift).toBe(true);
+    expect(report.verification.errors).toEqual([
+      "Post-sync verification found residual AFRIK source drift",
+    ]);
   });
 });
