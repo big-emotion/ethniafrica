@@ -6,6 +6,7 @@ import {
   getAllAfrikLanguageFamilies,
   getAfrikLanguageFamilyById,
 } from "@/lib/supabase/queries/afrik/languageFamilies";
+import { getAfrikPeoplesByLanguageFamily } from "@/lib/supabase/queries/afrik/peoples";
 import type { LanguageFamily } from "@/types/afrik";
 import type { PaginatedResult } from "./countryService";
 
@@ -29,5 +30,24 @@ export async function getLanguageFamilies(
 export async function getLanguageFamilyById(
   id: string
 ): Promise<LanguageFamily | null> {
-  return await getAfrikLanguageFamilyById(id);
+  const family = await getAfrikLanguageFamilyById(id);
+
+  if (!family) {
+    return null;
+  }
+
+  const peoples = await getAfrikPeoplesByLanguageFamily(id);
+  const associatedPeoples = peoples.map((people) => ({
+    name: people.nameMain,
+    peopleId: people.id,
+  }));
+
+  return {
+    ...family,
+    associatedPeoples,
+    content: {
+      ...family.content,
+      associatedPeoples,
+    },
+  };
 }
