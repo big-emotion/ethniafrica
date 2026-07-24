@@ -236,7 +236,7 @@ export async function handleFlagCreate(
   if (turnstileResult === "rejected") {
     return {
       status: 403,
-      body: errorResponse("UNAUTHORIZED", "Anti-bot verification failed"),
+      body: errorResponse("UNAUTHORIZED", "vérification anti-bot échouée"),
     };
   }
 
@@ -245,7 +245,7 @@ export async function handleFlagCreate(
       status: 503,
       body: errorResponse(
         "UNAVAILABLE",
-        "Anti-bot verification is temporarily unavailable. Please retry later."
+        "vérification anti-bot temporairement indisponible, veuillez réessayer plus tard"
       ),
     };
   }
