@@ -52,6 +52,8 @@ export interface PeopleLanguageData {
   isoCodes: string[];
   dialects: string[];
   vehicularRole?: string;
+  languageFamilyId?: string;
+  languageFamilyName?: string;
 }
 
 export interface PeopleHistoryData {
@@ -176,13 +178,17 @@ export function transformPeopleOrigins(
 }
 
 export function transformPeopleLanguages(
-  languages?: LanguagesSection
+  languages?: LanguagesSection,
+  languageFamilyId?: string,
+  languageFamilyName?: string
 ): PeopleLanguageData {
   return {
     mainLanguage: languages?.mainLanguage,
     isoCodes: languages?.isoCodes ?? [],
     dialects: languages?.dialects ?? [],
     vehicularRole: languages?.vehicularRole,
+    languageFamilyId,
+    languageFamilyName,
   };
 }
 
@@ -296,7 +302,11 @@ export function transformPeopleData(raw: PeopleDetail): PeoplePageData {
   return {
     hero: transformPeopleHero(raw),
     origin: transformPeopleOrigins(raw.origins),
-    language: transformPeopleLanguages(raw.languages),
+    language: transformPeopleLanguages(
+      raw.languages,
+      raw.languageFamilyId,
+      raw.languageFamilyName
+    ),
     history: transformPeopleHistory(raw.historicalRole),
     culture: transformPeopleCulture(raw.culture),
     relatedPeoples: transformPeopleRelatedPeoples(

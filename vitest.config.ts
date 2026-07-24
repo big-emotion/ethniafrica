@@ -6,7 +6,15 @@ export default defineConfig({
     globals: true,
     environment: "happy-dom",
     setupFiles: ["./src/test/setup.ts"],
-    include: ["**/__tests__/**/*.test.{ts,tsx}", "**/*.test.{ts,tsx}"],
+    include: [
+      "**/__tests__/**/*.test.{ts,tsx}",
+      "**/*.test.{ts,tsx}",
+      // The custom ESLint rules under eslint/ are CommonJS, so their
+      // RuleTester suites are .js and fell outside the patterns above —
+      // both had never executed once. That is how `no-bare-people-name`
+      // shipped with a heuristic that flagged 43 UI labels and no names.
+      "eslint/__tests__/**/*.test.js",
+    ],
     // TEA Test Design ASR-11: quarantine known pre-existing failures so the
     // gate cannot mask new regressions. Excluded files are NOT fixed here —
     // they remain in place until explicitly scoped.

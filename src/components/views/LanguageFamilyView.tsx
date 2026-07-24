@@ -13,7 +13,7 @@ import { normalizeString } from "@/lib/normalize";
 import type { LanguageFamilySummary } from "@/types/afrik-frontend";
 import { getAllLanguageFamilies } from "@/lib/afrikLoader";
 import { useListView } from "@/hooks/use-list-view";
-import { AutonymExonymHeading } from "@/components/ui/autonym-exonym-heading";
+import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
 
@@ -101,6 +101,7 @@ export const LanguageFamilyView = ({
     >
       <div className="space-y-2">
         <AutonymExonymHeading
+          variant="compact"
           exonym={family.nameFr}
           code={family.id}
           className="group-hover:[&_h3]:text-primary [&_h3]:transition-colors"

@@ -19,12 +19,28 @@ export function PeopleRelatedPeoplesSection({
     <div className="space-y-[14px]">
       {data.ethnicities.length > 0 && (
         <div>
-          <p className="people-section-label">Groupes ethniques</p>
-          <div className="flex flex-wrap gap-[6px] mt-[4px]">
+          <p className="people-section-label">Groupes associés</p>
+          <div className="flex flex-wrap gap-[8px] mt-[8px]">
             {data.ethnicities.map((e, i) => (
-              <span key={i} className="people-tag">
-                {e}
-              </span>
+              <div
+                key={i}
+                data-ethnicity-card="true"
+                className="px-[10px] py-[6px] rounded-[var(--country-radius-md)] border"
+                style={{
+                  background: "var(--country-earth-bg)",
+                  borderColor: "var(--country-border)",
+                }}
+              >
+                <span
+                  className="text-[13px] font-semibold leading-tight"
+                  style={{
+                    fontFamily: "var(--country-font-body)",
+                    color: "var(--country-text)",
+                  }}
+                >
+                  {e}
+                </span>
+              </div>
             ))}
           </div>
         </div>
