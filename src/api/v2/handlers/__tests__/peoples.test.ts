@@ -7,8 +7,15 @@ vi.mock("../../services/peopleService", () => ({
 
 import { getPeoples, getPeopleById } from "../../services/peopleService";
 import { listPeoplesHandler, getPeopleHandler } from "../peoples";
+import type { People } from "@/types/afrik";
 
-const SHONA = { id: "PPL_SHONA", name: "Shona" } as any;
+const SHONA: People = {
+  id: "PPL_SHONA",
+  nameMain: "Shona",
+  languageFamilyId: "FLG_BANTU",
+  currentCountries: ["ZWE"],
+  content: {},
+};
 
 describe("Peoples Handler", () => {
   beforeEach(() => {
@@ -16,16 +23,22 @@ describe("Peoples Handler", () => {
   });
 
   describe("listPeoplesHandler", () => {
-    it("should return paginated peoples with metadata", async () => {
+    // @req REQ-033
+    it("should forward filters and build metadata from the exact total", async () => {
       vi.mocked(getPeoples).mockResolvedValue({ data: [SHONA], total: 924 });
 
-      const response = await listPeoplesHandler(1, 5);
+      const filters = {
+        search: "shona",
+        initialLetter: "S",
+        languageFamilyId: "FLG_BANTU",
+      };
+      const response = await listPeoplesHandler(2, 5, filters);
 
-      expect(getPeoples).toHaveBeenCalledWith(1, 5);
+      expect(getPeoples).toHaveBeenCalledWith(2, 5, filters);
       expect(response.data).toEqual([SHONA]);
       expect(response.meta).toEqual({
         total: 924,
-        page: 1,
+        page: 2,
         perPage: 5,
         totalPages: 185,
       });
@@ -36,7 +49,7 @@ describe("Peoples Handler", () => {
 
       const response = await listPeoplesHandler();
 
-      expect(getPeoples).toHaveBeenCalledWith(undefined, undefined);
+      expect(getPeoples).toHaveBeenCalledWith(undefined, undefined, {});
       expect(response.data).toEqual([]);
       expect(response.meta?.page).toBe(1);
       expect(response.meta?.perPage).toBe(20);
