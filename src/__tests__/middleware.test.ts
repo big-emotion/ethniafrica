@@ -188,6 +188,34 @@ describe("middleware", () => {
     });
   });
 
+  describe("contributor profile auth", () => {
+    // @req REQ-042
+    it("redirects an unauthenticated visitor to sign in with the profile return path", async () => {
+      const request = new NextRequest("http://localhost:3000/fr/compte/profil");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(307);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/compte/connexion?redirect=%2Ffr%2Fcompte%2Fprofil"
+      );
+    });
+
+    // @req REQ-042
+    it("allows an authenticated contributor to access their profile without a moderator query", async () => {
+      mockGetUser.mockResolvedValue({
+        data: { user: { id: "contributor-123" } },
+        error: null,
+      });
+
+      const request = new NextRequest("http://localhost:3000/fr/compte/profil");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(200);
+      expect(response.headers.get("location")).toBeNull();
+      expect(mockFrom).not.toHaveBeenCalled();
+    });
+  });
+
   describe("language redirect (FR-only)", () => {
     it("redirects /en to /fr with 308 (permanent)", async () => {
       const request = new NextRequest("http://localhost:3000/en");
