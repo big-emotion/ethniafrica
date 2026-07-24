@@ -45,11 +45,27 @@ export interface ListPeopleRevisionsResult {
   next_cursor: number | null;
 }
 
+export type RevisionEntityType = "language_family" | "people" | "country";
+
+export interface FrozenDoctrineReference {
+  slug: string;
+  version: number;
+}
+
+export interface RevisionSnapshot {
+  data: Record<string, unknown>;
+  version: number;
+  published_at: string | null;
+  confidence: number | null;
+  doctrine: FrozenDoctrineReference | null;
+}
+
 export interface PeopleRevisionSnapshot {
   data: Record<string, unknown>;
   version: number;
   published_at: string | null;
   confidence: number | null;
+  doctrine?: FrozenDoctrineReference | null;
 }
 
 function derivePseudonym(
@@ -132,42 +148,92 @@ export async function getLatestEntityRevisionVersion(
   return (data as { version: number }).version;
 }
 
-export async function getPeopleRevisionSnapshot(
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+export async function getRevisionSnapshot(
+  entityType: RevisionEntityType,
   entityId: string,
   version: number
-): Promise<PeopleRevisionSnapshot | null> {
+): Promise<RevisionSnapshot | null> {
   const supabase = createServerClient();
   const { data, error } = await supabase
     .from("revisions")
-    .select("version, snapshot_jsonb, published_at")
-    .eq("entity_type", "people")
+    .select("version, snapshot_jsonb, published_at, doctrine_version_id")
+    .eq("entity_type", entityType)
     .eq("entity_id", entityId)
     .eq("version", version)
     .maybeSingle();
 
   if (error) {
     throw new Error(
-      `Failed to load revision v${version} for ${entityId}: ${error.message}`
+      `Failed to load revision v${version} for ${entityType}/${entityId}: ${error.message}`
     );
   }
 
   if (!data) return null;
 
-  const row = data as {
-    version: number;
-    snapshot_jsonb: Record<string, unknown>;
-    published_at: string | null;
-  };
+  const rawRow: unknown = data;
+  if (
+    !isRecord(rawRow) ||
+    typeof rawRow.version !== "number" ||
+    !isRecord(rawRow.snapshot_jsonb)
+  ) {
+    throw new Error(
+      `Failed to load revision v${version} for ${entityType}/${entityId}: invalid snapshot row`
+    );
+  }
 
   const confidence =
-    typeof row.snapshot_jsonb?.confidence === "number"
-      ? (row.snapshot_jsonb.confidence as number)
+    typeof rawRow.snapshot_jsonb.confidence === "number"
+      ? rawRow.snapshot_jsonb.confidence
       : null;
+  const doctrineVersionId =
+    typeof rawRow.doctrine_version_id === "string"
+      ? rawRow.doctrine_version_id
+      : null;
+  let doctrine: FrozenDoctrineReference | null = null;
+
+  if (doctrineVersionId) {
+    const { data: doctrineData, error: doctrineError } = await supabase
+      .from("editorial_doctrine")
+      .select("slug, version")
+      .eq("id", doctrineVersionId)
+      .maybeSingle();
+
+    if (doctrineError) {
+      throw new Error(
+        `Failed to load doctrine version ${doctrineVersionId}: ${doctrineError.message}`
+      );
+    }
+
+    const rawDoctrine: unknown = doctrineData;
+    if (
+      isRecord(rawDoctrine) &&
+      typeof rawDoctrine.slug === "string" &&
+      typeof rawDoctrine.version === "number"
+    ) {
+      doctrine = {
+        slug: rawDoctrine.slug,
+        version: rawDoctrine.version,
+      };
+    }
+  }
 
   return {
-    data: row.snapshot_jsonb,
-    version: row.version,
-    published_at: row.published_at,
+    data: rawRow.snapshot_jsonb,
+    version: rawRow.version,
+    published_at:
+      typeof rawRow.published_at === "string" ? rawRow.published_at : null,
     confidence,
+    doctrine,
   };
+}
+
+export async function getPeopleRevisionSnapshot(
+  entityId: string,
+  version: number
+): Promise<PeopleRevisionSnapshot | null> {
+  return getRevisionSnapshot("people", entityId, version);
 }
