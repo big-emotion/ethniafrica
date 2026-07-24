@@ -20,7 +20,6 @@ export function assertEuDsn(dsn: string | undefined): void {
       if (process.env.NODE_ENV === "production") {
         throw new Error(message);
       } else {
-        // eslint-disable-next-line no-console
         console.warn(`[sentry] ${message}`);
       }
     }
@@ -146,7 +145,10 @@ export function beforeSend(event: Event, hint?: EventHint): Event | null {
       ...scrubbedEvent.exception,
       values: scrubbedEvent.exception.values.map((exceptionValue) => {
         if (exceptionValue.value) {
-          return { ...exceptionValue, value: scrubString(exceptionValue.value) };
+          return {
+            ...exceptionValue,
+            value: scrubString(exceptionValue.value),
+          };
         }
         return exceptionValue;
       }),

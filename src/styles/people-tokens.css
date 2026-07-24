@@ -1,0 +1,68 @@
+/* ============================================================
+   ETHNIAFRICA — People Fiche Design Tokens & Utility Classes
+   Variante "Carte vivante" — People adaptation
+   ETNI-35
+   ============================================================ */
+
+/* Section typography utilities (reuse --country-* / --afh-* tokens) */
+.people-section-label {
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--country-text-soft);
+  margin-bottom: 4px;
+}
+
+@media (min-width: 768px) {
+  .people-section-label {
+    font-size: 11px;
+  }
+}
+
+.people-section-body {
+  font-size: 13px;
+  /* Reading-surface density: UX-DR2 line-height ≥ 1.6, line-length 65–75 ch */
+  line-height: 1.6;
+  max-width: 72ch;
+  color: var(--country-text);
+}
+
+@media (min-width: 768px) {
+  .people-section-body {
+    font-size: 14px;
+  }
+}
+
+.people-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  background-color: var(--country-card);
+  border: 1px solid var(--country-border);
+  color: var(--country-text);
+}
+
+@media (min-width: 768px) {
+  .people-tag {
+    font-size: 12px;
+  }
+}
+
+/* Section fade-in animation (same keyframes as country) */
+.people-fade-in {
+  animation: countryFadeIn var(--afh-motion-fade, 400ms) ease-out both;
+}
+
+@keyframes countryFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

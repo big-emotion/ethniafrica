@@ -118,7 +118,9 @@ export async function seedAdmin(email: string): Promise<void> {
     console.error(`\n❌ User not found: ${email}`);
     console.error("\n📝 Instructions:");
     console.error("   1. The user must sign up first via the login page");
-    console.error("   2. They can use magic link or OAuth to create their account");
+    console.error(
+      "   2. They can use magic link or OAuth to create their account"
+    );
     console.error("   3. Once registered, run this script again\n");
     throw new Error(`User not found: ${email}`);
   }
@@ -151,7 +153,9 @@ if (require.main === module) {
   if (!email) {
     console.error("❌ Error: No admin email provided\n");
     console.error("Usage:");
-    console.error("  ADMIN_EMAIL=admin@example.com npx tsx scripts/seedAdmin.ts");
+    console.error(
+      "  ADMIN_EMAIL=admin@example.com npx tsx scripts/seedAdmin.ts"
+    );
     console.error("  npx tsx scripts/seedAdmin.ts admin@example.com\n");
     process.exit(1);
   }

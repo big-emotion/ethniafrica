@@ -14,12 +14,13 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Search } from "lucide-react";
+import { useSheetHistory } from "@/hooks/use-sheet-history";
 
 interface MobileMenuProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   language: Language;
-  onLanguageChange: (lang: Language) => void;
+  onLanguageChange?: (lang: Language) => void;
   onSearchClick?: () => void;
 }
 
@@ -27,21 +28,19 @@ export const MobileMenu = ({
   open,
   onOpenChange,
   language,
-  onLanguageChange: _onLanguageChange,
   onSearchClick,
 }: MobileMenuProps) => {
   const t = getTranslation(language);
   const pathname = usePathname();
 
-  // AFRIK v2 routes
+  useSheetHistory({ open, onOpenChange });
+
   const familiesRoute = getLocalizedRoute(language, "families");
   const peoplesRoute = getLocalizedRoute(language, "peoples");
   const countriesRoute = getLocalizedRoute(language, "countries");
 
   const currentPage = getPageFromRoute(pathname);
-  const isActive = (pageType: PageType) => {
-    return currentPage === pageType;
-  };
+  const isActive = (pageType: PageType) => currentPage === pageType;
 
   return (
     <Sheet open={open} onOpenChange={onOpenChange}>
@@ -50,7 +49,6 @@ export const MobileMenu = ({
           <SheetTitle>{t.title}</SheetTitle>
         </SheetHeader>
         <div className="flex flex-col gap-4 mt-6">
-          {/* Navigation links */}
           <div className="flex flex-col gap-2">
             <Link href={`/${language}`} onClick={() => onOpenChange(false)}>
               <Button
@@ -92,7 +90,6 @@ export const MobileMenu = ({
 
           <Separator />
 
-          {/* Search CTA */}
           {onSearchClick && (
             <Button
               variant="ghost"
@@ -109,36 +106,26 @@ export const MobileMenu = ({
 
           <Separator />
 
-          {/* About link */}
           <Link href={`/${language}/about`} onClick={() => onOpenChange(false)}>
             <Button variant="ghost" className="w-full justify-start">
               {t.whyThisSite}
             </Button>
           </Link>
 
-          {/* Contribute link */}
-          <Button
-            variant="ghost"
-            className="w-full justify-start"
-            onClick={() => {
-              onOpenChange(false);
-              window.location.href = `/${language}/contribute`;
-            }}
+          <Link
+            href={`/${language}/doctrine`}
+            onClick={() => onOpenChange(false)}
           >
-            Contribuer
-          </Button>
+            <Button variant="ghost" className="w-full justify-start">
+              Doctrine
+            </Button>
+          </Link>
 
-          {/* Report Error link */}
-          <Button
-            variant="ghost"
-            className="w-full justify-start"
-            onClick={() => {
-              onOpenChange(false);
-              window.location.href = `/${language}/report-error`;
-            }}
-          >
-            Signaler une erreur
-          </Button>
+          <Link href="/docs/api/v2" onClick={() => onOpenChange(false)}>
+            <Button variant="ghost" className="w-full justify-start">
+              API
+            </Button>
+          </Link>
         </div>
       </SheetContent>
     </Sheet>

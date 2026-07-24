@@ -1,0 +1,21 @@
+{
+  "cloudId": "75eb33f5-5dd0-4328-b0e6-8bb3f4e0af91",
+  "siteUrl": "https://big-emotion.atlassian.net",
+  "spaceKey": "ETHNIAFRIC",
+  "spaceId": "174948357",
+  "engineeringRootPageId": "174948648",
+  "engineeringTreePageId": "174948648",
+  "requirementsPageId": null,
+  "decisionsPageId": null,
+  "architecturePageId": null,
+  "obsoletePageId": null,
+  "jiraProjectKey": "ETNI",
+  "jiraProjectId": "10134",
+  "jiraIssueTypeIds": {
+    "Epic": "10247",
+    "Story": "10249",
+    "Task": "10246",
+    "Bug": "10250",
+    "Sub-task": "10248"
+  }
+}

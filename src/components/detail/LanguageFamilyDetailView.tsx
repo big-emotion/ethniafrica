@@ -25,6 +25,7 @@ import type {
 } from "@/types/afrik-frontend";
 import { getLanguageFamily } from "@/lib/afrikLoader";
 import { getLocalizedRoute } from "@/lib/routing";
+import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { hasActiveSourceFlag } from "@/lib/flags-client";
@@ -136,9 +137,15 @@ export const LanguageFamilyDetailView = ({
   const tabLabels = getTabLabels();
   const displayName = family.nameFr;
 
+  const breadcrumbs = [
+    { label: "Familles", href: getLocalizedRoute(language, "families") },
+    { label: displayName },
+  ];
+
   return (
     <ScrollArea className="h-full">
       <div className="p-6 space-y-6">
+        <AfrikBreadcrumbs items={breadcrumbs} />
         {/* Header */}
         <div className="space-y-2">
           <div className="flex flex-wrap items-center gap-3">
@@ -293,27 +300,29 @@ export const LanguageFamilyDetailView = ({
                   <>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                       {family.associatedPeoples.map(
-                        (people: PeopleReference, idx) => (
-                          <Badge
-                            key={idx}
-                            variant="secondary"
-                            className={`justify-start ${
-                              people.peopleId && onPeopleClick
-                                ? "cursor-pointer hover:bg-primary hover:text-primary-foreground"
-                                : ""
-                            }`}
-                            onClick={() => {
-                              if (people.peopleId && onPeopleClick) {
-                                onPeopleClick(people.peopleId);
-                              }
-                            }}
-                          >
-                            {people.name}
-                            {people.peopleId && onPeopleClick && (
-                              <ExternalLink className="h-3 w-3 ml-1" />
-                            )}
-                          </Badge>
-                        )
+                        (people: PeopleReference, idx) =>
+                          people.peopleId ? (
+                            <Link
+                              key={idx}
+                              href={`${getLocalizedRoute(language, "peoples")}/${people.peopleId}`}
+                            >
+                              <Badge
+                                variant="secondary"
+                                className="justify-start cursor-pointer hover:bg-primary hover:text-primary-foreground w-full"
+                              >
+                                {people.name}
+                                <ExternalLink className="h-3 w-3 ml-1" />
+                              </Badge>
+                            </Link>
+                          ) : (
+                            <Badge
+                              key={idx}
+                              variant="secondary"
+                              className="justify-start"
+                            >
+                              {people.name}
+                            </Badge>
+                          )
                       )}
                     </div>
                     <div className="pt-2 border-t">

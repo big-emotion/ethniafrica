@@ -8,11 +8,11 @@
 
 ## Contacts & Escalation
 
-| Role | Contact | When to escalate |
-|------|---------|-----------------|
-| Platform lead | @platform-lead (Slack #ops-alerts) | Immediately on P1 data loss |
+| Role             | Contact                                                              | When to escalate                         |
+| ---------------- | -------------------------------------------------------------------- | ---------------------------------------- |
+| Platform lead    | @platform-lead (Slack #ops-alerts)                                   | Immediately on P1 data loss              |
 | Supabase support | support@supabase.io / [support portal](https://supabase.com/support) | If CLI restore fails or PITR unavailable |
-| On-call engineer | PagerDuty rotation | If platform lead unreachable > 15 min |
+| On-call engineer | PagerDuty rotation                                                   | If platform lead unreachable > 15 min    |
 
 ---
 
@@ -126,9 +126,9 @@ A GitHub Actions workflow (`.github/workflows/backup-drill-reminder.yml`) opens 
 
 ## Timelines
 
-| Phase | Target |
-|-------|--------|
-| Incident declared → restore started | ≤ 30 min |
-| Restore started → validation complete | ≤ 3 h 30 min |
-| **Total RTO** | **≤ 4 hours** |
-| **RPO (max data loss)** | **≤ 24 hours** |
+| Phase                                 | Target         |
+| ------------------------------------- | -------------- |
+| Incident declared → restore started   | ≤ 30 min       |
+| Restore started → validation complete | ≤ 3 h 30 min   |
+| **Total RTO**                         | **≤ 4 hours**  |
+| **RPO (max data loss)**               | **≤ 24 hours** |

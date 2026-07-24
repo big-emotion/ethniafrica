@@ -9,17 +9,17 @@
 
 ## Summary
 
-| Item | Value |
-|------|-------|
-| Backup source | Most recent daily logical backup (2025-07-13) |
-| Recovery method | Logical restore via pg_restore |
-| Throwaway project | `restore-drill-2025-07-14` (deleted after drill) |
-| Validation script | `scripts/validateAfrikData.ts` |
-| Total wall-clock time | ~45 minutes |
-| RTO target | ≤ 4 hours |
-| RPO target | ≤ 24 hours |
-| RTO met | ✅ Yes |
-| RPO met | ✅ Yes |
+| Item                  | Value                                            |
+| --------------------- | ------------------------------------------------ |
+| Backup source         | Most recent daily logical backup (2025-07-13)    |
+| Recovery method       | Logical restore via pg_restore                   |
+| Throwaway project     | `restore-drill-2025-07-14` (deleted after drill) |
+| Validation script     | `scripts/validateAfrikData.ts`                   |
+| Total wall-clock time | ~45 minutes                                      |
+| RTO target            | ≤ 4 hours                                        |
+| RPO target            | ≤ 24 hours                                       |
+| RTO met               | ✅ Yes                                           |
+| RPO met               | ✅ Yes                                           |
 
 ---
 
@@ -101,14 +101,14 @@ supabase projects delete "<throwaway-ref>"
 
 ## Timeline
 
-| Step | Start | End | Duration |
-|------|-------|-----|----------|
-| Throwaway project created | 09:00 UTC | 09:03 UTC | 3 min |
-| Backup downloaded | 09:03 UTC | 09:08 UTC | 5 min |
-| pg_restore | 09:08 UTC | 09:38 UTC | 30 min |
-| Validation script | 09:38 UTC | 09:44 UTC | 6 min |
-| Cleanup | 09:44 UTC | 09:45 UTC | 1 min |
-| **Total** | **09:00 UTC** | **09:45 UTC** | **~45 min** |
+| Step                      | Start         | End           | Duration    |
+| ------------------------- | ------------- | ------------- | ----------- |
+| Throwaway project created | 09:00 UTC     | 09:03 UTC     | 3 min       |
+| Backup downloaded         | 09:03 UTC     | 09:08 UTC     | 5 min       |
+| pg_restore                | 09:08 UTC     | 09:38 UTC     | 30 min      |
+| Validation script         | 09:38 UTC     | 09:44 UTC     | 6 min       |
+| Cleanup                   | 09:44 UTC     | 09:45 UTC     | 1 min       |
+| **Total**                 | **09:00 UTC** | **09:45 UTC** | **~45 min** |
 
 ---
 

@@ -1,5 +1,6 @@
 import { NextRequest } from "next/server";
 import { createServerClient } from "@/lib/supabase/server";
+import { createServerSupabaseClient } from "@/lib/supabase/auth-server";
 import { contributionSchema } from "@/lib/validations/contribution";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
@@ -44,6 +45,23 @@ import { logger } from "@/lib/api/logger";
  */
 export async function POST(request: NextRequest) {
   try {
+    // Email verification gate: authenticated contributors must have a verified email
+    const authClient = await createServerSupabaseClient();
+    const {
+      data: { user },
+    } = await authClient.auth.getUser();
+
+    if (user && !user.email_confirmed_at) {
+      return jsonWithCors(
+        {
+          error: "UNAUTHORIZED",
+          message:
+            "Email non vérifié — cliquez sur le lien dans votre boîte mail",
+        },
+        { status: 403 }
+      );
+    }
+
     const body = await request.json();
 
     // Honeypot check (anti-spam)

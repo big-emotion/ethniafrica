@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Language } from "@/types/shared";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AlertTriangle } from "lucide-react";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import { getCountry } from "@/lib/afrikLoader";
 import { transformCountryData } from "@/lib/countryDataTransformer";
+import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { hasActiveSourceFlag } from "@/lib/flags-client";
 import {
   CountryHero,
@@ -33,6 +35,10 @@ export const CountryDetailViewV2 = ({
   language,
   onBack,
 }: CountryDetailViewV2Props) => {
+  const searchParams = useSearchParams();
+  const fromPeopleName = searchParams.get("fromPeopleName");
+  const fromPeopleId = searchParams.get("fromPeopleId");
+
   const [country, setCountry] = useState<CountryDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -117,6 +123,19 @@ export const CountryDetailViewV2 = ({
     return "Retour";
   };
 
+  const breadcrumbs = [
+    ...(fromPeopleId
+      ? [
+          { label: "Peuples", href: "/fr/peuples" },
+          {
+            label: fromPeopleName ?? fromPeopleId,
+            href: `/fr/peuples/${fromPeopleId}`,
+          },
+        ]
+      : [{ label: "Pays", href: "/fr/pays" }]),
+    { label: country.nameFr },
+  ];
+
   return (
     <div
       className="w-full pb-3 md:pb-4 xl:pb-5"
@@ -131,6 +150,9 @@ export const CountryDetailViewV2 = ({
         onBack={onBack}
         backLabel={getBackLabel()}
       />
+
+      {/* Breadcrumbs — below hero */}
+      <AfrikBreadcrumbs items={breadcrumbs} />
 
       {/* Content area */}
       <div className="px-3 md:px-4 xl:px-5 space-y-[10px] md:space-y-[14px] xl:space-y-4">

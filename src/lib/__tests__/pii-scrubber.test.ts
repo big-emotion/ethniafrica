@@ -54,8 +54,7 @@ describe("pii-scrubber", () => {
 
     it("should replace multiple emails in a string", () => {
       const input = "Contact user@test.com or admin@domain.org for help";
-      const expected =
-        "Contact [EMAIL_REDACTED] or [EMAIL_REDACTED] for help";
+      const expected = "Contact [EMAIL_REDACTED] or [EMAIL_REDACTED] for help";
       expect(scrubEmail(input)).toBe(expected);
     });
 

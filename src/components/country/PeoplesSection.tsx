@@ -1,4 +1,6 @@
+import Link from "next/link";
 import type { PeoplesData, PeopleRow } from "@/lib/countryDataTransformer";
+import { AutonymExonymHeading } from "./AutonymExonymHeading";
 
 interface PeoplesSectionProps {
   data: PeoplesData;
@@ -104,18 +106,27 @@ function PeopleRowItem({ row, isLast }: { row: PeopleRow; isLast: boolean }) {
       <div className="flex-1 min-w-0">
         {/* Names row */}
         <div className="flex items-baseline gap-[6px] flex-wrap">
-          <span
-            className="text-[14px] md:text-[15px] xl:text-[16px] font-bold leading-snug"
-            style={{ fontFamily: "var(--country-font-body)" }}
-          >
-            {row.groupedNames ? row.groupedNames.join(" · ") : row.name}
-          </span>
-          {!row.groupedNames && row.endonym && row.endonym !== row.name && (
-            <span
-              className="text-[11px] xl:text-[12px] italic"
-              style={{ color: "var(--country-text-soft)" }}
+          {!row.groupedNames && row.endonym && row.endonym !== row.name ? (
+            <AutonymExonymHeading
+              endonym={row.endonym}
+              exonym={row.name}
+              lang={row.endonymLang}
+              href={row.peopleId ? `/fr/peuples/${row.peopleId}` : undefined}
+            />
+          ) : row.peopleId && !row.groupedNames ? (
+            <Link
+              href={`/fr/peuples/${row.peopleId}`}
+              className="text-[14px] md:text-[15px] xl:text-[16px] font-bold leading-snug hover:underline"
+              style={{ fontFamily: "var(--country-font-body)" }}
             >
-              {row.endonym}
+              {row.name}
+            </Link>
+          ) : (
+            <span
+              className="text-[14px] md:text-[15px] xl:text-[16px] font-bold leading-snug"
+              style={{ fontFamily: "var(--country-font-body)" }}
+            >
+              {row.groupedNames ? row.groupedNames.join(" · ") : row.name}
             </span>
           )}
         </div>

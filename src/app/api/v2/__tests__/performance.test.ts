@@ -10,6 +10,7 @@ vi.mock("@/api/v2/handlers/countries", () => ({
 }));
 
 vi.mock("@/api/v2/handlers/search", () => ({
+  ftsSearchHandler: vi.fn(),
   searchHandler: vi.fn(),
 }));
 
@@ -22,11 +23,15 @@ vi.mock("@/lib/api/cors", () => ({
   corsOptionsResponse: vi.fn(() => new Response(null, { status: 204 })),
 }));
 
+vi.mock("@/lib/api/rate-limit", () => ({
+  applyRateLimit: vi.fn().mockResolvedValue(null),
+}));
+
 import {
   listCountriesHandler,
   getCountryHandler,
 } from "@/api/v2/handlers/countries";
-import { searchHandler } from "@/api/v2/handlers/search";
+import { ftsSearchHandler } from "@/api/v2/handlers/search";
 
 describe("API v2 - Performance Tests", () => {
   beforeEach(() => {
@@ -44,7 +49,9 @@ describe("API v2 - Performance Tests", () => {
         meta: { total: 54, page: 1, perPage: 20, totalPages: 3 },
       };
 
-      (listCountriesHandler as any).mockResolvedValue(mockResponse);
+      (listCountriesHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockResponse
+      );
 
       const start = Date.now();
       const request = new NextRequest(
@@ -64,7 +71,9 @@ describe("API v2 - Performance Tests", () => {
         content: {},
       };
 
-      (getCountryHandler as any).mockResolvedValue(mockCountry);
+      (getCountryHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+        mockCountry
+      );
 
       const start = Date.now();
       const request = new NextRequest("http://localhost/api/v2/countries/ZWE");
@@ -78,18 +87,30 @@ describe("API v2 - Performance Tests", () => {
     });
 
     it("should respond to search in < 1s for large datasets", async () => {
-      const mockResults = Array.from({ length: 100 }, (_, i) => ({
-        type: "country" as const,
+      const countries = Array.from({ length: 50 }, (_, i) => ({
         id: `COU${i}`,
-        data: { id: `COU${i}`, nameFr: `Country ${i}`, content: {} },
+        nameFr: `Country ${i}`,
+        content: {},
+      }));
+      const peoples = Array.from({ length: 50 }, (_, i) => ({
+        id: `PPL_TEST${i}`,
+        nameMain: `People ${i}`,
+        languageFamilyId: "FLG_TEST",
+        currentCountries: [],
+        content: {},
       }));
 
-      (searchHandler as any).mockResolvedValue(mockResults);
+      (ftsSearchHandler as ReturnType<typeof vi.fn>).mockResolvedValue({
+        data: { peoples, countries, total: 100 },
+        meta: {
+          license: "CC-BY-SA-4.0",
+          attribution: "Africa History — africahistory.org",
+        },
+        errors: [],
+      });
 
       const start = Date.now();
-      const request = new NextRequest(
-        "http://localhost/api/v2/search?query=test"
-      );
+      const request = new NextRequest("http://localhost/api/v2/search?q=test");
       const response = await GET_SEARCH(request);
       const duration = Date.now() - start;
 

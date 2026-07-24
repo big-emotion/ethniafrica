@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import Link from 'next/link';
-import { useConsent } from '@/hooks/use-consent';
-import { Button } from '@/components/ui/button';
-import { Switch } from '@/components/ui/switch';
-import { cn } from '@/lib/utils';
-import type { ConsentPreferences } from '@/types/consent';
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import Link from "next/link";
+import { useConsent } from "@/hooks/use-consent";
+import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { cn } from "@/lib/utils";
+import type { ConsentPreferences } from "@/types/consent";
 
-const BANNER_TITLE_ID = 'consent-banner-title';
+const BANNER_TITLE_ID = "consent-banner-title";
 
 export function ConsentBanner() {
   const { showBanner, acceptAll, rejectAll, updatePreferences, consentState } =
@@ -27,7 +27,12 @@ export function ConsentBanner() {
       analytics: localAnalytics ?? consentState.preferences.analytics,
       functional: localFunctional ?? consentState.preferences.functional,
     }),
-    [localAnalytics, localFunctional, consentState.preferences.analytics, consentState.preferences.functional]
+    [
+      localAnalytics,
+      localFunctional,
+      consentState.preferences.analytics,
+      consentState.preferences.functional,
+    ]
   );
 
   // Remember the element that had focus before the banner appeared so we can
@@ -47,7 +52,7 @@ export function ConsentBanner() {
     const banner = bannerRef.current;
 
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
         rejectAll();
         // Restore focus to the element that was focused before the banner opened.
         if (
@@ -60,10 +65,11 @@ export function ConsentBanner() {
       }
 
       // Focus trap
-      if (event.key === 'Tab' && bannerRef.current) {
-        const focusableElements = bannerRef.current.querySelectorAll<HTMLElement>(
-          'button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])'
-        );
+      if (event.key === "Tab" && bannerRef.current) {
+        const focusableElements =
+          bannerRef.current.querySelectorAll<HTMLElement>(
+            'button:not([disabled]), a[href], [tabindex]:not([tabindex="-1"])'
+          );
         const firstElement = focusableElements[0];
         const lastElement = focusableElements[focusableElements.length - 1];
 
@@ -79,8 +85,8 @@ export function ConsentBanner() {
 
     // Attach to the banner element so the listener fires on the same node the
     // test fires events on, and is automatically scoped to the dialog.
-    banner.addEventListener('keydown', handleKeyDown);
-    return () => banner.removeEventListener('keydown', handleKeyDown);
+    banner.addEventListener("keydown", handleKeyDown);
+    return () => banner.removeEventListener("keydown", handleKeyDown);
   }, [showBanner, rejectAll]);
 
   const handleSavePreferences = useCallback(() => {
@@ -106,9 +112,9 @@ export function ConsentBanner() {
       aria-labelledby={BANNER_TITLE_ID}
       aria-modal="false"
       className={cn(
-        'fixed bottom-0 left-0 right-0 z-50',
-        'bg-background border-t border-border shadow-lg',
-        'p-4 md:p-6'
+        "fixed bottom-0 left-0 right-0 z-50",
+        "bg-background border-t border-border shadow-lg",
+        "p-4 md:p-6"
       )}
     >
       <div className="mx-auto max-w-4xl">

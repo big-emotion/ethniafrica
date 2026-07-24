@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   createContext,
@@ -7,14 +7,14 @@ import {
   useEffect,
   useCallback,
   type ReactNode,
-} from 'react';
-import type { ConsentPreferences, ConsentState } from '@/types/consent';
+} from "react";
+import type { ConsentPreferences, ConsentState } from "@/types/consent";
 import {
   DEFAULT_PREFERENCES,
   getStoredConsent,
   saveConsent,
   isConsentExpired,
-} from '@/lib/consent';
+} from "@/lib/consent";
 
 interface ConsentContextValue {
   consentState: ConsentState;
@@ -34,7 +34,7 @@ const DEFAULT_STATE: ConsentState = {
 };
 
 function getInitialConsentState(): ConsentState {
-  if (typeof window === 'undefined') {
+  if (typeof window === "undefined") {
     return DEFAULT_STATE;
   }
 
@@ -52,7 +52,7 @@ function getInitialConsentState(): ConsentState {
 }
 
 function getInitialShowBanner(): boolean {
-  if (typeof window === 'undefined') {
+  if (typeof window === "undefined") {
     return false;
   }
 
@@ -151,7 +151,7 @@ export function useConsent(): ConsentContextValue {
   const context = useContext(ConsentContext);
 
   if (!context) {
-    throw new Error('useConsent must be used within a ConsentProvider');
+    throw new Error("useConsent must be used within a ConsentProvider");
   }
 
   return context;

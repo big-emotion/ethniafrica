@@ -7,25 +7,35 @@ import { Meta } from "@storybook/blocks";
 4 px base, T-shirt scale plus numeric multipliers. Defined in
 `src/styles/tokens/space.css`.
 
-<div style={{ display: "flex", flexDirection: "column", gap: "0.5rem", margin: "1.5rem 0" }}>
+<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    gap: "0.5rem",
+    margin: "1.5rem 0",
+  }}
+>
   {[
-    ["--afh-space-xs",   "4px"],
-    ["--afh-space-sm",   "6px"],
-    ["--afh-space-md",   "8px"],
+    ["--afh-space-xs", "4px"],
+    ["--afh-space-sm", "6px"],
+    ["--afh-space-md", "8px"],
     ["--afh-space-base", "10px"],
-    ["--afh-space-lg",   "12px"],
-    ["--afh-space-xl",   "14px"],
-    ["--afh-space-2xl",  "16px"],
-    ["--afh-space-3xl",  "18px"],
-    ["--afh-space-4xl",  "20px"],
-    ["--afh-space-5xl",  "24px"],
-    ["--afh-space-6xl",  "32px"],
-    ["--afh-space-7xl",  "40px"],
-    ["--afh-space-8xl",  "48px"],
-    ["--afh-space-9xl",  "64px"],
+    ["--afh-space-lg", "12px"],
+    ["--afh-space-xl", "14px"],
+    ["--afh-space-2xl", "16px"],
+    ["--afh-space-3xl", "18px"],
+    ["--afh-space-4xl", "20px"],
+    ["--afh-space-5xl", "24px"],
+    ["--afh-space-6xl", "32px"],
+    ["--afh-space-7xl", "40px"],
+    ["--afh-space-8xl", "48px"],
+    ["--afh-space-9xl", "64px"],
     ["--afh-space-10xl", "96px"],
   ].map(([token, value]) => (
-    <div key={token} style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+    <div
+      key={token}
+      style={{ display: "flex", alignItems: "center", gap: "1rem" }}
+    >
       <code style={{ minWidth: "180px" }}>{token}</code>
       <div
         style={{
@@ -35,7 +45,9 @@ import { Meta } from "@storybook/blocks";
           borderRadius: "2px",
         }}
       />
-      <span style={{ fontSize: "12px", color: "var(--afh-text-soft)" }}>{value}</span>
+      <span style={{ fontSize: "12px", color: "var(--afh-text-soft)" }}>
+        {value}
+      </span>
     </div>
   ))}
 </div>
@@ -44,9 +56,9 @@ import { Meta } from "@storybook/blocks";
 
 Mobile-first containers scale up at tablet (≥ 768 px) and desktop (≥ 1200 px).
 
-| Token | Mobile | Tablet | Desktop |
-| --- | --- | --- | --- |
-| `--afh-page-padding` | 12 px | 24 px | 32 px |
-| `--afh-card-padding` | 18 px | 24 px | 32 px |
-| `--afh-section-gap` | 24 px | 32 px | 48 px |
-| `--afh-container-max` | 430 px | 720 px | 800 px |
+| Token                 | Mobile | Tablet | Desktop |
+| --------------------- | ------ | ------ | ------- |
+| `--afh-page-padding`  | 12 px  | 24 px  | 32 px   |
+| `--afh-card-padding`  | 18 px  | 24 px  | 32 px   |
+| `--afh-section-gap`   | 24 px  | 32 px  | 48 px   |
+| `--afh-container-max` | 430 px | 720 px | 800 px  |

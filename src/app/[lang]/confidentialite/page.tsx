@@ -33,7 +33,8 @@ export default function PrivacyPolicyPage() {
 
       dataCollected: {
         title: "2. Données collectées",
-        intro: "Nous collectons uniquement les données strictement nécessaires au fonctionnement du site :",
+        intro:
+          "Nous collectons uniquement les données strictement nécessaires au fonctionnement du site :",
         essential: {
           title: "Cookies essentiels",
           items: [
@@ -299,10 +300,7 @@ export default function PrivacyPolicyPage() {
 
           <div className="space-y-4">
             {t.processors.items.map((processor, idx) => (
-              <div
-                key={idx}
-                className="border rounded-lg p-4 bg-muted/30"
-              >
+              <div key={idx} className="border rounded-lg p-4 bg-muted/30">
                 <h3 className="font-semibold text-lg">{processor.name}</h3>
                 <p className="text-sm text-muted-foreground">
                   {processor.purpose}

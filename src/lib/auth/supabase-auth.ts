@@ -4,7 +4,12 @@
 import type { User } from "@supabase/supabase-js";
 import { createServerSupabaseClient } from "../supabase/auth-server";
 
-export type UserRole = "reader" | "contributor" | "moderator" | "admin" | "advisor";
+export type UserRole =
+  | "reader"
+  | "contributor"
+  | "moderator"
+  | "admin"
+  | "advisor";
 
 export interface UserRoleRecord {
   user_id: string;
@@ -56,7 +61,10 @@ export async function getUserRoles(userId: string): Promise<UserRole[]> {
  * @param role - The role to check for
  * @returns true if the user has the role, false otherwise
  */
-export async function hasRole(userId: string, role: UserRole): Promise<boolean> {
+export async function hasRole(
+  userId: string,
+  role: UserRole
+): Promise<boolean> {
   const roles = await getUserRoles(userId);
   return roles.includes(role);
 }

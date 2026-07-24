@@ -14,7 +14,15 @@ import { execSync } from "child_process";
 import { resolve } from "path";
 
 // HTTP methods to check for endpoints
-const HTTP_METHODS = ["get", "post", "put", "patch", "delete", "head", "options"];
+const HTTP_METHODS = [
+  "get",
+  "post",
+  "put",
+  "patch",
+  "delete",
+  "head",
+  "options",
+];
 
 interface OpenAPISpec {
   openapi?: string;
@@ -52,7 +60,9 @@ export function compareSchemas(
 
   // Check for type changes
   if (baseline.type && current.type && baseline.type !== current.type) {
-    changes.push(`Type changed at '${path}': ${baseline.type} → ${current.type}`);
+    changes.push(
+      `Type changed at '${path}': ${baseline.type} → ${current.type}`
+    );
   }
 
   // Check for removed properties in objects
@@ -77,7 +87,9 @@ export function compareSchemas(
 
   // Check for narrowed enums
   if (baseline.enum && current.enum) {
-    const removedValues = baseline.enum.filter((v) => !current.enum!.includes(v));
+    const removedValues = baseline.enum.filter(
+      (v) => !current.enum!.includes(v)
+    );
     if (removedValues.length > 0) {
       changes.push(
         `Narrowed enum in schema '${path}': removed values [${removedValues.join(", ")}]`
@@ -87,7 +99,11 @@ export function compareSchemas(
 
   // Check array items
   if (baseline.items) {
-    const itemChanges = compareSchemas(baseline.items, current.items, `${path}[items]`);
+    const itemChanges = compareSchemas(
+      baseline.items,
+      current.items,
+      `${path}[items]`
+    );
     changes.push(...itemChanges);
   }
 
@@ -110,7 +126,10 @@ export function compareSchemas(
 /**
  * Find all breaking changes between baseline and current OpenAPI specs.
  */
-export function findBreakingChanges(baseline: OpenAPISpec, current: OpenAPISpec): string[] {
+export function findBreakingChanges(
+  baseline: OpenAPISpec,
+  current: OpenAPISpec
+): string[] {
   const changes: string[] = [];
 
   // Check for removed endpoints
@@ -175,7 +194,9 @@ function hasOverride(): boolean {
 
   // Check git commit message
   try {
-    const commitMessage = execSync("git log -1 --pretty=%B", { encoding: "utf-8" });
+    const commitMessage = execSync("git log -1 --pretty=%B", {
+      encoding: "utf-8",
+    });
     if (commitMessage.includes("api-breaking: true")) {
       return true;
     }
@@ -192,19 +213,27 @@ function hasOverride(): boolean {
 function fetchBaselineFromMain(): OpenAPISpec | null {
   try {
     // Try to get the spec file from main branch
-    const specContent = execSync("git show main:openapi-spec.json 2>/dev/null", {
-      encoding: "utf-8",
-    });
+    const specContent = execSync(
+      "git show main:openapi-spec.json 2>/dev/null",
+      {
+        encoding: "utf-8",
+      }
+    );
     return JSON.parse(specContent);
   } catch {
     // Try origin/main if local main doesn't exist
     try {
-      const specContent = execSync("git show origin/main:openapi-spec.json 2>/dev/null", {
-        encoding: "utf-8",
-      });
+      const specContent = execSync(
+        "git show origin/main:openapi-spec.json 2>/dev/null",
+        {
+          encoding: "utf-8",
+        }
+      );
       return JSON.parse(specContent);
     } catch {
-      console.log("⚠️  Could not fetch baseline from main branch. Skipping diff.");
+      console.log(
+        "⚠️  Could not fetch baseline from main branch. Skipping diff."
+      );
       return null;
     }
   }
@@ -234,7 +263,9 @@ async function main(): Promise<void> {
   }
 
   if (!baseline) {
-    console.log("✅ No baseline available for comparison. Exiting successfully.");
+    console.log(
+      "✅ No baseline available for comparison. Exiting successfully."
+    );
     process.exit(0);
   }
 
@@ -256,7 +287,9 @@ async function main(): Promise<void> {
   console.log();
 
   if (hasOverride()) {
-    console.log("ℹ️  Override flag detected (api-breaking: true). Allowing breaking changes.");
+    console.log(
+      "ℹ️  Override flag detected (api-breaking: true). Allowing breaking changes."
+    );
     process.exit(0);
   }
 

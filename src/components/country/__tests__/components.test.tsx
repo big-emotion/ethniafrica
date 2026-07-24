@@ -53,15 +53,19 @@ describe("CountryHero", () => {
     expect(screen.getByText("BFA")).toBeTruthy();
   });
 
+  // The quote is rendered inside the guillemets alongside the highlight span,
+  // so it is never a text node of its own — getByText, which matches against a
+  // single element's whole text, cannot see it. Assert on the rendered text as
+  // a reader perceives it instead.
   it("renders meaning quote when present", () => {
-    render(<CountryHero data={baseHero} />);
-    expect(screen.getByText("patrie des hommes intègres")).toBeTruthy();
+    const { container } = render(<CountryHero data={baseHero} />);
+    expect(container.textContent).toContain("patrie des hommes intègres");
   });
 
   it("does not render meaning block when meaningQuote is absent", () => {
     const heroNoMeaning: HeroData = { ...baseHero, meaningQuote: undefined };
-    render(<CountryHero data={heroNoMeaning} />);
-    expect(screen.queryByText("patrie des hommes intègres")).toBeNull();
+    const { container } = render(<CountryHero data={heroNoMeaning} />);
+    expect(container.textContent).not.toContain("patrie des hommes intègres");
   });
 });
 
@@ -318,6 +322,66 @@ describe("PeoplesSection", () => {
     };
     render(<PeoplesSection data={data} />);
     expect(screen.getByText("22M")).toBeTruthy();
+  });
+
+  // ETNI-382: endonym primacy (UX-DR49 rule 1) — the endonym must lead the
+  // exonym visually and carry a lang attribute for correct pronunciation.
+  it("gives the endonym typographic precedence over the exonym and a lang attribute", () => {
+    const data: PeoplesData = {
+      totalPopulation: 22000000,
+      totalPopulationFormatted: "22M",
+      peopleCount: 1,
+      rows: [
+        {
+          name: "Yoruba",
+          endonym: "Yorùbá",
+          endonymLang: "yor",
+          percentage: 21,
+          population: 4620000,
+          populationFormatted: "4.6M",
+          colorIndex: 1,
+        },
+      ],
+    };
+    render(<PeoplesSection data={data} />);
+
+    const endonymEl = screen.getByText("Yorùbá");
+    const exonymEl = screen.getByText("Yoruba");
+
+    // Presence
+    expect(endonymEl).toBeTruthy();
+    expect(exonymEl).toBeTruthy();
+
+    // Lang attribute for correct screen-reader pronunciation
+    expect(endonymEl).toHaveAttribute("lang", "yor");
+
+    // Typographic precedence: bold and not smaller than the exonym, and not
+    // italicised as a secondary annotation
+    expect(endonymEl.className).toMatch(/font-bold/);
+    expect(endonymEl.className).not.toMatch(/italic/);
+    expect(exonymEl.className).not.toMatch(/font-bold/);
+  });
+
+  it("omits the lang attribute when no language code is available", () => {
+    const data: PeoplesData = {
+      totalPopulation: 22000000,
+      totalPopulationFormatted: "22M",
+      peopleCount: 1,
+      rows: [
+        {
+          name: "Yoruba",
+          endonym: "Yorùbá",
+          percentage: 21,
+          population: 4620000,
+          populationFormatted: "4.6M",
+          colorIndex: 1,
+        },
+      ],
+    };
+    render(<PeoplesSection data={data} />);
+
+    const endonymEl = screen.getByText("Yorùbá");
+    expect(endonymEl).not.toHaveAttribute("lang");
   });
 });
 

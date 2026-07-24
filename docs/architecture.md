@@ -67,7 +67,7 @@ OpenAPI spec: `src/lib/api/openapiV2.ts` — must be updated for every route cha
 | `afrik_language_families` | `id VARCHAR(50)` (FLG_xxxxx)      | Linguistic families                                  |
 | `afrik_languages`         | `id VARCHAR(10)` (ISO 639-3)      | Languages, FK to family                              |
 | `afrik_peoples`           | `id VARCHAR(50)` (PPL_xxxxx)      | Peoples, FK to language family                       |
-| `afrik_people_countries`  | composite (people_id, country_id) | Many-to-many people ↔ country                       |
+| `afrik_people_countries`  | composite (people_id, country_id) | Many-to-many people ↔ country                        |
 | `contributions`           | —                                 | User-submitted contributions (new/update entities)   |
 
 All entity tables use a JSONB `content` column with a GIN index — new fields can be added without schema migrations.

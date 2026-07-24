@@ -125,7 +125,9 @@ describe("openapi-diff", () => {
 
       const changes = findBreakingChanges(baseline, current);
       expect(changes).toHaveLength(1);
-      expect(changes[0]).toContain("Removed property 'email' from schema 'User'");
+      expect(changes[0]).toContain(
+        "Removed property 'email' from schema 'User'"
+      );
     });
 
     it("should detect removed schemas", () => {

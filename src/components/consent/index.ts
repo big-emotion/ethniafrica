@@ -1,1 +1,1 @@
-export { ConsentBanner } from './ConsentBanner';
+export { ConsentBanner } from "./ConsentBanner";

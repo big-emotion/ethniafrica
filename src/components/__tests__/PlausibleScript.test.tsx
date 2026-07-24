@@ -17,7 +17,6 @@ type ScriptMockProps = {
 // `strategy` is destructured out to keep it off the DOM node; the rest spread is unused
 // by design since we forward only the attrs we need.
 vi.mock("next/script", () => ({
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   default: ({
     src,
     crossOrigin,
@@ -26,11 +25,7 @@ vi.mock("next/script", () => ({
     ...rest
   }: ScriptMockProps) => (
     // eslint-disable-next-line @next/next/no-sync-scripts
-    <script
-      src={src}
-      crossOrigin={crossOrigin}
-      data-domain={dataDomain}
-    />
+    <script src={src} crossOrigin={crossOrigin} data-domain={dataDomain} />
   ),
 }));
 

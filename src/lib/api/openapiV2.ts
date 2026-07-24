@@ -2,7 +2,7 @@ import swaggerJsdoc from "swagger-jsdoc";
 
 const options: swaggerJsdoc.Options = {
   definition: {
-    openapi: "3.1.0",
+    openapi: "3.0.0",
     info: {
       title: "Ethniafrique Atlas API v2 - AFRIK",
       version: "2.0.0",
@@ -57,12 +57,14 @@ const options: swaggerJsdoc.Options = {
           "Source Transparency Fabric — sources, confidence scores, editorial doctrine",
       },
       {
-        name: "API v2 - Flags",
-        description: "Content flags and moderation signals (planned)",
+        name: "API v2 - Feed",
+        description:
+          "Revision feed — cursor-paginated Atom + JSON feed of recent published revisions (FR38, AR19, NFR32)",
       },
       {
-        name: "API v2 - Feed",
-        description: "Revision feed (planned)",
+        name: "API v2 - Flags",
+        description:
+          "Contributor flags — submit editorial flags on AFRIK entities. Requires age confirmation (FR45, AR24).",
       },
     ],
     components: {
@@ -75,111 +77,25 @@ const options: swaggerJsdoc.Options = {
             "API key issued via /api/v2/keys/issue (public tier) or the admin UI (partner/admin tiers). Pass as Authorization: Bearer <key>.",
         },
       },
-      responses: {
-        Unauthorized: {
-          description: "Invalid or missing API key",
-          content: {
-            "application/json": {
-              schema: { $ref: "#/components/schemas/Error" },
-              examples: {
-                unauthorized: {
-                  value: { error: "Unauthorized" },
-                },
-              },
-            },
-          },
-        },
-        Forbidden: {
-          description: "Valid key but insufficient tier permissions",
-          content: {
-            "application/json": {
-              schema: { $ref: "#/components/schemas/Error" },
-              examples: {
-                forbidden: {
-                  value: { error: "Forbidden" },
-                },
-              },
-            },
-          },
-        },
-        RateLimited: {
-          description: "Rate limit exceeded",
-          content: {
-            "application/json": {
-              schema: { $ref: "#/components/schemas/Error" },
-              examples: {
-                rateLimited: {
-                  value: { error: "Too Many Requests" },
-                },
-              },
-            },
-          },
-        },
-        ServiceUnavailable: {
-          description: "Backend temporarily unavailable",
-          content: {
-            "application/json": {
-              schema: { $ref: "#/components/schemas/Error" },
-              examples: {
-                serviceUnavailable: {
-                  value: { error: "Service Unavailable" },
-                },
-              },
-            },
-          },
-        },
-        Module0Unauthorized: {
-          description: "Invalid or missing API key",
-          content: {
-            "application/json": {
-              schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
-            },
-          },
-        },
-        Module0Forbidden: {
-          description: "Valid key but insufficient tier permissions",
-          content: {
-            "application/json": {
-              schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
-            },
-          },
-        },
-        Module0RateLimited: {
-          description: "Rate limit exceeded",
-          content: {
-            "application/json": {
-              schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
-            },
-          },
-        },
-        Module0ServiceUnavailable: {
-          description: "Backend temporarily unavailable",
-          content: {
-            "application/json": {
-              schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
-            },
-          },
-        },
-      },
       schemas: {
         PaginationMeta: {
           type: "object",
           properties: {
             total: {
               type: "number",
-              examples: [100],
+              example: 100,
             },
             page: {
               type: "number",
-              examples: [1],
+              example: 1,
             },
             perPage: {
               type: "number",
-              examples: [20],
+              example: 20,
             },
             totalPages: {
               type: "number",
-              examples: [5],
+              example: 5,
             },
           },
         },
@@ -201,25 +117,62 @@ const options: swaggerJsdoc.Options = {
             type: {
               type: "string",
               enum: ["country", "people", "language", "languageFamily"],
-              examples: ["people"],
+              example: "people",
             },
             id: {
               type: "string",
-              examples: ["PPL_SHONA"],
+              example: "PPL_SHONA",
             },
             name: {
               type: "string",
-              examples: ["Shona"],
+              example: "Shona",
             },
             snippet: {
               type: "string",
-              examples: ["Extrait du contenu..."],
+              example: "Extrait du contenu...",
             },
             relevance: {
               type: "number",
-              examples: [0.95],
+              example: 0.95,
             },
           },
+        },
+        SearchResponseData: {
+          type: "object",
+          description:
+            "FTS search result data. Peoples and countries are returned in separate arrays, ranked by ts_rank_cd × confidence boost.",
+          properties: {
+            peoples: {
+              type: "array",
+              items: { $ref: "#/components/schemas/PeopleV2" },
+              description:
+                "Matching peoples ordered by confidence-boosted relevance",
+            },
+            countries: {
+              type: "array",
+              items: { $ref: "#/components/schemas/CountryV2" },
+              description: "Matching countries ordered by FTS relevance",
+            },
+            total: {
+              type: "integer",
+              description: "Combined count of peoples + countries returned",
+              example: 5,
+            },
+          },
+          required: ["peoples", "countries", "total"],
+        },
+        SearchResponse: {
+          type: "object",
+          description: "Module #0 envelope for /v2/search (ETNI-38)",
+          properties: {
+            data: { $ref: "#/components/schemas/SearchResponseData" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
         },
         CountryV2: {
           type: "object",
@@ -227,15 +180,15 @@ const options: swaggerJsdoc.Options = {
             id: {
               type: "string",
               description: "Code ISO 3166-1 alpha-3",
-              examples: ["ZWE"],
+              example: "ZWE",
             },
             nameFr: {
               type: "string",
-              examples: ["Zimbabwe"],
+              example: "Zimbabwe",
             },
             nameOfficial: {
               type: "string",
-              examples: ["Republic of Zimbabwe"],
+              example: "Republic of Zimbabwe",
             },
             etymology: {
               type: "string",
@@ -252,23 +205,23 @@ const options: swaggerJsdoc.Options = {
             id: {
               type: "string",
               description: "Identifiant PPL_*",
-              examples: ["PPL_SHONA"],
+              example: "PPL_SHONA",
             },
             nameMain: {
               type: "string",
-              examples: ["Shona"],
+              example: "Shona",
             },
             languageFamilyId: {
               type: "string",
               description: "Identifiant FLG_*",
-              examples: ["FLG_BANTU"],
+              example: "FLG_BANTU",
             },
             currentCountries: {
               type: "array",
               items: {
                 type: "string",
               },
-              examples: [["ZWE", "MOZ"]],
+              example: ["ZWE", "MOZ"],
             },
             content: {
               type: "object",
@@ -282,15 +235,15 @@ const options: swaggerJsdoc.Options = {
             id: {
               type: "string",
               description: "Identifiant FLG_*",
-              examples: ["FLG_BANTU"],
+              example: "FLG_BANTU",
             },
             nameFr: {
               type: "string",
-              examples: ["Bantou"],
+              example: "Bantou",
             },
             nameEn: {
               type: "string",
-              examples: ["Bantu"],
+              example: "Bantu",
             },
             content: {
               type: "object",
@@ -303,7 +256,7 @@ const options: swaggerJsdoc.Options = {
           properties: {
             error: {
               type: "string",
-              examples: ["Resource not found"],
+              example: "Resource not found",
             },
           },
         },
@@ -315,19 +268,21 @@ const options: swaggerJsdoc.Options = {
           description:
             "Envelope meta block for Module #0 responses. Always carries license + attribution (AR8). Optionally includes pagination, confidence score, and pinned-version URL.",
           properties: {
-            license: { type: "string", examples: ["CC-BY-SA-4.0"] },
+            license: { type: "string", example: "CC-BY-SA-4.0" },
             attribution: {
               type: "string",
-              examples: ["Africa History — africahistory.org"],
+              example: "Africa History — africahistory.org",
             },
             confidence: {
-              type: ["number", "null"],
-              examples: [73],
+              type: "number",
+              nullable: true,
+              example: 73,
               description: "Score 0–100 if applicable",
             },
             pinned_url: {
-              type: ["string", "null"],
-              examples: ["https://africahistory.org/peuples/yoruba@v4"],
+              type: "string",
+              nullable: true,
+              example: "https://africahistory.org/peuples/yoruba@v4",
             },
             pagination: {
               $ref: "#/components/schemas/PaginationMeta",
@@ -342,18 +297,13 @@ const options: swaggerJsdoc.Options = {
           properties: {
             code: {
               type: "string",
-              enum: [
-                "VALIDATION_ERROR",
-                "NOT_FOUND",
-                "INTERNAL_ERROR",
-                "RATE_LIMITED",
-                "SERVICE_UNAVAILABLE",
-              ],
-              examples: ["NOT_FOUND"],
+              enum: ["VALIDATION_ERROR", "NOT_FOUND", "INTERNAL_ERROR"],
+              example: "NOT_FOUND",
             },
-            message: { type: "string", examples: ["Source not found"] },
+            message: { type: "string", example: "Source not found" },
             field: {
-              type: ["string", "null"],
+              type: "string",
+              nullable: true,
               description:
                 "Field path that triggered the error (validation only)",
             },
@@ -381,19 +331,21 @@ const options: swaggerJsdoc.Options = {
           properties: {
             id: { type: "string", format: "uuid" },
             type: {
-              type: ["string", "null"],
+              type: "string",
+              nullable: true,
               enum: ["primary", "secondary", "tertiary", "ai", null],
             },
             title: { type: "string" },
-            url: { type: ["string", "null"] },
-            pinnedUrl: { type: ["string", "null"] },
-            year: { type: ["integer", "null"] },
-            author: { type: ["string", "null"] },
-            publisher: { type: ["string", "null"] },
-            resolvable: { type: ["boolean", "null"] },
+            url: { type: "string", nullable: true },
+            pinnedUrl: { type: "string", nullable: true },
+            year: { type: "integer", nullable: true },
+            author: { type: "string", nullable: true },
+            publisher: { type: "string", nullable: true },
+            resolvable: { type: "boolean", nullable: true },
             lastVerifiedAt: {
-              type: ["string", "null"],
+              type: "string",
               format: "date-time",
+              nullable: true,
             },
           },
           required: ["id", "title"],
@@ -432,27 +384,31 @@ const options: swaggerJsdoc.Options = {
               type: "string",
               enum: ["people", "language-family"],
             },
-            entityId: { type: "string", examples: ["PPL_SHONA"] },
+            entityId: { type: "string", example: "PPL_SHONA" },
             score: {
-              type: ["number", "null"],
+              type: "number",
+              nullable: true,
               minimum: 0,
               maximum: 100,
-              examples: [73],
+              example: 73,
             },
             sourceCount: { type: "integer", minimum: 0 },
             avgSourceQuality: {
-              type: ["number", "null"],
+              type: "number",
+              nullable: true,
               minimum: 0,
               maximum: 1,
             },
             lastHumanAuditAt: {
-              type: ["string", "null"],
+              type: "string",
               format: "date-time",
+              nullable: true,
             },
             openFlagCount: { type: "integer", minimum: 0 },
             recomputedAt: {
-              type: ["string", "null"],
+              type: "string",
               format: "date-time",
+              nullable: true,
             },
           },
           required: ["entityType", "entityId", "sourceCount", "openFlagCount"],
@@ -479,27 +435,30 @@ const options: swaggerJsdoc.Options = {
             version: {
               type: "integer",
               minimum: 1,
-              examples: [3],
+              example: 3,
               description: "Monotonically increasing publication version",
             },
             published_at: {
-              type: ["string", "null"],
+              type: "string",
               format: "date-time",
-              examples: ["2026-05-21T10:00:00.000Z"],
+              nullable: true,
+              example: "2026-05-21T10:00:00.000Z",
             },
             moderator_pseudonym: {
-              type: ["string", "null"],
-              examples: ["mod-aaaabbbb"],
+              type: "string",
+              nullable: true,
+              example: "mod-aaaabbbb",
               description:
                 "Privacy-preserving pseudonym derived from the moderator's internal id",
             },
             reason: {
-              type: ["string", "null"],
-              examples: ["Demographics update"],
+              type: "string",
+              nullable: true,
+              example: "Demographics update",
             },
             pinned_url: {
               type: "string",
-              examples: ["/api/v2/peoples/PPL_YORUBA/versions/3"],
+              example: "/api/v2/peoples/PPL_YORUBA/versions/3",
               description:
                 "Stable URL for this pinned version (AR14). Cache-Control: s-maxage=31536000, immutable.",
             },
@@ -514,11 +473,12 @@ const options: swaggerJsdoc.Options = {
               type: "integer",
               minimum: 1,
               maximum: 100,
-              examples: [20],
+              example: 20,
             },
             next_cursor: {
-              type: ["integer", "null"],
-              examples: [4],
+              type: "integer",
+              nullable: true,
+              example: 4,
               description:
                 "Version to pass as ?cursor= on the next request. Null when no more pages.",
             },
@@ -528,10 +488,10 @@ const options: swaggerJsdoc.Options = {
         PeopleRevisionListMeta: {
           type: "object",
           properties: {
-            license: { type: "string", examples: ["CC-BY-SA-4.0"] },
+            license: { type: "string", example: "CC-BY-SA-4.0" },
             attribution: {
               type: "string",
-              examples: ["Africa History — africahistory.org"],
+              example: "Africa History — africahistory.org",
             },
             pagination: { $ref: "#/components/schemas/CursorPaginationMeta" },
           },
@@ -589,8 +549,9 @@ const options: swaggerJsdoc.Options = {
             mdxSource: { type: "string" },
             version: { type: "integer", minimum: 1 },
             publishedAt: {
-              type: ["string", "null"],
+              type: "string",
               format: "date-time",
+              nullable: true,
             },
           },
           required: ["slug", "title", "mdxSource", "version"],
@@ -610,283 +571,144 @@ const options: swaggerJsdoc.Options = {
           },
         },
         // -----------------------------------------------------------------
-        // Flags — planned (ETNI-75)
+        // Epic 3 — Revisions feed (ETNI-52)
         // -----------------------------------------------------------------
-        FlagV2: {
+        FeedRevisionItem: {
           type: "object",
           description:
-            "Content flag raised against an AFRIK fiche. Populated by moderators and contributors.",
+            "A single published revision entry in the cross-entity revisions feed.",
           properties: {
-            id: { type: "string", format: "uuid" },
-            entityType: {
+            entity_type: {
               type: "string",
-              enum: ["people", "language-family", "country"],
+              enum: ["people", "country", "languageFamily"],
+              example: "people",
             },
-            entityId: { type: "string", examples: ["PPL_SHONA"] },
-            kind: {
+            entity_id: {
+              type: "string",
+              example: "PPL_YORUBA",
+              description:
+                "Stable entity identifier (PPL_*, FLG_*, ISO 3166-1 alpha-3)",
+            },
+            slug: {
+              type: "string",
+              example: "ppl_yoruba",
+              description: "URL-friendly lowercase form of entity_id",
+            },
+            version: {
+              type: "integer",
+              minimum: 1,
+              example: 3,
+              description: "Monotonically increasing publication version",
+            },
+            published_at: {
+              type: "string",
+              format: "date-time",
+              nullable: true,
+              example: "2026-05-21T12:00:00.000Z",
+            },
+            pinned_url: {
+              type: "string",
+              example: "/api/v2/peoples/PPL_YORUBA/versions/3",
+              description: "Stable pinned-version URL (AR14)",
+            },
+            summary: {
+              type: "string",
+              nullable: true,
+              example: "Demographics update",
+              description: "Editorial reason for the revision, if provided",
+            },
+          },
+          required: [
+            "entity_type",
+            "entity_id",
+            "slug",
+            "version",
+            "pinned_url",
+          ],
+        },
+        FeedCursorPaginationMeta: {
+          type: "object",
+          description: "Cursor-based pagination meta for the revisions feed.",
+          properties: {
+            limit: {
+              type: "integer",
+              minimum: 1,
+              maximum: 100,
+              example: 20,
+            },
+            next_cursor: {
+              type: "string",
+              nullable: true,
+              example: "MjAyNi0wNS0yMVQxMjowMDowMC4wMDB...",
+              description:
+                "Opaque base64url cursor. Pass as ?cursor= on the next request. Null when no more pages.",
+            },
+          },
+          required: ["limit", "next_cursor"],
+        },
+        FeedRevisionListMeta: {
+          type: "object",
+          properties: {
+            license: { type: "string", example: "CC-BY-SA-4.0" },
+            attribution: {
+              type: "string",
+              example: "Africa History — africahistory.org",
+            },
+            pagination: {
+              $ref: "#/components/schemas/FeedCursorPaginationMeta",
+            },
+          },
+          required: ["license", "attribution", "pagination"],
+        },
+        FeedRevisionListResponse: {
+          type: "object",
+          description:
+            "Cursor-paginated list of published revisions across all entity types (JSON format).",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/FeedRevisionItem" },
+            },
+            meta: { $ref: "#/components/schemas/FeedRevisionListMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        FlagCreateInput: {
+          type: "object",
+          required: ["entity_type", "entity_id", "flag_kind"],
+          properties: {
+            entity_type: {
+              type: "string",
+              example: "people",
+              description:
+                "AFRIK entity type (people, country, language, language_family)",
+            },
+            entity_id: {
+              type: "string",
+              example: "PPL_YORUBA",
+              description:
+                "Stable AFRIK identifier of the entity being flagged",
+            },
+            flag_kind: {
               type: "string",
               enum: [
-                "factual_error",
-                "missing_source",
-                "outdated_data",
+                "inaccurate",
+                "missing-source",
+                "broken-url",
+                "offensive",
+                "correction-proposal",
                 "other",
               ],
+              example: "inaccurate",
             },
-            status: {
+            reason_text: {
               type: "string",
-              enum: ["open", "resolved", "dismissed"],
+              example: "Population figure appears outdated vs. 2024 census.",
             },
-            body: { type: ["string", "null"] },
-            createdAt: { type: "string", format: "date-time" },
-            resolvedAt: { type: ["string", "null"], format: "date-time" },
-          },
-          required: [
-            "id",
-            "entityType",
-            "entityId",
-            "kind",
-            "status",
-            "createdAt",
-          ],
-        },
-        FlagListResponse: {
-          type: "object",
-          properties: {
-            data: {
-              type: "array",
-              items: { $ref: "#/components/schemas/FlagV2" },
-            },
-            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
-            errors: {
-              type: "array",
-              items: { $ref: "#/components/schemas/ApiErrorEntry" },
-            },
-          },
-        },
-        FlagResponse: {
-          type: "object",
-          properties: {
-            data: { $ref: "#/components/schemas/FlagV2" },
-            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
-            errors: {
-              type: "array",
-              items: { $ref: "#/components/schemas/ApiErrorEntry" },
-            },
-          },
-        },
-        // -----------------------------------------------------------------
-        // Feed — planned (ETNI-75)
-        // -----------------------------------------------------------------
-        RevisionFeedItem: {
-          type: "object",
-          description: "A single revision event in the revision feed.",
-          properties: {
-            id: { type: "string", format: "uuid" },
-            entityType: {
-              type: "string",
-              enum: ["people", "language-family", "country"],
-            },
-            entityId: { type: "string", examples: ["PPL_SHONA"] },
-            version: { type: "integer", minimum: 1 },
-            publishedAt: { type: "string", format: "date-time" },
-            moderatorPseudonym: { type: ["string", "null"] },
-            reason: { type: ["string", "null"] },
-            pinnedUrl: { type: "string" },
-          },
-          required: [
-            "id",
-            "entityType",
-            "entityId",
-            "version",
-            "publishedAt",
-            "pinnedUrl",
-          ],
-        },
-        RevisionFeedResponse: {
-          type: "object",
-          properties: {
-            data: {
-              type: "array",
-              items: { $ref: "#/components/schemas/RevisionFeedItem" },
-            },
-            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
-            errors: {
-              type: "array",
-              items: { $ref: "#/components/schemas/ApiErrorEntry" },
-            },
-          },
-        },
-      },
-    },
-    // Stub paths for planned endpoints not yet implemented
-    paths: {
-      "/api/v2/flags": {
-        get: {
-          summary: "List content flags",
-          description:
-            "Returns a paginated list of content flags raised against AFRIK fiches. **Planned — not yet implemented.**",
-          tags: ["API v2 - Flags"],
-          parameters: [
-            {
-              in: "query",
-              name: "page",
-              schema: { type: "integer", minimum: 1, default: 1 },
-            },
-            {
-              in: "query",
-              name: "perPage",
-              schema: {
-                type: "integer",
-                minimum: 1,
-                maximum: 100,
-                default: 20,
-              },
-            },
-            {
-              in: "query",
-              name: "entityType",
-              schema: {
-                type: "string",
-                enum: ["people", "language-family", "country"],
-              },
-              description: "Filter by entity type",
-            },
-            {
-              in: "query",
-              name: "status",
-              schema: {
-                type: "string",
-                enum: ["open", "resolved", "dismissed"],
-              },
-              description: "Filter by flag status",
-            },
-          ],
-          responses: {
-            "200": {
-              description: "Paginated list of flags",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/FlagListResponse" },
-                },
-              },
-            },
-            "400": {
-              description: "Validation error",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
-                },
-              },
-            },
-            "401": { $ref: "#/components/responses/Module0Unauthorized" },
-            "403": { $ref: "#/components/responses/Module0Forbidden" },
-            "429": { $ref: "#/components/responses/Module0RateLimited" },
-            "503": { $ref: "#/components/responses/Module0ServiceUnavailable" },
-          },
-        },
-      },
-      "/api/v2/flags/{id}": {
-        get: {
-          summary: "Get a single content flag",
-          description:
-            "Returns a single content flag by its UUID. **Planned — not yet implemented.**",
-          tags: ["API v2 - Flags"],
-          parameters: [
-            {
-              in: "path",
-              name: "id",
-              required: true,
-              schema: { type: "string", format: "uuid" },
-              description: "Flag UUID",
-            },
-          ],
-          responses: {
-            "200": {
-              description: "Flag envelope",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/FlagResponse" },
-                },
-              },
-            },
-            "400": {
-              description: "Invalid id",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
-                },
-              },
-            },
-            "401": { $ref: "#/components/responses/Module0Unauthorized" },
-            "403": { $ref: "#/components/responses/Module0Forbidden" },
-            "404": {
-              description: "Flag not found",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
-                },
-              },
-            },
-            "429": { $ref: "#/components/responses/Module0RateLimited" },
-            "503": { $ref: "#/components/responses/Module0ServiceUnavailable" },
-          },
-        },
-      },
-      "/api/v2/feed/revisions": {
-        get: {
-          summary: "Cross-entity revision feed",
-          description:
-            "Returns a reverse-chronological feed of published revisions across all entity types. Supports cursor-based pagination. **Planned — not yet implemented.**",
-          tags: ["API v2 - Feed"],
-          parameters: [
-            {
-              in: "query",
-              name: "limit",
-              schema: {
-                type: "integer",
-                minimum: 1,
-                maximum: 100,
-                default: 20,
-              },
-            },
-            {
-              in: "query",
-              name: "cursor",
-              schema: { type: "string" },
-              description:
-                "Opaque pagination cursor from the previous page's meta",
-            },
-            {
-              in: "query",
-              name: "entityType",
-              schema: {
-                type: "string",
-                enum: ["people", "language-family", "country"],
-              },
-              description: "Filter by entity type",
-            },
-          ],
-          responses: {
-            "200": {
-              description: "Revision feed envelope",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/RevisionFeedResponse" },
-                },
-              },
-            },
-            "400": {
-              description: "Validation error",
-              content: {
-                "application/json": {
-                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
-                },
-              },
-            },
-            "401": { $ref: "#/components/responses/Module0Unauthorized" },
-            "403": { $ref: "#/components/responses/Module0Forbidden" },
-            "429": { $ref: "#/components/responses/Module0RateLimited" },
-            "503": { $ref: "#/components/responses/Module0ServiceUnavailable" },
           },
         },
       },

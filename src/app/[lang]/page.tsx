@@ -79,10 +79,17 @@ export default function Home() {
         {/* Section texte introductive */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-bold">
-            Découvrez la Richesse de la Diversité des Groupes Ethniques Africains
+            Découvrez la Richesse de la Diversité des Groupes Ethniques
+            Africains
           </h2>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-            Cette encyclopédie complète documente la diversité ethnique dans les 55 pays africains. Nos données fournissent des informations démographiques détaillées, permettant de comprendre la riche mosaïque culturelle qui compose le continent africain. Explorez les régions, pays et groupes ethniques pour découvrir les distributions démographiques, les connexions culturelles et la diversité linguistique.
+            Cette encyclopédie complète documente la diversité ethnique dans les
+            55 pays africains. Nos données fournissent des informations
+            démographiques détaillées, permettant de comprendre la riche
+            mosaïque culturelle qui compose le continent africain. Explorez les
+            régions, pays et groupes ethniques pour découvrir les distributions
+            démographiques, les connexions culturelles et la diversité
+            linguistique.
           </p>
         </div>
 

@@ -1,0 +1,57 @@
+# Supabase local development configuration
+# https://supabase.com/docs/guides/local-development
+
+[api]
+port = 54321
+
+[db]
+port = 5432
+
+[studio]
+port = 54323
+
+# Inbucket email server — captures outbound emails during local dev/testing
+[inbucket]
+port = 54324
+smtp_port = 54325
+pop3_port = 54326
+
+[storage]
+enabled = true
+
+# -------------------------------------------------------------------
+# Auth — three providers: magic-link, GitHub OAuth, Google OAuth
+# -------------------------------------------------------------------
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["http://localhost:3000"]
+jwt_expiry = 3600
+enable_refresh_token_rotation = true
+refresh_token_reuse_interval = 10
+
+[auth.email]
+enable_signup = true
+# Require email confirmation before allowing sign-in (magic-link flow)
+enable_confirmations = true
+double_confirm_changes = true
+
+# GitHub OAuth
+# Production setup: register an OAuth app at https://github.com/settings/developers
+# Set "Authorization callback URL" to: https://<project>.supabase.co/auth/v1/callback
+# Then copy Client ID and Client Secret into Supabase Dashboard > Authentication > Providers > GitHub
+[auth.external.github]
+enabled = true
+client_id = "env(SUPABASE_AUTH_GITHUB_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_GITHUB_CLIENT_SECRET)"
+redirect_uri = ""
+
+# Google OAuth
+# Production setup: create OAuth 2.0 credentials at https://console.cloud.google.com/apis/credentials
+# Set "Authorized redirect URI" to: https://<project>.supabase.co/auth/v1/callback
+# Then copy Client ID and Client Secret into Supabase Dashboard > Authentication > Providers > Google
+[auth.external.google]
+enabled = true
+client_id = "env(SUPABASE_AUTH_GOOGLE_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_GOOGLE_CLIENT_SECRET)"
+redirect_uri = ""

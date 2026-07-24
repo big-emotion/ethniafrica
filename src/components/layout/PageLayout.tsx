@@ -3,14 +3,13 @@
 import { ReactNode, useState } from "react";
 import { Language } from "@/types/shared";
 import { getTranslation } from "@/lib/translations";
-import { LanguageSelector } from "@/components/LanguageSelector";
 import { MobileNavBar } from "@/components/MobileNavBar";
 import { DesktopNavBar } from "@/components/layout/DesktopNavBar";
 import { SearchModalV2 } from "@/components/search/SearchModalV2";
+import { KeyboardShortcutsModal } from "@/components/layout/KeyboardShortcutsModal";
+import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
 import type { SearchEntityType } from "@/types/afrik-frontend";
 import { useIsMobile } from "@/hooks/use-mobile";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { getLocalizedRoute } from "@/lib/routing";
 import Image from "next/image";
@@ -35,7 +34,6 @@ export const PageLayout = ({
   language,
   onLanguageChange,
   title,
-  subtitle,
   sectionName,
   hideHeader = false,
   onSearchResult,
@@ -44,6 +42,7 @@ export const PageLayout = ({
   const router = useRouter();
   const t = getTranslation(language);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
 
   const displayTitle = sectionName || title || t.title;
 
@@ -55,7 +54,6 @@ export const PageLayout = ({
     if (onSearchResult) {
       onSearchResult(result);
     } else {
-      // Default behavior: redirect to appropriate page using v2 routes
       switch (result.type) {
         case "languageFamily":
           router.push(
@@ -79,9 +77,18 @@ export const PageLayout = ({
     setIsSearchOpen(false);
   };
 
+  useKeyboardShortcuts({
+    navigate: (path) => router.push(path),
+    openSearch: () => setIsSearchOpen(true),
+    openShortcutsModal: () => setIsShortcutsOpen(true),
+    searchRoute: getLocalizedRoute(language, "search"),
+    peoplesRoute: getLocalizedRoute(language, "peoples"),
+    familiesRoute: getLocalizedRoute(language, "families"),
+  });
+
   return (
     <div className="min-h-screen gradient-earth">
-      {/* Barre de navigation desktop */}
+      {/* Desktop navigation */}
       {!isMobile && (
         <DesktopNavBar
           language={language}
@@ -89,7 +96,7 @@ export const PageLayout = ({
         />
       )}
 
-      {/* Barre de navigation mobile */}
+      {/* Mobile navigation */}
       {isMobile && (
         <MobileNavBar
           language={language}
@@ -98,21 +105,25 @@ export const PageLayout = ({
         />
       )}
 
-      {/* Modal de recherche mobile */}
-      {isMobile && (
-        <SearchModalV2
-          open={isSearchOpen}
-          onClose={() => setIsSearchOpen(false)}
-          language={language}
-          onResultSelect={handleSearchResult}
-        />
-      )}
+      {/* Search modal */}
+      <SearchModalV2
+        open={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        language={language}
+        onResultSelect={handleSearchResult}
+      />
+
+      {/* Keyboard shortcuts cheatsheet */}
+      <KeyboardShortcutsModal
+        open={isShortcutsOpen}
+        onClose={() => setIsShortcutsOpen(false)}
+      />
 
       {/* Header */}
       {!hideHeader && (
         <header
           className={`border-b bg-card shadow-soft ${
-            isMobile ? "pt-[73px]" : "pt-20"
+            isMobile ? "pt-[57px]" : "pt-14"
           }`}
         >
           <div className="container mx-auto px-4 py-6">

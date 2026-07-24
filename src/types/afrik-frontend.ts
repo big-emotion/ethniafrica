@@ -58,6 +58,8 @@ export interface LanguageFamilySummary {
   id: LanguageFamilyId;
   nameFr: string;
   nameEn?: string;
+  // Editorial classification (migration 009) — surfaced in list cards.
+  classificationStatus?: ClassificationStatus | null;
   // Données agrégées pour l'affichage en liste
   totalSpeakers?: number;
   numberOfLanguages?: number;
@@ -133,6 +135,8 @@ export interface PeopleSummary {
   languageFamilyId: LanguageFamilyId;
   languageFamilyName?: string;
   currentCountries: CountryId[];
+  // Editorial classification (migration 009) — surfaced in list cards.
+  classificationStatus?: ClassificationStatus | null;
   // Données agrégées pour l'affichage en liste
   totalPopulation?: number;
   countryCount?: number;
@@ -244,6 +248,8 @@ export interface CountrySummary {
   id: CountryId; // ISO 3166-1 alpha-3
   nameFr: string;
   nameOfficial?: string;
+  // Editorial classification (migration 009) — surfaced in list cards.
+  classificationStatus?: ClassificationStatus | null;
   // Données agrégées pour l'affichage en liste
   majorPeoplesCount?: number;
   population?: number;

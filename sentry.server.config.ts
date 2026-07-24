@@ -28,6 +28,5 @@ Sentry.init({
   beforeSend: beforeSend as Parameters<typeof Sentry.init>[0]["beforeSend"],
 
   // Only enable in production
-  enabled:
-    process.env.NODE_ENV === "production" || !!process.env.SENTRY_DSN,
+  enabled: process.env.NODE_ENV === "production" || !!process.env.SENTRY_DSN,
 });

@@ -2,34 +2,21 @@
   "id": "PPL_NIABOUA",
   "nameMain": "Niaboua",
   "languageFamilyId": "FLG_KROU",
-  "currentCountries": [
-    "CIV"
-  ],
+  "currentCountries": ["CIV"],
   "content": {
     "appellations": {
       "mainName": "Niaboua",
       "selfAppellation": "Nyabwa",
-      "exonyms": [
-        "Niaboua",
-        "Niabua",
-        "Nyaboa",
-        "Nyabwa-Nyedebwa",
-        "Nybwa"
-      ],
+      "exonyms": ["Niaboua", "Niabua", "Nyaboa", "Nyabwa-Nyedebwa", "Nybwa"],
       "originOfExonyms": "Niaboua est la transcription française de Nyabwa, le nom par lequel le peuple se désigne lui-même. Les variantes Niabua, Nyaboa reflètent des approximations phonétiques utilisées par les administrateurs coloniaux et les sources anglophones. Nyabwa-Nyedebwa est une désignation élargie qui inclut les Niédéboua (sous-groupe apparent).",
       "whyProblematic": "La dénomination Niaboua désigne strictement le sous-groupe le plus important (Zoukougbeu et Ibogué), mais est souvent utilisée par extension pour désigner l'ensemble des Nyabwa (groupe composé de quatre sous-groupes : Niaboua, Kouzié, Niédéboua, Zombo).",
       "contemporaryUsage": "Niaboua est le terme officiel en Côte d'Ivoire. Nyabwa est la forme préconisée par les linguistes. Les membres du groupe se reconnaissent collectivement sous les deux appellations.",
       "linguisticFamily": "FLG_KROU",
       "ethnoLinguisticGroup": "Nyabwa-Krou (groupe krou du centre-ouest ivoirien)",
       "historicalRegion": "Centre-ouest de la Côte d'Ivoire, départements de Daloa, Issia, Vavoua et Soubré (région du Gôh-Djiboua et Sassandra-Marahoué)",
-      "currentCountries": [
-        "CIV"
-      ]
+      "currentCountries": ["CIV"]
     },
-    "ethnicities": [
-      "Niaboua",
-      "Nyabwa"
-    ],
+    "ethnicities": ["Niaboua", "Nyabwa"],
     "origins": {
       "ancientOrigins": "Selon la tradition orale collectée par D. Paulme à Zakogbeu (Zoukougbeu), l'ancêtre le plus reculé des Niaboua est Goze, qui aurait fui le Liberia actuel à la suite d'une guerre et trouvé refuge chez les gens de Kouézé (Bakoué). De ses trois fils, l'aîné Niabo est le père des Niaboua, le deuxième Gbalo celui des Bété, et le troisième Zakie l'aïeul des Wobé (Guéré). Les Nyabwa appartiennent au groupe krou, lui-même issu de migrations depuis l'actuel Liberia.",
       "formationPeriod": "XVe-XVIIe siecle. Les Krou commencèrent à occuper leur habitat actuel au XVIIe siècle sous la pression conjuguée des Manding et des Akan. Les Nyabwa se sont installés en Côte d'Ivoire depuis le XVe siècle, à partir de groupes venus du Liberia (Zibiao, Mao), de l'Est et du Nord-Est entre les rivières Bandama et Sassandra.",
@@ -56,9 +43,7 @@
     },
     "languages": {
       "mainLanguage": "nyabwa",
-      "isoCodes": [
-        "nwb"
-      ],
+      "isoCodes": ["nwb"],
       "dialects": [
         "niaboua (Zoukougbeu-Ibogué)",
         "kouzié (Buyo)",

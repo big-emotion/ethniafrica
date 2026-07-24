@@ -14,7 +14,8 @@ export const runtime = "nodejs";
 
 // Footer component for OG images
 function Footer() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || `https://${CANONICAL_DOMAIN}`;
+  const siteUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || `https://${CANONICAL_DOMAIN}`;
   const domain = siteUrl.replace(/^https?:\/\//, "");
 
   return (
@@ -52,61 +53,59 @@ export default async function OgImage() {
   }
 
   return new ImageResponse(
-    (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          background:
-            "linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #111827 100%)",
-          color: "white",
-          padding: "48px",
-        }}
-      >
-        {africaSrc ? (
-          <img
-            src={africaSrc}
-            alt="Africa"
-            style={{
-              position: "absolute",
-              right: 32,
-              bottom: 32,
-              width: 300,
-              height: 300,
-              opacity: 0.15,
-              filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.2))",
-            }}
-          />
-        ) : null}
-        <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-          <div
-            style={{
-              width: 16,
-              height: 16,
-              borderRadius: 999,
-              background: "#FBBF24",
-            }}
-          />
-          <div style={{ fontSize: 20, opacity: 0.9 }}>{t.title}</div>
-        </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-          <div
-            style={{
-              fontSize: 72,
-              fontWeight: 800,
-              letterSpacing: -1,
-            }}
-          >
-            {title}
-          </div>
-          <div style={{ fontSize: 28, opacity: 0.9 }}>{subtitle}</div>
-        </div>
-        <Footer />
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        background:
+          "linear-gradient(135deg, #0f172a 0%, #1e293b 35%, #111827 100%)",
+        color: "white",
+        padding: "48px",
+      }}
+    >
+      {africaSrc ? (
+        <img
+          src={africaSrc}
+          alt="Africa"
+          style={{
+            position: "absolute",
+            right: 32,
+            bottom: 32,
+            width: 300,
+            height: 300,
+            opacity: 0.15,
+            filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.2))",
+          }}
+        />
+      ) : null}
+      <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
+        <div
+          style={{
+            width: 16,
+            height: 16,
+            borderRadius: 999,
+            background: "#FBBF24",
+          }}
+        />
+        <div style={{ fontSize: 20, opacity: 0.9 }}>{t.title}</div>
       </div>
-    ),
+      <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+        <div
+          style={{
+            fontSize: 72,
+            fontWeight: 800,
+            letterSpacing: -1,
+          }}
+        >
+          {title}
+        </div>
+        <div style={{ fontSize: 28, opacity: 0.9 }}>{subtitle}</div>
+      </div>
+      <Footer />
+    </div>,
     {
       ...size,
     }
