@@ -33,6 +33,7 @@
     "e2e:headed": "playwright test --headed",
     "e2e:install": "playwright install --with-deps chromium",
     "e2e:report": "playwright show-report playwright-report",
+    "audit:people-sources": "tsx scripts/audit/runPeopleSourceTierAudit.ts",
     "openapi:generate": "tsx scripts/generate-openapi-spec.ts",
     "openapi:diff": "tsx scripts/openapi-diff.ts",
     "prepare": "husky"
