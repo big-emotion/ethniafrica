@@ -2,14 +2,16 @@
 // @req REQ-003
 // @req REQ-004
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { createElement } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { PeopleView } from "../views/PeopleView";
 import * as afrikLoader from "@/lib/afrikLoader";
+import { useIsMobile } from "@/hooks/use-mobile";
+import type { PaginatedResponse, PeopleSummary } from "@/types/afrik-frontend";
 
 vi.mock("@/lib/afrikLoader", () => ({
-  getAllPeoples: vi.fn(),
+  getPeoples: vi.fn(),
 }));
 
 vi.mock("@/hooks/use-mobile", () => ({
@@ -49,13 +51,31 @@ function createWrapper() {
 
 describe("PeopleView", () => {
   const mockOnPeopleSelect = vi.fn();
+  const firstPage: PaginatedResponse<PeopleSummary> = {
+    data: [
+      {
+        id: "PPL_YORUBA",
+        nameMain: "Yoruba",
+        languageFamilyId: "FLG_NIGER_CONGO",
+        currentCountries: ["NGA"],
+      },
+    ],
+    meta: {
+      total: 21,
+      page: 1,
+      perPage: 10,
+      totalPages: 3,
+    },
+  };
 
   beforeEach(() => {
     vi.clearAllMocks();
+    vi.mocked(useIsMobile).mockReturnValue(false);
+    vi.mocked(afrikLoader.getPeoples).mockResolvedValue(firstPage);
   });
 
   it("should display loading state initially", () => {
-    vi.mocked(afrikLoader.getAllPeoples).mockImplementation(
+    vi.mocked(afrikLoader.getPeoples).mockImplementation(
       () => new Promise(() => {})
     );
 
@@ -66,23 +86,60 @@ describe("PeopleView", () => {
     expect(screen.getByText("Chargement des peuples...")).toBeInTheDocument();
   });
 
-  it("should call getAllPeoples on mount", () => {
-    vi.mocked(afrikLoader.getAllPeoples).mockImplementation(
-      () => new Promise(() => {})
-    );
-
+  // @req REQ-001
+  it("should request and render only the first page on mount", async () => {
     render(<PeopleView language="fr" onPeopleSelect={mockOnPeopleSelect} />, {
       wrapper: createWrapper(),
     });
 
-    expect(afrikLoader.getAllPeoples).toHaveBeenCalledTimes(1);
+    expect(await screen.findByText("Yoruba")).toBeInTheDocument();
+    expect(afrikLoader.getPeoples).toHaveBeenCalledTimes(1);
+    expect(afrikLoader.getPeoples).toHaveBeenCalledWith({
+      page: 1,
+      perPage: 10,
+      search: undefined,
+      letter: undefined,
+      languageFamilyId: undefined,
+    });
   });
 
-  it("should accept languageFamilyId prop for filtering", () => {
-    vi.mocked(afrikLoader.getAllPeoples).mockImplementation(
-      () => new Promise(() => {})
+  // @req REQ-002
+  it("should send search and letter filters to the API", async () => {
+    render(<PeopleView language="fr" onPeopleSelect={mockOnPeopleSelect} />, {
+      wrapper: createWrapper(),
+    });
+
+    await screen.findByText("Yoruba");
+
+    fireEvent.change(screen.getByRole("textbox"), {
+      target: { value: "Yoruba" },
+    });
+
+    await waitFor(() =>
+      expect(afrikLoader.getPeoples).toHaveBeenLastCalledWith({
+        page: 1,
+        perPage: 10,
+        search: "Yoruba",
+        letter: undefined,
+        languageFamilyId: undefined,
+      })
     );
 
+    fireEvent.click(screen.getByRole("button", { name: "Y" }));
+
+    await waitFor(() =>
+      expect(afrikLoader.getPeoples).toHaveBeenLastCalledWith({
+        page: 1,
+        perPage: 10,
+        search: "Yoruba",
+        letter: "Y",
+        languageFamilyId: undefined,
+      })
+    );
+  });
+
+  // @req REQ-001
+  it("should send the language family filter to the API", async () => {
     render(
       <PeopleView
         language="fr"
@@ -92,6 +149,50 @@ describe("PeopleView", () => {
       { wrapper: createWrapper() }
     );
 
-    expect(afrikLoader.getAllPeoples).toHaveBeenCalledTimes(1);
+    await waitFor(() =>
+      expect(afrikLoader.getPeoples).toHaveBeenCalledWith({
+        page: 1,
+        perPage: 10,
+        search: undefined,
+        letter: undefined,
+        languageFamilyId: "FLG_BANTU",
+      })
+    );
+  });
+
+  // @req REQ-043
+  it("should allow mobile users to navigate to a later page", async () => {
+    vi.mocked(useIsMobile).mockReturnValue(true);
+    vi.mocked(afrikLoader.getPeoples).mockImplementation(async ({ page }) => ({
+      ...firstPage,
+      data:
+        page === 2
+          ? [
+              {
+                id: "PPL_ZULU",
+                nameMain: "Zulu",
+                languageFamilyId: "FLG_BANTU",
+                currentCountries: ["ZAF"],
+              },
+            ]
+          : firstPage.data,
+      meta: { ...firstPage.meta, page: page ?? 1 },
+    }));
+
+    render(<PeopleView language="fr" onPeopleSelect={mockOnPeopleSelect} />, {
+      wrapper: createWrapper(),
+    });
+
+    await screen.findByText("Yoruba");
+    fireEvent.click(screen.getByRole("button", { name: "Page suivante" }));
+
+    expect(await screen.findByText("Zulu")).toBeInTheDocument();
+    expect(afrikLoader.getPeoples).toHaveBeenLastCalledWith({
+      page: 2,
+      perPage: 10,
+      search: undefined,
+      letter: undefined,
+      languageFamilyId: undefined,
+    });
   });
 });

@@ -3,6 +3,7 @@
  */
 
 import { getPeoples, getPeopleById } from "../services/peopleService";
+import type { PeopleQueryFilters } from "@/lib/supabase/queries/afrik/peoples";
 import type { People, ApiResponse } from "@/types/afrik";
 import { createPaginatedResponse } from "../utils/response";
 
@@ -11,9 +12,10 @@ import { createPaginatedResponse } from "../utils/response";
  */
 export async function listPeoplesHandler(
   page?: number,
-  perPage?: number
+  perPage?: number,
+  filters: PeopleQueryFilters = {}
 ): Promise<ApiResponse<People[]>> {
-  const { data, total } = await getPeoples(page, perPage);
+  const { data, total } = await getPeoples(page, perPage, filters);
   return createPaginatedResponse(data, total, page, perPage);
 }
 

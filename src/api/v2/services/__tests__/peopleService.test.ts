@@ -6,13 +6,13 @@ import {
 } from "../peopleService";
 
 vi.mock("@/lib/supabase/queries/afrik/peoples", () => ({
-  getAllAfrikPeoples: vi.fn(),
+  getPaginatedAfrikPeoples: vi.fn(),
   getAfrikPeopleById: vi.fn(),
   getAfrikPeoplesByLanguageFamily: vi.fn(),
 }));
 
 import {
-  getAllAfrikPeoples,
+  getPaginatedAfrikPeoples,
   getAfrikPeopleById,
   getAfrikPeoplesByLanguageFamily,
 } from "@/lib/supabase/queries/afrik/peoples";
@@ -23,42 +23,32 @@ describe("People Service", () => {
   });
 
   describe("getPeoples", () => {
-    it("should return paginated peoples", async () => {
-      const mockPeoples = Array.from({ length: 10 }, (_, i) => ({
-        id: `PPL_${i}`,
-        nameMain: `People ${i}`,
+    // @req REQ-033
+    it("should delegate pagination and filters to the database query", async () => {
+      const mockPeoples = [
+        {
+          id: "PPL_SHONA",
+          nameMain: "Shona",
+          languageFamilyId: "FLG_BANTU",
+          currentCountries: ["ZWE"],
+          content: {},
+        },
+      ];
+      vi.mocked(getPaginatedAfrikPeoples).mockResolvedValue({
+        data: mockPeoples,
+        total: 924,
+      });
+
+      const filters = {
+        search: "shona",
+        initialLetter: "S",
         languageFamilyId: "FLG_BANTU",
-        currentCountries: [],
-        content: {},
-      }));
+      };
+      const result = await getPeoples(3, 25, filters);
 
-      vi.mocked(getAllAfrikPeoples).mockResolvedValue(mockPeoples);
-
-      const result = await getPeoples(1, 5);
-
-      expect(result.data).toBeDefined();
-      expect(Array.isArray(result.data)).toBe(true);
-      expect(result.data.length).toBe(5);
-      expect(result.total).toBe(10);
-      expect(getAllAfrikPeoples).toHaveBeenCalled();
-    });
-
-    it("should handle pagination correctly", async () => {
-      const mockPeoples = Array.from({ length: 10 }, (_, i) => ({
-        id: `PPL_${i}`,
-        nameMain: `People ${i}`,
-        languageFamilyId: "FLG_BANTU",
-        currentCountries: [],
-        content: {},
-      }));
-
-      vi.mocked(getAllAfrikPeoples).mockResolvedValue(mockPeoples);
-      const page1 = await getPeoples(1, 2);
-      vi.mocked(getAllAfrikPeoples).mockResolvedValue(mockPeoples);
-      const page2 = await getPeoples(2, 2);
-
-      expect(page1.data.length).toBe(2);
-      expect(page2.data.length).toBe(2);
+      expect(getPaginatedAfrikPeoples).toHaveBeenCalledTimes(1);
+      expect(getPaginatedAfrikPeoples).toHaveBeenCalledWith(3, 25, filters);
+      expect(result).toEqual({ data: mockPeoples, total: 924 });
     });
   });
 
