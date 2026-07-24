@@ -41,10 +41,6 @@
  *               $ref: '#/components/schemas/Error'
  *             example:
  *               error: "Invalid language family ID format"
- *       401:
- *         $ref: '#/components/responses/Unauthorized'
- *       403:
- *         $ref: '#/components/responses/Forbidden'
  *       404:
  *         description: Famille linguistique non trouvée
  *         content:
@@ -53,16 +49,12 @@
  *               $ref: '#/components/schemas/Error'
  *             example:
  *               error: "Language family not found"
- *       429:
- *         $ref: '#/components/responses/RateLimited'
  *       500:
  *         description: Erreur serveur
  *         content:
  *           application/json:
  *             schema:
  *               $ref: '#/components/schemas/Error'
- *       503:
- *         $ref: '#/components/responses/ServiceUnavailable'
  */
 
 import { NextRequest } from "next/server";

@@ -2,6 +2,34 @@ import { describe, it, expect } from "vitest";
 import { swaggerSpecV2 } from "@/lib/api/openapiV2";
 
 describe("OpenAPI v2 spec - BearerAuth security", () => {
+  it("declares OpenAPI 3.1 without legacy nullable keywords", () => {
+    const spec = swaggerSpecV2 as Record<string, unknown>;
+
+    expect(spec.openapi).toBe("3.1.0");
+    expect(JSON.stringify(spec)).not.toContain('"nullable":true');
+  });
+
+  it("documents only the implemented flags operations", () => {
+    const spec = swaggerSpecV2 as Record<string, unknown>;
+    const paths = spec.paths as Record<string, Record<string, unknown>>;
+
+    expect(paths["/api/v2/flags"]?.post).toBeDefined();
+    expect(paths["/api/v2/flags"]?.get).toBeUndefined();
+    expect(paths["/api/v2/flags/{id}"]).toBeUndefined();
+  });
+
+  it("documents every implemented Module #0 route", () => {
+    const spec = swaggerSpecV2 as Record<string, unknown>;
+    const paths = spec.paths as Record<string, Record<string, unknown>>;
+
+    expect(
+      paths["/api/v2/confidence/{entityType}/{entityId}"]?.get
+    ).toBeDefined();
+    expect(paths["/api/v2/doctrine"]?.get).toBeDefined();
+    expect(paths["/api/v2/sources"]?.get).toBeDefined();
+    expect(paths["/api/v2/sources/{id}"]?.get).toBeDefined();
+  });
+
   it("should define BearerAuth in securitySchemes", () => {
     const spec = swaggerSpecV2 as Record<string, unknown>;
     const components = spec.components as Record<string, unknown>;
