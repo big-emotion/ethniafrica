@@ -7,6 +7,9 @@
  *   - expired / missing session is rejected (redirect)
  *   - legacy env vars (ADMIN_USERNAME, ADMIN_PASSWORD) are absent from codebase
  */
+// @req REQ-041
+// @req REQ-055
+// @req REQ-082
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { readFileSync, readdirSync, statSync } from "fs";
 import path from "path";

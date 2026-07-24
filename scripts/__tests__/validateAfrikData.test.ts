@@ -1,3 +1,10 @@
+// @req REQ-026
+// @req REQ-027
+// @req REQ-028
+// @req REQ-029
+// @req REQ-030
+// @req REQ-031
+// @req REQ-032
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from "fs";
 import { join, resolve } from "path";

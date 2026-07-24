@@ -1,3 +1,6 @@
+// @req REQ-057
+// @req REQ-080
+// @req REQ-091
 import { describe, it, expect, vi, afterEach } from "vitest";
 import {
   assertEuDsn,

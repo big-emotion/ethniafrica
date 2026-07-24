@@ -12,6 +12,12 @@ Maintain the EthniAfrica spec tree on Confluence. Given a free-text problem (bug
 
 This skill is **append-only on Confluence** and only writes new sections at status `Pending`. Humans transition `Pending → Implemented → Approved` through the Confluence UI. The skill never touches the Status macro of an existing section, never edits the body of a non-`Pending` section, and never deletes an ID.
 
+## Codex Compatibility
+
+This `.agents/skills` copy is the Codex-active port of the local Claude skill. Before acting, read `AGENTS.md` and `_bmad-output/project-context.md`; those are the active project rules for Codex runs.
+
+For Atlassian operations, use the available Atlassian Rovo MCP tools. If a legacy tool name appears below, resolve it by semantic name through `tool_search` before the first Atlassian call: `getAccessibleAtlassianResources`, `atlassianUserInfo`, `getConfluencePage`, `getConfluencePageDescendants`, `searchConfluenceUsingCql`, `searchJiraIssuesUsingJql`, `getJiraIssue`, `getVisibleJiraProjects`, `updateConfluencePage`, and `createJiraIssue`.
+
 ## When to Activate
 
 - User invokes `/ethniafrica-spec <description>` (explicit command).
@@ -37,7 +43,7 @@ If the argument is empty, ask for the description before doing anything else (th
 ## Preconditions (safety blockers — stop and report if any fail)
 
 1. **Bootstrap sentinel exists** — `docs/.confluence-bootstrap-complete` must be present. If absent, **stop and tell the user**: Confluence has not been bootstrapped yet — run `/ethniafrica-bootstrap-confluence` first.
-2. **Config readable** — `docs/confluence-spec/config.json` must be present and parseable, with non-null values for `cloudId`, `siteUrl`, `spaceKey`, `engineeringRootPageId`, `requirementsPageId`, `decisionsPageId`, `architecturePageId`, `obsoletePageId`, `jiraProjectKey`, and `jiraIssueTypeIds.{Epic,Story,Task,Bug}`. Any null in the four `*PageId` fields means the bootstrap publish step was incomplete — stop.
+2. **Config readable** — `docs/confluence-spec/config.json` must be present and parseable, with non-null values for `cloudId`, `siteUrl`, `spaceKey`, `engineeringRootPageId`, `engineeringTreePageId`, `requirementsPageId`, `decisionsPageId`, `architecturePageId`, `obsoletePageId`, `jiraProjectKey`, and `jiraIssueTypeIds.{Epic,Story,Task,Bug}`. `engineeringRootPageId` is the space homepage; `engineeringTreePageId` is the canonical Engineering subtree created by the bootstrap. Any null destination page ID means the bootstrap publish step was incomplete — stop.
 3. **Atlassian MCP reachable** — `getAccessibleAtlassianResources` returns at least one site, and the site whose ID matches `cloudId` is in the list. If not, stop — both halves of the workflow are impossible.
 4. **Atlassian identity resolvable** — `atlassianUserInfo` succeeds. Used to attribute the drafts to the current user.
 5. **Jira project visible** — `getVisibleJiraProjects` includes a project whose key is `jiraProjectKey` (`ETNI`). If not, the user lacks access — stop.
@@ -60,8 +66,8 @@ The full chain is **read → investigate → dedupe → choose granularity → d
 
 - Read the user's description. **Ask ONE clarification question if and only if** the shape of the change is genuinely ambiguous — e.g. you cannot tell whether it is a bug (existing REQ broken) or a feature (new REQ needed). Otherwise, **state your assumptions explicitly and proceed**.
 - Fetch the engineering root and its descendants:
-  - `getConfluencePage(cloudId, pageId=engineeringRootPageId)` → confirm the tree shape.
-  - `getConfluencePageDescendants(cloudId, parentId=engineeringRootPageId)` → list the four canonical subpages (Requirements / Decisions / Architecture / Obsolete). Identify them by the `*PageId` values from `config.json`, **never by title** — a shared Confluence space may host another project's spec tree whose pages own similar titles, and titles can be renamed by a human at any time without breaking the IDs.
+  - `getConfluencePage(cloudId, pageId=engineeringTreePageId)` → confirm the canonical Engineering subtree.
+  - `getConfluencePageDescendants(cloudId, parentId=engineeringTreePageId)` → list the four canonical subpages (Requirements / Decisions / Architecture / Obsolete). Identify them by the `*PageId` values from `config.json`, **never by title** — titles can be renamed by a human without breaking the IDs.
   - For each of `requirementsPageId`, `decisionsPageId`, `architecturePageId`: `getConfluencePage` (full body) to retrieve the existing REQ/DEC/ARCH sections and their IDs.
 - Walk the impact graph `REQ ← DEC ← ARCH`: if a candidate change touches an ARCH, list every DEC that references it; if it touches a DEC, list every REQ that depends on it. Propagation goes **upward** from ARCH to DEC to REQ. Surface the propagated impact in the preview.
   - Detection is text-based: an ARCH is "referenced" by a DEC if the DEC body contains its ID (`ARCH-007`); a DEC is referenced by a REQ the same way. Use `searchConfluenceUsingCql` scoped to the engineering root with `text ~ "<ID>"` if a full body scan is impractical.
@@ -70,7 +76,7 @@ The full chain is **read → investigate → dedupe → choose granularity → d
 
 ### Step 3 — Search for duplicates
 
-- `searchConfluenceUsingCql` against `space = "<spaceKey>" AND ancestor = <engineeringRootPageId> AND text ~ "<id>"` for each candidate ID, to confirm no REQ/DEC/ARCH ID being proposed is already in use anywhere in the tree.
+- `searchConfluenceUsingCql` against `space = "<spaceKey>" AND ancestor = <engineeringTreePageId> AND text ~ "<id>"` for each candidate ID, to confirm no REQ/DEC/ARCH ID being proposed is already in use anywhere in the tree.
 - `searchJiraIssuesUsingJql` against `project = <jiraProjectKey> AND statusCategory != Done AND text ~ "<id>"` for each candidate REQ/DEC/ARCH ID, to confirm no open ticket already covers the same scope.
 - If a duplicate is found, **fold the draft into the existing artifact** (point at it in the preview, do not create a parallel ID) and tell the user.
 - Additionally, before allocating a new ID in Step 5, run one CQL query per type (`REQ`, `DEC`, `ARCH`) to confirm the **highest** existing suffix. This double-check is the only safeguard against a stale local view of the engineering root (Step 2's body fetch could miss a section added by another writer between Step 2 and Step 5).
@@ -228,7 +234,7 @@ Print Confluence URLs (heading anchors), Jira keys with browse URLs, and a per-t
 - Append-only on Confluence. `Pending` only — never touch the Status macro of an existing section.
 - Never modify the body of a non-`Pending` section.
 - Never remove or delete an ID.
-- Never write outside the engineering root subtree (page ID from `config.json`).
+- Never write outside the canonical Engineering subtree (`engineeringTreePageId` from `config.json`).
 - Confluence-first, then Jira. An orphan Confluence section is recoverable; an orphan Jira ticket is not.
 - No invention: if a REQ statement is unclear, leave a `TODO: clarify with <stakeholder>` block and ask.
 - ID stability: never renumber an already-published ID. On local conflict, renumber locally; never on canonical.
@@ -265,7 +271,7 @@ Forbidden:
 - `editJiraIssue` — this skill never touches existing tickets.
 - `createConfluenceFooterComment` — Confluence comments are not the spec channel.
 - `createConfluenceInlineComment` — same reason.
-- Any write outside the engineering root subtree resolved from `engineeringRootPageId`.
+- Any write outside the canonical Engineering subtree resolved from `engineeringTreePageId`.
 - Any operation that flips a Status macro on an existing section (`Pending → Implemented`, etc.) — humans only, via Confluence UI.
 
 ## Failure Modes — Stop Without Modifying

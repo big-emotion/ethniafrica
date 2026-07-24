@@ -1,3 +1,6 @@
+// @req REQ-036
+// @req REQ-075
+// @req REQ-084
 import { describe, it, expect } from "vitest";
 import { swaggerSpecV2 } from "@/lib/api/openapiV2";
 
