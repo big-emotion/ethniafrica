@@ -82,6 +82,14 @@ Full DDL: `supabase/migrations/006_afrik_schema.sql`. Migrations 001–007; **00
 
 Frontend reads flow through `src/lib/afrikLoader.ts` or `src/lib/supabase/queries/afrik/*`. No raw Supabase calls in components.
 
+### Optional Prismic editorial overlay
+
+Supabase remains canonical for all AFRIK data and `/api/v2`. Website entity
+pages may add an optional French Prismic presentation layer joined by
+`afrik_id`; ownership, cache isolation, preview, publication, fallback, and
+recovery rules are defined in
+[ADR-0003](adr/0003-supabase-prismic-content-ownership.md).
+
 ## 5. AFRIK Data Pipeline
 
 ```
