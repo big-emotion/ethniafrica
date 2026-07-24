@@ -1,5 +1,14 @@
 {
   "mcpServers": {
+    "atlassian": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp"
+    },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "bearer_token_env_var": "GITHUB_PAT_TOKEN"
+    },
     "supabase": {
       "type": "http",
       "url": "https://mcp.supabase.com/mcp"
