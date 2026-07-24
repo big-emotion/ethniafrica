@@ -29,6 +29,7 @@ interface PageLayoutProps {
   }) => void;
 }
 
+// @req REQ-043
 export const PageLayout = ({
   children,
   language,
@@ -137,14 +138,7 @@ export const PageLayout = ({
                     height={48}
                     className="object-contain"
                   />
-                  <h1
-                    className="text-3xl md:text-4xl font-display font-bold text-foreground bg-clip-text text-transparent gradient-warm"
-                    style={{
-                      backgroundClip: "text",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                    }}
-                  >
+                  <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground page-title-gradient">
                     {displayTitle}
                   </h1>
                 </div>
