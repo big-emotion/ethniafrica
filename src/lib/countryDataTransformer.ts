@@ -381,16 +381,8 @@ export function transformHero(country: CountryDetail): HeroData {
   // Check if uncertain
   const isUncertain = /débattu|incertain|hypothèse/i.test(etymology);
 
-  // Clean "Foo (Foo)" → "Foo" when name and official are identical
-  const rawName = country.nameFr || "";
-  const nameMatch = rawName.match(/^(.+?)\s*\(([^)]+)\)$/);
-  const countryName =
-    nameMatch && nameMatch[1].trim() === nameMatch[2].trim()
-      ? nameMatch[1].trim()
-      : rawName.trim();
-
   return {
-    countryName,
+    countryName: country.nameCommonFr.trim(),
     nameOfficial: country.nameOfficial,
     iso,
     flag: flagFromISO3(iso),
