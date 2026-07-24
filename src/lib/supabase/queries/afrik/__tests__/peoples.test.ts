@@ -7,6 +7,7 @@ vi.mock("../../../server", () => ({
 import {
   getAllAfrikPeoples,
   getAfrikPeopleById,
+  getPaginatedAfrikPeoples,
   getAfrikPeoplesByLanguageFamily,
   getAfrikPeoplesByCountry,
   searchAfrikPeoples,
@@ -123,6 +124,110 @@ describe("AFRIK Peoples Queries", () => {
       expect(result).toHaveLength(1);
       expect(result[0].id).toBe("PPL_SHONA");
       expect(result[0].currentCountries).toContain("ZWE");
+    });
+  });
+
+  describe("getPaginatedAfrikPeoples", () => {
+    // @req REQ-033
+    it("should fetch a page and its country relations in one database query", async () => {
+      const pageRows = [
+        {
+          id: "PPL_PAGE_21",
+          name_main: "Page 21",
+          language_family_id: "FLG_TEST",
+          content: {},
+          afrik_people_countries: [{ country_id: "COD" }],
+        },
+        {
+          id: "PPL_PAGE_22",
+          name_main: "Page 22",
+          language_family_id: "FLG_TEST",
+          content: {},
+          afrik_people_countries: [{ country_id: "COG" }],
+        },
+      ];
+      const peopleChain = {
+        select: vi.fn(),
+        order: vi.fn(),
+        range: vi.fn(),
+      };
+      peopleChain.select.mockReturnValue(peopleChain);
+      peopleChain.order.mockReturnValue(peopleChain);
+      peopleChain.range.mockResolvedValue({
+        data: pageRows,
+        error: null,
+        count: 42,
+      });
+
+      const relationChain = {
+        select: vi.fn(),
+        in: vi.fn(),
+      };
+      relationChain.select.mockReturnValue(relationChain);
+      relationChain.in.mockResolvedValue({
+        data: [],
+        error: null,
+      });
+
+      mockSupabase.from.mockImplementation((table: string) =>
+        table === "afrik_people_countries" ? relationChain : peopleChain
+      );
+
+      const result = await getPaginatedAfrikPeoples(2, 20);
+
+      expect(peopleChain.select).toHaveBeenCalledWith(
+        "*, afrik_people_countries(country_id)",
+        { count: "exact" }
+      );
+      expect(peopleChain.range).toHaveBeenCalledWith(20, 39);
+      expect(result.total).toBe(42);
+      expect(result.data).toHaveLength(2);
+      expect(result.data[0].currentCountries).toEqual(["COD"]);
+      expect(result.data[1].currentCountries).toEqual(["COG"]);
+      expect(mockSupabase.from).toHaveBeenCalledTimes(1);
+      expect(mockSupabase.from).toHaveBeenCalledWith("afrik_peoples");
+      expect(relationChain.in).not.toHaveBeenCalled();
+    });
+
+    // @req REQ-033
+    it("should apply optional filters before database pagination", async () => {
+      const peopleChain = {
+        select: vi.fn(),
+        textSearch: vi.fn(),
+        ilike: vi.fn(),
+        eq: vi.fn(),
+        order: vi.fn(),
+        range: vi.fn(),
+      };
+      peopleChain.select.mockReturnValue(peopleChain);
+      peopleChain.textSearch.mockReturnValue(peopleChain);
+      peopleChain.ilike.mockReturnValue(peopleChain);
+      peopleChain.eq.mockReturnValue(peopleChain);
+      peopleChain.order.mockReturnValue(peopleChain);
+      peopleChain.range.mockResolvedValue({
+        data: [],
+        error: null,
+        count: 0,
+      });
+      mockSupabase.from.mockReturnValue(peopleChain);
+
+      await getPaginatedAfrikPeoples(1, 20, {
+        search: "Kongo",
+        initialLetter: "K",
+        languageFamilyId: "FLG_BANTU",
+      });
+
+      expect(peopleChain.textSearch).toHaveBeenCalledWith(
+        "search_vector",
+        "Kongo",
+        { type: "websearch", config: "french" }
+      );
+      expect(peopleChain.ilike).toHaveBeenCalledWith("name_main", "K%");
+      expect(peopleChain.eq).toHaveBeenCalledWith(
+        "language_family_id",
+        "FLG_BANTU"
+      );
+      expect(peopleChain.range).toHaveBeenCalledWith(0, 19);
     });
   });
 
