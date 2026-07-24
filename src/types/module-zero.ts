@@ -72,6 +72,7 @@ export interface FlagRow {
     | "withdrawn"
     | "duplicate";
   contributor_id: string | null;
+  contributor_display_name_snapshot: string | null;
   severity: "low" | "medium" | "high" | "critical" | null;
   auto_generated: boolean;
   counter_source_url: string | null;
