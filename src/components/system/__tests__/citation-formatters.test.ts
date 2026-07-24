@@ -39,6 +39,10 @@ describe("citation formatters", () => {
     ).toBe(
       "https://ethniafrica.example/fr/familles-linguistiques/atlantique?print=1#langues"
     );
+
+    expect(createPrintableUrl("/fr/peuples/seereer@v34")).toBe(
+      "/fr/peuples/seereer@v34?print=1"
+    );
   });
 
   // @req REQ-021

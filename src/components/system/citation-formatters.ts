@@ -48,9 +48,13 @@ function escapeMarkdown(value: string): string {
 
 // @req REQ-021
 export function createPrintableUrl(url: string): string {
-  const printableUrl = new URL(url);
+  const isAbsoluteUrl = /^[a-z][a-z\d+.-]*:/i.test(url);
+  const printableUrl = new URL(url, "https://citation.invalid");
   printableUrl.searchParams.set("print", "1");
-  return printableUrl.toString();
+
+  return isAbsoluteUrl
+    ? printableUrl.toString()
+    : `${printableUrl.pathname}${printableUrl.search}${printableUrl.hash}`;
 }
 
 // @req REQ-021
