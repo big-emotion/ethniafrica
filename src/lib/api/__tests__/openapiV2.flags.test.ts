@@ -3,11 +3,10 @@ import { swaggerSpecV2 } from "@/lib/api/openapiV2";
 
 interface SchemaObject {
   $ref?: string;
-  type?: string;
+  type?: string | string[];
   format?: string;
   scheme?: string;
   bearerFormat?: string;
-  nullable?: boolean;
   minimum?: number;
   maximum?: number;
   default?: number;
@@ -215,8 +214,7 @@ describe("OpenAPI v2 flags contract", () => {
     expect(
       schemas.FlagCursorPaginationMeta.properties.next_cursor
     ).toMatchObject({
-      type: "string",
-      nullable: true,
+      type: ["string", "null"],
     });
 
     const parameters = Object.fromEntries(

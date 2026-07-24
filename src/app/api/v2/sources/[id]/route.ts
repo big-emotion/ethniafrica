@@ -6,7 +6,8 @@
  * /api/v2/sources/{id}:
  *   get:
  *     summary: Get a single Module #0 source by id
- *     tags: [API v2 - Module #0]
+ *     tags:
+ *       - "API v2 - Module #0"
  *     parameters:
  *       - in: path
  *         name: id
