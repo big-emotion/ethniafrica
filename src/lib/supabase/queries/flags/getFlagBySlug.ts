@@ -18,6 +18,17 @@ export interface FlagPublicRecord {
   assertion: AssertionContext | null;
 }
 
+// @req REQ-042
+export function getContributorAttribution(
+  contributor: ContributorProfile | null
+): string {
+  if (contributor?.public === true && contributor.display_name?.trim()) {
+    return contributor.display_name;
+  }
+
+  return "contributeur anonyme";
+}
+
 /**
  * Fetch a public flag row by its Crockford base32 public_slug.
  *
@@ -48,7 +59,7 @@ export async function getFlagBySlug(
     const { data: profile, error: profileError } = await supabase
       .from("contributor_profiles")
       .select("display_name, public")
-      .eq("id", flag.contributor_id)
+      .or(`id.eq.${flag.contributor_id},user_id.eq.${flag.contributor_id}`)
       .maybeSingle();
 
     if (profileError) {

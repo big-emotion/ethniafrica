@@ -155,6 +155,13 @@ export async function middleware(request: NextRequest) {
   // /fr/admin/connexion is the public sign-in entry point and must be excluded.
   const isAdminRoute =
     pathname.startsWith("/fr/admin") && pathname !== "/fr/admin/connexion";
+  const isContributorProfileRoute = pathname === "/fr/compte/profil";
+
+  if (isContributorProfileRoute && !user) {
+    const loginUrl = new URL("/fr/compte/connexion", request.url);
+    loginUrl.searchParams.set("redirect", pathname);
+    return NextResponse.redirect(loginUrl);
+  }
 
   if (isAdminRoute) {
     if (!user) {
