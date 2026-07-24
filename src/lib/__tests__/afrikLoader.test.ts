@@ -139,6 +139,37 @@ describe("afrikLoader", () => {
       expect(result?.generalInfo?.branches).toContain("Eastern Bantu");
     });
 
+    // @req REQ-033
+    it("should map canonical associated peoples from the top-level response", async () => {
+      const mockResponse = {
+        data: {
+          id: "FLG_AFROASIATIQUE",
+          nameFr: "Afro-asiatique",
+          associatedPeoples: [
+            { name: "Amhara", peopleId: "PPL_AMHARA" },
+            { name: "Oromo", peopleId: "PPL_OROMO" },
+          ],
+          content: {
+            generalInfo: {
+              geographicArea: "North and East Africa",
+            },
+          },
+        },
+      };
+
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(mockResponse),
+      });
+
+      const result = await getLanguageFamily("FLG_AFROASIATIQUE");
+
+      expect(result?.associatedPeoples).toEqual([
+        { name: "Amhara", peopleId: "PPL_AMHARA" },
+        { name: "Oromo", peopleId: "PPL_OROMO" },
+      ]);
+    });
+
     it("should return null for 404", async () => {
       mockFetch.mockResolvedValueOnce({
         ok: false,

@@ -245,9 +245,30 @@ const options: swaggerJsdoc.Options = {
               type: "string",
               example: "Bantu",
             },
+            associatedPeoples: {
+              type: "array",
+              description:
+                "Canonical associated peoples derived from afrik_peoples.language_family_id.",
+              items: {
+                type: "object",
+                required: ["name", "peopleId"],
+                properties: {
+                  name: {
+                    type: "string",
+                    example: "Shona",
+                  },
+                  peopleId: {
+                    type: "string",
+                    description: "Stable PPL_* identifier.",
+                    example: "PPL_SHONA",
+                  },
+                },
+              },
+            },
             content: {
               type: "object",
-              description: "Contenu évolutif en JSONB",
+              description:
+                "Evolutionary JSONB content. Its associatedPeoples property is a legacy compatibility copy derived from the canonical top-level array.",
             },
           },
         },
