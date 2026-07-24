@@ -25,10 +25,18 @@ vi.mock("@/lib/supabase/auth-server", () => ({
 vi.mock("@/lib/supabase/admin", () => ({
   createAdminClient: vi.fn(),
 }));
+vi.mock("@/lib/api/turnstile", () => ({
+  verifyTurnstileToken: vi.fn(),
+}));
+vi.mock("@/lib/ratelimit/flagRateLimit", () => ({
+  checkFlagRateLimit: vi.fn(),
+}));
 
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
 import { createServerSupabaseClient } from "@/lib/supabase/auth-server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { verifyTurnstileToken } from "@/lib/api/turnstile";
+import { checkFlagRateLimit } from "@/lib/ratelimit/flagRateLimit";
 import InscriptionPage from "../inscription/page";
 import { GET as callbackGET } from "@/app/api/auth/callback/route";
 import { POST as flagPOST } from "@/app/api/v2/flags/route";
@@ -67,6 +75,10 @@ function makeCallbackServerMock(user: object | null, withAgeUpdate = false) {
 }
 
 function makeAdminMock(ageConfirmedAt: string | null) {
+  const getUser = vi.fn().mockResolvedValue({
+    data: { user: { id: "user-1" } },
+    error: null,
+  });
   const singleFn = vi.fn().mockResolvedValue({
     data: { age_confirmed_at: ageConfirmedAt },
     error: null,
@@ -81,21 +93,11 @@ function makeAdminMock(ageConfirmedAt: string | null) {
     }),
   });
   return {
+    auth: { getUser },
     from: vi.fn().mockImplementation((table: string) => {
       if (table === "contributor_profiles") return { select: selectFn };
       return { insert: insertFn };
     }),
-  };
-}
-
-function makeAuthServerMock(userId = "user-1") {
-  return {
-    auth: {
-      getUser: vi.fn().mockResolvedValue({
-        data: { user: { id: userId } },
-        error: null,
-      }),
-    },
   };
 }
 
@@ -191,37 +193,39 @@ describe("GET /api/auth/callback — age_confirmed_at", () => {
 
 describe("POST /api/v2/flags — age gate guard", () => {
   const validBody = {
-    entity_type: "people",
-    entity_id: "PPL_YORUBA",
+    target_type: "people",
+    target_id: "PPL_YORUBA",
     flag_kind: "inaccurate",
-    reason_text: "Incorrect claim",
+    reason_text: "The published claim needs a newer source.",
+    turnstile_token: "turnstile-token",
   };
 
   beforeEach(() => {
     vi.clearAllMocks();
+    vi.mocked(verifyTurnstileToken).mockResolvedValue("verified");
+    vi.mocked(checkFlagRateLimit).mockResolvedValue({ allowed: true });
   });
 
   it("returns 403 when contributor has no age_confirmed_at", async () => {
-    vi.mocked(createServerSupabaseClient).mockResolvedValue(
-      makeAuthServerMock() as never
-    );
     vi.mocked(createAdminClient).mockReturnValue(makeAdminMock(null) as never);
 
     const res = await flagPOST(
       new NextRequest("http://localhost/api/v2/flags", {
         method: "POST",
         body: JSON.stringify(validBody),
-        headers: { "content-type": "application/json" },
+        headers: {
+          authorization: "Bearer valid-access-token",
+          "content-type": "application/json",
+        },
       })
     );
 
     expect(res.status).toBe(403);
+    expect((await res.json()).errors[0].code).toBe("AGE_CONFIRMATION_REQUIRED");
+    expect(verifyTurnstileToken).not.toHaveBeenCalled();
   });
 
   it("returns 201 when contributor has age_confirmed_at set", async () => {
-    vi.mocked(createServerSupabaseClient).mockResolvedValue(
-      makeAuthServerMock() as never
-    );
     vi.mocked(createAdminClient).mockReturnValue(
       makeAdminMock("2026-01-01T00:00:00Z") as never
     );
@@ -230,10 +234,17 @@ describe("POST /api/v2/flags — age gate guard", () => {
       new NextRequest("http://localhost/api/v2/flags", {
         method: "POST",
         body: JSON.stringify(validBody),
-        headers: { "content-type": "application/json" },
+        headers: {
+          authorization: "Bearer valid-access-token",
+          "content-type": "application/json",
+        },
       })
     );
 
     expect(res.status).toBe(201);
+    expect(verifyTurnstileToken).toHaveBeenCalledWith(
+      "turnstile-token",
+      undefined
+    );
   });
 });
