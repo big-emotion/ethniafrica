@@ -1,6 +1,8 @@
+// @req REQ-022
+// @req REQ-025
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { DoctrineLinkCard } from "../DoctrineLinkCard";
+import { DoctrineLinkCard, isDoctrineSlug } from "../DoctrineLinkCard";
 
 describe("DoctrineLinkCard", () => {
   describe("French explanatory copy per slug", () => {
@@ -43,33 +45,51 @@ describe("DoctrineLinkCard", () => {
       );
     });
 
-    it("renders the historical note when version is undefined", () => {
+    // @req REQ-025
+    it("does not render the obsolete historical note", () => {
       render(<DoctrineLinkCard slug="heritage-colonial" />);
       expect(
-        screen.getByText(
-          /version en vigueur au moment de la publication — historique disponible prochainement/i
-        )
-      ).toBeInTheDocument();
+        screen.queryByText(/historique disponible prochainement/i)
+      ).not.toBeInTheDocument();
     });
   });
 
   describe("Pinned (with version) link target", () => {
-    it("renders /fr/doctrine/<slug>@v1 link when version=1", () => {
+    // @req REQ-025
+    it("renders /fr/doctrine/<slug>@v42 link when version=42", () => {
       render(
-        <DoctrineLinkCard slug="classifications-contestees" version={1} />
+        <DoctrineLinkCard slug="classifications-contestees" version={42} />
       );
       const link = screen.getByRole("link");
       expect(link).toHaveAttribute(
         "href",
-        "/fr/doctrine/classifications-contestees@v1"
+        "/fr/doctrine/classifications-contestees@v42"
       );
     });
 
-    it("does NOT render the historical note when version is provided", () => {
+    // @req REQ-025
+    it("does not render the obsolete historical note", () => {
       render(<DoctrineLinkCard slug="topics-sensibles" version={2} />);
       expect(
-        screen.queryByText(/version en vigueur au moment de la publication/i)
+        screen.queryByText(/historique disponible prochainement/i)
       ).not.toBeInTheDocument();
+    });
+  });
+
+  describe("Doctrine slug validation", () => {
+    // @req REQ-025
+    it.each([
+      "endonymes-vs-exonymes",
+      "classifications-contestees",
+      "heritage-colonial",
+      "topics-sensibles",
+    ])("accepts the seeded slug %s", (slug) => {
+      expect(isDoctrineSlug(slug)).toBe(true);
+    });
+
+    // @req REQ-025
+    it("rejects an untrusted slug", () => {
+      expect(isDoctrineSlug("classification-status")).toBe(false);
     });
   });
 });

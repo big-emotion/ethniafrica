@@ -195,6 +195,16 @@ All colors MUST be HSL.
     background: var(--gradient-warm);
   }
 
+  @supports ((background-clip: text) or (-webkit-background-clip: text)) {
+    .page-title-gradient {
+      background: var(--gradient-warm);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
   .gradient-earth {
     background: var(--gradient-earth);
   }

@@ -1,6 +1,6 @@
 /**
  * API v2 - Peoples endpoint
- * GET /api/v2/peoples?page=1&perPage=20
+ * GET /api/v2/peoples?page=1&perPage=20&search=shona&letter=S&languageFamilyId=FLG_BANTU
  *
  * @swagger
  * /api/v2/peoples:
@@ -26,6 +26,30 @@
  *           default: 20
  *         description: Nombre d'éléments par page (max 100)
  *         example: 20
+ *       - in: query
+ *         name: search
+ *         required: false
+ *         schema:
+ *           type: string
+ *         description: Full-text search applied to people records
+ *         example: shona
+ *       - in: query
+ *         name: letter
+ *         required: false
+ *         schema:
+ *           type: string
+ *           minLength: 1
+ *           maxLength: 1
+ *         description: Case-insensitive initial letter filter
+ *         example: S
+ *       - in: query
+ *         name: languageFamilyId
+ *         required: false
+ *         schema:
+ *           type: string
+ *           pattern: '^FLG_[A-Z_]+$'
+ *         description: Language family identifier filter
+ *         example: FLG_BANTU
  *     responses:
  *       200:
  *         description: Liste paginée des peuples
@@ -61,7 +85,11 @@
 
 import { NextRequest } from "next/server";
 import { listPeoplesHandler } from "@/api/v2/handlers/peoples";
-import { validatePage, validatePerPage } from "@/api/v2/utils/validation";
+import {
+  validateLanguageFamilyId,
+  validatePage,
+  validatePerPage,
+} from "@/api/v2/utils/validation";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
 
@@ -71,16 +99,31 @@ export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams;
     const page = validatePage(searchParams.get("page"));
     const perPage = validatePerPage(searchParams.get("perPage"));
+    const search = searchParams.get("search")?.trim() || undefined;
+    const initialLetter =
+      searchParams.get("letter")?.trim().toUpperCase() || undefined;
+    const rawLanguageFamilyId =
+      searchParams.get("languageFamilyId")?.trim() || undefined;
+    const languageFamilyId =
+      rawLanguageFamilyId && validateLanguageFamilyId(rawLanguageFamilyId)
+        ? rawLanguageFamilyId
+        : undefined;
+    const filters = {
+      ...(search ? { search } : {}),
+      ...(initialLetter ? { initialLetter } : {}),
+      ...(languageFamilyId ? { languageFamilyId } : {}),
+    };
 
-    logger.info("GET /api/v2/peoples", { page, perPage });
+    logger.info("GET /api/v2/peoples", { page, perPage, ...filters });
 
-    const response = await listPeoplesHandler(page, perPage);
+    const response = await listPeoplesHandler(page, perPage, filters);
     const corsResponse = jsonWithCors(response);
 
     const duration = Date.now() - startTime;
     logger.info("GET /api/v2/peoples completed", {
       page,
       perPage,
+      ...filters,
       duration,
       status: 200,
     });

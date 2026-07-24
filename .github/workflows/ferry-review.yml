@@ -42,7 +42,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Validate event envelope
-        uses: big-emotion/ferry/.github/actions/ferry-envelope-validate@v1.1.2
+        uses: big-emotion/ferry/.github/actions/ferry-envelope-validate@010f15147572106521d72577a8d9b1a6485d9597 # v1.1.2
         with:
           payload: ${{ toJson(github.event.client_payload) }}
 
@@ -60,7 +60,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Resolve execution path
         id: route
-        uses: big-emotion/ferry/.github/actions/ferry-route@v1.1.2
+        uses: big-emotion/ferry/.github/actions/ferry-route@010f15147572106521d72577a8d9b1a6485d9597 # v1.1.2
         with:
           payload: ${{ toJson(github.event.client_payload) }}
           role: reviewer
@@ -95,7 +95,7 @@ jobs:
 
       - name: Run Reviewer agent
         id: run-reviewer
-        uses: big-emotion/ferry/.github/actions/ferry-run-reviewer@v1.1.2
+        uses: big-emotion/ferry/.github/actions/ferry-run-reviewer@010f15147572106521d72577a8d9b1a6485d9597 # v1.1.2
         with:
           payload: ${{ toJson(github.event.client_payload) }}
           jira_base_url: ${{ secrets.FERRY_JIRA_BASE_URL }}
@@ -126,7 +126,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Resolve reviewer CI pre-gate
         id: ci-gate
-        uses: big-emotion/ferry/.github/actions/ferry-ci-gate@v1.1.2
+        uses: big-emotion/ferry/.github/actions/ferry-ci-gate@010f15147572106521d72577a8d9b1a6485d9597 # v1.1.2
         with:
           ticket_key: ${{ github.event.client_payload.ticket_key }}
           run_id: ${{ github.event.client_payload.event_id }}
@@ -223,7 +223,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Emit audit line
-        uses: big-emotion/ferry/.github/actions/ferry-emit-audit@v1.1.2
+        uses: big-emotion/ferry/.github/actions/ferry-emit-audit@010f15147572106521d72577a8d9b1a6485d9597 # v1.1.2
         with:
           ticket: ${{ github.event.client_payload.ticket_key }}
           phase: review

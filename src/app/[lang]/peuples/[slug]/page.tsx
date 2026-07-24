@@ -8,7 +8,13 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleDetailView } from "@/components/detail/PeopleDetailView";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
+import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
+import {
+  DoctrineLinkCard,
+  isDoctrineSlug,
+} from "@/components/source-transparency/DoctrineLinkCard";
 
+// @req REQ-019
 export const revalidate = 3600;
 
 interface PageParams {
@@ -25,6 +31,10 @@ interface SnapshotViewProps {
   version: number;
   publishedAt: string | null;
   confidence: number | null;
+  doctrine?: {
+    slug: string;
+    version: number;
+  } | null;
   snapshotData: Record<string, unknown>;
   lang: string;
 }
@@ -34,6 +44,7 @@ function SnapshotFicheView({
   version,
   publishedAt,
   confidence,
+  doctrine,
   snapshotData,
   lang,
 }: SnapshotViewProps) {
@@ -44,30 +55,19 @@ function SnapshotFicheView({
         ? snapshotData.name_main
         : entityId;
 
-  const publishedLabel = publishedAt
-    ? new Intl.DateTimeFormat("fr-FR", { dateStyle: "long" }).format(
-        new Date(publishedAt)
-      )
-    : null;
-
   return (
     <div data-testid="people-snapshot-view" className="space-y-4">
-      {/* Pinned-version banner */}
-      <div className="rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800">
-        <span className="font-medium">Version archivée&nbsp;v{version}</span>
-        {publishedLabel && (
-          <span className="ml-2 text-amber-700">
-            · publiée le {publishedLabel}
-          </span>
-        )}
-        <span className="mx-2 text-amber-400">·</span>
-        <a
-          href={`/${lang}/peuples/${entityId}`}
-          className="underline hover:no-underline"
-        >
-          Voir la version actuelle
-        </a>
+      {/* Snapshot content */}
+      <div className="space-y-2">
+        <h1 className="text-2xl font-semibold">{nameMain}</h1>
+        <p className="text-sm text-muted-foreground font-mono">{entityId}</p>
       </div>
+
+      <PinnedVersionBanner
+        pinnedAt={publishedAt}
+        versionTag={String(version)}
+        liveUrl={`/${lang}/peuples/${entityId}`}
+      />
 
       {/* Frozen confidence chip (AR14) */}
       {confidence !== null && (
@@ -81,12 +81,6 @@ function SnapshotFicheView({
         </div>
       )}
 
-      {/* Snapshot content */}
-      <div className="space-y-2">
-        <h1 className="text-2xl font-semibold">{nameMain}</h1>
-        <p className="text-sm text-muted-foreground font-mono">{entityId}</p>
-      </div>
-
       {/* "Version introuvable" copy is rendered by notFound() — this component
           is only reached when the version exists */}
       <div className="prose prose-neutral max-w-none text-sm text-muted-foreground">
@@ -95,6 +89,10 @@ function SnapshotFicheView({
           jamais modifié.
         </p>
       </div>
+
+      {doctrine && isDoctrineSlug(doctrine.slug) && (
+        <DoctrineLinkCard slug={doctrine.slug} version={doctrine.version} />
+      )}
     </div>
   );
 }
@@ -103,6 +101,7 @@ function SnapshotFicheView({
 // Page
 // ---------------------------------------------------------------------------
 
+// @req REQ-019
 export default async function PeoplesSlugPage({
   params,
 }: {
@@ -149,6 +148,7 @@ export default async function PeoplesSlugPage({
             version={parsed.version}
             publishedAt={snapshot.published_at}
             confidence={snapshot.confidence}
+            doctrine={snapshot.doctrine}
             snapshotData={snapshot.data}
             lang={lang}
           />

@@ -1,3 +1,4 @@
+// @req REQ-056
 import { describe, it, expect, vi, beforeEach } from "vitest";
 
 vi.mock("@/lib/api/auth", () => ({

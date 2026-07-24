@@ -2,7 +2,10 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FlagPublicStatus } from "@/components/flags/FlagPublicStatus";
-import { getFlagBySlug } from "@/lib/supabase/queries/flags/getFlagBySlug";
+import {
+  getContributorAttribution,
+  getFlagBySlug,
+} from "@/lib/supabase/queries/flags/getFlagBySlug";
 
 /**
  * ISR: revalidate on every request in dev; in production the pg_notify →
@@ -70,10 +73,7 @@ export default async function SignalementsSlugPage({
 
   const { flag, contributor, assertion } = record;
 
-  const isPublicContributor = contributor?.public === true;
-  const contributorName = isPublicContributor
-    ? (contributor?.display_name ?? "contributeur anonyme")
-    : "contributeur anonyme";
+  const contributorName = getContributorAttribution(contributor);
 
   const fieldPath = assertion?.field_path ?? flag.assertion_field_path;
   const snapshotQuote = assertion?.statement ?? null;

@@ -82,6 +82,14 @@ Full DDL: `supabase/migrations/006_afrik_schema.sql`. Migrations 001–007; **00
 
 Frontend reads flow through `src/lib/afrikLoader.ts` or `src/lib/supabase/queries/afrik/*`. No raw Supabase calls in components.
 
+### Optional Prismic editorial overlay
+
+Supabase remains canonical for all AFRIK data and `/api/v2`. Website entity
+pages may add an optional French Prismic presentation layer joined by
+`afrik_id`; ownership, cache isolation, preview, publication, fallback, and
+recovery rules are defined in
+[ADR-0003](adr/0003-supabase-prismic-content-ownership.md).
+
 ## 5. AFRIK Data Pipeline
 
 ```
@@ -120,7 +128,7 @@ Vitest + happy-dom. TDD is mandatory — red/green/refactor.
 - Parsers: `src/lib/afrik/parsers/__tests__/*.test.ts`
 - Components: colocated `*.test.tsx`
 
-Known pre-existing failures (6 in `scripts/__tests__/migrateAfrikToDatabase.test.ts`; 4 in handler tests — all Supabase mock issues). Do not "fix" without scope.
+Known pre-existing failures remain in 4 handler tests (Supabase mock issues). Do not fix them without scope.
 
 ## 9. Architectural Invariants
 
