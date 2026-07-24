@@ -305,9 +305,13 @@ function getAccessToken(request: NextRequest): string | null {
 }
 
 function getClientIp(request: NextRequest): string | undefined {
-  return (
-    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || undefined
-  );
+  const forwardedIp = request.headers
+    .get("x-forwarded-for")
+    ?.split(",")
+    .map((value) => value.trim())
+    .find(Boolean);
+
+  return forwardedIp || request.headers.get("x-real-ip")?.trim() || undefined;
 }
 
 // @req REQ-012
