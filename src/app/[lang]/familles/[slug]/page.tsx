@@ -6,7 +6,9 @@ import { createServerClient } from "@/lib/supabase/server";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { LanguageFamilyDetailView } from "@/components/detail/LanguageFamilyDetailView";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
+import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
 
+// @req REQ-019
 export const revalidate = 3600;
 
 interface PageParams {
@@ -42,29 +44,18 @@ function FamilySnapshotFicheView({
         ? snapshotData.nameFr
         : entityId;
 
-  const publishedLabel = publishedAt
-    ? new Intl.DateTimeFormat("fr-FR", { dateStyle: "long" }).format(
-        new Date(publishedAt)
-      )
-    : null;
-
   return (
     <div data-testid="family-snapshot-view" className="space-y-4">
-      <div className="rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800">
-        <span className="font-medium">Version archivée&nbsp;v{version}</span>
-        {publishedLabel && (
-          <span className="ml-2 text-amber-700">
-            · publiée le {publishedLabel}
-          </span>
-        )}
-        <span className="mx-2 text-amber-400">·</span>
-        <a
-          href={`/${lang}/familles/${entityId}`}
-          className="underline hover:no-underline"
-        >
-          Voir la version actuelle
-        </a>
+      <div className="space-y-2">
+        <h1 className="text-2xl font-semibold">{nameFr}</h1>
+        <p className="text-sm text-muted-foreground font-mono">{entityId}</p>
       </div>
+
+      <PinnedVersionBanner
+        pinnedAt={publishedAt}
+        versionTag={String(version)}
+        liveUrl={`/${lang}/familles/${entityId}`}
+      />
 
       {confidence !== null && (
         <div className="px-1">
@@ -76,11 +67,6 @@ function FamilySnapshotFicheView({
           />
         </div>
       )}
-
-      <div className="space-y-2">
-        <h1 className="text-2xl font-semibold">{nameFr}</h1>
-        <p className="text-sm text-muted-foreground font-mono">{entityId}</p>
-      </div>
 
       <div className="prose prose-neutral max-w-none text-sm text-muted-foreground">
         <p>
@@ -141,6 +127,7 @@ async function getFamilyRevisionSnapshot(
 // Page
 // ---------------------------------------------------------------------------
 
+// @req REQ-019
 export default async function FamillesSlugPage({
   params,
 }: {
