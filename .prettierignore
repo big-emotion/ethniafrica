@@ -5,6 +5,7 @@ dist
 build
 storybook-static
 coverage
+bootstrap/output
 *.min.js
 *.min.css
 package-lock.json
@@ -12,4 +13,3 @@ yarn.lock
 pnpm-lock.yaml
 public/dataset
 dataset/result
-

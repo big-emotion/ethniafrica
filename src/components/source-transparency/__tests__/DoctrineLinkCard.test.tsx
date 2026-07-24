@@ -1,3 +1,5 @@
+// @req REQ-022
+// @req REQ-025
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { DoctrineLinkCard } from "../DoctrineLinkCard";

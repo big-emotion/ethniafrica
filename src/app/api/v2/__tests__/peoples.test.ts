@@ -1,3 +1,7 @@
+// @req REQ-005
+// @req REQ-033
+// @req REQ-049
+// @req REQ-077
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { GET } from "../../v2/peoples/route";
 import { NextRequest } from "next/server";
