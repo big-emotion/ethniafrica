@@ -108,13 +108,13 @@ export const CountryView = ({
   const isMobile = useIsMobile();
 
   const getDisplayName = useCallback(
-    (country: CountrySummary) => country.nameFr,
+    (country: CountrySummary) => country.nameCommonFr,
     []
   );
 
   const filterFn = useCallback(
     (country: CountrySummary, normalizedSearch: string) =>
-      normalizeString(country.nameFr).includes(normalizedSearch) ||
+      normalizeString(country.nameCommonFr).includes(normalizedSearch) ||
       normalizeString(country.id).includes(normalizedSearch) ||
       (country.nameOfficial
         ? normalizeString(country.nameOfficial).includes(normalizedSearch)
@@ -185,7 +185,7 @@ export const CountryView = ({
             )}
             <AutonymExonymHeading
               variant="compact"
-              exonym={country.nameFr}
+              exonym={country.nameCommonFr}
               code={country.id}
               className="group-hover:[&_h3]:text-primary [&_h3]:transition-colors flex-1"
             />
@@ -200,7 +200,7 @@ export const CountryView = ({
               sourceCount={null}
               lastHumanAuditAt={null}
               variant="inline"
-              ariaSuffix={country.nameFr}
+              ariaSuffix={country.nameCommonFr}
             />
           </div>
 
