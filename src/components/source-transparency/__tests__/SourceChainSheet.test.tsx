@@ -1,3 +1,5 @@
+// @req REQ-007
+// @req REQ-008
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import {
   render,

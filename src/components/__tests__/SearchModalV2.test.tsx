@@ -1,3 +1,5 @@
+// @req REQ-002
+// @req REQ-050
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import { SearchModalV2 } from "../search/SearchModalV2";

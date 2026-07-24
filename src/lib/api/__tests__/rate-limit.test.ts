@@ -1,3 +1,6 @@
+// @req REQ-034
+// @req REQ-059
+// @req REQ-061
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { NextRequest } from "next/server";
 
@@ -71,14 +74,13 @@ function makeRequest(
 
 /** Restore constructor mocks so lazy singletons can be created after clearAllMocks */
 function restoreConstructorMocks() {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   MockRedis.mockImplementation(function () {
     return {} as any;
   });
   MockRatelimit.mockImplementation(function () {
     return { limit: mockLimit } as unknown as Ratelimit;
   });
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   vi.mocked(Ratelimit.slidingWindow).mockReturnValue({
     type: "sliding",
   } as any);
