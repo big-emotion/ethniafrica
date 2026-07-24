@@ -205,7 +205,7 @@
  *                     attribution: Africa History — africahistory.org
  *                   errors:
  *                     - code: UNAUTHORIZED
- *                       message: Anti-bot verification failed
+ *                       message: vérification anti-bot échouée
  *       429:
  *         description: Contributor flag-submission rate limit exceeded.
  *         headers:
@@ -250,7 +250,7 @@
  *                 attribution: Africa History — africahistory.org
  *               errors:
  *                 - code: UNAVAILABLE
- *                   message: Anti-bot verification is temporarily unavailable. Please retry later.
+ *                   message: vérification anti-bot temporairement indisponible, veuillez réessayer plus tard
  *       500:
  *         description: Internal server error.
  *         content:
