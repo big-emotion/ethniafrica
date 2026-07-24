@@ -61,19 +61,22 @@ describe("OpenAPI v2 spec - BearerAuth security", () => {
 
     expect(protectedOps.length).toBeGreaterThan(0);
 
-    // Every protected operation should either inherit global BearerAuth (no security key)
-    // or explicitly list BearerAuth in its security array
+    // Operations either inherit global API-key auth, declare a supported
+    // operation-specific scheme, or explicitly opt into public access.
     const globalSecurity = spec.security as Array<Record<string, unknown>>;
     const globalHasBearerAuth = globalSecurity?.some((s) => "BearerAuth" in s);
 
     for (const op of protectedOps) {
       if (op.security === undefined) {
-        // Inherits global security — BearerAuth must be in global
         expect(globalHasBearerAuth).toBe(true);
       } else {
-        // Per-operation override — must include BearerAuth
         const opSecurity = op.security as Array<Record<string, unknown>>;
-        expect(opSecurity.some((s) => "BearerAuth" in s)).toBe(true);
+        const explicitlyPublic = opSecurity.length === 0;
+        const hasSupportedAuth = opSecurity.some(
+          (requirement) =>
+            "BearerAuth" in requirement || "SupabaseJwtAuth" in requirement
+        );
+        expect(explicitlyPublic || hasSupportedAuth).toBe(true);
       }
     }
   });

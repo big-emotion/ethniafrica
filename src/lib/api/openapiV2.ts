@@ -76,6 +76,13 @@ const options: swaggerJsdoc.Options = {
           description:
             "API key issued via /api/v2/keys/issue (public tier) or the admin UI (partner/admin tiers). Pass as Authorization: Bearer <key>.",
         },
+        SupabaseJwtAuth: {
+          type: "http",
+          scheme: "bearer",
+          bearerFormat: "JWT",
+          description:
+            "Supabase access token for an authenticated contributor. Pass as Authorization: Bearer <JWT>.",
+        },
       },
       schemas: {
         PaginationMeta: {
@@ -318,7 +325,16 @@ const options: swaggerJsdoc.Options = {
           properties: {
             code: {
               type: "string",
-              enum: ["VALIDATION_ERROR", "NOT_FOUND", "INTERNAL_ERROR"],
+              enum: [
+                "VALIDATION_ERROR",
+                "NOT_FOUND",
+                "INTERNAL_ERROR",
+                "UNAUTHENTICATED",
+                "AGE_CONFIRMATION_REQUIRED",
+                "UNAUTHORIZED",
+                "RATE_LIMITED",
+                "UNAVAILABLE",
+              ],
               example: "NOT_FOUND",
             },
             message: { type: "string", example: "Source not found" },
@@ -698,39 +714,339 @@ const options: swaggerJsdoc.Options = {
           },
           required: ["data", "meta", "errors"],
         },
+        // -----------------------------------------------------------------
+        // Epic 3 — Contributor flags (ETNI-62)
+        // -----------------------------------------------------------------
+        FlagKind: {
+          type: "string",
+          enum: [
+            "inaccurate",
+            "missing-source",
+            "broken-url",
+            "offensive",
+            "correction-proposal",
+            "other",
+          ],
+          example: "inaccurate",
+        },
+        FlagStatus: {
+          type: "string",
+          enum: [
+            "open",
+            "under_review",
+            "accepted",
+            "rejected",
+            "withdrawn",
+            "duplicate",
+          ],
+          example: "open",
+        },
         FlagCreateInput: {
           type: "object",
-          required: ["entity_type", "entity_id", "flag_kind"],
+          required: [
+            "target_type",
+            "target_id",
+            "flag_kind",
+            "reason_text",
+            "turnstile_token",
+          ],
           properties: {
-            entity_type: {
+            target_type: {
               type: "string",
               example: "people",
               description:
                 "AFRIK entity type (people, country, language, language_family)",
             },
-            entity_id: {
+            target_id: {
               type: "string",
               example: "PPL_YORUBA",
               description:
                 "Stable AFRIK identifier of the entity being flagged",
             },
-            flag_kind: {
+            target_field_path: {
               type: "string",
-              enum: [
-                "inaccurate",
-                "missing-source",
-                "broken-url",
-                "offensive",
-                "correction-proposal",
-                "other",
-              ],
-              example: "inaccurate",
+              example: "demographics.population",
+              description: "Optional dotted path to the disputed field",
+            },
+            flag_kind: {
+              $ref: "#/components/schemas/FlagKind",
             },
             reason_text: {
               type: "string",
+              minLength: 10,
+              maxLength: 2000,
               example: "Population figure appears outdated vs. 2024 census.",
             },
+            counter_source_url: {
+              type: "string",
+              format: "uri",
+              example: "https://example.org/census/2024",
+            },
+            counter_source_citation: {
+              type: "string",
+              maxLength: 2000,
+              example: "National Statistics Office, 2024 census, table 12.",
+            },
+            proposed_rewrite: {
+              type: "string",
+              maxLength: 5000,
+              example: "Update the population figure using the 2024 census.",
+            },
+            turnstile_token: {
+              type: "string",
+              minLength: 1,
+              writeOnly: true,
+              example: "0.ABC123.turnstile-response",
+              description: "Cloudflare Turnstile verification token",
+            },
           },
+          example: {
+            target_type: "people",
+            target_id: "PPL_YORUBA",
+            target_field_path: "demographics.population",
+            flag_kind: "inaccurate",
+            reason_text:
+              "Population figure appears outdated compared with the latest census.",
+            counter_source_url: "https://example.org/census/2024",
+            counter_source_citation:
+              "National Statistics Office, 2024 census, table 12.",
+            proposed_rewrite:
+              "Update the population figure using the 2024 census.",
+            turnstile_token: "0.ABC123.turnstile-response",
+          },
+        },
+        FlagCreated: {
+          type: "object",
+          properties: {
+            id: {
+              type: "string",
+              format: "uuid",
+              example: "9c81ca0d-ae45-4f08-8f53-2ac0a9673abd",
+            },
+            public_slug: {
+              type: "string",
+              example: "flag-7kq3m2",
+            },
+            status: { $ref: "#/components/schemas/FlagStatus" },
+            created_at: {
+              type: "string",
+              format: "date-time",
+              example: "2026-07-24T10:15:30.000Z",
+            },
+          },
+          required: ["id", "public_slug", "status", "created_at"],
+          example: {
+            id: "9c81ca0d-ae45-4f08-8f53-2ac0a9673abd",
+            public_slug: "flag-7kq3m2",
+            status: "open",
+            created_at: "2026-07-24T10:15:30.000Z",
+          },
+        },
+        PublicFlag: {
+          type: "object",
+          properties: {
+            id: {
+              type: "string",
+              format: "uuid",
+              example: "9c81ca0d-ae45-4f08-8f53-2ac0a9673abd",
+            },
+            public_slug: { type: "string", example: "flag-7kq3m2" },
+            target_type: {
+              type: "string",
+              nullable: true,
+              example: "people",
+            },
+            target_id: {
+              type: "string",
+              nullable: true,
+              example: "PPL_YORUBA",
+            },
+            target_field_path: {
+              type: "string",
+              nullable: true,
+              example: "demographics.population",
+            },
+            assertion_id: {
+              type: "string",
+              format: "uuid",
+              nullable: true,
+              example: null,
+            },
+            flag_kind: { $ref: "#/components/schemas/FlagKind" },
+            reason_text: {
+              type: "string",
+              nullable: true,
+              example:
+                "Population figure appears outdated compared with the latest census.",
+            },
+            counter_source_url: {
+              type: "string",
+              format: "uri",
+              nullable: true,
+              example: "https://example.org/census/2024",
+            },
+            counter_source_citation: {
+              type: "string",
+              nullable: true,
+              example: "National Statistics Office, 2024 census, table 12.",
+            },
+            proposed_rewrite: {
+              type: "string",
+              nullable: true,
+              example: "Update the population figure using the 2024 census.",
+            },
+            contributor_id: {
+              type: "string",
+              format: "uuid",
+              nullable: true,
+              example: "bdbb6b42-3890-4c80-ac96-f732908d17c7",
+            },
+            severity: {
+              type: "string",
+              nullable: true,
+              enum: ["low", "medium", "high", "critical", null],
+              example: null,
+            },
+            auto_generated: { type: "boolean", example: false },
+            status: { $ref: "#/components/schemas/FlagStatus" },
+            created_at: {
+              type: "string",
+              format: "date-time",
+              example: "2026-07-24T10:15:30.000Z",
+            },
+            updated_at: {
+              type: "string",
+              format: "date-time",
+              nullable: true,
+              example: "2026-07-24T11:00:00.000Z",
+            },
+            resolved_at: {
+              type: "string",
+              format: "date-time",
+              nullable: true,
+              example: null,
+            },
+          },
+          required: [
+            "id",
+            "public_slug",
+            "target_type",
+            "target_id",
+            "target_field_path",
+            "assertion_id",
+            "flag_kind",
+            "reason_text",
+            "counter_source_url",
+            "counter_source_citation",
+            "proposed_rewrite",
+            "contributor_id",
+            "severity",
+            "auto_generated",
+            "status",
+            "created_at",
+            "updated_at",
+            "resolved_at",
+          ],
+          example: {
+            id: "9c81ca0d-ae45-4f08-8f53-2ac0a9673abd",
+            public_slug: "flag-7kq3m2",
+            target_type: "people",
+            target_id: "PPL_YORUBA",
+            target_field_path: "demographics.population",
+            assertion_id: null,
+            flag_kind: "inaccurate",
+            reason_text:
+              "Population figure appears outdated compared with the latest census.",
+            counter_source_url: "https://example.org/census/2024",
+            counter_source_citation:
+              "National Statistics Office, 2024 census, table 12.",
+            proposed_rewrite:
+              "Update the population figure using the 2024 census.",
+            contributor_id: "bdbb6b42-3890-4c80-ac96-f732908d17c7",
+            severity: null,
+            auto_generated: false,
+            status: "open",
+            created_at: "2026-07-24T10:15:30.000Z",
+            updated_at: "2026-07-24T11:00:00.000Z",
+            resolved_at: null,
+          },
+        },
+        FlagCursorPaginationMeta: {
+          type: "object",
+          description: "Opaque cursor pagination for the public flags list.",
+          properties: {
+            limit: {
+              type: "integer",
+              minimum: 1,
+              maximum: 100,
+              default: 20,
+              example: 20,
+            },
+            next_cursor: {
+              type: "string",
+              nullable: true,
+              example: "MjAyNi0wNy0yNFQxMDoxNTozMC4wMDBafDljODFjYTBk",
+              description:
+                "Opaque cursor to pass unchanged as ?cursor=. Null when no more pages remain.",
+            },
+          },
+          required: ["limit", "next_cursor"],
+        },
+        FlagListMeta: {
+          type: "object",
+          properties: {
+            license: { type: "string", example: "CC-BY-SA-4.0" },
+            attribution: {
+              type: "string",
+              example: "Africa History — africahistory.org",
+            },
+            pagination: {
+              $ref: "#/components/schemas/FlagCursorPaginationMeta",
+            },
+          },
+          required: ["license", "attribution", "pagination"],
+        },
+        FlagCreatedResponse: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/FlagCreated" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        FlagListResponse: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/PublicFlag" },
+            },
+            meta: { $ref: "#/components/schemas/FlagListMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        FlagDetailResponse: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/PublicFlag" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
         },
       },
     },
@@ -739,4 +1055,5 @@ const options: swaggerJsdoc.Options = {
   apis: ["./src/app/api/v2/**/*.ts"],
 };
 
+// @req REQ-084
 export const swaggerSpecV2 = swaggerJsdoc(options);
