@@ -220,6 +220,30 @@ describe("afrikLoader", () => {
       expect(result.data[0].nameMain).toBe("Shona");
     });
 
+    // @req REQ-033
+    it("should serialize optional people filters", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            data: [],
+            meta: { total: 0, page: 2, perPage: 10 },
+          }),
+      });
+
+      await getPeoples({
+        page: 2,
+        perPage: 10,
+        search: "Yoruba people",
+        letter: "Y",
+        languageFamilyId: "FLG_NIGER_CONGO",
+      });
+
+      expect(mockFetch).toHaveBeenCalledWith(
+        "/api/v2/peoples?page=2&perPage=10&search=Yoruba+people&letter=Y&languageFamilyId=FLG_NIGER_CONGO"
+      );
+    });
+
     it("should return empty data on error", async () => {
       mockFetch.mockResolvedValueOnce({
         ok: false,
