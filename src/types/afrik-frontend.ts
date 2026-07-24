@@ -247,6 +247,7 @@ export interface CultureDisplaySection {
 export interface CountrySummary {
   id: CountryId; // ISO 3166-1 alpha-3
   nameFr: string;
+  nameCommonFr: string;
   nameOfficial?: string;
   // Editorial classification (migration 009) — surfaced in list cards.
   classificationStatus?: ClassificationStatus | null;
@@ -261,6 +262,7 @@ export interface CountrySummary {
 export interface CountryDetail {
   id: CountryId;
   nameFr: string;
+  nameCommonFr: string;
   nameOfficial?: string;
   etymology?: string;
   nameOriginActor?: string;
