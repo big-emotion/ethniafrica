@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach } from "vitest";
 import { GET } from "../../v2/countries/route";
 import { GET as GET_SINGLE } from "../../v2/countries/[iso]/route";
 import { GET as GET_SEARCH } from "../../v2/search/route";
+import { GET as GET_PEOPLES } from "../../v2/peoples/route";
 import { NextRequest } from "next/server";
 
 vi.mock("@/api/v2/handlers/countries", () => ({
@@ -12,6 +13,10 @@ vi.mock("@/api/v2/handlers/countries", () => ({
 vi.mock("@/api/v2/handlers/search", () => ({
   ftsSearchHandler: vi.fn(),
   searchHandler: vi.fn(),
+}));
+
+vi.mock("@/api/v2/handlers/peoples", () => ({
+  listPeoplesHandler: vi.fn(),
 }));
 
 vi.mock("@/lib/api/cors", () => ({
@@ -32,6 +37,7 @@ import {
   getCountryHandler,
 } from "@/api/v2/handlers/countries";
 import { ftsSearchHandler } from "@/api/v2/handlers/search";
+import { listPeoplesHandler } from "@/api/v2/handlers/peoples";
 
 describe("API v2 - Performance Tests", () => {
   beforeEach(() => {
@@ -58,6 +64,30 @@ describe("API v2 - Performance Tests", () => {
         "http://localhost/api/v2/countries?page=1&perPage=20"
       );
       const response = await GET(request);
+      const duration = Date.now() - start;
+
+      expect(response.status).toBe(200);
+      expect(duration).toBeLessThan(500);
+    });
+
+    // @req REQ-049
+    it("should respond to the paginated people list in < 500ms", async () => {
+      vi.mocked(listPeoplesHandler).mockResolvedValue({
+        data: Array.from({ length: 20 }, (_, i) => ({
+          id: `PPL_TEST${i}`,
+          nameMain: `People ${i}`,
+          languageFamilyId: "FLG_TEST",
+          currentCountries: [],
+          content: {},
+        })),
+        meta: { total: 924, page: 1, perPage: 20, totalPages: 47 },
+      });
+
+      const start = Date.now();
+      const request = new NextRequest(
+        "http://localhost/api/v2/peoples?page=1&perPage=20"
+      );
+      const response = await GET_PEOPLES(request);
       const duration = Date.now() - start;
 
       expect(response.status).toBe(200);
