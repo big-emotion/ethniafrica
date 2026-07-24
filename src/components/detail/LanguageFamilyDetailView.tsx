@@ -300,27 +300,29 @@ export const LanguageFamilyDetailView = ({
                   <>
                     <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                       {family.associatedPeoples.map(
-                        (people: PeopleReference, idx) => (
-                          <Badge
-                            key={idx}
-                            variant="secondary"
-                            className={`justify-start ${
-                              people.peopleId && onPeopleClick
-                                ? "cursor-pointer hover:bg-primary hover:text-primary-foreground"
-                                : ""
-                            }`}
-                            onClick={() => {
-                              if (people.peopleId && onPeopleClick) {
-                                onPeopleClick(people.peopleId);
-                              }
-                            }}
-                          >
-                            {people.name}
-                            {people.peopleId && onPeopleClick && (
-                              <ExternalLink className="h-3 w-3 ml-1" />
-                            )}
-                          </Badge>
-                        )
+                        (people: PeopleReference, idx) =>
+                          people.peopleId ? (
+                            <Link
+                              key={idx}
+                              href={`${getLocalizedRoute(language, "peoples")}/${people.peopleId}`}
+                            >
+                              <Badge
+                                variant="secondary"
+                                className="justify-start cursor-pointer hover:bg-primary hover:text-primary-foreground w-full"
+                              >
+                                {people.name}
+                                <ExternalLink className="h-3 w-3 ml-1" />
+                              </Badge>
+                            </Link>
+                          ) : (
+                            <Badge
+                              key={idx}
+                              variant="secondary"
+                              className="justify-start"
+                            >
+                              {people.name}
+                            </Badge>
+                          )
                       )}
                     </div>
                     <div className="pt-2 border-t">

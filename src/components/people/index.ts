@@ -1,4 +1,4 @@
-export { AutonymExonymHeading } from "./AutonymExonymHeading";
+export { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 export { ProseWithChip } from "./ProseWithChip";
 export type {
   ParagraphChipData,
