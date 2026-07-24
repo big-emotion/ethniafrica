@@ -1,11 +1,18 @@
 import { notFound, redirect } from "next/navigation";
 import { Suspense } from "react";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
-import { getLatestEntityRevisionVersion } from "@/api/v2/services/revisions";
-import { createServerClient } from "@/lib/supabase/server";
+import {
+  getLatestEntityRevisionVersion,
+  getRevisionSnapshot,
+  type FrozenDoctrineReference,
+} from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { LanguageFamilyDetailView } from "@/components/detail/LanguageFamilyDetailView";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
+import {
+  DoctrineLinkCard,
+  isDoctrineSlug,
+} from "@/components/source-transparency/DoctrineLinkCard";
 
 export const revalidate = 3600;
 
@@ -24,6 +31,7 @@ interface FamilySnapshotViewProps {
   publishedAt: string | null;
   confidence: number | null;
   snapshotData: Record<string, unknown>;
+  doctrine: FrozenDoctrineReference | null;
   lang: string;
 }
 
@@ -33,6 +41,7 @@ function FamilySnapshotFicheView({
   publishedAt,
   confidence,
   snapshotData,
+  doctrine,
   lang,
 }: FamilySnapshotViewProps) {
   const nameFr =
@@ -88,53 +97,12 @@ function FamilySnapshotFicheView({
           jamais modifié.
         </p>
       </div>
+
+      {doctrine && isDoctrineSlug(doctrine.slug) && (
+        <DoctrineLinkCard slug={doctrine.slug} version={doctrine.version} />
+      )}
     </div>
   );
-}
-
-async function getFamilyRevisionSnapshot(
-  entityId: string,
-  version: number
-): Promise<{
-  data: Record<string, unknown>;
-  version: number;
-  published_at: string | null;
-  confidence: number | null;
-} | null> {
-  const supabase = createServerClient();
-  const { data, error } = await supabase
-    .from("revisions")
-    .select("version, snapshot_jsonb, published_at")
-    .eq("entity_type", "language_family")
-    .eq("entity_id", entityId)
-    .eq("version", version)
-    .maybeSingle();
-
-  if (error) {
-    throw new Error(
-      `Failed to load revision v${version} for ${entityId}: ${error.message}`
-    );
-  }
-
-  if (!data) return null;
-
-  const row = data as {
-    version: number;
-    snapshot_jsonb: Record<string, unknown>;
-    published_at: string | null;
-  };
-
-  const confidence =
-    typeof row.snapshot_jsonb?.confidence === "number"
-      ? (row.snapshot_jsonb.confidence as number)
-      : null;
-
-  return {
-    data: row.snapshot_jsonb,
-    version: row.version,
-    published_at: row.published_at,
-    confidence,
-  };
 }
 
 // ---------------------------------------------------------------------------
@@ -165,7 +133,8 @@ export default async function FamillesSlugPage({
   }
 
   if (parsed.mode === "pinned") {
-    const snapshot = await getFamilyRevisionSnapshot(
+    const snapshot = await getRevisionSnapshot(
+      "language_family",
       parsed.slug,
       parsed.version
     );
@@ -186,6 +155,7 @@ export default async function FamillesSlugPage({
             publishedAt={snapshot.published_at}
             confidence={snapshot.confidence}
             snapshotData={snapshot.data}
+            doctrine={snapshot.doctrine}
             lang={lang}
           />
         </div>

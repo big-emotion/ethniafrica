@@ -26,9 +26,7 @@ export default meta;
 type Story = StoryObj<typeof DoctrineLinkCard>;
 
 /**
- * Endonymes vs. exonymes — live (no version pinned). The historical note is
- * rendered to signal that this doctrine link follows the latest published
- * version.
+ * Endonymes vs. exonymes — live (no version pinned).
  */
 export const EndonymesLive: Story = {
   name: "Endonymes vs. exonymes — live",
@@ -36,8 +34,7 @@ export const EndonymesLive: Story = {
 };
 
 /**
- * Endonymes vs. exonymes — pinned to v1. The historical note disappears,
- * the URL embeds the `@v1` suffix.
+ * Endonymes vs. exonymes — pinned to v1. The URL embeds the `@v1` suffix.
  */
 export const EndonymesPinnedV1: Story = {
   name: "Endonymes vs. exonymes — pinned v1",
