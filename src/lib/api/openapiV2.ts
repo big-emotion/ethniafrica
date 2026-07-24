@@ -2,7 +2,7 @@ import swaggerJsdoc from "swagger-jsdoc";
 
 const options: swaggerJsdoc.Options = {
   definition: {
-    openapi: "3.0.0",
+    openapi: "3.1.0",
     info: {
       title: "Ethniafrique Atlas API v2 - AFRIK",
       version: "2.0.0",
@@ -302,14 +302,12 @@ const options: swaggerJsdoc.Options = {
               example: "Africa History — africahistory.org",
             },
             confidence: {
-              type: "number",
-              nullable: true,
+              type: ["number", "null"],
               example: 73,
               description: "Score 0–100 if applicable",
             },
             pinned_url: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "https://africahistory.org/peuples/yoruba@v4",
             },
             pagination: {
@@ -339,8 +337,7 @@ const options: swaggerJsdoc.Options = {
             },
             message: { type: "string", example: "Source not found" },
             field: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               description:
                 "Field path that triggered the error (validation only)",
             },
@@ -368,21 +365,19 @@ const options: swaggerJsdoc.Options = {
           properties: {
             id: { type: "string", format: "uuid" },
             type: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               enum: ["primary", "secondary", "tertiary", "ai", null],
             },
             title: { type: "string" },
-            url: { type: "string", nullable: true },
-            pinnedUrl: { type: "string", nullable: true },
-            year: { type: "integer", nullable: true },
-            author: { type: "string", nullable: true },
-            publisher: { type: "string", nullable: true },
-            resolvable: { type: "boolean", nullable: true },
+            url: { type: ["string", "null"] },
+            pinnedUrl: { type: ["string", "null"] },
+            year: { type: ["integer", "null"] },
+            author: { type: ["string", "null"] },
+            publisher: { type: ["string", "null"] },
+            resolvable: { type: ["boolean", "null"] },
             lastVerifiedAt: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
             },
           },
           required: ["id", "title"],
@@ -423,29 +418,25 @@ const options: swaggerJsdoc.Options = {
             },
             entityId: { type: "string", example: "PPL_SHONA" },
             score: {
-              type: "number",
-              nullable: true,
+              type: ["number", "null"],
               minimum: 0,
               maximum: 100,
               example: 73,
             },
             sourceCount: { type: "integer", minimum: 0 },
             avgSourceQuality: {
-              type: "number",
-              nullable: true,
+              type: ["number", "null"],
               minimum: 0,
               maximum: 1,
             },
             lastHumanAuditAt: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
             },
             openFlagCount: { type: "integer", minimum: 0 },
             recomputedAt: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
             },
           },
           required: ["entityType", "entityId", "sourceCount", "openFlagCount"],
@@ -476,21 +467,18 @@ const options: swaggerJsdoc.Options = {
               description: "Monotonically increasing publication version",
             },
             published_at: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
               example: "2026-05-21T10:00:00.000Z",
             },
             moderator_pseudonym: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "mod-aaaabbbb",
               description:
                 "Privacy-preserving pseudonym derived from the moderator's internal id",
             },
             reason: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "Demographics update",
             },
             pinned_url: {
@@ -513,8 +501,7 @@ const options: swaggerJsdoc.Options = {
               example: 20,
             },
             next_cursor: {
-              type: "integer",
-              nullable: true,
+              type: ["integer", "null"],
               example: 4,
               description:
                 "Version to pass as ?cursor= on the next request. Null when no more pages.",
@@ -586,9 +573,8 @@ const options: swaggerJsdoc.Options = {
             mdxSource: { type: "string" },
             version: { type: "integer", minimum: 1 },
             publishedAt: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
             },
           },
           required: ["slug", "title", "mdxSource", "version"],
@@ -638,9 +624,8 @@ const options: swaggerJsdoc.Options = {
               description: "Monotonically increasing publication version",
             },
             published_at: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
               example: "2026-05-21T12:00:00.000Z",
             },
             pinned_url: {
@@ -649,8 +634,7 @@ const options: swaggerJsdoc.Options = {
               description: "Stable pinned-version URL (AR14)",
             },
             summary: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "Demographics update",
               description: "Editorial reason for the revision, if provided",
             },
@@ -674,8 +658,7 @@ const options: swaggerJsdoc.Options = {
               example: 20,
             },
             next_cursor: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "MjAyNi0wNS0yMVQxMjowMDowMC4wMDB...",
               description:
                 "Opaque base64url cursor. Pass as ?cursor= on the next request. Null when no more pages.",
@@ -852,58 +835,48 @@ const options: swaggerJsdoc.Options = {
             },
             public_slug: { type: "string", example: "flag-7kq3m2" },
             target_type: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "people",
             },
             target_id: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "PPL_YORUBA",
             },
             target_field_path: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "demographics.population",
             },
             assertion_id: {
-              type: "string",
+              type: ["string", "null"],
               format: "uuid",
-              nullable: true,
               example: null,
             },
             flag_kind: { $ref: "#/components/schemas/FlagKind" },
             reason_text: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example:
                 "Population figure appears outdated compared with the latest census.",
             },
             counter_source_url: {
-              type: "string",
+              type: ["string", "null"],
               format: "uri",
-              nullable: true,
               example: "https://example.org/census/2024",
             },
             counter_source_citation: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "National Statistics Office, 2024 census, table 12.",
             },
             proposed_rewrite: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "Update the population figure using the 2024 census.",
             },
             contributor_id: {
-              type: "string",
+              type: ["string", "null"],
               format: "uuid",
-              nullable: true,
               example: "bdbb6b42-3890-4c80-ac96-f732908d17c7",
             },
             severity: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               enum: ["low", "medium", "high", "critical", null],
               example: null,
             },
@@ -915,15 +888,13 @@ const options: swaggerJsdoc.Options = {
               example: "2026-07-24T10:15:30.000Z",
             },
             updated_at: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
               example: "2026-07-24T11:00:00.000Z",
             },
             resolved_at: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
               example: null,
             },
           },
@@ -983,8 +954,7 @@ const options: swaggerJsdoc.Options = {
               example: 20,
             },
             next_cursor: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "MjAyNi0wNy0yNFQxMDoxNTozMC4wMDBafDljODFjYTBk",
               description:
                 "Opaque cursor to pass unchanged as ?cursor=. Null when no more pages remain.",

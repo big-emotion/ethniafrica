@@ -238,6 +238,43 @@ describe("openapi-diff", () => {
   });
 
   describe("compareSchemas", () => {
+    it("treats OpenAPI 3.0 nullable syntax and OpenAPI 3.1 type arrays as equivalent", () => {
+      const baselineSchema = {
+        type: "string",
+        nullable: true,
+      };
+      const currentSchema = {
+        type: ["string", "null"],
+      };
+
+      const changes = compareSchemas(
+        baselineSchema,
+        currentSchema,
+        "NullableField"
+      );
+
+      expect(changes).toEqual([]);
+    });
+
+    it("detects removing null from an OpenAPI 3.1 type array", () => {
+      const baselineSchema = {
+        type: ["string", "null"],
+      };
+      const currentSchema = {
+        type: "string",
+      };
+
+      const changes = compareSchemas(
+        baselineSchema,
+        currentSchema,
+        "NullableField"
+      );
+
+      expect(changes).toEqual([
+        "Type changed at 'NullableField': string,null → string",
+      ]);
+    });
+
     it("should detect removed properties in nested objects", () => {
       const baselineSchema = {
         type: "object",
