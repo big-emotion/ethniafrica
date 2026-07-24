@@ -6,13 +6,11 @@
 # Required secret: CLAUDE_CODE_OAUTH_TOKEN (run `claude setup-token`; Claude Pro/Max subscription).
 # Set execution_path: script in ferry.config.yaml to revert to the bundled multi-provider path.
 # Required secrets: FERRY_JIRA_BASE_URL, FERRY_JIRA_EMAIL, FERRY_JIRA_API_TOKEN,
-#                   CLAUDE_CODE_OAUTH_TOKEN
+#                   CLAUDE_CODE_OAUTH_TOKEN, FERRY_APP_ID, FERRY_PRIVATE_KEY
 # Optional secrets: FERRY_REVIEW_TRANSITION_ID, FERRY_ITER_TRANSITION_ID,
 #                   FERRY_APPROVE_TRANSITION_ID — explicit transition-id overrides.
 #                   When unset, ids are auto-resolved from the status names in
 #                   ferry.config (workflow.agents.*).
-#                   FERRY_CHECKOUT_TOKEN — PAT/App token for agent pushes so CI
-#                   re-triggers (a github-actions[bot] push suppresses pull_request events).
 # Required variables: FERRY_AUDIT_ISSUE (GitHub Issue number for the audit log)
 # Optional variables: FERRY_INTEGRATION_BRANCH (default: main)
 #                     FERRY_REFINER_MODEL / FERRY_DEV_MODEL / FERRY_REVIEW_MODEL /
@@ -105,6 +103,13 @@ jobs:
       actions: read
       id-token: write # required by anthropics/claude-code-action@v1 OIDC auth
     steps:
+      - name: Generate Ferry GitHub App token
+        id: ferry-token
+        uses: actions/create-github-app-token@fee1f7d63c2ff003460e3d139729b119787bc349 # v3.2.0
+        with:
+          app-id: ${{ secrets.FERRY_APP_ID }}
+          private-key: ${{ secrets.FERRY_PRIVATE_KEY }}
+
       - name: Run Ferry agent
         uses: big-emotion/ferry/.github/actions/ferry-run-claude-agent@v1.1.2
         with:
@@ -118,7 +123,7 @@ jobs:
           jira_api_token: ${{ secrets.FERRY_JIRA_API_TOKEN }}
           model: ${{ vars[needs.route.outputs.model_var] || (contains(fromJSON('["refiner","reviewer","merger"]'), needs.route.outputs.role) && 'claude-opus-4-8' || 'claude-sonnet-5') }}
           integration_branch: ${{ vars.FERRY_INTEGRATION_BRANCH || 'main' }}
-          checkout_token: ${{ secrets.FERRY_CHECKOUT_TOKEN }}
+          checkout_token: ${{ steps.ferry-token.outputs.token }}
           review_transition_id: ${{ secrets.FERRY_REVIEW_TRANSITION_ID }}
           approve_transition_id: ${{ secrets.FERRY_APPROVE_TRANSITION_ID }}
           changes_transition_id: ${{ secrets.FERRY_ITER_TRANSITION_ID }}
