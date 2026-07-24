@@ -78,3 +78,34 @@ describe("OpenAPI v2 spec - BearerAuth security", () => {
     }
   });
 });
+
+describe("OpenAPI v2 spec - LanguageFamilyV2", () => {
+  // @req REQ-036
+  it("should document canonical associated peoples at the top level", () => {
+    const spec = swaggerSpecV2 as Record<string, unknown>;
+    const components = spec.components as Record<string, unknown>;
+    const schemas = components.schemas as Record<string, unknown>;
+    const languageFamily = schemas.LanguageFamilyV2 as Record<string, unknown>;
+    const properties = languageFamily.properties as Record<string, unknown>;
+    const associatedPeoples = properties.associatedPeoples as Record<
+      string,
+      unknown
+    >;
+
+    expect(associatedPeoples).toBeDefined();
+    expect(associatedPeoples.type).toBe("array");
+    expect(associatedPeoples.description).toContain(
+      "afrik_peoples.language_family_id"
+    );
+
+    const items = associatedPeoples.items as Record<string, unknown>;
+    const itemProperties = items.properties as Record<
+      string,
+      Record<string, unknown>
+    >;
+
+    expect(items.type).toBe("object");
+    expect(itemProperties.name.type).toBe("string");
+    expect(itemProperties.peopleId.type).toBe("string");
+  });
+});

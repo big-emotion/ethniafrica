@@ -86,6 +86,26 @@ describe("/[lang]/doctrine/[slug] page", () => {
     );
   });
 
+  // @req REQ-025
+  it("renders the exact pinned doctrine version and its French label", async () => {
+    mockFetch.mockResolvedValueOnce({
+      id: "uuid-42",
+      slug: "classifications-contestees",
+      title: "Classifications contestées",
+      mdxSource: "# Version archivée 42",
+      version: 42,
+      publishedAt: "2025-02-03T00:00:00Z",
+    });
+
+    const { getByTestId } = await renderPage("classifications-contestees@v42");
+
+    expect(mockFetch).toHaveBeenCalledWith("classifications-contestees", 42);
+    expect(getByTestId("mdx-remote").textContent).toBe("# Version archivée 42");
+    expect(getByTestId("version-label").textContent).toMatch(
+      /v42\s*·\s*publiée le\s+3\s+février\s+2025/
+    );
+  });
+
   it("renders the version label in the French format", async () => {
     mockFetch.mockResolvedValueOnce({
       id: "uuid-2",
@@ -126,6 +146,28 @@ describe("/[lang]/doctrine/[slug] page", () => {
     await expect(renderPage("does-not-exist")).rejects.toThrow(
       "NEXT_NOT_FOUND"
     );
+    expect(notFound).toHaveBeenCalled();
+  });
+
+  // @req REQ-025
+  it("calls notFound() for an unknown pinned slug and version combination", async () => {
+    mockFetch.mockResolvedValueOnce(null);
+
+    await expect(renderPage("classifications-contestees@v999")).rejects.toThrow(
+      "NEXT_NOT_FOUND"
+    );
+    expect(mockFetch).toHaveBeenCalledWith("classifications-contestees", 999);
+    expect(notFound).toHaveBeenCalled();
+  });
+
+  // @req REQ-025
+  it.each([
+    "classifications-contestees@v0",
+    "classifications-contestees@vabc",
+    "classifications-contestees@latest",
+  ])("calls notFound() without querying for invalid slug %s", async (slug) => {
+    await expect(renderPage(slug)).rejects.toThrow("NEXT_NOT_FOUND");
+    expect(mockFetch).not.toHaveBeenCalled();
     expect(notFound).toHaveBeenCalled();
   });
 });

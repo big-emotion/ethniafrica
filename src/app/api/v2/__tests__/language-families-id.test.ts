@@ -46,6 +46,36 @@ describe("API v2 - Single Language Family Route", () => {
       expect(data.data.id).toBe("FLG_BANTU");
     });
 
+    // @req REQ-033
+    it("should expose canonical associated peoples at the top level", async () => {
+      const associatedPeoples = [
+        { name: "Amhara", peopleId: "PPL_AMHARA" },
+        { name: "Oromo", peopleId: "PPL_OROMO" },
+      ];
+      const mockFamily = {
+        id: "FLG_AFROASIATIQUE",
+        nameFr: "Afro-asiatique",
+        associatedPeoples,
+        content: { associatedPeoples },
+      };
+
+      vi.mocked(getLanguageFamilyHandler).mockResolvedValue(mockFamily);
+
+      const request = new NextRequest(
+        "http://localhost/api/v2/language-families/FLG_AFROASIATIQUE"
+      );
+      const response = await GET(request, {
+        params: Promise.resolve({ id: "FLG_AFROASIATIQUE" }),
+      });
+      const data = await response.json();
+
+      expect(response.status).toBe(200);
+      expect(data.data.associatedPeoples).toEqual([
+        { name: "Amhara", peopleId: "PPL_AMHARA" },
+        { name: "Oromo", peopleId: "PPL_OROMO" },
+      ]);
+    });
+
     it("should return 400 for invalid ID format", async () => {
       const request = new NextRequest(
         "http://localhost/api/v2/language-families/BANTU"
