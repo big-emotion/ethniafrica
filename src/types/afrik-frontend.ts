@@ -453,6 +453,8 @@ export interface PaginationOptions {
 export interface PeopleFilterOptions extends PaginationOptions {
   languageFamilyId?: LanguageFamilyId;
   countryId?: CountryId;
+  search?: string;
+  letter?: string;
 }
 
 // ==========================================
