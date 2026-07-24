@@ -6,9 +6,21 @@ export type DoctrineSlug =
   | "heritage-colonial"
   | "topics-sensibles";
 
+export function isDoctrineSlug(value: string): value is DoctrineSlug {
+  switch (value) {
+    case "endonymes-vs-exonymes":
+    case "classifications-contestees":
+    case "heritage-colonial":
+    case "topics-sensibles":
+      return true;
+    default:
+      return false;
+  }
+}
+
 export type DoctrineLinkCardProps = {
   slug: DoctrineSlug;
-  /** When undefined, the link points to the live doctrine and a historical note is rendered. */
+  /** When undefined, the link points to the live doctrine. */
   version?: number;
 };
 
@@ -22,9 +34,6 @@ const DOCTRINE_COPY: Record<DoctrineSlug, string> = {
   "topics-sensibles":
     "Ce sujet est sensible. Notre doctrine éditoriale encadre la rédaction. Voir la doctrine.",
 };
-
-const HISTORICAL_NOTE =
-  "version en vigueur au moment de la publication — historique disponible prochainement";
 
 export function DoctrineLinkCard({ slug, version }: DoctrineLinkCardProps) {
   const copy = DOCTRINE_COPY[slug];
@@ -49,14 +58,6 @@ export function DoctrineLinkCard({ slug, version }: DoctrineLinkCardProps) {
       >
         Lire la doctrine
       </Link>
-      {version === undefined && (
-        <p
-          className="mt-[6px] text-[11px] md:text-[12px] italic"
-          style={{ color: "var(--country-text-soft, #6b6b6b)" }}
-        >
-          {HISTORICAL_NOTE}
-        </p>
-      )}
     </aside>
   );
 }

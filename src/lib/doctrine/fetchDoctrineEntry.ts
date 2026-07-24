@@ -1,6 +1,5 @@
 /**
- * Fetches the current (highest version, non-superseded) editorial-doctrine
- * entry for a given slug from Supabase.
+ * Fetches a live or exact-version editorial-doctrine entry from Supabase.
  *
  * Story ETNI-30.
  *
@@ -28,22 +27,28 @@ export interface DoctrineEntry {
 }
 
 /**
- * Returns the current version of a doctrine entry by slug, or null if
- * no published (non-superseded) version exists.
+ * Without a version, returns the highest current non-superseded entry.
+ * With a version, returns the exact historical entry, including superseded rows.
  */
 export async function fetchDoctrineEntry(
-  slug: string
+  slug: string,
+  version?: number
 ): Promise<DoctrineEntry | null> {
   const supabase = createServerClient();
 
-  const { data, error } = await supabase
+  const query = supabase
     .from("editorial_doctrine")
     .select("id, slug, title, mdx_source, version, published_at")
-    .eq("slug", slug)
-    .is("superseded_at", null)
-    .order("version", { ascending: false })
-    .limit(1)
-    .maybeSingle();
+    .eq("slug", slug);
+
+  const { data, error } =
+    version === undefined
+      ? await query
+          .is("superseded_at", null)
+          .order("version", { ascending: false })
+          .limit(1)
+          .maybeSingle()
+      : await query.eq("version", version).maybeSingle();
 
   if (error || !data) {
     return null;
