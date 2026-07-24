@@ -39,6 +39,7 @@
 - [\_bmad-output/project-context.md](../_bmad-output/project-context.md) — **CRITICAL agent rule book (read first)**
 - [README.md](../README.md) — project README (FR)
 - [DEPLOYMENT.md](./DEPLOYMENT.md) — deployment instructions
+- [AFRIK staging data synchronization](./runbooks/afrik-staging-data-sync.md) — guarded source-to-staging preview, apply, verification, and rollback
 - `src/api/v2/README.md`, `src/api/v2/API_REFERENCE.md`, `src/api/v2/ARCHITECTURE.md` — in-source API docs
 - `docs/INSTRUCTIONS_AFRIK.txt`, `docs/PRÉREQUIS_AFRIK.txt` — AFRIK methodology references
 - OpenAPI specs: `src/lib/api/openapiV2.ts` (authoritative v2); Swagger UI at `/docs/api`

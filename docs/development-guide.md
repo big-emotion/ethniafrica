@@ -107,7 +107,6 @@ Default to NONE. Only add a comment when the WHY is non-obvious (hidden constrai
 
 ## Known Pre-existing Failures (do NOT fix incidentally)
 
-- 6 failures in `scripts/__tests__/migrateAfrikToDatabase.test.ts` (Supabase mock)
 - 4 failures in handler tests (Supabase mock)
 
 These are orthogonal. Out of scope unless the task is explicitly to fix them.
