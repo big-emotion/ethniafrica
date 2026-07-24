@@ -7,7 +7,8 @@
  *   get:
  *     summary: Get confidence metadata for a fiche
  *     description: Returns the pre-computed confidence record for a people or language-family fiche.
- *     tags: [API v2 - Module #0]
+ *     tags:
+ *       - "API v2 - Module #0"
  *     parameters:
  *       - in: path
  *         name: entityType

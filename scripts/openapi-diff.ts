@@ -34,7 +34,8 @@ interface OpenAPISpec {
 }
 
 interface SchemaObject {
-  type?: string;
+  type?: string | string[];
+  nullable?: boolean;
   properties?: Record<string, SchemaObject>;
   items?: SchemaObject;
   enum?: string[];
@@ -42,6 +43,20 @@ interface SchemaObject {
   oneOf?: SchemaObject[];
   anyOf?: SchemaObject[];
   $ref?: string;
+}
+
+function normalizedTypes(schema: SchemaObject): string[] {
+  const types = Array.isArray(schema.type)
+    ? [...schema.type]
+    : schema.type
+      ? [schema.type]
+      : [];
+
+  if (schema.nullable && !types.includes("null")) {
+    types.push("null");
+  }
+
+  return types.sort();
 }
 
 /**
@@ -59,7 +74,13 @@ export function compareSchemas(
   }
 
   // Check for type changes
-  if (baseline.type && current.type && baseline.type !== current.type) {
+  const baselineTypes = normalizedTypes(baseline);
+  const currentTypes = normalizedTypes(current);
+  if (
+    baselineTypes.length > 0 &&
+    currentTypes.length > 0 &&
+    baselineTypes.join(",") !== currentTypes.join(",")
+  ) {
     changes.push(
       `Type changed at '${path}': ${baseline.type} → ${current.type}`
     );

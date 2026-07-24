@@ -2,7 +2,7 @@ import swaggerJsdoc from "swagger-jsdoc";
 
 const options: swaggerJsdoc.Options = {
   definition: {
-    openapi: "3.0.0",
+    openapi: "3.1.0",
     info: {
       title: "Ethniafrique Atlas API v2 - AFRIK",
       version: "2.0.0",
@@ -274,14 +274,12 @@ const options: swaggerJsdoc.Options = {
               example: "Africa History — africahistory.org",
             },
             confidence: {
-              type: "number",
-              nullable: true,
+              type: ["number", "null"],
               example: 73,
               description: "Score 0–100 if applicable",
             },
             pinned_url: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "https://africahistory.org/peuples/yoruba@v4",
             },
             pagination: {
@@ -302,8 +300,7 @@ const options: swaggerJsdoc.Options = {
             },
             message: { type: "string", example: "Source not found" },
             field: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               description:
                 "Field path that triggered the error (validation only)",
             },
@@ -331,21 +328,19 @@ const options: swaggerJsdoc.Options = {
           properties: {
             id: { type: "string", format: "uuid" },
             type: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               enum: ["primary", "secondary", "tertiary", "ai", null],
             },
             title: { type: "string" },
-            url: { type: "string", nullable: true },
-            pinnedUrl: { type: "string", nullable: true },
-            year: { type: "integer", nullable: true },
-            author: { type: "string", nullable: true },
-            publisher: { type: "string", nullable: true },
-            resolvable: { type: "boolean", nullable: true },
+            url: { type: ["string", "null"] },
+            pinnedUrl: { type: ["string", "null"] },
+            year: { type: ["integer", "null"] },
+            author: { type: ["string", "null"] },
+            publisher: { type: ["string", "null"] },
+            resolvable: { type: ["boolean", "null"] },
             lastVerifiedAt: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
             },
           },
           required: ["id", "title"],
@@ -386,29 +381,25 @@ const options: swaggerJsdoc.Options = {
             },
             entityId: { type: "string", example: "PPL_SHONA" },
             score: {
-              type: "number",
-              nullable: true,
+              type: ["number", "null"],
               minimum: 0,
               maximum: 100,
               example: 73,
             },
             sourceCount: { type: "integer", minimum: 0 },
             avgSourceQuality: {
-              type: "number",
-              nullable: true,
+              type: ["number", "null"],
               minimum: 0,
               maximum: 1,
             },
             lastHumanAuditAt: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
             },
             openFlagCount: { type: "integer", minimum: 0 },
             recomputedAt: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
             },
           },
           required: ["entityType", "entityId", "sourceCount", "openFlagCount"],
@@ -439,21 +430,18 @@ const options: swaggerJsdoc.Options = {
               description: "Monotonically increasing publication version",
             },
             published_at: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
               example: "2026-05-21T10:00:00.000Z",
             },
             moderator_pseudonym: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "mod-aaaabbbb",
               description:
                 "Privacy-preserving pseudonym derived from the moderator's internal id",
             },
             reason: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "Demographics update",
             },
             pinned_url: {
@@ -476,8 +464,7 @@ const options: swaggerJsdoc.Options = {
               example: 20,
             },
             next_cursor: {
-              type: "integer",
-              nullable: true,
+              type: ["integer", "null"],
               example: 4,
               description:
                 "Version to pass as ?cursor= on the next request. Null when no more pages.",
@@ -549,9 +536,8 @@ const options: swaggerJsdoc.Options = {
             mdxSource: { type: "string" },
             version: { type: "integer", minimum: 1 },
             publishedAt: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
             },
           },
           required: ["slug", "title", "mdxSource", "version"],
@@ -601,9 +587,8 @@ const options: swaggerJsdoc.Options = {
               description: "Monotonically increasing publication version",
             },
             published_at: {
-              type: "string",
+              type: ["string", "null"],
               format: "date-time",
-              nullable: true,
               example: "2026-05-21T12:00:00.000Z",
             },
             pinned_url: {
@@ -612,8 +597,7 @@ const options: swaggerJsdoc.Options = {
               description: "Stable pinned-version URL (AR14)",
             },
             summary: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "Demographics update",
               description: "Editorial reason for the revision, if provided",
             },
@@ -637,8 +621,7 @@ const options: swaggerJsdoc.Options = {
               example: 20,
             },
             next_cursor: {
-              type: "string",
-              nullable: true,
+              type: ["string", "null"],
               example: "MjAyNi0wNS0yMVQxMjowMDowMC4wMDB...",
               description:
                 "Opaque base64url cursor. Pass as ?cursor= on the next request. Null when no more pages.",

@@ -9,7 +9,8 @@
  *   get:
  *     summary: List current editorial doctrine
  *     description: Returns the current version of every doctrine slug. Takes no query parameters.
- *     tags: [API v2 - Module #0]
+ *     tags:
+ *       - "API v2 - Module #0"
  *     responses:
  *       200:
  *         description: Doctrine envelope
