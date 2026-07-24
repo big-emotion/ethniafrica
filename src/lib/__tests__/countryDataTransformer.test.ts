@@ -28,6 +28,7 @@ import type { CountryDetail } from "@/types/afrik-frontend";
 const bfaCountry: CountryDetail = {
   id: "BFA",
   nameFr: "Burkina Faso",
+  nameCommonFr: "Burkina Faso",
   nameOfficial: "Burkina Faso",
   etymology:
     'Le nom "Burkina Faso" signifie "Pays des hommes intègres" en mooré (langue mossi) et en dioula (langue mandé). "Burkina" vient du mooré et signifie "intègres" ou "honnêtes", tandis que "Faso" vient du dioula et signifie "pays" ou "patrie". Le nom a été adopté en 1984 par le président Thomas Sankara pour remplacer "Haute-Volta", nom colonial français.',
@@ -324,6 +325,24 @@ describe("transformHero", () => {
     expect(hero.meaningLangs).toContain(" + ");
     expect(hero.meaningLangs).toContain("(Mossi)");
     expect(hero.meaningLangs).toContain("(Mandé)");
+  });
+
+  // @req REQ-001
+  it("uses the French common name as the heading and preserves the official name", () => {
+    const hero = transformHero({
+      ...bfaCountry,
+      id: "ZAF",
+      nameFr:
+        "République d'Afrique du Sud (Republic of South Africa, iNingizimu Afrika)",
+      nameCommonFr: "Afrique du Sud",
+      nameOfficial:
+        "République d'Afrique du Sud (Republic of South Africa, iNingizimu Afrika)",
+    });
+
+    expect(hero.countryName).toBe("Afrique du Sud");
+    expect(hero.nameOfficial).toBe(
+      "République d'Afrique du Sud (Republic of South Africa, iNingizimu Afrika)"
+    );
   });
 });
 

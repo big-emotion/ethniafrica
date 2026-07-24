@@ -90,6 +90,8 @@ export interface LanguageFamily {
   nameFr: string;
   nameEn?: string;
 
+  associatedPeoples?: PeopleReference[];
+
   // Editorial classification status (migration 009)
   classificationStatus?: ClassificationStatus | null;
 

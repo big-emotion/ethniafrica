@@ -5,6 +5,7 @@ import {
   getPeoples,
   getPeople,
   getCountries,
+  getAllCountries,
   getCountry,
   search,
   getStats,
@@ -137,6 +138,37 @@ describe("afrikLoader", () => {
       expect(result?.id).toBe("FLG_BANTU");
       expect(result?.nameFr).toBe("Bantou");
       expect(result?.generalInfo?.branches).toContain("Eastern Bantu");
+    });
+
+    // @req REQ-033
+    it("should map canonical associated peoples from the top-level response", async () => {
+      const mockResponse = {
+        data: {
+          id: "FLG_AFROASIATIQUE",
+          nameFr: "Afro-asiatique",
+          associatedPeoples: [
+            { name: "Amhara", peopleId: "PPL_AMHARA" },
+            { name: "Oromo", peopleId: "PPL_OROMO" },
+          ],
+          content: {
+            generalInfo: {
+              geographicArea: "North and East Africa",
+            },
+          },
+        },
+      };
+
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(mockResponse),
+      });
+
+      const result = await getLanguageFamily("FLG_AFROASIATIQUE");
+
+      expect(result?.associatedPeoples).toEqual([
+        { name: "Amhara", peopleId: "PPL_AMHARA" },
+        { name: "Oromo", peopleId: "PPL_OROMO" },
+      ]);
     });
 
     it("should return null for 404", async () => {
@@ -346,6 +378,70 @@ describe("afrikLoader", () => {
       expect(result.data).toHaveLength(1);
       expect(result.data[0].id).toBe("ZWE");
       expect(result.data[0].nameFr).toBe("Zimbabwe");
+      expect(result.data[0].nameOfficial).toBe("Republic of Zimbabwe");
+      expect(result.data[0].nameCommonFr).toBe("Zimbabwe");
+    });
+
+    // @req REQ-002
+    it("preserves source nameFr as the official name when no separate official name exists", async () => {
+      const officialName =
+        "République d'Afrique du Sud (Republic of South Africa)";
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            data: [{ id: "ZAF", nameFr: officialName }],
+            meta: { total: 1, page: 1, perPage: 20 },
+          }),
+      });
+
+      const result = await getCountries();
+
+      expect(result.data[0]).toMatchObject({
+        id: "ZAF",
+        nameFr: officialName,
+        nameOfficial: officialName,
+        nameCommonFr: "Afrique du Sud",
+      });
+    });
+
+    // @req REQ-001
+    it("sorts all accumulated pages by French common name", async () => {
+      mockFetch
+        .mockResolvedValueOnce({
+          ok: true,
+          json: () =>
+            Promise.resolve({
+              data: [{ id: "ZWE", nameFr: "République du Zimbabwe" }],
+              meta: { total: 101, page: 1, perPage: 100 },
+            }),
+        })
+        .mockResolvedValueOnce({
+          ok: true,
+          json: () =>
+            Promise.resolve({
+              data: [
+                {
+                  id: "ZAF",
+                  nameFr:
+                    "République d'Afrique du Sud (Republic of South Africa)",
+                },
+              ],
+              meta: { total: 101, page: 2, perPage: 100 },
+            }),
+        });
+
+      const result = await getAllCountries();
+
+      expect(mockFetch).toHaveBeenNthCalledWith(
+        1,
+        "/api/v2/countries?page=1&perPage=100"
+      );
+      expect(mockFetch).toHaveBeenNthCalledWith(
+        2,
+        "/api/v2/countries?page=2&perPage=100"
+      );
+      expect(result.map((country) => country.id)).toEqual(["ZAF", "ZWE"]);
     });
   });
 
@@ -385,9 +481,37 @@ describe("afrikLoader", () => {
       expect(mockFetch).toHaveBeenCalledWith("/api/v2/countries/ZWE");
       expect(result).not.toBeNull();
       expect(result?.id).toBe("ZWE");
+      expect(result?.nameOfficial).toBe("Republic of Zimbabwe");
+      expect(result?.nameCommonFr).toBe("Zimbabwe");
       expect(result?.etymology).toBe("House of Stone");
       expect(result?.historicalNames?.colonization).toBe("Southern Rhodesia");
       expect(result?.kingdoms).toHaveLength(2);
+    });
+
+    // @req REQ-002
+    it("preserves the source official name and derives the common name", async () => {
+      const officialName =
+        "République d'Afrique du Sud (Republic of South Africa)";
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            data: {
+              id: "ZAF",
+              nameFr: officialName,
+              content: {},
+            },
+          }),
+      });
+
+      const result = await getCountry("ZAF");
+
+      expect(result).toMatchObject({
+        id: "ZAF",
+        nameFr: officialName,
+        nameOfficial: officialName,
+        nameCommonFr: "Afrique du Sud",
+      });
     });
 
     it("should return null for 404", async () => {

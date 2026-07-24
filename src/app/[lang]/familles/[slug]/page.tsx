@@ -1,12 +1,21 @@
 import { notFound, redirect } from "next/navigation";
 import { Suspense } from "react";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
-import { getLatestEntityRevisionVersion } from "@/api/v2/services/revisions";
-import { createServerClient } from "@/lib/supabase/server";
+import {
+  getLatestEntityRevisionVersion,
+  getRevisionSnapshot,
+  type FrozenDoctrineReference,
+} from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { LanguageFamilyDetailView } from "@/components/detail/LanguageFamilyDetailView";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
+import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
+import {
+  DoctrineLinkCard,
+  isDoctrineSlug,
+} from "@/components/source-transparency/DoctrineLinkCard";
 
+// @req REQ-019
 export const revalidate = 3600;
 
 interface PageParams {
@@ -24,6 +33,7 @@ interface FamilySnapshotViewProps {
   publishedAt: string | null;
   confidence: number | null;
   snapshotData: Record<string, unknown>;
+  doctrine: FrozenDoctrineReference | null;
   lang: string;
 }
 
@@ -33,6 +43,7 @@ function FamilySnapshotFicheView({
   publishedAt,
   confidence,
   snapshotData,
+  doctrine,
   lang,
 }: FamilySnapshotViewProps) {
   const nameFr =
@@ -42,29 +53,18 @@ function FamilySnapshotFicheView({
         ? snapshotData.nameFr
         : entityId;
 
-  const publishedLabel = publishedAt
-    ? new Intl.DateTimeFormat("fr-FR", { dateStyle: "long" }).format(
-        new Date(publishedAt)
-      )
-    : null;
-
   return (
     <div data-testid="family-snapshot-view" className="space-y-4">
-      <div className="rounded-md border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-800">
-        <span className="font-medium">Version archivée&nbsp;v{version}</span>
-        {publishedLabel && (
-          <span className="ml-2 text-amber-700">
-            · publiée le {publishedLabel}
-          </span>
-        )}
-        <span className="mx-2 text-amber-400">·</span>
-        <a
-          href={`/${lang}/familles/${entityId}`}
-          className="underline hover:no-underline"
-        >
-          Voir la version actuelle
-        </a>
+      <div className="space-y-2">
+        <h1 className="text-2xl font-semibold">{nameFr}</h1>
+        <p className="text-sm text-muted-foreground font-mono">{entityId}</p>
       </div>
+
+      <PinnedVersionBanner
+        pinnedAt={publishedAt}
+        versionTag={String(version)}
+        liveUrl={`/${lang}/familles/${entityId}`}
+      />
 
       {confidence !== null && (
         <div className="px-1">
@@ -77,70 +77,25 @@ function FamilySnapshotFicheView({
         </div>
       )}
 
-      <div className="space-y-2">
-        <h1 className="text-2xl font-semibold">{nameFr}</h1>
-        <p className="text-sm text-muted-foreground font-mono">{entityId}</p>
-      </div>
-
       <div className="prose prose-neutral max-w-none text-sm text-muted-foreground">
         <p>
           Ce contenu est une capture archivée&nbsp;(v{version}) et ne sera
           jamais modifié.
         </p>
       </div>
+
+      {doctrine && isDoctrineSlug(doctrine.slug) && (
+        <DoctrineLinkCard slug={doctrine.slug} version={doctrine.version} />
+      )}
     </div>
   );
-}
-
-async function getFamilyRevisionSnapshot(
-  entityId: string,
-  version: number
-): Promise<{
-  data: Record<string, unknown>;
-  version: number;
-  published_at: string | null;
-  confidence: number | null;
-} | null> {
-  const supabase = createServerClient();
-  const { data, error } = await supabase
-    .from("revisions")
-    .select("version, snapshot_jsonb, published_at")
-    .eq("entity_type", "language_family")
-    .eq("entity_id", entityId)
-    .eq("version", version)
-    .maybeSingle();
-
-  if (error) {
-    throw new Error(
-      `Failed to load revision v${version} for ${entityId}: ${error.message}`
-    );
-  }
-
-  if (!data) return null;
-
-  const row = data as {
-    version: number;
-    snapshot_jsonb: Record<string, unknown>;
-    published_at: string | null;
-  };
-
-  const confidence =
-    typeof row.snapshot_jsonb?.confidence === "number"
-      ? (row.snapshot_jsonb.confidence as number)
-      : null;
-
-  return {
-    data: row.snapshot_jsonb,
-    version: row.version,
-    published_at: row.published_at,
-    confidence,
-  };
 }
 
 // ---------------------------------------------------------------------------
 // Page
 // ---------------------------------------------------------------------------
 
+// @req REQ-019
 export default async function FamillesSlugPage({
   params,
 }: {
@@ -165,7 +120,8 @@ export default async function FamillesSlugPage({
   }
 
   if (parsed.mode === "pinned") {
-    const snapshot = await getFamilyRevisionSnapshot(
+    const snapshot = await getRevisionSnapshot(
+      "language_family",
       parsed.slug,
       parsed.version
     );
@@ -186,6 +142,7 @@ export default async function FamillesSlugPage({
             publishedAt={snapshot.published_at}
             confidence={snapshot.confidence}
             snapshotData={snapshot.data}
+            doctrine={snapshot.doctrine}
             lang={lang}
           />
         </div>

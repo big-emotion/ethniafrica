@@ -4,8 +4,43 @@ vi.mock("@/lib/supabase/server", () => ({
   createServerClient: vi.fn(),
 }));
 
-import { getFlagBySlug } from "../getFlagBySlug";
+import { getContributorAttribution, getFlagBySlug } from "../getFlagBySlug";
 import { createServerClient } from "@/lib/supabase/server";
+
+describe("getContributorAttribution", () => {
+  // @req REQ-042
+  it("returns the display name for a public contributor", () => {
+    expect(
+      getContributorAttribution({ display_name: "Alice", public: true })
+    ).toBe("Alice");
+  });
+
+  // @req REQ-042
+  it("returns anonymous attribution for a private contributor", () => {
+    expect(
+      getContributorAttribution({ display_name: "Alice", public: false })
+    ).toBe("contributeur anonyme");
+  });
+
+  // @req REQ-042
+  it("returns anonymous attribution when the display name is missing", () => {
+    expect(
+      getContributorAttribution({ display_name: null, public: true })
+    ).toBe("contributeur anonyme");
+  });
+
+  // @req REQ-042
+  it("returns anonymous attribution when the display name is blank", () => {
+    expect(
+      getContributorAttribution({ display_name: "   ", public: true })
+    ).toBe("contributeur anonyme");
+  });
+
+  // @req REQ-042
+  it("returns anonymous attribution after the contributor profile is deleted", () => {
+    expect(getContributorAttribution(null)).toBe("contributeur anonyme");
+  });
+});
 
 describe("getFlagBySlug", () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -40,6 +75,7 @@ describe("getFlagBySlug", () => {
       from: vi.fn(() => mockSupabase),
       select: vi.fn(() => mockSupabase),
       eq: vi.fn(() => mockSupabase),
+      or: vi.fn(() => mockSupabase),
       maybeSingle: vi.fn(),
     };
     vi.clearAllMocks();
@@ -93,6 +129,9 @@ describe("getFlagBySlug", () => {
 
     expect(result?.contributor?.display_name).toBe("Alice");
     expect(result?.contributor?.public).toBe(true);
+    expect(mockSupabase.or).toHaveBeenCalledWith(
+      "id.eq.uuid-user-1,user_id.eq.uuid-user-1"
+    );
   });
 
   it("returns contributor with public = false (privacy guard expects caller to handle)", async () => {
