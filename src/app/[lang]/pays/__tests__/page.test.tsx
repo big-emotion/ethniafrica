@@ -1,6 +1,11 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import React from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
+
+const { mockGetLatestVersion, mockGetRevisionSnapshot } = vi.hoisted(() => ({
+  mockGetLatestVersion: vi.fn(),
+  mockGetRevisionSnapshot: vi.fn(),
+}));
 
 vi.mock("next/navigation", () => ({
   notFound: vi.fn(() => {
@@ -11,26 +16,16 @@ vi.mock("next/navigation", () => ({
   }),
 }));
 
-const mockGetLatestVersion = vi.fn();
-
 vi.mock("@/api/v2/services/revisions", () => ({
   getLatestEntityRevisionVersion: (...args: unknown[]) =>
     mockGetLatestVersion(...args),
+  getRevisionSnapshot: (...args: unknown[]) => mockGetRevisionSnapshot(...args),
 }));
 
-const mockMaybeSingle = vi.fn();
-const mockQuery = {
-  select: vi.fn(),
-  eq: vi.fn(),
-  maybeSingle: mockMaybeSingle,
-};
-mockQuery.select.mockReturnValue(mockQuery);
-mockQuery.eq.mockReturnValue(mockQuery);
-
-const mockFrom = vi.fn(() => mockQuery);
-
 vi.mock("@/lib/supabase/server", () => ({
-  createServerClient: () => ({ from: mockFrom }),
+  createServerClient: vi.fn(() => {
+    throw new Error("Page must not query Supabase directly");
+  }),
 }));
 
 vi.mock("@/components/layout/PageLayout", () => ({
@@ -76,59 +71,106 @@ async function renderPage(slug: string, lang = "fr") {
   const ui = await PaysSlugPage({
     params: Promise.resolve({ lang, slug }),
   });
-  return render(ui as React.ReactElement);
+  return render(ui);
 }
 
 describe("/[lang]/pays/[slug] page", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockQuery.select.mockReturnValue(mockQuery);
-    mockQuery.eq.mockReturnValue(mockQuery);
   });
 
   // @req REQ-019
   it("renders the frozen-version banner immediately after the snapshot heading", async () => {
-    mockMaybeSingle.mockResolvedValueOnce({
-      data: {
-        version: 13,
-        snapshot_jsonb: {
-          name_fr: "République démocratique du Congo",
-          confidence: 84,
-        },
-        published_at: "2026-02-14T11:30:00.000Z",
-      },
-      error: null,
+    mockGetRevisionSnapshot.mockResolvedValueOnce({
+      data: { name_fr: "République démocratique du Congo" },
+      version: 13,
+      published_at: "2026-02-14T11:30:00.000Z",
+      confidence: 84,
+      doctrine: null,
     });
 
-    const { getByRole, getByTestId, getByText } = await renderPage("COD@v13");
+    await renderPage("COD@v13");
 
-    const headingBlock = getByRole("heading", {
+    const headingBlock = screen.getByRole("heading", {
       name: "République démocratique du Congo",
     }).parentElement;
-    const banner = getByTestId("pinned-version-banner");
+    const banner = screen.getByTestId("pinned-version-banner");
 
     expect(headingBlock?.nextElementSibling).toBe(banner);
-    expect(banner.getAttribute("data-pinned-at")).toBe(
+    expect(banner).toHaveAttribute(
+      "data-pinned-at",
       "2026-02-14T11:30:00.000Z"
     );
-    expect(banner.getAttribute("data-version-tag")).toBe("13");
-    expect(banner.getAttribute("data-live-url")).toBe("/fr/pays/COD");
-    expect(getByTestId("confidence-chip").getAttribute("data-confidence")).toBe(
+    expect(banner).toHaveAttribute("data-version-tag", "13");
+    expect(banner).toHaveAttribute("data-live-url", "/fr/pays/COD");
+    expect(screen.getByTestId("confidence-chip")).toHaveAttribute(
+      "data-confidence",
       "84"
     );
     expect(
-      getByText(/Ce contenu est une capture archivée/)
+      screen.getByText(/Ce contenu est une capture archivée/)
     ).toBeInTheDocument();
   });
 
-  // @req REQ-019
-  it("does not render a frozen-version banner for the live route", async () => {
-    const { getByTestId, queryByTestId } = await renderPage("COD");
+  // @req REQ-025
+  it("renders the doctrine version frozen in a pinned country revision", async () => {
+    mockGetRevisionSnapshot.mockResolvedValueOnce({
+      data: { name_fr: "Nigeria" },
+      version: 12,
+      published_at: "2026-06-10T00:00:00Z",
+      confidence: 88,
+      doctrine: {
+        slug: "classifications-contestees",
+        version: 42,
+      },
+    });
+
+    await renderPage("NGA@v12");
+
+    expect(mockGetRevisionSnapshot).toHaveBeenCalledWith("country", "NGA", 12);
+    expect(
+      screen.getByRole("link", { name: "Lire la doctrine" })
+    ).toHaveAttribute("href", "/fr/doctrine/classifications-contestees@v42");
+  });
+
+  // @req REQ-025
+  it("does not render a doctrine card when the pinned revision has no doctrine", async () => {
+    mockGetRevisionSnapshot.mockResolvedValueOnce({
+      data: { name_fr: "Nigeria" },
+      version: 12,
+      published_at: null,
+      confidence: null,
+      doctrine: null,
+    });
+
+    await renderPage("NGA@v12");
 
     expect(
-      getByTestId("country-detail-live").getAttribute("data-country-id")
-    ).toBe("COD");
-    expect(queryByTestId("pinned-version-banner")).toBeNull();
-    expect(mockFrom).not.toHaveBeenCalled();
+      screen.queryByRole("link", { name: "Lire la doctrine" })
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-019
+  // @req REQ-025
+  it("preserves the live country view without a frozen-version banner", async () => {
+    await renderPage("NGA");
+
+    expect(screen.getByTestId("country-detail-live")).toHaveAttribute(
+      "data-country-id",
+      "NGA"
+    );
+    expect(screen.queryByTestId("pinned-version-banner")).toBeNull();
+    expect(mockGetRevisionSnapshot).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-025
+  it("preserves @latest redirects", async () => {
+    mockGetLatestVersion.mockResolvedValueOnce(13);
+
+    await expect(
+      PaysSlugPage({
+        params: Promise.resolve({ lang: "fr", slug: "NGA@latest" }),
+      })
+    ).rejects.toThrow("NEXT_REDIRECT:/fr/pays/NGA@v13");
   });
 });

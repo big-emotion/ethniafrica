@@ -18,6 +18,7 @@ import rehypeSanitize from "rehype-sanitize";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { fetchDoctrineEntry } from "@/lib/doctrine/fetchDoctrineEntry";
 import { formatVersionLabel } from "@/lib/doctrine/formatVersionLabel";
+import { parseVersionedSlug } from "@/lib/versioned-slug";
 
 const DEFAULT_CHANGELOG_URL =
   "https://github.com/big-emotion/ethniafrica/commits/HEAD/supabase/migrations/016_editorial_doctrine_seed.sql";
@@ -42,7 +43,16 @@ export default async function DoctrineSlugPage({
 }) {
   const { slug } = await params;
 
-  const entry = await fetchDoctrineEntry(slug);
+  const parsed = parseVersionedSlug(decodeURIComponent(slug));
+
+  if (!parsed || parsed.mode === "latest") {
+    notFound();
+  }
+
+  const entry =
+    parsed.mode === "pinned"
+      ? await fetchDoctrineEntry(parsed.slug, parsed.version)
+      : await fetchDoctrineEntry(parsed.slug);
 
   if (!entry) {
     notFound();

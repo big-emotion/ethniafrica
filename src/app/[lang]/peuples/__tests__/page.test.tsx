@@ -210,4 +210,42 @@ describe("/[lang]/peuples/[slug] page", () => {
     // live component was not rendered
     expect(mockGetSnapshot).toHaveBeenCalledWith("PPL_BAKONGO", 10);
   });
+
+  // @req REQ-025
+  it("pinned URL renders the doctrine card with the frozen doctrine version", async () => {
+    mockGetSnapshot.mockResolvedValueOnce({
+      data: { id: "PPL_BAKONGO", nameMain: "Bakongo" },
+      version: 34,
+      published_at: "2025-01-15T00:00:00Z",
+      confidence: 87,
+      doctrine: {
+        slug: "classifications-contestees",
+        version: 42,
+      },
+    });
+
+    const { getByRole } = await renderPage("PPL_BAKONGO@v34");
+
+    expect(getByRole("link", { name: "Lire la doctrine" })).toHaveAttribute(
+      "href",
+      "/fr/doctrine/classifications-contestees@v42"
+    );
+  });
+
+  // @req REQ-025
+  it("pinned URL without doctrine metadata renders no doctrine card", async () => {
+    mockGetSnapshot.mockResolvedValueOnce({
+      data: { id: "PPL_BAKONGO", nameMain: "Bakongo" },
+      version: 34,
+      published_at: "2025-01-15T00:00:00Z",
+      confidence: 87,
+      doctrine: null,
+    });
+
+    const { queryByRole } = await renderPage("PPL_BAKONGO@v34");
+
+    expect(
+      queryByRole("link", { name: "Lire la doctrine" })
+    ).not.toBeInTheDocument();
+  });
 });

@@ -9,6 +9,10 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleDetailView } from "@/components/detail/PeopleDetailView";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
+import {
+  DoctrineLinkCard,
+  isDoctrineSlug,
+} from "@/components/source-transparency/DoctrineLinkCard";
 
 // @req REQ-019
 export const revalidate = 3600;
@@ -27,6 +31,10 @@ interface SnapshotViewProps {
   version: number;
   publishedAt: string | null;
   confidence: number | null;
+  doctrine?: {
+    slug: string;
+    version: number;
+  } | null;
   snapshotData: Record<string, unknown>;
   lang: string;
 }
@@ -36,6 +44,7 @@ function SnapshotFicheView({
   version,
   publishedAt,
   confidence,
+  doctrine,
   snapshotData,
   lang,
 }: SnapshotViewProps) {
@@ -80,6 +89,10 @@ function SnapshotFicheView({
           jamais modifié.
         </p>
       </div>
+
+      {doctrine && isDoctrineSlug(doctrine.slug) && (
+        <DoctrineLinkCard slug={doctrine.slug} version={doctrine.version} />
+      )}
     </div>
   );
 }
@@ -135,6 +148,7 @@ export default async function PeoplesSlugPage({
             version={parsed.version}
             publishedAt={snapshot.published_at}
             confidence={snapshot.confidence}
+            doctrine={snapshot.doctrine}
             snapshotData={snapshot.data}
             lang={lang}
           />

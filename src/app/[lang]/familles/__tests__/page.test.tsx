@@ -1,6 +1,11 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import React from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
+
+const { mockGetLatestVersion, mockGetRevisionSnapshot } = vi.hoisted(() => ({
+  mockGetLatestVersion: vi.fn(),
+  mockGetRevisionSnapshot: vi.fn(),
+}));
 
 vi.mock("next/navigation", () => ({
   notFound: vi.fn(() => {
@@ -11,26 +16,16 @@ vi.mock("next/navigation", () => ({
   }),
 }));
 
-const mockGetLatestVersion = vi.fn();
-
 vi.mock("@/api/v2/services/revisions", () => ({
   getLatestEntityRevisionVersion: (...args: unknown[]) =>
     mockGetLatestVersion(...args),
+  getRevisionSnapshot: (...args: unknown[]) => mockGetRevisionSnapshot(...args),
 }));
 
-const mockMaybeSingle = vi.fn();
-const mockQuery = {
-  select: vi.fn(),
-  eq: vi.fn(),
-  maybeSingle: mockMaybeSingle,
-};
-mockQuery.select.mockReturnValue(mockQuery);
-mockQuery.eq.mockReturnValue(mockQuery);
-
-const mockFrom = vi.fn(() => mockQuery);
-
 vi.mock("@/lib/supabase/server", () => ({
-  createServerClient: () => ({ from: mockFrom }),
+  createServerClient: vi.fn(() => {
+    throw new Error("Page must not query Supabase directly");
+  }),
 }));
 
 vi.mock("@/components/layout/PageLayout", () => ({
@@ -76,60 +71,110 @@ async function renderPage(slug: string, lang = "fr") {
   const ui = await FamillesSlugPage({
     params: Promise.resolve({ lang, slug }),
   });
-  return render(ui as React.ReactElement);
+  return render(ui);
 }
 
 describe("/[lang]/familles/[slug] page", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockQuery.select.mockReturnValue(mockQuery);
-    mockQuery.eq.mockReturnValue(mockQuery);
   });
 
   // @req REQ-019
   it("renders the frozen-version banner immediately after the snapshot heading", async () => {
-    mockMaybeSingle.mockResolvedValueOnce({
-      data: {
-        version: 8,
-        snapshot_jsonb: {
-          name_fr: "Famille bantu",
-          confidence: 91,
-        },
-        published_at: "2025-09-03T08:15:00.000Z",
-      },
-      error: null,
+    mockGetRevisionSnapshot.mockResolvedValueOnce({
+      data: { name_fr: "Famille bantu" },
+      version: 8,
+      published_at: "2025-09-03T08:15:00.000Z",
+      confidence: 91,
+      doctrine: null,
     });
 
-    const { getByRole, getByTestId, getByText } =
-      await renderPage("FLG_BANTU@v8");
+    await renderPage("FLG_BANTU@v8");
 
-    const headingBlock = getByRole("heading", {
+    const headingBlock = screen.getByRole("heading", {
       name: "Famille bantu",
     }).parentElement;
-    const banner = getByTestId("pinned-version-banner");
+    const banner = screen.getByTestId("pinned-version-banner");
 
     expect(headingBlock?.nextElementSibling).toBe(banner);
-    expect(banner.getAttribute("data-pinned-at")).toBe(
+    expect(banner).toHaveAttribute(
+      "data-pinned-at",
       "2025-09-03T08:15:00.000Z"
     );
-    expect(banner.getAttribute("data-version-tag")).toBe("8");
-    expect(banner.getAttribute("data-live-url")).toBe("/fr/familles/FLG_BANTU");
-    expect(getByTestId("confidence-chip").getAttribute("data-confidence")).toBe(
+    expect(banner).toHaveAttribute("data-version-tag", "8");
+    expect(banner).toHaveAttribute("data-live-url", "/fr/familles/FLG_BANTU");
+    expect(screen.getByTestId("confidence-chip")).toHaveAttribute(
+      "data-confidence",
       "91"
     );
     expect(
-      getByText(/Ce contenu est une capture archivée/)
+      screen.getByText(/Ce contenu est une capture archivée/)
     ).toBeInTheDocument();
   });
 
-  // @req REQ-019
-  it("does not render a frozen-version banner for the live route", async () => {
-    const { getByTestId, queryByTestId } = await renderPage("FLG_BANTU");
+  // @req REQ-025
+  it("renders the doctrine version frozen in a pinned family revision", async () => {
+    mockGetRevisionSnapshot.mockResolvedValueOnce({
+      data: { name_fr: "Bantou" },
+      version: 7,
+      published_at: "2026-06-10T00:00:00Z",
+      confidence: 91,
+      doctrine: {
+        slug: "classifications-contestees",
+        version: 42,
+      },
+    });
+
+    await renderPage("FLG_BANTU@v7");
+
+    expect(mockGetRevisionSnapshot).toHaveBeenCalledWith(
+      "language_family",
+      "FLG_BANTU",
+      7
+    );
+    expect(
+      screen.getByRole("link", { name: "Lire la doctrine" })
+    ).toHaveAttribute("href", "/fr/doctrine/classifications-contestees@v42");
+  });
+
+  // @req REQ-025
+  it("does not render a doctrine card when the pinned revision has no doctrine", async () => {
+    mockGetRevisionSnapshot.mockResolvedValueOnce({
+      data: { name_fr: "Bantou" },
+      version: 7,
+      published_at: null,
+      confidence: null,
+      doctrine: null,
+    });
+
+    await renderPage("FLG_BANTU@v7");
 
     expect(
-      getByTestId("family-detail-live").getAttribute("data-family-id")
-    ).toBe("FLG_BANTU");
-    expect(queryByTestId("pinned-version-banner")).toBeNull();
-    expect(mockFrom).not.toHaveBeenCalled();
+      screen.queryByRole("link", { name: "Lire la doctrine" })
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-019
+  // @req REQ-025
+  it("preserves the live family view without a frozen-version banner", async () => {
+    await renderPage("FLG_BANTU");
+
+    expect(screen.getByTestId("family-detail-live")).toHaveAttribute(
+      "data-family-id",
+      "FLG_BANTU"
+    );
+    expect(screen.queryByTestId("pinned-version-banner")).toBeNull();
+    expect(mockGetRevisionSnapshot).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-025
+  it("preserves @latest redirects", async () => {
+    mockGetLatestVersion.mockResolvedValueOnce(8);
+
+    await expect(
+      FamillesSlugPage({
+        params: Promise.resolve({ lang: "fr", slug: "FLG_BANTU@latest" }),
+      })
+    ).rejects.toThrow("NEXT_REDIRECT:/fr/familles/FLG_BANTU@v8");
   });
 });
