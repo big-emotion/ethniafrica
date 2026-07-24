@@ -6,6 +6,12 @@ import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
 import type { ClassificationStatus, People } from "@/types/afrik";
 
+export interface PeopleQueryFilters {
+  search?: string;
+  initialLetter?: string;
+  languageFamilyId?: string;
+}
+
 /**
  * Build a map of people_id -> country_ids[] from a batch query
  */
@@ -75,6 +81,53 @@ export async function getAllAfrikPeoples(
   const relationsMap = await getCountryRelationsMap(supabase, peopleIds);
 
   return mapRowsToPeoples(data || [], relationsMap);
+}
+
+export async function getPaginatedAfrikPeoples(
+  page: number,
+  perPage: number,
+  filters: PeopleQueryFilters = {}
+): Promise<{ data: People[]; total: number }> {
+  const supabase = createServerClient();
+  const start = (page - 1) * perPage;
+  let query = supabase
+    .from("afrik_peoples")
+    .select("*, afrik_people_countries(country_id)", { count: "exact" });
+
+  if (filters.search) {
+    query = query.textSearch("search_vector", filters.search, {
+      type: "websearch",
+      config: "french",
+    });
+  }
+  if (filters.initialLetter) {
+    query = query.ilike("name_main", `${filters.initialLetter}%`);
+  }
+  if (filters.languageFamilyId) {
+    query = query.eq("language_family_id", filters.languageFamilyId);
+  }
+
+  const { data, error, count } = await query
+    .order("name_main")
+    .range(start, start + perPage - 1);
+
+  if (error) {
+    logger.error("Error fetching paginated AFRIK peoples", error);
+    throw error;
+  }
+
+  const relationsMap = new Map<string, string[]>();
+  for (const row of data || []) {
+    relationsMap.set(
+      row.id,
+      (row.afrik_people_countries || []).map((relation) => relation.country_id)
+    );
+  }
+
+  return {
+    data: mapRowsToPeoples(data || [], relationsMap),
+    total: count ?? 0,
+  };
 }
 
 /**
