@@ -195,6 +195,8 @@ export async function getPeoples(
     perPage = DEFAULT_PER_PAGE,
     languageFamilyId,
     countryId,
+    search,
+    letter,
   } = options;
 
   try {
@@ -204,8 +206,15 @@ export async function getPeoples(
       perPage: perPage.toString(),
     });
 
-    // Note: API v2 ne supporte pas encore les filtres directement sur /peoples
-    // On utilisera /search pour les filtres avancés
+    if (search) {
+      params.set("search", search);
+    }
+    if (letter) {
+      params.set("letter", letter);
+    }
+    if (languageFamilyId) {
+      params.set("languageFamilyId", languageFamilyId);
+    }
 
     const response = await fetch(`${API_BASE}/peoples?${params}`);
 
@@ -237,13 +246,8 @@ export async function getPeoples(
       }
     );
 
-    // Apply client-side filters if needed (temporary until API supports them)
+    // The people endpoint does not yet expose the country filter.
     let filteredData = data;
-    if (languageFamilyId) {
-      filteredData = filteredData.filter(
-        (p) => p.languageFamilyId === languageFamilyId
-      );
-    }
     if (countryId) {
       filteredData = filteredData.filter((p) =>
         p.currentCountries.includes(countryId)

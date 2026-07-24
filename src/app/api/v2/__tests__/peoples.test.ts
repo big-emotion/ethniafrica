@@ -41,7 +41,7 @@ describe("API v2 - Peoples Route", () => {
         meta: { total: 1, page: 1, perPage: 20, totalPages: 1 },
       };
 
-      (listPeoplesHandler as any).mockResolvedValue(mockResponse);
+      vi.mocked(listPeoplesHandler).mockResolvedValue(mockResponse);
 
       const request = new NextRequest("http://localhost/api/v2/peoples");
       const response = await GET(request);
@@ -52,8 +52,46 @@ describe("API v2 - Peoples Route", () => {
       expect(Array.isArray(data.data)).toBe(true);
     });
 
+    // @req REQ-033
+    it("should normalize and forward pagination and filters exactly once", async () => {
+      vi.mocked(listPeoplesHandler).mockResolvedValue({
+        data: [],
+        meta: { total: 0, page: 2, perPage: 25, totalPages: 0 },
+      });
+
+      const request = new NextRequest(
+        "http://localhost/api/v2/peoples?page=2&perPage=25&search=%20shona%20&letter=s&languageFamilyId=FLG_BANTU"
+      );
+
+      const response = await GET(request);
+
+      expect(response.status).toBe(200);
+      expect(listPeoplesHandler).toHaveBeenCalledTimes(1);
+      expect(listPeoplesHandler).toHaveBeenCalledWith(2, 25, {
+        search: "shona",
+        initialLetter: "S",
+        languageFamilyId: "FLG_BANTU",
+      });
+    });
+
+    // @req REQ-033
+    it("should not forward an invalid language family ID", async () => {
+      vi.mocked(listPeoplesHandler).mockResolvedValue({
+        data: [],
+        meta: { total: 0, page: 1, perPage: 20, totalPages: 0 },
+      });
+
+      const request = new NextRequest(
+        "http://localhost/api/v2/peoples?languageFamilyId=invalid"
+      );
+
+      await GET(request);
+
+      expect(listPeoplesHandler).toHaveBeenCalledWith(1, 20, {});
+    });
+
     it("should return 500 on error", async () => {
-      (listPeoplesHandler as any).mockRejectedValue(
+      vi.mocked(listPeoplesHandler).mockRejectedValue(
         new Error("Database error")
       );
 
