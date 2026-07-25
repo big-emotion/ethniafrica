@@ -17,7 +17,7 @@ import Image from "next/image";
 interface PageLayoutProps {
   children: ReactNode;
   language: Language;
-  onLanguageChange: (lang: Language) => void;
+  onLanguageChange?: (lang: Language) => void;
   title?: string;
   subtitle?: string;
   sectionName?: string;
@@ -33,7 +33,7 @@ interface PageLayoutProps {
 export const PageLayout = ({
   children,
   language,
-  onLanguageChange,
+  onLanguageChange = () => undefined,
   title,
   sectionName,
   hideHeader = false,
@@ -166,7 +166,7 @@ export const PageLayout = ({
             <div className="flex items-center gap-2 text-center">
               <span>{t.madeWithEmotion}</span>
               <div className="flex items-center gap-1">
-                <span className="font-bold text-yellow-500">BIG</span>
+                <span className="font-bold text-amber-700">BIG</span>
                 <span className="font-bold text-foreground">EMOTION</span>
               </div>
             </div>

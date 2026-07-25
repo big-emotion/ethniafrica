@@ -13,6 +13,7 @@ import {
  * invalidation when a flag transitions state (Story 3.3 / ETNI-364).
  * The 60 s fallback ensures stale data is never served for more than 1 min.
  */
+// @req REQ-042
 export const revalidate = 60;
 
 interface PageParams {
@@ -20,6 +21,7 @@ interface PageParams {
   slug: string;
 }
 
+// @req REQ-042
 export async function generateMetadata({
   params,
 }: {
@@ -59,6 +61,7 @@ const FLAG_KIND_LABELS: Record<string, string> = {
   other: "Autre",
 };
 
+// @req REQ-042
 export default async function SignalementsSlugPage({
   params,
 }: {
@@ -81,7 +84,6 @@ export default async function SignalementsSlugPage({
   return (
     <PageLayout
       language="fr"
-      onLanguageChange={() => {}}
       title={`Signalement ${slug}`}
       sectionName="Signalements"
     >

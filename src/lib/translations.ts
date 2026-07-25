@@ -1,6 +1,7 @@
 import { Language } from "@/types/shared";
 import { PRODUCT_NAME, ATTRIBUTION_STRING } from "@/lib/brand";
 
+// @req REQ-014
 export const translations = {
   fr: {
     title: PRODUCT_NAME,
@@ -34,6 +35,59 @@ export const translations = {
     close: "Fermer",
     whyThisSite: "Pourquoi ce site ?",
     madeWithEmotion: ATTRIBUTION_STRING,
+    publicFlags: {
+      title: "Tous les signalements",
+      metadataTitle: "Tous les signalements — Africa History",
+      metadataDescription:
+        "Transparence éditoriale — explorez les signalements de la communauté",
+      introduction:
+        "Cette file publique rend visible le suivi éditorial des signalements transmis par la communauté.",
+      queueLabel: "File publique des signalements",
+      filters: {
+        statuses: "Statuts",
+        kinds: "Types de signalement",
+        targets: "Cibles",
+      },
+      statuses: {
+        open: "Ouvert",
+        under_review: "En cours d’examen",
+        accepted: "Accepté",
+        rejected: "Rejeté",
+        withdrawn: "Retiré",
+        duplicate: "Doublon",
+      },
+      kinds: {
+        inaccurate: "Information inexacte",
+        "missing-source": "Source manquante",
+        "broken-url": "URL brisée",
+        offensive: "Contenu offensant",
+        "correction-proposal": "Proposition de correction",
+        other: "Autre",
+      },
+      targets: {
+        assertion: "Assertion",
+        source: "Source",
+        fiche_section: "Section de fiche",
+        classification: "Classification",
+      },
+      entities: {
+        people: "Peuple",
+        country: "Pays",
+        language: "Langue",
+        language_family: "Famille linguistique",
+        source: "Source",
+        fiche_section: "Section de fiche",
+        classification: "Classification",
+      },
+      anonymous: "anonyme",
+      loading: "Chargement des signalements…",
+      loadError: "Impossible de charger les signalements.",
+      empty: "aucun signalement ne correspond à ces filtres",
+      reset: "réinitialiser",
+      loadingMore: "Chargement…",
+      retry: "Réessayer",
+      loadMore: "Afficher plus de signalements",
+    },
     classification: {
       consensual: {
         label: "Consensuel",
@@ -58,10 +112,12 @@ export const translations = {
   },
 };
 
+// @req REQ-014
 export const getTranslation = (lang: Language) => translations[lang];
 
 /**
  * Localized labels and tooltips for the `classification_status` enum.
  * Used by the ClassificationBadge component (ETNI-178).
  */
+// @req REQ-023
 export const classificationLabels = translations.fr.classification;
