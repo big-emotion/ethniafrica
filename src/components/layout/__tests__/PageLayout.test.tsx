@@ -54,11 +54,7 @@ describe("PageLayout title", () => {
   // @req REQ-044
   it("keeps a readable foreground fallback while preserving its typography", () => {
     render(
-      <PageLayout
-        language="fr"
-        onLanguageChange={vi.fn()}
-        title="Peuples d'Afrique"
-      >
+      <PageLayout language="fr" title="Peuples d'Afrique">
         <p>Page content</p>
       </PageLayout>
     );
@@ -78,6 +74,7 @@ describe("PageLayout title", () => {
     );
     expect(heading).not.toHaveClass("text-transparent", "bg-clip-text");
     expect(heading).not.toHaveAttribute("style");
+    expect(screen.getByText("BIG")).toHaveClass("text-amber-700");
   });
 
   // @req REQ-043
