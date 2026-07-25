@@ -1,3 +1,6 @@
+// @req REQ-036
+// @req REQ-075
+// @req REQ-084
 import { describe, it, expect } from "vitest";
 import { swaggerSpecV2 } from "@/lib/api/openapiV2";
 
@@ -14,8 +17,8 @@ describe("OpenAPI v2 spec - BearerAuth security", () => {
     const paths = spec.paths as Record<string, Record<string, unknown>>;
 
     expect(paths["/api/v2/flags"]?.post).toBeDefined();
-    expect(paths["/api/v2/flags"]?.get).toBeUndefined();
-    expect(paths["/api/v2/flags/{id}"]).toBeUndefined();
+    expect(paths["/api/v2/flags"]?.get).toBeDefined();
+    expect(paths["/api/v2/flags/{public_slug_or_id}"]?.get).toBeDefined();
   });
 
   it("documents every implemented Module #0 route", () => {
@@ -86,20 +89,54 @@ describe("OpenAPI v2 spec - BearerAuth security", () => {
 
     expect(protectedOps.length).toBeGreaterThan(0);
 
-    // Every protected operation should either inherit global BearerAuth (no security key)
-    // or explicitly list BearerAuth in its security array
+    // Operations either inherit global API-key auth, declare a supported
+    // operation-specific scheme, or explicitly opt into public access.
     const globalSecurity = spec.security as Array<Record<string, unknown>>;
     const globalHasBearerAuth = globalSecurity?.some((s) => "BearerAuth" in s);
 
     for (const op of protectedOps) {
       if (op.security === undefined) {
-        // Inherits global security — BearerAuth must be in global
         expect(globalHasBearerAuth).toBe(true);
       } else {
-        // Per-operation override — must include BearerAuth
         const opSecurity = op.security as Array<Record<string, unknown>>;
-        expect(opSecurity.some((s) => "BearerAuth" in s)).toBe(true);
+        const explicitlyPublic = opSecurity.length === 0;
+        const hasSupportedAuth = opSecurity.some(
+          (requirement) =>
+            "BearerAuth" in requirement || "SupabaseJwtAuth" in requirement
+        );
+        expect(explicitlyPublic || hasSupportedAuth).toBe(true);
       }
     }
+  });
+});
+
+describe("OpenAPI v2 spec - LanguageFamilyV2", () => {
+  // @req REQ-036
+  it("should document canonical associated peoples at the top level", () => {
+    const spec = swaggerSpecV2 as Record<string, unknown>;
+    const components = spec.components as Record<string, unknown>;
+    const schemas = components.schemas as Record<string, unknown>;
+    const languageFamily = schemas.LanguageFamilyV2 as Record<string, unknown>;
+    const properties = languageFamily.properties as Record<string, unknown>;
+    const associatedPeoples = properties.associatedPeoples as Record<
+      string,
+      unknown
+    >;
+
+    expect(associatedPeoples).toBeDefined();
+    expect(associatedPeoples.type).toBe("array");
+    expect(associatedPeoples.description).toContain(
+      "afrik_peoples.language_family_id"
+    );
+
+    const items = associatedPeoples.items as Record<string, unknown>;
+    const itemProperties = items.properties as Record<
+      string,
+      Record<string, unknown>
+    >;
+
+    expect(items.type).toBe("object");
+    expect(itemProperties.name.type).toBe("string");
+    expect(itemProperties.peopleId.type).toBe("string");
   });
 });

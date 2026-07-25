@@ -105,17 +105,17 @@ tail of blog citations and the absence of any machine-checkable tier attribution
 
 **Almost — one blocking step, and the admin path is a dead end.**
 
-| Step                                                       | Verdict                                             |
-| ---------------------------------------------------------- | --------------------------------------------------- |
-| `git clone` + `npm ci --legacy-peer-deps`                  | ✅ documented; peer-dep flag is intentional         |
-| `.env.example` → `.env.local`                              | ⚠️ **missing 2 vars** (§6.2)                        |
-| `supabase/migrations/` apply in order                      | ⚠️ ordering ambiguity — 7 duplicate prefixes (§6.5) |
-| `tsx scripts/migrateAfrikToDatabase.ts`                    | ✅ script present                                   |
-| Seed a first admin user                                    | ✅ `scripts/seedAdmin.ts` exists                    |
-| `npm run dev`                                              | ✅ build passes                                     |
-| `GET /api/v2/{countries,peoples,language-families,search}` | ✅ all 4 routes present, 3-layer pattern intact     |
-| `/docs/api` renders OpenAPI UI                             | ✅ served from `openapiV2.ts`                       |
-| `/admin` requires auth + respects RBAC                     | ❌ **broken — see §8.1**                            |
+| Step                                                       | Verdict                                          |
+| ---------------------------------------------------------- | ------------------------------------------------ |
+| `git clone` + `npm ci --legacy-peer-deps`                  | ✅ documented; peer-dep flag is intentional      |
+| `.env.example` → `.env.local`                              | ⚠️ **missing 2 vars** (§6.2)                     |
+| `supabase/migrations/` apply in order                      | ✅ unique contiguous versions `001`–`027` (§6.5) |
+| `tsx scripts/migrateAfrikToDatabase.ts`                    | ✅ script present                                |
+| Seed a first admin user                                    | ✅ `scripts/seedAdmin.ts` exists                 |
+| `npm run dev`                                              | ✅ build passes                                  |
+| `GET /api/v2/{countries,peoples,language-families,search}` | ✅ all 4 routes present, 3-layer pattern intact  |
+| `/docs/api` renders OpenAPI UI                             | ✅ served from `openapiV2.ts`                    |
+| `/admin` requires auth + respects RBAC                     | ❌ **broken — see §8.1**                         |
 
 `scripts/checkEnvExample.ts` exits 1 and correctly reports two variables
 referenced in code but absent from `.env.example`:
@@ -128,7 +128,7 @@ contributor hits this as a runtime surprise.
 **Strong infrastructure, two authorization defects.** The preventive controls are
 genuinely well built — this is the strongest domain in the audit. RLS is now
 complete across all 25 tables including the 5 AFRIK tables that were the previous
-audit's headline P0; migration `017_afrik_rls.sql` closed it and documents the
+audit's headline P0; migration `019_afrik_rls.sql` closed it and documents the
 out-of-band prod/staging application. Full detail in §8.
 
 - **RLS coverage:** ✅ 25/25 tables, every one with policies or a documented
@@ -219,7 +219,7 @@ These are real and worth protecting:
 
 - **RLS is complete and deliberate.** All 25 tables enabled, with public-read /
   service-role-write documented as an intentional posture rather than an oversight
-  (`017_afrik_rls.sql:16-22`). The previous audit's #1 blocker is gone.
+  (`019_afrik_rls.sql:16-22`). The previous audit's #1 blocker is gone.
 - **Crypto and transport controls exceed the bar.** PBKDF2 at 600 000 iterations
   (6× the 100 k minimum), 16-byte salts, per-request CSP nonce, HSTS, EU-resident
   Sentry with active PII scrubbing.
@@ -251,7 +251,7 @@ These are real and worth protecting:
 exist and are consulted by different code paths for the same decision.
 `src/middleware.ts:168` gates `/fr/admin` on the latter;
 `src/app/api/admin/contributions/route.ts:19` gates the API on the former. Both are
-currently broken (§8.1). Migration `019_moderator_schema.sql:148-205` routes its
+currently broken (§8.1). Migration `023_moderator_schema.sql:148-205` routes its
 own policy checks through `contributor_profiles`, suggesting `user_roles` was
 already being worked around rather than fixed.
 
@@ -275,13 +275,11 @@ coverage level is **unknown**. Scored as a gap, not assumed-passing.
 §8.1 is reachable by any existing test. This is precisely the "over-mocking proves
 nothing" failure mode — the tests assert the mock's behaviour, not the system's.
 
-### 6.5 Migration numbering collisions (Domain 5) — P1
+### 6.5 Migration numbering collisions — resolved 2026-07-25
 
-Seven files share a prefix with another: `007`/`007a`, `015`/`015a`, `018` ×2
-(`018_per_assertion_fiche_revisions`, `018_revisions_ddl`), `019` ×4
-(`019_flags_full_ddl`, `019_moderator_schema`, `019_pg_notify_cache_invalidation`,
-`019_search_vectors`). Apply order within a collision group is undefined by
-filename, and `019_flags_full_ddl` and `019_moderator_schema` both touch policies.
+The migration chain now uses unique, contiguous numeric versions from `001` to
+`027`. `supabase/__tests__/migration-filenames.test.ts` rejects invalid,
+duplicate, or non-contiguous versions before they can reach `supabase db push`.
 
 ### 6.6 `docs/migrations.md` documents 1 of 22 migrations (Domain 5, 10) — P1
 
@@ -331,7 +329,7 @@ non-issue. The validator should skip directories with no `.json` children.
 - **P0** `src/lib/api/rate-limit.ts:17-27` — `RATE_LIMIT_ADMIN_KEYS` /
   `RATE_LIMIT_PARTNER_KEYS` resolve a key's tier by matching the **raw key**
   against comma-separated env lists, bypassing the canonical `api_keys.tier` column
-  added by `012_api_keys_tier.sql:7-8`. Two sources of truth for one authorization
+  added by `013_api_keys_tier.sql:7-8`. Two sources of truth for one authorization
   decision, and raw key material in env vars.
 - **P1** `src/lib/supabase/moderator.ts:5` — inline union
   `"editor" | "senior_editor" | "admin"` omits `'none'`, which migration 019
@@ -480,7 +478,7 @@ moderation impossible.
 
 **(a) `contributor_profiles` is written on the wrong key — blocks `/fr/admin`.**
 
-`019_moderator_schema.sql` declares:
+`023_moderator_schema.sql` declares:
 
 ```sql
 id       UUID PRIMARY KEY DEFAULT gen_random_uuid(),
@@ -499,12 +497,12 @@ Every consumer looks the row up by `user_id` — `src/middleware.ts:169-170` and
 created by OAuth therefore have a **NULL `user_id`** and can never match. Result:
 `moderatorRole` is `undefined`, and `middleware.ts:174` redirects every user to
 `/fr?message=acces_moderateurs_requis`. **No one can reach `/fr/admin`.** The same
-NULL also defeats the RLS policies at `019_moderator_schema.sql:148-205`, which all
+NULL also defeats the RLS policies at `023_moderator_schema.sql:148-205`, which all
 key on `cp.user_id = auth.uid()`.
 
 **(b) `user_roles` RLS is self-referential — blocks the admin API.**
 
-`007a_user_roles.sql:48-58` defines:
+`008_user_roles.sql:48-58` defines:
 
 ```sql
 CREATE POLICY "Admins can manage all roles" ON user_roles FOR ALL

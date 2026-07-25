@@ -2,7 +2,10 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FlagPublicStatus } from "@/components/flags/FlagPublicStatus";
-import { getFlagBySlug } from "@/lib/supabase/queries/flags/getFlagBySlug";
+import {
+  getContributorAttribution,
+  getFlagBySlug,
+} from "@/lib/supabase/queries/flags/getFlagBySlug";
 
 /**
  * ISR: revalidate on every request in dev; in production the pg_notify →
@@ -10,6 +13,7 @@ import { getFlagBySlug } from "@/lib/supabase/queries/flags/getFlagBySlug";
  * invalidation when a flag transitions state (Story 3.3 / ETNI-364).
  * The 60 s fallback ensures stale data is never served for more than 1 min.
  */
+// @req REQ-042
 export const revalidate = 60;
 
 interface PageParams {
@@ -17,6 +21,7 @@ interface PageParams {
   slug: string;
 }
 
+// @req REQ-042
 export async function generateMetadata({
   params,
 }: {
@@ -56,6 +61,7 @@ const FLAG_KIND_LABELS: Record<string, string> = {
   other: "Autre",
 };
 
+// @req REQ-042
 export default async function SignalementsSlugPage({
   params,
 }: {
@@ -70,10 +76,7 @@ export default async function SignalementsSlugPage({
 
   const { flag, contributor, assertion } = record;
 
-  const isPublicContributor = contributor?.public === true;
-  const contributorName = isPublicContributor
-    ? (contributor?.display_name ?? "contributeur anonyme")
-    : "contributeur anonyme";
+  const contributorName = getContributorAttribution(contributor);
 
   const fieldPath = assertion?.field_path ?? flag.assertion_field_path;
   const snapshotQuote = assertion?.statement ?? null;
@@ -81,7 +84,6 @@ export default async function SignalementsSlugPage({
   return (
     <PageLayout
       language="fr"
-      onLanguageChange={() => {}}
       title={`Signalement ${slug}`}
       sectionName="Signalements"
     >

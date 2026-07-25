@@ -104,9 +104,7 @@ _This file contains critical rules and patterns that AI agents must follow when 
   - Components: alongside the component as `*.test.tsx`
 - **Run a single file**: `npx vitest run path/to/file.test.ts`. Pattern: `npx vitest run -t "pattern"`.
 - **Pre-existing failures (do not "fix" without explicit scope):**
-  - 6 failures in `scripts/__tests__/migrateAfrikToDatabase.test.ts` (Supabase mock)
-  - 4 failures in handler tests (Supabase mock)
-    These are known and orthogonal — touching them is out of scope unless the task is explicitly to fix them.
+  - 4 handler-test failures caused by Supabase mocks. These are known and orthogonal — touching them is out of scope unless the task is explicitly to fix them.
 - **Mocks**: prefer real fixtures over deep mocks for AFRIK parsers/loaders. Mocking the Supabase client at the wrong layer is the most common test-bug source in this repo.
 - **Do NOT retrofit tests** after the fact to claim TDD compliance — the failing test must precede the change.
 - **`make check`** runs lint + type-check + tests; use it before declaring work done.

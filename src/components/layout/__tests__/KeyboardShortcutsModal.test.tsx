@@ -1,3 +1,6 @@
+// @req REQ-044
+// @req REQ-065
+// @req REQ-068
 import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { KeyboardShortcutsModal } from "../KeyboardShortcutsModal";

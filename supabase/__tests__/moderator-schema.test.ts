@@ -1,5 +1,5 @@
 /**
- * Static analysis of migration 019_moderator_schema.sql.
+ * Static analysis of migration 023_moderator_schema.sql.
  *
  * These tests parse the SQL text to verify every required DDL element is
  * present. Without a live Postgres instance in CI, SQL-level assertion is the
@@ -22,7 +22,7 @@ let sql: string;
 
 beforeAll(() => {
   sql = readFileSync(
-    path.resolve(__dirname, "../migrations/019_moderator_schema.sql"),
+    path.resolve(__dirname, "../migrations/023_moderator_schema.sql"),
     "utf-8"
   );
 });

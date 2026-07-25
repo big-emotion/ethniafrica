@@ -26,6 +26,30 @@ SUPABASE_SERVICE_ROLE_KEY=your_service_role_key   # server-side only — never e
 
 Never commit `.env*`. Stage files explicitly on commit (avoid `git add -A` / `git add .`).
 
+### Cloudflare Turnstile
+
+Create a Turnstile widget in the
+[Cloudflare dashboard](https://dash.cloudflare.com/?to=/:account/turnstile), set
+its widget type to **Managed**, and allow the local and deployed hostnames. The
+React widget uses `appearance: "interaction-only"` to keep the managed challenge
+low-friction; `managed` is a dashboard widget type, not a React appearance value.
+See Cloudflare's official
+[Turnstile setup guide](https://developers.cloudflare.com/turnstile/get-started/)
+for the complete configuration flow.
+
+```env
+# Public site key. Read this in a Server Component and pass it to the client
+# TurnstileWidget as a prop; the client module must not read process.env.
+CLOUDFLARE_TURNSTILE_SITE_KEY=your_site_key
+
+# Server-only secret used by the API to validate tokens with Siteverify.
+CLOUDFLARE_TURNSTILE_SECRET_KEY=your_secret_key
+```
+
+Never expose `CLOUDFLARE_TURNSTILE_SECRET_KEY` to the browser or rename it with a
+`NEXT_PUBLIC_` prefix. Server-side token verification must follow Cloudflare's
+[Siteverify guidance](https://developers.cloudflare.com/turnstile/get-started/server-side-validation/).
+
 ## Common Commands
 
 ```bash
@@ -107,7 +131,6 @@ Default to NONE. Only add a comment when the WHY is non-obvious (hidden constrai
 
 ## Known Pre-existing Failures (do NOT fix incidentally)
 
-- 6 failures in `scripts/__tests__/migrateAfrikToDatabase.test.ts` (Supabase mock)
 - 4 failures in handler tests (Supabase mock)
 
 These are orthogonal. Out of scope unless the task is explicitly to fix them.

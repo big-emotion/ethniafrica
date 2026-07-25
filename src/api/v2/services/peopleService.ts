@@ -3,10 +3,11 @@
  */
 
 import {
-  getAllAfrikPeoples,
   getAfrikPeopleById,
   getAfrikPeoplesByLanguageFamily,
+  getPaginatedAfrikPeoples,
 } from "@/lib/supabase/queries/afrik/peoples";
+import type { PeopleQueryFilters } from "@/lib/supabase/queries/afrik/peoples";
 import type { People } from "@/types/afrik";
 import type { PaginatedResult } from "./countryService";
 
@@ -15,12 +16,10 @@ import type { PaginatedResult } from "./countryService";
  */
 export async function getPeoples(
   page: number = 1,
-  perPage: number = 20
+  perPage: number = 20,
+  filters: PeopleQueryFilters = {}
 ): Promise<PaginatedResult<People>> {
-  const all = await getAllAfrikPeoples();
-  const start = (page - 1) * perPage;
-  const data = all.slice(start, start + perPage);
-  return { data, total: all.length };
+  return getPaginatedAfrikPeoples(page, perPage, filters);
 }
 
 /**

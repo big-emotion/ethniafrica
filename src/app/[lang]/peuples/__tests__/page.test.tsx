@@ -16,6 +16,7 @@ vi.mock("next/navigation", () => ({
 
 const mockGetSnapshot = vi.fn();
 const mockGetLatestVersion = vi.fn();
+const mockPinnedVersionBanner = vi.fn();
 
 vi.mock("@/api/v2/services/revisions", () => ({
   getPeopleRevisionSnapshot: (...args: unknown[]) => mockGetSnapshot(...args),
@@ -45,6 +46,18 @@ vi.mock("@/components/source-transparency/ConfidenceChip", () => ({
   default: ({ confidenceScore }: { confidenceScore: number | null }) => (
     <div data-testid="confidence-chip" data-confidence={confidenceScore} />
   ),
+}));
+
+vi.mock("@/components/source-transparency/PinnedVersionBanner", () => ({
+  PinnedVersionBanner: (props: {
+    pinnedAt: string | null;
+    versionTag: string;
+    liveUrl: string;
+    resolvedFlagsCount?: number;
+  }) => {
+    mockPinnedVersionBanner(props);
+    return <aside data-testid="pinned-version-banner" />;
+  },
 }));
 
 // ---------------------------------------------------------------------------
@@ -77,16 +90,20 @@ describe("/[lang]/peuples/[slug] page", () => {
   });
 
   // 1. Live URL — renders current live data via PeopleDetailView
+  // @req REQ-019
   it("live URL: renders PeopleDetailView with the entity id", async () => {
-    const { getByTestId } = await renderPage("PPL_BAKONGO");
+    const { getByTestId, queryByTestId } = await renderPage("PPL_BAKONGO");
 
     const detail = getByTestId("people-detail-live");
     expect(detail.getAttribute("data-people-id")).toBe("PPL_BAKONGO");
+    expect(queryByTestId("pinned-version-banner")).toBeNull();
+    expect(mockPinnedVersionBanner).not.toHaveBeenCalled();
     expect(mockGetSnapshot).not.toHaveBeenCalled();
     expect(mockGetLatestVersion).not.toHaveBeenCalled();
   });
 
   // 2. Pinned URL — renders snapshot, never queries live row
+  // @req REQ-019
   it("pinned URL @v34: renders snapshot view and calls getPeopleRevisionSnapshot", async () => {
     mockGetSnapshot.mockResolvedValueOnce({
       data: { id: "PPL_BAKONGO", nameMain: "Bakongo", confidence: 87 },
@@ -95,16 +112,33 @@ describe("/[lang]/peuples/[slug] page", () => {
       confidence: 87,
     });
 
-    const { getByTestId, queryByTestId } = await renderPage("PPL_BAKONGO@v34");
+    const { getByRole, getByTestId, getByText, queryByTestId } =
+      await renderPage("PPL_BAKONGO@v34");
 
     // snapshot path was taken
     expect(mockGetSnapshot).toHaveBeenCalledWith("PPL_BAKONGO", 34);
     // snapshot view is present, live detail is absent
     expect(getByTestId("people-snapshot-view")).toBeTruthy();
     expect(queryByTestId("people-detail-live")).toBeNull();
+
+    expect(mockPinnedVersionBanner).toHaveBeenCalledWith({
+      pinnedAt: "2025-01-15T00:00:00Z",
+      versionTag: "34",
+      liveUrl: "/fr/peuples/PPL_BAKONGO",
+    });
+
+    const heading = getByRole("heading", { level: 1, name: "Bakongo" });
+    const entityId = getByText("PPL_BAKONGO");
+    const banner = getByTestId("pinned-version-banner");
+    const headingBlock = heading.parentElement;
+
+    expect(headingBlock).not.toBeNull();
+    expect(headingBlock).toContainElement(entityId);
+    expect(headingBlock?.nextElementSibling).toBe(banner);
   });
 
   // 3. @latest redirect
+  // @req REQ-019
   it("@latest: redirects to the pinned URL for the max version", async () => {
     mockGetLatestVersion.mockResolvedValueOnce(5);
 
@@ -115,6 +149,7 @@ describe("/[lang]/peuples/[slug] page", () => {
   });
 
   // 4. @latest with no revisions → 404
+  // @req REQ-019
   it("@latest with no revisions: calls notFound()", async () => {
     mockGetLatestVersion.mockResolvedValueOnce(null);
 
@@ -125,6 +160,7 @@ describe("/[lang]/peuples/[slug] page", () => {
   });
 
   // 5. Pinned URL version not found → 404
+  // @req REQ-019
   it("pinned URL non-existent version: calls notFound()", async () => {
     mockGetSnapshot.mockResolvedValueOnce(null);
 
@@ -136,6 +172,7 @@ describe("/[lang]/peuples/[slug] page", () => {
   });
 
   // 6. Invalid suffix @V34 (uppercase V) → 404
+  // @req REQ-019
   it("invalid suffix @V34 (uppercase V): calls notFound()", async () => {
     await expect(callPage("PPL_BAKONGO@V34")).rejects.toThrow("NEXT_NOT_FOUND");
     expect(notFound).toHaveBeenCalled();
@@ -143,6 +180,7 @@ describe("/[lang]/peuples/[slug] page", () => {
   });
 
   // 7. Invalid suffix @v34.1 (decimal) → 404
+  // @req REQ-019
   it("invalid suffix @v34.1 (decimal): calls notFound()", async () => {
     await expect(callPage("PPL_BAKONGO@v34.1")).rejects.toThrow(
       "NEXT_NOT_FOUND"
@@ -151,6 +189,7 @@ describe("/[lang]/peuples/[slug] page", () => {
   });
 
   // 8. Snapshot-vs-live divergence: pinned snapshot shows frozen confidence
+  // @req REQ-019
   it("snapshot-vs-live divergence: ConfidenceChip shows confidence from snapshot, not live", async () => {
     const frozenConfidence = 72;
     mockGetSnapshot.mockResolvedValueOnce({
@@ -170,5 +209,43 @@ describe("/[lang]/peuples/[slug] page", () => {
     expect(chip.getAttribute("data-confidence")).toBe(String(frozenConfidence));
     // live component was not rendered
     expect(mockGetSnapshot).toHaveBeenCalledWith("PPL_BAKONGO", 10);
+  });
+
+  // @req REQ-025
+  it("pinned URL renders the doctrine card with the frozen doctrine version", async () => {
+    mockGetSnapshot.mockResolvedValueOnce({
+      data: { id: "PPL_BAKONGO", nameMain: "Bakongo" },
+      version: 34,
+      published_at: "2025-01-15T00:00:00Z",
+      confidence: 87,
+      doctrine: {
+        slug: "classifications-contestees",
+        version: 42,
+      },
+    });
+
+    const { getByRole } = await renderPage("PPL_BAKONGO@v34");
+
+    expect(getByRole("link", { name: "Lire la doctrine" })).toHaveAttribute(
+      "href",
+      "/fr/doctrine/classifications-contestees@v42"
+    );
+  });
+
+  // @req REQ-025
+  it("pinned URL without doctrine metadata renders no doctrine card", async () => {
+    mockGetSnapshot.mockResolvedValueOnce({
+      data: { id: "PPL_BAKONGO", nameMain: "Bakongo" },
+      version: 34,
+      published_at: "2025-01-15T00:00:00Z",
+      confidence: 87,
+      doctrine: null,
+    });
+
+    const { queryByRole } = await renderPage("PPL_BAKONGO@v34");
+
+    expect(
+      queryByRole("link", { name: "Lire la doctrine" })
+    ).not.toBeInTheDocument();
   });
 });

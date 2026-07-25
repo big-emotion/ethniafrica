@@ -23,6 +23,7 @@ import type {
 
 import { CACHE_KEYS } from "@/lib/cache/clientCache";
 import { logger } from "@/lib/api/logger";
+import { getFrenchCountryCommonName } from "@/lib/countryNames";
 
 // ==========================================
 // CONSTANTS
@@ -166,7 +167,7 @@ export async function getLanguageFamily(
       // Content sections
       decolonialHeader: apiData.content?.decolonialHeader,
       generalInfo: apiData.content?.generalInfo,
-      associatedPeoples: apiData.content?.associatedPeoples,
+      associatedPeoples: apiData.associatedPeoples,
       linguisticCharacteristics: apiData.content?.linguisticCharacteristics,
       historyAndOrigins: apiData.content?.historyAndOrigins,
       distribution: apiData.content?.distribution,
@@ -195,6 +196,8 @@ export async function getPeoples(
     perPage = DEFAULT_PER_PAGE,
     languageFamilyId,
     countryId,
+    search,
+    letter,
   } = options;
 
   try {
@@ -204,8 +207,15 @@ export async function getPeoples(
       perPage: perPage.toString(),
     });
 
-    // Note: API v2 ne supporte pas encore les filtres directement sur /peoples
-    // On utilisera /search pour les filtres avancés
+    if (search) {
+      params.set("search", search);
+    }
+    if (letter) {
+      params.set("letter", letter);
+    }
+    if (languageFamilyId) {
+      params.set("languageFamilyId", languageFamilyId);
+    }
 
     const response = await fetch(`${API_BASE}/peoples?${params}`);
 
@@ -237,13 +247,8 @@ export async function getPeoples(
       }
     );
 
-    // Apply client-side filters if needed (temporary until API supports them)
+    // The people endpoint does not yet expose the country filter.
     let filteredData = data;
-    if (languageFamilyId) {
-      filteredData = filteredData.filter(
-        (p) => p.languageFamilyId === languageFamilyId
-      );
-    }
     if (countryId) {
       filteredData = filteredData.filter((p) =>
         p.currentCountries.includes(countryId)
@@ -344,10 +349,14 @@ export async function getCountries(
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       (country: any) => {
         const content = country.content || {};
+        const nameFr = country.nameFr ?? country.name_fr;
+        const nameOfficial =
+          country.nameOfficial ?? country.name_official ?? nameFr;
         return {
           id: country.id,
-          nameFr: country.nameFr || country.name_fr,
-          nameOfficial: country.nameOfficial || country.name_official,
+          nameFr,
+          nameCommonFr: getFrenchCountryCommonName(country.id, nameOfficial),
+          nameOfficial,
           majorPeoplesCount: content.majorPeoples?.length,
           population: content.demographics?.totalPopulation,
         };
@@ -390,10 +399,14 @@ export async function getCountry(iso: string): Promise<CountryDetail | null> {
     }
 
     // Transform API response to frontend type
+    const nameFr = apiData.nameFr ?? apiData.name_fr;
+    const nameOfficial =
+      apiData.nameOfficial ?? apiData.name_official ?? nameFr;
     const detail: CountryDetail = {
       id: apiData.id,
-      nameFr: apiData.nameFr || apiData.name_fr,
-      nameOfficial: apiData.nameOfficial || apiData.name_official,
+      nameFr,
+      nameCommonFr: getFrenchCountryCommonName(apiData.id, nameOfficial),
+      nameOfficial,
       etymology: apiData.etymology,
       nameOriginActor: apiData.nameOriginActor || apiData.name_origin_actor,
       createdAt: apiData.createdAt || apiData.created_at,
@@ -639,7 +652,9 @@ export async function getAllCountries(): Promise<CountrySummary[]> {
     page++;
   }
 
-  return allCountries;
+  return allCountries.sort((first, second) =>
+    first.nameCommonFr.localeCompare(second.nameCommonFr, "fr")
+  );
 }
 
 /**

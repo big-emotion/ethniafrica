@@ -13,11 +13,12 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useRouter } from "next/navigation";
 import { getLocalizedRoute } from "@/lib/routing";
 import Image from "next/image";
+import { SiteFooter } from "@/components/layout/SiteFooter";
 
 interface PageLayoutProps {
   children: ReactNode;
   language: Language;
-  onLanguageChange: (lang: Language) => void;
+  onLanguageChange?: (lang: Language) => void;
   title?: string;
   subtitle?: string;
   sectionName?: string;
@@ -29,10 +30,11 @@ interface PageLayoutProps {
   }) => void;
 }
 
+// @req REQ-043
 export const PageLayout = ({
   children,
   language,
-  onLanguageChange,
+  onLanguageChange = () => undefined,
   title,
   sectionName,
   hideHeader = false,
@@ -137,14 +139,7 @@ export const PageLayout = ({
                     height={48}
                     className="object-contain"
                   />
-                  <h1
-                    className="text-3xl md:text-4xl font-display font-bold text-foreground bg-clip-text text-transparent gradient-warm"
-                    style={{
-                      backgroundClip: "text",
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
-                    }}
-                  >
+                  <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground page-title-gradient">
                     {displayTitle}
                   </h1>
                 </div>
@@ -161,24 +156,7 @@ export const PageLayout = ({
         {children}
       </main>
 
-      {/* Footer */}
-      <footer className="border-t bg-card">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-            <p className="text-center md:text-left">
-              © 2025 African Ethnicities Dictionary | Data sources: Official
-              demographic estimates 2025
-            </p>
-            <div className="flex items-center gap-2 text-center">
-              <span>{t.madeWithEmotion}</span>
-              <div className="flex items-center gap-1">
-                <span className="font-bold text-yellow-500">BIG</span>
-                <span className="font-bold text-foreground">EMOTION</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter language={language} />
     </div>
   );
 };

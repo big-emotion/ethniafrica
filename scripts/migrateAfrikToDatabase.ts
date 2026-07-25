@@ -1,499 +1,448 @@
 /**
- * Migration script: AFRIK files to Supabase database
+ * Synchronize canonical AFRIK JSON sources to a guarded staging Supabase target.
  *
- * This script migrates all AFRIK data from TXT files to Supabase database.
- * It respects the order: language families → peoples → countries → relations
+ * Data is processed in AFRIK hierarchy order:
+ * language families → peoples → countries → people/country relations.
  */
 
-// Load environment variables
 import { config } from "dotenv";
-import { resolve, join } from "path";
-import { writeFileSync, mkdirSync } from "fs";
+import { mkdirSync, writeFileSync } from "fs";
+import { join, resolve } from "path";
+
 config({ path: resolve(process.cwd(), ".env.local") });
 
-import { createAdminClient } from "@/lib/supabase/admin";
+import { logger } from "@/lib/api/logger";
+import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
 import { loadAllLanguageFamilies } from "@/lib/afrik/loaders/languageFamilyLoader";
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
-import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
-import type { LanguageFamily, People, Country } from "@/types/afrik";
+import { createAdminClient } from "@/lib/supabase/admin";
+import type { Country, LanguageFamily, People } from "@/types/afrik";
+import {
+  compareAfrikDrift,
+  type AfrikContentRecord,
+  type AfrikContentSnapshot,
+  type AfrikDriftReport,
+} from "./lib/afrikDrift";
+import {
+  validateStagingTarget,
+  type StagingTargetInput,
+} from "./lib/afrikMigrationTarget";
+
+interface MigrationSectionReport {
+  total: number;
+  inserted: number;
+  errors: string[];
+}
 
 export interface MigrationReport {
-  languageFamilies: {
-    total: number;
-    inserted: number;
-    errors: string[];
-  };
-  peoples: {
-    total: number;
-    inserted: number;
-    errors: string[];
-  };
-  countries: {
-    total: number;
-    inserted: number;
-    errors: string[];
-  };
-  relations: {
-    total: number;
-    inserted: number;
+  languageFamilies: MigrationSectionReport;
+  peoples: MigrationSectionReport;
+  countries: MigrationSectionReport;
+  relations: MigrationSectionReport;
+  verification: {
+    before: AfrikDriftReport;
+    after: AfrikDriftReport | null;
     errors: string[];
   };
 }
 
-/**
- * Migrate all AFRIK data to database
- * @param dryRun If true, validates data without inserting
- */
-export async function migrateAfrikToDatabase(
-  dryRun: boolean = false
-): Promise<MigrationReport> {
-  const report: MigrationReport = {
+export interface MigrationOptions {
+  dryRun?: boolean;
+  target: StagingTargetInput;
+  writeErrorReport?: boolean;
+}
+
+type AdminClient = ReturnType<typeof createAdminClient>;
+type AfrikTable =
+  | "afrik_language_families"
+  | "afrik_peoples"
+  | "afrik_countries";
+
+function emptyDriftReport(): AfrikDriftReport {
+  return {
+    languageFamilies: { missing: [], stale: [] },
+    peoples: { missing: [], stale: [] },
+    countries: { missing: [], stale: [] },
+    hasDrift: false,
+  };
+}
+
+function createMigrationReport(): MigrationReport {
+  return {
     languageFamilies: { total: 0, inserted: 0, errors: [] },
     peoples: { total: 0, inserted: 0, errors: [] },
     countries: { total: 0, inserted: 0, errors: [] },
     relations: { total: 0, inserted: 0, errors: [] },
+    verification: {
+      before: emptyDriftReport(),
+      after: null,
+      errors: [],
+    },
   };
+}
 
-  if (dryRun) {
-    console.log("🔍 DRY RUN MODE - No data will be inserted");
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function toContentRecords(data: unknown): AfrikContentRecord[] {
+  if (!Array.isArray(data)) {
+    return [];
   }
 
-  const supabase = createAdminClient();
-
-  try {
-    // Step 1: Migrate Language Families
-    console.log("📚 Loading language families...");
-    const languageFamilies = await loadAllLanguageFamilies();
-    report.languageFamilies.total = languageFamilies.length;
-    console.log(`   Found ${languageFamilies.length} language families`);
-
-    if (!dryRun) {
-      for (const family of languageFamilies) {
-        try {
-          const { error } = await supabase
-            .from("afrik_language_families")
-            .upsert(
-              {
-                id: family.id,
-                name_fr: family.nameFr,
-                name_en: family.nameEn || null,
-                content: family.content,
-                created_at:
-                  family.createdAt?.toISOString() || new Date().toISOString(),
-                updated_at:
-                  family.updatedAt?.toISOString() || new Date().toISOString(),
-              },
-              {
-                onConflict: "id",
-              }
-            );
-
-          if (error) {
-            report.languageFamilies.errors.push(
-              `${family.id}: ${error.message}`
-            );
-          } else {
-            report.languageFamilies.inserted++;
-          }
-        } catch (err) {
-          report.languageFamilies.errors.push(
-            `${family.id}: ${err instanceof Error ? err.message : "Unknown error"}`
-          );
-        }
-      }
-      console.log(
-        `   ✅ Inserted ${report.languageFamilies.inserted}/${report.languageFamilies.total} language families`
-      );
+  return data.flatMap((row) => {
+    if (!isRecord(row) || typeof row.id !== "string") {
+      return [];
     }
 
-    // Load valid language family IDs from database for validation
-    const { data: existingFamilies } = await supabase
-      .from("afrik_language_families")
-      .select("id");
-    const validFamilyIds = new Set(existingFamilies?.map((f) => f.id) || []);
+    return [{ id: row.id, content: row.content }];
+  });
+}
 
-    // Step 2: Migrate Peoples
-    console.log("👥 Loading peoples...");
-    const peoples = await loadAllPeoples();
-    report.peoples.total = peoples.length;
-    console.log(`   Found ${peoples.length} peoples`);
+function toIds(data: unknown): string[] {
+  if (!Array.isArray(data)) {
+    return [];
+  }
 
-    if (!dryRun) {
-      for (const people of peoples) {
-        // Validate language family exists before insertion
-        if (!validFamilyIds.has(people.languageFamilyId)) {
-          report.peoples.errors.push(
-            `${people.id}: Language family ${people.languageFamilyId} does not exist in database`
-          );
-          continue; // Skip this people
-        }
+  return data.flatMap((row) =>
+    isRecord(row) && typeof row.id === "string" ? [row.id] : []
+  );
+}
 
-        try {
-          const { error } = await supabase.from("afrik_peoples").upsert(
-            {
-              id: people.id,
-              name_main: people.nameMain,
-              language_family_id: people.languageFamilyId,
-              content: people.content,
-              created_at:
-                people.createdAt?.toISOString() || new Date().toISOString(),
-              updated_at:
-                people.updatedAt?.toISOString() || new Date().toISOString(),
-            },
-            {
-              onConflict: "id",
-            }
-          );
+function sourceSnapshot(
+  languageFamilies: LanguageFamily[],
+  peoples: People[],
+  countries: Country[]
+): AfrikContentSnapshot {
+  return {
+    languageFamilies: languageFamilies.map(({ id, content }) => ({
+      id,
+      content,
+    })),
+    peoples: peoples.map(({ id, content }) => ({ id, content })),
+    countries: countries.map(({ id, content }) => ({ id, content })),
+  };
+}
 
-          if (error) {
-            report.peoples.errors.push(`${people.id}: ${error.message}`);
-          } else {
-            report.peoples.inserted++;
-          }
-        } catch (err) {
-          report.peoples.errors.push(
-            `${people.id}: ${err instanceof Error ? err.message : "Unknown error"}`
-          );
-        }
+async function readContentTable(
+  supabase: AdminClient,
+  table: AfrikTable
+): Promise<AfrikContentRecord[]> {
+  const { data, error } = await supabase.from(table).select("id, content");
+
+  if (error) {
+    throw new Error(`Failed to read ${table}: ${error.message}`);
+  }
+
+  return toContentRecords(data);
+}
+
+async function readIds(
+  supabase: AdminClient,
+  table: AfrikTable
+): Promise<Set<string>> {
+  const { data, error } = await supabase.from(table).select("id");
+
+  if (error) {
+    throw new Error(`Failed to read ${table} identifiers: ${error.message}`);
+  }
+
+  return new Set(toIds(data));
+}
+
+async function databaseSnapshot(
+  supabase: AdminClient
+): Promise<AfrikContentSnapshot> {
+  const languageFamilies = await readContentTable(
+    supabase,
+    "afrik_language_families"
+  );
+  const peoples = await readContentTable(supabase, "afrik_peoples");
+  const countries = await readContentTable(supabase, "afrik_countries");
+
+  return { languageFamilies, peoples, countries };
+}
+
+function errorMessage(error: unknown): string {
+  return error instanceof Error ? error.message : "Unknown error";
+}
+
+async function upsertLanguageFamilies(
+  supabase: AdminClient,
+  languageFamilies: LanguageFamily[],
+  report: MigrationReport
+): Promise<void> {
+  for (const family of languageFamilies) {
+    try {
+      const { error } = await supabase.from("afrik_language_families").upsert(
+        {
+          id: family.id,
+          name_fr: family.nameFr,
+          name_en: family.nameEn ?? null,
+          classification_status: family.classificationStatus ?? null,
+          content: family.content,
+          updated_at: new Date().toISOString(),
+        },
+        { onConflict: "id" }
+      );
+
+      if (error) {
+        report.languageFamilies.errors.push(`${family.id}: ${error.message}`);
+      } else {
+        report.languageFamilies.inserted += 1;
       }
-      console.log(
-        `   ✅ Inserted ${report.peoples.inserted}/${report.peoples.total} peoples`
+    } catch (error) {
+      report.languageFamilies.errors.push(
+        `${family.id}: ${errorMessage(error)}`
       );
     }
-
-    // Step 3: Migrate Countries
-    console.log("🌍 Loading countries...");
-    const countries = await loadAllCountries();
-    report.countries.total = countries.length;
-    console.log(`   Found ${countries.length} countries`);
-
-    if (!dryRun) {
-      for (const country of countries) {
-        try {
-          const { error } = await supabase.from("afrik_countries").upsert(
-            {
-              id: country.id,
-              name_fr: country.nameFr,
-              etymology: country.etymology || null,
-              name_origin_actor: country.nameOriginActor || null,
-              content: country.content,
-              created_at:
-                country.createdAt?.toISOString() || new Date().toISOString(),
-              updated_at:
-                country.updatedAt?.toISOString() || new Date().toISOString(),
-            },
-            {
-              onConflict: "id",
-            }
-          );
-
-          if (error) {
-            report.countries.errors.push(`${country.id}: ${error.message}`);
-          } else {
-            report.countries.inserted++;
-          }
-        } catch (err) {
-          report.countries.errors.push(
-            `${country.id}: ${err instanceof Error ? err.message : "Unknown error"}`
-          );
-        }
-      }
-      console.log(
-        `   ✅ Inserted ${report.countries.inserted}/${report.countries.total} countries`
-      );
-    }
-
-    // Load valid country IDs from database for validation
-    const { data: existingCountries } = await supabase
-      .from("afrik_countries")
-      .select("id");
-    const validCountryIds = new Set(existingCountries?.map((c) => c.id) || []);
-
-    // Step 4: Migrate Relations (People ↔ Country)
-    console.log("🔗 Loading relations...");
-    let relationCount = 0;
-    let filteredRelations = 0;
-
-    if (!dryRun) {
-      for (const people of peoples) {
-        if (people.currentCountries && Array.isArray(people.currentCountries)) {
-          for (const countryId of people.currentCountries) {
-            if (countryId) {
-              relationCount++;
-
-              // Validate country code exists before insertion
-              if (!validCountryIds.has(countryId)) {
-                // Skip invalid country codes silently (already filtered by parser)
-                filteredRelations++;
-                continue;
-              }
-
-              try {
-                const { error } = await supabase
-                  .from("afrik_people_countries")
-                  .upsert(
-                    {
-                      people_id: people.id,
-                      country_id: countryId,
-                    },
-                    {
-                      onConflict: "people_id,country_id",
-                    }
-                  );
-
-                if (error) {
-                  report.relations.errors.push(
-                    `${people.id} ↔ ${countryId}: ${error.message}`
-                  );
-                } else {
-                  report.relations.inserted++;
-                }
-              } catch (err) {
-                report.relations.errors.push(
-                  `${people.id} ↔ ${countryId}: ${err instanceof Error ? err.message : "Unknown error"}`
-                );
-              }
-            }
-          }
-        }
-      }
-      report.relations.total = relationCount;
-      if (filteredRelations > 0) {
-        console.log(
-          `   ⚠️  Filtered ${filteredRelations} invalid country codes`
-        );
-      }
-      console.log(
-        `   ✅ Inserted ${report.relations.inserted}/${report.relations.total} relations`
-      );
-    } else {
-      // Count relations in dry-run mode
-      for (const people of peoples) {
-        if (people.currentCountries && Array.isArray(people.currentCountries)) {
-          relationCount += people.currentCountries.filter((c) => c).length;
-        }
-      }
-      report.relations.total = relationCount;
-    }
-
-    console.log("\n📊 Migration Summary:");
-    console.log(
-      `   Language Families: ${report.languageFamilies.inserted}/${report.languageFamilies.total}`
-    );
-    console.log(
-      `   Peoples: ${report.peoples.inserted}/${report.peoples.total}`
-    );
-    console.log(
-      `   Countries: ${report.countries.inserted}/${report.countries.total}`
-    );
-    console.log(
-      `   Relations: ${report.relations.inserted}/${report.relations.total}`
-    );
-
-    if (
-      report.languageFamilies.errors.length > 0 ||
-      report.peoples.errors.length > 0 ||
-      report.countries.errors.length > 0 ||
-      report.relations.errors.length > 0
-    ) {
-      console.log("\n⚠️  Errors encountered:");
-
-      // Afficher les détails des erreurs (max 20 par catégorie)
-      const MAX_DISPLAY = 20;
-
-      // Helper function to categorize errors
-      const categorizeErrors = (errors: string[]) => {
-        const validationErrors: string[] = [];
-        const dbErrors: string[] = [];
-
-        errors.forEach((err) => {
-          if (
-            err.includes("does not exist in database") ||
-            err.includes("violates foreign key constraint")
-          ) {
-            validationErrors.push(err);
-          } else {
-            dbErrors.push(err);
-          }
-        });
-
-        return { validationErrors, dbErrors };
-      };
-
-      if (report.languageFamilies.errors.length > 0) {
-        const { validationErrors, dbErrors } = categorizeErrors(
-          report.languageFamilies.errors
-        );
-        console.log(
-          `   Language Families: ${report.languageFamilies.errors.length} errors`
-        );
-        if (validationErrors.length > 0) {
-          console.log(`      Validation errors: ${validationErrors.length}`);
-          validationErrors.slice(0, MAX_DISPLAY).forEach((err) => {
-            console.log(`         - ${err}`);
-          });
-        }
-        if (dbErrors.length > 0) {
-          console.log(`      Database errors: ${dbErrors.length}`);
-          dbErrors.slice(0, MAX_DISPLAY).forEach((err) => {
-            console.log(`         - ${err}`);
-          });
-        }
-        if (report.languageFamilies.errors.length > MAX_DISPLAY) {
-          console.log(
-            `      ... and ${report.languageFamilies.errors.length - MAX_DISPLAY} more`
-          );
-        }
-      }
-
-      if (report.peoples.errors.length > 0) {
-        const { validationErrors, dbErrors } = categorizeErrors(
-          report.peoples.errors
-        );
-        console.log(`   Peoples: ${report.peoples.errors.length} errors`);
-        if (validationErrors.length > 0) {
-          console.log(`      Validation errors: ${validationErrors.length}`);
-          validationErrors.slice(0, MAX_DISPLAY).forEach((err) => {
-            console.log(`         - ${err}`);
-          });
-        }
-        if (dbErrors.length > 0) {
-          console.log(`      Database errors: ${dbErrors.length}`);
-          dbErrors.slice(0, MAX_DISPLAY).forEach((err) => {
-            console.log(`         - ${err}`);
-          });
-        }
-        if (report.peoples.errors.length > MAX_DISPLAY) {
-          console.log(
-            `      ... and ${report.peoples.errors.length - MAX_DISPLAY} more`
-          );
-        }
-      }
-
-      if (report.countries.errors.length > 0) {
-        const { validationErrors, dbErrors } = categorizeErrors(
-          report.countries.errors
-        );
-        console.log(`   Countries: ${report.countries.errors.length} errors`);
-        if (validationErrors.length > 0) {
-          console.log(`      Validation errors: ${validationErrors.length}`);
-          validationErrors.slice(0, MAX_DISPLAY).forEach((err) => {
-            console.log(`         - ${err}`);
-          });
-        }
-        if (dbErrors.length > 0) {
-          console.log(`      Database errors: ${dbErrors.length}`);
-          dbErrors.slice(0, MAX_DISPLAY).forEach((err) => {
-            console.log(`         - ${err}`);
-          });
-        }
-        if (report.countries.errors.length > MAX_DISPLAY) {
-          console.log(
-            `      ... and ${report.countries.errors.length - MAX_DISPLAY} more`
-          );
-        }
-      }
-
-      if (report.relations.errors.length > 0) {
-        const { validationErrors, dbErrors } = categorizeErrors(
-          report.relations.errors
-        );
-        console.log(`   Relations: ${report.relations.errors.length} errors`);
-        if (validationErrors.length > 0) {
-          console.log(`      Validation errors: ${validationErrors.length}`);
-          validationErrors.slice(0, MAX_DISPLAY).forEach((err) => {
-            console.log(`         - ${err}`);
-          });
-        }
-        if (dbErrors.length > 0) {
-          console.log(`      Database errors: ${dbErrors.length}`);
-          dbErrors.slice(0, MAX_DISPLAY).forEach((err) => {
-            console.log(`         - ${err}`);
-          });
-        }
-        if (report.relations.errors.length > MAX_DISPLAY) {
-          console.log(
-            `      ... and ${report.relations.errors.length - MAX_DISPLAY} more`
-          );
-        }
-      }
-
-      // Sauvegarder toutes les erreurs dans un fichier JSON
-      const logsDir = join(process.cwd(), "dataset", "source", "afrik", "logs");
-      mkdirSync(logsDir, { recursive: true });
-      const errorFile = join(
-        logsDir,
-        `migration_errors_${new Date().toISOString().split("T")[0]}.json`
-      );
-      writeFileSync(errorFile, JSON.stringify(report, null, 2), "utf-8");
-      console.log(
-        `\n📄 Toutes les erreurs ont été sauvegardées dans: ${errorFile}`
-      );
-
-      // Invalider le cache après la migration
-      if (!dryRun) {
-        try {
-          const siteUrl =
-            process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
-          const revalidateSecret = process.env.REVALIDATE_SECRET;
-
-          if (revalidateSecret) {
-            const tags = [
-              "afrik-language-families",
-              "afrik-peoples",
-              "afrik-countries",
-            ];
-            const response = await fetch(`${siteUrl}/api/admin/revalidate`, {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${revalidateSecret}`,
-              },
-              body: JSON.stringify({ tags }),
-            });
-
-            if (response.ok) {
-              console.log("✅ Cache invalidated successfully");
-            } else {
-              console.warn("⚠️  Cache invalidation failed (non-blocking)");
-            }
-          } else {
-            console.warn(
-              "⚠️  REVALIDATE_SECRET not set, skipping cache invalidation"
-            );
-          }
-        } catch (error) {
-          console.warn(
-            "⚠️  Cache invalidation error (non-blocking):",
-            error instanceof Error ? error.message : error
-          );
-        }
-      }
-    }
-
-    return report;
-  } catch (error) {
-    console.error("❌ Migration failed:", error);
-    throw error;
   }
 }
 
-// CLI execution
-if (require.main === module) {
-  const dryRun = process.argv.includes("--dry-run");
-  migrateAfrikToDatabase(dryRun)
-    .then((report) => {
-      process.exit(
-        report.languageFamilies.errors.length > 0 ||
-          report.peoples.errors.length > 0 ||
-          report.countries.errors.length > 0 ||
-          report.relations.errors.length > 0
-          ? 1
-          : 0
+async function upsertPeoples(
+  supabase: AdminClient,
+  peoples: People[],
+  validFamilyIds: Set<string>,
+  report: MigrationReport
+): Promise<void> {
+  for (const people of peoples) {
+    if (!validFamilyIds.has(people.languageFamilyId)) {
+      report.peoples.errors.push(
+        `${people.id}: Language family ${people.languageFamilyId} does not exist in database`
       );
+      continue;
+    }
+
+    try {
+      const { error } = await supabase.from("afrik_peoples").upsert(
+        {
+          id: people.id,
+          name_main: people.nameMain,
+          language_family_id: people.languageFamilyId,
+          classification_status: people.classificationStatus ?? null,
+          content: people.content,
+          updated_at: new Date().toISOString(),
+        },
+        { onConflict: "id" }
+      );
+
+      if (error) {
+        report.peoples.errors.push(`${people.id}: ${error.message}`);
+      } else {
+        report.peoples.inserted += 1;
+      }
+    } catch (error) {
+      report.peoples.errors.push(`${people.id}: ${errorMessage(error)}`);
+    }
+  }
+}
+
+async function upsertCountries(
+  supabase: AdminClient,
+  countries: Country[],
+  report: MigrationReport
+): Promise<void> {
+  for (const country of countries) {
+    try {
+      const { error } = await supabase.from("afrik_countries").upsert(
+        {
+          id: country.id,
+          name_fr: country.nameFr,
+          etymology: country.etymology ?? null,
+          name_origin_actor: country.nameOriginActor ?? null,
+          content: country.content,
+          updated_at: new Date().toISOString(),
+        },
+        { onConflict: "id" }
+      );
+
+      if (error) {
+        report.countries.errors.push(`${country.id}: ${error.message}`);
+      } else {
+        report.countries.inserted += 1;
+      }
+    } catch (error) {
+      report.countries.errors.push(`${country.id}: ${errorMessage(error)}`);
+    }
+  }
+}
+
+async function upsertRelations(
+  supabase: AdminClient,
+  peoples: People[],
+  validCountryIds: Set<string>,
+  report: MigrationReport
+): Promise<void> {
+  for (const people of peoples) {
+    for (const countryId of people.currentCountries ?? []) {
+      if (!countryId) {
+        continue;
+      }
+
+      report.relations.total += 1;
+
+      if (!validCountryIds.has(countryId)) {
+        report.relations.errors.push(
+          `${people.id} ↔ ${countryId}: Country does not exist in database`
+        );
+        continue;
+      }
+
+      try {
+        const { error } = await supabase.from("afrik_people_countries").upsert(
+          {
+            people_id: people.id,
+            country_id: countryId,
+          },
+          { onConflict: "people_id,country_id" }
+        );
+
+        if (error) {
+          report.relations.errors.push(
+            `${people.id} ↔ ${countryId}: ${error.message}`
+          );
+        } else {
+          report.relations.inserted += 1;
+        }
+      } catch (error) {
+        report.relations.errors.push(
+          `${people.id} ↔ ${countryId}: ${errorMessage(error)}`
+        );
+      }
+    }
+  }
+}
+
+function countRelations(peoples: People[]): number {
+  return peoples.reduce(
+    (total, people) =>
+      total + (people.currentCountries ?? []).filter(Boolean).length,
+    0
+  );
+}
+
+function hasErrors(report: MigrationReport): boolean {
+  return (
+    report.languageFamilies.errors.length > 0 ||
+    report.peoples.errors.length > 0 ||
+    report.countries.errors.length > 0 ||
+    report.relations.errors.length > 0 ||
+    report.verification.errors.length > 0
+  );
+}
+
+function saveErrorReport(report: MigrationReport): string {
+  const logsDir = join(process.cwd(), "dataset", "source", "afrik", "logs");
+  mkdirSync(logsDir, { recursive: true });
+  const errorFile = join(
+    logsDir,
+    `migration_errors_${new Date().toISOString().split("T")[0]}.json`
+  );
+  writeFileSync(errorFile, JSON.stringify(report, null, 2), "utf-8");
+  return errorFile;
+}
+
+/**
+ * Preview or apply canonical AFRIK data synchronization to staging.
+ */
+export async function migrateAfrikToDatabase(
+  options: MigrationOptions
+): Promise<MigrationReport> {
+  validateStagingTarget(options.target);
+
+  const dryRun = options.dryRun ?? true;
+  const writeErrorReport = options.writeErrorReport ?? true;
+  const supabase = createAdminClient();
+  const report = createMigrationReport();
+
+  const languageFamilies = await loadAllLanguageFamilies();
+  report.languageFamilies.total = languageFamilies.length;
+
+  const peoples = await loadAllPeoples();
+  report.peoples.total = peoples.length;
+
+  const countries = await loadAllCountries();
+  report.countries.total = countries.length;
+
+  const sources = sourceSnapshot(languageFamilies, peoples, countries);
+  report.verification.before = compareAfrikDrift(
+    sources,
+    await databaseSnapshot(supabase)
+  );
+
+  if (dryRun) {
+    report.relations.total = countRelations(peoples);
+    logger.info("AFRIK staging synchronization preview completed", {
+      languageFamilies: report.languageFamilies.total,
+      peoples: report.peoples.total,
+      countries: report.countries.total,
+      relations: report.relations.total,
+      drift: report.verification.before,
+    });
+    return report;
+  }
+
+  await upsertLanguageFamilies(supabase, languageFamilies, report);
+  const validFamilyIds = await readIds(supabase, "afrik_language_families");
+
+  await upsertPeoples(supabase, peoples, validFamilyIds, report);
+  await upsertCountries(supabase, countries, report);
+  const validCountryIds = await readIds(supabase, "afrik_countries");
+
+  await upsertRelations(supabase, peoples, validCountryIds, report);
+
+  report.verification.after = compareAfrikDrift(
+    sources,
+    await databaseSnapshot(supabase)
+  );
+  if (report.verification.after.hasDrift) {
+    report.verification.errors.push(
+      "Post-sync verification found residual AFRIK source drift"
+    );
+  }
+
+  if (hasErrors(report) && writeErrorReport) {
+    logger.warn("AFRIK synchronization completed with errors", {
+      errorReport: saveErrorReport(report),
+    });
+  } else {
+    logger.info("AFRIK staging synchronization completed", {
+      languageFamilies: report.languageFamilies,
+      peoples: report.peoples,
+      countries: report.countries,
+      relations: report.relations,
+      driftBefore: report.verification.before,
+      driftAfter: report.verification.after,
+    });
+  }
+
+  return report;
+}
+
+function cliTarget(args: string[]): string | undefined {
+  const targetArgument = args.find((argument) =>
+    argument.startsWith("--target=")
+  );
+  return targetArgument?.slice("--target=".length);
+}
+
+if (require.main === module) {
+  const args = process.argv.slice(2);
+  const dryRun = !args.includes("--apply");
+
+  migrateAfrikToDatabase({
+    dryRun,
+    target: {
+      target: cliTarget(args),
+      activeSupabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
+      expectedStagingSupabaseUrl: process.env.AFRIK_STAGING_SUPABASE_URL,
+    },
+  })
+    .then((report) => {
+      process.exitCode = hasErrors(report) ? 1 : 0;
     })
     .catch((error) => {
-      console.error("Migration failed:", error);
-      process.exit(1);
+      logger.error("AFRIK staging synchronization failed", error);
+      process.exitCode = 1;
     });
 }

@@ -1,7 +1,7 @@
 # DBA Runbook: Bypassing the `revisions` Append-Only Invariant
 
 **Table**: `revisions`
-**Enforced by**: Migration `018_revisions_ddl.sql`, trigger `revisions_enforce_append_only`
+**Enforced by**: Migration `021_revisions_ddl.sql`, trigger `revisions_enforce_append_only`
 **Story**: ETNI-45
 
 ---
