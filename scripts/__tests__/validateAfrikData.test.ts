@@ -5,8 +5,8 @@
 // @req REQ-030
 // @req REQ-031
 // @req REQ-032
-import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
-import { mkdirSync, writeFileSync, rmSync, existsSync, readFileSync } from "fs";
+import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import { mkdirSync, writeFileSync, rmSync, existsSync } from "fs";
 import { join, resolve } from "path";
 import {
   checkFlgFolderMatch,
@@ -152,6 +152,18 @@ describe("validateAfrikData – new integrity checks", () => {
       const result = checkFlgFolderMatch(tmpDir);
       expect(result.ok).toBe(false);
       expect(result.errors.some((e) => e.includes("FLG_UNKNOWN"))).toBe(true);
+    });
+
+    // @req REQ-026
+    it("ignores archive folders that are not FLG identifiers", () => {
+      writeFLG(tmpDir, "FLG_BANTU");
+      mkdirSync(join(tmpDir, "peuples", "FLG_BANTU"), { recursive: true });
+      mkdirSync(join(tmpDir, "peuples", "V1"), { recursive: true });
+
+      const result = checkFlgFolderMatch(tmpDir);
+
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
     });
   });
 
