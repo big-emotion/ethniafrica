@@ -83,7 +83,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
             alt={footer.partnerLogoAlt}
             width={159}
             height={81}
-            className="h-auto w-16 opacity-80"
+            className="h-auto w-16"
           />
         </a>
       </div>
