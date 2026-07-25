@@ -42,6 +42,14 @@ describe("production AFRIK data sync workflow", () => {
   });
 
   // @req REQ-032
+  it("uses a Node.js runtime with native WebSocket support", () => {
+    const workflow = readWorkflow();
+
+    expect(workflow).toContain('node-version: "22"');
+    expect(workflow).not.toContain('node-version: "20"');
+  });
+
+  // @req REQ-032
   it("validates, previews, applies, verifies, then invalidates public caches", () => {
     const workflow = readWorkflow();
     const validateIndex = workflow.indexOf("scripts/validateAfrikData.ts");
