@@ -1,15 +1,18 @@
 import { describe, expect, it } from "vitest";
 
-import { validateStagingTarget } from "../lib/afrikMigrationTarget";
+import {
+  AFRIK_PRODUCTION_SUPABASE_URL,
+  validateAfrikMigrationTarget,
+} from "../lib/afrikMigrationTarget";
 
 const STAGING_URL = "https://ethniafrica-staging.supabase.co";
 
-describe("validateStagingTarget", () => {
+describe("validateAfrikMigrationTarget", () => {
   it.each([undefined, ""])(
     "rejects a missing target identity (%s)",
     (target) => {
       expect(() =>
-        validateStagingTarget({
+        validateAfrikMigrationTarget({
           target,
           activeSupabaseUrl: STAGING_URL,
           expectedStagingSupabaseUrl: STAGING_URL,
@@ -18,16 +21,17 @@ describe("validateStagingTarget", () => {
     }
   );
 
-  it.each(["production", "prod", "development", " staging "])(
-    "rejects the non-staging target %s",
+  // @req REQ-032
+  it.each(["prod", "development", " staging ", " production "])(
+    "rejects the unsupported target %s",
     (target) => {
       expect(() =>
-        validateStagingTarget({
+        validateAfrikMigrationTarget({
           target,
           activeSupabaseUrl: STAGING_URL,
           expectedStagingSupabaseUrl: STAGING_URL,
         })
-      ).toThrow('Migration target must be exactly "staging"');
+      ).toThrow('Migration target must be exactly "staging" or "production"');
     }
   );
 
@@ -40,7 +44,7 @@ describe("validateStagingTarget", () => {
     "rejects an invalid %s",
     (_label, activeSupabaseUrl, expectedStagingSupabaseUrl) => {
       expect(() =>
-        validateStagingTarget({
+        validateAfrikMigrationTarget({
           target: "staging",
           activeSupabaseUrl,
           expectedStagingSupabaseUrl,
@@ -57,7 +61,7 @@ describe("validateStagingTarget", () => {
     "https://ethniafrica-staging.supabase.co#staging",
   ])("rejects the ambiguous active Supabase URL %s", (activeSupabaseUrl) => {
     expect(() =>
-      validateStagingTarget({
+      validateAfrikMigrationTarget({
         target: "staging",
         activeSupabaseUrl,
         expectedStagingSupabaseUrl: STAGING_URL,
@@ -67,7 +71,7 @@ describe("validateStagingTarget", () => {
 
   it("rejects an active URL that does not match the configured staging URL", () => {
     expect(() =>
-      validateStagingTarget({
+      validateAfrikMigrationTarget({
         target: "staging",
         activeSupabaseUrl: "https://ethniafrica-production.supabase.co",
         expectedStagingSupabaseUrl: STAGING_URL,
@@ -77,7 +81,7 @@ describe("validateStagingTarget", () => {
 
   it("accepts staging when the normalized URL origins match", () => {
     expect(
-      validateStagingTarget({
+      validateAfrikMigrationTarget({
         target: "staging",
         activeSupabaseUrl: "https://ETHNIAFRICA-STAGING.supabase.co:443/",
         expectedStagingSupabaseUrl: STAGING_URL,
@@ -85,6 +89,32 @@ describe("validateStagingTarget", () => {
     ).toEqual({
       target: "staging",
       supabaseUrl: STAGING_URL,
+    });
+  });
+
+  // @req REQ-032
+  it("rejects production when the active URL is not the locked project", () => {
+    expect(() =>
+      validateAfrikMigrationTarget({
+        target: "production",
+        activeSupabaseUrl: "https://another-project.supabase.co",
+        expectedStagingSupabaseUrl: STAGING_URL,
+      })
+    ).toThrow(
+      "Active Supabase URL does not match the locked production project"
+    );
+  });
+
+  // @req REQ-032
+  it("accepts only the locked production project", () => {
+    expect(
+      validateAfrikMigrationTarget({
+        target: "production",
+        activeSupabaseUrl: AFRIK_PRODUCTION_SUPABASE_URL,
+      })
+    ).toEqual({
+      target: "production",
+      supabaseUrl: AFRIK_PRODUCTION_SUPABASE_URL,
     });
   });
 });

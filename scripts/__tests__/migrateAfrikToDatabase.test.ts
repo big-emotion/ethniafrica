@@ -7,6 +7,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
 import { loadAllLanguageFamilies } from "@/lib/afrik/loaders/languageFamilyLoader";
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
+import { AFRIK_PRODUCTION_SUPABASE_URL } from "../lib/afrikMigrationTarget";
 import { migrateAfrikToDatabase } from "../migrateAfrikToDatabase";
 import type { LanguageFamily, People } from "@/types/afrik";
 
@@ -108,7 +109,8 @@ describe("migrateAfrikToDatabase", () => {
     vi.mocked(loadAllCountries).mockResolvedValue([coteDIvoire]);
   });
 
-  it("validates the staging target before constructing the admin client", async () => {
+  // @req REQ-032
+  it("rejects a mismatched production project before constructing the admin client", async () => {
     await expect(
       migrateAfrikToDatabase({
         dryRun: true,
@@ -119,9 +121,28 @@ describe("migrateAfrikToDatabase", () => {
           expectedStagingSupabaseUrl: STAGING_URL,
         },
       })
-    ).rejects.toThrow('Migration target must be exactly "staging"');
+    ).rejects.toThrow(
+      "Active Supabase URL does not match the locked production project"
+    );
 
     expect(createAdminClient).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-032
+  it("previews the locked production target without writing", async () => {
+    const database = useSupabaseDouble();
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: true,
+      writeErrorReport: false,
+      target: {
+        target: "production",
+        activeSupabaseUrl: AFRIK_PRODUCTION_SUPABASE_URL,
+      },
+    });
+
+    expect(report.verification.before.hasDrift).toBe(true);
+    expect(database.operations).toHaveLength(0);
   });
 
   it("reports source/database drift in dry-run mode without writing", async () => {

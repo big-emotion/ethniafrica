@@ -809,7 +809,7 @@ function loadFlgIds(datasetRoot: string): Set<string> {
 }
 
 /**
- * FR26 – Every subdirectory in peuples/ must correspond to an existing FLG JSON file.
+ * FR26 – Every FLG subdirectory in peuples/ must correspond to an existing FLG JSON file.
  */
 export function checkFlgFolderMatch(datasetRoot: string): ValidationResult {
   const errors: string[] = [];
@@ -823,7 +823,7 @@ export function checkFlgFolderMatch(datasetRoot: string): ValidationResult {
   const flgIds = loadFlgIds(datasetRoot);
   const subDirs = fs
     .readdirSync(peuplesDir, { withFileTypes: true })
-    .filter((d) => d.isDirectory())
+    .filter((d) => d.isDirectory() && d.name.startsWith("FLG_"))
     .map((d) => d.name);
 
   for (const dir of subDirs) {
