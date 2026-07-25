@@ -21,7 +21,7 @@ import { formatVersionLabel } from "@/lib/doctrine/formatVersionLabel";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 
 const DEFAULT_CHANGELOG_URL =
-  "https://github.com/big-emotion/ethniafrica/commits/HEAD/supabase/migrations/016_editorial_doctrine_seed.sql";
+  "https://github.com/big-emotion/ethniafrica/commits/HEAD/supabase/migrations/018_editorial_doctrine_seed.sql";
 
 const CHANGELOG_URL =
   process.env.NEXT_PUBLIC_DOCTRINE_CHANGELOG_URL ?? DEFAULT_CHANGELOG_URL;

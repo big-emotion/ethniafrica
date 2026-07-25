@@ -1,4 +1,4 @@
--- Migration 012: Add tier, label, created_by, key_prefix, and ip_address columns to api_keys
+-- Migration 013: Add tier, label, created_by, key_prefix, and ip_address columns to api_keys
 -- Adds tier (public|partner|admin), label, created_by for ETNI-173
 -- Adds key_prefix (first 20 chars of raw key) for fast PBKDF2 lookup without full scan
 -- Adds ip_address for IP-binding of public-tier keys

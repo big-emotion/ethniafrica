@@ -1,4 +1,4 @@
--- Migration 009: Classification Status Enum
+-- Migration 010: Classification Status Enum
 -- Adds classification_status enum to track the scholarly status of classifications
 -- for peoples and language families in the AFRIK schema.
 

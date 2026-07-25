@@ -1,4 +1,4 @@
--- Migration 008: Module Zero Fabric
+-- Migration 009: Module Zero Fabric
 -- Creates tables for citations, assertions, confidence scores, flags, revisions,
 -- editorial doctrine, user roles, and audit logging with RLS enabled.
 
@@ -140,7 +140,7 @@ CREATE POLICY editorial_doctrine_read_public ON editorial_doctrine FOR SELECT US
 -- =============================================================================
 -- Table: audit_log
 -- System-wide audit log
--- Note: user_roles table is defined in 007a_user_roles.sql (enum-based schema)
+-- Note: user_roles table is defined in 008_user_roles.sql (enum-based schema)
 -- =============================================================================
 CREATE TABLE IF NOT EXISTS audit_log (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),

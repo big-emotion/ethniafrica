@@ -1,4 +1,4 @@
--- Migration 019: flags — full DDL, state machine, public_slug, RLS
+-- Migration 022: flags — full DDL, state machine, public_slug, RLS
 -- =============================================================================
 -- Story: ETNI-54 [4.1] — `flags` table DDL + state machine + RLS
 -- Sub-tasks: ETNI-277 (DDL), ETNI-279 (state machine), ETNI-281 (public_slug),

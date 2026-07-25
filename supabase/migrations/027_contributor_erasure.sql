@@ -1,3 +1,4 @@
+-- Migration 027: Contributor erasure
 CREATE SCHEMA IF NOT EXISTS extensions;
 CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA extensions;
 

@@ -1,4 +1,4 @@
--- Migration 019: Postgres FTS search_vector columns (AR22, FR2, NFR4)
+-- Migration 025: Postgres FTS search_vector columns (AR22, FR2, NFR4)
 -- Adds GENERATED STORED tsvector columns with GIN indexes on afrik_peoples and
 -- afrik_countries for French full-text ranking at scale.
 -- Existing rows are backfilled automatically by the generated-column expression.

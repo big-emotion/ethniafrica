@@ -274,7 +274,7 @@ npx @sentry/wizard@latest -i nextjs
 
 **Confidence recomputation:** materialized, not live. Postgres function `recompute_confidence(entity_type, entity_id)` called on (a) new revision publish, (b) flag status change, (c) nightly CI sweep.
 
-**Migration:** one new SQL migration `008_module_zero_fabric.sql` — no backfill needed (empty fabric day one; `confidence_scores` seeded with 0/null for 924 existing fiches, audit queue populates from there).
+**Migration:** one new SQL migration `009_module_zero_fabric.sql` — no backfill needed (empty fabric day one; `confidence_scores` seeded with 0/null for 924 existing fiches, audit queue populates from there).
 
 ### Authentication & Security
 
@@ -585,9 +585,9 @@ ethniafrica/
 │   └── migrations/
 │       ├── 006_afrik_schema.sql
 │       ├── 007_remove_v1_add_v2_contribution_types.sql
-│       ├── 008_module_zero_fabric.sql         [+] sources, assertions, flags, revisions, confidence_scores, audit_log, user_roles, editorial_doctrine
-│       ├── 009_classification_status_enum.sql [+] column on afrik_peuples/familles
-│       └── 010_assertions_triggers.sql        [+] enforce source-per-claim + recompute fn
+│       ├── 009_module_zero_fabric.sql         [+] sources, assertions, flags, revisions, confidence_scores, audit_log, user_roles, editorial_doctrine
+│       ├── 010_classification_status_enum.sql [+] column on afrik_peuples/familles
+│       └── 011_assertions_triggers.sql        [+] enforce source-per-claim + recompute fn
 ├── scripts/
 │   ├── migrateAfrikToDatabase.ts
 │   ├── validateAfrikData.ts               (extend for Module #0 checks)
@@ -766,7 +766,7 @@ ethniafrica/
 | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | FR#0-1..#0-6 Sources & Verification | `src/app/api/v2/{flags,sources,confidence,feed}/`, `src/api/v2/{handlers,services}/{flags,sources,confidence,revisions,auditLog}.ts`, `src/components/verification/`, `src/lib/verification/`, migrations `008–010` |
 | FR#1-\* People page                 | `src/app/[lang]/peuples/[slug]/`, `src/components/people/`, `src/lib/peopleDataTransformer.ts`, `src/api/v2/services/peoples.ts` (extend)                                                                           |
-| FR#3-\* Public API formalized       | `src/lib/api/openapiV2.ts`, `/docs/api`, `src/api/v2/utils/rateLimit.ts`, API key management in `supabase/migrations/011_api_keys.sql` [+]                                                                          |
+| FR#3-\* Public API formalized       | `src/lib/api/openapiV2.ts`, `/docs/api`, `src/api/v2/utils/rateLimit.ts`, API key management in `supabase/migrations/012_api_keys.sql` [+]                                                                          |
 | FR#2-\* Language family page        | `src/app/[lang]/familles/[slug]/`, future `src/components/family/`                                                                                                                                                  |
 | FR Moderation workflow              | `src/app/[lang]/moderation/`, `src/components/moderation/`, `middleware.ts`                                                                                                                                         |
 | FR Editorial doctrine               | `src/app/[lang]/doctrine/[slug]/`, `src/components/doctrine/`, `editorial_doctrine` table                                                                                                                           |
@@ -891,7 +891,7 @@ ethniafrica/
 | #   | Gap                                                            | Resolution                                                                                                                                                                                                                                        |
 | --- | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | G1  | Anonymous flag spam protection (rate-limit alone insufficient) | Add Cloudflare Turnstile (privacy-friendly, no-tracking CAPTCHA) on `FlagDialog`. New env `TURNSTILE_SITE_KEY` / `TURNSTILE_SECRET`.                                                                                                              |
-| G2  | API key table schema not defined                               | Migration `011_api_keys.sql`: `api_keys(id, owner_id, key_hash, tier ∈ {free,partner}, origin_allowlist TEXT[], created_at, revoked_at, last_used_at)`. Bcrypt-hashed, never stored plaintext.                                                    |
+| G2  | API key table schema not defined                               | Migration `012_api_keys.sql`: `api_keys(id, owner_id, key_hash, tier ∈ {free,partner}, origin_allowlist TEXT[], created_at, revoked_at, last_used_at)`. Bcrypt-hashed, never stored plaintext.                                                    |
 | G3  | Search architecture unspecified                                | Add `afrik_peuples.search_vector` + `afrik_pays.search_vector` (generated tsvector from `name \|\| endonyms \|\| alt_names`). GIN indexes. `/api/v2/search` uses `websearch_to_tsquery('french', q)`. Ranking by `ts_rank_cd` + confidence boost. |
 
 **🟠 Important gaps — resolve during Epic 1:**
@@ -974,10 +974,10 @@ ethniafrica/
 
 **First implementation priority — Epic 1, Module #0 Sources & Verification fabric:**
 
-1. Migration `008_module_zero_fabric.sql` (all new tables)
-2. Migration `009_classification_status_enum.sql` (column)
-3. Migration `010_assertions_triggers.sql` (enforcement + recompute fn)
-4. Migration `011_api_keys.sql`
+1. Migration `009_module_zero_fabric.sql` (all new tables)
+2. Migration `010_classification_status_enum.sql` (column)
+3. Migration `011_assertions_triggers.sql` (enforcement + recompute fn)
+4. Migration `012_api_keys.sql`
 5. Services + handlers + routes for `sources`, `assertions`, `flags`, `confidence`
 6. Cross-cutting UI: `ConfidenceBadge`, `SourceChip`, `FlagButton`/`FlagDialog`, `VersionPicker`
 7. Seed bibliographic sources (SIL, Glottolog, UNESCO, IWGIA, UN)

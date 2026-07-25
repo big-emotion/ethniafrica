@@ -1,4 +1,4 @@
--- ETNI-274: contributor_profiles table
+-- Migration 026: Contributor profiles (ETNI-274)
 -- Stores public profile data for verified contributors linked to Supabase auth users.
 
 create table if not exists contributor_profiles (

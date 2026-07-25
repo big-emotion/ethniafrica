@@ -1,4 +1,4 @@
--- Migration 008: User Roles
+-- Migration 008: User Roles (RBAC)
 -- Creates user_role enum and user_roles table for Supabase Auth role-based access
 
 -- ============================================

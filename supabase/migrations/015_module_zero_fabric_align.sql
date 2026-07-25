@@ -1,4 +1,4 @@
--- Migration 014: Module #0 Fabric — schema reconciliation (ETNI-22)
+-- Migration 015: Module #0 Fabric — schema reconciliation (ETNI-22)
 -- =============================================================================
 -- Reconciles the schemas of sources, assertions, confidence_scores and
 -- editorial_doctrine introduced by migration 008 with the Story 1.2 column

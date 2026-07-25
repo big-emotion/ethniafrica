@@ -1,4 +1,4 @@
--- Migration 018: Per-assertion data model (R-2 / ASR-4) — fiche_revisions + typed FKs
+-- Migration 020: Per-assertion data model (R-2 / ASR-4) — fiche_revisions + typed FKs
 -- Story: ETNI-207
 -- =============================================================================
 -- Ships the schema extension that gates Phase 2 (Kofi flagging journey):

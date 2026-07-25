@@ -2,7 +2,7 @@
  * Audit log emission helper.
  *
  * Writes a row to the `audit_log` table (created by migration
- * `008_module_zero_fabric.sql`). The table is protected by RLS — only admins
+ * `009_module_zero_fabric.sql`). The table is protected by RLS — only admins
  * can SELECT and writes are denied by default — so this helper uses the
  * admin (service-role) Supabase client.
  *

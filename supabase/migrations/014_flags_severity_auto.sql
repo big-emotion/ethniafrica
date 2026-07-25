@@ -1,4 +1,4 @@
--- Migration 013: Add severity and auto_generated to flags
+-- Migration 014: Add severity and auto_generated to flags
 -- Required by Story 0.20 (FR31) - URL health -> confidence recompute hook.
 --
 -- Adds the fields needed by the nightly data-integrity job to distinguish
