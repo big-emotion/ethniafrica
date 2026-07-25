@@ -212,6 +212,51 @@ describe("migrateAfrikToDatabase", () => {
     expect(report.verification.errors).toEqual([]);
   });
 
+  // @req REQ-032
+  it("skips diaspora relations outside the AFRIK country catalog", async () => {
+    vi.mocked(loadAllPeoples).mockResolvedValue([
+      {
+        ...peopleFixture,
+        currentCountries: [coteDIvoire.id, "FRA"],
+      },
+    ]);
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          { id: afroasiaticFamily.id, content: {} },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [{ id: betePeople.id, content: {} }],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: stagingTarget,
+    });
+
+    expect(report.relations).toMatchObject({
+      total: 2,
+      inserted: 1,
+      errors: [],
+    });
+    expect(
+      database.operations.filter(
+        ({ table }) => table === "afrik_people_countries"
+      )
+    ).toEqual([
+      {
+        table: "afrik_people_countries",
+        row: {
+          people_id: betePeople.id,
+          country_id: coteDIvoire.id,
+        },
+      },
+    ]);
+  });
+
   it("reports residual drift when successful writes do not synchronize content", async () => {
     useSupabaseDouble({
       persistUpserts: false,
