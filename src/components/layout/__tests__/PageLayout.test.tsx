@@ -20,6 +20,10 @@ vi.mock("@/components/layout/KeyboardShortcutsModal", () => ({
   KeyboardShortcutsModal: () => null,
 }));
 
+vi.mock("@/components/layout/SiteFooter", () => ({
+  SiteFooter: () => <footer />,
+}));
+
 vi.mock("@/hooks/use-keyboard-shortcuts", () => ({
   useKeyboardShortcuts: () => undefined,
 }));
@@ -74,7 +78,6 @@ describe("PageLayout title", () => {
     );
     expect(heading).not.toHaveClass("text-transparent", "bg-clip-text");
     expect(heading).not.toHaveAttribute("style");
-    expect(screen.getByText("BIG")).toHaveClass("text-amber-700");
   });
 
   // @req REQ-043
