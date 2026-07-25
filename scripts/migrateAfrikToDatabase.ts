@@ -282,9 +282,6 @@ async function upsertRelations(
       report.relations.total += 1;
 
       if (!validCountryIds.has(countryId)) {
-        report.relations.errors.push(
-          `${people.id} ↔ ${countryId}: Country does not exist in database`
-        );
         continue;
       }
 
