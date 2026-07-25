@@ -1,4 +1,4 @@
--- Migration 017 — Enable Row Level Security on AFRIK tables
+-- Migration 019 — Enable Row Level Security on AFRIK tables
 --
 -- Context: migration 006 created the 5 AFRIK tables but never enabled RLS,
 -- leaving them open to INSERT/UPDATE/DELETE from anyone holding the public

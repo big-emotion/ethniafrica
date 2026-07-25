@@ -20,7 +20,7 @@ Or copy the SQL of the file into the Supabase SQL editor and execute it once.
 
 ### 013 — `flags.severity` & `flags.auto_generated`
 
-- **File**: `supabase/migrations/013_flags_severity_auto.sql`
+- **File**: `supabase/migrations/014_flags_severity_auto.sql`
 - **Story**: ETNI-177 / Story 0.20 / FR31 — Source-URL health → confidence
   recompute hook.
 - **Changes**:

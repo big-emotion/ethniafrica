@@ -1,5 +1,5 @@
 -- =============================================================================
--- Migration: 016_editorial_doctrine_seed.sql
+-- Migration: 018_editorial_doctrine_seed.sql
 -- Story: ETNI-30 — Editorial doctrine seed + MDX rendering page
 -- =============================================================================
 --
@@ -9,7 +9,7 @@
 -- ORDERING NOTE
 -- -------------
 -- This migration assumes the editorial_doctrine table has been reconciled
--- by migration 014 (ETNI-22 — module_zero_fabric_align) to the canonical
+-- by migration 015 (ETNI-22 — module_zero_fabric_align) to the canonical
 -- shape:
 --
 --   editorial_doctrine (

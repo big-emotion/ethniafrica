@@ -227,7 +227,7 @@ _(Architecture + project-context invariants that shape implementation but are no
 - **AR42 — Structure additions:** new folders `src/components/system/`, `src/components/verification/`, `src/components/people/`, `src/components/moderation/`, `src/components/doctrine/`; `src/lib/verification/`; new hooks `use-confidence.ts`, `use-version.ts`, `use-flag-submission.ts`; new token sheet `src/styles/verification-tokens.css` (optional split); new types `src/types/verification.ts`, `src/types/api.ts`; new stories under `src/stories/verification/`; new transformers `src/lib/peopleDataTransformer.ts`; new utilities `src/lib/featureFlags.ts`, `src/lib/rateLimit.ts`; new scripts `scripts/recomputeConfidence.ts`, `scripts/seedSources.ts`; new migrations `008`–`011`.
 - **AR43 — GDPR operational compliance:** right-to-erasure removes PII within 30 days; contribution attribution replaced by deterministic pseudonym (preserves audit-log integrity); cookie / consent surface GDPR-compliant; 16+ age gate at signup (GDPR-K); EU Accessibility Act 2025 alignment documented publicly.
 - **AR44 — AFRIK data discipline (project-context invariants):** authorized sources only (UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA) — never invent data; 2025 reference year demographics; populations sum to exactly 100 % per country; TXT demographics must match DB; strict `public/modele-*.txt` models; colonial terms kept but explained, auto-appellations (endonyms) always provided.
-- **AR45 — DB migration runbook:** Supabase migrations applied manually via `supabase db push` (no auto-migrate — too risky for a public-data project). Migrations numbered `008_module_zero_fabric.sql` · `009_classification_status_enum.sql` · `010_assertions_triggers.sql` · `011_api_keys.sql`. `007_remove_v1_add_v2_contribution_types.sql` not yet applied to prod — must ship before Module #0 migrations.
+- **AR45 — DB migration runbook:** Supabase migrations applied manually via `supabase db push` (no auto-migrate — too risky for a public-data project). Migrations numbered `009_module_zero_fabric.sql` · `010_classification_status_enum.sql` · `011_assertions_triggers.sql` · `012_api_keys.sql`. `007_remove_v1_add_v2_contribution_types.sql` not yet applied to prod — must ship before Module #0 migrations.
 
 ### UX Design Requirements
 
@@ -493,7 +493,7 @@ So that Module #0 feature epics can populate each table without schema-gating de
 **Then** migration 007 applies idempotently and prior V1 contribution types are removed
 
 **Given** migrations 008–011 do not exist
-**When** I create `008_module_zero_fabric.sql`, `009_classification_status_enum.sql`, `010_assertions_triggers.sql`, `011_api_keys.sql`
+**When** I create `009_module_zero_fabric.sql`, `010_classification_status_enum.sql`, `011_assertions_triggers.sql`, `012_api_keys.sql`
 **Then** they create empty table DDL for `sources`, `assertions`, `confidence_scores`, `flags`, `revisions`, `editorial_doctrine`, `user_roles`, `audit_log`, `api_keys`
 **And** each new table has RLS enabled with a default `read public, write deny` policy pending per-epic override
 **And** the `classification_status` enum (`consensual | contested | colonial-legacy | reconstructive`) is declared and added as a nullable column to `afrik_peuples` and `afrik_familles_linguistiques`

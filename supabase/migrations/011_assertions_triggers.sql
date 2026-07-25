@@ -1,4 +1,4 @@
--- Migration 010: Assertions Triggers
+-- Migration 011: Assertions Triggers
 -- Creates triggers for automatic timestamp updates and audit logging
 -- for assertions, sources, and editorial_doctrine tables.
 

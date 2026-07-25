@@ -15,15 +15,15 @@ generatedTestFiles:
 inputDocuments:
   - _bmad-output/test-artifacts/test-design/test-design-architecture.md
   - _bmad-output/project-context.md
-  - supabase/migrations/008_module_zero_fabric.sql
-  - supabase/migrations/013_flags_severity_auto.sql
-  - supabase/migrations/014_module_zero_fabric_align.sql
+  - supabase/migrations/009_module_zero_fabric.sql
+  - supabase/migrations/014_flags_severity_auto.sql
+  - supabase/migrations/015_module_zero_fabric_align.sql
   - src/lib/supabase/__tests__/rls-policies.test.ts
   - e2e/support/factories/fiche.ts
   - e2e/support/factories/flag.ts
 lastStep: step-06-update-types
 lastSaved: 2026-05-21T00:00:00Z
-migrationFile: supabase/migrations/018_per_assertion_fiche_revisions.sql
+migrationFile: supabase/migrations/020_per_assertion_fiche_revisions.sql
 typesFile: src/types/module-zero.ts
 jiraStory: ETNI-207
 architectRuling: 2026-05-14 — Winston — Option 1 (typed FK, nullable, anchor-required CHECK). See "Architectural ruling" section.
@@ -78,7 +78,7 @@ This file covers the **schema half** of the contract (the database side of R-2 /
 
 ### 2026-05-21 — ETNI-207 implementation (ferry/ETNI-207)
 
-Migration `018_per_assertion_fiche_revisions.sql` authored and merged into `ferry/ETNI-207`. TypeScript row types added in `src/types/module-zero.ts`. The migration creates `fiche_revisions`, wires `assertions.fiche_revision_id NOT NULL` (with backfill), adds `flags.assertion_id NULL` + `flags.assertion_field_path NULL`, adds `flags_has_anchor_check` CHECK, and creates the two required indexes. All steps are idempotent. The ATDD test file was not modified — it was authored as the red-phase gate and turns green only when the migration is applied to a live database. No polymorphic columns were introduced on `flags`, per the architectural ruling.
+Migration `020_per_assertion_fiche_revisions.sql` authored and merged into `ferry/ETNI-207`. TypeScript row types added in `src/types/module-zero.ts`. The migration creates `fiche_revisions`, wires `assertions.fiche_revision_id NOT NULL` (with backfill), adds `flags.assertion_id NULL` + `flags.assertion_field_path NULL`, adds `flags_has_anchor_check` CHECK, and creates the two required indexes. All steps are idempotent. The ATDD test file was not modified — it was authored as the red-phase gate and turns green only when the migration is applied to a live database. No polymorphic columns were introduced on `flags`, per the architectural ruling.
 
 ---
 

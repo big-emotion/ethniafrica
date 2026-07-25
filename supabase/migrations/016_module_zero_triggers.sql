@@ -1,4 +1,4 @@
--- Migration 015: Module #0 — Source Transparency Fabric triggers
+-- Migration 016: Module #0 — Source Transparency Fabric triggers
 -- =============================================================================
 -- Story:  ETNI-23 [1.3] — Postgres triggers: assertions-required + confidence
 --         recomputation

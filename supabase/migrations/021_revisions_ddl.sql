@@ -1,4 +1,4 @@
--- Migration 018: revisions table — full DDL, append-only invariant, RLS
+-- Migration 021: revisions table — full DDL, append-only invariant, RLS
 -- =============================================================================
 -- Story:  ETNI-45 [3.1] — `revisions` table DDL + append-only invariant
 -- Epic:   Epic 3 (Pinned-version URLs, AR14)

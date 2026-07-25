@@ -106,18 +106,18 @@ const DENY: OpPolicy = { allowed: false };
 // Per-row filtering: authenticated users may SELECT but see only their own rows.
 // Test JWTs have no seeded entry in these tables → zero rows returned, no RLS error.
 // allowed:true means "no 42501 RLS error", not "rows returned".
-// Ref: migration 007a_user_roles.sql policy "Users can read their own roles":
+// Ref: migration 008_user_roles.sql policy "Users can read their own roles":
 //   USING (auth.uid() = user_id)
 const USER_ROLES_ALLOW_READ: OpPolicy = {
   allowed: true,
-  note: "migration 007a_user_roles.sql: USING (auth.uid() = user_id) — zero rows expected because test JWT has no seeded user_roles entry; error: null confirms RLS does not block the query",
+  note: "migration 008_user_roles.sql: USING (auth.uid() = user_id) — zero rows expected because test JWT has no seeded user_roles entry; error: null confirms RLS does not block the query",
 };
 
-// Ref: migration 011_api_keys.sql policy api_keys_read_owner:
+// Ref: migration 012_api_keys.sql policy api_keys_read_owner:
 //   USING (auth.uid() = user_id)
 const API_KEYS_ALLOW_READ: OpPolicy = {
   allowed: true,
-  note: "migration 011_api_keys.sql: api_keys_read_owner USING (auth.uid() = user_id) — zero rows expected because test JWT has no seeded api_keys entry; error: null confirms RLS does not block the query",
+  note: "migration 012_api_keys.sql: api_keys_read_owner USING (auth.uid() = user_id) — zero rows expected because test JWT has no seeded api_keys entry; error: null confirms RLS does not block the query",
 };
 
 const POLICY_MATRIX: PolicyMatrix = {

@@ -1,4 +1,4 @@
--- Migration 011: API Keys Table
+-- Migration 012: API Keys Table
 -- Creates the api_keys table for API key management.
 -- SECURITY NOTE: This table stores hashed API keys only, never raw keys.
 -- The key_hash column should contain a secure hash (e.g., SHA-256) of the actual API key.

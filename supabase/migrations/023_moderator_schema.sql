@@ -1,4 +1,4 @@
--- Migration 019: Moderator schema — moderator_role enum, revision_drafts,
+-- Migration 023: Moderator schema — moderator_role enum, revision_drafts,
 --                audit_log hardening + RLS
 -- =============================================================================
 -- Story:  ETNI-65 [5.1] — moderator_role column + audit_log + RLS hardening

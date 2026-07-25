@@ -1,4 +1,4 @@
--- Migration 019: pg_notify trigger on revisions INSERT — cache invalidation wiring
+-- Migration 024: pg_notify trigger on revisions INSERT — cache invalidation wiring
 -- Story: ETNI-47 [3.3] pg_notify cache invalidation wiring
 -- =============================================================================
 -- Installs an AFTER INSERT trigger on the `revisions` table that fires

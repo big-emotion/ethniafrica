@@ -6,7 +6,7 @@ let sql: string;
 
 beforeAll(() => {
   sql = readFileSync(
-    path.resolve(__dirname, "../migrations/021_contributor_erasure.sql"),
+    path.resolve(__dirname, "../migrations/027_contributor_erasure.sql"),
     "utf-8"
   );
 });
