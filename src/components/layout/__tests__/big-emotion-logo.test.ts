@@ -18,5 +18,6 @@ describe("BIG EMOTION logo", () => {
     expect(logo).not.toContain("<lineargradient");
     expect(logo).toContain('id="big-emotion-letterforms"');
     expect(logo.match(/class="territory"/g)).toHaveLength(12);
+    expect(logo).toContain('class="letter-i" fill="#f54432"');
   });
 });
