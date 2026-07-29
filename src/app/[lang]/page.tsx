@@ -6,7 +6,6 @@ import { getTranslation } from "@/lib/translations";
 import { getLocalizedRoute } from "@/lib/routing";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -14,6 +13,8 @@ import { MapPin, Users, Search, Languages } from "lucide-react";
 import { SearchModalV2 } from "@/components/search/SearchModalV2";
 import { useParams } from "next/navigation";
 import { getStats } from "@/lib/afrikLoader";
+import { getVisibleAccessModeHubs } from "@/lib/accessModeHubs";
+import { HubCard } from "@/components/home/HubCard";
 import type { GlobalStats, SearchEntityType } from "@/types/afrik-frontend";
 
 export default function Home() {
@@ -66,6 +67,7 @@ export default function Home() {
   const familiesRoute = getLocalizedRoute(language, "families");
   const peoplesRoute = getLocalizedRoute(language, "peoples");
   const countriesRoute = getLocalizedRoute(language, "countries");
+  const visibleHubs = getVisibleAccessModeHubs(language);
 
   return (
     <PageLayout
@@ -180,71 +182,11 @@ export default function Home() {
           </div>
         )}
 
-        {/* Section CTA - 3 boutons vers les pages v2 */}
+        {/* Section Access-mode hubs - Explorer / Comprendre / Jouer */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Card
-            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
-            onClick={() => router.push(familiesRoute)}
-          >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Languages className="h-8 w-8 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Familles linguistiques
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Explorer la diversité linguistique
-                </p>
-              </div>
-              <Button className="w-full" variant="default">
-                Voir les familles
-              </Button>
-            </div>
-          </Card>
-
-          <Card
-            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
-            onClick={() => router.push(peoplesRoute)}
-          >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <Users className="h-8 w-8 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">
-                  Peuples africains
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Découvrir cultures &amp; traditions
-                </p>
-              </div>
-              <Button className="w-full" variant="default">
-                Voir les peuples
-              </Button>
-            </div>
-          </Card>
-
-          <Card
-            className="p-6 hover:shadow-lg transition-shadow cursor-pointer group"
-            onClick={() => router.push(countriesRoute)}
-          >
-            <div className="flex flex-col items-center text-center space-y-4">
-              <div className="p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                <MapPin className="h-8 w-8 text-primary" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Pays</h3>
-                <p className="text-sm text-muted-foreground">
-                  Parcourir par pays
-                </p>
-              </div>
-              <Button className="w-full" variant="default">
-                Voir les pays
-              </Button>
-            </div>
-          </Card>
+          {visibleHubs.map((hub) => (
+            <HubCard key={hub.id} hub={hub} />
+          ))}
         </div>
       </div>
     </PageLayout>
