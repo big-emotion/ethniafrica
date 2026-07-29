@@ -3,7 +3,19 @@ import { NextResponse, type NextRequest } from "next/server";
 import { validateApiKey } from "@/lib/api/auth";
 import { applyRateLimit } from "@/lib/api/rate-limit";
 
-function applySecurityHeaders(response: NextResponse, nonce: string) {
+// Routes whose components still render static CSS via the `style` HTML
+// attribute (HomeHero/DottedContinent/HubCard, ETNI-543) rather than a
+// nonce'd <style> element — style-src's nonce does not cover the style
+// attribute, so those routes need style-src-attr 'unsafe-inline'. Scoped
+// here (instead of site-wide) so every other route keeps the strict
+// nonce-only policy. See docs/adr/0005-home-style-src-attr-scope.md.
+const STYLE_ATTR_UNSAFE_INLINE_ROUTES = new Set(["/fr"]);
+
+function applySecurityHeaders(
+  response: NextResponse,
+  nonce: string,
+  pathname: string
+) {
   response.headers.set(
     "Strict-Transport-Security",
     "max-age=31536000; includeSubDomains; preload"
@@ -17,7 +29,9 @@ function applySecurityHeaders(response: NextResponse, nonce: string) {
       process.env.NODE_ENV === "production" ? "" : " 'unsafe-eval'"
     }`,
     `style-src 'self' 'nonce-${nonce}'`,
-    "style-src-attr 'unsafe-inline'",
+    ...(STYLE_ATTR_UNSAFE_INLINE_ROUTES.has(pathname)
+      ? ["style-src-attr 'unsafe-inline'"]
+      : []),
     "img-src 'self' data:",
     "frame-ancestors 'self'",
     "connect-src 'self' https://*.supabase.co https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io",
@@ -118,7 +132,7 @@ export async function middleware(request: NextRequest) {
       },
     });
 
-    applySecurityHeaders(requestWithKey, nonce);
+    applySecurityHeaders(requestWithKey, nonce, pathname);
     return requestWithKey;
   }
 
@@ -187,7 +201,7 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  applySecurityHeaders(supabaseResponse, nonce);
+  applySecurityHeaders(supabaseResponse, nonce, pathname);
   return supabaseResponse;
 }
 
