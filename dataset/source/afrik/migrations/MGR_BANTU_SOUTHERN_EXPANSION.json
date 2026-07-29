@@ -1,0 +1,48 @@
+{
+  "id": "MGR_BANTU_SOUTHERN_EXPANSION",
+  "nameMain": "Expansion australe des Bantous vers l'Afrique du Sud (KwaZulu-Natal)",
+  "migrationGroup": "bantu-expansion",
+  "eventType": "expansion",
+  "classificationStatus": "reconstructive",
+  "timeRange": {
+    "startYear": -200,
+    "endYear": 300,
+    "datingNote": null
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [32.5, -1.0],
+      [28.3, -15.4],
+      [30.0, -25.7],
+      [31.0, -29.85]
+    ]
+  },
+  "peoplesInvolved": [
+    { "id": "PPL_BAGANDA", "role": "origin" },
+    { "id": "PPL_SHONA", "role": "destination" },
+    { "id": "PPL_ZULU", "role": "destination" },
+    { "id": "PPL_XHOSA", "role": "destination" }
+  ],
+  "content": {
+    "summary": "Troisième phase de l'expansion bantoue : depuis la région des Grands Lacs, une dispersion vers le sud, à travers le plateau d'Afrique centrale et australe, atteint le KwaZulu-Natal (actuelle Afrique du Sud) vers 300 apr. J.-C., aux confins méridionaux de l'aire bantouphone.",
+    "narrative": "Depuis la région des Grands Lacs, la dispersion bantoue se poursuit vers le sud à travers les plateaux d'Afrique centrale et australe. Bostoen (2018, Oxford Research Encyclopedia of African History) situe, sur la base de la reconstruction linguistique et des données du premier âge du fer, l'arrivée de communautés bantouphones dans la région du KwaZulu-Natal (Afrique du Sud actuelle) autour du IIIe siècle apr. J.-C. Cette frange australe de l'expansion correspond aujourd'hui aux territoires historiques de peuples tels que les Shona (plateau du Zimbabwe), les Zoulous et les Xhosas (Afrique australe côtière), dont les langues appartiennent au sous-groupe bantou méridional identifié par la classification de Guthrie. Grollemund et al. (2015, PNAS) rattachent cette branche méridionale au même processus de dispersion guidé par l'habitat qui a façonné les phases antérieures, sans toutefois fournir de datation fine propre à cette frange la plus australe du phénomène.",
+    "debate": null,
+    "sources": [
+      {
+        "title": "The Bantu Expansion",
+        "url": "https://doi.org/10.1093/acrefore/9780190277734.013.191",
+        "year": 2018,
+        "tier": 2,
+        "notes": "Bostoen, Oxford Research Encyclopedia of African History. Cité comme source académique primaire (synthèse de la chronologie de l'expansion, dont l'arrivée en Afrique australe) dans la page anglaise de Wikipédia « Bantu expansion »."
+      },
+      {
+        "title": "Bantu expansion shows that habitat alters the route and pace of human dispersals",
+        "url": "https://doi.org/10.1073/pnas.1503793112",
+        "year": 2015,
+        "tier": 2,
+        "notes": "Grollemund, Branford, Bostoen, Meade, Venditti & Pagel, Proceedings of the National Academy of Sciences 112(43). Référence confirmée dans la bibliographie de la page anglaise de Wikipédia « Bantu expansion »."
+      }
+    ]
+  }
+}
