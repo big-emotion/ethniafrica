@@ -1,0 +1,20 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "countries": ["GHA", "TGO"],
+        "note": "illustrative, not data"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [0.5, 6.1],
+          [0.5, 8.5],
+          [0.2, 11.0]
+        ]
+      }
+    }
+  ]
+}
