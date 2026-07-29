@@ -18,6 +18,7 @@ import {
 } from "@/components/people";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { FragmentationView } from "@/components/colonization/FragmentationView";
+import { OralNarrativesSection } from "@/components/people/OralNarrativesSection";
 import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
 
 async function fetchFragmentation(
@@ -248,6 +249,8 @@ export function PeopleDetailViewV2({
             <PeopleHistoryTimeline data={data.history} />
           </SectionCard>
         )}
+
+        <OralNarrativesSection peopleId={data.hero.peopleId} />
 
         {/* 5. Culture */}
         {(data.culture.supremeDeity ||
