@@ -13,3 +13,6 @@ yarn.lock
 pnpm-lock.yaml
 public/dataset
 dataset/result
+
+# Frozen visual-reference artifact (Epic 14 reproduction authority) — must stay byte-exact
+_bmad-output/planning-artifacts/module-specs/assets/reference-prototype.html
