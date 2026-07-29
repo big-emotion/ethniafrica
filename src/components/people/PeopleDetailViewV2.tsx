@@ -17,6 +17,17 @@ import {
   PeopleSourcesFooter,
 } from "@/components/people";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
+import { FragmentationView } from "@/components/colonization/FragmentationView";
+import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
+
+async function fetchFragmentation(
+  peopleId: string
+): Promise<PeopleFragmentation | null> {
+  const res = await fetch(`/api/v2/peoples/${peopleId}/fragmentation`);
+  if (!res.ok) return null;
+  const json = await res.json();
+  return (json.data ?? null) as PeopleFragmentation | null;
+}
 
 interface PeopleDetailViewV2Props {
   peopleId: string;
@@ -67,6 +78,7 @@ function SectionCard({
   );
 }
 
+// @req REQ-091
 export function PeopleDetailViewV2({
   peopleId,
   onBack,
@@ -75,6 +87,26 @@ export function PeopleDetailViewV2({
   const [people, setPeople] = useState<PeopleDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [fragmentation, setFragmentation] =
+    useState<PeopleFragmentation | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetchFragmentation(peopleId)
+      .then((data) => {
+        if (!cancelled) setFragmentation(data);
+      })
+      .catch(() => {
+        // Fragmentation section is additive — the rest of the fiche must
+        // render regardless, so a fetch failure simply leaves it absent.
+        if (!cancelled) setFragmentation(null);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [peopleId]);
 
   useEffect(() => {
     let cancelled = false;
@@ -265,6 +297,22 @@ export function PeopleDetailViewV2({
               data={data.countries}
               fromPeopleId={data.hero.peopleId}
               fromPeopleName={data.hero.nameMain}
+            />
+          </SectionCard>
+        )}
+
+        {/* 8. Fragmentation coloniale (FR85) — absent below 2 countries */}
+        {fragmentation && (
+          <SectionCard
+            label="Fragmentation coloniale"
+            icon="⌗"
+            iconBg="var(--country-gold-bg)"
+            iconColor="var(--country-gold)"
+            delayIndex={6}
+          >
+            <FragmentationView
+              fragmentation={fragmentation}
+              variant="fiche-section"
             />
           </SectionCard>
         )}
