@@ -47,6 +47,18 @@ const referenceViewports = [
 ] as const;
 
 test.describe("Home visual parity", () => {
+  // The committed *-region.png references were captured at
+  // deviceScaleFactor 1 with no mobile/touch emulation (their pixel
+  // dimensions match their CSS viewport widths exactly — e.g. the 720px
+  // reference is exactly 720px wide). In CI, this spec's only tag-free
+  // project match is "mobile-430" (deviceScaleFactor 2.625, isMobile,
+  // hasTouch — see playwright.config.ts), so without this override every
+  // viewport, including the 720/1440 "tablet"/"desktop" checks, would
+  // render under mobile touch emulation at a mismatched pixel density
+  // (ETNI-543 review round 3). Pin the context to the references' actual
+  // capture profile regardless of which project runs the file.
+  test.use({ deviceScaleFactor: 1, isMobile: false, hasTouch: false });
+
   for (const reference of referenceViewports) {
     // @req REQ-091
     test(`matches ${reference.width}px reference`, async ({ page }) => {
