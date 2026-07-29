@@ -110,6 +110,7 @@ jobs:
               '',
               '**Routes audited:**',
               '- `/`',
+              '- `/fr`',
               '- `/fr/pays/senegal`',
               '- `/fr/peuples/wolof`',
               publicLinks,

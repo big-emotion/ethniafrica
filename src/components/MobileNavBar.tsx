@@ -14,6 +14,7 @@ import {
 import { Language } from "@/types/shared";
 import { getLocalizedRoute } from "@/lib/routing";
 import Image from "next/image";
+import { PRODUCT_NAME } from "@/lib/brand";
 
 interface MobileNavBarProps {
   language: Language;
@@ -21,6 +22,7 @@ interface MobileNavBarProps {
   onSearchClick?: () => void;
 }
 
+// @req [14.5]
 export const MobileNavBar = ({
   language,
   onSearchClick,
@@ -35,9 +37,15 @@ export const MobileNavBar = ({
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(href + "/");
 
+  // Prototype header skin (epic-14 module spec): only worn on the home
+  // route — everywhere else keeps the plain nav shell. Nav IA is unchanged.
+  const isHome = pathname === `/${language}` || pathname === "/";
+
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-50 bg-card border-b shadow-sm lg:hidden"
+      className={`fixed top-0 left-0 right-0 z-50 lg:hidden ${
+        isHome ? "afh-home-nav-skin" : "bg-card border-b shadow-sm"
+      }`}
       aria-label="Navigation principale"
     >
       <div className="px-3 h-[57px] flex items-center justify-between gap-2">
@@ -48,13 +56,25 @@ export const MobileNavBar = ({
         >
           <Image
             src="/africa.png"
-            alt="EthniAfrica"
+            alt={PRODUCT_NAME}
             width={26}
             height={26}
             className="object-contain"
           />
-          <span className="font-display font-bold text-base leading-none">
-            EthniAfrica
+          <span
+            className="font-display font-bold text-base leading-none"
+            style={
+              isHome
+                ? {
+                    fontFamily: "var(--afh-font-display)",
+                    fontWeight: 900,
+                    fontSize: "17px",
+                    color: "var(--afh-night-ink)",
+                  }
+                : undefined
+            }
+          >
+            {PRODUCT_NAME}
           </span>
         </Link>
 
@@ -66,10 +86,20 @@ export const MobileNavBar = ({
               <Button
                 variant="ghost"
                 size="sm"
-                className="h-8 px-2 text-xs font-semibold gap-1"
+                className={`h-8 px-2 text-xs font-semibold gap-1 ${
+                  isHome
+                    ? "text-[color:var(--afh-night-ink-2)] hover:bg-[color:var(--afh-night-surface-2)] hover:text-[color:var(--afh-night-ink)]"
+                    : ""
+                }`}
                 aria-label="Navigation"
               >
-                <span className="text-[11px] font-bold tracking-wide uppercase text-muted-foreground">
+                <span
+                  className={`text-[11px] font-bold tracking-wide uppercase ${
+                    isHome
+                      ? "text-[color:var(--afh-night-ink-2)]"
+                      : "text-muted-foreground"
+                  }`}
+                >
                   FLG
                 </span>
                 <svg
@@ -129,7 +159,11 @@ export const MobileNavBar = ({
           <Button
             variant="ghost"
             size="icon"
-            className="h-8 w-8"
+            className={`h-8 w-8 ${
+              isHome
+                ? "text-[color:var(--afh-night-ink-2)] hover:bg-[color:var(--afh-night-surface-2)] hover:text-[color:var(--afh-night-ink)]"
+                : ""
+            }`}
             onClick={onSearchClick}
             aria-label="Rechercher"
           >
