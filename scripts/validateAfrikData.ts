@@ -1446,6 +1446,375 @@ export function checkColonialBorderCr2(
 }
 
 /**
+ * FR80 – Migration event integrity (Story 12.1).
+ *
+ * Validates every dataset/source/afrik/migrations/*.json fiche against the
+ * strict model public/modele-migration.json: id format/uniqueness,
+ * classificationStatus, the open eventType enum (read from the model file —
+ * never duplicated here), time-range coherence, Tier 1/2 sourcing, resolvable
+ * PPL references, valid GeoJSON geometry, and exact key match with the model.
+ */
+
+const MIGRATION_CLASSIFICATION_STATUSES = new Set([
+  "consensual",
+  "contested",
+  "colonial-legacy",
+  "reconstructive",
+]);
+
+const MGR_ID_REGEX = /^MGR_[A-Z0-9_]+$/;
+
+const MIGRATION_GEOMETRY_BBOX = {
+  minLon: -30,
+  maxLon: 80,
+  minLat: -40,
+  maxLat: 40,
+};
+
+interface MigrationSource {
+  title?: unknown;
+  url?: unknown;
+  year?: unknown;
+  tier?: unknown;
+  notes?: unknown;
+}
+
+interface MigrationFiche {
+  id?: unknown;
+  classificationStatus?: unknown;
+  eventType?: unknown;
+  timeRange?: {
+    startYear?: unknown;
+    endYear?: unknown;
+    datingNote?: unknown;
+  };
+  geometry?: { type?: unknown; coordinates?: unknown };
+  peoplesInvolved?: Array<{ id?: unknown; role?: unknown }>;
+  content?: {
+    debate?: unknown;
+    sources?: MigrationSource[];
+    [key: string]: unknown;
+  };
+  [key: string]: unknown;
+}
+
+/** Return the set of PPL ids declared across dataset/source/afrik/peuples/**. */
+function loadPplIds(datasetRoot: string): Set<string> {
+  const ids = new Set<string>();
+  for (const { fullPath } of collectPplFiles(datasetRoot)) {
+    try {
+      const data = JSON.parse(fs.readFileSync(fullPath, "utf-8")) as {
+        id?: string;
+      };
+      if (data.id) ids.add(data.id);
+    } catch {
+      // Parse failures are surfaced by FR27/other checks; stay silent here.
+    }
+  }
+  return ids;
+}
+
+function isMigrationPosition(pos: unknown): pos is [number, number] {
+  return (
+    Array.isArray(pos) &&
+    pos.length >= 2 &&
+    typeof pos[0] === "number" &&
+    typeof pos[1] === "number"
+  );
+}
+
+function isValidMigrationGeometry(geometry: unknown): geometry is {
+  type: string;
+  coordinates: unknown;
+} {
+  if (!geometry || typeof geometry !== "object") return false;
+  const { type, coordinates } = geometry as {
+    type?: unknown;
+    coordinates?: unknown;
+  };
+
+  if (type === "LineString") {
+    return (
+      Array.isArray(coordinates) &&
+      coordinates.length >= 2 &&
+      coordinates.every(isMigrationPosition)
+    );
+  }
+  if (type === "MultiLineString") {
+    return (
+      Array.isArray(coordinates) &&
+      coordinates.length >= 1 &&
+      coordinates.every(
+        (line) =>
+          Array.isArray(line) &&
+          line.length >= 2 &&
+          line.every(isMigrationPosition)
+      )
+    );
+  }
+  if (type === "Polygon") {
+    return (
+      Array.isArray(coordinates) &&
+      coordinates.length >= 1 &&
+      coordinates.every(
+        (ring) =>
+          Array.isArray(ring) &&
+          ring.length >= 4 &&
+          ring.every(isMigrationPosition)
+      )
+    );
+  }
+  return false;
+}
+
+/** Flatten a validated migration geometry's coordinates into a flat position list. */
+function collectMigrationPositions(geometry: {
+  type: string;
+  coordinates: unknown;
+}): Array<[number, number]> {
+  const { type, coordinates } = geometry;
+  if (type === "LineString") return coordinates as Array<[number, number]>;
+  if (type === "MultiLineString") {
+    return (coordinates as Array<Array<[number, number]>>).flat();
+  }
+  if (type === "Polygon") {
+    return (coordinates as Array<Array<[number, number]>>).flat();
+  }
+  return [];
+}
+
+export function validateMigrationEvents(
+  datasetRoot: string,
+  modelPath: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const migrationsDir = path.join(datasetRoot, "migrations");
+  if (!fs.existsSync(migrationsDir)) {
+    return { ok: true, errors: [], warnings: [] };
+  }
+
+  if (!fs.existsSync(modelPath)) {
+    return {
+      ok: false,
+      errors: [`Migration model not found at ${modelPath}`],
+      warnings: [],
+    };
+  }
+
+  let model: {
+    _meta?: { eventTypeEnum?: unknown };
+    content?: Record<string, unknown>;
+    [key: string]: unknown;
+  };
+  try {
+    model = JSON.parse(fs.readFileSync(modelPath, "utf-8"));
+  } catch {
+    return {
+      ok: false,
+      errors: [`Could not parse migration model at ${modelPath}`],
+      warnings: [],
+    };
+  }
+
+  const eventTypeEnum = new Set(
+    Array.isArray(model._meta?.eventTypeEnum) ? model._meta.eventTypeEnum : []
+  );
+  const modelTopKeys = new Set(Object.keys(model).filter((k) => k !== "_meta"));
+  const modelContentKeys = new Set(Object.keys(model.content ?? {}));
+
+  const pplIds = loadPplIds(datasetRoot);
+  const currentYear = new Date().getFullYear();
+  const seenIds = new Map<string, string>();
+
+  const files = fs
+    .readdirSync(migrationsDir)
+    .filter((f) => f.endsWith(".json"));
+
+  for (const file of files) {
+    const fullPath = path.join(migrationsDir, file);
+    let data: MigrationFiche;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    // Key match — no skipped, renamed, or invented sections.
+    const ficheTopKeys = new Set(
+      Object.keys(data).filter((k) => k !== "_meta")
+    );
+    const missingTop = [...modelTopKeys].filter((k) => !ficheTopKeys.has(k));
+    const extraTop = [...ficheTopKeys].filter((k) => !modelTopKeys.has(k));
+    if (missingTop.length || extraTop.length) {
+      errors.push(
+        `${file}: top-level keys do not match modele-migration.json (missing: ${
+          missingTop.join(", ") || "none"
+        }; unexpected: ${extraTop.join(", ") || "none"})`
+      );
+    }
+    if (data.content && typeof data.content === "object") {
+      const ficheContentKeys = new Set(Object.keys(data.content));
+      const missingContent = [...modelContentKeys].filter(
+        (k) => !ficheContentKeys.has(k)
+      );
+      const extraContent = [...ficheContentKeys].filter(
+        (k) => !modelContentKeys.has(k)
+      );
+      if (missingContent.length || extraContent.length) {
+        errors.push(
+          `${file}: content keys do not match modele-migration.json (missing: ${
+            missingContent.join(", ") || "none"
+          }; unexpected: ${extraContent.join(", ") || "none"})`
+        );
+      }
+    }
+
+    // id format + uniqueness.
+    const id = typeof data.id === "string" ? data.id : undefined;
+    if (!id || !MGR_ID_REGEX.test(id)) {
+      errors.push(`${file}: id "${data.id}" does not match ^MGR_[A-Z0-9_]+$`);
+    } else if (seenIds.has(id)) {
+      errors.push(
+        `${file}: duplicate migration id "${id}" (first seen in ${seenIds.get(id)})`
+      );
+    } else {
+      seenIds.set(id, file);
+    }
+
+    // classificationStatus.
+    const classificationStatus =
+      typeof data.classificationStatus === "string"
+        ? data.classificationStatus
+        : undefined;
+    if (
+      !classificationStatus ||
+      !MIGRATION_CLASSIFICATION_STATUSES.has(classificationStatus)
+    ) {
+      errors.push(
+        `${file}: classificationStatus "${data.classificationStatus}" is missing or invalid`
+      );
+    }
+
+    // eventType — open enum, values read from the model file only.
+    const eventType =
+      typeof data.eventType === "string" ? data.eventType : undefined;
+    if (!eventType || !eventTypeEnum.has(eventType)) {
+      errors.push(
+        `${file}: eventType "${data.eventType}" is missing or not in the allowed set from modele-migration.json`
+      );
+    }
+
+    // timeRange coherence.
+    const startYear = data.timeRange?.startYear;
+    const endYear = data.timeRange?.endYear;
+    if (!Number.isInteger(startYear) || !Number.isInteger(endYear)) {
+      errors.push(
+        `${file}: timeRange.startYear and timeRange.endYear must be integers`
+      );
+    } else {
+      const start = startYear as number;
+      const end = endYear as number;
+      if (start > end) {
+        errors.push(
+          `${file}: timeRange.startYear (${start}) is after timeRange.endYear (${end})`
+        );
+      }
+      if (
+        start < -10000 ||
+        start > currentYear ||
+        end < -10000 ||
+        end > currentYear
+      ) {
+        errors.push(
+          `${file}: timeRange years must be within [-10000, ${currentYear}]`
+        );
+      }
+    }
+
+    const sources = Array.isArray(data.content?.sources)
+      ? (data.content!.sources as MigrationSource[])
+      : [];
+    const isContested = classificationStatus === "contested";
+    const isColonialLegacy = classificationStatus === "colonial-legacy";
+
+    if ((isContested || isColonialLegacy) && sources.length < 2) {
+      errors.push(
+        `${file}: classificationStatus "${classificationStatus}" requires at least 2 sources`
+      );
+    }
+
+    if (isContested) {
+      const datingNote = data.timeRange?.datingNote;
+      if (typeof datingNote !== "string" || !datingNote.trim()) {
+        errors.push(
+          `${file}: contested events require a non-empty timeRange.datingNote`
+        );
+      }
+      const debate = data.content?.debate;
+      if (typeof debate !== "string" || !debate.trim()) {
+        errors.push(
+          `${file}: contested events require a non-empty content.debate`
+        );
+      }
+    }
+
+    sources.forEach((source, i) => {
+      if (source.tier !== 1 && source.tier !== 2) {
+        errors.push(
+          `${file}: content.sources[${i}] must record tier: 1 or tier: 2`
+        );
+      } else if (
+        source.tier === 2 &&
+        (typeof source.notes !== "string" || !source.notes.trim())
+      ) {
+        errors.push(
+          `${file}: content.sources[${i}] is Tier 2 and requires non-empty notes`
+        );
+      }
+    });
+
+    // peoplesInvolved — every id must resolve to an existing PPL fiche.
+    const peoplesInvolved = Array.isArray(data.peoplesInvolved)
+      ? data.peoplesInvolved
+      : [];
+    peoplesInvolved.forEach((p, i) => {
+      const pplId = typeof p?.id === "string" ? p.id : undefined;
+      if (!pplId || !pplIds.has(pplId)) {
+        errors.push(
+          `${file}: peoplesInvolved[${i}].id "${p?.id}" does not resolve to an existing PPL fiche`
+        );
+      }
+    });
+
+    // geometry — valid GeoJSON; out-of-bbox coordinates are a warning, not an error.
+    if (!isValidMigrationGeometry(data.geometry)) {
+      errors.push(
+        `${file}: geometry is not a valid GeoJSON LineString/MultiLineString/Polygon`
+      );
+    } else {
+      const positions = collectMigrationPositions(data.geometry);
+      const outOfBbox = positions.some(
+        ([lon, lat]) =>
+          lon < MIGRATION_GEOMETRY_BBOX.minLon ||
+          lon > MIGRATION_GEOMETRY_BBOX.maxLon ||
+          lat < MIGRATION_GEOMETRY_BBOX.minLat ||
+          lat > MIGRATION_GEOMETRY_BBOX.maxLat
+      );
+      if (outOfBbox) {
+        warnings.push(
+          `${file}: geometry has coordinates outside the Africa + maritime-margin bbox (lon [-30,80], lat [-40,40])`
+        );
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
  * Orphan fiches – PPL files whose parent folder doesn't exist as a FLG JSON.
  * (Complements FR26 from the PPL perspective.)
  */
@@ -1586,6 +1955,15 @@ async function main() {
   newChecks.push({
     name: "Orphan fiches",
     result: checkOrphanFiches(datasetRoot),
+  });
+
+  console.log("FR80 – Migration events...");
+  newChecks.push({
+    name: "FR80 Migration events",
+    result: validateMigrationEvents(
+      datasetRoot,
+      path.join(PUBLIC_ROOT, "modele-migration.json")
+    ),
   });
 
   console.log("CR1 – Colonial-border source tier + GeoJSON validity...");
