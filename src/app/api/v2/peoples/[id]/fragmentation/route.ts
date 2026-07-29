@@ -62,7 +62,7 @@
 
 import { NextRequest } from "next/server";
 import { getPeopleFragmentationHandler } from "@/api/v2/handlers/peopleFragmentation";
-import { validatePeopleId } from "@/api/v2/utils/validation";
+import { peopleFragmentationParamSchema } from "@/api/v2/schemas/peopleFragmentation";
 import { createApiError } from "@/api/v2/utils/response";
 import { jsonWithCors, corsOptionsResponse } from "@/lib/api/cors";
 import { logger } from "@/lib/api/logger";
@@ -79,7 +79,7 @@ export async function GET(
   try {
     logger.info("GET /api/v2/peoples/[id]/fragmentation", { id });
 
-    if (!validatePeopleId(id)) {
+    if (!peopleFragmentationParamSchema.safeParse({ id }).success) {
       logger.warn("Invalid people ID format", { id });
       return jsonWithCors(
         createApiError({

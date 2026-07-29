@@ -83,6 +83,26 @@ describe("GET /api/v2/peoples/[id]/fragmentation", () => {
   });
 
   // @req REQ-091
+  it("accepts digit-bearing PPL ids (e.g. PPL_NDEBELE_SUD2, PPL_LUBA_KASAI2)", async () => {
+    vi.mocked(getPeopleFragmentationHandler).mockResolvedValue({
+      ok: true,
+      envelope: validEnvelope,
+    });
+
+    const request = new NextRequest(
+      "http://localhost/api/v2/peoples/PPL_NDEBELE_SUD2/fragmentation"
+    );
+    const response = await GET(request, {
+      params: Promise.resolve({ id: "PPL_NDEBELE_SUD2" }),
+    });
+
+    expect(response.status).toBe(200);
+    expect(getPeopleFragmentationHandler).toHaveBeenCalledWith(
+      "PPL_NDEBELE_SUD2"
+    );
+  });
+
+  // @req REQ-091
   it("returns 404 NOT_FOUND for an unknown people id", async () => {
     vi.mocked(getPeopleFragmentationHandler).mockResolvedValue({
       ok: false,
