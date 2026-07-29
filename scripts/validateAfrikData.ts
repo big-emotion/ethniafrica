@@ -38,8 +38,15 @@ interface CSVRow {
   [key: string]: string;
 }
 
+interface LanguageCsvRow {
+  id_langue?: string;
+  code_iso_639_3?: string;
+  id_famille?: string;
+}
+
 const AFRIK_ROOT = path.join(__dirname, "../dataset/source/afrik");
 const PUBLIC_ROOT = path.join(__dirname, "../public");
+const ISO_639_3_PATTERN = /^[a-z]{3}$/;
 
 // Charger les CSV
 function loadCSV(filePath: string): CSVRow[] {
@@ -987,7 +994,6 @@ export function checkIsoValidity(datasetRoot: string): ValidationResult {
   const errors: string[] = [];
   const warnings: string[] = [];
 
-  const iso639Regex = /^[a-z]{3}$/;
   const iso3166Regex = /^[A-Z]{3}$/;
 
   for (const { file, fullPath } of collectPplFiles(datasetRoot)) {
@@ -1009,7 +1015,7 @@ export function checkIsoValidity(datasetRoot: string): ValidationResult {
     // Check ISO 639-3 language codes
     const isoCodes = data?.content?.languages?.isoCodes ?? [];
     for (const code of isoCodes) {
-      if (typeof code !== "string" || !iso639Regex.test(code)) {
+      if (typeof code !== "string" || !ISO_639_3_PATTERN.test(code)) {
         errors.push(
           `${file}: invalid ISO 639-3 language code "${code}" (expected 3 lowercase letters)`
         );
@@ -1029,6 +1035,173 @@ export function checkIsoValidity(datasetRoot: string): ValidationResult {
   }
 
   return { ok: errors.length === 0, errors, warnings };
+}
+
+function loadLanguageCsv(datasetRoot: string): {
+  rows: LanguageCsvRow[];
+  error?: string;
+} {
+  const csvPath = path.join(
+    datasetRoot,
+    "famille_linguistique",
+    "langue_par_famille.csv"
+  );
+
+  if (!fs.existsSync(csvPath)) {
+    return {
+      rows: [],
+      error: `FR52: language CSV not found at ${csvPath}`,
+    };
+  }
+
+  try {
+    const rows: LanguageCsvRow[] = parse(fs.readFileSync(csvPath, "utf-8"), {
+      columns: true,
+      skip_empty_lines: true,
+      trim: true,
+    });
+    return { rows };
+  } catch {
+    return {
+      rows: [],
+      error: `FR52: could not parse language CSV at ${csvPath}`,
+    };
+  }
+}
+
+/**
+ * FR52 – Classification-tree hard gate.
+ *
+ * The language CSV is authoritative while the live afrik_languages table is
+ * empty. Every language row must point to an existing family and carry a
+ * unique, valid ISO 639-3 code. People language codes follow the FR29 pattern.
+ */
+export function checkTreeIntegrity(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+  const { rows, error } = loadLanguageCsv(datasetRoot);
+  const familyIds = loadFlgIds(datasetRoot);
+  const seenLanguageCodes = new Map<string, string>();
+
+  if (error) {
+    errors.push(error);
+  }
+
+  for (const row of rows) {
+    const rowId = row.id_langue ?? "(unknown)";
+    const isoCode = row.code_iso_639_3 ?? "";
+    const familyId = row.id_famille ?? "";
+
+    if (!ISO_639_3_PATTERN.test(isoCode)) {
+      errors.push(
+        `FR52 language row "${rowId}": invalid ISO 639-3 code "${isoCode}" (expected 3 lowercase letters)`
+      );
+    } else {
+      const firstRowId = seenLanguageCodes.get(isoCode);
+      if (firstRowId) {
+        errors.push(
+          `FR52 language rows "${firstRowId}" and "${rowId}": duplicate ISO 639-3 code "${isoCode}"`
+        );
+      } else {
+        seenLanguageCodes.set(isoCode, rowId);
+      }
+    }
+
+    if (!familyIds.has(familyId)) {
+      errors.push(
+        `FR52 language "${isoCode}": family "${familyId}" has no matching FLG JSON file`
+      );
+    }
+  }
+
+  for (const { file, fullPath } of collectPplFiles(datasetRoot)) {
+    let data: { content?: { languages?: { isoCodes?: unknown[] } } };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`FR52 ${file}: could not parse JSON`);
+      continue;
+    }
+
+    const isoCodes = data?.content?.languages?.isoCodes ?? [];
+    for (const code of isoCodes) {
+      if (typeof code !== "string" || !ISO_639_3_PATTERN.test(code)) {
+        errors.push(
+          `FR52 ${file}: invalid ISO 639-3 language code "${code}" (expected 3 lowercase letters)`
+        );
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * FR52-coverage – Per-family people-to-language coverage.
+ *
+ * This is informational until the language tier is complete, so it always
+ * returns ok:true and warns only for families with unlinked peoples.
+ */
+export function checkTreeCoverage(datasetRoot: string): ValidationResult {
+  const { rows } = loadLanguageCsv(datasetRoot);
+  const languageCodesByFamily = new Map<string, Set<string>>();
+  const coverageByFamily = new Map<
+    string,
+    { linked: number; unlinked: number }
+  >();
+
+  for (const row of rows) {
+    const familyId = row.id_famille ?? "";
+    const isoCode = row.code_iso_639_3 ?? "";
+    if (!familyId || !ISO_639_3_PATTERN.test(isoCode)) continue;
+
+    const codes = languageCodesByFamily.get(familyId) ?? new Set<string>();
+    codes.add(isoCode);
+    languageCodesByFamily.set(familyId, codes);
+  }
+
+  for (const { fullPath } of collectPplFiles(datasetRoot)) {
+    let data: {
+      languageFamilyId?: unknown;
+      content?: { languages?: { isoCodes?: unknown[] } };
+    };
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      continue;
+    }
+
+    if (typeof data.languageFamilyId !== "string") continue;
+
+    const familyId = data.languageFamilyId;
+    const familyCodes =
+      languageCodesByFamily.get(familyId) ?? new Set<string>();
+    const peopleCodes = data?.content?.languages?.isoCodes ?? [];
+    const linked = peopleCodes.some(
+      (code) => typeof code === "string" && familyCodes.has(code)
+    );
+    const counts = coverageByFamily.get(familyId) ?? {
+      linked: 0,
+      unlinked: 0,
+    };
+
+    if (linked) {
+      counts.linked++;
+    } else {
+      counts.unlinked++;
+    }
+    coverageByFamily.set(familyId, counts);
+  }
+
+  const warnings = [...coverageByFamily.entries()]
+    .sort(([left], [right]) => left.localeCompare(right))
+    .filter(([, counts]) => counts.unlinked > 0)
+    .map(([familyId, counts]) => {
+      const total = counts.linked + counts.unlinked;
+      return `FR52-coverage ${familyId}: ${counts.linked} linked / ${counts.unlinked} unlinked / ${total} total`;
+    });
+
+  return { ok: true, errors: [], warnings };
 }
 
 /**
@@ -2424,9 +2597,9 @@ async function main() {
     }
   }
 
-  // ── New integrity checks (FR26-FR31) ──────────────────────────────────────
+  // ── New integrity checks (FR26-FR52) ──────────────────────────────────────
   console.log("\n" + "=".repeat(60));
-  console.log("\n🔬 INTEGRITY CHECKS (FR26-FR31)\n");
+  console.log("\n🔬 INTEGRITY CHECKS (FR26-FR52)\n");
 
   const datasetRoot = AFRIK_ROOT;
   // `soft: true` checks log their findings but do not fail the build. Used for
@@ -2468,6 +2641,19 @@ async function main() {
   newChecks.push({
     name: "FR29 ISO validity",
     result: checkIsoValidity(datasetRoot),
+  });
+
+  console.log("FR52 – Classification-tree integrity...");
+  newChecks.push({
+    name: "FR52 Classification-tree integrity",
+    result: checkTreeIntegrity(datasetRoot),
+  });
+
+  console.log("FR52-coverage – People-to-language coverage...");
+  newChecks.push({
+    name: "FR52-coverage People-to-language coverage",
+    result: checkTreeCoverage(datasetRoot),
+    soft: true,
   });
 
   console.log("FR32 – population/percentageInCountry drift...");
