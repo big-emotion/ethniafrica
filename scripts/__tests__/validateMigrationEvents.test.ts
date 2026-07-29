@@ -1,6 +1,13 @@
 // @req REQ-080
 import { describe, it, expect, beforeEach, afterEach } from "vitest";
-import { mkdirSync, writeFileSync, rmSync, existsSync } from "fs";
+import {
+  mkdirSync,
+  writeFileSync,
+  rmSync,
+  existsSync,
+  readdirSync,
+  readFileSync,
+} from "fs";
 import { join } from "path";
 import { validateMigrationEvents } from "../validateAfrikData";
 
@@ -317,5 +324,33 @@ describe("validateMigrationEvents (FR80, Story 12.1)", () => {
     const result = validateMigrationEvents(tmpDir, modelPath);
     expect(result.ok).toBe(true);
     expect(result.warnings.some((w) => w.includes("bbox"))).toBe(true);
+  });
+});
+
+describe("validateMigrationEvents (FR80, real pilot corpus, Story 12.2)", () => {
+  const realDatasetRoot = join(__dirname, "../../dataset/source/afrik");
+  const realModelPath = join(__dirname, "../../public/modele-migration.json");
+
+  // @req REQ-080
+  it("finds the pilot corpus with at least one fiche per required event type", () => {
+    const migrationsDir = join(realDatasetRoot, "migrations");
+    const files = readdirSync(migrationsDir).filter((f) => f.endsWith(".json"));
+    expect(files.length).toBeGreaterThan(0);
+
+    const eventTypes = files.map((file) => {
+      const fiche = JSON.parse(
+        readFileSync(join(migrationsDir, file), "utf-8")
+      );
+      return fiche.eventType;
+    });
+    expect(eventTypes).toContain("expansion");
+    expect(eventTypes).toContain("trade_route");
+  });
+
+  // @req REQ-080
+  it("reports zero errors for the real dataset/source/afrik/migrations corpus", () => {
+    const result = validateMigrationEvents(realDatasetRoot, realModelPath);
+    expect(result.errors).toEqual([]);
+    expect(result.ok).toBe(true);
   });
 });

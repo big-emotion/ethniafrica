@@ -1,6 +1,12 @@
 import { Language } from "@/types/shared";
 
-export type PageType = "countries" | "families" | "peoples" | "search";
+export type PageType =
+  | "countries"
+  | "families"
+  | "peoples"
+  | "search"
+  | "doctrine"
+  | "about";
 
 // Mapping des slugs par langue
 const SLUGS: Record<Language, Record<PageType, string>> = {
@@ -9,6 +15,8 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     families: "familles",
     peoples: "peuples",
     search: "recherche",
+    doctrine: "doctrine",
+    about: "about",
   },
 };
 
@@ -18,6 +26,8 @@ const SLUG_TO_PAGE: Record<string, PageType> = {
   familles: "families",
   peuples: "peoples",
   recherche: "search",
+  doctrine: "doctrine",
+  about: "about",
 };
 
 export const getLocalizedRoute = (
