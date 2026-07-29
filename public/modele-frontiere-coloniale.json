@@ -1,0 +1,23 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "frontiere-coloniale",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes. Aucune section n'est optionnelle ni inventable : une frontière sans source Tier 1/2 ne doit jamais être publiée (source ou abandon — voir Source Tier Policy dans CLAUDE.md)."
+  },
+  "id": "<Identifiant du layer — ex: FRONTIERE_AOF_1904>",
+  "title_fr": "<Titre du layer en français — ex: Partition coloniale de l'Afrique-Occidentale française>",
+  "reference_period": "<Période de référence de la frontière — ex: 1895-1904>",
+  "colonial_powers": [
+    "<Code ISO 3166-1 alpha-3 d'un pays actuel traversé par cette frontière coloniale — doit exister dans afrik_countries>"
+  ],
+  "geometry_file": "<Chemin relatif (même dossier) vers le fichier GeoJSON — ex: FRONTIERE_AOF_1904.geojson>",
+  "simplification_note": "<Note de transparence sur la simplification géométrique appliquée — précision des coordonnées, tolérance de simplification topologique>",
+  "sources": [
+    {
+      "reference": "<Titre de la source / référence bibliographique / URL primaire — jamais une URL Wikipedia>",
+      "tier": 1,
+      "notes": "<Tier 1 : contexte de la source (UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA). Tier 2 : chemin de vérification obligatoire — versions linguistiques Wikipédia consultées pour retrouver la source primaire (ex: 'Vérifié via Wikipedia EN + FR, source primaire localisée : ...')>"
+    }
+  ],
+  "license": "<Licence de redistribution de la géométrie — ex: CC-BY-SA-4.0>"
+}
