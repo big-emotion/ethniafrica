@@ -22,7 +22,6 @@ interface EntityItem {
   id: string;
   name_main?: string;
   name_fr?: string;
-  name_en?: string;
   language_family_id?: string;
 }
 
@@ -35,9 +34,9 @@ function getEntityCategory(type: string): EntityCategory | null {
   return null;
 }
 
+// @req REQ-092
 export function ContributionFormFields({
   type,
-  language,
   onDataChange,
 }: ContributionFormFieldsProps) {
   const [entities, setEntities] = useState<EntityItem[]>([]);
@@ -123,55 +122,16 @@ export function ContributionFormFields({
   };
 
   const t = {
-    en: {
-      selectEntity: "Select entity to update",
-      id: "ID",
-      nameMain: "Main Name",
-      nameFr: "Name (FR)",
-      nameEn: "Name (EN)",
-      etymology: "Etymology",
-      nameOriginActor: "Naming Origin Actor",
-      languageFamily: "Language Family",
-      currentCountries: "Countries (comma-separated ISO codes)",
-      loading: "Loading...",
-    },
-    fr: {
-      selectEntity: "Sélectionner l'entité à modifier",
-      id: "ID",
-      nameMain: "Nom principal",
-      nameFr: "Nom (FR)",
-      nameEn: "Nom (EN)",
-      etymology: "Étymologie",
-      nameOriginActor: "Acteur à l'origine du nom",
-      languageFamily: "Famille linguistique",
-      currentCountries: "Pays (codes ISO séparés par des virgules)",
-      loading: "Chargement...",
-    },
-    es: {
-      selectEntity: "Seleccionar entidad a actualizar",
-      id: "ID",
-      nameMain: "Nombre principal",
-      nameFr: "Nombre (FR)",
-      nameEn: "Nombre (EN)",
-      etymology: "Etimología",
-      nameOriginActor: "Actor del origen del nombre",
-      languageFamily: "Familia lingüística",
-      currentCountries: "Países (códigos ISO separados por comas)",
-      loading: "Cargando...",
-    },
-    pt: {
-      selectEntity: "Selecionar entidade para atualizar",
-      id: "ID",
-      nameMain: "Nome principal",
-      nameFr: "Nome (FR)",
-      nameEn: "Nome (EN)",
-      etymology: "Etimologia",
-      nameOriginActor: "Ator na origem do nome",
-      languageFamily: "Família linguística",
-      currentCountries: "Países (códigos ISO separados por vírgulas)",
-      loading: "Carregando...",
-    },
-  }[language];
+    selectEntity: "Sélectionner l'entité à modifier",
+    id: "ID",
+    nameMain: "Nom principal",
+    nameFr: "Nom (FR)",
+    etymology: "Étymologie",
+    nameOriginActor: "Acteur à l'origine du nom",
+    languageFamily: "Famille linguistique",
+    currentCountries: "Pays (codes ISO séparés par des virgules)",
+    loading: "Chargement...",
+  };
 
   if (loading && Object.keys(formData).length === 0) {
     return <div className="text-sm text-gray-500">{t.loading}</div>;
@@ -374,14 +334,6 @@ export function ContributionFormFields({
           value={(formData.name_fr as string) || ""}
           onChange={(e) => updateField("name_fr", e.target.value)}
           required
-        />
-      </div>
-      <div>
-        <Label htmlFor="name_en">{t.nameEn}</Label>
-        <Input
-          id="name_en"
-          value={(formData.name_en as string) || ""}
-          onChange={(e) => updateField("name_en", e.target.value)}
         />
       </div>
     </div>

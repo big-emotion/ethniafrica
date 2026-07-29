@@ -87,7 +87,7 @@ afrik_peoples  N ──┬─ afrik_people_countries ─┬── N  afrik_count
 
 ## AFRIK Data Discipline
 
-- Authorized sources only (UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA).
+- `config/sources/authorized-source-catalog.json` is the single source of truth for source admissions and evidence tiers. Only `preferred` and `allowed` entries are publishable; unknown sources require curator review.
 - Strict models `public/modele-*.txt` are prescriptive.
 - Demographics are 2025 reference year; populations must sum to **exactly 100%** per country.
 - TXT source demographics MUST match database records.

@@ -146,7 +146,8 @@ _This file contains critical rules and patterns that AI agents must follow when 
 
 - **Strict models**: `public/modele-*.txt` are prescriptive — never skip, rename, or invent sections.
 - **Source Tier Policy** — every claim must cite Tier 1 or Tier 2; otherwise **remove the claim**.
-  - **Tier 1 (preferred)**: UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA — cite directly.
+  - **Catalogue authority**: `config/sources/authorized-source-catalog.json` is the single source of truth for source admissions and evidence tiers. Only `preferred` and `allowed` entries are publishable; `discovery_only` and `prohibited` entries are never citable, while an unknown source requires curator review before publication.
+  - **Tier 1 (preferred)**: cite a catalogue entry marked `preferred` directly.
   - **Tier 2 (fallback)**: Wikipedia is a _meta-source_, never citable itself. Use it only to locate the underlying **primary source** (peer-reviewed paper, official IGO/government document, academic publication). Cross-check the claim across **≥2 language versions** of Wikipedia. Cite the **primary source URL**, not the Wikipedia article. If no language version provides a primary source, **remove the claim**.
   - **Tier 3 (forbidden)**: Wikipedia articles themselves, blogs, social media, AI-generated content, secondary aggregators without their own primary sources.
   - Each `sources` entry must record `tier: 1` or `tier: 2`. Tier-2 entries must record the Wikipedia language versions cross-checked in `notes`.
