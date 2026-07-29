@@ -16,6 +16,7 @@ import * as path from "path";
 import { pathToFileURL } from "url";
 import { parse } from "csv-parse/sync";
 import { parseRelationFile } from "../src/lib/afrik/parsers/relationParser";
+import { parseNameRecordFile } from "../src/lib/afrik/parsers/nameRecordParser";
 
 // ─── Exported ValidationResult (FR26-FR31) ───────────────────────────────────
 
@@ -2128,6 +2129,240 @@ export function checkRelationDuplicates(datasetRoot: string): ValidationResult {
   return { ok: errors.length === 0, errors, warnings };
 }
 
+/**
+ * FR53-FR57 – Name-record validator (Epic 8, Story 8.3).
+ * Validates dataset/source/afrik/noms/*.json against public/modele-nom.json.
+ */
+
+interface RawNameRecordSource {
+  title?: unknown;
+  author?: unknown;
+  year?: unknown;
+  url?: unknown;
+  tier?: unknown;
+  notes?: unknown;
+}
+
+interface RawNameRecordEntry {
+  nameText?: unknown;
+  nameType?: unknown;
+  languageOfOrigin?: unknown;
+  imposedBy?: unknown;
+  whyProblematic?: unknown;
+  sources?: RawNameRecordSource[];
+}
+
+interface RawNameRecordFile {
+  id?: unknown;
+  entityType?: unknown;
+  names?: RawNameRecordEntry[];
+}
+
+/** List every dataset/source/afrik/noms/*.json file path. Empty when the dir is absent. */
+function collectNameRecordFiles(
+  datasetRoot: string
+): Array<{ file: string; fullPath: string }> {
+  const nomsDir = path.join(datasetRoot, "noms");
+  if (!fs.existsSync(nomsDir)) return [];
+  return fs
+    .readdirSync(nomsDir)
+    .filter((f) => f.endsWith(".json"))
+    .map((file) => ({ file, fullPath: path.join(nomsDir, file) }));
+}
+
+/** Map a zod issue path (from nameRecordDossierSchema) to the FR-name rule id it corresponds to. */
+function nameRecordIssueRuleId(issuePath: string): string {
+  if (issuePath.includes("languageOfOrigin")) return "FR55-iso";
+  if (issuePath.includes("whyProblematic")) return "FR56-imposed";
+  return "NAME-MODEL";
+}
+
+/**
+ * FR55-iso (languageOfOrigin, when present, must be a valid ISO 639-3 code)
+ * and FR56-imposed (imposedBy set ⇒ whyProblematic non-empty) — reuses the
+ * 8.2 parser (parseNameRecordFile) rather than reimplementing its schema.
+ */
+export function checkNameRecordModel(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const { file, fullPath } of collectNameRecordFiles(datasetRoot)) {
+    let raw: unknown;
+    try {
+      raw = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const parsed = parseNameRecordFile(raw);
+    if (!parsed.success) {
+      for (const issue of parsed.errors ?? []) {
+        errors.push(
+          `${nameRecordIssueRuleId(issue.path)}: ${file}: ${issue.path} — ${issue.message}`
+        );
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * FR57-source – every name record cites ≥1 source with tier 1 or 2; every
+ * Tier 2 source records a non-empty Wikipedia cross-check note in "notes"
+ * (auditable chain required).
+ */
+export function checkNameRecordSources(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const { file, fullPath } of collectNameRecordFiles(datasetRoot)) {
+    let data: RawNameRecordFile;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const names = Array.isArray(data.names) ? data.names : [];
+    names.forEach((entry, i) => {
+      const sources = Array.isArray(entry?.sources) ? entry.sources : [];
+      const hasValidTierSource = sources.some(
+        (s) => s?.tier === 1 || s?.tier === 2
+      );
+      if (!hasValidTierSource) {
+        errors.push(
+          `FR57-source: ${file}: names[${i}] has no source with tier 1 or tier 2 — at least one Tier 1/2 source is required`
+        );
+      }
+
+      sources.forEach((source, j) => {
+        if (
+          source?.tier === 2 &&
+          (typeof source.notes !== "string" || !source.notes.trim())
+        ) {
+          errors.push(
+            `FR57-source: ${file}: names[${i}].sources[${j}] is Tier 2 and requires a non-empty Wikipedia cross-check note in "notes"`
+          );
+        }
+      });
+    });
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * FR54-endonym – every people covered by the atlas dataset has ≥1 endonym
+ * record (AR33 echo).
+ */
+export function checkNameRecordEndonymCoverage(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const { file, fullPath } of collectNameRecordFiles(datasetRoot)) {
+    let data: RawNameRecordFile;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const names = Array.isArray(data.names) ? data.names : [];
+    const hasEndonym = names.some((entry) => entry?.nameType === "endonym");
+    if (!hasEndonym) {
+      errors.push(
+        `FR54-endonym: ${file}: people "${data.id}" has no endonym record — every people covered by the atlas must have ≥1 endonym`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * FR53-ref – peopleId (dossier id) must resolve to an existing PPL fiche
+ * under dataset/source/afrik/peuples/** (no orphan name files).
+ */
+export function checkNameRecordReferences(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const files = collectNameRecordFiles(datasetRoot);
+  if (files.length === 0) return { ok: true, errors, warnings };
+
+  const pplIds = loadPplIds(datasetRoot);
+
+  for (const { file, fullPath } of files) {
+    let data: RawNameRecordFile;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const id = typeof data.id === "string" ? data.id : undefined;
+    if (!id || !pplIds.has(id)) {
+      errors.push(
+        `FR53-ref: ${file}: peopleId "${data.id}" does not resolve to an existing PPL fiche`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * FR53-dup – no duplicate (peopleId, nameText, nameType) across the dataset.
+ */
+export function checkNameRecordDuplicates(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const seen = new Map<string, string>();
+
+  for (const { file, fullPath } of collectNameRecordFiles(datasetRoot)) {
+    let data: RawNameRecordFile;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const peopleId = typeof data.id === "string" ? data.id : "";
+    const names = Array.isArray(data.names) ? data.names : [];
+
+    for (const entry of names) {
+      const nameText =
+        typeof entry?.nameText === "string" ? entry.nameText : "";
+      const nameType =
+        typeof entry?.nameType === "string" ? entry.nameType : "";
+      const key = `${peopleId}|${nameText}|${nameType}`;
+
+      if (seen.has(key)) {
+        errors.push(
+          `FR53-dup: ${file}: duplicate name record (peopleId="${peopleId}", nameText="${nameText}", nameType="${nameType}") also declared in ${seen.get(key)}`
+        );
+      } else {
+        seen.set(key, file);
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
 // ─── main() ──────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -2296,6 +2531,40 @@ async function main() {
   newChecks.push({
     name: "REL-1/REL-6 Relation duplicates",
     result: checkRelationDuplicates(datasetRoot),
+  });
+
+  console.log(
+    "FR55-iso/FR56-imposed – Name record model (ISO validity + imposed contextualization)..."
+  );
+  newChecks.push({
+    name: "FR55-iso/FR56-imposed Name record model",
+    result: checkNameRecordModel(datasetRoot),
+  });
+
+  console.log(
+    "FR57-source – Name record sources (Tier 1/2 + Wikipedia cross-check)..."
+  );
+  newChecks.push({
+    name: "FR57-source Name record sources",
+    result: checkNameRecordSources(datasetRoot),
+  });
+
+  console.log("FR54-endonym – Name record endonym coverage...");
+  newChecks.push({
+    name: "FR54-endonym Name record endonym coverage",
+    result: checkNameRecordEndonymCoverage(datasetRoot),
+  });
+
+  console.log("FR53-ref – Name record peopleId references...");
+  newChecks.push({
+    name: "FR53-ref Name record peopleId references",
+    result: checkNameRecordReferences(datasetRoot),
+  });
+
+  console.log("FR53-dup – Name record duplicates...");
+  newChecks.push({
+    name: "FR53-dup Name record duplicates",
+    result: checkNameRecordDuplicates(datasetRoot),
   });
 
   if (process.env.CHECK_SOURCE_URLS === "true") {
