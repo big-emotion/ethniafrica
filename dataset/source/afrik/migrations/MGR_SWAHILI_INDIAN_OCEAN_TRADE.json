@@ -1,0 +1,55 @@
+{
+  "id": "MGR_SWAHILI_INDIAN_OCEAN_TRADE",
+  "nameMain": "Réseau commercial swahili de l'océan Indien (Mombasa - Zanzibar - Kilwa - Sofala)",
+  "migrationGroup": null,
+  "eventType": "trade_route",
+  "classificationStatus": "consensual",
+  "timeRange": {
+    "startYear": 100,
+    "endYear": 1500,
+    "datingNote": null
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [45.3, 2.0],
+      [39.7, -4.0],
+      [39.2, -6.2],
+      [39.5, -8.9],
+      [34.8, -20.1]
+    ]
+  },
+  "peoplesInvolved": [
+    { "id": "PPL_SWAHILI", "role": "origin" },
+    { "id": "PPL_SHIRAZI", "role": "origin" },
+    { "id": "PPL_COMORIEN", "role": "destination" }
+  ],
+  "content": {
+    "summary": "Réseau commercial reliant, du Ier au début du XVIe siècle, les cités-États swahilies de la côte est-africaine (Mombasa, Zanzibar, Kilwa, Sofala) aux réseaux d'échange de l'océan Indien (péninsule Arabique, Perse, Inde, Chine), avant la rupture provoquée par l'arrivée portugaise à partir de 1498.",
+    "narrative": "Le commerce le long de la côte est-africaine est attesté dès le Ier-IIe siècle apr. J.-C. par le Périple de la mer Érythrée, texte grec qui décrit des ports déjà actifs échangeant ivoire, écaille de tortue et autres denrées avec des marchands venus d'Arabie du Sud (LaViolette, 2008, Encyclopedia of Archaeology). Ce commerce se structure ensuite en un réseau de cités-États swahilies -- portées par des populations bantouphones côtières et par une diaspora perse (shirazi) installée après le XIe siècle -- qui atteint son apogée entre les XIIIe et XVe siècles. Kilwa, sur la côte de l'actuelle Tanzanie, en devient le pôle dominant : elle contrôle le commerce de l'or et de l'ivoire en provenance de l'intérieur (via Sofala) et les échange contre l'argent, la porcelaine chinoise et les tissus indiens apportés par les marchands arabes, persans, indiens et chinois qui fréquentent ses ports (UNESCO, liste du patrimoine mondial, Ruines de Kilwa Kisiwani et de Songo Mnara). Ce réseau décline avec l'irruption portugaise dans l'océan Indien à partir de 1498, qui bouleverse durablement les équilibres commerciaux de la côte swahilie.",
+    "debate": null,
+    "sources": [
+      {
+        "title": "Ruins of Kilwa Kisiwani and Ruins of Songo Mnara",
+        "url": "https://whc.unesco.org/en/list/144/",
+        "year": 1981,
+        "tier": 1,
+        "notes": ""
+      },
+      {
+        "title": "Kilwa Kisiwani and Songo Mnara",
+        "url": "https://en.unesco.org/silkroad/silk-road-themes/underwater-heritage/kilwa-kisiwani-and-songo-mnara",
+        "year": 2019,
+        "tier": 1,
+        "notes": ""
+      },
+      {
+        "title": "Africa, East: Swahili Coast",
+        "url": "https://www.researchgate.net/publication/294121208_AFRICA_EAST_Swahili_Coast",
+        "year": 2008,
+        "tier": 2,
+        "notes": "LaViolette, in Encyclopedia of Archaeology (ed. D. M. Pearsall), Academic Press. Cité comme source archéologique primaire dans la page anglaise de Wikipédia « Swahili coast » ; le recours au Périple de la mer Érythrée et à Ibn Battuta comme textes fondateurs est corroboré par la page française « Côte swahilie »."
+      }
+    ]
+  }
+}
