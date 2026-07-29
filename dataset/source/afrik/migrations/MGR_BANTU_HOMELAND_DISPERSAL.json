@@ -1,0 +1,58 @@
+{
+  "id": "MGR_BANTU_HOMELAND_DISPERSAL",
+  "nameMain": "Dispersion initiale des Bantous depuis les confins Cameroun-Nigeria",
+  "migrationGroup": "bantu-expansion",
+  "eventType": "expansion",
+  "classificationStatus": "contested",
+  "timeRange": {
+    "startYear": -3000,
+    "endYear": -1500,
+    "datingNote": "La datation absolue du début de la dispersion reste débattue. Grollemund et al. (2015) situent, par phylogénétique lexicale, une première scission des langues bantoues et une expansion vers des couloirs de savane s'étalant sur le IIIe et le IIe millénaire av. J.-C. Vansina (1995) conteste toute datation unique associée à une 'expansion' homogène et décrit plutôt une série de micro-migrations étalées sur plusieurs millénaires, sans front de peuplement daté avec précision."
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [11.5, 6.5],
+      [13.7, 2.9],
+      [15.3, -4.3]
+    ]
+  },
+  "peoplesInvolved": [
+    { "id": "PPL_BAKOSSI", "role": "origin" },
+    { "id": "PPL_BAKWERI", "role": "origin" },
+    { "id": "PPL_EWONDO", "role": "origin" },
+    { "id": "PPL_BULU", "role": "origin" },
+    { "id": "PPL_BETI", "role": "origin" },
+    { "id": "PPL_DUALA", "role": "origin" },
+    { "id": "PPL_BASSA_CAM", "role": "origin" },
+    { "id": "PPL_KONGO", "role": "destination" }
+  ],
+  "content": {
+    "summary": "Premier maillon de l'expansion bantoue : depuis la région frontalière entre le Cameroun et le Nigeria, identifiée par la linguistique comparée comme le foyer probable des langues bantoues, des communautés se dispersent vers le sud-sud-est en direction du confluent du fleuve Kwa et du fleuve Congo.",
+    "narrative": "Le noyau linguistique des langues bantoues est situé par les bantouisants dans les hautes terres à la frontière entre le Cameroun et le Nigeria, une région où subsistent aujourd'hui des langues bantoïdes étroitement apparentées aux langues bantoues proprement dites (Bostoen, 2018, Oxford Research Encyclopedia of African History). C'est de cette zone que seraient parties, à partir du IIIe millénaire av. J.-C., les communautés dont descendent linguistiquement les peuples bantouphones actuels du Cameroun côtier et forestier (Bakossi, Bakweri, Ewondo, Bulu, Beti, Duala, Bassa). Grollemund et al. (2015) montrent, par une analyse phylogénétique portant sur environ 400 langues bantoues, que cette dispersion n'a pas suivi une trajectoire aléatoire à travers la forêt équatoriale : les populations ont préférentiellement emprunté des couloirs de savane apparus avec les changements climatiques de la période, évitant l'habitat forestier alors inconnu d'elles, jusqu'à atteindre la région du confluent du Kwa et du Congo (bas-Congo actuel). Cette dernière zone est précisément celle où s'enracinera, des siècles plus tard, la tradition d'origine du royaume Kongo, dont le peuple éponyme (Kongo) est aujourd'hui installé de part et d'autre du fleuve Congo (RDC, Angola, République du Congo, Gabon). Vansina (1995) propose une lecture alternative de ces mêmes données linguistiques : plutôt qu'une 'expansion' portée par un front de population identifiable, il décrit un processus de micro-migrations, de fissions de groupes et d'acculturation progressive de populations autochtones, étalé sur plusieurs millénaires et sans démographie de remplacement.",
+    "debate": "Deux lectures s'opposent depuis les années 1990. Le modèle classique (Greenberg, Guthrie, Oliver, années 1950-1960) décrit une expansion démographique rapide portée par l'agriculture et la métallurgie du fer, remplaçant ou absorbant les populations de chasseurs-cueilleurs rencontrées. Vansina (1995, Journal of African History) récuse ce modèle unitaire : il y voit une accumulation de micro-migrations et de dynamiques locales de fission/fusion de groupes, sans preuve d'un remplacement démographique homogène. Grollemund et al. (2015, PNAS) reformulent le débat sur une base phylogénétique : ils confirment l'existence d'un mouvement directionnel depuis le foyer camerouno-nigérian, mais montrent que l'habitat (forêt vs savane) a déterminé la route et le rythme de la dispersion, ce qui nuance sans trancher la controverse sur la nature (front démographique ou diffusion culturelle) du phénomène.",
+    "sources": [
+      {
+        "title": "Bantu expansion shows that habitat alters the route and pace of human dispersals",
+        "url": "https://doi.org/10.1073/pnas.1503793112",
+        "year": 2015,
+        "tier": 2,
+        "notes": "Grollemund, Branford, Bostoen, Meade, Venditti & Pagel, Proceedings of the National Academy of Sciences 112(43). Article et référence bibliographique confirmés dans la page anglaise de Wikipédia « Bantu expansion » (section References/Further reading, citation complète avec DOI)."
+      },
+      {
+        "title": "New Linguistic Evidence and 'The Bantu Expansion'",
+        "url": "https://www.cambridge.org/core/journals/journal-of-african-history/article/abs/new-linguistic-evidence-and-the-bantu-expansion/87B3D2F9F0215174EA5B645EBEA236AD",
+        "year": 1995,
+        "tier": 2,
+        "notes": "Vansina, The Journal of African History, vol. 36, pp. 173-195. Cité comme source académique primaire dans la page anglaise de Wikipédia « Bantu expansion » et repris dans la page française « Bantous » qui présente explicitement le modèle des « micro-migrations » de Vansina en alternative au récit classique."
+      },
+      {
+        "title": "Glottolog 5.3 - Narrow Bantu",
+        "url": "https://glottolog.org/resource/languoid/id/narr1281",
+        "year": 2025,
+        "tier": 1,
+        "notes": ""
+      }
+    ]
+  }
+}
