@@ -36,6 +36,34 @@ describe("sources service", () => {
   });
 
   describe("listSources", () => {
+    // @req REQ-093
+    it("projects normalized registry fields without manufacturing offline URLs", async () => {
+      const row = {
+        id: "33333333-3333-3333-3333-333333333333",
+        source_key: "archive-cameroon-1912",
+        title: "Archives nationales du Cameroun, dossier 1912",
+        url: null,
+        source_kind: "archive",
+        evidence_tier: 2,
+        identifiers: { callNumber: "ACM-1912-7" },
+        author: null,
+        year: 1912,
+        publisher: "Archives nationales du Cameroun",
+      };
+      const query = buildListQuery([row], 1);
+      fromMock.mockReturnValue(query);
+
+      const result = await listSources({ page: 1, perPage: 20 });
+
+      expect(result.data[0]).toMatchObject({
+        sourceKey: "archive-cameroon-1912",
+        sourceKind: "archive",
+        evidenceTier: 2,
+        identifiers: { callNumber: "ACM-1912-7" },
+        url: null,
+      });
+    });
+
     it("queries the `sources` table with the requested page slice", async () => {
       const row = {
         id: "11111111-1111-1111-1111-111111111111",

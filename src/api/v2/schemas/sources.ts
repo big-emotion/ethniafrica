@@ -33,6 +33,10 @@ export const sourcePolicySchema = z.object({
 // @req REQ-092
 export const sourceSchema = z.object({
   id: z.string().uuid(),
+  sourceKey: z.string().nullable(),
+  sourceKind: sourceKindSchema.nullable(),
+  evidenceTier: z.union([z.literal(1), z.literal(2)]).nullable(),
+  identifiers: z.record(z.string(), z.string()).nullable(),
   type: sourceTypeSchema.nullable(),
   title: z.string(),
   url: z.string().nullable(),

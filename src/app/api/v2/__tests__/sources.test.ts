@@ -43,6 +43,10 @@ function baseEnvelope<T>(data: T): ApiEnvelope<T> {
 
 const sampleSource: Source = {
   id: "11111111-1111-1111-1111-111111111111",
+  sourceKey: null,
+  sourceKind: null,
+  evidenceTier: null,
+  identifiers: null,
   title: "Sample",
   url: null,
   type: null,
@@ -52,6 +56,13 @@ const sampleSource: Source = {
   publisher: null,
   resolvable: null,
   lastVerifiedAt: null,
+  policy: {
+    key: "unknown",
+    admission: "review_required",
+    evidenceTier: null,
+    sourceKind: "unknown",
+    publishable: false,
+  },
 };
 
 describe("GET /api/v2/sources", () => {
