@@ -534,6 +534,42 @@ const options: swaggerJsdoc.Options = {
           required: ["data", "meta", "errors"],
         },
         // -----------------------------------------------------------------
+        // Epic 7 — Language family tree branch (FR48, NFR3)
+        // -----------------------------------------------------------------
+        FamilyTreeBranchNode: {
+          type: "object",
+          properties: {
+            id: { type: "string", example: "PPL_BAKONGO" },
+            nameMain: { type: "string", example: "Bakongo" },
+            classificationStatus: {
+              type: ["string", "null"],
+              enum: [
+                "consensual",
+                "contested",
+                "colonial-legacy",
+                "reconstructive",
+                null,
+              ],
+            },
+          },
+          required: ["id", "nameMain", "classificationStatus"],
+        },
+        LanguageFamilyTreeBranchResponse: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/FamilyTreeBranchNode" },
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        // -----------------------------------------------------------------
         // Epic 3 — Pinned-version URLs (ETNI-51)
         // -----------------------------------------------------------------
         PeopleRevisionItem: {
