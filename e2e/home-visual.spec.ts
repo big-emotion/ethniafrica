@@ -1,23 +1,48 @@
 import { expect, test } from "@playwright/test";
+import { PRODUCT_NAME } from "@/lib/brand";
 
+// The full-page prototype captures include the prototype's own module tab
+// bar and next-module preview, which the live app intentionally replaces
+// with its site nav and access-mode hubs (Epic 14 adaptation) — diffing
+// full pages therefore mixes real hero parity with known, unrelated
+// substitutions and can't substantiate "composition, colours, type
+// hierarchy, dot field match" for the hero itself (ETNI-543 review round 2).
+//
+// Each `*-region.png` file below is a mechanical crop of the corresponding
+// PO-approved full-page reference — no new content, same pixels — isolating
+// the hero region so the comparison actually constrains what AC1 describes.
+// Regenerate with (crop = the live HomeHero section's own measured
+// boundingBox at that viewport):
+//   sharp(`<viewport>.png`).extract({ left: 0, top, width, height }).toFile(`<viewport>-region.png`)
+//   mobile-390:  top 96,  585x390    tablet-720: top 96,  526x720
+//   desktop-1440: top 112, 465x1440
 const referenceViewports = [
   {
-    name: "home-hero-mobile-390.png",
+    name: "home-hero-mobile-390-region.png",
     width: 390,
     height: 844,
-    maxDiffPixelRatio: 0.19,
+    clipY: 96,
+    clipHeight: 585,
+    // Measured baseline (cookie-banner-race-fixed): ratio 0.09.
+    maxDiffPixelRatio: 0.11,
   },
   {
-    name: "home-hero-tablet-720.png",
+    name: "home-hero-tablet-720-region.png",
     width: 720,
     height: 1024,
-    maxDiffPixelRatio: 0.22,
+    clipY: 96,
+    clipHeight: 526,
+    // Measured baseline: ratio 0.12.
+    maxDiffPixelRatio: 0.14,
   },
   {
-    name: "home-hero-desktop-1440.png",
+    name: "home-hero-desktop-1440-region.png",
     width: 1440,
     height: 900,
-    maxDiffPixelRatio: 0.31,
+    clipY: 112,
+    clipHeight: 465,
+    // Measured baseline: ratio 0.07.
+    maxDiffPixelRatio: 0.09,
   },
 ] as const;
 
@@ -46,19 +71,25 @@ test.describe("Home visual parity", () => {
 
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 
+      // Anchor the clip to the live HomeHero section's own measured top so
+      // the crop tracks the real render (nav height, font metrics) instead
+      // of a hardcoded guess; the height stays fixed to match the region
+      // reference's dimensions exactly (toHaveScreenshot requires identical
+      // image sizes to compute a diff ratio at all).
+      const heroBox = await page
+        .locator(`section[aria-label="${PRODUCT_NAME}"]`)
+        .boundingBox();
+      const clipY = heroBox ? Math.round(heroBox.y) : reference.clipY;
+
       await expect(page).toHaveScreenshot(reference.name, {
         animations: "disabled",
         caret: "hide",
-        // The reference is the prototype: its module tab bar, demo lede, and
-        // next-module preview are intentionally replaced by the live app nav,
-        // home copy, and access-mode hubs (Epic 14 adaptation). Masking those
-        // regions out was evaluated but rejected: the prototype's nav is a
-        // different height than the live nav, so a mask positioned from live
-        // DOM coordinates lands on different content in the two images and
-        // widens the diff instead of narrowing it. maxDiffPixelRatio is set
-        // just above the measured, deterministic (cookie-banner-race-fixed)
-        // baseline for this known full-page diff — see docs/adr/0005 follow-up
-        // note for the region-scoped comparison this should graduate to.
+        clip: {
+          x: 0,
+          y: clipY,
+          width: reference.width,
+          height: reference.clipHeight,
+        },
         maxDiffPixelRatio: reference.maxDiffPixelRatio,
       });
     });

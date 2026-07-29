@@ -44,6 +44,14 @@ Scope `style-src-attr 'unsafe-inline'` to the exact route that needs it
 - `/fr` still ships `'unsafe-inline'` for style attributes, which remains a
   real (if scoped) weakening versus a pure nonce-only policy.
 
+**Aside**
+
+- `script-src` also gains `'unsafe-eval'` outside production
+  (`process.env.NODE_ENV !== "production"`) in the same `applySecurityHeaders`
+  change. This is unrelated to the `style-src-attr` scoping above: Next.js dev
+  mode's HMR/Fast Refresh runtime relies on `eval`-based module evaluation,
+  which a strict `script-src` blocks. It never applies in production.
+
 **Follow-up (not resolved here)**
 
 - Refactor `HomeHero`, `DottedContinent`, and `HubCard` to move their static
