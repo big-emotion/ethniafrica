@@ -16,6 +16,7 @@ import {
   checkOrphanFiches,
   checkSourceUrls,
   checkPopulationPercentageDrift,
+  checkAuthorizedSourceAdmissions,
 } from "../validateAfrikData";
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
@@ -432,6 +433,88 @@ describe("validateAfrikData – new integrity checks", () => {
       // Log file should exist at the expected path (even if empty, it gets written)
       // (appendFileSync is called with empty content when there are no URLs)
       expect(existsSync(expectedLogPath)).toBe(true);
+    });
+  });
+
+  // ── Source admissions ───────────────────────────────────────────────────
+
+  describe("checkAuthorizedSourceAdmissions", () => {
+    // @req REQ-092
+    it("rejects a discovery-only source even when it uses the legacy string format", () => {
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
+
+      const result = checkAuthorizedSourceAdmissions(tmpDir);
+
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some((error) =>
+          error.includes('discovery_only source "wikipedia"')
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-092
+    it("rejects a prohibited source", () => {
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU", {
+        content: {
+          languages: { isoCodes: ["zul"] },
+          demography: {
+            distributionByCountry: [{ country: "ZAF", population: 10000000 }],
+          },
+          sources: [{ url: "https://chatgpt.com/share/example" }],
+        },
+      });
+
+      const result = checkAuthorizedSourceAdmissions(tmpDir);
+
+      expect(result.ok).toBe(false);
+      expect(
+        result.errors.some((error) =>
+          error.includes('prohibited source "ai-generated"')
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-092
+    it("requires review for an unknown structured source without treating it as publishable", () => {
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU", {
+        content: {
+          languages: { isoCodes: ["zul"] },
+          demography: {
+            distributionByCountry: [{ country: "ZAF", population: 10000000 }],
+          },
+          sources: [{ url: "https://unlisted.example/source" }],
+        },
+      });
+
+      const result = checkAuthorizedSourceAdmissions(tmpDir);
+
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+      expect(
+        result.warnings.some((warning) =>
+          warning.includes('review_required source "unknown"')
+        )
+      ).toBe(true);
+    });
+
+    // @req REQ-092
+    it("accepts an allowed catalogue source", () => {
+      writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU", {
+        content: {
+          languages: { isoCodes: ["zul"] },
+          demography: {
+            distributionByCountry: [{ country: "ZAF", population: 10000000 }],
+          },
+          sources: [{ url: "https://www.unesco.org/en/languages" }],
+        },
+      });
+
+      const result = checkAuthorizedSourceAdmissions(tmpDir);
+
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+      expect(result.warnings).toHaveLength(0);
     });
   });
 

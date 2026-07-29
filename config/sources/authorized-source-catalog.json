@@ -1,0 +1,250 @@
+{
+  "version": 1,
+  "entries": [
+    {
+      "key": "un-desa-wpp",
+      "name": "UN DESA World Population Prospects",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["un.org", "population.un.org"]
+    },
+    {
+      "key": "unsd",
+      "name": "United Nations Statistics Division",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["unstats.un.org"]
+    },
+    {
+      "key": "unfpa",
+      "name": "United Nations Population Fund",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["unfpa.org"]
+    },
+    {
+      "key": "unesco",
+      "name": "UNESCO",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["unesco.org"]
+    },
+    {
+      "key": "unicef-mics",
+      "name": "UNICEF MICS",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["unicef.org", "mics.unicef.org"]
+    },
+    {
+      "key": "world-bank",
+      "name": "World Bank",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["worldbank.org"]
+    },
+    {
+      "key": "african-union",
+      "name": "African Union",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["au.int"]
+    },
+    {
+      "key": "acalan",
+      "name": "African Academy of Languages",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "linguistic_reference",
+      "matchDomains": ["acalan-au.org"]
+    },
+    {
+      "key": "cia-world-factbook",
+      "name": "CIA World Factbook",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "government",
+      "matchDomains": ["cia.gov"]
+    },
+    {
+      "key": "glottolog",
+      "name": "Glottolog",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "linguistic_reference",
+      "matchDomains": ["glottolog.org"]
+    },
+    {
+      "key": "ethnologue",
+      "name": "SIL Ethnologue",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "linguistic_reference",
+      "matchDomains": ["ethnologue.com", "sil.org"]
+    },
+    {
+      "key": "wals",
+      "name": "World Atlas of Language Structures",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "linguistic_reference",
+      "matchDomains": ["wals.info"]
+    },
+    {
+      "key": "iwgia",
+      "name": "International Work Group for Indigenous Affairs",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "intergovernmental",
+      "matchDomains": ["iwgia.org"]
+    },
+    {
+      "key": "dhs-program",
+      "name": "DHS Program",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "official_statistics",
+      "matchDomains": ["dhsprogram.com"]
+    },
+    {
+      "key": "ipums",
+      "name": "IPUMS",
+      "admission": "preferred",
+      "evidenceTier": 1,
+      "sourceKind": "official_statistics",
+      "matchDomains": ["ipums.org"]
+    },
+    {
+      "key": "jstor",
+      "name": "JSTOR",
+      "admission": "allowed",
+      "evidenceTier": 2,
+      "sourceKind": "academic",
+      "matchDomains": ["jstor.org"]
+    },
+    {
+      "key": "ajol",
+      "name": "African Journals Online",
+      "admission": "allowed",
+      "evidenceTier": 2,
+      "sourceKind": "repository",
+      "matchDomains": ["ajol.info"]
+    },
+    {
+      "key": "hal",
+      "name": "HAL",
+      "admission": "allowed",
+      "evidenceTier": 2,
+      "sourceKind": "repository",
+      "matchDomains": ["hal.science", "archives-ouvertes.fr"]
+    },
+    {
+      "key": "persee",
+      "name": "Persée",
+      "admission": "allowed",
+      "evidenceTier": 2,
+      "sourceKind": "repository",
+      "matchDomains": ["persee.fr"]
+    },
+    {
+      "key": "openedition",
+      "name": "OpenEdition",
+      "admission": "allowed",
+      "evidenceTier": 2,
+      "sourceKind": "repository",
+      "matchDomains": ["openedition.org"]
+    },
+    {
+      "key": "theses-fr",
+      "name": "theses.fr",
+      "admission": "allowed",
+      "evidenceTier": 2,
+      "sourceKind": "repository",
+      "matchDomains": ["theses.fr"]
+    },
+    {
+      "key": "ehraf",
+      "name": "eHRAF",
+      "admission": "allowed",
+      "evidenceTier": 2,
+      "sourceKind": "repository",
+      "matchDomains": ["ehrafworldcultures.yale.edu"]
+    },
+    {
+      "key": "elar",
+      "name": "Endangered Languages Archive",
+      "admission": "allowed",
+      "evidenceTier": 2,
+      "sourceKind": "repository",
+      "matchDomains": ["elararchive.org"]
+    },
+    {
+      "key": "pangloss",
+      "name": "Pangloss Collection",
+      "admission": "allowed",
+      "evidenceTier": 2,
+      "sourceKind": "repository",
+      "matchDomains": ["pangloss.cnrs.fr"]
+    },
+    {
+      "key": "gallica-bnf",
+      "name": "Gallica / BnF",
+      "admission": "allowed",
+      "evidenceTier": 2,
+      "sourceKind": "archive",
+      "matchDomains": ["gallica.bnf.fr", "bnf.fr"]
+    },
+    {
+      "key": "british-library-eap",
+      "name": "British Library Endangered Archives Programme",
+      "admission": "allowed",
+      "evidenceTier": 2,
+      "sourceKind": "archive",
+      "matchDomains": ["bl.uk"]
+    },
+    {
+      "key": "wikipedia",
+      "name": "Wikipedia",
+      "admission": "discovery_only",
+      "evidenceTier": null,
+      "sourceKind": "discovery",
+      "matchDomains": ["wikipedia.org"]
+    },
+    {
+      "key": "worldcat",
+      "name": "WorldCat",
+      "admission": "discovery_only",
+      "evidenceTier": null,
+      "sourceKind": "discovery",
+      "matchDomains": ["worldcat.org"]
+    },
+    {
+      "key": "sudoc",
+      "name": "Sudoc",
+      "admission": "discovery_only",
+      "evidenceTier": null,
+      "sourceKind": "discovery",
+      "matchDomains": ["sudoc.abes.fr"]
+    },
+    {
+      "key": "ai-generated",
+      "name": "AI-generated content",
+      "admission": "prohibited",
+      "evidenceTier": null,
+      "sourceKind": "ai_generated",
+      "matchDomains": [
+        "chat.openai.com",
+        "chatgpt.com",
+        "claude.ai",
+        "gemini.google.com"
+      ]
+    }
+  ]
+}

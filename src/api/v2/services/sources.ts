@@ -8,6 +8,7 @@
  */
 
 import { createServerClient } from "@/lib/supabase/server";
+import { evaluateSourceUrl } from "@/lib/sources/authorized-source-catalog";
 import type {
   Source,
   SourceType,
@@ -18,6 +19,7 @@ const KNOWN_TYPES: SourceType[] = ["primary", "secondary", "tertiary", "ai"];
 
 function mapRowToSource(row: Record<string, unknown>): Source {
   const rawType = row.type as string | null | undefined;
+  const url = typeof row.url === "string" ? row.url : null;
   const type =
     rawType && KNOWN_TYPES.includes(rawType as SourceType)
       ? (rawType as SourceType)
@@ -26,7 +28,7 @@ function mapRowToSource(row: Record<string, unknown>): Source {
   return {
     id: row.id as string,
     title: (row.title as string) ?? "",
-    url: (row.url as string | null) ?? null,
+    url,
     type,
     pinnedUrl: (row.pinned_url as string | null) ?? null,
     year: (row.year as number | null) ?? null,
@@ -34,6 +36,7 @@ function mapRowToSource(row: Record<string, unknown>): Source {
     publisher: (row.publisher as string | null) ?? null,
     resolvable: (row.resolvable as boolean | null) ?? null,
     lastVerifiedAt: (row.last_verified_at as string | null) ?? null,
+    policy: evaluateSourceUrl(url ?? ""),
   };
 }
 
@@ -42,6 +45,7 @@ export interface ListSourcesResult {
   total: number;
 }
 
+// @req REQ-092
 export async function listSources(
   query: ListSourcesQuery
 ): Promise<ListSourcesResult> {
@@ -66,6 +70,7 @@ export async function listSources(
   };
 }
 
+// @req REQ-092
 export async function getSourceById(id: string): Promise<Source | null> {
   const supabase = createServerClient();
   const { data, error } = await supabase

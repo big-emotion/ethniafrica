@@ -69,6 +69,30 @@ describe("sources service", () => {
       });
     });
 
+    // @req REQ-092
+    it("derives the authorized-source policy outcome from the source URL", async () => {
+      const row = {
+        id: "33333333-3333-3333-3333-333333333333",
+        title: "Glottolog",
+        url: "https://glottolog.org/resource/languoid/id/yoru1245",
+        type: "primary",
+      };
+      const query = buildListQuery([row], 1);
+      fromMock.mockReturnValue(query);
+
+      const result = await listSources({ page: 1, perPage: 20 });
+
+      expect(result.data[0]).toMatchObject({
+        policy: {
+          key: "glottolog",
+          admission: "preferred",
+          evidenceTier: 1,
+          sourceKind: "linguistic_reference",
+          publishable: true,
+        },
+      });
+    });
+
     it("falls back gracefully when extended columns are missing (pre-014)", async () => {
       const row = {
         id: "22222222-2222-2222-2222-222222222222",
