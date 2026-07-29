@@ -55,6 +55,20 @@
   --afh-color-error-bg: #fce8e8;
   --afh-color-error-border: #e5b8b8;
 
+  /* Home night surface */
+  --afh-night-ground: #120e0a;
+  --afh-night-surface: #1d1710;
+  --afh-night-surface-2: #271e14;
+  --afh-night-line: #3a2e1f;
+  --afh-night-ink: #f1e7d8;
+  --afh-night-ink-2: #c9b99f;
+  --afh-night-ink-3: #8f7f66;
+  --afh-night-ocre: #c9821f;
+  --afh-night-ocre-soft: #e8b96a;
+  --afh-night-teal: #33a390;
+  --afh-night-terre: #c4573f;
+  --afh-night-perv: #7a8ce8;
+
   /* ─── L2 · Semantic aliases ────────────────────────────────── */
 
   /* Surface */
