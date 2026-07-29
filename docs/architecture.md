@@ -104,7 +104,7 @@ dataset/source/afrik/                         Raw .txt / .json source (strict mo
         ▼ Supabase tables                     (afrik_*)
 ```
 
-Strict models in `public/modele-*.txt` are prescriptive — never skip, rename, or add sections. Authorized sources only (UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA). 2025 reference demographics must sum to exactly 100% per country.
+Strict models in `public/modele-*.txt` are prescriptive — never skip, rename, or add sections. `config/sources/authorized-source-catalog.json` is the single source of truth for source admissions and evidence tiers; only `preferred` and `allowed` entries are publishable. 2025 reference demographics must sum to exactly 100% per country.
 
 ## 6. Security
 

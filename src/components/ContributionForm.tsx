@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -16,20 +15,17 @@ import {
 } from "@/components/ui/select";
 import { ContributionFormFields } from "./ContributionFormFields";
 import { Language } from "@/types/shared";
+import { getContributionSourcePolicyIssues } from "@/lib/validations/contribution";
 
 interface ContributionFormProps {
   language: Language;
 }
 
+// @req REQ-092
 export function ContributionForm({
-  language: propLanguage,
+  language: _language,
 }: ContributionFormProps) {
-  const params = useParams();
-  const urlLang = params?.lang as string;
-  const detectedLanguage: Language =
-    urlLang && ["en", "fr"].includes(urlLang)
-      ? (urlLang as Language)
-      : propLanguage;
+  void _language;
   const [type, setType] = useState<string>("");
   const [inputMode, setInputMode] = useState<"json" | "form">("form");
   const [payload, setPayload] = useState<string>("");
@@ -43,59 +39,54 @@ export function ContributionForm({
   const [error, setError] = useState<string | null>(null);
 
   const t = {
-    en: {
-      title: "Submit a Contribution",
-      type: "Contribution Type",
-      inputMode: "Input Mode",
-      jsonMode: "JSON",
-      formMode: "Form",
-      payload: "Data (JSON)",
-      payloadPlaceholder:
-        '{"name_main": "...", "language_family_id": "FLG_...", ...}',
-      name: "Your Name (optional)",
-      email: "Your Email (optional)",
-      notes: "Notes (optional)",
-      submit: "Submit Contribution",
-      submitting: "Submitting...",
-      success: "Contribution submitted successfully!",
-      error: "Error submitting contribution",
-      invalidJson: "Invalid JSON format",
-      selectType: "Select type",
-      newPeople: "New People",
-      updatePeople: "Update People",
-      newCountry: "New Country",
-      updateCountry: "Update Country",
-      newLanguageFamily: "New Language Family",
-      updateLanguageFamily: "Update Language Family",
-      requiredFields: "Please fill in all required fields",
-    },
-    fr: {
-      title: "Soumettre une contribution",
-      type: "Type de contribution",
-      inputMode: "Mode de saisie",
-      jsonMode: "JSON",
-      formMode: "Formulaire",
-      payload: "Données (JSON)",
-      payloadPlaceholder:
-        '{"name_main": "...", "language_family_id": "FLG_...", ...}',
-      name: "Votre nom (optionnel)",
-      email: "Votre email (optionnel)",
-      notes: "Notes (optionnel)",
-      submit: "Soumettre la contribution",
-      submitting: "Envoi en cours...",
-      success: "Contribution soumise avec succès !",
-      error: "Erreur lors de la soumission",
-      invalidJson: "Format JSON invalide",
-      selectType: "Sélectionner un type",
-      newPeople: "Nouveau peuple",
-      updatePeople: "Modifier un peuple",
-      newCountry: "Nouveau pays",
-      updateCountry: "Modifier un pays",
-      newLanguageFamily: "Nouvelle famille linguistique",
-      updateLanguageFamily: "Modifier une famille linguistique",
-      requiredFields: "Veuillez remplir tous les champs obligatoires",
-    },
-  }[detectedLanguage];
+    title: "Soumettre une contribution",
+    type: "Type de contribution",
+    inputMode: "Mode de saisie",
+    jsonMode: "JSON",
+    formMode: "Formulaire",
+    payload: "Données (JSON)",
+    payloadPlaceholder:
+      '{"name_main": "...", "language_family_id": "FLG_...", ...}',
+    name: "Votre nom (optionnel)",
+    email: "Votre email (optionnel)",
+    notes: "Notes (optionnel)",
+    submit: "Soumettre la contribution",
+    submitting: "Envoi en cours...",
+    success: "Contribution soumise avec succès !",
+    error: "Erreur lors de la soumission",
+    invalidJson: "Format JSON invalide",
+    selectType: "Sélectionner un type",
+    newPeople: "Nouveau peuple",
+    updatePeople: "Modifier un peuple",
+    newCountry: "Nouveau pays",
+    updateCountry: "Modifier un pays",
+    newLanguageFamily: "Nouvelle famille linguistique",
+    updateLanguageFamily: "Modifier une famille linguistique",
+    requiredFields: "Veuillez remplir tous les champs obligatoires",
+    sourceNotAllowed: "Cette source ne peut pas être utilisée comme preuve.",
+    sourceReviewRequired: "Cette source devra être examinée avant publication.",
+  };
+
+  const sourcePolicyIssues = (() => {
+    if (inputMode === "form")
+      return getContributionSourcePolicyIssues(formData);
+
+    try {
+      const parsedPayload = JSON.parse(payload);
+      return parsedPayload && typeof parsedPayload === "object"
+        ? getContributionSourcePolicyIssues(parsedPayload)
+        : [];
+    } catch {
+      return [];
+    }
+  })();
+  const hasBlockedSource = sourcePolicyIssues.some(
+    (issue) =>
+      issue.admission === "discovery_only" || issue.admission === "prohibited"
+  );
+  const hasSourceRequiringReview = sourcePolicyIssues.some(
+    (issue) => issue.admission === "review_required"
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -135,6 +126,18 @@ export function ContributionForm({
         }
       }
 
+      if (
+        getContributionSourcePolicyIssues(parsedPayload).some(
+          (issue) =>
+            issue.admission === "discovery_only" ||
+            issue.admission === "prohibited"
+        )
+      ) {
+        setError(t.sourceNotAllowed);
+        setLoading(false);
+        return;
+      }
+
       const response = await fetch("/api/contributions", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -170,8 +173,8 @@ export function ContributionForm({
   };
 
   return (
-    <Card className="p-6">
-      <h2 className="text-2xl font-bold mb-4">{t.title}</h2>
+    <Card className="p-4 sm:p-6">
+      <h2 className="mb-4 text-xl font-bold sm:text-2xl">{t.title}</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <Label htmlFor="type">{t.type}</Label>
@@ -205,7 +208,7 @@ export function ContributionForm({
         {type && (
           <div>
             <Label>{t.inputMode}</Label>
-            <div className="flex gap-4">
+            <div className="grid gap-2 sm:flex sm:gap-4">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="radio"
@@ -254,7 +257,7 @@ export function ContributionForm({
           type && (
             <ContributionFormFields
               type={type}
-              language={detectedLanguage}
+              language="fr"
               onDataChange={setFormData}
             />
           )
@@ -303,9 +306,21 @@ export function ContributionForm({
 
         {error && <div className="text-red-500 text-sm">{error}</div>}
 
+        {hasBlockedSource && (
+          <div className="text-sm text-red-600" role="alert">
+            {t.sourceNotAllowed}
+          </div>
+        )}
+
+        {hasSourceRequiringReview && (
+          <div className="text-sm text-amber-700" role="status">
+            {t.sourceReviewRequired}
+          </div>
+        )}
+
         {success && <div className="text-green-500 text-sm">{t.success}</div>}
 
-        <Button type="submit" disabled={loading || !type}>
+        <Button type="submit" disabled={loading || !type || hasBlockedSource}>
           {loading ? t.submitting : t.submit}
         </Button>
       </form>

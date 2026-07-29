@@ -8,7 +8,12 @@
  */
 
 import { z } from "zod";
+import {
+  sourceAdmissionSchema,
+  sourceKindSchema,
+} from "@/lib/sources/authorized-source-catalog";
 
+// @req REQ-092
 export const sourceTypeSchema = z.enum([
   "primary",
   "secondary",
@@ -16,6 +21,16 @@ export const sourceTypeSchema = z.enum([
   "ai",
 ]);
 
+// @req REQ-092
+export const sourcePolicySchema = z.object({
+  key: z.string(),
+  admission: sourceAdmissionSchema,
+  evidenceTier: z.union([z.literal(1), z.literal(2), z.null()]),
+  sourceKind: sourceKindSchema,
+  publishable: z.boolean(),
+});
+
+// @req REQ-092
 export const sourceSchema = z.object({
   id: z.string().uuid(),
   type: sourceTypeSchema.nullable(),
@@ -27,6 +42,7 @@ export const sourceSchema = z.object({
   publisher: z.string().nullable(),
   resolvable: z.boolean().nullable(),
   lastVerifiedAt: z.string().nullable(),
+  policy: sourcePolicySchema,
 });
 
 export type Source = z.infer<typeof sourceSchema>;
@@ -35,6 +51,7 @@ export type SourceType = z.infer<typeof sourceTypeSchema>;
 /**
  * GET /v2/sources query parameters
  */
+// @req REQ-092
 export const listSourcesQuerySchema = z.object({
   page: z.coerce.number().int().min(1).default(1),
   perPage: z.coerce.number().int().min(1).max(100).default(20),
@@ -45,6 +62,7 @@ export type ListSourcesQuery = z.infer<typeof listSourcesQuerySchema>;
 /**
  * GET /v2/sources/{id} path parameters
  */
+// @req REQ-092
 export const sourceIdParamSchema = z.object({
   id: z.string().uuid({ message: "Invalid source id format (uuid expected)" }),
 });
