@@ -326,6 +326,7 @@ const options: swaggerJsdoc.Options = {
               enum: [
                 "VALIDATION_ERROR",
                 "NOT_FOUND",
+                "SEMANTIC_ERROR",
                 "INTERNAL_ERROR",
                 "UNAUTHENTICATED",
                 "AGE_CONFIRMATION_REQUIRED",
@@ -451,6 +452,86 @@ const options: swaggerJsdoc.Options = {
               items: { $ref: "#/components/schemas/ApiErrorEntry" },
             },
           },
+        },
+        // -----------------------------------------------------------------
+        // Epic 13 — Colonization & Resistances: fragmentation (FR85)
+        // -----------------------------------------------------------------
+        ColonialOrigin: {
+          type: "object",
+          description:
+            "Present only once the colonial-borders dataset (Story 13.3) documents the pair (NFR31 — additive, optional).",
+          properties: {
+            layerId: { type: "string" },
+            sourceIds: { type: "array", items: { type: "string" } },
+          },
+          required: ["layerId", "sourceIds"],
+        },
+        FragmentationBorderPair: {
+          type: "object",
+          properties: {
+            a: { type: "string", example: "GHA" },
+            b: { type: "string", example: "TGO" },
+            colonialOrigin: { $ref: "#/components/schemas/ColonialOrigin" },
+          },
+          required: ["a", "b"],
+        },
+        FragmentationCountry: {
+          type: "object",
+          properties: {
+            iso3: { type: "string", example: "GHA" },
+            nameFr: { type: "string", example: "Ghana" },
+            populationShare: {
+              type: "number",
+              minimum: 0,
+              maximum: 1,
+              example: 0.62,
+            },
+            assertionId: {
+              type: ["string", "null"],
+              description:
+                "Backing assertion id, null when no per-field assertion exists yet for this fiche (bulk-migrated data predates the contribution workflow).",
+            },
+          },
+          required: ["iso3", "nameFr", "populationShare", "assertionId"],
+        },
+        PeopleFragmentation: {
+          type: "object",
+          description:
+            "Derived strictly from afrik_people_countries + content.demography.distributionByCountry — no data foundation of its own (Epic 13).",
+          properties: {
+            peopleId: { type: "string", example: "PPL_EWE" },
+            autonym: { type: ["string", "null"] },
+            exonym: { type: ["string", "null"] },
+            countryCount: { type: "integer", minimum: 2 },
+            countries: {
+              type: "array",
+              items: { $ref: "#/components/schemas/FragmentationCountry" },
+            },
+            borderPairs: {
+              type: "array",
+              items: { $ref: "#/components/schemas/FragmentationBorderPair" },
+            },
+          },
+          required: [
+            "peopleId",
+            "autonym",
+            "exonym",
+            "countryCount",
+            "countries",
+            "borderPairs",
+          ],
+        },
+        PeopleFragmentationResponse: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/PeopleFragmentation" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
         },
         // -----------------------------------------------------------------
         // Epic 3 — Pinned-version URLs (ETNI-51)
