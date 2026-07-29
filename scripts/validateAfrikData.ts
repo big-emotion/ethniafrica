@@ -1208,6 +1208,243 @@ export function checkPopulationPercentageDrift(
   return { ok: errors.length === 0, errors, warnings };
 }
 
+/** Collect all colonial-border layer metadata JSON files under geo/colonial_borders/ */
+function collectColonialBorderLayers(
+  datasetRoot: string
+): Array<{ file: string; fullPath: string; dir: string }> {
+  const layersDir = path.join(datasetRoot, "geo", "colonial_borders");
+  if (!fs.existsSync(layersDir)) return [];
+
+  return fs
+    .readdirSync(layersDir)
+    .filter((f) => f.endsWith(".json"))
+    .map((file) => ({
+      file,
+      fullPath: path.join(layersDir, file),
+      dir: layersDir,
+    }));
+}
+
+interface ColonialBorderSource {
+  reference?: unknown;
+  tier?: unknown;
+  notes?: unknown;
+}
+
+interface ColonialBorderLayer {
+  id?: string;
+  colonial_powers?: unknown[];
+  geometry_file?: string;
+  sources?: ColonialBorderSource[];
+}
+
+/** Check whether a GeoJSON geometry's rings (Polygon/MultiPolygon) are closed. */
+function ringIsClosed(ring: unknown): boolean {
+  if (!Array.isArray(ring) || ring.length < 2) return false;
+  const first = ring[0];
+  const last = ring[ring.length - 1];
+  return JSON.stringify(first) === JSON.stringify(last);
+}
+
+const GEOJSON_GEOMETRY_TYPES = new Set([
+  "Point",
+  "MultiPoint",
+  "LineString",
+  "MultiLineString",
+  "Polygon",
+  "MultiPolygon",
+]);
+
+/** Validate a parsed GeoJSON document is a FeatureCollection with well-formed geometries. */
+function validateGeoJson(data: unknown): string[] {
+  const errors: string[] = [];
+  const doc = data as { type?: unknown; features?: unknown };
+
+  if (doc?.type !== "FeatureCollection" || !Array.isArray(doc.features)) {
+    errors.push("not a GeoJSON FeatureCollection with a features[] array");
+    return errors;
+  }
+
+  for (const feature of doc.features as unknown[]) {
+    const geometry = (
+      feature as { geometry?: { type?: unknown; coordinates?: unknown } }
+    )?.geometry;
+    const geomType = geometry?.type;
+
+    if (typeof geomType !== "string" || !GEOJSON_GEOMETRY_TYPES.has(geomType)) {
+      errors.push(`feature has invalid or missing geometry type "${geomType}"`);
+      continue;
+    }
+
+    if (geomType === "Polygon") {
+      const rings = (geometry?.coordinates ?? []) as unknown[];
+      for (const ring of rings) {
+        if (!ringIsClosed(ring)) {
+          errors.push(
+            "Polygon ring is not closed (first and last coordinate differ)"
+          );
+        }
+      }
+    } else if (geomType === "MultiPolygon") {
+      const polygons = (geometry?.coordinates ?? []) as unknown[];
+      for (const rings of polygons) {
+        for (const ring of rings as unknown[]) {
+          if (!ringIsClosed(ring)) {
+            errors.push(
+              "MultiPolygon ring is not closed (first and last coordinate differ)"
+            );
+          }
+        }
+      }
+    }
+  }
+
+  return errors;
+}
+
+/**
+ * CR1 – Every colonial-border layer must carry ≥ 1 source with tier 1 or 2;
+ * Tier-2 entries must carry the Wikipedia-path audit trail in `notes`;
+ * Wikipedia itself is never a citable `reference`; geometry must parse as
+ * valid GeoJSON (FeatureCollection, closed rings).
+ */
+export function checkColonialBorderCr1(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const { file, fullPath, dir } of collectColonialBorderLayers(
+    datasetRoot
+  )) {
+    let data: ColonialBorderLayer;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const layerId = data.id ?? file;
+    const sources = data.sources ?? [];
+
+    if (sources.length === 0) {
+      errors.push(
+        `CR1: ${layerId}: missing sources[] — at least one Tier 1 or Tier 2 source is required`
+      );
+    }
+
+    for (const source of sources) {
+      const reference =
+        typeof source.reference === "string" ? source.reference : "";
+      const notes = typeof source.notes === "string" ? source.notes : "";
+      const tier = source.tier;
+
+      if (/wikipedia\.org/i.test(reference)) {
+        errors.push(
+          `CR1: ${layerId}: Wikipedia cited directly as a source (forbidden — Tier 3): "${reference}"`
+        );
+        continue;
+      }
+
+      if (tier !== 1 && tier !== 2) {
+        errors.push(
+          `CR1: ${layerId}: source with invalid tier "${tier}" — only tier 1 or 2 is allowed`
+        );
+        continue;
+      }
+
+      if (tier === 2 && !/wikipedia/i.test(notes)) {
+        errors.push(
+          `CR1: ${layerId}: tier 2 source missing the Wikipedia cross-check path in notes`
+        );
+      }
+    }
+
+    if (!data.geometry_file) {
+      errors.push(`CR1: ${layerId}: missing geometry_file`);
+      continue;
+    }
+
+    const geometryPath = path.join(dir, data.geometry_file);
+    if (!fs.existsSync(geometryPath)) {
+      errors.push(
+        `CR1: ${layerId}: geometry_file "${data.geometry_file}" not found`
+      );
+      continue;
+    }
+
+    let geometry: unknown;
+    try {
+      geometry = JSON.parse(fs.readFileSync(geometryPath, "utf-8"));
+    } catch {
+      errors.push(
+        `CR1: ${layerId}: geometry_file "${data.geometry_file}" is not valid JSON`
+      );
+      continue;
+    }
+
+    const geoJsonErrors = validateGeoJson(geometry);
+    for (const geoJsonError of geoJsonErrors) {
+      errors.push(`CR1: ${layerId}: invalid GeoJSON — ${geoJsonError}`);
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * CR2 – Every ISO 3166-1 alpha-3 code referenced in a colonial-border layer's
+ * `colonial_powers` must be a known country id (present in
+ * `public/pays_demographie.csv`, the `afrik_countries` source of truth).
+ */
+export function checkColonialBorderCr2(
+  datasetRoot: string,
+  paysCsvPath: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const layers = collectColonialBorderLayers(datasetRoot);
+  if (layers.length === 0) {
+    return { ok: true, errors, warnings };
+  }
+
+  const iso3166Regex = /^[A-Z]{3}$/;
+  const knownCountryIds = new Set(
+    loadCSV(paysCsvPath)
+      .map((row) => row.id_pays)
+      .filter(Boolean)
+  );
+
+  for (const { file, fullPath } of layers) {
+    let data: ColonialBorderLayer;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const layerId = data.id ?? file;
+    const colonialPowers = data.colonial_powers ?? [];
+
+    for (const code of colonialPowers) {
+      if (typeof code !== "string" || !iso3166Regex.test(code)) {
+        errors.push(
+          `CR2: ${layerId}: invalid ISO 3166-1 α-3 country code "${code}" (expected 3 uppercase letters)`
+        );
+        continue;
+      }
+      if (!knownCountryIds.has(code)) {
+        errors.push(
+          `CR2: ${layerId}: unknown ISO 3166-1 α-3 country code "${code}" — not found in afrik_countries`
+        );
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
 /**
  * Orphan fiches – PPL files whose parent folder doesn't exist as a FLG JSON.
  * (Complements FR26 from the PPL perspective.)
@@ -1349,6 +1586,21 @@ async function main() {
   newChecks.push({
     name: "Orphan fiches",
     result: checkOrphanFiches(datasetRoot),
+  });
+
+  console.log("CR1 – Colonial-border source tier + GeoJSON validity...");
+  newChecks.push({
+    name: "CR1 Colonial-border source tier + GeoJSON validity",
+    result: checkColonialBorderCr1(datasetRoot),
+  });
+
+  console.log("CR2 – Colonial-border ISO validity...");
+  newChecks.push({
+    name: "CR2 Colonial-border ISO validity",
+    result: checkColonialBorderCr2(
+      datasetRoot,
+      path.join(PUBLIC_ROOT, "pays_demographie.csv")
+    ),
   });
 
   if (process.env.CHECK_SOURCE_URLS === "true") {
