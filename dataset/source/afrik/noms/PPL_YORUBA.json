@@ -1,0 +1,56 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "nom",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes.",
+    "illustrative": true
+  },
+  "id": "PPL_YORUBA",
+  "entityType": "people",
+  "names": [
+    {
+      "nameText": "Yorùbá",
+      "nameType": "endonym",
+      "languageOfOrigin": "yor",
+      "meaning": null,
+      "periodLabel": "Usage contemporain",
+      "imposedBy": null,
+      "impositionPeriod": null,
+      "whyProblematic": null,
+      "contemporaryUsage": "Terme universel dans les contextes académiques, officiels et communautaires en Afrique de l'Ouest et dans la diaspora.",
+      "sortRank": 0,
+      "sources": [
+        {
+          "title": "Ethnologue: Languages of the World — Yoruba (yor)",
+          "author": "SIL International",
+          "year": 2024,
+          "url": "https://www.ethnologue.com/language/yor",
+          "tier": 1,
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "nameText": "Nago",
+      "nameType": "exonym",
+      "languageOfOrigin": null,
+      "meaning": null,
+      "periodLabel": "Période coloniale française, encore en usage au Bénin et au Togo",
+      "imposedBy": "Administration coloniale française",
+      "impositionPeriod": "XIXe-XXe siècle",
+      "whyProblematic": "Terme employé par l'administration coloniale française pour désigner les Yoruba du Dahomey (actuel Bénin) et du Togo ; perçu comme réducteur par les communautés concernées.",
+      "contemporaryUsage": null,
+      "sortRank": 1,
+      "sources": [
+        {
+          "title": "Glottolog 5.0 — Yoruboid: Yoruba",
+          "author": "Max Planck Institute for Evolutionary Anthropology",
+          "year": 2024,
+          "url": "https://glottolog.org/resource/languoid/id/yoru1245",
+          "tier": 1,
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}
