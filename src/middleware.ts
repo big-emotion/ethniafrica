@@ -13,8 +13,11 @@ function applySecurityHeaders(response: NextResponse, nonce: string) {
 
   const csp = [
     "default-src 'self'",
-    `script-src 'self' 'nonce-${nonce}'`,
+    `script-src 'self' 'nonce-${nonce}'${
+      process.env.NODE_ENV === "production" ? "" : " 'unsafe-eval'"
+    }`,
     `style-src 'self' 'nonce-${nonce}'`,
+    "style-src-attr 'unsafe-inline'",
     "img-src 'self' data:",
     "frame-ancestors 'self'",
     "connect-src 'self' https://*.supabase.co https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io",
