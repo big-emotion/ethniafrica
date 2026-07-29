@@ -1,121 +1,72 @@
-id_langue,nom_langue,code_iso_639_3,id_famille,source
-LANG_AFRO_1,Arabe standard moderne,arb,FLG_AFROASIATIQUE,"Ethnologue, Glottolog"
-LANG_AFRO_2,Amharique,amh,FLG_AFROASIATIQUE,"Ethnologue, Glottolog"
-LANG_AFRO_3,Somali,som,FLG_AFROASIATIQUE,"Ethnologue, Glottolog"
-LANG_AFRO_4,Hausa,hau,FLG_AFROASIATIQUE,"Ethnologue, Glottolog"
-LANG_AFRO_5,Tigrinya,tir,FLG_AFROASIATIQUE,"Ethnologue, Glottolog"
-LANG_SEM_1,Arabe standard moderne,arb,FLG_SEMITIQUE,"Ethnologue, Glottolog"
-LANG_SEM_2,Amharique,amh,FLG_SEMITIQUE,"Ethnologue, Glottolog"
-LANG_SEM_3,Tigrinya,tir,FLG_SEMITIQUE,"Ethnologue, Glottolog"
-LANG_SEM_4,H√©breu moderne,heb,FLG_SEMITIQUE,"Ethnologue, Glottolog"
-LANG_SEM_5,Arabe soudanais,apd,FLG_SEMITIQUE,"Ethnologue, Glottolog"
-LANG_BER_1,Kabyle,kab,FLG_BERBERE,"Ethnologue, Glottolog"
-LANG_BER_2,Tamazight du Moyen Atlas,tzm,FLG_BERBERE,"Ethnologue, Glottolog"
-LANG_BER_3,Tamazight du Rif (Tarifit),rif,FLG_BERBERE,"Ethnologue, Glottolog"
-LANG_BER_4,Tachelhit,shi,FLG_BERBERE,"Ethnologue, Glottolog"
-LANG_BER_5,Tamasheq (Touareg),taq,FLG_BERBERE,"Ethnologue, Glottolog"
-LANG_TCH_1,Hausa,hau,FLG_TCHADIQUE,"Ethnologue, Glottolog"
-LANG_TCH_2,Ngambay,,FLG_TCHADIQUE,"Ethnologue, Glottolog"
-LANG_TCH_3,Bura,,FLG_TCHADIQUE,"Ethnologue, Glottolog"
-LANG_TCH_4,Margi,,FLG_TCHADIQUE,"Ethnologue, Glottolog"
-LANG_TCH_5,Kotoko,,FLG_TCHADIQUE,"Ethnologue, Glottolog"
-LANG_COU_1,Somali,som,FLG_COUCHITIQUE,"Ethnologue, Glottolog"
-LANG_COU_2,Oromo (Afaan Oromo),orm,FLG_COUCHITIQUE,"Ethnologue, Glottolog"
-LANG_COU_3,Afar,aar,FLG_COUCHITIQUE,"Ethnologue, Glottolog"
-LANG_COU_4,Beja,bej,FLG_COUCHITIQUE,"Ethnologue, Glottolog"
-LANG_COU_5,Sidamo (Sidama),,FLG_COUCHITIQUE,"Ethnologue, Glottolog"
-LANG_OMO_1,Wolaytta,wal,FLG_OMOTIQUE,"Ethnologue, Glottolog"
-LANG_OMO_2,Gamo,,FLG_OMOTIQUE,"Ethnologue, Glottolog"
-LANG_OMO_3,Bench,,FLG_OMOTIQUE,"Ethnologue, Glottolog"
-LANG_OMO_4,Dizi,,FLG_OMOTIQUE,"Ethnologue, Glottolog"
-LANG_OMO_5,Kafa,,FLG_OMOTIQUE,"Ethnologue, Glottolog"
-LANG_NC_1,Swahili,swa,FLG_NIGERCONGO,"Ethnologue, Glottolog"
-LANG_NC_2,Yoruba,yor,FLG_NIGERCONGO,"Ethnologue, Glottolog"
-LANG_NC_3,Igbo,ibo,FLG_NIGERCONGO,"Ethnologue, Glottolog"
-LANG_NC_4,Fula / Fulfulde,,FLG_NIGERCONGO,"Ethnologue, Glottolog"
-LANG_NC_5,Zulu,,FLG_NIGERCONGO,"Ethnologue, Glottolog"
-LANG_ATL_1,Wolof,wol,FLG_ATLANTIQUE,"Ethnologue, Glottolog"
-LANG_ATL_2,Fula / Pulaar,,FLG_ATLANTIQUE,"Ethnologue, Glottolog"
-LANG_ATL_3,Serer,srr,FLG_ATLANTIQUE,"Ethnologue, Glottolog"
-LANG_ATL_4,Jola-Fonyi,dyo,FLG_ATLANTIQUE,"Ethnologue, Glottolog"
-LANG_ATL_5,Balanta,bjt,FLG_ATLANTIQUE,"Ethnologue, Glottolog"
-LANG_MAN_1,Bambara,bam,FLG_MANDE,"Ethnologue, Glottolog"
-LANG_MAN_2,Mandinka,mnk,FLG_MANDE,"Ethnologue, Glottolog"
-LANG_MAN_3,Soninke,snk,FLG_MANDE,"Ethnologue, Glottolog"
-LANG_MAN_4,Vai,vai,FLG_MANDE,"Ethnologue, Glottolog"
-LANG_MAN_5,Kpelle,kpe,FLG_MANDE,"Ethnologue, Glottolog"
-LANG_GUR_1,Mossi,mos,FLG_GUR,"Ethnologue, Glottolog"
-LANG_GUR_2,Dagbani,dag,FLG_GUR,"Ethnologue, Glottolog"
-LANG_GUR_3,Dagaare,dga,FLG_GUR,"Ethnologue, Glottolog"
-LANG_GUR_4,Kusaal,kus,FLG_GUR,"Ethnologue, Glottolog"
-LANG_GUR_5,Gurene (Frafra),,FLG_GUR,"Ethnologue, Glottolog"
-LANG_KRO_1,B√©t√©,,FLG_KROU,"Ethnologue, Glottolog"
-LANG_KRO_2,W√© (Gu√©r√©),,FLG_KROU,"Ethnologue, Glottolog"
-LANG_KRO_3,Dida,,FLG_KROU,"Ethnologue, Glottolog"
-LANG_KRO_4,Grebo,grb,FLG_KROU,"Ethnologue, Glottolog"
-LANG_KRO_5,Krahn,,FLG_KROU,"Ethnologue, Glottolog"
-LANG_BC_1,Yoruba,yor,FLG_BENOUECONGO,"Ethnologue, Glottolog"
-LANG_BC_2,Igbo,ibo,FLG_BENOUECONGO,"Ethnologue, Glottolog"
-LANG_BC_3,Edo,,FLG_BENOUECONGO,"Ethnologue, Glottolog"
-LANG_BC_4,Tiv,,FLG_BENOUECONGO,"Ethnologue, Glottolog"
-LANG_BC_5,Idoma,,FLG_BENOUECONGO,"Ethnologue, Glottolog"
-LANG_BAN_1,Swahili,swa,FLG_BANTU,"Ethnologue, Glottolog"
-LANG_BAN_2,Lingala,lin,FLG_BANTU,"Ethnologue, Glottolog"
-LANG_BAN_3,Kinyarwanda,,FLG_BANTU,"Ethnologue, Glottolog"
-LANG_BAN_4,Kirundi,,FLG_BANTU,"Ethnologue, Glottolog"
-LANG_BAN_5,Shona,,FLG_BANTU,"Ethnologue, Glottolog"
-LANG_NS_1,Kanuri,kau,FLG_NILOSAHARIENNE,"Ethnologue, Glottolog"
-LANG_NS_2,Songhay (Zarma),,FLG_NILOSAHARIENNE,"Ethnologue, Glottolog"
-LANG_NS_3,Dinka,din,FLG_NILOSAHARIENNE,"Ethnologue, Glottolog"
-LANG_NS_4,Nuer,nus,FLG_NILOSAHARIENNE,"Ethnologue, Glottolog"
-LANG_NS_5,Maasai,mas,FLG_NILOSAHARIENNE,"Ethnologue, Glottolog"
-LANG_NIL_1,Dinka,din,FLG_NILOTIQUE,"Ethnologue, Glottolog"
-LANG_NIL_2,Nuer,nus,FLG_NILOTIQUE,"Ethnologue, Glottolog"
-LANG_NIL_3,Maasai,mas,FLG_NILOTIQUE,"Ethnologue, Glottolog"
-LANG_NIL_4,Luo (dhoLuo),,FLG_NILOTIQUE,"Ethnologue, Glottolog"
-LANG_NIL_5,Turkana,,FLG_NILOTIQUE,"Ethnologue, Glottolog"
-LANG_SC_1,Bagirmi,,FLG_SOUDANIQUECENTRAL,"Ethnologue, Glottolog"
-LANG_SC_2,Ngambay,,FLG_SOUDANIQUECENTRAL,"Ethnologue, Glottolog"
-LANG_SC_3,Sara,,FLG_SOUDANIQUECENTRAL,"Ethnologue, Glottolog"
-LANG_SC_4,Maba,,FLG_SOUDANIQUECENTRAL,"Ethnologue, Glottolog"
-LANG_SC_5,Bongo,,FLG_SOUDANIQUECENTRAL,"Ethnologue, Glottolog"
-LANG_SAH_1,Kanuri,kau,FLG_SAHARIEN,"Ethnologue, Glottolog"
-LANG_SAH_2,Teda,,FLG_SAHARIEN,"Ethnologue, Glottolog"
-LANG_SAH_3,Daza,,FLG_SAHARIEN,"Ethnologue, Glottolog"
-LANG_SAH_4,Zaghawa,,FLG_SAHARIEN,"Ethnologue, Glottolog"
-LANG_SAH_5,Berti,,FLG_SAHARIEN,"Ethnologue, Glottolog"
-LANG_SON_1,Zarma,dje,FLG_SONGHAY,"Ethnologue, Glottolog"
-LANG_SON_2,Koyra Chiini,,FLG_SONGHAY,"Ethnologue, Glottolog"
-LANG_SON_3,Koyraboro Senni,,FLG_SONGHAY,"Ethnologue, Glottolog"
-LANG_SON_4,Dendi,,FLG_SONGHAY,"Ethnologue, Glottolog"
-LANG_SON_5,Tasawaq,,FLG_SONGHAY,"Ethnologue, Glottolog"
-LANG_KHO_1,Nama,naq,FLG_KHOISAN,"Ethnologue, Glottolog"
-LANG_KHO_2,Khoekhoe,,FLG_KHOISAN,"Ethnologue, Glottolog"
-LANG_KHO_3,Ju|'hoan,,FLG_KHOISAN,"Ethnologue, Glottolog"
-LANG_KHO_4,Taa («ÉX√≥√µ),,FLG_KHOISAN,"Ethnologue, Glottolog"
-LANG_KHO_5,Naro,,FLG_KHOISAN,"Ethnologue, Glottolog"
-LANG_KHOE_1,Nama,naq,FLG_KHOE,"Ethnologue, Glottolog"
-LANG_KHOE_2,Khoekhoe,,FLG_KHOE,"Ethnologue, Glottolog"
-LANG_KHOE_3,Shua,,FLG_KHOE,"Ethnologue, Glottolog"
-LANG_KHOE_4,Khwe,,FLG_KHOE,"Ethnologue, Glottolog"
-LANG_KHOE_5,Naro,,FLG_KHOE,"Ethnologue, Glottolog"
-LANG_KXA_1,Ju|'hoan,,FLG_KXA,"Ethnologue, Glottolog"
-LANG_KXA_2,!Kung,,FLG_KXA,"Ethnologue, Glottolog"
-LANG_KXA_3,«ÇHoan,,FLG_KXA,"Ethnologue, Glottolog"
-LANG_KXA_4,!Xun,,FLG_KXA,"Ethnologue, Glottolog"
-LANG_KXA_5,Ekoka !Kung,,FLG_KXA,"Ethnologue, Glottolog"
-LANG_TUU_1,Taa («ÉX√≥√µ),,FLG_TUU,"Ethnologue, Glottolog"
-LANG_TUU_2,N«Ång,,FLG_TUU,"Ethnologue, Glottolog"
-LANG_TUU_3,!X√≥√µ,,FLG_TUU,"Ethnologue, Glottolog"
-LANG_TUU_4,|Xam,,FLG_TUU,"Ethnologue, Glottolog"
-LANG_TUU_5,!Kwi,,FLG_TUU,"Ethnologue, Glottolog"
-LANG_AUS_1,Malagasy (Merina),plt,FLG_AUSTRONESIENNE,"Ethnologue, Glottolog"
-LANG_AUS_2,Malagasy (Sakalava),skg,FLG_AUSTRONESIENNE,"Ethnologue, Glottolog"
-LANG_AUS_3,Malagasy (Betsimisaraka),bmm,FLG_AUSTRONESIENNE,"Ethnologue, Glottolog"
-LANG_AUS_4,Malagasy (Bara),bhr,FLG_AUSTRONESIENNE,"Ethnologue, Glottolog"
-LANG_AUS_5,Comorien (Shingazidja),zdj,FLG_AUSTRONESIENNE,"Ethnologue, Glottolog"
-LANG_CRE_1,Krio (Sierra Leone),kri,FLG_CREOLE,"Ethnologue, Glottolog"
-LANG_CRE_2,Nigerian Pidgin English,,FLG_CREOLE,"Ethnologue, Glottolog"
-LANG_CRE_3,Cr√©ole cap-verdien,,FLG_CREOLE,"Ethnologue, Glottolog"
-LANG_CRE_4,Cr√©ole seychellois,,FLG_CREOLE,"Ethnologue, Glottolog"
-LANG_CRE_5,Cr√©ole mauricien,,FLG_CREOLE,"Ethnologue, Glottolog"
+id_langue,nom_langue,code_iso_639_3,id_famille,glottocode,source_title,source_url,source_doi,source_tier,source_access_date,source_notes
+LANG_SEM_1,Arabe standard moderne,arb,FLG_SEMITIQUE,stan1318,Glottolog 5.3,https://glottolog.org/resource/languoid/id/stan1318,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Standard Arabic; classification includes Semitic.
+LANG_SEM_2,Amharique,amh,FLG_SEMITIQUE,amha1245,Glottolog 5.3,https://glottolog.org/resource/languoid/id/amha1245,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Amharic; classification includes Semitic.
+LANG_SEM_3,Tigrinya,tir,FLG_SEMITIQUE,tigr1271,Glottolog 5.3,https://glottolog.org/resource/languoid/id/tigr1271,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Tigrinya; classification includes Semitic.
+LANG_SEM_4,Hébreu moderne,heb,FLG_SEMITIQUE,hebr1245,Glottolog 5.3,https://glottolog.org/resource/languoid/id/hebr1245,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Modern Hebrew; classification includes Semitic.
+LANG_SEM_5,Arabe soudanais,apd,FLG_SEMITIQUE,suda1236,Glottolog 5.3,https://glottolog.org/resource/languoid/id/suda1236,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Sudanese Arabic; classification includes Semitic.
+LANG_BER_1,Kabyle,kab,FLG_BERBERE,kaby1243,Glottolog 5.3,https://glottolog.org/resource/languoid/id/kaby1243,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Kabyle; classification includes Berber.
+LANG_BER_2,Tamazight du Moyen Atlas,tzm,FLG_BERBERE,cent2194,Glottolog 5.3,https://glottolog.org/resource/languoid/id/cent2194,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Central Moroccan Berber; classification includes Berber.
+LANG_BER_3,Tamazight du Rif (Tarifit),rif,FLG_BERBERE,tari1263,Glottolog 5.3,https://glottolog.org/resource/languoid/id/tari1263,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Tarifiyt-Beni-Iznasen-Eastern Middle Atlas Berber; classification includes Berber.
+LANG_BER_4,Tachelhit,shi,FLG_BERBERE,tach1250,Glottolog 5.3,https://glottolog.org/resource/languoid/id/tach1250,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Tachelhit; classification includes Berber.
+LANG_BER_5,Tamasheq (Touareg),taq,FLG_BERBERE,tama1365,Glottolog 5.3,https://glottolog.org/resource/languoid/id/tama1365,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Tamasheq; classification includes Berber.
+LANG_TCH_1,Hausa,hau,FLG_TCHADIQUE,haus1257,Glottolog 5.3,https://glottolog.org/resource/languoid/id/haus1257,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Hausa; classification includes Chadic.
+LANG_TCH_3,Bura,bwr,FLG_TCHADIQUE,bura1292,Glottolog 5.3,https://glottolog.org/resource/languoid/id/bura1292,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Bura-Pabir; Bura is an attested name and the classification includes Chadic.
+LANG_COU_1,Somali,som,FLG_COUCHITIQUE,soma1255,Glottolog 5.3,https://glottolog.org/resource/languoid/id/soma1255,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Somali; classification includes Cushitic.
+LANG_COU_3,Afar,aar,FLG_COUCHITIQUE,afar1241,Glottolog 5.3,https://glottolog.org/resource/languoid/id/afar1241,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Afar; classification includes Cushitic.
+LANG_COU_4,Beja,bej,FLG_COUCHITIQUE,beja1238,Glottolog 5.3,https://glottolog.org/resource/languoid/id/beja1238,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Beja; classification includes Cushitic.
+LANG_COU_5,Sidamo (Sidama),sid,FLG_COUCHITIQUE,sida1246,Glottolog 5.3,https://glottolog.org/resource/languoid/id/sida1246,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Sidamo; classification includes Cushitic.
+LANG_ATL_1,Wolof,wol,FLG_ATLANTIQUE,nucl1347,Glottolog 5.3,https://glottolog.org/resource/languoid/id/nucl1347,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Wolof; classification includes North-Central Atlantic.
+LANG_ATL_3,Serer,srr,FLG_ATLANTIQUE,sere1260,Glottolog 5.3,https://glottolog.org/resource/languoid/id/sere1260,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Sereer; classification includes North-Central Atlantic.
+LANG_ATL_4,Jola-Fonyi,dyo,FLG_ATLANTIQUE,jola1263,Glottolog 5.3,https://glottolog.org/resource/languoid/id/jola1263,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Jola-Fonyi; classification includes North-Central Atlantic.
+LANG_ATL_5,Balanta,bjt,FLG_ATLANTIQUE,bala1302,Glottolog 5.3,https://glottolog.org/resource/languoid/id/bala1302,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Balanta-Ganja; classification includes North-Central Atlantic.
+LANG_MAN_1,Bambara,bam,FLG_MANDE,bamb1269,Glottolog 5.3,https://glottolog.org/resource/languoid/id/bamb1269,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Bambara; classification includes Mande.
+LANG_MAN_2,Mandinka,mnk,FLG_MANDE,mand1436,Glottolog 5.3,https://glottolog.org/resource/languoid/id/mand1436,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Mandinka; classification includes Mande.
+LANG_MAN_3,Soninke,snk,FLG_MANDE,soni1259,Glottolog 5.3,https://glottolog.org/resource/languoid/id/soni1259,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Soninke; classification includes Mande.
+LANG_MAN_4,Vai,vai,FLG_MANDE,vaii1241,Glottolog 5.3,https://glottolog.org/resource/languoid/id/vaii1241,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Vai; classification includes Mande.
+LANG_GUR_1,Mossi,mos,FLG_GUR,moss1236,Glottolog 5.3,https://glottolog.org/resource/languoid/id/moss1236,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Mossi; classification includes Gur.
+LANG_GUR_2,Dagbani,dag,FLG_GUR,dagb1246,Glottolog 5.3,https://glottolog.org/resource/languoid/id/dagb1246,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Dagbani; classification includes Gur.
+LANG_GUR_3,Dagaare,dga,FLG_GUR,sout2789,Glottolog 5.3,https://glottolog.org/resource/languoid/id/sout2789,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Central Dagaare; classification includes Gur.
+LANG_GUR_4,Kusaal,kus,FLG_GUR,kusa1250,Glottolog 5.3,https://glottolog.org/resource/languoid/id/kusa1250,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Kusaal; classification includes Gur.
+LANG_GUR_5,Gurene (Frafra),gur,FLG_GUR,fare1241,Glottolog 5.3,https://glottolog.org/resource/languoid/id/fare1241,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Farefare; Frafra and Gurune are attested names and the classification includes Gur.
+LANG_KRO_4,Grebo,grb,FLG_KROU,greb1256,Glottolog 5.3,https://glottolog.org/resource/languoid/id/greb1256,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Liberian Grebo; classification includes Kru.
+LANG_BC_1,Yoruba,yor,FLG_BENOUECONGO,yoru1245,Glottolog 5.3,https://glottolog.org/resource/languoid/id/yoru1245,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Yoruba; classification includes Benue-Congo.
+LANG_BC_2,Igbo,ibo,FLG_BENOUECONGO,nucl1417,Glottolog 5.3,https://glottolog.org/resource/languoid/id/nucl1417,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Igbo; classification includes Benue-Congo.
+LANG_BC_3,Edo,bin,FLG_BENOUECONGO,bini1246,Glottolog 5.3,https://glottolog.org/resource/languoid/id/bini1246,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Bini; Edo is an attested name and the classification includes Benue-Congo.
+LANG_BC_4,Tiv,tiv,FLG_BENOUECONGO,tivv1240,Glottolog 5.3,https://glottolog.org/resource/languoid/id/tivv1240,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Tiv; classification includes Benue-Congo.
+LANG_BC_5,Idoma,idu,FLG_BENOUECONGO,idom1241,Glottolog 5.3,https://glottolog.org/resource/languoid/id/idom1241,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Idoma; classification includes Benue-Congo.
+LANG_BAN_2,Lingala,lin,FLG_BANTU,ling1263,Glottolog 5.3,https://glottolog.org/resource/languoid/id/ling1263,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Kinshasa Lingala; classification includes Narrow Bantu.
+LANG_BAN_3,Kinyarwanda,kin,FLG_BANTU,kiny1244,Glottolog 5.3,https://glottolog.org/resource/languoid/id/kiny1244,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Kinyarwanda; classification includes Narrow Bantu.
+LANG_BAN_4,Kirundi,run,FLG_BANTU,rund1242,Glottolog 5.3,https://glottolog.org/resource/languoid/id/rund1242,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Rundi; Kirundi is an attested name and the classification includes Narrow Bantu.
+LANG_BAN_5,Shona,sna,FLG_BANTU,shon1251,Glottolog 5.3,https://glottolog.org/resource/languoid/id/shon1251,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Shona; classification includes Narrow Bantu.
+LANG_NC_5,Zulu,zul,FLG_BANTU,zulu1248,Glottolog 5.3,https://glottolog.org/resource/languoid/id/zulu1248,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Zulu; moved from Niger-Congo to the more specific Narrow Bantu AFRIK family.
+LANG_AUS_5,Comorien (Shingazidja),zdj,FLG_BANTU,ngaz1238,Glottolog 5.3,https://glottolog.org/resource/languoid/id/ngaz1238,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Ngazidja Comorian; moved from Austronesian to the Glottolog-backed Narrow Bantu AFRIK family.
+LANG_NIL_1,Dinka,din,FLG_NILOTIQUE,dink1262,Glottolog 5.3,https://glottolog.org/resource/languoid/id/dink1262,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Dinka; classification includes Nilotic.
+LANG_NIL_2,Nuer,nus,FLG_NILOTIQUE,nuer1246,Glottolog 5.3,https://glottolog.org/resource/languoid/id/nuer1246,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Nuer; classification includes Nilotic.
+LANG_NIL_3,Maasai,mas,FLG_NILOTIQUE,masa1300,Glottolog 5.3,https://glottolog.org/resource/languoid/id/masa1300,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Masai; classification includes Nilotic.
+LANG_NIL_4,Luo (dhoLuo),luo,FLG_NILOTIQUE,luok1236,Glottolog 5.3,https://glottolog.org/resource/languoid/id/luok1236,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Luo (Kenya and Tanzania); dhoLuo disambiguates the Nilotic match.
+LANG_NIL_5,Turkana,tuv,FLG_NILOTIQUE,turk1308,Glottolog 5.3,https://glottolog.org/resource/languoid/id/turk1308,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Turkana; classification includes Nilotic.
+LANG_SC_1,Bagirmi,bmi,FLG_SOUDANIQUECENTRAL,bagi1246,Glottolog 5.3,https://glottolog.org/resource/languoid/id/bagi1246,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Bagirmi; classification includes Central Sudanic.
+LANG_SC_2,Ngambay,sba,FLG_SOUDANIQUECENTRAL,ngam1268,Glottolog 5.3,https://glottolog.org/resource/languoid/id/ngam1268,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Ngambay; classification includes Central Sudanic.
+LANG_SC_5,Bongo,bot,FLG_SOUDANIQUECENTRAL,bong1285,Glottolog 5.3,https://glottolog.org/resource/languoid/id/bong1285,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Bongo; the Central Sudanic context disambiguates the match.
+LANG_SAH_2,Teda,tuq,FLG_SAHARIEN,teda1241,Glottolog 5.3,https://glottolog.org/resource/languoid/id/teda1241,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Tedaga; Teda is an attested name and the classification includes Saharan.
+LANG_SAH_3,Daza,dzg,FLG_SAHARIEN,daza1242,Glottolog 5.3,https://glottolog.org/resource/languoid/id/daza1242,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Dazaga; the Saharan context disambiguates the match.
+LANG_SAH_4,Zaghawa,zag,FLG_SAHARIEN,zagh1240,Glottolog 5.3,https://glottolog.org/resource/languoid/id/zagh1240,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Beria; Zaghawa is an attested name and the classification includes Saharan.
+LANG_SAH_5,Berti,byt,FLG_SAHARIEN,bert1249,Glottolog 5.3,https://glottolog.org/resource/languoid/id/bert1249,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Berti; classification includes Saharan.
+LANG_SON_1,Zarma,dje,FLG_SONGHAY,zarm1239,Glottolog 5.3,https://glottolog.org/resource/languoid/id/zarm1239,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Zarma-Kaado; classification includes Songhay.
+LANG_SON_2,Koyra Chiini,khq,FLG_SONGHAY,koyr1240,Glottolog 5.3,https://glottolog.org/resource/languoid/id/koyr1240,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Koyra Chiini Songhay; classification includes Songhay.
+LANG_SON_3,Koyraboro Senni,ses,FLG_SONGHAY,koyr1242,Glottolog 5.3,https://glottolog.org/resource/languoid/id/koyr1242,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Koyraboro Senni Songhai; classification includes Songhay.
+LANG_SON_4,Dendi,ddn,FLG_SONGHAY,dend1243,Glottolog 5.3,https://glottolog.org/resource/languoid/id/dend1243,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Dendi (Benin); the Songhay context disambiguates the match.
+LANG_SON_5,Tasawaq,twq,FLG_SONGHAY,tasa1240,Glottolog 5.3,https://glottolog.org/resource/languoid/id/tasa1240,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Tasawaq; classification includes Songhay.
+LANG_KHOE_1,Nama,naq,FLG_KHOE,nama1264,Glottolog 5.3,https://glottolog.org/resource/languoid/id/nama1264,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Nama (Namibia); classification includes Khoe.
+LANG_KHOE_3,Shua,shg,FLG_KHOE,shua1254,Glottolog 5.3,https://glottolog.org/resource/languoid/id/shua1254,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Shua; classification includes Khoe.
+LANG_KHOE_4,Khwe,xuu,FLG_KHOE,kxoe1243,Glottolog 5.3,https://glottolog.org/resource/languoid/id/kxoe1243,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Kxoe; Khwe is an attested name and the classification includes Khoe.
+LANG_KHOE_5,Naro,nhr,FLG_KHOE,naro1249,Glottolog 5.3,https://glottolog.org/resource/languoid/id/naro1249,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Naro; classification includes Khoe.
+LANG_KXA_1,Ju|'hoan,ktz,FLG_KXA,juho1239,Glottolog 5.3,https://glottolog.org/resource/languoid/id/juho1239,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: South-Eastern Ju; Ju|'hoan is an attested name and the classification includes Kxa.
+LANG_KXA_3,ǂHoan,huc,FLG_KXA,hoaa1235,Glottolog 5.3,https://glottolog.org/resource/languoid/id/hoaa1235,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Amkoe; ǂHoan is an attested name and the classification includes Kxa.
+LANG_KXA_5,Ekoka !Kung,knw,FLG_KXA,kung1261,Glottolog 5.3,https://glottolog.org/resource/languoid/id/kung1261,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: North-Central Ju; Ekoka and !Kung are attested names and the classification includes Kxa.
+LANG_TUU_2,Nǁng,ngh,FLG_TUU,nngg1234,Glottolog 5.3,https://glottolog.org/resource/languoid/id/nngg1234,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: N||ng; classification includes Tuu.
+LANG_TUU_4,|Xam,xam,FLG_TUU,xamm1241,Glottolog 5.3,https://glottolog.org/resource/languoid/id/xamm1241,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: /Xam; classification includes Tuu.
+LANG_AUS_1,Malagasy (Merina),plt,FLG_AUSTRONESIENNE,plat1254,Glottolog 5.3,https://glottolog.org/resource/languoid/id/plat1254,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Plateau Malagasy; classification includes Austronesian.
+LANG_AUS_2,Malagasy (Sakalava),skg,FLG_AUSTRONESIENNE,saka1291,Glottolog 5.3,https://glottolog.org/resource/languoid/id/saka1291,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: West Malagasy Sakalava; classification includes Austronesian.
+LANG_AUS_3,Malagasy (Betsimisaraka),bmm,FLG_AUSTRONESIENNE,nort2890,Glottolog 5.3,https://glottolog.org/resource/languoid/id/nort2890,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Northern Betsimisaraka Malagasy; classification includes Austronesian.
+LANG_AUS_4,Malagasy (Bara),bhr,FLG_AUSTRONESIENNE,bara1369,Glottolog 5.3,https://glottolog.org/resource/languoid/id/bara1369,10.5281/zenodo.18840967,1,2026-07-29,Glottolog name: Bara Malagasy; classification includes Austronesian.
