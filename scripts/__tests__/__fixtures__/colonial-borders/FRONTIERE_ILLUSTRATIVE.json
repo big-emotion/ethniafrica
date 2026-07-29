@@ -1,0 +1,21 @@
+{
+  "id": "FRONTIERE_ILLUSTRATIVE",
+  "title_fr": "Partition du Togoland allemand (illustrative, not data)",
+  "reference_period": "1919-1922",
+  "colonial_powers": ["GHA", "TGO"],
+  "geometry_file": "FRONTIERE_ILLUSTRATIVE.geojson",
+  "simplification_note": "Géométrie fictive à faible résolution, utilisée uniquement pour valider les règles CR1/CR2 du validateur — ne représente aucune frontière réelle.",
+  "sources": [
+    {
+      "reference": "UNESCO General History of Africa, Vol. VII — L'Afrique sous domination coloniale, 1880-1935",
+      "tier": 1,
+      "notes": "Source primaire UNESCO, chapitre sur le partage du Togoland entre la Grande-Bretagne et la France (mandat SDN 1922)."
+    },
+    {
+      "reference": "Sebald, Peter (1988). Togo 1884-1914 — Eine Geschichte der deutschen 'Musterkolonie' auf der Grundlage amtlicher Quellen. Akademie-Verlag.",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia EN (\"Togoland\") + FR (\"Togoland\") + DE (\"Togoland\") — source primaire localisée dans la bibliographie de l'article : Sebald (1988), étude académique sur les archives officielles allemandes du Togo."
+    }
+  ],
+  "license": "CC-BY-SA-4.0"
+}
