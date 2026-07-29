@@ -4,11 +4,11 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 const migration = readFileSync(
-  resolve(process.cwd(), "supabase/migrations/028_names_atlas.sql"),
+  resolve(process.cwd(), "supabase/migrations/029_names_atlas.sql"),
   "utf8"
 );
 
-describe("028_names_atlas.sql migration contract", () => {
+describe("029_names_atlas.sql migration contract", () => {
   // @req REQ-007
   it("declares the name_record_type enum idempotently", () => {
     expect(migration).toContain(
