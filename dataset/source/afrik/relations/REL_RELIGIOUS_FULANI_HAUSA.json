@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "relation",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "REL_RELIGIOUS_FULANI_HAUSA",
+  "relationType": "religious",
+  "peopleIdA": "PPL_FULANI",
+  "peopleIdB": "PPL_HAUSA",
+  "direction": "a_to_b",
+  "period": {
+    "startYear": 1804,
+    "endYear": 1808,
+    "label": "XIXe siècle (1804-1808)"
+  },
+  "description": "En 1804, Usman dan Fodio, érudit et réformateur musulman peul, lance un jihad contre les États haoussa, reprochant à leurs dirigeants de mêler la pratique islamique à la religion traditionnelle et d'appliquer incomplètement la loi islamique. Ce jihad (1804-1808) renverse les rois haoussa, les remplace par des émirs peuls fidèles à Usman, et établit le califat de Sokoto, un État organisé autour d'une application plus stricte et réformiste de l'islam.",
+  "sources": [
+    {
+      "title": "General History of Africa, Vol. VI: Africa in the Nineteenth Century until the 1880s, chapitre « The Sokoto Caliphate and Borno »",
+      "author": "M. Last (chapitre) ; J.F. Ade Ajayi (direction du volume) ; Comité scientifique international de l'UNESCO",
+      "year": 1989,
+      "url": "https://archive.org/details/unescogeneralhis00jfad",
+      "tier": 1,
+      "notes": "Histoire générale de l'Afrique de l'UNESCO, vol. VI, chapitre consacré au califat de Sokoto et au Bornou par l'historien Murray Last. Le lien direct unesdoc.unesco.org renvoie une erreur 403 (blocage automatisé) dans cet environnement ; la copie Internet Archive de la même publication officielle de l'UNESCO a été utilisée et confirmée accessible."
+    }
+  ]
+}
