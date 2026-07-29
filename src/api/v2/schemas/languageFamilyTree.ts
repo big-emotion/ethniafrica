@@ -1,8 +1,19 @@
 /**
- * Zod schemas for GET /v2/language-families/{id}/tree/branch (Epic 7, FR48).
+ * Zod schemas for GET /v2/language-families/{id}/tree (FR48, FR33) and
+ * GET /v2/language-families/{id}/tree/branch (Epic 7, FR48).
  */
 
 import { z } from "zod";
+
+export const languageFamilyTreeParamSchema = z.object({
+  id: z.string().regex(/^FLG_[A-Z_]+$/, {
+    message: "Invalid language family id format (expected FLG_*)",
+  }),
+});
+
+export type LanguageFamilyTreeParam = z.infer<
+  typeof languageFamilyTreeParamSchema
+>;
 
 export const languageFamilyTreeBranchParamSchema = z.object({
   id: z.string().regex(/^FLG_[A-Z_]+$/, {
