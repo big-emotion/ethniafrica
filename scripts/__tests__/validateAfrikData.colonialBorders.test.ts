@@ -9,6 +9,21 @@ import {
 // ─── helpers ──────────────────────────────────────────────────────────────────
 
 const FIXTURES_DIR = join(__dirname, "__fixtures__", "colonial-borders");
+const REAL_DATASET_ROOT = join(
+  __dirname,
+  "..",
+  "..",
+  "dataset",
+  "source",
+  "afrik"
+);
+const REAL_PAYS_CSV = join(
+  __dirname,
+  "..",
+  "..",
+  "public",
+  "pays_demographie.csv"
+);
 
 function writePaysCsv(csvPath: string, ids: string[]) {
   const header = "id_pays,nom_pays,population_totale_2025,source,annee\n";
@@ -289,6 +304,28 @@ describe("validateAfrikData – colonial-border checks (CR1-CR2)", () => {
       const result = checkColonialBorderCr2(tmpDir, csvPath);
       expect(result.ok).toBe(false);
       expect(result.errors.some((e) => e.includes("CR2"))).toBe(true);
+    });
+  });
+
+  // ── ETNI-527 descope decision ──────────────────────────────────────────────
+  // No Tier 1/2 colonial-border dataset was found with a license compatible
+  // with CC-BY-SA-4.0 redistribution (see docs/adr/0004-colonial-borders-sourcing-descope.md).
+  // AC3 of ETNI-527 requires that no boundary is ever hand-drawn or invented,
+  // so dataset/source/afrik/geo/colonial_borders/ stays empty. This test
+  // guards that invariant against an unreviewed future addition.
+  describe("real dataset state matches the ETNI-527 descope decision", () => {
+    // @req REQ-092 @req REQ-093
+    it("has no committed colonial-border layer, so CR1/CR2 pass trivially", () => {
+      const cr1 = checkColonialBorderCr1(REAL_DATASET_ROOT);
+      const cr2 = checkColonialBorderCr2(REAL_DATASET_ROOT, REAL_PAYS_CSV);
+
+      expect(cr1.ok).toBe(true);
+      expect(cr1.errors).toHaveLength(0);
+      expect(cr2.ok).toBe(true);
+      expect(cr2.errors).toHaveLength(0);
+      expect(
+        existsSync(join(REAL_DATASET_ROOT, "geo", "colonial_borders"))
+      ).toBe(false);
     });
   });
 });
