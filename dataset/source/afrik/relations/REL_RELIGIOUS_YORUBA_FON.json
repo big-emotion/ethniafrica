@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "relation",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "REL_RELIGIOUS_YORUBA_FON",
+  "relationType": "religious",
+  "peopleIdA": "PPL_YORUBA",
+  "peopleIdB": "PPL_FON",
+  "direction": "bidirectional",
+  "period": {
+    "startYear": 1727,
+    "endYear": 1823,
+    "label": "XVIIIe-XIXe siècle (vassalité du Dahomey envers Oyo, 1727-1823)"
+  },
+  "description": "Le culte yoruba des orisha et le vaudou fon partagent un substrat religieux régional commun, que les ethnographes font remonter aux peuples de langue aja de la région de Tado, antérieur à l'essor des royaumes d'Oyo et du Dahomey ; chez les locuteurs fon, le terme vodún est globalement considéré comme synonyme du terme yoruba òrìṣà. Pendant la période où le Dahomey est un État vassal tributaire de l'empire d'Oyo (vers 1727-1823), la cour fon adopte en outre spécifiquement le système de divination yoruba du Fá (Ifá) ainsi que les cultes Orò et Egúngún. Les chercheurs décrivent donc cette relation comme un substrat partagé renforcé par un emprunt documenté, à sens unique et de niveau curial (du yoruba vers le fon), pendant la période de domination politique d'Oyo, plutôt que comme une transmission fondatrice à sens unique.",
+  "sources": [
+    {
+      "title": "Vodún: Secrecy and the Search for Divine Power",
+      "author": "Timothy R. Landry",
+      "year": 2019,
+      "url": "https://books.google.com/books/about/Vodun.html?id=zdFwDwAAQBAJ",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia EN « Vodun », qui cite Landry 2019 (p. 5, 53-54, 57) pour l'adoption par les Fon des cultes Fá, Orò et Egúngún d'origine yoruba pendant la vassalité envers Oyo (1727-1823) ; et via Wikipedia FR « Vaudou », qui présente plutôt le vaudou comme issu de la rencontre des cultes yoruba/aja/fon/éwé dans le royaume d'Abomey (XVIIe-XVIIIe s.), en citant l'Encyclopédie Universalis. La divergence d'accent entre les deux versions linguistiques confirme la nature nuancée, non strictement unidirectionnelle, de la relation. Éditeur : University of Pennsylvania Press."
+    },
+    {
+      "title": "African Vodun: Art, Psychology, and Power",
+      "author": "Suzanne Preston Blier",
+      "year": 1995,
+      "url": "https://books.google.com/books/about/African_Vodun.html?id=8t3uCXojiDcC",
+      "tier": 2,
+      "notes": "Vérifié via le même chemin Wikipedia (EN « Vodun » / FR « Vaudou »). Monographie académique (University of Chicago Press, 1995) sur l'art et la cosmologie du vaudou fon-yoruba, corroborant le substrat religieux régional commun aja-fon-yoruba."
+    }
+  ]
+}

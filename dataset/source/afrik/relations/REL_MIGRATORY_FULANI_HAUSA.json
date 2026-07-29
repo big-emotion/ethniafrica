@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "relation",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "REL_MIGRATORY_FULANI_HAUSA",
+  "relationType": "migratory",
+  "peopleIdA": "PPL_FULANI",
+  "peopleIdB": "PPL_HAUSA",
+  "direction": "a_to_b",
+  "period": {
+    "startYear": 1300,
+    "endYear": 1800,
+    "label": "XIVe-XVIIIe siècle"
+  },
+  "description": "À partir du XIVe siècle environ, des pasteurs peuls migrent progressivement vers les cités-États haoussa, où ils s'installent par vagues successives, notamment dans les régions de Katsina, Kebbi et Zamfara, sans campagne de conquête organisée. Leur nombre croît lentement mais régulièrement : intégrés à l'économie locale par l'échange de produits laitiers contre des céréales et par des accords de pâturage, ils forment une minorité importante dans la région dès le milieu du XVIIIe siècle. Cette installation progressive précède de plusieurs siècles le jihad peul de 1804 dirigé par Usman dan Fodio.",
+  "sources": [
+    {
+      "title": "General History of Africa, Volume V: Africa from the Sixteenth to the Eighteenth Century (abridged edition), chapitre « The Hausa States »",
+      "author": "D. Laya (chapitre), sous la direction de B.A. Ogot",
+      "year": 1999,
+      "url": "https://www.maktaba.org/book/1154/general-history-of-africa-volume-5-africa-from-the-sixteenth-to-the-eighteenth-ce",
+      "tier": 1,
+      "notes": "Histoire générale de l'Afrique de l'UNESCO. Texte intégral consulté et confirmant (p. 242) : « The Fulbe, with their sheep and cattle, settled in several areas of Katsina, Kebbi and Zamfara », et documentant la présence peule au sein de la noblesse des États haoussa."
+    },
+    {
+      "title": "The Fulani Empire of Sokoto, chapitre 2 « The Fulani »",
+      "author": "H.A.S. Johnston",
+      "year": 1967,
+      "url": "https://www.webpulaaku.site/defte/hasJohnston/ch02.html",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia EN « Fula people » (datation par tradition orale de Delafosse de la migration peule vers l'est aux XIe-XIVe siècles) et FR « Peuls » (dispersion au XIIe siècle vers le lac Tchad/nord du Cameroun). Johnston situe l'arrivée des premiers Peuls en pays haoussa vers 1300 au plus tôt, et décrit une installation progressive jusqu'à former, au milieu du XVIIIe siècle, une minorité importante. Éditeur : Oxford University Press, Londres/Ibadan/Nairobi, 1967."
+    }
+  ]
+}

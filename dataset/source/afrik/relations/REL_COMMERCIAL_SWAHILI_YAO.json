@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "relation",
+    "directives": "Voir DIRECTIVES-AFRIK.md pour les règles de rédaction complètes."
+  },
+  "id": "REL_COMMERCIAL_SWAHILI_YAO",
+  "relationType": "commercial",
+  "peopleIdA": "PPL_SWAHILI",
+  "peopleIdB": "PPL_YAO",
+  "direction": "bidirectional",
+  "period": {
+    "startYear": 1780,
+    "endYear": 1890,
+    "label": "Fin XVIIIe - XIXe siècle"
+  },
+  "description": "À partir de la fin du XVIIIe siècle, les marchands yao de l'arrière-pays du lac Nyasa organisent des caravanes longue distance transportant de l'ivoire, puis de plus en plus des captifs, vers les villes marchandes swahili et arabes de la côte est-africaine, notamment Kilwa. En retour, les chefs de caravane yao obtiennent des étoffes, des perles, des armes à feu et d'autres biens fournis par les marchands swahili et de l'océan Indien. Cet échange s'intensifie au cours du XIXe siècle avec la croissance de la demande côtière et internationale d'ivoire et d'esclaves, ce qui restructure l'organisation politique yao autour du commerce à longue distance, avant de décliner sous la domination coloniale à la fin du siècle.",
+  "sources": [
+    {
+      "title": "Trade, State and Society among the Yao in the Nineteenth Century",
+      "author": "Edward A. Alpers",
+      "year": 1969,
+      "url": "https://library.au.int/fr/trade-state-and-society-among-yao-19th-century-2",
+      "tier": 2,
+      "notes": "Vérifié via Wikipedia EN « Yao people (East Africa) » et « Interregional caravan trade in East Africa », qui désignent Alpers comme l'autorité académique de référence sur le commerce yao-Kilwa. Article évalué par les pairs, The Journal of African History, vol. 10, n°3, p. 405-420, Cambridge University Press."
+    },
+    {
+      "title": "Ivory and Slaves: Changing Pattern of International Trade in East Central Africa to the Later Nineteenth Century",
+      "author": "Edward A. Alpers",
+      "year": 1975,
+      "url": "https://www.fulcrum.org/concern/monographs/xd07gs84x",
+      "tier": 2,
+      "notes": "Vérifié via le même chemin Wikipedia (EN « Yao people (East Africa) »). Monographie académique de référence (Heinemann / University of California Press, 1975) sur le commerce yao-swahili d'ivoire et d'esclaves via Kilwa."
+    }
+  ]
+}
