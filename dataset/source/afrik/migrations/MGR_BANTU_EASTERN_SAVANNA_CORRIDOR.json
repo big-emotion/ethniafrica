@@ -1,0 +1,48 @@
+{
+  "id": "MGR_BANTU_EASTERN_SAVANNA_CORRIDOR",
+  "nameMain": "Expansion orientale à travers le corridor savanicole vers les Grands Lacs",
+  "migrationGroup": "bantu-expansion",
+  "eventType": "expansion",
+  "classificationStatus": "reconstructive",
+  "timeRange": {
+    "startYear": -1500,
+    "endYear": -500,
+    "datingNote": null
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [15.3, -4.3],
+      [22.0, -3.0],
+      [29.3, -4.9],
+      [32.5, -1.0]
+    ]
+  },
+  "peoplesInvolved": [
+    { "id": "PPL_KONGO", "role": "origin" },
+    { "id": "PPL_HAYA", "role": "destination" },
+    { "id": "PPL_BAGANDA", "role": "destination" },
+    { "id": "PPL_NYAMWEZI", "role": "destination" }
+  ],
+  "content": {
+    "summary": "Deuxième phase de l'expansion bantoue : depuis la région du confluent Kwa-Congo, une dispersion vers l'est le long de la lisière forêt-savane atteint le grand Rift occidental et la région des Grands Lacs, où l'archéologie situe l'apparition de la poterie Urewe, marqueur du Bantou oriental ancien.",
+    "narrative": "Depuis la région du confluent du Kwa et du Congo, Grollemund et al. (2015) montrent que la dispersion bantoue s'est poursuivie vers l'est, sur environ 1 500 km, en suivant la mosaïque forêt-savane qui borde au sud la forêt équatoriale, plutôt qu'en traversant directement le massif forestier. Cette route orientale conduit les populations bantoues jusqu'au grand Rift occidental, à proximité du lac Tanganyika, ouvrant l'accès à la région des Grands Lacs. Bostoen (2018, Oxford Research Encyclopedia of African History) situe l'arrivée de communautés bantoues à l'ouest du lac Victoria vers le Ve siècle av. J.-C., une datation étayée par la diffusion de la céramique Urewe, associée archéologiquement au premier âge du fer bantou oriental et aujourd'hui présente sur les territoires historiques de peuples comme les Haya, les Baganda et les Nyamwezi.",
+    "debate": null,
+    "sources": [
+      {
+        "title": "Bantu expansion shows that habitat alters the route and pace of human dispersals",
+        "url": "https://doi.org/10.1073/pnas.1503793112",
+        "year": 2015,
+        "tier": 2,
+        "notes": "Grollemund, Branford, Bostoen, Meade, Venditti & Pagel, Proceedings of the National Academy of Sciences 112(43). Référence confirmée dans la bibliographie de la page anglaise de Wikipédia « Bantu expansion »."
+      },
+      {
+        "title": "The Bantu Expansion",
+        "url": "https://doi.org/10.1093/acrefore/9780190277734.013.191",
+        "year": 2018,
+        "tier": 2,
+        "notes": "Bostoen, Oxford Research Encyclopedia of African History. Cité comme source académique primaire (synthèse de la chronologie de l'expansion) dans la page anglaise de Wikipédia « Bantu expansion »."
+      }
+    ]
+  }
+}
