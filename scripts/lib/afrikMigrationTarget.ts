@@ -1,11 +1,16 @@
-export interface StagingTargetInput {
+export const AFRIK_PRODUCTION_SUPABASE_URL =
+  "https://shmrjtnfbqzceovroqjj.supabase.co";
+
+export type AfrikMigrationTarget = "staging" | "production";
+
+export interface AfrikMigrationTargetInput {
   target?: string;
   activeSupabaseUrl?: string;
   expectedStagingSupabaseUrl?: string;
 }
 
-export interface ValidatedStagingTarget {
-  target: "staging";
+export interface ValidatedAfrikMigrationTarget {
+  target: AfrikMigrationTarget;
   supabaseUrl: string;
 }
 
@@ -37,21 +42,37 @@ function parseSupabaseOrigin(label: string, value?: string): string {
   return url.origin;
 }
 
-export function validateStagingTarget(
-  input: StagingTargetInput
-): ValidatedStagingTarget {
+export function validateAfrikMigrationTarget(
+  input: AfrikMigrationTargetInput
+): ValidatedAfrikMigrationTarget {
   if (!input.target) {
     throw new Error("Migration target identity is required");
   }
 
-  if (input.target !== "staging") {
-    throw new Error('Migration target must be exactly "staging"');
+  if (input.target !== "staging" && input.target !== "production") {
+    throw new Error(
+      'Migration target must be exactly "staging" or "production"'
+    );
   }
 
   const activeSupabaseUrl = parseSupabaseOrigin(
     "Active Supabase URL",
     input.activeSupabaseUrl
   );
+
+  if (input.target === "production") {
+    if (activeSupabaseUrl !== AFRIK_PRODUCTION_SUPABASE_URL) {
+      throw new Error(
+        "Active Supabase URL does not match the locked production project"
+      );
+    }
+
+    return {
+      target: "production",
+      supabaseUrl: activeSupabaseUrl,
+    };
+  }
+
   const expectedStagingSupabaseUrl = parseSupabaseOrigin(
     "Configured staging Supabase URL",
     input.expectedStagingSupabaseUrl

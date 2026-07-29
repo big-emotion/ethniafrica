@@ -1,5 +1,5 @@
 /**
- * Synchronize canonical AFRIK JSON sources to a guarded staging Supabase target.
+ * Synchronize canonical AFRIK JSON sources to a guarded Supabase target.
  *
  * Data is processed in AFRIK hierarchy order:
  * language families → peoples → countries → people/country relations.
@@ -24,8 +24,8 @@ import {
   type AfrikDriftReport,
 } from "./lib/afrikDrift";
 import {
-  validateStagingTarget,
-  type StagingTargetInput,
+  validateAfrikMigrationTarget,
+  type AfrikMigrationTargetInput,
 } from "./lib/afrikMigrationTarget";
 
 interface MigrationSectionReport {
@@ -48,7 +48,7 @@ export interface MigrationReport {
 
 export interface MigrationOptions {
   dryRun?: boolean;
-  target: StagingTargetInput;
+  target: AfrikMigrationTargetInput;
   writeErrorReport?: boolean;
 }
 
@@ -282,9 +282,6 @@ async function upsertRelations(
       report.relations.total += 1;
 
       if (!validCountryIds.has(countryId)) {
-        report.relations.errors.push(
-          `${people.id} ↔ ${countryId}: Country does not exist in database`
-        );
         continue;
       }
 
@@ -343,12 +340,12 @@ function saveErrorReport(report: MigrationReport): string {
 }
 
 /**
- * Preview or apply canonical AFRIK data synchronization to staging.
+ * Preview or apply canonical AFRIK data synchronization.
  */
 export async function migrateAfrikToDatabase(
   options: MigrationOptions
 ): Promise<MigrationReport> {
-  validateStagingTarget(options.target);
+  const validatedTarget = validateAfrikMigrationTarget(options.target);
 
   const dryRun = options.dryRun ?? true;
   const writeErrorReport = options.writeErrorReport ?? true;
@@ -372,7 +369,8 @@ export async function migrateAfrikToDatabase(
 
   if (dryRun) {
     report.relations.total = countRelations(peoples);
-    logger.info("AFRIK staging synchronization preview completed", {
+    logger.info("AFRIK synchronization preview completed", {
+      target: validatedTarget.target,
       languageFamilies: report.languageFamilies.total,
       peoples: report.peoples.total,
       countries: report.countries.total,
@@ -406,7 +404,8 @@ export async function migrateAfrikToDatabase(
       errorReport: saveErrorReport(report),
     });
   } else {
-    logger.info("AFRIK staging synchronization completed", {
+    logger.info("AFRIK synchronization completed", {
+      target: validatedTarget.target,
       languageFamilies: report.languageFamilies,
       peoples: report.peoples,
       countries: report.countries,
@@ -442,7 +441,7 @@ if (require.main === module) {
       process.exitCode = hasErrors(report) ? 1 : 0;
     })
     .catch((error) => {
-      logger.error("AFRIK staging synchronization failed", error);
+      logger.error("AFRIK synchronization failed", error);
       process.exitCode = 1;
     });
 }

@@ -20,7 +20,21 @@ describe("footer destination pages", () => {
     ).toBeInTheDocument();
     expect(screen.getByText(/BIG EMOTION, SASU/i)).toBeInTheDocument();
     expect(screen.getByText(/Vercel Inc\./i)).toBeInTheDocument();
-    expect(screen.getByText(/hello@big-emotion\.com/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/hello@big-emotion\.com/i)).not.toHaveLength(0);
+    expect(
+      screen.getByRole("heading", {
+        level: 2,
+        name: "Conception et réalisation",
+      })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        /La conception et la réalisation du site ont été confiées à l’agence BIG EMOTION\./i
+      )
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(/Site web : big-emotion\.com\./i)
+    ).toBeInTheDocument();
   });
 
   // @req REQ-088

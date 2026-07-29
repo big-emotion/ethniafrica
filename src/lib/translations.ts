@@ -66,6 +66,14 @@ export const translations = {
             paragraphs: ["Jean-Noé Kollo, président de BIG EMOTION."],
           },
           {
+            title: "Conception et réalisation",
+            paragraphs: [
+              "La conception et la réalisation du site ont été confiées à l’agence BIG EMOTION.",
+              "Site web : big-emotion.com.",
+              "Courriel : hello@big-emotion.com.",
+            ],
+          },
+          {
             title: "Hébergement",
             paragraphs: [
               "Le site est hébergé et distribué par Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, États-Unis. Les services applicatifs et les données du projet sont configurés selon les régions documentées dans l’infrastructure d’EthniAfrica.",

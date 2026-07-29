@@ -213,6 +213,11 @@ Admin authentication uses Supabase Auth with OAuth (GitHub, Google) and magic-li
 - **Board**: https://big-emotion.atlassian.net/jira/software/projects/ETNI/boards/67
 - **Active sprint**: Sprint 3 (ID: 101)
 
+### Module wave (epics 7–14, ETNI-452 → ETNI-543)
+
+- **Implementation order lives in Jira ticket ETNI-544** (`[Delivery Plan]`) and `_bmad-output/jira-sync-2026-07-29.md`. **Before implementing any ticket of this wave — or when asked to "implement the next ticket" — read ETNI-544 first**, check ticket statuses against its wave order, and pick the first non-done, non-blocked ticket. Hard cross-epic dependencies are encoded as Jira `Blocks` links; every wave ticket links `relates to ETNI-544`.
+- Module specs (the source of truth for each epic): `_bmad-output/planning-artifacts/module-specs/`.
+
 ## Documentation References
 
 - `docs/archive/PROJET_ETHNIAFRICA.md` — Complete project documentation (archived)

@@ -1,0 +1,70 @@
+name: Production AFRIK Data Sync
+
+on:
+  deployment_status:
+
+concurrency:
+  group: production-afrik-data-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  sync:
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      github.event.deployment.environment == 'Production' &&
+      github.event.deployment.creator.login == 'vercel[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      NEXT_PUBLIC_SUPABASE_URL: https://shmrjtnfbqzceovroqjj.supabase.co
+      SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+      PRODUCTION_REVALIDATE_SECRET: ${{ secrets.PRODUCTION_REVALIDATE_SECRET }}
+
+    steps:
+      - name: Check out the deployed commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.deployment.sha }}
+          fetch-depth: 0
+
+      - name: Verify the deployed commit belongs to main
+        env:
+          DEPLOYED_SHA: ${{ github.event.deployment.sha }}
+        run: git merge-base --is-ancestor "$DEPLOYED_SHA" origin/main
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Require production credentials
+        run: |
+          : "${SUPABASE_SERVICE_ROLE_KEY:?SUPABASE_SERVICE_ROLE_KEY is required}"
+
+      - name: Validate canonical AFRIK sources
+        env:
+          CHECK_SOURCE_URLS: "false"
+        run: npx tsx scripts/validateAfrikData.ts
+
+      - name: Preview production synchronization
+        run: npx tsx scripts/migrateAfrikToDatabase.ts --target=production
+
+      - name: Apply and verify production synchronization
+        run: npx tsx scripts/migrateAfrikToDatabase.ts --target=production --apply
+
+      - name: Invalidate production AFRIK caches
+        if: env.PRODUCTION_REVALIDATE_SECRET != ''
+        run: |
+          curl --fail-with-body --silent --show-error \
+            --request POST \
+            --header "Authorization: Bearer ${PRODUCTION_REVALIDATE_SECRET}" \
+            --header "Content-Type: application/json" \
+            --data '{"tags":["afrik-language-families","afrik-peoples","afrik-countries"]}' \
+            https://ethniafrica.com/api/admin/revalidate

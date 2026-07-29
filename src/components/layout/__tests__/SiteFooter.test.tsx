@@ -57,6 +57,7 @@ describe("SiteFooter", () => {
       screen.getByText("Conçu avec émotion pour l’Afrique.")
     ).toBeInTheDocument();
     expect(partnerLogo).toHaveClass("w-16");
+    expect(partnerLogo).not.toHaveClass("opacity-80");
   });
 
   // @req REQ-047

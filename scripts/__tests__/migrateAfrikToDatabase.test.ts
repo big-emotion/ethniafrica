@@ -7,6 +7,7 @@ import { createAdminClient } from "@/lib/supabase/admin";
 import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
 import { loadAllLanguageFamilies } from "@/lib/afrik/loaders/languageFamilyLoader";
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
+import { AFRIK_PRODUCTION_SUPABASE_URL } from "../lib/afrikMigrationTarget";
 import { migrateAfrikToDatabase } from "../migrateAfrikToDatabase";
 import type { LanguageFamily, People } from "@/types/afrik";
 
@@ -108,7 +109,8 @@ describe("migrateAfrikToDatabase", () => {
     vi.mocked(loadAllCountries).mockResolvedValue([coteDIvoire]);
   });
 
-  it("validates the staging target before constructing the admin client", async () => {
+  // @req REQ-032
+  it("rejects a mismatched production project before constructing the admin client", async () => {
     await expect(
       migrateAfrikToDatabase({
         dryRun: true,
@@ -119,9 +121,28 @@ describe("migrateAfrikToDatabase", () => {
           expectedStagingSupabaseUrl: STAGING_URL,
         },
       })
-    ).rejects.toThrow('Migration target must be exactly "staging"');
+    ).rejects.toThrow(
+      "Active Supabase URL does not match the locked production project"
+    );
 
     expect(createAdminClient).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-032
+  it("previews the locked production target without writing", async () => {
+    const database = useSupabaseDouble();
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: true,
+      writeErrorReport: false,
+      target: {
+        target: "production",
+        activeSupabaseUrl: AFRIK_PRODUCTION_SUPABASE_URL,
+      },
+    });
+
+    expect(report.verification.before.hasDrift).toBe(true);
+    expect(database.operations).toHaveLength(0);
   });
 
   it("reports source/database drift in dry-run mode without writing", async () => {
@@ -189,6 +210,51 @@ describe("migrateAfrikToDatabase", () => {
     expect(report.verification.before.hasDrift).toBe(true);
     expect(report.verification.after).toMatchObject({ hasDrift: false });
     expect(report.verification.errors).toEqual([]);
+  });
+
+  // @req REQ-032
+  it("skips diaspora relations outside the AFRIK country catalog", async () => {
+    vi.mocked(loadAllPeoples).mockResolvedValue([
+      {
+        ...peopleFixture,
+        currentCountries: [coteDIvoire.id, "FRA"],
+      },
+    ]);
+    const database = useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          { id: afroasiaticFamily.id, content: {} },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [{ id: betePeople.id, content: {} }],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: stagingTarget,
+    });
+
+    expect(report.relations).toMatchObject({
+      total: 2,
+      inserted: 1,
+      errors: [],
+    });
+    expect(
+      database.operations.filter(
+        ({ table }) => table === "afrik_people_countries"
+      )
+    ).toEqual([
+      {
+        table: "afrik_people_countries",
+        row: {
+          people_id: betePeople.id,
+          country_id: coteDIvoire.id,
+        },
+      },
+    ]);
   });
 
   it("reports residual drift when successful writes do not synchronize content", async () => {
