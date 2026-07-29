@@ -9,6 +9,7 @@
 @import "./styles/tokens/radius.css";
 @import "./styles/country-tokens.css";
 @import "./styles/people-tokens.css";
+@import "./styles/home-nav.css";
 
 @tailwind base;
 @tailwind components;

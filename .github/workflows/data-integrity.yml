@@ -25,13 +25,13 @@ jobs:
         run: npm ci --legacy-peer-deps
 
       # Enforced FR32 gate. Failures block the PR / push.
-      - name: Run data-integrity validation (PR/push)
+      - name: Run FR52-inclusive data-integrity validation (PR/push)
         if: github.event_name != 'schedule'
         run: npx tsx scripts/validateAfrikData.ts
         env:
           CHECK_SOURCE_URLS: "false"
 
-      - name: Run data-integrity validation (nightly — includes URL checks)
+      - name: Run FR52-inclusive data-integrity validation (nightly — includes URL checks)
         if: github.event_name == 'schedule'
         run: npx tsx scripts/validateAfrikData.ts
         env:

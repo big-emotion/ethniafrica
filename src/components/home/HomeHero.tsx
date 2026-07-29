@@ -25,6 +25,9 @@ export function HomeHero() {
         overflow: "hidden",
         borderBottom: "1px solid var(--afh-night-line)",
         backgroundColor: "var(--afh-night-ground)",
+        width: "100vw",
+        marginLeft: "calc(50% - 50vw)",
+        marginRight: "calc(50% - 50vw)",
       }}
     >
       <DottedContinent />
