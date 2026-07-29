@@ -534,6 +534,44 @@ const options: swaggerJsdoc.Options = {
           required: ["data", "meta", "errors"],
         },
         // -----------------------------------------------------------------
+        // Epic 7 — Classification tree skeleton (FR48, FR33)
+        // -----------------------------------------------------------------
+        FamilyTreeBranch: {
+          type: "object",
+          properties: {
+            iso639_3: { type: "string", example: "swa" },
+            name: { type: "string", example: "Swahili" },
+            peopleCount: { type: "integer", minimum: 0, example: 3 },
+          },
+          required: ["iso639_3", "name", "peopleCount"],
+        },
+        LanguageFamilyTree: {
+          type: "object",
+          description:
+            "Classification tree skeleton: the family's languages (branches) with linked-people counts, plus peoples in the family not linked to any of its languages.",
+          properties: {
+            family: { $ref: "#/components/schemas/LanguageFamilyV2" },
+            branches: {
+              type: "array",
+              items: { $ref: "#/components/schemas/FamilyTreeBranch" },
+            },
+            unlinkedPeopleCount: { type: "integer", minimum: 0, example: 1 },
+          },
+          required: ["family", "branches", "unlinkedPeopleCount"],
+        },
+        LanguageFamilyTreeResponse: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/LanguageFamilyTree" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        // -----------------------------------------------------------------
         // Epic 3 — Pinned-version URLs (ETNI-51)
         // -----------------------------------------------------------------
         PeopleRevisionItem: {
