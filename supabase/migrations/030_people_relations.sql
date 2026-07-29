@@ -1,6 +1,6 @@
--- Migration 028 — Epic 11 relations model: afrik_people_relations (idempotent)
+-- Migration 030 — Epic 11 relations model: afrik_people_relations (idempotent)
 --
--- Story: ETNI-503 [11.2] Migration `028_people_relations.sql` + fabric extension
+-- Story: ETNI-503 [11.2] Migration `030_people_relations.sql` + fabric extension
 -- Epic:  11 (Hidden Links Between Peoples), FR72, FR74, AR2, AR6
 --
 -- Creates the relation_type / relation_direction enums and the
