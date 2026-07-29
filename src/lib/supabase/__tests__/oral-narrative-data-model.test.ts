@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 
 const migrationPath = path.join(
   process.cwd(),
-  "supabase/migrations/031_oral_narratives.sql"
+  "supabase/migrations/032_oral_narratives.sql"
 );
 
 describe("oral narrative persistence model", () => {
