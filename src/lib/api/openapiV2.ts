@@ -362,9 +362,43 @@ const options: swaggerJsdoc.Options = {
         Source: {
           type: "object",
           description:
-            "Canonical bibliographic entry. Columns marked nullable depend on migration 014 (ETNI-22).",
+            "Canonical bibliographic entry. Structured fields are nullable only during the lossless legacy-citation compatibility boundary.",
           properties: {
             id: { type: "string", format: "uuid" },
+            sourceKey: {
+              type: ["string", "null"],
+              description:
+                "Stable source key. Null only for legacy entries awaiting review.",
+            },
+            sourceKind: {
+              type: ["string", "null"],
+              enum: [
+                "intergovernmental",
+                "government",
+                "official_statistics",
+                "linguistic_reference",
+                "academic",
+                "community",
+                "repository",
+                "archive",
+                "discovery",
+                "ai_generated",
+                "unknown",
+                null,
+              ],
+            },
+            evidenceTier: {
+              type: ["integer", "null"],
+              enum: [1, 2, null],
+              description:
+                "Authorized evidence tier. Null entries require review.",
+            },
+            identifiers: {
+              type: ["object", "null"],
+              additionalProperties: { type: "string" },
+              description:
+                "Bibliographic or archival identifiers such as ISBN, DOI, catalogue, or call number.",
+            },
             type: {
               type: ["string", "null"],
               enum: ["primary", "secondary", "tertiary", "ai", null],
@@ -380,8 +414,25 @@ const options: swaggerJsdoc.Options = {
               type: ["string", "null"],
               format: "date-time",
             },
+            policy: {
+              type: "object",
+              properties: {
+                key: { type: "string" },
+                admission: { type: "string" },
+                evidenceTier: { type: ["integer", "null"], enum: [1, 2, null] },
+                sourceKind: { type: "string" },
+                publishable: { type: "boolean" },
+              },
+              required: [
+                "key",
+                "admission",
+                "evidenceTier",
+                "sourceKind",
+                "publishable",
+              ],
+            },
           },
-          required: ["id", "title"],
+          required: ["id", "title", "policy"],
         },
         SourceResponse: {
           type: "object",

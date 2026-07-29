@@ -5,6 +5,10 @@ import { sourceSchema } from "../sources";
 
 const source = {
   id: "11111111-1111-1111-1111-111111111111",
+  sourceKey: null,
+  sourceKind: null,
+  evidenceTier: null,
+  identifiers: null,
   title: "Source",
   url: "https://example.test/source",
   type: "primary",

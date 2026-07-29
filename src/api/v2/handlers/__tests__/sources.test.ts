@@ -17,6 +17,10 @@ describe("sources handler", () => {
     it("returns the canonical envelope with pagination meta", async () => {
       const source = {
         id: "11111111-1111-1111-1111-111111111111",
+        sourceKey: "world-bank-open-data",
+        sourceKind: "intergovernmental" as const,
+        evidenceTier: 1 as const,
+        identifiers: null,
         title: "World Bank Open Data",
         url: "https://data.worldbank.org",
         type: "tertiary" as const,
@@ -26,6 +30,13 @@ describe("sources handler", () => {
         publisher: "World Bank",
         resolvable: true,
         lastVerifiedAt: "2026-01-01T00:00:00.000Z",
+        policy: {
+          key: "unknown",
+          admission: "review_required" as const,
+          evidenceTier: null,
+          sourceKind: "unknown" as const,
+          publishable: false,
+        },
       };
       vi.mocked(listSources).mockResolvedValue({ data: [source], total: 1 });
 
@@ -48,6 +59,10 @@ describe("sources handler", () => {
     it("returns the envelope around a single source", async () => {
       const source = {
         id: "11111111-1111-1111-1111-111111111111",
+        sourceKey: "un-population",
+        sourceKind: "intergovernmental" as const,
+        evidenceTier: 1 as const,
+        identifiers: null,
         title: "UN Pop",
         url: null,
         type: "primary" as const,
@@ -57,6 +72,13 @@ describe("sources handler", () => {
         publisher: "UN DESA",
         resolvable: null,
         lastVerifiedAt: null,
+        policy: {
+          key: "unknown",
+          admission: "review_required" as const,
+          evidenceTier: null,
+          sourceKind: "unknown" as const,
+          publishable: false,
+        },
       };
       vi.mocked(getSourceById).mockResolvedValue(source);
 

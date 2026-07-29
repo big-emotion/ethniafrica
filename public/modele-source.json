@@ -1,0 +1,25 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "source",
+    "directives": "A structured source must have complete citation metadata. URLs may be null for offline works. Legacy strings are accepted only through the lossless compatibility adapter."
+  },
+  "source": {
+    "sourceKey": "example-archive-1912",
+    "title": "Example archival record",
+    "authors": ["Example National Archive"],
+    "publicationYear": 1912,
+    "sourceKind": "archive",
+    "evidenceTier": null,
+    "identifiers": {
+      "catalogue": "EX-1912-42"
+    },
+    "publisher": null,
+    "url": null
+  },
+  "assertionReference": {
+    "sourceKey": "example-archive-1912",
+    "locatorType": "folio",
+    "locatorValue": "42r"
+  }
+}
