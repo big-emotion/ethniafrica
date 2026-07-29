@@ -15,6 +15,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { pathToFileURL } from "url";
 import { parse } from "csv-parse/sync";
+import { parseRelationFile } from "../src/lib/afrik/parsers/relationParser";
 
 // ─── Exported ValidationResult (FR26-FR31) ───────────────────────────────────
 
@@ -1067,6 +1068,23 @@ export async function checkSourceUrls(
     }
   }
 
+  // Also sweep relation source URLs (REL-5/REL-7, Story 11.3).
+  for (const { fullPath } of collectRelationFiles(datasetRoot)) {
+    let data: RawRelationFile;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      continue;
+    }
+    for (const source of data.sources ?? []) {
+      if (typeof source?.url !== "string") continue;
+      const matches = source.url.match(urlRegex);
+      if (matches) {
+        for (const url of matches) uniqueUrls.add(url);
+      }
+    }
+  }
+
   // HEAD-check each URL with a fresh AbortController per request
   const logLines: string[] = [];
 
@@ -1835,6 +1853,281 @@ export function checkOrphanFiches(datasetRoot: string): ValidationResult {
   return { ok: errors.length === 0, errors, warnings };
 }
 
+/**
+ * REL-1..REL-7 – Relation validator (Epic 11, Story 11.3, FR73/FR74/FR32).
+ * Validates dataset/source/afrik/relations/*.json against public/modele-relation.json.
+ */
+
+interface RawRelationSource {
+  title?: unknown;
+  author?: unknown;
+  year?: unknown;
+  url?: unknown;
+  tier?: unknown;
+  notes?: unknown;
+}
+
+interface RawRelationFile {
+  id?: unknown;
+  relationType?: unknown;
+  peopleIdA?: unknown;
+  peopleIdB?: unknown;
+  period?: { startYear?: unknown; endYear?: unknown };
+  sources?: RawRelationSource[];
+}
+
+/** List every dataset/source/afrik/relations/*.json file path. Empty when the dir is absent. */
+function collectRelationFiles(
+  datasetRoot: string
+): Array<{ file: string; fullPath: string }> {
+  const relationsDir = path.join(datasetRoot, "relations");
+  if (!fs.existsSync(relationsDir)) return [];
+  return fs
+    .readdirSync(relationsDir)
+    .filter((f) => f.endsWith(".json"))
+    .map((file) => ({ file, fullPath: path.join(relationsDir, file) }));
+}
+
+/** Map a zod issue path (from relationSchema) to the REL rule id it corresponds to. */
+function relationIssueRuleId(issuePath: string): string {
+  if (issuePath === "id") return "REL-1";
+  if (issuePath === "relationType" || issuePath === "peopleIdB") return "REL-3";
+  if (issuePath.startsWith("period")) return "REL-4";
+  if (issuePath === "description") return "REL-7";
+  return "REL-MODEL";
+}
+
+/**
+ * REL-1 (id format), REL-3 (peopleIdA≠peopleIdB, relationType enum),
+ * REL-4 (period.startYear≤endYear), REL-7 (description non-empty,
+ * sources[].url present + well-formed). Reuses the 11.1 parser
+ * (relationSchema via parseRelationFile) rather than reimplementing it.
+ */
+export function checkRelationModel(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const { file, fullPath } of collectRelationFiles(datasetRoot)) {
+    let raw: unknown;
+    try {
+      raw = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      errors.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const parsed = parseRelationFile(raw);
+    if (!parsed.success) {
+      for (const issue of parsed.errors ?? []) {
+        errors.push(
+          `${relationIssueRuleId(issue.path)}: ${file}: ${issue.path} — ${issue.message}`
+        );
+      }
+      continue;
+    }
+
+    parsed.data!.sources.forEach((source, i) => {
+      try {
+        new URL(source.url);
+      } catch {
+        errors.push(
+          `REL-7: ${file}: sources[${i}].url is not a well-formed URL: "${source.url}"`
+        );
+      }
+    });
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * REL-2 – peopleIdA and peopleIdB must each resolve to an existing PPL fiche.
+ */
+export function checkRelationReferences(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const files = collectRelationFiles(datasetRoot);
+  if (files.length === 0) return { ok: true, errors, warnings };
+
+  const pplIds = loadPplIds(datasetRoot);
+
+  for (const { file, fullPath } of files) {
+    let data: RawRelationFile;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const a = typeof data.peopleIdA === "string" ? data.peopleIdA : undefined;
+    const b = typeof data.peopleIdB === "string" ? data.peopleIdB : undefined;
+
+    if (!a || !pplIds.has(a)) {
+      errors.push(
+        `REL-2: ${file}: peopleIdA "${data.peopleIdA}" does not resolve to an existing PPL fiche`
+      );
+    }
+    if (!b || !pplIds.has(b)) {
+      errors.push(
+        `REL-2: ${file}: peopleIdB "${data.peopleIdB}" does not resolve to an existing PPL fiche`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * REL-5 – At least one Tier 1|2 source; every Tier 2 source records a
+ * non-empty Wikipedia cross-check note.
+ */
+export function checkRelationSources(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const { file, fullPath } of collectRelationFiles(datasetRoot)) {
+    let data: RawRelationFile;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const sources = Array.isArray(data.sources) ? data.sources : [];
+    const hasValidTierSource = sources.some(
+      (s) => s?.tier === 1 || s?.tier === 2
+    );
+    if (!hasValidTierSource) {
+      errors.push(
+        `REL-5: ${file}: no source with tier 1 or tier 2 — at least one Tier 1/2 source is required`
+      );
+    }
+
+    sources.forEach((source, i) => {
+      if (
+        source?.tier === 2 &&
+        (typeof source.notes !== "string" || !source.notes.trim())
+      ) {
+        errors.push(
+          `REL-5: ${file}: sources[${i}] is Tier 2 and requires a non-empty Wikipedia cross-check note in "notes"`
+        );
+      }
+    });
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/** True when two periods (null = open-ended) overlap. */
+function relationPeriodsOverlap(
+  aStart: number | null,
+  aEnd: number | null,
+  bStart: number | null,
+  bEnd: number | null
+): boolean {
+  const s1 = aStart ?? -Infinity;
+  const e1 = aEnd ?? Infinity;
+  const s2 = bStart ?? -Infinity;
+  const e2 = bEnd ?? Infinity;
+  return s1 <= e2 && s2 <= e1;
+}
+
+/** Unordered pair key for {peopleIdA, peopleIdB}. */
+function relationPairKey(a: string, b: string): string {
+  return [a, b].sort().join("|");
+}
+
+/**
+ * REL-1 (HARD) – relation ids must be unique across the corpus.
+ * REL-6 (SOFT) – same unordered people pair + same relationType + overlapping
+ * period across two files is a duplicate-suspect warning (never an error).
+ */
+export function checkRelationDuplicates(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  interface RelationRecordForDuplicates {
+    file: string;
+    peopleIdA?: string;
+    peopleIdB?: string;
+    relationType?: string;
+    startYear: number | null;
+    endYear: number | null;
+  }
+
+  const seenIds = new Map<string, string>();
+  const records: RelationRecordForDuplicates[] = [];
+
+  for (const { file, fullPath } of collectRelationFiles(datasetRoot)) {
+    let data: RawRelationFile;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const id = typeof data.id === "string" ? data.id : undefined;
+    if (id) {
+      if (seenIds.has(id)) {
+        errors.push(
+          `REL-1: duplicate relation id "${id}" in ${file} (first seen in ${seenIds.get(id)})`
+        );
+      } else {
+        seenIds.set(id, file);
+      }
+    }
+
+    records.push({
+      file,
+      peopleIdA:
+        typeof data.peopleIdA === "string" ? data.peopleIdA : undefined,
+      peopleIdB:
+        typeof data.peopleIdB === "string" ? data.peopleIdB : undefined,
+      relationType:
+        typeof data.relationType === "string" ? data.relationType : undefined,
+      startYear:
+        typeof data.period?.startYear === "number"
+          ? data.period.startYear
+          : null,
+      endYear:
+        typeof data.period?.endYear === "number" ? data.period.endYear : null,
+    });
+  }
+
+  for (let i = 0; i < records.length; i++) {
+    for (let j = i + 1; j < records.length; j++) {
+      const r1 = records[i];
+      const r2 = records[j];
+      if (!r1.peopleIdA || !r1.peopleIdB || !r2.peopleIdA || !r2.peopleIdB)
+        continue;
+      if (!r1.relationType || r1.relationType !== r2.relationType) continue;
+      if (
+        relationPairKey(r1.peopleIdA, r1.peopleIdB) !==
+        relationPairKey(r2.peopleIdA, r2.peopleIdB)
+      )
+        continue;
+      if (
+        relationPeriodsOverlap(
+          r1.startYear,
+          r1.endYear,
+          r2.startYear,
+          r2.endYear
+        )
+      ) {
+        warnings.push(
+          `REL-6: ${r1.file} and ${r2.file} share the same people pair, relationType "${r1.relationType}", and overlapping periods — possible duplicate`
+        );
+      }
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
 // ─── main() ──────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -1979,6 +2272,30 @@ async function main() {
       datasetRoot,
       path.join(PUBLIC_ROOT, "pays_demographie.csv")
     ),
+  });
+
+  console.log("REL-1/3/4/7 – Relation model...");
+  newChecks.push({
+    name: "REL-1/3/4/7 Relation model",
+    result: checkRelationModel(datasetRoot),
+  });
+
+  console.log("REL-2 – Relation PPL references...");
+  newChecks.push({
+    name: "REL-2 Relation PPL references",
+    result: checkRelationReferences(datasetRoot),
+  });
+
+  console.log("REL-5 – Relation sources...");
+  newChecks.push({
+    name: "REL-5 Relation sources",
+    result: checkRelationSources(datasetRoot),
+  });
+
+  console.log("REL-1/REL-6 – Relation duplicates + overlap...");
+  newChecks.push({
+    name: "REL-1/REL-6 Relation duplicates",
+    result: checkRelationDuplicates(datasetRoot),
   });
 
   if (process.env.CHECK_SOURCE_URLS === "true") {
