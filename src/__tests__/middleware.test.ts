@@ -364,6 +364,27 @@ describe("middleware", () => {
       expect(styleSrc).toMatch(/'nonce-[^']+'/);
     });
 
+    // @req REQ-052
+    it("scopes style-src-attr 'unsafe-inline' to /fr only", async () => {
+      const homeRequest = new NextRequest("http://localhost:3000/fr");
+      const homeResponse = await middleware(homeRequest);
+      const homeCsp = homeResponse.headers.get("Content-Security-Policy")!;
+      const homeDirectives = homeCsp.split(";").map((d) => d.trim());
+
+      expect(homeDirectives.find((d) => d.startsWith("style-src-attr"))).toBe(
+        "style-src-attr 'unsafe-inline'"
+      );
+
+      const otherRequest = new NextRequest("http://localhost:3000/some-page");
+      const otherResponse = await middleware(otherRequest);
+      const otherCsp = otherResponse.headers.get("Content-Security-Policy")!;
+      const otherDirectives = otherCsp.split(";").map((d) => d.trim());
+
+      expect(
+        otherDirectives.find((d) => d.startsWith("style-src-attr"))
+      ).toBeUndefined();
+    });
+
     it("generates a different nonce for each request", async () => {
       const request1 = new NextRequest("http://localhost:3000/page1");
       const response1 = await middleware(request1);
