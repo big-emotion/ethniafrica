@@ -15,6 +15,7 @@ import { logger } from "@/lib/api/logger";
 import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
 import { loadAllLanguageFamilies } from "@/lib/afrik/loaders/languageFamilyLoader";
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
+import { loadNameRecords } from "@/lib/afrik/loaders/nameRecordJsonLoader";
 import { createAdminClient } from "@/lib/supabase/admin";
 import type { Country, LanguageFamily, People } from "@/types/afrik";
 import {
@@ -39,6 +40,7 @@ export interface MigrationReport {
   peoples: MigrationSectionReport;
   countries: MigrationSectionReport;
   relations: MigrationSectionReport;
+  names: MigrationSectionReport;
   verification: {
     before: AfrikDriftReport;
     after: AfrikDriftReport | null;
@@ -73,6 +75,7 @@ function createMigrationReport(): MigrationReport {
     peoples: { total: 0, inserted: 0, errors: [] },
     countries: { total: 0, inserted: 0, errors: [] },
     relations: { total: 0, inserted: 0, errors: [] },
+    names: { total: 0, inserted: 0, errors: [] },
     verification: {
       before: emptyDriftReport(),
       after: null,
@@ -324,6 +327,7 @@ function hasErrors(report: MigrationReport): boolean {
     report.peoples.errors.length > 0 ||
     report.countries.errors.length > 0 ||
     report.relations.errors.length > 0 ||
+    report.names.errors.length > 0 ||
     report.verification.errors.length > 0
   );
 }
@@ -384,6 +388,12 @@ export async function migrateAfrikToDatabase(
   const validFamilyIds = await readIds(supabase, "afrik_language_families");
 
   await upsertPeoples(supabase, peoples, validFamilyIds, report);
+
+  const namesReport = await loadNameRecords(supabase);
+  report.names.total = namesReport.total;
+  report.names.inserted = namesReport.inserted;
+  report.names.errors = [...namesReport.errors, ...namesReport.dropped];
+
   await upsertCountries(supabase, countries, report);
   const validCountryIds = await readIds(supabase, "afrik_countries");
 
@@ -410,6 +420,7 @@ export async function migrateAfrikToDatabase(
       peoples: report.peoples,
       countries: report.countries,
       relations: report.relations,
+      names: report.names,
       driftBefore: report.verification.before,
       driftAfter: report.verification.after,
     });
