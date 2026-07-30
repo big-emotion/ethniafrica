@@ -57,6 +57,11 @@ const options: swaggerJsdoc.Options = {
           "Source Transparency Fabric — sources, confidence scores, editorial doctrine",
       },
       {
+        name: "API v2 - Oral Narratives",
+        description:
+          "Public, attributed oral narratives. Restricted narratives and protected metadata are never returned.",
+      },
+      {
         name: "API v2 - Feed",
         description:
           "Revision feed — cursor-paginated Atom + JSON feed of recent published revisions (FR38, AR19, NFR32)",
@@ -1040,6 +1045,48 @@ const options: swaggerJsdoc.Options = {
             },
           },
           required: ["data", "meta", "errors"],
+        },
+        OralNarrative: {
+          type: "object",
+          description:
+            "A public, approved, rights-cleared oral narrative. This representation intentionally excludes transcripts, media locators, collector details, and restricted identity metadata.",
+          properties: {
+            id: { type: "string", format: "uuid" },
+            narrativeCode: { type: "string", example: "ORL_YORUBA_MEMORY_001" },
+            narratorDisplayName: { type: ["string", "null"] },
+            community: { type: "string" },
+            languageCode: { type: "string", example: "yor" },
+            narrativeKind: {
+              type: "string",
+              enum: ["tradition", "testimony", "memory", "story"],
+            },
+            summary: { type: ["string", "null"] },
+            variantOf: { type: ["string", "null"], format: "uuid" },
+          },
+          required: [
+            "id",
+            "narrativeCode",
+            "narratorDisplayName",
+            "community",
+            "languageCode",
+            "narrativeKind",
+            "summary",
+            "variantOf",
+          ],
+        },
+        OralNarrativeListResponse: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/OralNarrative" },
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
         },
         ConfidenceRecord: {
           type: "object",

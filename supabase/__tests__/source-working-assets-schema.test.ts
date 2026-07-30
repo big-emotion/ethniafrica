@@ -12,7 +12,7 @@ import { describe, expect, it } from "vitest";
 
 const migrationPath = path.resolve(
   process.cwd(),
-  "supabase/migrations/032_source_working_assets.sql"
+  "supabase/migrations/034_source_working_assets.sql"
 );
 
 function migrationSql(): string {

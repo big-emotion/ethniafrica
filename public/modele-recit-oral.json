@@ -1,0 +1,35 @@
+{
+  "_meta": {
+    "format": "AFRIK JSON v2",
+    "entity": "recit_oral",
+    "directives": "A narrative is an attributed account, never an unsupported factual assertion. Its public display depends on review and rights clearance."
+  },
+  "id": "ORL_XXXXX",
+  "links": {
+    "languageFamilyId": null,
+    "peopleId": "PPL_XXXXX",
+    "countryId": null,
+    "assertionId": null
+  },
+  "attribution": {
+    "displayMode": "pseudonym",
+    "displayName": "<Approved public name or pseudonym>",
+    "community": "<Community context>",
+    "collector": "<Collector, if approved for display>"
+  },
+  "context": {
+    "narrativeDate": null,
+    "placePrecision": "region",
+    "languageCode": "xxx",
+    "narrativeKind": "testimony"
+  },
+  "content": {
+    "transcript": null,
+    "summary": "<Attributed account summary>",
+    "mediaLocator": null
+  },
+  "variantOf": null,
+  "visibility": "restricted",
+  "reviewStatus": "pending",
+  "rightsStatus": "pending"
+}

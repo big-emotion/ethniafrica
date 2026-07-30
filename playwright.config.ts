@@ -2,6 +2,7 @@ import { defineConfig, devices } from "@playwright/test";
 
 const isCI = Boolean(process.env.CI);
 const baseURL = process.env.BASE_URL ?? "http://localhost:3000";
+const serverPort = new URL(baseURL).port || "3000";
 
 // Reference device profile per TEA Test Design ASR-7.
 // Africa History target audience: lycéenne in Dakar on entry-level Android, 4G, rationed data.
@@ -32,7 +33,13 @@ const moderatorDesktop = {
 export default defineConfig({
   testDir: "./e2e",
   timeout: 60_000,
-  expect: { timeout: 10_000 },
+  expect: {
+    timeout: 10_000,
+    toHaveScreenshot: {
+      pathTemplate:
+        "_bmad-output/planning-artifacts/module-specs/assets/{arg}{ext}",
+    },
+  },
   fullyParallel: true,
   forbidOnly: isCI,
   retries: isCI ? 1 : 0,
@@ -99,7 +106,7 @@ export default defineConfig({
   webServer: process.env.SKIP_WEB_SERVER
     ? undefined
     : {
-        command: "npm run dev",
+        command: `npm run dev -- --port ${serverPort}`,
         url: baseURL,
         reuseExistingServer: !isCI,
         timeout: 120_000,
