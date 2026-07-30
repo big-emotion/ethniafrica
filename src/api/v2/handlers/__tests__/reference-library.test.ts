@@ -10,7 +10,7 @@ import {
 const contributor = { id: "11111111-1111-1111-1111-111111111111" };
 const source = {
   id: "22222222-2222-2222-2222-222222222222",
-  source_key: "un-population-2025",
+  source_key: "wpp-2025",
   title: "World Population Prospects 2025",
   author: "United Nations",
   year: 2025,

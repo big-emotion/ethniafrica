@@ -36,7 +36,7 @@ function queryResult(result: Result): Query {
 }
 
 const reference = {
-  source_key: "un-desd-population-2025",
+  source_key: "wpp-2025",
   title: "World Population Prospects 2025",
   author: "United Nations DESA",
   year: 2025,
@@ -126,7 +126,7 @@ describe("reference library service", () => {
     mocks.createAdminClient.mockReturnValue({ from });
 
     const result = await createReference({
-      sourceKey: "un-desd-population-2025",
+      sourceKey: "wpp-2025",
       title: "World Population Prospects 2025",
       authors: ["United Nations DESA"],
       publicationYear: 2025,
