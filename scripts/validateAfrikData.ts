@@ -15,6 +15,7 @@ import * as fs from "fs";
 import * as path from "path";
 import { pathToFileURL } from "url";
 import { parse } from "csv-parse/sync";
+import { evaluateSourceUrl } from "@/lib/sources/authorized-source-catalog";
 import { parseRelationFile } from "../src/lib/afrik/parsers/relationParser";
 import { parseNameRecordFile } from "../src/lib/afrik/parsers/nameRecordParser";
 
@@ -1037,6 +1038,105 @@ export function checkIsoValidity(datasetRoot: string): ValidationResult {
   return { ok: errors.length === 0, errors, warnings };
 }
 
+function collectJsonFiles(root: string): string[] {
+  if (!fs.existsSync(root)) return [];
+
+  const files: string[] = [];
+  for (const entry of fs.readdirSync(root, { withFileTypes: true })) {
+    const fullPath = path.join(root, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...collectJsonFiles(fullPath));
+    } else if (entry.isFile() && entry.name.endsWith(".json")) {
+      files.push(fullPath);
+    }
+  }
+  return files;
+}
+
+function sourceUrls(value: unknown): string[] {
+  if (typeof value !== "string") return [];
+  return value.match(/https?:\/\/[^\s)\]}>\",]+/g) ?? [];
+}
+
+function checkSourceAdmission(
+  file: string,
+  sourcePath: string,
+  sourceValue: unknown,
+  errors: string[],
+  warnings: string[]
+) {
+  const urls = sourceUrls(sourceValue);
+  if (urls.length === 0) {
+    warnings.push(
+      `${file}: ${sourcePath} requires review: source \"unknown\" is not in the authorized catalogue`
+    );
+    return;
+  }
+
+  for (const url of urls) {
+    const outcome = evaluateSourceUrl(url);
+    if (outcome.publishable) continue;
+
+    const message = `${file}: ${sourcePath} uses ${outcome.admission} source \"${outcome.key}\"`;
+    if (outcome.admission === "review_required") {
+      warnings.push(`${message}; review is required before publication`);
+    } else {
+      errors.push(`${message}; it is not publishable`);
+    }
+  }
+}
+
+function checkSourcesInValue(
+  file: string,
+  value: unknown,
+  valuePath: string,
+  errors: string[],
+  warnings: string[]
+) {
+  if (Array.isArray(value)) {
+    value.forEach((item, index) => {
+      checkSourcesInValue(
+        file,
+        item,
+        `${valuePath}[${index}]`,
+        errors,
+        warnings
+      );
+    });
+    return;
+  }
+
+  if (!value || typeof value !== "object") return;
+
+  for (const [key, child] of Object.entries(value)) {
+    const childPath = valuePath ? `${valuePath}.${key}` : key;
+    if (key === "sources" && Array.isArray(child)) {
+      child.forEach((source, index) => {
+        const sourcePath = `${childPath}[${index}]`;
+        if (typeof source === "string") {
+          checkSourceAdmission(file, sourcePath, source, errors, warnings);
+          return;
+        }
+
+        if (source && typeof source === "object") {
+          const record = source as { url?: unknown; reference?: unknown };
+          checkSourceAdmission(
+            file,
+            sourcePath,
+            typeof record.url === "string" ? record.url : record.reference,
+            errors,
+            warnings
+          );
+          return;
+        }
+
+        checkSourceAdmission(file, sourcePath, source, errors, warnings);
+      });
+    }
+    checkSourcesInValue(file, child, childPath, errors, warnings);
+  }
+}
+
 function loadLanguageCsv(datasetRoot: string): {
   rows: LanguageCsvRow[];
   error?: string;
@@ -1202,6 +1302,37 @@ export function checkTreeCoverage(datasetRoot: string): ValidationResult {
     });
 
   return { ok: true, errors: [], warnings };
+}
+
+/**
+ * Source admissions – every published source URL must resolve through the
+ * authorised source catalogue. Discovery-only and prohibited sources fail;
+ * unknown or legacy sources are retained but require curator review.
+ */
+export function checkAuthorizedSourceAdmissions(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const fullPath of collectJsonFiles(datasetRoot)) {
+    let data: unknown;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      continue;
+    }
+
+    checkSourcesInValue(
+      path.relative(datasetRoot, fullPath),
+      data,
+      "",
+      errors,
+      warnings
+    );
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
 }
 
 /**
@@ -2641,6 +2772,12 @@ async function main() {
   newChecks.push({
     name: "FR29 ISO validity",
     result: checkIsoValidity(datasetRoot),
+  });
+
+  console.log("Source catalogue admissions...");
+  newChecks.push({
+    name: "Source catalogue admissions",
+    result: checkAuthorizedSourceAdmissions(datasetRoot),
   });
 
   console.log("FR52 – Classification-tree integrity...");

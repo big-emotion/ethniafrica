@@ -1,5 +1,6 @@
 import { createServerClient } from "@/lib/supabase/server";
 import type { Revision, InsertRevisionInput } from "@/api/v2/schemas/revisions";
+import { serializePublicContent } from "@/api/v2/serializers/public-content";
 
 export async function insertRevision(
   input: InsertRevisionInput
@@ -222,7 +223,7 @@ export async function getRevisionSnapshot(
   }
 
   return {
-    data: rawRow.snapshot_jsonb,
+    data: serializePublicContent(rawRow.snapshot_jsonb),
     version: rawRow.version,
     published_at:
       typeof rawRow.published_at === "string" ? rawRow.published_at : null,

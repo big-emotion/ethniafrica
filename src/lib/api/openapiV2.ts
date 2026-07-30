@@ -57,6 +57,11 @@ const options: swaggerJsdoc.Options = {
           "Source Transparency Fabric — sources, confidence scores, editorial doctrine",
       },
       {
+        name: "API v2 - Oral Narratives",
+        description:
+          "Public, attributed oral narratives. Restricted narratives and protected metadata are never returned.",
+      },
+      {
         name: "API v2 - Feed",
         description:
           "Revision feed — cursor-paginated Atom + JSON feed of recent published revisions (FR38, AR19, NFR32)",
@@ -362,9 +367,43 @@ const options: swaggerJsdoc.Options = {
         Source: {
           type: "object",
           description:
-            "Canonical bibliographic entry. Columns marked nullable depend on migration 014 (ETNI-22).",
+            "Canonical bibliographic entry. Structured fields are nullable only during the lossless legacy-citation compatibility boundary.",
           properties: {
             id: { type: "string", format: "uuid" },
+            sourceKey: {
+              type: ["string", "null"],
+              description:
+                "Stable source key. Null only for legacy entries awaiting review.",
+            },
+            sourceKind: {
+              type: ["string", "null"],
+              enum: [
+                "intergovernmental",
+                "government",
+                "official_statistics",
+                "linguistic_reference",
+                "academic",
+                "community",
+                "repository",
+                "archive",
+                "discovery",
+                "ai_generated",
+                "unknown",
+                null,
+              ],
+            },
+            evidenceTier: {
+              type: ["integer", "null"],
+              enum: [1, 2, null],
+              description:
+                "Authorized evidence tier. Null entries require review.",
+            },
+            identifiers: {
+              type: ["object", "null"],
+              additionalProperties: { type: "string" },
+              description:
+                "Bibliographic or archival identifiers such as ISBN, DOI, catalogue, or call number.",
+            },
             type: {
               type: ["string", "null"],
               enum: ["primary", "secondary", "tertiary", "ai", null],
@@ -380,8 +419,25 @@ const options: swaggerJsdoc.Options = {
               type: ["string", "null"],
               format: "date-time",
             },
+            policy: {
+              type: "object",
+              properties: {
+                key: { type: "string" },
+                admission: { type: "string" },
+                evidenceTier: { type: ["integer", "null"], enum: [1, 2, null] },
+                sourceKind: { type: "string" },
+                publishable: { type: "boolean" },
+              },
+              required: [
+                "key",
+                "admission",
+                "evidenceTier",
+                "sourceKind",
+                "publishable",
+              ],
+            },
           },
-          required: ["id", "title"],
+          required: ["id", "title", "policy"],
         },
         SourceResponse: {
           type: "object",
@@ -400,6 +456,48 @@ const options: swaggerJsdoc.Options = {
             data: {
               type: "array",
               items: { $ref: "#/components/schemas/Source" },
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+        },
+        OralNarrative: {
+          type: "object",
+          description:
+            "A public, approved, rights-cleared oral narrative. This representation intentionally excludes transcripts, media locators, collector details, and restricted identity metadata.",
+          properties: {
+            id: { type: "string", format: "uuid" },
+            narrativeCode: { type: "string", example: "ORL_YORUBA_MEMORY_001" },
+            narratorDisplayName: { type: ["string", "null"] },
+            community: { type: "string" },
+            languageCode: { type: "string", example: "yor" },
+            narrativeKind: {
+              type: "string",
+              enum: ["tradition", "testimony", "memory", "story"],
+            },
+            summary: { type: ["string", "null"] },
+            variantOf: { type: ["string", "null"], format: "uuid" },
+          },
+          required: [
+            "id",
+            "narrativeCode",
+            "narratorDisplayName",
+            "community",
+            "languageCode",
+            "narrativeKind",
+            "summary",
+            "variantOf",
+          ],
+        },
+        OralNarrativeListResponse: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/OralNarrative" },
             },
             meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {

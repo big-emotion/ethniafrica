@@ -135,8 +135,14 @@ Schema: `supabase/migrations/006_afrik_schema.sql`
 
 A claim is acceptable only if it can be cited at **Tier 1** or **Tier 2**. Otherwise, **remove the claim**.
 
-**Tier 1 — Authorized canon (preferred).** Cite directly:
-UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA.
+**Source catalogue.** `config/sources/authorized-source-catalog.json` is the
+single source of truth for source admissions and evidence tiers. Only
+`preferred` and `allowed` entries are publishable; `discovery_only` and
+`prohibited` entries are never citable, while an unknown source requires
+curator review before publication.
+
+**Tier 1 — Authorized canon (preferred).** Cite a catalogue entry marked
+`preferred` directly.
 
 **Tier 2 — Primary source surfaced via Wikipedia (fallback).** Wikipedia is a _meta-source_, not a citable source. To use it as a discovery tool:
 
