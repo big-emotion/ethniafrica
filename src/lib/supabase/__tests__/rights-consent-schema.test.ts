@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 
 const migrationPath = path.join(
   process.cwd(),
-  "supabase/migrations/032_rights_consent_access_controls.sql"
+  "supabase/migrations/033_rights_consent_access_controls.sql"
 );
 
 describe("rights, consent, and access controls migration", () => {
