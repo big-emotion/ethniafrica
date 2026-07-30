@@ -390,17 +390,14 @@ export interface CountryPeopleDistribution {
 // ==========================================
 
 /**
- * Élément de l'arbre de navigation hiérarchique
+ * Élément de l'arbre de navigation hiérarchique.
+ *
+ * Superseded by the richer `HierarchyNode` in
+ * `src/components/system/hierarchy-types.ts` (shared by the classification
+ * tree and HierarchyTextIndex). Re-exported here for compatibility; import
+ * from `@/components/system/hierarchy-types` in new code.
  */
-export interface HierarchyNode {
-  id: string;
-  type: "family" | "people" | "country";
-  name: string;
-  childCount?: number;
-  children?: HierarchyNode[];
-  isLoaded?: boolean;
-  isExpanded?: boolean;
-}
+export type { HierarchyNode } from "@/components/system/hierarchy-types";
 
 /**
  * Breadcrumb pour la navigation
