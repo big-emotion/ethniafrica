@@ -1,7 +1,20 @@
 import { fireEvent, render, screen } from "@testing-library/react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ContributionForm } from "./ContributionForm";
 import { ContributionFormFields } from "./ContributionFormFields";
+
+function renderContributionForm() {
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { retry: false }, mutations: { retry: false } },
+  });
+
+  return render(
+    <QueryClientProvider client={queryClient}>
+      <ContributionForm language="fr" />
+    </QueryClientProvider>
+  );
+}
 
 describe("ContributionForm", () => {
   beforeEach(() => {
@@ -19,7 +32,7 @@ describe("ContributionForm", () => {
 
   // @req REQ-092
   it("uses French-only copy and mobile-first spacing", () => {
-    const { container } = render(<ContributionForm language="fr" />);
+    const { container } = renderContributionForm();
 
     expect(
       screen.getByRole("heading", { name: "Soumettre une contribution" })
@@ -31,7 +44,7 @@ describe("ContributionForm", () => {
 
   // @req REQ-092
   it("shows that an unknown citation requires review before submitting JSON", () => {
-    const { container } = render(<ContributionForm language="fr" />);
+    const { container } = renderContributionForm();
 
     fireEvent.change(container.querySelector("select")!, {
       target: { value: "new_people" },

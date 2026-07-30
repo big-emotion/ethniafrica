@@ -66,7 +66,339 @@ const options: swaggerJsdoc.Options = {
         description:
           "Contributor flags — submit editorial flags on AFRIK entities. Requires age confirmation (FR45, AR24).",
       },
+      {
+        name: "API v2 - Reference Library",
+        description:
+          "Authenticated contributor workspace for structured references, assertion locators, and private working assets.",
+      },
     ],
+    paths: {
+      "/api/v2/reference-library": {
+        get: {
+          summary: "Search structured references",
+          description:
+            "Searches the authenticated contributor reference library. The result is mutable and is never cached.",
+          tags: ["API v2 - Reference Library"],
+          security: [{ SupabaseJwtAuth: [] }],
+          parameters: [
+            {
+              in: "query",
+              name: "q",
+              required: true,
+              schema: { type: "string", minLength: 1, maxLength: 200 },
+              description: "Reference search term.",
+            },
+            {
+              in: "query",
+              name: "limit",
+              required: false,
+              schema: {
+                type: "integer",
+                minimum: 1,
+                maximum: 100,
+                default: 20,
+              },
+              description: "Maximum number of matching references to return.",
+            },
+          ],
+          responses: {
+            200: {
+              description: "Matching references.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: {
+                    $ref: "#/components/schemas/ReferenceSearchResponse",
+                  },
+                },
+              },
+            },
+            400: {
+              description: "Invalid search query.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
+                },
+              },
+            },
+            401: {
+              description: "Missing or invalid Supabase access token.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
+                },
+              },
+            },
+            500: {
+              description: "Internal server error.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
+                },
+              },
+            },
+          },
+        },
+        post: {
+          summary: "Create or resolve a structured reference",
+          description:
+            "Creates a structured reference or returns an existing matching entry. The result is mutable and is never cached.",
+          tags: ["API v2 - Reference Library"],
+          security: [{ SupabaseJwtAuth: [] }],
+          requestBody: {
+            required: true,
+            content: {
+              "application/json": {
+                schema: {
+                  $ref: "#/components/schemas/ReferenceCreateInput",
+                },
+              },
+            },
+          },
+          responses: {
+            200: {
+              description: "Existing matching reference returned.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: {
+                    $ref: "#/components/schemas/ReferenceCreateResponse",
+                  },
+                },
+              },
+            },
+            201: {
+              description: "Reference created.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: {
+                    $ref: "#/components/schemas/ReferenceCreateResponse",
+                  },
+                },
+              },
+            },
+            400: {
+              description: "Invalid request body.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
+                },
+              },
+            },
+            401: {
+              description: "Missing or invalid Supabase access token.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
+                },
+              },
+            },
+            500: {
+              description: "Internal server error.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
+                },
+              },
+            },
+          },
+        },
+      },
+      "/api/v2/reference-library/assertions": {
+        post: {
+          summary: "Link a reference to an assertion",
+          description:
+            "Creates a structured locator linking an authenticated contributor reference to an assertion. The result is mutable and is never cached.",
+          tags: ["API v2 - Reference Library"],
+          security: [{ SupabaseJwtAuth: [] }],
+          requestBody: {
+            required: true,
+            content: {
+              "application/json": {
+                schema: {
+                  $ref: "#/components/schemas/AssertionReferenceCreateInput",
+                },
+              },
+            },
+          },
+          responses: {
+            201: {
+              description: "Assertion-reference link created.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: {
+                    $ref: "#/components/schemas/AssertionReferenceCreateResponse",
+                  },
+                },
+              },
+            },
+            400: {
+              description: "Invalid request body.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
+                },
+              },
+            },
+            401: {
+              description: "Missing or invalid Supabase access token.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
+                },
+              },
+            },
+            500: {
+              description: "Internal server error.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
+                },
+              },
+            },
+          },
+        },
+      },
+      "/api/v2/reference-library/assets": {
+        post: {
+          summary: "Upload a private reference working asset",
+          description:
+            "Stores a private scan or OCR working asset. The upload is never cached. The response contains metadata only: it omits binary content, storage bucket identifiers, and object or location paths, and it does not grant retrieval access.",
+          tags: ["API v2 - Reference Library"],
+          security: [{ SupabaseJwtAuth: [] }],
+          requestBody: {
+            required: true,
+            content: {
+              "multipart/form-data": {
+                schema: {
+                  $ref: "#/components/schemas/ReferenceWorkingAssetCreateInput",
+                },
+              },
+            },
+          },
+          responses: {
+            201: {
+              description:
+                "Private asset metadata created; binary content and storage locations are intentionally omitted.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: {
+                    $ref: "#/components/schemas/PrivateReferenceWorkingAssetResponse",
+                  },
+                },
+              },
+            },
+            400: {
+              description: "Invalid multipart form data.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
+                },
+              },
+            },
+            401: {
+              description: "Missing or invalid Supabase access token.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
+                },
+              },
+            },
+            500: {
+              description: "Internal server error.",
+              headers: {
+                "Cache-Control": {
+                  schema: { type: "string", example: "no-store" },
+                },
+              },
+              content: {
+                "application/json": {
+                  schema: { $ref: "#/components/schemas/ApiErrorEnvelope" },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
     components: {
       securitySchemes: {
         BearerAuth: {
@@ -458,6 +790,256 @@ const options: swaggerJsdoc.Options = {
               items: { $ref: "#/components/schemas/ApiErrorEntry" },
             },
           },
+        },
+        // -----------------------------------------------------------------
+        // Reference library (ETNI-667)
+        // -----------------------------------------------------------------
+        ReferenceSource: {
+          type: "object",
+          description:
+            "Structured bibliographic reference returned by the contributor reference library.",
+          properties: {
+            id: { type: "string", format: "uuid" },
+            source_key: { type: "string", maxLength: 160 },
+            title: { type: "string", maxLength: 1000 },
+            author: { type: "string" },
+            year: { type: "integer", minimum: 1000, maximum: 9999 },
+            source_kind: {
+              type: "string",
+              enum: [
+                "intergovernmental",
+                "government",
+                "official_statistics",
+                "linguistic_reference",
+                "academic",
+                "community",
+                "repository",
+                "archive",
+              ],
+            },
+            evidence_tier: { type: ["integer", "null"], enum: [1, 2, null] },
+            identifiers: {
+              type: "object",
+              additionalProperties: { type: "string" },
+            },
+            publisher: { type: ["string", "null"] },
+            url: { type: ["string", "null"], format: "uri" },
+          },
+          required: [
+            "id",
+            "source_key",
+            "title",
+            "author",
+            "year",
+            "source_kind",
+            "evidence_tier",
+            "identifiers",
+            "publisher",
+            "url",
+          ],
+        },
+        ReferenceCreateInput: {
+          type: "object",
+          properties: {
+            source_key: { type: "string", minLength: 1, maxLength: 160 },
+            title: { type: "string", minLength: 1, maxLength: 1000 },
+            authors: {
+              type: "array",
+              minItems: 1,
+              maxItems: 20,
+              items: { type: "string", minLength: 1, maxLength: 300 },
+            },
+            publication_year: {
+              type: "integer",
+              minimum: 1000,
+              maximum: 9999,
+            },
+            source_kind: { $ref: "#/components/schemas/ReferenceSourceKind" },
+            evidence_tier: { type: ["integer", "null"], enum: [1, 2, null] },
+            identifiers: {
+              type: "object",
+              additionalProperties: { type: "string", maxLength: 300 },
+              default: {},
+            },
+            publisher: { type: ["string", "null"], maxLength: 500 },
+            url: { type: ["string", "null"], format: "uri" },
+          },
+          required: [
+            "source_key",
+            "title",
+            "authors",
+            "publication_year",
+            "source_kind",
+            "evidence_tier",
+          ],
+        },
+        ReferenceSourceKind: {
+          type: "string",
+          enum: [
+            "intergovernmental",
+            "government",
+            "official_statistics",
+            "linguistic_reference",
+            "academic",
+            "community",
+            "repository",
+            "archive",
+          ],
+        },
+        ReferenceCreateResult: {
+          type: "object",
+          properties: {
+            source: { $ref: "#/components/schemas/ReferenceSource" },
+            created: {
+              type: "boolean",
+              description:
+                "True when a new source was created; false when an existing matching source was returned.",
+            },
+          },
+          required: ["source", "created"],
+        },
+        AssertionReferenceCreateInput: {
+          type: "object",
+          properties: {
+            assertion_id: { type: "string", format: "uuid" },
+            source_id: { type: "string", format: "uuid" },
+            locator_type: {
+              type: "string",
+              enum: ["page", "folio", "section", "timestamp"],
+            },
+            locator_value: { type: "string", minLength: 1, maxLength: 500 },
+          },
+          required: [
+            "assertion_id",
+            "source_id",
+            "locator_type",
+            "locator_value",
+          ],
+        },
+        AssertionReference: {
+          type: "object",
+          properties: {
+            id: { type: "string", format: "uuid" },
+            assertion_id: { type: "string", format: "uuid" },
+            source_id: { type: "string", format: "uuid" },
+            locator_type: {
+              type: "string",
+              enum: ["page", "folio", "section", "timestamp"],
+            },
+            locator_value: { type: "string" },
+            review_status: {
+              type: "string",
+              enum: ["verified", "review_required"],
+            },
+          },
+          required: [
+            "id",
+            "assertion_id",
+            "source_id",
+            "locator_type",
+            "locator_value",
+            "review_status",
+          ],
+        },
+        ReferenceWorkingAssetCreateInput: {
+          type: "object",
+          description:
+            "Multipart private working-asset upload. The submitted file is write-only and never returned by this API.",
+          properties: {
+            sourceId: { type: "string", format: "uuid" },
+            assetKind: { type: "string", enum: ["scan", "ocr"] },
+            file: {
+              type: "string",
+              format: "binary",
+              writeOnly: true,
+              description: "Private scan or OCR asset to store.",
+            },
+          },
+          required: ["sourceId", "assetKind", "file"],
+        },
+        PrivateReferenceWorkingAsset: {
+          type: "object",
+          description:
+            "Metadata for a private working asset. Responses intentionally omit binary content, bucket identifiers, and storage object or location paths; this endpoint does not grant asset retrieval access.",
+          properties: {
+            id: { type: "string", format: "uuid" },
+            sourceId: { type: "string", format: "uuid" },
+            assetKind: { type: "string", enum: ["scan", "ocr"] },
+            filename: { type: "string" },
+            contentType: { type: "string" },
+            byteSize: { type: "integer", minimum: 1, maximum: 26214400 },
+            rightsStatus: {
+              type: "string",
+              enum: ["private"],
+              description: "The asset remains private to the working library.",
+            },
+            createdAt: { type: "string", format: "date-time" },
+          },
+          required: [
+            "id",
+            "sourceId",
+            "assetKind",
+            "filename",
+            "contentType",
+            "byteSize",
+            "rightsStatus",
+            "createdAt",
+          ],
+        },
+        ReferenceSearchResponse: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ReferenceSource" },
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        ReferenceCreateResponse: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/ReferenceCreateResult" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        AssertionReferenceCreateResponse: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/AssertionReference" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        PrivateReferenceWorkingAssetResponse: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/PrivateReferenceWorkingAsset" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+              maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
         },
         ConfidenceRecord: {
           type: "object",
