@@ -1,5 +1,4 @@
 import { notFound, redirect } from "next/navigation";
-import { Suspense } from "react";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import {
   getLatestEntityRevisionVersion,
@@ -7,7 +6,8 @@ import {
   type FrozenDoctrineReference,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { LanguageFamilyDetailView } from "@/components/detail/LanguageFamilyDetailView";
+import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
+import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
 import {
@@ -150,6 +150,11 @@ export default async function FamillesSlugPage({
     );
   }
 
+  const family = await getLanguageFamilyById(parsed.slug);
+  if (!family) {
+    notFound();
+  }
+
   // Live version (revalidate = 3600 at segment level)
   return (
     <PageLayout
@@ -157,17 +162,7 @@ export default async function FamillesSlugPage({
       onLanguageChange={() => {}}
       sectionName="Familles linguistiques"
     >
-      <div className="container mx-auto max-w-4xl px-4 py-8">
-        <Suspense
-          fallback={
-            <div className="min-h-[400px] flex items-center justify-center">
-              <p className="text-muted-foreground">Chargement...</p>
-            </div>
-          }
-        >
-          <LanguageFamilyDetailView familyId={parsed.slug} language="fr" />
-        </Suspense>
-      </div>
+      <LanguageFamilyDetailViewV2 family={family} />
     </PageLayout>
   );
 }

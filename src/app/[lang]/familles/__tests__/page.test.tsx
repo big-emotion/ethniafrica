@@ -2,7 +2,12 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const { mockGetLatestVersion, mockGetRevisionSnapshot } = vi.hoisted(() => ({
+const {
+  mockGetLanguageFamilyById,
+  mockGetLatestVersion,
+  mockGetRevisionSnapshot,
+} = vi.hoisted(() => ({
+  mockGetLanguageFamilyById: vi.fn(),
   mockGetLatestVersion: vi.fn(),
   mockGetRevisionSnapshot: vi.fn(),
 }));
@@ -22,6 +27,11 @@ vi.mock("@/api/v2/services/revisions", () => ({
   getRevisionSnapshot: (...args: unknown[]) => mockGetRevisionSnapshot(...args),
 }));
 
+vi.mock("@/api/v2/services/languageFamilyService", () => ({
+  getLanguageFamilyById: (...args: unknown[]) =>
+    mockGetLanguageFamilyById(...args),
+}));
+
 vi.mock("@/lib/supabase/server", () => ({
   createServerClient: vi.fn(() => {
     throw new Error("Page must not query Supabase directly");
@@ -34,9 +44,9 @@ vi.mock("@/components/layout/PageLayout", () => ({
   ),
 }));
 
-vi.mock("@/components/detail/LanguageFamilyDetailView", () => ({
-  LanguageFamilyDetailView: ({ familyId }: { familyId: string }) => (
-    <div data-testid="family-detail-live" data-family-id={familyId} />
+vi.mock("@/components/family/LanguageFamilyDetailViewV2", () => ({
+  LanguageFamilyDetailViewV2: ({ family }: { family: { id: string } }) => (
+    <div data-testid="family-detail-v2-live" data-family-id={family.id} />
   ),
 }));
 
@@ -107,6 +117,7 @@ describe("/[lang]/familles/[slug] page", () => {
       "data-confidence",
       "91"
     );
+    expect(mockGetLanguageFamilyById).not.toHaveBeenCalled();
     expect(
       screen.getByText(/Ce contenu est une capture archivée/)
     ).toBeInTheDocument();
@@ -156,15 +167,33 @@ describe("/[lang]/familles/[slug] page", () => {
 
   // @req REQ-019
   // @req REQ-025
-  it("preserves the live family view without a frozen-version banner", async () => {
+  it("renders the V2 live family view without a frozen-version banner", async () => {
+    mockGetLanguageFamilyById.mockResolvedValueOnce({
+      id: "FLG_BANTU",
+      nameFr: "Bantou",
+      content: {},
+    });
+
     await renderPage("FLG_BANTU");
 
-    expect(screen.getByTestId("family-detail-live")).toHaveAttribute(
+    expect(mockGetLanguageFamilyById).toHaveBeenCalledWith("FLG_BANTU");
+    expect(screen.getByTestId("family-detail-v2-live")).toHaveAttribute(
       "data-family-id",
       "FLG_BANTU"
     );
     expect(screen.queryByTestId("pinned-version-banner")).toBeNull();
     expect(mockGetRevisionSnapshot).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-047
+  it("returns not found when a live language family is missing", async () => {
+    mockGetLanguageFamilyById.mockResolvedValueOnce(null);
+
+    await expect(
+      FamillesSlugPage({
+        params: Promise.resolve({ lang: "fr", slug: "FLG_UNKNOWN" }),
+      })
+    ).rejects.toThrow("NEXT_NOT_FOUND");
   });
 
   // @req REQ-025

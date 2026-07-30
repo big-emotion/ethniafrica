@@ -1,0 +1,10 @@
+export { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
+export { FamilyDecolonialHeader } from "@/components/family/FamilyDecolonialHeader";
+export { FamilyDistributionSection } from "@/components/family/FamilyDistributionSection";
+export { FamilyGeneralInfoSection } from "@/components/family/FamilyGeneralInfoSection";
+export { FamilyHero } from "@/components/family/FamilyHero";
+export { FamilyHistorySection } from "@/components/family/FamilyHistorySection";
+export { FamilyLinguisticTraits } from "@/components/family/FamilyLinguisticTraits";
+export { FamilyPeoplesSection } from "@/components/family/FamilyPeoplesSection";
+export { FamilySourcesFooter } from "@/components/family/FamilySourcesFooter";
+export { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
