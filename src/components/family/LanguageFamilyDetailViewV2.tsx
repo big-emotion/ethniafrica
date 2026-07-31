@@ -4,7 +4,6 @@ import {
 } from "@/lib/familyDataTransformer";
 import type { ReactNode } from "react";
 import type { LanguageFamily } from "@/types/afrik";
-import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
 import { FamilyDecolonialHeader } from "@/components/family/FamilyDecolonialHeader";
 import { FamilyDistributionSection } from "@/components/family/FamilyDistributionSection";
 import { FamilyGeneralInfoSection } from "@/components/family/FamilyGeneralInfoSection";
@@ -32,9 +31,7 @@ function FamilySections({
       <FamilyLinguisticTraits data={data.linguisticTraits} />
       <FamilyHistorySection data={data.history} />
       <FamilyDistributionSection data={data.distribution} />
-      <FamilyClassificationTreeSection>
-        {classificationTree}
-      </FamilyClassificationTreeSection>
+      {classificationTree}
       <FamilySourcesFooter sources={data.sources} />
     </div>
   );
