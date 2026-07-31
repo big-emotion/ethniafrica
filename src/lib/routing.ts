@@ -6,7 +6,8 @@ export type PageType =
   | "peoples"
   | "search"
   | "doctrine"
-  | "about";
+  | "about"
+  | "names";
 
 // Mapping des slugs par langue
 const SLUGS: Record<Language, Record<PageType, string>> = {
@@ -17,6 +18,7 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     search: "recherche",
     doctrine: "doctrine",
     about: "about",
+    names: "noms",
   },
 };
 
@@ -28,6 +30,7 @@ const SLUG_TO_PAGE: Record<string, PageType> = {
   recherche: "search",
   doctrine: "doctrine",
   about: "about",
+  noms: "names",
 };
 
 export const getLocalizedRoute = (
