@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi, afterEach } from "vitest";
 import {
   formatPeoplePopulation,
   extractAppellationShort,
@@ -10,8 +10,12 @@ import {
   transformPeopleRelatedPeoples,
   transformPeopleCountries,
   transformPeopleData,
+  transformPeopleNameRecord,
+  transformPeopleNames,
+  fetchPeopleNamesDossier,
 } from "../peopleDataTransformer";
 import type { PeopleDetail } from "@/types/afrik-frontend";
+import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
 
 // ==========================================
 // MOCK DATA: Yoruba (PPL_YORUBA)
@@ -458,6 +462,167 @@ describe("transformPeopleCountries", () => {
 });
 
 // ==========================================
+// NAMES PAYLOAD (ETNI-473)
+// ==========================================
+
+const dinkaNamesDossier: PeopleNamesDossier = {
+  peopleId: "PPL_DINKA",
+  autonym: "Jieng",
+  names: [
+    {
+      id: "nr-1",
+      nameText: "Jieng",
+      nameType: "endonym",
+      languageOfOrigin: "din",
+      meaning: "peuple",
+      periodLabel: null,
+      imposition: null,
+      assertionId: "as-1",
+      sources: [
+        {
+          id: "s-1",
+          title: "SIL Ethnologue",
+          url: null,
+          year: 2025,
+          tier: "1",
+        },
+      ],
+      confidence: { score: 90, recomputedAt: "2025-01-01" },
+    },
+    {
+      id: "nr-2",
+      nameText: "Dinka",
+      nameType: "exonym",
+      languageOfOrigin: null,
+      meaning: null,
+      periodLabel: null,
+      imposition: {
+        imposedBy: "administration coloniale britannique",
+        impositionPeriod: "1898-1956",
+        whyProblematic: "efface l'auto-appellation Jieng",
+        contemporaryUsage: "toujours utilisé internationalement",
+      },
+      assertionId: "as-2",
+      sources: [],
+      confidence: null,
+    },
+    {
+      id: "nr-3",
+      nameText: "Denka",
+      nameType: "historical_spelling",
+      languageOfOrigin: null,
+      meaning: null,
+      periodLabel: "1850-1900",
+      imposition: null,
+      assertionId: "as-3",
+      sources: [],
+      confidence: { score: 60, recomputedAt: "2025-02-01" },
+    },
+  ],
+};
+
+describe("transformPeopleNameRecord", () => {
+  // @req REQ-056
+  it("flattens the imposition object into the record view", () => {
+    const result = transformPeopleNameRecord(dinkaNamesDossier.names[1]);
+    expect(result.record.imposedBy).toBe(
+      "administration coloniale britannique"
+    );
+    expect(result.record.impositionPeriod).toBe("1898-1956");
+    expect(result.record.whyProblematic).toContain("Jieng");
+    expect(result.record.contemporaryUsage).toContain("internationalement");
+  });
+
+  // @req REQ-054
+  it("returns null imposition fields when imposition is null", () => {
+    const result = transformPeopleNameRecord(dinkaNamesDossier.names[0]);
+    expect(result.record.imposedBy).toBeNull();
+    expect(result.record.impositionPeriod).toBeNull();
+  });
+
+  // @req REQ-054
+  it("extracts confidence fields and source count", () => {
+    const result = transformPeopleNameRecord(dinkaNamesDossier.names[0]);
+    expect(result.confidenceScore).toBe(90);
+    expect(result.lastHumanAuditAt).toBe("2025-01-01");
+    expect(result.sourceCount).toBe(1);
+  });
+
+  // @req REQ-054
+  it("defaults confidence fields to null when absent", () => {
+    const result = transformPeopleNameRecord(dinkaNamesDossier.names[1]);
+    expect(result.confidenceScore).toBeNull();
+    expect(result.lastHumanAuditAt).toBeNull();
+    expect(result.sourceCount).toBe(0);
+  });
+});
+
+describe("transformPeopleNames", () => {
+  // @req REQ-054 REQ-056
+  it("separates endonyms, exonyms and spelling history, endonyms first", () => {
+    const result = transformPeopleNames(dinkaNamesDossier);
+    expect(result).not.toBeNull();
+    expect(result!.autonym).toBe("Jieng");
+    expect(result!.endonyms).toHaveLength(1);
+    expect(result!.endonyms[0].record.nameText).toBe("Jieng");
+    expect(result!.exonyms).toHaveLength(1);
+    expect(result!.exonyms[0].record.nameText).toBe("Dinka");
+    expect(result!.spellingHistory).toHaveLength(1);
+    expect(result!.spellingHistory[0].nameText).toBe("Denka");
+    expect(result!.spellingHistory[0].periodLabel).toBe("1850-1900");
+  });
+
+  // @req REQ-054 (UX-DR31)
+  it("returns null when the dossier is null (UX-DR31)", () => {
+    expect(transformPeopleNames(null)).toBeNull();
+  });
+
+  // @req REQ-054 (UX-DR31)
+  it("returns null when the dossier is undefined (UX-DR31)", () => {
+    expect(transformPeopleNames(undefined)).toBeNull();
+  });
+
+  // @req REQ-054 (UX-DR31)
+  it("returns null when the dossier has zero published name records (UX-DR31)", () => {
+    const empty: PeopleNamesDossier = {
+      peopleId: "PPL_TEST",
+      autonym: null,
+      names: [],
+    };
+    expect(transformPeopleNames(empty)).toBeNull();
+  });
+});
+
+describe("fetchPeopleNamesDossier", () => {
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  // @req REQ-054
+  it("returns the dossier from the response envelope on success", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => ({
+        ok: true,
+        json: async () => ({ data: dinkaNamesDossier }),
+      }))
+    );
+    const result = await fetchPeopleNamesDossier("PPL_DINKA");
+    expect(result).toEqual(dinkaNamesDossier);
+  });
+
+  // @req REQ-054
+  it("returns null when the response is not ok", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async () => ({ ok: false, json: async () => ({}) }))
+    );
+    const result = await fetchPeopleNamesDossier("PPL_UNKNOWN");
+    expect(result).toBeNull();
+  });
+});
+
+// ==========================================
 // MAIN TRANSFORM TESTS
 // ==========================================
 
@@ -503,5 +668,18 @@ describe("transformPeopleData", () => {
     expect(result.relatedPeoples.ethnicities).toEqual([]);
     expect(result.countries.distributions).toEqual([]);
     expect(result.sources).toBe("");
+  });
+
+  // @req REQ-054
+  it("defaults names to null when no namesDossier is provided", () => {
+    const result = transformPeopleData(yorubaPeople);
+    expect(result.names).toBeNull();
+  });
+
+  // @req REQ-054 REQ-056
+  it("threads a provided namesDossier into the names payload", () => {
+    const result = transformPeopleData(yorubaPeople, dinkaNamesDossier);
+    expect(result.names).not.toBeNull();
+    expect(result.names!.endonyms).toHaveLength(1);
   });
 });
