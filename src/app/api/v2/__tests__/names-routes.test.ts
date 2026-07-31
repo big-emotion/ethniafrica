@@ -1,8 +1,14 @@
+/**
+ * Route-level tests for GET /api/v2/names (ETNI-471).
+ * Covers: happy path, filter param passthrough, validation errors,
+ * rate-limit 429 response, and 500 error.
+ */
 import { describe, it, expect, vi, beforeEach } from "vitest";
+import { GET, OPTIONS } from "../names/route";
 import { NextRequest } from "next/server";
 
-vi.mock("@/api/v2/handlers/peopleNames", () => ({
-  getPeopleNamesHandler: vi.fn(),
+vi.mock("@/api/v2/handlers/names", () => ({
+  listNamesHandler: vi.fn(),
 }));
 
 vi.mock("@/lib/api/cors", () => ({
@@ -14,40 +20,38 @@ vi.mock("@/lib/api/cors", () => ({
   corsOptionsResponse: vi.fn(() => new Response(null, { status: 204 })),
 }));
 
-import { getPeopleNamesHandler } from "@/api/v2/handlers/peopleNames";
-import { GET, OPTIONS } from "../peoples/[id]/names/route";
+vi.mock("@/lib/api/rate-limit", () => ({
+  applyRateLimit: vi.fn().mockResolvedValue(null),
+}));
 
-const validEnvelope = {
+import { listNamesHandler } from "@/api/v2/handlers/names";
+import { applyRateLimit } from "@/lib/api/rate-limit";
+
+const mockEnvelope = {
   data: {
-    peopleId: "PPL_DINKA",
-    autonym: "Jieng",
     names: [
       {
-        id: "nr-endonym-1",
+        id: "11111111-1111-1111-1111-111111111111",
+        peopleId: "PPL_JIENG",
         nameText: "Jieng",
-        nameType: "endonym" as const,
+        nameType: "endonym",
         languageOfOrigin: "din",
         meaning: "the people",
         periodLabel: null,
-        imposition: {
-          imposedBy: null,
-          impositionPeriod: null,
-          whyProblematic: null,
-          contemporaryUsage: "primary self-identification",
+        imposedBy: null,
+        impositionPeriod: null,
+        whyProblematic: null,
+        contemporaryUsage: null,
+        sortRank: 0,
+        people: {
+          id: "PPL_JIENG",
+          nameMain: "Jieng",
+          autonym: "Jieng",
+          slug: "PPL_JIENG",
         },
-        assertionId: "assertion-1",
-        sources: [
-          {
-            id: "src-1",
-            title: "Ethnologue",
-            url: "https://ethnologue.com",
-            year: 2023,
-            tier: "primary",
-          },
-        ],
-        confidence: { score: 85, recomputedAt: "2026-07-31T10:00:00Z" },
       },
     ],
+    total: 1,
   },
   meta: {
     license: "CC-BY-SA-4.0",
@@ -56,104 +60,189 @@ const validEnvelope = {
   errors: [],
 };
 
-describe("GET /api/v2/peoples/[id]/names", () => {
+describe("GET /api/v2/names (route)", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    (applyRateLimit as ReturnType<typeof vi.fn>).mockResolvedValue(null);
   });
 
-  // @req REQ-092
-  it("returns 200 with the envelope and Cache-Control s-maxage=3600", async () => {
-    vi.mocked(getPeopleNamesHandler).mockResolvedValue({
-      ok: true,
-      envelope: validEnvelope,
-    });
-
-    const request = new NextRequest(
-      "http://localhost/api/v2/peoples/PPL_DINKA/names"
+  // ── happy path ──────────────────────────────────────────────────────────
+  // @req REQ-057
+  it("happy path — 200 with proper envelope shape", async () => {
+    (listNamesHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+      mockEnvelope
     );
-    const response = await GET(request, {
-      params: Promise.resolve({ id: "PPL_DINKA" }),
-    });
-    const body = await response.json();
 
-    expect(response.status).toBe(200);
-    expect(body.data.peopleId).toBe("PPL_DINKA");
-    expect(body.data.names[0].sources[0].title).toBe("Ethnologue");
-    expect(response.headers.get("Cache-Control")).toBe("s-maxage=3600");
-    expect(getPeopleNamesHandler).toHaveBeenCalledWith("PPL_DINKA");
+    const req = new NextRequest("http://localhost/api/v2/names?q=jieng");
+    const res = await GET(req);
+    const body = await res.json();
+
+    expect(res.status).toBe(200);
+    expect(body.data.names).toBeDefined();
+    expect(typeof body.data.total).toBe("number");
+    expect(body.meta.license).toBe("CC-BY-SA-4.0");
+    expect(Array.isArray(body.errors)).toBe(true);
   });
 
-  // @req REQ-092
-  it("returns 400 VALIDATION_ERROR on invalid id format", async () => {
-    const request = new NextRequest(
-      "http://localhost/api/v2/peoples/dinka/names"
+  // @req REQ-057
+  it("happy path — no params, defaults applied", async () => {
+    (listNamesHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+      mockEnvelope
     );
-    const response = await GET(request, {
-      params: Promise.resolve({ id: "dinka" }),
-    });
-    const body = await response.json();
 
-    expect(response.status).toBe(400);
+    const req = new NextRequest("http://localhost/api/v2/names");
+    await GET(req);
+
+    expect(listNamesHandler).toHaveBeenCalledWith(
+      expect.objectContaining({ limit: 20, offset: 0, imposedOnly: false })
+    );
+  });
+
+  // @req REQ-057
+  it("passes q, nameType, peopleId, letter, limit, offset to the handler", async () => {
+    (listNamesHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+      mockEnvelope
+    );
+
+    const req = new NextRequest(
+      "http://localhost/api/v2/names?q=jieng&nameType=endonym&peopleId=PPL_JIENG&letter=J&limit=10&offset=5"
+    );
+    await GET(req);
+
+    expect(listNamesHandler).toHaveBeenCalledWith(
+      expect.objectContaining({
+        q: "jieng",
+        nameType: "endonym",
+        peopleId: "PPL_JIENG",
+        letter: "J",
+        limit: 10,
+        offset: 5,
+      })
+    );
+  });
+
+  // ── imposedOnly ─────────────────────────────────────────────────────────
+  // @req REQ-057
+  it("imposedOnly=true — normalised to boolean true", async () => {
+    (listNamesHandler as ReturnType<typeof vi.fn>).mockResolvedValue(
+      mockEnvelope
+    );
+
+    const req = new NextRequest(
+      "http://localhost/api/v2/names?imposedOnly=true"
+    );
+    await GET(req);
+
+    expect(listNamesHandler).toHaveBeenCalledWith(
+      expect.objectContaining({ imposedOnly: true })
+    );
+  });
+
+  // ── validation errors ───────────────────────────────────────────────────
+  // @req REQ-057
+  it("invalid nameType — 400 VALIDATION_ERROR", async () => {
+    const req = new NextRequest("http://localhost/api/v2/names?nameType=bogus");
+    const res = await GET(req);
+    const body = await res.json();
+
+    expect(res.status).toBe(400);
     expect(body.errors[0].code).toBe("VALIDATION_ERROR");
-    expect(getPeopleNamesHandler).not.toHaveBeenCalled();
+    expect(listNamesHandler).not.toHaveBeenCalled();
   });
 
-  // @req REQ-092
-  it("returns 404 NOT_FOUND for an unknown people id", async () => {
-    vi.mocked(getPeopleNamesHandler).mockResolvedValue({
-      ok: false,
-      code: "NOT_FOUND",
-      message: "People not found: PPL_UNKNOWN",
-    });
-
-    const request = new NextRequest(
-      "http://localhost/api/v2/peoples/PPL_UNKNOWN/names"
+  // @req REQ-057
+  it("invalid imposedOnly — 400 VALIDATION_ERROR", async () => {
+    const req = new NextRequest(
+      "http://localhost/api/v2/names?imposedOnly=yes"
     );
-    const response = await GET(request, {
-      params: Promise.resolve({ id: "PPL_UNKNOWN" }),
-    });
-    const body = await response.json();
+    const res = await GET(req);
 
-    expect(response.status).toBe(404);
-    expect(body.errors[0].code).toBe("NOT_FOUND");
+    expect(res.status).toBe(400);
   });
 
-  // @req REQ-092
-  it("returns 500 INTERNAL_ERROR when the handler throws", async () => {
-    vi.mocked(getPeopleNamesHandler).mockRejectedValue(new Error("db down"));
-
-    const request = new NextRequest(
-      "http://localhost/api/v2/peoples/PPL_DINKA/names"
+  // @req REQ-057
+  it("malformed peopleId — 400 VALIDATION_ERROR", async () => {
+    const req = new NextRequest(
+      "http://localhost/api/v2/names?peopleId=not-a-people-id"
     );
-    const response = await GET(request, {
-      params: Promise.resolve({ id: "PPL_DINKA" }),
-    });
-    const body = await response.json();
+    const res = await GET(req);
 
-    expect(response.status).toBe(500);
+    expect(res.status).toBe(400);
+  });
+
+  // @req REQ-057
+  it("letter with more than one character — 400 VALIDATION_ERROR", async () => {
+    const req = new NextRequest("http://localhost/api/v2/names?letter=AB");
+    const res = await GET(req);
+
+    expect(res.status).toBe(400);
+  });
+
+  // @req REQ-057
+  it("limit > 100 — 400 VALIDATION_ERROR", async () => {
+    const req = new NextRequest("http://localhost/api/v2/names?limit=200");
+    const res = await GET(req);
+
+    expect(res.status).toBe(400);
+  });
+
+  // @req REQ-057
+  it("negative offset — 400 VALIDATION_ERROR", async () => {
+    const req = new NextRequest("http://localhost/api/v2/names?offset=-1");
+    const res = await GET(req);
+
+    expect(res.status).toBe(400);
+  });
+
+  // ── rate limiting (AR11) ────────────────────────────────────────────────
+  // @req REQ-057
+  it("rate-limit 429 — returns 429 with Retry-After and X-RateLimit-* headers", async () => {
+    const rateLimitedResponse = new Response(
+      JSON.stringify({ error: "rate_limited", retry_after_seconds: 30 }),
+      {
+        status: 429,
+        headers: {
+          "Retry-After": "30",
+          "X-RateLimit-Limit": "60",
+          "X-RateLimit-Remaining": "0",
+          "X-RateLimit-Reset": String(Date.now() + 30000),
+        },
+      }
+    );
+    (applyRateLimit as ReturnType<typeof vi.fn>).mockResolvedValue(
+      rateLimitedResponse
+    );
+
+    const req = new NextRequest("http://localhost/api/v2/names");
+    const res = await GET(req);
+
+    expect(res.status).toBe(429);
+    expect(res.headers.get("Retry-After")).toBe("30");
+    expect(res.headers.get("X-RateLimit-Limit")).toBeDefined();
+    expect(res.headers.get("X-RateLimit-Remaining")).toBe("0");
+    expect(listNamesHandler).not.toHaveBeenCalled();
+  });
+
+  // ── error handling ──────────────────────────────────────────────────────
+  // @req REQ-057
+  it("500 on handler error", async () => {
+    (listNamesHandler as ReturnType<typeof vi.fn>).mockRejectedValue(
+      new Error("DB error")
+    );
+
+    const req = new NextRequest("http://localhost/api/v2/names");
+    const res = await GET(req);
+    const body = await res.json();
+
+    expect(res.status).toBe(500);
     expect(body.errors[0].code).toBe("INTERNAL_ERROR");
   });
 
-  // @req REQ-092
-  it("sets CORS headers on the GET response", async () => {
-    vi.mocked(getPeopleNamesHandler).mockResolvedValue({
-      ok: true,
-      envelope: validEnvelope,
-    });
+  // ── OPTIONS ─────────────────────────────────────────────────────────────
+  // @req REQ-057
+  it("OPTIONS — 204 with CORS headers", async () => {
+    const res = await OPTIONS();
 
-    const request = new NextRequest(
-      "http://localhost/api/v2/peoples/PPL_DINKA/names"
-    );
-    const response = await GET(request, {
-      params: Promise.resolve({ id: "PPL_DINKA" }),
-    });
-
-    expect(response.headers.get("Access-Control-Allow-Origin")).toBe("*");
-  });
-
-  // @req REQ-092
-  it("returns 204 with CORS headers on OPTIONS", async () => {
-    const response = OPTIONS();
-    expect(response.status).toBe(204);
+    expect(res.status).toBe(204);
   });
 });

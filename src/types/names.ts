@@ -4,6 +4,8 @@
  * Mirrors public/modele-nom.json exactly.
  */
 
+import type { ReactNode } from "react";
+
 import type { PeopleId } from "@/types/afrik";
 
 export type NameRecordType =
@@ -39,4 +41,19 @@ export interface NameRecordDossier {
   id: PeopleId; // PPL_xxxxx — the entity this naming dossier is for
   entityType: "people";
   names: NameRecordEntry[];
+}
+
+/**
+ * View-model for `NameOriginCard` (Epic 8, Story 8.8) — the rendering-facing
+ * shape of a single name record. Deliberately excludes `sortRank` and
+ * `sources`: ordering and source evidence are the caller's / `ConfidenceChip`
+ * slot's concern, not the card's.
+ */
+export type NameRecordView = Omit<NameRecordEntry, "sortRank" | "sources">;
+
+/** One entry of `NameSpellingHistory` — a historical spelling paired with its own source-attached chip. */
+export interface NameSpellingHistoryEntry {
+  nameText: string;
+  periodLabel: string | null;
+  confidenceChip: ReactNode;
 }

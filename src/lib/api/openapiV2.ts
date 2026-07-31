@@ -76,6 +76,11 @@ const options: swaggerJsdoc.Options = {
         description:
           "Authenticated contributor workspace for structured references, assertion locators, and private working assets.",
       },
+      {
+        name: "API v2 - Names",
+        description:
+          "Name-variant records (endonyms, exonyms, historical spellings, surnames) — browsable, filterable, searchable index (FR53, FR55, FR58).",
+      },
     ],
     paths: {
       "/api/v2/reference-library": {
@@ -510,6 +515,95 @@ const options: swaggerJsdoc.Options = {
           description: "Module #0 envelope for /v2/search (ETNI-38)",
           properties: {
             data: { $ref: "#/components/schemas/SearchResponseData" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        PeopleSummaryV2: {
+          type: "object",
+          description:
+            "Lightweight people reference embedded in a name record.",
+          properties: {
+            id: {
+              type: "string",
+              description: "Identifiant PPL_*",
+              example: "PPL_JIENG",
+            },
+            nameMain: { type: "string", example: "Jieng" },
+            autonym: {
+              type: ["string", "null"],
+              description: "Self-appellation (endonym), when known",
+              example: "Jieng",
+            },
+            slug: {
+              type: "string",
+              description: "URL slug — the PPL_* id",
+              example: "PPL_JIENG",
+            },
+          },
+          required: ["id", "nameMain", "autonym", "slug"],
+        },
+        NameRecordV2: {
+          type: "object",
+          description:
+            "A single name-variant record (endonym | exonym | historical_spelling | surname).",
+          properties: {
+            id: { type: "string", format: "uuid" },
+            peopleId: { type: "string", example: "PPL_JIENG" },
+            nameText: { type: "string", example: "Dinka" },
+            nameType: {
+              type: "string",
+              enum: ["endonym", "exonym", "historical_spelling", "surname"],
+              example: "exonym",
+            },
+            languageOfOrigin: { type: ["string", "null"], example: "din" },
+            meaning: { type: ["string", "null"] },
+            periodLabel: { type: ["string", "null"] },
+            imposedBy: {
+              type: ["string", "null"],
+              example: "colonial administration",
+            },
+            impositionPeriod: { type: ["string", "null"] },
+            whyProblematic: { type: ["string", "null"] },
+            contemporaryUsage: { type: ["string", "null"] },
+            sortRank: { type: "integer", example: 1 },
+            people: {
+              oneOf: [
+                { $ref: "#/components/schemas/PeopleSummaryV2" },
+                { type: "null" },
+              ],
+            },
+          },
+          required: [
+            "id",
+            "peopleId",
+            "nameText",
+            "nameType",
+            "sortRank",
+            "people",
+          ],
+        },
+        ListNamesData: {
+          type: "object",
+          description: "GET /v2/names result data.",
+          properties: {
+            names: {
+              type: "array",
+              items: { $ref: "#/components/schemas/NameRecordV2" },
+            },
+            total: { type: "integer", example: 2 },
+          },
+          required: ["names", "total"],
+        },
+        ListNamesResponse: {
+          type: "object",
+          description: "Module #0 envelope for /v2/names (ETNI-471)",
+          properties: {
+            data: { $ref: "#/components/schemas/ListNamesData" },
             meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {
               type: "array",
