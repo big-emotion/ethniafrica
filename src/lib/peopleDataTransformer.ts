@@ -18,6 +18,11 @@ import type {
   LanguageFamilyId,
   PeopleId,
 } from "@/types/afrik";
+import type {
+  PeopleNamesDossier,
+  PeopleNameRecord,
+} from "@/api/v2/schemas/names";
+import type { NameRecordView } from "@/types/names";
 
 // ==========================================
 // OUTPUT TYPES
@@ -99,6 +104,30 @@ export interface PeopleCountriesData {
   source?: string;
 }
 
+/** One name record shaped for `NameOriginCard`, plus the raw fields its `confidenceChip` slot needs. */
+export interface PeopleNameRecordViewData {
+  record: NameRecordView;
+  confidenceScore: number | null;
+  sourceCount: number;
+  lastHumanAuditAt: string | null;
+}
+
+/** One historical spelling shaped for `NameSpellingHistory`, plus its own confidence-chip fields. */
+export interface PeopleNameSpellingData {
+  nameText: string;
+  periodLabel: string | null;
+  confidenceScore: number | null;
+  sourceCount: number;
+  lastHumanAuditAt: string | null;
+}
+
+export interface PeopleNamesData {
+  autonym: string | null;
+  endonyms: PeopleNameRecordViewData[];
+  exonyms: PeopleNameRecordViewData[];
+  spellingHistory: PeopleNameSpellingData[];
+}
+
 export interface PeoplePageData {
   hero: PeopleHeroData;
   origin: PeopleOriginData;
@@ -108,6 +137,7 @@ export interface PeoplePageData {
   relatedPeoples: PeopleRelatedData;
   countries: PeopleCountriesData;
   sources: string;
+  names: PeopleNamesData | null;
 }
 
 // ==========================================
@@ -289,11 +319,94 @@ export function transformPeopleCountries(
   };
 }
 
+/**
+ * Shape one `PeopleNameRecord` (API view) into a `NameOriginCard`-compatible
+ * `NameRecordView` plus the raw confidence fields its chip slot needs. The
+ * card and the chip are composed by the caller (`PeopleNamesSection`) —
+ * this transformer stays free of JSX.
+ */
+export function transformPeopleNameRecord(
+  entry: PeopleNameRecord
+): PeopleNameRecordViewData {
+  return {
+    record: {
+      nameText: entry.nameText,
+      nameType: entry.nameType,
+      languageOfOrigin: entry.languageOfOrigin,
+      meaning: entry.meaning,
+      periodLabel: entry.periodLabel,
+      imposedBy: entry.imposition?.imposedBy ?? null,
+      impositionPeriod: entry.imposition?.impositionPeriod ?? null,
+      whyProblematic: entry.imposition?.whyProblematic ?? null,
+      contemporaryUsage: entry.imposition?.contemporaryUsage ?? null,
+    },
+    confidenceScore: entry.confidence?.score ?? null,
+    sourceCount: entry.sources.length,
+    lastHumanAuditAt: entry.confidence?.recomputedAt ?? null,
+  };
+}
+
+/**
+ * Shape a `PeopleNamesDossier` (GET /v2/peoples/{id}/names) into the
+ * endonyms-first `names` payload for `PeopleNamesSection`. Returns `null`
+ * when there is nothing to show (UX-DR31) — the section omits itself
+ * entirely rather than rendering an empty shell.
+ */
+export function transformPeopleNames(
+  dossier?: PeopleNamesDossier | null
+): PeopleNamesData | null {
+  if (!dossier || dossier.names.length === 0) return null;
+
+  const endonyms = dossier.names
+    .filter((n) => n.nameType === "endonym")
+    .map(transformPeopleNameRecord);
+  const exonyms = dossier.names
+    .filter((n) => n.nameType === "exonym")
+    .map(transformPeopleNameRecord);
+  const spellingHistory: PeopleNameSpellingData[] = dossier.names
+    .filter((n) => n.nameType === "historical_spelling")
+    .map((n) => ({
+      nameText: n.nameText,
+      periodLabel: n.periodLabel,
+      confidenceScore: n.confidence?.score ?? null,
+      sourceCount: n.sources.length,
+      lastHumanAuditAt: n.confidence?.recomputedAt ?? null,
+    }));
+
+  if (
+    endonyms.length === 0 &&
+    exonyms.length === 0 &&
+    spellingHistory.length === 0
+  ) {
+    return null;
+  }
+
+  return {
+    autonym: dossier.autonym,
+    endonyms,
+    exonyms,
+    spellingHistory,
+  };
+}
+
+/** Fetches the names dossier for a people from the fiche's data flow (GET /v2/peoples/{id}/names). */
+export async function fetchPeopleNamesDossier(
+  peopleId: string
+): Promise<PeopleNamesDossier | null> {
+  const response = await fetch(`/api/v2/peoples/${peopleId}/names`);
+  if (!response.ok) return null;
+  const body = await response.json();
+  return (body.data ?? null) as PeopleNamesDossier | null;
+}
+
 // ==========================================
 // MAIN TRANSFORM
 // ==========================================
 
-export function transformPeopleData(raw: PeopleDetail): PeoplePageData {
+export function transformPeopleData(
+  raw: PeopleDetail,
+  namesDossier?: PeopleNamesDossier | null
+): PeoplePageData {
   const sources =
     raw.sources && raw.sources.length > 0
       ? raw.sources.map((s) => s.replace(/^-\s*/, "").trim()).join(" · ")
@@ -315,5 +428,6 @@ export function transformPeopleData(raw: PeopleDetail): PeoplePageData {
     ),
     countries: transformPeopleCountries(raw.demography),
     sources,
+    names: transformPeopleNames(namesDossier),
   };
 }

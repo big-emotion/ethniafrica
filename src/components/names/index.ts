@@ -10,3 +10,7 @@ export {
   NameSpellingHistory,
   type NameSpellingHistoryProps,
 } from "@/components/names/NameSpellingHistory";
+export {
+  PeopleNamesSection,
+  type PeopleNamesSectionProps,
+} from "@/components/names/PeopleNamesSection";

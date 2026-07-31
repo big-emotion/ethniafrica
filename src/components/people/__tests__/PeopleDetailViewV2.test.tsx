@@ -8,6 +8,18 @@ vi.mock("@/lib/afrikLoader", () => ({
   getPeople: vi.fn(async () => ({ id: "PPL_EWE" })),
 }));
 
+const { mockTransformPeopleData, mockFetchPeopleNamesDossier } = vi.hoisted(
+  () => ({
+    mockTransformPeopleData: vi.fn(),
+    mockFetchPeopleNamesDossier: vi.fn(async () => null),
+  })
+);
+
+vi.mock("@/lib/peopleDataTransformer", () => ({
+  transformPeopleData: mockTransformPeopleData,
+  fetchPeopleNamesDossier: mockFetchPeopleNamesDossier,
+}));
+
 const basePageData: PeoplePageData = {
   hero: {
     peopleId: "PPL_EWE",
@@ -30,11 +42,10 @@ const basePageData: PeoplePageData = {
     distributions: [],
   },
   sources: "",
+  names: null,
 };
 
-vi.mock("@/lib/peopleDataTransformer", () => ({
-  transformPeopleData: vi.fn(() => basePageData),
-}));
+mockTransformPeopleData.mockReturnValue(basePageData);
 
 const twoCountryFragmentation: PeopleFragmentation = {
   peopleId: "PPL_EWE",
@@ -62,6 +73,8 @@ function mockFragmentationFetch(
 describe("PeopleDetailViewV2 — fragmentation wiring", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    mockTransformPeopleData.mockReturnValue(basePageData);
+    mockFetchPeopleNamesDossier.mockResolvedValue(null);
   });
 
   afterEach(() => {
@@ -107,5 +120,48 @@ describe("PeopleDetailViewV2 — fragmentation wiring", () => {
       expect(screen.getAllByText("Ewe").length).toBeGreaterThan(0);
     });
     expect(screen.queryByText("Fragmentation coloniale")).toBeNull();
+  });
+});
+
+describe("PeopleDetailViewV2 — names wiring", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    mockTransformPeopleData.mockReturnValue(basePageData);
+    mockFetchPeopleNamesDossier.mockResolvedValue(null);
+  });
+
+  afterEach(() => {
+    cleanup();
+  });
+
+  // @req REQ-054 REQ-056
+  it("threads the fetched names dossier into transformPeopleData", async () => {
+    const dossier = { peopleId: "PPL_EWE", autonym: "Eʋeawo", names: [] };
+    mockFetchPeopleNamesDossier.mockResolvedValue(dossier);
+    mockFragmentationFetch({ ok: false, json: async () => ({}) });
+
+    render(<PeopleDetailViewV2 peopleId="PPL_EWE" />);
+
+    await waitFor(() => {
+      expect(mockFetchPeopleNamesDossier).toHaveBeenCalledWith("PPL_EWE");
+    });
+    await waitFor(() => {
+      expect(mockTransformPeopleData).toHaveBeenLastCalledWith(
+        expect.anything(),
+        dossier
+      );
+    });
+  });
+
+  // @req REQ-054 (UX-DR31)
+  it("does not break the rest of the fiche when the names fetch errors", async () => {
+    mockFetchPeopleNamesDossier.mockRejectedValue(new Error("network error"));
+    mockFragmentationFetch({ ok: false, json: async () => ({}) });
+
+    render(<PeopleDetailViewV2 peopleId="PPL_EWE" />);
+
+    await waitFor(() => {
+      expect(screen.getAllByText("Ewe").length).toBeGreaterThan(0);
+    });
   });
 });
