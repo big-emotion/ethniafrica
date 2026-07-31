@@ -2451,6 +2451,7 @@ interface RawNameRecordEntry {
   nameText?: unknown;
   nameType?: unknown;
   languageOfOrigin?: unknown;
+  meaning?: unknown;
   imposedBy?: unknown;
   whyProblematic?: unknown;
   sources?: RawNameRecordSource[];
@@ -2619,6 +2620,49 @@ export function checkNameRecordReferences(
         `FR53-ref: ${file}: peopleId "${data.id}" does not resolve to an existing PPL fiche`
       );
     }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * FR55-surname – a surname record must document its basis: non-empty
+ * "meaning", or an explicit connection statement in the sources[].notes of
+ * at least one source (Story 8.11 — a bare name-to-people pairing with no
+ * documented basis is invalid; source it or drop it).
+ */
+export function checkNameRecordSurnameConnection(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  for (const { file, fullPath } of collectNameRecordFiles(datasetRoot)) {
+    let data: RawNameRecordFile;
+    try {
+      data = JSON.parse(fs.readFileSync(fullPath, "utf-8"));
+    } catch {
+      warnings.push(`${file}: could not parse JSON`);
+      continue;
+    }
+
+    const names = Array.isArray(data.names) ? data.names : [];
+    names.forEach((entry, i) => {
+      if (entry?.nameType !== "surname") return;
+
+      const hasMeaning =
+        typeof entry.meaning === "string" && entry.meaning.trim() !== "";
+      const sources = Array.isArray(entry?.sources) ? entry.sources : [];
+      const hasConnectionStatement = sources.some(
+        (s) => typeof s?.notes === "string" && s.notes.trim() !== ""
+      );
+
+      if (!hasMeaning && !hasConnectionStatement) {
+        errors.push(
+          `FR55-surname: ${file}: names[${i}] is a surname record with no documented basis — "meaning" or an explicit connection statement in sources[].notes is required`
+        );
+      }
+    });
   }
 
   return { ok: errors.length === 0, errors, warnings };
@@ -2888,6 +2932,12 @@ async function main() {
   newChecks.push({
     name: "FR53-dup Name record duplicates",
     result: checkNameRecordDuplicates(datasetRoot),
+  });
+
+  console.log("FR55-surname – Surname record documented basis...");
+  newChecks.push({
+    name: "FR55-surname Name record surname connection",
+    result: checkNameRecordSurnameConnection(datasetRoot),
   });
 
   if (process.env.CHECK_SOURCE_URLS === "true") {
