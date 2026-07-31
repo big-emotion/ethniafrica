@@ -6,6 +6,7 @@ module.exports = {
         "http://localhost:3000/fr",
         "http://localhost:3000/fr/pays/senegal",
         "http://localhost:3000/fr/peuples/wolof",
+        "http://localhost:3000/fr/noms",
       ],
       numberOfRuns: 3,
       settings: {
