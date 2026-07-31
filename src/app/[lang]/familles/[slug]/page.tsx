@@ -7,7 +7,9 @@ import {
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
+import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
 import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
+import { getFamilyTreeSkeleton } from "@/api/v2/services/languageFamilyTreeService";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
 import {
@@ -155,6 +157,8 @@ export default async function FamillesSlugPage({
     notFound();
   }
 
+  const tree = await getFamilyTreeSkeleton(parsed.slug);
+
   // Live version (revalidate = 3600 at segment level)
   return (
     <PageLayout
@@ -162,7 +166,17 @@ export default async function FamillesSlugPage({
       onLanguageChange={() => {}}
       sectionName="Familles linguistiques"
     >
-      <LanguageFamilyDetailViewV2 family={family} />
+      <LanguageFamilyDetailViewV2
+        family={family}
+        classificationTree={
+          tree ? (
+            <FamilyClassificationTreeSection
+              familyId={parsed.slug}
+              tree={tree}
+            />
+          ) : undefined
+        }
+      />
     </PageLayout>
   );
 }

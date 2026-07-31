@@ -17,9 +17,17 @@ export interface HierarchyNode {
   children?: HierarchyNode[];
 }
 
+export interface HierarchyChildrenPage {
+  nodes: HierarchyNode[];
+  total?: number;
+}
+
 export interface HierarchyTreeProps {
   root: HierarchyNode;
-  loadChildren?: (node: HierarchyNode) => Promise<HierarchyNode[]>;
+  loadChildren?: (
+    node: HierarchyNode,
+    offset?: number
+  ) => Promise<HierarchyNode[] | HierarchyChildrenPage>;
   defaultExpandedIds?: string[];
   onExpandedChange?: (ids: string[]) => void;
   labelledById: string;
@@ -112,6 +120,9 @@ export function HierarchyTree({
   const [loadedChildren, setLoadedChildren] = React.useState<
     Map<string, HierarchyNode[]>
   >(() => new Map());
+  const [childTotals, setChildTotals] = React.useState<Map<string, number>>(
+    () => new Map()
+  );
   const [loadingIds, setLoadingIds] = React.useState<Set<string>>(
     () => new Set()
   );
@@ -155,7 +166,7 @@ export function HierarchyTree({
     nodeRefs.current.get(id)?.focus();
   }
 
-  async function loadChildrenFor(node: HierarchyNode) {
+  async function loadChildrenFor(node: HierarchyNode, offset = 0) {
     if (!loadChildren) return;
     setLoadingIds((prev) => new Set(prev).add(node.id));
     setErrorIds((prev) => {
@@ -164,9 +175,21 @@ export function HierarchyTree({
       return next;
     });
     try {
-      const children = await loadChildren(node);
-      setLoadedChildren((prev) => new Map(prev).set(node.id, children));
-      setLiveMessage(`branche chargée — ${children.length} peuples`);
+      const result =
+        offset === 0
+          ? await loadChildren(node)
+          : await loadChildren(node, offset);
+      const page = Array.isArray(result) ? { nodes: result } : result;
+      setLoadedChildren((prev) => {
+        const next = new Map(prev);
+        const existing = offset === 0 ? [] : (prev.get(node.id) ?? []);
+        next.set(node.id, [...existing, ...page.nodes]);
+        return next;
+      });
+      if (typeof page.total === "number") {
+        setChildTotals((prev) => new Map(prev).set(node.id, page.total));
+      }
+      setLiveMessage(`branche chargée — ${page.nodes.length} peuples`);
     } catch {
       setErrorIds((prev) => new Set(prev).add(node.id));
     } finally {
@@ -290,6 +313,10 @@ export function HierarchyTree({
     const loading = loadingIds.has(node.id);
     const errored = errorIds.has(node.id);
     const children = resolveChildren(node, loadedChildren);
+    const remaining = Math.max(
+      0,
+      (childTotals.get(node.id) ?? 0) - (children?.length ?? 0)
+    );
     const isActive = activeId === node.id;
 
     const commonProps = {
@@ -374,15 +401,28 @@ export function HierarchyTree({
                 </button>
               </div>
             ) : (
-              (children ?? []).map((child, index) =>
-                renderNode({
-                  node: child,
-                  level: level + 1,
-                  setSize: (children ?? []).length,
-                  posInSet: index + 1,
-                  parentId: node.id,
-                })
-              )
+              <>
+                {(children ?? []).map((child, index) =>
+                  renderNode({
+                    node: child,
+                    level: level + 1,
+                    setSize: (children ?? []).length,
+                    posInSet: index + 1,
+                    parentId: node.id,
+                  })
+                )}
+                {remaining > 0 ? (
+                  <button
+                    type="button"
+                    onClick={() =>
+                      void loadChildrenFor(node, children?.length ?? 0)
+                    }
+                    className="font-semibold text-afh-terracotta underline underline-offset-2"
+                  >
+                    charger la suite ({remaining} restants)
+                  </button>
+                ) : null}
+              </>
             )}
           </div>
         ) : null}

@@ -1,9 +1,31 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
+import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
 import { FamilyDecolonialHeader } from "@/components/family/FamilyDecolonialHeader";
 import { FamilyHero } from "@/components/family/FamilyHero";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
 import type { LanguageFamily } from "@/types/afrik";
+
+const classificationTree = {
+  family: { id: "FLG_BANTU", nameFr: "Bantou" },
+  branches: [{ iso639_3: "kon", name: "Kikongo", peopleCount: 2 }],
+  unlinkedPeopleCount: 0,
+};
+
+function renderClassificationSection() {
+  const queryClient = new QueryClient({
+    defaultOptions: { queries: { retry: false } },
+  });
+  return render(
+    <QueryClientProvider client={queryClient}>
+      <FamilyClassificationTreeSection
+        familyId="FLG_BANTU"
+        tree={classificationTree}
+      />
+    </QueryClientProvider>
+  );
+}
 
 const completeFamily: LanguageFamily = {
   id: "FLG_BANTU",
@@ -147,5 +169,55 @@ describe("LanguageFamilyDetailViewV2", () => {
       "href",
       "/fr/pays/COD"
     );
+  });
+});
+
+describe("FamilyClassificationTreeSection", () => {
+  // @req REQ-047
+  it("renders the server-safe text index and collapsed tree skeleton", () => {
+    renderClassificationSection();
+
+    expect(
+      screen.getByRole("heading", { level: 2, name: "Classification" })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("list", { name: "Classification", hidden: true })
+    ).toBeInTheDocument();
+    expect(screen.getByText("Kikongo")).toBeInTheDocument();
+    expect(screen.getByText("Voir en liste")).toBeInTheDocument();
+  });
+
+  // @req REQ-047
+  it("does not load a branch before expansion, then requests and paginates it", async () => {
+    const fetchMock = vi.fn().mockResolvedValueOnce({
+      ok: true,
+      json: async () => ({
+        data: [
+          {
+            id: "PPL_BAKONGO",
+            nameMain: "Bakongo",
+            classificationStatus: null,
+          },
+        ],
+        meta: { pagination: { total: 2 } },
+      }),
+    });
+    vi.stubGlobal("fetch", fetchMock);
+
+    renderClassificationSection();
+
+    expect(fetchMock).not.toHaveBeenCalled();
+
+    fireEvent.click(await screen.findByRole("treeitem", { name: /Kikongo/ }));
+
+    await waitFor(() => {
+      expect(fetchMock).toHaveBeenCalledWith(
+        "/api/v2/language-families/FLG_BANTU/tree/branch?language=kon&limit=20&offset=0"
+      );
+    });
+    expect(await screen.findByText("Bakongo")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: "charger la suite (1 restants)" })
+    ).toBeInTheDocument();
   });
 });

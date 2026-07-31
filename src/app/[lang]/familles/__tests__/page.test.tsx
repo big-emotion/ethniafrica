@@ -4,10 +4,12 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const {
   mockGetLanguageFamilyById,
+  mockGetFamilyTreeSkeleton,
   mockGetLatestVersion,
   mockGetRevisionSnapshot,
 } = vi.hoisted(() => ({
   mockGetLanguageFamilyById: vi.fn(),
+  mockGetFamilyTreeSkeleton: vi.fn(),
   mockGetLatestVersion: vi.fn(),
   mockGetRevisionSnapshot: vi.fn(),
 }));
@@ -32,6 +34,11 @@ vi.mock("@/api/v2/services/languageFamilyService", () => ({
     mockGetLanguageFamilyById(...args),
 }));
 
+vi.mock("@/api/v2/services/languageFamilyTreeService", () => ({
+  getFamilyTreeSkeleton: (...args: unknown[]) =>
+    mockGetFamilyTreeSkeleton(...args),
+}));
+
 vi.mock("@/lib/supabase/server", () => ({
   createServerClient: vi.fn(() => {
     throw new Error("Page must not query Supabase directly");
@@ -45,8 +52,30 @@ vi.mock("@/components/layout/PageLayout", () => ({
 }));
 
 vi.mock("@/components/family/LanguageFamilyDetailViewV2", () => ({
-  LanguageFamilyDetailViewV2: ({ family }: { family: { id: string } }) => (
-    <div data-testid="family-detail-v2-live" data-family-id={family.id} />
+  LanguageFamilyDetailViewV2: ({
+    family,
+    classificationTree,
+  }: {
+    family: { id: string };
+    classificationTree?: React.ReactNode;
+  }) => (
+    <div data-testid="family-detail-v2-live" data-family-id={family.id}>
+      {classificationTree}
+    </div>
+  ),
+}));
+
+vi.mock("@/components/family/FamilyClassificationTreeSection", () => ({
+  FamilyClassificationTreeSection: ({
+    familyId,
+    tree,
+  }: {
+    familyId: string;
+    tree: { branches: { name: string }[] };
+  }) => (
+    <div data-testid="family-classification-section" data-family-id={familyId}>
+      {tree.branches.map((branch) => branch.name).join(", ")}
+    </div>
   ),
 }));
 
@@ -183,6 +212,31 @@ describe("/[lang]/familles/[slug] page", () => {
     );
     expect(screen.queryByTestId("pinned-version-banner")).toBeNull();
     expect(mockGetRevisionSnapshot).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-047
+  it("fetches the tree skeleton server-side and passes a classification section to the live view", async () => {
+    mockGetLanguageFamilyById.mockResolvedValueOnce({
+      id: "FLG_BANTU",
+      nameFr: "Bantou",
+      content: {},
+    });
+    mockGetFamilyTreeSkeleton.mockResolvedValueOnce({
+      family: { id: "FLG_BANTU", nameFr: "Bantou" },
+      branches: [{ iso639_3: "kon", name: "Kikongo", peopleCount: 2 }],
+      unlinkedPeopleCount: 0,
+    });
+
+    await renderPage("FLG_BANTU");
+
+    expect(mockGetFamilyTreeSkeleton).toHaveBeenCalledWith("FLG_BANTU");
+    expect(screen.getByTestId("family-classification-section")).toHaveAttribute(
+      "data-family-id",
+      "FLG_BANTU"
+    );
+    expect(
+      screen.getByTestId("family-classification-section")
+    ).toHaveTextContent("Kikongo");
   });
 
   // @req REQ-047
