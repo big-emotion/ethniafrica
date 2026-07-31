@@ -14,3 +14,8 @@ export {
   PeopleNamesSection,
   type PeopleNamesSectionProps,
 } from "@/components/names/PeopleNamesSection";
+export {
+  NamesAtlasView,
+  type NamesAtlasViewProps,
+  type NameAtlasEntry,
+} from "@/components/names/NamesAtlasView";
