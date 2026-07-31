@@ -1214,6 +1214,114 @@ const options: swaggerJsdoc.Options = {
           required: ["data", "meta", "errors"],
         },
         // -----------------------------------------------------------------
+        // Epic 8 — Names Atlas: people names dossier (FR53-FR58, Story 8.6)
+        // -----------------------------------------------------------------
+        NameRecordSource: {
+          type: "object",
+          properties: {
+            id: { type: "string" },
+            title: { type: "string" },
+            url: { type: ["string", "null"] },
+            year: { type: ["integer", "null"] },
+            tier: { type: ["string", "null"] },
+          },
+          required: ["id", "title", "url", "year", "tier"],
+        },
+        NameRecordImposition: {
+          type: "object",
+          description:
+            "Imposed-name context. Present whenever any of its four fields carries data — including contemporaryUsage on non-imposed endonyms (the illustrative dossier shape), so this is not gated on imposedBy alone.",
+          properties: {
+            imposedBy: { type: ["string", "null"] },
+            impositionPeriod: { type: ["string", "null"] },
+            whyProblematic: { type: ["string", "null"] },
+            contemporaryUsage: { type: ["string", "null"] },
+          },
+          required: [
+            "imposedBy",
+            "impositionPeriod",
+            "whyProblematic",
+            "contemporaryUsage",
+          ],
+        },
+        NameRecordConfidence: {
+          type: "object",
+          properties: {
+            score: { type: "number" },
+            recomputedAt: { type: ["string", "null"] },
+          },
+          required: ["score", "recomputedAt"],
+        },
+        NameRecord: {
+          type: "object",
+          description:
+            "One name entry in a people's names dossier (endonym, exonym, historical spelling, or surname), with per-record sources and the people's confidence score (AR17 batched, not per-record queries).",
+          properties: {
+            id: { type: "string", example: "nr-endonym-1" },
+            nameText: { type: "string", example: "Jieng" },
+            nameType: {
+              type: "string",
+              enum: ["endonym", "exonym", "historical_spelling", "surname"],
+            },
+            languageOfOrigin: { type: ["string", "null"], example: "din" },
+            meaning: { type: ["string", "null"] },
+            periodLabel: { type: ["string", "null"] },
+            imposition: {
+              oneOf: [
+                { $ref: "#/components/schemas/NameRecordImposition" },
+                { type: "null" },
+              ],
+            },
+            assertionId: { type: "string" },
+            sources: {
+              type: "array",
+              items: { $ref: "#/components/schemas/NameRecordSource" },
+            },
+            confidence: {
+              oneOf: [
+                { $ref: "#/components/schemas/NameRecordConfidence" },
+                { type: "null" },
+              ],
+            },
+          },
+          required: [
+            "id",
+            "nameText",
+            "nameType",
+            "languageOfOrigin",
+            "meaning",
+            "periodLabel",
+            "imposition",
+            "assertionId",
+            "sources",
+            "confidence",
+          ],
+        },
+        PeopleNamesDossier: {
+          type: "object",
+          properties: {
+            peopleId: { type: "string", example: "PPL_DINKA" },
+            autonym: { type: ["string", "null"] },
+            names: {
+              type: "array",
+              items: { $ref: "#/components/schemas/NameRecord" },
+            },
+          },
+          required: ["peopleId", "autonym", "names"],
+        },
+        PeopleNamesDossierResponse: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/PeopleNamesDossier" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        // -----------------------------------------------------------------
         // Epic 7 — Language family tree branch (FR48, NFR3)
         // -----------------------------------------------------------------
         FamilyTreeBranchNode: {
