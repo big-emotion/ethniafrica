@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { NextRequest } from "next/server";
+import type { Language, LanguageFamily, People } from "@/types/afrik";
 
 vi.mock("@/api/v2/handlers/languageFamilyTree", () => ({
   getLanguageFamilyTreeHandler: vi.fn(),
@@ -14,8 +15,25 @@ vi.mock("@/lib/api/cors", () => ({
   corsOptionsResponse: vi.fn(() => new Response(null, { status: 204 })),
 }));
 
+// Query-level mocks (not the handler mock above) so the payload-size budget
+// test below can drive the *real* handler → service → serialization chain —
+// only the Supabase round-trips are faked (@req AC3 ETNI-463 review fix: a
+// hand-built envelope wouldn't catch a regression re-adding `content`).
+vi.mock("@/lib/supabase/queries/afrik/languageFamilies", () => ({
+  getAfrikLanguageFamilyById: vi.fn(),
+}));
+vi.mock("@/lib/supabase/queries/afrik/languages", () => ({
+  getAfrikLanguagesByFamily: vi.fn(),
+}));
+vi.mock("@/lib/supabase/queries/afrik/peoples", () => ({
+  getAfrikPeoplesByLanguageFamily: vi.fn(),
+}));
+
 import { getLanguageFamilyTreeHandler } from "@/api/v2/handlers/languageFamilyTree";
 import { GET, OPTIONS } from "../language-families/[id]/tree/route";
+import { getAfrikLanguageFamilyById } from "@/lib/supabase/queries/afrik/languageFamilies";
+import { getAfrikLanguagesByFamily } from "@/lib/supabase/queries/afrik/languages";
+import { getAfrikPeoplesByLanguageFamily } from "@/lib/supabase/queries/afrik/peoples";
 
 const validEnvelope = {
   data: {
@@ -165,40 +183,53 @@ describe("GET /api/v2/language-families/[id]/tree — payload size budget", () =
 
   // @req REQ-047
   it("keeps the largest family's tree skeleton response at or under 15 KB", async () => {
-    const perBranch = Math.ceil(TOTAL_PEOPLES / REAL_BANTU_LANGUAGES.length);
-    const largestFamilySkeleton = {
-      data: {
-        family: {
-          id: "FLG_BANTU",
-          nameFr: "Bantou",
-          nameEn: "Bantu",
-          classificationStatus: "consensual" as const,
-        },
-        branches: REAL_BANTU_LANGUAGES.map((language) => ({
-          ...language,
-          peopleCount: perBranch,
-        })),
-        unlinkedPeopleCount: 0,
+    // Drives the real handler → getFamilyTreeSkeleton → createApiResponse
+    // chain (only the Supabase queries below are mocked), so this budget
+    // exercises the actual response shape rather than a hand-built stand-in.
+    const { getLanguageFamilyTreeHandler: realHandler } = await vi.importActual<
+      typeof import("@/api/v2/handlers/languageFamilyTree")
+    >("@/api/v2/handlers/languageFamilyTree");
+
+    const mockFamily: LanguageFamily = {
+      id: "FLG_BANTU",
+      nameFr: "Bantou",
+      nameEn: "Bantu",
+      classificationStatus: "consensual",
+      content: {
+        history:
+          "Long editorial article text — deliberately excluded from the skeleton.",
       },
-      meta: {
-        license: "CC-BY-SA-4.0",
-        attribution: "Africa History — africahistory.org",
-      },
-      errors: [],
     };
-
-    vi.mocked(getLanguageFamilyTreeHandler).mockResolvedValue({
-      ok: true,
-      envelope: largestFamilySkeleton,
-    });
-
-    const request = new NextRequest(
-      "http://localhost/api/v2/language-families/FLG_BANTU/tree"
+    const mockLanguages: Language[] = REAL_BANTU_LANGUAGES.map((language) => ({
+      id: language.iso639_3,
+      name: language.name,
+      familyId: "FLG_BANTU",
+      content: {},
+    }));
+    const mockPeoples: People[] = Array.from(
+      { length: TOTAL_PEOPLES },
+      (_, index) => {
+        const language =
+          REAL_BANTU_LANGUAGES[index % REAL_BANTU_LANGUAGES.length];
+        return {
+          id: `PPL_${index}`,
+          nameMain: `Peuple ${index}`,
+          languageFamilyId: "FLG_BANTU",
+          currentCountries: [],
+          classificationStatus: null,
+          content: { languages: { isoCodes: [language.iso639_3] } },
+        };
+      }
     );
-    const response = await GET(request, {
-      params: Promise.resolve({ id: "FLG_BANTU" }),
-    });
-    const body = await response.text();
+
+    vi.mocked(getAfrikLanguageFamilyById).mockResolvedValue(mockFamily);
+    vi.mocked(getAfrikLanguagesByFamily).mockResolvedValue(mockLanguages);
+    vi.mocked(getAfrikPeoplesByLanguageFamily).mockResolvedValue(mockPeoples);
+
+    const result = await realHandler("FLG_BANTU");
+
+    expect(result.ok).toBe(true);
+    const body = JSON.stringify(result.ok ? result.envelope : null);
 
     expect(Buffer.byteLength(body, "utf-8")).toBeLessThanOrEqual(15 * 1024);
   });
