@@ -5,7 +5,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { AlertTriangle } from "lucide-react";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 import { getPeople } from "@/lib/afrikLoader";
-import { transformPeopleData } from "@/lib/peopleDataTransformer";
+import {
+  transformPeopleData,
+  fetchPeopleNamesDossier,
+} from "@/lib/peopleDataTransformer";
 import {
   PeopleHero,
   PeopleOriginBlock,
@@ -19,7 +22,9 @@ import {
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { FragmentationView } from "@/components/colonization/FragmentationView";
 import { OralNarrativesSection } from "@/components/people/OralNarrativesSection";
+import { PeopleNamesSection } from "@/components/names/PeopleNamesSection";
 import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
+import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
 
 async function fetchFragmentation(
   peopleId: string
@@ -90,6 +95,9 @@ export function PeopleDetailViewV2({
   const [error, setError] = useState<string | null>(null);
   const [fragmentation, setFragmentation] =
     useState<PeopleFragmentation | null>(null);
+  const [namesDossier, setNamesDossier] = useState<PeopleNamesDossier | null>(
+    null
+  );
 
   useEffect(() => {
     let cancelled = false;
@@ -102,6 +110,24 @@ export function PeopleDetailViewV2({
         // Fragmentation section is additive — the rest of the fiche must
         // render regardless, so a fetch failure simply leaves it absent.
         if (!cancelled) setFragmentation(null);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [peopleId]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetchPeopleNamesDossier(peopleId)
+      .then((dossier) => {
+        if (!cancelled) setNamesDossier(dossier);
+      })
+      .catch(() => {
+        // Names section is additive and below the fold (UX-DR18) — the
+        // rest of the fiche must render regardless of this fetch failing.
+        if (!cancelled) setNamesDossier(null);
       });
 
     return () => {
@@ -163,7 +189,7 @@ export function PeopleDetailViewV2({
     );
   }
 
-  const data = transformPeopleData(people);
+  const data = transformPeopleData(people, namesDossier);
 
   const breadcrumbs = [
     { label: "Familles", href: "/fr/familles" },
@@ -251,6 +277,9 @@ export function PeopleDetailViewV2({
         )}
 
         <OralNarrativesSection peopleId={data.hero.peopleId} />
+
+        {/* Noms & appellations (below the fold; chips hydrate second-wave, UX-DR18) */}
+        <PeopleNamesSection data={data.names} />
 
         {/* 5. Culture */}
         {(data.culture.supremeDeity ||

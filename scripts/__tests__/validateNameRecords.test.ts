@@ -8,6 +8,7 @@ import {
   checkNameRecordEndonymCoverage,
   checkNameRecordReferences,
   checkNameRecordDuplicates,
+  checkNameRecordSurnameConnection,
 } from "../validateAfrikData";
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
@@ -97,6 +98,7 @@ describe("name-record validator (FR53-FR57, Story 8.3)", () => {
       expect(checkNameRecordEndonymCoverage(tmpDir).ok).toBe(true);
       expect(checkNameRecordReferences(tmpDir).ok).toBe(true);
       expect(checkNameRecordDuplicates(tmpDir).ok).toBe(true);
+      expect(checkNameRecordSurnameConnection(tmpDir).ok).toBe(true);
     });
   });
 
@@ -110,6 +112,7 @@ describe("name-record validator (FR53-FR57, Story 8.3)", () => {
       expect(checkNameRecordEndonymCoverage(tmpDir).ok).toBe(true);
       expect(checkNameRecordReferences(tmpDir).ok).toBe(true);
       expect(checkNameRecordDuplicates(tmpDir).ok).toBe(true);
+      expect(checkNameRecordSurnameConnection(tmpDir).ok).toBe(true);
     });
   });
 
@@ -293,6 +296,118 @@ describe("name-record validator (FR53-FR57, Story 8.3)", () => {
     it("checkNameRecordReferences passes when peopleId resolves", () => {
       writeNameFile(tmpDir, "PPL_A.json", validNameFile());
       expect(checkNameRecordReferences(tmpDir).ok).toBe(true);
+    });
+  });
+
+  describe("FR55-surname — a surname record must document its basis (meaning or an explicit connection statement)", () => {
+    // @req REQ-032
+    it("checkNameRecordSurnameConnection fails on a bare surname pairing (no meaning, no connection statement)", () => {
+      writeNameFile(
+        tmpDir,
+        "PPL_A.json",
+        validNameFile({
+          names: [
+            validNameEntry({
+              nameText: "Bareton",
+              nameType: "surname",
+              meaning: null,
+              sources: [
+                {
+                  title: "Titre",
+                  author: "Auteur",
+                  year: 2000,
+                  url: "https://www.un.org/en/x",
+                  tier: 1,
+                  notes: "",
+                },
+              ],
+            }),
+          ],
+        })
+      );
+
+      const result = checkNameRecordSurnameConnection(tmpDir);
+      expect(result.ok).toBe(false);
+      expect(result.errors.some((e) => e.includes("FR55-surname"))).toBe(true);
+      expect(result.errors.some((e) => e.includes("PPL_A.json"))).toBe(true);
+    });
+
+    // @req REQ-032
+    it("checkNameRecordSurnameConnection passes when meaning is documented", () => {
+      writeNameFile(
+        tmpDir,
+        "PPL_A.json",
+        validNameFile({
+          names: [
+            validNameEntry({
+              nameText: "Documented",
+              nameType: "surname",
+              meaning: "Signifie « fils du forgeron » en langue X.",
+              sources: [
+                {
+                  title: "Titre",
+                  author: "Auteur",
+                  year: 2000,
+                  url: "https://www.un.org/en/x",
+                  tier: 1,
+                  notes: "",
+                },
+              ],
+            }),
+          ],
+        })
+      );
+
+      expect(checkNameRecordSurnameConnection(tmpDir).ok).toBe(true);
+    });
+
+    // @req REQ-032
+    it("checkNameRecordSurnameConnection passes when the assertion notes carry an explicit connection statement", () => {
+      writeNameFile(
+        tmpDir,
+        "PPL_A.json",
+        validNameFile({
+          names: [
+            validNameEntry({
+              nameText: "Documented",
+              nameType: "surname",
+              meaning: null,
+              sources: [
+                {
+                  title: "Titre",
+                  author: "Auteur",
+                  year: 2000,
+                  url: "https://www.un.org/en/x",
+                  tier: 1,
+                  notes:
+                    "Patronyme attesté chez ce peuple par une étude onomastique publiée ; filiation documentée dans la source primaire.",
+                },
+              ],
+            }),
+          ],
+        })
+      );
+
+      expect(checkNameRecordSurnameConnection(tmpDir).ok).toBe(true);
+    });
+
+    // @req REQ-032
+    it("checkNameRecordSurnameConnection ignores non-surname records even when undocumented", () => {
+      writeNameFile(
+        tmpDir,
+        "PPL_A.json",
+        validNameFile({
+          names: [
+            validNameEntry({
+              nameText: "Endotest",
+              nameType: "endonym",
+              meaning: null,
+            }),
+          ],
+        })
+      );
+
+      expect(checkNameRecordSurnameConnection(tmpDir).ok).toBe(true);
     });
   });
 

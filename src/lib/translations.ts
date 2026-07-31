@@ -263,6 +263,32 @@ export const translations = {
           "Classification reconstruite à partir de sources fragmentaires.",
       },
     },
+    names: {
+      pageTitle: "Noms & appellations",
+      pageSubtitle:
+        "Parcourez, filtrez et recherchez les noms de peuples référencés dans l'atlas.",
+      searchLabel: "Rechercher un nom",
+      searchPlaceholder:
+        "Rechercher un nom (endonyme, exonyme, graphie historique...)",
+      searchSubmit: "Rechercher",
+      filters: {
+        endonym: "endonyme",
+        exonym: "exonyme",
+        historical_spelling: "graphie historique",
+        surname: "patronyme",
+        imposed: "noms imposés",
+      },
+      activeFiltersLabel: "Filtres actifs",
+      clearFilter: "Supprimer le filtre",
+      resultCountSingular: "résultat",
+      resultCountPlural: "résultats",
+      emptyState: {
+        spellingGuidance:
+          "Vérifiez l'orthographe : un même nom peut varier selon la graphie historique ou la langue d'origine.",
+        browseByTypeLabel: "Parcourir par type de nom :",
+        reportMissing: "Signaler une donnée manquante",
+      },
+    },
   },
 };
 
