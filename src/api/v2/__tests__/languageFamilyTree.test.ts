@@ -27,7 +27,8 @@ const mockFamily: LanguageFamily = {
   id: "FLG_BANTU",
   nameFr: "Bantou",
   nameEn: "Bantu",
-  content: {},
+  classificationStatus: "consensual",
+  content: { history: "long editorial article text not needed by the tree" },
 };
 
 const mockLanguages: Language[] = [
@@ -72,7 +73,16 @@ describe("languageFamilyTreeService", () => {
       expect(getAfrikPeoplesByLanguageFamily).toHaveBeenCalledTimes(1);
 
       expect(result).not.toBeNull();
-      expect(result?.family).toEqual(mockFamily);
+      // Skeleton is a lightweight tree header — it must not carry the
+      // family's full editorial `content` JSONB (@req AC3 ETNI-463: tree
+      // skeleton payload budget, ≤ 15 KB for the largest family).
+      expect(result?.family).toEqual({
+        id: "FLG_BANTU",
+        nameFr: "Bantou",
+        nameEn: "Bantu",
+        classificationStatus: "consensual",
+      });
+      expect(result?.family).not.toHaveProperty("content");
       expect(result?.branches).toEqual([
         { iso639_3: "kon", name: "Kikongo", peopleCount: 2 },
         { iso639_3: "lin", name: "Lingala", peopleCount: 2 },

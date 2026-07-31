@@ -139,3 +139,67 @@ describe("GET /api/v2/language-families/[id]/tree", () => {
     expect(response.status).toBe(204);
   });
 });
+
+// ETNI-463 (7.11) AC3 — tree-skeleton payload size budget.
+// FLG_BANTU is the largest family with real seeded language/people data
+// (6 languages in langue_par_famille.csv, 174 associated peoples fiches) —
+// see dataset/source/afrik/famille_linguistique/langue_par_famille.csv and
+// dataset/source/afrik/peuples/FLG_BANTU/. The skeleton's `family` field is
+// deliberately trimmed to id/names/status (no editorial `content` JSONB —
+// see languageFamilyTreeService.getFamilyTreeSkeleton) so this budget holds
+// regardless of how large the family's article content grows.
+describe("GET /api/v2/language-families/[id]/tree — payload size budget", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  const REAL_BANTU_LANGUAGES = [
+    { iso639_3: "lin", name: "Lingala" },
+    { iso639_3: "kin", name: "Kinyarwanda" },
+    { iso639_3: "run", name: "Kirundi" },
+    { iso639_3: "sna", name: "Shona" },
+    { iso639_3: "zul", name: "Zulu" },
+    { iso639_3: "zdj", name: "Comorien (Shingazidja)" },
+  ];
+  const TOTAL_PEOPLES = 174;
+
+  // @req REQ-047
+  it("keeps the largest family's tree skeleton response at or under 15 KB", async () => {
+    const perBranch = Math.ceil(TOTAL_PEOPLES / REAL_BANTU_LANGUAGES.length);
+    const largestFamilySkeleton = {
+      data: {
+        family: {
+          id: "FLG_BANTU",
+          nameFr: "Bantou",
+          nameEn: "Bantu",
+          classificationStatus: "consensual" as const,
+        },
+        branches: REAL_BANTU_LANGUAGES.map((language) => ({
+          ...language,
+          peopleCount: perBranch,
+        })),
+        unlinkedPeopleCount: 0,
+      },
+      meta: {
+        license: "CC-BY-SA-4.0",
+        attribution: "Africa History — africahistory.org",
+      },
+      errors: [],
+    };
+
+    vi.mocked(getLanguageFamilyTreeHandler).mockResolvedValue({
+      ok: true,
+      envelope: largestFamilySkeleton,
+    });
+
+    const request = new NextRequest(
+      "http://localhost/api/v2/language-families/FLG_BANTU/tree"
+    );
+    const response = await GET(request, {
+      params: Promise.resolve({ id: "FLG_BANTU" }),
+    });
+    const body = await response.text();
+
+    expect(Buffer.byteLength(body, "utf-8")).toBeLessThanOrEqual(15 * 1024);
+  });
+});
