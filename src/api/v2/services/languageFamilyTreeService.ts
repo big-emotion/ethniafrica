@@ -9,7 +9,7 @@ import { getAfrikPeoplesByLanguageFamily } from "@/lib/supabase/queries/afrik/pe
 import { logger } from "@/lib/api/logger";
 import type {
   ClassificationStatus,
-  LanguageFamily,
+  LanguageFamilyId,
   People,
 } from "@/types/afrik";
 
@@ -19,8 +19,18 @@ export interface FamilyTreeBranch {
   peopleCount: number;
 }
 
+// Deliberately excludes the family's `content` JSONB (the full editorial
+// article, tens of KB for large families) — the tree header only needs
+// id/names/status (@req AC3 ETNI-463: skeleton payload budget ≤ 15 KB).
+export interface FamilyTreeSkeletonFamily {
+  id: LanguageFamilyId;
+  nameFr: string;
+  nameEn?: string;
+  classificationStatus?: ClassificationStatus | null;
+}
+
 export interface FamilyTreeSkeleton {
-  family: LanguageFamily;
+  family: FamilyTreeSkeletonFamily;
   branches: FamilyTreeBranch[];
   unlinkedPeopleCount: number;
 }
@@ -102,7 +112,14 @@ export async function getFamilyTreeSkeleton(
     peopleCount: peopleCounts.get(language.id) ?? 0,
   }));
 
-  return { family, branches, unlinkedPeopleCount };
+  const skeletonFamily: FamilyTreeSkeletonFamily = {
+    id: family.id,
+    nameFr: family.nameFr,
+    nameEn: family.nameEn,
+    classificationStatus: family.classificationStatus,
+  };
+
+  return { family: skeletonFamily, branches, unlinkedPeopleCount };
 }
 
 /**

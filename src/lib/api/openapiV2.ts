@@ -1463,12 +1463,37 @@ const options: swaggerJsdoc.Options = {
           },
           required: ["iso639_3", "name", "peopleCount"],
         },
+        FamilyTreeSkeletonFamily: {
+          type: "object",
+          description:
+            "Lightweight family header for the tree skeleton. Deliberately omits the full editorial `content` JSONB (see LanguageFamilyV2) to keep the skeleton payload small (ETNI-463 AC3: ≤ 15 KB for the largest family).",
+          properties: {
+            id: {
+              type: "string",
+              description: "Identifiant FLG_*",
+              example: "FLG_BANTU",
+            },
+            nameFr: { type: "string", example: "Bantou" },
+            nameEn: { type: "string", example: "Bantu" },
+            classificationStatus: {
+              type: ["string", "null"],
+              enum: [
+                "consensual",
+                "contested",
+                "colonial-legacy",
+                "reconstructive",
+                null,
+              ],
+            },
+          },
+          required: ["id", "nameFr"],
+        },
         LanguageFamilyTree: {
           type: "object",
           description:
             "Classification tree skeleton: the family's languages (branches) with linked-people counts, plus peoples in the family not linked to any of its languages.",
           properties: {
-            family: { $ref: "#/components/schemas/LanguageFamilyV2" },
+            family: { $ref: "#/components/schemas/FamilyTreeSkeletonFamily" },
             branches: {
               type: "array",
               items: { $ref: "#/components/schemas/FamilyTreeBranch" },
