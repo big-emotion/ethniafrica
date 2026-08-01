@@ -4,6 +4,10 @@ import { describe, expect, it } from "vitest";
 
 describe("night color tokens", () => {
   // @req REQ-091
+  // Dormant since ETNI-798: the categorical ocre/teal/terre/perv values are
+  // superseded by the first-class --afh-cat-* tokens (charterTokens.test.ts)
+  // and must no longer be consumed by components. This group is kept
+  // unchanged pending the epics 7–13 decision — see color.css.
   it("defines the complete night palette with exact values", () => {
     const colorCss = readFileSync(
       join(process.cwd(), "src/styles/tokens/color.css"),
