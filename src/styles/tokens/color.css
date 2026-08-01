@@ -69,6 +69,20 @@
   --afh-night-terre: #c4573f;
   --afh-night-perv: #7a8ce8;
 
+  /* Charter categorical accents (V2, ETNI-798 · FR104) — the CVD-validated
+     set promoted to first-class tokens. Base hexes match the dormant
+     --afh-night-{ocre,teal,terre,perv} above; the -tint variants are new.
+     The --afh-night-* group stays untouched and dormant (kept pending the
+     epics 7–13 decision) — components must not consume it. */
+  --afh-cat-ocre: #c9821f;
+  --afh-cat-ocre-tint: #f1d9ae;
+  --afh-cat-teal: #33a390;
+  --afh-cat-teal-tint: #cbe7df;
+  --afh-cat-terre: #c4573f;
+  --afh-cat-terre-tint: #f0d2c8;
+  --afh-cat-perv: #7a8ce8;
+  --afh-cat-perv-tint: #dce1f9;
+
   /* ─── L2 · Semantic aliases ────────────────────────────────── */
 
   /* Surface */
@@ -130,4 +144,17 @@
   --afh-error: var(--afh-color-error);
   --afh-error-bg: var(--afh-color-error-bg);
   --afh-error-border: var(--afh-color-error-border);
+
+  /* Accent scoping (ETNI-798 · FR104) — the ONLY path a component may use
+     to receive an accent colour. A page or route wrapper scopes an accent
+     by overriding --accent and --accent-tint to one of the --afh-cat-
+     base/tint pairs above (e.g. a `.afh-accent-teal` wrapper sets
+     `--accent: var(--afh-cat-teal); --accent-tint: var(--afh-cat-teal-tint);`).
+     Components must consume var(--accent) / var(--accent-tint) and must
+     never reference an --afh-cat- token or a hex literal directly — that
+     keeps the accent swappable per page without touching component code.
+     The default below (ocre) keeps unscoped components valid; wiring
+     specific pages to other accents is deferred to the 16.2+ stories. */
+  --accent: var(--afh-cat-ocre);
+  --accent-tint: var(--afh-cat-ocre-tint);
 }
