@@ -32,7 +32,7 @@ export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
     `px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
       isHome
         ? active
-          ? "bg-[color:var(--accent-tint)] text-[color:var(--afh-night-ground)]"
+          ? "bg-[color:var(--afh-night-ocre-soft)] text-[color:var(--afh-night-ground)]"
           : "text-[color:var(--afh-night-ink-2)] hover:text-[color:var(--afh-night-ink)] hover:bg-[color:var(--afh-night-surface-2)]"
         : active
           ? "bg-primary text-primary-foreground"

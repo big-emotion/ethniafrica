@@ -13,7 +13,7 @@ const PILL_CLASS_NAME =
   "relative inline-flex items-center rounded-full outline-none " +
   "before:absolute before:inset-[-2px] before:content-[''] " +
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 " +
-  "focus-visible:outline-[color:var(--accent-tint)] focus-visible:rounded-[6px]";
+  "focus-visible:outline-[color:var(--afh-night-ocre-soft)] focus-visible:rounded-[6px]";
 
 // @req REQ-044
 export function HomeHero() {
@@ -57,7 +57,7 @@ export function HomeHero() {
             fontWeight: 800,
             textTransform: "uppercase",
             letterSpacing: ".18em",
-            color: "var(--accent-tint)",
+            color: "var(--afh-night-ocre-soft)",
             margin: 0,
           }}
         >
@@ -79,7 +79,7 @@ export function HomeHero() {
           <em
             style={{
               fontStyle: "italic",
-              color: "var(--accent-tint)",
+              color: "var(--afh-night-ocre-soft)",
             }}
           >
             carte vivante

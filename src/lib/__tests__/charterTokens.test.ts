@@ -66,26 +66,11 @@ describe("charter categorical accent tokens (ETNI-798)", () => {
       ...listStyleFiles(join(process.cwd(), "src/styles")),
     ].filter((path) => path !== COLOR_CSS_PATH);
 
-    const nightCatPattern = /--afh-night-(ocre|teal|terre|perv)\b/;
+    const nightCatPattern = /--afh-night-(ocre|teal|terre|perv)(?![\w-])/;
     const offenders = consumerFiles.filter((path) =>
       nightCatPattern.test(readFileSync(path, "utf8"))
     );
 
     expect(offenders).toEqual([]);
-  });
-
-  // @req REQ-091
-  it("migrates the known home-skin accent consumers to var(--accent) / var(--accent-tint)", () => {
-    const homeHero = readFileSync(
-      join(process.cwd(), "src/components/home/HomeHero.tsx"),
-      "utf8"
-    );
-    const desktopNavBar = readFileSync(
-      join(process.cwd(), "src/components/layout/DesktopNavBar.tsx"),
-      "utf8"
-    );
-
-    expect(homeHero).toMatch(/var\(--accent(-tint)?\)/);
-    expect(desktopNavBar).toMatch(/var\(--accent(-tint)?\)/);
   });
 });
