@@ -13,7 +13,7 @@ const PILL_CLASS_NAME =
   "relative inline-flex items-center rounded-full outline-none " +
   "before:absolute before:inset-[-2px] before:content-[''] " +
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 " +
-  "focus-visible:outline-[color:var(--afh-night-ocre-soft)] focus-visible:rounded-[6px]";
+  "focus-visible:outline-[color:var(--afh-gold)] focus-visible:rounded-[6px]";
 
 // @req REQ-044
 export function HomeHero() {
@@ -23,8 +23,8 @@ export function HomeHero() {
       style={{
         position: "relative",
         overflow: "hidden",
-        borderBottom: "1px solid var(--afh-night-line)",
-        backgroundColor: "var(--afh-night-ground)",
+        borderBottom: "1px solid var(--afh-border)",
+        backgroundColor: "var(--afh-bg-warm)",
         width: "100vw",
         marginLeft: "calc(50% - 50vw)",
         marginRight: "calc(50% - 50vw)",
@@ -44,7 +44,7 @@ export function HomeHero() {
             fontFamily: "var(--afh-font-body)",
             fontSize: "12px",
             fontWeight: 700,
-            color: "var(--afh-night-ink-3)",
+            color: "var(--afh-text-soft)",
             margin: "0 0 8px",
           }}
         >
@@ -57,7 +57,7 @@ export function HomeHero() {
             fontWeight: 800,
             textTransform: "uppercase",
             letterSpacing: ".18em",
-            color: "var(--afh-night-ocre-soft)",
+            color: "var(--afh-gold)",
             margin: 0,
           }}
         >
@@ -71,7 +71,7 @@ export function HomeHero() {
             lineHeight: 1.04,
             textWrap: "balance",
             margin: "10px 0 14px",
-            color: "var(--afh-night-ink)",
+            color: "var(--afh-text)",
           }}
         >
           Le continent raconté
@@ -79,7 +79,7 @@ export function HomeHero() {
           <em
             style={{
               fontStyle: "italic",
-              color: "var(--afh-night-ocre-soft)",
+              color: "var(--afh-gold)",
             }}
           >
             carte vivante
@@ -89,7 +89,7 @@ export function HomeHero() {
           style={{
             fontFamily: "var(--afh-font-body)",
             fontSize: "15.5px",
-            color: "var(--afh-night-ink-2)",
+            color: "var(--afh-text-soft)",
             maxWidth: "34em",
             margin: 0,
           }}
@@ -118,9 +118,9 @@ export function HomeHero() {
                 padding: "9px 14px",
                 minHeight: "40px",
                 borderRadius: "999px",
-                backgroundColor: "var(--afh-night-surface-2)",
-                border: "1px solid var(--afh-night-line)",
-                color: "var(--afh-night-ink)",
+                backgroundColor: "var(--afh-surface)",
+                border: "1px solid var(--afh-border)",
+                color: "var(--afh-text)",
                 textDecoration: "none",
               }}
             >

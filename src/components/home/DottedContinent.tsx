@@ -8,13 +8,34 @@ const DOT_RADIUS = 1.6;
 const TWINKLE_TIME_STEP = 0.016;
 const MAX_DEVICE_PIXEL_RATIO = 2;
 
+// Mirrors --afh-cat-ocre in src/styles/tokens/color.css (charter categorical
+// ochre) — kept as a hex constant because a canvas 2D fillStyle cannot
+// resolve a CSS custom property directly. See DottedContinent.test.tsx for
+// the cross-check against the token sheet.
+// @req REQ-091
+export const CHARTER_OCRE_HEX = "#c9821f";
+
 interface CanvasSize {
   width: number;
   height: number;
 }
 
+interface DottedContinentProps {
+  dotColorHex?: string;
+}
+
+function hexToRgbChannels(hex: string): string {
+  const value = hex.replace("#", "");
+  const r = Number.parseInt(value.slice(0, 2), 16);
+  const g = Number.parseInt(value.slice(2, 4), 16);
+  const b = Number.parseInt(value.slice(4, 6), 16);
+  return `${r},${g},${b}`;
+}
+
 // @req REQ-091
-export function DottedContinent() {
+export function DottedContinent({
+  dotColorHex = CHARTER_OCRE_HEX,
+}: DottedContinentProps = {}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -23,6 +44,7 @@ export function DottedContinent() {
     const parent = canvas?.parentElement;
     if (!canvas || !context || !parent) return;
 
+    const dotColorRgb = hexToRgbChannels(dotColorHex);
     const dots = africaDots();
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -61,7 +83,7 @@ export function DottedContinent() {
         const twinkle = staticFrame
           ? 0.55
           : 0.38 + 0.3 * Math.sin(1.1 * time + phase);
-        context.fillStyle = `rgba(201,130,31,${(0.45 * twinkle).toFixed(3)})`;
+        context.fillStyle = `rgba(${dotColorRgb},${(0.45 * twinkle).toFixed(3)})`;
         context.beginPath();
         context.arc(offsetX + x * scale, offsetY + y * scale, DOT_RADIUS, 0, 7);
         context.fill();
@@ -116,7 +138,7 @@ export function DottedContinent() {
       window.removeEventListener("resize", handleResize);
       if (frameId !== null) window.cancelAnimationFrame(frameId);
     };
-  }, []);
+  }, [dotColorHex]);
 
   return (
     <canvas
