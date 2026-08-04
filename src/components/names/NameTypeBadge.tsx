@@ -51,7 +51,7 @@ const TYPE_CONFIG: Record<NameRecordType, TypeConfig> = {
   },
   historical_spelling: {
     label: "graphie historique",
-    fg: "var(--afh-gold)",
+    fg: "var(--afh-color-text-soft)",
     bg: "var(--afh-color-gold-bg)",
     Icon: BookOpenText,
   },

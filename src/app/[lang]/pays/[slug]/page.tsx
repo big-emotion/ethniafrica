@@ -8,6 +8,8 @@ import {
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { CountryDetailViewV2 } from "@/components/detail/CountryDetailViewV2";
+import { getCountryById } from "@/api/v2/services/countryService";
+import { mapCountryDetail } from "@/lib/afrikDetailMapper";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
 import {
@@ -146,6 +148,11 @@ export default async function PaysSlugPage({
     );
   }
 
+  const country = await getCountryById(parsed.slug);
+  if (!country) {
+    notFound();
+  }
+
   // Live version (revalidate = 3600 at segment level)
   return (
     <PageLayout language="fr" sectionName="Pays">
@@ -157,7 +164,11 @@ export default async function PaysSlugPage({
             </div>
           }
         >
-          <CountryDetailViewV2 countryId={parsed.slug} language="fr" />
+          <CountryDetailViewV2
+            countryId={parsed.slug}
+            language="fr"
+            initialData={mapCountryDetail(country)}
+          />
         </Suspense>
       </div>
     </PageLayout>

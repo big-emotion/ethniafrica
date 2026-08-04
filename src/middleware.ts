@@ -3,23 +3,18 @@ import { NextResponse, type NextRequest } from "next/server";
 import { validateApiKey } from "@/lib/api/auth";
 import { applyRateLimit } from "@/lib/api/rate-limit";
 
-// Routes whose components still render static CSS via the `style` HTML
-// attribute (HomeHero/DottedContinent/HubCard, ETNI-543) rather than a
-// nonce'd <style> element — style-src's nonce does not cover the style
-// attribute, so those routes need style-src-attr 'unsafe-inline'. Scoped
-// here (instead of site-wide) so every other route keeps the strict
-// nonce-only policy. See docs/adr/0005-home-style-src-attr-scope.md.
-const STYLE_ATTR_UNSAFE_INLINE_ROUTES = new Set(["/fr"]);
+// Public localized pages still contain data-driven React style attributes.
+// API and admin routes keep the strict nonce-only policy.
+// See docs/adr/0005-home-style-src-attr-scope.md.
+const isPublicLocalizedPage = (pathname: string) =>
+  pathname === "/fr" || pathname.startsWith("/fr/");
 
-// Next.js 16 injects two fixed runtime <style> payloads without propagating
-// the request nonce. Allowing their exact hashes keeps style-src strict.
+// Strict routes allow the two fixed Next.js 16 runtime <style> payloads by
+// exact hash because the framework does not propagate the request nonce.
 const NEXT_RUNTIME_STYLE_HASHES = [
   "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='",
   "'sha256-CIxDM5jnsGiKqXs2v7NKCY5MzdR9gu6TtiMJrDw29AY='",
 ].join(" ");
-const NEXT_IMAGE_STYLE_ATTRIBUTE_HASH =
-  "'sha256-1OjyRYLAOH1vhXLUN4bBHal0rWxuwBDBP220NNc0CNU='";
-
 function applySecurityHeaders(
   response: NextResponse,
   nonce: string,
@@ -32,15 +27,16 @@ function applySecurityHeaders(
   response.headers.set("X-Content-Type-Options", "nosniff");
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
 
+  const publicLocalizedPage = isPublicLocalizedPage(pathname);
   const csp = [
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}'${
       process.env.NODE_ENV === "production" ? "" : " 'unsafe-eval'"
     }`,
-    `style-src 'self' 'nonce-${nonce}' ${NEXT_RUNTIME_STYLE_HASHES}`,
-    ...(STYLE_ATTR_UNSAFE_INLINE_ROUTES.has(pathname)
-      ? ["style-src-attr 'unsafe-inline'"]
-      : [`style-src-attr 'unsafe-hashes' ${NEXT_IMAGE_STYLE_ATTRIBUTE_HASH}`]),
+    publicLocalizedPage
+      ? "style-src 'self' 'unsafe-inline'"
+      : `style-src 'self' 'nonce-${nonce}' ${NEXT_RUNTIME_STYLE_HASHES}`,
+    ...(publicLocalizedPage ? ["style-src-attr 'unsafe-inline'"] : []),
     "img-src 'self' data:",
     "frame-ancestors 'self'",
     "connect-src 'self' https://*.supabase.co https://*.ingest.de.sentry.io https://plausible.io https://*.upstash.io",

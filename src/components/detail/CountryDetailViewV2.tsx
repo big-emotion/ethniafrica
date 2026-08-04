@@ -26,6 +26,7 @@ import {
 interface CountryDetailViewV2Props {
   countryId: string;
   language: Language;
+  initialData?: CountryDetail;
   onPeopleClick?: (peopleId: string) => void;
   onBack?: () => void;
 }
@@ -33,14 +34,19 @@ interface CountryDetailViewV2Props {
 export const CountryDetailViewV2 = ({
   countryId,
   language,
+  initialData,
   onBack,
 }: CountryDetailViewV2Props) => {
   const searchParams = useSearchParams();
   const fromPeopleName = searchParams.get("fromPeopleName");
   const fromPeopleId = searchParams.get("fromPeopleId");
 
-  const [country, setCountry] = useState<CountryDetail | null>(null);
-  const [loading, setLoading] = useState(true);
+  const matchingInitialData =
+    initialData?.id === countryId ? initialData : null;
+  const [country, setCountry] = useState<CountryDetail | null>(
+    matchingInitialData
+  );
+  const [loading, setLoading] = useState(!matchingInitialData);
   const [error, setError] = useState<string | null>(null);
   const [sourceFlag, setSourceFlag] = useState(false);
 
@@ -50,6 +56,12 @@ export const CountryDetailViewV2 = ({
     setError(null);
 
     const loadCountry = async () => {
+      if (initialData?.id === countryId) {
+        setCountry(initialData);
+        setLoading(false);
+        return;
+      }
+
       try {
         const data = await getCountry(countryId);
         if (!cancelled) {
@@ -81,7 +93,7 @@ export const CountryDetailViewV2 = ({
     return () => {
       cancelled = true;
     };
-  }, [countryId, language]);
+  }, [countryId, initialData, language]);
 
   const getNotFoundText = (): string => {
     return "Pays non trouvé";

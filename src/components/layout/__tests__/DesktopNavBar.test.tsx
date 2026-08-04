@@ -114,6 +114,14 @@ describe("DesktopNavBar — home route header skin", () => {
     ).not.toBeInTheDocument();
   });
 
+  // @req REQ-044
+  it("names the home link with the logo when the wordmark is hidden", () => {
+    mockPathname = "/fr/peuples/PPL_WOLOF";
+    render(<DesktopNavBar language="fr" />);
+
+    expect(screen.getByRole("img", { name: PRODUCT_NAME })).toBeInTheDocument();
+  });
+
   // @req [14.5]
   // @req REQ-044
   it("does not render the brand wordmark off the home route", () => {

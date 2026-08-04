@@ -50,14 +50,14 @@ describe("useConsent hook", () => {
 
   describe("initial state", () => {
     // @req REQ-046
-    it("renders the banner state during SSR for visitors without consent", () => {
+    it("keeps the client-only banner out of the server response", () => {
       const html = renderToString(
         <ConsentProvider>
           <ConsentStateProbe />
         </ConsentProvider>
       );
 
-      expect(html).toContain('data-show-banner="true"');
+      expect(html).toContain('data-show-banner="false"');
     });
 
     it("should show banner when no consent is stored", async () => {

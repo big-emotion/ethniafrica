@@ -91,7 +91,7 @@ export const MobileNavBar = ({
                     ? "text-[color:var(--afh-night-ink-2)] hover:bg-[color:var(--afh-night-surface-2)] hover:text-[color:var(--afh-night-ink)]"
                     : ""
                 }`}
-                aria-label="Navigation"
+                aria-label="Navigation FLG"
               >
                 <span
                   className={`text-[11px] font-bold tracking-wide uppercase ${

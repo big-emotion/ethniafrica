@@ -40,7 +40,7 @@ describe("MobileNavBar — home route header skin", () => {
       mockPathname = pathname;
       render(<MobileNavBar language="fr" />);
       expect(
-        screen.getByRole("button", { name: "Navigation" })
+        screen.getByRole("button", { name: "Navigation FLG" })
       ).toBeInTheDocument();
       expect(
         screen.getByRole("button", { name: "Rechercher" })

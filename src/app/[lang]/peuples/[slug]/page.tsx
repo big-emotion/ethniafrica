@@ -7,6 +7,8 @@ import {
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleDetailView } from "@/components/detail/PeopleDetailView";
+import { getPeopleById } from "@/api/v2/services/peopleService";
+import { mapPeopleDetail } from "@/lib/afrikDetailMapper";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
 import {
@@ -153,6 +155,11 @@ export default async function PeoplesSlugPage({
     );
   }
 
+  const people = await getPeopleById(parsed.slug);
+  if (!people) {
+    notFound();
+  }
+
   // Live version (revalidate = 3600 at segment level)
   return (
     <PageLayout language="fr" sectionName="Peuples">
@@ -164,7 +171,11 @@ export default async function PeoplesSlugPage({
             </div>
           }
         >
-          <PeopleDetailView peopleId={parsed.slug} language="fr" />
+          <PeopleDetailView
+            peopleId={parsed.slug}
+            language="fr"
+            initialData={mapPeopleDetail(people)}
+          />
         </Suspense>
       </div>
     </PageLayout>

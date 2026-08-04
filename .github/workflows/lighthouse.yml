@@ -106,8 +106,8 @@ jobs:
               '**Routes audited:**',
               '- `/`',
               '- `/fr`',
-              '- `/fr/pays/senegal`',
-              '- `/fr/peuples/wolof`',
+              '- `/fr/pays/SEN`',
+              '- `/fr/peuples/PPL_WOLOF`',
               '- `/fr/noms`',
               publicLinks,
             ].join('\n');

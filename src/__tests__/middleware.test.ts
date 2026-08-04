@@ -381,24 +381,41 @@ describe("middleware", () => {
     });
 
     // @req REQ-052
-    it("scopes style-src-attr 'unsafe-inline' to /fr only", async () => {
-      const homeRequest = new NextRequest("http://localhost:3000/fr");
-      const homeResponse = await middleware(homeRequest);
-      const homeCsp = homeResponse.headers.get("Content-Security-Policy")!;
-      const homeDirectives = homeCsp.split(";").map((d) => d.trim());
+    it("allows inline style attributes only on public localized pages", async () => {
+      for (const pathname of [
+        "/fr",
+        "/fr/pays/SEN",
+        "/fr/familles/FLG_BANTU",
+      ]) {
+        const response = await middleware(
+          new NextRequest(`http://localhost:3000${pathname}`)
+        );
+        const directives = response.headers
+          .get("Content-Security-Policy")!
+          .split(";")
+          .map((directive) => directive.trim());
 
-      expect(homeDirectives.find((d) => d.startsWith("style-src-attr"))).toBe(
-        "style-src-attr 'unsafe-inline'"
-      );
+        expect(
+          directives.find((directive) => directive.startsWith("style-src-attr"))
+        ).toBe("style-src-attr 'unsafe-inline'");
+        expect(
+          directives.find((directive) => directive.startsWith("style-src "))
+        ).toBe("style-src 'self' 'unsafe-inline'");
+      }
 
-      const otherRequest = new NextRequest("http://localhost:3000/some-page");
-      const otherResponse = await middleware(otherRequest);
-      const otherCsp = otherResponse.headers.get("Content-Security-Policy")!;
-      const otherDirectives = otherCsp.split(";").map((d) => d.trim());
+      for (const pathname of ["/api/v2/countries/SEN", "/admin/login"]) {
+        const response = await middleware(
+          new NextRequest(`http://localhost:3000${pathname}`)
+        );
+        const directives = response.headers
+          .get("Content-Security-Policy")!
+          .split(";")
+          .map((directive) => directive.trim());
 
-      expect(otherDirectives.find((d) => d.startsWith("style-src-attr"))).toBe(
-        "style-src-attr 'unsafe-hashes' 'sha256-1OjyRYLAOH1vhXLUN4bBHal0rWxuwBDBP220NNc0CNU='"
-      );
+        expect(
+          directives.find((directive) => directive.startsWith("style-src-attr"))
+        ).toBeUndefined();
+      }
     });
 
     it("generates a different nonce for each request", async () => {

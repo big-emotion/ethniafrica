@@ -24,6 +24,7 @@ import type {
 import { CACHE_KEYS } from "@/lib/cache/clientCache";
 import { logger } from "@/lib/api/logger";
 import { getFrenchCountryCommonName } from "@/lib/countryNames";
+import { mapCountryDetail, mapPeopleDetail } from "@/lib/afrikDetailMapper";
 
 // ==========================================
 // CONSTANTS
@@ -290,30 +291,7 @@ export async function getPeople(id: string): Promise<PeopleDetail | null> {
       return null;
     }
 
-    // Transform API response to frontend type with all 8 AFRIK sections
-    const detail: PeopleDetail = {
-      id: apiData.id,
-      nameMain: apiData.nameMain || apiData.name_main,
-      languageFamilyId: apiData.languageFamilyId || apiData.language_family_id,
-      currentCountries:
-        apiData.currentCountries || apiData.current_countries || [],
-      createdAt: apiData.createdAt || apiData.created_at,
-      updatedAt: apiData.updatedAt || apiData.updated_at,
-      classificationStatus:
-        apiData.classificationStatus ?? apiData.classification_status ?? null,
-      // 8 AFRIK sections from content
-      appellations: apiData.content?.appellations,
-      ethnicities: apiData.content?.ethnicities,
-      origins: apiData.content?.origins,
-      organization: apiData.content?.organization,
-      languages: apiData.content?.languages,
-      culture: apiData.content?.culture,
-      historicalRole: apiData.content?.historicalRole,
-      demography: apiData.content?.demography,
-      sources: apiData.content?.sources,
-    };
-
-    return detail;
+    return mapPeopleDetail(apiData);
   } catch (error) {
     logger.error("[getPeople] Exception", error, { id });
     return null;
@@ -398,30 +376,7 @@ export async function getCountry(iso: string): Promise<CountryDetail | null> {
       return null;
     }
 
-    // Transform API response to frontend type
-    const nameFr = apiData.nameFr ?? apiData.name_fr;
-    const nameOfficial =
-      apiData.nameOfficial ?? apiData.name_official ?? nameFr;
-    const detail: CountryDetail = {
-      id: apiData.id,
-      nameFr,
-      nameCommonFr: getFrenchCountryCommonName(apiData.id, nameOfficial),
-      nameOfficial,
-      etymology: apiData.etymology,
-      nameOriginActor: apiData.nameOriginActor || apiData.name_origin_actor,
-      createdAt: apiData.createdAt || apiData.created_at,
-      updatedAt: apiData.updatedAt || apiData.updated_at,
-      // Content sections
-      historicalNames: apiData.content?.historicalNames,
-      kingdoms: apiData.content?.kingdoms,
-      majorPeoples: apiData.content?.majorPeoples,
-      culture: apiData.content?.culture,
-      historicalFacts: apiData.content?.historicalFacts,
-      sources: apiData.content?.sources,
-      demographics: apiData.content?.demographics,
-    };
-
-    return detail;
+    return mapCountryDetail(apiData);
   } catch (error) {
     logger.error("[getCountry] Exception", error, { iso });
     return null;

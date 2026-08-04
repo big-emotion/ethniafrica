@@ -34,7 +34,7 @@ const AXE_RUN_OPTIONS = {
 // .github/workflows/a11y.yml once the app is built and served — unset locally
 // this step is skipped so the script still works without a running server.
 const LIVE_ROUTES_BASE_URL = process.env.A11Y_LIVE_BASE_URL;
-const LIVE_ROUTES = ["/fr/noms", "/fr/peuples/wolof"];
+const LIVE_ROUTES = ["/fr/noms", "/fr/peuples/PPL_WOLOF"];
 
 const MIME: Record<string, string> = {
   ".html": "text/html",

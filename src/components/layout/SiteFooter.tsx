@@ -74,7 +74,6 @@ export function SiteFooter({ language }: SiteFooterProps) {
           href="https://big-emotion.com/"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={footer.partnerLogoAlt}
           className="flex shrink-0 items-center gap-2 text-xs transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring sm:text-sm"
         >
           <span>{footer.attribution}</span>
