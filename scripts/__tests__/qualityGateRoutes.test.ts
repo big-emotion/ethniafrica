@@ -18,7 +18,9 @@ describe("browser quality-gate routes", () => {
     expect(lighthouseConfig.ci.collect.puppeteerScript).toBe(
       "./scripts/lighthouse-setup.cjs"
     );
-    expect(lighthouseConfig.ci.collect.chromeFlags).toContain("--no-sandbox");
+    expect(lighthouseConfig.ci.collect.puppeteerLaunchOptions.args).toContain(
+      "--no-sandbox"
+    );
 
     const axeScript = readFileSync(
       resolve(process.cwd(), "scripts/a11y-test.ts"),
