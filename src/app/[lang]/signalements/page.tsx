@@ -6,10 +6,6 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { getPublicFlagsPage } from "@/lib/supabase/queries/flags/getPublicFlagsPage";
 import { getTranslation } from "@/lib/translations";
 
-// @req REQ-014
-export const revalidate = 60;
-// @req REQ-014
-export const dynamic = "force-static";
 const copy = getTranslation("fr").publicFlags;
 
 // @req REQ-014
@@ -23,11 +19,6 @@ const getInitialPublicFlagsPage = unstable_cache(
   ["public-flags-index"],
   { revalidate: 60 }
 );
-
-// @req REQ-014
-export function generateStaticParams() {
-  return [{ lang: "fr" }];
-}
 
 // @req REQ-014
 export default async function SignalementsPage() {

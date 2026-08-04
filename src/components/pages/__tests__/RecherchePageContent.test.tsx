@@ -187,6 +187,31 @@ describe("RecherchePageContent", () => {
     expect(sortControl).toBeTruthy();
   });
 
+  // @req REQ-002
+  it("never renders an empty Radix Select item value", () => {
+    render(<RecherchePageContent />);
+
+    expect(
+      screen.getAllByRole("option").every((option) => {
+        const value = option.getAttribute("value");
+        return typeof value === "string" && value.length > 0;
+      })
+    ).toBe(true);
+  });
+
+  // @req REQ-002
+  it("normalizes the internal all-filter sentinel from URL state", () => {
+    vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
+      new URLSearchParams(
+        "classificationStatus=__all__&minConfidence=__all__&region=__all__"
+      ) as ReturnType<typeof nextNavigation.useSearchParams>
+    );
+
+    render(<RecherchePageContent />);
+
+    expect(screen.queryByText(/tout effacer/i)).not.toBeInTheDocument();
+  });
+
   // ── 2. Tout effacer link ───────────────────────────────────────────────────
 
   it("does NOT show 'Tout effacer' when no filters are active", () => {
