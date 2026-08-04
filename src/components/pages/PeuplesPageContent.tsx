@@ -13,6 +13,7 @@ import { getTranslation } from "@/lib/translations";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Users } from "lucide-react";
 import type { PeopleSummary } from "@/types/afrik-frontend";
+import { useActiveSourceFlag } from "@/hooks/use-active-source-flag";
 
 function DefaultMessage({ language }: { language: string }) {
   const t = getTranslation(language as "fr");
@@ -42,6 +43,7 @@ export function PeuplesPageContent() {
   );
   const isMobile = useIsMobile();
   const t = getTranslation(language);
+  const sourceFlag = useActiveSourceFlag("people", selectedPeople);
 
   useEffect(() => {
     const expected = getLocalizedRoute(language, "peoples");
@@ -108,6 +110,7 @@ export function PeuplesPageContent() {
                 <PeopleDetailView
                   peopleId={selectedPeople}
                   language={language}
+                  initialSourceFlag={sourceFlag}
                   onCountryClick={handleCountryClick}
                   onFamilyClick={handleFamilyClick}
                 />
@@ -137,6 +140,7 @@ export function PeuplesPageContent() {
                   <PeopleDetailView
                     peopleId={selectedPeople}
                     language={language}
+                    initialSourceFlag={sourceFlag}
                     onCountryClick={handleCountryClick}
                     onFamilyClick={handleFamilyClick}
                   />

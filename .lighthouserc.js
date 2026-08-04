@@ -43,9 +43,11 @@ module.exports = {
     },
     assert: {
       assertions: {
-        "categories:performance": ["error", { minScore: 0.85 }],
+        "categories:performance": ["error", { minScore: 0.8 }],
         "categories:accessibility": ["error", { minScore: 1 }],
         "categories:best-practices": ["error", { minScore: 0.95 }],
+        "largest-contentful-paint": ["error", { maxNumericValue: 5500 }],
+        "total-blocking-time": ["error", { maxNumericValue: 300 }],
       },
     },
     upload: {

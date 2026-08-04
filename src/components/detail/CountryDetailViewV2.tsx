@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import { Language } from "@/types/shared";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AlertTriangle } from "lucide-react";
@@ -9,7 +8,6 @@ import type { CountryDetail } from "@/types/afrik-frontend";
 import { getCountry } from "@/lib/afrikLoader";
 import { transformCountryData } from "@/lib/countryDataTransformer";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
-import { hasActiveSourceFlag } from "@/lib/flags-client";
 import {
   CountryHero,
   EtymologyBlock,
@@ -27,6 +25,9 @@ interface CountryDetailViewV2Props {
   countryId: string;
   language: Language;
   initialData?: CountryDetail;
+  initialSourceFlag?: boolean;
+  fromPeopleName?: string;
+  fromPeopleId?: string;
   onPeopleClick?: (peopleId: string) => void;
   onBack?: () => void;
 }
@@ -35,12 +36,11 @@ export const CountryDetailViewV2 = ({
   countryId,
   language,
   initialData,
+  initialSourceFlag,
+  fromPeopleName,
+  fromPeopleId,
   onBack,
 }: CountryDetailViewV2Props) => {
-  const searchParams = useSearchParams();
-  const fromPeopleName = searchParams.get("fromPeopleName");
-  const fromPeopleId = searchParams.get("fromPeopleId");
-
   const matchingInitialData =
     initialData?.id === countryId ? initialData : null;
   const [country, setCountry] = useState<CountryDetail | null>(
@@ -48,7 +48,7 @@ export const CountryDetailViewV2 = ({
   );
   const [loading, setLoading] = useState(!matchingInitialData);
   const [error, setError] = useState<string | null>(null);
-  const [sourceFlag, setSourceFlag] = useState(false);
+  const sourceFlag = initialSourceFlag ?? false;
 
   useEffect(() => {
     let cancelled = false;
@@ -84,11 +84,6 @@ export const CountryDetailViewV2 = ({
     };
 
     loadCountry();
-
-    // Story 0.20 (FR31): "source à vérifier" badge si flag actif.
-    hasActiveSourceFlag("country", countryId).then((flag) => {
-      if (!cancelled) setSourceFlag(flag);
-    });
 
     return () => {
       cancelled = true;

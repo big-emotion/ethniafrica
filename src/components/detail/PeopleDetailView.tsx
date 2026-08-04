@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 import { Language } from "@/types/shared";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -23,14 +23,19 @@ import {
 } from "lucide-react";
 import type { PeopleDetail, CountryDistribution } from "@/types/afrik-frontend";
 import { getPeople } from "@/lib/afrikLoader";
-import { DemographicsChart } from "@/components/charts/DemographicsChart";
-import { hasActiveSourceFlag } from "@/lib/flags-client";
 import { SourceVerifyBadge } from "@/components/ui/source-verify-badge";
+
+const DemographicsChart = lazy(() =>
+  import("@/components/charts/DemographicsChart").then((module) => ({
+    default: module.DemographicsChart,
+  }))
+);
 
 interface PeopleDetailViewProps {
   peopleId: string;
   language: Language;
   initialData?: PeopleDetail;
+  initialSourceFlag?: boolean;
   onCountryClick?: (countryId: string) => void;
   onFamilyClick?: (familyId: string) => void;
 }
@@ -48,6 +53,7 @@ export const PeopleDetailView = ({
   peopleId,
   language,
   initialData,
+  initialSourceFlag,
   onCountryClick,
   onFamilyClick,
 }: PeopleDetailViewProps) => {
@@ -57,7 +63,7 @@ export const PeopleDetailView = ({
   );
   const [loading, setLoading] = useState(!matchingInitialData);
   const [error, setError] = useState<string | null>(null);
-  const [sourceFlag, setSourceFlag] = useState(false);
+  const sourceFlag = initialSourceFlag ?? false;
 
   useEffect(() => {
     let cancelled = false;
@@ -93,13 +99,6 @@ export const PeopleDetailView = ({
     };
 
     loadPeople();
-
-    // Story 0.20 (FR31): check whether an auto unreachable_source flag is
-    // currently open for this fiche so we can show a "source à vérifier"
-    // badge in the Sources tab. Failure is silent (badge hidden).
-    hasActiveSourceFlag("people", peopleId).then((flag) => {
-      if (!cancelled) setSourceFlag(flag);
-    });
 
     return () => {
       cancelled = true;
@@ -970,18 +969,24 @@ export const PeopleDetailView = ({
                     {people.demography.distributionByCountry &&
                       people.demography.distributionByCountry.length > 1 && (
                         <div className="mt-6">
-                          <DemographicsChart
-                            type="peopleDistribution"
-                            data={people.demography.distributionByCountry.map(
-                              (dist: CountryDistribution) => ({
-                                name: dist.country,
-                                value: dist.population || 0,
-                                percentage: dist.percentage,
-                                id: dist.country,
-                              })
-                            )}
-                            title={`Distribution de ${people.nameMain} par pays`}
-                          />
+                          <Suspense
+                            fallback={
+                              <Skeleton className="h-64 w-full rounded-lg" />
+                            }
+                          >
+                            <DemographicsChart
+                              type="peopleDistribution"
+                              data={people.demography.distributionByCountry.map(
+                                (dist: CountryDistribution) => ({
+                                  name: dist.country,
+                                  value: dist.population || 0,
+                                  percentage: dist.percentage,
+                                  id: dist.country,
+                                })
+                              )}
+                              title={`Distribution de ${people.nameMain} par pays`}
+                            />
+                          </Suspense>
                         </div>
                       )}
                   </>

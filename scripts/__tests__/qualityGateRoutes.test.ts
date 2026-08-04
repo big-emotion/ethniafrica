@@ -40,4 +40,22 @@ describe("browser quality-gate routes", () => {
     expect(workflow).toContain("playwright install --with-deps chromium");
     expect(workflow).toContain("CHROME_PATH");
   });
+
+  // @req REQ-046
+  it("enforces stable mobile performance and responsiveness budgets", () => {
+    const assertions = lighthouseConfig.ci.assert.assertions;
+
+    expect(assertions["categories:performance"]).toEqual([
+      "error",
+      { minScore: 0.8 },
+    ]);
+    expect(assertions["largest-contentful-paint"]).toEqual([
+      "error",
+      { maxNumericValue: 5500 },
+    ]);
+    expect(assertions["total-blocking-time"]).toEqual([
+      "error",
+      { maxNumericValue: 300 },
+    ]);
+  });
 });

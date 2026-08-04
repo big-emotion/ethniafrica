@@ -1,5 +1,4 @@
 import { notFound, redirect } from "next/navigation";
-import { Suspense } from "react";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import {
   getPeopleRevisionSnapshot,
@@ -9,6 +8,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleDetailView } from "@/components/detail/PeopleDetailView";
 import { getPeopleById } from "@/api/v2/services/peopleService";
 import { mapPeopleDetail } from "@/lib/afrikDetailMapper";
+import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
 import {
@@ -155,7 +155,10 @@ export default async function PeoplesSlugPage({
     );
   }
 
-  const people = await getPeopleById(parsed.slug);
+  const [people, sourceFlags] = await Promise.all([
+    getPeopleById(parsed.slug),
+    getActiveSourceFlags("people", parsed.slug),
+  ]);
   if (!people) {
     notFound();
   }
@@ -164,19 +167,12 @@ export default async function PeoplesSlugPage({
   return (
     <PageLayout language="fr" sectionName="Peuples">
       <div className="container mx-auto max-w-4xl px-4 py-8">
-        <Suspense
-          fallback={
-            <div className="min-h-[400px] flex items-center justify-center">
-              <p className="text-muted-foreground">Chargement...</p>
-            </div>
-          }
-        >
-          <PeopleDetailView
-            peopleId={parsed.slug}
-            language="fr"
-            initialData={mapPeopleDetail(people)}
-          />
-        </Suspense>
+        <PeopleDetailView
+          peopleId={parsed.slug}
+          language="fr"
+          initialData={mapPeopleDetail(people)}
+          initialSourceFlag={sourceFlags.length > 0}
+        />
       </div>
     </PageLayout>
   );
