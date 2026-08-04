@@ -240,6 +240,16 @@ describe("module-zero-batch helpers", () => {
       expect(inSpy).toHaveBeenCalledWith("entity_id", ids);
     });
 
+    // @req REQ-097
+    it("filters by a caller-supplied entity_type (e.g. for comparisons)", async () => {
+      const ids = ["COM", "ZAF"];
+      const { eqSpy } = buildSupabaseMock({ data: [], error: null });
+
+      await getConfidenceMap(ids, "country");
+
+      expect(eqSpy).toHaveBeenCalledWith("entity_type", "country");
+    });
+
     it("maps a single confidence score per peopleId", async () => {
       buildSupabaseMock({
         data: [
