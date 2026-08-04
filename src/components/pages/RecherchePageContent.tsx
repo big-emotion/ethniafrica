@@ -84,6 +84,8 @@ const CONFIDENCE_OPTIONS = [
   { value: "0.9", label: "Confiance > 90 %" },
 ];
 
+const ALL_FILTER_VALUES = "__all__";
+
 type SortKey = "relevance" | "az" | "za" | "pop-desc" | "pop-asc";
 
 const SORT_OPTIONS: { value: SortKey; label: string }[] = [
@@ -143,6 +145,14 @@ function mapApiResults(raw: Record<string, unknown>[]): SearchHit[] {
   }));
 }
 
+function getFilterParam(
+  searchParams: { get(name: string): string | null },
+  name: string
+): string {
+  const value = searchParams.get(name) ?? "";
+  return value === ALL_FILTER_VALUES ? "" : value;
+}
+
 // ── component ─────────────────────────────────────────────────────────────────
 
 export function RecherchePageContent() {
@@ -156,12 +166,12 @@ export function RecherchePageContent() {
     searchParams.get("q") ?? ""
   );
   const [classificationStatus, setClassificationStatus] = useState(
-    searchParams.get("classificationStatus") ?? ""
+    getFilterParam(searchParams, "classificationStatus")
   );
   const [minConfidence, setMinConfidence] = useState(
-    searchParams.get("minConfidence") ?? ""
+    getFilterParam(searchParams, "minConfidence")
   );
-  const [region, setRegion] = useState(searchParams.get("region") ?? "");
+  const [region, setRegion] = useState(getFilterParam(searchParams, "region"));
   const [sort, setSort] = useState<SortKey>(
     (searchParams.get("sort") as SortKey) ?? "relevance"
   );
@@ -400,8 +410,10 @@ export function RecherchePageContent() {
         {/* ── filter selects ── */}
         <div className="flex flex-wrap gap-3">
           <Select
-            value={classificationStatus}
-            onValueChange={setClassificationStatus}
+            value={classificationStatus || ALL_FILTER_VALUES}
+            onValueChange={(value) =>
+              setClassificationStatus(value === ALL_FILTER_VALUES ? "" : value)
+            }
           >
             <SelectTrigger
               className="w-[210px]"
@@ -410,7 +422,9 @@ export function RecherchePageContent() {
               <SelectValue placeholder="Classification" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">Toutes les classifications</SelectItem>
+              <SelectItem value={ALL_FILTER_VALUES}>
+                Toutes les classifications
+              </SelectItem>
               <SelectItem value="consensual">Consensuel</SelectItem>
               <SelectItem value="contested">Contesté</SelectItem>
               <SelectItem value="colonial-legacy">Héritage colonial</SelectItem>
@@ -418,7 +432,12 @@ export function RecherchePageContent() {
             </SelectContent>
           </Select>
 
-          <Select value={minConfidence} onValueChange={setMinConfidence}>
+          <Select
+            value={minConfidence || ALL_FILTER_VALUES}
+            onValueChange={(value) =>
+              setMinConfidence(value === ALL_FILTER_VALUES ? "" : value)
+            }
+          >
             <SelectTrigger
               className="w-[190px]"
               aria-label="Filtrer par confiance minimale"
@@ -426,7 +445,7 @@ export function RecherchePageContent() {
               <SelectValue placeholder="Confiance min." />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">Toute confiance</SelectItem>
+              <SelectItem value={ALL_FILTER_VALUES}>Toute confiance</SelectItem>
               {CONFIDENCE_OPTIONS.map((o) => (
                 <SelectItem key={o.value} value={o.value}>
                   {o.label}
@@ -435,7 +454,12 @@ export function RecherchePageContent() {
             </SelectContent>
           </Select>
 
-          <Select value={region} onValueChange={setRegion}>
+          <Select
+            value={region || ALL_FILTER_VALUES}
+            onValueChange={(value) =>
+              setRegion(value === ALL_FILTER_VALUES ? "" : value)
+            }
+          >
             <SelectTrigger
               className="w-[210px]"
               aria-label="Filtrer par région"
@@ -443,7 +467,9 @@ export function RecherchePageContent() {
               <SelectValue placeholder="Région" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">Toutes les régions</SelectItem>
+              <SelectItem value={ALL_FILTER_VALUES}>
+                Toutes les régions
+              </SelectItem>
               {Object.entries(REGIONS).map(([key, r]) => (
                 <SelectItem key={key} value={key}>
                   {r.label}

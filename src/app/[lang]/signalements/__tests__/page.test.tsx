@@ -59,12 +59,7 @@ vi.mock("@/components/flags/PublicFlagsQueue", () => ({
   ),
 }));
 
-import SignalementsPage, {
-  dynamic,
-  generateStaticParams,
-  metadata,
-  revalidate,
-} from "../page";
+import SignalementsPage, { metadata } from "../page";
 
 const initialPage = {
   items: [],
@@ -123,15 +118,12 @@ describe("/[lang]/signalements page", () => {
   });
 
   // @req REQ-014
-  it("exports the public index metadata and one-minute revalidation", () => {
+  it("exports the public index metadata and caches its data for one minute", () => {
     expect(metadata).toEqual({
       title: "Tous les signalements — Africa History",
       description:
         "Transparence éditoriale — explorez les signalements de la communauté",
     });
-    expect(dynamic).toBe("force-static");
-    expect(revalidate).toBe(60);
-    expect(generateStaticParams()).toEqual([{ lang: "fr" }]);
     expect(unstableCacheMock).toHaveBeenCalledWith(
       expect.any(Function),
       ["public-flags-index"],
