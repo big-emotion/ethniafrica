@@ -431,18 +431,20 @@ export function HierarchyTree({
   }
 
   return (
-    <div role="tree" aria-labelledby={labelledById} onKeyDown={handleKeyDown}>
-      {renderNode({
-        node: root,
-        level: 1,
-        setSize: 1,
-        posInSet: 1,
-        parentId: null,
-      })}
+    <>
+      <div role="tree" aria-labelledby={labelledById} onKeyDown={handleKeyDown}>
+        {renderNode({
+          node: root,
+          level: 1,
+          setSize: 1,
+          posInSet: 1,
+          parentId: null,
+        })}
+      </div>
       <p role="status" aria-live="polite" className="sr-only">
         {liveMessage}
       </p>
-    </div>
+    </>
   );
 }
 

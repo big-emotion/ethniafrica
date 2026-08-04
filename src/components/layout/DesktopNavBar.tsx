@@ -64,7 +64,7 @@ export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
           >
             <Image
               src="/africa.png"
-              alt={PRODUCT_NAME}
+              alt={isHome ? "" : PRODUCT_NAME}
               width={28}
               height={28}
               className="object-contain"

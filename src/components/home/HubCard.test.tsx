@@ -21,7 +21,7 @@ describe("HubCard", () => {
     render(<HubCard hub={explorerHub} />);
 
     expect(
-      screen.getByRole("heading", { name: "Explorer" })
+      screen.getByRole("heading", { level: 2, name: "Explorer" })
     ).toBeInTheDocument();
     expect(screen.getByText(explorerHub.description)).toBeInTheDocument();
   });

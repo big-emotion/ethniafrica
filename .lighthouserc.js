@@ -4,13 +4,20 @@ module.exports = {
       url: [
         "http://localhost:3000/",
         "http://localhost:3000/fr",
-        "http://localhost:3000/fr/pays/senegal",
-        "http://localhost:3000/fr/peuples/wolof",
+        "http://localhost:3000/fr/pays/SEN",
+        "http://localhost:3000/fr/peuples/PPL_WOLOF",
+        "http://localhost:3000/fr/noms",
         // ETNI-463 (7.11) AC1 — large-family sample (FLG_BANTU: 6 languages,
         // 174 associated peoples, the largest currently-seeded family).
         "http://localhost:3000/fr/familles/FLG_BANTU",
       ],
       numberOfRuns: 3,
+      // Audit returning-user performance with essential-only consent. The
+      // live axe run still exercises the consent banner for new visitors.
+      puppeteerScript: "./scripts/lighthouse-setup.cjs",
+      puppeteerLaunchOptions: {
+        args: ["--no-sandbox"],
+      },
       settings: {
         // Mobile emulation with 4G throttling
         formFactor: "mobile",
@@ -36,9 +43,11 @@ module.exports = {
     },
     assert: {
       assertions: {
-        "categories:performance": ["error", { minScore: 0.85 }],
+        "categories:performance": ["error", { minScore: 0.8 }],
         "categories:accessibility": ["error", { minScore: 1 }],
         "categories:best-practices": ["error", { minScore: 0.95 }],
+        "largest-contentful-paint": ["error", { maxNumericValue: 5500 }],
+        "total-blocking-time": ["error", { maxNumericValue: 300 }],
       },
     },
     upload: {

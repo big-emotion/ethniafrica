@@ -170,10 +170,9 @@ export function AutonymExonymHeading({
             <span aria-hidden="true" className="font-afh text-afh-small ml-1">
               [{ipa}]
             </span>
-            <span
-              className="sr-only"
-              aria-label={`Prononciation phonétique : ${ipa}`}
-            />
+            <span className="sr-only">
+              {`Prononciation phonétique : ${ipa}`}
+            </span>
           </>
         )}
         {exonym && <span className={exonymClasses}>{exonym}</span>}

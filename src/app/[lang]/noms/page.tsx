@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { NamesAtlasView } from "@/components/names/NamesAtlasView";
 import type { NameAtlasEntry } from "@/components/names/NamesAtlasView";
-import { listNames } from "@/api/v2/services/names";
+import {
+  listNames,
+  NamesSchemaUnavailableError,
+  type ListNamesResult,
+} from "@/api/v2/services/names";
 import { nameRecordTypeSchema, type NameRecord } from "@/api/v2/schemas/names";
 import { translations } from "@/lib/translations";
 
@@ -46,19 +50,27 @@ export default async function NomsPage({ searchParams }: NomsPageProps) {
   const nameType = parsedNameType.success ? parsedNameType.data : undefined;
   const imposedOnly = sp.imposedOnly === "true";
 
-  const { names, total } = await listNames({
-    q,
-    nameType,
-    imposedOnly,
-    limit: 100,
-    offset: 0,
-  });
+  let result: ListNamesResult;
+  try {
+    result = await listNames({
+      q,
+      nameType,
+      imposedOnly,
+      limit: 100,
+      offset: 0,
+    });
+  } catch (error) {
+    if (!(error instanceof NamesSchemaUnavailableError)) {
+      throw error;
+    }
+    result = { names: [], total: 0 };
+  }
 
   return (
     <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
       <NamesAtlasView
-        initialNames={toAtlasEntries(names)}
-        initialTotal={total}
+        initialNames={toAtlasEntries(result.names)}
+        initialTotal={result.total}
         initialQuery={q}
         initialNameType={nameType}
         initialImposedOnly={imposedOnly}

@@ -37,6 +37,13 @@ export class PeopleNamesNotFoundError extends Error {
   }
 }
 
+export class NamesSchemaUnavailableError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "NamesSchemaUnavailableError";
+  }
+}
+
 interface NameRecordRow {
   id: string;
   name_text: string;
@@ -298,6 +305,11 @@ export async function listNames(
     .range(query.offset, query.offset + query.limit - 1);
 
   if (error) {
+    if (error.code === "42P01" || error.code === "PGRST205") {
+      throw new NamesSchemaUnavailableError(
+        `Names schema is unavailable: ${error.message}`
+      );
+    }
     throw new Error(`Failed to list name records: ${error.message}`);
   }
 

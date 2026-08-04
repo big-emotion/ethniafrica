@@ -84,7 +84,9 @@ export function transformDecolonialHeader(
     linkWithFamily: header.linkWithFamily ?? null,
     nameFr: header.nameFr ?? null,
     nameEn: header.nameEn ?? null,
-    historicalAppellations: header.historicalAppellations ?? [],
+    historicalAppellations: Array.isArray(header.historicalAppellations)
+      ? header.historicalAppellations
+      : [],
     originOfHistoricalTerm: header.originOfHistoricalTerm ?? null,
     whyProblematic: header.whyProblematic ?? null,
     selfAppellation: header.selfAppellation ?? null,

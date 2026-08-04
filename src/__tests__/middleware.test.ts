@@ -365,24 +365,57 @@ describe("middleware", () => {
     });
 
     // @req REQ-052
-    it("scopes style-src-attr 'unsafe-inline' to /fr only", async () => {
-      const homeRequest = new NextRequest("http://localhost:3000/fr");
-      const homeResponse = await middleware(homeRequest);
-      const homeCsp = homeResponse.headers.get("Content-Security-Policy")!;
-      const homeDirectives = homeCsp.split(";").map((d) => d.trim());
+    it("allows only the known Next.js runtime style hashes", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+      const csp = response.headers.get("Content-Security-Policy")!;
+      const directives = csp.split(";").map((d) => d.trim());
+      const styleSrc = directives.find((d) => d.startsWith("style-src "));
 
-      expect(homeDirectives.find((d) => d.startsWith("style-src-attr"))).toBe(
-        "style-src-attr 'unsafe-inline'"
+      expect(styleSrc).toContain(
+        "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='"
       );
+      expect(styleSrc).toContain(
+        "'sha256-CIxDM5jnsGiKqXs2v7NKCY5MzdR9gu6TtiMJrDw29AY='"
+      );
+    });
 
-      const otherRequest = new NextRequest("http://localhost:3000/some-page");
-      const otherResponse = await middleware(otherRequest);
-      const otherCsp = otherResponse.headers.get("Content-Security-Policy")!;
-      const otherDirectives = otherCsp.split(";").map((d) => d.trim());
+    // @req REQ-052
+    it("allows inline style attributes only on public localized pages", async () => {
+      for (const pathname of [
+        "/fr",
+        "/fr/pays/SEN",
+        "/fr/familles/FLG_BANTU",
+      ]) {
+        const response = await middleware(
+          new NextRequest(`http://localhost:3000${pathname}`)
+        );
+        const directives = response.headers
+          .get("Content-Security-Policy")!
+          .split(";")
+          .map((directive) => directive.trim());
 
-      expect(
-        otherDirectives.find((d) => d.startsWith("style-src-attr"))
-      ).toBeUndefined();
+        expect(
+          directives.find((directive) => directive.startsWith("style-src-attr"))
+        ).toBe("style-src-attr 'unsafe-inline'");
+        expect(
+          directives.find((directive) => directive.startsWith("style-src "))
+        ).toBe("style-src 'self' 'unsafe-inline'");
+      }
+
+      for (const pathname of ["/api/v2/countries/SEN", "/admin/login"]) {
+        const response = await middleware(
+          new NextRequest(`http://localhost:3000${pathname}`)
+        );
+        const directives = response.headers
+          .get("Content-Security-Policy")!
+          .split(";")
+          .map((directive) => directive.trim());
+
+        expect(
+          directives.find((directive) => directive.startsWith("style-src-attr"))
+        ).toBeUndefined();
+      }
     });
 
     it("generates a different nonce for each request", async () => {

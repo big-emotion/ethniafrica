@@ -293,22 +293,7 @@ export const Origin_Empty: Story = {
       migrationRoutes: [],
       historicalSettlementZones: [],
     };
-    return (
-      <div style={{ padding: "24px" }}>
-        <p
-          style={{
-            color: "#999",
-            fontSize: "12px",
-            marginBottom: "8px",
-            fontStyle: "italic",
-          }}
-        >
-          Section sans données — elle s&apos;omit silencieusement (retourne
-          null).
-        </p>
-        <PeopleOriginBlock data={empty} />
-      </div>
-    );
+    return <PeopleOriginBlock data={empty} />;
   },
 };
 

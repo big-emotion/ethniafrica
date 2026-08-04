@@ -1,5 +1,4 @@
 import { notFound, redirect } from "next/navigation";
-import { Suspense } from "react";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
 import {
   getLatestEntityRevisionVersion,
@@ -8,6 +7,9 @@ import {
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { CountryDetailViewV2 } from "@/components/detail/CountryDetailViewV2";
+import { getCountryById } from "@/api/v2/services/countryService";
+import { mapCountryDetail } from "@/lib/afrikDetailMapper";
+import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
 import {
@@ -21,6 +23,11 @@ export const revalidate = 3600;
 interface PageParams {
   lang: string;
   slug: string;
+}
+
+interface PageSearchParams {
+  fromPeopleName?: string;
+  fromPeopleId?: string;
 }
 
 // ---------------------------------------------------------------------------
@@ -98,8 +105,10 @@ function CountrySnapshotFicheView({
 // @req REQ-019
 export default async function PaysSlugPage({
   params,
+  searchParams,
 }: {
   params: Promise<PageParams>;
+  searchParams?: Promise<PageSearchParams>;
 }) {
   const { lang, slug } = await params;
 
@@ -130,7 +139,7 @@ export default async function PaysSlugPage({
     }
 
     return (
-      <PageLayout language="fr" onLanguageChange={() => {}} sectionName="Pays">
+      <PageLayout language="fr" sectionName="Pays">
         <div className="container mx-auto max-w-4xl px-4 py-8">
           <CountrySnapshotFicheView
             entityId={parsed.slug}
@@ -146,19 +155,28 @@ export default async function PaysSlugPage({
     );
   }
 
+  const [country, sourceFlags] = await Promise.all([
+    getCountryById(parsed.slug),
+    getActiveSourceFlags("country", parsed.slug),
+  ]);
+  if (!country) {
+    notFound();
+  }
+
+  const navigationContext = (await searchParams) ?? {};
+
   // Live version (revalidate = 3600 at segment level)
   return (
-    <PageLayout language="fr" onLanguageChange={() => {}} sectionName="Pays">
+    <PageLayout language="fr" sectionName="Pays">
       <div className="container mx-auto max-w-4xl px-4 py-8">
-        <Suspense
-          fallback={
-            <div className="min-h-[400px] flex items-center justify-center">
-              <p className="text-muted-foreground">Chargement...</p>
-            </div>
-          }
-        >
-          <CountryDetailViewV2 countryId={parsed.slug} language="fr" />
-        </Suspense>
+        <CountryDetailViewV2
+          countryId={parsed.slug}
+          language="fr"
+          initialData={mapCountryDetail(country)}
+          initialSourceFlag={sourceFlags.length > 0}
+          fromPeopleName={navigationContext.fromPeopleName}
+          fromPeopleId={navigationContext.fromPeopleId}
+        />
       </div>
     </PageLayout>
   );

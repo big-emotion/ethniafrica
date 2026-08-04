@@ -1,4 +1,4 @@
-# ADR-0005: `style-src-attr 'unsafe-inline'` scoped to `/fr` only
+# ADR-0005: Scoped style CSP exceptions
 
 - **Status**: Accepted
 - **Date**: 2026-07-29
@@ -6,14 +6,11 @@
 
 ## Context
 
-`HomeHero`, `DottedContinent`, and `HubCard` (Epic 14 home page,
-`src/app/[lang]/page.tsx`) set static CSS via the `style={{...}}` React prop,
-which renders as a literal `style="..."` HTML attribute. CSP's `style-src`
-nonce covers `<style>` elements and `<link rel="stylesheet">`, but not the
-`style` attribute — that is governed by the separate `style-src-attr`
-directive, which has no browser-supported way to scope individual attributes
-by nonce in practice. Serving these components therefore requires
-`style-src-attr 'unsafe-inline'`.
+Public fiche components set data-driven CSS through both React `style={{...}}`
+attributes and client-injected `<style>` elements. Their values vary with the
+entity data, so a fixed hash allowlist is not viable. Attribute styles are
+governed by `style-src-attr`, while injected elements are governed by
+`style-src`.
 
 A first pass added this directive unconditionally in
 `src/middleware.ts`, applying it to every route in every environment,
@@ -22,27 +19,34 @@ attributes at all.
 
 ## Decision
 
-Scope `style-src-attr 'unsafe-inline'` to the exact route that needs it
-(`pathname === "/fr"`, the only route that renders `HomeHero` /
-`DottedContinent` / `HubCard`) via `STYLE_ATTR_UNSAFE_INLINE_ROUTES` in
-`applySecurityHeaders`. Every other route — including `/api/v2/*` and
-`/fr/admin/*` — keeps the strict nonce-only `style-src` policy with no
-`style-src-attr` relaxation at all.
+Scope `style-src 'self' 'unsafe-inline'` and
+`style-src-attr 'unsafe-inline'` to public localized pages
+(`pathname === "/fr" || pathname.startsWith("/fr/")`) in
+`applySecurityHeaders`. API and admin routes remain outside that scope and
+keep the strict nonce-only style policy.
+
+Next.js 16 also emits two stable runtime `<style>` payloads without propagating
+the request nonce. Strict API and admin routes permit only their exact SHA-256
+hashes through `style-src`.
 
 ## Consequences
 
 **Positive**
 
-- The CSP relaxation's blast radius is limited to the one route that
-  actually needs it, instead of the entire production site.
-- `src/__tests__/middleware.test.ts` asserts both that `/fr` receives the
-  directive and that an unrelated route does not, guarding against silent
+- The CSP relaxation is limited to public pages that render the data-driven
+  styles, instead of the entire production site.
+- Strict API and admin routes allow Next.js runtime styles by exact content
+  hash instead of a broad source expression.
+- `src/__tests__/middleware.test.ts` asserts that public pages receive the
+  scoped directive while API and admin routes do not, guarding against silent
   re-widening.
 
 **Negative**
 
-- `/fr` still ships `'unsafe-inline'` for style attributes, which remains a
-  real (if scoped) weakening versus a pure nonce-only policy.
+- Public `/fr` pages ship `'unsafe-inline'` for style elements and attributes,
+  which remains a real (if scoped) weakening versus a pure nonce-only policy.
+- A Next.js runtime change that alters one of the hashed payloads requires an
+  explicit hash update after the new payload has been reviewed.
 
 **Aside**
 
@@ -54,8 +58,6 @@ Scope `style-src-attr 'unsafe-inline'` to the exact route that needs it
 
 **Follow-up (not resolved here)**
 
-- Refactor `HomeHero`, `DottedContinent`, and `HubCard` to move their static
-  inline styles into Tailwind classes or a nonce'd `<style>` element, which
-  would let `/fr` drop `style-src-attr` entirely. Out of scope for this PR
-  (ETNI-543 is a visual-parity test PR; that refactor touches component
-  files outside its reviewed diff).
+- Refactor public fiche components to replace data-driven inline styles and
+  injected style elements with nonce-aware alternatives. Once complete,
+  public pages can drop both scoped exceptions.

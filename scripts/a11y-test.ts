@@ -1,5 +1,7 @@
 import { chromium, Browser, Page } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import axeCore from "axe-core";
+import type { RunOptions } from "axe-core";
 import { createServer, Server } from "http";
 import { createReadStream, existsSync } from "fs";
 import { stat } from "fs/promises";
@@ -7,6 +9,32 @@ import { join, extname, resolve } from "path";
 
 const STORYBOOK_STATIC_DIR = resolve(__dirname, "../storybook-static");
 const STORYBOOK_PORT = 6006;
+
+// axe-core's built-in `valid-lang` allowlist covers ISO 639-1 plus only a
+// narrow subset of ISO 639-3, missing African-language codes this app
+// legitimately renders via `lang` attributes (UX-DR38, ISO 639-3 is the
+// AFRIK language identifier standard — see nameRecordParser.ts). Extend the
+// built-in list rather than replace it, so genuinely invalid `lang` values
+// are still caught. `validLangs` isn't part of axe-core's public TS types.
+const AXE_UTILS = axeCore.utils as unknown as { validLangs: () => string[] };
+const AFRIK_ISO_639_3_CODES = ["kon", "lin", "yor", "hau", "ibo", "ful", "wol"];
+// axe-core's `RunOptions` type only exposes rule-level `{ enabled }` toggles,
+// but check-level options (like `valid-lang`'s custom `value` list) are a
+// runtime-supported `checks` key that the public TS types don't model. The
+// cast is safe: this shape is accepted by axe-core's own `run()`/normalizeRunOptions.
+const AXE_RUN_OPTIONS = {
+  checks: {
+    "valid-lang": {
+      options: { value: [...AXE_UTILS.validLangs(), ...AFRIK_ISO_639_3_CODES] },
+    },
+  },
+} as unknown as RunOptions;
+
+// Live Next.js routes audited by axe-core in addition to Storybook. Set by
+// .github/workflows/a11y.yml once the app is built and served — unset locally
+// this step is skipped so the script still works without a running server.
+const LIVE_ROUTES_BASE_URL = process.env.A11Y_LIVE_BASE_URL;
+const LIVE_ROUTES = ["/fr/noms", "/fr/peuples/PPL_WOLOF"];
 
 const MIME: Record<string, string> = {
   ".html": "text/html",
@@ -100,6 +128,75 @@ async function getStoryIds(page: Page): Promise<StoryEntry[]> {
   return entries;
 }
 
+async function runLiveRouteAudit(browser: Browser): Promise<boolean> {
+  if (!LIVE_ROUTES_BASE_URL) {
+    console.log(
+      "\nℹ️  A11Y_LIVE_BASE_URL not set — skipping live route audit (/fr/noms, dossier fiche)."
+    );
+    return false;
+  }
+
+  console.log(
+    `\n🌍 Auditing ${LIVE_ROUTES.length} live route(s) against ${LIVE_ROUTES_BASE_URL}...`
+  );
+
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  let hasBlockingViolations = false;
+
+  try {
+    for (const route of LIVE_ROUTES) {
+      const url = `${LIVE_ROUTES_BASE_URL}${route}`;
+      process.stdout.write(`🔍 Testing live route: ${route}... `);
+
+      try {
+        await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
+
+        const results = await new AxeBuilder({ page })
+          .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+          .options(AXE_RUN_OPTIONS)
+          .analyze();
+
+        // Live routes gate on both `serious` and `critical` — stricter than
+        // the Storybook check, which still tolerates the known Module #0
+        // color-token violations tracked separately.
+        const reportable = results.violations.filter(
+          (v) => v.impact === "serious" || v.impact === "critical"
+        );
+
+        if (reportable.length > 0) {
+          console.log(`❌ ${reportable.length} violation(s)`);
+          hasBlockingViolations = true;
+
+          for (const violation of reportable as AxeViolation[]) {
+            console.log(
+              `\n  🚨 [${violation.impact?.toUpperCase()}] ${violation.id}`
+            );
+            console.log(`     ${violation.help}`);
+            console.log(`     📎 ${violation.helpUrl}`);
+            console.log(`     Affected elements:`);
+            for (const node of violation.nodes.slice(0, 3)) {
+              console.log(`       - ${node.target.join(" > ")}`);
+            }
+            if (violation.nodes.length > 3) {
+              console.log(`       ... and ${violation.nodes.length - 3} more`);
+            }
+          }
+        } else {
+          console.log("✅ Passed");
+        }
+      } catch (error) {
+        console.log(`❌ Error: ${(error as Error).message}`);
+        hasBlockingViolations = true;
+      }
+    }
+  } finally {
+    await context.close();
+  }
+
+  return hasBlockingViolations;
+}
+
 async function runA11yTests(): Promise<void> {
   if (!existsSync(STORYBOOK_STATIC_DIR)) {
     console.error("❌ storybook-static directory not found.");
@@ -141,6 +238,7 @@ async function runA11yTests(): Promise<void> {
 
         const results = await new AxeBuilder({ page })
           .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
+          .options(AXE_RUN_OPTIONS)
           .analyze();
 
         // CI gate fails only on `critical`. `serious` violations are still
@@ -206,6 +304,11 @@ async function runA11yTests(): Promise<void> {
     console.log(
       `   Total violations: ${violationSummary.reduce((acc, s) => acc + s.violations.length, 0)}`
     );
+
+    const liveRoutesHaveViolations = await runLiveRouteAudit(browser);
+    if (liveRoutesHaveViolations) {
+      hasViolations = true;
+    }
   } finally {
     if (browser) {
       await browser.close();

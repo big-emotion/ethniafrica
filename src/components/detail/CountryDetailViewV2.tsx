@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import { Language } from "@/types/shared";
 import { Skeleton } from "@/components/ui/skeleton";
 import { AlertTriangle } from "lucide-react";
@@ -9,7 +8,6 @@ import type { CountryDetail } from "@/types/afrik-frontend";
 import { getCountry } from "@/lib/afrikLoader";
 import { transformCountryData } from "@/lib/countryDataTransformer";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
-import { hasActiveSourceFlag } from "@/lib/flags-client";
 import {
   CountryHero,
   EtymologyBlock,
@@ -26,6 +24,10 @@ import {
 interface CountryDetailViewV2Props {
   countryId: string;
   language: Language;
+  initialData?: CountryDetail;
+  initialSourceFlag?: boolean;
+  fromPeopleName?: string;
+  fromPeopleId?: string;
   onPeopleClick?: (peopleId: string) => void;
   onBack?: () => void;
 }
@@ -33,16 +35,20 @@ interface CountryDetailViewV2Props {
 export const CountryDetailViewV2 = ({
   countryId,
   language,
+  initialData,
+  initialSourceFlag,
+  fromPeopleName,
+  fromPeopleId,
   onBack,
 }: CountryDetailViewV2Props) => {
-  const searchParams = useSearchParams();
-  const fromPeopleName = searchParams.get("fromPeopleName");
-  const fromPeopleId = searchParams.get("fromPeopleId");
-
-  const [country, setCountry] = useState<CountryDetail | null>(null);
-  const [loading, setLoading] = useState(true);
+  const matchingInitialData =
+    initialData?.id === countryId ? initialData : null;
+  const [country, setCountry] = useState<CountryDetail | null>(
+    matchingInitialData
+  );
+  const [loading, setLoading] = useState(!matchingInitialData);
   const [error, setError] = useState<string | null>(null);
-  const [sourceFlag, setSourceFlag] = useState(false);
+  const sourceFlag = initialSourceFlag ?? false;
 
   useEffect(() => {
     let cancelled = false;
@@ -50,6 +56,12 @@ export const CountryDetailViewV2 = ({
     setError(null);
 
     const loadCountry = async () => {
+      if (initialData?.id === countryId) {
+        setCountry(initialData);
+        setLoading(false);
+        return;
+      }
+
       try {
         const data = await getCountry(countryId);
         if (!cancelled) {
@@ -73,15 +85,10 @@ export const CountryDetailViewV2 = ({
 
     loadCountry();
 
-    // Story 0.20 (FR31): "source à vérifier" badge si flag actif.
-    hasActiveSourceFlag("country", countryId).then((flag) => {
-      if (!cancelled) setSourceFlag(flag);
-    });
-
     return () => {
       cancelled = true;
     };
-  }, [countryId, language]);
+  }, [countryId, initialData, language]);
 
   const getNotFoundText = (): string => {
     return "Pays non trouvé";
