@@ -118,7 +118,7 @@ describe("MobileNavBar — global shell (non-home routes, ETNI-800)", () => {
     mockPathname = "/fr/pays";
     render(<MobileNavBar language="fr" />);
 
-    expect(screen.getByRole("button", { name: "Navigation" })).toHaveClass(
+    expect(screen.getByRole("button", { name: "Navigation FLG" })).toHaveClass(
       "min-h-11"
     );
     expect(screen.getByRole("button", { name: "Rechercher" })).toHaveClass(

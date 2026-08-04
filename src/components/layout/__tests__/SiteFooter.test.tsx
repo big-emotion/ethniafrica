@@ -49,7 +49,7 @@ describe("SiteFooter", () => {
     render(<SiteFooter language="fr" />);
 
     const partnerLink = screen.getByRole("link", {
-      name: "Conçu avec émotion pour l’Afrique. BIG EMOTION",
+      name: "Fait avec émotion pour l'Afrique BIG EMOTION",
     });
     const partnerLogo = screen.getByRole("img", { name: "BIG EMOTION" });
 
