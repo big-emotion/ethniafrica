@@ -296,10 +296,7 @@ export interface CountryDetail {
 // ==========================================
 
 export type SearchEntityType =
-  | "country"
-  | "people"
-  | "language"
-  | "languageFamily";
+  "country" | "people" | "language" | "languageFamily";
 
 /**
  * Filtres de recherche

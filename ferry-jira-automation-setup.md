@@ -38,12 +38,13 @@ in the Jira UI. This is the recommended setup path.
 - Web request body: Custom data
 
 Headers:
-| Name | Value | Secret? |
-|------|-------|---------|
-| `Accept` | `application/vnd.github+json` | No |
-| `Authorization` | `Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE` | **Yes** |
-| `X-GitHub-Api-Version` | `2022-11-28` | No |
-| `Content-Type` | `application/json` | No |
+
+| Name                   | Value                                    | Secret? |
+| ---------------------- | ---------------------------------------- | ------- |
+| `Accept`               | `application/vnd.github+json`            | No      |
+| `Authorization`        | `Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE` | **Yes** |
+| `X-GitHub-Api-Version` | `2022-11-28`                             | No      |
+| `Content-Type`         | `application/json`                       | No      |
 
 Custom body:
 
@@ -75,12 +76,13 @@ Custom body:
 - Web request body: Custom data
 
 Headers:
-| Name | Value | Secret? |
-|------|-------|---------|
-| `Accept` | `application/vnd.github+json` | No |
-| `Authorization` | `Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE` | **Yes** |
-| `X-GitHub-Api-Version` | `2022-11-28` | No |
-| `Content-Type` | `application/json` | No |
+
+| Name                   | Value                                    | Secret? |
+| ---------------------- | ---------------------------------------- | ------- |
+| `Accept`               | `application/vnd.github+json`            | No      |
+| `Authorization`        | `Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE` | **Yes** |
+| `X-GitHub-Api-Version` | `2022-11-28`                             | No      |
+| `Content-Type`         | `application/json`                       | No      |
 
 Custom body:
 
@@ -112,12 +114,13 @@ Custom body:
 - Web request body: Custom data
 
 Headers:
-| Name | Value | Secret? |
-|------|-------|---------|
-| `Accept` | `application/vnd.github+json` | No |
-| `Authorization` | `Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE` | **Yes** |
-| `X-GitHub-Api-Version` | `2022-11-28` | No |
-| `Content-Type` | `application/json` | No |
+
+| Name                   | Value                                    | Secret? |
+| ---------------------- | ---------------------------------------- | ------- |
+| `Accept`               | `application/vnd.github+json`            | No      |
+| `Authorization`        | `Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE` | **Yes** |
+| `X-GitHub-Api-Version` | `2022-11-28`                             | No      |
+| `Content-Type`         | `application/json`                       | No      |
 
 Custom body:
 
@@ -149,12 +152,13 @@ Custom body:
 - Web request body: Custom data
 
 Headers:
-| Name | Value | Secret? |
-|------|-------|---------|
-| `Accept` | `application/vnd.github+json` | No |
-| `Authorization` | `Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE` | **Yes** |
-| `X-GitHub-Api-Version` | `2022-11-28` | No |
-| `Content-Type` | `application/json` | No |
+
+| Name                   | Value                                    | Secret? |
+| ---------------------- | ---------------------------------------- | ------- |
+| `Accept`               | `application/vnd.github+json`            | No      |
+| `Authorization`        | `Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE` | **Yes** |
+| `X-GitHub-Api-Version` | `2022-11-28`                             | No      |
+| `Content-Type`         | `application/json`                       | No      |
 
 Custom body:
 
@@ -186,12 +190,13 @@ Custom body:
 - Web request body: Custom data
 
 Headers:
-| Name | Value | Secret? |
-|------|-------|---------|
-| `Accept` | `application/vnd.github+json` | No |
-| `Authorization` | `Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE` | **Yes** |
-| `X-GitHub-Api-Version` | `2022-11-28` | No |
-| `Content-Type` | `application/json` | No |
+
+| Name                   | Value                                    | Secret? |
+| ---------------------- | ---------------------------------------- | ------- |
+| `Accept`               | `application/vnd.github+json`            | No      |
+| `Authorization`        | `Bearer YOUR_GITHUB_PAT_WITH_REPO_SCOPE` | **Yes** |
+| `X-GitHub-Api-Version` | `2022-11-28`                             | No      |
+| `Content-Type`         | `application/json`                       | No      |
 
 Custom body:
 
