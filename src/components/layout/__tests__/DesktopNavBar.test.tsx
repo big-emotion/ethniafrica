@@ -106,10 +106,70 @@ describe("DesktopNavBar — home route header skin", () => {
 
   // @req [14.5]
   // @req REQ-044
-  it("does not render the brand wordmark off the home route", () => {
+  it("renders the brand wordmark in light styling off the home route", () => {
     mockPathname = "/fr/pays";
     render(<DesktopNavBar language="fr" />);
 
-    expect(screen.queryByText(PRODUCT_NAME)).not.toBeInTheDocument();
+    const brand = screen.getByText(PRODUCT_NAME);
+    expect(brand.getAttribute("style")).toContain("color: var(--afh-text)");
+    expect(brand.getAttribute("style")).not.toContain("var(--afh-night-ink)");
+  });
+});
+
+// @req [16.3]
+describe("DesktopNavBar — global shell (non-home routes, ETNI-800)", () => {
+  // @req REQ-044
+  it("is static — not position: fixed or sticky — off the home route", () => {
+    mockPathname = "/fr/pays";
+    render(<DesktopNavBar language="fr" />);
+
+    const nav = screen.getByRole("navigation", {
+      name: "Navigation principale",
+    });
+    expect(nav.className).not.toMatch(/(^|\s)fixed(\s|$)/);
+    expect(nav.className).not.toMatch(/(^|\s)sticky(\s|$)/);
+  });
+
+  // @req REQ-044
+  it("stays fixed on the home route (unchanged until ETNI-820)", () => {
+    mockPathname = "/fr";
+    render(<DesktopNavBar language="fr" />);
+
+    const nav = screen.getByRole("navigation", {
+      name: "Navigation principale",
+    });
+    expect(nav.className).toMatch(/(^|\s)fixed(\s|$)/);
+  });
+
+  // @req REQ-044
+  it("is light-skinned off the home route", () => {
+    mockPathname = "/fr/pays";
+    render(<DesktopNavBar language="fr" />);
+
+    const nav = screen.getByRole("navigation", {
+      name: "Navigation principale",
+    });
+    expect(nav).toHaveClass("bg-card");
+    expect(nav).not.toHaveClass("afh-home-nav-skin");
+  });
+
+  // @req REQ-044
+  it("gives each nav link a >= 44px hit area off the home route", () => {
+    mockPathname = "/fr/pays";
+    render(<DesktopNavBar language="fr" />);
+
+    expect(screen.getByRole("link", { name: "Pays" })).toHaveClass("min-h-11");
+    expect(screen.getByRole("link", { name: "Peuples" })).toHaveClass(
+      "min-h-11"
+    );
+  });
+
+  // @req REQ-044
+  it("keeps the africa.png logo at 28px off the home route", () => {
+    mockPathname = "/fr/pays";
+    render(<DesktopNavBar language="fr" />);
+
+    const logo = screen.getByRole("img", { name: PRODUCT_NAME });
+    expect(logo).toBeInTheDocument();
   });
 });

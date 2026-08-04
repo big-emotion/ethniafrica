@@ -18,7 +18,7 @@ export function SiteFooter({ language }: SiteFooterProps) {
 
   return (
     <footer
-      className="border-t border-border bg-card text-muted-foreground"
+      className="border-t border-afh-border bg-afh-bg-warm text-afh-text-soft"
       data-testid="site-footer"
     >
       <div
