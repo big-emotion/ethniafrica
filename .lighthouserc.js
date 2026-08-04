@@ -15,6 +15,7 @@ module.exports = {
       // Audit returning-user performance with essential-only consent. The
       // live axe run still exercises the consent banner for new visitors.
       puppeteerScript: "./scripts/lighthouse-setup.cjs",
+      chromeFlags: ["--no-sandbox"],
       settings: {
         // Mobile emulation with 4G throttling
         formFactor: "mobile",
