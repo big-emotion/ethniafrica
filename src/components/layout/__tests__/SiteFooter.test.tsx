@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { SiteFooter } from "@/components/layout/SiteFooter";
+import { ATTRIBUTION_STRING } from "@/lib/brand";
 import * as consentModule from "@/hooks/use-consent";
 
 vi.mock("@/hooks/use-consent", () => ({
@@ -55,24 +56,34 @@ describe("SiteFooter", () => {
     expect(partnerLink).toHaveAttribute("href", "https://big-emotion.com/");
     expect(partnerLink).toHaveAttribute("target", "_blank");
     expect(partnerLink).toHaveAttribute("rel", "noopener noreferrer");
-    expect(
-      screen.getByText("Conçu avec émotion pour l’Afrique.")
-    ).toBeInTheDocument();
+    expect(screen.getByText(ATTRIBUTION_STRING)).toBeInTheDocument();
     expect(partnerLogo).toHaveClass("w-16");
     expect(partnerLogo).not.toHaveClass("opacity-80");
   });
 
   // @req REQ-047
-  it("uses a compact EthniAfrica surface without a separate brand panel", () => {
+  // @req [16.3]
+  it("uses the parchment footer surface without a separate brand panel", () => {
     render(<SiteFooter language="fr" />);
 
     const footer = screen.getByTestId("site-footer");
     const content = screen.getByTestId("footer-content");
 
-    expect(footer).toHaveClass("bg-card", "text-muted-foreground");
-    expect(footer).not.toHaveClass("bg-afh-earth");
+    expect(footer).toHaveClass("bg-afh-bg-warm", "text-afh-text-soft");
+    expect(footer).not.toHaveClass("bg-card", "bg-afh-earth");
     expect(content).toHaveClass("py-5", "xl:flex-row", "xl:flex-nowrap");
     expect(footer.innerHTML).not.toContain("64_100%_57%");
+  });
+
+  // @req REQ-088
+  // @req [16.3]
+  it("reads the attribution string from brand.ts, never a hardcoded literal", () => {
+    render(<SiteFooter language="fr" />);
+
+    expect(screen.getByText(ATTRIBUTION_STRING)).toBeInTheDocument();
+    expect(
+      screen.queryByText("Conçu avec émotion pour l’Afrique.")
+    ).not.toBeInTheDocument();
   });
 
   // @req REQ-088

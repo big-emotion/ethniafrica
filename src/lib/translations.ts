@@ -36,7 +36,7 @@ export const translations = {
     whyThisSite: "Pourquoi ce site ?",
     madeWithEmotion: ATTRIBUTION_STRING,
     footer: {
-      attribution: "Conçu avec émotion pour l’Afrique.",
+      attribution: ATTRIBUTION_STRING,
       partnerLogoAlt: "BIG EMOTION",
       copyright: "EthniAfrica. Tous droits réservés.",
       legalNavigationLabel: "Informations légales",

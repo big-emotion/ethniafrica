@@ -81,6 +81,11 @@ const options: swaggerJsdoc.Options = {
         description:
           "Name-variant records (endonyms, exonyms, historical spellings, surnames) — browsable, filterable, searchable index (FR53, FR55, FR58).",
       },
+      {
+        name: "API v2 - Compare",
+        description:
+          "Comparison of 2–3 entities of the same type (peoples, countries, or language families), reusing the same assembly path as the SSR comparison page (FR64, AR8, AR9, NFR38).",
+      },
     ],
     paths: {
       "/api/v2/reference-library": {
@@ -604,6 +609,59 @@ const options: swaggerJsdoc.Options = {
           description: "Module #0 envelope for /v2/names (ETNI-471)",
           properties: {
             data: { $ref: "#/components/schemas/ListNamesData" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        ComparisonEntity: {
+          type: "object",
+          description:
+            "One compared entity. Section keys are the strict-model content keys for its type; a section absent from the source fiche is an explicit `null`, never omitted.",
+          properties: {
+            type: {
+              type: "string",
+              enum: ["peuple", "pays", "famille"],
+              description: "Internal AFRIK entity type",
+            },
+            id: {
+              type: "string",
+              description: "PPL_*, ISO 3166-1 alpha-3, or FLG_* id",
+              example: "PPL_SHONA",
+            },
+            label: { type: "string", example: "Shona" },
+          },
+          required: ["type", "id", "label"],
+          additionalProperties: {
+            description:
+              "Comparable section value (nullable), keyed by content section name (e.g. appellations, origins, culture).",
+          },
+        },
+        CompareData: {
+          type: "object",
+          description: "GET /v2/compare result data.",
+          properties: {
+            entityType: {
+              type: "string",
+              enum: ["peoples", "countries", "language-families"],
+            },
+            entities: {
+              type: "array",
+              minItems: 2,
+              maxItems: 3,
+              items: { $ref: "#/components/schemas/ComparisonEntity" },
+            },
+          },
+          required: ["entityType", "entities"],
+        },
+        CompareResponse: {
+          type: "object",
+          description: "Module #0 envelope for /v2/compare (ETNI-480)",
+          properties: {
+            data: { $ref: "#/components/schemas/CompareData" },
             meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {
               type: "array",

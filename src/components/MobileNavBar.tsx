@@ -38,13 +38,17 @@ export const MobileNavBar = ({
     pathname === href || pathname.startsWith(href + "/");
 
   // Prototype header skin (epic-14 module spec): only worn on the home
-  // route — everywhere else keeps the plain nav shell. Nav IA is unchanged.
+  // route until ETNI-820. Every other route wears the validated global
+  // shell — static (non-sticky/fixed) so it never collides with a
+  // route-local sticky secondary bar (R3/FR105).
   const isHome = pathname === `/${language}` || pathname === "/";
 
   return (
     <div
-      className={`fixed top-0 left-0 right-0 z-50 lg:hidden ${
-        isHome ? "afh-home-nav-skin" : "bg-card border-b shadow-sm"
+      className={`z-50 lg:hidden ${
+        isHome
+          ? "fixed top-0 left-0 right-0 afh-home-nav-skin"
+          : "bg-card border-b shadow-sm"
       }`}
       aria-label="Navigation principale"
     >
@@ -86,10 +90,10 @@ export const MobileNavBar = ({
               <Button
                 variant="ghost"
                 size="sm"
-                className={`h-8 px-2 text-xs font-semibold gap-1 ${
+                className={`px-2 text-xs font-semibold gap-1 ${
                   isHome
-                    ? "text-[color:var(--afh-night-ink-2)] hover:bg-[color:var(--afh-night-surface-2)] hover:text-[color:var(--afh-night-ink)]"
-                    : ""
+                    ? "h-8 text-[color:var(--afh-night-ink-2)] hover:bg-[color:var(--afh-night-surface-2)] hover:text-[color:var(--afh-night-ink)]"
+                    : "min-h-11"
                 }`}
                 aria-label="Navigation FLG"
               >
@@ -159,11 +163,11 @@ export const MobileNavBar = ({
           <Button
             variant="ghost"
             size="icon"
-            className={`h-8 w-8 ${
+            className={
               isHome
-                ? "text-[color:var(--afh-night-ink-2)] hover:bg-[color:var(--afh-night-surface-2)] hover:text-[color:var(--afh-night-ink)]"
-                : ""
-            }`}
+                ? "h-8 w-8 text-[color:var(--afh-night-ink-2)] hover:bg-[color:var(--afh-night-surface-2)] hover:text-[color:var(--afh-night-ink)]"
+                : "min-h-11 min-w-11"
+            }
             onClick={onSearchClick}
             aria-label="Rechercher"
           >
