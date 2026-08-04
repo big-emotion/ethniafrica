@@ -105,7 +105,7 @@ describe("PageLayout title", () => {
 });
 
 // @req [16.3]
-describe("PageLayout — header/main offset (ETNI-800 static non-home nav)", () => {
+describe("PageLayout — header/main offset (ETNI-820: nav is never fixed, on or off the home route)", () => {
   // @req REQ-043
   it("does not add fixed-nav offset padding to the title header off the home route", () => {
     mockPathname = "/fr/peuples-dafrique";
@@ -135,7 +135,7 @@ describe("PageLayout — header/main offset (ETNI-800 static non-home nav)", () 
   });
 
   // @req REQ-043
-  it("keeps the fixed-nav offset padding on the home route (unchanged until ETNI-820)", () => {
+  it("does not add fixed-nav offset padding to main on the home route either (ETNI-820)", () => {
     mockPathname = "/fr";
     render(
       <PageLayout language="fr" hideHeader>
@@ -144,6 +144,6 @@ describe("PageLayout — header/main offset (ETNI-800 static non-home nav)", () 
     );
 
     const main = screen.getByTestId("content").closest("main");
-    expect(main?.className).toMatch(/pt-24/);
+    expect(main?.className).not.toMatch(/pt-24|pt-28/);
   });
 });
