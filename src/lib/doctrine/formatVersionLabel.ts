@@ -13,6 +13,7 @@ export function formatVersionLabel(
     day: "numeric",
     month: "long",
     year: "numeric",
+    timeZone: "UTC",
   });
   return `v${version} · publiée le ${longFrenchDate}`;
 }
