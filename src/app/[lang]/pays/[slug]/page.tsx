@@ -130,7 +130,7 @@ export default async function PaysSlugPage({
     }
 
     return (
-      <PageLayout language="fr" onLanguageChange={() => {}} sectionName="Pays">
+      <PageLayout language="fr" sectionName="Pays">
         <div className="container mx-auto max-w-4xl px-4 py-8">
           <CountrySnapshotFicheView
             entityId={parsed.slug}
@@ -148,7 +148,7 @@ export default async function PaysSlugPage({
 
   // Live version (revalidate = 3600 at segment level)
   return (
-    <PageLayout language="fr" onLanguageChange={() => {}} sectionName="Pays">
+    <PageLayout language="fr" sectionName="Pays">
       <div className="container mx-auto max-w-4xl px-4 py-8">
         <Suspense
           fallback={

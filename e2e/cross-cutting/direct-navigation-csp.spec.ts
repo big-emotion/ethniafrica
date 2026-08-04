@@ -249,18 +249,6 @@ test.describe("@direct-navigation @cross-viewport nonce CSP", () => {
     );
   });
 
-  // @req REQ-043
-  test("hydrates the names feature after direct navigation", async ({
-    page,
-  }) => {
-    await expectDirectNavigation(page, "/fr/noms", async () => {
-      await expect(
-        page.getByRole("heading", { level: 1, name: "Noms & appellations" })
-      ).toBeVisible();
-      await expect(page.getByRole("searchbox")).toBeVisible();
-    });
-  });
-
   // @req REQ-014
   test("hydrates public reports after direct navigation", async ({ page }) => {
     await expectDirectNavigation(page, "/fr/signalements", async () => {

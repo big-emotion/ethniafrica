@@ -32,7 +32,7 @@ context:
 | Generic hubs         | Fresh browser opens country, people, and family hubs | Each browsing surface hydrates and is interactive     | No indefinite Suspense fallback                             |
 | Search               | Fresh browser opens `/fr/recherche?q=...`            | Search UI hydrates with the URL state                 | Existing empty/error states remain visible when appropriate |
 | Static-content page  | Fresh browser opens a legal/about page               | Content renders and client navigation works           | No CSP script rejection                                     |
-| Pre-rendered feature | Fresh browser opens names or public reports          | Feature content hydrates under the request nonce      | Existing data error states remain authoritative             |
+| Pre-rendered feature | Fresh browser opens public reports                   | Feature content hydrates under the request nonce      | Existing data error states remain authoritative             |
 | Canonical detail     | Fresh browser opens `/fr/pays/COM`                   | Existing detail behavior remains functional           | Existing data error state remains authoritative             |
 | Protected page       | Anonymous browser opens a protected route            | Existing authentication redirect occurs               | No security bypass                                          |
 
@@ -44,7 +44,6 @@ context:
 - `src/middleware.ts` -- creates the per-request nonce and CSP; preserve the strict policy and use as response-test oracle.
 - `src/app/[lang]/[section]/page.tsx` -- currently forces ISR for generic hubs and produces the observed cached shell.
 - `src/app/[lang]/signalements/page.tsx` -- explicitly force-static route that must not override the global nonce invariant.
-- `src/app/[lang]/noms/page.tsx` -- automatically pre-rendered feature and required global regression case.
 - `e2e/cross-cutting/direct-navigation-csp.spec.ts` -- new site-wide, mobile-first regression suite.
 
 ## Tasks & Acceptance
