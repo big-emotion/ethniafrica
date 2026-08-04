@@ -2,9 +2,16 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const { mockGetLatestVersion, mockGetRevisionSnapshot } = vi.hoisted(() => ({
+const {
+  mockGetCountryById,
+  mockGetLatestVersion,
+  mockGetRevisionSnapshot,
+  mockGetActiveSourceFlags,
+} = vi.hoisted(() => ({
+  mockGetCountryById: vi.fn(),
   mockGetLatestVersion: vi.fn(),
   mockGetRevisionSnapshot: vi.fn(),
+  mockGetActiveSourceFlags: vi.fn(),
 }));
 
 vi.mock("next/navigation", () => ({
@@ -20,6 +27,15 @@ vi.mock("@/api/v2/services/revisions", () => ({
   getLatestEntityRevisionVersion: (...args: unknown[]) =>
     mockGetLatestVersion(...args),
   getRevisionSnapshot: (...args: unknown[]) => mockGetRevisionSnapshot(...args),
+}));
+
+vi.mock("@/api/v2/services/countryService", () => ({
+  getCountryById: (...args: unknown[]) => mockGetCountryById(...args),
+}));
+
+vi.mock("@/lib/supabase/queries/afrik/flags", () => ({
+  getActiveSourceFlags: (...args: unknown[]) =>
+    mockGetActiveSourceFlags(...args),
 }));
 
 vi.mock("@/lib/supabase/server", () => ({
@@ -44,8 +60,21 @@ vi.mock("@/components/layout/PageLayout", () => ({
 }));
 
 vi.mock("@/components/detail/CountryDetailViewV2", () => ({
-  CountryDetailViewV2: ({ countryId }: { countryId: string }) => (
-    <div data-testid="country-detail-live" data-country-id={countryId} />
+  CountryDetailViewV2: ({
+    countryId,
+    initialData,
+    initialSourceFlag,
+  }: {
+    countryId: string;
+    initialData?: { nameFr: string };
+    initialSourceFlag?: boolean;
+  }) => (
+    <div
+      data-testid="country-detail-live"
+      data-country-id={countryId}
+      data-country-name={initialData?.nameFr}
+      data-source-flag={initialSourceFlag}
+    />
   ),
 }));
 
@@ -86,6 +115,13 @@ async function renderPage(slug: string, lang = "fr") {
 describe("/[lang]/pays/[slug] page", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    mockGetCountryById.mockResolvedValue({
+      id: "NGA",
+      nameFr: "Nigeria",
+      nameOfficial: "République fédérale du Nigeria",
+      content: {},
+    });
+    mockGetActiveSourceFlags.mockResolvedValue([]);
   });
 
   // @req REQ-019
@@ -168,6 +204,12 @@ describe("/[lang]/pays/[slug] page", () => {
       "data-country-id",
       "NGA"
     );
+    expect(screen.getByTestId("country-detail-live")).toHaveAttribute(
+      "data-country-name",
+      "Nigeria"
+    );
+    expect(mockGetCountryById).toHaveBeenCalledWith("NGA");
+    expect(mockGetActiveSourceFlags).toHaveBeenCalledWith("country", "NGA");
     expect(screen.queryByTestId("pinned-version-banner")).toBeNull();
     expect(mockGetRevisionSnapshot).not.toHaveBeenCalled();
   });

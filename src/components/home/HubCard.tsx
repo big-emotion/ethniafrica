@@ -15,12 +15,12 @@ export function HubCard({ hub }: HubCardProps) {
         borderWidth: "1px",
       }}
     >
-      <h3
+      <h2
         className="text-lg font-semibold"
         style={{ color: "var(--afh-night-ink)" }}
       >
         {hub.title}
-      </h3>
+      </h2>
       <p className="mt-2 text-sm" style={{ color: "var(--afh-night-ink-2)" }}>
         {hub.description}
       </p>

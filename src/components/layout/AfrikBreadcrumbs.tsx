@@ -28,6 +28,7 @@ export function AfrikBreadcrumbs({ items }: AfrikBreadcrumbsProps) {
             {item.href ? (
               <Link
                 href={item.href}
+                prefetch={false}
                 className="hover:underline hover:opacity-80 transition-opacity"
               >
                 {item.label}

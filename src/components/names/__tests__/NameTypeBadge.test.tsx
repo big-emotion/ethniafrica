@@ -63,4 +63,14 @@ describe("NameTypeBadge", () => {
     expect(screen.queryByText("nom imposé")).toBeNull();
     expect(screen.getByText("exonyme")).toBeInTheDocument();
   });
+
+  // @req REQ-056
+  it("uses the accessible text token on the historical badge", () => {
+    render(<NameTypeBadge nameType="historical_spelling" />);
+
+    const badge = screen.getByText("graphie historique").closest("div");
+    const style = badge?.getAttribute("style") ?? "";
+    expect(style).toContain("color: var(--afh-color-text-soft)");
+    expect(style).toContain("background-color: var(--afh-color-gold-bg)");
+  });
 });

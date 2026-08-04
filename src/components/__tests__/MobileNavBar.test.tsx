@@ -40,7 +40,7 @@ describe("MobileNavBar — home route header skin", () => {
       mockPathname = pathname;
       render(<MobileNavBar language="fr" />);
       expect(
-        screen.getByRole("button", { name: "Navigation" })
+        screen.getByRole("button", { name: "Navigation FLG" })
       ).toBeInTheDocument();
       expect(
         screen.getByRole("button", { name: "Rechercher" })
@@ -60,6 +60,17 @@ describe("MobileNavBar — home route header skin", () => {
       "font-family: var(--afh-font-display)"
     );
     expect(brand).toHaveStyle({ fontWeight: "900", fontSize: "17px" });
+  });
+
+  // @req REQ-044
+  it("treats the logo beside the brand wordmark as decorative", () => {
+    mockPathname = "/fr";
+    render(<MobileNavBar language="fr" />);
+
+    expect(
+      screen.queryByRole("img", { name: PRODUCT_NAME })
+    ).not.toBeInTheDocument();
+    expect(screen.getByText(PRODUCT_NAME)).toBeInTheDocument();
   });
 });
 
@@ -107,7 +118,7 @@ describe("MobileNavBar — global shell (non-home routes, ETNI-800)", () => {
     mockPathname = "/fr/pays";
     render(<MobileNavBar language="fr" />);
 
-    expect(screen.getByRole("button", { name: "Navigation" })).toHaveClass(
+    expect(screen.getByRole("button", { name: "Navigation FLG" })).toHaveClass(
       "min-h-11"
     );
     expect(screen.getByRole("button", { name: "Rechercher" })).toHaveClass(

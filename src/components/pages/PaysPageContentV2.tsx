@@ -12,6 +12,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { getTranslation } from "@/lib/translations";
 import { MapPin } from "lucide-react";
 import type { CountrySummary } from "@/types/afrik-frontend";
+import { useActiveSourceFlag } from "@/hooks/use-active-source-flag";
 
 function DefaultMessage({ language }: { language: string }) {
   const messages = {
@@ -48,6 +49,7 @@ export function PaysPageContentV2() {
   );
   const isMobile = useIsMobile();
   const t = getTranslation(language);
+  const sourceFlag = useActiveSourceFlag("country", selectedCountry);
 
   useEffect(() => {
     const expected = getLocalizedRoute(language, "countries");
@@ -99,6 +101,7 @@ export function PaysPageContentV2() {
               <CountryDetailViewV2
                 countryId={selectedCountry}
                 language={language}
+                initialSourceFlag={sourceFlag}
                 onPeopleClick={handlePeopleClick}
                 onBack={handleBack}
               />
@@ -122,6 +125,7 @@ export function PaysPageContentV2() {
               <CountryDetailViewV2
                 countryId={selectedCountry}
                 language={language}
+                initialSourceFlag={sourceFlag}
                 onPeopleClick={handlePeopleClick}
                 onBack={handleBack}
               />

@@ -48,7 +48,9 @@ describe("SiteFooter", () => {
   it("presents BIG EMOTION as the linked creative partner", () => {
     render(<SiteFooter language="fr" />);
 
-    const partnerLink = screen.getByRole("link", { name: "BIG EMOTION" });
+    const partnerLink = screen.getByRole("link", {
+      name: "Fait avec émotion pour l'Afrique BIG EMOTION",
+    });
     const partnerLogo = screen.getByRole("img", { name: "BIG EMOTION" });
 
     expect(partnerLink).toHaveAttribute("href", "https://big-emotion.com/");

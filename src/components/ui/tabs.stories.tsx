@@ -64,3 +64,85 @@ export const WithDisabledTab: Story = {
     </Tabs>
   ),
 };
+
+// ---------------------------------------------------------------------------
+// Breakpoint variants — mobile-first per project conventions (ETNI-799 R5).
+// ---------------------------------------------------------------------------
+
+const Frame = ({
+  width,
+  label,
+  children,
+}: {
+  width: number;
+  label: string;
+  children: React.ReactNode;
+}) => (
+  <div
+    style={{
+      width,
+      maxWidth: "100%",
+      border: "1px dashed rgba(0,0,0,0.15)",
+      borderRadius: 8,
+      padding: 16,
+      display: "flex",
+      flexDirection: "column",
+      gap: 12,
+      background: "white",
+    }}
+  >
+    <div style={{ fontSize: 12, color: "#666" }}>
+      {label} — {width}px
+    </div>
+    {children}
+  </div>
+);
+
+const SampleTabs = () => (
+  <Tabs defaultValue="apercu" className="w-full">
+    <TabsList className="w-full">
+      <TabsTrigger value="apercu" className="flex-1">
+        Aperçu
+      </TabsTrigger>
+      <TabsTrigger value="donnees" className="flex-1">
+        Données
+      </TabsTrigger>
+    </TabsList>
+    <TabsContent value="apercu" className="p-3">
+      <p className="text-sm">Contenu de l&apos;aperçu.</p>
+    </TabsContent>
+    <TabsContent value="donnees" className="p-3">
+      <p className="text-sm">Données démographiques.</p>
+    </TabsContent>
+  </Tabs>
+);
+
+export const Mobile430: Story = {
+  name: "Breakpoint — Mobile (430px)",
+  parameters: { layout: "padded" },
+  render: () => (
+    <Frame width={430} label="Mobile">
+      <SampleTabs />
+    </Frame>
+  ),
+};
+
+export const Tablet720: Story = {
+  name: "Breakpoint — Tablet (720px)",
+  parameters: { layout: "padded" },
+  render: () => (
+    <Frame width={720} label="Tablet">
+      <SampleTabs />
+    </Frame>
+  ),
+};
+
+export const Desktop800: Story = {
+  name: "Breakpoint — Desktop (800px)",
+  parameters: { layout: "padded" },
+  render: () => (
+    <Frame width={800} label="Desktop">
+      <SampleTabs />
+    </Frame>
+  ),
+};

@@ -145,6 +145,17 @@ describe("familyDataTransformer", () => {
   });
 
   // @req REQ-047
+  it("discards malformed historical appellations from untrusted JSONB", () => {
+    const malformed = JSON.parse(
+      '{"id":"FLG_BANTU","nameFr":"Bantou","content":{"decolonialHeader":{"historicalAppellations":"Bantu"}}}'
+    );
+
+    expect(transformDecolonialHeader(malformed).historicalAppellations).toEqual(
+      []
+    );
+  });
+
+  // @req REQ-047
   it("documents the strict-model coverage", () => {
     const mappedSections = [
       "decolonialHeader",

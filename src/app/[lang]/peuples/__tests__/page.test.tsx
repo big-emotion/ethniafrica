@@ -16,12 +16,23 @@ vi.mock("next/navigation", () => ({
 
 const mockGetSnapshot = vi.fn();
 const mockGetLatestVersion = vi.fn();
+const mockGetPeopleById = vi.fn();
+const mockGetActiveSourceFlags = vi.fn();
 const mockPinnedVersionBanner = vi.fn();
 
 vi.mock("@/api/v2/services/revisions", () => ({
   getPeopleRevisionSnapshot: (...args: unknown[]) => mockGetSnapshot(...args),
   getLatestEntityRevisionVersion: (...args: unknown[]) =>
     mockGetLatestVersion(...args),
+}));
+
+vi.mock("@/api/v2/services/peopleService", () => ({
+  getPeopleById: (...args: unknown[]) => mockGetPeopleById(...args),
+}));
+
+vi.mock("@/lib/supabase/queries/afrik/flags", () => ({
+  getActiveSourceFlags: (...args: unknown[]) =>
+    mockGetActiveSourceFlags(...args),
 }));
 
 // PageLayout passthrough
@@ -42,8 +53,21 @@ vi.mock("@/components/layout/PageLayout", () => ({
 
 // PeopleDetailView stub — records the peopleId it received
 vi.mock("@/components/detail/PeopleDetailView", () => ({
-  PeopleDetailView: ({ peopleId }: { peopleId: string }) => (
-    <div data-testid="people-detail-live" data-people-id={peopleId} />
+  PeopleDetailView: ({
+    peopleId,
+    initialData,
+    initialSourceFlag,
+  }: {
+    peopleId: string;
+    initialData?: { nameMain: string };
+    initialSourceFlag?: boolean;
+  }) => (
+    <div
+      data-testid="people-detail-live"
+      data-people-id={peopleId}
+      data-people-name={initialData?.nameMain}
+      data-source-flag={initialSourceFlag}
+    />
   ),
 }));
 
@@ -96,6 +120,14 @@ async function callPage(slug: string, lang = "fr") {
 describe("/[lang]/peuples/[slug] page", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    mockGetPeopleById.mockResolvedValue({
+      id: "PPL_BAKONGO",
+      nameMain: "Bakongo",
+      languageFamilyId: "FLG_BANTU",
+      currentCountries: ["COD"],
+      content: {},
+    });
+    mockGetActiveSourceFlags.mockResolvedValue([]);
   });
 
   // 1. Live URL — renders current live data via PeopleDetailView
@@ -105,6 +137,12 @@ describe("/[lang]/peuples/[slug] page", () => {
 
     const detail = getByTestId("people-detail-live");
     expect(detail.getAttribute("data-people-id")).toBe("PPL_BAKONGO");
+    expect(detail.getAttribute("data-people-name")).toBe("Bakongo");
+    expect(mockGetPeopleById).toHaveBeenCalledWith("PPL_BAKONGO");
+    expect(mockGetActiveSourceFlags).toHaveBeenCalledWith(
+      "people",
+      "PPL_BAKONGO"
+    );
     expect(queryByTestId("pinned-version-banner")).toBeNull();
     expect(mockPinnedVersionBanner).not.toHaveBeenCalled();
     expect(mockGetSnapshot).not.toHaveBeenCalled();

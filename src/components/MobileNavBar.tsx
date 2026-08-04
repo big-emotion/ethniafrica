@@ -60,7 +60,7 @@ export const MobileNavBar = ({
         >
           <Image
             src="/africa.png"
-            alt={PRODUCT_NAME}
+            alt=""
             width={26}
             height={26}
             className="object-contain"
@@ -95,7 +95,7 @@ export const MobileNavBar = ({
                     ? "h-8 text-[color:var(--afh-night-ink-2)] hover:bg-[color:var(--afh-night-surface-2)] hover:text-[color:var(--afh-night-ink)]"
                     : "min-h-11"
                 }`}
-                aria-label="Navigation"
+                aria-label="Navigation FLG"
               >
                 <span
                   className={`text-[11px] font-bold tracking-wide uppercase ${
