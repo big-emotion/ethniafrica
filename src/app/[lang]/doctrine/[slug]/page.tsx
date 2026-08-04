@@ -63,7 +63,6 @@ export default async function DoctrineSlugPage({
   return (
     <PageLayout
       language="fr"
-      onLanguageChange={() => {}}
       title={entry.title}
       sectionName="Doctrine éditoriale"
     >
