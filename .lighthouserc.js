@@ -7,6 +7,9 @@ module.exports = {
         "http://localhost:3000/fr/pays/senegal",
         "http://localhost:3000/fr/peuples/wolof",
         "http://localhost:3000/fr/noms",
+        // ETNI-463 (7.11) AC1 — large-family sample (FLG_BANTU: 6 languages,
+        // 174 associated peoples, the largest currently-seeded family).
+        "http://localhost:3000/fr/familles/FLG_BANTU",
       ],
       numberOfRuns: 3,
       settings: {

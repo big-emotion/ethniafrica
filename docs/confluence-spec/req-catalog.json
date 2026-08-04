@@ -95,7 +95,9 @@
     "REQ-092",
     "REQ-093",
     "REQ-095",
-    "REQ-096"
+    "REQ-096",
+    "REQ-097",
+    "REQ-098"
   ],
   "sourceMap": {
     "REQ-001": "FR1",
@@ -192,6 +194,8 @@
     "REQ-092": "CR1",
     "REQ-093": "CR2",
     "REQ-095": "Confluence REQ-095",
-    "REQ-096": "Confluence REQ-096"
+    "REQ-096": "Confluence REQ-096",
+    "REQ-097": "Confluence FR59",
+    "REQ-098": "Confluence FR61"
   }
 }
