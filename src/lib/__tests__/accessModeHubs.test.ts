@@ -1,64 +1,68 @@
 import { describe, it, expect } from "vitest";
 import {
-  getAccessModeHubs,
-  getVisibleAccessModeHubs,
-  isHubVisible,
+  getHomeModules,
+  getModuleCategories,
+  isModuleLive,
 } from "@/lib/accessModeHubs";
 import { getLocalizedRoute } from "@/lib/routing";
 
-describe("accessModeHubs", () => {
-  // @req REQ-091
-  it("declares Explorer's live surfaces as localized routes resolved from routing.ts", () => {
-    const hubs = getAccessModeHubs("fr");
-    const explorer = hubs.find((hub) => hub.id === "explorer");
-
-    expect(explorer?.surfaces.map((surface) => surface.href)).toEqual([
-      getLocalizedRoute("fr", "countries"),
-      getLocalizedRoute("fr", "families"),
-      getLocalizedRoute("fr", "peoples"),
-      getLocalizedRoute("fr", "search"),
-    ]);
+describe("accessModeHubs — 10-module light-home config", () => {
+  // @req FR92
+  // @req REQ-044
+  it("exports exactly 10 module entries", () => {
+    const modules = getHomeModules("fr");
+    expect(modules).toHaveLength(10);
   });
 
-  // @req REQ-091
-  it("declares Comprendre's live surfaces as localized routes resolved from routing.ts", () => {
-    const hubs = getAccessModeHubs("fr");
-    const comprendre = hubs.find((hub) => hub.id === "comprendre");
+  // @req FR92
+  // @req REQ-044
+  it("gives every module an id, FR title, category, accent, illustration and live|soon state", () => {
+    const modules = getHomeModules("fr");
 
-    expect(comprendre?.surfaces.map((surface) => surface.href)).toEqual([
-      getLocalizedRoute("fr", "doctrine"),
-      getLocalizedRoute("fr", "about"),
-    ]);
+    for (const entry of modules) {
+      expect(typeof entry.id).toBe("string");
+      expect(entry.id.length).toBeGreaterThan(0);
+      expect(typeof entry.title).toBe("string");
+      expect(entry.title.length).toBeGreaterThan(0);
+      expect(["explorer", "comprendre", "jouer"]).toContain(entry.category);
+      expect(typeof entry.accent).toBe("string");
+      expect(typeof entry.illustration).toBe("string");
+      expect(["live", "soon"]).toContain(entry.state);
+    }
   });
 
-  // @req REQ-091
-  it("marks Explorer and Comprendre as visible given today's live surfaces", () => {
-    const hubs = getAccessModeHubs("fr");
+  // @req FR92
+  // @req REQ-044
+  it("marks a module live only when it resolves to an existing localized route", () => {
+    const modules = getHomeModules("fr");
+    const peuples = modules.find((module) => module.id === "peuples");
 
-    expect(hubs.find((hub) => hub.id === "explorer")?.isVisible).toBe(true);
-    expect(hubs.find((hub) => hub.id === "comprendre")?.isVisible).toBe(true);
+    expect(peuples?.state).toBe("live");
+    expect(peuples?.href).toBe(getLocalizedRoute("fr", "peoples"));
   });
 
-  // @req REQ-091
-  it("marks Jouer as not visible since it has zero live surfaces today", () => {
-    const hubs = getAccessModeHubs("fr");
-    const jouer = hubs.find((hub) => hub.id === "jouer");
+  // @req FR92
+  // @req REQ-044
+  it("marks a module soon («Bientôt») when it has no live route yet", () => {
+    const modules = getHomeModules("fr");
+    const soonModules = modules.filter((module) => module.state === "soon");
 
-    expect(jouer?.surfaces).toHaveLength(0);
-    expect(jouer?.isVisible).toBe(false);
+    expect(soonModules.length).toBeGreaterThan(0);
+    for (const entry of soonModules) {
+      expect(entry.href).toBeNull();
+    }
   });
 
-  // @req REQ-091
-  it("filters out non-visible hubs via getVisibleAccessModeHubs", () => {
-    const visible = getVisibleAccessModeHubs("fr");
-
-    expect(visible.map((hub) => hub.id)).toEqual(["explorer", "comprendre"]);
+  // @req FR92
+  // @req REQ-044
+  it("computes live|soon generically from route resolution, not a hardcoded id list", () => {
+    expect(isModuleLive(null)).toBe(false);
+    expect(isModuleLive("peoples")).toBe(true);
   });
 
-  // @req REQ-091
-  it("computes visibility generically from the surface count, so a hub added to later becomes visible with no changes elsewhere", () => {
-    expect(isHubVisible(0)).toBe(false);
-    expect(isHubVisible(1)).toBe(true);
-    expect(isHubVisible(2)).toBe(true);
+  // @req FR92
+  // @req REQ-044
+  it("derives the Tout/Explorer/Comprendre/Jouer categories from the config, in first-seen order", () => {
+    expect(getModuleCategories()).toEqual(["explorer", "comprendre", "jouer"]);
   });
 });

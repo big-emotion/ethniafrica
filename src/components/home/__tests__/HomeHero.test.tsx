@@ -4,37 +4,53 @@ import { describe, expect, it } from "vitest";
 import { HomeHero } from "@/components/home/HomeHero";
 import { PRODUCT_NAME } from "@/lib/brand";
 
-describe("HomeHero", () => {
+describe("HomeHero — parchment light hero (ETNI-820)", () => {
   // @req REQ-044
-  it("renders the eyebrow with the exact copy", () => {
+  it("renders no eyebrow and no PRODUCT_NAME line", () => {
     render(<HomeHero />);
+    expect(screen.queryByText(PRODUCT_NAME)).not.toBeInTheDocument();
     expect(
-      screen.getByText("EXPLORER · COMPRENDRE · JOUER")
-    ).toBeInTheDocument();
+      screen.queryByText("EXPLORER · COMPRENDRE · JOUER")
+    ).not.toBeInTheDocument();
   });
 
   // @req REQ-044
-  it("renders a single H1 with the exact copy, a hard line break after « raconté », and an italic accent on « carte vivante »", () => {
+  it("renders a single H1 with the exact verbatim headline and zero H3", () => {
     render(<HomeHero />);
     const headings = screen.getAllByRole("heading", { level: 1 });
     expect(headings).toHaveLength(1);
-    const h1 = headings[0];
 
-    expect(h1.querySelector("br")).toBeInTheDocument();
-    expect(h1.querySelector("em")).toHaveTextContent("carte vivante");
+    const h1 = headings[0];
     expect(h1.textContent?.replace(/\s+/g, " ").trim()).toBe(
       "Le continent raconté comme une carte vivante"
     );
+    expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
   });
 
   // @req REQ-044
-  it("renders the adapted lede copy", () => {
+  it("gives the italic accent on « carte vivante » the terre accent colour", () => {
     render(<HomeHero />);
-    expect(
-      screen.getByText(
-        "Peuples, langues, noms et migrations : l'histoire africaine racontée depuis son propre regard — chaque affirmation adossée à une source vérifiable."
-      )
-    ).toBeInTheDocument();
+    const heading = screen.getByRole("heading", { level: 1 });
+    const em = heading.querySelector("em");
+
+    expect(em).toHaveTextContent("carte vivante");
+    expect(em?.getAttribute("style")).toContain("var(--afh-cat-terre)");
+  });
+
+  // @req REQ-044
+  it("renders the lede with the verifiable-source clause", () => {
+    render(<HomeHero />);
+    expect(screen.getByText(/source vérifiable/i)).toBeInTheDocument();
+  });
+
+  // @req REQ-044
+  it("renders a trust note distinct from the lede", () => {
+    render(<HomeHero />);
+    const lede = screen.getByText(/source vérifiable/i);
+    const trustNote = screen.getByTestId("home-hero-trust-note");
+
+    expect(trustNote).toBeInTheDocument();
+    expect(trustNote).not.toBe(lede);
   });
 
   // @req REQ-044
@@ -47,8 +63,13 @@ describe("HomeHero", () => {
   });
 
   // @req REQ-044
-  it("sources the brand line from src/lib/brand.ts, never hardcoded", () => {
-    render(<HomeHero />);
-    expect(screen.getByText(PRODUCT_NAME)).toBeInTheDocument();
+  it("uses the parchment surface, not the night ground", () => {
+    const { container } = render(<HomeHero />);
+    const section = container.querySelector("section");
+
+    expect(section?.getAttribute("style")).toContain("var(--afh-bg-warm)");
+    expect(section?.getAttribute("style")).not.toContain(
+      "var(--afh-night-ground)"
+    );
   });
 });

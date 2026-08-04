@@ -10,7 +10,7 @@ import { KeyboardShortcutsModal } from "@/components/layout/KeyboardShortcutsMod
 import { useKeyboardShortcuts } from "@/hooks/use-keyboard-shortcuts";
 import type { SearchEntityType } from "@/types/afrik-frontend";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { getLocalizedRoute } from "@/lib/routing";
 import Image from "next/image";
 import { SiteFooter } from "@/components/layout/SiteFooter";
@@ -42,8 +42,6 @@ export const PageLayout = ({
 }: PageLayoutProps) => {
   const isMobile = useIsMobile();
   const router = useRouter();
-  const pathname = usePathname();
-  const isHome = pathname === `/${language}` || pathname === "/";
   const t = getTranslation(language);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isShortcutsOpen, setIsShortcutsOpen] = useState(false);
@@ -125,11 +123,7 @@ export const PageLayout = ({
 
       {/* Header */}
       {!hideHeader && (
-        <header
-          className={`border-b bg-card shadow-soft ${
-            isHome ? (isMobile ? "pt-[57px]" : "pt-14") : ""
-          }`}
-        >
+        <header className="border-b bg-card shadow-soft">
           <div className="container mx-auto px-4 py-6">
             <div className="flex items-center justify-between">
               <div className="flex-1">
@@ -152,17 +146,7 @@ export const PageLayout = ({
       )}
 
       {/* Main Content */}
-      <main
-        className={`container mx-auto px-4 ${
-          hideHeader && isHome
-            ? isMobile
-              ? "pt-24 pb-4"
-              : "pt-28 pb-8"
-            : isMobile
-              ? "py-4"
-              : "py-8"
-        }`}
-      >
+      <main className={`container mx-auto px-4 ${isMobile ? "py-4" : "py-8"}`}>
         {children}
       </main>
 

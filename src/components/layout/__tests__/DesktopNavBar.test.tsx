@@ -1,5 +1,3 @@
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
 import { render, screen, cleanup } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
@@ -16,9 +14,9 @@ vi.mock("next/image", () => ({
   default: ({ alt }: { alt: string }) => <span role="img" aria-label={alt} />,
 }));
 
-describe("DesktopNavBar — home route header skin", () => {
-  // @req [14.5]
-  // @req REQ-044
+// @req [14.5]
+// @req REQ-044
+describe("DesktopNavBar — global shell (all routes, ETNI-820 retires the home night skin)", () => {
   it("keeps the same nav links and destinations on the home route as elsewhere (IA unchanged)", () => {
     for (const pathname of ["/fr", "/fr/pays"]) {
       mockPathname = pathname;
@@ -52,45 +50,20 @@ describe("DesktopNavBar — home route header skin", () => {
     }
   });
 
-  // @req [14.5]
   // @req REQ-044
-  it("wears the prototype header skin class only on the home route", () => {
-    mockPathname = "/fr";
-    render(<DesktopNavBar language="fr" />);
-    expect(
-      screen.getByRole("navigation", { name: "Navigation principale" })
-    ).toHaveClass("afh-home-nav-skin");
-    cleanup();
-
-    mockPathname = "/fr/pays";
-    render(<DesktopNavBar language="fr" />);
-    expect(
-      screen.getByRole("navigation", { name: "Navigation principale" })
-    ).not.toHaveClass("afh-home-nav-skin");
+  it("never wears the retired night skin class, on the home route or elsewhere", () => {
+    for (const pathname of ["/fr", "/fr/pays"]) {
+      mockPathname = pathname;
+      render(<DesktopNavBar language="fr" />);
+      expect(
+        screen.getByRole("navigation", { name: "Navigation principale" })
+      ).not.toHaveClass("afh-home-nav-skin");
+      cleanup();
+    }
   });
 
-  // @req [14.5]
   // @req REQ-044
-  it("defines the skin class with the exact prototype header.top treatment", () => {
-    const css = readFileSync(
-      resolve(process.cwd(), "src/styles/home-nav.css"),
-      "utf8"
-    );
-    const rule = css.match(/\.afh-home-nav-skin\s*\{([\s\S]*?)\}/);
-
-    expect(rule).not.toBeNull();
-    expect(rule?.[1]).toContain(
-      "background: color-mix(in srgb, var(--afh-night-ground) 88%, transparent);"
-    );
-    expect(rule?.[1]).toContain("backdrop-filter: blur(10px);");
-    expect(rule?.[1]).toContain(
-      "border-bottom: 1px solid var(--afh-night-line);"
-    );
-  });
-
-  // @req [14.5]
-  // @req REQ-044
-  it("renders the brand in Fraunces 900 17px with an uppercase tagline on the home route", () => {
+  it("renders the brand in Fraunces 900 17px on the home route", () => {
     mockPathname = "/fr";
     render(<DesktopNavBar language="fr" />);
 
@@ -105,74 +78,63 @@ describe("DesktopNavBar — home route header skin", () => {
   });
 
   // @req REQ-044
-  it("treats the logo next to the visible brand name as decorative", () => {
-    mockPathname = "/fr";
-    render(<DesktopNavBar language="fr" />);
+  it("renders the brand wordmark in light styling on the home route and elsewhere", () => {
+    for (const pathname of ["/fr", "/fr/pays"]) {
+      mockPathname = pathname;
+      render(<DesktopNavBar language="fr" />);
 
-    expect(
-      screen.queryByRole("img", { name: PRODUCT_NAME })
-    ).not.toBeInTheDocument();
+      const brand = screen.getByText(PRODUCT_NAME);
+      expect(brand.getAttribute("style")).toContain("color: var(--afh-text)");
+      expect(brand.getAttribute("style")).not.toContain("var(--afh-night-ink)");
+      cleanup();
+    }
   });
 
   // @req REQ-044
-  it("names the home link with the logo when the wordmark is hidden", () => {
-    mockPathname = "/fr/peuples/PPL_WOLOF";
-    render(<DesktopNavBar language="fr" />);
+  it("names the logo with the product name on the home route and elsewhere", () => {
+    for (const pathname of ["/fr", "/fr/pays"]) {
+      mockPathname = pathname;
+      render(<DesktopNavBar language="fr" />);
 
-    expect(screen.getByRole("img", { name: PRODUCT_NAME })).toBeInTheDocument();
-  });
-
-  // @req [14.5]
-  // @req REQ-044
-  it("renders the brand wordmark in light styling off the home route", () => {
-    mockPathname = "/fr/pays";
-    render(<DesktopNavBar language="fr" />);
-
-    const brand = screen.getByText(PRODUCT_NAME);
-    expect(brand.getAttribute("style")).toContain("color: var(--afh-text)");
-    expect(brand.getAttribute("style")).not.toContain("var(--afh-night-ink)");
-  });
-});
-
-// @req [16.3]
-describe("DesktopNavBar — global shell (non-home routes, ETNI-800)", () => {
-  // @req REQ-044
-  it("is static — not position: fixed or sticky — off the home route", () => {
-    mockPathname = "/fr/pays";
-    render(<DesktopNavBar language="fr" />);
-
-    const nav = screen.getByRole("navigation", {
-      name: "Navigation principale",
-    });
-    expect(nav.className).not.toMatch(/(^|\s)fixed(\s|$)/);
-    expect(nav.className).not.toMatch(/(^|\s)sticky(\s|$)/);
+      expect(
+        screen.getByRole("img", { name: PRODUCT_NAME })
+      ).toBeInTheDocument();
+      cleanup();
+    }
   });
 
   // @req REQ-044
-  it("stays fixed on the home route (unchanged until ETNI-820)", () => {
-    mockPathname = "/fr";
-    render(<DesktopNavBar language="fr" />);
+  it("is static — not position: fixed or sticky — on the home route or elsewhere", () => {
+    for (const pathname of ["/fr", "/fr/pays"]) {
+      mockPathname = pathname;
+      render(<DesktopNavBar language="fr" />);
 
-    const nav = screen.getByRole("navigation", {
-      name: "Navigation principale",
-    });
-    expect(nav.className).toMatch(/(^|\s)fixed(\s|$)/);
+      const nav = screen.getByRole("navigation", {
+        name: "Navigation principale",
+      });
+      expect(nav.className).not.toMatch(/(^|\s)fixed(\s|$)/);
+      expect(nav.className).not.toMatch(/(^|\s)sticky(\s|$)/);
+      cleanup();
+    }
   });
 
   // @req REQ-044
-  it("is light-skinned off the home route", () => {
-    mockPathname = "/fr/pays";
-    render(<DesktopNavBar language="fr" />);
+  it("is light-skinned on the home route and elsewhere", () => {
+    for (const pathname of ["/fr", "/fr/pays"]) {
+      mockPathname = pathname;
+      render(<DesktopNavBar language="fr" />);
 
-    const nav = screen.getByRole("navigation", {
-      name: "Navigation principale",
-    });
-    expect(nav).toHaveClass("bg-card");
-    expect(nav).not.toHaveClass("afh-home-nav-skin");
+      const nav = screen.getByRole("navigation", {
+        name: "Navigation principale",
+      });
+      expect(nav).toHaveClass("bg-card");
+      expect(nav).not.toHaveClass("afh-home-nav-skin");
+      cleanup();
+    }
   });
 
   // @req REQ-044
-  it("gives each nav link a >= 44px hit area off the home route", () => {
+  it("gives each nav link a >= 44px hit area on the home route and elsewhere", () => {
     mockPathname = "/fr/pays";
     render(<DesktopNavBar language="fr" />);
 
@@ -180,14 +142,5 @@ describe("DesktopNavBar — global shell (non-home routes, ETNI-800)", () => {
     expect(screen.getByRole("link", { name: "Peuples" })).toHaveClass(
       "min-h-11"
     );
-  });
-
-  // @req REQ-044
-  it("keeps the africa.png logo at 28px off the home route", () => {
-    mockPathname = "/fr/pays";
-    render(<DesktopNavBar language="fr" />);
-
-    const logo = screen.getByRole("img", { name: PRODUCT_NAME });
-    expect(logo).toBeInTheDocument();
   });
 });

@@ -15,27 +15,22 @@ vi.mock("next/image", () => ({
   default: ({ alt }: { alt: string }) => <span role="img" aria-label={alt} />,
 }));
 
-describe("MobileNavBar — home route header skin", () => {
-  // @req [14.5]
-  // @req REQ-044
-  it("wears the prototype header skin class only on the home route", () => {
-    mockPathname = "/fr";
-    render(<MobileNavBar language="fr" />);
-    expect(screen.getByLabelText("Navigation principale")).toHaveClass(
-      "afh-home-nav-skin"
-    );
-    cleanup();
-
-    mockPathname = "/fr/pays";
-    render(<MobileNavBar language="fr" />);
-    expect(screen.getByLabelText("Navigation principale")).not.toHaveClass(
-      "afh-home-nav-skin"
-    );
+// @req [14.5]
+// @req REQ-044
+describe("MobileNavBar — global shell (all routes, ETNI-820 retires the home night skin)", () => {
+  it("never wears the retired night skin class, on the home route or elsewhere", () => {
+    for (const pathname of ["/fr", "/fr/pays"]) {
+      mockPathname = pathname;
+      render(<MobileNavBar language="fr" />);
+      expect(screen.getByLabelText("Navigation principale")).not.toHaveClass(
+        "afh-home-nav-skin"
+      );
+      cleanup();
+    }
   });
 
-  // @req [14.5]
   // @req REQ-044
-  it("keeps the same nav destinations on the home route (IA unchanged)", () => {
+  it("keeps the same nav destinations on the home route and elsewhere (IA unchanged)", () => {
     for (const pathname of ["/fr", "/fr/pays"]) {
       mockPathname = pathname;
       render(<MobileNavBar language="fr" />);
@@ -49,89 +44,63 @@ describe("MobileNavBar — home route header skin", () => {
     }
   });
 
-  // @req [14.5]
   // @req REQ-044
-  it("renders the brand wordmark in Fraunces 900 17px on the home route", () => {
-    mockPathname = "/fr";
-    render(<MobileNavBar language="fr" />);
-
-    const brand = screen.getByText(PRODUCT_NAME);
-    expect(brand.getAttribute("style")).toContain(
-      "font-family: var(--afh-font-display)"
-    );
-    expect(brand).toHaveStyle({ fontWeight: "900", fontSize: "17px" });
+  it("renders the brand wordmark from brand.ts on the home route and elsewhere", () => {
+    for (const pathname of ["/fr", "/fr/pays"]) {
+      mockPathname = pathname;
+      render(<MobileNavBar language="fr" />);
+      expect(screen.getByText(PRODUCT_NAME)).toBeInTheDocument();
+      cleanup();
+    }
   });
 
   // @req REQ-044
-  it("treats the logo beside the brand wordmark as decorative", () => {
-    mockPathname = "/fr";
-    render(<MobileNavBar language="fr" />);
+  it("is static — not position: fixed or sticky — on the home route or elsewhere", () => {
+    for (const pathname of ["/fr", "/fr/pays"]) {
+      mockPathname = pathname;
+      render(<MobileNavBar language="fr" />);
 
-    expect(
-      screen.queryByRole("img", { name: PRODUCT_NAME })
-    ).not.toBeInTheDocument();
-    expect(screen.getByText(PRODUCT_NAME)).toBeInTheDocument();
-  });
-});
-
-// @req [16.3]
-describe("MobileNavBar — global shell (non-home routes, ETNI-800)", () => {
-  // @req REQ-044
-  it("is static — not position: fixed or sticky — off the home route", () => {
-    mockPathname = "/fr/pays";
-    render(<MobileNavBar language="fr" />);
-
-    const nav = screen.getByLabelText("Navigation principale");
-    expect(nav.className).not.toMatch(/(^|\s)fixed(\s|$)/);
-    expect(nav.className).not.toMatch(/(^|\s)sticky(\s|$)/);
+      const nav = screen.getByLabelText("Navigation principale");
+      expect(nav.className).not.toMatch(/(^|\s)fixed(\s|$)/);
+      expect(nav.className).not.toMatch(/(^|\s)sticky(\s|$)/);
+      cleanup();
+    }
   });
 
   // @req REQ-044
-  it("stays fixed on the home route (unchanged until ETNI-820)", () => {
-    mockPathname = "/fr";
-    render(<MobileNavBar language="fr" />);
+  it("is light-skinned on the home route and elsewhere", () => {
+    for (const pathname of ["/fr", "/fr/pays"]) {
+      mockPathname = pathname;
+      render(<MobileNavBar language="fr" />);
 
-    const nav = screen.getByLabelText("Navigation principale");
-    expect(nav.className).toMatch(/(^|\s)fixed(\s|$)/);
+      const nav = screen.getByLabelText("Navigation principale");
+      expect(nav).toHaveClass("bg-card");
+      expect(nav).not.toHaveClass("afh-home-nav-skin");
+      cleanup();
+    }
   });
 
   // @req REQ-044
-  it("is light-skinned off the home route", () => {
-    mockPathname = "/fr/pays";
-    render(<MobileNavBar language="fr" />);
+  it("gives the menu and search buttons a >= 44px hit area on the home route and elsewhere", () => {
+    for (const pathname of ["/fr", "/fr/pays"]) {
+      mockPathname = pathname;
+      render(<MobileNavBar language="fr" />);
 
-    const nav = screen.getByLabelText("Navigation principale");
-    expect(nav).toHaveClass("bg-card");
-    expect(nav).not.toHaveClass("afh-home-nav-skin");
-  });
-
-  // @req REQ-044
-  it("renders the brand wordmark from brand.ts off the home route too", () => {
-    mockPathname = "/fr/pays";
-    render(<MobileNavBar language="fr" />);
-
-    expect(screen.getByText(PRODUCT_NAME)).toBeInTheDocument();
-  });
-
-  // @req REQ-044
-  it("gives the menu and search buttons a >= 44px hit area off the home route", () => {
-    mockPathname = "/fr/pays";
-    render(<MobileNavBar language="fr" />);
-
-    expect(screen.getByRole("button", { name: "Navigation FLG" })).toHaveClass(
-      "min-h-11"
-    );
-    expect(screen.getByRole("button", { name: "Rechercher" })).toHaveClass(
-      "min-h-11",
-      "min-w-11"
-    );
+      expect(
+        screen.getByRole("button", { name: "Navigation FLG" })
+      ).toHaveClass("min-h-11");
+      expect(screen.getByRole("button", { name: "Rechercher" })).toHaveClass(
+        "min-h-11",
+        "min-w-11"
+      );
+      cleanup();
+    }
   });
 
   // Sticky secondary bars (context triad, filters) are the only elements
   // allowed to be sticky at 430px — the header must never collide with
   // them, which is only guaranteed if the header itself is never
   // sticky/fixed (see DesktopNavBar/MobileNavBar CSS above).
-  // @req REQ-044
   it("does not collide with a route-local sticky secondary bar at 430px", () => {
     mockPathname = "/fr/pays";
     Object.defineProperty(window, "innerWidth", {
