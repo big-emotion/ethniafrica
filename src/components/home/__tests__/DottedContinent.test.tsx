@@ -1,7 +1,13 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
 import { act, render } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { DottedContinent } from "@/components/home/DottedContinent";
+import {
+  CHARTER_OCRE_HEX,
+  DottedContinent,
+} from "@/components/home/DottedContinent";
 
 const { africaDotsMock } = vi.hoisted(() => ({
   africaDotsMock: vi.fn(() => [[0.5, 0.5, 0] as const]),
@@ -151,6 +157,18 @@ describe("DottedContinent", () => {
   });
 
   // @req REQ-091
+  it("sources the dot color from the charter ochre token (--afh-cat-ocre), not an inline literal", () => {
+    const colorCss = readFileSync(
+      resolve(process.cwd(), "src/styles/tokens/color.css"),
+      "utf8"
+    );
+    const match = colorCss.match(/--afh-cat-ocre:\s*(#[\dA-Fa-f]{6});/);
+    if (!match) throw new Error("Expected --afh-cat-ocre in color.css");
+
+    expect(CHARTER_OCRE_HEX.toLowerCase()).toBe(match[1].toLowerCase());
+  });
+
+  // @req REQ-091
   it("renders as a decorative, zero-layout-shift canvas", () => {
     const { container } = render(<DottedContinent />);
     const canvas = container.querySelector("canvas");
@@ -186,6 +204,24 @@ describe("DottedContinent", () => {
     expect(context.arc).toHaveBeenCalledWith(174, 124, 1.6, 0, 7);
     expect(context.fillStyle).toBe("rgba(201,130,31,0.248)");
     expect(window.requestAnimationFrame).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-091
+  it("draws the static frame with a caller-provided dot color, proving the RGB channel is not hardcoded", () => {
+    vi.mocked(window.matchMedia).mockReturnValue({
+      matches: true,
+      media: "(prefers-reduced-motion: reduce)",
+      onchange: null,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+    });
+
+    render(<DottedContinent dotColorHex="#33a390" />);
+
+    expect(context.fillStyle).toBe("rgba(51,163,144,0.248)");
   });
 
   // @req REQ-091
