@@ -37,19 +37,12 @@ export const MobileNavBar = ({
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(href + "/");
 
-  // Prototype header skin (epic-14 module spec): only worn on the home
-  // route until ETNI-820. Every other route wears the validated global
-  // shell — static (non-sticky/fixed) so it never collides with a
-  // route-local sticky secondary bar (R3/FR105).
-  const isHome = pathname === `/${language}` || pathname === "/";
-
+  // Every route, including home, wears the validated global shell — static
+  // (non-sticky/fixed) so it never collides with a route-local sticky
+  // secondary bar (R3/FR105).
   return (
     <div
-      className={`z-50 lg:hidden ${
-        isHome
-          ? "fixed top-0 left-0 right-0 afh-home-nav-skin"
-          : "bg-card border-b shadow-sm"
-      }`}
+      className="z-50 lg:hidden bg-card border-b shadow-sm"
       aria-label="Navigation principale"
     >
       <div className="px-3 h-[57px] flex items-center justify-between gap-2">
@@ -65,19 +58,7 @@ export const MobileNavBar = ({
             height={26}
             className="object-contain"
           />
-          <span
-            className="font-display font-bold text-base leading-none"
-            style={
-              isHome
-                ? {
-                    fontFamily: "var(--afh-font-display)",
-                    fontWeight: 900,
-                    fontSize: "17px",
-                    color: "var(--afh-night-ink)",
-                  }
-                : undefined
-            }
-          >
+          <span className="font-display font-bold text-base leading-none">
             {PRODUCT_NAME}
           </span>
         </Link>
@@ -90,20 +71,10 @@ export const MobileNavBar = ({
               <Button
                 variant="ghost"
                 size="sm"
-                className={`px-2 text-xs font-semibold gap-1 ${
-                  isHome
-                    ? "h-8 text-[color:var(--afh-night-ink-2)] hover:bg-[color:var(--afh-night-surface-2)] hover:text-[color:var(--afh-night-ink)]"
-                    : "min-h-11"
-                }`}
+                className="px-2 text-xs font-semibold gap-1 min-h-11"
                 aria-label="Navigation FLG"
               >
-                <span
-                  className={`text-[11px] font-bold tracking-wide uppercase ${
-                    isHome
-                      ? "text-[color:var(--afh-night-ink-2)]"
-                      : "text-muted-foreground"
-                  }`}
-                >
+                <span className="text-[11px] font-bold tracking-wide uppercase text-muted-foreground">
                   FLG
                 </span>
                 <svg
@@ -163,11 +134,7 @@ export const MobileNavBar = ({
           <Button
             variant="ghost"
             size="icon"
-            className={
-              isHome
-                ? "h-8 w-8 text-[color:var(--afh-night-ink-2)] hover:bg-[color:var(--afh-night-surface-2)] hover:text-[color:var(--afh-night-ink)]"
-                : "min-h-11 min-w-11"
-            }
+            className="min-h-11 min-w-11"
             onClick={onSearchClick}
             aria-label="Rechercher"
           >

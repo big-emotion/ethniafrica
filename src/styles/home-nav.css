@@ -1,9 +1,0 @@
-/* Home route header skin (epic-14 module spec, reference-prototype.html
-   header.top) — applied only when DesktopNavBar/MobileNavBar render on the
-   home route. Kept in a real stylesheet rather than inline styles because
-   color-mix() must be parsed by the browser, not jsdom-style CSSOM. */
-.afh-home-nav-skin {
-  background: color-mix(in srgb, var(--afh-night-ground) 88%, transparent);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--afh-night-line);
-}

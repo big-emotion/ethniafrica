@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { Language } from "@/types/shared";
 import { getLocalizedRoute, getPageFromRoute } from "@/lib/routing";
 import Image from "next/image";
-import { PRODUCT_NAME, ATTRIBUTION_STRING } from "@/lib/brand";
+import { PRODUCT_NAME } from "@/lib/brand";
 
 interface DesktopNavBarProps {
   language: Language;
@@ -26,33 +26,19 @@ export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
   const isDoctrine = pathname.startsWith(`/${language}/doctrine`);
   const isApi = pathname.startsWith(`/docs/api`);
 
-  // Home wears the night skin, so links need afh-night-token colors to keep
-  // contrast on the dark background; other routes keep the shadcn tokens
-  // and a >= 44px hit area (R5).
   const navLinkClass = (active: boolean) =>
-    isHome
-      ? `px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-          active
-            ? "bg-[color:var(--afh-night-ocre-soft)] text-[color:var(--afh-night-ground)]"
-            : "text-[color:var(--afh-night-ink-2)] hover:text-[color:var(--afh-night-ink)] hover:bg-[color:var(--afh-night-surface-2)]"
-        }`
-      : `min-h-11 flex items-center px-3 rounded-md text-sm font-medium transition-colors ${
-          active
-            ? "bg-primary text-primary-foreground"
-            : "text-muted-foreground hover:text-foreground hover:bg-accent"
-        }`;
+    `min-h-11 flex items-center px-3 rounded-md text-sm font-medium transition-colors ${
+      active
+        ? "bg-primary text-primary-foreground"
+        : "text-muted-foreground hover:text-foreground hover:bg-accent"
+    }`;
 
-  // Prototype header skin (epic-14 module spec): only worn on the home
-  // route until ETNI-820. Every other route wears the validated global
-  // shell — static (non-sticky/fixed) so it never collides with a
-  // route-local sticky secondary bar (R3/FR105).
+  // Every route, including home, wears the validated global shell — static
+  // (non-sticky/fixed) so it never collides with a route-local sticky
+  // secondary bar (R3/FR105).
   return (
     <nav
-      className={`hidden lg:block z-50 ${
-        isHome
-          ? "fixed top-0 left-0 right-0 afh-home-nav-skin"
-          : "bg-card border-b shadow-sm"
-      }`}
+      className="hidden lg:block z-50 bg-card border-b shadow-sm"
       aria-label="Navigation principale"
     >
       <div className="container mx-auto px-4">
@@ -64,7 +50,7 @@ export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
           >
             <Image
               src="/africa.png"
-              alt={isHome ? "" : PRODUCT_NAME}
+              alt={PRODUCT_NAME}
               width={28}
               height={28}
               className="object-contain"
@@ -76,23 +62,11 @@ export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
                   fontWeight: 900,
                   fontSize: "17px",
                   letterSpacing: ".01em",
-                  color: isHome ? "var(--afh-night-ink)" : "var(--afh-text)",
+                  color: "var(--afh-text)",
                 }}
               >
                 {PRODUCT_NAME}
               </span>
-              {isHome && (
-                <span
-                  style={{
-                    fontSize: "11.5px",
-                    textTransform: "uppercase",
-                    letterSpacing: ".14em",
-                    color: "var(--afh-night-ink-2)",
-                  }}
-                >
-                  {ATTRIBUTION_STRING}
-                </span>
-              )}
             </span>
           </Link>
 

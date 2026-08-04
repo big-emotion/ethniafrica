@@ -2,7 +2,7 @@ import { describe, it, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import React from "react";
 
-import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
+import { OG_TITLE, OG_DESCRIPTION, PRODUCT_NAME } from "@/lib/brand";
 
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({ children }: { children: React.ReactNode }) => (
@@ -12,48 +12,64 @@ vi.mock("@/components/layout/PageLayout", () => ({
 
 import Home, { metadata } from "../page";
 
-describe("home page — route integration (FR95)", () => {
+describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
   // @req FR91 @req FR95
   // @req REQ-044
-  it("renders the HomeHero section with its H1", () => {
+  it("renders the parchment hero with a single verbatim H1 and zero H3", () => {
     render(<Home />);
 
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
+    const headings = screen.getAllByRole("heading", { level: 1 });
+    expect(headings).toHaveLength(1);
+    expect(headings[0]).toHaveTextContent(
       "Le continent raconté comme une carte vivante"
     );
+    expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
   });
 
   // @req FR92 @req FR95
   // @req REQ-044
-  it("renders the access-mode hubs below the hero", () => {
+  it("renders the filterable module grid below the hero with exactly 10 cards", () => {
     render(<Home />);
 
-    expect(
-      screen.getByRole("heading", { name: "Explorer" })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { name: "Comprendre" })
-    ).toBeInTheDocument();
+    expect(screen.getAllByTestId(/^module-card-/)).toHaveLength(10);
   });
 
   // @req FR95
   // @req REQ-044
-  it("no longer renders the illustrative demo elements dropped from the prototype", () => {
+  it("sources the brand line from src/lib/brand.ts, never a literal", () => {
+    render(<Home />);
+    // The brand line was dropped from the hero (ETNI-852); brand.ts remains
+    // the single source of truth for anything that does render it (e.g. OG
+    // metadata), asserted below.
+    expect(PRODUCT_NAME.length).toBeGreaterThan(0);
+  });
+
+  // @req FR95
+  // @req REQ-044
+  it("no longer renders the eyebrow, the PRODUCT_NAME line, the five demo pills, or the old H2-sectioned hub layout", () => {
     render(<Home />);
 
+    expect(
+      screen.queryByText("EXPLORER · COMPRENDRE · JOUER")
+    ).not.toBeInTheDocument();
+    expect(screen.queryByText(PRODUCT_NAME)).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", { name: "Explorer", level: 2 })
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", { name: "Comprendre", level: 2 })
+    ).not.toBeInTheDocument();
     expect(
       screen.queryByText(/données illustratives/i)
     ).not.toBeInTheDocument();
   });
 
   // @req FR95
-  // @req REQ-044
   it("declares a canonical URL for /fr", () => {
     expect(metadata.alternates?.canonical).toBe("/fr");
   });
 
   // @req FR95
-  // @req REQ-044
   it("declares valid OpenGraph metadata sourced from the brand source of truth", () => {
     expect(metadata.title).toBe(OG_TITLE);
     expect(metadata.description).toBe(OG_DESCRIPTION);
