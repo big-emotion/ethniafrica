@@ -66,6 +66,12 @@ jobs:
         if: steps.secrets.outputs.present == 'true'
         run: npm install -g @lhci/cli --legacy-peer-deps
 
+      - name: Install Chromium for Lighthouse
+        if: steps.secrets.outputs.present == 'true'
+        run: |
+          npx playwright install --with-deps chromium
+          node -e 'console.log("CHROME_PATH=" + require("playwright").chromium.executablePath())' >> "$GITHUB_ENV"
+
       - name: Run Lighthouse CI
         id: lhci
         if: steps.secrets.outputs.present == 'true'
