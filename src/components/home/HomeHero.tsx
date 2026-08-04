@@ -1,9 +1,14 @@
 import { DottedContinent } from "@/components/home/DottedContinent";
+import { PRODUCT_NAME } from "@/lib/brand";
 
 // @req REQ-044
 export function HomeHero() {
   return (
     <section
+      // Landmark label dropped during the light-parchment swap (ETNI-820,
+      // 6ae60726) — restored here (ETNI-822) because e2e/home-visual.spec.ts
+      // resolves the hero's crop origin via this exact locator.
+      aria-label={PRODUCT_NAME}
       style={{
         position: "relative",
         overflow: "hidden",
