@@ -149,13 +149,16 @@ export async function getSourcesMap(
 }
 
 /**
- * Latest confidence score per peopleId.
+ * Latest confidence score per entityId, scoped to a single entity_type.
  *
  * Post-014 schema: `confidence_scores` is entity-scoped. Query directly with
- * (entity_type='people', entity_id IN (...)). First seen non-null per id wins.
+ * (entity_type, entity_id IN (...)). First seen non-null per id wins.
+ * Defaults to "people" for existing callers (peopleIds); pass an explicit
+ * entityType (e.g. "country", "language_family") for other entity kinds.
  */
 export async function getConfidenceMap(
-  peopleIds: string[]
+  peopleIds: string[],
+  entityType: string = "people"
 ): Promise<Map<string, ConfidenceScore>> {
   if (peopleIds.length === 0) return new Map();
 
@@ -169,7 +172,7 @@ export async function getConfidenceMap(
       .select(
         "entity_id, score, source_count, avg_source_quality, last_human_audit_at, open_flag_count, recomputed_at"
       )
-      .eq("entity_type", "people")
+      .eq("entity_type", entityType)
       .in("entity_id", ids);
 
     if (error) {
