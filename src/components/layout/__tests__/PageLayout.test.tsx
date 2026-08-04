@@ -32,8 +32,11 @@ vi.mock("@/hooks/use-mobile", () => ({
   useIsMobile: () => true,
 }));
 
+let mockPathname = "/fr/peuples-dafrique";
+
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: vi.fn() }),
+  usePathname: () => mockPathname,
 }));
 
 vi.mock("@/lib/routing", () => ({
@@ -98,5 +101,49 @@ describe("PageLayout title", () => {
     expect(enhancementRule?.[1]).toContain(
       "-webkit-text-fill-color: transparent;"
     );
+  });
+});
+
+// @req [16.3]
+describe("PageLayout — header/main offset (ETNI-800 static non-home nav)", () => {
+  // @req REQ-043
+  it("does not add fixed-nav offset padding to the title header off the home route", () => {
+    mockPathname = "/fr/peuples-dafrique";
+    render(
+      <PageLayout language="fr" title="Peuples d'Afrique">
+        <p>Page content</p>
+      </PageLayout>
+    );
+
+    const header = screen.getByRole("heading", { level: 1 }).closest("header");
+    expect(header?.className).not.toMatch(/pt-14|pt-\[57px\]/);
+  });
+
+  // @req REQ-043
+  it("does not add fixed-nav offset padding to main off the home route", () => {
+    mockPathname = "/fr/a-propos";
+    render(
+      <PageLayout language="fr" hideHeader>
+        <p data-testid="content">Page content</p>
+      </PageLayout>
+    );
+
+    const main = screen.getByTestId("content").closest("main");
+    // useIsMobile is mocked to true in this file, so the mobile fixed-nav
+    // offset (pt-24) is the one under test off the home route.
+    expect(main?.className).not.toMatch(/pt-24|pt-28/);
+  });
+
+  // @req REQ-043
+  it("keeps the fixed-nav offset padding on the home route (unchanged until ETNI-820)", () => {
+    mockPathname = "/fr";
+    render(
+      <PageLayout language="fr" hideHeader>
+        <p data-testid="content">Page content</p>
+      </PageLayout>
+    );
+
+    const main = screen.getByTestId("content").closest("main");
+    expect(main?.className).toMatch(/pt-24/);
   });
 });
