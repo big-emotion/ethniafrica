@@ -4,12 +4,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 
 export type AutonymExonymHeadingVariant =
-  | "hero"
-  | "inline"
-  | "card"
-  | "people-hero"
-  | "people-section"
-  | "compact";
+  "hero" | "inline" | "card" | "people-hero" | "people-section" | "compact";
 
 export interface AutonymExonymHeadingProps {
   /** Self-appellation / autonym. Primary heading text for hero, inline and card variants. */

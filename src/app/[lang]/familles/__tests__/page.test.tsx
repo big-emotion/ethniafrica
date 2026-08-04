@@ -29,9 +29,18 @@ vi.mock("@/lib/supabase/server", () => ({
 }));
 
 vi.mock("@/components/layout/PageLayout", () => ({
-  PageLayout: ({ children }: { children: React.ReactNode }) => (
-    <div data-testid="page-layout">{children}</div>
-  ),
+  PageLayout: ({
+    children,
+    onLanguageChange,
+  }: {
+    children: React.ReactNode;
+    onLanguageChange?: unknown;
+  }) => {
+    if (typeof onLanguageChange === "function") {
+      throw new Error("Server pages must not pass callbacks to PageLayout");
+    }
+    return <div data-testid="page-layout">{children}</div>;
+  },
 }));
 
 vi.mock("@/components/detail/LanguageFamilyDetailView", () => ({

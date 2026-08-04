@@ -10,12 +10,7 @@ export type FlagKind =
   | "other";
 
 export type FlagStatus =
-  | "open"
-  | "under_review"
-  | "accepted"
-  | "rejected"
-  | "withdrawn"
-  | "duplicate";
+  "open" | "under_review" | "accepted" | "rejected" | "withdrawn" | "duplicate";
 
 export interface FlagCreateInput {
   target_type: string;
