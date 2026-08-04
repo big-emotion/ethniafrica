@@ -75,7 +75,7 @@ interface ConsentProviderProps {
 
 export function ConsentProvider({ children }: ConsentProviderProps) {
   const [consentState, setConsentState] = useState<ConsentState>(DEFAULT_STATE);
-  const [showBanner, setShowBanner] = useState(false);
+  const [showBanner, setShowBanner] = useState(true);
 
   // Load consent from localStorage on mount (client-side only)
   useEffect(() => {

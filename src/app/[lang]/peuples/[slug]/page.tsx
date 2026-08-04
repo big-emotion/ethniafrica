@@ -137,11 +137,7 @@ export default async function PeoplesSlugPage({
     }
 
     return (
-      <PageLayout
-        language="fr"
-        onLanguageChange={() => {}}
-        sectionName="Peuples"
-      >
+      <PageLayout language="fr" sectionName="Peuples">
         <div className="container mx-auto max-w-4xl px-4 py-8">
           <SnapshotFicheView
             entityId={parsed.slug}
@@ -159,7 +155,7 @@ export default async function PeoplesSlugPage({
 
   // Live version (revalidate = 3600 at segment level)
   return (
-    <PageLayout language="fr" onLanguageChange={() => {}} sectionName="Peuples">
+    <PageLayout language="fr" sectionName="Peuples">
       <div className="container mx-auto max-w-4xl px-4 py-8">
         <Suspense
           fallback={

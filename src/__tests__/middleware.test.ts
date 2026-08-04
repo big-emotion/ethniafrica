@@ -365,6 +365,22 @@ describe("middleware", () => {
     });
 
     // @req REQ-052
+    it("allows only the known Next.js runtime style hashes", async () => {
+      const request = new NextRequest("http://localhost:3000/some-page");
+      const response = await middleware(request);
+      const csp = response.headers.get("Content-Security-Policy")!;
+      const directives = csp.split(";").map((d) => d.trim());
+      const styleSrc = directives.find((d) => d.startsWith("style-src "));
+
+      expect(styleSrc).toContain(
+        "'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='"
+      );
+      expect(styleSrc).toContain(
+        "'sha256-CIxDM5jnsGiKqXs2v7NKCY5MzdR9gu6TtiMJrDw29AY='"
+      );
+    });
+
+    // @req REQ-052
     it("scopes style-src-attr 'unsafe-inline' to /fr only", async () => {
       const homeRequest = new NextRequest("http://localhost:3000/fr");
       const homeResponse = await middleware(homeRequest);
@@ -380,9 +396,9 @@ describe("middleware", () => {
       const otherCsp = otherResponse.headers.get("Content-Security-Policy")!;
       const otherDirectives = otherCsp.split(";").map((d) => d.trim());
 
-      expect(
-        otherDirectives.find((d) => d.startsWith("style-src-attr"))
-      ).toBeUndefined();
+      expect(otherDirectives.find((d) => d.startsWith("style-src-attr"))).toBe(
+        "style-src-attr 'unsafe-hashes' 'sha256-1OjyRYLAOH1vhXLUN4bBHal0rWxuwBDBP220NNc0CNU='"
+      );
     });
 
     it("generates a different nonce for each request", async () => {

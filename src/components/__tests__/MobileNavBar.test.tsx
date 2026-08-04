@@ -61,4 +61,15 @@ describe("MobileNavBar — home route header skin", () => {
     );
     expect(brand).toHaveStyle({ fontWeight: "900", fontSize: "17px" });
   });
+
+  // @req REQ-044
+  it("treats the logo beside the brand wordmark as decorative", () => {
+    mockPathname = "/fr";
+    render(<MobileNavBar language="fr" />);
+
+    expect(
+      screen.queryByRole("img", { name: PRODUCT_NAME })
+    ).not.toBeInTheDocument();
+    expect(screen.getByText(PRODUCT_NAME)).toBeInTheDocument();
+  });
 });

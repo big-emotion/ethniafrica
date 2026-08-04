@@ -1,4 +1,4 @@
-# ADR-0005: `style-src-attr 'unsafe-inline'` scoped to `/fr` only
+# ADR-0005: Scoped style CSP exceptions
 
 - **Status**: Accepted
 - **Date**: 2026-07-29
@@ -25,9 +25,14 @@ attributes at all.
 Scope `style-src-attr 'unsafe-inline'` to the exact route that needs it
 (`pathname === "/fr"`, the only route that renders `HomeHero` /
 `DottedContinent` / `HubCard`) via `STYLE_ATTR_UNSAFE_INLINE_ROUTES` in
-`applySecurityHeaders`. Every other route — including `/api/v2/*` and
-`/fr/admin/*` — keeps the strict nonce-only `style-src` policy with no
-`style-src-attr` relaxation at all.
+`applySecurityHeaders`.
+
+Next.js 16 also emits two stable runtime `<style>` payloads and one stable
+`next/image` style attribute without propagating the request nonce. Permit only
+their exact SHA-256 hashes. All routes receive the two runtime hashes through
+`style-src`; routes other than `/fr` receive `style-src-attr 'unsafe-hashes'`
+with the single image attribute hash. This keeps `/api/v2/*`, `/fr/admin/*`,
+and other non-home routes free from a general inline-style allowance.
 
 ## Consequences
 
@@ -35,14 +40,18 @@ Scope `style-src-attr 'unsafe-inline'` to the exact route that needs it
 
 - The CSP relaxation's blast radius is limited to the one route that
   actually needs it, instead of the entire production site.
+- Next.js runtime styles are allowed by exact content hash instead of a broad
+  source expression.
 - `src/__tests__/middleware.test.ts` asserts both that `/fr` receives the
-  directive and that an unrelated route does not, guarding against silent
-  re-widening.
+  scoped directive and that other routes receive only the exact hash
+  exception, guarding against silent re-widening.
 
 **Negative**
 
 - `/fr` still ships `'unsafe-inline'` for style attributes, which remains a
   real (if scoped) weakening versus a pure nonce-only policy.
+- A Next.js runtime change that alters one of the hashed payloads requires an
+  explicit hash update after the new payload has been reviewed.
 
 **Aside**
 

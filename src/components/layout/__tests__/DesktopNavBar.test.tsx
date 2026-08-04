@@ -104,6 +104,16 @@ describe("DesktopNavBar — home route header skin", () => {
     });
   });
 
+  // @req REQ-044
+  it("treats the logo next to the visible brand name as decorative", () => {
+    mockPathname = "/fr";
+    render(<DesktopNavBar language="fr" />);
+
+    expect(
+      screen.queryByRole("img", { name: PRODUCT_NAME })
+    ).not.toBeInTheDocument();
+  });
+
   // @req [14.5]
   // @req REQ-044
   it("does not render the brand wordmark off the home route", () => {

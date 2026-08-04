@@ -56,7 +56,7 @@ export const MobileNavBar = ({
         >
           <Image
             src="/africa.png"
-            alt={PRODUCT_NAME}
+            alt=""
             width={26}
             height={26}
             className="object-contain"

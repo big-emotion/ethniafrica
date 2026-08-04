@@ -1,6 +1,7 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { render, screen, act } from "@testing-library/react";
+import { act } from "@testing-library/react";
 import { renderHook } from "@testing-library/react";
+import { renderToString } from "react-dom/server";
 import { ConsentProvider, useConsent } from "../use-consent";
 import { CONSENT_STORAGE_KEY } from "@/lib/consent";
 import type { ConsentState } from "@/types/consent";
@@ -32,6 +33,11 @@ function wrapper({ children }: { children: React.ReactNode }) {
   return <ConsentProvider>{children}</ConsentProvider>;
 }
 
+function ConsentStateProbe() {
+  const { showBanner } = useConsent();
+  return <span data-show-banner={showBanner} />;
+}
+
 describe("useConsent hook", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -43,6 +49,17 @@ describe("useConsent hook", () => {
   });
 
   describe("initial state", () => {
+    // @req REQ-046
+    it("renders the banner state during SSR for visitors without consent", () => {
+      const html = renderToString(
+        <ConsentProvider>
+          <ConsentStateProbe />
+        </ConsentProvider>
+      );
+
+      expect(html).toContain('data-show-banner="true"');
+    });
+
     it("should show banner when no consent is stored", async () => {
       const { result } = renderHook(() => useConsent(), { wrapper });
 
