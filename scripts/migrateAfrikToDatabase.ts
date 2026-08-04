@@ -54,9 +54,7 @@ export interface MigrationOptions {
 
 type AdminClient = ReturnType<typeof createAdminClient>;
 type AfrikTable =
-  | "afrik_language_families"
-  | "afrik_peoples"
-  | "afrik_countries";
+  "afrik_language_families" | "afrik_peoples" | "afrik_countries";
 
 function emptyDriftReport(): AfrikDriftReport {
   return {

@@ -7,10 +7,7 @@ import type { FlagRow } from "@/types/module-zero";
 export type PublicFlagStatus = FlagRow["status"];
 export type PublicFlagKind = FlagRow["flag_kind"];
 export type PublicFlagTargetType =
-  | "assertion"
-  | "source"
-  | "fiche_section"
-  | "classification";
+  "assertion" | "source" | "fiche_section" | "classification";
 
 export interface PublicFlagFilters {
   statuses?: PublicFlagStatus[];
