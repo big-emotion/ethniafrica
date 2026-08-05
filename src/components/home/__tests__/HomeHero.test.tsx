@@ -72,4 +72,12 @@ describe("HomeHero — parchment light hero (ETNI-820)", () => {
       "var(--afh-night-ground)"
     );
   });
+
+  // @req REQ-044 @req ETNI-822
+  it("labels the hero section as an accessible landmark, matched by e2e/home-visual.spec.ts", () => {
+    const { container } = render(<HomeHero />);
+    const section = container.querySelector("section");
+
+    expect(section).toHaveAttribute("aria-label", PRODUCT_NAME);
+  });
 });
