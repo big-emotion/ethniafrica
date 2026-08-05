@@ -186,6 +186,17 @@ describe("FichePanel", () => {
     });
   });
 
+  describe("responsive column split (FR100)", () => {
+    // @req REQ-091
+    it("switches to the 1fr/2fr split at the charter's 1200px desktop breakpoint", () => {
+      const { container } = renderPanel();
+      const article = container.firstChild as HTMLElement;
+      expect(article.className).toMatch(/md:grid-cols-\[5fr_7fr\]/);
+      expect(article.className).toMatch(/min-\[1200px\]:grid-cols-\[1fr_2fr\]/);
+      expect(article.className).not.toMatch(/\bxl:grid-cols-/);
+    });
+  });
+
   describe("reduced-motion (R5)", () => {
     // @req REQ-091
     it("gates hover motion behind motion-safe", () => {

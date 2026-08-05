@@ -49,7 +49,7 @@ export function FichePanel({
   return (
     <article
       className={cn(
-        "grid grid-cols-1 gap-afh-2xl md:grid-cols-[5fr_7fr] xl:grid-cols-[1fr_2fr]",
+        "grid grid-cols-1 gap-afh-2xl md:grid-cols-[5fr_7fr] min-[1200px]:grid-cols-[1fr_2fr]",
         CHARTER_FOCUS_RING,
         className
       )}
