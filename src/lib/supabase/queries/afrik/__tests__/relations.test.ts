@@ -31,6 +31,9 @@ import {
   getRelationsForPeople,
   getRelationsMap,
   getDerivedLinguisticLinks,
+  peopleExists,
+  listRelationRecords,
+  getRelationRecordById,
 } from "../relations";
 import { createServerClient } from "../../../server";
 import { getSourcesMap, getConfidenceMap } from "../module-zero-batch";
@@ -458,6 +461,225 @@ describe("relations query layer", () => {
       const result = await getDerivedLinguisticLinks("PPL_UNKNOWN", 24);
 
       expect(result).toEqual([]);
+    });
+  });
+
+  /**
+   * Generic chainable query mock for peopleExists/listRelationRecords/
+   * getRelationRecordById — these use a flat filter chain
+   * (select/eq/in/or/gte/lte/order/range/maybeSingle) rather than the
+   * two-sided .in() fan-out the ego-network helpers above use.
+   */
+  function buildChainMock(terminalResult: {
+    data: unknown;
+    error: unknown;
+    count?: number | null;
+  }) {
+    const chain: Record<string, ReturnType<typeof vi.fn>> = {};
+    for (const method of ["select", "eq", "in", "or", "gte", "lte", "order"]) {
+      chain[method] = vi.fn(() => chain);
+    }
+    chain.range = vi.fn(() => Promise.resolve(terminalResult));
+    chain.maybeSingle = vi.fn(() => Promise.resolve(terminalResult));
+
+    const fromSpy = vi.fn(() => chain);
+    (createServerClient as unknown as ReturnType<typeof vi.fn>).mockReturnValue(
+      { from: fromSpy }
+    );
+
+    return { fromSpy, chain };
+  }
+
+  describe("peopleExists", () => {
+    // @req REQ-097
+    it("returns true when the people row exists", async () => {
+      const { fromSpy, chain } = buildChainMock({
+        data: { id: "PPL_A" },
+        error: null,
+      });
+
+      const result = await peopleExists("PPL_A");
+
+      expect(result).toBe(true);
+      expect(fromSpy).toHaveBeenCalledWith("afrik_peoples");
+      expect(chain.eq).toHaveBeenCalledWith("id", "PPL_A");
+    });
+
+    // @req REQ-097
+    it("returns false when the people row does not exist", async () => {
+      buildChainMock({ data: null, error: null });
+
+      const result = await peopleExists("PPL_UNKNOWN");
+
+      expect(result).toBe(false);
+    });
+
+    // @req REQ-097
+    it("returns false on a Supabase error, never throws", async () => {
+      buildChainMock({ data: null, error: { message: "boom" } });
+
+      const result = await peopleExists("PPL_A");
+
+      expect(result).toBe(false);
+    });
+  });
+
+  describe("listRelationRecords", () => {
+    // @req REQ-097
+    it("returns mapped records + total, applying default pagination", async () => {
+      const row = relationRow({ id: "REL_A_B" });
+      const { fromSpy, chain } = buildChainMock({
+        data: [row],
+        error: null,
+        count: 1,
+      });
+      vi.mocked(getSourcesMap).mockResolvedValue(
+        new Map([
+          ["REL_A_B", [{ id: "SRC_1", title: "S1", url: null, tier: "1" }]],
+        ])
+      );
+      vi.mocked(getConfidenceMap).mockResolvedValue(
+        new Map([
+          [
+            "REL_A_B",
+            {
+              entityId: "REL_A_B",
+              score: 0.5,
+              sourceCount: 1,
+              avgSourceQuality: null,
+              lastHumanAuditAt: null,
+              openFlagCount: null,
+              recomputedAt: null,
+            },
+          ],
+        ])
+      );
+
+      const result = await listRelationRecords({ limit: 20, offset: 0 });
+
+      expect(fromSpy).toHaveBeenCalledWith("afrik_people_relations");
+      expect(result.total).toBe(1);
+      expect(result.data).toHaveLength(1);
+      expect(result.data[0]).toEqual({
+        id: "REL_A_B",
+        relationType: "migratory",
+        peopleIdA: "PPL_A",
+        peopleIdB: "PPL_B",
+        direction: "bidirectional",
+        period: {
+          startYear: 1300,
+          endYear: 1800,
+          label: "XIVe-XVIIIe siecle",
+        },
+        description: "test description",
+        sources: [{ id: "SRC_1", title: "S1", url: null, tier: "1" }],
+        confidence: { score: 0.5, sourceCount: 1 },
+      });
+      expect(chain.range).toHaveBeenCalledWith(0, 19);
+    });
+
+    // @req REQ-097
+    it("applies the types filter via .in()", async () => {
+      const { chain } = buildChainMock({ data: [], error: null, count: 0 });
+
+      await listRelationRecords({
+        types: ["migratory", "commercial"],
+        limit: 20,
+        offset: 0,
+      });
+
+      expect(chain.in).toHaveBeenCalledWith("relation_type", [
+        "migratory",
+        "commercial",
+      ]);
+    });
+
+    // @req REQ-097
+    it("applies the peopleId filter via .or() on both sides", async () => {
+      const { chain } = buildChainMock({ data: [], error: null, count: 0 });
+
+      await listRelationRecords({ peopleId: "PPL_A", limit: 20, offset: 0 });
+
+      expect(chain.or).toHaveBeenCalledWith(
+        "people_id_a.eq.PPL_A,people_id_b.eq.PPL_A"
+      );
+    });
+
+    // @req REQ-097
+    it("applies periodFrom/periodTo bounds on the relation's own period window", async () => {
+      const { chain } = buildChainMock({ data: [], error: null, count: 0 });
+
+      await listRelationRecords({
+        periodFrom: 1400,
+        periodTo: 1900,
+        limit: 20,
+        offset: 0,
+      });
+
+      expect(chain.gte).toHaveBeenCalledWith("period_start_year", 1400);
+      expect(chain.lte).toHaveBeenCalledWith("period_end_year", 1900);
+    });
+
+    // @req REQ-097
+    it("applies limit/offset as a range", async () => {
+      const { chain } = buildChainMock({ data: [], error: null, count: 0 });
+
+      await listRelationRecords({ limit: 10, offset: 30 });
+
+      expect(chain.range).toHaveBeenCalledWith(30, 39);
+    });
+
+    // @req REQ-097
+    it("returns an empty result (never throws) on a Supabase error", async () => {
+      buildChainMock({ data: null, error: { message: "boom" }, count: null });
+
+      const result = await listRelationRecords({ limit: 20, offset: 0 });
+
+      expect(result).toEqual({ data: [], total: 0 });
+    });
+
+    // @req REQ-097
+    it("returns an empty result for an empty corpus", async () => {
+      buildChainMock({ data: [], error: null, count: 0 });
+
+      const result = await listRelationRecords({ limit: 20, offset: 0 });
+
+      expect(result).toEqual({ data: [], total: 0 });
+    });
+  });
+
+  describe("getRelationRecordById", () => {
+    // @req REQ-097
+    it("returns the mapped record when found", async () => {
+      const row = relationRow({ id: "REL_A_B" });
+      const { fromSpy, chain } = buildChainMock({ data: row, error: null });
+
+      const result = await getRelationRecordById("REL_A_B");
+
+      expect(fromSpy).toHaveBeenCalledWith("afrik_people_relations");
+      expect(chain.eq).toHaveBeenCalledWith("id", "REL_A_B");
+      expect(result?.id).toBe("REL_A_B");
+      expect(result?.peopleIdA).toBe("PPL_A");
+      expect(result?.sources).toEqual([]);
+      expect(result?.confidence).toBeNull();
+    });
+
+    // @req REQ-097
+    it("returns null for an unknown relation id", async () => {
+      buildChainMock({ data: null, error: null });
+
+      const result = await getRelationRecordById("REL_UNKNOWN");
+
+      expect(result).toBeNull();
+    });
+
+    // @req REQ-097
+    it("returns null (never throws) on a Supabase error", async () => {
+      buildChainMock({ data: null, error: { message: "boom" } });
+
+      const result = await getRelationRecordById("REL_A_B");
+
+      expect(result).toBeNull();
     });
   });
 });

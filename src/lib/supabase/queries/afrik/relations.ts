@@ -19,6 +19,7 @@ import type {
   SourcedRelation,
   DerivedLinguisticLink,
   RelationNeighbor,
+  PublicRelationRecord,
 } from "@/types/relations";
 
 const DEFAULT_DERIVED_LIMIT = 24;
@@ -315,4 +316,159 @@ export async function getDerivedLinguisticLinks(
       languageFamilyId: row.language_family_id,
     },
   }));
+}
+
+/**
+ * Whether a people id exists in the AFRIK corpus. Used by the ego-network
+ * endpoint (`/peoples/{id}/relations`) to distinguish "unknown people" (404)
+ * from "known people with no relations" (200, empty collections) — a
+ * distinction getEgoNetwork itself deliberately does not make (Story 11.6).
+ */
+export async function peopleExists(pplId: string): Promise<boolean> {
+  const supabase = createServerClient();
+  const { data, error } = await supabase
+    .from("afrik_peoples")
+    .select("id")
+    .eq("id", pplId)
+    .maybeSingle();
+
+  if (error) {
+    logger.error(`relations.peopleExists failed for ${pplId}`, error);
+    return false;
+  }
+  return Boolean(data);
+}
+
+function mapRowToPublicRelationRecord(
+  row: RelationRow,
+  sourcesMap: Map<
+    string,
+    Array<{
+      id: string;
+      title: string;
+      url: string | null;
+      tier: string | null;
+    }>
+  >,
+  confidenceMap: Map<string, { score: number; sourceCount: number | null }>
+): PublicRelationRecord {
+  const confidence = confidenceMap.get(row.id);
+  return {
+    id: row.id,
+    relationType: row.relation_type,
+    peopleIdA: row.people_id_a,
+    peopleIdB: row.people_id_b,
+    direction: row.direction,
+    period: {
+      startYear: row.period_start_year,
+      endYear: row.period_end_year,
+      label: row.period_label ?? "",
+    },
+    description: row.description,
+    sources: sourcesMap.get(row.id) || [],
+    confidence: confidence
+      ? { score: confidence.score, sourceCount: confidence.sourceCount }
+      : null,
+  };
+}
+
+export interface ListRelationRecordsFilters {
+  types?: RelationType[];
+  peopleId?: string;
+  periodFrom?: number;
+  periodTo?: number;
+  limit: number;
+  offset: number;
+}
+
+/**
+ * Paginated, filterable relation records for `GET /v2/relations` — not
+ * centered on one people, so both sides are exposed as peopleIdA/peopleIdB
+ * rather than a single `neighbor` (see PublicRelationRecord).
+ *
+ * periodFrom/periodTo bound the relation's own period window
+ * (`period_start_year >= periodFrom`, `period_end_year <= periodTo`), not an
+ * overlap query — the simplest defensible interpretation absent a more
+ * precise spec (Epic 11 leaves exact period-filter semantics open).
+ */
+export async function listRelationRecords(
+  filters: ListRelationRecordsFilters
+): Promise<{ data: PublicRelationRecord[]; total: number }> {
+  const { types, peopleId, periodFrom, periodTo, limit, offset } = filters;
+  const supabase = createServerClient();
+
+  let query = supabase
+    .from("afrik_people_relations")
+    .select("*", { count: "exact" });
+
+  if (types && types.length > 0) {
+    query = query.in("relation_type", types);
+  }
+  if (peopleId) {
+    query = query.or(`people_id_a.eq.${peopleId},people_id_b.eq.${peopleId}`);
+  }
+  if (periodFrom !== undefined) {
+    query = query.gte("period_start_year", periodFrom);
+  }
+  if (periodTo !== undefined) {
+    query = query.lte("period_end_year", periodTo);
+  }
+
+  const { data, error, count } = await query
+    .order("id")
+    .range(offset, offset + limit - 1);
+
+  if (error) {
+    logger.error("relations.listRelationRecords failed", error);
+    return { data: [], total: 0 };
+  }
+
+  const rows = (data || []) as RelationRow[];
+  if (rows.length === 0) {
+    return { data: [], total: 0 };
+  }
+
+  const relationIds = rows.map((r) => r.id);
+  const [sourcesMap, confidenceMap] = await Promise.all([
+    getSourcesMap(relationIds),
+    getConfidenceMap(relationIds, "relation"),
+  ]);
+
+  return {
+    data: rows.map((row) =>
+      mapRowToPublicRelationRecord(row, sourcesMap, confidenceMap)
+    ),
+    total: count ?? rows.length,
+  };
+}
+
+/**
+ * Single relation detail for `GET /v2/relations/{id}`, including its full
+ * source chain + confidence. Returns null for an unknown id or on error —
+ * the route layer maps that to 404 NOT_FOUND.
+ */
+export async function getRelationRecordById(
+  id: string
+): Promise<PublicRelationRecord | null> {
+  const supabase = createServerClient();
+
+  const { data, error } = await supabase
+    .from("afrik_people_relations")
+    .select("*")
+    .eq("id", id)
+    .maybeSingle();
+
+  if (error) {
+    logger.error(`relations.getRelationRecordById failed for ${id}`, error);
+    return null;
+  }
+  if (!data) return null;
+
+  const row = data as RelationRow;
+  const [sourcesMap, confidenceMap] = await Promise.all([
+    getSourcesMap([id]),
+    getConfidenceMap([id], "relation"),
+  ]);
+
+  return mapRowToPublicRelationRecord(row, sourcesMap, confidenceMap);
 }
