@@ -6,6 +6,7 @@ import {
   type FrozenDoctrineReference,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { RecordPanel } from "@/components/fiche/RecordPanel";
 import { CountryDetailViewV2 } from "@/components/detail/CountryDetailViewV2";
 import { getCountryById } from "@/api/v2/services/countryService";
 import { mapCountryDetail } from "@/lib/afrikDetailMapper";
@@ -169,14 +170,16 @@ export default async function PaysSlugPage({
   return (
     <PageLayout language="fr" sectionName="Pays">
       <div className="container mx-auto max-w-4xl px-4 py-8">
-        <CountryDetailViewV2
-          countryId={parsed.slug}
-          language="fr"
-          initialData={mapCountryDetail(country)}
-          initialSourceFlag={sourceFlags.length > 0}
-          fromPeopleName={navigationContext.fromPeopleName}
-          fromPeopleId={navigationContext.fromPeopleId}
-        />
+        <RecordPanel>
+          <CountryDetailViewV2
+            countryId={parsed.slug}
+            language="fr"
+            initialData={mapCountryDetail(country)}
+            initialSourceFlag={sourceFlags.length > 0}
+            fromPeopleName={navigationContext.fromPeopleName}
+            fromPeopleId={navigationContext.fromPeopleId}
+          />
+        </RecordPanel>
       </div>
     </PageLayout>
   );
