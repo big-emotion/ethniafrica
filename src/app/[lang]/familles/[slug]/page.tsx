@@ -6,6 +6,7 @@ import {
   type FrozenDoctrineReference,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { RecordPanel } from "@/components/fiche/RecordPanel";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
 import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
 import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
@@ -158,17 +159,19 @@ export default async function FamillesSlugPage({
   // Live version (revalidate = 3600 at segment level)
   return (
     <PageLayout language="fr" sectionName="Familles linguistiques">
-      <LanguageFamilyDetailViewV2
-        family={family}
-        classificationTree={
-          tree ? (
-            <FamilyClassificationTreeSection
-              familyId={parsed.slug}
-              tree={tree}
-            />
-          ) : undefined
-        }
-      />
+      <RecordPanel>
+        <LanguageFamilyDetailViewV2
+          family={family}
+          classificationTree={
+            tree ? (
+              <FamilyClassificationTreeSection
+                familyId={parsed.slug}
+                tree={tree}
+              />
+            ) : undefined
+          }
+        />
+      </RecordPanel>
     </PageLayout>
   );
 }

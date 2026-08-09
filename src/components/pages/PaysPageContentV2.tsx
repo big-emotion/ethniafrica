@@ -5,6 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { RecordPanel } from "@/components/fiche/RecordPanel";
 import { CountryView } from "@/components/views/CountryView";
 import { CountryDetailViewV2 } from "@/components/detail/CountryDetailViewV2";
 import { Card } from "@/components/ui/card";
@@ -39,6 +40,7 @@ function DefaultMessage({ language }: { language: string }) {
   );
 }
 
+// @req REQ-091
 export function PaysPageContentV2() {
   const { language, setLanguage } = useLanguage();
   const router = useRouter();
@@ -98,13 +100,15 @@ export function PaysPageContentV2() {
               className="min-h-screen"
               style={{ background: "var(--country-bg)" }}
             >
-              <CountryDetailViewV2
-                countryId={selectedCountry}
-                language={language}
-                initialSourceFlag={sourceFlag}
-                onPeopleClick={handlePeopleClick}
-                onBack={handleBack}
-              />
+              <RecordPanel>
+                <CountryDetailViewV2
+                  countryId={selectedCountry}
+                  language={language}
+                  initialSourceFlag={sourceFlag}
+                  onPeopleClick={handlePeopleClick}
+                  onBack={handleBack}
+                />
+              </RecordPanel>
             </div>
           ) : (
             <CountryView
@@ -122,13 +126,15 @@ export function PaysPageContentV2() {
             style={{ background: "var(--country-bg)" }}
           >
             {selectedCountry ? (
-              <CountryDetailViewV2
-                countryId={selectedCountry}
-                language={language}
-                initialSourceFlag={sourceFlag}
-                onPeopleClick={handlePeopleClick}
-                onBack={handleBack}
-              />
+              <RecordPanel>
+                <CountryDetailViewV2
+                  countryId={selectedCountry}
+                  language={language}
+                  initialSourceFlag={sourceFlag}
+                  onPeopleClick={handlePeopleClick}
+                  onBack={handleBack}
+                />
+              </RecordPanel>
             ) : (
               <DefaultMessage language={language} />
             )}
