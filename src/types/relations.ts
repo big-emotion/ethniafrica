@@ -37,3 +37,46 @@ export interface RelationRecord {
   description: string;
   sources: RelationSource[];
 }
+
+/**
+ * Read-time shapes for the relations service/query layer (Epic 11, Story
+ * 11.6). SourcedRelation and DerivedLinguisticLink are deliberately disjoint
+ * types — the sourced/derived distinction is structural (FR73), not a flag
+ * on a shared interface. DerivedLinguisticLink has no period, description,
+ * or sources: it is computed from the AFRIK hierarchy, never stored.
+ */
+
+export interface RelationNeighbor {
+  id: PeopleId;
+  nameMain: string;
+  languageFamilyId: string;
+}
+
+export interface RelationConfidence {
+  score: number;
+  sourceCount: number | null;
+}
+
+export interface RelationSourceRef {
+  id: string;
+  title: string;
+  url: string | null;
+  tier: string | null;
+}
+
+export interface SourcedRelation {
+  id: string; // REL_xxxxx
+  relationType: RelationType;
+  direction: RelationDirection;
+  period: RelationPeriod;
+  description: string;
+  sources: RelationSourceRef[];
+  confidence: RelationConfidence | null;
+  neighbor: RelationNeighbor;
+}
+
+export interface DerivedLinguisticLink {
+  derived: true;
+  basis: "sharedLanguageFamily";
+  neighbor: RelationNeighbor;
+}
