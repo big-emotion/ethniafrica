@@ -80,3 +80,21 @@ export interface DerivedLinguisticLink {
   basis: "sharedLanguageFamily";
   neighbor: RelationNeighbor;
 }
+
+/**
+ * Read-time shape for the non-ego-centered `/v2/relations` list and
+ * `/v2/relations/{id}` detail endpoints (Epic 11, Story 11.7, ETNI-508).
+ * Unlike SourcedRelation, this is not centered on one people: both sides are
+ * exposed directly as peopleIdA/peopleIdB rather than a single `neighbor`.
+ */
+export interface PublicRelationRecord {
+  id: string; // REL_xxxxx
+  relationType: RelationType;
+  peopleIdA: PeopleId;
+  peopleIdB: PeopleId;
+  direction: RelationDirection;
+  period: RelationPeriod;
+  description: string;
+  sources: RelationSourceRef[];
+  confidence: RelationConfidence | null;
+}

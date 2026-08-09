@@ -12,14 +12,29 @@
 import {
   getRelationsForPeople,
   getDerivedLinguisticLinks,
+  peopleExists,
+  listRelationRecords,
+  getRelationRecordById,
+  type ListRelationRecordsFilters,
 } from "@/lib/supabase/queries/afrik/relations";
-import type { SourcedRelation, DerivedLinguisticLink } from "@/types/relations";
+import type {
+  SourcedRelation,
+  DerivedLinguisticLink,
+  PublicRelationRecord,
+} from "@/types/relations";
 
 const DEFAULT_DERIVED_LIMIT = 24;
 
 export interface EgoNetwork {
   sourced: SourcedRelation[];
   derived: DerivedLinguisticLink[];
+}
+
+export class PeopleNotFoundError extends Error {
+  constructor(pplId: string) {
+    super(`People not found: ${pplId}`);
+    this.name = "PeopleNotFoundError";
+  }
 }
 
 /**
@@ -45,4 +60,39 @@ export async function getEgoNetwork(
       (link) => !sourcedNeighborIds.has(link.neighbor.id)
     ),
   };
+}
+
+/**
+ * Ego network for `GET /v2/peoples/{id}/relations`, 404-checked. getEgoNetwork
+ * itself never distinguishes "unknown people" from "known, zero relations"
+ * (by design — Story 11.6); this wrapper adds that check for the route layer
+ * without changing getEgoNetwork's existing contract.
+ */
+export async function getEgoNetworkOrNotFound(
+  pplId: string,
+  derivedLimit: number = DEFAULT_DERIVED_LIMIT
+): Promise<EgoNetwork> {
+  if (!(await peopleExists(pplId))) {
+    throw new PeopleNotFoundError(pplId);
+  }
+  return getEgoNetwork(pplId, derivedLimit);
+}
+
+/**
+ * Paginated, filterable relation records for `GET /v2/relations`.
+ */
+export async function listRelations(
+  filters: ListRelationRecordsFilters
+): Promise<{ data: PublicRelationRecord[]; total: number }> {
+  return listRelationRecords(filters);
+}
+
+/**
+ * Single relation detail for `GET /v2/relations/{id}`. Returns null for an
+ * unknown id — the handler maps that to 404 NOT_FOUND.
+ */
+export async function getRelationById(
+  id: string
+): Promise<PublicRelationRecord | null> {
+  return getRelationRecordById(id);
 }

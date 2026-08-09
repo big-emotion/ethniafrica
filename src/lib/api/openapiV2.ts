@@ -86,6 +86,11 @@ const options: swaggerJsdoc.Options = {
         description:
           "Comparison of 2–3 entities of the same type (peoples, countries, or language families), reusing the same assembly path as the SSR comparison page (FR64, AR8, AR9, NFR38).",
       },
+      {
+        name: "API v2 - Relations",
+        description:
+          "Sourced inter-people relations plus read-time-computed derived linguistic links (Epic 11, FR73).",
+      },
     ],
     paths: {
       "/api/v2/reference-library": {
@@ -1357,6 +1362,183 @@ const options: swaggerJsdoc.Options = {
           type: "object",
           properties: {
             data: { $ref: "#/components/schemas/PeopleFragmentation" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        // -----------------------------------------------------------------
+        // Epic 11 — Hidden Links Graph: relations (Story 11.7, ETNI-508)
+        // -----------------------------------------------------------------
+        RelationNeighbor: {
+          type: "object",
+          properties: {
+            id: { type: "string", example: "PPL_EWE" },
+            nameMain: { type: "string" },
+            languageFamilyId: { type: "string", example: "FLG_KWA" },
+          },
+          required: ["id", "nameMain", "languageFamilyId"],
+        },
+        RelationPeriod: {
+          type: "object",
+          properties: {
+            startYear: { type: ["integer", "null"] },
+            endYear: { type: ["integer", "null"] },
+            label: { type: "string" },
+          },
+          required: ["startYear", "endYear", "label"],
+        },
+        RelationConfidence: {
+          type: ["object", "null"],
+          properties: {
+            score: { type: "number", minimum: 0, maximum: 100 },
+            sourceCount: { type: ["integer", "null"], minimum: 0 },
+          },
+          required: ["score", "sourceCount"],
+        },
+        SourcedRelationItem: {
+          type: "object",
+          description:
+            "Sourced (never derived) relation, from the perspective of the ego people (Story 11.7).",
+          properties: {
+            relationId: { type: "string", example: "REL_SONINKE_MANDE_TRADE" },
+            type: {
+              type: "string",
+              enum: ["migratory", "commercial", "religious"],
+            },
+            direction: {
+              type: "string",
+              enum: ["a_to_b", "b_to_a", "bidirectional"],
+            },
+            otherPeople: { $ref: "#/components/schemas/RelationNeighbor" },
+            period: { $ref: "#/components/schemas/RelationPeriod" },
+            description: { type: "string" },
+            confidence: { $ref: "#/components/schemas/RelationConfidence" },
+          },
+          required: [
+            "relationId",
+            "type",
+            "direction",
+            "otherPeople",
+            "period",
+            "description",
+            "confidence",
+          ],
+        },
+        DerivedRelationItem: {
+          type: "object",
+          description:
+            "Read-time-computed linguistic link (FR73) — structurally distinct from a sourced relation, never a flag on a shared shape.",
+          properties: {
+            type: { type: "string", enum: ["linguistic"] },
+            derived: { type: "boolean", enum: [true] },
+            basis: { type: "string", enum: ["sharedLanguageFamily"] },
+            languageFamilyId: { type: "string", example: "FLG_KWA" },
+            otherPeople: { $ref: "#/components/schemas/RelationNeighbor" },
+          },
+          required: [
+            "type",
+            "derived",
+            "basis",
+            "languageFamilyId",
+            "otherPeople",
+          ],
+        },
+        EgoNetwork: {
+          type: "object",
+          properties: {
+            peopleId: { type: "string", example: "PPL_EWE" },
+            sourced: {
+              type: "array",
+              items: { $ref: "#/components/schemas/SourcedRelationItem" },
+            },
+            derived: {
+              type: "array",
+              items: { $ref: "#/components/schemas/DerivedRelationItem" },
+            },
+          },
+          required: ["peopleId", "sourced", "derived"],
+        },
+        EgoNetworkResponse: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/EgoNetwork" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        RelationSourceRef: {
+          type: "object",
+          properties: {
+            id: { type: "string" },
+            title: { type: "string" },
+            url: { type: ["string", "null"] },
+            tier: { type: ["string", "null"] },
+          },
+          required: ["id", "title", "url", "tier"],
+        },
+        RelationRecord: {
+          type: "object",
+          description:
+            "Non-ego-centered relation record — both sides exposed directly (peopleIdA/peopleIdB) rather than as a single neighbor (Story 11.7).",
+          properties: {
+            id: { type: "string", example: "REL_SONINKE_MANDE_TRADE" },
+            relationType: {
+              type: "string",
+              enum: ["migratory", "commercial", "religious"],
+            },
+            peopleIdA: { type: "string", example: "PPL_SONINKE" },
+            peopleIdB: { type: "string", example: "PPL_MANDE" },
+            direction: {
+              type: "string",
+              enum: ["a_to_b", "b_to_a", "bidirectional"],
+            },
+            period: { $ref: "#/components/schemas/RelationPeriod" },
+            description: { type: "string" },
+            sources: {
+              type: "array",
+              items: { $ref: "#/components/schemas/RelationSourceRef" },
+            },
+            confidence: { $ref: "#/components/schemas/RelationConfidence" },
+          },
+          required: [
+            "id",
+            "relationType",
+            "peopleIdA",
+            "peopleIdB",
+            "direction",
+            "period",
+            "description",
+            "sources",
+            "confidence",
+          ],
+        },
+        RelationListResponse: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/RelationRecord" },
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        RelationDetailResponse: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/RelationRecord" },
             meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {
               type: "array",

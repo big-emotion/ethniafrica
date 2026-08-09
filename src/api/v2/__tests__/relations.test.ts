@@ -8,14 +8,30 @@ import {
 vi.mock("@/lib/supabase/queries/afrik/relations", () => ({
   getRelationsForPeople: vi.fn(),
   getDerivedLinguisticLinks: vi.fn(),
+  peopleExists: vi.fn(),
+  listRelationRecords: vi.fn(),
+  getRelationRecordById: vi.fn(),
 }));
 
-import { getEgoNetwork } from "@/api/v2/services/relations";
+import {
+  getEgoNetwork,
+  getEgoNetworkOrNotFound,
+  listRelations,
+  getRelationById,
+  PeopleNotFoundError,
+} from "@/api/v2/services/relations";
 import {
   getRelationsForPeople,
   getDerivedLinguisticLinks,
+  peopleExists,
+  listRelationRecords,
+  getRelationRecordById,
 } from "@/lib/supabase/queries/afrik/relations";
-import type { SourcedRelation, DerivedLinguisticLink } from "@/types/relations";
+import type {
+  SourcedRelation,
+  DerivedLinguisticLink,
+  PublicRelationRecord,
+} from "@/types/relations";
 
 function sourcedRelation(
   overrides: Partial<SourcedRelation> = {}
@@ -40,6 +56,23 @@ function derivedLink(
     derived: true,
     basis: "sharedLanguageFamily",
     neighbor: { id: "PPL_D", nameMain: "D", languageFamilyId: "FLG_X" },
+    ...overrides,
+  };
+}
+
+function publicRelationRecord(
+  overrides: Partial<PublicRelationRecord> = {}
+): PublicRelationRecord {
+  return {
+    id: "REL_TEST",
+    relationType: "commercial",
+    peopleIdA: "PPL_A",
+    peopleIdB: "PPL_B",
+    direction: "bidirectional",
+    period: { startYear: 1400, endYear: 1900, label: "test" },
+    description: "test",
+    sources: [],
+    confidence: null,
     ...overrides,
   };
 }
@@ -174,5 +207,100 @@ describe("relations service — two-query ego network (Story 11.6, ETNI-507)", (
 
     expect(result.sourced).toEqual([]);
     expect(result.derived).toEqual([]);
+  });
+});
+
+describe("getEgoNetworkOrNotFound — 404 for unknown people (Story 11.7, ETNI-508)", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  // @req REQ-097
+  it("throws PeopleNotFoundError for an unknown people id, without calling the relation queries", async () => {
+    vi.mocked(peopleExists).mockResolvedValue(false);
+
+    await expect(getEgoNetworkOrNotFound("PPL_UNKNOWN")).rejects.toThrow(
+      PeopleNotFoundError
+    );
+    expect(getRelationsForPeople).not.toHaveBeenCalled();
+    expect(getDerivedLinguisticLinks).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-097
+  it("returns the ego network for a known people, even with zero relations", async () => {
+    vi.mocked(peopleExists).mockResolvedValue(true);
+    vi.mocked(getRelationsForPeople).mockResolvedValue([]);
+    vi.mocked(getDerivedLinguisticLinks).mockResolvedValue([]);
+
+    const result = await getEgoNetworkOrNotFound("PPL_LONELY");
+
+    expect(result).toEqual({ sourced: [], derived: [] });
+  });
+
+  // @req REQ-097
+  it("passes the derived-link limit through", async () => {
+    vi.mocked(peopleExists).mockResolvedValue(true);
+    vi.mocked(getRelationsForPeople).mockResolvedValue([]);
+    vi.mocked(getDerivedLinguisticLinks).mockResolvedValue([]);
+
+    await getEgoNetworkOrNotFound("PPL_A", 10);
+
+    expect(getDerivedLinguisticLinks).toHaveBeenCalledWith("PPL_A", 10);
+  });
+});
+
+describe("listRelations (Story 11.7, ETNI-508)", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  // @req REQ-097
+  it("delegates to the query layer and returns its result verbatim", async () => {
+    vi.mocked(listRelationRecords).mockResolvedValue({
+      data: [publicRelationRecord()],
+      total: 1,
+    });
+
+    const result = await listRelations({ limit: 20, offset: 0 });
+
+    expect(listRelationRecords).toHaveBeenCalledWith({ limit: 20, offset: 0 });
+    expect(result.data).toHaveLength(1);
+    expect(result.total).toBe(1);
+  });
+
+  // @req REQ-097
+  it("returns an empty result for an empty corpus", async () => {
+    vi.mocked(listRelationRecords).mockResolvedValue({ data: [], total: 0 });
+
+    const result = await listRelations({ limit: 20, offset: 0 });
+
+    expect(result).toEqual({ data: [], total: 0 });
+  });
+});
+
+describe("getRelationById (Story 11.7, ETNI-508)", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  // @req REQ-097
+  it("returns the record when found", async () => {
+    vi.mocked(getRelationRecordById).mockResolvedValue(
+      publicRelationRecord({ id: "REL_A_B" })
+    );
+
+    const result = await getRelationById("REL_A_B");
+
+    expect(getRelationRecordById).toHaveBeenCalledWith("REL_A_B");
+    expect(result?.id).toBe("REL_A_B");
+  });
+
+  // @req REQ-097
+  it("returns null for an unknown relation id", async () => {
+    vi.mocked(getRelationRecordById).mockResolvedValue(null);
+
+    const result = await getRelationById("REL_UNKNOWN");
+
+    expect(result).toBeNull();
   });
 });
