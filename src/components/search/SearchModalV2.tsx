@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Search, Users, MapPin, Loader2, Languages } from "lucide-react";
+import { Search, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -13,9 +13,16 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { EmptyState } from "@/components/ui/EmptyState";
+import { CHARTER_HOVER_LIFT } from "@/components/ui/charter-motion";
+import { cn } from "@/lib/utils";
 import { Language } from "@/types/shared";
 import { getTranslation } from "@/lib/translations";
 import { search } from "@/lib/afrikLoader";
+import {
+  getSearchEntityLabel,
+  SearchEntityMark,
+} from "@/components/search/searchEntityAccent";
 import type { SearchResult, SearchEntityType } from "@/types/afrik-frontend";
 
 interface SearchModalV2Props {
@@ -97,36 +104,6 @@ export const SearchModalV2 = ({
     };
   };
 
-  const getResultTypeLabel = (type: SearchEntityType) => {
-    switch (type) {
-      case "languageFamily":
-        return "Famille linguistique";
-      case "people":
-        return "Peuple";
-      case "country":
-        return "Pays";
-      case "language":
-        return "Langue";
-      default:
-        return type;
-    }
-  };
-
-  const getResultIcon = (type: SearchEntityType) => {
-    switch (type) {
-      case "languageFamily":
-        return <Languages className="h-5 w-5 text-primary" />;
-      case "people":
-        return <Users className="h-5 w-5 text-primary" />;
-      case "country":
-        return <MapPin className="h-5 w-5 text-primary" />;
-      case "language":
-        return <Languages className="h-5 w-5 text-primary" />;
-      default:
-        return <Search className="h-5 w-5 text-primary" />;
-    }
-  };
-
   const tabLabels = getTabLabels();
 
   const dialogTitle = "Recherche";
@@ -145,18 +122,23 @@ export const SearchModalV2 = ({
     return "Aucun résultat trouvé";
   };
 
+  const hasQuery = searchQuery.trim().length >= 2;
+  const showNoResultsGuidance = !loading && hasQuery && results.length === 0;
+  const showPrompt = !loading && !hasQuery && results.length === 0;
+
   return (
     <Dialog open={open} onOpenChange={onClose}>
       <DialogContent className="max-w-2xl h-[80vh] p-0 flex flex-col">
-        <DialogHeader className="px-6 pt-6 pb-4 border-b">
-          <DialogTitle className="text-xl font-semibold">
-            {dialogTitle}
-          </DialogTitle>
+        <DialogHeader className="px-6 pt-6 pb-4 border-b border-afh-border">
+          <DialogTitle>{dialogTitle}</DialogTitle>
         </DialogHeader>
 
         <div className="px-6 pt-4 pb-2 space-y-4">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+            <Search
+              className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-afh-text-muted"
+              aria-hidden="true"
+            />
             <Input
               type="text"
               placeholder={getPlaceholder()}
@@ -171,13 +153,31 @@ export const SearchModalV2 = ({
             value={activeTab}
             onValueChange={(v) => setActiveTab(v as SearchEntityType | "all")}
           >
-            <TabsList className="grid grid-cols-4 w-full">
-              <TabsTrigger value="all">{tabLabels.all}</TabsTrigger>
-              <TabsTrigger value="languageFamily">
+            <TabsList className="flex flex-wrap h-auto w-full gap-2 bg-transparent p-0">
+              <TabsTrigger
+                value="all"
+                className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
+              >
+                {tabLabels.all}
+              </TabsTrigger>
+              <TabsTrigger
+                value="languageFamily"
+                className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
+              >
                 {tabLabels.families}
               </TabsTrigger>
-              <TabsTrigger value="people">{tabLabels.peoples}</TabsTrigger>
-              <TabsTrigger value="country">{tabLabels.countries}</TabsTrigger>
+              <TabsTrigger
+                value="people"
+                className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
+              >
+                {tabLabels.peoples}
+              </TabsTrigger>
+              <TabsTrigger
+                value="country"
+                className="rounded-full border border-afh-border px-4 data-[state=active]:border-transparent data-[state=active]:bg-[var(--accent-tint)]"
+              >
+                {tabLabels.countries}
+              </TabsTrigger>
             </TabsList>
           </Tabs>
         </div>
@@ -185,49 +185,59 @@ export const SearchModalV2 = ({
         <ScrollArea className="flex-1 px-6 pb-6">
           {loading ? (
             <div className="flex items-center justify-center h-64">
-              <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+              <Loader2
+                className="h-6 w-6 animate-spin text-afh-text-muted"
+                aria-label="Chargement en cours"
+              />
             </div>
-          ) : results.length === 0 ? (
-            <div className="flex flex-col items-center justify-center h-64 text-center">
-              <Search className="h-12 w-12 text-muted-foreground mb-4 opacity-50" />
-              <p className="text-muted-foreground">{getNoResultsText()}</p>
+          ) : showNoResultsGuidance ? (
+            <EmptyState
+              message={`Aucun résultat pour « ${searchQuery.trim()} ».`}
+              variant="search"
+              lang={language}
+            />
+          ) : showPrompt ? (
+            <div className="flex flex-col items-center justify-center h-64 text-center gap-2">
+              <Search
+                className="h-12 w-12 text-afh-text-muted opacity-50"
+                aria-hidden="true"
+              />
+              <p className="text-afh-text-soft">{getNoResultsText()}</p>
             </div>
           ) : (
-            <div className="space-y-2">
+            <div className="space-y-2" data-testid="search-results-list">
               {results.map((result, index) => (
                 <Card
                   key={`${result.type}-${result.id}-${index}`}
-                  className="p-4 hover:shadow-md cursor-pointer transition-all"
+                  className={cn("p-4 cursor-pointer", CHARTER_HOVER_LIFT)}
                   onClick={() => handleResultClick(result)}
                 >
-                  <div className="flex items-start gap-3">
-                    <div className="mt-1">{getResultIcon(result.type)}</div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-base mb-1">
-                        {result.name}
-                      </h3>
-                      <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <Badge variant="secondary" className="text-xs">
-                          {getResultTypeLabel(result.type)}
-                        </Badge>
-                        {result.languageFamilyName && (
-                          <Badge variant="outline" className="text-xs">
-                            {result.languageFamilyName}
-                          </Badge>
-                        )}
-                      </div>
-                      {result.snippet && (
-                        <p className="text-sm text-muted-foreground line-clamp-2">
-                          {result.snippet}
-                        </p>
-                      )}
-                      {result.population !== undefined && (
-                        <p className="text-sm text-muted-foreground mt-1">
-                          {t.population}: {formatNumber(result.population)}
-                        </p>
-                      )}
-                    </div>
+                  <h3 className="font-semibold text-base mb-1">
+                    {result.name}
+                  </h3>
+                  <div className="flex flex-wrap items-center gap-2 mb-2">
+                    <span className="flex items-center gap-1.5">
+                      <SearchEntityMark type={result.type} />
+                      <Badge variant="secondary" className="text-xs">
+                        {getSearchEntityLabel(result.type)}
+                      </Badge>
+                    </span>
+                    {result.languageFamilyName && (
+                      <Badge variant="outline" className="text-xs">
+                        {result.languageFamilyName}
+                      </Badge>
+                    )}
                   </div>
+                  {result.snippet && (
+                    <p className="text-sm text-afh-text-soft line-clamp-2">
+                      {result.snippet}
+                    </p>
+                  )}
+                  {result.population !== undefined && (
+                    <p className="text-sm text-afh-text-soft mt-1">
+                      {t.population}: {formatNumber(result.population)}
+                    </p>
+                  )}
                 </Card>
               ))}
             </div>
