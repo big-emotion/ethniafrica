@@ -1,8 +1,10 @@
 import type {
   ClassificationStatus,
   CountryDetail,
+  LanguageFamilyDetail,
   PeopleDetail,
 } from "@/types/afrik-frontend";
+import type { LanguageFamily } from "@/types/afrik";
 import { getFrenchCountryCommonName } from "@/lib/countryNames";
 
 interface PeopleDetailRecord {
@@ -60,6 +62,7 @@ function serializeDate(value?: string | Date): string | undefined {
   return value instanceof Date ? value.toISOString() : value;
 }
 
+// @req REQ-019
 export function mapPeopleDetail(apiData: PeopleDetailRecord): PeopleDetail {
   return {
     id: apiData.id,
@@ -83,6 +86,7 @@ export function mapPeopleDetail(apiData: PeopleDetailRecord): PeopleDetail {
   };
 }
 
+// @req REQ-019
 export function mapCountryDetail(apiData: CountryDetailRecord): CountryDetail {
   const nameFr = apiData.nameFr ?? apiData.name_fr;
   const nameOfficial = apiData.nameOfficial ?? apiData.name_official ?? nameFr;
@@ -103,5 +107,38 @@ export function mapCountryDetail(apiData: CountryDetailRecord): CountryDetail {
     historicalFacts: apiData.content?.historicalFacts,
     sources: apiData.content?.sources,
     demographics: apiData.content?.demographics,
+  };
+}
+
+/**
+ * Flattens the stored family entity into the detail view the fiche panels read.
+ *
+ * Unlike its siblings above it takes the typed `LanguageFamily` rather than a
+ * loose API record: its only caller is the familles route, which reads through
+ * `getLanguageFamilyById` and so never sees the snake_case wire shape.
+ */
+// @req REQ-091
+export function mapLanguageFamilyDetail(
+  family: LanguageFamily
+): LanguageFamilyDetail {
+  return {
+    id: family.id,
+    nameFr: family.nameFr,
+    nameEn: family.nameEn,
+    createdAt: serializeDate(family.createdAt),
+    updatedAt: serializeDate(family.updatedAt),
+    classificationStatus: family.classificationStatus ?? null,
+    decolonialHeader: family.content?.decolonialHeader,
+    generalInfo: family.content?.generalInfo,
+    // The top-level column is canonical: `getLanguageFamilyById` derives it
+    // from a live query on afrik_peoples and mirrors it into `content` only as
+    // a legacy compatibility copy (documented as such in openapiV2.ts). The
+    // JSONB copy still backs families that predate that enrichment.
+    associatedPeoples:
+      family.associatedPeoples ?? family.content?.associatedPeoples,
+    linguisticCharacteristics: family.content?.linguisticCharacteristics,
+    historyAndOrigins: family.content?.historyAndOrigins,
+    distribution: family.content?.distribution,
+    sources: family.content?.sources,
   };
 }

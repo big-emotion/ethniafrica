@@ -134,6 +134,36 @@ function readFamilyScale(payload: LanguageFamilyDetail): ScaleContent | null {
   };
 }
 
+/** The entity half of ScalePanelProps — what the scale figure is read from. */
+export type ScaleSubject =
+  | { entityType: "people"; payload: PeopleDetail }
+  | { entityType: "country"; payload: CountryDetail }
+  | { entityType: "language-family"; payload: LanguageFamilyDetail };
+
+function readScale(subject: ScaleSubject): ScaleContent | null {
+  switch (subject.entityType) {
+    case "people":
+      return readPeopleScale(subject.payload);
+    case "country":
+      return readCountryScale(subject.payload);
+    case "language-family":
+      return readFamilyScale(subject.payload);
+  }
+}
+
+/**
+ * Whether this entity has a scale figure the panel can actually show.
+ *
+ * Exported so the panel registry can drop the chapter — and with it the
+ * `#fiche-scale` journey anchor — on the exact rule ScalePanel applies to
+ * itself. Without this the registry would either duplicate the rule (two
+ * copies to drift apart) or emit an anchor that scrolls to nothing.
+ */
+export function hasScaleContent(subject: ScaleSubject): boolean {
+  const content = readScale(subject);
+  return Boolean(content?.sourceLabel);
+}
+
 export type ScalePanelProps =
   | {
       entityType: "people";
@@ -161,18 +191,7 @@ export type ScalePanelProps =
 export function ScalePanel(props: ScalePanelProps) {
   const { size, side, className } = props;
 
-  let content: ScaleContent | null;
-  switch (props.entityType) {
-    case "people":
-      content = readPeopleScale(props.payload);
-      break;
-    case "country":
-      content = readCountryScale(props.payload);
-      break;
-    case "language-family":
-      content = readFamilyScale(props.payload);
-      break;
-  }
+  const content = readScale(props as ScaleSubject);
 
   // A magnitude without a resolvable source is not a valid panel (FR99) —
   // gate before source is known, then again once source is checked.

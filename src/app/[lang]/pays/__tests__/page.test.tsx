@@ -64,16 +64,22 @@ vi.mock("@/components/detail/CountryDetailViewV2", () => ({
     countryId,
     initialData,
     initialSourceFlag,
+    fromPeopleName,
+    fromPeopleId,
   }: {
     countryId: string;
     initialData?: { nameFr: string };
     initialSourceFlag?: boolean;
+    fromPeopleName?: string;
+    fromPeopleId?: string;
   }) => (
     <div
       data-testid="country-detail-live"
       data-country-id={countryId}
       data-country-name={initialData?.nameFr}
       data-source-flag={initialSourceFlag}
+      data-from-people-name={fromPeopleName}
+      data-from-people-id={fromPeopleId}
     />
   ),
 }));
@@ -104,10 +110,64 @@ vi.mock("@/components/source-transparency/PinnedVersionBanner", () => ({
 }));
 
 import PaysSlugPage from "../[slug]/page";
+import { derivePanelSequence } from "@/lib/fichePanels";
+import { mapCountryDetail } from "@/lib/afrikDetailMapper";
 
-async function renderPage(slug: string, lang = "fr") {
+/**
+ * A country row carrying every content section `derivePanelSequence` gates on,
+ * so the composer yields the full country inventory and the assertions below
+ * isolate what the panel registry itself declines to render.
+ */
+const NIGERIA_ROW = {
+  id: "NGA",
+  nameFr: "Nigéria",
+  nameOfficial: "République fédérale du Nigéria",
+  content: {
+    historicalNames: { precolonial: "Oyo, Bénin, Kanem-Bornou" },
+    majorPeoples: [{ name: "Yoruba" }],
+    historicalFacts: { colonization: "Protectorat britannique" },
+    culture: { dominantReligions: "Islam, christianisme" },
+    demographics: {
+      peoples: [{ name: "Yoruba", population: 38_000_000 }],
+    },
+    sources: ["CIA World Factbook, 2025"],
+  },
+};
+
+/** ScalePanel reads the reduced-motion preference before it animates. */
+function stubReducedMotion() {
+  Object.defineProperty(window, "matchMedia", {
+    writable: true,
+    configurable: true,
+    value: vi.fn().mockImplementation((query: string) => ({
+      matches: query === "(prefers-reduced-motion: reduce)",
+      media: query,
+      onchange: null,
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+    })),
+  });
+}
+
+function renderedAnchors(container: HTMLElement): string[] {
+  return Array.from(container.querySelectorAll("section[id^='fiche-']")).map(
+    (section) => section.id
+  );
+}
+
+async function renderPage(
+  slug: string,
+  lang = "fr",
+  navigationContext?: { fromPeopleName?: string; fromPeopleId?: string }
+) {
   const ui = await PaysSlugPage({
     params: Promise.resolve({ lang, slug }),
+    searchParams: navigationContext
+      ? Promise.resolve(navigationContext)
+      : undefined,
   });
   return render(ui);
 }
@@ -115,12 +175,8 @@ async function renderPage(slug: string, lang = "fr") {
 describe("/[lang]/pays/[slug] page", () => {
   beforeEach(() => {
     vi.clearAllMocks();
-    mockGetCountryById.mockResolvedValue({
-      id: "NGA",
-      nameFr: "Nigeria",
-      nameOfficial: "République fédérale du Nigeria",
-      content: {},
-    });
+    stubReducedMotion();
+    mockGetCountryById.mockResolvedValue(NIGERIA_ROW);
     mockGetActiveSourceFlags.mockResolvedValue([]);
   });
 
@@ -206,7 +262,7 @@ describe("/[lang]/pays/[slug] page", () => {
     );
     expect(screen.getByTestId("country-detail-live")).toHaveAttribute(
       "data-country-name",
-      "Nigeria"
+      "Nigéria"
     );
     expect(mockGetCountryById).toHaveBeenCalledWith("NGA");
     expect(mockGetActiveSourceFlags).toHaveBeenCalledWith("country", "NGA");
@@ -223,5 +279,88 @@ describe("/[lang]/pays/[slug] page", () => {
         params: Promise.resolve({ lang: "fr", slug: "NGA@latest" }),
       })
     ).rejects.toThrow("NEXT_REDIRECT:/fr/pays/NGA@v13");
+  });
+
+  // @req REQ-091
+  it("carries the origin-people navigation context into the detail view", async () => {
+    await renderPage("NGA", "fr", {
+      fromPeopleName: "Yoruba",
+      fromPeopleId: "PPL_YORUBA",
+    });
+
+    const detailView = screen.getByTestId("country-detail-live");
+    expect(detailView).toHaveAttribute("data-from-people-name", "Yoruba");
+    expect(detailView).toHaveAttribute("data-from-people-id", "PPL_YORUBA");
+  });
+});
+
+describe("/[lang]/pays/[slug] — panel sequence", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    stubReducedMotion();
+    mockGetCountryById.mockResolvedValue(NIGERIA_ROW);
+    mockGetActiveSourceFlags.mockResolvedValue([]);
+  });
+
+  // @req REQ-091
+  it("renders the live fiche as the panel sequence, record chapter last", async () => {
+    const { container } = await renderPage("NGA");
+
+    expect(renderedAnchors(container)).toEqual(["fiche-scale", "fiche-record"]);
+    expect(
+      container
+        .querySelector("#fiche-record")
+        ?.contains(screen.getByTestId("country-detail-live"))
+    ).toBe(true);
+  });
+
+  // @req REQ-091
+  it("gates the record behind a single reading gate", async () => {
+    const { container } = await renderPage("NGA");
+
+    // A route that wrapped the detail view itself would nest one <details>
+    // inside the other, burying the dossier behind two disclosures.
+    expect(container.querySelectorAll("details")).toHaveLength(1);
+    expect(screen.getByText("Lire le dossier complet")).toBeInTheDocument();
+  });
+
+  // @req REQ-091
+  it("omits the anchors of the chapters no country panel exists for yet", async () => {
+    const { container } = await renderPage("NGA");
+
+    // Identity, territory, fragmentation and voices are people-shaped panels
+    // (stories 15.3–15.8 own their country counterparts): the composer asks
+    // for them, the registry declines, and no empty anchor is left behind.
+    const composed = derivePanelSequence(
+      "country",
+      mapCountryDetail(NIGERIA_ROW)
+    );
+    for (const kind of [
+      "identity",
+      "territory",
+      "fragmentation",
+      "voices",
+    ] as const) {
+      expect(composed).toContain(kind);
+      expect(container.querySelector(`#fiche-${kind}`)).toBeNull();
+    }
+  });
+
+  // @req REQ-019
+  // @req REQ-091
+  it("leaves the pinned snapshot free of any panel", async () => {
+    mockGetRevisionSnapshot.mockResolvedValueOnce({
+      data: { name_fr: "Nigéria" },
+      version: 12,
+      published_at: "2026-06-10T00:00:00Z",
+      confidence: 88,
+      doctrine: null,
+    });
+
+    const { container } = await renderPage("NGA@v12");
+
+    expect(screen.getByTestId("country-snapshot-view")).toBeInTheDocument();
+    expect(renderedAnchors(container)).toEqual([]);
+    expect(container.querySelectorAll("details")).toHaveLength(0);
   });
 });
