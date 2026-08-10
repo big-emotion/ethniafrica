@@ -17,6 +17,7 @@ import { ContributionFormFields } from "./ContributionFormFields";
 import { ReferenceLibraryFlow } from "./ReferenceLibraryFlow";
 import { Language } from "@/types/shared";
 import { getContributionSourcePolicyIssues } from "@/lib/validations/contribution";
+import { FormFieldError } from "@/components/forms/FormFieldError";
 
 interface ContributionFormProps {
   language: Language;
@@ -174,7 +175,7 @@ export function ContributionForm({
   };
 
   return (
-    <Card className="p-4 sm:p-6">
+    <Card className="rounded-afh-xl p-4 sm:p-6">
       <h2 className="mb-4 text-xl font-bold sm:text-2xl">{t.title}</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -307,7 +308,7 @@ export function ContributionForm({
           autoComplete="off"
         />
 
-        {error && <div className="text-red-500 text-sm">{error}</div>}
+        {error && <FormFieldError>{error}</FormFieldError>}
 
         {hasBlockedSource && (
           <div className="text-sm text-red-600" role="alert">
@@ -323,7 +324,11 @@ export function ContributionForm({
 
         {success && <div className="text-green-500 text-sm">{t.success}</div>}
 
-        <Button type="submit" disabled={loading || !type || hasBlockedSource}>
+        <Button
+          type="submit"
+          className="w-full md:w-auto"
+          disabled={loading || !type || hasBlockedSource}
+        >
           {loading ? t.submitting : t.submit}
         </Button>
       </form>
