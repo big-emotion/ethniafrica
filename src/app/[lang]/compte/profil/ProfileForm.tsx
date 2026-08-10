@@ -23,6 +23,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import { FormFieldError } from "@/components/forms/FormFieldError";
 import {
   eraseAccountAction,
   updateProfileAction,
@@ -85,7 +86,7 @@ export function ProfileForm({
 
   return (
     <div className="grid gap-6 min-[1200px]:grid-cols-[minmax(0,2fr)_minmax(20rem,1fr)]">
-      <Card>
+      <Card className="rounded-afh-xl">
         <CardHeader className="p-5 md:p-6">
           <CardTitle className="text-xl md:text-2xl">
             Informations du profil
@@ -129,16 +130,15 @@ export function ProfileForm({
             </div>
 
             {updateState.message ? (
-              <p
-                role="status"
-                className={
-                  updateState.success
-                    ? "text-sm text-green-700"
-                    : "text-sm text-destructive"
-                }
-              >
-                {updateState.message}
-              </p>
+              updateState.success ? (
+                <p role="status" className="text-sm text-green-700">
+                  {updateState.message}
+                </p>
+              ) : (
+                <FormFieldError role="status">
+                  {updateState.message}
+                </FormFieldError>
+              )
             ) : null}
 
             <Button
@@ -153,7 +153,7 @@ export function ProfileForm({
       </Card>
 
       <div className="space-y-6">
-        <Card>
+        <Card className="rounded-afh-xl">
           <CardHeader className="p-5 md:p-6">
             <CardTitle className="text-xl">Détails du compte</CardTitle>
           </CardHeader>
@@ -175,7 +175,7 @@ export function ProfileForm({
           </CardContent>
         </Card>
 
-        <Card className="border-destructive/50">
+        <Card className="rounded-afh-xl border-destructive/50">
           <CardHeader className="p-5 md:p-6">
             <CardTitle className="text-xl text-destructive">
               Supprimer le compte
@@ -221,16 +221,17 @@ export function ProfileForm({
                   </div>
 
                   {erasureState.message ? (
-                    <p
-                      role="status"
-                      className={
-                        erasureState.success
-                          ? "mb-4 text-sm text-green-700"
-                          : "mb-4 text-sm text-destructive"
-                      }
-                    >
-                      {erasureState.message}
-                    </p>
+                    erasureState.success ? (
+                      <p role="status" className="mb-4 text-sm text-green-700">
+                        {erasureState.message}
+                      </p>
+                    ) : (
+                      <div className="mb-4">
+                        <FormFieldError role="status" id="erasure-error">
+                          {erasureState.message}
+                        </FormFieldError>
+                      </div>
+                    )
                   ) : null}
 
                   <AlertDialogFooter>
