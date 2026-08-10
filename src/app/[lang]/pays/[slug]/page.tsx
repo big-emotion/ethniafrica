@@ -6,7 +6,7 @@ import {
   type FrozenDoctrineReference,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { RecordPanel } from "@/components/fiche/RecordPanel";
+import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { CountryDetailViewV2 } from "@/components/detail/CountryDetailViewV2";
 import { getCountryById } from "@/api/v2/services/countryService";
 import { mapCountryDetail } from "@/lib/afrikDetailMapper";
@@ -165,21 +165,34 @@ export default async function PaysSlugPage({
   }
 
   const navigationContext = (await searchParams) ?? {};
+  const countryDetail = mapCountryDetail(country);
 
-  // Live version (revalidate = 3600 at segment level)
+  // Live version (revalidate = 3600 at segment level).
+  //
+  // FicheSequence owns the whole composition, The Record included — the detail
+  // view goes in as `record` and comes back already behind the reading gate.
+  //
+  // No `relations` is passed: the ego-network service is people-centred and no
+  // country relation source exists, so the links chapter gates itself off. Most
+  // other chapters resolve to nothing too — country counterparts of the
+  // identity, territory, fragmentation and voices panels belong to stories
+  // 15.3–15.8. That narrowness is the FR98 invariant, not a gap to fill here.
   return (
     <PageLayout language="fr" sectionName="Pays">
       <div className="container mx-auto max-w-4xl px-4 py-8">
-        <RecordPanel>
-          <CountryDetailViewV2
-            countryId={parsed.slug}
-            language="fr"
-            initialData={mapCountryDetail(country)}
-            initialSourceFlag={sourceFlags.length > 0}
-            fromPeopleName={navigationContext.fromPeopleName}
-            fromPeopleId={navigationContext.fromPeopleId}
-          />
-        </RecordPanel>
+        <FicheSequence
+          context={{ entityType: "country", payload: countryDetail }}
+          record={
+            <CountryDetailViewV2
+              countryId={parsed.slug}
+              language="fr"
+              initialData={countryDetail}
+              initialSourceFlag={sourceFlags.length > 0}
+              fromPeopleName={navigationContext.fromPeopleName}
+              fromPeopleId={navigationContext.fromPeopleId}
+            />
+          }
+        />
       </div>
     </PageLayout>
   );

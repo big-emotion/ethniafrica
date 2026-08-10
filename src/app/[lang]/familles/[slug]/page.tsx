@@ -6,9 +6,10 @@ import {
   type FrozenDoctrineReference,
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { RecordPanel } from "@/components/fiche/RecordPanel";
+import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
 import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
+import { mapLanguageFamilyDetail } from "@/lib/afrikDetailMapper";
 import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
 import { getFamilyTreeSkeleton } from "@/api/v2/services/languageFamilyTreeService";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
@@ -156,22 +157,38 @@ export default async function FamillesSlugPage({
 
   const tree = await getFamilyTreeSkeleton(parsed.slug);
 
+  // The tongue chapter reuses the tree the record chapter already renders — a
+  // second fetch would cost a round trip to restate the same three queries.
+  // Branches are keyed by ISO 639-3 because that is what TonguePanel sends back
+  // to the tree/branch endpoint when a visitor expands one.
+  const tongueBranches = tree?.branches.map((branch) => ({
+    id: branch.iso639_3,
+    name: branch.name,
+    peopleCount: branch.peopleCount,
+  }));
+
+  const recordView = (
+    <LanguageFamilyDetailViewV2
+      family={family}
+      classificationTree={
+        tree ? (
+          <FamilyClassificationTreeSection familyId={parsed.slug} tree={tree} />
+        ) : undefined
+      }
+    />
+  );
+
   // Live version (revalidate = 3600 at segment level)
   return (
     <PageLayout language="fr" sectionName="Familles linguistiques">
-      <RecordPanel>
-        <LanguageFamilyDetailViewV2
-          family={family}
-          classificationTree={
-            tree ? (
-              <FamilyClassificationTreeSection
-                familyId={parsed.slug}
-                tree={tree}
-              />
-            ) : undefined
-          }
-        />
-      </RecordPanel>
+      <FicheSequence
+        context={{
+          entityType: "language-family",
+          payload: mapLanguageFamilyDetail(family),
+          branches: tongueBranches,
+        }}
+        record={recordView}
+      />
     </PageLayout>
   );
 }
