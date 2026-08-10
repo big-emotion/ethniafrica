@@ -136,7 +136,7 @@ export function AutonymExonymHeading({
               {code}
             </span>
           )}
-          <h3 className="font-semibold text-base">{exonym}</h3>
+          <h2 className="font-semibold text-base">{exonym}</h2>
         </div>
         {showAutonym && (
           <p className="text-sm text-muted-foreground italic">{autonym}</p>
