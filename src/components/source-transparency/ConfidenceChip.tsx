@@ -183,7 +183,7 @@ export function ConfidenceChip({
         className={cn(
           "inline-flex items-center justify-center p-3 min-h-[44px] min-w-[44px] rounded-full",
           "whitespace-nowrap select-none",
-          "transition-colors",
+          "motion-safe:transition-colors",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
           "focus-visible:ring-[color:var(--afh-focus,var(--country-text,#2C2018))]",
           pillBgClasses,

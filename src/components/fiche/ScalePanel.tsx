@@ -6,15 +6,14 @@ import { cn } from "@/lib/utils";
 import { classificationLabels } from "@/lib/translations";
 import { Badge } from "@/components/ui/badge";
 import { FichePanel } from "@/components/fiche/FichePanel";
+import { readScale, type ScaleSubject } from "@/lib/ficheScale";
 import type {
   FichePanelData,
   FichePanelSide,
   FichePanelSize,
 } from "@/types/fiche";
 import type {
-  ClassificationStatus,
   CountryDetail,
-  CountryDistribution,
   LanguageFamilyDetail,
   PeopleDetail,
 } from "@/types/afrik-frontend";
@@ -86,84 +85,6 @@ function useAnimatedMagnitude(
   return value;
 }
 
-interface ScaleContent {
-  /** The headline number — no recalculation, straight from the corpus (R4). */
-  magnitudeValue: number;
-  /** Static unit caption describing what the figure counts. */
-  caption: string;
-  referenceYear?: number;
-  sourceLabel?: string;
-  classificationStatus?: ClassificationStatus | null;
-  /** People-only per-country share breakdown. */
-  ramp?: CountryDistribution[];
-  /** Family-only literal chip, shown only when classification is contested. */
-  contestedFamily?: boolean;
-}
-
-function readPeopleScale(payload: PeopleDetail): ScaleContent | null {
-  const totalPopulation = payload.demography?.totalPopulation;
-  if (totalPopulation === undefined) return null;
-  return {
-    magnitudeValue: totalPopulation,
-    caption: "population totale",
-    referenceYear: payload.demography?.referenceYear,
-    sourceLabel: payload.demography?.source ?? payload.sources?.[0],
-    classificationStatus: payload.classificationStatus,
-    ramp: payload.demography?.distributionByCountry,
-  };
-}
-
-function readCountryScale(payload: CountryDetail): ScaleContent | null {
-  const peoplesCount = payload.demographics?.peoples?.length;
-  if (!peoplesCount) return null;
-  return {
-    magnitudeValue: peoplesCount,
-    caption: "peuples recensés",
-    sourceLabel: payload.sources?.[0],
-  };
-}
-
-function readFamilyScale(payload: LanguageFamilyDetail): ScaleContent | null {
-  const numberOfLanguages = payload.generalInfo?.numberOfLanguages;
-  if (numberOfLanguages === undefined) return null;
-  return {
-    magnitudeValue: numberOfLanguages,
-    caption: "langues recensées",
-    sourceLabel: payload.sources?.[0],
-    contestedFamily: payload.classificationStatus === "contested",
-  };
-}
-
-/** The entity half of ScalePanelProps — what the scale figure is read from. */
-export type ScaleSubject =
-  | { entityType: "people"; payload: PeopleDetail }
-  | { entityType: "country"; payload: CountryDetail }
-  | { entityType: "language-family"; payload: LanguageFamilyDetail };
-
-function readScale(subject: ScaleSubject): ScaleContent | null {
-  switch (subject.entityType) {
-    case "people":
-      return readPeopleScale(subject.payload);
-    case "country":
-      return readCountryScale(subject.payload);
-    case "language-family":
-      return readFamilyScale(subject.payload);
-  }
-}
-
-/**
- * Whether this entity has a scale figure the panel can actually show.
- *
- * Exported so the panel registry can drop the chapter — and with it the
- * `#fiche-scale` journey anchor — on the exact rule ScalePanel applies to
- * itself. Without this the registry would either duplicate the rule (two
- * copies to drift apart) or emit an anchor that scrolls to nothing.
- */
-export function hasScaleContent(subject: ScaleSubject): boolean {
-  const content = readScale(subject);
-  return Boolean(content?.sourceLabel);
-}
-
 export type ScalePanelProps =
   | {
       entityType: "people";
@@ -232,13 +153,16 @@ export function ScalePanel(props: ScalePanelProps) {
         >
           {formatNumberFr(animatedValue ?? 0)}
         </span>
+        {/* text-soft, not text-muted: the canvas sits on --afh-bg-warm, where
+            muted reads 2.83:1 at these sizes. Soft is the token documented as
+            AA-safe on warm surfaces (4.83:1) — see src/styles/tokens/color.css. */}
         {gated.referenceYear && (
-          <span className="text-afh-small text-afh-text-muted">
+          <span className="text-afh-small text-afh-text-soft">
             Année de référence : {gated.referenceYear}
           </span>
         )}
       </div>
-      <p className="text-afh-caption uppercase tracking-wide text-afh-text-muted">
+      <p className="text-afh-caption uppercase tracking-wide text-afh-text-soft">
         {gated.caption}
       </p>
 

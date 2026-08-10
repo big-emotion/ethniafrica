@@ -73,7 +73,7 @@ export function IdentityPanel({
             {vm.secondaryText ?? vm.imposition.imposedBy}
           </span>
           <NameTypeBadge nameType="exonym" imposed />
-          <p className="w-full text-afh-small text-afh-text-muted">
+          <p className="w-full text-afh-small text-afh-text-soft">
             {buildImpositionContextLine(
               vm.imposition.imposedBy,
               vm.imposition.impositionPeriod,
@@ -95,7 +95,7 @@ export function IdentityPanel({
           id={peopleId}
           ariaSuffix={`pour la fiche ${vm.primaryText}`}
         />
-        <p className="text-afh-caption text-afh-text-muted">
+        <p className="text-afh-caption text-afh-text-soft">
           {vm.sourceLine.href ? (
             <a
               href={vm.sourceLine.href}

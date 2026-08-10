@@ -1,8 +1,12 @@
 import type { Preview } from "@storybook/react";
+import { FICHE_VIEWPORTS } from "../src/components/fiche/ficheStoryViewports";
 import "../src/index.css";
 
 const preview: Preview = {
   parameters: {
+    // Registered globally so every fiche panel story can name a breakpoint
+    // without redeclaring the set (ETNI-938).
+    viewport: { viewports: FICHE_VIEWPORTS },
     controls: {
       matchers: {
         color: /(background|color)$/i,

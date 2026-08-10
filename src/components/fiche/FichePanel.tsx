@@ -78,7 +78,11 @@ export function FichePanel({
           aria-hidden="true"
           className="h-px w-full border-0 bg-[var(--accent)]"
         />
-        <p className="text-afh-caption uppercase tracking-wide text-afh-text-muted">
+        {/* The chapter's small text uses text-soft, not text-muted: muted is
+            2.83:1 on --afh-bg-warm and 3.1:1 on --afh-surface at caption sizes,
+            below the 4.5:1 AA floor. Soft is the token color.css documents as
+            AA-safe on warm surfaces; the type scale carries the hierarchy. */}
+        <p className="text-afh-caption uppercase tracking-wide text-afh-text-soft">
           {stepLabel}
         </p>
         <h2 className="font-afh-display text-afh-h2 font-black text-afh-text">
@@ -87,8 +91,8 @@ export function FichePanel({
         <p className="text-afh-body text-afh-text-soft">
           {applyWordBudget(body, BODY_WORD_BUDGET)}
         </p>
-        {note && <p className="text-afh-small text-afh-text-muted">{note}</p>}
-        <p className="text-afh-caption text-afh-text-muted">
+        {note && <p className="text-afh-small text-afh-text-soft">{note}</p>}
+        <p className="text-afh-caption text-afh-text-soft">
           {sourceLine.href ? (
             <a
               href={sourceLine.href}
