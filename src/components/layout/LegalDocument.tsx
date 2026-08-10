@@ -1,3 +1,6 @@
+import { ChapterHeading } from "@/components/pages/ChapterHeading";
+import { ReadingColumn } from "@/components/pages/ReadingColumn";
+
 interface LegalSection {
   title: string;
   paragraphs: readonly string[];
@@ -16,6 +19,8 @@ interface LegalDocumentProps {
 }
 
 // @req REQ-088
+// Legal keeps zero decorative motion and stays print-safe (charter §4/§7):
+// this template carries no motion-safe/transition/animate classes anywhere.
 export function LegalDocument({ document }: LegalDocumentProps) {
   return (
     <article className="mx-auto max-w-5xl pb-16 pt-4 md:pb-24 md:pt-8">
@@ -29,33 +34,25 @@ export function LegalDocument({ document }: LegalDocumentProps) {
         <p className="mt-5 text-sm text-afh-text-muted">
           {document.lastUpdated}
         </p>
-        <p className="mt-8 max-w-3xl text-lg leading-relaxed text-afh-text-soft md:text-xl">
-          {document.introduction}
-        </p>
+        <ReadingColumn className="mt-8">
+          <p className="text-lg leading-relaxed text-afh-text-soft md:text-xl">
+            {document.introduction}
+          </p>
+        </ReadingColumn>
       </header>
 
       <div className="divide-y divide-afh-border">
         {document.sections.map((section, index) => (
-          <section
-            key={section.title}
-            className="grid gap-5 py-9 md:grid-cols-[4rem_minmax(0,1fr)] md:gap-8 md:py-12"
-          >
-            <span
-              aria-hidden="true"
-              className="font-display text-2xl font-bold text-afh-gold"
-            >
-              {String(index + 1).padStart(2, "0")}
-            </span>
-            <div>
-              <h2 className="text-2xl font-display font-bold text-afh-text md:text-3xl">
-                {section.title}
-              </h2>
-              <div className="mt-5 space-y-4 text-base leading-relaxed text-afh-text-soft">
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
-            </div>
+          <section key={section.title} className="py-9 md:py-12">
+            <ChapterHeading
+              stepLabel={`${String(index + 1).padStart(2, "0")} · Section`}
+              heading={section.title}
+            />
+            <ReadingColumn className="mt-5 space-y-4 text-base leading-relaxed text-afh-text-soft">
+              {section.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </ReadingColumn>
           </section>
         ))}
       </div>
