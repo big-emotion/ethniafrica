@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Search, X, Loader2, Users, MapPin, Languages } from "lucide-react";
+import { Search, X, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -16,8 +16,14 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { PageLayout } from "@/components/layout/PageLayout";
+import { CHARTER_FOCUS_RING } from "@/components/ui/charter-motion";
+import {
+  getSearchEntityLabel,
+  SearchEntityMark,
+} from "@/components/search/searchEntityAccent";
 import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
+import { cn } from "@/lib/utils";
 import { classificationLabels } from "@/lib/translations";
 import type { ClassificationStatus } from "@/types/afrik";
 import type { SearchEntityType } from "@/types/afrik-frontend";
@@ -109,29 +115,6 @@ interface SearchHit {
 }
 
 // ── helpers ───────────────────────────────────────────────────────────────────
-
-function getTypeIcon(type: SearchEntityType) {
-  switch (type) {
-    case "languageFamily":
-      return <Languages className="h-5 w-5 text-primary" aria-hidden="true" />;
-    case "people":
-      return <Users className="h-5 w-5 text-primary" aria-hidden="true" />;
-    case "country":
-      return <MapPin className="h-5 w-5 text-primary" aria-hidden="true" />;
-    default:
-      return <Search className="h-5 w-5 text-primary" aria-hidden="true" />;
-  }
-}
-
-function getTypeLabel(type: string): string {
-  const labels: Record<string, string> = {
-    languageFamily: "Famille linguistique",
-    people: "Peuple",
-    country: "Pays",
-    language: "Langue",
-  };
-  return labels[type] ?? type;
-}
 
 function mapApiResults(raw: Record<string, unknown>[]): SearchHit[] {
   return raw.map((item) => ({
@@ -366,7 +349,7 @@ export function RecherchePageContent() {
         >
           <div className="relative flex-1">
             <Search
-              className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground pointer-events-none"
+              className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-afh-text-muted pointer-events-none"
               aria-hidden="true"
             />
             <Input
@@ -386,14 +369,14 @@ export function RecherchePageContent() {
               <ul
                 role="listbox"
                 aria-label="Suggestions de recherche"
-                className="absolute z-50 w-full bg-background border rounded-md shadow-lg mt-1 overflow-hidden"
+                className="absolute z-50 w-full bg-afh-surface border border-afh-border rounded-afh-lg shadow-afh-2 mt-1 overflow-hidden"
               >
                 {suggestions.map((s) => (
                   <li
                     key={s.id}
                     role="option"
                     aria-selected={false}
-                    className="px-4 py-2 hover:bg-muted cursor-pointer text-sm"
+                    className="px-4 py-2 hover:bg-afh-bg-warm cursor-pointer text-sm"
                     onMouseDown={() => handleSuggestionClick(s)}
                   >
                     {s.name}
@@ -495,7 +478,7 @@ export function RecherchePageContent() {
                 type="button"
                 aria-label={`Supprimer le filtre ${classStatusLabel}`}
                 onClick={() => setClassificationStatus("")}
-                className="ml-1 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className={cn("ml-1 rounded-full", CHARTER_FOCUS_RING)}
               >
                 <X className="h-3 w-3" aria-hidden="true" />
               </button>
@@ -511,7 +494,7 @@ export function RecherchePageContent() {
                 type="button"
                 aria-label={`Supprimer le filtre ${confidenceLabel}`}
                 onClick={() => setMinConfidence("")}
-                className="ml-1 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className={cn("ml-1 rounded-full", CHARTER_FOCUS_RING)}
               >
                 <X className="h-3 w-3" aria-hidden="true" />
               </button>
@@ -527,7 +510,7 @@ export function RecherchePageContent() {
                 type="button"
                 aria-label={`Supprimer le filtre ${regionLabel}`}
                 onClick={() => setRegion("")}
-                className="ml-1 rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className={cn("ml-1 rounded-full", CHARTER_FOCUS_RING)}
               >
                 <X className="h-3 w-3" aria-hidden="true" />
               </button>
@@ -537,7 +520,7 @@ export function RecherchePageContent() {
             <button
               type="button"
               onClick={clearAllFilters}
-              className="text-sm text-muted-foreground hover:text-foreground underline underline-offset-2 ml-auto"
+              className="text-sm text-afh-text-muted hover:text-afh-text underline underline-offset-2 ml-auto"
             >
               Tout effacer
             </button>
@@ -546,7 +529,7 @@ export function RecherchePageContent() {
 
         {/* ── sort + results count ── */}
         <div className="flex items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground" aria-live="polite">
+          <p className="text-sm text-afh-text-soft" aria-live="polite">
             {hasSearched && !loading && sortedResults.length > 0
               ? `${sortedResults.length} résultat${sortedResults.length > 1 ? "s" : ""}`
               : null}
@@ -576,7 +559,7 @@ export function RecherchePageContent() {
             aria-busy="true"
           >
             <Loader2
-              className="h-6 w-6 animate-spin text-muted-foreground"
+              className="h-6 w-6 animate-spin text-afh-text-muted"
               aria-label="Chargement en cours"
             />
           </div>
@@ -587,37 +570,35 @@ export function RecherchePageContent() {
           <ul className="space-y-3" aria-label="Résultats de recherche">
             {sortedResults.map((result, i) => (
               <li key={`${result.type}-${result.id}-${i}`}>
-                <Card className="p-4 hover:shadow-md transition-all">
-                  <div className="flex items-start gap-3">
-                    <div className="mt-1">
-                      {getTypeIcon(result.type as SearchEntityType)}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-base mb-1">
-                        {result.name}
-                      </h3>
-                      <div className="flex flex-wrap gap-2 mb-1">
-                        <Badge variant="secondary" className="text-xs">
-                          {getTypeLabel(result.type)}
-                        </Badge>
-                        {result.languageFamilyName && (
-                          <Badge variant="outline" className="text-xs">
-                            {result.languageFamilyName}
-                          </Badge>
-                        )}
-                      </div>
-                      {result.snippet && (
-                        <p className="text-sm text-muted-foreground line-clamp-2">
-                          {result.snippet}
-                        </p>
-                      )}
-                      {result.population !== undefined && (
-                        <p className="text-sm text-muted-foreground mt-1">
-                          Population : {formatNumber(result.population)}
-                        </p>
-                      )}
-                    </div>
+                <Card className="p-4 hover:shadow-afh-2 motion-safe:transition-shadow motion-safe:duration-[170ms]">
+                  <h3 className="font-semibold text-base mb-1">
+                    {result.name}
+                  </h3>
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
+                    <span className="flex items-center gap-1.5">
+                      <SearchEntityMark
+                        type={result.type as SearchEntityType}
+                      />
+                      <Badge variant="secondary" className="text-xs">
+                        {getSearchEntityLabel(result.type as SearchEntityType)}
+                      </Badge>
+                    </span>
+                    {result.languageFamilyName && (
+                      <Badge variant="outline" className="text-xs">
+                        {result.languageFamilyName}
+                      </Badge>
+                    )}
                   </div>
+                  {result.snippet && (
+                    <p className="text-sm text-afh-text-soft line-clamp-2">
+                      {result.snippet}
+                    </p>
+                  )}
+                  {result.population !== undefined && (
+                    <p className="text-sm text-afh-text-soft mt-1">
+                      Population : {formatNumber(result.population)}
+                    </p>
+                  )}
                 </Card>
               </li>
             ))}
@@ -626,7 +607,7 @@ export function RecherchePageContent() {
 
         {/* ── empty state (post-search, no results) ── */}
         {!loading && hasSearched && sortedResults.length === 0 && (
-          <div className="flex flex-col items-center justify-center min-h-[16rem] gap-4 px-6 py-10 bg-afh-bg-warm rounded-md text-center">
+          <div className="flex flex-col items-center justify-center min-h-[16rem] gap-4 px-6 py-10 bg-afh-bg-warm rounded-afh-lg text-center">
             <p className="text-base text-afh-text-soft max-w-sm">
               Aucun résultat pour « {committedQuery} ».
             </p>
@@ -636,13 +617,13 @@ export function RecherchePageContent() {
             <div className="flex flex-col gap-2 text-sm">
               <Link
                 href={getLocalizedRoute(language, "families")}
-                className="underline underline-offset-2 hover:text-foreground transition-colors"
+                className="underline underline-offset-2 hover:text-afh-text transition-colors"
               >
                 Parcourir par famille
               </Link>
               <Link
                 href={`/${language}/contribute?q=${encodeURIComponent(committedQuery)}`}
-                className="underline underline-offset-2 hover:text-foreground transition-colors"
+                className="underline underline-offset-2 hover:text-afh-text transition-colors"
               >
                 Signaler donnée manquante
               </Link>
