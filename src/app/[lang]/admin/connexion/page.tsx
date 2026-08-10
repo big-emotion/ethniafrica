@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
+import { FormFieldError } from "@/components/forms/FormFieldError";
 
 function ModerationLoginForm() {
   const searchParams = useSearchParams();
@@ -71,7 +72,7 @@ function ModerationLoginForm() {
   if (success) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-        <Card className="w-full max-w-md p-8">
+        <Card className="w-full max-w-md rounded-afh-xl p-8">
           <h1 className="text-2xl font-bold mb-2 text-center">
             Espace modération
           </h1>
@@ -100,7 +101,7 @@ function ModerationLoginForm() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-      <Card className="w-full max-w-md p-8">
+      <Card className="w-full max-w-md rounded-afh-xl p-8">
         <h1 className="text-2xl font-bold mb-2 text-center">
           Espace modération
         </h1>
@@ -109,8 +110,8 @@ function ModerationLoginForm() {
         </p>
 
         {error && (
-          <div className="p-3 bg-red-50 border border-red-200 text-red-700 rounded text-sm mb-4">
-            {error}
+          <div className="mb-4">
+            <FormFieldError variant="banner">{error}</FormFieldError>
           </div>
         )}
 
@@ -188,7 +189,7 @@ function ModerationLoginForm() {
               disabled={loading}
             />
           </div>
-          <Button type="submit" className="w-full" disabled={loading}>
+          <Button type="submit" className="w-full md:w-auto" disabled={loading}>
             {loading ? "Envoi en cours…" : "Envoyer le lien de connexion"}
           </Button>
         </form>
@@ -202,7 +203,7 @@ export default function AdminConnexionPage() {
     <Suspense
       fallback={
         <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-          <Card className="w-full max-w-md p-8">
+          <Card className="w-full max-w-md rounded-afh-xl p-8">
             <h1 className="text-2xl font-bold mb-2 text-center">
               Espace modération
             </h1>
