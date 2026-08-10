@@ -1,20 +1,13 @@
 import { Suspense } from "react";
 import { RecherchePageContent } from "@/components/pages/RecherchePageContent";
+import { LoadingState } from "@/components/ui/LoadingState";
 
 // Search pages are dynamic — filters change per request.
 export const dynamic = "force-dynamic";
 
-const loadingFallback = (
-  <div className="min-h-screen gradient-earth flex items-center justify-center">
-    <div className="text-center">
-      <p className="text-muted-foreground">Chargement...</p>
-    </div>
-  </div>
-);
-
 export default function RecherchePage() {
   return (
-    <Suspense fallback={loadingFallback}>
+    <Suspense fallback={<LoadingState />}>
       <RecherchePageContent />
     </Suspense>
   );
