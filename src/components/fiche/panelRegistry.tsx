@@ -32,13 +32,14 @@ import { FragmentationPanel } from "@/components/fiche/FragmentationPanel";
 import { IdentityPanel } from "@/components/fiche/IdentityPanel";
 import { LinksPanel } from "@/components/fiche/LinksPanel";
 import { RecordPanel } from "@/components/fiche/RecordPanel";
-import { ScalePanel, hasScaleContent } from "@/components/fiche/ScalePanel";
+import { ScalePanel } from "@/components/fiche/ScalePanel";
 import { TerritoryPanel } from "@/components/fiche/TerritoryPanel";
 import {
   TonguePanel,
   type TonguePanelBranch,
 } from "@/components/fiche/TonguePanel";
 import { VoicesPanel } from "@/components/fiche/VoicesPanel";
+import { hasScaleContent } from "@/lib/ficheScale";
 import { PANEL_TABLE, type PanelKind } from "@/lib/fichePanels";
 import type { CountryDistributionRow } from "@/lib/peopleDataTransformer";
 import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
