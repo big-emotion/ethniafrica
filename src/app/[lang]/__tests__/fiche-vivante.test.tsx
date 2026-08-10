@@ -530,10 +530,19 @@ describe("fiche vivante — the dossier citation contract", () => {
         .filter((href) => container.querySelector(href) === null);
       expect(dangling).toEqual([]);
 
+      // ContextTriad (ETNI-818) can also point a "N peuples" counter at the
+      // record anchor — that is hierarchy navigation, not a dossier citation,
+      // so it is excluded here to keep this assertion about what the panels
+      // themselves print.
       const recordAnchor = `#${sectionIdForPanel("record")}`;
-      expect(
-        container.querySelectorAll(`a[href="${recordAnchor}"]`).length > 0
-      ).toBe(route.printsDossierCitation);
+      const citationLinksToRecord = Array.from(
+        container.querySelectorAll<HTMLAnchorElement>(
+          `a[href="${recordAnchor}"]`
+        )
+      ).filter((link) => !link.closest("[data-context-triad]"));
+      expect(citationLinksToRecord.length > 0).toBe(
+        route.printsDossierCitation
+      );
 
       // The citation is only a promise kept if the dossier itself is in the
       // DOM at the far end of it, gate closed or not.

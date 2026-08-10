@@ -16,6 +16,7 @@
 
 import type { ReactNode } from "react";
 
+import { ContextTriad } from "@/components/fiche/ContextTriad";
 import {
   resolvePanel,
   sectionIdForPanel,
@@ -77,6 +78,7 @@ export function FicheSequence({
         className
       )}
     >
+      <ContextTriad context={context} />
       {panelSequenceFor(context).map((kind) => {
         const panel = resolvePanel(kind, context, record);
         if (!panel) return null;
