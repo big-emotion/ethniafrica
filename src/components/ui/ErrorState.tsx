@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { StateMedallion } from "@/components/ui/StateMedallion";
 
 interface ErrorStateProps {
   errorRef: string;
   onRetry: () => void;
 }
 
+// @req REQ-099
 export function ErrorState({ errorRef, onRetry }: ErrorStateProps) {
   const [copied, setCopied] = useState(false);
 
@@ -23,11 +25,16 @@ export function ErrorState({ errorRef, onRetry }: ErrorStateProps) {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[40vh] gap-6 px-4 py-10 bg-afh-bg-warm">
+      <StateMedallion />
+
       <h2 className="text-2xl font-display font-semibold text-afh-text">
         Une erreur est survenue
       </h2>
 
-      <p className="text-afh-text-soft text-center max-w-md">
+      <p
+        data-testid="state-copy"
+        className="text-afh-text-soft text-center max-w-md"
+      >
         Une erreur inattendue s&apos;est produite. Vous pouvez réessayer ou
         contacter le support avec la référence ci-dessous.
       </p>
@@ -46,7 +53,9 @@ export function ErrorState({ errorRef, onRetry }: ErrorStateProps) {
         </Button>
       </div>
 
-      <Button onClick={onRetry}>Réessayer</Button>
+      <Button onClick={onRetry} data-cta="primary">
+        Réessayer
+      </Button>
     </div>
   );
 }
