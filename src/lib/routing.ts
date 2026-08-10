@@ -68,3 +68,13 @@ export const getSlugFromRoute = (pathname: string): string | null => {
   if (parts.length < 2) return null;
   return parts[1];
 };
+
+// ---------------------------------------------------------------------------
+// Entity routes — localized href to a single fiche (ContextTriad, ETNI-818)
+// ---------------------------------------------------------------------------
+
+export const getCountryRoute = (language: Language, id: string): string =>
+  `${getLocalizedRoute(language, "countries")}/${id}`;
+
+export const getFamilyRoute = (language: Language, id: string): string =>
+  `${getLocalizedRoute(language, "families")}/${id}`;
