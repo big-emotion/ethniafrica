@@ -4,11 +4,15 @@ module.exports = {
       url: [
         "http://localhost:3000/",
         "http://localhost:3000/fr",
+        "http://localhost:3000/fr/noms",
+        // The next three are one representative assembled fiche per AFRIK
+        // entity type (FR102) — country, people, language family. Each entity
+        // type resolves a different chapter sequence (panelRegistry.tsx), so
+        // dropping one leaves that sequence's mobile budget unmeasured.
         "http://localhost:3000/fr/pays/SEN",
         "http://localhost:3000/fr/peuples/PPL_WOLOF",
-        "http://localhost:3000/fr/noms",
-        // ETNI-463 (7.11) AC1 — large-family sample (FLG_BANTU: 6 languages,
-        // 174 associated peoples, the largest currently-seeded family).
+        // ETNI-463 (7.11) AC1 — also the large-family sample (FLG_BANTU:
+        // 6 languages, 174 associated peoples, the largest currently-seeded).
         "http://localhost:3000/fr/familles/FLG_BANTU",
       ],
       numberOfRuns: 3,

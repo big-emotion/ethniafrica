@@ -33,8 +33,19 @@ const AXE_RUN_OPTIONS = {
 // Live Next.js routes audited by axe-core in addition to Storybook. Set by
 // .github/workflows/a11y.yml once the app is built and served — unset locally
 // this step is skipped so the script still works without a running server.
+//
+// The three fiche routes are one representative assembled fiche per AFRIK
+// entity type (FR102). All three are needed because the panel-kind ×
+// entity-type matrix (panelRegistry.tsx) gives each type a different chapter
+// sequence, so a panel regression can miss two of them entirely. Canonical
+// AFRIK identifiers only — never display-name slugs (qualityGateRoutes.test.ts).
 const LIVE_ROUTES_BASE_URL = process.env.A11Y_LIVE_BASE_URL;
-const LIVE_ROUTES = ["/fr/noms", "/fr/peuples/PPL_WOLOF"];
+const LIVE_ROUTES = [
+  "/fr/noms",
+  "/fr/familles/FLG_BANTU",
+  "/fr/peuples/PPL_WOLOF",
+  "/fr/pays/SEN",
+];
 
 const MIME: Record<string, string> = {
   ".html": "text/html",
@@ -131,7 +142,7 @@ async function getStoryIds(page: Page): Promise<StoryEntry[]> {
 async function runLiveRouteAudit(browser: Browser): Promise<boolean> {
   if (!LIVE_ROUTES_BASE_URL) {
     console.log(
-      "\nℹ️  A11Y_LIVE_BASE_URL not set — skipping live route audit (/fr/noms, dossier fiche)."
+      `\nℹ️  A11Y_LIVE_BASE_URL not set — skipping live route audit (${LIVE_ROUTES.join(", ")}).`
     );
     return false;
   }
@@ -150,7 +161,22 @@ async function runLiveRouteAudit(browser: Browser): Promise<boolean> {
       process.stdout.write(`🔍 Testing live route: ${route}... `);
 
       try {
-        await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
+        const response = await page.goto(url, {
+          waitUntil: "networkidle",
+          timeout: 30000,
+        });
+
+        // A crashed route is not an accessible route. Next's 500 page is
+        // markup-clean, so axe happily returns zero violations on it and the
+        // gate goes green over a fiche that never rendered — which is exactly
+        // how the fiche routes stayed broken while this check passed. Fail on
+        // the status before believing the audit.
+        const status = response?.status() ?? 0;
+        if (status >= 400) {
+          console.log(`❌ HTTP ${status} — route did not render`);
+          hasBlockingViolations = true;
+          continue;
+        }
 
         const results = await new AxeBuilder({ page })
           .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
