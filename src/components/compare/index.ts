@@ -6,3 +6,4 @@ export {
   DEMOGRAPHY_ROW_KEYS,
 } from "@/components/compare/CompareSectionRow";
 export { CompareValueCell } from "@/components/compare/CompareValueCell";
+export { CompareShareBar } from "@/components/compare/CompareShareBar";
