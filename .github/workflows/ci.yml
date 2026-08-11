@@ -89,6 +89,13 @@ jobs:
 
       - run: npm run test:coverage
 
+      # Aggregated charter-v2 contract suite (ETNI-982 · FR110): already
+      # covered by test:coverage above, but a dedicated named step attributes
+      # a charter regression to "charter contract suite failed" instead of
+      # burying it in the generic test run's output.
+      - name: Charter contract suite
+        run: npm run test:charter-contracts
+
       # .next/cache is content-hashed by Next, so a stale entry is ignored,
       # never mis-served — restoring it only ever saves compile work.
       - name: Restore Next.js build cache
