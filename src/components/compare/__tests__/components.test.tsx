@@ -46,9 +46,9 @@ const FAMILIES: CompareCandidate[] = [
 const ALL_24_FAMILIES: CompareCandidate[] = Array.from(
   { length: 24 },
   (_, index) => ({
-    id: `FLG_${String(index).padStart(2, "0")}`,
+    id: "FLG_" + String(index).padStart(2, "0"),
     type: "language-families" as const,
-    exonym: `Famille ${String(index).padStart(2, "0")}`,
+    exonym: "Famille " + String(index).padStart(2, "0"),
   })
 );
 
