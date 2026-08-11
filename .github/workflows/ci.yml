@@ -66,7 +66,7 @@ jobs:
       # and the restore-keys prefix falls back to the most recent cache for the
       # same config.
       - name: Restore linter caches
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: |
             node_modules/.cache/eslint
@@ -92,7 +92,7 @@ jobs:
       # .next/cache is content-hashed by Next, so a stale entry is ignored,
       # never mis-served — restoring it only ever saves compile work.
       - name: Restore Next.js build cache
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: .next/cache
           key: nextjs-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
