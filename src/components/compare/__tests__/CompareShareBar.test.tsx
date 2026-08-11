@@ -1,7 +1,167 @@
-import { describe, it, expect, vi, afterEach } from "vitest";
+import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import React from "react";
+
 import { CompareShareBar } from "../CompareShareBar";
+
+// ---------------------------------------------------------------------------
+// /[lang]/comparer/[entityType]/[...ids] page — not-found branches (9.4)
+// ---------------------------------------------------------------------------
+
+vi.mock("next/navigation", () => ({
+  notFound: vi.fn(() => {
+    throw new Error("NEXT_NOT_FOUND");
+  }),
+}));
+
+const mockAssembleComparison = vi.fn();
+vi.mock("@/api/v2/handlers/compare", () => ({
+  assembleComparison: (...args: unknown[]) => mockAssembleComparison(...args),
+}));
+
+import ComparisonPage, {
+  generateMetadata,
+} from "@/app/[lang]/comparer/[entityType]/[...ids]/page";
+import { notFound } from "next/navigation";
+
+function callPage(entityType: string, ids: string[], lang = "fr") {
+  return ComparisonPage({
+    params: Promise.resolve({ lang, entityType, ids }),
+  });
+}
+
+const validAssembleResult = {
+  ok: true as const,
+  entityType: "peoples" as const,
+  entities: [
+    {
+      type: "peuple" as const,
+      id: "PPL_YORUBA",
+      label: "Yoruba",
+      origins: "Golfe du Bénin",
+    },
+    {
+      type: "peuple" as const,
+      id: "PPL_ZULU",
+      label: "Zulu",
+      origins: null,
+    },
+  ],
+};
+
+describe("/[lang]/comparer/[entityType]/[...ids] page", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  // @req REQ-091
+  it("calls notFound() for an unknown entityType segment, without querying", async () => {
+    await expect(
+      callPage("langues", ["PPL_YORUBA", "PPL_ZULU"])
+    ).rejects.toThrow("NEXT_NOT_FOUND");
+    expect(mockAssembleComparison).not.toHaveBeenCalled();
+    expect(notFound).toHaveBeenCalled();
+  });
+
+  // @req REQ-091
+  it("calls notFound() for fewer than 2 ids, without querying", async () => {
+    await expect(callPage("peuples", ["PPL_YORUBA"])).rejects.toThrow(
+      "NEXT_NOT_FOUND"
+    );
+    expect(mockAssembleComparison).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-091
+  it("calls notFound() for more than 3 ids, without querying", async () => {
+    await expect(
+      callPage("peuples", ["PPL_A", "PPL_B", "PPL_C", "PPL_D"])
+    ).rejects.toThrow("NEXT_NOT_FOUND");
+    expect(mockAssembleComparison).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-091
+  it("calls notFound() for duplicate ids, without querying", async () => {
+    await expect(
+      callPage("peuples", ["PPL_YORUBA", "PPL_YORUBA"])
+    ).rejects.toThrow("NEXT_NOT_FOUND");
+    expect(mockAssembleComparison).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-091
+  it("calls notFound() when an id does not resolve to a published entity", async () => {
+    mockAssembleComparison.mockResolvedValueOnce({
+      ok: false,
+      code: "NOT_FOUND",
+      message: "Entity not found: PPL_UNKNOWN",
+    });
+
+    await expect(
+      callPage("peuples", ["PPL_YORUBA", "PPL_UNKNOWN"])
+    ).rejects.toThrow("NEXT_NOT_FOUND");
+    expect(notFound).toHaveBeenCalled();
+  });
+
+  // @req REQ-097
+  it("maps the French entityType segment to the API type and renders the comparison for valid params", async () => {
+    mockAssembleComparison.mockResolvedValueOnce(validAssembleResult);
+
+    const ui = await callPage("peuples", ["PPL_YORUBA", "PPL_ZULU"]);
+    const { getByRole } = render(ui as React.ReactElement);
+
+    expect(mockAssembleComparison).toHaveBeenCalledWith({
+      entityType: "peoples",
+      ids: ["PPL_YORUBA", "PPL_ZULU"],
+    });
+    expect(getByRole("heading", { level: 1 }).textContent).toBe(
+      "Comparaison : Yoruba · Zulu"
+    );
+  });
+});
+
+describe("generateMetadata for /[lang]/comparer/[entityType]/[...ids]", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  // @req REQ-091
+  it("carries a French title, noindex/follow robots and a self-canonical for a valid comparison", async () => {
+    mockAssembleComparison.mockResolvedValueOnce(validAssembleResult);
+
+    const metadata = await generateMetadata({
+      params: Promise.resolve({
+        lang: "fr",
+        entityType: "peuples",
+        ids: ["PPL_YORUBA", "PPL_ZULU"],
+      }),
+    });
+
+    expect(metadata.title).toBe("Comparaison : Yoruba · Zulu");
+    expect(metadata.robots).toEqual({ index: false, follow: true });
+    expect(metadata.alternates?.canonical).toBe(
+      "/fr/comparer/peuples/PPL_YORUBA/PPL_ZULU"
+    );
+    expect(metadata.openGraph?.title).toBe("Comparaison : Yoruba · Zulu");
+    expect(metadata.twitter).toMatchObject({ card: "summary_large_image" });
+  });
+
+  // @req REQ-091
+  it("calls notFound() for an invalid comparison URL", async () => {
+    await expect(
+      generateMetadata({
+        params: Promise.resolve({
+          lang: "fr",
+          entityType: "langues",
+          ids: ["PPL_YORUBA", "PPL_ZULU"],
+        }),
+      })
+    ).rejects.toThrow("NEXT_NOT_FOUND");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// CompareShareBar
+// ---------------------------------------------------------------------------
 
 const CANONICAL_URL =
   "https://ethniafrica.example/fr/comparer/peoples/PPL_YORUBA/PPL_ASHANTI";
