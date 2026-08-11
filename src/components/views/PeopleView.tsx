@@ -184,7 +184,7 @@ export const PeopleView = ({
                 className={cn(
                   "h-11 w-11 rounded-full text-xs",
                   selectedLetter === null
-                    ? "bg-[color:var(--accent)] text-white"
+                    ? "bg-[color:var(--accent)] text-[color:var(--accent-foreground)]"
                     : "bg-[color:var(--accent-tint)] text-afh-text"
                 )}
                 onClick={() => handleLetterChange(null)}
@@ -199,7 +199,7 @@ export const PeopleView = ({
                   className={cn(
                     "h-11 w-11 rounded-full text-xs",
                     selectedLetter === letter
-                      ? "bg-[color:var(--accent)] text-white"
+                      ? "bg-[color:var(--accent)] text-[color:var(--accent-foreground)]"
                       : "bg-[color:var(--accent-tint)] text-afh-text"
                   )}
                   onClick={() => handleLetterChange(letter)}
