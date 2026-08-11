@@ -39,7 +39,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Validate event envelope
-        uses: big-emotion/ferry/.github/actions/ferry-envelope-validate@010f15147572106521d72577a8d9b1a6485d9597 # v1.1.2
+        uses: big-emotion/ferry/.github/actions/ferry-envelope-validate@39a42f9f5607d22c38f453bb33212c0c94750486 # v1.2.0
         with:
           payload: ${{ toJson(github.event.client_payload) }}
 
