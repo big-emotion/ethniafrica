@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleView } from "@/components/views/PeopleView";
 import { DirectoryHero } from "@/components/views/DirectoryHero";
-import { PeopleDetailView } from "@/components/detail/PeopleDetailView";
 import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { getTranslation } from "@/lib/translations";
@@ -15,6 +15,17 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Users } from "lucide-react";
 import type { PeopleSummary } from "@/types/afrik-frontend";
 import { useActiveSourceFlag } from "@/hooks/use-active-source-flag";
+
+// Only needed once a people is selected — deferring it off the initial
+// listing bundle fixed a Lighthouse Mobile performance regression on
+// /fr/peuples (0.62, house threshold 0.85).
+const PeopleDetailView = dynamic(
+  () =>
+    import("@/components/detail/PeopleDetailView").then(
+      (mod) => mod.PeopleDetailView
+    ),
+  { ssr: false }
+);
 
 function DefaultMessage({ language }: { language: string }) {
   const t = getTranslation(language as "fr");
