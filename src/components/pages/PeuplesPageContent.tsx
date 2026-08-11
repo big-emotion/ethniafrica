@@ -6,6 +6,7 @@ import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleView } from "@/components/views/PeopleView";
+import { DirectoryHero } from "@/components/views/DirectoryHero";
 import { PeopleDetailView } from "@/components/detail/PeopleDetailView";
 import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -97,46 +98,18 @@ export function PeuplesPageContent() {
       language={language}
       onLanguageChange={setLanguage}
       sectionName={getSectionName()}
+      hideHeader
     >
-      {isMobile ? (
-        <div>
-          {selectedPeople ? (
-            <div className="space-y-4">
-              <Button variant="ghost" onClick={handleBack} className="mb-2">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                {getBackText()}
-              </Button>
-              <Card className="shadow-soft w-full">
-                <PeopleDetailView
-                  peopleId={selectedPeople}
-                  language={language}
-                  initialSourceFlag={sourceFlag}
-                  onCountryClick={handleCountryClick}
-                  onFamilyClick={handleFamilyClick}
-                />
-              </Card>
-            </div>
-          ) : (
-            <PeopleView
-              language={language}
-              onPeopleSelect={handlePeopleSelect}
-              hideSearchAndAlphabet={false}
-            />
-          )}
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
-          {/* Detail view - Left (70%) */}
-          <div className="lg:col-span-7">
-            <Card className="shadow-soft h-full">
-              {selectedPeople ? (
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 border-b">
-                    <Button variant="ghost" onClick={handleBack}>
-                      <ArrowLeft className="h-4 w-4 mr-2" />
-                      {getBackText()}
-                    </Button>
-                  </div>
+      <DirectoryHero entityType="people" title={getSectionName()}>
+        {isMobile ? (
+          <div>
+            {selectedPeople ? (
+              <div className="space-y-4">
+                <Button variant="ghost" onClick={handleBack} className="mb-2">
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  {getBackText()}
+                </Button>
+                <Card className="shadow-soft w-full">
                   <PeopleDetailView
                     peopleId={selectedPeople}
                     language={language}
@@ -144,25 +117,56 @@ export function PeuplesPageContent() {
                     onCountryClick={handleCountryClick}
                     onFamilyClick={handleFamilyClick}
                   />
-                </div>
-              ) : (
-                <DefaultMessage language={language} />
-              )}
-            </Card>
-          </div>
-
-          {/* List - Right (30%) */}
-          <div className="lg:col-span-3 sticky top-0 self-start">
-            <Card className="shadow-soft">
+                </Card>
+              </div>
+            ) : (
               <PeopleView
                 language={language}
                 onPeopleSelect={handlePeopleSelect}
-                selectedPeopleId={selectedPeople}
+                hideSearchAndAlphabet={false}
               />
-            </Card>
+            )}
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
+            {/* Detail view - Left (70%) */}
+            <div className="lg:col-span-7">
+              <Card className="shadow-soft h-full">
+                {selectedPeople ? (
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between p-4 border-b">
+                      <Button variant="ghost" onClick={handleBack}>
+                        <ArrowLeft className="h-4 w-4 mr-2" />
+                        {getBackText()}
+                      </Button>
+                    </div>
+                    <PeopleDetailView
+                      peopleId={selectedPeople}
+                      language={language}
+                      initialSourceFlag={sourceFlag}
+                      onCountryClick={handleCountryClick}
+                      onFamilyClick={handleFamilyClick}
+                    />
+                  </div>
+                ) : (
+                  <DefaultMessage language={language} />
+                )}
+              </Card>
+            </div>
+
+            {/* List - Right (30%) */}
+            <div className="lg:col-span-3 sticky top-0 self-start">
+              <Card className="shadow-soft">
+                <PeopleView
+                  language={language}
+                  onPeopleSelect={handlePeopleSelect}
+                  selectedPeopleId={selectedPeople}
+                />
+              </Card>
+            </div>
+          </div>
+        )}
+      </DirectoryHero>
     </PageLayout>
   );
 }

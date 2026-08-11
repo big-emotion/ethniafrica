@@ -7,6 +7,7 @@ import { getLocalizedRoute } from "@/lib/routing";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { RecordPanel } from "@/components/fiche/RecordPanel";
 import { CountryView } from "@/components/views/CountryView";
+import { DirectoryHero } from "@/components/views/DirectoryHero";
 import { CountryDetailViewV2 } from "@/components/detail/CountryDetailViewV2";
 import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -92,66 +93,69 @@ export function PaysPageContentV2() {
       language={language}
       onLanguageChange={setLanguage}
       sectionName={t.countries}
+      hideHeader
     >
-      {isMobile ? (
-        <div>
-          {selectedCountry ? (
-            <div
-              className="min-h-screen"
-              style={{ background: "var(--country-bg)" }}
-            >
-              <RecordPanel>
-                <CountryDetailViewV2
-                  countryId={selectedCountry}
-                  language={language}
-                  initialSourceFlag={sourceFlag}
-                  onPeopleClick={handlePeopleClick}
-                  onBack={handleBack}
-                />
-              </RecordPanel>
-            </div>
-          ) : (
-            <CountryView
-              language={language}
-              onCountrySelect={handleCountrySelect}
-              hideSearchAndAlphabet={false}
-            />
-          )}
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
-          {/* Detail view - Left (70%) */}
-          <div
-            className="lg:col-span-7 rounded-xl overflow-hidden"
-            style={{ background: "var(--country-bg)" }}
-          >
+      <DirectoryHero entityType="country" title={t.countries}>
+        {isMobile ? (
+          <div>
             {selectedCountry ? (
-              <RecordPanel>
-                <CountryDetailViewV2
-                  countryId={selectedCountry}
-                  language={language}
-                  initialSourceFlag={sourceFlag}
-                  onPeopleClick={handlePeopleClick}
-                  onBack={handleBack}
-                />
-              </RecordPanel>
+              <div
+                className="min-h-screen"
+                style={{ background: "var(--country-bg)" }}
+              >
+                <RecordPanel>
+                  <CountryDetailViewV2
+                    countryId={selectedCountry}
+                    language={language}
+                    initialSourceFlag={sourceFlag}
+                    onPeopleClick={handlePeopleClick}
+                    onBack={handleBack}
+                  />
+                </RecordPanel>
+              </div>
             ) : (
-              <DefaultMessage language={language} />
-            )}
-          </div>
-
-          {/* List - Right (30%) */}
-          <div className="lg:col-span-3 sticky top-0 self-start">
-            <Card className="shadow-soft">
               <CountryView
                 language={language}
                 onCountrySelect={handleCountrySelect}
-                selectedCountryId={selectedCountry}
+                hideSearchAndAlphabet={false}
               />
-            </Card>
+            )}
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
+            {/* Detail view - Left (70%) */}
+            <div
+              className="lg:col-span-7 rounded-xl overflow-hidden"
+              style={{ background: "var(--country-bg)" }}
+            >
+              {selectedCountry ? (
+                <RecordPanel>
+                  <CountryDetailViewV2
+                    countryId={selectedCountry}
+                    language={language}
+                    initialSourceFlag={sourceFlag}
+                    onPeopleClick={handlePeopleClick}
+                    onBack={handleBack}
+                  />
+                </RecordPanel>
+              ) : (
+                <DefaultMessage language={language} />
+              )}
+            </div>
+
+            {/* List - Right (30%) */}
+            <div className="lg:col-span-3 sticky top-0 self-start">
+              <Card className="shadow-soft">
+                <CountryView
+                  language={language}
+                  onCountrySelect={handleCountrySelect}
+                  selectedCountryId={selectedCountry}
+                />
+              </Card>
+            </div>
+          </div>
+        )}
+      </DirectoryHero>
     </PageLayout>
   );
 }

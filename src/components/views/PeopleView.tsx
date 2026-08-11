@@ -16,6 +16,8 @@ import { getPeoples } from "@/lib/afrikLoader";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
+import { cn } from "@/lib/utils";
+import { CHARTER_HOVER_LIFT } from "@/components/ui/charter-motion";
 
 interface PeopleViewProps {
   language: Language;
@@ -106,9 +108,13 @@ export const PeopleView = ({
   const renderPeopleCard = (people: PeopleSummary) => (
     <Card
       key={people.id}
-      className={`p-4 hover:shadow-md cursor-pointer transition-all group ${
-        hideSearchAndAlphabet ? "mx-0" : ""
-      } ${selectedPeopleId === people.id ? "border-2 border-primary" : ""}`}
+      className={cn(
+        "cursor-pointer group rounded-afh-xl p-4",
+        CHARTER_HOVER_LIFT,
+        hideSearchAndAlphabet && "mx-0",
+        selectedPeopleId === people.id &&
+          "border-2 border-[color:var(--accent)]"
+      )}
       onClick={() => onPeopleSelect(people)}
     >
       <div className="space-y-2">
@@ -116,7 +122,7 @@ export const PeopleView = ({
           variant="compact"
           exonym={people.nameMain}
           autonym={people.selfAppellation}
-          className="group-hover:[&_h3]:text-primary [&_h3]:transition-colors"
+          className="group-hover:[&_h2]:text-primary [&_h2]:transition-colors"
         />
 
         <div className="flex items-center gap-2 flex-wrap">
@@ -173,9 +179,14 @@ export const PeopleView = ({
           <div className="px-4 pt-4">
             <div className="flex flex-wrap gap-1 justify-center">
               <Button
-                variant={selectedLetter === null ? "default" : "outline"}
-                size="sm"
-                className="h-8 w-8 p-0 text-xs"
+                variant="ghost"
+                size="icon"
+                className={cn(
+                  "h-11 w-11 rounded-full text-xs",
+                  selectedLetter === null
+                    ? "bg-[color:var(--accent)] text-white"
+                    : "bg-[color:var(--accent-tint)] text-afh-text"
+                )}
                 onClick={() => handleLetterChange(null)}
               >
                 Tous
@@ -183,9 +194,14 @@ export const PeopleView = ({
               {ALPHABET.map((letter) => (
                 <Button
                   key={letter}
-                  variant={selectedLetter === letter ? "default" : "outline"}
-                  size="sm"
-                  className="h-8 w-8 p-0 text-xs"
+                  variant="ghost"
+                  size="icon"
+                  className={cn(
+                    "h-11 w-11 rounded-full text-xs",
+                    selectedLetter === letter
+                      ? "bg-[color:var(--accent)] text-white"
+                      : "bg-[color:var(--accent-tint)] text-afh-text"
+                  )}
                   onClick={() => handleLetterChange(letter)}
                 >
                   {letter}
@@ -201,7 +217,7 @@ export const PeopleView = ({
               placeholder={t.searchPlaceholder}
               value={search}
               onChange={(e) => handleSearchChange(e.target.value)}
-              className="pl-9"
+              className="rounded-full pl-9"
             />
           </div>
         </>
@@ -253,7 +269,7 @@ export const PeopleView = ({
             onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}
             variant="outline"
-            size="sm"
+            size="icon"
             aria-label="Page précédente"
           >
             <ChevronLeft className="h-4 w-4" />
@@ -267,7 +283,7 @@ export const PeopleView = ({
             }
             disabled={currentPage === totalPages}
             variant="outline"
-            size="sm"
+            size="icon"
             aria-label="Page suivante"
           >
             <ChevronRight className="h-4 w-4" />

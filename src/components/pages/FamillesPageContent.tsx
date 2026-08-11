@@ -6,6 +6,7 @@ import { useLanguage } from "@/hooks/use-language";
 import { getLocalizedRoute } from "@/lib/routing";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { LanguageFamilyView } from "@/components/views/LanguageFamilyView";
+import { DirectoryHero } from "@/components/views/DirectoryHero";
 import { LanguageFamilyDetailView } from "@/components/detail/LanguageFamilyDetailView";
 import { Card } from "@/components/ui/card";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -90,68 +91,71 @@ export function FamillesPageContent() {
       language={language}
       onLanguageChange={setLanguage}
       sectionName={getSectionName()}
+      hideHeader
     >
-      {isMobile ? (
-        <div>
-          {selectedFamily ? (
-            <div className="space-y-4">
-              <Button variant="ghost" onClick={handleBack} className="mb-2">
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                {getBackText()}
-              </Button>
-              <Card className="shadow-soft w-full">
-                <LanguageFamilyDetailView
-                  familyId={selectedFamily}
-                  language={language}
-                  onPeopleClick={handlePeopleClick}
-                />
-              </Card>
-            </div>
-          ) : (
-            <LanguageFamilyView
-              language={language}
-              onFamilySelect={handleFamilySelect}
-              hideSearchAndAlphabet={false}
-            />
-          )}
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
-          {/* Detail view - Left (70%) */}
-          <div className="lg:col-span-7">
-            <Card className="shadow-soft h-full">
-              {selectedFamily ? (
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between p-4 border-b">
-                    <Button variant="ghost" onClick={handleBack}>
-                      <ArrowLeft className="h-4 w-4 mr-2" />
-                      {getBackText()}
-                    </Button>
-                  </div>
+      <DirectoryHero entityType="language-family" title={getSectionName()}>
+        {isMobile ? (
+          <div>
+            {selectedFamily ? (
+              <div className="space-y-4">
+                <Button variant="ghost" onClick={handleBack} className="mb-2">
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  {getBackText()}
+                </Button>
+                <Card className="shadow-soft w-full">
                   <LanguageFamilyDetailView
                     familyId={selectedFamily}
                     language={language}
                     onPeopleClick={handlePeopleClick}
                   />
-                </div>
-              ) : (
-                <DefaultMessage language={language} />
-              )}
-            </Card>
-          </div>
-
-          {/* List - Right (30%) */}
-          <div className="lg:col-span-3 sticky top-0 self-start">
-            <Card className="shadow-soft">
+                </Card>
+              </div>
+            ) : (
               <LanguageFamilyView
                 language={language}
                 onFamilySelect={handleFamilySelect}
-                selectedFamilyId={selectedFamily}
+                hideSearchAndAlphabet={false}
               />
-            </Card>
+            )}
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="grid grid-cols-1 lg:grid-cols-10 gap-6">
+            {/* Detail view - Left (70%) */}
+            <div className="lg:col-span-7">
+              <Card className="shadow-soft h-full">
+                {selectedFamily ? (
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between p-4 border-b">
+                      <Button variant="ghost" onClick={handleBack}>
+                        <ArrowLeft className="h-4 w-4 mr-2" />
+                        {getBackText()}
+                      </Button>
+                    </div>
+                    <LanguageFamilyDetailView
+                      familyId={selectedFamily}
+                      language={language}
+                      onPeopleClick={handlePeopleClick}
+                    />
+                  </div>
+                ) : (
+                  <DefaultMessage language={language} />
+                )}
+              </Card>
+            </div>
+
+            {/* List - Right (30%) */}
+            <div className="lg:col-span-3 sticky top-0 self-start">
+              <Card className="shadow-soft">
+                <LanguageFamilyView
+                  language={language}
+                  onFamilySelect={handleFamilySelect}
+                  selectedFamilyId={selectedFamily}
+                />
+              </Card>
+            </div>
+          </div>
+        )}
+      </DirectoryHero>
     </PageLayout>
   );
 }
