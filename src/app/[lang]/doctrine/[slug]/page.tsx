@@ -19,6 +19,7 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { fetchDoctrineEntry } from "@/lib/doctrine/fetchDoctrineEntry";
 import { formatVersionLabel } from "@/lib/doctrine/formatVersionLabel";
 import { parseVersionedSlug } from "@/lib/versioned-slug";
+import { ReadingColumn } from "@/components/pages/ReadingColumn";
 
 const DEFAULT_CHANGELOG_URL =
   "https://github.com/big-emotion/ethniafrica/commits/HEAD/supabase/migrations/018_editorial_doctrine_seed.sql";
@@ -36,6 +37,7 @@ interface PageParams {
   slug: string;
 }
 
+// @req REQ-091
 export default async function DoctrineSlugPage({
   params,
 }: {
@@ -65,41 +67,44 @@ export default async function DoctrineSlugPage({
       language="fr"
       title={entry.title}
       sectionName="Doctrine éditoriale"
+      hideHeader
     >
-      <article className="container mx-auto max-w-3xl px-4 py-8 space-y-6">
-        <header className="space-y-3 border-b pb-4">
-          <h1 className="text-3xl font-bold">{entry.title}</h1>
-          <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-            <span data-testid="version-label">{versionLabel}</span>
-            <span aria-hidden="true">·</span>
-            <a
-              data-testid="changelog-link"
-              href={CHANGELOG_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:no-underline"
-            >
-              Voir l&apos;historique des modifications
-            </a>
-          </div>
-        </header>
+      <ReadingColumn className="container mx-auto space-y-6 px-4 py-8">
+        <article>
+          <header className="space-y-3 border-b pb-4">
+            <h1 className="text-3xl font-bold">{entry.title}</h1>
+            <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+              <span data-testid="version-label">{versionLabel}</span>
+              <span aria-hidden="true">·</span>
+              <a
+                data-testid="changelog-link"
+                href={CHANGELOG_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:no-underline"
+              >
+                Voir l&apos;historique des modifications
+              </a>
+            </div>
+          </header>
 
-        <div
-          className="prose prose-neutral max-w-none"
-          data-testid="doctrine-mdx"
-        >
-          <MDXRemote
-            source={entry.mdxSource}
-            components={MDX_COMPONENTS}
-            options={{
-              mdxOptions: {
-                remarkPlugins: [remarkGfm],
-                rehypePlugins: [rehypeSanitize],
-              },
-            }}
-          />
-        </div>
-      </article>
+          <div
+            className="prose prose-neutral max-w-none mt-6"
+            data-testid="doctrine-mdx"
+          >
+            <MDXRemote
+              source={entry.mdxSource}
+              components={MDX_COMPONENTS}
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm],
+                  rehypePlugins: [rehypeSanitize],
+                },
+              }}
+            />
+          </div>
+        </article>
+      </ReadingColumn>
     </PageLayout>
   );
 }
