@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   getCountryRoute,
   getFamilyRoute,
+  getPeopleRoute,
   getLocalizedRoute,
   getPageFromRoute,
 } from "@/lib/routing";
@@ -18,6 +19,11 @@ describe("entity routes (ContextTriad, ETNI-818)", () => {
     expect(getFamilyRoute("fr", "FLG_NIGER_CONGO")).toBe(
       "/fr/familles/FLG_NIGER_CONGO"
     );
+  });
+
+  // @req REQ-097
+  it("builds a localized people fiche href", () => {
+    expect(getPeopleRoute("fr", "PPL_YORUBA")).toBe("/fr/peuples/PPL_YORUBA");
   });
 });
 

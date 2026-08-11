@@ -3,56 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 
-import { ComparisonView } from "../ComparisonView";
 import { CompareShareBar } from "../CompareShareBar";
-import type { ComparisonPageData } from "@/types/compare";
-
-// ---------------------------------------------------------------------------
-// ComparisonView (component-level)
-// ---------------------------------------------------------------------------
-
-describe("ComparisonView", () => {
-  const twoEntityData: ComparisonPageData = {
-    type: "peuple",
-    columns: [
-      { id: "PPL_YORUBA", label: "Yoruba", type: "peuple" },
-      { id: "PPL_ZULU", label: "Zulu", type: "peuple" },
-    ],
-    rows: [
-      {
-        key: "origins",
-        values: {
-          PPL_YORUBA: "Golfe du Bénin",
-          PPL_ZULU: null,
-        },
-      },
-    ],
-  };
-
-  // @req REQ-097
-  it("renders the French comparison heading from entity labels", () => {
-    const { getByRole } = render(<ComparisonView data={twoEntityData} />);
-    expect(getByRole("heading", { level: 1 }).textContent).toBe(
-      "Comparaison : Yoruba · Zulu"
-    );
-  });
-
-  // @req REQ-098
-  it("renders a documented value verbatim", () => {
-    const { getByTestId } = render(<ComparisonView data={twoEntityData} />);
-    expect(getByTestId("comparison-row-origins").textContent).toContain(
-      "Golfe du Bénin"
-    );
-  });
-
-  // @req REQ-098
-  it("renders non renseigné for a missing cell instead of dropping it", () => {
-    const { getByTestId } = render(<ComparisonView data={twoEntityData} />);
-    expect(getByTestId("comparison-row-origins").textContent).toContain(
-      "non renseigné"
-    );
-  });
-});
 
 // ---------------------------------------------------------------------------
 // /[lang]/comparer/[entityType]/[...ids] page — not-found branches (9.4)

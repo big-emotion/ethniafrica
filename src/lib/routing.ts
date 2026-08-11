@@ -81,3 +81,6 @@ export const getCountryRoute = (language: Language, id: string): string =>
 
 export const getFamilyRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "families")}/${id}`;
+
+export const getPeopleRoute = (language: Language, id: string): string =>
+  `${getLocalizedRoute(language, "peoples")}/${id}`;

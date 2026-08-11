@@ -111,5 +111,12 @@ export default async function ComparisonPage({
   const { entityType, ids } = await params;
   const data = await loadComparisonData(entityType, ids);
 
-  return <ComparisonView data={data} />;
+  const title = `Comparaison : ${data.columns.map((column) => column.label).join(" · ")}`;
+
+  return (
+    <>
+      <h1>{title}</h1>
+      <ComparisonView data={data} />
+    </>
+  );
 }
