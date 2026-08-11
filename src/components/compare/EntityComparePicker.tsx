@@ -132,9 +132,7 @@ export function EntityComparePicker({
             normalizeString(family.exonym).includes(normalizeString(query))
           )
         : all;
-      return filtered
-        .filter((family) => !selectedIds.has(family.id))
-        .slice(0, MAX_SUGGESTIONS);
+      return filtered.filter((family) => !selectedIds.has(family.id));
     }
 
     return (searchQuery.data ?? []).filter(

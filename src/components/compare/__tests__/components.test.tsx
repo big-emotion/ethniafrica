@@ -43,6 +43,15 @@ const FAMILIES: CompareCandidate[] = [
   { id: "FLG_MANDE", type: "language-families", exonym: "Mandé" },
 ];
 
+const ALL_24_FAMILIES: CompareCandidate[] = Array.from(
+  { length: 24 },
+  (_, index) => ({
+    id: `FLG_${String(index).padStart(2, "0")}`,
+    type: "language-families" as const,
+    exonym: `Famille ${String(index).padStart(2, "0")}`,
+  })
+);
+
 describe("CompareStickyBar", () => {
   // @req REQ-097
   it("shows the N/max count and disables comparer below the minimum", () => {
@@ -85,12 +94,19 @@ describe("EntityComparePicker", () => {
     fetchLanguageFamilies = vi.fn(async () => FAMILIES);
   });
 
-  function renderPicker(onCompare = vi.fn()) {
+  function renderPicker(
+    onCompare = vi.fn(),
+    overrides: {
+      fetchLanguageFamilies?: () => Promise<CompareCandidate[]>;
+    } = {}
+  ) {
     return render(
       <EntityComparePicker
         onCompare={onCompare}
         fetchSuggestions={fetchSuggestions}
-        fetchLanguageFamilies={fetchLanguageFamilies}
+        fetchLanguageFamilies={
+          overrides.fetchLanguageFamilies ?? fetchLanguageFamilies
+        }
       />,
       { wrapper: createWrapper() }
     );
@@ -151,6 +167,19 @@ describe("EntityComparePicker", () => {
     expect(screen.getByRole("option", { name: /mandé/i })).toBeInTheDocument();
     // fetched once (not per keystroke) — the list is filtered client-side.
     expect(fetchLanguageFamilies).toHaveBeenCalledTimes(1);
+  });
+
+  // @req REQ-097
+  it("renders all 24 FLG entries unfiltered — the family list is never truncated to the search suggestion cap", async () => {
+    renderPicker(vi.fn(), {
+      fetchLanguageFamilies: vi.fn(async () => ALL_24_FAMILIES),
+    });
+    fireEvent.click(
+      screen.getByRole("radio", { name: /familles linguistiques/i })
+    );
+
+    await screen.findByRole("option", { name: /famille 00/i });
+    expect(screen.getAllByRole("option")).toHaveLength(24);
   });
 
   // @req REQ-097
