@@ -112,9 +112,14 @@ jobs:
               '**Routes audited:**',
               '- `/`',
               '- `/fr`',
+              '- `/fr/noms`',
+              '- `/fr/peuples`',
+              '- `/fr/recherche`',
+              '- `/fr/mentions-legales`',
+              '- `/fr/admin/connexion`',
               '- `/fr/pays/SEN`',
               '- `/fr/peuples/PPL_WOLOF`',
-              '- `/fr/noms`',
+              '- `/fr/familles/FLG_BANTU`',
               publicLinks,
             ].join('\n');
 

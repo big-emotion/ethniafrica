@@ -29,6 +29,7 @@
     "integration-tests": "vitest run --dir src/app/api",
     "api-tests": "vitest run --dir src/app/api/v2",
     "all-tests": "vitest run",
+    "test:charter-contracts": "tsx scripts/runCharterContracts.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "test:a11y": "npx playwright install chromium && tsx scripts/a11y-test.ts",

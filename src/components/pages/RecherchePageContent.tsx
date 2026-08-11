@@ -465,6 +465,7 @@ export function RecherchePageContent() {
         {/* ── filter chip row (always visible) ── */}
         <div
           data-testid="filter-chip-row"
+          role="group"
           className="flex flex-wrap items-center gap-2 min-h-[2rem]"
           aria-label="Filtres actifs"
         >

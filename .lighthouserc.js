@@ -5,6 +5,13 @@ module.exports = {
         "http://localhost:3000/",
         "http://localhost:3000/fr",
         "http://localhost:3000/fr/noms",
+        // One representative route per charter route-family rolled out in
+        // 16.4–16.9 (ETNI-807 · FR110), in addition to the fiche routes
+        // below. Dropping one leaves that family's mobile budget unmeasured.
+        "http://localhost:3000/fr/peuples",
+        "http://localhost:3000/fr/recherche",
+        "http://localhost:3000/fr/mentions-legales",
+        "http://localhost:3000/fr/admin/connexion",
         // The next three are one representative assembled fiche per AFRIK
         // entity type (FR102) — country, people, language family. Each entity
         // type resolves a different chapter sequence (panelRegistry.tsx), so
@@ -47,7 +54,7 @@ module.exports = {
     },
     assert: {
       assertions: {
-        "categories:performance": ["error", { minScore: 0.8 }],
+        "categories:performance": ["error", { minScore: 0.85 }],
         "categories:accessibility": ["error", { minScore: 1 }],
         "categories:best-practices": ["error", { minScore: 0.95 }],
         "largest-contentful-paint": ["error", { maxNumericValue: 5500 }],

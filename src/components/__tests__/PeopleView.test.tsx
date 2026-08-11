@@ -74,7 +74,8 @@ describe("PeopleView", () => {
     vi.mocked(afrikLoader.getPeoples).mockResolvedValue(firstPage);
   });
 
-  it("should display loading state initially", () => {
+  // @req REQ-004
+  it("should keep the search and alphabet filters visible while loading", () => {
     vi.mocked(afrikLoader.getPeoples).mockImplementation(
       () => new Promise(() => {})
     );
@@ -83,7 +84,12 @@ describe("PeopleView", () => {
       wrapper: createWrapper(),
     });
 
-    expect(screen.getByText("Chargement des peuples...")).toBeInTheDocument();
+    // The filter chrome renders immediately instead of being replaced by a
+    // full-page spinner — avoids the layout shift a vanishing/reappearing
+    // header caused on /fr/peuples.
+    expect(screen.getByRole("button", { name: "Tous" })).toBeInTheDocument();
+    expect(screen.getByRole("textbox")).toBeInTheDocument();
+    expect(screen.queryByText("Yoruba")).not.toBeInTheDocument();
   });
 
   // @req REQ-001

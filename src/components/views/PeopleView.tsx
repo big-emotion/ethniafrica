@@ -9,7 +9,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Search, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
+import { Search, ChevronLeft, ChevronRight } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import type { PeopleSummary, LanguageFamilyId } from "@/types/afrik-frontend";
 import { getPeoples } from "@/lib/afrikLoader";
@@ -18,6 +18,7 @@ import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip"
 import { ClassificationBadge } from "@/components/ui/classification-badge";
 import { cn } from "@/lib/utils";
 import { CHARTER_HOVER_LIFT } from "@/components/ui/charter-motion";
+import { Skeleton } from "@/components/ui/skeleton";
 
 interface PeopleViewProps {
   language: Language;
@@ -84,27 +85,6 @@ export const PeopleView = ({
   const formatNumber = (num: number): string =>
     new Intl.NumberFormat("fr-FR").format(Math.round(num));
 
-  if (isLoading) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-[400px] gap-3 py-8">
-        <Loader2 className="h-10 w-10 animate-spin text-primary" />
-        <p className="text-muted-foreground text-sm font-medium">
-          Chargement des peuples...
-        </p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-[400px] gap-3 py-8">
-        <p className="text-destructive text-sm font-medium">
-          Échec du chargement des peuples
-        </p>
-      </div>
-    );
-  }
-
   const renderPeopleCard = (people: PeopleSummary) => (
     <Card
       key={people.id}
@@ -168,6 +148,43 @@ export const PeopleView = ({
     </Card>
   );
 
+  const renderListBody = () => {
+    if (isLoading) {
+      // Skeleton cards approximate the real card list's height so the
+      // loading → loaded transition doesn't shift the page — the fixed-
+      // height spinner this replaced caused a large CLS on /fr/peuples.
+      return Array.from({ length: PEOPLES_PER_PAGE }, (_, i) => (
+        <Card key={i} className="rounded-afh-xl p-4">
+          <div className="space-y-2">
+            <Skeleton className="h-5 w-2/3" />
+            <Skeleton className="h-4 w-1/3" />
+            <Skeleton className="h-3 w-1/2" />
+          </div>
+        </Card>
+      ));
+    }
+
+    if (error) {
+      return (
+        <div className="flex items-center justify-center h-64">
+          <p className="text-destructive text-sm font-medium">
+            Échec du chargement des peuples
+          </p>
+        </div>
+      );
+    }
+
+    if (paginatedPeoples.length === 0) {
+      return (
+        <div className="flex items-center justify-center h-64">
+          <p className="text-muted-foreground">Aucun peuple trouvé</p>
+        </div>
+      );
+    }
+
+    return paginatedPeoples.map(renderPeopleCard);
+  };
+
   return (
     <div
       className={`space-y-4 ${
@@ -184,7 +201,7 @@ export const PeopleView = ({
                 className={cn(
                   "h-11 w-11 rounded-full text-xs",
                   selectedLetter === null
-                    ? "bg-[color:var(--accent)] text-white"
+                    ? "bg-[color:var(--accent)] text-[color:var(--accent-foreground)]"
                     : "bg-[color:var(--accent-tint)] text-afh-text"
                 )}
                 onClick={() => handleLetterChange(null)}
@@ -199,7 +216,7 @@ export const PeopleView = ({
                   className={cn(
                     "h-11 w-11 rounded-full text-xs",
                     selectedLetter === letter
-                      ? "bg-[color:var(--accent)] text-white"
+                      ? "bg-[color:var(--accent)] text-[color:var(--accent-foreground)]"
                       : "bg-[color:var(--accent-tint)] text-afh-text"
                   )}
                   onClick={() => handleLetterChange(letter)}
@@ -229,13 +246,7 @@ export const PeopleView = ({
             hideSearchAndAlphabet ? "px-0" : "px-4"
           } pb-4`}
         >
-          {paginatedPeoples.length === 0 ? (
-            <div className="flex items-center justify-center h-64">
-              <p className="text-muted-foreground">Aucun peuple trouvé</p>
-            </div>
-          ) : (
-            paginatedPeoples.map(renderPeopleCard)
-          )}
+          {renderListBody()}
         </div>
       ) : (
         <ScrollArea
@@ -248,13 +259,7 @@ export const PeopleView = ({
               hideSearchAndAlphabet ? "px-0" : "px-4"
             } pb-4`}
           >
-            {paginatedPeoples.length === 0 ? (
-              <div className="flex items-center justify-center h-64">
-                <p className="text-muted-foreground">Aucun peuple trouvé</p>
-              </div>
-            ) : (
-              paginatedPeoples.map(renderPeopleCard)
-            )}
+            {renderListBody()}
           </div>
         </ScrollArea>
       )}

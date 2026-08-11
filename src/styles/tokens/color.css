@@ -152,9 +152,16 @@
      Components must consume var(--accent) / var(--accent-tint) and must
      never reference an --afh-cat- token or a hex literal directly — that
      keeps the accent swappable per page without touching component code.
-     The default below (ocre) keeps unscoped components valid. */
+     The default below (ocre) keeps unscoped components valid.
+
+     --accent-foreground pairs with --accent for text placed directly on
+     the full-strength accent fill (e.g. a selected filter pill). It must
+     satisfy WCAG AA (≥ 4.5:1) against --accent; white clears that bar for
+     ocre/teal/perv, but terre's mid-tone requires a dark override (see
+     .afh-accent-terre below). */
   --accent: var(--afh-cat-ocre);
   --accent-tint: var(--afh-cat-ocre-tint);
+  --accent-foreground: #fff;
 }
 
 /* ─── Accent scope wrappers (ETNI-798 · FR104 · ETNI-927) ─────────
@@ -182,6 +189,9 @@
 .afh-accent-terre {
   --accent: var(--afh-cat-terre);
   --accent-tint: var(--afh-cat-terre-tint);
+  /* #c4573f only clears WCAG AA (4.5:1) against black, not white
+     (4.39:1) — axe-core flagged this on the live /fr/peuples route. */
+  --accent-foreground: #000;
 }
 
 .afh-accent-perv {

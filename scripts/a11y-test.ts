@@ -39,9 +39,20 @@ const AXE_RUN_OPTIONS = {
 // entity-type matrix (panelRegistry.tsx) gives each type a different chapter
 // sequence, so a panel regression can miss two of them entirely. Canonical
 // AFRIK identifiers only — never display-name slugs (qualityGateRoutes.test.ts).
+//
+// The five routes above them are one representative route per charter
+// route-family rolled out in 16.4–16.9 (ETNI-807 · FR110). `/fr/admin/connexion`
+// stands in for the moderation surface: `/fr/admin` itself redirects
+// unauthenticated visitors on mount, so auditing it unauthenticated would
+// measure the redirect, not the admin/moderation charter chrome.
 const LIVE_ROUTES_BASE_URL = process.env.A11Y_LIVE_BASE_URL;
 const LIVE_ROUTES = [
+  "/fr",
   "/fr/noms",
+  "/fr/peuples",
+  "/fr/recherche",
+  "/fr/mentions-legales",
+  "/fr/admin/connexion",
   "/fr/familles/FLG_BANTU",
   "/fr/peuples/PPL_WOLOF",
   "/fr/pays/SEN",
