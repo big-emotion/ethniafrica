@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
 
-import { getCountryRoute, getFamilyRoute } from "@/lib/routing";
+import {
+  getCountryRoute,
+  getFamilyRoute,
+  getLocalizedRoute,
+  getPageFromRoute,
+} from "@/lib/routing";
 
 describe("entity routes (ContextTriad, ETNI-818)", () => {
   // @req REQ-091
@@ -12,6 +17,25 @@ describe("entity routes (ContextTriad, ETNI-818)", () => {
   it("builds a localized language-family fiche href", () => {
     expect(getFamilyRoute("fr", "FLG_NIGER_CONGO")).toBe(
       "/fr/familles/FLG_NIGER_CONGO"
+    );
+  });
+});
+
+describe("compare page type (ETNI-481)", () => {
+  // @req REQ-091
+  it("resolves the French slug for the compare page type", () => {
+    expect(getLocalizedRoute("fr", "compare")).toBe("/fr/comparer");
+  });
+
+  // @req REQ-091
+  it("resolves the compare page type from the comparer slug", () => {
+    expect(getPageFromRoute("/fr/comparer")).toBe("compare");
+  });
+
+  // @req REQ-091
+  it("resolves the compare page type from a comparison URL", () => {
+    expect(getPageFromRoute("/fr/comparer/peuples/PPL_YORUBA/PPL_ZULU")).toBe(
+      "compare"
     );
   });
 });
