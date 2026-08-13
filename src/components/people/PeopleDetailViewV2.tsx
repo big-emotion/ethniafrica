@@ -8,6 +8,9 @@ import { getPeople } from "@/lib/afrikLoader";
 import {
   transformPeopleData,
   fetchPeopleNamesDossier,
+  transformEgoNetworkPreview,
+  type PeopleRelationPreviewItem,
+  type EgoNetworkPreviewSource,
 } from "@/lib/peopleDataTransformer";
 import {
   PeopleHero,
@@ -33,6 +36,18 @@ async function fetchFragmentation(
   if (!res.ok) return null;
   const json = await res.json();
   return (json.data ?? null) as PeopleFragmentation | null;
+}
+
+// @req FR72
+async function fetchRelationsPreview(
+  peopleId: string
+): Promise<PeopleRelationPreviewItem[]> {
+  const res = await fetch(`/api/v2/peoples/${peopleId}/relations?limit=3`);
+  if (!res.ok) return [];
+  const json = await res.json();
+  const data = (json.data ?? null) as EgoNetworkPreviewSource | null;
+  if (!data) return [];
+  return transformEgoNetworkPreview(data);
 }
 
 interface PeopleDetailViewV2Props {
@@ -98,6 +113,27 @@ export function PeopleDetailViewV2({
   const [namesDossier, setNamesDossier] = useState<PeopleNamesDossier | null>(
     null
   );
+  const [relationsPreview, setRelationsPreview] = useState<
+    PeopleRelationPreviewItem[]
+  >([]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    fetchRelationsPreview(peopleId)
+      .then((items) => {
+        if (!cancelled) setRelationsPreview(items);
+      })
+      .catch(() => {
+        // Relations preview is additive — the rest of the fiche must
+        // render regardless, so a fetch failure simply leaves it absent.
+        if (!cancelled) setRelationsPreview([]);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [peopleId]);
 
   useEffect(() => {
     let cancelled = false;
@@ -304,7 +340,8 @@ export function PeopleDetailViewV2({
         {(data.relatedPeoples.ethnicities.length > 0 ||
           data.relatedPeoples.politicalSystem ||
           data.relatedPeoples.clanOrganization ||
-          data.relatedPeoples.ageClassSystems) && (
+          data.relatedPeoples.ageClassSystems ||
+          relationsPreview.length > 0) && (
           <SectionCard
             label="Peuples voisins & organisation"
             icon="◉"
@@ -312,7 +349,11 @@ export function PeopleDetailViewV2({
             iconColor="var(--country-earth)"
             delayIndex={4}
           >
-            <PeopleRelatedPeoplesSection data={data.relatedPeoples} />
+            <PeopleRelatedPeoplesSection
+              data={data.relatedPeoples}
+              peopleId={data.hero.peopleId}
+              relationsPreview={relationsPreview}
+            />
           </SectionCard>
         )}
 

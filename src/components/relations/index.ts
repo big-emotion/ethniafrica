@@ -7,3 +7,7 @@ export {
   RelationsList,
   type RelationsListProps,
 } from "@/components/relations/RelationsList";
+export {
+  RelationsListWithSourceSheet,
+  type RelationsListWithSourceSheetProps,
+} from "@/components/relations/RelationsListWithSourceSheet";

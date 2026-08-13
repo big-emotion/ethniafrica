@@ -4,6 +4,7 @@ import {
   getCountryRoute,
   getFamilyRoute,
   getPeopleRoute,
+  getPeopleLinksRoute,
   getLocalizedRoute,
   getPageFromRoute,
 } from "@/lib/routing";
@@ -24,6 +25,13 @@ describe("entity routes (ContextTriad, ETNI-818)", () => {
   // @req REQ-097
   it("builds a localized people fiche href", () => {
     expect(getPeopleRoute("fr", "PPL_YORUBA")).toBe("/fr/peuples/PPL_YORUBA");
+  });
+
+  // @req REQ-097 FR72
+  it("builds a localized people links (liens) fiche href", () => {
+    expect(getPeopleLinksRoute("fr", "PPL_YORUBA")).toBe(
+      "/fr/peuples/PPL_YORUBA/liens"
+    );
   });
 });
 

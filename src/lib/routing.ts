@@ -84,3 +84,15 @@ export const getFamilyRoute = (language: Language, id: string): string =>
 
 export const getPeopleRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "peoples")}/${id}`;
+
+// ---------------------------------------------------------------------------
+// Nested entity sub-routes — segments below a single fiche (Epic 11, FR72)
+// ---------------------------------------------------------------------------
+
+const LIENS_SLUG: Record<Language, string> = {
+  fr: "liens",
+};
+
+// @req REQ-097
+export const getPeopleLinksRoute = (language: Language, id: string): string =>
+  `${getPeopleRoute(language, id)}/${LIENS_SLUG[language]}`;
