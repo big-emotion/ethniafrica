@@ -8,6 +8,7 @@ import {
   transformPeopleHistory,
   transformPeopleCulture,
   transformPeopleRelatedPeoples,
+  transformEgoNetworkPreview,
   transformPeopleCountries,
   transformPeopleData,
   transformPeopleNameRecord,
@@ -418,6 +419,48 @@ describe("transformPeopleRelatedPeoples", () => {
     const result = transformPeopleRelatedPeoples(["Oyo"], undefined);
     expect(result.politicalSystem).toBeUndefined();
     expect(result.ethnicities).toEqual(["Oyo"]);
+  });
+});
+
+describe("transformEgoNetworkPreview", () => {
+  // @req REQ-097 FR72
+  it("maps sourced relations to preview items", () => {
+    const result = transformEgoNetworkPreview({
+      sourced: [
+        {
+          relationId: "REL_1",
+          type: "migratory",
+          otherPeople: { nameMain: "Fon" },
+        },
+      ],
+      derived: [],
+    });
+    expect(result).toEqual([
+      { id: "REL_1", type: "migratory", derived: false, neighborName: "Fon" },
+    ]);
+  });
+
+  // @req REQ-097 FR73
+  it("maps derived linguistic links with a derived id and flag", () => {
+    const result = transformEgoNetworkPreview({
+      sourced: [],
+      derived: [{ otherPeople: { id: "PPL_BAMILEKE", nameMain: "Bamiléké" } }],
+    });
+    expect(result).toEqual([
+      {
+        id: "derived_PPL_BAMILEKE",
+        type: "linguistic",
+        derived: true,
+        neighborName: "Bamiléké",
+      },
+    ]);
+  });
+
+  // @req REQ-097 FR72
+  it("returns an empty array for an empty network", () => {
+    expect(transformEgoNetworkPreview({ sourced: [], derived: [] })).toEqual(
+      []
+    );
   });
 });
 

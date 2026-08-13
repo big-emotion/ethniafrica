@@ -23,6 +23,7 @@ import type {
   PeopleNameRecord,
 } from "@/api/v2/schemas/names";
 import type { NameRecordView } from "@/types/names";
+import type { RelationBadgeType } from "@/lib/relationsDataTransformer";
 
 // ==========================================
 // OUTPUT TYPES
@@ -87,6 +88,24 @@ export interface PeopleRelatedData {
   politicalSystem?: string;
   clanOrganization?: string;
   ageClassSystems?: string;
+}
+
+/** One row of the fiche's "Liens" preview (Epic 11, FR72/FR75) — the full corpus lives at `/fr/peuples/{id}/liens`. */
+export interface PeopleRelationPreviewItem {
+  id: string;
+  type: RelationBadgeType;
+  derived: boolean;
+  neighborName: string;
+}
+
+/** Read-time shape of the `/api/v2/peoples/{id}/relations` envelope's `data`, kept minimal on purpose. */
+export interface EgoNetworkPreviewSource {
+  sourced: Array<{
+    relationId: string;
+    type: string;
+    otherPeople: { nameMain: string };
+  }>;
+  derived: Array<{ otherPeople: { id: string; nameMain: string } }>;
 }
 
 export interface CountryDistributionRow {
@@ -293,6 +312,26 @@ export function transformPeopleRelatedPeoples(
     clanOrganization: organization?.clanOrganization,
     ageClassSystems: organization?.ageClassSystems,
   };
+}
+
+// @req REQ-097
+export function transformEgoNetworkPreview(
+  network: EgoNetworkPreviewSource
+): PeopleRelationPreviewItem[] {
+  return [
+    ...network.sourced.map((relation) => ({
+      id: relation.relationId,
+      type: relation.type as RelationBadgeType,
+      derived: false,
+      neighborName: relation.otherPeople.nameMain,
+    })),
+    ...network.derived.map((link) => ({
+      id: `derived_${link.otherPeople.id}`,
+      type: "linguistic" as const,
+      derived: true,
+      neighborName: link.otherPeople.nameMain,
+    })),
+  ];
 }
 
 export function transformPeopleCountries(
