@@ -144,6 +144,16 @@
   --afh-error-bg: var(--afh-color-error-bg);
   --afh-error-border: var(--afh-color-error-border);
 
+  /* Relation type — RelationTypeBadge / EgoNetworkGraph edges (Epic 11,
+     ETNI-509). Hues reference the existing calm palette — no new colors,
+     no red. Linguistic proximity is always AFRIK-derived, never sourced
+     individually, hence the dashed stroke pairing. */
+  --afh-relation-linguistic: var(--afh-color-green);
+  --afh-relation-migratory: var(--afh-color-earth);
+  --afh-relation-commercial: var(--afh-color-gold);
+  --afh-relation-religious: var(--afh-color-terracotta);
+  --afh-relation-derived-dash: 4 3;
+
   /* Accent scoping (ETNI-798 · FR104) — the ONLY path a component may use
      to receive an accent colour. A page or route wrapper scopes an accent
      by overriding --accent and --accent-tint to one of the --afh-cat-
