@@ -287,6 +287,25 @@ describe("CompareEntityHeader", () => {
     type: "peuple",
   };
 
+  // @req REQ-097 — the sticky entity strip above the fold must not shift
+  // when the lazy ConfidenceChip resolves: reserve its 44px tap target
+  // height around both the Suspense fallback link and the loaded chip.
+  it("reserves the confidence chip's minimum tap-target height so loading it in causes no layout shift", async () => {
+    render(<CompareEntityHeader column={highConfidenceColumn} />);
+
+    const slotBeforeLoad = screen.getByTestId("compare-entity-confidence-slot");
+    expect(slotBeforeLoad.className).toMatch(/min-h-\[44px\]/);
+
+    await waitFor(() => {
+      expect(
+        screen.getByText(/82 % · 5 sources · vérifié 2025-09-21/)
+      ).toBeInTheDocument();
+    });
+
+    const slotAfterLoad = screen.getByTestId("compare-entity-confidence-slot");
+    expect(slotAfterLoad.className).toMatch(/min-h-\[44px\]/);
+  });
+
   // @req REQ-097
   it("shows each entity's own confidence chip side by side with no comparative markup or copy", async () => {
     render(

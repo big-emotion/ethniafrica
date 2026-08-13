@@ -21,6 +21,12 @@ module.exports = {
         // ETNI-463 (7.11) AC1 — also the large-family sample (FLG_BANTU:
         // 6 languages, 174 associated peoples, the largest currently-seeded).
         "http://localhost:3000/fr/familles/FLG_BANTU",
+        // ETNI-488 (9.11) AC1 — comparator picker + one seeded comparison
+        // route (illustrative staging IDs, same FLG_ATLANTIQUE family as the
+        // /fr/peuples/PPL_WOLOF fiche above). Tighter CWV budgets for both
+        // are scoped in assert.assertMatrix below.
+        "http://localhost:3000/fr/comparer",
+        "http://localhost:3000/fr/comparer/peuples/PPL_WOLOF/PPL_SERERE",
       ],
       numberOfRuns: 3,
       // Audit returning-user performance with essential-only consent. The
@@ -60,6 +66,23 @@ module.exports = {
         "largest-contentful-paint": ["error", { maxNumericValue: 5500 }],
         "total-blocking-time": ["error", { maxNumericValue: 300 }],
       },
+      // ETNI-488 (9.11) AC1 — comparator routes are held to the story's
+      // tighter field-metric budgets (LCP ≤ 2.5s / CLS ≤ 0.1 / INP ≤ 200ms,
+      // max-potential-fid as the lab proxy for INP) in addition to the
+      // assertions above. Scoped by URL pattern so the looser site-wide
+      // LCP budget and the (currently ungated) CLS on fiche routes are
+      // left untouched — only the comparator picker and comparison routes
+      // tighten.
+      assertMatrix: [
+        {
+          matchingUrlPattern: "^http://localhost:3000/fr/comparer(/.*)?$",
+          assertions: {
+            "largest-contentful-paint": ["error", { maxNumericValue: 2500 }],
+            "cumulative-layout-shift": ["error", { maxNumericValue: 0.1 }],
+            "max-potential-fid": ["error", { maxNumericValue: 200 }],
+          },
+        },
+      ],
     },
     upload: {
       target: "temporary-public-storage",
