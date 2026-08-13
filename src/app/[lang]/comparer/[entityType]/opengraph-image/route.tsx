@@ -1,5 +1,5 @@
 /**
- * OG comparison card — `next/og` `ImageResponse` (FR63, AR30).
+ * Dynamic comparison OG image route — `next/og` `ImageResponse` (FR63, AR30).
  *
  * Same URL-reconstructs-the-comparison contract as page.tsx, but fetches
  * through `comparisonService.getComparisonEntities` instead of
@@ -9,7 +9,6 @@
 import fs from "node:fs";
 import path from "node:path";
 import { ImageResponse } from "next/og";
-import { notFound } from "next/navigation";
 import { getComparisonEntities } from "@/api/v2/services/comparisonService";
 import { transformComparisonData } from "@/lib/comparisonDataTransformer";
 import { buildComparisonOgCard } from "@/lib/comparisonOgCard";
@@ -17,18 +16,14 @@ import { CANONICAL_DOMAIN } from "@/lib/brand";
 import type { CompareEntityType } from "@/types/compare";
 
 // @req REQ-097
-export const size = { width: 1200, height: 630 };
-// @req REQ-097
-export const contentType = "image/png";
-// @req REQ-097
 export const runtime = "nodejs";
-// @req REQ-097
-export const alt = "Comparaison AFRIK";
 
-interface ImageParams {
+interface RouteParams {
+  lang: string;
   entityType: string;
-  ids: string[];
 }
+
+const IMAGE_SIZE = { width: 1200, height: 630 };
 
 const ENTITY_TYPE_SLUGS = ["peuples", "pays", "familles"] as const;
 type ComparerEntityTypeSlug = (typeof ENTITY_TYPE_SLUGS)[number];
@@ -62,15 +57,19 @@ function readFontFile(fileName: string): Buffer {
 }
 
 // @req REQ-097
-export default async function ComparisonOgImage({
-  params,
-}: {
-  params: Promise<ImageParams>;
-}) {
-  const { entityType, ids } = await params;
+export async function GET(
+  request: Request,
+  {
+    params,
+  }: {
+    params: Promise<RouteParams>;
+  }
+) {
+  const { entityType } = await params;
+  const ids = new URL(request.url).searchParams.getAll("id");
 
   if (!hasValidSegmentShape(entityType, ids)) {
-    notFound();
+    return new Response(null, { status: 404 });
   }
 
   const internalType = SLUG_TO_INTERNAL_TYPE[entityType];
@@ -80,7 +79,7 @@ export default async function ComparisonOgImage({
   );
 
   if (missingIds.length > 0) {
-    notFound();
+    return new Response(null, { status: 404 });
   }
 
   const pageData = transformComparisonData(entities.map((item) => item.entity));
@@ -183,7 +182,7 @@ export default async function ComparisonOgImage({
       </div>
     </div>,
     {
-      ...size,
+      ...IMAGE_SIZE,
       fonts: [
         {
           name: "Fraunces",
