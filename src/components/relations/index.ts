@@ -11,3 +11,7 @@ export {
   RelationsListWithSourceSheet,
   type RelationsListWithSourceSheetProps,
 } from "@/components/relations/RelationsListWithSourceSheet";
+export {
+  EgoNetworkGraph,
+  type EgoNetworkGraphProps,
+} from "@/components/relations/EgoNetworkGraph";
