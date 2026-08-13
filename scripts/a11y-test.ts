@@ -45,6 +45,11 @@ const AXE_RUN_OPTIONS = {
 // stands in for the moderation surface: `/fr/admin` itself redirects
 // unauthenticated visitors on mount, so auditing it unauthenticated would
 // measure the redirect, not the admin/moderation charter chrome.
+//
+// The last two routes are the comparator journey (Epic 9, ETNI-485 · FR44):
+// `/fr/comparer` is the picker shell, `/fr/comparer/familles/FLG_BANTU/FLG_MANDE`
+// is one seeded comparison — both FLG ids already appear above as known-good
+// staging data, reused here so the route doesn't depend on unverified seed ids.
 const LIVE_ROUTES_BASE_URL = process.env.A11Y_LIVE_BASE_URL;
 const LIVE_ROUTES = [
   "/fr",
@@ -56,6 +61,8 @@ const LIVE_ROUTES = [
   "/fr/familles/FLG_BANTU",
   "/fr/peuples/PPL_WOLOF",
   "/fr/pays/SEN",
+  "/fr/comparer",
+  "/fr/comparer/familles/FLG_BANTU/FLG_MANDE",
 ];
 
 const MIME: Record<string, string> = {

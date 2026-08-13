@@ -11,6 +11,10 @@ export type UnauditedDisclaimerProps = {
   /** Fiche identifier (e.g. `PPL_YORUBA`, `FLG_BANTU`, `BFA`). Used as the
    *  per-fiche localStorage dismiss key. */
   fiche: string;
+  /** Human-readable entity label appended to the region's aria-label so two
+   *  instances rendered side by side (comparator, ETNI-485) stay distinct —
+   *  axe-core's landmark-unique rule otherwise flags the duplicate. */
+  entityLabel?: string;
 };
 
 function dismissKey(fiche: string): string {
@@ -73,6 +77,7 @@ function resolveVariant(lastHumanAuditAt: string | null): Variant {
 export function UnauditedDisclaimer({
   lastHumanAuditAt,
   fiche,
+  entityLabel,
 }: UnauditedDisclaimerProps) {
   const variant = resolveVariant(lastHumanAuditAt);
 
@@ -101,10 +106,14 @@ export function UnauditedDisclaimer({
     setDismissed(true);
   };
 
+  const regionLabel = entityLabel
+    ? `avertissement vérification — ${entityLabel}`
+    : "avertissement vérification";
+
   return (
     <div
       role="region"
-      aria-label="avertissement vérification"
+      aria-label={regionLabel}
       className="flex items-start justify-between gap-3 rounded-md border px-4 py-3 text-sm"
       style={{
         background: "var(--afh-bg-warm, var(--country-bg, #F5EDE0))",

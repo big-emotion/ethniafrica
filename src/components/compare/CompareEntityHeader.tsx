@@ -123,7 +123,11 @@ export function CompareEntityHeader({
           </Suspense>
         </>
       ) : (
-        <UnauditedDisclaimer lastHumanAuditAt={null} fiche={column.id} />
+        <UnauditedDisclaimer
+          lastHumanAuditAt={null}
+          fiche={column.id}
+          entityLabel={column.label}
+        />
       )}
 
       <Link
