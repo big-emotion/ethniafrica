@@ -94,6 +94,8 @@ export default {
         "afh-relation-migratory": "var(--afh-relation-migratory)",
         "afh-relation-commercial": "var(--afh-relation-commercial)",
         "afh-relation-religious": "var(--afh-relation-religious)",
+        "afh-atlas-land": "var(--afh-atlas-land)",
+        "afh-atlas-coastline": "var(--afh-atlas-coastline)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
