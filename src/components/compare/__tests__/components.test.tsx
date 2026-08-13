@@ -9,11 +9,28 @@ import {
 import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createElement } from "react";
+import axe from "axe-core";
 import { CompareStickyBar } from "../CompareStickyBar";
 import { EntityComparePicker } from "../EntityComparePicker";
 import { CompareEntityHeader } from "../CompareEntityHeader";
+import { ComparisonView } from "../ComparisonView";
 import type { CompareCandidate } from "@/hooks/use-compare-selection";
-import type { ComparisonColumn } from "@/types/compare";
+import type { ComparisonColumn, ComparisonPageData } from "@/types/compare";
+
+// axe-core is already a project dependency (used by scripts/a11y-test.ts via
+// @axe-core/playwright); running it directly against the jsdom/happy-dom
+// render output gives the same rule engine as vitest-axe without adding a
+// new package that would need a package-lock.json update (ETNI-485).
+async function expectNoAxeViolations(container: Element): Promise<void> {
+  const results = await axe.run(container);
+  const summary = results.violations.map(
+    (violation) =>
+      `[${violation.impact}] ${violation.id}: ${violation.help} (${violation.nodes
+        .map((node) => node.target.join(" "))
+        .join(", ")})`
+  );
+  expect(summary).toEqual([]);
+}
 
 function createWrapper() {
   const queryClient = new QueryClient({
@@ -362,5 +379,86 @@ describe("CompareEntityHeader", () => {
   it("renders no badge for the consensual/default classification status", () => {
     render(<CompareEntityHeader column={highConfidenceColumn} />);
     expect(screen.queryByTestId("classification-icon")).not.toBeInTheDocument();
+  });
+});
+
+// ETNI-485 — axe-core assertions on the two comparator surfaces named by the
+// story's technical notes (ComparisonView + picker), run test-first before
+// wiring /fr/comparer into the a11y CI live-route list (scripts/a11y-test.ts).
+describe("Accessibility (axe)", () => {
+  const auditedComparison: ComparisonPageData = {
+    type: "peuple",
+    columns: [
+      {
+        id: "PPL_YORUBA",
+        label: "Yoruba",
+        type: "peuple",
+        confidence: {
+          score: 0.82,
+          sourceCount: 5,
+          lastHumanAuditAt: "2025-09-21",
+        },
+      },
+      {
+        id: "PPL_IGBO",
+        label: "Igbo",
+        type: "peuple",
+        confidence: {
+          score: 0.41,
+          sourceCount: 2,
+          lastHumanAuditAt: "2025-06-01",
+        },
+      },
+    ],
+    rows: [
+      {
+        key: "appellations",
+        values: {
+          PPL_YORUBA: { mainName: "Yoruba", selfAppellation: "Yoruba" },
+          PPL_IGBO: { mainName: "Igbo" },
+        },
+      },
+    ],
+  };
+
+  // Two unsourced columns rendered side by side — the regression case that
+  // caught the landmark-unique violation (duplicate role="region"
+  // aria-label="avertissement vérification" from UnauditedDisclaimer).
+  const unauditedComparison: ComparisonPageData = {
+    type: "peuple",
+    columns: [
+      { id: "PPL_SHONA", label: "Shona", type: "peuple" },
+      { id: "PPL_ZULU", label: "Zulu", type: "peuple" },
+    ],
+    rows: [
+      {
+        key: "appellations",
+        values: { PPL_SHONA: null, PPL_ZULU: null },
+      },
+    ],
+  };
+
+  // @req REQ-097
+  it("ComparisonView has no axe violations with audited columns", async () => {
+    const { container } = render(<ComparisonView data={auditedComparison} />);
+    await expectNoAxeViolations(container);
+  });
+
+  // @req REQ-097
+  it("ComparisonView has no axe violations with multiple unaudited columns (landmark-unique regression)", async () => {
+    const { container } = render(<ComparisonView data={unauditedComparison} />);
+    await expectNoAxeViolations(container);
+  });
+
+  // @req REQ-097
+  it("EntityComparePicker has no axe violations", async () => {
+    const { container } = render(
+      <EntityComparePicker
+        fetchSuggestions={async () => []}
+        fetchLanguageFamilies={async () => []}
+      />,
+      { wrapper: createWrapper() }
+    );
+    await expectNoAxeViolations(container);
   });
 });
