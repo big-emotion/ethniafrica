@@ -2,7 +2,9 @@
  * Synchronize canonical AFRIK JSON sources to a guarded Supabase target.
  *
  * Data is processed in AFRIK hierarchy order:
- * language families → peoples → countries → people/country relations.
+ * language families → peoples → countries → people/country relations →
+ * migration events (peoples must exist first — migration_event_peoples FKs
+ * afrik_peoples).
  */
 
 import { config } from "dotenv";
@@ -20,6 +22,10 @@ import {
   loadAllRelationFiles,
   loadRelations,
 } from "@/lib/afrik/loaders/relationJsonLoader";
+import {
+  loadAllMigrationFiles,
+  loadMigrations,
+} from "@/lib/afrik/loaders/migrationJsonLoader";
 import { createAdminClient } from "@/lib/supabase/admin";
 import type { Country, LanguageFamily, People } from "@/types/afrik";
 import type { RelationRecord } from "@/types/relations";
@@ -50,6 +56,7 @@ export interface MigrationReport {
   countries: MigrationSectionReport;
   relations: MigrationSectionReport;
   peopleRelations: PeopleRelationsSectionReport;
+  migrations: MigrationSectionReport;
   names: MigrationSectionReport;
   verification: {
     before: AfrikDriftReport;
@@ -86,6 +93,7 @@ function createMigrationReport(): MigrationReport {
     countries: { total: 0, inserted: 0, errors: [] },
     relations: { total: 0, inserted: 0, errors: [] },
     peopleRelations: { total: 0, inserted: 0, errors: [], orphans: [] },
+    migrations: { total: 0, inserted: 0, errors: [] },
     names: { total: 0, inserted: 0, errors: [] },
     verification: {
       before: emptyDriftReport(),
@@ -372,6 +380,7 @@ function hasErrors(report: MigrationReport): boolean {
     report.countries.errors.length > 0 ||
     report.relations.errors.length > 0 ||
     report.peopleRelations.errors.length > 0 ||
+    report.migrations.errors.length > 0 ||
     report.names.errors.length > 0 ||
     report.verification.errors.length > 0
   );
@@ -419,6 +428,7 @@ export async function migrateAfrikToDatabase(
   if (dryRun) {
     report.relations.total = countRelations(peoples);
     report.peopleRelations.total = loadAllRelationFiles().length;
+    report.migrations.total = loadAllMigrationFiles().length;
     logger.info("AFRIK synchronization preview completed", {
       target: validatedTarget.target,
       languageFamilies: report.languageFamilies.total,
@@ -426,6 +436,7 @@ export async function migrateAfrikToDatabase(
       countries: report.countries.total,
       relations: report.relations.total,
       peopleRelations: report.peopleRelations.total,
+      migrations: report.migrations.total,
       drift: report.verification.before,
     });
     return report;
@@ -435,6 +446,12 @@ export async function migrateAfrikToDatabase(
   const validFamilyIds = await readIds(supabase, "afrik_language_families");
 
   await upsertPeoples(supabase, peoples, validFamilyIds, report);
+
+  const migrationRecords = loadAllMigrationFiles();
+  const migrationsReport = await loadMigrations(supabase, migrationRecords);
+  report.migrations.total = migrationsReport.total;
+  report.migrations.inserted = migrationsReport.inserted;
+  report.migrations.errors = migrationsReport.errors;
 
   const namesReport = await loadNameRecords(supabase);
   report.names.total = namesReport.total;
@@ -481,6 +498,7 @@ export async function migrateAfrikToDatabase(
       countries: report.countries,
       relations: report.relations,
       peopleRelations: report.peopleRelations,
+      migrations: report.migrations,
       names: report.names,
       driftBefore: report.verification.before,
       driftAfter: report.verification.after,
