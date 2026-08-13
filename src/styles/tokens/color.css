@@ -154,6 +154,13 @@
   --afh-relation-religious: var(--afh-color-terracotta);
   --afh-relation-derived-dash: 4 3;
 
+  /* Atlas — AfricaBasemap foundation (Epic 12, ETNI-519). Aliases only, no
+     new raw hex: the basemap silhouette reuses the earth palette so it
+     reads as "terrain" without introducing a new hue. Epic 12/13 overlay
+     layers (rendered as AfricaBasemap children) pick their own tokens. */
+  --afh-atlas-land: var(--afh-color-earth-bg);
+  --afh-atlas-coastline: var(--afh-color-earth);
+
   /* Accent scoping (ETNI-798 · FR104) — the ONLY path a component may use
      to receive an accent colour. A page or route wrapper scopes an accent
      by overriding --accent and --accent-tint to one of the --afh-cat-
