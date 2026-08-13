@@ -188,7 +188,7 @@ export function RelationsList({
                   <RelationTypeBadge type={item.type} derived={item.derived} />
                   <AutonymExonymHeading
                     autonym={item.neighbor.nameMain}
-                    variant="card"
+                    variant="inline"
                   />
                 </div>
                 {item.period?.label && (
