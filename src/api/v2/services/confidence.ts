@@ -20,6 +20,7 @@ const internalEntityTypes: Record<ConfidenceEntityType, string> = {
   people: "people",
   "language-family": "language_family",
   relation: "relation",
+  migration: "migration",
 };
 
 function toInternalEntityType(entityType: ConfidenceEntityType): string {
