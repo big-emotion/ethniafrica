@@ -11,15 +11,21 @@ import {
   loadAllRelationFiles,
   loadRelations,
 } from "@/lib/afrik/loaders/relationJsonLoader";
+import {
+  loadAllMigrationFiles,
+  loadMigrations,
+} from "@/lib/afrik/loaders/migrationJsonLoader";
 import { AFRIK_PRODUCTION_SUPABASE_URL } from "../lib/afrikMigrationTarget";
 import { migrateAfrikToDatabase } from "../migrateAfrikToDatabase";
 import type { LanguageFamily, People } from "@/types/afrik";
 import type { RelationRecord } from "@/types/relations";
+import type { MigrationRecord } from "@/types/migrations";
 
 vi.mock("@/lib/afrik/loaders/languageFamilyLoader");
 vi.mock("@/lib/afrik/loaders/peopleLoader");
 vi.mock("@/lib/afrik/loaders/countryLoader");
 vi.mock("@/lib/afrik/loaders/relationJsonLoader");
+vi.mock("@/lib/afrik/loaders/migrationJsonLoader");
 vi.mock("@/lib/supabase/admin");
 
 const STAGING_URL = "https://ethniafrica-staging.supabase.co";
@@ -117,6 +123,12 @@ describe("migrateAfrikToDatabase", () => {
     vi.mocked(loadAllCountries).mockResolvedValue([coteDIvoire]);
     vi.mocked(loadAllRelationFiles).mockReturnValue([]);
     vi.mocked(loadRelations).mockResolvedValue({
+      total: 0,
+      inserted: 0,
+      errors: [],
+    });
+    vi.mocked(loadAllMigrationFiles).mockReturnValue([]);
+    vi.mocked(loadMigrations).mockResolvedValue({
       total: 0,
       inserted: 0,
       errors: [],
@@ -339,6 +351,63 @@ describe("migrateAfrikToDatabase", () => {
     });
     expect(loadRelations).toHaveBeenCalledWith(expect.anything(), [
       relationFixture,
+    ]);
+  });
+
+  // @req REQ-032
+  it("registers the additive migrations step and reports the loader's result", async () => {
+    const migrationFixture: MigrationRecord = {
+      id: "MGR_TEST_EXPANSION_01",
+      nameMain: "illustratif",
+      migrationGroup: null,
+      eventType: "expansion",
+      classificationStatus: "reconstructive",
+      timeRange: { startYear: -1000, endYear: -500, datingNote: null },
+      geometry: {
+        type: "LineString",
+        coordinates: [
+          [10, 5],
+          [12, 3],
+        ],
+      },
+      peoplesInvolved: [{ id: "PPL_TEST_A", role: "origin" }],
+      content: {
+        summary: "illustratif",
+        narrative: "illustratif",
+        debate: null,
+        sources: [],
+      },
+    };
+    vi.mocked(loadAllMigrationFiles).mockReturnValue([migrationFixture]);
+    vi.mocked(loadMigrations).mockResolvedValue({
+      total: 1,
+      inserted: 1,
+      errors: [],
+    });
+    useSupabaseDouble({
+      rows: {
+        afrik_language_families: [
+          { id: afroasiaticFamily.id, content: {} },
+          { id: "FLG_KROU", content: {} },
+        ],
+        afrik_peoples: [{ id: betePeople.id, content: {} }],
+        afrik_countries: [{ id: coteDIvoire.id, content: {} }],
+      },
+    });
+
+    const report = await migrateAfrikToDatabase({
+      dryRun: false,
+      writeErrorReport: false,
+      target: stagingTarget,
+    });
+
+    expect(report.migrations).toMatchObject({
+      total: 1,
+      inserted: 1,
+      errors: [],
+    });
+    expect(loadMigrations).toHaveBeenCalledWith(expect.anything(), [
+      migrationFixture,
     ]);
   });
 
