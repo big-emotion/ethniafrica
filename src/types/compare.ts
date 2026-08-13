@@ -26,6 +26,7 @@ import type {
   DemographicsSection,
   DecolonialHeader,
   PeopleReference,
+  ClassificationStatus,
 } from "./afrik";
 
 // ==========================================
@@ -138,10 +139,24 @@ export const COMPARABLE_ROWS: Record<CompareEntityType, readonly string[]> = {
 // OUTPUT SHAPE
 // ==========================================
 
+/**
+ * Module #0 confidence, scoped to one compared entity. `score` mirrors the
+ * `confidence_scores.score` column (0–1 fraction). Absent (`undefined`/
+ * `null`) means no `confidence_scores` row — the unaudited case, never a
+ * fabricated default (Source Tier policy).
+ */
+export interface ComparisonConfidence {
+  score: number;
+  sourceCount: number | null;
+  lastHumanAuditAt?: string | null;
+}
+
 export interface ComparisonColumn {
   id: string;
   label: string;
   type: CompareEntityType;
+  confidence?: ComparisonConfidence | null;
+  classificationStatus?: ClassificationStatus | null;
 }
 
 /**

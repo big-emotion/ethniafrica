@@ -1,4 +1,5 @@
 export { ComparisonView } from "@/components/compare/ComparisonView";
+export { CompareEntityHeader } from "@/components/compare/CompareEntityHeader";
 export {
   CompareSectionRow,
   getRowLabel,

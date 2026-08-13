@@ -142,7 +142,20 @@ describe("generateMetadata for /[lang]/comparer/[entityType]/[...ids]", () => {
       "/fr/comparer/peuples/PPL_YORUBA/PPL_ZULU"
     );
     expect(metadata.openGraph?.title).toBe("Comparaison : Yoruba · Zulu");
-    expect(metadata.twitter).toMatchObject({ card: "summary_large_image" });
+    const imageUrl =
+      "/fr/comparer/peuples/opengraph-image?id=PPL_YORUBA&id=PPL_ZULU";
+    expect(metadata.openGraph?.images).toEqual([
+      {
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: "Comparaison AFRIK",
+      },
+    ]);
+    expect(metadata.twitter).toMatchObject({
+      card: "summary_large_image",
+      images: [imageUrl],
+    });
   });
 
   // @req REQ-091

@@ -82,6 +82,9 @@ export async function generateMetadata({
   const title = `Comparaison : ${labels.join(" · ")}`;
   const description = `Comparaison de fiches AFRIK : ${labels.join(", ")}. Identité, langues, démographie et confiance éditoriale côte à côte.`;
   const canonical = `/${lang}/comparer/${entityType}/${ids.join("/")}`;
+  const imageSearchParams = new URLSearchParams();
+  ids.forEach((id) => imageSearchParams.append("id", id));
+  const imageUrl = `/${lang}/comparer/${entityType}/opengraph-image?${imageSearchParams.toString()}`;
 
   return {
     title,
@@ -93,11 +96,20 @@ export async function generateMetadata({
       description,
       url: canonical,
       type: "website",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: "Comparaison AFRIK",
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [imageUrl],
     },
   };
 }

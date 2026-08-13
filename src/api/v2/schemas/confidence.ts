@@ -13,13 +13,15 @@ import { z } from "zod";
  * Public entity-type values accepted by /v2/confidence/{entityType}/{entityId}.
  * Hyphenated for URL friendliness; mapped to internal underscore keys
  * (`language_family`) inside the service. `relation` added by ETNI-503
- * (Epic 11 fabric extension) — the fabric's entity_type column is TEXT, so
- * this is an additive union change, not a DB schema change.
+ * (Epic 11 fabric extension); `migration` added by ETNI-516 (Epic 12 fabric
+ * extension) — the fabric's entity_type column is TEXT, so this is an
+ * additive union change, not a DB schema change.
  */
 export const confidenceEntityTypeSchema = z.enum([
   "people",
   "language-family",
   "relation",
+  "migration",
 ]);
 
 export type ConfidenceEntityType = z.infer<typeof confidenceEntityTypeSchema>;
@@ -27,14 +29,15 @@ export type ConfidenceEntityType = z.infer<typeof confidenceEntityTypeSchema>;
 export const confidenceEntityIdSchema = z
   .string()
   .min(1)
-  .regex(/^(PPL_[A-Z0-9_]+|FLG_[A-Z0-9_]+|REL_[A-Z0-9_]+)$/, {
-    message: "Invalid entity id format (expected PPL_*, FLG_* or REL_*)",
+  .regex(/^(PPL_[A-Z0-9_]+|FLG_[A-Z0-9_]+|REL_[A-Z0-9_]+|MGR_[A-Z0-9_]+)$/, {
+    message: "Invalid entity id format (expected PPL_*, FLG_*, REL_* or MGR_*)",
   });
 
 const entityTypePrefixes: Record<ConfidenceEntityType, string> = {
   people: "PPL_",
   "language-family": "FLG_",
   relation: "REL_",
+  migration: "MGR_",
 };
 
 export const confidenceParamsSchema = z
