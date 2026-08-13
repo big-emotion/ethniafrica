@@ -21,6 +21,7 @@ import {
   isRowEmpty,
 } from "@/components/compare/CompareSectionRow";
 import { CompareValueCell } from "@/components/compare/CompareValueCell";
+import { CompareEntityHeader } from "@/components/compare/CompareEntityHeader";
 import { getCountryRoute, getFamilyRoute, getPeopleRoute } from "@/lib/routing";
 import type { CompareEntityType, ComparisonPageData } from "@/types/compare";
 import type { Language } from "@/types/shared";
@@ -53,6 +54,21 @@ export function ComparisonView({ data, language = "fr" }: ComparisonViewProps) {
 
   return (
     <div>
+      {/* Story 9.7 header band — each entity's own ConfidenceChip / ClassificationBadge,
+          above the fold, identical visual weight, no cross-column comparison. */}
+      <div
+        className="grid gap-afh-md mb-afh-md"
+        style={{ gridTemplateColumns: `repeat(${data.columns.length}, 1fr)` }}
+      >
+        {data.columns.map((column) => (
+          <CompareEntityHeader
+            key={column.id}
+            column={column}
+            language={language}
+          />
+        ))}
+      </div>
+
       {/* Sticky mini-header strip (< 800 px) — mirrors the table's column headers. */}
       <div className="sticky top-0 z-10 flex flex-wrap gap-afh-md border-b border-afh-border bg-afh-surface py-afh-sm min-[800px]:hidden">
         {data.columns.map((column) => (
