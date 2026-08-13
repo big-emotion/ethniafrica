@@ -26,6 +26,7 @@ import type {
   DemographicsSection,
   DecolonialHeader,
   PeopleReference,
+  ClassificationStatus,
 } from "./afrik";
 
 // ==========================================
@@ -147,6 +148,7 @@ export const COMPARABLE_ROWS: Record<CompareEntityType, readonly string[]> = {
 export interface ComparisonConfidence {
   score: number;
   sourceCount: number | null;
+  lastHumanAuditAt?: string | null;
 }
 
 export interface ComparisonColumn {
@@ -154,6 +156,7 @@ export interface ComparisonColumn {
   label: string;
   type: CompareEntityType;
   confidence?: ComparisonConfidence | null;
+  classificationStatus?: ClassificationStatus | null;
 }
 
 /**

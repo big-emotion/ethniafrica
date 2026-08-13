@@ -6,11 +6,14 @@ import {
   within,
   fireEvent,
 } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { createElement } from "react";
 import { CompareStickyBar } from "../CompareStickyBar";
 import { EntityComparePicker } from "../EntityComparePicker";
+import { CompareEntityHeader } from "../CompareEntityHeader";
 import type { CompareCandidate } from "@/hooks/use-compare-selection";
+import type { ComparisonColumn } from "@/types/compare";
 
 function createWrapper() {
   const queryClient = new QueryClient({
@@ -243,5 +246,121 @@ describe("EntityComparePicker", () => {
 
     expect(screen.getByText(/3 maximum/i)).toBeInTheDocument();
     expect(input).toBeDisabled();
+  });
+});
+
+describe("CompareEntityHeader", () => {
+  const highConfidenceColumn: ComparisonColumn = {
+    id: "PPL_ILLUSTRATIVE_HIGH",
+    label: "Peuple Illustratif Haut",
+    type: "peuple",
+    confidence: { score: 0.82, sourceCount: 5, lastHumanAuditAt: "2025-09-21" },
+  };
+
+  const lowConfidenceColumn: ComparisonColumn = {
+    id: "PPL_ILLUSTRATIVE_LOW",
+    label: "Peuple Illustratif Bas",
+    type: "peuple",
+    confidence: { score: 0.41, sourceCount: 2, lastHumanAuditAt: "2025-06-01" },
+  };
+
+  const unauditedColumn: ComparisonColumn = {
+    id: "PPL_ILLUSTRATIVE_UNAUDITED",
+    label: "Peuple Illustratif Non Audité",
+    type: "peuple",
+  };
+
+  // @req REQ-097
+  it("shows each entity's own confidence chip side by side with no comparative markup or copy", async () => {
+    render(
+      <>
+        <CompareEntityHeader column={highConfidenceColumn} />
+        <CompareEntityHeader column={lowConfidenceColumn} />
+      </>
+    );
+
+    await waitFor(() => {
+      expect(
+        screen.getByText(/82 % · 5 sources · vérifié 2025-09-21/)
+      ).toBeInTheDocument();
+      expect(
+        screen.getByText(/41 % · 2 sources · vérifié 2025-06-01/)
+      ).toBeInTheDocument();
+    });
+
+    const bodyText = document.body.textContent ?? "";
+    expect(bodyText).not.toMatch(
+      /plus (élevé|fiable)|meilleur|gagnant|top|highest|lowest|winner|ranking/i
+    );
+    expect(document.querySelector("[data-winner]")).toBeNull();
+    expect(document.querySelectorAll('[class*="highlight"]')).toHaveLength(0);
+  });
+
+  // @req REQ-097
+  it("shows the Epic 1 unaudited treatment when there is no confidence_scores row — the slot is never empty", () => {
+    render(<CompareEntityHeader column={unauditedColumn} />);
+    expect(screen.getByText(/fiche non auditée/i)).toBeInTheDocument();
+  });
+
+  // @req REQ-097
+  it("opens the Epic 1 SourceChainSheet when the chip is activated", async () => {
+    const user = userEvent.setup();
+    render(<CompareEntityHeader column={highConfidenceColumn} />);
+
+    const button = await screen.findByRole("button", {
+      name: /confiance 82 %/i,
+    });
+    await user.click(button);
+
+    await waitFor(() => {
+      expect(screen.getByText("Chaîne des sources")).toBeInTheDocument();
+    });
+
+    // Close the sheet so its focus trap / body-hide side effects don't leak
+    // into subsequent tests that query the accessibility tree.
+    await user.keyboard("{Escape}");
+    await waitFor(() => {
+      expect(screen.queryByText("Chaîne des sources")).not.toBeInTheDocument();
+    });
+  });
+
+  // @req REQ-097
+  it("passes the entity label through to the chip's aria-label (Epic 1 contract)", async () => {
+    render(<CompareEntityHeader column={highConfidenceColumn} />);
+
+    await waitFor(() => {
+      expect(
+        screen.getByRole("button", {
+          name: new RegExp(`${highConfidenceColumn.label}$`),
+        })
+      ).toBeInTheDocument();
+    });
+  });
+
+  // @req REQ-097
+  it("renders a tertiary caption link to the confidence explainer", () => {
+    render(<CompareEntityHeader column={highConfidenceColumn} />);
+
+    const link = screen.getByRole("link", {
+      name: /comment ce score est calculé/i,
+    });
+    expect(link).toBeInTheDocument();
+    expect(link.getAttribute("href")).toBe("/fr/doctrine");
+  });
+
+  // @req REQ-097
+  it("shows the ClassificationBadge above the fold when a status is present", () => {
+    render(
+      <CompareEntityHeader
+        column={{ ...highConfidenceColumn, classificationStatus: "contested" }}
+      />
+    );
+    expect(screen.getByTestId("classification-icon")).toBeInTheDocument();
+  });
+
+  // @req REQ-097
+  it("renders no badge for the consensual/default classification status", () => {
+    render(<CompareEntityHeader column={highConfidenceColumn} />);
+    expect(screen.queryByTestId("classification-icon")).not.toBeInTheDocument();
   });
 });
