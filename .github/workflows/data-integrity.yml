@@ -44,3 +44,25 @@ jobs:
           name: source-url-health-log
           path: dataset/source-url-health.log
           if-no-files-found: ignore
+
+  quiz-bank-integrity:
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      # Enforced QZ-1..QZ-5 gate (FR65/FR69/AR20). Read-only — mutates nothing.
+      - name: Run quiz bank integrity check (--check)
+        run: npx tsx scripts/generateQuizQuestions.ts --check
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
