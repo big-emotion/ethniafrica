@@ -34,6 +34,10 @@ describe("DesktopNavBar — global shell (all routes, ETNI-820 retires the home 
         "href",
         "/fr/familles"
       );
+      expect(screen.getByRole("link", { name: "Migrations" })).toHaveAttribute(
+        "href",
+        "/fr/migrations"
+      );
       expect(screen.getByRole("link", { name: "À propos" })).toHaveAttribute(
         "href",
         "/fr/about"

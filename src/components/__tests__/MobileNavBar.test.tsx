@@ -1,4 +1,4 @@
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import { MobileNavBar } from "@/components/MobileNavBar";
@@ -18,6 +18,17 @@ vi.mock("next/image", () => ({
 // @req [14.5]
 // @req REQ-044
 describe("MobileNavBar — global shell (all routes, ETNI-820 retires the home night skin)", () => {
+  // @req REQ-101 FR81
+  it("links to the migrations route from the FLG navigation dropdown", async () => {
+    render(<MobileNavBar language="fr" />);
+    const trigger = screen.getByRole("button", { name: "Navigation FLG" });
+    fireEvent.pointerDown(trigger, { pointerId: 1, button: 0 });
+    fireEvent.click(trigger);
+    expect(
+      await screen.findByRole("menuitem", { name: "Migrations" })
+    ).toBeInTheDocument();
+  });
+
   it("never wears the retired night skin class, on the home route or elsewhere", () => {
     for (const pathname of ["/fr", "/fr/pays"]) {
       mockPathname = pathname;

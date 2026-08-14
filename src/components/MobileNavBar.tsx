@@ -33,6 +33,7 @@ export const MobileNavBar = ({
   const familiesRoute = getLocalizedRoute(language, "families");
   const peoplesRoute = getLocalizedRoute(language, "peoples");
   const countriesRoute = getLocalizedRoute(language, "countries");
+  const migrationsRoute = getLocalizedRoute(language, "migrations");
 
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(href + "/");
@@ -112,6 +113,12 @@ export const MobileNavBar = ({
                 onSelect={() => router.push(familiesRoute)}
               >
                 Familles
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                className={isActive(migrationsRoute) ? "font-semibold" : ""}
+                onSelect={() => router.push(migrationsRoute)}
+              >
+                Migrations
               </DropdownMenuItem>
               <DropdownMenuSeparator />
               <DropdownMenuItem
