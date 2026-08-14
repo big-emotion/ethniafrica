@@ -60,4 +60,23 @@ describe("data integrity workflow", () => {
   it("pins every third-party action to a full commit SHA", () => {
     expect(validateActionPins(readWorkflow(), workflowPath)).toEqual([]);
   });
+
+  // @req REQ-080 (ETNI-494)
+  it("runs the quiz bank integrity check job only on the nightly schedule", () => {
+    const workflow = readWorkflow();
+
+    expect(workflow).toContain("quiz-bank-integrity:");
+    const jobBody = workflow.slice(workflow.indexOf("quiz-bank-integrity:"));
+    expect(jobBody).toContain("if: github.event_name == 'schedule'");
+    expect(jobBody).toContain(
+      "run: npx tsx scripts/generateQuizQuestions.ts --check"
+    );
+    expect(jobBody).toContain(
+      "NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}"
+    );
+    expect(jobBody).toContain(
+      "SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}"
+    );
+    expect(jobBody).not.toContain("continue-on-error");
+  });
 });

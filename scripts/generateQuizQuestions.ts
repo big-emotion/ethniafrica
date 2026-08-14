@@ -1,0 +1,378 @@
+#!/usr/bin/env tsx
+/**
+ * Smart Quiz generation sweep + bank integrity check (Epic 10, Story 10.5,
+ * ETNI-494, FR65/FR69/AR20).
+ *
+ * Default mode: generates questions for gate-passing (FR65), policy-passing
+ * (FR68/FR69) candidates via templates T1-T5, revokes any active question
+ * that now fails the gate or the QZ-2 staleness check, and writes exactly
+ * one `quiz_generation_runs` audit row per sweep.
+ *
+ * `--check` mode: read-only. Audits the active bank against QZ-1..QZ-5 and
+ * exits non-zero on any violation — wired into the nightly
+ * `data-integrity.yml` workflow.
+ *
+ * All decision logic lives in `scripts/lib/quizGeneration.ts` (pure, unit
+ * tested with real fixtures); this file is the thin Supabase I/O shell.
+ *
+ * Local DRY-RUN: when Supabase env vars are missing, logs a DRY RUN notice
+ * and exits 0 — same convention as `scripts/recomputeConfidence.ts`.
+ */
+
+import path from "node:path";
+import type { SupabaseClient } from "@supabase/supabase-js";
+
+import { createAdminClient } from "../src/lib/supabase/admin";
+import { logger } from "../src/lib/api/logger";
+import { getQuizMinConfidence } from "../src/lib/quiz/eligibility";
+import type { AutonymExonymName } from "../src/types/quiz";
+import {
+  buildAssertionBindings,
+  dedupeAutonyms,
+  mapConfidenceRowToBaseEligibility,
+  mapPeopleRowToFiche,
+  type AssertionRow as AdapterAssertionRow,
+  type ConfidenceScoreRow,
+  type PeopleRow,
+  type SourceRow as AdapterSourceRow,
+} from "./lib/quizFicheAdapter";
+import {
+  auditActiveBank,
+  computeSweepPlan,
+  type ActiveQuestionRow,
+  type AuditableQuestion,
+  type FicheEntry,
+  type QuizCandidatePools,
+  type QuizQuestionRecord,
+  type RevocationDecision,
+} from "./lib/quizGeneration";
+
+const ENTITY_TYPE = "people";
+
+interface BuiltCorpus {
+  entries: FicheEntry[];
+  pools: QuizCandidatePools;
+}
+
+/** Loads every people fiche + its FR65-eligible assertion bindings, and the candidate pools templates draw distractors from. */
+async function buildFicheEntries(
+  supabase: SupabaseClient
+): Promise<BuiltCorpus> {
+  const { data: peopleRows, error: peopleErr } = await supabase
+    .from("afrik_peoples")
+    .select("id, name_main, language_family_id, content");
+  if (peopleErr) throw peopleErr;
+
+  const { data: familyRows, error: familyErr } = await supabase
+    .from("afrik_language_families")
+    .select("id, name_fr");
+  if (familyErr) throw familyErr;
+
+  const { data: countryRows, error: countryErr } = await supabase
+    .from("afrik_countries")
+    .select("id, name_fr");
+  if (countryErr) throw countryErr;
+
+  const familyNameById = new Map(
+    (familyRows || []).map((row) => [row.id as string, row.name_fr as string])
+  );
+  const countryNameById = new Map(
+    (countryRows || []).map((row) => [row.id as string, row.name_fr as string])
+  );
+
+  const entityIds = (peopleRows || []).map((row) => row.id as string);
+
+  const { data: confidenceRows, error: confidenceErr } =
+    entityIds.length === 0
+      ? { data: [] as ConfidenceScoreRow[], error: null }
+      : await supabase
+          .from("confidence_scores")
+          .select("entity_id, score, last_human_audit_at, open_flag_count")
+          .eq("entity_type", ENTITY_TYPE)
+          .in("entity_id", entityIds);
+  if (confidenceErr) throw confidenceErr;
+
+  const { data: assertionRows, error: assertionErr } =
+    entityIds.length === 0
+      ? { data: [] as AdapterAssertionRow[], error: null }
+      : await supabase
+          .from("assertions")
+          .select("id, entity_id, field_path, source_ids")
+          .eq("entity_type", ENTITY_TYPE)
+          .in("entity_id", entityIds);
+  if (assertionErr) throw assertionErr;
+
+  const sourceIds = [
+    ...new Set((assertionRows || []).flatMap((row) => row.source_ids ?? [])),
+  ];
+  const { data: sourceRows, error: sourceErr } =
+    sourceIds.length === 0
+      ? { data: [] as AdapterSourceRow[], error: null }
+      : await supabase
+          .from("sources")
+          .select("id, tier, verified_at")
+          .in("id", sourceIds);
+  if (sourceErr) throw sourceErr;
+
+  const confidenceByEntityId = new Map(
+    (confidenceRows || []).map((row) => [
+      row.entity_id as string,
+      row as ConfidenceScoreRow,
+    ])
+  );
+  const sourceById = new Map(
+    (sourceRows || []).map((row) => [row.id as string, row as AdapterSourceRow])
+  );
+  const assertionsByEntityId = new Map<string, AdapterAssertionRow[]>();
+  for (const row of (assertionRows || []) as AdapterAssertionRow[]) {
+    const list = assertionsByEntityId.get(row.entity_id) ?? [];
+    list.push(row);
+    assertionsByEntityId.set(row.entity_id, list);
+  }
+
+  const entries: FicheEntry[] = [];
+  for (const row of (peopleRows || []) as PeopleRow[]) {
+    const fiche = mapPeopleRowToFiche(row, familyNameById, countryNameById);
+    if (!fiche) continue;
+
+    const baseEligibility = mapConfidenceRowToBaseEligibility(
+      confidenceByEntityId.get(row.id)
+    );
+    const assertionsByFieldPath = buildAssertionBindings(
+      assertionsByEntityId.get(row.id) ?? [],
+      sourceById,
+      baseEligibility
+    );
+    entries.push({ fiche, assertionsByFieldPath });
+  }
+
+  const pools: QuizCandidatePools = {
+    familyNames: [...new Set(entries.map((e) => e.fiche.languageFamilyNameFr))],
+    autonyms: [...new Set(entries.map((e) => e.fiche.selfAppellation))],
+    countryNames: [
+      ...new Set(
+        entries.flatMap((e) =>
+          e.fiche.distributionByCountry.map((c) => c.countryNameFr)
+        )
+      ),
+    ],
+    languages: dedupeAutonyms(
+      entries.map((e) => e.fiche.mainLanguage as AutonymExonymName)
+    ),
+    isoCodes: [...new Set(entries.map((e) => e.fiche.isoCode))],
+  };
+
+  return { entries, pools };
+}
+
+async function fetchActiveQuestions(
+  supabase: SupabaseClient
+): Promise<ActiveQuestionRow[]> {
+  const { data, error } = await supabase
+    .from("quiz_questions")
+    .select(
+      "id, template_id, audience, entity_id, field_path, correct_option, options_fr"
+    )
+    .is("revoked_at", null);
+  if (error) throw error;
+  return (data || []).map((row) => ({
+    id: row.id,
+    templateId: row.template_id,
+    audience: row.audience,
+    entityId: row.entity_id,
+    fieldPath: row.field_path,
+    correctOption: row.correct_option,
+    optionsFr: row.options_fr,
+  }));
+}
+
+async function fetchActiveQuestionsForAudit(
+  supabase: SupabaseClient
+): Promise<AuditableQuestion[]> {
+  const { data, error } = await supabase
+    .from("quiz_questions")
+    .select(
+      "id, template_id, audience, entity_id, field_path, correct_option, options_fr, generation_run_id"
+    )
+    .is("revoked_at", null);
+  if (error) throw error;
+  return (data || []).map((row) => ({
+    id: row.id,
+    templateId: row.template_id,
+    audience: row.audience,
+    entityId: row.entity_id,
+    fieldPath: row.field_path,
+    correctOption: row.correct_option,
+    optionsFr: row.options_fr,
+    generationRunId: row.generation_run_id,
+  }));
+}
+
+async function fetchGenerationRunIds(
+  supabase: SupabaseClient
+): Promise<Set<string>> {
+  const { data, error } = await supabase
+    .from("quiz_generation_runs")
+    .select("id");
+  if (error) throw error;
+  return new Set((data || []).map((row) => row.id as string));
+}
+
+async function insertGenerationRun(
+  supabase: SupabaseClient,
+  counters: {
+    questionsGenerated: number;
+    questionsRevoked: number;
+    candidatesRejected: number;
+  }
+): Promise<string> {
+  const { data, error } = await supabase
+    .from("quiz_generation_runs")
+    .insert({
+      confidence_threshold: getQuizMinConfidence(),
+      questions_generated: counters.questionsGenerated,
+      questions_revoked: counters.questionsRevoked,
+      candidates_rejected: counters.candidatesRejected,
+    })
+    .select("id")
+    .single();
+  if (error) throw error;
+  return data.id as string;
+}
+
+async function insertQuestions(
+  supabase: SupabaseClient,
+  records: QuizQuestionRecord[],
+  generationRunId: string
+): Promise<void> {
+  if (records.length === 0) return;
+  const rows = records.map((record) => ({
+    template_id: record.templateId,
+    audience: record.audience,
+    difficulty: record.difficulty,
+    entity_type: record.entityType,
+    entity_id: record.entityId,
+    field_path: record.fieldPath,
+    prompt_fr: record.promptFr,
+    options_fr: record.optionsFr,
+    correct_option: record.correctOption,
+    explanation_fr: record.explanationFr,
+    assertion_id: record.assertionId,
+    source_ids: record.sourceIds,
+    confidence_at_generation: record.confidenceAtGeneration,
+    generation_run_id: generationRunId,
+  }));
+  const { error } = await supabase.from("quiz_questions").insert(rows);
+  if (error) throw error;
+}
+
+async function revokeQuestions(
+  supabase: SupabaseClient,
+  decisions: RevocationDecision[]
+): Promise<void> {
+  const idsByReason = new Map<string, string[]>();
+  for (const decision of decisions) {
+    const ids = idsByReason.get(decision.reason) ?? [];
+    ids.push(decision.id);
+    idsByReason.set(decision.reason, ids);
+  }
+  const revokedAt = new Date().toISOString();
+  for (const [reason, ids] of idsByReason) {
+    const { error } = await supabase
+      .from("quiz_questions")
+      .update({ revoked_at: revokedAt, revoked_reason: reason })
+      .in("id", ids);
+    if (error) throw error;
+  }
+}
+
+async function runGenerationSweep(supabase: SupabaseClient): Promise<void> {
+  const { entries, pools } = await buildFicheEntries(supabase);
+  const activeQuestions = await fetchActiveQuestions(supabase);
+
+  const plan = computeSweepPlan({ entries, pools, activeQuestions });
+
+  if (plan.toRevoke.length > 0) {
+    await revokeQuestions(supabase, plan.toRevoke);
+  }
+
+  const generationRunId = await insertGenerationRun(supabase, {
+    questionsGenerated: plan.generatedCount,
+    questionsRevoked: plan.revokedCount,
+    candidatesRejected: plan.rejectedCount,
+  });
+
+  await insertQuestions(supabase, plan.toInsert, generationRunId);
+
+  logger.info("Quiz generation sweep completed", {
+    script: "generateQuizQuestions",
+    generation_run_id: generationRunId,
+    questions_generated: plan.generatedCount,
+    questions_revoked: plan.revokedCount,
+    candidates_rejected: plan.rejectedCount,
+  });
+}
+
+async function runCheckMode(supabase: SupabaseClient): Promise<void> {
+  const { entries } = await buildFicheEntries(supabase);
+  const activeQuestions = await fetchActiveQuestionsForAudit(supabase);
+  const knownGenerationRunIds = await fetchGenerationRunIds(supabase);
+
+  const violations = auditActiveBank({
+    activeQuestions,
+    entries,
+    knownGenerationRunIds,
+  });
+
+  if (violations.length > 0) {
+    logger.error("Quiz bank integrity check failed", undefined, {
+      script: "generateQuizQuestions",
+      mode: "check",
+      violation_count: violations.length,
+      violations,
+    });
+    process.exitCode = 1;
+    return;
+  }
+
+  logger.info("Quiz bank integrity check passed", {
+    script: "generateQuizQuestions",
+    mode: "check",
+    active_question_count: activeQuestions.length,
+  });
+}
+
+export async function main(): Promise<void> {
+  const checkMode = process.argv.includes("--check");
+
+  if (
+    !process.env.NEXT_PUBLIC_SUPABASE_URL ||
+    !process.env.SUPABASE_SERVICE_ROLE_KEY
+  ) {
+    logger.warn(
+      "DRY RUN: Supabase env vars missing — skipping quiz generation sweep",
+      { script: "generateQuizQuestions", mode: checkMode ? "check" : "sweep" }
+    );
+    return;
+  }
+
+  const supabase = createAdminClient();
+
+  if (checkMode) {
+    await runCheckMode(supabase);
+  } else {
+    await runGenerationSweep(supabase);
+  }
+}
+
+if (
+  process.argv[1] &&
+  path.resolve(process.argv[1]) === path.resolve(import.meta.filename)
+) {
+  main().catch((err) => {
+    logger.error("generateQuizQuestions crashed", err, {
+      script: "generateQuizQuestions",
+    });
+    process.exit(1);
+  });
+}

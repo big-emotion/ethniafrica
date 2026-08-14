@@ -12,7 +12,11 @@ function displayName(name: AutonymExonymName): string {
     : name.autonym;
 }
 
-function isSameOptionValue(a: QuizOptionValue, b: QuizOptionValue): boolean {
+// @req REQ-103
+export function isSameOptionValue(
+  a: QuizOptionValue,
+  b: QuizOptionValue
+): boolean {
   const valueOf = (v: QuizOptionValue): string =>
     typeof v === "string" ? v : v.autonym;
   return valueOf(a) === valueOf(b);
