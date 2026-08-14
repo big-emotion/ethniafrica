@@ -92,6 +92,9 @@ function filterByPeople(
     narrative: pageData.narrative.filter((entry) =>
       entry.peoples.some((people) => people.id === peopleId)
     ),
+    atlas: pageData.atlas.filter((entry) =>
+      entry.peoples.some((people) => people.id === peopleId)
+    ),
   };
 }
 
@@ -138,7 +141,10 @@ export default async function MigrationsPage({
           forceMount
           className="data-[state=inactive]:hidden"
         >
-          <MigrationsAtlasView />
+          <MigrationsAtlasView
+            events={pageData.atlas}
+            scrubberBounds={pageData.scrubberBounds}
+          />
         </TabsContent>
         <TabsContent
           value="recit"

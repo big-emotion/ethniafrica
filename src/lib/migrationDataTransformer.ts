@@ -8,7 +8,9 @@ import type {
   MigrationClassificationStatus,
   MigrationDetailRecord,
   MigrationEventType,
+  MigrationGeometry,
   MigrationPeopleRef,
+  MigrationSourceRef,
   MigrationTimeRange,
 } from "@/types/migrations";
 
@@ -50,6 +52,24 @@ export interface MigrationListEntry {
   peopleIds: string[];
 }
 
+/**
+ * View model for the interactive `/fr/migrations` Carte panel (Epic 12,
+ * Story 12.9, ETNI-522): unlike `MigrationNarrativeEntry`, it carries
+ * geometry (for `MigrationPathLayer`) and the full source list with URLs and
+ * tiers (for `MigrationDetailSheet`'s source chips / `SourceChainSheet`).
+ */
+export interface MigrationAtlasEntry {
+  id: string;
+  nameMain: string;
+  eventType: MigrationEventType;
+  classificationStatus: MigrationClassificationStatus;
+  timeRange: MigrationTimeRange;
+  geometry: MigrationGeometry;
+  peoples: MigrationPeopleRef[];
+  sources: MigrationSourceRef[];
+  confidence: MigrationConfidenceData | null;
+}
+
 export interface MigrationScrubberBounds {
   min: number;
   max: number;
@@ -58,6 +78,7 @@ export interface MigrationScrubberBounds {
 export interface MigrationsPageData {
   list: MigrationListEntry[];
   narrative: MigrationNarrativeEntry[];
+  atlas: MigrationAtlasEntry[];
   scrubberBounds: MigrationScrubberBounds | null;
 }
 
@@ -113,6 +134,31 @@ function toNarrativeEntry(
     paragraphs: toParagraphs(record.narrative, confidence),
     debate: record.debate ?? null,
     sourceCount: Array.isArray(record.sources) ? record.sources.length : 0,
+  };
+}
+
+function toGeometry(
+  geometry: MigrationGeometry | null | undefined
+): MigrationGeometry {
+  return geometry ?? { type: "LineString", coordinates: [] };
+}
+
+function toAtlasEntry(
+  item: RawMigrationDetailPayload | null | undefined
+): MigrationAtlasEntry | null {
+  const record = item?.data;
+  if (!record || !record.id) return null;
+
+  return {
+    id: record.id,
+    nameMain: record.nameMain ?? "",
+    eventType: record.eventType,
+    classificationStatus: record.classificationStatus,
+    timeRange: toTimeRange(record.timeRange),
+    geometry: toGeometry(record.geometry),
+    peoples: Array.isArray(record.peoples) ? record.peoples : [],
+    sources: Array.isArray(record.sources) ? record.sources : [],
+    confidence: toConfidenceData(item?.confidence),
   };
 }
 
@@ -193,9 +239,15 @@ export function transformMigrationData(
     .map(toListEntry)
     .sort((a, b) => a.timeRange.startYear - b.timeRange.startYear);
 
+  const atlas = items
+    .map(toAtlasEntry)
+    .filter((entry): entry is MigrationAtlasEntry => entry !== null)
+    .sort((a, b) => a.timeRange.startYear - b.timeRange.startYear);
+
   return {
     list,
     narrative: sortNarrative(narrativeEntries),
+    atlas,
     scrubberBounds: computeScrubberBounds(narrativeEntries),
   };
 }

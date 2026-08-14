@@ -161,6 +161,13 @@
   --afh-atlas-land: var(--afh-color-earth-bg);
   --afh-atlas-coastline: var(--afh-color-earth);
 
+  /* Atlas — MigrationPathLayer overlay (Epic 12, Story 12.9, ETNI-522).
+     Active/selected state is never color-alone: stroke-width + opacity in
+     the component carry the signal, these tokens only supply the hue. */
+  --afh-atlas-path-inactive: var(--afh-color-text-muted);
+  --afh-atlas-path-active: var(--afh-color-terracotta);
+  --afh-atlas-path-selected: var(--afh-color-gold);
+
   /* Accent scoping (ETNI-798 · FR104) — the ONLY path a component may use
      to receive an accent colour. A page or route wrapper scopes an accent
      by overriding --accent and --accent-tint to one of the --afh-cat-
