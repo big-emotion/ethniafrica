@@ -1,0 +1,235 @@
+import { describe, it, expect, beforeEach, afterEach } from "vitest";
+import {
+  isQuizEligible,
+  getQuizMinConfidence,
+  DEFAULT_QUIZ_MIN_CONFIDENCE,
+  type QuizEligibilityInput,
+} from "@/lib/quiz/eligibility";
+
+describe("isQuizEligible", () => {
+  const originalThreshold = process.env.QUIZ_MIN_CONFIDENCE;
+
+  beforeEach(() => {
+    delete process.env.QUIZ_MIN_CONFIDENCE;
+  });
+
+  afterEach(() => {
+    if (originalThreshold !== undefined) {
+      process.env.QUIZ_MIN_CONFIDENCE = originalThreshold;
+    } else {
+      delete process.env.QUIZ_MIN_CONFIDENCE;
+    }
+  });
+
+  const eligibleInput: QuizEligibilityInput = {
+    confidenceScore: 90,
+    lastHumanAuditAt: "2026-01-01T00:00:00.000Z",
+    assertionSources: [{ type: "primary", resolvable: true }],
+    openFlagCount: 0,
+  };
+
+  describe("all conditions pass", () => {
+    // @req REQ-103
+    it("returns eligible: true with reason: null", () => {
+      expect(isQuizEligible(eligibleInput)).toEqual({
+        eligible: true,
+        reason: null,
+      });
+    });
+
+    // @req REQ-103
+    it("accepts a Tier 2 (secondary) resolvable source", () => {
+      expect(
+        isQuizEligible({
+          ...eligibleInput,
+          assertionSources: [{ type: "secondary", resolvable: true }],
+        })
+      ).toEqual({ eligible: true, reason: null });
+    });
+
+    // @req REQ-103
+    it("is eligible when at least one source qualifies among several", () => {
+      expect(
+        isQuizEligible({
+          ...eligibleInput,
+          assertionSources: [
+            { type: "ai", resolvable: true },
+            { type: "primary", resolvable: false },
+            { type: "secondary", resolvable: true },
+          ],
+        })
+      ).toEqual({ eligible: true, reason: null });
+    });
+  });
+
+  describe("confidence score condition", () => {
+    // @req REQ-103
+    it("rejects a score below the default threshold (80)", () => {
+      expect(isQuizEligible({ ...eligibleInput, confidenceScore: 79 })).toEqual(
+        {
+          eligible: false,
+          reason: "confidence_below_threshold",
+        }
+      );
+    });
+
+    // @req REQ-103
+    it("is eligible exactly at the threshold boundary (score === threshold)", () => {
+      expect(isQuizEligible({ ...eligibleInput, confidenceScore: 80 })).toEqual(
+        { eligible: true, reason: null }
+      );
+    });
+
+    // @req REQ-103
+    it("respects a custom QUIZ_MIN_CONFIDENCE env threshold", () => {
+      process.env.QUIZ_MIN_CONFIDENCE = "95";
+      expect(isQuizEligible({ ...eligibleInput, confidenceScore: 90 })).toEqual(
+        {
+          eligible: false,
+          reason: "confidence_below_threshold",
+        }
+      );
+      expect(isQuizEligible({ ...eligibleInput, confidenceScore: 95 })).toEqual(
+        { eligible: true, reason: null }
+      );
+    });
+
+    // @req REQ-103
+    it("falls back to the default threshold when the env var is not a finite number", () => {
+      process.env.QUIZ_MIN_CONFIDENCE = "not-a-number";
+      expect(getQuizMinConfidence()).toBe(DEFAULT_QUIZ_MIN_CONFIDENCE);
+    });
+  });
+
+  describe("human audit condition", () => {
+    // @req REQ-103
+    it("rejects a null lastHumanAuditAt", () => {
+      expect(
+        isQuizEligible({ ...eligibleInput, lastHumanAuditAt: null })
+      ).toEqual({ eligible: false, reason: "no_human_audit" });
+    });
+
+    // @req REQ-103
+    it("accepts any non-null ISO date string", () => {
+      expect(
+        isQuizEligible({
+          ...eligibleInput,
+          lastHumanAuditAt: "2020-06-15T12:00:00.000Z",
+        })
+      ).toEqual({ eligible: true, reason: null });
+    });
+  });
+
+  describe("source tier condition", () => {
+    // @req REQ-103
+    it("rejects an empty sources array", () => {
+      expect(
+        isQuizEligible({ ...eligibleInput, assertionSources: [] })
+      ).toEqual({ eligible: false, reason: "no_tier1_or_tier2_source" });
+    });
+
+    // @req REQ-103
+    it("rejects sources that are Tier 1/2 typed but not resolvable", () => {
+      expect(
+        isQuizEligible({
+          ...eligibleInput,
+          assertionSources: [{ type: "primary", resolvable: false }],
+        })
+      ).toEqual({ eligible: false, reason: "no_tier1_or_tier2_source" });
+    });
+
+    // @req REQ-103
+    it("rejects a resolvable Tier 3 ('ai') source", () => {
+      expect(
+        isQuizEligible({
+          ...eligibleInput,
+          assertionSources: [{ type: "ai", resolvable: true }],
+        })
+      ).toEqual({ eligible: false, reason: "no_tier1_or_tier2_source" });
+    });
+  });
+
+  describe("open flag condition", () => {
+    // @req REQ-103
+    it("rejects when openFlagCount is greater than zero", () => {
+      expect(isQuizEligible({ ...eligibleInput, openFlagCount: 1 })).toEqual({
+        eligible: false,
+        reason: "open_flags_present",
+      });
+    });
+
+    // @req REQ-103
+    it("accepts openFlagCount === 0", () => {
+      expect(isQuizEligible({ ...eligibleInput, openFlagCount: 0 })).toEqual({
+        eligible: true,
+        reason: null,
+      });
+    });
+  });
+
+  describe("deterministic rejection-reason precedence", () => {
+    // @req REQ-103
+    it("prioritizes confidence_below_threshold over all other failing conditions", () => {
+      expect(
+        isQuizEligible({
+          confidenceScore: 10,
+          lastHumanAuditAt: null,
+          assertionSources: [],
+          openFlagCount: 3,
+        })
+      ).toEqual({ eligible: false, reason: "confidence_below_threshold" });
+    });
+
+    // @req REQ-103
+    it("prioritizes no_human_audit over source and flag failures", () => {
+      expect(
+        isQuizEligible({
+          confidenceScore: 90,
+          lastHumanAuditAt: null,
+          assertionSources: [],
+          openFlagCount: 3,
+        })
+      ).toEqual({ eligible: false, reason: "no_human_audit" });
+    });
+
+    // @req REQ-103
+    it("prioritizes no_tier1_or_tier2_source over an open-flag failure", () => {
+      expect(
+        isQuizEligible({
+          confidenceScore: 90,
+          lastHumanAuditAt: "2026-01-01T00:00:00.000Z",
+          assertionSources: [],
+          openFlagCount: 3,
+        })
+      ).toEqual({ eligible: false, reason: "no_tier1_or_tier2_source" });
+    });
+  });
+});
+
+describe("getQuizMinConfidence", () => {
+  const originalThreshold = process.env.QUIZ_MIN_CONFIDENCE;
+
+  beforeEach(() => {
+    delete process.env.QUIZ_MIN_CONFIDENCE;
+  });
+
+  afterEach(() => {
+    if (originalThreshold !== undefined) {
+      process.env.QUIZ_MIN_CONFIDENCE = originalThreshold;
+    } else {
+      delete process.env.QUIZ_MIN_CONFIDENCE;
+    }
+  });
+
+  // @req REQ-103
+  it("defaults to 80 when unset", () => {
+    expect(getQuizMinConfidence()).toBe(80);
+    expect(DEFAULT_QUIZ_MIN_CONFIDENCE).toBe(80);
+  });
+
+  // @req REQ-103
+  it("parses a valid numeric env override", () => {
+    process.env.QUIZ_MIN_CONFIDENCE = "70";
+    expect(getQuizMinConfidence()).toBe(70);
+  });
+});
