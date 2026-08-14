@@ -289,6 +289,27 @@ export const translations = {
         reportMissing: "Signaler une donnée manquante",
       },
     },
+    migrations: {
+      navLabel: "Migrations",
+      pageTitle: "Frise des migrations",
+      pageSubtitle:
+        "Le récit chronologique de chaque migration, peuplement et route commerciale documenté dans l'atlas.",
+      tabs: {
+        map: "Carte",
+        narrative: "Récit",
+      },
+      mapPlaceholder:
+        "La carte interactive des migrations arrive avec la Story 12.9.",
+      debateLabel: "Débat historiographique",
+      peoplesLabel: "Peuples concernés",
+      sourcesCountSingular: "source",
+      sourcesCountPlural: "sources",
+      filterChip: {
+        label: "Filtré sur",
+        clear: "Retirer le filtre",
+      },
+      emptyState: "Aucune migration ne correspond à ce filtre.",
+    },
   },
 };
 
