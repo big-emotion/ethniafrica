@@ -81,7 +81,10 @@ export default async function PeopleLinksPage({
         <h1 className="text-2xl font-semibold mt-4 mb-6 text-afh-text">
           Liens de {people.nameMain}
         </h1>
-        <RelationsListWithSourceSheet items={items} />
+        <RelationsListWithSourceSheet
+          items={items}
+          center={{ id: people.id, nameMain: people.nameMain }}
+        />
       </div>
     </PageLayout>
   );
