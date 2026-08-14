@@ -21,6 +21,9 @@ module.exports = {
         // ETNI-463 (7.11) AC1 — also the large-family sample (FLG_BANTU:
         // 6 languages, 174 associated peoples, the largest currently-seeded).
         "http://localhost:3000/fr/familles/FLG_BANTU",
+        // Epic 11, Story 11.11 (FR75, NFR1) — the links page with the lazy
+        // (ssr:false) ego-network graph must not regress mobile performance.
+        "http://localhost:3000/fr/peuples/PPL_WOLOF/liens",
       ],
       numberOfRuns: 3,
       // Audit returning-user performance with essential-only consent. The
