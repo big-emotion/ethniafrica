@@ -81,7 +81,7 @@ describe("browser quality-gate routes", () => {
   // @req REQ-091
   it("gates every Lighthouse budget at error level so the fiche routes block the build", () => {
     for (const [audit, assertion] of Object.entries(
-      lighthouseConfig.ci.assert.assertions
+      lighthouseConfig.ci.assert.assertMatrix[0].assertions
     )) {
       expect(assertion[0], `${audit} must block, not warn`).toBe("error");
     }
@@ -100,7 +100,7 @@ describe("browser quality-gate routes", () => {
 
   // @req REQ-046
   it("enforces stable mobile performance and responsiveness budgets", () => {
-    const assertions = lighthouseConfig.ci.assert.assertions;
+    const assertions = lighthouseConfig.ci.assert.assertMatrix[0].assertions;
 
     expect(assertions["categories:performance"]).toEqual([
       "error",
