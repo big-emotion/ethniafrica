@@ -53,3 +53,15 @@ describe("compare page type (ETNI-481)", () => {
     );
   });
 });
+
+describe("migrations page type (Epic 12, Story 12.8, ETNI-521)", () => {
+  // @req REQ-101 FR81
+  it("resolves the French slug for the migrations page type", () => {
+    expect(getLocalizedRoute("fr", "migrations")).toBe("/fr/migrations");
+  });
+
+  // @req REQ-101 FR81
+  it("resolves the migrations page type from the migrations slug", () => {
+    expect(getPageFromRoute("/fr/migrations")).toBe("migrations");
+  });
+});

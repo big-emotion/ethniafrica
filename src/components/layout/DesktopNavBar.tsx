@@ -19,6 +19,7 @@ export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
   const familiesRoute = getLocalizedRoute(language, "families");
   const peoplesRoute = getLocalizedRoute(language, "peoples");
   const countriesRoute = getLocalizedRoute(language, "countries");
+  const migrationsRoute = getLocalizedRoute(language, "migrations");
 
   const currentPage = getPageFromRoute(pathname);
   const isHome = pathname === `/${language}` || pathname === "/";
@@ -89,6 +90,12 @@ export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
               className={navLinkClass(currentPage === "families")}
             >
               Familles
+            </Link>
+            <Link
+              href={migrationsRoute}
+              className={navLinkClass(currentPage === "migrations")}
+            >
+              Migrations
             </Link>
             <Link href={`/${language}/about`} className={navLinkClass(isAbout)}>
               À propos
