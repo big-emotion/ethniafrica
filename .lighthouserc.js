@@ -59,21 +59,33 @@ module.exports = {
       },
     },
     assert: {
-      assertions: {
-        "categories:performance": ["error", { minScore: 0.85 }],
-        "categories:accessibility": ["error", { minScore: 1 }],
-        "categories:best-practices": ["error", { minScore: 0.95 }],
-        "largest-contentful-paint": ["error", { maxNumericValue: 5500 }],
-        "total-blocking-time": ["error", { maxNumericValue: 300 }],
-      },
-      // ETNI-488 (9.11) AC1 — comparator routes are held to the story's
-      // tighter field-metric budgets (LCP ≤ 2.5s / CLS ≤ 0.1 / INP ≤ 200ms,
-      // max-potential-fid as the lab proxy for INP) in addition to the
-      // assertions above. Scoped by URL pattern so the looser site-wide
-      // LCP budget and the (currently ungated) CLS on fiche routes are
-      // left untouched — only the comparator picker and comparison routes
-      // tighten.
+      // ETNI-488 (9.11) AC1 fix (review) — LHCI's `assertMatrix` and the
+      // top-level `assertions` block are mutually exclusive: when
+      // `assertMatrix` is present, any URL not matched by one of its
+      // entries gets no assertions at all. The base site-wide gates are
+      // therefore folded in here as the first, catch-all entry so every
+      // route (including the comparator ones) keeps
+      // `categories:performance ≥ 0.85` and the other base budgets. The
+      // comparator entry below adds its stricter LCP/CLS/FID budgets on
+      // top for the comparator routes only.
       assertMatrix: [
+        {
+          matchingUrlPattern: ".*",
+          assertions: {
+            "categories:performance": ["error", { minScore: 0.85 }],
+            "categories:accessibility": ["error", { minScore: 1 }],
+            "categories:best-practices": ["error", { minScore: 0.95 }],
+            "largest-contentful-paint": ["error", { maxNumericValue: 5500 }],
+            "total-blocking-time": ["error", { maxNumericValue: 300 }],
+          },
+        },
+        // ETNI-488 (9.11) AC1 — comparator routes are additionally held to
+        // the story's tighter field-metric budgets (LCP ≤ 2.5s / CLS ≤ 0.1 /
+        // INP ≤ 200ms, max-potential-fid as the lab proxy for INP), on top
+        // of the base gates above. Scoped by URL pattern so the looser
+        // site-wide LCP budget and the (currently ungated) CLS on fiche
+        // routes are left untouched — only the comparator picker and
+        // comparison routes tighten.
         {
           matchingUrlPattern: "^http://localhost:3000/fr/comparer(/.*)?$",
           assertions: {
