@@ -30,6 +30,12 @@ module.exports = {
         // are scoped in assert.assertMatrix below.
         "http://localhost:3000/fr/comparer",
         "http://localhost:3000/fr/comparer/peuples/PPL_WOLOF/PPL_SERERE",
+        // Epic 12, Story 12.9 (ETNI-522/1104) — the migrations atlas route,
+        // whose "Carte" panel lazily mounts the client-side path layer,
+        // scrubber and detail sheet, must not regress mobile performance.
+        // Tighter CLS/INP budgets for it are scoped in assert.assertMatrix
+        // below, mirroring the /fr/comparer entry above.
+        "http://localhost:3000/fr/migrations",
       ],
       numberOfRuns: 3,
       // Audit returning-user performance with essential-only consent. The
@@ -93,6 +99,16 @@ module.exports = {
           matchingUrlPattern: "^http://localhost:3000/fr/comparer(/.*)?$",
           assertions: {
             "largest-contentful-paint": ["error", { maxNumericValue: 2500 }],
+            "cumulative-layout-shift": ["error", { maxNumericValue: 0.1 }],
+            "max-potential-fid": ["error", { maxNumericValue: 200 }],
+          },
+        },
+        // ETNI-522/1104 — the migrations atlas route additionally holds
+        // CLS ≤ 0.1 and INP ≤ 200ms (max-potential-fid as the lab proxy),
+        // on top of the base Performance ≥ 85 gate above.
+        {
+          matchingUrlPattern: "^http://localhost:3000/fr/migrations(/.*)?$",
+          assertions: {
             "cumulative-layout-shift": ["error", { maxNumericValue: 0.1 }],
             "max-potential-fid": ["error", { maxNumericValue: 200 }],
           },

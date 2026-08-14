@@ -28,10 +28,11 @@ function makeRecord(
 
 describe("transformMigrationData (Epic 12, Story 12.8, ETNI-521)", () => {
   // @req REQ-101 FR81 FR82
-  it("returns empty list/narrative and null scrubber bounds for an empty corpus", () => {
+  it("returns empty list/narrative/atlas and null scrubber bounds for an empty corpus", () => {
     expect(transformMigrationData([])).toEqual({
       list: [],
       narrative: [],
+      atlas: [],
       scrubberBounds: null,
     });
   });
@@ -41,11 +42,13 @@ describe("transformMigrationData (Epic 12, Story 12.8, ETNI-521)", () => {
     expect(transformMigrationData(null as unknown as [])).toEqual({
       list: [],
       narrative: [],
+      atlas: [],
       scrubberBounds: null,
     });
     expect(transformMigrationData(undefined as unknown as [])).toEqual({
       list: [],
       narrative: [],
+      atlas: [],
       scrubberBounds: null,
     });
   });
@@ -202,6 +205,71 @@ describe("transformMigrationData (Epic 12, Story 12.8, ETNI-521)", () => {
         peopleIds: ["PPL_A", "PPL_B"],
       },
     ]);
+  });
+
+  // @req REQ-101 FR78 FR79 ETNI-522
+  it("builds atlas entries carrying geometry, full sources and confidence for the Carte panel", () => {
+    const record = makeRecord({
+      id: "MGR_ATLAS",
+      geometry: {
+        type: "LineString",
+        coordinates: [
+          [1, 2],
+          [3, 4],
+        ],
+      },
+      sources: [
+        { id: "src-1", title: "Source", url: "https://x.test", tier: "1" },
+      ],
+    });
+    const confidence = {
+      score: 90,
+      sourceCount: 1,
+      lastHumanAuditAt: "2026-01-05",
+    };
+    const result = transformMigrationData([{ data: record, confidence }]);
+
+    expect(result.atlas).toEqual([
+      {
+        id: "MGR_ATLAS",
+        nameMain: "Test migration",
+        eventType: "expansion",
+        classificationStatus: "consensual",
+        timeRange: { startYear: 100, endYear: 200, datingNote: null },
+        geometry: {
+          type: "LineString",
+          coordinates: [
+            [1, 2],
+            [3, 4],
+          ],
+        },
+        peoples: [{ id: "PPL_TEST", nameMain: "Test people", role: "origin" }],
+        sources: [
+          { id: "src-1", title: "Source", url: "https://x.test", tier: "1" },
+        ],
+        confidence,
+      },
+    ]);
+  });
+
+  // @req REQ-101 FR78 FR79 ETNI-522
+  it("defaults atlas geometry and drops malformed atlas entries without throwing", () => {
+    const raw = [
+      {} as RawMigrationDetailPayload,
+      {
+        data: makeRecord({
+          id: "MGR_NO_GEOMETRY",
+          geometry: undefined as unknown as MigrationDetailRecord["geometry"],
+        }),
+      },
+    ];
+    const result = transformMigrationData(raw);
+
+    expect(result.atlas).toHaveLength(1);
+    expect(result.atlas[0].geometry).toEqual({
+      type: "LineString",
+      coordinates: [],
+    });
   });
 
   // @req REQ-101 FR81
