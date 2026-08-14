@@ -160,20 +160,7 @@ export function MigrationPathLayer({
                   active && "stroke-afh-atlas-path-active opacity-100",
                   selected && "stroke-afh-atlas-path-selected"
                 )}
-                role="button"
-                tabIndex={0}
-                aria-label={event.nameMain}
-                aria-pressed={selected}
                 onClick={() => activate(event.id)}
-                onKeyDown={(keyboardEvent) => {
-                  if (
-                    keyboardEvent.key === "Enter" ||
-                    keyboardEvent.key === " "
-                  ) {
-                    keyboardEvent.preventDefault();
-                    activate(event.id);
-                  }
-                }}
               />
               {labelPoint && (
                 <text

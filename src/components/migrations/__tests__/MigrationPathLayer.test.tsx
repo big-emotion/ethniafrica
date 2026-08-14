@@ -63,6 +63,23 @@ describe("MigrationPathLayer", () => {
     expect(screen.getByTestId("migration-path-MGR_B")).toBeInTheDocument();
   });
 
+  // @req REQ-101 FR79 ETNI-523
+  it("keeps the svg decorative and its paths out of the tab order", () => {
+    // The event list below (MigrationsAtlasView) already exposes the same
+    // selection as accessible, keyboard-operable buttons — duplicating that
+    // as per-path tab stops on the map would force keyboard/AT users through
+    // every rendered path (up to 500, MAX_MIGRATIONS) before reaching the
+    // scrubber or the list, breaking the "Tab to scrubber → Tab to list"
+    // journey and reading as a keyboard trap (ETNI-523 AC2). The map stays a
+    // pointer/touch-only visual affordance, aria-hidden like its
+    // AfricaBasemap sibling.
+    render(<MigrationPathLayer events={EVENTS} year={1100} />);
+    const path = screen.getByTestId("migration-path-MGR_A");
+    expect(path.closest("svg")).toHaveAttribute("aria-hidden", "true");
+    expect(path).not.toHaveAttribute("tabindex");
+    expect(path).not.toHaveAttribute("role");
+  });
+
   // @req REQ-101 FR79
   it("marks events whose range contains the year as active via token + opacity, not color alone", () => {
     render(<MigrationPathLayer events={EVENTS} year={1100} />);
@@ -110,8 +127,8 @@ describe("MigrationPathLayer", () => {
     expect(onSelect).toHaveBeenCalledWith("MGR_A");
   });
 
-  // @req REQ-101 FR79
-  it("fires onSelect on Enter/Space for keyboard activation", () => {
+  // @req REQ-101 FR79 ETNI-523
+  it("does not respond to keyDown, since the path is not keyboard-reachable", () => {
     const onSelect = vi.fn();
     render(
       <MigrationPathLayer events={EVENTS} year={1100} onSelect={onSelect} />
@@ -119,7 +136,7 @@ describe("MigrationPathLayer", () => {
     fireEvent.keyDown(screen.getByTestId("migration-path-MGR_A"), {
       key: "Enter",
     });
-    expect(onSelect).toHaveBeenCalledWith("MGR_A");
+    expect(onSelect).not.toHaveBeenCalled();
   });
 
   // @req REQ-101 FR79
