@@ -59,3 +59,41 @@ export interface MigrationRecord {
   peoplesInvolved: MigrationPeopleInvolved[];
   content: MigrationContent;
 }
+
+/**
+ * Read-time shapes for the `/v2/migrations` service/route layer (Epic 12,
+ * Story 12.5, ETNI-518). MigrationSummary carries no geometry (list
+ * payload-size discipline, AR18); MigrationDetailRecord extends it with the
+ * full detail fields per the module spec's list/detail column split.
+ */
+
+export interface MigrationPeopleRef {
+  id: PeopleId;
+  nameMain: string;
+  role: string | null;
+}
+
+export interface MigrationSourceRef {
+  id: string;
+  title: string;
+  url: string | null;
+  tier: string | null;
+}
+
+export interface MigrationSummary {
+  id: string; // MGR_xxxxx
+  nameMain: string;
+  migrationGroup: string | null;
+  eventType: MigrationEventType;
+  classificationStatus: MigrationClassificationStatus;
+  timeRange: MigrationTimeRange;
+  summary: string;
+}
+
+export interface MigrationDetailRecord extends MigrationSummary {
+  geometry: MigrationGeometry;
+  narrative: string;
+  debate: string | null;
+  peoples: MigrationPeopleRef[];
+  sources: MigrationSourceRef[];
+}

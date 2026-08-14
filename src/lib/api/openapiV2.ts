@@ -91,6 +91,11 @@ const options: swaggerJsdoc.Options = {
         description:
           "Sourced inter-people relations plus read-time-computed derived linguistic links (Epic 11, FR73).",
       },
+      {
+        name: "API v2 - Migrations",
+        description:
+          "Spatio-temporal migration events (Bantu expansion phases, trade routes, forced displacements, pastoral movements) with GeoJSON geometry, time range, peoples, sources, and confidence (Epic 12, FR83, AR8/AR9).",
+      },
     ],
     paths: {
       "/api/v2/reference-library": {
@@ -1539,6 +1544,159 @@ const options: swaggerJsdoc.Options = {
           type: "object",
           properties: {
             data: { $ref: "#/components/schemas/RelationRecord" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        // -----------------------------------------------------------------
+        // Epic 12 — Migrations timeline (FR83, Story 12.5, ETNI-518)
+        // -----------------------------------------------------------------
+        GeoJSONGeometry: {
+          type: "object",
+          description:
+            "Schematic (corridor-level) GeoJSON geometry — never a claim of precise historical borders.",
+          properties: {
+            type: {
+              type: "string",
+              enum: ["LineString", "MultiLineString", "Polygon"],
+            },
+            coordinates: {
+              type: "array",
+              description:
+                "Nesting depth depends on `type` ([lon, lat] pairs for LineString; arrays thereof for MultiLineString/Polygon).",
+            },
+          },
+          required: ["type", "coordinates"],
+        },
+        MigrationTimeRange: {
+          type: "object",
+          properties: {
+            startYear: {
+              type: "integer",
+              description:
+                "Astronomical year integer; negative values are BCE.",
+              example: -3000,
+            },
+            endYear: { type: "integer", example: -1500 },
+            datingNote: { type: ["string", "null"] },
+          },
+          required: ["startYear", "endYear", "datingNote"],
+        },
+        MigrationPeopleRef: {
+          type: "object",
+          properties: {
+            id: { type: "string", example: "PPL_KONGO" },
+            nameMain: { type: "string" },
+            role: { type: ["string", "null"], example: "destination" },
+          },
+          required: ["id", "nameMain", "role"],
+        },
+        MigrationSourceRef: {
+          type: "object",
+          properties: {
+            id: { type: "string" },
+            title: { type: "string" },
+            url: { type: ["string", "null"] },
+            tier: { type: ["string", "null"] },
+          },
+          required: ["id", "title", "url", "tier"],
+        },
+        MigrationEventSummary: {
+          type: "object",
+          description:
+            "List-view migration event — no geometry (AR18 payload-size discipline).",
+          properties: {
+            id: { type: "string", example: "MGR_BANTU_HOMELAND_DISPERSAL" },
+            nameMain: { type: "string" },
+            migrationGroup: {
+              type: ["string", "null"],
+              example: "bantu-expansion",
+            },
+            eventType: {
+              type: "string",
+              enum: [
+                "expansion",
+                "trade_route",
+                "forced_displacement",
+                "pastoral_movement",
+              ],
+            },
+            classificationStatus: {
+              type: "string",
+              enum: [
+                "consensual",
+                "contested",
+                "colonial-legacy",
+                "reconstructive",
+              ],
+            },
+            timeRange: { $ref: "#/components/schemas/MigrationTimeRange" },
+            summary: { type: "string" },
+          },
+          required: [
+            "id",
+            "nameMain",
+            "migrationGroup",
+            "eventType",
+            "classificationStatus",
+            "timeRange",
+            "summary",
+          ],
+        },
+        MigrationEventDetail: {
+          type: "object",
+          description:
+            "Detail-view migration event, incl. geometry, narrative, peoples and sources.",
+          allOf: [
+            { $ref: "#/components/schemas/MigrationEventSummary" },
+            {
+              type: "object",
+              properties: {
+                geometry: { $ref: "#/components/schemas/GeoJSONGeometry" },
+                narrative: { type: "string" },
+                debate: { type: ["string", "null"] },
+                peoples: {
+                  type: "array",
+                  items: { $ref: "#/components/schemas/MigrationPeopleRef" },
+                },
+                sources: {
+                  type: "array",
+                  items: { $ref: "#/components/schemas/MigrationSourceRef" },
+                },
+              },
+              required: [
+                "geometry",
+                "narrative",
+                "debate",
+                "peoples",
+                "sources",
+              ],
+            },
+          ],
+        },
+        MigrationListResponse: {
+          type: "object",
+          properties: {
+            data: {
+              type: "array",
+              items: { $ref: "#/components/schemas/MigrationEventSummary" },
+            },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        MigrationDetailResponse: {
+          type: "object",
+          properties: {
+            data: { $ref: "#/components/schemas/MigrationEventDetail" },
             meta: { $ref: "#/components/schemas/ApiResponseMeta" },
             errors: {
               type: "array",
