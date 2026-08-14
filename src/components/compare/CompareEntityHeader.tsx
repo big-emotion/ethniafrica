@@ -94,19 +94,26 @@ export function CompareEntityHeader({
 
       {confidence ? (
         <>
-          <Suspense
-            fallback={<FallbackLink onOpen={() => setSheetOpen(true)} />}
+          {/* Reserve the chip's 44px tap-target height so resolving the lazy
+              chunk never shifts the entity strip above the fold (ETNI-488 AC3). */}
+          <div
+            data-testid="compare-entity-confidence-slot"
+            className="flex min-h-[44px] items-center"
           >
-            <LazyConfidenceChip
-              id={anchorId}
-              confidenceScore={confidenceScore}
-              sourceCount={sourceCount}
-              lastHumanAuditAt={lastHumanAuditAt}
-              variant="hero"
-              ariaSuffix={column.label}
-              onOpen={() => setSheetOpen(true)}
-            />
-          </Suspense>
+            <Suspense
+              fallback={<FallbackLink onOpen={() => setSheetOpen(true)} />}
+            >
+              <LazyConfidenceChip
+                id={anchorId}
+                confidenceScore={confidenceScore}
+                sourceCount={sourceCount}
+                lastHumanAuditAt={lastHumanAuditAt}
+                variant="hero"
+                ariaSuffix={column.label}
+                onOpen={() => setSheetOpen(true)}
+              />
+            </Suspense>
+          </div>
           <Suspense fallback={null}>
             <LazySourceChainSheet
               open={sheetOpen}
