@@ -120,6 +120,7 @@ jobs:
               '- `/fr/pays/SEN`',
               '- `/fr/peuples/PPL_WOLOF`',
               '- `/fr/familles/FLG_BANTU`',
+              '- `/fr/peuples/PPL_WOLOF/liens`',
               '- `/fr/comparer`',
               '- `/fr/comparer/peuples/PPL_WOLOF/PPL_SERERE`',
               publicLinks,

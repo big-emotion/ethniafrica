@@ -1,15 +1,18 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
 // ---------------------------------------------------------------------------
 // Mocks
 // ---------------------------------------------------------------------------
 
+const mockPush = vi.fn();
+
 vi.mock("next/navigation", () => ({
   notFound: vi.fn(() => {
     throw new Error("NEXT_NOT_FOUND");
   }),
+  useRouter: () => ({ push: mockPush }),
 }));
 
 const mockGetPeopleById = vi.fn();
@@ -127,5 +130,78 @@ describe("/[lang]/peuples/[slug]/liens page", () => {
       params: Promise.resolve({ lang: "fr", slug: "PPL_UNKNOWN" }),
     });
     expect(metadata.title).toBeTruthy();
+  });
+
+  // Epic 11, Story 11.11 (FR75, NFR1, UX-DR46, AR20): the graph is lazy
+  // (next/dynamic ssr:false) and must never delay or reorder the SSR list.
+  describe("ego-network graph integration (11.11)", () => {
+    beforeEach(() => {
+      mockGetEgoNetwork.mockResolvedValue({ sourced: RELATIONS, derived: [] });
+    });
+
+    // @req REQ-097 FR75 UX-DR46
+    it("renders the complete relations list before the lazily-mounted graph, inside a reserved aspect-ratio container", async () => {
+      await renderPage("PPL_YORUBA");
+
+      const list = screen.getByText("Fon").closest("ul") as HTMLElement;
+      const graphContainer = screen.getByTestId("ego-network-graph-container");
+
+      expect(list).toBeInTheDocument();
+      expect(graphContainer).toBeInTheDocument();
+      // SSR-order: the list node comes before the graph's reserved container
+      // in document order, regardless of whether the lazy graph has mounted.
+      expect(
+        list.compareDocumentPosition(graphContainer) &
+          Node.DOCUMENT_POSITION_FOLLOWING
+      ).toBeTruthy();
+      // Reserved aspect-ratio prevents CLS once the lazy chunk mounts.
+      expect(graphContainer).toHaveClass("aspect-square");
+
+      expect(
+        await screen.findByRole("application", {
+          name: /Graphe de relations centré sur Yoruba/,
+        })
+      ).toBeInTheDocument();
+    });
+
+    // @req REQ-097 FR75 UX-DR48
+    it("opens SourceChainSheet on edge activation and returns focus to the edge on close", async () => {
+      await renderPage("PPL_YORUBA");
+      const application = await screen.findByRole("application");
+
+      fireEvent.keyDown(application, { key: "ArrowRight" });
+      expect(screen.getByTestId("edge-0")).toHaveFocus();
+
+      fireEvent.keyDown(application, { key: "Enter" });
+
+      const dialog = await screen.findByRole("dialog");
+      expect(dialog).toHaveTextContent(
+        "Migration conjointe vers le golfe du Bénin."
+      );
+
+      fireEvent.click(screen.getByRole("button", { name: "Close" }));
+
+      await waitFor(() => {
+        expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+      });
+      // Radix restores focus via a deferred (setTimeout 0) callback.
+      await waitFor(() => {
+        expect(screen.getByTestId("edge-0")).toHaveFocus();
+      });
+    });
+
+    // @req REQ-097 FR75
+    it("navigates to the neighbor's own links page on node activation", async () => {
+      await renderPage("PPL_YORUBA");
+      const application = await screen.findByRole("application");
+
+      fireEvent.keyDown(application, { key: "ArrowRight" });
+      fireEvent.keyDown(application, { key: "ArrowRight" });
+      expect(screen.getByTestId("node-0")).toHaveFocus();
+
+      fireEvent.keyDown(application, { key: "Enter" });
+
+      expect(mockPush).toHaveBeenCalledWith("/fr/peuples/PPL_FON/liens");
+    });
   });
 });

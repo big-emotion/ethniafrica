@@ -200,7 +200,7 @@ export function RelationsList({
                   <p className="text-sm text-afh-text">{item.description}</p>
                 )}
                 {item.derived ? (
-                  <p className="text-xs italic text-afh-text-muted">
+                  <p className="text-xs italic text-afh-text-soft">
                     dérivé de la hiérarchie AFRIK
                   </p>
                 ) : (

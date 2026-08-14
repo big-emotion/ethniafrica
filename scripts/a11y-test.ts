@@ -46,10 +46,14 @@ const AXE_RUN_OPTIONS = {
 // unauthenticated visitors on mount, so auditing it unauthenticated would
 // measure the redirect, not the admin/moderation charter chrome.
 //
-// The last two routes are the comparator journey (Epic 9, ETNI-485 · FR44):
+// The next two routes are the comparator journey (Epic 9, ETNI-485 · FR44):
 // `/fr/comparer` is the picker shell, `/fr/comparer/familles/FLG_BANTU/FLG_MANDE`
 // is one seeded comparison — both FLG ids already appear above as known-good
 // staging data, reused here so the route doesn't depend on unverified seed ids.
+//
+// The last route is the links page (Epic 11, Story 11.11 · AR20): the
+// EgoNetworkGraph mounts here lazily (next/dynamic ssr:false), and this gate
+// ensures the graph's keyboard/ARIA contract stays at zero serious/critical.
 const LIVE_ROUTES_BASE_URL = process.env.A11Y_LIVE_BASE_URL;
 const LIVE_ROUTES = [
   "/fr",
@@ -63,6 +67,7 @@ const LIVE_ROUTES = [
   "/fr/pays/SEN",
   "/fr/comparer",
   "/fr/comparer/familles/FLG_BANTU/FLG_MANDE",
+  "/fr/peuples/PPL_WOLOF/liens",
 ];
 
 const MIME: Record<string, string> = {
