@@ -54,6 +54,14 @@ const AXE_RUN_OPTIONS = {
 // The last route is the links page (Epic 11, Story 11.11 · AR20): the
 // EgoNetworkGraph mounts here lazily (next/dynamic ssr:false), and this gate
 // ensures the graph's keyboard/ARIA contract stays at zero serious/critical.
+//
+// `/fr/migrations` (Epic 12, Story 12.10 · ETNI-523 · FR84) audits the
+// server-rendered baseline: both the "Carte" and "Récit" tab panels are
+// `forceMount`-ed (page.tsx), so this single load covers the Récit
+// text-equivalent content plus the inactive Carte panel's static markup.
+// Interactive states (tab switch, sheet-open) need real DOM interaction and
+// are covered separately by e2e/migrations-atlas-a11y.spec.ts, which runs
+// under e2e.yml with no continue-on-error.
 const LIVE_ROUTES_BASE_URL = process.env.A11Y_LIVE_BASE_URL;
 const LIVE_ROUTES = [
   "/fr",
@@ -68,6 +76,7 @@ const LIVE_ROUTES = [
   "/fr/comparer",
   "/fr/comparer/familles/FLG_BANTU/FLG_MANDE",
   "/fr/peuples/PPL_WOLOF/liens",
+  "/fr/migrations",
 ];
 
 const MIME: Record<string, string> = {
