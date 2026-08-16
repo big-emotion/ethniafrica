@@ -60,6 +60,41 @@ describe("accessModeHubs — 10-module light-home config", () => {
     expect(isModuleLive("peoples")).toBe(true);
   });
 
+  // The migrations atlas (ETNI-521) and the comparator (epic 9) both shipped,
+  // and the nav already links to /fr/migrations — leaving their cards on
+  // «Bientôt» made the home contradict the rest of the site.
+  // @req FR92
+  // @req REQ-044
+  it("marks the shipped migrations atlas live", () => {
+    const modules = getHomeModules("fr");
+    const frise = modules.find((module) => module.id === "frise");
+
+    expect(frise?.state).toBe("live");
+    expect(frise?.href).toBe(getLocalizedRoute("fr", "migrations"));
+  });
+
+  // @req FR92
+  // @req REQ-044
+  it("marks the shipped comparator live", () => {
+    const modules = getHomeModules("fr");
+    const comparer = modules.find((module) => module.id === "comparer");
+
+    expect(comparer?.state).toBe("live");
+    expect(comparer?.href).toBe(getLocalizedRoute("fr", "compare"));
+  });
+
+  // Only a per-people ego graph exists (/fr/peuples/{slug}/liens); there is no
+  // standalone hub to send the home card to, so it stays «Bientôt».
+  // @req FR92
+  // @req REQ-044
+  it("keeps the invisible-links game soon while it has no standalone hub", () => {
+    const modules = getHomeModules("fr");
+    const liens = modules.find((module) => module.id === "liens");
+
+    expect(liens?.state).toBe("soon");
+    expect(liens?.href).toBeNull();
+  });
+
   // @req FR92
   // @req REQ-044
   it("derives the Tout/Explorer/Comprendre/Jouer categories from the config, in first-seen order", () => {
