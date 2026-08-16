@@ -15,6 +15,7 @@ import { Language } from "@/types/shared";
 import { getLocalizedRoute } from "@/lib/routing";
 import Image from "next/image";
 import { PRODUCT_NAME } from "@/lib/brand";
+import { isQuizFeatureEnabled } from "@/lib/featureFlags";
 
 interface MobileNavBarProps {
   language: Language;
@@ -34,6 +35,7 @@ export const MobileNavBar = ({
   const peoplesRoute = getLocalizedRoute(language, "peoples");
   const countriesRoute = getLocalizedRoute(language, "countries");
   const migrationsRoute = getLocalizedRoute(language, "migrations");
+  const quizRoute = getLocalizedRoute(language, "quiz");
 
   const isActive = (href: string) =>
     pathname === href || pathname.startsWith(href + "/");
@@ -120,6 +122,14 @@ export const MobileNavBar = ({
               >
                 Migrations
               </DropdownMenuItem>
+              {isQuizFeatureEnabled() && (
+                <DropdownMenuItem
+                  className={isActive(quizRoute) ? "font-semibold" : ""}
+                  onSelect={() => router.push(quizRoute)}
+                >
+                  Quiz
+                </DropdownMenuItem>
+              )}
               <DropdownMenuSeparator />
               <DropdownMenuItem
                 onSelect={() => router.push(`/${language}/about`)}

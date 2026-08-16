@@ -65,3 +65,15 @@ describe("migrations page type (Epic 12, Story 12.8, ETNI-521)", () => {
     expect(getPageFromRoute("/fr/migrations")).toBe("migrations");
   });
 });
+
+describe("quiz page type (Epic 10, Story 10.8, ETNI-497)", () => {
+  // @req REQ-103 FR66
+  it("resolves the French slug for the quiz page type", () => {
+    expect(getLocalizedRoute("fr", "quiz")).toBe("/fr/quiz");
+  });
+
+  // @req REQ-103 FR66
+  it("resolves the quiz page type from the quiz slug", () => {
+    expect(getPageFromRoute("/fr/quiz")).toBe("quiz");
+  });
+});
