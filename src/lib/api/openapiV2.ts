@@ -96,6 +96,11 @@ const options: swaggerJsdoc.Options = {
         description:
           "Spatio-temporal migration events (Bantu expansion phases, trade routes, forced displacements, pastoral movements) with GeoJSON geometry, time range, peoples, sources, and confidence (Epic 12, FR83, AR8/AR9).",
       },
+      {
+        name: "API v2 - Quiz",
+        description:
+          "Smart quiz engine — audience segments with per-rung question counts, and randomly-composed sessions drawn from the verified AFRIK corpus, gate-checked at serve time (Epic 10, FR65/FR66, AR8/AR9, NFR38).",
+      },
     ],
     paths: {
       "/api/v2/reference-library": {
@@ -2474,6 +2479,172 @@ const options: swaggerJsdoc.Options = {
               type: "array",
               items: { $ref: "#/components/schemas/ApiErrorEntry" },
               maxItems: 0,
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        // -----------------------------------------------------------------
+        // Epic 10 — Smart Quiz (FR65/FR66, Story 10.7, ETNI-496)
+        // -----------------------------------------------------------------
+        QuizSegmentRung: {
+          type: "object",
+          properties: {
+            difficulty: { type: "integer", minimum: 1, maximum: 5 },
+            activeQuestionCount: { type: "integer", minimum: 0 },
+          },
+          required: ["difficulty", "activeQuestionCount"],
+        },
+        QuizSegment: {
+          type: "object",
+          properties: {
+            id: {
+              type: "string",
+              enum: [
+                "children",
+                "teens",
+                "adults",
+                "university",
+                "professionals",
+              ],
+            },
+            labelFr: { type: "string", example: "adultes" },
+            rungs: {
+              type: "array",
+              items: { $ref: "#/components/schemas/QuizSegmentRung" },
+            },
+          },
+          required: ["id", "labelFr", "rungs"],
+        },
+        QuizSegmentsData: {
+          type: "object",
+          description: "GET /v2/quiz/segments result data.",
+          properties: {
+            segments: {
+              type: "array",
+              items: { $ref: "#/components/schemas/QuizSegment" },
+            },
+          },
+          required: ["segments"],
+        },
+        QuizSegmentsResponse: {
+          type: "object",
+          description: "Module #0 envelope for /v2/quiz/segments (ETNI-496)",
+          properties: {
+            data: { $ref: "#/components/schemas/QuizSegmentsData" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
+            },
+          },
+          required: ["data", "meta", "errors"],
+        },
+        QuizSourceRef: {
+          type: "object",
+          description:
+            "The single highest-tier resolvable source backing the question's assertion (Tier 1/2, FR65 gate).",
+          properties: {
+            title: { type: "string" },
+            year: { type: ["integer", "null"] },
+            tier: { type: ["string", "null"] },
+            url: { type: ["string", "null"] },
+          },
+          required: ["title", "year", "tier", "url"],
+        },
+        QuizEntityLink: {
+          type: "object",
+          description:
+            "The AFRIK entity the question's field value is drawn from.",
+          properties: {
+            type: { type: "string", enum: ["people"] },
+            id: { type: "string", example: "PPL_SHONA" },
+            slug: { type: "string", example: "PPL_SHONA" },
+            autonym: { type: ["string", "null"] },
+            exonym: { type: ["string", "null"] },
+          },
+          required: ["type", "id", "slug", "autonym", "exonym"],
+        },
+        QuizOptionValue: {
+          description:
+            "A plain string for non-name fields, or a structured autonym/exonym name.",
+          oneOf: [
+            { type: "string" },
+            {
+              type: "object",
+              properties: {
+                autonym: { type: "string" },
+                exonym: { type: "string" },
+              },
+              required: ["autonym"],
+            },
+          ],
+        },
+        QuizSessionQuestion: {
+          type: "object",
+          description:
+            "One session question. The answer key ships in the payload (correctOption, explanationFr, source) — reveal is client-side.",
+          properties: {
+            id: { type: "string", format: "uuid" },
+            templateId: {
+              type: "string",
+              enum: ["T1", "T2", "T3", "T4", "T5"],
+            },
+            promptFr: { type: "string" },
+            optionsFr: {
+              type: "array",
+              minItems: 4,
+              maxItems: 4,
+              items: { $ref: "#/components/schemas/QuizOptionValue" },
+            },
+            correctOption: { type: "integer", minimum: 0, maximum: 3 },
+            explanationFr: { type: "string" },
+            source: { $ref: "#/components/schemas/QuizSourceRef" },
+            assertionId: { type: "string", format: "uuid" },
+            entity: { $ref: "#/components/schemas/QuizEntityLink" },
+          },
+          required: [
+            "id",
+            "templateId",
+            "promptFr",
+            "optionsFr",
+            "correctOption",
+            "explanationFr",
+            "source",
+            "assertionId",
+            "entity",
+          ],
+        },
+        QuizSessionData: {
+          type: "object",
+          description: "GET /v2/quiz/session result data.",
+          properties: {
+            segment: {
+              type: "string",
+              enum: [
+                "children",
+                "teens",
+                "adults",
+                "university",
+                "professionals",
+              ],
+            },
+            difficulty: { type: "integer", minimum: 1, maximum: 5 },
+            questions: {
+              type: "array",
+              items: { $ref: "#/components/schemas/QuizSessionQuestion" },
+            },
+          },
+          required: ["segment", "difficulty", "questions"],
+        },
+        QuizSessionResponse: {
+          type: "object",
+          description: "Module #0 envelope for /v2/quiz/session (ETNI-496)",
+          properties: {
+            data: { $ref: "#/components/schemas/QuizSessionData" },
+            meta: { $ref: "#/components/schemas/ApiResponseMeta" },
+            errors: {
+              type: "array",
+              items: { $ref: "#/components/schemas/ApiErrorEntry" },
             },
           },
           required: ["data", "meta", "errors"],
