@@ -23,6 +23,12 @@ interface PageLayoutProps {
   subtitle?: string;
   sectionName?: string;
   hideHeader?: boolean;
+  /**
+   * Drop main's top padding so a full-bleed first child (one that escapes the
+   * container with 100vw + negative margins, like HomeHero) starts flush
+   * against the nav instead of behind a strip of page background.
+   */
+  flushTop?: boolean;
   onSearchResult?: (result: {
     type: SearchEntityType;
     id: string;
@@ -38,6 +44,7 @@ export const PageLayout = ({
   title,
   sectionName,
   hideHeader = false,
+  flushTop = false,
   onSearchResult,
 }: PageLayoutProps) => {
   const isMobile = useIsMobile();
@@ -146,7 +153,11 @@ export const PageLayout = ({
       )}
 
       {/* Main Content */}
-      <main className={`container mx-auto px-4 ${isMobile ? "py-4" : "py-8"}`}>
+      <main
+        className={`container mx-auto px-4 ${
+          flushTop ? (isMobile ? "pb-4" : "pb-8") : isMobile ? "py-4" : "py-8"
+        }`}
+      >
         {children}
       </main>
 

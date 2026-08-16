@@ -147,3 +147,37 @@ describe("PageLayout — header/main offset (ETNI-820: nav is never fixed, on or
     expect(main?.className).not.toMatch(/pt-24|pt-28/);
   });
 });
+
+// A full-bleed child (HomeHero escapes the container with 100vw + negative
+// margins) cancels only the horizontal gutter, so main's vertical padding
+// still pushed the hero's tinted band away from the nav border, leaving a
+// visible strip of page background between the two.
+describe("PageLayout — flushTop", () => {
+  // @req REQ-044
+  it("keeps main's top padding by default", () => {
+    mockPathname = "/fr";
+    render(
+      <PageLayout language="fr" hideHeader>
+        <p data-testid="content">Page content</p>
+      </PageLayout>
+    );
+
+    const main = screen.getByTestId("content").closest("main");
+    expect(main?.className).toMatch(/\bpy-4\b/);
+  });
+
+  // @req REQ-044
+  it("drops main's top padding when flushTop is set, keeping the bottom one", () => {
+    mockPathname = "/fr";
+    render(
+      <PageLayout language="fr" hideHeader flushTop>
+        <p data-testid="content">Page content</p>
+      </PageLayout>
+    );
+
+    const main = screen.getByTestId("content").closest("main");
+    expect(main?.className).toMatch(/\bpb-4\b/);
+    expect(main?.className).not.toMatch(/\bpy-\d/);
+    expect(main?.className).not.toMatch(/\bpt-\d/);
+  });
+});
