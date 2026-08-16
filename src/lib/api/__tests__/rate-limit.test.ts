@@ -287,6 +287,7 @@ describe("applyRateLimit", () => {
   it("returns 500 when Upstash env vars are missing in production", async () => {
     _resetLimitersForTest();
     vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("VERCEL_ENV", "");
     vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
     vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
     const req = makeRequest({ ip: "1.2.3.4" });
@@ -298,6 +299,48 @@ describe("applyRateLimit", () => {
   it("fails open (returns null) when Upstash env vars are missing in non-production", async () => {
     _resetLimitersForTest();
     vi.stubEnv("NODE_ENV", "development");
+    vi.stubEnv("VERCEL_ENV", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
+    const req = makeRequest({ ip: "1.2.3.4" });
+    const result = await applyRateLimit(req);
+    expect(result).toBeNull();
+  });
+
+  // Vercel compiles every deployment — preview included — with
+  // NODE_ENV=production, so NODE_ENV alone cannot tell a preview apart from
+  // the real thing. Before VERCEL_ENV was consulted, a preview missing the
+  // Upstash vars 500'd on every /api/v2/* route (recette outage, Aug 2026).
+  // @req REQ-034
+  it("fails open on a Vercel preview deployment despite NODE_ENV=production", async () => {
+    _resetLimitersForTest();
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("VERCEL_ENV", "preview");
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
+    const req = makeRequest({ ip: "1.2.3.4" });
+    const result = await applyRateLimit(req);
+    expect(result).toBeNull();
+  });
+
+  // @req REQ-034
+  it("still returns 500 on a Vercel production deployment", async () => {
+    _resetLimitersForTest();
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("VERCEL_ENV", "production");
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
+    const req = makeRequest({ ip: "1.2.3.4" });
+    const result = await applyRateLimit(req);
+    expect(result).not.toBeNull();
+    expect(result!.status).toBe(500);
+  });
+
+  // @req REQ-034
+  it("fails open on a Vercel development deployment", async () => {
+    _resetLimitersForTest();
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("VERCEL_ENV", "development");
     vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
     vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
     const req = makeRequest({ ip: "1.2.3.4" });
