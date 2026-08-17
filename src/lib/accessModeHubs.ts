@@ -92,7 +92,7 @@ const MODULE_DEFINITIONS: ModuleDefinition[] = [
     category: "comprendre",
     accent: "perv",
     illustration: "history",
-    page: null,
+    page: "migrations",
   },
   {
     id: "liens",
@@ -108,7 +108,7 @@ const MODULE_DEFINITIONS: ModuleDefinition[] = [
     category: "jouer",
     accent: "teal",
     illustration: "git-compare",
-    page: null,
+    page: "compare",
   },
 ];
 

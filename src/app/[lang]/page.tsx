@@ -25,7 +25,7 @@ export default function Home() {
   const modules = getHomeModules("fr");
 
   return (
-    <PageLayout language="fr" hideHeader>
+    <PageLayout language="fr" hideHeader flushTop>
       <HomeHero />
       <div className="mt-8">
         <ModuleGrid modules={modules} />

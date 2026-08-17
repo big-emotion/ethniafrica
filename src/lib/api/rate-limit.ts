@@ -147,6 +147,21 @@ function getLimiters(): Limiters {
   return limiters;
 }
 
+/**
+ * True only for a real production deployment.
+ *
+ * Vercel compiles every deployment with `NODE_ENV=production` — previews and
+ * per-PR deployments included — so `NODE_ENV` alone cannot tell a preview from
+ * the real site. `VERCEL_ENV` makes that distinction (`production` / `preview`
+ * / `development`) and takes precedence whenever Vercel sets it. Outside Vercel
+ * (self-hosted, local, CI) it is absent and `NODE_ENV` remains the authority.
+ */
+function isProductionDeployment(): boolean {
+  const vercelEnv = process.env.VERCEL_ENV;
+  if (vercelEnv) return vercelEnv === "production";
+  return process.env.NODE_ENV === "production";
+}
+
 /** Return the appropriate Ratelimit instance for the request, or null for admin (unrestricted) */
 export function getRateLimiter(apiKey: string | null): Ratelimit | null {
   if (apiKey !== null) {
@@ -163,7 +178,10 @@ export function getRateLimiter(apiKey: string | null): Ratelimit | null {
 /**
  * Apply rate limiting to a request.
  * Returns null if the request is allowed (pass-through), or a NextResponse(429) if limited.
- * Returns a 500 response when required env vars are absent (misconfiguration, not transient failure).
+ * Returns a 500 response when required env vars are absent on a production
+ * deployment (misconfiguration, not transient failure); preview and development
+ * deployments fail open instead, so a staging environment without Upstash
+ * credentials serves traffic unthrottled rather than 500-ing every route.
  * Fails open (returns null) if Upstash is transiently unreachable.
  */
 export async function applyRateLimit(
@@ -175,7 +193,7 @@ export async function applyRateLimit(
     !process.env.UPSTASH_REDIS_REST_URL ||
     !process.env.UPSTASH_REDIS_REST_TOKEN
   ) {
-    if (process.env.NODE_ENV !== "production") {
+    if (!isProductionDeployment()) {
       logger.warn(
         "Rate limit disabled: UPSTASH env vars missing (non-production fail-open)",
         { tag: "rate_limit_dev_skip" }
