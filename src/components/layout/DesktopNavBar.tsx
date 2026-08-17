@@ -6,6 +6,7 @@ import { Language } from "@/types/shared";
 import { getLocalizedRoute, getPageFromRoute } from "@/lib/routing";
 import Image from "next/image";
 import { PRODUCT_NAME } from "@/lib/brand";
+import { isQuizFeatureEnabled } from "@/lib/featureFlags";
 
 interface DesktopNavBarProps {
   language: Language;
@@ -20,6 +21,7 @@ export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
   const peoplesRoute = getLocalizedRoute(language, "peoples");
   const countriesRoute = getLocalizedRoute(language, "countries");
   const migrationsRoute = getLocalizedRoute(language, "migrations");
+  const quizRoute = getLocalizedRoute(language, "quiz");
 
   const currentPage = getPageFromRoute(pathname);
   const isHome = pathname === `/${language}` || pathname === "/";
@@ -97,6 +99,14 @@ export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
             >
               Migrations
             </Link>
+            {isQuizFeatureEnabled() && (
+              <Link
+                href={quizRoute}
+                className={navLinkClass(currentPage === "quiz")}
+              >
+                Quiz
+              </Link>
+            )}
             <Link href={`/${language}/about`} className={navLinkClass(isAbout)}>
               À propos
             </Link>

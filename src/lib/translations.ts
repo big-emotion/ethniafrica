@@ -310,6 +310,24 @@ export const translations = {
       },
       emptyState: "Aucune migration ne correspond à ce filtre.",
     },
+    quiz: {
+      navLabel: "Quiz",
+      pageTitle: "Choisis ton parcours",
+      pageSubtitle:
+        "Un quiz adapté à ton profil, avec un nombre de questions honnête pour chaque parcours.",
+      pickerLabel: "Choisir un parcours de quiz",
+      segments: {
+        children: "enfants",
+        teens: "ados",
+        adults: "adultes",
+        university: "étudiants",
+        professionals: "professionnels",
+      },
+      questionCountSingular: "1 question disponible",
+      questionCountPlural: "questions disponibles",
+      comingSoon:
+        "les questions de ce parcours arrivent — les fiches correspondantes sont en cours de vérification",
+    },
   },
 };
 

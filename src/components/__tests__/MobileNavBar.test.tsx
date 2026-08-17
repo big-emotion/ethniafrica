@@ -5,14 +5,20 @@ import { MobileNavBar } from "@/components/MobileNavBar";
 import { PRODUCT_NAME } from "@/lib/brand";
 
 let mockPathname = "/fr";
+let mockQuizFeatureEnabled = false;
+const mockPush = vi.fn();
 
 vi.mock("next/navigation", () => ({
   usePathname: () => mockPathname,
-  useRouter: () => ({ push: vi.fn() }),
+  useRouter: () => ({ push: mockPush }),
 }));
 
 vi.mock("next/image", () => ({
   default: ({ alt }: { alt: string }) => <span role="img" aria-label={alt} />,
+}));
+
+vi.mock("@/lib/featureFlags", () => ({
+  isQuizFeatureEnabled: () => mockQuizFeatureEnabled,
 }));
 
 // @req [14.5]
@@ -131,5 +137,31 @@ describe("MobileNavBar — global shell (all routes, ETNI-820 retires the home n
     const secondaryBar = screen.getByTestId("secondary-bar");
     expect(nav.className).not.toMatch(/(^|\s)(fixed|sticky)(\s|$)/);
     expect(secondaryBar.className).toMatch(/(^|\s)sticky(\s|$)/);
+  });
+});
+
+// @req REQ-103 FR66
+describe("MobileNavBar — quiz nav entry (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
+  it("does not offer a quiz item in the FLG dropdown when the feature flag is off", async () => {
+    mockQuizFeatureEnabled = false;
+    render(<MobileNavBar language="fr" />);
+    const trigger = screen.getByRole("button", { name: "Navigation FLG" });
+    fireEvent.pointerDown(trigger, { pointerId: 1, button: 0 });
+    fireEvent.click(trigger);
+    await screen.findByRole("menuitem", { name: "Migrations" });
+    expect(screen.queryByRole("menuitem", { name: "Quiz" })).toBeNull();
+  });
+
+  // @req REQ-103 FR66
+  it("offers a quiz item in the FLG dropdown that navigates to /fr/quiz when the flag is on", async () => {
+    mockQuizFeatureEnabled = true;
+    mockPush.mockClear();
+    render(<MobileNavBar language="fr" />);
+    const trigger = screen.getByRole("button", { name: "Navigation FLG" });
+    fireEvent.pointerDown(trigger, { pointerId: 1, button: 0 });
+    fireEvent.click(trigger);
+    const quizItem = await screen.findByRole("menuitem", { name: "Quiz" });
+    fireEvent.click(quizItem);
+    expect(mockPush).toHaveBeenCalledWith("/fr/quiz");
   });
 });

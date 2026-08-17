@@ -5,6 +5,7 @@ import { DesktopNavBar } from "@/components/layout/DesktopNavBar";
 import { PRODUCT_NAME } from "@/lib/brand";
 
 let mockPathname = "/fr";
+let mockQuizFeatureEnabled = false;
 
 vi.mock("next/navigation", () => ({
   usePathname: () => mockPathname,
@@ -12,6 +13,10 @@ vi.mock("next/navigation", () => ({
 
 vi.mock("next/image", () => ({
   default: ({ alt }: { alt: string }) => <span role="img" aria-label={alt} />,
+}));
+
+vi.mock("@/lib/featureFlags", () => ({
+  isQuizFeatureEnabled: () => mockQuizFeatureEnabled,
 }));
 
 // @req [14.5]
@@ -145,6 +150,29 @@ describe("DesktopNavBar — global shell (all routes, ETNI-820 retires the home 
     expect(screen.getByRole("link", { name: "Pays" })).toHaveClass("min-h-11");
     expect(screen.getByRole("link", { name: "Peuples" })).toHaveClass(
       "min-h-11"
+    );
+  });
+});
+
+// @req REQ-103 FR66
+describe("DesktopNavBar — quiz nav entry (Epic 10, Story 10.8, ETNI-497, AR39)", () => {
+  it("does not render a quiz entry when the feature flag is off", () => {
+    mockQuizFeatureEnabled = false;
+    mockPathname = "/fr";
+    render(<DesktopNavBar language="fr" />);
+
+    expect(screen.queryByRole("link", { name: "Quiz" })).toBeNull();
+  });
+
+  // @req REQ-103 FR66
+  it("renders a quiz entry linking to /fr/quiz when the feature flag is on", () => {
+    mockQuizFeatureEnabled = true;
+    mockPathname = "/fr";
+    render(<DesktopNavBar language="fr" />);
+
+    expect(screen.getByRole("link", { name: "Quiz" })).toHaveAttribute(
+      "href",
+      "/fr/quiz"
     );
   });
 });
