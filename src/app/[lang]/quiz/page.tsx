@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageLayout } from "@/components/layout/PageLayout";
-import { QuizSegmentPicker } from "@/components/quiz/QuizSegmentPicker";
+import { QuizPlayHost } from "@/components/quiz/QuizPlayHost";
 import { getQuizSegmentsHandler } from "@/api/v2/handlers/quiz";
 import { isQuizFeatureEnabled } from "@/lib/featureFlags";
 import { translations } from "@/lib/translations";
@@ -27,7 +27,7 @@ export default async function QuizPage() {
 
   return (
     <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
-      <QuizSegmentPicker segments={envelope.data.segments} />
+      <QuizPlayHost segments={envelope.data.segments} />
     </PageLayout>
   );
 }

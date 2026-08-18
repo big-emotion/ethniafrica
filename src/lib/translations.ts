@@ -327,6 +327,23 @@ export const translations = {
       questionCountPlural: "questions disponibles",
       comingSoon:
         "les questions de ce parcours arrivent — les fiches correspondantes sont en cours de vérification",
+      validate: "Valider",
+      questionProgressPrefix: "question",
+      questionProgressSeparator: "sur",
+      correctVerdict: "Bonne réponse !",
+      incorrectVerdict: "Ce n'est pas ça",
+      correctAnswerLabel: "Réponse : ",
+      openSourceChain: "Ouvrir la chaîne de sources",
+      nextQuestion: "Question suivante",
+      seeScore: "Voir le score",
+      loadingSession: "Chargement de la session…",
+      sessionError:
+        "Impossible de charger cette session — réessaie dans un instant.",
+      scoreHeading: "Score",
+      scoreFractionSeparator: "bonnes réponses sur",
+      rungAdvanced: "Niveau suivant débloqué pour ce parcours.",
+      rungNotAdvanced: "Encore un effort pour débloquer le niveau suivant.",
+      playAgain: "Rejouer",
     },
   },
 };

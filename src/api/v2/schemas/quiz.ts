@@ -88,6 +88,8 @@ export const quizOptionValueSchema = z.union([
   z.object({ autonym: z.string(), exonym: z.string().optional() }),
 ]);
 
+export type QuizOptionValue = z.infer<typeof quizOptionValueSchema>;
+
 export const quizSessionQuestionSchema = z.object({
   id: z.string(),
   templateId: z.enum(["T1", "T2", "T3", "T4", "T5"]),
