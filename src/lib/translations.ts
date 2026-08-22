@@ -344,6 +344,13 @@ export const translations = {
       rungAdvanced: "Niveau suivant débloqué pour ce parcours.",
       rungNotAdvanced: "Encore un effort pour débloquer le niveau suivant.",
       playAgain: "Rejouer",
+      scoreCardExactAnswersSeparator: "réponses exactes sur",
+      scoreCardRungLabel: "Niveau",
+      scoreCardRungSuffix: "pour ce parcours",
+      fichesEncounteredLabel: "Fiches rencontrées",
+      shareScoreLabel: "Partager le score",
+      copiedFeedback: "copié",
+      ogSourcedLine: "chaque réponse est sourcée",
     },
   },
 };
