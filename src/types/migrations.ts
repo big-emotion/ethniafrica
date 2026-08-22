@@ -4,12 +4,9 @@
  */
 
 import type { PeopleId } from "@/types/afrik";
+import type { MigrationEventType } from "@/lib/afrik/migrationEventTypes";
 
-export type MigrationEventType =
-  | "expansion"
-  | "trade_route"
-  | "forced_displacement"
-  | "pastoral_movement";
+export type { MigrationEventType };
 
 export type MigrationClassificationStatus =
   | "consensual"
