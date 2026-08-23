@@ -1628,6 +1628,11 @@ const options: swaggerJsdoc.Options = {
                 "trade_route",
                 "forced_displacement",
                 "pastoral_movement",
+                // Epic 13 (ETNI-530) — colonization event types (FR87, FR89).
+                "fragmentation",
+                "displacement",
+                "imposed_name",
+                "resistance",
               ],
             },
             classificationStatus: {
