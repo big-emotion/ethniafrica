@@ -2138,6 +2138,235 @@ export function validateMigrationEvents(
 }
 
 /**
+ * CR3-CR5 – Colonial-event validator rules (Epic 13, Story 13.4).
+ * Scoped to the four colonization eventTypes (fragmentation, displacement,
+ * imposed_name, resistance) among dataset/source/afrik/migrations/*.json.
+ */
+
+const COLONIAL_EVENT_TYPES = new Set([
+  "fragmentation",
+  "displacement",
+  "imposed_name",
+  "resistance",
+]);
+
+/** Every dataset/source/afrik/migrations/*.json fiche, parsed (silently skips unparsable files). */
+function collectMigrationFiches(
+  datasetRoot: string
+): Array<{ file: string; data: MigrationFiche }> {
+  const migrationsDir = path.join(datasetRoot, "migrations");
+  if (!fs.existsSync(migrationsDir)) return [];
+
+  const results: Array<{ file: string; data: MigrationFiche }> = [];
+  for (const file of fs
+    .readdirSync(migrationsDir)
+    .filter((f) => f.endsWith(".json"))) {
+    try {
+      const data = JSON.parse(
+        fs.readFileSync(path.join(migrationsDir, file), "utf-8")
+      );
+      results.push({ file, data });
+    } catch {
+      // Parse failures are surfaced by FR80; stay silent here.
+    }
+  }
+  return results;
+}
+
+/** PPL ids whose dataset/source/afrik/noms/ record has ≥1 entry with a non-empty imposedBy (Epic 8 imposed-name record). */
+function loadImposedNamePplIds(datasetRoot: string): Set<string> {
+  const ids = new Set<string>();
+  for (const { fullPath } of collectNameRecordFiles(datasetRoot)) {
+    try {
+      const data = JSON.parse(
+        fs.readFileSync(fullPath, "utf-8")
+      ) as RawNameRecordFile;
+      const names = Array.isArray(data.names) ? data.names : [];
+      const hasImposedEntry = names.some(
+        (n) => typeof n?.imposedBy === "string" && n.imposedBy.trim() !== ""
+      );
+      if (hasImposedEntry && typeof data.id === "string") {
+        ids.add(data.id);
+      }
+    } catch {
+      // Parse failures are surfaced by the name-record checks; stay silent here.
+    }
+  }
+  return ids;
+}
+
+/**
+ * CR3 – Every imposed_name event must reference, via peoplesInvolved, a PPL
+ * id backed by an existing Epic 8 imposed-name record (a
+ * dataset/source/afrik/noms/ dossier with ≥1 entry carrying imposedBy).
+ * Events with no such record are rejected.
+ */
+export function checkColonialEventCr3(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const fiches = collectMigrationFiches(datasetRoot);
+  if (fiches.length === 0) return { ok: true, errors, warnings };
+
+  const imposedNamePplIds = loadImposedNamePplIds(datasetRoot);
+
+  for (const { file, data } of fiches) {
+    if (data.eventType !== "imposed_name") continue;
+
+    const peoplesInvolved = Array.isArray(data.peoplesInvolved)
+      ? data.peoplesInvolved
+      : [];
+    const referencesRecord = peoplesInvolved.some(
+      (p) => typeof p?.id === "string" && imposedNamePplIds.has(p.id)
+    );
+
+    if (!referencesRecord) {
+      const ids = peoplesInvolved.map((p) => p?.id ?? "?").join(", ");
+      errors.push(
+        `CR3: ${file}: imposed_name event does not reference an existing Epic 8 imposed-name record — none of peoplesInvolved [${ids}] has a dataset/source/afrik/noms/ record with an imposed name entry`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * CR4 – Every colonial event carries ≥1 Tier 1/2 source (Wikipedia forbidden
+ * as a direct citation; Tier 2 requires the Wikipedia cross-check path in
+ * notes), and ≥2 valid sources when classificationStatus is "contested" or
+ * "colonial-legacy".
+ */
+export function checkColonialEventCr4(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const fiches = collectMigrationFiches(datasetRoot);
+  if (fiches.length === 0) return { ok: true, errors, warnings };
+
+  for (const { file, data } of fiches) {
+    const eventType = typeof data.eventType === "string" ? data.eventType : "";
+    if (!COLONIAL_EVENT_TYPES.has(eventType)) continue;
+
+    const sources = Array.isArray(data.content?.sources)
+      ? (data.content!.sources as MigrationSource[])
+      : [];
+    const classificationStatus =
+      typeof data.classificationStatus === "string"
+        ? data.classificationStatus
+        : undefined;
+
+    const validSources = sources.filter((s) => s.tier === 1 || s.tier === 2);
+    if (validSources.length === 0) {
+      errors.push(
+        `CR4: ${file}: no source with tier 1 or tier 2 — at least one Tier 1/2 source is required`
+      );
+    }
+
+    sources.forEach((source, i) => {
+      const url = typeof source.url === "string" ? source.url : "";
+      if (/wikipedia\.org/i.test(url)) {
+        errors.push(
+          `CR4: ${file}: content.sources[${i}] cites Wikipedia directly (forbidden — Tier 3): "${url}"`
+        );
+        return;
+      }
+      if (source.tier !== 1 && source.tier !== 2) {
+        errors.push(
+          `CR4: ${file}: content.sources[${i}] must record tier: 1 or tier: 2`
+        );
+        return;
+      }
+      const notes = typeof source.notes === "string" ? source.notes : "";
+      if (source.tier === 2 && !/wikipedia/i.test(notes)) {
+        errors.push(
+          `CR4: ${file}: content.sources[${i}] is Tier 2 and requires the Wikipedia cross-check path in notes`
+        );
+      }
+    });
+
+    const requiresTwoSources =
+      classificationStatus === "contested" ||
+      classificationStatus === "colonial-legacy";
+    if (requiresTwoSources && validSources.length < 2) {
+      errors.push(
+        `CR4: ${file}: classificationStatus "${classificationStatus}" requires at least 2 Tier 1/2 sources (found ${validSources.length})`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
+ * CR5 – Every colonial event carries a date/date-range (timeRange years or a
+ * non-empty datingNote), a valid geometry, ≥1 peoplesInvolved entry resolving
+ * to an existing PPL fiche, and a valid classificationStatus. Does not fail
+ * merely because a given colonial eventType has zero fiches (FR87 empty state).
+ */
+export function checkColonialEventCr5(datasetRoot: string): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const fiches = collectMigrationFiches(datasetRoot);
+  if (fiches.length === 0) return { ok: true, errors, warnings };
+
+  const pplIds = loadPplIds(datasetRoot);
+
+  for (const { file, data } of fiches) {
+    const eventType = typeof data.eventType === "string" ? data.eventType : "";
+    if (!COLONIAL_EVENT_TYPES.has(eventType)) continue;
+
+    const startYear = data.timeRange?.startYear;
+    const endYear = data.timeRange?.endYear;
+    const datingNote = data.timeRange?.datingNote;
+    const hasYears = Number.isInteger(startYear) && Number.isInteger(endYear);
+    const hasDatingNote =
+      typeof datingNote === "string" && datingNote.trim() !== "";
+    if (!hasYears && !hasDatingNote) {
+      errors.push(
+        `CR5: ${file}: missing timeRange — startYear/endYear (integers) or a non-empty datingNote is required`
+      );
+    }
+
+    if (!isValidMigrationGeometry(data.geometry)) {
+      errors.push(`CR5: ${file}: missing or invalid geometry/location`);
+    }
+
+    const peoplesInvolved = Array.isArray(data.peoplesInvolved)
+      ? data.peoplesInvolved
+      : [];
+    if (peoplesInvolved.length === 0) {
+      errors.push(
+        `CR5: ${file}: peoplesInvolved is empty — at least one linked entity is required`
+      );
+    } else {
+      peoplesInvolved.forEach((p, i) => {
+        const pplId = typeof p?.id === "string" ? p.id : undefined;
+        if (!pplId || !pplIds.has(pplId)) {
+          errors.push(
+            `CR5: ${file}: peoplesInvolved[${i}].id "${p?.id}" does not resolve to an existing PPL fiche`
+          );
+        }
+      });
+    }
+
+    const classificationStatus =
+      typeof data.classificationStatus === "string"
+        ? data.classificationStatus
+        : undefined;
+    if (
+      !classificationStatus ||
+      !MIGRATION_CLASSIFICATION_STATUSES.has(classificationStatus)
+    ) {
+      errors.push(`CR5: ${file}: classificationStatus is missing or invalid`);
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
+/**
  * Orphan fiches – PPL files whose parent folder doesn't exist as a FLG JSON.
  * (Complements FR26 from the PPL perspective.)
  */
@@ -2874,6 +3103,24 @@ async function main() {
       datasetRoot,
       path.join(PUBLIC_ROOT, "pays_demographie.csv")
     ),
+  });
+
+  console.log("CR3 – Colonial-event imposed_name → Epic 8 name record...");
+  newChecks.push({
+    name: "CR3 Colonial-event imposed_name reference",
+    result: checkColonialEventCr3(datasetRoot),
+  });
+
+  console.log("CR4 – Colonial-event Tier 1/2 source gate...");
+  newChecks.push({
+    name: "CR4 Colonial-event source gate",
+    result: checkColonialEventCr4(datasetRoot),
+  });
+
+  console.log("CR5 – Colonial-event structural completeness...");
+  newChecks.push({
+    name: "CR5 Colonial-event structural completeness",
+    result: checkColonialEventCr5(datasetRoot),
   });
 
   console.log("REL-1/3/4/7 – Relation model...");
