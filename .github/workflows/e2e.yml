@@ -26,6 +26,9 @@ jobs:
       SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.TEST_SUPABASE_SERVICE_ROLE_KEY }}
       NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.TEST_SUPABASE_ANON_KEY }}
       CI: "true"
+      # Epic 10, Story 10.11 (ETNI-500) — /fr/quiz 404s (isQuizFeatureEnabled)
+      # unless this is set, which would silently skip the quiz e2e specs.
+      NEXT_PUBLIC_FEATURE_QUIZ: "true"
 
     steps:
       - name: Checkout

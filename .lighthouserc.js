@@ -36,6 +36,11 @@ module.exports = {
         // Tighter CLS/INP budgets for it are scoped in assert.assertMatrix
         // below, mirroring the /fr/comparer entry above.
         "http://localhost:3000/fr/migrations",
+        // Epic 10, Story 10.11 (ETNI-500 · FR71, NFR18–NFR23) — the quiz
+        // journey joins the reference routes so its mobile Performance ≥ 85
+        // budget is enforced continuously via the base ".*" assertMatrix
+        // entry below, not just checked once at ship time.
+        "http://localhost:3000/fr/quiz",
       ],
       numberOfRuns: 3,
       // Audit returning-user performance with essential-only consent. The
