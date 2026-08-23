@@ -1,0 +1,45 @@
+{
+  "id": "MGR_MAJI_MAJI_REBELLION",
+  "nameMain": "Rébellion Maji Maji contre l'administration coloniale allemande (Afrique orientale allemande)",
+  "migrationGroup": null,
+  "eventType": "resistance",
+  "classificationStatus": "contested",
+  "timeRange": {
+    "startYear": 1905,
+    "endYear": 1907,
+    "datingNote": "La durée du conflit (1905-1907) fait consensus ; l'ampleur du bilan humain — estimé entre 75 000 et 300 000 morts, majoritairement par famine consécutive à la politique de la terre brûlée allemande — reste débattue selon les sources historiographiques."
+  },
+  "geometry": {
+    "type": "LineString",
+    "coordinates": [
+      [38.9, -7.7],
+      [39.511, -8.919],
+      [35.654, -10.683]
+    ]
+  },
+  "peoplesInvolved": [
+    { "id": "PPL_MATUMBI", "role": "resistance" },
+    { "id": "PPL_NGONI", "role": "resistance" }
+  ],
+  "content": {
+    "summary": "Soulèvement armé de plusieurs peuples d'Afrique orientale allemande (1905-1907) contre la politique coloniale de culture forcée du coton, réprimé par une stratégie allemande de la terre brûlée.",
+    "narrative": "Le soulèvement débute dans la vallée du Rufiji comme une protestation paysanne contre le régime de culture obligatoire du coton imposé par l'administration coloniale allemande. Porté par une coalition multiethnique associant notamment les Matumbi et les Ngoni, le mouvement s'étend rapidement à une large part du sud de l'Afrique orientale allemande, en partie grâce à une idéologie religieuse fédératrice. La répression allemande, fondée sur une politique de la terre brûlée visant à affamer les zones insurgées, provoque une famine massive dont le bilan humain reste débattu par l'historiographie.",
+    "debate": "Les estimations du nombre de victimes de la répression (entre 75 000 et 300 000 morts, principalement par famine) varient fortement selon les sources et continuent de faire l'objet de débats historiographiques.",
+    "sources": [
+      {
+        "title": "General History of Africa, VII: Africa under Colonial Domination 1880-1935 (UNESCO, ed. A. Adu Boahen, 1985)",
+        "url": "https://www.unesco.org/en/articles/general-history-africa-vii-africa-under-colonial-domination-1880-1935",
+        "year": 1985,
+        "tier": 1,
+        "notes": ""
+      },
+      {
+        "title": "The Organization of the Maji Maji Rebellion (John Iliffe, Journal of African History, vol. 8, no. 3, 1967, pp. 495-512)",
+        "url": "https://www.cambridge.org/core/journals/journal-of-african-history/article/organization-of-the-maji-maji-rebellion/7DD8298B261E754471EAD710BAEAFBF5",
+        "year": 1967,
+        "tier": 2,
+        "notes": "Vérifié via Wikipedia EN « Maji Maji Rebellion » et FR « Rébellion des Maji-Maji » ; source académique primaire (peer-reviewed) sur l'organisation du soulèvement."
+      }
+    ]
+  }
+}
