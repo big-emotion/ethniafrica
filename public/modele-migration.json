@@ -12,7 +12,11 @@
       "expansion",
       "trade_route",
       "forced_displacement",
-      "pastoral_movement"
+      "pastoral_movement",
+      "fragmentation",
+      "displacement",
+      "imposed_name",
+      "resistance"
     ]
   },
   "id": "MGR_XXXXX",
