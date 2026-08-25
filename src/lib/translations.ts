@@ -400,6 +400,12 @@ export const translations = {
       copiedFeedback: "copié",
       ogSourcedLine: "chaque réponse est sourcée",
     },
+    fieldProvenance: {
+      missingLabel: "Donnée manquante",
+      missingReason: "Le corpus ne renseigne pas ce champ pour cette fiche.",
+      derivedLabel: "Valeur dérivée",
+      derivedFromPrefix: "Dérivée de : ",
+    },
   },
 };
 

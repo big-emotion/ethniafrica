@@ -244,5 +244,48 @@ describe("Language Family Service", () => {
       expect(family).toBeNull();
       expect(getAfrikPeoplesByLanguageFamily).not.toHaveBeenCalled();
     });
+
+    // @req REQ-119
+    it("should derive footprintByCountry from associated peoples' currentCountries, counting each country once per people", async () => {
+      const mockFamily = {
+        id: "FLG_AFROASIATIQUE",
+        nameFr: "Afro-asiatique",
+        content: {},
+      };
+      const mockPeoples = [
+        {
+          id: "PPL_AMHARA",
+          nameMain: "Amhara",
+          languageFamilyId: "FLG_AFROASIATIQUE",
+          currentCountries: ["ETH"],
+          content: {},
+        },
+        {
+          id: "PPL_OROMO",
+          nameMain: "Oromo",
+          languageFamilyId: "FLG_AFROASIATIQUE",
+          currentCountries: ["ETH", "SOM"],
+          content: {},
+        },
+      ];
+
+      vi.mocked(getAfrikLanguageFamilyById).mockResolvedValue(mockFamily);
+      vi.mocked(getAfrikPeoplesByLanguageFamily).mockResolvedValue(mockPeoples);
+
+      const family = await getLanguageFamilyById("FLG_AFROASIATIQUE");
+
+      expect(family?.footprintByCountry).toEqual({ ETH: 2, SOM: 1 });
+    });
+
+    // @req REQ-119
+    it("should report an empty footprintByCountry rather than omitting it when no people carries a country", async () => {
+      const mockFamily = { id: "FLG_EMPTY", nameFr: "Empty", content: {} };
+      vi.mocked(getAfrikLanguageFamilyById).mockResolvedValue(mockFamily);
+      vi.mocked(getAfrikPeoplesByLanguageFamily).mockResolvedValue([]);
+
+      const family = await getLanguageFamilyById("FLG_EMPTY");
+
+      expect(family?.footprintByCountry).toEqual({});
+    });
   });
 });

@@ -1,5 +1,10 @@
 import type { FamilyGeneralInfoData } from "@/lib/familyDataTransformer";
 import { FamilyPeoplesSection } from "@/components/family/FamilyPeoplesSection";
+import { FieldProvenanceMarker } from "@/components/fiche/FieldProvenanceMarker";
+import {
+  classifyFieldProvenance,
+  isStructurallyExpectedField,
+} from "@/lib/fieldProvenance";
 
 export interface FamilyGeneralInfoSectionProps {
   data: FamilyGeneralInfoData;
@@ -10,17 +15,16 @@ function formatNumber(value: number): string {
 }
 
 // @req REQ-047
+// @req REQ-119
 export function FamilyGeneralInfoSection({
   data,
 }: FamilyGeneralInfoSectionProps) {
-  const hasContent =
-    data.branches.length > 0 ||
-    Boolean(data.geographicArea) ||
-    data.numberOfLanguages !== null ||
-    data.totalSpeakers !== null ||
-    data.associatedPeoples.length > 0;
-
-  if (!hasContent) return null;
+  const branchesProvenance = isStructurallyExpectedField(
+    "language-family",
+    "generalInfo.branches"
+  )
+    ? classifyFieldProvenance(data.branches)
+    : null;
 
   return (
     <section aria-labelledby="family-general-info-heading">
@@ -33,6 +37,9 @@ export function FamilyGeneralInfoSection({
         <p>{formatNumber(data.totalSpeakers)} locuteurs</p>
       )}
       {data.branches.length > 0 && <p>{data.branches.join(" · ")}</p>}
+      {branchesProvenance && branchesProvenance.state === "missing" && (
+        <FieldProvenanceMarker state="missing" />
+      )}
       <FamilyPeoplesSection peoples={data.associatedPeoples} />
     </section>
   );

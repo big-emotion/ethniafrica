@@ -6,6 +6,8 @@ import {
   waitFor,
   within,
 } from "@testing-library/react";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it, vi } from "vitest";
 import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
 
@@ -112,20 +114,73 @@ describe("LanguageFamilyDetailViewV2", () => {
       screen.queryByRole("heading", { name: "Appellations et décolonisation" })
     ).toBeNull();
     expect(
-      screen.queryByRole("heading", { name: "Informations générales" })
-    ).toBeNull();
-    expect(
       screen.queryByRole("heading", { name: "Caractéristiques linguistiques" })
     ).toBeNull();
     expect(
       screen.queryByRole("heading", { name: "Histoire et origines" })
     ).toBeNull();
     expect(
-      screen.queryByRole("heading", { name: "Répartition géographique" })
-    ).toBeNull();
-    expect(
       screen.queryByRole("heading", { name: "Sources et références" })
     ).toBeNull();
+  });
+
+  // @req REQ-119
+  it("shows structurally-expected but empty fields as missing rather than hiding their section", () => {
+    render(
+      <LanguageFamilyDetailViewV2
+        family={{ id: "FLG_EMPTY", nameFr: "Sans contenu", content: {} }}
+      />
+    );
+
+    expect(
+      screen.getByRole("heading", { name: "Informations générales" })
+    ).toBeTruthy();
+    expect(
+      screen.getByRole("heading", { name: "Répartition géographique" })
+    ).toBeTruthy();
+    expect(screen.getAllByText("Donnée manquante").length).toBeGreaterThan(0);
+  });
+
+  // @req REQ-119
+  it("names the origin of a derived footprint instead of presenting it as declared", () => {
+    render(
+      <LanguageFamilyDetailViewV2
+        family={{
+          id: "FLG_BANTU",
+          nameFr: "Bantou",
+          content: {},
+          footprintByCountry: { COD: 3 },
+        }}
+      />
+    );
+
+    expect(
+      screen.getByText("Dérivée de : peuples rattachés à la famille")
+    ).toBeInTheDocument();
+    expect(screen.getByText("COD")).toBeInTheDocument();
+  });
+
+  // @req REQ-119
+  it("renders no marker when the corpus declares a value, using a real corpus fixture with an empty branches list", () => {
+    const fixturePath = join(
+      process.cwd(),
+      "dataset/source/afrik/famille_linguistique/FLG_AFROASIATIQUE.json"
+    );
+    const family = JSON.parse(readFileSync(fixturePath, "utf-8"));
+
+    // Sanity-check the fixture still represents the case this ticket
+    // documents (declared geographicArea, empty branches).
+    expect(family.content.generalInfo.branches).toEqual([]);
+    expect(family.content.generalInfo.geographicArea).toBeTruthy();
+
+    render(<LanguageFamilyDetailViewV2 family={family} />);
+
+    expect(
+      screen.getByText(family.content.generalInfo.geographicArea)
+    ).toBeInTheDocument();
+    // Both branches (generalInfo) and distributionByCountry (distribution)
+    // are structurally expected yet empty in this real fixture.
+    expect(screen.getAllByText("Donnée manquante").length).toBe(2);
   });
 
   // @req REQ-047

@@ -102,6 +102,14 @@ export interface LanguageFamily {
    */
   peopleCount?: number;
 
+  /**
+   * Country presence reconstructed from the stored `currentCountries` of
+   * every people carrying this family's id — the union the atlas charter
+   * calls the family's "footprint" (docs/design/atlas-charter.md §1). Always
+   * derived, never the fiche's own declared `content.distribution` (REQ-119).
+   */
+  footprintByCountry?: Record<CountryId, number>;
+
   // Variable content stored in JSONB (evolutionary)
   content: LanguageFamilyContent;
 
