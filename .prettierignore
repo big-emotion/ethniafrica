@@ -16,3 +16,9 @@ dataset/result
 
 # Frozen visual-reference artifact (Epic 14 reproduction authority) — must stay byte-exact
 _bmad-output/planning-artifacts/module-specs/assets/reference-prototype.html
+
+# Reference mockups: build.js assembles pages/ + parts/ into dist/, and the
+# published artifacts are rebuilt from these sources byte-for-byte. Reformatting
+# the sources breaks that equivalence. Ignored in eslint.config.mjs for the same
+# reason — they are design references, never imported by src/.
+docs/design/mockups
