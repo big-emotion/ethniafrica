@@ -2,7 +2,10 @@ import { describe, it, expect, afterEach, vi } from "vitest";
 import { render, screen, cleanup } from "@testing-library/react";
 
 import { ColonizationModulePage } from "../ColonizationModulePage";
-import type { ColonizationModuleData } from "@/lib/colonizationDataTransformer";
+import type {
+  ColonizationModuleData,
+  ColonizationTimelineEntry,
+} from "@/lib/colonizationDataTransformer";
 import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
 
 vi.mock("@/components/layout/PageLayout", () => ({
@@ -38,6 +41,8 @@ const emptyData: ColonizationModuleData = {
   displacement: null,
   resistances: null,
   sources: null,
+  timeline: null,
+  timelineBounds: null,
 };
 
 const dataWithFragmentation: ColonizationModuleData = {
@@ -50,6 +55,30 @@ const dataWithFragmentation: ColonizationModuleData = {
       assertionId: "aaaaaaaa-1111-1111-1111-111111111111",
     },
   ],
+};
+
+const resistanceEntry: ColonizationTimelineEntry = {
+  id: "MGR_MAJI_MAJI_REBELLION",
+  nameMain: "Rébellion Maji Maji",
+  eventType: "resistance",
+  classificationStatus: "contested",
+  timeRange: { startYear: 1905, endYear: 1907, datingNote: null },
+  peoples: [
+    {
+      id: "PPL_MATUMBI",
+      nameMain: "Matumbi",
+      endonym: "Matumbi",
+      endonymLanguage: "mgw",
+    },
+  ],
+  place: null,
+  primarySource: null,
+};
+
+const dataWithTimeline: ColonizationModuleData = {
+  ...emptyData,
+  timeline: [resistanceEntry],
+  timelineBounds: { min: 1905, max: 1907 },
 };
 
 // @req REQ-091 FR90
@@ -95,5 +124,25 @@ describe("ColonizationModulePage (Epic 13, Story 13.9, ETNI-533)", () => {
     expect(
       screen.getAllByRole("link", { name: "voir les sources" }).length
     ).toBeGreaterThan(0);
+  });
+
+  // @req REQ-101 FR87
+  it("omits the timeline section when the transformer reports no timeline", () => {
+    render(<ColonizationModulePage data={emptyData} />);
+    expect(screen.queryByText("Chronologie")).toBeNull();
+  });
+
+  // @req REQ-101 FR87
+  it("renders both the marker layer and the chronology table when timeline data is present", () => {
+    render(<ColonizationModulePage data={dataWithTimeline} />);
+    expect(screen.getByText("Chronologie")).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: /événement résistance/ })
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("table", {
+        name: "Chronologie des événements coloniaux",
+      })
+    ).toBeInTheDocument();
   });
 });
