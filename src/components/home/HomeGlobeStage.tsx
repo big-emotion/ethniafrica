@@ -29,8 +29,16 @@ function canCreateWebglContext(): boolean {
  * the server response never carries the WebGL runtime (REQ-112 AC4): the
  * initial state below is the SSR-safe fallback, and useEffect only ever
  * runs client-side.
+ *
+ * The gate result renders inside .home-globe-stage (REQ-115): an in-flow,
+ * centred box with a declared min-height per breakpoint, replacing the
+ * previous position:absolute;inset:0 overlay that filled the whole hero
+ * behind the copy. Both HomeGlobe and HomeGlobeFallback fill this box the
+ * same way they filled the old overlay, so no change was needed there
+ * beyond HomeGlobeFallback's alignment (see its own doc comment).
  */
 // @req REQ-112
+// @req REQ-115
 export function HomeGlobeStage() {
   const [webglSupported, setWebglSupported] = useState(false);
 
@@ -39,9 +47,33 @@ export function HomeGlobeStage() {
     setWebglSupported(canCreateWebglContext());
   }, []);
 
-  if (!webglSupported) return <HomeGlobeFallback />;
-
-  return <LazyHomeGlobe />;
+  return (
+    <div className="home-globe-stage">
+      {webglSupported ? <LazyHomeGlobe /> : <HomeGlobeFallback />}
+      <style>{`
+        .home-globe-stage {
+          position: relative;
+          box-sizing: border-box;
+          width: 100%;
+          max-width: 960px;
+          margin: 0 auto;
+          padding: 0 20px 48px;
+          min-height: 320px;
+        }
+        @media (min-width: 720px) {
+          .home-globe-stage {
+            min-height: 420px;
+          }
+        }
+        @media (min-width: 1200px) {
+          .home-globe-stage {
+            min-height: 520px;
+            flex: 1 1 auto;
+          }
+        }
+      `}</style>
+    </div>
+  );
 }
 
 export default HomeGlobeStage;
