@@ -213,10 +213,12 @@ Admin authentication uses Supabase Auth with OAuth (GitHub, Google) and magic-li
 - **Board**: https://big-emotion.atlassian.net/jira/software/projects/ETNI/boards/67
 - **Active sprint**: Sprint 3 (ID: 101)
 
-### Module wave (epics 7–14, ETNI-452 → ETNI-543)
+### Module wave (epics 7–14, ETNI-452 → ETNI-543) — delivered
 
-- **Implementation order lives in Jira ticket ETNI-544** (`[Delivery Plan]`) and `_bmad-output/jira-sync-2026-07-29.md`. **Before implementing any ticket of this wave — or when asked to "implement the next ticket" — read ETNI-544 first**, check ticket statuses against its wave order, and pick the first non-done, non-blocked ticket. Hard cross-epic dependencies are encoded as Jira `Blocks` links; every wave ticket links `relates to ETNI-544`.
-- Module specs (the source of truth for each epic): `_bmad-output/planning-artifacts/module-specs/`.
+- The 92 tickets of this wave are all Done, and the `[Delivery Plan]` ticket that ordered them (ETNI-544) has been **deleted**. Nothing replaces it: there is no ordering ticket to read before picking up work. Any instruction, spec or comment still pointing at ETNI-544 is stale.
+- Module specs remain the source of truth for what each of these modules must do: `_bmad-output/planning-artifacts/module-specs/`. Their `README.md` keeps the delivery-order rationale and the cross-epic coordination items (Epic 12↔13 contract seam, `entity_type` as TEXT, migration-number blocks) — those still bind anyone touching the modules.
+- `_bmad-output/jira-sync-2026-07-29.md` is a dated record of the story↔key mapping, not a live plan.
+- **When asked to "implement the next ticket"**, take it from the open epics rather than from a plan ticket: Epic 17 (ETNI-1185, recette remediation), Epic 18 (ETNI-1213, home au globe), Epic 19 (ETNI-1283, fiches au globe). Cross-epic dependencies are on the tickets themselves as Jira `Blocks` links.
 
 ## Design References
 
