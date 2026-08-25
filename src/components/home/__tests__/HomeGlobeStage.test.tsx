@@ -47,4 +47,37 @@ describe("HomeGlobeStage (ARCH-014 capability gate)", () => {
     const { container } = render(<HomeGlobeStage />);
     expect(container.firstElementChild).not.toBeNull();
   });
+
+  // @req REQ-115
+  it("wraps its content in a bounded, centred stage with a declared min-height per breakpoint", async () => {
+    vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);
+
+    const { container } = render(<HomeGlobeStage />);
+
+    await waitFor(() =>
+      expect(document.querySelector("path#africa-landmass")).toBeInTheDocument()
+    );
+
+    const stage = container.querySelector(".home-globe-stage");
+    expect(stage).not.toBeNull();
+    expect(stage?.querySelector("path#africa-landmass")).toBeInTheDocument();
+
+    const styleTag = container.querySelector("style");
+    expect(styleTag?.textContent).toMatch(
+      /\.home-globe-stage\s*{[^}]*min-height:\s*320px/
+    );
+    expect(styleTag?.textContent).toMatch(/margin:\s*0 auto/);
+    expect(styleTag?.textContent).toMatch(/min-width:\s*720px/);
+    expect(styleTag?.textContent).toMatch(/min-width:\s*1200px/);
+  });
+
+  // @req REQ-115
+  it("renders the SSR-safe fallback first, inside the stage container (ARCH-014/REQ-112 unchanged)", () => {
+    const { container } = render(<HomeGlobeStage />);
+    const stage = container.querySelector(".home-globe-stage");
+
+    expect(stage).not.toBeNull();
+    expect(stage?.firstElementChild).not.toBeNull();
+    expect(stage?.querySelector("path#africa-landmass")).toBeInTheDocument();
+  });
 });

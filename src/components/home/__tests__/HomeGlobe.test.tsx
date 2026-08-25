@@ -252,6 +252,17 @@ describe("HomeGlobe", () => {
     expect(fakeGl.uniform1f).toHaveBeenCalledWith(expect.anything(), 1);
   });
 
+  // @req REQ-115
+  it("renders the morph toggle inside the same root that fills the stage as the canvas, not a page-level floater", () => {
+    render(<HomeGlobe />);
+
+    const toggle = screen.getByTestId("home-globe-morph-toggle");
+    const canvas = document.querySelector("canvas");
+
+    expect(canvas).not.toBeNull();
+    expect(toggle.parentElement).toBe(canvas?.parentElement?.parentElement);
+  });
+
   // @req REQ-112
   it("cancels the pending animation frame on unmount and stops responding to resize", () => {
     const { unmount } = render(<HomeGlobe />);
