@@ -11,37 +11,45 @@ import { PRODUCT_NAME } from "@/lib/brand";
 // Each `*-region.png` file below is a mechanical crop of the corresponding
 // PO-approved full-page reference — no new content, same pixels — isolating
 // the hero region so the comparison actually constrains what AC1 describes.
-// Regenerate with (crop = the live HomeHero section's own measured
-// boundingBox at that viewport):
-//   sharp(`<viewport>.png`).extract({ left: 0, top, width, height }).toFile(`<viewport>-region.png`)
-//   mobile-390:  top 96,  585x390    tablet-720: top 96,  526x720
-//   desktop-1440: top 112, 465x1440
+//
+// REQ-115 (ETNI-1278/1282): the hero is no longer a fixed ~350px band, so
+// the crop can no longer use a hardcoded height — the copy-then-globe-stage
+// composition's total height varies by breakpoint (it grows to fill the
+// viewport at >=1200px, see HomeHero.tsx's .home-hero media query). Both
+// clipY and clipHeight below are therefore measured live from the section's
+// own boundingBox each run (see the test body); the `clipY`/`clipHeight`
+// fields here are only the fallback used if that measurement fails.
+// Regenerate the committed references with:
+//   npx playwright test e2e/home-visual.spec.ts --update-snapshots
 const referenceViewports = [
   {
     name: "home-hero-mobile-390-region.png",
     width: 390,
     height: 844,
-    clipY: 96,
-    clipHeight: 585,
-    // Measured baseline (cookie-banner-race-fixed): ratio 0.09.
+    clipY: 58,
+    clipHeight: 674,
+    // Carried over from the pre-REQ-115 baseline; not re-measured against
+    // CI's runner fonts from this environment.
     maxDiffPixelRatio: 0.11,
   },
   {
     name: "home-hero-tablet-720-region.png",
     width: 720,
     height: 1024,
-    clipY: 96,
-    clipHeight: 526,
-    // Measured baseline: ratio 0.12.
+    clipY: 58,
+    clipHeight: 799,
+    // Carried over from the pre-REQ-115 baseline; not re-measured against
+    // CI's runner fonts from this environment.
     maxDiffPixelRatio: 0.14,
   },
   {
     name: "home-hero-desktop-1440-region.png",
     width: 1440,
     height: 900,
-    clipY: 112,
-    clipHeight: 465,
-    // Measured baseline: ratio 0.07.
+    clipY: 57,
+    clipHeight: 900,
+    // Carried over from the pre-REQ-115 baseline; not re-measured against
+    // CI's runner fonts from this environment.
     maxDiffPixelRatio: 0.09,
   },
 ] as const;
@@ -83,15 +91,19 @@ test.describe("Home visual parity", () => {
 
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 
-      // Anchor the clip to the live HomeHero section's own measured top so
-      // the crop tracks the real render (nav height, font metrics) instead
-      // of a hardcoded guess; the height stays fixed to match the region
-      // reference's dimensions exactly (toHaveScreenshot requires identical
-      // image sizes to compute a diff ratio at all).
+      // Anchor the clip to the live HomeHero section's own measured
+      // boundingBox (REQ-115: the hero is no longer a fixed-height band, so
+      // neither its top nor its height can be a hardcoded guess) instead of
+      // the fallback constants above. Both sides must regenerate together
+      // (--update-snapshots) whenever the composition's height changes,
+      // since toHaveScreenshot requires identical image sizes to diff.
       const heroBox = await page
         .locator(`section[aria-label="${PRODUCT_NAME}"]`)
         .boundingBox();
       const clipY = heroBox ? Math.round(heroBox.y) : reference.clipY;
+      const clipHeight = heroBox
+        ? Math.round(heroBox.height)
+        : reference.clipHeight;
 
       await expect(page).toHaveScreenshot(reference.name, {
         animations: "disabled",
@@ -100,7 +112,7 @@ test.describe("Home visual parity", () => {
           x: 0,
           y: clipY,
           width: reference.width,
-          height: reference.clipHeight,
+          height: clipHeight,
         },
         maxDiffPixelRatio: reference.maxDiffPixelRatio,
       });

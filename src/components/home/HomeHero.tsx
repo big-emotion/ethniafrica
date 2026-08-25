@@ -2,6 +2,7 @@ import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
 import { PRODUCT_NAME } from "@/lib/brand";
 
 // @req REQ-044
+// @req REQ-115
 export function HomeHero() {
   return (
     <section
@@ -9,6 +10,7 @@ export function HomeHero() {
       // 6ae60726) — restored here (ETNI-822) because e2e/home-visual.spec.ts
       // resolves the hero's crop origin via this exact locator.
       aria-label={PRODUCT_NAME}
+      className="home-hero"
       style={{
         position: "relative",
         overflow: "hidden",
@@ -17,15 +19,16 @@ export function HomeHero() {
         width: "100vw",
         marginLeft: "calc(50% - 50vw)",
         marginRight: "calc(50% - 50vw)",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
-      <HomeGlobeStage />
       <div
         style={{
           position: "relative",
           maxWidth: "820px",
           margin: "0 auto",
-          padding: "64px 20px 56px",
+          padding: "64px 20px 24px",
         }}
       >
         <h1
@@ -76,6 +79,19 @@ export function HomeHero() {
           éditorial est documenté.
         </p>
       </div>
+      <HomeGlobeStage />
+      {/* The globe is the hero's subject (REQ-115): it follows the copy in
+          document order and, on desktop, grows to fill the viewport height
+          the section reserves below the copy — see .home-globe-stage's own
+          flex rule in HomeGlobeStage.tsx. */}
+      <style>{`
+        @media (min-width: 1200px) {
+          .home-hero {
+            min-height: 100vh;
+            min-height: 100dvh;
+          }
+        }
+      `}</style>
     </section>
   );
 }
