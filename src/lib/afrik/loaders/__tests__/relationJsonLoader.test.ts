@@ -62,6 +62,14 @@ interface SourceRow {
   notes?: string | null;
 }
 
+interface FicheRevisionRow {
+  id: string;
+  entity_type: string;
+  entity_id: string;
+  version: number;
+  content_snapshot: unknown;
+}
+
 interface AssertionRow {
   id: string;
   entity_type: string;
@@ -92,6 +100,7 @@ interface SupabaseDoubleOptions {
 function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
   const sources: SourceRow[] = [];
   const assertions: AssertionRow[] = [];
+  const ficheRevisions: FicheRevisionRow[] = [];
   const relations: RelationRow[] = [];
   const confidenceCalls: Array<{ p_entity_type: string; p_entity_id: string }> =
     [];
@@ -99,6 +108,30 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
   const nextId = (prefix: string) => `${prefix}-${++idCounter}`;
 
   const from = vi.fn((table: string) => {
+    if (table === "fiche_revisions") {
+      return {
+        upsert: vi.fn((row: Omit<FicheRevisionRow, "id">) => ({
+          select: vi.fn(() => ({
+            single: vi.fn(async () => {
+              const existing = ficheRevisions.find(
+                (r) =>
+                  r.entity_type === row.entity_type &&
+                  r.entity_id === row.entity_id &&
+                  r.version === row.version
+              );
+              if (existing) {
+                Object.assign(existing, row);
+                return { data: { id: existing.id }, error: null };
+              }
+              const created = { id: nextId("rev"), ...row };
+              ficheRevisions.push(created);
+              return { data: { id: created.id }, error: null };
+            }),
+          })),
+        })),
+      };
+    }
+
     if (table === "sources") {
       return {
         upsert: vi.fn((row: Omit<SourceRow, "id">) => ({
@@ -208,6 +241,7 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
     client: { from, rpc },
     sources,
     assertions,
+    ficheRevisions,
     relations,
     confidenceCalls,
   };

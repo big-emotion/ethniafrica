@@ -84,6 +84,7 @@ interface AssertionRow {
   field_path: string;
   statement?: string;
   source_ids?: string[];
+  fiche_revision_id?: string;
 }
 
 interface MigrationEventRow {
@@ -109,6 +110,14 @@ interface MigrationEventPeopleRow {
   role: string | null;
 }
 
+interface FicheRevisionRow {
+  id: string;
+  entity_type: string;
+  entity_id: string;
+  version: number;
+  content_snapshot: unknown;
+}
+
 interface SupabaseDoubleOptions {
   rejectMigrationId?: string;
   rejectConfidenceId?: string;
@@ -117,6 +126,7 @@ interface SupabaseDoubleOptions {
 function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
   const sources: SourceRow[] = [];
   const assertions: AssertionRow[] = [];
+  const ficheRevisions: FicheRevisionRow[] = [];
   const events: MigrationEventRow[] = [];
   const eventPeoples: MigrationEventPeopleRow[] = [];
   const confidenceCalls: Array<{ p_entity_type: string; p_entity_id: string }> =
@@ -177,6 +187,30 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
             single: vi.fn(async () => {
               const created = { id: nextId("assert"), ...row };
               assertions.push(created);
+              return { data: { id: created.id }, error: null };
+            }),
+          })),
+        })),
+      };
+    }
+
+    if (table === "fiche_revisions") {
+      return {
+        upsert: vi.fn((row: Omit<FicheRevisionRow, "id">) => ({
+          select: vi.fn(() => ({
+            single: vi.fn(async () => {
+              const existing = ficheRevisions.find(
+                (r) =>
+                  r.entity_type === row.entity_type &&
+                  r.entity_id === row.entity_id &&
+                  r.version === row.version
+              );
+              if (existing) {
+                Object.assign(existing, row);
+                return { data: { id: existing.id }, error: null };
+              }
+              const created = { id: nextId("rev"), ...row };
+              ficheRevisions.push(created);
               return { data: { id: created.id }, error: null };
             }),
           })),
@@ -256,6 +290,7 @@ function createSupabaseDouble(options: SupabaseDoubleOptions = {}) {
     client: { from, rpc },
     sources,
     assertions,
+    ficheRevisions,
     events,
     eventPeoples,
     confidenceCalls,
@@ -363,6 +398,19 @@ describe("migrationJsonLoader", () => {
         field_path: "record",
       });
       expect(database.assertions[0].source_ids).toHaveLength(2);
+
+      // assertions.fiche_revision_id is NOT NULL since migration 020, and no
+      // loader ever created the revision it points at — every insert failed
+      // against a real database while the mock let it through (ETNI-1199).
+      expect(database.ficheRevisions).toHaveLength(1);
+      expect(database.ficheRevisions[0]).toMatchObject({
+        entity_type: "migration",
+        entity_id: "MGR_TEST_EXPANSION_01",
+        version: 1,
+      });
+      expect(database.assertions[0].fiche_revision_id).toBe(
+        database.ficheRevisions[0].id
+      );
 
       expect(database.events).toHaveLength(1);
       expect(database.events[0]).toMatchObject({

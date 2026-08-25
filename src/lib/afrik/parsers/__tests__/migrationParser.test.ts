@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest";
+import { MIGRATION_EVENT_TYPES } from "@/lib/afrik/migrationEventTypes";
 import { parseMigrationFile } from "../migrationParser";
 
 function validMigration(overrides: Record<string, unknown> = {}) {
@@ -242,6 +243,30 @@ describe("parseMigrationFile", () => {
     expect(result.success).toBe(false);
     expect(result.errors).toContainEqual(
       expect.objectContaining({ path: "peoplesInvolved" })
+    );
+  });
+
+  // Epic 13 widened the enum in migrationEventTypes.ts, which declares itself
+  // the single source of truth. The parser kept its own copy and silently
+  // rejected the colonization events, so the migrations corpus loaded 4 of 6
+  // fiches (ETNI-1199).
+  // @req REQ-080
+  it.each(MIGRATION_EVENT_TYPES)("accepts the %s event type", (eventType) => {
+    const result = parseMigrationFile(validMigration({ eventType }));
+
+    expect(result.success).toBe(true);
+    expect(result.data?.eventType).toBe(eventType);
+  });
+
+  // @req REQ-080
+  it("rejects an event type absent from the shared enum", () => {
+    const result = parseMigrationFile(
+      validMigration({ eventType: "annexation" })
+    );
+
+    expect(result.success).toBe(false);
+    expect(result.errors).toContainEqual(
+      expect.objectContaining({ path: "eventType" })
     );
   });
 });

@@ -104,6 +104,39 @@ async function upsertSource(
 }
 
 /**
+ * Migration 020 made `assertions.fiche_revision_id` a NOT NULL FK so every
+ * assertion is traceable to a published snapshot (R-2 / ASR-4), and seeded
+ * version-1 placeholder revisions for the assertions that already existed.
+ * Nothing then taught the loaders to create one, so every assertion insert
+ * failed against a real database. This publishes the fiche as version 1,
+ * following that same precedent; the unique key (entity_type, entity_id,
+ * version) makes the upsert idempotent across re-runs.
+ */
+async function findOrCreateFicheRevision(
+  supabase: AdminClient,
+  relation: RelationRecord
+): Promise<{ id: string } | { error: string }> {
+  const { data, error } = await supabase
+    .from("fiche_revisions")
+    .upsert(
+      {
+        entity_type: "relation",
+        entity_id: relation.id,
+        version: 1,
+        content_snapshot: relation,
+      },
+      { onConflict: "entity_type,entity_id,version" }
+    )
+    .select("id")
+    .single();
+
+  if (error || !data) {
+    return { error: errorMessage(error) };
+  }
+  return { id: data.id as string };
+}
+
+/**
  * assertions has no unique constraint on (entity_type, entity_id,
  * field_path), so idempotency on re-run is enforced here via
  * select-before-write rather than a database guarantee.
@@ -112,7 +145,8 @@ async function findOrCreateAssertion(
   supabase: AdminClient,
   relationId: string,
   statement: string,
-  sourceIds: string[]
+  sourceIds: string[],
+  ficheRevisionId: string
 ): Promise<{ id: string } | { error: string }> {
   const { data: existing, error: selectError } = await supabase
     .from("assertions")
@@ -146,6 +180,7 @@ async function findOrCreateAssertion(
       field_path: "record",
       statement,
       source_ids: sourceIds,
+      fiche_revision_id: ficheRevisionId,
     })
     .select("id")
     .single();
@@ -175,11 +210,18 @@ async function upsertRelationRecord(
     sourceIds.push(result.id);
   }
 
+  const revision = await findOrCreateFicheRevision(supabase, relation);
+  if ("error" in revision) {
+    report.errors.push(`${relation.id}: fiche revision — ${revision.error}`);
+    return;
+  }
+
   const assertion = await findOrCreateAssertion(
     supabase,
     relation.id,
     relation.description,
-    sourceIds
+    sourceIds,
+    revision.id
   );
   if ("error" in assertion) {
     report.errors.push(`${relation.id}: assertion — ${assertion.error}`);
