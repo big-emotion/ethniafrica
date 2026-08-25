@@ -33,8 +33,6 @@ vi.mock("next/font/google", () => {
     className: "font-stub",
   });
   return {
-    Inter: fontLoader,
-    Playfair_Display: fontLoader,
     Fraunces: fontLoader,
     Nunito_Sans: fontLoader,
   };

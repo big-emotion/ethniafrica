@@ -19,4 +19,70 @@ describe("root layout font configuration", () => {
     );
     expect(frauncesConfig?.[1]).toContain('style: ["normal", "italic"]');
   });
+
+  // @req REQ-047 — retire the unused legacy Inter / Playfair Display pair.
+  it("requests exactly one display family and one body family from next/font/google", () => {
+    const source = readFileSync(
+      resolve(process.cwd(), "src/app/layout.tsx"),
+      "utf8"
+    );
+    const importBlock = source.match(
+      /import\s*\{([\s\S]*?)\}\s*from\s*"next\/font\/google";/
+    );
+
+    expect(importBlock).not.toBeNull();
+    expect(importBlock?.[1]).toContain("Fraunces");
+    expect(importBlock?.[1]).toContain("Nunito_Sans");
+    expect(importBlock?.[1]).not.toContain("Inter");
+    expect(importBlock?.[1]).not.toContain("Playfair_Display");
+    expect(source).not.toContain("--font-inter");
+    expect(source).not.toContain("--font-playfair");
+  });
+});
+
+describe("V2 font token bindings (REQ-047)", () => {
+  // @req REQ-047
+  it("binds the Tailwind sans/display utilities to the V2 font variables", () => {
+    const source = readFileSync(
+      resolve(process.cwd(), "tailwind.config.ts"),
+      "utf8"
+    );
+
+    expect(source).toContain('sans: ["var(--font-nunito-sans)"');
+    expect(source).toContain('display: ["var(--font-fraunces)"');
+    expect(source).not.toContain("--font-inter");
+    expect(source).not.toContain("--font-playfair");
+  });
+
+  // @req REQ-047
+  it("binds the base body and heading elements to the V2 font variables", () => {
+    const source = readFileSync(
+      resolve(process.cwd(), "src/index.css"),
+      "utf8"
+    );
+
+    expect(source).not.toContain("--font-inter");
+    expect(source).not.toContain("--font-playfair");
+
+    const bodyRule = source.match(/body\s*\{([\s\S]*?)\}/);
+    expect(bodyRule).not.toBeNull();
+    expect(bodyRule?.[1]).toContain("var(--font-nunito-sans)");
+
+    const headingRule = source.match(/h1,\s*h2,[\s\S]*?\{([\s\S]*?)\}/);
+    expect(headingRule).not.toBeNull();
+    expect(headingRule?.[1]).toContain("var(--font-fraunces)");
+  });
+
+  // @req REQ-047
+  it("preloads the V2 families (not the retired pair) for Storybook", () => {
+    const source = readFileSync(
+      resolve(process.cwd(), ".storybook/preview.ts"),
+      "utf8"
+    );
+
+    expect(source).toContain("Fraunces");
+    expect(source).toContain("Nunito+Sans");
+    expect(source).not.toContain("family=Inter");
+    expect(source).not.toContain("Playfair");
+  });
 });
