@@ -84,6 +84,7 @@ const LIVE_ROUTES = [
   "/fr/peuples/PPL_WOLOF/liens",
   "/fr/migrations",
   "/fr/quiz",
+  "/fr/regards/colonisation-et-resistances",
 ];
 
 const MIME: Record<string, string> = {

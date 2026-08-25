@@ -332,6 +332,31 @@ export const translations = {
         title: "Sources",
         linkLabel: "voir les sources",
       },
+      timeline: {
+        title: "Chronologie",
+        eventTypeLabels: {
+          fragmentation: "fragmentation",
+          displacement: "déplacement forcé",
+          imposed_name: "nom imposé",
+          resistance: "résistance",
+        },
+        filterLegend: "Filtrer par type d'événement",
+        openEventSuffix: "Entrée pour ouvrir",
+        closeEventCard: "Fermer",
+        peoplesJoiner: "et",
+        table: {
+          caption: "Chronologie des événements coloniaux",
+          date: "Date",
+          type: "Type",
+          people: "Peuple",
+          place: "Lieu",
+          source: "Source",
+          placeUndocumented: "Non documenté",
+          sourceUndocumented: "Aucune source citée",
+        },
+        emptyState:
+          "Aucun événement de colonisation ou de résistance n'est documenté pour le moment.",
+      },
     },
     quiz: {
       navLabel: "Quiz",

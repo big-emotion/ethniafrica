@@ -22,3 +22,17 @@ export const MIGRATION_EVENT_TYPES = [
 ] as const;
 
 export type MigrationEventType = (typeof MIGRATION_EVENT_TYPES)[number];
+
+/**
+ * The four Epic 13 event types (Story 13.1) rendered by the colonization
+ * module's timeline (Story 13.12, ETNI-536) — a fixed subset of
+ * `MIGRATION_EVENT_TYPES`, not a competing list.
+ */
+export const COLONIAL_EVENT_TYPES = [
+  "fragmentation",
+  "displacement",
+  "imposed_name",
+  "resistance",
+] as const;
+
+export type ColonialEventType = (typeof COLONIAL_EVENT_TYPES)[number];
