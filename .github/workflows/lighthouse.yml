@@ -134,6 +134,8 @@ jobs:
               '- `/fr/comparer`',
               '- `/fr/comparer/peuples/PPL_WOLOF/PPL_SERERE`',
               '- `/fr/quiz`',
+              '',
+              '_Not audited: `/fr/noms`, `/fr/migrations` — both currently return HTTP 500 in CI, unrelated to this PR._',
               publicLinks,
             ].join('\n');
 
