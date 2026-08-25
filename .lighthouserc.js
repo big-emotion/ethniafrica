@@ -4,6 +4,15 @@ module.exports = {
       url: [
         "http://localhost:3000/",
         "http://localhost:3000/fr",
+        // Epic 10, Story 10.11 (ETNI-500 · FR71, NFR18–NFR23) — ordered
+        // ahead of /fr/noms below: that route currently 500s in CI (a
+        // pre-existing failure, unrelated to this story — see ETNI-500 PR
+        // #371 review) and lhci's collect step aborts the whole run on the
+        // first URL that fails to load, so anything after it never gets
+        // measured. Keeping /fr/quiz early means its mobile Performance
+        // ≥ 85 budget (enforced via the base ".*" assertMatrix entry below)
+        // is still asserted even while /fr/noms is broken.
+        "http://localhost:3000/fr/quiz",
         "http://localhost:3000/fr/noms",
         // One representative route per charter route-family rolled out in
         // 16.4–16.9 (ETNI-807 · FR110), in addition to the fiche routes
@@ -36,11 +45,6 @@ module.exports = {
         // Tighter CLS/INP budgets for it are scoped in assert.assertMatrix
         // below, mirroring the /fr/comparer entry above.
         "http://localhost:3000/fr/migrations",
-        // Epic 10, Story 10.11 (ETNI-500 · FR71, NFR18–NFR23) — the quiz
-        // journey joins the reference routes so its mobile Performance ≥ 85
-        // budget is enforced continuously via the base ".*" assertMatrix
-        // entry below, not just checked once at ship time.
-        "http://localhost:3000/fr/quiz",
       ],
       numberOfRuns: 3,
       // Audit returning-user performance with essential-only consent. The
