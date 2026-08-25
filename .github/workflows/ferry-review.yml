@@ -164,7 +164,7 @@ jobs:
           --run-id "${{ github.event.client_payload.event_id }}"
           --approve-transition-id "${{ secrets.FERRY_APPROVE_TRANSITION_ID }}"
           --changes-transition-id "${{ secrets.FERRY_ITER_TRANSITION_ID }}"
-      - uses: anthropics/claude-code-action@1dc994ee7a008f0ecc866d9ac23ef036b7229f84 # v1.0.127
+      - uses: anthropics/claude-code-action@9d7150bc8a3dae8149739a88019d192b579ad90c # v1.0.193
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: ${{ steps.prompt.outputs.prompt }}
