@@ -71,8 +71,10 @@
   /* Charter categorical accents (V2, ETNI-798 · FR104) — the CVD-validated
      set promoted to first-class tokens. Base hexes match the dormant
      --afh-night-{ocre,teal,terre,perv} above; the -tint variants are new.
-     The --afh-night-* group stays untouched and dormant (kept pending the
-     epics 7–13 decision) — components must not consume it. */
+     The --afh-night-* group stays otherwise dormant. DEC-022 (ETNI-1284)
+     lifted that for one surface: the atlas globe stage on a fiche is
+     --afh-night-ground/-ink* regardless of the fiche's own accent — see
+     src/components/atlas/AtlasGlobe.tsx. No other component may consume it. */
   --afh-cat-ocre: #c9821f;
   --afh-cat-ocre-tint: #f1d9ae;
   --afh-cat-teal: #33a390;

@@ -8,6 +8,8 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { CountryDetailViewV2 } from "@/components/detail/CountryDetailViewV2";
+import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
+import { buildCountryOutlineOverlay } from "@/lib/atlas/overlays";
 import { getCountryById } from "@/api/v2/services/countryService";
 import { mapCountryDetail } from "@/lib/afrikDetailMapper";
 import { getActiveSourceFlags } from "@/lib/supabase/queries/afrik/flags";
@@ -182,6 +184,12 @@ export default async function PaysSlugPage({
       <div className="container mx-auto max-w-4xl px-4 py-8">
         <FicheSequence
           context={{ entityType: "country", payload: countryDetail }}
+          globe={
+            <AtlasGlobe
+              overlay={buildCountryOutlineOverlay(countryDetail.id)}
+              missingMessage={`Contour non disponible pour ${countryDetail.nameFr}`}
+            />
+          }
           record={
             <CountryDetailViewV2
               countryId={parsed.slug}
