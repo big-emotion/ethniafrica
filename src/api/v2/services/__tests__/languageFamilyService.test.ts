@@ -7,6 +7,7 @@ import {
 vi.mock("@/lib/supabase/queries/afrik/languageFamilies", () => ({
   getAllAfrikLanguageFamilies: vi.fn(),
   getAfrikLanguageFamilyById: vi.fn(),
+  countAfrikLanguageFamilies: vi.fn(),
 }));
 
 vi.mock("@/lib/supabase/queries/afrik/peoples", () => ({
@@ -18,6 +19,7 @@ vi.mock("@/lib/supabase/queries/afrik/peoples", () => ({
 import {
   getAllAfrikLanguageFamilies,
   getAfrikLanguageFamilyById,
+  countAfrikLanguageFamilies,
 } from "@/lib/supabase/queries/afrik/languageFamilies";
 import {
   getAfrikPeoplesByLanguageFamily,
@@ -36,13 +38,14 @@ describe("Language Family Service", () => {
     });
 
     it("should return paginated language families", async () => {
-      const mockFamilies = Array.from({ length: 10 }, (_, i) => ({
+      const mockPage = Array.from({ length: 5 }, (_, i) => ({
         id: `FLG_${i}`,
         nameFr: `Family ${i}`,
         content: {},
       }));
 
-      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockPage);
+      vi.mocked(countAfrikLanguageFamilies).mockResolvedValue(10);
 
       const result = await getLanguageFamilies(1, 5);
 
@@ -50,23 +53,51 @@ describe("Language Family Service", () => {
       expect(Array.isArray(result.data)).toBe(true);
       expect(result.data.length).toBe(5);
       expect(result.total).toBe(10);
-      expect(getAllAfrikLanguageFamilies).toHaveBeenCalled();
+      expect(getAllAfrikLanguageFamilies).toHaveBeenCalledWith(1, 5);
     });
 
     it("should handle pagination correctly", async () => {
-      const mockFamilies = Array.from({ length: 10 }, (_, i) => ({
-        id: `FLG_${i}`,
-        nameFr: `Family ${i}`,
-        content: {},
-      }));
-
-      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue([
+        { id: "FLG_0", nameFr: "Family 0", content: {} },
+        { id: "FLG_1", nameFr: "Family 1", content: {} },
+      ]);
+      vi.mocked(countAfrikLanguageFamilies).mockResolvedValue(10);
       const page1 = await getLanguageFamilies(1, 2);
-      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
+
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue([
+        { id: "FLG_2", nameFr: "Family 2", content: {} },
+        { id: "FLG_3", nameFr: "Family 3", content: {} },
+      ]);
+      vi.mocked(countAfrikLanguageFamilies).mockResolvedValue(10);
       const page2 = await getLanguageFamilies(2, 2);
 
       expect(page1.data.length).toBe(2);
       expect(page2.data.length).toBe(2);
+      expect(getAllAfrikLanguageFamilies).toHaveBeenNthCalledWith(1, 1, 2);
+      expect(getAllAfrikLanguageFamilies).toHaveBeenNthCalledWith(2, 2, 2);
+    });
+
+    // @req REQ-110
+    it("should push pagination down to the database layer instead of slicing an unranged fetch in memory", async () => {
+      const pageOfFamilies = [
+        { id: "FLG_20", nameFr: "Family 20", content: {} },
+        { id: "FLG_21", nameFr: "Family 21", content: {} },
+      ];
+
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(pageOfFamilies);
+      vi.mocked(countAfrikLanguageFamilies).mockResolvedValue(24);
+
+      const result = await getLanguageFamilies(11, 2);
+
+      // Requested page/perPage must reach the query layer so it can apply
+      // .range() — an unranged fetch is silently capped by PostgREST's
+      // server-side max-rows setting, which is the REQ-110 root cause.
+      expect(getAllAfrikLanguageFamilies).toHaveBeenCalledWith(11, 2);
+      expect(result.data).toEqual(pageOfFamilies);
+      // total must come from a real count query, never from the length of
+      // the (now page-sized) array returned by the query layer.
+      expect(result.total).toBe(24);
+      expect(countAfrikLanguageFamilies).toHaveBeenCalled();
     });
 
     // @req REQ-108
@@ -127,6 +158,9 @@ describe("Language Family Service", () => {
         content: {},
       }));
       vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
+      vi.mocked(countAfrikLanguageFamilies).mockResolvedValue(
+        mockFamilies.length
+      );
 
       const peopleCounts = new Map<string, number>();
       mockFamilies.forEach((family, i) => peopleCounts.set(family.id, i + 1));

@@ -44,6 +44,26 @@ export async function getAllAfrikLanguageFamilies(
 }
 
 /**
+ * Count all AFRIK language families, independent of any page/range applied
+ * to a paginated fetch. Needed because a ranged .select() no longer reflects
+ * the total row count once .range() is applied.
+ */
+// @req REQ-110
+export async function countAfrikLanguageFamilies(): Promise<number> {
+  const supabase = createServerClient();
+  const { count, error } = await supabase
+    .from("afrik_language_families")
+    .select("*", { count: "exact", head: true });
+
+  if (error) {
+    logger.error("Error counting AFRIK language families", error);
+    throw error;
+  }
+
+  return count ?? 0;
+}
+
+/**
  * Get a single AFRIK language family by ID
  */
 export async function getAfrikLanguageFamilyById(
