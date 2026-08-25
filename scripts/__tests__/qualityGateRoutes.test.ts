@@ -132,4 +132,23 @@ describe("browser quality-gate routes", () => {
       );
     }
   });
+
+  // @req REQ-103 FR71 (Epic 10, Story 10.11 · ETNI-500)
+  it("audits the quiz journey (/fr/quiz) in both browser gates with a blocking mobile Performance gate", () => {
+    const axeScript = readAxeScript();
+
+    expect(
+      lighthouseConfig.ci.collect.url,
+      "Lighthouse must audit /fr/quiz"
+    ).toContain("http://localhost:3000/fr/quiz");
+    expect(axeScript, "axe must audit /fr/quiz").toContain('"/fr/quiz"');
+
+    for (const [audit, assertion] of Object.entries(
+      lighthouseConfig.ci.assert.assertMatrix[0].assertions
+    )) {
+      if (audit === "categories:performance") {
+        expect(assertion).toEqual(["error", { minScore: 0.85 }]);
+      }
+    }
+  });
 });

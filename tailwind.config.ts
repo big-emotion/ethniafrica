@@ -21,8 +21,8 @@ export default {
       // ETNI-21: Africa History (`--afh-*`) token surface for Tailwind utilities.
       // Additive only — existing shadcn HSL tokens below are untouched.
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
-        display: ["var(--font-playfair)", "serif"],
+        sans: ["var(--font-nunito-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-fraunces)", "Georgia", "serif"],
         afh: ["var(--font-nunito-sans)", "system-ui", "sans-serif"],
         "afh-display": ["var(--font-fraunces)", "Georgia", "serif"],
       },

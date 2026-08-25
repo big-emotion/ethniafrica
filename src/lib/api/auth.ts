@@ -69,8 +69,11 @@ async function verifyHashedKey(
   return computed === expectedHex;
 }
 
+/** Canonical api_keys.tier values (migration 013 CHECK constraint). */
+export type ApiKeyTier = "public" | "partner" | "admin";
+
 export type ValidateResult =
-  | { valid: true; apiKeyId: string }
+  | { valid: true; apiKeyId: string; tier: ApiKeyTier }
   | { valid: false; reason: "missing_api_key" | "invalid_api_key" };
 
 /**
@@ -88,7 +91,7 @@ export async function validateApiKey(rawKey: string): Promise<ValidateResult> {
 
   const { data: rows, error } = await adminClient
     .from("api_keys")
-    .select("id, key_hash, revoked_at, expires_at")
+    .select("id, key_hash, revoked_at, expires_at, tier")
     .eq("key_prefix", prefix)
     .eq("active", true)
     .limit(1);
@@ -121,5 +124,5 @@ export async function validateApiKey(rawKey: string): Promise<ValidateResult> {
       /* intentionally ignored */
     });
 
-  return { valid: true, apiKeyId: row.id };
+  return { valid: true, apiKeyId: row.id, tier: row.tier as ApiKeyTier };
 }

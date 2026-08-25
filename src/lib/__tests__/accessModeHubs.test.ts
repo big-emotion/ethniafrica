@@ -73,6 +73,19 @@ describe("accessModeHubs — 10-module light-home config", () => {
     expect(frise?.href).toBe(getLocalizedRoute("fr", "migrations"));
   });
 
+  // ETNI-1198/ETNI-1220: the corpus behind this card is 6 sourced events —
+  // far short of what «3 000 ans de migrations» implies. Until the sourcing
+  // floor set by the spike is met, the card copy must not claim coverage the
+  // corpus doesn't have.
+  // @req FR92
+  // @req REQ-044
+  it("does not claim '3 000 ans' coverage on the migrations card before the sourcing floor is met", () => {
+    const modules = getHomeModules("fr");
+    const frise = modules.find((module) => module.id === "frise");
+
+    expect(frise?.title).not.toMatch(/3\s?000\s+ans/i);
+  });
+
   // @req FR92
   // @req REQ-044
   it("marks the shipped comparator live", () => {
@@ -99,5 +112,19 @@ describe("accessModeHubs — 10-module light-home config", () => {
   // @req REQ-044
   it("derives the Tout/Explorer/Comprendre/Jouer categories from the config, in first-seen order", () => {
     expect(getModuleCategories()).toEqual(["explorer", "comprendre", "jouer"]);
+  });
+
+  // ETNI-1196/DEC-019: the corpus behind this card is ethnonyms attached to a
+  // people (endonym/exonym/historical spelling), not personal-name
+  // genealogy — the label must not promise a question the module cannot
+  // answer.
+  // @req FR92
+  // @req REQ-044
+  it("names the ethnonym atlas on the noms card, not personal-name origin", () => {
+    const modules = getHomeModules("fr");
+    const noms = modules.find((module) => module.id === "noms");
+
+    expect(noms?.title).toBe("Noms & appellations");
+    expect(noms?.title).not.toMatch(/d'où vient un nom/i);
   });
 });
