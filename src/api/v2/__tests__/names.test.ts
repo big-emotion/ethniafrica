@@ -12,7 +12,14 @@ vi.mock("@/lib/supabase/server", () => ({
   createServerClient: () => ({ from: fromMock }),
 }));
 
-import { listNames } from "@/api/v2/services/names";
+vi.mock("@/lib/api/logger", () => ({
+  logger: { info: vi.fn(), error: vi.fn(), warn: vi.fn(), debug: vi.fn() },
+}));
+
+import {
+  listNames,
+  NamesSchemaUnavailableError,
+} from "@/api/v2/services/names";
 import { listNamesHandler } from "@/api/v2/handlers/names";
 import type { ListNamesQuery } from "@/api/v2/schemas/names";
 
@@ -27,6 +34,23 @@ function buildNamesQuery(
   count: number
 ): FakeQuery {
   const result = Promise.resolve({ data: rows, error: null, count });
+  const query: FakeQuery = {} as FakeQuery;
+  query.select = vi.fn(() => query);
+  query.eq = vi.fn(() => query);
+  query.textSearch = vi.fn(() => query);
+  query.not = vi.fn(() => query);
+  query.ilike = vi.fn(() => query);
+  query.order = vi.fn(() => query);
+  query.range = vi.fn(() => result);
+  return query;
+}
+
+function buildNamesQueryError(code: string, message: string): FakeQuery {
+  const result = Promise.resolve({
+    data: null,
+    error: { code, message },
+    count: null,
+  });
   const query: FakeQuery = {} as FakeQuery;
   query.select = vi.fn(() => query);
   query.eq = vi.fn(() => query);
@@ -272,6 +296,43 @@ describe("listNames (service)", () => {
     });
 
     await expect(listNames(baseQuery())).rejects.toThrow(/boom/);
+  });
+
+  // @req REQ-055 — 42P17 (self-referential RLS recursion, DEC-017) must
+  // surface as a plain thrown error, not be misclassified as "schema
+  // unavailable" (which would silently render an empty page).
+  it("surfaces 42P17 as a real error, not NamesSchemaUnavailableError", async () => {
+    const namesQuery = buildNamesQueryError(
+      "42P17",
+      'infinite recursion detected in policy for relation "user_roles"'
+    );
+    fromMock.mockImplementation((table: string) => {
+      if (table === "name_records") return namesQuery;
+      throw new Error(`unexpected table ${table}`);
+    });
+
+    await expect(listNames(baseQuery())).rejects.toThrow(
+      /Failed to list name records/
+    );
+    await expect(listNames(baseQuery())).rejects.not.toBeInstanceOf(
+      NamesSchemaUnavailableError
+    );
+  });
+
+  // @req REQ-055
+  it("still degrades to an empty result for schema-absence codes (42P01, PGRST205)", async () => {
+    const namesQuery = buildNamesQueryError(
+      "42P01",
+      'relation "name_records" does not exist'
+    );
+    fromMock.mockImplementation((table: string) => {
+      if (table === "name_records") return namesQuery;
+      throw new Error(`unexpected table ${table}`);
+    });
+
+    await expect(listNames(baseQuery())).rejects.toBeInstanceOf(
+      NamesSchemaUnavailableError
+    );
   });
 });
 

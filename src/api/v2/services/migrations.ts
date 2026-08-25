@@ -29,6 +29,16 @@ export class UnknownPeopleFilterError extends Error {
   }
 }
 
+/**
+ * True only for the two codes that mean "the table/schema isn't deployed
+ * yet" (pre-migration state) — the one case where degrading to an empty
+ * result is legitimate. Any other error (e.g. 42P17 self-referential RLS
+ * recursion) must propagate, not be swallowed into a false empty state.
+ */
+function isSchemaUnavailable(error: { code?: string }): boolean {
+  return error.code === "42P01" || error.code === "PGRST205";
+}
+
 interface MigrationEventRow {
   id: string;
   name: string;
@@ -165,6 +175,9 @@ export async function listMigrations(
 
   if (error) {
     logger.error("migrations.listMigrations failed", error);
+    if (!isSchemaUnavailable(error)) {
+      throw new Error(`Failed to list migration events: ${error.message}`);
+    }
     return { data: [], total: 0 };
   }
 
