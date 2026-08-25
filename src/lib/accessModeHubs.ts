@@ -1,5 +1,4 @@
-import type { Language } from "@/types/shared";
-import { getLocalizedRoute, type PageType } from "@/lib/routing";
+import type { PageType } from "@/lib/routing";
 
 export type ModuleCategory = "explorer" | "comprendre" | "jouer";
 export type ModuleState = "live" | "soon";
@@ -15,21 +14,43 @@ export interface HomeModule {
   href: string | null;
 }
 
-interface ModuleDefinition {
+/**
+ * The Supabase table whose row count decides whether a "data" module is
+ * live (REQ-106). Modules that don't depend on a probe (static content, or
+ * forced unavailable) carry no dataSource.
+ */
+export type ModuleDataSource =
+  | "afrik_peoples"
+  | "afrik_countries"
+  | "afrik_language_families"
+  | "name_records"
+  | "migration_events";
+
+// - "static": live as soon as its route resolves — content/utility pages
+//   (about, doctrine, free-text search) whose usefulness doesn't hinge on a
+//   single table's row count.
+// - "data": live only once its backing table (dataSource) holds >= 1 row.
+// - "unavailable": never live regardless of routing or data — currently only
+//   the comparator, whose picker (PR #338) is not wired into any route.
+export type ModuleAvailability = "static" | "data" | "unavailable";
+
+export interface ModuleDefinition {
   id: string;
   title: string;
   category: ModuleCategory;
   accent: ModuleAccent;
   illustration: string;
   page: PageType | null;
+  availability: ModuleAvailability;
+  dataSource?: ModuleDataSource;
 }
 
 // The ten module entries driving the light-home filterable grid (14.7,
-// FR92). Five reuse the demo pill concepts dropped from the night hero
-// (arbre → familles, noms, liens, frise, comparer); a module is `live`
-// only once `page` resolves to a real localized route — otherwise it
-// renders as «Bientôt» (soon).
-const MODULE_DEFINITIONS: ModuleDefinition[] = [
+// FR92, REQ-106). A module is `live` only once `page` resolves to a real
+// localized route AND, for "data" modules, its backing table holds at least
+// one row — otherwise it renders as «Bientôt» (soon). See
+// src/lib/moduleAvailability.ts for the probe that resolves "data" modules.
+export const MODULE_DEFINITIONS: ModuleDefinition[] = [
   {
     id: "peuples",
     title: "Les peuples d'Afrique",
@@ -37,6 +58,8 @@ const MODULE_DEFINITIONS: ModuleDefinition[] = [
     accent: "ocre",
     illustration: "users",
     page: "peoples",
+    availability: "data",
+    dataSource: "afrik_peoples",
   },
   {
     id: "pays",
@@ -45,6 +68,8 @@ const MODULE_DEFINITIONS: ModuleDefinition[] = [
     accent: "teal",
     illustration: "globe",
     page: "countries",
+    availability: "data",
+    dataSource: "afrik_countries",
   },
   {
     id: "familles",
@@ -53,6 +78,8 @@ const MODULE_DEFINITIONS: ModuleDefinition[] = [
     accent: "terre",
     illustration: "network",
     page: "families",
+    availability: "data",
+    dataSource: "afrik_language_families",
   },
   {
     id: "recherche",
@@ -61,6 +88,7 @@ const MODULE_DEFINITIONS: ModuleDefinition[] = [
     accent: "perv",
     illustration: "search",
     page: "search",
+    availability: "static",
   },
   {
     // ETNI-1196/DEC-019: the corpus behind this card is ethnonyms attached
@@ -73,6 +101,8 @@ const MODULE_DEFINITIONS: ModuleDefinition[] = [
     accent: "ocre",
     illustration: "tag",
     page: "names",
+    availability: "data",
+    dataSource: "name_records",
   },
   {
     id: "doctrine",
@@ -81,6 +111,7 @@ const MODULE_DEFINITIONS: ModuleDefinition[] = [
     accent: "teal",
     illustration: "book-open",
     page: "doctrine",
+    availability: "static",
   },
   {
     id: "about",
@@ -89,6 +120,7 @@ const MODULE_DEFINITIONS: ModuleDefinition[] = [
     accent: "terre",
     illustration: "info",
     page: "about",
+    availability: "static",
   },
   {
     // ETNI-1198: the corpus behind this card is 6 sourced events, not the
@@ -101,6 +133,8 @@ const MODULE_DEFINITIONS: ModuleDefinition[] = [
     accent: "perv",
     illustration: "history",
     page: "migrations",
+    availability: "data",
+    dataSource: "migration_events",
   },
   {
     id: "liens",
@@ -109,29 +143,34 @@ const MODULE_DEFINITIONS: ModuleDefinition[] = [
     accent: "ocre",
     illustration: "link-2",
     page: null,
+    availability: "static",
   },
   {
+    // ETNI-1189/REQ-106: the picker built under PR #338 is not wired/imported
+    // into any route yet, so the card must not advertise the comparator as
+    // available regardless of its route or of any future data probe.
     id: "comparer",
     title: "Comparer deux peuples",
     category: "jouer",
     accent: "teal",
     illustration: "git-compare",
     page: "compare",
+    availability: "unavailable",
   },
 ];
 
-export const isModuleLive = (page: PageType | null): boolean => page !== null;
-
-export const getHomeModules = (language: Language): HomeModule[] =>
-  MODULE_DEFINITIONS.map((def) => ({
-    id: def.id,
-    title: def.title,
-    category: def.category,
-    accent: def.accent,
-    illustration: def.illustration,
-    state: isModuleLive(def.page) ? "live" : "soon",
-    href: def.page ? getLocalizedRoute(language, def.page) : null,
-  }));
+// @req REQ-106
+// A module is live once its route resolves and, for "data" modules, its
+// probe confirms at least one row. "unavailable" modules never advertise as
+// live regardless of routing or data.
+export const isModuleLive = (
+  def: Pick<ModuleDefinition, "page" | "availability">,
+  dataAvailable: boolean
+): boolean => {
+  if (def.availability === "unavailable") return false;
+  if (def.page === null) return false;
+  return def.availability === "data" ? dataAvailable : true;
+};
 
 export const getModuleCategories = (): ModuleCategory[] =>
   Array.from(new Set(MODULE_DEFINITIONS.map((def) => def.category)));

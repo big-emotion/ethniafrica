@@ -3,9 +3,22 @@ import userEvent from "@testing-library/user-event";
 import { describe, expect, it } from "vitest";
 
 import { ModuleGrid } from "@/components/home/ModuleGrid";
-import { getHomeModules } from "@/lib/accessModeHubs";
+import { MODULE_DEFINITIONS, type HomeModule } from "@/lib/accessModeHubs";
+import { getLocalizedRoute } from "@/lib/routing";
 
-const modules = getHomeModules("fr");
+// ModuleGrid is a pure presentational component — it renders whatever
+// live|soon module list it's given and doesn't know about data probes
+// (@/lib/moduleAvailability). This fixture exercises the same route-based
+// shape the config carries, independent of Supabase availability.
+const modules: HomeModule[] = MODULE_DEFINITIONS.map((def) => ({
+  id: def.id,
+  title: def.title,
+  category: def.category,
+  accent: def.accent,
+  illustration: def.illustration,
+  state: def.page ? "live" : "soon",
+  href: def.page ? getLocalizedRoute("fr", def.page) : null,
+}));
 
 describe("ModuleGrid — filterable module grid (ETNI-820, ported from contract.test.mjs)", () => {
   // @req FR92
