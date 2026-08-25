@@ -31,7 +31,7 @@ const preview: Preview = {
           link.id = linkId;
           link.rel = "stylesheet";
           link.href =
-            "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap";
+            "https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;0,900;1,300;1,500;1,700;1,900&family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap";
           document.head.appendChild(link);
         }
       }
