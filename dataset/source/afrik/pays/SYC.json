@@ -1,6 +1,6 @@
 {
   "id": "SYC",
-  "nameFr": "République des Seychelles (Republic of Seychelles, Repiblik Sesel)",
+  "nameFr": "Seychelles",
   "nameOfficial": "République des Seychelles (Republic of Seychelles, Repiblik Sesel)",
   "etymology": "Le nom \"Seychelles\" vient de Jean Moreau de Séchelles, contrôleur général des finances de Louis XV, roi de France. Les îles ont été nommées \"Seychelles\" par les Français en 1756 en son honneur. Le nom créole \"Sesel\" est dérivé de \"Seychelles\". Auparavant, les îles étaient appelées \"Îles de la Ligne\" ou \"Îles de la Soif\" par les navigateurs.",
   "nameOriginActor": "Les Français ont nommé les îles \"Seychelles\" en l'honneur de Jean Moreau de Séchelles, contrôleur général des finances de Louis XV (1756). Le nom a été conservé par les Britanniques puis officialisé lors de l'indépendance (1976).",
@@ -168,7 +168,8 @@
       "SIL Ethnologue – Languages of Seychelles",
       "Recensements seychellois",
       "Études anthropologiques sur les peuples des Seychelles",
-      "Études historiques sur la colonisation française et britannique"
+      "Études historiques sur la colonisation française et britannique",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

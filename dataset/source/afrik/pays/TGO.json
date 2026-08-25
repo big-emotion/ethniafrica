@@ -1,6 +1,6 @@
 {
   "id": "TGO",
-  "nameFr": "République togolaise (Republic of Togo)",
+  "nameFr": "Togo",
   "nameOfficial": "République togolaise (Republic of Togo)",
   "etymology": "Le nom \"Togo\" vient de \"Togoville\" (anciennement \"Togodo\"), un village situé sur les rives du lac Togo. Le terme \"Togo\" signifie \"au-delà de la rivière\" ou \"au-delà de l'eau\" en langue ewe. Le nom \"Togo\" a été officialisé par les colonisateurs allemands à la fin du XIXe siècle lors de la création de la colonie du Togoland.",
   "nameOriginActor": "Le nom \"Togo\" vient de \"Togoville\" (anciennement \"Togodo\"), nommé par les peuples locaux (Ewe). Le nom \"Togo\" a été officialisé par les colonisateurs allemands à la fin du XIXe siècle lors de la création de la colonie du Togoland.",
@@ -126,7 +126,8 @@
       "SIL Ethnologue – Languages of Togo",
       "Recensements togolais",
       "Études anthropologiques sur les peuples du Togo",
-      "Études historiques sur la colonisation allemande et française"
+      "Études historiques sur la colonisation allemande et française",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

@@ -1,6 +1,6 @@
 {
   "id": "TZA",
-  "nameFr": "République unie de Tanzanie (Jamhuri ya Muungano wa Tanzania)",
+  "nameFr": "République-Unie de Tanzanie",
   "nameOfficial": "République unie de Tanzanie (Jamhuri ya Muungano wa Tanzania)",
   "etymology": "Le nom \"Tanzanie\" est une combinaison de \"Tanganyika\" et \"Zanzibar\", créé lors de l'unification en 1964. \"Tanganyika\" vient probablement du swahili \"tanga\" (voile) et \"nyika\" (plaine désertique), ou de \"tanga\" (voile) et \"hika\" (étendre). \"Zanzibar\" vient de l'arabe \"Zanj\" (noir) et \"barr\" (côte), signifiant \"côte des Noirs\".",
   "nameOriginActor": "Le nom \"Tanzanie\" a été créé en 1964 lors de l'unification du Tanganyika et de Zanzibar. \"Tanganyika\" était le nom colonial allemand puis britannique. \"Zanzibar\" était le nom du sultanat puis protectorat.",
@@ -167,7 +167,8 @@
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples tanzaniens",
       "Études historiques sur les cités-États swahili",
-      "CIA World Factbook – Tanzania (ethnic groups)"
+      "CIA World Factbook – Tanzania (ethnic groups)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

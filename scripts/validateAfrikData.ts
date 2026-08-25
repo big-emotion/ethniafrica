@@ -1531,6 +1531,58 @@ export function checkPopulationPercentageDrift(
   return { ok: errors.length === 0, errors, warnings };
 }
 
+/**
+ * FR33 — `nameFr` must hold the country's name of ordinary use, not a
+ * duplicate of `nameOfficial` (the protocol name). See
+ * docs/adr/0008-country-namefr-common-name.md.
+ *
+ * Hard gate: `nameFr` must be a non-empty string, and when `nameOfficial`
+ * is also present, the two must differ.
+ */
+export function checkCountryNameFrDistinctFromOfficial(
+  datasetRoot: string
+): ValidationResult {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  const paysDir = path.join(datasetRoot, "pays");
+  if (!fs.existsSync(paysDir)) {
+    return { ok: true, errors, warnings };
+  }
+
+  const files = fs.readdirSync(paysDir).filter((f) => f.endsWith(".json"));
+  for (const file of files) {
+    const id = path.basename(file, ".json");
+
+    let data: { id?: string; nameFr?: string; nameOfficial?: string };
+    try {
+      data = JSON.parse(fs.readFileSync(path.join(paysDir, file), "utf-8"));
+    } catch {
+      warnings.push(`FR33 ${file}: could not parse JSON`);
+      continue;
+    }
+
+    const countryId = data.id ?? id;
+
+    if (typeof data.nameFr !== "string" || data.nameFr.trim() === "") {
+      errors.push(`FR33 ${countryId}: nameFr is missing or empty`);
+      continue;
+    }
+
+    if (
+      typeof data.nameOfficial === "string" &&
+      data.nameOfficial.trim() !== "" &&
+      data.nameFr === data.nameOfficial
+    ) {
+      errors.push(
+        `FR33 ${countryId}: nameFr duplicates nameOfficial ("${data.nameFr}") — nameFr must hold the name of ordinary use, not the protocol name`
+      );
+    }
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
+}
+
 /** Collect all colonial-border layer metadata JSON files under geo/colonial_borders/ */
 function collectColonialBorderLayers(
   datasetRoot: string
@@ -3073,6 +3125,12 @@ async function main() {
       datasetRoot,
       path.join(PUBLIC_ROOT, "pays_demographie.csv")
     ),
+  });
+
+  console.log("FR33 – nameFr distinct from nameOfficial...");
+  newChecks.push({
+    name: "FR33 nameFr distinct from nameOfficial",
+    result: checkCountryNameFrDistinctFromOfficial(datasetRoot),
   });
 
   console.log("Orphan fiches...");

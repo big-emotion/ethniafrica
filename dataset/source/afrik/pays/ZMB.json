@@ -1,6 +1,6 @@
 {
   "id": "ZMB",
-  "nameFr": "République de Zambie (Republic of Zambia)",
+  "nameFr": "Zambie",
   "nameOfficial": "République de Zambie (Republic of Zambia)",
   "etymology": "Le nom \"Zambie\" vient du fleuve Zambèze (Zambezi), qui traverse le pays. Le nom a été adopté lors de l'indépendance en 1964, remplaçant \"Rhodésie du Nord\" (Northern Rhodesia).",
   "nameOriginActor": "Le nom \"Zambie\" a été proposé par les nationalistes zambiens lors de l'indépendance. Le fleuve Zambèze tire son nom des peuples locaux (probablement d'origine bantoue).",
@@ -159,7 +159,8 @@
       "Zambia Statistics Agency",
       "Études anthropologiques sur les peuples bantous de Zambie",
       "Recensements zambiens",
-      "CIA World Factbook – Zambia (ethnic groups, 2010 census)"
+      "CIA World Factbook – Zambia (ethnic groups, 2010 census)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

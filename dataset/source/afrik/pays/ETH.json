@@ -1,6 +1,6 @@
 {
   "id": "ETH",
-  "nameFr": "République fédérale démocratique d'Éthiopie (የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ)",
+  "nameFr": "Éthiopie",
   "nameOfficial": "République fédérale démocratique d'Éthiopie (የኢትዮጵያ ፌዴራላዊ ዲሞክራሲያዊ ሪፐብሊክ)",
   "etymology": "Le nom \"Éthiopie\" vient du grec \"Αἰθιοπία\" (Aithiopia), signifiant \"pays des visages brûlés\" ou \"pays des Noirs\". Le terme était utilisé par les Grecs anciens pour désigner les terres au sud de l'Égypte. Le nom amharique \"Ityop'iya\" (ኢትዮጵያ) est dérivé du grec.",
   "nameOriginActor": "Le nom \"Éthiopie\" a été utilisé par les Grecs anciens et adopté par les royaumes éthiopiens. Le nom amharique \"Ityop'iya\" est dérivé du grec. Le pays s'est appelé \"Abyssinie\" par les Européens jusqu'au XXe siècle.",
@@ -148,7 +148,8 @@
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples éthiopiens",
       "Études historiques sur l'empire d'Éthiopie et le royaume d'Axoum",
-      "CIA World Factbook – Ethiopia (ethnic groups, 2007 census)"
+      "CIA World Factbook – Ethiopia (ethnic groups, 2007 census)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

@@ -1,6 +1,6 @@
 {
   "id": "UGA",
-  "nameFr": "République de l'Ouganda (Republic of Uganda, Jamhuri ya Uganda)",
+  "nameFr": "Ouganda",
   "nameOfficial": "République de l'Ouganda (Republic of Uganda, Jamhuri ya Uganda)",
   "etymology": "Le nom \"Ouganda\" vient du royaume du Buganda, le plus puissant royaume précolonial de la région. \"Buganda\" signifie \"pays des Baganda\" en langue luganda. Les Britanniques ont utilisé \"Uganda\" (forme anglaise) pour désigner le protectorat, qui incluait plusieurs royaumes (Buganda, Bunyoro, Toro, Ankole). Le nom a été officialisé lors de l'indépendance en 1962.",
   "nameOriginActor": "Le nom \"Ouganda\" vient du royaume du Buganda, nommé par les Baganda. Les Britanniques ont utilisé \"Uganda\" (forme anglaise) pour désigner le protectorat (1894-1962). Le nom a été officialisé lors de l'indépendance (1962).",
@@ -212,7 +212,8 @@
       "SIL Ethnologue – Languages of Uganda",
       "Recensements ougandais",
       "Études anthropologiques sur les peuples de l'Ouganda",
-      "Études historiques sur les royaumes précoloniaux (Buganda, Bunyoro, Toro, Ankole, Busoga)"
+      "Études historiques sur les royaumes précoloniaux (Buganda, Bunyoro, Toro, Ankole, Busoga)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

@@ -1,6 +1,6 @@
 {
   "id": "CMR",
-  "nameFr": "République du Cameroun (Republic of Cameroon)",
+  "nameFr": "Cameroun",
   "nameOfficial": "République du Cameroun (Republic of Cameroon)",
   "etymology": "Le nom \"Cameroun\" dérive du portugais \"Rio dos Camarões\" (Rivière des crevettes), donné par les navigateurs portugais au XVe siècle en référence au fleuve Wouri, riche en crevettes. Le terme \"Camarões\" a été adapté en \"Cameroun\" par les Français et \"Cameroons\" par les Britanniques.",
   "nameOriginActor": "Le nom \"Cameroun\" provient des navigateurs portugais qui ont exploré la côte camerounaise au XVe siècle. Le terme \"Rio dos Camarões\" (Rivière des crevettes) a été donné au fleuve Wouri et a ensuite été généralisé pour désigner l'ensemble du territoire. Les colonisateurs allemands, français et britanniques ont adapté ce nom.",
@@ -284,7 +284,8 @@
       "Archives du royaume Bamoun (Foumban)",
       "Recensements camerounais",
       "Études anthropologiques sur les peuples du Cameroun",
-      "CIA World Factbook – Cameroon (ethnic groups, 2018 est.)"
+      "CIA World Factbook – Cameroon (ethnic groups, 2018 est.)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

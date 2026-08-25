@@ -1,6 +1,6 @@
 {
   "id": "ZWE",
-  "nameFr": "République du Zimbabwe (Republic of Zimbabwe)",
+  "nameFr": "Zimbabwe",
   "nameOfficial": "République du Zimbabwe (Republic of Zimbabwe)",
   "etymology": "Le nom \"Zimbabwe\" vient du terme shona \"dzimba-dza-mabwe\", qui signifie \"maisons de pierre\" ou \"grandes maisons de pierre\". Ce terme fait référence aux ruines du Grand Zimbabwe, un site archéologique majeur construit entre le XIe et le XVe siècle.",
   "nameOriginActor": "Le nom \"Zimbabwe\" a été adopté lors de l'indépendance en 1980, remplaçant \"Rhodésie du Sud\". Il rend hommage à l'ancienne civilisation du Grand Zimbabwe, construite par le peuple Shona.",
@@ -126,7 +126,8 @@
       "Études anthropologiques sur les peuples bantous du Zimbabwe",
       "Études historiques sur le royaume du Grand Zimbabwe",
       "Recensements zimbabwéens",
-      "CIA World Factbook – Zimbabwe (ethnic groups, 2012 census)"
+      "CIA World Factbook – Zimbabwe (ethnic groups, 2012 census)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [
