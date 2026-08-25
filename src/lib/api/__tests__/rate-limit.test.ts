@@ -47,6 +47,7 @@ import {
   getRateLimitIdentifier,
   getRateLimiter,
   applyRateLimit,
+  applyIpRateLimit,
   _resetLimitersForTest,
 } from "@/lib/api/rate-limit";
 import * as SentryMock from "@sentry/nextjs";
@@ -354,6 +355,75 @@ describe("applyRateLimit", () => {
     vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
     const req = makeRequest({ ip: "1.2.3.4" });
     const result = await applyRateLimit(req);
+    expect(result).toBeNull();
+  });
+});
+
+describe("applyIpRateLimit", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    _resetLimitersForTest();
+    restoreConstructorMocks();
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "https://example.upstash.io");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "test-token");
+  });
+
+  // @req REQ-059
+  it("always uses the ip: bucket, even when a Bearer token is present", async () => {
+    mockLimit.mockResolvedValue({
+      success: true,
+      limit: 60,
+      remaining: 59,
+      reset: Date.now() + 60000,
+    });
+    const req = makeRequest({ ip: "10.0.0.1", authHeader: "Bearer some-key" });
+    await applyIpRateLimit(req);
+    expect(mockLimit).toHaveBeenCalledWith("ip:10.0.0.1");
+  });
+
+  // @req REQ-059
+  it("returns 429 when the IP bucket is exceeded", async () => {
+    const resetTime = Date.now() + 30000;
+    mockLimit.mockResolvedValue({
+      success: false,
+      limit: 60,
+      remaining: 0,
+      reset: resetTime,
+    });
+    const req = makeRequest({ ip: "5.6.7.8", authHeader: "Bearer some-key" });
+    const result = await applyIpRateLimit(req);
+    expect(result).not.toBeNull();
+    expect(result!.status).toBe(429);
+  });
+
+  it("returns 500 when Upstash env vars are missing in production", async () => {
+    _resetLimitersForTest();
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("VERCEL_ENV", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
+    const req = makeRequest({ ip: "1.2.3.4" });
+    const result = await applyIpRateLimit(req);
+    expect(result).not.toBeNull();
+    expect(result!.status).toBe(500);
+  });
+
+  it("fails open (returns null) when Upstash env vars are missing in non-production", async () => {
+    _resetLimitersForTest();
+    vi.stubEnv("NODE_ENV", "development");
+    vi.stubEnv("VERCEL_ENV", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
+    const req = makeRequest({ ip: "1.2.3.4" });
+    const result = await applyIpRateLimit(req);
+    expect(result).toBeNull();
+  });
+
+  // @req REQ-059
+  it("fails open (returns null) when Upstash is transiently unreachable", async () => {
+    mockLimit.mockRejectedValue(new Error("Redis connection failed"));
+    const req = makeRequest({ ip: "9.9.9.9" });
+    const result = await applyIpRateLimit(req);
     expect(result).toBeNull();
   });
 });

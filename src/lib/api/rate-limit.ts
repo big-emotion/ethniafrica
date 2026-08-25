@@ -8,6 +8,12 @@ import type { ApiKeyTier } from "@/lib/api/auth";
 /** Re-exported for callers that only need the tier type, not auth internals. */
 export type { ApiKeyTier };
 
+function getClientIp(request: NextRequest): string {
+  return (
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown"
+  );
+}
+
 /** Extract identifier from request: "key:<apikey>" or "ip:<ip>" */
 export function getRateLimitIdentifier(request: NextRequest): {
   identifier: string;
@@ -18,9 +24,7 @@ export function getRateLimitIdentifier(request: NextRequest): {
     const apiKey = authHeader.slice(7).trim();
     if (apiKey) return { identifier: `key:${apiKey}`, apiKey };
   }
-  const ip =
-    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "unknown";
-  return { identifier: `ip:${ip}`, apiKey: null };
+  return { identifier: `ip:${getClientIp(request)}`, apiKey: null };
 }
 
 /** All per-tier Ratelimit instances, created together in one synchronous pass */
@@ -164,56 +168,49 @@ export function getRateLimiter(
 }
 
 /**
- * Apply rate limiting to a request.
- * Returns null if the request is allowed (pass-through), or a NextResponse(429) if limited.
- * `tier` should be the canonical api_keys.tier from a validated DB record (see
- * validateApiKey in @/lib/api/auth); callers that have not validated a key yet
- * (or don't have one) omit it and get the "public" default, which — combined with
- * apiKey being null when there's no Bearer token — resolves to IP-based limiting.
- * Returns a 500 response when required env vars are absent on a production
- * deployment (misconfiguration, not transient failure); preview and development
- * deployments fail open instead, so a staging environment without Upstash
- * credentials serves traffic unthrottled rather than 500-ing every route.
- * Fails open (returns null) if Upstash is transiently unreachable.
+ * Guard against misconfiguration before entering a limiter's try/catch. A missing
+ * env var is a deployment error — failing open here would silently disable all
+ * rate limiting. Returns "ok" when Upstash is configured and the caller should
+ * proceed; otherwise returns the NextResponse|null the caller should return
+ * immediately (500 in production, null fail-open elsewhere).
  */
-export async function applyRateLimit(
-  request: NextRequest,
-  tier?: ApiKeyTier
-): Promise<NextResponse | null> {
-  // Guard against misconfiguration before entering the try/catch. A missing env var
-  // is a deployment error — failing open here would silently disable all rate limiting.
+function checkUpstashConfigured(): NextResponse | null | "ok" {
   if (
-    !process.env.UPSTASH_REDIS_REST_URL ||
-    !process.env.UPSTASH_REDIS_REST_TOKEN
+    process.env.UPSTASH_REDIS_REST_URL &&
+    process.env.UPSTASH_REDIS_REST_TOKEN
   ) {
-    if (!isProductionDeployment()) {
-      logger.warn(
-        "Rate limit disabled: UPSTASH env vars missing (non-production fail-open)",
-        { tag: "rate_limit_dev_skip" }
-      );
-      return null;
-    }
-    logger.error(
-      "Rate limit misconfigured: UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN are required",
-      undefined,
-      { tag: "rate_limit_misconfigured" }
-    );
-    Sentry.captureException(
-      new Error("Rate limit misconfigured: missing Upstash env vars")
-    );
-    return NextResponse.json(
-      { error: "internal_server_error" },
-      { status: 500 }
-    );
+    return "ok";
   }
+  if (!isProductionDeployment()) {
+    logger.warn(
+      "Rate limit disabled: UPSTASH env vars missing (non-production fail-open)",
+      { tag: "rate_limit_dev_skip" }
+    );
+    return null;
+  }
+  logger.error(
+    "Rate limit misconfigured: UPSTASH_REDIS_REST_URL and UPSTASH_REDIS_REST_TOKEN are required",
+    undefined,
+    { tag: "rate_limit_misconfigured" }
+  );
+  Sentry.captureException(
+    new Error("Rate limit misconfigured: missing Upstash env vars")
+  );
+  return NextResponse.json({ error: "internal_server_error" }, { status: 500 });
+}
+
+/**
+ * Run a resolved limiter against an identifier, converting the Upstash result
+ * into a NextResponse|null and failing open on transient errors.
+ */
+async function runLimiter(
+  identifier: string,
+  limiter: Ratelimit | null
+): Promise<NextResponse | null> {
+  // Admin keys are unrestricted
+  if (limiter === null) return null;
 
   try {
-    const { identifier, apiKey } = getRateLimitIdentifier(request);
-    const limiter = getRateLimiter(apiKey, tier);
-
-    // Admin keys are unrestricted
-    if (limiter === null) return null;
-
     const result = await limiter.limit(identifier);
 
     if (result.success) return null;
@@ -239,4 +236,44 @@ export async function applyRateLimit(
     // Fail open
     return null;
   }
+}
+
+/**
+ * Apply rate limiting to a request.
+ * Returns null if the request is allowed (pass-through), or a NextResponse(429) if limited.
+ * `tier` should be the canonical api_keys.tier from a validated DB record (see
+ * validateApiKey in @/lib/api/auth); callers that have not validated a key yet
+ * (or don't have one) omit it and get the "public" default, which — combined with
+ * apiKey being null when there's no Bearer token — resolves to IP-based limiting.
+ * Returns a 500 response when required env vars are absent on a production
+ * deployment (misconfiguration, not transient failure); preview and development
+ * deployments fail open instead, so a staging environment without Upstash
+ * credentials serves traffic unthrottled rather than 500-ing every route.
+ * Fails open (returns null) if Upstash is transiently unreachable.
+ */
+export async function applyRateLimit(
+  request: NextRequest,
+  tier?: ApiKeyTier
+): Promise<NextResponse | null> {
+  const configCheck = checkUpstashConfigured();
+  if (configCheck !== "ok") return configCheck;
+
+  const { identifier, apiKey } = getRateLimitIdentifier(request);
+  return runLimiter(identifier, getRateLimiter(apiKey, tier));
+}
+
+/**
+ * IP-only pre-limit, independent of any Bearer token or tier. Bounds the
+ * expensive DB lookup + PBKDF2 comparison inside validateApiKey (see
+ * middleware.ts) so a flood of requests with distinct or invalid keys from a
+ * single IP can't force unlimited validation attempts before a tier — and
+ * therefore the real tier-based limit above — is known.
+ */
+export async function applyIpRateLimit(
+  request: NextRequest
+): Promise<NextResponse | null> {
+  const configCheck = checkUpstashConfigured();
+  if (configCheck !== "ok") return configCheck;
+
+  return runLimiter(`ip:${getClientIp(request)}`, getRateLimiter(null));
 }
