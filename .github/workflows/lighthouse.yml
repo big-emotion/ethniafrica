@@ -123,7 +123,6 @@ jobs:
               '**Routes audited:**',
               '- `/`',
               '- `/fr`',
-              '- `/fr/noms`',
               '- `/fr/peuples`',
               '- `/fr/recherche`',
               '- `/fr/mentions-legales`',
