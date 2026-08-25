@@ -35,6 +35,22 @@ describe("MobileNavBar — global shell (all routes, ETNI-820 retires the home n
     ).toBeInTheDocument();
   });
 
+  // @req REQ-091 FR90
+  it("navigates to the colonization route from the FLG navigation dropdown", async () => {
+    mockPush.mockClear();
+    render(<MobileNavBar language="fr" />);
+    const trigger = screen.getByRole("button", { name: "Navigation FLG" });
+    fireEvent.pointerDown(trigger, { pointerId: 1, button: 0 });
+    fireEvent.click(trigger);
+    const colonizationItem = await screen.findByRole("menuitem", {
+      name: "Colonisation",
+    });
+    fireEvent.click(colonizationItem);
+    expect(mockPush).toHaveBeenCalledWith(
+      "/fr/regards/colonisation-et-resistances"
+    );
+  });
+
   it("never wears the retired night skin class, on the home route or elsewhere", () => {
     for (const pathname of ["/fr", "/fr/pays"]) {
       mockPathname = pathname;

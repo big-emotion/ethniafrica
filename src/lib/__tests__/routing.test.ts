@@ -77,3 +77,24 @@ describe("quiz page type (Epic 10, Story 10.8, ETNI-497)", () => {
     expect(getPageFromRoute("/fr/quiz")).toBe("quiz");
   });
 });
+
+describe("colonization page type (Epic 13, Story 13.9, ETNI-533, FR90)", () => {
+  // @req REQ-091 FR90
+  it("resolves the French-only nested slug for the colonization page type", () => {
+    expect(getLocalizedRoute("fr", "colonization")).toBe(
+      "/fr/regards/colonisation-et-resistances"
+    );
+  });
+
+  // @req REQ-091 FR90
+  it("resolves the colonization page type from its multi-segment slug", () => {
+    expect(getPageFromRoute("/fr/regards/colonisation-et-resistances")).toBe(
+      "colonization"
+    );
+  });
+
+  // @req REQ-091 FR90
+  it("does not mistake a bare /fr/regards route for the colonization page type", () => {
+    expect(getPageFromRoute("/fr/regards")).toBeNull();
+  });
+});
