@@ -10,7 +10,8 @@ export type PageType =
   | "names"
   | "compare"
   | "migrations"
-  | "quiz";
+  | "quiz"
+  | "colonization";
 
 // Mapping des slugs par langue
 const SLUGS: Record<Language, Record<PageType, string>> = {
@@ -25,21 +26,9 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     compare: "comparer",
     migrations: "migrations",
     quiz: "quiz",
+    // Epic 13 (Gazes), FR90 — French-only, no locale alternates.
+    colonization: "regards/colonisation-et-resistances",
   },
-};
-
-// Mapping inverse : slug -> pageType
-const SLUG_TO_PAGE: Record<string, PageType> = {
-  pays: "countries",
-  familles: "families",
-  peuples: "peoples",
-  recherche: "search",
-  doctrine: "doctrine",
-  about: "about",
-  noms: "names",
-  comparer: "compare",
-  migrations: "migrations",
-  quiz: "quiz",
 };
 
 export const getLocalizedRoute = (
@@ -50,13 +39,30 @@ export const getLocalizedRoute = (
   return `/${language}/${slug}`;
 };
 
+/**
+ * Matches on the longest slug first so a multi-segment slug (e.g.
+ * `regards/colonisation-et-resistances`) isn't shadowed by a shorter one
+ * sharing its first segment.
+ */
 export const getPageFromRoute = (pathname: string): PageType | null => {
-  // Format: /{lang}/{slug}
+  // Format: /{lang}/{slug...}
   const parts = pathname.split("/").filter(Boolean);
   if (parts.length < 2) return null;
 
-  const slug = parts[1];
-  return SLUG_TO_PAGE[slug] || null;
+  const language = parts[0] as Language;
+  const slugMap = SLUGS[language];
+  if (!slugMap) return null;
+
+  const remainder = parts.slice(1).join("/");
+  const entries = Object.entries(slugMap) as [PageType, string][];
+  entries.sort((a, b) => b[1].length - a[1].length);
+
+  for (const [page, slug] of entries) {
+    if (remainder === slug || remainder.startsWith(`${slug}/`)) {
+      return page;
+    }
+  }
+  return null;
 };
 
 export const getLanguageFromRoute = (pathname: string): Language | null => {

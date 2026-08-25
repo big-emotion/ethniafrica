@@ -310,6 +310,20 @@ export const translations = {
       },
       emptyState: "Aucune migration ne correspond à ce filtre.",
     },
+    colonization: {
+      navLabel: "Colonisation & résistances",
+      pageTitle: "Colonisation & résistances",
+      pageSubtitle:
+        "Fragmentations, frontières héritées, noms imposés, déplacements et résistances documentés peuple par peuple.",
+      breadcrumbLabel: "Colonisation & résistances",
+      fragmentation: {
+        title: "Peuples fragmentés par les frontières coloniales",
+      },
+      sources: {
+        title: "Sources",
+        linkLabel: "voir les sources",
+      },
+    },
     quiz: {
       navLabel: "Quiz",
       pageTitle: "Choisis ton parcours",
