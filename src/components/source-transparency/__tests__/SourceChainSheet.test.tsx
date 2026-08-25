@@ -156,6 +156,29 @@ describe("SourceChainSheet", () => {
     expect(btn).toBeEnabled();
   });
 
+  // @req REQ-012 (AC6)
+  it("renders a disabled FlagTarget shell button per source by default", () => {
+    renderSheet();
+    const flagTarget = screen.getByTestId("source-flag-target-src-1");
+    const btn = within(flagTarget).getByRole("button");
+    expect(btn).toBeDisabled();
+  });
+
+  // @req REQ-012 (AC6)
+  it("wires the live FlagTarget with type 'source' when turnstileSiteKey is provided", () => {
+    renderSheet({
+      sources: [
+        { ...baseSource, citation: "Diop, M. (2021). Atlas linguistique." },
+      ],
+      turnstileSiteKey: "test-site-key",
+    });
+    const flagTarget = screen.getByTestId("source-flag-target-src-1");
+    const btn = within(flagTarget).getByRole("button", {
+      name: "Signaler cette source",
+    });
+    expect(btn).toBeEnabled();
+  });
+
   it("renders broken-link sources with line-through URL and a calm badge", () => {
     renderSheet({
       sources: [

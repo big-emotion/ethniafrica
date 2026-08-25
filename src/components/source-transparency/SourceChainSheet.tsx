@@ -27,6 +27,8 @@ export type Source = {
   tier: SourceTier;
   /** ISO date string YYYY-MM-DD when the nightly health-check flagged the link. */
   brokenAt?: string | null;
+  /** Formatted citation string, used as the FlagTarget snapshotQuote (AC6). */
+  citation?: string;
 };
 
 export type Assertion = {
@@ -269,7 +271,13 @@ export function formatBrokenDate(iso: string): string {
 /*  Sub-components                                                             */
 /* -------------------------------------------------------------------------- */
 
-function SourceItem({ source }: { source: Source }) {
+function SourceItem({
+  source,
+  turnstileSiteKey,
+}: {
+  source: Source;
+  turnstileSiteKey?: string;
+}) {
   const isBroken = Boolean(source.brokenAt);
   const sanitizedUrl = safeUrl(source.url);
   const renderAsLink = !isBroken && sanitizedUrl !== null;
@@ -325,11 +333,42 @@ function SourceItem({ source }: { source: Source }) {
           lien non résolu — signalé le {formatBrokenDate(source.brokenAt)}
         </span>
       ) : null}
+      <div data-testid={`source-flag-target-${source.id}`} className="pt-1">
+        {turnstileSiteKey ? (
+          <FlagTarget
+            target={{
+              type: "source",
+              id: source.id,
+              snapshotQuote: source.citation,
+            }}
+            turnstileSiteKey={turnstileSiteKey}
+            triggerLabel="Signaler cette source"
+            className="w-auto text-xs"
+          />
+        ) : (
+          <button
+            type="button"
+            disabled
+            className="rounded-md border border-dashed border-[var(--afh-border,var(--country-border,#e5e7eb))] px-2 py-1 text-xs text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]"
+            aria-label="Signaler cette source — bientôt disponible"
+          >
+            Signaler cette source (bientôt disponible)
+          </button>
+        )}
+      </div>
     </li>
   );
 }
 
-function TierGroup({ tier, sources }: { tier: SourceTier; sources: Source[] }) {
+function TierGroup({
+  tier,
+  sources,
+  turnstileSiteKey,
+}: {
+  tier: SourceTier;
+  sources: Source[];
+  turnstileSiteKey?: string;
+}) {
   if (sources.length === 0) return null;
   return (
     <div data-testid={`tier-group-${tier}`} className="space-y-2">
@@ -338,19 +377,34 @@ function TierGroup({ tier, sources }: { tier: SourceTier; sources: Source[] }) {
       </h4>
       <ul className="space-y-2">
         {sources.map((s) => (
-          <SourceItem key={s.id} source={s} />
+          <SourceItem
+            key={s.id}
+            source={s}
+            turnstileSiteKey={turnstileSiteKey}
+          />
         ))}
       </ul>
     </div>
   );
 }
 
-function SourceList({ sources }: { sources: Source[] }) {
+function SourceList({
+  sources,
+  turnstileSiteKey,
+}: {
+  sources: Source[];
+  turnstileSiteKey?: string;
+}) {
   const grouped = groupByTier(sources);
   return (
     <div className="space-y-4">
       {TIER_ORDER.map((tier) => (
-        <TierGroup key={tier} tier={tier} sources={grouped[tier]} />
+        <TierGroup
+          key={tier}
+          tier={tier}
+          sources={grouped[tier]}
+          turnstileSiteKey={turnstileSiteKey}
+        />
       ))}
     </div>
   );
@@ -488,12 +542,15 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
                   <p className="text-xs font-semibold text-[var(--afh-accent,var(--country-accent,#1d4ed8))]">
                     {pg.position}
                   </p>
-                  <SourceList sources={pg.sources} />
+                  <SourceList
+                    sources={pg.sources}
+                    turnstileSiteKey={turnstileSiteKey}
+                  />
                 </div>
               ))}
             </div>
           ) : (
-            <SourceList sources={sources} />
+            <SourceList sources={sources} turnstileSiteKey={turnstileSiteKey} />
           )}
         </section>
 
