@@ -200,3 +200,51 @@ export async function getPeopleFragmentation(
     borderPairs: buildBorderPairs(countryIds),
   };
 }
+
+const DEFAULT_FRAGMENTATION_INDEX_LIMIT = 50;
+
+/**
+ * Bulk read backing the `/fr/regards/colonisation-et-resistances`
+ * fragmentation-index section (Epic 13, Story 13.9, FR90). Sweeps a bounded
+ * batch of candidate peoples and reuses `getPeopleFragmentation` per id,
+ * silently dropping anyone below the 2-country threshold — that is an
+ * expected outcome (most peoples aren't fragmented), not an error.
+ */
+export async function listPeopleFragmentations(
+  limit: number = DEFAULT_FRAGMENTATION_INDEX_LIMIT
+): Promise<PeopleFragmentation[]> {
+  const supabase = createServerClient();
+
+  const { data: candidates, error } = await supabase
+    .from("afrik_peoples")
+    .select("id")
+    .limit(limit);
+
+  if (error || !candidates) {
+    logger.error("peopleFragmentation.listPeopleFragmentations failed", error, {
+      limit,
+    });
+    return [];
+  }
+
+  const results = await Promise.all(
+    (candidates as Array<{ id: string }>).map(async (candidate) => {
+      try {
+        return await getPeopleFragmentation(candidate.id);
+      } catch (err) {
+        if (
+          err instanceof PeopleFragmentationNotFoundError ||
+          err instanceof InsufficientCountriesError
+        ) {
+          return null;
+        }
+        throw err;
+      }
+    })
+  );
+
+  return results.filter(
+    (fragmentation): fragmentation is PeopleFragmentation =>
+      fragmentation !== null
+  );
+}
