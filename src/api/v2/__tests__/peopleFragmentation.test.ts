@@ -16,6 +16,7 @@ vi.mock("@/lib/api/logger", () => ({
 
 import {
   getPeopleFragmentation,
+  listPeopleFragmentations,
   PeopleFragmentationNotFoundError,
   InsufficientCountriesError,
 } from "../services/peopleFragmentation";
@@ -248,5 +249,123 @@ describe("peopleFragmentation handler", () => {
     const result = await getPeopleFragmentationHandler("PPL_SOLO");
 
     expect(result).toMatchObject({ ok: false, code: "SEMANTIC_ERROR" });
+  });
+});
+
+/**
+ * Test-first: bulk read backing the /fr/regards/colonisation-et-resistances
+ * fragmentation-index section (Epic 13, Story 13.9, ETNI-533).
+ */
+describe("listPeopleFragmentations", () => {
+  /**
+   * The `afrik_peoples` table backs two different call chains from the same
+   * mock: the candidate-id sweep (`.select().limit()`) and each per-people
+   * lookup inside `getPeopleFragmentation` (`.select().eq().maybeSingle()`).
+   * One object with both terminal methods, sharing a single `query`
+   * reference, supports either chain regardless of call order.
+   */
+  function buildAfrikPeoplesQuery(
+    listRows: Array<{ id: string }> | null,
+    listError: { message: string } | null,
+    rowsById: Record<string, Record<string, unknown> | null>
+  ): FakeQuery {
+    const query: FakeQuery = {} as FakeQuery;
+    let currentId: string | undefined;
+    query.select = vi.fn(() => query);
+    query.limit = vi.fn(() =>
+      Promise.resolve({ data: listRows, error: listError })
+    );
+    query.eq = vi.fn((_col: unknown, value: unknown) => {
+      currentId = value as string;
+      return query;
+    });
+    query.maybeSingle = vi.fn(() =>
+      Promise.resolve({
+        data: currentId ? (rowsById[currentId] ?? null) : null,
+        error: null,
+      })
+    );
+    return query;
+  }
+
+  const soloRow = {
+    id: "PPL_SOLO",
+    content: {
+      appellations: {},
+      demography: {
+        distributionByCountry: [{ country: "GHA", population: 1000 }],
+      },
+    },
+  };
+
+  function mockListTables({
+    candidateIds = ["PPL_EWE", "PPL_SOLO", "PPL_GHOST"],
+    error = null,
+  }: {
+    candidateIds?: string[];
+    error?: { message: string } | null;
+  } = {}) {
+    const rowsById: Record<string, Record<string, unknown> | null> = {
+      PPL_EWE: peopleRow,
+      PPL_SOLO: soloRow,
+      PPL_GHOST: null,
+    };
+    const peoplesQuery = buildAfrikPeoplesQuery(
+      candidateIds.map((id) => ({ id })),
+      error,
+      rowsById
+    );
+
+    fromMock.mockImplementation((table: string) => {
+      if (table === "afrik_peoples") return peoplesQuery;
+      if (table === "afrik_countries")
+        return buildCountriesQuery([
+          { id: "GHA", name_fr: "Ghana" },
+          { id: "TGO", name_fr: "Togo" },
+        ]);
+      if (table === "assertions") return buildAssertionsQuery([]);
+      throw new Error(`Unexpected table: ${table}`);
+    });
+
+    return peoplesQuery;
+  }
+
+  beforeEach(() => {
+    fromMock.mockReset();
+  });
+
+  // @req REQ-091 FR90
+  it("returns fragmentation only for candidates with >= 2 countries", async () => {
+    mockListTables();
+
+    const result = await listPeopleFragmentations();
+
+    expect(result).toHaveLength(1);
+    expect(result[0].peopleId).toBe("PPL_EWE");
+  });
+
+  // @req REQ-091 FR90
+  it("skips candidates below the country threshold and unknown ids without throwing", async () => {
+    mockListTables();
+
+    await expect(listPeopleFragmentations()).resolves.not.toThrow();
+  });
+
+  // @req REQ-091 FR90
+  it("passes the limit through to the candidate-id query", async () => {
+    const peoplesQuery = mockListTables({ candidateIds: ["PPL_EWE"] });
+
+    await listPeopleFragmentations(10);
+
+    expect(peoplesQuery.limit).toHaveBeenCalledWith(10);
+  });
+
+  // @req REQ-091 FR90
+  it("returns an empty array when the candidate-id query errors", async () => {
+    mockListTables({ error: { message: "boom" } });
+
+    const result = await listPeopleFragmentations();
+
+    expect(result).toEqual([]);
   });
 });

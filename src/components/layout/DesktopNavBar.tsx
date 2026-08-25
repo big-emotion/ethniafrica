@@ -21,6 +21,7 @@ export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
   const peoplesRoute = getLocalizedRoute(language, "peoples");
   const countriesRoute = getLocalizedRoute(language, "countries");
   const migrationsRoute = getLocalizedRoute(language, "migrations");
+  const colonizationRoute = getLocalizedRoute(language, "colonization");
   const quizRoute = getLocalizedRoute(language, "quiz");
 
   const currentPage = getPageFromRoute(pathname);
@@ -98,6 +99,12 @@ export const DesktopNavBar = ({ language }: DesktopNavBarProps) => {
               className={navLinkClass(currentPage === "migrations")}
             >
               Migrations
+            </Link>
+            <Link
+              href={colonizationRoute}
+              className={navLinkClass(currentPage === "colonization")}
+            >
+              Colonisation
             </Link>
             {isQuizFeatureEnabled() && (
               <Link
