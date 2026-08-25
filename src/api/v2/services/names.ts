@@ -310,6 +310,7 @@ export async function listNames(
         `Names schema is unavailable: ${error.message}`
       );
     }
+    logger.error("names.listNames failed", error);
     throw new Error(`Failed to list name records: ${error.message}`);
   }
 

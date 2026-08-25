@@ -28,6 +28,10 @@ const MODEL = {
       "trade_route",
       "forced_displacement",
       "pastoral_movement",
+      "fragmentation",
+      "displacement",
+      "imposed_name",
+      "resistance",
     ],
   },
   id: "MGR_XXXXX",
@@ -292,6 +296,43 @@ describe("validateMigrationEvents (FR80, Story 12.1)", () => {
     expect(
       result.errors.some(
         (e) => e.includes("bad.json") && e.includes("eventType")
+      )
+    ).toBe(true);
+  });
+
+  // @req REQ-080
+  // ETNI-525 (Story 13.1) — fixture per colonization event type, synthetic
+  // (fictional) content only, no real ethnographic claims.
+  describe.each([
+    "fragmentation",
+    "displacement",
+    "imposed_name",
+    "resistance",
+  ])("colonization eventType %s", (eventType) => {
+    // @req REQ-080
+    it("passes validation for a fiche using this new event type", () => {
+      const fiche = validFiche({
+        id: `MGR_FIXTURE_${eventType.toUpperCase()}`,
+        eventType,
+      });
+      writeFiche(tmpDir, `${eventType}.json`, fiche);
+
+      const result = validateMigrationEvents(tmpDir, modelPath);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
+    });
+  });
+
+  // @req REQ-080
+  it("still hard-errors for an unknown eventType after the colonization types are added", () => {
+    const fiche = validFiche({ eventType: "totally_unknown_type" });
+    writeFiche(tmpDir, "unknown-type.json", fiche);
+
+    const result = validateMigrationEvents(tmpDir, modelPath);
+    expect(result.ok).toBe(false);
+    expect(
+      result.errors.some(
+        (e) => e.includes("unknown-type.json") && e.includes("eventType")
       )
     ).toBe(true);
   });

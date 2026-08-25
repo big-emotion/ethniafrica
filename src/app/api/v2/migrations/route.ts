@@ -28,7 +28,7 @@
  *         name: eventType
  *         schema:
  *           type: string
- *           enum: [expansion, trade_route, forced_displacement, pastoral_movement]
+ *           enum: [expansion, trade_route, forced_displacement, pastoral_movement, fragmentation, displacement, imposed_name, resistance]
  *       - in: query
  *         name: peopleId
  *         schema:

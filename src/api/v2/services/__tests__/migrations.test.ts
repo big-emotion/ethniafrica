@@ -35,7 +35,7 @@ type FakeBuilder = Record<string, ReturnType<typeof vi.fn>> & {
 
 function buildChainable(result: {
   data: unknown;
-  error: { message: string } | null;
+  error: { message: string; code?: string } | null;
   count?: number;
 }): FakeBuilder {
   const builder = {} as FakeBuilder;
@@ -252,6 +252,46 @@ describe("migrations service — listMigrations", () => {
     await expect(
       listMigrations({ peopleId: "PPL_UNKNOWN", limit: 20, offset: 0 })
     ).rejects.toThrow(UnknownPeopleFilterError);
+  });
+
+  // @req REQ-055 — 42P17 (self-referential RLS recursion, DEC-017) must
+  // surface as a thrown error, never as a silent empty result.
+  it("throws on a real Postgres error (42P17) instead of returning a false empty state", async () => {
+    const migrationEventsBuilder = buildChainable({
+      data: null,
+      error: {
+        message:
+          'infinite recursion detected in policy for relation "user_roles"',
+        code: "42P17",
+      },
+    });
+    fromMock.mockImplementation((table: string) => {
+      if (table === "migration_events") return migrationEventsBuilder;
+      throw new Error(`Unexpected table: ${table}`);
+    });
+
+    await expect(listMigrations({ limit: 20, offset: 0 })).rejects.toThrow(
+      /Failed to list migration events/
+    );
+  });
+
+  // @req REQ-055
+  it("still degrades to an empty result when the schema isn't deployed yet (42P01)", async () => {
+    const migrationEventsBuilder = buildChainable({
+      data: null,
+      error: {
+        message: 'relation "migration_events" does not exist',
+        code: "42P01",
+      },
+    });
+    fromMock.mockImplementation((table: string) => {
+      if (table === "migration_events") return migrationEventsBuilder;
+      throw new Error(`Unexpected table: ${table}`);
+    });
+
+    const result = await listMigrations({ limit: 20, offset: 0 });
+
+    expect(result).toEqual({ data: [], total: 0 });
   });
 });
 
