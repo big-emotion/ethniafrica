@@ -70,7 +70,11 @@ export function HomeHero() {
           style={{
             fontFamily: "var(--afh-font-body)",
             fontSize: "13px",
-            color: "var(--afh-text-muted)",
+            // text-muted (#9b8b7d) fails WCAG AA on bg-warm (~2.8:1); once
+            // REQ-115 put the copy on the flat warm surface instead of over
+            // the globe backdrop, axe-core flagged it. text-soft is the
+            // warm-surface AA token (≥4.5:1) — see color.css.
+            color: "var(--afh-text-soft)",
             maxWidth: "34em",
             margin: "10px 0 0",
           }}
