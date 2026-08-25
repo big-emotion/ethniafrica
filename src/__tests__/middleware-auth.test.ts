@@ -63,6 +63,7 @@ vi.mock("@supabase/ssr", () => ({
 }));
 
 import { validateApiKey } from "@/lib/api/auth";
+import { applyRateLimit } from "@/lib/api/rate-limit";
 import { middleware } from "../middleware";
 
 function createMockRequest(url: string, headers: Record<string, string> = {}) {
@@ -131,6 +132,7 @@ describe("middleware - /api/v2/* authentication", () => {
     vi.mocked(validateApiKey).mockResolvedValue({
       valid: true,
       apiKeyId: "key-uuid-123",
+      tier: "public",
     });
 
     const request = createMockRequest("https://example.com/api/v2/countries", {
@@ -260,6 +262,7 @@ describe("middleware - /api/v2/* authentication", () => {
     vi.mocked(validateApiKey).mockResolvedValue({
       valid: true,
       apiKeyId: "test-id",
+      tier: "public",
     });
 
     const request = createMockRequest(
@@ -271,5 +274,60 @@ describe("middleware - /api/v2/* authentication", () => {
     await middleware(request);
 
     expect(validateApiKey).toHaveBeenCalledWith("my-secret-api-key");
+  });
+
+  describe("rate limiting uses the DB-validated tier", () => {
+    // @req REQ-059
+    it("passes the partner tier from validateApiKey into applyRateLimit", async () => {
+      vi.mocked(validateApiKey).mockResolvedValue({
+        valid: true,
+        apiKeyId: "partner-id",
+        tier: "partner",
+      });
+
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        { authorization: "Bearer partner-key" }
+      );
+      await middleware(request);
+
+      expect(applyRateLimit).toHaveBeenCalledWith(request, "partner");
+    });
+
+    // @req REQ-059
+    it("falls back to the public tier for an invalid key", async () => {
+      vi.mocked(validateApiKey).mockResolvedValue({
+        valid: false,
+        reason: "invalid_api_key",
+      });
+
+      const request = createMockRequest(
+        "https://example.com/api/v2/countries",
+        { authorization: "Bearer bad-key" }
+      );
+      await middleware(request);
+
+      expect(applyRateLimit).toHaveBeenCalledWith(request, "public");
+    });
+
+    // @req REQ-059
+    it("does not call validateApiKey before rate limiting a missing-key request", async () => {
+      const request = createMockRequest("https://example.com/api/v2/countries");
+      await middleware(request);
+
+      expect(applyRateLimit).toHaveBeenCalledWith(request);
+      expect(validateApiKey).not.toHaveBeenCalled();
+    });
+
+    // @req REQ-059
+    it("rate limits /api/v2/keys/issue without a tier (no key validation)", async () => {
+      const request = createMockRequest(
+        "https://example.com/api/v2/keys/issue"
+      );
+      await middleware(request);
+
+      expect(applyRateLimit).toHaveBeenCalledWith(request);
+      expect(validateApiKey).not.toHaveBeenCalled();
+    });
   });
 });

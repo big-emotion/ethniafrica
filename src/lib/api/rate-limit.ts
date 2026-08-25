@@ -3,28 +3,10 @@ import { Redis } from "@upstash/redis";
 import { NextRequest, NextResponse } from "next/server";
 import * as Sentry from "@sentry/nextjs";
 import { logger } from "@/lib/api/logger";
+import type { ApiKeyTier } from "@/lib/api/auth";
 
-/** API key tiers */
-export type ApiKeyTier = "public" | "partner" | "admin";
-
-/**
- * Resolve the tier from the API key value (via env config or simple prefix convention).
- * Reads from env vars:
- * - RATE_LIMIT_ADMIN_KEYS: comma-separated admin key values
- * - RATE_LIMIT_PARTNER_KEYS: comma-separated partner key values
- * - All other authenticated keys are "public" tier
- */
-export function getApiKeyTier(apiKey: string): ApiKeyTier {
-  const adminKeys = (process.env.RATE_LIMIT_ADMIN_KEYS ?? "")
-    .split(",")
-    .filter(Boolean);
-  const partnerKeys = (process.env.RATE_LIMIT_PARTNER_KEYS ?? "")
-    .split(",")
-    .filter(Boolean);
-  if (adminKeys.includes(apiKey)) return "admin";
-  if (partnerKeys.includes(apiKey)) return "partner";
-  return "public";
-}
+/** Re-exported for callers that only need the tier type, not auth internals. */
+export type { ApiKeyTier };
 
 /** Extract identifier from request: "key:<apikey>" or "ip:<ip>" */
 export function getRateLimitIdentifier(request: NextRequest): {
@@ -162,22 +144,32 @@ function isProductionDeployment(): boolean {
   return process.env.NODE_ENV === "production";
 }
 
-/** Return the appropriate Ratelimit instance for the request, or null for admin (unrestricted) */
-export function getRateLimiter(apiKey: string | null): Ratelimit | null {
-  if (apiKey !== null) {
-    const tier = getApiKeyTier(apiKey);
-    if (tier === "admin") return null;
-    if (tier === "partner") return getLimiters().partner;
-    // public tier
-    return getLimiters().public;
+/**
+ * Return the appropriate Ratelimit instance for the request, or null for admin (unrestricted).
+ * `tier` is the canonical api_keys.tier value from a validated DB record and defaults to
+ * "public" when the caller has not (yet) resolved a tier, e.g. before key validation.
+ */
+export function getRateLimiter(
+  apiKey: string | null,
+  tier: ApiKeyTier = "public"
+): Ratelimit | null {
+  if (apiKey === null) {
+    // No API key — IP-based
+    return getLimiters().ip;
   }
-  // No API key — IP-based
-  return getLimiters().ip;
+  if (tier === "admin") return null;
+  if (tier === "partner") return getLimiters().partner;
+  // public tier
+  return getLimiters().public;
 }
 
 /**
  * Apply rate limiting to a request.
  * Returns null if the request is allowed (pass-through), or a NextResponse(429) if limited.
+ * `tier` should be the canonical api_keys.tier from a validated DB record (see
+ * validateApiKey in @/lib/api/auth); callers that have not validated a key yet
+ * (or don't have one) omit it and get the "public" default, which — combined with
+ * apiKey being null when there's no Bearer token — resolves to IP-based limiting.
  * Returns a 500 response when required env vars are absent on a production
  * deployment (misconfiguration, not transient failure); preview and development
  * deployments fail open instead, so a staging environment without Upstash
@@ -185,7 +177,8 @@ export function getRateLimiter(apiKey: string | null): Ratelimit | null {
  * Fails open (returns null) if Upstash is transiently unreachable.
  */
 export async function applyRateLimit(
-  request: NextRequest
+  request: NextRequest,
+  tier?: ApiKeyTier
 ): Promise<NextResponse | null> {
   // Guard against misconfiguration before entering the try/catch. A missing env var
   // is a deployment error — failing open here would silently disable all rate limiting.
@@ -216,7 +209,7 @@ export async function applyRateLimit(
 
   try {
     const { identifier, apiKey } = getRateLimitIdentifier(request);
-    const limiter = getRateLimiter(apiKey);
+    const limiter = getRateLimiter(apiKey, tier);
 
     // Admin keys are unrestricted
     if (limiter === null) return null;

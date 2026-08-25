@@ -83,8 +83,15 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(target, 308);
   }
 
-  // Apply rate limiting for /api/v2/* routes before any other logic
-  if (request.nextUrl.pathname.startsWith("/api/v2/")) {
+  const isApiV2 = request.nextUrl.pathname.startsWith("/api/v2/");
+  const requiresApiKeyAuth =
+    isApiV2 && !pathname.startsWith("/api/v2/keys/issue");
+
+  // Rate limit routes that never validate an API key (e.g. /api/v2/keys/issue)
+  // up front, since there is no DB-validated tier to wait for. Routes that do
+  // validate a key are rate-limited below, once the tier is known, so a single
+  // request only ever consumes one rate-limit bucket.
+  if (isApiV2 && !requiresApiKeyAuth) {
     const rateLimitResponse = await applyRateLimit(request);
     if (rateLimitResponse) return rateLimitResponse;
   }
@@ -94,10 +101,7 @@ export async function middleware(request: NextRequest) {
   requestHeaders.set("x-nonce", nonce);
 
   // --- API v2 authentication ---
-  if (
-    pathname.startsWith("/api/v2/") &&
-    !pathname.startsWith("/api/v2/keys/issue")
-  ) {
+  if (requiresApiKeyAuth) {
     const authHeader = request.headers.get("Authorization") ?? "";
     const rawKey = authHeader.startsWith("Bearer ")
       ? authHeader.slice("Bearer ".length).trim()
@@ -114,14 +118,24 @@ export async function middleware(request: NextRequest) {
     const sameOriginBypass = !rawKey && isSameOriginRequest(request);
 
     if (!rawKey && !devBypass && !sameOriginBypass) {
+      const rateLimitResponse = await applyRateLimit(request);
+      if (rateLimitResponse) return rateLimitResponse;
       return NextResponse.json({ error: "missing_api_key" }, { status: 401 });
     }
 
+    // Validate before rate limiting so the DB-canonical tier (api_keys.tier)
+    // — not a raw key matched against an env list — drives quota selection.
+    // Invalid/bypass attempts still consume the "public" bucket rather than
+    // going unmetered.
     const result = devBypass
-      ? ({ valid: true, apiKeyId: "dev-bypass" } as const)
+      ? ({ valid: true, apiKeyId: "dev-bypass", tier: "public" } as const)
       : sameOriginBypass
-        ? ({ valid: true, apiKeyId: "same-origin" } as const)
+        ? ({ valid: true, apiKeyId: "same-origin", tier: "public" } as const)
         : await validateApiKey(rawKey);
+
+    const tier = result.valid ? result.tier : "public";
+    const rateLimitResponse = await applyRateLimit(request, tier);
+    if (rateLimitResponse) return rateLimitResponse;
 
     if (result.valid === false) {
       return NextResponse.json({ error: result.reason }, { status: 401 });
