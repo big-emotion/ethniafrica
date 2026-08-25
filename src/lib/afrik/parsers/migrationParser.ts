@@ -10,14 +10,8 @@
  */
 
 import { z } from "zod";
+import { MIGRATION_EVENT_TYPES } from "@/lib/afrik/migrationEventTypes";
 import type { MigrationRecord } from "@/types/migrations";
-
-const MIGRATION_EVENT_TYPES = [
-  "expansion",
-  "trade_route",
-  "forced_displacement",
-  "pastoral_movement",
-] as const;
 
 const migrationEventTypeSchema = z.enum(MIGRATION_EVENT_TYPES, {
   errorMap: () => ({
