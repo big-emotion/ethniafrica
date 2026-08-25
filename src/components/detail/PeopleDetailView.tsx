@@ -24,6 +24,7 @@ import {
 import type { PeopleDetail, CountryDistribution } from "@/types/afrik-frontend";
 import { getPeople } from "@/lib/afrikLoader";
 import { SourceVerifyBadge } from "@/components/ui/source-verify-badge";
+import { FlagTarget } from "@/components/flags/FlagTarget";
 
 const DemographicsChart = lazy(() =>
   import("@/components/charts/DemographicsChart").then((module) => ({
@@ -38,6 +39,8 @@ interface PeopleDetailViewProps {
   initialSourceFlag?: boolean;
   onCountryClick?: (countryId: string) => void;
   onFamilyClick?: (familyId: string) => void;
+  /** Cloudflare Turnstile public site key, required to enable the live FlagTarget wiring on section headings (AC5). */
+  turnstileSiteKey?: string;
 }
 
 // Helper functions outside component to avoid dependency issues
@@ -56,6 +59,7 @@ export const PeopleDetailView = ({
   initialSourceFlag,
   onCountryClick,
   onFamilyClick,
+  turnstileSiteKey,
 }: PeopleDetailViewProps) => {
   const matchingInitialData = initialData?.id === peopleId ? initialData : null;
   const [people, setPeople] = useState<PeopleDetail | null>(
@@ -565,6 +569,29 @@ export const PeopleDetailView = ({
                   <Heart className="h-5 w-5" />
                   {"Culture, rites et traditions"}
                 </h2>
+                <div data-testid="section-flag-target-culture" className="mt-2">
+                  {turnstileSiteKey ? (
+                    <FlagTarget
+                      target={{
+                        type: "fiche_section",
+                        id: peopleId,
+                        fieldPath: "culture",
+                      }}
+                      turnstileSiteKey={turnstileSiteKey}
+                      triggerLabel="Signaler cette section"
+                      className="w-auto text-xs"
+                    />
+                  ) : (
+                    <button
+                      type="button"
+                      disabled
+                      className="rounded-md border border-dashed px-2 py-1 text-xs text-muted-foreground"
+                      aria-label="Signaler cette section — bientôt disponible"
+                    >
+                      Signaler cette section (bientôt disponible)
+                    </button>
+                  )}
+                </div>
               </CardHeader>
               <CardContent className="space-y-6">
                 {people.culture ? (

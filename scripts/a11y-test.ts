@@ -62,6 +62,12 @@ const AXE_RUN_OPTIONS = {
 // Interactive states (tab switch, sheet-open) need real DOM interaction and
 // are covered separately by e2e/migrations-atlas-a11y.spec.ts, which runs
 // under e2e.yml with no continue-on-error.
+//
+// `/fr/quiz` (Epic 10, Story 10.11 · ETNI-500 · FR71) audits the
+// server-rendered segment picker. The interactive session states (a played
+// question, the reveal, the score screen) need real DOM interaction and are
+// covered separately by e2e/quiz-journey-a11y.spec.ts, which runs under
+// e2e.yml with no continue-on-error.
 const LIVE_ROUTES_BASE_URL = process.env.A11Y_LIVE_BASE_URL;
 const LIVE_ROUTES = [
   "/fr",
@@ -77,6 +83,7 @@ const LIVE_ROUTES = [
   "/fr/comparer/familles/FLG_BANTU/FLG_MANDE",
   "/fr/peuples/PPL_WOLOF/liens",
   "/fr/migrations",
+  "/fr/quiz",
 ];
 
 const MIME: Record<string, string> = {

@@ -1,0 +1,279 @@
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+
+import { FlagTarget } from "../FlagTarget";
+import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
+import { useToast } from "@/hooks/use-toast";
+import { useConsent } from "@/hooks/use-consent";
+
+vi.mock("@/lib/supabase/auth-client", () => ({
+  createBrowserSupabaseClient: vi.fn(),
+}));
+
+vi.mock("@/hooks/use-toast", () => ({
+  useToast: vi.fn(),
+}));
+
+vi.mock("@/hooks/use-consent", () => ({
+  useConsent: vi.fn(),
+}));
+
+vi.mock("@/components/flags/TurnstileWidget", () => ({
+  TurnstileWidget: ({
+    onTokenChange,
+  }: {
+    onTokenChange: (token: string | null) => void;
+  }) => (
+    <button type="button" onClick={() => onTokenChange("test-turnstile-token")}>
+      Valider le contrôle (test)
+    </button>
+  ),
+}));
+
+const toastMock = vi.fn();
+
+function mockGetSession(session: unknown) {
+  return vi.fn().mockResolvedValue({ data: { session } });
+}
+
+function mockSupabaseClient({
+  session,
+  ageConfirmedAt,
+}: {
+  session: unknown;
+  ageConfirmedAt?: string | null;
+}) {
+  const maybeSingle = vi
+    .fn()
+    .mockResolvedValue({ data: { age_confirmed_at: ageConfirmedAt ?? null } });
+  const or = vi.fn().mockReturnValue({ maybeSingle });
+  const select = vi.fn().mockReturnValue({ or });
+  const from = vi.fn().mockReturnValue({ select });
+
+  const client = {
+    auth: { getSession: mockGetSession(session) },
+    from,
+  };
+
+  vi.mocked(createBrowserSupabaseClient).mockReturnValue(client as never);
+
+  return { client, from, select, or, maybeSingle };
+}
+
+const assertionTarget = {
+  type: "assertion",
+  id: "assertion-1",
+  fieldPath: "demographics.population",
+  snapshotQuote: "Un million de locuteurs.",
+};
+
+const sectionTarget = {
+  type: "fiche_section",
+  id: "PPL_YORUBA",
+  fieldPath: "histoire",
+};
+
+const sourceTarget = {
+  type: "source",
+  id: "SRC_42",
+  snapshotQuote: "UNESCO, rapport 2025.",
+};
+
+function renderFlagTarget(overrides: Partial<{ target: unknown }> = {}) {
+  return render(
+    <FlagTarget
+      target={(overrides.target as never) ?? assertionTarget}
+      turnstileSiteKey="test-site-key"
+    />
+  );
+}
+
+describe("FlagTarget", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    toastMock.mockReset();
+    vi.mocked(useToast).mockReturnValue({
+      toast: toastMock,
+      dismiss: vi.fn(),
+      toasts: [],
+    } as never);
+    vi.mocked(useConsent).mockReturnValue({
+      consentState: {
+        hasConsented: true,
+        preferences: { essential: true, analytics: true, functional: true },
+        consentDate: new Date().toISOString(),
+      },
+      acceptAll: vi.fn(),
+      rejectAll: vi.fn(),
+      updatePreferences: vi.fn(),
+      showBanner: false,
+      setShowBanner: vi.fn(),
+    } as never);
+    window.plausible = vi.fn();
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({ data: { public_slug: "flag-abc123" } }),
+      })
+    );
+  });
+
+  // @req REQ-012
+  it("renders a trigger button labeled Signaler", () => {
+    mockSupabaseClient({ session: null });
+    renderFlagTarget();
+
+    expect(
+      screen.getByRole("button", { name: /signaler/i })
+    ).toBeInTheDocument();
+  });
+
+  describe("unauthenticated branch", () => {
+    // @req REQ-012
+    it("shows a sign-in prompt with connexion and inscription links carrying the current URL", async () => {
+      mockSupabaseClient({ session: null });
+      renderFlagTarget();
+
+      fireEvent.click(screen.getByRole("button", { name: /signaler/i }));
+
+      const signIn = await screen.findByRole("link", { name: /se connecter/i });
+      const signUp = screen.getByRole("link", { name: /créer un compte/i });
+
+      expect(signIn.getAttribute("href")).toMatch(
+        /^\/fr\/compte\/connexion\?redirect=/
+      );
+      expect(signUp.getAttribute("href")).toMatch(
+        /^\/fr\/compte\/inscription\?redirect=/
+      );
+    });
+  });
+
+  describe("unconfirmed-age branch", () => {
+    // @req REQ-045
+    it("shows the age confirmation prompt with a CTA to the profile page", async () => {
+      mockSupabaseClient({
+        session: { user: { id: "user-1" }, access_token: "token-1" },
+        ageConfirmedAt: null,
+      });
+      renderFlagTarget();
+
+      fireEvent.click(screen.getByRole("button", { name: /signaler/i }));
+
+      expect(
+        await screen.findByText(/confirmer votre âge pour contribuer/i)
+      ).toBeInTheDocument();
+      expect(screen.getByRole("link", { name: /confirmer/i })).toHaveAttribute(
+        "href",
+        "/fr/compte/profil"
+      );
+    });
+  });
+
+  describe("authenticated submission", () => {
+    async function openAndReachForm() {
+      mockSupabaseClient({
+        session: { user: { id: "user-1" }, access_token: "token-1" },
+        ageConfirmedAt: "2026-01-01T00:00:00.000Z",
+      });
+      renderFlagTarget();
+      fireEvent.click(screen.getByRole("button", { name: /signaler/i }));
+      await screen.findByRole("button", { name: "Envoyer" });
+    }
+
+    // @req REQ-012
+    it("submits successfully, closes the dialog, toasts, logs the slug and fires analytics", async () => {
+      const user = userEvent.setup();
+      const consoleLogSpy = vi
+        .spyOn(console, "log")
+        .mockImplementation(() => {});
+
+      await openAndReachForm();
+
+      await user.click(
+        screen.getByRole("radio", { name: /contenu offensant/i })
+      );
+      await user.type(
+        screen.getByLabelText("Raison du signalement"),
+        "Cette explication contient assez de détails pour être examinée."
+      );
+      await user.click(
+        screen.getByRole("button", { name: /valider le contrôle/i })
+      );
+      await user.click(screen.getByRole("button", { name: "Envoyer" }));
+
+      await waitFor(() => {
+        expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+      });
+
+      expect(toastMock).toHaveBeenCalledWith(
+        expect.objectContaining({ description: "signalement enregistré" })
+      );
+      expect(consoleLogSpy).toHaveBeenCalledWith("flag-abc123");
+      expect(window.plausible).toHaveBeenCalledWith(
+        "flag_submitted",
+        expect.objectContaining({
+          props: expect.objectContaining({ target_type: "assertion" }),
+        })
+      );
+
+      consoleLogSpy.mockRestore();
+    });
+  });
+
+  describe("target.type branches", () => {
+    // @req REQ-012
+    it.each([
+      ["assertion", assertionTarget, "assertion · assertion-1"],
+      ["fiche_section", sectionTarget, "fiche_section · PPL_YORUBA"],
+      ["source", sourceTarget, "source · SRC_42"],
+    ])(
+      "passes target of type %s through to FlagForm unchanged",
+      async (_label, target, expectedText) => {
+        mockSupabaseClient({
+          session: { user: { id: "user-1" }, access_token: "token-1" },
+          ageConfirmedAt: "2026-01-01T00:00:00.000Z",
+        });
+        renderFlagTarget({ target });
+
+        fireEvent.click(screen.getByRole("button", { name: /signaler/i }));
+
+        expect(await screen.findByText(expectedText)).toBeInTheDocument();
+      }
+    );
+  });
+
+  describe("keyboard focus trap", () => {
+    // @req REQ-044
+    it("keeps Tab focus inside the dialog while open", async () => {
+      const user = userEvent.setup();
+      mockSupabaseClient({ session: null });
+      renderFlagTarget();
+
+      await user.click(screen.getByRole("button", { name: /signaler/i }));
+      const dialog = await screen.findByRole("dialog");
+
+      for (let i = 0; i < 6; i++) {
+        await user.tab();
+        expect(dialog.contains(document.activeElement)).toBe(true);
+      }
+    });
+
+    // @req REQ-044
+    it("closes on Escape", async () => {
+      const user = userEvent.setup();
+      mockSupabaseClient({ session: null });
+      renderFlagTarget();
+
+      await user.click(screen.getByRole("button", { name: /signaler/i }));
+      await screen.findByRole("dialog");
+
+      await user.keyboard("{Escape}");
+
+      await waitFor(() => {
+        expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+      });
+    });
+  });
+});
