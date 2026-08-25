@@ -87,8 +87,12 @@ const MODULE_DEFINITIONS: ModuleDefinition[] = [
     page: "about",
   },
   {
+    // ETNI-1198: the corpus behind this card is 6 sourced events, not the
+    // "3 000 ans" the previous title implied — interim honest framing until
+    // the sourcing floor set by the spike is met (see ETNI-1198 for the
+    // floor and the sourcing plan to reach it).
     id: "frise",
-    title: "3 000 ans de migrations",
+    title: "Premiers repères de migrations",
     category: "comprendre",
     accent: "perv",
     illustration: "history",
