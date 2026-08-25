@@ -33,6 +33,11 @@
 - [Data Models](./data-models.md) — AFRIK Supabase schema & relationships
 - [Development Guide](./development-guide.md) — setup, commands, TDD/KISS, test placement
 
+## Design
+
+- [Atlas Charter](./design/atlas-charter.md) — cartographic grammar, accent scope, the three entry points, empty-state doctrine
+- [Design references](./design/README.md) — the four reviewed mockups and how to rebuild them
+
 ## Existing Documentation
 
 - [CLAUDE.md](../CLAUDE.md) — project instructions for AI agents
