@@ -22,15 +22,18 @@ export function FamilyDistributionSection({
   const entries = Object.entries(data.distributionByCountry);
   const footprintEntries = Object.entries(data.footprintByCountry);
 
-  const distributionProvenance = isStructurallyExpectedField(
+  // Classified without a derived fallback: AC4 requires the empty declared
+  // value to render as "missing" even when a footprint exists alongside it,
+  // rather than the footprint masking the gap (REQ-119).
+  const distributionState = isStructurallyExpectedField(
     "language-family",
     "distribution.distributionByCountry"
   )
-    ? classifyFieldProvenance(data.distributionByCountry, {
-        value: data.footprintByCountry,
-        origin: "peuples rattachés à la famille",
-      })
+    ? classifyFieldProvenance(data.distributionByCountry).state
     : null;
+
+  const showFootprint =
+    distributionState === "missing" && footprintEntries.length > 0;
 
   return (
     <section aria-labelledby="family-distribution-heading">
@@ -49,14 +52,14 @@ export function FamilyDistributionSection({
           ))}
         </ul>
       )}
-      {distributionProvenance?.state === "missing" && (
+      {distributionState === "missing" && (
         <FieldProvenanceMarker state="missing" />
       )}
-      {distributionProvenance?.state === "derived" && (
+      {showFootprint && (
         <>
           <FieldProvenanceMarker
             state="derived"
-            origin={distributionProvenance.origin}
+            origin="peuples rattachés à la famille"
           />
           <ul>
             {footprintEntries.map(([countryId, peopleCount]) => (

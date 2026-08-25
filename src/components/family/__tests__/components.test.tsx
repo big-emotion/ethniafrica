@@ -161,6 +161,25 @@ describe("LanguageFamilyDetailViewV2", () => {
   });
 
   // @req REQ-119
+  it("shows the declared distribution as missing alongside the derived footprint instead of the footprint hiding the gap", () => {
+    render(
+      <LanguageFamilyDetailViewV2
+        family={{
+          id: "FLG_BANTU",
+          nameFr: "Bantou",
+          content: {},
+          footprintByCountry: { COD: 3 },
+        }}
+      />
+    );
+
+    expect(screen.getAllByText("Donnée manquante").length).toBeGreaterThan(0);
+    expect(
+      screen.getByText("Dérivée de : peuples rattachés à la famille")
+    ).toBeInTheDocument();
+  });
+
+  // @req REQ-119
   it("renders no marker when the corpus declares a value, using a real corpus fixture with an empty branches list", () => {
     const fixturePath = join(
       process.cwd(),
