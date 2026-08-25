@@ -30,6 +30,18 @@ export class UnknownPeopleFilterError extends Error {
 }
 
 /**
+ * A genuine data-access failure (e.g. 42P17 self-referential RLS
+ * recursion) — distinct from the legitimate "schema not deployed yet" empty
+ * result, so the page can render a failure state instead of an empty one.
+ */
+export class MigrationsDataAccessError extends Error {
+  constructor(message: string) {
+    super(message);
+    this.name = "MigrationsDataAccessError";
+  }
+}
+
+/**
  * True only for the two codes that mean "the table/schema isn't deployed
  * yet" (pre-migration state) — the one case where degrading to an empty
  * result is legitimate. Any other error (e.g. 42P17 self-referential RLS
@@ -176,7 +188,9 @@ export async function listMigrations(
   if (error) {
     logger.error("migrations.listMigrations failed", error);
     if (!isSchemaUnavailable(error)) {
-      throw new Error(`Failed to list migration events: ${error.message}`);
+      throw new MigrationsDataAccessError(
+        `Failed to list migration events: ${error.message}`
+      );
     }
     return { data: [], total: 0 };
   }
@@ -242,7 +256,9 @@ export async function getMigrationById(id: string): Promise<{
 
   if (error) {
     logger.error(`migrations.getMigrationById failed for ${id}`, error);
-    return null;
+    throw new MigrationsDataAccessError(
+      `Failed to load migration event ${id}: ${error.message}`
+    );
   }
   if (!data) return null;
 

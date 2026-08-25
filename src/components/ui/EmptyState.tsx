@@ -3,16 +3,20 @@ import { StateMedallion } from "@/components/ui/StateMedallion";
 
 interface EmptyStateProps {
   message: string;
-  variant?: "default" | "search";
+  variant?: "default" | "search" | "failure";
   lang?: string;
+  retryHref?: string;
+  retryLabel?: string;
   children?: React.ReactNode;
 }
 
-// @req REQ-099
+// @req REQ-099 @req REQ-107
 export function EmptyState({
   message,
   variant,
   lang = "fr",
+  retryHref,
+  retryLabel,
   children,
 }: EmptyStateProps) {
   return (
@@ -36,6 +40,17 @@ export function EmptyState({
             Parcourir les familles linguistiques
           </Link>
         </div>
+      )}
+
+      {variant === "failure" && retryHref && (
+        <Link
+          href={retryHref}
+          data-testid="retry"
+          data-cta="retry"
+          className="underline underline-offset-2 hover:text-afh-text transition-colors"
+        >
+          {retryLabel ?? "Réessayer"}
+        </Link>
       )}
 
       {children}

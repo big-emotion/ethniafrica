@@ -2,14 +2,39 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
-const { mockListMigrations, mockGetMigrationById } = vi.hoisted(() => ({
-  mockListMigrations: vi.fn(),
-  mockGetMigrationById: vi.fn(),
-}));
+const {
+  mockListMigrations,
+  mockGetMigrationById,
+  MockMigrationsDataAccessError,
+  mockLoggerError,
+} = vi.hoisted(() => {
+  class MockMigrationsDataAccessError extends Error {
+    constructor(message: string) {
+      super(message);
+      this.name = "MigrationsDataAccessError";
+    }
+  }
+  return {
+    mockListMigrations: vi.fn(),
+    mockGetMigrationById: vi.fn(),
+    MockMigrationsDataAccessError,
+    mockLoggerError: vi.fn(),
+  };
+});
 
 vi.mock("@/api/v2/services/migrations", () => ({
   listMigrations: (...args: unknown[]) => mockListMigrations(...args),
   getMigrationById: (...args: unknown[]) => mockGetMigrationById(...args),
+  MigrationsDataAccessError: MockMigrationsDataAccessError,
+}));
+
+vi.mock("@/lib/api/logger", () => ({
+  logger: {
+    error: mockLoggerError,
+    info: vi.fn(),
+    warn: vi.fn(),
+    debug: vi.fn(),
+  },
 }));
 
 vi.mock("@/components/layout/PageLayout", () => ({
@@ -99,16 +124,34 @@ describe("/[lang]/migrations page", () => {
     );
   });
 
-  // @req REQ-101 FR81
-  it("renders an empty narrative gracefully when the corpus is empty", async () => {
+  // @req REQ-107
+  it("renders the not-yet-published empty state when the corpus is empty and no filter is active", async () => {
     mockListMigrations.mockResolvedValue({ data: [], total: 0 });
 
     render(await renderPage());
 
-    expect(screen.getByTestId("migrations-narrative")).toHaveAttribute(
-      "data-count",
-      "0"
+    expect(screen.getByTestId("state-copy")).toHaveTextContent(
+      "Aucune migration n'est encore publiée."
     );
+    expect(screen.queryByTestId("migrations-narrative")).toBeNull();
+    expect(screen.queryByTestId("migrations-atlas-view")).toBeNull();
+  });
+
+  // @req REQ-107
+  it("renders a failure state (not an empty state) when the data access fails, and logs it", async () => {
+    mockListMigrations.mockRejectedValue(
+      new MockMigrationsDataAccessError("infinite recursion detected")
+    );
+
+    render(await renderPage());
+
+    expect(screen.getByTestId("state-copy")).toHaveTextContent(
+      "n'ont pas pu être chargées"
+    );
+    const retry = screen.getByTestId("retry");
+    expect(retry).toHaveAttribute("href", "/fr/migrations");
+    expect(screen.queryByTestId("migrations-narrative")).toBeNull();
+    expect(mockLoggerError).toHaveBeenCalled();
   });
 
   // @req FR83
@@ -167,11 +210,22 @@ describe("/[lang]/migrations page", () => {
     it("falls back to the raw id in the chip when no event exposes the people's name", async () => {
       render(await renderPage({ peuple: "PPL_UNKNOWN" }));
 
-      expect(screen.getByText(/PPL_UNKNOWN/)).toBeInTheDocument();
-      expect(screen.getByTestId("migrations-narrative")).toHaveAttribute(
-        "data-count",
-        "0"
+      expect(screen.getAllByText(/PPL_UNKNOWN/).length).toBeGreaterThan(0);
+      expect(screen.queryByTestId("migrations-narrative")).toBeNull();
+    });
+
+    // @req REQ-107
+    it("renders the filtered-empty state naming the filter and offering to clear it, instead of an empty narrative", async () => {
+      render(await renderPage({ peuple: "PPL_UNKNOWN" }));
+
+      expect(screen.getByTestId("state-copy")).toHaveTextContent(
+        /Aucune migration ne correspond à ce filtre/
       );
+      expect(screen.getAllByText(/PPL_UNKNOWN/).length).toBeGreaterThan(0);
+      const clearLink = screen.getByRole("link", {
+        name: "Retirer le filtre",
+      });
+      expect(clearLink).toHaveAttribute("href", "/fr/migrations");
     });
   });
 });

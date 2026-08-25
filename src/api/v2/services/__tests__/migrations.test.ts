@@ -27,6 +27,7 @@ import {
   listMigrations,
   getMigrationById,
   UnknownPeopleFilterError,
+  MigrationsDataAccessError,
 } from "../migrations";
 
 type FakeBuilder = Record<string, ReturnType<typeof vi.fn>> & {
@@ -254,9 +255,10 @@ describe("migrations service — listMigrations", () => {
     ).rejects.toThrow(UnknownPeopleFilterError);
   });
 
-  // @req REQ-055 — 42P17 (self-referential RLS recursion, DEC-017) must
-  // surface as a thrown error, never as a silent empty result.
-  it("throws on a real Postgres error (42P17) instead of returning a false empty state", async () => {
+  // @req REQ-107 — 42P17 (self-referential RLS recursion, DEC-017) must
+  // surface as a dedicated, identifiable error, never as a silent empty
+  // result, so the page can render a distinct failure state.
+  it("throws MigrationsDataAccessError on a real Postgres error (42P17) instead of returning a false empty state", async () => {
     const migrationEventsBuilder = buildChainable({
       data: null,
       error: {
@@ -270,6 +272,9 @@ describe("migrations service — listMigrations", () => {
       throw new Error(`Unexpected table: ${table}`);
     });
 
+    await expect(
+      listMigrations({ limit: 20, offset: 0 })
+    ).rejects.toBeInstanceOf(MigrationsDataAccessError);
     await expect(listMigrations({ limit: 20, offset: 0 })).rejects.toThrow(
       /Failed to list migration events/
     );
@@ -314,6 +319,27 @@ describe("migrations service — getMigrationById", () => {
 
     const result = await getMigrationById("MGR_UNKNOWN");
     expect(result).toBeNull();
+  });
+
+  // @req REQ-107 — a data-access error must propagate (not be converted to
+  // null/dropped) so the migrations page load can render a failure state.
+  it("throws MigrationsDataAccessError on a data-access error instead of returning null", async () => {
+    const migrationEventBuilder = buildChainable({
+      data: null,
+      error: {
+        message:
+          'infinite recursion detected in policy for relation "user_roles"',
+        code: "42P17",
+      },
+    });
+    fromMock.mockImplementation((table: string) => {
+      if (table === "migration_events") return migrationEventBuilder;
+      throw new Error(`Unexpected table: ${table}`);
+    });
+
+    await expect(
+      getMigrationById("MGR_BANTU_HOMELAND_DISPERSAL")
+    ).rejects.toBeInstanceOf(MigrationsDataAccessError);
   });
 
   // @req REQ-099

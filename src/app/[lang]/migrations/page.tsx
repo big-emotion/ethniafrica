@@ -16,6 +16,7 @@ import Link from "next/link";
 import { X } from "lucide-react";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { EmptyState } from "@/components/ui/EmptyState";
 import { MigrationsAtlasView } from "@/components/migrations/MigrationsAtlasView";
 import { MigrationNarrative } from "@/components/migrations/MigrationNarrative";
 import {
@@ -23,7 +24,12 @@ import {
   type RawMigrationDetailPayload,
   type MigrationsPageData,
 } from "@/lib/migrationDataTransformer";
-import { listMigrations, getMigrationById } from "@/api/v2/services/migrations";
+import {
+  listMigrations,
+  getMigrationById,
+  MigrationsDataAccessError,
+} from "@/api/v2/services/migrations";
+import { logger } from "@/lib/api/logger";
 import { translations } from "@/lib/translations";
 
 const t = translations.fr.migrations;
@@ -109,27 +115,67 @@ export default async function MigrationsPage({
   const sp = await searchParams;
   const peopleId = sp.peuple?.trim() || undefined;
 
-  const raw = await loadMigrationsPageData();
+  let raw: RawMigrationDetailPayload[];
+  try {
+    raw = await loadMigrationsPageData();
+  } catch (error) {
+    if (!(error instanceof MigrationsDataAccessError)) {
+      throw error;
+    }
+    logger.error("migrations page: data-access failure", error);
+    return (
+      <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
+        <EmptyState
+          message={t.states.failure}
+          variant="failure"
+          retryHref="/fr/migrations"
+          retryLabel={t.states.failureRetry}
+        />
+      </PageLayout>
+    );
+  }
+
   const fullPageData = transformMigrationData(raw);
   const peopleName = peopleId ? findPeopleName(fullPageData, peopleId) : null;
   const pageData = filterByPeople(fullPageData, peopleId);
 
+  const filterChip = peopleId && (
+    <div className="mb-4 flex flex-wrap items-center gap-2">
+      <span className="flex items-center gap-1 rounded-full bg-muted px-3 py-1 text-sm">
+        {`${t.filterChip.label} : ${peopleName ?? peopleId}`}
+        <Link
+          href="/fr/migrations"
+          aria-label={t.filterChip.clear}
+          className="inline-flex min-h-6 min-w-6 items-center justify-center"
+        >
+          <X className="h-3 w-3" aria-hidden="true" />
+        </Link>
+      </span>
+    </div>
+  );
+
+  if (peopleId && pageData.list.length === 0) {
+    return (
+      <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
+        {filterChip}
+        <EmptyState
+          message={`${t.states.filteredEmpty} : ${peopleName ?? peopleId}`}
+        />
+      </PageLayout>
+    );
+  }
+
+  if (!peopleId && fullPageData.list.length === 0) {
+    return (
+      <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
+        <EmptyState message={t.states.emptyUnpublished} />
+      </PageLayout>
+    );
+  }
+
   return (
     <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
-      {peopleId && (
-        <div className="mb-4 flex flex-wrap items-center gap-2">
-          <span className="flex items-center gap-1 rounded-full bg-muted px-3 py-1 text-sm">
-            {`${t.filterChip.label} : ${peopleName ?? peopleId}`}
-            <Link
-              href="/fr/migrations"
-              aria-label={t.filterChip.clear}
-              className="inline-flex min-h-6 min-w-6 items-center justify-center"
-            >
-              <X className="h-3 w-3" aria-hidden="true" />
-            </Link>
-          </span>
-        </div>
-      )}
+      {filterChip}
 
       <Tabs defaultValue="recit">
         <TabsList aria-label={t.pageTitle}>
