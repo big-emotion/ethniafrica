@@ -40,6 +40,11 @@ export interface PaginationMeta {
   page: number;
   perPage: number;
   totalPages: number;
+  /**
+   * Peoples not reachable through any returnable family, surfaced instead of
+   * silently omitted (REQ-108). Only populated on the language-families list.
+   */
+  unclassifiedPeoplesCount?: number;
 }
 
 export interface PaginatedResponse<T> {

@@ -30,6 +30,7 @@ vi.mock("@/lib/afrikLoader", () => ({
   getAllCountries: vi.fn(),
   getAllLanguageFamilies: vi.fn(),
   getPeoples: vi.fn(),
+  getUnclassifiedPeoplesCount: vi.fn(() => Promise.resolve(0)),
 }));
 
 vi.mock("@/hooks/use-mobile", () => ({

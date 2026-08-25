@@ -13,6 +13,11 @@ export interface PeopleQueryFilters {
 }
 
 /**
+ * Bucket key for peoples whose language_family_id is null/empty.
+ */
+export const UNCLASSIFIED_FAMILY_KEY = "__unclassified__";
+
+/**
  * Build a map of people_id -> country_ids[] from a batch query
  */
 async function getCountryRelationsMap(
@@ -222,6 +227,34 @@ export async function getAfrikPeoplesByCountry(
   const relationsMap = await getCountryRelationsMap(supabase, peopleIds);
 
   return mapRowsToPeoples(data || [], relationsMap);
+}
+
+/**
+ * Get the number of stored afrik_peoples rows per language_family_id, in a
+ * single grouped query (REQ-108). Rows with a null/empty language_family_id
+ * are tallied under UNCLASSIFIED_FAMILY_KEY so callers can surface them
+ * instead of silently dropping them.
+ */
+export async function getPeopleCountsByLanguageFamily(): Promise<
+  Map<string, number>
+> {
+  const supabase = createServerClient();
+  const { data, error } = await supabase
+    .from("afrik_peoples")
+    .select("language_family_id");
+
+  if (error) {
+    logger.error("Error fetching people counts by language family", error);
+    throw error;
+  }
+
+  const counts = new Map<string, number>();
+  for (const row of data || []) {
+    const key =
+      (row.language_family_id as string | null) || UNCLASSIFIED_FAMILY_KEY;
+    counts.set(key, (counts.get(key) || 0) + 1);
+  }
+  return counts;
 }
 
 /**

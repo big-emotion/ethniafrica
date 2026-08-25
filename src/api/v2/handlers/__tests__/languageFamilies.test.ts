@@ -26,6 +26,7 @@ describe("Language Families Handler", () => {
       vi.mocked(getLanguageFamilies).mockResolvedValue({
         data: [BANTU],
         total: 12,
+        unclassifiedPeoplesCount: 64,
       });
 
       const response = await listLanguageFamiliesHandler(1, 5);
@@ -37,11 +38,16 @@ describe("Language Families Handler", () => {
         page: 1,
         perPage: 5,
         totalPages: 3,
+        unclassifiedPeoplesCount: 64,
       });
     });
 
     it("should handle default pagination", async () => {
-      vi.mocked(getLanguageFamilies).mockResolvedValue({ data: [], total: 0 });
+      vi.mocked(getLanguageFamilies).mockResolvedValue({
+        data: [],
+        total: 0,
+        unclassifiedPeoplesCount: 0,
+      });
 
       const response = await listLanguageFamiliesHandler();
 
