@@ -1,0 +1,83 @@
+import { PageLayout } from "@/components/layout/PageLayout";
+import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
+import { DoctrineLinkCard } from "@/components/source-transparency/DoctrineLinkCard";
+import { FragmentationView } from "@/components/colonization/FragmentationView";
+import { translations } from "@/lib/translations";
+import type { ColonizationModuleData } from "@/lib/colonizationDataTransformer";
+
+const t = translations.fr.colonization;
+
+export interface ColonizationModulePageProps {
+  data: ColonizationModuleData;
+}
+
+/**
+ * Orchestrates the `/fr/regards/colonisation-et-resistances` sections (Epic
+ * 13, Story 13.9, ETNI-533, FR90). Every section but the doctrine intro is
+ * conditionally rendered from `data` (never from an ad-hoc mapping here) —
+ * `mapSection` / `imposedNames` / `displacement` / `resistances` are
+ * structurally `null` until Stories 13.8/13.10/13.11/13.12 land and extend
+ * `colonizationDataTransformer`'s output.
+ */
+// @req FR90
+export function ColonizationModulePage({ data }: ColonizationModulePageProps) {
+  return (
+    <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
+      <AfrikBreadcrumbs items={[{ label: t.breadcrumbLabel }]} />
+
+      <DoctrineLinkCard slug={data.doctrine.slug} />
+
+      {data.fragmentation && data.fragmentation.length > 0 && (
+        <section
+          aria-labelledby="colonization-fragmentation-heading"
+          className="mt-8"
+        >
+          <h2
+            id="colonization-fragmentation-heading"
+            className="text-xl font-semibold mb-4 text-afh-text"
+          >
+            {t.fragmentation.title}
+          </h2>
+          <ul className="flex flex-col gap-6">
+            {data.fragmentation.map((entry) => (
+              <li key={entry.peopleId}>
+                <FragmentationView
+                  fragmentation={entry.fragmentation}
+                  variant="fiche-section"
+                />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {data.sources && data.sources.length > 0 && (
+        <section
+          aria-labelledby="colonization-sources-heading"
+          className="mt-8"
+        >
+          <h2
+            id="colonization-sources-heading"
+            className="text-xl font-semibold mb-4 text-afh-text"
+          >
+            {t.sources.title}
+          </h2>
+          <ul className="flex flex-wrap gap-x-4 gap-y-1">
+            {data.sources.map((source) => (
+              <li key={`${source.peopleId}-${source.countryIso3}`}>
+                <a
+                  href={`#fragmentation-${source.peopleId}-${source.countryIso3}`}
+                  className="text-sm underline text-[color:var(--afh-terracotta)]"
+                >
+                  {t.sources.linkLabel}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </PageLayout>
+  );
+}
+
+export default ColonizationModulePage;
