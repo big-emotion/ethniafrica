@@ -78,4 +78,30 @@ describe("/[lang]/noms page", () => {
       "4"
     );
   });
+
+  // ETNI-1196/DEC-019: the lede must state which question the ethnonym
+  // atlas answers, so a visitor is not left inferring it from the title.
+  // @req REQ-022
+  it("renders a lede stating which question the module answers", async () => {
+    const ui = await NomsPage({ searchParams: Promise.resolve({}) });
+    render(ui);
+
+    expect(
+      screen.getByText(/Comment un peuple se nomme-t-il/)
+    ).toBeInTheDocument();
+  });
+
+  // ETNI-1196/DEC-019: a visitor looking for the origin of a family name
+  // must be told that personal-name genealogy is not (yet) covered.
+  // @req REQ-092
+  it("renders a note that personal-name genealogy is not yet covered", async () => {
+    const ui = await NomsPage({ searchParams: Promise.resolve({}) });
+    render(ui);
+
+    expect(
+      screen.getByText(
+        /ne couvre pas encore la généalogie des noms de personnes/
+      )
+    ).toBeInTheDocument();
+  });
 });

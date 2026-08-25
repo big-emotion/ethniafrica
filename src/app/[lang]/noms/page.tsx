@@ -68,13 +68,24 @@ export default async function NomsPage({ searchParams }: NomsPageProps) {
 
   return (
     <PageLayout language="fr" title={t.pageTitle} subtitle={t.pageSubtitle}>
-      <NamesAtlasView
-        initialNames={toAtlasEntries(result.names)}
-        initialTotal={result.total}
-        initialQuery={q}
-        initialNameType={nameType}
-        initialImposedOnly={imposedOnly}
-      />
+      <div className="space-y-6 min-[720px]:space-y-8">
+        <p className="max-w-2xl text-sm text-muted-foreground">
+          {t.pageSubtitle}
+        </p>
+        <p
+          role="note"
+          className="max-w-2xl rounded-md border bg-muted/50 px-4 py-3 text-sm"
+        >
+          {t.genealogyNote}
+        </p>
+        <NamesAtlasView
+          initialNames={toAtlasEntries(result.names)}
+          initialTotal={result.total}
+          initialQuery={q}
+          initialNameType={nameType}
+          initialImposedOnly={imposedOnly}
+        />
+      </div>
     </PageLayout>
   );
 }
