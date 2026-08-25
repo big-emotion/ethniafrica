@@ -45,9 +45,9 @@ vi.mock("@sentry/nextjs", () => ({
 // Import AFTER mocks
 import {
   getRateLimitIdentifier,
-  getApiKeyTier,
   getRateLimiter,
   applyRateLimit,
+  applyIpRateLimit,
   _resetLimitersForTest,
 } from "@/lib/api/rate-limit";
 import * as SentryMock from "@sentry/nextjs";
@@ -86,26 +86,6 @@ function restoreConstructorMocks() {
   } as any);
 }
 
-describe("getApiKeyTier", () => {
-  beforeEach(() => {
-    vi.stubEnv("RATE_LIMIT_ADMIN_KEYS", "admin-key-1,admin-key-2");
-    vi.stubEnv("RATE_LIMIT_PARTNER_KEYS", "partner-key-1");
-  });
-
-  it("returns admin for admin keys", () => {
-    expect(getApiKeyTier("admin-key-1")).toBe("admin");
-    expect(getApiKeyTier("admin-key-2")).toBe("admin");
-  });
-
-  it("returns partner for partner keys", () => {
-    expect(getApiKeyTier("partner-key-1")).toBe("partner");
-  });
-
-  it("returns public for unknown keys", () => {
-    expect(getApiKeyTier("some-random-key")).toBe("public");
-  });
-});
-
 describe("getRateLimitIdentifier", () => {
   it("returns ip identifier when no auth header", () => {
     const req = makeRequest({ ip: "1.2.3.4" });
@@ -136,29 +116,34 @@ describe("getRateLimiter", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     _resetLimitersForTest();
-    vi.stubEnv("RATE_LIMIT_ADMIN_KEYS", "admin-key-1");
-    vi.stubEnv("RATE_LIMIT_PARTNER_KEYS", "partner-key-1");
     vi.stubEnv("UPSTASH_REDIS_REST_URL", "https://example.upstash.io");
     vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "test-token");
     restoreConstructorMocks();
   });
 
   it("returns null for admin tier (unrestricted)", () => {
-    expect(getRateLimiter("admin-key-1")).toBeNull();
+    expect(getRateLimiter("some-key", "admin")).toBeNull();
   });
 
   it("returns a limiter for public tier", () => {
+    const limiter = getRateLimiter("public-key", "public");
+    expect(limiter).not.toBeNull();
+  });
+
+  // @req REQ-034
+  it("defaults to public tier when no tier is given", () => {
     const limiter = getRateLimiter("public-key");
     expect(limiter).not.toBeNull();
   });
 
   it("returns a limiter for partner tier", () => {
-    const limiter = getRateLimiter("partner-key-1");
+    const limiter = getRateLimiter("partner-key", "partner");
     expect(limiter).not.toBeNull();
   });
 
-  it("returns a limiter for null (IP-based)", () => {
-    const limiter = getRateLimiter(null);
+  // @req REQ-034
+  it("returns a limiter for null (IP-based) regardless of tier", () => {
+    const limiter = getRateLimiter(null, "admin");
     expect(limiter).not.toBeNull();
   });
 
@@ -203,8 +188,6 @@ describe("applyRateLimit", () => {
     restoreConstructorMocks();
     vi.stubEnv("UPSTASH_REDIS_REST_URL", "https://example.upstash.io");
     vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "test-token");
-    vi.stubEnv("RATE_LIMIT_ADMIN_KEYS", "admin-key");
-    vi.stubEnv("RATE_LIMIT_PARTNER_KEYS", "partner-key");
   });
 
   it("returns null when rate limit passes (success: true)", async () => {
@@ -255,7 +238,7 @@ describe("applyRateLimit", () => {
 
   it("returns null for admin tier API keys (unrestricted)", async () => {
     const req = makeRequest({ authHeader: "Bearer admin-key" });
-    const result = await applyRateLimit(req);
+    const result = await applyRateLimit(req, "admin");
     expect(result).toBeNull();
     expect(mockLimit).not.toHaveBeenCalled();
   });
@@ -270,6 +253,33 @@ describe("applyRateLimit", () => {
     const req = makeRequest({ authHeader: "Bearer public-key" });
     await applyRateLimit(req);
     expect(mockLimit).toHaveBeenCalledWith("key:public-key");
+  });
+
+  // @req REQ-034
+  it("defaults to public tier when no tier argument is given", async () => {
+    mockLimit.mockResolvedValue({
+      success: true,
+      limit: 600,
+      remaining: 599,
+      reset: Date.now() + 60000,
+    });
+    const req = makeRequest({ authHeader: "Bearer some-key" });
+    await applyRateLimit(req);
+    expect(Ratelimit.slidingWindow).toHaveBeenCalledWith(600, "1 m");
+  });
+
+  // @req REQ-034
+  it("uses the partner limiter when the resolved DB tier is partner", async () => {
+    mockLimit.mockResolvedValue({
+      success: true,
+      limit: 6000,
+      remaining: 5999,
+      reset: Date.now() + 60000,
+    });
+    const req = makeRequest({ authHeader: "Bearer partner-key" });
+    await applyRateLimit(req, "partner");
+    expect(mockLimit).toHaveBeenCalledWith("key:partner-key");
+    expect(Ratelimit.slidingWindow).toHaveBeenCalledWith(6000, "1 m");
   });
 
   it("calls limiter.limit with ip: prefix for unauthenticated requests", async () => {
@@ -345,6 +355,75 @@ describe("applyRateLimit", () => {
     vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
     const req = makeRequest({ ip: "1.2.3.4" });
     const result = await applyRateLimit(req);
+    expect(result).toBeNull();
+  });
+});
+
+describe("applyIpRateLimit", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    _resetLimitersForTest();
+    restoreConstructorMocks();
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "https://example.upstash.io");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "test-token");
+  });
+
+  // @req REQ-059
+  it("always uses the ip: bucket, even when a Bearer token is present", async () => {
+    mockLimit.mockResolvedValue({
+      success: true,
+      limit: 60,
+      remaining: 59,
+      reset: Date.now() + 60000,
+    });
+    const req = makeRequest({ ip: "10.0.0.1", authHeader: "Bearer some-key" });
+    await applyIpRateLimit(req);
+    expect(mockLimit).toHaveBeenCalledWith("ip:10.0.0.1");
+  });
+
+  // @req REQ-059
+  it("returns 429 when the IP bucket is exceeded", async () => {
+    const resetTime = Date.now() + 30000;
+    mockLimit.mockResolvedValue({
+      success: false,
+      limit: 60,
+      remaining: 0,
+      reset: resetTime,
+    });
+    const req = makeRequest({ ip: "5.6.7.8", authHeader: "Bearer some-key" });
+    const result = await applyIpRateLimit(req);
+    expect(result).not.toBeNull();
+    expect(result!.status).toBe(429);
+  });
+
+  it("returns 500 when Upstash env vars are missing in production", async () => {
+    _resetLimitersForTest();
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("VERCEL_ENV", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
+    const req = makeRequest({ ip: "1.2.3.4" });
+    const result = await applyIpRateLimit(req);
+    expect(result).not.toBeNull();
+    expect(result!.status).toBe(500);
+  });
+
+  it("fails open (returns null) when Upstash env vars are missing in non-production", async () => {
+    _resetLimitersForTest();
+    vi.stubEnv("NODE_ENV", "development");
+    vi.stubEnv("VERCEL_ENV", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_URL", "");
+    vi.stubEnv("UPSTASH_REDIS_REST_TOKEN", "");
+    const req = makeRequest({ ip: "1.2.3.4" });
+    const result = await applyIpRateLimit(req);
+    expect(result).toBeNull();
+  });
+
+  // @req REQ-059
+  it("fails open (returns null) when Upstash is transiently unreachable", async () => {
+    mockLimit.mockRejectedValue(new Error("Redis connection failed"));
+    const req = makeRequest({ ip: "9.9.9.9" });
+    const result = await applyIpRateLimit(req);
     expect(result).toBeNull();
   });
 });

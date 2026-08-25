@@ -45,6 +45,7 @@ describe("hashApiKey", () => {
                       key_hash: hash,
                       revoked_at: null,
                       expires_at: null,
+                      tier: "public",
                     },
                   ],
                   error: null,
@@ -60,7 +61,11 @@ describe("hashApiKey", () => {
       from: fromMock,
     });
     const result = await validateApiKey("rt-key");
-    expect(result).toEqual({ valid: true, apiKeyId: "uuid-rt" });
+    expect(result).toEqual({
+      valid: true,
+      apiKeyId: "uuid-rt",
+      tier: "public",
+    });
   });
 
   it("should still validate a key hashed with the legacy 100,000 iterations", async () => {
@@ -105,6 +110,7 @@ describe("hashApiKey", () => {
                       key_hash: legacyHash,
                       revoked_at: null,
                       expires_at: null,
+                      tier: "public",
                     },
                   ],
                   error: null,
@@ -120,7 +126,11 @@ describe("hashApiKey", () => {
       from: fromMock,
     });
     const result = await validateApiKey("legacy-key");
-    expect(result).toEqual({ valid: true, apiKeyId: "uuid-legacy" });
+    expect(result).toEqual({
+      valid: true,
+      apiKeyId: "uuid-legacy",
+      tier: "public",
+    });
   });
 
   it("should produce different hashes for the same input (random salt)", async () => {
@@ -221,6 +231,7 @@ describe("validateApiKey", () => {
                   key_hash: validKeyHash,
                   revoked_at: "2024-01-01T00:00:00Z",
                   expires_at: null,
+                  tier: "public",
                 },
               ],
               error: null,
@@ -247,6 +258,7 @@ describe("validateApiKey", () => {
                   key_hash: validKeyHash,
                   revoked_at: null,
                   expires_at: pastDate,
+                  tier: "public",
                 },
               ],
               error: null,
@@ -272,6 +284,7 @@ describe("validateApiKey", () => {
                   key_hash: validKeyHash,
                   revoked_at: null,
                   expires_at: null,
+                  tier: "public",
                 },
               ],
               error: null,
@@ -305,6 +318,7 @@ describe("validateApiKey", () => {
                       key_hash: validKeyHash,
                       revoked_at: null,
                       expires_at: null,
+                      tier: "public",
                     },
                   ],
                   error: null,
@@ -318,7 +332,53 @@ describe("validateApiKey", () => {
     });
 
     const result = await validateApiKey("valid-key");
-    expect(result).toEqual({ valid: true, apiKeyId: "uuid-valid" });
+    expect(result).toEqual({
+      valid: true,
+      apiKeyId: "uuid-valid",
+      tier: "public",
+    });
+  });
+
+  // @req REQ-034
+  it("should return the canonical tier from the api_keys record for a partner key", async () => {
+    const partnerKeyHash = await hashApiKey("partner-key");
+    const updateEqMock = vi.fn().mockResolvedValue({ error: null });
+    const updateMock = vi.fn().mockReturnValue({ eq: updateEqMock });
+
+    let callCount = 0;
+    mockFrom.mockImplementation(() => {
+      callCount++;
+      if (callCount === 1) {
+        return {
+          select: vi.fn().mockReturnValue({
+            eq: vi.fn().mockReturnValue({
+              eq: vi.fn().mockReturnValue({
+                limit: vi.fn().mockResolvedValue({
+                  data: [
+                    {
+                      id: "uuid-partner",
+                      key_hash: partnerKeyHash,
+                      revoked_at: null,
+                      expires_at: null,
+                      tier: "partner",
+                    },
+                  ],
+                  error: null,
+                }),
+              }),
+            }),
+          }),
+        };
+      }
+      return { update: updateMock };
+    });
+
+    const result = await validateApiKey("partner-key");
+    expect(result).toEqual({
+      valid: true,
+      apiKeyId: "uuid-partner",
+      tier: "partner",
+    });
   });
 
   it("should return valid for a key with null expires_at (never expires)", async () => {
@@ -341,6 +401,7 @@ describe("validateApiKey", () => {
                       key_hash: neverExpiresHash,
                       revoked_at: null,
                       expires_at: null,
+                      tier: "public",
                     },
                   ],
                   error: null,
@@ -354,6 +415,10 @@ describe("validateApiKey", () => {
     });
 
     const result = await validateApiKey("non-expiring-key");
-    expect(result).toEqual({ valid: true, apiKeyId: "uuid-valid-2" });
+    expect(result).toEqual({
+      valid: true,
+      apiKeyId: "uuid-valid-2",
+      tier: "public",
+    });
   });
 });

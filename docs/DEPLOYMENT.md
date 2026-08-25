@@ -309,8 +309,9 @@ Quotas par tier (RPM = requêtes par minute, défauts conservent le comportement
 
 Routage par clé :
 
-- `RATE_LIMIT_PARTNER_KEYS` : liste de clés API (séparées par virgule) servies au tier partenaire
-- `RATE_LIMIT_ADMIN_KEYS` : liste de clés API admin (non rate-limitées)
+Le tier (`public` / `partner` / `admin`) provient de la colonne `api_keys.tier`
+(migration 013), résolue par `validateApiKey()` lors de la validation de la
+clé — il n'y a plus de liste de clés en variable d'environnement à maintenir.
 
 La configuration complète et commentée est dans `.env.example`.
 
