@@ -1,4 +1,4 @@
-import { DottedContinent } from "@/components/home/DottedContinent";
+import { HomeGlobeStage } from "@/components/home/HomeGlobeStage";
 import { PRODUCT_NAME } from "@/lib/brand";
 
 // @req REQ-044
@@ -19,7 +19,7 @@ export function HomeHero() {
         marginRight: "calc(50% - 50vw)",
       }}
     >
-      <DottedContinent />
+      <HomeGlobeStage />
       <div
         style={{
           position: "relative",
