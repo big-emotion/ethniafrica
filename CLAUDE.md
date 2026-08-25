@@ -218,8 +218,21 @@ Admin authentication uses Supabase Auth with OAuth (GitHub, Google) and magic-li
 - **Implementation order lives in Jira ticket ETNI-544** (`[Delivery Plan]`) and `_bmad-output/jira-sync-2026-07-29.md`. **Before implementing any ticket of this wave — or when asked to "implement the next ticket" — read ETNI-544 first**, check ticket statuses against its wave order, and pick the first non-done, non-blocked ticket. Hard cross-epic dependencies are encoded as Jira `Blocks` links; every wave ticket links `relates to ETNI-544`.
 - Module specs (the source of truth for each epic): `_bmad-output/planning-artifacts/module-specs/`.
 
+## Design References
+
+**Before building or changing any V2 atlas surface — the home globe, a fiche,
+the header menu — read `docs/design/atlas-charter.md`.** It carries the rules
+that make the interface honest about what the corpus supports: the three
+cartographic encodings (a people never gets a closed border), the per-surface
+accent scope (a fiche family is perv, never terre), and the empty-state
+doctrine. `docs/design/mockups/` holds the reviewed rendering the code answers
+to; `docs/adr/0007-atlas-globe-engine.md` fixes the engine (three.js r169, one
+component for every surface — never one globe file per entity).
+
 ## Documentation References
 
+- `docs/design/atlas-charter.md` — V2 atlas design rules (read before UI work)
+- `docs/design/mockups/` — reference mockups, runnable
 - `docs/archive/PROJET_ETHNIAFRICA.md` — Complete project documentation (archived)
 - `docs/DEPLOYMENT.md` — Deployment instructions
 - `docs/archive/API_AFRIK_REFERENCE.md` — AFRIK API reference (archived)
