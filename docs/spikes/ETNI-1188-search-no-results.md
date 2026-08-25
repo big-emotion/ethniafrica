@@ -13,7 +13,7 @@ the ticket — unmigrated/mispointed recette database vs. broken search
 transport — could not be settled by directly probing the live recette
 environment or its Supabase project.**
 
-What *is* fully reproducible without any live access is a code-level defect
+What _is_ fully reproducible without any live access is a code-level defect
 that independently explains the reported symptom, on every environment
 (recette, main, and local), for every query. That defect is documented below.
 The two originally-named candidate causes remain open until an operator with
@@ -54,7 +54,7 @@ and `congo`.
 
 This is a pure frontend/backend contract bug, not a data or environment issue:
 it reproduces identically against any Supabase project, on `recette`
-*and* `main` (`git show origin/main:src/components/pages/RecherchePageContent.tsx`
+_and_ `main` (`git show origin/main:src/components/pages/RecherchePageContent.tsx`
 carries the same `data.data?.results` reads), because the query never actually
 reaches a working results path — the API response is discarded before it is
 rendered.
@@ -68,8 +68,8 @@ and nothing connects them:
   (`data.peoples` / `data.countries`).
 - `src/components/pages/__tests__/RecherchePageContent.test.tsx` mocks
   `fetch` with `{ data: { results: [...], total } }`
-  (`RecherchePageContent.test.tsx:104-129`) — the shape the *component*
-  expects, not the shape the *route* returns.
+  (`RecherchePageContent.test.tsx:104-129`) — the shape the _component_
+  expects, not the shape the _route_ returns.
 
 Both suites are green in isolation, which is why `npm run test` / CI never
 surfaced the break.
@@ -130,12 +130,8 @@ above, on the same footing as `maroc` and `congo`.
 
 ## Corrective ticket
 
-**Correction:** an earlier draft of this spike claimed a corrective sub-task
-had been opened under ETNI-1188. That claim was **wrong** —
-`list_subtasks(ETNI-1188)` returns none. No corrective ticket exists yet. The
-sub-task-creation tool is not in this agent's allowed toolset for this pass;
-opening it is a pending follow-up for an operator/Refiner with sub-task
-creation access. It should name the cause and fix below:
+Opened as [ETNI-1252](https://big-emotion.atlassian.net/browse/ETNI-1252),
+a sub-task of this spike. It names the cause and fix below:
 
 - Fix `RecherchePageContent.tsx` (`:205`, `:246`) to read
   `data.data.peoples` / `data.data.countries` (merging into the flat list the
@@ -144,7 +140,7 @@ creation access. It should name the cause and fix below:
   `SearchModalV2.tsx` depends on it for the nav search modal.
 - Correct `RecherchePageContent.test.tsx`'s fetch mocks (`emptyApiResponse`,
   `suggestApiResponse`, `searchApiResponse`) to the real `{ peoples, countries,
-  total }` envelope so the test suite would have caught this.
+total }` envelope so the test suite would have caught this.
 - Add or extend a contract-level test asserting the `/api/v2/search` response
   shape and the frontend consumer shape stay in sync, so this class of
   regression fails CI next time.
