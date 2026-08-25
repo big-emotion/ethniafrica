@@ -2,6 +2,8 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { DoctrineLinkCard } from "@/components/source-transparency/DoctrineLinkCard";
 import { FragmentationView } from "@/components/colonization/FragmentationView";
+import { EventTimelineMarkers } from "@/components/colonization/EventTimelineMarkers";
+import { EventChronologyTable } from "@/components/colonization/EventChronologyTable";
 import { translations } from "@/lib/translations";
 import type { ColonizationModuleData } from "@/lib/colonizationDataTransformer";
 
@@ -16,8 +18,11 @@ export interface ColonizationModulePageProps {
  * 13, Story 13.9, ETNI-533, FR90). Every section but the doctrine intro is
  * conditionally rendered from `data` (never from an ad-hoc mapping here) —
  * `mapSection` / `imposedNames` / `displacement` / `resistances` are
- * structurally `null` until Stories 13.8/13.10/13.11/13.12 land and extend
- * `colonizationDataTransformer`'s output.
+ * structurally `null` until Stories 13.8/13.10/13.11 land and extend
+ * `colonizationDataTransformer`'s output. `timeline` (Story 13.12,
+ * ETNI-536) is wired here: `EventTimelineMarkers` (interactive, JS-gated
+ * marker layer) and `EventChronologyTable` (always-in-the-DOM text
+ * equivalent) render the same event set.
  */
 // @req FR90
 export function ColonizationModulePage({ data }: ColonizationModulePageProps) {
@@ -48,6 +53,25 @@ export function ColonizationModulePage({ data }: ColonizationModulePageProps) {
               </li>
             ))}
           </ul>
+        </section>
+      )}
+
+      {data.timeline && data.timeline.length > 0 && data.timelineBounds && (
+        <section
+          aria-labelledby="colonization-timeline-heading"
+          className="mt-8"
+        >
+          <h2
+            id="colonization-timeline-heading"
+            className="text-xl font-semibold mb-4 text-afh-text"
+          >
+            {t.timeline.title}
+          </h2>
+          <EventTimelineMarkers
+            events={data.timeline}
+            bounds={data.timelineBounds}
+          />
+          <EventChronologyTable events={data.timeline} />
         </section>
       )}
 
