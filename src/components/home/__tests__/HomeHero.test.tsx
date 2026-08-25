@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
 import { HomeHero } from "@/components/home/HomeHero";
@@ -53,13 +53,18 @@ describe("HomeHero — parchment light hero (ETNI-820)", () => {
     expect(trustNote).not.toBe(lede);
   });
 
-  // @req REQ-044
-  it("composes DottedContinent behind the content", () => {
+  // @req REQ-044 @req REQ-112
+  it("composes the home globe stage behind the content, never rendering empty", async () => {
     const { container } = render(<HomeHero />);
-    const canvas = container.querySelector("canvas");
 
-    expect(canvas).toBeInTheDocument();
-    expect(canvas).toHaveAttribute("aria-hidden", "true");
+    // happy-dom has no WebGL, so the capability gate settles on the
+    // committed AfricaBasemap fallback — see HomeGlobeStage.test.tsx for the
+    // WebGL-available branch.
+    await waitFor(() =>
+      expect(
+        container.querySelector("path#africa-landmass")
+      ).toBeInTheDocument()
+    );
   });
 
   // @req REQ-044

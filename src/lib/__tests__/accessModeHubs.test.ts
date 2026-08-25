@@ -113,4 +113,18 @@ describe("accessModeHubs — 10-module light-home config", () => {
   it("derives the Tout/Explorer/Comprendre/Jouer categories from the config, in first-seen order", () => {
     expect(getModuleCategories()).toEqual(["explorer", "comprendre", "jouer"]);
   });
+
+  // ETNI-1196/DEC-019: the corpus behind this card is ethnonyms attached to a
+  // people (endonym/exonym/historical spelling), not personal-name
+  // genealogy — the label must not promise a question the module cannot
+  // answer.
+  // @req FR92
+  // @req REQ-044
+  it("names the ethnonym atlas on the noms card, not personal-name origin", () => {
+    const modules = getHomeModules("fr");
+    const noms = modules.find((module) => module.id === "noms");
+
+    expect(noms?.title).toBe("Noms & appellations");
+    expect(noms?.title).not.toMatch(/d'où vient un nom/i);
+  });
 });

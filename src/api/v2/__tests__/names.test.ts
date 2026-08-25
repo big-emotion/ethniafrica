@@ -298,10 +298,10 @@ describe("listNames (service)", () => {
     await expect(listNames(baseQuery())).rejects.toThrow(/boom/);
   });
 
-  // @req REQ-055 — 42P17 (self-referential RLS recursion, DEC-017) must
-  // surface as a plain thrown error, not be misclassified as "schema
-  // unavailable" (which would silently render an empty page).
-  it("surfaces 42P17 as a real error, not NamesSchemaUnavailableError", async () => {
+  // @req REQ-107 — 42P17 (self-referential RLS recursion, DEC-017) must be
+  // handled like 42P01/PGRST205 (NamesSchemaUnavailableError), not propagated
+  // to the error boundary as a generic Error (ETNI-1187 AC #4).
+  it("handles 42P17 like 42P01/PGRST205 — NamesSchemaUnavailableError, not the error boundary", async () => {
     const namesQuery = buildNamesQueryError(
       "42P17",
       'infinite recursion detected in policy for relation "user_roles"'
@@ -311,10 +311,7 @@ describe("listNames (service)", () => {
       throw new Error(`unexpected table ${table}`);
     });
 
-    await expect(listNames(baseQuery())).rejects.toThrow(
-      /Failed to list name records/
-    );
-    await expect(listNames(baseQuery())).rejects.not.toBeInstanceOf(
+    await expect(listNames(baseQuery())).rejects.toBeInstanceOf(
       NamesSchemaUnavailableError
     );
   });
