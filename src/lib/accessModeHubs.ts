@@ -63,8 +63,12 @@ const MODULE_DEFINITIONS: ModuleDefinition[] = [
     page: "search",
   },
   {
+    // ETNI-1196/DEC-019: the corpus behind this card is ethnonyms attached
+    // to a people (endonym, exonym, historical spelling), not personal-name
+    // genealogy — the card must name the atlas it is, not the question the
+    // schema cannot answer.
     id: "noms",
-    title: "D'où vient un nom ?",
+    title: "Noms & appellations",
     category: "explorer",
     accent: "ocre",
     illustration: "tag",

@@ -266,7 +266,9 @@ export const translations = {
     names: {
       pageTitle: "Noms & appellations",
       pageSubtitle:
-        "Parcourez, filtrez et recherchez les noms de peuples référencés dans l'atlas.",
+        "Comment un peuple se nomme-t-il, et comment l'a-t-on nommé ? L'atlas rassemble les endonymes, les exonymes et les appellations imposées attachés à chaque peuple d'Afrique.",
+      genealogyNote:
+        "Vous cherchez l'origine d'un nom de famille ou d'un prénom ? Ce module ne couvre pas encore la généalogie des noms de personnes : il documente les noms de peuples (ethnonymes) — endonymes, exonymes et appellations imposées.",
       searchLabel: "Rechercher un nom",
       searchPlaceholder:
         "Rechercher un nom (endonyme, exonyme, graphie historique...)",

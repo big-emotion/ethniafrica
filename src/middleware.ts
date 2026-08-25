@@ -1,7 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { validateApiKey } from "@/lib/api/auth";
-import { applyRateLimit } from "@/lib/api/rate-limit";
+import { applyIpRateLimit, applyRateLimit } from "@/lib/api/rate-limit";
 
 // Public localized pages still contain data-driven React style attributes.
 // API and admin routes keep the strict nonce-only policy.
@@ -83,8 +83,15 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(target, 308);
   }
 
-  // Apply rate limiting for /api/v2/* routes before any other logic
-  if (request.nextUrl.pathname.startsWith("/api/v2/")) {
+  const isApiV2 = request.nextUrl.pathname.startsWith("/api/v2/");
+  const requiresApiKeyAuth =
+    isApiV2 && !pathname.startsWith("/api/v2/keys/issue");
+
+  // Rate limit routes that never validate an API key (e.g. /api/v2/keys/issue)
+  // up front, since there is no DB-validated tier to wait for. Routes that do
+  // validate a key are rate-limited below, once the tier is known, so a single
+  // request only ever consumes one rate-limit bucket.
+  if (isApiV2 && !requiresApiKeyAuth) {
     const rateLimitResponse = await applyRateLimit(request);
     if (rateLimitResponse) return rateLimitResponse;
   }
@@ -94,10 +101,7 @@ export async function middleware(request: NextRequest) {
   requestHeaders.set("x-nonce", nonce);
 
   // --- API v2 authentication ---
-  if (
-    pathname.startsWith("/api/v2/") &&
-    !pathname.startsWith("/api/v2/keys/issue")
-  ) {
+  if (requiresApiKeyAuth) {
     const authHeader = request.headers.get("Authorization") ?? "";
     const rawKey = authHeader.startsWith("Bearer ")
       ? authHeader.slice("Bearer ".length).trim()
@@ -114,14 +118,37 @@ export async function middleware(request: NextRequest) {
     const sameOriginBypass = !rawKey && isSameOriginRequest(request);
 
     if (!rawKey && !devBypass && !sameOriginBypass) {
+      const rateLimitResponse = await applyRateLimit(request);
+      if (rateLimitResponse) return rateLimitResponse;
       return NextResponse.json({ error: "missing_api_key" }, { status: 401 });
     }
 
-    const result = devBypass
-      ? ({ valid: true, apiKeyId: "dev-bypass" } as const)
-      : sameOriginBypass
-        ? ({ valid: true, apiKeyId: "same-origin" } as const)
-        : await validateApiKey(rawKey);
+    // Validate before rate limiting so the DB-canonical tier (api_keys.tier)
+    // — not a raw key matched against an env list — drives quota selection.
+    // Invalid/bypass attempts still consume the "public" bucket rather than
+    // going unmetered.
+    let result;
+    if (devBypass) {
+      result = { valid: true, apiKeyId: "dev-bypass", tier: "public" } as const;
+    } else if (sameOriginBypass) {
+      result = {
+        valid: true,
+        apiKeyId: "same-origin",
+        tier: "public",
+      } as const;
+    } else {
+      // IP pre-limit, distinct from the tier-based bucket below: bounds the
+      // DB lookup + PBKDF2 comparison inside validateApiKey so a flood of
+      // distinct/invalid keys from one IP can't run that expensive check
+      // unbounded before a tier is known.
+      const ipRateLimitResponse = await applyIpRateLimit(request);
+      if (ipRateLimitResponse) return ipRateLimitResponse;
+      result = await validateApiKey(rawKey);
+    }
+
+    const tier = result.valid ? result.tier : "public";
+    const rateLimitResponse = await applyRateLimit(request, tier);
+    if (rateLimitResponse) return rateLimitResponse;
 
     if (result.valid === false) {
       return NextResponse.json({ error: result.reason }, { status: 401 });
