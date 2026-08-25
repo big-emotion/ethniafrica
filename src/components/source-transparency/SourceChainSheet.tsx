@@ -8,6 +8,7 @@ import {
   SheetTitle,
   SheetDescription,
 } from "@/components/ui/sheet";
+import { FlagTarget } from "@/components/flags/FlagTarget";
 import { cn } from "@/lib/utils";
 
 /* -------------------------------------------------------------------------- */
@@ -34,6 +35,10 @@ export type Assertion = {
   confidenceScore: number;
   sourceCount: number;
   lastHumanAuditAt: string | null;
+  /** Stable assertion id. Required to enable the FlagTarget wiring below. */
+  id?: string;
+  /** JSON path to the flagged field, e.g. "demographics.population". */
+  fieldPath?: string;
 };
 
 export type Revision = {
@@ -58,6 +63,12 @@ export type SourceChainSheetProps = {
   revisionUrl?: string;
   /** Anchor id for the source chip (e.g. "chip-paragraph-3"). */
   anchorId: string;
+  /**
+   * Cloudflare Turnstile public site key, threaded down from a Server
+   * Component. Required together with `assertion.id` to enable the live
+   * FlagTarget wiring — otherwise the disabled placeholder is kept.
+   */
+  turnstileSiteKey?: string;
 };
 
 /* -------------------------------------------------------------------------- */
@@ -358,6 +369,7 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
   openFlagCount = 0,
   revisionUrl,
   anchorId,
+  turnstileSiteKey,
 }) => {
   const variant = useSheetVariant();
   const reducedMotion = usePrefersReducedMotion();
@@ -499,17 +511,29 @@ const SourceChainSheet: React.FC<SourceChainSheetProps> = ({
           </section>
         ) : null}
 
-        {/* 6. FlagTarget shell — wired in Epic 2 */}
+        {/* 6. FlagTarget */}
         <section data-testid="section-flag-target" className="pt-2">
-          {/* TODO(etni-flag): wire FlagTarget */}
-          <button
-            type="button"
-            disabled
-            className="w-full rounded-md border border-dashed border-[var(--afh-border,var(--country-border,#e5e7eb))] px-3 py-2 text-xs text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]"
-            aria-label="Signaler un problème — bientôt disponible"
-          >
-            Signaler un problème (bientôt disponible)
-          </button>
+          {assertion.id && turnstileSiteKey ? (
+            <FlagTarget
+              target={{
+                type: "assertion",
+                id: assertion.id,
+                fieldPath: assertion.fieldPath,
+                snapshotQuote: assertion.statement,
+              }}
+              turnstileSiteKey={turnstileSiteKey}
+              triggerLabel="Signaler un problème"
+            />
+          ) : (
+            <button
+              type="button"
+              disabled
+              className="w-full rounded-md border border-dashed border-[var(--afh-border,var(--country-border,#e5e7eb))] px-3 py-2 text-xs text-[var(--afh-fg-muted,var(--country-fg-muted,#9ca3af))]"
+              aria-label="Signaler un problème — bientôt disponible"
+            >
+              Signaler un problème (bientôt disponible)
+            </button>
+          )}
         </section>
 
         {/* 7. Cite affordance (appears after 4 s dwell) */}

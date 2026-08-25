@@ -13,6 +13,21 @@ import SourceChainSheet, {
   type SourceChainSheetProps,
 } from "../SourceChainSheet";
 
+vi.mock("@/hooks/use-consent", () => ({
+  useConsent: () => ({
+    consentState: {
+      hasConsented: true,
+      preferences: { essential: true, analytics: false, functional: true },
+      consentDate: null,
+    },
+    acceptAll: vi.fn(),
+    rejectAll: vi.fn(),
+    updatePreferences: vi.fn(),
+    showBanner: false,
+    setShowBanner: vi.fn(),
+  }),
+}));
+
 const baseSource: Source = {
   id: "src-1",
   title: "Atlas linguistique de l'Afrique",
@@ -119,6 +134,26 @@ describe("SourceChainSheet", () => {
     const flagTarget = screen.getByTestId("section-flag-target");
     const btn = within(flagTarget).getByRole("button");
     expect(btn).toBeDisabled();
+  });
+
+  // @req REQ-012
+  it("wires the live FlagTarget when assertion.id and turnstileSiteKey are provided", () => {
+    renderSheet({
+      assertion: {
+        statement: "Le peuple Seereer est attesté depuis le XIIIe siècle.",
+        confidenceScore: 0.82,
+        sourceCount: 3,
+        lastHumanAuditAt: "2026-04-01",
+        id: "assertion-42",
+        fieldPath: "histoire",
+      },
+      turnstileSiteKey: "test-site-key",
+    });
+    const flagTarget = screen.getByTestId("section-flag-target");
+    const btn = within(flagTarget).getByRole("button", {
+      name: "Signaler un problème",
+    });
+    expect(btn).toBeEnabled();
   });
 
   it("renders broken-link sources with line-through URL and a calm badge", () => {
