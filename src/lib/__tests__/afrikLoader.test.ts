@@ -9,6 +9,7 @@ import {
   getCountry,
   search,
   getStats,
+  getUnclassifiedPeoplesCount,
 } from "../afrikLoader";
 
 // Mock fetch globally
@@ -89,6 +90,62 @@ describe("afrikLoader", () => {
       expect(result.meta.total).toBe(24);
     });
 
+    // @req REQ-108
+    it("should read peopleCount from the row-computed API field, not fiche-declared content", async () => {
+      const mockResponse = {
+        data: [
+          {
+            id: "FLG_BANTU",
+            name_fr: "Bantou",
+            peopleCount: 28,
+            content: {
+              // Stale fiche-declared list — must not be used for the count.
+              associatedPeoples: [{ id: "PPL_SHONA" }],
+            },
+          },
+          {
+            id: "FLG_EMPTY",
+            name_fr: "Empty",
+            peopleCount: 0,
+            content: {},
+          },
+        ],
+        meta: { total: 2, page: 1, perPage: 20 },
+      };
+
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () => Promise.resolve(mockResponse),
+      });
+
+      const result = await getLanguageFamilies(1, 20);
+
+      expect(result.data[0].peopleCount).toBe(28);
+      // A real zero must render, not be dropped as undefined.
+      expect(result.data[1].peopleCount).toBe(0);
+    });
+
+    // @req REQ-108
+    it("should carry unclassifiedPeoplesCount through to the frontend meta", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            data: [],
+            meta: {
+              total: 20,
+              page: 1,
+              perPage: 20,
+              unclassifiedPeoplesCount: 64,
+            },
+          }),
+      });
+
+      const result = await getLanguageFamilies(1, 20);
+
+      expect(result.meta.unclassifiedPeoplesCount).toBe(64);
+    });
+
     it("should return empty data on error", async () => {
       mockFetch.mockResolvedValueOnce({
         ok: false,
@@ -100,6 +157,45 @@ describe("afrikLoader", () => {
 
       expect(result.data).toHaveLength(0);
       expect(result.meta.total).toBe(0);
+    });
+  });
+
+  describe("getUnclassifiedPeoplesCount", () => {
+    // @req REQ-108
+    it("should return the unclassified count from the list meta", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: true,
+        json: () =>
+          Promise.resolve({
+            data: [],
+            meta: {
+              total: 20,
+              page: 1,
+              perPage: 1,
+              unclassifiedPeoplesCount: 64,
+            },
+          }),
+      });
+
+      const result = await getUnclassifiedPeoplesCount();
+
+      expect(mockFetch).toHaveBeenCalledWith(
+        "/api/v2/language-families?page=1&perPage=1"
+      );
+      expect(result).toBe(64);
+    });
+
+    // @req REQ-108
+    it("should return 0 on error", async () => {
+      mockFetch.mockResolvedValueOnce({
+        ok: false,
+        status: 500,
+        json: () => Promise.resolve({ error: { message: "Server error" } }),
+      });
+
+      const result = await getUnclassifiedPeoplesCount();
+
+      expect(result).toBe(0);
     });
   });
 

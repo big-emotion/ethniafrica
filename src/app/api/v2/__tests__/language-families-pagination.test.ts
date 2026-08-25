@@ -11,6 +11,15 @@ vi.mock("@/lib/supabase/queries/afrik/languageFamilies", () => ({
   countAfrikLanguageFamilies: vi.fn(),
 }));
 
+// The service also computes per-family people counts (REQ-108) from the peoples
+// query layer; stub it so this pagination-contract test stays isolated from
+// Supabase, exactly like the language-families query layer above.
+vi.mock("@/lib/supabase/queries/afrik/peoples", () => ({
+  getAfrikPeoplesByLanguageFamily: vi.fn(),
+  getPeopleCountsByLanguageFamily: vi.fn(async () => new Map()),
+  UNCLASSIFIED_FAMILY_KEY: "__unclassified__",
+}));
+
 vi.mock("@/lib/api/cors", () => ({
   jsonWithCors: vi.fn((data, init) => {
     const response = new Response(JSON.stringify(data), init);

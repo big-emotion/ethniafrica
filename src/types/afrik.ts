@@ -95,6 +95,13 @@ export interface LanguageFamily {
   // Editorial classification status (migration 009)
   classificationStatus?: ClassificationStatus | null;
 
+  /**
+   * Number of afrik_peoples rows whose language_family_id matches this
+   * family, computed from stored rows (REQ-108) — not the fiche-declared
+   * content.associatedPeoples length.
+   */
+  peopleCount?: number;
+
   // Variable content stored in JSONB (evolutionary)
   content: LanguageFamilyContent;
 
@@ -763,6 +770,11 @@ export interface PaginationMeta {
   page: number;
   perPage: number;
   totalPages?: number;
+  /**
+   * Peoples not reachable through any returnable family, surfaced instead of
+   * silently omitted (REQ-108). Only populated on the language-families list.
+   */
+  unclassifiedPeoplesCount?: number;
 }
 
 export interface ApiResponse<T> {

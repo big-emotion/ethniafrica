@@ -11,6 +11,8 @@ import {
   getAfrikPeoplesByLanguageFamily,
   getAfrikPeoplesByCountry,
   searchAfrikPeoples,
+  getPeopleCountsByLanguageFamily,
+  UNCLASSIFIED_FAMILY_KEY,
 } from "../peoples";
 import { createServerClient } from "../../../server";
 
@@ -424,6 +426,42 @@ describe("AFRIK Peoples Queries", () => {
       );
       expect(result).toHaveLength(1);
       expect(result[0].nameMain).toBe("Kikongo");
+    });
+  });
+
+  describe("getPeopleCountsByLanguageFamily", () => {
+    // @req REQ-108
+    it("should group stored peoples rows by language_family_id in a single query", async () => {
+      const rows = [
+        ...Array.from({ length: 28 }, () => ({
+          language_family_id: "FLG_X",
+        })),
+        { language_family_id: null },
+        { language_family_id: null },
+      ];
+      const chain = { select: vi.fn() };
+      chain.select.mockResolvedValue({ data: rows, error: null });
+      mockSupabase.from.mockReturnValue(chain);
+
+      const result = await getPeopleCountsByLanguageFamily();
+
+      expect(mockSupabase.from).toHaveBeenCalledWith("afrik_peoples");
+      expect(chain.select).toHaveBeenCalledWith("language_family_id");
+      expect(mockSupabase.from).toHaveBeenCalledTimes(1);
+      expect(result.get("FLG_X")).toBe(28);
+      expect(result.get(UNCLASSIFIED_FAMILY_KEY)).toBe(2);
+    });
+
+    // @req REQ-108
+    it("should throw when the query fails", async () => {
+      const chain = { select: vi.fn() };
+      chain.select.mockResolvedValue({
+        data: null,
+        error: { message: "boom" },
+      });
+      mockSupabase.from.mockReturnValue(chain);
+
+      await expect(getPeopleCountsByLanguageFamily()).rejects.toBeTruthy();
     });
   });
 });

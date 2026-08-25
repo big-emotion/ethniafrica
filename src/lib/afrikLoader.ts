@@ -111,7 +111,8 @@ export async function getLanguageFamilies(
           totalSpeakers: generalInfo.totalSpeakers,
           numberOfLanguages: generalInfo.numberOfLanguages,
           geographicArea: generalInfo.geographicArea,
-          peopleCount: content.associatedPeoples?.length,
+          // Row-computed by the API (REQ-108) — not fiche-declared content.
+          peopleCount: family.peopleCount,
         };
       }
     );
@@ -123,6 +124,33 @@ export async function getLanguageFamilies(
   } catch (error) {
     logger.error("[getLanguageFamilies] Exception", error);
     return { data: [], meta: createEmptyMeta(page, perPage) };
+  }
+}
+
+/**
+ * Récupère le nombre de peuples non rattachés à une famille publiée
+ * (REQ-108) — à afficher plutôt qu'omettre silencieusement.
+ */
+export async function getUnclassifiedPeoplesCount(): Promise<number> {
+  try {
+    const response = await fetch(
+      `${API_BASE}/language-families?page=1&perPage=1`
+    );
+
+    if (!response.ok) {
+      const error = await handleFetchError(
+        response,
+        "load unclassified peoples count"
+      );
+      logger.error("[getUnclassifiedPeoplesCount] Error", error);
+      return 0;
+    }
+
+    const result = await response.json();
+    return result.meta?.unclassifiedPeoplesCount ?? 0;
+  } catch (error) {
+    logger.error("[getUnclassifiedPeoplesCount] Exception", error);
+    return 0;
   }
 }
 
@@ -538,6 +566,9 @@ function transformMeta(
     page: (apiMeta.page as number) || page,
     perPage: (apiMeta.perPage as number) || perPage,
     totalPages: Math.ceil(total / perPage) || 0,
+    unclassifiedPeoplesCount: apiMeta.unclassifiedPeoplesCount as
+      | number
+      | undefined,
   };
 }
 
