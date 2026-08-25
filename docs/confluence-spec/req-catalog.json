@@ -102,7 +102,8 @@
     "REQ-100",
     "REQ-101",
     "REQ-102",
-    "REQ-103"
+    "REQ-103",
+    "REQ-104"
   ],
   "sourceMap": {
     "REQ-001": "FR1",
@@ -206,6 +207,7 @@
     "REQ-100": "Confluence FR63",
     "REQ-101": "Confluence FR84",
     "REQ-102": "Confluence FR78",
-    "REQ-103": "Confluence FR65"
+    "REQ-103": "Confluence FR65",
+    "REQ-104": "Confluence FR88"
   }
 }
