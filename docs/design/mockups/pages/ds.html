@@ -1,10 +1,13 @@
 <title>Système Atlas</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=JetBrains+Mono:wght@400;700&display=swap"
+/>
 
 <style>
-/* ══════════════════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════════════════
    SYSTÈME ATLAS — la couche design de la maquette « Home au globe ».
 
    Rien n'est inventé ici : chaque token porte le nom qu'il a déjà dans
@@ -12,542 +15,1355 @@
    qui existe en code — pas une proposition parallèle.
    ══════════════════════════════════════════════════════════════════ */
 
-:root {
-  /* ── L1 · palette brute (src/styles/tokens/color.css) ─────────── */
-  --afh-color-bg: #fbf7f2;
-  --afh-color-bg-warm: #f5ede0;
-  --afh-color-card: #ffffff;
-  --afh-color-border: #e8dfd3;
-  --afh-color-text: #2c2018;
-  --afh-color-text-soft: #746557;
-  --afh-color-text-muted: #9b8b7d;
-  --afh-color-gold: #7a5a00;
-  --afh-color-gold-bg: #fdf5e1;
-  --afh-color-green: #2b6b42;
-  --afh-color-green-bg: #e8f5ed;
-  --afh-color-terracotta: #b64e27;
-  --afh-color-terracotta-bg: #fceee8;
-  --afh-color-earth: #7e603e;
-  --afh-color-earth-bg: #f3ebe0;
-  --afh-color-colonial: #9b3030;
-  --afh-color-colonial-bg: #fce8e8;
-  --afh-color-amber: #d4a843;
-  --afh-color-azure: #5b8db8;
-  --afh-color-clay: #b87d5b;
+  :root {
+    /* ── L1 · palette brute (src/styles/tokens/color.css) ─────────── */
+    --afh-color-bg: #fbf7f2;
+    --afh-color-bg-warm: #f5ede0;
+    --afh-color-card: #ffffff;
+    --afh-color-border: #e8dfd3;
+    --afh-color-text: #2c2018;
+    --afh-color-text-soft: #746557;
+    --afh-color-text-muted: #9b8b7d;
+    --afh-color-gold: #7a5a00;
+    --afh-color-gold-bg: #fdf5e1;
+    --afh-color-green: #2b6b42;
+    --afh-color-green-bg: #e8f5ed;
+    --afh-color-terracotta: #b64e27;
+    --afh-color-terracotta-bg: #fceee8;
+    --afh-color-earth: #7e603e;
+    --afh-color-earth-bg: #f3ebe0;
+    --afh-color-colonial: #9b3030;
+    --afh-color-colonial-bg: #fce8e8;
+    --afh-color-amber: #d4a843;
+    --afh-color-azure: #5b8db8;
+    --afh-color-clay: #b87d5b;
 
-  /* Surface nuit — réservée par la charte à la dataviz et au hero */
-  --afh-night-ground: #120e0a;
-  --afh-night-surface: #1d1710;
-  --afh-night-surface-2: #271e14;
-  --afh-night-line: #3a2e1f;
-  --afh-night-ink: #f1e7d8;
-  --afh-night-ink-2: #c9b99f;
-  --afh-night-ink-3: #8f7f66;
+    /* Surface nuit — réservée par la charte à la dataviz et au hero */
+    --afh-night-ground: #120e0a;
+    --afh-night-surface: #1d1710;
+    --afh-night-surface-2: #271e14;
+    --afh-night-line: #3a2e1f;
+    --afh-night-ink: #f1e7d8;
+    --afh-night-ink-2: #c9b99f;
+    --afh-night-ink-3: #8f7f66;
 
-  /* Accents catégoriels validés CVD (ETNI-798 · FR104) */
-  --afh-cat-ocre: #c9821f;   --afh-cat-ocre-tint: #f1d9ae;
-  --afh-cat-teal: #33a390;   --afh-cat-teal-tint: #cbe7df;
-  --afh-cat-terre: #c4573f;  --afh-cat-terre-tint: #f0d2c8;
-  --afh-cat-perv: #7a8ce8;   --afh-cat-perv-tint: #dce1f9;
+    /* Accents catégoriels validés CVD (ETNI-798 · FR104) */
+    --afh-cat-ocre: #c9821f;
+    --afh-cat-ocre-tint: #f1d9ae;
+    --afh-cat-teal: #33a390;
+    --afh-cat-teal-tint: #cbe7df;
+    --afh-cat-terre: #c4573f;
+    --afh-cat-terre-tint: #f0d2c8;
+    --afh-cat-perv: #7a8ce8;
+    --afh-cat-perv-tint: #dce1f9;
 
-  /* ── L2 · alias sémantiques ───────────────────────────────────── */
-  --afh-bg: var(--afh-color-bg);
-  --afh-bg-warm: var(--afh-color-bg-warm);
-  --afh-surface: var(--afh-color-card);
-  --afh-border: var(--afh-color-border);
-  --afh-border-2: #d6c8b6;
-  --afh-text: var(--afh-color-text);
-  --afh-text-soft: var(--afh-color-text-soft);
-  --afh-text-muted: var(--afh-color-text-muted);
+    /* ── L2 · alias sémantiques ───────────────────────────────────── */
+    --afh-bg: var(--afh-color-bg);
+    --afh-bg-warm: var(--afh-color-bg-warm);
+    --afh-surface: var(--afh-color-card);
+    --afh-border: var(--afh-color-border);
+    --afh-border-2: #d6c8b6;
+    --afh-text: var(--afh-color-text);
+    --afh-text-soft: var(--afh-color-text-soft);
+    --afh-text-muted: var(--afh-color-text-muted);
 
-  /* Défaut du scope d'accent — jamais lu en dur par un composant */
-  --accent: var(--afh-cat-ocre);
-  --accent-tint: var(--afh-cat-ocre-tint);
-  --accent-foreground: #fff;
+    /* Défaut du scope d'accent — jamais lu en dur par un composant */
+    --accent: var(--afh-cat-ocre);
+    --accent-tint: var(--afh-cat-ocre-tint);
+    --accent-foreground: #fff;
 
-  /* ── Typo ─────────────────────────────────────────────────────── */
-  --afh-font-display: "Fraunces", Georgia, serif;
-  --afh-font-body: "Nunito Sans", system-ui, sans-serif;
-  --afh-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+    /* ── Typo ─────────────────────────────────────────────────────── */
+    --afh-font-display: "Fraunces", Georgia, serif;
+    --afh-font-body: "Nunito Sans", system-ui, sans-serif;
+    --afh-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --afh-text-hero: 34px; --afh-text-h1: 24px; --afh-text-h2: 18px;
-  --afh-text-h3: 16px;   --afh-text-body: 14px; --afh-text-small: 12px;
-  --afh-text-caption: 11px; --afh-text-micro: 10px; --afh-text-nano: 9px;
+    --afh-text-hero: 34px;
+    --afh-text-h1: 24px;
+    --afh-text-h2: 18px;
+    --afh-text-h3: 16px;
+    --afh-text-body: 14px;
+    --afh-text-small: 12px;
+    --afh-text-caption: 11px;
+    --afh-text-micro: 10px;
+    --afh-text-nano: 9px;
 
-  /* ── Espace / rayon / mouvement ───────────────────────────────── */
-  --afh-space-xs: 4px;  --afh-space-md: 8px;  --afh-space-lg: 12px;
-  --afh-space-2xl: 16px; --afh-space-4xl: 20px; --afh-space-5xl: 24px;
-  --afh-space-6xl: 32px; --afh-space-7xl: 40px; --afh-space-8xl: 48px;
+    /* ── Espace / rayon / mouvement ───────────────────────────────── */
+    --afh-space-xs: 4px;
+    --afh-space-md: 8px;
+    --afh-space-lg: 12px;
+    --afh-space-2xl: 16px;
+    --afh-space-4xl: 20px;
+    --afh-space-5xl: 24px;
+    --afh-space-6xl: 32px;
+    --afh-space-7xl: 40px;
+    --afh-space-8xl: 48px;
 
-  --afh-radius-sm: 4px; --afh-radius-md: 6px; --afh-radius-base: 12px;
-  --afh-radius-xl: 16px; --afh-radius-full: 9999px;
+    --afh-radius-sm: 4px;
+    --afh-radius-md: 6px;
+    --afh-radius-base: 12px;
+    --afh-radius-xl: 16px;
+    --afh-radius-full: 9999px;
 
-  --afh-duration-fast: 120ms; --afh-duration-base: 200ms;
-  --afh-duration-slow: 320ms; --afh-duration-fade: 400ms;
-  --afh-ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --afh-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --afh-ease-spring: cubic-bezier(.22, 1, .36, 1);
+    --afh-duration-fast: 120ms;
+    --afh-duration-base: 200ms;
+    --afh-duration-slow: 320ms;
+    --afh-duration-fade: 400ms;
+    --afh-ease-out: cubic-bezier(0, 0, 0.2, 1);
+    --afh-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+    --afh-ease-spring: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* Établi (chrome de la planche, hors système) */
-  --bench: #e7ded1;
-  --bench-line: #d6c8b6;
-}
+    /* Établi (chrome de la planche, hors système) */
+    --bench: #e7ded1;
+    --bench-line: #d6c8b6;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --bench: #0e0b08; --bench-line: #2a2119; }
-}
-:root[data-theme="dark"] { --bench: #0e0b08; --bench-line: #2a2119; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bench: #0e0b08;
+      --bench-line: #2a2119;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bench: #0e0b08;
+    --bench-line: #2a2119;
+  }
 
-/* Les quatre scopes d'accent — la SEULE voie par laquelle un composant
+  /* Les quatre scopes d'accent — la SEULE voie par laquelle un composant
    reçoit une couleur. Un composant lit var(--accent), jamais --afh-cat-*. */
-.afh-accent-ocre  { --accent: var(--afh-cat-ocre);  --accent-tint: var(--afh-cat-ocre-tint);  --accent-foreground: #fff; }
-.afh-accent-teal  { --accent: var(--afh-cat-teal);  --accent-tint: var(--afh-cat-teal-tint);  --accent-foreground: #fff; }
-.afh-accent-terre { --accent: var(--afh-cat-terre); --accent-tint: var(--afh-cat-terre-tint); --accent-foreground: #2c2018; }
-.afh-accent-perv  { --accent: var(--afh-cat-perv);  --accent-tint: var(--afh-cat-perv-tint);  --accent-foreground: #fff; }
+  .afh-accent-ocre {
+    --accent: var(--afh-cat-ocre);
+    --accent-tint: var(--afh-cat-ocre-tint);
+    --accent-foreground: #fff;
+  }
+  .afh-accent-teal {
+    --accent: var(--afh-cat-teal);
+    --accent-tint: var(--afh-cat-teal-tint);
+    --accent-foreground: #fff;
+  }
+  .afh-accent-terre {
+    --accent: var(--afh-cat-terre);
+    --accent-tint: var(--afh-cat-terre-tint);
+    --accent-foreground: #2c2018;
+  }
+  .afh-accent-perv {
+    --accent: var(--afh-cat-perv);
+    --accent-tint: var(--afh-cat-perv-tint);
+    --accent-foreground: #fff;
+  }
 
-* { box-sizing: border-box; }
-body {
-  margin: 0; background: var(--bench);
-  font-family: var(--afh-font-body); -webkit-font-smoothing: antialiased;
-}
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    background: var(--bench);
+    font-family: var(--afh-font-body);
+    -webkit-font-smoothing: antialiased;
+  }
 
-/* ══ Chrome de l'établi ══════════════════════════════════════════ */
-.bench-bar {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 12px; flex-wrap: wrap; max-width: 1240px; margin: 0 auto;
-  padding: 18px 20px 14px;
-}
-.bench-bar p {
-  margin: 0; font-size: var(--afh-text-small); letter-spacing: .1em;
-  text-transform: uppercase; color: var(--afh-text-muted); font-weight: 700;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .bench-bar p { color: var(--afh-night-ink-3); }
-}
-:root[data-theme="dark"] .bench-bar p { color: var(--afh-night-ink-3); }
+  /* ══ Chrome de l'établi ══════════════════════════════════════════ */
+  .bench-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 18px 20px 14px;
+  }
+  .bench-bar p {
+    margin: 0;
+    font-size: var(--afh-text-small);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--afh-text-muted);
+    font-weight: 700;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .bench-bar p {
+      color: var(--afh-night-ink-3);
+    }
+  }
+  :root[data-theme="dark"] .bench-bar p {
+    color: var(--afh-night-ink-3);
+  }
 
-.switch { display: flex; gap: 4px; background: var(--afh-bg-warm); border: 1px solid var(--afh-border-2); border-radius: var(--afh-radius-full); padding: 3px; }
-.switch button {
-  border: 0; background: transparent; font-family: inherit; font-size: 13px;
-  color: var(--afh-text-soft); padding: 6px 15px;
-  border-radius: var(--afh-radius-full); cursor: pointer;
-}
-.switch button[aria-pressed="true"] { background: var(--afh-surface); color: var(--afh-text); font-weight: 700; }
-.switch button:focus-visible { outline: 2px solid var(--afh-cat-ocre); outline-offset: 1px; }
+  .switch {
+    display: flex;
+    gap: 4px;
+    background: var(--afh-bg-warm);
+    border: 1px solid var(--afh-border-2);
+    border-radius: var(--afh-radius-full);
+    padding: 3px;
+  }
+  .switch button {
+    border: 0;
+    background: transparent;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--afh-text-soft);
+    padding: 6px 15px;
+    border-radius: var(--afh-radius-full);
+    cursor: pointer;
+  }
+  .switch button[aria-pressed="true"] {
+    background: var(--afh-surface);
+    color: var(--afh-text);
+    font-weight: 700;
+  }
+  .switch button:focus-visible {
+    outline: 2px solid var(--afh-cat-ocre);
+    outline-offset: 1px;
+  }
 
-.frame {
-  background: var(--afh-bg); border: 1px solid var(--bench-line);
-  border-radius: 8px; overflow: hidden; margin: 0 auto 40px;
-  box-shadow: 0 30px 70px -34px rgba(20,14,8,.6);
-  transition: width var(--afh-duration-slow) var(--afh-ease-spring);
-  container-type: inline-size;
-}
-.frame[data-viewport="desktop"] { width: calc(100% - 40px); max-width: 1240px; }
-.frame[data-viewport="mobile"]  { width: 430px; max-width: calc(100% - 40px); }
+  .frame {
+    background: var(--afh-bg);
+    border: 1px solid var(--bench-line);
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0 auto 40px;
+    box-shadow: 0 30px 70px -34px rgba(20, 14, 8, 0.6);
+    transition: width var(--afh-duration-slow) var(--afh-ease-spring);
+    container-type: inline-size;
+  }
+  .frame[data-viewport="desktop"] {
+    width: calc(100% - 40px);
+    max-width: 1240px;
+  }
+  .frame[data-viewport="mobile"] {
+    width: 430px;
+    max-width: calc(100% - 40px);
+  }
 
-/* ══ Structure de la planche ═════════════════════════════════════ */
-.doc-head {
-  background: var(--afh-night-ground); color: var(--afh-night-ink);
-  padding: 40px 32px 34px; border-bottom: 1px solid var(--afh-cat-ocre);
-}
-.doc-head h1 {
-  font-family: var(--afh-font-display); font-weight: 900;
-  font-size: clamp(28px, 4.4cqi, 46px); line-height: 1.05; margin: 0 0 12px;
-  letter-spacing: -.02em; text-wrap: balance;
-}
-.doc-head h1 em { font-style: italic; color: var(--afh-cat-ocre); }
-.doc-head p { margin: 0; max-width: 62ch; color: var(--afh-night-ink-2); font-size: 15px; line-height: 1.65; }
-.doc-head .origin {
-  margin-top: 18px; font-family: var(--afh-font-mono);
-  font-size: var(--afh-text-caption); color: var(--afh-night-ink-3); line-height: 1.7;
-}
-@container (max-width: 700px) { .doc-head { padding: 28px 20px 24px; } }
+  /* ══ Structure de la planche ═════════════════════════════════════ */
+  .doc-head {
+    background: var(--afh-night-ground);
+    color: var(--afh-night-ink);
+    padding: 40px 32px 34px;
+    border-bottom: 1px solid var(--afh-cat-ocre);
+  }
+  .doc-head h1 {
+    font-family: var(--afh-font-display);
+    font-weight: 900;
+    font-size: clamp(28px, 4.4cqi, 46px);
+    line-height: 1.05;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .doc-head h1 em {
+    font-style: italic;
+    color: var(--afh-cat-ocre);
+  }
+  .doc-head p {
+    margin: 0;
+    max-width: 62ch;
+    color: var(--afh-night-ink-2);
+    font-size: 15px;
+    line-height: 1.65;
+  }
+  .doc-head .origin {
+    margin-top: 18px;
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-caption);
+    color: var(--afh-night-ink-3);
+    line-height: 1.7;
+  }
+  @container (max-width: 700px) {
+    .doc-head {
+      padding: 28px 20px 24px;
+    }
+  }
 
-.toc {
-  display: flex; gap: 6px; flex-wrap: wrap; padding: 14px 32px;
-  background: var(--afh-bg-warm); border-bottom: 1px solid var(--afh-border);
-  position: sticky; top: 0; z-index: 40;
-}
-.toc a {
-  font-size: var(--afh-text-small); color: var(--afh-text-soft);
-  text-decoration: none; padding: 5px 11px; border-radius: var(--afh-radius-full);
-  border: 1px solid transparent;
-}
-.toc a:hover { border-color: var(--afh-border-2); color: var(--afh-text); }
-@container (max-width: 700px) { .toc { padding: 12px 16px; overflow-x: auto; flex-wrap: nowrap; } .toc a { white-space: nowrap; } }
+  .toc {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding: 14px 32px;
+    background: var(--afh-bg-warm);
+    border-bottom: 1px solid var(--afh-border);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+  }
+  .toc a {
+    font-size: var(--afh-text-small);
+    color: var(--afh-text-soft);
+    text-decoration: none;
+    padding: 5px 11px;
+    border-radius: var(--afh-radius-full);
+    border: 1px solid transparent;
+  }
+  .toc a:hover {
+    border-color: var(--afh-border-2);
+    color: var(--afh-text);
+  }
+  @container (max-width: 700px) {
+    .toc {
+      padding: 12px 16px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+    }
+    .toc a {
+      white-space: nowrap;
+    }
+  }
 
-section.band { padding: 44px 32px; border-bottom: 1px solid var(--afh-border); }
-section.band:nth-of-type(even) { background: var(--afh-bg-warm); }
-@container (max-width: 700px) { section.band { padding: 30px 20px; } }
+  section.band {
+    padding: 44px 32px;
+    border-bottom: 1px solid var(--afh-border);
+  }
+  section.band:nth-of-type(even) {
+    background: var(--afh-bg-warm);
+  }
+  @container (max-width: 700px) {
+    section.band {
+      padding: 30px 20px;
+    }
+  }
 
-.band > h2 {
-  font-family: var(--afh-font-display); font-weight: 900;
-  font-size: clamp(21px, 2.7cqi, 30px); margin: 0 0 6px; letter-spacing: -.015em;
-}
-.band > .lede { margin: 0 0 26px; max-width: 68ch; color: var(--afh-text-soft); font-size: var(--afh-text-body); line-height: 1.7; }
-.band h3 {
-  font-family: var(--afh-font-body); font-size: var(--afh-text-caption);
-  letter-spacing: .13em; text-transform: uppercase; color: var(--afh-text-muted);
-  margin: 30px 0 12px; font-weight: 700;
-}
-.band h3:first-of-type { margin-top: 0; }
+  .band > h2 {
+    font-family: var(--afh-font-display);
+    font-weight: 900;
+    font-size: clamp(21px, 2.7cqi, 30px);
+    margin: 0 0 6px;
+    letter-spacing: -0.015em;
+  }
+  .band > .lede {
+    margin: 0 0 26px;
+    max-width: 68ch;
+    color: var(--afh-text-soft);
+    font-size: var(--afh-text-body);
+    line-height: 1.7;
+  }
+  .band h3 {
+    font-family: var(--afh-font-body);
+    font-size: var(--afh-text-caption);
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--afh-text-muted);
+    margin: 30px 0 12px;
+    font-weight: 700;
+  }
+  .band h3:first-of-type {
+    margin-top: 0;
+  }
 
-.rule {
-  border-left: 3px solid var(--accent); background: var(--afh-surface);
-  padding: 13px 16px; border-radius: 0 var(--afh-radius-md) var(--afh-radius-md) 0;
-  font-size: var(--afh-text-small); color: var(--afh-text-soft);
-  line-height: 1.65; margin: 16px 0 0; max-width: 72ch;
-}
-.rule b { color: var(--afh-text); }
-code, .mono { font-family: var(--afh-font-mono); font-size: .92em; }
-code { background: var(--afh-color-earth-bg); padding: 1px 5px; border-radius: var(--afh-radius-sm); color: var(--afh-color-earth); }
+  .rule {
+    border-left: 3px solid var(--accent);
+    background: var(--afh-surface);
+    padding: 13px 16px;
+    border-radius: 0 var(--afh-radius-md) var(--afh-radius-md) 0;
+    font-size: var(--afh-text-small);
+    color: var(--afh-text-soft);
+    line-height: 1.65;
+    margin: 16px 0 0;
+    max-width: 72ch;
+  }
+  .rule b {
+    color: var(--afh-text);
+  }
+  code,
+  .mono {
+    font-family: var(--afh-font-mono);
+    font-size: 0.92em;
+  }
+  code {
+    background: var(--afh-color-earth-bg);
+    padding: 1px 5px;
+    border-radius: var(--afh-radius-sm);
+    color: var(--afh-color-earth);
+  }
 </style>
 <style>
-/* ══ Couleur ═════════════════════════════════════════════════════ */
-.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 10px; }
-.sw {
-  background: var(--afh-surface); border: 1px solid var(--afh-border);
-  border-radius: var(--afh-radius-md); overflow: hidden;
-}
-.sw .chip { height: 46px; border-bottom: 1px solid rgba(0,0,0,.07); }
-.sw .meta { padding: 8px 10px; }
-.sw .name { display: block; font-family: var(--afh-font-mono); font-size: var(--afh-text-micro); color: var(--afh-text); word-break: break-all; line-height: 1.5; }
-.sw .hex  { display: block; font-family: var(--afh-font-mono); font-size: var(--afh-text-nano); color: var(--afh-text-muted); margin-top: 2px; }
+  /* ══ Couleur ═════════════════════════════════════════════════════ */
+  .swatches {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(168px, 1fr));
+    gap: 10px;
+  }
+  .sw {
+    background: var(--afh-surface);
+    border: 1px solid var(--afh-border);
+    border-radius: var(--afh-radius-md);
+    overflow: hidden;
+  }
+  .sw .chip {
+    height: 46px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  }
+  .sw .meta {
+    padding: 8px 10px;
+  }
+  .sw .name {
+    display: block;
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-micro);
+    color: var(--afh-text);
+    word-break: break-all;
+    line-height: 1.5;
+  }
+  .sw .hex {
+    display: block;
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-nano);
+    color: var(--afh-text-muted);
+    margin-top: 2px;
+  }
 
-/* Le duo accent + tint, montré comme il s'utilise : fond tint, trait accent */
-.accents { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
-.accent-demo {
-  border: 1px solid var(--accent); background: var(--accent-tint);
-  border-radius: var(--afh-radius-base); padding: 14px 16px;
-}
-.accent-demo b { font-family: var(--afh-font-display); font-size: var(--afh-text-h3); color: var(--afh-text); display: block; }
-.accent-demo .pill {
-  display: inline-block; margin-top: 9px; background: var(--accent);
-  color: var(--accent-foreground); font-size: var(--afh-text-caption);
-  font-weight: 700; padding: 4px 11px; border-radius: var(--afh-radius-full);
-}
-.accent-demo .tk { display: block; margin-top: 9px; font-family: var(--afh-font-mono); font-size: var(--afh-text-nano); color: var(--afh-text-soft); }
+  /* Le duo accent + tint, montré comme il s'utilise : fond tint, trait accent */
+  .accents {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 12px;
+  }
+  .accent-demo {
+    border: 1px solid var(--accent);
+    background: var(--accent-tint);
+    border-radius: var(--afh-radius-base);
+    padding: 14px 16px;
+  }
+  .accent-demo b {
+    font-family: var(--afh-font-display);
+    font-size: var(--afh-text-h3);
+    color: var(--afh-text);
+    display: block;
+  }
+  .accent-demo .pill {
+    display: inline-block;
+    margin-top: 9px;
+    background: var(--accent);
+    color: var(--accent-foreground);
+    font-size: var(--afh-text-caption);
+    font-weight: 700;
+    padding: 4px 11px;
+    border-radius: var(--afh-radius-full);
+  }
+  .accent-demo .tk {
+    display: block;
+    margin-top: 9px;
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-nano);
+    color: var(--afh-text-soft);
+  }
 
-/* ══ Typo ════════════════════════════════════════════════════════ */
-.type-row {
-  display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap;
-  padding: 11px 0; border-bottom: 1px dashed var(--afh-border);
-}
-.type-row .tk { font-family: var(--afh-font-mono); font-size: var(--afh-text-micro); color: var(--afh-text-muted); flex: none; width: 132px; }
-.type-row .spec { font-family: var(--afh-font-mono); font-size: var(--afh-text-micro); color: var(--afh-text-muted); margin-left: auto; flex: none; }
-.type-row .sample { color: var(--afh-text); min-width: 0; }
+  /* ══ Typo ════════════════════════════════════════════════════════ */
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    flex-wrap: wrap;
+    padding: 11px 0;
+    border-bottom: 1px dashed var(--afh-border);
+  }
+  .type-row .tk {
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-micro);
+    color: var(--afh-text-muted);
+    flex: none;
+    width: 132px;
+  }
+  .type-row .spec {
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-micro);
+    color: var(--afh-text-muted);
+    margin-left: auto;
+    flex: none;
+  }
+  .type-row .sample {
+    color: var(--afh-text);
+    min-width: 0;
+  }
 
-/* ══ Espace / rayon ══════════════════════════════════════════════ */
-.scale-row { display: flex; align-items: center; gap: 12px; padding: 5px 0; }
-.scale-row .tk { font-family: var(--afh-font-mono); font-size: var(--afh-text-micro); color: var(--afh-text-muted); width: 148px; flex: none; }
-.scale-row .bar { height: 12px; background: var(--afh-cat-ocre); border-radius: 2px; }
-.radii { display: flex; gap: 12px; flex-wrap: wrap; }
-.radii div {
-  width: 66px; height: 66px; background: var(--afh-cat-teal-tint);
-  border: 1px solid var(--afh-cat-teal); display: grid; place-items: center;
-  font-family: var(--afh-font-mono); font-size: var(--afh-text-nano); color: var(--afh-text-soft); text-align: center;
-}
+  /* ══ Espace / rayon ══════════════════════════════════════════════ */
+  .scale-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 5px 0;
+  }
+  .scale-row .tk {
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-micro);
+    color: var(--afh-text-muted);
+    width: 148px;
+    flex: none;
+  }
+  .scale-row .bar {
+    height: 12px;
+    background: var(--afh-cat-ocre);
+    border-radius: 2px;
+  }
+  .radii {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .radii div {
+    width: 66px;
+    height: 66px;
+    background: var(--afh-cat-teal-tint);
+    border: 1px solid var(--afh-cat-teal);
+    display: grid;
+    place-items: center;
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-nano);
+    color: var(--afh-text-soft);
+    text-align: center;
+  }
 
-/* ══ Mouvement ═══════════════════════════════════════════════════ */
-.motion-lab { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
-.motion-cell {
-  background: var(--afh-surface); border: 1px solid var(--afh-border);
-  border-radius: var(--afh-radius-md); padding: 14px 16px;
-}
-.motion-cell .tk { font-family: var(--afh-font-mono); font-size: var(--afh-text-micro); color: var(--afh-text-muted); display: block; margin-bottom: 10px; }
-.track { height: 26px; background: var(--afh-color-earth-bg); border-radius: var(--afh-radius-full); position: relative; overflow: hidden; }
-.puck {
-  position: absolute; top: 3px; left: 3px; width: 20px; height: 20px;
-  border-radius: 50%; background: var(--afh-cat-ocre);
-}
+  /* ══ Mouvement ═══════════════════════════════════════════════════ */
+  .motion-lab {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 12px;
+  }
+  .motion-cell {
+    background: var(--afh-surface);
+    border: 1px solid var(--afh-border);
+    border-radius: var(--afh-radius-md);
+    padding: 14px 16px;
+  }
+  .motion-cell .tk {
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-micro);
+    color: var(--afh-text-muted);
+    display: block;
+    margin-bottom: 10px;
+  }
+  .track {
+    height: 26px;
+    background: var(--afh-color-earth-bg);
+    border-radius: var(--afh-radius-full);
+    position: relative;
+    overflow: hidden;
+  }
+  .puck {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--afh-cat-ocre);
+  }
 
-/* ══ Primitives — matrice d'états ════════════════════════════════ */
-.matrix { border: 1px solid var(--afh-border); border-radius: var(--afh-radius-md); overflow: hidden; background: var(--afh-surface); }
-.matrix-scroll { overflow-x: auto; }
-.matrix table { border-collapse: collapse; width: 100%; min-width: 620px; }
-.matrix th, .matrix td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--afh-border); vertical-align: middle; }
-.matrix th {
-  font-size: var(--afh-text-caption); letter-spacing: .1em; text-transform: uppercase;
-  color: var(--afh-text-muted); font-weight: 700; background: var(--afh-bg-warm);
-}
-.matrix tr:last-child td { border-bottom: 0; }
-.matrix td:first-child { font-family: var(--afh-font-mono); font-size: var(--afh-text-micro); color: var(--afh-text-soft); white-space: nowrap; }
+  /* ══ Primitives — matrice d'états ════════════════════════════════ */
+  .matrix {
+    border: 1px solid var(--afh-border);
+    border-radius: var(--afh-radius-md);
+    overflow: hidden;
+    background: var(--afh-surface);
+  }
+  .matrix-scroll {
+    overflow-x: auto;
+  }
+  .matrix table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 620px;
+  }
+  .matrix th,
+  .matrix td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--afh-border);
+    vertical-align: middle;
+  }
+  .matrix th {
+    font-size: var(--afh-text-caption);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--afh-text-muted);
+    font-weight: 700;
+    background: var(--afh-bg-warm);
+  }
+  .matrix tr:last-child td {
+    border-bottom: 0;
+  }
+  .matrix td:first-child {
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-micro);
+    color: var(--afh-text-soft);
+    white-space: nowrap;
+  }
 
-/* La pilule — la primitive la plus fréquente du système */
-.pill-btn {
-  border: 1px solid var(--afh-border-2); background: var(--afh-surface);
-  color: var(--afh-text-soft); font-family: inherit; font-size: 12.5px;
-  padding: 7px 14px; border-radius: var(--afh-radius-full); cursor: pointer;
-  transition: border-color var(--afh-duration-base) var(--afh-ease-out),
-              color var(--afh-duration-base) var(--afh-ease-out);
-}
-.pill-btn:hover, .pill-btn.is-hover { border-color: var(--accent); color: var(--afh-text); }
-.pill-btn:focus-visible, .pill-btn.is-focus { outline: 2px solid var(--accent); outline-offset: 2px; }
-.pill-btn.is-active { transform: translateY(1px); }
-.pill-btn[aria-pressed="true"], .pill-btn.is-selected {
-  background: var(--accent); color: var(--accent-foreground);
-  border-color: var(--accent); font-weight: 700;
-}
-.pill-btn[disabled] { opacity: .42; cursor: not-allowed; }
+  /* La pilule — la primitive la plus fréquente du système */
+  .pill-btn {
+    border: 1px solid var(--afh-border-2);
+    background: var(--afh-surface);
+    color: var(--afh-text-soft);
+    font-family: inherit;
+    font-size: 12.5px;
+    padding: 7px 14px;
+    border-radius: var(--afh-radius-full);
+    cursor: pointer;
+    transition:
+      border-color var(--afh-duration-base) var(--afh-ease-out),
+      color var(--afh-duration-base) var(--afh-ease-out);
+  }
+  .pill-btn:hover,
+  .pill-btn.is-hover {
+    border-color: var(--accent);
+    color: var(--afh-text);
+  }
+  .pill-btn:focus-visible,
+  .pill-btn.is-focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .pill-btn.is-active {
+    transform: translateY(1px);
+  }
+  .pill-btn[aria-pressed="true"],
+  .pill-btn.is-selected {
+    background: var(--accent);
+    color: var(--accent-foreground);
+    border-color: var(--accent);
+    font-weight: 700;
+  }
+  .pill-btn[disabled] {
+    opacity: 0.42;
+    cursor: not-allowed;
+  }
 
-.icon-btn {
-  width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--afh-border-2);
-  background: transparent; color: var(--afh-text-soft); cursor: pointer;
-  display: inline-grid; place-items: center;
-  transition: border-color var(--afh-duration-base) var(--afh-ease-out);
-}
-.icon-btn:hover, .icon-btn.is-hover { border-color: var(--accent); color: var(--afh-text); }
-.icon-btn:focus-visible, .icon-btn.is-focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .icon-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--afh-border-2);
+    background: transparent;
+    color: var(--afh-text-soft);
+    cursor: pointer;
+    display: inline-grid;
+    place-items: center;
+    transition: border-color var(--afh-duration-base) var(--afh-ease-out);
+  }
+  .icon-btn:hover,
+  .icon-btn.is-hover {
+    border-color: var(--accent);
+    color: var(--afh-text);
+  }
+  .icon-btn:focus-visible,
+  .icon-btn.is-focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
 
-/* Le chip d'état éditorial — porte l'information, jamais la couleur seule */
-.state-chip {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: var(--afh-text-caption); font-weight: 700; padding: 3px 10px;
-  border-radius: var(--afh-radius-full); border: 1px solid currentColor;
-}
-.state-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex: none; }
-.chip-stable    { color: var(--afh-color-green);      background: var(--afh-color-green-bg); }
-.chip-contested { color: #8a6a12;                      background: var(--afh-color-gold-bg); }
-.chip-disputed  { color: var(--afh-color-colonial);    background: var(--afh-color-colonial-bg); }
-.chip-soon      { color: var(--afh-color-text-soft);   background: var(--afh-color-earth-bg); }
-.chip-t1        { color: var(--afh-color-green);       background: var(--afh-color-green-bg); }
-.chip-t2        { color: #2f5f80;                      background: #e6f0f7; }
+  /* Le chip d'état éditorial — porte l'information, jamais la couleur seule */
+  .state-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--afh-text-caption);
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: var(--afh-radius-full);
+    border: 1px solid currentColor;
+  }
+  .state-chip .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    flex: none;
+  }
+  .chip-stable {
+    color: var(--afh-color-green);
+    background: var(--afh-color-green-bg);
+  }
+  .chip-contested {
+    color: #8a6a12;
+    background: var(--afh-color-gold-bg);
+  }
+  .chip-disputed {
+    color: var(--afh-color-colonial);
+    background: var(--afh-color-colonial-bg);
+  }
+  .chip-soon {
+    color: var(--afh-color-text-soft);
+    background: var(--afh-color-earth-bg);
+  }
+  .chip-t1 {
+    color: var(--afh-color-green);
+    background: var(--afh-color-green-bg);
+  }
+  .chip-t2 {
+    color: #2f5f80;
+    background: #e6f0f7;
+  }
 
-/* La carte-axe de la home */
-.axis-card {
-  display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
-  background: var(--afh-surface); border: 1px solid var(--afh-border);
-  border-radius: 8px; padding: 22px 20px; text-decoration: none;
-  color: var(--afh-text); position: relative; overflow: hidden; min-height: 180px;
-  transition: border-color var(--afh-duration-base) var(--afh-ease-out),
-              transform var(--afh-duration-slow) var(--afh-ease-spring);
-}
-.axis-card::after {
-  content: ""; position: absolute; inset: auto 0 0 0; height: 0;
-  background: linear-gradient(to top, color-mix(in srgb, var(--accent) 14%, transparent), transparent);
-  transition: height var(--afh-duration-slow) var(--afh-ease-spring); pointer-events: none;
-}
-.axis-card:hover, .axis-card:focus-visible { border-color: var(--accent); transform: translateY(-3px); }
-.axis-card:hover::after, .axis-card:focus-visible::after { height: 100%; }
-.axis-card h4 { font-family: var(--afh-font-display); font-weight: 900; font-size: 24px; margin: 0; position: relative; z-index: 1; }
-.axis-card .fig { margin: -10px 0 0; font-family: var(--afh-font-mono); font-size: var(--afh-text-small); color: var(--afh-text-muted); position: relative; z-index: 1; }
-.axis-card .cta { margin-top: auto; font-size: var(--afh-text-body); font-weight: 700; color: var(--accent); position: relative; z-index: 1; }
-.axis-card .cta .arrow { display: inline-block; transition: transform var(--afh-duration-slow) var(--afh-ease-spring); }
-.axis-card:hover .cta .arrow { transform: translateX(5px); }
-.axis-glyph { width: 46px; height: 46px; color: var(--accent); position: relative; z-index: 1; }
+  /* La carte-axe de la home */
+  .axis-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--afh-surface);
+    border: 1px solid var(--afh-border);
+    border-radius: 8px;
+    padding: 22px 20px;
+    text-decoration: none;
+    color: var(--afh-text);
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+    transition:
+      border-color var(--afh-duration-base) var(--afh-ease-out),
+      transform var(--afh-duration-slow) var(--afh-ease-spring);
+  }
+  .axis-card::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 0;
+    background: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--accent) 14%, transparent),
+      transparent
+    );
+    transition: height var(--afh-duration-slow) var(--afh-ease-spring);
+    pointer-events: none;
+  }
+  .axis-card:hover,
+  .axis-card:focus-visible {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+  }
+  .axis-card:hover::after,
+  .axis-card:focus-visible::after {
+    height: 100%;
+  }
+  .axis-card h4 {
+    font-family: var(--afh-font-display);
+    font-weight: 900;
+    font-size: 24px;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .axis-card .fig {
+    margin: -10px 0 0;
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-small);
+    color: var(--afh-text-muted);
+    position: relative;
+    z-index: 1;
+  }
+  .axis-card .cta {
+    margin-top: auto;
+    font-size: var(--afh-text-body);
+    font-weight: 700;
+    color: var(--accent);
+    position: relative;
+    z-index: 1;
+  }
+  .axis-card .cta .arrow {
+    display: inline-block;
+    transition: transform var(--afh-duration-slow) var(--afh-ease-spring);
+  }
+  .axis-card:hover .cta .arrow {
+    transform: translateX(5px);
+  }
+  .axis-glyph {
+    width: 46px;
+    height: 46px;
+    color: var(--accent);
+    position: relative;
+    z-index: 1;
+  }
 
-/* Glyphes animés — la motion redit le label, elle ne le décore pas */
-@keyframes glyph-pulse   { 0%,100% { opacity:.35 } 50% { opacity:1 } }
-@keyframes glyph-thread  { 0%,100% { opacity:0 } 45%,55% { opacity:.85 } }
-@keyframes glyph-draw    { 0% { stroke-dashoffset:92 } 55%,100% { stroke-dashoffset:0 } }
-@keyframes glyph-approach{ 0%,100% { transform:translateX(0) } 50% { transform:translateX(var(--shift)) } }
-.g-dot    { animation: glyph-pulse 2.8s ease-in-out infinite; }
-.g-thread { animation: glyph-thread 3.6s ease-in-out infinite; }
-.g-arc    { stroke-dasharray: 92; animation: glyph-draw 3.4s ease-in-out infinite; }
-.g-disc   { animation: glyph-approach 3s ease-in-out infinite; }
+  /* Glyphes animés — la motion redit le label, elle ne le décore pas */
+  @keyframes glyph-pulse {
+    0%,
+    100% {
+      opacity: 0.35;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+  @keyframes glyph-thread {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    45%,
+    55% {
+      opacity: 0.85;
+    }
+  }
+  @keyframes glyph-draw {
+    0% {
+      stroke-dashoffset: 92;
+    }
+    55%,
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes glyph-approach {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(var(--shift));
+    }
+  }
+  .g-dot {
+    animation: glyph-pulse 2.8s ease-in-out infinite;
+  }
+  .g-thread {
+    animation: glyph-thread 3.6s ease-in-out infinite;
+  }
+  .g-arc {
+    stroke-dasharray: 92;
+    animation: glyph-draw 3.4s ease-in-out infinite;
+  }
+  .g-disc {
+    animation: glyph-approach 3s ease-in-out infinite;
+  }
 
-/* La couture — l'unique geste structurel de la charte */
-.seam-demo { border-radius: var(--afh-radius-md); overflow: hidden; border: 1px solid var(--afh-border); }
-.seam-demo .night { background: var(--afh-night-ground); height: 76px; }
-.seam-demo .seam  { height: 22px; background: var(--afh-night-ground); border-bottom: 1px solid var(--afh-cat-ocre); }
-.seam-demo .paper { background: var(--afh-bg); height: 62px; }
+  /* La couture — l'unique geste structurel de la charte */
+  .seam-demo {
+    border-radius: var(--afh-radius-md);
+    overflow: hidden;
+    border: 1px solid var(--afh-border);
+  }
+  .seam-demo .night {
+    background: var(--afh-night-ground);
+    height: 76px;
+  }
+  .seam-demo .seam {
+    height: 22px;
+    background: var(--afh-night-ground);
+    border-bottom: 1px solid var(--afh-cat-ocre);
+  }
+  .seam-demo .paper {
+    background: var(--afh-bg);
+    height: 62px;
+  }
 </style>
 <style>
-/* ══════════════════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════════════════
    NAVIGATION — les trois points d'entrée, à droite du header.
 
    Le header ne liste pas dix modules : il expose trois intentions.
    Les modules vivent derrière le clic, dans le panneau — c'est le même
    contrat que les trois cartes de la home, transposé en barre fixe.
    ══════════════════════════════════════════════════════════════════ */
-.navdemo {
-  border: 1px solid var(--afh-border); border-radius: var(--afh-radius-md);
-  overflow: hidden; background: var(--afh-night-ground); position: relative;
-  /* Le tiroir se cale sur les quatre bords du conteneur : sans hauteur
+  .navdemo {
+    border: 1px solid var(--afh-border);
+    border-radius: var(--afh-radius-md);
+    overflow: hidden;
+    background: var(--afh-night-ground);
+    position: relative;
+    /* Le tiroir se cale sur les quatre bords du conteneur : sans hauteur
      réservée il s'écraserait à la hauteur de la barre. */
-  min-height: 470px; display: flex; flex-direction: column;
-}
-/* Sous la barre, la page qu'on ne dessine pas : le tiroir a besoin de
+    min-height: 470px;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Sous la barre, la page qu'on ne dessine pas : le tiroir a besoin de
    quelque chose à recouvrir pour qu'on juge son ombre et son voile. */
-.navdemo-stage {
-  flex: 1; background:
-    repeating-linear-gradient(135deg, transparent 0 9px, rgba(241,231,216,.03) 9px 10px),
-    var(--afh-night-ground);
-  display: grid; place-items: center; padding: 24px;
-}
-.navdemo-stage p {
-  margin: 0; max-width: 34ch; text-align: center; line-height: 1.7;
-  font-family: var(--afh-font-mono); font-size: var(--afh-text-caption);
-  color: var(--afh-night-ink-3);
-}
-.navdemo[data-surface="paper"] .navdemo-stage { background: var(--afh-bg-warm); }
-.navdemo[data-surface="paper"] { background: var(--afh-bg-warm); }
+  .navdemo-stage {
+    flex: 1;
+    background:
+      repeating-linear-gradient(
+        135deg,
+        transparent 0 9px,
+        rgba(241, 231, 216, 0.03) 9px 10px
+      ),
+      var(--afh-night-ground);
+    display: grid;
+    place-items: center;
+    padding: 24px;
+  }
+  .navdemo-stage p {
+    margin: 0;
+    max-width: 34ch;
+    text-align: center;
+    line-height: 1.7;
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-caption);
+    color: var(--afh-night-ink-3);
+  }
+  .navdemo[data-surface="paper"] .navdemo-stage {
+    background: var(--afh-bg-warm);
+  }
+  .navdemo[data-surface="paper"] {
+    background: var(--afh-bg-warm);
+  }
 
-.appbar {
-  --bar-ink: var(--afh-night-ink);
-  --bar-ink-2: var(--afh-night-ink-2);
-  --bar-line: var(--afh-night-line);
-  display: flex; align-items: center; gap: 16px;
-  padding: 14px 20px; border-bottom: 1px solid var(--bar-line);
-  color: var(--bar-ink); position: relative; z-index: 3;
-}
-.navdemo[data-surface="paper"] .appbar {
-  --bar-ink: var(--afh-text); --bar-ink-2: var(--afh-text-soft); --bar-line: var(--afh-border-2);
-}
-.brand { display: flex; align-items: center; gap: 9px; flex: none; }
-.brand-mark {
-  width: 26px; height: 26px; border-radius: 50%; flex: none;
-  background: radial-gradient(circle at 34% 30%, var(--afh-cat-ocre) , var(--afh-cat-terre) 62%, var(--afh-night-surface-2));
-}
-.brand-name { font-family: var(--afh-font-display); font-weight: 900; font-size: 15px; letter-spacing: -.01em; white-space: nowrap; }
+  .appbar {
+    --bar-ink: var(--afh-night-ink);
+    --bar-ink-2: var(--afh-night-ink-2);
+    --bar-line: var(--afh-night-line);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--bar-line);
+    color: var(--bar-ink);
+    position: relative;
+    z-index: 3;
+  }
+  .navdemo[data-surface="paper"] .appbar {
+    --bar-ink: var(--afh-text);
+    --bar-ink-2: var(--afh-text-soft);
+    --bar-line: var(--afh-border-2);
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex: none;
+  }
+  .brand-mark {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    flex: none;
+    background: radial-gradient(
+      circle at 34% 30%,
+      var(--afh-cat-ocre),
+      var(--afh-cat-terre) 62%,
+      var(--afh-night-surface-2)
+    );
+  }
+  .brand-name {
+    font-family: var(--afh-font-display);
+    font-weight: 900;
+    font-size: 15px;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
 
-.axis-nav { display: flex; gap: 4px; margin-left: auto; }
-.axis-trigger {
-  border: 1px solid transparent; background: transparent; cursor: pointer;
-  font-family: inherit; font-size: 13.5px; color: var(--bar-ink-2);
-  padding: 7px 13px; border-radius: var(--afh-radius-full);
-  display: inline-flex; align-items: center; gap: 7px;
-  transition: color var(--afh-duration-base) var(--afh-ease-out),
-              border-color var(--afh-duration-base) var(--afh-ease-out);
-}
-.axis-trigger .caret { transition: transform var(--afh-duration-base) var(--afh-ease-out); font-size: 9px; opacity: .7; }
-.axis-trigger:hover { color: var(--bar-ink); border-color: var(--accent); }
-.axis-trigger:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.axis-trigger[aria-expanded="true"] {
-  color: var(--bar-ink); border-color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 16%, transparent);
-}
-.axis-trigger[aria-expanded="true"] .caret { transform: rotate(180deg); }
-/* Le point d'accent : chaque axe garde sa couleur même replié */
-.axis-trigger .seed { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); flex: none; }
+  .axis-nav {
+    display: flex;
+    gap: 4px;
+    margin-left: auto;
+  }
+  .axis-trigger {
+    border: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13.5px;
+    color: var(--bar-ink-2);
+    padding: 7px 13px;
+    border-radius: var(--afh-radius-full);
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition:
+      color var(--afh-duration-base) var(--afh-ease-out),
+      border-color var(--afh-duration-base) var(--afh-ease-out);
+  }
+  .axis-trigger .caret {
+    transition: transform var(--afh-duration-base) var(--afh-ease-out);
+    font-size: 9px;
+    opacity: 0.7;
+  }
+  .axis-trigger:hover {
+    color: var(--bar-ink);
+    border-color: var(--accent);
+  }
+  .axis-trigger:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .axis-trigger[aria-expanded="true"] {
+    color: var(--bar-ink);
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 16%, transparent);
+  }
+  .axis-trigger[aria-expanded="true"] .caret {
+    transform: rotate(180deg);
+  }
+  /* Le point d'accent : chaque axe garde sa couleur même replié */
+  .axis-trigger .seed {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
 
-.bar-icons { display: flex; gap: 8px; align-items: center; flex: none; }
-.bar-icons .icon-btn { border-color: var(--bar-line); color: var(--bar-ink-2); }
-.bar-burger { display: none; }
+  .bar-icons {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex: none;
+  }
+  .bar-icons .icon-btn {
+    border-color: var(--bar-line);
+    color: var(--bar-ink-2);
+  }
+  .bar-burger {
+    display: none;
+  }
 
-/* ── Le panneau déployé ────────────────────────────────────────── */
-.megapanel {
-  display: none; background: var(--afh-bg); border-bottom: 1px solid var(--afh-cat-ocre);
-  padding: 22px 20px 24px; position: relative; z-index: 2;
-}
-.megapanel[data-open="true"] { display: block; animation: panel-in var(--afh-duration-slow) var(--afh-ease-spring); }
-@keyframes panel-in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+  /* ── Le panneau déployé ────────────────────────────────────────── */
+  .megapanel {
+    display: none;
+    background: var(--afh-bg);
+    border-bottom: 1px solid var(--afh-cat-ocre);
+    padding: 22px 20px 24px;
+    position: relative;
+    z-index: 2;
+  }
+  .megapanel[data-open="true"] {
+    display: block;
+    animation: panel-in var(--afh-duration-slow) var(--afh-ease-spring);
+  }
+  @keyframes panel-in {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
 
-.megapanel-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; margin-bottom: 16px; }
-.megapanel-head h4 { font-family: var(--afh-font-display); font-weight: 900; font-size: 21px; margin: 0; color: var(--accent); }
-.megapanel-head p { margin: 0; font-size: var(--afh-text-small); color: var(--afh-text-soft); max-width: 54ch; line-height: 1.6; }
+  .megapanel-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .megapanel-head h4 {
+    font-family: var(--afh-font-display);
+    font-weight: 900;
+    font-size: 21px;
+    margin: 0;
+    color: var(--accent);
+  }
+  .megapanel-head p {
+    margin: 0;
+    font-size: var(--afh-text-small);
+    color: var(--afh-text-soft);
+    max-width: 54ch;
+    line-height: 1.6;
+  }
 
-.module-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 10px; }
-.module-card {
-  display: flex; align-items: flex-start; gap: 12px;
-  background: var(--afh-surface); border: 1px solid var(--afh-border);
-  border-radius: var(--afh-radius-md); padding: 13px 14px;
-  text-decoration: none; color: var(--afh-text);
-  transition: border-color var(--afh-duration-base) var(--afh-ease-out),
-              transform var(--afh-duration-base) var(--afh-ease-spring);
-}
-.module-card:hover { border-color: var(--accent); transform: translateX(3px); }
-.module-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-.module-card[aria-disabled="true"] { opacity: .62; pointer-events: none; }
-.module-card .mi {
-  width: 30px; height: 30px; border-radius: var(--afh-radius-sm); flex: none;
-  display: grid; place-items: center; color: var(--accent);
-  background: color-mix(in srgb, var(--accent) 14%, transparent);
-}
-.module-card .mtitle { display: block; font-size: 13.5px; font-weight: 700; line-height: 1.35; }
-.module-card .mroute { display: block; margin-top: 3px; font-family: var(--afh-font-mono); font-size: var(--afh-text-nano); color: var(--afh-text-muted); }
-.module-card .state-chip { margin-top: 7px; }
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 10px;
+  }
+  .module-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--afh-surface);
+    border: 1px solid var(--afh-border);
+    border-radius: var(--afh-radius-md);
+    padding: 13px 14px;
+    text-decoration: none;
+    color: var(--afh-text);
+    transition:
+      border-color var(--afh-duration-base) var(--afh-ease-out),
+      transform var(--afh-duration-base) var(--afh-ease-spring);
+  }
+  .module-card:hover {
+    border-color: var(--accent);
+    transform: translateX(3px);
+  }
+  .module-card:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  .module-card[aria-disabled="true"] {
+    opacity: 0.62;
+    pointer-events: none;
+  }
+  .module-card .mi {
+    width: 30px;
+    height: 30px;
+    border-radius: var(--afh-radius-sm);
+    flex: none;
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+  }
+  .module-card .mtitle {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+  .module-card .mroute {
+    display: block;
+    margin-top: 3px;
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-nano);
+    color: var(--afh-text-muted);
+  }
+  .module-card .state-chip {
+    margin-top: 7px;
+  }
 
-/* ── Tiroir mobile ─────────────────────────────────────────────── */
-.scrim {
-  position: absolute; inset: 0; background: rgba(18,14,10,.55);
-  opacity: 0; pointer-events: none; z-index: 8;
-  transition: opacity var(--afh-duration-base) var(--afh-ease-out);
-}
-.scrim[data-open="true"] { opacity: 1; pointer-events: auto; }
+  /* ── Tiroir mobile ─────────────────────────────────────────────── */
+  .scrim {
+    position: absolute;
+    inset: 0;
+    background: rgba(18, 14, 10, 0.55);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 8;
+    transition: opacity var(--afh-duration-base) var(--afh-ease-out);
+  }
+  .scrim[data-open="true"] {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
-.drawer {
-  position: absolute; inset: 0 0 0 auto; width: min(330px, 86%);
-  background: var(--afh-bg); z-index: 9; overflow-y: auto;
-  transform: translateX(100%); transition: transform var(--afh-duration-slow) var(--afh-ease-spring);
-  border-left: 1px solid var(--afh-cat-ocre);
-}
-.drawer[data-open="true"] { transform: none; }
-.drawer-head {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 16px 18px; border-bottom: 1px solid var(--afh-border);
-}
-.drawer-head span { font-family: var(--afh-font-display); font-weight: 900; font-size: 15px; }
-.acc { border-bottom: 1px solid var(--afh-border); }
-.acc-trigger {
-  width: 100%; display: flex; align-items: center; gap: 10px;
-  background: transparent; border: 0; cursor: pointer; font-family: inherit;
-  padding: 16px 18px; text-align: left; color: var(--afh-text);
-  font-family: var(--afh-font-display); font-weight: 900; font-size: 19px;
-}
-.acc-trigger .seed { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex: none; }
-.acc-trigger .count { margin-left: auto; font-family: var(--afh-font-mono); font-size: var(--afh-text-caption); color: var(--afh-text-muted); font-weight: 400; }
-.acc-trigger .caret { font-size: 11px; color: var(--afh-text-muted); transition: transform var(--afh-duration-base) var(--afh-ease-out); }
-.acc-trigger[aria-expanded="true"] .caret { transform: rotate(180deg); }
-.acc-trigger:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
-.acc-body { display: none; padding: 0 18px 16px; }
-.acc-body[data-open="true"] { display: grid; gap: 8px; }
-.acc-body .module-card { padding: 11px 12px; }
+  .drawer {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: min(330px, 86%);
+    background: var(--afh-bg);
+    z-index: 9;
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform var(--afh-duration-slow) var(--afh-ease-spring);
+    border-left: 1px solid var(--afh-cat-ocre);
+  }
+  .drawer[data-open="true"] {
+    transform: none;
+  }
+  .drawer-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--afh-border);
+  }
+  .drawer-head span {
+    font-family: var(--afh-font-display);
+    font-weight: 900;
+    font-size: 15px;
+  }
+  .acc {
+    border-bottom: 1px solid var(--afh-border);
+  }
+  .acc-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 16px 18px;
+    text-align: left;
+    color: var(--afh-text);
+    font-family: var(--afh-font-display);
+    font-weight: 900;
+    font-size: 19px;
+  }
+  .acc-trigger .seed {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
+  .acc-trigger .count {
+    margin-left: auto;
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-caption);
+    color: var(--afh-text-muted);
+    font-weight: 400;
+  }
+  .acc-trigger .caret {
+    font-size: 11px;
+    color: var(--afh-text-muted);
+    transition: transform var(--afh-duration-base) var(--afh-ease-out);
+  }
+  .acc-trigger[aria-expanded="true"] .caret {
+    transform: rotate(180deg);
+  }
+  .acc-trigger:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+  }
+  .acc-body {
+    display: none;
+    padding: 0 18px 16px;
+  }
+  .acc-body[data-open="true"] {
+    display: grid;
+    gap: 8px;
+  }
+  .acc-body .module-card {
+    padding: 11px 12px;
+  }
 
-@container (max-width: 760px) {
-  .axis-nav { display: none; }
-  .bar-burger { display: inline-grid; }
-  .megapanel { display: none !important; }
-}
-@container (min-width: 761px) { .drawer, .scrim { display: none; } }
+  @container (max-width: 760px) {
+    .axis-nav {
+      display: none;
+    }
+    .bar-burger {
+      display: inline-grid;
+    }
+    .megapanel {
+      display: none !important;
+    }
+  }
+  @container (min-width: 761px) {
+    .drawer,
+    .scrim {
+      display: none;
+    }
+  }
 
-/* ══════════════════════════════════════════════════════════════════
+  /* ══════════════════════════════════════════════════════════════════
    GRAMMAIRE CARTOGRAPHIQUE — la règle qui sépare les trois encodages
    ══════════════════════════════════════════════════════════════════ */
-.geo-grammar { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
-.geo-cell {
-  background: var(--afh-night-ground); border: 1px solid var(--afh-night-line);
-  border-radius: var(--afh-radius-md); overflow: hidden;
-}
-.geo-cell figcaption { padding: 13px 15px 15px; }
-.geo-cell h4 { margin: 0 0 4px; font-family: var(--afh-font-display); font-weight: 900; font-size: var(--afh-text-h3); color: var(--afh-night-ink); }
-.geo-cell p { margin: 0; font-size: var(--afh-text-small); color: var(--afh-night-ink-2); line-height: 1.6; }
-.geo-cell .verdict { display: block; margin-top: 9px; font-family: var(--afh-font-mono); font-size: var(--afh-text-nano); color: var(--afh-night-ink-3); line-height: 1.7; }
-.geo-cell svg { display: block; width: 100%; height: auto; background: #191009; }
+  .geo-grammar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 14px;
+  }
+  .geo-cell {
+    background: var(--afh-night-ground);
+    border: 1px solid var(--afh-night-line);
+    border-radius: var(--afh-radius-md);
+    overflow: hidden;
+  }
+  .geo-cell figcaption {
+    padding: 13px 15px 15px;
+  }
+  .geo-cell h4 {
+    margin: 0 0 4px;
+    font-family: var(--afh-font-display);
+    font-weight: 900;
+    font-size: var(--afh-text-h3);
+    color: var(--afh-night-ink);
+  }
+  .geo-cell p {
+    margin: 0;
+    font-size: var(--afh-text-small);
+    color: var(--afh-night-ink-2);
+    line-height: 1.6;
+  }
+  .geo-cell .verdict {
+    display: block;
+    margin-top: 9px;
+    font-family: var(--afh-font-mono);
+    font-size: var(--afh-text-nano);
+    color: var(--afh-night-ink-3);
+    line-height: 1.7;
+  }
+  .geo-cell svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #191009;
+  }
 
-@keyframes trace-in { from { stroke-dashoffset: 620; } to { stroke-dashoffset: 0; } }
-.trace { stroke-dasharray: 620; animation: trace-in 3.4s var(--afh-ease-out) infinite; }
-@keyframes field-breathe { 0%,100% { opacity: .55; } 50% { opacity: .95; } }
-.field { animation: field-breathe 4s ease-in-out infinite; }
+  @keyframes trace-in {
+    from {
+      stroke-dashoffset: 620;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  .trace {
+    stroke-dasharray: 620;
+    animation: trace-in 3.4s var(--afh-ease-out) infinite;
+  }
+  @keyframes field-breathe {
+    0%,
+    100% {
+      opacity: 0.55;
+    }
+    50% {
+      opacity: 0.95;
+    }
+  }
+  .field {
+    animation: field-breathe 4s ease-in-out infinite;
+  }
 
-@media (prefers-reduced-motion: reduce) {
-  .g-dot, .g-thread, .g-arc, .g-disc, .trace, .field, .puck { animation: none !important; }
-  .g-arc, .trace { stroke-dashoffset: 0; }
-  .g-thread { opacity: .7; }
-  .frame, .axis-card, .axis-card::after, .module-card, .drawer, .scrim,
-  .megapanel, .pill-btn, .icon-btn, .axis-trigger { transition: none !important; }
-  .megapanel[data-open="true"] { animation: none; }
-  .axis-card:hover, .module-card:hover { transform: none; }
-}
+  @media (prefers-reduced-motion: reduce) {
+    .g-dot,
+    .g-thread,
+    .g-arc,
+    .g-disc,
+    .trace,
+    .field,
+    .puck {
+      animation: none !important;
+    }
+    .g-arc,
+    .trace {
+      stroke-dashoffset: 0;
+    }
+    .g-thread {
+      opacity: 0.7;
+    }
+    .frame,
+    .axis-card,
+    .axis-card::after,
+    .module-card,
+    .drawer,
+    .scrim,
+    .megapanel,
+    .pill-btn,
+    .icon-btn,
+    .axis-trigger {
+      transition: none !important;
+    }
+    .megapanel[data-open="true"] {
+      animation: none;
+    }
+    .axis-card:hover,
+    .module-card:hover {
+      transform: none;
+    }
+  }
 </style>
 
 <div class="bench-bar">
   <p>Design system · Atlas des peuples d'Afrique</p>
   <div class="bench-controls">
     <div class="switch" role="group" aria-label="Viewport">
-      <button type="button" data-vp="mobile" aria-pressed="true">Mobile 430</button>
-      <button type="button" data-vp="desktop" aria-pressed="false">Desktop</button>
+      <button type="button" data-vp="mobile" aria-pressed="true">
+        Mobile 430
+      </button>
+      <button type="button" data-vp="desktop" aria-pressed="false">
+        Desktop
+      </button>
     </div>
   </div>
 </div>
 
 <div class="frame" id="frame" data-viewport="mobile">
-
   <div class="doc-head">
     <h1>Le système derrière la <em>carte vivante</em></h1>
-    <p>Une seule page tient les deux mondes de la charte : la nuit, réservée au globe et à la dataviz, et le parchemin, qui porte tout ce qui se lit. La couture ocre entre les deux est le seul geste structurel du système — tout le reste en découle.</p>
-    <p class="origin">Source des tokens : <code>src/styles/tokens/{color,type,space,radius,motion}.css</code><br>
-    Source des modules : <code>src/lib/accessModeHubs.ts</code> · Source des gabarits : <code>src/components/{country,people,family}/</code></p>
+    <p>
+      Une seule page tient les deux mondes de la charte : la nuit, réservée au
+      globe et à la dataviz, et le parchemin, qui porte tout ce qui se lit. La
+      couture ocre entre les deux est le seul geste structurel du système — tout
+      le reste en découle.
+    </p>
+    <p class="origin">
+      Source des tokens :
+      <code>src/styles/tokens/{color,type,space,radius,motion}.css</code><br />
+      Source des modules : <code>src/lib/accessModeHubs.ts</code> · Source des
+      gabarits : <code>src/components/{country,people,family}/</code>
+    </p>
   </div>
 
   <nav class="toc" aria-label="Sommaire">
@@ -563,7 +1379,12 @@ code { background: var(--afh-color-earth-bg); padding: 1px 5px; border-radius: v
   <!-- ══ COULEUR ══════════════════════════════════════════════════ -->
   <section class="band" id="couleur">
     <h2>Couleur</h2>
-    <p class="lede">Deux couches, jamais mélangées. La couche brute nomme des pigments&nbsp;; la couche sémantique nomme des rôles. Un composant lit un rôle, jamais un pigment — c'est ce qui permet de repeindre le système sans rouvrir un composant.</p>
+    <p class="lede">
+      Deux couches, jamais mélangées. La couche brute nomme des pigments&nbsp;;
+      la couche sémantique nomme des rôles. Un composant lit un rôle, jamais un
+      pigment — c'est ce qui permet de repeindre le système sans rouvrir un
+      composant.
+    </p>
 
     <h3>L1 · palette brute — <span class="mono">--afh-color-*</span></h3>
     <div class="swatches" id="sw-raw"></div>
@@ -575,106 +1396,263 @@ code { background: var(--afh-color-earth-bg); padding: 1px 5px; border-radius: v
     <div class="accents" id="accents"></div>
 
     <div class="rule">
-      <b>Règle de portée.</b> Un composant ne cite jamais <code>--afh-cat-teal</code>. Il lit <code>var(--accent)</code> et <code>var(--accent-tint)</code>&nbsp;; c'est un conteneur de page qui porte la classe <code>.afh-accent-teal</code>. Une route change d'accent en changeant une classe — aucun composant n'apprend sous quel accent on l'a rendu. Seul <em>terre</em> impose un <code>--accent-foreground</code> sombre&nbsp;: son ton moyen ne passe pas l'AA sous du blanc.
+      <b>Règle de portée.</b> Un composant ne cite jamais
+      <code>--afh-cat-teal</code>. Il lit <code>var(--accent)</code> et
+      <code>var(--accent-tint)</code>&nbsp;; c'est un conteneur de page qui
+      porte la classe <code>.afh-accent-teal</code>. Une route change d'accent
+      en changeant une classe — aucun composant n'apprend sous quel accent on
+      l'a rendu. Seul <em>terre</em> impose un
+      <code>--accent-foreground</code> sombre&nbsp;: son ton moyen ne passe pas
+      l'AA sous du blanc.
     </div>
 
     <h3>Trois surfaces, trois mappings — et pourquoi</h3>
-    <div class="matrix"><div class="matrix-scroll"><table>
-      <thead><tr><th>Surface</th><th>Peuple</th><th>Pays</th><th>Famille</th><th>Source en code</th></tr></thead>
-      <tbody>
-        <tr><td>Home (modules)</td><td>ocre</td><td>teal</td><td>terre</td><td><code>accessModeHubs.ts</code></td></tr>
-        <tr><td>Annuaire</td><td>terre</td><td>ocre</td><td>teal</td><td><code>DirectoryHero.DIRECTORY_ACCENT_CLASS</code></td></tr>
-        <tr><td><b>Fiche</b></td><td><b>ocre</b></td><td><b>teal</b></td><td><b>perv</b></td><td><code>FicheSequence.ACCENT_CLASS_BY_ENTITY</code></td></tr>
-      </tbody>
-    </table></div></div>
+    <div class="matrix">
+      <div class="matrix-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Surface</th>
+              <th>Peuple</th>
+              <th>Pays</th>
+              <th>Famille</th>
+              <th>Source en code</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Home (modules)</td>
+              <td>ocre</td>
+              <td>teal</td>
+              <td>terre</td>
+              <td><code>accessModeHubs.ts</code></td>
+            </tr>
+            <tr>
+              <td>Annuaire</td>
+              <td>terre</td>
+              <td>ocre</td>
+              <td>teal</td>
+              <td><code>DirectoryHero.DIRECTORY_ACCENT_CLASS</code></td>
+            </tr>
+            <tr>
+              <td><b>Fiche</b></td>
+              <td><b>ocre</b></td>
+              <td><b>teal</b></td>
+              <td><b>perv</b></td>
+              <td><code>FicheSequence.ACCENT_CLASS_BY_ENTITY</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
     <div class="rule" style="--accent: var(--afh-cat-perv)">
-      <b>Pourquoi une fiche famille est pervenche et non terre.</b> Dans une fiche, <code>IdentityPanel</code> réserve <em>terre</em> au marqueur d'exonyme imposé. Peindre la page entière en terre ferait lire ce marqueur comme l'accent de la page&nbsp;: il cesserait d'être un marqueur. L'annuaire n'a pas ce marqueur, il peut donc reprendre terre — d'où trois mappings, tous délibérés. Les trois maquettes de fiche de ce dossier suivent la ligne <b>Fiche</b>.
+      <b>Pourquoi une fiche famille est pervenche et non terre.</b> Dans une
+      fiche, <code>IdentityPanel</code> réserve <em>terre</em> au marqueur
+      d'exonyme imposé. Peindre la page entière en terre ferait lire ce marqueur
+      comme l'accent de la page&nbsp;: il cesserait d'être un marqueur.
+      L'annuaire n'a pas ce marqueur, il peut donc reprendre terre — d'où trois
+      mappings, tous délibérés. Les trois maquettes de fiche de ce dossier
+      suivent la ligne <b>Fiche</b>.
     </div>
 
-    <h3>États éditoriaux — l'information ne passe jamais par la couleur seule</h3>
-    <div style="display:flex; gap:9px; flex-wrap:wrap; align-items:center">
-      <span class="state-chip chip-stable"><span class="dot"></span>Établi</span>
-      <span class="state-chip chip-contested"><span class="dot"></span>Discuté</span>
-      <span class="state-chip chip-disputed"><span class="dot"></span>Contesté</span>
-      <span class="state-chip chip-t1"><span class="dot"></span>Source Tier&nbsp;1</span>
-      <span class="state-chip chip-t2"><span class="dot"></span>Source Tier&nbsp;2</span>
+    <h3>
+      États éditoriaux — l'information ne passe jamais par la couleur seule
+    </h3>
+    <div style="display: flex; gap: 9px; flex-wrap: wrap; align-items: center">
+      <span class="state-chip chip-stable"
+        ><span class="dot"></span>Établi</span
+      >
+      <span class="state-chip chip-contested"
+        ><span class="dot"></span>Discuté</span
+      >
+      <span class="state-chip chip-disputed"
+        ><span class="dot"></span>Contesté</span
+      >
+      <span class="state-chip chip-t1"
+        ><span class="dot"></span>Source Tier&nbsp;1</span
+      >
+      <span class="state-chip chip-t2"
+        ><span class="dot"></span>Source Tier&nbsp;2</span
+      >
       <span class="state-chip chip-soon"><span class="dot"></span>Bientôt</span>
     </div>
     <div class="rule" style="--accent: var(--afh-color-colonial)">
-      <b>Réserve du rouge.</b> <code>--afh-error</code> ne sert qu'à l'erreur d'interface. Un fait <em>contesté</em> emprunte au registre colonial (<code>--afh-classification-disputed</code>), pas au registre d'erreur&nbsp;: une donnée débattue n'est pas une donnée cassée. Une règle ESLint (<code>afh-error-misuse</code>) tient la frontière.
+      <b>Réserve du rouge.</b> <code>--afh-error</code> ne sert qu'à l'erreur
+      d'interface. Un fait <em>contesté</em> emprunte au registre colonial
+      (<code>--afh-classification-disputed</code>), pas au registre
+      d'erreur&nbsp;: une donnée débattue n'est pas une donnée cassée. Une règle
+      ESLint (<code>afh-error-misuse</code>) tient la frontière.
     </div>
   </section>
 
   <!-- ══ TYPO ═════════════════════════════════════════════════════ -->
   <section class="band" id="typo">
     <h2>Typographie</h2>
-    <p class="lede">Fraunces porte les titres — c'est l'objet imprimé, l'atlas. Nunito Sans porte la lecture. Le monospace ne sert qu'à une chose : signaler qu'on regarde une donnée, un identifiant, une mesure — jamais un texte d'auteur.</p>
+    <p class="lede">
+      Fraunces porte les titres — c'est l'objet imprimé, l'atlas. Nunito Sans
+      porte la lecture. Le monospace ne sert qu'à une chose : signaler qu'on
+      regarde une donnée, un identifiant, une mesure — jamais un texte d'auteur.
+    </p>
     <div id="type-scale"></div>
     <div class="rule">
-      <b>Base mobile.</b> L'échelle est définie à 430&nbsp;px puis remontée à deux paliers (≥&nbsp;768&nbsp;px, ≥&nbsp;1200&nbsp;px). Les valeurs ci-dessus sont les valeurs mobiles — celles qui décident du design.
+      <b>Base mobile.</b> L'échelle est définie à 430&nbsp;px puis remontée à
+      deux paliers (≥&nbsp;768&nbsp;px, ≥&nbsp;1200&nbsp;px). Les valeurs
+      ci-dessus sont les valeurs mobiles — celles qui décident du design.
     </div>
   </section>
 
   <!-- ══ ESPACE ═══════════════════════════════════════════════════ -->
   <section class="band" id="espace">
     <h2>Espace &amp; rayon</h2>
-    <p class="lede">L'échelle d'espacement est dense en bas (4 → 20&nbsp;px, par pas de 2) et lâche en haut. C'est la signature d'une interface de lecture : les micro-ajustements servent la densité du texte, les grands pas séparent les sections.</p>
+    <p class="lede">
+      L'échelle d'espacement est dense en bas (4 → 20&nbsp;px, par pas de 2) et
+      lâche en haut. C'est la signature d'une interface de lecture : les
+      micro-ajustements servent la densité du texte, les grands pas séparent les
+      sections.
+    </p>
     <h3>Espacement</h3>
     <div id="space-scale"></div>
     <h3>Rayons</h3>
     <div class="radii" id="radii"></div>
     <div class="rule" style="--accent: var(--afh-cat-teal)">
-      <b>Deux familles de rayon.</b> <code>--afh-radius-full</code> pour tout ce qui se clique et se compte (pilules, chips)&nbsp;; <code>--afh-radius-md</code>/<code>base</code> pour tout ce qui contient du texte (cartes, panneaux). Un rayon plein sur un bloc de lecture le fait lire comme un bouton.
+      <b>Deux familles de rayon.</b> <code>--afh-radius-full</code> pour tout ce
+      qui se clique et se compte (pilules, chips)&nbsp;;
+      <code>--afh-radius-md</code>/<code>base</code> pour tout ce qui contient
+      du texte (cartes, panneaux). Un rayon plein sur un bloc de lecture le fait
+      lire comme un bouton.
     </div>
   </section>
 
   <!-- ══ MOUVEMENT ════════════════════════════════════════════════ -->
   <section class="band" id="mouvement">
     <h2>Mouvement</h2>
-    <p class="lede">Quatre durées, trois courbes. Le ressort <span class="mono">cubic-bezier(.22,1,.36,1)</span> est réservé à ce qui arrive à l'écran (panneau, carte, tiroir)&nbsp;; les courbes plates servent aux changements d'état.</p>
+    <p class="lede">
+      Quatre durées, trois courbes. Le ressort
+      <span class="mono">cubic-bezier(.22,1,.36,1)</span> est réservé à ce qui
+      arrive à l'écran (panneau, carte, tiroir)&nbsp;; les courbes plates
+      servent aux changements d'état.
+    </p>
     <div class="motion-lab" id="motion-lab"></div>
     <div class="rule" style="--accent: var(--afh-cat-perv)">
-      <b>Contrat <code>prefers-reduced-motion</code>.</b> Toute durée retombe à <code>0.01ms</code> et toute transformation est neutralisée&nbsp;; seules les transitions d'opacité survivent. Sur les pages à globe, cela veut dire : la caméra <em>saute</em> à destination au lieu d'y voler, mais elle y arrive. Rien n'est jamais rendu inatteignable par la réduction de mouvement.
+      <b>Contrat <code>prefers-reduced-motion</code>.</b> Toute durée retombe à
+      <code>0.01ms</code> et toute transformation est neutralisée&nbsp;; seules
+      les transitions d'opacité survivent. Sur les pages à globe, cela veut dire
+      : la caméra <em>saute</em> à destination au lieu d'y voler, mais elle y
+      arrive. Rien n'est jamais rendu inatteignable par la réduction de
+      mouvement.
     </div>
   </section>
 
   <!-- ══ PRIMITIVES ═══════════════════════════════════════════════ -->
   <section class="band" id="primitives">
     <h2>Primitives &amp; matrice d'états</h2>
-    <p class="lede">Cinq primitives suffisent à composer la home et les trois fiches. Chacune est montrée dans tous ses états, y compris ceux qu'on ne voit jamais en capture : le focus clavier et le désactivé.</p>
+    <p class="lede">
+      Cinq primitives suffisent à composer la home et les trois fiches. Chacune
+      est montrée dans tous ses états, y compris ceux qu'on ne voit jamais en
+      capture : le focus clavier et le désactivé.
+    </p>
 
     <h3>Pilule — <span class="mono">.pill-btn</span></h3>
-    <div class="matrix"><div class="matrix-scroll"><table>
-      <thead><tr><th>État</th><th>Rendu</th><th>Ce qui change</th></tr></thead>
-      <tbody id="pill-matrix"></tbody>
-    </table></div></div>
+    <div class="matrix">
+      <div class="matrix-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>État</th>
+              <th>Rendu</th>
+              <th>Ce qui change</th>
+            </tr>
+          </thead>
+          <tbody id="pill-matrix"></tbody>
+        </table>
+      </div>
+    </div>
 
     <h3>Bouton icône — <span class="mono">.icon-btn</span></h3>
-    <div style="display:flex; gap:14px; flex-wrap:wrap; align-items:center">
-      <span class="icon-btn" title="default"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></span>
-      <span class="icon-btn is-hover" title="hover"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></span>
-      <span class="icon-btn is-focus" title="focus-visible"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></span>
+    <div style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center">
+      <span class="icon-btn" title="default"
+        ><svg
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.2-3.2" /></svg
+      ></span>
+      <span class="icon-btn is-hover" title="hover"
+        ><svg
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.2-3.2" /></svg
+      ></span>
+      <span class="icon-btn is-focus" title="focus-visible"
+        ><svg
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+        >
+          <circle cx="11" cy="11" r="7" />
+          <path d="m20 20-3.2-3.2" /></svg
+      ></span>
     </div>
 
     <h3>Carte-axe — la primitive de la home</h3>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px" id="axis-cards"></div>
+    <div
+      style="
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 14px;
+      "
+      id="axis-cards"
+    ></div>
 
     <h3>La couture</h3>
     <div class="seam-demo">
-      <div class="night"></div><div class="seam"></div><div class="paper"></div>
+      <div class="night"></div>
+      <div class="seam"></div>
+      <div class="paper"></div>
     </div>
     <div class="rule">
-      <b>Une seule couture par page.</b> Le trait ocre marque l'endroit où le ciel s'arrête et où l'archive commence. Le répéter ailleurs le vide de son sens&nbsp;: à l'intérieur du parchemin, les sections se séparent par <code>--afh-border</code>, jamais par l'ocre.
+      <b>Une seule couture par page.</b> Le trait ocre marque l'endroit où le
+      ciel s'arrête et où l'archive commence. Le répéter ailleurs le vide de son
+      sens&nbsp;: à l'intérieur du parchemin, les sections se séparent par
+      <code>--afh-border</code>, jamais par l'ocre.
     </div>
   </section>
 
   <!-- ══ NAVIGATION ═══════════════════════════════════════════════ -->
   <section class="band" id="navigation">
     <h2>Navigation — les trois points d'entrée</h2>
-    <p class="lede">Le header n'affiche pas dix modules : il affiche trois intentions. <b>Explorer</b> quand on sait ce qu'on cherche, <b>Comprendre</b> quand on veut savoir d'où vient ce qu'on lit, <b>Jouer</b> quand on veut que le corpus réponde. Les dix modules vivent derrière le clic — c'est le contrat des trois cartes de la home, transposé en barre fixe.</p>
+    <p class="lede">
+      Le header n'affiche pas dix modules : il affiche trois intentions.
+      <b>Explorer</b> quand on sait ce qu'on cherche, <b>Comprendre</b> quand on
+      veut savoir d'où vient ce qu'on lit, <b>Jouer</b> quand on veut que le
+      corpus réponde. Les dix modules vivent derrière le clic — c'est le contrat
+      des trois cartes de la home, transposé en barre fixe.
+    </p>
 
-    <p style="margin:0 0 14px; font-size:var(--afh-text-small); color:var(--afh-text-muted)">
-      Cliquez un axe pour déployer son panneau. En dessous de 760&nbsp;px le panneau devient un tiroir : basculez la planche en <b>Mobile 430</b> et utilisez le bouton menu.
+    <p
+      style="
+        margin: 0 0 14px;
+        font-size: var(--afh-text-small);
+        color: var(--afh-text-muted);
+      "
+    >
+      Cliquez un axe pour déployer son panneau. En dessous de 760&nbsp;px le
+      panneau devient un tiroir : basculez la planche en <b>Mobile 430</b> et
+      utilisez le bouton menu.
     </p>
 
     <div class="navdemo" id="navdemo">
@@ -683,13 +1661,46 @@ code { background: var(--afh-color-earth-bg); padding: 1px 5px; border-radius: v
           <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-name">Atlas des Peuples d'Afrique</span>
         </div>
-        <div class="axis-nav" id="axis-nav" role="group" aria-label="Points d'entrée"></div>
+        <div
+          class="axis-nav"
+          id="axis-nav"
+          role="group"
+          aria-label="Points d'entrée"
+        ></div>
         <div class="bar-icons">
           <button class="icon-btn" type="button" aria-label="Rechercher">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              aria-hidden="true"
+            >
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.2-3.2" />
+            </svg>
           </button>
-          <button class="icon-btn bar-burger" type="button" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="drawer">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <button
+            class="icon-btn bar-burger"
+            type="button"
+            id="burger"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="drawer"
+          >
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.2"
+              aria-hidden="true"
+            >
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
           </button>
         </div>
       </div>
@@ -697,15 +1708,33 @@ code { background: var(--afh-color-earth-bg); padding: 1px 5px; border-radius: v
       <div class="megapanel" id="megapanel" data-open="false"></div>
 
       <div class="navdemo-stage">
-        <p>Le corps de page, laissé vide ici.<br>C'est le panneau et le tiroir qu'on regarde.</p>
+        <p>
+          Le corps de page, laissé vide ici.<br />C'est le panneau et le tiroir
+          qu'on regarde.
+        </p>
       </div>
 
       <div class="scrim" id="scrim" data-open="false"></div>
       <aside class="drawer" id="drawer" data-open="false" aria-label="Menu">
         <div class="drawer-head">
           <span>Trois entrées</span>
-          <button class="icon-btn" type="button" id="drawer-close" aria-label="Fermer le menu">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          <button
+            class="icon-btn"
+            type="button"
+            id="drawer-close"
+            aria-label="Fermer le menu"
+          >
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              aria-hidden="true"
+            >
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
           </button>
         </div>
         <div id="drawer-body"></div>
@@ -713,470 +1742,511 @@ code { background: var(--afh-color-earth-bg); padding: 1px 5px; border-radius: v
     </div>
 
     <div class="rule">
-      <b>Ce que le panneau dit et que la barre tait.</b> Chaque module affiche sa route réelle et son état. « Les liens invisibles » est marqué <em>Bientôt</em> parce que sa <code>page</code> vaut <code>null</code> dans <code>accessModeHubs.ts</code> — le menu ne promet pas une page qui n'existe pas. Un module absent du menu est un module absent du corpus&nbsp;: il n'y a pas de troisième état.
+      <b>Ce que le panneau dit et que la barre tait.</b> Chaque module affiche
+      sa route réelle et son état. « Les liens invisibles » est marqué
+      <em>Bientôt</em> parce que sa <code>page</code> vaut
+      <code>null</code> dans <code>accessModeHubs.ts</code> — le menu ne promet
+      pas une page qui n'existe pas. Un module absent du menu est un module
+      absent du corpus&nbsp;: il n'y a pas de troisième état.
     </div>
     <div class="rule" style="--accent: var(--afh-cat-terre)">
-      <b>Écart relevé sur la maquette home.</b> La carte <em>Comprendre</em> y annonce « 3&nbsp;000&nbsp;ans&nbsp;· 1&nbsp;doctrine ». Le corpus ne le porte pas&nbsp;: <code>accessModeHubs.ts</code> a justement retitré ce module en « Premiers repères de migrations » (ETNI-1198) parce qu'il repose sur <b>6&nbsp;événements sourcés</b>, pas sur trois millénaires. Les chiffres du menu ci-dessus comptent donc des entrées réelles, pas des siècles.
+      <b>Écart relevé sur la maquette home.</b> La carte <em>Comprendre</em> y
+      annonce « 3&nbsp;000&nbsp;ans&nbsp;· 1&nbsp;doctrine ». Le corpus ne le
+      porte pas&nbsp;: <code>accessModeHubs.ts</code> a justement retitré ce
+      module en « Premiers repères de migrations » (ETNI-1198) parce qu'il
+      repose sur <b>6&nbsp;événements sourcés</b>, pas sur trois millénaires.
+      Les chiffres du menu ci-dessus comptent donc des entrées réelles, pas des
+      siècles.
     </div>
   </section>
 
   <!-- ══ GRAMMAIRE CARTO ══════════════════════════════════════════ -->
   <section class="band" id="carto">
     <h2>Grammaire cartographique</h2>
-    <p class="lede">Trois entités, trois façons d'exister dans l'espace — donc trois encodages qui ne s'échangent jamais. C'est la règle la plus doctrinale du système : la forme du tracé dit ce que la donnée peut prétendre.</p>
+    <p class="lede">
+      Trois entités, trois façons d'exister dans l'espace — donc trois encodages
+      qui ne s'échangent jamais. C'est la règle la plus doctrinale du système :
+      la forme du tracé dit ce que la donnée peut prétendre.
+    </p>
 
     <div class="geo-grammar" id="geo-grammar"></div>
 
     <div class="rule" style="--accent: var(--afh-cat-terre)">
-      <b>L'interdit central.</b> Un peuple ne reçoit jamais de trait fermé. Une frontière nette affirme un dedans et un dehors&nbsp;; aucune source du corpus ne permet cette affirmation pour une population. Le champ flou n'est pas un effet de style, c'est l'honnêteté du tracé : il montre <em>où l'on sait qu'il y a présence</em> sans prétendre savoir où elle s'arrête.
+      <b>L'interdit central.</b> Un peuple ne reçoit jamais de trait fermé. Une
+      frontière nette affirme un dedans et un dehors&nbsp;; aucune source du
+      corpus ne permet cette affirmation pour une population. Le champ flou
+      n'est pas un effet de style, c'est l'honnêteté du tracé : il montre
+      <em>où l'on sait qu'il y a présence</em> sans prétendre savoir où elle
+      s'arrête.
     </div>
     <div class="rule" style="--accent: var(--afh-cat-teal)">
-      <b>D'où viennent les surfaces.</b> Les frontières pays sont du Natural&nbsp;Earth admin-0 (110&nbsp;m), donnée publique et vérifiable. Le champ de présence d'un peuple est <em>calculé</em>, pas dessiné : il est pondéré par <code>content.demography.distributionByCountry</code> de la fiche AFRIK. Personne n'a tracé la tache à la main — c'est ce qui la rend citable.
+      <b>D'où viennent les surfaces.</b> Les frontières pays sont du
+      Natural&nbsp;Earth admin-0 (110&nbsp;m), donnée publique et vérifiable. Le
+      champ de présence d'un peuple est <em>calculé</em>, pas dessiné : il est
+      pondéré par <code>content.demography.distributionByCountry</code> de la
+      fiche AFRIK. Personne n'a tracé la tache à la main — c'est ce qui la rend
+      citable.
     </div>
   </section>
 
-  <div style="background:var(--afh-bg-warm); border-top:1px solid var(--afh-border); padding:22px 24px">
-    <p style="margin:0 auto; max-width:62ch; font-size:var(--afh-text-small); color:var(--afh-text-soft); line-height:1.65; text-align:center">
-      Chaque source citée. Chaque débat signalé. Chaque tracé justifié par ce que la donnée permet d'affirmer.
+  <div
+    style="
+      background: var(--afh-bg-warm);
+      border-top: 1px solid var(--afh-border);
+      padding: 22px 24px;
+    "
+  >
+    <p
+      style="
+        margin: 0 auto;
+        max-width: 62ch;
+        font-size: var(--afh-text-small);
+        color: var(--afh-text-soft);
+        line-height: 1.65;
+        text-align: center;
+      "
+    >
+      Chaque source citée. Chaque débat signalé. Chaque tracé justifié par ce
+      que la donnée permet d'affirmer.
     </p>
   </div>
 </div>
 
 <script type="module">
-/* ══════════════════════════════════════════════════════════════════
-   Le contenu de la planche est généré depuis les mêmes listes que le
-   code : réécrire un token ici sans le réécrire dans src/styles/ se
-   verrait immédiatement, parce que les deux se lisent côte à côte.
-   ══════════════════════════════════════════════════════════════════ */
+  /* ══════════════════════════════════════════════════════════════════
+     Le contenu de la planche est généré depuis les mêmes listes que le
+     code : réécrire un token ici sans le réécrire dans src/styles/ se
+     verrait immédiatement, parce que les deux se lisent côte à côte.
+     ══════════════════════════════════════════════════════════════════ */
 
-const AFRICA_PATH = "/*@AFRICA_PATH@*/";
+  const AFRICA_PATH = "/*@AFRICA_PATH@*/";
 
-/* ── Couleur ──────────────────────────────────────────────────── */
-const RAW = [
-  "--afh-color-bg", "--afh-color-bg-warm", "--afh-color-card", "--afh-color-border",
-  "--afh-color-text", "--afh-color-text-soft", "--afh-color-text-muted",
-  "--afh-color-gold", "--afh-color-green", "--afh-color-terracotta",
-  "--afh-color-earth", "--afh-color-colonial", "--afh-color-amber",
-  "--afh-color-azure", "--afh-color-clay",
-];
-const NIGHT = [
-  "--afh-night-ground", "--afh-night-surface", "--afh-night-surface-2",
-  "--afh-night-line", "--afh-night-ink", "--afh-night-ink-2", "--afh-night-ink-3",
-];
+  /* ── Couleur ──────────────────────────────────────────────────── */
+  const RAW = [
+    "--afh-color-bg", "--afh-color-bg-warm", "--afh-color-card", "--afh-color-border",
+    "--afh-color-text", "--afh-color-text-soft", "--afh-color-text-muted",
+    "--afh-color-gold", "--afh-color-green", "--afh-color-terracotta",
+    "--afh-color-earth", "--afh-color-colonial", "--afh-color-amber",
+    "--afh-color-azure", "--afh-color-clay",
+  ];
+  const NIGHT = [
+    "--afh-night-ground", "--afh-night-surface", "--afh-night-surface-2",
+    "--afh-night-line", "--afh-night-ink", "--afh-night-ink-2", "--afh-night-ink-3",
+  ];
 
-const cs = getComputedStyle(document.documentElement);
-const hexOf = (token) => cs.getPropertyValue(token).trim();
+  const cs = getComputedStyle(document.documentElement);
+  const hexOf = (token) => cs.getPropertyValue(token).trim();
 
-const renderSwatches = (id, tokens) => {
-  document.getElementById(id).innerHTML = tokens.map((t) => `
-    <div class="sw">
-      <div class="chip" style="background:${hexOf(t)}"></div>
-      <div class="meta"><span class="name">${t}</span><span class="hex">${hexOf(t)}</span></div>
+  const renderSwatches = (id, tokens) => {
+    document.getElementById(id).innerHTML = tokens.map((t) => `
+      <div class="sw">
+        <div class="chip" style="background:${hexOf(t)}"></div>
+        <div class="meta"><span class="name">${t}</span><span class="hex">${hexOf(t)}</span></div>
+      </div>`).join("");
+  };
+  renderSwatches("sw-raw", RAW);
+  renderSwatches("sw-night", NIGHT);
+
+  // Les quatre accents, chacun montré dans son propre scope.
+  const ACCENTS = [
+    { key: "ocre",  label: "Ocre",       role: "Peuples · l'accent par défaut" },
+    { key: "teal",  label: "Teal",       role: "Pays · doctrine · comparer" },
+    { key: "terre", label: "Terre",      role: "Familles · à-propos" },
+    { key: "perv",  label: "Pervenche",  role: "Recherche · migrations" },
+  ];
+  document.getElementById("accents").innerHTML = ACCENTS.map((a) => `
+    <div class="accent-demo afh-accent-${a.key}">
+      <b>${a.label}</b>
+      <span style="font-size:var(--afh-text-small); color:var(--afh-text-soft)">${a.role}</span>
+      <span class="pill">Texte sur accent plein</span>
+      <span class="tk">--afh-cat-${a.key} · --afh-cat-${a.key}-tint</span>
     </div>`).join("");
-};
-renderSwatches("sw-raw", RAW);
-renderSwatches("sw-night", NIGHT);
 
-// Les quatre accents, chacun montré dans son propre scope.
-const ACCENTS = [
-  { key: "ocre",  label: "Ocre",       role: "Peuples · l'accent par défaut" },
-  { key: "teal",  label: "Teal",       role: "Pays · doctrine · comparer" },
-  { key: "terre", label: "Terre",      role: "Familles · à-propos" },
-  { key: "perv",  label: "Pervenche",  role: "Recherche · migrations" },
-];
-document.getElementById("accents").innerHTML = ACCENTS.map((a) => `
-  <div class="accent-demo afh-accent-${a.key}">
-    <b>${a.label}</b>
-    <span style="font-size:var(--afh-text-small); color:var(--afh-text-soft)">${a.role}</span>
-    <span class="pill">Texte sur accent plein</span>
-    <span class="tk">--afh-cat-${a.key} · --afh-cat-${a.key}-tint</span>
-  </div>`).join("");
+  /* ── Typographie ──────────────────────────────────────────────── */
+  const TYPE = [
+    { t: "hero",    px: 34, fam: "display", w: 900, s: "Le continent raconté" },
+    { t: "h1",      px: 24, fam: "display", w: 900, s: "Yoruba · Yorùbá ènìyàn" },
+    { t: "h2",      px: 18, fam: "display", w: 700, s: "Origines et formation" },
+    { t: "h3",      px: 16, fam: "body",    w: 700, s: "Pays de présence" },
+    { t: "body",    px: 14, fam: "body",    w: 400, s: "Les traditions orales placent l'origine à Ilé-Ifẹ̀." },
+    { t: "small",   px: 12, fam: "body",    w: 400, s: "Estimation 2025, recensements nationaux" },
+    { t: "caption", px: 11, fam: "body",    w: 700, s: "SOURCE TIER 1" },
+    { t: "micro",   px: 10, fam: "mono",    w: 400, s: "PPL_YORUBA · FLG_BENOUECONGO" },
+    { t: "nano",    px: 9,  fam: "mono",    w: 400, s: "48 482 000 · réf. 2025" },
+  ];
+  document.getElementById("type-scale").innerHTML = TYPE.map((r) => `
+    <div class="type-row">
+      <span class="tk">--afh-text-${r.t}</span>
+      <span class="sample" style="font-family:var(--afh-font-${r.fam}); font-size:${r.px}px; font-weight:${r.w}">${r.s}</span>
+      <span class="spec">${r.px}px · ${r.fam}</span>
+    </div>`).join("");
 
-/* ── Typographie ──────────────────────────────────────────────── */
-const TYPE = [
-  { t: "hero",    px: 34, fam: "display", w: 900, s: "Le continent raconté" },
-  { t: "h1",      px: 24, fam: "display", w: 900, s: "Yoruba · Yorùbá ènìyàn" },
-  { t: "h2",      px: 18, fam: "display", w: 700, s: "Origines et formation" },
-  { t: "h3",      px: 16, fam: "body",    w: 700, s: "Pays de présence" },
-  { t: "body",    px: 14, fam: "body",    w: 400, s: "Les traditions orales placent l'origine à Ilé-Ifẹ̀." },
-  { t: "small",   px: 12, fam: "body",    w: 400, s: "Estimation 2025, recensements nationaux" },
-  { t: "caption", px: 11, fam: "body",    w: 700, s: "SOURCE TIER 1" },
-  { t: "micro",   px: 10, fam: "mono",    w: 400, s: "PPL_YORUBA · FLG_BENOUECONGO" },
-  { t: "nano",    px: 9,  fam: "mono",    w: 400, s: "48 482 000 · réf. 2025" },
-];
-document.getElementById("type-scale").innerHTML = TYPE.map((r) => `
-  <div class="type-row">
-    <span class="tk">--afh-text-${r.t}</span>
-    <span class="sample" style="font-family:var(--afh-font-${r.fam}); font-size:${r.px}px; font-weight:${r.w}">${r.s}</span>
-    <span class="spec">${r.px}px · ${r.fam}</span>
-  </div>`).join("");
+  /* ── Espace / rayon ───────────────────────────────────────────── */
+  const SPACE = [["xs",4],["md",8],["lg",12],["2xl",16],["4xl",20],["5xl",24],["6xl",32],["7xl",40],["8xl",48]];
+  document.getElementById("space-scale").innerHTML = SPACE.map(([n, px]) => `
+    <div class="scale-row">
+      <span class="tk">--afh-space-${n}</span>
+      <span class="bar" style="width:${px * 3}px"></span>
+      <span class="tk" style="width:auto">${px}px</span>
+    </div>`).join("");
 
-/* ── Espace / rayon ───────────────────────────────────────────── */
-const SPACE = [["xs",4],["md",8],["lg",12],["2xl",16],["4xl",20],["5xl",24],["6xl",32],["7xl",40],["8xl",48]];
-document.getElementById("space-scale").innerHTML = SPACE.map(([n, px]) => `
-  <div class="scale-row">
-    <span class="tk">--afh-space-${n}</span>
-    <span class="bar" style="width:${px * 3}px"></span>
-    <span class="tk" style="width:auto">${px}px</span>
-  </div>`).join("");
+  const RADII = [["sm",4],["md",6],["base",12],["xl",16],["full",9999]];
+  document.getElementById("radii").innerHTML = RADII.map(([n, px]) => `
+    <div style="border-radius:${px}px">${n}<br>${px === 9999 ? "full" : px + "px"}</div>`).join("");
 
-const RADII = [["sm",4],["md",6],["base",12],["xl",16],["full",9999]];
-document.getElementById("radii").innerHTML = RADII.map(([n, px]) => `
-  <div style="border-radius:${px}px">${n}<br>${px === 9999 ? "full" : px + "px"}</div>`).join("");
+  /* ── Mouvement ────────────────────────────────────────────────── */
+  const MOTION = [
+    { tk: "--afh-duration-fast · ease-out",  ms: 120, ease: "cubic-bezier(0,0,.2,1)" },
+    { tk: "--afh-duration-base · ease-in-out", ms: 200, ease: "cubic-bezier(.4,0,.2,1)" },
+    { tk: "--afh-duration-slow · ressort",   ms: 320, ease: "cubic-bezier(.22,1,.36,1)" },
+    { tk: "--afh-duration-fade · ease-out",  ms: 400, ease: "cubic-bezier(0,0,.2,1)" },
+  ];
+  document.getElementById("motion-lab").innerHTML = MOTION.map((m, i) => `
+    <div class="motion-cell">
+      <span class="tk">${m.tk}</span>
+      <div class="track"><span class="puck" data-puck="${i}"></span></div>
+    </div>`).join("");
 
-/* ── Mouvement ────────────────────────────────────────────────── */
-const MOTION = [
-  { tk: "--afh-duration-fast · ease-out",  ms: 120, ease: "cubic-bezier(0,0,.2,1)" },
-  { tk: "--afh-duration-base · ease-in-out", ms: 200, ease: "cubic-bezier(.4,0,.2,1)" },
-  { tk: "--afh-duration-slow · ressort",   ms: 320, ease: "cubic-bezier(.22,1,.36,1)" },
-  { tk: "--afh-duration-fade · ease-out",  ms: 400, ease: "cubic-bezier(0,0,.2,1)" },
-];
-document.getElementById("motion-lab").innerHTML = MOTION.map((m, i) => `
-  <div class="motion-cell">
-    <span class="tk">${m.tk}</span>
-    <div class="track"><span class="puck" data-puck="${i}"></span></div>
-  </div>`).join("");
-
-const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-if (!still) {
-  MOTION.forEach((m, i) => {
-    const puck = document.querySelector(`[data-puck="${i}"]`);
-    // La piste fait la largeur de sa cellule ; on la mesure au moment de
-    // jouer plutôt qu'au chargement, pour survivre au changement de viewport.
-    const play = () => {
-      const track = puck.parentElement;
-      puck.animate(
-        [{ transform: "translateX(0)" }, { transform: `translateX(${track.clientWidth - 26}px)` }],
-        { duration: m.ms, easing: m.ease, direction: "alternate", iterations: 2 }
-      );
-    };
-    play();
-    setInterval(play, 2200 + i * 120);
-  });
-}
-
-/* ── Matrice d'états de la pilule ─────────────────────────────── */
-const PILL_STATES = [
-  { cls: "",             lbl: "default",        why: "Bordure neutre, texte adouci" },
-  { cls: "is-hover",     lbl: "hover",          why: "La bordure prend l'accent de la page" },
-  { cls: "is-focus",     lbl: "focus-visible",  why: "Anneau 2px + offset 2px — jamais supprimé" },
-  { cls: "is-active",    lbl: "active",         why: "1px vers le bas, sans changement de couleur" },
-  { cls: "is-selected",  lbl: "aria-pressed",   why: "Accent plein + --accent-foreground" },
-  { cls: "",             lbl: "disabled",       why: "Opacité .42, pointeur refusé", dis: true },
-];
-document.getElementById("pill-matrix").innerHTML = PILL_STATES.map((s) => `
-  <tr>
-    <td>${s.lbl}</td>
-    <td><button class="pill-btn ${s.cls}" type="button" ${s.dis ? "disabled" : ""}>Recentrer</button></td>
-    <td style="font-size:var(--afh-text-small); color:var(--afh-text-soft)">${s.why}</td>
-  </tr>`).join("");
-
-/* ── Cartes-axes ──────────────────────────────────────────────── */
-const DOTS = [[14,18],[26,12],[38,20],[20,30],[33,34],[12,40],[40,41]];
-const GLYPHS = {
-  explorer: `<svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
-    <path class="g-thread" d="M14 18 L26 12 L38 20" stroke="currentColor" stroke-width="1.2" style="animation-delay:.2s"/>
-    <path class="g-thread" d="M20 30 L33 34 L40 41" stroke="currentColor" stroke-width="1.2" style="animation-delay:1.5s"/>
-    ${DOTS.map(([x,y],i) => `<circle class="g-dot" cx="${x}" cy="${y}" r="3" fill="currentColor" style="animation-delay:${(i*0.34).toFixed(2)}s"/>`).join("")}
-  </svg>`,
-  comprendre: `<svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
-    <path d="M8 40 H44" stroke="currentColor" stroke-width="1.2" opacity=".3"/>
-    <path class="g-arc" d="M10 38 Q20 10 30 24 T44 14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-    <circle cx="10" cy="38" r="2.4" fill="currentColor" opacity=".55"/>
-    <circle cx="44" cy="14" r="2.4" fill="currentColor" opacity=".55"/>
-  </svg>`,
-  jouer: `<svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
-    <circle class="g-disc" cx="20" cy="26" r="11" stroke="currentColor" stroke-width="2" style="--shift:5px"/>
-    <circle class="g-disc" cx="32" cy="26" r="11" stroke="currentColor" stroke-width="2" style="--shift:-5px"/>
-  </svg>`,
-};
-
-/* ══════════════════════════════════════════════════════════════════
-   Les dix modules, recopiés de src/lib/accessModeHubs.ts sans une
-   virgule d'écart : id, titre, axe, accent, illustration, état, route.
-   ══════════════════════════════════════════════════════════════════ */
-const MODULES = [
-  { id: "peuples",   title: "Les peuples d'Afrique",         axis: "explorer",   accent: "ocre",  icon: "users",       href: "/fr/peuples" },
-  { id: "pays",      title: "Les pays d'Afrique",            axis: "explorer",   accent: "teal",  icon: "globe",       href: "/fr/pays" },
-  { id: "familles",  title: "L'arbre des familles",          axis: "explorer",   accent: "terre", icon: "network",     href: "/fr/familles" },
-  { id: "recherche", title: "Recherche libre",               axis: "explorer",   accent: "perv",  icon: "search",      href: "/fr/recherche" },
-  { id: "noms",      title: "Noms & appellations",           axis: "explorer",   accent: "ocre",  icon: "tag",         href: "/fr/noms" },
-  { id: "doctrine",  title: "La doctrine éditoriale",        axis: "comprendre", accent: "teal",  icon: "book",        href: "/fr/doctrine" },
-  { id: "about",     title: "À propos du projet",            axis: "comprendre", accent: "terre", icon: "info",        href: "/fr/a-propos" },
-  { id: "frise",     title: "Premiers repères de migrations", axis: "comprendre", accent: "perv",  icon: "history",     href: "/fr/migrations" },
-  { id: "liens",     title: "Les liens invisibles",          axis: "jouer",      accent: "ocre",  icon: "link",        href: null },
-  { id: "comparer",  title: "Comparer deux peuples",         axis: "jouer",      accent: "teal",  icon: "compare",     href: "/fr/comparer" },
-];
-
-const ICONS = {
-  users:   `<path d="M16 19v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V19"/><circle cx="9" cy="7" r="3.2"/><path d="M22 19v-1.5a4 4 0 0 0-3-3.87"/><path d="M16 4.1a4 4 0 0 1 0 7.75"/>`,
-  globe:   `<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18Z"/>`,
-  network: `<circle cx="12" cy="5" r="2.6"/><circle cx="5.5" cy="18.5" r="2.6"/><circle cx="18.5" cy="18.5" r="2.6"/><path d="M12 7.6v4.9M10.4 13.6 7 16.6M13.6 13.6 17 16.6"/>`,
-  search:  `<circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/>`,
-  tag:     `<path d="M20.6 12.3 12.3 20.6a2 2 0 0 1-2.8 0l-6.1-6.1a2 2 0 0 1-.6-1.4V4.4A1.4 1.4 0 0 1 4.4 3h8.7c.5 0 1 .2 1.4.6l6.1 6.1a2 2 0 0 1 0 2.6Z"/><circle cx="7.6" cy="7.6" r="1.3" fill="currentColor"/>`,
-  book:    `<path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 0 4 22Z"/><path d="M4 17.5A2.5 2.5 0 0 1 6.5 15H20"/>`,
-  info:    `<circle cx="12" cy="12" r="9"/><path d="M12 16v-4.5"/><circle cx="12" cy="8.2" r=".9" fill="currentColor"/>`,
-  history: `<path d="M3 12a9 9 0 1 0 2.6-6.4"/><path d="M3 4.5V9h4.5"/><path d="M12 7.5V12l3 2"/>`,
-  link:    `<path d="M9.5 14.5a4 4 0 0 1 0-5.7l2.4-2.4a4 4 0 1 1 5.7 5.7l-1.2 1.2"/><path d="M14.5 9.5a4 4 0 0 1 0 5.7l-2.4 2.4a4 4 0 1 1-5.7-5.7l1.2-1.2"/>`,
-  compare: `<circle cx="6" cy="6.5" r="2.6"/><circle cx="6" cy="17.5" r="2.6"/><circle cx="18" cy="12" r="2.6"/><path d="M8.6 7.6 15.6 11M8.6 16.4 15.6 13"/>`,
-};
-const icon = (name) =>
-  `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
-
-const AXES = [
-  { id: "explorer",   label: "Explorer",   accent: "ocre",
-    blurb: "Quand on sait ce qu'on cherche — une entité, un nom, une entrée dans le corpus." },
-  { id: "comprendre", label: "Comprendre", accent: "teal",
-    blurb: "Quand on veut savoir d'où vient ce qu'on lit — la méthode, les sources, le temps long." },
-  { id: "jouer",      label: "Jouer",      accent: "perv",
-    blurb: "Quand on veut que le corpus réponde — mise en regard, rapprochements, écarts." },
-];
-
-const modulesOf = (axisId) => MODULES.filter((m) => m.axis === axisId);
-
-const moduleCard = (m) => {
-  const soon = m.href === null;
-  return `
-  <a class="module-card afh-accent-${m.accent}" href="${m.href ?? "#"}"
-     ${soon ? 'aria-disabled="true" tabindex="-1"' : ""}>
-    <span class="mi">${icon(m.icon)}</span>
-    <span style="min-width:0">
-      <span class="mtitle">${m.title}</span>
-      <span class="mroute">${soon ? "route non résolue" : m.href}</span>
-      ${soon ? '<span class="state-chip chip-soon"><span class="dot"></span>Bientôt</span>' : ""}
-    </span>
-  </a>`;
-};
-
-/* ── Cartes-axes (section Primitives) ─────────────────────────── */
-document.getElementById("axis-cards").innerHTML = AXES.map((a) => {
-  const mods = modulesOf(a.id);
-  const soon = mods.filter((m) => m.href === null).length;
-  const fig = soon ? `${mods.length - soon} entrées · ${soon} bientôt` : `${mods.length} entrées`;
-  return `
-  <a class="axis-card afh-accent-${a.accent}" href="#navigation">
-    <span class="axis-glyph">${GLYPHS[a.id]}</span>
-    <h4>${a.label}</h4>
-    <p class="fig">${fig}</p>
-    <span class="cta">Ouvrir <span class="arrow" aria-hidden="true">→</span></span>
-  </a>`;
-}).join("");
-
-/* ── Le mega-menu ─────────────────────────────────────────────── */
-const nav = document.getElementById("axis-nav");
-const panel = document.getElementById("megapanel");
-
-nav.innerHTML = AXES.map((a) => `
-  <button class="axis-trigger afh-accent-${a.accent}" type="button"
-          data-axis="${a.id}" aria-expanded="false" aria-controls="megapanel">
-    <span class="seed" aria-hidden="true"></span>${a.label}
-    <span class="caret" aria-hidden="true">▾</span>
-  </button>`).join("");
-
-let openAxis = null;
-
-function openPanel(axisId) {
-  const axis = AXES.find((a) => a.id === axisId);
-  openAxis = axisId;
-  panel.className = `megapanel afh-accent-${axis.accent}`;
-  panel.dataset.open = "true";
-  panel.innerHTML = `
-    <div class="megapanel-head">
-      <h4>${axis.label}</h4>
-      <p>${axis.blurb}</p>
-    </div>
-    <div class="module-grid">${modulesOf(axisId).map(moduleCard).join("")}</div>`;
-  nav.querySelectorAll(".axis-trigger").forEach((b) =>
-    b.setAttribute("aria-expanded", String(b.dataset.axis === axisId)));
-}
-
-function closePanel() {
-  openAxis = null;
-  panel.dataset.open = "false";
-  panel.innerHTML = "";
-  nav.querySelectorAll(".axis-trigger").forEach((b) => b.setAttribute("aria-expanded", "false"));
-}
-
-nav.addEventListener("click", (e) => {
-  const btn = e.target.closest(".axis-trigger");
-  if (!btn) return;
-  btn.dataset.axis === openAxis ? closePanel() : openPanel(btn.dataset.axis);
-});
-
-// Une flèche déplace le focus entre les axes ; Échap referme et rend le
-// focus au déclencheur, sans quoi le clavier reste piégé dans le panneau.
-nav.addEventListener("keydown", (e) => {
-  const btns = [...nav.querySelectorAll(".axis-trigger")];
-  const i = btns.indexOf(document.activeElement);
-  if (i === -1) return;
-  if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
-    e.preventDefault();
-    const next = btns[(i + (e.key === "ArrowRight" ? 1 : btns.length - 1)) % btns.length];
-    next.focus();
-    if (openAxis) openPanel(next.dataset.axis);
+  const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!still) {
+    MOTION.forEach((m, i) => {
+      const puck = document.querySelector(`[data-puck="${i}"]`);
+      // La piste fait la largeur de sa cellule ; on la mesure au moment de
+      // jouer plutôt qu'au chargement, pour survivre au changement de viewport.
+      const play = () => {
+        const track = puck.parentElement;
+        puck.animate(
+          [{ transform: "translateX(0)" }, { transform: `translateX(${track.clientWidth - 26}px)` }],
+          { duration: m.ms, easing: m.ease, direction: "alternate", iterations: 2 }
+        );
+      };
+      play();
+      setInterval(play, 2200 + i * 120);
+    });
   }
-});
 
-document.getElementById("navdemo").addEventListener("keydown", (e) => {
-  if (e.key !== "Escape") return;
-  if (openAxis) {
-    const trigger = nav.querySelector(`[data-axis="${openAxis}"]`);
-    closePanel();
-    trigger.focus();
-  }
-  if (drawer.dataset.open === "true") closeDrawer();
-});
+  /* ── Matrice d'états de la pilule ─────────────────────────────── */
+  const PILL_STATES = [
+    { cls: "",             lbl: "default",        why: "Bordure neutre, texte adouci" },
+    { cls: "is-hover",     lbl: "hover",          why: "La bordure prend l'accent de la page" },
+    { cls: "is-focus",     lbl: "focus-visible",  why: "Anneau 2px + offset 2px — jamais supprimé" },
+    { cls: "is-active",    lbl: "active",         why: "1px vers le bas, sans changement de couleur" },
+    { cls: "is-selected",  lbl: "aria-pressed",   why: "Accent plein + --accent-foreground" },
+    { cls: "",             lbl: "disabled",       why: "Opacité .42, pointeur refusé", dis: true },
+  ];
+  document.getElementById("pill-matrix").innerHTML = PILL_STATES.map((s) => `
+    <tr>
+      <td>${s.lbl}</td>
+      <td><button class="pill-btn ${s.cls}" type="button" ${s.dis ? "disabled" : ""}>Recentrer</button></td>
+      <td style="font-size:var(--afh-text-small); color:var(--afh-text-soft)">${s.why}</td>
+    </tr>`).join("");
 
-/* ── Le tiroir mobile ─────────────────────────────────────────── */
-const drawer = document.getElementById("drawer");
-const scrim = document.getElementById("scrim");
-const burger = document.getElementById("burger");
+  /* ── Cartes-axes ──────────────────────────────────────────────── */
+  const DOTS = [[14,18],[26,12],[38,20],[20,30],[33,34],[12,40],[40,41]];
+  const GLYPHS = {
+    explorer: `<svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
+      <path class="g-thread" d="M14 18 L26 12 L38 20" stroke="currentColor" stroke-width="1.2" style="animation-delay:.2s"/>
+      <path class="g-thread" d="M20 30 L33 34 L40 41" stroke="currentColor" stroke-width="1.2" style="animation-delay:1.5s"/>
+      ${DOTS.map(([x,y],i) => `<circle class="g-dot" cx="${x}" cy="${y}" r="3" fill="currentColor" style="animation-delay:${(i*0.34).toFixed(2)}s"/>`).join("")}
+    </svg>`,
+    comprendre: `<svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
+      <path d="M8 40 H44" stroke="currentColor" stroke-width="1.2" opacity=".3"/>
+      <path class="g-arc" d="M10 38 Q20 10 30 24 T44 14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <circle cx="10" cy="38" r="2.4" fill="currentColor" opacity=".55"/>
+      <circle cx="44" cy="14" r="2.4" fill="currentColor" opacity=".55"/>
+    </svg>`,
+    jouer: `<svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
+      <circle class="g-disc" cx="20" cy="26" r="11" stroke="currentColor" stroke-width="2" style="--shift:5px"/>
+      <circle class="g-disc" cx="32" cy="26" r="11" stroke="currentColor" stroke-width="2" style="--shift:-5px"/>
+    </svg>`,
+  };
 
-document.getElementById("drawer-body").innerHTML = AXES.map((a) => {
-  const mods = modulesOf(a.id);
-  return `
-  <div class="acc afh-accent-${a.accent}">
-    <button class="acc-trigger" type="button" data-acc="${a.id}" aria-expanded="false" aria-controls="acc-${a.id}">
+  /* ══════════════════════════════════════════════════════════════════
+     Les dix modules, recopiés de src/lib/accessModeHubs.ts sans une
+     virgule d'écart : id, titre, axe, accent, illustration, état, route.
+     ══════════════════════════════════════════════════════════════════ */
+  const MODULES = [
+    { id: "peuples",   title: "Les peuples d'Afrique",         axis: "explorer",   accent: "ocre",  icon: "users",       href: "/fr/peuples" },
+    { id: "pays",      title: "Les pays d'Afrique",            axis: "explorer",   accent: "teal",  icon: "globe",       href: "/fr/pays" },
+    { id: "familles",  title: "L'arbre des familles",          axis: "explorer",   accent: "terre", icon: "network",     href: "/fr/familles" },
+    { id: "recherche", title: "Recherche libre",               axis: "explorer",   accent: "perv",  icon: "search",      href: "/fr/recherche" },
+    { id: "noms",      title: "Noms & appellations",           axis: "explorer",   accent: "ocre",  icon: "tag",         href: "/fr/noms" },
+    { id: "doctrine",  title: "La doctrine éditoriale",        axis: "comprendre", accent: "teal",  icon: "book",        href: "/fr/doctrine" },
+    { id: "about",     title: "À propos du projet",            axis: "comprendre", accent: "terre", icon: "info",        href: "/fr/a-propos" },
+    { id: "frise",     title: "Premiers repères de migrations", axis: "comprendre", accent: "perv",  icon: "history",     href: "/fr/migrations" },
+    { id: "liens",     title: "Les liens invisibles",          axis: "jouer",      accent: "ocre",  icon: "link",        href: null },
+    { id: "comparer",  title: "Comparer deux peuples",         axis: "jouer",      accent: "teal",  icon: "compare",     href: "/fr/comparer" },
+  ];
+
+  const ICONS = {
+    users:   `<path d="M16 19v-1.5a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4V19"/><circle cx="9" cy="7" r="3.2"/><path d="M22 19v-1.5a4 4 0 0 0-3-3.87"/><path d="M16 4.1a4 4 0 0 1 0 7.75"/>`,
+    globe:   `<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18Z"/>`,
+    network: `<circle cx="12" cy="5" r="2.6"/><circle cx="5.5" cy="18.5" r="2.6"/><circle cx="18.5" cy="18.5" r="2.6"/><path d="M12 7.6v4.9M10.4 13.6 7 16.6M13.6 13.6 17 16.6"/>`,
+    search:  `<circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/>`,
+    tag:     `<path d="M20.6 12.3 12.3 20.6a2 2 0 0 1-2.8 0l-6.1-6.1a2 2 0 0 1-.6-1.4V4.4A1.4 1.4 0 0 1 4.4 3h8.7c.5 0 1 .2 1.4.6l6.1 6.1a2 2 0 0 1 0 2.6Z"/><circle cx="7.6" cy="7.6" r="1.3" fill="currentColor"/>`,
+    book:    `<path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 0 4 22Z"/><path d="M4 17.5A2.5 2.5 0 0 1 6.5 15H20"/>`,
+    info:    `<circle cx="12" cy="12" r="9"/><path d="M12 16v-4.5"/><circle cx="12" cy="8.2" r=".9" fill="currentColor"/>`,
+    history: `<path d="M3 12a9 9 0 1 0 2.6-6.4"/><path d="M3 4.5V9h4.5"/><path d="M12 7.5V12l3 2"/>`,
+    link:    `<path d="M9.5 14.5a4 4 0 0 1 0-5.7l2.4-2.4a4 4 0 1 1 5.7 5.7l-1.2 1.2"/><path d="M14.5 9.5a4 4 0 0 1 0 5.7l-2.4 2.4a4 4 0 1 1-5.7-5.7l1.2-1.2"/>`,
+    compare: `<circle cx="6" cy="6.5" r="2.6"/><circle cx="6" cy="17.5" r="2.6"/><circle cx="18" cy="12" r="2.6"/><path d="M8.6 7.6 15.6 11M8.6 16.4 15.6 13"/>`,
+  };
+  const icon = (name) =>
+    `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
+
+  const AXES = [
+    { id: "explorer",   label: "Explorer",   accent: "ocre",
+      blurb: "Quand on sait ce qu'on cherche — une entité, un nom, une entrée dans le corpus." },
+    { id: "comprendre", label: "Comprendre", accent: "teal",
+      blurb: "Quand on veut savoir d'où vient ce qu'on lit — la méthode, les sources, le temps long." },
+    { id: "jouer",      label: "Jouer",      accent: "perv",
+      blurb: "Quand on veut que le corpus réponde — mise en regard, rapprochements, écarts." },
+  ];
+
+  const modulesOf = (axisId) => MODULES.filter((m) => m.axis === axisId);
+
+  const moduleCard = (m) => {
+    const soon = m.href === null;
+    return `
+    <a class="module-card afh-accent-${m.accent}" href="${m.href ?? "#"}"
+       ${soon ? 'aria-disabled="true" tabindex="-1"' : ""}>
+      <span class="mi">${icon(m.icon)}</span>
+      <span style="min-width:0">
+        <span class="mtitle">${m.title}</span>
+        <span class="mroute">${soon ? "route non résolue" : m.href}</span>
+        ${soon ? '<span class="state-chip chip-soon"><span class="dot"></span>Bientôt</span>' : ""}
+      </span>
+    </a>`;
+  };
+
+  /* ── Cartes-axes (section Primitives) ─────────────────────────── */
+  document.getElementById("axis-cards").innerHTML = AXES.map((a) => {
+    const mods = modulesOf(a.id);
+    const soon = mods.filter((m) => m.href === null).length;
+    const fig = soon ? `${mods.length - soon} entrées · ${soon} bientôt` : `${mods.length} entrées`;
+    return `
+    <a class="axis-card afh-accent-${a.accent}" href="#navigation">
+      <span class="axis-glyph">${GLYPHS[a.id]}</span>
+      <h4>${a.label}</h4>
+      <p class="fig">${fig}</p>
+      <span class="cta">Ouvrir <span class="arrow" aria-hidden="true">→</span></span>
+    </a>`;
+  }).join("");
+
+  /* ── Le mega-menu ─────────────────────────────────────────────── */
+  const nav = document.getElementById("axis-nav");
+  const panel = document.getElementById("megapanel");
+
+  nav.innerHTML = AXES.map((a) => `
+    <button class="axis-trigger afh-accent-${a.accent}" type="button"
+            data-axis="${a.id}" aria-expanded="false" aria-controls="megapanel">
       <span class="seed" aria-hidden="true"></span>${a.label}
-      <span class="count">${mods.length}</span>
       <span class="caret" aria-hidden="true">▾</span>
-    </button>
-    <div class="acc-body" id="acc-${a.id}" data-open="false">${mods.map(moduleCard).join("")}</div>
-  </div>`;
-}).join("");
+    </button>`).join("");
 
-document.getElementById("drawer-body").addEventListener("click", (e) => {
-  const btn = e.target.closest(".acc-trigger");
-  if (!btn) return;
-  const body = document.getElementById(`acc-${btn.dataset.acc}`);
-  const open = body.dataset.open !== "true";
-  body.dataset.open = String(open);
-  btn.setAttribute("aria-expanded", String(open));
-});
+  let openAxis = null;
 
-const openDrawer = () => {
-  drawer.dataset.open = "true"; scrim.dataset.open = "true";
-  burger.setAttribute("aria-expanded", "true");
-  drawer.querySelector(".acc-trigger").focus();
-};
-const closeDrawer = () => {
-  drawer.dataset.open = "false"; scrim.dataset.open = "false";
-  burger.setAttribute("aria-expanded", "false");
-  burger.focus();
-};
-burger.addEventListener("click", openDrawer);
-scrim.addEventListener("click", closeDrawer);
-document.getElementById("drawer-close").addEventListener("click", closeDrawer);
+  function openPanel(axisId) {
+    const axis = AXES.find((a) => a.id === axisId);
+    openAxis = axisId;
+    panel.className = `megapanel afh-accent-${axis.accent}`;
+    panel.dataset.open = "true";
+    panel.innerHTML = `
+      <div class="megapanel-head">
+        <h4>${axis.label}</h4>
+        <p>${axis.blurb}</p>
+      </div>
+      <div class="module-grid">${modulesOf(axisId).map(moduleCard).join("")}</div>`;
+    nav.querySelectorAll(".axis-trigger").forEach((b) =>
+      b.setAttribute("aria-expanded", String(b.dataset.axis === axisId)));
+  }
 
-/* ══════════════════════════════════════════════════════════════════
-   GRAMMAIRE CARTOGRAPHIQUE — les trois encodages, sur la vraie carte.
+  function closePanel() {
+    openAxis = null;
+    panel.dataset.open = "false";
+    panel.innerHTML = "";
+    nav.querySelectorAll(".axis-trigger").forEach((b) => b.setAttribute("aria-expanded", "false"));
+  }
 
-   Le fond est la silhouette du continent (référentiel 800×758 calé sur
-   lon −25→52 / lat 38→−35) ; les tracés viennent du Natural Earth
-   admin-0 projeté dans ce même référentiel. Rien n'est dessiné à la
-   main : c'est précisément ce qui rend la démonstration recevable.
-   ══════════════════════════════════════════════════════════════════ */
-const GEO = /*@GEO@*/;
-const CORPUS = /*@CORPUS@*/;
-
-const BOUNDS = { lonMin: -25, lonMax: 52, latMin: -35, latMax: 38 };
-const BASE = { w: 800, h: 758 };
-const projX = (lon) => ((lon - BOUNDS.lonMin) / (BOUNDS.lonMax - BOUNDS.lonMin)) * BASE.w;
-const projY = (lat) => ((BOUNDS.latMax - lat) / (BOUNDS.latMax - BOUNDS.latMin)) * BASE.h;
-
-const ringToPath = (ring) =>
-  ring.map(([lon, lat], i) => `${i ? "L" : "M"}${projX(lon).toFixed(1)},${projY(lat).toFixed(1)}`).join("") + "Z";
-
-const countryPath = (iso) => (GEO[iso]?.rings ?? []).map(ringToPath).join("");
-
-// Centroïde du plus grand anneau — suffisant pour ancrer un halo, et
-// honnête : on ne prétend pas placer une population, on place une ancre.
-const anchor = (iso) => {
-  const rings = GEO[iso]?.rings ?? [];
-  if (!rings.length) return null;
-  const ring = rings.reduce((a, b) => (b.length > a.length ? b : a));
-  const [sx, sy] = ring.reduce(([ax, ay], [lon, lat]) => [ax + projX(lon), ay + projY(lat)], [0, 0]);
-  return [sx / ring.length, sy / ring.length];
-};
-
-const AFRICA_BG = `<path d="${AFRICA_PATH}" fill="#241a10" stroke="#3a2e1f" stroke-width="2"/>`;
-const svgWrap = (inner) =>
-  `<svg viewBox="0 0 ${BASE.w} ${BASE.h}" role="img" preserveAspectRatio="xMidYMid meet">${AFRICA_BG}${inner}</svg>`;
-
-/* 1 · PAYS — un trait fermé qui se dessine. La donnée autorise le trait. */
-const cellPays = svgWrap(`
-  <path d="${countryPath("NGA")}" fill="#33a390" fill-opacity=".22"/>
-  <path class="trace" d="${countryPath("NGA")}" fill="none" stroke="#33a390" stroke-width="4" stroke-linejoin="round"/>
-`);
-
-/* 2 · PEUPLE — des halos pondérés par la démographie déclarée, sans bord. */
-const yorubaDist = CORPUS.people.demography.distributionByCountry;
-const maxPop = Math.max(...yorubaDist.map((d) => d.population));
-const cellPeuple = svgWrap(`
-  <defs>
-    <radialGradient id="halo">
-      <stop offset="0%"   stop-color="#c9821f" stop-opacity=".92"/>
-      <stop offset="45%"  stop-color="#c9821f" stop-opacity=".42"/>
-      <stop offset="100%" stop-color="#c9821f" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <g class="field">${yorubaDist.map((d) => {
-    const a = anchor(d.country);
-    if (!a) return "";
-    // Rayon ∝ √population : l'aire du halo reste proportionnelle au nombre.
-    const r = 26 + 108 * Math.sqrt(d.population / maxPop);
-    return `<circle cx="${a[0].toFixed(1)}" cy="${a[1].toFixed(1)}" r="${r.toFixed(1)}" fill="url(#halo)"/>`;
-  }).join("")}</g>
-`);
-
-/* 3 · FAMILLE — l'empreinte dérivée : chaque pays teinté par le nombre
-   de peuples de la famille qui y sont présents. Bord pointillé, parce
-   que l'aire est un agrégat, pas une frontière. */
-const foot = CORPUS.family.derivedFootprint;
-const maxMembers = Math.max(...Object.values(foot));
-const cellFamille = svgWrap(
-  Object.entries(foot).map(([iso, count]) => {
-    const p = countryPath(iso);
-    if (!p) return "";
-    const o = (0.14 + 0.5 * (count / maxMembers)).toFixed(2);
-    return `<path d="${p}" fill="#7a8ce8" fill-opacity="${o}" stroke="#7a8ce8" stroke-width="1.6"
-                  stroke-opacity=".55" stroke-dasharray="9 7"/>`;
-  }).join("")
-);
-
-document.getElementById("geo-grammar").innerHTML = `
-  <figure class="geo-cell" style="margin:0">
-    ${cellPays}
-    <figcaption>
-      <h4>Pays — trait fermé</h4>
-      <p>Une frontière administrative existe, elle est publiée, elle est datée. Le trait se dessine pour montrer qu'il est <em>relevé</em>, pas supposé.</p>
-      <span class="verdict">Natural Earth admin-0 110 m · NGA<br>Encodage : outline animé + remplissage à 22 %</span>
-    </figcaption>
-  </figure>
-  <figure class="geo-cell" style="margin:0">
-    ${cellPeuple}
-    <figcaption>
-      <h4>Peuple — champ sans bord</h4>
-      <p>Aucun bord, nulle part. Cinq halos ancrés sur les pays de présence, de rayon proportionnel à la racine de la population déclarée.</p>
-      <span class="verdict">PPL_YORUBA · 5 pays · 48 482 000 (réf. 2025)<br>Encodage : dégradé radial, opacité 0 au bord</span>
-    </figcaption>
-  </figure>
-  <figure class="geo-cell" style="margin:0">
-    ${cellFamille}
-    <figcaption>
-      <h4>Famille — agrégat pointillé</h4>
-      <p>L'aire n'est pas déclarée par la fiche famille : elle est reconstruite depuis les peuples qui s'y rattachent. Le pointillé dit exactement cela.</p>
-      <span class="verdict">FLG_BENOUECONGO · 60 peuples · 17 pays<br>Encodage : choroplèthe dérivée pervenche, bord tireté</span>
-    </figcaption>
-  </figure>`;
-
-/* ── Bascule de viewport (chrome de l'établi) ─────────────────── */
-document.querySelectorAll("[data-vp]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll("[data-vp]").forEach((b) =>
-      b.setAttribute("aria-pressed", String(b === btn)));
-    document.getElementById("frame").dataset.viewport = btn.dataset.vp;
-    closePanel();
+  nav.addEventListener("click", (e) => {
+    const btn = e.target.closest(".axis-trigger");
+    if (!btn) return;
+    btn.dataset.axis === openAxis ? closePanel() : openPanel(btn.dataset.axis);
   });
-});
+
+  // Une flèche déplace le focus entre les axes ; Échap referme et rend le
+  // focus au déclencheur, sans quoi le clavier reste piégé dans le panneau.
+  nav.addEventListener("keydown", (e) => {
+    const btns = [...nav.querySelectorAll(".axis-trigger")];
+    const i = btns.indexOf(document.activeElement);
+    if (i === -1) return;
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+      e.preventDefault();
+      const next = btns[(i + (e.key === "ArrowRight" ? 1 : btns.length - 1)) % btns.length];
+      next.focus();
+      if (openAxis) openPanel(next.dataset.axis);
+    }
+  });
+
+  document.getElementById("navdemo").addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (openAxis) {
+      const trigger = nav.querySelector(`[data-axis="${openAxis}"]`);
+      closePanel();
+      trigger.focus();
+    }
+    if (drawer.dataset.open === "true") closeDrawer();
+  });
+
+  /* ── Le tiroir mobile ─────────────────────────────────────────── */
+  const drawer = document.getElementById("drawer");
+  const scrim = document.getElementById("scrim");
+  const burger = document.getElementById("burger");
+
+  document.getElementById("drawer-body").innerHTML = AXES.map((a) => {
+    const mods = modulesOf(a.id);
+    return `
+    <div class="acc afh-accent-${a.accent}">
+      <button class="acc-trigger" type="button" data-acc="${a.id}" aria-expanded="false" aria-controls="acc-${a.id}">
+        <span class="seed" aria-hidden="true"></span>${a.label}
+        <span class="count">${mods.length}</span>
+        <span class="caret" aria-hidden="true">▾</span>
+      </button>
+      <div class="acc-body" id="acc-${a.id}" data-open="false">${mods.map(moduleCard).join("")}</div>
+    </div>`;
+  }).join("");
+
+  document.getElementById("drawer-body").addEventListener("click", (e) => {
+    const btn = e.target.closest(".acc-trigger");
+    if (!btn) return;
+    const body = document.getElementById(`acc-${btn.dataset.acc}`);
+    const open = body.dataset.open !== "true";
+    body.dataset.open = String(open);
+    btn.setAttribute("aria-expanded", String(open));
+  });
+
+  const openDrawer = () => {
+    drawer.dataset.open = "true"; scrim.dataset.open = "true";
+    burger.setAttribute("aria-expanded", "true");
+    drawer.querySelector(".acc-trigger").focus();
+  };
+  const closeDrawer = () => {
+    drawer.dataset.open = "false"; scrim.dataset.open = "false";
+    burger.setAttribute("aria-expanded", "false");
+    burger.focus();
+  };
+  burger.addEventListener("click", openDrawer);
+  scrim.addEventListener("click", closeDrawer);
+  document.getElementById("drawer-close").addEventListener("click", closeDrawer);
+
+  /* ══════════════════════════════════════════════════════════════════
+     GRAMMAIRE CARTOGRAPHIQUE — les trois encodages, sur la vraie carte.
+
+     Le fond est la silhouette du continent (référentiel 800×758 calé sur
+     lon −25→52 / lat 38→−35) ; les tracés viennent du Natural Earth
+     admin-0 projeté dans ce même référentiel. Rien n'est dessiné à la
+     main : c'est précisément ce qui rend la démonstration recevable.
+     ══════════════════════════════════════════════════════════════════ */
+  const GEO = /*@GEO@*/;
+  const CORPUS = /*@CORPUS@*/;
+
+  const BOUNDS = { lonMin: -25, lonMax: 52, latMin: -35, latMax: 38 };
+  const BASE = { w: 800, h: 758 };
+  const projX = (lon) => ((lon - BOUNDS.lonMin) / (BOUNDS.lonMax - BOUNDS.lonMin)) * BASE.w;
+  const projY = (lat) => ((BOUNDS.latMax - lat) / (BOUNDS.latMax - BOUNDS.latMin)) * BASE.h;
+
+  const ringToPath = (ring) =>
+    ring.map(([lon, lat], i) => `${i ? "L" : "M"}${projX(lon).toFixed(1)},${projY(lat).toFixed(1)}`).join("") + "Z";
+
+  const countryPath = (iso) => (GEO[iso]?.rings ?? []).map(ringToPath).join("");
+
+  // Centroïde du plus grand anneau — suffisant pour ancrer un halo, et
+  // honnête : on ne prétend pas placer une population, on place une ancre.
+  const anchor = (iso) => {
+    const rings = GEO[iso]?.rings ?? [];
+    if (!rings.length) return null;
+    const ring = rings.reduce((a, b) => (b.length > a.length ? b : a));
+    const [sx, sy] = ring.reduce(([ax, ay], [lon, lat]) => [ax + projX(lon), ay + projY(lat)], [0, 0]);
+    return [sx / ring.length, sy / ring.length];
+  };
+
+  const AFRICA_BG = `<path d="${AFRICA_PATH}" fill="#241a10" stroke="#3a2e1f" stroke-width="2"/>`;
+  const svgWrap = (inner) =>
+    `<svg viewBox="0 0 ${BASE.w} ${BASE.h}" role="img" preserveAspectRatio="xMidYMid meet">${AFRICA_BG}${inner}</svg>`;
+
+  /* 1 · PAYS — un trait fermé qui se dessine. La donnée autorise le trait. */
+  const cellPays = svgWrap(`
+    <path d="${countryPath("NGA")}" fill="#33a390" fill-opacity=".22"/>
+    <path class="trace" d="${countryPath("NGA")}" fill="none" stroke="#33a390" stroke-width="4" stroke-linejoin="round"/>
+  `);
+
+  /* 2 · PEUPLE — des halos pondérés par la démographie déclarée, sans bord. */
+  const yorubaDist = CORPUS.people.demography.distributionByCountry;
+  const maxPop = Math.max(...yorubaDist.map((d) => d.population));
+  const cellPeuple = svgWrap(`
+    <defs>
+      <radialGradient id="halo">
+        <stop offset="0%"   stop-color="#c9821f" stop-opacity=".92"/>
+        <stop offset="45%"  stop-color="#c9821f" stop-opacity=".42"/>
+        <stop offset="100%" stop-color="#c9821f" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <g class="field">${yorubaDist.map((d) => {
+      const a = anchor(d.country);
+      if (!a) return "";
+      // Rayon ∝ √population : l'aire du halo reste proportionnelle au nombre.
+      const r = 26 + 108 * Math.sqrt(d.population / maxPop);
+      return `<circle cx="${a[0].toFixed(1)}" cy="${a[1].toFixed(1)}" r="${r.toFixed(1)}" fill="url(#halo)"/>`;
+    }).join("")}</g>
+  `);
+
+  /* 3 · FAMILLE — l'empreinte dérivée : chaque pays teinté par le nombre
+     de peuples de la famille qui y sont présents. Bord pointillé, parce
+     que l'aire est un agrégat, pas une frontière. */
+  const foot = CORPUS.family.derivedFootprint;
+  const maxMembers = Math.max(...Object.values(foot));
+  const cellFamille = svgWrap(
+    Object.entries(foot).map(([iso, count]) => {
+      const p = countryPath(iso);
+      if (!p) return "";
+      const o = (0.14 + 0.5 * (count / maxMembers)).toFixed(2);
+      return `<path d="${p}" fill="#7a8ce8" fill-opacity="${o}" stroke="#7a8ce8" stroke-width="1.6"
+                    stroke-opacity=".55" stroke-dasharray="9 7"/>`;
+    }).join("")
+  );
+
+  document.getElementById("geo-grammar").innerHTML = `
+    <figure class="geo-cell" style="margin:0">
+      ${cellPays}
+      <figcaption>
+        <h4>Pays — trait fermé</h4>
+        <p>Une frontière administrative existe, elle est publiée, elle est datée. Le trait se dessine pour montrer qu'il est <em>relevé</em>, pas supposé.</p>
+        <span class="verdict">Natural Earth admin-0 110 m · NGA<br>Encodage : outline animé + remplissage à 22 %</span>
+      </figcaption>
+    </figure>
+    <figure class="geo-cell" style="margin:0">
+      ${cellPeuple}
+      <figcaption>
+        <h4>Peuple — champ sans bord</h4>
+        <p>Aucun bord, nulle part. Cinq halos ancrés sur les pays de présence, de rayon proportionnel à la racine de la population déclarée.</p>
+        <span class="verdict">PPL_YORUBA · 5 pays · 48 482 000 (réf. 2025)<br>Encodage : dégradé radial, opacité 0 au bord</span>
+      </figcaption>
+    </figure>
+    <figure class="geo-cell" style="margin:0">
+      ${cellFamille}
+      <figcaption>
+        <h4>Famille — agrégat pointillé</h4>
+        <p>L'aire n'est pas déclarée par la fiche famille : elle est reconstruite depuis les peuples qui s'y rattachent. Le pointillé dit exactement cela.</p>
+        <span class="verdict">FLG_BENOUECONGO · 60 peuples · 17 pays<br>Encodage : choroplèthe dérivée pervenche, bord tireté</span>
+      </figcaption>
+    </figure>`;
+
+  /* ── Bascule de viewport (chrome de l'établi) ─────────────────── */
+  document.querySelectorAll("[data-vp]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("[data-vp]").forEach((b) =>
+        b.setAttribute("aria-pressed", String(b === btn)));
+      document.getElementById("frame").dataset.viewport = btn.dataset.vp;
+      closePanel();
+    });
+  });
 </script>

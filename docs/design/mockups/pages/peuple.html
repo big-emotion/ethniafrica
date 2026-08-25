@@ -1,38 +1,112 @@
 <title>Fiche Peuple au globe</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=JetBrains+Mono:wght@400;700&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,900&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&family=JetBrains+Mono:wght@400;700&display=swap"
+/>
 
 <style>
-/*@SHELLCSS@*/
+  /*@SHELLCSS@*/
 
-/* La fiche peuple est sur ocre — l'accent que accessModeHubs.ts donne au
+  /* La fiche peuple est sur ocre — l'accent que accessModeHubs.ts donne au
    module « Les peuples d'Afrique ». */
-#frame { --accent: var(--afh-cat-ocre); --accent-tint: var(--afh-cat-ocre-tint); --accent-foreground: #fff; }
+  #frame {
+    --accent: var(--afh-cat-ocre);
+    --accent-tint: var(--afh-cat-ocre-tint);
+    --accent-foreground: #fff;
+  }
 
-/* Le nom porté et les noms subis, mis face à face. C'est la première
+  /* Le nom porté et les noms subis, mis face à face. C'est la première
    chose que la fiche montre, avant toute donnée. */
-.naming { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-@container (max-width: 760px) { .naming { grid-template-columns: 1fr; } }
-.naming > div { border-radius: var(--afh-radius-md); padding: 15px 16px; }
-.naming .endo { background: var(--accent-tint); border: 1px solid var(--accent); }
-.naming .exo  { background: var(--afh-color-colonial-bg); border: 1px solid var(--afh-color-colonial); }
-.naming h3 { margin: 0 0 8px; font-size: var(--afh-text-caption); letter-spacing: .11em; text-transform: uppercase; font-weight: 700; font-family: var(--afh-font-body); }
-.naming .endo h3 { color: #7a5a00; }
-.naming .exo h3 { color: var(--afh-color-colonial); }
-.naming .term { font-family: var(--afh-font-display); font-weight: 900; font-size: 20px; color: var(--afh-text); line-height: 1.2; }
-.naming ul { margin: 6px 0 0; padding-left: 17px; }
-.naming li { font-size: var(--afh-text-small); line-height: 1.6; color: var(--afh-text-soft); margin-bottom: 4px; }
+  .naming {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @container (max-width: 760px) {
+    .naming {
+      grid-template-columns: 1fr;
+    }
+  }
+  .naming > div {
+    border-radius: var(--afh-radius-md);
+    padding: 15px 16px;
+  }
+  .naming .endo {
+    background: var(--accent-tint);
+    border: 1px solid var(--accent);
+  }
+  .naming .exo {
+    background: var(--afh-color-colonial-bg);
+    border: 1px solid var(--afh-color-colonial);
+  }
+  .naming h3 {
+    margin: 0 0 8px;
+    font-size: var(--afh-text-caption);
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: var(--afh-font-body);
+  }
+  .naming .endo h3 {
+    color: #7a5a00;
+  }
+  .naming .exo h3 {
+    color: var(--afh-color-colonial);
+  }
+  .naming .term {
+    font-family: var(--afh-font-display);
+    font-weight: 900;
+    font-size: 20px;
+    color: var(--afh-text);
+    line-height: 1.2;
+  }
+  .naming ul {
+    margin: 6px 0 0;
+    padding-left: 17px;
+  }
+  .naming li {
+    font-size: var(--afh-text-small);
+    line-height: 1.6;
+    color: var(--afh-text-soft);
+    margin-bottom: 4px;
+  }
 
-.legend { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 14px; }
-.legend-item { display: inline-flex; align-items: center; gap: 7px; font-size: var(--afh-text-small); color: var(--afh-text-soft); }
-.legend-dot { width: 26px; height: 12px; border-radius: var(--afh-radius-full); flex: none; }
+  .legend {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 14px;
+  }
+  .legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: var(--afh-text-small);
+    color: var(--afh-text-soft);
+  }
+  .legend-dot {
+    width: 26px;
+    height: 12px;
+    border-radius: var(--afh-radius-full);
+    flex: none;
+  }
 
-.dialects { display: flex; gap: 7px; flex-wrap: wrap; }
-.dialects span {
-  font-size: var(--afh-text-small); padding: 4px 11px; border-radius: var(--afh-radius-full);
-  background: var(--afh-surface); border: 1px solid var(--afh-border); color: var(--afh-text-soft);
-}
+  .dialects {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+  .dialects span {
+    font-size: var(--afh-text-small);
+    padding: 4px 11px;
+    border-radius: var(--afh-radius-full);
+    background: var(--afh-surface);
+    border: 1px solid var(--afh-border);
+    color: var(--afh-text-soft);
+  }
 </style>
 
 <div class="bench-bar">
@@ -40,11 +114,17 @@
   <div class="bench-controls">
     <div class="switch" role="group" aria-label="Rendu du globe">
       <button type="button" data-webgl="on" aria-pressed="true">WebGL</button>
-      <button type="button" data-webgl="off" aria-pressed="false">Sans WebGL</button>
+      <button type="button" data-webgl="off" aria-pressed="false">
+        Sans WebGL
+      </button>
     </div>
     <div class="switch" role="group" aria-label="Viewport">
-      <button type="button" data-vp="mobile" aria-pressed="true">Mobile 430</button>
-      <button type="button" data-vp="desktop" aria-pressed="false">Desktop</button>
+      <button type="button" data-vp="mobile" aria-pressed="true">
+        Mobile 430
+      </button>
+      <button type="button" data-vp="desktop" aria-pressed="false">
+        Desktop
+      </button>
     </div>
   </div>
 </div>
@@ -56,13 +136,46 @@
         <span class="brand-mark" aria-hidden="true"></span>
         <span class="brand-name">Atlas des Peuples d'Afrique</span>
       </div>
-      <div class="axis-nav" id="axis-nav" role="group" aria-label="Points d'entrée"></div>
+      <div
+        class="axis-nav"
+        id="axis-nav"
+        role="group"
+        aria-label="Points d'entrée"
+      ></div>
       <div class="nav-icons">
         <button class="icon-btn" type="button" aria-label="Rechercher">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            aria-hidden="true"
+          >
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.2-3.2" />
+          </svg>
         </button>
-        <button class="icon-btn nav-burger" type="button" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="drawer">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <button
+          class="icon-btn nav-burger"
+          type="button"
+          id="burger"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="drawer"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.2"
+            aria-hidden="true"
+          >
+            <path d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
         </button>
       </div>
     </nav>
@@ -70,42 +183,86 @@
     <div class="megapanel" id="megapanel" data-open="false"></div>
 
     <div class="globe-holder">
-      <p class="globe-caption">Aucune frontière ici.<br>Une présence, et sa densité.</p>
+      <p class="globe-caption">
+        Aucune frontière ici.<br />Une présence, et sa densité.
+      </p>
 
       <div class="picker">
-        <button class="picker-btn" type="button" id="picker-btn" aria-expanded="false" aria-controls="picker-list" aria-haspopup="listbox">
+        <button
+          class="picker-btn"
+          type="button"
+          id="picker-btn"
+          aria-expanded="false"
+          aria-controls="picker-list"
+          aria-haspopup="listbox"
+        >
           <span class="seed" aria-hidden="true"></span>
           <span id="picker-label">Choisir un pays de présence</span>
           <span class="caret" aria-hidden="true">▾</span>
         </button>
-        <div class="picker-list" id="picker-list" data-open="false" role="listbox" aria-label="Pays de présence"></div>
+        <div
+          class="picker-list"
+          id="picker-list"
+          data-open="false"
+          role="listbox"
+          aria-label="Pays de présence"
+        ></div>
       </div>
 
-      <canvas id="globe" aria-label="Globe terrestre, aire de présence du peuple mise en évidence"></canvas>
+      <canvas
+        id="globe"
+        aria-label="Globe terrestre, aire de présence du peuple mise en évidence"
+      ></canvas>
 
       <div class="nowebgl" id="nowebgl">
-        <svg viewBox="0 0 800 758" role="img" aria-label="Silhouette de l'Afrique, aire de présence mise en évidence" id="fallback-map"></svg>
+        <svg
+          viewBox="0 0 800 758"
+          role="img"
+          aria-label="Silhouette de l'Afrique, aire de présence mise en évidence"
+          id="fallback-map"
+        ></svg>
         <p id="fallback-note"></p>
       </div>
 
       <aside class="sheet" id="sheet" data-open="false" aria-live="polite">
         <div class="sheet-head">
           <span class="flag" id="sheet-flag" aria-hidden="true"></span>
-          <div style="min-width:0">
+          <div style="min-width: 0">
             <h2 id="sheet-title"></h2>
             <span class="sub" id="sheet-sub"></span>
           </div>
-          <button class="icon-btn close" type="button" id="sheet-close" aria-label="Fermer le panneau">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+          <button
+            class="icon-btn close"
+            type="button"
+            id="sheet-close"
+            aria-label="Fermer le panneau"
+          >
+            <svg
+              width="13"
+              height="13"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.4"
+              aria-hidden="true"
+            >
+              <path d="M6 6l12 12M18 6L6 18" />
+            </svg>
           </button>
         </div>
         <div class="sheet-body" id="sheet-body"></div>
-        <div class="sheet-foot"><a href="#fiche" id="sheet-link">Lire la fiche complète →</a></div>
+        <div class="sheet-foot">
+          <a href="#fiche" id="sheet-link">Lire la fiche complète →</a>
+        </div>
       </aside>
 
       <div class="globe-tools">
-        <button class="g-btn" type="button" id="whole" aria-pressed="true">Toute l'aire</button>
-        <button class="g-btn" type="button" id="flatten" aria-pressed="false">Ce que la carte plate en fait</button>
+        <button class="g-btn" type="button" id="whole" aria-pressed="true">
+          Toute l'aire
+        </button>
+        <button class="g-btn" type="button" id="flatten" aria-pressed="false">
+          Ce que la carte plate en fait
+        </button>
         <button class="g-btn" type="button" id="recentre">Recentrer</button>
       </div>
     </div>
@@ -116,8 +273,23 @@
     <aside class="drawer" id="drawer" data-open="false" aria-label="Menu">
       <div class="drawer-head">
         <span>Trois entrées</span>
-        <button class="icon-btn" type="button" id="drawer-close" aria-label="Fermer le menu">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        <button
+          class="icon-btn"
+          type="button"
+          id="drawer-close"
+          aria-label="Fermer le menu"
+        >
+          <svg
+            width="13"
+            height="13"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.4"
+            aria-hidden="true"
+          >
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
         </button>
       </div>
       <div id="drawer-body"></div>
@@ -150,7 +322,9 @@
 
     <section class="sec">
       <h2>Pourquoi la carte ne trace pas de frontière</h2>
-      <p class="sec-note">grammaire cartographique · encodage « champ de présence »</p>
+      <p class="sec-note">
+        grammaire cartographique · encodage « champ de présence »
+      </p>
       <p id="field-explain"></p>
       <div class="legend" id="legend"></div>
     </section>
@@ -177,279 +351,279 @@
 </div>
 
 <script type="module">
-/*@THREE@*/
+  /*@THREE@*/
 
-const GEO = /*@GEO@*/;
-const CORPUS = /*@CORPUS@*/;
-const AFRICA_PATH = "/*@AFRICA_PATH@*/";
+  const GEO = /*@GEO@*/;
+  const CORPUS = /*@CORPUS@*/;
+  const AFRICA_PATH = "/*@AFRICA_PATH@*/";
 
-/*@NAVCORE@*/
-/*@GLOBECORE@*/
+  /*@NAVCORE@*/
+  /*@GLOBECORE@*/
 
-mountNav("peuples");
+  mountNav("peuples");
 
-/* ══════════════════════════════════════════════════════════════════
-   FICHE PEUPLE — l'inverse exact de la fiche pays.
+  /* ══════════════════════════════════════════════════════════════════
+     FICHE PEUPLE — l'inverse exact de la fiche pays.
 
-   Un peuple n'a pas de frontière : personne ne peut dire où la présence
-   yoruba s'arrête. Ce que le corpus sait, c'est une population par pays.
-   La carte dessine donc un CHAMP : des halos ancrés sur chaque pays de
-   présence, de rayon proportionnel à la racine de la population — l'aire
-   du halo suit alors le nombre — et d'opacité nulle au bord. Il n'existe
-   aucun pixel où le champ passe de « dedans » à « dehors ».
-   ══════════════════════════════════════════════════════════════════ */
+     Un peuple n'a pas de frontière : personne ne peut dire où la présence
+     yoruba s'arrête. Ce que le corpus sait, c'est une population par pays.
+     La carte dessine donc un CHAMP : des halos ancrés sur chaque pays de
+     présence, de rayon proportionnel à la racine de la population — l'aire
+     du halo suit alors le nombre — et d'opacité nulle au bord. Il n'existe
+     aucun pixel où le champ passe de « dedans » à « dehors ».
+     ══════════════════════════════════════════════════════════════════ */
 
-const P = CORPUS.people;
-const DIST = [...P.demography.distributionByCountry].sort((a, b) => b.population - a.population);
-const MAX_POP = DIST[0].population;
-const nf = new Intl.NumberFormat("fr-FR");
+  const P = CORPUS.people;
+  const DIST = [...P.demography.distributionByCountry].sort((a, b) => b.population - a.population);
+  const MAX_POP = DIST[0].population;
+  const nf = new Intl.NumberFormat("fr-FR");
 
-const flagOf = (iso3) => {
-  const a2 = GEO[iso3]?.a2;
-  if (!a2 || a2.length !== 2) return "🏳";
-  return String.fromCodePoint(...[...a2].map((c) => 0x1f1e6 + c.charCodeAt(0) - 65));
-};
+  const flagOf = (iso3) => {
+    const a2 = GEO[iso3]?.a2;
+    if (!a2 || a2.length !== 2) return "🏳";
+    return String.fromCodePoint(...[...a2].map((c) => 0x1f1e6 + c.charCodeAt(0) - 65));
+  };
 
-/** Rayon du halo, en degrés de longitude. Racine carrée : c'est l'aire
-    qui doit suivre la population, pas le rayon. */
-const haloDegrees = (population) => 3.2 + 13 * Math.sqrt(population / MAX_POP);
+  /** Rayon du halo, en degrés de longitude. Racine carrée : c'est l'aire
+      qui doit suivre la population, pas le rayon. */
+  const haloDegrees = (population) => 3.2 + 13 * Math.sqrt(population / MAX_POP);
 
-let focused = null;
+  let focused = null;
 
-function drawField(ctx, { w, h, progress, lonToX, latToY, GEO }) {
-  ctx.save();
-  for (const entry of DIST) {
-    const centre = centroidOf(entry.country, GEO);
-    if (!centre) continue;
-    const dim = focused && focused !== entry.country;
-    const x = lonToX(centre[0], w), y = latToY(centre[1], h);
-    const r = (haloDegrees(entry.population) * (w / 360)) * progress;
-    if (r <= 0) continue;
+  function drawField(ctx, { w, h, progress, lonToX, latToY, GEO }) {
+    ctx.save();
+    for (const entry of DIST) {
+      const centre = centroidOf(entry.country, GEO);
+      if (!centre) continue;
+      const dim = focused && focused !== entry.country;
+      const x = lonToX(centre[0], w), y = latToY(centre[1], h);
+      const r = (haloDegrees(entry.population) * (w / 360)) * progress;
+      if (r <= 0) continue;
 
-    const grad = ctx.createRadialGradient(x, y, 0, x, y, r);
-    const peak = dim ? 0.20 : 0.88;
-    grad.addColorStop(0, `rgba(232, 185, 106, ${peak})`);
-    grad.addColorStop(0.42, `rgba(201, 130, 31, ${peak * 0.46})`);
-    // Le bord ne vaut jamais autre chose que zéro : c'est là toute la thèse.
-    grad.addColorStop(1, "rgba(201, 130, 31, 0)");
-    ctx.fillStyle = grad;
-    ctx.beginPath();
-    ctx.arc(x, y, r, 0, Math.PI * 2);
-    ctx.fill();
+      const grad = ctx.createRadialGradient(x, y, 0, x, y, r);
+      const peak = dim ? 0.20 : 0.88;
+      grad.addColorStop(0, `rgba(232, 185, 106, ${peak})`);
+      grad.addColorStop(0.42, `rgba(201, 130, 31, ${peak * 0.46})`);
+      // Le bord ne vaut jamais autre chose que zéro : c'est là toute la thèse.
+      grad.addColorStop(1, "rgba(201, 130, 31, 0)");
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.restore();
   }
-  ctx.restore();
-}
 
-const canvas = document.getElementById("globe");
-const frame = document.getElementById("frame");
-const sheet = document.getElementById("sheet");
-const globe = createGlobe({ canvas, GEO, AFRICA_PATH, drawOverlay: drawField });
+  const canvas = document.getElementById("globe");
+  const frame = document.getElementById("frame");
+  const sheet = document.getElementById("sheet");
+  const globe = createGlobe({ canvas, GEO, AFRICA_PATH, drawOverlay: drawField });
 
-/* ── Le sélecteur : les pays de présence, pas les 51 ─────────────
-   Sur une fiche peuple, proposer les 54 pays du continent serait un
-   mensonge d'interface : seuls cinq portent une présence déclarée. ── */
-const pickerBtn = document.getElementById("picker-btn");
-const pickerList = document.getElementById("picker-list");
-const pickerLabel = document.getElementById("picker-label");
+  /* ── Le sélecteur : les pays de présence, pas les 51 ─────────────
+     Sur une fiche peuple, proposer les 54 pays du continent serait un
+     mensonge d'interface : seuls cinq portent une présence déclarée. ── */
+  const pickerBtn = document.getElementById("picker-btn");
+  const pickerList = document.getElementById("picker-list");
+  const pickerLabel = document.getElementById("picker-label");
 
-pickerList.innerHTML = DIST.map((d) => `
-  <button type="button" role="option" data-iso="${d.country}" aria-selected="false">
-    <span aria-hidden="true">${flagOf(d.country)}</span>${GEO[d.country].fr}
-    <span class="iso">${nf.format(d.population)}</span>
-  </button>`).join("");
+  pickerList.innerHTML = DIST.map((d) => `
+    <button type="button" role="option" data-iso="${d.country}" aria-selected="false">
+      <span aria-hidden="true">${flagOf(d.country)}</span>${GEO[d.country].fr}
+      <span class="iso">${nf.format(d.population)}</span>
+    </button>`).join("");
 
-const setPicker = (open) => {
-  pickerList.dataset.open = String(open);
-  pickerBtn.setAttribute("aria-expanded", String(open));
-  if (open) pickerList.querySelector("button").focus();
-};
-pickerBtn.addEventListener("click", () => setPicker(pickerList.dataset.open !== "true"));
-pickerList.addEventListener("click", (e) => {
-  const btn = e.target.closest("[data-iso]");
-  if (btn) focusCountry(btn.dataset.iso);
-});
-
-/* ── Panneau : ce que le corpus sait de la présence ici ────────── */
-function focusCountry(iso) {
-  focused = iso;
-  const entry = DIST.find((d) => d.country === iso);
-  const centre = centroidOf(iso, GEO);
-  const share = (entry.population / P.demography.totalPopulation) * 100;
-
-  globe.flyTo(centre[0], centre[1], haloDegrees(entry.population) * 2.4);
-  wholeBtn.setAttribute("aria-pressed", "false");
-
-  pickerLabel.textContent = GEO[iso].fr;
-  setPicker(false);
-  pickerList.querySelectorAll("[data-iso]").forEach((b) =>
-    b.setAttribute("aria-selected", String(b.dataset.iso === iso)));
-
-  document.getElementById("sheet-flag").textContent = flagOf(iso);
-  document.getElementById("sheet-title").textContent = `${P.name} au ${GEO[iso].fr}`;
-  document.getElementById("sheet-sub").textContent = `${iso} · présence déclarée, sans tracé de limite`;
-  document.getElementById("sheet-body").innerHTML = `
-    <div class="fact">
-      <dt>Population déclarée</dt>
-      <dd class="num">${nf.format(entry.population)}</dd>
-    </div>
-    <div class="fact">
-      <dt>Part de l'ensemble ${P.name}</dt>
-      <dd>
-        <div class="bar-row">
-          <span class="lbl">${GEO[iso].fr}</span>
-          <span class="val">${share.toFixed(1)}&nbsp;%</span>
-          <span class="track"><span class="fill" style="width:${share.toFixed(1)}%"></span></span>
-        </div>
-      </dd>
-    </div>
-    <div class="fact">
-      <dt>Ce que le halo dit</dt>
-      <dd style="font-size:var(--afh-text-small); line-height:1.65">
-        Le rayon suit la racine de la population, donc l'aire suit la population.
-        Le bord vaut zéro&nbsp;: il n'y a pas de limite à lire.
-      </dd>
-    </div>
-    <span class="state-chip chip-stable"><span class="dot"></span>Réf. ${P.demography.referenceYear}</span>`;
-  sheet.dataset.open = "true";
-  biasForSheet(globe, frame, sheet);
-
-  globe.reveal();
-  paintFallback();
-}
-
-document.getElementById("sheet-close").addEventListener("click", () => {
-  sheet.dataset.open = "false";
-  biasForSheet(globe, frame, sheet);
-});
-
-/* ── Outils ──────────────────────────────────────────────────── */
-const wholeBtn = document.getElementById("whole");
-wholeBtn.addEventListener("click", () => {
-  focused = null;
-  wholeBtn.setAttribute("aria-pressed", "true");
-  pickerLabel.textContent = "Choisir un pays de présence";
-  pickerList.querySelectorAll("[data-iso]").forEach((b) => b.setAttribute("aria-selected", "false"));
-  sheet.dataset.open = "false";
-  biasForSheet(globe, frame, sheet);
-  globe.recentre();
-  globe.reveal();
-  paintFallback();
-});
-
-const flattenBtn = document.getElementById("flatten");
-flattenBtn.addEventListener("click", () => {
-  const on = flattenBtn.getAttribute("aria-pressed") !== "true";
-  flattenBtn.setAttribute("aria-pressed", String(on));
-  flattenBtn.textContent = on ? "Revenir au globe" : "Ce que la carte plate en fait";
-  globe.setFlat(on);
-});
-
-document.getElementById("recentre").addEventListener("click", () => {
-  flattenBtn.setAttribute("aria-pressed", "false");
-  flattenBtn.textContent = "Ce que la carte plate en fait";
-  globe.setFlat(false);
-  globe.recentre();
-});
-
-/* ── Repli sans WebGL ─────────────────────────────────────────
-   Le même champ, en SVG : des cercles à dégradé radial. Le flou est
-   reproductible sans 3D — c'est justement pour cela qu'il est le bon
-   encodage pour cette donnée. ── */
-const BOUNDS = { lonMin: -25, lonMax: 52, latMin: -35, latMax: 38 };
-const BASE = { w: 800, h: 758 };
-const fx = (lon) => ((lon - BOUNDS.lonMin) / (BOUNDS.lonMax - BOUNDS.lonMin)) * BASE.w;
-const fy = (lat) => ((BOUNDS.latMax - lat) / (BOUNDS.latMax - BOUNDS.latMin)) * BASE.h;
-const degToPx = BASE.w / (BOUNDS.lonMax - BOUNDS.lonMin);
-
-function paintFallback() {
-  const halos = DIST.map((d) => {
-    const c = centroidOf(d.country, GEO);
-    if (!c) return "";
-    const dim = focused && focused !== d.country;
-    const r = haloDegrees(d.population) * degToPx;
-    return `<circle cx="${fx(c[0]).toFixed(1)}" cy="${fy(c[1]).toFixed(1)}" r="${r.toFixed(1)}"
-                    fill="url(#halo)" opacity="${dim ? 0.25 : 1}"/>`;
-  }).join("");
-
-  document.getElementById("fallback-map").innerHTML = `
-    <defs>
-      <radialGradient id="halo">
-        <stop offset="0%"   stop-color="#e8b96a" stop-opacity=".9"/>
-        <stop offset="42%"  stop-color="#c9821f" stop-opacity=".42"/>
-        <stop offset="100%" stop-color="#c9821f" stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-    <path d="${AFRICA_PATH}" fill="#3a2a16" stroke="#8a6234" stroke-width="2.4"/>
-    ${halos}`;
-
-  document.getElementById("fallback-note").textContent = focused
-    ? `${P.name} au ${GEO[focused].fr} — le champ est mis en avant sans rendu 3D. Le halo n'a pas de bord ici non plus.`
-    : `Les ${DIST.length} pays de présence ${P.name}, sans rendu 3D. Aucune limite n'est tracée : ce sont des densités, pas un territoire.`;
-}
-paintFallback();
-
-/* ══════════════════════════════════════════════════════════════════
-   LE PARCHEMIN — ordre des sections de PeopleDetailViewV2.tsx.
-   ══════════════════════════════════════════════════════════════════ */
-document.getElementById("fh-eyebrow").textContent =
-  `${P.id} · ${P.family} · ${P.ethnoLinguisticGroup}`;
-document.getElementById("fh-title").innerHTML = `${P.name}, <em>un peuple sans bord</em>`;
-document.getElementById("fh-lede").textContent = P.historicalRegion;
-document.getElementById("fh-chips").innerHTML = `
-  <span class="state-chip chip-stable"><span class="dot"></span>${nf.format(P.demography.totalPopulation)} personnes · réf. ${P.demography.referenceYear}</span>
-  <span class="state-chip chip-derived"><span class="dot"></span>${DIST.length} pays de présence</span>`;
-
-document.getElementById("endo-term").textContent = P.self;
-document.getElementById("exo-list").innerHTML = P.exonyms.map((e) => `<li>${e}</li>`).join("");
-document.getElementById("exo-why").innerHTML = `<b>Pourquoi ces noms posent problème.</b> ${P.whyProblematic}`;
-
-document.getElementById("field-explain").innerHTML =
-  `Sur la fiche pays, le trait se referme parce qu'une frontière administrative est publiée et datée. Ici, rien de tel n'existe : <strong>aucune source du corpus ne dit où la présence ${P.name} s'arrête</strong>. Ce que le corpus déclare, ce sont ${DIST.length} populations par pays. La carte s'en tient exactement à cela — un halo par pays, dont l'aire suit la population et dont le bord vaut zéro. Un tracé fermé aurait affirmé un dedans et un dehors que personne ne peut sourcer.`;
-
-document.getElementById("legend").innerHTML = `
-  <span class="legend-item">
-    <span class="legend-dot" style="background:linear-gradient(to right,#e8b96a,rgba(201,130,31,0))"></span>
-    Densité décroissante, bord nul
-  </span>
-  ${DIST.map((d) => `
-  <span class="legend-item">
-    <span aria-hidden="true">${flagOf(d.country)}</span>
-    ${GEO[d.country].fr} · <span style="font-family:var(--afh-font-mono)">${nf.format(d.population)}</span>
-  </span>`).join("")}`;
-
-document.getElementById("origins").textContent = P.origins;
-
-document.getElementById("lang-note").textContent =
-  `content.languages · ISO 639-3 ${P.language.iso.join(", ")}`;
-document.getElementById("lang-main").innerHTML =
-  `Langue principale · <strong>${P.language.main}</strong>. Les dialectes recensés dans la fiche :`;
-document.getElementById("dialects").innerHTML =
-  P.language.dialects.map((d) => `<span>${d}</span>`).join("");
-
-document.getElementById("sources").innerHTML = P.sources.map((s) => `
-  <div class="source-row">
-    <span class="state-chip chip-t1"><span class="dot"></span>Tier 1</span>
-    <span>${s}</span>
-  </div>`).join("");
-
-/* ── Chrome de l'établi ──────────────────────────────────────── */
-document.querySelectorAll("[data-vp]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll("[data-vp]").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
-    frame.dataset.viewport = btn.dataset.vp;
-    setTimeout(() => { globe.resize(); biasForSheet(globe, frame, sheet); }, 340);
+  const setPicker = (open) => {
+    pickerList.dataset.open = String(open);
+    pickerBtn.setAttribute("aria-expanded", String(open));
+    if (open) pickerList.querySelector("button").focus();
+  };
+  pickerBtn.addEventListener("click", () => setPicker(pickerList.dataset.open !== "true"));
+  pickerList.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-iso]");
+    if (btn) focusCountry(btn.dataset.iso);
   });
-});
 
-document.querySelectorAll("button[data-webgl]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll("button[data-webgl]").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
-    frame.dataset.webgl = btn.dataset.webgl;
-    if (btn.dataset.webgl === "on") setTimeout(globe.resize, 40);
+  /* ── Panneau : ce que le corpus sait de la présence ici ────────── */
+  function focusCountry(iso) {
+    focused = iso;
+    const entry = DIST.find((d) => d.country === iso);
+    const centre = centroidOf(iso, GEO);
+    const share = (entry.population / P.demography.totalPopulation) * 100;
+
+    globe.flyTo(centre[0], centre[1], haloDegrees(entry.population) * 2.4);
+    wholeBtn.setAttribute("aria-pressed", "false");
+
+    pickerLabel.textContent = GEO[iso].fr;
+    setPicker(false);
+    pickerList.querySelectorAll("[data-iso]").forEach((b) =>
+      b.setAttribute("aria-selected", String(b.dataset.iso === iso)));
+
+    document.getElementById("sheet-flag").textContent = flagOf(iso);
+    document.getElementById("sheet-title").textContent = `${P.name} au ${GEO[iso].fr}`;
+    document.getElementById("sheet-sub").textContent = `${iso} · présence déclarée, sans tracé de limite`;
+    document.getElementById("sheet-body").innerHTML = `
+      <div class="fact">
+        <dt>Population déclarée</dt>
+        <dd class="num">${nf.format(entry.population)}</dd>
+      </div>
+      <div class="fact">
+        <dt>Part de l'ensemble ${P.name}</dt>
+        <dd>
+          <div class="bar-row">
+            <span class="lbl">${GEO[iso].fr}</span>
+            <span class="val">${share.toFixed(1)}&nbsp;%</span>
+            <span class="track"><span class="fill" style="width:${share.toFixed(1)}%"></span></span>
+          </div>
+        </dd>
+      </div>
+      <div class="fact">
+        <dt>Ce que le halo dit</dt>
+        <dd style="font-size:var(--afh-text-small); line-height:1.65">
+          Le rayon suit la racine de la population, donc l'aire suit la population.
+          Le bord vaut zéro&nbsp;: il n'y a pas de limite à lire.
+        </dd>
+      </div>
+      <span class="state-chip chip-stable"><span class="dot"></span>Réf. ${P.demography.referenceYear}</span>`;
+    sheet.dataset.open = "true";
+    biasForSheet(globe, frame, sheet);
+
+    globe.reveal();
+    paintFallback();
+  }
+
+  document.getElementById("sheet-close").addEventListener("click", () => {
+    sheet.dataset.open = "false";
+    biasForSheet(globe, frame, sheet);
   });
-});
 
-// La fiche s'ouvre sur l'aire entière : on voit d'abord l'étendue, on
-// entre ensuite dans un pays. L'inverse ferait croire à un territoire.
-globe.reveal();
+  /* ── Outils ──────────────────────────────────────────────────── */
+  const wholeBtn = document.getElementById("whole");
+  wholeBtn.addEventListener("click", () => {
+    focused = null;
+    wholeBtn.setAttribute("aria-pressed", "true");
+    pickerLabel.textContent = "Choisir un pays de présence";
+    pickerList.querySelectorAll("[data-iso]").forEach((b) => b.setAttribute("aria-selected", "false"));
+    sheet.dataset.open = "false";
+    biasForSheet(globe, frame, sheet);
+    globe.recentre();
+    globe.reveal();
+    paintFallback();
+  });
+
+  const flattenBtn = document.getElementById("flatten");
+  flattenBtn.addEventListener("click", () => {
+    const on = flattenBtn.getAttribute("aria-pressed") !== "true";
+    flattenBtn.setAttribute("aria-pressed", String(on));
+    flattenBtn.textContent = on ? "Revenir au globe" : "Ce que la carte plate en fait";
+    globe.setFlat(on);
+  });
+
+  document.getElementById("recentre").addEventListener("click", () => {
+    flattenBtn.setAttribute("aria-pressed", "false");
+    flattenBtn.textContent = "Ce que la carte plate en fait";
+    globe.setFlat(false);
+    globe.recentre();
+  });
+
+  /* ── Repli sans WebGL ─────────────────────────────────────────
+     Le même champ, en SVG : des cercles à dégradé radial. Le flou est
+     reproductible sans 3D — c'est justement pour cela qu'il est le bon
+     encodage pour cette donnée. ── */
+  const BOUNDS = { lonMin: -25, lonMax: 52, latMin: -35, latMax: 38 };
+  const BASE = { w: 800, h: 758 };
+  const fx = (lon) => ((lon - BOUNDS.lonMin) / (BOUNDS.lonMax - BOUNDS.lonMin)) * BASE.w;
+  const fy = (lat) => ((BOUNDS.latMax - lat) / (BOUNDS.latMax - BOUNDS.latMin)) * BASE.h;
+  const degToPx = BASE.w / (BOUNDS.lonMax - BOUNDS.lonMin);
+
+  function paintFallback() {
+    const halos = DIST.map((d) => {
+      const c = centroidOf(d.country, GEO);
+      if (!c) return "";
+      const dim = focused && focused !== d.country;
+      const r = haloDegrees(d.population) * degToPx;
+      return `<circle cx="${fx(c[0]).toFixed(1)}" cy="${fy(c[1]).toFixed(1)}" r="${r.toFixed(1)}"
+                      fill="url(#halo)" opacity="${dim ? 0.25 : 1}"/>`;
+    }).join("");
+
+    document.getElementById("fallback-map").innerHTML = `
+      <defs>
+        <radialGradient id="halo">
+          <stop offset="0%"   stop-color="#e8b96a" stop-opacity=".9"/>
+          <stop offset="42%"  stop-color="#c9821f" stop-opacity=".42"/>
+          <stop offset="100%" stop-color="#c9821f" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <path d="${AFRICA_PATH}" fill="#3a2a16" stroke="#8a6234" stroke-width="2.4"/>
+      ${halos}`;
+
+    document.getElementById("fallback-note").textContent = focused
+      ? `${P.name} au ${GEO[focused].fr} — le champ est mis en avant sans rendu 3D. Le halo n'a pas de bord ici non plus.`
+      : `Les ${DIST.length} pays de présence ${P.name}, sans rendu 3D. Aucune limite n'est tracée : ce sont des densités, pas un territoire.`;
+  }
+  paintFallback();
+
+  /* ══════════════════════════════════════════════════════════════════
+     LE PARCHEMIN — ordre des sections de PeopleDetailViewV2.tsx.
+     ══════════════════════════════════════════════════════════════════ */
+  document.getElementById("fh-eyebrow").textContent =
+    `${P.id} · ${P.family} · ${P.ethnoLinguisticGroup}`;
+  document.getElementById("fh-title").innerHTML = `${P.name}, <em>un peuple sans bord</em>`;
+  document.getElementById("fh-lede").textContent = P.historicalRegion;
+  document.getElementById("fh-chips").innerHTML = `
+    <span class="state-chip chip-stable"><span class="dot"></span>${nf.format(P.demography.totalPopulation)} personnes · réf. ${P.demography.referenceYear}</span>
+    <span class="state-chip chip-derived"><span class="dot"></span>${DIST.length} pays de présence</span>`;
+
+  document.getElementById("endo-term").textContent = P.self;
+  document.getElementById("exo-list").innerHTML = P.exonyms.map((e) => `<li>${e}</li>`).join("");
+  document.getElementById("exo-why").innerHTML = `<b>Pourquoi ces noms posent problème.</b> ${P.whyProblematic}`;
+
+  document.getElementById("field-explain").innerHTML =
+    `Sur la fiche pays, le trait se referme parce qu'une frontière administrative est publiée et datée. Ici, rien de tel n'existe : <strong>aucune source du corpus ne dit où la présence ${P.name} s'arrête</strong>. Ce que le corpus déclare, ce sont ${DIST.length} populations par pays. La carte s'en tient exactement à cela — un halo par pays, dont l'aire suit la population et dont le bord vaut zéro. Un tracé fermé aurait affirmé un dedans et un dehors que personne ne peut sourcer.`;
+
+  document.getElementById("legend").innerHTML = `
+    <span class="legend-item">
+      <span class="legend-dot" style="background:linear-gradient(to right,#e8b96a,rgba(201,130,31,0))"></span>
+      Densité décroissante, bord nul
+    </span>
+    ${DIST.map((d) => `
+    <span class="legend-item">
+      <span aria-hidden="true">${flagOf(d.country)}</span>
+      ${GEO[d.country].fr} · <span style="font-family:var(--afh-font-mono)">${nf.format(d.population)}</span>
+    </span>`).join("")}`;
+
+  document.getElementById("origins").textContent = P.origins;
+
+  document.getElementById("lang-note").textContent =
+    `content.languages · ISO 639-3 ${P.language.iso.join(", ")}`;
+  document.getElementById("lang-main").innerHTML =
+    `Langue principale · <strong>${P.language.main}</strong>. Les dialectes recensés dans la fiche :`;
+  document.getElementById("dialects").innerHTML =
+    P.language.dialects.map((d) => `<span>${d}</span>`).join("");
+
+  document.getElementById("sources").innerHTML = P.sources.map((s) => `
+    <div class="source-row">
+      <span class="state-chip chip-t1"><span class="dot"></span>Tier 1</span>
+      <span>${s}</span>
+    </div>`).join("");
+
+  /* ── Chrome de l'établi ──────────────────────────────────────── */
+  document.querySelectorAll("[data-vp]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("[data-vp]").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+      frame.dataset.viewport = btn.dataset.vp;
+      setTimeout(() => { globe.resize(); biasForSheet(globe, frame, sheet); }, 340);
+    });
+  });
+
+  document.querySelectorAll("button[data-webgl]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      document.querySelectorAll("button[data-webgl]").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+      frame.dataset.webgl = btn.dataset.webgl;
+      if (btn.dataset.webgl === "on") setTimeout(globe.resize, 40);
+    });
+  });
+
+  // La fiche s'ouvre sur l'aire entière : on voit d'abord l'étendue, on
+  // entre ensuite dans un pays. L'inverse ferait croire à un territoire.
+  globe.reveal();
 </script>
