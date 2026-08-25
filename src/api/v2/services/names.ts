@@ -305,7 +305,11 @@ export async function listNames(
     .range(query.offset, query.offset + query.limit - 1);
 
   if (error) {
-    if (error.code === "42P01" || error.code === "PGRST205") {
+    if (
+      error.code === "42P01" ||
+      error.code === "PGRST205" ||
+      error.code === "42P17"
+    ) {
       throw new NamesSchemaUnavailableError(
         `Names schema is unavailable: ${error.message}`
       );

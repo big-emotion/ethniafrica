@@ -309,6 +309,13 @@ export const translations = {
         clear: "Retirer le filtre",
       },
       emptyState: "Aucune migration ne correspond à ce filtre.",
+      states: {
+        failure:
+          "Les migrations n'ont pas pu être chargées. Le problème vient de notre côté, pas d'un filtre.",
+        failureRetry: "Réessayer",
+        emptyUnpublished: "Aucune migration n'est encore publiée.",
+        filteredEmpty: "Aucune migration ne correspond à ce filtre",
+      },
     },
     colonization: {
       navLabel: "Colonisation & résistances",
