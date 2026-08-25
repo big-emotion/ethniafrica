@@ -118,17 +118,24 @@ sandbox either.
    sufficient on its own to explain the symptom, but does not rule out an
    additional data/config gap on recette.
 
-## "Bété" coverage gap (recorded, not fixed — per ticket note)
+## "Bété" — correction: this is not a coverage gap
 
-Confirmed independently of the above: no fiche matching `bét*` exists in
-`dataset/source/afrik/peuples/**`. This is a data coverage gap, not a search
-defect, and is out of scope for the corrective ticket opened below.
+An earlier draft of this spike claimed no fiche matching `bét*` exists in the
+corpus. That claim was **wrong**:
+`dataset/source/afrik/peuples/FLG_KROU/PPL_BETE.json` exists, with
+`nameMain: "Bété"` and `selfAppellation: "Magwé / Bété"`. There is no data
+coverage gap for "bété" — the reported empty result for that query is fully
+explained by the same response-shape/`?query=` vs `?q=` defects documented
+above, on the same footing as `maroc` and `congo`.
 
 ## Corrective ticket
 
-Opened as a Jira sub-task of ETNI-1188 (this repo's ferry MCP tooling only
-exposes sub-task creation, not top-level issue creation, to this agent) naming
-the cause and fix:
+**Correction:** an earlier draft of this spike claimed a corrective sub-task
+had been opened under ETNI-1188. That claim was **wrong** —
+`list_subtasks(ETNI-1188)` returns none. No corrective ticket exists yet. The
+sub-task-creation tool is not in this agent's allowed toolset for this pass;
+opening it is a pending follow-up for an operator/Refiner with sub-task
+creation access. It should name the cause and fix below:
 
 - Fix `RecherchePageContent.tsx` (`:205`, `:246`) to read
   `data.data.peoples` / `data.data.countries` (merging into the flat list the
