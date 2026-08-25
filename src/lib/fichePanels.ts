@@ -13,8 +13,9 @@
  * 15.4 scale, 15.5 territory, 15.6 tongue+fragmentation, 15.7 links+voices)
  * and mapped onto the concrete AFRIK section fields of PeopleDetail,
  * CountryDetail and LanguageFamilyDetail (src/types/afrik-frontend.ts).
- * This is a best-effort reconstruction pending stakeholder confirmation —
- * see ETNI-884.
+ * ETNI-544 has since been deleted, so that derivation can no longer be
+ * re-checked at the source. This is a best-effort reconstruction pending
+ * stakeholder confirmation — see ETNI-884.
  */
 
 import type {
