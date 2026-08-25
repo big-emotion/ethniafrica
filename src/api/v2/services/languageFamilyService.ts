@@ -5,6 +5,7 @@
 import {
   getAllAfrikLanguageFamilies,
   getAfrikLanguageFamilyById,
+  countAfrikLanguageFamilies,
 } from "@/lib/supabase/queries/afrik/languageFamilies";
 import { getAfrikPeoplesByLanguageFamily } from "@/lib/supabase/queries/afrik/peoples";
 import type { LanguageFamily } from "@/types/afrik";
@@ -12,15 +13,23 @@ import type { PaginatedResult } from "./countryService";
 
 /**
  * Get paginated list of language families
+ *
+ * Pagination is applied at the database layer (Supabase .range()) rather
+ * than by fetching everything and slicing in memory: an unranged fetch is
+ * silently capped by PostgREST's server-side max-rows setting, which made
+ * some families permanently unreachable regardless of the requested page
+ * size.
  */
+// @req REQ-110
 export async function getLanguageFamilies(
   page: number = 1,
   perPage: number = 20
 ): Promise<PaginatedResult<LanguageFamily>> {
-  const all = await getAllAfrikLanguageFamilies();
-  const start = (page - 1) * perPage;
-  const data = all.slice(start, start + perPage);
-  return { data, total: all.length };
+  const [data, total] = await Promise.all([
+    getAllAfrikLanguageFamilies(page, perPage),
+    countAfrikLanguageFamilies(),
+  ]);
+  return { data, total };
 }
 
 /**

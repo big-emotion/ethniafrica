@@ -8,6 +8,7 @@ import {
   getAllAfrikLanguageFamilies,
   getAfrikLanguageFamilyById,
   searchAfrikLanguageFamilies,
+  countAfrikLanguageFamilies,
 } from "../languageFamilies";
 import { createServerClient } from "../../../server";
 
@@ -48,6 +49,30 @@ describe("AFRIK Language Families Queries", () => {
       expect(result).toHaveLength(1);
       expect(result[0].id).toBe("FLG_BANTU");
       expect(result[0].nameFr).toBe("Bantou");
+    });
+
+    // @req REQ-110
+    it("should apply page/perPage as a range on the query", async () => {
+      mockSupabase.range.mockResolvedValue({ data: [], error: null });
+
+      await getAllAfrikLanguageFamilies(3, 10);
+
+      expect(mockSupabase.range).toHaveBeenCalledWith(20, 29);
+    });
+  });
+
+  describe("countAfrikLanguageFamilies", () => {
+    // @req REQ-110
+    it("should return the exact total row count via a head-only count query", async () => {
+      mockSupabase.select.mockResolvedValue({ count: 24, error: null });
+
+      const result = await countAfrikLanguageFamilies();
+
+      expect(result).toBe(24);
+      expect(mockSupabase.select).toHaveBeenCalledWith("*", {
+        count: "exact",
+        head: true,
+      });
     });
   });
 
