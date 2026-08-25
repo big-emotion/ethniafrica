@@ -1,76 +1,101 @@
 import { describe, it, expect } from "vitest";
 import {
-  getHomeModules,
+  MODULE_DEFINITIONS,
   getModuleCategories,
   isModuleLive,
 } from "@/lib/accessModeHubs";
-import { getLocalizedRoute } from "@/lib/routing";
 
 describe("accessModeHubs — 10-module light-home config", () => {
   // @req FR92
   // @req REQ-044
   it("exports exactly 10 module entries", () => {
-    const modules = getHomeModules("fr");
-    expect(modules).toHaveLength(10);
+    expect(MODULE_DEFINITIONS).toHaveLength(10);
   });
 
   // @req FR92
   // @req REQ-044
-  it("gives every module an id, FR title, category, accent, illustration and live|soon state", () => {
-    const modules = getHomeModules("fr");
-
-    for (const entry of modules) {
-      expect(typeof entry.id).toBe("string");
-      expect(entry.id.length).toBeGreaterThan(0);
-      expect(typeof entry.title).toBe("string");
-      expect(entry.title.length).toBeGreaterThan(0);
-      expect(["explorer", "comprendre", "jouer"]).toContain(entry.category);
-      expect(typeof entry.accent).toBe("string");
-      expect(typeof entry.illustration).toBe("string");
-      expect(["live", "soon"]).toContain(entry.state);
+  it("gives every module an id, FR title, category, accent, illustration and availability mode", () => {
+    for (const def of MODULE_DEFINITIONS) {
+      expect(typeof def.id).toBe("string");
+      expect(def.id.length).toBeGreaterThan(0);
+      expect(typeof def.title).toBe("string");
+      expect(def.title.length).toBeGreaterThan(0);
+      expect(["explorer", "comprendre", "jouer"]).toContain(def.category);
+      expect(typeof def.accent).toBe("string");
+      expect(typeof def.illustration).toBe("string");
+      expect(["static", "data", "unavailable"]).toContain(def.availability);
     }
   });
 
   // @req FR92
   // @req REQ-044
-  it("marks a module live only when it resolves to an existing localized route", () => {
-    const modules = getHomeModules("fr");
-    const peuples = modules.find((module) => module.id === "peuples");
-
-    expect(peuples?.state).toBe("live");
-    expect(peuples?.href).toBe(getLocalizedRoute("fr", "peoples"));
+  it("derives the Tout/Explorer/Comprendre/Jouer categories from the config, in first-seen order", () => {
+    expect(getModuleCategories()).toEqual(["explorer", "comprendre", "jouer"]);
   });
 
+  // @req REQ-106
+  it("marks a static module live once its route resolves, without needing a data probe", () => {
+    expect(isModuleLive({ page: "about", availability: "static" }, false)).toBe(
+      true
+    );
+  });
+
+  // @req REQ-106
+  it("marks a data module live only when its probe confirms at least one row", () => {
+    expect(isModuleLive({ page: "peoples", availability: "data" }, true)).toBe(
+      true
+    );
+    expect(isModuleLive({ page: "peoples", availability: "data" }, false)).toBe(
+      false
+    );
+  });
+
+  // @req REQ-106
+  it("never marks an unavailable module live, regardless of routing or data", () => {
+    expect(
+      isModuleLive({ page: "compare", availability: "unavailable" }, true)
+    ).toBe(false);
+  });
+
+  // @req REQ-106
+  it("never marks a module live without a resolved route", () => {
+    expect(isModuleLive({ page: null, availability: "static" }, true)).toBe(
+      false
+    );
+    expect(isModuleLive({ page: null, availability: "data" }, true)).toBe(
+      false
+    );
+  });
+
+  // Only a per-people ego graph exists (/fr/peuples/{slug}/liens); there is no
+  // standalone hub to send the home card to, so it has no route.
   // @req FR92
   // @req REQ-044
-  it("marks a module soon («Bientôt») when it has no live route yet", () => {
-    const modules = getHomeModules("fr");
-    const soonModules = modules.filter((module) => module.state === "soon");
+  it("keeps the invisible-links game routeless while it has no standalone hub", () => {
+    const liens = MODULE_DEFINITIONS.find((def) => def.id === "liens");
 
-    expect(soonModules.length).toBeGreaterThan(0);
-    for (const entry of soonModules) {
-      expect(entry.href).toBeNull();
+    expect(liens?.page).toBeNull();
+  });
+
+  // ETNI-1189/REQ-106: the picker built under PR #338 is not wired into any
+  // route, so the comparator must never be advertised as available.
+  // @req REQ-106
+  it("marks the comparator forced-unavailable — its picker is not wired", () => {
+    const comparer = MODULE_DEFINITIONS.find((def) => def.id === "comparer");
+
+    expect(comparer?.availability).toBe("unavailable");
+  });
+
+  // @req REQ-106
+  it("resolves each data module's dataSource to a known Supabase table", () => {
+    const dataModules = MODULE_DEFINITIONS.filter(
+      (def) => def.availability === "data"
+    );
+
+    expect(dataModules.length).toBeGreaterThan(0);
+    for (const def of dataModules) {
+      expect(typeof def.dataSource).toBe("string");
     }
-  });
-
-  // @req FR92
-  // @req REQ-044
-  it("computes live|soon generically from route resolution, not a hardcoded id list", () => {
-    expect(isModuleLive(null)).toBe(false);
-    expect(isModuleLive("peoples")).toBe(true);
-  });
-
-  // The migrations atlas (ETNI-521) and the comparator (epic 9) both shipped,
-  // and the nav already links to /fr/migrations — leaving their cards on
-  // «Bientôt» made the home contradict the rest of the site.
-  // @req FR92
-  // @req REQ-044
-  it("marks the shipped migrations atlas live", () => {
-    const modules = getHomeModules("fr");
-    const frise = modules.find((module) => module.id === "frise");
-
-    expect(frise?.state).toBe("live");
-    expect(frise?.href).toBe(getLocalizedRoute("fr", "migrations"));
   });
 
   // ETNI-1198/ETNI-1220: the corpus behind this card is 6 sourced events —
@@ -80,38 +105,9 @@ describe("accessModeHubs — 10-module light-home config", () => {
   // @req FR92
   // @req REQ-044
   it("does not claim '3 000 ans' coverage on the migrations card before the sourcing floor is met", () => {
-    const modules = getHomeModules("fr");
-    const frise = modules.find((module) => module.id === "frise");
+    const frise = MODULE_DEFINITIONS.find((def) => def.id === "frise");
 
     expect(frise?.title).not.toMatch(/3\s?000\s+ans/i);
-  });
-
-  // @req FR92
-  // @req REQ-044
-  it("marks the shipped comparator live", () => {
-    const modules = getHomeModules("fr");
-    const comparer = modules.find((module) => module.id === "comparer");
-
-    expect(comparer?.state).toBe("live");
-    expect(comparer?.href).toBe(getLocalizedRoute("fr", "compare"));
-  });
-
-  // Only a per-people ego graph exists (/fr/peuples/{slug}/liens); there is no
-  // standalone hub to send the home card to, so it stays «Bientôt».
-  // @req FR92
-  // @req REQ-044
-  it("keeps the invisible-links game soon while it has no standalone hub", () => {
-    const modules = getHomeModules("fr");
-    const liens = modules.find((module) => module.id === "liens");
-
-    expect(liens?.state).toBe("soon");
-    expect(liens?.href).toBeNull();
-  });
-
-  // @req FR92
-  // @req REQ-044
-  it("derives the Tout/Explorer/Comprendre/Jouer categories from the config, in first-seen order", () => {
-    expect(getModuleCategories()).toEqual(["explorer", "comprendre", "jouer"]);
   });
 
   // ETNI-1196/DEC-019: the corpus behind this card is ethnonyms attached to a
@@ -121,8 +117,7 @@ describe("accessModeHubs — 10-module light-home config", () => {
   // @req FR92
   // @req REQ-044
   it("names the ethnonym atlas on the noms card, not personal-name origin", () => {
-    const modules = getHomeModules("fr");
-    const noms = modules.find((module) => module.id === "noms");
+    const noms = MODULE_DEFINITIONS.find((def) => def.id === "noms");
 
     expect(noms?.title).toBe("Noms & appellations");
     expect(noms?.title).not.toMatch(/d'où vient un nom/i);
