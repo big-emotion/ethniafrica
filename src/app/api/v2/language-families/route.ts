@@ -45,11 +45,13 @@
  *                 - id: "FLG_BANTU"
  *                   nameFr: "Bantou"
  *                   nameEn: "Bantu"
+ *                   peopleCount: 28
  *               meta:
- *                 total: 24
+ *                 total: 20
  *                 page: 1
  *                 perPage: 20
- *                 totalPages: 2
+ *                 totalPages: 1
+ *                 unclassifiedPeoplesCount: 64
  *       500:
  *         description: Erreur serveur
  *         content:

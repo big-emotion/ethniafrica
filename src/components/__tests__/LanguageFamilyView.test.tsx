@@ -7,6 +7,7 @@ import * as afrikLoader from "@/lib/afrikLoader";
 
 vi.mock("@/lib/afrikLoader", () => ({
   getAllLanguageFamilies: vi.fn(),
+  getUnclassifiedPeoplesCount: vi.fn(() => Promise.resolve(0)),
 }));
 
 vi.mock("@/hooks/use-mobile", () => ({
@@ -77,5 +78,35 @@ describe("LanguageFamilyView", () => {
     );
 
     expect(afrikLoader.getAllLanguageFamilies).toHaveBeenCalledTimes(1);
+  });
+
+  // @req REQ-108
+  it("should render the row-computed peopleCount, including a real zero", async () => {
+    vi.mocked(afrikLoader.getAllLanguageFamilies).mockResolvedValue([
+      { id: "FLG_BANTU", nameFr: "Bantou", peopleCount: 28 },
+      { id: "FLG_EMPTY", nameFr: "Empty", peopleCount: 0 },
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ] as any);
+
+    render(
+      <LanguageFamilyView language="fr" onFamilySelect={mockOnFamilySelect} />,
+      { wrapper: createWrapper() }
+    );
+
+    expect(await screen.findByText("28 peuples")).toBeInTheDocument();
+    expect(await screen.findByText("0 peuples")).toBeInTheDocument();
+  });
+
+  // @req REQ-108
+  it("should surface the unclassified peoples count instead of omitting it", async () => {
+    vi.mocked(afrikLoader.getAllLanguageFamilies).mockResolvedValue([]);
+    vi.mocked(afrikLoader.getUnclassifiedPeoplesCount).mockResolvedValue(64);
+
+    render(
+      <LanguageFamilyView language="fr" onFamilySelect={mockOnFamilySelect} />,
+      { wrapper: createWrapper() }
+    );
+
+    expect(await screen.findByText(/64/)).toBeInTheDocument();
   });
 });

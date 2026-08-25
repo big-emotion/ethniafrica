@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { Language } from "@/types/shared";
 import { getTranslation } from "@/lib/translations";
 import { Card } from "@/components/ui/card";
@@ -11,7 +12,10 @@ import { Search, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { normalizeString } from "@/lib/normalize";
 import type { LanguageFamilySummary } from "@/types/afrik-frontend";
-import { getAllLanguageFamilies } from "@/lib/afrikLoader";
+import {
+  getAllLanguageFamilies,
+  getUnclassifiedPeoplesCount,
+} from "@/lib/afrikLoader";
 import { useListView } from "@/hooks/use-list-view";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
@@ -67,6 +71,15 @@ export const LanguageFamilyView = ({
     getDisplayName,
     filterFn,
     isMobile,
+  });
+
+  // REQ-108: peoples not reachable through any published family must be
+  // reported, not silently dropped from the directory's totals.
+  const { data: unclassifiedPeoplesCount = 0 } = useQuery({
+    queryKey: ["language-families", "unclassified-count"],
+    queryFn: getUnclassifiedPeoplesCount,
+    staleTime: 5 * 60 * 1000,
+    enabled: !hideSearchAndAlphabet,
   });
 
   const formatNumber = (num: number): string =>
@@ -268,6 +281,13 @@ export const LanguageFamilyView = ({
             <ChevronRight className="h-4 w-4" />
           </Button>
         </div>
+      )}
+
+      {!hideSearchAndAlphabet && unclassifiedPeoplesCount > 0 && (
+        <p className="px-4 pb-4 text-xs text-muted-foreground">
+          {formatNumber(unclassifiedPeoplesCount)} peuples non classés dans une
+          famille linguistique publiée
+        </p>
       )}
     </div>
   );

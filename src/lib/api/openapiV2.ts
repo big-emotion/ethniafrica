@@ -466,6 +466,12 @@ const options: swaggerJsdoc.Options = {
               type: "number",
               example: 5,
             },
+            unclassifiedPeoplesCount: {
+              type: "number",
+              description:
+                "Peoples not reachable through any returnable family, surfaced instead of silently omitted (REQ-108). Only populated on the language-families list.",
+              example: 64,
+            },
           },
         },
         ApiResponseV2: {
@@ -755,6 +761,13 @@ const options: swaggerJsdoc.Options = {
             nameEn: {
               type: "string",
               example: "Bantu",
+            },
+            peopleCount: {
+              type: "integer",
+              minimum: 0,
+              description:
+                "Number of afrik_peoples rows carrying this family's id, computed from stored rows (REQ-108) — not the fiche-declared associatedPeoples length.",
+              example: 28,
             },
             associatedPeoples: {
               type: "array",

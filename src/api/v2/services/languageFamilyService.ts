@@ -6,21 +6,53 @@ import {
   getAllAfrikLanguageFamilies,
   getAfrikLanguageFamilyById,
 } from "@/lib/supabase/queries/afrik/languageFamilies";
-import { getAfrikPeoplesByLanguageFamily } from "@/lib/supabase/queries/afrik/peoples";
+import {
+  getAfrikPeoplesByLanguageFamily,
+  getPeopleCountsByLanguageFamily,
+  UNCLASSIFIED_FAMILY_KEY,
+} from "@/lib/supabase/queries/afrik/peoples";
 import type { LanguageFamily } from "@/types/afrik";
 import type { PaginatedResult } from "./countryService";
 
+export interface LanguageFamiliesResult extends PaginatedResult<LanguageFamily> {
+  /**
+   * Peoples whose language_family_id is null or references a family absent
+   * from the returnable list — surfaced instead of silently omitted (REQ-108).
+   */
+  unclassifiedPeoplesCount: number;
+}
+
 /**
- * Get paginated list of language families
+ * Get paginated list of language families, with a peopleCount computed from
+ * stored afrik_peoples rows (not fiche-declared content) on each family
+ * (REQ-108).
  */
 export async function getLanguageFamilies(
   page: number = 1,
   perPage: number = 20
-): Promise<PaginatedResult<LanguageFamily>> {
-  const all = await getAllAfrikLanguageFamilies();
+): Promise<LanguageFamiliesResult> {
+  const [all, peopleCounts] = await Promise.all([
+    getAllAfrikLanguageFamilies(),
+    getPeopleCountsByLanguageFamily(),
+  ]);
+
+  const familyIds = new Set(all.map((family) => family.id));
+  let unclassifiedPeoplesCount = 0;
+  for (const [familyId, count] of peopleCounts) {
+    if (familyId === UNCLASSIFIED_FAMILY_KEY || !familyIds.has(familyId)) {
+      unclassifiedPeoplesCount += count;
+    }
+  }
+
+  const withCounts: LanguageFamily[] = all.map((family) => ({
+    ...family,
+    peopleCount: peopleCounts.get(family.id) ?? 0,
+  }));
+
   const start = (page - 1) * perPage;
-  const data = all.slice(start, start + perPage);
-  return { data, total: all.length };
+  const data = withCounts.slice(start, start + perPage);
+
+  return { data, total: withCounts.length, unclassifiedPeoplesCount };
 }
 
 /**

@@ -11,13 +11,19 @@ vi.mock("@/lib/supabase/queries/afrik/languageFamilies", () => ({
 
 vi.mock("@/lib/supabase/queries/afrik/peoples", () => ({
   getAfrikPeoplesByLanguageFamily: vi.fn(),
+  getPeopleCountsByLanguageFamily: vi.fn(),
+  UNCLASSIFIED_FAMILY_KEY: "__unclassified__",
 }));
 
 import {
   getAllAfrikLanguageFamilies,
   getAfrikLanguageFamilyById,
 } from "@/lib/supabase/queries/afrik/languageFamilies";
-import { getAfrikPeoplesByLanguageFamily } from "@/lib/supabase/queries/afrik/peoples";
+import {
+  getAfrikPeoplesByLanguageFamily,
+  getPeopleCountsByLanguageFamily,
+  UNCLASSIFIED_FAMILY_KEY,
+} from "@/lib/supabase/queries/afrik/peoples";
 
 describe("Language Family Service", () => {
   beforeEach(() => {
@@ -25,6 +31,10 @@ describe("Language Family Service", () => {
   });
 
   describe("getLanguageFamilies", () => {
+    beforeEach(() => {
+      vi.mocked(getPeopleCountsByLanguageFamily).mockResolvedValue(new Map());
+    });
+
     it("should return paginated language families", async () => {
       const mockFamilies = Array.from({ length: 10 }, (_, i) => ({
         id: `FLG_${i}`,
@@ -57,6 +67,91 @@ describe("Language Family Service", () => {
 
       expect(page1.data.length).toBe(2);
       expect(page2.data.length).toBe(2);
+    });
+
+    // @req REQ-108
+    it("should compute peopleCount from stored rows, not fiche-declared content", async () => {
+      const mockFamilies = [
+        {
+          id: "FLG_X",
+          nameFr: "Family X",
+          content: {
+            associatedPeoples: [{ name: "Stale", peopleId: "PPL_1" }],
+          },
+        },
+      ];
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
+      vi.mocked(getPeopleCountsByLanguageFamily).mockResolvedValue(
+        new Map([["FLG_X", 28]])
+      );
+
+      const result = await getLanguageFamilies(1, 20);
+
+      expect(result.data[0].peopleCount).toBe(28);
+    });
+
+    // @req REQ-108
+    it("should report 0 for a family with no stored peoples rather than omitting the field", async () => {
+      const mockFamilies = [{ id: "FLG_EMPTY", nameFr: "Empty", content: {} }];
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
+      vi.mocked(getPeopleCountsByLanguageFamily).mockResolvedValue(new Map());
+
+      const result = await getLanguageFamilies(1, 20);
+
+      expect(result.data[0].peopleCount).toBe(0);
+    });
+
+    // @req REQ-108
+    it("should surface peoples with a null or unmatched family as unclassified rather than omitting them", async () => {
+      const mockFamilies = [{ id: "FLG_X", nameFr: "Family X", content: {} }];
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
+      vi.mocked(getPeopleCountsByLanguageFamily).mockResolvedValue(
+        new Map([
+          ["FLG_X", 739],
+          [UNCLASSIFIED_FAMILY_KEY, 60],
+          // References a family id that isn't published/returnable.
+          ["FLG_UNPUBLISHED", 4],
+        ])
+      );
+
+      const result = await getLanguageFamilies(1, 20);
+
+      expect(result.unclassifiedPeoplesCount).toBe(64);
+    });
+
+    // @req REQ-108
+    it("should reconcile the reported family total with the returnable families and the peoples corpus", async () => {
+      const mockFamilies = Array.from({ length: 20 }, (_, i) => ({
+        id: `FLG_${i}`,
+        nameFr: `Family ${i}`,
+        content: {},
+      }));
+      vi.mocked(getAllAfrikLanguageFamilies).mockResolvedValue(mockFamilies);
+
+      const peopleCounts = new Map<string, number>();
+      mockFamilies.forEach((family, i) => peopleCounts.set(family.id, i + 1));
+      peopleCounts.set(UNCLASSIFIED_FAMILY_KEY, 64);
+      const totalPeoples = Array.from(peopleCounts.values()).reduce(
+        (sum, count) => sum + count,
+        0
+      );
+      vi.mocked(getPeopleCountsByLanguageFamily).mockResolvedValue(
+        peopleCounts
+      );
+
+      const result = await getLanguageFamilies(1, 20);
+
+      // No 24-vs-20 gap: the reported total equals the number of families
+      // the endpoint can actually return.
+      expect(result.total).toBe(mockFamilies.length);
+
+      const summedPeopleCounts = result.data.reduce(
+        (sum, family) => sum + (family.peopleCount ?? 0),
+        0
+      );
+      expect(summedPeopleCounts + result.unclassifiedPeoplesCount).toBe(
+        totalPeoples
+      );
     });
   });
 

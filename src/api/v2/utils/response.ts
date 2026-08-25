@@ -102,7 +102,8 @@ export function createPaginatedResponse<T>(
   data: T[],
   total: number,
   page: number = 1,
-  perPage: number = 20
+  perPage: number = 20,
+  extraMeta?: Partial<PaginationMeta>
 ): ApiResponse<T[]> {
   const totalPages = Math.ceil(total / perPage);
 
@@ -113,6 +114,7 @@ export function createPaginatedResponse<T>(
       page,
       perPage,
       totalPages,
+      ...extraMeta,
     },
   };
 }
