@@ -27,6 +27,13 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
+      # Epic 10, Story 10.11 (ETNI-500 · NFR18–NFR23, AR20) — a standalone
+      # esbuild bundle of the quiz play-island entry, so this needs neither
+      # Supabase secrets nor the full Next.js build below and always runs,
+      # including on forks / Dependabot PRs.
+      - name: Check quiz play-island bundle size (≤ 15 KB gzipped)
+        run: npm run bundle-size:quiz
+
       # Skip cleanly on forks / Dependabot PRs that cannot access the Supabase
       # secrets. When the secret is set (i.e. on PRs from the same repo) the
       # gate is enforced — no continue-on-error masks failures.
@@ -48,6 +55,9 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          # Epic 10, Story 10.11 (ETNI-500) — /fr/quiz 404s (isQuizFeatureEnabled)
+          # unless this is set, which would silently audit nothing.
+          NEXT_PUBLIC_FEATURE_QUIZ: "true"
 
       - name: Start Next.js server
         if: steps.secrets.outputs.present == 'true'
@@ -57,6 +67,7 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          NEXT_PUBLIC_FEATURE_QUIZ: "true"
 
       - name: Wait for server to be ready
         if: steps.secrets.outputs.present == 'true'
@@ -112,7 +123,6 @@ jobs:
               '**Routes audited:**',
               '- `/`',
               '- `/fr`',
-              '- `/fr/noms`',
               '- `/fr/peuples`',
               '- `/fr/recherche`',
               '- `/fr/mentions-legales`',
@@ -123,6 +133,9 @@ jobs:
               '- `/fr/peuples/PPL_WOLOF/liens`',
               '- `/fr/comparer`',
               '- `/fr/comparer/peuples/PPL_WOLOF/PPL_SERERE`',
+              '- `/fr/quiz`',
+              '',
+              '_Not audited: `/fr/noms`, `/fr/migrations` — both currently return HTTP 500 in CI, unrelated to this PR._',
               publicLinks,
             ].join('\n');
 

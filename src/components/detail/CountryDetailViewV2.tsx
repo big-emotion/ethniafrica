@@ -8,6 +8,7 @@ import type { CountryDetail } from "@/types/afrik-frontend";
 import { getCountry } from "@/lib/afrikLoader";
 import { transformCountryData } from "@/lib/countryDataTransformer";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
+import { FlagTarget } from "@/components/flags/FlagTarget";
 import {
   CountryHero,
   EtymologyBlock,
@@ -30,6 +31,8 @@ interface CountryDetailViewV2Props {
   fromPeopleId?: string;
   onPeopleClick?: (peopleId: string) => void;
   onBack?: () => void;
+  /** Cloudflare Turnstile public site key, required to enable the live FlagTarget wiring on section headings (AC5). */
+  turnstileSiteKey?: string;
 }
 
 export const CountryDetailViewV2 = ({
@@ -40,6 +43,7 @@ export const CountryDetailViewV2 = ({
   fromPeopleName,
   fromPeopleId,
   onBack,
+  turnstileSiteKey,
 }: CountryDetailViewV2Props) => {
   const matchingInitialData =
     initialData?.id === countryId ? initialData : null;
@@ -367,6 +371,33 @@ export const CountryDetailViewV2 = ({
               Culture &amp; Société
             </div>
             <CultureGrid data={data.culture} />
+            <div data-testid="section-flag-target-culture" className="mt-3">
+              {turnstileSiteKey ? (
+                <FlagTarget
+                  target={{
+                    type: "fiche_section",
+                    id: countryId,
+                    fieldPath: "culture",
+                  }}
+                  turnstileSiteKey={turnstileSiteKey}
+                  triggerLabel="Signaler cette section"
+                  className="w-auto text-xs"
+                />
+              ) : (
+                <button
+                  type="button"
+                  disabled
+                  className="rounded-md border border-dashed px-2 py-1 text-xs"
+                  style={{
+                    borderColor: "var(--country-border)",
+                    color: "var(--country-text-soft)",
+                  }}
+                  aria-label="Signaler cette section — bientôt disponible"
+                >
+                  Signaler cette section (bientôt disponible)
+                </button>
+              )}
+            </div>
           </section>
         )}
       </div>

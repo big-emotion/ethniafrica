@@ -1,7 +1,28 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import {
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+  within,
+} from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
+
+vi.mock("@/hooks/use-consent", () => ({
+  useConsent: () => ({
+    consentState: {
+      hasConsented: true,
+      preferences: { essential: true, analytics: false, functional: true },
+      consentDate: null,
+    },
+    acceptAll: vi.fn(),
+    rejectAll: vi.fn(),
+    updatePreferences: vi.fn(),
+    showBanner: false,
+    setShowBanner: vi.fn(),
+  }),
+}));
 import { FamilyDecolonialHeader } from "@/components/family/FamilyDecolonialHeader";
 import { FamilyHero } from "@/components/family/FamilyHero";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
@@ -169,6 +190,29 @@ describe("LanguageFamilyDetailViewV2", () => {
       "href",
       "/fr/pays/COD"
     );
+  });
+
+  // @req REQ-012 (AC5)
+  it("renders a disabled FlagTarget shell on the History section by default", () => {
+    render(<LanguageFamilyDetailViewV2 family={completeFamily} />);
+
+    const flagTarget = screen.getByTestId("section-flag-target-history");
+    expect(within(flagTarget).getByRole("button")).toBeDisabled();
+  });
+
+  // @req REQ-012 (AC5)
+  it("wires the live fiche_section FlagTarget on the History section when turnstileSiteKey is provided", () => {
+    render(
+      <LanguageFamilyDetailViewV2
+        family={completeFamily}
+        turnstileSiteKey="test-site-key"
+      />
+    );
+
+    const flagTarget = screen.getByTestId("section-flag-target-history");
+    expect(
+      within(flagTarget).getByRole("button", { name: "Signaler cette section" })
+    ).toBeEnabled();
   });
 });
 

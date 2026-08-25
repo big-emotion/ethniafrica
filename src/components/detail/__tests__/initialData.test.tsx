@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { CountryDetail, PeopleDetail } from "@/types/afrik-frontend";
 
@@ -21,6 +21,21 @@ vi.mock("@/lib/afrikLoader", () => ({
 
 vi.mock("@/lib/flags-client", () => ({
   hasActiveSourceFlag: (...args: unknown[]) => mockHasActiveSourceFlag(...args),
+}));
+
+vi.mock("@/hooks/use-consent", () => ({
+  useConsent: () => ({
+    consentState: {
+      hasConsented: true,
+      preferences: { essential: true, analytics: false, functional: true },
+      consentDate: null,
+    },
+    acceptAll: vi.fn(),
+    rejectAll: vi.fn(),
+    updatePreferences: vi.fn(),
+    showBanner: false,
+    setShowBanner: vi.fn(),
+  }),
 }));
 
 import { CountryDetailViewV2 } from "../CountryDetailViewV2";
@@ -76,5 +91,99 @@ describe("detail views with server-provided data", () => {
       screen.getByRole("heading", { level: 1, name: "Wolof" })
     ).toBeInTheDocument();
     expect(mockGetPeople).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-012 (AC5)
+  it("renders a disabled FlagTarget shell on the country Culture section by default", () => {
+    const country: CountryDetail = {
+      id: "SEN",
+      nameFr: "Sénégal",
+      nameCommonFr: "Sénégal",
+      nameOfficial: "République du Sénégal",
+      culture: { dominantReligions: "Islam, christianisme" },
+    };
+
+    render(
+      <CountryDetailViewV2
+        countryId="SEN"
+        language="fr"
+        initialData={country}
+      />
+    );
+
+    const flagTarget = screen.getByTestId("section-flag-target-culture");
+    expect(within(flagTarget).getByRole("button")).toBeDisabled();
+  });
+
+  // @req REQ-012 (AC5)
+  it("wires the live fiche_section FlagTarget on the country Culture section when turnstileSiteKey is provided", () => {
+    const country: CountryDetail = {
+      id: "SEN",
+      nameFr: "Sénégal",
+      nameCommonFr: "Sénégal",
+      nameOfficial: "République du Sénégal",
+      culture: { dominantReligions: "Islam, christianisme" },
+    };
+
+    render(
+      <CountryDetailViewV2
+        countryId="SEN"
+        language="fr"
+        initialData={country}
+        turnstileSiteKey="test-site-key"
+      />
+    );
+
+    const flagTarget = screen.getByTestId("section-flag-target-culture");
+    expect(
+      within(flagTarget).getByRole("button", { name: "Signaler cette section" })
+    ).toBeEnabled();
+  });
+
+  // @req REQ-012 (AC5)
+  it("renders a disabled FlagTarget shell on the people Culture section by default", () => {
+    const people: PeopleDetail = {
+      id: "PPL_WOLOF",
+      nameMain: "Wolof",
+      languageFamilyId: "FLG_NIGER_CONGO",
+      currentCountries: ["SEN"],
+    };
+
+    render(
+      <PeopleDetailView
+        peopleId="PPL_WOLOF"
+        language="fr"
+        initialData={people}
+      />
+    );
+    fireEvent.mouseDown(screen.getByRole("tab", { name: "Culture" }));
+
+    const flagTarget = screen.getByTestId("section-flag-target-culture");
+    expect(within(flagTarget).getByRole("button")).toBeDisabled();
+  });
+
+  // @req REQ-012 (AC5)
+  it("wires the live fiche_section FlagTarget on the people Culture section when turnstileSiteKey is provided", () => {
+    const people: PeopleDetail = {
+      id: "PPL_WOLOF",
+      nameMain: "Wolof",
+      languageFamilyId: "FLG_NIGER_CONGO",
+      currentCountries: ["SEN"],
+    };
+
+    render(
+      <PeopleDetailView
+        peopleId="PPL_WOLOF"
+        language="fr"
+        initialData={people}
+        turnstileSiteKey="test-site-key"
+      />
+    );
+    fireEvent.mouseDown(screen.getByRole("tab", { name: "Culture" }));
+
+    const flagTarget = screen.getByTestId("section-flag-target-culture");
+    expect(
+      within(flagTarget).getByRole("button", { name: "Signaler cette section" })
+    ).toBeEnabled();
   });
 });

@@ -20,8 +20,8 @@ All colors MUST be HSL.
 
 /* Font fallback for Storybook — next/font not available outside Next.js runtime */
 :root {
-  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-fraunces: "Fraunces", Georgia, serif;
+  --font-nunito-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -150,7 +150,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-nunito-sans), sans-serif;
   }
 
   h1,
@@ -160,7 +160,7 @@ All colors MUST be HSL.
   h5,
   h6 {
     @apply font-display;
-    font-family: var(--font-playfair), serif;
+    font-family: var(--font-fraunces), serif;
   }
 }
 

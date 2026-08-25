@@ -1,27 +1,11 @@
 import type { Metadata } from "next";
 import { connection } from "next/server";
-import {
-  Inter,
-  Playfair_Display,
-  Fraunces,
-  Nunito_Sans,
-} from "next/font/google";
+import { Fraunces, Nunito_Sans } from "next/font/google";
 import "@/index.css";
 import { Providers } from "./providers";
 import { TypeformPreload } from "@/components/TypeformPreload";
 import { PRODUCT_NAME, OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
 import PlausibleScript from "@/components/PlausibleScript";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["600", "700"],
-  variable: "--font-playfair",
-});
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -74,7 +58,7 @@ export default async function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${inter.variable} ${playfairDisplay.variable} ${fraunces.variable} ${nunitoSans.variable}`}
+      className={`${fraunces.variable} ${nunitoSans.variable}`}
       suppressHydrationWarning
     >
       <body className="font-sans antialiased">
