@@ -52,6 +52,12 @@ export interface FamilyHistoryData {
 export interface FamilyDistributionData {
   totalSpeakers: number | null;
   distributionByCountry: Record<string, number>;
+  /**
+   * Union of associated peoples' currentCountries — always derived from
+   * afrik_peoples records, never the fiche's own declared
+   * distributionByCountry (REQ-119, docs/design/atlas-charter.md §1).
+   */
+  footprintByCountry: Record<string, number>;
 }
 
 export interface FamilyPageData {
@@ -151,6 +157,7 @@ export function transformDistribution(
   return {
     totalSpeakers: distribution.totalSpeakers ?? null,
     distributionByCountry: distribution.distributionByCountry ?? {},
+    footprintByCountry: family.footprintByCountry ?? {},
   };
 }
 

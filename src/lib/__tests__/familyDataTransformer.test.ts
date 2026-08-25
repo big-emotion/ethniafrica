@@ -52,6 +52,7 @@ const family: LanguageFamily = {
     },
     sources: ["Glottolog"],
   },
+  footprintByCountry: { COD: 12, TZA: 8 },
 };
 
 describe("familyDataTransformer", () => {
@@ -75,6 +76,7 @@ describe("familyDataTransformer", () => {
     expect(transformDistribution(family)).toEqual({
       totalSpeakers: 350000000,
       distributionByCountry: { COD: 90000000, TZA: 60000000 },
+      footprintByCountry: { COD: 12, TZA: 8 },
     });
     expect(transformSources(family)).toEqual(["Glottolog"]);
   });
@@ -139,9 +141,28 @@ describe("familyDataTransformer", () => {
         contactZones: null,
         majorEvents: null,
       },
-      distribution: { totalSpeakers: null, distributionByCountry: {} },
+      distribution: {
+        totalSpeakers: null,
+        distributionByCountry: {},
+        footprintByCountry: {},
+      },
       sources: [],
     });
+  });
+
+  // @req REQ-119
+  it("surfaces footprintByCountry as derived from associated peoples, never from the fiche's own declared distribution", () => {
+    expect(transformDistribution(family).footprintByCountry).toEqual({
+      COD: 12,
+      TZA: 8,
+    });
+  });
+
+  // @req REQ-119
+  it("defaults footprintByCountry to an empty object rather than omitting it when no peoples carry a country", () => {
+    const noFootprint = { ...family, footprintByCountry: undefined };
+
+    expect(transformDistribution(noFootprint).footprintByCountry).toEqual({});
   });
 
   // @req REQ-047

@@ -69,9 +69,29 @@ export async function getLanguageFamilies(
 }
 
 /**
+ * Union of `currentCountries` over the peoples carrying this family's id —
+ * the "footprint" the atlas charter defines (docs/design/atlas-charter.md
+ * §1). Always derived from other records, never the fiche's own declared
+ * `content.distribution` (REQ-119).
+ */
+function computeFootprintByCountry(
+  peoples: { currentCountries: string[] }[]
+): Record<string, number> {
+  const footprint: Record<string, number> = {};
+  for (const people of peoples) {
+    for (const countryId of people.currentCountries) {
+      footprint[countryId] = (footprint[countryId] ?? 0) + 1;
+    }
+  }
+  return footprint;
+}
+
+/**
  * Get a single language family by FLG_ ID
  * Note: Individual items use direct query for now (less critical than lists)
  */
+// @req REQ-033
+// @req REQ-119
 export async function getLanguageFamilyById(
   id: string
 ): Promise<LanguageFamily | null> {
@@ -90,6 +110,7 @@ export async function getLanguageFamilyById(
   return {
     ...family,
     associatedPeoples,
+    footprintByCountry: computeFootprintByCountry(peoples),
     content: {
       ...family.content,
       associatedPeoples,
