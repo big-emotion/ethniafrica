@@ -6,8 +6,8 @@
  */
 
 import {
-  ficheSources,
-  type LabelledFicheSource,
+  ficheSourceEntries,
+  type FicheSourceEntry,
 } from "@/lib/afrik/ficheSourceLabel";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 import type {
@@ -160,7 +160,7 @@ export interface PeoplePageData {
   relatedPeoples: PeopleRelatedData;
   countries: PeopleCountriesData;
   /** Each source keeps its own tier, url and notes — a joined line destroys all three. */
-  sources: LabelledFicheSource[];
+  sources: FicheSourceEntry[];
   names: PeopleNamesData | null;
 }
 
@@ -464,7 +464,7 @@ export function transformPeopleData(
   raw: PeopleDetail,
   namesDossier?: PeopleNamesDossier | null
 ): PeoplePageData {
-  const sources = ficheSources(raw.sources);
+  const sources = ficheSourceEntries(raw.sources);
 
   return {
     hero: transformPeopleHero(raw),

@@ -10,16 +10,10 @@ import {
   buildRingLineLoop,
 } from "@/lib/atlas/globeGeometry";
 import type { AtlasOverlay } from "@/lib/atlas/overlays";
-import { peopleFieldIntensity } from "@/lib/atlas/peopleField";
 import { buildRotationMatrix } from "@/lib/atlas/projection";
-import {
-  createSphereLayer,
-  fitScale,
-  type SphereLayer,
-} from "@/lib/atlas/sphereLayer";
+import { createSphereLayer, type SphereLayer } from "@/lib/atlas/sphereLayer";
 import { resolveGlobePalette } from "@/lib/atlas/globePalette";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
-import type { CountryId } from "@/types/afrik";
 
 const MAX_DEVICE_PIXEL_RATIO = 2;
 const REVEAL_DURATION_SECONDS = 0.9;
@@ -81,34 +75,22 @@ const BOUNDARY_FRAGMENT_SHADER = `
 // a line — it structurally cannot draw a closed boundary (atlas-charter §1).
 const FIELD_VERTEX_SHADER = `
   attribute vec3 aSpherePos;
-  attribute vec3 aFlatPos;
   attribute float aWeight;
-  attribute float aIntensity;
   uniform mat3 uRotation;
-  uniform float uMorph;
   uniform float uAspect;
-  uniform float uScale;
   uniform float uZoom;
   uniform vec2 uOffset;
   uniform float uBasePointSize;
   varying float vVisible;
-  varying float vIntensity;
 
   void main() {
     vec3 rotated = uRotation * aSpherePos;
-    // Same mix, same uScale framing as the terrain under it (sphereLayer.ts):
-    // a halo left on the sphere projection while the ground flattened would
-    // be marking a country no longer beneath it.
-    vec3 position = mix(aFlatPos, rotated, uMorph);
-    vec2 screen = position.xy * uScale;
-    screen.x = screen.x / uAspect;
-    screen = screen * uZoom + uOffset;
-    gl_Position = vec4(screen, 0.0, 1.0);
-    gl_PointSize = uBasePointSize * sqrt(max(aWeight, 0.05)) * uZoom * uScale;
-    // Only a sphere has a far side to hide. Flat, every point faces the
-    // reader, so the cull has to relax as the morph does.
-    vVisible = step(0.0, mix(1.0, rotated.z, uMorph));
-    vIntensity = aIntensity;
+    vec2 mixed = rotated.xy;
+    mixed.x = mixed.x / uAspect;
+    mixed = mixed * uZoom + uOffset;
+    gl_Position = vec4(mixed, 0.0, 1.0);
+    gl_PointSize = uBasePointSize * sqrt(max(aWeight, 0.05)) * uZoom;
+    vVisible = step(0.0, rotated.z);
   }
 `;
 
@@ -116,17 +98,13 @@ const FIELD_FRAGMENT_SHADER = `
   precision mediump float;
   uniform vec3 uColorRgb;
   varying float vVisible;
-  varying float vIntensity;
 
   void main() {
     if (vVisible < 0.5) discard;
     vec2 centered = gl_PointCoord - vec2(0.5);
     float dist = length(centered) * 2.0;
     if (dist > 1.0) discard;
-    // smoothstep to 0 at the rim is the whole thesis: there is no pixel where
-    // the field stops. Dimming scales that curve, it never truncates it, so an
-    // unfocused halo stays a halo rather than becoming an edge.
-    float alpha = smoothstep(1.0, 0.0, dist) * 0.85 * vIntensity;
+    float alpha = smoothstep(1.0, 0.0, dist) * 0.85;
     gl_FragColor = vec4(uColorRgb, alpha);
   }
 `;
@@ -178,10 +156,6 @@ export interface AtlasGlobeCanvasProps {
   /** The camera AtlasGlobe owns (REQ-117). Every change to it repaints one frame. */
   pose: CameraPose;
   accentHex?: string;
-  /** 1 = sphere, 0 = flat Mercator. Terrain and overlay morph together. */
-  morph?: number;
-  /** The people-field country holding attention; the rest dim to a floor, never to nothing. */
-  focusedCountryId?: CountryId | null;
 }
 
 /**
@@ -190,6 +164,12 @@ export interface AtlasGlobeCanvasProps {
  * GL_LINE_LOOP + GL_TRIANGLE_FAN pair, or a people field as GL_POINTS —
  * never the other geometry, so a people overlay is structurally incapable
  * of producing a closed line here.
+ *
+ * The continent scene reaches this file as its frame only: the radial fields
+ * are still SVG-side, pending the ring-batching measurements that decide
+ * whether 52 outlines belong in one GL_LINES buffer. The frame draws no fill
+ * either way, so what is rendered here cannot contradict the SVG path — it is
+ * a smaller scene, not a different one.
  *
  * It no longer owns any camera state: the pose arrives as a prop, so the only
  * animation left in this file is the country outline's trace-in reveal, and
@@ -200,15 +180,11 @@ export function AtlasGlobeCanvas({
   overlay,
   pose,
   accentHex,
-  morph = 1,
-  focusedCountryId = null,
 }: AtlasGlobeCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reducedMotion = usePrefersReducedMotion();
   const reducedMotionRef = useRef(reducedMotion);
   const poseRef = useRef(pose);
-  const morphRef = useRef(morph);
-  const focusedCountryIdRef = useRef(focusedCountryId);
   const drawRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
@@ -248,7 +224,14 @@ export function AtlasGlobeCanvas({
     const sphere: SphereLayer | null = createSphereLayer(
       gl,
       resolveGlobePalette(),
-      document.createElement("canvas")
+      document.createElement("canvas"),
+      undefined,
+      false,
+      undefined,
+      // A fiche paints the national boundaries: a chosen country has to be
+      // read against its neighbours, not float on a blank continent. The
+      // home hero, framed far off, leaves them off.
+      true
     );
 
     // The terrain rides the same camera as the overlay drawn over it. A
@@ -259,7 +242,7 @@ export function AtlasGlobeCanvas({
       gl.clear(gl.COLOR_BUFFER_BIT);
       sphere?.draw({
         rotation: buildRotationMatrix(camera.yaw, camera.pitch),
-        morph: morphRef.current,
+        morph: camera.morph,
         aspect,
         zoom: camera.zoom,
         offsetX: camera.offsetX,
@@ -286,13 +269,6 @@ export function AtlasGlobeCanvas({
       gl.enableVertexAttribArray(aSpherePos);
       gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
 
-      const flatBuffer = gl.createBuffer();
-      gl.bindBuffer(gl.ARRAY_BUFFER, flatBuffer);
-      gl.bufferData(gl.ARRAY_BUFFER, field.flatPositions, gl.STATIC_DRAW);
-      const aFlatPos = gl.getAttribLocation(program, "aFlatPos");
-      gl.enableVertexAttribArray(aFlatPos);
-      gl.vertexAttribPointer(aFlatPos, 3, gl.FLOAT, false, 0, 0);
-
       const weightBuffer = gl.createBuffer();
       gl.bindBuffer(gl.ARRAY_BUFFER, weightBuffer);
       gl.bufferData(gl.ARRAY_BUFFER, field.weights, gl.STATIC_DRAW);
@@ -300,26 +276,8 @@ export function AtlasGlobeCanvas({
       gl.enableVertexAttribArray(aWeight);
       gl.vertexAttribPointer(aWeight, 1, gl.FLOAT, false, 0, 0);
 
-      // Intensity is per point and changes with focus, so it is a DYNAMIC_DRAW
-      // buffer rewritten on the frame rather than a uniform: one uniform could
-      // only dim the whole field at once.
-      const intensities = new Float32Array(field.vertexCount);
-      const intensityBuffer = gl.createBuffer();
-      const aIntensity = gl.getAttribLocation(program, "aIntensity");
-
-      const uploadIntensities = () => {
-        const focused = focusedCountryIdRef.current;
-        field.countryIds.forEach((countryId, index) => {
-          intensities[index] = peopleFieldIntensity(countryId, focused);
-        });
-        gl.bindBuffer(gl.ARRAY_BUFFER, intensityBuffer);
-        gl.bufferData(gl.ARRAY_BUFFER, intensities, gl.DYNAMIC_DRAW);
-      };
-
       const uRotation = gl.getUniformLocation(program, "uRotation");
-      const uMorph = gl.getUniformLocation(program, "uMorph");
       const uAspect = gl.getUniformLocation(program, "uAspect");
-      const uScale = gl.getUniformLocation(program, "uScale");
       const uZoom = gl.getUniformLocation(program, "uZoom");
       const uOffset = gl.getUniformLocation(program, "uOffset");
       const uBasePointSize = gl.getUniformLocation(program, "uBasePointSize");
@@ -336,28 +294,16 @@ export function AtlasGlobeCanvas({
         gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
         gl.enableVertexAttribArray(aSpherePos);
         gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
-        gl.bindBuffer(gl.ARRAY_BUFFER, flatBuffer);
-        gl.enableVertexAttribArray(aFlatPos);
-        gl.vertexAttribPointer(aFlatPos, 3, gl.FLOAT, false, 0, 0);
         gl.bindBuffer(gl.ARRAY_BUFFER, weightBuffer);
         gl.enableVertexAttribArray(aWeight);
         gl.vertexAttribPointer(aWeight, 1, gl.FLOAT, false, 0, 0);
-
-        uploadIntensities();
-        gl.enableVertexAttribArray(aIntensity);
-        gl.vertexAttribPointer(aIntensity, 1, gl.FLOAT, false, 0, 0);
 
         gl.uniformMatrix3fv(
           uRotation,
           false,
           new Float32Array(buildRotationMatrix(camera.yaw, camera.pitch))
         );
-        gl.uniform1f(uMorph, morphRef.current);
         gl.uniform1f(uAspect, aspect);
-        // The framing the terrain was just drawn at, from the same function:
-        // a halo scaled to a different fit would slide off its country as the
-        // surface morphed.
-        gl.uniform1f(uScale, fitScale(morphRef.current, aspect));
         gl.uniform1f(uZoom, camera.zoom);
         gl.uniform2f(uOffset, camera.offsetX, camera.offsetY);
         gl.uniform1f(
@@ -388,14 +334,27 @@ export function AtlasGlobeCanvas({
       const uDashRepeats = gl.getUniformLocation(program, "uDashRepeats");
 
       const fillOpacity =
-        overlay.kind === "country-outline"
-          ? overlay.fillOpacity
-          : overlay.tint * FAMILY_FILL_MAX_OPACITY;
+        overlay.kind === "family-footprint"
+          ? overlay.tint * FAMILY_FILL_MAX_OPACITY
+          : overlay.fillOpacity;
       const dashRepeats =
         overlay.kind === "family-footprint" ? FAMILY_DASH_REPEATS_PER_RING : 0;
 
-      const rings = overlay.rings.map((ring) => ({
-        fan: buildRingFan(ring),
+      // The continent frame is 51 reference outlines and carries no count of
+      // its own, so it reaches this program as rings like any other boundary.
+      const ringSource =
+        overlay.kind === "continent-field"
+          ? overlay.frame.flatMap((country) => country.rings)
+          : overlay.rings;
+
+      // A frame declared at zero fill (CONTINENT_FRAME_FILL_OPACITY) does not
+      // draw a transparent area, it draws no area at all — skipping the pass
+      // is what makes a per-country fill impossible rather than merely
+      // invisible (atlas-charter §1). No fan drawn, so no fan built either.
+      const fillsRings = fillOpacity > 0;
+
+      const rings = ringSource.map((ring) => ({
+        fan: fillsRings ? buildRingFan(ring) : null,
         loop: buildRingLineLoop(ring),
       }));
 
@@ -421,17 +380,19 @@ export function AtlasGlobeCanvas({
         gl.uniform2f(uOffset, camera.offsetX, camera.offsetY);
 
         rings.forEach(({ fan, loop }) => {
-          gl.bindBuffer(gl.ARRAY_BUFFER, fanBuffer);
-          gl.bufferData(gl.ARRAY_BUFFER, fan.positions, gl.STATIC_DRAW);
-          gl.enableVertexAttribArray(aSpherePos);
-          gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
-          gl.disableVertexAttribArray(aArcFraction);
-          gl.vertexAttrib1f(aArcFraction, 0);
-          gl.uniform1f(uIsStroke, 0);
-          gl.uniform1f(uProgress, 1);
-          gl.uniform1f(uDashRepeats, 0);
-          gl.uniform4f(uColor, r, g, b, fillOpacity);
-          gl.drawArrays(gl.TRIANGLE_FAN, 0, fan.vertexCount);
+          if (fan) {
+            gl.bindBuffer(gl.ARRAY_BUFFER, fanBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, fan.positions, gl.STATIC_DRAW);
+            gl.enableVertexAttribArray(aSpherePos);
+            gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
+            gl.disableVertexAttribArray(aArcFraction);
+            gl.vertexAttrib1f(aArcFraction, 0);
+            gl.uniform1f(uIsStroke, 0);
+            gl.uniform1f(uProgress, 1);
+            gl.uniform1f(uDashRepeats, 0);
+            gl.uniform4f(uColor, r, g, b, fillOpacity);
+            gl.drawArrays(gl.TRIANGLE_FAN, 0, fan.vertexCount);
+          }
 
           gl.bindBuffer(gl.ARRAY_BUFFER, loopPositionBuffer);
           gl.bufferData(gl.ARRAY_BUFFER, loop.positions, gl.STATIC_DRAW);
@@ -533,14 +494,10 @@ export function AtlasGlobeCanvas({
     };
   }, [overlay, accentHex]);
 
-  // Pose, morph and focus all mean "repaint one frame": none of them rebuilds
-  // a buffer, so none of them belongs in the setup effect's dependency list.
   useEffect(() => {
     poseRef.current = pose;
-    morphRef.current = morph;
-    focusedCountryIdRef.current = focusedCountryId;
     drawRef.current?.();
-  }, [pose, morph, focusedCountryId]);
+  }, [pose]);
 
   return (
     <canvas

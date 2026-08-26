@@ -17,6 +17,7 @@ import {
 } from "@/lib/atlas/globeTexture";
 import { WORLD_LANDMASS_PATH } from "@/lib/atlas/assets/worldLandmassPath";
 import { AFRICA_GEO_BOUNDS, BASEMAP_VIEWBOX } from "@/lib/atlas/projection";
+import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
 
 const palette: GlobePalette = {
   ocean: "#120e0a",
@@ -28,6 +29,7 @@ const palette: GlobePalette = {
   equator: "#7a8ce8",
   tissot: "rgba(51,163,144,0.30)",
   tissotEdge: "#33a390",
+  border: "rgba(232,185,106,0.28)",
 };
 
 describe("globeTexture — equirectangular world texture (REQ-112)", () => {
@@ -193,6 +195,60 @@ describe("paintGlobeTexture — the painted result (REQ-112)", () => {
         constructor(readonly d?: string) {}
       } as unknown as typeof Path2D;
     }
+  });
+
+  // @req REQ-112
+  it("leaves the national boundaries off unless a fiche asks for them", () => {
+    const { ctx, strokeStyles } = recordingContext();
+
+    paintGlobeTexture(ctx as unknown as CanvasRenderingContext2D, palette);
+
+    expect(strokeStyles).not.toContain(palette.border);
+  });
+
+  // @req REQ-112
+  it("paints the boundaries after the landmass, so they sit on the terrain", () => {
+    const { ctx, calls, strokeStyles } = recordingContext();
+
+    paintGlobeTexture(ctx as unknown as CanvasRenderingContext2D, palette, {
+      showBorders: true,
+    });
+
+    expect(strokeStyles).toContain(palette.border);
+    // The landmass is placed under save/scale/restore; every boundary is
+    // stroked after that restore, never before it.
+    const restore = calls.indexOf("restore");
+    const firstBorderStroke = strokeStyles.indexOf(palette.border);
+    expect(restore).toBeGreaterThanOrEqual(0);
+    expect(firstBorderStroke).toBeGreaterThan(
+      strokeStyles.indexOf(palette.coast)
+    );
+  });
+
+  // @req REQ-112
+  it("strokes every committed country, so no neighbour is left unframed", () => {
+    const { ctx, calls, strokeStyles } = recordingContext();
+
+    paintGlobeTexture(ctx as unknown as CanvasRenderingContext2D, palette, {
+      showBorders: true,
+    });
+
+    const ringCount = Object.values(AFRICA_ADMIN0).reduce(
+      (total, country) =>
+        total + country.rings.filter((ring) => ring.length >= 2).length,
+      0
+    );
+
+    const plain = recordingContext();
+    paintGlobeTexture(
+      plain.ctx as unknown as CanvasRenderingContext2D,
+      palette
+    );
+
+    const strokesFor = (list: string[]) =>
+      list.filter((call) => call === "stroke").length;
+    expect(strokesFor(calls) - strokesFor(plain.calls)).toBe(ringCount);
+    expect(strokeStyles).toContain(palette.border);
   });
 
   // @req REQ-112

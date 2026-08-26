@@ -7,8 +7,11 @@ import {
   PeopleCultureGrid,
   PeopleRelatedPeoplesSection,
   PeopleCountriesSection,
-  PeopleSourcesFooter,
 } from "@/components/people";
+// One sources footer for the three fiches. It lives under country/ for
+// historical reasons only — it takes FicheSourceEntry[] and knows nothing
+// about countries.
+import { SourcesFooter } from "@/components/country/SourcesFooter";
 import { PeopleFicheHead } from "@/components/people/PeopleFicheHead";
 import { PeopleNamingBlock } from "@/components/people/PeopleNamingBlock";
 import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
@@ -291,10 +294,7 @@ export function PeopleDetailViewV2({
           className="px-3 md:px-4 xl:px-5 mt-[10px] md:mt-[14px] xl:mt-4 mx-auto"
           style={{ maxWidth: "800px" }}
         >
-          <PeopleSourcesFooter
-            sources={data.sources}
-            hasSourceFlag={hasSourceFlag}
-          />
+          <SourcesFooter sources={data.sources} hasSourceFlag={hasSourceFlag} />
         </div>
       )}
     </div>

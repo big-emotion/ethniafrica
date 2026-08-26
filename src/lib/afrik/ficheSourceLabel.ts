@@ -1,5 +1,5 @@
 import type { FicheSource } from "@/types/afrik";
-import { SOURCE_TIER_LABELS_FR, type SourceTier } from "@/types/sources";
+import type { SourceTier } from "@/types/sources";
 
 /**
  * The display text of a fiche `sources[]` entry.
@@ -41,82 +41,43 @@ export function ficheSourceLine(
 }
 
 /**
- * The tier a fiche source may carry, which is the DB vocabulary plus one.
- *
- * `needs_review` is not a level of authority: it is the absence of a judgement.
- * 605 of the corpus's 4 238 sources are in that state, and folding them into
- * `unverified` would state a verdict nobody reached — the opposite of what the
- * tier policy exists to do. It lives here rather than in types/sources.ts
- * because it never reaches the database, whose CHECK holds exactly three
- * values.
+ * One fiche source, kept whole. `ficheSourceLine` flattens the same
+ * entries to a single string, which is all the people fiche needs; a
+ * surface that shows each source's standing needs the parts instead.
  */
-export type FicheSourceTier = SourceTier | "needs_review";
-
-// @req REQ-092
-export const FICHE_SOURCE_TIER_LABELS_FR: Record<FicheSourceTier, string> = {
-  ...SOURCE_TIER_LABELS_FR,
-  needs_review: "En attente d'examen",
-};
-
-/**
- * Anything unrecognised reads as awaiting review, never as blank.
- *
- * strictNullChecks is off in this repo, so an uncovered tier resolves to
- * `undefined` and renders as literally nothing — a source with no visible
- * provenance at all, which is the one outcome the policy forbids. Falling back
- * to "awaiting review" claims the least.
- */
-// @req REQ-092
-export function ficheSourceTierLabel(tier: unknown): string {
-  return (
-    FICHE_SOURCE_TIER_LABELS_FR[tier as FicheSourceTier] ??
-    FICHE_SOURCE_TIER_LABELS_FR.needs_review
-  );
-}
-
-/** A fiche source with its tier already resolved to the label the page shows. */
-export interface LabelledFicheSource {
-  title: string;
+export interface FicheSourceEntry {
+  label: string;
   url: string | null;
-  tier: FicheSourceTier;
-  tierLabel: string;
+  standing: SourceTier | "needs_review";
   notes?: string;
 }
 
 /**
- * The fiche's sources, each still carrying its own provenance.
- *
- * `ficheSourceLine` joins them into one "·"-separated string, which destroys
- * tier, url and notes before any component can render them — no tier chip was
- * possible on a people fiche for as long as the transformer called it. Both
- * shapes the loaders produce are accepted: structured entries from the corpus
- * in git, and the bare strings the database still serves from the fiche JSON
- * it was loaded from. A bare string carries no tier, so it is exactly the
- * source nobody has judged.
+ * The same entries as `ficheSourceLine`, in fiche order and with the same
+ * malformed ones dropped, but structured. A legacy bare string carries no
+ * standing of its own, so it reads as awaiting review rather than being
+ * asserted to be unverified.
  */
 // @req REQ-001
-export function ficheSources(
+export function ficheSourceEntries(
   sources?: Array<FicheSource | string> | null
-): LabelledFicheSource[] {
+): FicheSourceEntry[] {
   if (!sources || sources.length === 0) return [];
 
   return sources.flatMap((source) => {
-    const title = ficheSourceLabel(source);
-    if (title === null) return [];
+    const label = ficheSourceLabel(source);
+    if (label === null) return [];
 
-    const structured = typeof source === "string" ? null : source;
-    const tier: FicheSourceTier =
-      structured?.tier && structured.tier in FICHE_SOURCE_TIER_LABELS_FR
-        ? (structured.tier as FicheSourceTier)
-        : "needs_review";
+    if (typeof source === "string") {
+      return [{ label, url: null, standing: "needs_review" as const }];
+    }
 
     return [
       {
-        title,
-        url: structured?.url ?? null,
-        tier,
-        tierLabel: ficheSourceTierLabel(tier),
-        ...(structured?.notes ? { notes: structured.notes } : {}),
+        label,
+        url: source.url ?? null,
+        standing: source.tier ?? ("needs_review" as const),
+        ...(source.notes === undefined ? {} : { notes: source.notes }),
       },
     ];
   });

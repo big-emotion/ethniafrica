@@ -6,6 +6,7 @@ import {
   GLOBE_LIGHTING,
   GLOBE_PALETTE_FALLBACK,
   resolveGlobePalette,
+  FICHE_LIGHTING,
 } from "@/lib/atlas/globePalette";
 
 const colorCss = readFileSync(
@@ -155,5 +156,19 @@ describe("globePalette (REQ-112)", () => {
     expect(GLOBE_LIGHTING.parchment.ambient).toBeGreaterThan(
       GLOBE_LIGHTING.night.ambient
     );
+  });
+});
+
+describe("FICHE_LIGHTING — the near framing (REQ-112)", () => {
+  // @req REQ-112
+  it("raises the ambient floor above the home's, so a close subject keeps its lit half", () => {
+    expect(FICHE_LIGHTING.ambient).toBeGreaterThan(
+      GLOBE_LIGHTING.night.ambient
+    );
+  });
+
+  // @req REQ-112
+  it("drops the limb below the home's, so the rim stops banding across a close subject", () => {
+    expect(FICHE_LIGHTING.rim).toBeLessThan(GLOBE_LIGHTING.night.rim);
   });
 });

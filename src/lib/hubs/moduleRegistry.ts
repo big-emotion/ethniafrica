@@ -1,3 +1,4 @@
+import { isQuizFeatureEnabled } from "@/lib/featureFlags";
 import type { PageType } from "@/lib/routing";
 
 // REQ-114: the three access modes are the three intents a reader arrives
@@ -10,6 +11,14 @@ import type { PageType } from "@/lib/routing";
 // has described all along; the entity-shaped peuples/pays/familles modes
 // shipped by ETNI-1216 are folded into Explorer, which is where a reader
 // looking for a fiche was always going to land.
+//
+// The filing rule is "what the reader arrives with, what they leave with":
+// Explorer takes a name and returns a fiche, Comprendre takes a question
+// and returns an explanation crossing several fiches, Jouer takes nothing
+// and returns a result the machine produced. That rule is what moved
+// "Noms & appellations" out of Explorer — it answers *why does this people
+// carry this name*, which is a question, not a name. It is the most
+// decolonial module in the corpus and it was filed on the wrong side.
 export type AccessMode = "explorer" | "comprendre" | "jouer";
 
 // @req REQ-114
@@ -35,15 +44,20 @@ export type ModuleDataSource =
   | "name_records"
   | "migration_events";
 
+// The build-time switches a module can hang from.
+export type ModuleFeatureFlag = "quiz";
+
 // - "data": live only once its backing table (dataSource) holds >= 1 row.
 // - "static": a page that exists whatever the corpus holds — search,
-//   doctrine and about render from code, so probing a table for them would
-//   only invent a way for a working route to disappear.
-// - "unavailable": never live regardless of data — either no route exists
-//   yet (liens has no standalone page, only a nested per-people sub-route)
-//   or the surface isn't wired into any route (comparer's picker, per
-//   ETNI-1189/REQ-106).
-export type ModuleAvailability = "data" | "static" | "unavailable";
+//   doctrine and comparer render from code, so probing a table for them
+//   would only invent a way for a working route to disappear.
+// - "flagged": the route exists but answers notFound() while its feature
+//   flag is off. Filing it "static" would advertise a link that 404s;
+//   filing it "unavailable" would freeze it at "Bientôt" even with the
+//   flag lit.
+// - "unavailable": never live regardless of data — no route exists yet
+//   (liens has no standalone page, only a nested per-people sub-route).
+export type ModuleAvailability = "data" | "static" | "flagged" | "unavailable";
 
 export interface HubModuleDefinition {
   id: string;
@@ -52,6 +66,33 @@ export interface HubModuleDefinition {
   page: PageType | null;
   availability: ModuleAvailability;
   dataSource?: ModuleDataSource;
+  featureFlag?: ModuleFeatureFlag;
+}
+
+// The flag decides whether the module exists at all, never the corpus: a
+// module switched off is not "coming soon", it is not there.
+const FLAG_RESOLVERS: Record<ModuleFeatureFlag, () => boolean> = {
+  quiz: isQuizFeatureEnabled,
+};
+
+/**
+ * Live without asking the database — what the home page can know on its
+ * own. Both the hub's availability probe and the home card read this, and
+ * that shared lock is what stops the two from drifting apart: without it a
+ * flagged-off module would show as a live axis on the home page and as
+ * nothing at all on the hub behind it.
+ */
+// Narrowed to the two fields it reads so the hub's availability probe can
+// forward its own already-narrowed argument straight through.
+// @req REQ-106
+export function isModuleEnabled(
+  def: Pick<HubModuleDefinition, "availability" | "featureFlag">
+): boolean {
+  if (def.availability === "unavailable") return false;
+  if (def.availability === "flagged") {
+    return def.featureFlag ? FLAG_RESOLVERS[def.featureFlag]() : false;
+  }
+  return true;
 }
 
 // @req REQ-114
@@ -87,27 +128,15 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     page: "search",
     availability: "static",
   },
+  // Comprendre runs from the most concrete question to the method that
+  // answers it: why this name, where they came from, who says so.
   {
     id: "noms",
     name: "Noms & appellations",
-    accessMode: "explorer",
+    accessMode: "comprendre",
     page: "names",
     availability: "data",
     dataSource: "name_records",
-  },
-  {
-    id: "doctrine",
-    name: "La doctrine éditoriale",
-    accessMode: "comprendre",
-    page: "doctrine",
-    availability: "static",
-  },
-  {
-    id: "about",
-    name: "À propos du projet",
-    accessMode: "comprendre",
-    page: "about",
-    availability: "static",
   },
   {
     // Named for what the corpus actually holds — six sourced events, not a
@@ -120,11 +149,26 @@ export const MODULE_DEFINITIONS: HubModuleDefinition[] = [
     dataSource: "migration_events",
   },
   {
+    id: "doctrine",
+    name: "La doctrine éditoriale",
+    accessMode: "comprendre",
+    page: "doctrine",
+    availability: "static",
+  },
+  {
     id: "comparer",
     name: "Comparer deux peuples",
     accessMode: "jouer",
     page: "compare",
-    availability: "unavailable",
+    availability: "static",
+  },
+  {
+    id: "quiz",
+    name: "Le quiz des parcours",
+    accessMode: "jouer",
+    page: "quiz",
+    availability: "flagged",
+    featureFlag: "quiz",
   },
   {
     id: "liens",

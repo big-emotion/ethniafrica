@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { AtlasGlobeCanvas } from "@/components/atlas/AtlasGlobeCanvas";
 import { IDLE_POSE } from "@/lib/atlas/camera";
 import type {
+  ContinentFieldOverlay,
   CountryOutlineOverlay,
   FamilyFootprintOverlay,
   PeopleFieldOverlay,
@@ -39,6 +40,23 @@ const peopleOverlay: PeopleFieldOverlay = {
     { countryId: "BEN", center: { lon: 2, lat: 9 }, populationShare: 0.3 },
   ],
   undrawn: [],
+};
+
+const continentOverlay: ContinentFieldOverlay = {
+  kind: "continent-field",
+  frame: [
+    { countryId: "BEN", rings: [square] },
+    { countryId: "NGA", rings: [square] },
+  ],
+  fillOpacity: 0,
+  areas: [
+    {
+      countryId: "NGA",
+      center: { lon: 8, lat: 9 },
+      documentedPeopleCount: 40,
+      documentedPeopleShare: 1,
+    },
+  ],
 };
 
 function createFakeGl() {
@@ -295,6 +313,21 @@ describe("AtlasGlobeCanvas", () => {
       0,
       square.length
     );
+  });
+
+  /**
+   * The continent frame locates, it never measures: its fillOpacity is 0, and
+   * skipping the fill pass outright is what makes a per-country area
+   * physically impossible to paint rather than merely invisible.
+   */
+  // @req REQ-116
+  it("strokes the continent frame without ever issuing a TRIANGLE_FAN fill", () => {
+    matchMediaMatches = true;
+    render(<AtlasGlobeCanvas overlay={continentOverlay} pose={IDLE_POSE} />);
+
+    const modes = fakeGl.drawArrays.mock.calls.map(([mode]) => mode);
+    expect(modes).toContain(fakeGl.LINE_LOOP);
+    expect(modes).not.toContain(fakeGl.TRIANGLE_FAN);
   });
 
   // @req REQ-116

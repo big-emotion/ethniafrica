@@ -48,5 +48,19 @@ export function peopleFieldIntensity(
 export function orderedPeopleFieldAreas(
   areas: readonly PeopleFieldArea[]
 ): PeopleFieldArea[] {
-  return [...areas].sort((a, b) => b.populationShare - a.populationShare);
+  return orderedByWeight(areas, (area) => area.populationShare);
+}
+
+/**
+ * The same rule for anything carrying a weight, because the SVG path draws
+ * from a reduced `{countryId, center, weight}` shape rather than from the
+ * overlay's areas. One ordering, two callers — the alternative is two sorts
+ * that agree until one of them is edited.
+ */
+// @req REQ-116
+export function orderedByWeight<T>(
+  items: readonly T[],
+  weightOf: (item: T) => number
+): T[] {
+  return [...items].sort((a, b) => weightOf(b) - weightOf(a));
 }

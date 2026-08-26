@@ -55,3 +55,19 @@
     --afh-container-max: 800px;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────
+   Globe stage height · Epic 19 LOT 1
+   A fiche's globe is a fixed band, not an aspect-ratio box: the
+   shell went full-bleed, and an aspect ratio at full width made
+   the stage grow taller the wider the viewport got.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  --afh-globe-stage-height: 470px;
+}
+
+@media (min-width: 760px) {
+  :root {
+    --afh-globe-stage-height: 520px;
+  }
+}

@@ -9,7 +9,7 @@ import { PeopleHistoryTimeline } from "./PeopleHistoryTimeline";
 import { PeopleCultureGrid } from "./PeopleCultureGrid";
 import { PeopleRelatedPeoplesSection } from "./PeopleRelatedPeoplesSection";
 import { PeopleCountriesSection } from "./PeopleCountriesSection";
-import { PeopleSourcesFooter } from "./PeopleSourcesFooter";
+import { SourcesFooter } from "@/components/country/SourcesFooter";
 import type {
   PeopleHeroData,
   PeopleOriginData,
@@ -465,31 +465,23 @@ export const Sources_Mobile: Story = {
     <div style={{ padding: "12px" }}>
       {/* One source per tier the corpus actually uses, so the story shows
           what a low-confidence fiche looks like next to a well-sourced one. */}
-      <PeopleSourcesFooter
+      <SourcesFooter
         sources={[
           {
-            title: "SIL Ethnologue 2025",
+            label: "SIL Ethnologue 2025",
             url: "https://www.ethnologue.com/",
-            tier: "official",
-            tierLabel: "Officielle",
+            standing: "official",
           },
           {
-            title: "Ajayi, J. F. A., History of West Africa (1976)",
+            label: "Ajayi, J. F. A., History of West Africa (1976)",
             url: null,
-            tier: "referenced",
-            tierLabel: "Référencée",
+            standing: "referenced",
           },
+          { label: "Joshua Project", url: null, standing: "unverified" },
           {
-            title: "Joshua Project",
+            label: "Témoignage recueilli à Abeokuta, 1974",
             url: null,
-            tier: "unverified",
-            tierLabel: "Non vérifiée",
-          },
-          {
-            title: "Témoignage recueilli à Abeokuta, 1974",
-            url: null,
-            tier: "needs_review",
-            tierLabel: "En attente d'examen",
+            standing: "needs_review",
           },
         ]}
       />

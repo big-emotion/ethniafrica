@@ -714,14 +714,14 @@ describe("transformPeopleData", () => {
     const result = transformPeopleData(yorubaPeople);
 
     expect(Array.isArray(result.sources)).toBe(true);
-    expect(result.sources.map((source) => source.title)).toEqual(
+    expect(result.sources.map((source) => source.label)).toEqual(
       expect.arrayContaining([
         expect.stringContaining("SIL Ethnologue"),
         expect.stringContaining("UNESCO"),
       ])
     );
     result.sources.forEach((source) => {
-      expect(source.tierLabel).toBeTruthy();
+      expect(source.standing).toBeTruthy();
     });
   });
 

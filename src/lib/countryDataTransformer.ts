@@ -5,7 +5,10 @@
  * UI component of the "Carte vivante" country page.
  */
 
-import { ficheSourceLine } from "@/lib/afrik/ficheSourceLabel";
+import {
+  ficheSourceEntries,
+  type FicheSourceEntry,
+} from "@/lib/afrik/ficheSourceLabel";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import type {
   Kingdom,
@@ -153,7 +156,7 @@ export interface CountryPageData {
   historicalFacts?: HistoricalFactsData;
   languages: LanguagesData;
   culture: CultureGridData;
-  sources: string;
+  sources: FicheSourceEntry[];
 }
 
 // ==========================================
@@ -1005,8 +1008,8 @@ export function transformCulture(culture?: CultureSection): CultureGridData {
 }
 
 // @req REQ-001
-export function transformSources(sources?: FicheSource[]): string {
-  return ficheSourceLine(sources);
+export function transformSources(sources?: FicheSource[]): FicheSourceEntry[] {
+  return ficheSourceEntries(sources);
 }
 
 // @req REQ-001

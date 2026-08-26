@@ -2,38 +2,22 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
-import type {
-  CountryOutlineOverlay,
-  PeopleFieldOverlay,
-  Ring,
+import {
+  buildContinentOverlay,
+  type ContinentFieldOverlay,
+  type CountryOutlineOverlay,
+  type PeopleFieldOverlay,
+  type Ring,
 } from "@/lib/atlas/overlays";
 import {
   BOTTOM_SHEET_VIEW_FRACTION,
   PANEL_SIDE_BREAKPOINT_PX,
   SIDE_PANEL_VIEW_FRACTION,
 } from "@/lib/atlas/panelBias";
+import { continentTargetFacts, type AtlasTarget } from "@/lib/atlas/targets";
 
-// The mock reflects the props back as attributes: what AtlasGlobe hands the
-// WebGL path is the contract under test here, and a real GL context in
-// happy-dom would test the driver instead.
 vi.mock("@/components/atlas/AtlasGlobeCanvas", () => ({
-  AtlasGlobeCanvas: ({
-    morph,
-    focusedCountryId,
-    pose,
-  }: {
-    morph?: number;
-    focusedCountryId?: string | null;
-    pose: { yaw: number; pitch: number };
-  }) => (
-    <canvas
-      data-testid="atlas-globe-canvas-mock"
-      data-morph={String(morph)}
-      data-focused={focusedCountryId ?? ""}
-      data-yaw={pose.yaw.toFixed(4)}
-      data-pitch={pose.pitch.toFixed(4)}
-    />
-  ),
+  AtlasGlobeCanvas: () => <canvas data-testid="atlas-globe-canvas-mock" />,
 }));
 
 const square: Ring = [
@@ -65,6 +49,36 @@ const familyPeopleOverlay: PeopleFieldOverlay = {
   ],
   undrawn: [],
 };
+
+/** Three well-separated countries, so no marker is dropped by the 22px de-duplication. */
+const CONTINENT_COUNTS = { TZA: 99, ETH: 89, GHA: 84 };
+
+/** LOT 1 — the shell went full-bleed, so the stage is a fixed band. */
+function stageOf(container: HTMLElement): HTMLElement {
+  const stage = container.querySelector("[data-atlas-stage]");
+  if (!stage) throw new Error("expected an atlas stage");
+  return stage as HTMLElement;
+}
+
+function continentOverlayFrom(
+  counts: Record<string, number>
+): ContinentFieldOverlay {
+  const overlay = buildContinentOverlay(counts);
+  if (overlay.kind !== "continent-field") {
+    throw new Error(
+      "expected buildContinentOverlay to yield a continent field"
+    );
+  }
+  return overlay;
+}
+
+/** The continent scene's caller owns the fiche link; the globe only hosts it. */
+function continentFactsWithFicheLink(target: AtlasTarget) {
+  return {
+    ...continentTargetFacts(target),
+    body: <a href={`/fr/pays/${target.countryId}`}>Voir la fiche du pays</a>,
+  };
+}
 
 function percentOf(value: string): number {
   return Number.parseFloat(value.replace("%", ""));
@@ -262,22 +276,16 @@ describe("AtlasGlobe", () => {
       expect(markerFor("NGA")).toHaveAttribute("aria-pressed", "false");
     });
 
-    // Facts arrive as data rather than as a resolver function: the fiche
-    // routes are server components, and a function cannot cross into a client
-    // one. Passing a builder would have made this unusable from the only
-    // caller that matters.
     // @req REQ-117
     it("gives the fiche the last word on what a target's facts are", () => {
       render(
         <AtlasGlobe
           overlay={familyPeopleOverlay}
           missingMessage="n/a"
-          facts={{
-            NGA: {
-              title: "Peuple au Nigeria",
-              body: <p>82 % de la population</p>,
-            },
-          }}
+          targetFacts={(target) => ({
+            title: `Peuple au ${target.nameFr}`,
+            body: <p>82 % de la population</p>,
+          })}
         />
       );
 
@@ -286,21 +294,6 @@ describe("AtlasGlobe", () => {
       );
 
       expect(screen.getByText("82 % de la population")).toBeInTheDocument();
-    });
-
-    // @req REQ-117
-    it("falls back to the country's French name for a target the fiche said nothing about", () => {
-      render(
-        <AtlasGlobe
-          overlay={familyPeopleOverlay}
-          missingMessage="n/a"
-          facts={{ NGA: { title: "Peuple au Nigeria" } }}
-        />
-      );
-
-      expect(
-        screen.getByRole("button", { name: "Afrique du Sud" })
-      ).toBeInTheDocument();
     });
 
     // @req REQ-117
@@ -347,249 +340,264 @@ describe("AtlasGlobe", () => {
   });
 
   /**
-   * Focus dimming shipped in the SVG fallback and nowhere else: choosing a
-   * country faded the other halos without WebGL and did nothing with it. Both
-   * renderers now read the same peopleField.ts, and these assertions are about
-   * each path actually being handed the state.
+   * jsdom has no WebGL, so every assertion here describes the SVG fallback —
+   * which is also what the server renders and what the reader sees on first
+   * paint, WebGL probe or not.
    */
-  describe("focusing one country of a people's field (REQ-116)", () => {
-    beforeEach(() => {
-      stubMatchMedia({ reducedMotion: true });
+  describe("the continent scene (REQ-116)", () => {
+    // @req REQ-116
+    it("frames every committed country with a stroked outline and no fill", () => {
+      const overlay = continentOverlayFrom(CONTINENT_COUNTS);
+      const { container } = render(
+        <AtlasGlobe
+          overlay={overlay}
+          missingMessage="n/a"
+          targetFacts={continentTargetFacts}
+        />
+      );
+
+      // Counted off the overlay rather than pinned: a country contributes one
+      // polygon per ring, so an archipelago contributes several, and adding
+      // geometry to the asset should not make this test red for a framing it
+      // still draws correctly.
+      const expectedPolygons = overlay.frame.reduce(
+        (total, country) => total + country.rings.length,
+        0
+      );
+      const polygons = Array.from(container.querySelectorAll("polygon"));
+      expect(polygons).toHaveLength(expectedPolygons);
+      expect(
+        polygons.every((polygon) => polygon.getAttribute("fill") === "none")
+      ).toBe(true);
+    });
+
+    /**
+     * The invariant the whole scene rests on: a filled country would encode
+     * the peoples counted inside it as a closed-border area, which the charter
+     * §1 forbids for a people.
+     */
+    // @req REQ-116
+    it("never paints a country as an area, at any fill opacity", () => {
+      const { container } = render(
+        <AtlasGlobe
+          overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+          missingMessage="n/a"
+          targetFacts={continentTargetFacts}
+        />
+      );
+
+      const filled = Array.from(container.querySelectorAll("polygon")).filter(
+        (polygon) =>
+          Number.parseFloat(polygon.getAttribute("fill-opacity") ?? "0") > 0
+      );
+      expect(filled).toHaveLength(0);
     });
 
     // @req REQ-116
-    it("tells the WebGL path which country holds attention", async () => {
-      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
-        {} as unknown as RenderingContext
+    it("draws one edgeless radial field per documented country", () => {
+      const { container } = render(
+        <AtlasGlobe
+          overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+          missingMessage="n/a"
+          targetFacts={continentTargetFacts}
+        />
       );
-      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
 
-      await waitFor(() => {
-        expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
-          "data-focused",
-          ""
-        );
-      });
-
-      fireEvent.click(screen.getByRole("button", { name: "Nigeria" }));
-
-      expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
-        "data-focused",
-        "NGA"
-      );
+      const circles = Array.from(container.querySelectorAll("circle"));
+      expect(circles).toHaveLength(Object.keys(CONTINENT_COUNTS).length);
+      expect(
+        circles.every((circle) => circle.getAttribute("stroke") === "none")
+      ).toBe(true);
     });
 
-    // The hard rule (charter §1) under a state that did not exist when it was
-    // written: dimming must scale the halo's falloff, never draw its edge.
+    /**
+     * Two scenes, one formula. A second radius formula would let the same
+     * weight read as two different quantities depending on which page the
+     * reader is on.
+     */
     // @req REQ-116
-    it("dims the other halos without giving any of them a border", () => {
-      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);
-      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
-
-      fireEvent.click(screen.getByRole("button", { name: "Nigeria" }));
-
-      const halos = [...document.querySelectorAll("circle")];
-      expect(halos).toHaveLength(2);
-      halos.forEach((halo) => {
-        expect(halo).toHaveAttribute("stroke", "none");
-        expect(Number(halo.getAttribute("opacity"))).toBeGreaterThan(0);
-      });
-      expect(document.querySelector("polygon")).not.toBeInTheDocument();
-    });
-  });
-
-  describe("the globe's own commands (REQ-117)", () => {
-    beforeEach(() => {
-      stubMatchMedia({ reducedMotion: true });
-    });
-
-    // Flattening is the one control here that makes an argument rather than a
-    // convenience: the reader watches Africa shrink against the high latitudes
-    // instead of being told that it does.
-    // @req REQ-116
-    it("unrolls the sphere into Mercator and back", async () => {
-      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
-        {} as unknown as RenderingContext
+    it("sizes a continent field exactly as it sizes a people field of the same weight", () => {
+      const continent = render(
+        <AtlasGlobe
+          overlay={continentOverlayFrom({ NGA: 40 })}
+          missingMessage="n/a"
+          targetFacts={continentTargetFacts}
+        />
       );
-      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+      const continentRadius = continent.container
+        .querySelector("circle")
+        ?.getAttribute("r");
+      continent.unmount();
 
-      await waitFor(() => {
-        expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
-          "data-morph",
-          "1"
-        );
-      });
+      const people = render(
+        <AtlasGlobe overlay={peopleOverlay} missingMessage="n/a" />
+      );
+      const peopleRadius = people.container
+        .querySelector("circle")
+        ?.getAttribute("r");
 
-      fireEvent.click(
-        screen.getByRole("button", { name: "Ce que la carte plate en fait" })
-      );
-      expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
-        "data-morph",
-        "0"
-      );
-
-      fireEvent.click(screen.getByRole("button", { name: "Revenir au globe" }));
-      expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
-        "data-morph",
-        "1"
-      );
+      expect(continentRadius).toBe(peopleRadius);
     });
 
-    // The fallback IS the flat map. Offering to flatten it would name a change
-    // the reader cannot be shown.
-    // @req REQ-116
-    it("does not offer to flatten a map that is already flat", () => {
-      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);
-      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+    /**
+     * The hub is already framed on its whole subject, so choosing a country
+     * reveals facts without moving the map: every other marker stays where the
+     * reader last saw it, and picking a second one is a click rather than a
+     * hunt.
+     */
+    // @req REQ-117
+    it("holds the camera at IDLE_POSE, drifting nowhere and flying nowhere when a country is chosen", () => {
+      const requestFrame = vi.spyOn(window, "requestAnimationFrame");
+      const { container } = render(
+        <AtlasGlobe
+          overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+          missingMessage="n/a"
+          targetFacts={continentTargetFacts}
+        />
+      );
+
+      const figure = () =>
+        container.querySelector("svg > g")?.getAttribute("transform");
+      expect(figure()).toBe("translate(0 0) scale(1)");
+
+      fireEvent.click(screen.getByRole("button", { name: "Tanzanie" }));
+
+      expect(figure()).toBe("translate(0 0) scale(1)");
+      expect(requestFrame).not.toHaveBeenCalled();
+    });
+
+    // @req REQ-117
+    it("opens the panel on the chosen country, carrying the caller's link to its fiche", () => {
+      render(
+        <AtlasGlobe
+          overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+          missingMessage="n/a"
+          targetFacts={continentFactsWithFicheLink}
+        />
+      );
+
+      fireEvent.click(screen.getByRole("button", { name: "Tanzanie" }));
+
+      expect(screen.getByRole("dialog", { name: "Tanzanie" })).toBeVisible();
+      expect(
+        screen.getByRole("link", { name: "Voir la fiche du pays" })
+      ).toHaveAttribute("href", "/fr/pays/TZA");
+    });
+
+    /**
+     * `targetFacts().title` doubles as the marker's accessible name, so a count
+     * placed there would turn "Tanzanie" into "Tanzanie 99" — a number a screen
+     * reader would announce as a quantity of Tanzanians.
+     */
+    // @req REQ-117
+    it("declares the corpus size in the panel, never in a marker's accessible name", () => {
+      render(
+        <AtlasGlobe
+          overlay={continentOverlayFrom(CONTINENT_COUNTS)}
+          missingMessage="n/a"
+          targetFacts={continentTargetFacts}
+        />
+      );
+
+      const marker = screen.getByRole("button", { name: "Tanzanie" });
+      expect(marker).toHaveAccessibleName("Tanzanie");
+
+      fireEvent.click(marker);
 
       expect(
-        screen.queryByRole("button", { name: /carte plate/ })
+        screen.getByRole("dialog", { name: "Tanzanie" })
+      ).toHaveTextContent("99 peuples documentés");
+    });
+
+    // @req REQ-119
+    it("declares an unmeasured continent instead of drawing an empty one", () => {
+      render(
+        <AtlasGlobe
+          overlay={buildContinentOverlay(undefined)}
+          missingMessage="Corpus non chargé"
+        />
+      );
+
+      expect(screen.getByRole("status")).toHaveTextContent("Corpus non chargé");
+      expect(
+        document.querySelector("[data-atlas-target]")
       ).not.toBeInTheDocument();
-      expect(
-        screen.getByRole("button", { name: "Recentrer" })
-      ).toBeInTheDocument();
-    });
-
-    // @req REQ-117
-    it("recentring drops the choice, the flattening and the reader's turning at once", async () => {
-      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
-        {} as unknown as RenderingContext
-      );
-      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
-
-      await waitFor(() => {
-        expect(
-          screen.getByTestId("atlas-globe-canvas-mock")
-        ).toBeInTheDocument();
-      });
-      fireEvent.click(
-        screen.getByRole("button", { name: "Ce que la carte plate en fait" })
-      );
-      fireEvent.click(screen.getByRole("button", { name: "Nigeria" }));
-      expect(screen.getByRole("dialog", { name: "Nigeria" })).toBeVisible();
-
-      fireEvent.click(screen.getByRole("button", { name: "Recentrer" }));
-
-      await waitFor(() => {
-        expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-      });
-      expect(screen.getByTestId("atlas-globe-canvas-mock")).toHaveAttribute(
-        "data-morph",
-        "1"
-      );
-      expect(markerFor("NGA")).toHaveAttribute("aria-pressed", "false");
     });
   });
+});
 
-  describe("what the fallback says out loud (REQ-116)", () => {
-    // AfricaBasemap is aria-hidden, so without WebGL the map itself tells a
-    // screen reader nothing at all. The note is the whole of what that reader
-    // gets, which is why it has to name the people and the count rather than
-    // announce that a map is present.
-    // @req REQ-116
-    it("names what the flat map is showing when there is no WebGL", () => {
-      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);
-      render(
-        <AtlasGlobe
-          overlay={familyPeopleOverlay}
-          missingMessage="n/a"
-          fallbackNote="Les 2 pays de présence Yoruba, sans rendu 3D. Aucune limite n'est tracée : ce sont des densités, pas un territoire."
-        />
-      );
+describe("AtlasGlobe — the reader's own camera (REQ-117)", () => {
+  // @req REQ-117
+  it("offers a surface that carries the name and the keyboard, so the canvas can stay paint", () => {
+    const { container } = render(
+      <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />
+    );
 
-      expect(screen.getByText(/2 pays de présence Yoruba/)).toBeInTheDocument();
-      expect(screen.getByText(/pas un territoire/)).toBeInTheDocument();
-    });
-
-    // @req REQ-116
-    it("says nothing extra on the WebGL path, where the globe speaks for itself", async () => {
-      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
-        {} as unknown as RenderingContext
-      );
-      render(
-        <AtlasGlobe
-          overlay={familyPeopleOverlay}
-          missingMessage="n/a"
-          fallbackNote="Les 2 pays de présence Yoruba, sans rendu 3D."
-        />
-      );
-
-      await waitFor(() => {
-        expect(
-          screen.getByTestId("atlas-globe-canvas-mock")
-        ).toBeInTheDocument();
-      });
-      expect(screen.queryByText(/sans rendu 3D/)).not.toBeInTheDocument();
-    });
+    const surface = container.querySelector("[data-atlas-surface]");
+    expect(surface).not.toBeNull();
+    expect(surface).toHaveAttribute("aria-label");
+    expect(surface).toHaveAttribute("tabindex", "0");
   });
 
-  describe("turning the globe by hand (REQ-117)", () => {
-    beforeEach(() => {
-      stubMatchMedia({ reducedMotion: true });
-      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
-        {} as unknown as RenderingContext
-      );
+  // @req REQ-117
+  it("names the projection toggle for what pressing it will do", () => {
+    render(<AtlasGlobe overlay={countryOverlay} missingMessage="absent" />);
+
+    const toggle = screen.getByRole("button", {
+      name: "Ce que la carte plate en fait",
     });
+    expect(toggle).toHaveAttribute("aria-pressed", "false");
 
-    // A country on the far side of the sphere has no marker to click, so
-    // without a drag it is unreachable — the picker in the toolbar is the
-    // other half of the same problem.
-    // @req REQ-117
-    it("turns the surface with the pointer instead of leaving the far side unreachable", async () => {
-      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+    fireEvent.click(toggle);
 
-      await waitFor(() => {
-        expect(
-          screen.getByTestId("atlas-globe-canvas-mock")
-        ).toBeInTheDocument();
-      });
-      const stage = document.querySelector<HTMLElement>("[data-atlas-stage]");
-      if (!stage) throw new Error("no stage rendered");
-      const yawBefore = Number(
-        screen.getByTestId("atlas-globe-canvas-mock").dataset.yaw
-      );
+    const back = screen.getByRole("button", { name: "Revenir au globe" });
+    expect(back).toHaveAttribute("aria-pressed", "true");
+  });
 
-      fireEvent.pointerDown(stage, {
-        pointerId: 1,
-        clientX: 100,
-        clientY: 100,
-      });
-      fireEvent.pointerMove(stage, {
-        pointerId: 1,
-        clientX: 160,
-        clientY: 100,
-      });
-      fireEvent.pointerUp(stage, { pointerId: 1 });
+  // @req REQ-117
+  it("returns the globe and releases the choice when the reader recentres", () => {
+    render(<AtlasGlobe overlay={countryOverlay} missingMessage="absent" />);
 
-      expect(
-        Number(screen.getByTestId("atlas-globe-canvas-mock").dataset.yaw)
-      ).not.toBeCloseTo(yawBefore, 3);
-    });
+    fireEvent.click(
+      screen.getByRole("button", { name: "Ce que la carte plate en fait" })
+    );
+    expect(
+      screen.getByRole("button", { name: "Revenir au globe" })
+    ).toBeTruthy();
 
-    // @req REQ-117
-    it("leaves the surface where it is until a pointer is actually down", async () => {
-      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+    fireEvent.click(screen.getByRole("button", { name: "Recentrer" }));
 
-      await waitFor(() => {
-        expect(
-          screen.getByTestId("atlas-globe-canvas-mock")
-        ).toBeInTheDocument();
-      });
-      const stage = document.querySelector<HTMLElement>("[data-atlas-stage]");
-      if (!stage) throw new Error("no stage rendered");
-      const yawBefore = Number(
-        screen.getByTestId("atlas-globe-canvas-mock").dataset.yaw
-      );
+    // Recentring undoes the projection as well as the turn — the mockup
+    // does both, in that order.
+    expect(
+      screen.getByRole("button", { name: "Ce que la carte plate en fait" })
+    ).toHaveAttribute("aria-pressed", "false");
+  });
 
-      fireEvent.pointerMove(stage, {
-        pointerId: 1,
-        clientX: 300,
-        clientY: 100,
-      });
+  // @req REQ-117
+  it("turns under the arrow keys without scrolling the page", () => {
+    const { container } = render(
+      <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />
+    );
 
-      expect(
-        Number(screen.getByTestId("atlas-globe-canvas-mock").dataset.yaw)
-      ).toBeCloseTo(yawBefore, 4);
-    });
+    const surface = container.querySelector(
+      "[data-atlas-surface]"
+    ) as HTMLElement;
+    const turned = fireEvent.keyDown(surface, { key: "ArrowRight" });
+
+    // fireEvent returns false once the handler has called preventDefault.
+    expect(turned).toBe(false);
+  });
+
+  // @req REQ-117
+  it("leaves a key it does not steer on to the page", () => {
+    const { container } = render(
+      <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />
+    );
+
+    const surface = container.querySelector(
+      "[data-atlas-surface]"
+    ) as HTMLElement;
+    expect(fireEvent.keyDown(surface, { key: "Tab" })).toBe(true);
   });
 });
