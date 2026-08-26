@@ -645,22 +645,62 @@ describe("HistoricalFactsSection", () => {
 // ==========================================
 
 describe("SourcesFooter", () => {
-  it("returns null when sources string is empty", () => {
-    const { container } = render(<SourcesFooter sources="" />);
+  const entry = (
+    label: string,
+    standing: "official" | "referenced" | "unverified" | "needs_review"
+  ) => ({ label, url: null, standing });
+
+  // @req REQ-092
+  it("returns null when there is no source at all", () => {
+    const { container } = render(<SourcesFooter sources={[]} />);
     expect(container.firstChild).toBeNull();
   });
 
-  it("renders sources text", () => {
+  // @req REQ-092
+  it("renders every source", () => {
     render(
-      <SourcesFooter sources="UN 2025 · UNFPA 2024 · CIA World Factbook" />
+      <SourcesFooter
+        sources={[
+          entry("UN 2025", "official"),
+          entry("UNFPA 2024", "official"),
+          entry("CIA World Factbook", "referenced"),
+        ]}
+      />
     );
-    expect(
-      screen.getByText("UN 2025 · UNFPA 2024 · CIA World Factbook")
-    ).toBeTruthy();
+    expect(screen.getByText("UN 2025")).toBeTruthy();
+    expect(screen.getByText("CIA World Factbook")).toBeTruthy();
   });
 
+  // @req REQ-092
   it("renders the section header label", () => {
-    render(<SourcesFooter sources="UNESCO · SIL Ethnologue" />);
+    render(<SourcesFooter sources={[entry("UNESCO", "official")]} />);
     expect(screen.getByText("Sources & Références")).toBeTruthy();
+  });
+
+  // @req REQ-092
+  it("shows each source's own standing rather than one verdict over the list", () => {
+    render(
+      <SourcesFooter
+        sources={[entry("UN 2025", "official"), entry("Un blog", "unverified")]}
+      />
+    );
+    expect(screen.getByText("Officielle")).toBeTruthy();
+    expect(screen.getByText("Non vérifiée")).toBeTruthy();
+  });
+
+  // @req REQ-092
+  it("says a pending source is awaiting review, never that it is unverified", () => {
+    render(<SourcesFooter sources={[entry("À trancher", "needs_review")]} />);
+
+    expect(screen.getByText("En attente d'examen")).toBeTruthy();
+    expect(screen.queryByText("Non vérifiée")).toBeNull();
+  });
+
+  // @req REQ-092
+  it("never prints the retired Tier vocabulary", () => {
+    const { container } = render(
+      <SourcesFooter sources={[entry("UN 2025", "official")]} />
+    );
+    expect(container.textContent).not.toContain("Tier 1");
   });
 });
