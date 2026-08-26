@@ -4,6 +4,7 @@ import {
   ACCESS_MODES,
   ACCENT_BY_ACCESS_MODE,
   MODULE_DEFINITIONS,
+  MODULE_GROUPS,
   getModulesForAccessMode,
   isModuleEnabled,
   type HubModuleDefinition,
@@ -236,5 +237,34 @@ describe("moduleRegistry — isModuleEnabled (REQ-106)", () => {
     const recherche = MODULE_DEFINITIONS.find((m) => m.id === "recherche");
     expect(isModuleEnabled(peuples)).toBe(true);
     expect(isModuleEnabled(recherche)).toBe(true);
+  });
+});
+
+describe("moduleRegistry — the shelf a jouer module sits on (REQ-120)", () => {
+  // @req REQ-120
+  it("gives every game a shelf, so none can fall off the surface", () => {
+    for (const def of getModulesForAccessMode("jouer")) {
+      expect(def.group).toBeTruthy();
+      expect(MODULE_GROUPS[def.group]).toBeTruthy();
+    }
+  });
+
+  // Grouping is a jouer concern: the other two axes hold few enough
+  // modules to read at once, and filing them would add a level for nothing.
+  // @req REQ-120
+  it("leaves explorer and comprendre unfiled", () => {
+    for (const mode of ["explorer", "comprendre"] as const) {
+      for (const def of getModulesForAccessMode(mode)) {
+        expect(def.group).toBeUndefined();
+      }
+    }
+  });
+
+  // The quiz questions the reader rather than the corpus, so it belongs on
+  // no entity's shelf — and it is the one jouer module addressed by page.
+  // @req REQ-120
+  it("keeps the quiz on a shelf of its own", () => {
+    const quiz = MODULE_DEFINITIONS.find((m) => m.id === "quiz");
+    expect(quiz?.group).toBe("jeux-quiz");
   });
 });
