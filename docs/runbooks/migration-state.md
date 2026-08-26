@@ -37,7 +37,7 @@ reaches real users.
 
 |                       | Backs **recette**                                                    | Backs **production**                                     |
 | --------------------- | -------------------------------------------------------------------- | -------------------------------------------------------- |
-| Supabase project ref  | `shmrjtnfbqzceovroqjj`                                               | _not recorded — see below_                               |
+| Supabase project ref  | `shmrjtnfbqzceovroqjj`                                               | `jajggbeimfudpzcxytbb` — given by the owner, see below   |
 | Dashboard name        | `ethniafrica` — its environment is labelled _production_ by Supabase | _unknown_                                                |
 | Region                | `eu-west-1`                                                          | _unknown_                                                |
 | Created               | 2026-07-24                                                           | _unknown_                                                |
@@ -67,12 +67,19 @@ See [`afrik-data-sync.md`](./afrik-data-sync.md).
 This is the corpus only. **Schema migrations are still applied by hand, and still in two
 steps** — nothing below is automated for the production-backing project.
 
-### Why the production-backing project has no row here
+### Why the production-backing project's state is still unread
 
-The Supabase access token available to tooling in this repository can see exactly one project
-(`shmrjtnfbqzceovroqjj`, org `yrdutxiucwjgsqexvcop`). The production-backing project is under
-credentials that token does not carry, so its ledger could not be read and **is deliberately
-left blank rather than guessed**.
+The ref `jajggbeimfudpzcxytbb` was supplied by the environment owner on 2026-08-26 and is now
+the value of the `PRODUCTION_SUPABASE_URL` repository secret. It has **not been verified from
+here**: the Supabase access token available to tooling in this repository sees exactly one
+project (`shmrjtnfbqzceovroqjj`, org `yrdutxiucwjgsqexvcop`), and a `get_project` call against
+the production ref returns "You do not have permission to perform this action". So its ledger
+could not be read, and the state column below **is deliberately left unread rather than
+guessed**.
+
+Getting it wrong is not silent: `resolveAfrikSyncTarget` refuses to sync unless the active
+Supabase URL equals the configured production one, and refuses outright if that value is the
+recette ref. A wrong ref fails the job; it does not write anywhere.
 
 To fill it in, authenticate against the account that owns it and run:
 
