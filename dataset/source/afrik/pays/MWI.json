@@ -1,6 +1,6 @@
 {
   "id": "MWI",
-  "nameFr": "République du Malawi (Republic of Malawi, Dziko la Malaŵi)",
+  "nameFr": "Malawi",
   "nameOfficial": "République du Malawi (Republic of Malawi, Dziko la Malaŵi)",
   "etymology": "Le nom \"Malawi\" vient du mot \"Maravi\", nom d'un ancien royaume qui dominait la région aux XVIe-XVIIe siècles. \"Maravi\" signifie \"flammes\" ou \"reflets\" en langue chewa, en référence aux reflets du soleil sur le lac Malawi. Le nom a été officialisé lors de l'indépendance en 1964.",
   "nameOriginActor": "Le nom \"Malawi\" vient de l'ancien royaume de Maravi. Le nom \"Nyasaland\" (pays du Nyasa, du nom du lac) était utilisé pendant la colonisation britannique. Le nom \"Malawi\" a été officialisé à l'indépendance en 1964 par le président Hastings Kamuzu Banda.",
@@ -203,7 +203,8 @@
       "Recensements malawiens",
       "Études anthropologiques sur les peuples du Malawi",
       "Études historiques sur le royaume de Maravi",
-      "CIA World Factbook – Malawi (ethnic groups, 2018 census)"
+      "CIA World Factbook – Malawi (ethnic groups, 2018 census)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

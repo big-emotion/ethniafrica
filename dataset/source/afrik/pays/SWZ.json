@@ -1,6 +1,6 @@
 {
   "id": "SWZ",
-  "nameFr": "Royaume d'Eswatini (Kingdom of Eswatini, Umbuso weSwatini)",
+  "nameFr": "Eswatini",
   "nameOfficial": "Royaume d'Eswatini (Kingdom of Eswatini, Umbuso weSwatini)",
   "etymology": "Le nom \"Eswatini\" signifie \"pays des Swazi\" en langue swati. Il s'agit du nom traditionnel du royaume. Le nom \"Swaziland\" était le nom colonial britannique (combinaison de \"Swazi\" et \"land\"). Le pays a officiellement changé de nom de \"Swaziland\" à \"Eswatini\" en 2018 pour retrouver son appellation d'origine.",
   "nameOriginActor": "Le nom \"Eswatini\" est le nom traditionnel du royaume swazi. Le nom \"Swaziland\" a été donné par les Britanniques lors de la colonisation. Le roi Mswati III a officiellement changé le nom du pays de \"Swaziland\" à \"Eswatini\" en 2018 pour restaurer le nom traditionnel.",
@@ -97,7 +97,8 @@
       "An Ethnographic Account of the Natives of the Swaziland Protectorate\"",
       "Recensements eswatinis",
       "Études anthropologiques sur les peuples swazi",
-      "CIA World Factbook – Eswatini (ethnic groups)"
+      "CIA World Factbook – Eswatini (ethnic groups)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

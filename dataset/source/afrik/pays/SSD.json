@@ -1,6 +1,6 @@
 {
   "id": "SSD",
-  "nameFr": "République du Soudan du Sud (Republic of South Sudan)",
+  "nameFr": "Soudan du Sud",
   "nameOfficial": "République du Soudan du Sud (Republic of South Sudan)",
   "etymology": "Le nom \"Soudan du Sud\" provient de sa position géographique par rapport au Soudan, dont il s'est séparé en 2011. Le terme \"Soudan\" vient de l'arabe \"Bilād as-Sūdān\" (بلاد السودان), signifiant \"pays des Noirs\". Le nom \"Soudan du Sud\" a été officialisé lors de l'indépendance en 2011 pour distinguer le nouveau pays du Soudan (au nord).",
   "nameOriginActor": "Le nom \"Soudan du Sud\" a été officialisé lors de l'indépendance en 2011 par le gouvernement sud-soudanais, suite au référendum d'autodétermination et à la sécession du Soudan.",
@@ -164,7 +164,8 @@
       "Recensements sud-soudanais",
       "Études anthropologiques sur les peuples du Soudan du Sud",
       "Études historiques sur la colonisation britannique et égyptienne",
-      "CIA World Factbook – South Sudan (ethnic groups)"
+      "CIA World Factbook – South Sudan (ethnic groups)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

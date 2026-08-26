@@ -1,6 +1,6 @@
 {
   "id": "GIN",
-  "nameFr": "République de Guinée",
+  "nameFr": "Guinée",
   "nameOfficial": "République de Guinée (République de Guinée)",
   "etymology": "Le nom \"Guinée\" provient du portugais \"Guiné\", terme utilisé par les navigateurs portugais au XVe siècle pour désigner la côte ouest-africaine au sud du Sénégal. L'origine du terme \"Guiné\" est incertaine, mais pourrait dériver du berbère \"Akal n-Iguinawen\" (terre des Noirs) ou d'un terme local. Les Français ont adapté ce nom pour leur colonie.",
   "nameOriginActor": "Le nom \"Guinée\" a été donné par les navigateurs portugais au XVe siècle pour désigner la côte ouest-africaine. Les Français ont officialisé ce nom lors de la création de la colonie de Guinée française en 1891. Le nom a été officialisé à l'indépendance en 1958.",
@@ -218,7 +218,8 @@
       "Levtzion, Nehemia – \"Ancient Ghana and Mali\"",
       "Recensements guinéens",
       "Études anthropologiques sur les peuples de la Guinée",
-      "Études historiques sur l'empire du Mali et le Fouta Djallon"
+      "Études historiques sur l'empire du Mali et le Fouta Djallon",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

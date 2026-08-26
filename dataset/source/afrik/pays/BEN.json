@@ -1,6 +1,6 @@
 {
   "id": "BEN",
-  "nameFr": "République du Bénin",
+  "nameFr": "Bénin",
   "nameOfficial": "République du Bénin (République du Bénin)",
   "etymology": "Le nom \"Bénin\" provient de l'ancien royaume du Bénin (actuel Nigeria), mais a été choisi pour le pays en 1975 pour remplacer \"Dahomey\". Le nom \"Dahomey\" venait du royaume du Dahomey (XVIIe-XIXe siècles), lui-même nommé d'après \"Danhomé\" (dans le ventre de Dan), fondé par le roi Houegbadja. Le choix de \"Bénin\" en 1975 visait à créer une identité nationale neutre, sans référence à un groupe ethnique spécifique.",
   "nameOriginActor": "Le nom \"Bénin\" a été choisi par le gouvernement de la République populaire du Bénin en 1975, sous la présidence de Mathieu Kérékou. Il remplace \"Dahomey\", nom colonial français dérivé du royaume du Dahomey (fondé par les Fon). Le nom \"Bénin\" fait référence à l'ancien royaume du Bénin (actuel Nigeria), mais a été adopté pour sa neutralité ethnique.",
@@ -232,7 +232,8 @@
       "Archives du Royaume d'Abomey",
       "UNESCO – Tatas somba du Bénin (patrimoine mondial)",
       "Recensements béninois",
-      "Études anthropologiques sur les peuples du Bénin"
+      "Études anthropologiques sur les peuples du Bénin",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

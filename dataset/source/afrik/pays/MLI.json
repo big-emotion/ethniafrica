@@ -1,6 +1,6 @@
 {
   "id": "MLI",
-  "nameFr": "République du Mali",
+  "nameFr": "Mali",
   "nameOfficial": "République du Mali",
   "etymology": "Le nom \"Mali\" vient de l'empire du Mali (XIIIe-XVIe siècles), l'un des plus grands empires d'Afrique de l'Ouest. \"Mali\" signifie \"hippopotame\" en mandingue, ou \"lieu où vit le roi\" selon certaines interprétations. Le nom a été choisi lors de l'indépendance en référence à l'empire historique.",
   "nameOriginActor": "Le nom vient de l'empire du Mali historique, fondé par Soundiata Keïta au XIIIe siècle. Le nom a été choisi lors de l'indépendance en 1960 pour honorer cet héritage historique.",
@@ -176,7 +176,8 @@
       "UNFPA – Projections démographiques 2025",
       "Études anthropologiques sur les peuples maliens",
       "Études historiques sur les empires du Ghana, du Mali et Songhai",
-      "CIA World Factbook – Mali (ethnic groups, 2018 est.)"
+      "CIA World Factbook – Mali (ethnic groups, 2018 est.)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

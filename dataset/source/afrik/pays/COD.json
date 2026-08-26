@@ -1,6 +1,6 @@
 {
   "id": "COD",
-  "nameFr": "République démocratique du Congo (RDC)",
+  "nameFr": "République démocratique du Congo",
   "nameOfficial": "République démocratique du Congo (RDC)",
   "etymology": "Le nom \"Congo\" vient du royaume Kongo (Kongo en kikongo), un royaume précolonial puissant. \"Congo\" est la forme portugaise de \"Kongo\". Le fleuve Congo a été nommé d'après ce royaume. \"Démocratique\" a été ajouté en 1964 pour se distinguer de la République du Congo (Brazzaville).",
   "nameOriginActor": "Le nom vient du royaume Kongo historique. Les Portugais ont popularisé le terme \"Congo\" au XVe siècle. Le nom \"Zaïre\" (1971-1997) venait du fleuve Zaïre (nom portugais du fleuve Congo, dérivé du kikongo \"nzadi\" signifiant \"fleuve\").",
@@ -236,7 +236,8 @@
       "Études anthropologiques sur les peuples congolais",
       "Études historiques sur les royaumes précoloniaux",
       "Ethnologie du Congo",
-      "CIA World Factbook – Democratic Republic of the Congo (ethnic groups)"
+      "CIA World Factbook – Democratic Republic of the Congo (ethnic groups)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

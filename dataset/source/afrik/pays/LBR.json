@@ -1,6 +1,6 @@
 {
   "id": "LBR",
-  "nameFr": "République du Libéria (Republic of Liberia)",
+  "nameFr": "Libéria",
   "nameOfficial": "République du Libéria (Republic of Liberia)",
   "etymology": "Le nom \"Libéria\" vient du latin \"liber\" (libre), en référence à la fondation du pays comme colonie pour les esclaves affranchis des États-Unis. Le nom a été donné par l'American Colonization Society (Société américaine de colonisation) qui a fondé la colonie en 1822.",
   "nameOriginActor": "Le nom \"Libéria\" a été donné par l'American Colonization Society lors de la fondation de la colonie en 1822. Le nom signifie \"terre de la liberté\" en latin, en référence à la libération des esclaves afro-américains. Le nom a été officialisé à l'indépendance en 1847.",
@@ -334,7 +334,8 @@
       "Recensements libériens",
       "Études anthropologiques sur les peuples du Libéria",
       "Études historiques sur la fondation du Libéria et l'American Colonization Society",
-      "CIA World Factbook – Liberia (ethnic groups, 2008 census)"
+      "CIA World Factbook – Liberia (ethnic groups, 2008 census)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

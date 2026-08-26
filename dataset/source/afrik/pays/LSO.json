@@ -1,6 +1,6 @@
 {
   "id": "LSO",
-  "nameFr": "Royaume du Lesotho (Kingdom of Lesotho, Muso oa Lesotho)",
+  "nameFr": "Lesotho",
   "nameOfficial": "Royaume du Lesotho (Kingdom of Lesotho, Muso oa Lesotho)",
   "etymology": "Le nom \"Lesotho\" signifie \"pays des Sotho\" en langue sesotho. Il s'agit du nom traditionnel du royaume. Le nom a été officialisé lors de l'indépendance en 1966. Le pays était auparavant connu sous le nom de \"Basutoland\" (pays des Basotho) pendant la colonisation britannique.",
   "nameOriginActor": "Le nom \"Lesotho\" est le nom traditionnel du royaume sotho. Le nom \"Basutoland\" a été donné par les Britanniques lors de la colonisation. Le roi Moshoeshoe Ier est considéré comme le fondateur du royaume moderne. Le nom \"Lesotho\" a été officialisé à l'indépendance en 1966.",
@@ -95,7 +95,8 @@
       "ONU / UNFPA – Démographie Lesotho 2025",
       "Recensements lesothans",
       "Études anthropologiques sur les peuples sotho",
-      "Études historiques sur le royaume du Lesotho et Moshoeshoe Ier"
+      "Études historiques sur le royaume du Lesotho et Moshoeshoe Ier",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [

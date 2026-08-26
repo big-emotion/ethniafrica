@@ -1,6 +1,6 @@
 {
   "id": "NAM",
-  "nameFr": "République de Namibie (Republic of Namibia, Republiek van Namibië)",
+  "nameFr": "Namibie",
   "nameOfficial": "République de Namibie (Republic of Namibia, Republiek van Namibië)",
   "etymology": "Le nom \"Namibie\" vient du désert du Namib, qui borde la côte atlantique du pays. \"Namib\" signifie \"vaste lieu\" ou \"endroit vide\" en langue nama. Le nom a été adopté lors de l'indépendance en 1990. Auparavant, le territoire était appelé \"Afrique du Sud-Ouest\" (South West Africa, Suidwes-Afrika) pendant la colonisation sud-africaine.",
   "nameOriginActor": "Le nom \"Namibie\" vient du désert du Namib, nommé par les Nama. Le nom a été adopté lors de l'indépendance en 1990 pour remplacer \"Afrique du Sud-Ouest\" (nom colonial sud-africain). Le nom \"Namibie\" a été proposé par les nationalistes namibiens.",
@@ -238,7 +238,8 @@
       "Recensements namibiens",
       "Études anthropologiques sur les peuples de Namibie",
       "Études historiques sur la colonisation allemande et sud-africaine, le génocide des Herero, la guerre d'indépendance",
-      "CIA World Factbook – Namibia (ethnic groups)"
+      "CIA World Factbook – Namibia (ethnic groups)",
+      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
     ],
     "demographics": {
       "peoples": [
