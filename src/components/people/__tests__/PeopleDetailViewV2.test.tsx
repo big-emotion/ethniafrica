@@ -41,7 +41,7 @@ const basePageData: PeoplePageData = {
     totalPopulationFormatted: "0",
     distributions: [],
   },
-  sources: "",
+  sources: [],
   names: null,
 };
 

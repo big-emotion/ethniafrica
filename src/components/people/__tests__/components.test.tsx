@@ -9,6 +9,7 @@ import { PeopleCultureGrid } from "../PeopleCultureGrid";
 import { PeopleRelatedPeoplesSection } from "../PeopleRelatedPeoplesSection";
 import { PeopleCountriesSection } from "../PeopleCountriesSection";
 import { PeopleSourcesFooter } from "../PeopleSourcesFooter";
+import { ficheSources } from "@/lib/afrik/ficheSourceLabel";
 import type {
   PeopleHeroData,
   PeopleOriginData,
@@ -465,22 +466,48 @@ describe("PeopleCountriesSection", () => {
 // ==========================================
 
 describe("PeopleSourcesFooter", () => {
-  it("returns null when sources string is empty", () => {
-    const { container } = render(<PeopleSourcesFooter sources="" />);
+  const sourced = ficheSources([
+    {
+      title: "SIL Ethnologue 2025",
+      url: "https://ethnologue.com",
+      tier: "official",
+    },
+    { title: "Un blog communautaire", url: null, tier: "unverified" },
+    { title: "Note de terrain, 1974", url: null, tier: "needs_review" },
+  ]);
+
+  // @req REQ-092
+  it("returns null when the fiche cites nothing", () => {
+    const { container } = render(<PeopleSourcesFooter sources={[]} />);
     expect(container.firstChild).toBeNull();
   });
 
-  it("renders sources text", () => {
-    render(
-      <PeopleSourcesFooter sources="SIL Ethnologue 2025 · UNFPA 2024 · CIA World Factbook" />
-    );
+  // Nothing is excluded for being weak — the policy labels rather than
+  // filters. The reader gets the claim and its provenance side by side.
+  // @req REQ-092
+  it("shows every source with the tier it actually carries", () => {
+    render(<PeopleSourcesFooter sources={sourced} />);
+
+    expect(screen.getByText("Officielle")).toBeTruthy();
+    expect(screen.getByText("Non vérifiée")).toBeTruthy();
+    expect(screen.getByText("En attente d'examen")).toBeTruthy();
+  });
+
+  // @req REQ-092
+  it("links a source that has a url and leaves the others as plain text", () => {
+    render(<PeopleSourcesFooter sources={sourced} />);
+
     expect(
-      screen.getByText("SIL Ethnologue 2025 · UNFPA 2024 · CIA World Factbook")
-    ).toBeTruthy();
+      screen.getByRole("link", { name: "SIL Ethnologue 2025" })
+    ).toHaveAttribute("href", "https://ethnologue.com");
+    expect(
+      screen.queryByRole("link", { name: "Un blog communautaire" })
+    ).toBeNull();
+    expect(screen.getByText("Un blog communautaire")).toBeTruthy();
   });
 
   it("renders section header label", () => {
-    render(<PeopleSourcesFooter sources="SIL Ethnologue 2025" />);
+    render(<PeopleSourcesFooter sources={sourced} />);
     expect(screen.getByText("Sources & Références")).toBeTruthy();
   });
 });

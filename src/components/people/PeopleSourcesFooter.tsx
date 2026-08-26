@@ -1,9 +1,21 @@
+import type { LabelledFicheSource } from "@/lib/afrik/ficheSourceLabel";
+
 interface PeopleSourcesFooterProps {
-  sources: string;
+  sources: LabelledFicheSource[];
 }
 
+/**
+ * The fiche's sources, one per row, each showing the tier it actually carries.
+ *
+ * Nothing is excluded for being weak — the policy labels rather than filters,
+ * because dropping oral, community and amateur knowledge would itself be a
+ * colonial filter. What the reader gets is the claim and its provenance side
+ * by side, so a fiche resting entirely on unverified sources says so instead
+ * of looking like any other.
+ */
+// @req REQ-092
 export function PeopleSourcesFooter({ sources }: PeopleSourcesFooterProps) {
-  if (!sources) return null;
+  if (!sources || sources.length === 0) return null;
 
   return (
     <div
@@ -19,7 +31,37 @@ export function PeopleSourcesFooter({ sources }: PeopleSourcesFooterProps) {
       >
         Sources &amp; Références
       </p>
-      <p>{sources}</p>
+      <ul className="flex flex-col gap-afh-xs">
+        {sources.map((source) => (
+          <li
+            key={`${source.tier}-${source.title}`}
+            className="flex flex-wrap items-baseline gap-afh-xs"
+            data-source-tier={source.tier}
+          >
+            <span
+              className="rounded-afh-full border px-afh-xs text-[9px] font-bold uppercase"
+              style={{ letterSpacing: "0.08em" }}
+            >
+              {source.tierLabel}
+            </span>
+            {/* A source with no url stays readable rather than becoming a
+                dead link: the citation is the point, the link is a courtesy. */}
+            {source.url ? (
+              <a
+                href={source.url}
+                rel="noreferrer noopener"
+                target="_blank"
+                className="underline underline-offset-2"
+              >
+                {source.title}
+              </a>
+            ) : (
+              <span>{source.title}</span>
+            )}
+            {source.notes && <span>— {source.notes}</span>}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

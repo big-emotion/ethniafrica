@@ -200,6 +200,7 @@ function Card({ children }: { children: React.ReactNode }) {
 // AutonymExonymHeading — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const AutonymHeading_Mobile: Story = {
   name: "AutonymExonymHeading — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -215,12 +216,14 @@ export const AutonymHeading_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const AutonymHeading_Tablet: Story = {
   name: "AutonymExonymHeading — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: AutonymHeading_Mobile.render,
 };
 
+// @req REQ-115
 export const AutonymHeading_Desktop: Story = {
   name: "AutonymExonymHeading — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
@@ -231,6 +234,7 @@ export const AutonymHeading_Desktop: Story = {
 // PeopleHero — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Hero_Mobile: Story = {
   name: "PeopleHero — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -248,12 +252,14 @@ export const Hero_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const Hero_Tablet: Story = {
   name: "PeopleHero — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Hero_Mobile.render,
 };
 
+// @req REQ-115
 export const Hero_Desktop: Story = {
   name: "PeopleHero — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
@@ -264,6 +270,7 @@ export const Hero_Desktop: Story = {
 // PeopleOriginBlock — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Origin_Mobile: Story = {
   name: "PeopleOriginBlock — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -274,18 +281,21 @@ export const Origin_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const Origin_Tablet: Story = {
   name: "PeopleOriginBlock — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Origin_Mobile.render,
 };
 
+// @req REQ-115
 export const Origin_Desktop: Story = {
   name: "PeopleOriginBlock — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
   render: Origin_Mobile.render,
 };
 
+// @req REQ-115
 export const Origin_Empty: Story = {
   name: "PeopleOriginBlock — empty (calm omission, UX-DR31)",
   render: () => {
@@ -301,6 +311,7 @@ export const Origin_Empty: Story = {
 // PeopleLanguageSection — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Language_Mobile: Story = {
   name: "PeopleLanguageSection — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -311,12 +322,14 @@ export const Language_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const Language_Tablet: Story = {
   name: "PeopleLanguageSection — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Language_Mobile.render,
 };
 
+// @req REQ-115
 export const Language_Desktop: Story = {
   name: "PeopleLanguageSection — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
@@ -327,6 +340,7 @@ export const Language_Desktop: Story = {
 // PeopleHistoryTimeline — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const History_Mobile: Story = {
   name: "PeopleHistoryTimeline — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -337,12 +351,14 @@ export const History_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const History_Tablet: Story = {
   name: "PeopleHistoryTimeline — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: History_Mobile.render,
 };
 
+// @req REQ-115
 export const History_Desktop: Story = {
   name: "PeopleHistoryTimeline — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
@@ -353,6 +369,7 @@ export const History_Desktop: Story = {
 // PeopleCultureGrid — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Culture_Mobile: Story = {
   name: "PeopleCultureGrid — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -363,12 +380,14 @@ export const Culture_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const Culture_Tablet: Story = {
   name: "PeopleCultureGrid — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Culture_Mobile.render,
 };
 
+// @req REQ-115
 export const Culture_Desktop: Story = {
   name: "PeopleCultureGrid — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
@@ -379,6 +398,7 @@ export const Culture_Desktop: Story = {
 // PeopleRelatedPeoplesSection — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Related_Mobile: Story = {
   name: "PeopleRelatedPeoplesSection — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -389,12 +409,14 @@ export const Related_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const Related_Tablet: Story = {
   name: "PeopleRelatedPeoplesSection — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Related_Mobile.render,
 };
 
+// @req REQ-115
 export const Related_Desktop: Story = {
   name: "PeopleRelatedPeoplesSection — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
@@ -405,6 +427,7 @@ export const Related_Desktop: Story = {
 // PeopleCountriesSection — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Countries_Mobile: Story = {
   name: "PeopleCountriesSection — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
@@ -415,12 +438,14 @@ export const Countries_Mobile: Story = {
   ),
 };
 
+// @req REQ-115
 export const Countries_Tablet: Story = {
   name: "PeopleCountriesSection — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Countries_Mobile.render,
 };
 
+// @req REQ-115
 export const Countries_Desktop: Story = {
   name: "PeopleCountriesSection — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
@@ -431,22 +456,54 @@ export const Countries_Desktop: Story = {
 // PeopleSourcesFooter — 430 / 720 / 1200
 // ==========================================
 
+// @req REQ-115
 export const Sources_Mobile: Story = {
   name: "PeopleSourcesFooter — 430px",
   parameters: { viewport: { defaultViewport: "mobile430" } },
   render: () => (
     <div style={{ padding: "12px" }}>
-      <PeopleSourcesFooter sources="SIL Ethnologue 2025 · UNFPA 2024 · CIA World Factbook 2024 · UNESCO 2023" />
+      {/* One source per tier the corpus actually uses, so the story shows
+          what a low-confidence fiche looks like next to a well-sourced one. */}
+      <PeopleSourcesFooter
+        sources={[
+          {
+            title: "SIL Ethnologue 2025",
+            url: "https://www.ethnologue.com/",
+            tier: "official",
+            tierLabel: "Officielle",
+          },
+          {
+            title: "Ajayi, J. F. A., History of West Africa (1976)",
+            url: null,
+            tier: "referenced",
+            tierLabel: "Référencée",
+          },
+          {
+            title: "Joshua Project",
+            url: null,
+            tier: "unverified",
+            tierLabel: "Non vérifiée",
+          },
+          {
+            title: "Témoignage recueilli à Abeokuta, 1974",
+            url: null,
+            tier: "needs_review",
+            tierLabel: "En attente d'examen",
+          },
+        ]}
+      />
     </div>
   ),
 };
 
+// @req REQ-115
 export const Sources_Tablet: Story = {
   name: "PeopleSourcesFooter — 720px",
   parameters: { viewport: { defaultViewport: "tablet720" } },
   render: Sources_Mobile.render,
 };
 
+// @req REQ-115
 export const Sources_Desktop: Story = {
   name: "PeopleSourcesFooter — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
