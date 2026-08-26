@@ -228,6 +228,12 @@ export default async function PeoplesSlugPage({
                 peopleDetail.nameMain,
                 peopleFieldOverlay
               )}
+              // Markers sit on the sphere, so a country that has rotated
+              // behind it has no button to click. AtlasGlobe falls back to
+              // markers on a fiche with a single country, where a one-entry
+              // list would be furniture.
+              targetPicker="list"
+              wholeAreaLabel="Toute l'aire"
             />
           }
           record={

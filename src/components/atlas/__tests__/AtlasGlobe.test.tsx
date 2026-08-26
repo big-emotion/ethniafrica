@@ -387,6 +387,47 @@ describe("AtlasGlobe", () => {
     });
 
     // @req REQ-117
+    // 394 of the corpus's 789 people fiches declare exactly one country. A
+    // dropdown with one entry offers a choice that is not one, and the button
+    // that returns from a choice has nothing to return to, so the markers
+    // stand in and neither is rendered.
+    // @req REQ-117
+    it("keeps the pastilles on a fiche with one country to choose from", () => {
+      render(
+        <AtlasGlobe
+          overlay={peopleOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+          wholeAreaLabel="Toute l'aire"
+        />
+      );
+
+      expect(screen.queryByRole("listbox")).not.toBeInTheDocument();
+      expect(
+        screen.queryByRole("button", { name: /Toute l'aire/ })
+      ).not.toBeInTheDocument();
+      expect(document.querySelector("[data-atlas-target]")).toBeInTheDocument();
+    });
+
+    // @req REQ-117
+    it("names the return-to-everything button for the entity it describes", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyPeopleOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+          wholeAreaLabel="Toute l'aire"
+        />
+      );
+
+      expect(
+        screen.getByRole("button", { name: "Toute l'aire" })
+      ).toBeInTheDocument();
+      expect(
+        screen.queryByRole("button", { name: /Toute l'empreinte/ })
+      ).not.toBeInTheDocument();
+    });
+
     it("replaces the pastilles with a list when asked for one", () => {
       render(
         <AtlasGlobe

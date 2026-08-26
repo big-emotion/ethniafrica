@@ -691,6 +691,11 @@ export function AtlasGlobe({
   // on marker legibility, TTFB and Lighthouse budgets not yet measured.
   const stageIsSphere = webglSupported && overlay.kind !== "continent-field";
 
+  // A picker with one entry offers a choice that is not one, and the button
+  // that returns from a choice has nothing to return to. 394 of the corpus's
+  // 789 people fiches declare exactly one country; the markers stand in.
+  const offersList = targetPicker === "list" && targets.length > 1;
+
   const chosenFacts = chosen ? factsFor(chosen, facts, targetFacts) : null;
   const place = (target: AtlasTarget): StagePlacement =>
     stageIsSphere
@@ -750,7 +755,7 @@ export function AtlasGlobe({
         </p>
       )}
 
-      {targetPicker === "markers" &&
+      {(targetPicker === "markers" || !offersList) &&
         targets.map((target) => (
           <AtlasTargetMarker
             key={target.countryId}
@@ -762,7 +767,7 @@ export function AtlasGlobe({
           />
         ))}
 
-      {targetPicker === "list" && targets.length > 0 && (
+      {offersList && (
         <div className="absolute left-1/2 top-3 z-[7] -translate-x-1/2">
           <AtlasTargetPicker
             targets={targets}
@@ -789,7 +794,7 @@ export function AtlasGlobe({
         data-atlas-toolbar=""
         className="absolute inset-x-0 bottom-0 hidden gap-2 p-3 min-[760px]:flex"
       >
-        {targetPicker === "list" && (
+        {offersList && (
           <button
             type="button"
             aria-pressed={chosenCountryId === null}
