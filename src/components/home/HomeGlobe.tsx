@@ -322,7 +322,7 @@ export function HomeGlobe({
   };
 
   return (
-    <div style={{ position: "absolute", inset: 0 }}>
+    <div className="home-globe-layout">
       {/* Polite, not assertive: the reader is driving the slider, so the
           announcement should follow the gesture rather than cut across it. */}
       <p
@@ -334,6 +334,7 @@ export function HomeGlobe({
       </p>
 
       <button
+        className="home-globe-surface"
         type="button"
         aria-label="Globe interactif de l'Afrique. Glissez ou utilisez les flèches du clavier pour le faire pivoter."
         onPointerDown={handlePointerDown}
@@ -342,16 +343,6 @@ export function HomeGlobe({
         onPointerCancel={stopDragging}
         onPointerLeave={stopDragging}
         onKeyDown={handleKeyDown}
-        style={{
-          position: "absolute",
-          inset: 0,
-          border: "none",
-          background: "none",
-          padding: 0,
-          margin: 0,
-          cursor: "grab",
-          touchAction: "none",
-        }}
       >
         <canvas
           ref={canvasRef}
@@ -403,12 +394,27 @@ export function HomeGlobe({
       </div>
 
       <style>{`
-        .home-globe-readout {
+        /* The readout, the sphere and the tools are three rows of one
+           column rather than three layers stacked on the same box. Under
+           the old absolute placement the sphere was fitted to the full
+           height and the two chrome rows were laid over it, so the caption
+           sat on the northern limb and the tools cut across the southern
+           one. Giving the sphere its own row is what buys the space back:
+           it is fitted to what is left after the chrome, and the gaps hold
+           at every width, including when the caption wraps to three lines
+           on a 430px screen. */
+        .home-globe-layout {
           position: absolute;
-          left: 14px;
-          top: 14px;
+          inset: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .home-globe-readout {
+          align-self: flex-start;
           z-index: 1;
-          margin: 0;
+          margin: 0 14px 18px;
           max-width: calc(100% - 28px);
           padding: 8px 11px;
           border: 1px solid var(--afh-night-line);
@@ -422,17 +428,27 @@ export function HomeGlobe({
           pointer-events: none;
         }
 
+        .home-globe-surface {
+          position: relative;
+          flex: 1 1 auto;
+          /* Without a floor the sphere is squeezed to nothing when the
+             stage is short and the caption wraps. */
+          min-height: 180px;
+          border: none;
+          background: none;
+          padding: 0;
+          margin: 0;
+          cursor: grab;
+          touch-action: none;
+        }
+
         .home-globe-tools {
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 16px;
           display: flex;
           gap: 10px;
           justify-content: center;
           align-items: center;
           flex-wrap: wrap;
-          padding: 0 16px;
+          padding: 18px 16px 0;
           z-index: 1;
         }
 
@@ -492,12 +508,13 @@ export function HomeGlobe({
           font-weight: 700;
         }
 
-        /* At 430 the readout would otherwise sit on top of the globe it is
-           describing, and the three tools would need two rows of their own. */
+        /* At 430 the caption wraps and the three tools need two rows of
+           their own, so both give the sphere back some of their gap. */
         @media (max-width: 700px) {
-          .home-globe-readout { font-size: 10.5px; padding: 6px 9px; }
+          .home-globe-readout { font-size: 10.5px; padding: 6px 9px; margin-bottom: 12px; }
           .home-globe-morph input[type="range"] { width: 110px; }
-          .home-globe-tools { gap: 8px; bottom: 12px; }
+          .home-globe-tools { gap: 8px; padding-top: 12px; }
+          .home-globe-surface { min-height: 150px; }
         }
       `}</style>
     </div>

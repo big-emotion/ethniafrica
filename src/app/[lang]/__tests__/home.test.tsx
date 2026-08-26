@@ -47,12 +47,20 @@ describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-11
     expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
   });
 
+  // The night scope is the globe's, not the whole band's. Pinning the
+  // whole hero to night made the theme control look broken on this route
+  // alone: the band fills the viewport, so pressing it changed nothing the
+  // reader could see. DEC-022 asks for the dataviz on a dark sky, which is
+  // the panel — everything around it follows the reader's choice.
   // @req REQ-115
-  it("opens on the night band with the globe and its instruction", async () => {
+  it("keeps only the globe on the night surface, so the rest of the hero follows the theme", async () => {
     const { container } = render(await Home());
 
     const hero = container.querySelector(".home-hero");
-    expect(hero).toHaveClass("afh-on-night");
+    expect(hero).not.toHaveClass("afh-on-night");
+    expect(container.querySelector(".home-globe-holder")).toHaveClass(
+      "afh-on-night"
+    );
     expect(screen.getByTestId("home-globe-stage")).toBeInTheDocument();
   });
 
