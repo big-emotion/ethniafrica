@@ -17,7 +17,7 @@ exonym.
 ## Getting started
 
 Node **20.x** (`package.json` `engines`). The AFRIK data loaders are the one exception and need
-Node ≥ 22 — see [`docs/runbooks/afrik-staging-data-sync.md`](docs/runbooks/afrik-staging-data-sync.md).
+Node ≥ 22 — see [`docs/runbooks/afrik-data-sync.md`](docs/runbooks/afrik-data-sync.md).
 
 ```bash
 git clone https://github.com/big-emotion/ethniafrica.git

@@ -8,29 +8,29 @@ own two-step rule — see [`migration-state.md`](./migration-state.md).
 
 ---
 
-## Which environment am I actually writing to?
+## Which environment am I writing to?
 
-Read this before choosing a `--target`. The two name spaces do not line up, and the mismatch
-has already cost an audit real time (ETNI-1199).
+`--target` names the **application** environment, and the two possible values are `recette` and
+`production` — the same vocabulary as the branches and the Vercel environments.
 
-| What                                    | Value                                                                   |
-| --------------------------------------- | ----------------------------------------------------------------------- |
-| Supabase project `shmrjtnfbqzceovroqjj` | its environment is labelled **production** by Supabase                  |
-| The application environment it backs    | **recette** — not production                                            |
-| The constant naming it in this repo     | `AFRIK_PRODUCTION_SUPABASE_URL` (`scripts/lib/afrikMigrationTarget.ts`) |
-| The flag that reaches it                | `--target=production`                                                   |
+| Application environment | Supabase project                | Where the loader reads its URL                                              |
+| ----------------------- | ------------------------------- | --------------------------------------------------------------------------- |
+| `recette`               | `shmrjtnfbqzceovroqjj`          | `AFRIK_RECETTE_SUPABASE_URL`, checked into `scripts/lib/afrikSyncTarget.ts` |
+| `production`            | not recorded in this repository | the `AFRIK_PRODUCTION_SUPABASE_URL` environment variable — no default       |
 
 Every Supabase project has exactly one environment and Supabase calls it "production", so that
-label never identifies the application environment. Here it backs **recette**, which means
-`--target=production` writes to the recette database. Confirm the destination with whoever owns
-the environment before running with `--apply`; do not infer it from the flag name.
+label never identifies the application environment. `shmrjtnfbqzceovroqjj`'s dashboard says
+"production" and the project backs **recette**. Read the environment off the `--target` value,
+never off a Supabase dashboard.
 
-`--target=staging` requires `AFRIK_STAGING_SUPABASE_URL` to be set and to equal
-`NEXT_PUBLIC_SUPABASE_URL`. Where that variable is unset — which is the normal state on a dev
-machine — the staging target cannot be used at all.
+This distinction used to be wrong in code, and the wrongness was enforced rather than caught:
+`AFRIK_PRODUCTION_SUPABASE_URL` was a checked-in constant holding the recette ref, so
+`--target=production` threw _unless_ it was pointed at recette (ETNI-1199). The production URL
+is now configuration with no default, and configuring it as the recette project is refused.
 
-Renaming that constant so the flag names an environment rather than a label is an open
-follow-up.
+`--target=staging` is retired: it throws an error naming `recette` as its replacement.
+`AFRIK_STAGING_SUPABASE_URL` is read by nothing and can be deleted from any `.env.local` that
+still carries it.
 
 ---
 
@@ -67,11 +67,14 @@ All three are applied by a human, never auto-applied. Their current state per pr
 
 ## Safety properties
 
-- The target is mandatory and must be exactly `staging` or `production`; anything else is
-  rejected.
-- For `--target=production`, `NEXT_PUBLIC_SUPABASE_URL` must exactly match the locked
-  `AFRIK_PRODUCTION_SUPABASE_URL` constant before the admin client is constructed. For
-  `--target=staging`, it must match `AFRIK_STAGING_SUPABASE_URL`.
+- The target is mandatory and must be exactly `recette` or `production`; anything else is
+  rejected, and `staging` is rejected with a message naming its replacement.
+- Every check below runs before the admin client is constructed, so a wrong target fails
+  without opening a connection.
+- For `--target=recette`, `NEXT_PUBLIC_SUPABASE_URL` must be the recette project.
+- For `--target=production`, `AFRIK_PRODUCTION_SUPABASE_URL` must be set, must not be the
+  recette project, and `NEXT_PUBLIC_SUPABASE_URL` must equal it. Pointing at recette while
+  declaring production fails with an error that says so.
 - Preview is the default. Writes require the additional `--apply` flag.
 - Non-destructive: it upserts source records and relations, and never prunes database-only rows.
 - Existing `created_at` values are preserved; successful upserts update `updated_at`.
@@ -91,11 +94,19 @@ All three are applied by a human, never auto-applied. Their current state per pr
    when loading those corpora.
 3. Configure credentials for that one environment:
 
+   For `--target=recette`:
+
    ```env
-   NEXT_PUBLIC_SUPABASE_URL=https://<project-ref>.supabase.co
-   # staging target only — must equal NEXT_PUBLIC_SUPABASE_URL
-   AFRIK_STAGING_SUPABASE_URL=https://<project-ref>.supabase.co
-   SUPABASE_SERVICE_ROLE_KEY=<service-role-key>
+   NEXT_PUBLIC_SUPABASE_URL=https://shmrjtnfbqzceovroqjj.supabase.co
+   SUPABASE_SERVICE_ROLE_KEY=<the recette project's service-role key>
+   ```
+
+   For `--target=production` — both URLs must name the production project, and be identical:
+
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=https://<production-project-ref>.supabase.co
+   AFRIK_PRODUCTION_SUPABASE_URL=https://<production-project-ref>.supabase.co
+   SUPABASE_SERVICE_ROLE_KEY=<the production project's service-role key>
    ```
 
 4. Validate the canonical corpus:
@@ -117,7 +128,7 @@ All three are applied by a human, never auto-applied. Their current state per pr
 Preview reads the target and reports missing or stale records without writing anything:
 
 ```bash
-npx tsx scripts/migrateAfrikToDatabase.ts --target=<staging|production>
+npx tsx scripts/migrateAfrikToDatabase.ts --target=<recette|production>
 ```
 
 Review the reported drift before approving apply mode.
@@ -139,7 +150,7 @@ ls dataset/source/afrik/noms/*.json | wc -l         # expect 1 — but see below
 Only after the preview and the snapshot have been reviewed:
 
 ```bash
-npx tsx scripts/migrateAfrikToDatabase.ts --target=<staging|production> --apply
+npx tsx scripts/migrateAfrikToDatabase.ts --target=<recette|production> --apply
 ```
 
 A successful run has no insertion errors and reports `hasDrift: false` in the post-sync
@@ -147,9 +158,30 @@ verification. On failure, keep `dataset/source/afrik/logs/migration_errors_<date
 diagnosis, then restore the pre-sync snapshot if the target is not internally consistent.
 
 `.github/workflows/production-data-sync.yml` runs this same validate → preview → apply sequence
-automatically after a successful Vercel _Production_ deployment of `main`, against the same
-hard-coded project ref. If you are loading by hand shortly after a deploy, check whether that
-workflow has already done it.
+automatically after a successful Vercel _Production_ deployment of `main`. If you are loading by
+hand shortly after a deploy, check whether that workflow has already done it — see
+[the automated production sync](#the-automated-production-sync) for the secrets it needs.
+
+---
+
+## The automated production sync
+
+The workflow fires on a successful Vercel _Production_ deployment of `main`, runs
+`--target=production`, then POSTs a cache revalidation to `https://ethniafrica.com`. It reads
+two repository secrets, **both belonging to the Supabase project that backs production**:
+
+| Secret                                 | Used as                                                        |
+| -------------------------------------- | -------------------------------------------------------------- |
+| `PRODUCTION_SUPABASE_URL`              | `NEXT_PUBLIC_SUPABASE_URL` and `AFRIK_PRODUCTION_SUPABASE_URL` |
+| `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` | `SUPABASE_SERVICE_ROLE_KEY`                                    |
+
+They exist only in GitHub Actions; nothing local reads them under these names. They are
+deliberately distinct from the `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`
+repository secrets, which are **recette's** and are what the rest of CI uses.
+
+With either secret missing the job **fails** and names the one that is absent. It does not skip:
+a skipped sync leaves the production corpus stale while the deploy reports success, which is
+exactly the failure mode this workflow used to have.
 
 ---
 

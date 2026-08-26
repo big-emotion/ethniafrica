@@ -25,14 +25,15 @@ recorded in this repository. Before touching a database, read
 [`runbooks/migration-state.md`](./runbooks/migration-state.md) — it carries the project
 identity table, the applied-migration state, and the two-step rollout rule.
 
-> **Known mis-wiring, unfixed.** `scripts/lib/afrikMigrationTarget.ts` and
-> `.github/workflows/production-data-sync.yml` both hard-code `shmrjtnfbqzceovroqjj` as the
-> "production" target — but that ref is recette. The workflow fires on a Vercel _Production_
-> deploy of `main`, writes the AFRIK corpus into the recette database, and then revalidates
-> `ethniafrica.com`, which it did not write to. Nothing has been changed to correct this:
-> repointing the constant or the workflow is an environment decision for the owner. Until then,
-> confirm the destination with the environment owner rather than reading it off a constant, a
-> flag name, or this page.
+The AFRIK corpus sync used to hard-code `shmrjtnfbqzceovroqjj` as its "production" target, so
+every production deploy loaded the corpus into recette and then revalidated `ethniafrica.com`,
+a site it had not written to. That is fixed. `scripts/lib/afrikSyncTarget.ts` now resolves
+`--target=recette` against a checked-in recette ref and `--target=production` against the
+`AFRIK_PRODUCTION_SUPABASE_URL` environment variable, with no default and an outright refusal
+if it is configured as the recette project. `.github/workflows/production-data-sync.yml`
+supplies it from two repository secrets belonging to the production project —
+`PRODUCTION_SUPABASE_URL` and `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` — and fails, rather than
+skipping, when either is missing.
 
 ---
 
@@ -109,6 +110,11 @@ Optional subsystems, each inert when unset: `UPSTASH_REDIS_REST_URL` /
 `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`, `CLOUDFLARE_TURNSTILE_SECRET_KEY`, `REVALIDATE_SECRET`,
 `SUPABASE_WEBHOOK_SECRET`, `NEXT_PUBLIC_FEATURE_QUIZ`, `CORS_ALLOWED_ORIGIN`.
 
+`AFRIK_PRODUCTION_SUPABASE_URL` is loader-only: set it only when syncing the AFRIK corpus with
+`--target=production`. Its CI counterparts, `PRODUCTION_SUPABASE_URL` and
+`PRODUCTION_SUPABASE_SERVICE_ROLE_KEY`, are GitHub Actions repository secrets read only by
+`.github/workflows/production-data-sync.yml` — they are never local environment variables.
+
 `scripts/checkEnvExample.ts` compares `.env.example` against the variables the code actually
 reads. Run it after adding any `process.env` reference.
 
@@ -152,7 +158,7 @@ runbook.
 
 The editorial corpus lives as ~890 JSON fiches under `dataset/source/afrik/`, in git. Loading
 it into Supabase is a separate step, documented in
-[`runbooks/afrik-staging-data-sync.md`](./runbooks/afrik-staging-data-sync.md).
+[`runbooks/afrik-data-sync.md`](./runbooks/afrik-data-sync.md).
 
 Validate before loading anything:
 
@@ -168,18 +174,19 @@ npx tsx scripts/migrateAfrikToDatabase.ts --target=production
 npx tsx scripts/migrateAfrikToDatabase.ts --target=production --apply
 ```
 
-⚠️ `--target=production` does **not** mean the production environment.
-`scripts/lib/afrikMigrationTarget.ts` hard-codes `AFRIK_PRODUCTION_SUPABASE_URL` as
-`shmrjtnfbqzceovroqjj`, the project backing recette. `--target=staging` requires
-`AFRIK_STAGING_SUPABASE_URL` to be set and to equal `NEXT_PUBLIC_SUPABASE_URL`; where it is
-unset, that target is unusable. Confirm the destination with whoever owns the environment
-before running with `--apply`.
+`--target` names the application environment: `recette` or `production`. `--target=recette`
+resolves to `shmrjtnfbqzceovroqjj`; `--target=production` resolves to whatever
+`AFRIK_PRODUCTION_SUPABASE_URL` names, and refuses to run if that is unset or is the recette
+project. `NEXT_PUBLIC_SUPABASE_URL` must match the resolved target, so loading production by
+hand means pointing both variables at the production project. `--target=staging` is retired and
+now throws.
 
 `.github/workflows/production-data-sync.yml` runs the same validate → preview → apply sequence
 automatically after a successful Vercel _Production_ deployment of `main`, then POSTs a cache
-revalidation to `https://ethniafrica.com/api/admin/revalidate`. It targets the same hard-coded
-project ref — the recette one — so every production deploy loads the corpus into recette and
-revalidates a site it did not write to. See the note at the top of this page.
+revalidation to `https://ethniafrica.com/api/admin/revalidate`. It reads
+`PRODUCTION_SUPABASE_URL` and `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` — both the production
+project's, both distinct from the recette values the rest of CI uses — and fails if either is
+absent.
 
 Requires **Node ≥ 22** for the loaders: `@supabase/supabase-js` needs a native `WebSocket`, and
 on Node 20 the run dies with `native WebSocket not found` before the target guard is reached.
@@ -267,7 +274,7 @@ is blocking the read. Test with the anon key, never the service role.
 ## Related
 
 - [`runbooks/migration-state.md`](./runbooks/migration-state.md) — which migrations are live where
-- [`runbooks/afrik-staging-data-sync.md`](./runbooks/afrik-staging-data-sync.md) — loading the corpus
+- [`runbooks/afrik-data-sync.md`](./runbooks/afrik-data-sync.md) — loading the corpus
 - [`runbooks/restore-procedure.md`](./runbooks/restore-procedure.md) — backup restore, RTO/RPO
 - [`runbooks/revisions-dba-bypass.md`](./runbooks/revisions-dba-bypass.md) — overriding the append-only invariant
 - [`../CLAUDE.md`](../CLAUDE.md) — architecture and repository conventions
