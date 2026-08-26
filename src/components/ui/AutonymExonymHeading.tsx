@@ -74,6 +74,7 @@ const peopleVariantConfig = {
   },
 };
 
+// @req REQ-115
 export function AutonymExonymHeading({
   autonym,
   autonymIso639_3,
