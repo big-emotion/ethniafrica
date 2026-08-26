@@ -39,6 +39,7 @@ import type { LanguageFamily } from "@/types/afrik";
 
 const {
   getPeopleById,
+  getPeoplesByLanguageFamily,
   getCountryById,
   getLanguageFamilyById,
   getFamilyTreeSkeleton,
@@ -52,6 +53,7 @@ const {
   getLatestEntityRevisionVersion,
 } = vi.hoisted(() => ({
   getPeopleById: vi.fn(),
+  getPeoplesByLanguageFamily: vi.fn(),
   getCountryById: vi.fn(),
   getLanguageFamilyById: vi.fn(),
   getFamilyTreeSkeleton: vi.fn(),
@@ -76,6 +78,8 @@ vi.mock("next/navigation", () => ({
 
 vi.mock("@/api/v2/services/peopleService", () => ({
   getPeopleById: (...args: unknown[]) => getPeopleById(...args),
+  getPeoplesByLanguageFamily: (...args: unknown[]) =>
+    getPeoplesByLanguageFamily(...args),
 }));
 
 vi.mock("@/api/v2/services/countryService", () => ({
@@ -332,6 +336,7 @@ const FICHE_ROUTES: FicheRouteUnderTest[] = [
     primeLiveCorpus: () => {
       getLanguageFamilyById.mockResolvedValue(NIGER_CONGO_ROW);
       getFamilyTreeSkeleton.mockResolvedValue(NIGER_CONGO_TREE);
+      getPeoplesByLanguageFamily.mockResolvedValue([]);
     },
     primeFrozenRevision: () => {
       getRevisionSnapshot.mockResolvedValue({

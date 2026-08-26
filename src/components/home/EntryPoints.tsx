@@ -21,13 +21,18 @@ interface EntryPointDef {
 
 // Accent scope for home entry points (atlas-charter.md §2, "Home modules"
 // row): peoples=ocre, countries=teal, families=terre.
+//
+// ETNI-1216/REQ-114: each entry point now opens its access mode's hub
+// route rather than the resource page directly, so a module the hub
+// groups (e.g. noms, comparer under peuples) is reachable within two
+// clicks from home (home → hub → module) instead of being unreachable.
 const ENTRY_POINT_DEFS: EntryPointDef[] = [
   {
     id: "peuples",
     name: "Peuples",
     icon: Users,
     accentClass: "afh-accent-ocre",
-    page: "peoples",
+    page: "peoplesHub",
     count: (counts) => counts.peoples,
   },
   {
@@ -35,7 +40,7 @@ const ENTRY_POINT_DEFS: EntryPointDef[] = [
     name: "Pays",
     icon: Globe,
     accentClass: "afh-accent-teal",
-    page: "countries",
+    page: "countriesHub",
     count: (counts) => counts.countries,
   },
   {
@@ -43,7 +48,7 @@ const ENTRY_POINT_DEFS: EntryPointDef[] = [
     name: "Familles",
     icon: Network,
     accentClass: "afh-accent-terre",
-    page: "families",
+    page: "familiesHub",
     count: (counts) => counts.families,
   },
 ];

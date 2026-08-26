@@ -78,6 +78,29 @@ describe("quiz page type (Epic 10, Story 10.8, ETNI-497)", () => {
   });
 });
 
+describe("access-mode hub page types (ETNI-1216, REQ-114)", () => {
+  // @req REQ-114
+  it("resolves the French slug for each hub page type", () => {
+    expect(getLocalizedRoute("fr", "peoplesHub")).toBe("/fr/peuples-hub");
+    expect(getLocalizedRoute("fr", "countriesHub")).toBe("/fr/pays-hub");
+    expect(getLocalizedRoute("fr", "familiesHub")).toBe("/fr/familles-hub");
+  });
+
+  // @req REQ-114
+  it("round-trips each hub slug back to its page type", () => {
+    expect(getPageFromRoute("/fr/peuples-hub")).toBe("peoplesHub");
+    expect(getPageFromRoute("/fr/pays-hub")).toBe("countriesHub");
+    expect(getPageFromRoute("/fr/familles-hub")).toBe("familiesHub");
+  });
+
+  // @req REQ-114
+  it("does not confuse a hub slug with its resource-page counterpart", () => {
+    expect(getPageFromRoute("/fr/peuples")).toBe("peoples");
+    expect(getPageFromRoute("/fr/peuples-hub")).toBe("peoplesHub");
+    expect(getPageFromRoute("/fr/peuples/PPL_YORUBA")).toBe("peoples");
+  });
+});
+
 describe("colonization page type (Epic 13, Story 13.9, ETNI-533, FR90)", () => {
   // @req REQ-091 FR90
   it("resolves the French-only nested slug for the colonization page type", () => {

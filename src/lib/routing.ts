@@ -11,7 +11,10 @@ export type PageType =
   | "compare"
   | "migrations"
   | "quiz"
-  | "colonization";
+  | "colonization"
+  | "peoplesHub"
+  | "countriesHub"
+  | "familiesHub";
 
 // Mapping des slugs par langue
 const SLUGS: Record<Language, Record<PageType, string>> = {
@@ -28,6 +31,12 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     quiz: "quiz",
     // Epic 13 (Gazes), FR90 — French-only, no locale alternates.
     colonization: "regards/colonisation-et-resistances",
+    // ETNI-1216/REQ-114: one hub route per access mode, distinct from the
+    // resource browse pages (peuples/pays/familles) they group modules
+    // around.
+    peoplesHub: "peuples-hub",
+    countriesHub: "pays-hub",
+    familiesHub: "familles-hub",
   },
 };
 

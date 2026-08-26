@@ -25,6 +25,13 @@ const referenceDesktop = {
   viewport: { width: 800, height: 900 },
 };
 
+// ETNI-1216/REQ-114: the access-mode hub a11y spec is required at 1200 px,
+// a width no existing project covers.
+const wideDesktop = {
+  ...devices["Desktop Chrome"],
+  viewport: { width: 1200, height: 900 },
+};
+
 const moderatorDesktop = {
   ...devices["Desktop Chrome"],
   viewport: { width: 1280, height: 900 },
@@ -90,6 +97,13 @@ export default defineConfig({
     {
       name: "desktop-800",
       use: referenceDesktop,
+      dependencies: ["setup"],
+      testIgnore: /\.setup\.ts$/,
+      grep: /@cross-viewport/,
+    },
+    {
+      name: "desktop-1200",
+      use: wideDesktop,
       dependencies: ["setup"],
       testIgnore: /\.setup\.ts$/,
       grep: /@cross-viewport/,
