@@ -13,11 +13,13 @@ import type { FamilyTreeSkeleton } from "@/api/v2/services/languageFamilyTreeSer
 const {
   mockGetLanguageFamilyById,
   mockGetFamilyTreeSkeleton,
+  mockGetPeoplesByLanguageFamily,
   mockGetLatestVersion,
   mockGetRevisionSnapshot,
 } = vi.hoisted(() => ({
   mockGetLanguageFamilyById: vi.fn(),
   mockGetFamilyTreeSkeleton: vi.fn(),
+  mockGetPeoplesByLanguageFamily: vi.fn(),
   mockGetLatestVersion: vi.fn(),
   mockGetRevisionSnapshot: vi.fn(),
 }));
@@ -45,6 +47,11 @@ vi.mock("@/api/v2/services/languageFamilyService", () => ({
 vi.mock("@/api/v2/services/languageFamilyTreeService", () => ({
   getFamilyTreeSkeleton: (...args: unknown[]) =>
     mockGetFamilyTreeSkeleton(...args),
+}));
+
+vi.mock("@/api/v2/services/peopleService", () => ({
+  getPeoplesByLanguageFamily: (...args: unknown[]) =>
+    mockGetPeoplesByLanguageFamily(...args),
 }));
 
 // The route must read through the v2 services, which own the revision rules;
@@ -224,6 +231,7 @@ describe("/[lang]/familles/[slug] page", () => {
     stubPanelRuntime();
     mockGetLanguageFamilyById.mockResolvedValue(BANTU);
     mockGetFamilyTreeSkeleton.mockResolvedValue(BANTU_TREE);
+    mockGetPeoplesByLanguageFamily.mockResolvedValue([]);
   });
 
   afterEach(() => {

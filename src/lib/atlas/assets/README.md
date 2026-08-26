@@ -66,3 +66,23 @@ byte-identical to the SVG's path data.
 - `-simplify 45%` was chosen empirically to keep a recognizable coastline
   with headroom under the budget. Re-run step 2 with a different percentage
   to trade detail for size.
+
+## Per-country geometry (`africaAdmin0.ts`)
+
+`africaAdmin0.ts` is the same Natural Earth admin-0 dataset above, kept
+**per-country** instead of dissolved — REQ-116 needs individual country
+outlines for the fiche globe (`src/lib/atlas/overlays.ts`), which the dissolved
+continent silhouette can't provide. Its source is
+`docs/design/mockups/parts/africa-admin0.json`, the same reviewed geometry the
+`docs/design/mockups/pages/{pays,famille}.html` mockups render, kept in sync by
+regenerating rather than hand-editing:
+
+```bash
+node src/lib/atlas/assets/generate-admin0.mjs \
+  docs/design/mockups/parts/africa-admin0.json \
+  src/lib/atlas/assets/africaAdmin0.ts
+```
+
+Coverage is the 51 countries present in that file — a handful of very small
+African states are absent. `overlays.ts` treats an unresolvable country as the
+missing state (atlas-charter §4), never as a silently dropped shape.

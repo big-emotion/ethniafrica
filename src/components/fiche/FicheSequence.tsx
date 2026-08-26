@@ -49,6 +49,8 @@ export interface FicheSequenceProps {
   context: FichePanelContext;
   /** The legacy entity detail view — the sequence gates it behind The Record (FR97). */
   record: ReactNode;
+  /** The REQ-116 atlas globe (AtlasGlobe) — rendered above ContextTriad, ahead of every panel, on the DEC-022 Night surface. Omitted entirely when a route has not built one. */
+  globe?: ReactNode;
   className?: string;
 }
 
@@ -68,6 +70,7 @@ function panelSequenceFor(context: FichePanelContext): PanelKind[] {
 export function FicheSequence({
   context,
   record,
+  globe,
   className,
 }: FicheSequenceProps) {
   return (
@@ -78,6 +81,7 @@ export function FicheSequence({
         className
       )}
     >
+      {globe}
       <ContextTriad context={context} />
       {panelSequenceFor(context).map((kind) => {
         const panel = resolvePanel(kind, context, record);

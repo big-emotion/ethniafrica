@@ -7,6 +7,8 @@ import {
 import { PageLayout } from "@/components/layout/PageLayout";
 import { PeopleDetailView } from "@/components/detail/PeopleDetailView";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
+import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
+import { buildPeopleFieldOverlay } from "@/lib/atlas/overlays";
 import { getPeopleById } from "@/api/v2/services/peopleService";
 import { getPeopleNamesDossier } from "@/api/v2/services/names";
 import { getPeopleFragmentation } from "@/api/v2/services/peopleFragmentation";
@@ -208,6 +210,14 @@ export default async function PeoplesSlugPage({
             relations: egoNetwork.sourced,
             hasOralNarratives: (voices?.total ?? 0) > 0,
           }}
+          globe={
+            <AtlasGlobe
+              overlay={buildPeopleFieldOverlay(
+                peopleDetail.demography?.distributionByCountry
+              )}
+              missingMessage={`Répartition par pays non renseignée pour ${peopleDetail.nameMain}`}
+            />
+          }
           record={
             <PeopleDetailView
               peopleId={parsed.slug}
