@@ -27,6 +27,13 @@ import {
   type PanelAnchor,
 } from "@/lib/atlas/panelBias";
 import { BASEMAP_VIEWBOX, projectLonLat } from "@/lib/atlas/projection";
+import {
+  FOOTPRINT_DASH_ARRAY,
+  FOOTPRINT_STROKE_WIDTH_SVG,
+  FOOTPRINT_STROKE_WIDTH_SVG_FOCUSED,
+  footprintFillOpacity,
+  footprintStrokeOpacity,
+} from "@/lib/atlas/footprintStyle";
 import { buildAtlasTargets, type AtlasTarget } from "@/lib/atlas/targets";
 import type { CountryId } from "@/types/afrik";
 import { useGlobeCamera } from "@/hooks/use-globe-camera";
@@ -193,36 +200,63 @@ function AtlasGlobeFallback({
     );
   }
 
-  const isCountry = overlay.kind === "country-outline";
-  const fillOpacity = isCountry ? overlay.fillOpacity : overlay.tint * 0.35;
+  // The family footprint is a choropleth: each country carries its own weight,
+  // so each gets its own fill and its own stroke. Drawing the rings as one flat
+  // list — as this path used to — can only ever produce a single tint, which
+  // says "the family is here" and never "this is where it is concentrated".
+  if (overlay.kind === "family-footprint") {
+    const focusedCountryId = focus?.countryId ?? null;
+
+    return (
+      <AfricaBasemap figureTransform={figureTransform}>
+        {overlay.countries.map((country) => {
+          const isFocused = focusedCountryId === country.countryId;
+          const dimmed = focusedCountryId !== null && !isFocused;
+
+          return (
+            <g key={country.countryId} data-country={country.countryId}>
+              {country.rings.map((ring, index) => (
+                <polygon
+                  key={index}
+                  points={ringToSvgPoints(ring)}
+                  fill="var(--accent)"
+                  fillOpacity={footprintFillOpacity({
+                    weight: country.weight,
+                    dimmed,
+                  })}
+                  stroke={isFocused ? "var(--accent-tint)" : "var(--accent)"}
+                  strokeOpacity={footprintStrokeOpacity(dimmed)}
+                  strokeWidth={
+                    isFocused
+                      ? FOOTPRINT_STROKE_WIDTH_SVG_FOCUSED
+                      : FOOTPRINT_STROKE_WIDTH_SVG
+                  }
+                  // The boundary of an aggregate of presences, not a border.
+                  strokeDasharray={FOOTPRINT_DASH_ARRAY}
+                  vectorEffect="non-scaling-stroke"
+                />
+              ))}
+            </g>
+          );
+        })}
+      </AfricaBasemap>
+    );
+  }
 
   return (
     <AfricaBasemap figureTransform={figureTransform}>
-      {overlay.rings.map((ring, index) =>
-        isCountry ? (
-          <TraceInPolygon
-            key={`country-${index}`}
-            points={ringToSvgPoints(ring)}
-            reducedMotion={reducedMotion}
-            fill="var(--accent)"
-            fillOpacity={fillOpacity}
-            stroke="var(--accent)"
-            strokeWidth={1.5}
-            vectorEffect="non-scaling-stroke"
-          />
-        ) : (
-          <polygon
-            key={`family-${index}`}
-            points={ringToSvgPoints(ring)}
-            fill="var(--accent)"
-            fillOpacity={fillOpacity}
-            stroke="var(--accent)"
-            strokeWidth={1.5}
-            strokeDasharray="6 5"
-            vectorEffect="non-scaling-stroke"
-          />
-        )
-      )}
+      {overlay.rings.map((ring, index) => (
+        <TraceInPolygon
+          key={`country-${index}`}
+          points={ringToSvgPoints(ring)}
+          reducedMotion={reducedMotion}
+          fill="var(--accent)"
+          fillOpacity={overlay.fillOpacity}
+          stroke="var(--accent)"
+          strokeWidth={1.5}
+          vectorEffect="non-scaling-stroke"
+        />
+      ))}
     </AfricaBasemap>
   );
 }

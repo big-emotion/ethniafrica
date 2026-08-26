@@ -9,7 +9,15 @@ import {
   buildRingFan,
   buildRingLineLoop,
 } from "@/lib/atlas/globeGeometry";
+import {
+  FOOTPRINT_REVEAL_DURATION_SECONDS,
+  footprintDashRepeats,
+  footprintFillOpacity,
+  footprintRevealEase,
+  footprintStrokeOpacity,
+} from "@/lib/atlas/footprintStyle";
 import type { AtlasOverlay } from "@/lib/atlas/overlays";
+import type { CountryId } from "@/types/afrik";
 import { buildRotationMatrix } from "@/lib/atlas/projection";
 import { createSphereLayer, type SphereLayer } from "@/lib/atlas/sphereLayer";
 import { resolveGlobePalette } from "@/lib/atlas/globePalette";
@@ -17,8 +25,6 @@ import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
 const MAX_DEVICE_PIXEL_RATIO = 2;
 const REVEAL_DURATION_SECONDS = 0.9;
-const FAMILY_FILL_MAX_OPACITY = 0.35;
-const FAMILY_DASH_REPEATS_PER_RING = 18;
 const PEOPLE_BASE_POINT_SIZE_CSS_PX = 46;
 
 // uZoom / uOffset are the REQ-117 camera: the dolly is a clip-space scale
@@ -123,6 +129,14 @@ function resolveAccentHex(element: Element): string {
   return value.startsWith("#") ? value : CHARTER_OCRE_HEX;
 }
 
+/** Falls back to the accent itself: a focus ring in the accent still reads, one in a missing colour does not. */
+function resolveAccentTintHex(element: Element): string {
+  const value = getComputedStyle(element)
+    .getPropertyValue("--accent-tint")
+    .trim();
+  return value.startsWith("#") ? value : resolveAccentHex(element);
+}
+
 function compileShader(
   gl: WebGLRenderingContext,
   type: number,
@@ -156,6 +170,14 @@ export interface AtlasGlobeCanvasProps {
   /** The camera AtlasGlobe owns (REQ-117). Every change to it repaints one frame. */
   pose: CameraPose;
   accentHex?: string;
+  /**
+   * Which country of the overlay is currently being read, if any. A view
+   * state, deliberately not a field on the overlay: the overlay states facts
+   * about the family, and which country the reader is looking at is not one of
+   * them. Changing it also replays the reveal, so the trace redraws itself
+   * around the new subject.
+   */
+  focusedCountryId?: CountryId | null;
 }
 
 /**
@@ -174,12 +196,15 @@ export function AtlasGlobeCanvas({
   overlay,
   pose,
   accentHex,
+  focusedCountryId = null,
 }: AtlasGlobeCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reducedMotion = usePrefersReducedMotion();
   const reducedMotionRef = useRef(reducedMotion);
   const poseRef = useRef(pose);
   const drawRef = useRef<(() => void) | null>(null);
+  const focusRef = useRef<CountryId | null>(focusedCountryId);
+  const replayRevealRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     reducedMotionRef.current = reducedMotion;
@@ -195,6 +220,10 @@ export function AtlasGlobeCanvas({
     if (!gl) return;
 
     const [r, g, b] = hexToRgbFloats(accentHex ?? resolveAccentHex(canvas));
+    // The focused country's outline lifts towards the accent's light tint so it
+    // separates from its neighbours by hue as well as by width — on a footprint
+    // of seventeen adjacent countries, width alone is not enough to find it.
+    const focusRgb = hexToRgbFloats(resolveAccentTintHex(canvas));
 
     gl.clearColor(0, 0, 0, 0);
     gl.enable(gl.BLEND);
@@ -207,7 +236,13 @@ export function AtlasGlobeCanvas({
     let frameId: number | null = null;
     let lastTimestamp: number | null = null;
 
-    const progressRef = { current: overlay.kind === "country-outline" ? 0 : 1 };
+    // The people field has no line to draw, so nothing to reveal. Both closed
+    // encodings trace themselves in.
+    const progressRef = { current: overlay.kind === "people-field" ? 1 : 0 };
+    const revealDurationSeconds =
+      overlay.kind === "family-footprint"
+        ? FOOTPRINT_REVEAL_DURATION_SECONDS
+        : REVEAL_DURATION_SECONDS;
 
     // The same lit sphere the home hero stands on. Drawn at margin 1 so it
     // shares the overlay shaders' projection exactly — an outline traced
@@ -320,17 +355,32 @@ export function AtlasGlobeCanvas({
       const uProgress = gl.getUniformLocation(program, "uProgress");
       const uDashRepeats = gl.getUniformLocation(program, "uDashRepeats");
 
-      const fillOpacity =
+      // One entry per ring, each carrying the paint its own country earned.
+      // A single fillOpacity for the whole overlay — which is what this used
+      // to compute — can only draw a flat wash, and a choropleth is the entire
+      // point of a derived footprint: it is what turns "the family is here"
+      // into "this is where it is concentrated".
+      const shapes =
         overlay.kind === "country-outline"
-          ? overlay.fillOpacity
-          : overlay.tint * FAMILY_FILL_MAX_OPACITY;
-      const dashRepeats =
-        overlay.kind === "family-footprint" ? FAMILY_DASH_REPEATS_PER_RING : 0;
+          ? overlay.rings.map((ring) => ({
+              countryId: overlay.countryId,
+              weight: 1,
+              dashRepeats: 0,
+              fan: buildRingFan(ring),
+              loop: buildRingLineLoop(ring),
+            }))
+          : overlay.countries.flatMap((country) =>
+              country.rings.map((ring) => ({
+                countryId: country.countryId,
+                weight: country.weight,
+                dashRepeats: footprintDashRepeats(ring),
+                fan: buildRingFan(ring),
+                loop: buildRingLineLoop(ring),
+              }))
+            );
 
-      const rings = overlay.rings.map((ring) => ({
-        fan: buildRingFan(ring),
-        loop: buildRingLineLoop(ring),
-      }));
+      const isCountryOutline = overlay.kind === "country-outline";
+      const countryFillOpacity = isCountryOutline ? overlay.fillOpacity : 0;
 
       const fanBuffer = gl.createBuffer();
       const loopPositionBuffer = gl.createBuffer();
@@ -353,7 +403,23 @@ export function AtlasGlobeCanvas({
         gl.uniform1f(uZoom, camera.zoom);
         gl.uniform2f(uOffset, camera.offsetX, camera.offsetY);
 
-        rings.forEach(({ fan, loop }) => {
+        const focusedCountryId = focusRef.current;
+        // Eased here rather than in the frame loop so both the stroke reveal
+        // and any future consumer read the same curve.
+        const revealed = footprintRevealEase(progressRef.current);
+
+        shapes.forEach(({ countryId, weight, dashRepeats, fan, loop }) => {
+          const isFocused = focusedCountryId === countryId;
+          const dimmed = focusedCountryId !== null && !isFocused;
+
+          const fillOpacity = isCountryOutline
+            ? countryFillOpacity
+            : footprintFillOpacity({ weight, dimmed });
+          const strokeOpacity = isCountryOutline
+            ? 1
+            : footprintStrokeOpacity(dimmed);
+          const [sr, sg, sb] = isFocused ? focusRgb : [r, g, b];
+
           gl.bindBuffer(gl.ARRAY_BUFFER, fanBuffer);
           gl.bufferData(gl.ARRAY_BUFFER, fan.positions, gl.STATIC_DRAW);
           gl.enableVertexAttribArray(aSpherePos);
@@ -377,9 +443,9 @@ export function AtlasGlobeCanvas({
           gl.vertexAttribPointer(aArcFraction, 1, gl.FLOAT, false, 0, 0);
 
           gl.uniform1f(uIsStroke, 1);
-          gl.uniform1f(uProgress, progressRef.current);
+          gl.uniform1f(uProgress, revealed);
           gl.uniform1f(uDashRepeats, dashRepeats);
-          gl.uniform4f(uColor, r, g, b, 1);
+          gl.uniform4f(uColor, sr, sg, sb, strokeOpacity);
           gl.drawArrays(gl.LINE_LOOP, 0, loop.vertexCount);
         });
       };
@@ -414,11 +480,25 @@ export function AtlasGlobeCanvas({
         lastTimestamp = timestamp;
         progressRef.current = Math.min(
           1,
-          progressRef.current + seconds / REVEAL_DURATION_SECONDS
+          progressRef.current + seconds / revealDurationSeconds
         );
         draw();
         scheduleReveal();
       });
+    };
+
+    // Replayed on every country choice, so the trace redraws itself around the
+    // new subject instead of the map simply recolouring under the reader.
+    replayRevealRef.current = () => {
+      if (reducedMotionRef.current) {
+        progressRef.current = 1;
+        draw();
+        return;
+      }
+      progressRef.current = 0;
+      lastTimestamp = null;
+      draw();
+      scheduleReveal();
     };
 
     const handleResize = () => {
@@ -470,6 +550,14 @@ export function AtlasGlobeCanvas({
     poseRef.current = pose;
     drawRef.current?.();
   }, [pose]);
+
+  useEffect(() => {
+    focusRef.current = focusedCountryId;
+    // Replaying redraws, so this must not also call draw() — the trace would
+    // paint once complete before restarting from nothing, which reads as a
+    // flash.
+    replayRevealRef.current?.();
+  }, [focusedCountryId]);
 
   return (
     <canvas

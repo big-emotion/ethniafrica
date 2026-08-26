@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import type {
   CountryOutlineOverlay,
+  FamilyFootprintOverlay,
   PeopleFieldOverlay,
   Ring,
 } from "@/lib/atlas/overlays";
@@ -34,6 +35,28 @@ const countryOverlay: CountryOutlineOverlay = {
 const peopleOverlay: PeopleFieldOverlay = {
   kind: "people-field",
   areas: [{ countryId: "NGA", center: { lon: 8, lat: 9 }, populationShare: 1 }],
+};
+
+/** Two countries at different densities, so a per-country tint is distinguishable from a flat wash. */
+const familyFootprintOverlay: FamilyFootprintOverlay = {
+  kind: "family-footprint",
+  countries: [
+    { countryId: "NGA", rings: [square], memberCount: 4, weight: 1 },
+    {
+      countryId: "BEN",
+      rings: [
+        [
+          { lon: 10, lat: 0 },
+          { lon: 12, lat: 0 },
+          { lon: 12, lat: 2 },
+          { lon: 10, lat: 2 },
+        ],
+      ],
+      memberCount: 1,
+      weight: 0.25,
+    },
+  ],
+  memberPeopleCount: 4,
 };
 
 /** The two peoples of the family fiche below sit far enough apart to tell their markers apart. */
@@ -301,6 +324,63 @@ describe("AtlasGlobe", () => {
       expect(
         document.querySelector("[data-atlas-target]")
       ).not.toBeInTheDocument();
+    });
+  });
+
+  /**
+   * atlas-charter §1: an encoding may not exist in only one rendering
+   * technique. Whatever the WebGL path says about the footprint, the fallback
+   * has to say too — a reader without WebGL must not be shown a different map.
+   */
+  describe("family footprint without WebGL", () => {
+    const familyFootprintPolygons = () =>
+      Array.from(
+        document.querySelectorAll<SVGPolygonElement>("g[data-country] polygon")
+      );
+
+    // @req REQ-116
+    it("gives each country its own fill opacity, drawn from its own weight", () => {
+      render(
+        <AtlasGlobe overlay={familyFootprintOverlay} missingMessage="n/a" />
+      );
+
+      const byCountry = Object.fromEntries(
+        familyFootprintPolygons().map((polygon) => [
+          polygon.closest("g")?.getAttribute("data-country"),
+          Number(polygon.getAttribute("fill-opacity")),
+        ])
+      );
+
+      // The same 0.16 + 0.46 x weight ramp the WebGL path uses, so a reader on
+      // either path sees the same relative densities.
+      expect(byCountry.NGA).toBeCloseTo(0.62, 5);
+      expect(byCountry.BEN).toBeCloseTo(0.275, 5);
+      expect(byCountry.NGA).toBeGreaterThan(byCountry.BEN);
+    });
+
+    // @req REQ-116
+    it("dashes every country's outline", () => {
+      render(
+        <AtlasGlobe overlay={familyFootprintOverlay} missingMessage="n/a" />
+      );
+
+      const polygons = familyFootprintPolygons();
+      expect(polygons.length).toBeGreaterThan(0);
+      // Not one solid edge anywhere: a family has no border, and an aggregate
+      // of presences has even less of one.
+      for (const polygon of polygons) {
+        expect(polygon.getAttribute("stroke-dasharray")).toBe("9 7");
+      }
+    });
+
+    // @req REQ-116
+    it("never closes a line around a people, whichever overlay it is handed", () => {
+      // The guard that matters most, because it is the one rule the charter
+      // states as absolute. A people is a field, never a bounded territory.
+      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+
+      expect(document.querySelector("polygon")).not.toBeInTheDocument();
+      expect(document.querySelector("g[data-country]")).not.toBeInTheDocument();
     });
   });
 });
