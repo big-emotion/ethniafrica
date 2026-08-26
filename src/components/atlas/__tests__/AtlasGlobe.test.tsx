@@ -51,6 +51,13 @@ const familyPeopleOverlay: PeopleFieldOverlay = {
 /** Three well-separated countries, so no marker is dropped by the 22px de-duplication. */
 const CONTINENT_COUNTS = { TZA: 99, ETH: 89, GHA: 84 };
 
+/** LOT 1 — the shell went full-bleed, so the stage is a fixed band. */
+function stageOf(container: HTMLElement): HTMLElement {
+  const stage = container.querySelector("[data-atlas-stage]");
+  if (!stage) throw new Error("expected an atlas stage");
+  return stage as HTMLElement;
+}
+
 function continentOverlayFrom(
   counts: Record<string, number>
 ): ContinentFieldOverlay {

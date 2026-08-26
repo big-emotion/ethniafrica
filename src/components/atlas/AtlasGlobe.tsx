@@ -399,9 +399,8 @@ export interface AtlasGlobeProps {
 const NIGHT_STAGE_STYLE: CSSProperties = {
   position: "relative",
   width: "100%",
-  aspectRatio: `${BASEMAP_VIEWBOX.width} / ${BASEMAP_VIEWBOX.height}`,
+  height: "var(--afh-globe-stage-height)",
   backgroundColor: "var(--afh-night-ground)",
-  borderRadius: "var(--afh-radius-xl)",
   overflow: "hidden",
 };
 
