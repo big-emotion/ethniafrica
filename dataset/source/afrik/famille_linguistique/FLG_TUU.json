@@ -11,7 +11,10 @@
       "originOfHistoricalTerm": " - Le terme « Tuu » a été introduit par Tom Güldemann (2005-2006) dans ses travaux sur les langues du Sud de l'Afrique, notamment dans « Tuu as a language family » (2005) et « The San languages of southern Namibia » (2006). Le nom vient d'un mot commun aux deux branches de la famille signifiant « personne ». - Le terme « Southern Khoisan » a été proposé par Joseph Greenberg dans les années 1950 dans son ouvrage *The Languages of Africa* (1963), regroupant diverses langues à clics sous ce nom générique sans démonstration généalogique solide. - Le terme « Khoisan » lui-même a été forgé en 1928 par le biologiste allemand Leonhard Schulze, combinant *Khoi* (populations pasteurisantes du groupe Khoe) et *San* (chasseurs-cueilleurs), dans une logique extérieure aux peuples concernés. - Les termes « Bushmen » et « Hottentot » proviennent de la terminologie coloniale européenne (hollandais/anglais) du XVIIe-XIXe siècle, utilisés de manière péjorative pour désigner les populations autochtones du Cap."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "!Ui (ǀXam, Vaal-Orange/Eastern !Ui, Nǁng — branche aujourd'hui quasi éteinte)",
+        "Taa (dénommée \"Hua\" par Glottolog ; regroupe Lower-Nosop et Taa/ǃXóõ)"
+      ],
       "geographicArea": "Botswana (Désert du Kalahari, districts de Ghanzi et Kgalagadi, le long de la rivière Nossob), Namibie (régions frontalières Omaheke et Hardap, zones Est-Namibie), Afrique du Sud (historiquement, provinces du Cap et du Transvaal avant extinction des langues ǃKwi).",
       "numberOfLanguages": 2,
       "totalSpeakers": null
@@ -41,7 +44,9 @@
     },
     "distribution": {
       "totalSpeakers": null,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "BWA": 2500
+      }
     },
     "sources": [
       "Güldemann, Tom (2005) – *Tuu as a language family*. Studies in Tuu (Southern Khoisan). ResearchGate.",
@@ -63,7 +68,9 @@
       "Deacon, Hilary J. & Deacon, Janette (1999) – *Human Beginnings in South Africa: Uncovering the Secrets of the Stone Age*. Cape Town: David Philip Publishers.",
       "Robbins, Lawrence H. et al. (2005) – *The Advent of Herding in Southern Africa: Early AMS Dates on Domestic Livestock from the Kalahari Desert*. Current Anthropology, 46(4), 671–677.",
       "SIL Ethnologue (2025) – *Taa Language*. Ethnologue: Languages of the World. URL: https://www.ethnologue.com/language/nmn",
-      "Glottolog (2024) – *Tuu languages*. Glottolog 5.0. URL: https://glottolog.org/resource/languoid/id/tuuu1241"
+      "Glottolog (2024) – *Tuu languages*. Glottolog 5.0. URL: https://glottolog.org/resource/languoid/id/tuuu1241",
+      "Glottolog 5.0 (2024) – Classification du nœud \"Tuu\" [tuuu1241] : deux branches directes, \"!Ui\" [kwii1241] et \"Hua\" [huaa1247]. https://glottolog.org/resource/languoid/id/tuuu1241",
+      "SIL Ethnologue (19e éd., 2016) – Taa/ǃXóõ [nmn] : ≈2 500 locuteurs (2011), pour l'essentiel au Botswana (vallée de la Nossob, districts de Ghanzi/Kgalagadi), quelques centaines en Namibie orientale. https://www.ethnologue.com/language/nmn/ (chiffre vérifié via Wikipédia EN « Taa language », consulté en 2026 ; accès direct à ethnologue.com bloqué depuis cet environnement)"
     ]
   }
 }

@@ -11,7 +11,14 @@
       "originOfHistoricalTerm": " Le terme est purement géographique, créé par les linguistes (Koelle, puis Westermann et Greenberg) pour désigner les langues \"non-mandé\" de la côte ouest-africaine (Sénégal à Libéria)."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Atlantique central",
+        "Peul-Sérère",
+        "Jaad",
+        "Naluic",
+        "Tenda",
+        "Wolof-BKK"
+      ],
       "geographicArea": "Sénégal, Gambie, Guinée-Bissau, Guinée, Sierra Leone, Libéria.",
       "numberOfLanguages": 45,
       "totalSpeakers": 40000000
@@ -57,14 +64,18 @@
     },
     "distribution": {
       "totalSpeakers": 40000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "SEN": 8786892
+      }
     },
     "sources": [
       "Obenga, T. – *Origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*",
       "Sapir, J. D. – *West Atlantic: An Inventory of the Languages*",
       "Greenberg, J. – *The Languages of Africa* (Classification critique)",
       "Diop, C. A. – *Parenté génétique de l'égyptien pharaonique et des langues négro-africaines*",
-      "UNESCO – *Histoire générale de l'Afrique*"
+      "UNESCO – *Histoire générale de l'Afrique*",
+      "Glottolog (2025) – \"North-Central Atlantic\". https://glottolog.org/resource/languoid/id/nort3146",
+      "Agence Nationale de la Statistique et de la Démographie (ANSD), Sénégal (2023) – RGPH-5, Rapport Chapitre 1 : État et structure de la population, Table I-32 (Wolof langue courante). https://www.ansd.sn/sites/default/files/recensements/rapport/Chapitre-1_ETAT-STRUCTURE-POPULATION-Rapport-def-RGPH-5.pdf"
     ]
   }
 }

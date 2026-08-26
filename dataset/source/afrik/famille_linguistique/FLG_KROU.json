@@ -11,7 +11,7 @@
       "originOfHistoricalTerm": " Le terme apparaît pour la première fois en 1588 sous la forme « Crua » dans le récit de voyage de James Welsh, publié par Richard Hakluyt dans ses *Principal Navigations, Voyages, Traffiques and Discoveries of the English Nation* (1589). Ce terme faisait référence au point géographique côtier correspondant à l'actuel Settra-Kru au Liberia. La graphie « Krou » est une corruption de l'une des nombreuses appellations données à travers les âges aux ressortissants du peuple krao. Le terme a été systématisé par des chercheurs comme Pieter Jan-L. Vandenhoute (1948) dans son étude sur les masques krou, puis par Bohumil Holas après ses enquêtes au Liberia en 1948. Les linguistes ont ensuite étendu le terme pour désigner un ensemble beaucoup plus large de langues parlées en Côte d'Ivoire et au Liberia."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": ["Eastern Kru", "Greater Western Kru"],
       "geographicArea": "Côte d'Ivoire (centre-sud, sud-ouest, ouest), Liberia (est, sud-est, zones côtières), Sierra Leone (minorité à Freetown). Zone forestière guinéo-congolaise le long du littoral atlantique, s'étendant sur environ 120 000 km².",
       "numberOfLanguages": 30,
       "totalSpeakers": 3000000
@@ -54,7 +54,9 @@
     },
     "distribution": {
       "totalSpeakers": 3000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "CIV": 2091798
+      }
     },
     "sources": [
       "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press.",
@@ -73,7 +75,9 @@
       "La Dépêche d'Abidjan (2021) – « Hommage à Frédéric Bruly Bouabré – Le Peuple bété, Histoires et Cultures ». https://ladepechedabidjan.info/2021/11/20/hommage-a-frederic-bruly-bouabre-le-peuple-bete-histoires-et-cultures/",
       "Encyclopaedia Universalis (s.d.) – *Krou*. https://www.universalis.fr/dictionnaire/krou/",
       "Ivoire 225 (2025) – « Les Peuples de Côte d'Ivoire : Diversité, Culture et Cohésion Nationale ». https://ivoire225.com/2025/08/06/les-peuples-de-cote-divoire-diversite-culture-et-cohesion-nationale/",
-      "« Les masques « Krou » de Côte-d'Ivoire ». *Anthropologie et arts africains* (2025). https://journals.openedition.org/aaa/767"
+      "« Les masques « Krou » de Côte-d'Ivoire ». *Anthropologie et arts africains* (2025). https://journals.openedition.org/aaa/767",
+      "Glottolog (2025) – \"Kru\". https://glottolog.org/resource/languoid/id/krua1234",
+      "Agence Nationale de la Statistique (ANStat), Côte d'Ivoire (2021) – Recensement Général de la Population et de l'Habitat (RGPH 2021), jeu de données \"Répartition des Ivoiriens par grand groupe ethnique selon le sexe\" (groupe ethnolinguistique Krou, classification Bouquet). https://data.gouv.ci/datasets/repartition-des-ivoiriens-par-grand-groupe-ethnique"
     ]
   }
 }

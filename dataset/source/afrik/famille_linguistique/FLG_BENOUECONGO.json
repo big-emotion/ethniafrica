@@ -11,7 +11,21 @@
       "originOfHistoricalTerm": " Le terme « Western Sudanese » a été introduit par l'ethnologue allemand Diedrich Westermann en 1927 dans son ouvrage *Die westlichen Sudansprachen und ihre Beziehungen zum Bantu* (Les langues soudanaises occidentales et leurs relations avec le bantou). Cette classification a été reprise et affinée par Joseph H. Greenberg dans les années 1940-1950, consolidant le terme « Benue-Congo » en 1963 dans *The Languages of Africa* (Indiana University Press). D'OÙ : Le terme dérive de deux repères géographiques : la rivière Bénoué (Benue River), affluent du Niger qui prend sa source dans le massif de l'Adamaoua au Cameroun et traverse le Nigeria jusqu'à Lokoja, et le fleuve Congo, deuxième plus long fleuve d'Afrique traversant l'Afrique centrale."
     },
     "generalInfo": {
-      "branches": [],
+      "branches": [
+        "Akpes-Edoid",
+        "Bantoid",
+        "Benue-Congo Plateau",
+        "Defoid",
+        "Delta Cross",
+        "Ebira-Nupoid",
+        "Gade",
+        "Idomoid",
+        "Igboid",
+        "Jukunoid",
+        "Kainji",
+        "Oko-Eni-Osayen",
+        "Ukaan"
+      ],
       "geographicArea": "Précision régionale :",
       "numberOfLanguages": 900,
       "totalSpeakers": 500000000
@@ -73,7 +87,9 @@
     },
     "distribution": {
       "totalSpeakers": 500000000,
-      "distributionByCountry": {}
+      "distributionByCountry": {
+        "ZAF": 5148283
+      }
     },
     "sources": [
       "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press.",
@@ -95,7 +111,8 @@
       "Glottolog (2025) – \"Benue-Congo\". [https://glottolog.org/resource/languoid/id/benu1247](https://glottolog.org/resource/languoid/id/benu1247)",
       "UNFPA (2025) – *World Population Dashboard*. [https://www.unfpa.org/data/world-population-dashboard](https://www.unfpa.org/data/world-population-dashboard)",
       "CIA (2025) – *The World Factbook*. [https://www.cia.gov/the-world-factbook/](https://www.cia.gov/the-world-factbook/)",
-      "Statistics South Africa (2025) – *Census 2022 Main Results*. [http://www.statssa.gov.za/](http://www.statssa.gov.za/)"
+      "Statistics South Africa (2025) – *Census 2022 Main Results*. [http://www.statssa.gov.za/](http://www.statssa.gov.za/)",
+      "Statistics South Africa (2025) – Census 2022 Statistical Release P0301.4, Table 2.8 (Setswana home language). https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf"
     ]
   }
 }
