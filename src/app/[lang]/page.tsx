@@ -30,7 +30,7 @@ export default async function Home() {
     // strip above it — the sky has to start at the top of the page.
     <PageLayout language="fr" hideHeader flushTop navOnNight>
       <HomeHero />
-      <section className="home-axes-section" aria-label="Les trois axes">
+      <section className="home-axes-section">
         <AccessAxes language="fr" counts={counts} />
       </section>
       <TrustStrip language="fr" />

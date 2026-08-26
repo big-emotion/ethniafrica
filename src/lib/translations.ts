@@ -39,6 +39,7 @@ export const translations = {
       attribution: ATTRIBUTION_STRING,
       partnerLogoAlt: "BIG EMOTION",
       copyright: "EthniAfrica. Tous droits réservés.",
+      about: "À propos",
       legalNavigationLabel: "Informations légales",
       legalNotice: "Mentions légales",
       dataPolicy: "Politique de données",
@@ -410,17 +411,17 @@ export const translations = {
       explorer: {
         title: "Explorer",
         blurb:
-          "Quand on sait ce qu'on cherche — une entité, un nom, une entrée dans le corpus.",
+          "Il arrive avec un nom, il repart avec une fiche : l'axe des objets du corpus — peuples, pays, langues, familles.",
       },
       comprendre: {
         title: "Comprendre",
         blurb:
-          "Quand on veut savoir d'où vient ce qu'on lit — la méthode, les sources, le temps long.",
+          "Il arrive avec une question, il repart avec une explication : l'axe des relations — ce nom, cette origine, cette source.",
       },
       jouer: {
         title: "Jouer",
         blurb:
-          "Quand on veut que le corpus réponde — mise en regard, rapprochements, écarts.",
+          "Il arrive sans rien, il repart avec un résultat : l'axe de la boucle de retour — comparer, répondre, se mesurer.",
       },
       unavailableLabel: "Bientôt",
     },

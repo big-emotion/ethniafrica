@@ -6,6 +6,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { AccessAxes } from "@/components/home/AccessAxes";
 import { getLocalizedRoute } from "@/lib/routing";
+import type { HubModuleDefinition } from "@/lib/hubs/moduleRegistry";
 import type { CorpusCounts } from "@/lib/home/corpusCounts";
 
 const counts: CorpusCounts = {
@@ -20,8 +21,27 @@ vi.mock("@/hooks/use-prefers-reduced-motion", () => ({
   usePrefersReducedMotion: () => reducedMotion,
 }));
 
+// Only the axis→modules filing is stubbed. isModuleEnabled stays the real
+// implementation: it is the thing under test, and a stub of it would let the
+// card pass whether or not it consults the flag.
+let modulesForJouer: HubModuleDefinition[] | null = null;
+vi.mock("@/lib/hubs/moduleRegistry", async (importOriginal) => {
+  const registry =
+    await importOriginal<typeof import("@/lib/hubs/moduleRegistry")>();
+  return {
+    ...registry,
+    getModulesForAccessMode: (mode: string) =>
+      mode === "jouer" && modulesForJouer
+        ? modulesForJouer
+        : registry.getModulesForAccessMode(
+            mode as Parameters<typeof registry.getModulesForAccessMode>[0]
+          ),
+  };
+});
+
 afterEach(() => {
   reducedMotion = false;
+  modulesForJouer = null;
   cleanup();
 });
 
@@ -45,6 +65,39 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
     expect(
       screen.getByRole("heading", { level: 2, name: "Jouer" })
     ).toBeInTheDocument();
+  });
+
+  // The filing criterion behind the three axes, said out loud. It orients
+  // the reader; it is not a level in the outline, and the home pins its h3
+  // count at zero — so it must render as a paragraph, never a heading.
+  // @req REQ-113
+  it("states the filing criterion above the cards without adding a heading", () => {
+    render(<AccessAxes language="fr" counts={counts} />);
+
+    expect(screen.getByTestId("access-axes-lead")).toHaveTextContent(
+      "Avec quoi le lecteur arrive, avec quoi il repart."
+    );
+    expect(
+      screen.queryByRole("heading", { name: /Avec quoi le lecteur/ })
+    ).toBeNull();
+  });
+
+  // Each card restates the criterion in its own terms: what the reader hands
+  // the axis, what the axis hands back.
+  // @req REQ-113
+  it.each([
+    ["explorer", "Il arrive avec un nom. Il repart avec une fiche."],
+    [
+      "comprendre",
+      "Il arrive avec une question. Il repart avec une explication.",
+    ],
+    ["jouer", "Il arrive sans rien. Il repart avec un résultat."],
+  ])("spells out what %s takes in and gives back", (id, stake) => {
+    render(<AccessAxes language="fr" counts={counts} />);
+
+    expect(screen.getByTestId(`access-axis-stake-${id}`)).toHaveTextContent(
+      stake
+    );
   });
 
   // @req REQ-114
@@ -108,7 +161,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
       "Remonter"
     );
     expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
-      "Bientôt"
+      "Comparer"
     );
   });
 
@@ -163,23 +216,73 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
   });
 });
 
-// Both modules behind Jouer are `unavailable`, so /fr/jouer holds nothing
-// but "Bientôt" rows. A primary home CTA reading "Comparer" over a figure
-// promising "2 peuples face à face" sends the reader to a dead end. The
-// axis reads its own state off the registry so it starts promising again
-// by itself the day a module ships — nothing here to remember to undo.
+// A card that promises an action the hub behind it cannot deliver sends the
+// reader to a dead end. The axis reads its own state off the registry, so it
+// starts and stops promising by itself — nothing here to remember to undo.
 describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", () => {
   const counts = { peoples: 890, countries: 54, families: 24, migrations: 6 };
 
+  // `comparer` is a static route that renders whatever the corpus holds, so
+  // Jouer has had something real behind it since it was filed there.
   // @req REQ-114
-  it("marks an axis whose every module is unavailable as coming soon", () => {
+  it("promises the action once one module behind the axis is live", () => {
     render(<AccessAxes language="fr" counts={counts} />);
 
-    const jouer = screen.getByTestId("access-axis-jouer");
-    expect(jouer).toHaveAttribute("data-available", "false");
-    expect(
-      screen.getByTestId("access-axis-figure-jouer")
-    ).not.toHaveTextContent("2 peuples face à face");
+    expect(screen.getByTestId("access-axis-jouer")).toHaveAttribute(
+      "data-available",
+      "true"
+    );
+    expect(screen.getByTestId("access-axis-figure-jouer")).toHaveTextContent(
+      "2 peuples face à face"
+    );
+    expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
+      "Comparer"
+    );
+  });
+
+  // The regression that matters: a `flagged` module is not `unavailable`, so
+  // an axis that merely counted non-unavailable entries would advertise a hub
+  // showing nothing. Strip Jouer down to a flagged-off quiz and an
+  // unavailable module and the card has to fall back to pending.
+  // @req REQ-106
+  it("stays pending when its only remaining module is behind a dark flag", () => {
+    const quizFlag = process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+    delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+    modulesForJouer = [
+      {
+        id: "quiz",
+        name: "Le quiz des parcours",
+        accessMode: "jouer",
+        page: "quiz",
+        availability: "flagged",
+        featureFlag: "quiz",
+      },
+      {
+        id: "liens",
+        name: "Les liens invisibles",
+        accessMode: "jouer",
+        page: null,
+        availability: "unavailable",
+      },
+    ];
+
+    try {
+      render(<AccessAxes language="fr" counts={counts} />);
+
+      const jouer = screen.getByTestId("access-axis-jouer");
+      expect(jouer).toHaveAttribute("data-available", "false");
+      expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
+        "Bientôt"
+      );
+      // Still a link: the hub is where the reader sees what is coming.
+      expect(jouer).toHaveAttribute("href", "/fr/jouer");
+    } finally {
+      if (quizFlag === undefined) {
+        delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+      } else {
+        process.env.NEXT_PUBLIC_FEATURE_QUIZ = quizFlag;
+      }
+    }
   });
 
   // Explorer and Comprendre both have live modules, so neither may be
@@ -219,17 +322,5 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
       expect(rule).not.toContain(".access-axis-cta");
       expect(rule).not.toContain(".access-axis-figure");
     }
-  });
-
-  // Still a link: the hub is where the reader sees what is coming. What is
-  // removed is the promise of a live action, not the route.
-  // @req REQ-114
-  it("keeps the pending axis reachable rather than inert", () => {
-    render(<AccessAxes language="fr" counts={counts} />);
-
-    expect(screen.getByTestId("access-axis-jouer")).toHaveAttribute(
-      "href",
-      "/fr/jouer"
-    );
   });
 });

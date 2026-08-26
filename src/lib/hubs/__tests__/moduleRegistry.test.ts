@@ -1,11 +1,23 @@
-import { describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 
 import {
   ACCESS_MODES,
   ACCENT_BY_ACCESS_MODE,
   MODULE_DEFINITIONS,
   getModulesForAccessMode,
+  isModuleEnabled,
+  type HubModuleDefinition,
 } from "@/lib/hubs/moduleRegistry";
+
+const ORIGINAL_QUIZ_FLAG = process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+
+afterEach(() => {
+  if (ORIGINAL_QUIZ_FLAG === undefined) {
+    delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+  } else {
+    process.env.NEXT_PUBLIC_FEATURE_QUIZ = ORIGINAL_QUIZ_FLAG;
+  }
+});
 
 describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   // @req REQ-114
@@ -31,29 +43,54 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     );
   });
 
+  // A reader arrives at Explorer with a name and leaves with a fiche, so
+  // every module here is a nominal entry point into the corpus.
   // @req REQ-114
-  it("gives explorer the modules that answer a reader who knows what they seek", () => {
+  it("gives explorer the modules a reader reaches by name", () => {
     const ids = getModulesForAccessMode("explorer").map((m) => m.id);
-    expect(ids).toEqual(["peuples", "pays", "familles", "recherche", "noms"]);
+    expect(ids).toEqual(["peuples", "pays", "familles", "recherche"]);
   });
 
+  // Ordered from the most concrete question to the method that answers it.
   // @req REQ-114
-  it("gives comprendre the modules that account for where a claim comes from", () => {
+  it("gives comprendre the modules a reader reaches by question", () => {
     const ids = getModulesForAccessMode("comprendre").map((m) => m.id);
-    expect(ids).toEqual(["doctrine", "about", "frise"]);
+    expect(ids).toEqual(["noms", "frise", "doctrine"]);
   });
 
   // @req REQ-114
-  it("gives jouer the modules that make the corpus answer back", () => {
+  it("gives jouer the modules that answer a reader who brought nothing", () => {
     const ids = getModulesForAccessMode("jouer").map((m) => m.id);
-    expect(ids).toEqual(["comparer", "liens"]);
+    expect(ids).toEqual(["comparer", "quiz", "liens"]);
+  });
+
+  // "Noms & appellations" answers *why does this people carry this name* —
+  // a question, not a name, so it belongs to Comprendre.
+  // @req REQ-114
+  it("files noms under the question axis, not the naming axis", () => {
+    const noms = MODULE_DEFINITIONS.find((m) => m.id === "noms");
+    expect(noms?.accessMode).toBe("comprendre");
+  });
+
+  // About is a page about the project, not a way into the corpus; it lives
+  // in the site chrome now.
+  // @req REQ-114
+  it("drops about from the registry entirely", () => {
+    expect(MODULE_DEFINITIONS.map((m) => m.id)).not.toContain("about");
   });
 
   // @req REQ-114
-  it("forces comparer and liens unavailable regardless of routing or data", () => {
-    const comparer = MODULE_DEFINITIONS.find((m) => m.id === "comparer");
+  it("registers the quiz behind its feature flag under jouer", () => {
+    const quiz = MODULE_DEFINITIONS.find((m) => m.id === "quiz");
+    expect(quiz?.accessMode).toBe("jouer");
+    expect(quiz?.availability).toBe("flagged");
+    expect(quiz?.featureFlag).toBe("quiz");
+    expect(quiz?.page).toBe("quiz");
+  });
+
+  // @req REQ-114
+  it("keeps liens unavailable because it has no standalone route", () => {
     const liens = MODULE_DEFINITIONS.find((m) => m.id === "liens");
-    expect(comparer?.availability).toBe("unavailable");
     expect(liens?.availability).toBe("unavailable");
     expect(liens?.page).toBeNull();
   });
@@ -79,7 +116,7 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(staticModules.map((m) => m.id)).toEqual([
       "recherche",
       "doctrine",
-      "about",
+      "comparer",
     ]);
     for (const def of staticModules) {
       expect(def.page).not.toBeNull();
@@ -93,5 +130,54 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
       comprendre: "afh-accent-teal",
       jouer: "afh-accent-perv",
     });
+  });
+});
+
+describe("moduleRegistry — isModuleEnabled (REQ-106)", () => {
+  const flaggedQuiz = (
+    featureFlag?: HubModuleDefinition["featureFlag"]
+  ): HubModuleDefinition => ({
+    id: "quiz",
+    name: "Le quiz des parcours",
+    accessMode: "jouer",
+    page: "quiz",
+    availability: "flagged",
+    featureFlag,
+  });
+
+  // @req REQ-106
+  it("holds a flagged module off while its flag is unset", () => {
+    delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+    expect(isModuleEnabled(flaggedQuiz("quiz"))).toBe(false);
+  });
+
+  // @req REQ-106
+  it("brings a flagged module in once its flag is on", () => {
+    process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
+    expect(isModuleEnabled(flaggedQuiz("quiz"))).toBe(true);
+  });
+
+  // A flagged module naming no flag names no switch that could turn it on,
+  // so the safe reading is that it is off.
+  // @req REQ-106
+  it("holds a flagged module off when it names no flag", () => {
+    process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
+    expect(isModuleEnabled(flaggedQuiz(undefined))).toBe(false);
+  });
+
+  // @req REQ-106
+  it("never enables a module forced unavailable", () => {
+    const liens = MODULE_DEFINITIONS.find((m) => m.id === "liens");
+    expect(isModuleEnabled(liens)).toBe(false);
+  });
+
+  // Data and static modules are decided elsewhere — by the corpus and by
+  // the route respectively — so neither is held back here.
+  // @req REQ-106
+  it("lets data and static modules through without consulting the corpus", () => {
+    const peuples = MODULE_DEFINITIONS.find((m) => m.id === "peuples");
+    const recherche = MODULE_DEFINITIONS.find((m) => m.id === "recherche");
+    expect(isModuleEnabled(peuples)).toBe(true);
+    expect(isModuleEnabled(recherche)).toBe(true);
   });
 });

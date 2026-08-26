@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen, within } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { ATTRIBUTION_STRING } from "@/lib/brand";
@@ -100,6 +100,31 @@ describe("SiteFooter", () => {
       "href",
       "/fr/accessibilite"
     );
+  });
+
+  // @req REQ-088
+  it("offers À propos as a footer destination", () => {
+    render(<SiteFooter language="fr" />);
+
+    expect(screen.getByRole("link", { name: "À propos" })).toHaveAttribute(
+      "href",
+      "/fr/about"
+    );
+  });
+
+  // « À propos » is editorial, not legal — keeping it out of the legal landmark
+  // is what lets that landmark's name stay accurate.
+  // @req REQ-088
+  it("keeps À propos outside the legal navigation landmark", () => {
+    render(<SiteFooter language="fr" />);
+
+    const legalNavigation = screen.getByRole("navigation", {
+      name: "Informations légales",
+    });
+
+    expect(
+      within(legalNavigation).queryByRole("link", { name: "À propos" })
+    ).not.toBeInTheDocument();
   });
 
   // @req REQ-046

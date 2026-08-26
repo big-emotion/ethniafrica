@@ -9,6 +9,7 @@ import {
   ACCENT_BY_ACCESS_MODE,
   ACCESS_MODES,
   getModulesForAccessMode,
+  isModuleEnabled,
   type AccessMode,
 } from "@/lib/hubs/moduleRegistry";
 import type { Language } from "@/types/shared";
@@ -27,8 +28,14 @@ interface AxisDefinition {
   name: string;
   page: PageType;
   cta: string;
+  // The registry's filing criterion, restated per axis: what the reader
+  // hands in, what the axis hands back. It is why a module sits here and
+  // not on the next card, so the reader gets to apply the same rule.
+  stake: string;
   figure: (counts: CorpusCounts) => string;
 }
+
+const LEAD = "Avec quoi le lecteur arrive, avec quoi il repart.";
 
 const plural = (count: number, singular: string, many = `${singular}s`) =>
   `${count} ${count > 1 ? many : singular}`;
@@ -39,6 +46,7 @@ const AXES: AxisDefinition[] = [
     name: "Explorer",
     page: "explorerHub",
     cta: "Parcourir",
+    stake: "Il arrive avec un nom. Il repart avec une fiche.",
     figure: (counts) =>
       `${plural(counts.peoples, "peuple")} · ${plural(counts.countries, "pays", "pays")}`,
   },
@@ -47,6 +55,7 @@ const AXES: AxisDefinition[] = [
     name: "Comprendre",
     page: "comprendreHub",
     cta: "Remonter",
+    stake: "Il arrive avec une question. Il repart avec une explication.",
     figure: (counts) => `${plural(counts.migrations, "repère")} · 1 doctrine`,
   },
   {
@@ -54,6 +63,7 @@ const AXES: AxisDefinition[] = [
     name: "Jouer",
     page: "jouerHub",
     cta: "Comparer",
+    stake: "Il arrive sans rien. Il repart avec un résultat.",
     // Not a count of the corpus but of what the comparison puts in front
     // of the reader — two fiches, side by side.
     figure: () => "2 peuples face à face",
@@ -168,15 +178,16 @@ function AxisGlyph({
 }
 
 /**
- * An axis is only as live as the modules behind it. Reading that off the
- * registry rather than a flag here means the day a module stops being
- * `unavailable` the axis starts advertising its action again on its own —
- * there is nothing to remember to undo.
+ * An axis is only as live as the modules behind it. Asking the registry's
+ * own `isModuleEnabled` — the same predicate the hub behind the card uses —
+ * is what keeps the two from disagreeing: a `flagged` module with its flag
+ * dark is not `unavailable`, so a card merely skipping `unavailable` would
+ * promise an action over a hub showing nothing. The card also starts
+ * promising again by itself the day a module ships or a flag lights, with
+ * nothing here to remember to undo.
  */
 function axisHasLiveModule(mode: AccessMode): boolean {
-  return getModulesForAccessMode(mode).some(
-    (module) => module.availability !== "unavailable"
-  );
+  return getModulesForAccessMode(mode).some(isModuleEnabled);
 }
 
 const PENDING_CTA = "Bientôt";
@@ -198,56 +209,84 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
   const animated = !reducedMotion;
 
   return (
-    <nav
-      aria-label="Les trois axes"
-      data-testid="access-axes"
-      className="access-axes"
-    >
-      {AXES.map((axis, index) => {
-        const available = axisHasLiveModule(axis.id);
+    <>
+      {/* Outside the <nav>, which is itself the grid: a child of it would
+          be laid out as a fourth cell. And a paragraph, not a heading —
+          it orients the reader, it is not a level in the outline. */}
+      <p data-testid="access-axes-lead" className="access-axes-lead">
+        {LEAD}
+      </p>
 
-        return (
-          <Link
-            key={axis.id}
-            href={getLocalizedRoute(language, axis.page)}
-            data-testid={`access-axis-${axis.id}`}
-            data-available={available ? "true" : "false"}
-            className={cn(
-              "access-axis min-h-11",
-              ACCENT_BY_ACCESS_MODE[axis.id],
-              animated && "access-axis-reveal",
-              !available && "access-axis-pending"
-            )}
-            style={animated ? { animationDelay: `${index * 90}ms` } : undefined}
-          >
-            <span
-              data-testid={`access-axis-glyph-${axis.id}`}
-              aria-hidden="true"
-              className="access-axis-glyph"
+      <nav
+        aria-label="Les trois axes"
+        data-testid="access-axes"
+        className="access-axes"
+      >
+        {AXES.map((axis, index) => {
+          const available = axisHasLiveModule(axis.id);
+
+          return (
+            <Link
+              key={axis.id}
+              href={getLocalizedRoute(language, axis.page)}
+              data-testid={`access-axis-${axis.id}`}
+              data-available={available ? "true" : "false"}
+              className={cn(
+                "access-axis min-h-11",
+                ACCENT_BY_ACCESS_MODE[axis.id],
+                animated && "access-axis-reveal",
+                !available && "access-axis-pending"
+              )}
+              style={
+                animated ? { animationDelay: `${index * 90}ms` } : undefined
+              }
             >
-              <AxisGlyph axis={axis.id} animated={animated} />
-            </span>
-            <h2>{axis.name}</h2>
-            <p
-              data-testid={`access-axis-figure-${axis.id}`}
-              className="access-axis-figure"
-            >
-              {available ? axis.figure(counts) : pendingFigure(axis.id)}
-            </p>
-            <span
-              data-testid={`access-axis-cta-${axis.id}`}
-              className="access-axis-cta"
-            >
-              {available ? axis.cta : PENDING_CTA}
-              <span className="access-axis-arrow" aria-hidden="true">
-                →
+              <span
+                data-testid={`access-axis-glyph-${axis.id}`}
+                aria-hidden="true"
+                className="access-axis-glyph"
+              >
+                <AxisGlyph axis={axis.id} animated={animated} />
               </span>
-            </span>
-          </Link>
-        );
-      })}
+              <h2>{axis.name}</h2>
+              <p
+                data-testid={`access-axis-stake-${axis.id}`}
+                className="access-axis-stake"
+              >
+                {axis.stake}
+              </p>
+              <p
+                data-testid={`access-axis-figure-${axis.id}`}
+                className="access-axis-figure"
+              >
+                {available ? axis.figure(counts) : pendingFigure(axis.id)}
+              </p>
+              <span
+                data-testid={`access-axis-cta-${axis.id}`}
+                className="access-axis-cta"
+              >
+                {available ? axis.cta : PENDING_CTA}
+                <span className="access-axis-arrow" aria-hidden="true">
+                  →
+                </span>
+              </span>
+            </Link>
+          );
+        })}
+      </nav>
 
       <style>{`
+        .access-axes-lead {
+          max-width: 1140px;
+          margin: 0 auto 16px;
+          font-family: var(--afh-font-mono);
+          font-size: 12.5px;
+          line-height: 1.45;
+          /* Same class of small content type as the axis figures, held to
+             the same AA bar by src/styles/__tests__/colorTokens.test.ts. */
+          color: var(--afh-fg-muted);
+        }
+
         .access-axes {
           display: grid;
           grid-template-columns: repeat(${ACCESS_MODES.length}, 1fr);
@@ -320,6 +359,20 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
           font-size: 26px;
           margin: 0;
           letter-spacing: -0.015em;
+          position: relative;
+          z-index: 1;
+        }
+
+        .access-axis-stake {
+          /* Pulled up against the title: the two read as one statement,
+             the figure below them as its evidence. */
+          margin: -6px 0 0;
+          font-size: 13.5px;
+          line-height: 1.4;
+          /* Content at small type, so it takes the muted *pair* token that
+             clears AA on both cards — never --afh-text-muted, which clears
+             it on neither. */
+          color: var(--afh-fg-muted);
           position: relative;
           z-index: 1;
         }
@@ -424,7 +477,13 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
           .access-axis {
             display: grid;
             grid-template-columns: auto minmax(0, 1fr) auto;
-            grid-template-areas: "glyph name arrow" "glyph figure arrow";
+            /* A named row per line, or the element is simply not placed.
+               The stake sits between the name and the figure: it is what
+               orients the reader, the count only backs it up. */
+            grid-template-areas:
+              "glyph name arrow"
+              "glyph stake arrow"
+              "glyph figure arrow";
             align-items: center;
             column-gap: 16px;
             row-gap: 2px;
@@ -432,6 +491,11 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
           }
           .access-axis-glyph { grid-area: glyph; width: 42px; height: 42px; }
           .access-axis h2 { grid-area: name; font-size: 21px; }
+          .access-axis-stake {
+            grid-area: stake;
+            margin: 0;
+            font-size: 12.5px;
+          }
           .access-axis-figure {
             grid-area: figure;
             margin: 0;
@@ -455,7 +519,7 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
           .access-axis:hover { transform: none; }
         }
       `}</style>
-    </nav>
+    </>
   );
 }
 
