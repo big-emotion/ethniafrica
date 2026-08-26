@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { AccessModeHub } from "@/components/hubs/AccessModeHub";
+import { ComprendreQuestionSpine } from "@/components/hubs/ComprendreQuestionSpine";
 import { getHubModules } from "@/lib/hubs/moduleAvailability";
 import { getTranslation } from "@/lib/translations";
 import { OG_TITLE } from "@/lib/brand";
@@ -22,7 +23,9 @@ export default async function ComprendreHubPage() {
 
   return (
     <PageLayout language="fr">
-      <AccessModeHub language="fr" mode="comprendre" modules={modules} />
+      <AccessModeHub language="fr" mode="comprendre" modules={modules}>
+        <ComprendreQuestionSpine language="fr" />
+      </AccessModeHub>
     </PageLayout>
   );
 }

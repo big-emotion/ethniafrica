@@ -3,6 +3,7 @@ import { createServerClient } from "@/lib/supabase/server";
 import { logger } from "@/lib/api/logger";
 import {
   getModulesForAccessMode,
+  isModuleEnabled,
   type AccessMode,
   type HubModuleDefinition,
   type ModuleDataSource,
@@ -64,19 +65,30 @@ export interface HubModule extends HubModuleDefinition {
 
 // @req REQ-106 @req REQ-114
 export async function isModuleAvailable(
-  def: Pick<HubModuleDefinition, "availability" | "dataSource">
+  def: Pick<HubModuleDefinition, "availability" | "dataSource" | "featureFlag">
 ): Promise<boolean> {
-  if (def.availability === "unavailable") return false;
-  // A static module renders from code, so a row count can only ever take
-  // a working route away from the reader.
-  if (def.availability === "static") return true;
+  // The same lock the home card uses, so the axis and the hub behind it
+  // can never disagree about what exists. It settles "unavailable" and
+  // "flagged" outright, leaving only "data" to cost a round trip.
+  if (!isModuleEnabled(def)) return false;
+  // Only a data module's liveness depends on the corpus. Static and
+  // flagged ones were settled outright by the lock above, and asking a row
+  // count about them could only ever take a working route away.
+  if (def.availability !== "data") return true;
   if (!def.dataSource) return false;
   return probeDataSource(def.dataSource);
 }
 
-// @req REQ-114
+// @req REQ-114 @req REQ-106
 export async function getHubModules(mode: AccessMode): Promise<HubModule[]> {
-  const definitions = getModulesForAccessMode(mode);
+  // A module behind a dark flag is dropped rather than listed as "Bientôt":
+  // its route answers notFound(), so announcing it would promise a 404, and
+  // "coming soon" is a claim about unbuilt work, which this is not. An
+  // "unavailable" module keeps its Bientôt row — that one really is coming.
+  const definitions = getModulesForAccessMode(mode).filter(
+    (def) => def.availability !== "flagged" || isModuleEnabled(def)
+  );
+
   return Promise.all(
     definitions.map(async (def) => ({
       ...def,

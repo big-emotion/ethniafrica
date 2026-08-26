@@ -1,11 +1,16 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  buildContinentOverlay,
   buildCountryOutlineOverlay,
   buildFamilyFootprintOverlay,
   buildPeopleFieldOverlay,
 } from "../overlays";
-import { buildAtlasTargets, ringsAngularSpanDeg } from "../targets";
+import {
+  buildAtlasTargets,
+  continentTargetFacts,
+  ringsAngularSpanDeg,
+} from "../targets";
 
 describe("ringsAngularSpanDeg", () => {
   // @req REQ-117
@@ -111,5 +116,47 @@ describe("buildAtlasTargets (REQ-117 AC1)", () => {
     expect(buildAtlasTargets(overlay)[0].center).toEqual(
       overlay.areas[0].center
     );
+  });
+});
+
+describe("buildAtlasTargets for the continent scene (REQ-117 AC1)", () => {
+  // @req REQ-117
+  it("gives one target per field area, never one per country of the frame", () => {
+    const overlay = buildContinentOverlay({ NGA: 40, KEN: 12, ZAF: 8 });
+    if (overlay.kind !== "continent-field") throw new Error("expected a field");
+
+    const targets = buildAtlasTargets(overlay);
+
+    expect(targets).toHaveLength(overlay.areas.length);
+    expect(overlay.frame.length).toBeGreaterThan(targets.length);
+    expect(targets.map((target) => target.countryId)).toEqual([
+      "NGA",
+      "KEN",
+      "ZAF",
+    ]);
+  });
+
+  // @req REQ-117
+  it("carries the documented-peoples count on the target so the panel never has to re-query it", () => {
+    const overlay = buildContinentOverlay({ NGA: 40 });
+
+    expect(buildAtlasTargets(overlay)[0].documentedPeopleCount).toBe(40);
+  });
+
+  // @req REQ-117
+  it("keeps the count out of the title, which doubles as the marker's accessible name", () => {
+    const [target] = buildAtlasTargets(buildContinentOverlay({ NGA: 40 }));
+    const facts = continentTargetFacts(target);
+
+    expect(facts.title).toBe("Nigeria");
+    expect(facts.title).not.toMatch(/\d/);
+    expect(facts.description).toBe("40 peuples documentés");
+  });
+
+  // @req REQ-117
+  it("counts peoples, never a population, and agrees with itself in the singular", () => {
+    const [target] = buildAtlasTargets(buildContinentOverlay({ NGA: 1 }));
+
+    expect(continentTargetFacts(target).description).toBe("1 peuple documenté");
   });
 });
