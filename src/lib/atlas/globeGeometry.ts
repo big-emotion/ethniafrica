@@ -4,6 +4,7 @@
  * sight, so the geometry math is unit-testable without a real context.
  */
 import { lonLatToSphere, type SpherePoint } from "@/lib/atlas/projection";
+import { lonLatToFlat } from "@/lib/atlas/sphereMesh";
 import {
   ringCentroid,
   type PeopleFieldArea,
@@ -20,6 +21,8 @@ function sphereDistance(a: SpherePoint, b: SpherePoint): number {
 export interface LineLoopGeometry {
   /** 3 floats per vertex (xyz on the unit sphere). */
   positions: Float32Array;
+  /** The same vertices on the Mercator plane, for the morph. Same length as positions. */
+  flatPositions: Float32Array;
   /** 1 float per vertex — cumulative distance around the ring, normalised 0..1. Feeds the country trace-in and the family dash. */
   arcFractions: Float32Array;
   vertexCount: number;
@@ -30,6 +33,7 @@ export interface LineLoopGeometry {
  * arc-length fraction so the stroke can reveal itself (country) or dash
  * itself (family) purely in the fragment shader.
  */
+// @req REQ-116
 export function buildRingLineLoop(ring: Ring): LineLoopGeometry {
   const spherePoints = ring.map((p) => lonLatToSphere(p.lon, p.lat));
   const cumulative: number[] = [0];
@@ -45,20 +49,38 @@ export function buildRingLineLoop(ring: Ring): LineLoopGeometry {
   const total = cumulative[cumulative.length - 1] + closingDistance || 1;
 
   const positions = new Float32Array(spherePoints.length * 3);
+  const flatPositions = new Float32Array(spherePoints.length * 3);
   const arcFractions = new Float32Array(spherePoints.length);
   spherePoints.forEach((point, i) => {
     positions[i * 3] = point.x;
     positions[i * 3 + 1] = point.y;
     positions[i * 3 + 2] = point.z;
+
+    // The same lon/lat, where the ground puts it on the flat map. The shader
+    // interpolates between the two per vertex, so the boundary flattens with
+    // the terrain instead of staying wrapped around a sphere that is no longer
+    // there.
+    const flat = lonLatToFlat(ring[i].lon, ring[i].lat);
+    flatPositions[i * 3] = flat.x;
+    flatPositions[i * 3 + 1] = flat.y;
+    flatPositions[i * 3 + 2] = flat.z;
+
     arcFractions[i] = cumulative[i] / total;
   });
 
-  return { positions, arcFractions, vertexCount: spherePoints.length };
+  return {
+    positions,
+    flatPositions,
+    arcFractions,
+    vertexCount: spherePoints.length,
+  };
 }
 
 export interface FanGeometry {
   /** 3 floats per vertex: centroid, then every ring point, then the first ring point again (closes the fan). */
   positions: Float32Array;
+  /** The same vertices on the Mercator plane, for the morph. Same length as positions. */
+  flatPositions: Float32Array;
   vertexCount: number;
 }
 
@@ -67,39 +89,56 @@ export interface FanGeometry {
  * approximation, not a survey-grade tessellation, the same tradeoff the
  * committed basemap silhouette already makes (projection.ts).
  */
+// @req REQ-116
 export function buildRingFan(ring: Ring): FanGeometry {
   const center = ringCentroid(ring);
   const fanPoints = [center, ...ring, ring[0]];
   const spherePoints = fanPoints.map((p) => lonLatToSphere(p.lon, p.lat));
 
   const positions = new Float32Array(spherePoints.length * 3);
+  const flatPositions = new Float32Array(spherePoints.length * 3);
   spherePoints.forEach((point, i) => {
     positions[i * 3] = point.x;
     positions[i * 3 + 1] = point.y;
     positions[i * 3 + 2] = point.z;
+
+    const flat = lonLatToFlat(fanPoints[i].lon, fanPoints[i].lat);
+    flatPositions[i * 3] = flat.x;
+    flatPositions[i * 3 + 1] = flat.y;
+    flatPositions[i * 3 + 2] = flat.z;
   });
 
-  return { positions, vertexCount: spherePoints.length };
+  return { positions, flatPositions, vertexCount: spherePoints.length };
 }
 
 export interface PointFieldGeometry {
   /** 3 floats per point (xyz on the unit sphere). */
   positions: Float32Array;
+  /** The same points on the Mercator plane. A field flattens with the ground like anything else drawn on it. */
+  flatPositions: Float32Array;
   /** 1 float per point — populationShare, 0..1. Never a boundary. */
   weights: Float32Array;
   vertexCount: number;
 }
 
 /** GL_POINTS for the people field — structurally incapable of drawing a line. */
+// @req REQ-116
 export function buildPointField(areas: PeopleFieldArea[]): PointFieldGeometry {
   const positions = new Float32Array(areas.length * 3);
+  const flatPositions = new Float32Array(areas.length * 3);
   const weights = new Float32Array(areas.length);
   areas.forEach((area, i) => {
     const point = lonLatToSphere(area.center.lon, area.center.lat);
     positions[i * 3] = point.x;
     positions[i * 3 + 1] = point.y;
     positions[i * 3 + 2] = point.z;
+
+    const flat = lonLatToFlat(area.center.lon, area.center.lat);
+    flatPositions[i * 3] = flat.x;
+    flatPositions[i * 3 + 1] = flat.y;
+    flatPositions[i * 3 + 2] = flat.z;
+
     weights[i] = area.populationShare;
   });
-  return { positions, weights, vertexCount: areas.length };
+  return { positions, flatPositions, weights, vertexCount: areas.length };
 }

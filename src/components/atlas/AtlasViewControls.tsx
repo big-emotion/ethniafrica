@@ -15,6 +15,10 @@ export interface AtlasViewControlsProps {
   /** True when no single country holds the view. */
   wholeIsShown: boolean;
   onShowWhole: () => void;
+  /** True when the surface is the flat Mercator map rather than the sphere. */
+  isFlat: boolean;
+  onToggleFlat: () => void;
+  onRecentre: () => void;
 }
 
 const ROW_STYLE: CSSProperties = {
@@ -52,6 +56,9 @@ const PRESSED_STYLE: CSSProperties = {
 export function AtlasViewControls({
   wholeIsShown,
   onShowWhole,
+  isFlat,
+  onToggleFlat,
+  onRecentre,
 }: AtlasViewControlsProps) {
   return (
     <div style={ROW_STYLE} data-testid="atlas-view-controls">
@@ -62,6 +69,23 @@ export function AtlasViewControls({
         style={wholeIsShown ? PRESSED_STYLE : VIEW_BUTTON_STYLE}
       >
         Toute l&apos;empreinte
+      </button>
+
+      {/* The label states what pressing it will do, which is the opposite of
+          the state it reports — so the button carries aria-pressed as well,
+          and a screen reader is not left inferring the current surface from a
+          verb. */}
+      <button
+        type="button"
+        aria-pressed={isFlat}
+        onClick={onToggleFlat}
+        style={isFlat ? PRESSED_STYLE : VIEW_BUTTON_STYLE}
+      >
+        {isFlat ? "Revenir au globe" : "Ce que la carte plate en fait"}
+      </button>
+
+      <button type="button" onClick={onRecentre} style={VIEW_BUTTON_STYLE}>
+        Recentrer
       </button>
     </div>
   );

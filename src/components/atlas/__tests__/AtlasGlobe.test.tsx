@@ -436,6 +436,56 @@ describe("AtlasGlobe", () => {
       );
     });
 
+    // @req REQ-112
+    it("flattens to Mercator and back, changing its own label", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyFootprintOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+        />
+      );
+
+      const flatten = () =>
+        screen.getByRole("button", {
+          name: /carte plate en fait|Revenir au globe/i,
+        });
+
+      expect(flatten()).toHaveAttribute("aria-pressed", "false");
+      fireEvent.click(flatten());
+      expect(flatten()).toHaveTextContent("Revenir au globe");
+      expect(flatten()).toHaveAttribute("aria-pressed", "true");
+
+      fireEvent.click(flatten());
+      expect(flatten()).toHaveTextContent("Ce que la carte plate en fait");
+      expect(flatten()).toHaveAttribute("aria-pressed", "false");
+    });
+
+    // @req REQ-112
+    it("returns to the sphere when recentring, not just to the middle of the plane", () => {
+      // A "recentre" that left the reader on a flat map would not have
+      // returned them anywhere.
+      render(
+        <AtlasGlobe
+          overlay={familyFootprintOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+        />
+      );
+
+      fireEvent.click(
+        screen.getByRole("button", { name: /carte plate en fait/i })
+      );
+      fireEvent.click(screen.getByRole("button", { name: /Recentrer/i }));
+
+      expect(
+        screen.getByRole("button", { name: /carte plate en fait/i })
+      ).toHaveAttribute("aria-pressed", "false");
+      expect(
+        screen.getByRole("button", { name: /toute l'empreinte/i })
+      ).toHaveAttribute("aria-pressed", "true");
+    });
+
     // @req REQ-117
     it("un-presses « toute l'empreinte » as soon as one country is chosen", () => {
       render(

@@ -23,7 +23,20 @@ export interface CameraPose {
   zoom: number;
   offsetX: number;
   offsetY: number;
+  /**
+   * 1 is the sphere, 0 the flat Mercator map — sphereLayer's own convention.
+   * It rides in the pose rather than beside it so the flattening travels on
+   * the same traversal as the flight; two clocks would drift apart, and the
+   * boundary would arrive on the plane before the ground did.
+   */
+  morph: number;
 }
+
+/** The two ends of the surface morph, named so no caller has to remember which is which. */
+// @req REQ-112
+export const SPHERE_MORPH = 1;
+// @req REQ-112
+export const FLAT_MORPH = 0;
 
 // @req REQ-117
 export const FLY_TO_DURATION_MS = 720;
@@ -45,6 +58,7 @@ export const IDLE_POSE: CameraPose = {
   zoom: MIN_ZOOM,
   offsetX: 0,
   offsetY: 0,
+  morph: SPHERE_MORPH,
 };
 
 /**
@@ -69,7 +83,8 @@ export function zoomForAngularSpan(angularSpanDeg: number): number {
 // @req REQ-117
 export function poseForTarget(
   target: AtlasTarget,
-  bias: CameraBias
+  bias: CameraBias,
+  morph: number = SPHERE_MORPH
 ): CameraPose {
   return {
     yaw: -target.center.lon * DEG2RAD,
@@ -77,6 +92,9 @@ export function poseForTarget(
     zoom: zoomForAngularSpan(target.angularSpanDeg),
     offsetX: bias.offsetX,
     offsetY: bias.offsetY,
+    // Choosing a country does not change which surface the reader is on: it
+    // carries whatever they were already looking at.
+    morph,
   };
 }
 
@@ -123,5 +141,11 @@ export function interpolatePose(
     zoom: lerp(from.zoom, to.zoom, t),
     offsetX: lerp(from.offsetX, to.offsetX, t),
     offsetY: lerp(from.offsetY, to.offsetY, t),
+    // Clamped: the surface is only defined between the two states, and an
+    // overshooting easing would ask the shader to extrapolate past the plane.
+    morph: Math.min(
+      SPHERE_MORPH,
+      Math.max(FLAT_MORPH, lerp(from.morph, to.morph, t))
+    ),
   };
 }

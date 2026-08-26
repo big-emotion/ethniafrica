@@ -21,6 +21,33 @@ const DEG2RAD = Math.PI / 180;
 export const mercatorY = (lat: number): number =>
   Math.log(Math.tan(Math.PI / 4 + (lat * DEG2RAD) / 2));
 
+/**
+ * Where a lon/lat lands on the flat map.
+ *
+ * Extracted so the ground and everything drawn on it share one definition. An
+ * overlay that computed its own flat position would drift off the terrain it
+ * describes the moment either side changed — and a boundary floating beside
+ * the country it claims to outline is worse than no flat view at all.
+ *
+ * Latitude is clamped because Mercator runs to infinity at the poles; the same
+ * clamp the mesh applies, for the same reason.
+ */
+// @req REQ-112
+export function lonLatToFlat(
+  lon: number,
+  lat: number
+): { x: number; y: number; z: number } {
+  const clampedLat = Math.min(
+    MERCATOR_LATITUDE_LIMIT,
+    Math.max(-MERCATOR_LATITUDE_LIMIT, lat)
+  );
+  return {
+    x: GLOBE_RADIUS * lon * DEG2RAD,
+    y: GLOBE_RADIUS * mercatorY(clampedLat),
+    z: 0,
+  };
+}
+
 export interface FlatHalfExtent {
   halfWidth: number;
   halfHeight: number;
@@ -88,9 +115,10 @@ export function buildSphereMesh(): SphereMesh {
       const u = i / segX;
       const lon = -180 + u * 360;
 
-      flatPositions[vertex * 3] = GLOBE_RADIUS * lon * DEG2RAD;
-      flatPositions[vertex * 3 + 1] = GLOBE_RADIUS * mercatorY(flatLat);
-      flatPositions[vertex * 3 + 2] = 0;
+      const flat = lonLatToFlat(lon, flatLat);
+      flatPositions[vertex * 3] = flat.x;
+      flatPositions[vertex * 3 + 1] = flat.y;
+      flatPositions[vertex * 3 + 2] = flat.z;
 
       const phi = lat * DEG2RAD;
       const lambda = lon * DEG2RAD;

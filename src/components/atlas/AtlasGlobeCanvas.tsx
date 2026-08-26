@@ -19,7 +19,12 @@ import {
 import type { AtlasOverlay } from "@/lib/atlas/overlays";
 import type { CountryId } from "@/types/afrik";
 import { buildRotationMatrix } from "@/lib/atlas/projection";
-import { createSphereLayer, type SphereLayer } from "@/lib/atlas/sphereLayer";
+import {
+  createSphereLayer,
+  DEFAULT_FIT_MARGIN,
+  fitScale,
+  type SphereLayer,
+} from "@/lib/atlas/sphereLayer";
 import { resolveGlobePalette } from "@/lib/atlas/globePalette";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
@@ -33,22 +38,32 @@ const PEOPLE_BASE_POINT_SIZE_CSS_PX = 46;
 // keeps the offset in stage units, which is what panelBias.ts computes.
 const BOUNDARY_VERTEX_SHADER = `
   attribute vec3 aSpherePos;
+  attribute vec3 aFlat;
   attribute float aArcFraction;
   uniform mat3 uRotation;
   uniform float uAspect;
   uniform float uZoom;
   uniform vec2 uOffset;
+  uniform float uMorph;
+  uniform float uScale;
   varying float vArcFraction;
   varying float vVisible;
 
   void main() {
     vec3 rotated = uRotation * aSpherePos;
-    vec2 mixed = rotated.xy;
+    // The same mix, and then the same fit, sphereLayer applies to the ground.
+    // Without the mix the terrain would flatten and the boundary would stay
+    // wrapped around a sphere that is no longer there; without the fit it
+    // would land on the right shape at the wrong size.
+    vec3 position = mix(aFlat, rotated, uMorph);
+    vec2 mixed = position.xy * uScale;
     mixed.x = mixed.x / uAspect;
     mixed = mixed * uZoom + uOffset;
     gl_Position = vec4(mixed, 0.0, 1.0);
     vArcFraction = aArcFraction;
-    vVisible = step(0.0, rotated.z);
+    // On the plane every point faces the reader; the hemisphere test only
+    // means anything while there is a far side to be on.
+    vVisible = max(step(0.0, rotated.z), 1.0 - uMorph);
   }
 `;
 
@@ -81,22 +96,26 @@ const BOUNDARY_FRAGMENT_SHADER = `
 // a line — it structurally cannot draw a closed boundary (atlas-charter §1).
 const FIELD_VERTEX_SHADER = `
   attribute vec3 aSpherePos;
+  attribute vec3 aFlat;
   attribute float aWeight;
   uniform mat3 uRotation;
   uniform float uAspect;
   uniform float uZoom;
   uniform vec2 uOffset;
   uniform float uBasePointSize;
+  uniform float uMorph;
+  uniform float uScale;
   varying float vVisible;
 
   void main() {
     vec3 rotated = uRotation * aSpherePos;
-    vec2 mixed = rotated.xy;
+    vec3 position = mix(aFlat, rotated, uMorph);
+    vec2 mixed = position.xy * uScale;
     mixed.x = mixed.x / uAspect;
     mixed = mixed * uZoom + uOffset;
     gl_Position = vec4(mixed, 0.0, 1.0);
     gl_PointSize = uBasePointSize * sqrt(max(aWeight, 0.05)) * uZoom;
-    vVisible = step(0.0, rotated.z);
+    vVisible = max(step(0.0, rotated.z), 1.0 - uMorph);
   }
 `;
 
@@ -264,7 +283,7 @@ export function AtlasGlobeCanvas({
       gl.clear(gl.COLOR_BUFFER_BIT);
       sphere?.draw({
         rotation: buildRotationMatrix(camera.yaw, camera.pitch),
-        morph: 1,
+        morph: camera.morph,
         aspect,
         zoom: camera.zoom,
         offsetX: camera.offsetX,
@@ -291,6 +310,13 @@ export function AtlasGlobeCanvas({
       gl.enableVertexAttribArray(aSpherePos);
       gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
 
+      const flatBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, flatBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, field.flatPositions, gl.STATIC_DRAW);
+      const aFlat = gl.getAttribLocation(program, "aFlat");
+      gl.enableVertexAttribArray(aFlat);
+      gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
+
       const weightBuffer = gl.createBuffer();
       gl.bindBuffer(gl.ARRAY_BUFFER, weightBuffer);
       gl.bufferData(gl.ARRAY_BUFFER, field.weights, gl.STATIC_DRAW);
@@ -304,6 +330,8 @@ export function AtlasGlobeCanvas({
       const uOffset = gl.getUniformLocation(program, "uOffset");
       const uBasePointSize = gl.getUniformLocation(program, "uBasePointSize");
       const uColorRgb = gl.getUniformLocation(program, "uColorRgb");
+      const uMorph = gl.getUniformLocation(program, "uMorph");
+      const uScale = gl.getUniformLocation(program, "uScale");
 
       draw = () => {
         const camera = poseRef.current;
@@ -316,9 +344,20 @@ export function AtlasGlobeCanvas({
         gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
         gl.enableVertexAttribArray(aSpherePos);
         gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
+        gl.bindBuffer(gl.ARRAY_BUFFER, flatBuffer);
+        gl.enableVertexAttribArray(aFlat);
+        gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
         gl.bindBuffer(gl.ARRAY_BUFFER, weightBuffer);
         gl.enableVertexAttribArray(aWeight);
         gl.vertexAttribPointer(aWeight, 1, gl.FLOAT, false, 0, 0);
+
+        gl.uniform1f(uMorph, camera.morph);
+        // The margin the sphere layer is mounted at, so both land on the same
+        // ground — see the createSphereLayer call above.
+        gl.uniform1f(
+          uScale,
+          fitScale(camera.morph, aspect, DEFAULT_FIT_MARGIN)
+        );
 
         gl.uniformMatrix3fv(
           uRotation,
@@ -345,6 +384,7 @@ export function AtlasGlobeCanvas({
       gl.useProgram(program);
 
       const aSpherePos = gl.getAttribLocation(program, "aSpherePos");
+      const aFlat = gl.getAttribLocation(program, "aFlat");
       const aArcFraction = gl.getAttribLocation(program, "aArcFraction");
       const uRotation = gl.getUniformLocation(program, "uRotation");
       const uAspect = gl.getUniformLocation(program, "uAspect");
@@ -354,6 +394,8 @@ export function AtlasGlobeCanvas({
       const uIsStroke = gl.getUniformLocation(program, "uIsStroke");
       const uProgress = gl.getUniformLocation(program, "uProgress");
       const uDashRepeats = gl.getUniformLocation(program, "uDashRepeats");
+      const uMorph = gl.getUniformLocation(program, "uMorph");
+      const uScale = gl.getUniformLocation(program, "uScale");
 
       // One entry per ring, each carrying the paint its own country earned.
       // A single fillOpacity for the whole overlay — which is what this used
@@ -383,7 +425,9 @@ export function AtlasGlobeCanvas({
       const countryFillOpacity = isCountryOutline ? overlay.fillOpacity : 0;
 
       const fanBuffer = gl.createBuffer();
+      const fanFlatBuffer = gl.createBuffer();
       const loopPositionBuffer = gl.createBuffer();
+      const loopFlatBuffer = gl.createBuffer();
       const loopArcBuffer = gl.createBuffer();
 
       draw = () => {
@@ -402,6 +446,13 @@ export function AtlasGlobeCanvas({
         gl.uniform1f(uAspect, aspect);
         gl.uniform1f(uZoom, camera.zoom);
         gl.uniform2f(uOffset, camera.offsetX, camera.offsetY);
+        gl.uniform1f(uMorph, camera.morph);
+        // The margin the sphere layer is mounted at, so the boundary and the
+        // ground land on the same surface at the same size.
+        gl.uniform1f(
+          uScale,
+          fitScale(camera.morph, aspect, DEFAULT_FIT_MARGIN)
+        );
 
         const focusedCountryId = focusRef.current;
         // Eased here rather than in the frame loop so both the stroke reveal
@@ -424,6 +475,10 @@ export function AtlasGlobeCanvas({
           gl.bufferData(gl.ARRAY_BUFFER, fan.positions, gl.STATIC_DRAW);
           gl.enableVertexAttribArray(aSpherePos);
           gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
+          gl.bindBuffer(gl.ARRAY_BUFFER, fanFlatBuffer);
+          gl.bufferData(gl.ARRAY_BUFFER, fan.flatPositions, gl.STATIC_DRAW);
+          gl.enableVertexAttribArray(aFlat);
+          gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
           gl.disableVertexAttribArray(aArcFraction);
           gl.vertexAttrib1f(aArcFraction, 0);
           gl.uniform1f(uIsStroke, 0);
@@ -436,6 +491,11 @@ export function AtlasGlobeCanvas({
           gl.bufferData(gl.ARRAY_BUFFER, loop.positions, gl.STATIC_DRAW);
           gl.enableVertexAttribArray(aSpherePos);
           gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
+
+          gl.bindBuffer(gl.ARRAY_BUFFER, loopFlatBuffer);
+          gl.bufferData(gl.ARRAY_BUFFER, loop.flatPositions, gl.STATIC_DRAW);
+          gl.enableVertexAttribArray(aFlat);
+          gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
 
           gl.bindBuffer(gl.ARRAY_BUFFER, loopArcBuffer);
           gl.bufferData(gl.ARRAY_BUFFER, loop.arcFractions, gl.STATIC_DRAW);

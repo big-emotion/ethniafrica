@@ -104,7 +104,14 @@ const NIGHT_LIGHTING: SphereLighting = { ambient: 0.44, rim: 0.3 };
  * describes. Only a caller with no overlay to align to (the home hero)
  * pulls the body in from the edge.
  */
-const DEFAULT_FIT_MARGIN = 1;
+/**
+ * Exported because the overlay programs must fit the surface exactly as the
+ * ground does. Two margins would put the boundary on the right shape at the
+ * wrong size — the failure the terrain and the outline are drawn together to
+ * avoid.
+ */
+// @req REQ-112
+export const DEFAULT_FIT_MARGIN = 1;
 
 export interface SphereDrawState {
   rotation: Mat3;

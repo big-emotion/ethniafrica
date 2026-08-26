@@ -15,7 +15,13 @@ import { AtlasFactsPanel } from "@/components/atlas/AtlasFactsPanel";
 import { AtlasTargetPicker } from "@/components/atlas/AtlasTargetPicker";
 import { AtlasViewControls } from "@/components/atlas/AtlasViewControls";
 import { AfricaBasemap } from "@/components/system/AfricaBasemap";
-import { poseForTarget, type CameraPose } from "@/lib/atlas/camera";
+import {
+  FLAT_MORPH,
+  IDLE_POSE,
+  poseForTarget,
+  SPHERE_MORPH,
+  type CameraPose,
+} from "@/lib/atlas/camera";
 import {
   basemapTransform,
   placeTargetOnBasemap,
@@ -443,6 +449,7 @@ export function AtlasGlobe({
   const [chosenCountryId, setChosenCountryId] = useState<CountryId | null>(
     null
   );
+  const [isFlat, setIsFlat] = useState(false);
   const reducedMotion = usePrefersReducedMotion();
   const anchor = usePanelAnchor();
 
@@ -470,9 +477,15 @@ export function AtlasGlobe({
   const chosen =
     targets.find((target) => target.countryId === chosenCountryId) ?? null;
 
+  const morph = isFlat ? FLAT_MORPH : SPHERE_MORPH;
+  // Flattening is a destination like any other, so it travels on the camera's
+  // own traversal instead of a second animation running beside it.
   const destination = useMemo(
-    () => (chosen ? poseForTarget(chosen, biasForPanel(anchor)) : null),
-    [chosen, anchor]
+    () =>
+      chosen
+        ? poseForTarget(chosen, biasForPanel(anchor), morph)
+        : { ...IDLE_POSE, morph },
+    [chosen, anchor, morph]
   );
   const pose = useGlobeCamera(destination, reducedMotion);
 
@@ -551,6 +564,15 @@ export function AtlasGlobe({
         <AtlasViewControls
           wholeIsShown={chosenCountryId === null}
           onShowWhole={() => setChosenCountryId(null)}
+          isFlat={isFlat}
+          onToggleFlat={() => setIsFlat(!isFlat)}
+          onRecentre={() => {
+            // Recentre restores the view it started from, which means the
+            // sphere as well as the framing: a recentre that left the reader
+            // on a flat map would not have returned them anywhere.
+            setIsFlat(false);
+            setChosenCountryId(null);
+          }}
         />
       )}
 

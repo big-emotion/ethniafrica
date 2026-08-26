@@ -546,6 +546,43 @@ describe("AtlasGlobeCanvas", () => {
   });
 
   // @req REQ-116
+  it("shows the family trace complete on the first frame under reduced motion", () => {
+    // Not an accommodation bolted on afterwards: a reader who asked for less
+    // motion must see the finished map, not a map that never finishes drawing.
+    matchMediaMatches = true;
+    render(<AtlasGlobeCanvas overlay={familyOverlay} pose={IDLE_POSE} />);
+
+    expect(window.requestAnimationFrame).not.toHaveBeenCalled();
+    expect(strokeProgress().every((progress) => progress === 1)).toBe(true);
+  });
+
+  // @req REQ-116
+  it("does not animate the replay under reduced motion either", () => {
+    // The replay is the one path that restarts the reveal by hand, so it can
+    // reintroduce motion after the initial render honoured the preference.
+    matchMediaMatches = true;
+    const { rerender } = render(
+      <AtlasGlobeCanvas
+        overlay={familyOverlay}
+        pose={IDLE_POSE}
+        focusedCountryId="NGA"
+      />
+    );
+
+    fakeGl.uniform1f.mockClear();
+    rerender(
+      <AtlasGlobeCanvas
+        overlay={familyOverlay}
+        pose={IDLE_POSE}
+        focusedCountryId="BEN"
+      />
+    );
+
+    expect(window.requestAnimationFrame).not.toHaveBeenCalled();
+    expect(strokeProgress()).not.toContain(0);
+  });
+
+  // @req REQ-116
   it("cancels the pending animation frame on unmount", () => {
     const { unmount } = render(
       <AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />
