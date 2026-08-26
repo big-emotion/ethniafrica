@@ -35,41 +35,37 @@ reaches real users.
 
 ## Project identity
 
-|                       | Backs **recette**                                                       | Backs **production**       |
-| --------------------- | ----------------------------------------------------------------------- | -------------------------- |
-| Supabase project ref  | `shmrjtnfbqzceovroqjj`                                                  | _not recorded — see below_ |
-| Dashboard name        | `ethniafrica` — its environment is labelled _production_ by Supabase    | _unknown_                  |
-| Region                | `eu-west-1`                                                             | _unknown_                  |
-| Created               | 2026-07-24                                                              | _unknown_                  |
-| Named in this repo as | `AFRIK_PRODUCTION_SUPABASE_URL` (`scripts/lib/afrikMigrationTarget.ts`) | —                          |
-| Reached by the flag   | `--target=production`                                                   | —                          |
+|                       | Backs **recette**                                                    | Backs **production**                                     |
+| --------------------- | -------------------------------------------------------------------- | -------------------------------------------------------- |
+| Supabase project ref  | `shmrjtnfbqzceovroqjj`                                               | _not recorded — see below_                               |
+| Dashboard name        | `ethniafrica` — its environment is labelled _production_ by Supabase | _unknown_                                                |
+| Region                | `eu-west-1`                                                          | _unknown_                                                |
+| Created               | 2026-07-24                                                           | _unknown_                                                |
+| Named in this repo as | `AFRIK_RECETTE_SUPABASE_URL` (`scripts/lib/afrikSyncTarget.ts`)      | the `AFRIK_PRODUCTION_SUPABASE_URL` environment variable |
+| Reached by the flag   | `--target=recette`                                                   | `--target=production`                                    |
 
-Two consequences of the last two rows, both traps:
+The corpus sync now names the **application** environment in both rows, so the flag and the
+project agree. Only the recette ref is checked in; production is configuration with no default,
+because a default is how the corpus reached the wrong database in the first place. Setting
+`AFRIK_PRODUCTION_SUPABASE_URL` to the recette ref is refused outright, and so is declaring
+`--target=production` while `NEXT_PUBLIC_SUPABASE_URL` points at recette.
 
-- `scripts/lib/afrikMigrationTarget.ts` hard-codes `shmrjtnfbqzceovroqjj` as
-  `AFRIK_PRODUCTION_SUPABASE_URL`. So `npx tsx scripts/migrateAfrikToDatabase.ts
---target=production` writes to the **recette-backing** project. The flag name does not
-  describe the environment.
-- `.github/workflows/production-data-sync.yml` sets the same ref as
-  `NEXT_PUBLIC_SUPABASE_URL` and runs on a successful Vercel _Production_ deployment of
-  `main`. Whatever that workflow syncs lands in the recette-backing project too.
-
-Renaming that constant is an open follow-up. Until it is renamed, confirm the target with the
-environment owner before any run with `--apply`.
-
-### What this resolves, and what it leaves open
+### What this resolves
 
 The identity is no longer in doubt: `shmrjtnfbqzceovroqjj` backs **recette**. Migration `039`'s
 own header comment agrees — it records the corpora "loaded 0 rows against **recette**" against
 that project.
 
-What remains open is `.github/workflows/production-data-sync.yml`. It fires on a successful
-Vercel **Production** deployment of `main`, syncs the AFRIK corpus into
-`shmrjtnfbqzceovroqjj` — the recette database — and then POSTs a cache revalidation to
-`https://ethniafrica.com`, a site it did not write to. Every production deploy has therefore
-been loading the corpus into the wrong database. Neither the workflow nor the constant has been
-changed, because redirecting either one is an environment decision, not a documentation fix.
-Until the owner decides, treat that workflow's output as landing in recette.
+The AFRIK sync that used to contradict that is fixed. It previously fired on a successful
+Vercel **Production** deployment of `main`, wrote the corpus into `shmrjtnfbqzceovroqjj` — the
+recette database — and POSTed a cache revalidation to `https://ethniafrica.com`, a site it had
+not written to. `.github/workflows/production-data-sync.yml` now takes the production project
+from two repository secrets, `PRODUCTION_SUPABASE_URL` and
+`PRODUCTION_SUPABASE_SERVICE_ROLE_KEY`, and fails rather than skipping when either is missing.
+See [`afrik-data-sync.md`](./afrik-data-sync.md).
+
+This is the corpus only. **Schema migrations are still applied by hand, and still in two
+steps** — nothing below is automated for the production-backing project.
 
 ### Why the production-backing project has no row here
 
@@ -323,7 +319,7 @@ records intent, not outcome. That box is still yours.
 
 ## Related
 
-- [`afrik-staging-data-sync.md`](./afrik-staging-data-sync.md) — loading the AFRIK corpus once
+- [`afrik-data-sync.md`](./afrik-data-sync.md) — loading the AFRIK corpus once
   the schema is in place, and the same target-naming trap.
 - [`restore-procedure.md`](./restore-procedure.md) — recovering when a migration goes wrong.
 - [`../DEPLOYMENT.md`](../DEPLOYMENT.md) — where the two-step rule sits in the wider release.
