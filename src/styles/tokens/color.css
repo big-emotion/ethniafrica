@@ -197,6 +197,11 @@
   --afh-globe-graticule: #42341f;
   --afh-globe-graticule-major: #5d4a2e;
   --afh-globe-land: #6b4a22;
+  /* The rest of the world, drawn under Africa. The corpus can only vouch
+     for African geography, so the other continents wear the hero title's
+     own ink at low opacity: enough to put Africa on a real planet, faint
+     enough that one continent alone still reads as painted. */
+  --afh-globe-land-far: rgba(241, 231, 216, 0.4);
   --afh-globe-coast: var(--afh-night-ocre-soft);
   /* The equator is the one line that is a measurement, not terrain, so it
      takes the categorical accent no landmass ever wears. */
@@ -237,6 +242,12 @@
   --accent-tint: var(--afh-cat-ocre-tint);
   --accent-ink: var(--afh-cat-ocre-ink);
   --accent-foreground: #fff;
+
+  /* Display type carries its accent as text, not as a fill, so it needs the
+     ocre that stays readable on the surface it is set on — the dark ink on
+     parchment, the soft gold on night. One token instead of a theme test in
+     every headline that wants an accented word. */
+  --afh-display-accent: var(--afh-cat-ocre-ink);
 }
 
 /* ─── Night theme (REQ-115) ───────────────────────────────────────
@@ -276,6 +287,8 @@
   /* An accent fill is a light patch on a dark page, so the text on it
      flips to the dark ink for the same reason terre needs it in day. */
   --accent-foreground: #1a1208;
+
+  --afh-display-accent: var(--afh-night-ocre-soft);
 
   /* Rebinding the tokens is not enough on its own: `color` is resolved
      once on body and then inherited, so text with no colour of its own

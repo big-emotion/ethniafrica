@@ -67,6 +67,44 @@ byte-identical to the SVG's path data.
   with headroom under the budget. Re-run step 2 with a different percentage
   to trade detail for size.
 
+## Far continents (`worldLandmassPath.ts`)
+
+`worldLandmassPath.ts` is every landmass Natural Earth does **not** assign to
+Africa, dissolved into one silhouette. The globe texture paints it under the
+African one at a low-opacity ink (`--afh-globe-land-far`) so the sphere reads
+as a planet rather than a continent floating in an empty ocean, while the
+difference in treatment keeps saying which continent this atlas documents.
+
+Unlike `africaLandmassPath.ts`, it carries no SVG twin and no viewBox of its
+own: it is emitted already projected into globe-texture pixels
+(`GLOBE_TEXTURE_SIZE`, 2048x1024 equirectangular), because painting the world
+texture is the only thing it is for. `globeTexture.test.ts` asserts every
+committed coordinate stays inside those bounds, so a regeneration under
+different bounds fails instead of painting the world off the sphere.
+
+```bash
+# 1. Same source data as step 1 above (Natural Earth 1:50m admin-0 countries).
+# 2. Everything except Africa, dissolved, with the islands too small to read
+#    at globe scale dropped. -simplify 3% is far coarser than Africa's 45%:
+#    this outline is decor at a tenth of the size, and the whole world at
+#    Africa's fidelity cost 20 KB gzipped instead of 8.7 KB.
+npx mapshaper -i /tmp/ne_50m_admin_0_countries.geojson \
+  -filter 'CONTINENT!="Africa"' \
+  -dissolve \
+  -clean \
+  -filter-islands min-area=25000km2 \
+  -simplify 3% visvalingam keep-shapes \
+  -o format=geojson precision=0.1 /tmp/world-nonafrica.geojson
+
+# 3. Project to globe-texture pixels.
+node src/lib/atlas/assets/generate-world-basemap.mjs \
+  /tmp/world-nonafrica.geojson \
+  src/lib/atlas/assets/worldLandmassPath.ts
+```
+
+Committed size: ~20 KB raw / ~8.7 KB gzipped, in the globe's lazy chunk
+rather than the initial bundle (`HomeGlobe` is a `ssr: false` dynamic import).
+
 ## Per-country geometry (`africaAdmin0.ts`)
 
 `africaAdmin0.ts` is the same Natural Earth admin-0 dataset above, kept

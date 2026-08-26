@@ -75,8 +75,18 @@ export function parseMigrationFilename(
 
 /**
  * Reduces SQL to a form where two spellings of the same migration compare
- * equal: comments dropped, whitespace collapsed, case folded. String literals
- * are preserved, so a `--` inside one is not mistaken for a comment.
+ * equal: comments dropped, whitespace collapsed, case folded, statement
+ * terminators discounted. String literals are preserved, so a `--` inside one
+ * is not mistaken for a comment.
+ *
+ * Terminators have to go because the two sides do not agree on them. The
+ * Supabase CLI splits a file into statements and drops each `;`, so a file
+ * ending `END $$;` is stored as `END $$`. Measured against the real recette
+ * ledger, treating that separator as content marked 41 of 42 migrations
+ * drifted — and a gate that cries wolf on everything is worse than no gate,
+ * because it teaches people to ignore it. Removing them symmetrically costs
+ * only the ability to notice a moved statement boundary; a genuine edit still
+ * changes tokens.
  */
 export function normaliseSql(sql: string): string {
   let out = "";
@@ -106,7 +116,9 @@ export function normaliseSql(sql: string): string {
       continue;
     }
 
-    out += char;
+    // Outside a string literal a semicolon separates statements rather than
+    // saying anything, and the ledger does not keep it.
+    out += char === ";" ? " " : char;
     index += 1;
   }
 
