@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { HomeHero } from "@/components/home/HomeHero";
 import { PRODUCT_NAME } from "@/lib/brand";
 
-describe("HomeHero — the night band the home opens on (REQ-115)", () => {
+describe("HomeHero — the band the home opens on (REQ-115)", () => {
   // @req REQ-044
   it("renders no eyebrow and no PRODUCT_NAME line", () => {
     render(<HomeHero />);
@@ -76,12 +76,12 @@ describe("HomeHero — the night band the home opens on (REQ-115)", () => {
     );
   });
 
-  // DEC-022 keeps dataviz on the night surface whatever the reader chose
-  // for the rest of the site, and the globe is dataviz — but only the
-  // globe. The band around it reads the page theme like every other route,
-  // which is what makes the theme control answer on this page at all.
+  // The whole band now follows the reader's choice, the globe's own panel
+  // included: on parchment a dark panel was a hole punched through the
+  // page, and the surface the reader picked has to reach the one thing
+  // they came to the home to look at.
   // @req REQ-115
-  it("keeps the globe panel on night while the band follows the page theme", () => {
+  it("puts the globe panel on the page surface rather than pinning it to night", () => {
     const { container } = render(<HomeHero />);
     const section = container.querySelector("section");
     const styles = Array.from(container.querySelectorAll("style"))
@@ -89,13 +89,14 @@ describe("HomeHero — the night band the home opens on (REQ-115)", () => {
       .join("\n");
 
     expect(section).not.toHaveClass("afh-on-night");
-    expect(container.querySelector(".home-globe-holder")).toHaveClass(
+    expect(container.querySelector(".home-globe-holder")).not.toHaveClass(
       "afh-on-night"
     );
     expect(styles).toMatch(/\.home-hero\s*{[^}]*background:\s*var\(--afh-bg\)/);
     expect(styles).toMatch(
-      /\.home-globe-holder\s*{[^}]*background:\s*var\(--afh-night-ground\)/
+      /\.home-globe-holder\s*{[^}]*background:\s*var\(--afh-bg\)/
     );
+    expect(styles).not.toMatch(/var\(--afh-night-ground\)/);
   });
 
   // The globe carries its own readout, which also tracks the morph. A
