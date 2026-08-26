@@ -224,7 +224,14 @@ export function AtlasGlobeCanvas({
     const sphere: SphereLayer | null = createSphereLayer(
       gl,
       resolveGlobePalette(),
-      document.createElement("canvas")
+      document.createElement("canvas"),
+      undefined,
+      false,
+      undefined,
+      // A fiche paints the national boundaries: a chosen country has to be
+      // read against its neighbours, not float on a blank continent. The
+      // home hero, framed far off, leaves them off.
+      true
     );
 
     // The terrain rides the same camera as the overlay drawn over it. A

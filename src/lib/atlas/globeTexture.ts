@@ -1,6 +1,7 @@
 import { AFRICA_GEO_BOUNDS, BASEMAP_VIEWBOX } from "@/lib/atlas/projection";
 import { AFRICA_LANDMASS_PATH } from "@/lib/atlas/assets/africaLandmassPath";
 import { WORLD_LANDMASS_PATH } from "@/lib/atlas/assets/worldLandmassPath";
+import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
 
 /**
  * The sphere is textured with a whole-world equirectangular image, not an
@@ -33,6 +34,7 @@ export interface GlobePalette {
   equator: string;
   tissot: string;
   tissotEdge: string;
+  border: string;
 }
 
 /**
@@ -207,9 +209,46 @@ function paintTissot(
   }
 }
 
+/**
+ * The admin-0 rings of every committed country, stroked at the border
+ * colour. The same asset the country overlays are built from, so a
+ * highlighted outline lands exactly on the boundary painted here.
+ */
+const AFRICA_ADMIN0_LIST = Object.values(AFRICA_ADMIN0);
+
+function paintCountryBorders(
+  ctx: CanvasRenderingContext2D,
+  palette: GlobePalette
+): void {
+  ctx.strokeStyle = palette.border;
+  ctx.lineWidth = 1;
+
+  for (const country of AFRICA_ADMIN0_LIST) {
+    for (const ring of country.rings) {
+      if (ring.length < 2) continue;
+      ctx.beginPath();
+      ring.forEach(([lon, lat], index) => {
+        const x = lonToTextureX(lon);
+        const y = latToTextureY(lat);
+        if (index === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      });
+      // The committed rings already repeat their first point, so the path
+      // closes itself and needs no closePath.
+      ctx.stroke();
+    }
+  }
+}
+
 export interface GlobeTextureOptions {
   /** Draws Tissot's indicatrices over the terrain. */
   showTissot?: boolean;
+  /**
+   * Draws the admin-0 national boundaries. A fiche wants them — a country
+   * surlignage floating on a blank continent has nothing to be read
+   * against — while the home hero does not, which is why this is opt-in.
+   */
+  showBorders?: boolean;
 }
 
 /**
@@ -268,6 +307,12 @@ export function paintGlobeTexture(
   ctx.lineWidth = 2 / scaleX;
   ctx.stroke(landmass);
   ctx.restore();
+
+  // After the landmass so the boundaries sit on the terrain, and before
+  // every overlay so a chosen country's surlignage always covers them.
+  if (options.showBorders) {
+    paintCountryBorders(ctx, palette);
+  }
 
   // Last, so the discs sit over the terrain they are measuring.
   if (options.showTissot) {

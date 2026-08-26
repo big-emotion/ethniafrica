@@ -213,6 +213,10 @@
      no landmass and no boundary ever wears. */
   --afh-globe-tissot: rgba(51, 163, 144, 0.3);
   --afh-globe-tissot-edge: var(--afh-cat-teal);
+  /* National boundaries. Faint on purpose: they are the frame the chosen
+     country is read against, never a second subject competing with it.
+     Drawn under every highlight, so the surlignage always wins. */
+  --afh-globe-border: rgba(232, 185, 106, 0.28);
 
   /* Atlas — the same sphere on the parchment surface. Role for role with
      the night group above, so nothing downstream learns which surface it
@@ -239,6 +243,7 @@
   --afh-globe-parchment-equator: var(--afh-cat-perv);
   --afh-globe-parchment-tissot: rgba(51, 163, 144, 0.28);
   --afh-globe-parchment-tissot-edge: var(--afh-cat-teal);
+  --afh-globe-parchment-border: rgba(107, 58, 28, 0.26);
 
   /* Atlas — MigrationPathLayer overlay (Epic 12, Story 12.9, ETNI-522).
      Active/selected state is never color-alone: stroke-width + opacity in
