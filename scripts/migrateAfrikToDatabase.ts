@@ -36,9 +36,9 @@ import {
   type AfrikDriftReport,
 } from "./lib/afrikDrift";
 import {
-  validateAfrikMigrationTarget,
-  type AfrikMigrationTargetInput,
-} from "./lib/afrikMigrationTarget";
+  resolveAfrikSyncTarget,
+  type AfrikSyncTargetInput,
+} from "./lib/afrikSyncTarget";
 
 interface MigrationSectionReport {
   total: number;
@@ -67,7 +67,7 @@ export interface MigrationReport {
 
 export interface MigrationOptions {
   dryRun?: boolean;
-  target: AfrikMigrationTargetInput;
+  target: AfrikSyncTargetInput;
   writeErrorReport?: boolean;
 }
 
@@ -403,7 +403,7 @@ function saveErrorReport(report: MigrationReport): string {
 export async function migrateAfrikToDatabase(
   options: MigrationOptions
 ): Promise<MigrationReport> {
-  const validatedTarget = validateAfrikMigrationTarget(options.target);
+  const syncTarget = resolveAfrikSyncTarget(options.target);
 
   const dryRun = options.dryRun ?? true;
   const writeErrorReport = options.writeErrorReport ?? true;
@@ -430,7 +430,7 @@ export async function migrateAfrikToDatabase(
     report.peopleRelations.total = loadAllRelationFiles().length;
     report.migrations.total = loadAllMigrationFiles().length;
     logger.info("AFRIK synchronization preview completed", {
-      target: validatedTarget.target,
+      target: syncTarget.environment,
       languageFamilies: report.languageFamilies.total,
       peoples: report.peoples.total,
       countries: report.countries.total,
@@ -492,7 +492,7 @@ export async function migrateAfrikToDatabase(
     });
   } else {
     logger.info("AFRIK synchronization completed", {
-      target: validatedTarget.target,
+      target: syncTarget.environment,
       languageFamilies: report.languageFamilies,
       peoples: report.peoples,
       countries: report.countries,
@@ -522,9 +522,9 @@ if (require.main === module) {
   migrateAfrikToDatabase({
     dryRun,
     target: {
-      target: cliTarget(args),
+      environment: cliTarget(args),
       activeSupabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL,
-      expectedStagingSupabaseUrl: process.env.AFRIK_STAGING_SUPABASE_URL,
+      productionSupabaseUrl: process.env.AFRIK_PRODUCTION_SUPABASE_URL,
     },
   })
     .then((report) => {

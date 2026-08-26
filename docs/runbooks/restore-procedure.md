@@ -156,9 +156,15 @@ later migration look pending. Compare it against
 
 The throwaway project has different credentials from the one it replaces. Cutting over means
 updating `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY` and
-`SUPABASE_SERVICE_ROLE_KEY` in the Vercel project and redeploying — plus
-`AFRIK_PRODUCTION_SUPABASE_URL` in `scripts/lib/afrikMigrationTarget.ts`, which hard-codes a
-project ref and will otherwise keep writing to the old, damaged project.
+`SUPABASE_SERVICE_ROLE_KEY` in the Vercel project and redeploying — plus the AFRIK corpus
+sync, which will otherwise keep writing to the old, damaged project:
+
+- recovering the **recette** project also means editing `AFRIK_RECETTE_SUPABASE_URL` in
+  `scripts/lib/afrikSyncTarget.ts`; that ref is checked in, so a throwaway project cannot be
+  reached by `--target=recette` until it is changed;
+- recovering the **production** project means repointing the `PRODUCTION_SUPABASE_URL` and
+  `PRODUCTION_SUPABASE_SERVICE_ROLE_KEY` repository secrets, which is configuration — no code
+  change needed. See [`afrik-data-sync.md`](./afrik-data-sync.md).
 
 Prefer restoring _into_ the original project once the throwaway copy has proven the backup is
 good. Cut over only when the original is unrecoverable.

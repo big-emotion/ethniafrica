@@ -87,6 +87,8 @@ Hierarchy: **linguistic family → language → people → country.** IDs: famil
 
 Editorial work on fiches has a dedicated project skill: `.claude/skills/afrik-curator/`.
 
+Loading the corpus is `scripts/migrateAfrikToDatabase.ts --target=recette|production` (`--target=staging` is retired and throws). `scripts/lib/afrikSyncTarget.ts` checks in the recette ref only; production comes from `AFRIK_PRODUCTION_SUPABASE_URL` with **no default**, because the default used to hold the recette ref and every production deploy loaded the corpus into recette. Runbook: `docs/runbooks/afrik-data-sync.md`.
+
 ### Supabase: three clients, never interchangeable
 
 - `src/lib/supabase/client.ts` — browser, anon key

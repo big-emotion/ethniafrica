@@ -16,7 +16,7 @@ import {
   loadAllMigrationFiles,
   loadMigrations,
 } from "@/lib/afrik/loaders/migrationJsonLoader";
-import { AFRIK_PRODUCTION_SUPABASE_URL } from "../lib/afrikMigrationTarget";
+import { AFRIK_RECETTE_SUPABASE_URL } from "../lib/afrikSyncTarget";
 import { migrateAfrikToDatabase } from "../migrateAfrikToDatabase";
 import type { LanguageFamily, People } from "@/types/afrik";
 import type { RelationRecord } from "@/types/relations";
@@ -29,14 +29,13 @@ vi.mock("@/lib/afrik/loaders/relationJsonLoader");
 vi.mock("@/lib/afrik/loaders/migrationJsonLoader");
 vi.mock("@/lib/supabase/admin");
 
-const STAGING_URL = "https://ethniafrica-staging.supabase.co";
+const PRODUCTION_URL = "https://ethniafrica-production.supabase.co";
 // JSON imports retain narrower inferred fields than the evolutionary AFRIK types.
 const familyFixture = afroasiaticFamily as unknown as LanguageFamily;
 const peopleFixture = betePeople as unknown as People;
-const stagingTarget = {
-  target: "staging",
-  activeSupabaseUrl: STAGING_URL,
-  expectedStagingSupabaseUrl: STAGING_URL,
+const recetteTarget = {
+  environment: "recette",
+  activeSupabaseUrl: AFRIK_RECETTE_SUPABASE_URL,
 };
 
 type TableName =
@@ -145,28 +144,48 @@ describe("migrateAfrikToDatabase", () => {
         dryRun: true,
         writeErrorReport: false,
         target: {
-          target: "production",
-          activeSupabaseUrl: "https://ethniafrica-production.supabase.co",
-          expectedStagingSupabaseUrl: STAGING_URL,
+          environment: "production",
+          activeSupabaseUrl: PRODUCTION_URL,
+          productionSupabaseUrl: "https://ethniafrica-other.supabase.co",
         },
       })
-    ).rejects.toThrow(
-      "Active Supabase URL does not match the locked production project"
-    );
+    ).rejects.toThrow(/not the configured production project/);
+
+    expect(createAdminClient).not.toHaveBeenCalled();
+  });
+
+  // Inverted deliberately. This used to assert that --target=production against
+  // the recette project was the *correct* pairing, because the old guard's
+  // "production" constant held the recette ref. That assertion is what made
+  // every production deploy write the corpus into recette.
+  // @req REQ-032
+  it("refuses production declared against the recette project, and never reaches the client", async () => {
+    await expect(
+      migrateAfrikToDatabase({
+        dryRun: true,
+        writeErrorReport: false,
+        target: {
+          environment: "production",
+          activeSupabaseUrl: AFRIK_RECETTE_SUPABASE_URL,
+          productionSupabaseUrl: PRODUCTION_URL,
+        },
+      })
+    ).rejects.toThrow(/recette project/);
 
     expect(createAdminClient).not.toHaveBeenCalled();
   });
 
   // @req REQ-032
-  it("previews the locked production target without writing", async () => {
+  it("previews production against the configured production project without writing", async () => {
     const database = useSupabaseDouble();
 
     const report = await migrateAfrikToDatabase({
       dryRun: true,
       writeErrorReport: false,
       target: {
-        target: "production",
-        activeSupabaseUrl: AFRIK_PRODUCTION_SUPABASE_URL,
+        environment: "production",
+        activeSupabaseUrl: PRODUCTION_URL,
+        productionSupabaseUrl: PRODUCTION_URL,
       },
     });
 
@@ -189,7 +208,7 @@ describe("migrateAfrikToDatabase", () => {
     const report = await migrateAfrikToDatabase({
       dryRun: true,
       writeErrorReport: false,
-      target: stagingTarget,
+      target: recetteTarget,
     });
 
     expect(report.verification.before).toMatchObject({
@@ -217,7 +236,7 @@ describe("migrateAfrikToDatabase", () => {
     const report = await migrateAfrikToDatabase({
       dryRun: false,
       writeErrorReport: false,
-      target: stagingTarget,
+      target: recetteTarget,
     });
 
     expect(report.relations.errors).toEqual([]);
@@ -263,7 +282,7 @@ describe("migrateAfrikToDatabase", () => {
     const report = await migrateAfrikToDatabase({
       dryRun: false,
       writeErrorReport: false,
-      target: stagingTarget,
+      target: recetteTarget,
     });
 
     expect(report.relations).toMatchObject({
@@ -302,7 +321,7 @@ describe("migrateAfrikToDatabase", () => {
     const report = await migrateAfrikToDatabase({
       dryRun: false,
       writeErrorReport: false,
-      target: stagingTarget,
+      target: recetteTarget,
     });
 
     expect(report.verification.after?.hasDrift).toBe(true);
@@ -343,7 +362,7 @@ describe("migrateAfrikToDatabase", () => {
     const report = await migrateAfrikToDatabase({
       dryRun: false,
       writeErrorReport: false,
-      target: stagingTarget,
+      target: recetteTarget,
     });
 
     expect(report.peopleRelations).toMatchObject({
@@ -401,7 +420,7 @@ describe("migrateAfrikToDatabase", () => {
     const report = await migrateAfrikToDatabase({
       dryRun: false,
       writeErrorReport: false,
-      target: stagingTarget,
+      target: recetteTarget,
     });
 
     expect(report.migrations).toMatchObject({
@@ -432,7 +451,7 @@ describe("migrateAfrikToDatabase", () => {
     const report = await migrateAfrikToDatabase({
       dryRun: false,
       writeErrorReport: false,
-      target: stagingTarget,
+      target: recetteTarget,
     });
 
     expect(report.peopleRelations.orphans).toEqual(["REL_DELETED_FROM_TREE"]);
