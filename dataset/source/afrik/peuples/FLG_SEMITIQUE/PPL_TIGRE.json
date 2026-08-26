@@ -99,13 +99,48 @@
       ]
     },
     "sources": [
-      "Joshua Project 2025 — Tigre, Eritrean. https://joshuaproject.net/people_groups/15482/er",
-      "Ethnologue — Tigre language (tig). https://www.ethnologue.com/language/tig/",
-      "101 Last Tribes — Tigre. http://www.101lasttribes.com/tribes/tigre.html",
-      "Britannica — Tigre people. https://www.britannica.com/topic/Tigre-northwestern-Eritrean-people",
-      "Shabait (Ministère de l'information érythréen) — Oral Tradition in Tigre Language, 2022. https://shabait.com/2022/04/16/presentation-on-the-oral-tradition-of-tigre/",
-      "Upplitt Magasin — Tigre, A Language Betrayed From Within, 2025. https://www.upplittmagasin.se/artikel/tigre---a-language-betrayed-from-within",
-      "Crystal Clear Translation — The Tigre and Tigrinya Languages, 2024. https://crystalcleartranslation.com/the-tigre-and-tigrinya-languages-what-is-the-difference/"
+      {
+        "title": "Joshua Project 2025 — Tigre, Eritrean",
+        "url": "https://joshuaproject.net/people_groups/15482/er",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue — Tigre language (tig)",
+        "url": "https://www.ethnologue.com/language/tig/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "101 Last Tribes — Tigre",
+        "url": "http://www.101lasttribes.com/tribes/tigre.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Britannica — Tigre people",
+        "url": "https://www.britannica.com/topic/Tigre-northwestern-Eritrean-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Shabait (Ministère de l'information érythréen) — Oral Tradition in Tigre Language, 2022",
+        "url": "https://shabait.com/2022/04/16/presentation-on-the-oral-tradition-of-tigre/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for shabait.com."
+      },
+      {
+        "title": "Upplitt Magasin — Tigre, A Language Betrayed From Within, 2025",
+        "url": "https://www.upplittmagasin.se/artikel/tigre---a-language-betrayed-from-within",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers upplittmagasin.se; the tier awaits editorial review."
+      },
+      {
+        "title": "Crystal Clear Translation — The Tigre and Tigrinya Languages, 2024",
+        "url": "https://crystalcleartranslation.com/the-tigre-and-tigrinya-languages-what-is-the-difference/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for crystalcleartranslation.com."
+      }
     ]
   }
 }

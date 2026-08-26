@@ -90,10 +90,30 @@
       ]
     },
     "sources": [
-      "Baatonum (BBA) – Ethnologue (SIL International) (https://www.ethnologue.com/language/bba/)",
-      "The Bariba people of West Africa – Qiraat Africa, 2025 (https://qiraatafrican.com/en/16491/the-bariba-people-of-west-africa/)",
-      "Binary personal naming system of the Baatombu people in Nigeria – Onoma Journal, Williams A., 2023 (https://onomajournal.org/wp-content/uploads/2024/01/Onoma-58-3.03-Williams-final.pdf)",
-      "Bariba – Sage Reference, Encyclopedia of African Religion (https://sk.sagepub.com/ency/edvol/africanreligion/chpt/bariba)"
+      {
+        "title": "Baatonum (BBA) – Ethnologue (SIL International)",
+        "url": "https://www.ethnologue.com/language/bba/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "The Bariba people of West Africa – Qiraat Africa, 2025",
+        "url": "https://qiraatafrican.com/en/16491/the-bariba-people-of-west-africa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "Binary personal naming system of the Baatombu people in Nigeria – Onoma Journal, Williams A., 2023",
+        "url": "https://onomajournal.org/wp-content/uploads/2024/01/Onoma-58-3.03-Williams-final.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers onomajournal.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Bariba – Sage Reference, Encyclopedia of African Religion",
+        "url": "https://sk.sagepub.com/ency/edvol/africanreligion/chpt/bariba",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sk.sagepub.com."
+      }
     ]
   }
 }

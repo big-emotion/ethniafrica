@@ -72,12 +72,42 @@
       ]
     },
     "sources": [
-      "Britannica, Tumbatu people (https://www.britannica.com/topic/Tumbatu)",
-      "Pongwe Beach Hotel, Tumbatu Island: Sacred Shores and Hidden History (https://pongwe.com/tumbatu-island/)",
-      "Joshua Project, Swahili Tumbatu in Tanzania (https://joshuaproject.net/people_groups/15633)",
-      "PeopleGroups.org, Tumbatu of Tanzania (https://peoplegroups.org/people_groups/pg050321/)",
-      "Essque Zalu Zanzibar, The People of Zanzibar: Ethnic Origins, Language and Religion (https://essquezaluzanzibar.wordpress.com/2013/12/13/the-people-of-zanzibar-ethnic-origins-language-religion/)",
-      "Masai Mara Migration Safaris, History of Zanzibar (https://www.masaimaramigration.com/safari-guide/history-of-zanzibar/)"
+      {
+        "title": "Britannica, Tumbatu people",
+        "url": "https://www.britannica.com/topic/Tumbatu",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Pongwe Beach Hotel, Tumbatu Island: Sacred Shores and Hidden History",
+        "url": "https://pongwe.com/tumbatu-island/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers pongwe.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project, Swahili Tumbatu in Tanzania",
+        "url": "https://joshuaproject.net/people_groups/15633",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org, Tumbatu of Tanzania",
+        "url": "https://peoplegroups.org/people_groups/pg050321/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Essque Zalu Zanzibar, The People of Zanzibar: Ethnic Origins, Language and Religion",
+        "url": "https://essquezaluzanzibar.wordpress.com/2013/12/13/the-people-of-zanzibar-ethnic-origins-language-religion/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of essquezaluzanzibar.wordpress.com."
+      },
+      {
+        "title": "Masai Mara Migration Safaris, History of Zanzibar",
+        "url": "https://www.masaimaramigration.com/safari-guide/history-of-zanzibar/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers masaimaramigration.com; the tier awaits editorial review."
+      }
     ]
   }
 }

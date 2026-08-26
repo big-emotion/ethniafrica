@@ -143,6 +143,9 @@ describe("RecherchePageContent", () => {
     vi.mocked(nextNavigation.useSearchParams).mockReturnValue(
       new URLSearchParams() as ReturnType<typeof nextNavigation.useSearchParams>
     );
+    // Only the navigation methods this component calls are stubbed. The cast
+    // keeps the mock from having to track every field Next adds to
+    // AppRouterInstance — 16.3 added `bfcacheId`, which no test asserts on.
     vi.mocked(nextNavigation.useRouter).mockReturnValue({
       replace: vi.fn(),
       push: vi.fn(),
@@ -150,7 +153,7 @@ describe("RecherchePageContent", () => {
       forward: vi.fn(),
       refresh: vi.fn(),
       prefetch: vi.fn(),
-    });
+    } as unknown as ReturnType<typeof nextNavigation.useRouter>);
     mockFetch.mockResolvedValue({
       ok: true,
       json: () => Promise.resolve(emptyApiResponse),

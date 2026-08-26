@@ -82,11 +82,36 @@
       ]
     },
     "sources": [
-      "SaoTomeExpert — The Creole Population of Sao Tome and Principe (2025). https://www.saotomeexpert.pt/en/sao-tome-and-principe-creole-population/",
-      "PMC/NIH — The Genes of Freedom: Genome-Wide Insights into Marronage (Bouyer et al., 2021). https://pmc.ncbi.nlm.nih.gov/articles/PMC8229774/",
-      "John Benjamins — The vitality of Angolar (2022). https://www.jbe-platform.com/content/journals/10.1075/jpcl.00089.bou",
-      "Gale Academic — Linguistic, historical and ethnographic evidence on Angolar. https://go.gale.com/ps/i.do?id=GALE%7CA472005176",
-      "Ethnologue — Angolar language (aoa). https://www.ethnologue.com/language/aoa/"
+      {
+        "title": "SaoTomeExpert — The Creole Population of Sao Tome and Principe (2025)",
+        "url": "https://www.saotomeexpert.pt/en/sao-tome-and-principe-creole-population/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for saotomeexpert.pt."
+      },
+      {
+        "title": "PMC/NIH — The Genes of Freedom: Genome-Wide Insights into Marronage (Bouyer et al., 2021)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8229774/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+      },
+      {
+        "title": "John Benjamins — The vitality of Angolar (2022)",
+        "url": "https://www.jbe-platform.com/content/journals/10.1075/jpcl.00089.bou",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers jbe-platform.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Gale Academic — Linguistic, historical and ethnographic evidence on Angolar",
+        "url": "https://go.gale.com/ps/i.do?id=GALE%7CA472005176",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for go.gale.com."
+      },
+      {
+        "title": "Ethnologue — Angolar language (aoa)",
+        "url": "https://www.ethnologue.com/language/aoa/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

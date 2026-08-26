@@ -78,10 +78,30 @@
       ]
     },
     "sources": [
-      "A Collection of 100 Nyaturu Proverbs and Wise Sayings – Afriprov, Tangaza University College (https://afriprov.tangaza.ac.ke/wp-content/uploads/2008/11/ebooks_nyaturu.pdf)",
-      "Turu, Nyaturu in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/15657)",
-      "Nyaturu – Glottolog 5.3, code nyat1246, ISO 639-3: rim (https://glottolog.org/resource/languoid/id/nyat1246)",
-      "Omniglot – Turu language and alphabet (https://www.omniglot.com/writing/turu.htm)"
+      {
+        "title": "A Collection of 100 Nyaturu Proverbs and Wise Sayings – Afriprov, Tangaza University College",
+        "url": "https://afriprov.tangaza.ac.ke/wp-content/uploads/2008/11/ebooks_nyaturu.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for afriprov.tangaza.ac.ke."
+      },
+      {
+        "title": "Turu, Nyaturu in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/15657",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Nyaturu – Glottolog 5.3, code nyat1246, ISO 639-3: rim",
+        "url": "https://glottolog.org/resource/languoid/id/nyat1246",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Omniglot – Turu language and alphabet",
+        "url": "https://www.omniglot.com/writing/turu.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      }
     ]
   }
 }

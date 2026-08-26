@@ -93,10 +93,30 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica, article Bulu: https://www.britannica.com/topic/Bulu",
-      "101 Last Tribes, Bulu people: http://www.101lasttribes.com/tribes/bulu.html",
-      "Ethnologue, Bulu (bum): https://www.ethnologue.com/language/bum/",
-      "PeopleGroups.org, Bulu of Cameroon: https://peoplegroups.org/people_groups/pg012558/"
+      {
+        "title": "Encyclopaedia Britannica, article Bulu",
+        "url": "https://www.britannica.com/topic/Bulu",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "101 Last Tribes, Bulu people",
+        "url": "http://www.101lasttribes.com/tribes/bulu.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Ethnologue, Bulu (bum)",
+        "url": "https://www.ethnologue.com/language/bum/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "PeopleGroups.org, Bulu of Cameroon",
+        "url": "https://peoplegroups.org/people_groups/pg012558/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      }
     ]
   }
 }

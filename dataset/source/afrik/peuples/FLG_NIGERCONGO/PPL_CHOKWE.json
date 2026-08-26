@@ -103,10 +103,30 @@
       ]
     },
     "sources": [
-      "Chokwe people group – Joshua Project, 2024 (https://joshuaproject.net/people_groups/11365)",
-      "Chokwe in Angola – Joshua Project, 2024 (https://joshuaproject.net/people_groups/11365/AO)",
-      "Chokwe in Zambia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/11365/ZA)",
-      "Chokwe language ISO 639-3 cjk – Common Crawl / web-languages, 2024 (https://github.com/commoncrawl/web-languages/blob/main/living/chokwe.md)"
+      {
+        "title": "Chokwe people group – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/11365",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Chokwe in Angola – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/11365/AO",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Chokwe in Zambia – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/11365/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Chokwe language ISO 639-3 cjk – Common Crawl / web-languages, 2024",
+        "url": "https://github.com/commoncrawl/web-languages/blob/main/living/chokwe.md",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for github.com."
+      }
     ]
   }
 }

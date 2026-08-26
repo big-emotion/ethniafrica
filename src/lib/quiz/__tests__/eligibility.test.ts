@@ -24,7 +24,7 @@ describe("isQuizEligible", () => {
   const eligibleInput: QuizEligibilityInput = {
     confidenceScore: 90,
     lastHumanAuditAt: "2026-01-01T00:00:00.000Z",
-    assertionSources: [{ type: "primary", resolvable: true }],
+    assertionSources: [{ tier: "official", resolvable: true }],
     openFlagCount: 0,
   };
 
@@ -42,7 +42,7 @@ describe("isQuizEligible", () => {
       expect(
         isQuizEligible({
           ...eligibleInput,
-          assertionSources: [{ type: "secondary", resolvable: true }],
+          assertionSources: [{ tier: "referenced", resolvable: true }],
         })
       ).toEqual({ eligible: true, reason: null });
     });
@@ -53,9 +53,9 @@ describe("isQuizEligible", () => {
         isQuizEligible({
           ...eligibleInput,
           assertionSources: [
-            { type: "ai", resolvable: true },
-            { type: "primary", resolvable: false },
-            { type: "secondary", resolvable: true },
+            { tier: "unverified", resolvable: true },
+            { tier: "official", resolvable: false },
+            { tier: "referenced", resolvable: true },
           ],
         })
       ).toEqual({ eligible: true, reason: null });
@@ -125,7 +125,7 @@ describe("isQuizEligible", () => {
     it("rejects an empty sources array", () => {
       expect(
         isQuizEligible({ ...eligibleInput, assertionSources: [] })
-      ).toEqual({ eligible: false, reason: "no_tier1_or_tier2_source" });
+      ).toEqual({ eligible: false, reason: "no_authoritative_source" });
     });
 
     // @req REQ-103
@@ -133,9 +133,9 @@ describe("isQuizEligible", () => {
       expect(
         isQuizEligible({
           ...eligibleInput,
-          assertionSources: [{ type: "primary", resolvable: false }],
+          assertionSources: [{ tier: "official", resolvable: false }],
         })
-      ).toEqual({ eligible: false, reason: "no_tier1_or_tier2_source" });
+      ).toEqual({ eligible: false, reason: "no_authoritative_source" });
     });
 
     // @req REQ-103
@@ -143,9 +143,9 @@ describe("isQuizEligible", () => {
       expect(
         isQuizEligible({
           ...eligibleInput,
-          assertionSources: [{ type: "ai", resolvable: true }],
+          assertionSources: [{ tier: "unverified", resolvable: true }],
         })
-      ).toEqual({ eligible: false, reason: "no_tier1_or_tier2_source" });
+      ).toEqual({ eligible: false, reason: "no_authoritative_source" });
     });
   });
 
@@ -193,7 +193,7 @@ describe("isQuizEligible", () => {
     });
 
     // @req REQ-103
-    it("prioritizes no_tier1_or_tier2_source over an open-flag failure", () => {
+    it("prioritizes no_authoritative_source over an open-flag failure", () => {
       expect(
         isQuizEligible({
           confidenceScore: 90,
@@ -201,7 +201,7 @@ describe("isQuizEligible", () => {
           assertionSources: [],
           openFlagCount: 3,
         })
-      ).toEqual({ eligible: false, reason: "no_tier1_or_tier2_source" });
+      ).toEqual({ eligible: false, reason: "no_authoritative_source" });
     });
   });
 });

@@ -67,9 +67,24 @@
       ]
     },
     "sources": [
-      "Mpoto, Nyasa in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13846)",
-      "Mpoto language ISO mpa – Swordshare Map (https://map.swordshare.com/mpa)",
-      "Bantu, Central-Tanzania People Cluster – Joshua Project (https://www.joshuaproject.net/clusters/341)"
+      {
+        "title": "Mpoto, Nyasa in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/13846",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Mpoto language ISO mpa – Swordshare Map",
+        "url": "https://map.swordshare.com/mpa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      },
+      {
+        "title": "Bantu, Central-Tanzania People Cluster – Joshua Project",
+        "url": "https://www.joshuaproject.net/clusters/341",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

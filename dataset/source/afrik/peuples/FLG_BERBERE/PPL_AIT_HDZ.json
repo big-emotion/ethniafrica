@@ -81,12 +81,42 @@
       ]
     },
     "sources": [
-      "Morocco World News - Imilchil Marriage Festival : https://www.moroccoworldnews.com/2020/07/67795/moroccos-imilchil-wedding-festival-a-treasured-amazigh-tradition/",
-      "IRCAM (Institut Royal de la Culture Amazighe, Rabat) : https://www.ircam.ma/",
-      "Journal of Tourism and Leisure - Two Days in Ait Hadiddou : https://journal.lasigo.org/index.php/IJTL/article/viewFile/128/77",
-      "Ethnologue - Tamazight Central Atlas (tzm) : https://www.ethnologue.com/language/tzm/",
-      "IWGIA - The Indigenous World 2025: Morocco : https://iwgia.org/en/morocco/5632-iw-2025-morocco.html",
-      "Encyclopedie berbere (CNRS/INALCO) : https://journals.openedition.org/encyclopedieberbere/"
+      {
+        "title": "Morocco World News - Imilchil Marriage Festival",
+        "url": "https://www.moroccoworldnews.com/2020/07/67795/moroccos-imilchil-wedding-festival-a-treasured-amazigh-tradition/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers moroccoworldnews.com; the tier awaits editorial review."
+      },
+      {
+        "title": "IRCAM (Institut Royal de la Culture Amazighe, Rabat)",
+        "url": "https://www.ircam.ma/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ircam.ma."
+      },
+      {
+        "title": "Journal of Tourism and Leisure - Two Days in Ait Hadiddou",
+        "url": "https://journal.lasigo.org/index.php/IJTL/article/viewFile/128/77",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers journal.lasigo.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue - Tamazight Central Atlas (tzm)",
+        "url": "https://www.ethnologue.com/language/tzm/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "IWGIA - The Indigenous World 2025: Morocco",
+        "url": "https://iwgia.org/en/morocco/5632-iw-2025-morocco.html",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+      },
+      {
+        "title": "Encyclopedie berbere (CNRS/INALCO)",
+        "url": "https://journals.openedition.org/encyclopedieberbere/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of journals.openedition.org."
+      }
     ]
   }
 }

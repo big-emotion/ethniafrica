@@ -70,10 +70,30 @@
       ]
     },
     "sources": [
-      "Pangwa Language (PBR) – Ethnologue, SIL International (https://www.ethnologue.com/language/pbr/)",
-      "Pangwa in Tanzania – Joshua Project (https://www.joshuaproject.net/people_groups/14296)",
-      "Pangwa – Glottolog 5.3, ISO 639-3: pbr, code Guthrie G.64 (https://glottolog.org/resource/languoid/id/pang1287)",
-      "East African Notes and Records – A Politics of Fear, A Religion of Blame: Kinga, Pangwa and Nyakyusa Peoples in Southwestern Tanzania – George Park (https://notesandrecords.blogspot.com/2009/04/)"
+      {
+        "title": "Pangwa Language (PBR) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/pbr/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Pangwa in Tanzania – Joshua Project",
+        "url": "https://www.joshuaproject.net/people_groups/14296",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Pangwa – Glottolog 5.3, ISO 639-3: pbr, code Guthrie G.64",
+        "url": "https://glottolog.org/resource/languoid/id/pang1287",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "East African Notes and Records – A Politics of Fear, A Religion of Blame: Kinga, Pangwa and Nyakyusa Peoples in Southwestern Tanzania – George Park",
+        "url": "https://notesandrecords.blogspot.com/2009/04/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for blogspot.com, matched as a parent of notesandrecords.blogspot.com."
+      }
     ]
   }
 }

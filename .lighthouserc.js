@@ -4,13 +4,21 @@ module.exports = {
       url: [
         "http://localhost:3000/",
         "http://localhost:3000/fr",
-        // /fr/noms is temporarily excluded here: it currently returns
-        // HTTP 500 in CI (a pre-existing failure predating this story, not
-        // caused by it — see ETNI-500 PR #371 review). lhci's `collect`
-        // step aborts the entire run on the first URL that fails to load,
-        // which left every route after it — including every route already
-        // in this list, not just the new one below — permanently
-        // unmeasured. Re-add once /fr/noms is fixed.
+        // /fr/noms and /fr/migrations (further down this list) both returned
+        // HTTP 500 in CI and were excluded, because lhci's `collect` step
+        // aborts the whole run on the first URL that fails to load — which
+        // left every route after them unmeasured, not just themselves.
+        //
+        // Migration 039 restored the `sources_title_key` UNIQUE constraint
+        // that `onConflict: "title"` upserts depend on. Without it every
+        // upsertSource in nameRecordJsonLoader and migrationJsonLoader
+        // aborted its fiche, so `name_records` and `migration_events` stayed
+        // empty — which is what these two routes read. 039 was applied on
+        // 2026-08-25, so the cause is gone and both are measured again.
+        //
+        // If either still fails, the honest response is to fix the route, not
+        // to re-exclude it: an unmeasured route is a budget nobody enforces.
+        "http://localhost:3000/fr/noms",
         // Epic 10, Story 10.11 (ETNI-500 · FR71, NFR18–NFR23) — the quiz
         // journey joins the reference routes so its mobile Performance ≥ 85
         // budget is enforced continuously via the base ".*" assertMatrix
@@ -46,15 +54,10 @@ module.exports = {
         // regress the base mobile Performance ≥ 85 / Accessibility = 100
         // budgets enforced by the catch-all assertMatrix entry below.
         "http://localhost:3000/fr/regards/colonisation-et-resistances",
-        // /fr/migrations (Epic 12, Story 12.9 · ETNI-522/1104) is also
-        // temporarily excluded here for the same reason as /fr/noms above:
-        // it independently returns HTTP 500 in CI (confirmed via the
-        // axe-core live-route audit hitting it on a separate server
-        // instance — see ETNI-500 PR #371 review), which was previously
-        // masked by /fr/noms failing first and aborting the run before
-        // reaching it. Its tighter CLS/INP budgets stay defined in
-        // assert.assertMatrix below (harmlessly inert while unmatched) —
-        // re-add the URL here once /fr/migrations is fixed.
+        // Epic 12, Story 12.9 (ETNI-522/1104) — the migrations atlas, back in
+        // the list for the same reason as /fr/noms above. Its tighter CLS/INP
+        // budgets are in assert.assertMatrix below and are no longer inert.
+        "http://localhost:3000/fr/migrations",
       ],
       numberOfRuns: 3,
       // Audit returning-user performance with essential-only consent. The

@@ -6,10 +6,10 @@
  * lives in one place.
  */
 
-export type QuizSourceType = "primary" | "secondary" | "ai";
+import type { SourceTier } from "@/types/sources";
 
 export interface QuizAssertionSource {
-  type: QuizSourceType;
+  tier: SourceTier;
   resolvable: boolean;
 }
 
@@ -23,7 +23,7 @@ export interface QuizEligibilityInput {
 export type QuizEligibilityRejectionReason =
   | "confidence_below_threshold"
   | "no_human_audit"
-  | "no_tier1_or_tier2_source"
+  | "no_authoritative_source"
   | "open_flags_present";
 
 export type QuizEligibilityResult =
@@ -42,11 +42,16 @@ export function getQuizMinConfidence(): number {
   return Number.isFinite(parsed) ? parsed : DEFAULT_QUIZ_MIN_CONFIDENCE;
 }
 
+/**
+ * An `unverified` source may back a published fiche, but it may not back a
+ * quiz answer: the quiz asserts a fact as correct, so it needs a source that
+ * carries authority of its own.
+ */
 function hasEligibleSource(sources: QuizAssertionSource[]): boolean {
   return sources.some(
     (source) =>
       source.resolvable &&
-      (source.type === "primary" || source.type === "secondary")
+      (source.tier === "official" || source.tier === "referenced")
   );
 }
 
@@ -67,7 +72,7 @@ export function isQuizEligible(
     return { eligible: false, reason: "no_human_audit" };
   }
   if (!hasEligibleSource(input.assertionSources)) {
-    return { eligible: false, reason: "no_tier1_or_tier2_source" };
+    return { eligible: false, reason: "no_authoritative_source" };
   }
   if (input.openFlagCount !== 0) {
     return { eligible: false, reason: "open_flags_present" };

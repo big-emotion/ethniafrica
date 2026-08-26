@@ -64,9 +64,24 @@
       ]
     },
     "sources": [
-      "Mukulu of Zambia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015611/)",
-      "Mukulu in Zambia – Joshua Project (https://joshuaproject.net/people_groups/13860)",
-      "ISO 639-3 codes Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)"
+      {
+        "title": "Mukulu of Zambia – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg015611/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Mukulu in Zambia – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/13860",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "ISO 639-3 codes Africa – Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      }
     ]
   }
 }

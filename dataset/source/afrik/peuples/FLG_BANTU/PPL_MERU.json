@@ -94,12 +94,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Meru (mer) : https://tsammalex.clld.org/languages/mer",
-      "Kenya National Bureau of Statistics — 2019 Kenya Population and Housing Census : https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Volume-4-Distribution-of-Population-by-Socio-Economic-Characteristics.pdf",
-      "CityPopulation — Meru County Kenya : https://www.citypopulation.de/en/kenya/sub/admin/12__meru/",
-      "LocalePlanet — Meru (mer) ISO code : https://www.localeplanet.com/icu/mer-KE/index.html",
-      "Joshua Project — Meru in Kenya : https://joshuaproject.net/",
-      "Jeffrey Fadiman — When We Began There Were Witchmen: An Oral History from Mount Kenya. University of Washington Press, 1993."
+      {
+        "title": "SIL Ethnologue — Meru (mer)",
+        "url": "https://tsammalex.clld.org/languages/mer",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for tsammalex.clld.org."
+      },
+      {
+        "title": "Kenya National Bureau of Statistics — 2019 Kenya Population and Housing Census",
+        "url": "https://www.knbs.or.ke/wp-content/uploads/2023/09/2019-Kenya-population-and-Housing-Census-Volume-4-Distribution-of-Population-by-Socio-Economic-Characteristics.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for knbs.or.ke."
+      },
+      {
+        "title": "CityPopulation — Meru County Kenya",
+        "url": "https://www.citypopulation.de/en/kenya/sub/admin/12__meru/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+      },
+      {
+        "title": "LocalePlanet — Meru (mer) ISO code",
+        "url": "https://www.localeplanet.com/icu/mer-KE/index.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers localeplanet.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Meru in Kenya",
+        "url": "https://joshuaproject.net/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Jeffrey Fadiman — When We Began There Were Witchmen: An Oral History from Mount Kenya. University of Washington Press, 1993",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

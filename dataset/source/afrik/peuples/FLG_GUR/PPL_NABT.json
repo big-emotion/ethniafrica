@@ -95,10 +95,30 @@
       ]
     },
     "sources": [
-      "DDHS Group - Nabdam District Profile (2025). https://ddhsgroup.org/portfolio-items/nabdam-district-profile/",
-      "101 Last Tribes - Frafra people. https://www.101lasttribes.com/tribes/nankana.html",
-      "Akolgo, Joseph Octavius - Investiture of Chiefs, a Relic of Colonialism? ASC-TUFS Working Papers (2024). https://www.jstage.jst.go.jp/article/ascwp/4/0/4_39/_pdf/-char/ja",
-      "Facebook - Mamprusi People - The Nangodi Traditional Area. https://www.facebook.com/mamprusiPeople/posts/the-nangodi-traditional-area"
+      {
+        "title": "DDHS Group - Nabdam District Profile (2025)",
+        "url": "https://ddhsgroup.org/portfolio-items/nabdam-district-profile/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ddhsgroup.org; the tier awaits editorial review."
+      },
+      {
+        "title": "101 Last Tribes - Frafra people",
+        "url": "https://www.101lasttribes.com/tribes/nankana.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Akolgo, Joseph Octavius - Investiture of Chiefs, a Relic of Colonialism? ASC-TUFS Working Papers (2024)",
+        "url": "https://www.jstage.jst.go.jp/article/ascwp/4/0/4_39/_pdf/-char/ja",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for jstage.jst.go.jp."
+      },
+      {
+        "title": "Facebook - Mamprusi People - The Nangodi Traditional Area",
+        "url": "https://www.facebook.com/mamprusiPeople/posts/the-nangodi-traditional-area",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

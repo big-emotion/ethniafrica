@@ -107,10 +107,30 @@
       ]
     },
     "sources": [
-      "Joshua Project – Mbunda in Angola, 2025 (https://joshuaproject.net/people_groups/13643/AO)",
-      "Joshua Project – Mbunda in Zambia, 2025 (https://joshuaproject.net/people_groups/13643/ZA)",
-      "The Mbunda Royal Establishment Zambia – The History of the Mbunda People (https://mbundaroyalestablishmentzambia.wordpress.com/the-history-of-the-mbunda-people/)",
-      "Qiraat Africa – Mbunda people of Angola and Zambia (https://qiraatafrican.com/en/19885/mbunda-people-of-angola-and-zambia/)"
+      {
+        "title": "Joshua Project – Mbunda in Angola, 2025",
+        "url": "https://joshuaproject.net/people_groups/13643/AO",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project – Mbunda in Zambia, 2025",
+        "url": "https://joshuaproject.net/people_groups/13643/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "The Mbunda Royal Establishment Zambia – The History of the Mbunda People",
+        "url": "https://mbundaroyalestablishmentzambia.wordpress.com/the-history-of-the-mbunda-people/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of mbundaroyalestablishmentzambia.wordpress.com."
+      },
+      {
+        "title": "Qiraat Africa – Mbunda people of Angola and Zambia",
+        "url": "https://qiraatafrican.com/en/19885/mbunda-people-of-angola-and-zambia/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      }
     ]
   }
 }

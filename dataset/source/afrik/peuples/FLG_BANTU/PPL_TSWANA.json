@@ -101,11 +101,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Tswana (tsn) : https://www.ethnologue.com/language/tsn/",
-      "Namibia Tourism Board — Tswana people in Namibia (2025) : https://www.facebook.com/NamibiaTourismBoard/posts/the-smallest-cultural-group-in-namibia",
-      "CIA World Factbook — Botswana : https://www.cia.gov/the-world-factbook/countries/botswana/",
-      "CIA World Factbook — South Africa : https://www.cia.gov/the-world-factbook/countries/south-africa/",
-      "Academia.edu — Setswana Dialects and Inter-Dialectical Variation in Botswana : https://www.academia.edu/41715929/Setswana_Dialects_and_Inter_Dialectical_Variation_in_the_Republic_of_Botswana"
+      {
+        "title": "SIL Ethnologue — Tswana (tsn)",
+        "url": "https://www.ethnologue.com/language/tsn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Namibia Tourism Board — Tswana people in Namibia (2025)",
+        "url": "https://www.facebook.com/NamibiaTourismBoard/posts/the-smallest-cultural-group-in-namibia",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "CIA World Factbook — Botswana",
+        "url": "https://www.cia.gov/the-world-factbook/countries/botswana/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "CIA World Factbook — South Africa",
+        "url": "https://www.cia.gov/the-world-factbook/countries/south-africa/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Academia.edu — Setswana Dialects and Inter-Dialectical Variation in Botswana",
+        "url": "https://www.academia.edu/41715929/Setswana_Dialects_and_Inter_Dialectical_Variation_in_the_Republic_of_Botswana",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academia.edu."
+      }
     ]
   }
 }

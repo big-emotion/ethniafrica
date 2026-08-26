@@ -108,11 +108,36 @@
       ]
     },
     "sources": [
-      "UNESCO — Xeer Ciise (patrimoine immatériel 2024). https://ich.unesco.org/en/RL/xeer-ciise-oral-customary-laws-of-somali-issa-communities-in-ethiopia-djibouti-and-somalia-02087",
-      "UNFPA — Somalia Population 2025. https://www.unfpa.org/data/world-population/SO",
-      "Britannica — Somali people. https://www.britannica.com/topic/Somali-people",
-      "Countrystudies.us — Somalia : Origins, Migrations, and Settlement. https://countrystudies.us/somalia/3.htm",
-      "101 Last Tribes — Somali people profile. https://www.101lasttribes.com/tribes/somalis.html"
+      {
+        "title": "UNESCO — Xeer Ciise (patrimoine immatériel 2024)",
+        "url": "https://ich.unesco.org/en/RL/xeer-ciise-oral-customary-laws-of-somali-issa-communities-in-ethiopia-djibouti-and-somalia-02087",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "UNFPA — Somalia Population 2025",
+        "url": "https://www.unfpa.org/data/world-population/SO",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+      },
+      {
+        "title": "Britannica — Somali people",
+        "url": "https://www.britannica.com/topic/Somali-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Countrystudies.us — Somalia : Origins, Migrations, and Settlement",
+        "url": "https://countrystudies.us/somalia/3.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      },
+      {
+        "title": "101 Last Tribes — Somali people profile",
+        "url": "https://www.101lasttribes.com/tribes/somalis.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

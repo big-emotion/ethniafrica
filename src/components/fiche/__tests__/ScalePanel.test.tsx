@@ -66,7 +66,9 @@ const COUNTRY_WITH_DEMOGRAPHICS: CountryDetail = {
       { name: "Igbo", population: 32_000_000, percentageInCountry: 15 },
     ],
   },
-  sources: ["CIA World Factbook, 2025"],
+  sources: [
+    { title: "CIA World Factbook, 2025", url: null, tier: "unverified" },
+  ],
 };
 
 const FAMILY_BASE: LanguageFamilyDetail = {
@@ -79,7 +81,7 @@ const FAMILY_WITH_DISTRIBUTION: LanguageFamilyDetail = {
   generalInfo: {
     numberOfLanguages: 1542,
   },
-  sources: ["Glottolog 5.0"],
+  sources: [{ title: "Glottolog 5.0", url: null, tier: "unverified" }],
 };
 
 const CONTESTED_FAMILY: LanguageFamilyDetail = {

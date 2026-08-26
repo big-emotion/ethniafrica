@@ -84,12 +84,42 @@
       ]
     },
     "sources": [
-      "Ethnologue — Ghomara (gho). https://www.ethnologue.com/language/gho/",
-      "Glottolog — Ghomara (ghom1257). https://glottolog.org/resource/languoid/id/ghom1257",
-      "Joshua Project — Berber, Ghomara in Morocco. https://joshuaproject.net/people_groups/11882",
-      "IRCAM (Institut Royal de la Culture Amazighe) — Études amazighes du Rif. https://www.ircam.ma/",
-      "Ibn Khaldoun, Abd ar-Rahman. Kitab al-Ibar (Histoire des Berbères). 14e siècle.",
-      "Al-Muqadassi. Ahsan at-Taqasim fi Marifat al-Aqalim. 10e siècle."
+      {
+        "title": "Ethnologue — Ghomara (gho)",
+        "url": "https://www.ethnologue.com/language/gho/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Ghomara (ghom1257)",
+        "url": "https://glottolog.org/resource/languoid/id/ghom1257",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Joshua Project — Berber, Ghomara in Morocco",
+        "url": "https://joshuaproject.net/people_groups/11882",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "IRCAM (Institut Royal de la Culture Amazighe) — Études amazighes du Rif",
+        "url": "https://www.ircam.ma/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ircam.ma."
+      },
+      {
+        "title": "Ibn Khaldoun, Abd ar-Rahman. Kitab al-Ibar (Histoire des Berbères). 14e siècle",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Al-Muqadassi. Ahsan at-Taqasim fi Marifat al-Aqalim. 10e siècle",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

@@ -105,12 +105,42 @@
       ]
     },
     "sources": [
-      "ThinkAfrica.net — Federation of Kwararafa (13th-18th Century) : https://thinkafrica.net/kwararafa/",
-      "RSIS International — The Jukun-Muri Relations: Pre-Colonial Dynamics (2025) : https://rsisinternational.org/journals/ijriss/articles/the-jukun-muri-relations-pre-colonial-dynamics/",
-      "Ethnologue (SIL) — Jukun Takum (jbu) : https://www.ethnologue.com/language/jbu/",
-      "Joshua Project — Jukun Kona in Nigeria : https://joshuaproject.net/people_groups/12770",
-      "Meek, C.K. (1931). A Sudanese Kingdom: An Ethnographical Study of the Jukun-speaking Peoples of Nigeria. London: Kegan Paul.",
-      "ASJP Database — Jukun Takum, ISO 639-3 jbu : https://asjp.clld.org/languages/JUKUN_TAKUM"
+      {
+        "title": "ThinkAfrica.net — Federation of Kwararafa (13th-18th Century)",
+        "url": "https://thinkafrica.net/kwararafa/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers thinkafrica.net; the tier awaits editorial review."
+      },
+      {
+        "title": "RSIS International — The Jukun-Muri Relations: Pre-Colonial Dynamics (2025)",
+        "url": "https://rsisinternational.org/journals/ijriss/articles/the-jukun-muri-relations-pre-colonial-dynamics/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for rsisinternational.org."
+      },
+      {
+        "title": "Ethnologue (SIL) — Jukun Takum (jbu)",
+        "url": "https://www.ethnologue.com/language/jbu/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Jukun Kona in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/12770",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Meek, C.K. (1931). A Sudanese Kingdom: An Ethnographical Study of the Jukun-speaking Peoples of Nigeria. London: Kegan Paul",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "ASJP Database — Jukun Takum, ISO 639-3 jbu",
+        "url": "https://asjp.clld.org/languages/JUKUN_TAKUM",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for asjp.clld.org."
+      }
     ]
   }
 }

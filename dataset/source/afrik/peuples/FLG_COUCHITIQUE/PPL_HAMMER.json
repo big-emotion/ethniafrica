@@ -79,10 +79,30 @@
       ]
     },
     "sources": [
-      "Hamer-Banne Language (AMF) – Ethnologue (https://www.ethnologue.com/language/amf/)",
-      "Hamar PDF – DICE Missouri University, Strecker I. (https://dice.missouri.edu/assets/docs/afro-asiatic/Hamar.pdf)",
-      "Appendix ISO 639-3 codes Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
-      "Hamer language PDF – Archive.org, 2020 (https://archive.org/download/enwiki-Hamer_language-20200726.pdf/enwiki-Hamer_language-20200726.pdf)"
+      {
+        "title": "Hamer-Banne Language (AMF) – Ethnologue",
+        "url": "https://www.ethnologue.com/language/amf/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Hamar PDF – DICE Missouri University, Strecker I",
+        "url": "https://dice.missouri.edu/assets/docs/afro-asiatic/Hamar.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      },
+      {
+        "title": "Appendix ISO 639-3 codes Africa – Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      },
+      {
+        "title": "Hamer language PDF – Archive.org, 2020",
+        "url": "https://archive.org/download/enwiki-Hamer_language-20200726.pdf/enwiki-Hamer_language-20200726.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for archive.org."
+      }
     ]
   }
 }

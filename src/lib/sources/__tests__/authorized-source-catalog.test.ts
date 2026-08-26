@@ -7,7 +7,7 @@ import {
 
 describe("authorized source catalogue", () => {
   // @req REQ-092
-  it("contains unique stable keys and only assigns evidence tiers to publishable entries", () => {
+  it("contains unique stable keys and coherent tiers", () => {
     expect(validateAuthorizedSourceCatalog(authorizedSourceCatalog)).toEqual(
       []
     );
@@ -18,29 +18,51 @@ describe("authorized source catalogue", () => {
   });
 
   // @req REQ-092
+  it("rejects a discovery surface claiming authority", () => {
+    const issues = validateAuthorizedSourceCatalog({
+      version: 99,
+      entries: [
+        {
+          key: "wikipedia",
+          name: "Wikipedia",
+          tier: "official",
+          sourceKind: "discovery",
+          matchDomains: ["wikipedia.org"],
+        },
+      ],
+    });
+    expect(issues).toEqual([
+      'wikipedia: a discovery source cannot be tiered "official"',
+    ]);
+  });
+
+  // @req REQ-092
   it.each([
-    ["https://www.un.org/development/desa/pd/", "preferred", 1],
-    ["https://glottolog.org/", "preferred", 1],
-    ["https://www.jstor.org/stable/123", "allowed", 2],
-    ["https://en.wikipedia.org/wiki/Yoruba_people", "discovery_only", null],
-    ["https://www.worldcat.org/title/example", "discovery_only", null],
-    ["https://chat.openai.com/", "prohibited", null],
-  ])("evaluates %s consistently", (url, admission, evidenceTier) => {
-    expect(evaluateSourceUrl(url)).toMatchObject({
-      admission,
-      evidenceTier,
-      publishable: admission === "preferred" || admission === "allowed",
+    ["https://www.un.org/development/desa/pd/", "official"],
+    ["https://glottolog.org/", "official"],
+    ["https://www.jstor.org/stable/123", "referenced"],
+    ["https://en.wikipedia.org/wiki/Yoruba_people", "unverified"],
+    ["https://www.worldcat.org/title/example", "unverified"],
+    ["https://chat.openai.com/", "unverified"],
+  ])("tiers %s as %s", (url, tier) => {
+    expect(evaluateSourceUrl(url)).toMatchObject({ tier });
+  });
+
+  // @req REQ-092
+  it("keeps AI provenance on the source_kind axis, not the tier", () => {
+    expect(evaluateSourceUrl("https://claude.ai/chat/123")).toEqual({
+      key: "ai-generated",
+      tier: "unverified",
+      sourceKind: "ai_generated",
     });
   });
 
   // @req REQ-092
-  it("requires review for an unknown source without treating it as publishable evidence", () => {
+  it("tiers an off-catalogue source as unverified rather than refusing it", () => {
     expect(evaluateSourceUrl("https://unclassified.example/evidence")).toEqual({
       key: "unknown",
-      admission: "review_required",
-      evidenceTier: null,
+      tier: "unverified",
       sourceKind: "unknown",
-      publishable: false,
     });
   });
 });

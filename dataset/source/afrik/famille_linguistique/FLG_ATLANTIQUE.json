@@ -69,13 +69,48 @@
       }
     },
     "sources": [
-      "Obenga, T. – *Origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*",
-      "Sapir, J. D. – *West Atlantic: An Inventory of the Languages*",
-      "Greenberg, J. – *The Languages of Africa* (Classification critique)",
-      "Diop, C. A. – *Parenté génétique de l'égyptien pharaonique et des langues négro-africaines*",
-      "UNESCO – *Histoire générale de l'Afrique*",
-      "Glottolog (2025) – \"North-Central Atlantic\". https://glottolog.org/resource/languoid/id/nort3146",
-      "Agence Nationale de la Statistique et de la Démographie (ANSD), Sénégal (2023) – RGPH-5, Rapport Chapitre 1 : État et structure de la population, Table I-32 (Wolof langue courante). https://www.ansd.sn/sites/default/files/recensements/rapport/Chapitre-1_ETAT-STRUCTURE-POPULATION-Rapport-def-RGPH-5.pdf"
+      {
+        "title": "Obenga, T. – *Origine commune de l'égyptien ancien, du copte et des langues négro-africaines modernes*",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Sapir, J. D. – *West Atlantic: An Inventory of the Languages*",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Greenberg, J. – *The Languages of Africa* (Classification critique)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Diop, C. A. – *Parenté génétique de l'égyptien pharaonique et des langues négro-africaines*",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNESCO – *Histoire générale de l'Afrique*",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog (2025) – \"North-Central Atlantic\"",
+        "url": "https://glottolog.org/resource/languoid/id/nort3146",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Agence Nationale de la Statistique et de la Démographie (ANSD), Sénégal (2023) – RGPH-5, Rapport Chapitre 1 : État et structure de la population, Table I-32 (Wolof langue courante)",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/Chapitre-1_ETAT-STRUCTURE-POPULATION-Rapport-def-RGPH-5.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ansd.sn."
+      }
     ]
   }
 }

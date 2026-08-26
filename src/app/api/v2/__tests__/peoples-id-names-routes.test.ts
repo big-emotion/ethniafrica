@@ -42,7 +42,7 @@ const validEnvelope = {
             title: "Ethnologue",
             url: "https://ethnologue.com",
             year: 2023,
-            tier: "primary",
+            tier: "official",
           },
         ],
         confidence: { score: 85, recomputedAt: "2026-07-31T10:00:00Z" },

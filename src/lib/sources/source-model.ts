@@ -4,7 +4,10 @@ import type {
   LegacySourceCandidate,
   StructuredSourceRecord,
 } from "@/types/sources";
-import { sourceKindSchema } from "@/lib/sources/authorized-source-catalog";
+import {
+  sourceKindSchema,
+  sourceTierSchema,
+} from "@/lib/sources/authorized-source-catalog";
 
 const stableSourceKeySchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, {
   message: "sourceKey must be a stable kebab-case key",
@@ -21,18 +24,14 @@ const httpUrlSchema = z
     { message: "url must use HTTP or HTTPS" }
   );
 
+// @req REQ-093
 export const structuredSourceKindSchema = sourceKindSchema.exclude([
   "discovery",
   "ai_generated",
   "unknown",
 ]);
 
-export const evidenceTierSchema = z.union([
-  z.literal(1),
-  z.literal(2),
-  z.null(),
-]);
-
+// @req REQ-093
 export const sourceRecordSchema = z
   .object({
     sourceKey: stableSourceKeySchema,
@@ -40,13 +39,14 @@ export const sourceRecordSchema = z
     authors: z.array(z.string().min(1)).min(1),
     publicationYear: z.number().int(),
     sourceKind: structuredSourceKindSchema,
-    evidenceTier: evidenceTierSchema,
+    tier: sourceTierSchema,
     identifiers: z.record(z.string().min(1)),
     publisher: z.string().min(1).nullable(),
     url: httpUrlSchema.nullable(),
   })
   .strict();
 
+// @req REQ-093
 export const assertionLocatorTypeSchema = z.enum([
   "page",
   "folio",
@@ -54,6 +54,7 @@ export const assertionLocatorTypeSchema = z.enum([
   "timestamp",
 ]);
 
+// @req REQ-093
 export const assertionSourceReferenceSchema = z
   .object({
     sourceKey: stableSourceKeySchema,
@@ -71,6 +72,7 @@ export type LegacySourceAdapterResult =
   | { success: true; data: LegacySourceCandidate[] }
   | { success: false; errors: LegacySourceAdapterError[] };
 
+// @req REQ-093
 export function adaptLegacySources(raw: unknown): LegacySourceAdapterResult {
   if (!Array.isArray(raw)) {
     return {
@@ -102,6 +104,7 @@ export function adaptLegacySources(raw: unknown): LegacySourceAdapterResult {
     : { success: true, data };
 }
 
+// @req REQ-093
 export function toStructuredSourceRecord(
   value: z.infer<typeof sourceRecordSchema>
 ): StructuredSourceRecord {
@@ -111,13 +114,14 @@ export function toStructuredSourceRecord(
     authors: value.authors,
     publicationYear: value.publicationYear,
     sourceKind: value.sourceKind,
-    evidenceTier: value.evidenceTier,
+    tier: value.tier,
     identifiers: value.identifiers,
     publisher: value.publisher,
     url: value.url,
   };
 }
 
+// @req REQ-093
 export function toAssertionSourceReference(
   value: z.infer<typeof assertionSourceReferenceSchema>
 ): AssertionSourceReference {

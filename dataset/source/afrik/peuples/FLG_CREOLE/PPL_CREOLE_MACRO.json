@@ -115,11 +115,36 @@
       ]
     },
     "sources": [
-      "Newitt, Malyn. Africa and the wider world: creole communities in the Atlantic and Indian Oceans. Revista Tempo, vol. 23, n.3, 2017. https://www.scielo.br/j/tem/a/J9bCFkBXm7rw4B8RcTj9zWS/",
-      "SIL Ethnologue — Creole languages subgroup. https://www.ethnologue.com/subgroup/70/",
-      "African American Registry — The Creole Communities of Africa. https://aaregistry.org/story/the-creole-communities-of-africa-a-brief-article/",
-      "Wiktionary — ISO 639-3 codes (Creole languages). https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Others",
-      "CIA World Factbook — Country profiles (Mauritius, Seychelles, São Tomé, Sierra Leone, Cape Verde, Réunion). https://www.cia.gov/the-world-factbook/"
+      {
+        "title": "Newitt, Malyn. Africa and the wider world: creole communities in the Atlantic and Indian Oceans. Revista Tempo, vol. 23, n.3, 2017",
+        "url": "https://www.scielo.br/j/tem/a/J9bCFkBXm7rw4B8RcTj9zWS/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scielo.br."
+      },
+      {
+        "title": "SIL Ethnologue — Creole languages subgroup",
+        "url": "https://www.ethnologue.com/subgroup/70/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "African American Registry — The Creole Communities of Africa",
+        "url": "https://aaregistry.org/story/the-creole-communities-of-africa-a-brief-article/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for aaregistry.org."
+      },
+      {
+        "title": "Wiktionary — ISO 639-3 codes (Creole languages)",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Others",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      },
+      {
+        "title": "CIA World Factbook — Country profiles (Mauritius, Seychelles, São Tomé, Sierra Leone, Cape Verde, Réunion)",
+        "url": "https://www.cia.gov/the-world-factbook/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

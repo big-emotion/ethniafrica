@@ -70,12 +70,42 @@
       ]
     },
     "sources": [
-      "Minority Rights Group – Liberia country profile, 2024 (https://minorityrights.org/country/liberia/)",
-      "Joshua Project – Dewoin in Liberia (https://joshuaproject.net/people_groups/11541)",
-      "Joshua Project – Liberia people groups (https://joshuaproject.net/countries/li)",
-      "Modern Ghana – Historicity of Liberia Before the Arrival of the Settlers, 2019 (https://www.modernghana.com/news/966909/historicity-of-liberia-before-the-arrival-of-the.html)",
-      "HartfordInfo – Liberians: An Introduction to their History and Culture (http://www.hartfordinfo.org/issues/wsd/immigrants/liberians.pdf)",
-      "Encyclopaedia Britannica – Liberia: People (https://www.britannica.com/place/Liberia/People)"
+      {
+        "title": "Minority Rights Group – Liberia country profile, 2024",
+        "url": "https://minorityrights.org/country/liberia/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Joshua Project – Dewoin in Liberia",
+        "url": "https://joshuaproject.net/people_groups/11541",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project – Liberia people groups",
+        "url": "https://joshuaproject.net/countries/li",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Modern Ghana – Historicity of Liberia Before the Arrival of the Settlers, 2019",
+        "url": "https://www.modernghana.com/news/966909/historicity-of-liberia-before-the-arrival-of-the.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for modernghana.com."
+      },
+      {
+        "title": "HartfordInfo – Liberians: An Introduction to their History and Culture",
+        "url": "http://www.hartfordinfo.org/issues/wsd/immigrants/liberians.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for hartfordinfo.org."
+      },
+      {
+        "title": "Encyclopaedia Britannica – Liberia: People",
+        "url": "https://www.britannica.com/place/Liberia/People",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

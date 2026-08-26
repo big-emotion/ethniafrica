@@ -68,11 +68,36 @@
       ]
     },
     "sources": [
-      "Oyda – DOBES Documentation of Endangered Languages, Max Planck Institute / JCU, 2013 (https://dobes.mpi.nl/projects/oyda/)",
-      "Oyda Language (OYD) – Ethnologue / SIL International, 2024 (https://www.ethnologue.com/language/oyd/)",
-      "Oyda in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14240)",
-      "Glottolog 5.3 : Oyda (oyda1235) – Hammarstrom et al., 2024 (https://glottolog.org/resource/languoid/id/oyda1235)",
-      "Multi-media documentation of the Oyda Language – Amha A., JCU Research Online, 2013 (https://researchonline.jcu.edu.au/28529/1/28529_Amha_2013.pdf)"
+      {
+        "title": "Oyda – DOBES Documentation of Endangered Languages, Max Planck Institute / JCU, 2013",
+        "url": "https://dobes.mpi.nl/projects/oyda/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dobes.mpi.nl."
+      },
+      {
+        "title": "Oyda Language (OYD) – Ethnologue / SIL International, 2024",
+        "url": "https://www.ethnologue.com/language/oyd/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Oyda in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/14240",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Glottolog 5.3 : Oyda (oyda1235) – Hammarstrom et al., 2024",
+        "url": "https://glottolog.org/resource/languoid/id/oyda1235",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Multi-media documentation of the Oyda Language – Amha A., JCU Research Online, 2013",
+        "url": "https://researchonline.jcu.edu.au/28529/1/28529_Amha_2013.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for researchonline.jcu.edu.au."
+      }
     ]
   }
 }

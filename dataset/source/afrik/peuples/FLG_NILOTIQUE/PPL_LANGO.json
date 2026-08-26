@@ -85,11 +85,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Lango language (laj). https://www.ethnologue.com/language/laj/",
-      "101 Last Tribes — Lango people. https://www.101lasttribes.com/tribes/lango.html",
-      "Lango Cultural Foundation — Clans et vie sociale. https://langoculturalfoundation.org/service-details-right.html",
-      "Driberg, J.H. The Lango: A Nilotic Tribe of Uganda. London, 1923.",
-      "Academia.edu — The Socio-Political History of the Langi of Uganda 1750-1909. https://www.academia.edu/11684657/"
+      {
+        "title": "SIL Ethnologue — Lango language (laj)",
+        "url": "https://www.ethnologue.com/language/laj/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "101 Last Tribes — Lango people",
+        "url": "https://www.101lasttribes.com/tribes/lango.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Lango Cultural Foundation — Clans et vie sociale",
+        "url": "https://langoculturalfoundation.org/service-details-right.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers langoculturalfoundation.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Driberg, J.H. The Lango: A Nilotic Tribe of Uganda. London, 1923",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Academia.edu — The Socio-Political History of the Langi of Uganda 1750-1909",
+        "url": "https://www.academia.edu/11684657/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academia.edu."
+      }
     ]
   }
 }

@@ -68,12 +68,42 @@
       ]
     },
     "sources": [
-      "A Sustainable Future for the Pimbwe – Cultural Survival Quarterly, 2010 (https://www.culturalsurvival.org/publications/cultural-survival-quarterly/sustainable-future-pimbwe-peoples-mpimbwe-fund)",
-      "Pimbwe in Tanzania – Joshua Project (https://www.joshuaproject.net/people_groups/14394)",
-      "Pimbwe of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015021/)",
-      "Social Organization and Social Status in Nineteenth and Twentieth Century Rukwa – Waters, African Studies Quarterly vol.11 no.1 (https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf)",
-      "A Description of Pimbwe (Bantu, Tanzania) – Trinity Western University / ARCA (https://arcabc.ca/islandora/object/twu:639/datastream/PDF/download/citation.pdf)",
-      "ISO 639-3 Language Codes – National Center for Education Statistics (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)"
+      {
+        "title": "A Sustainable Future for the Pimbwe – Cultural Survival Quarterly, 2010",
+        "url": "https://www.culturalsurvival.org/publications/cultural-survival-quarterly/sustainable-future-pimbwe-peoples-mpimbwe-fund",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for culturalsurvival.org."
+      },
+      {
+        "title": "Pimbwe in Tanzania – Joshua Project",
+        "url": "https://www.joshuaproject.net/people_groups/14394",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Pimbwe of Tanzania – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg015021/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Social Organization and Social Status in Nineteenth and Twentieth Century Rukwa – Waters, African Studies Quarterly vol.11 no.1",
+        "url": "https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for asq.africa.ufl.edu."
+      },
+      {
+        "title": "A Description of Pimbwe (Bantu, Tanzania) – Trinity Western University / ARCA",
+        "url": "https://arcabc.ca/islandora/object/twu:639/datastream/PDF/download/citation.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for arcabc.ca."
+      },
+      {
+        "title": "ISO 639-3 Language Codes – National Center for Education Statistics",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      }
     ]
   }
 }

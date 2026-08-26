@@ -80,11 +80,36 @@
       ]
     },
     "sources": [
-      "Djimadoumadji Naidongarti - Les peuples preislamiques et precoloniaux du Tchad. ACAREF, 2024. https://edition-efua.acaref.net/wp-content/uploads/sites/6/2024/03/4-DJIMADOUMADJI-Naidongarti.pdf",
-      "SIL Ethnologue - Kanembu (kbl). https://www.ethnologue.com/language/kbl/",
-      "Minority Rights Group - Chad. https://minorityrights.org/country/chad/",
-      "Joshua Project - Chad people groups. https://joshuaproject.net/countries/CD",
-      "CIA World Factbook - Chad. https://www.cia.gov/the-world-factbook/countries/chad/"
+      {
+        "title": "Djimadoumadji Naidongarti - Les peuples preislamiques et precoloniaux du Tchad. ACAREF, 2024",
+        "url": "https://edition-efua.acaref.net/wp-content/uploads/sites/6/2024/03/4-DJIMADOUMADJI-Naidongarti.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for acaref.net, matched as a parent of edition-efua.acaref.net."
+      },
+      {
+        "title": "SIL Ethnologue - Kanembu (kbl)",
+        "url": "https://www.ethnologue.com/language/kbl/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Minority Rights Group - Chad",
+        "url": "https://minorityrights.org/country/chad/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Joshua Project - Chad people groups",
+        "url": "https://joshuaproject.net/countries/CD",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "CIA World Factbook - Chad",
+        "url": "https://www.cia.gov/the-world-factbook/countries/chad/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

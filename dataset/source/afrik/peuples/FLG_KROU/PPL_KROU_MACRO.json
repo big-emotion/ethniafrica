@@ -126,13 +126,48 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica — Kru. https://www.britannica.com/topic/Kru",
-      "Scribd — Histoire et culture du peuple Krou. https://fr.scribd.com/document/457402032/expose-sur-les-krou-docx",
-      "VoyagesAventures.com — Peuples du monde : Krou. https://voyagesaventures.com/peuplesmonde/component/content/category/202-catalogue-des-peuples/18-peuples-de-gal/334-krou2.html",
-      "Minority Rights Group — Liberia. https://minorityrights.org/country/liberia/",
-      "Minority Rights Group — Côte d'Ivoire. https://minorityrights.org/country/cote-divoire/",
-      "Glottolog — Kru language family. https://glottolog.org/resource/languoid/id/kru1245",
-      "Qiraat Africa — The Kru/Kroo of West Africa. https://qiraatafrican.com/en/19895/the-kru-kroo-of-west-africa/"
+      {
+        "title": "Encyclopaedia Britannica — Kru",
+        "url": "https://www.britannica.com/topic/Kru",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Scribd — Histoire et culture du peuple Krou",
+        "url": "https://fr.scribd.com/document/457402032/expose-sur-les-krou-docx",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for scribd.com, matched as a parent of fr.scribd.com."
+      },
+      {
+        "title": "VoyagesAventures.com — Peuples du monde : Krou",
+        "url": "https://voyagesaventures.com/peuplesmonde/component/content/category/202-catalogue-des-peuples/18-peuples-de-gal/334-krou2.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers voyagesaventures.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Minority Rights Group — Liberia",
+        "url": "https://minorityrights.org/country/liberia/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Minority Rights Group — Côte d'Ivoire",
+        "url": "https://minorityrights.org/country/cote-divoire/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Glottolog — Kru language family",
+        "url": "https://glottolog.org/resource/languoid/id/kru1245",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Qiraat Africa — The Kru/Kroo of West Africa",
+        "url": "https://qiraatafrican.com/en/19895/the-kru-kroo-of-west-africa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      }
     ]
   }
 }

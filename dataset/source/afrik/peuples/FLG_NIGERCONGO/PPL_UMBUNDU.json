@@ -89,10 +89,30 @@
       ]
     },
     "sources": [
-      "Joshua Project – Ovimbundu, Umbundu in Angola (https://joshuaproject.net/people_groups/15706/AO)",
-      "Minority Rights Group – Ovimbundu in Angola (https://minorityrights.org/communities/ovimbundu/)",
-      "eHRAF World Cultures – Ovimbundu summary (https://ehrafworldcultures.yale.edu/cultures/fp13/summary)",
-      "Localizely – Umbundu language code umb (https://localizely.com/language-code/umb/)"
+      {
+        "title": "Joshua Project – Ovimbundu, Umbundu in Angola",
+        "url": "https://joshuaproject.net/people_groups/15706/AO",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Minority Rights Group – Ovimbundu in Angola",
+        "url": "https://minorityrights.org/communities/ovimbundu/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "eHRAF World Cultures – Ovimbundu summary",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fp13/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "Localizely – Umbundu language code umb",
+        "url": "https://localizely.com/language-code/umb/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for localizely.com."
+      }
     ]
   }
 }

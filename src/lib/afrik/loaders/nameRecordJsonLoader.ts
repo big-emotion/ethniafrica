@@ -39,10 +39,6 @@ function isIllustrative(raw: unknown): boolean {
   );
 }
 
-function mapSourceTier(tier: 1 | 2): "primary" | "secondary" {
-  return tier === 1 ? "primary" : "secondary";
-}
-
 function errorMessage(value: { message: string } | null | undefined): string {
   return value?.message ?? "unknown Supabase error";
 }
@@ -54,6 +50,7 @@ function errorMessage(value: { message: string } | null | undefined): string {
  * (parent of `noms/`), matching the `collectNameRecordFiles` convention in
  * scripts/validateAfrikData.ts.
  */
+// @req REQ-057
 export function loadAllNameRecordDossiers(
   datasetRoot: string = AFRIK_ROOT
 ): NameRecordDossier[] {
@@ -106,7 +103,7 @@ async function upsertSource(
         author: source.author,
         year: source.year,
         url: source.url,
-        tier: mapSourceTier(source.tier),
+        tier: source.tier,
         notes: source.notes ?? null,
         added_at: new Date().toISOString(),
       },
@@ -245,6 +242,7 @@ async function upsertNameRecordEntry(
  * fabric). Trigger rejections (sourceless assertions, defense in depth) are
  * logged and skipped; remaining records still load.
  */
+// @req REQ-057
 export async function loadNameRecords(
   supabase: AdminClient,
   dossiers: NameRecordDossier[] = loadAllNameRecordDossiers()

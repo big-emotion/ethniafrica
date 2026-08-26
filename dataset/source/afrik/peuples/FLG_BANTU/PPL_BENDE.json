@@ -72,11 +72,36 @@
       ]
     },
     "sources": [
-      "Bende in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10787)",
-      "Bende Language (BDP) – Ethnologue SIL (https://www.ethnologue.com/language/bdp/)",
-      "Social Organization and Social Status in Nineteenth and Twentieth Century Tanzania – Waters, African Studies Quarterly, Univ. of Florida (https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf)",
-      "The Bende of Tanzania (PG014912) – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg014912/)",
-      "A Bende Vocabulary – Yuko Abe, ILCAA, Tokyo University of Foreign Studies, 2006"
+      {
+        "title": "Bende in Tanzania – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/10787",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Bende Language (BDP) – Ethnologue SIL",
+        "url": "https://www.ethnologue.com/language/bdp/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Social Organization and Social Status in Nineteenth and Twentieth Century Tanzania – Waters, African Studies Quarterly, Univ. of Florida",
+        "url": "https://asq.africa.ufl.edu/wp-content/uploads/sites/168/Waters-V11Is1.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for asq.africa.ufl.edu."
+      },
+      {
+        "title": "The Bende of Tanzania (PG014912) – PeopleGroups.org, 2025",
+        "url": "https://peoplegroups.org/people_groups/pg014912/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "A Bende Vocabulary – Yuko Abe, ILCAA, Tokyo University of Foreign Studies, 2006",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

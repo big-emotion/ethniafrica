@@ -20,6 +20,7 @@ import type {
   DerivedLinguisticLink,
   RelationNeighbor,
   PublicRelationRecord,
+  RelationSourceRef,
 } from "@/types/relations";
 
 const DEFAULT_DERIVED_LIMIT = 24;
@@ -119,15 +120,7 @@ function mapRowToSourcedRelation(
   row: RelationRow,
   pplId: string,
   neighborsMap: Map<string, RelationNeighbor>,
-  sourcesMap: Map<
-    string,
-    Array<{
-      id: string;
-      title: string;
-      url: string | null;
-      tier: string | null;
-    }>
-  >,
+  sourcesMap: Map<string, RelationSourceRef[]>,
   confidenceMap: Map<string, { score: number; sourceCount: number | null }>
 ): SourcedRelation | null {
   const neighbor = neighborsMap.get(otherSideId(row, pplId));
@@ -159,6 +152,7 @@ function mapRowToSourcedRelation(
  * per-edge. Keyed by peopleId; a relation between two ids both present in
  * the input set appears under both keys.
  */
+// @req REQ-093
 export async function getRelationsMap(
   peopleIds: string[]
 ): Promise<Map<string, SourcedRelation[]>> {
@@ -202,6 +196,7 @@ export async function getRelationsMap(
  * Sourced relations touching a single people (side A or B), with neighbor
  * fiche data + confidence. Delegates to getRelationsMap — no per-edge query.
  */
+// @req REQ-093
 export async function getRelationsForPeople(
   pplId: string
 ): Promise<SourcedRelation[]> {
@@ -256,6 +251,7 @@ async function getSourcedNeighborIds(
  * pplId itself and any people already linked to it by a sourced relation.
  * Never null, never throws.
  */
+// @req REQ-093
 export async function getDerivedLinguisticLinks(
   pplId: string,
   limit: number = DEFAULT_DERIVED_LIMIT
@@ -324,6 +320,7 @@ export async function getDerivedLinguisticLinks(
  * from "known people with no relations" (200, empty collections) — a
  * distinction getEgoNetwork itself deliberately does not make (Story 11.6).
  */
+// @req REQ-097
 export async function peopleExists(pplId: string): Promise<boolean> {
   const supabase = createServerClient();
   const { data, error } = await supabase
@@ -341,15 +338,7 @@ export async function peopleExists(pplId: string): Promise<boolean> {
 
 function mapRowToPublicRelationRecord(
   row: RelationRow,
-  sourcesMap: Map<
-    string,
-    Array<{
-      id: string;
-      title: string;
-      url: string | null;
-      tier: string | null;
-    }>
-  >,
+  sourcesMap: Map<string, RelationSourceRef[]>,
   confidenceMap: Map<string, { score: number; sourceCount: number | null }>
 ): PublicRelationRecord {
   const confidence = confidenceMap.get(row.id);
@@ -391,6 +380,7 @@ export interface ListRelationRecordsFilters {
  * overlap query — the simplest defensible interpretation absent a more
  * precise spec (Epic 11 leaves exact period-filter semantics open).
  */
+// @req REQ-097
 export async function listRelationRecords(
   filters: ListRelationRecordsFilters
 ): Promise<{ data: PublicRelationRecord[]; total: number }> {
@@ -447,6 +437,7 @@ export async function listRelationRecords(
  * source chain + confidence. Returns null for an unknown id or on error —
  * the route layer maps that to 404 NOT_FOUND.
  */
+// @req REQ-097
 export async function getRelationRecordById(
   id: string
 ): Promise<PublicRelationRecord | null> {

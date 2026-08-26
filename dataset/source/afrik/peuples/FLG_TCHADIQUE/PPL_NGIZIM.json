@@ -87,12 +87,42 @@
       ]
     },
     "sources": [
-      "African Languages at UCLA — Ngizim. https://aflang.humanities.ucla.edu/language-materials/chadic-languages/yobe/ngizim/",
-      "Joshua Project — Ngizim, Ngizmawa in Nigeria. https://joshuaproject.net/people_groups/13359/ni",
-      "Lnuwa Luka (2020). Typology and Functions of Ngizim Pottery Tradition in Yobe State, Nigeria. SGOJAHDS. http://sgojahds.com/index.php/SGOJAHDS/article/viewFile/460/484",
-      "SIL Ethnologue — Ngizim (ngi). https://www.ethnologue.com/language/ngi/",
-      "Schuh, R. G. (1981). A Dictionary of Ngizim. Berkeley: University of California Press.",
-      "Palmer, H. R. History of the first twelve years of the reign of Mai Idris Alooma (1571-1583) by Imam Ahmad Ibn Furtua (notes et traduction)."
+      {
+        "title": "African Languages at UCLA — Ngizim",
+        "url": "https://aflang.humanities.ucla.edu/language-materials/chadic-languages/yobe/ngizim/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for aflang.humanities.ucla.edu."
+      },
+      {
+        "title": "Joshua Project — Ngizim, Ngizmawa in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/13359/ni",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Lnuwa Luka (2020). Typology and Functions of Ngizim Pottery Tradition in Yobe State, Nigeria. SGOJAHDS",
+        "url": "http://sgojahds.com/index.php/SGOJAHDS/article/viewFile/460/484",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers sgojahds.com; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue — Ngizim (ngi)",
+        "url": "https://www.ethnologue.com/language/ngi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Schuh, R. G. (1981). A Dictionary of Ngizim. Berkeley: University of California Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Palmer, H. R. History of the first twelve years of the reign of Mai Idris Alooma (1571-1583) by Imam Ahmad Ibn Furtua (notes et traduction)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

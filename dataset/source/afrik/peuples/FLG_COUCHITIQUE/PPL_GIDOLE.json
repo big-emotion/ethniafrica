@@ -79,11 +79,36 @@
       ]
     },
     "sources": [
-      "Dirasha in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11887)",
-      "Gidole of Ethiopia – PeopleGroups.org, 2023 (https://peoplegroups.org/people_groups/pg011583/)",
-      "Dirasha language and alphabet – Omniglot, 2024 (https://www.omniglot.com/writing/dirasha.htm)",
-      "Appendix ISO 639-3 codes Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
-      "Dirasha people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/dirasha.html)"
+      {
+        "title": "Dirasha in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/11887",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Gidole of Ethiopia – PeopleGroups.org, 2023",
+        "url": "https://peoplegroups.org/people_groups/pg011583/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Dirasha language and alphabet – Omniglot, 2024",
+        "url": "https://www.omniglot.com/writing/dirasha.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Appendix ISO 639-3 codes Africa – Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      },
+      {
+        "title": "Dirasha people – 101 Last Tribes, 2023",
+        "url": "https://www.101lasttribes.com/tribes/dirasha.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

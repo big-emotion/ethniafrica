@@ -74,9 +74,24 @@
       ]
     },
     "sources": [
-      "Tembaro in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/20201)",
-      "Andashe, Abayneh – A History of Religions and Religious Processes Among the Tembaro People, Southern Ethiopia 1891-1974, Jimma University, 2014 (https://repository.ju.edu.et/bitstream/handle/123456789/5233/)",
-      "Ethnohistory and Culture of Tambaro of Southwest Ethiopia – Academia.edu, 2014 (https://www.academia.edu/7866560/Ethnohistory_and_Culture_of_Tambaro_of_Southwest_Ethiopia)"
+      {
+        "title": "Tembaro in Ethiopia – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/20201",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Andashe, Abayneh – A History of Religions and Religious Processes Among the Tembaro People, Southern Ethiopia 1891-1974, Jimma University, 2014",
+        "url": "https://repository.ju.edu.et/bitstream/handle/123456789/5233/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for repository.ju.edu.et."
+      },
+      {
+        "title": "Ethnohistory and Culture of Tambaro of Southwest Ethiopia – Academia.edu, 2014",
+        "url": "https://www.academia.edu/7866560/Ethnohistory_and_Culture_of_Tambaro_of_Southwest_Ethiopia",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academia.edu."
+      }
     ]
   }
 }

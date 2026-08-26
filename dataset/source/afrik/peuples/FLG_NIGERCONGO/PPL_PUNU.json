@@ -95,13 +95,48 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Punu (puu). https://www.ethnologue.com/language/puu/",
-      "Omniglot — Punu language and alphabet. https://www.omniglot.com/writing/punu.htm",
-      "Smithsonian Institution — Face mask (mukudj). https://www.si.edu/object/face-mask:nmafa_90-6-1",
-      "Saint Louis Art Museum — Mask (mukudj) for the Okuyi Society. https://www.slam.org/collection/objects/2383/",
-      "Christie's — Punu Mask, Gabon, Okuyi/Mukuyi. https://www.christies.com/en/lot/lot-5556854",
-      "DICE Missouri — Punu cultural database. https://dice.missouri.edu/assets/docs/niger-congo/Punu.pdf",
-      "Joshua Project — Punu in Gabon. https://joshuaproject.net/people_groups/14484/GB"
+      {
+        "title": "SIL Ethnologue — Punu (puu)",
+        "url": "https://www.ethnologue.com/language/puu/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Omniglot — Punu language and alphabet",
+        "url": "https://www.omniglot.com/writing/punu.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Smithsonian Institution — Face mask (mukudj)",
+        "url": "https://www.si.edu/object/face-mask:nmafa_90-6-1",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for si.edu."
+      },
+      {
+        "title": "Saint Louis Art Museum — Mask (mukudj) for the Okuyi Society",
+        "url": "https://www.slam.org/collection/objects/2383/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers slam.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Christie's — Punu Mask, Gabon, Okuyi/Mukuyi",
+        "url": "https://www.christies.com/en/lot/lot-5556854",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for christies.com."
+      },
+      {
+        "title": "DICE Missouri — Punu cultural database",
+        "url": "https://dice.missouri.edu/assets/docs/niger-congo/Punu.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      },
+      {
+        "title": "Joshua Project — Punu in Gabon",
+        "url": "https://joshuaproject.net/people_groups/14484/GB",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

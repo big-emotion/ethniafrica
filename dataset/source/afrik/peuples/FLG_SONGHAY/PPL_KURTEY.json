@@ -104,9 +104,24 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Kurtey people. https://www.101lasttribes.com/tribes/kurtey.html",
-      "Facebook / Zarma Songhai Media — Kurtey people. https://www.facebook.com/ZarmaSonghai/posts/the-kurtey-peoplethe-kurtey-were-formed/",
-      "CIA World Factbook — Niger. https://www.cia.gov/the-world-factbook/countries/niger/"
+      {
+        "title": "101 Last Tribes — Kurtey people",
+        "url": "https://www.101lasttribes.com/tribes/kurtey.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Facebook / Zarma Songhai Media — Kurtey people",
+        "url": "https://www.facebook.com/ZarmaSonghai/posts/the-kurtey-peoplethe-kurtey-were-formed/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "CIA World Factbook — Niger",
+        "url": "https://www.cia.gov/the-world-factbook/countries/niger/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

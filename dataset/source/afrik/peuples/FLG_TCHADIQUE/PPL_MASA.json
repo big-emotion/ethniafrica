@@ -103,12 +103,42 @@
       ]
     },
     "sources": [
-      "UNESCO ICH — Guruna, pratique des retraites pastorales (2025). https://ich.unesco.org/en/RL/guruna-a-practice-of-pastoral-socio-cultural-and-artistic-retreats-centered-on-livestock-among-the-massa-02260",
-      "SIL Ethnologue — Masana (mcn). https://www.ethnologue.com/language/mcn/",
-      "Joshua Project — Masa in Chad. https://joshuaproject.net/people_groups/13560/CD",
-      "Study.com — Chadic Languages. https://study.com/academy/lesson/chadic-languages-overview-origin-composition-speaks.html",
-      "Biogreat TV — History of the Masa tribe of Cameroon and Chad (YouTube). https://www.youtube.com/watch?v=JsYP_8AIsxw",
-      "Tokna Massana Facebook group — Guruna/Guru walla. https://www.facebook.com/groups/toknamassana.officiel/"
+      {
+        "title": "UNESCO ICH — Guruna, pratique des retraites pastorales (2025)",
+        "url": "https://ich.unesco.org/en/RL/guruna-a-practice-of-pastoral-socio-cultural-and-artistic-retreats-centered-on-livestock-among-the-massa-02260",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "SIL Ethnologue — Masana (mcn)",
+        "url": "https://www.ethnologue.com/language/mcn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Masa in Chad",
+        "url": "https://joshuaproject.net/people_groups/13560/CD",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Study.com — Chadic Languages",
+        "url": "https://study.com/academy/lesson/chadic-languages-overview-origin-composition-speaks.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for study.com."
+      },
+      {
+        "title": "Biogreat TV — History of the Masa tribe of Cameroon and Chad (YouTube)",
+        "url": "https://www.youtube.com/watch?v=JsYP_8AIsxw",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for youtube.com."
+      },
+      {
+        "title": "Tokna Massana Facebook group — Guruna/Guru walla",
+        "url": "https://www.facebook.com/groups/toknamassana.officiel/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

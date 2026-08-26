@@ -90,10 +90,30 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Fante language (fat). https://www.ethnologue.com/language/fat/",
-      "World Population Review — Ghana Population 2025. https://worldpopulationreview.com/countries/ghana",
-      "CIA World Factbook — Ghana. https://www.cia.gov/the-world-factbook/countries/ghana/",
-      "Recensement national du Ghana, Ghana Statistical Service. https://statsghana.gov.gh/"
+      {
+        "title": "SIL Ethnologue — Fante language (fat)",
+        "url": "https://www.ethnologue.com/language/fat/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "World Population Review — Ghana Population 2025",
+        "url": "https://worldpopulationreview.com/countries/ghana",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldpopulationreview.com."
+      },
+      {
+        "title": "CIA World Factbook — Ghana",
+        "url": "https://www.cia.gov/the-world-factbook/countries/ghana/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Recensement national du Ghana, Ghana Statistical Service",
+        "url": "https://statsghana.gov.gh/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statsghana.gov.gh."
+      }
     ]
   }
 }

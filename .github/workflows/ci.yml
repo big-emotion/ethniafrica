@@ -94,6 +94,8 @@ jobs:
 
       - run: npm run check:action-pins
 
+      - run: npm run check:env-example
+
       - run: npm run typecheck
 
       - run: npm run format:check

@@ -89,12 +89,42 @@
       ]
     },
     "sources": [
-      "UNESCO World Heritage Centre — Ruins of Kilwa Kisiwani and Ruins of Songo Mnara. https://whc.unesco.org/en/list/144/",
-      "NPR — The Hot New Musical Trend In Zanzibar Is From The 1880s. https://www.npr.org/sections/goatsandsoda/2018/09/29/650073622/the-hot-new-musical-trend-in-zanzibar-is-from-the-80s-the-1880s",
-      "National Geographic — Tanzania's Zanzibar is the cradle of African Swahili culture. https://www.nationalgeographic.com/travel/article/why-tanzanias-zanzibar-is-the-cradle-of-african-swahili-culture",
-      "The Conversation — Ancient DNA is restoring the origin story of the Swahili people. https://theconversation.com/ancient-dna-is-restoring-the-origin-story-of-the-swahili-people-of-the-east-african-coast-201154",
-      "Pan African Music — Taarab in Zanzibar. https://pan-african-music.com/en/taarab-zanzibar/",
-      "Ethnologue SIL — Swahili (swa). https://www.ethnologue.com/language/swa"
+      {
+        "title": "UNESCO World Heritage Centre — Ruins of Kilwa Kisiwani and Ruins of Songo Mnara",
+        "url": "https://whc.unesco.org/en/list/144/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "NPR — The Hot New Musical Trend In Zanzibar Is From The 1880s",
+        "url": "https://www.npr.org/sections/goatsandsoda/2018/09/29/650073622/the-hot-new-musical-trend-in-zanzibar-is-from-the-80s-the-1880s",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers npr.org; the tier awaits editorial review."
+      },
+      {
+        "title": "National Geographic — Tanzania's Zanzibar is the cradle of African Swahili culture",
+        "url": "https://www.nationalgeographic.com/travel/article/why-tanzanias-zanzibar-is-the-cradle-of-african-swahili-culture",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for nationalgeographic.com."
+      },
+      {
+        "title": "The Conversation — Ancient DNA is restoring the origin story of the Swahili people",
+        "url": "https://theconversation.com/ancient-dna-is-restoring-the-origin-story-of-the-swahili-people-of-the-east-african-coast-201154",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for theconversation.com."
+      },
+      {
+        "title": "Pan African Music — Taarab in Zanzibar",
+        "url": "https://pan-african-music.com/en/taarab-zanzibar/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers pan-african-music.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue SIL — Swahili (swa)",
+        "url": "https://www.ethnologue.com/language/swa",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

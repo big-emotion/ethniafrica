@@ -81,8 +81,18 @@
       ]
     },
     "sources": [
-      "South African History Online — Mfecane. https://sahistory.org.za/article/mfecane-understanding-period-transformation-southern-africa",
-      "SIL Ethnologue — Northern Ndebele (nde). https://www.ethnologue.com/language/nde/"
+      {
+        "title": "South African History Online — Mfecane",
+        "url": "https://sahistory.org.za/article/mfecane-understanding-period-transformation-southern-africa",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "SIL Ethnologue — Northern Ndebele (nde)",
+        "url": "https://www.ethnologue.com/language/nde/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

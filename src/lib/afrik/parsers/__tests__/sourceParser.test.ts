@@ -10,7 +10,7 @@ const source = {
   authors: ["National Archives"],
   publicationYear: 1912,
   sourceKind: "archive",
-  evidenceTier: null,
+  tier: "unverified",
   identifiers: { catalogue: "NA-42" },
   publisher: null,
   url: null,

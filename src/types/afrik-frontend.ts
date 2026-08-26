@@ -13,6 +13,7 @@ import type {
   PeopleId,
   LanguageId,
   ClassificationStatus,
+  FicheSource,
   // Content sections
   AppellationsSection,
   OriginsSection,
@@ -124,7 +125,7 @@ export interface LanguageFamilyDetail {
   };
 
   // Section 6: Sources
-  sources?: string[];
+  sources?: FicheSource[];
 }
 
 // ==========================================
@@ -189,7 +190,7 @@ export interface PeopleDetail {
   demography?: GlobalDemographySection;
 
   // Sources
-  sources?: string[];
+  sources?: FicheSource[];
 }
 
 /**
@@ -290,7 +291,7 @@ export interface CountryDetail {
   historicalFacts?: HistoricalFactsSection;
 
   // Section 7: Sources
-  sources?: string[];
+  sources?: FicheSource[];
 
   // Démographie
   demographics?: DemographicsSection;

@@ -99,9 +99,24 @@
       ]
     },
     "sources": [
-      "Mauritius Population 2025 – Worldometer (https://www.worldometers.info/world-population/mauritius-population/)",
-      "Population Île Maurice : 1,3 million d'habitants – FairMoove, 2026 (https://www.fairmoove.fr/guide-voyage/maurice/decouvrir/population-langues)",
-      "Aapravasi Ghat – UNESCO World Heritage (https://whc.unesco.org/en/list/1227)"
+      {
+        "title": "Mauritius Population 2025 – Worldometer",
+        "url": "https://www.worldometers.info/world-population/mauritius-population/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldometers.info."
+      },
+      {
+        "title": "Population Île Maurice : 1,3 million d'habitants – FairMoove, 2026",
+        "url": "https://www.fairmoove.fr/guide-voyage/maurice/decouvrir/population-langues",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers fairmoove.fr; the tier awaits editorial review."
+      },
+      {
+        "title": "Aapravasi Ghat – UNESCO World Heritage",
+        "url": "https://whc.unesco.org/en/list/1227",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      }
     ]
   }
 }

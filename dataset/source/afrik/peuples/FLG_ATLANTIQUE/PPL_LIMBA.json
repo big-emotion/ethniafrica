@@ -90,10 +90,30 @@
       ]
     },
     "sources": [
-      "Joshua Project - Limba West in Sierra Leone : https://joshuaproject.net/people_groups/print/16038/SL",
-      "Right for Education - The Rich Cultural Heritage of the Limba Tribe (2025) : https://rightforeducation.org/2025/05/30/the-rich-cultural-heritage-of-the-limba-tribe-in-sierra-leone/",
-      "Ethnologue - Limba, West-Central (lia) : https://www.ethnologue.com/language/lia/",
-      "Ethnologue - Limba, East (lma) : https://www.ethnologue.com/language/lma/"
+      {
+        "title": "Joshua Project - Limba West in Sierra Leone",
+        "url": "https://joshuaproject.net/people_groups/print/16038/SL",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Right for Education - The Rich Cultural Heritage of the Limba Tribe (2025)",
+        "url": "https://rightforeducation.org/2025/05/30/the-rich-cultural-heritage-of-the-limba-tribe-in-sierra-leone/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for rightforeducation.org."
+      },
+      {
+        "title": "Ethnologue - Limba, West-Central (lia)",
+        "url": "https://www.ethnologue.com/language/lia/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ethnologue - Limba, East (lma)",
+        "url": "https://www.ethnologue.com/language/lma/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

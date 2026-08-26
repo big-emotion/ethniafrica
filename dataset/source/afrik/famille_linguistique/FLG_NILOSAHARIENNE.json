@@ -87,21 +87,96 @@
       }
     },
     "sources": [
-      "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Bloomington: Indiana University Press / La Haye: Mouton.",
-      "Dimmendaal, Gerrit J.; Ahland, Colleen; Jakobi, Angelika; Kutsch-Lojenga, Constance (2019) – \"Linguistic features and typologies in languages commonly referred to as 'Nilo-Saharan'\", dans *The Cambridge Handbook of African Linguistics*, éd. Ekkehard Wolff. Cambridge: Cambridge University Press.",
-      "Bender, M. Lionel (1989, 1991, 2000) – Révisions et classifications internes de la famille Nilo-Saharienne. Dans *The Nilo-Saharan Languages: A Comparative Essay*. Munich: Lincom Europa.",
-      "Dobon, B.; Hassan, H.; Laayouni, H.; Comas, D.; et al. (2015) – \"The genetics of East African populations: a Nilo-Saharan component in the African genetic landscape\". *Scientific Reports*, 5:9996. Nature Publishing Group.",
-      "Mulindwa, J.; et al. (2020) – \"High Levels of Genetic Diversity within Nilo-Saharan Populations: Implications for Human Adaptation\". *The American Journal of Human Genetics*, 107(3), pp. 473-486.",
-      "Blench, Roger (2010) – Travaux sur le protolangage Nilo-Saharien et la typologie, notamment le système singulatif-collectif-pluratif. Dans *The Nilo-Saharan Languages*. Cambridge: Cambridge University Press (références indirectes via Britannica / articles de typologie).",
-      "Ehret, Christopher (2001) – *A Historical-Comparative Reconstruction of Nilo-Saharan*. Cologne: Rüdiger Köppe Verlag.",
-      "Britannica Editors (2020-2025) – \"Nilo-Saharan languages\", \"Linguistic characteristics\", \"The diffusion of Nilo-Saharan languages\". Encyclopaedia Britannica. Disponible en ligne.",
-      "SIL Ethnologue (2020-2025) – *Ethnologue: Languages of the World*. SIL International. Données sur nombre de locuteurs et distribution géographique.",
-      "Güldemann, Tom (2018) – \"Historical linguistics and genealogical language classification in Africa\", dans *The Languages and Linguistics of Africa*, éd. Tom Güldemann. Berlin: De Gruyter Mouton.",
-      "UNESCO (2020-2025) – *Atlas des langues en danger dans le monde*. UNESCO Publishing.",
-      "CIA World Factbook (2020-2025) – Données démographiques par pays. Central Intelligence Agency.",
-      "Glottolog 5.3 (2025) – Pages de classification distinctes pour Nilotic, Saharan, Songhay, Central Sudanic, Maban, Fur, Kunama, Berta, Koman, Kadu, Kuliak, Gumuz : Glottolog ne reconnaît aucun nœud unifié \"Nilo-Saharan\" ni même \"Eastern Sudanic\", chacune de ces branches étant traitée comme famille indépendante (« bookkeeping »/isolats), avec commentaire explicite : « No conclusive, methodologically sound basis for assigning Nilotic to Eastern Sudanic or to an alleged full or partial Nilo-Saharan has been presented ». https://glottolog.org/resource/languoid/id/nilo1247",
-      "Bender, M. Lionel (1991) – \"Subclassification of Nilo-Saharan\", dans Bender, M. Lionel (éd.), *Proceedings of the Fourth Nilo-Saharan Conference, Bayreuth, 1989*. Hamburg: Helmut Buske Verlag. Source primaire de la liste des 12 branches traditionnelles (Songhay, Saharan, Kuliak, Maban, Fur, Central Sudanic, Berta, Kunama, Core, Koman, Gumuz, Kadu), utilisée ici en l'absence de nœud Glottolog unifié ; repérée par recoupement des versions anglaise et française de Wikipédia (« Nilo-Saharan languages » / « Langues nilo-sahariennes »), Wikipédia n'étant citée qu'à titre de point d'entrée et non comme source.",
-      "SIL Ethnologue, 19e éd. (Lewis, M.P., Simons, G.F. & Fennig, C.D., eds., 2016) et 20e éd. (Simons, G.F. & Fennig, C.D., eds., 2017), pages consultées via versions archivées (Internet Archive, 2016-2017) – données de population par pays pour : \"Dholuo [luo]\" (Kenya 4 044 000, Tanzanie 140 000), \"Maasai [mas]\" (Kenya 842 000, Tanzanie 613 000), \"Turkana [tuv]\" (Kenya 989 000), \"Dinka [din]\" (Soudan du Sud 1 365 900), \"Nuer [nus]\" (Soudan du Sud 894 120), \"Acholi [ach]\" (Ouganda 1 170 000), \"Kanuri, Central [knc]\" (Nigeria 3 000 000, Tchad 154 000, Niger 80 000, Cameroun 56 500), \"Kanuri, Manga [kby]\" (Niger 280 000, Nigeria 200 000), \"Kanuri, Tumari [krt]\" (Niger 40 000), \"Zaghawa [zag]\" (Soudan 180 000, Tchad 128 000), \"Tedaga [tuq]\" (Tchad 28 500, Niger 10 000, Nigeria 2 000), \"Dazaga [dzg]\" (Tchad 487 000, Niger 50 000), \"Zarma [dje]\" (Niger 3 120 000, Nigeria 87 800, Mali 1 700, Burkina Faso 600), \"Koyraboro Senni Songhay [ses]\" (Mali 430 000), \"Lugbara [lgg]\" (Ouganda 797 000, RDC 840 000), \"Mangbetu [mdj]\" (RDC 620 000), \"Lendu [led]\" (RDC 750 000, Ouganda/Ndrulo 11 100), \"Moru [mgd]\" (Soudan du Sud 70 000). URLs canoniques : https://www.ethnologue.com/language/luo , /mas , /tuv , /din , /nus , /ach , /knc , /kby , /krt , /zag , /tuq , /dzg , /dje , /ses , /lgg , /mdj , /led , /mgd"
+      {
+        "title": "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Bloomington: Indiana University Press / La Haye: Mouton",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Dimmendaal, Gerrit J.; Ahland, Colleen; Jakobi, Angelika; Kutsch-Lojenga, Constance (2019) – \"Linguistic features and typologies in languages commonly referred to as 'Nilo-Saharan'\", dans *The Cambridge Handbook of African Linguistics*, éd. Ekkehard Wolff. Cambridge: Cambridge University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Bender, M. Lionel (1989, 1991, 2000) – Révisions et classifications internes de la famille Nilo-Saharienne. Dans *The Nilo-Saharan Languages: A Comparative Essay*. Munich: Lincom Europa",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Dobon, B.; Hassan, H.; Laayouni, H.; Comas, D.; et al. (2015) – \"The genetics of East African populations: a Nilo-Saharan component in the African genetic landscape\". *Scientific Reports*, 5:9996. Nature Publishing Group",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Mulindwa, J.; et al. (2020) – \"High Levels of Genetic Diversity within Nilo-Saharan Populations: Implications for Human Adaptation\". *The American Journal of Human Genetics*, 107(3), pp. 473-486",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Blench, Roger (2010) – Travaux sur le protolangage Nilo-Saharien et la typologie, notamment le système singulatif-collectif-pluratif. Dans *The Nilo-Saharan Languages*. Cambridge: Cambridge University Press (références indirectes via Britannica / articles de typologie)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ehret, Christopher (2001) – *A Historical-Comparative Reconstruction of Nilo-Saharan*. Cologne: Rüdiger Köppe Verlag",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Britannica Editors (2020-2025) – \"Nilo-Saharan languages\", \"Linguistic characteristics\", \"The diffusion of Nilo-Saharan languages\". Encyclopaedia Britannica. Disponible en ligne",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue (2020-2025) – *Ethnologue: Languages of the World*. SIL International. Données sur nombre de locuteurs et distribution géographique",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Güldemann, Tom (2018) – \"Historical linguistics and genealogical language classification in Africa\", dans *The Languages and Linguistics of Africa*, éd. Tom Güldemann. Berlin: De Gruyter Mouton",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "UNESCO (2020-2025) – *Atlas des langues en danger dans le monde*. UNESCO Publishing",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook (2020-2025) – Données démographiques par pays. Central Intelligence Agency",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog 5.3 (2025) – Pages de classification distinctes pour Nilotic, Saharan, Songhay, Central Sudanic, Maban, Fur, Kunama, Berta, Koman, Kadu, Kuliak, Gumuz : Glottolog ne reconnaît aucun nœud unifié \"Nilo-Saharan\" ni même \"Eastern Sudanic\", chacune de ces branches étant traitée comme famille indépendante (« bookkeeping »/isolats), avec commentaire explicite : « No conclusive, methodologically sound basis for assigning Nilotic to Eastern Sudanic or to an alleged full or partial Nilo-Saharan has been presented »",
+        "url": "https://glottolog.org/resource/languoid/id/nilo1247",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Bender, M. Lionel (1991) – \"Subclassification of Nilo-Saharan\", dans Bender, M. Lionel (éd.), *Proceedings of the Fourth Nilo-Saharan Conference, Bayreuth, 1989*. Hamburg: Helmut Buske Verlag. Source primaire de la liste des 12 branches traditionnelles (Songhay, Saharan, Kuliak, Maban, Fur, Central Sudanic, Berta, Kunama, Core, Koman, Gumuz, Kadu), utilisée ici en l'absence de nœud Glottolog unifié ; repérée par recoupement des versions anglaise et française de Wikipédia (« Nilo-Saharan languages » / « Langues nilo-sahariennes »), Wikipédia n'étant citée qu'à titre de point d'entrée et non comme source",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (Lewis, M.P., Simons, G.F. & Fennig, C.D., eds., 2016) et 20e éd. (Simons, G.F. & Fennig, C.D., eds., 2017), pages consultées via versions archivées (Internet Archive, 2016-2017) – données de population par pays pour : \"Dholuo [luo]\" (Kenya 4 044 000, Tanzanie 140 000), \"Maasai [mas]\" (Kenya 842 000, Tanzanie 613 000), \"Turkana [tuv]\" (Kenya 989 000), \"Dinka [din]\" (Soudan du Sud 1 365 900), \"Nuer [nus]\" (Soudan du Sud 894 120), \"Acholi [ach]\" (Ouganda 1 170 000), \"Kanuri, Central [knc]\" (Nigeria 3 000 000, Tchad 154 000, Niger 80 000, Cameroun 56 500), \"Kanuri, Manga [kby]\" (Niger 280 000, Nigeria 200 000), \"Kanuri, Tumari [krt]\" (Niger 40 000), \"Zaghawa [zag]\" (Soudan 180 000, Tchad 128 000), \"Tedaga [tuq]\" (Tchad 28 500, Niger 10 000, Nigeria 2 000), \"Dazaga [dzg]\" (Tchad 487 000, Niger 50 000), \"Zarma [dje]\" (Niger 3 120 000, Nigeria 87 800, Mali 1 700, Burkina Faso 600), \"Koyraboro Senni Songhay [ses]\" (Mali 430 000), \"Lugbara [lgg]\" (Ouganda 797 000, RDC 840 000), \"Mangbetu [mdj]\" (RDC 620 000), \"Lendu [led]\" (RDC 750 000, Ouganda/Ndrulo 11 100), \"Moru [mgd]\" (Soudan du Sud 70 000). URLs canoniques : , /mas , /tuv , /din , /nus , /ach , /knc , /kby , /krt , /zag , /tuq , /dzg , /dje , /ses , /lgg , /mdj , /led , /mgd",
+        "url": "https://www.ethnologue.com/language/luo",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

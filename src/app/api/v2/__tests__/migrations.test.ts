@@ -56,7 +56,7 @@ const detail: MigrationDetailRecord = {
   narrative: "Récit",
   debate: "Débat",
   peoples: [{ id: "PPL_KONGO", nameMain: "Kongo", role: "destination" }],
-  sources: [{ id: "src-1", title: "Source", url: null, tier: "secondary" }],
+  sources: [{ id: "src-1", title: "Source", url: null, tier: "referenced" }],
 };
 
 const listEnvelope: ApiEnvelope<MigrationSummary[]> = {

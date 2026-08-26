@@ -86,10 +86,30 @@
       "aridEnvironment": "L'Androy est l'une des regions les plus arides de Madagascar, caracterisee par des fourres epineux d'especes endemiques (didieracees, euphorbes, aloes) et un deficit pluviometrique chronique. Cette aridite a forge une culture d'adaptation et de resilience, rendant les Antandroy particulierement resistants aux adversites exterieures. Les crises alimentaires recurrentes ont accelere les vagues migratoires vers les autres regions depuis les annees 1960."
     },
     "sources": [
-      "Ethnologue – Malagasy, Tandroy-Mahafaly (tdx) : https://www.ethnologue.com/language/tdx/",
-      "Glottolog – Tandroy Malagasy : https://glottolog.org/glottolog?country=MG",
-      "Worldometer – Madagascar Population : https://www.worldometers.info/world-population/madagascar-population/",
-      "CIA World Factbook – Madagascar : https://www.cia.gov/the-world-factbook/countries/madagascar/"
+      {
+        "title": "Ethnologue – Malagasy, Tandroy-Mahafaly (tdx)",
+        "url": "https://www.ethnologue.com/language/tdx/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog – Tandroy Malagasy",
+        "url": "https://glottolog.org/glottolog?country=MG",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Worldometer – Madagascar Population",
+        "url": "https://www.worldometers.info/world-population/madagascar-population/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldometers.info."
+      },
+      {
+        "title": "CIA World Factbook – Madagascar",
+        "url": "https://www.cia.gov/the-world-factbook/countries/madagascar/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

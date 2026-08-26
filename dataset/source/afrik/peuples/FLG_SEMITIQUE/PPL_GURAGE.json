@@ -88,12 +88,42 @@
       ]
     },
     "sources": [
-      "Ethnologue — Sebat Bet Gurage (sgw), Soddo (gru), Silte (stv). https://www.ethnologue.com/language/sgw",
-      "Nature — Cultural and symbolic value of enset crop in Sebat Bet Gurage. https://www.nature.com/articles/s41599-022-01179-4",
-      "PMC/Frontiers in Pharmacology — Enset landraces knowledge in Gurage community. https://pmc.ncbi.nlm.nih.gov/articles/PMC12075952/",
-      "Joshua Project — Gurage Kistane in Ethiopia. https://joshuaproject.net/people_groups/18863",
-      "Ethiopian Central Statistical Agency (CSA) — Population and Housing Census 2007. https://www.csa.gov.et",
-      "Encyclopaedia Aethiopica, vol. 2 (Uhlig ed.), Harrassowitz Verlag, 2005"
+      {
+        "title": "Ethnologue — Sebat Bet Gurage (sgw), Soddo (gru), Silte (stv)",
+        "url": "https://www.ethnologue.com/language/sgw",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Nature — Cultural and symbolic value of enset crop in Sebat Bet Gurage",
+        "url": "https://www.nature.com/articles/s41599-022-01179-4",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for nature.com."
+      },
+      {
+        "title": "PMC/Frontiers in Pharmacology — Enset landraces knowledge in Gurage community",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12075952/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+      },
+      {
+        "title": "Joshua Project — Gurage Kistane in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/18863",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethiopian Central Statistical Agency (CSA) — Population and Housing Census 2007",
+        "url": "https://www.csa.gov.et",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for csa.gov.et."
+      },
+      {
+        "title": "Encyclopaedia Aethiopica, vol. 2 (Uhlig ed.), Harrassowitz Verlag, 2005",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

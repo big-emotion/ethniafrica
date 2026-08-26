@@ -74,10 +74,30 @@
       ]
     },
     "sources": [
-      "Maniacky, Jacky – Nyinungu (better known in the literature as Minungu): a Bantu language spoken on both sides of the border between Angola and DRC, WOCAL 6, Cologne (2008) (https://www.uni-koeln.de/phil-fak/afrikanistik/wocal/schedule/abstracts/6-4-2%20Jacky%20Maniacky.pdf)",
-      "Angola Country Study – Lunda-Chokwe, Library of Congress Federal Research Division (https://countrystudies.us/angola/62.htm)",
-      "Royal Museum for Central Africa – Annual Report 2011, Tervuren (https://www.africamuseum.be/sites/default/files/media/about-us/annual-reports/doc/annualreport2011nl.pdf)",
-      "Angolan Language Ecologies: Contacts in Northeastern Angola, CIBIO University of Porto (2025) (https://www.cibio.up.pt/en/events/angolan-language-ecologies-contexts-of-contact-change-and-normalization/)"
+      {
+        "title": "Maniacky, Jacky – Nyinungu (better known in the literature as Minungu): a Bantu language spoken on both sides of the border between Angola and DRC, WOCAL 6, Cologne (2008)",
+        "url": "https://www.uni-koeln.de/phil-fak/afrikanistik/wocal/schedule/abstracts/6-4-2%20Jacky%20Maniacky.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers uni-koeln.de; the tier awaits editorial review."
+      },
+      {
+        "title": "Angola Country Study – Lunda-Chokwe, Library of Congress Federal Research Division",
+        "url": "https://countrystudies.us/angola/62.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      },
+      {
+        "title": "Royal Museum for Central Africa – Annual Report 2011, Tervuren",
+        "url": "https://www.africamuseum.be/sites/default/files/media/about-us/annual-reports/doc/annualreport2011nl.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for africamuseum.be."
+      },
+      {
+        "title": "Angolan Language Ecologies: Contacts in Northeastern Angola, CIBIO University of Porto (2025)",
+        "url": "https://www.cibio.up.pt/en/events/angolan-language-ecologies-contexts-of-contact-change-and-normalization/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cibio.up.pt."
+      }
     ]
   }
 }

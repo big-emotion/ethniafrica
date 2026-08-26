@@ -90,10 +90,30 @@
       ]
     },
     "sources": [
-      "101 Last Tribes – Lungu people (https://www.101lasttribes.com/tribes/lungu.html)",
-      "Joshua Project – Mambwe-Lungu in Tanzania, 2025 (https://joshuaproject.net/people_groups/print/13470/TZ)",
-      "Joshua Project – Zambia people groups, 2025 (https://joshuaproject.net/countries/ZA)",
-      "Cancel, Robert – Asserting/inventing traditions on the Luapula: the Lunda Mutomboko Festival (in: Storytelling in Northern Zambia, Open Book Publishers)"
+      {
+        "title": "101 Last Tribes – Lungu people",
+        "url": "https://www.101lasttribes.com/tribes/lungu.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project – Mambwe-Lungu in Tanzania, 2025",
+        "url": "https://joshuaproject.net/people_groups/print/13470/TZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project – Zambia people groups, 2025",
+        "url": "https://joshuaproject.net/countries/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Cancel, Robert – Asserting/inventing traditions on the Luapula: the Lunda Mutomboko Festival (in: Storytelling in Northern Zambia, Open Book Publishers)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

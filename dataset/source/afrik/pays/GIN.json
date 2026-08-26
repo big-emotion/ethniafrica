@@ -211,15 +211,60 @@
       "postIndependence": "1958-1984 : Présidence de Sékou Touré, régime socialiste, politique d'isolement, répression politique. 1984-2008 : Régime militaire, présidence de Lansana Conté. 2008-2010 : Régime militaire, présidence de Moussa Dadis Camara puis Sékouba Konaté. 2010-présent : Transition démocratique, élection d'Alpha Condé (2010-2021) puis de Mamady Doumbouya (depuis 2021, coup d'État). Défis : pauvreté, instabilité politique, développement économique, gestion des ressources minières. La Guinée possède d'importantes ressources minières (bauxite, or, diamants)."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Guinea",
-      "CIA World Factbook – Guinea",
-      "ONU / UNFPA – Démographie Guinée 2025",
-      "Niane, Djibril Tamsir – \"Soundjata ou l'épopée mandingue\"",
-      "Levtzion, Nehemia – \"Ancient Ghana and Mali\"",
-      "Recensements guinéens",
-      "Études anthropologiques sur les peuples de la Guinée",
-      "Études historiques sur l'empire du Mali et le Fouta Djallon",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "SIL Ethnologue – Languages of Guinea",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Guinea",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Guinée 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Niane, Djibril Tamsir – \"Soundjata ou l'épopée mandingue\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Levtzion, Nehemia – \"Ancient Ghana and Mali\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements guinéens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de la Guinée",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur l'empire du Mali et le Fouta Djallon",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

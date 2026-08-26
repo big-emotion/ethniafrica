@@ -107,14 +107,14 @@ describe("composeQuizSessionHandler", () => {
           title: "Ethnologue",
           url: "https://example.org/eth",
           year: 2020,
-          tier: "secondary",
+          tier: "referenced",
         },
         {
           id: "source-2",
           title: "UN report",
           url: "https://example.org/un",
           year: 2021,
-          tier: "primary",
+          tier: "official",
         },
       ],
       error: null,
@@ -154,7 +154,7 @@ describe("composeQuizSessionHandler", () => {
       title: "UN report",
       url: "https://example.org/un",
       year: 2021,
-      tier: "primary",
+      tier: "official",
     });
     expect(question.entity).toEqual({
       type: "people",

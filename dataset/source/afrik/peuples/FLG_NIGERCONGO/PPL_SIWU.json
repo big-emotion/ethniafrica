@@ -71,12 +71,42 @@
       ]
     },
     "sources": [
-      "Joshua Project – Akpafu, Lolobi in Ghana (https://joshuaproject.net/people_groups/10227)",
-      "Wycliffe Bible Translators – A Story of Restoration: The Siwu of Ghana (https://wycliffe.org/blog/posts/a-story-of-restoration-the-siwu-of-ghana)",
-      "The Ideophone – H.B.K. Ogbete, A history of the Akpafus (https://ideophone.org/ogbete-1998-history-akpafu/)",
-      "The Ideophone – A visit to Akpafu by David Asante, 1887 (https://ideophone.org/akpafu-david-asante-1887/)",
-      "Ethnologue – Siwu AKP (https://www.ethnologue.com/language/akp/)",
-      "ISO 639-3 – code akp: Siwu (https://iso639-3.sil.org/code/akp)"
+      {
+        "title": "Joshua Project – Akpafu, Lolobi in Ghana",
+        "url": "https://joshuaproject.net/people_groups/10227",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Wycliffe Bible Translators – A Story of Restoration: The Siwu of Ghana",
+        "url": "https://wycliffe.org/blog/posts/a-story-of-restoration-the-siwu-of-ghana",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wycliffe.org."
+      },
+      {
+        "title": "The Ideophone – H.B.K. Ogbete, A history of the Akpafus",
+        "url": "https://ideophone.org/ogbete-1998-history-akpafu/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ideophone.org."
+      },
+      {
+        "title": "The Ideophone – A visit to Akpafu by David Asante, 1887",
+        "url": "https://ideophone.org/akpafu-david-asante-1887/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ideophone.org."
+      },
+      {
+        "title": "Ethnologue – Siwu AKP",
+        "url": "https://www.ethnologue.com/language/akp/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "ISO 639-3 – code akp: Siwu",
+        "url": "https://iso639-3.sil.org/code/akp",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\" (sil.org), matched as a parent of iso639-3.sil.org."
+      }
     ]
   }
 }

@@ -105,11 +105,36 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Teke people : https://www.101lasttribes.com/tribes/teke.html",
-      "Joshua Project — Teke Northern in Gabon : https://joshuaproject.net/people_groups/14033/GB",
-      "SIL International — Linton (2008), cote par 101lasttribes.com : 12 sous-groupes linguistiques, 390 000 locuteurs",
-      "CIA World Factbook — Republic of Congo : https://www.cia.gov/the-world-factbook/countries/congo-republic-of-the/",
-      "CIA World Factbook — Democratic Republic of the Congo : https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/"
+      {
+        "title": "101 Last Tribes — Teke people",
+        "url": "https://www.101lasttribes.com/tribes/teke.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project — Teke Northern in Gabon",
+        "url": "https://joshuaproject.net/people_groups/14033/GB",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL International — Linton (2008), cote par 101lasttribes.com : 12 sous-groupes linguistiques, 390 000 locuteurs",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook — Republic of Congo",
+        "url": "https://www.cia.gov/the-world-factbook/countries/congo-republic-of-the/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "CIA World Factbook — Democratic Republic of the Congo",
+        "url": "https://www.cia.gov/the-world-factbook/countries/congo-democratic-republic-of-the/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

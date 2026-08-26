@@ -113,12 +113,42 @@
       ]
     },
     "sources": [
-      "Ethnologue — Dazaga (DZG). https://www.ethnologue.com/language/dzg/",
-      "Joshua Project — Daza in Niger. https://joshuaproject.net/people_groups/11518/NG",
-      "Minority Rights Group — Chad. https://minorityrights.org/country/chad/",
-      "CIA — Libya-Chad Cultural Factors (document declassifie). https://www.cia.gov/readingroom/docs/CIA-RDP06T00412R000200010001-7.pdf",
-      "Jean Chapelle — Nomades Noirs du Sahara. L'Harmattan, 1982.",
-      "Haber et al. — Chad Basin: Genetic structure (Toubou Y-DNA study). American Journal of Human Genetics, 2016."
+      {
+        "title": "Ethnologue — Dazaga (DZG)",
+        "url": "https://www.ethnologue.com/language/dzg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Daza in Niger",
+        "url": "https://joshuaproject.net/people_groups/11518/NG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Minority Rights Group — Chad",
+        "url": "https://minorityrights.org/country/chad/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "CIA — Libya-Chad Cultural Factors (document declassifie)",
+        "url": "https://www.cia.gov/readingroom/docs/CIA-RDP06T00412R000200010001-7.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Jean Chapelle — Nomades Noirs du Sahara. L'Harmattan, 1982",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Haber et al. — Chad Basin: Genetic structure (Toubou Y-DNA study). American Journal of Human Genetics, 2016",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

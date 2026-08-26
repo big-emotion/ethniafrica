@@ -89,13 +89,48 @@
       ]
     },
     "sources": [
-      "Britannica — Betsimisaraka, https://www.britannica.com/topic/Betsimisaraka (consulté 2025)",
-      "101 Last Tribes — Betsimisaraka, https://www.101lasttribes.com/tribes/betsimisaraka.html (consulté 2025)",
-      "Joshua Project — Betsimisaraka North in Madagascar, https://joshuaproject.net/people_groups/10819 (consulté 2025)",
-      "Ethnologue — Northern Betsimisaraka Malagasy (bmm), https://www.ethnologue.com/language/bmm/ (consulté 2025)",
-      "Ethnologue — Southern Betsimisaraka Malagasy (bzc), https://www.ethnologue.com/language/bzc/ (consulté 2025)",
-      "CIA World Factbook — Madagascar, https://www.cia.gov/the-world-factbook/countries/madagascar/ (consulté 2025)",
-      "Beaujard, Philippe. Les mondes de l'océan Indien. Paris : Armand Colin, 2012."
+      {
+        "title": "Britannica — Betsimisaraka, (consulté 2025)",
+        "url": "https://www.britannica.com/topic/Betsimisaraka",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "101 Last Tribes — Betsimisaraka, (consulté 2025)",
+        "url": "https://www.101lasttribes.com/tribes/betsimisaraka.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project — Betsimisaraka North in Madagascar, (consulté 2025)",
+        "url": "https://joshuaproject.net/people_groups/10819",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue — Northern Betsimisaraka Malagasy (bmm), (consulté 2025)",
+        "url": "https://www.ethnologue.com/language/bmm/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ethnologue — Southern Betsimisaraka Malagasy (bzc), (consulté 2025)",
+        "url": "https://www.ethnologue.com/language/bzc/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Madagascar, (consulté 2025)",
+        "url": "https://www.cia.gov/the-world-factbook/countries/madagascar/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Beaujard, Philippe. Les mondes de l'océan Indien. Paris : Armand Colin, 2012",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

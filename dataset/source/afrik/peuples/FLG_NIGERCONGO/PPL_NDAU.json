@@ -111,12 +111,42 @@
       ]
     },
     "sources": [
-      "Omniglot — Ndau language and alphabet. https://www.omniglot.com/writing/ndau.htm",
-      "Glottolog — Ndau (ndau1241). https://glottolog.org/resource/languoid/id/ndau1241",
-      "Joshua Project — Ndau, Shona in Mozambique. https://joshuaproject.net/people_groups/13273/MZ",
-      "Joshua Project — Ndau in Zimbabwe. https://joshuaproject.net/people_groups/13273/ZI",
-      "MacGonagle, Elizabeth. Crafting Identity in Zimbabwe and Mozambique. University of Rochester Press, 2007.",
-      "Earthy, E.D. Valenge Women. International African Institute, 1933."
+      {
+        "title": "Omniglot — Ndau language and alphabet",
+        "url": "https://www.omniglot.com/writing/ndau.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Glottolog — Ndau (ndau1241)",
+        "url": "https://glottolog.org/resource/languoid/id/ndau1241",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Joshua Project — Ndau, Shona in Mozambique",
+        "url": "https://joshuaproject.net/people_groups/13273/MZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Ndau in Zimbabwe",
+        "url": "https://joshuaproject.net/people_groups/13273/ZI",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "MacGonagle, Elizabeth. Crafting Identity in Zimbabwe and Mozambique. University of Rochester Press, 2007",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Earthy, E.D. Valenge Women. International African Institute, 1933",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

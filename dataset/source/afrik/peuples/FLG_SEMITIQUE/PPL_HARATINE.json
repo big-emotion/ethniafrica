@@ -109,12 +109,42 @@
       ]
     },
     "sources": [
-      "El Hamel C. – Le Maroc noir (Black Morocco), Stanford University Press, 2014",
-      "Pazzanita A.G. – Historical Dictionary of Mauritania, 3e ed., Scarecrow Press, 2008",
-      "Ould Saleck El Arby – Les Haratins : le paysage politique mauritanien, L'Harmattan, 2003",
-      "Gast M. – article Haratin, Encyclopedie berbere, vol. XXII, 2000",
-      "Amnesty International – Mauritania: Human Rights Abuses Against Black Africans, 1994",
-      "Hachid M. – Les premiers Berberes, Inas-Edisud, 2000 (sur les populations du Tassili et leur devenir)"
+      {
+        "title": "El Hamel C. – Le Maroc noir (Black Morocco), Stanford University Press, 2014",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Pazzanita A.G. – Historical Dictionary of Mauritania, 3e ed., Scarecrow Press, 2008",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ould Saleck El Arby – Les Haratins : le paysage politique mauritanien, L'Harmattan, 2003",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Gast M. – article Haratin, Encyclopedie berbere, vol. XXII, 2000",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Amnesty International – Mauritania: Human Rights Abuses Against Black Africans, 1994",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Hachid M. – Les premiers Berberes, Inas-Edisud, 2000 (sur les populations du Tassili et leur devenir)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

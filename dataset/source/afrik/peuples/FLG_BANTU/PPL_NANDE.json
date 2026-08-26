@@ -104,11 +104,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue – Nande (nnb) : https://www.ethnologue.com/language/nnb/",
-      "PeopleGroups.org – Nande of DRC (2024) : https://peoplegroups.org/people_groups/pg014669/",
-      "101 Last Tribes – Nande people : https://www.101lasttribes.com/tribes/nande.html",
-      "Global Press Journal – A Tribe Watches Its Language Languish (2021) : https://globalpressjournal.com/africa/democratic-republic-of-congo/tribe-watches-language-languish/",
-      "Swordshare Map – Kinande (nnb) : https://map.swordshare.com/nnb"
+      {
+        "title": "SIL Ethnologue – Nande (nnb)",
+        "url": "https://www.ethnologue.com/language/nnb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "PeopleGroups.org – Nande of DRC (2024)",
+        "url": "https://peoplegroups.org/people_groups/pg014669/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "101 Last Tribes – Nande people",
+        "url": "https://www.101lasttribes.com/tribes/nande.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Global Press Journal – A Tribe Watches Its Language Languish (2021)",
+        "url": "https://globalpressjournal.com/africa/democratic-republic-of-congo/tribe-watches-language-languish/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for globalpressjournal.com."
+      },
+      {
+        "title": "Swordshare Map – Kinande (nnb)",
+        "url": "https://map.swordshare.com/nnb",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      }
     ]
   }
 }

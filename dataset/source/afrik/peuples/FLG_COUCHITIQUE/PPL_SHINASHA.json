@@ -70,11 +70,36 @@
       ]
     },
     "sources": [
-      "Boro, Shinasha in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10304)",
-      "Situation of the Shinasha ethnic group – Immigration and Refugee Board of Canada / Ecoi.net, 2014 (https://www.ecoi.net/en/document/1292401.html)",
-      "Marginalization and persecution in Ethiopia's Benishangul-Gumuz – Ethiopia Insight, 2021 (https://www.ethiopia-insight.com/2021/08/10/marginalization-and-persecution-in-ethiopias-benishangul-gumuz/)",
-      "In historical perspectives in Africa: A case study of Shinasha tribe – IJAMTES, Abebe Ano, 2018 (https://www.ijamtes.org/gallery/227.%20aug%20ijmte%20-%20942.pdf)",
-      "The Shinasha people – The Tribal Society, 2024 (https://thetribalsociety.com/the-shinasha-people/)"
+      {
+        "title": "Boro, Shinasha in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/10304",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Situation of the Shinasha ethnic group – Immigration and Refugee Board of Canada / Ecoi.net, 2014",
+        "url": "https://www.ecoi.net/en/document/1292401.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ecoi.net."
+      },
+      {
+        "title": "Marginalization and persecution in Ethiopia's Benishangul-Gumuz – Ethiopia Insight, 2021",
+        "url": "https://www.ethiopia-insight.com/2021/08/10/marginalization-and-persecution-in-ethiopias-benishangul-gumuz/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ethiopia-insight.com."
+      },
+      {
+        "title": "In historical perspectives in Africa: A case study of Shinasha tribe – IJAMTES, Abebe Ano, 2018",
+        "url": "https://www.ijamtes.org/gallery/227.%20aug%20ijmte%20-%20942.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ijamtes.org; the tier awaits editorial review."
+      },
+      {
+        "title": "The Shinasha people – The Tribal Society, 2024",
+        "url": "https://thetribalsociety.com/the-shinasha-people/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for thetribalsociety.com."
+      }
     ]
   }
 }

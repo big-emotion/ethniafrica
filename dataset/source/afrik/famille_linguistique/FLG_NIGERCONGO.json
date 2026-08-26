@@ -73,32 +73,162 @@
       }
     },
     "sources": [
-      "Greenberg, Joseph H. (1949) – *\"Studies in African Linguistic Classification: I. Introduction, Niger-Congo Family\"*. *Southwestern Journal of Anthropology*.",
-      "Greenberg, Joseph H. (1963 [éd. 2, 1966, 1970]) – *The Languages of Africa*. Bloomington: Indiana University Press / Mouton & Co.",
-      "Westermann, Diedrich (1935) – *Charakter und Einteilung der Sudansprachen*. Berlin.",
-      "Blench, Roger (2006, 2016) – *Reconstructions of Proto-Niger–Congo and hypotheses on its Urheimat*. Travaux présentés notamment en congrès de linguistique, Blench est en train de composer un dictionnaire étymologique Niger-Congo.",
-      "Blench, Roger (2006, 2016) – *\"Supposing we have been completely wrong about the shape of early Niger-Congo roots?\"*, communication aux congrès \"Towards Proto-Niger-Congo: Comparison and Reconstruction\", Paris.",
-      "Good, Jeff (2020) – *\"Niger-Congo, with a Special Focus on Benue-Congo\"*, dans *The Oxford Handbook of African Languages*. Oxford University Press.",
-      "Hyman, Larry M.; Rolle, Nicholas R.; Sande, Hannah L.; Clem, Emily C.; Jenks, Peter; Lionnet, Florian A. J.; Merrill, John; Baier, Nico (2019) – *\"Niger-Congo linguistic features and typology\"*, dans *The Cambridge Handbook of African Linguistics*. Cambridge University Press.",
-      "Heine, Bernd & Nurse, Derek (2000) – *African Languages: An Introduction*. Cambridge University Press.",
-      "Busby, George B., et al. (2016) – *\"Admixture into and within sub-Saharan Africa\"*. *eLife* vol.5:e15266.",
-      "Tishkoff, Sarah A., et al. (2009) – *\"The Genetic Structure and History of Africans and African Americans\"*. *Science*.",
-      "Grollemund, Rebecca, et al. (2016) – *\"Genetic unity\" of Niger-Congo*. Études sur ce qui est reconstruit vs ce qui reste hypothétique.",
-      "Dimmendaal, Gerrit J., et al. (2008) – Travaux sur la remise en question de l'unité de certaines branches Niger-Congo.",
-      "Britannica Editors – *\"Niger-Congo languages\"*. Encyclopædia Britannica.",
-      "Ethnologue (SIL International, 2025) – *Niger–Congo*. Fiches linguistiques pour chaque langue, nombre de langues, locuteurs, répartition pays.",
-      "UNESCO – *Atlas des langues africaines*.",
-      "Williamson, Kay & Blench, Roger – *Niger-Congo Overview*.",
-      "Nurse, Derek & Philippson, Gérard (2003) – *The Bantu Languages*. Routledge.",
-      "Meeussen, A.E. (1967) – *\"Bantu Grammatical Reconstructions\"*. *Africana Linguistica* 3: 79-121.",
-      "Schadeberg, Thilo C. (2003) – *\"Historical Linguistics\"*, dans Nurse & Philippson (eds.) *The Bantu Languages*. Routledge.",
-      "Bastin, Yvonne, Coupez, André & Mann, Michael (1999) – *Continuity and Divergence in the Bantu Languages: Perspectives from a Lexicostatistic Study*. Tervuren: Musée royal de l'Afrique centrale.",
-      "Hyman, Larry M. (2003) – *\"Segmental Phonology\"*, dans Nurse & Philippson (eds.) *The Bantu Languages*. Routledge.",
-      "Maho, Jouni Filip (2003) – *\"A Classification of the Bantu Languages: An Update of Guthrie's Referential System\"*, dans Nurse & Philippson (eds.) *The Bantu Languages*. Routledge.",
-      "Glottolog (2025) – \"Atlantic-Congo\". https://glottolog.org/resource/languoid/id/atla1278",
-      "Statistics South Africa (2025) – Census 2022 Statistical Release P0301.4, Table 2.8 (isiXhosa home language). https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
-      "Agence Nationale de la Statistique et de la Démographie (ANSD), Sénégal (2023) – RGPH-5, Rapport Chapitre 1 : État et structure de la population, Table I-32 (Wolof langue courante). https://www.ansd.sn/sites/default/files/recensements/rapport/Chapitre-1_ETAT-STRUCTURE-POPULATION-Rapport-def-RGPH-5.pdf",
-      "Agence Nationale de la Statistique (ANStat), Côte d'Ivoire (2021) – Recensement Général de la Population et de l'Habitat (RGPH 2021), jeu de données \"Répartition des Ivoiriens par grand groupe ethnique selon le sexe\" (groupe ethnolinguistique total, hors naturalisés et non précisés, classification Bouquet). https://data.gouv.ci/datasets/repartition-des-ivoiriens-par-grand-groupe-ethnique"
+      {
+        "title": "Greenberg, Joseph H. (1949) – *\"Studies in African Linguistic Classification: I. Introduction, Niger-Congo Family\"*. *Southwestern Journal of Anthropology*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Greenberg, Joseph H. (1963 [éd. 2, 1966, 1970]) – *The Languages of Africa*. Bloomington: Indiana University Press / Mouton & Co",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Westermann, Diedrich (1935) – *Charakter und Einteilung der Sudansprachen*. Berlin",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Blench, Roger (2006, 2016) – *Reconstructions of Proto-Niger–Congo and hypotheses on its Urheimat*. Travaux présentés notamment en congrès de linguistique, Blench est en train de composer un dictionnaire étymologique Niger-Congo",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Blench, Roger (2006, 2016) – *\"Supposing we have been completely wrong about the shape of early Niger-Congo roots?\"*, communication aux congrès \"Towards Proto-Niger-Congo: Comparison and Reconstruction\", Paris",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Good, Jeff (2020) – *\"Niger-Congo, with a Special Focus on Benue-Congo\"*, dans *The Oxford Handbook of African Languages*. Oxford University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Hyman, Larry M.; Rolle, Nicholas R.; Sande, Hannah L.; Clem, Emily C.; Jenks, Peter; Lionnet, Florian A. J.; Merrill, John; Baier, Nico (2019) – *\"Niger-Congo linguistic features and typology\"*, dans *The Cambridge Handbook of African Linguistics*. Cambridge University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Heine, Bernd & Nurse, Derek (2000) – *African Languages: An Introduction*. Cambridge University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Busby, George B., et al. (2016) – *\"Admixture into and within sub-Saharan Africa\"*. *eLife* vol.5:e15266",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Tishkoff, Sarah A., et al. (2009) – *\"The Genetic Structure and History of Africans and African Americans\"*. *Science*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Grollemund, Rebecca, et al. (2016) – *\"Genetic unity\" of Niger-Congo*. Études sur ce qui est reconstruit vs ce qui reste hypothétique",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Dimmendaal, Gerrit J., et al. (2008) – Travaux sur la remise en question de l'unité de certaines branches Niger-Congo",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Britannica Editors – *\"Niger-Congo languages\"*. Encyclopædia Britannica",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue (SIL International, 2025) – *Niger–Congo*. Fiches linguistiques pour chaque langue, nombre de langues, locuteurs, répartition pays",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "UNESCO – *Atlas des langues africaines*",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Williamson, Kay & Blench, Roger – *Niger-Congo Overview*",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Nurse, Derek & Philippson, Gérard (2003) – *The Bantu Languages*. Routledge",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Meeussen, A.E. (1967) – *\"Bantu Grammatical Reconstructions\"*. *Africana Linguistica* 3: 79-121",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Schadeberg, Thilo C. (2003) – *\"Historical Linguistics\"*, dans Nurse & Philippson (eds.) *The Bantu Languages*. Routledge",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Bastin, Yvonne, Coupez, André & Mann, Michael (1999) – *Continuity and Divergence in the Bantu Languages: Perspectives from a Lexicostatistic Study*. Tervuren: Musée royal de l'Afrique centrale",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Hyman, Larry M. (2003) – *\"Segmental Phonology\"*, dans Nurse & Philippson (eds.) *The Bantu Languages*. Routledge",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Maho, Jouni Filip (2003) – *\"A Classification of the Bantu Languages: An Update of Guthrie's Referential System\"*, dans Nurse & Philippson (eds.) *The Bantu Languages*. Routledge",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog (2025) – \"Atlantic-Congo\"",
+        "url": "https://glottolog.org/resource/languoid/id/atla1278",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Statistics South Africa (2025) – Census 2022 Statistical Release P0301.4, Table 2.8 (isiXhosa home language)",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for census.statssa.gov.za."
+      },
+      {
+        "title": "Agence Nationale de la Statistique et de la Démographie (ANSD), Sénégal (2023) – RGPH-5, Rapport Chapitre 1 : État et structure de la population, Table I-32 (Wolof langue courante)",
+        "url": "https://www.ansd.sn/sites/default/files/recensements/rapport/Chapitre-1_ETAT-STRUCTURE-POPULATION-Rapport-def-RGPH-5.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ansd.sn."
+      },
+      {
+        "title": "Agence Nationale de la Statistique (ANStat), Côte d'Ivoire (2021) – Recensement Général de la Population et de l'Habitat (RGPH 2021), jeu de données \"Répartition des Ivoiriens par grand groupe ethnique selon le sexe\" (groupe ethnolinguistique total, hors naturalisés et non précisés, classification Bouquet)",
+        "url": "https://data.gouv.ci/datasets/repartition-des-ivoiriens-par-grand-groupe-ethnique",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for data.gouv.ci."
+      }
     ]
   }
 }

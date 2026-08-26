@@ -106,7 +106,7 @@ describe("ReferenceLibraryFlow", () => {
             author: "United Nations",
             year: 2025,
             source_kind: "intergovernmental",
-            evidence_tier: 1,
+            tier: "official",
             identifiers: {},
             publisher: "United Nations",
             url: "https://population.un.org/wpp/",

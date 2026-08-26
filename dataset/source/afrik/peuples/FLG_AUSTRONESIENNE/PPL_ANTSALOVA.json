@@ -86,11 +86,36 @@
       ]
     },
     "sources": [
-      "Ethnologue — Malagasy macrolanguage (mlg), https://www.ethnologue.com/language/mlg/ (consulté 2025)",
-      "CIA World Factbook — Madagascar, https://www.cia.gov/the-world-factbook/countries/madagascar/ (consulté 2025)",
-      "INSTAT Madagascar — Recensements communaux, https://www.instat.mg (consulté 2025)",
-      "Beaujard, Philippe. Les mondes de l'océan Indien. Paris : Armand Colin, 2012.",
-      "Kusuma, Pradiptajati et al. Malagasy Genetic Ancestry. Molecular Biology and Evolution, 2016. https://pmc.ncbi.nlm.nih.gov/articles/PMC4989113/"
+      {
+        "title": "Ethnologue — Malagasy macrolanguage (mlg), (consulté 2025)",
+        "url": "https://www.ethnologue.com/language/mlg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Madagascar, (consulté 2025)",
+        "url": "https://www.cia.gov/the-world-factbook/countries/madagascar/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "INSTAT Madagascar — Recensements communaux, (consulté 2025)",
+        "url": "https://www.instat.mg",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for instat.mg."
+      },
+      {
+        "title": "Beaujard, Philippe. Les mondes de l'océan Indien. Paris : Armand Colin, 2012",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Kusuma, Pradiptajati et al. Malagasy Genetic Ancestry. Molecular Biology and Evolution, 2016",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4989113/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+      }
     ]
   }
 }

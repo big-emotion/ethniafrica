@@ -7,6 +7,7 @@
 import type { ReactNode } from "react";
 
 import type { PeopleId } from "@/types/afrik";
+import type { SourceTier } from "@/types/sources";
 
 export type NameRecordType =
   | "endonym"
@@ -19,7 +20,7 @@ export interface NameRecordSource {
   author: string;
   year: number;
   url: string;
-  tier: 1 | 2;
+  tier: SourceTier;
   notes?: string;
 }
 

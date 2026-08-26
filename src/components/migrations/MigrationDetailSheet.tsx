@@ -21,10 +21,8 @@ import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { ClassificationBadge } from "@/components/ui/classification-badge";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { LazySourceChainSheet } from "@/components/source-transparency/SourceChainSheet.lazy";
-import type {
-  Source as SourceChainSource,
-  SourceTier,
-} from "@/components/source-transparency/SourceChainSheet";
+import type { Source as SourceChainSource } from "@/components/source-transparency/SourceChainSheet";
+import { toSourceTier } from "@/types/sources";
 import { useSheetHistory } from "@/hooks/use-sheet-history";
 import { getPeopleRoute } from "@/lib/routing";
 import { formatYearFr } from "@/lib/atlas/formatYearFr";
@@ -86,12 +84,7 @@ function formatPeriod(timeRange: MigrationAtlasEntry["timeRange"]): string {
   return timeRange.datingNote ? `${range} (${timeRange.datingNote})` : range;
 }
 
-function tierToSourceTier(tier: string | null): SourceTier {
-  if (tier === "1") return "primary";
-  if (tier === "2") return "secondary";
-  return "tertiary";
-}
-
+// @req REQ-101
 export function MigrationDetailSheet({
   open,
   onOpenChange,
@@ -146,7 +139,7 @@ export function MigrationDetailSheet({
       id: source.id,
       title: source.title,
       url: source.url ?? undefined,
-      tier: tierToSourceTier(source.tier),
+      tier: toSourceTier(source.tier),
     })
   );
 

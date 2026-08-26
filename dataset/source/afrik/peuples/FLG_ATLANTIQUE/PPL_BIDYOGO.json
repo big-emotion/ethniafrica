@@ -88,13 +88,48 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Bijagó (bjg). https://www.ethnologue.com/language/bjg/",
-      "Ethnologue subgroups Niger-Congo — Bijago listing. https://www.ethnologue.com/subgroup/47/",
-      "Responsible Travel — Bijagos Archipelago culture. https://www.responsiblevacation.com/vacations/guinea-bissau/travel-guide/the-bijagos-archipelago",
-      "Nadia Ferroukhi — Guinea Bissau, Bijago (matriarchy, fanado). https://nadia-ferroukhi.com/project/guinee-bissau-bijago/",
-      "Comboni Missionaries — Guinea Bissau: A People With A Strong Identity (fanado, religion). https://combonimissionaries.ie/2017/01/26/guinea-bissau-a-people-with-a-strong-identity/",
-      "UNESCO Biosphere Reserve — Bijagos Archipelago (1996). https://en.unesco.org/",
-      "Kumakonda African Travel — Bijagos Islands matriarchal society. https://kumakonda.com/bijagos-islands-in-guinea-bissau-where-women-rule/"
+      {
+        "title": "SIL Ethnologue — Bijagó (bjg)",
+        "url": "https://www.ethnologue.com/language/bjg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ethnologue subgroups Niger-Congo — Bijago listing",
+        "url": "https://www.ethnologue.com/subgroup/47/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Responsible Travel — Bijagos Archipelago culture",
+        "url": "https://www.responsiblevacation.com/vacations/guinea-bissau/travel-guide/the-bijagos-archipelago",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for responsiblevacation.com."
+      },
+      {
+        "title": "Nadia Ferroukhi — Guinea Bissau, Bijago (matriarchy, fanado)",
+        "url": "https://nadia-ferroukhi.com/project/guinee-bissau-bijago/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers nadia-ferroukhi.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Comboni Missionaries — Guinea Bissau: A People With A Strong Identity (fanado, religion)",
+        "url": "https://combonimissionaries.ie/2017/01/26/guinea-bissau-a-people-with-a-strong-identity/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for combonimissionaries.ie."
+      },
+      {
+        "title": "UNESCO Biosphere Reserve — Bijagos Archipelago (1996)",
+        "url": "https://en.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of en.unesco.org."
+      },
+      {
+        "title": "Kumakonda African Travel — Bijagos Islands matriarchal society",
+        "url": "https://kumakonda.com/bijagos-islands-in-guinea-bissau-where-women-rule/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kumakonda.com."
+      }
     ]
   }
 }

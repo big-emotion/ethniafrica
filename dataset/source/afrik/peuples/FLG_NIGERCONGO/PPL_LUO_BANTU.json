@@ -101,10 +101,30 @@
       ]
     },
     "sources": [
-      "Britannica — Luo people. https://www.britannica.com/topic/Luo-people",
-      "SIL Ethnologue — Dholuo (luo). https://www.ethnologue.com/language/luo/",
-      "SIL Ethnologue — Adhola (adh). https://www.ethnologue.com/language/adh/",
-      "CIA World Factbook — Kenya, Uganda, Tanzania. https://www.cia.gov/the-world-factbook/"
+      {
+        "title": "Britannica — Luo people",
+        "url": "https://www.britannica.com/topic/Luo-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "SIL Ethnologue — Dholuo (luo)",
+        "url": "https://www.ethnologue.com/language/luo/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue — Adhola (adh)",
+        "url": "https://www.ethnologue.com/language/adh/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Kenya, Uganda, Tanzania",
+        "url": "https://www.cia.gov/the-world-factbook/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

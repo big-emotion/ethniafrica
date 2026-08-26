@@ -91,11 +91,36 @@
       ]
     },
     "sources": [
-      "Omniglot – Loma language and alphabet, 2025 (https://www.omniglot.com/writing/loma.htm)",
-      "Yale Linguistics – Promouvoir la Culture Loma (article sur les politiques linguistiques en Guinee), 2024 (https://ling.yale.edu/media/478/download?inline)",
-      "101 Last Tribes – Loma people (https://www.101lasttribes.com/tribes/loma.html)",
-      "Theses.fr – Contribution a l'histoire des Loma de la Guinee forestiere (Paris 7, 1991) (https://theses.fr/1991PA070030)",
-      "IndexMundi – Guinea ethnic groups, CIA World Factbook 2021 (https://www.indexmundi.com/factbook/compare/guinea.liberia/demographics)"
+      {
+        "title": "Omniglot – Loma language and alphabet, 2025",
+        "url": "https://www.omniglot.com/writing/loma.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Yale Linguistics – Promouvoir la Culture Loma (article sur les politiques linguistiques en Guinee), 2024",
+        "url": "https://ling.yale.edu/media/478/download?inline",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ling.yale.edu; the tier awaits editorial review."
+      },
+      {
+        "title": "101 Last Tribes – Loma people",
+        "url": "https://www.101lasttribes.com/tribes/loma.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Theses.fr – Contribution a l'histoire des Loma de la Guinee forestiere (Paris 7, 1991)",
+        "url": "https://theses.fr/1991PA070030",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"theses-fr\"."
+      },
+      {
+        "title": "IndexMundi – Guinea ethnic groups, CIA World Factbook 2021",
+        "url": "https://www.indexmundi.com/factbook/compare/guinea.liberia/demographics",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for indexmundi.com."
+      }
     ]
   }
 }

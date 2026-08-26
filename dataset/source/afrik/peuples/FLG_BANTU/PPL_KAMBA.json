@@ -115,11 +115,36 @@
       ]
     },
     "sources": [
-      "Ethnologue (SIL) — Kamba [kam]. https://www.ethnologue.com/language/kam/",
-      "Kenya National Bureau of Statistics — Kenya Population and Housing Census 2019. https://www.knbs.or.ke/2019-kenya-population-and-housing-census/",
-      "Gateway Africa — Kuba Tribe. https://www.gateway-africa.com/tribe/kuba_tribe.html",
-      "Lexvo.org — ISO 639-3 kam (Kamba). http://www.lexvo.org/page/iso639-3/kam",
-      "Joshua Project — Kamba people. https://joshuaproject.net/people_groups/11484/KE"
+      {
+        "title": "Ethnologue (SIL) — Kamba [kam]",
+        "url": "https://www.ethnologue.com/language/kam/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Kenya National Bureau of Statistics — Kenya Population and Housing Census 2019",
+        "url": "https://www.knbs.or.ke/2019-kenya-population-and-housing-census/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for knbs.or.ke."
+      },
+      {
+        "title": "Gateway Africa — Kuba Tribe",
+        "url": "https://www.gateway-africa.com/tribe/kuba_tribe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for gateway-africa.com."
+      },
+      {
+        "title": "Lexvo.org — ISO 639-3 kam (Kamba)",
+        "url": "http://www.lexvo.org/page/iso639-3/kam",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers lexvo.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Kamba people",
+        "url": "https://joshuaproject.net/people_groups/11484/KE",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

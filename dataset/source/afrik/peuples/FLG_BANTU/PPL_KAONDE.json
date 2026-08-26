@@ -78,13 +78,48 @@
       ]
     },
     "sources": [
-      "Kaonde – Britannica (https://www.britannica.com/topic/Kaonde)",
-      "The Kaonde People – Lugha Yangu, 2022 (https://lughayangu.com/post/the-kaonde-people)",
-      "History – Kaonde Archives (https://kaondewordpress.wordpress.com/history/)",
-      "Culture – Kaonde Archives (https://kaondewordpress.wordpress.com/culture/)",
-      "Kaonde – DICE Database, University of Missouri (https://dice.missouri.edu/assets/docs/niger-congo/Kaonde.pdf)",
-      "A general survey of the historical migration of the Kaonde clans – University of Amsterdam (https://pure.uva.nl/ws/files/1687596/168316_ARTICLE_A_general_survey_of_the_historical_migration_of_the_Kaonde_clans_from_southern_Congo_into_Zambia_2_.pdf)",
-      "Kaonde in Zambia – Joshua Project (https://joshuaproject.net/people_groups/12511/ZA)"
+      {
+        "title": "Kaonde – Britannica",
+        "url": "https://www.britannica.com/topic/Kaonde",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "The Kaonde People – Lugha Yangu, 2022",
+        "url": "https://lughayangu.com/post/the-kaonde-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for lughayangu.com."
+      },
+      {
+        "title": "History – Kaonde Archives",
+        "url": "https://kaondewordpress.wordpress.com/history/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of kaondewordpress.wordpress.com."
+      },
+      {
+        "title": "Culture – Kaonde Archives",
+        "url": "https://kaondewordpress.wordpress.com/culture/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of kaondewordpress.wordpress.com."
+      },
+      {
+        "title": "Kaonde – DICE Database, University of Missouri",
+        "url": "https://dice.missouri.edu/assets/docs/niger-congo/Kaonde.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      },
+      {
+        "title": "A general survey of the historical migration of the Kaonde clans – University of Amsterdam",
+        "url": "https://pure.uva.nl/ws/files/1687596/168316_ARTICLE_A_general_survey_of_the_historical_migration_of_the_Kaonde_clans_from_southern_Congo_into_Zambia_2_.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers pure.uva.nl; the tier awaits editorial review."
+      },
+      {
+        "title": "Kaonde in Zambia – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/12511/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

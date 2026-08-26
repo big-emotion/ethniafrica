@@ -96,7 +96,7 @@ describe("auditPeopleSourceTiers", () => {
         {
           title: "UN source",
           url: "https://data.un.org/example",
-          tier: 1,
+          tier: "official",
         },
       ])
     );
@@ -129,24 +129,25 @@ describe("auditPeopleSourceTiers", () => {
     ).resolves.toEqual(before);
   });
 
-  it("requires explicit complete Tier 1 entries from authorized canon hosts", async () => {
+  // @req REQ-092
+  it("accepts any explicitly tiered source and flags one with no title", async () => {
     await writeJson(
       path.join(peopleDirectory, "PPL_GOOD.json"),
       peopleProfile("PPL_GOOD", [
         {
           title: "Glottolog language record",
           url: "https://glottolog.org/resource/languoid/id/example",
-          tier: 1,
+          tier: "official",
         },
         {
-          title: "UNESCO record",
-          url: "https://www.unesco.org/en/example",
-          tier: 1,
+          title: "Community account of the naming dispute",
+          url: "https://example.org/community",
+          tier: "unverified",
         },
         {
-          title: "SIL language resource",
-          url: "https://www.sil.org/resources/example",
-          tier: 1,
+          title: "Monograph with no online edition",
+          url: null,
+          tier: "referenced",
         },
       ])
     );
@@ -155,8 +156,8 @@ describe("auditPeopleSourceTiers", () => {
       peopleProfile("PPL_BAD", [
         {
           title: "",
-          url: "https://example.com/not-canon",
-          tier: 1,
+          url: "https://example.com/untitled",
+          tier: "official",
         },
       ])
     );
@@ -169,6 +170,11 @@ describe("auditPeopleSourceTiers", () => {
     expect(profile(report, "PPL_GOOD")).toEqual(
       expect.objectContaining({ eligible: true, findings: [] })
     );
+    expect(profile(report, "PPL_GOOD").tierCounts).toEqual({
+      official: 1,
+      referenced: 1,
+      unverified: 1,
+    });
     expect(profile(report, "PPL_BAD").findings).toEqual(
       expect.arrayContaining([
         expect.objectContaining({ code: "SOURCE_MALFORMED" }),
@@ -177,12 +183,17 @@ describe("auditPeopleSourceTiers", () => {
     expect(profile(report, "PPL_BAD").eligible).toBe(false);
   });
 
-  it("keeps legacy strings unauditable and also identifies detectable Tier 3 references", async () => {
+  // @req REQ-092
+  it("flags a legacy string source and a tier left at needs_review", async () => {
     await writeJson(
       path.join(peopleDirectory, "PPL_LEGACY.json"),
       peopleProfile("PPL_LEGACY", [
         "SIL Ethnologue — Example",
-        "Wikipedia — https://fr.wikipedia.org/wiki/Example",
+        {
+          title: "Recensements nationaux sud-africains",
+          url: null,
+          tier: "needs_review",
+        },
       ])
     );
 
@@ -191,17 +202,10 @@ describe("auditPeopleSourceTiers", () => {
       "PPL_LEGACY"
     );
 
-    expect(
-      result.findings.filter((item) => item.code === "SOURCE_UNAUDITABLE")
-    ).toHaveLength(2);
-    expect(result.findings).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({
-          code: "SOURCE_TIER3",
-          sourceIndex: 1,
-        }),
-      ])
-    );
+    expect(result.findings).toEqual([
+      expect.objectContaining({ code: "SOURCE_LEGACY_STRING", sourceIndex: 0 }),
+      expect.objectContaining({ code: "SOURCE_UNTIERED", sourceIndex: 1 }),
+    ]);
     expect(result.eligible).toBe(false);
   });
 
@@ -228,57 +232,27 @@ describe("auditPeopleSourceTiers", () => {
     );
   });
 
-  it("accepts Tier 2 only with a direct primary URL and two Wikipedia language editions in notes", async () => {
-    await writeJson(
-      path.join(peopleDirectory, "PPL_CHAIN_OK.json"),
-      peopleProfile("PPL_CHAIN_OK", [
-        {
-          title: "Peer-reviewed primary study",
-          url: "https://doi.org/10.1234/example",
-          tier: 2,
-          notes:
-            "Discovered via https://en.wikipedia.org/wiki/Example and cross-checked at https://fr.wikipedia.org/wiki/Exemple",
-        },
-      ])
-    );
-    await writeJson(
-      path.join(peopleDirectory, "PPL_CHAIN_BAD.json"),
-      peopleProfile("PPL_CHAIN_BAD", [
-        {
-          title: "Study",
-          url: "https://example.edu/study",
-          tier: 2,
-          notes: "Discovered via https://en.wikipedia.org/wiki/Example only",
-        },
-      ])
-    );
+  // @req REQ-092
+  it("cites Wikipedia as a source at the unverified tier rather than rejecting it", async () => {
     await writeJson(
       path.join(peopleDirectory, "PPL_WIKIPEDIA_SOURCE.json"),
       peopleProfile("PPL_WIKIPEDIA_SOURCE", [
         {
           title: "Wikipedia article",
           url: "https://en.wikipedia.org/wiki/Example",
-          tier: 2,
-          notes:
-            "Compared https://en.wikipedia.org/wiki/Example and https://fr.wikipedia.org/wiki/Exemple",
+          tier: "unverified",
+          notes: "Compared the EN and FR language editions.",
         },
       ])
     );
 
-    const report = await auditPeopleSourceTiers(
-      peopleDirectory,
-      countryDirectory
+    const result = profile(
+      await auditPeopleSourceTiers(peopleDirectory, countryDirectory),
+      "PPL_WIKIPEDIA_SOURCE"
     );
 
-    expect(profile(report, "PPL_CHAIN_OK").eligible).toBe(true);
-    expect(profile(report, "PPL_CHAIN_BAD").findings).toEqual([
-      expect.objectContaining({ code: "SOURCE_TIER2_CHAIN" }),
-    ]);
-    expect(profile(report, "PPL_WIKIPEDIA_SOURCE").findings).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({ code: "SOURCE_TIER3" }),
-      ])
-    );
+    expect(result.findings).toEqual([]);
+    expect(result.eligible).toBe(true);
   });
 
   it("reports deterministic FR28-strict country deviations and blocks associated profiles", async () => {
@@ -302,7 +276,7 @@ describe("auditPeopleSourceTiers", () => {
           {
             title: "IWGIA profile",
             url: "https://iwgia.org/en/example.html",
-            tier: 1,
+            tier: "official",
           },
         ],
         ["ZWE", "BEN"]
@@ -316,7 +290,7 @@ describe("auditPeopleSourceTiers", () => {
           {
             title: "CIA profile",
             url: "https://www.cia.gov/the-world-factbook/example",
-            tier: 1,
+            tier: "official",
           },
         ],
         ["COM"]
@@ -359,7 +333,7 @@ describe("auditPeopleSourceTiers", () => {
           {
             title: "UN record",
             url: "https://data.un.org/example",
-            tier: 1,
+            tier: "official",
           },
         ],
         ["ZWE"]
@@ -396,7 +370,7 @@ describe("auditPeopleSourceTiers", () => {
           {
             title: "UN record",
             url: "https://data.un.org/example",
-            tier: 1,
+            tier: "official",
           },
         ],
         ["MDG"]
@@ -424,7 +398,7 @@ describe("auditPeopleSourceTiers", () => {
         {
           title: "UNFPA record",
           url: "https://example.unfpa.org/resource",
-          tier: 1,
+          tier: "official",
         },
       ])
     );
@@ -444,6 +418,7 @@ describe("auditPeopleSourceTiers", () => {
       ineligibleProfiles: 1,
       parseFailures: 0,
       countryDeviations: 0,
+      tierCounts: { official: 1, referenced: 0, unverified: 0 },
     });
   });
 });

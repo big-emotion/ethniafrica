@@ -72,11 +72,36 @@
       ]
     },
     "sources": [
-      "PeopleGroups.org - Anum-Boso of Ghana (https://peoplegroups.org/people_groups/pg013261/)",
-      "Joshua Project - Anum-Boso in Ghana (https://joshuaproject.net/people_groups/print/10357/GH)",
-      "Justice Ghana - The Story of Boso, Kwame Ampene (http://www.justiceghana.com/index.php/2012-01-24-13-47-49/6644-the-story-of-boso)",
-      "Ghana Web - The historic town of Anum-Asamankese, 2021 (https://www.ghanaweb.com/GhanaHomePage/NewsArchive/The-historic-town-of-Anum-Asamankese-1166749)",
-      "101 Last Tribes - Guang people (https://www.101lasttribes.com/tribes/guang.html)"
+      {
+        "title": "PeopleGroups.org - Anum-Boso of Ghana",
+        "url": "https://peoplegroups.org/people_groups/pg013261/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Joshua Project - Anum-Boso in Ghana",
+        "url": "https://joshuaproject.net/people_groups/print/10357/GH",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Justice Ghana - The Story of Boso, Kwame Ampene",
+        "url": "http://www.justiceghana.com/index.php/2012-01-24-13-47-49/6644-the-story-of-boso",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers justiceghana.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Ghana Web - The historic town of Anum-Asamankese, 2021",
+        "url": "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/The-historic-town-of-Anum-Asamankese-1166749",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ghanaweb.com."
+      },
+      {
+        "title": "101 Last Tribes - Guang people",
+        "url": "https://www.101lasttribes.com/tribes/guang.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

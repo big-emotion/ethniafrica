@@ -369,7 +369,7 @@ describe("migrations service — getMigrationById", () => {
       new Map([
         [
           "MGR_BANTU_HOMELAND_DISPERSAL",
-          [{ id: "src-1", title: "Source", url: null, tier: "secondary" }],
+          [{ id: "src-1", title: "Source", url: null, tier: "referenced" }],
         ],
       ])
     );
@@ -402,7 +402,7 @@ describe("migrations service — getMigrationById", () => {
       { id: "PPL_KONGO", nameMain: "Kongo", role: "destination" },
     ]);
     expect(result!.record.sources).toEqual([
-      { id: "src-1", title: "Source", url: null, tier: "secondary" },
+      { id: "src-1", title: "Source", url: null, tier: "referenced" },
     ]);
 
     // AR17 — no N+1: exactly one call reads migration_event_peoples.

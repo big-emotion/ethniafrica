@@ -1,383 +1,193 @@
-# Dictionnaire des Ethnies d'Afrique
+# EthniAfrica
 
-Une application web open source pour explorer les peuples d'Afrique par région, pays et groupe ethnique, avec des statistiques de population claires et une interface pensée pour desktop et mobile.
+An open, sourced atlas of African peoples, languages, linguistic families and countries —
+published in French, organised by the **AFRIK methodology**, written from a decolonial
+editorial posture.
 
-**Version actuelle : v1.1.0**
+Every claim carries its source. Colonial-era names are kept and explained rather than quietly
+dropped, and the autonym — what a people calls itself — is always surfaced alongside the
+exonym.
 
-Page "À propos" disponible sur `/about` ou `/{lang}/about` (ex. `/fr/about`, `/en/about`).
+- Site: <https://ethniafrica.com>
+- Repository: <https://github.com/big-emotion/ethniafrica>
+- API docs: `/docs/api` (Swagger UI) · `/api/docs` (OpenAPI JSON)
 
-## 📚 Documentation complète
+---
 
-Pour une documentation complète du projet (architecture, méthodologie AFRIK, choix techniques et fonctionnels, etc.), consultez :
+## Getting started
 
-- **[PROJET_ETHNIAFRICA.md](PROJET_ETHNIAFRICA.md)** - Documentation complète du projet
-- **[DOCUMENTATION.md](DOCUMENTATION.md)** - Index de navigation vers toute la documentation
+Node **20.x** (`package.json` `engines`). The AFRIK data loaders are the one exception and need
+Node ≥ 22 — see [`docs/runbooks/afrik-staging-data-sync.md`](docs/runbooks/afrik-staging-data-sync.md).
 
-## Liens utiles
+```bash
+git clone https://github.com/big-emotion/ethniafrica.git
+cd ethniafrica
+npm install
+cp .env.example .env.local     # then fill in the three required values below
+npm run dev                    # http://localhost:3000
+```
 
-- À propos / Contexte: `/{lang}/about` (ex. `/fr/about`, `/en/about`)
-- Contribuer: `/{lang}/contribute` - Documentation API, téléchargement de données, contribution GitHub
-- Signaler une erreur: `/{lang}/report-error` - Formulaire pour signaler des erreurs dans les données
-- Dépôt GitHub: https://github.com/big-emotion/ethniafrica
+The app redirects `/` to `/fr`. Without Supabase credentials the pages render but data-backed
+routes fail — the modules validate their configuration at import time and throw when it is
+missing.
 
-## Fonctionnalités
+Three variables are required to run:
 
-### Navigation et structure
+| Variable                        |                                                          |
+| ------------------------------- | -------------------------------------------------------- |
+| `NEXT_PUBLIC_SUPABASE_URL`      | your Supabase project URL                                |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | browser-safe anon key                                    |
+| `SUPABASE_SERVICE_ROLE_KEY`     | **server-only** — never let this reach the client bundle |
 
-- **Pages dédiées** : Régions, Pays et Ethnies ont chacune leur propre page avec URL localisée (ex. `/fr/regions`, `/en/countries`)
-- **Navigation desktop** : Barre de menu fixe en haut avec accès direct à toutes les sections (Accueil, Régions, Pays, Ethnies, À propos, Contribuer, Signaler une erreur)
-- **Navigation mobile** : Menu burger avec accès rapide à toutes les pages et à la recherche
-- **URLs localisées** : Chaque langue a ses propres URLs (ex. `/fr/regions`, `/en/regions`, `/es/regiones`, `/pt/regioes`)
+Everything else is optional and inert when unset: Upstash (rate limiting), Sentry, Plausible,
+Turnstile, the quiz feature flag. `.env.example` is annotated and authoritative;
+`npm run check:env-example` keeps it honest against what the code actually reads.
 
-### Page d'accueil
+---
 
-- **Statistiques** : Affichage de 4 cartes statistiques (Population totale, Total Régions, Total Pays, Total Groupes ethniques) récupérées depuis l'API
-- **Synthèse** : Message de présentation du projet et de son contenu
-- **Recherche** : Barre de recherche intégrée sur la page d'accueil
-- **Accès direct** : 3 boutons CTA (Ethnies, Pays, Régions) positionnés sous les statistiques pour accéder rapidement aux pages principales
+## The data model
 
-### Exploration des données
+The corpus lives as **~890 JSON fiches in git**, under `dataset/source/afrik/` — not only in
+the database. The files are the editorial source of truth; Supabase is a projection of them.
 
-- **Vue détaillée** : Résumé synthétique, populations et pourcentages pour chaque région, pays ou ethnie
-- **Tri des tableaux** : Toutes les colonnes sont triables (nom, population, pourcentages) pour faciliter l'analyse
-- **Pagination intelligente** : La pagination des tableaux se réinitialise automatiquement lors du changement de pays, région ou ethnie
-- **Recherche** : Recherche globale (desktop et mobile) + navigation alphabétique
-- **Partage social** : Bouton de partage pour les pages détaillées (Facebook, Twitter, LinkedIn, copie de lien, Web Share API)
+```
+linguistic family  →  language  →  people  →  country
+   FLG_*              ISO 639-3     PPL_*     ISO 3166-1 alpha-3
+```
 
-### Expérience utilisateur
+```
+dataset/source/afrik/
+  famille_linguistique/FLG_*.json
+  peuples/FLG_*/PPL_*.json
+  pays/*.json
+  {relations,noms,migrations}/
+        ↓  src/lib/afrik/loaders/*JsonLoader.ts
+  afrik_language_families · afrik_languages · afrik_peoples
+  afrik_countries · afrik_people_countries
+```
 
-- **Bouton retour** : Disponible en desktop et mobile pour revenir à la liste après consultation d'un détail
-- **Recherche mobile** : Accessible depuis le menu burger
-- **Logo** : Intégré dans la navigation et sur la page d'accueil
-- **Responsive** : Interface optimisée pour mobile et desktop
+Each fiche's shape is fixed by a strict model in `public/modele-*.json` (peuple, pays,
+linguistique, nom, relation, source, migration, récit-oral, frontière-coloniale). Never skip,
+rename or invent a section.
 
-### Multilingue
+Every `sources` entry carries a tier, and `scripts/validateAfrikData.ts` enforces it. Editorial
+work on fiches has its own guidance in `.claude/skills/afrik-curator/`; the rules the validator
+and `scripts/ci/checkEditorialRules.ts` apply are documented in
+[`CLAUDE.md`](CLAUDE.md#source-tier-policy-enforced-by-validateafrikdatats).
 
-- **4 langues** : français, anglais, espagnol, portugais
-- **Page "À propos"** : Contenu complet avec section "Sources" (bibliographie exhaustive) dans toutes les langues
-- **Page "Contribuer"** : Documentation API, téléchargement de données (CSV/Excel), formulaire de contact, lien GitHub
-- **Page "Signaler une erreur"** : Formulaire dédié pour signaler des erreurs dans les données
-- **Traductions** : Toutes les interfaces et contenus sont traduits
+---
+
+## The public API
+
+**`/api/v2` only.** V1 (`/api/regions`, `/api/ethnicities`) was removed with the schema behind
+it; anything that mentions regions or ethnicities as entities is stale.
+
+Resources under `/api/v2/`: `countries`, `peoples`, `language-families`, `relations`,
+`migrations`, `names`, `oral-narratives`, `sources`, `reference-library`, `search`, `compare`,
+`confidence`, `doctrine`, `flags`, `quiz`, `feed`, `keys`.
+
+```bash
+curl http://localhost:3000/api/v2/countries
+curl http://localhost:3000/api/v2/countries/NGA
+curl "http://localhost:3000/api/v2/peoples?limit=5"
+curl http://localhost:3000/api/v2/language-families/FLG_BANTU
+```
+
+Every endpoint splits across three layers — route (HTTP, CORS, cache headers) → handler
+(business logic, serialization) → service (the only layer that talks to Supabase) — plus the
+OpenAPI spec in `src/lib/api/openapiV2.ts`, which `npm run openapi:diff` gates against
+breaking changes.
+
+Requests from another origin need an API key; same-origin requests are exempt, so the frontend
+embeds no key. Rate limits apply per key tier. Bulk exports: `/api/download?format=csv` or
+`format=excel`.
+
+The site itself is **French-only**. The `[lang]` route segment survives from the multilingual
+V1 but only ever resolves to `fr` — `src/middleware.ts` redirects every other locale segment
+there. Do not reintroduce `en` / `es` / `pt` branches.
+
+---
+
+## Working on it
+
+```bash
+make check        # the gate: lint + typecheck + format:check + all tests (stays under 5 min)
+npm run dev
+npm run test:watch
+npm run storybook # :6006
+npm run e2e       # Playwright — deliberately outside `make check`
+```
+
+Beyond `make check`, CI runs gates specific to this repository. Run the ones your change
+touches before pushing:
+
+| Command                                     | What it protects                                                                                                      |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| `npm run lint:req`                          | `@req` traceability — every test needs a `// @req REQ-NNN`, validated against `docs/confluence-spec/req-catalog.json` |
+| `npm run check:env-example`                 | `.env.example` matches the variables the code reads                                                                   |
+| `npm run check:action-pins`                 | every third-party GitHub Action is SHA-pinned                                                                         |
+| `npm run check:jira-template`               | the ticket template still exists and matches                                                                          |
+| `npm run test:charter-contracts`            | the design-charter contract suite                                                                                     |
+| `npx tsx scripts/validateAfrikData.ts`      | AFRIK corpus integrity                                                                                                |
+| `npx tsx scripts/ci/checkEditorialRules.ts` | decolonial editorial rules on fiches                                                                                  |
+
+Two things about that list are easy to get wrong:
+
+- **Never delete `docs/confluence-spec/*.json` or `docs/templates/jira-ticket-template.md`.**
+  With the catalog missing, `lintReqAnnotations.ts` returns early and reports OK while checking
+  nothing — a silently disarmed gate, which is worse than a red one.
+- Custom ESLint rules live in `eslint/rules/` under the `afh` plugin, and their own tests are
+  `.js` files listed explicitly in `vitest.config.ts`. They once fell outside the glob and never
+  ran, which is how a broken rule shipped.
+
+TypeScript runs with `strict: false` and `strictNullChecks: false`. The compiler will not catch
+nullability here — **the tests are the real gate.** Write the failing test first.
+
+### Contributing
+
+`recette` is the integration branch, `main` is the base. Both are protected: branch and open a
+pull request, never push directly. Conventional commits (commitlint on `commit-msg`).
+`recette ↔ main` sync PRs need a **merge commit**, not a squash.
+
+Requirements, decisions and architecture live on **Confluence**, not in this repository — see
+[`docs/adr/README.md`](docs/adr/README.md) for where and why. Tickets are in the Jira project
+`ETNI`.
+
+Data corrections are welcome as pull requests against the fiches in `dataset/source/afrik/`, or
+through the site: `/fr/contribute` to propose a change, `/fr/report-error` to flag one.
+
+---
 
 ## Stack
 
-- Next.js (App Router) + TypeScript
-- Tailwind CSS + shadcn/ui
-- TanStack Query (React Query)
-- Swagger/OpenAPI pour la documentation API
-- Supabase (PostgreSQL) pour le backend et les contributions
-
-## Démarrer en local
-
-Prérequis: Node.js 18+ et npm.
-
-```bash
-npm install
-# Copier le fichier d'environnement
-cp .env.example .env.local
-# Configurer les variables d'environnement dans .env.local
-# (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, SUPABASE_SERVICE_ROLE_KEY, etc.)
-
-# Lancer le serveur de développement
-npm run dev
-```
-
-L'application démarre sur http://localhost:3000.
-
-### Variables d'environnement
-
-Copiez `.env.example` vers `.env.local` et configurez :
-
-- `NEXT_PUBLIC_SUPABASE_URL` : URL de votre projet Supabase
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY` : Clé anonyme Supabase
-- `SUPABASE_SERVICE_ROLE_KEY` : Clé de service Supabase (pour les opérations admin)
-
-## API publique
-
-L'application expose une API REST publique pour accéder aux données démographiques et ethniques de l'Afrique.
-
-### Documentation interactive
-
-- **Swagger UI** : `/docs/api` - Interface interactive pour explorer et tester l'API
-- **OpenAPI Spec** : `/api/docs` (JSON) - Spécification OpenAPI au format JSON
-
-### Navigation localisée (frontend)
-
-`{lang}` ∈ `{en, fr, es, pt}`
-
-- Listes : `/{lang}/regions`, `/{lang}/pays|countries|paises`, `/{lang}/ethnies|ethnicities|etnias`
-- Détails pays : `/{lang}/{slugPays}/{nom_du_pays}` &rarr; ex. `/fr/pays/Rwanda`
-- Détails régions : `/{lang}/{slugRegions}/{cle_de_region}` &rarr; ex. `/fr/regions/afrique_centrale`
-- Détails ethnies : `/{lang}/{slugEthnies}/{nom_de_l_ethnie}` &rarr; ex. `/pt/etnias/Yoruba`
-
-### Endpoints disponibles
-
-#### Statistiques
-
-- `GET /api/stats` - Statistiques globales (population totale de l'Afrique)
-
-#### Régions
-
-- `GET /api/regions` - Liste toutes les régions
-- `GET /api/regions/{key}` - Détails d'une région spécifique
-- `GET /api/regions/{key}/countries` - Pays d'une région
-
-#### Pays
-
-- `GET /api/countries` - Liste tous les pays
-- `GET /api/countries/{name}` - Détails d'un pays (avec ethnies)
-
-#### Ethnies
-
-- `GET /api/ethnicities` - Liste toutes les ethnies
-- `GET /api/ethnicities/{name}` - Détails d'une ethnie globale
-
-#### Téléchargement de données
-
-- `GET /api/download?format=csv` - Télécharge toutes les données en format CSV (ZIP) avec **tous les champs enrichis**
-- `GET /api/download?format=excel` - Télécharge toutes les données en format Excel (XLSX) avec **tous les champs enrichis**
-
-Les exports incluent désormais tous les champs enrichis :
-
-- Colonnes de base : `Group`, `Sub_group`, `Population_2025`, `Percentage_in_country`, `Percentage_in_Africa`
-- Colonnes enrichies : `Language`, `Region`, `Sources`, `Ancient_Name`, `Description`, `Type_de_societe`, `Religion`, `Famille_linguistique`, `Statut_historique`, `Presence_regionale`
-
-> Documentation détaillée : `docs/API_ROUTES.md`
-
-### Exemples d'utilisation
-
-```bash
-# Statistiques globales
-curl http://localhost:3000/api/stats
-
-# Liste des régions
-curl http://localhost:3000/api/regions
-
-# Détails d'une région
-curl http://localhost:3000/api/regions/afrique_du_nord
-
-# Pays d'une région
-curl http://localhost:3000/api/regions/afrique_du_nord/countries
-
-# Liste des pays
-curl http://localhost:3000/api/countries
-
-# Détails d'un pays (encoder les caractères spéciaux)
-curl http://localhost:3000/api/countries/Maroc
-curl "http://localhost:3000/api/countries/Côte%20d'Ivoire"
-
-# Liste des ethnies
-curl http://localhost:3000/api/ethnicities
-
-# Détails d'une ethnie
-curl http://localhost:3000/api/ethnicities/Arabes
-
-# Télécharger toutes les données (CSV)
-curl http://localhost:3000/api/download?format=csv -o data.zip
-
-# Télécharger toutes les données (Excel)
-curl http://localhost:3000/api/download?format=excel -o data.xlsx
-```
-
-### Format des réponses
-
-Toutes les réponses sont au format JSON avec les codes HTTP standards :
-
-- `200` - Succès
-- `404` - Ressource non trouvée
-- `500` - Erreur serveur
-
-### Encodage des paramètres
-
-Les noms de pays et d'ethnies avec caractères spéciaux doivent être encodés en URL :
-
-- `Côte d'Ivoire` → `Côte%20d'Ivoire`
-- `São Tomé-et-Principe` → `São%20Tomé-et-Principe`
-
-## Pages supplémentaires
-
-### Page "Contribuer" (`/{lang}/contribute`)
-
-Page dédiée à la contribution au projet avec :
-
-- **Documentation API** : Lien vers la documentation interactive Swagger UI
-- **Téléchargement de données** : Boutons pour télécharger toutes les données en CSV (ZIP) ou Excel
-- **Contribution GitHub** : Lien vers le dépôt pour contribuer au code
-- **Formulaire de contribution** : Formulaire pour ajouter ou modifier des groupes ethniques (JSON ou formulaire direct)
-
-### Page "Signaler une erreur" (`/{lang}/report-error`)
-
-Page dédiée au signalement d'erreurs dans les données avec :
-
-- **Explication** : Information sur la provenance des données et l'importance des corrections
-- **Formulaire Typeform** : Formulaire dédié pour signaler des erreurs, informations manquantes ou douteuses
-
-### Page "À propos" (`/{lang}/about`)
-
-Page d'information sur le projet avec :
-
-- **À propos du projet** : Présentation du dictionnaire et de ses objectifs
-- **Sources** : Bibliographie complète organisée par type (Sources internationales, Sources par région, Sources académiques, Sources complémentaires)
-
-## Contact
-
-Vous pouvez nous contacter via :
-
-- **Formulaire de contribution** : Page `/{lang}/contribute`
-- **Signalement d'erreur** : Page `/{lang}/report-error`
-
-## Structure des données
-
-Les données sont stockées dans Supabase (PostgreSQL) et chargées dynamiquement par l'application. **L'application ne charge plus de données depuis des fichiers CSV statiques** - toutes les données proviennent de la base de données Supabase.
-
-### Organisation des fichiers sources
-
-Les fichiers sources CSV (format enrichi ou legacy) et les fichiers de description sont organisés par région puis par pays pour la migration des données :
-
-```
-dataset/
-  source/
-    afrique_de_l_ouest/
-      benin/
-        benin_ethnies_complet.csv
-        benin.txt
-      senegal/
-        senegal_ethnies_complet.csv
-        senegal.txt
-      ...
-    afrique_centrale/
-      cameroun/
-        cameroun_ethnies_complet.csv
-        cameroun.txt
-      ...
-    [autres régions...]
-```
-
-### Données enrichies
-
-L'application supporte deux formats de fichiers CSV :
-
-- **Format enrichi (recommandé)** : `{country}_ethnies_complet.csv` avec 15 colonnes incluant langues, descriptions, informations culturelles, etc.
-- **Format legacy** : `groupes_ethniques.csv` avec 4 colonnes de base (compatibilité avec les anciens fichiers)
-
-Le script de parsing détecte automatiquement le format et normalise les données vers la même structure. Le format legacy est supporté pour la compatibilité, mais le format enrichi est recommandé pour bénéficier de toutes les fonctionnalités.
-
-L'application supporte désormais des données enrichies pour les pays et les groupes ethniques :
-
-- **Pays** : descriptions, anciens noms (max 3)
-- **Groupes ethniques** : descriptions, anciens noms (max 3), type de société, religion, famille linguistique, statut historique, présence régionale
-- **Relations hiérarchiques** : support des groupes parent/sous-groupes ethniques
-- **Langues** : association des langues aux groupes ethniques avec indicateur de langue primaire
-- **Sources** : association des sources de données aux groupes ethniques
-
-### Migration des données
-
-Pour mettre à jour les données dans la base de données :
-
-1. Placer les fichiers CSV dans `dataset/source/{region}/{country}/` :
-   - Format enrichi : `{country}_ethnies_complet.csv` (recommandé)
-   - Format legacy : `groupes_ethniques.csv` (compatibilité)
-2. Placer les fichiers de description (`.txt`) dans le même dossier
-3. Exécuter les scripts de parsing et migration :
-   ```bash
-   tsx scripts/parseEnrichedCountryCSV.ts
-   tsx scripts/parseCountryDescriptions.ts
-   tsx scripts/matchCSVAndDescriptions.ts
-   tsx scripts/migrateEnrichedData.ts
-   ```
-
-> Documentation complète : `docs/DATA_MIGRATION.md`
-
-### Déploiement
-
-Pour déployer la nouvelle version avec les données enrichies :
-
-> Guide complet : `docs/DEPLOYMENT.md`
-
-**Résumé rapide** :
-
-1. Appliquer les migrations SQL (`001_initial_schema.sql` puis `002_add_enriched_fields.sql`)
-2. Configurer les variables d'environnement Supabase
-3. Exécuter les scripts de migration des données
-4. Déployer l'application
-
-## Contribuer
-
-Les contributions sont bienvenues: fichiers CSV, corrections, nouvelles sources, UI/UX, refacto, etc.
-
-- **Page dédiée** : `/{lang}/contribute` - Toutes les informations pour contribuer
-- **Dépôt GitHub** : https://github.com/big-emotion/ethniafrica
-- **Documentation API** : `/docs/api` - Pour utiliser les données programmatiquement
-- **Téléchargement de données** : `/api/download?format=csv` ou `/api/download?format=excel`
-
-Merci de:
-
-- Respecter la structure des CSV enrichis et l'encodage (guillemets, apostrophes)
-- Suivre le guide de migration des données dans `docs/DATA_MIGRATION.md`
-- Signaler les erreurs via la page `/{lang}/report-error`
-
-## Roadmap (extraits)
-
-- Carte interactive des zones de présence
-- Fiches enrichies: sous‑ethnies, histoire, culture, religions et croyances, royaumes et personnalités, langues, sciences et arts
-- Ajout progressif de contenus en langues africaines
-
-## Interface Admin
-
-L'application dispose d'une interface d'administration pour modérer les contributions :
-
-- **Page de login** : `/admin/login` - Authentification via Supabase Auth (magic-link, GitHub, Google OAuth)
-- **Gestion des contributions** : `/admin/contributions` - Liste et modération des contributions en attente
-- **Sécurité** : Authentification par session avec cookies httpOnly et sécurisés
-
-### Configuration admin
-
-L'authentification admin utilise Supabase Auth avec OAuth (GitHub, Google) et magic-link.
-
-**Première configuration admin :**
-
-1. Assurez-vous que les migrations Supabase (notamment 008_user_roles.sql) sont appliquées
-2. Connectez-vous une première fois via `/admin/login` pour créer votre compte
-3. Exécutez le script de seed pour assigner le rôle admin :
-   ```bash
-   ADMIN_EMAIL=votre_email@exemple.com npx tsx scripts/seedAdmin.ts
-   ```
-
-**Rôles disponibles :** reader, contributor, moderator, admin, advisor
-
-## Changelog
-
-### v1.3.0 (2025-01-XX)
-
-- **Données enrichies** : Ajout de descriptions, anciens noms, informations culturelles (religion, type de société, famille linguistique, statut historique) pour les pays et groupes ethniques
-- **Groupes hiérarchiques** : Support des groupes parent/sous-groupes ethniques avec relations `parent_id`
-- **Vues détaillées enrichies** : Affichage des top 5 ethnies/langues, anciens noms, descriptions complètes avec CTAs "Voir plus"
-- **Migration par pays** : Passage d'une structure par région à une structure par pays pour les fichiers sources CSV
-- **Suppression du chargement CSV** : L'application charge désormais toutes les données depuis Supabase uniquement
-- **Export enrichi** : Les exports CSV/Excel incluent tous les nouveaux champs enrichis
-
-### v1.2.0 (2025-01-XX)
-
-- **Backend Supabase** : Intégration complète de Supabase pour le stockage des données
-- **Système de contributions** : Formulaire de contribution pour ajouter/modifier des groupes ethniques
-- **Interface admin** : Page d'administration sécurisée pour modérer les contributions
-- **Authentification admin** : Système d'authentification via Supabase Auth avec sessions sécurisées
-- **Cache optimisé** : Mise en cache côté client (localStorage) et serveur pour améliorer les performances
-- **Navigation hiérarchique** : Navigation améliorée avec sélection et surbrillance des éléments
-- **Traductions** : Système de traduction pour les noms d'entités (régions, pays, ethnies)
-- **Clés normalisées** : URLs utilisant des clés normalisées pour une meilleure compatibilité
-
-### v1.1.0 (2025-01-XX)
-
-- **Documentation API améliorée** : Interface Swagger UI plus ergonomique avec liens rapides, introduction et design cohérent
-- **Configuration OpenAPI dynamique** : Support automatique des URLs de production (Vercel) et développement
-- **Optimisation Typeform** : Amélioration du temps de chargement avec preconnect et stratégie afterInteractive
-- **Améliorations UX** : Meilleure organisation de la page de documentation API
-
-### v1.0.0
-
-- Version initiale avec toutes les fonctionnalités de base
+Next.js 16 (App Router) · TypeScript · Tailwind + shadcn/ui · TanStack Query · Supabase
+(PostgreSQL, Auth, RLS) · Vitest + Playwright · Storybook (`@storybook/react-vite`, **not**
+`@storybook/nextjs` — Next 16 dropped `next/config`; installs need `--legacy-peer-deps`).
+
+Design tokens are CSS custom properties in `src/styles/tokens/`. Colours belong in tokens, not
+literals, and the charter contract suite asserts it. Mobile-first is mandatory: mobile 430px ·
+tablet `md` 720px · desktop `xl` 800px.
+
+---
+
+## Documentation
+
+|                                                                        |                                                                                           |
+| ---------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| [`CLAUDE.md`](CLAUDE.md)                                               | architecture, conventions, and the non-obvious rules — read this before changing anything |
+| [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md)                             | how a change reaches users, and what an operator does by hand                             |
+| [`docs/runbooks/migration-state.md`](docs/runbooks/migration-state.md) | which Supabase migrations are live on which project, and the two-step rollout rule        |
+| [`docs/runbooks/`](docs/runbooks/)                                     | restore, corpus sync, DBA overrides                                                       |
+| [`docs/adr/README.md`](docs/adr/README.md)                             | where architecture decisions live now                                                     |
+| [`CHANGELOG.md`](CHANGELOG.md)                                         | release history                                                                           |
+
+**Operators, read this first:** two Supabase projects are both labelled "production" — one
+backs recette, one backs production. Every migration is a two-step rollout, recette first.
+Applying one and calling it done has already left a corpus loaded on one database and missing
+on the other.
+
+---
 
 ## Licence
 
-Open source — voir le dépôt GitHub.
+Open source. See the repository for terms.

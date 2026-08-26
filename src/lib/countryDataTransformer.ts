@@ -5,6 +5,7 @@
  * UI component of the "Carte vivante" country page.
  */
 
+import { ficheSourceLine } from "@/lib/afrik/ficheSourceLabel";
 import type { CountryDetail } from "@/types/afrik-frontend";
 import type {
   Kingdom,
@@ -13,6 +14,7 @@ import type {
   HistoricalNamesSection,
   HistoricalFactsSection,
   DemographicsSection,
+  FicheSource,
 } from "@/types/afrik";
 
 // ==========================================
@@ -162,6 +164,7 @@ export interface CountryPageData {
  * Generate flag emoji from ISO 3166-1 alpha-3 code.
  * Converts alpha-3 to alpha-2 first, then to regional indicator symbols.
  */
+// @req REQ-001
 export function flagFromISO3(iso3: string): string {
   // Simple alpha-3 to alpha-2 mapping for common African countries
   const alpha3ToAlpha2: Record<string, string> = {
@@ -233,6 +236,7 @@ export function flagFromISO3(iso3: string): string {
 /**
  * Format population number: 23000000 → "23M", 920000 → "920K"
  */
+// @req REQ-001
 export function formatPopulation(n: number): string {
   if (n >= 1_000_000) {
     const m = n / 1_000_000;
@@ -250,6 +254,7 @@ export function formatPopulation(n: number): string {
  * Extract endonym from self-appellation text.
  * "Moaga (singulier), Moose (pluriel)" → "Moaga · Moose"
  */
+// @req REQ-001
 export function extractEndonym(text: string): string {
   const parts = text.match(/(\S+)\s*\(/g);
   if (parts) {
@@ -262,6 +267,7 @@ export function extractEndonym(text: string): string {
  * Extract pejorative term from remarks text.
  * '"Fellata" peut avoir une connotation péjorative' → "Fellata"
  */
+// @req REQ-001
 export function extractPejorative(text: string): string | undefined {
   if (!text) return undefined;
   const lower = text.toLowerCase();
@@ -282,6 +288,7 @@ export function extractPejorative(text: string): string | undefined {
  * Shorten a region string.
  * "Plateau central du Burkina Faso (Ouagadougou, Yatenga)" → "Plateau central"
  */
+// @req REQ-001
 export function shortenRegion(text: string): string {
   // Remove parenthetical content
   const clean = text.replace(/\([^)]*\)/g, "").trim();
@@ -294,6 +301,7 @@ export function shortenRegion(text: string): string {
  * Shorten language family string.
  * "Niger-Congo – Gur (FLG_GUR)" → "Niger-Congo Gur"
  */
+// @req REQ-001
 export function shortenFamily(text: string): string {
   return text
     .replace(/\s*\(FLG_\w+\)/g, "")
@@ -304,6 +312,7 @@ export function shortenFamily(text: string): string {
 /**
  * Extract keywords from a paragraph.
  */
+// @req REQ-001
 export function extractKeywords(text: string, maxKeywords = 5): string[] {
   if (!text) return [];
   // Remove parenthetical content
@@ -328,6 +337,7 @@ export function extractKeywords(text: string, maxKeywords = 5): string[] {
 // TRANSFORM FUNCTIONS
 // ==========================================
 
+// @req REQ-001
 export function transformHero(country: CountryDetail): HeroData {
   const etymology = country.etymology || "";
   const iso = country.id;
@@ -394,6 +404,7 @@ export function transformHero(country: CountryDetail): HeroData {
   };
 }
 
+// @req REQ-001
 export function transformEtymology(
   etymology?: string
 ): EtymologyData | undefined {
@@ -526,6 +537,7 @@ export function transformEtymology(
   };
 }
 
+// @req REQ-001
 export function transformOrigin(
   nameOriginActor?: string,
   etymology?: string,
@@ -613,6 +625,7 @@ export function transformOrigin(
   };
 }
 
+// @req REQ-001
 export function transformTimeline(
   historicalNames?: HistoricalNamesSection
 ): TimelineData {
@@ -724,6 +737,7 @@ function truncateNote(text: string, maxLen: number): string {
   return text.substring(0, maxLen).trim() + "...";
 }
 
+// @req REQ-001
 export function transformPeoples(
   demographics?: DemographicsSection,
   majorPeoples?: MajorPeopleEntry[]
@@ -859,6 +873,7 @@ function groupSamePercentage(rows: PeopleRow[]): PeopleRow[] {
   return result;
 }
 
+// @req REQ-001
 export function transformKingdoms(kingdoms?: Kingdom[]): KingdomsData {
   if (!kingdoms || kingdoms.length === 0) {
     return {
@@ -911,6 +926,7 @@ export function transformKingdoms(kingdoms?: Kingdom[]): KingdomsData {
   return { title, cards, layout };
 }
 
+// @req REQ-001
 export function transformLanguages(culture?: CultureSection): LanguagesData {
   if (!culture?.mainLanguages || culture.mainLanguages.length === 0) {
     return { bubbles: [], totalCount: 0, overflowCount: 0 };
@@ -949,6 +965,7 @@ export function transformLanguages(culture?: CultureSection): LanguagesData {
   return { bubbles, totalCount, overflowCount };
 }
 
+// @req REQ-001
 export function transformCulture(culture?: CultureSection): CultureGridData {
   if (!culture) {
     return { items: [] };
@@ -987,11 +1004,12 @@ export function transformCulture(culture?: CultureSection): CultureGridData {
   return { items };
 }
 
-export function transformSources(sources?: string[]): string {
-  if (!sources || sources.length === 0) return "";
-  return sources.map((s) => s.replace(/^-\s*/, "").trim()).join(" · ");
+// @req REQ-001
+export function transformSources(sources?: FicheSource[]): string {
+  return ficheSourceLine(sources);
 }
 
+// @req REQ-001
 export function transformHistoricalFacts(
   historicalFacts?: HistoricalFactsSection
 ): HistoricalFactsData | undefined {
@@ -1022,6 +1040,7 @@ export function transformHistoricalFacts(
 // MAIN TRANSFORM
 // ==========================================
 
+// @req REQ-001
 export function transformCountryData(country: CountryDetail): CountryPageData {
   return {
     hero: transformHero(country),

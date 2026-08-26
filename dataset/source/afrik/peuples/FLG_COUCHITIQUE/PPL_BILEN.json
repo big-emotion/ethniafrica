@@ -79,11 +79,36 @@
       ]
     },
     "sources": [
-      "eHRAF World Cultures — Bilen (mn06) summary. https://ehrafworldcultures.yale.edu/cultures/mn06/summary",
-      "Joshua Project — Bilen in Eritrea. https://joshuaproject.net/people_groups/10848",
-      "Eritrea Ministry of Information — Customs and Beliefs of the Bilen (Part I). https://shabait.com/2010/10/08/customs-and-beliefs-of-the-bilenpart-i/",
-      "Trip Down Memory Lane — Bilen People: Eritrean Ethnic Group. https://kwekudee-tripdownmemorylane.blogspot.com/2014/02/bilen-people-eritrean-ethnic-group-that.html",
-      "SIL Ethnologue — Bilen language (byn). https://www.ethnologue.com/language/byn/"
+      {
+        "title": "eHRAF World Cultures — Bilen (mn06) summary",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/mn06/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "Joshua Project — Bilen in Eritrea",
+        "url": "https://joshuaproject.net/people_groups/10848",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Eritrea Ministry of Information — Customs and Beliefs of the Bilen (Part I)",
+        "url": "https://shabait.com/2010/10/08/customs-and-beliefs-of-the-bilenpart-i/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for shabait.com."
+      },
+      {
+        "title": "Trip Down Memory Lane — Bilen People: Eritrean Ethnic Group",
+        "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2014/02/bilen-people-eritrean-ethnic-group-that.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+      },
+      {
+        "title": "SIL Ethnologue — Bilen language (byn)",
+        "url": "https://www.ethnologue.com/language/byn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

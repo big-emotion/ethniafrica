@@ -10,7 +10,7 @@ const structuredSource = {
   authors: ["Jane Miller"],
   publicationYear: 2018,
   sourceKind: "academic",
-  evidenceTier: 2,
+  tier: "referenced",
   identifiers: { isbn: "978-1-23456-789-0" },
   publisher: "Example Press",
   url: "https://example.org/african-archives",

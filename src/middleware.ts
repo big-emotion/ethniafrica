@@ -5,7 +5,17 @@ import { applyIpRateLimit, applyRateLimit } from "@/lib/api/rate-limit";
 
 // Public localized pages still contain data-driven React style attributes.
 // API and admin routes keep the strict nonce-only policy.
-// See docs/adr/0005-home-style-src-attr-scope.md.
+//
+// Why the relaxation is scoped rather than global: public fiche components set
+// CSS from entity data through both `style={{...}}` attributes (governed by
+// style-src-attr) and client-injected <style> elements (governed by style-src).
+// Their values vary per entity, so a fixed hash allowlist cannot cover them. An
+// earlier pass applied the directive to every route in every environment,
+// including admin and API routes that render no inline styles at all — this
+// scoping limits the weakening to the pages that actually need it.
+//
+// Follow-up: once the fiche components use nonce-aware alternatives instead of
+// data-driven inline styles, both exceptions can be dropped entirely.
 const isPublicLocalizedPage = (pathname: string) =>
   pathname === "/fr" || pathname.startsWith("/fr/");
 
@@ -69,6 +79,7 @@ function isSameOriginRequest(request: NextRequest): boolean {
   return false;
 }
 
+// @req REQ-052
 export async function middleware(request: NextRequest) {
   // FR-only canonical redirect: any /[2-letter-lang]/* segment that isn't /fr
   // is permanently redirected to its /fr equivalent (preserves subpath + query).
@@ -237,6 +248,7 @@ export async function middleware(request: NextRequest) {
   return supabaseResponse;
 }
 
+// @req REQ-052
 export const config = {
   matcher: [
     // Explicitly include all /api/v2/* routes so the rate-limiting gate is

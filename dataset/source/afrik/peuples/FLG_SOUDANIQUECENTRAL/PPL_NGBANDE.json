@@ -92,12 +92,42 @@
       ]
     },
     "sources": [
-      "Britannica — Ngbandi. https://www.britannica.com/topic/Ngbandi",
-      "Qiraat Africa — The Ngbandi People of Central Africa. https://qiraatafrican.com/en/15310/the-ngbandi-people-of-central-africa/",
-      "Minority Rights Group International — Ngbandi in the Democratic Republic of the Congo. https://minorityrights.org/communities/ngbandi/",
-      "US Department of Justice (EOIR) — Democratic Republic of the Congo: Ngbandi. https://www.justice.gov/eoir/page/file/1026971/dl",
-      "MAR (Minorities at Risk) — Chronology and Assessment for Ngbandi in the DRC. http://www.mar.umd.edu/assessment.asp?groupId=49008",
-      "Nelson, Quentin D. (1952). 'Linguistic Problems in Ngbandi.' SIL International. https://translation.bible/wp-content/uploads/2024/05/nelson-1952-linguistic-problems-in-ngbandi.pdf"
+      {
+        "title": "Britannica — Ngbandi",
+        "url": "https://www.britannica.com/topic/Ngbandi",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Qiraat Africa — The Ngbandi People of Central Africa",
+        "url": "https://qiraatafrican.com/en/15310/the-ngbandi-people-of-central-africa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "Minority Rights Group International — Ngbandi in the Democratic Republic of the Congo",
+        "url": "https://minorityrights.org/communities/ngbandi/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "US Department of Justice (EOIR) — Democratic Republic of the Congo: Ngbandi",
+        "url": "https://www.justice.gov/eoir/page/file/1026971/dl",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for justice.gov."
+      },
+      {
+        "title": "MAR (Minorities at Risk) — Chronology and Assessment for Ngbandi in the DRC",
+        "url": "http://www.mar.umd.edu/assessment.asp?groupId=49008",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mar.umd.edu; the tier awaits editorial review."
+      },
+      {
+        "title": "Nelson, Quentin D. (1952). 'Linguistic Problems in Ngbandi.' SIL International",
+        "url": "https://translation.bible/wp-content/uploads/2024/05/nelson-1952-linguistic-problems-in-ngbandi.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for translation.bible."
+      }
     ]
   }
 }

@@ -113,11 +113,36 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Kanuri subgroup. https://www.ethnologue.com/subgroup/767/",
-      "Michigan State University ALMA — Introduction to the Kanuri Language. https://alma.matrix.msu.edu/assets/uploads/2023/02/ALMA_IntroductionToTheKanuriLanguageEdited2.pdf",
-      "Qiraat African — The Kanuri people in West Africa. https://qiraatafrican.com/en/13870/the-kanuri-people-in-west-africa/",
-      "101 Last Tribes — Kanuri people. https://www.101lasttribes.com/tribes/kanuri.html",
-      "CIA World Factbook — Nigeria, Niger, Chad, Cameroon. https://www.cia.gov/the-world-factbook/"
+      {
+        "title": "SIL Ethnologue — Kanuri subgroup",
+        "url": "https://www.ethnologue.com/subgroup/767/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Michigan State University ALMA — Introduction to the Kanuri Language",
+        "url": "https://alma.matrix.msu.edu/assets/uploads/2023/02/ALMA_IntroductionToTheKanuriLanguageEdited2.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for alma.matrix.msu.edu."
+      },
+      {
+        "title": "Qiraat African — The Kanuri people in West Africa",
+        "url": "https://qiraatafrican.com/en/13870/the-kanuri-people-in-west-africa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "101 Last Tribes — Kanuri people",
+        "url": "https://www.101lasttribes.com/tribes/kanuri.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "CIA World Factbook — Nigeria, Niger, Chad, Cameroon",
+        "url": "https://www.cia.gov/the-world-factbook/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

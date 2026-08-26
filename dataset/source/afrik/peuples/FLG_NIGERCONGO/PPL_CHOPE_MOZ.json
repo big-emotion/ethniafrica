@@ -89,12 +89,42 @@
       ]
     },
     "sources": [
-      "UNESCO Programme Routes de la Soie — Chopi Timbila. https://en.unesco.org/silkroad/silk-road-themes/intangible-cultural-heritage/chopi-timbila",
-      "UNESCO Archives multimedia — Chopi Timbila (2005 Proclamation). https://www.unesco.org/archives/multimedia/document-636",
-      "Joshua Project — Chopi in Mozambique. https://joshuaproject.net/people_groups/11368",
-      "Ethnologue (SIL) — Chopi language (cce). https://www.ethnologue.com/language/cce/",
-      "CIA World Factbook — Mozambique. https://www.cia.gov/the-world-factbook/countries/mozambique/",
-      "Henri-Alexandre Junod, The Life of a South African Tribe. Neuchatel, 1913."
+      {
+        "title": "UNESCO Programme Routes de la Soie — Chopi Timbila",
+        "url": "https://en.unesco.org/silkroad/silk-road-themes/intangible-cultural-heritage/chopi-timbila",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of en.unesco.org."
+      },
+      {
+        "title": "UNESCO Archives multimedia — Chopi Timbila (2005 Proclamation)",
+        "url": "https://www.unesco.org/archives/multimedia/document-636",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\"."
+      },
+      {
+        "title": "Joshua Project — Chopi in Mozambique",
+        "url": "https://joshuaproject.net/people_groups/11368",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue (SIL) — Chopi language (cce)",
+        "url": "https://www.ethnologue.com/language/cce/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Mozambique",
+        "url": "https://www.cia.gov/the-world-factbook/countries/mozambique/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Henri-Alexandre Junod, The Life of a South African Tribe. Neuchatel, 1913",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

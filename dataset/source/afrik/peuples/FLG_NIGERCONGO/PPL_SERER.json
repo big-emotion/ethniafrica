@@ -101,10 +101,30 @@
       ]
     },
     "sources": [
-      "Gambia Bureau of Statistics — 2024 Population and Housing Census. https://gambia.unfpa.org/",
-      "SIL Ethnologue — Serer-Sine language (srr). https://www.ethnologue.com/language/srr/",
-      "Galvan, Dennis Charles. The State Must Be Our Master of Fire: How Peasants Craft Culturally Sustainable Development in Senegal. University of California Press, 2004.",
-      "Gravrand, Henry. La civilisation sereer. Dakar : Nouvelles Editions Africaines, 1983."
+      {
+        "title": "Gambia Bureau of Statistics — 2024 Population and Housing Census",
+        "url": "https://gambia.unfpa.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\" (unfpa.org), matched as a parent of gambia.unfpa.org."
+      },
+      {
+        "title": "SIL Ethnologue — Serer-Sine language (srr)",
+        "url": "https://www.ethnologue.com/language/srr/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Galvan, Dennis Charles. The State Must Be Our Master of Fire: How Peasants Craft Culturally Sustainable Development in Senegal. University of California Press, 2004",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Gravrand, Henry. La civilisation sereer. Dakar : Nouvelles Editions Africaines, 1983",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

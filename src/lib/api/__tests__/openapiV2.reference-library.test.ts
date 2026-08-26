@@ -109,13 +109,16 @@ describe("OpenAPI v2 reference library contract", () => {
       "authors",
       "publication_year",
       "source_kind",
-      "evidence_tier",
+      "tier",
     ]);
     expect(schemas.ReferenceCreateInput.properties).toMatchObject({
       source_key: { type: "string", maxLength: 160 },
       authors: { type: "array", minItems: 1, maxItems: 20 },
       publication_year: { type: "integer", minimum: 1000, maximum: 9999 },
-      evidence_tier: { type: ["integer", "null"], enum: [1, 2, null] },
+      tier: {
+        type: "string",
+        enum: ["official", "referenced", "unverified"],
+      },
     });
     expect(schemas.AssertionReferenceCreateInput.required).toEqual([
       "assertion_id",

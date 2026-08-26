@@ -216,16 +216,66 @@
       "postIndependence": "1993-présent : État d'Érythrée, présidence d'Isaias Afwerki (depuis 1993). Guerre frontalière avec l'Éthiopie (1998-2000). Défis : pauvreté, développement économique, relations avec l'Éthiopie, diaspora importante. L'Érythrée est un État autoritaire avec un service militaire obligatoire prolongé."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Eritrea",
-      "CIA World Factbook – Eritrea",
-      "ONU / UNFPA – Démographie Érythrée 2025",
-      "A Chronicle of the Eritrean Revolution\"",
-      "The Eritrean People's Liberation Front\"",
-      "The Making of a Nation\"",
-      "Recensements érythréens",
-      "Études anthropologiques sur les peuples de l'Érythrée",
-      "Encyclopaedia Aethiopica",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "SIL Ethnologue – Languages of Eritrea",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Eritrea",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Érythrée 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "A Chronicle of the Eritrean Revolution\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "The Eritrean People's Liberation Front\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "The Making of a Nation\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements érythréens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de l'Érythrée",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Encyclopaedia Aethiopica",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

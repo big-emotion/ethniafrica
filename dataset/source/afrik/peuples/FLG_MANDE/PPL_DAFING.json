@@ -88,12 +88,42 @@
       ]
     },
     "sources": [
-      "Qiraat Africa — Marka, people of Mali and Burkina Faso. https://qiraatafrican.com/en/18720/marka-people-of-mali-and-burkina-faso/",
-      "Joshua Project — Marka, Dafing in Burkina Faso. https://joshuaproject.net/people_groups/13550/UV",
-      "SIL International — Ethnologue, Marka-Dafin subgroup. https://www.ethnologue.com/subgroup/497/",
-      "ScriptSource — Burkina Faso languages, code rkm (Dafing). https://www.scriptsource.org/cms/scripts/page.php?item_id=country_detail&key=BF",
-      "Roberts, Richard L. Warriors, Merchants and Slaves: The State and the Economy in the Middle Niger Valley 1700-1914. Stanford University Press, 1987.",
-      "SIL International — Harrison, Byron & Anette, Sociolinguistic survey report for the Marka-Dafin language. https://www.sil.org"
+      {
+        "title": "Qiraat Africa — Marka, people of Mali and Burkina Faso",
+        "url": "https://qiraatafrican.com/en/18720/marka-people-of-mali-and-burkina-faso/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "Joshua Project — Marka, Dafing in Burkina Faso",
+        "url": "https://joshuaproject.net/people_groups/13550/UV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL International — Ethnologue, Marka-Dafin subgroup",
+        "url": "https://www.ethnologue.com/subgroup/497/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "ScriptSource — Burkina Faso languages, code rkm (Dafing)",
+        "url": "https://www.scriptsource.org/cms/scripts/page.php?item_id=country_detail&key=BF",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scriptsource.org."
+      },
+      {
+        "title": "Roberts, Richard L. Warriors, Merchants and Slaves: The State and the Economy in the Middle Niger Valley 1700-1914. Stanford University Press, 1987",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SIL International — Harrison, Byron & Anette, Sociolinguistic survey report for the Marka-Dafin language",
+        "url": "https://www.sil.org",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

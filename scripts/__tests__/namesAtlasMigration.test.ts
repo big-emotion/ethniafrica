@@ -63,7 +63,10 @@ describe("029_names_atlas.sql migration contract", () => {
     );
     expect(migration).toContain("NEW.assertion_id IS NULL");
     expect(migration).toContain("RAISE EXCEPTION");
-    expect(migration).toContain("tier IN ('primary', 'secondary')");
+    // Which tiers qualify is pinned by the source-tier vocabulary contract
+    // (src/lib/sources/__tests__/sourceTierVocabulary.test.ts), which also
+    // asserts that migration 041 recreates this function with the new values.
+    expect(migration).toContain("AND s.tier IN (");
     expect(migration).toContain("DROP TRIGGER IF EXISTS");
     expect(migration).toContain("CREATE TRIGGER name_records_source_or_drop");
     expect(migration).toContain("BEFORE INSERT OR UPDATE ON name_records");

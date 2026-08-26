@@ -70,10 +70,30 @@
       ]
     },
     "sources": [
-      "Wali Language (WLX) – Ethnologue, SIL International (https://www.ethnologue.com/language/wlx/)",
-      "Wala in Ghana – Joshua Project, 2024 (https://joshuaproject.net/people_groups/15833)",
-      "The Waala Chieftaincy Institution: Its Origin and the Emergence of Disputes – Academia.edu, 2021 (https://www.academia.edu/51545519)",
-      "Wa and the Wala: Islam and Polity in Northwestern Ghana – Levtzion, Nehemia, Cambridge University Press (https://assets.cambridge.org/97805213/62108/sample/9780521362108ws.pdf)"
+      {
+        "title": "Wali Language (WLX) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/wlx/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Wala in Ghana – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/15833",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "The Waala Chieftaincy Institution: Its Origin and the Emergence of Disputes – Academia.edu, 2021",
+        "url": "https://www.academia.edu/51545519",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academia.edu."
+      },
+      {
+        "title": "Wa and the Wala: Islam and Polity in Northwestern Ghana – Levtzion, Nehemia, Cambridge University Press",
+        "url": "https://assets.cambridge.org/97805213/62108/sample/9780521362108ws.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for cambridge.org, matched as a parent of assets.cambridge.org."
+      }
     ]
   }
 }

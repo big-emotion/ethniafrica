@@ -13,7 +13,7 @@ const primarySource: Source = {
   year: 2019,
   page: "p. 142",
   url: "https://www.example.org/atlas-afrique-ouest",
-  tier: "primary",
+  tier: "official",
   brokenAt: null,
 };
 
@@ -24,7 +24,7 @@ const secondarySource: Source = {
   year: 1985,
   page: "ch. 12",
   url: "https://unesdoc.unesco.org/ark:/example",
-  tier: "secondary",
+  tier: "referenced",
   brokenAt: null,
 };
 
@@ -32,7 +32,7 @@ const tertiarySource: Source = {
   id: "s-tertiary-1",
   title: "Wikipedia — Histoire du Sénégal",
   url: "https://fr.wikipedia.org/wiki/Histoire_du_S%C3%A9n%C3%A9gal",
-  tier: "tertiary",
+  tier: "unverified",
   brokenAt: null,
 };
 
@@ -42,14 +42,14 @@ const brokenSource: Source = {
   author: "Ministère de la Culture",
   year: 2010,
   url: "https://archive.example.gov/page-disparue",
-  tier: "secondary",
+  tier: "referenced",
   brokenAt: "2026-04-10",
 };
 
 const aiSource: Source = {
   id: "s-ai-1",
   title: "Synthèse générée par IA (validation humaine en attente)",
-  tier: "ai-enriched",
+  tier: "unverified",
   brokenAt: null,
 };
 
@@ -88,6 +88,7 @@ type Story = StoryObj<typeof Demo>;
 
 /* ----- Single position --------------------------------------------------- */
 
+// @req REQ-007
 export const SinglePosition: Story = {
   args: {
     anchorId: "chip-paragraph-1",
@@ -104,6 +105,7 @@ export const SinglePosition: Story = {
 
 /* ----- Multi-perspective (FR24) ------------------------------------------ */
 
+// @req REQ-007
 export const MultiPerspective: Story = {
   args: {
     anchorId: "chip-paragraph-7",
@@ -136,6 +138,7 @@ export const MultiPerspective: Story = {
 
 /* ----- Broken link ------------------------------------------------------- */
 
+// @req REQ-007
 export const BrokenLink: Story = {
   args: {
     anchorId: "chip-paragraph-broken",
@@ -153,6 +156,7 @@ export const BrokenLink: Story = {
 
 /* ----- Missing data ------------------------------------------------------ */
 
+// @req REQ-007
 export const MissingData: Story = {
   args: {
     anchorId: "chip-paragraph-empty",
@@ -168,6 +172,7 @@ export const MissingData: Story = {
 
 /* ----- Mobile viewport --------------------------------------------------- */
 
+// @req REQ-007
 export const Mobile: Story = {
   args: SinglePosition.args,
   parameters: { viewport: { defaultViewport: "mobile1" } },
@@ -175,6 +180,7 @@ export const Mobile: Story = {
 
 /* ----- Tablet viewport --------------------------------------------------- */
 
+// @req REQ-007
 export const Tablet: Story = {
   args: SinglePosition.args,
   parameters: { viewport: { defaultViewport: "tablet" } },
@@ -182,6 +188,7 @@ export const Tablet: Story = {
 
 /* ----- Desktop viewport -------------------------------------------------- */
 
+// @req REQ-007
 export const Desktop: Story = {
   args: {
     ...SinglePosition.args,

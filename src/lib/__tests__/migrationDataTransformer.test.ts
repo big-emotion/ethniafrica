@@ -21,7 +21,7 @@ function makeRecord(
     narrative: "Paragraph one.\n\nParagraph two.",
     debate: null,
     peoples: [{ id: "PPL_TEST", nameMain: "Test people", role: "origin" }],
-    sources: [{ id: "src-1", title: "Source", url: null, tier: "1" }],
+    sources: [{ id: "src-1", title: "Source", url: null, tier: "official" }],
     ...overrides,
   };
 }
@@ -219,7 +219,12 @@ describe("transformMigrationData (Epic 12, Story 12.8, ETNI-521)", () => {
         ],
       },
       sources: [
-        { id: "src-1", title: "Source", url: "https://x.test", tier: "1" },
+        {
+          id: "src-1",
+          title: "Source",
+          url: "https://x.test",
+          tier: "official",
+        },
       ],
     });
     const confidence = {
@@ -245,7 +250,12 @@ describe("transformMigrationData (Epic 12, Story 12.8, ETNI-521)", () => {
         },
         peoples: [{ id: "PPL_TEST", nameMain: "Test people", role: "origin" }],
         sources: [
-          { id: "src-1", title: "Source", url: "https://x.test", tier: "1" },
+          {
+            id: "src-1",
+            title: "Source",
+            url: "https://x.test",
+            tier: "official",
+          },
         ],
         confidence,
       },
@@ -278,8 +288,8 @@ describe("transformMigrationData (Epic 12, Story 12.8, ETNI-521)", () => {
       classificationStatus: "contested",
       debate: "Historians disagree on the dating.",
       sources: [
-        { id: "s1", title: "A", url: null, tier: "1" },
-        { id: "s2", title: "B", url: null, tier: "2" },
+        { id: "s1", title: "A", url: null, tier: "official" },
+        { id: "s2", title: "B", url: null, tier: "referenced" },
       ],
     });
     const result = transformMigrationData([{ data: record }]);

@@ -71,10 +71,30 @@
       ]
     },
     "sources": [
-      "Jita in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/print/12363/TZ)",
-      "Jita Language – Ethnologue (https://www.ethnologue.com/language/jit/)",
-      "Adventists and Jita Culture – ESDA Encyclopedia (https://encyclopedia.adventist.org/article?id=HF73)",
-      "Jita – TanzaniaScripture.com (https://tanzaniascripture.com/languages/jita/)"
+      {
+        "title": "Jita in Tanzania – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/print/12363/TZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Jita Language – Ethnologue",
+        "url": "https://www.ethnologue.com/language/jit/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Adventists and Jita Culture – ESDA Encyclopedia",
+        "url": "https://encyclopedia.adventist.org/article?id=HF73",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers encyclopedia.adventist.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Jita – TanzaniaScripture.com",
+        "url": "https://tanzaniascripture.com/languages/jita/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for tanzaniascripture.com."
+      }
     ]
   }
 }

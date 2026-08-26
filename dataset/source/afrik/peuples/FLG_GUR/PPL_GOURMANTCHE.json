@@ -96,13 +96,48 @@
       ]
     },
     "sources": [
-      "Gourma people group in all countries – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12004)",
-      "Gourma in Burkina Faso – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12004/UV)",
-      "Gurmantche language (gux) – Ethnologue / SIL Global, 2026 (https://www.ethnologue.com/language/gux/)",
-      "Gourmanchéma – Omniglot, 2022 (https://www.omniglot.com/writing/gourmanchema.htm)",
-      "L'organisation politique dans le Gulma avant la pénétration coloniale – LeFaso.net, 2024 (https://lefaso.net/spip.php?article132239)",
-      "Histoire et organisation du royaume Gourmantché – Scribd / auteur non précisé, 2026 (https://fr.scribd.com/document/846146509/le-royaume-de-Gourmantche)",
-      "Gourmantché Ethnoanthropology: A Theory of Human Being – Swanson R. A., 1985"
+      {
+        "title": "Gourma people group in all countries – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/12004",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Gourma in Burkina Faso – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/12004/UV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Gurmantche language (gux) – Ethnologue / SIL Global, 2026",
+        "url": "https://www.ethnologue.com/language/gux/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Gourmanchéma – Omniglot, 2022",
+        "url": "https://www.omniglot.com/writing/gourmanchema.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "L'organisation politique dans le Gulma avant la pénétration coloniale – LeFaso.net, 2024",
+        "url": "https://lefaso.net/spip.php?article132239",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for lefaso.net."
+      },
+      {
+        "title": "Histoire et organisation du royaume Gourmantché – Scribd / auteur non précisé, 2026",
+        "url": "https://fr.scribd.com/document/846146509/le-royaume-de-Gourmantche",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for scribd.com, matched as a parent of fr.scribd.com."
+      },
+      {
+        "title": "Gourmantché Ethnoanthropology: A Theory of Human Being – Swanson R. A., 1985",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

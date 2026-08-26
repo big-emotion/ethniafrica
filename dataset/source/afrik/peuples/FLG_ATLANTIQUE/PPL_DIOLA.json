@@ -105,10 +105,30 @@
       ]
     },
     "sources": [
-      "Joshua Project — Jola-Fonyi in Senegal. https://joshuaproject.net/people_groups/11568/SG",
-      "Minority Rights Group — Diola (Jola) in Senegal. https://minorityrights.org/communities/diola-jola/",
-      "Ethnologue — Jola-Fogny (dyo). https://www.ethnologue.com/language/dyo/",
-      "Ethnologue — Jola-Felupe (eja). https://www.ethnologue.com/language/eja/"
+      {
+        "title": "Joshua Project — Jola-Fonyi in Senegal",
+        "url": "https://joshuaproject.net/people_groups/11568/SG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Minority Rights Group — Diola (Jola) in Senegal",
+        "url": "https://minorityrights.org/communities/diola-jola/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Ethnologue — Jola-Fogny (dyo)",
+        "url": "https://www.ethnologue.com/language/dyo/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ethnologue — Jola-Felupe (eja)",
+        "url": "https://www.ethnologue.com/language/eja/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

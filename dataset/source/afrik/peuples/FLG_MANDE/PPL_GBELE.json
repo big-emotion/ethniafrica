@@ -84,11 +84,36 @@
       ]
     },
     "sources": [
-      "Ethnologue — Cote d'Ivoire languages. https://www.ethnologue.com/country/CI/",
-      "African Security Sector Network — Les Malinke en Cote d'Ivoire. https://africansecuritynetwork.org/assn/wp-content/uploads/2017/02/Les-Malinke%CC%81-en-Cote-dIvoire.pdf",
-      "Minority Rights Group — Manding (Dioula) in Cote d'Ivoire. https://minorityrights.org/communities/manding-dioula/",
-      "Worldometer — Cote d'Ivoire Population. https://www.worldometers.info/world-population/cote-d-ivoire-population/",
-      "Institut National de la Statistique de Cote d'Ivoire (INS) — Recensement General de la Population et de l'Habitat 2021."
+      {
+        "title": "Ethnologue — Cote d'Ivoire languages",
+        "url": "https://www.ethnologue.com/country/CI/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "African Security Sector Network — Les Malinke en Cote d'Ivoire",
+        "url": "https://africansecuritynetwork.org/assn/wp-content/uploads/2017/02/Les-Malinke%CC%81-en-Cote-dIvoire.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for africansecuritynetwork.org."
+      },
+      {
+        "title": "Minority Rights Group — Manding (Dioula) in Cote d'Ivoire",
+        "url": "https://minorityrights.org/communities/manding-dioula/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Worldometer — Cote d'Ivoire Population",
+        "url": "https://www.worldometers.info/world-population/cote-d-ivoire-population/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldometers.info."
+      },
+      {
+        "title": "Institut National de la Statistique de Cote d'Ivoire (INS) — Recensement General de la Population et de l'Habitat 2021",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

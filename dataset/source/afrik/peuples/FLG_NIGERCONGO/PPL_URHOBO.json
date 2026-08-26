@@ -96,12 +96,42 @@
       ]
     },
     "sources": [
-      "Ethnologue — Urhobo (urh). https://www.ethnologue.com/language/urh/",
-      "Joshua Project — Urhobo in Nigeria. https://joshuaproject.net/people_groups/15728",
-      "Okpe Union — Okpe Kingdom History. https://okpeunionng.net/okpe-kingdom-history/",
-      "Darah, G.G. Battles of Songs: Udje Tradition of the Urhobo. Lagos: Delta Publications, 1982.",
-      "Purdue University CLCWeb — Urhobo Folklore and Udje Aesthetics. https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=3014&context=clcweb",
-      "Ojaide, Tanure. The Poetry of Tanure Ojaide. Trenton NJ: Africa World Press, 2006."
+      {
+        "title": "Ethnologue — Urhobo (urh)",
+        "url": "https://www.ethnologue.com/language/urh/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Urhobo in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/15728",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Okpe Union — Okpe Kingdom History",
+        "url": "https://okpeunionng.net/okpe-kingdom-history/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers okpeunionng.net; the tier awaits editorial review."
+      },
+      {
+        "title": "Darah, G.G. Battles of Songs: Udje Tradition of the Urhobo. Lagos: Delta Publications, 1982",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Purdue University CLCWeb — Urhobo Folklore and Udje Aesthetics",
+        "url": "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=3014&context=clcweb",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for docs.lib.purdue.edu."
+      },
+      {
+        "title": "Ojaide, Tanure. The Poetry of Tanure Ojaide. Trenton NJ: Africa World Press, 2006",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

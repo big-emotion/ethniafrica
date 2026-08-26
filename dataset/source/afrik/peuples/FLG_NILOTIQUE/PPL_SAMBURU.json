@@ -88,15 +88,60 @@
       ]
     },
     "sources": [
-      "Joshua Project — Samburu in Kenya. https://joshuaproject.net/people_groups/14672",
-      "Ethnologue — Samburu (SAQ). https://www.ethnologue.com/language/saq/",
-      "101 Last Tribes — Rendille (pour la relation Rendille-Samburu). https://www.101lasttribes.com/tribes/rendille.html",
-      "Spencer, Paul. The Samburu: A Study of Gerontocracy in a Nomadic Tribe. London: Routledge and Kegan Paul, 1965.",
-      "Spencer, Paul. Nomads in Alliance: Symbiosis and Growth among the Rendille and Samburu of Kenya. London: Oxford University Press, 1973.",
-      "Holtzman, Jon D. Nuer Journeys, Nuer Lives. Needham Heights: Allyn and Bacon, 2000.",
-      "Kenya National Bureau of Statistics (KNBS) — Kenya Census 2019. https://www.knbs.or.ke/",
-      "Straight, Bilinda. Miracles and Extraordinary Experience in Northern Kenya. Philadelphia: University of Pennsylvania Press, 2007.",
-      "Lesorogol, Carolyn K. Contesting the Commons: Privatizing Pastoral Lands in Kenya. Ann Arbor: University of Michigan Press, 2008."
+      {
+        "title": "Joshua Project — Samburu in Kenya",
+        "url": "https://joshuaproject.net/people_groups/14672",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue — Samburu (SAQ)",
+        "url": "https://www.ethnologue.com/language/saq/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "101 Last Tribes — Rendille (pour la relation Rendille-Samburu)",
+        "url": "https://www.101lasttribes.com/tribes/rendille.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Spencer, Paul. The Samburu: A Study of Gerontocracy in a Nomadic Tribe. London: Routledge and Kegan Paul, 1965",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Spencer, Paul. Nomads in Alliance: Symbiosis and Growth among the Rendille and Samburu of Kenya. London: Oxford University Press, 1973",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Holtzman, Jon D. Nuer Journeys, Nuer Lives. Needham Heights: Allyn and Bacon, 2000",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Kenya National Bureau of Statistics (KNBS) — Kenya Census 2019",
+        "url": "https://www.knbs.or.ke/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for knbs.or.ke."
+      },
+      {
+        "title": "Straight, Bilinda. Miracles and Extraordinary Experience in Northern Kenya. Philadelphia: University of Pennsylvania Press, 2007",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Lesorogol, Carolyn K. Contesting the Commons: Privatizing Pastoral Lands in Kenya. Ann Arbor: University of Michigan Press, 2008",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

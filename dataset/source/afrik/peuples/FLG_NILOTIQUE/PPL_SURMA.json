@@ -86,13 +86,48 @@
       ]
     },
     "sources": [
-      "Ethnologue — Suri, Tirmaga-Chai (SuQ). https://joshuaproject.net/people_groups/15130",
-      "Global Recordings Network — Suri, Tirmaga-Chai (suq). https://globalrecordings.net/en/language/suq",
-      "Joshua Project — Suri, Tirmaga-Chai in Ethiopia. https://joshuaproject.net/people_groups/15130",
-      "Abbink, Jon G. 2009. Suri Orature and Material Culture in Changing Times. African Studies.",
-      "Turton, David. 1988. Looking for a Cool Place: The Mursi, 1890s-1980s. The African Experience.",
-      "Galaty, J. and Bonte, P. (eds.) 1991. Herders, Warriors and Traders: Pastoralism in Africa. Boulder: Westview Press.",
-      "CIA World Factbook — Ethiopia. https://www.cia.gov/the-world-factbook/countries/ethiopia/"
+      {
+        "title": "Ethnologue — Suri, Tirmaga-Chai (SuQ)",
+        "url": "https://joshuaproject.net/people_groups/15130",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Global Recordings Network — Suri, Tirmaga-Chai (suq)",
+        "url": "https://globalrecordings.net/en/language/suq",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for globalrecordings.net."
+      },
+      {
+        "title": "Joshua Project — Suri, Tirmaga-Chai in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/15130",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Abbink, Jon G. 2009. Suri Orature and Material Culture in Changing Times. African Studies",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Turton, David. 1988. Looking for a Cool Place: The Mursi, 1890s-1980s. The African Experience",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Galaty, J. and Bonte, P. (eds.) 1991. Herders, Warriors and Traders: Pastoralism in Africa. Boulder: Westview Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook — Ethiopia",
+        "url": "https://www.cia.gov/the-world-factbook/countries/ethiopia/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

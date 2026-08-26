@@ -96,12 +96,42 @@
       ]
     },
     "sources": [
-      "PeopleGroups.org — Bideyat of Chad. https://peoplegroups.org/people_groups/pg011322/",
-      "Minority Rights Group — Chad. https://minorityrights.org/country/chad/",
-      "CIA World Factbook — Chad. https://www.cia.gov/the-world-factbook/countries/chad/",
-      "Ethnologue — Zaghawa (ZAG). https://www.ethnologue.com/language/zag/",
-      "Jean Chapelle — Nomades Noirs du Sahara. L'Harmattan, 1982.",
-      "UNESCO — Ennedi Massif, patrimoine mondial. https://whc.unesco.org/en/list/1475/"
+      {
+        "title": "PeopleGroups.org — Bideyat of Chad",
+        "url": "https://peoplegroups.org/people_groups/pg011322/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Minority Rights Group — Chad",
+        "url": "https://minorityrights.org/country/chad/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "CIA World Factbook — Chad",
+        "url": "https://www.cia.gov/the-world-factbook/countries/chad/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Ethnologue — Zaghawa (ZAG)",
+        "url": "https://www.ethnologue.com/language/zag/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Jean Chapelle — Nomades Noirs du Sahara. L'Harmattan, 1982",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNESCO — Ennedi Massif, patrimoine mondial",
+        "url": "https://whc.unesco.org/en/list/1475/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      }
     ]
   }
 }

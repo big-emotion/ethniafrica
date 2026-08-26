@@ -9,25 +9,19 @@
 
 import { z } from "zod";
 import {
-  sourceAdmissionSchema,
   sourceKindSchema,
+  sourceTierSchema,
 } from "@/lib/sources/authorized-source-catalog";
 
-// @req REQ-092
-export const sourceTypeSchema = z.enum([
-  "primary",
-  "secondary",
-  "tertiary",
-  "ai",
-]);
-
+/**
+ * The tier the catalogue assigns to a citation's domain, alongside the kind of
+ * thing that domain publishes. Authority and provenance stay separate fields.
+ */
 // @req REQ-092
 export const sourcePolicySchema = z.object({
   key: z.string(),
-  admission: sourceAdmissionSchema,
-  evidenceTier: z.union([z.literal(1), z.literal(2), z.null()]),
+  tier: sourceTierSchema,
   sourceKind: sourceKindSchema,
-  publishable: z.boolean(),
 });
 
 // @req REQ-092
@@ -35,9 +29,8 @@ export const sourceSchema = z.object({
   id: z.string().uuid(),
   sourceKey: z.string().nullable(),
   sourceKind: sourceKindSchema.nullable(),
-  evidenceTier: z.union([z.literal(1), z.literal(2)]).nullable(),
+  tier: sourceTierSchema.nullable(),
   identifiers: z.record(z.string(), z.string()).nullable(),
-  type: sourceTypeSchema.nullable(),
   title: z.string(),
   url: z.string().nullable(),
   pinnedUrl: z.string().nullable(),
@@ -50,7 +43,6 @@ export const sourceSchema = z.object({
 });
 
 export type Source = z.infer<typeof sourceSchema>;
-export type SourceType = z.infer<typeof sourceTypeSchema>;
 
 /**
  * GET /v2/sources query parameters

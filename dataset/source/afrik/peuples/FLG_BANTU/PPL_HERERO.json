@@ -100,13 +100,48 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue - Herero language (her) : https://www.ethnologue.com/language/her/",
-      "Omniglot - Herero language : https://www.omniglot.com/writing/herero.php",
-      "Joshua Project - Herero language resources : https://joshuaproject.net/languages/her",
-      "BBC News - Germany recognises colonial-era Namibia genocide, 28 mai 2021 : https://www.bbc.com/news/world-europe-57279008",
-      "South African History Online - Herero Revolt 1904-1907 : https://sahistory.org.za/article/herero-revolt-1904-1907",
-      "JFCS Holocaust Center - Herero and Nama Genocide : https://holocaustcenter.jfcs.org/remembering-the-forgotten-genocide-of-the-herero-and-nama/",
-      "Oxford Guide to Bantu Languages - Otjiherero : https://academic.oup.com/book/61440/chapter/534774683"
+      {
+        "title": "SIL Ethnologue - Herero language (her)",
+        "url": "https://www.ethnologue.com/language/her/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Omniglot - Herero language",
+        "url": "https://www.omniglot.com/writing/herero.php",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Joshua Project - Herero language resources",
+        "url": "https://joshuaproject.net/languages/her",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "BBC News - Germany recognises colonial-era Namibia genocide, 28 mai 2021",
+        "url": "https://www.bbc.com/news/world-europe-57279008",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for bbc.com."
+      },
+      {
+        "title": "South African History Online - Herero Revolt 1904-1907",
+        "url": "https://sahistory.org.za/article/herero-revolt-1904-1907",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "JFCS Holocaust Center - Herero and Nama Genocide",
+        "url": "https://holocaustcenter.jfcs.org/remembering-the-forgotten-genocide-of-the-herero-and-nama/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers holocaustcenter.jfcs.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Oxford Guide to Bantu Languages - Otjiherero",
+        "url": "https://academic.oup.com/book/61440/chapter/534774683",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academic.oup.com."
+      }
     ]
   }
 }

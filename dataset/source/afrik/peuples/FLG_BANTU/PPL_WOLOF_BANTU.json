@@ -98,12 +98,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Wolof language (wol) : https://www.ethnologue.com/language/wol/",
-      "Joshua Project — Wolof in Senegal (2025) : https://joshuaproject.net/people_groups/15414/SG",
-      "World History Encyclopedia — Wolof Empire (2019) : https://www.worldhistory.org/Wolof_Empire/",
-      "Wolof Resources — The Wolof of Senegal : http://wolofresources.org/wolof.htm",
-      "CIA World Factbook — Senegal : https://www.cia.gov/the-world-factbook/countries/senegal/",
-      "Qiraat Africa — Wolof, a West African ethnic group (2025) : https://qiraatafrican.com/en/14992/wolof-a-west-african-ethnic-group/"
+      {
+        "title": "SIL Ethnologue — Wolof language (wol)",
+        "url": "https://www.ethnologue.com/language/wol/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Wolof in Senegal (2025)",
+        "url": "https://joshuaproject.net/people_groups/15414/SG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "World History Encyclopedia — Wolof Empire (2019)",
+        "url": "https://www.worldhistory.org/Wolof_Empire/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldhistory.org."
+      },
+      {
+        "title": "Wolof Resources — The Wolof of Senegal",
+        "url": "http://wolofresources.org/wolof.htm",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers wolofresources.org; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook — Senegal",
+        "url": "https://www.cia.gov/the-world-factbook/countries/senegal/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Qiraat Africa — Wolof, a West African ethnic group (2025)",
+        "url": "https://qiraatafrican.com/en/14992/wolof-a-west-african-ethnic-group/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      }
     ]
   }
 }

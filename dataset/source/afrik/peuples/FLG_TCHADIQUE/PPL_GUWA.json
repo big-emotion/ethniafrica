@@ -78,10 +78,30 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Jarawan subgroup (Gwa gwb). https://www.ethnologue.com/subgroup/622/",
-      "101 Last Tribes — Gwa people of Nigeria. https://www.101lasttribes.com/tribes/gwa.html",
-      "Glottolog — Languages of Nigeria. https://glottolog.org/glottolog?country=NG",
-      "CIA World Factbook — Nigeria. https://www.cia.gov/the-world-factbook/countries/nigeria/"
+      {
+        "title": "SIL Ethnologue — Jarawan subgroup (Gwa gwb)",
+        "url": "https://www.ethnologue.com/subgroup/622/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "101 Last Tribes — Gwa people of Nigeria",
+        "url": "https://www.101lasttribes.com/tribes/gwa.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Glottolog — Languages of Nigeria",
+        "url": "https://glottolog.org/glottolog?country=NG",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "CIA World Factbook — Nigeria",
+        "url": "https://www.cia.gov/the-world-factbook/countries/nigeria/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

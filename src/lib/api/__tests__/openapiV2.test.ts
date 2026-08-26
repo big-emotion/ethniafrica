@@ -63,7 +63,10 @@ describe("OpenAPI v2 contract", () => {
     expect(source.properties).toMatchObject({
       sourceKey: { type: ["string", "null"] },
       sourceKind: { type: ["string", "null"] },
-      evidenceTier: { type: ["integer", "null"], enum: [1, 2, null] },
+      tier: {
+        type: ["string", "null"],
+        enum: ["official", "referenced", "unverified", null],
+      },
       identifiers: { type: ["object", "null"] },
       url: { type: ["string", "null"] },
     });

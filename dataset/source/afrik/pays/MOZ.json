@@ -237,14 +237,54 @@
       "postIndependence": "République populaire du Mozambique (1975-1990), régime socialiste, guerre civile (1977-1992, RENAMO contre FRELIMO). 1990 : Adoption de la constitution démocratique, République du Mozambique. 1992 : Accords de paix (Rome), fin de la guerre civile. 1990s-présent : Transition démocratique, élections multipartites, présidence de Joaquim Chissano (1986-2005), Armando Guebuza (2005-2015), Filipe Nyusi (depuis 2015). Défis : pauvreté, développement économique, reconstruction post-guerre, VIH/sida, sécurité (terrorisme dans le nord, depuis 2017). Le Mozambique est l'un des pays les plus pauvres d'Afrique, mais avec un potentiel économique important (gaz naturel, charbon)."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Mozambique",
-      "SIL Ethnologue – Languages of Mozambique",
-      "Recensements mozambicains",
-      "Études anthropologiques sur les peuples du Mozambique",
-      "Études historiques sur la colonisation portugaise et la guerre de libération",
-      "CIA World Factbook – Mozambique (ethnic groups)",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Mozambique",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Mozambique",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements mozambicains",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Mozambique",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation portugaise et la guerre de libération",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Mozambique (ethnic groups)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

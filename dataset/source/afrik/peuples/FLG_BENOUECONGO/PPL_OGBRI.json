@@ -84,9 +84,24 @@
       ]
     },
     "sources": [
-      "Lawson-Ikuru, M. (2024). Barter In Ogbia And Nembe: An Indigenous Language Preservation And Promotion System. IOSR Journal of Humanities and Social Science, 29(9), 39-44. http://iosrjournals.org/iosr-jhss/papers/Vol.29-Issue9/Ser-13/F2909133944.pdf",
-      "Joshua Project, Ogbia Ogbinya in Nigeria: https://joshuaproject.net/people_groups/14124",
-      "WALS Online, Language Ogbia (ISO 639-3: ogb): https://wals.info/languoid/lect/wals_code_ogb"
+      {
+        "title": "Lawson-Ikuru, M. (2024). Barter In Ogbia And Nembe: An Indigenous Language Preservation And Promotion System. IOSR Journal of Humanities and Social Science, 29(9), 39-44",
+        "url": "http://iosrjournals.org/iosr-jhss/papers/Vol.29-Issue9/Ser-13/F2909133944.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers iosrjournals.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project, Ogbia Ogbinya in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/14124",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "WALS Online, Language Ogbia (ISO 639-3: ogb)",
+        "url": "https://wals.info/languoid/lect/wals_code_ogb",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"wals\"."
+      }
     ]
   }
 }

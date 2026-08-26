@@ -2,7 +2,7 @@
   "_meta": {
     "format": "AFRIK JSON v2",
     "entity": "source",
-    "directives": "A structured source must have complete citation metadata. URLs may be null for offline works. Legacy strings are accepted only through the lossless compatibility adapter."
+    "directives": "A structured source must have complete citation metadata. URLs may be null for offline works. Legacy string sources no longer exist in dataset/source/afrik: scripts/codemods/tierStringSources.ts converted all 5135 of them and the corpus now carries structured, explicitly tiered entries only. Peuple, pays and famille fiches use the string tier vocabulary (official | referenced | unverified, plus needs_review while the tail is being ruled on); nom, relation, migration and frontiere-coloniale fiches still carry the legacy numeric tier 1/2 and are converted separately."
   },
   "source": {
     "sourceKey": "example-archive-1912",

@@ -88,12 +88,42 @@
       ]
     },
     "sources": [
-      "Joshua Project – Banyoro, Nyoro in Uganda (2025) : https://joshuaproject.net/people_groups/14103",
-      "Bunyoro-Kitara Kingdom – History : http://www.bunyoro-kitara.org/7.html",
-      "SIL Ethnologue – Nyoro language (nyo) : https://www.ethnologue.com/language/nyo/",
-      "101 Last Tribes – Banyoro people : https://www.101lasttribes.com/tribes/banyoro.html",
-      "Beattie, John (1960). Bunyoro: An African Kingdom. New York: Holt, Rinehart and Winston.",
-      "CIA World Factbook – Uganda : https://www.cia.gov/the-world-factbook/countries/uganda/"
+      {
+        "title": "Joshua Project – Banyoro, Nyoro in Uganda (2025)",
+        "url": "https://joshuaproject.net/people_groups/14103",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Bunyoro-Kitara Kingdom – History",
+        "url": "http://www.bunyoro-kitara.org/7.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers bunyoro-kitara.org; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Nyoro language (nyo)",
+        "url": "https://www.ethnologue.com/language/nyo/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "101 Last Tribes – Banyoro people",
+        "url": "https://www.101lasttribes.com/tribes/banyoro.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Beattie, John (1960). Bunyoro: An African Kingdom. New York: Holt, Rinehart and Winston",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook – Uganda",
+        "url": "https://www.cia.gov/the-world-factbook/countries/uganda/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

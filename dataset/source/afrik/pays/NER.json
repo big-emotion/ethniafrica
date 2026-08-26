@@ -198,14 +198,54 @@
       "postIndependence": "République du Niger (1960), présidence de Hamani Diori (1960-1974), coups d'État (1974, 1996, 1999, 2010), rébellions touarègues (1990s-2010s), transition démocratique (depuis 1999), présidence de Mamadou Tandja (1999-2010), Mahamadou Issoufou (2011-2021), Mohamed Bazoum (2021-2023), coup d'État (2023), Abdourahamane Tiani (depuis 2023). Défis : pauvreté, développement économique, sécurité (terrorisme, rébellions touarègues), changement climatique (désertification). Le Niger est l'un des pays les plus pauvres d'Afrique, avec des défis de développement importants."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Niger",
-      "SIL Ethnologue – Languages of Niger",
-      "Recensements nigériens",
-      "Études anthropologiques sur les peuples du Niger",
-      "Études historiques sur les cités-États hausa, l'empire songhay, le royaume du Kanem-Bornou",
-      "CIA World Factbook – Niger (ethnic groups, 2006 census)",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Niger",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Niger",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nigériens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples du Niger",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur les cités-États hausa, l'empire songhay, le royaume du Kanem-Bornou",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Niger (ethnic groups, 2006 census)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

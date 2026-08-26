@@ -137,9 +137,13 @@ const yorubaPeople: PeopleDetail = {
     source: "SIL Ethnologue 2025",
   },
   sources: [
-    "SIL Ethnologue – Yoruba",
-    "CIA World Factbook – Nigeria",
-    "UNESCO – Cultural heritage of the Yoruba people",
+    { title: "SIL Ethnologue – Yoruba", url: null, tier: "unverified" },
+    { title: "CIA World Factbook – Nigeria", url: null, tier: "unverified" },
+    {
+      title: "UNESCO – Cultural heritage of the Yoruba people",
+      url: null,
+      tier: "unverified",
+    },
   ],
 };
 
@@ -155,6 +159,7 @@ const minimalPeople: PeopleDetail = {
 // ==========================================
 
 describe("formatPeoplePopulation", () => {
+  // @req REQ-003
   it("formats whole millions", () => {
     expect(formatPeoplePopulation(40000000)).toBe("40M");
   });
@@ -181,6 +186,7 @@ describe("formatPeoplePopulation", () => {
 });
 
 describe("extractAppellationShort", () => {
+  // @req REQ-003
   it("extracts short forms from parenthetical format", () => {
     expect(extractAppellationShort("Moaga (singulier), Moose (pluriel)")).toBe(
       "Moaga · Moose"
@@ -211,6 +217,7 @@ describe("extractAppellationShort", () => {
 // ==========================================
 
 describe("transformPeopleHero", () => {
+  // @req REQ-003
   it("extracts basic identity fields", () => {
     const hero = transformPeopleHero(yorubaPeople);
     expect(hero.peopleId).toBe("PPL_YORUBA");
@@ -253,6 +260,7 @@ describe("transformPeopleHero", () => {
 });
 
 describe("transformPeopleOrigins", () => {
+  // @req REQ-003
   it("extracts all origin fields", () => {
     const result = transformPeopleOrigins(yorubaPeople.origins);
     expect(result.ancientOrigins).toBe(
@@ -283,6 +291,7 @@ describe("transformPeopleOrigins", () => {
 });
 
 describe("transformPeopleLanguages", () => {
+  // @req REQ-003
   it("extracts language data", () => {
     const result = transformPeopleLanguages(yorubaPeople.languages);
     expect(result.mainLanguage).toBe("Yoruba");
@@ -309,6 +318,7 @@ describe("transformPeopleLanguages", () => {
 });
 
 describe("transformPeopleHistory", () => {
+  // @req REQ-003
   it("extracts all historical role fields", () => {
     const result = transformPeopleHistory(yorubaPeople.historicalRole);
     expect(result.kingdomsOrChiefdoms).toContain("Empire Oyo");
@@ -327,6 +337,7 @@ describe("transformPeopleHistory", () => {
 });
 
 describe("transformPeopleCulture", () => {
+  // @req REQ-003
   it("extracts supreme deity name", () => {
     const result = transformPeopleCulture(yorubaPeople.culture);
     expect(result.supremeDeity).toBe("Olodumare");
@@ -465,6 +476,7 @@ describe("transformEgoNetworkPreview", () => {
 });
 
 describe("transformPeopleCountries", () => {
+  // @req REQ-003
   it("extracts total population and formats it", () => {
     const result = transformPeopleCountries(yorubaPeople.demography);
     expect(result.totalPopulation).toBe(40000000);
@@ -682,6 +694,7 @@ describe("transformPeopleData", () => {
     expect(result.sources).toBeTruthy();
   });
 
+  // @req REQ-003
   it("all 8 sections are present in the result", () => {
     const result = transformPeopleData(yorubaPeople);
     expect(result).toHaveProperty("hero");

@@ -89,11 +89,36 @@
       ]
     },
     "sources": [
-      "International Kreol Magazine — Guinea-Bissau's Creole Culture. https://kreolmagazine.com/guinea-bissaus-creole-culture-evolution-influence-and-resilience/",
-      "Joshua Project — Crioulo, Upper Guinea in Guinea-Bissau. https://joshuaproject.net/people_groups/11436/PU",
-      "Sorosoro — Guinea-Bissau Creole language. https://www.sorosoro.org/en/guinea-bissau-creole/",
-      "Ethnologue — Guinea-Bissau Creole (pov). https://www.ethnologue.com/language/pov/",
-      "Britannica — Guinea-Bissau. https://www.britannica.com/place/Guinea-Bissau"
+      {
+        "title": "International Kreol Magazine — Guinea-Bissau's Creole Culture",
+        "url": "https://kreolmagazine.com/guinea-bissaus-creole-culture-evolution-influence-and-resilience/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kreolmagazine.com."
+      },
+      {
+        "title": "Joshua Project — Crioulo, Upper Guinea in Guinea-Bissau",
+        "url": "https://joshuaproject.net/people_groups/11436/PU",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Sorosoro — Guinea-Bissau Creole language",
+        "url": "https://www.sorosoro.org/en/guinea-bissau-creole/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sorosoro.org."
+      },
+      {
+        "title": "Ethnologue — Guinea-Bissau Creole (pov)",
+        "url": "https://www.ethnologue.com/language/pov/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Britannica — Guinea-Bissau",
+        "url": "https://www.britannica.com/place/Guinea-Bissau",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

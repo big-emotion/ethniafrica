@@ -163,13 +163,48 @@
       "postIndependence": "République des Seychelles (1976), présidence de James Mancham (1976-1977), coup d'État (1977), présidence de France-Albert René (1977-2004, régime socialiste, parti unique jusqu'en 1991), transition démocratique (1991), élections multipartites, présidence de James Michel (2004-2016), Danny Faure (2016-2020), Wavel Ramkalawan (depuis 2020). Stabilité politique, démocratie multipartite, développement économique (tourisme, pêche, services financiers). Les Seychelles sont l'un des pays les plus développés d'Afrique, avec un IDH élevé et une économie diversifiée."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Seychelles",
-      "SIL Ethnologue – Languages of Seychelles",
-      "Recensements seychellois",
-      "Études anthropologiques sur les peuples des Seychelles",
-      "Études historiques sur la colonisation française et britannique",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Seychelles",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Seychelles",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements seychellois",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples des Seychelles",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur la colonisation française et britannique",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

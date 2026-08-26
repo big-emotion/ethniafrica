@@ -105,12 +105,42 @@
       ]
     },
     "sources": [
-      "Mursi Online — Daasanach. https://www.mursi.org/neighbours/daasanach",
-      "101 Last Tribes — Dassanech. https://www.101lasttribes.com/tribes/dassanech.html",
-      "Joshua Project — Daasanach in Ethiopia. https://joshuaproject.net/people_groups/14549/ET",
-      "Joshua Project — Daasanach in Kenya. https://joshuaproject.net/people_groups/14549/KE",
-      "SIL Ethnologue — Daasanach language (dsh). https://www.ethnologue.com/language/dsh/",
-      "Begin North Adventures — The Daasanach Tribe. https://beginnorthadventures.com/daasanach-tribe/"
+      {
+        "title": "Mursi Online — Daasanach",
+        "url": "https://www.mursi.org/neighbours/daasanach",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for mursi.org."
+      },
+      {
+        "title": "101 Last Tribes — Dassanech",
+        "url": "https://www.101lasttribes.com/tribes/dassanech.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project — Daasanach in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/14549/ET",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Daasanach in Kenya",
+        "url": "https://joshuaproject.net/people_groups/14549/KE",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "SIL Ethnologue — Daasanach language (dsh)",
+        "url": "https://www.ethnologue.com/language/dsh/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Begin North Adventures — The Daasanach Tribe",
+        "url": "https://beginnorthadventures.com/daasanach-tribe/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for beginnorthadventures.com."
+      }
     ]
   }
 }

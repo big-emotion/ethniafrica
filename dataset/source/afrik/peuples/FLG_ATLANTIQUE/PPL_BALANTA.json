@@ -106,9 +106,24 @@
       ]
     },
     "sources": [
-      "Qiraat Africa. The Balanta of Guinea-Bissau, Senegal and The Gambia. https://qiraatafrican.com/en/19891/the-balanta-of-guinea-bissau-senegal-and-the-gambia/",
-      "101 Last Tribes. Balanta people. https://www.101lasttribes.com/tribes/balanta.html",
-      "Ethnologue (SIL International). Balanta Language (BLE). https://www.ethnologue.com/language/ble/"
+      {
+        "title": "Qiraat Africa. The Balanta of Guinea-Bissau, Senegal and The Gambia",
+        "url": "https://qiraatafrican.com/en/19891/the-balanta-of-guinea-bissau-senegal-and-the-gambia/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "101 Last Tribes. Balanta people",
+        "url": "https://www.101lasttribes.com/tribes/balanta.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Ethnologue (SIL International). Balanta Language (BLE)",
+        "url": "https://www.ethnologue.com/language/ble/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

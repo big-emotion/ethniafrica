@@ -81,11 +81,36 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica - Republic of the Congo: People. https://www.britannica.com/place/Republic-of-the-Congo/People",
-      "Glottolog 5.2 - Koyo (koh). https://glottolog.org/resource/languoid/id/koyo1242",
-      "SIL Ethnologue - Koyo language (koh). https://www.ethnologue.com/language/koh/",
-      "Expeditions Ducret - Ethnic Groups of Congo. https://www.expeditions-ducret.com/ethnic-groups-of-congo/",
-      "Guthrie, Malcolm. Comparative Bantu. Gregg Press, 1967-71. (Classification zone C.24)"
+      {
+        "title": "Encyclopaedia Britannica - Republic of the Congo: People",
+        "url": "https://www.britannica.com/place/Republic-of-the-Congo/People",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Glottolog 5.2 - Koyo (koh)",
+        "url": "https://glottolog.org/resource/languoid/id/koyo1242",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL Ethnologue - Koyo language (koh)",
+        "url": "https://www.ethnologue.com/language/koh/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Expeditions Ducret - Ethnic Groups of Congo",
+        "url": "https://www.expeditions-ducret.com/ethnic-groups-of-congo/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers expeditions-ducret.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Guthrie, Malcolm. Comparative Bantu. Gregg Press, 1967-71. (Classification zone C.24)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }
