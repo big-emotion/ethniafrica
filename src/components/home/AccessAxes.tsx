@@ -340,9 +340,14 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
 
         /* Pending, not disabled: the hub behind it is where the reader
            sees what is coming, so it stays reachable and keyboard-
-           operable. Only the promise is dialled back. */
-        .access-axis-pending .access-axis-glyph,
-        .access-axis-pending .access-axis-cta {
+           operable. Only the promise is dialled back.
+
+           The glyph alone is softened. It is aria-hidden decoration, so
+           no contrast rule applies to it; dimming the CTA text with it
+           took that text under the AA bar, which axe caught on the live
+           route. The word already reads "Bientôt" — it does not need to
+           be faint to say so. */
+        .access-axis-pending .access-axis-glyph {
           opacity: 0.62;
         }
 
@@ -434,9 +439,14 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
           }
           /* Pending, not disabled: the hub behind it is where the reader
            sees what is coming, so it stays reachable and keyboard-
-           operable. Only the promise is dialled back. */
-        .access-axis-pending .access-axis-glyph,
-        .access-axis-pending .access-axis-cta {
+           operable. Only the promise is dialled back.
+
+           The glyph alone is softened. It is aria-hidden decoration, so
+           no contrast rule applies to it; dimming the CTA text with it
+           took that text under the AA bar, which axe caught on the live
+           route. The word already reads "Bientôt" — it does not need to
+           be faint to say so. */
+        .access-axis-pending .access-axis-glyph {
           opacity: 0.62;
         }
 

@@ -94,6 +94,20 @@
   --afh-cat-terre-ink: #974331;
   --afh-cat-perv-ink: #535f9e;
 
+  /* The night half of the same pair. The inks above were scaled toward
+     black to read on the parchment tint; on a night card that makes them
+     dark-on-dark (2.47:1 to 2.73:1), worse than the fill they replaced.
+     Here the readable direction is the other one, so ocre, teal and perv
+     need no lift at all — the base fill already measures 5.2:1 on the
+     card and 5.9:1 on the ground. Only terre is too dark at full
+     strength (3.73:1), so it alone is lifted toward white on its own hue,
+     to the darkest step clearing the bar with margin on both surfaces
+     (4.81:1 card, 5.44:1 ground). */
+  --afh-cat-ocre-ink-night: var(--afh-cat-ocre);
+  --afh-cat-teal-ink-night: var(--afh-cat-teal);
+  --afh-cat-terre-ink-night: #cd725e;
+  --afh-cat-perv-ink-night: var(--afh-cat-perv);
+
   /* ─── L2 · Semantic aliases ────────────────────────────────── */
 
   /* Surface */
@@ -308,4 +322,38 @@
   --accent: var(--afh-cat-perv);
   --accent-tint: var(--afh-cat-perv-tint);
   --accent-ink: var(--afh-cat-perv-ink);
+}
+
+/* The ink half of each accent pair flips with the surface, exactly as
+   --accent-foreground does above: on a dark page the readable accent is
+   the light one. Written as a night-scoped override of the same wrappers
+   so a component still only ever reads --accent-ink and never learns
+   which surface it was rendered on. */
+
+.dark .afh-accent-ocre,
+.afh-on-night .afh-accent-ocre,
+.afh-accent-ocre.dark,
+.afh-accent-ocre.afh-on-night {
+  --accent-ink: var(--afh-cat-ocre-ink-night);
+}
+
+.dark .afh-accent-teal,
+.afh-on-night .afh-accent-teal,
+.afh-accent-teal.dark,
+.afh-accent-teal.afh-on-night {
+  --accent-ink: var(--afh-cat-teal-ink-night);
+}
+
+.dark .afh-accent-terre,
+.afh-on-night .afh-accent-terre,
+.afh-accent-terre.dark,
+.afh-accent-terre.afh-on-night {
+  --accent-ink: var(--afh-cat-terre-ink-night);
+}
+
+.dark .afh-accent-perv,
+.afh-on-night .afh-accent-perv,
+.afh-accent-perv.dark,
+.afh-accent-perv.afh-on-night {
+  --accent-ink: var(--afh-cat-perv-ink-night);
 }

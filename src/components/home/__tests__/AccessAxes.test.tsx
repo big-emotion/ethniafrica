@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+
 import { render, screen, cleanup } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
@@ -196,6 +199,26 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
     expect(screen.getByTestId("access-axis-cta-explorer")).toHaveTextContent(
       "Parcourir"
     );
+  });
+
+  // axe caught this on the live /fr route: dimming the pending axis as a
+  // whole took its CTA text under the contrast bar. The pending state is
+  // allowed to soften decoration — the glyph is aria-hidden and no
+  // contrast rule applies to it — but never text, which has already said
+  // "Bientôt" and needs no help being read.
+  // @req REQ-114
+  it("softens only aria-hidden decoration, never the pending axis text", () => {
+    const source = readFileSync(
+      resolve(process.cwd(), "src/components/home/AccessAxes.tsx"),
+      "utf8"
+    );
+    const pendingRules = source.match(/\.access-axis-pending[^{]*\{[^}]*\}/g);
+
+    for (const rule of pendingRules ?? []) {
+      if (!/opacity/.test(rule)) continue;
+      expect(rule).not.toContain(".access-axis-cta");
+      expect(rule).not.toContain(".access-axis-figure");
+    }
   });
 
   // Still a link: the hub is where the reader sees what is coming. What is

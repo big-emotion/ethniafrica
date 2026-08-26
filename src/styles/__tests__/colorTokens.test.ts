@@ -32,6 +32,19 @@ function nightScopeOf(css: string): string {
   return css.slice(css.indexOf(".dark,"));
 }
 
+function resolvedHex(name: string): string {
+  let current = name;
+  for (let hop = 0; hop < 8; hop += 1) {
+    const match = colorCss.match(
+      new RegExp(`${current}:\\s*(#[0-9a-f]{6}|var\\(--[a-z0-9-]+\\))`, "i")
+    );
+    if (!match) throw new Error(`Missing token ${current}`);
+    if (match[1].startsWith("#")) return match[1];
+    current = match[1].slice(4, -1);
+  }
+  throw new Error(`Token ${name} never resolves to a hex`);
+}
+
 function contrastRatio(foreground: string, background: string): number {
   const values = [
     relativeLuminance(foreground),
@@ -203,6 +216,35 @@ describe("night theme (REQ-115)", () => {
       );
     }
   });
+
+  // --accent-ink was minted for text on the parchment tint, where dark is
+  // what reads. On a night surface the same token is a dark ink on a dark
+  // card — 2.47:1 to 2.73:1, worse than the fill it replaced. Night needs
+  // its own half of the pair, or every accent-coloured label on a card
+  // fails the moment the reader switches surface.
+  // @req REQ-115
+  it.each(["ocre", "teal", "terre", "perv"])(
+    "keeps the %s accent ink AA-readable on both night surfaces",
+    (accent) => {
+      const ink = resolvedHex(`--afh-cat-${accent}-ink-night`);
+
+      expect(contrastRatio(ink, surface())).toBeGreaterThanOrEqual(4.5);
+      expect(contrastRatio(ink, ground())).toBeGreaterThanOrEqual(4.5);
+    }
+  );
+
+  // The night block has to actually bind them, or the tokens are decoration.
+  // @req REQ-115
+  it.each(["ocre", "teal", "terre", "perv"])(
+    "binds --accent-ink to the %s night ink inside a night scope",
+    (accent) => {
+      const nightScope = nightScopeOf(colorCss);
+
+      expect(nightScope).toContain(
+        `--accent-ink: var(--afh-cat-${accent}-ink-night)`
+      );
+    }
+  );
 
   // Every axis accent lands on the night ground in the hero band, so an
   // accent that fails there would take a whole axis down with it.

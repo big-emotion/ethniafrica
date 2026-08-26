@@ -39,8 +39,14 @@ export function TrustStrip({ language }: TrustStripProps) {
           color: var(--afh-text-soft);
           line-height: 1.6;
         }
+        /* The underline is what makes this link a link. It sits inside a
+           paragraph, so colour alone leaves it invisible to a reader who
+           cannot tell the two inks apart — and Tailwind's preflight has
+           already dropped the browser's default, so the offset below was
+           offsetting an underline that was never drawn. */
         .home-trust a {
           color: var(--afh-text);
+          text-decoration: underline;
           text-underline-offset: 2px;
         }
         @media (max-width: 700px) {
