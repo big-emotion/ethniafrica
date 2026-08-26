@@ -406,6 +406,12 @@ export const translations = {
       derivedLabel: "Valeur dérivée",
       derivedFromPrefix: "Dérivée de : ",
     },
+    hubs: {
+      peuples: { title: "Peuples" },
+      pays: { title: "Pays" },
+      familles: { title: "Familles" },
+      unavailableLabel: "Bientôt",
+    },
   },
 };
 
