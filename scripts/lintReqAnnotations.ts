@@ -335,9 +335,27 @@ function stagedPaths(root: string): string[] {
   }
 }
 
-function collectFiles(root: string, staged: boolean): SourceFileInput[] {
-  const absolutePaths = staged
-    ? stagedPaths(root)
+// Three dots: compare against the merge base, so a PR is judged on what it
+// introduces rather than on everything that landed on the base branch
+// meanwhile. Requires unshallow history — see the fetch-depth in ci.yml.
+function changedPaths(root: string, baseRef: string): string[] {
+  try {
+    return execFileSync(
+      "git",
+      ["diff", "--name-only", "--diff-filter=AM", `${baseRef}...HEAD`],
+      { cwd: root, encoding: "utf8" }
+    )
+      .split("\n")
+      .map((value) => value.trim())
+      .filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
+function collectFiles(root: string, diffBase?: string): SourceFileInput[] {
+  const absolutePaths = diffBase
+    ? (diffBase === "HEAD" ? stagedPaths(root) : changedPaths(root, diffBase))
         .filter((filePath) => SOURCE_FILE_PATTERN.test(filePath))
         .map((filePath) => path.join(root, filePath))
         .filter(existsSync)
@@ -349,9 +367,13 @@ function collectFiles(root: string, staged: boolean): SourceFileInput[] {
   }));
 }
 
-function contentAtHead(root: string, filePath: string): string | undefined {
+function contentAtRef(
+  root: string,
+  ref: string,
+  filePath: string
+): string | undefined {
   try {
-    return execFileSync("git", ["show", `HEAD:${filePath}`], {
+    return execFileSync("git", ["show", `${ref}:${filePath}`], {
       cwd: root,
       encoding: "utf8",
       stdio: ["ignore", "pipe", "ignore"],
@@ -359,6 +381,40 @@ function contentAtHead(root: string, filePath: string): string | undefined {
   } catch {
     return undefined;
   }
+}
+
+export interface LintMode {
+  strictTests: boolean;
+  /** Ref the change is measured against; undefined means survey the whole tree. */
+  diffBase: string | undefined;
+}
+
+/**
+ * Both enforcing modes are diff-scoped, and deliberately so: the tree still
+ * carries ~1245 tests predating the `@req` rule, so a repo-wide strict run can
+ * only ever be a survey. Scoping to the diff is what lets the rule block —
+ * `--staged` measures against HEAD for the pre-commit hook, `--base <ref>`
+ * against the pull request base for CI.
+ */
+// @req REQ-085
+export function resolveLintMode(argv: string[]): LintMode {
+  const staged = argv.includes("--staged");
+  const baseIndex = argv.indexOf("--base");
+
+  if (baseIndex !== -1 && !argv[baseIndex + 1]) {
+    throw new Error("--base requires a git ref (e.g. --base origin/recette)");
+  }
+
+  const diffBase = staged
+    ? "HEAD"
+    : baseIndex !== -1
+      ? argv[baseIndex + 1]
+      : undefined;
+
+  return {
+    strictTests: argv.includes("--strict-tests") || diffBase !== undefined,
+    diffBase,
+  };
 }
 
 function loadCatalog(root: string): RequirementCatalog | null {
@@ -369,9 +425,8 @@ function loadCatalog(root: string): RequirementCatalog | null {
 
 function runCli(): void {
   const root = path.resolve(import.meta.dirname, "..");
-  const staged = process.argv.includes("--staged");
-  const strictTests = process.argv.includes("--strict-tests") || staged;
-  const files = collectFiles(root, staged);
+  const { strictTests, diffBase } = resolveLintMode(process.argv.slice(2));
+  const files = collectFiles(root, diffBase);
   const catalog = loadCatalog(root);
   const errors: string[] = [];
   const warnings: string[] = [];
@@ -384,29 +439,33 @@ function runCli(): void {
         ...checkTestAnnotations(
           file.content,
           file.path,
-          staged ? contentAtHead(root, file.path) : undefined
+          diffBase ? contentAtRef(root, diffBase, file.path) : undefined
         ).errors
       );
     }
   }
 
-  const traceabilityFiles = staged
+  // Traceability needs every test file in the tree, not just the changed ones:
+  // the test proving a changed export's requirement usually lives elsewhere.
+  const traceabilityFiles = diffBase
     ? [
         ...files,
-        ...collectFiles(root, false).filter((file) =>
+        ...collectFiles(root).filter((file) =>
           TEST_FILE_PATTERN.test(file.path)
         ),
       ]
     : files;
   errors.push(...checkExportTraceability(traceabilityFiles).errors);
 
-  if (staged) {
+  if (diffBase) {
     for (const file of files.filter(
       (candidate) =>
         candidate.path.startsWith("src/") &&
         SOURCE_FILE_PATTERN.test(candidate.path)
     )) {
-      warnings.push(...checkNewExports(file.content, file.path).warnings);
+      // Reported as warnings by the checker, blocking here: inside a
+      // diff-scoped run every hit is an export the change itself introduced.
+      errors.push(...checkNewExports(file.content, file.path).warnings);
     }
   }
 
