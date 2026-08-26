@@ -1,6 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { AutonymExonymHeading } from "@/components/ui/AutonymExonymHeading";
 import { PeopleFicheHead } from "./PeopleFicheHead";
+import { PeopleDetailViewV2 } from "./PeopleDetailViewV2";
+import type { PeopleDetail } from "@/types/afrik-frontend";
 import { PeopleOriginBlock } from "./PeopleOriginBlock";
 import { PeopleLanguageSection } from "./PeopleLanguageSection";
 import { PeopleHistoryTimeline } from "./PeopleHistoryTimeline";
@@ -507,4 +509,163 @@ export const Sources_Desktop: Story = {
   name: "PeopleSourcesFooter — 1200px",
   parameters: { viewport: { defaultViewport: "desktop1200" } },
   render: Sources_Mobile.render,
+};
+
+// ==========================================
+// The whole fiche — the three regimes the corpus has
+//
+// Every story above renders one section on one fixture. None of them shows
+// what the fiche looks like assembled, and the three regimes assemble
+// differently: half the corpus declares a single country and gets neither a
+// picker nor a share bar, the mockup was drawn on five, and PPL_BANTU stacks
+// 21. A story of the middle case alone would keep saying the edges are fine.
+// ==========================================
+
+function sampleFiche(
+  countries: Array<{ country: string; population: number }>
+): PeopleDetail {
+  return {
+    id: "PPL_SAMPLE",
+    nameMain: "Yoruba",
+    languageFamilyId: "FLG_BENOUECONGO",
+    languageFamilyName: "Bénoué-Congo",
+    currentCountries: countries.map((entry) => entry.country),
+    appellations: {
+      mainName: "Yoruba",
+      selfAppellation: "Yoruba (Yoruba eniyan)",
+      exonyms: ["Nago (terme colonial francophone)", "Aku (diaspora)"],
+      whyProblematic:
+        "Nago peut être perçu comme réducteur par les communautés concernées.",
+      ethnoLinguisticGroup: "Volta-Congo, Yoruboid",
+      historicalRegion: "Sud-Ouest du Nigeria, Yorubaland",
+    },
+    languages: {
+      mainLanguage: "Yoruba",
+      isoCodes: ["yor"],
+      dialects: ["Oyo", "Ijebu", "Ekiti"],
+    },
+    origins: {
+      ancientOrigins:
+        "Les traditions orales placent l'origine du peuple à Ile-Ife.",
+      migrationRoutes: [],
+      historicalSettlementZones: [],
+    },
+    demography: {
+      totalPopulation: countries.reduce((sum, e) => sum + e.population, 0),
+      referenceYear: 2025,
+      distributionByCountry: countries,
+    },
+    sources: [
+      { title: "SIL Ethnologue 2025", url: null, tier: "official" },
+      { title: "Témoignage de terrain", url: null, tier: "needs_review" },
+    ],
+  };
+}
+
+const MONO_COUNTRY = sampleFiche([{ country: "NGA", population: 45500000 }]);
+
+const FIVE_COUNTRIES = sampleFiche([
+  { country: "NGA", population: 45500000 },
+  { country: "BEN", population: 1800000 },
+  { country: "TGO", population: 450000 },
+  { country: "GHA", population: 150000 },
+  { country: "SLE", population: 7300 },
+]);
+
+const TWENTY_ONE_COUNTRIES = sampleFiche(
+  [
+    "COD",
+    "TZA",
+    "AGO",
+    "ZMB",
+    "KEN",
+    "UGA",
+    "MOZ",
+    "ZWE",
+    "MWI",
+    "CMR",
+    "RWA",
+    "BDI",
+    "COG",
+    "GAB",
+    "NAM",
+    "BWA",
+    "ZAF",
+    "GNQ",
+    "CAF",
+    "SSD",
+    "SWZ",
+  ].map((country, index) => ({
+    country,
+    population: 40000000 - index * 1500000,
+  }))
+);
+
+const wholeFiche = (people: PeopleDetail) => () => (
+  <div style={{ background: "hsl(35,35%,97%)", minHeight: "100vh" }}>
+    <PeopleDetailViewV2 people={people} />
+  </div>
+);
+
+// @req REQ-115
+export const WholeFiche_Mono_Mobile: Story = {
+  name: "Fiche entière · 1 pays — 430px",
+  parameters: { viewport: { defaultViewport: "mobile430" } },
+  render: wholeFiche(MONO_COUNTRY),
+};
+
+// @req REQ-115
+export const WholeFiche_Mono_Tablet: Story = {
+  name: "Fiche entière · 1 pays — 720px",
+  parameters: { viewport: { defaultViewport: "tablet720" } },
+  render: wholeFiche(MONO_COUNTRY),
+};
+
+// @req REQ-115
+export const WholeFiche_Mono_Desktop: Story = {
+  name: "Fiche entière · 1 pays — 1200px",
+  parameters: { viewport: { defaultViewport: "desktop1200" } },
+  render: wholeFiche(MONO_COUNTRY),
+};
+
+// @req REQ-115
+export const WholeFiche_Five_Mobile: Story = {
+  name: "Fiche entière · 5 pays — 430px",
+  parameters: { viewport: { defaultViewport: "mobile430" } },
+  render: wholeFiche(FIVE_COUNTRIES),
+};
+
+// @req REQ-115
+export const WholeFiche_Five_Tablet: Story = {
+  name: "Fiche entière · 5 pays — 720px",
+  parameters: { viewport: { defaultViewport: "tablet720" } },
+  render: wholeFiche(FIVE_COUNTRIES),
+};
+
+// @req REQ-115
+export const WholeFiche_Five_Desktop: Story = {
+  name: "Fiche entière · 5 pays — 1200px",
+  parameters: { viewport: { defaultViewport: "desktop1200" } },
+  render: wholeFiche(FIVE_COUNTRIES),
+};
+
+// @req REQ-115
+export const WholeFiche_Bantu_Mobile: Story = {
+  name: "Fiche entière · 21 pays — 430px",
+  parameters: { viewport: { defaultViewport: "mobile430" } },
+  render: wholeFiche(TWENTY_ONE_COUNTRIES),
+};
+
+// @req REQ-115
+export const WholeFiche_Bantu_Tablet: Story = {
+  name: "Fiche entière · 21 pays — 720px",
+  parameters: { viewport: { defaultViewport: "tablet720" } },
+  render: wholeFiche(TWENTY_ONE_COUNTRIES),
+};
+
+// @req REQ-115
+export const WholeFiche_Bantu_Desktop: Story = {
+  name: "Fiche entière · 21 pays — 1200px",
+  parameters: { viewport: { defaultViewport: "desktop1200" } },
+  render: wholeFiche(TWENTY_ONE_COUNTRIES),
 };

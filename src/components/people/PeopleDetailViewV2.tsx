@@ -46,6 +46,9 @@ function SectionCard({
 }) {
   return (
     <section
+      // The label, without the decorative glyph the heading prefixes it with.
+      // The parity contract reads the fiche's section order off this.
+      data-fiche-section={label}
       className="people-fade-in rounded-[var(--country-radius-xl)] md:rounded-[20px] xl:rounded-[22px] p-[18px] md:p-6 xl:p-7 relative overflow-hidden"
       style={{
         background: "var(--country-card)",
