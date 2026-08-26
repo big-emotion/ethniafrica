@@ -45,7 +45,21 @@ function ConsentEnforcer() {
 }
 
 // @req REQ-115
-export function Providers({ children }: { children: React.ReactNode }) {
+export function Providers({
+  children,
+  nonce,
+}: {
+  children: React.ReactNode;
+  /**
+   * Request nonce minted by the CSP middleware. next-themes writes an inline
+   * bootstrap script so the saved surface is applied before hydration, and
+   * script-src admits no 'unsafe-inline' — without this the browser drops
+   * that script and the reader's night choice reverts on every load.
+   * Optional because the surfaces with no CSP (tests, Storybook) have none
+   * to give.
+   */
+  nonce?: string;
+}) {
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -65,6 +79,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     // editorial copy was contrast-checked on, so night is something the
     // reader opts into rather than something an OS setting imposes.
     <ThemeProvider
+      nonce={nonce}
       attribute="class"
       defaultTheme="light"
       enableSystem={false}

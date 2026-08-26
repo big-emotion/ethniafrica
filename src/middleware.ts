@@ -60,6 +60,17 @@ function applySecurityHeaders(
 const CANONICAL_LOCALE = "fr";
 const LOCALE_SEGMENT = /^\/([a-z]{2})(?=\/|$)/;
 
+// REQ-114 renamed the hubs from the resources they group to the verb the
+// reader arrives with. All three were published, so the old URLs are
+// indexed and bookmarked and have to keep resolving. Keyed on the whole
+// segment, never a prefix: /fr/peuples is a live resource page and must
+// not be swept up by the /fr/peuples-hub entry.
+const RENAMED_HUB_SEGMENTS: Record<string, string> = {
+  "peuples-hub": "comprendre",
+  "pays-hub": "explorer",
+  "familles-hub": "jouer",
+};
+
 // True when the request originates from the deployment itself — i.e. the
 // browser tab or server worker serving our own frontend. Used to let the
 // site call its own /api/v2/* without baking an API key into the bundle.
@@ -89,6 +100,18 @@ export async function middleware(request: NextRequest) {
     const rest = pathname.slice(localeMatch[0].length).replace(/\/+$/, "");
     const target = new URL(
       `/${CANONICAL_LOCALE}${rest}${request.nextUrl.search}`,
+      request.nextUrl.origin
+    );
+    return NextResponse.redirect(target, 308);
+  }
+
+  // Same 308 the locale canonicalization uses: a rename is permanent, so
+  // crawlers should transfer the old URL's standing rather than keep
+  // revisiting it.
+  const renamedHub = pathname.match(/^\/([a-z]{2})\/([a-z-]+)\/?$/);
+  if (renamedHub && RENAMED_HUB_SEGMENTS[renamedHub[2]]) {
+    const target = new URL(
+      `/${renamedHub[1]}/${RENAMED_HUB_SEGMENTS[renamedHub[2]]}${request.nextUrl.search}`,
       request.nextUrl.origin
     );
     return NextResponse.redirect(target, 308);

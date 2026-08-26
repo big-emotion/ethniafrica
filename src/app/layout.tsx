@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { connection } from "next/server";
+import { headers } from "next/headers";
 import { Fraunces, Nunito_Sans } from "next/font/google";
 import "@/index.css";
 import { Providers } from "./providers";
@@ -54,6 +55,10 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   await connection();
+  // Set by the CSP middleware on the request headers. Providers hands it to
+  // next-themes, whose inline bootstrap script script-src would otherwise
+  // reject.
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
 
   return (
     <html
@@ -63,7 +68,7 @@ export default async function RootLayout({
     >
       <body className="font-sans antialiased">
         <TypeformPreload />
-        <Providers>
+        <Providers nonce={nonce}>
           {children}
           <PlausibleScript />
         </Providers>

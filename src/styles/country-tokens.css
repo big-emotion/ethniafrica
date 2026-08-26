@@ -11,15 +11,22 @@
    ============================================================ */
 
 :root {
-  /* === COULEURS — Fond (aliased to --afh-color-* / --afh-*) === */
-  --country-bg: var(--afh-color-bg);
-  --country-bg-warm: var(--afh-color-bg-warm);
-  --country-card: var(--afh-color-card);
-  --country-border: var(--afh-color-border);
+  /* === COULEURS — Fond (aliased to the L2 semantic tokens) ===
+     These point at --afh-bg / --afh-surface / --afh-text rather than the
+     raw --afh-color-* ramp on purpose. The ramp is the parchment palette
+     and the night theme deliberately leaves it alone; only the semantic
+     layer is rebound. Aliased to the ramp, every fiche surface that still
+     speaks --country-* — country, people and family, plus everything in
+     people-tokens.css — stayed parchment while the shell went dark, which
+     is a dark frame around a light page rather than a night theme. */
+  --country-bg: var(--afh-bg);
+  --country-bg-warm: var(--afh-bg-warm);
+  --country-card: var(--afh-surface);
+  --country-border: var(--afh-border);
 
   /* === COULEURS — Texte === */
-  --country-text: var(--afh-color-text);
-  --country-text-soft: var(--afh-color-text-soft);
+  --country-text: var(--afh-text);
+  --country-text-soft: var(--afh-text-soft);
 
   /* === COULEURS — Sémantiques (aliased to --afh-color-*) === */
   --country-gold: var(--afh-color-gold);

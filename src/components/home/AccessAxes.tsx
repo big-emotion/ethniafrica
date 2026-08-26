@@ -302,7 +302,11 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
           margin: -10px 0 0;
           font-family: var(--afh-font-mono);
           font-size: 12px;
-          color: var(--afh-text-muted);
+          /* The count is content, not chrome, and it is the smallest type
+             on the page. --afh-text-muted clears AA on neither card
+             (3.29:1 parchment, 4.21:1 night); the muted *pair* token does,
+             on both. */
+          color: var(--afh-fg-muted);
           font-variant-numeric: tabular-nums;
           position: relative;
           z-index: 1;
