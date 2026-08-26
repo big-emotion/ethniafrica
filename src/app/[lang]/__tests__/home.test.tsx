@@ -3,25 +3,16 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 
 import { OG_TITLE, OG_DESCRIPTION, PRODUCT_NAME } from "@/lib/brand";
-import { MODULE_DEFINITIONS, type HomeModule } from "@/lib/accessModeHubs";
-import { getLocalizedRoute } from "@/lib/routing";
 
-// Home renders whatever live|soon module list getHomeModules resolves to;
-// these tests exercise page layout/content, not data availability
-// (covered by src/lib/__tests__/moduleAvailability.test.ts), so the data
-// probe layer is replaced with a deterministic, route-based fixture.
-const fixtureModules: HomeModule[] = MODULE_DEFINITIONS.map((def) => ({
-  id: def.id,
-  title: def.title,
-  category: def.category,
-  accent: def.accent,
-  illustration: def.illustration,
-  state: def.page ? "live" : "soon",
-  href: def.page ? getLocalizedRoute("fr", def.page) : null,
-}));
+// Home renders whatever counts getCorpusCounts resolves to; these tests
+// exercise page layout/content, not the Supabase query layer (covered by
+// src/lib/home/__tests__/corpusCounts.test.ts), so the counts are replaced
+// with a deterministic fixture that is deliberately not 803/54/24 — proving
+// the rendered figures track the mock rather than a literal.
+const fixtureCounts = { peoples: 4213, countries: 91, families: 37 };
 
-vi.mock("@/lib/moduleAvailability", () => ({
-  getHomeModules: vi.fn(async () => fixtureModules),
+vi.mock("@/lib/home/corpusCounts", () => ({
+  getCorpusCounts: vi.fn(async () => fixtureCounts),
 }));
 
 vi.mock("@/components/layout/PageLayout", () => ({
@@ -46,12 +37,32 @@ describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
     expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
   });
 
-  // @req FR92 @req FR95
-  // @req REQ-044
-  it("renders the filterable module grid below the hero with exactly 10 cards", async () => {
+  // @req REQ-113
+  it("renders exactly three entry points below the hero and no per-module card grid", async () => {
     render(await Home());
 
-    expect(screen.getAllByTestId(/^module-card-/)).toHaveLength(10);
+    expect(
+      screen.getAllByTestId(/^entry-point-(peuples|pays|familles)$/)
+    ).toHaveLength(3);
+    expect(screen.queryAllByTestId(/^module-card-/)).toHaveLength(0);
+    expect(
+      screen.queryByRole("group", { name: "Filtrer les modules" })
+    ).not.toBeInTheDocument();
+  });
+
+  // @req REQ-113
+  it("sources each entry point's count from getCorpusCounts, not a literal", async () => {
+    render(await Home());
+
+    expect(screen.getByTestId("entry-point-count-peuples")).toHaveTextContent(
+      String(fixtureCounts.peoples)
+    );
+    expect(screen.getByTestId("entry-point-count-pays")).toHaveTextContent(
+      String(fixtureCounts.countries)
+    );
+    expect(screen.getByTestId("entry-point-count-familles")).toHaveTextContent(
+      String(fixtureCounts.families)
+    );
   });
 
   // @req FR95
