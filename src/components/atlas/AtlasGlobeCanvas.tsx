@@ -9,16 +9,27 @@ import {
   buildRingFan,
   buildRingLineLoop,
 } from "@/lib/atlas/globeGeometry";
+import {
+  FOOTPRINT_REVEAL_DURATION_SECONDS,
+  footprintDashRepeats,
+  footprintFillOpacity,
+  footprintRevealEase,
+  footprintStrokeOpacity,
+} from "@/lib/atlas/footprintStyle";
 import type { AtlasOverlay } from "@/lib/atlas/overlays";
+import type { CountryId } from "@/types/afrik";
 import { buildRotationMatrix } from "@/lib/atlas/projection";
-import { createSphereLayer, type SphereLayer } from "@/lib/atlas/sphereLayer";
+import {
+  createSphereLayer,
+  DEFAULT_FIT_MARGIN,
+  fitScale,
+  type SphereLayer,
+} from "@/lib/atlas/sphereLayer";
 import { resolveGlobePalette } from "@/lib/atlas/globePalette";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
 const MAX_DEVICE_PIXEL_RATIO = 2;
 const REVEAL_DURATION_SECONDS = 0.9;
-const FAMILY_FILL_MAX_OPACITY = 0.35;
-const FAMILY_DASH_REPEATS_PER_RING = 18;
 const PEOPLE_BASE_POINT_SIZE_CSS_PX = 46;
 
 // uZoom / uOffset are the REQ-117 camera: the dolly is a clip-space scale
@@ -27,22 +38,32 @@ const PEOPLE_BASE_POINT_SIZE_CSS_PX = 46;
 // keeps the offset in stage units, which is what panelBias.ts computes.
 const BOUNDARY_VERTEX_SHADER = `
   attribute vec3 aSpherePos;
+  attribute vec3 aFlat;
   attribute float aArcFraction;
   uniform mat3 uRotation;
   uniform float uAspect;
   uniform float uZoom;
   uniform vec2 uOffset;
+  uniform float uMorph;
+  uniform float uScale;
   varying float vArcFraction;
   varying float vVisible;
 
   void main() {
     vec3 rotated = uRotation * aSpherePos;
-    vec2 mixed = rotated.xy;
+    // The same mix, and then the same fit, sphereLayer applies to the ground.
+    // Without the mix the terrain would flatten and the boundary would stay
+    // wrapped around a sphere that is no longer there; without the fit it
+    // would land on the right shape at the wrong size.
+    vec3 position = mix(aFlat, rotated, uMorph);
+    vec2 mixed = position.xy * uScale;
     mixed.x = mixed.x / uAspect;
     mixed = mixed * uZoom + uOffset;
     gl_Position = vec4(mixed, 0.0, 1.0);
     vArcFraction = aArcFraction;
-    vVisible = step(0.0, rotated.z);
+    // On the plane every point faces the reader; the hemisphere test only
+    // means anything while there is a far side to be on.
+    vVisible = max(step(0.0, rotated.z), 1.0 - uMorph);
   }
 `;
 
@@ -75,22 +96,26 @@ const BOUNDARY_FRAGMENT_SHADER = `
 // a line — it structurally cannot draw a closed boundary (atlas-charter §1).
 const FIELD_VERTEX_SHADER = `
   attribute vec3 aSpherePos;
+  attribute vec3 aFlat;
   attribute float aWeight;
   uniform mat3 uRotation;
   uniform float uAspect;
   uniform float uZoom;
   uniform vec2 uOffset;
   uniform float uBasePointSize;
+  uniform float uMorph;
+  uniform float uScale;
   varying float vVisible;
 
   void main() {
     vec3 rotated = uRotation * aSpherePos;
-    vec2 mixed = rotated.xy;
+    vec3 position = mix(aFlat, rotated, uMorph);
+    vec2 mixed = position.xy * uScale;
     mixed.x = mixed.x / uAspect;
     mixed = mixed * uZoom + uOffset;
     gl_Position = vec4(mixed, 0.0, 1.0);
     gl_PointSize = uBasePointSize * sqrt(max(aWeight, 0.05)) * uZoom;
-    vVisible = step(0.0, rotated.z);
+    vVisible = max(step(0.0, rotated.z), 1.0 - uMorph);
   }
 `;
 
@@ -121,6 +146,14 @@ function hexToRgbFloats(hex: string): [number, number, number] {
 function resolveAccentHex(element: Element): string {
   const value = getComputedStyle(element).getPropertyValue("--accent").trim();
   return value.startsWith("#") ? value : CHARTER_OCRE_HEX;
+}
+
+/** Falls back to the accent itself: a focus ring in the accent still reads, one in a missing colour does not. */
+function resolveAccentTintHex(element: Element): string {
+  const value = getComputedStyle(element)
+    .getPropertyValue("--accent-tint")
+    .trim();
+  return value.startsWith("#") ? value : resolveAccentHex(element);
 }
 
 function compileShader(
@@ -156,6 +189,14 @@ export interface AtlasGlobeCanvasProps {
   /** The camera AtlasGlobe owns (REQ-117). Every change to it repaints one frame. */
   pose: CameraPose;
   accentHex?: string;
+  /**
+   * Which country of the overlay is currently being read, if any. A view
+   * state, deliberately not a field on the overlay: the overlay states facts
+   * about the family, and which country the reader is looking at is not one of
+   * them. Changing it also replays the reveal, so the trace redraws itself
+   * around the new subject.
+   */
+  focusedCountryId?: CountryId | null;
 }
 
 /**
@@ -180,12 +221,15 @@ export function AtlasGlobeCanvas({
   overlay,
   pose,
   accentHex,
+  focusedCountryId = null,
 }: AtlasGlobeCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reducedMotion = usePrefersReducedMotion();
   const reducedMotionRef = useRef(reducedMotion);
   const poseRef = useRef(pose);
   const drawRef = useRef<(() => void) | null>(null);
+  const focusRef = useRef<CountryId | null>(focusedCountryId);
+  const replayRevealRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     reducedMotionRef.current = reducedMotion;
@@ -201,6 +245,10 @@ export function AtlasGlobeCanvas({
     if (!gl) return;
 
     const [r, g, b] = hexToRgbFloats(accentHex ?? resolveAccentHex(canvas));
+    // The focused country's outline lifts towards the accent's light tint so it
+    // separates from its neighbours by hue as well as by width — on a footprint
+    // of seventeen adjacent countries, width alone is not enough to find it.
+    const focusRgb = hexToRgbFloats(resolveAccentTintHex(canvas));
 
     gl.clearColor(0, 0, 0, 0);
     gl.enable(gl.BLEND);
@@ -213,7 +261,13 @@ export function AtlasGlobeCanvas({
     let frameId: number | null = null;
     let lastTimestamp: number | null = null;
 
-    const progressRef = { current: overlay.kind === "country-outline" ? 0 : 1 };
+    // The people field has no line to draw, so nothing to reveal. Both closed
+    // encodings trace themselves in.
+    const progressRef = { current: overlay.kind === "people-field" ? 1 : 0 };
+    const revealDurationSeconds =
+      overlay.kind === "family-footprint"
+        ? FOOTPRINT_REVEAL_DURATION_SECONDS
+        : REVEAL_DURATION_SECONDS;
 
     // The same lit sphere the home hero stands on. Drawn at margin 1 so it
     // shares the overlay shaders' projection exactly — an outline traced
@@ -269,6 +323,13 @@ export function AtlasGlobeCanvas({
       gl.enableVertexAttribArray(aSpherePos);
       gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
 
+      const flatBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, flatBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, field.flatPositions, gl.STATIC_DRAW);
+      const aFlat = gl.getAttribLocation(program, "aFlat");
+      gl.enableVertexAttribArray(aFlat);
+      gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
+
       const weightBuffer = gl.createBuffer();
       gl.bindBuffer(gl.ARRAY_BUFFER, weightBuffer);
       gl.bufferData(gl.ARRAY_BUFFER, field.weights, gl.STATIC_DRAW);
@@ -282,6 +343,8 @@ export function AtlasGlobeCanvas({
       const uOffset = gl.getUniformLocation(program, "uOffset");
       const uBasePointSize = gl.getUniformLocation(program, "uBasePointSize");
       const uColorRgb = gl.getUniformLocation(program, "uColorRgb");
+      const uMorph = gl.getUniformLocation(program, "uMorph");
+      const uScale = gl.getUniformLocation(program, "uScale");
 
       draw = () => {
         const camera = poseRef.current;
@@ -294,9 +357,20 @@ export function AtlasGlobeCanvas({
         gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
         gl.enableVertexAttribArray(aSpherePos);
         gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
+        gl.bindBuffer(gl.ARRAY_BUFFER, flatBuffer);
+        gl.enableVertexAttribArray(aFlat);
+        gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
         gl.bindBuffer(gl.ARRAY_BUFFER, weightBuffer);
         gl.enableVertexAttribArray(aWeight);
         gl.vertexAttribPointer(aWeight, 1, gl.FLOAT, false, 0, 0);
+
+        gl.uniform1f(uMorph, camera.morph);
+        // The margin the sphere layer is mounted at, so both land on the same
+        // ground — see the createSphereLayer call above.
+        gl.uniform1f(
+          uScale,
+          fitScale(camera.morph, aspect, DEFAULT_FIT_MARGIN)
+        );
 
         gl.uniformMatrix3fv(
           uRotation,
@@ -323,6 +397,7 @@ export function AtlasGlobeCanvas({
       gl.useProgram(program);
 
       const aSpherePos = gl.getAttribLocation(program, "aSpherePos");
+      const aFlat = gl.getAttribLocation(program, "aFlat");
       const aArcFraction = gl.getAttribLocation(program, "aArcFraction");
       const uRotation = gl.getUniformLocation(program, "uRotation");
       const uAspect = gl.getUniformLocation(program, "uAspect");
@@ -332,34 +407,58 @@ export function AtlasGlobeCanvas({
       const uIsStroke = gl.getUniformLocation(program, "uIsStroke");
       const uProgress = gl.getUniformLocation(program, "uProgress");
       const uDashRepeats = gl.getUniformLocation(program, "uDashRepeats");
+      const uMorph = gl.getUniformLocation(program, "uMorph");
+      const uScale = gl.getUniformLocation(program, "uScale");
 
-      const fillOpacity =
-        overlay.kind === "family-footprint"
-          ? overlay.tint * FAMILY_FILL_MAX_OPACITY
-          : overlay.fillOpacity;
-      const dashRepeats =
-        overlay.kind === "family-footprint" ? FAMILY_DASH_REPEATS_PER_RING : 0;
+      const isFamily = overlay.kind === "family-footprint";
+
+      // The family's fill is per country and resolved at draw time, because it
+      // also depends on which country currently holds the focus. The other two
+      // encodings carry one fill for the whole overlay.
+      const staticFillOpacity = isFamily ? 0 : overlay.fillOpacity;
+
+      // A frame declared at zero fill (CONTINENT_FRAME_FILL_OPACITY) does not
+      // draw a transparent area, it draws no area at all — skipping the pass
+      // is what makes a per-country fill impossible rather than merely
+      // invisible (atlas-charter §1). No fan drawn, so no fan built either.
+      const fillsRings = isFamily || staticFillOpacity > 0;
 
       // The continent frame is 51 reference outlines and carries no count of
       // its own, so it reaches this program as rings like any other boundary.
       const ringSource =
         overlay.kind === "continent-field"
           ? overlay.frame.flatMap((country) => country.rings)
-          : overlay.rings;
+          : overlay.kind === "family-footprint"
+            ? []
+            : overlay.rings;
 
-      // A frame declared at zero fill (CONTINENT_FRAME_FILL_OPACITY) does not
-      // draw a transparent area, it draws no area at all — skipping the pass
-      // is what makes a per-country fill impossible rather than merely
-      // invisible (atlas-charter §1). No fan drawn, so no fan built either.
-      const fillsRings = fillOpacity > 0;
-
-      const rings = ringSource.map((ring) => ({
-        fan: fillsRings ? buildRingFan(ring) : null,
-        loop: buildRingLineLoop(ring),
-      }));
+      // One entry per ring, each carrying the paint its own country earned.
+      // A single fillOpacity for the whole overlay can only draw a flat wash,
+      // and a choropleth is the entire point of a derived footprint: it turns
+      // "the family is here" into "this is where it is concentrated".
+      const shapes = isFamily
+        ? overlay.countries.flatMap((country) =>
+            country.rings.map((ring) => ({
+              countryId: country.countryId,
+              weight: country.weight,
+              dashRepeats: footprintDashRepeats(ring),
+              fan: buildRingFan(ring),
+              loop: buildRingLineLoop(ring),
+            }))
+          )
+        : ringSource.map((ring) => ({
+            countryId:
+              overlay.kind === "country-outline" ? overlay.countryId : null,
+            weight: 1,
+            dashRepeats: 0,
+            fan: fillsRings ? buildRingFan(ring) : null,
+            loop: buildRingLineLoop(ring),
+          }));
 
       const fanBuffer = gl.createBuffer();
+      const fanFlatBuffer = gl.createBuffer();
       const loopPositionBuffer = gl.createBuffer();
+      const loopFlatBuffer = gl.createBuffer();
       const loopArcBuffer = gl.createBuffer();
 
       draw = () => {
@@ -378,13 +477,38 @@ export function AtlasGlobeCanvas({
         gl.uniform1f(uAspect, aspect);
         gl.uniform1f(uZoom, camera.zoom);
         gl.uniform2f(uOffset, camera.offsetX, camera.offsetY);
+        gl.uniform1f(uMorph, camera.morph);
+        // The margin the sphere layer is mounted at, so the boundary and the
+        // ground land on the same surface at the same size.
+        gl.uniform1f(
+          uScale,
+          fitScale(camera.morph, aspect, DEFAULT_FIT_MARGIN)
+        );
 
-        rings.forEach(({ fan, loop }) => {
+        const focusedCountryId = focusRef.current;
+        // Eased here rather than in the frame loop so both the stroke reveal
+        // and any future consumer read the same curve.
+        const revealed = footprintRevealEase(progressRef.current);
+
+        shapes.forEach(({ countryId, weight, dashRepeats, fan, loop }) => {
+          const isFocused = focusedCountryId === countryId;
+          const dimmed = focusedCountryId !== null && !isFocused;
+
+          const fillOpacity = isFamily
+            ? footprintFillOpacity({ weight, dimmed })
+            : staticFillOpacity;
+          const strokeOpacity = isFamily ? footprintStrokeOpacity(dimmed) : 1;
+          const [sr, sg, sb] = isFocused ? focusRgb : [r, g, b];
+
           if (fan) {
             gl.bindBuffer(gl.ARRAY_BUFFER, fanBuffer);
             gl.bufferData(gl.ARRAY_BUFFER, fan.positions, gl.STATIC_DRAW);
             gl.enableVertexAttribArray(aSpherePos);
             gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
+            gl.bindBuffer(gl.ARRAY_BUFFER, fanFlatBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, fan.flatPositions, gl.STATIC_DRAW);
+            gl.enableVertexAttribArray(aFlat);
+            gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
             gl.disableVertexAttribArray(aArcFraction);
             gl.vertexAttrib1f(aArcFraction, 0);
             gl.uniform1f(uIsStroke, 0);
@@ -399,15 +523,20 @@ export function AtlasGlobeCanvas({
           gl.enableVertexAttribArray(aSpherePos);
           gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
 
+          gl.bindBuffer(gl.ARRAY_BUFFER, loopFlatBuffer);
+          gl.bufferData(gl.ARRAY_BUFFER, loop.flatPositions, gl.STATIC_DRAW);
+          gl.enableVertexAttribArray(aFlat);
+          gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
+
           gl.bindBuffer(gl.ARRAY_BUFFER, loopArcBuffer);
           gl.bufferData(gl.ARRAY_BUFFER, loop.arcFractions, gl.STATIC_DRAW);
           gl.enableVertexAttribArray(aArcFraction);
           gl.vertexAttribPointer(aArcFraction, 1, gl.FLOAT, false, 0, 0);
 
           gl.uniform1f(uIsStroke, 1);
-          gl.uniform1f(uProgress, progressRef.current);
+          gl.uniform1f(uProgress, revealed);
           gl.uniform1f(uDashRepeats, dashRepeats);
-          gl.uniform4f(uColor, r, g, b, 1);
+          gl.uniform4f(uColor, sr, sg, sb, strokeOpacity);
           gl.drawArrays(gl.LINE_LOOP, 0, loop.vertexCount);
         });
       };
@@ -442,11 +571,25 @@ export function AtlasGlobeCanvas({
         lastTimestamp = timestamp;
         progressRef.current = Math.min(
           1,
-          progressRef.current + seconds / REVEAL_DURATION_SECONDS
+          progressRef.current + seconds / revealDurationSeconds
         );
         draw();
         scheduleReveal();
       });
+    };
+
+    // Replayed on every country choice, so the trace redraws itself around the
+    // new subject instead of the map simply recolouring under the reader.
+    replayRevealRef.current = () => {
+      if (reducedMotionRef.current) {
+        progressRef.current = 1;
+        draw();
+        return;
+      }
+      progressRef.current = 0;
+      lastTimestamp = null;
+      draw();
+      scheduleReveal();
     };
 
     const handleResize = () => {
@@ -498,6 +641,14 @@ export function AtlasGlobeCanvas({
     poseRef.current = pose;
     drawRef.current?.();
   }, [pose]);
+
+  useEffect(() => {
+    focusRef.current = focusedCountryId;
+    // Replaying redraws, so this must not also call draw() — the trace would
+    // paint once complete before restarting from nothing, which reads as a
+    // flash.
+    replayRevealRef.current?.();
+  }, [focusedCountryId]);
 
   return (
     <canvas

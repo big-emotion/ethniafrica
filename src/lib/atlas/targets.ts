@@ -96,9 +96,12 @@ export function buildAtlasTargets(overlay: AtlasOverlay | null): AtlasTarget[] {
       return overlay.areas
         .map((area) => targetForCountry(area.countryId, area.center))
         .filter((target): target is AtlasTarget => target !== null);
+    // Kept in the overlay's own density order: the country picker is built from
+    // these targets and the footprint ranking from the overlay, so a divergence
+    // would make the nth option and the nth row name different countries.
     case "family-footprint":
-      return overlay.countryIds
-        .map((countryId) => targetForCountry(countryId))
+      return overlay.countries
+        .map((country) => targetForCountry(country.countryId))
         .filter((target): target is AtlasTarget => target !== null);
     // The frame is 51 countries of geographic reference; only an area is a
     // claim about the corpus, so only an area earns a marker.

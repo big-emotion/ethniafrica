@@ -31,12 +31,12 @@ describe("root layout font configuration", () => {
       "utf8"
     );
     const monoConfig = layout.match(
-      /const jetBrainsMono = JetBrains_Mono\(\{([\s\S]*?)\n\}\);/
+      /const jetbrainsMono = JetBrains_Mono\(\{([\s\S]*?)\n\}\);/
     );
 
     expect(monoConfig).not.toBeNull();
     expect(monoConfig?.[1]).toContain('variable: "--font-jetbrains-mono"');
-    expect(layout).toContain("jetBrainsMono.variable");
+    expect(layout).toContain("jetbrainsMono.variable");
 
     // Loading the face is only half of it: the token has to resolve to it, or
     // every mono rule in the app keeps using the system fallback.

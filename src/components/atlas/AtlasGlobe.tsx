@@ -13,8 +13,8 @@ import {
   type SVGProps,
 } from "react";
 
-import { AtlasCountryPicker } from "@/components/atlas/AtlasCountryPicker";
 import { AtlasFactsPanel } from "@/components/atlas/AtlasFactsPanel";
+import { AtlasTargetPicker } from "@/components/atlas/AtlasTargetPicker";
 import { AfricaBasemap } from "@/components/system/AfricaBasemap";
 import { orderedByWeight, peopleFieldIntensity } from "@/lib/atlas/peopleField";
 import {
@@ -30,6 +30,13 @@ import {
   type StagePlacement,
 } from "@/lib/atlas/markerPlacement";
 import type { AtlasOverlay, LonLat, Ring } from "@/lib/atlas/overlays";
+import {
+  FOOTPRINT_DASH_ARRAY,
+  FOOTPRINT_STROKE_WIDTH_SVG,
+  FOOTPRINT_STROKE_WIDTH_SVG_FOCUSED,
+  footprintFillOpacity,
+  footprintStrokeOpacity,
+} from "@/lib/atlas/footprintStyle";
 import {
   biasForPanel,
   resolvePanelAnchor,
@@ -297,36 +304,61 @@ function AtlasGlobeFallback({
     );
   }
 
-  const isCountry = overlay.kind === "country-outline";
-  const fillOpacity = isCountry ? overlay.fillOpacity : overlay.tint * 0.35;
+  // The family footprint is a choropleth: each country carries its own weight,
+  // so each gets its own fill and its own stroke. Drawing the rings as one flat
+  // list — as this path used to — can only ever produce a single tint, which
+  // says "the family is here" and never "this is where it is concentrated".
+  if (overlay.kind === "family-footprint") {
+    return (
+      <AfricaBasemap figureTransform={figureTransform}>
+        {overlay.countries.map((country) => {
+          const isFocused = chosenCountryId === country.countryId;
+          const dimmed = chosenCountryId !== null && !isFocused;
+
+          return (
+            <g key={country.countryId} data-country={country.countryId}>
+              {country.rings.map((ring, index) => (
+                <polygon
+                  key={index}
+                  points={ringToSvgPoints(ring)}
+                  fill="var(--accent)"
+                  fillOpacity={footprintFillOpacity({
+                    weight: country.weight,
+                    dimmed,
+                  })}
+                  stroke={isFocused ? "var(--accent-tint)" : "var(--accent)"}
+                  strokeOpacity={footprintStrokeOpacity(dimmed)}
+                  strokeWidth={
+                    isFocused
+                      ? FOOTPRINT_STROKE_WIDTH_SVG_FOCUSED
+                      : FOOTPRINT_STROKE_WIDTH_SVG
+                  }
+                  // The boundary of an aggregate of presences, not a border.
+                  strokeDasharray={FOOTPRINT_DASH_ARRAY}
+                  vectorEffect="non-scaling-stroke"
+                />
+              ))}
+            </g>
+          );
+        })}
+      </AfricaBasemap>
+    );
+  }
 
   return (
     <AfricaBasemap figureTransform={figureTransform}>
-      {overlay.rings.map((ring, index) =>
-        isCountry ? (
-          <TraceInPolygon
-            key={`country-${index}`}
-            points={ringToSvgPoints(ring)}
-            reducedMotion={reducedMotion}
-            fill="var(--accent)"
-            fillOpacity={fillOpacity}
-            stroke="var(--accent)"
-            strokeWidth={1.5}
-            vectorEffect="non-scaling-stroke"
-          />
-        ) : (
-          <polygon
-            key={`family-${index}`}
-            points={ringToSvgPoints(ring)}
-            fill="var(--accent)"
-            fillOpacity={fillOpacity}
-            stroke="var(--accent)"
-            strokeWidth={1.5}
-            strokeDasharray="6 5"
-            vectorEffect="non-scaling-stroke"
-          />
-        )
-      )}
+      {overlay.rings.map((ring, index) => (
+        <TraceInPolygon
+          key={`country-${index}`}
+          points={ringToSvgPoints(ring)}
+          reducedMotion={reducedMotion}
+          fill="var(--accent)"
+          fillOpacity={overlay.fillOpacity}
+          stroke="var(--accent)"
+          strokeWidth={1.5}
+          vectorEffect="non-scaling-stroke"
+        />
+      ))}
     </AfricaBasemap>
   );
 }
@@ -433,7 +465,22 @@ export interface AtlasGlobeProps {
    * all about what replaced the globe.
    */
   fallbackNote?: string;
+  /**
+   * What returning from a chosen country is called. A family has a footprint
+   * and a people has an area — the mockups use different words because the
+   * entities are different things, not because the button is.
+   */
+  wholeAreaLabel?: string;
   className?: string;
+  /**
+   * How a target is offered. "markers" pins a pastille on each one, which reads
+   * well for the one or few targets a country or people fiche has. "list" is
+   * for a family footprint of seventeen countries, where the pastilles overlap
+   * into noise and the small ones stop being clickable.
+   */
+  targetPicker?: "markers" | "list";
+  /** Replaces the default legend, for a fiche whose drawing needs a different sentence. */
+  legend?: ReactNode;
 }
 
 /**
@@ -502,7 +549,10 @@ export function AtlasGlobe({
   targetFacts = defaultTargetFacts,
   facts,
   fallbackNote,
+  wholeAreaLabel = "Toute l'empreinte",
   className,
+  targetPicker = "markers",
+  legend,
 }: AtlasGlobeProps) {
   const [webglSupported, setWebglSupported] = useState(false);
   const [stage, setStage] = useState<HTMLDivElement | null>(null);
@@ -518,6 +568,18 @@ export function AtlasGlobe({
   }, []);
 
   const targets = useMemo(() => buildAtlasTargets(overlay), [overlay]);
+  // Read off the overlay rather than passed in: the counts and the targets have
+  // to describe the same footprint, and deriving both from one source is what
+  // guarantees it.
+  const memberCountByCountry = useMemo(() => {
+    if (overlay?.kind !== "family-footprint") return {};
+    return Object.fromEntries(
+      overlay.countries.map((country) => [
+        country.countryId,
+        country.memberCount,
+      ])
+    );
+  }, [overlay]);
   // Resolving the choice against the current targets is also what retires it:
   // an id the overlay no longer offers simply finds nothing, so a stale choice
   // cannot outlive the overlay that made it choosable.
@@ -660,7 +722,11 @@ export function AtlasGlobe({
       />
 
       {stageIsSphere ? (
-        <LazyAtlasGlobeCanvas overlay={overlay} pose={pose} />
+        <LazyAtlasGlobeCanvas
+          overlay={overlay}
+          pose={pose}
+          focusedCountryId={chosenCountryId}
+        />
       ) : (
         <AtlasGlobeFallback
           overlay={overlay}
@@ -684,61 +750,56 @@ export function AtlasGlobe({
         </p>
       )}
 
-      {targets.map((target) => (
-        <AtlasTargetMarker
-          key={target.countryId}
-          target={target}
-          placement={place(target)}
-          chosen={target.countryId === chosenCountryId}
-          label={factsFor(target, facts, targetFacts).title}
-          onChoose={() => setChosenCountryId(target.countryId)}
-        />
-      ))}
+      {targetPicker === "markers" &&
+        targets.map((target) => (
+          <AtlasTargetMarker
+            key={target.countryId}
+            target={target}
+            placement={place(target)}
+            chosen={target.countryId === chosenCountryId}
+            label={factsFor(target, facts, targetFacts).title}
+            onChoose={() => setChosenCountryId(target.countryId)}
+          />
+        ))}
+
+      {targetPicker === "list" && targets.length > 0 && (
+        <div className="absolute left-1/2 top-3 z-[7] -translate-x-1/2">
+          <AtlasTargetPicker
+            targets={targets}
+            memberCountByCountry={memberCountByCountry}
+            chosenCountryId={chosenCountryId}
+            onChoose={setChosenCountryId}
+          />
+        </div>
+      )}
 
       {/* Hidden below the panel breakpoint, as in the mockup: at that width
           the bottom sheet already owns the space these would sit in. */}
-      <p
-        data-atlas-legend=""
-        className="pointer-events-none absolute inset-x-0 top-0 hidden p-3 text-xs min-[760px]:block"
-        style={{ color: "var(--afh-night-ink-2)" }}
-      >
-        Afrique à sa surface réelle. Glissez pour tourner.
-      </p>
-
-      {/* Markers sit on the sphere, so a country that has rotated behind it
-          has no button to click. Dragging brings it round; this is the other
-          half of that, for readers who are not dragging anything. It stays
-          visible below the panel breakpoint, unlike the toolbar — the reason
-          it exists applies hardest on the smallest screen. */}
-      <div
-        data-atlas-picker-row=""
-        className="absolute inset-x-0 top-0 flex flex-wrap items-start gap-2 p-3"
-      >
-        <AtlasCountryPicker
-          targets={targets}
-          chosenCountryId={chosenCountryId}
-          onChoose={(countryId) => setChosenCountryId(countryId)}
-        />
-        {/* "Toute l'aire" only means something against a choice, and only on
-            a people with more than one country to return from. */}
-        {targets.length > 1 && (
-          <button
-            type="button"
-            data-atlas-tool="whole"
-            aria-pressed={chosenCountryId === null}
-            onClick={() => setChosenCountryId(null)}
-            className="rounded-full border px-3 py-1 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
-            style={{ color: "var(--afh-night-ink-2)" }}
-          >
-            Toute l&apos;aire
-          </button>
-        )}
-      </div>
+      {legend ?? (
+        <p
+          data-atlas-legend=""
+          className="pointer-events-none absolute inset-x-0 top-0 hidden p-3 text-xs min-[760px]:block"
+          style={{ color: "var(--afh-night-ink-2)" }}
+        >
+          Afrique à sa surface réelle. Glissez pour tourner.
+        </p>
+      )}
 
       <div
         data-atlas-toolbar=""
         className="absolute inset-x-0 bottom-0 hidden gap-2 p-3 min-[760px]:flex"
       >
+        {targetPicker === "list" && (
+          <button
+            type="button"
+            aria-pressed={chosenCountryId === null}
+            onClick={() => setChosenCountryId(null)}
+            className="rounded-full border px-3 py-1 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+            style={{ color: "var(--afh-night-ink-2)" }}
+          >
+            {wholeAreaLabel}
+          </button>
+        )}
         <button
           type="button"
           aria-pressed={flat}

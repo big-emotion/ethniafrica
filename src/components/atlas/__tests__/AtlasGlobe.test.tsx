@@ -6,6 +6,7 @@ import {
   buildContinentOverlay,
   type ContinentFieldOverlay,
   type CountryOutlineOverlay,
+  type FamilyFootprintOverlay,
   type PeopleFieldOverlay,
   type Ring,
 } from "@/lib/atlas/overlays";
@@ -38,6 +39,28 @@ const peopleOverlay: PeopleFieldOverlay = {
   kind: "people-field",
   areas: [{ countryId: "NGA", center: { lon: 8, lat: 9 }, populationShare: 1 }],
   undrawn: [],
+};
+
+/** Two countries at different densities, so a per-country tint is distinguishable from a flat wash. */
+const familyFootprintOverlay: FamilyFootprintOverlay = {
+  kind: "family-footprint",
+  countries: [
+    { countryId: "NGA", rings: [square], memberCount: 4, weight: 1 },
+    {
+      countryId: "BEN",
+      rings: [
+        [
+          { lon: 10, lat: 0 },
+          { lon: 12, lat: 0 },
+          { lon: 12, lat: 2 },
+          { lon: 10, lat: 2 },
+        ],
+      ],
+      memberCount: 1,
+      weight: 0.25,
+    },
+  ],
+  memberPeopleCount: 4,
 };
 
 /** The two peoples of the family fiche below sit far enough apart to tell their markers apart. */
@@ -243,10 +266,14 @@ describe("AtlasGlobe", () => {
       const panelTopEdgePercent = (1 - BOTTOM_SHEET_VIEW_FRACTION) * 100;
       const settledTopPercent = percentOf(markerFor("NGA").style.top);
 
+      // The property that matters, and the only one: the country the reader
+      // chose is inside the strip the sheet leaves free. It used to be pinned
+      // to the exact centre of that strip, which was a consequence of the bias
+      // equalling the covered fraction — an identity that had to go when the
+      // sheet grew to 54% (see panelBias.ts). Where in the free strip it lands
+      // is a matter of taste; that it lands there at all is not.
       expect(settledTopPercent).toBeLessThan(panelTopEdgePercent);
-      // Dead centre of the strip the sheet leaves free — an unbiased camera
-      // would sit at 50% and still clear the edge, so pin the real position.
-      expect(settledTopPercent).toBeCloseTo(panelTopEdgePercent / 2, 1);
+      expect(settledTopPercent).toBeGreaterThan(0);
     });
 
     // @req REQ-117
@@ -259,8 +286,9 @@ describe("AtlasGlobe", () => {
       const panelLeftEdgePercent = (1 - SIDE_PANEL_VIEW_FRACTION) * 100;
       const settledLeftPercent = percentOf(markerFor("NGA").style.left);
 
+      // As above: inside the free column, not at a pinned point in it.
       expect(settledLeftPercent).toBeLessThan(panelLeftEdgePercent);
-      expect(settledLeftPercent).toBeCloseTo(panelLeftEdgePercent / 2, 1);
+      expect(settledLeftPercent).toBeGreaterThan(0);
     });
 
     // @req REQ-117
@@ -336,6 +364,199 @@ describe("AtlasGlobe", () => {
       expect(
         document.querySelector("[data-atlas-target]")
       ).not.toBeInTheDocument();
+    });
+  });
+
+  describe("how targets are offered", () => {
+    beforeEach(() => {
+      stubMatchMedia({ reducedMotion: true });
+    });
+
+    // @req REQ-117
+    it("keeps pastilles, and no view controls, for the fiches that pass no picker", () => {
+      // The country and people fiches must come through this work unchanged.
+      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+
+      expect(document.querySelector("[data-atlas-target]")).toBeInTheDocument();
+      expect(
+        screen.queryByRole("button", { name: /pays de l'empreinte/i })
+      ).not.toBeInTheDocument();
+      expect(
+        screen.queryByTestId("atlas-view-controls")
+      ).not.toBeInTheDocument();
+    });
+
+    // @req REQ-117
+    it("replaces the pastilles with a list when asked for one", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyFootprintOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+        />
+      );
+
+      // Seventeen overlapping pastilles are why this option exists; none may
+      // survive alongside the list.
+      expect(
+        document.querySelector("[data-atlas-target]")
+      ).not.toBeInTheDocument();
+      expect(
+        screen.getByRole("button", { name: /pays de l'empreinte/i })
+      ).toBeInTheDocument();
+    });
+
+    // @req REQ-117
+    it("counts each country's peoples in the list from the overlay itself", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyFootprintOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+        />
+      );
+
+      fireEvent.click(
+        screen.getByRole("button", { name: /pays de l'empreinte/i })
+      );
+      expect(screen.getByRole("option", { name: /Nigeria/ })).toHaveTextContent(
+        "4 peuples"
+      );
+      expect(screen.getByRole("option", { name: /Bénin/ })).toHaveTextContent(
+        "1 peuple"
+      );
+    });
+
+    // @req REQ-112
+    it("flattens to Mercator and back, changing its own label", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyFootprintOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+        />
+      );
+
+      const flatten = () =>
+        screen.getByRole("button", {
+          name: /carte plate en fait|Revenir au globe/i,
+        });
+
+      expect(flatten()).toHaveAttribute("aria-pressed", "false");
+      fireEvent.click(flatten());
+      expect(flatten()).toHaveTextContent("Revenir au globe");
+      expect(flatten()).toHaveAttribute("aria-pressed", "true");
+
+      fireEvent.click(flatten());
+      expect(flatten()).toHaveTextContent("Ce que la carte plate en fait");
+      expect(flatten()).toHaveAttribute("aria-pressed", "false");
+    });
+
+    // @req REQ-112
+    it("returns to the sphere when recentring, not just to the middle of the plane", () => {
+      // A "recentre" that left the reader on a flat map would not have
+      // returned them anywhere.
+      render(
+        <AtlasGlobe
+          overlay={familyFootprintOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+        />
+      );
+
+      fireEvent.click(
+        screen.getByRole("button", { name: /carte plate en fait/i })
+      );
+      fireEvent.click(screen.getByRole("button", { name: /Recentrer/i }));
+
+      expect(
+        screen.getByRole("button", { name: /carte plate en fait/i })
+      ).toHaveAttribute("aria-pressed", "false");
+      expect(
+        screen.getByRole("button", { name: /toute l'empreinte/i })
+      ).toHaveAttribute("aria-pressed", "true");
+    });
+
+    // @req REQ-117
+    it("un-presses « toute l'empreinte » as soon as one country is chosen", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyFootprintOverlay}
+          targetPicker="list"
+          missingMessage="n/a"
+        />
+      );
+
+      const whole = () =>
+        screen.getByRole("button", { name: /toute l'empreinte/i });
+      expect(whole()).toHaveAttribute("aria-pressed", "true");
+
+      fireEvent.click(
+        screen.getByRole("button", { name: /pays de l'empreinte/i })
+      );
+      fireEvent.click(screen.getByRole("option", { name: /Nigeria/ }));
+
+      expect(whole()).toHaveAttribute("aria-pressed", "false");
+
+      fireEvent.click(whole());
+      expect(whole()).toHaveAttribute("aria-pressed", "true");
+    });
+  });
+
+  /**
+   * atlas-charter §1: an encoding may not exist in only one rendering
+   * technique. Whatever the WebGL path says about the footprint, the fallback
+   * has to say too — a reader without WebGL must not be shown a different map.
+   */
+  describe("family footprint without WebGL", () => {
+    const familyFootprintPolygons = () =>
+      Array.from(
+        document.querySelectorAll<SVGPolygonElement>("g[data-country] polygon")
+      );
+
+    // @req REQ-116
+    it("gives each country its own fill opacity, drawn from its own weight", () => {
+      render(
+        <AtlasGlobe overlay={familyFootprintOverlay} missingMessage="n/a" />
+      );
+
+      const byCountry = Object.fromEntries(
+        familyFootprintPolygons().map((polygon) => [
+          polygon.closest("g")?.getAttribute("data-country"),
+          Number(polygon.getAttribute("fill-opacity")),
+        ])
+      );
+
+      // The same 0.16 + 0.46 x weight ramp the WebGL path uses, so a reader on
+      // either path sees the same relative densities.
+      expect(byCountry.NGA).toBeCloseTo(0.62, 5);
+      expect(byCountry.BEN).toBeCloseTo(0.275, 5);
+      expect(byCountry.NGA).toBeGreaterThan(byCountry.BEN);
+    });
+
+    // @req REQ-116
+    it("dashes every country's outline", () => {
+      render(
+        <AtlasGlobe overlay={familyFootprintOverlay} missingMessage="n/a" />
+      );
+
+      const polygons = familyFootprintPolygons();
+      expect(polygons.length).toBeGreaterThan(0);
+      // Not one solid edge anywhere: a family has no border, and an aggregate
+      // of presences has even less of one.
+      for (const polygon of polygons) {
+        expect(polygon.getAttribute("stroke-dasharray")).toBe("9 7");
+      }
+    });
+
+    // @req REQ-116
+    it("never closes a line around a people, whichever overlay it is handed", () => {
+      // The guard that matters most, because it is the one rule the charter
+      // states as absolute. A people is a field, never a bounded territory.
+      render(<AtlasGlobe overlay={familyPeopleOverlay} missingMessage="n/a" />);
+
+      expect(document.querySelector("polygon")).not.toBeInTheDocument();
+      expect(document.querySelector("g[data-country]")).not.toBeInTheDocument();
     });
   });
 

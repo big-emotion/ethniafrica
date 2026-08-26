@@ -224,46 +224,96 @@ export function buildPeopleFieldOverlay(
 
 // ─── Language family: derived choropleth, dashed boundary, tint by member count ─
 
-/** Member-peoples count at which the tint reaches full strength (empirically a large AFRIK family, e.g. Bantu-scale). */
-const FAMILY_TINT_SATURATION_COUNT = 12;
+/**
+ * One country of the footprint, carrying its own density. A single tint for the
+ * whole family could only ever say "this family is here"; the reader's question
+ * is where it is *concentrated*, and that needs a value per country.
+ */
+export interface FamilyFootprintCountry {
+  countryId: CountryId;
+  rings: Ring[];
+  /** How many member peoples name this country in their currentCountries. */
+  memberCount: number;
+  /**
+   * 0..1, normalised to the densest country of this footprint, which is always
+   * exactly 1. This is the choropleth's input; AtlasGlobe turns it into an
+   * opacity. Relative to the family, never to some absolute scale: a small
+   * family's densest country should read as strongly on its own fiche as a
+   * large family's does on its.
+   */
+  weight: number;
+}
 
 export interface FamilyFootprintOverlay {
   kind: "family-footprint";
-  countryIds: CountryId[];
-  rings: Ring[];
+  /** Densest first, ties broken on the country id — see buildFamilyFootprintOverlay. */
+  countries: FamilyFootprintCountry[];
+  /** The family's own member count, which is *not* the sum of memberCount above. */
   memberPeopleCount: number;
-  tint: number;
 }
 
 /**
  * The footprint is the union of `currentCountries` over every people carrying
- * this family's languageFamilyId — never the family's own (always-empty, see
- * atlas-charter §4) `distribution.distributionByCountry`. `memberCurrentCountries`
- * is one array per member people; the caller (the family fiche route) is the
- * one that already knows which peoples carry this family's id.
+ * this family's languageFamilyId — never the family's own
+ * `distribution.distributionByCountry`, which the recette database reads empty
+ * for all 24 families (atlas-charter §4). `memberCurrentCountries` is one array
+ * per member people; the caller (the family fiche route) is the one that
+ * already knows which peoples carry this family's id.
+ *
+ * The order is total on purpose. Twelve of the seventeen countries in the
+ * reference family sit at one people each, so density alone leaves them
+ * unordered and their relative positions would depend on input order — the
+ * ranking and the country picker would reshuffle between two renders of the
+ * same data. Ties therefore break on the country id.
  */
 // @req REQ-116
 export function buildFamilyFootprintOverlay(
   memberCurrentCountries: CountryId[][],
   memberPeopleCount: number
 ): FamilyFootprintOverlay | null {
-  const uniqueCountryIds = Array.from(
-    new Set(memberCurrentCountries.flat())
-  ).sort();
-  const resolvedCountryIds = uniqueCountryIds.filter((id) =>
-    Boolean(getAdmin0Rings(id))
-  );
-  const rings = resolvedCountryIds.flatMap((id) => getAdmin0Rings(id) ?? []);
+  const memberCountByCountry = new Map<CountryId, number>();
+  for (const declaredCountries of memberCurrentCountries) {
+    // Deduplicated per people: currentCountries is a declared list, not a set,
+    // and one fiche repeating a country must not inflate that country's tint.
+    for (const countryId of new Set(declaredCountries)) {
+      memberCountByCountry.set(
+        countryId,
+        (memberCountByCountry.get(countryId) ?? 0) + 1
+      );
+    }
+  }
 
-  if (rings.length === 0) return null;
+  const drawable = Array.from(memberCountByCountry.entries())
+    .map(([countryId, memberCount]) => ({
+      countryId,
+      memberCount,
+      rings: getAdmin0Rings(countryId),
+    }))
+    // Excluded, not drawn at zero: a country the committed asset cannot draw
+    // has no shape to tint, and a zero-weight entry would still take a row in
+    // the ranking and an option in the picker.
+    .filter(
+      (entry): entry is typeof entry & { rings: Ring[] } =>
+        entry.rings !== undefined
+    );
 
-  return {
-    kind: "family-footprint",
-    countryIds: resolvedCountryIds,
-    rings,
-    memberPeopleCount,
-    tint: Math.min(1, memberPeopleCount / FAMILY_TINT_SATURATION_COUNT),
-  };
+  if (drawable.length === 0) return null;
+
+  const densest = Math.max(...drawable.map((entry) => entry.memberCount));
+
+  const countries = drawable
+    .sort(
+      (a, b) =>
+        b.memberCount - a.memberCount || a.countryId.localeCompare(b.countryId)
+    )
+    .map(({ countryId, rings, memberCount }) => ({
+      countryId,
+      rings,
+      memberCount,
+      weight: memberCount / densest,
+    }));
+
+  return { kind: "family-footprint", countries, memberPeopleCount };
 }
 
 // ─── Continent: the whole atlas as one field, framed but never filled ──────

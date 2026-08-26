@@ -94,6 +94,21 @@ describe("buildAtlasTargets (REQ-117 AC1)", () => {
   });
 
   // @req REQ-117
+  it("keeps a family fiche's targets in the overlay's own density order", () => {
+    // The country picker is built from the targets and the ranking from the
+    // overlay. If the two orders diverge, the nth option and the nth row stop
+    // describing the same country.
+    const overlay = buildFamilyFootprintOverlay(
+      [["TGO", "BEN", "NGA"], ["NGA"]],
+      2
+    );
+
+    expect(
+      buildAtlasTargets(overlay).map((target) => target.countryId)
+    ).toEqual(overlay!.countries.map((country) => country.countryId));
+  });
+
+  // @req REQ-117
   it("yields no target for a declared-missing or absent overlay, so nothing is selectable on an empty globe", () => {
     expect(buildAtlasTargets(buildPeopleFieldOverlay([]))).toEqual([]);
     expect(buildAtlasTargets(null)).toEqual([]);

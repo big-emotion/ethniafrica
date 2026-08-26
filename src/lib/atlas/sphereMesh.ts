@@ -22,20 +22,21 @@ export const mercatorY = (lat: number): number =>
   Math.log(Math.tan(Math.PI / 4 + (lat * DEG2RAD) / 2));
 
 /**
- * Where a lon/lat lands on the flat Mercator plane the surface morphs into.
+ * Where a lon/lat lands on the flat map.
  *
- * Extracted so the people field's points and the terrain mesh are laid out by
- * one formula: a halo placed by a second, near-identical derivation would
- * drift off the country under it as soon as either was touched.
+ * Extracted so the ground and everything drawn on it share one definition. An
+ * overlay that computed its own flat position would drift off the terrain it
+ * describes the moment either side changed — and a boundary floating beside
+ * the country it claims to outline is worse than no flat view at all.
  *
- * Latitude is clamped to the Mercator limit — past it the projection runs away
- * to infinity — which parks anything polar on the plane's edge.
+ * Latitude is clamped because Mercator runs to infinity at the poles; the same
+ * clamp the mesh applies, for the same reason.
  */
 // @req REQ-112
 export function lonLatToFlat(
   lon: number,
   lat: number
-): { x: number; y: number } {
+): { x: number; y: number; z: number } {
   const clampedLat = Math.min(
     MERCATOR_LATITUDE_LIMIT,
     Math.max(-MERCATOR_LATITUDE_LIMIT, lat)
@@ -43,6 +44,7 @@ export function lonLatToFlat(
   return {
     x: GLOBE_RADIUS * lon * DEG2RAD,
     y: GLOBE_RADIUS * mercatorY(clampedLat),
+    z: 0,
   };
 }
 
@@ -104,14 +106,19 @@ export function buildSphereMesh(): SphereMesh {
     // which makes their quads zero-height — they rasterize to nothing, so
     // closing the sphere costs the flat map neither framing nor a
     // squashed polar band.
+    const flatLat = Math.min(
+      MERCATOR_LATITUDE_LIMIT,
+      Math.max(-MERCATOR_LATITUDE_LIMIT, lat)
+    );
+
     for (let i = 0; i <= segX; i++) {
       const u = i / segX;
       const lon = -180 + u * 360;
 
-      const flat = lonLatToFlat(lon, lat);
+      const flat = lonLatToFlat(lon, flatLat);
       flatPositions[vertex * 3] = flat.x;
       flatPositions[vertex * 3 + 1] = flat.y;
-      flatPositions[vertex * 3 + 2] = 0;
+      flatPositions[vertex * 3 + 2] = flat.z;
 
       const phi = lat * DEG2RAD;
       const lambda = lon * DEG2RAD;

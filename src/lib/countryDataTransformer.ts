@@ -19,6 +19,7 @@ import type {
   DemographicsSection,
   FicheSource,
 } from "@/types/afrik";
+import { flagFromISO3 as countryFlag, NEUTRAL_FLAG } from "@/lib/countryFlag";
 
 // ==========================================
 // OUTPUT TYPES
@@ -164,76 +165,17 @@ export interface CountryPageData {
 // ==========================================
 
 /**
- * Generate flag emoji from ISO 3166-1 alpha-3 code.
- * Converts alpha-3 to alpha-2 first, then to regional indicator symbols.
+ * The country hero's flag. Shares `countryFlag.ts`'s table — the mapping lives
+ * in one place — but keeps its own empty-string fallback: this flag is
+ * rendered inline inside the fiche heading, where an unknown code should
+ * contribute nothing at all. The atlas ranking wants the opposite (a
+ * placeholder that holds its column), which is why `countryFlag.flagFromISO3`
+ * returns NEUTRAL_FLAG instead.
  */
 // @req REQ-001
 export function flagFromISO3(iso3: string): string {
-  // Simple alpha-3 to alpha-2 mapping for common African countries
-  const alpha3ToAlpha2: Record<string, string> = {
-    BFA: "BF",
-    NGA: "NG",
-    TGO: "TG",
-    DJI: "DJ",
-    GHA: "GH",
-    MLI: "ML",
-    SEN: "SN",
-    CIV: "CI",
-    NER: "NE",
-    CMR: "CM",
-    TCD: "TD",
-    COD: "CD",
-    COG: "CG",
-    GAB: "GA",
-    GNQ: "GQ",
-    CAF: "CF",
-    AGO: "AO",
-    MOZ: "MZ",
-    ZWE: "ZW",
-    ZAF: "ZA",
-    KEN: "KE",
-    TZA: "TZ",
-    UGA: "UG",
-    RWA: "RW",
-    BDI: "BI",
-    ETH: "ET",
-    ERI: "ER",
-    SOM: "SO",
-    SDN: "SD",
-    SSD: "SS",
-    EGY: "EG",
-    LBY: "LY",
-    TUN: "TN",
-    DZA: "DZ",
-    MAR: "MA",
-    MRT: "MR",
-    GMB: "GM",
-    GNB: "GW",
-    GIN: "GN",
-    SLE: "SL",
-    LBR: "LR",
-    BEN: "BJ",
-    BWA: "BW",
-    NAM: "NA",
-    ZMB: "ZM",
-    MWI: "MW",
-    LSO: "LS",
-    SWZ: "SZ",
-    MDG: "MG",
-    COM: "KM",
-    MUS: "MU",
-    SYC: "SC",
-    CPV: "CV",
-    STP: "ST",
-  };
-
-  const alpha2 = alpha3ToAlpha2[iso3.toUpperCase()];
-  if (!alpha2) return "";
-
-  return String.fromCodePoint(
-    0x1f1e6 + alpha2.charCodeAt(0) - 65,
-    0x1f1e6 + alpha2.charCodeAt(1) - 65
-  );
+  const flag = countryFlag(iso3);
+  return flag === NEUTRAL_FLAG ? "" : flag;
 }
 
 /**
