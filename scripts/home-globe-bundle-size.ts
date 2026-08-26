@@ -31,7 +31,10 @@ export interface BundleBudgetResult {
 
 export function evaluateBundleBudget(
   gzippedBytes: number,
-  budgetBytes: number
+  budgetBytes: number,
+  // The home carries a second WebGL island now (the axis panels' link
+  // graph), and a CI failure has to name which one blew its budget.
+  islandName = "HomeGlobe"
 ): BundleBudgetResult {
   const gzippedKb = (gzippedBytes / 1024).toFixed(2);
   const budgetKb = (budgetBytes / 1024).toFixed(0);
@@ -40,13 +43,13 @@ export function evaluateBundleBudget(
     const overBy = ((gzippedBytes - budgetBytes) / 1024).toFixed(2);
     return {
       passed: false,
-      message: `HomeGlobe bundle is ${gzippedKb} KB gzipped, exceeding the ${budgetKb} KB budget by ${overBy} KB.`,
+      message: `${islandName} bundle is ${gzippedKb} KB gzipped, exceeding the ${budgetKb} KB budget by ${overBy} KB.`,
     };
   }
 
   return {
     passed: true,
-    message: `HomeGlobe bundle is ${gzippedKb} KB gzipped (budget: ${budgetKb} KB).`,
+    message: `${islandName} bundle is ${gzippedKb} KB gzipped (budget: ${budgetKb} KB).`,
   };
 }
 

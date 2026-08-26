@@ -35,6 +35,8 @@ export interface AtlasTarget {
    * pole would be dollied out as if it were continent-wide.
    */
   angularSpanDeg: number;
+  /** Set only by the continent scene, where a target names a country's documented peoples. */
+  documentedPeopleCount?: number;
 }
 
 // @req REQ-117
@@ -101,5 +103,39 @@ export function buildAtlasTargets(overlay: AtlasOverlay | null): AtlasTarget[] {
       return overlay.countries
         .map((country) => targetForCountry(country.countryId))
         .filter((target): target is AtlasTarget => target !== null);
+    // The frame is 51 countries of geographic reference; only an area is a
+    // claim about the corpus, so only an area earns a marker.
+    case "continent-field":
+      return overlay.areas
+        .map((area): AtlasTarget | null => {
+          const target = targetForCountry(area.countryId, area.center);
+          return target
+            ? {
+                ...target,
+                documentedPeopleCount: area.documentedPeopleCount,
+              }
+            : null;
+        })
+        .filter((target): target is AtlasTarget => target !== null);
   }
+}
+
+/**
+ * What the continent scene's panel opens with. The count lives in the
+ * description because the title doubles as the marker's accessible name, and
+ * a marker called "Nigeria 40" reads as a quantity of Nigerians. The wording
+ * says "documentés" for the same reason: this counts fiches in the corpus,
+ * never people in a country.
+ */
+// @req REQ-117
+export function continentTargetFacts(target: AtlasTarget): {
+  title: string;
+  description: string;
+} {
+  const count = target.documentedPeopleCount ?? 0;
+  return {
+    title: target.nameFr,
+    description:
+      count === 1 ? "1 peuple documenté" : `${count} peuples documentés`,
+  };
 }

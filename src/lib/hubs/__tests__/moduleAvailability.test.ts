@@ -143,14 +143,56 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
   });
 
   // @req REQ-106 @req REQ-114
-  it("surfaces doctrine and about as live even when every table is empty", async () => {
+  it("surfaces doctrine as live even when every table is empty", async () => {
     createServerClientMock.mockReturnValue(buildSupabaseMock({}));
 
     const modules = await getHubModules("comprendre");
 
     expect(modules.find((m) => m.id === "doctrine")?.available).toBe(true);
-    expect(modules.find((m) => m.id === "about")?.available).toBe(true);
     expect(modules.find((m) => m.id === "frise")?.available).toBe(false);
+    expect(modules.find((m) => m.id === "noms")?.available).toBe(false);
+  });
+
+  // A switched-off module is not "coming soon", it is not there. Listing
+  // it as Bientôt would promise a route that answers notFound(), and would
+  // make the flag indistinguishable from unbuilt work.
+  // @req REQ-106 @req REQ-114
+  it("drops a flagged module from the hub entirely while its flag is off", async () => {
+    const original = process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+    delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+    createServerClientMock.mockReturnValue(buildSupabaseMock(ALL_LIVE_RESULTS));
+
+    try {
+      const modules = await getHubModules("jouer");
+
+      expect(modules.map((m) => m.id)).not.toContain("quiz");
+      // The unbuilt module still shows, because that one really is coming.
+      expect(modules.map((m) => m.id)).toContain("liens");
+    } finally {
+      if (original !== undefined) {
+        process.env.NEXT_PUBLIC_FEATURE_QUIZ = original;
+      }
+    }
+  });
+
+  // @req REQ-106 @req REQ-114
+  it("lists a flagged module once its flag is on", async () => {
+    const original = process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+    process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
+    createServerClientMock.mockReturnValue(buildSupabaseMock(ALL_LIVE_RESULTS));
+
+    try {
+      const modules = await getHubModules("jouer");
+      const quiz = modules.find((m) => m.id === "quiz");
+
+      expect(quiz?.available).toBe(true);
+    } finally {
+      if (original === undefined) {
+        delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+      } else {
+        process.env.NEXT_PUBLIC_FEATURE_QUIZ = original;
+      }
+    }
   });
 
   // @req REQ-106 @req REQ-114
@@ -161,5 +203,49 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
         expect(createServerClientMock).not.toHaveBeenCalled();
       }
     );
+  });
+
+  // A switched-off module is absent, not empty: asking the corpus about it
+  // would spend a round trip to answer a question the flag already settled.
+  // @req REQ-106 @req REQ-114
+  it("never probes a flagged module whose flag is off", async () => {
+    const original = process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+    delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+
+    try {
+      const available = await isModuleAvailable({
+        availability: "flagged",
+        featureFlag: "quiz",
+      });
+
+      expect(available).toBe(false);
+      expect(createServerClientMock).not.toHaveBeenCalled();
+    } finally {
+      if (original !== undefined) {
+        process.env.NEXT_PUBLIC_FEATURE_QUIZ = original;
+      }
+    }
+  });
+
+  // @req REQ-106 @req REQ-114
+  it("brings a flagged module live once its flag is on, without a probe", async () => {
+    const original = process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+    process.env.NEXT_PUBLIC_FEATURE_QUIZ = "true";
+
+    try {
+      const available = await isModuleAvailable({
+        availability: "flagged",
+        featureFlag: "quiz",
+      });
+
+      expect(available).toBe(true);
+      expect(createServerClientMock).not.toHaveBeenCalled();
+    } finally {
+      if (original === undefined) {
+        delete process.env.NEXT_PUBLIC_FEATURE_QUIZ;
+      } else {
+        process.env.NEXT_PUBLIC_FEATURE_QUIZ = original;
+      }
+    }
   });
 });

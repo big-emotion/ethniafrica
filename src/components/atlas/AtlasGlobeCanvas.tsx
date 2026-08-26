@@ -206,6 +206,12 @@ export interface AtlasGlobeCanvasProps {
  * never the other geometry, so a people overlay is structurally incapable
  * of producing a closed line here.
  *
+ * The continent scene reaches this file as its frame only: the radial fields
+ * are still SVG-side, pending the ring-batching measurements that decide
+ * whether 52 outlines belong in one GL_LINES buffer. The frame draws no fill
+ * either way, so what is rendered here cannot contradict the SVG path — it is
+ * a smaller scene, not a different one.
+ *
  * It no longer owns any camera state: the pose arrives as a prop, so the only
  * animation left in this file is the country outline's trace-in reveal, and
  * that is the only reason a frame loop still runs.
@@ -397,32 +403,50 @@ export function AtlasGlobeCanvas({
       const uMorph = gl.getUniformLocation(program, "uMorph");
       const uScale = gl.getUniformLocation(program, "uScale");
 
+      const isFamily = overlay.kind === "family-footprint";
+
+      // The family's fill is per country and resolved at draw time, because it
+      // also depends on which country currently holds the focus. The other two
+      // encodings carry one fill for the whole overlay.
+      const staticFillOpacity = isFamily ? 0 : overlay.fillOpacity;
+
+      // A frame declared at zero fill (CONTINENT_FRAME_FILL_OPACITY) does not
+      // draw a transparent area, it draws no area at all — skipping the pass
+      // is what makes a per-country fill impossible rather than merely
+      // invisible (atlas-charter §1). No fan drawn, so no fan built either.
+      const fillsRings = isFamily || staticFillOpacity > 0;
+
+      // The continent frame is 51 reference outlines and carries no count of
+      // its own, so it reaches this program as rings like any other boundary.
+      const ringSource =
+        overlay.kind === "continent-field"
+          ? overlay.frame.flatMap((country) => country.rings)
+          : overlay.kind === "family-footprint"
+            ? []
+            : overlay.rings;
+
       // One entry per ring, each carrying the paint its own country earned.
-      // A single fillOpacity for the whole overlay — which is what this used
-      // to compute — can only draw a flat wash, and a choropleth is the entire
-      // point of a derived footprint: it is what turns "the family is here"
-      // into "this is where it is concentrated".
-      const shapes =
-        overlay.kind === "country-outline"
-          ? overlay.rings.map((ring) => ({
-              countryId: overlay.countryId,
-              weight: 1,
-              dashRepeats: 0,
+      // A single fillOpacity for the whole overlay can only draw a flat wash,
+      // and a choropleth is the entire point of a derived footprint: it turns
+      // "the family is here" into "this is where it is concentrated".
+      const shapes = isFamily
+        ? overlay.countries.flatMap((country) =>
+            country.rings.map((ring) => ({
+              countryId: country.countryId,
+              weight: country.weight,
+              dashRepeats: footprintDashRepeats(ring),
               fan: buildRingFan(ring),
               loop: buildRingLineLoop(ring),
             }))
-          : overlay.countries.flatMap((country) =>
-              country.rings.map((ring) => ({
-                countryId: country.countryId,
-                weight: country.weight,
-                dashRepeats: footprintDashRepeats(ring),
-                fan: buildRingFan(ring),
-                loop: buildRingLineLoop(ring),
-              }))
-            );
-
-      const isCountryOutline = overlay.kind === "country-outline";
-      const countryFillOpacity = isCountryOutline ? overlay.fillOpacity : 0;
+          )
+        : ringSource.map((ring) => ({
+            countryId:
+              overlay.kind === "country-outline" ? overlay.countryId : null,
+            weight: 1,
+            dashRepeats: 0,
+            fan: fillsRings ? buildRingFan(ring) : null,
+            loop: buildRingLineLoop(ring),
+          }));
 
       const fanBuffer = gl.createBuffer();
       const fanFlatBuffer = gl.createBuffer();
@@ -463,29 +487,29 @@ export function AtlasGlobeCanvas({
           const isFocused = focusedCountryId === countryId;
           const dimmed = focusedCountryId !== null && !isFocused;
 
-          const fillOpacity = isCountryOutline
-            ? countryFillOpacity
-            : footprintFillOpacity({ weight, dimmed });
-          const strokeOpacity = isCountryOutline
-            ? 1
-            : footprintStrokeOpacity(dimmed);
+          const fillOpacity = isFamily
+            ? footprintFillOpacity({ weight, dimmed })
+            : staticFillOpacity;
+          const strokeOpacity = isFamily ? footprintStrokeOpacity(dimmed) : 1;
           const [sr, sg, sb] = isFocused ? focusRgb : [r, g, b];
 
-          gl.bindBuffer(gl.ARRAY_BUFFER, fanBuffer);
-          gl.bufferData(gl.ARRAY_BUFFER, fan.positions, gl.STATIC_DRAW);
-          gl.enableVertexAttribArray(aSpherePos);
-          gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
-          gl.bindBuffer(gl.ARRAY_BUFFER, fanFlatBuffer);
-          gl.bufferData(gl.ARRAY_BUFFER, fan.flatPositions, gl.STATIC_DRAW);
-          gl.enableVertexAttribArray(aFlat);
-          gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
-          gl.disableVertexAttribArray(aArcFraction);
-          gl.vertexAttrib1f(aArcFraction, 0);
-          gl.uniform1f(uIsStroke, 0);
-          gl.uniform1f(uProgress, 1);
-          gl.uniform1f(uDashRepeats, 0);
-          gl.uniform4f(uColor, r, g, b, fillOpacity);
-          gl.drawArrays(gl.TRIANGLE_FAN, 0, fan.vertexCount);
+          if (fan) {
+            gl.bindBuffer(gl.ARRAY_BUFFER, fanBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, fan.positions, gl.STATIC_DRAW);
+            gl.enableVertexAttribArray(aSpherePos);
+            gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
+            gl.bindBuffer(gl.ARRAY_BUFFER, fanFlatBuffer);
+            gl.bufferData(gl.ARRAY_BUFFER, fan.flatPositions, gl.STATIC_DRAW);
+            gl.enableVertexAttribArray(aFlat);
+            gl.vertexAttribPointer(aFlat, 3, gl.FLOAT, false, 0, 0);
+            gl.disableVertexAttribArray(aArcFraction);
+            gl.vertexAttrib1f(aArcFraction, 0);
+            gl.uniform1f(uIsStroke, 0);
+            gl.uniform1f(uProgress, 1);
+            gl.uniform1f(uDashRepeats, 0);
+            gl.uniform4f(uColor, r, g, b, fillOpacity);
+            gl.drawArrays(gl.TRIANGLE_FAN, 0, fan.vertexCount);
+          }
 
           gl.bindBuffer(gl.ARRAY_BUFFER, loopPositionBuffer);
           gl.bufferData(gl.ARRAY_BUFFER, loop.positions, gl.STATIC_DRAW);

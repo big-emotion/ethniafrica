@@ -91,12 +91,12 @@ describe("AFH color tokens", () => {
   );
 });
 
-// The axis figures are the smallest type on the home — 11.5-12px — and they
-// carry the corpus counts, so they are content, not decoration. The muted ink
-// they were first given clears AA on neither card: 3.29:1 on parchment,
-// 4.21:1 at night. These pin the pairing to a token that does, on whichever
-// surface the reader is on.
-describe("home axis figures (REQ-113)", () => {
+// The stake and the figure are the smallest type on the home — 11.5-13.5px —
+// and they carry the corpus counts and what each axis gives back, so they are
+// content, not decoration. The muted ink they were first given clears AA on
+// neither card: 3.29:1 on parchment, 4.21:1 at night. These pin the pairing to
+// a token that does, on whichever surface the reader is on.
+describe("home axis card text (REQ-113)", () => {
   const accessAxes = readFileSync(
     resolve(process.cwd(), "src/components/home/AccessAxes.tsx"),
     "utf8"
@@ -130,33 +130,46 @@ describe("home axis figures (REQ-113)", () => {
     throw new Error(`Token ${name} never resolves to a hex`);
   }
 
-  function figureColorToken(): string {
-    const block = accessAxes.match(/\.access-axis-figure\s*\{([^}]*)\}/);
-    if (!block) throw new Error("Missing .access-axis-figure rule");
+  function colorTokenOf(selector: string): string {
+    const block = accessAxes.match(
+      new RegExp(`\\${selector}\\s*\\{([^}]*)\\}`)
+    );
+    if (!block) throw new Error(`Missing ${selector} rule`);
     const color = block[1].match(/color:\s*var\((--[a-z0-9-]+)\)/i);
-    if (!color) throw new Error("Missing colour on .access-axis-figure");
+    if (!color) throw new Error(`Missing colour on ${selector}`);
     return color[1];
   }
 
+  // The stake line is the same class of type as the figure — small, content,
+  // on the same two cards — so it is held to the same bar rather than to a
+  // comment asking the next author to remember.
+  const SMALL_CARD_TEXT = [".access-axis-figure", ".access-axis-stake"];
+
   // @req REQ-113
-  it("keeps the axis figure AA-readable on the parchment card", () => {
-    expect(
-      contrastRatio(
-        resolve_(figureColorToken(), false),
-        tokenHex("--afh-color-card")
-      )
-    ).toBeGreaterThanOrEqual(4.5);
-  });
+  it.each(SMALL_CARD_TEXT)(
+    "keeps %s AA-readable on the parchment card",
+    (selector) => {
+      expect(
+        contrastRatio(
+          resolve_(colorTokenOf(selector), false),
+          tokenHex("--afh-color-card")
+        )
+      ).toBeGreaterThanOrEqual(4.5);
+    }
+  );
 
   // @req REQ-115
-  it("keeps the axis figure AA-readable on the night card", () => {
-    expect(
-      contrastRatio(
-        resolve_(figureColorToken(), true),
-        tokenHex("--afh-night-surface-2")
-      )
-    ).toBeGreaterThanOrEqual(4.5);
-  });
+  it.each(SMALL_CARD_TEXT)(
+    "keeps %s AA-readable on the night card",
+    (selector) => {
+      expect(
+        contrastRatio(
+          resolve_(colorTokenOf(selector), true),
+          tokenHex("--afh-night-surface-2")
+        )
+      ).toBeGreaterThanOrEqual(4.5);
+    }
+  );
 });
 
 // The fiche surfaces predate the --afh-* layer and still speak --country-*.
