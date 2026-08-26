@@ -51,6 +51,10 @@ build
 # is re-included explicitly. Personal and plugin-installed skills land in
 # .claude/skills/ too, which is why the default is ignore-everything.
 .claude/*
+# settings.json carries the shared PostToolUse lint hook, so it is part of the
+# project standard rather than a personal preference; settings.local.json stays
+# ignored by the rule above.
+!.claude/settings.json
 !.claude/skills/
 .claude/skills/*
 !.claude/skills/afrik-curator/
