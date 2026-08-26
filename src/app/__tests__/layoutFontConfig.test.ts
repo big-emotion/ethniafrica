@@ -20,6 +20,35 @@ describe("root layout font configuration", () => {
     expect(frauncesConfig?.[1]).toContain('style: ["normal", "italic"]');
   });
 
+  // The atlas type scale puts mono on overlines, field paths and every figure
+  // that has to align in a column. While --afh-font-mono had no loaded face
+  // behind it, it fell through to whatever monospace the OS supplies, whose
+  // metrics break a tabular-nums column and make mockup parity unreachable.
+  // @req REQ-116
+  it("loads JetBrains Mono and binds --afh-font-mono to it", () => {
+    const layout = readFileSync(
+      resolve(process.cwd(), "src/app/layout.tsx"),
+      "utf8"
+    );
+    const monoConfig = layout.match(
+      /const jetbrainsMono = JetBrains_Mono\(\{([\s\S]*?)\n\}\);/
+    );
+
+    expect(monoConfig).not.toBeNull();
+    expect(monoConfig?.[1]).toContain('variable: "--font-jetbrains-mono"');
+    expect(layout).toContain("jetbrainsMono.variable");
+
+    // Loading the face is only half of it: the token has to resolve to it, or
+    // every mono rule in the app keeps using the system fallback.
+    const tokens = readFileSync(
+      resolve(process.cwd(), "src/styles/tokens/type.css"),
+      "utf8"
+    );
+    const monoToken = tokens.match(/--afh-font-mono:([\s\S]*?);/);
+    expect(monoToken).not.toBeNull();
+    expect(monoToken?.[1]).toContain("var(--font-jetbrains-mono)");
+  });
+
   // @req REQ-047 — retire the unused legacy Inter / Playfair Display pair.
   it("requests exactly one display family and one body family from next/font/google", () => {
     const source = readFileSync(

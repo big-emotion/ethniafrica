@@ -126,17 +126,96 @@ describe("buildFamilyFootprintOverlay (REQ-116 AC4)", () => {
       2
     );
     expect(overlay?.kind).toBe("family-footprint");
-    expect(overlay?.countryIds.sort()).toEqual(["BEN", "NGA", "TGO"]);
-    expect(overlay?.rings.length).toBeGreaterThan(0);
+    expect(overlay?.countries.map((c) => c.countryId).sort()).toEqual([
+      "BEN",
+      "NGA",
+      "TGO",
+    ]);
+    expect(overlay?.countries.every((c) => c.rings.length > 0)).toBe(true);
   });
 
   // @req REQ-116
-  it("tints by member-people count, saturating at the top of the scale", () => {
-    const small = buildFamilyFootprintOverlay([["NGA"]], 1);
-    const large = buildFamilyFootprintOverlay([["NGA"]], 50);
-    expect(small?.tint).toBeGreaterThan(0);
-    expect(small?.tint).toBeLessThan(1);
-    expect(large?.tint).toBe(1);
+  it("counts how many member peoples each country carries", () => {
+    // BEN is named by both peoples, NGA and TGO by one each. A choropleth is
+    // only readable if the count is per country, not per family.
+    const overlay = buildFamilyFootprintOverlay(
+      [
+        ["NGA", "BEN"],
+        ["BEN", "TGO"],
+      ],
+      2
+    );
+    const byId = Object.fromEntries(
+      overlay!.countries.map((c) => [c.countryId, c.memberCount])
+    );
+    expect(byId).toEqual({ BEN: 2, NGA: 1, TGO: 1 });
+  });
+
+  // @req REQ-116
+  it("counts a country once per people, however often that people repeats it", () => {
+    // currentCountries is a declared list, not a set; a fiche repeating a
+    // country would otherwise inflate that country's tint on its own.
+    const overlay = buildFamilyFootprintOverlay([["NGA", "NGA", "NGA"]], 1);
+    expect(overlay?.countries[0].memberCount).toBe(1);
+  });
+
+  // @req REQ-116
+  it("weights each country against the densest one, which reaches 1", () => {
+    const overlay = buildFamilyFootprintOverlay(
+      [["NGA", "BEN"], ["NGA", "TGO"], ["NGA"], ["BEN"]],
+      4
+    );
+    const byId = Object.fromEntries(
+      overlay!.countries.map((c) => [c.countryId, c.weight])
+    );
+    expect(byId.NGA).toBe(1);
+    expect(byId.BEN).toBeCloseTo(2 / 3);
+    expect(byId.TGO).toBeCloseTo(1 / 3);
+  });
+
+  // @req REQ-116
+  it("orders by density, breaking ties on the country id", () => {
+    // Twelve of the seventeen countries in the reference family sit at one
+    // people each. Without a tiebreak the ranking and the picker would reorder
+    // between two renders of the same data — a flicker, and a visual gate that
+    // fails for no reason.
+    const overlay = buildFamilyFootprintOverlay(
+      [["TGO", "BEN", "NGA"], ["NGA"]],
+      2
+    );
+    expect(overlay?.countries.map((c) => c.countryId)).toEqual([
+      "NGA",
+      "BEN",
+      "TGO",
+    ]);
+  });
+
+  // @req REQ-116
+  it("orders identically however the member peoples are ordered", () => {
+    const order = (memberCountries: string[][]) =>
+      buildFamilyFootprintOverlay(
+        memberCountries,
+        memberCountries.length
+      )?.countries.map((c) => c.countryId);
+
+    expect(order([["TGO"], ["BEN"], ["NGA"]])).toEqual(
+      order([["NGA"], ["TGO"], ["BEN"]])
+    );
+  });
+
+  // @req REQ-116
+  it("excludes a country the admin-0 asset cannot draw, rather than drawing it at zero", () => {
+    const overlay = buildFamilyFootprintOverlay([["NGA", "XYZ"]], 1);
+    expect(overlay?.countries.map((c) => c.countryId)).toEqual(["NGA"]);
+  });
+
+  // @req REQ-116
+  it("keeps the family's own member-people count, which is not the sum of the per-country counts", () => {
+    // A people present in three countries is counted three times across the
+    // footprint and once in the family. The panel's "N of the family's M"
+    // reading needs the second number.
+    const overlay = buildFamilyFootprintOverlay([["NGA", "BEN", "TGO"]], 1);
+    expect(overlay?.memberPeopleCount).toBe(1);
   });
 
   // @req REQ-119

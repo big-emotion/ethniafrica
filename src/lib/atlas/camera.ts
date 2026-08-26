@@ -83,7 +83,8 @@ export function zoomForAngularSpan(angularSpanDeg: number): number {
 // @req REQ-117
 export function poseForTarget(
   target: AtlasTarget,
-  bias: CameraBias
+  bias: CameraBias,
+  morph: number = SPHERE_MORPH
 ): CameraPose {
   return {
     yaw: -target.center.lon * DEG2RAD,
@@ -91,7 +92,10 @@ export function poseForTarget(
     zoom: zoomForAngularSpan(target.angularSpanDeg),
     offsetX: bias.offsetX,
     offsetY: bias.offsetY,
-    morph: SPHERE_MORPH,
+    // Carried, not reset: choosing a country does not change which surface the
+    // reader is on. A caller that omits it gets the sphere, which is where a
+    // fiche opens.
+    morph,
   };
 }
 
@@ -138,6 +142,11 @@ export function interpolatePose(
     zoom: lerp(from.zoom, to.zoom, t),
     offsetX: lerp(from.offsetX, to.offsetX, t),
     offsetY: lerp(from.offsetY, to.offsetY, t),
-    morph: lerp(from.morph, to.morph, t),
+    // Clamped: the surface is only defined between its two states, and an
+    // overshooting easing would ask the shader to extrapolate past the plane.
+    morph: Math.min(
+      SPHERE_MORPH,
+      Math.max(FLAT_MORPH, lerp(from.morph, to.morph, t))
+    ),
   };
 }

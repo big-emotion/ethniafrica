@@ -34,8 +34,8 @@ vi.mock("next/font/google", () => {
   });
   return {
     Fraunces: fontLoader,
-    Nunito_Sans: fontLoader,
     JetBrains_Mono: fontLoader,
+    Nunito_Sans: fontLoader,
   };
 });
 

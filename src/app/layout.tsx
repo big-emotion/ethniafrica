@@ -21,6 +21,10 @@ const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
 });
 
+// The atlas type scale leans on mono for overlines, field paths and every
+// figure that has to align in a column (--afh-font-mono in type.css). Until it
+// was loaded here the token fell through to the system monospace, whose metrics
+// differ enough that a tabular-nums column stops lining up.
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   weight: ["400", "500", "700"],

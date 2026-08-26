@@ -25,12 +25,22 @@ const countryOverlay: CountryOutlineOverlay = {
   fillOpacity: 0.22,
 };
 
+/** Five points, not four, so a per-country draw is distinguishable from the square's by its vertex count alone. */
+const elsewhere: Ring = [
+  { lon: 10, lat: 0 },
+  { lon: 12, lat: 0 },
+  { lon: 13, lat: 1 },
+  { lon: 12, lat: 2 },
+  { lon: 10, lat: 2 },
+];
+
 const familyOverlay: FamilyFootprintOverlay = {
   kind: "family-footprint",
-  countryIds: ["NGA", "BEN"],
-  rings: [square],
+  countries: [
+    { countryId: "NGA", rings: [square], memberCount: 4, weight: 1 },
+    { countryId: "BEN", rings: [elsewhere], memberCount: 1, weight: 0.25 },
+  ],
   memberPeopleCount: 4,
-  tint: 0.33,
 };
 
 const peopleOverlay: PeopleFieldOverlay = {
@@ -121,7 +131,9 @@ function createFakeGl() {
     disableVertexAttribArray: vi.fn(),
     vertexAttribPointer: vi.fn(),
     vertexAttrib1f: vi.fn(),
-    getUniformLocation: vi.fn(() => ({})),
+    // Named so a test can say which uniform it is reading. Anonymous objects
+    // made every uniform1f call indistinguishable from every other.
+    getUniformLocation: vi.fn((_program: unknown, name: string) => ({ name })),
     clearColor: vi.fn(),
     enable: vi.fn(),
     blendFunc: vi.fn(),
@@ -156,8 +168,44 @@ function fakeTexture2d() {
   };
 }
 
+/** Float comparison that survives the ramp's arithmetic. */
+const closeTo = (expected: number) =>
+  expect.closeTo(expected, 5) as unknown as number;
+
 describe("AtlasGlobeCanvas", () => {
   let fakeGl: ReturnType<typeof createFakeGl>;
+
+  /** Values passed to one named uniform, in call order. */
+  const uniform1fValues = (name: string): number[] =>
+    fakeGl.uniform1f.mock.calls
+      .filter(([location]) => location?.name === name)
+      .map(([, value]) => value as number);
+
+  /**
+   * Fill and stroke draws each set uIsStroke and uDashRepeats once, in order,
+   * so the nth value of every uniform sequence describes the nth draw. That is
+   * what lets a test say "the stroke draws" without depending on how many
+   * shapes came before.
+   */
+  const strokeFlags = () => uniform1fValues("uIsStroke");
+
+  const colorAlphas = (): number[] =>
+    fakeGl.uniform4f.mock.calls
+      .filter(([location]) => location?.name === "uColor")
+      .map(([, , , , alpha]) => alpha as number);
+
+  const fillAlphas = () =>
+    colorAlphas().filter((_alpha, index) => strokeFlags()[index] === 0);
+
+  const dashRepeatsOnStrokes = () =>
+    uniform1fValues("uDashRepeats").filter(
+      (_repeats, index) => strokeFlags()[index] === 1
+    );
+
+  const strokeProgress = () =>
+    uniform1fValues("uProgress").filter(
+      (_progress, index) => strokeFlags()[index] === 1
+    );
   let matchMediaMatches: boolean;
   let frameCallbacks: Map<number, FrameRequestCallback>;
   let nextFrameId: number;
@@ -330,6 +378,111 @@ describe("AtlasGlobeCanvas", () => {
   });
 
   // @req REQ-116
+  it("gives every country of the footprint its own fill and its own outline", () => {
+    matchMediaMatches = true;
+    render(<AtlasGlobeCanvas overlay={familyOverlay} pose={IDLE_POSE} />);
+
+    // Each country's own geometry reaches the GPU — a four-point ring and a
+    // five-point one — rather than one wash over the union of the two.
+    expect(fakeGl.drawArrays).toHaveBeenCalledWith(
+      fakeGl.TRIANGLE_FAN,
+      0,
+      square.length + 2
+    );
+    expect(fakeGl.drawArrays).toHaveBeenCalledWith(
+      fakeGl.TRIANGLE_FAN,
+      0,
+      elsewhere.length + 2
+    );
+    expect(fakeGl.drawArrays).toHaveBeenCalledWith(
+      fakeGl.LINE_LOOP,
+      0,
+      square.length
+    );
+    expect(fakeGl.drawArrays).toHaveBeenCalledWith(
+      fakeGl.LINE_LOOP,
+      0,
+      elsewhere.length
+    );
+  });
+
+  // @req REQ-116
+  it("sets each country's fill opacity from its own weight", () => {
+    matchMediaMatches = true;
+    render(<AtlasGlobeCanvas overlay={familyOverlay} pose={IDLE_POSE} />);
+
+    const alphas = fillAlphas();
+    // 0.16 + 0.46 x weight: the densest country at 1, the sparsest at 0.25.
+    expect(alphas).toContainEqual(closeTo(0.62));
+    expect(alphas).toContainEqual(closeTo(0.275));
+  });
+
+  // @req REQ-116
+  it("dashes every country's outline, so no country reads as a declared border", () => {
+    matchMediaMatches = true;
+    render(<AtlasGlobeCanvas overlay={familyOverlay} pose={IDLE_POSE} />);
+
+    const strokeDashRepeats = dashRepeatsOnStrokes();
+    expect(strokeDashRepeats.length).toBeGreaterThan(0);
+    // Not one solid outline anywhere: a solid line would claim a border the
+    // family does not have.
+    expect(strokeDashRepeats.every((repeats) => repeats >= 1)).toBe(true);
+  });
+
+  // @req REQ-116
+  it("lifts the focused country and drops the others behind it", () => {
+    matchMediaMatches = true;
+    render(
+      <AtlasGlobeCanvas
+        overlay={familyOverlay}
+        pose={IDLE_POSE}
+        focusedCountryId="BEN"
+      />
+    );
+
+    const alphas = fillAlphas();
+    // BEN is focused, so it keeps its own ramp value; NGA — the densest
+    // country — falls to the dimmed floor despite its weight of 1.
+    expect(alphas).toContainEqual(closeTo(0.275));
+    expect(alphas).toContainEqual(closeTo(0.12));
+    expect(alphas).not.toContainEqual(closeTo(0.62));
+  });
+
+  // @req REQ-116
+  it("replays the reveal when the focused country changes", () => {
+    // Recolouring under the reader is not the same as redrawing around a new
+    // subject; the trace has to draw itself in again.
+    const { rerender } = render(
+      <AtlasGlobeCanvas
+        overlay={familyOverlay}
+        pose={IDLE_POSE}
+        focusedCountryId="NGA"
+      />
+    );
+
+    // Let the first reveal finish, so a progress of zero afterwards can only
+    // mean it restarted.
+    const firstFrame = frameCallbacks.get(1);
+    if (!firstFrame) throw new Error("expected a first frame");
+    act(() => firstFrame(0));
+    const secondFrame = frameCallbacks.get(2);
+    if (!secondFrame) throw new Error("expected a second frame");
+    act(() => secondFrame(5000));
+    expect(strokeProgress().at(-1)).toBe(1);
+
+    fakeGl.uniform1f.mockClear();
+    rerender(
+      <AtlasGlobeCanvas
+        overlay={familyOverlay}
+        pose={IDLE_POSE}
+        focusedCountryId="BEN"
+      />
+    );
+
+    expect(strokeProgress()).toContain(0);
+  });
+
+  // @req REQ-116
   it("starts a country outline's stroke reveal at zero progress and advances it toward one over the next frame", () => {
     render(<AtlasGlobeCanvas overlay={countryOverlay} pose={IDLE_POSE} />);
     fakeGl.uniform1f.mockClear();
@@ -423,6 +576,43 @@ describe("AtlasGlobeCanvas", () => {
 
     expect(window.requestAnimationFrame).not.toHaveBeenCalled();
     expect(fakeGl.drawArrays).toHaveBeenCalled();
+  });
+
+  // @req REQ-116
+  it("shows the family trace complete on the first frame under reduced motion", () => {
+    // Not an accommodation bolted on afterwards: a reader who asked for less
+    // motion must see the finished map, not a map that never finishes drawing.
+    matchMediaMatches = true;
+    render(<AtlasGlobeCanvas overlay={familyOverlay} pose={IDLE_POSE} />);
+
+    expect(window.requestAnimationFrame).not.toHaveBeenCalled();
+    expect(strokeProgress().every((progress) => progress === 1)).toBe(true);
+  });
+
+  // @req REQ-116
+  it("does not animate the replay under reduced motion either", () => {
+    // The replay is the one path that restarts the reveal by hand, so it can
+    // reintroduce motion after the initial render honoured the preference.
+    matchMediaMatches = true;
+    const { rerender } = render(
+      <AtlasGlobeCanvas
+        overlay={familyOverlay}
+        pose={IDLE_POSE}
+        focusedCountryId="NGA"
+      />
+    );
+
+    fakeGl.uniform1f.mockClear();
+    rerender(
+      <AtlasGlobeCanvas
+        overlay={familyOverlay}
+        pose={IDLE_POSE}
+        focusedCountryId="BEN"
+      />
+    );
+
+    expect(window.requestAnimationFrame).not.toHaveBeenCalled();
+    expect(strokeProgress()).not.toContain(0);
   });
 
   // @req REQ-116

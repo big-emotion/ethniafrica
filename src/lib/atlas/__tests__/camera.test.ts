@@ -162,3 +162,35 @@ describe("advanceYaw (REQ-117 AC1)", () => {
     expect(Math.abs(advanceYaw(1_000, 0))).toBeLessThanOrEqual(2 * Math.PI);
   });
 });
+
+describe("the morph in the pose (REQ-112)", () => {
+  // @req REQ-112
+  it("rides in the pose, so the flattening travels like every other camera move", () => {
+    // The morph is a camera state, not a separate animation: keeping it in the
+    // pose means the flight and the flattening share one traversal instead of
+    // running on two clocks that drift apart.
+    const sphere = { ...IDLE_POSE, morph: 1 };
+    const flat = { ...IDLE_POSE, morph: 0 };
+
+    expect(interpolatePose(sphere, flat, 0.5).morph).toBeCloseTo(0.5, 5);
+    expect(interpolatePose(sphere, flat, 0).morph).toBe(1);
+    expect(interpolatePose(sphere, flat, 1).morph).toBe(0);
+  });
+
+  // @req REQ-112
+  it("starts on the sphere", () => {
+    // 1 is the sphere and 0 the flat map, per sphereLayer's own contract.
+    expect(IDLE_POSE.morph).toBe(1);
+  });
+
+  // @req REQ-112
+  it("never leaves the range the surface is defined over", () => {
+    const beyond = interpolatePose(
+      { ...IDLE_POSE, morph: 1 },
+      { ...IDLE_POSE, morph: 0 },
+      1.6
+    );
+    expect(beyond.morph).toBeGreaterThanOrEqual(0);
+    expect(beyond.morph).toBeLessThanOrEqual(1);
+  });
+});

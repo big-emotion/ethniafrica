@@ -84,16 +84,19 @@ describe("LanguageFamilyDetailViewV2", () => {
     render(<LanguageFamilyDetailViewV2 family={completeFamily} />);
 
     expect(
-      screen.getByRole("heading", { level: 1, name: "Bantou" })
+      screen.getByRole("heading", { level: 1, name: /Bantou/ })
     ).toBeTruthy();
     expect(
       screen.getByText("Désignation linguistique contemporaine.")
     ).toBeTruthy();
-    expect(screen.getByText("Bantou étroit")).toBeTruthy();
+    // The branch names are presented by TonguePanel, above The Record, which
+    // is where the route feeds them; The Record states how many there are.
+    expect(screen.getByTestId("stat-card-branches")).toHaveTextContent("1");
     expect(screen.getByText("Shona")).toBeTruthy();
     expect(screen.getByText("Langues agglutinantes")).toBeTruthy();
     expect(screen.getByText("Afrique centrale occidentale")).toBeTruthy();
-    expect(screen.getByText("COD")).toBeTruthy();
+    // The footprint ranking links each country across to its own fiche.
+    expect(screen.getByRole("link", { name: /Congo/ })).toBeTruthy();
     expect(screen.getByText("Glottolog")).toBeTruthy();
   });
 
@@ -105,8 +108,11 @@ describe("LanguageFamilyDetailViewV2", () => {
       />
     );
 
+    // The fiche title now carries its editorial second half — see
+    // FAMILY_TITLE_PREDICATE in FamilyParchment.tsx for why that phrase is a
+    // constant in the code and not a corpus field.
     expect(
-      screen.getByRole("heading", { level: 1, name: "Sans contenu" })
+      screen.getByRole("heading", { level: 1, name: /Sans contenu/ })
     ).toBeTruthy();
     expect(
       screen.queryByRole("heading", { name: "Appellations et décolonisation" })
@@ -130,11 +136,15 @@ describe("LanguageFamilyDetailViewV2", () => {
       />
     );
 
+    // The section that reports the gap is the one the parchment opens on, and
+    // it is shown precisely because the fields inside it are empty.
     expect(
-      screen.getByRole("heading", { name: "Informations générales" })
+      screen.getByRole("heading", {
+        name: "Ce que la fiche déclare, ce qu'elle ne déclare pas",
+      })
     ).toBeTruthy();
     expect(
-      screen.getByRole("heading", { name: "Répartition géographique" })
+      screen.getByRole("heading", { name: "L'empreinte, et d'où elle vient" })
     ).toBeTruthy();
     expect(screen.getAllByText("Donnée manquante").length).toBeGreaterThan(0);
   });
@@ -155,7 +165,7 @@ describe("LanguageFamilyDetailViewV2", () => {
     expect(
       screen.getByText("Dérivée de : peuples rattachés à la famille")
     ).toBeInTheDocument();
-    expect(screen.getByText("COD")).toBeInTheDocument();
+    expect(screen.getByTestId("footprint-ranking")).toBeInTheDocument();
   });
 
   // @req REQ-119
@@ -193,12 +203,22 @@ describe("LanguageFamilyDetailViewV2", () => {
 
     render(<LanguageFamilyDetailViewV2 family={family} />);
 
+    // Both branches and distributionByCountry are structurally expected yet
+    // empty in this fixture, so each is marked missing. Asserted on the two
+    // cards rather than on a count of markers across the page, which changes
+    // whenever a section is added and says nothing about either field.
+    expect(screen.getByTestId("stat-card-branches")).toHaveAttribute(
+      "data-provenance",
+      "missing"
+    );
+    expect(screen.getByTestId("stat-card-distribution")).toHaveAttribute(
+      "data-provenance",
+      "missing"
+    );
+    // The one field this fixture does declare is shown, unmarked.
     expect(
       screen.getByText(family.content.generalInfo.geographicArea)
     ).toBeInTheDocument();
-    // Both branches (generalInfo) and distributionByCountry (distribution)
-    // are structurally expected yet empty in this fixture.
-    expect(screen.getAllByText("Donnée manquante").length).toBe(2);
   });
 
   // @req REQ-047
@@ -259,7 +279,9 @@ describe("LanguageFamilyDetailViewV2", () => {
     render(<LanguageFamilyDetailViewV2 family={completeFamily} />);
 
     expect(screen.getByRole("contentinfo")).toHaveAttribute("id", "sources");
-    expect(screen.getByRole("link", { name: "COD" })).toHaveAttribute(
+    // Each country of the footprint still steps across to its own fiche; the
+    // ranking names it in French rather than by its ISO code.
+    expect(screen.getByRole("link", { name: /Congo/ })).toHaveAttribute(
       "href",
       "/fr/pays/COD"
     );

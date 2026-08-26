@@ -45,15 +45,24 @@ const ANCHOR_POSITION: Record<PanelAnchor, string> = {
 };
 
 /**
- * DEC-022: the globe stage is the app's one Night surface, and the panel sits
- * on it, so it takes the night palette rather than the fiche's own accent.
+ * The panel is parchment, laid on a night stage.
+ *
+ * DEC-022 put the whole globe stage on the night surface, and this panel with
+ * it. That reading has narrowed twice since: the home globe was repainted on
+ * parchment (1669c944), and the night scope is now the dataviz itself rather
+ * than everything sitting on it. The panel is not dataviz — it is an extract of
+ * the fiche, lifted out and laid over the map. Painted night it reads as one
+ * more layer of the map; painted parchment it reads as what it is, a piece of
+ * the page's own reading placed on top. That distinction is the reason this is
+ * a panel and not a tooltip, and it is what the mockup asks for.
+ *
  * (The shadcn Sheet parts are styled for the light palette — hence the bare
  * Radix primitives here.)
  */
-const NIGHT_PANEL_SURFACE: CSSProperties = {
-  backgroundColor: "var(--afh-night-surface)",
-  borderColor: "var(--afh-night-line)",
-  color: "var(--afh-night-ink)",
+const PARCHMENT_PANEL_SURFACE: CSSProperties = {
+  backgroundColor: "var(--afh-bg)",
+  borderColor: "var(--afh-border)",
+  color: "var(--afh-text)",
 };
 
 /**
@@ -91,7 +100,7 @@ export function AtlasFactsPanel({
             "z-10 flex flex-col gap-3 overflow-y-auto p-4",
             ANCHOR_POSITION[anchor]
           )}
-          style={{ ...NIGHT_PANEL_SURFACE, ...ANCHOR_SIZE[anchor] }}
+          style={{ ...PARCHMENT_PANEL_SURFACE, ...ANCHOR_SIZE[anchor] }}
           // Without a Description, Radix would still point aria-describedby at
           // an id that never renders; clearing it keeps the panel valid.
           {...(description ? {} : { "aria-describedby": undefined })}
@@ -104,7 +113,7 @@ export function AtlasFactsPanel({
               data-atlas-panel-handle=""
               aria-hidden="true"
               className="mx-auto h-1 w-9 shrink-0 rounded-full opacity-40"
-              style={{ backgroundColor: "var(--afh-night-ink-2)" }}
+              style={{ backgroundColor: "var(--afh-text-muted)" }}
             />
           ) : null}
           <div className="flex items-start justify-between gap-3">
@@ -115,7 +124,7 @@ export function AtlasFactsPanel({
               {description ? (
                 <DialogPrimitive.Description
                   className="text-sm"
-                  style={{ color: "var(--afh-night-ink-2)" }}
+                  style={{ color: "var(--afh-text-soft)" }}
                 >
                   {description}
                 </DialogPrimitive.Description>
@@ -124,12 +133,12 @@ export function AtlasFactsPanel({
             <DialogPrimitive.Close
               aria-label="Fermer"
               className="rounded-full p-1 opacity-80 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
-              style={{ color: "var(--afh-night-ink-2)" }}
+              style={{ color: "var(--afh-text-soft)" }}
             >
               <X aria-hidden="true" className="h-4 w-4" />
             </DialogPrimitive.Close>
           </div>
-          <div className="text-sm" style={{ color: "var(--afh-night-ink-2)" }}>
+          <div className="text-sm" style={{ color: "var(--afh-text-soft)" }}>
             {children}
           </div>
         </DialogPrimitive.Content>
