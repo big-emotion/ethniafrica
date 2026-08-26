@@ -90,13 +90,48 @@
       ]
     },
     "sources": [
-      "Institute of Current World Affairs — Muscat to Mji Mkongwe (2015). https://www.icwa.org/muscat-to-mji-mkongwe/",
-      "The Azanian Sea — The Swahili Omani (2008). http://www.azaniansea.com/2008/10/swahili-omani.html",
-      "Joshua Project — Swahili, Zanzibari in Oman. https://joshuaproject.net/people_groups/16087/MU",
-      "IJICC — The Omani Diaspora in Eastern Africa (Yenigun 2021). https://www.ijicc.net/images/Vol_15/Iss_7/15714_Yenigun_2021_E1_R.pdf",
-      "EBSCO Research Starters — Oman Captures Zanzibar. https://www.ebsco.com/research-starters/history/oman-captures-zanzibar",
-      "Citizenship Rights Africa — OAHR Right to Return Campaign (2019). https://citizenshiprightsafrica.org/east-africa-oahr-launches-right-to-return-campaign-coinciding-with-the-world-conference-on-statelessness/",
-      "Reddit r/Oman — Swahili speakers in Oman (2025). https://www.reddit.com/r/Oman/comments/1rcxpur/what_percentage_of_omanis_talk_swahili/"
+      {
+        "title": "Institute of Current World Affairs — Muscat to Mji Mkongwe (2015)",
+        "url": "https://www.icwa.org/muscat-to-mji-mkongwe/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for icwa.org."
+      },
+      {
+        "title": "The Azanian Sea — The Swahili Omani (2008)",
+        "url": "http://www.azaniansea.com/2008/10/swahili-omani.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers azaniansea.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Swahili, Zanzibari in Oman",
+        "url": "https://joshuaproject.net/people_groups/16087/MU",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "IJICC — The Omani Diaspora in Eastern Africa (Yenigun 2021)",
+        "url": "https://www.ijicc.net/images/Vol_15/Iss_7/15714_Yenigun_2021_E1_R.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ijicc.net; the tier awaits editorial review."
+      },
+      {
+        "title": "EBSCO Research Starters — Oman Captures Zanzibar",
+        "url": "https://www.ebsco.com/research-starters/history/oman-captures-zanzibar",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ebsco.com."
+      },
+      {
+        "title": "Citizenship Rights Africa — OAHR Right to Return Campaign (2019)",
+        "url": "https://citizenshiprightsafrica.org/east-africa-oahr-launches-right-to-return-campaign-coinciding-with-the-world-conference-on-statelessness/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citizenshiprightsafrica.org."
+      },
+      {
+        "title": "Reddit r/Oman — Swahili speakers in Oman (2025)",
+        "url": "https://www.reddit.com/r/Oman/comments/1rcxpur/what_percentage_of_omanis_talk_swahili/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for reddit.com."
+      }
     ]
   }
 }

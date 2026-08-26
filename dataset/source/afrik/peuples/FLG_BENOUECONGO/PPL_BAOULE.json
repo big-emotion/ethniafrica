@@ -71,9 +71,24 @@
       ]
     },
     "sources": [
-      "Ethnologue – Baoulé Language (BCI) (https://www.ethnologue.com/language/bci/)",
-      "ISO 639-3 code bci – SIL International / CEDS (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)",
-      "Vogel, Susan M. – Baule: African Art, Western Eyes, Yale University Press, 1997"
+      {
+        "title": "Ethnologue – Baoulé Language (BCI)",
+        "url": "https://www.ethnologue.com/language/bci/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "ISO 639-3 code bci – SIL International / CEDS",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      },
+      {
+        "title": "Vogel, Susan M. – Baule: African Art, Western Eyes, Yale University Press, 1997",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

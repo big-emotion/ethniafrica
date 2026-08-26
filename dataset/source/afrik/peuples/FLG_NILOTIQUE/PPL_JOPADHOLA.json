@@ -80,11 +80,36 @@
       ]
     },
     "sources": [
-      "Swordshare Map — Dhopadhola ISO 639-3 adh. https://map.swordshare.com/adh",
-      "Ogot, B.A. (1967). History of the southern Luo. East African Publishing House, Nairobi.",
-      "Owor, Maureen (2012). Creating an Independent Traditional Court: A Study of Jopadhola Clan Courts in Uganda. Journal of African Law, 56/2, pp 215-242.",
-      "Oboth-Ofumbi, A.C.K. (1959). Silver Tanga Padhola. East African Literature Bureau, Nairobi.",
-      "Ethnologue — Jopadhola (ADH). https://www.ethnologue.com/language/adh/"
+      {
+        "title": "Swordshare Map — Dhopadhola ISO 639-3 adh",
+        "url": "https://map.swordshare.com/adh",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for map.swordshare.com."
+      },
+      {
+        "title": "Ogot, B.A. (1967). History of the southern Luo. East African Publishing House, Nairobi",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Owor, Maureen (2012). Creating an Independent Traditional Court: A Study of Jopadhola Clan Courts in Uganda. Journal of African Law, 56/2, pp 215-242",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Oboth-Ofumbi, A.C.K. (1959). Silver Tanga Padhola. East African Literature Bureau, Nairobi",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Ethnologue — Jopadhola (ADH)",
+        "url": "https://www.ethnologue.com/language/adh/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

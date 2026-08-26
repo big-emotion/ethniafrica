@@ -46,7 +46,7 @@ function readPeopleScale(payload: PeopleDetail): ScaleContent | null {
     magnitudeValue: totalPopulation,
     caption: "population totale",
     referenceYear: payload.demography?.referenceYear,
-    sourceLabel: payload.demography?.source ?? payload.sources?.[0],
+    sourceLabel: payload.demography?.source ?? payload.sources?.[0]?.title,
     classificationStatus: payload.classificationStatus,
     ramp: payload.demography?.distributionByCountry,
   };
@@ -58,7 +58,7 @@ function readCountryScale(payload: CountryDetail): ScaleContent | null {
   return {
     magnitudeValue: peoplesCount,
     caption: "peuples recensés",
-    sourceLabel: payload.sources?.[0],
+    sourceLabel: payload.sources?.[0]?.title,
   };
 }
 
@@ -68,11 +68,12 @@ function readFamilyScale(payload: LanguageFamilyDetail): ScaleContent | null {
   return {
     magnitudeValue: numberOfLanguages,
     caption: "langues recensées",
-    sourceLabel: payload.sources?.[0],
+    sourceLabel: payload.sources?.[0]?.title,
     contestedFamily: payload.classificationStatus === "contested",
   };
 }
 
+// @req REQ-091
 export function readScale(subject: ScaleSubject): ScaleContent | null {
   switch (subject.entityType) {
     case "people":
@@ -92,6 +93,7 @@ export function readScale(subject: ScaleSubject): ScaleContent | null {
  * shared rule the registry would either duplicate it (two copies to drift
  * apart) or emit an anchor that scrolls to nothing.
  */
+// @req REQ-091
 export function hasScaleContent(subject: ScaleSubject): boolean {
   const content = readScale(subject);
   return Boolean(content?.sourceLabel);

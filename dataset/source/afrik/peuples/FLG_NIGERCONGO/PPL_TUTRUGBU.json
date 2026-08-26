@@ -67,12 +67,42 @@
       ]
     },
     "sources": [
-      "Glottolog – Nyangbo (nyb), 2024 (https://glottolog.org/resource/languoid/id/nyan1302)",
-      "Joshua Project – Nyangbo, Tutrugbu in Ghana (https://joshuaproject.net/people_groups/14089/GH)",
-      "James Essegbey – Tutrugbu (Nyangbo) language and culture, Language Science Press, 2019 ; recension in Linguistique et Langues Africaines, 2021 (https://journals.openedition.org/lla/729)",
-      "James Essegbey – Noun classes in Tutrugbu, Journal of West African Languages XXXVI.1-2, 2009 (https://journalofwestafricanlanguages.org/)",
-      "The Language Archive – Nyangbo / Tutrugbu (https://archive.mpi.nl/tla/islandora/object/tla:1839_00_0000_0000_000E_1930_2)",
-      "University of Florida CoLang 2018 – Tutrugbu Practicum (https://colang.lin.ufl.edu/home/practicafield-methods/tutrugbu-practicum/)"
+      {
+        "title": "Glottolog – Nyangbo (nyb), 2024",
+        "url": "https://glottolog.org/resource/languoid/id/nyan1302",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Joshua Project – Nyangbo, Tutrugbu in Ghana",
+        "url": "https://joshuaproject.net/people_groups/14089/GH",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "James Essegbey – Tutrugbu (Nyangbo) language and culture, Language Science Press, 2019 ; recension in Linguistique et Langues Africaines, 2021",
+        "url": "https://journals.openedition.org/lla/729",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"openedition\" (openedition.org), matched as a parent of journals.openedition.org."
+      },
+      {
+        "title": "James Essegbey – Noun classes in Tutrugbu, Journal of West African Languages XXXVI.1-2, 2009",
+        "url": "https://journalofwestafricanlanguages.org/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers journalofwestafricanlanguages.org; the tier awaits editorial review."
+      },
+      {
+        "title": "The Language Archive – Nyangbo / Tutrugbu",
+        "url": "https://archive.mpi.nl/tla/islandora/object/tla:1839_00_0000_0000_000E_1930_2",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for archive.mpi.nl."
+      },
+      {
+        "title": "University of Florida CoLang 2018 – Tutrugbu Practicum",
+        "url": "https://colang.lin.ufl.edu/home/practicafield-methods/tutrugbu-practicum/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers colang.lin.ufl.edu; the tier awaits editorial review."
+      }
     ]
   }
 }

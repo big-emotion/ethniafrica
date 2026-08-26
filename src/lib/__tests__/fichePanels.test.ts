@@ -36,7 +36,7 @@ const FULL_PEOPLE: PeopleDetail = {
   culture: { ritesAndPractices: { otherMajorRites: ["Rite A"] } },
   historicalRole: { kingdomsOrChiefdoms: "Role" },
   demography: { totalPopulation: 1000 },
-  sources: ["https://example.org"],
+  sources: [{ title: "https://example.org", url: null, tier: "unverified" }],
 };
 
 const FULL_COUNTRY: CountryDetail = {
@@ -46,7 +46,7 @@ const FULL_COUNTRY: CountryDetail = {
   majorPeoples: [{ name: "Test People", peopleId: "PPL_TEST" }],
   culture: { culturalTraditions: "Culture" },
   historicalFacts: { ancientPeriods: "Facts" },
-  sources: ["https://example.org"],
+  sources: [{ title: "https://example.org", url: null, tier: "unverified" }],
   demographics: { peoples: [{ name: "Test People", population: 1000 }] },
 };
 
@@ -62,7 +62,7 @@ const FULL_LANGUAGE_FAMILY: LanguageFamilyDetail = {
   linguisticCharacteristics: { typology: "SVO" },
   historyAndOrigins: { probableOrigin: "Region Y" },
   distribution: { totalSpeakers: 5000, distributionByCountry: { TST: 5000 } },
-  sources: ["https://example.org"],
+  sources: [{ title: "https://example.org", url: null, tier: "unverified" }],
 };
 
 describe("fichePanels — panel composition engine (FR98)", () => {

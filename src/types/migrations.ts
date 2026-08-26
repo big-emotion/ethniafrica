@@ -5,6 +5,7 @@
 
 import type { PeopleId } from "@/types/afrik";
 import type { MigrationEventType } from "@/lib/afrik/migrationEventTypes";
+import type { SourceTier } from "@/types/sources";
 
 export type { MigrationEventType };
 
@@ -34,7 +35,7 @@ export interface MigrationSource {
   title: string;
   url: string;
   year: number;
-  tier: 1 | 2;
+  tier: SourceTier;
   notes?: string;
 }
 
@@ -74,7 +75,7 @@ export interface MigrationSourceRef {
   id: string;
   title: string;
   url: string | null;
-  tier: string | null;
+  tier: SourceTier | null;
 }
 
 export interface MigrationSummary {

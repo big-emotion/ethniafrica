@@ -147,13 +147,13 @@ describe("transformColonizationModuleData timeline (Epic 13, Story 13.12, ETNI-5
         id: "src-2",
         title: "Journal of African History",
         url: "https://example.org/jah",
-        tier: "2",
+        tier: "referenced",
       },
       {
         id: "src-1",
         title: "UNESCO General History of Africa",
         url: "https://example.org/unesco",
-        tier: "1",
+        tier: "official",
       },
     ],
   };

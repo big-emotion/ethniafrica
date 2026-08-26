@@ -70,10 +70,30 @@
       ]
     },
     "sources": [
-      "Builsa, Buli in Ghana – Joshua Project, 2024 (https://joshuaproject.net/people_groups/11005)",
-      "Buli (Ghana) – WALS Online (https://wals.info/languoid/lect/wals_code_buy)",
-      "Buli (Ghana) – Glottolog 5.2, ISO 639-3 bwu (https://glottolog.org/resource/languoid/id/buli1254)",
-      "Builsa South District population – CityPopulation.de, recensement Ghana 2021 (https://www.citypopulation.de/en/ghana/admin/upper_east/0910__builsa_south/)"
+      {
+        "title": "Builsa, Buli in Ghana – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/11005",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Buli (Ghana) – WALS Online",
+        "url": "https://wals.info/languoid/lect/wals_code_buy",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"wals\"."
+      },
+      {
+        "title": "Buli (Ghana) – Glottolog 5.2, ISO 639-3 bwu",
+        "url": "https://glottolog.org/resource/languoid/id/buli1254",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Builsa South District population – CityPopulation.de, recensement Ghana 2021",
+        "url": "https://www.citypopulation.de/en/ghana/admin/upper_east/0910__builsa_south/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+      }
     ]
   }
 }

@@ -108,14 +108,54 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Sara people. https://www.101lasttribes.com/tribes/sara.html",
-      "Qiraat Africa — The Sara people. https://qiraatafrican.com/en/15532/the-sara-people/",
-      "Kwekudee Trip Down Memory Lane — Sara (Kameeni) people. https://kwekudee-tripdownmemorylane.blogspot.com/2014/09/sara-kameeni-people-ancient-sun.html",
-      "CIA World Factbook — Chad. https://www.cia.gov/the-world-factbook/countries/chad/",
-      "Kumakonda Travel — Sara initiation rites Ndo and Yondo. https://kumakonda.com/trip/tribes-of-chad-sara-initiation/",
-      "SIL Ethnologue — Ngambay (sba). https://www.ethnologue.com/language/sba/",
-      "Glottolog — Ngambay. https://glottolog.org/resource/languoid/id/ngam1268",
-      "New York Times — Chad Tribal Rite Disrupting Nation, 13 octobre 1974. https://www.nytimes.com/1974/10/13/archives/chad-tribal-rite-disrupting-nation-sole-party-is-renamed.html"
+      {
+        "title": "101 Last Tribes — Sara people",
+        "url": "https://www.101lasttribes.com/tribes/sara.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Qiraat Africa — The Sara people",
+        "url": "https://qiraatafrican.com/en/15532/the-sara-people/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "Kwekudee Trip Down Memory Lane — Sara (Kameeni) people",
+        "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2014/09/sara-kameeni-people-ancient-sun.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+      },
+      {
+        "title": "CIA World Factbook — Chad",
+        "url": "https://www.cia.gov/the-world-factbook/countries/chad/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Kumakonda Travel — Sara initiation rites Ndo and Yondo",
+        "url": "https://kumakonda.com/trip/tribes-of-chad-sara-initiation/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kumakonda.com."
+      },
+      {
+        "title": "SIL Ethnologue — Ngambay (sba)",
+        "url": "https://www.ethnologue.com/language/sba/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Ngambay",
+        "url": "https://glottolog.org/resource/languoid/id/ngam1268",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "New York Times — Chad Tribal Rite Disrupting Nation, 13 octobre 1974",
+        "url": "https://www.nytimes.com/1974/10/13/archives/chad-tribal-rite-disrupting-nation-sole-party-is-renamed.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers nytimes.com; the tier awaits editorial review."
+      }
     ]
   }
 }

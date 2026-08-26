@@ -81,12 +81,42 @@
       ]
     },
     "sources": [
-      "UNESCO-MAB — Kafa Biosphere Reserve. https://www.unesco.org/en/mab/kafa",
-      "Kafa Biosphere Reserve official website. https://www.kafa-biosphere.com",
-      "Qiraat Africa — Kafficho People of Ethiopia. https://qiraatafrican.com/en/19029/kafficho-people-of-ethiopia/",
-      "Omniglot — Kafa language and alphabet. https://www.omniglot.com/writing/kafa.htm",
-      "PeopleGroups.org — Kafa of Ethiopia. https://peoplegroups.org/people_groups/pg011601/",
-      "Kafa Nature Tours — Kaffa: The Birthplace of Arabica. https://www.kafanaturetours.com/post/kaffa-the-birthplace-of-arabica"
+      {
+        "title": "UNESCO-MAB — Kafa Biosphere Reserve",
+        "url": "https://www.unesco.org/en/mab/kafa",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\"."
+      },
+      {
+        "title": "Kafa Biosphere Reserve official website",
+        "url": "https://www.kafa-biosphere.com",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers kafa-biosphere.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Qiraat Africa — Kafficho People of Ethiopia",
+        "url": "https://qiraatafrican.com/en/19029/kafficho-people-of-ethiopia/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "Omniglot — Kafa language and alphabet",
+        "url": "https://www.omniglot.com/writing/kafa.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "PeopleGroups.org — Kafa of Ethiopia",
+        "url": "https://peoplegroups.org/people_groups/pg011601/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Kafa Nature Tours — Kaffa: The Birthplace of Arabica",
+        "url": "https://www.kafanaturetours.com/post/kaffa-the-birthplace-of-arabica",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers kafanaturetours.com; the tier awaits editorial review."
+      }
     ]
   }
 }

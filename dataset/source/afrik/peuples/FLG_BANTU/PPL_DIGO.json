@@ -80,12 +80,42 @@
       ]
     },
     "sources": [
-      "Mijikenda, Digo in Kenya – Joshua Project (https://joshuaproject.net/people_groups/11557/KE)",
-      "Mijikenda, Digo in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/11557/tz)",
-      "Digo people – 101 Last Tribes (https://www.101lasttribes.com/tribes/digo.html)",
-      "Digo of Kenya and Tanzania – Pray Africa (https://prayafrica.org/project/digo-kenya-tanzania/)",
-      "The Digo people of Kenya and Tanzania – Qiraat Africa (https://qiraatafrican.com/en/17360/the-digo-people-of-kenya-and-tanzania/)",
-      "Islamization and ethnic primacy in Digo oral traditions – JSTOR (https://www.jstor.org/stable/42005282)"
+      {
+        "title": "Mijikenda, Digo in Kenya – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/11557/KE",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Mijikenda, Digo in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/11557/tz",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Digo people – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/digo.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Digo of Kenya and Tanzania – Pray Africa",
+        "url": "https://prayafrica.org/project/digo-kenya-tanzania/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for prayafrica.org."
+      },
+      {
+        "title": "The Digo people of Kenya and Tanzania – Qiraat Africa",
+        "url": "https://qiraatafrican.com/en/17360/the-digo-people-of-kenya-and-tanzania/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "Islamization and ethnic primacy in Digo oral traditions – JSTOR",
+        "url": "https://www.jstor.org/stable/42005282",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\"."
+      }
     ]
   }
 }

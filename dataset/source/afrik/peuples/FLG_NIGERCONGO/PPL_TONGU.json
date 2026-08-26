@@ -70,11 +70,36 @@
       ]
     },
     "sources": [
-      "Ewe Association of Georgia – History of the Ewes (https://ewaga.org/about-us/history-of-the-ewes/)",
-      "GhanaWeb – Volta Region: Tongu chiefs create a unitary traditional state, 2024 (https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Volta-Region-Tongu-chiefs-create-a-unitary-traditional-state-1947608)",
-      "Ghana Statistical Service – 2021 Population and Housing Census (https://census2021.statsghana.gov.gh/)",
-      "CityPopulation – North Tongu District (https://www.citypopulation.de/en/ghana/admin/volta/0412__north_tongu/)",
-      "Localizely – Ewe language code (https://localizely.com/language-code/ewe/)"
+      {
+        "title": "Ewe Association of Georgia – History of the Ewes",
+        "url": "https://ewaga.org/about-us/history-of-the-ewes/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ewaga.org; the tier awaits editorial review."
+      },
+      {
+        "title": "GhanaWeb – Volta Region: Tongu chiefs create a unitary traditional state, 2024",
+        "url": "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Volta-Region-Tongu-chiefs-create-a-unitary-traditional-state-1947608",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ghanaweb.com."
+      },
+      {
+        "title": "Ghana Statistical Service – 2021 Population and Housing Census",
+        "url": "https://census2021.statsghana.gov.gh/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for census2021.statsghana.gov.gh."
+      },
+      {
+        "title": "CityPopulation – North Tongu District",
+        "url": "https://www.citypopulation.de/en/ghana/admin/volta/0412__north_tongu/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+      },
+      {
+        "title": "Localizely – Ewe language code",
+        "url": "https://localizely.com/language-code/ewe/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for localizely.com."
+      }
     ]
   }
 }

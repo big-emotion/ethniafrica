@@ -71,11 +71,36 @@
       ]
     },
     "sources": [
-      "Nanumba in Ghana – Joshua Project (https://joshuaproject.net/people_groups/13950)",
-      "Nanumba North Municipal – City Population 2021 (https://www.citypopulation.de/en/ghana/admin/northern/0803__nanumba_north_municipal/)",
-      "Political Anthropology of History: The Case of Nanun, Northern Ghana – Sociostudies.org (https://www.sociostudies.org/journal/articles/250568/)",
-      "Ghana Statistical Service – Population and Housing Census 2021 (https://www.statsghana.gov.gh)",
-      "Immigration and Refugee Board of Canada – Primary language of the Nanumba, 1996 (https://www.ecoi.net/en/document/1209225.html)"
+      {
+        "title": "Nanumba in Ghana – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/13950",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Nanumba North Municipal – City Population 2021",
+        "url": "https://www.citypopulation.de/en/ghana/admin/northern/0803__nanumba_north_municipal/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+      },
+      {
+        "title": "Political Anthropology of History: The Case of Nanun, Northern Ghana – Sociostudies.org",
+        "url": "https://www.sociostudies.org/journal/articles/250568/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers sociostudies.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Ghana Statistical Service – Population and Housing Census 2021",
+        "url": "https://www.statsghana.gov.gh",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statsghana.gov.gh."
+      },
+      {
+        "title": "Immigration and Refugee Board of Canada – Primary language of the Nanumba, 1996",
+        "url": "https://www.ecoi.net/en/document/1209225.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ecoi.net."
+      }
     ]
   }
 }

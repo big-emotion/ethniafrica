@@ -92,12 +92,42 @@
       ]
     },
     "sources": [
-      "101 Last Tribes – Banyankole people (http://www.101lasttribes.com/tribes/banyankole.html)",
-      "Joshua Project – Banyankore in Uganda (https://joshuaproject.net/people_groups/12103/UG)",
-      "Encyclopedia.com – Banyankole (https://www.encyclopedia.com/places/africa/uganda-political-geography/banyankole)",
-      "Mulera, Muniini K. – Clans and totems of Banyankore, 2019 (https://blog.mulerasfireplace.com/engage/clans-and-totems-of-banyankore)",
-      "Achieve Global Safaris – The Banyankole in Uganda, 2025 (https://www.bwindinationalparkuganda.com/information-blog/the-banyankole-in-uganda/)",
-      "SIL Ethnologue – Runyankole language nyn (https://www.ethnologue.com/language/nyn/)"
+      {
+        "title": "101 Last Tribes – Banyankole people",
+        "url": "http://www.101lasttribes.com/tribes/banyankole.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project – Banyankore in Uganda",
+        "url": "https://joshuaproject.net/people_groups/12103/UG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Encyclopedia.com – Banyankole",
+        "url": "https://www.encyclopedia.com/places/africa/uganda-political-geography/banyankole",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for encyclopedia.com."
+      },
+      {
+        "title": "Mulera, Muniini K. – Clans and totems of Banyankore, 2019",
+        "url": "https://blog.mulerasfireplace.com/engage/clans-and-totems-of-banyankore",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers blog.mulerasfireplace.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Achieve Global Safaris – The Banyankole in Uganda, 2025",
+        "url": "https://www.bwindinationalparkuganda.com/information-blog/the-banyankole-in-uganda/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers bwindinationalparkuganda.com; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Runyankole language nyn",
+        "url": "https://www.ethnologue.com/language/nyn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

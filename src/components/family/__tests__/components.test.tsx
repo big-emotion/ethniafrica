@@ -74,7 +74,7 @@ const completeFamily: LanguageFamily = {
       totalSpeakers: 350000000,
       distributionByCountry: { COD: 90000000 },
     },
-    sources: ["Glottolog"],
+    sources: [{ title: "Glottolog", url: null, tier: "unverified" }],
   },
 };
 

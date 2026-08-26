@@ -100,13 +100,48 @@
       ]
     },
     "sources": [
-      "Britannica — Gurma. https://www.britannica.com/topic/Gurma",
-      "101lasttribes — Gurma people. https://www.101lasttribes.com/tribes/gurma.html",
-      "Joshua Project — Gourma in Burkina Faso. https://joshuaproject.net/people_groups/12004/UV",
-      "Richard Alan Swanson — Gourmantché Ethnoanthropology: A Theory of Human Being. 1985.",
-      "Salif Titamba Lankoande — Les Gourmantché. Presses Africaines du Burkina, Ouagadougou, 2006.",
-      "João Pedro Galhano Alves — Anthropologie et écosystèmes au Niger. Humains, lions et esprits de la forêt dans la culture gourmantché. Editions l'Harmattan, Paris, 2012.",
-      "Qiraat Africa — The Gurma people of West Africa. https://qiraatafrican.com/en/18718/the-gurma-people-of-west-africa/"
+      {
+        "title": "Britannica — Gurma",
+        "url": "https://www.britannica.com/topic/Gurma",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "101lasttribes — Gurma people",
+        "url": "https://www.101lasttribes.com/tribes/gurma.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project — Gourma in Burkina Faso",
+        "url": "https://joshuaproject.net/people_groups/12004/UV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Richard Alan Swanson — Gourmantché Ethnoanthropology: A Theory of Human Being. 1985",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Salif Titamba Lankoande — Les Gourmantché. Presses Africaines du Burkina, Ouagadougou, 2006",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "João Pedro Galhano Alves — Anthropologie et écosystèmes au Niger. Humains, lions et esprits de la forêt dans la culture gourmantché. Editions l'Harmattan, Paris, 2012",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Qiraat Africa — The Gurma people of West Africa",
+        "url": "https://qiraatafrican.com/en/18718/the-gurma-people-of-west-africa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      }
     ]
   }
 }

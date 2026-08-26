@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { createBrowserSupabaseClient } from "@/lib/supabase/auth-client";
+import type { SourceTier } from "@/types/sources";
 
 type SourceKind =
   | "intergovernmental"
@@ -31,7 +32,7 @@ interface ReferenceSource {
   author: string;
   year: number;
   source_kind: SourceKind;
-  evidence_tier: 1 | 2 | null;
+  tier: SourceTier;
   identifiers: Record<string, string>;
   publisher: string | null;
   url: string | null;
@@ -143,7 +144,8 @@ export function ReferenceLibraryFlow({
             .filter(Boolean),
           publication_year: Number(year),
           source_kind: sourceKind,
-          evidence_tier: null,
+          // A newly filed reference is unverified until a curator tiers it.
+          tier: "unverified",
           identifiers: identifier.trim()
             ? { reference: identifier.trim() }
             : {},

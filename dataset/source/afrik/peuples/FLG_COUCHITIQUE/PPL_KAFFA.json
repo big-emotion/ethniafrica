@@ -70,11 +70,36 @@
       ]
     },
     "sources": [
-      "Kafa – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/kafa1242)",
-      "Kafa in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/12408)",
-      "XLIII Coffee – Kaffa Coffee and the Journey from the Ethiopian Rainforest, 2025 (https://xliiicoffee.com/en/journal/kaffa-coffee-ethiopian-forest-journey/)",
-      "Bulatovich, A. (1900) – With the Armies of Menelik II, emperor of Ethiopia.",
-      "Pankhurst, R. – The Ethiopian Borderlands, 1997."
+      {
+        "title": "Kafa – Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/kafa1242",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Kafa in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/12408",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "XLIII Coffee – Kaffa Coffee and the Journey from the Ethiopian Rainforest, 2025",
+        "url": "https://xliiicoffee.com/en/journal/kaffa-coffee-ethiopian-forest-journey/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers xliiicoffee.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Bulatovich, A. (1900) – With the Armies of Menelik II, emperor of Ethiopia",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Pankhurst, R. – The Ethiopian Borderlands, 1997",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

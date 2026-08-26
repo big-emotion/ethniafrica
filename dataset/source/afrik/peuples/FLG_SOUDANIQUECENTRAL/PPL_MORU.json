@@ -89,13 +89,48 @@
       ]
     },
     "sources": [
-      "Ethnologue (SIL International) — Moru (mgd). https://www.scriptureearth.org/maps/SS/mgd.htm",
-      "Glottolog — Moru (moru1253). https://glottolog.org/resource/languoid/id/moru1253",
-      "African Mission — Farewell rituals of the Moru. https://africanmission.org/blog/farewell-rituals-of-the-moru/",
-      "Fraser, Kenneth Grant (1926). 'Witchcraft and Healing in the Moru Tribe.' Church Missionary Society.",
-      "Evans-Pritchard, Edward Evan (1938). 'A note on rain makers of the Moro clan.' African Studies.",
-      "101LastTribes.com — Moru people. https://www.101lasttribes.com/tribes/moru.html",
-      "CIA World Factbook — South Sudan."
+      {
+        "title": "Ethnologue (SIL International) — Moru (mgd)",
+        "url": "https://www.scriptureearth.org/maps/SS/mgd.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scriptureearth.org."
+      },
+      {
+        "title": "Glottolog — Moru (moru1253)",
+        "url": "https://glottolog.org/resource/languoid/id/moru1253",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "African Mission — Farewell rituals of the Moru",
+        "url": "https://africanmission.org/blog/farewell-rituals-of-the-moru/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers africanmission.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Fraser, Kenneth Grant (1926). 'Witchcraft and Healing in the Moru Tribe.' Church Missionary Society",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Evans-Pritchard, Edward Evan (1938). 'A note on rain makers of the Moro clan.' African Studies",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "101LastTribes.com — Moru people",
+        "url": "https://www.101lasttribes.com/tribes/moru.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "CIA World Factbook — South Sudan",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

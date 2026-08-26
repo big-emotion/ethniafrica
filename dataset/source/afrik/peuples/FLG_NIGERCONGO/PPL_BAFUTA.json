@@ -84,13 +84,48 @@
       ]
     },
     "sources": [
-      "SIL Webonary — Bafut Dictionary Introduction. https://www.webonary.org/bafut/overview/introduction/",
-      "Joshua Project — Fut, Bafut in Cameroon. https://joshuaproject.net/people_groups/11781",
-      "Ethnologue — Bafut language (bfd). https://www.ethnologue.com/language/bfd/",
-      "Suh Hillary Sama — The Abin-fo'o and the Mandele Dances in the Bafut Kingdom. African Way, 2021. https://africanway.world/bwc/wp-content/uploads/2022/03/Sama_2021_The-Abin-foo-and-The-Mandele-Dances-in-the-Bafut-Kingdom.pdf",
-      "Qiraat Africa — The Bafut Chiefdom, Cameroon. https://qiraatafrican.com/en/19438/the-bafut-chiefdom-cameroon/",
-      "SCIRP — Power, Symbolism and Conflict in Bafut, Cameroon. https://www.scirp.org/journal/paperinformation?paperid=120176",
-      "DiCarlo & Neba — The So-Called Royal Register of Bafut within the Bafut Language. University of Buffalo. https://www.acsu.buffalo.edu/~pierpaol/RL_03_DiCarloNeba-RoyalBafut.pdf"
+      {
+        "title": "SIL Webonary — Bafut Dictionary Introduction",
+        "url": "https://www.webonary.org/bafut/overview/introduction/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for webonary.org."
+      },
+      {
+        "title": "Joshua Project — Fut, Bafut in Cameroon",
+        "url": "https://joshuaproject.net/people_groups/11781",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue — Bafut language (bfd)",
+        "url": "https://www.ethnologue.com/language/bfd/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Suh Hillary Sama — The Abin-fo'o and the Mandele Dances in the Bafut Kingdom. African Way, 2021",
+        "url": "https://africanway.world/bwc/wp-content/uploads/2022/03/Sama_2021_The-Abin-foo-and-The-Mandele-Dances-in-the-Bafut-Kingdom.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers africanway.world; the tier awaits editorial review."
+      },
+      {
+        "title": "Qiraat Africa — The Bafut Chiefdom, Cameroon",
+        "url": "https://qiraatafrican.com/en/19438/the-bafut-chiefdom-cameroon/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "SCIRP — Power, Symbolism and Conflict in Bafut, Cameroon",
+        "url": "https://www.scirp.org/journal/paperinformation?paperid=120176",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scirp.org."
+      },
+      {
+        "title": "DiCarlo & Neba — The So-Called Royal Register of Bafut within the Bafut Language. University of Buffalo",
+        "url": "https://www.acsu.buffalo.edu/~pierpaol/RL_03_DiCarloNeba-RoyalBafut.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers acsu.buffalo.edu; the tier awaits editorial review."
+      }
     ]
   }
 }

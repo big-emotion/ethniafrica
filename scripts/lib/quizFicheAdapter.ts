@@ -5,10 +5,9 @@
  * than a mocked client.
  *
  * Schema notes (post migration 015_module_zero_fabric_align.sql):
- *  - `sources.tier` is constrained to 'primary' | 'secondary' | 'tertiary' |
- *    'ai-enriched' (see the `sources_tier_check` constraint and
- *    `mapSourceTier` in the AFRIK JSON loaders); `sources.verified_at` marks
- *    a human-confirmed-reachable source.
+ *  - `sources.tier` is constrained to the three SourceTier values (see the
+ *    `sources_tier_check` constraint, migration 041); `sources.verified_at`
+ *    marks a human-confirmed-reachable source.
  *  - `assertions.source_ids` is a UUID[] (the legacy scalar `source_id` was
  *    dropped); `confidence_scores` is entity-scoped (one row per
  *    (entity_type, entity_id), not per assertion).
@@ -23,8 +22,8 @@ import type { AutonymExonymName, QuizPeopleFixture } from "@/types/quiz";
 import type {
   QuizAssertionSource,
   QuizEligibilityInput,
-  QuizSourceType,
 } from "@/lib/quiz/eligibility";
+import { toSourceTier } from "@/types/sources";
 import { TEMPLATE_FIELD_PATHS } from "@/lib/quiz/segmentPolicy";
 import type { AssertionBinding } from "./quizGeneration";
 
@@ -73,13 +72,6 @@ export interface SourceRow {
   id: string;
   tier: string | null;
   verified_at: string | null;
-}
-
-/** 'primary' -> primary, 'secondary' -> secondary; 'tertiary'/'ai-enriched'/unclassified land in the gate's reject bucket. */
-export function tierToSourceType(tier: string | null): QuizSourceType {
-  if (tier === "primary") return "primary";
-  if (tier === "secondary") return "secondary";
-  return "ai";
 }
 
 /**
@@ -197,7 +189,7 @@ export function buildAssertionBindings(
       .map((id) => sourceById.get(id))
       .filter((source): source is SourceRow => Boolean(source))
       .map((source) => ({
-        type: tierToSourceType(source.tier),
+        tier: toSourceTier(source.tier),
         resolvable: source.verified_at !== null,
       }));
 

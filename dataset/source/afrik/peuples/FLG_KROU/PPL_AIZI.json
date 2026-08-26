@@ -80,11 +80,36 @@
       ]
     },
     "sources": [
-      "Ethnologue – Aizi subgroup (https://www.ethnologue.com/subgroup/938/)",
-      "Ethnologue – Aizi Tiagbamrin (ahi) (https://www.ethnologue.com/language/ahi/)",
-      "Pete Eric – Aizi et Eotile : deux peuples lagunaires aux liens historiques anciens, Revue Akofena, janvier 2025 (https://www.revue-akofena.com/wp-content/uploads/2025/01/07-ActColl-Eric-PETE_077-088.pdf)",
-      "Azagni Blath Esther – Les betibe et la formation des villages aizi de langue lelou (XIIIe-debut XXe siecles), Ziglôbitha (https://www.ziglobitha.org/wp-content/uploads/2021/11/03-Blath-Esther-AZAGNI-pp31-52.pdf)",
-      "Joshua Project – Cote d'Ivoire people groups (https://joshuaproject.net/countries/iv)"
+      {
+        "title": "Ethnologue – Aizi subgroup",
+        "url": "https://www.ethnologue.com/subgroup/938/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Ethnologue – Aizi Tiagbamrin (ahi)",
+        "url": "https://www.ethnologue.com/language/ahi/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Pete Eric – Aizi et Eotile : deux peuples lagunaires aux liens historiques anciens, Revue Akofena, janvier 2025",
+        "url": "https://www.revue-akofena.com/wp-content/uploads/2025/01/07-ActColl-Eric-PETE_077-088.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for revue-akofena.com."
+      },
+      {
+        "title": "Azagni Blath Esther – Les betibe et la formation des villages aizi de langue lelou (XIIIe-debut XXe siecles), Ziglôbitha",
+        "url": "https://www.ziglobitha.org/wp-content/uploads/2021/11/03-Blath-Esther-AZAGNI-pp31-52.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ziglobitha.org."
+      },
+      {
+        "title": "Joshua Project – Cote d'Ivoire people groups",
+        "url": "https://joshuaproject.net/countries/iv",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

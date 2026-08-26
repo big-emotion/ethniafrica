@@ -71,9 +71,24 @@
       ]
     },
     "sources": [
-      "Manda Language (MGS) – Ethnologue, SIL International (https://www.ethnologue.com/language/mgs/)",
-      "Manda in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13482)",
-      "Tumbuka – Encyclopaedia Britannica, 1998 (https://www.britannica.com/topic/Tumbuka)"
+      {
+        "title": "Manda Language (MGS) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/mgs/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Manda in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/13482",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Tumbuka – Encyclopaedia Britannica, 1998",
+        "url": "https://www.britannica.com/topic/Tumbuka",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

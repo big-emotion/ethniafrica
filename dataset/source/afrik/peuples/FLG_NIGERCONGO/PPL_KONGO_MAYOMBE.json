@@ -95,12 +95,42 @@
       ]
     },
     "sources": [
-      "African Art Museum (zyama.com) — Yombe People. http://www.zyama.com/Iowa/Peoples/Yombe%20People.htm",
-      "SIL Ethnologue — Kiyombe (yom). https://www.ethnologue.com/language/yom/",
-      "Joshua Project — Kiyombe language resources. https://joshuaproject.net/countries/cf",
-      "Minority Rights Group International — Republic of Congo. https://minorityrights.org/country/republic-of-congo/",
-      "Berggorilla & Regenwald Direkthilfe — Mayombe forest. https://www.berggorilla.org/en/gorillas/protected-areas-for-gorillas/protected-areas-for-gorillas/the-struggle-for-survival-in-the-maiombe-forest-continues/",
-      "VCU Scholars Compass — Transformation of Kongo Minkisi (Palo Mayombe). https://scholarscompass.vcu.edu/cgi/viewcontent.cgi?article=1077&context=etd"
+      {
+        "title": "African Art Museum (zyama.com) — Yombe People",
+        "url": "http://www.zyama.com/Iowa/Peoples/Yombe%20People.htm",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers zyama.com; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue — Kiyombe (yom)",
+        "url": "https://www.ethnologue.com/language/yom/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Kiyombe language resources",
+        "url": "https://joshuaproject.net/countries/cf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Minority Rights Group International — Republic of Congo",
+        "url": "https://minorityrights.org/country/republic-of-congo/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Berggorilla & Regenwald Direkthilfe — Mayombe forest",
+        "url": "https://www.berggorilla.org/en/gorillas/protected-areas-for-gorillas/protected-areas-for-gorillas/the-struggle-for-survival-in-the-maiombe-forest-continues/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers berggorilla.org; the tier awaits editorial review."
+      },
+      {
+        "title": "VCU Scholars Compass — Transformation of Kongo Minkisi (Palo Mayombe)",
+        "url": "https://scholarscompass.vcu.edu/cgi/viewcontent.cgi?article=1077&context=etd",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for scholarscompass.vcu.edu."
+      }
     ]
   }
 }

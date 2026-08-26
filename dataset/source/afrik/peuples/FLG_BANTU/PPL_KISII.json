@@ -84,12 +84,42 @@
       ]
     },
     "sources": [
-      "Gusii – Encyclopaedia Britannica (https://www.britannica.com/topic/Gusii)",
-      "Ekegusii – Minority and Minoritized Languages and Cultures, Texas State University Press, 2023 (https://pressbooks.txst.edu/minoritylanguages/part/ekegusii/)",
-      "Gusii history – Traditional Music and Cultures of Kenya, Jens Finke, 2003 (https://www.bluegecko.org/kenya/tribes/gusii/history.htm)",
-      "Gusii in Kenya – Joshua Project (https://joshuaproject.net/people_groups/12721)",
-      "Gusii – eHRAF World Cultures, Yale University (https://ehrafworldcultures.yale.edu/cultures/fl08/summary)",
-      "Information on the Kisii tribe – Immigration and Refugee Board of Canada, 2005 (https://www.ecoi.net/en/document/1060343.html)"
+      {
+        "title": "Gusii – Encyclopaedia Britannica",
+        "url": "https://www.britannica.com/topic/Gusii",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Ekegusii – Minority and Minoritized Languages and Cultures, Texas State University Press, 2023",
+        "url": "https://pressbooks.txst.edu/minoritylanguages/part/ekegusii/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers pressbooks.txst.edu; the tier awaits editorial review."
+      },
+      {
+        "title": "Gusii history – Traditional Music and Cultures of Kenya, Jens Finke, 2003",
+        "url": "https://www.bluegecko.org/kenya/tribes/gusii/history.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for bluegecko.org."
+      },
+      {
+        "title": "Gusii in Kenya – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/12721",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Gusii – eHRAF World Cultures, Yale University",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fl08/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "Information on the Kisii tribe – Immigration and Refugee Board of Canada, 2005",
+        "url": "https://www.ecoi.net/en/document/1060343.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ecoi.net."
+      }
     ]
   }
 }

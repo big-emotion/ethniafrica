@@ -130,7 +130,13 @@ const NIGERIA_ROW = {
     demographics: {
       peoples: [{ name: "Yoruba", population: 38_000_000 }],
     },
-    sources: ["CIA World Factbook, 2025"],
+    sources: [
+      {
+        title: "CIA World Factbook, 2025",
+        url: null,
+        tier: "unverified" as const,
+      },
+    ],
   },
 };
 

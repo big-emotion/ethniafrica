@@ -72,11 +72,36 @@
       ]
     },
     "sources": [
-      "Joshua Project – Alagwa in Tanzania (https://joshuaproject.net/people_groups/10242)",
-      "Mous M., Alagwa : a South Cushitic language of Tanzania, 2016, Rüdiger Köppe Verlag (https://www.koeppe.de/titel_alagwa-a-south-cushitic-language-of-tanzania)",
-      "Gibson H. & Mous M., Exploring contact in Rangi- and Alagwa-speaking communities, 2024, LHEAF (https://lheaf.org/wp-content/uploads/2024/04/gibsonmous_exploring-contact-in-rangi-and-alagwa_lheaf.pdf)",
-      "Ethnologue – Alagwa [wbj] (https://www.ethnologue.com/language/wbj/)",
-      "TanzaniaScripture.com – Alagwa History, Culture & Religion (https://tanzaniascripture.com/languages/alagwa/alagwa-history-culture-religion/)"
+      {
+        "title": "Joshua Project – Alagwa in Tanzania",
+        "url": "https://joshuaproject.net/people_groups/10242",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Mous M., Alagwa : a South Cushitic language of Tanzania, 2016, Rüdiger Köppe Verlag",
+        "url": "https://www.koeppe.de/titel_alagwa-a-south-cushitic-language-of-tanzania",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for koeppe.de."
+      },
+      {
+        "title": "Gibson H. & Mous M., Exploring contact in Rangi- and Alagwa-speaking communities, 2024, LHEAF",
+        "url": "https://lheaf.org/wp-content/uploads/2024/04/gibsonmous_exploring-contact-in-rangi-and-alagwa_lheaf.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for lheaf.org."
+      },
+      {
+        "title": "Ethnologue – Alagwa [wbj]",
+        "url": "https://www.ethnologue.com/language/wbj/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "TanzaniaScripture.com – Alagwa History, Culture & Religion",
+        "url": "https://tanzaniascripture.com/languages/alagwa/alagwa-history-culture-religion/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for tanzaniascripture.com."
+      }
     ]
   }
 }

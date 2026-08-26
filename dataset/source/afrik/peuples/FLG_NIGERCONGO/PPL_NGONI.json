@@ -110,13 +110,48 @@
       ]
     },
     "sources": [
-      "Uvelaphi Africa — Ngoni People. https://uvelaphi.africa/cultures/ngoni.html",
-      "Britannica — Mfecane. https://www.britannica.com/event/Mfecane",
-      "South African History Online — Mfecane. https://sahistory.org.za/article/mfecane-understanding-period-transformation-southern-africa",
-      "Nation Online Malawi — Understanding Maseko and Jere Ngoni. https://mwnation.com/understanding-maseko-jere-ngoni/",
-      "YouTube — Ingoma, Ngoni Dance with Brian Nyirenda. https://www.youtube.com/watch?v=aHPMWp8wE6w",
-      "JSTOR — My Ngoni of Malawi (Jele and Maseko Ngoni). https://www.jstor.org/stable/27328061",
-      "Ethnologue (SIL) — Ngoni [ngo]. https://www.ethnologue.com/language/ngo"
+      {
+        "title": "Uvelaphi Africa — Ngoni People",
+        "url": "https://uvelaphi.africa/cultures/ngoni.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for uvelaphi.africa."
+      },
+      {
+        "title": "Britannica — Mfecane",
+        "url": "https://www.britannica.com/event/Mfecane",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "South African History Online — Mfecane",
+        "url": "https://sahistory.org.za/article/mfecane-understanding-period-transformation-southern-africa",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "Nation Online Malawi — Understanding Maseko and Jere Ngoni",
+        "url": "https://mwnation.com/understanding-maseko-jere-ngoni/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for mwnation.com."
+      },
+      {
+        "title": "YouTube — Ingoma, Ngoni Dance with Brian Nyirenda",
+        "url": "https://www.youtube.com/watch?v=aHPMWp8wE6w",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for youtube.com."
+      },
+      {
+        "title": "JSTOR — My Ngoni of Malawi (Jele and Maseko Ngoni)",
+        "url": "https://www.jstor.org/stable/27328061",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\"."
+      },
+      {
+        "title": "Ethnologue (SIL) — Ngoni [ngo]",
+        "url": "https://www.ethnologue.com/language/ngo",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

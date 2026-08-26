@@ -88,11 +88,36 @@
       ]
     },
     "sources": [
-      "Kenya National Bureau of Statistics – Kenya Population and Housing Census 2019: https://www.knbs.or.ke/",
-      "Ethnologue – Kiembu (ebu): https://www.ethnologue.com/language/ebu/",
-      "CityPopulation – Embu County: https://www.citypopulation.de/en/kenya/sub/admin/14__embu/",
-      "StatsKenya – Tribe and Ethnicity in Kenya: https://statskenya.co.ke/at-stats-kenya/about/tribe-and-ethnicity-in-kenya-number-of-people-by-tribe/93/",
-      "Blue Gecko – Embu and Mbeere introduction, Traditional Music and Cultures of Kenya: http://www.bluegecko.org/kenya/tribes/embu/index.htm"
+      {
+        "title": "Kenya National Bureau of Statistics – Kenya Population and Housing Census 2019",
+        "url": "https://www.knbs.or.ke/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for knbs.or.ke."
+      },
+      {
+        "title": "Ethnologue – Kiembu (ebu)",
+        "url": "https://www.ethnologue.com/language/ebu/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CityPopulation – Embu County",
+        "url": "https://www.citypopulation.de/en/kenya/sub/admin/14__embu/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for citypopulation.de."
+      },
+      {
+        "title": "StatsKenya – Tribe and Ethnicity in Kenya",
+        "url": "https://statskenya.co.ke/at-stats-kenya/about/tribe-and-ethnicity-in-kenya-number-of-people-by-tribe/93/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for statskenya.co.ke."
+      },
+      {
+        "title": "Blue Gecko – Embu and Mbeere introduction, Traditional Music and Cultures of Kenya",
+        "url": "http://www.bluegecko.org/kenya/tribes/embu/index.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for bluegecko.org."
+      }
     ]
   }
 }

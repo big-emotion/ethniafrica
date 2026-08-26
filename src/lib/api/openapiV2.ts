@@ -5,14 +5,20 @@ const options: swaggerJsdoc.Options = {
     openapi: "3.1.0",
     info: {
       title: "Ethniafrique Atlas API v2 - AFRIK",
-      version: "2.0.0",
+      version: "2.1.0",
       description:
         "API publique v2 basée sur la méthodologie AFRIK. Identifiants stables (FLG_*, PPL_*, codes ISO 3166-1 alpha-3) et format de réponse standardisé avec pagination. Cette API fournit un accès structuré aux données ethnographiques et linguistiques de l'Afrique.\n\n" +
         "## Response envelope shapes\n\n" +
         "Two envelope shapes coexist on `/api/v2/*` during the Module #0 rollout:\n\n" +
         "- **Module #0 endpoints** (`/sources`, `/sources/{id}`, `/doctrine`, `/confidence/{entityType}/{entityId}`, and future `/assertions`) return the new envelope: `{ data, meta: { license, attribution, pagination?, confidence?, pinned_url? }, errors: [] }`. License and attribution are always present (AR8); `errors[]` is `[]` on success and populated on non-2xx responses.\n" +
         "- **Legacy v2 endpoints** (`/peoples`, `/countries`, `/language-families`, `/search`) still use the older shape: `{ data, meta: { total, page, perPage, totalPages } }` for list responses and `{ data }` for item responses. They do not surface `license`, `attribution`, or an `errors` array.\n\n" +
-        "Both shapes are stable for the lifetime of v2. Convergence onto the Module #0 envelope across all endpoints is tracked as a separate follow-up ticket; until then, treat the envelope shape as endpoint-scoped.",
+        "Both shapes are stable for the lifetime of v2. Convergence onto the Module #0 envelope across all endpoints is tracked as a separate follow-up ticket; until then, treat the envelope shape as endpoint-scoped.\n\n" +
+        "## 2.1.0 — one source-tier vocabulary (breaking)\n\n" +
+        'Source authority is now one three-value scale — `official` | `referenced` | `unverified` — spoken identically by the database, the payloads and the UI. Provenance stays on the separate `source_kind` axis, so AI-generated text is `tier: "unverified"` + `source_kind: "ai_generated"` rather than a tier of its own.\n\n' +
+        "Removed, all superseded by `tier`:\n\n" +
+        "- the numeric evidence-tier property on `Source`, `ReferenceSource` and `ReferenceCreateInput` (a `1 | 2 | null` scale that could not express an unverified source);\n" +
+        "- the legacy `Source.type` enum, which read a column dropped in migration 015 and was therefore always `null`;\n" +
+        "- the two catalogue gating properties on `Source.policy`, which decided whether a citation could be published at all. Under the source doctrine no citation is refused, so `Source.policy.tier` carries the signal instead.",
       contact: {
         name: "Ethniafrique Atlas",
         url: "https://github.com/big-emotion/ethniafrica",
@@ -904,21 +910,17 @@ const options: swaggerJsdoc.Options = {
                 null,
               ],
             },
-            evidenceTier: {
-              type: ["integer", "null"],
-              enum: [1, 2, null],
+            tier: {
+              type: ["string", "null"],
+              enum: ["official", "referenced", "unverified", null],
               description:
-                "Authorized evidence tier. Null entries require review.",
+                "Authority the source carries. Null means the citation has not been tiered yet.",
             },
             identifiers: {
               type: ["object", "null"],
               additionalProperties: { type: "string" },
               description:
                 "Bibliographic or archival identifiers such as ISBN, DOI, catalogue, or call number.",
-            },
-            type: {
-              type: ["string", "null"],
-              enum: ["primary", "secondary", "tertiary", "ai", null],
             },
             title: { type: "string" },
             url: { type: ["string", "null"] },
@@ -935,18 +937,13 @@ const options: swaggerJsdoc.Options = {
               type: "object",
               properties: {
                 key: { type: "string" },
-                admission: { type: "string" },
-                evidenceTier: { type: ["integer", "null"], enum: [1, 2, null] },
+                tier: {
+                  type: "string",
+                  enum: ["official", "referenced", "unverified"],
+                },
                 sourceKind: { type: "string" },
-                publishable: { type: "boolean" },
               },
-              required: [
-                "key",
-                "admission",
-                "evidenceTier",
-                "sourceKind",
-                "publishable",
-              ],
+              required: ["key", "tier", "sourceKind"],
             },
           },
           required: ["id", "title", "policy"],
@@ -1002,7 +999,10 @@ const options: swaggerJsdoc.Options = {
                 "archive",
               ],
             },
-            evidence_tier: { type: ["integer", "null"], enum: [1, 2, null] },
+            tier: {
+              type: "string",
+              enum: ["official", "referenced", "unverified"],
+            },
             identifiers: {
               type: "object",
               additionalProperties: { type: "string" },
@@ -1017,7 +1017,7 @@ const options: swaggerJsdoc.Options = {
             "author",
             "year",
             "source_kind",
-            "evidence_tier",
+            "tier",
             "identifiers",
             "publisher",
             "url",
@@ -1040,7 +1040,10 @@ const options: swaggerJsdoc.Options = {
               maximum: 9999,
             },
             source_kind: { $ref: "#/components/schemas/ReferenceSourceKind" },
-            evidence_tier: { type: ["integer", "null"], enum: [1, 2, null] },
+            tier: {
+              type: "string",
+              enum: ["official", "referenced", "unverified"],
+            },
             identifiers: {
               type: "object",
               additionalProperties: { type: "string", maxLength: 300 },
@@ -1055,7 +1058,7 @@ const options: swaggerJsdoc.Options = {
             "authors",
             "publication_year",
             "source_kind",
-            "evidence_tier",
+            "tier",
           ],
         },
         ReferenceSourceKind: {
@@ -1503,7 +1506,10 @@ const options: swaggerJsdoc.Options = {
             id: { type: "string" },
             title: { type: "string" },
             url: { type: ["string", "null"] },
-            tier: { type: ["string", "null"] },
+            tier: {
+              type: ["string", "null"],
+              enum: ["official", "referenced", "unverified", null],
+            },
           },
           required: ["id", "title", "url", "tier"],
         },
@@ -1619,7 +1625,10 @@ const options: swaggerJsdoc.Options = {
             id: { type: "string" },
             title: { type: "string" },
             url: { type: ["string", "null"] },
-            tier: { type: ["string", "null"] },
+            tier: {
+              type: ["string", "null"],
+              enum: ["official", "referenced", "unverified", null],
+            },
           },
           required: ["id", "title", "url", "tier"],
         },
@@ -1738,7 +1747,10 @@ const options: swaggerJsdoc.Options = {
             title: { type: "string" },
             url: { type: ["string", "null"] },
             year: { type: ["integer", "null"] },
-            tier: { type: ["string", "null"] },
+            tier: {
+              type: ["string", "null"],
+              enum: ["official", "referenced", "unverified", null],
+            },
           },
           required: ["id", "title", "url", "year", "tier"],
         },
@@ -2560,11 +2572,14 @@ const options: swaggerJsdoc.Options = {
         QuizSourceRef: {
           type: "object",
           description:
-            "The single highest-tier resolvable source backing the question's assertion (Tier 1/2, FR65 gate).",
+            "The single highest-tier resolvable source backing the question's assertion (official or referenced, FR65 gate).",
           properties: {
             title: { type: "string" },
             year: { type: ["integer", "null"] },
-            tier: { type: ["string", "null"] },
+            tier: {
+              type: ["string", "null"],
+              enum: ["official", "referenced", "unverified", null],
+            },
             url: { type: ["string", "null"] },
           },
           required: ["title", "year", "tier", "url"],

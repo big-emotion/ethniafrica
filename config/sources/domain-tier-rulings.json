@@ -1,0 +1,1814 @@
+{
+  "_meta": {
+    "purpose": "Domain-level tier rulings for the AFRIK corpus. The authorized-source-catalog covers the 38 domains an editor may cite deliberately; this file covers the 801 domains the corpus already cites, so the classification pass can resolve them without a per-citation decision.",
+    "doctrine": "See CLAUDE.md, Source Tier Policy. Nothing is forbidden; everything is labelled. official = 1.0, referenced = 0.7, unverified = 0.4.",
+    "precedence": "authorized-source-catalog.json wins where a domain appears in both. A domain absent from both resolves to needs_review, never to a silent guess.",
+    "borderline": "An entry marked borderline:true is a judgement call that an editor should confirm. It is applied, not deferred — but it is the shortlist to re-read first.",
+    "coverage": "353 domains, 3530 of the corpus's 3945 URL-bearing citations at the time of writing."
+  },
+  "rulings": [
+    {
+      "domain": "ethnologue.com",
+      "tier": "official",
+      "rationale": "SIL Ethnologue, named in the doctrine's official list."
+    },
+    {
+      "domain": "glottolog.org",
+      "tier": "official",
+      "rationale": "Glottolog, named in the doctrine's official list."
+    },
+    {
+      "domain": "cia.gov",
+      "tier": "official",
+      "rationale": "CIA World Factbook, named in the doctrine's official list."
+    },
+    {
+      "domain": "iwgia.org",
+      "tier": "official",
+      "rationale": "IWGIA, named in the doctrine's official list."
+    },
+    {
+      "domain": "unstats.un.org",
+      "tier": "official",
+      "rationale": "UN Statistics Division."
+    },
+    {
+      "domain": "population.un.org",
+      "tier": "official",
+      "rationale": "UN Population Division."
+    },
+    { "domain": "unfpa.org", "tier": "official", "rationale": "UNFPA." },
+    { "domain": "unesco.org", "tier": "official", "rationale": "UNESCO." },
+    { "domain": "en.unesco.org", "tier": "official", "rationale": "UNESCO." },
+    {
+      "domain": "hc.unesco.org",
+      "tier": "official",
+      "rationale": "UNESCO."
+    },
+    {
+      "domain": "ich.unesco.org",
+      "tier": "official",
+      "rationale": "UNESCO Intangible Cultural Heritage register."
+    },
+    {
+      "domain": "whc.unesco.org",
+      "tier": "official",
+      "rationale": "UNESCO World Heritage Centre."
+    },
+    {
+      "domain": "refworld.org",
+      "tier": "official",
+      "rationale": "UNHCR Refworld."
+    },
+    {
+      "domain": "data.worldbank.org",
+      "tier": "official",
+      "rationale": "World Bank open data."
+    },
+    {
+      "domain": "statssa.gov.za",
+      "tier": "official",
+      "rationale": "Statistics South Africa, national statistics institute."
+    },
+    {
+      "domain": "census.statssa.gov.za",
+      "tier": "official",
+      "rationale": "Statistics South Africa census."
+    },
+    {
+      "domain": "knbs.or.ke",
+      "tier": "official",
+      "rationale": "Kenya National Bureau of Statistics."
+    },
+    {
+      "domain": "ubos.org",
+      "tier": "official",
+      "rationale": "Uganda Bureau of Statistics."
+    },
+    {
+      "domain": "ess.gov.et",
+      "tier": "official",
+      "rationale": "Ethiopian Statistics Service."
+    },
+    {
+      "domain": "csa.gov.et",
+      "tier": "official",
+      "rationale": "Ethiopian Central Statistical Agency, predecessor of ESS."
+    },
+    {
+      "domain": "statsghana.gov.gh",
+      "tier": "official",
+      "rationale": "Ghana Statistical Service."
+    },
+    {
+      "domain": "census2021.statsghana.gov.gh",
+      "tier": "official",
+      "rationale": "Ghana Statistical Service 2021 census."
+    },
+    {
+      "domain": "ansd.sn",
+      "tier": "official",
+      "rationale": "Agence Nationale de la Statistique et de la Démographie, Senegal."
+    },
+    {
+      "domain": "ine.gov.mz",
+      "tier": "official",
+      "rationale": "Instituto Nacional de Estatística, Mozambique."
+    },
+    {
+      "domain": "statistics.gov.rw",
+      "tier": "official",
+      "rationale": "National Institute of Statistics of Rwanda."
+    },
+    {
+      "domain": "data.gouv.ci",
+      "tier": "official",
+      "rationale": "Côte d'Ivoire government open data."
+    },
+    {
+      "domain": "ircam.ma",
+      "tier": "official",
+      "rationale": "Institut Royal de la Culture Amazighe, Moroccan state institute."
+    },
+    {
+      "domain": "justice.gov",
+      "tier": "official",
+      "rationale": "US Department of Justice."
+    },
+    {
+      "domain": "2009-2017.state.gov",
+      "tier": "official",
+      "rationale": "US State Department archived record."
+    },
+    {
+      "domain": "ceds.ed.gov",
+      "tier": "official",
+      "rationale": "US Department of Education common data standards.",
+      "borderline": true
+    },
+    {
+      "domain": "library.au.int",
+      "tier": "official",
+      "rationale": "African Union library."
+    },
+    {
+      "domain": "reliefweb.int",
+      "tier": "official",
+      "rationale": "UN OCHA ReliefWeb."
+    },
+    {
+      "domain": "euaa.europa.eu",
+      "tier": "official",
+      "rationale": "European Union Agency for Asylum."
+    },
+    {
+      "domain": "hcp.ma",
+      "tier": "official",
+      "rationale": "Haut-Commissariat au Plan, Morocco's national statistics institute."
+    },
+    {
+      "domain": "nsa.org.na",
+      "tier": "official",
+      "rationale": "Namibia Statistics Agency."
+    },
+    {
+      "domain": "instat.mg",
+      "tier": "official",
+      "rationale": "Institut National de la Statistique, Madagascar."
+    },
+    {
+      "domain": "nbs.go.tz",
+      "tier": "official",
+      "rationale": "National Bureau of Statistics, Tanzania."
+    },
+    {
+      "domain": "zimstat.co.zw",
+      "tier": "official",
+      "rationale": "Zimbabwe National Statistics Agency."
+    },
+    {
+      "domain": "statsbots.org.bw",
+      "tier": "official",
+      "rationale": "Statistics Botswana."
+    },
+    {
+      "domain": "lisgis.gov.lr",
+      "tier": "official",
+      "rationale": "Liberia Institute of Statistics and Geo-Information Services."
+    },
+    {
+      "domain": "statistics.sl",
+      "tier": "official",
+      "rationale": "Statistics Sierra Leone."
+    },
+    {
+      "domain": "ine.gov.ao",
+      "tier": "official",
+      "rationale": "Instituto Nacional de Estatística, Angola."
+    },
+    {
+      "domain": "mofep.gov.gh",
+      "tier": "official",
+      "rationale": "Ghana Ministry of Finance."
+    },
+    {
+      "domain": "ghanaculture.gov.gh",
+      "tier": "official",
+      "rationale": "Ghana Ministry of Tourism, Arts and Culture."
+    },
+    {
+      "domain": "presidency.gov.ng",
+      "tier": "official",
+      "rationale": "Presidency of the Federal Republic of Nigeria."
+    },
+    {
+      "domain": "wes.gov.zm",
+      "tier": "official",
+      "rationale": "Government of Zambia ministry portal.",
+      "borderline": true
+    },
+    {
+      "domain": "sil-burkina.org",
+      "tier": "official",
+      "rationale": "SIL International national branch; SIL is named in the doctrine's official list.",
+      "borderline": true
+    },
+
+    {
+      "domain": "cambridge.org",
+      "tier": "referenced",
+      "rationale": "Cambridge University Press."
+    },
+    {
+      "domain": "academic.oup.com",
+      "tier": "referenced",
+      "rationale": "Oxford University Press journals."
+    },
+    {
+      "domain": "press.uchicago.edu",
+      "tier": "referenced",
+      "rationale": "University of Chicago Press."
+    },
+    {
+      "domain": "jstor.org",
+      "tier": "referenced",
+      "rationale": "Peer-reviewed journal archive."
+    },
+    {
+      "domain": "journals.openedition.org",
+      "tier": "referenced",
+      "rationale": "OpenEdition academic journals."
+    },
+    {
+      "domain": "nature.com",
+      "tier": "referenced",
+      "rationale": "Peer-reviewed journal."
+    },
+    {
+      "domain": "pmc.ncbi.nlm.nih.gov",
+      "tier": "referenced",
+      "rationale": "PubMed Central, peer-reviewed literature."
+    },
+    {
+      "domain": "scielo.org.za",
+      "tier": "referenced",
+      "rationale": "SciELO South Africa, peer-reviewed."
+    },
+    {
+      "domain": "jstage.jst.go.jp",
+      "tier": "referenced",
+      "rationale": "J-STAGE academic platform."
+    },
+    {
+      "domain": "lddjournal.org",
+      "tier": "referenced",
+      "rationale": "Language Documentation and Description, peer-reviewed."
+    },
+    {
+      "domain": "asq.africa.ufl.edu",
+      "tier": "referenced",
+      "rationale": "African Studies Quarterly, University of Florida."
+    },
+    {
+      "domain": "scholarexchange.furman.edu",
+      "tier": "referenced",
+      "rationale": "University institutional repository."
+    },
+    {
+      "domain": "scholarlypublications.universiteitleiden.nl",
+      "tier": "referenced",
+      "rationale": "Leiden University institutional repository."
+    },
+    {
+      "domain": "repository.ju.edu.et",
+      "tier": "referenced",
+      "rationale": "Jimma University institutional repository."
+    },
+    {
+      "domain": "fulcrum.org",
+      "tier": "referenced",
+      "rationale": "University press digital monographs."
+    },
+    {
+      "domain": "doi.org",
+      "tier": "referenced",
+      "rationale": "DOI resolver; the target is a registered publication."
+    },
+    {
+      "domain": "books.google.com",
+      "tier": "referenced",
+      "rationale": "Scanned published book."
+    },
+    {
+      "domain": "pdfproc.lib.msu.edu",
+      "tier": "referenced",
+      "rationale": "Michigan State University library."
+    },
+    {
+      "domain": "alma.matrix.msu.edu",
+      "tier": "referenced",
+      "rationale": "Michigan State University African studies resource."
+    },
+    {
+      "domain": "africabib.org",
+      "tier": "referenced",
+      "rationale": "African studies bibliography, curated academic index."
+    },
+    {
+      "domain": "llacan.cnrs.fr",
+      "tier": "referenced",
+      "rationale": "CNRS LLACAN, African languages research unit."
+    },
+    {
+      "domain": "africamuseum.be",
+      "tier": "referenced",
+      "rationale": "Royal Museum for Central Africa, research institution."
+    },
+    {
+      "domain": "metmuseum.org",
+      "tier": "referenced",
+      "rationale": "Metropolitan Museum of Art curatorial record."
+    },
+    { "domain": "si.edu", "tier": "referenced", "rationale": "Smithsonian." },
+    {
+      "domain": "folkways.si.edu",
+      "tier": "referenced",
+      "rationale": "Smithsonian Folkways, documented recordings."
+    },
+    {
+      "domain": "smarthistory.org",
+      "tier": "referenced",
+      "rationale": "Peer-reviewed art history publication."
+    },
+    {
+      "domain": "ushmm.org",
+      "tier": "referenced",
+      "rationale": "US Holocaust Memorial Museum research."
+    },
+    {
+      "domain": "ehrafworldcultures.yale.edu",
+      "tier": "referenced",
+      "rationale": "Yale HRAF, indexed ethnographic corpus."
+    },
+    {
+      "domain": "dice.missouri.edu",
+      "tier": "referenced",
+      "rationale": "Academic database of indigenous cultural evolution."
+    },
+    {
+      "domain": "wals.info",
+      "tier": "official",
+      "rationale": "World Atlas of Language Structures. Aligned with the authorized-source-catalog entry \"wals\", which wins by precedence anyway: WALS is published by the same institution as Glottolog, which the doctrine names official."
+    },
+    {
+      "domain": "asjp.clld.org",
+      "tier": "referenced",
+      "rationale": "Automated Similarity Judgment Program. Same CLLD publisher as Glottolog and WALS, both of which we tier official — an editor should decide whether the whole CLLD family is official or only the two the doctrine and catalogue name.",
+      "borderline": true
+    },
+    {
+      "domain": "apics-online.info",
+      "tier": "referenced",
+      "rationale": "Atlas of Pidgin and Creole Language Structures. Same CLLD publisher question as asjp.clld.org.",
+      "borderline": true
+    },
+    {
+      "domain": "scriptsource.org",
+      "tier": "referenced",
+      "rationale": "SIL writing systems reference."
+    },
+    {
+      "domain": "webonary.org",
+      "tier": "referenced",
+      "rationale": "SIL-hosted community dictionaries with identified compilers."
+    },
+    {
+      "domain": "globalrecordings.net",
+      "tier": "referenced",
+      "rationale": "Documented language recording archive with catalogue identifiers.",
+      "borderline": true
+    },
+    {
+      "domain": "sorosoro.org",
+      "tier": "referenced",
+      "rationale": "Endangered-language documentation programme."
+    },
+    {
+      "domain": "mandaras.info",
+      "tier": "referenced",
+      "rationale": "Mandara mountains research site with named academic authors."
+    },
+    {
+      "domain": "rosettapanglossia.longnow.org",
+      "tier": "referenced",
+      "rationale": "Rosetta Project language archive."
+    },
+    {
+      "domain": "minorityrights.org",
+      "tier": "referenced",
+      "rationale": "Minority Rights Group, published sourced reports."
+    },
+    {
+      "domain": "culturalsurvival.org",
+      "tier": "referenced",
+      "rationale": "Cultural Survival, published sourced reports."
+    },
+    {
+      "domain": "hrw.org",
+      "tier": "referenced",
+      "rationale": "Human Rights Watch, published sourced reports."
+    },
+    {
+      "domain": "ecoi.net",
+      "tier": "referenced",
+      "rationale": "European country-of-origin information, sourced compilation."
+    },
+    {
+      "domain": "thenewhumanitarian.org",
+      "tier": "referenced",
+      "rationale": "Reported journalism with editorial standards."
+    },
+    {
+      "domain": "bbc.com",
+      "tier": "referenced",
+      "rationale": "Press with editorial standards."
+    },
+    {
+      "domain": "sahistory.org.za",
+      "tier": "referenced",
+      "rationale": "South African History Online, sourced and attributed."
+    },
+    {
+      "domain": "countrystudies.us",
+      "tier": "referenced",
+      "rationale": "US Library of Congress Country Studies, republished."
+    },
+    {
+      "domain": "citypopulation.de",
+      "tier": "referenced",
+      "rationale": "Named compiler restating official census figures; the census itself is the official source.",
+      "borderline": true
+    },
+    {
+      "domain": "archive.org",
+      "tier": "referenced",
+      "rationale": "Archived copy of a published work; the work's own tier applies where identifiable.",
+      "borderline": true
+    },
+    {
+      "domain": "academia.edu",
+      "tier": "referenced",
+      "rationale": "Self-deposited academic papers, author-identified.",
+      "borderline": true
+    },
+    {
+      "domain": "researchgate.net",
+      "tier": "referenced",
+      "rationale": "Self-deposited academic papers, author-identified.",
+      "borderline": true
+    },
+    {
+      "domain": "ebsco.com",
+      "tier": "referenced",
+      "rationale": "Database front end for published works.",
+      "borderline": true
+    },
+    {
+      "domain": "rsisinternational.org",
+      "tier": "referenced",
+      "rationale": "Published journal, identifiable authors; editorial rigour is weak.",
+      "borderline": true
+    },
+    {
+      "domain": "scirp.org",
+      "tier": "referenced",
+      "rationale": "Published journal, identifiable authors; editorial rigour is weak.",
+      "borderline": true
+    },
+    {
+      "domain": "modernghana.com",
+      "tier": "referenced",
+      "rationale": "Ghanaian press; carries a large share of republished contributor content.",
+      "borderline": true
+    },
+    {
+      "domain": "ghanaweb.com",
+      "tier": "referenced",
+      "rationale": "Ghanaian press; carries a large share of republished contributor content.",
+      "borderline": true
+    },
+    {
+      "domain": "t2m.org",
+      "tier": "referenced",
+      "rationale": "International Association for the History of Transport, academic body."
+    },
+    {
+      "domain": "maktaba.org",
+      "tier": "referenced",
+      "rationale": "Digitised African library holdings."
+    },
+    {
+      "domain": "sciencedirect.com",
+      "tier": "referenced",
+      "rationale": "Elsevier journal platform."
+    },
+    {
+      "domain": "link.springer.com",
+      "tier": "referenced",
+      "rationale": "Springer journals and books."
+    },
+    {
+      "domain": "taylorfrancis.com",
+      "tier": "referenced",
+      "rationale": "Taylor & Francis."
+    },
+    {
+      "domain": "sk.sagepub.com",
+      "tier": "referenced",
+      "rationale": "SAGE Knowledge reference works."
+    },
+    {
+      "domain": "science.org",
+      "tier": "referenced",
+      "rationale": "AAAS Science, peer-reviewed."
+    },
+    {
+      "domain": "annualreviews.org",
+      "tier": "referenced",
+      "rationale": "Annual Reviews, peer-reviewed."
+    },
+    {
+      "domain": "biomedcentral.com",
+      "tier": "referenced",
+      "rationale": "BMC open-access peer-reviewed journals."
+    },
+    {
+      "domain": "scielo.br",
+      "tier": "referenced",
+      "rationale": "SciELO Brazil, peer-reviewed."
+    },
+    {
+      "domain": "glossa-journal.org",
+      "tier": "referenced",
+      "rationale": "Glossa, peer-reviewed general linguistics."
+    },
+    {
+      "domain": "haujournal.org",
+      "tier": "referenced",
+      "rationale": "HAU: Journal of Ethnographic Theory, peer-reviewed."
+    },
+    {
+      "domain": "folklore.ee",
+      "tier": "referenced",
+      "rationale": "Folklore: Electronic Journal of Folklore, peer-reviewed."
+    },
+    {
+      "domain": "journals.co.za",
+      "tier": "referenced",
+      "rationale": "Sabinet African Journals."
+    },
+    {
+      "domain": "dergipark.org.tr",
+      "tier": "referenced",
+      "rationale": "DergiPark, Turkish academic journal platform."
+    },
+    {
+      "domain": "revue-slc.org",
+      "tier": "referenced",
+      "rationale": "Revue Sciences du Langage et Communication, identified authors."
+    },
+    {
+      "domain": "revue-akofena.com",
+      "tier": "referenced",
+      "rationale": "Revue Akofena, Ivorian linguistics journal."
+    },
+    {
+      "domain": "ziglobitha.org",
+      "tier": "referenced",
+      "rationale": "Revue Ziglôbitha, West African academic journal."
+    },
+    {
+      "domain": "acaref.net",
+      "tier": "referenced",
+      "rationale": "ACAREF academic editions, identified authors."
+    },
+    {
+      "domain": "lingref.com",
+      "tier": "referenced",
+      "rationale": "Cascadilla Proceedings Project, conference proceedings."
+    },
+    {
+      "domain": "langsci-press.org",
+      "tier": "referenced",
+      "rationale": "Language Science Press, open-access academic publisher."
+    },
+    {
+      "domain": "books.openbookpublishers.com",
+      "tier": "referenced",
+      "rationale": "Open Book Publishers, peer-reviewed monographs."
+    },
+    {
+      "domain": "koeppe.de",
+      "tier": "referenced",
+      "rationale": "Rüdiger Köppe Verlag, africanist publisher."
+    },
+    {
+      "domain": "gutenberg-e.org",
+      "tier": "referenced",
+      "rationale": "Gutenberg-e, peer-reviewed Columbia University Press monographs."
+    },
+    {
+      "domain": "scholarlypublishingcollective.org",
+      "tier": "referenced",
+      "rationale": "University press journal collective."
+    },
+    {
+      "domain": "go.gale.com",
+      "tier": "referenced",
+      "rationale": "Gale database front end for published works.",
+      "borderline": true
+    },
+    {
+      "domain": "semanticscholar.org",
+      "tier": "referenced",
+      "rationale": "Academic index; the indexed paper's own tier applies where identifiable.",
+      "borderline": true
+    },
+    {
+      "domain": "eric.ed.gov",
+      "tier": "referenced",
+      "rationale": "ERIC index of published education research.",
+      "borderline": true
+    },
+    {
+      "domain": "biorxiv.org",
+      "tier": "referenced",
+      "rationale": "Preprint server: identified authors, no peer review yet.",
+      "borderline": true
+    },
+    {
+      "domain": "ssoar.info",
+      "tier": "referenced",
+      "rationale": "Social Science Open Access Repository."
+    },
+    {
+      "domain": "searchworks.stanford.edu",
+      "tier": "referenced",
+      "rationale": "Stanford Libraries catalogue record."
+    },
+    {
+      "domain": "academiccommons.columbia.edu",
+      "tier": "referenced",
+      "rationale": "Columbia University institutional repository."
+    },
+    {
+      "domain": "digitalcommons.usf.edu",
+      "tier": "referenced",
+      "rationale": "University of South Florida institutional repository."
+    },
+    {
+      "domain": "digitalcommons.unl.edu",
+      "tier": "referenced",
+      "rationale": "University of Nebraska–Lincoln institutional repository."
+    },
+    {
+      "domain": "digitalrepository.unm.edu",
+      "tier": "referenced",
+      "rationale": "University of New Mexico institutional repository."
+    },
+    {
+      "domain": "docs.lib.purdue.edu",
+      "tier": "referenced",
+      "rationale": "Purdue University institutional repository."
+    },
+    {
+      "domain": "scholarworks.iu.edu",
+      "tier": "referenced",
+      "rationale": "Indiana University institutional repository."
+    },
+    {
+      "domain": "scholarscompass.vcu.edu",
+      "tier": "referenced",
+      "rationale": "Virginia Commonwealth University institutional repository."
+    },
+    {
+      "domain": "shareok.org",
+      "tier": "referenced",
+      "rationale": "Oklahoma university institutional repository."
+    },
+    {
+      "domain": "open.library.ubc.ca",
+      "tier": "referenced",
+      "rationale": "University of British Columbia institutional repository."
+    },
+    {
+      "domain": "arcabc.ca",
+      "tier": "referenced",
+      "rationale": "BC post-secondary institutional repositories."
+    },
+    {
+      "domain": "researchonline.jcu.edu.au",
+      "tier": "referenced",
+      "rationale": "James Cook University institutional repository."
+    },
+    {
+      "domain": "research.ed.ac.uk",
+      "tier": "referenced",
+      "rationale": "University of Edinburgh research explorer."
+    },
+    {
+      "domain": "soas-repository.worktribe.com",
+      "tier": "referenced",
+      "rationale": "SOAS institutional repository."
+    },
+    {
+      "domain": "dspace.unza.zm",
+      "tier": "referenced",
+      "rationale": "University of Zambia institutional repository."
+    },
+    {
+      "domain": "repository.unam.edu.na",
+      "tier": "referenced",
+      "rationale": "University of Namibia institutional repository."
+    },
+    {
+      "domain": "afriprov.tangaza.ac.ke",
+      "tier": "referenced",
+      "rationale": "Tangaza University African proverbs and stories collection."
+    },
+    {
+      "domain": "horizon.documentation.ird.fr",
+      "tier": "referenced",
+      "rationale": "IRD open research archive."
+    },
+    {
+      "domain": "cocoon.huma-num.fr",
+      "tier": "referenced",
+      "rationale": "CoCoON / Huma-Num oral-corpus archive."
+    },
+    {
+      "domain": "lgidf.cnrs.fr",
+      "tier": "referenced",
+      "rationale": "CNRS language-description project."
+    },
+    {
+      "domain": "megatchad.cepam.cnrs.fr",
+      "tier": "referenced",
+      "rationale": "CNRS Mega-Chad research network."
+    },
+    {
+      "domain": "archive.mpi.nl",
+      "tier": "referenced",
+      "rationale": "Max Planck Institute language archive."
+    },
+    {
+      "domain": "dobes.mpi.nl",
+      "tier": "referenced",
+      "rationale": "DoBeS documentation of endangered languages, Max Planck Institute."
+    },
+    {
+      "domain": "endangeredlanguages.com",
+      "tier": "referenced",
+      "rationale": "Endangered Languages Project catalogue, academic consortium."
+    },
+    {
+      "domain": "elcat.colo.hawaii.edu",
+      "tier": "referenced",
+      "rationale": "Catalogue of Endangered Languages, University of Hawai'i."
+    },
+    {
+      "domain": "tsammalex.clld.org",
+      "tier": "referenced",
+      "rationale": "CLLD Tsammalex, academic lexical database."
+    },
+    {
+      "domain": "axl.cefan.ulaval.ca",
+      "tier": "referenced",
+      "rationale": "Université Laval, L'aménagement linguistique dans le monde."
+    },
+    {
+      "domain": "aflang.humanities.ucla.edu",
+      "tier": "referenced",
+      "rationale": "UCLA African language materials project."
+    },
+    {
+      "domain": "ethnomusicologyreview.ucla.edu",
+      "tier": "referenced",
+      "rationale": "Ethnomusicology Review, UCLA."
+    },
+    {
+      "domain": "humanities.uct.ac.za",
+      "tier": "referenced",
+      "rationale": "University of Cape Town humanities faculty."
+    },
+    {
+      "domain": "glocal.soas.ac.uk",
+      "tier": "referenced",
+      "rationale": "SOAS Global Studies conference proceedings."
+    },
+    {
+      "domain": "ascleiden.nl",
+      "tier": "referenced",
+      "rationale": "African Studies Centre Leiden."
+    },
+    {
+      "domain": "africanstudies.ugent.be",
+      "tier": "referenced",
+      "rationale": "Ghent University African studies."
+    },
+    {
+      "domain": "biblio.ugent.be",
+      "tier": "referenced",
+      "rationale": "Ghent University academic bibliography."
+    },
+    {
+      "domain": "afrika.univie.ac.at",
+      "tier": "referenced",
+      "rationale": "University of Vienna African studies department."
+    },
+    {
+      "domain": "nai.uu.se",
+      "tier": "referenced",
+      "rationale": "Nordic Africa Institute, Uppsala."
+    },
+    {
+      "domain": "carleton.ca",
+      "tier": "referenced",
+      "rationale": "Carleton University African studies."
+    },
+    {
+      "domain": "canil.ca",
+      "tier": "referenced",
+      "rationale": "Canada Institute of Linguistics, field-linguistics theses."
+    },
+    {
+      "domain": "ethnology.pitt.edu",
+      "tier": "referenced",
+      "rationale": "Ethnology, University of Pittsburgh."
+    },
+    {
+      "domain": "plu.edu",
+      "tier": "referenced",
+      "rationale": "Pacific Lutheran University African art collection."
+    },
+    {
+      "domain": "cultureandmind.sites.sheffield.ac.uk",
+      "tier": "referenced",
+      "rationale": "University of Sheffield research project fieldsites."
+    },
+    {
+      "domain": "sites.tufts.edu",
+      "tier": "referenced",
+      "rationale": "Tufts University hosted research project.",
+      "borderline": true
+    },
+    {
+      "domain": "wisc.pb.unizin.org",
+      "tier": "referenced",
+      "rationale": "University of Wisconsin open textbook.",
+      "borderline": true
+    },
+    {
+      "domain": "pasteur.fr",
+      "tier": "referenced",
+      "rationale": "Institut Pasteur research communications."
+    },
+    {
+      "domain": "cibio.up.pt",
+      "tier": "referenced",
+      "rationale": "CIBIO, University of Porto research centre."
+    },
+    {
+      "domain": "britishmuseum.org",
+      "tier": "referenced",
+      "rationale": "British Museum collection record."
+    },
+    {
+      "domain": "barbier-mueller.ch",
+      "tier": "referenced",
+      "rationale": "Musée Barbier-Mueller curatorial record."
+    },
+    {
+      "domain": "digitalcollections.amnh.org",
+      "tier": "referenced",
+      "rationale": "American Museum of Natural History collections."
+    },
+    {
+      "domain": "museeholocauste.ca",
+      "tier": "referenced",
+      "rationale": "Montreal Holocaust Museum research resources."
+    },
+    {
+      "domain": "humanrights.ca",
+      "tier": "referenced",
+      "rationale": "Canadian Museum for Human Rights."
+    },
+    {
+      "domain": "africanworldheritagesites.org",
+      "tier": "referenced",
+      "rationale": "African World Heritage Fund site records.",
+      "borderline": true
+    },
+    {
+      "domain": "ghdx.healthdata.org",
+      "tier": "referenced",
+      "rationale": "IHME catalogue indexing official statistical releases; cite the release itself where possible.",
+      "borderline": true
+    },
+    {
+      "domain": "survivalinternational.org",
+      "tier": "referenced",
+      "rationale": "Survival International, published sourced reports."
+    },
+    {
+      "domain": "forestpeoples.org",
+      "tier": "referenced",
+      "rationale": "Forest Peoples Programme, published sourced reports."
+    },
+    {
+      "domain": "citizenshiprightsafrica.org",
+      "tier": "referenced",
+      "rationale": "Citizenship Rights in Africa Initiative, sourced legal reports."
+    },
+    {
+      "domain": "riftvalley.net",
+      "tier": "referenced",
+      "rationale": "Rift Valley Institute, published field research."
+    },
+    {
+      "domain": "accord.org.za",
+      "tier": "referenced",
+      "rationale": "ACCORD, peer-reviewed conflict-resolution journal."
+    },
+    {
+      "domain": "migrationpolicy.org",
+      "tier": "referenced",
+      "rationale": "Migration Policy Institute, sourced analysis."
+    },
+    {
+      "domain": "brookings.edu",
+      "tier": "referenced",
+      "rationale": "Brookings Institution, sourced analysis."
+    },
+    {
+      "domain": "cfr.org",
+      "tier": "referenced",
+      "rationale": "Council on Foreign Relations, sourced analysis."
+    },
+    {
+      "domain": "bti-project.org",
+      "tier": "referenced",
+      "rationale": "Bertelsmann Transformation Index country reports."
+    },
+    {
+      "domain": "iied.org",
+      "tier": "referenced",
+      "rationale": "IIED, published sourced research."
+    },
+    {
+      "domain": "c-r.org",
+      "tier": "referenced",
+      "rationale": "Conciliation Resources, published sourced reports."
+    },
+    {
+      "domain": "icwa.org",
+      "tier": "referenced",
+      "rationale": "Institute of Current World Affairs, published fellow reports.",
+      "borderline": true
+    },
+    {
+      "domain": "clearglobal.org",
+      "tier": "referenced",
+      "rationale": "CLEAR Global language data, stated method."
+    },
+    {
+      "domain": "translatorswithoutborders.org",
+      "tier": "referenced",
+      "rationale": "Translators without Borders language data, same organisation as CLEAR Global."
+    },
+    {
+      "domain": "landinfo.no",
+      "tier": "referenced",
+      "rationale": "Norwegian country-of-origin information unit, sourced reports."
+    },
+    {
+      "domain": "sacredland.org",
+      "tier": "referenced",
+      "rationale": "Sacred Land Film Project, hosts published research PDFs.",
+      "borderline": true
+    },
+    {
+      "domain": "mursi.org",
+      "tier": "referenced",
+      "rationale": "Mursi Online, anthropological project with named academic authors."
+    },
+    {
+      "domain": "ideophone.org",
+      "tier": "referenced",
+      "rationale": "Research blog of an identified linguist, with citations.",
+      "borderline": true
+    },
+    {
+      "domain": "africanmusiclibrary.org",
+      "tier": "referenced",
+      "rationale": "Curated recording archive with catalogue metadata.",
+      "borderline": true
+    },
+    {
+      "domain": "blackpast.org",
+      "tier": "referenced",
+      "rationale": "BlackPast, signed entries with bibliographies.",
+      "borderline": true
+    },
+    {
+      "domain": "aljazeera.com",
+      "tier": "referenced",
+      "rationale": "Press with editorial standards."
+    },
+    {
+      "domain": "dw.com",
+      "tier": "referenced",
+      "rationale": "Deutsche Welle, press with editorial standards."
+    },
+    {
+      "domain": "reuters.com",
+      "tier": "referenced",
+      "rationale": "Press with editorial standards."
+    },
+    {
+      "domain": "elpais.com",
+      "tier": "referenced",
+      "rationale": "Press with editorial standards."
+    },
+    {
+      "domain": "theconversation.com",
+      "tier": "referenced",
+      "rationale": "Academic-authored journalism with declared affiliations."
+    },
+    {
+      "domain": "globalvoices.org",
+      "tier": "referenced",
+      "rationale": "Reported journalism with editorial standards."
+    },
+    {
+      "domain": "globalpressjournal.com",
+      "tier": "referenced",
+      "rationale": "Reported journalism with editorial standards."
+    },
+    {
+      "domain": "africasacountry.com",
+      "tier": "referenced",
+      "rationale": "Edited African affairs publication with named contributors."
+    },
+    {
+      "domain": "guardian.ng",
+      "tier": "referenced",
+      "rationale": "Nigerian press."
+    },
+    {
+      "domain": "namibian.com.na",
+      "tier": "referenced",
+      "rationale": "Namibian press."
+    },
+    {
+      "domain": "mwnation.com",
+      "tier": "referenced",
+      "rationale": "Malawian press."
+    },
+    {
+      "domain": "nation.sc",
+      "tier": "referenced",
+      "rationale": "Seychelles national newspaper."
+    },
+    {
+      "domain": "lefaso.net",
+      "tier": "referenced",
+      "rationale": "Burkinabè press."
+    },
+    {
+      "domain": "allafrica.com",
+      "tier": "referenced",
+      "rationale": "Syndication of African press; the originating title carries the authority.",
+      "borderline": true
+    },
+    {
+      "domain": "ethiopia-insight.com",
+      "tier": "referenced",
+      "rationale": "Ethiopian analytical press with named authors.",
+      "borderline": true
+    },
+    {
+      "domain": "blueprint.ng",
+      "tier": "referenced",
+      "rationale": "Nigerian press; editorial rigour is uneven.",
+      "borderline": true
+    },
+    {
+      "domain": "matebelelandpulse.co.zw",
+      "tier": "referenced",
+      "rationale": "Zimbabwean regional press; small newsroom, uneven sourcing.",
+      "borderline": true
+    },
+    {
+      "domain": "shabait.com",
+      "tier": "referenced",
+      "rationale": "Eritrean state news agency: published and attributed, but state-controlled.",
+      "borderline": true
+    },
+    {
+      "domain": "nationalgeographic.com",
+      "tier": "referenced",
+      "rationale": "Edited magazine journalism.",
+      "borderline": true
+    },
+    {
+      "domain": "ijrehc.com",
+      "tier": "referenced",
+      "rationale": "Published journal, identifiable authors; editorial rigour is weak.",
+      "borderline": true
+    },
+    {
+      "domain": "lheaf.org",
+      "tier": "referenced",
+      "rationale": "Hosts African linguistics papers with named academic authors.",
+      "borderline": true
+    },
+    {
+      "domain": "scriptureearth.org",
+      "tier": "referenced",
+      "rationale": "SIL-derived language index; the surrounding content is missionary.",
+      "borderline": true
+    },
+    {
+      "domain": "translation.bible",
+      "tier": "referenced",
+      "rationale": "United Bible Societies journal articles with named authors.",
+      "borderline": true
+    },
+    {
+      "domain": "christies.com",
+      "tier": "referenced",
+      "rationale": "Auction catalogue provenance record.",
+      "borderline": true
+    },
+
+    {
+      "domain": "joshuaproject.net",
+      "tier": "unverified",
+      "rationale": "Aggregator; restates figures without a traceable primary source. This is the ruling that supersedes joshua-project-doctrine.md."
+    },
+    {
+      "domain": "101lasttribes.com",
+      "tier": "unverified",
+      "rationale": "Aggregator with no source apparatus."
+    },
+    {
+      "domain": "peoplegroups.org",
+      "tier": "unverified",
+      "rationale": "Aggregator, same lineage as Joshua Project."
+    },
+    {
+      "domain": "prayafrica.org",
+      "tier": "unverified",
+      "rationale": "Mission aggregator."
+    },
+    {
+      "domain": "map.swordshare.com",
+      "tier": "unverified",
+      "rationale": "Mission aggregator."
+    },
+    {
+      "domain": "tanzaniascripture.com",
+      "tier": "unverified",
+      "rationale": "Mission aggregator."
+    },
+    {
+      "domain": "britannica.com",
+      "tier": "unverified",
+      "rationale": "Tertiary encyclopedia."
+    },
+    {
+      "domain": "encyclopedia.com",
+      "tier": "unverified",
+      "rationale": "Tertiary encyclopedia."
+    },
+    {
+      "domain": "en.wiktionary.org",
+      "tier": "unverified",
+      "rationale": "Openly edited tertiary reference."
+    },
+    {
+      "domain": "wikidata.org",
+      "tier": "unverified",
+      "rationale": "Openly edited tertiary reference."
+    },
+    {
+      "domain": "chalochatu.org",
+      "tier": "unverified",
+      "rationale": "Openly edited wiki."
+    },
+    {
+      "domain": "omniglot.com",
+      "tier": "unverified",
+      "rationale": "Personally maintained writing-systems compendium."
+    },
+    {
+      "domain": "worldatlas.com",
+      "tier": "unverified",
+      "rationale": "Content aggregator."
+    },
+    {
+      "domain": "worldometers.info",
+      "tier": "unverified",
+      "rationale": "Figure aggregator with no stated method."
+    },
+    {
+      "domain": "indexmundi.com",
+      "tier": "unverified",
+      "rationale": "Figure aggregator."
+    },
+    {
+      "domain": "worldpopulationreview.com",
+      "tier": "unverified",
+      "rationale": "Figure aggregator."
+    },
+    {
+      "domain": "datacommons.org",
+      "tier": "unverified",
+      "rationale": "Figure aggregator; cite the underlying statistics institute instead."
+    },
+    {
+      "domain": "study.com",
+      "tier": "unverified",
+      "rationale": "Commercial study-notes site."
+    },
+    {
+      "domain": "facebook.com",
+      "tier": "unverified",
+      "rationale": "Social media."
+    },
+    {
+      "domain": "youtube.com",
+      "tier": "unverified",
+      "rationale": "Social media."
+    },
+    {
+      "domain": "scribd.com",
+      "tier": "unverified",
+      "rationale": "User upload host; the underlying work is not identified by the link."
+    },
+    {
+      "domain": "kwekudee-tripdownmemorylane.blogspot.com",
+      "tier": "unverified",
+      "rationale": "Blog."
+    },
+    {
+      "domain": "traditionalzambia.home.blog",
+      "tier": "unverified",
+      "rationale": "Blog."
+    },
+    {
+      "domain": "africanhistoryextra.com",
+      "tier": "unverified",
+      "rationale": "Newsletter; cites its own sources, which should be cited directly instead.",
+      "borderline": true
+    },
+    {
+      "domain": "orvillejenkins.com",
+      "tier": "unverified",
+      "rationale": "Personal site."
+    },
+    {
+      "domain": "qiraatafrican.com",
+      "tier": "unverified",
+      "rationale": "Content site with no source apparatus."
+    },
+    {
+      "domain": "hornofafrica.org",
+      "tier": "unverified",
+      "rationale": "Advocacy site with no source apparatus."
+    },
+    {
+      "domain": "gateway-africa.com",
+      "tier": "unverified",
+      "rationale": "Content site with no source apparatus."
+    },
+    {
+      "domain": "thetribalsociety.com",
+      "tier": "unverified",
+      "rationale": "Content site with no source apparatus."
+    },
+    {
+      "domain": "kumakonda.com",
+      "tier": "unverified",
+      "rationale": "Travel content."
+    },
+    {
+      "domain": "explorelusaka.com",
+      "tier": "unverified",
+      "rationale": "Travel content."
+    },
+    {
+      "domain": "maputoessentialtours.com",
+      "tier": "unverified",
+      "rationale": "Travel content."
+    },
+    {
+      "domain": "saotomeexpert.pt",
+      "tier": "unverified",
+      "rationale": "Travel content."
+    },
+    {
+      "domain": "lastplaces.com",
+      "tier": "unverified",
+      "rationale": "Travel content."
+    },
+    {
+      "domain": "krugerpark.co.za",
+      "tier": "unverified",
+      "rationale": "Tourism operator content."
+    },
+    {
+      "domain": "lughayangu.com",
+      "tier": "unverified",
+      "rationale": "Crowd-contributed language platform."
+    },
+    {
+      "domain": "localizely.com",
+      "tier": "unverified",
+      "rationale": "Commercial localisation vendor blog."
+    },
+    {
+      "domain": "daytranslations.com",
+      "tier": "unverified",
+      "rationale": "Commercial translation vendor blog."
+    },
+    {
+      "domain": "aaregistry.org",
+      "tier": "unverified",
+      "rationale": "Educational nonprofit without a source apparatus.",
+      "borderline": true
+    },
+    {
+      "domain": "ebpulaaku.site",
+      "tier": "unverified",
+      "rationale": "Community site.",
+      "borderline": true
+    },
+    {
+      "domain": "blogspot.com",
+      "tier": "unverified",
+      "rationale": "Blog host."
+    },
+    {
+      "domain": "wordpress.com",
+      "tier": "unverified",
+      "rationale": "Blog host."
+    },
+    {
+      "domain": "substack.com",
+      "tier": "unverified",
+      "rationale": "Newsletter host; cite the sources the newsletter itself cites."
+    },
+    {
+      "domain": "medium.com",
+      "tier": "unverified",
+      "rationale": "Self-publishing platform."
+    },
+    {
+      "domain": "fandom.com",
+      "tier": "unverified",
+      "rationale": "Openly edited wiki host."
+    },
+    {
+      "domain": "sites.google.com",
+      "tier": "unverified",
+      "rationale": "Personal site host."
+    },
+    {
+      "domain": "notion.site",
+      "tier": "unverified",
+      "rationale": "Personal notes host."
+    },
+    {
+      "domain": "commons.wikimedia.org",
+      "tier": "unverified",
+      "rationale": "Openly edited media repository."
+    },
+    {
+      "domain": "justapedia.org",
+      "tier": "unverified",
+      "rationale": "Wikipedia fork, openly edited."
+    },
+    {
+      "domain": "kids.kiddle.co",
+      "tier": "unverified",
+      "rationale": "Wikipedia mirror rewritten for children."
+    },
+    {
+      "domain": "grokipedia.com",
+      "tier": "unverified",
+      "rationale": "Machine-generated encyclopedia; also carries source_kind ai_generated."
+    },
+    {
+      "domain": "worldhistory.org",
+      "tier": "unverified",
+      "rationale": "Tertiary encyclopedia."
+    },
+    {
+      "domain": "khanacademy.org",
+      "tier": "unverified",
+      "rationale": "Tertiary educational material."
+    },
+    {
+      "domain": "courses.lumenlearning.com",
+      "tier": "unverified",
+      "rationale": "Open courseware compilation with no source apparatus."
+    },
+    {
+      "domain": "studyguides.com",
+      "tier": "unverified",
+      "rationale": "Commercial study-notes site."
+    },
+    {
+      "domain": "github.com",
+      "tier": "unverified",
+      "rationale": "Code and document host; the underlying work is not identified by the link."
+    },
+    {
+      "domain": "calameo.com",
+      "tier": "unverified",
+      "rationale": "User upload host; the underlying work is not identified by the link."
+    },
+    {
+      "domain": "info.publicintelligence.net",
+      "tier": "unverified",
+      "rationale": "Leaked-document mirror with no source apparatus."
+    },
+    {
+      "domain": "reddit.com",
+      "tier": "unverified",
+      "rationale": "Social media."
+    },
+    {
+      "domain": "artsandculture.google.com",
+      "tier": "unverified",
+      "rationale": "Aggregator of partner exhibits; cite the holding institution instead.",
+      "borderline": true
+    },
+    {
+      "domain": "participedia.net",
+      "tier": "unverified",
+      "rationale": "Crowd-contributed platform."
+    },
+    {
+      "domain": "atlasocio.com",
+      "tier": "unverified",
+      "rationale": "Figure aggregator."
+    },
+    {
+      "domain": "populationpyramid.net",
+      "tier": "unverified",
+      "rationale": "Figure aggregator."
+    },
+    {
+      "domain": "globalpopulations.com",
+      "tier": "unverified",
+      "rationale": "Figure aggregator."
+    },
+    {
+      "domain": "city-facts.com",
+      "tier": "unverified",
+      "rationale": "Figure aggregator."
+    },
+    {
+      "domain": "statskenya.co.ke",
+      "tier": "unverified",
+      "rationale": "Private aggregator restating KNBS census figures; cite KNBS instead."
+    },
+    {
+      "domain": "tradingeconomics.com",
+      "tier": "unverified",
+      "rationale": "Figure aggregator."
+    },
+    {
+      "domain": "peoplesoftheworld.org",
+      "tier": "unverified",
+      "rationale": "Aggregator with no source apparatus."
+    },
+    {
+      "domain": "worldmap.org",
+      "tier": "unverified",
+      "rationale": "Mission mapping aggregator."
+    },
+    {
+      "domain": "imb.org",
+      "tier": "unverified",
+      "rationale": "Mission board people-group profiles."
+    },
+    {
+      "domain": "wycliffe.org",
+      "tier": "unverified",
+      "rationale": "Mission organisation profiles."
+    },
+    {
+      "domain": "partnersinbibletranslation.org",
+      "tier": "unverified",
+      "rationale": "Mission organisation survey report."
+    },
+    {
+      "domain": "combonimissionaries.ie",
+      "tier": "unverified",
+      "rationale": "Mission organisation content."
+    },
+    {
+      "domain": "malawiproject.org",
+      "tier": "unverified",
+      "rationale": "Charity outreach brochure."
+    },
+    {
+      "domain": "lcfn.info",
+      "tier": "unverified",
+      "rationale": "Mission-linked ethnology pages with no source apparatus."
+    },
+    {
+      "domain": "languagesgulper.com",
+      "tier": "unverified",
+      "rationale": "Personally maintained language compendium."
+    },
+    {
+      "domain": "bluegecko.org",
+      "tier": "unverified",
+      "rationale": "Personal site."
+    },
+    {
+      "domain": "michaelharrison.org.uk",
+      "tier": "unverified",
+      "rationale": "Personal site hosting a scanned work; cite the work itself.",
+      "borderline": true
+    },
+    {
+      "domain": "crystalcleartranslation.com",
+      "tier": "unverified",
+      "rationale": "Commercial translation vendor blog."
+    },
+    {
+      "domain": "mychinaroots.com",
+      "tier": "unverified",
+      "rationale": "Commercial genealogy service."
+    },
+    {
+      "domain": "africadirect.com",
+      "tier": "unverified",
+      "rationale": "Art dealer blog."
+    },
+    {
+      "domain": "kutubuarts.com",
+      "tier": "unverified",
+      "rationale": "Gallery blog."
+    },
+    {
+      "domain": "seedgallerynewyork.com",
+      "tier": "unverified",
+      "rationale": "Gallery glossary."
+    },
+    {
+      "domain": "artofthemotherland.com",
+      "tier": "unverified",
+      "rationale": "Content site with no source apparatus."
+    },
+    {
+      "domain": "blackwoodconservation.org",
+      "tier": "unverified",
+      "rationale": "NGO outreach content with no source apparatus."
+    },
+    {
+      "domain": "rightforeducation.org",
+      "tier": "unverified",
+      "rationale": "Volunteer-written outreach content."
+    },
+    {
+      "domain": "hartfordinfo.org",
+      "tier": "unverified",
+      "rationale": "Local information portal with no source apparatus."
+    },
+    {
+      "domain": "africafederation.net",
+      "tier": "unverified",
+      "rationale": "Advocacy site with no source apparatus."
+    },
+    {
+      "domain": "africansecuritynetwork.org",
+      "tier": "unverified",
+      "rationale": "Advocacy site with no source apparatus."
+    },
+    {
+      "domain": "advocacy4oromia.org",
+      "tier": "unverified",
+      "rationale": "Advocacy site."
+    },
+    {
+      "domain": "khoisan.org",
+      "tier": "unverified",
+      "rationale": "Advocacy and community site."
+    },
+    {
+      "domain": "ambacongo-us.org",
+      "tier": "unverified",
+      "rationale": "Embassy presentation page with no source apparatus.",
+      "borderline": true
+    },
+    {
+      "domain": "buganda.or.ug",
+      "tier": "unverified",
+      "rationale": "Kingdom's own institutional account: a community voice, published and tiered as such, not suppressed.",
+      "borderline": true
+    },
+    {
+      "domain": "thebubis.com",
+      "tier": "unverified",
+      "rationale": "Community site."
+    },
+    {
+      "domain": "djola.org",
+      "tier": "unverified",
+      "rationale": "Community site."
+    },
+    {
+      "domain": "sawaconna.org",
+      "tier": "unverified",
+      "rationale": "Community site."
+    },
+    {
+      "domain": "akanheritage.com.gh",
+      "tier": "unverified",
+      "rationale": "Community heritage site."
+    },
+    {
+      "domain": "tgsilundikaculturalcommunitycentre.org",
+      "tier": "unverified",
+      "rationale": "Community cultural centre site."
+    },
+    {
+      "domain": "sahoarchive.org",
+      "tier": "unverified",
+      "rationale": "Community archive with no source apparatus."
+    },
+    {
+      "domain": "ogfnamibia.org",
+      "tier": "unverified",
+      "rationale": "Community foundation site."
+    },
+    {
+      "domain": "uvelaphi.africa",
+      "tier": "unverified",
+      "rationale": "Community content site."
+    },
+    {
+      "domain": "beingafrican.org",
+      "tier": "unverified",
+      "rationale": "Content site with no source apparatus."
+    },
+    {
+      "domain": "africanlanders.com",
+      "tier": "unverified",
+      "rationale": "Travel content."
+    },
+    {
+      "domain": "kunzaar.com.ng",
+      "tier": "unverified",
+      "rationale": "Content site with no source apparatus."
+    },
+    {
+      "domain": "rezoivoire.net",
+      "tier": "unverified",
+      "rationale": "Content portal with no source apparatus."
+    },
+    {
+      "domain": "dhcs.co.zw",
+      "tier": "unverified",
+      "rationale": "Content site with no source apparatus."
+    },
+    {
+      "domain": "capoeirahistory.com",
+      "tier": "unverified",
+      "rationale": "Content site with no source apparatus."
+    },
+    {
+      "domain": "afrospiritualities.com",
+      "tier": "unverified",
+      "rationale": "Content site with no source apparatus."
+    },
+    {
+      "domain": "tribeguess.com",
+      "tier": "unverified",
+      "rationale": "Content site with no source apparatus."
+    },
+    {
+      "domain": "nkwazimagazine.com",
+      "tier": "unverified",
+      "rationale": "Lifestyle magazine content.",
+      "borderline": true
+    },
+    {
+      "domain": "kreolmagazine.com",
+      "tier": "unverified",
+      "rationale": "Lifestyle magazine content.",
+      "borderline": true
+    },
+    {
+      "domain": "tuko.co.ke",
+      "tier": "unverified",
+      "rationale": "High-volume clickbait publisher.",
+      "borderline": true
+    },
+    {
+      "domain": "southafrica-info.com",
+      "tier": "unverified",
+      "rationale": "Country-branding content site.",
+      "borderline": true
+    },
+    {
+      "domain": "southafrica.net",
+      "tier": "unverified",
+      "rationale": "National tourism board marketing."
+    },
+    {
+      "domain": "zimfieldguide.com",
+      "tier": "unverified",
+      "rationale": "Travel and heritage guide.",
+      "borderline": true
+    },
+    {
+      "domain": "kara-tunga.com",
+      "tier": "unverified",
+      "rationale": "Tour operator; its bibliography page should be cited through to the works themselves.",
+      "borderline": true
+    },
+    {
+      "domain": "kingsfari.com",
+      "tier": "unverified",
+      "rationale": "Tour operator content."
+    },
+    {
+      "domain": "hadzabetribe.com",
+      "tier": "unverified",
+      "rationale": "Tour operator content."
+    },
+    {
+      "domain": "beginnorthadventures.com",
+      "tier": "unverified",
+      "rationale": "Tour operator content."
+    },
+    {
+      "domain": "absoluteethiopia.com",
+      "tier": "unverified",
+      "rationale": "Tour operator content."
+    },
+    {
+      "domain": "localtourethiopia.com",
+      "tier": "unverified",
+      "rationale": "Tour operator content."
+    },
+    {
+      "domain": "kabirasafaris.com",
+      "tier": "unverified",
+      "rationale": "Tour operator content."
+    },
+    {
+      "domain": "trailblazertravelz.com",
+      "tier": "unverified",
+      "rationale": "Travel content."
+    },
+    {
+      "domain": "responsiblevacation.com",
+      "tier": "unverified",
+      "rationale": "Travel content."
+    },
+    {
+      "domain": "rumbomalabo.com",
+      "tier": "unverified",
+      "rationale": "Travel content."
+    }
+  ]
+}

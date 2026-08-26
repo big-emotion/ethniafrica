@@ -90,11 +90,36 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Yulu people. https://www.101lasttribes.com/tribes/yulu.html",
-      "Glottolog — Yulu-Binga (yulu1243). https://glottolog.org/glottolog?iso=yul",
-      "SIL Ethnologue — Yulu (yul). https://www.ethnologue.com/language/yul/",
-      "Joshua Project — Yulu in Central African Republic. https://joshuaproject.net/people_groups/16070/CT",
-      "PeopleGroups.org — Yulu of Sudan. https://peoplegroups.org/people_groups/pg012172/"
+      {
+        "title": "101 Last Tribes — Yulu people",
+        "url": "https://www.101lasttribes.com/tribes/yulu.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Glottolog — Yulu-Binga (yulu1243)",
+        "url": "https://glottolog.org/glottolog?iso=yul",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL Ethnologue — Yulu (yul)",
+        "url": "https://www.ethnologue.com/language/yul/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Yulu in Central African Republic",
+        "url": "https://joshuaproject.net/people_groups/16070/CT",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org — Yulu of Sudan",
+        "url": "https://peoplegroups.org/people_groups/pg012172/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      }
     ]
   }
 }

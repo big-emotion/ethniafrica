@@ -54,23 +54,108 @@
       }
     },
     "sources": [
-      "Cyffer, Norbert (2020) – *Saharan*. In : Rainer Vossen & Gerrit J. Dimmendaal (eds.), *The Oxford Handbook of African Languages*, Oxford University Press, pp. 383-391. https://academic.oup.com/edited-volume/38608/chapter-abstract/334726085",
-      "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Chicago : University of Chicago Press.",
-      "Blench, Roger (2006-2023) – Travaux sur la classification Nilo-Saharienne, incluant le groupe Saharien et la proposition de branche « Songhay-Saharan ».",
-      "Dimmendaal, Gerrit J. – *Nilo-Saharan Linguistics*. Études sur les langues nilo-sahariennes.",
-      "Blažek, Václav (2007) – *On application of glottochronology for Saharan Languages*. In : *Viva Africa 2007*. Application de la glottochronologie aux langues sahariennes.",
-      "SIL Ethnologue (2025) – *Kanuri language*, *Teda-Daza languages*, *Zaghawa language*. https://www.ethnologue.com",
-      "Glottolog (2025) – *Saharan branch*. Classification et ressources linguistiques.",
-      "UNESCO – *Atlas des langues africaines*. Cartographie des langues africaines.",
-      "The Editors of Encyclopaedia Britannica (2025) – \"Saharan languages\". *Britannica*. https://www.britannica.com/topic/Saharan-languages",
-      "Études génétiques :",
-      "Fan, Shaohua et al. (2019) – \"African evolutionary history inferred from whole genome sequence data of 44 indigenous African populations\". *Genome Biology*, 20:82. https://link.springer.com/article/10.1186/s13059-019-1679-2",
-      "Études génétiques sur les populations Nilo-Sahariennes et leurs corrélations avec les classifications linguistiques.",
-      "Glottolog 5.3 (2025) – \"Saharan\": arbre de classification confirmant 2 branches immédiates – Eastern Saharan, Western Saharan. https://glottolog.org/resource/languoid/id/saha1256",
-      "SIL Ethnologue, 19e éd. (Lewis, M.P., Simons, G.F. & Fennig, C.D., eds., 2016), page consultée via version archivée (Internet Archive, 1er juin 2016) – \"Kanuri, Central [knc]\": 3 000 000 de locuteurs au Nigeria (Gunnemark & Kenrick 1985), 154 000 au Tchad (2013 J. Leclerc), 80 000 au Niger (1998), 56 500 au Cameroun (1982 SIL). https://www.ethnologue.com/language/knc",
-      "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 9 mai et 14 août 2016) – \"Kanuri, Manga [kby]\": 280 000 locuteurs au Niger (1998), 200 000 au Nigeria (1993). \"Kanuri, Tumari [krt]\": 40 000 au Niger (1998). https://www.ethnologue.com/language/kby ; https://www.ethnologue.com/language/krt",
-      "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 21 mai 2016) – \"Zaghawa [zag]\": 180 000 locuteurs au Soudan (Osman 2006), 128 000 au Tchad (2013 J. Leclerc). https://www.ethnologue.com/language/zag",
-      "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 25 juin et 8 mai 2016) – \"Tedaga [tuq]\": 28 500 locuteurs au Tchad (recensement 1993), 10 000 au Niger (1998), 2 000 au Nigeria (Blench & Zeitlyn 1990). \"Dazaga [dzg]\": 487 000 au Tchad (2013 J. Leclerc), 50 000 au Niger (2007). https://www.ethnologue.com/language/tuq ; https://www.ethnologue.com/language/dzg"
+      {
+        "title": "Cyffer, Norbert (2020) – *Saharan*. In : Rainer Vossen & Gerrit J. Dimmendaal (eds.), *The Oxford Handbook of African Languages*, Oxford University Press, pp. 383-391",
+        "url": "https://academic.oup.com/edited-volume/38608/chapter-abstract/334726085",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for academic.oup.com."
+      },
+      {
+        "title": "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Chicago : University of Chicago Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Blench, Roger (2006-2023) – Travaux sur la classification Nilo-Saharienne, incluant le groupe Saharien et la proposition de branche « Songhay-Saharan »",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Dimmendaal, Gerrit J. – *Nilo-Saharan Linguistics*. Études sur les langues nilo-sahariennes",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Blažek, Václav (2007) – *On application of glottochronology for Saharan Languages*. In : *Viva Africa 2007*. Application de la glottochronologie aux langues sahariennes",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "SIL Ethnologue (2025) – *Kanuri language*, *Teda-Daza languages*, *Zaghawa language*",
+        "url": "https://www.ethnologue.com",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog (2025) – *Saharan branch*. Classification et ressources linguistiques",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "UNESCO – *Atlas des langues africaines*. Cartographie des langues africaines",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "The Editors of Encyclopaedia Britannica (2025) – \"Saharan languages\". *Britannica*",
+        "url": "https://www.britannica.com/topic/Saharan-languages",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Études génétiques",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Fan, Shaohua et al. (2019) – \"African evolutionary history inferred from whole genome sequence data of 44 indigenous African populations\". *Genome Biology*, 20:82",
+        "url": "https://link.springer.com/article/10.1186/s13059-019-1679-2",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for link.springer.com."
+      },
+      {
+        "title": "Études génétiques sur les populations Nilo-Sahariennes et leurs corrélations avec les classifications linguistiques",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog 5.3 (2025) – \"Saharan\": arbre de classification confirmant 2 branches immédiates – Eastern Saharan, Western Saharan",
+        "url": "https://glottolog.org/resource/languoid/id/saha1256",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (Lewis, M.P., Simons, G.F. & Fennig, C.D., eds., 2016), page consultée via version archivée (Internet Archive, 1er juin 2016) – \"Kanuri, Central [knc]\": 3 000 000 de locuteurs au Nigeria (Gunnemark & Kenrick 1985), 154 000 au Tchad (2013 J. Leclerc), 80 000 au Niger (1998), 56 500 au Cameroun (1982 SIL)",
+        "url": "https://www.ethnologue.com/language/knc",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 9 mai et 14 août 2016) – \"Kanuri, Manga [kby]\": 280 000 locuteurs au Niger (1998), 200 000 au Nigeria (1993). \"Kanuri, Tumari [krt]\": 40 000 au Niger (1998)",
+        "url": "https://www.ethnologue.com/language/kby",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\". Original entry: \"SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 9 mai et 14 août 2016) – \\\"Kanuri, Manga [kby]\\\": 280 000 locuteurs au Niger (1998), 200 000 au Nigeria (1993). \\\"Kanuri, Tumari [krt]\\\": 40 000 au Niger (1998). https://www.ethnologue.com/language/kby ; https://www.ethnologue.com/language/krt\""
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 21 mai 2016) – \"Zaghawa [zag]\": 180 000 locuteurs au Soudan (Osman 2006), 128 000 au Tchad (2013 J. Leclerc)",
+        "url": "https://www.ethnologue.com/language/zag",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 25 juin et 8 mai 2016) – \"Tedaga [tuq]\": 28 500 locuteurs au Tchad (recensement 1993), 10 000 au Niger (1998), 2 000 au Nigeria (Blench & Zeitlyn 1990). \"Dazaga [dzg]\": 487 000 au Tchad (2013 J. Leclerc), 50 000 au Niger (2007)",
+        "url": "https://www.ethnologue.com/language/tuq",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\". Original entry: \"SIL Ethnologue, 19e éd. (2016), page consultée via version archivée (Internet Archive, 25 juin et 8 mai 2016) – \\\"Tedaga [tuq]\\\": 28 500 locuteurs au Tchad (recensement 1993), 10 000 au Niger (1998), 2 000 au Nigeria (Blench & Zeitlyn 1990). \\\"Dazaga [dzg]\\\": 487 000 au Tchad (2013 J. Leclerc), 50 000 au Niger (2007). https://www.ethnologue.com/language/tuq ; https://www.ethnologue.com/language/dzg\""
+      }
     ]
   }
 }

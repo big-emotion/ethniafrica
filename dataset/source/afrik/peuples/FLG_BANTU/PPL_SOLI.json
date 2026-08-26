@@ -74,11 +74,36 @@
       ]
     },
     "sources": [
-      "Before Lusaka: A Brief History of the Soli and Lenje Peoples – Explore Lusaka (https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples)",
-      "Soli of Zambia – PeopleGroups.org (https://peoplegroups.org/people_groups/pg015632/)",
-      "Soli in Zambia – Joshua Project (https://joshuaproject.net/people_groups/print/14977/ZA)",
-      "Manchishi, P.C. et Musona, E.T. – A Brief History of the Soli People from 1500-1900 (1990)",
-      "Machinyise, E. et al. – The Birth and Sociolinguistic Features of Sala Language of Zambia, IJRISS 2023 (https://rsisinternational.org/journals/ijriss/Digital-Library/volume-7-issue-8/993-1000.pdf)"
+      {
+        "title": "Before Lusaka: A Brief History of the Soli and Lenje Peoples – Explore Lusaka",
+        "url": "https://www.explorelusaka.com/post/before-lusaka-a-brief-history-of-the-soli-and-lenje-peoples",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for explorelusaka.com."
+      },
+      {
+        "title": "Soli of Zambia – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg015632/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Soli in Zambia – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/print/14977/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Manchishi, P.C. et Musona, E.T. – A Brief History of the Soli People from 1500-1900 (1990)",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Machinyise, E. et al. – The Birth and Sociolinguistic Features of Sala Language of Zambia, IJRISS 2023",
+        "url": "https://rsisinternational.org/journals/ijriss/Digital-Library/volume-7-issue-8/993-1000.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for rsisinternational.org."
+      }
     ]
   }
 }

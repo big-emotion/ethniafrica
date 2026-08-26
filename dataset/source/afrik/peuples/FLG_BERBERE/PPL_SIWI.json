@@ -87,11 +87,36 @@
       ]
     },
     "sources": [
-      "Ethnologue — Siwi (siz). https://www.ethnologue.com/language/siz/",
-      "Joshua Project — Berber, Siwa in Egypt. https://joshuaproject.net/people_groups/14958/EG",
-      "Fakhry, Ahmed. Siwa Oasis. Cairo: The American University in Cairo Press, 1973.",
-      "Souag, Lameen. Siwa and its significance for Arabic dialectology. Zeitschrift fur Arabische Linguistik, 2009.",
-      "City Facts — Siwa Oasis demographics. https://www.city-facts.com/siwah/population"
+      {
+        "title": "Ethnologue — Siwi (siz)",
+        "url": "https://www.ethnologue.com/language/siz/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Berber, Siwa in Egypt",
+        "url": "https://joshuaproject.net/people_groups/14958/EG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Fakhry, Ahmed. Siwa Oasis. Cairo: The American University in Cairo Press, 1973",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Souag, Lameen. Siwa and its significance for Arabic dialectology. Zeitschrift fur Arabische Linguistik, 2009",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "City Facts — Siwa Oasis demographics",
+        "url": "https://www.city-facts.com/siwah/population",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for city-facts.com."
+      }
     ]
   }
 }

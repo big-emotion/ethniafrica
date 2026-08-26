@@ -7,11 +7,10 @@ const source = {
   id: "11111111-1111-1111-1111-111111111111",
   sourceKey: null,
   sourceKind: null,
-  evidenceTier: null,
+  tier: "official",
   identifiers: null,
   title: "Source",
   url: "https://example.test/source",
-  type: "primary",
   pinnedUrl: null,
   year: null,
   author: null,
@@ -22,7 +21,18 @@ const source = {
 
 describe("sourceSchema", () => {
   // @req REQ-092
-  it("preserves a discovery-only policy outcome", () => {
+  it("accepts an untiered legacy source", () => {
+    const parsed = sourceSchema.parse({
+      ...source,
+      tier: null,
+      policy: evaluateSourceUrl(source.url),
+    });
+
+    expect(parsed.tier).toBeNull();
+  });
+
+  // @req REQ-092
+  it("preserves a discovery surface's policy outcome", () => {
     const parsed = sourceSchema.parse({
       ...source,
       policy: evaluateSourceUrl("https://fr.wikipedia.org/wiki/Yoruba"),
@@ -30,9 +40,8 @@ describe("sourceSchema", () => {
 
     expect(parsed.policy).toMatchObject({
       key: "wikipedia",
-      admission: "discovery_only",
-      evidenceTier: null,
-      publishable: false,
+      tier: "unverified",
+      sourceKind: "discovery",
     });
   });
 
@@ -45,10 +54,8 @@ describe("sourceSchema", () => {
 
     expect(parsed.policy).toEqual({
       key: "unknown",
-      admission: "review_required",
-      evidenceTier: null,
+      tier: "unverified",
       sourceKind: "unknown",
-      publishable: false,
     });
   });
 });

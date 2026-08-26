@@ -72,9 +72,24 @@
       ]
     },
     "sources": [
-      "Sandawe in Tanzania – Joshua Project, 2025 (https://joshuaproject.net/people_groups/14720)",
-      "Sandawe – Britannica, 2026 (https://www.britannica.com/topic/Sandawe)",
-      "Sandawe language (SAD) – Ethnologue SIL (https://www.ethnologue.com/language/sad/)"
+      {
+        "title": "Sandawe in Tanzania – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/14720",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Sandawe – Britannica, 2026",
+        "url": "https://www.britannica.com/topic/Sandawe",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Sandawe language (SAD) – Ethnologue SIL",
+        "url": "https://www.ethnologue.com/language/sad/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

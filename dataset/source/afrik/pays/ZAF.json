@@ -195,15 +195,60 @@
       "postIndependence": "Apartheid (1948-1994) : système de ségrégation raciale, résistance, sanctions internationales. Transition démocratique (1994) : élection de Nelson Mandela, réconciliation nationale. République démocratique depuis 1994 : développement économique, défis de réconciliation et d'égalité."
     },
     "sources": [
-      "CIA World Factbook – South Africa",
-      "SIL Ethnologue – Languages of South Africa",
-      "Recensements nationaux sud-africains",
-      "ONU – Données démographiques 2025",
-      "UNFPA – Projections démographiques 2025",
-      "Études anthropologiques sur les peuples sud-africains",
-      "Études historiques sur l'apartheid et la transition démocratique",
-      "Statistics South Africa – Census 2022 Statistical Release P0301.4 (Figure 2.3: Percentage distribution by population group, 1996–2022) – https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "CIA World Factbook – South Africa",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of South Africa",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements nationaux sud-africains",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU – Données démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNFPA – Projections démographiques 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples sud-africains",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur l'apartheid et la transition démocratique",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Statistics South Africa – Census 2022 Statistical Release P0301.4 (Figure 2.3: Percentage distribution by population group, 1996–2022)",
+        "url": "https://census.statssa.gov.za/assets/documents/2022/P03014_Census_2022_Statistical_Release.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for census.statssa.gov.za."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

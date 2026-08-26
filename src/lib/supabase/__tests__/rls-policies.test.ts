@@ -198,7 +198,7 @@ const POLICY_MATRIX: PolicyMatrix = {
 // ---------------------------------------------------------------------------
 
 const INSERT_PAYLOADS: Record<string, Record<string, unknown>> = {
-  sources: { title: "RLS test source", tier: "primary" },
+  sources: { title: "RLS test source", tier: "official" },
   assertions: {
     entity_type: "test",
     entity_id: "rls-test",
@@ -276,7 +276,7 @@ describe("RLS policies — migrations 008–011", { timeout: 60_000 }, () => {
     // Seed a source row
     const { data: sourceRow } = await svc
       .from("sources")
-      .insert({ title: "RLS seed source", tier: "primary" })
+      .insert({ title: "RLS seed source", tier: "official" })
       .select("id")
       .single();
     seededSourceId = sourceRow?.id ?? null;

@@ -63,27 +63,132 @@
       }
     },
     "sources": [
-      "Fleming, Harold C. (1969) – « A Classification of the North Omotic Languages ». In: Proceedings of the First International Conference on Ethiopian Studies. Michigan State University Press.",
-      "Bender, M. Lionel (1971) – « Reconstructing Omotic phonology and classification ». Article fondateur.",
-      "Bender, M. Lionel (1975) – *Omotic: a new Afroasiatic language family*. University Museum, Southern Illinois University.",
-      "Bender, M. Lionel (2000) – *Comparative Morphology of the Omotic Languages*.",
-      "Amha, Azeb (2017) – « The Omotic Language Family ». In: Aikhenvald, Alexandra Y. & Dixon, R. M. W. (éds.), *The Cambridge Handbook of Linguistic Typology*, pp. 815-853. Cambridge University Press.",
-      "Blažek, Václav (2008) – *Lexicostatistical Comparison of Omotic Languages*. John Benjamins Publishing Company.",
-      "Blench, Roger (2006) – *Archaeology, Language, and the African Past*. AltaMira Press.",
-      "Rapold, Christoph (2006) – « Gender flip and person marking in Benchnon (North Omotic) ». *Glossa: a journal of general linguistics*. https://www.glossa-journal.org/article/10.5334/gjgl.1191/",
-      "Pagani, Luca et al. (2021) – « Evidence of the interplay of genetics and culture in Ethiopia ». *Nature Communications*. https://www.nature.com/articles/s41467-021-23712-w",
-      "Gallego Romero, Irene et al. (2015) – « Novel genomic signals of recent selection in an Ethiopian population » (Wolaita). *European Journal of Human Genetics*. https://www.nature.com/articles/ejhg2014233",
-      "Wolff, H. Ekkehard – « Omotic languages | Ethiopia, Classification & Characteristics ». *Britannica* (mis à jour 2025). https://www.britannica.com/topic/Omotic-languages",
-      "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press.",
-      "Glottolog – Omotic branch. https://glottolog.org/resource/languoid/id/omot1239",
-      "SIL Ethnologue – Omotic languages. https://www.ethnologue.com/subgroups/omotic",
-      "UNESCO – Atlas des langues en danger.",
-      "Recensement éthiopien 2007 – Central Statistical Agency of Ethiopia.",
-      "Recensement éthiopien 2010 – Central Statistical Agency of Ethiopia.",
-      "ONU/UNFPA – Estimations démographiques Éthiopie 2025.",
-      "CIA World Factbook – Éthiopie 2025.",
-      "Glottolog 5.2 – dans la classification actuelle, l'« omotique » traditionnel ne forme plus une seule famille : \"Ta-Ne-Omotic [gong1255]\" (4 branches : Bench, Kefoid, Ometo, Yemsa) et \"South Omotic [sout2845]\" (2 branches : AHK [Aari-Gayil + Hamer-Karo], Dime) sont deux familles indépendantes sans ancêtre commun reconnu. https://glottolog.org/resource/languoid/id/gong1255 ; https://glottolog.org/resource/languoid/id/sout2845",
-      "Ethiopian Statistics Service / Population Census Commission (2007) – Summary and Statistical Report of the 2007 Population and Housing Census, Table 2.2/Annexe : somme des nationalités omotiques recensées (Welaita 1 707 074, Gamo 1 107 163, Kefficho 870 213, Dawro 543 148, Goffa 363 009, Bench 353 526, Ari 290 453, Malie 98 114, Basketo 78 284, Shekecho 77 678, Hamer 46 532, Dime 891) = 5 536 085. https://ess.gov.et/wp-content/uploads/2026/06/national-population-and-housing-census-report-2007.pdf"
+      {
+        "title": "Fleming, Harold C. (1969) – « A Classification of the North Omotic Languages ». In: Proceedings of the First International Conference on Ethiopian Studies. Michigan State University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Bender, M. Lionel (1971) – « Reconstructing Omotic phonology and classification ». Article fondateur",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Bender, M. Lionel (1975) – *Omotic: a new Afroasiatic language family*. University Museum, Southern Illinois University",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Bender, M. Lionel (2000) – *Comparative Morphology of the Omotic Languages*",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Amha, Azeb (2017) – « The Omotic Language Family ». In: Aikhenvald, Alexandra Y. & Dixon, R. M. W. (éds.), *The Cambridge Handbook of Linguistic Typology*, pp. 815-853. Cambridge University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Blažek, Václav (2008) – *Lexicostatistical Comparison of Omotic Languages*. John Benjamins Publishing Company",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Blench, Roger (2006) – *Archaeology, Language, and the African Past*. AltaMira Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Rapold, Christoph (2006) – « Gender flip and person marking in Benchnon (North Omotic) ». *Glossa: a journal of general linguistics*",
+        "url": "https://www.glossa-journal.org/article/10.5334/gjgl.1191/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for glossa-journal.org."
+      },
+      {
+        "title": "Pagani, Luca et al. (2021) – « Evidence of the interplay of genetics and culture in Ethiopia ». *Nature Communications*",
+        "url": "https://www.nature.com/articles/s41467-021-23712-w",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for nature.com."
+      },
+      {
+        "title": "Gallego Romero, Irene et al. (2015) – « Novel genomic signals of recent selection in an Ethiopian population » (Wolaita). *European Journal of Human Genetics*",
+        "url": "https://www.nature.com/articles/ejhg2014233",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for nature.com."
+      },
+      {
+        "title": "Wolff, H. Ekkehard – « Omotic languages | Ethiopia, Classification & Characteristics ». *Britannica* (mis à jour 2025)",
+        "url": "https://www.britannica.com/topic/Omotic-languages",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Greenberg, Joseph H. (1963) – *The Languages of Africa*. Indiana University Press",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog – Omotic branch",
+        "url": "https://glottolog.org/resource/languoid/id/omot1239",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "SIL Ethnologue – Omotic languages",
+        "url": "https://www.ethnologue.com/subgroups/omotic",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "UNESCO – Atlas des langues en danger",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensement éthiopien 2007 – Central Statistical Agency of Ethiopia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensement éthiopien 2010 – Central Statistical Agency of Ethiopia",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU/UNFPA – Estimations démographiques Éthiopie 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Éthiopie 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Glottolog 5.2 – dans la classification actuelle, l'« omotique » traditionnel ne forme plus une seule famille : \"Ta-Ne-Omotic [gong1255]\" (4 branches : Bench, Kefoid, Ometo, Yemsa) et \"South Omotic [sout2845]\" (2 branches : AHK [Aari-Gayil + Hamer-Karo], Dime) sont deux familles indépendantes sans ancêtre commun reconnu",
+        "url": "https://glottolog.org/resource/languoid/id/gong1255",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\". Original entry: \"Glottolog 5.2 – dans la classification actuelle, l'« omotique » traditionnel ne forme plus une seule famille : \\\"Ta-Ne-Omotic [gong1255]\\\" (4 branches : Bench, Kefoid, Ometo, Yemsa) et \\\"South Omotic [sout2845]\\\" (2 branches : AHK [Aari-Gayil + Hamer-Karo], Dime) sont deux familles indépendantes sans ancêtre commun reconnu. https://glottolog.org/resource/languoid/id/gong1255 ; https://glottolog.org/resource/languoid/id/sout2845\""
+      },
+      {
+        "title": "Ethiopian Statistics Service / Population Census Commission (2007) – Summary and Statistical Report of the 2007 Population and Housing Census, Table 2.2/Annexe : somme des nationalités omotiques recensées (Welaita 1 707 074, Gamo 1 107 163, Kefficho 870 213, Dawro 543 148, Goffa 363 009, Bench 353 526, Ari 290 453, Malie 98 114, Basketo 78 284, Shekecho 77 678, Hamer 46 532, Dime 891) = 5 536 085",
+        "url": "https://ess.gov.et/wp-content/uploads/2026/06/national-population-and-housing-census-report-2007.pdf",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ess.gov.et."
+      }
     ]
   }
 }

@@ -197,15 +197,60 @@
       "postIndependence": "République Islamique de Mauritanie (1960), présidence de Mokhtar Ould Daddah (1960-1978), coups d'État (1978, 1984, 2005, 2008), abolition officielle de l'esclavage (1981, mais pratiques persistantes), conflit du Sahara occidental (1975-1979), tensions ethniques (1989-1991, expulsion de Négro-Mauritaniens), transition démocratique (depuis 2007), présidence de Mohamed Ould Abdel Aziz (2008-2019), Mohamed Ould Ghazouani (depuis 2019). Défis : esclavage (pratiques persistantes malgré l'abolition officielle), tensions ethniques, développement économique, sécurité (terrorisme)."
     },
     "sources": [
-      "ONU – World Population Prospects 2025",
-      "CIA World Factbook – Mauritania",
-      "SIL Ethnologue – Languages of Mauritania",
-      "Minority Rights Group – Haratine in Mauritania",
-      "Anti-Slavery International – Slavery in Mauritania",
-      "Recensements mauritaniens",
-      "Études anthropologiques sur les peuples de Mauritanie",
-      "Études historiques sur l'empire Almoravide",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "ONU – World Population Prospects 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Mauritania",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "SIL Ethnologue – Languages of Mauritania",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Minority Rights Group – Haratine in Mauritania",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Anti-Slavery International – Slavery in Mauritania",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements mauritaniens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de Mauritanie",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études historiques sur l'empire Almoravide",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

@@ -88,11 +88,36 @@
       ]
     },
     "sources": [
-      "Joshua Project – Bijogo in Guinea-Bissau (https://joshuaproject.net/people_groups/10838)",
-      "101 Last Tribes – Bijago people, Africa (https://www.101lasttribes.com/tribes/bijago.html)",
-      "Trip Down Memory Lane Blog – Bijago People : Guinea Bissau Matriarchal Tribe, 2013 (https://kwekudee-tripdownmemorylane.blogspot.com/2012/12/bijago-people-guinea-bissau-african.html)",
-      "Minority Rights Group – Guinea-Bissau country profile, 2024 (https://minorityrights.org/country/guinea-bissau/)",
-      "Crushing Colonialism – Preserving tradition and culture of Guinea Bissau's vibrant Bijagos Islands, 2024 (https://crushingcolonialism.org/preserving-tradition-and-culture-of-guinea-bissaus-vibrant-bijagos-islands/)"
+      {
+        "title": "Joshua Project – Bijogo in Guinea-Bissau",
+        "url": "https://joshuaproject.net/people_groups/10838",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes – Bijago people, Africa",
+        "url": "https://www.101lasttribes.com/tribes/bijago.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Trip Down Memory Lane Blog – Bijago People : Guinea Bissau Matriarchal Tribe, 2013",
+        "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2012/12/bijago-people-guinea-bissau-african.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+      },
+      {
+        "title": "Minority Rights Group – Guinea-Bissau country profile, 2024",
+        "url": "https://minorityrights.org/country/guinea-bissau/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Crushing Colonialism – Preserving tradition and culture of Guinea Bissau's vibrant Bijagos Islands, 2024",
+        "url": "https://crushingcolonialism.org/preserving-tradition-and-culture-of-guinea-bissaus-vibrant-bijagos-islands/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers crushingcolonialism.org; the tier awaits editorial review."
+      }
     ]
   }
 }

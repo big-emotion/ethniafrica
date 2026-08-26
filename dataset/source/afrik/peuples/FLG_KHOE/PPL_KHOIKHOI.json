@@ -97,11 +97,36 @@
       ]
     },
     "sources": [
-      "Glottopedia – Khoekhoe, ISO 639-3 : naq (http://www.glottopedia.de/index.php/Khoekhoe)",
-      "The Indigenous World 2024 : South Africa – IWGIA (https://iwgia.org/en/south-africa/5358-iw-2024-southafrica.html)",
-      "Namibia Tourism Board – Nama people 2024 (https://www.facebook.com/NamibiaTourismBoard/posts/1000733048753092/)",
-      "Ethnologue – Nama subgroup : naq, kqz, xii (https://www.ethnologue.com/subgroup/4292/)",
-      "Richtersveld Cultural and Botanical Landscape – UNESCO World Heritage (https://whc.unesco.org/en/list/1265)"
+      {
+        "title": "Glottopedia – Khoekhoe, ISO 639-3 : naq",
+        "url": "http://www.glottopedia.de/index.php/Khoekhoe",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers glottopedia.de; the tier awaits editorial review."
+      },
+      {
+        "title": "The Indigenous World 2024 : South Africa – IWGIA",
+        "url": "https://iwgia.org/en/south-africa/5358-iw-2024-southafrica.html",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"iwgia\"."
+      },
+      {
+        "title": "Namibia Tourism Board – Nama people 2024",
+        "url": "https://www.facebook.com/NamibiaTourismBoard/posts/1000733048753092/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "Ethnologue – Nama subgroup : naq, kqz, xii",
+        "url": "https://www.ethnologue.com/subgroup/4292/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Richtersveld Cultural and Botanical Landscape – UNESCO World Heritage",
+        "url": "https://whc.unesco.org/en/list/1265",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      }
     ]
   }
 }

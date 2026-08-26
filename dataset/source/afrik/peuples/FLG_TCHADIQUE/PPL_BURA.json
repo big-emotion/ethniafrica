@@ -98,12 +98,42 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Bura people. https://www.101lasttribes.com/tribes/bura.html",
-      "Blueprint Newspapers — Bura Babur nation in perspective. https://blueprint.ng/bura-babur-nation-in-perspective-their-tradition-culture-and-language/",
-      "SIL Ethnologue — Bura-Pabir (bwr). https://www.ethnologue.com/language/bwr/",
-      "Glottolog 5.3 — Bura-Pabir (bura1292). https://glottolog.org/resource/languoid/id/bura1292",
-      "Joshua Project — Bura, Pabir in Nigeria. https://joshuaproject.net/people_groups/11022",
-      "Newman, Paul. The Chadic Language Family: Classification and Name Index. CNRS, 2013. https://megatchad.cepam.cnrs.fr/publications/Newman-2013-Chadic-Classification-and-Index.pdf"
+      {
+        "title": "101 Last Tribes — Bura people",
+        "url": "https://www.101lasttribes.com/tribes/bura.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Blueprint Newspapers — Bura Babur nation in perspective",
+        "url": "https://blueprint.ng/bura-babur-nation-in-perspective-their-tradition-culture-and-language/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for blueprint.ng."
+      },
+      {
+        "title": "SIL Ethnologue — Bura-Pabir (bwr)",
+        "url": "https://www.ethnologue.com/language/bwr/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog 5.3 — Bura-Pabir (bura1292)",
+        "url": "https://glottolog.org/resource/languoid/id/bura1292",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Joshua Project — Bura, Pabir in Nigeria",
+        "url": "https://joshuaproject.net/people_groups/11022",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Newman, Paul. The Chadic Language Family: Classification and Name Index. CNRS, 2013",
+        "url": "https://megatchad.cepam.cnrs.fr/publications/Newman-2013-Chadic-Classification-and-Index.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for megatchad.cepam.cnrs.fr."
+      }
     ]
   }
 }

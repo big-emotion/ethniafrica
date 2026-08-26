@@ -65,11 +65,36 @@
       ]
     },
     "sources": [
-      "Gagu in Cote d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11799)",
-      "Gagu people – 101 Last Tribes, 2023 (https://www.101lasttribes.com/tribes/gagu.html)",
-      "Gban language (GGU) – Ethnologue, SIL International (https://www.ethnologue.com/language/ggu/)",
-      "Tauxier, Louis – Negres gouro et gagou : Centre de la Cote d'Ivoire, Librairie orientaliste P. Geuthner, 1924",
-      "Chauveau, Jean-Pierre – Les Gba ou Gagou de Cote d'Ivoire : Un Systeme de parente bilineaire a nomenclature de type Crow, ORSTOM"
+      {
+        "title": "Gagu in Cote d'Ivoire – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/11799",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Gagu people – 101 Last Tribes, 2023",
+        "url": "https://www.101lasttribes.com/tribes/gagu.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Gban language (GGU) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/ggu/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Tauxier, Louis – Negres gouro et gagou : Centre de la Cote d'Ivoire, Librairie orientaliste P. Geuthner, 1924",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Chauveau, Jean-Pierre – Les Gba ou Gagou de Cote d'Ivoire : Un Systeme de parente bilineaire a nomenclature de type Crow, ORSTOM",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

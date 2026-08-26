@@ -78,10 +78,30 @@
       ]
     },
     "sources": [
-      "Gedeo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11504)",
-      "Gedeo language (DRS) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/drs/)",
-      "West Guji-Gedeo Conflict Displacement Flash Update – ReliefWeb / OCHA, mai 2018 (https://reliefweb.int/report/ethiopia/ethiopia-west-guji-gedeo-conflict-displacement-flash-update-1-9-may-2018)",
-      "ISO 639-3 drs : Gedeo – CEDS / National Center for Education Statistics (https://ceds.ed.gov/iso639-3LanguageCodev7.aspx)"
+      {
+        "title": "Gedeo in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/11504",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Gedeo language (DRS) – Ethnologue / SIL International, 2025",
+        "url": "https://www.ethnologue.com/language/drs/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "West Guji-Gedeo Conflict Displacement Flash Update – ReliefWeb / OCHA, mai 2018",
+        "url": "https://reliefweb.int/report/ethiopia/ethiopia-west-guji-gedeo-conflict-displacement-flash-update-1-9-may-2018",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for reliefweb.int."
+      },
+      {
+        "title": "ISO 639-3 drs : Gedeo – CEDS / National Center for Education Statistics",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      }
     ]
   }
 }

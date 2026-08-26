@@ -28,7 +28,7 @@ export interface ValidationResult {
 }
 
 // Legacy internal result shape (used by existing validation functions only)
-interface LegacyValidationResult {
+export interface LegacyValidationResult {
   category: string;
   status: "success" | "warning" | "error";
   message: string;
@@ -932,17 +932,17 @@ export function checkPopulationSums(datasetRoot: string): ValidationResult {
 }
 
 /**
- * FR28-strict – Soft warning for the doctrinal target band [99, 101].
+ * FR28-strict – Doctrinal target band [99, 101].
  *
- * Emits a warning per pays JSON whose peoples[].percentageInCountry sum falls
- * outside [99, 101] but inside the FR28 hard gate [95, 105]. Does not fail
- * validation — informational only. Once every fiche sits inside [99, 101],
- * FR28's hard gate can be tightened to match and this check retired.
+ * Reports a pays JSON whose peoples[].percentageInCountry sum falls outside
+ * [99, 101] but inside the FR28 hard gate [95, 105]. Advisory while ~30
+ * countries' splits were being re-sourced; enforced since the whole corpus
+ * landed inside the target band, so a fiche can no longer drift back out.
  */
 export function checkPopulationSumsStrict(
   datasetRoot: string
 ): ValidationResult {
-  const warnings: string[] = [];
+  const errors: string[] = [];
 
   const paysDir = path.join(datasetRoot, "pays");
   if (!fs.existsSync(paysDir)) {
@@ -976,14 +976,13 @@ export function checkPopulationSumsStrict(
     );
     if (sum < 99 || sum > 101) {
       const countryId = data.id ?? path.basename(file, ".json");
-      warnings.push(
+      errors.push(
         `${countryId}: population percentages sum to ${sum.toFixed(2)}% (strict target 99–101%)`
       );
     }
   }
 
-  // Always ok — this check is informational and never fails the build.
-  return { ok: true, errors: [], warnings };
+  return { ok: errors.length === 0, errors, warnings: [] };
 }
 
 /**
@@ -1147,31 +1146,34 @@ function sourceUrls(value: unknown): string[] {
   return value.match(/https?:\/\/[^\s)\]}>\",]+/g) ?? [];
 }
 
-function checkSourceAdmission(
+/**
+ * Reports how a citation will be labelled. Nothing here is an error: under the
+ * source doctrine a weak source is published and tiered `unverified`, and the
+ * fiche's confidence follows from the tiers it rests on. The blocking gate is
+ * "every source carries a tier", which W2-P3 ratchets as the corpus is
+ * classified — not "this source is not good enough".
+ */
+function checkSourceTier(
   file: string,
   sourcePath: string,
   sourceValue: unknown,
-  errors: string[],
   warnings: string[]
 ) {
   const urls = sourceUrls(sourceValue);
   if (urls.length === 0) {
     warnings.push(
-      `${file}: ${sourcePath} requires review: source \"unknown\" is not in the authorized catalogue`
+      `${file}: ${sourcePath} carries no URL, so it cannot be tiered from the catalogue`
     );
     return;
   }
 
   for (const url of urls) {
     const outcome = evaluateSourceUrl(url);
-    if (outcome.publishable) continue;
+    if (outcome.tier !== "unverified") continue;
 
-    const message = `${file}: ${sourcePath} uses ${outcome.admission} source \"${outcome.key}\"`;
-    if (outcome.admission === "review_required") {
-      warnings.push(`${message}; review is required before publication`);
-    } else {
-      errors.push(`${message}; it is not publishable`);
-    }
+    warnings.push(
+      `${file}: ${sourcePath} cites \"${outcome.key}\", which publishes at tier unverified`
+    );
   }
 }
 
@@ -1179,18 +1181,11 @@ function checkSourcesInValue(
   file: string,
   value: unknown,
   valuePath: string,
-  errors: string[],
   warnings: string[]
 ) {
   if (Array.isArray(value)) {
     value.forEach((item, index) => {
-      checkSourcesInValue(
-        file,
-        item,
-        `${valuePath}[${index}]`,
-        errors,
-        warnings
-      );
+      checkSourcesInValue(file, item, `${valuePath}[${index}]`, warnings);
     });
     return;
   }
@@ -1203,26 +1198,25 @@ function checkSourcesInValue(
       child.forEach((source, index) => {
         const sourcePath = `${childPath}[${index}]`;
         if (typeof source === "string") {
-          checkSourceAdmission(file, sourcePath, source, errors, warnings);
+          checkSourceTier(file, sourcePath, source, warnings);
           return;
         }
 
         if (source && typeof source === "object") {
           const record = source as { url?: unknown; reference?: unknown };
-          checkSourceAdmission(
+          checkSourceTier(
             file,
             sourcePath,
             typeof record.url === "string" ? record.url : record.reference,
-            errors,
             warnings
           );
           return;
         }
 
-        checkSourceAdmission(file, sourcePath, source, errors, warnings);
+        checkSourceTier(file, sourcePath, source, warnings);
       });
     }
-    checkSourcesInValue(file, child, childPath, errors, warnings);
+    checkSourcesInValue(file, child, childPath, warnings);
   }
 }
 
@@ -1394,14 +1388,13 @@ export function checkTreeCoverage(datasetRoot: string): ValidationResult {
 }
 
 /**
- * Source admissions – every published source URL must resolve through the
- * authorised source catalogue. Discovery-only and prohibited sources fail;
- * unknown or legacy sources are retained but require curator review.
+ * Source tiers – resolves every cited URL through the authorised source
+ * catalogue and reports which citations will publish as `unverified`. No
+ * citation is refused: the tier is the signal.
  */
-export function checkAuthorizedSourceAdmissions(
+export function checkAuthorizedSourceTiers(
   datasetRoot: string
 ): ValidationResult {
-  const errors: string[] = [];
   const warnings: string[] = [];
 
   for (const fullPath of collectJsonFiles(datasetRoot)) {
@@ -1416,12 +1409,11 @@ export function checkAuthorizedSourceAdmissions(
       path.relative(datasetRoot, fullPath),
       data,
       "",
-      errors,
       warnings
     );
   }
 
-  return { ok: errors.length === 0, errors, warnings };
+  return { ok: true, errors: [], warnings };
 }
 
 /**
@@ -3081,6 +3073,97 @@ export function checkNameRecordDuplicates(
   return { ok: errors.length === 0, errors, warnings };
 }
 
+// ─── Run summary ─────────────────────────────────────────────────────────────
+
+/**
+ * Checks whose findings are reported without failing the build.
+ *
+ * FR52-coverage stays advisory while the people-to-language linkage backlog is
+ * burned down (FLG_NIGERCONGO 0/179 linked). FR28 and FR28-strict left this set
+ * once every country's percentageInCountry split landed inside [99, 101]:
+ * softening a check is a deliberate, visible decision, not a flag buried in a
+ * registration.
+ */
+export const SOFT_CHECK_NAMES: ReadonlySet<string> = new Set([
+  "FR52-coverage People-to-language coverage",
+]);
+
+export interface IntegrityCheck {
+  name: string;
+  result: ValidationResult;
+}
+
+export interface ValidationReportEntry {
+  kind: "legacy" | "integrity";
+  name: string;
+  ok: boolean;
+  soft: boolean;
+  errors: string[];
+  warnings: string[];
+  details?: string[];
+}
+
+export interface ValidationSummary {
+  checksRun: number;
+  checksPassed: number;
+  warningCount: number;
+  errorCount: number;
+  failed: boolean;
+  checks: ValidationReportEntry[];
+}
+
+/**
+ * Folds the legacy per-category results and the FR26–FR52 integrity checks into
+ * one entry list, then counts it.
+ *
+ * The two families report in different shapes and the summary used to count
+ * only the first, so a run executing 34 integrity checks and emitting thousands
+ * of warnings still printed "Succès: 6 · Avertissements: 0" and persisted only
+ * the legacy six — an operator reading either saw a clean corpus.
+ *
+ * A soft check's findings are counted as warnings and never fail the run; an
+ * enforced check's findings are errors and do.
+ */
+export function summarizeValidationRun(
+  legacyResults: LegacyValidationResult[],
+  integrityChecks: IntegrityCheck[]
+): ValidationSummary {
+  const checks: ValidationReportEntry[] = [];
+
+  for (const result of legacyResults) {
+    checks.push({
+      kind: "legacy",
+      name: result.category,
+      ok: result.status === "success",
+      soft: false,
+      errors: result.status === "error" ? [result.message] : [],
+      warnings: result.status === "warning" ? [result.message] : [],
+      details: result.details,
+    });
+  }
+
+  for (const { name, result } of integrityChecks) {
+    const soft = SOFT_CHECK_NAMES.has(name);
+    checks.push({
+      kind: "integrity",
+      name,
+      ok: result.ok,
+      soft,
+      errors: soft ? [] : result.errors,
+      warnings: soft ? [...result.warnings, ...result.errors] : result.warnings,
+    });
+  }
+
+  return {
+    checksRun: checks.length,
+    checksPassed: checks.filter((c) => c.ok).length,
+    warningCount: checks.reduce((n, c) => n + c.warnings.length, 0),
+    errorCount: checks.reduce((n, c) => n + c.errors.length, 0),
+    failed: checks.some((c) => !c.ok && !c.soft),
+    checks,
+  };
+}
+
 // ─── main() ──────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -3112,10 +3195,6 @@ async function main() {
   console.log("\n" + "=".repeat(60));
   console.log("\n📊 RÉSULTATS DE LA VALIDATION\n");
 
-  let totalErrors = 0;
-  let totalWarnings = 0;
-  let totalSuccess = 0;
-
   for (const result of allLegacyResults) {
     const icon =
       result.status === "success"
@@ -3124,10 +3203,6 @@ async function main() {
           ? "⚠️"
           : "❌";
     console.log(`${icon} ${result.category}: ${result.message}`);
-
-    if (result.status === "error") totalErrors++;
-    else if (result.status === "warning") totalWarnings++;
-    else totalSuccess++;
 
     if (
       result.details &&
@@ -3147,14 +3222,8 @@ async function main() {
   console.log("\n🔬 INTEGRITY CHECKS (FR26-FR52)\n");
 
   const datasetRoot = AFRIK_ROOT;
-  // `soft: true` checks log their findings but do not fail the build. Used for
-  // FR28 demographics while issue #105 (re-sourcing 30 countries' splits) is
-  // open — flip back to enforced once #105 lands.
-  const newChecks: Array<{
-    name: string;
-    result: ValidationResult;
-    soft?: boolean;
-  }> = [];
+  // Which of these are advisory is declared once, in SOFT_CHECK_NAMES.
+  const newChecks: IntegrityCheck[] = [];
 
   console.log("FR26 – FLG folder match...");
   newChecks.push({
@@ -3172,14 +3241,12 @@ async function main() {
   newChecks.push({
     name: "FR28 Population sums",
     result: checkPopulationSums(datasetRoot),
-    soft: true,
   });
 
   console.log("FR28-strict – Population sums (target 99–101%)...");
   newChecks.push({
     name: "FR28-strict Population sums (target 99–101%)",
     result: checkPopulationSumsStrict(datasetRoot),
-    soft: true,
   });
 
   console.log("FR29 – ISO validity...");
@@ -3196,10 +3263,10 @@ async function main() {
     result: checkFamilyStructuralCompleteness(datasetRoot),
   });
 
-  console.log("Source catalogue admissions...");
+  console.log("Source catalogue tiers...");
   newChecks.push({
-    name: "Source catalogue admissions",
-    result: checkAuthorizedSourceAdmissions(datasetRoot),
+    name: "Source catalogue tiers",
+    result: checkAuthorizedSourceTiers(datasetRoot),
   });
 
   console.log("FR52 – Classification-tree integrity...");
@@ -3212,7 +3279,6 @@ async function main() {
   newChecks.push({
     name: "FR52-coverage People-to-language coverage",
     result: checkTreeCoverage(datasetRoot),
-    soft: true,
   });
 
   console.log("FR32 – population/percentageInCountry drift...");
@@ -3350,25 +3416,25 @@ async function main() {
     });
   }
 
-  let newCheckFailed = false;
-  for (const { name, result, soft } of newChecks) {
-    const icon = result.ok ? "✅" : soft ? "⚠️ " : "❌";
-    console.log(`${icon} ${name}${!result.ok && soft ? " (soft)" : ""}`);
-    if (!result.ok) {
-      if (!soft) {
-        newCheckFailed = true;
-      }
-      const itemIcon = soft ? "⚠️ " : "❌";
-      result.errors.forEach((e) => console.log(`   ${itemIcon} ${e}`));
-    }
-    result.warnings.forEach((w) => console.log(`   ⚠️  ${w}`));
+  const summary = summarizeValidationRun(allLegacyResults, newChecks);
+
+  for (const check of summary.checks) {
+    if (check.kind !== "integrity") continue;
+    const icon = check.ok ? "✅" : check.soft ? "⚠️ " : "❌";
+    console.log(
+      `${icon} ${check.name}${!check.ok && check.soft ? " (soft)" : ""}`
+    );
+    check.errors.forEach((e) => console.log(`   ❌ ${e}`));
+    check.warnings.forEach((w) => console.log(`   ⚠️  ${w}`));
   }
 
   console.log("\n" + "=".repeat(60));
   console.log(`\n📈 RÉSUMÉ:`);
-  console.log(`   ✅ Succès: ${totalSuccess}`);
-  console.log(`   ⚠️  Avertissements: ${totalWarnings}`);
-  console.log(`   ❌ Erreurs: ${totalErrors}`);
+  console.log(
+    `   ✅ Succès: ${summary.checksPassed}/${summary.checksRun} contrôles`
+  );
+  console.log(`   ⚠️  Avertissements: ${summary.warningCount}`);
+  console.log(`   ❌ Erreurs: ${summary.errorCount}`);
 
   // Générer un rapport JSON
   const reportPath = path.join(
@@ -3376,7 +3442,7 @@ async function main() {
     "../dataset/source/afrik/logs/validation_report.json"
   );
   fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-  fs.writeFileSync(reportPath, JSON.stringify(allLegacyResults, null, 2));
+  fs.writeFileSync(reportPath, JSON.stringify(summary, null, 2));
   console.log(`\n📄 Rapport détaillé sauvegardé: ${reportPath}`);
 
   // Mettre à jour le workflow_status.csv (si présent)
@@ -3385,13 +3451,13 @@ async function main() {
     const workflowContent = fs.readFileSync(workflowStatusPath, "utf-8");
     const updatedContent = workflowContent.replace(
       /validation,pending/g,
-      `validation,${totalErrors === 0 ? "done" : "in_progress"}`
+      `validation,${summary.errorCount === 0 ? "done" : "in_progress"}`
     );
     fs.writeFileSync(workflowStatusPath, updatedContent);
     console.log("✅ workflow_status.csv mis à jour");
   }
 
-  process.exit(totalErrors > 0 || newCheckFailed ? 1 : 0);
+  process.exit(summary.failed ? 1 : 0);
 }
 
 // ESM-compatible direct invocation guard: true when run via tsx/node, false when imported by tests

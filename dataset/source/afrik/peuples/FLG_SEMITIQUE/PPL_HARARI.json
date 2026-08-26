@@ -85,12 +85,42 @@
       ]
     },
     "sources": [
-      "UNESCO — Harar Jugol, the Fortified Historic Town. https://whc.unesco.org/en/list/1189/",
-      "Ethnologue — Harari language (har). https://www.ethnologue.com/language/har",
-      "101 Last Tribes — Harari people. https://www.101lasttribes.com/tribes/harari.html",
-      "Beyond Photo Tours Africa — Harar, Ethiopia, UNESCO site and City of Peace. https://www.beyondphototoursafrica.com/blog/visit-harar-ethiopia-unesco-harari-culture-and-hyenas",
-      "Encyclopaedia Aethiopica, vol. 2 (Uhlig ed.), Harrassowitz Verlag, 2005",
-      "Ethiopian Central Statistical Agency (CSA) — Population and Housing Census 2007. https://www.csa.gov.et"
+      {
+        "title": "UNESCO — Harar Jugol, the Fortified Historic Town",
+        "url": "https://whc.unesco.org/en/list/1189/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "Ethnologue — Harari language (har)",
+        "url": "https://www.ethnologue.com/language/har",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "101 Last Tribes — Harari people",
+        "url": "https://www.101lasttribes.com/tribes/harari.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Beyond Photo Tours Africa — Harar, Ethiopia, UNESCO site and City of Peace",
+        "url": "https://www.beyondphototoursafrica.com/blog/visit-harar-ethiopia-unesco-harari-culture-and-hyenas",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers beyondphototoursafrica.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Encyclopaedia Aethiopica, vol. 2 (Uhlig ed.), Harrassowitz Verlag, 2005",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethiopian Central Statistical Agency (CSA) — Population and Housing Census 2007",
+        "url": "https://www.csa.gov.et",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for csa.gov.et."
+      }
     ]
   }
 }

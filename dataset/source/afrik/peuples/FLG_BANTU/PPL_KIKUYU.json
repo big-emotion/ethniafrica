@@ -95,10 +95,30 @@
       ]
     },
     "sources": [
-      "Ethnologue (SIL) — Gikuyu [kik]. https://www.ethnologue.com/language/kik/",
-      "Kenya National Bureau of Statistics — Kenya Population and Housing Census 2019. https://www.knbs.or.ke/2019-kenya-population-and-housing-census/",
-      "Ngugi wa Thiong'o — Decolonising the Mind: The Politics of Language in African Literature. James Currey, 1986.",
-      "Joshua Project — Kikuyu people group. https://joshuaproject.net/people_groups/11523/KE"
+      {
+        "title": "Ethnologue (SIL) — Gikuyu [kik]",
+        "url": "https://www.ethnologue.com/language/kik/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Kenya National Bureau of Statistics — Kenya Population and Housing Census 2019",
+        "url": "https://www.knbs.or.ke/2019-kenya-population-and-housing-census/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for knbs.or.ke."
+      },
+      {
+        "title": "Ngugi wa Thiong'o — Decolonising the Mind: The Politics of Language in African Literature. James Currey, 1986",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Kikuyu people group",
+        "url": "https://joshuaproject.net/people_groups/11523/KE",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

@@ -94,13 +94,48 @@
       ]
     },
     "sources": [
-      "Britannica — Ovimbundu. https://www.britannica.com/topic/Ovimbundu",
-      "Minority Rights Group — Ovimbundu in Angola. https://minorityrights.org/communities/ovimbundu/",
-      "eHRAF World Cultures — Ovimbundu (fp13). https://ehrafworldcultures.yale.edu/cultures/fp13/summary",
-      "Country Studies — Angola: Ovimbundu. https://countrystudies.us/angola/59.htm",
-      "SIL Ethnologue — Umbundu language, code umb. https://www.ethnologue.com/language/umb/",
-      "Localizely — Umbundu (umb) ISO code. https://localizely.com/language-code/umb/",
-      "Heywood, Linda. Contested Power in Angola, 1840s to the Present. University of Rochester Press, 2000."
+      {
+        "title": "Britannica — Ovimbundu",
+        "url": "https://www.britannica.com/topic/Ovimbundu",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Minority Rights Group — Ovimbundu in Angola",
+        "url": "https://minorityrights.org/communities/ovimbundu/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "eHRAF World Cultures — Ovimbundu (fp13)",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fp13/summary",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "Country Studies — Angola: Ovimbundu",
+        "url": "https://countrystudies.us/angola/59.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for countrystudies.us."
+      },
+      {
+        "title": "SIL Ethnologue — Umbundu language, code umb",
+        "url": "https://www.ethnologue.com/language/umb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Localizely — Umbundu (umb) ISO code",
+        "url": "https://localizely.com/language-code/umb/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for localizely.com."
+      },
+      {
+        "title": "Heywood, Linda. Contested Power in Angola, 1840s to the Present. University of Rochester Press, 2000",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

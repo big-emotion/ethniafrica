@@ -19,8 +19,8 @@ import {
 import {
   isQuizEligible,
   type QuizAssertionSource,
-  type QuizSourceType,
 } from "@/lib/quiz/eligibility";
+import { toSourceTier } from "@/types/sources";
 import {
   DIFFICULTY_RUNGES,
   QUIZ_AUDIENCES,
@@ -150,12 +150,6 @@ function shuffle<T>(items: T[]): T[] {
   return shuffled;
 }
 
-function tierToSourceType(tier: string | null | undefined): QuizSourceType {
-  if (tier === "primary") return "primary";
-  if (tier === "secondary") return "secondary";
-  return "ai";
-}
-
 function mapRow(row: QuizQuestionRow): QuizSessionQuestion {
   return {
     id: row.id,
@@ -242,7 +236,7 @@ export async function composeQuizSession(
       .map((sourceId) => sourceGateMap.get(sourceId))
       .filter((source): source is SourceGateRow => Boolean(source))
       .map((source) => ({
-        type: tierToSourceType(source.tier),
+        tier: toSourceTier(source.tier),
         resolvable: source.verified_at !== null,
       }));
 

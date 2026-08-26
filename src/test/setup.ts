@@ -22,3 +22,8 @@ if (typeof globalThis.Path2D === "undefined") {
     constructor(readonly d?: string) {}
   } as unknown as typeof Path2D;
 }
+
+// applyCorsHeaders omits Access-Control-Allow-Origin entirely when no origin is
+// configured, so route tests asserting on that header need one. Tests that
+// exercise the unconfigured case delete this variable themselves.
+process.env.CORS_ALLOWED_ORIGIN ??= "http://localhost:3000";

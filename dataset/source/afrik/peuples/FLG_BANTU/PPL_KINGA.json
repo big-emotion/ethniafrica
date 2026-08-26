@@ -71,12 +71,42 @@
       ]
     },
     "sources": [
-      "Kinga in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12699)",
-      "Kinga – TanzaniaScripture.com, 2021 (https://tanzaniascripture.com/languages/kinga/)",
-      "Kinga people – Tanzania Tourist Board / Facebook, 2024 (https://www.facebook.com/TanzaniaTouristBoard/posts/811743427661675/)",
-      "Kinga Language: Unearthing Tanzania's Forgotten Bantu Heritage – Language Learners Hub, 2025 (https://languagelearnershub.com/blog/kinga-language/)",
-      "Kinga of Tanzania – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg014963/)",
-      "Kinga – University of Missouri DICE (https://dice.missouri.edu/assets/docs/niger-congo/Kinga.pdf)"
+      {
+        "title": "Kinga in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/12699",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kinga – TanzaniaScripture.com, 2021",
+        "url": "https://tanzaniascripture.com/languages/kinga/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for tanzaniascripture.com."
+      },
+      {
+        "title": "Kinga people – Tanzania Tourist Board / Facebook, 2024",
+        "url": "https://www.facebook.com/TanzaniaTouristBoard/posts/811743427661675/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "Kinga Language: Unearthing Tanzania's Forgotten Bantu Heritage – Language Learners Hub, 2025",
+        "url": "https://languagelearnershub.com/blog/kinga-language/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers languagelearnershub.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Kinga of Tanzania – PeopleGroups.org, 2025",
+        "url": "https://peoplegroups.org/people_groups/pg014963/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Kinga – University of Missouri DICE",
+        "url": "https://dice.missouri.edu/assets/docs/niger-congo/Kinga.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      }
     ]
   }
 }

@@ -86,10 +86,30 @@
       ]
     },
     "sources": [
-      "Han Chinese, Hakka in Mauritius – Joshua Project, 2024 (https://joshuaproject.net/people_groups/12054/MP)",
-      "The Hakka Chinese – Banana Writers, 2016 (https://www.bananawriters.com/thehakkachinese)",
-      "Chinese Mauritians: Paradise Island's Next Dodo? – The Yale Globalist, 2013 (https://globalist.yale.edu/uncategorized/chinese-mauritians-paradise-islands-next-dodo/)",
-      "The Chinese in Mauritius Facts and Origins – My China Roots (https://www.mychinaroots.com/places/651564/mauritius)"
+      {
+        "title": "Han Chinese, Hakka in Mauritius – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/12054/MP",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "The Hakka Chinese – Banana Writers, 2016",
+        "url": "https://www.bananawriters.com/thehakkachinese",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers bananawriters.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Chinese Mauritians: Paradise Island's Next Dodo? – The Yale Globalist, 2013",
+        "url": "https://globalist.yale.edu/uncategorized/chinese-mauritians-paradise-islands-next-dodo/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers globalist.yale.edu; the tier awaits editorial review."
+      },
+      {
+        "title": "The Chinese in Mauritius Facts and Origins – My China Roots",
+        "url": "https://www.mychinaroots.com/places/651564/mauritius",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for mychinaroots.com."
+      }
     ]
   }
 }

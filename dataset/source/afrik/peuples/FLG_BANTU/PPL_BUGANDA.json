@@ -89,12 +89,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Luganda language (lug) : https://www.ethnologue.com/language/lug/",
-      "CIA World Factbook — Uganda : https://www.cia.gov/the-world-factbook/countries/uganda/",
-      "Uganda Bureau of Statistics (UBOS) — Uganda Population and Housing Census 2024",
-      "Joshua Project — Baganda in Uganda : https://joshuaproject.net/people_groups/10346/ug",
-      "UNESCO — Bark cloth making in Uganda (Buganda) — Patrimoine culturel immateriel inscrit 2008 : https://ich.unesco.org/en/RL/the-making-and-cultural-practices-of-the-kiganda-bark-cloth-in-uganda-00110",
-      "Glottolog — Luganda (luganda1247) : https://glottolog.org/resource/languoid/id/luga1252"
+      {
+        "title": "SIL Ethnologue — Luganda language (lug)",
+        "url": "https://www.ethnologue.com/language/lug/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CIA World Factbook — Uganda",
+        "url": "https://www.cia.gov/the-world-factbook/countries/uganda/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "Uganda Bureau of Statistics (UBOS) — Uganda Population and Housing Census 2024",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Baganda in Uganda",
+        "url": "https://joshuaproject.net/people_groups/10346/ug",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "UNESCO — Bark cloth making in Uganda (Buganda) — Patrimoine culturel immateriel inscrit 2008",
+        "url": "https://ich.unesco.org/en/RL/the-making-and-cultural-practices-of-the-kiganda-bark-cloth-in-uganda-00110",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Glottolog — Luganda (luganda1247)",
+        "url": "https://glottolog.org/resource/languoid/id/luga1252",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

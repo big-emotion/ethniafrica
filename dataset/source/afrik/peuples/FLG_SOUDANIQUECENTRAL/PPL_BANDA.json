@@ -105,11 +105,36 @@
       ]
     },
     "sources": [
-      "Encyclopaedia Britannica — Banda. https://www.britannica.com/topic/Banda-people",
-      "SIL Ethnologue — Banda-Linda (liy). https://www.ethnologue.com/language/liy/",
-      "Joshua Project — Banda, West Central in Central African Republic. https://joshuaproject.net/people_groups/10638/CT",
-      "101 Last Tribes — Banda. https://www.101lasttribes.com/tribes/banda.html",
-      "ICPhS 2019 — Reanalyzing the Banda-Linda Vowel System. https://www.internationalphoneticassociation.org/icphs-proceedings/ICPhS2019/papers/ICPhS_2110.pdf"
+      {
+        "title": "Encyclopaedia Britannica — Banda",
+        "url": "https://www.britannica.com/topic/Banda-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "SIL Ethnologue — Banda-Linda (liy)",
+        "url": "https://www.ethnologue.com/language/liy/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Banda, West Central in Central African Republic",
+        "url": "https://joshuaproject.net/people_groups/10638/CT",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes — Banda",
+        "url": "https://www.101lasttribes.com/tribes/banda.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "ICPhS 2019 — Reanalyzing the Banda-Linda Vowel System",
+        "url": "https://www.internationalphoneticassociation.org/icphs-proceedings/ICPhS2019/papers/ICPhS_2110.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers internationalphoneticassociation.org; the tier awaits editorial review."
+      }
     ]
   }
 }

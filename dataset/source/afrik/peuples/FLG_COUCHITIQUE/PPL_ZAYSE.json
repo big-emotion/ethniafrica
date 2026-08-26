@@ -79,11 +79,36 @@
       ]
     },
     "sources": [
-      "Zayse in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/16096)",
-      "Zayse of Ethiopia – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg011659/)",
-      "Zayse-Zergulla – Glottolog 5.3 (https://glottolog.org/resource/languoid/id/zays1235)",
-      "Amha, Azeb – Placing the Dead and Nurturing the Living: Documentation of house-construction and terrace farming in Zargulla, ASCL Leiden / ELDP, 2016-2019 (https://www.ascleiden.nl/news/new-research-project-placing-dead-and-nurturing-living-documentation-house-construction-and)",
-      "Zayse-Zergulla – JAEL Ethiopian Languages (https://jael.info/locale/lang/zay-ET-x-Zayse-Zergulla.html)"
+      {
+        "title": "Zayse in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/16096",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Zayse of Ethiopia – PeopleGroups.org, 2025",
+        "url": "https://peoplegroups.org/people_groups/pg011659/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Zayse-Zergulla – Glottolog 5.3",
+        "url": "https://glottolog.org/resource/languoid/id/zays1235",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Amha, Azeb – Placing the Dead and Nurturing the Living: Documentation of house-construction and terrace farming in Zargulla, ASCL Leiden / ELDP, 2016-2019",
+        "url": "https://www.ascleiden.nl/news/new-research-project-placing-dead-and-nurturing-living-documentation-house-construction-and",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ascleiden.nl."
+      },
+      {
+        "title": "Zayse-Zergulla – JAEL Ethiopian Languages",
+        "url": "https://jael.info/locale/lang/zay-ET-x-Zayse-Zergulla.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers jael.info; the tier awaits editorial review."
+      }
     ]
   }
 }

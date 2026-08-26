@@ -117,14 +117,54 @@
       ]
     },
     "sources": [
-      "Encyclopedia Africana ; Ife studies",
-      "Ethnologue, Yoruba (yor): https://www.ethnologue.com/language/yor",
-      "Glottolog, Yoruba: https://glottolog.org/resource/languoid/id/yoru1245",
-      "Joshua Project, Yoruba in Sierra Leone: https://joshuaproject.net/people_groups/16057/SL",
-      "PeopleGroups.org, Yoruba of Sierra Leone: https://peoplegroups.org/people_groups/pg014300/",
-      "UNESCO, Patrimoine culturel immateriel Ifa (2005) et Gelede (2003): https://ich.unesco.org/",
-      "Britannica, Oyo Empire: https://www.britannica.com/place/Oyo-empire",
-      "Lumen Learning, The Yoruba States: https://courses.lumenlearning.com/atd-herkimer-worldcivilization/chapter/the-yoruba-states/"
+      {
+        "title": "Encyclopedia Africana ; Ife studies",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue, Yoruba (yor)",
+        "url": "https://www.ethnologue.com/language/yor",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog, Yoruba",
+        "url": "https://glottolog.org/resource/languoid/id/yoru1245",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Joshua Project, Yoruba in Sierra Leone",
+        "url": "https://joshuaproject.net/people_groups/16057/SL",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org, Yoruba of Sierra Leone",
+        "url": "https://peoplegroups.org/people_groups/pg014300/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "UNESCO, Patrimoine culturel immateriel Ifa (2005) et Gelede (2003)",
+        "url": "https://ich.unesco.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Britannica, Oyo Empire",
+        "url": "https://www.britannica.com/place/Oyo-empire",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Lumen Learning, The Yoruba States",
+        "url": "https://courses.lumenlearning.com/atd-herkimer-worldcivilization/chapter/the-yoruba-states/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for courses.lumenlearning.com."
+      }
     ]
   }
 }

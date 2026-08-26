@@ -53,6 +53,13 @@
         "ISO2": 0
       }
     },
-    "sources": ["<Titre – Auteur/URL>"]
+    "sources": [
+      {
+        "title": "<Titre de la source, tel que cité>",
+        "url": "<URL résolvable, ou null pour une œuvre hors ligne>",
+        "tier": "official | referenced | unverified",
+        "notes": "<Provenance du tier : entrée du catalogue, règle de domaine, ou forme de citation>"
+      }
+    ]
   }
 }

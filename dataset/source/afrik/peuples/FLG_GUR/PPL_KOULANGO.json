@@ -85,12 +85,42 @@
       ]
     },
     "sources": [
-      "Kulango, Bouna in Côte d'Ivoire – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10955/IV)",
-      "Kulango, Bouna people group in all countries – Joshua Project, 2025 (https://joshuaproject.net/people_groups/10955)",
-      "TERROIR : L'histoire du peuple Koulango – Djasso.com, 2021 (https://djasso.com/terroir-voici-toute-lrhistoire-du-peuple-koulango-a16305741701.html)",
-      "The Kulango of Cote d'Ivoire – 101 Last Tribes (http://www.101lasttribes.com/tribes/kulango.html)",
-      "Kulango of Ghana – PeopleGroups.org, 2025 (https://peoplegroups.org/people_groups/pg013276/)",
-      "Parlons Koulango – Kra (linguistique), The Swiss Bay PDF"
+      {
+        "title": "Kulango, Bouna in Côte d'Ivoire – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/10955/IV",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Kulango, Bouna people group in all countries – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/10955",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "TERROIR : L'histoire du peuple Koulango – Djasso.com, 2021",
+        "url": "https://djasso.com/terroir-voici-toute-lrhistoire-du-peuple-koulango-a16305741701.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers djasso.com; the tier awaits editorial review."
+      },
+      {
+        "title": "The Kulango of Cote d'Ivoire – 101 Last Tribes",
+        "url": "http://www.101lasttribes.com/tribes/kulango.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Kulango of Ghana – PeopleGroups.org, 2025",
+        "url": "https://peoplegroups.org/people_groups/pg013276/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Parlons Koulango – Kra (linguistique), The Swiss Bay PDF",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

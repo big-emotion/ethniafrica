@@ -87,11 +87,36 @@
       ]
     },
     "sources": [
-      "South African History Online — Ndebele. https://sahistory.org.za/article/ndebele",
-      "Kruger Park Africa — The Southern Ndebele tribe. https://www.krugerpark.co.za/africa_ndebele.html",
-      "Kwekudee — Ndebele (Manala and Ndzundza). https://kwekudee-tripdownmemorylane.blogspot.com/2013/12/ndebele-manala-ndebele-and-ndzundza.html",
-      "Ethnologue (SIL) — isiNdebele [nbl]. https://www.ethnologue.com/language/nbl",
-      "Statistics South Africa — Census 2011. http://www.statssa.gov.za/"
+      {
+        "title": "South African History Online — Ndebele",
+        "url": "https://sahistory.org.za/article/ndebele",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sahistory.org.za."
+      },
+      {
+        "title": "Kruger Park Africa — The Southern Ndebele tribe",
+        "url": "https://www.krugerpark.co.za/africa_ndebele.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for krugerpark.co.za."
+      },
+      {
+        "title": "Kwekudee — Ndebele (Manala and Ndzundza)",
+        "url": "https://kwekudee-tripdownmemorylane.blogspot.com/2013/12/ndebele-manala-ndebele-and-ndzundza.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kwekudee-tripdownmemorylane.blogspot.com."
+      },
+      {
+        "title": "Ethnologue (SIL) — isiNdebele [nbl]",
+        "url": "https://www.ethnologue.com/language/nbl",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Statistics South Africa — Census 2011",
+        "url": "http://www.statssa.gov.za/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for statssa.gov.za."
+      }
     ]
   }
 }

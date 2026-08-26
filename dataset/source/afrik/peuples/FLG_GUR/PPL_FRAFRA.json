@@ -86,12 +86,42 @@
       ]
     },
     "sources": [
-      "101lasttribes — Frafra people. https://www.101lasttribes.com/tribes/frafra.html",
-      "101lasttribes — Gurenne people. https://www.101lasttribes.com/tribes/gurenne.html",
-      "Joshua Project — Gur, Farefare in Ghana. https://joshuaproject.net/people_groups/19121/GH",
-      "GhanaWeb — FraFra people. https://www.ghanaweb.com/GhanaHomePage/tribes/frafra.php",
-      "GhanaWeb — What you need to know about the Frafra people. https://www.ghanaweb.com/GhanaHomePage/NewsArchive/What-you-need-to-know-about-the-Frafra-people-of-Ghana-West-Africa-1011064",
-      "Folklore.ee — The Dagaaba-Frafra Joking Relationship. https://www.folklore.ee/folklore/vol14/dagaaba.htm"
+      {
+        "title": "101lasttribes — Frafra people",
+        "url": "https://www.101lasttribes.com/tribes/frafra.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "101lasttribes — Gurenne people",
+        "url": "https://www.101lasttribes.com/tribes/gurenne.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project — Gur, Farefare in Ghana",
+        "url": "https://joshuaproject.net/people_groups/19121/GH",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "GhanaWeb — FraFra people",
+        "url": "https://www.ghanaweb.com/GhanaHomePage/tribes/frafra.php",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ghanaweb.com."
+      },
+      {
+        "title": "GhanaWeb — What you need to know about the Frafra people",
+        "url": "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/What-you-need-to-know-about-the-Frafra-people-of-Ghana-West-Africa-1011064",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ghanaweb.com."
+      },
+      {
+        "title": "Folklore.ee — The Dagaaba-Frafra Joking Relationship",
+        "url": "https://www.folklore.ee/folklore/vol14/dagaaba.htm",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for folklore.ee."
+      }
     ]
   }
 }

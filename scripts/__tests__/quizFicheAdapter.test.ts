@@ -5,38 +5,64 @@ import {
   mapConfidenceRowToBaseEligibility,
   mapPeopleRowToFiche,
   normalizeFieldPath,
-  tierToSourceType,
   type AssertionRow,
   type BaseEligibility,
   type ConfidenceScoreRow,
   type PeopleRow,
   type SourceRow,
 } from "../lib/quizFicheAdapter";
+import { isQuizEligible } from "@/lib/quiz/eligibility";
 
-describe("tierToSourceType", () => {
+describe("source tier feeding the FR65 gate", () => {
+  const eligibility: BaseEligibility = {
+    confidenceScore: 90,
+    lastHumanAuditAt: "2026-01-01T00:00:00Z",
+    openFlagCount: 0,
+  };
+
+  const assertion: AssertionRow[] = [
+    {
+      id: "AST_1",
+      entity_id: "PPL_YORUBA",
+      field_path: "languageFamilyId",
+      source_ids: ["SRC"],
+    },
+  ];
+
+  function gateVerdict(tier: string | null) {
+    const sources = new Map<string, SourceRow>([
+      ["SRC", { id: "SRC", tier, verified_at: "2026-01-01T00:00:00Z" }],
+    ]);
+    const [binding] = Object.values(
+      buildAssertionBindings(assertion, sources, eligibility)
+    );
+    return isQuizEligible(binding.eligibility);
+  }
+
   // @req REQ-103
-  it("maps tier 'primary' to primary", () => {
-    expect(tierToSourceType("primary")).toBe("primary");
+  it("accepts an official source", () => {
+    expect(gateVerdict("official").eligible).toBe(true);
   });
 
   // @req REQ-103
-  it("maps tier 'secondary' to secondary", () => {
-    expect(tierToSourceType("secondary")).toBe("secondary");
+  it("accepts a referenced source", () => {
+    expect(gateVerdict("referenced").eligible).toBe(true);
   });
 
   // @req REQ-103
-  it("maps tier 'tertiary' to ai (reject bucket)", () => {
-    expect(tierToSourceType("tertiary")).toBe("ai");
+  it("rejects an unverified source", () => {
+    expect(gateVerdict("unverified")).toEqual({
+      eligible: false,
+      reason: "no_authoritative_source",
+    });
   });
 
   // @req REQ-103
-  it("maps tier 'ai-enriched' to ai (reject bucket)", () => {
-    expect(tierToSourceType("ai-enriched")).toBe("ai");
-  });
-
-  // @req REQ-103
-  it("maps null tier to ai (reject bucket)", () => {
-    expect(tierToSourceType(null)).toBe("ai");
+  it("rejects an untiered source rather than defaulting it open", () => {
+    expect(gateVerdict(null)).toEqual({
+      eligible: false,
+      reason: "no_authoritative_source",
+    });
   });
 });
 
@@ -281,9 +307,9 @@ describe("buildAssertionBindings", () => {
   const sourceById = new Map<string, SourceRow>([
     [
       "SRC_1",
-      { id: "SRC_1", tier: "primary", verified_at: "2026-01-01T00:00:00Z" },
+      { id: "SRC_1", tier: "official", verified_at: "2026-01-01T00:00:00Z" },
     ],
-    ["SRC_2", { id: "SRC_2", tier: "secondary", verified_at: null }],
+    ["SRC_2", { id: "SRC_2", tier: "referenced", verified_at: null }],
     [
       "SRC_UNKNOWN_TIER",
       { id: "SRC_UNKNOWN_TIER", tier: null, verified_at: null },
@@ -311,7 +337,7 @@ describe("buildAssertionBindings", () => {
         sourceIds: ["SRC_1"],
         eligibility: {
           ...baseEligibility,
-          assertionSources: [{ type: "primary", resolvable: true }],
+          assertionSources: [{ tier: "official", resolvable: true }],
         },
       },
     });
@@ -377,7 +403,7 @@ describe("buildAssertionBindings", () => {
       baseEligibility
     );
     expect(bindings.languageFamilyId.eligibility.assertionSources).toEqual([
-      { type: "ai", resolvable: false },
+      { tier: "unverified", resolvable: false },
     ]);
     expect(bindings.languageFamilyId.sourceIds).toEqual([
       "SRC_UNKNOWN_TIER",

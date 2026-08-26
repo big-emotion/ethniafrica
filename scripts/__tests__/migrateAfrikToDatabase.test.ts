@@ -4,6 +4,7 @@ import afroasiaticFamily from "../../dataset/source/afrik/famille_linguistique/F
 import betePeople from "../../dataset/source/afrik/peuples/FLG_KROU/PPL_BETE.json";
 import coteDIvoire from "../../dataset/source/afrik/pays/CIV.json";
 import { createAdminClient } from "@/lib/supabase/admin";
+import type { Country } from "@/types/afrik";
 import { loadAllCountries } from "@/lib/afrik/loaders/countryLoader";
 import { loadAllLanguageFamilies } from "@/lib/afrik/loaders/languageFamilyLoader";
 import { loadAllPeoples } from "@/lib/afrik/loaders/peopleLoader";
@@ -120,7 +121,9 @@ describe("migrateAfrikToDatabase", () => {
     vi.clearAllMocks();
     vi.mocked(loadAllLanguageFamilies).mockResolvedValue([familyFixture]);
     vi.mocked(loadAllPeoples).mockResolvedValue([peopleFixture]);
-    vi.mocked(loadAllCountries).mockResolvedValue([coteDIvoire]);
+    // A JSON import widens every string to `string`, so the fiche's
+    // `sources[].tier` loses its literal type against FicheSource.
+    vi.mocked(loadAllCountries).mockResolvedValue([coteDIvoire as Country]);
     vi.mocked(loadAllRelationFiles).mockReturnValue([]);
     vi.mocked(loadRelations).mockResolvedValue({
       total: 0,

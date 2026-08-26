@@ -89,10 +89,30 @@
       ]
     },
     "sources": [
-      "Glottolog – Dan-Toura (dant1235), 2024 (https://glottolog.org/resource/languoid/id/dant1235)",
-      "Omniglot – Dan language and alphabet, 2024 (https://www.omniglot.com/writing/dan.htm)",
-      "Landinfo – Report Cote d'Ivoire: Ethnicity, Ivoirite and Conflict, 2006 (https://www.landinfo.no/asset/514/1/514_1.pdf)",
-      "RTI Officiel – 2mn pour comprendre les Toura, 2021 (https://www.facebook.com/RTIOfficiel/videos/2mn-pour-comprendre-les-toura/452107626511263/)"
+      {
+        "title": "Glottolog – Dan-Toura (dant1235), 2024",
+        "url": "https://glottolog.org/resource/languoid/id/dant1235",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Omniglot – Dan language and alphabet, 2024",
+        "url": "https://www.omniglot.com/writing/dan.htm",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for omniglot.com."
+      },
+      {
+        "title": "Landinfo – Report Cote d'Ivoire: Ethnicity, Ivoirite and Conflict, 2006",
+        "url": "https://www.landinfo.no/asset/514/1/514_1.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for landinfo.no."
+      },
+      {
+        "title": "RTI Officiel – 2mn pour comprendre les Toura, 2021",
+        "url": "https://www.facebook.com/RTIOfficiel/videos/2mn-pour-comprendre-les-toura/452107626511263/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      }
     ]
   }
 }

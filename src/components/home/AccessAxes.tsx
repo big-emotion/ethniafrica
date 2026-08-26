@@ -315,7 +315,11 @@ export function AccessAxes({ language, counts }: AccessAxesProps) {
           gap: 7px;
           font-size: 14px;
           font-weight: 700;
-          color: var(--accent);
+          /* Text, so it takes --accent-ink, not the --accent fill: the fill
+             measures 3.10-4.39:1 on the card and drops further once the hover
+             wash tints the floor behind it. The glyph above keeps --accent —
+             it is aria-hidden decoration, not text. */
+          color: var(--accent-ink);
           position: relative;
           z-index: 1;
         }

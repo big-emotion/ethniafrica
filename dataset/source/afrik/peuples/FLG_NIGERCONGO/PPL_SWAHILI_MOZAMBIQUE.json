@@ -85,13 +85,48 @@
       ]
     },
     "sources": [
-      "UNESCO World Heritage Centre — Island of Mozambique. https://whc.unesco.org/en/list/599/",
-      "Joshua Project — Swahili in Mozambique. https://joshuaproject.net/people_groups/15145/MZ",
-      "PeopleGroups.org — Swahili of Mozambique (PGID: PG015420). https://peoplegroups.org/people_groups/pg015420/",
-      "Mozambique Experience — Ilha de Mocambique history and culture. https://www.mozambiqueexperience.com/post/ilha-de-mo%C3%A7ambique-a-timeless-gem-of-history-and-culture",
-      "Mozambique.co.za — History of Ibo Island. https://www.mozambique.co.za/ibo-island-history.html",
-      "Ethnologue SIL — kiMwani (wmw). https://www.ethnologue.com/language/wmw",
-      "CID-DS — Tufo Dancing: Muslim Women's Culture in Northern Mozambique. https://cid-ds.org/wp-content/uploads/2024/03/article-tufo.pdf"
+      {
+        "title": "UNESCO World Heritage Centre — Island of Mozambique",
+        "url": "https://whc.unesco.org/en/list/599/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "Joshua Project — Swahili in Mozambique",
+        "url": "https://joshuaproject.net/people_groups/15145/MZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org — Swahili of Mozambique (PGID: PG015420)",
+        "url": "https://peoplegroups.org/people_groups/pg015420/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Mozambique Experience — Ilha de Mocambique history and culture",
+        "url": "https://www.mozambiqueexperience.com/post/ilha-de-mo%C3%A7ambique-a-timeless-gem-of-history-and-culture",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mozambiqueexperience.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Mozambique.co.za — History of Ibo Island",
+        "url": "https://www.mozambique.co.za/ibo-island-history.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mozambique.co.za; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue SIL — kiMwani (wmw)",
+        "url": "https://www.ethnologue.com/language/wmw",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CID-DS — Tufo Dancing: Muslim Women's Culture in Northern Mozambique",
+        "url": "https://cid-ds.org/wp-content/uploads/2024/03/article-tufo.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers cid-ds.org; the tier awaits editorial review."
+      }
     ]
   }
 }

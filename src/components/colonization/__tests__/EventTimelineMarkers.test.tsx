@@ -155,4 +155,16 @@ describe("EventTimelineMarkers (Epic 13, Story 13.12, ETNI-536)", () => {
       render(<EventTimelineMarkers events={[]} bounds={bounds} />)
     ).not.toThrow();
   });
+
+  // The marker strip carries its own name, which ARIA permits only on an
+  // element with a role that supports naming — a bare div does not, and
+  // axe-core failed the empty-timeline story on aria-prohibited-attr.
+  // @req REQ-091 FR90
+  it("exposes the marker strip as a named group, even with no events", () => {
+    render(<EventTimelineMarkers events={[]} bounds={bounds} />);
+
+    expect(
+      screen.getByRole("group", { name: "Chronologie" })
+    ).toBeInTheDocument();
+  });
 });

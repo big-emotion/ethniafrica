@@ -100,13 +100,48 @@
       ]
     },
     "sources": [
-      "Britannica — Hutu. https://www.britannica.com/topic/Hutu",
-      "UNFPA — Burundi Population 2025. https://www.unfpa.org/data/world-population/BI",
-      "UNFPA — Rwanda Population 2025. https://www.unfpa.org/data/world-population/RW",
-      "USHMM — Divided by Ethnicity : Rwanda. https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
-      "Qiraat Africa — The Hutu people of the African Great Lakes. https://qiraatafrican.com/en/13614/the-hutu-people-of-the-african-great-lakes/",
-      "World Population Review — Burundi 2025. https://worldpopulationreview.com/countries/burundi",
-      "SIL Ethnologue — Kirundi (run). https://www.ethnologue.com/language/run"
+      {
+        "title": "Britannica — Hutu",
+        "url": "https://www.britannica.com/topic/Hutu",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "UNFPA — Burundi Population 2025",
+        "url": "https://www.unfpa.org/data/world-population/BI",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+      },
+      {
+        "title": "UNFPA — Rwanda Population 2025",
+        "url": "https://www.unfpa.org/data/world-population/RW",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\"."
+      },
+      {
+        "title": "USHMM — Divided by Ethnicity : Rwanda",
+        "url": "https://www.ushmm.org/genocide-prevention/countries/rwanda/divided-by-ethnicity",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ushmm.org."
+      },
+      {
+        "title": "Qiraat Africa — The Hutu people of the African Great Lakes",
+        "url": "https://qiraatafrican.com/en/13614/the-hutu-people-of-the-african-great-lakes/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "World Population Review — Burundi 2025",
+        "url": "https://worldpopulationreview.com/countries/burundi",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldpopulationreview.com."
+      },
+      {
+        "title": "SIL Ethnologue — Kirundi (run)",
+        "url": "https://www.ethnologue.com/language/run",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

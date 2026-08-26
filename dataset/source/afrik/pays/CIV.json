@@ -267,14 +267,54 @@
       "postIndependence": "1960-1993 : Présidence de Félix Houphouët-Boigny, période de stabilité politique et de développement économique (\"miracle ivoirien\"). 1993-2011 : Période d'instabilité politique, coups d'État, crises électorales, guerre civile (2002-2011). 2011-présent : Période de stabilisation et de reconstruction. Défis : réconciliation nationale, développement économique, gestion des migrations. La Côte d'Ivoire est le premier producteur mondial de cacao."
     },
     "sources": [
-      "SIL Ethnologue – Languages of Côte d'Ivoire",
-      "CIA World Factbook – Côte d'Ivoire",
-      "ONU / UNFPA – Démographie Côte d'Ivoire 2025",
-      "Memel-Fotê, Harris – \"Le modèle politique ivoirien\"",
-      "Archives culturelles ivoiriennes",
-      "Recensements ivoiriens",
-      "Études anthropologiques sur les peuples de la Côte d'Ivoire",
-      "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – https://unstats.un.org/unsd/methodology/m49/ [tier 1]"
+      {
+        "title": "SIL Ethnologue – Languages of Côte d'Ivoire",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook – Côte d'Ivoire",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "ONU / UNFPA – Démographie Côte d'Ivoire 2025",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Memel-Fotê, Harris – \"Le modèle politique ivoirien\"",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Archives culturelles ivoiriennes",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Recensements ivoiriens",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Études anthropologiques sur les peuples de la Côte d'Ivoire",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "UNSD M49 – Standard country or area codes for statistical use, noms français (nom d'usage) – [tier 1]",
+        "url": "https://unstats.un.org/unsd/methodology/m49/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"un-desa-wpp\" (un.org), matched as a parent of unstats.un.org."
+      }
     ],
     "demographics": {
       "peoples": [

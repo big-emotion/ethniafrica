@@ -94,14 +94,54 @@
       ]
     },
     "sources": [
-      "Ethnologue — Aari (AIW). https://www.ethnologue.com/language/aiw/",
-      "PeopleGroups.org — Ari of Ethiopia (PGID: PG011548). https://peoplegroups.org/people_groups/pg011548/",
-      "Joshua Project — Aari in Ethiopia. https://joshuaproject.net/people_groups/10424",
-      "Recensement éthiopien 2007 — Central Statistical Agency of Ethiopia. https://www.csa.gov.et/",
-      "Glottolog — Aari. https://glottolog.org/resource/languoid/id/aari1239",
-      "Hayward, Richard J. (ed.) 1990. Omotic Language Studies. London: School of Oriental and African Studies.",
-      "Bender, M. Lionel (ed.) 1976. The Non-Semitic Languages of Ethiopia. East Lansing: African Studies Center, Michigan State University.",
-      "CIA World Factbook — Ethiopia. https://www.cia.gov/the-world-factbook/countries/ethiopia/"
+      {
+        "title": "Ethnologue — Aari (AIW)",
+        "url": "https://www.ethnologue.com/language/aiw/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "PeopleGroups.org — Ari of Ethiopia (PGID: PG011548)",
+        "url": "https://peoplegroups.org/people_groups/pg011548/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Joshua Project — Aari in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/10424",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Recensement éthiopien 2007 — Central Statistical Agency of Ethiopia",
+        "url": "https://www.csa.gov.et/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for csa.gov.et."
+      },
+      {
+        "title": "Glottolog — Aari",
+        "url": "https://glottolog.org/resource/languoid/id/aari1239",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Hayward, Richard J. (ed.) 1990. Omotic Language Studies. London: School of Oriental and African Studies",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Bender, M. Lionel (ed.) 1976. The Non-Semitic Languages of Ethiopia. East Lansing: African Studies Center, Michigan State University",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook — Ethiopia",
+        "url": "https://www.cia.gov/the-world-factbook/countries/ethiopia/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

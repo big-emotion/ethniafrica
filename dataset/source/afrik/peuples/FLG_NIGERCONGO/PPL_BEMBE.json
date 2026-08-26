@@ -98,12 +98,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Bembe (bmb). https://www.ethnologue.com/language/bmb/",
-      "Joshua Project — Bembe in Congo DRC. https://joshuaproject.net/people_groups/10783/CG",
-      "Joshua Project — Bembe in Tanzania. https://joshuaproject.net/people_groups/print/10783/TZ",
-      "101 Last Tribes — Bembe people. https://www.101lasttribes.com/tribes/bembe.html",
-      "Glottolog — bemb1255. https://glottolog.org/resource/languoid/id/bemb1255",
-      "The GOAT PoL — Once upon a Bembe tradition. https://thegoatpol.org/story/once-upon-a-bembe-tradition/"
+      {
+        "title": "SIL Ethnologue — Bembe (bmb)",
+        "url": "https://www.ethnologue.com/language/bmb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Bembe in Congo DRC",
+        "url": "https://joshuaproject.net/people_groups/10783/CG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Bembe in Tanzania",
+        "url": "https://joshuaproject.net/people_groups/print/10783/TZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes — Bembe people",
+        "url": "https://www.101lasttribes.com/tribes/bembe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Glottolog — bemb1255",
+        "url": "https://glottolog.org/resource/languoid/id/bemb1255",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "The GOAT PoL — Once upon a Bembe tradition",
+        "url": "https://thegoatpol.org/story/once-upon-a-bembe-tradition/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers thegoatpol.org; the tier awaits editorial review."
+      }
     ]
   }
 }

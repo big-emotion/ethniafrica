@@ -90,12 +90,42 @@
       ]
     },
     "sources": [
-      "UNESCO — M'Zab Valley World Heritage. https://whc.unesco.org/en/list/188/",
-      "Ethnologue — Tumzabt (mzb). https://www.ethnologue.com/language/mzb/",
-      "WALS Online — Berber (Mzab) ISO 639-3: mzb. https://wals.info/languoid/lect/wals_code_bmz",
-      "Britannica — M'zabite. https://www.britannica.com/topic/Mzabite",
-      "Joshua Project — Berber, Mozabite in Algeria. https://joshuaproject.net/people_groups/13842/AG",
-      "ASJP/CERIST — The Mozabite Heritage: Authenticity of Identity and Continuity. https://asjp.cerist.dz/en/downArticle/136/11/3/275367"
+      {
+        "title": "UNESCO — M'Zab Valley World Heritage",
+        "url": "https://whc.unesco.org/en/list/188/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      },
+      {
+        "title": "Ethnologue — Tumzabt (mzb)",
+        "url": "https://www.ethnologue.com/language/mzb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "WALS Online — Berber (Mzab) ISO 639-3: mzb",
+        "url": "https://wals.info/languoid/lect/wals_code_bmz",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"wals\"."
+      },
+      {
+        "title": "Britannica — M'zabite",
+        "url": "https://www.britannica.com/topic/Mzabite",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project — Berber, Mozabite in Algeria",
+        "url": "https://joshuaproject.net/people_groups/13842/AG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "ASJP/CERIST — The Mozabite Heritage: Authenticity of Identity and Continuity",
+        "url": "https://asjp.cerist.dz/en/downArticle/136/11/3/275367",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers asjp.cerist.dz; the tier awaits editorial review."
+      }
     ]
   }
 }

@@ -86,11 +86,36 @@
       ]
     },
     "sources": [
-      "101 Last Tribes – Wogo people. https://www.101lasttribes.com/tribes/wogo.html",
-      "African Spiritualities – Holle Hori : Songhay spirit possession in Niger. https://afrospiritualities.com/2021/11/12/spirit-possession-a-return-to-wholeness-strong/",
-      "SIL Ethnologue – Koyraboro Senni (ses). https://www.ethnologue.com/language/ses/",
-      "Rouch, Jean. La Religion et la magie songhay. PUF, Paris, 1960.",
-      "CIA World Factbook – Niger. https://www.cia.gov/the-world-factbook/countries/niger/"
+      {
+        "title": "101 Last Tribes – Wogo people",
+        "url": "https://www.101lasttribes.com/tribes/wogo.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "African Spiritualities – Holle Hori : Songhay spirit possession in Niger",
+        "url": "https://afrospiritualities.com/2021/11/12/spirit-possession-a-return-to-wholeness-strong/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for afrospiritualities.com."
+      },
+      {
+        "title": "SIL Ethnologue – Koyraboro Senni (ses)",
+        "url": "https://www.ethnologue.com/language/ses/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Rouch, Jean. La Religion et la magie songhay. PUF, Paris, 1960",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook – Niger",
+        "url": "https://www.cia.gov/the-world-factbook/countries/niger/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

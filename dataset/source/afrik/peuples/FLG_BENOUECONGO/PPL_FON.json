@@ -92,12 +92,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Fon language (fon) : https://www.ethnologue.com/language/fon/",
-      "Joshua Project — Fon in Benin : https://joshuaproject.net/people_groups/11222/BN",
-      "Encyclopaedia Britannica — Fon : https://www.britannica.com/topic/Fon-people",
-      "Kutubu Arts — The Fon People of Benin: History and Culture from the Dahomey Kingdom : https://kutubuarts.com/blogs/african-art-curated/fon-history-and-culture",
-      "African American Registry — The Fon People, a story : https://aaregistry.org/story/the-fon-people-a-brief-story/",
-      "UNESCO — Palais royaux d'Abomey (patrimoine mondial) : https://whc.unesco.org/fr/liste/323/"
+      {
+        "title": "SIL Ethnologue — Fon language (fon)",
+        "url": "https://www.ethnologue.com/language/fon/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Fon in Benin",
+        "url": "https://joshuaproject.net/people_groups/11222/BN",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Fon",
+        "url": "https://www.britannica.com/topic/Fon-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Kutubu Arts — The Fon People of Benin: History and Culture from the Dahomey Kingdom",
+        "url": "https://kutubuarts.com/blogs/african-art-curated/fon-history-and-culture",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for kutubuarts.com."
+      },
+      {
+        "title": "African American Registry — The Fon People, a story",
+        "url": "https://aaregistry.org/story/the-fon-people-a-brief-story/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for aaregistry.org."
+      },
+      {
+        "title": "UNESCO — Palais royaux d'Abomey (patrimoine mondial)",
+        "url": "https://whc.unesco.org/fr/liste/323/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of whc.unesco.org."
+      }
     ]
   }
 }

@@ -79,10 +79,30 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue – Taal language (tql): https://www.ethnologue.com/language/tql/",
-      "SIL Burkina Faso – Gur languages of Burkina Faso: https://sil-burkina.org/en/content/gur-languages",
-      "101 Last Tribes – Gurunsi people: https://www.101lasttribes.com/tribes/gurunsi.html",
-      "Britannica – Grusi: https://www.britannica.com/topic/Grusi"
+      {
+        "title": "SIL Ethnologue – Taal language (tql)",
+        "url": "https://www.ethnologue.com/language/tql/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "SIL Burkina Faso – Gur languages of Burkina Faso",
+        "url": "https://sil-burkina.org/en/content/gur-languages",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for sil-burkina.org."
+      },
+      {
+        "title": "101 Last Tribes – Gurunsi people",
+        "url": "https://www.101lasttribes.com/tribes/gurunsi.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Britannica – Grusi",
+        "url": "https://www.britannica.com/topic/Grusi",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

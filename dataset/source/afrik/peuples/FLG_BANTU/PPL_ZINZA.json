@@ -72,11 +72,36 @@
       ]
     },
     "sources": [
-      "Zinza in Tanzania – Joshua Project, 2024 (https://joshuaproject.net/people_groups/16108)",
-      "Zinza of Tanzania – People Profile, Dr. Orville Jenkins, 2006 (http://orvillejenkins.com/profiles/zinza.html)",
-      "Zinza – Glottolog 5.3, zinz1238 (https://glottolog.org/resource/languoid/id/zinz1238)",
-      "The High God among the Zinza of Northwestern Tanzania – JSTOR (https://www.jstor.org/stable/3269748)",
-      "Zinza – TanzaniaScripture.com (https://tanzaniascripture.com/languages/zinza/)"
+      {
+        "title": "Zinza in Tanzania – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/16108",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Zinza of Tanzania – People Profile, Dr. Orville Jenkins, 2006",
+        "url": "http://orvillejenkins.com/profiles/zinza.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+      },
+      {
+        "title": "Zinza – Glottolog 5.3, zinz1238",
+        "url": "https://glottolog.org/resource/languoid/id/zinz1238",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "The High God among the Zinza of Northwestern Tanzania – JSTOR",
+        "url": "https://www.jstor.org/stable/3269748",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\"."
+      },
+      {
+        "title": "Zinza – TanzaniaScripture.com",
+        "url": "https://tanzaniascripture.com/languages/zinza/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for tanzaniascripture.com."
+      }
     ]
   }
 }

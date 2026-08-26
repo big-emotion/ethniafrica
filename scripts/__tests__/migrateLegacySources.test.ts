@@ -21,7 +21,7 @@ describe("auditLegacyCitations", () => {
       sourceKey: legacyKey(rawCitation),
       legacyRawCitation: rawCitation,
       sourceKind: "unknown",
-      evidenceTier: null,
+      tier: "unverified",
       identifiers: {},
       reviewStatus: "review_required",
     });
@@ -35,7 +35,7 @@ describe("auditLegacyCitations", () => {
 
     expect(result).toMatchObject({
       sourceKind: "unknown",
-      evidenceTier: null,
+      tier: "unverified",
       identifiers: {},
       reviewStatus: "review_required",
     });

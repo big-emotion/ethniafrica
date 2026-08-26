@@ -79,11 +79,36 @@
       ]
     },
     "sources": [
-      "Bassa Nge Community of North America : Our History https://www.bassangecommunityna.org/our-ministries",
-      "Facebook Historical Nigeria : The Bassa Nge people https://www.facebook.com/HistoricalNigeria/posts/the-bassa-nge-people-are-an-ethnic-group-in-nigeria",
-      "Glottolog : Nupoid (classification linguistique) https://glottolog.org/resource/languoid/id/nupo1239",
-      "Ethnologue : Nupe-Nupe-Tako (NUP) https://www.ethnologue.com/language/nup/",
-      "YouTube : The History of Bassa Nigeria https://www.youtube.com/watch?v=UVGnthv_d7w"
+      {
+        "title": "Bassa Nge Community of North America : Our History",
+        "url": "https://www.bassangecommunityna.org/our-ministries",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers bassangecommunityna.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Facebook Historical Nigeria : The Bassa Nge people",
+        "url": "https://www.facebook.com/HistoricalNigeria/posts/the-bassa-nge-people-are-an-ethnic-group-in-nigeria",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "Glottolog : Nupoid (classification linguistique)",
+        "url": "https://glottolog.org/resource/languoid/id/nupo1239",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Ethnologue : Nupe-Nupe-Tako (NUP)",
+        "url": "https://www.ethnologue.com/language/nup/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "YouTube : The History of Bassa Nigeria",
+        "url": "https://www.youtube.com/watch?v=UVGnthv_d7w",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for youtube.com."
+      }
     ]
   }
 }

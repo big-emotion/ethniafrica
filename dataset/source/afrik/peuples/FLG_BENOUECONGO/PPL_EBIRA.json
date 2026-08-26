@@ -89,11 +89,36 @@
       ]
     },
     "sources": [
-      "Joshua Project — Ebira in Nigeria (2025). https://joshuaproject.net/people_groups/12188",
-      "101 Last Tribes — The Ebira people of Nigeria. https://www.101lasttribes.com/tribes/ebira.html",
-      "Qiraat Africa — The Ebira people of Nigeria (2025). https://qiraatafrican.com/en/15647/the-ebira-people-of-nigeria/",
-      "Federal Republic of Nigeria Official Gazette, 14 juillet 2022 — Orthographe officielle du nom Ebira.",
-      "Ethnologue (SIL International) — Ebira language, code igb. https://www.ethnologue.com/"
+      {
+        "title": "Joshua Project — Ebira in Nigeria (2025)",
+        "url": "https://joshuaproject.net/people_groups/12188",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "101 Last Tribes — The Ebira people of Nigeria",
+        "url": "https://www.101lasttribes.com/tribes/ebira.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Qiraat Africa — The Ebira people of Nigeria (2025)",
+        "url": "https://qiraatafrican.com/en/15647/the-ebira-people-of-nigeria/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      },
+      {
+        "title": "Federal Republic of Nigeria Official Gazette, 14 juillet 2022 — Orthographe officielle du nom Ebira",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue (SIL International) — Ebira language, code igb",
+        "url": "https://www.ethnologue.com/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

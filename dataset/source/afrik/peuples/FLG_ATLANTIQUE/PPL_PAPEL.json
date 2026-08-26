@@ -93,11 +93,36 @@
       ]
     },
     "sources": [
-      "Ethnologue, Papel (pbo) : https://www.ethnologue.com/language/pbo",
-      "Glottolog, Papel : https://glottolog.org/resource/languoid/id/pape1239",
-      "Joshua Project, Papel in Guinea-Bissau : https://joshuaproject.net/people_groups/14307/PU",
-      "Les Pepels (ou Papels) - Guinee-Bissau : https://www.guinee-bissau.net/papels.php",
-      "Britannica, Biombo region : https://www.britannica.com/place/Biombo-region-Guinea-Bissau"
+      {
+        "title": "Ethnologue, Papel (pbo)",
+        "url": "https://www.ethnologue.com/language/pbo",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog, Papel",
+        "url": "https://glottolog.org/resource/languoid/id/pape1239",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Joshua Project, Papel in Guinea-Bissau",
+        "url": "https://joshuaproject.net/people_groups/14307/PU",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Les Pepels (ou Papels) - Guinee-Bissau",
+        "url": "https://www.guinee-bissau.net/papels.php",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers guinee-bissau.net; the tier awaits editorial review."
+      },
+      {
+        "title": "Britannica, Biombo region",
+        "url": "https://www.britannica.com/place/Biombo-region-Guinea-Bissau",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      }
     ]
   }
 }

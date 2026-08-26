@@ -89,12 +89,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Ibibio language (ibb) : https://www.ethnologue.com/language/ibb/",
-      "Study.com — Ibibio People : History, Culture and Language : https://study.com/academy/lesson/ibibio-origin-language-culture-people.html",
-      "Dise Akwa Ibom — A Very Brief History of the Ibibio People : https://diseakwaibom.com/2020/08/18/history-of-ibibio-people/",
-      "WorldAtlas — Largest Ethnic Groups in Nigeria (Ibibio 3,5%) : https://www.worldatlas.com/articles/largest-ethnic-groups-in-nigeria.html",
-      "Udo, Edet A. — Who Are the Ibibio? (référence académique)",
-      "CIA World Factbook — Nigeria : https://www.cia.gov/the-world-factbook/countries/nigeria/"
+      {
+        "title": "SIL Ethnologue — Ibibio language (ibb)",
+        "url": "https://www.ethnologue.com/language/ibb/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Study.com — Ibibio People : History, Culture and Language",
+        "url": "https://study.com/academy/lesson/ibibio-origin-language-culture-people.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for study.com."
+      },
+      {
+        "title": "Dise Akwa Ibom — A Very Brief History of the Ibibio People",
+        "url": "https://diseakwaibom.com/2020/08/18/history-of-ibibio-people/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers diseakwaibom.com; the tier awaits editorial review."
+      },
+      {
+        "title": "WorldAtlas — Largest Ethnic Groups in Nigeria (Ibibio 3,5%)",
+        "url": "https://www.worldatlas.com/articles/largest-ethnic-groups-in-nigeria.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldatlas.com."
+      },
+      {
+        "title": "Udo, Edet A. — Who Are the Ibibio? (référence académique)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook — Nigeria",
+        "url": "https://www.cia.gov/the-world-factbook/countries/nigeria/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

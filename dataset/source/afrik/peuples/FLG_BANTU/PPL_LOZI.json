@@ -108,10 +108,30 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Lozi (loz) : https://www.ethnologue.com/language/loz/",
-      "Joshua Project — Lozi in Zambia : https://joshuaproject.net/people_groups/13127/ZA",
-      "PeopleGroups.org — Lozi of Zambia : https://peoplegroups.org/people_groups/pg015593/",
-      "ISO 639-3 Codes for Africa — Wiktionary : https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa"
+      {
+        "title": "SIL Ethnologue — Lozi (loz)",
+        "url": "https://www.ethnologue.com/language/loz/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Lozi in Zambia",
+        "url": "https://joshuaproject.net/people_groups/13127/ZA",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "PeopleGroups.org — Lozi of Zambia",
+        "url": "https://peoplegroups.org/people_groups/pg015593/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "ISO 639-3 Codes for Africa — Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      }
     ]
   }
 }

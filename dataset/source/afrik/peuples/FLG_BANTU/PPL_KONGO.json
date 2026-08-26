@@ -118,11 +118,36 @@
       ]
     },
     "sources": [
-      "Ethnologue (SIL) — Kongo [kon]. https://www.ethnologue.com/language/kon",
-      "Jan Vansina — Kingdoms of the Savanna. University of Wisconsin Press, 1966.",
-      "Simon Bockie — Death and the Invisible Powers: The World of Kongo Belief. Indiana University Press, 1993.",
-      "CIA World Factbook — Republic of the Congo. https://www.cia.gov/the-world-factbook/countries/congo-republic-of-the/",
-      "SimpleLocalize — Language Kongo (kon). https://simplelocalize.io/data/language/kg/"
+      {
+        "title": "Ethnologue (SIL) — Kongo [kon]",
+        "url": "https://www.ethnologue.com/language/kon",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Jan Vansina — Kingdoms of the Savanna. University of Wisconsin Press, 1966",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Simon Bockie — Death and the Invisible Powers: The World of Kongo Belief. Indiana University Press, 1993",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "CIA World Factbook — Republic of the Congo",
+        "url": "https://www.cia.gov/the-world-factbook/countries/congo-republic-of-the/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "SimpleLocalize — Language Kongo (kon)",
+        "url": "https://simplelocalize.io/data/language/kg/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers simplelocalize.io; the tier awaits editorial review."
+      }
     ]
   }
 }

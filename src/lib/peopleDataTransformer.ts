@@ -5,6 +5,7 @@
  * UI component of the people detail page.
  */
 
+import { ficheSourceLine } from "@/lib/afrik/ficheSourceLabel";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 import type {
   OriginsSection,
@@ -166,6 +167,7 @@ export interface PeoplePageData {
 /**
  * Format population number: 40000000 → "40M", 500000 → "500K"
  */
+// @req REQ-003
 export function formatPeoplePopulation(n: number): string {
   if (n >= 1_000_000) {
     const m = n / 1_000_000;
@@ -183,6 +185,7 @@ export function formatPeoplePopulation(n: number): string {
  * Extract short display form from a selfAppellation string.
  * "Ọmọ Oòduà (singulier), Yorùbá (pluriel)" → "Ọmọ Oòduà · Yorùbá"
  */
+// @req REQ-003
 export function extractAppellationShort(selfAppellation?: string): string {
   if (!selfAppellation) return "";
   const parts = selfAppellation.match(/([^(,]+?)\s*\(/g);
@@ -196,6 +199,7 @@ export function extractAppellationShort(selfAppellation?: string): string {
 // TRANSFORM FUNCTIONS
 // ==========================================
 
+// @req REQ-003
 export function transformPeopleHero(raw: PeopleDetail): PeopleHeroData {
   return {
     peopleId: raw.id,
@@ -212,6 +216,7 @@ export function transformPeopleHero(raw: PeopleDetail): PeopleHeroData {
   };
 }
 
+// @req REQ-003
 export function transformPeopleOrigins(
   origins?: OriginsSection
 ): PeopleOriginData {
@@ -226,6 +231,7 @@ export function transformPeopleOrigins(
   };
 }
 
+// @req REQ-003
 export function transformPeopleLanguages(
   languages?: LanguagesSection,
   languageFamilyId?: string,
@@ -241,6 +247,7 @@ export function transformPeopleLanguages(
   };
 }
 
+// @req REQ-003
 export function transformPeopleHistory(
   historicalRole?: HistoricalRoleSection
 ): PeopleHistoryData {
@@ -252,6 +259,7 @@ export function transformPeopleHistory(
   };
 }
 
+// @req REQ-003
 export function transformPeopleCulture(
   culture?: DetailedCultureSection
 ): PeopleCultureData {
@@ -302,6 +310,7 @@ export function transformPeopleCulture(
   };
 }
 
+// @req REQ-097
 export function transformPeopleRelatedPeoples(
   ethnicities?: string[],
   organization?: OrganizationSection
@@ -334,6 +343,7 @@ export function transformEgoNetworkPreview(
   ];
 }
 
+// @req REQ-003
 export function transformPeopleCountries(
   demography?: GlobalDemographySection
 ): PeopleCountriesData {
@@ -364,6 +374,7 @@ export function transformPeopleCountries(
  * card and the chip are composed by the caller (`PeopleNamesSection`) —
  * this transformer stays free of JSX.
  */
+// @req REQ-054
 export function transformPeopleNameRecord(
   entry: PeopleNameRecord
 ): PeopleNameRecordViewData {
@@ -391,6 +402,7 @@ export function transformPeopleNameRecord(
  * when there is nothing to show (UX-DR31) — the section omits itself
  * entirely rather than rendering an empty shell.
  */
+// @req REQ-054
 export function transformPeopleNames(
   dossier?: PeopleNamesDossier | null
 ): PeopleNamesData | null {
@@ -429,6 +441,7 @@ export function transformPeopleNames(
 }
 
 /** Fetches the names dossier for a people from the fiche's data flow (GET /v2/peoples/{id}/names). */
+// @req REQ-054
 export async function fetchPeopleNamesDossier(
   peopleId: string
 ): Promise<PeopleNamesDossier | null> {
@@ -442,14 +455,12 @@ export async function fetchPeopleNamesDossier(
 // MAIN TRANSFORM
 // ==========================================
 
+// @req REQ-003
 export function transformPeopleData(
   raw: PeopleDetail,
   namesDossier?: PeopleNamesDossier | null
 ): PeoplePageData {
-  const sources =
-    raw.sources && raw.sources.length > 0
-      ? raw.sources.map((s) => s.replace(/^-\s*/, "").trim()).join(" · ")
-      : "";
+  const sources = ficheSourceLine(raw.sources);
 
   return {
     hero: transformPeopleHero(raw),

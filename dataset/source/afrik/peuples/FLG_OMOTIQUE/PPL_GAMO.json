@@ -71,10 +71,30 @@
       ]
     },
     "sources": [
-      "Gamo in Ethiopia – Joshua Project, 2025 (https://joshuaproject.net/people_groups/11814/ET)",
-      "Gamo Language (GMV) – Ethnologue / SIL International, 2025 (https://www.ethnologue.com/language/gmv/)",
-      "Gamo Highlands – Ethiopia – Sacred Land Film Project, 2009 (https://sacredland.org/gamo-highlands-ethiopia/)",
-      "Gamo's cultural forum – Dubussha as a tool for social change communication – Heliyon / ScienceDirect, 2024 (https://www.sciencedirect.com/science/article/pii/S2405844024037058)"
+      {
+        "title": "Gamo in Ethiopia – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/11814/ET",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Gamo Language (GMV) – Ethnologue / SIL International, 2025",
+        "url": "https://www.ethnologue.com/language/gmv/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Gamo Highlands – Ethiopia – Sacred Land Film Project, 2009",
+        "url": "https://sacredland.org/gamo-highlands-ethiopia/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sacredland.org."
+      },
+      {
+        "title": "Gamo's cultural forum – Dubussha as a tool for social change communication – Heliyon / ScienceDirect, 2024",
+        "url": "https://www.sciencedirect.com/science/article/pii/S2405844024037058",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for sciencedirect.com."
+      }
     ]
   }
 }

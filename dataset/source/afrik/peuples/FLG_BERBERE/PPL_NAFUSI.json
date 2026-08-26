@@ -88,15 +88,60 @@
       ]
     },
     "sources": [
-      "Ethnologue — Nafusi (jbn). https://www.ethnologue.com/language/jbn/",
-      "Joshua Project — Berber, Jabal Nafusah in Libya. https://joshuaproject.net/people_groups/12306",
-      "Britannica — Libya : People. https://www.britannica.com/place/Libya/People",
-      "Reuters — Berber culture reborn in Libya revolt. https://www.reuters.com/article/libya-berber-idAFLDE76A1HS20110711",
-      "CEDS — ISO 639-3 code jbn (Nafusi). https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
-      "The Monsoon Diaries — The Jebel Alliance Take the Nafusa Mountains. https://monsoondiaries.com/2024/04/17/jebel-nafusa/",
-      "Ibadica.org — The Role of Amazigh Libyan Civil Society in the Tamazgha Spring. https://ibadica.org/s/bibliographie/item/46983",
-      "Ibn Khaldoun, Abd ar-Rahman. Kitab al-Ibar (Histoire des Berbères). 14e siècle.",
-      "Beguinot, Francesco. Il berbero nefusi di Fassato. Roma, 1931."
+      {
+        "title": "Ethnologue — Nafusi (jbn)",
+        "url": "https://www.ethnologue.com/language/jbn/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Berber, Jabal Nafusah in Libya",
+        "url": "https://joshuaproject.net/people_groups/12306",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Britannica — Libya : People",
+        "url": "https://www.britannica.com/place/Libya/People",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Reuters — Berber culture reborn in Libya revolt",
+        "url": "https://www.reuters.com/article/libya-berber-idAFLDE76A1HS20110711",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for reuters.com."
+      },
+      {
+        "title": "CEDS — ISO 639-3 code jbn (Nafusi)",
+        "url": "https://ceds.ed.gov/iso639-3LanguageCodev7.aspx",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ceds.ed.gov."
+      },
+      {
+        "title": "The Monsoon Diaries — The Jebel Alliance Take the Nafusa Mountains",
+        "url": "https://monsoondiaries.com/2024/04/17/jebel-nafusa/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers monsoondiaries.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Ibadica.org — The Role of Amazigh Libyan Civil Society in the Tamazgha Spring",
+        "url": "https://ibadica.org/s/bibliographie/item/46983",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers ibadica.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Ibn Khaldoun, Abd ar-Rahman. Kitab al-Ibar (Histoire des Berbères). 14e siècle",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Beguinot, Francesco. Il berbero nefusi di Fassato. Roma, 1931",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

@@ -118,13 +118,48 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Dinka macrolanguage (din). https://www.ethnologue.com/language/din/",
-      "Deng, Francis Mading — The Dinka of the Sudan. New York: Holt, Rinehart and Winston, 1972.",
-      "Lienhardt, Godfrey — Divinity and Experience: The Religion of the Dinka. Oxford: Clarendon Press, 1961.",
-      "Johnson, Douglas H. — The Root Causes of Sudan's Civil Wars. Oxford: James Currey, 2003.",
-      "Human Rights Watch — South Sudan: Ethnic Targeting, Crimes Against Humanity (2014). https://www.hrw.org/",
-      "CIA World Factbook — South Sudan. https://www.cia.gov/the-world-factbook/countries/south-sudan/",
-      "UNFPA South Sudan population data. https://southsudan.unfpa.org/"
+      {
+        "title": "SIL Ethnologue — Dinka macrolanguage (din)",
+        "url": "https://www.ethnologue.com/language/din/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Deng, Francis Mading — The Dinka of the Sudan. New York: Holt, Rinehart and Winston, 1972",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Lienhardt, Godfrey — Divinity and Experience: The Religion of the Dinka. Oxford: Clarendon Press, 1961",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Johnson, Douglas H. — The Root Causes of Sudan's Civil Wars. Oxford: James Currey, 2003",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Human Rights Watch — South Sudan: Ethnic Targeting, Crimes Against Humanity (2014)",
+        "url": "https://www.hrw.org/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for hrw.org."
+      },
+      {
+        "title": "CIA World Factbook — South Sudan",
+        "url": "https://www.cia.gov/the-world-factbook/countries/south-sudan/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "UNFPA South Sudan population data",
+        "url": "https://southsudan.unfpa.org/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unfpa\" (unfpa.org), matched as a parent of southsudan.unfpa.org."
+      }
     ]
   }
 }

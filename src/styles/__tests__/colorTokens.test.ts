@@ -53,6 +53,23 @@ describe("AFH color tokens", () => {
       )
     ).toBeGreaterThanOrEqual(4.5);
   });
+
+  // The full-strength accent is a fill colour, not an ink: every --afh-cat-*
+  // base sits between 2.28:1 and 3.09:1 on its own tint, so text tinted with
+  // it fails AA. --afh-cat-*-ink is the readable counterpart, and it only
+  // earns its place if it clears the bar on every accent.
+  // @req REQ-090
+  it.each(["ocre", "teal", "terre", "perv"])(
+    "keeps %s accent ink AA-readable on its own tint",
+    (accent) => {
+      expect(
+        contrastRatio(
+          tokenHex(`--afh-cat-${accent}-ink`),
+          tokenHex(`--afh-cat-${accent}-tint`)
+        )
+      ).toBeGreaterThanOrEqual(4.5);
+    }
+  );
 });
 
 describe("night theme (REQ-115)", () => {

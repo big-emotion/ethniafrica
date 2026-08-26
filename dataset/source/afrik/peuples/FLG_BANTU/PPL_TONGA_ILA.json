@@ -77,11 +77,36 @@
       ]
     },
     "sources": [
-      "Edwin W. Smith et Andrew M. Dale, The Ila-speaking Peoples of Northern Rhodesia, 2 vol., 1920 (reedition Humanities Press, 1968)",
-      "eHRAF World Cultures, Ila – Description et Summary (https://ehrafworldcultures.yale.edu/cultures/fq06/description)",
-      "Britannica, Ila – African tribe, Zambia (https://www.britannica.com/topic/Ila-people)",
-      "Joshua Project, Ila in Zambia (https://joshuaproject.net/people_groups/12208)",
-      "Wiktionary, Appendix ISO 639-3 codes Africa – code ilb pour Ila (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)"
+      {
+        "title": "Edwin W. Smith et Andrew M. Dale, The Ila-speaking Peoples of Northern Rhodesia, 2 vol., 1920 (reedition Humanities Press, 1968)",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "eHRAF World Cultures, Ila – Description et Summary",
+        "url": "https://ehrafworldcultures.yale.edu/cultures/fq06/description",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ehraf\"."
+      },
+      {
+        "title": "Britannica, Ila – African tribe, Zambia",
+        "url": "https://www.britannica.com/topic/Ila-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Joshua Project, Ila in Zambia",
+        "url": "https://joshuaproject.net/people_groups/12208",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Wiktionary, Appendix ISO 639-3 codes Africa – code ilb pour Ila",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      }
     ]
   }
 }

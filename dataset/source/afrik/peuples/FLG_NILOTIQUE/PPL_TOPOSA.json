@@ -94,14 +94,54 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Toposa. https://www.101lasttribes.com/tribes/toposa2.html",
-      "Joshua Project — Toposa in South Sudan. https://joshuaproject.net/people_groups/15563/OD",
-      "Tornay, Serge. 1981. Générations, classes d'âge et structures de parenté. Systèmes de Pensée en Afrique Noire.",
-      "France Leclerc — The Toposa People of South Sudan. https://franceleclerc.com/2022/05/15/the-toposa-people-of-south-sudan/",
-      "Ethnologue — Toposa (TOQ). https://www.ethnologue.com/language/toq/",
-      "Gulliver, P.H. 1958. The Turkana age organization. American Anthropologist 60:900-922.",
-      "CIA World Factbook — South Sudan. https://www.cia.gov/the-world-factbook/countries/south-sudan/",
-      "JSTOR — Generation- and age-set systems with special reference to Toposa and Turkana. https://www.jstor.org/stable/619062"
+      {
+        "title": "101 Last Tribes — Toposa",
+        "url": "https://www.101lasttribes.com/tribes/toposa2.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project — Toposa in South Sudan",
+        "url": "https://joshuaproject.net/people_groups/15563/OD",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Tornay, Serge. 1981. Générations, classes d'âge et structures de parenté. Systèmes de Pensée en Afrique Noire",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "France Leclerc — The Toposa People of South Sudan",
+        "url": "https://franceleclerc.com/2022/05/15/the-toposa-people-of-south-sudan/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers franceleclerc.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Ethnologue — Toposa (TOQ)",
+        "url": "https://www.ethnologue.com/language/toq/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Gulliver, P.H. 1958. The Turkana age organization. American Anthropologist 60:900-922",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook — South Sudan",
+        "url": "https://www.cia.gov/the-world-factbook/countries/south-sudan/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      },
+      {
+        "title": "JSTOR — Generation- and age-set systems with special reference to Toposa and Turkana",
+        "url": "https://www.jstor.org/stable/619062",
+        "tier": "referenced",
+        "notes": "Tier resolved from the authorized source catalogue entry \"jstor\"."
+      }
     ]
   }
 }

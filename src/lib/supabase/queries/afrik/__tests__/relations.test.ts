@@ -222,7 +222,7 @@ describe("relations query layer", () => {
         new Map([
           [
             "REL_A_B",
-            [{ id: "SRC_1", title: "S1", url: null, tier: "primary" }],
+            [{ id: "SRC_1", title: "S1", url: null, tier: "official" }],
           ],
         ])
       );
@@ -254,7 +254,7 @@ describe("relations query layer", () => {
       });
       expect(forA[0].confidence).toEqual({ score: 0.8, sourceCount: 1 });
       expect(forA[0].sources).toEqual([
-        { id: "SRC_1", title: "S1", url: null, tier: "primary" },
+        { id: "SRC_1", title: "S1", url: null, tier: "official" },
       ]);
 
       const forB = result.get("PPL_B") || [];
@@ -535,7 +535,10 @@ describe("relations query layer", () => {
       });
       vi.mocked(getSourcesMap).mockResolvedValue(
         new Map([
-          ["REL_A_B", [{ id: "SRC_1", title: "S1", url: null, tier: "1" }]],
+          [
+            "REL_A_B",
+            [{ id: "SRC_1", title: "S1", url: null, tier: "official" }],
+          ],
         ])
       );
       vi.mocked(getConfidenceMap).mockResolvedValue(
@@ -572,7 +575,7 @@ describe("relations query layer", () => {
           label: "XIVe-XVIIIe siecle",
         },
         description: "test description",
-        sources: [{ id: "SRC_1", title: "S1", url: null, tier: "1" }],
+        sources: [{ id: "SRC_1", title: "S1", url: null, tier: "official" }],
         confidence: { score: 0.5, sourceCount: 1 },
       });
       expect(chain.range).toHaveBeenCalledWith(0, 19);

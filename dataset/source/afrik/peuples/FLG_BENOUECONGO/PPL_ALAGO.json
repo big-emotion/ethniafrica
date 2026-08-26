@@ -92,11 +92,36 @@
       ]
     },
     "sources": [
-      "Ethnologue, Alago (ALA). https://www.ethnologue.com/language/ala/ (consulté 2025)",
-      "Joshua Project, Alago Idoma Nokwu in Nigeria. https://joshuaproject.net/people_groups/10241 (consulté 2025)",
-      "Oyigbenu, Amirikpa. The Threat of Endangerment and Extinction of Alago Language of Nasarawa State. International Journal of Language and Culture, 5(1), 2025, pp. 1-6. https://www.svedbergopen.com/files/1752662911_(1)_IJLC202509015611NG_(p_1-6).pdf",
-      "International Policy Digest, The Underexplored Tapestry of Nigeria's Alago People (2023). https://intpolicydigest.org/the-platform/the-underexplored-tapestry-of-nigeria-s-alago-people/",
-      "Wikidata, Alago (Q106490494). https://www.wikidata.org/wiki/Q106490494 (consulté 2025)"
+      {
+        "title": "Ethnologue, Alago (ALA). (consulté 2025)",
+        "url": "https://www.ethnologue.com/language/ala/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project, Alago Idoma Nokwu in Nigeria. (consulté 2025)",
+        "url": "https://joshuaproject.net/people_groups/10241",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Oyigbenu, Amirikpa. The Threat of Endangerment and Extinction of Alago Language of Nasarawa State. International Journal of Language and Culture, 5(1), 2025, pp. 1-6. )_IJLC202509015611NG_(p_1-6).pdf",
+        "url": "https://www.svedbergopen.com/files/1752662911_(1",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers svedbergopen.com; the tier awaits editorial review."
+      },
+      {
+        "title": "International Policy Digest, The Underexplored Tapestry of Nigeria's Alago People (2023)",
+        "url": "https://intpolicydigest.org/the-platform/the-underexplored-tapestry-of-nigeria-s-alago-people/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers intpolicydigest.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Wikidata, Alago (Q106490494). (consulté 2025)",
+        "url": "https://www.wikidata.org/wiki/Q106490494",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wikidata.org."
+      }
     ]
   }
 }

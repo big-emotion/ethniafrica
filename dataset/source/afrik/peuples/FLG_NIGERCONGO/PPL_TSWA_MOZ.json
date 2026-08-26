@@ -103,12 +103,42 @@
       ]
     },
     "sources": [
-      "Jenkins, Orville Boyd. The Tswa people of Mozambique — A Cultural Profile. http://orvillejenkins.com/profiles/tswa.html",
-      "Joshua Project — Tswa in Mozambique. https://joshuaproject.net/people_groups/15600/MZ",
-      "Ethnologue — Tswa (tsc). https://www.ethnologue.com/language/tsc/",
-      "CLEAR Global — Language data for Mozambique (2024). https://clearglobal.org/language-data-for-mozambique/",
-      "Instituto Nacional de Estatistica — Mozambique. https://www.ine.gov.mz/",
-      "WorldAtlas — What Languages Are Spoken In Mozambique. https://www.worldatlas.com/articles/what-languages-are-spoken-in-mozambique.html"
+      {
+        "title": "Jenkins, Orville Boyd. The Tswa people of Mozambique — A Cultural Profile",
+        "url": "http://orvillejenkins.com/profiles/tswa.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+      },
+      {
+        "title": "Joshua Project — Tswa in Mozambique",
+        "url": "https://joshuaproject.net/people_groups/15600/MZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue — Tswa (tsc)",
+        "url": "https://www.ethnologue.com/language/tsc/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "CLEAR Global — Language data for Mozambique (2024)",
+        "url": "https://clearglobal.org/language-data-for-mozambique/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for clearglobal.org."
+      },
+      {
+        "title": "Instituto Nacional de Estatistica — Mozambique",
+        "url": "https://www.ine.gov.mz/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ine.gov.mz."
+      },
+      {
+        "title": "WorldAtlas — What Languages Are Spoken In Mozambique",
+        "url": "https://www.worldatlas.com/articles/what-languages-are-spoken-in-mozambique.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for worldatlas.com."
+      }
     ]
   }
 }

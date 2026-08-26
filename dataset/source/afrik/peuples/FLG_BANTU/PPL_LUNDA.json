@@ -102,12 +102,42 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue — Lunda (lun) : https://www.ethnologue.com/language/lun/",
-      "Joshua Project — Lunda in Angola : https://joshuaproject.net/people_groups/13153/AO",
-      "Joshua Project — Lunda in DRC : https://joshuaproject.net/people_groups/13153/CG",
-      "Victor Turner — The Ritual Process: Structure and Anti-Structure. Aldine, Chicago, 1969.",
-      "Victor Turner — The Forest of Symbols: Aspects of Ndembu Ritual. Cornell University Press, 1967.",
-      "Encyclopaedia Britannica — Lunda subgroup (Ethnologue free profile) : https://www.ethnologue.com/subgroup/4226/"
+      {
+        "title": "SIL Ethnologue — Lunda (lun)",
+        "url": "https://www.ethnologue.com/language/lun/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project — Lunda in Angola",
+        "url": "https://joshuaproject.net/people_groups/13153/AO",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Joshua Project — Lunda in DRC",
+        "url": "https://joshuaproject.net/people_groups/13153/CG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Victor Turner — The Ritual Process: Structure and Anti-Structure. Aldine, Chicago, 1969",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Victor Turner — The Forest of Symbols: Aspects of Ndembu Ritual. Cornell University Press, 1967",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Encyclopaedia Britannica — Lunda subgroup (Ethnologue free profile)",
+        "url": "https://www.ethnologue.com/subgroup/4226/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

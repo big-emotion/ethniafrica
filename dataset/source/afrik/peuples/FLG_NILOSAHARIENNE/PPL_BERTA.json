@@ -100,9 +100,24 @@
       ]
     },
     "sources": [
-      "Berta Language (WTI) – Ethnologue, SIL International (https://www.ethnologue.com/language/wti/)",
-      "Berta, Benishangul in Ethiopia – Joshua Project, 2024 (https://joshuaproject.net/people_groups/10793/ET)",
-      "Timkehet Teffera, The Bol Negero ensemble of the Berta of West Ethiopia – Annales d'Ethiopie, 23, 2007-2008, p. 281-306"
+      {
+        "title": "Berta Language (WTI) – Ethnologue, SIL International",
+        "url": "https://www.ethnologue.com/language/wti/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Berta, Benishangul in Ethiopia – Joshua Project, 2024",
+        "url": "https://joshuaproject.net/people_groups/10793/ET",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Timkehet Teffera, The Bol Negero ensemble of the Berta of West Ethiopia – Annales d'Ethiopie, 23, 2007-2008, p. 281-306",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

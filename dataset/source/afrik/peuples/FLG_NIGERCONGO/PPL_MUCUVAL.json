@@ -75,12 +75,42 @@
       ]
     },
     "sources": [
-      "Kuvale language resources – Joshua Project (https://joshuaproject.net/languages/olu)",
-      "Rull et al. – Genome-wide variation in the Angolan Namib Desert reveals unique Pre-Bantu ancestry, Science Advances (2023) (https://pmc.ncbi.nlm.nih.gov/articles/PMC10516492/)",
-      "Barbieri et al. – The maternal genetic history of the Angolan Namib Desert, bioRxiv (2017) (https://www.biorxiv.org/content/10.1101/162230v1.full)",
-      "Ovaherero People – OvaHerero Genocide Foundation (https://ogfnamibia.org/ovaherero-people/)",
-      "Angola – AFRICA 101 Last Tribes (https://www.101lasttribes.com/countries/angola.html)",
-      "Wild Images Photography Tours – Angola: Hidden Tribes of the South Tour Report 2022 (https://www.wildimages-phototours.com/reports/angola-2022/)"
+      {
+        "title": "Kuvale language resources – Joshua Project",
+        "url": "https://joshuaproject.net/languages/olu",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Rull et al. – Genome-wide variation in the Angolan Namib Desert reveals unique Pre-Bantu ancestry, Science Advances (2023)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10516492/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for pmc.ncbi.nlm.nih.gov."
+      },
+      {
+        "title": "Barbieri et al. – The maternal genetic history of the Angolan Namib Desert, bioRxiv (2017)",
+        "url": "https://www.biorxiv.org/content/10.1101/162230v1.full",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for biorxiv.org."
+      },
+      {
+        "title": "Ovaherero People – OvaHerero Genocide Foundation",
+        "url": "https://ogfnamibia.org/ovaherero-people/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for ogfnamibia.org."
+      },
+      {
+        "title": "Angola – AFRICA 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/countries/angola.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Wild Images Photography Tours – Angola: Hidden Tribes of the South Tour Report 2022",
+        "url": "https://www.wildimages-phototours.com/reports/angola-2022/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers wildimages-phototours.com; the tier awaits editorial review."
+      }
     ]
   }
 }

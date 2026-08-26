@@ -16,7 +16,7 @@ import {
   checkOrphanFiches,
   checkSourceUrls,
   checkPopulationPercentageDrift,
-  checkAuthorizedSourceAdmissions,
+  checkAuthorizedSourceTiers,
   checkCountryNameFrDistinctFromOfficial,
   checkFamilyStructuralCompleteness,
 } from "../validateAfrikData";
@@ -559,25 +559,28 @@ describe("validateAfrikData – new integrity checks", () => {
     });
   });
 
-  // ── Source admissions ───────────────────────────────────────────────────
+  // ── Source tiers ────────────────────────────────────────────────────────
 
-  describe("checkAuthorizedSourceAdmissions", () => {
+  describe("checkAuthorizedSourceTiers", () => {
     // @req REQ-092
-    it("rejects a discovery-only source even when it uses the legacy string format", () => {
+    it("tiers a discovery-only citation as unverified instead of refusing it", () => {
       writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU");
 
-      const result = checkAuthorizedSourceAdmissions(tmpDir);
+      const result = checkAuthorizedSourceTiers(tmpDir);
 
-      expect(result.ok).toBe(false);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
       expect(
-        result.errors.some((error) =>
-          error.includes('discovery_only source "wikipedia"')
+        result.warnings.some((warning) =>
+          warning.includes(
+            'cites "wikipedia", which publishes at tier unverified'
+          )
         )
       ).toBe(true);
     });
 
     // @req REQ-092
-    it("rejects a prohibited source", () => {
+    it("tiers an AI-generated citation as unverified instead of refusing it", () => {
       writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU", {
         content: {
           languages: { isoCodes: ["zul"] },
@@ -588,18 +591,21 @@ describe("validateAfrikData – new integrity checks", () => {
         },
       });
 
-      const result = checkAuthorizedSourceAdmissions(tmpDir);
+      const result = checkAuthorizedSourceTiers(tmpDir);
 
-      expect(result.ok).toBe(false);
+      expect(result.ok).toBe(true);
+      expect(result.errors).toHaveLength(0);
       expect(
-        result.errors.some((error) =>
-          error.includes('prohibited source "ai-generated"')
+        result.warnings.some((warning) =>
+          warning.includes(
+            'cites "ai-generated", which publishes at tier unverified'
+          )
         )
       ).toBe(true);
     });
 
     // @req REQ-092
-    it("requires review for an unknown structured source without treating it as publishable", () => {
+    it("tiers an off-catalogue citation as unverified", () => {
       writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU", {
         content: {
           languages: { isoCodes: ["zul"] },
@@ -610,19 +616,20 @@ describe("validateAfrikData – new integrity checks", () => {
         },
       });
 
-      const result = checkAuthorizedSourceAdmissions(tmpDir);
+      const result = checkAuthorizedSourceTiers(tmpDir);
 
       expect(result.ok).toBe(true);
-      expect(result.errors).toHaveLength(0);
       expect(
         result.warnings.some((warning) =>
-          warning.includes('review_required source "unknown"')
+          warning.includes(
+            'cites "unknown", which publishes at tier unverified'
+          )
         )
       ).toBe(true);
     });
 
     // @req REQ-092
-    it("accepts an allowed catalogue source", () => {
+    it("says nothing about a catalogued authority", () => {
       writePPL(tmpDir, "FLG_BANTU", "PPL_ZULU", {
         content: {
           languages: { isoCodes: ["zul"] },
@@ -633,7 +640,7 @@ describe("validateAfrikData – new integrity checks", () => {
         },
       });
 
-      const result = checkAuthorizedSourceAdmissions(tmpDir);
+      const result = checkAuthorizedSourceTiers(tmpDir);
 
       expect(result.ok).toBe(true);
       expect(result.errors).toHaveLength(0);

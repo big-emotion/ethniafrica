@@ -90,10 +90,30 @@
       ]
     },
     "sources": [
-      "Mankanya in Guinea-Bissau – Joshua Project, 2025 (https://joshuaproject.net/people_groups/13515/PU)",
-      "Guinea-Bissau ethnic groups census – BeingAfrican, 2024 (https://beingafrican.org/guinea-bissau/)",
-      "Mankanya people – Africa 101 Last Tribes (https://www.101lasttribes.com/tribes/mankanya.html)",
-      "Ethnologue – Mankanya (mcs), SIL International, 2024 (https://www.ethnologue.com/language/mcs/)"
+      {
+        "title": "Mankanya in Guinea-Bissau – Joshua Project, 2025",
+        "url": "https://joshuaproject.net/people_groups/13515/PU",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Guinea-Bissau ethnic groups census – BeingAfrican, 2024",
+        "url": "https://beingafrican.org/guinea-bissau/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for beingafrican.org."
+      },
+      {
+        "title": "Mankanya people – Africa 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/mankanya.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Ethnologue – Mankanya (mcs), SIL International, 2024",
+        "url": "https://www.ethnologue.com/language/mcs/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

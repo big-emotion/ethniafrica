@@ -108,11 +108,36 @@
       ]
     },
     "sources": [
-      "UNESCO ICH — Gule Wamkulu. https://ich.unesco.org/en/RL/gule-wamkulu-00142",
-      "Ethnologue SIL — Chichewa (nya). https://www.ethnologue.com/language/nya/",
-      "Britannica — Chewa people. https://www.britannica.com/topic/Chewa-people",
-      "Wisc.pb.unizin.org — About Chichewa. https://wisc.pb.unizin.org/lctlresources/chapter/about-chichewa/",
-      "UNESCO — Gule Wamkulu safeguarding project. https://ich.unesco.org/en/projects/safeguarding-of-the-gulu-wamkulu-the-great-dance-of-the-chewa-people-00027"
+      {
+        "title": "UNESCO ICH — Gule Wamkulu",
+        "url": "https://ich.unesco.org/en/RL/gule-wamkulu-00142",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      },
+      {
+        "title": "Ethnologue SIL — Chichewa (nya)",
+        "url": "https://www.ethnologue.com/language/nya/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Britannica — Chewa people",
+        "url": "https://www.britannica.com/topic/Chewa-people",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Wisc.pb.unizin.org — About Chichewa",
+        "url": "https://wisc.pb.unizin.org/lctlresources/chapter/about-chichewa/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for wisc.pb.unizin.org."
+      },
+      {
+        "title": "UNESCO — Gule Wamkulu safeguarding project",
+        "url": "https://ich.unesco.org/en/projects/safeguarding-of-the-gulu-wamkulu-the-great-dance-of-the-chewa-people-00027",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"unesco\" (unesco.org), matched as a parent of ich.unesco.org."
+      }
     ]
   }
 }

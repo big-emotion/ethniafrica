@@ -95,11 +95,36 @@
       ]
     },
     "sources": [
-      "Ethnologue - Mampruli (maw). https://www.ethnologue.com/language/maw/",
-      "Joshua Project - Mamprusi in Ghana. https://joshuaproject.net/people_groups/13471/GH",
-      "Britannica - Mamprusi. https://www.britannica.com/topic/Mamprusi",
-      "Modern Ghana - The Mamprugu Kingdom: Historical Evolution and the Role of the Nayiri (2024). https://www.modernghana.com/news/1351745/the-mamprugu-kingdom-historical-evolution-and.html",
-      "Akolgo, Joseph Octavius - Investiture of Chiefs, a Relic of Colonialism? ASC-TUFS Working Papers (2024). https://www.jstage.jst.go.jp/article/ascwp/4/0/4_39/_pdf/-char/ja"
+      {
+        "title": "Ethnologue - Mampruli (maw)",
+        "url": "https://www.ethnologue.com/language/maw/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Joshua Project - Mamprusi in Ghana",
+        "url": "https://joshuaproject.net/people_groups/13471/GH",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Britannica - Mamprusi",
+        "url": "https://www.britannica.com/topic/Mamprusi",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "Modern Ghana - The Mamprugu Kingdom: Historical Evolution and the Role of the Nayiri (2024)",
+        "url": "https://www.modernghana.com/news/1351745/the-mamprugu-kingdom-historical-evolution-and.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for modernghana.com."
+      },
+      {
+        "title": "Akolgo, Joseph Octavius - Investiture of Chiefs, a Relic of Colonialism? ASC-TUFS Working Papers (2024)",
+        "url": "https://www.jstage.jst.go.jp/article/ascwp/4/0/4_39/_pdf/-char/ja",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for jstage.jst.go.jp."
+      }
     ]
   }
 }

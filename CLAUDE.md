@@ -91,7 +91,7 @@ Editorial work on fiches has a dedicated project skill: `.claude/skills/afrik-cu
 - `src/lib/supabase/server.ts` — SSR / server components
 - `src/lib/supabase/admin.ts` — service-role key, **server-only**
 
-Migrations are numbered and sequential in `supabase/migrations/` (039 at last count). **Two Supabase projects are both labelled "production"** — the recette one and the real prod one. Every migration is a two-step rollout: recette first, prod second. Applying one and calling it done has already left a corpus loaded on one and missing on the other.
+Migrations are numbered and sequential in `supabase/migrations/` (041 at last count). Which of them are live on which project is tracked in `docs/runbooks/migration-state.md` — the ledger records some under timestamp versions rather than filenames, so a tool comparing version strings reports applied migrations as pending. **Two Supabase projects are both labelled "production"** — the recette one and the real prod one. Every migration is a two-step rollout: recette first, prod second. Applying one and calling it done has already left a corpus loaded on one and missing on the other.
 
 ### Frontend
 
@@ -119,15 +119,61 @@ The rules' own tests are `.js` under `eslint/__tests__/` and are explicitly list
 
 ### Source Tier Policy (enforced by `validateAfrikData.ts`)
 
-Every `sources` entry must carry `tier: 1` or `tier: 2`. A claim that cannot be cited at Tier 1 or 2 is **removed**, not softened.
+**Nothing is forbidden. Everything is labelled.** A source is never rejected for being weak; it is
+tiered, and the fiche's confidence follows from the tiers it rests on. Excluding oral, community and
+amateur knowledge would itself be a colonial filter — the decolonial posture is to publish the claim
+_and_ its provenance, not to suppress the claim.
 
-- **Tier 1** — cite directly: UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA.
-- **Tier 2** — a primary source _discovered through_ Wikipedia. Cross-check ≥2 language versions, follow through to the primary source, and cite that source's URL — never the Wikipedia article. The `notes` field must record which Wikipedia language versions were crossed so the chain stays auditable; the validator greps `notes` for `wikipedia` on tier-2 entries and fails without it.
-- **Tier 3 — forbidden as a `sources` entry**: Wikipedia articles themselves, blogs, social media, forums, AI-generated text, aggregators with no primary source of their own.
+The gate is therefore not "reject weak sources" but **"every source carries an explicit tier"**. A
+`sources` entry with no tier is a blocking error.
+
+One three-value scale is used everywhere — code identifier, DB value, API payload and user-facing
+label all say the same thing:
+
+| Identifier (code + DB) | Label (UI)       | Confidence weight | What it covers                                                                                  |
+| ---------------------- | ---------------- | ----------------- | ----------------------------------------------------------------------------------------------- |
+| `official`             | **Officielle**   | 1.0               | UN, UNFPA, CIA, SIL Ethnologue, Glottolog, UNESCO, IWGIA, national statistics institutes        |
+| `referenced`           | **Référencée**   | 0.7               | Published, identifiable, verifiable work — academic, press, books. Not necessarily official     |
+| `unverified`           | **Non vérifiée** | 0.4               | Aggregators, tertiary encyclopedias, blogs, social media, community accounts, AI-generated text |
+
+This supersedes the earlier Tier 1/2/3 policy, under which Tier 3 was forbidden and an uncitable
+claim was deleted. It also settles the aggregator question (Joshua Project, 101lasttribes,
+peoplegroups): they are cited, at `unverified`.
+
+Wikipedia is not a source. A primary source _discovered through_ Wikipedia is cited at its own tier,
+by its own URL, and its `notes` field records which Wikipedia language versions were crossed so the
+chain stays auditable.
+
+#### Tier is authority; `source_kind` is provenance
+
+They are orthogonal axes and must not be collapsed:
+
+- `tier` — how much authority the source carries.
+- `source_kind` — what kind of thing the source is (`sources.source_kind`, migration `031`).
+
+AI-generated text is the worked example. It is not a level of authority — it is unverified content
+whose _origin_ happens to matter. So it is `tier: "unverified"` + `source_kind: "ai_generated"`, and
+`recompute_confidence()` multiplies rather than branches:
+
+```sql
+CASE s.tier
+  WHEN 'official'   THEN 1.0
+  WHEN 'referenced' THEN 0.7
+  WHEN 'unverified' THEN 0.4
+END
+* CASE WHEN s.source_kind = 'ai_generated' THEN 0.5 ELSE 1.0 END   -- 0.4 × 0.5 = 0.2
+```
+
+which reproduces the retired `ai-enriched` weight of 0.2 exactly. The UI keeps the distinction
+visible: the **Non vérifiée** badge plus an AI provenance marker driven by `source_kind`, never by
+the tier.
+
+A fiche sourced only at `unverified` is published and visibly marked low-confidence through
+`ConfidenceChip`. That is the intended outcome, not a defect to fix.
 
 ### Demographics
 
-2025 reference year. Per-country `percentageInCountry` must sum to 100%. The validator has a hard band [95, 105] (FR28) and a strict target band [99, 101] (FR28-strict); **both currently run as `soft: true`** while ~30 countries' splits are re-sourced, so they warn rather than fail. New and updated fiches must land inside [99, 101] regardless.
+2025 reference year. Per-country `percentageInCountry` must sum to 100%. The validator has a hard band [95, 105] (FR28) and a strict target band [99, 101] (FR28-strict). Both were advisory while ~30 countries' splits were re-sourced; that burn-down is finished — measured at zero offenders — so **both now fail the build**, and a fiche can no longer drift back out. Which checks remain advisory is one exported constant, `SOFT_CHECK_NAMES` in `scripts/validateAfrikData.ts`; only `FR52-coverage` is still in it.
 
 ### Colonial terminology
 
@@ -141,6 +187,7 @@ Keep colonial-era names but explain why they are problematic, and always surface
 
 ### Git
 
+- **One worktree per agent session.** Any agent task that writes to the repo — a background job, a Ferry run, `/ethniafrica-ticket`, a hand-launched sub-agent — must first isolate itself in its own git worktree (`EnterWorktree`, or `git worktree add .claude/worktrees/<name>`), never edit in the shared checkout. Parallel sessions sharing one working copy overwrite each other's edits and switch branches under each other. Read-only work — search, audit, answering a question — stays in place. Commit and push before the session ends: the worktree can be deleted with it.
 - `recette` is the integration branch; `main` is the base. **`recette` is protected** — always branch and open a PR, never push directly.
 - `recette ↔ main` sync PRs must use a **merge commit**, not a squash; squashing has broken the ancestry before.
 - Conventional commits (commitlint on `commit-msg`). Pre-commit runs `type-check` + `lint-staged`.

@@ -1,5 +1,6 @@
 import type {
   ClassificationStatus,
+  FicheSource,
   LanguageFamily,
   PeopleReference,
 } from "@/types/afrik";
@@ -67,7 +68,7 @@ export interface FamilyPageData {
   linguisticTraits: FamilyLinguisticTraitsData;
   history: FamilyHistoryData;
   distribution: FamilyDistributionData;
-  sources: string[];
+  sources: FicheSource[];
 }
 
 // @req REQ-047
@@ -162,7 +163,7 @@ export function transformDistribution(
 }
 
 // @req REQ-047
-export function transformSources(family: LanguageFamily): string[] {
+export function transformSources(family: LanguageFamily): FicheSource[] {
   return family.content?.sources ?? [];
 }
 

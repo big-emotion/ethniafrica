@@ -73,12 +73,42 @@
       ]
     },
     "sources": [
-      "Ndengereko of Tanzania – Pray Africa (https://prayafrica.org/project/ndengereko-of-tanzania/)",
-      "Ndengereko – 101 Last Tribes (https://www.101lasttribes.com/tribes/ndengereko.html)",
-      "Ndengereko in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/13279)",
-      "Ndengereko – Glottolog 5.3, code nden1248 (https://glottolog.org/resource/languoid/id/nden1248)",
-      "Language, Tribe and Ethnic Clusters : Ndengereko – Orville Jenkins (http://orvillejenkins.com/ethnicity/langtribendengereko.html)",
-      "Ndengereko Language – Ethnologue (https://www.ethnologue.com/language/ndg/)"
+      {
+        "title": "Ndengereko of Tanzania – Pray Africa",
+        "url": "https://prayafrica.org/project/ndengereko-of-tanzania/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for prayafrica.org."
+      },
+      {
+        "title": "Ndengereko – 101 Last Tribes",
+        "url": "https://www.101lasttribes.com/tribes/ndengereko.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Ndengereko in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/13279",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ndengereko – Glottolog 5.3, code nden1248",
+        "url": "https://glottolog.org/resource/languoid/id/nden1248",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Language, Tribe and Ethnic Clusters : Ndengereko – Orville Jenkins",
+        "url": "http://orvillejenkins.com/ethnicity/langtribendengereko.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+      },
+      {
+        "title": "Ndengereko Language – Ethnologue",
+        "url": "https://www.ethnologue.com/language/ndg/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

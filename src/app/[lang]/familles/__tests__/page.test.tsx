@@ -163,7 +163,7 @@ const BANTU: LanguageFamily = {
     linguisticCharacteristics: { typology: "Agglutinante" },
     historyAndOrigins: { probableOrigin: "Frontière Nigéria-Cameroun" },
     distribution: { totalSpeakers: 350_000_000 },
-    sources: ["Glottolog 5.0"],
+    sources: [{ title: "Glottolog 5.0", url: null, tier: "unverified" }],
   },
 };
 

@@ -71,11 +71,36 @@
       ]
     },
     "sources": [
-      "Doe language – Ethnologue (https://www.ethnologue.com/language/doe/)",
-      "Doe in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/11584)",
-      "History of Bagamoyo – Freundeskreis Bagamoyo (https://www.bagamoyo.com/index.php?id=history_bagamoyo)",
-      "Bagamoyo Town – Altezza Travel (https://altezzatravel.com/articles/bagamoyo)",
-      "Central Bantu subgroup (G.30) – Ethnologue (https://www.ethnologue.com/subgroup/54/)"
+      {
+        "title": "Doe language – Ethnologue",
+        "url": "https://www.ethnologue.com/language/doe/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Doe in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/11584",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "History of Bagamoyo – Freundeskreis Bagamoyo",
+        "url": "https://www.bagamoyo.com/index.php?id=history_bagamoyo",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers bagamoyo.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Bagamoyo Town – Altezza Travel",
+        "url": "https://altezzatravel.com/articles/bagamoyo",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers altezzatravel.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Central Bantu subgroup (G.30) – Ethnologue",
+        "url": "https://www.ethnologue.com/subgroup/54/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

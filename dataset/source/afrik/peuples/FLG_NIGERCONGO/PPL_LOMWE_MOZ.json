@@ -86,13 +86,48 @@
       ]
     },
     "sources": [
-      "Orville Boyd Jenkins — The Lomwe of Mozambique and Malawi: A Cultural Profile. http://orvillejenkins.com/profiles/lomwe.html",
-      "SIL Ethnologue — Lomwe (ngl). https://www.ethnologue.com/language/ngl/",
-      "INE Mozambique — IV Recensement General de la Population et de l'Habitat 2017. https://www.ine.gov.mz/en/censo-2017/",
-      "GHDx — Mozambique Population and Housing Census 2017. https://ghdx.healthdata.org/record/mozambique-population-and-housing-census-2017",
-      "Maputo Essential Tours — Mozambique Ethnic Groups (Macua-Lomwe section). https://www.maputoessentialtours.com/general-4",
-      "Public Intelligence — Mozambique Country Handbook (MCIA). https://info.publicintelligence.net/MCIA-MozambiqueHandbook.pdf",
-      "101 Last Tribes — Lomwe people. https://www.101lasttribes.com/tribes/lomwe.html"
+      {
+        "title": "Orville Boyd Jenkins — The Lomwe of Mozambique and Malawi: A Cultural Profile",
+        "url": "http://orvillejenkins.com/profiles/lomwe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for orvillejenkins.com."
+      },
+      {
+        "title": "SIL Ethnologue — Lomwe (ngl)",
+        "url": "https://www.ethnologue.com/language/ngl/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "INE Mozambique — IV Recensement General de la Population et de l'Habitat 2017",
+        "url": "https://www.ine.gov.mz/en/censo-2017/",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for ine.gov.mz."
+      },
+      {
+        "title": "GHDx — Mozambique Population and Housing Census 2017",
+        "url": "https://ghdx.healthdata.org/record/mozambique-population-and-housing-census-2017",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ghdx.healthdata.org."
+      },
+      {
+        "title": "Maputo Essential Tours — Mozambique Ethnic Groups (Macua-Lomwe section)",
+        "url": "https://www.maputoessentialtours.com/general-4",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for maputoessentialtours.com."
+      },
+      {
+        "title": "Public Intelligence — Mozambique Country Handbook (MCIA)",
+        "url": "https://info.publicintelligence.net/MCIA-MozambiqueHandbook.pdf",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for info.publicintelligence.net."
+      },
+      {
+        "title": "101 Last Tribes — Lomwe people",
+        "url": "https://www.101lasttribes.com/tribes/lomwe.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      }
     ]
   }
 }

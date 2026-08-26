@@ -69,11 +69,36 @@
       ]
     },
     "sources": [
-      "Konongo in Tanzania – Joshua Project (https://joshuaproject.net/people_groups/12785)",
-      "Konongo of Tanzania – IMB International Mission Board (https://www.imb.org/55-in-5-resource/konongo-of-tanzania/)",
-      "Konongo of Tanzania – PeopleGroups.org (https://peoplegroups.org/people_groups/pg014967/)",
-      "ISO 639-3 Language Code List – Wiktionary / Ethnologue (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
-      "Bantu, Central-Tanzania People Cluster – Joshua Project (https://www.joshuaproject.net/clusters/341)"
+      {
+        "title": "Konongo in Tanzania – Joshua Project",
+        "url": "https://joshuaproject.net/people_groups/12785",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Konongo of Tanzania – IMB International Mission Board",
+        "url": "https://www.imb.org/55-in-5-resource/konongo-of-tanzania/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for imb.org."
+      },
+      {
+        "title": "Konongo of Tanzania – PeopleGroups.org",
+        "url": "https://peoplegroups.org/people_groups/pg014967/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "ISO 639-3 Language Code List – Wiktionary / Ethnologue",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      },
+      {
+        "title": "Bantu, Central-Tanzania People Cluster – Joshua Project",
+        "url": "https://www.joshuaproject.net/clusters/341",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      }
     ]
   }
 }

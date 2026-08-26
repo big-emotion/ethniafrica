@@ -78,12 +78,42 @@
       ]
     },
     "sources": [
-      "101 Last Tribes – Nyangatom, 2024 (https://www.101lasttribes.com/tribes/nyangatom.html)",
-      "Joshua Project – Nyangatom in Ethiopia, 2024 (https://joshuaproject.net/people_groups/11610/et)",
-      "Peoplegroups.org – Nyangatom of Ethiopia PG011628 (https://peoplegroups.org/people_groups/pg011628/)",
-      "Ethnologue – Nyangatom (NNJ), ISO 639-3 : nnj (https://www.ethnologue.com/language/nnj/)",
-      "Intercontinental Cry – The Nyangatom: Pastoral Nations of Ethiopia's Omo Valley (https://icmagazine.org/indigenous-peoples/nyangatom/)",
-      "Aisha Tours Ethiopia – The Nyangatom people (https://www.aishatoursethiopia.com/en/ethnicity/the-nyangatom-people)"
+      {
+        "title": "101 Last Tribes – Nyangatom, 2024",
+        "url": "https://www.101lasttribes.com/tribes/nyangatom.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Joshua Project – Nyangatom in Ethiopia, 2024",
+        "url": "https://joshuaproject.net/people_groups/11610/et",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Peoplegroups.org – Nyangatom of Ethiopia PG011628",
+        "url": "https://peoplegroups.org/people_groups/pg011628/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for peoplegroups.org."
+      },
+      {
+        "title": "Ethnologue – Nyangatom (NNJ), ISO 639-3 : nnj",
+        "url": "https://www.ethnologue.com/language/nnj/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Intercontinental Cry – The Nyangatom: Pastoral Nations of Ethiopia's Omo Valley",
+        "url": "https://icmagazine.org/indigenous-peoples/nyangatom/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers icmagazine.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Aisha Tours Ethiopia – The Nyangatom people",
+        "url": "https://www.aishatoursethiopia.com/en/ethnicity/the-nyangatom-people",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers aishatoursethiopia.com; the tier awaits editorial review."
+      }
     ]
   }
 }

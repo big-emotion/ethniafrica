@@ -92,12 +92,42 @@
       ]
     },
     "sources": [
-      "Britannica — Bamileke. https://www.britannica.com/topic/Bamileke",
-      "101LastTribes — Bamileke people. https://www.101lasttribes.com/tribes/bamileke.html",
-      "SIL Ethnologue — Bamileke subgroup. https://www.ethnologue.com/subgroup/589/",
-      "Encyclopedia.com — Bamileke. https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/bamileke",
-      "GoNOMAD Travel — Bamileke Region of Cameroon. https://www.gonomad.com/224249-bamileke-region-of-cameroon",
-      "Qiraat African — The Bamileke of western Cameroon. https://qiraatafrican.com/en/13421/the-bamileke-of-western-cameroon/"
+      {
+        "title": "Britannica — Bamileke",
+        "url": "https://www.britannica.com/topic/Bamileke",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for britannica.com."
+      },
+      {
+        "title": "101LastTribes — Bamileke people",
+        "url": "https://www.101lasttribes.com/tribes/bamileke.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "SIL Ethnologue — Bamileke subgroup",
+        "url": "https://www.ethnologue.com/subgroup/589/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Encyclopedia.com — Bamileke",
+        "url": "https://www.encyclopedia.com/humanities/encyclopedias-almanacs-transcripts-and-maps/bamileke",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for encyclopedia.com."
+      },
+      {
+        "title": "GoNOMAD Travel — Bamileke Region of Cameroon",
+        "url": "https://www.gonomad.com/224249-bamileke-region-of-cameroon",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers gonomad.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Qiraat African — The Bamileke of western Cameroon",
+        "url": "https://qiraatafrican.com/en/13421/the-bamileke-of-western-cameroon/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for qiraatafrican.com."
+      }
     ]
   }
 }

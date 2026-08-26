@@ -17,9 +17,9 @@ const EVENT: MigrationAtlasEntry = {
       id: "src-1",
       title: "Ethnologue",
       url: "https://example.org/1",
-      tier: "1",
+      tier: "official",
     },
-    { id: "src-2", title: "Rapport UNESCO", url: null, tier: "2" },
+    { id: "src-2", title: "Rapport UNESCO", url: null, tier: "referenced" },
   ],
   confidence: { score: 88, sourceCount: 2, lastHumanAuditAt: "2026-01-05" },
 };

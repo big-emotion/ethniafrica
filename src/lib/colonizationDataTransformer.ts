@@ -160,8 +160,8 @@ function toPrimarySource(
   sources: MigrationSourceRef[] | null | undefined
 ): ColonizationTimelineSourceRef | null {
   if (!Array.isArray(sources) || sources.length === 0) return null;
-  const tier1 = sources.find((source) => source.tier === "1");
-  const chosen = tier1 ?? sources[0];
+  const official = sources.find((source) => source.tier === "official");
+  const chosen = official ?? sources[0];
   if (!chosen || !chosen.url) return null;
   return { title: chosen.title, url: chosen.url };
 }
@@ -198,7 +198,7 @@ function computeTimelineBounds(
   return { min, max };
 }
 
-// @req FR90
+// @req REQ-091 FR90
 export function transformColonizationModuleData(
   raw: RawColonizationModuleData | null | undefined
 ): ColonizationModuleData {

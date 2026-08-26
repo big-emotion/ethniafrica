@@ -100,12 +100,42 @@
       ]
     },
     "sources": [
-      "Daniel P. Biebuyck, 'The BaHunde of Masisi Territoire' (field notes 1957, publie 2019) : https://danielbiebuyck.com/wp-content/uploads/2019/07/hunde-final-2.pdf",
-      "Joshua Project - Hunde, Kobi in DRC : https://joshuaproject.net/people_groups/12152",
-      "Minority Rights Group - The silent killings : https://minorityrights.org/the-silent-killings/",
-      "Rift Valley Institute - Background to conflict in North Kivu : https://riftvalley.net/wp-content/uploads/2018/06/RVI-Usalama-Project-2-North-Kivu.pdf",
-      "Hybrid Security Governance Observatory - RDC communautes ethno-linguistiques : https://africansecuritynetwork.org/HSGO4/index.php/rdc-differentes-communautes-ethno-linguistiques/",
-      "SIT Digital Collections - Young Adults in North Kivu : https://digitalcollections.sit.edu/cgi/viewcontent.cgi?article=3539&context=capstones"
+      {
+        "title": "Daniel P. Biebuyck, 'The BaHunde of Masisi Territoire' (field notes 1957, publie 2019)",
+        "url": "https://danielbiebuyck.com/wp-content/uploads/2019/07/hunde-final-2.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers danielbiebuyck.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project - Hunde, Kobi in DRC",
+        "url": "https://joshuaproject.net/people_groups/12152",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Minority Rights Group - The silent killings",
+        "url": "https://minorityrights.org/the-silent-killings/",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for minorityrights.org."
+      },
+      {
+        "title": "Rift Valley Institute - Background to conflict in North Kivu",
+        "url": "https://riftvalley.net/wp-content/uploads/2018/06/RVI-Usalama-Project-2-North-Kivu.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for riftvalley.net."
+      },
+      {
+        "title": "Hybrid Security Governance Observatory - RDC communautes ethno-linguistiques",
+        "url": "https://africansecuritynetwork.org/HSGO4/index.php/rdc-differentes-communautes-ethno-linguistiques/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for africansecuritynetwork.org."
+      },
+      {
+        "title": "SIT Digital Collections - Young Adults in North Kivu",
+        "url": "https://digitalcollections.sit.edu/cgi/viewcontent.cgi?article=3539&context=capstones",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers digitalcollections.sit.edu; the tier awaits editorial review."
+      }
     ]
   }
 }

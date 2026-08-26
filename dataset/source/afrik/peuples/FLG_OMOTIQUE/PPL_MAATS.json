@@ -79,12 +79,42 @@
       ]
     },
     "sources": [
-      "Donham, Donald L. Work and Power in Maale, Ethiopia. Columbia University Press, 1994.",
-      "Donham, Donald L. From ritual kings to Ethiopian landlords in Maale. In The Southern Marches of Imperial Ethiopia, 1986.",
-      "Donham, Donald L. Revolution and modernity in Maale: Ethiopia, 1974 to 1987. Comparative Studies in Society and History, 34(1), 1992.",
-      "Glottolog — Male (Ethiopia), glottocode male1284, ISO 639-3: mdy. https://glottolog.org/resource/languoid/id/male1284",
-      "Joshua Project — Male in Ethiopia. https://joshuaproject.net/people_groups/13451",
-      "Local Tour Ethiopia — Maale Tribe. https://localtourethiopia.com/attractions/southern-omo-valley-tribes/maale/"
+      {
+        "title": "Donham, Donald L. Work and Power in Maale, Ethiopia. Columbia University Press, 1994",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Donham, Donald L. From ritual kings to Ethiopian landlords in Maale. In The Southern Marches of Imperial Ethiopia, 1986",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Donham, Donald L. Revolution and modernity in Maale: Ethiopia, 1974 to 1987. Comparative Studies in Society and History, 34(1), 1992",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Glottolog — Male (Ethiopia), glottocode male1284, ISO 639-3: mdy",
+        "url": "https://glottolog.org/resource/languoid/id/male1284",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Joshua Project — Male in Ethiopia",
+        "url": "https://joshuaproject.net/people_groups/13451",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Local Tour Ethiopia — Maale Tribe",
+        "url": "https://localtourethiopia.com/attractions/southern-omo-valley-tribes/maale/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for localtourethiopia.com."
+      }
     ]
   }
 }

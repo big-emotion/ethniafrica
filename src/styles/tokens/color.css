@@ -84,6 +84,16 @@
   --afh-cat-perv: #7a8ce8;
   --afh-cat-perv-tint: #dce1f9;
 
+  /* -ink variants: the accent as *text on its own tint*. The base hexes are
+     fill colours — each one lands between 2.28:1 and 3.09:1 against its tint,
+     so accent-coloured label text on a tinted card fails WCAG AA. Each ink is
+     its base scaled toward black on the same hue, the lightest step that
+     clears 4.5:1, so an accent still reads as itself when it carries text. */
+  --afh-cat-ocre-ink: #835514;
+  --afh-cat-teal-ink: #226d60;
+  --afh-cat-terre-ink: #974331;
+  --afh-cat-perv-ink: #535f9e;
+
   /* ─── L2 · Semantic aliases ────────────────────────────────── */
 
   /* Surface */
@@ -204,9 +214,14 @@
      the full-strength accent fill (e.g. a selected filter pill). It must
      satisfy WCAG AA (≥ 4.5:1) against --accent; white clears that bar for
      ocre/teal/perv, but terre's mid-tone requires a dark override (see
-     .afh-accent-terre below). */
+     .afh-accent-terre below).
+
+     --accent-ink is the mirror image: text placed on --accent-tint rather
+     than on the full-strength fill. --accent itself is never legible there,
+     so any accent-coloured text over a tinted surface takes --accent-ink. */
   --accent: var(--afh-cat-ocre);
   --accent-tint: var(--afh-cat-ocre-tint);
+  --accent-ink: var(--afh-cat-ocre-ink);
   --accent-foreground: #fff;
 }
 
@@ -269,11 +284,13 @@
 .afh-accent-ocre {
   --accent: var(--afh-cat-ocre);
   --accent-tint: var(--afh-cat-ocre-tint);
+  --accent-ink: var(--afh-cat-ocre-ink);
 }
 
 .afh-accent-teal {
   --accent: var(--afh-cat-teal);
   --accent-tint: var(--afh-cat-teal-tint);
+  --accent-ink: var(--afh-cat-teal-ink);
 }
 
 /* Terre doubles as IdentityPanel's colonial-marker accent — scoping a whole
@@ -281,6 +298,7 @@
 .afh-accent-terre {
   --accent: var(--afh-cat-terre);
   --accent-tint: var(--afh-cat-terre-tint);
+  --accent-ink: var(--afh-cat-terre-ink);
   /* #c4573f only clears WCAG AA (4.5:1) against black, not white
      (4.39:1) — axe-core flagged this on the live /fr/peuples route. */
   --accent-foreground: #000;
@@ -289,4 +307,5 @@
 .afh-accent-perv {
   --accent: var(--afh-cat-perv);
   --accent-tint: var(--afh-cat-perv-tint);
+  --accent-ink: var(--afh-cat-perv-ink);
 }

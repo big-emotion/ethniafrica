@@ -70,11 +70,36 @@
       ]
     },
     "sources": [
-      "Kwangwa – Zambia's Traditional History, 2020 (https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/lozi/kwangwa/)",
-      "THE HISTORY OF THE KWANGWA PEOPLE – Facebook/Barotsenetwork, 2021 (https://www.facebook.com/Barotsenetwork/posts/the-history-of-the-kwangwa-peoplethe-kwangwas-are-an-offshoot-of-the-luyi-people/4009618459076922/)",
-      "Nkoya People of Zambia – Alkebulan Movement, 2017 (https://panafricanrevoluntionmovement.wordpress.com/2017/10/26/nkoya-people-of-zambia/)",
-      "About Zambia – Western Province Provincial Administration (https://www.wes.gov.zm/?page_id=1186)",
-      "Kwangwa – Glottolog kwan1275 (https://glottolog.org/resource/languoid/id/kwan1275)"
+      {
+        "title": "Kwangwa – Zambia's Traditional History, 2020",
+        "url": "https://traditionalzambia.home.blog/tribes-of-zambia/second-bantu-invasion/luba/lozi/kwangwa/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for traditionalzambia.home.blog."
+      },
+      {
+        "title": "THE HISTORY OF THE KWANGWA PEOPLE – Facebook/Barotsenetwork, 2021",
+        "url": "https://www.facebook.com/Barotsenetwork/posts/the-history-of-the-kwangwa-peoplethe-kwangwas-are-an-offshoot-of-the-luyi-people/4009618459076922/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for facebook.com."
+      },
+      {
+        "title": "Nkoya People of Zambia – Alkebulan Movement, 2017",
+        "url": "https://panafricanrevoluntionmovement.wordpress.com/2017/10/26/nkoya-people-of-zambia/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for wordpress.com, matched as a parent of panafricanrevoluntionmovement.wordpress.com."
+      },
+      {
+        "title": "About Zambia – Western Province Provincial Administration",
+        "url": "https://www.wes.gov.zm/?page_id=1186",
+        "tier": "official",
+        "notes": "Tier resolved from the domain ruling for wes.gov.zm."
+      },
+      {
+        "title": "Kwangwa – Glottolog kwan1275",
+        "url": "https://glottolog.org/resource/languoid/id/kwan1275",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      }
     ]
   }
 }

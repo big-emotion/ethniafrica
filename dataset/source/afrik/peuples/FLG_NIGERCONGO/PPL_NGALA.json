@@ -100,13 +100,48 @@
       ]
     },
     "sources": [
-      "101 Last Tribes — Bangala people. https://www.101lasttribes.com/tribes/bangala.html",
-      "Bokamba, E.G. — Lingala as a Supranational Language in DRC. CERECK, 2019. https://cereck.org/wp-content/uploads/2021/08/Kami-Export-EGBokamba-2019-PRFNL-DRAFt-2-LINGALA-AS-A-SUPRANATIONAL-LANGUAGE-IN-D.R.-CONGO_.pdf",
-      "Ugent Biblio — The linguistic features of Bangala before Lingala. https://backoffice.biblio.ugent.be/download/8644523/8645617",
-      "EBSCO Research Starters — Lingala Language. https://www.ebsco.com/research-starters/language-and-linguistics/lingala-language",
-      "MustGo — Lingala Language. https://www.mustgo.com/worldlanguages/lingala/",
-      "Joshua Project — Bangala in DRC. https://joshuaproject.net/people_groups/print/13330/CG",
-      "Ethnologue (SIL) — Lingala [lin]. https://www.ethnologue.com/language/lin"
+      {
+        "title": "101 Last Tribes — Bangala people",
+        "url": "https://www.101lasttribes.com/tribes/bangala.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Bokamba, E.G. — Lingala as a Supranational Language in DRC. CERECK, 2019",
+        "url": "https://cereck.org/wp-content/uploads/2021/08/Kami-Export-EGBokamba-2019-PRFNL-DRAFt-2-LINGALA-AS-A-SUPRANATIONAL-LANGUAGE-IN-D.R.-CONGO_.pdf",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers cereck.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Ugent Biblio — The linguistic features of Bangala before Lingala",
+        "url": "https://backoffice.biblio.ugent.be/download/8644523/8645617",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for biblio.ugent.be, matched as a parent of backoffice.biblio.ugent.be."
+      },
+      {
+        "title": "EBSCO Research Starters — Lingala Language",
+        "url": "https://www.ebsco.com/research-starters/language-and-linguistics/lingala-language",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for ebsco.com."
+      },
+      {
+        "title": "MustGo — Lingala Language",
+        "url": "https://www.mustgo.com/worldlanguages/lingala/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers mustgo.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project — Bangala in DRC",
+        "url": "https://joshuaproject.net/people_groups/print/13330/CG",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue (SIL) — Lingala [lin]",
+        "url": "https://www.ethnologue.com/language/lin",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      }
     ]
   }
 }

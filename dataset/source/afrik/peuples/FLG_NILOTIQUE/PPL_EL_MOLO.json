@@ -75,12 +75,42 @@
       ]
     },
     "sources": [
-      "Glottolog — El Molo (elmo1238). https://glottolog.org/resource/languoid/id/elmo1238",
-      "Endangered Languages Project — El Molo. https://endangeredlanguages.com/elp-language/4124",
-      "Dyson, W.S. and Fuchs, V.E. (1937). The Elmolo. Journal of the Royal Anthropological Institute of Great Britain and Ireland, 67, 327-338.",
-      "Heine, Bernd (1980). Elmolo. In The Non-Bantu Languages of Kenya, 173-218. Berlin: Dietrich Reimer.",
-      "Pawankafund — On the trail of the vanishing El-Molo language. https://pawankafund.org/ano/2017/on-the-trail-of-the-vanishing-el-molo-language/",
-      "Kenya National Bureau of Statistics — Population and Housing Census 2019."
+      {
+        "title": "Glottolog — El Molo (elmo1238)",
+        "url": "https://glottolog.org/resource/languoid/id/elmo1238",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Endangered Languages Project — El Molo",
+        "url": "https://endangeredlanguages.com/elp-language/4124",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for endangeredlanguages.com."
+      },
+      {
+        "title": "Dyson, W.S. and Fuchs, V.E. (1937). The Elmolo. Journal of the Royal Anthropological Institute of Great Britain and Ireland, 67, 327-338",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Heine, Bernd (1980). Elmolo. In The Non-Bantu Languages of Kenya, 173-218. Berlin: Dietrich Reimer",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Pawankafund — On the trail of the vanishing El-Molo language",
+        "url": "https://pawankafund.org/ano/2017/on-the-trail-of-the-vanishing-el-molo-language/",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers pawankafund.org; the tier awaits editorial review."
+      },
+      {
+        "title": "Kenya National Bureau of Statistics — Population and Housing Census 2019",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      }
     ]
   }
 }

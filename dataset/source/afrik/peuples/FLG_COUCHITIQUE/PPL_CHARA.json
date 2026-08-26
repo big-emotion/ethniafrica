@@ -69,11 +69,36 @@
       ]
     },
     "sources": [
-      "Tsaara Language (CRA) – Ethnologue (https://www.ethnologue.com/language/cra/)",
-      "Chara – Ethnologue subgroup (https://www.ethnologue.com/subgroup/1107/)",
-      "Chara – Glottolog 5.2 (https://glottolog.org/resource/languoid/id/char1269)",
-      "Appendix ISO 639-3 codes/Africa – Wiktionary (https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa)",
-      "Yilma, Aklilu – Sociolinguistic survey report on the Chara language of Ethiopia, SIL International, 2002"
+      {
+        "title": "Tsaara Language (CRA) – Ethnologue",
+        "url": "https://www.ethnologue.com/language/cra/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Chara – Ethnologue subgroup",
+        "url": "https://www.ethnologue.com/subgroup/1107/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Chara – Glottolog 5.2",
+        "url": "https://glottolog.org/resource/languoid/id/char1269",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "Appendix ISO 639-3 codes/Africa – Wiktionary",
+        "url": "https://en.wiktionary.org/wiki/Appendix:ISO_639-3_codes/Africa",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for en.wiktionary.org."
+      },
+      {
+        "title": "Yilma, Aklilu – Sociolinguistic survey report on the Chara language of Ethiopia, SIL International, 2002",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

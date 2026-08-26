@@ -7,7 +7,7 @@ import * as esbuild from "esbuild";
 import { gzipSync } from "node:zlib";
 import { writeFileSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { basename, join } from "node:path";
 
 /**
  * ETNI-500 (10.11) AC2 — the quiz play-island (src/components/quiz/*,
@@ -29,6 +29,14 @@ import { join } from "node:path";
  * module is already loaded elsewhere in the real app — an intentionally
  * conservative measurement: if the synthetic bundle is under budget, the
  * real one almost certainly is too.
+ *
+ * `splitting` is on so a module the island reaches through React.lazy /
+ * next/dynamic lands in a sibling chunk and is measured out, exactly as
+ * the real build emits it. Without it esbuild inlines those imports and
+ * the gate charges the island for code it defers: QuizAnswerReveal's
+ * LazySourceChainSheet (with FlagTarget → FlagForm → TurnstileWidget
+ * behind it) alone read as +8.5 KB gzipped, taking a 9.61 KB island to
+ * the 18.15 KB that failed CI. Only the entry chunk counts.
  */
 export const QUIZ_BUNDLE_BUDGET_BYTES = 15 * 1024; // 15 KB gzipped (AC2)
 
@@ -74,18 +82,30 @@ export async function measureQuizPlayIslandGzipBytes(): Promise<number> {
       platform: "browser",
       packages: "external",
       tsconfig: "tsconfig.json",
+      splitting: true,
+      outdir: join(tmpDir, "out"),
       write: false,
+      metafile: true,
       logLevel: "silent",
     });
 
-    const [output] = result.outputFiles;
-    if (!output) {
+    // metafile keys are cwd-relative while outputFiles carry absolute paths;
+    // the basename is what reliably ties the two together.
+    const entryChunkName = Object.entries(result.metafile.outputs).find(
+      ([, output]) => output.entryPoint !== undefined
+    )?.[0];
+    const entryOutput = result.outputFiles.find(
+      (file) =>
+        entryChunkName !== undefined &&
+        basename(file.path) === basename(entryChunkName)
+    );
+    if (!entryOutput) {
       throw new Error(
-        "esbuild produced no output file for the quiz play-island entry."
+        "esbuild produced no entry chunk for the quiz play-island entry."
       );
     }
 
-    return gzipSync(Buffer.from(output.contents), { level: 9 }).length;
+    return gzipSync(Buffer.from(entryOutput.contents), { level: 9 }).length;
   } finally {
     rmSync(tmpDir, { recursive: true, force: true });
   }

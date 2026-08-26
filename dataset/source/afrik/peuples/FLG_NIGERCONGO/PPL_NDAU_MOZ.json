@@ -84,11 +84,36 @@
       ]
     },
     "sources": [
-      "Joshua Project — Ndau, Shona in Mozambique. https://joshuaproject.net/people_groups/13273/MZ",
-      "Ethnologue SIL — Ndau (ndc). https://www.ethnologue.com/language/ndc/",
-      "Glottolog — Ndau (ndau1241). https://glottolog.org/resource/languoid/id/ndau1241",
-      "University of Missouri — Ndau linguistic profile (DICE). https://dice.missouri.edu/assets/docs/niger-congo/Ndau.pdf",
-      "MacGonagle, Elizabeth. Crafting Identity in Zimbabwe and Mozambique. University of Rochester Press, 2007."
+      {
+        "title": "Joshua Project — Ndau, Shona in Mozambique",
+        "url": "https://joshuaproject.net/people_groups/13273/MZ",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Ethnologue SIL — Ndau (ndc)",
+        "url": "https://www.ethnologue.com/language/ndc/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Glottolog — Ndau (ndau1241)",
+        "url": "https://glottolog.org/resource/languoid/id/ndau1241",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"glottolog\"."
+      },
+      {
+        "title": "University of Missouri — Ndau linguistic profile (DICE)",
+        "url": "https://dice.missouri.edu/assets/docs/niger-congo/Ndau.pdf",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for dice.missouri.edu."
+      },
+      {
+        "title": "MacGonagle, Elizabeth. Crafting Identity in Zimbabwe and Mozambique. University of Rochester Press, 2007",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      }
     ]
   }
 }

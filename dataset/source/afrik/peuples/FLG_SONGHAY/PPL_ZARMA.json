@@ -120,13 +120,48 @@
       ]
     },
     "sources": [
-      "SIL Ethnologue – Zarma (dje). https://www.ethnologue.com/language/dje/",
-      "Crystal Clear Translation – The Zarma Language. https://crystalcleartranslation.com/the-zarma-language-one-of-the-fascinating-songhay-languages/",
-      "101 Last Tribes – Zarma people. https://www.101lasttribes.com/tribes/zarma.html",
-      "Olivier de Sardan, Jean-Pierre. Concepts et conceptions songhay-zarma. Paris : Nubia, 1982.",
-      "Rouch, Jean. La Religion et la magie songhay. PUF, Paris, 1960.",
-      "Rouch, Jean. Les Maitres fous (film documentaire). CNRS/Films de la Pleiade, 1955.",
-      "CIA World Factbook – Niger. https://www.cia.gov/the-world-factbook/countries/niger/"
+      {
+        "title": "SIL Ethnologue – Zarma (dje)",
+        "url": "https://www.ethnologue.com/language/dje/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"ethnologue\"."
+      },
+      {
+        "title": "Crystal Clear Translation – The Zarma Language",
+        "url": "https://crystalcleartranslation.com/the-zarma-language-one-of-the-fascinating-songhay-languages/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for crystalcleartranslation.com."
+      },
+      {
+        "title": "101 Last Tribes – Zarma people",
+        "url": "https://www.101lasttribes.com/tribes/zarma.html",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for 101lasttribes.com."
+      },
+      {
+        "title": "Olivier de Sardan, Jean-Pierre. Concepts et conceptions songhay-zarma. Paris : Nubia, 1982",
+        "url": null,
+        "tier": "needs_review",
+        "notes": "No URL and no recognisable citation shape; the tier awaits editorial review."
+      },
+      {
+        "title": "Rouch, Jean. La Religion et la magie songhay. PUF, Paris, 1960",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "Rouch, Jean. Les Maitres fous (film documentaire). CNRS/Films de la Pleiade, 1955",
+        "url": null,
+        "tier": "referenced",
+        "notes": "Tier inferred from published-citation shape (named author and publication year); no domain ruling applies."
+      },
+      {
+        "title": "CIA World Factbook – Niger",
+        "url": "https://www.cia.gov/the-world-factbook/countries/niger/",
+        "tier": "official",
+        "notes": "Tier resolved from the authorized source catalogue entry \"cia-world-factbook\"."
+      }
     ]
   }
 }

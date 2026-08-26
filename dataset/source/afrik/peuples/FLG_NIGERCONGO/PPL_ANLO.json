@@ -80,11 +80,36 @@
       ]
     },
     "sources": [
-      "Art of the Motherland - The Anlo Ewe People of the Volta Region of Ghana, 2024 (https://artofthemotherland.com/the-anlo-ewe-people-of-the-volta-region-of-ghana-culture-society-and-history/)",
-      "Modern Ghana - The Anlo Kingdom: A Tapestry of Tradition, Unity, and Civic Wisdom (https://www.modernghana.com/news/1448953/the-anlo-kingdom-a-tapestry-of-tradition-unity.html)",
-      "Richard Hodges - Introduction to Anlo-Ewe Culture (https://www.richardhodges.com/ladzekpo/Intro.html)",
-      "Joshua Project - Ewe people group (https://joshuaproject.net/people_groups/11169)",
-      "Modern Ghana - The Rich History, Cultural Heritage, and Festivities of the Anlo People, 2025 (https://www.modernghana.com/news/1384172/the-rich-history-cultural-heritage-and-festiviti.html)"
+      {
+        "title": "Art of the Motherland - The Anlo Ewe People of the Volta Region of Ghana, 2024",
+        "url": "https://artofthemotherland.com/the-anlo-ewe-people-of-the-volta-region-of-ghana-culture-society-and-history/",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for artofthemotherland.com."
+      },
+      {
+        "title": "Modern Ghana - The Anlo Kingdom: A Tapestry of Tradition, Unity, and Civic Wisdom",
+        "url": "https://www.modernghana.com/news/1448953/the-anlo-kingdom-a-tapestry-of-tradition-unity.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for modernghana.com."
+      },
+      {
+        "title": "Richard Hodges - Introduction to Anlo-Ewe Culture",
+        "url": "https://www.richardhodges.com/ladzekpo/Intro.html",
+        "tier": "needs_review",
+        "notes": "No domain ruling covers richardhodges.com; the tier awaits editorial review."
+      },
+      {
+        "title": "Joshua Project - Ewe people group",
+        "url": "https://joshuaproject.net/people_groups/11169",
+        "tier": "unverified",
+        "notes": "Tier resolved from the domain ruling for joshuaproject.net."
+      },
+      {
+        "title": "Modern Ghana - The Rich History, Cultural Heritage, and Festivities of the Anlo People, 2025",
+        "url": "https://www.modernghana.com/news/1384172/the-rich-history-cultural-heritage-and-festiviti.html",
+        "tier": "referenced",
+        "notes": "Tier resolved from the domain ruling for modernghana.com."
+      }
     ]
   }
 }
