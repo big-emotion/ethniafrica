@@ -51,23 +51,25 @@ export function HomeGlobeStage() {
     <div className="home-globe-stage">
       {webglSupported ? <LazyHomeGlobe /> : <HomeGlobeFallback />}
       <style>{`
+        /* 380 / 460 px are the reference demo's own stage heights: the
+           globe reads as a body rather than a marble at those, and the
+           flat map still fits its full Mercator height. */
         .home-globe-stage {
           position: relative;
           box-sizing: border-box;
           width: 100%;
           max-width: 960px;
           margin: 0 auto;
-          padding: 0 20px 48px;
-          min-height: 320px;
+          padding: 0 20px 24px;
+          min-height: 380px;
         }
         @media (min-width: 720px) {
           .home-globe-stage {
-            min-height: 420px;
+            min-height: 460px;
           }
         }
         @media (min-width: 1200px) {
           .home-globe-stage {
-            min-height: 520px;
             flex: 1 1 auto;
           }
         }

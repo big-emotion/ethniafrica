@@ -2,14 +2,15 @@ import { describe, expect, it } from "vitest";
 
 import {
   ACCESS_MODES,
+  ACCENT_BY_ACCESS_MODE,
   MODULE_DEFINITIONS,
   getModulesForAccessMode,
 } from "@/lib/hubs/moduleRegistry";
 
-describe("moduleRegistry — access-mode → module mapping (ETNI-1216, REQ-114)", () => {
+describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
   // @req REQ-114
-  it("enumerates exactly three access modes", () => {
-    expect(ACCESS_MODES).toEqual(["peuples", "pays", "familles"]);
+  it("enumerates the three intents a reader arrives with", () => {
+    expect(ACCESS_MODES).toEqual(["explorer", "comprendre", "jouer"]);
   });
 
   // @req REQ-114
@@ -31,21 +32,21 @@ describe("moduleRegistry — access-mode → module mapping (ETNI-1216, REQ-114)
   });
 
   // @req REQ-114
-  it("gives the peuples access mode its peoples-affinity modules", () => {
-    const ids = getModulesForAccessMode("peuples").map((m) => m.id);
-    expect(ids).toEqual(["peuples", "noms", "comparer"]);
+  it("gives explorer the modules that answer a reader who knows what they seek", () => {
+    const ids = getModulesForAccessMode("explorer").map((m) => m.id);
+    expect(ids).toEqual(["peuples", "pays", "familles", "recherche", "noms"]);
   });
 
   // @req REQ-114
-  it("gives the pays access mode its countries-affinity modules", () => {
-    const ids = getModulesForAccessMode("pays").map((m) => m.id);
-    expect(ids).toEqual(["pays", "frise"]);
+  it("gives comprendre the modules that account for where a claim comes from", () => {
+    const ids = getModulesForAccessMode("comprendre").map((m) => m.id);
+    expect(ids).toEqual(["doctrine", "about", "frise"]);
   });
 
   // @req REQ-114
-  it("gives the familles access mode its families-affinity modules", () => {
-    const ids = getModulesForAccessMode("familles").map((m) => m.id);
-    expect(ids).toEqual(["familles", "liens"]);
+  it("gives jouer the modules that make the corpus answer back", () => {
+    const ids = getModulesForAccessMode("jouer").map((m) => m.id);
+    expect(ids).toEqual(["comparer", "liens"]);
   });
 
   // @req REQ-114
@@ -58,7 +59,7 @@ describe("moduleRegistry — access-mode → module mapping (ETNI-1216, REQ-114)
   });
 
   // @req REQ-114
-  it("gives every data module a dataSource and every non-data module none", () => {
+  it("gives every data module a dataSource and every other module none", () => {
     for (const def of MODULE_DEFINITIONS) {
       if (def.availability === "data") {
         expect(def.dataSource).toBeDefined();
@@ -66,5 +67,31 @@ describe("moduleRegistry — access-mode → module mapping (ETNI-1216, REQ-114)
         expect(def.dataSource).toBeUndefined();
       }
     }
+  });
+
+  // A static module is a page that exists whatever the corpus holds, so
+  // gating it behind a row count would hide a working route.
+  // @req REQ-114
+  it("routes every static module without asking the database", () => {
+    const staticModules = MODULE_DEFINITIONS.filter(
+      (m) => m.availability === "static"
+    );
+    expect(staticModules.map((m) => m.id)).toEqual([
+      "recherche",
+      "doctrine",
+      "about",
+    ]);
+    for (const def of staticModules) {
+      expect(def.page).not.toBeNull();
+    }
+  });
+
+  // @req REQ-114
+  it("scopes each access mode to its own categorical accent", () => {
+    expect(ACCENT_BY_ACCESS_MODE).toEqual({
+      explorer: "afh-accent-ocre",
+      comprendre: "afh-accent-teal",
+      jouer: "afh-accent-perv",
+    });
   });
 });

@@ -407,9 +407,21 @@ export const translations = {
       derivedFromPrefix: "Dérivée de : ",
     },
     hubs: {
-      peuples: { title: "Peuples" },
-      pays: { title: "Pays" },
-      familles: { title: "Familles" },
+      explorer: {
+        title: "Explorer",
+        blurb:
+          "Quand on sait ce qu'on cherche — une entité, un nom, une entrée dans le corpus.",
+      },
+      comprendre: {
+        title: "Comprendre",
+        blurb:
+          "Quand on veut savoir d'où vient ce qu'on lit — la méthode, les sources, le temps long.",
+      },
+      jouer: {
+        title: "Jouer",
+        blurb:
+          "Quand on veut que le corpus réponde — mise en regard, rapprochements, écarts.",
+      },
       unavailableLabel: "Bientôt",
     },
   },

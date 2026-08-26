@@ -163,6 +163,26 @@
   --afh-atlas-land: var(--afh-color-earth-bg);
   --afh-atlas-coastline: var(--afh-color-earth);
 
+  /* Atlas — the shared textured sphere (REQ-112/REQ-116). The globe is
+     dataviz, and DEC-022 puts dataviz on the Night surface whatever the
+     reader's page theme, so this group has no parchment counterpart: a
+     lit body reads as a body only against a dark sky.
+     Ocean and land are darker/warmer siblings of the night ground rather
+     than new hues; coast and equator reuse existing tokens outright. */
+  --afh-globe-ocean: #120e0a;
+  --afh-globe-graticule: #42341f;
+  --afh-globe-graticule-major: #5d4a2e;
+  --afh-globe-land: #6b4a22;
+  --afh-globe-coast: var(--afh-night-ocre-soft);
+  /* The equator is the one line that is a measurement, not terrain, so it
+     takes the categorical accent no landmass ever wears. */
+  --afh-globe-equator: var(--afh-cat-perv);
+  /* Tissot indicatrices — every disc covers the same real area, so they
+     read as instrumentation rather than terrain and take teal, the accent
+     no landmass and no boundary ever wears. */
+  --afh-globe-tissot: rgba(51, 163, 144, 0.3);
+  --afh-globe-tissot-edge: var(--afh-cat-teal);
+
   /* Atlas — MigrationPathLayer overlay (Epic 12, Story 12.9, ETNI-522).
      Active/selected state is never color-alone: stroke-width + opacity in
      the component carry the signal, these tokens only supply the hue. */
@@ -188,6 +208,52 @@
   --accent: var(--afh-cat-ocre);
   --accent-tint: var(--afh-cat-ocre-tint);
   --accent-foreground: #fff;
+}
+
+/* ─── Night theme (REQ-115) ───────────────────────────────────────
+   The reader's choice between parchment and night, applied site-wide.
+   next-themes writes `.dark` on <html>, which is also what Tailwind's
+   `darkMode: ["class"]` reads, so one class drives both systems.
+
+   Only the L2 semantic aliases are rebound. Nothing below this line
+   learns which theme it is under: a component that already reads
+   --afh-bg / --afh-text / --afh-surface follows the swap untouched,
+   and one that hardcodes a hex would not have followed either way.
+   The raw --afh-color-* ramp stays put — it is the parchment palette,
+   and the night surface has its own --afh-night-* group.
+
+   .afh-on-night is the same swap applied to a subtree instead of the
+   page: the home's hero band is night whatever the reader chose, because
+   a lit globe only reads as a body against a dark sky (DEC-022). Sharing
+   the rule rather than copying it is what stops the band and the page
+   theme drifting into two different nights. */
+.dark,
+.afh-on-night {
+  --afh-bg: var(--afh-night-ground);
+  --afh-bg-warm: var(--afh-night-surface);
+  --afh-surface: var(--afh-night-surface-2);
+  --afh-border: var(--afh-night-line);
+
+  --afh-text: var(--afh-night-ink);
+  --afh-text-soft: var(--afh-night-ink-2);
+  --afh-text-muted: var(--afh-night-ink-3);
+
+  /* fg-muted must clear AA on --afh-muted; ink-3 sits at 4.2:1 on the
+     raised surface, so the muted pair takes ink-2 the way the parchment
+     pair takes text-soft rather than text-muted. */
+  --afh-muted: var(--afh-night-surface);
+  --afh-fg-muted: var(--afh-night-ink-2);
+
+  /* An accent fill is a light patch on a dark page, so the text on it
+     flips to the dark ink for the same reason terre needs it in day. */
+  --accent-foreground: #1a1208;
+
+  /* Rebinding the tokens is not enough on its own: `color` is resolved
+     once on body and then inherited, so text with no colour of its own
+     stays parchment-dark inside a night subtree. Stating it here is what
+     makes the scope carry to anything that never set a colour — the nav's
+     wordmark went unreadable on the home band without it. */
+  color: var(--afh-text);
 }
 
 /* ─── Accent scope wrappers (ETNI-798 · FR104 · ETNI-927) ─────────

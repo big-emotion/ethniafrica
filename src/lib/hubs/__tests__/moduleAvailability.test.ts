@@ -67,7 +67,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
       })
     );
 
-    const modules = await getHubModules("peuples");
+    const modules = await getHubModules("explorer");
     const peuples = modules.find((m) => m.id === "peuples");
 
     expect(peuples?.available).toBe(false);
@@ -77,12 +77,11 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
   it("marks a data module available when its backing table holds at least one row", async () => {
     createServerClientMock.mockReturnValue(buildSupabaseMock(ALL_LIVE_RESULTS));
 
-    const modules = await getHubModules("pays");
-    const pays = modules.find((m) => m.id === "pays");
-    const frise = modules.find((m) => m.id === "frise");
+    const explorer = await getHubModules("explorer");
+    const comprendre = await getHubModules("comprendre");
 
-    expect(pays?.available).toBe(true);
-    expect(frise?.available).toBe(true);
+    expect(explorer.find((m) => m.id === "pays")?.available).toBe(true);
+    expect(comprendre.find((m) => m.id === "frise")?.available).toBe(true);
   });
 
   // @req REQ-106 @req REQ-114
@@ -97,7 +96,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
       })
     );
 
-    const modules = await getHubModules("pays");
+    const modules = await getHubModules("comprendre");
     const frise = modules.find((m) => m.id === "frise");
 
     expect(frise?.available).toBe(false);
@@ -110,7 +109,7 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
     });
     createServerClientMock.mockReturnValue({ from });
 
-    const modules = await getHubModules("familles");
+    const modules = await getHubModules("explorer");
     const familles = modules.find((m) => m.id === "familles");
 
     expect(familles?.available).toBe(false);
@@ -133,6 +132,25 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
 
     expect(from).toHaveBeenCalledWith("name_records");
     expect(eq).toHaveBeenCalledWith("entity_type", "people");
+  });
+
+  // @req REQ-106 @req REQ-114
+  it("keeps a static module live without ever touching the database", async () => {
+    const available = await isModuleAvailable({ availability: "static" });
+
+    expect(available).toBe(true);
+    expect(createServerClientMock).not.toHaveBeenCalled();
+  });
+
+  // @req REQ-106 @req REQ-114
+  it("surfaces doctrine and about as live even when every table is empty", async () => {
+    createServerClientMock.mockReturnValue(buildSupabaseMock({}));
+
+    const modules = await getHubModules("comprendre");
+
+    expect(modules.find((m) => m.id === "doctrine")?.available).toBe(true);
+    expect(modules.find((m) => m.id === "about")?.available).toBe(true);
+    expect(modules.find((m) => m.id === "frise")?.available).toBe(false);
   });
 
   // @req REQ-106 @req REQ-114

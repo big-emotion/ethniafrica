@@ -54,3 +54,72 @@ describe("AFH color tokens", () => {
     ).toBeGreaterThanOrEqual(4.5);
   });
 });
+
+describe("night theme (REQ-115)", () => {
+  const ground = () => tokenHex("--afh-night-ground");
+  const surface = () => tokenHex("--afh-night-surface-2");
+
+  // @req REQ-115
+  it("keeps body and soft text AA-readable on both night surfaces", () => {
+    for (const ink of ["--afh-night-ink", "--afh-night-ink-2"]) {
+      expect(contrastRatio(tokenHex(ink), ground())).toBeGreaterThanOrEqual(
+        4.5
+      );
+      expect(contrastRatio(tokenHex(ink), surface())).toBeGreaterThanOrEqual(
+        4.5
+      );
+    }
+  });
+
+  // Every axis accent lands on the night ground in the hero band, so an
+  // accent that fails there would take a whole axis down with it.
+  // @req REQ-115
+  it("keeps every access-mode accent AA-readable on the night ground", () => {
+    for (const accent of [
+      "--afh-cat-ocre",
+      "--afh-cat-teal",
+      "--afh-cat-perv",
+    ]) {
+      expect(contrastRatio(tokenHex(accent), ground())).toBeGreaterThanOrEqual(
+        4.5
+      );
+    }
+  });
+
+  // The theme swaps the semantic aliases, not the components: anything
+  // that reads --afh-bg / --afh-text follows without being touched.
+  // @req REQ-115
+  it("rebinds the semantic surface and text aliases under .dark", () => {
+    const darkBlock = colorCss.match(/\.dark[^{]*\{([^}]*)\}/);
+    expect(darkBlock).not.toBeNull();
+
+    for (const alias of [
+      "--afh-bg",
+      "--afh-bg-warm",
+      "--afh-surface",
+      "--afh-border",
+      "--afh-text",
+      "--afh-text-soft",
+      "--afh-text-muted",
+    ]) {
+      expect(darkBlock![1]).toContain(`${alias}:`);
+    }
+  });
+
+  // The hero band is night whatever the reader's page theme, so the two
+  // have to be one rule — two copies would drift into two nights.
+  // @req REQ-115
+  it("applies the same night swap to a subtree scope as to the page", () => {
+    expect(colorCss).toMatch(/\.dark,\s*\n\.afh-on-night\s*\{/);
+  });
+
+  // `color` is resolved once on body and inherited from there, so text that
+  // never set its own colour ignores a token swap. The nav wordmark went
+  // unreadable on the night band for exactly this reason.
+  // @req REQ-115
+  it("states an inherited colour on the night scope, not just tokens", () => {
+    const darkBlock = colorCss.match(/\.dark[^{]*\{([^}]*)\}/);
+
+    expect(darkBlock![1]).toMatch(/(^|\n)\s*color:\s*var\(--afh-text\);/);
+  });
+});

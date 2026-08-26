@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { HomeHero } from "@/components/home/HomeHero";
 import { PRODUCT_NAME } from "@/lib/brand";
 
-describe("HomeHero — parchment light hero (ETNI-820)", () => {
+describe("HomeHero — the night band the home opens on (REQ-115)", () => {
   // @req REQ-044
   it("renders no eyebrow and no PRODUCT_NAME line", () => {
     render(<HomeHero />);
@@ -28,33 +28,39 @@ describe("HomeHero — parchment light hero (ETNI-820)", () => {
   });
 
   // @req REQ-044
-  it("gives the italic accent on « carte vivante » the terre accent colour", () => {
-    render(<HomeHero />);
-    const heading = screen.getByRole("heading", { level: 1 });
-    const em = heading.querySelector("em");
+  it("sets « carte vivante » in italic on the night band's own accent", () => {
+    const { container } = render(<HomeHero />);
+    const em = screen.getByRole("heading", { level: 1 }).querySelector("em");
+    const styles = Array.from(container.querySelectorAll("style"))
+      .map((style) => style.textContent)
+      .join("\n");
 
     expect(em).toHaveTextContent("carte vivante");
-    expect(em?.getAttribute("style")).toContain("var(--afh-cat-terre)");
+    expect(styles).toMatch(
+      /\.home-hero-copy h1 em\s*{[^}]*var\(--afh-night-ocre-soft\)/
+    );
   });
 
   // @req REQ-044
-  it("renders the lede with the verifiable-source clause", () => {
+  it("renders one lede stating whose regard the history is told from", () => {
     render(<HomeHero />);
-    expect(screen.getByText(/source vérifiable/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/racontée depuis son propre regard/i)
+    ).toBeInTheDocument();
   });
 
+  // The sourcing claim moved to the page's closing strip (TrustStrip), so
+  // the hero states one thing rather than three.
   // @req REQ-044
-  it("renders a trust note distinct from the lede", () => {
+  it("no longer carries the trust note it used to duplicate", () => {
     render(<HomeHero />);
-    const lede = screen.getByText(/source vérifiable/i);
-    const trustNote = screen.getByTestId("home-hero-trust-note");
-
-    expect(trustNote).toBeInTheDocument();
-    expect(trustNote).not.toBe(lede);
+    expect(
+      screen.queryByTestId("home-hero-trust-note")
+    ).not.toBeInTheDocument();
   });
 
   // @req REQ-044 @req REQ-112
-  it("composes the home globe stage behind the content, never rendering empty", async () => {
+  it("composes the home globe stage, never rendering empty", async () => {
     const { container } = render(<HomeHero />);
 
     // happy-dom has no WebGL, so the capability gate settles on the
@@ -67,14 +73,43 @@ describe("HomeHero — parchment light hero (ETNI-820)", () => {
     );
   });
 
-  // @req REQ-044
-  it("uses the parchment surface, not the night ground", () => {
+  // DEC-022 keeps dataviz on the night surface whatever the reader chose
+  // for the rest of the site, and the globe is dataviz.
+  // @req REQ-115
+  it("stays on the night surface whatever the page theme", () => {
     const { container } = render(<HomeHero />);
     const section = container.querySelector("section");
+    const styles = Array.from(container.querySelectorAll("style"))
+      .map((style) => style.textContent)
+      .join("\n");
 
-    expect(section?.getAttribute("style")).toContain("var(--afh-bg-warm)");
-    expect(section?.getAttribute("style")).not.toContain(
-      "var(--afh-night-ground)"
+    expect(section).toHaveClass("afh-on-night");
+    expect(styles).toMatch(
+      /\.home-hero\s*{[^}]*background:\s*var\(--afh-night-ground\)/
+    );
+  });
+
+  // The globe carries its own readout, which also tracks the morph. A
+  // second static caption beside it said less and covered it.
+  // @req REQ-115
+  it("leaves the globe to say what it is, rather than captioning it twice", () => {
+    render(<HomeHero />);
+
+    expect(screen.queryByTestId("home-globe-caption")).not.toBeInTheDocument();
+  });
+
+  // The band ends on a stated edge, not a fade: it is where the sky stops
+  // and the archive starts.
+  // @req REQ-115
+  it("closes the band on an accent seam rather than a gradient", () => {
+    const { container } = render(<HomeHero />);
+    const styles = Array.from(container.querySelectorAll("style"))
+      .map((style) => style.textContent)
+      .join("\n");
+
+    expect(container.querySelector(".home-hero-seam")).toBeInTheDocument();
+    expect(styles).toMatch(
+      /\.home-hero-seam\s*{[^}]*border-bottom:[^;]*var\(--afh-cat-ocre\)/
     );
   });
 
@@ -90,7 +125,6 @@ describe("HomeHero — parchment light hero (ETNI-820)", () => {
   it("lays out the globe stage after the headline and lede in document order", () => {
     const { container } = render(<HomeHero />);
     const heading = screen.getByRole("heading", { level: 1 });
-    const lede = screen.getByText(/source vérifiable/i);
     const stage = container.querySelector(".home-globe-stage");
 
     expect(stage).not.toBeNull();
@@ -98,37 +132,28 @@ describe("HomeHero — parchment light hero (ETNI-820)", () => {
       heading.compareDocumentPosition(stage as Element) &
         Node.DOCUMENT_POSITION_FOLLOWING
     ).toBeTruthy();
-    expect(
-      lede.compareDocumentPosition(stage as Element) &
-        Node.DOCUMENT_POSITION_FOLLOWING
-    ).toBeTruthy();
   });
 
   // @req REQ-115
   it("declares a full-viewport min-height rule for the hero at desktop widths (>=1200px)", () => {
     const { container } = render(<HomeHero />);
-    const section = container.querySelector("section.home-hero");
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
 
-    expect(section).not.toBeNull();
+    expect(container.querySelector("section.home-hero")).not.toBeNull();
     expect(styles).toMatch(
-      /\.home-hero\s*{[^}]*min-height:\s*100dvh[^}]*}\s*}/
+      /\.home-hero\s*{[^}]*min-height:\s*calc\(100dvh - 56px\)[^}]*}\s*}/
     );
     expect(styles).toMatch(/@media \(min-width:\s*1200px\)\s*{\s*\.home-hero/);
   });
 
   // @req REQ-115
-  it("no longer overlays the globe stage absolutely behind the copy — it follows it in flow", () => {
+  it("keeps the copy first and the globe after it, never overlaid behind", () => {
     const { container } = render(<HomeHero />);
-    const copy = container.querySelector("h1")?.closest("div");
-    const stage = container.querySelector(".home-globe-stage");
+    const copy = container.querySelector(".home-hero-copy");
 
     expect(copy).not.toBeNull();
-    expect(stage).not.toBeNull();
-    // The old layout rendered the stage as the section's FIRST child,
-    // absolutely positioned behind the copy block that followed it.
     expect(container.querySelector("section")?.firstElementChild).toBe(copy);
   });
 });

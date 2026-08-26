@@ -2,73 +2,75 @@ import { act, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { HomeGlobe } from "@/components/home/HomeGlobe";
+import { rotateSpherePoint, type Mat3 } from "@/lib/atlas/projection";
 
-const { africaDotsMock } = vi.hoisted(() => ({
-  africaDotsMock: vi.fn(() => [
-    [0.5, 0.02, 0] as const,
-    [0.4, 0.5, 0] as const,
-    [0.6, 0.9, 0] as const,
-  ]),
+const { createSphereLayerMock, drawMock, disposeMock, setTissotMock } =
+  vi.hoisted(() => ({
+    createSphereLayerMock: vi.fn(),
+    drawMock: vi.fn(),
+    disposeMock: vi.fn(),
+    setTissotMock: vi.fn(),
+  }));
+
+vi.mock("@/lib/atlas/sphereLayer", () => ({
+  createSphereLayer: createSphereLayerMock,
 }));
 
-vi.mock("@/lib/continentDots", () => ({
-  africaDots: africaDotsMock,
+vi.mock("@/lib/atlas/globePalette", () => ({
+  resolveGlobePalette: () => ({
+    ocean: "#191009",
+    graticule: "#3b2d1a",
+    graticuleMajor: "#443521",
+    land: "#6b4a22",
+    coast: "#e8b96a",
+    equator: "#7a8ce8",
+  }),
 }));
 
-function createFakeGl() {
+function fakeGl() {
   return {
-    VERTEX_SHADER: 1,
-    FRAGMENT_SHADER: 2,
-    ARRAY_BUFFER: 3,
-    STATIC_DRAW: 4,
-    FLOAT: 5,
-    BLEND: 6,
-    SRC_ALPHA: 7,
-    ONE_MINUS_SRC_ALPHA: 8,
-    COLOR_BUFFER_BIT: 9,
-    POINTS: 10,
-    createShader: vi.fn(() => ({})),
-    shaderSource: vi.fn(),
-    compileShader: vi.fn(),
-    createProgram: vi.fn(() => ({})),
-    attachShader: vi.fn(),
-    linkProgram: vi.fn(),
-    useProgram: vi.fn(),
-    createBuffer: vi.fn(() => ({})),
-    bindBuffer: vi.fn(),
-    bufferData: vi.fn(),
-    getAttribLocation: vi.fn(() => 0),
-    enableVertexAttribArray: vi.fn(),
-    vertexAttribPointer: vi.fn(),
-    getUniformLocation: vi.fn(() => ({})),
-    clearColor: vi.fn(),
-    enable: vi.fn(),
-    blendFunc: vi.fn(),
-    clear: vi.fn(),
+    COLOR_BUFFER_BIT: 1,
     viewport: vi.fn(),
-    uniformMatrix3fv: vi.fn(),
-    uniform1f: vi.fn(),
-    uniform4f: vi.fn(),
-    drawArrays: vi.fn(),
+    clearColor: vi.fn(),
+    clear: vi.fn(),
   };
 }
 
-describe("HomeGlobe", () => {
-  let fakeGl: ReturnType<typeof createFakeGl>;
+describe("HomeGlobe — the hero's textured sphere (REQ-112)", () => {
   let matchMediaMatches: boolean;
-  let frameCallbacks: Map<number, FrameRequestCallback>;
+  let frames: Map<number, FrameRequestCallback>;
   let nextFrameId: number;
+  let cancelled: number[];
   let matchMediaDescriptor: PropertyDescriptor | undefined;
 
+  const runFrames = (count: number) => {
+    for (let i = 0; i < count; i++) {
+      const pending = [...frames.entries()];
+      frames.clear();
+      act(() => {
+        pending.forEach(([, callback]) => callback(performance.now()));
+      });
+    }
+  };
+
   beforeEach(() => {
-    africaDotsMock.mockClear();
-    fakeGl = createFakeGl();
+    createSphereLayerMock.mockReset();
+    drawMock.mockReset();
+    disposeMock.mockReset();
+    setTissotMock.mockReset();
+    createSphereLayerMock.mockReturnValue({
+      draw: drawMock,
+      dispose: disposeMock,
+      setTissot: setTissotMock,
+    });
+
     matchMediaMatches = false;
-    frameCallbacks = new Map();
+    frames = new Map();
     nextFrameId = 1;
+    cancelled = [];
 
     vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockImplementation(
-      () => fakeGl as unknown as RenderingContext
+      () => fakeGl() as unknown as RenderingContext
     );
     vi.spyOn(HTMLElement.prototype, "clientWidth", "get").mockImplementation(
       () => 300
@@ -88,39 +90,47 @@ describe("HomeGlobe", () => {
           return matchMediaMatches;
         },
         media: query,
-        onchange: null,
         addEventListener: vi.fn(),
         removeEventListener: vi.fn(),
         addListener: vi.fn(),
         removeListener: vi.fn(),
         dispatchEvent: vi.fn(),
+        onchange: null,
       })),
     });
 
     vi.spyOn(window, "requestAnimationFrame").mockImplementation((cb) => {
       const id = nextFrameId++;
-      frameCallbacks.set(id, cb);
+      frames.set(id, cb);
       return id;
     });
     vi.spyOn(window, "cancelAnimationFrame").mockImplementation((id) => {
-      frameCallbacks.delete(id);
+      cancelled.push(id);
+      frames.delete(id);
     });
 
-    class IntersectionObserverMock {
-      disconnect = vi.fn();
-      observe = vi.fn();
-      takeRecords = vi.fn(() => []);
-      unobserve = vi.fn();
-      constructor(_callback: IntersectionObserverCallback) {}
-    }
-    class ResizeObserverMock {
-      disconnect = vi.fn();
-      observe = vi.fn();
-      unobserve = vi.fn();
-      constructor(_callback: ResizeObserverCallback) {}
-    }
-    vi.stubGlobal("IntersectionObserver", IntersectionObserverMock);
-    vi.stubGlobal("ResizeObserver", ResizeObserverMock);
+    vi.stubGlobal(
+      "IntersectionObserver",
+      class {
+        constructor(private readonly callback: IntersectionObserverCallback) {}
+        observe(target: Element) {
+          this.callback(
+            [{ target, isIntersecting: true } as IntersectionObserverEntry],
+            this as unknown as IntersectionObserver
+          );
+        }
+        unobserve() {}
+        disconnect() {}
+      }
+    );
+    vi.stubGlobal(
+      "ResizeObserver",
+      class {
+        observe() {}
+        unobserve() {}
+        disconnect() {}
+      }
+    );
   });
 
   afterEach(() => {
@@ -128,151 +138,257 @@ describe("HomeGlobe", () => {
     vi.unstubAllGlobals();
     if (matchMediaDescriptor) {
       Object.defineProperty(window, "matchMedia", matchMediaDescriptor);
-    } else {
-      Reflect.deleteProperty(window, "matchMedia");
     }
   });
 
-  function rotateSurface() {
-    return screen.getByRole("button", {
-      name: /Globe interactif de l'Afrique/,
-    });
-  }
-
   // @req REQ-112
-  it("renders a decorative canvas behind an accessible, keyboard-focusable rotate surface", () => {
+  it("puts a decorative canvas behind a keyboard-focusable rotate surface", () => {
     render(<HomeGlobe />);
 
-    const canvas = document.querySelector("canvas");
+    const surface = screen.getByRole("button", { name: /globe interactif/i });
+    const canvas = surface.querySelector("canvas");
+
+    expect(canvas).not.toBeNull();
     expect(canvas).toHaveAttribute("aria-hidden", "true");
-
-    const surface = rotateSurface();
-    expect(surface.tagName).toBe("BUTTON");
-    expect(surface).toHaveAccessibleName();
   });
 
   // @req REQ-112
-  it("exposes a real button to morph between the globe and the flat view", () => {
+  it("mounts the shared sphere layer rather than drawing its own geometry", () => {
     render(<HomeGlobe />);
 
-    const toggle = screen.getByTestId("home-globe-morph-toggle");
-    expect(toggle).toHaveAttribute("aria-pressed", "false");
-
-    fireEvent.click(toggle);
-    expect(toggle).toHaveAttribute("aria-pressed", "true");
+    expect(createSphereLayerMock).toHaveBeenCalledTimes(1);
+    expect(drawMock).toHaveBeenCalled();
   });
 
   // @req REQ-112
-  it("never throws when no WebGL context can be created", () => {
+  it("renders nothing rather than throwing when WebGL is unavailable", () => {
     vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);
 
     expect(() => render(<HomeGlobe />)).not.toThrow();
-    expect(rotateSurface()).toBeInTheDocument();
+    expect(createSphereLayerMock).not.toHaveBeenCalled();
   });
 
   // @req REQ-112
-  it("builds the shader program and uploads sphere + flat geometry once a WebGL context exists", () => {
+  it("survives a layer the context refused to build", () => {
+    createSphereLayerMock.mockReturnValue(null);
+
+    expect(() => render(<HomeGlobe />)).not.toThrow();
+    expect(drawMock).not.toHaveBeenCalled();
+  });
+
+  // The globe does not spin on its own, so an untouched hero must not hold
+  // a frame loop open behind the reader's back.
+  // @req REQ-112
+  it("stops requesting frames once it has settled with no input", () => {
     render(<HomeGlobe />);
 
-    expect(africaDotsMock).toHaveBeenCalledOnce();
-    expect(fakeGl.createShader).toHaveBeenCalledWith(fakeGl.VERTEX_SHADER);
-    expect(fakeGl.createShader).toHaveBeenCalledWith(fakeGl.FRAGMENT_SHADER);
-    expect(fakeGl.linkProgram).toHaveBeenCalledOnce();
-    expect(fakeGl.bufferData).toHaveBeenCalledTimes(2);
+    runFrames(40);
+
+    expect(frames.size).toBe(0);
   });
 
   // @req REQ-112
-  it("runs a continuous render loop and rotates automatically when motion is not reduced", () => {
+  it("turns the globe on an arrow key and animates toward the new angle", () => {
     render(<HomeGlobe />);
+    runFrames(40);
+    drawMock.mockClear();
 
-    expect(window.requestAnimationFrame).toHaveBeenCalledOnce();
-    const firstFrame = frameCallbacks.get(1);
-    if (!firstFrame)
-      throw new Error("expected the first frame to be scheduled");
-    act(() => firstFrame(16));
+    const surface = screen.getByRole("button", { name: /globe interactif/i });
+    fireEvent.keyDown(surface, { key: "ArrowRight" });
+    runFrames(1);
 
-    expect(fakeGl.drawArrays).toHaveBeenCalledOnce();
-    expect(window.requestAnimationFrame).toHaveBeenCalledTimes(2);
+    const yaws = drawMock.mock.calls.map(([state]) => state.rotation);
+    expect(yaws.length).toBeGreaterThan(0);
+    expect(frames.size).toBeGreaterThan(0);
+  });
+
+  /** Where the point currently facing the reader lands after a rotation. */
+  const facingPoint = (rotation: number[]) =>
+    rotateSpherePoint(rotation as unknown as Mat3, { x: 0, y: 0, z: 1 });
+
+  // Dragging is not a request the globe eases toward: the surface has to
+  // stay under the finger, which is what "it does not follow the mouse"
+  // meant when the lag was the only response a drag produced.
+  // @req REQ-112
+  it("moves the globe with the pointer on the very same frame", () => {
+    render(<HomeGlobe />);
+    drawMock.mockClear();
+
+    const surface = screen.getByRole("button", { name: /globe interactif/i });
+    fireEvent.pointerDown(surface, { clientX: 0, clientY: 0, pointerId: 1 });
+    fireEvent.pointerMove(surface, { clientX: 100, clientY: 0, pointerId: 1 });
+
+    // No frames run: the drag itself painted.
+    expect(drawMock).toHaveBeenCalledTimes(1);
+    const [state] = drawMock.mock.calls.at(-1)!;
+    expect(facingPoint(state.rotation).x).toBeGreaterThan(0.3);
   });
 
   // @req REQ-112
-  it("draws exactly one still frame and schedules no animation loop under reduced motion", () => {
-    matchMediaMatches = true;
+  it("carries the globe the way the pointer went, on both axes", () => {
     render(<HomeGlobe />);
+    const surface = screen.getByRole("button", { name: /globe interactif/i });
 
-    expect(fakeGl.drawArrays).toHaveBeenCalledOnce();
-    expect(window.requestAnimationFrame).not.toHaveBeenCalled();
-  });
-
-  // @req REQ-112
-  it("redraws once per keyboard arrow press under reduced motion, without starting a loop", () => {
-    matchMediaMatches = true;
-    render(<HomeGlobe />);
-    expect(fakeGl.drawArrays).toHaveBeenCalledOnce();
-
-    fireEvent.keyDown(rotateSurface(), { key: "ArrowRight" });
-    expect(fakeGl.drawArrays).toHaveBeenCalledTimes(2);
-
-    fireEvent.keyDown(rotateSurface(), { key: "ArrowUp" });
-    expect(fakeGl.drawArrays).toHaveBeenCalledTimes(3);
-
-    expect(window.requestAnimationFrame).not.toHaveBeenCalled();
-  });
-
-  // @req REQ-112
-  it("redraws while pointer-dragging under reduced motion", () => {
-    matchMediaMatches = true;
-    render(<HomeGlobe />);
-    const surface = rotateSurface();
-    Object.assign(surface, { setPointerCapture: vi.fn() });
-
-    fireEvent.pointerDown(surface, {
-      clientX: 100,
-      clientY: 100,
-      pointerId: 1,
-    });
-    fireEvent.pointerMove(surface, { clientX: 120, clientY: 90, pointerId: 1 });
-
-    expect(fakeGl.drawArrays).toHaveBeenCalledTimes(2);
+    fireEvent.pointerDown(surface, { clientX: 0, clientY: 0, pointerId: 1 });
+    fireEvent.pointerMove(surface, { clientX: -100, clientY: 0, pointerId: 1 });
+    let [state] = drawMock.mock.calls.at(-1)!;
+    // Dragged left: the face that was toward the reader has gone left.
+    expect(facingPoint(state.rotation).x).toBeLessThan(-0.4);
 
     fireEvent.pointerUp(surface, { pointerId: 1 });
-    fireEvent.pointerMove(surface, { clientX: 140, clientY: 80, pointerId: 1 });
-    expect(fakeGl.drawArrays).toHaveBeenCalledTimes(2);
+    fireEvent.pointerDown(surface, { clientX: 0, clientY: 0, pointerId: 2 });
+    fireEvent.pointerMove(surface, { clientX: 0, clientY: 120, pointerId: 2 });
+    [state] = drawMock.mock.calls.at(-1)!;
+    // Dragged down: the face has gone down with it.
+    expect(facingPoint(state.rotation).y).toBeLessThan(-0.2);
+  });
+
+  // The keyboard is the same gesture without a pointer, so it must agree
+  // with the drag rather than invert it.
+  // @req REQ-112
+  it("moves the globe the same way from the arrow keys", () => {
+    render(<HomeGlobe />);
+    const surface = screen.getByRole("button", { name: /globe interactif/i });
+    // The globe opens facing Africa, not longitude zero, so each key is
+    // judged by the movement it causes rather than where it lands.
+    const facingNow = () =>
+      facingPoint(drawMock.mock.calls.at(-1)![0].rotation);
+
+    const start = facingNow();
+    fireEvent.keyDown(surface, { key: "ArrowRight" });
+    runFrames(200);
+    const afterRight = facingNow();
+
+    fireEvent.keyDown(surface, { key: "ArrowUp" });
+    runFrames(200);
+    const afterUp = facingNow();
+
+    expect(afterRight.x).toBeGreaterThan(start.x);
+    expect(afterUp.y).toBeGreaterThan(afterRight.y);
   });
 
   // @req REQ-112
-  it("jumps the morph instantly (no tween) when toggled under reduced motion", () => {
+  it("closes the flat map back into a globe along one continuous slider", () => {
+    render(<HomeGlobe />);
+
+    const slider = screen.getByTestId(
+      "home-globe-morph-range"
+    ) as HTMLInputElement;
+    expect(slider.value).toBe("100");
+
+    fireEvent.change(slider, { target: { value: "0" } });
+    runFrames(120);
+
+    const [lastState] = drawMock.mock.calls.at(-1)!;
+    expect(lastState.morph).toBeLessThan(0.05);
+  });
+
+  // A slider is a claim about a continuum: half way has to be half way, not
+  // a snap to one end or the other.
+  // @req REQ-112
+  it("holds an intermediate position rather than snapping to an end", () => {
+    render(<HomeGlobe />);
+
+    fireEvent.change(screen.getByTestId("home-globe-morph-range"), {
+      target: { value: "50" },
+    });
+    runFrames(200);
+
+    const [lastState] = drawMock.mock.calls.at(-1)!;
+    expect(lastState.morph).toBeGreaterThan(0.45);
+    expect(lastState.morph).toBeLessThan(0.55);
+  });
+
+  // @req REQ-112
+  it("says what the reader is looking at, and updates as it changes", () => {
+    render(<HomeGlobe />);
+
+    expect(screen.getByTestId("home-globe-readout")).toHaveTextContent(
+      "30,4 M km²"
+    );
+
+    fireEvent.change(screen.getByTestId("home-globe-morph-range"), {
+      target: { value: "0" },
+    });
+
+    expect(screen.getByTestId("home-globe-readout")).toHaveTextContent(
+      /Mercator gonfle les surfaces/
+    );
+  });
+
+  // The indicatrices are the measurable half of the argument, so they are
+  // on from the start rather than hidden behind a discovery.
+  // @req REQ-112
+  it("shows the equal-area discs by default and lets them be dismissed", () => {
+    render(<HomeGlobe />);
+
+    const toggle = screen.getByTestId("home-globe-tissot");
+    expect(toggle).toHaveAttribute("aria-pressed", "true");
+    expect(createSphereLayerMock).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.anything(),
+      expect.anything(),
+      expect.any(Number),
+      true
+    );
+
+    fireEvent.click(toggle);
+
+    expect(toggle).toHaveAttribute("aria-pressed", "false");
+    expect(setTissotMock).toHaveBeenCalledWith(false);
+  });
+
+  // @req REQ-112
+  it("brings the globe home from any angle and any morph", () => {
+    render(<HomeGlobe />);
+
+    const surface = screen.getByRole("button", { name: /globe interactif/i });
+    fireEvent.keyDown(surface, { key: "ArrowRight" });
+    fireEvent.change(screen.getByTestId("home-globe-morph-range"), {
+      target: { value: "0" },
+    });
+    runFrames(120);
+
+    fireEvent.click(screen.getByTestId("home-globe-recentre"));
+    runFrames(200);
+
+    const [lastState] = drawMock.mock.calls.at(-1)!;
+    expect(lastState.morph).toBeGreaterThan(0.95);
+    expect(
+      (screen.getByTestId("home-globe-morph-range") as HTMLInputElement).value
+    ).toBe("100");
+  });
+
+  // @req REQ-112
+  it("draws a single still frame and never animates under reduced motion", () => {
     matchMediaMatches = true;
     render(<HomeGlobe />);
-    expect(fakeGl.drawArrays).toHaveBeenCalledOnce();
 
-    fireEvent.click(screen.getByTestId("home-globe-morph-toggle"));
-
-    expect(fakeGl.drawArrays).toHaveBeenCalledTimes(2);
-    expect(fakeGl.uniform1f).toHaveBeenCalledWith(expect.anything(), 1);
-  });
-
-  // @req REQ-115
-  it("renders the morph toggle inside the same root that fills the stage as the canvas, not a page-level floater", () => {
-    render(<HomeGlobe />);
-
-    const toggle = screen.getByTestId("home-globe-morph-toggle");
-    const canvas = document.querySelector("canvas");
-
-    expect(canvas).not.toBeNull();
-    expect(toggle.parentElement).toBe(canvas?.parentElement?.parentElement);
+    expect(drawMock).toHaveBeenCalledTimes(1);
+    expect(frames.size).toBe(0);
   });
 
   // @req REQ-112
-  it("cancels the pending animation frame on unmount and stops responding to resize", () => {
+  it("jumps straight to the flat map under reduced motion", () => {
+    matchMediaMatches = true;
+    render(<HomeGlobe />);
+    drawMock.mockClear();
+
+    fireEvent.change(screen.getByTestId("home-globe-morph-range"), {
+      target: { value: "0" },
+    });
+
+    const [state] = drawMock.mock.calls.at(-1)!;
+    expect(state.morph).toBe(0);
+    expect(frames.size).toBe(0);
+  });
+
+  // @req REQ-112
+  it("releases the frame loop and the layer on unmount", () => {
     const { unmount } = render(<HomeGlobe />);
-    expect(window.requestAnimationFrame).toHaveBeenCalledOnce();
 
     unmount();
 
-    expect(window.cancelAnimationFrame).toHaveBeenCalledWith(1);
-
-    act(() => window.dispatchEvent(new Event("resize")));
-    expect(fakeGl.drawArrays).not.toHaveBeenCalled();
+    expect(disposeMock).toHaveBeenCalledTimes(1);
   });
 });

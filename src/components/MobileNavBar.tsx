@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { Search } from "lucide-react";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -51,24 +52,27 @@ export const MobileNavBar = ({
     >
       <div className="px-3 h-[57px] flex items-center justify-between gap-2">
         {/* Logo */}
+        {/* min-w-0 + truncate rather than shrink-0: with the surface switch
+            beside search, a brand that refuses to shrink pushes the controls
+            off a 430px bar instead of giving up its own tail. */}
         <Link
           href={`/${language}`}
-          className="flex items-center gap-1.5 shrink-0"
+          className="flex min-w-0 items-center gap-1.5"
         >
           <Image
             src="/africa.png"
             alt=""
             width={26}
             height={26}
-            className="object-contain"
+            className="shrink-0 object-contain"
           />
-          <span className="font-display font-bold text-base leading-none">
+          <span className="truncate font-display text-base font-bold leading-none">
             {PRODUCT_NAME}
           </span>
         </Link>
 
-        {/* Right controls: FLG nav dropdown + search icon */}
-        <div className="flex items-center gap-1">
+        {/* Right controls: FLG nav dropdown + search icon + surface switch */}
+        <div className="flex shrink-0 items-center gap-1">
           {/* Compact navigation dropdown (replaces hamburger) */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -164,6 +168,10 @@ export const MobileNavBar = ({
           >
             <Search className="h-4 w-4" />
           </Button>
+
+          {/* REQ-115 — the surface switch is reachable from every route on
+              a phone too, not only from the desktop bar. */}
+          <ThemeToggle />
         </div>
       </div>
     </div>

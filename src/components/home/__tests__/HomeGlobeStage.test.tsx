@@ -64,7 +64,7 @@ describe("HomeGlobeStage (ARCH-014 capability gate)", () => {
 
     const styleTag = container.querySelector("style");
     expect(styleTag?.textContent).toMatch(
-      /\.home-globe-stage\s*{[^}]*min-height:\s*320px/
+      /\.home-globe-stage\s*{[^}]*min-height:\s*380px/
     );
     expect(styleTag?.textContent).toMatch(/margin:\s*0 auto/);
     expect(styleTag?.textContent).toMatch(/min-width:\s*720px/);

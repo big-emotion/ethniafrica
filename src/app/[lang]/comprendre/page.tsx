@@ -2,23 +2,27 @@ import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { AccessModeHub } from "@/components/hubs/AccessModeHub";
 import { getHubModules } from "@/lib/hubs/moduleAvailability";
+import { getTranslation } from "@/lib/translations";
 import { OG_TITLE } from "@/lib/brand";
+
+const strings = getTranslation("fr").hubs.comprendre;
 
 // @req REQ-114
 export const metadata: Metadata = {
-  title: `Pays — ${OG_TITLE}`,
+  title: `${strings.title} — ${OG_TITLE}`,
+  description: strings.blurb,
   alternates: {
-    canonical: "/fr/pays-hub",
+    canonical: "/fr/comprendre",
   },
 };
 
 // @req REQ-114
-export default async function PaysHubPage() {
-  const modules = await getHubModules("pays");
+export default async function ComprendreHubPage() {
+  const modules = await getHubModules("comprendre");
 
   return (
     <PageLayout language="fr">
-      <AccessModeHub language="fr" mode="pays" modules={modules} />
+      <AccessModeHub language="fr" mode="comprendre" modules={modules} />
     </PageLayout>
   );
 }

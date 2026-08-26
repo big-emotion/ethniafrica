@@ -10,6 +10,8 @@ import {
 } from "@/lib/atlas/globeGeometry";
 import type { AtlasOverlay } from "@/lib/atlas/overlays";
 import { AFRICA_CENTER_LON, buildRotationMatrix } from "@/lib/atlas/projection";
+import { createSphereLayer, type SphereLayer } from "@/lib/atlas/sphereLayer";
+import { resolveGlobePalette } from "@/lib/atlas/globePalette";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
 const MAX_DEVICE_PIXEL_RATIO = 2;
@@ -189,6 +191,27 @@ export function AtlasGlobeCanvas({
     const yawRef = { current: -(AFRICA_CENTER_LON * Math.PI) / 180 };
     const progressRef = { current: overlay.kind === "country-outline" ? 0 : 1 };
 
+    // The same lit sphere the home hero stands on. Drawn at margin 1 so it
+    // shares the overlay shaders' projection exactly — an outline traced
+    // over terrain that sat at a different scale would be describing
+    // ground it does not touch. It draws first and only ever draws
+    // terrain, so it can never be what closes a boundary around a people
+    // (atlas-charter §1).
+    const sphere: SphereLayer | null = createSphereLayer(
+      gl,
+      resolveGlobePalette(),
+      document.createElement("canvas")
+    );
+
+    const paintBase = () => {
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      sphere?.draw({
+        rotation: buildRotationMatrix(yawRef.current, 0),
+        morph: 1,
+        aspect,
+      });
+    };
+
     let draw: () => void = () => {};
 
     if (overlay.kind === "people-field") {
@@ -221,7 +244,18 @@ export function AtlasGlobeCanvas({
       const uColorRgb = gl.getUniformLocation(program, "uColorRgb");
 
       draw = () => {
-        gl.clear(gl.COLOR_BUFFER_BIT);
+        paintBase();
+        // The sphere layer left its own program and buffers bound, so the
+        // field's have to be restated every frame rather than once at
+        // setup.
+        gl.useProgram(program);
+        gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+        gl.enableVertexAttribArray(aSpherePos);
+        gl.vertexAttribPointer(aSpherePos, 3, gl.FLOAT, false, 0, 0);
+        gl.bindBuffer(gl.ARRAY_BUFFER, weightBuffer);
+        gl.enableVertexAttribArray(aWeight);
+        gl.vertexAttribPointer(aWeight, 1, gl.FLOAT, false, 0, 0);
+
         const rotation = new Float32Array(
           buildRotationMatrix(yawRef.current, 0)
         );
@@ -269,7 +303,11 @@ export function AtlasGlobeCanvas({
       const loopArcBuffer = gl.createBuffer();
 
       draw = () => {
-        gl.clear(gl.COLOR_BUFFER_BIT);
+        paintBase();
+        // The sphere layer bound its own program; the boundary's has to be
+        // made current again before its uniforms mean anything.
+        gl.useProgram(program);
+
         const rotation = new Float32Array(
           buildRotationMatrix(yawRef.current, 0)
         );
@@ -381,6 +419,7 @@ export function AtlasGlobeCanvas({
       resizeObserver.disconnect();
       window.removeEventListener("resize", handleResize);
       if (frameId !== null) window.cancelAnimationFrame(frameId);
+      sphere?.dispose();
     };
   }, [overlay, accentHex]);
 

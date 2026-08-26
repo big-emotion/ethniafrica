@@ -2,7 +2,10 @@ import Link from "next/link";
 import { getLocalizedRoute } from "@/lib/routing";
 import { getTranslation } from "@/lib/translations";
 import type { Language } from "@/types/shared";
-import type { AccessMode } from "@/lib/hubs/moduleRegistry";
+import {
+  ACCENT_BY_ACCESS_MODE,
+  type AccessMode,
+} from "@/lib/hubs/moduleRegistry";
 import type { HubModule } from "@/lib/hubs/moduleAvailability";
 
 export interface AccessModeHubProps {
@@ -10,14 +13,6 @@ export interface AccessModeHubProps {
   mode: AccessMode;
   modules: HubModule[];
 }
-
-// Accent scope (atlas-charter.md §2, "Home modules" row): peoples=ocre,
-// countries=teal, families=terre.
-const ACCENT_CLASS_BY_MODE: Record<AccessMode, string> = {
-  peuples: "afh-accent-ocre",
-  pays: "afh-accent-teal",
-  familles: "afh-accent-terre",
-};
 
 /**
  * Renders, for a given access mode, the modules it groups (REQ-114): a
@@ -28,7 +23,7 @@ const ACCENT_CLASS_BY_MODE: Record<AccessMode, string> = {
 export function AccessModeHub({ language, mode, modules }: AccessModeHubProps) {
   const t = getTranslation(language);
   const hubStrings = t.hubs[mode];
-  const accentClass = ACCENT_CLASS_BY_MODE[mode];
+  const accentClass = ACCENT_BY_ACCESS_MODE[mode];
 
   return (
     <section
@@ -43,6 +38,13 @@ export function AccessModeHub({ language, mode, modules }: AccessModeHubProps) {
       >
         {hubStrings.title}
       </h1>
+      <p
+        data-testid={`access-mode-hub-${mode}-blurb`}
+        className="mt-2 max-w-[58ch] text-base"
+        style={{ color: "var(--afh-text-soft)" }}
+      >
+        {hubStrings.blurb}
+      </p>
       <ul className="mt-6 flex flex-col gap-3" role="list">
         {modules.map((module) => (
           <li key={module.id} data-testid={`hub-module-${module.id}`}>

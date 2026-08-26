@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ThemeProvider } from "next-themes";
 import { useState, useEffect } from "react";
 import Script from "next/script";
 import * as Sentry from "@sentry/nextjs";
@@ -56,16 +57,29 @@ export function Providers({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <ConsentProvider>
-          <ConsentEnforcer />
-          <Toaster />
-          <Sonner />
-          {children}
-          <ConsentBanner />
-        </ConsentProvider>
-      </TooltipProvider>
-    </QueryClientProvider>
+    // `class` rather than a data attribute: Tailwind's darkMode is
+    // configured as ["class"], so one switch drives both the shadcn HSL
+    // layer (index.css .dark) and the --afh-* aliases (color.css .dark).
+    // enableSystem stays off — REQ-115 makes parchment the surface the
+    // editorial copy was contrast-checked on, so night is something the
+    // reader opts into rather than something an OS setting imposes.
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      enableSystem={false}
+      disableTransitionOnChange
+    >
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <ConsentProvider>
+            <ConsentEnforcer />
+            <Toaster />
+            <Sonner />
+            {children}
+            <ConsentBanner />
+          </ConsentProvider>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }

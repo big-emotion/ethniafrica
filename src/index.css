@@ -93,7 +93,12 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
+  /* .afh-on-night: the same night surface scoped to a subtree rather than
+     the page — see the matching rule in tokens/color.css. The shadcn HSL
+     layer has to follow too, or a nav using bg-card would stay parchment
+     inside a night band. */
+  .dark,
+  .afh-on-night {
     --background: 25 20% 12%;
     --foreground: 35 35% 95%;
 
@@ -129,6 +134,11 @@ All colors MUST be HSL.
     --earth-light: 35 20% 65%;
     --ochre: 32 75% 58%;
     --sand: 35 15% 28%;
+
+    /* PageLayout paints the whole page with .gradient-earth; without a
+       night pair here the app frame would stay parchment under .dark
+       while every surface on top of it went dark. */
+    --gradient-earth: linear-gradient(180deg, hsl(25 20% 12%), hsl(25 22% 8%));
 
     --shadow-warm: 0 10px 40px -10px hsl(18 70% 55% / 0.3);
     --shadow-soft: 0 4px 20px -5px hsl(0 0% 0% / 0.3);

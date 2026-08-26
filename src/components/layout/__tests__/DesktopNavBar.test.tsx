@@ -1,6 +1,8 @@
 import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
+import { ThemeProvider } from "next-themes";
+
 import { DesktopNavBar } from "@/components/layout/DesktopNavBar";
 import { PRODUCT_NAME } from "@/lib/brand";
 
@@ -22,9 +24,9 @@ vi.mock("@/lib/featureFlags", () => ({
 // @req [14.5]
 // @req REQ-044
 describe("DesktopNavBar — global shell (all routes, ETNI-820 retires the home night skin)", () => {
-  // @req REQ-111 — the home hub route narrows this to brand + search only,
-  // see the "hub route reduction" describe block below.
-  it("keeps the same nav links and destinations on non-hub routes (IA unchanged)", () => {
+  // @req REQ-111 — the home carries this same bar; see the describe block
+  // below for why its reduced brand+search variant was retired.
+  it("keeps the same nav links and destinations on every route (IA unchanged)", () => {
     for (const pathname of ["/fr/pays", "/fr/peuples"]) {
       mockPathname = pathname;
       render(<DesktopNavBar language="fr" />);
@@ -160,8 +162,12 @@ describe("DesktopNavBar — global shell (all routes, ETNI-820 retires the home 
 });
 
 // @req REQ-111
-describe("DesktopNavBar — hub route reduction (ETNI-1193, REQ-111)", () => {
-  it("shows only brand and search on the home route, none of the module entry points", () => {
+describe("DesktopNavBar — the bar the home shares with every route (REQ-111)", () => {
+  // REQ-111 once reduced the home's bar to brand + search because the page
+  // body listed every module. The body now offers three axes instead, so
+  // the destinations that reduction hid are no longer one click away.
+  // @req REQ-111
+  it("keeps the full navigation on the home route too", () => {
     mockPathname = "/fr";
     render(<DesktopNavBar language="fr" />);
 
@@ -169,18 +175,20 @@ describe("DesktopNavBar — hub route reduction (ETNI-1193, REQ-111)", () => {
     expect(
       screen.getByRole("button", { name: "Rechercher" })
     ).toBeInTheDocument();
-    expect(screen.queryByRole("link", { name: "Pays" })).toBeNull();
-    expect(screen.queryByRole("link", { name: "Peuples" })).toBeNull();
-    expect(screen.queryByRole("link", { name: "Familles" })).toBeNull();
-    expect(screen.queryByRole("link", { name: "Migrations" })).toBeNull();
-    expect(screen.queryByRole("link", { name: "Colonisation" })).toBeNull();
-    expect(screen.queryByRole("link", { name: "À propos" })).toBeNull();
-    expect(screen.queryByRole("link", { name: "Doctrine" })).toBeNull();
-    expect(screen.queryByRole("link", { name: "API" })).toBeNull();
+    for (const name of [
+      "Pays",
+      "Peuples",
+      "Familles",
+      "Migrations",
+      "Doctrine",
+      "API",
+    ]) {
+      expect(screen.getByRole("link", { name })).toBeInTheDocument();
+    }
   });
 
   // @req REQ-111
-  it("calls onSearchClick when the reduced hub nav's search control is activated", () => {
+  it("calls onSearchClick when the nav's search control is activated", () => {
     mockPathname = "/fr";
     const onSearchClick = vi.fn();
     render(<DesktopNavBar language="fr" onSearchClick={onSearchClick} />);
@@ -206,7 +214,11 @@ describe("DesktopNavBar — hub route reduction (ETNI-1193, REQ-111)", () => {
     expect(screen.getByRole("link", { name: "À propos" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Doctrine" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "API" })).toBeInTheDocument();
-    expect(screen.queryByRole("button", { name: "Rechercher" })).toBeNull();
+    // Search used to appear on the home only; it is now on every route,
+    // beside the surface switch.
+    expect(
+      screen.getByRole("button", { name: "Rechercher" })
+    ).toBeInTheDocument();
   });
 
   // @req REQ-111
@@ -241,5 +253,27 @@ describe("DesktopNavBar — quiz nav entry (Epic 10, Story 10.8, ETNI-497, AR39)
       "href",
       "/fr/quiz"
     );
+  });
+
+  // The home route narrows the nav to brand + search, so the switch has to
+  // be asserted there too or it would silently drop off the one page the
+  // reader is most likely to start from.
+  // @req REQ-115
+  it("carries the parchment/night switch on the home route and beyond", async () => {
+    for (const pathname of ["/fr", "/fr/pays"]) {
+      mockPathname = pathname;
+      render(
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+        >
+          <DesktopNavBar language="fr" />
+        </ThemeProvider>
+      );
+
+      expect(await screen.findByTestId("theme-toggle")).toBeInTheDocument();
+      cleanup();
+    }
   });
 });

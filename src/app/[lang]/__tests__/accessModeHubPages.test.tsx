@@ -18,49 +18,48 @@ vi.mock("@/components/layout/PageLayout", () => ({
   ),
 }));
 
-const peuplesModules: HubModule[] = [
+const explorerModules: HubModule[] = [
   {
     id: "peuples",
-    name: "Peuples",
-    accessMode: "peuples",
+    name: "Les peuples d'Afrique",
+    accessMode: "explorer",
     page: "peoples",
     availability: "data",
     dataSource: "afrik_peoples",
     available: true,
   },
   {
-    id: "noms",
-    name: "Noms & appellations",
-    accessMode: "peuples",
-    page: "names",
-    availability: "data",
-    dataSource: "name_records",
+    id: "recherche",
+    name: "Recherche libre",
+    accessMode: "explorer",
+    page: "search",
+    availability: "static",
     available: true,
   },
   {
-    id: "comparer",
-    name: "Comparer deux peuples",
-    accessMode: "peuples",
-    page: "compare",
-    availability: "unavailable",
+    id: "noms",
+    name: "Noms & appellations",
+    accessMode: "explorer",
+    page: "names",
+    availability: "data",
+    dataSource: "name_records",
     available: false,
   },
 ];
 
-const paysModules: HubModule[] = [
+const comprendreModules: HubModule[] = [
   {
-    id: "pays",
-    name: "Pays",
-    accessMode: "pays",
-    page: "countries",
-    availability: "data",
-    dataSource: "afrik_countries",
+    id: "doctrine",
+    name: "La doctrine éditoriale",
+    accessMode: "comprendre",
+    page: "doctrine",
+    availability: "static",
     available: true,
   },
   {
     id: "frise",
     name: "Premiers repères de migrations",
-    accessMode: "pays",
+    accessMode: "comprendre",
     page: "migrations",
     availability: "data",
     dataSource: "migration_events",
@@ -68,68 +67,71 @@ const paysModules: HubModule[] = [
   },
 ];
 
-const famillesModules: HubModule[] = [
+const jouerModules: HubModule[] = [
   {
-    id: "familles",
-    name: "Familles linguistiques",
-    accessMode: "familles",
-    page: "families",
-    availability: "data",
-    dataSource: "afrik_language_families",
-    available: true,
+    id: "comparer",
+    name: "Comparer deux peuples",
+    accessMode: "jouer",
+    page: "compare",
+    availability: "unavailable",
+    available: false,
   },
   {
     id: "liens",
     name: "Les liens invisibles",
-    accessMode: "familles",
+    accessMode: "jouer",
     page: null,
     availability: "unavailable",
     available: false,
   },
 ];
 
-describe("access-mode hub routes (ETNI-1216, REQ-114)", () => {
+describe("access-mode hub routes (REQ-114)", () => {
   // @req REQ-114
-  it("resolves the peuples hub route and lists its modules", async () => {
-    getHubModulesMock.mockResolvedValueOnce(peuplesModules);
-    const { default: PeuplesHubPage } = await import("../peuples-hub/page");
+  it("resolves the explorer hub route and lists its modules", async () => {
+    getHubModulesMock.mockResolvedValueOnce(explorerModules);
+    const { default: ExplorerHubPage } = await import("../explorer/page");
 
-    render(await PeuplesHubPage());
+    render(await ExplorerHubPage());
 
-    expect(getHubModulesMock).toHaveBeenCalledWith("peuples");
-    expect(screen.getByTestId("access-mode-hub-peuples")).toBeInTheDocument();
+    expect(getHubModulesMock).toHaveBeenCalledWith("explorer");
+    expect(screen.getByTestId("access-mode-hub-explorer")).toBeInTheDocument();
     expect(screen.getByTestId("hub-module-link-peuples")).toBeInTheDocument();
-    expect(screen.getByTestId("hub-module-link-noms")).toBeInTheDocument();
+    expect(screen.getByTestId("hub-module-link-recherche")).toBeInTheDocument();
     expect(
-      screen.getByTestId("hub-module-unavailable-comparer")
+      screen.getByTestId("hub-module-unavailable-noms")
     ).toBeInTheDocument();
   });
 
   // @req REQ-114
-  it("resolves the pays hub route and lists its modules", async () => {
-    getHubModulesMock.mockResolvedValueOnce(paysModules);
-    const { default: PaysHubPage } = await import("../pays-hub/page");
+  it("resolves the comprendre hub route and lists its modules", async () => {
+    getHubModulesMock.mockResolvedValueOnce(comprendreModules);
+    const { default: ComprendreHubPage } = await import("../comprendre/page");
 
-    render(await PaysHubPage());
+    render(await ComprendreHubPage());
 
-    expect(getHubModulesMock).toHaveBeenCalledWith("pays");
-    expect(screen.getByTestId("access-mode-hub-pays")).toBeInTheDocument();
-    expect(screen.getByTestId("hub-module-link-pays")).toBeInTheDocument();
+    expect(getHubModulesMock).toHaveBeenCalledWith("comprendre");
+    expect(
+      screen.getByTestId("access-mode-hub-comprendre")
+    ).toBeInTheDocument();
+    expect(screen.getByTestId("hub-module-link-doctrine")).toBeInTheDocument();
     expect(
       screen.getByTestId("hub-module-unavailable-frise")
     ).toBeInTheDocument();
   });
 
   // @req REQ-114
-  it("resolves the familles hub route and lists its modules", async () => {
-    getHubModulesMock.mockResolvedValueOnce(famillesModules);
-    const { default: FamillesHubPage } = await import("../familles-hub/page");
+  it("resolves the jouer hub route and lists its modules", async () => {
+    getHubModulesMock.mockResolvedValueOnce(jouerModules);
+    const { default: JouerHubPage } = await import("../jouer/page");
 
-    render(await FamillesHubPage());
+    render(await JouerHubPage());
 
-    expect(getHubModulesMock).toHaveBeenCalledWith("familles");
-    expect(screen.getByTestId("access-mode-hub-familles")).toBeInTheDocument();
-    expect(screen.getByTestId("hub-module-link-familles")).toBeInTheDocument();
+    expect(getHubModulesMock).toHaveBeenCalledWith("jouer");
+    expect(screen.getByTestId("access-mode-hub-jouer")).toBeInTheDocument();
+    expect(
+      screen.getByTestId("hub-module-unavailable-comparer")
+    ).toBeInTheDocument();
     expect(
       screen.getByTestId("hub-module-unavailable-liens")
     ).toBeInTheDocument();

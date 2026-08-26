@@ -1,6 +1,8 @@
 import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
+import { ThemeProvider } from "next-themes";
+
 import { MobileNavBar } from "@/components/MobileNavBar";
 import { PRODUCT_NAME } from "@/lib/brand";
 
@@ -219,5 +221,21 @@ describe("MobileNavBar — quiz nav entry (Epic 10, Story 10.8, ETNI-497, AR39)"
     const quizItem = await screen.findByRole("menuitem", { name: "Quiz" });
     fireEvent.click(quizItem);
     expect(mockPush).toHaveBeenCalledWith("/fr/quiz");
+  });
+
+  // @req REQ-115
+  it("carries the parchment/night switch beside the search icon", async () => {
+    render(
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="light"
+        enableSystem={false}
+      >
+        <MobileNavBar language="fr" />
+      </ThemeProvider>
+    );
+
+    const toggle = await screen.findByTestId("theme-toggle");
+    expect(toggle).toHaveAccessibleName(/nuit/i);
   });
 });
