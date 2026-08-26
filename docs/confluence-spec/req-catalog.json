@@ -112,6 +112,8 @@
     "REQ-112",
     "REQ-113",
     "REQ-115",
+    "REQ-116",
+    "REQ-118",
     "REQ-119"
   ],
   "sourceMap": {
@@ -225,6 +227,8 @@
     "REQ-112": "Confluence REQ-112",
     "REQ-113": "Confluence REQ-113",
     "REQ-115": "Confluence REQ-115",
+    "REQ-116": "Confluence REQ-116",
+    "REQ-118": "Confluence REQ-118",
     "REQ-119": "Confluence REQ-119"
   }
 }

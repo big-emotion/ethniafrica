@@ -9,8 +9,11 @@ import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
 import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
+import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
+import { buildFamilyFootprintOverlay } from "@/lib/atlas/overlays";
 import { mapLanguageFamilyDetail } from "@/lib/afrikDetailMapper";
 import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
+import { getPeoplesByLanguageFamily } from "@/api/v2/services/peopleService";
 import { getFamilyTreeSkeleton } from "@/api/v2/services/languageFamilyTreeService";
 import { ConfidenceChip } from "@/components/source-transparency/ConfidenceChip";
 import { PinnedVersionBanner } from "@/components/source-transparency/PinnedVersionBanner";
@@ -155,7 +158,10 @@ export default async function FamillesSlugPage({
     notFound();
   }
 
-  const tree = await getFamilyTreeSkeleton(parsed.slug);
+  const [tree, memberPeoples] = await Promise.all([
+    getFamilyTreeSkeleton(parsed.slug),
+    getPeoplesByLanguageFamily(parsed.slug),
+  ]);
 
   // The tongue chapter reuses the tree the record chapter already renders — a
   // second fetch would cost a round trip to restate the same three queries.
@@ -166,6 +172,15 @@ export default async function FamillesSlugPage({
     name: branch.name,
     peopleCount: branch.peopleCount,
   }));
+
+  // The globe's footprint is the union of currentCountries across every
+  // member people (REQ-116 AC4) — never family.distribution.distributionByCountry,
+  // which every FLG_*.json declares empty (atlas-charter §4).
+  const familyDetail = mapLanguageFamilyDetail(family);
+  const familyOverlay = buildFamilyFootprintOverlay(
+    memberPeoples.map((person) => person.currentCountries),
+    memberPeoples.length
+  );
 
   const recordView = (
     <LanguageFamilyDetailViewV2
@@ -184,9 +199,15 @@ export default async function FamillesSlugPage({
       <FicheSequence
         context={{
           entityType: "language-family",
-          payload: mapLanguageFamilyDetail(family),
+          payload: familyDetail,
           branches: tongueBranches,
         }}
+        globe={
+          <AtlasGlobe
+            overlay={familyOverlay}
+            missingMessage={`Empreinte géographique non disponible pour ${familyDetail.nameFr}`}
+          />
+        }
         record={recordView}
       />
     </PageLayout>
