@@ -193,13 +193,21 @@ function AtlasGlobeFallback({
     );
   }
 
-  const isCountry = overlay.kind === "country-outline";
-  const fillOpacity = isCountry ? overlay.fillOpacity : overlay.tint * 0.35;
+  // A country-set (REQ-120) borrows the country outline's encoding rather than
+  // the family's: the dash is the charter's mark of a *derived* boundary, and
+  // a round's choices are not derived from anything. It skips the trace-in
+  // reveal all the same — a reader answering a round needs every choice
+  // legible on the first frame, not drawing itself in.
+  const isTracedCountry = overlay.kind === "country-outline";
+  const isDerivedFamily = overlay.kind === "family-footprint";
+  const fillOpacity = isDerivedFamily
+    ? overlay.tint * 0.35
+    : overlay.fillOpacity;
 
   return (
     <AfricaBasemap figureTransform={figureTransform}>
       {overlay.rings.map((ring, index) =>
-        isCountry ? (
+        isTracedCountry ? (
           <TraceInPolygon
             key={`country-${index}`}
             points={ringToSvgPoints(ring)}
@@ -212,13 +220,13 @@ function AtlasGlobeFallback({
           />
         ) : (
           <polygon
-            key={`family-${index}`}
+            key={`ring-${index}`}
             points={ringToSvgPoints(ring)}
             fill="var(--accent)"
             fillOpacity={fillOpacity}
             stroke="var(--accent)"
             strokeWidth={1.5}
-            strokeDasharray="6 5"
+            strokeDasharray={isDerivedFamily ? "6 5" : undefined}
             vectorEffect="non-scaling-stroke"
           />
         )
@@ -295,6 +303,12 @@ export interface AtlasGlobeProps {
   missingMessage: string;
   /** The facts the panel opens with for a chosen target. */
   targetFacts?: (target: AtlasTarget) => AtlasTargetFacts;
+  /**
+   * Called when the reader chooses a target. The globe keeps owning its own
+   * chosen-target state and its facts panel; this only reports the choice
+   * outward, so a game can score it without a second globe (REQ-120).
+   */
+  onTargetChosen?: (target: AtlasTarget) => void;
   className?: string;
 }
 
@@ -346,10 +360,12 @@ function usePanelAnchor(): PanelAnchor {
  */
 // @req REQ-116
 // @req REQ-117
+// @req REQ-120
 export function AtlasGlobe({
   overlay,
   missingMessage,
   targetFacts = defaultTargetFacts,
+  onTargetChosen,
   className,
 }: AtlasGlobeProps) {
   const [webglSupported, setWebglSupported] = useState(false);
@@ -417,7 +433,10 @@ export function AtlasGlobe({
           placement={place(target)}
           chosen={target.countryId === chosenCountryId}
           label={targetFacts(target).title}
-          onChoose={() => setChosenCountryId(target.countryId)}
+          onChoose={() => {
+            setChosenCountryId(target.countryId);
+            onTargetChosen?.(target);
+          }}
         />
       ))}
 

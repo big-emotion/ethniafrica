@@ -95,6 +95,7 @@ export function buildAtlasTargets(overlay: AtlasOverlay | null): AtlasTarget[] {
         .map((area) => targetForCountry(area.countryId, area.center))
         .filter((target): target is AtlasTarget => target !== null);
     case "family-footprint":
+    case "country-set":
       return overlay.countryIds
         .map((countryId) => targetForCountry(countryId))
         .filter((target): target is AtlasTarget => target !== null);

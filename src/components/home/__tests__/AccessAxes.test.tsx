@@ -6,6 +6,7 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { AccessAxes } from "@/components/home/AccessAxes";
 import { getLocalizedRoute } from "@/lib/routing";
+import { getModulesForAccessMode } from "@/lib/hubs/moduleRegistry";
 import type { CorpusCounts } from "@/lib/home/corpusCounts";
 
 const counts: CorpusCounts = {
@@ -108,7 +109,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
       "Remonter"
     );
     expect(screen.getByTestId("access-axis-cta-jouer")).toHaveTextContent(
-      "Bientôt"
+      "Se tester"
     );
   });
 
@@ -163,23 +164,41 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
   });
 });
 
-// Both modules behind Jouer are `unavailable`, so /fr/jouer holds nothing
-// but "Bientôt" rows. A primary home CTA reading "Comparer" over a figure
-// promising "2 peuples face à face" sends the reader to a dead end. The
-// axis reads its own state off the registry so it starts promising again
-// by itself the day a module ships — nothing here to remember to undo.
+// The axis reads its own state off the registry, so it started promising
+// again by itself the day the Jouer modules shipped — which is what REQ-120
+// did: the two `unavailable` placeholders became live games and the quiz
+// joined them, so Jouer now holds twelve entries and none reads "Bientôt".
+// The pending path itself is still required by REQ-114 and is exercised
+// against a synthetic registry in AccessAxesPending.test.tsx, since no real
+// access mode is dark any more.
 describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", () => {
   const counts = { peoples: 890, countries: 54, families: 24, migrations: 6 };
 
-  // @req REQ-114
-  it("marks an axis whose every module is unavailable as coming soon", () => {
+  // @req REQ-120
+  it("promises its action on Jouer now that its modules are live", () => {
     render(<AccessAxes language="fr" counts={counts} />);
 
-    const jouer = screen.getByTestId("access-axis-jouer");
-    expect(jouer).toHaveAttribute("data-available", "false");
+    expect(screen.getByTestId("access-axis-jouer")).toHaveAttribute(
+      "data-available",
+      "true"
+    );
     expect(
       screen.getByTestId("access-axis-figure-jouer")
-    ).not.toHaveTextContent("2 peuples face à face");
+    ).not.toHaveTextContent("en préparation");
+  });
+
+  // The axis used to promise « 2 peuples face à face », a sentence written
+  // when Jouer held one comparison module. Reading the count off the
+  // registry is what stops it going stale a second time.
+  // @req REQ-120
+  it("counts the games it offers rather than describing one of them", () => {
+    render(<AccessAxes language="fr" counts={counts} />);
+
+    const figure = screen.getByTestId("access-axis-figure-jouer");
+    expect(figure).toHaveTextContent(
+      `${getModulesForAccessMode("jouer").length} jeux`
+    );
+    expect(figure).not.toHaveTextContent("2 peuples face à face");
   });
 
   // Explorer and Comprendre both have live modules, so neither may be

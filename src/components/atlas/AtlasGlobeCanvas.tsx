@@ -320,12 +320,14 @@ export function AtlasGlobeCanvas({
       const uProgress = gl.getUniformLocation(program, "uProgress");
       const uDashRepeats = gl.getUniformLocation(program, "uDashRepeats");
 
-      const fillOpacity =
-        overlay.kind === "country-outline"
-          ? overlay.fillOpacity
-          : overlay.tint * FAMILY_FILL_MAX_OPACITY;
-      const dashRepeats =
-        overlay.kind === "family-footprint" ? FAMILY_DASH_REPEATS_PER_RING : 0;
+      // A country-set (REQ-120) is drawn with the country outline's own
+      // encoding: solid stroke, its own fill opacity. The dash is reserved for
+      // the family's *derived* boundary, and a round's choices are not derived.
+      const isDerivedFamily = overlay.kind === "family-footprint";
+      const fillOpacity = isDerivedFamily
+        ? overlay.tint * FAMILY_FILL_MAX_OPACITY
+        : overlay.fillOpacity;
+      const dashRepeats = isDerivedFamily ? FAMILY_DASH_REPEATS_PER_RING : 0;
 
       const rings = overlay.rings.map((ring) => ({
         fan: buildRingFan(ring),

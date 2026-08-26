@@ -53,10 +53,13 @@ const AXES: AxisDefinition[] = [
     id: "jouer",
     name: "Jouer",
     page: "jouerHub",
-    cta: "Comparer",
-    // Not a count of the corpus but of what the comparison puts in front
-    // of the reader — two fiches, side by side.
-    figure: () => "2 peuples face à face",
+    cta: "Se tester",
+    // Counted off the registry, not written down: the axis promised
+    // « 2 peuples face à face » back when Jouer held one comparison module,
+    // and that sentence survived REQ-120 turning the hub into twelve games
+    // as a plain falsehood. A count that reads itself cannot go stale again.
+    figure: () =>
+      plural(getModulesForAccessMode("jouer").length, "jeu", "jeux"),
   },
 ];
 

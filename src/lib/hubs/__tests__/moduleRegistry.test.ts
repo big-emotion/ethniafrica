@@ -43,19 +43,70 @@ describe("moduleRegistry — access-mode → module mapping (REQ-114)", () => {
     expect(ids).toEqual(["doctrine", "about", "frise"]);
   });
 
-  // @req REQ-114
-  it("gives jouer the modules that make the corpus answer back", () => {
+  // @req REQ-114 @req REQ-120
+  it("gives jouer the quiz and the eleven games, in playing order", () => {
     const ids = getModulesForAccessMode("jouer").map((m) => m.id);
-    expect(ids).toEqual(["comparer", "liens"]);
+    expect(ids).toEqual([
+      "quiz",
+      "appellations",
+      "plus-ou-moins",
+      "mercator",
+      "comparer",
+      "repartition",
+      "pays-davant",
+      "royaumes",
+      "migrations",
+      "liens",
+      "jeu-familles",
+      "frontieres",
+    ]);
   });
 
-  // @req REQ-114
-  it("forces comparer and liens unavailable regardless of routing or data", () => {
+  // comparer and liens shipped as "Bientôt" placeholders; the surfaces they
+  // stood in for now exist, so their ids are reused rather than duplicated.
+  // @req REQ-120
+  it("leaves no jouer module stranded on the unavailable placeholder", () => {
+    for (const def of getModulesForAccessMode("jouer")) {
+      expect(def.availability).toBe("data");
+    }
+  });
+
+  // A game is addressed by slug under /jouer, which keeps PageType a closed
+  // union instead of growing one variant per game.
+  // @req REQ-120
+  it("addresses every game by slug and the quiz by its own page", () => {
+    const jouer = getModulesForAccessMode("jouer");
+    const quiz = jouer.find((m) => m.id === "quiz");
+    expect(quiz?.page).toBe("quiz");
+    expect(quiz?.gameSlug).toBeUndefined();
+
+    for (const game of jouer.filter((m) => m.id !== "quiz")) {
+      expect(game.gameSlug).toBeTruthy();
+      expect(game.page).toBeNull();
+    }
+  });
+
+  // @req REQ-120
+  it("keeps every game slug distinct so two games cannot share a route", () => {
+    const slugs = MODULE_DEFINITIONS.map((m) => m.gameSlug).filter(Boolean);
+    expect(new Set(slugs).size).toBe(slugs.length);
+  });
+
+  // The placeholder's id survives so nothing referencing it breaks, but the
+  // game it became is named and routed for what it does.
+  // @req REQ-120
+  it("keeps the comparer id while routing it to the vraie-taille game", () => {
     const comparer = MODULE_DEFINITIONS.find((m) => m.id === "comparer");
+    expect(comparer?.name).toBe("Vraie taille");
+    expect(comparer?.gameSlug).toBe("vraie-taille");
+  });
+
+  // @req REQ-120
+  it("backs the two games that shipped without a data source", () => {
     const liens = MODULE_DEFINITIONS.find((m) => m.id === "liens");
-    expect(comparer?.availability).toBe("unavailable");
-    expect(liens?.availability).toBe("unavailable");
-    expect(liens?.page).toBeNull();
+    const quiz = MODULE_DEFINITIONS.find((m) => m.id === "quiz");
+    expect(liens?.dataSource).toBe("afrik_people_relations");
+    expect(quiz?.dataSource).toBe("quiz_questions");
   });
 
   // @req REQ-114

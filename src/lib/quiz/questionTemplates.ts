@@ -1,10 +1,14 @@
 import type {
   AutonymExonymName,
-  QuizOptionValue,
   QuizPeopleFixture,
   QuizQuestionCandidate,
-  QuizTemplateId,
 } from "@/types/quiz";
+import {
+  assembleOptions,
+  correctOptionIndex,
+  isSameOptionValue,
+  selectDistractors,
+} from "@/lib/games/options";
 
 function displayName(name: AutonymExonymName): string {
   return name.exonym && name.exonym !== name.autonym
@@ -12,59 +16,10 @@ function displayName(name: AutonymExonymName): string {
     : name.autonym;
 }
 
+// Re-exported for the callers that imported it from here before the option
+// helpers moved to @/lib/games/options (REQ-120).
 // @req REQ-103
-export function isSameOptionValue(
-  a: QuizOptionValue,
-  b: QuizOptionValue
-): boolean {
-  const valueOf = (v: QuizOptionValue): string =>
-    typeof v === "string" ? v : v.autonym;
-  return valueOf(a) === valueOf(b);
-}
-
-/**
- * Picks exactly 3 distractors, verbatim, from the pool: excludes anything equal to the
- * correct answer and de-duplicates the pool itself. Returns null (no padding) if fewer
- * than 3 valid distractors remain — FR65/FR66 forbid fabricated options.
- */
-function selectDistractors<T extends QuizOptionValue>(
-  correct: T,
-  pool: T[]
-): T[] | null {
-  const distractors: T[] = [];
-  for (const candidate of pool) {
-    if (isSameOptionValue(candidate, correct)) continue;
-    if (distractors.some((existing) => isSameOptionValue(existing, candidate)))
-      continue;
-    distractors.push(candidate);
-    if (distractors.length === 3) break;
-  }
-  return distractors.length === 3 ? distractors : null;
-}
-
-/** Deterministic (no RNG) slot for the correct answer, stable across repeated calls. */
-function correctOptionIndex(
-  entityId: string,
-  templateId: QuizTemplateId
-): number {
-  const seed = `${entityId}:${templateId}`;
-  let sum = 0;
-  for (let i = 0; i < seed.length; i++) sum += seed.charCodeAt(i);
-  return sum % 4;
-}
-
-function assembleOptions<T extends QuizOptionValue>(
-  correct: T,
-  distractors: T[],
-  correctIndex: number
-): T[] {
-  const options: T[] = [];
-  let distractorIndex = 0;
-  for (let i = 0; i < 4; i++) {
-    options.push(i === correctIndex ? correct : distractors[distractorIndex++]);
-  }
-  return options;
-}
+export { isSameOptionValue };
 
 // @req REQ-080
 export function buildT1LanguageFamilyTemplate(

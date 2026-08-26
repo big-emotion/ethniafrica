@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   buildCountryOutlineOverlay,
+  buildCountrySetOverlay,
   buildFamilyFootprintOverlay,
   buildPeopleFieldOverlay,
 } from "../overlays";
@@ -86,6 +87,22 @@ describe("buildAtlasTargets (REQ-117 AC1)", () => {
         .map((target) => target.countryId)
         .sort()
     ).toEqual(["CMR", "NGA"]);
+  });
+
+  // @req REQ-120
+  it("gives a game round one choosable target per proposed country, in the order proposed", () => {
+    const overlay = buildCountrySetOverlay(["CMR", "NGA"]);
+
+    expect(
+      buildAtlasTargets(overlay).map((target) => target.countryId)
+    ).toEqual(["CMR", "NGA"]);
+  });
+
+  // @req REQ-120
+  it("names a round's targets in French, so a choice never reads as an ISO code", () => {
+    const targets = buildAtlasTargets(buildCountrySetOverlay(["ZAF"]));
+
+    expect(targets[0].nameFr).toBe("Afrique du Sud");
   });
 
   // @req REQ-117

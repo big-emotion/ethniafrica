@@ -51,6 +51,8 @@ const ALL_LIVE_RESULTS: Record<string, TableResult> = {
   afrik_language_families: { count: 5, error: null },
   name_records: { count: 5, error: null },
   migration_events: { count: 5, error: null },
+  afrik_people_relations: { count: 5, error: null },
+  quiz_questions: { count: 5, error: null },
 };
 
 describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", () => {
@@ -132,6 +134,45 @@ describe("moduleAvailability — REQ-106/REQ-114 data-backed hub availability", 
 
     expect(from).toHaveBeenCalledWith("name_records");
     expect(eq).toHaveBeenCalledWith("entity_type", "people");
+  });
+
+  // Both games shipped as inert placeholders, so a wrong table name here
+  // would read as "still coming soon" rather than as a broken probe.
+  // @req REQ-120
+  it("probes the relations table for the liens game", async () => {
+    const supabase = buildSupabaseMock(ALL_LIVE_RESULTS);
+    createServerClientMock.mockReturnValue(supabase);
+
+    const modules = await getHubModules("jouer");
+
+    expect(supabase.from).toHaveBeenCalledWith("afrik_people_relations");
+    expect(modules.find((m) => m.id === "liens")?.available).toBe(true);
+  });
+
+  // @req REQ-120
+  it("probes the question bank for the quiz module", async () => {
+    const supabase = buildSupabaseMock(ALL_LIVE_RESULTS);
+    createServerClientMock.mockReturnValue(supabase);
+
+    const modules = await getHubModules("jouer");
+
+    expect(supabase.from).toHaveBeenCalledWith("quiz_questions");
+    expect(modules.find((m) => m.id === "quiz")?.available).toBe(true);
+  });
+
+  // @req REQ-120
+  it("takes a game off the hub when its own table is empty", async () => {
+    createServerClientMock.mockReturnValue(
+      buildSupabaseMock({
+        ...ALL_LIVE_RESULTS,
+        quiz_questions: { count: 0, error: null },
+      })
+    );
+
+    const modules = await getHubModules("jouer");
+
+    expect(modules.find((m) => m.id === "quiz")?.available).toBe(false);
+    expect(modules.find((m) => m.id === "liens")?.available).toBe(true);
   });
 
   // @req REQ-106 @req REQ-114
