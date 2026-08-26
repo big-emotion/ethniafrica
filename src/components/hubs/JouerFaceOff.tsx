@@ -69,7 +69,11 @@ export function JouerFaceOff({ modules }: JouerFaceOffProps) {
           padding: 24px 18px;
           border: 1px solid var(--accent);
           border-radius: var(--afh-radius-md);
-          background: var(--accent-tint);
+          /* --afh-surface, not --accent-tint: the muted pair token measures
+             4.32:1 on the tint, under AA at this size, and axe catches it on
+             all four viewports. The axis colour is carried by the border and
+             the seam instead. */
+          background: var(--afh-surface);
           text-align: center;
         }
 
