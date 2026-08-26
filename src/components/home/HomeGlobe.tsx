@@ -1,9 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useTheme } from "next-themes";
 
 import { createSphereLayer, type SphereLayer } from "@/lib/atlas/sphereLayer";
-import { resolveGlobePalette } from "@/lib/atlas/globePalette";
+import {
+  GLOBE_LIGHTING,
+  resolveGlobePalette,
+  type GlobeSurface,
+} from "@/lib/atlas/globePalette";
 import { AFRICA_CENTER_LON, buildRotationMatrix } from "@/lib/atlas/projection";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
@@ -82,6 +87,17 @@ export function HomeGlobe({
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reducedMotion = usePrefersReducedMotion();
 
+  // The sphere is a painted texture, not a CSS surface, so the reader's
+  // choice cannot reach it through the cascade the way the panel around it
+  // follows --afh-bg: it has to be resolved here and handed to the layer.
+  // Before next-themes has answered, parchment is the right guess — it is
+  // the provider's defaultTheme.
+  const { resolvedTheme } = useTheme();
+  const surface: GlobeSurface =
+    resolvedTheme === "dark" ? "night" : "parchment";
+  const surfaceRef = useRef(surface);
+  const paintedSurface = useRef<GlobeSurface | null>(null);
+
   const yaw = useRef(HOME_YAW);
   const yawTarget = useRef(HOME_YAW);
   const pitch = useRef(HOME_PITCH);
@@ -104,6 +120,10 @@ export function HomeGlobe({
   }, [reducedMotion]);
 
   useEffect(() => {
+    surfaceRef.current = surface;
+  }, [surface]);
+
+  useEffect(() => {
     const canvas = canvasRef.current;
     const stage = canvas?.parentElement;
     if (!canvas || !stage) return;
@@ -115,20 +135,23 @@ export function HomeGlobe({
       return;
     }
 
+    const mountSurface = surfaceRef.current;
     const layer = createSphereLayer(
       gl,
-      resolveGlobePalette(),
+      resolveGlobePalette(mountSurface),
       document.createElement("canvas"),
       // The hero has no overlay to align to, so the body is pulled in from
       // the canvas edge and keeps its lit limb visible as it turns.
       HERO_FIT_MARGIN,
-      true
+      true,
+      GLOBE_LIGHTING[mountSurface]
     );
     if (!layer) {
       onUnavailable?.();
       return;
     }
     layerRef.current = layer;
+    paintedSurface.current = mountSurface;
 
     let aspect = 1;
     let disposed = false;
@@ -238,8 +261,21 @@ export function HomeGlobe({
       window.removeEventListener("resize", handleResize);
       if (frameId !== null) window.cancelAnimationFrame(frameId);
       layer.dispose();
+      paintedSurface.current = null;
     };
   }, []);
+
+  // Repaints the texture in place rather than rebuilding the layer:
+  // recompiling the shaders and re-uploading the mesh on a theme press
+  // would also throw away the angle the reader had turned the globe to.
+  useEffect(() => {
+    const layer = layerRef.current;
+    if (!layer || paintedSurface.current === surface) return;
+
+    paintedSurface.current = surface;
+    layer.setSurface(resolveGlobePalette(surface), GLOBE_LIGHTING[surface]);
+    drawNow.current?.();
+  }, [surface]);
 
   const handlePointerDown = (event: React.PointerEvent<HTMLButtonElement>) => {
     dragging.current = true;
@@ -417,13 +453,13 @@ export function HomeGlobe({
           margin: 0 14px 18px;
           max-width: calc(100% - 28px);
           padding: 8px 11px;
-          border: 1px solid var(--afh-night-line);
+          border: 1px solid var(--afh-border);
           border-radius: var(--afh-radius-sm);
-          background: color-mix(in srgb, var(--afh-night-surface) 88%, transparent);
+          background: color-mix(in srgb, var(--afh-bg-warm) 88%, transparent);
           font-family: var(--afh-font-mono);
           font-size: 11.5px;
           line-height: 1.5;
-          color: var(--afh-night-ink-2);
+          color: var(--afh-text-soft);
           font-variant-numeric: tabular-nums;
           pointer-events: none;
         }
@@ -458,14 +494,14 @@ export function HomeGlobe({
           gap: 10px;
           padding: 6px 14px;
           border-radius: var(--afh-radius-full);
-          border: 1px solid var(--afh-night-line);
-          background: color-mix(in srgb, var(--afh-night-surface) 88%, transparent);
+          border: 1px solid var(--afh-border);
+          background: color-mix(in srgb, var(--afh-bg-warm) 88%, transparent);
           backdrop-filter: blur(6px);
         }
         .home-globe-morph label {
           font-family: var(--afh-font-mono);
           font-size: 11px;
-          color: var(--afh-night-ink-3);
+          color: var(--afh-text-muted);
           white-space: nowrap;
         }
         .home-globe-morph input[type="range"] {
@@ -483,9 +519,9 @@ export function HomeGlobe({
           min-height: 44px;
           padding: 7px 14px;
           border-radius: var(--afh-radius-full);
-          border: 1px solid var(--afh-night-line);
-          background: color-mix(in srgb, var(--afh-night-surface) 82%, transparent);
-          color: var(--afh-night-ink-2);
+          border: 1px solid var(--afh-border);
+          background: color-mix(in srgb, var(--afh-bg-warm) 82%, transparent);
+          color: var(--afh-text-soft);
           font-family: var(--afh-font-body);
           font-size: 12.5px;
           cursor: pointer;
@@ -495,7 +531,7 @@ export function HomeGlobe({
         }
         .home-globe-tool:hover {
           border-color: var(--afh-cat-ocre);
-          color: var(--afh-night-ink);
+          color: var(--afh-text);
         }
         .home-globe-tool:focus-visible {
           outline: 2px solid var(--afh-cat-ocre);
