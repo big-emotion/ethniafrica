@@ -14,6 +14,7 @@ import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDe
 import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import { buildFamilyFootprintOverlay } from "@/lib/atlas/overlays";
+import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
 import { mapLanguageFamilyDetail } from "@/lib/afrikDetailMapper";
 import { getLanguageFamilyById } from "@/api/v2/services/languageFamilyService";
 import { getPeoplesByLanguageFamily } from "@/api/v2/services/peopleService";
@@ -195,11 +196,19 @@ export default async function FamillesSlugPage({
     }
   }
 
+  // Precomputed here, on the server, and handed over as data. AtlasGlobe is a
+  // client component: a resolver function cannot cross that boundary.
   const familyTargetFacts = buildFamilyTargetFacts({
     familyId: parsed.slug,
     familyNameFr: familyDetail.nameFr,
     memberPeopleCount: memberPeoples.length,
     peopleNamesByCountry,
+    countryNamesFr: Object.fromEntries(
+      (familyOverlay?.countries ?? []).map((country) => [
+        country.countryId,
+        AFRICA_ADMIN0[country.countryId]?.nameFr ?? country.countryId,
+      ])
+    ),
   });
 
   const recordView = (
@@ -218,12 +227,7 @@ export default async function FamillesSlugPage({
 
   // Live version (revalidate = 3600 at segment level)
   return (
-    <PageLayout
-      language="fr"
-      sectionName="Familles linguistiques"
-      navOnNight
-      flushTop
-    >
+    <PageLayout language="fr" sectionName="Familles linguistiques" flushTop>
       <FicheSequence
         context={{
           entityType: "language-family",
@@ -235,7 +239,7 @@ export default async function FamillesSlugPage({
             <AtlasGlobe
               overlay={familyOverlay}
               targetPicker="list"
-              targetFacts={familyTargetFacts}
+              facts={familyTargetFacts}
               legend={<FamilyFootprintLegend />}
               missingMessage={`Empreinte géographique non disponible pour ${familyDetail.nameFr}`}
             />

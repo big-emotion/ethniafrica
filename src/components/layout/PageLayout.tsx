@@ -29,20 +29,6 @@ interface PageLayoutProps {
    * against the nav instead of behind a strip of page background.
    */
   flushTop?: boolean;
-  /**
-   * Puts the nav on the night surface so it reads as the top edge of a night
-   * hero band rather than a strip above it. Scoping, not restyling: the bar
-   * keeps every one of its own tokens and only the values behind them change.
-   *
-   * This existed before, for the home hero, and was removed in 8ee71004
-   * because that band fills the viewport — pressing light/dark changed nothing
-   * the reader could see, and the theme control looked broken on that route
-   * alone. It is right for a fiche and wrong for the home for one reason: a
-   * fiche's band is a bounded 470–520px with the themed parchment immediately
-   * below it, so a theme change is visible at once. Never pass this from a
-   * route whose night band fills the viewport.
-   */
-  navOnNight?: boolean;
   onSearchResult?: (result: {
     type: SearchEntityType;
     id: string;
@@ -59,7 +45,6 @@ export const PageLayout = ({
   sectionName,
   hideHeader = false,
   flushTop = false,
-  navOnNight = false,
   onSearchResult,
 }: PageLayoutProps) => {
   const isMobile = useIsMobile();
@@ -112,28 +97,23 @@ export const PageLayout = ({
 
   return (
     <div className="min-h-screen gradient-earth">
-      <div
-        className={navOnNight ? "afh-on-night" : undefined}
-        data-testid={navOnNight ? "nav-on-night" : undefined}
-      >
-        {/* Desktop navigation */}
-        {!isMobile && (
-          <DesktopNavBar
-            language={language}
-            onLanguageChange={onLanguageChange}
-            onSearchClick={() => setIsSearchOpen(true)}
-          />
-        )}
+      {/* Desktop navigation */}
+      {!isMobile && (
+        <DesktopNavBar
+          language={language}
+          onLanguageChange={onLanguageChange}
+          onSearchClick={() => setIsSearchOpen(true)}
+        />
+      )}
 
-        {/* Mobile navigation */}
-        {isMobile && (
-          <MobileNavBar
-            language={language}
-            onLanguageChange={onLanguageChange}
-            onSearchClick={() => setIsSearchOpen(true)}
-          />
-        )}
-      </div>
+      {/* Mobile navigation */}
+      {isMobile && (
+        <MobileNavBar
+          language={language}
+          onLanguageChange={onLanguageChange}
+          onSearchClick={() => setIsSearchOpen(true)}
+        />
+      )}
 
       {/* Search modal */}
       <SearchModalV2

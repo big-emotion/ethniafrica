@@ -8,15 +8,21 @@ import type { CSSProperties, ReactNode } from "react";
  * below it. Nothing else divides them — no shadow, no gap — so the reader
  * crosses from the map into the reading in one step.
  *
- * ── Why the band is bounded, and must stay bounded ────────────────────────
- * The home hero used to be night from edge to edge and full height, and that
- * made the theme control look broken on that route: the band filled the
- * viewport, so pressing light/dark changed nothing the reader could see
- * (see 8ee71004, which re-scoped DEC-022 to the dataviz itself). A fiche's
- * band does not have that problem — it is 470 or 520 px tall with the themed
- * parchment immediately below it, so a theme change is visible at once. That
- * is the whole reason this band may carry the nav when the home's may not, and
- * it stops being true the moment anyone gives this band a viewport height.
+ * ── The band starts below the nav, on purpose ─────────────────────────────
+ * The mockup runs the night up behind the nav so the two read as one block.
+ * Twice now that has cost more than it bought. `navOnNight` was removed in
+ * 8ee71004 because a night band behind the nav made the theme control look
+ * broken on the home; restoring it here for the family fiche then produced a
+ * SERIOUS colour-contrast violation, because DesktopNavBar paints its active
+ * link `bg-primary` and `.afh-on-night` has no readable night value for that
+ * pair.
+ *
+ * So the nav follows the reader's theme like every other route, and the band
+ * begins under it. Putting the nav back on night is not a prop away — it needs
+ * the nav's own night palette resolved first, which is its own piece of work.
+ *
+ * The band must also stay bounded: give it a viewport height and the theme
+ * control goes back to looking broken for the same reason it did on the home.
  */
 
 /**
