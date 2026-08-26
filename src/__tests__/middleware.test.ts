@@ -216,6 +216,61 @@ describe("middleware", () => {
     });
   });
 
+  // The three hub URLs shipped under their resource names before the axes
+  // gave them verbs. They were published, so they are indexed and
+  // bookmarked: the rename has to leave a trail rather than a 404.
+  describe("legacy hub redirects (REQ-114)", () => {
+    // @req REQ-114
+    it.each([
+      ["peuples-hub", "comprendre"],
+      ["pays-hub", "explorer"],
+      ["familles-hub", "jouer"],
+    ])("redirects /fr/%s to /fr/%s with 308", async (legacy, current) => {
+      const request = new NextRequest(`http://localhost:3000/fr/${legacy}`);
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        `http://localhost:3000/fr/${current}`
+      );
+    });
+
+    // @req REQ-114
+    it("carries the query string across the rename", async () => {
+      const request = new NextRequest(
+        "http://localhost:3000/fr/pays-hub?from=newsletter"
+      );
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/explorer?from=newsletter"
+      );
+    });
+
+    // @req REQ-114
+    it("normalizes a trailing slash rather than 404ing on it", async () => {
+      const request = new NextRequest("http://localhost:3000/fr/peuples-hub/");
+      const response = await middleware(request);
+
+      expect(response.status).toBe(308);
+      expect(response.headers.get("location")).toBe(
+        "http://localhost:3000/fr/comprendre"
+      );
+    });
+
+    // The rename moved a hub, not the resource pages it groups. /fr/peuples
+    // is a live route and must not be swept up by a prefix match on
+    // "peuples".
+    // @req REQ-114
+    it("leaves the resource pages the hubs group untouched", async () => {
+      const request = new NextRequest("http://localhost:3000/fr/peuples");
+      const response = await middleware(request);
+
+      expect(response.status).not.toBe(308);
+    });
+  });
+
   describe("language redirect (FR-only)", () => {
     it("redirects /en to /fr with 308 (permanent)", async () => {
       const request = new NextRequest("http://localhost:3000/en");

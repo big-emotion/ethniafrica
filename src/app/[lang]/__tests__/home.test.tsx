@@ -10,7 +10,12 @@ import { getLocalizedRoute } from "@/lib/routing";
 // src/lib/home/__tests__/corpusCounts.test.ts), so the counts are replaced
 // with a deterministic fixture that is deliberately not 803/54/24 — proving
 // the rendered figures track the mock rather than a literal.
-const fixtureCounts = { peoples: 4213, countries: 91, families: 37 };
+const fixtureCounts = {
+  peoples: 4213,
+  countries: 91,
+  families: 37,
+  migrations: 5,
+};
 
 vi.mock("@/lib/home/corpusCounts", () => ({
   getCorpusCounts: vi.fn(async () => fixtureCounts),
@@ -22,12 +27,16 @@ vi.mock("@/components/layout/PageLayout", () => ({
   ),
 }));
 
+vi.mock("@/components/home/HomeGlobeStage", () => ({
+  HomeGlobeStage: () => <div data-testid="home-globe-stage" />,
+}));
+
 import Home, { metadata } from "../page";
 
-describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
+describe("home page — the hero, the three axes and the receipt (REQ-113/REQ-115)", () => {
   // @req FR91 @req FR95
   // @req REQ-044
-  it("renders the parchment hero with a single verbatim H1 and zero H3", async () => {
+  it("renders the hero with a single verbatim H1 and zero H3", async () => {
     render(await Home());
 
     const headings = screen.getAllByRole("heading", { level: 1 });
@@ -38,12 +47,21 @@ describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
     expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
   });
 
+  // @req REQ-115
+  it("opens on the night band with the globe and its instruction", async () => {
+    const { container } = render(await Home());
+
+    const hero = container.querySelector(".home-hero");
+    expect(hero).toHaveClass("afh-on-night");
+    expect(screen.getByTestId("home-globe-stage")).toBeInTheDocument();
+  });
+
   // @req REQ-113
-  it("renders exactly three entry points below the hero and no per-module card grid", async () => {
+  it("renders exactly three axes below the hero and no per-module card grid", async () => {
     render(await Home());
 
     expect(
-      screen.getAllByTestId(/^entry-point-(peuples|pays|familles)$/)
+      screen.getAllByTestId(/^access-axis-(explorer|comprendre|jouer)$/)
     ).toHaveLength(3);
     expect(screen.queryAllByTestId(/^module-card-/)).toHaveLength(0);
     expect(
@@ -52,17 +70,44 @@ describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
   });
 
   // @req REQ-113
-  it("sources each entry point's count from getCorpusCounts, not a literal", async () => {
+  it("sources each axis figure from getCorpusCounts, not a literal", async () => {
     render(await Home());
 
-    expect(screen.getByTestId("entry-point-count-peuples")).toHaveTextContent(
-      String(fixtureCounts.peoples)
+    expect(screen.getByTestId("access-axis-figure-explorer")).toHaveTextContent(
+      `${fixtureCounts.peoples} peuples · ${fixtureCounts.countries} pays`
     );
-    expect(screen.getByTestId("entry-point-count-pays")).toHaveTextContent(
-      String(fixtureCounts.countries)
+    expect(
+      screen.getByTestId("access-axis-figure-comprendre")
+    ).toHaveTextContent(`${fixtureCounts.migrations} repères · 1 doctrine`);
+  });
+
+  // @req REQ-114
+  it("routes each axis to its own hub, one click from home", async () => {
+    render(await Home());
+
+    expect(screen.getByTestId("access-axis-explorer")).toHaveAttribute(
+      "href",
+      getLocalizedRoute("fr", "explorerHub")
     );
-    expect(screen.getByTestId("entry-point-count-familles")).toHaveTextContent(
-      String(fixtureCounts.families)
+    expect(screen.getByTestId("access-axis-comprendre")).toHaveAttribute(
+      "href",
+      getLocalizedRoute("fr", "comprendreHub")
+    );
+    expect(screen.getByTestId("access-axis-jouer")).toHaveAttribute(
+      "href",
+      getLocalizedRoute("fr", "jouerHub")
+    );
+  });
+
+  // @req REQ-113
+  it("closes on the sourcing claim and links to the page that backs it", async () => {
+    render(await Home());
+
+    const strip = screen.getByTestId("home-trust-strip");
+    expect(strip).toHaveTextContent("Chaque source citée");
+    expect(strip.querySelector("a")).toHaveAttribute(
+      "href",
+      getLocalizedRoute("fr", "doctrine")
     );
   });
 
@@ -78,7 +123,7 @@ describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
 
   // @req FR95
   // @req REQ-044
-  it("no longer renders the eyebrow, the PRODUCT_NAME line, the five demo pills, or the old H2-sectioned hub layout", async () => {
+  it("no longer renders the eyebrow, the PRODUCT_NAME line or the five demo pills", async () => {
     render(await Home());
 
     expect(
@@ -86,32 +131,8 @@ describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
     ).not.toBeInTheDocument();
     expect(screen.queryByText(PRODUCT_NAME)).not.toBeInTheDocument();
     expect(
-      screen.queryByRole("heading", { name: "Explorer", level: 2 })
-    ).not.toBeInTheDocument();
-    expect(
-      screen.queryByRole("heading", { name: "Comprendre", level: 2 })
-    ).not.toBeInTheDocument();
-    expect(
       screen.queryByText(/données illustratives/i)
     ).not.toBeInTheDocument();
-  });
-
-  // @req REQ-114
-  it("routes each entry point to its access-mode hub, one click from home (ETNI-1216)", async () => {
-    render(await Home());
-
-    expect(screen.getByTestId("entry-point-peuples")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "peoplesHub")
-    );
-    expect(screen.getByTestId("entry-point-pays")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "countriesHub")
-    );
-    expect(screen.getByTestId("entry-point-familles")).toHaveAttribute(
-      "href",
-      getLocalizedRoute("fr", "familiesHub")
-    );
   });
 
   // @req FR95

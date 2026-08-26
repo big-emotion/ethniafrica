@@ -54,12 +54,46 @@ function createFakeGl() {
     POINTS: 10,
     TRIANGLE_FAN: 11,
     LINE_LOOP: 12,
+    // The shared sphere layer's own surface (REQ-112). Without these the
+    // layer would throw, be caught, and the terrain would silently vanish
+    // from under every overlay while the tests still passed.
+    ELEMENT_ARRAY_BUFFER: 13,
+    TRIANGLES: 14,
+    UNSIGNED_SHORT: 15,
+    TEXTURE_2D: 16,
+    TEXTURE0: 17,
+    RGBA: 18,
+    UNSIGNED_BYTE: 19,
+    TEXTURE_MIN_FILTER: 20,
+    TEXTURE_MAG_FILTER: 21,
+    TEXTURE_WRAP_S: 22,
+    TEXTURE_WRAP_T: 23,
+    LINEAR: 24,
+    REPEAT: 25,
+    CLAMP_TO_EDGE: 26,
+    createTexture: vi.fn(() => ({})),
+    bindTexture: vi.fn(),
+    activeTexture: vi.fn(),
+    texImage2D: vi.fn(),
+    texParameteri: vi.fn(),
+    uniform1i: vi.fn(),
+    drawElements: vi.fn(),
+    deleteTexture: vi.fn(),
+    deleteBuffer: vi.fn(),
+    deleteProgram: vi.fn(),
+    COMPILE_STATUS: 0x8b81,
+    LINK_STATUS: 0x8b82,
     createShader: vi.fn(() => ({})),
     shaderSource: vi.fn(),
     compileShader: vi.fn(),
+    getShaderParameter: vi.fn(() => true),
+    getShaderInfoLog: vi.fn(() => ""),
+    deleteShader: vi.fn(),
     createProgram: vi.fn(() => ({})),
     attachShader: vi.fn(),
     linkProgram: vi.fn(),
+    getProgramParameter: vi.fn(() => true),
+    getProgramInfoLog: vi.fn(() => ""),
     useProgram: vi.fn(),
     createBuffer: vi.fn(() => ({})),
     bindBuffer: vi.fn(),
@@ -84,6 +118,26 @@ function createFakeGl() {
   };
 }
 
+/** Absorbs the texture painter's draw calls without asserting on them. */
+function fakeTexture2d() {
+  return {
+    canvas: { width: 0, height: 0 },
+    fillStyle: "",
+    strokeStyle: "",
+    lineWidth: 0,
+    fillRect: vi.fn(),
+    beginPath: vi.fn(),
+    moveTo: vi.fn(),
+    lineTo: vi.fn(),
+    stroke: vi.fn(),
+    fill: vi.fn(),
+    save: vi.fn(),
+    restore: vi.fn(),
+    translate: vi.fn(),
+    scale: vi.fn(),
+  };
+}
+
 describe("AtlasGlobeCanvas", () => {
   let fakeGl: ReturnType<typeof createFakeGl>;
   let matchMediaMatches: boolean;
@@ -97,8 +151,14 @@ describe("AtlasGlobeCanvas", () => {
     frameCallbacks = new Map();
     nextFrameId = 1;
 
+    // A browser hands back a different object per context type. The sphere
+    // layer asks a scratch canvas for "2d" to paint its texture, so a spy
+    // that answered WebGL to everything would feed it the wrong object.
     vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockImplementation(
-      () => fakeGl as unknown as RenderingContext
+      (type: string) =>
+        type === "2d"
+          ? (fakeTexture2d() as unknown as RenderingContext)
+          : (fakeGl as unknown as RenderingContext)
     );
     vi.spyOn(HTMLElement.prototype, "clientWidth", "get").mockImplementation(
       () => 300
@@ -300,6 +360,29 @@ describe("AtlasGlobeCanvas", () => {
     expect(fakeGl.uniform2f).toHaveBeenCalledWith(expect.anything(), -0.38, 0);
   });
 
+  // Terrain and boundary ride one camera. The sphere layer runs its own
+  // program, so the dolly and the bias have to reach it separately — miss
+  // it and the outline slides off the ground it traces the moment the
+  // facts panel opens.
+  // @req REQ-117
+  it("hands the same dolly and bias to the terrain as to the overlay", () => {
+    render(
+      <AtlasGlobeCanvas
+        overlay={countryOverlay}
+        pose={{ ...IDLE_POSE, zoom: 2.5, offsetX: -0.38, offsetY: 0 }}
+      />
+    );
+
+    const dollies = fakeGl.uniform1f.mock.calls.filter(
+      ([, value]) => value === 2.5
+    );
+    const biases = fakeGl.uniform2f.mock.calls.filter(
+      ([, x, y]) => x === -0.38 && y === 0
+    );
+    expect(dollies.length).toBeGreaterThanOrEqual(2);
+    expect(biases.length).toBeGreaterThanOrEqual(2);
+  });
+
   // @req REQ-116
   it("draws exactly one still frame and schedules no loop under reduced motion", () => {
     matchMediaMatches = true;
@@ -318,5 +401,49 @@ describe("AtlasGlobeCanvas", () => {
 
     unmount();
     expect(window.cancelAnimationFrame).toHaveBeenCalledWith(1);
+  });
+
+  // The fiche globe and the home globe stand on the same terrain: an
+  // overlay is drawn over the shared textured sphere, not over an empty
+  // canvas (REQ-112/REQ-116).
+  // @req REQ-116
+  it.each([
+    ["a country outline", countryOverlay],
+    ["a family footprint", familyOverlay],
+    ["a people field", peopleOverlay],
+  ])("draws the shared textured sphere beneath %s", (_label, overlay) => {
+    matchMediaMatches = true;
+    render(<AtlasGlobeCanvas overlay={overlay} pose={IDLE_POSE} />);
+
+    expect(fakeGl.drawElements).toHaveBeenCalledWith(
+      fakeGl.TRIANGLES,
+      expect.any(Number),
+      fakeGl.UNSIGNED_SHORT,
+      0
+    );
+  });
+
+  // The sphere layer leaves its own program bound, so an overlay that
+  // never rebinds its own would silently write uniforms into the wrong
+  // program and draw nothing.
+  // @req REQ-116
+  it("rebinds the overlay's program after the sphere layer has drawn", () => {
+    matchMediaMatches = true;
+    render(<AtlasGlobeCanvas overlay={peopleOverlay} pose={IDLE_POSE} />);
+
+    const programCalls = fakeGl.useProgram.mock.calls.length;
+    expect(programCalls).toBeGreaterThan(2);
+  });
+
+  // atlas-charter §1: whatever the base terrain does, a people is still a
+  // field of points and never a closed line.
+  // @req REQ-116
+  it("keeps the people field on GL_POINTS over the new terrain", () => {
+    matchMediaMatches = true;
+    render(<AtlasGlobeCanvas overlay={peopleOverlay} pose={IDLE_POSE} />);
+
+    const modes = fakeGl.drawArrays.mock.calls.map(([mode]) => mode);
+    expect(modes).toContain(fakeGl.POINTS);
+    expect(modes).not.toContain(fakeGl.LINE_LOOP);
   });
 });

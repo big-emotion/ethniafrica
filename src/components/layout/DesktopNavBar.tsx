@@ -8,6 +8,7 @@ import { getLocalizedRoute, getPageFromRoute } from "@/lib/routing";
 import Image from "next/image";
 import { PRODUCT_NAME } from "@/lib/brand";
 import { isQuizFeatureEnabled } from "@/lib/featureFlags";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 
 interface DesktopNavBarProps {
   language: Language;
@@ -80,22 +81,13 @@ export const DesktopNavBar = ({
             </span>
           </Link>
 
-          {/* Hub route (REQ-111): the page body already offers the module
-              entry points as cards, so the nav retains only brand + search. */}
-          {isHome && (
-            <button
-              type="button"
-              onClick={onSearchClick}
-              className={navLinkClass(false) + " gap-2"}
-              aria-label="Rechercher"
-            >
-              <Search className="h-4 w-4" aria-hidden="true" />
-              Rechercher
-            </button>
-          )}
-
-          {/* Inline nav: Pays · Peuples · Familles · À propos · Doctrine · API */}
-          {!isHome && (
+          {/* Inline nav: Pays · Peuples · Familles · Migrations · Doctrine
+              · API. The home carried a reduced brand+search bar under
+              REQ-111, on the reasoning that its body already listed the
+              modules as cards. The body now offers three axes rather than
+              ten modules, so the destinations the reduced bar hid are no
+              longer one click away — the full bar comes back everywhere. */}
+          {
             <div className="flex items-center gap-1">
               <Link
                 href={countriesRoute}
@@ -151,7 +143,26 @@ export const DesktopNavBar = ({
                 API
               </Link>
             </div>
-          )}
+          }
+
+          {/* Search and the surface switch sit at the end of the bar on
+              every route (REQ-115), so a reader who wants either never has
+              to find the one page that offers it. */}
+          <div className="ml-auto flex items-center gap-2">
+            <button
+              type="button"
+              onClick={onSearchClick}
+              className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full border transition-colors"
+              style={{
+                borderColor: "var(--afh-border)",
+                color: "var(--afh-text-soft)",
+              }}
+              aria-label="Rechercher"
+            >
+              <Search className="h-4 w-4" aria-hidden="true" />
+            </button>
+            <ThemeToggle />
+          </div>
 
           {/* Home indicator (visually hidden, semantic only) */}
           <span className="sr-only">{isHome ? "Accueil" : ""}</span>

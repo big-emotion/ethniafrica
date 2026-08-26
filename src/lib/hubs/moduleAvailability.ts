@@ -67,6 +67,9 @@ export async function isModuleAvailable(
   def: Pick<HubModuleDefinition, "availability" | "dataSource">
 ): Promise<boolean> {
   if (def.availability === "unavailable") return false;
+  // A static module renders from code, so a row count can only ever take
+  // a working route away from the reader.
+  if (def.availability === "static") return true;
   if (!def.dataSource) return false;
   return probeDataSource(def.dataSource);
 }

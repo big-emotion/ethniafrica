@@ -12,9 +12,9 @@ export type PageType =
   | "migrations"
   | "quiz"
   | "colonization"
-  | "peoplesHub"
-  | "countriesHub"
-  | "familiesHub";
+  | "explorerHub"
+  | "comprendreHub"
+  | "jouerHub";
 
 // Mapping des slugs par langue
 const SLUGS: Record<Language, Record<PageType, string>> = {
@@ -31,15 +31,16 @@ const SLUGS: Record<Language, Record<PageType, string>> = {
     quiz: "quiz",
     // Epic 13 (Gazes), FR90 — French-only, no locale alternates.
     colonization: "regards/colonisation-et-resistances",
-    // ETNI-1216/REQ-114: one hub route per access mode, distinct from the
-    // resource browse pages (peuples/pays/familles) they group modules
-    // around.
-    peoplesHub: "peuples-hub",
-    countriesHub: "pays-hub",
-    familiesHub: "familles-hub",
+    // REQ-114: one hub route per access mode. The slug is the verb the
+    // reader arrived with, which is what keeps it from colliding with the
+    // resource pages (peuples/pays/familles) it groups.
+    explorerHub: "explorer",
+    comprendreHub: "comprendre",
+    jouerHub: "jouer",
   },
 };
 
+// @req REQ-091
 export const getLocalizedRoute = (
   language: Language,
   page: PageType
@@ -53,6 +54,7 @@ export const getLocalizedRoute = (
  * `regards/colonisation-et-resistances`) isn't shadowed by a shorter one
  * sharing its first segment.
  */
+// @req REQ-091
 export const getPageFromRoute = (pathname: string): PageType | null => {
   // Format: /{lang}/{slug...}
   const parts = pathname.split("/").filter(Boolean);
@@ -74,6 +76,7 @@ export const getPageFromRoute = (pathname: string): PageType | null => {
   return null;
 };
 
+// @req REQ-091
 export const getLanguageFromRoute = (pathname: string): Language | null => {
   // Format: /{lang}/{slug}
   const parts = pathname.split("/").filter(Boolean);
@@ -87,6 +90,7 @@ export const getLanguageFromRoute = (pathname: string): Language | null => {
   return null;
 };
 
+// @req REQ-091
 export const getSlugFromRoute = (pathname: string): string | null => {
   const parts = pathname.split("/").filter(Boolean);
   if (parts.length < 2) return null;
@@ -97,12 +101,15 @@ export const getSlugFromRoute = (pathname: string): string | null => {
 // Entity routes — localized href to a single fiche (ContextTriad, ETNI-818)
 // ---------------------------------------------------------------------------
 
+// @req REQ-091
 export const getCountryRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "countries")}/${id}`;
 
+// @req REQ-091
 export const getFamilyRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "families")}/${id}`;
 
+// @req REQ-097
 export const getPeopleRoute = (language: Language, id: string): string =>
   `${getLocalizedRoute(language, "peoples")}/${id}`;
 

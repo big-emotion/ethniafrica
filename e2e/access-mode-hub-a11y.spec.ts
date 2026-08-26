@@ -1,15 +1,15 @@
 import AxeBuilder from "@axe-core/playwright";
 import { test, expect } from "./support/fixtures";
 
-// ETNI-1216/REQ-114 AC4 — axe-core zero serious/critical, on each of the
-// three access-mode hub routes, at the three reference widths (430, 720,
+// REQ-114 AC4 — axe-core zero serious/critical, on each of the three
+// access-mode hub routes, at the three reference widths (430, 720,
 // 1200 px). @cross-viewport runs this on mobile-430 (default, source of
 // truth), tablet-720 and desktop-1200 (playwright.config.ts), matching the
 // pattern in e2e/family-tree-a11y.spec.ts.
 const HUB_ROUTES = [
-  { mode: "peuples", url: "/fr/peuples-hub" },
-  { mode: "pays", url: "/fr/pays-hub" },
-  { mode: "familles", url: "/fr/familles-hub" },
+  { mode: "explorer", url: "/fr/explorer" },
+  { mode: "comprendre", url: "/fr/comprendre" },
+  { mode: "jouer", url: "/fr/jouer" },
 ];
 
 // @req REQ-114

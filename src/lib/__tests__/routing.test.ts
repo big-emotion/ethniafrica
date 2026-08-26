@@ -78,26 +78,28 @@ describe("quiz page type (Epic 10, Story 10.8, ETNI-497)", () => {
   });
 });
 
-describe("access-mode hub page types (ETNI-1216, REQ-114)", () => {
+describe("access-mode hub page types (REQ-114)", () => {
   // @req REQ-114
   it("resolves the French slug for each hub page type", () => {
-    expect(getLocalizedRoute("fr", "peoplesHub")).toBe("/fr/peuples-hub");
-    expect(getLocalizedRoute("fr", "countriesHub")).toBe("/fr/pays-hub");
-    expect(getLocalizedRoute("fr", "familiesHub")).toBe("/fr/familles-hub");
+    expect(getLocalizedRoute("fr", "explorerHub")).toBe("/fr/explorer");
+    expect(getLocalizedRoute("fr", "comprendreHub")).toBe("/fr/comprendre");
+    expect(getLocalizedRoute("fr", "jouerHub")).toBe("/fr/jouer");
   });
 
   // @req REQ-114
   it("round-trips each hub slug back to its page type", () => {
-    expect(getPageFromRoute("/fr/peuples-hub")).toBe("peoplesHub");
-    expect(getPageFromRoute("/fr/pays-hub")).toBe("countriesHub");
-    expect(getPageFromRoute("/fr/familles-hub")).toBe("familiesHub");
+    expect(getPageFromRoute("/fr/explorer")).toBe("explorerHub");
+    expect(getPageFromRoute("/fr/comprendre")).toBe("comprendreHub");
+    expect(getPageFromRoute("/fr/jouer")).toBe("jouerHub");
   });
 
+  // The axis slug is a verb and the resource slug a noun, so the two can
+  // no longer shadow each other the way peuples-hub/peuples once could.
   // @req REQ-114
-  it("does not confuse a hub slug with its resource-page counterpart", () => {
+  it("keeps an axis route distinct from the resource pages it groups", () => {
     expect(getPageFromRoute("/fr/peuples")).toBe("peoples");
-    expect(getPageFromRoute("/fr/peuples-hub")).toBe("peoplesHub");
     expect(getPageFromRoute("/fr/peuples/PPL_YORUBA")).toBe("peoples");
+    expect(getPageFromRoute("/fr/explorer")).toBe("explorerHub");
   });
 });
 

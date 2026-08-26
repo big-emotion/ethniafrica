@@ -43,6 +43,10 @@ describe("charter categorical accent tokens (ETNI-798)", () => {
       "--afh-cat-terre": "#C4573F",
       "--afh-cat-terre-tint": "#F0D2C8",
       "--afh-cat-terre-ink": "#974331",
+      // The only night ink needing a colour of its own: ocre, teal and perv
+      // reuse their base fill, which already clears AA on both night
+      // surfaces, so they resolve through var() and never land here.
+      "--afh-cat-terre-ink-night": "#CD725E",
       "--afh-cat-perv": "#7A8CE8",
       "--afh-cat-perv-tint": "#DCE1F9",
       "--afh-cat-perv-ink": "#535F9E",

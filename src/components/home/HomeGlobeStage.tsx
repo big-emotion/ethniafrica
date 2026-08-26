@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 import { HomeGlobeFallback } from "@/components/home/HomeGlobeFallback";
 
@@ -41,33 +41,49 @@ function canCreateWebglContext(): boolean {
 // @req REQ-115
 export function HomeGlobeStage() {
   const [webglSupported, setWebglSupported] = useState(false);
+  // The probe above only proves a context can be created. Compiling and
+  // linking the globe's shaders on it can still fail — the common case on
+  // low-end hardware — and by then the fallback has already been swapped
+  // out. This latches that late failure so the committed basemap comes
+  // back rather than leaving the hero blank (REQ-112 AC2).
+  const [globeUnavailable, setGlobeUnavailable] = useState(false);
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setWebglSupported(canCreateWebglContext());
   }, []);
 
+  const handleGlobeUnavailable = useCallback(() => {
+    setGlobeUnavailable(true);
+  }, []);
+
   return (
     <div className="home-globe-stage">
-      {webglSupported ? <LazyHomeGlobe /> : <HomeGlobeFallback />}
+      {webglSupported && !globeUnavailable ? (
+        <LazyHomeGlobe onUnavailable={handleGlobeUnavailable} />
+      ) : (
+        <HomeGlobeFallback />
+      )}
       <style>{`
+        /* 380 / 460 px are the reference demo's own stage heights: the
+           globe reads as a body rather than a marble at those, and the
+           flat map still fits its full Mercator height. */
         .home-globe-stage {
           position: relative;
           box-sizing: border-box;
           width: 100%;
           max-width: 960px;
           margin: 0 auto;
-          padding: 0 20px 48px;
-          min-height: 320px;
+          padding: 0 20px 24px;
+          min-height: 380px;
         }
         @media (min-width: 720px) {
           .home-globe-stage {
-            min-height: 420px;
+            min-height: 460px;
           }
         }
         @media (min-width: 1200px) {
           .home-globe-stage {
-            min-height: 520px;
             flex: 1 1 auto;
           }
         }
