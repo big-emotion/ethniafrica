@@ -34,6 +34,16 @@ jobs:
       - name: Check quiz play-island bundle size (≤ 15 KB gzipped)
         run: npm run bundle-size:quiz
 
+      # The home's two WebGL islands, measured the same standalone way: the
+      # hero globe (DEC-020, 170 KB) and the axis panels' link graph
+      # (REQ-114, 25 KB). The globe's budget script has existed since
+      # ETNI-1214 without ever being run by CI — a cap nothing enforces is
+      # an estimate, so both are wired here rather than only the new one.
+      - name: Check home WebGL island bundle sizes
+        run: |
+          npm run bundle-size:home-globe
+          npm run bundle-size:axis-graph
+
       # Skip cleanly on forks / Dependabot PRs that cannot access the Supabase
       # secrets. When the secret is set (i.e. on PRs from the same repo) the
       # gate is enforced — no continue-on-error masks failures.

@@ -1,11 +1,18 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen, cleanup, fireEvent } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-import { AccessAxes } from "@/components/home/AccessAxes";
+import { AccessAxes, type AccessAxesProps } from "@/components/home/AccessAxes";
 import { getLocalizedRoute } from "@/lib/routing";
+import {
+  ACCESS_MODES,
+  getModulesForAccessMode,
+  type AccessMode,
+} from "@/lib/hubs/moduleRegistry";
+import type { HubModule } from "@/lib/hubs/moduleAvailability";
 import type { CorpusCounts } from "@/lib/home/corpusCounts";
 
 const counts: CorpusCounts = {
@@ -14,6 +21,29 @@ const counts: CorpusCounts = {
   families: 24,
   migrations: 6,
 };
+
+// The axes now carry the modules the server resolved, so the fixture is
+// the registry with every route-bearing module live — the state the corpus
+// is actually in.
+const modulesByAxis = Object.fromEntries(
+  ACCESS_MODES.map((mode) => [
+    mode,
+    getModulesForAccessMode(mode).map((definition) => ({
+      ...definition,
+      available: definition.availability !== "unavailable",
+    })),
+  ])
+) as Record<AccessMode, HubModule[]>;
+
+const renderAxes = (props: Partial<AccessAxesProps> = {}) =>
+  render(
+    <AccessAxes
+      language="fr"
+      counts={counts}
+      modulesByAxis={modulesByAxis}
+      {...props}
+    />
+  );
 
 let reducedMotion = false;
 vi.mock("@/hooks/use-prefers-reduced-motion", () => ({
@@ -28,7 +58,7 @@ afterEach(() => {
 describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () => {
   // @req REQ-113
   it("offers exactly the three intents, named as verbs", () => {
-    render(<AccessAxes language="fr" counts={counts} />);
+    renderAxes();
 
     const axes = screen.getAllByTestId(/^access-axis-\w+$/);
     expect(axes.map((axis) => axis.dataset.testid)).toEqual([
@@ -47,9 +77,11 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
     ).toBeInTheDocument();
   });
 
+  // The href survives as the no-JS and crawler path, but a reader with
+  // JavaScript never spends a page load on the axis slug any more.
   // @req REQ-114
-  it("sends each axis to its own hub route", () => {
-    render(<AccessAxes language="fr" counts={counts} />);
+  it("keeps the hub route as a fallback href on every axis", () => {
+    renderAxes();
 
     expect(screen.getByTestId("access-axis-explorer")).toHaveAttribute(
       "href",
@@ -69,7 +101,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
   // and verify. "3 000 ans" was not one (ETNI-1198).
   // @req REQ-113
   it("counts real corpus entries rather than announcing an era", () => {
-    render(<AccessAxes language="fr" counts={counts} />);
+    renderAxes();
 
     expect(screen.getByTestId("access-axis-figure-explorer")).toHaveTextContent(
       "803 peuples · 54 pays"
@@ -82,12 +114,9 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
 
   // @req REQ-113
   it("tracks the counts it is given rather than hardcoding them", () => {
-    render(
-      <AccessAxes
-        language="fr"
-        counts={{ ...counts, peoples: 12, countries: 3, migrations: 1 }}
-      />
-    );
+    renderAxes({
+      counts: { ...counts, peoples: 12, countries: 3, migrations: 1 },
+    });
 
     expect(screen.getByTestId("access-axis-figure-explorer")).toHaveTextContent(
       "12 peuples · 3 pays"
@@ -99,7 +128,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
 
   // @req REQ-113
   it("gives each axis one action verb, not a paragraph", () => {
-    render(<AccessAxes language="fr" counts={counts} />);
+    renderAxes();
 
     expect(screen.getByTestId("access-axis-cta-explorer")).toHaveTextContent(
       "Parcourir"
@@ -114,7 +143,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
 
   // @req REQ-114
   it("scopes each axis to its own categorical accent", () => {
-    render(<AccessAxes language="fr" counts={counts} />);
+    renderAxes();
 
     expect(screen.getByTestId("access-axis-explorer")).toHaveClass(
       "afh-accent-ocre"
@@ -131,7 +160,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
   // the label — and decorative, so it stays out of the accessible name.
   // @req REQ-113
   it("carries a decorative animated glyph per axis", () => {
-    render(<AccessAxes language="fr" counts={counts} />);
+    renderAxes();
 
     for (const id of ["explorer", "comprendre", "jouer"]) {
       const glyph = screen.getByTestId(`access-axis-glyph-${id}`);
@@ -142,7 +171,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
   // @req REQ-112
   it("drops every animation class under reduced motion", () => {
     reducedMotion = true;
-    render(<AccessAxes language="fr" counts={counts} />);
+    renderAxes();
 
     const axis = screen.getByTestId("access-axis-explorer");
     expect(axis.className).not.toContain("access-axis-reveal");
@@ -153,7 +182,7 @@ describe("AccessAxes — the home's three entry points (REQ-113/REQ-114)", () =>
 
   // @req REQ-113
   it("keeps every axis above the 44px touch target", () => {
-    render(<AccessAxes language="fr" counts={counts} />);
+    renderAxes();
 
     for (const id of ["explorer", "comprendre", "jouer"]) {
       expect(screen.getByTestId(`access-axis-${id}`).className).toContain(
@@ -173,7 +202,7 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
 
   // @req REQ-114
   it("marks an axis whose every module is unavailable as coming soon", () => {
-    render(<AccessAxes language="fr" counts={counts} />);
+    renderAxes({ counts });
 
     const jouer = screen.getByTestId("access-axis-jouer");
     expect(jouer).toHaveAttribute("data-available", "false");
@@ -186,7 +215,7 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
   // dressed as pending — the state has to discriminate, not blanket.
   // @req REQ-114
   it("leaves the axes with live modules promising their action", () => {
-    render(<AccessAxes language="fr" counts={counts} />);
+    renderAxes({ counts });
 
     expect(screen.getByTestId("access-axis-explorer")).toHaveAttribute(
       "data-available",
@@ -225,11 +254,120 @@ describe("AccessAxes — an axis promises only what it can deliver (REQ-114)", (
   // removed is the promise of a live action, not the route.
   // @req REQ-114
   it("keeps the pending axis reachable rather than inert", () => {
-    render(<AccessAxes language="fr" counts={counts} />);
+    renderAxes({ counts });
 
     expect(screen.getByTestId("access-axis-jouer")).toHaveAttribute(
       "href",
       "/fr/jouer"
     );
+  });
+});
+
+// Clicking an entry point used to cost a page load to reach a list of the
+// same modules. It now opens that list on the home itself, and the reader's
+// next click lands on the module rather than on the axis slug.
+describe("AccessAxes — an axis opens on the home rather than loading its hub (REQ-114)", () => {
+  // @req REQ-114
+  it("swallows the navigation and deploys the axis in place", () => {
+    renderAxes();
+    const explorer = screen.getByTestId("access-axis-explorer");
+    expect(explorer).toHaveAttribute("aria-expanded", "false");
+
+    // fireEvent reports false when a handler called preventDefault.
+    const proceeded = fireEvent.click(explorer);
+
+    expect(proceeded).toBe(false);
+    expect(screen.getByTestId("axis-panel-explorer")).toBeInTheDocument();
+    expect(explorer).toHaveAttribute("aria-expanded", "true");
+    expect(explorer).toHaveAttribute("aria-controls", "axis-panel-explorer");
+  });
+
+  // @req REQ-114
+  it("deploys the modules of the axis that was opened, and no others", async () => {
+    renderAxes();
+
+    await userEvent.click(screen.getByTestId("access-axis-comprendre"));
+
+    expect(screen.getByTestId("axis-module-doctrine")).toBeInTheDocument();
+    expect(screen.getByTestId("axis-module-frise")).toBeInTheDocument();
+    expect(screen.queryByTestId("axis-module-peuples")).not.toBeInTheDocument();
+  });
+
+  // @req REQ-114
+  it("sends a module click to the module's own page, never to the axis slug", async () => {
+    renderAxes();
+
+    await userEvent.click(screen.getByTestId("access-axis-explorer"));
+
+    expect(screen.getByTestId("axis-module-link-peuples")).toHaveAttribute(
+      "href",
+      getLocalizedRoute("fr", "peoples")
+    );
+  });
+
+  // @req REQ-114
+  it("keeps a single axis open, switching rather than stacking", async () => {
+    renderAxes();
+
+    await userEvent.click(screen.getByTestId("access-axis-explorer"));
+    await userEvent.click(screen.getByTestId("access-axis-jouer"));
+
+    expect(screen.queryByTestId("axis-panel-explorer")).not.toBeInTheDocument();
+    expect(screen.getByTestId("axis-panel-jouer")).toBeInTheDocument();
+  });
+
+  // @req REQ-114
+  it("marks which axis is open on the group itself", async () => {
+    renderAxes();
+    expect(screen.getByTestId("access-axes")).toHaveAttribute(
+      "data-open",
+      "none"
+    );
+
+    await userEvent.click(screen.getByTestId("access-axis-explorer"));
+
+    expect(screen.getByTestId("access-axes")).toHaveAttribute(
+      "data-open",
+      "explorer"
+    );
+  });
+
+  // Escape is the way out of anything that opened over what you were
+  // reading, and the focus has to come back where it was taken from.
+  // @req REQ-114
+  it("closes on Escape and hands focus back to the card that opened it", async () => {
+    renderAxes();
+    const explorer = screen.getByTestId("access-axis-explorer");
+
+    await userEvent.click(explorer);
+    await userEvent.keyboard("{Escape}");
+
+    expect(screen.queryByTestId("axis-panel-explorer")).not.toBeInTheDocument();
+    expect(explorer).toHaveFocus();
+  });
+
+  // @req REQ-114
+  it("closes when the opened card is clicked a second time", async () => {
+    renderAxes();
+    const explorer = screen.getByTestId("access-axis-explorer");
+
+    await userEvent.click(explorer);
+    await userEvent.click(explorer);
+
+    expect(screen.queryByTestId("axis-panel-explorer")).not.toBeInTheDocument();
+    expect(explorer).toHaveAttribute("aria-expanded", "false");
+  });
+
+  // A pending axis is still worth opening: that is where the reader sees
+  // what is coming, which is what the hub used to be for.
+  // @req REQ-106
+  it("opens a pending axis too, onto its Bientôt modules", async () => {
+    renderAxes();
+
+    await userEvent.click(screen.getByTestId("access-axis-jouer"));
+
+    expect(
+      screen.getByTestId("axis-module-unavailable-comparer")
+    ).toHaveTextContent("Bientôt");
   });
 });
