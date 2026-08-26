@@ -45,6 +45,7 @@ function slugFromId(id: string): string {
  * skipping files that fail the strict model (migrationSchema via
  * parseMigrationFile — see scripts/validateAfrikData.ts FR80).
  */
+// @req REQ-080
 export function loadAllMigrationFiles(
   datasetRoot: string = AFRIK_ROOT
 ): MigrationRecord[] {
@@ -330,6 +331,7 @@ async function upsertMigrationRecord(
  * each, seeding confidence_scores via recompute_confidence (FR80,
  * AR15/AR17).
  */
+// @req REQ-080
 export async function loadMigrations(
   supabase: AdminClient,
   migrations: MigrationRecord[] = loadAllMigrationFiles()

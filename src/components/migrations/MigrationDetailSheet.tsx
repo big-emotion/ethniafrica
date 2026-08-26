@@ -84,6 +84,7 @@ function formatPeriod(timeRange: MigrationAtlasEntry["timeRange"]): string {
   return timeRange.datingNote ? `${range} (${timeRange.datingNote})` : range;
 }
 
+// @req REQ-101
 export function MigrationDetailSheet({
   open,
   onOpenChange,

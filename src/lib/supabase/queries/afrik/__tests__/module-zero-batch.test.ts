@@ -125,6 +125,7 @@ describe("module-zero-batch helpers", () => {
       expect(inSpy).toHaveBeenNthCalledWith(1, "entity_id", ids);
     });
 
+    // @req REQ-007
     it("groups sources by peopleId in the returned Map", async () => {
       buildSupabaseMock([
         {
@@ -250,6 +251,7 @@ describe("module-zero-batch helpers", () => {
       expect(eqSpy).toHaveBeenCalledWith("entity_type", "country");
     });
 
+    // @req REQ-006
     it("maps a single confidence score per peopleId", async () => {
       buildSupabaseMock({
         data: [
@@ -333,6 +335,7 @@ describe("module-zero-batch helpers", () => {
       expect(inSpy).toHaveBeenCalledWith("entity_id", ids);
     });
 
+    // @req REQ-014
     it("returns openCount and totalCount per peopleId", async () => {
       buildSupabaseMock({
         data: [
@@ -400,6 +403,7 @@ describe("module-zero-batch helpers", () => {
       expect(inSpy).toHaveBeenCalledWith("entity_id", ids);
     });
 
+    // @req REQ-009
     it("keeps only the latest revision per peopleId", async () => {
       buildSupabaseMock({
         data: [

@@ -79,6 +79,7 @@ function isSameOriginRequest(request: NextRequest): boolean {
   return false;
 }
 
+// @req REQ-052
 export async function middleware(request: NextRequest) {
   // FR-only canonical redirect: any /[2-letter-lang]/* segment that isn't /fr
   // is permanently redirected to its /fr equivalent (preserves subpath + query).
@@ -247,6 +248,7 @@ export async function middleware(request: NextRequest) {
   return supabaseResponse;
 }
 
+// @req REQ-052
 export const config = {
   matcher: [
     // Explicitly include all /api/v2/* routes so the rate-limiting gate is

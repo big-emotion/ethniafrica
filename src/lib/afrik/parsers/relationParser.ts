@@ -40,6 +40,7 @@ const relationTypeSchema = z.enum(["migratory", "commercial", "religious"], {
   }),
 });
 
+// @req REQ-032
 export const relationSchema = z
   .object({
     id: z.string().regex(/^REL_[A-Z0-9_]+$/, {
@@ -71,6 +72,7 @@ export interface ParsedRelationFile {
   errors?: RelationParseFieldError[];
 }
 
+// @req REQ-032
 export function parseRelationFile(raw: unknown): ParsedRelationFile {
   const result = relationSchema.safeParse(raw);
 

@@ -76,6 +76,7 @@ const nameRecordEntrySchema = z
     }
   });
 
+// @req REQ-056
 export const nameRecordDossierSchema = z
   .object({
     _meta: nameRecordMetaSchema,
@@ -102,6 +103,7 @@ export interface ParsedNameRecordFile {
   errors?: NameRecordParseFieldError[];
 }
 
+// @req REQ-056
 export function parseNameRecordFile(raw: unknown): ParsedNameRecordFile {
   const result = nameRecordDossierSchema.safeParse(raw);
 

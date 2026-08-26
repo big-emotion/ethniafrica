@@ -90,6 +90,7 @@ const migrationContentSchema = z.object({
   }),
 });
 
+// @req REQ-080
 export const migrationSchema = z
   .object({
     id: z.string().regex(/^MGR_[A-Z0-9_]+$/, {
@@ -148,6 +149,7 @@ export interface ParsedMigrationFile {
   errors?: MigrationParseFieldError[];
 }
 
+// @req REQ-080
 export function parseMigrationFile(raw: unknown): ParsedMigrationFile {
   const result = migrationSchema.safeParse(raw);
 

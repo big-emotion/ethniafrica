@@ -14,6 +14,7 @@ import type {
 
 const t = translations.fr.quiz;
 
+// @req REQ-103
 export const QUIZ_REVEAL_MIN_HEIGHT_CLASS = "min-h-[22rem]";
 
 const TIER_BADGE_LABELS = SOURCE_TIER_LABELS_FR;

@@ -229,6 +229,7 @@ function groupByTier(sources: Source[]): Record<SourceTier, Source[]> {
  * Defends against `javascript:` or `data:` schemes coming from contributor
  * sources. Returns `null` otherwise (including for malformed URLs).
  */
+// @req REQ-008
 export function safeUrl(raw: string | undefined | null): string | null {
   if (!raw) return null;
   try {
@@ -251,6 +252,7 @@ const FR_DATE_FORMATTER = new Intl.DateTimeFormat("fr-FR", {
  * parser to avoid off-by-one errors on date-only inputs. Returns the raw
  * input on parse failure.
  */
+// @req REQ-008
 export function formatBrokenDate(iso: string): string {
   const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso);
   if (!match) return iso;

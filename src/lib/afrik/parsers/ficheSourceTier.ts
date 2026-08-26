@@ -10,6 +10,7 @@ import { SOURCE_TIERS, sourceTierFromLegacyNumber } from "@/types/sources";
  * `dataset/source/afrik/` is reclassified separately from this code. Drop the
  * numeric branch once no fiche carries a numeric tier any more.
  */
+// @req REQ-092
 export const ficheSourceTierSchema = z.union(
   [
     z.enum(SOURCE_TIERS),

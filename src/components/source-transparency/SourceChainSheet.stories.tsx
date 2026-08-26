@@ -88,6 +88,7 @@ type Story = StoryObj<typeof Demo>;
 
 /* ----- Single position --------------------------------------------------- */
 
+// @req REQ-007
 export const SinglePosition: Story = {
   args: {
     anchorId: "chip-paragraph-1",
@@ -104,6 +105,7 @@ export const SinglePosition: Story = {
 
 /* ----- Multi-perspective (FR24) ------------------------------------------ */
 
+// @req REQ-007
 export const MultiPerspective: Story = {
   args: {
     anchorId: "chip-paragraph-7",
@@ -136,6 +138,7 @@ export const MultiPerspective: Story = {
 
 /* ----- Broken link ------------------------------------------------------- */
 
+// @req REQ-007
 export const BrokenLink: Story = {
   args: {
     anchorId: "chip-paragraph-broken",
@@ -153,6 +156,7 @@ export const BrokenLink: Story = {
 
 /* ----- Missing data ------------------------------------------------------ */
 
+// @req REQ-007
 export const MissingData: Story = {
   args: {
     anchorId: "chip-paragraph-empty",
@@ -168,6 +172,7 @@ export const MissingData: Story = {
 
 /* ----- Mobile viewport --------------------------------------------------- */
 
+// @req REQ-007
 export const Mobile: Story = {
   args: SinglePosition.args,
   parameters: { viewport: { defaultViewport: "mobile1" } },
@@ -175,6 +180,7 @@ export const Mobile: Story = {
 
 /* ----- Tablet viewport --------------------------------------------------- */
 
+// @req REQ-007
 export const Tablet: Story = {
   args: SinglePosition.args,
   parameters: { viewport: { defaultViewport: "tablet" } },
@@ -182,6 +188,7 @@ export const Tablet: Story = {
 
 /* ----- Desktop viewport -------------------------------------------------- */
 
+// @req REQ-007
 export const Desktop: Story = {
   args: {
     ...SinglePosition.args,

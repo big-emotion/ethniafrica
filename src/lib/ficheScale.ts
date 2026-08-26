@@ -73,6 +73,7 @@ function readFamilyScale(payload: LanguageFamilyDetail): ScaleContent | null {
   };
 }
 
+// @req REQ-091
 export function readScale(subject: ScaleSubject): ScaleContent | null {
   switch (subject.entityType) {
     case "people":
@@ -92,6 +93,7 @@ export function readScale(subject: ScaleSubject): ScaleContent | null {
  * shared rule the registry would either duplicate it (two copies to drift
  * apart) or emit an anchor that scrolls to nothing.
  */
+// @req REQ-091
 export function hasScaleContent(subject: ScaleSubject): boolean {
   const content = readScale(subject);
   return Boolean(content?.sourceLabel);

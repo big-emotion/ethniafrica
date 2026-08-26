@@ -22,6 +22,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import type { PeopleDetail, CountryDistribution } from "@/types/afrik-frontend";
+import { ficheSourceLabel } from "@/lib/afrik/ficheSourceLabel";
 import { getPeople } from "@/lib/afrikLoader";
 import { SourceVerifyBadge } from "@/components/ui/source-verify-badge";
 import { FlagTarget } from "@/components/flags/FlagTarget";
@@ -52,6 +53,7 @@ const getErrorText = (language: Language): string => {
   return "Échec du chargement du peuple";
 };
 
+// @req REQ-003
 export const PeopleDetailView = ({
   peopleId,
   language,
@@ -1044,7 +1046,7 @@ export const PeopleDetailView = ({
                         key={idx}
                         className="text-sm flex items-center gap-2 flex-wrap"
                       >
-                        <span>{source.title}</span>
+                        <span>{ficheSourceLabel(source)}</span>
                         {sourceFlag && <SourceVerifyBadge />}
                       </li>
                     ))}

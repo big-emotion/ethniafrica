@@ -3,6 +3,7 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
 describe("PeopleDetailView heading hierarchy", () => {
+  // @req REQ-003
   // @req REQ-019
   it("uses h2 headings for the cards directly below the page h1", () => {
     const source = readFileSync(

@@ -50,6 +50,7 @@ function errorMessage(value: { message: string } | null | undefined): string {
  * (parent of `noms/`), matching the `collectNameRecordFiles` convention in
  * scripts/validateAfrikData.ts.
  */
+// @req REQ-057
 export function loadAllNameRecordDossiers(
   datasetRoot: string = AFRIK_ROOT
 ): NameRecordDossier[] {
@@ -241,6 +242,7 @@ async function upsertNameRecordEntry(
  * fabric). Trigger rejections (sourceless assertions, defense in depth) are
  * logged and skipped; remaining records still load.
  */
+// @req REQ-057
 export async function loadNameRecords(
   supabase: AdminClient,
   dossiers: NameRecordDossier[] = loadAllNameRecordDossiers()

@@ -36,6 +36,7 @@ function errorMessage(value: { message: string } | null | undefined): string {
  * skipping files that fail the strict model (relationSchema via
  * parseRelationFile — see scripts/validateAfrikData.ts REL-1..REL-7).
  */
+// @req REQ-032
 export function loadAllRelationFiles(
   datasetRoot: string = AFRIK_ROOT
 ): RelationRecord[] {
@@ -270,6 +271,7 @@ async function upsertRelationRecord(
  * sources → assertions → afrik_people_relations for each, seeding
  * confidence_scores via recompute_confidence (FR72, AR44).
  */
+// @req REQ-032
 export async function loadRelations(
   supabase: AdminClient,
   relations: RelationRecord[] = loadAllRelationFiles()

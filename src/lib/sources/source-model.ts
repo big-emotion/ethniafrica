@@ -24,12 +24,14 @@ const httpUrlSchema = z
     { message: "url must use HTTP or HTTPS" }
   );
 
+// @req REQ-093
 export const structuredSourceKindSchema = sourceKindSchema.exclude([
   "discovery",
   "ai_generated",
   "unknown",
 ]);
 
+// @req REQ-093
 export const sourceRecordSchema = z
   .object({
     sourceKey: stableSourceKeySchema,
@@ -44,6 +46,7 @@ export const sourceRecordSchema = z
   })
   .strict();
 
+// @req REQ-093
 export const assertionLocatorTypeSchema = z.enum([
   "page",
   "folio",
@@ -51,6 +54,7 @@ export const assertionLocatorTypeSchema = z.enum([
   "timestamp",
 ]);
 
+// @req REQ-093
 export const assertionSourceReferenceSchema = z
   .object({
     sourceKey: stableSourceKeySchema,
@@ -68,6 +72,7 @@ export type LegacySourceAdapterResult =
   | { success: true; data: LegacySourceCandidate[] }
   | { success: false; errors: LegacySourceAdapterError[] };
 
+// @req REQ-093
 export function adaptLegacySources(raw: unknown): LegacySourceAdapterResult {
   if (!Array.isArray(raw)) {
     return {
@@ -99,6 +104,7 @@ export function adaptLegacySources(raw: unknown): LegacySourceAdapterResult {
     : { success: true, data };
 }
 
+// @req REQ-093
 export function toStructuredSourceRecord(
   value: z.infer<typeof sourceRecordSchema>
 ): StructuredSourceRecord {
@@ -115,6 +121,7 @@ export function toStructuredSourceRecord(
   };
 }
 
+// @req REQ-093
 export function toAssertionSourceReference(
   value: z.infer<typeof assertionSourceReferenceSchema>
 ): AssertionSourceReference {

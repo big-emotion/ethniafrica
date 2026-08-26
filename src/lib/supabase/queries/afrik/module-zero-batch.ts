@@ -81,6 +81,7 @@ function uniqueStrings(values: string[]): string[] {
  *   2) hydrate `sources` rows for the union of source_ids
  * Results are grouped client-side into Map<peopleId, Source[]>.
  */
+// @req REQ-007
 export async function getSourcesMap(
   peopleIds: string[]
 ): Promise<Map<string, Source[]>> {
@@ -164,6 +165,7 @@ export async function getSourcesMap(
  * Defaults to "people" for existing callers (peopleIds); pass an explicit
  * entityType (e.g. "country", "language_family") for other entity kinds.
  */
+// @req REQ-006
 export async function getConfidenceMap(
   peopleIds: string[],
   entityType: string = "people"
@@ -216,6 +218,7 @@ export async function getConfidenceMap(
  * Per-peopleId flag summary: total flag count and the subset still "open"
  * (status not in {resolved, dismissed}).
  */
+// @req REQ-014
 export async function getFlagsSummaryMap(
   peopleIds: string[]
 ): Promise<Map<string, FlagSummary>> {
@@ -260,6 +263,7 @@ export async function getFlagsSummaryMap(
  * Single query (per chunk): `revisions` filtered by `entity_id IN (...)`,
  * ordered by `created_at DESC`. First row seen per entity wins.
  */
+// @req REQ-009
 export async function getLatestRevisionMap(
   peopleIds: string[]
 ): Promise<Map<string, Revision>> {

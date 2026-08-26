@@ -652,6 +652,32 @@ describe("transformSources", () => {
   it("returns empty string for no sources", () => {
     expect(transformSources(undefined)).toBe("");
   });
+
+  // The corpus in dataset/source/afrik/ is now structured, but the database
+  // still serves the fiche JSON it was loaded from, which holds bare strings
+  // until the loaders re-run. Reading `.title` off a string returned undefined
+  // and `.replace` threw, taking every country fiche to HTTP 500.
+  // @req REQ-001
+  it("still reads a legacy string source, which the database serves until the loaders re-run", () => {
+    const legacy = [
+      "- SIL Ethnologue — Mooré (mos). https://www.ethnologue.com/language/mos/",
+      "CIA World Factbook — Burkina Faso",
+    ] as unknown as Parameters<typeof transformSources>[0];
+
+    expect(transformSources(legacy)).toBe(
+      "SIL Ethnologue — Mooré (mos). https://www.ethnologue.com/language/mos/ · CIA World Factbook — Burkina Faso"
+    );
+  });
+
+  // @req REQ-001
+  it("skips an entry carrying neither a title nor text, instead of crashing the fiche", () => {
+    const malformed = [
+      { url: "https://example.org", tier: "unverified" },
+      { title: "Kept", url: null, tier: "official" },
+    ] as unknown as Parameters<typeof transformSources>[0];
+
+    expect(transformSources(malformed)).toBe("Kept");
+  });
 });
 
 describe("transformHistoricalFacts", () => {
