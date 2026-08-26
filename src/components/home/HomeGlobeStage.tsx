@@ -4,22 +4,12 @@ import dynamic from "next/dynamic";
 import { useCallback, useEffect, useState } from "react";
 
 import { HomeGlobeFallback } from "@/components/home/HomeGlobeFallback";
+import { canCreateWebglContext } from "@/lib/home/webglSupport";
 
 const LazyHomeGlobe = dynamic(
   () => import("@/components/home/HomeGlobe").then((mod) => mod.HomeGlobe),
   { ssr: false, loading: () => <HomeGlobeFallback /> }
 );
-
-function canCreateWebglContext(): boolean {
-  try {
-    const canvas = document.createElement("canvas");
-    return Boolean(
-      canvas.getContext("webgl") || canvas.getContext("experimental-webgl")
-    );
-  } catch {
-    return false;
-  }
-}
 
 /**
  * Capability gate (ARCH-014): the WebGL globe is a client island that only

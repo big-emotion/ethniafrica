@@ -47,6 +47,7 @@
     "audit:people-sources": "tsx scripts/audit/runPeopleSourceTierAudit.ts",
     "bundle-size:quiz": "tsx scripts/quiz-bundle-size.ts",
     "bundle-size:home-globe": "tsx scripts/home-globe-bundle-size.ts",
+    "bundle-size:axis-graph": "tsx scripts/axis-graph-bundle-size.ts",
     "openapi:generate": "tsx scripts/generate-openapi-spec.ts",
     "openapi:diff": "tsx scripts/openapi-diff.ts",
     "prepare": "husky"
