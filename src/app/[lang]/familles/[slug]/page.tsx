@@ -227,12 +227,7 @@ export default async function FamillesSlugPage({
 
   // Live version (revalidate = 3600 at segment level)
   return (
-    <PageLayout
-      language="fr"
-      sectionName="Familles linguistiques"
-      navOnNight
-      flushTop
-    >
+    <PageLayout language="fr" sectionName="Familles linguistiques" flushTop>
       <FicheSequence
         context={{
           entityType: "language-family",
