@@ -14,6 +14,12 @@ import type { AtlasTarget } from "@/lib/atlas/targets";
 const DEG2RAD = Math.PI / 180;
 const TWO_PI = 2 * Math.PI;
 
+/** The two ends of the projection morph, named so callers stop passing raw 0/1. */
+// @req REQ-117
+export const SPHERE_MORPH = 1;
+// @req REQ-117
+export const FLAT_MORPH = 0;
+
 export interface CameraPose {
   /** Radians around the polar axis. */
   yaw: number;
@@ -23,6 +29,13 @@ export interface CameraPose {
   zoom: number;
   offsetX: number;
   offsetY: number;
+  /**
+   * 0 = flat Mercator, 1 = sphere. It rides the camera rather than the
+   * paint layer because it is a framing choice like zoom: the reader asks
+   * what the flat map makes of a country, and the answer has to fly there
+   * on the same journey as everything else.
+   */
+  morph: number;
 }
 
 // @req REQ-117
@@ -45,6 +58,7 @@ export const IDLE_POSE: CameraPose = {
   zoom: MIN_ZOOM,
   offsetX: 0,
   offsetY: 0,
+  morph: SPHERE_MORPH,
 };
 
 /**
@@ -77,6 +91,7 @@ export function poseForTarget(
     zoom: zoomForAngularSpan(target.angularSpanDeg),
     offsetX: bias.offsetX,
     offsetY: bias.offsetY,
+    morph: SPHERE_MORPH,
   };
 }
 
@@ -123,5 +138,6 @@ export function interpolatePose(
     zoom: lerp(from.zoom, to.zoom, t),
     offsetX: lerp(from.offsetX, to.offsetX, t),
     offsetY: lerp(from.offsetY, to.offsetY, t),
+    morph: lerp(from.morph, to.morph, t),
   };
 }

@@ -242,7 +242,7 @@ export function AtlasGlobeCanvas({
       gl.clear(gl.COLOR_BUFFER_BIT);
       sphere?.draw({
         rotation: buildRotationMatrix(camera.yaw, camera.pitch),
-        morph: 1,
+        morph: camera.morph,
         aspect,
         zoom: camera.zoom,
         offsetX: camera.offsetX,

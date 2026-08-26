@@ -514,3 +514,79 @@ describe("AtlasGlobe", () => {
     });
   });
 });
+
+describe("AtlasGlobe — the reader's own camera (REQ-117)", () => {
+  // @req REQ-117
+  it("offers a surface that carries the name and the keyboard, so the canvas can stay paint", () => {
+    const { container } = render(
+      <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />
+    );
+
+    const surface = container.querySelector("[data-atlas-surface]");
+    expect(surface).not.toBeNull();
+    expect(surface).toHaveAttribute("aria-label");
+    expect(surface).toHaveAttribute("tabindex", "0");
+  });
+
+  // @req REQ-117
+  it("names the projection toggle for what pressing it will do", () => {
+    render(<AtlasGlobe overlay={countryOverlay} missingMessage="absent" />);
+
+    const toggle = screen.getByRole("button", {
+      name: "Ce que la carte plate en fait",
+    });
+    expect(toggle).toHaveAttribute("aria-pressed", "false");
+
+    fireEvent.click(toggle);
+
+    const back = screen.getByRole("button", { name: "Revenir au globe" });
+    expect(back).toHaveAttribute("aria-pressed", "true");
+  });
+
+  // @req REQ-117
+  it("returns the globe and releases the choice when the reader recentres", () => {
+    render(<AtlasGlobe overlay={countryOverlay} missingMessage="absent" />);
+
+    fireEvent.click(
+      screen.getByRole("button", { name: "Ce que la carte plate en fait" })
+    );
+    expect(
+      screen.getByRole("button", { name: "Revenir au globe" })
+    ).toBeTruthy();
+
+    fireEvent.click(screen.getByRole("button", { name: "Recentrer" }));
+
+    // Recentring undoes the projection as well as the turn — the mockup
+    // does both, in that order.
+    expect(
+      screen.getByRole("button", { name: "Ce que la carte plate en fait" })
+    ).toHaveAttribute("aria-pressed", "false");
+  });
+
+  // @req REQ-117
+  it("turns under the arrow keys without scrolling the page", () => {
+    const { container } = render(
+      <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />
+    );
+
+    const surface = container.querySelector(
+      "[data-atlas-surface]"
+    ) as HTMLElement;
+    const turned = fireEvent.keyDown(surface, { key: "ArrowRight" });
+
+    // fireEvent returns false once the handler has called preventDefault.
+    expect(turned).toBe(false);
+  });
+
+  // @req REQ-117
+  it("leaves a key it does not steer on to the page", () => {
+    const { container } = render(
+      <AtlasGlobe overlay={countryOverlay} missingMessage="absent" />
+    );
+
+    const surface = container.querySelector(
+      "[data-atlas-surface]"
+    ) as HTMLElement;
+    expect(fireEvent.keyDown(surface, { key: "Tab" })).toBe(true);
+  });
+});
