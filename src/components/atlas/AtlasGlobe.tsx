@@ -7,20 +7,35 @@ import {
   useRef,
   useState,
   type CSSProperties,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type PointerEvent as ReactPointerEvent,
   type ReactNode,
   type SVGProps,
 } from "react";
 
 import { AtlasFactsPanel } from "@/components/atlas/AtlasFactsPanel";
+import { AtlasTargetPicker } from "@/components/atlas/AtlasTargetPicker";
 import { AfricaBasemap } from "@/components/system/AfricaBasemap";
-import { poseForTarget, type CameraPose } from "@/lib/atlas/camera";
+import {
+  FLAT_MORPH,
+  SPHERE_MORPH,
+  poseForTarget,
+  type CameraPose,
+} from "@/lib/atlas/camera";
 import {
   basemapTransform,
   placeTargetOnBasemap,
   placeTargetOnSphere,
   type StagePlacement,
 } from "@/lib/atlas/markerPlacement";
-import type { AtlasOverlay, Ring } from "@/lib/atlas/overlays";
+import type { AtlasOverlay, LonLat, Ring } from "@/lib/atlas/overlays";
+import {
+  FOOTPRINT_DASH_ARRAY,
+  FOOTPRINT_STROKE_WIDTH_SVG,
+  FOOTPRINT_STROKE_WIDTH_SVG_FOCUSED,
+  footprintFillOpacity,
+  footprintStrokeOpacity,
+} from "@/lib/atlas/footprintStyle";
 import {
   biasForPanel,
   resolvePanelAnchor,
@@ -136,8 +151,77 @@ function TraceInPolygon({
   );
 }
 
+const FIELD_GRADIENT_ID = "atlas-people-field-gradient";
+const FIELD_MIN_RADIUS = 6;
+const FIELD_RADIUS_RANGE = 34;
+
 /**
- * The non-WebGL fallback: same three encodings as AtlasGlobeCanvas, drawn as
+ * Radius ∝ √weight, so the eye reads the blob's area rather than its diameter
+ * (atlas-charter §1). A people fiche weighs population and the continent scene
+ * weighs documented peoples, but a weight of 1 has to draw the same blob in
+ * both — hence one formula, called from both, rather than two that drift.
+ */
+function fieldRadius(weight: number): number {
+  return FIELD_MIN_RADIUS + FIELD_RADIUS_RANGE * Math.sqrt(Math.max(weight, 0));
+}
+
+function PeopleFieldDefs() {
+  return (
+    <defs>
+      <radialGradient id={FIELD_GRADIENT_ID}>
+        <stop offset="0%" stopColor="var(--accent)" stopOpacity={0.9} />
+        <stop offset="100%" stopColor="var(--accent)" stopOpacity={0} />
+      </radialGradient>
+    </defs>
+  );
+}
+
+/** One country's radial field, reduced to what the drawing needs: a centre and a 0..1 weight. */
+interface FieldBlob {
+  countryId: CountryId;
+  center: LonLat;
+  weight: number;
+}
+
+/**
+ * Circles with no stroke, ever. This component is handed centres and weights
+ * and nothing else — it has no ring to close even if a caller wanted one.
+ */
+function PeopleFieldCircles({
+  blobs,
+  chosenCountryId,
+}: {
+  blobs: FieldBlob[];
+  chosenCountryId: CountryId | null;
+}) {
+  return (
+    <>
+      {blobs.map((blob) => {
+        const { x, y } = projectLonLat(
+          blob.center.lon,
+          blob.center.lat,
+          BASEMAP_VIEWBOX
+        );
+        return (
+          <circle
+            key={blob.countryId}
+            cx={x}
+            cy={y}
+            r={fieldRadius(blob.weight)}
+            fill={`url(#${FIELD_GRADIENT_ID})`}
+            stroke="none"
+            opacity={
+              chosenCountryId && chosenCountryId !== blob.countryId ? 0.4 : 1
+            }
+          />
+        );
+      })}
+    </>
+  );
+}
+
+/**
+ * The non-WebGL fallback: the same encodings as AtlasGlobeCanvas, drawn as
  * flat SVG on the committed AfricaBasemap instead of a rotating sphere —
  * atlas-charter §1's rules (a people never gets a closed line) hold exactly
  * as much here as in the WebGL path, because both read the same overlay
@@ -152,57 +236,116 @@ function AtlasGlobeFallback({
   overlay,
   reducedMotion,
   pose,
-  focus,
+  cameraFocus,
+  chosenCountryId,
 }: {
   overlay: Exclude<AtlasOverlay, { kind: "people-field-missing" }>;
   reducedMotion: boolean;
   pose: CameraPose;
-  focus: AtlasTarget | null;
+  /** What the camera is pointed at, which is not always what the reader chose — the continent scene never flies. */
+  cameraFocus: LonLat | null;
+  chosenCountryId: CountryId | null;
 }) {
-  const figureTransform = basemapTransform(pose, focus?.center ?? null);
+  const figureTransform = basemapTransform(pose, cameraFocus);
 
   if (overlay.kind === "people-field") {
     return (
       <AfricaBasemap figureTransform={figureTransform}>
-        <defs>
-          <radialGradient id="atlas-people-field-gradient">
-            <stop offset="0%" stopColor="var(--accent)" stopOpacity={0.9} />
-            <stop offset="100%" stopColor="var(--accent)" stopOpacity={0} />
-          </radialGradient>
-        </defs>
-        {overlay.areas.map((area) => {
-          const { x, y } = projectLonLat(
-            area.center.lon,
-            area.center.lat,
-            BASEMAP_VIEWBOX
-          );
-          const radius = 6 + 34 * Math.sqrt(Math.max(area.populationShare, 0));
-          return (
-            <circle
-              key={area.countryId}
-              cx={x}
-              cy={y}
-              r={radius}
-              fill="url(#atlas-people-field-gradient)"
-              stroke="none"
-              opacity={focus && focus.countryId !== area.countryId ? 0.4 : 1}
+        <PeopleFieldDefs />
+        <PeopleFieldCircles
+          blobs={overlay.areas.map((area) => ({
+            countryId: area.countryId,
+            center: area.center,
+            weight: area.populationShare,
+          }))}
+          chosenCountryId={chosenCountryId}
+        />
+      </AfricaBasemap>
+    );
+  }
+
+  /**
+   * The continent scene: a geographic frame that locates, and radial fields
+   * that measure. `fill="none"` on every ring is the invariant — a filled
+   * country would encode the peoples counted inside it as a closed-border
+   * area, which is exactly what atlas-charter §1 forbids for a people. The
+   * areas carry no rings at all, so nothing here can outline one.
+   */
+  if (overlay.kind === "continent-field") {
+    return (
+      <AfricaBasemap figureTransform={figureTransform}>
+        <PeopleFieldDefs />
+        {overlay.frame.flatMap((country) =>
+          country.rings.map((ring, index) => (
+            <polygon
+              key={`${country.countryId}-${index}`}
+              points={ringToSvgPoints(ring)}
+              fill="none"
+              stroke="var(--afh-night-line)"
+              strokeWidth={1}
+              vectorEffect="non-scaling-stroke"
             />
+          ))
+        )}
+        <PeopleFieldCircles
+          blobs={overlay.areas.map((area) => ({
+            countryId: area.countryId,
+            center: area.center,
+            weight: area.documentedPeopleShare,
+          }))}
+          chosenCountryId={chosenCountryId}
+        />
+      </AfricaBasemap>
+    );
+  }
+
+  // The family footprint is a choropleth: each country carries its own weight,
+  // so each gets its own fill and its own stroke. Drawing the rings as one flat
+  // list — as this path used to — can only ever produce a single tint, which
+  // says "the family is here" and never "this is where it is concentrated".
+  if (overlay.kind === "family-footprint") {
+    return (
+      <AfricaBasemap figureTransform={figureTransform}>
+        {overlay.countries.map((country) => {
+          const isFocused = chosenCountryId === country.countryId;
+          const dimmed = chosenCountryId !== null && !isFocused;
+
+          return (
+            <g key={country.countryId} data-country={country.countryId}>
+              {country.rings.map((ring, index) => (
+                <polygon
+                  key={index}
+                  points={ringToSvgPoints(ring)}
+                  fill="var(--accent)"
+                  fillOpacity={footprintFillOpacity({
+                    weight: country.weight,
+                    dimmed,
+                  })}
+                  stroke={isFocused ? "var(--accent-tint)" : "var(--accent)"}
+                  strokeOpacity={footprintStrokeOpacity(dimmed)}
+                  strokeWidth={
+                    isFocused
+                      ? FOOTPRINT_STROKE_WIDTH_SVG_FOCUSED
+                      : FOOTPRINT_STROKE_WIDTH_SVG
+                  }
+                  // The boundary of an aggregate of presences, not a border.
+                  strokeDasharray={FOOTPRINT_DASH_ARRAY}
+                  vectorEffect="non-scaling-stroke"
+                />
+              ))}
+            </g>
           );
         })}
       </AfricaBasemap>
     );
   }
 
-  // A country-set (REQ-120) borrows the country outline's encoding rather than
-  // the family's: the dash is the charter's mark of a *derived* boundary, and
-  // a round's choices are not derived from anything. It skips the trace-in
-  // reveal all the same — a reader answering a round needs every choice
-  // legible on the first frame, not drawing itself in.
+  // A country-set (REQ-120) borrows the country outline's solid encoding —
+  // the dash is the charter's mark of a *derived* boundary, and a round's
+  // choices are not derived from anything. It skips the trace-in reveal all
+  // the same: a reader answering a round needs every choice legible on the
+  // first frame, not drawing itself in.
   const isTracedCountry = overlay.kind === "country-outline";
-  const isDerivedFamily = overlay.kind === "family-footprint";
-  const fillOpacity = isDerivedFamily
-    ? overlay.tint * 0.35
-    : overlay.fillOpacity;
 
   return (
     <AfricaBasemap figureTransform={figureTransform}>
@@ -213,7 +356,7 @@ function AtlasGlobeFallback({
             points={ringToSvgPoints(ring)}
             reducedMotion={reducedMotion}
             fill="var(--accent)"
-            fillOpacity={fillOpacity}
+            fillOpacity={overlay.fillOpacity}
             stroke="var(--accent)"
             strokeWidth={1.5}
             vectorEffect="non-scaling-stroke"
@@ -223,10 +366,9 @@ function AtlasGlobeFallback({
             key={`ring-${index}`}
             points={ringToSvgPoints(ring)}
             fill="var(--accent)"
-            fillOpacity={fillOpacity}
+            fillOpacity={overlay.fillOpacity}
             stroke="var(--accent)"
             strokeWidth={1.5}
-            strokeDasharray={isDerivedFamily ? "6 5" : undefined}
             vectorEffect="non-scaling-stroke"
           />
         )
@@ -310,6 +452,15 @@ export interface AtlasGlobeProps {
    */
   onTargetChosen?: (target: AtlasTarget) => void;
   className?: string;
+  /**
+   * How a target is offered. "markers" pins a pastille on each one, which reads
+   * well for the one or few targets a country or people fiche has. "list" is
+   * for a family footprint of seventeen countries, where the pastilles overlap
+   * into noise and the small ones stop being clickable.
+   */
+  targetPicker?: "markers" | "list";
+  /** Replaces the default legend, for a fiche whose drawing needs a different sentence. */
+  legend?: ReactNode;
 }
 
 /**
@@ -319,12 +470,24 @@ export interface AtlasGlobeProps {
  * per-entity accent (people ocre / country teal / family perv), which keeps
  * governing everything FicheSequence renders around it.
  */
+/** Matched to HomeGlobe, so the same drag travels the same distance on both. */
+const DRAG_RADIANS_PER_PIXEL = 0.006;
+const DRAG_PITCH_RADIANS_PER_PIXEL = 0.004;
+const KEY_STEP_RADIANS = 0.12;
+const PITCH_LIMIT_RADIANS = 1.1;
+
+function clampPitch(pitch: number): number {
+  return Math.min(PITCH_LIMIT_RADIANS, Math.max(-PITCH_LIMIT_RADIANS, pitch));
+}
+
+const GLOBE_SURFACE_LABEL =
+  "Globe de l'atlas. Glissez ou utilisez les flèches pour tourner.";
+
 const NIGHT_STAGE_STYLE: CSSProperties = {
   position: "relative",
   width: "100%",
-  aspectRatio: `${BASEMAP_VIEWBOX.width} / ${BASEMAP_VIEWBOX.height}`,
+  height: "var(--afh-globe-stage-height)",
   backgroundColor: "var(--afh-night-ground)",
-  borderRadius: "var(--afh-radius-xl)",
   overflow: "hidden",
 };
 
@@ -367,6 +530,8 @@ export function AtlasGlobe({
   targetFacts = defaultTargetFacts,
   onTargetChosen,
   className,
+  targetPicker = "markers",
+  legend,
 }: AtlasGlobeProps) {
   const [webglSupported, setWebglSupported] = useState(false);
   const [stage, setStage] = useState<HTMLDivElement | null>(null);
@@ -382,17 +547,123 @@ export function AtlasGlobe({
   }, []);
 
   const targets = useMemo(() => buildAtlasTargets(overlay), [overlay]);
+  // Read off the overlay rather than passed in: the counts and the targets have
+  // to describe the same footprint, and deriving both from one source is what
+  // guarantees it.
+  const memberCountByCountry = useMemo(() => {
+    if (overlay?.kind !== "family-footprint") return {};
+    return Object.fromEntries(
+      overlay.countries.map((country) => [
+        country.countryId,
+        country.memberCount,
+      ])
+    );
+  }, [overlay]);
   // Resolving the choice against the current targets is also what retires it:
   // an id the overlay no longer offers simply finds nothing, so a stale choice
   // cannot outlive the overlay that made it choosable.
   const chosen =
     targets.find((target) => target.countryId === chosenCountryId) ?? null;
 
+  /**
+   * The continent scene is already framed on its whole subject, so choosing a
+   * country reveals facts without moving the map: every other marker stays
+   * where the reader last saw it, and picking a second one stays one click
+   * rather than a hunt. Holding the camera still is the same route reduced
+   * motion takes — pose is IDLE_POSE and no frame loop ever starts.
+   */
+  const cameraFollowsChoice = overlay?.kind !== "continent-field";
+  const cameraFocus = cameraFollowsChoice ? chosen : null;
+
   const destination = useMemo(
-    () => (chosen ? poseForTarget(chosen, biasForPanel(anchor)) : null),
-    [chosen, anchor]
+    () =>
+      cameraFocus ? poseForTarget(cameraFocus, biasForPanel(anchor)) : null,
+    [cameraFocus, anchor]
   );
-  const pose = useGlobeCamera(destination, reducedMotion);
+  const flown = useGlobeCamera(
+    destination,
+    reducedMotion || !cameraFollowsChoice
+  );
+
+  // What the reader has done to the camera on top of wherever it flew.
+  // Kept as a delta rather than an absolute pose so a later fly-to still
+  // lands on its target: choosing a country is not undone by having
+  // dragged the globe first.
+  const [turn, setTurn] = useState({ yaw: 0, pitch: 0 });
+  const [flat, setFlat] = useState(false);
+  const dragging = useRef(false);
+  const lastPointer = useRef({ x: 0, y: 0 });
+
+  const pose: CameraPose = {
+    ...flown,
+    yaw: flown.yaw + turn.yaw,
+    pitch: clampPitch(flown.pitch + turn.pitch),
+    morph: flat ? FLAT_MORPH : SPHERE_MORPH,
+  };
+
+  const turnBy = (dYaw: number, dPitch: number) =>
+    setTurn((current) => ({
+      yaw: current.yaw + dYaw,
+      pitch: clampPitch(current.pitch + dPitch),
+    }));
+
+  const recentre = () => {
+    setTurn({ yaw: 0, pitch: 0 });
+    setFlat(false);
+    setChosenCountryId(null);
+  };
+
+  // Both pickers land here so a caller watching for choices — a game round
+  // waiting on a tap (REQ-120) — is notified whichever one the fiche mounted.
+  const chooseTarget = (countryId: CountryId) => {
+    setChosenCountryId(countryId);
+    const target = targets.find(
+      (candidate) => candidate.countryId === countryId
+    );
+    if (target) onTargetChosen?.(target);
+  };
+
+  const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    dragging.current = true;
+    lastPointer.current = { x: event.clientX, y: event.clientY };
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+  };
+
+  const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!dragging.current) return;
+    const dx = event.clientX - lastPointer.current.x;
+    const dy = event.clientY - lastPointer.current.y;
+    lastPointer.current = { x: event.clientX, y: event.clientY };
+    // Under a finger the surface has to keep up with the finger, so a drag
+    // moves the globe itself rather than a target it eases toward.
+    turnBy(dx * DRAG_RADIANS_PER_PIXEL, dy * DRAG_PITCH_RADIANS_PER_PIXEL);
+  };
+
+  const stopDragging = () => {
+    dragging.current = false;
+  };
+
+  const handleKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
+    switch (event.key) {
+      case "ArrowLeft":
+        turnBy(-KEY_STEP_RADIANS, 0);
+        break;
+      case "ArrowRight":
+        turnBy(KEY_STEP_RADIANS, 0);
+        break;
+      // Same convention as the drag: up sends the surface up, which is a
+      // decrease in pitch.
+      case "ArrowUp":
+        turnBy(0, -KEY_STEP_RADIANS);
+        break;
+      case "ArrowDown":
+        turnBy(0, KEY_STEP_RADIANS);
+        break;
+      default:
+        return;
+    }
+    event.preventDefault();
+  };
 
   if (!overlay || overlay.kind === "people-field-missing") {
     return (
@@ -402,11 +673,18 @@ export function AtlasGlobe({
     );
   }
 
+  // The continent scene stays on the SVG stage even where WebGL is
+  // available: the canvas does not draw its radial field, so climbing to it
+  // would trade the one signal the scene carries for a bare frame. Raising
+  // the sphere under the continent is step B of the plan, and it is gated
+  // on marker legibility, TTFB and Lighthouse budgets not yet measured.
+  const stageIsSphere = webglSupported && overlay.kind !== "continent-field";
+
   const facts = chosen ? targetFacts(chosen) : null;
   const place = (target: AtlasTarget): StagePlacement =>
-    webglSupported
+    stageIsSphere
       ? placeTargetOnSphere(target, pose)
-      : placeTargetOnBasemap(target, pose, chosen?.center ?? null);
+      : placeTargetOnBasemap(target, pose, cameraFocus?.center ?? null);
 
   return (
     <div
@@ -415,30 +693,107 @@ export function AtlasGlobe({
       className={cn(className)}
       style={NIGHT_STAGE_STYLE}
     >
-      {webglSupported ? (
-        <LazyAtlasGlobeCanvas overlay={overlay} pose={pose} />
+      {/* The canvas below stays aria-hidden — it is paint. This element is
+          what the reader actually operates, which is why the name, the role
+          and every handler live here rather than on the canvas. */}
+      <div
+        data-atlas-surface=""
+        role="application"
+        aria-label={GLOBE_SURFACE_LABEL}
+        tabIndex={0}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={stopDragging}
+        onPointerCancel={stopDragging}
+        onPointerLeave={stopDragging}
+        onKeyDown={handleKeyDown}
+        className="absolute inset-0 cursor-grab touch-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-current active:cursor-grabbing"
+      />
+
+      {stageIsSphere ? (
+        <LazyAtlasGlobeCanvas
+          overlay={overlay}
+          pose={pose}
+          focusedCountryId={chosenCountryId}
+        />
       ) : (
         <AtlasGlobeFallback
           overlay={overlay}
           reducedMotion={reducedMotion}
           pose={pose}
-          focus={chosen}
+          cameraFocus={cameraFocus?.center ?? null}
+          chosenCountryId={chosenCountryId}
         />
       )}
 
-      {targets.map((target) => (
-        <AtlasTargetMarker
-          key={target.countryId}
-          target={target}
-          placement={place(target)}
-          chosen={target.countryId === chosenCountryId}
-          label={targetFacts(target).title}
-          onChoose={() => {
-            setChosenCountryId(target.countryId);
-            onTargetChosen?.(target);
-          }}
-        />
-      ))}
+      {targetPicker === "markers" &&
+        targets.map((target) => (
+          <AtlasTargetMarker
+            key={target.countryId}
+            target={target}
+            placement={place(target)}
+            chosen={target.countryId === chosenCountryId}
+            label={targetFacts(target).title}
+            onChoose={() => chooseTarget(target.countryId)}
+          />
+        ))}
+
+      {targetPicker === "list" && targets.length > 0 && (
+        <div className="absolute left-1/2 top-3 z-[7] -translate-x-1/2">
+          <AtlasTargetPicker
+            targets={targets}
+            memberCountByCountry={memberCountByCountry}
+            chosenCountryId={chosenCountryId}
+            onChoose={chooseTarget}
+          />
+        </div>
+      )}
+
+      {/* Hidden below the panel breakpoint, as in the mockup: at that width
+          the bottom sheet already owns the space these would sit in. */}
+      {legend ?? (
+        <p
+          data-atlas-legend=""
+          className="pointer-events-none absolute inset-x-0 top-0 hidden p-3 text-xs min-[760px]:block"
+          style={{ color: "var(--afh-night-ink-2)" }}
+        >
+          Afrique à sa surface réelle. Glissez pour tourner.
+        </p>
+      )}
+
+      <div
+        data-atlas-toolbar=""
+        className="absolute inset-x-0 bottom-0 hidden gap-2 p-3 min-[760px]:flex"
+      >
+        {targetPicker === "list" && (
+          <button
+            type="button"
+            aria-pressed={chosenCountryId === null}
+            onClick={() => setChosenCountryId(null)}
+            className="rounded-full border px-3 py-1 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+            style={{ color: "var(--afh-night-ink-2)" }}
+          >
+            Toute l&apos;empreinte
+          </button>
+        )}
+        <button
+          type="button"
+          aria-pressed={flat}
+          onClick={() => setFlat((current) => !current)}
+          className="rounded-full border px-3 py-1 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+          style={{ color: "var(--afh-night-ink-2)" }}
+        >
+          {flat ? "Revenir au globe" : "Ce que la carte plate en fait"}
+        </button>
+        <button
+          type="button"
+          onClick={recentre}
+          className="rounded-full border px-3 py-1 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+          style={{ color: "var(--afh-night-ink-2)" }}
+        >
+          Recentrer
+        </button>
+      </div>
 
       {facts && (
         <AtlasFactsPanel

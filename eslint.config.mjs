@@ -25,6 +25,15 @@ const eslintConfig = [
   ...nextConfig,
   ...tsConfig,
 
+  // The reference mockups are a design oracle, not project source: nothing in
+  // src/ imports them, and the visual-parity specs compare against captures
+  // taken from them. They must stay byte-equivalent to the published artifacts,
+  // so neither --fix nor a formatter may touch them. .prettierignore already
+  // excludes them and names this file as doing the same.
+  {
+    ignores: ["docs/design/mockups/**"],
+  },
+
   // ETNI-21: ESLint custom-rule sources must remain CommonJS (the ESLint
   // plugin API is CJS). Scope the no-require-imports relaxation to these
   // files only — the files themselves still get parsed and linted for

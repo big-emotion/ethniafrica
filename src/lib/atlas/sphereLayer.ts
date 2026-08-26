@@ -84,8 +84,21 @@ const FRAGMENT_SHADER = `
   }
 `;
 
-const AMBIENT = 0.44;
-const LIMB_LIFT = 0.3;
+import { FICHE_LIGHTING } from "./globePalette";
+
+export interface SphereLighting {
+  /** Brightness floor on the unlit half, 0–1. */
+  ambient: number;
+  /** Strength of the warm limb lift. 0 leaves the edge to the fill. */
+  rim: number;
+}
+
+/**
+ * A fiche's atlas is always on the night surface (DEC-022), and always at
+ * the near framing, so it draws with FICHE_LIGHTING rather than the home
+ * hero's far-off night values.
+ */
+const NIGHT_LIGHTING: SphereLighting = FICHE_LIGHTING;
 
 /**
  * A margin of 1 puts the unit sphere edge-to-edge in clip space, which is
@@ -94,7 +107,14 @@ const LIMB_LIFT = 0.3;
  * describes. Only a caller with no overlay to align to (the home hero)
  * pulls the body in from the edge.
  */
-const DEFAULT_FIT_MARGIN = 1;
+/**
+ * Exported because the overlay programs must fit the surface exactly as the
+ * ground does. Two margins would put the boundary on the right shape at the
+ * wrong size — the failure the terrain and the outline are drawn together to
+ * avoid.
+ */
+// @req REQ-112
+export const DEFAULT_FIT_MARGIN = 1;
 
 export interface SphereDrawState {
   rotation: Mat3;
@@ -118,6 +138,13 @@ export interface SphereLayer {
    * second pass over 120 000 indices every frame.
    */
   setTissot(show: boolean): void;
+  /**
+   * Repaints the sphere for another surface — the home hero, when the
+   * reader switches between parchment and night. Same one upload as
+   * setTissot: rebuilding the layer would recompile the shaders, re-upload
+   * the mesh, and lose the angle the reader had turned the globe to.
+   */
+  setSurface(palette: GlobePalette, lighting: SphereLighting): void;
   dispose(): void;
 }
 
@@ -170,7 +197,9 @@ export function createSphereLayer(
   palette: GlobePalette,
   textureCanvas: HTMLCanvasElement,
   margin: number = DEFAULT_FIT_MARGIN,
-  showTissot = false
+  showTissot = false,
+  lighting: SphereLighting = NIGHT_LIGHTING,
+  showBorders = false
 ): SphereLayer | null {
   const vertexShader = compile(gl, gl.VERTEX_SHADER, VERTEX_SHADER);
   const fragmentShader = compile(gl, gl.FRAGMENT_SHADER, FRAGMENT_SHADER);
@@ -226,9 +255,19 @@ export function createSphereLayer(
 
   const texture = gl.createTexture();
 
+  // What the texture currently holds. setTissot and setSurface each change
+  // one of the two and repaint from both, so neither can undo the other.
+  let surfacePalette = palette;
+  let surfaceLighting = lighting;
+  let tissotVisible = showTissot;
+
   const uploadTexture = (showTissot: boolean) => {
+    tissotVisible = showTissot;
     if (textureContext) {
-      paintGlobeTexture(textureContext, palette, { showTissot });
+      paintGlobeTexture(textureContext, surfacePalette, {
+        showTissot,
+        showBorders,
+      });
     }
     gl.bindTexture(gl.TEXTURE_2D, texture);
     gl.texImage2D(
@@ -307,8 +346,8 @@ export function createSphereLayer(
       gl.uniform1f(uZoom, zoom);
       gl.uniform2f(uOffset, offsetX, offsetY);
       gl.uniform3f(uLight, 0.5, 0.42, 0.9);
-      gl.uniform1f(uAmbient, AMBIENT);
-      gl.uniform1f(uRim, LIMB_LIFT);
+      gl.uniform1f(uAmbient, surfaceLighting.ambient);
+      gl.uniform1f(uRim, surfaceLighting.rim);
 
       gl.drawElements(gl.TRIANGLES, mesh.indices.length, gl.UNSIGNED_SHORT, 0);
     },
@@ -316,6 +355,13 @@ export function createSphereLayer(
     setTissot(show) {
       if (disposed) return;
       uploadTexture(show);
+    },
+
+    setSurface(nextPalette, nextLighting) {
+      if (disposed) return;
+      surfacePalette = nextPalette;
+      surfaceLighting = nextLighting;
+      uploadTexture(tissotVisible);
     },
 
     dispose() {

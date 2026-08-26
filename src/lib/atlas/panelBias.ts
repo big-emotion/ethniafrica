@@ -14,11 +14,17 @@
 // @req REQ-117
 export const PANEL_SIDE_BREAKPOINT_PX = 760;
 
-/** Share of the stage each anchoring covers — must match AtlasFactsPanel's own sizing. */
+/**
+ * Share of the stage each anchoring covers — must match AtlasFactsPanel's
+ * own sizing. These are sized as fractions rather than in pixels precisely
+ * so the identity in the header above survives: the panel is a floating
+ * card now, inset and rounded, but it still covers exactly this much of
+ * the stage, so the camera can still be biased straight off the number.
+ */
 // @req REQ-117
-export const BOTTOM_SHEET_VIEW_FRACTION = 0.45;
+export const BOTTOM_SHEET_VIEW_FRACTION = 0.54;
 // @req REQ-117
-export const SIDE_PANEL_VIEW_FRACTION = 0.38;
+export const SIDE_PANEL_VIEW_FRACTION = 0.34;
 
 export type PanelAnchor = "bottom" | "side";
 

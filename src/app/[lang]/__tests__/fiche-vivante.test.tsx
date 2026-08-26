@@ -68,6 +68,7 @@ const {
 }));
 
 vi.mock("next/navigation", () => ({
+  useRouter: () => ({ push: vi.fn() }),
   notFound: vi.fn(() => {
     throw new Error("NEXT_NOT_FOUND");
   }),
@@ -84,6 +85,10 @@ vi.mock("@/api/v2/services/peopleService", () => ({
 
 vi.mock("@/api/v2/services/countryService", () => ({
   getCountryById: (...args: unknown[]) => getCountryById(...args),
+  getCountryIndex: async () => [
+    { id: "NGA", nameFr: "Nigeria" },
+    { id: "KEN", nameFr: "Kenya" },
+  ],
 }));
 
 vi.mock("@/api/v2/services/languageFamilyService", () => ({

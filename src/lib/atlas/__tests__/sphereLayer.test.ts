@@ -15,6 +15,17 @@ const palette: GlobePalette = {
   equator: "#7a8ce8",
   tissot: "rgba(51,163,144,0.30)",
   tissotEdge: "#33a390",
+  border: "rgba(232,185,106,0.28)",
+};
+
+/** The same roles on the other surface — see globePalette.ts. */
+const parchmentPalette: GlobePalette = {
+  ...palette,
+  ocean: "#e6dcc7",
+  graticule: "#cdbc9f",
+  land: "#b64e27",
+  coast: "#6b3a1c",
+  tissot: "rgba(51,163,144,0.28)",
 };
 
 function fakeGl() {
@@ -277,6 +288,51 @@ describe("sphereLayer — the shared textured globe (REQ-112)", () => {
 
     expect(gl.texImage2D.mock.calls.length).toBe(uploadsAtStart + 1);
     expect(gl.bufferData).toHaveBeenCalledTimes(4);
+  });
+
+  // The home hero switches surface under a globe the reader has already
+  // turned, so the swap has to go through the texture rather than through a
+  // new layer — the angle and the mesh both have to survive it.
+  // @req REQ-115
+  it("repaints the sphere in the new palette without rebuilding the mesh", () => {
+    const gl = fakeGl();
+    const painted = recordingTextureCanvas();
+    const layer = createSphereLayer(
+      gl as unknown as WebGLRenderingContext,
+      palette,
+      painted.canvas,
+      1,
+      false,
+      { ambient: 0.44, rim: 0.3 }
+    );
+    const uploadsAtStart = gl.texImage2D.mock.calls.length;
+
+    layer!.setSurface(parchmentPalette, { ambient: 0.86, rim: 0 });
+    layer!.draw({ rotation: identity, morph: 1, aspect: 1 });
+
+    expect(painted.fillStyles).toContain(parchmentPalette.ocean);
+    expect(gl.texImage2D.mock.calls.length).toBe(uploadsAtStart + 1);
+    expect(gl.bufferData).toHaveBeenCalledTimes(4);
+    expect(gl.uniform1f).toHaveBeenCalledWith("uAmbient", 0.86);
+    expect(gl.uniform1f).toHaveBeenCalledWith("uRim", 0);
+  });
+
+  // Two independent switches over one texture: repainting for a surface
+  // must not quietly turn the indicatrices back off.
+  // @req REQ-115
+  it("keeps the discs the reader chose across a surface swap", () => {
+    const painted = recordingTextureCanvas();
+    const layer = createSphereLayer(
+      fakeGl() as unknown as WebGLRenderingContext,
+      palette,
+      painted.canvas,
+      1,
+      true
+    );
+
+    layer!.setSurface(parchmentPalette, { ambient: 0.86, rim: 0 });
+
+    expect(painted.fillStyles).toContain(parchmentPalette.tissot);
   });
 
   // @req REQ-112

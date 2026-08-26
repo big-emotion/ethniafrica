@@ -187,10 +187,12 @@
   --afh-atlas-land: var(--afh-color-earth-bg);
   --afh-atlas-coastline: var(--afh-color-earth);
 
-  /* Atlas — the shared textured sphere (REQ-112/REQ-116). The globe is
-     dataviz, and DEC-022 puts dataviz on the Night surface whatever the
-     reader's page theme, so this group has no parchment counterpart: a
-     lit body reads as a body only against a dark sky.
+  /* Atlas — the shared textured sphere (REQ-112/REQ-116), night surface.
+     DEC-022 puts dataviz on the Night surface, which is still what a fiche's
+     atlas does whatever the reader's page theme. The home's globe is the one
+     exception: it is the page's subject rather than a panel inside it, and a
+     dark disc punched through a parchment page read as a hole — so it takes
+     the parchment counterpart below when the reader is on parchment.
      Ocean and land are darker/warmer siblings of the night ground rather
      than new hues; coast and equator reuse existing tokens outright. */
   --afh-globe-ocean: #120e0a;
@@ -211,6 +213,37 @@
      no landmass and no boundary ever wears. */
   --afh-globe-tissot: rgba(51, 163, 144, 0.3);
   --afh-globe-tissot-edge: var(--afh-cat-teal);
+  /* National boundaries. Faint on purpose: they are the frame the chosen
+     country is read against, never a second subject competing with it.
+     Drawn under every highlight, so the surlignage always wins. */
+  --afh-globe-border: rgba(232, 185, 106, 0.28);
+
+  /* Atlas — the same sphere on the parchment surface. Role for role with
+     the night group above, so nothing downstream learns which surface it
+     is painting; only the values differ.
+
+     The relation between ocean and page is what flips. On night the ocean
+     IS the ground, and the body is separated from it by the lit limb; on
+     parchment the ocean is a shade deeper than the page (--afh-color-bg),
+     so the disc states its own edge and needs no rim — see GLOBE_LIGHTING
+     in globePalette.ts, which is the other half of this pair.
+
+     Land is the terracotta the rest of the parchment surface already uses
+     for a warm foreground, so the continent stays the one mass painted as
+     terrain without introducing a hue the charter does not have. */
+  --afh-globe-parchment-ocean: #e6dcc7;
+  --afh-globe-parchment-graticule: #cdbc9f;
+  --afh-globe-parchment-graticule-major: #b09a78;
+  --afh-globe-parchment-land: var(--afh-color-terracotta);
+  /* The far continents, in the page's own ink at low alpha — the mirror of
+     the night group's hero ink: faint enough that Africa alone still reads
+     as the painted one. */
+  --afh-globe-parchment-land-far: rgba(44, 32, 24, 0.16);
+  --afh-globe-parchment-coast: #6b3a1c;
+  --afh-globe-parchment-equator: var(--afh-cat-perv);
+  --afh-globe-parchment-tissot: rgba(51, 163, 144, 0.28);
+  --afh-globe-parchment-tissot-edge: var(--afh-cat-teal);
+  --afh-globe-parchment-border: rgba(107, 58, 28, 0.26);
 
   /* Atlas — MigrationPathLayer overlay (Epic 12, Story 12.9, ETNI-522).
      Active/selected state is never color-alone: stroke-width + opacity in

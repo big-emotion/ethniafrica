@@ -6,6 +6,7 @@ interface PeoplesSectionProps {
   data: PeoplesData;
 }
 
+// @req REQ-092
 export function PeoplesSection({ data }: PeoplesSectionProps) {
   if (data.rows.length === 0) return null;
 
@@ -43,6 +44,7 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
 
       {/* Visual demographic bar */}
       <DemoBar rows={data.rows} />
+      <CoverageNote rows={data.rows} />
 
       {/* People rows */}
       <div className="mt-3 md:mt-4">
@@ -62,9 +64,21 @@ export function PeoplesSection({ data }: PeoplesSectionProps) {
 // DemoBar
 // ==========================================
 
+/**
+ * Segments are sized as a share of the whole country, not stretched to
+ * fill the bar. Under flex-grow the bar always reached the right-hand
+ * edge, so a country whose documented peoples account for 60% of it read
+ * exactly like one fully accounted for — the FR28 shortfall was being
+ * hidden by the very chart meant to show it. The remainder is left empty
+ * and named underneath.
+ */
 function DemoBar({ rows }: { rows: PeopleRow[] }) {
+  const declared = declaredShare(rows);
+
   return (
     <div
+      data-demo-bar=""
+      data-declared-share={declared}
       className="flex h-3 md:h-4 xl:h-[18px] rounded-md xl:rounded-[9px] overflow-hidden"
       style={{ gap: "var(--country-bar-gap)" }}
     >
@@ -72,13 +86,43 @@ function DemoBar({ rows }: { rows: PeopleRow[] }) {
         <div
           key={i}
           style={{
-            flex: row.percentage,
+            width: `${row.percentage}%`,
             background: getDemoColor(row.colorIndex),
           }}
           title={`${row.name} — ${row.percentage}%`}
         />
       ))}
     </div>
+  );
+}
+
+/** How much of the country the fiche's peoples actually account for. */
+// @req REQ-092
+export function declaredShare(rows: PeopleRow[]): number {
+  return Math.round(
+    rows.reduce((total, row) => total + (row.percentage || 0), 0)
+  );
+}
+
+/**
+ * FR28: per-country shares are meant to sum to 100, and the validator now
+ * fails the build outside [99, 101]. A fiche can still be read while its
+ * splits are being re-sourced, so where the total falls short the page
+ * says so rather than letting the bar imply full coverage.
+ */
+function CoverageNote({ rows }: { rows: PeopleRow[] }) {
+  const declared = declaredShare(rows);
+  if (declared >= 99) return null;
+
+  return (
+    <p
+      data-demo-coverage-note=""
+      className="mt-[6px] text-[10px] xl:text-[11px]"
+      style={{ color: "var(--country-text-soft)" }}
+    >
+      Les peuples documentés ici représentent {declared}&nbsp;% de la population
+      du pays. Le reste n&apos;est pas encore réparti dans le corpus.
+    </p>
   );
 }
 

@@ -14,6 +14,12 @@ import type { AtlasTarget } from "@/lib/atlas/targets";
 const DEG2RAD = Math.PI / 180;
 const TWO_PI = 2 * Math.PI;
 
+/** The two ends of the projection morph, named so callers stop passing raw 0/1. */
+// @req REQ-117
+export const SPHERE_MORPH = 1;
+// @req REQ-117
+export const FLAT_MORPH = 0;
+
 export interface CameraPose {
   /** Radians around the polar axis. */
   yaw: number;
@@ -23,6 +29,13 @@ export interface CameraPose {
   zoom: number;
   offsetX: number;
   offsetY: number;
+  /**
+   * 0 = flat Mercator, 1 = sphere. It rides the camera rather than the
+   * paint layer because it is a framing choice like zoom: the reader asks
+   * what the flat map makes of a country, and the answer has to fly there
+   * on the same journey as everything else.
+   */
+  morph: number;
 }
 
 // @req REQ-117
@@ -45,6 +58,7 @@ export const IDLE_POSE: CameraPose = {
   zoom: MIN_ZOOM,
   offsetX: 0,
   offsetY: 0,
+  morph: SPHERE_MORPH,
 };
 
 /**
@@ -69,7 +83,8 @@ export function zoomForAngularSpan(angularSpanDeg: number): number {
 // @req REQ-117
 export function poseForTarget(
   target: AtlasTarget,
-  bias: CameraBias
+  bias: CameraBias,
+  morph: number = SPHERE_MORPH
 ): CameraPose {
   return {
     yaw: -target.center.lon * DEG2RAD,
@@ -77,6 +92,10 @@ export function poseForTarget(
     zoom: zoomForAngularSpan(target.angularSpanDeg),
     offsetX: bias.offsetX,
     offsetY: bias.offsetY,
+    // Carried, not reset: choosing a country does not change which surface the
+    // reader is on. A caller that omits it gets the sphere, which is where a
+    // fiche opens.
+    morph,
   };
 }
 
@@ -123,5 +142,11 @@ export function interpolatePose(
     zoom: lerp(from.zoom, to.zoom, t),
     offsetX: lerp(from.offsetX, to.offsetX, t),
     offsetY: lerp(from.offsetY, to.offsetY, t),
+    // Clamped: the surface is only defined between its two states, and an
+    // overshooting easing would ask the shader to extrapolate past the plane.
+    morph: Math.min(
+      SPHERE_MORPH,
+      Math.max(FLAT_MORPH, lerp(from.morph, to.morph, t))
+    ),
   };
 }

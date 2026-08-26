@@ -4,28 +4,38 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { HomeGlobe } from "@/components/home/HomeGlobe";
 import { rotateSpherePoint, type Mat3 } from "@/lib/atlas/projection";
 
-const { createSphereLayerMock, drawMock, disposeMock, setTissotMock } =
-  vi.hoisted(() => ({
-    createSphereLayerMock: vi.fn(),
-    drawMock: vi.fn(),
-    disposeMock: vi.fn(),
-    setTissotMock: vi.fn(),
-  }));
+const {
+  createSphereLayerMock,
+  drawMock,
+  disposeMock,
+  setTissotMock,
+  setSurfaceMock,
+  resolveGlobePaletteMock,
+  resolvedTheme,
+} = vi.hoisted(() => ({
+  createSphereLayerMock: vi.fn(),
+  drawMock: vi.fn(),
+  disposeMock: vi.fn(),
+  setTissotMock: vi.fn(),
+  setSurfaceMock: vi.fn(),
+  resolveGlobePaletteMock: vi.fn(),
+  resolvedTheme: { current: "light" as string | undefined },
+}));
 
 vi.mock("@/lib/atlas/sphereLayer", () => ({
   createSphereLayer: createSphereLayerMock,
 }));
 
+vi.mock("next-themes", () => ({
+  useTheme: () => ({ resolvedTheme: resolvedTheme.current }),
+}));
+
 vi.mock("@/lib/atlas/globePalette", () => ({
-  resolveGlobePalette: () => ({
-    ocean: "#191009",
-    graticule: "#3b2d1a",
-    graticuleMajor: "#443521",
-    land: "#6b4a22",
-    landFar: "rgba(241,231,216,0.40)",
-    coast: "#e8b96a",
-    equator: "#7a8ce8",
-  }),
+  GLOBE_LIGHTING: {
+    night: { ambient: 0.44, rim: 0.3 },
+    parchment: { ambient: 0.86, rim: 0 },
+  },
+  resolveGlobePalette: resolveGlobePaletteMock,
 }));
 
 function fakeGl() {
@@ -59,10 +69,23 @@ describe("HomeGlobe — the hero's textured sphere (REQ-112)", () => {
     drawMock.mockReset();
     disposeMock.mockReset();
     setTissotMock.mockReset();
+    setSurfaceMock.mockReset();
+    resolveGlobePaletteMock.mockReset();
+    resolveGlobePaletteMock.mockImplementation((surface: string) => ({
+      ocean: surface === "parchment" ? "#e6dcc7" : "#191009",
+      graticule: "#3b2d1a",
+      graticuleMajor: "#443521",
+      land: "#6b4a22",
+      landFar: "rgba(241,231,216,0.40)",
+      coast: "#e8b96a",
+      equator: "#7a8ce8",
+    }));
+    resolvedTheme.current = "light";
     createSphereLayerMock.mockReturnValue({
       draw: drawMock,
       dispose: disposeMock,
       setTissot: setTissotMock,
+      setSurface: setSurfaceMock,
     });
 
     matchMediaMatches = false;
@@ -330,7 +353,8 @@ describe("HomeGlobe — the hero's textured sphere (REQ-112)", () => {
       expect.anything(),
       expect.anything(),
       expect.any(Number),
-      true
+      true,
+      expect.anything()
     );
 
     fireEvent.click(toggle);
@@ -382,6 +406,46 @@ describe("HomeGlobe — the hero's textured sphere (REQ-112)", () => {
     const [state] = drawMock.mock.calls.at(-1)!;
     expect(state.morph).toBe(0);
     expect(frames.size).toBe(0);
+  });
+
+  // The sphere is a painted texture, not a CSS surface, so the reader's
+  // parchment/night choice cannot reach it through the cascade. It has to
+  // be resolved and handed to the layer, or a parchment page carries a
+  // night globe.
+  // @req REQ-112
+  // @req REQ-115
+  it("paints the sphere on the surface the reader chose", () => {
+    render(<HomeGlobe />);
+
+    expect(resolveGlobePaletteMock).toHaveBeenCalledWith("parchment");
+    expect(createSphereLayerMock.mock.calls[0][1].ocean).toBe("#e6dcc7");
+  });
+
+  // @req REQ-112
+  // @req REQ-115
+  it("paints the night sphere when the reader is on the night surface", () => {
+    resolvedTheme.current = "dark";
+
+    render(<HomeGlobe />);
+
+    expect(resolveGlobePaletteMock).toHaveBeenCalledWith("night");
+    expect(createSphereLayerMock.mock.calls[0][1].ocean).toBe("#191009");
+  });
+
+  // Repainting the texture is one upload; rebuilding the layer would mean
+  // recompiling the shaders and re-uploading 120 000 indices, and would
+  // drop the angle the reader had turned the globe to.
+  // @req REQ-115
+  it("repaints the existing sphere when the reader switches surface", () => {
+    const { rerender } = render(<HomeGlobe />);
+    createSphereLayerMock.mockClear();
+
+    resolvedTheme.current = "dark";
+    rerender(<HomeGlobe />);
+
+    expect(setSurfaceMock).toHaveBeenCalledTimes(1);
+    expect(setSurfaceMock.mock.calls[0][0].ocean).toBe("#191009");
+    expect(createSphereLayerMock).not.toHaveBeenCalled();
   });
 
   // @req REQ-112

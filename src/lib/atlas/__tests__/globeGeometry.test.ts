@@ -7,6 +7,7 @@ import {
   buildRingFan,
   buildRingLineLoop,
 } from "../globeGeometry";
+import { lonLatToFlat } from "@/lib/atlas/sphereMesh";
 
 const square: Ring = [
   { lon: 0, lat: 0 },
@@ -59,5 +60,38 @@ describe("buildPointField", () => {
     expect(geometry.weights[0]).toBeCloseTo(1);
     expect(geometry.weights[1]).toBeCloseTo(0.3);
     expect(geometry.positions).toHaveLength(6);
+  });
+});
+
+describe("flat positions on ring geometry (REQ-112)", () => {
+  // @req REQ-112
+  it("emits one flat position per sphere position, on both ring geometries", () => {
+    // The morph interpolates between the two arrays vertex by vertex, so a
+    // mismatch in length would slide the boundary off the ground it outlines.
+    const loop = buildRingLineLoop(square);
+    expect(loop.flatPositions.length).toBe(loop.positions.length);
+
+    const fan = buildRingFan(square);
+    expect(fan.flatPositions.length).toBe(fan.positions.length);
+  });
+
+  // @req REQ-112
+  it("places a ring vertex exactly where the ground puts that lon/lat", () => {
+    // The one property that matters: the trace and the terrain under it agree
+    // about where a coordinate lands on the flat map.
+    const loop = buildRingLineLoop(square);
+    const expected = lonLatToFlat(square[0].lon, square[0].lat);
+
+    expect(loop.flatPositions[0]).toBeCloseTo(expected.x, 6);
+    expect(loop.flatPositions[1]).toBeCloseTo(expected.y, 6);
+    expect(loop.flatPositions[2]).toBeCloseTo(expected.z, 6);
+  });
+
+  // @req REQ-112
+  it("keeps the flat plane flat", () => {
+    const loop = buildRingLineLoop(square);
+    for (let i = 2; i < loop.flatPositions.length; i += 3) {
+      expect(loop.flatPositions[i]).toBe(0);
+    }
   });
 });

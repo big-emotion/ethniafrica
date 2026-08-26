@@ -1,4 +1,5 @@
 import type { FicheSource } from "@/types/afrik";
+import type { SourceTier } from "@/types/sources";
 
 /**
  * The display text of a fiche `sources[]` entry.
@@ -37,4 +38,47 @@ export function ficheSourceLine(
     .map(ficheSourceLabel)
     .filter((label): label is string => label !== null)
     .join(" · ");
+}
+
+/**
+ * One fiche source, kept whole. `ficheSourceLine` flattens the same
+ * entries to a single string, which is all the people fiche needs; a
+ * surface that shows each source's standing needs the parts instead.
+ */
+export interface FicheSourceEntry {
+  label: string;
+  url: string | null;
+  standing: SourceTier | "needs_review";
+  notes?: string;
+}
+
+/**
+ * The same entries as `ficheSourceLine`, in fiche order and with the same
+ * malformed ones dropped, but structured. A legacy bare string carries no
+ * standing of its own, so it reads as awaiting review rather than being
+ * asserted to be unverified.
+ */
+// @req REQ-001
+export function ficheSourceEntries(
+  sources?: Array<FicheSource | string> | null
+): FicheSourceEntry[] {
+  if (!sources || sources.length === 0) return [];
+
+  return sources.flatMap((source) => {
+    const label = ficheSourceLabel(source);
+    if (label === null) return [];
+
+    if (typeof source === "string") {
+      return [{ label, url: null, standing: "needs_review" as const }];
+    }
+
+    return [
+      {
+        label,
+        url: source.url ?? null,
+        standing: source.tier ?? ("needs_review" as const),
+        ...(source.notes === undefined ? {} : { notes: source.notes }),
+      },
+    ];
+  });
 }

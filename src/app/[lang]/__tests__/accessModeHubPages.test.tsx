@@ -12,6 +12,14 @@ vi.mock("@/lib/hubs/moduleAvailability", () => ({
   getHubModules: getHubModulesMock,
 }));
 
+const { getContinentPeopleCountsMock } = vi.hoisted(() => ({
+  getContinentPeopleCountsMock: vi.fn(async () => ({ NGA: 68, TZA: 99 })),
+}));
+
+vi.mock("@/api/v2/services/continentPeopleCounts", () => ({
+  getContinentPeopleCounts: getContinentPeopleCountsMock,
+}));
+
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({ children }: { children: React.ReactNode }) => (
     <div data-testid="page-layout">{children}</div>
@@ -37,23 +45,24 @@ const explorerModules: HubModule[] = [
     available: true,
   },
   {
-    id: "noms",
-    name: "Noms & appellations",
+    id: "familles",
+    name: "L'arbre des familles",
     accessMode: "explorer",
-    page: "names",
+    page: "families",
     availability: "data",
-    dataSource: "name_records",
+    dataSource: "afrik_language_families",
     available: false,
   },
 ];
 
 const comprendreModules: HubModule[] = [
   {
-    id: "doctrine",
-    name: "La doctrine éditoriale",
+    id: "noms",
+    name: "Noms & appellations",
     accessMode: "comprendre",
-    page: "doctrine",
-    availability: "static",
+    page: "names",
+    availability: "data",
+    dataSource: "name_records",
     available: true,
   },
   {
@@ -65,6 +74,14 @@ const comprendreModules: HubModule[] = [
     dataSource: "migration_events",
     available: false,
   },
+  {
+    id: "doctrine",
+    name: "La doctrine éditoriale",
+    accessMode: "comprendre",
+    page: "doctrine",
+    availability: "static",
+    available: true,
+  },
 ];
 
 const jouerModules: HubModule[] = [
@@ -73,8 +90,8 @@ const jouerModules: HubModule[] = [
     name: "Le quiz",
     accessMode: "jouer",
     page: "quiz",
-    availability: "data",
-    dataSource: "quiz_questions",
+    availability: "flagged",
+    featureFlag: "quiz",
     available: true,
   },
   {
@@ -112,7 +129,52 @@ describe("access-mode hub routes (REQ-114)", () => {
     expect(screen.getByTestId("hub-module-link-peuples")).toBeInTheDocument();
     expect(screen.getByTestId("hub-module-link-recherche")).toBeInTheDocument();
     expect(
-      screen.getByTestId("hub-module-unavailable-noms")
+      screen.getByTestId("hub-module-unavailable-familles")
+    ).toBeInTheDocument();
+  });
+
+  // The four module links are server-rendered and unconditional, so the
+  // map is never the only way in. A count that fails costs the scene its
+  // data, not the reader their route.
+  // @req REQ-114
+  it("still lists the explorer modules when the continent counts fail", async () => {
+    getHubModulesMock.mockResolvedValueOnce(explorerModules);
+    getContinentPeopleCountsMock.mockRejectedValueOnce(
+      new Error("supabase unreachable")
+    );
+    const { default: ExplorerHubPage } = await import("../explorer/page");
+
+    render(await ExplorerHubPage());
+
+    expect(screen.getByTestId("hub-module-link-peuples")).toBeInTheDocument();
+    expect(screen.getByTestId("hub-module-link-recherche")).toBeInTheDocument();
+  });
+
+  // Three axes, three scenes: what stops the hubs from reading as the same
+  // list under three labels.
+  // @req REQ-114
+  it("mounts a distinct scene on each of the three hubs", async () => {
+    getHubModulesMock.mockResolvedValueOnce(explorerModules);
+    const { default: ExplorerHubPage } = await import("../explorer/page");
+    const { unmount: unmountExplorer } = render(await ExplorerHubPage());
+    expect(
+      screen.getByTestId("access-mode-hub-explorer-scene")
+    ).toBeInTheDocument();
+    unmountExplorer();
+
+    getHubModulesMock.mockResolvedValueOnce(comprendreModules);
+    const { default: ComprendreHubPage } = await import("../comprendre/page");
+    const { unmount: unmountComprendre } = render(await ComprendreHubPage());
+    expect(
+      screen.getByTestId("access-mode-hub-comprendre-scene")
+    ).toBeInTheDocument();
+    unmountComprendre();
+
+    getHubModulesMock.mockResolvedValueOnce(jouerModules);
+    const { default: JouerHubPage } = await import("../jouer/page");
+    render(await JouerHubPage());
+    expect(
+      screen.getByTestId("access-mode-hub-jouer-scene")
     ).toBeInTheDocument();
   });
 
@@ -128,6 +190,7 @@ describe("access-mode hub routes (REQ-114)", () => {
       screen.getByTestId("access-mode-hub-comprendre")
     ).toBeInTheDocument();
     expect(screen.getByTestId("hub-module-link-doctrine")).toBeInTheDocument();
+    expect(screen.getByTestId("hub-module-link-noms")).toBeInTheDocument();
     expect(
       screen.getByTestId("hub-module-unavailable-frise")
     ).toBeInTheDocument();

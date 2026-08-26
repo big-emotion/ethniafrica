@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { connection } from "next/server";
 import { headers } from "next/headers";
-import { Fraunces, Nunito_Sans } from "next/font/google";
+import { Fraunces, Nunito_Sans, JetBrains_Mono } from "next/font/google";
 import "@/index.css";
 import { Providers } from "./providers";
 import { TypeformPreload } from "@/components/TypeformPreload";
@@ -19,6 +19,16 @@ const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-nunito-sans",
+});
+
+// The atlas type scale leans on mono for overlines, field paths and every
+// figure that has to align in a column (--afh-font-mono in type.css). Until it
+// was loaded here the token fell through to the system monospace, whose metrics
+// differ enough that a tabular-nums column stops lining up.
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-jetbrains-mono",
 });
 
 // @req REQ-044
@@ -65,7 +75,7 @@ export default async function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${fraunces.variable} ${nunitoSans.variable}`}
+      className={`${fraunces.variable} ${nunitoSans.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <body className="font-sans antialiased">
