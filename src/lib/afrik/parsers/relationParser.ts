@@ -5,17 +5,14 @@
 
 import { z } from "zod";
 import type { RelationRecord } from "@/types/relations";
+import { ficheSourceTierSchema } from "./ficheSourceTier";
 
 const relationSourceSchema = z.object({
   title: z.string().min(1),
   author: z.string().min(1),
   year: z.number().int(),
   url: z.string().min(1),
-  tier: z.union([z.literal(1), z.literal(2)], {
-    errorMap: () => ({
-      message: "tier must be 1 or 2 — Tier 3 sources are forbidden",
-    }),
-  }),
+  tier: ficheSourceTierSchema,
   notes: z.string().optional(),
 });
 
@@ -55,7 +52,7 @@ export const relationSchema = z
     period: relationPeriodSchema,
     description: z.string().min(1),
     sources: z.array(relationSourceSchema).min(1, {
-      message: "at least one source (Tier 1 or Tier 2) is required",
+      message: "at least one tiered source is required",
     }),
   })
   .refine((record) => record.peopleIdA !== record.peopleIdB, {

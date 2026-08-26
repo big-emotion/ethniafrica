@@ -42,8 +42,10 @@ describe("ContributionForm", () => {
     expect(container.firstElementChild?.className).toContain("sm:p-6");
   });
 
+  // An off-catalogue citation used to disable the submit button outright.
+  // It is now accepted and labelled, and the notice explains the consequence.
   // @req REQ-092
-  it("shows that an unknown citation requires review before submitting JSON", () => {
+  it("accepts an off-catalogue citation and warns it lowers confidence", () => {
     const { container } = renderContributionForm();
 
     fireEvent.change(container.querySelector("select")!, {
@@ -58,9 +60,14 @@ describe("ContributionForm", () => {
       },
     });
 
+    const notice = screen.getByRole("status");
+    expect(notice).toHaveTextContent("Non vérifiée");
+    expect(notice).toHaveTextContent("indice de confiance");
+    // Advisory, not an error: the reserved error token stays out of it.
+    expect(notice.className).not.toContain("afh-error");
     expect(
-      screen.getByText("Cette source devra être examinée avant publication.")
-    ).toBeInTheDocument();
+      screen.getByRole("button", { name: "Soumettre la contribution" })
+    ).toBeEnabled();
   });
 
   // @req REQ-092

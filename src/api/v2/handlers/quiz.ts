@@ -14,6 +14,7 @@ import {
   type QuizSessionQuestion,
 } from "@/api/v2/services/quizService";
 import { DIFFICULTY_RUNGES, type QuizAudience } from "@/lib/quiz/segmentPolicy";
+import { SOURCE_TIERS } from "@/types/sources";
 import { createApiResponse, type ApiEnvelope } from "@/api/v2/utils/response";
 import type {
   QuizSessionQuery,
@@ -56,12 +57,9 @@ interface SourceRow {
 }
 
 /** Lower rank = higher priority. Unknown/null tiers sort last. */
-const SOURCE_TIER_RANK: Record<string, number> = {
-  primary: 0,
-  secondary: 1,
-  tertiary: 2,
-  "ai-enriched": 3,
-};
+const SOURCE_TIER_RANK: Record<string, number> = Object.fromEntries(
+  SOURCE_TIERS.map((tier, rank) => [tier, rank])
+);
 
 async function getSourceRefsMap(
   supabase: ReturnType<typeof createServerClient>,

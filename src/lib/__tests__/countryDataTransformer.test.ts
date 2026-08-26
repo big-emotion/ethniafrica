@@ -115,9 +115,21 @@ const bfaCountry: CountryDetail = {
       "Relations historiques avec le Mali (commerce), la Côte d'Ivoire (commerce, migrations), le Ghana (Dagara, commerce). Intégration dans la CEDEAO et l'UEMOA.",
   },
   sources: [
-    "SIL Ethnologue – Languages of Burkina Faso",
-    "CIA World Factbook – Burkina Faso",
-    "ONU / UNFPA – Démographie Burkina Faso 2025",
+    {
+      title: "SIL Ethnologue – Languages of Burkina Faso",
+      url: null,
+      tier: "unverified",
+    },
+    {
+      title: "CIA World Factbook – Burkina Faso",
+      url: null,
+      tier: "unverified",
+    },
+    {
+      title: "ONU / UNFPA – Démographie Burkina Faso 2025",
+      url: null,
+      tier: "unverified",
+    },
   ],
   demographics: {
     peoples: [

@@ -48,7 +48,9 @@ export const NIGERIA: CountryDetail = {
       { name: "Yoruba", population: 38_000_000, percentageInCountry: 18 },
     ],
   },
-  sources: ["CIA World Factbook, 2025"],
+  sources: [
+    { title: "CIA World Factbook, 2025", url: null, tier: "unverified" },
+  ],
 };
 
 export const NIGER_CONGO: LanguageFamilyDetail = {
@@ -62,7 +64,7 @@ export const NIGER_CONGO: LanguageFamilyDetail = {
   linguisticCharacteristics: { typology: "Classes nominales" },
   associatedPeoples: [{ name: "Yoruba", peopleId: "PPL_YORUBA" }],
   historyAndOrigins: { probableOrigin: "Bassin du Niger" },
-  sources: ["Glottolog 5.0"],
+  sources: [{ title: "Glottolog 5.0", url: null, tier: "unverified" }],
 };
 
 export const YORUBA_NAMES_DOSSIER: PeopleNamesDossier = {

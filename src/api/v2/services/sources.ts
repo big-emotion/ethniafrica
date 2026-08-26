@@ -12,28 +12,18 @@ import {
   evaluateSourceUrl,
   sourceKindSchema,
 } from "@/lib/sources/authorized-source-catalog";
-import type {
-  Source,
-  SourceType,
-  ListSourcesQuery,
-} from "@/api/v2/schemas/sources";
-
-const KNOWN_TYPES: SourceType[] = ["primary", "secondary", "tertiary", "ai"];
+import type { Source, ListSourcesQuery } from "@/api/v2/schemas/sources";
+import { isSourceTier } from "@/types/sources";
 
 function mapRowToSource(row: Record<string, unknown>): Source {
-  const rawType = row.type as string | null | undefined;
   const rawSourceKind = row.source_kind as string | null | undefined;
-  const rawEvidenceTier = row.evidence_tier;
   const rawIdentifiers = row.identifiers;
   const url = typeof row.url === "string" ? row.url : null;
-  const type =
-    rawType && KNOWN_TYPES.includes(rawType as SourceType)
-      ? (rawType as SourceType)
-      : null;
   const sourceKindResult = sourceKindSchema.safeParse(rawSourceKind);
   const sourceKind = sourceKindResult.success ? sourceKindResult.data : null;
-  const evidenceTier =
-    rawEvidenceTier === 1 || rawEvidenceTier === 2 ? rawEvidenceTier : null;
+  // An untiered legacy row stays null here rather than being coerced: the
+  // payload distinguishes "not yet classified" from "classified unverified".
+  const tier = isSourceTier(row.tier) ? row.tier : null;
   const identifiers =
     rawIdentifiers &&
     typeof rawIdentifiers === "object" &&
@@ -49,11 +39,10 @@ function mapRowToSource(row: Record<string, unknown>): Source {
     id: row.id as string,
     sourceKey: (row.source_key as string | null) ?? null,
     sourceKind,
-    evidenceTier,
+    tier,
     identifiers,
     title: (row.title as string) ?? "",
     url,
-    type,
     pinnedUrl: (row.pinned_url as string | null) ?? null,
     year: (row.year as number | null) ?? null,
     author: (row.author as string | null) ?? null,

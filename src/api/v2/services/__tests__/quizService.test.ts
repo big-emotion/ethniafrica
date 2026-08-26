@@ -169,7 +169,7 @@ describe("composeQuizSession", () => {
     const sessionQuery = buildSessionQuery({ data: rows, error: null });
     const sourcesQuery = buildSourcesQuery({
       data: [
-        { id: "s-ok", tier: "primary", verified_at: "2026-01-01T00:00:00Z" },
+        { id: "s-ok", tier: "official", verified_at: "2026-01-01T00:00:00Z" },
       ],
       error: null,
     });
@@ -264,7 +264,7 @@ describe("composeQuizSession", () => {
             data: [
               {
                 id: "s-ok",
-                tier: "primary",
+                tier: "official",
                 verified_at: "2026-01-01T00:00:00Z",
               },
             ],

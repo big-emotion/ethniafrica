@@ -1,19 +1,28 @@
 import fs from "fs/promises";
 import path from "path";
 
+/**
+ * Under the Source Tier Policy nothing is forbidden and everything is
+ * labelled, so the audit no longer reports "this source is too weak to
+ * publish". What it reports is a source that carries no stated authority:
+ * a legacy string, a malformed entry, or a tier left at `needs_review`.
+ */
 export type PeopleSourceFindingCode =
   | "PROFILE_PARSE_FAILURE"
   | "SOURCE_MISSING"
   | "SOURCE_MALFORMED"
-  | "SOURCE_TIER3"
-  | "SOURCE_UNAUDITABLE"
-  | "SOURCE_TIER2_CHAIN";
+  | "SOURCE_UNTIERED"
+  | "SOURCE_LEGACY_STRING";
+
+export type PeopleSourceTier = "official" | "referenced" | "unverified";
 
 export interface PeopleSourceFinding {
   code: PeopleSourceFindingCode;
   message: string;
   sourceIndex?: number;
 }
+
+export type SourceTierCounts = Record<PeopleSourceTier, number>;
 
 export interface CountryFr28StrictDeviation {
   countryId: string;
@@ -35,6 +44,7 @@ export interface PeopleSourceProfileAudit {
   parseError?: string;
   currentCountries: string[];
   sourceCount: number;
+  tierCounts: SourceTierCounts;
   findings: PeopleSourceFinding[];
   countryDeviations: CountryFr28StrictDeviation[];
   countryParseFailures: CountryAuditParseFailure[];
@@ -53,6 +63,7 @@ export interface PeopleSourceTierAuditReport {
     ineligibleProfiles: number;
     parseFailures: number;
     countryDeviations: number;
+    tierCounts: SourceTierCounts;
   };
 }
 
@@ -72,29 +83,19 @@ interface CountryAuditResult {
   parseFailure?: CountryAuditParseFailure;
 }
 
-const AUTHORIZED_TIER_1_HOSTS = [
-  "un.org",
-  "unfpa.org",
-  "cia.gov",
-  "ethnologue.com",
-  "sil.org",
-  "glottolog.org",
-  "unesco.org",
-  "iwgia.org",
+const SOURCE_TIERS: PeopleSourceTier[] = [
+  "official",
+  "referenced",
+  "unverified",
 ];
 
-const DETECTABLE_TIER_3_HOSTS = [
-  "wikipedia.org",
-  "facebook.com",
-  "instagram.com",
-  "medium.com",
-  "reddit.com",
-  "tiktok.com",
-  "x.com",
-  "twitter.com",
-  "blogspot.com",
-  "wordpress.com",
-];
+function emptyTierCounts(): SourceTierCounts {
+  return { official: 0, referenced: 0, unverified: 0 };
+}
+
+function isSourceTier(value: unknown): value is PeopleSourceTier {
+  return SOURCE_TIERS.includes(value as PeopleSourceTier);
+}
 
 function comparePaths(left: string, right: string): number {
   return left.localeCompare(right, "en");
@@ -157,70 +158,6 @@ function parsePeopleProfile(rawContent: string): ParsedPeopleProfile {
   };
 }
 
-function parseHttpUrl(value: unknown): URL | undefined {
-  if (!isNonEmptyString(value)) return undefined;
-
-  try {
-    const parsed = new URL(value);
-    return parsed.protocol === "http:" || parsed.protocol === "https:"
-      ? parsed
-      : undefined;
-  } catch {
-    return undefined;
-  }
-}
-
-function hostMatches(hostname: string, allowedHost: string): boolean {
-  return hostname === allowedHost || hostname.endsWith(`.${allowedHost}`);
-}
-
-function isAuthorizedTier1Host(hostname: string): boolean {
-  return AUTHORIZED_TIER_1_HOSTS.some((host) =>
-    hostMatches(hostname.toLowerCase(), host)
-  );
-}
-
-function isDetectableTier3Host(hostname: string): boolean {
-  return DETECTABLE_TIER_3_HOSTS.some((host) =>
-    hostMatches(hostname.toLowerCase(), host)
-  );
-}
-
-function containsDetectableTier3Reference(value: string): boolean {
-  const normalized = value.toLowerCase();
-  if (normalized.includes("wikipedia")) return true;
-
-  return DETECTABLE_TIER_3_HOSTS.some(
-    (host) =>
-      normalized.includes(`://${host}`) ||
-      normalized.includes(`.${host}`) ||
-      normalized.includes(`www.${host}`)
-  );
-}
-
-function wikipediaLanguageEditions(notes: string): string[] {
-  const editions = new Set<string>();
-  const urlPattern = /https?:\/\/[^\s<>()\]]+/gi;
-
-  for (const match of notes.match(urlPattern) ?? []) {
-    const parsed = parseHttpUrl(match.replace(/[.,;:!?]+$/, ""));
-    if (!parsed) continue;
-
-    const hostnameParts = parsed.hostname.toLowerCase().split(".");
-    const wikipediaIndex = hostnameParts.indexOf("wikipedia");
-    if (
-      wikipediaIndex === 1 &&
-      hostnameParts.length >= 3 &&
-      hostnameParts[2] === "org" &&
-      hostnameParts[0]
-    ) {
-      editions.add(hostnameParts[0]);
-    }
-  }
-
-  return [...editions].sort(comparePaths);
-}
-
 function finding(
   code: PeopleSourceFindingCode,
   message: string,
@@ -231,67 +168,33 @@ function finding(
     : { code, message, sourceIndex };
 }
 
+/**
+ * A structured source is sound when it names a work and states its authority.
+ * The URL may be null: modele-source.json allows offline works, and a printed
+ * monograph is not less citable than a web page.
+ */
 function auditStructuredSource(
   source: Record<string, unknown>,
   sourceIndex: number
 ): PeopleSourceFinding[] {
-  const title = source.title;
-  const url = parseHttpUrl(source.url);
-  const tier = source.tier;
-
-  if (tier === 3 || (url && isDetectableTier3Host(url.hostname))) {
-    return [
-      finding(
-        "SOURCE_TIER3",
-        "The source is a detectable Tier 3 reference",
-        sourceIndex
-      ),
-    ];
-  }
-
-  if (!isNonEmptyString(title) || !url || (tier !== 1 && tier !== 2)) {
+  if (!isNonEmptyString(source.title)) {
     return [
       finding(
         "SOURCE_MALFORMED",
-        "A structured source requires a title, direct HTTP(S) URL, and explicit tier 1 or 2",
+        "A structured source requires a non-empty title",
         sourceIndex
       ),
     ];
   }
 
-  if (tier === 1 && !isAuthorizedTier1Host(url.hostname)) {
+  if (!isSourceTier(source.tier)) {
     return [
       finding(
-        "SOURCE_MALFORMED",
-        "Tier 1 sources must use an authorized canon host",
+        "SOURCE_UNTIERED",
+        `The source carries no explicit tier (found ${JSON.stringify(source.tier)}); it must be ruled official, referenced or unverified`,
         sourceIndex
       ),
     ];
-  }
-
-  if (tier === 2) {
-    if (isDetectableTier3Host(url.hostname)) {
-      return [
-        finding(
-          "SOURCE_TIER3",
-          "Wikipedia and other detectable Tier 3 hosts cannot be cited as the source",
-          sourceIndex
-        ),
-      ];
-    }
-
-    if (
-      !isNonEmptyString(source.notes) ||
-      wikipediaLanguageEditions(source.notes).length < 2
-    ) {
-      return [
-        finding(
-          "SOURCE_TIER2_CHAIN",
-          "Tier 2 notes must link at least two distinct Wikipedia language editions",
-          sourceIndex
-        ),
-      ];
-    }
   }
 
   return [];
@@ -299,14 +202,18 @@ function auditStructuredSource(
 
 function auditSources(sources: unknown): {
   sourceCount: number;
+  tierCounts: SourceTierCounts;
   findings: PeopleSourceFinding[];
 } {
+  const tierCounts = emptyTierCounts();
+
   if (
     sources === undefined ||
     (Array.isArray(sources) && sources.length === 0)
   ) {
     return {
       sourceCount: 0,
+      tierCounts,
       findings: [
         finding(
           "SOURCE_MISSING",
@@ -319,6 +226,7 @@ function auditSources(sources: unknown): {
   if (!Array.isArray(sources)) {
     return {
       sourceCount: 0,
+      tierCounts,
       findings: [
         finding("SOURCE_MALFORMED", "The sources field must be an array"),
       ],
@@ -331,20 +239,11 @@ function auditSources(sources: unknown): {
     if (typeof source === "string") {
       findings.push(
         finding(
-          "SOURCE_UNAUDITABLE",
-          "Legacy string sources lack explicit tier and audit metadata",
+          "SOURCE_LEGACY_STRING",
+          "Legacy string sources carry no tier; run scripts/codemods/tierStringSources.ts",
           sourceIndex
         )
       );
-      if (containsDetectableTier3Reference(source)) {
-        findings.push(
-          finding(
-            "SOURCE_TIER3",
-            "The legacy source contains a detectable Tier 3 reference",
-            sourceIndex
-          )
-        );
-      }
       return;
     }
 
@@ -359,10 +258,11 @@ function auditSources(sources: unknown): {
       return;
     }
 
+    if (isSourceTier(source.tier)) tierCounts[source.tier] += 1;
     findings.push(...auditStructuredSource(source, sourceIndex));
   });
 
-  return { sourceCount: sources.length, findings };
+  return { sourceCount: sources.length, tierCounts, findings };
 }
 
 async function auditPeopleFile(filePath: string): Promise<PendingPeopleAudit> {
@@ -377,6 +277,7 @@ async function auditPeopleFile(filePath: string): Promise<PendingPeopleAudit> {
       parseSuccess: true,
       currentCountries: parsed.currentCountries,
       sourceCount: sourceAudit.sourceCount,
+      tierCounts: sourceAudit.tierCounts,
       findings: sourceAudit.findings,
     };
   } catch (error) {
@@ -390,6 +291,7 @@ async function auditPeopleFile(filePath: string): Promise<PendingPeopleAudit> {
       parseError,
       currentCountries: [],
       sourceCount: 0,
+      tierCounts: emptyTierCounts(),
       findings: [
         finding(
           "PROFILE_PARSE_FAILURE",
@@ -556,6 +458,11 @@ export async function auditPeopleSourceTiers(
       ineligibleProfiles: profiles.length - eligibleProfiles,
       parseFailures,
       countryDeviations: countryDeviations.length,
+      tierCounts: profiles.reduce((totals, profile) => {
+        for (const tier of SOURCE_TIERS)
+          totals[tier] += profile.tierCounts[tier];
+        return totals;
+      }, emptyTierCounts()),
     },
   };
 }

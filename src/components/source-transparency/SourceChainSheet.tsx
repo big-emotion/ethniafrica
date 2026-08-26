@@ -10,12 +10,16 @@ import {
 } from "@/components/ui/sheet";
 import { FlagTarget } from "@/components/flags/FlagTarget";
 import { cn } from "@/lib/utils";
+import {
+  SOURCE_TIERS,
+  SOURCE_TIER_LABELS_FR,
+  toSourceTier,
+  type SourceTier,
+} from "@/types/sources";
 
 /* -------------------------------------------------------------------------- */
 /*  Types                                                                      */
 /* -------------------------------------------------------------------------- */
-
-export type SourceTier = "primary" | "secondary" | "tertiary" | "ai-enriched";
 
 export type Source = {
   id: string;
@@ -77,19 +81,10 @@ export type SourceChainSheetProps = {
 /*  Constants                                                                  */
 /* -------------------------------------------------------------------------- */
 
-const TIER_LABELS: Record<SourceTier, string> = {
-  primary: "Source primaire",
-  secondary: "Source secondaire",
-  tertiary: "Source tertiaire",
-  "ai-enriched": "Enrichi par IA",
-};
+const TIER_LABELS = SOURCE_TIER_LABELS_FR;
 
-const TIER_ORDER: SourceTier[] = [
-  "primary",
-  "secondary",
-  "tertiary",
-  "ai-enriched",
-];
+/** Most authoritative first — the reading order of the tier groups. */
+const TIER_ORDER = SOURCE_TIERS;
 
 const CITE_DELAY_MS = 4000;
 
@@ -217,13 +212,14 @@ function useUrlAnchorSync(
 
 function groupByTier(sources: Source[]): Record<SourceTier, Source[]> {
   const out: Record<SourceTier, Source[]> = {
-    primary: [],
-    secondary: [],
-    tertiary: [],
-    "ai-enriched": [],
+    official: [],
+    referenced: [],
+    unverified: [],
   };
   for (const s of sources) {
-    out[s.tier].push(s);
+    // Legacy rows can still carry an unrecognised tier; they read as unverified
+    // rather than crashing the sheet on an undefined bucket.
+    out[toSourceTier(s.tier)].push(s);
   }
   return out;
 }

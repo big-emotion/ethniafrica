@@ -22,12 +22,13 @@
 
 import { createServerClient } from "../../server";
 import { logger } from "@/lib/api/logger";
+import { isSourceTier, type SourceTier } from "@/types/sources";
 
 export interface Source {
   id: string;
   title: string;
   url: string | null;
-  tier: string | null;
+  tier: SourceTier | null;
 }
 
 export interface ConfidenceScore {
@@ -128,8 +129,15 @@ export async function getSourcesMap(
         logger.error("module-zero-batch.getSourcesMap failed", error);
         return new Map();
       }
-      for (const src of (data || []) as Source[]) {
-        sourcesById.set(src.id, src);
+      for (const src of data || []) {
+        // A row still carrying an untiered or retired value reads as null
+        // rather than leaking a non-vocabulary string into the payload.
+        sourcesById.set(src.id, {
+          id: src.id,
+          title: src.title,
+          url: src.url,
+          tier: isSourceTier(src.tier) ? src.tier : null,
+        });
       }
     }
   }

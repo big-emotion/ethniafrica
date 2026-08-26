@@ -13,6 +13,7 @@ import type {
   HistoricalNamesSection,
   HistoricalFactsSection,
   DemographicsSection,
+  FicheSource,
 } from "@/types/afrik";
 
 // ==========================================
@@ -987,9 +988,11 @@ export function transformCulture(culture?: CultureSection): CultureGridData {
   return { items };
 }
 
-export function transformSources(sources?: string[]): string {
+export function transformSources(sources?: FicheSource[]): string {
   if (!sources || sources.length === 0) return "";
-  return sources.map((s) => s.replace(/^-\s*/, "").trim()).join(" · ");
+  return sources
+    .map((source) => source.title.replace(/^-\s*/, "").trim())
+    .join(" · ");
 }
 
 export function transformHistoricalFacts(

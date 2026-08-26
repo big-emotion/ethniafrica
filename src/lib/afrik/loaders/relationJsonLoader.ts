@@ -27,10 +27,6 @@ function createReport(): RelationLoadReport {
   return { total: 0, inserted: 0, errors: [] };
 }
 
-function mapSourceTier(tier: 1 | 2): "primary" | "secondary" {
-  return tier === 1 ? "primary" : "secondary";
-}
-
 function errorMessage(value: { message: string } | null | undefined): string {
   return value?.message ?? "unknown Supabase error";
 }
@@ -88,7 +84,7 @@ async function upsertSource(
         author: source.author,
         year: source.year,
         url: source.url,
-        tier: mapSourceTier(source.tier),
+        tier: source.tier,
         notes: source.notes ?? null,
         added_at: new Date().toISOString(),
       },

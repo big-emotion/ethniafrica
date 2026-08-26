@@ -29,9 +29,8 @@ const FINDING_CODES: PeopleSourceFindingCode[] = [
   "PROFILE_PARSE_FAILURE",
   "SOURCE_MISSING",
   "SOURCE_MALFORMED",
-  "SOURCE_TIER3",
-  "SOURCE_UNAUDITABLE",
-  "SOURCE_TIER2_CHAIN",
+  "SOURCE_UNTIERED",
+  "SOURCE_LEGACY_STRING",
 ];
 
 function compareText(left: string, right: string): number {
@@ -115,6 +114,15 @@ export function renderPeopleSourceTierAuditMarkdown(
         ["Profile parse failures", report.summary.parseFailures],
         ["FR28-strict country deviations", report.summary.countryDeviations],
         ["Country parse failures", report.countryParseFailures.length],
+      ]
+    ),
+    "## Source Tier Mix",
+    markdownTable(
+      ["Tier", "Sources"],
+      [
+        ["Officielle (official)", report.summary.tierCounts.official],
+        ["Référencée (referenced)", report.summary.tierCounts.referenced],
+        ["Non vérifiée (unverified)", report.summary.tierCounts.unverified],
       ]
     ),
     "## Finding Counts",

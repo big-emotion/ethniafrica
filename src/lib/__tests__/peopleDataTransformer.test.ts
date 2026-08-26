@@ -137,9 +137,13 @@ const yorubaPeople: PeopleDetail = {
     source: "SIL Ethnologue 2025",
   },
   sources: [
-    "SIL Ethnologue – Yoruba",
-    "CIA World Factbook – Nigeria",
-    "UNESCO – Cultural heritage of the Yoruba people",
+    { title: "SIL Ethnologue – Yoruba", url: null, tier: "unverified" },
+    { title: "CIA World Factbook – Nigeria", url: null, tier: "unverified" },
+    {
+      title: "UNESCO – Cultural heritage of the Yoruba people",
+      url: null,
+      tier: "unverified",
+    },
   ],
 };
 

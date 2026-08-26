@@ -110,7 +110,7 @@ describe("module-zero-batch helpers", () => {
         },
         {
           data: [
-            { id: "sid-1", title: "S1", url: null, tier: "academic" },
+            { id: "sid-1", title: "S1", url: null, tier: "referenced" },
             { id: "sid-2", title: "S2", url: "https://y", tier: "ngo" },
           ],
           error: null,
@@ -140,7 +140,7 @@ describe("module-zero-batch helpers", () => {
               id: "src-1",
               title: "Source 1",
               url: "https://x",
-              tier: "academic",
+              tier: "referenced",
             },
             { id: "src-2", title: "Source 2", url: null, tier: null },
             { id: "src-3", title: "Source 3", url: "https://y", tier: "ngo" },
@@ -154,7 +154,7 @@ describe("module-zero-batch helpers", () => {
       expect(result.get("PPL_A")).toHaveLength(2);
       expect(result.get("PPL_B")).toHaveLength(1);
       expect(result.get("PPL_A")?.[0].id).toBe("src-1");
-      expect(result.get("PPL_A")?.[0].tier).toBe("academic");
+      expect(result.get("PPL_A")?.[0].tier).toBe("referenced");
     });
 
     it("skips assertions with empty/null source_ids", async () => {

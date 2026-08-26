@@ -20,6 +20,7 @@ import type {
   DerivedLinguisticLink,
   RelationNeighbor,
   PublicRelationRecord,
+  RelationSourceRef,
 } from "@/types/relations";
 
 const DEFAULT_DERIVED_LIMIT = 24;
@@ -119,15 +120,7 @@ function mapRowToSourcedRelation(
   row: RelationRow,
   pplId: string,
   neighborsMap: Map<string, RelationNeighbor>,
-  sourcesMap: Map<
-    string,
-    Array<{
-      id: string;
-      title: string;
-      url: string | null;
-      tier: string | null;
-    }>
-  >,
+  sourcesMap: Map<string, RelationSourceRef[]>,
   confidenceMap: Map<string, { score: number; sourceCount: number | null }>
 ): SourcedRelation | null {
   const neighbor = neighborsMap.get(otherSideId(row, pplId));
@@ -341,15 +334,7 @@ export async function peopleExists(pplId: string): Promise<boolean> {
 
 function mapRowToPublicRelationRecord(
   row: RelationRow,
-  sourcesMap: Map<
-    string,
-    Array<{
-      id: string;
-      title: string;
-      url: string | null;
-      tier: string | null;
-    }>
-  >,
+  sourcesMap: Map<string, RelationSourceRef[]>,
   confidenceMap: Map<string, { score: number; sourceCount: number | null }>
 ): PublicRelationRecord {
   const confidence = confidenceMap.get(row.id);

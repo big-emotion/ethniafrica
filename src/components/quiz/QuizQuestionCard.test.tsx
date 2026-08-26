@@ -11,7 +11,7 @@ const QUESTION: QuizSessionQuestionView = {
   optionsFr: ["Alpha", "Beta", "Gamma", "Delta"],
   correctOption: 2,
   explanationFr: "Explication.",
-  source: { title: "Ethnologue", year: 2021, tier: "primary", url: null },
+  source: { title: "Ethnologue", year: 2021, tier: "official", url: null },
   assertionId: "assertion-1",
   entity: {
     type: "people",

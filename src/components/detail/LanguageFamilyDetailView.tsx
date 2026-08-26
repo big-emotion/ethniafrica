@@ -539,7 +539,7 @@ export const LanguageFamilyDetailView = ({
                         key={idx}
                         className="text-sm flex items-center gap-2 flex-wrap"
                       >
-                        <span>{source}</span>
+                        <span>{source.title}</span>
                         {sourceFlag && <SourceVerifyBadge />}
                       </li>
                     ))}

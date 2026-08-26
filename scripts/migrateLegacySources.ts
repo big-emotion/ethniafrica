@@ -9,7 +9,8 @@ export interface LegacyCitationAuditResult {
   sourceKey: string;
   legacyRawCitation: string;
   sourceKind: "unknown";
-  evidenceTier: null;
+  /** A citation nobody has classified yet is unverified, not untiered. */
+  tier: "unverified";
   identifiers: Record<string, never>;
   reviewStatus: "review_required";
 }
@@ -26,7 +27,7 @@ export function auditLegacyCitations(
     sourceKey: sourceKeyForLegacyCitation(rawCitation),
     legacyRawCitation: rawCitation,
     sourceKind: "unknown",
-    evidenceTier: null,
+    tier: "unverified",
     identifiers: {},
     reviewStatus: "review_required",
   }));

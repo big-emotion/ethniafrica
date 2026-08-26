@@ -448,7 +448,9 @@ export function transformPeopleData(
 ): PeoplePageData {
   const sources =
     raw.sources && raw.sources.length > 0
-      ? raw.sources.map((s) => s.replace(/^-\s*/, "").trim()).join(" · ")
+      ? raw.sources
+          .map((source) => source.title.replace(/^-\s*/, "").trim())
+          .join(" · ")
       : "";
 
   return {

@@ -1,36 +1,30 @@
 import { z } from "zod";
 import catalog from "../../../config/sources/authorized-source-catalog.json";
+import {
+  SOURCE_KINDS,
+  SOURCE_TIERS,
+  type SourceKind,
+  type SourceTier,
+} from "@/types/sources";
 
 // @req REQ-092
-export const sourceAdmissionSchema = z.enum([
-  "preferred",
-  "allowed",
-  "discovery_only",
-  "review_required",
-  "prohibited",
-]);
+export const sourceTierSchema = z.enum(SOURCE_TIERS);
 
 // @req REQ-092
-export const sourceKindSchema = z.enum([
-  "intergovernmental",
-  "government",
-  "official_statistics",
-  "linguistic_reference",
-  "academic",
-  "community",
-  "repository",
-  "archive",
-  "discovery",
-  "ai_generated",
-  "unknown",
-]);
+export const sourceKindSchema = z.enum(SOURCE_KINDS);
+
+/**
+ * Source kinds that carry no authority of their own: a lookup surface
+ * (Wikipedia, WorldCat, Sudoc) or machine-written text. They are cited, and
+ * they are cited as `unverified`.
+ */
+const KINDS_WITHOUT_AUTHORITY = ["discovery", "ai_generated"] as const;
 
 // @req REQ-092
 export const authorizedSourceEntrySchema = z.object({
   key: z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/),
   name: z.string().min(1),
-  admission: sourceAdmissionSchema.exclude(["review_required"]),
-  evidenceTier: z.union([z.literal(1), z.literal(2), z.null()]),
+  tier: sourceTierSchema,
   sourceKind: sourceKindSchema.exclude(["unknown"]),
   matchDomains: z.array(z.string().min(1)).min(1),
 });
@@ -45,15 +39,12 @@ export type AuthorizedSourceCatalog = z.infer<
   typeof authorizedSourceCatalogSchema
 >;
 export type AuthorizedSourceEntry = z.infer<typeof authorizedSourceEntrySchema>;
-export type SourceAdmission = z.infer<typeof sourceAdmissionSchema>;
-export type SourceKind = z.infer<typeof sourceKindSchema>;
+export type { SourceKind };
 
 export interface SourcePolicyOutcome {
   key: string;
-  admission: SourceAdmission;
-  evidenceTier: 1 | 2 | null;
+  tier: SourceTier;
   sourceKind: SourceKind;
-  publishable: boolean;
 }
 
 // @req REQ-092
@@ -71,12 +62,13 @@ export function validateAuthorizedSourceCatalog(
     if (keys.has(entry.key)) issues.push(`Duplicate source key: ${entry.key}`);
     keys.add(entry.key);
 
-    const publishable =
-      entry.admission === "preferred" || entry.admission === "allowed";
-    if (
-      publishable !== (entry.evidenceTier === 1 || entry.evidenceTier === 2)
-    ) {
-      issues.push(`Invalid evidence tier for ${entry.key}`);
+    const carriesNoAuthority = (
+      KINDS_WITHOUT_AUTHORITY as readonly string[]
+    ).includes(entry.sourceKind);
+    if (carriesNoAuthority && entry.tier !== "unverified") {
+      issues.push(
+        `${entry.key}: a ${entry.sourceKind} source cannot be tiered "${entry.tier}"`
+      );
     }
   }
 
@@ -87,41 +79,35 @@ function matchesDomain(hostname: string, domain: string): boolean {
   return hostname === domain || hostname.endsWith(`.${domain}`);
 }
 
+/**
+ * Tiers a citation by its domain. An unparseable or off-catalogue URL is
+ * `unverified` rather than rejected: under the source doctrine nothing is
+ * forbidden, the tier carries the signal.
+ */
 // @req REQ-092
 export function evaluateSourceUrl(url: string): SourcePolicyOutcome {
+  const offCatalogue: SourcePolicyOutcome = {
+    key: "unknown",
+    tier: "unverified",
+    sourceKind: "unknown",
+  };
+
   let hostname: string;
   try {
     hostname = new URL(url).hostname.toLowerCase();
   } catch {
-    return {
-      key: "unknown",
-      admission: "review_required",
-      evidenceTier: null,
-      sourceKind: "unknown",
-      publishable: false,
-    };
+    return offCatalogue;
   }
 
   const entry = authorizedSourceCatalog.entries.find((candidate) =>
     candidate.matchDomains.some((domain) => matchesDomain(hostname, domain))
   );
 
-  if (!entry) {
-    return {
-      key: "unknown",
-      admission: "review_required",
-      evidenceTier: null,
-      sourceKind: "unknown",
-      publishable: false,
-    };
-  }
+  if (!entry) return offCatalogue;
 
   return {
     key: entry.key,
-    admission: entry.admission,
-    evidenceTier: entry.evidenceTier,
+    tier: entry.tier,
     sourceKind: entry.sourceKind,
-    publishable:
-      entry.admission === "preferred" || entry.admission === "allowed",
   };
 }

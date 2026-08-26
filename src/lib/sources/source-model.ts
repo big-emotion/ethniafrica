@@ -4,7 +4,10 @@ import type {
   LegacySourceCandidate,
   StructuredSourceRecord,
 } from "@/types/sources";
-import { sourceKindSchema } from "@/lib/sources/authorized-source-catalog";
+import {
+  sourceKindSchema,
+  sourceTierSchema,
+} from "@/lib/sources/authorized-source-catalog";
 
 const stableSourceKeySchema = z.string().regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, {
   message: "sourceKey must be a stable kebab-case key",
@@ -27,12 +30,6 @@ export const structuredSourceKindSchema = sourceKindSchema.exclude([
   "unknown",
 ]);
 
-export const evidenceTierSchema = z.union([
-  z.literal(1),
-  z.literal(2),
-  z.null(),
-]);
-
 export const sourceRecordSchema = z
   .object({
     sourceKey: stableSourceKeySchema,
@@ -40,7 +37,7 @@ export const sourceRecordSchema = z
     authors: z.array(z.string().min(1)).min(1),
     publicationYear: z.number().int(),
     sourceKind: structuredSourceKindSchema,
-    evidenceTier: evidenceTierSchema,
+    tier: sourceTierSchema,
     identifiers: z.record(z.string().min(1)),
     publisher: z.string().min(1).nullable(),
     url: httpUrlSchema.nullable(),
@@ -111,7 +108,7 @@ export function toStructuredSourceRecord(
     authors: value.authors,
     publicationYear: value.publicationYear,
     sourceKind: value.sourceKind,
-    evidenceTier: value.evidenceTier,
+    tier: value.tier,
     identifiers: value.identifiers,
     publisher: value.publisher,
     url: value.url,

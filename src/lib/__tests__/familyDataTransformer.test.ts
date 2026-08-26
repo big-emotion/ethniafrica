@@ -50,7 +50,7 @@ const family: LanguageFamily = {
       totalSpeakers: 350000000,
       distributionByCountry: { COD: 90000000, TZA: 60000000 },
     },
-    sources: ["Glottolog"],
+    sources: [{ title: "Glottolog", url: null, tier: "unverified" }],
   },
   footprintByCountry: { COD: 12, TZA: 8 },
 };
@@ -78,7 +78,9 @@ describe("familyDataTransformer", () => {
       distributionByCountry: { COD: 90000000, TZA: 60000000 },
       footprintByCountry: { COD: 12, TZA: 8 },
     });
-    expect(transformSources(family)).toEqual(["Glottolog"]);
+    expect(transformSources(family)).toEqual([
+      { title: "Glottolog", url: null, tier: "unverified" },
+    ]);
   });
 
   // @req REQ-047

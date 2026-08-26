@@ -12,6 +12,7 @@
 import { z } from "zod";
 import { MIGRATION_EVENT_TYPES } from "@/lib/afrik/migrationEventTypes";
 import type { MigrationRecord } from "@/types/migrations";
+import { ficheSourceTierSchema } from "./ficheSourceTier";
 
 const migrationEventTypeSchema = z.enum(MIGRATION_EVENT_TYPES, {
   errorMap: () => ({
@@ -69,15 +70,14 @@ const migrationSourceSchema = z
     title: z.string().min(1),
     url: z.string().min(1),
     year: z.number().int(),
-    tier: z.union([z.literal(1), z.literal(2)], {
-      errorMap: () => ({
-        message: "tier must be 1 or 2 — Tier 3 sources are forbidden",
-      }),
-    }),
+    tier: ficheSourceTierSchema,
     notes: z.string().optional(),
   })
-  .refine((source) => source.tier !== 2 || !!source.notes?.trim(), {
-    message: "Tier 2 sources require non-empty notes",
+  .refine((source) => source.tier !== "referenced" || !!source.notes?.trim(), {
+    // `notes` carries the discovery chain (which Wikipedia language versions
+    // were crossed to reach the source), which is what makes a referenced
+    // citation auditable.
+    message: "referenced sources require non-empty notes",
     path: ["notes"],
   });
 
@@ -86,7 +86,7 @@ const migrationContentSchema = z.object({
   narrative: z.string().min(1),
   debate: z.string().nullable(),
   sources: z.array(migrationSourceSchema).min(1, {
-    message: "at least one source (Tier 1 or Tier 2) is required",
+    message: "at least one tiered source is required",
   }),
 });
 

@@ -35,7 +35,7 @@ const baseSource: Source = {
   year: 2021,
   page: "p. 42",
   url: "https://example.org/atlas",
-  tier: "primary",
+  tier: "official",
   brokenAt: null,
 };
 
@@ -244,7 +244,7 @@ describe("SourceChainSheet", () => {
               ...baseSource,
               id: "src-b",
               title: "Source B",
-              tier: "secondary",
+              tier: "referenced",
             },
           ],
         },
@@ -264,25 +264,30 @@ describe("SourceChainSheet", () => {
   it("groups single-list sources by tier", () => {
     renderSheet({
       sources: [
-        { ...baseSource, id: "p1", tier: "primary", title: "Primary src" },
-        { ...baseSource, id: "s1", tier: "secondary", title: "Secondary src" },
-        { ...baseSource, id: "t1", tier: "tertiary", title: "Tertiary src" },
-        { ...baseSource, id: "a1", tier: "ai-enriched", title: "AI src" },
+        { ...baseSource, id: "o1", tier: "official", title: "Official src" },
+        {
+          ...baseSource,
+          id: "r1",
+          tier: "referenced",
+          title: "Referenced src",
+        },
+        { ...baseSource, id: "u1", tier: "unverified", title: "Aggregator" },
+        { ...baseSource, id: "u2", tier: "unverified", title: "AI src" },
       ],
     });
     const sourcesSection = screen.getByTestId("section-sources");
     expect(
-      within(sourcesSection).getByTestId("tier-group-primary")
+      within(sourcesSection).getByTestId("tier-group-official")
     ).toBeInTheDocument();
     expect(
-      within(sourcesSection).getByTestId("tier-group-secondary")
+      within(sourcesSection).getByTestId("tier-group-referenced")
     ).toBeInTheDocument();
-    expect(
-      within(sourcesSection).getByTestId("tier-group-tertiary")
-    ).toBeInTheDocument();
-    expect(
-      within(sourcesSection).getByTestId("tier-group-ai-enriched")
-    ).toBeInTheDocument();
+
+    const unverified = within(sourcesSection).getByTestId(
+      "tier-group-unverified"
+    );
+    expect(unverified).toHaveTextContent("Aggregator");
+    expect(unverified).toHaveTextContent("AI src");
   });
 
   it("renders the confidence block with the score", () => {

@@ -130,7 +130,7 @@ const sessionEnvelope = {
         optionsFr: ["a", "b", "c", "d"],
         correctOption: 0,
         explanationFr: "expl",
-        source: { title: "UN", year: 2021, tier: "primary", url: null },
+        source: { title: "UN", year: 2021, tier: "official", url: null },
         assertionId: "assertion-1",
         entity: {
           type: "people",

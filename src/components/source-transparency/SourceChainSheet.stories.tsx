@@ -13,7 +13,7 @@ const primarySource: Source = {
   year: 2019,
   page: "p. 142",
   url: "https://www.example.org/atlas-afrique-ouest",
-  tier: "primary",
+  tier: "official",
   brokenAt: null,
 };
 
@@ -24,7 +24,7 @@ const secondarySource: Source = {
   year: 1985,
   page: "ch. 12",
   url: "https://unesdoc.unesco.org/ark:/example",
-  tier: "secondary",
+  tier: "referenced",
   brokenAt: null,
 };
 
@@ -32,7 +32,7 @@ const tertiarySource: Source = {
   id: "s-tertiary-1",
   title: "Wikipedia — Histoire du Sénégal",
   url: "https://fr.wikipedia.org/wiki/Histoire_du_S%C3%A9n%C3%A9gal",
-  tier: "tertiary",
+  tier: "unverified",
   brokenAt: null,
 };
 
@@ -42,14 +42,14 @@ const brokenSource: Source = {
   author: "Ministère de la Culture",
   year: 2010,
   url: "https://archive.example.gov/page-disparue",
-  tier: "secondary",
+  tier: "referenced",
   brokenAt: "2026-04-10",
 };
 
 const aiSource: Source = {
   id: "s-ai-1",
   title: "Synthèse générée par IA (validation humaine en attente)",
-  tier: "ai-enriched",
+  tier: "unverified",
   brokenAt: null,
 };
 

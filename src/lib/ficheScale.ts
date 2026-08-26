@@ -46,7 +46,7 @@ function readPeopleScale(payload: PeopleDetail): ScaleContent | null {
     magnitudeValue: totalPopulation,
     caption: "population totale",
     referenceYear: payload.demography?.referenceYear,
-    sourceLabel: payload.demography?.source ?? payload.sources?.[0],
+    sourceLabel: payload.demography?.source ?? payload.sources?.[0]?.title,
     classificationStatus: payload.classificationStatus,
     ramp: payload.demography?.distributionByCountry,
   };
@@ -58,7 +58,7 @@ function readCountryScale(payload: CountryDetail): ScaleContent | null {
   return {
     magnitudeValue: peoplesCount,
     caption: "peuples recensés",
-    sourceLabel: payload.sources?.[0],
+    sourceLabel: payload.sources?.[0]?.title,
   };
 }
 
@@ -68,7 +68,7 @@ function readFamilyScale(payload: LanguageFamilyDetail): ScaleContent | null {
   return {
     magnitudeValue: numberOfLanguages,
     caption: "langues recensées",
-    sourceLabel: payload.sources?.[0],
+    sourceLabel: payload.sources?.[0]?.title,
     contestedFamily: payload.classificationStatus === "contested",
   };
 }

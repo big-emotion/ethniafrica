@@ -46,7 +46,7 @@ const EVENTS: MigrationAtlasEntry[] = [
       ],
     },
     peoples: [],
-    sources: [{ id: "src-1", title: "Source", url: null, tier: "1" }],
+    sources: [{ id: "src-1", title: "Source", url: null, tier: "official" }],
     confidence: { score: 70, sourceCount: 1, lastHumanAuditAt: "2026-01-05" },
   },
 ];

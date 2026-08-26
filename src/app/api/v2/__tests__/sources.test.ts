@@ -45,11 +45,10 @@ const sampleSource: Source = {
   id: "11111111-1111-1111-1111-111111111111",
   sourceKey: null,
   sourceKind: null,
-  evidenceTier: null,
+  tier: null,
   identifiers: null,
   title: "Sample",
   url: null,
-  type: null,
   pinnedUrl: null,
   year: null,
   author: null,
@@ -58,10 +57,8 @@ const sampleSource: Source = {
   lastVerifiedAt: null,
   policy: {
     key: "unknown",
-    admission: "review_required",
-    evidenceTier: null,
+    tier: "unverified",
     sourceKind: "unknown",
-    publishable: false,
   },
 };
 
