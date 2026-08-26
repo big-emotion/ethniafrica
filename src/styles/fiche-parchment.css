@@ -22,12 +22,17 @@
   border-bottom: 1px solid var(--afh-border);
 }
 
+/* --afh-text-soft, never --afh-text-muted, for anything at caption size or
+   below. Muted is #9b8b7d, which reaches only 2.8:1 on --afh-bg-warm and
+   3.3:1 on --afh-surface — under the 4.5:1 small text needs. The mockup uses
+   the lighter ink throughout and is not contrast-tested; axe caught it here
+   at all three widths. Soft clears 4.8:1 on every parchment ground. */
 .afh-parchment-eyebrow {
   margin: 0 0 10px;
   font-family: var(--afh-font-mono);
   font-size: var(--afh-text-nano);
   letter-spacing: 0.1em;
-  color: var(--afh-text-muted);
+  color: var(--afh-text-soft);
 }
 
 .afh-parchment-head h1 {
@@ -102,7 +107,7 @@
   margin: 6px 0 16px;
   font-family: var(--afh-font-mono);
   font-size: var(--afh-text-nano);
-  color: var(--afh-text-muted);
+  color: var(--afh-text-soft);
 }
 
 .afh-parchment-section p {
@@ -152,7 +157,7 @@
   font-size: var(--afh-text-caption);
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--afh-text-muted);
+  color: var(--afh-text-soft);
   font-weight: 700;
 }
 
@@ -161,7 +166,7 @@
   margin-top: 7px;
   font-family: var(--afh-font-mono);
   font-size: var(--afh-text-nano);
-  color: var(--afh-text-muted);
+  color: var(--afh-text-soft);
   line-height: 1.6;
 }
 
@@ -271,7 +276,7 @@
   margin-left: auto;
   font-family: var(--afh-font-mono);
   font-size: var(--afh-text-nano);
-  color: var(--afh-text-muted);
+  color: var(--afh-text-soft);
   white-space: nowrap;
 }
 

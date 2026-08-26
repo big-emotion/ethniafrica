@@ -40,11 +40,13 @@ const NUMBER_STYLE: CSSProperties = {
   fontVariantNumeric: "tabular-nums",
 };
 
+// Soft, not muted: these labels are caption-sized, and muted falls under the
+// 4.5:1 small text needs on every parchment ground.
 const LABEL_STYLE: CSSProperties = {
   fontSize: "var(--afh-text-caption)",
   letterSpacing: ".08em",
   textTransform: "uppercase",
-  color: "var(--afh-text-muted)",
+  color: "var(--afh-text-soft)",
   fontWeight: 700,
 };
 
