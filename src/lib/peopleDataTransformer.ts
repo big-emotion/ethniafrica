@@ -5,7 +5,10 @@
  * UI component of the people detail page.
  */
 
-import { ficheSourceLine } from "@/lib/afrik/ficheSourceLabel";
+import {
+  ficheSourceEntries,
+  type FicheSourceEntry,
+} from "@/lib/afrik/ficheSourceLabel";
 import type { PeopleDetail } from "@/types/afrik-frontend";
 import type {
   OriginsSection,
@@ -156,7 +159,8 @@ export interface PeoplePageData {
   culture: PeopleCultureData;
   relatedPeoples: PeopleRelatedData;
   countries: PeopleCountriesData;
-  sources: string;
+  /** Each source keeps its own tier, url and notes — a joined line destroys all three. */
+  sources: FicheSourceEntry[];
   names: PeopleNamesData | null;
 }
 
@@ -460,7 +464,7 @@ export function transformPeopleData(
   raw: PeopleDetail,
   namesDossier?: PeopleNamesDossier | null
 ): PeoplePageData {
-  const sources = ficheSourceLine(raw.sources);
+  const sources = ficheSourceEntries(raw.sources);
 
   return {
     hero: transformPeopleHero(raw),

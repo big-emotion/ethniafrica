@@ -79,12 +79,12 @@ describe("buildKingdomRound", () => {
   // @req REQ-120
   it("never offers a country the admin-0 asset cannot draw", () => {
     const withUnmappable = [
-      makeCountry({ id: "SYC", nameFr: "Seychelles", kingdoms: [] }),
+      makeCountry({ id: "SHN", nameFr: "Sainte-Hélène", kingdoms: [] }),
       ...OTHER_COUNTRIES,
     ];
     const round = buildKingdomRound(makeCountry(), withUnmappable);
 
-    expect(round.choices).not.toContain("SYC");
+    expect(round.choices).not.toContain("SHN");
   });
 
   // @req REQ-120

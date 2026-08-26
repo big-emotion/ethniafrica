@@ -10,9 +10,14 @@ vi.mock("next/navigation", () => ({
   useRouter: () => ({ push }),
 }));
 
-/** Two with an outline, one without — COM is among the six that have none. */
+/**
+ * Two with an outline and one without. The stand-in is a code the admin-0
+ * asset does not carry at all: the six African states that used to be missing
+ * have since been added to it, so pinning the test to one of them would make
+ * it green for the wrong reason the day it gained geometry.
+ */
 const COUNTRIES = [
-  { id: "COM", nameFr: "Comores", flag: "🇰🇲" },
+  { id: "ZZZ", nameFr: "Comores", flag: "🇰🇲" },
   { id: "KEN", nameFr: "Kenya", flag: "🇰🇪" },
   { id: "NGA", nameFr: "Nigeria", flag: "🇳🇬" },
 ];
@@ -69,8 +74,8 @@ describe("CountryPicker", () => {
     open();
 
     // The premise of feeding the list from the corpus rather than the
-    // geometry: COM has no admin-0 rings, and must still be reachable.
-    expect(AFRICA_ADMIN0.COM).toBeUndefined();
+    // geometry: a country with no admin-0 rings must still be reachable.
+    expect(AFRICA_ADMIN0.ZZZ).toBeUndefined();
     expect(screen.getByRole("option", { name: /Comores/ })).toBeTruthy();
   });
 

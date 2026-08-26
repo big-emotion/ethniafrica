@@ -121,9 +121,34 @@ node src/lib/atlas/assets/generate-admin0.mjs \
   src/lib/atlas/assets/africaAdmin0.ts
 ```
 
-Coverage is the 51 countries present in that file — a handful of very small
-African states are absent. `overlays.ts` treats an unresolvable country as the
-missing state (atlas-charter §4), never as a silently dropped shape.
+Coverage is the 58 countries present in that file. The original 51 came from
+the reviewed mockups; the seven island territories the corpus cites and they
+omitted — Comoros, Mauritius, Seychelles, Cape Verde, São Tomé and Príncipe,
+Réunion, Mayotte — were added from the same Natural Earth 1:50m dataset:
+
+```bash
+curl -o /tmp/ne_50m_admin_0_countries.geojson \
+  https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson
+# Filter to the wanted ADM0_A3 codes, round coordinates to 2 decimals, drop
+# islets under 0.0004 sq deg, merge into the mockup source, then regenerate.
+```
+
+Réunion and Mayotte have no feature of their own: Natural Earth carries them
+inside France's MultiPolygon as overseas departments, so their rings were
+selected by bounding box. Both sit alone in open ocean, so nothing else of
+France's geometry falls inside one.
+
+**Keys are Natural Earth's, not always ISO 3166-1.** The file holds South Sudan
+as `SDS` and Western Sahara as `SAH`, where the corpus writes `SSD` and `ESH`;
+`getAdmin0Rings` bridges the two. Somaliland is present as `SOL` and has no ISO
+code at all — it is deliberately **not** aliased onto `SOM`, which would make
+the atlas assert a sovereignty claim no source in the corpus supports.
+
+`overlays.ts` treats an unresolvable country as the missing state
+(atlas-charter §4), never as a silently dropped shape: `buildPeopleFieldOverlay`
+carries every entry it cannot draw in `undrawn`, and
+`checkCountryCodesResolve` in `scripts/validateAfrikData.ts` fails the build on
+a code that is neither drawable nor a declared off-map presence.
 
 ## True-size comparison shapes (`worldCompare.ts`)
 

@@ -77,7 +77,7 @@ describe("buildMigrationRound", () => {
 
   // @req REQ-120
   it("skips a destination country the admin-0 asset cannot draw", () => {
-    const seychellois = makePeople("PPL_00200", "Luba", ["SYC", "ZMB"]);
+    const seychellois = makePeople("PPL_00200", "Luba", ["SHN", "ZMB"]);
     const round = buildMigrationRound(
       MIGRATION,
       new Map([
@@ -109,11 +109,11 @@ describe("buildMigrationRound", () => {
   // @req REQ-120
   it("never offers a country the admin-0 asset cannot draw", () => {
     const round = buildMigrationRound(MIGRATION, PEOPLE_BY_ID, [
-      "SYC",
+      "SHN",
       ...COUNTRY_POOL,
     ]);
 
-    expect(round.choices).not.toContain("SYC");
+    expect(round.choices).not.toContain("SHN");
   });
 
   // @req REQ-120
@@ -140,7 +140,7 @@ describe("buildMigrationRound", () => {
 
   // @req REQ-120
   it("returns null when no country of the destination people can be drawn", () => {
-    const unmappable = makePeople("PPL_00200", "Luba", ["SYC"]);
+    const unmappable = makePeople("PPL_00200", "Luba", ["SHN"]);
 
     expect(
       buildMigrationRound(

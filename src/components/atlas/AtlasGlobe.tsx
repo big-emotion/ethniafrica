@@ -16,6 +16,7 @@ import {
 import { AtlasFactsPanel } from "@/components/atlas/AtlasFactsPanel";
 import { AtlasTargetPicker } from "@/components/atlas/AtlasTargetPicker";
 import { AfricaBasemap } from "@/components/system/AfricaBasemap";
+import { orderedByWeight, peopleFieldIntensity } from "@/lib/atlas/peopleField";
 import {
   FLAT_MORPH,
   SPHERE_MORPH,
@@ -196,7 +197,11 @@ function PeopleFieldCircles({
 }) {
   return (
     <>
-      {blobs.map((blob) => {
+      {/* Largest first, so the smallest presence paints last and survives
+          under the big ones. PPL_BANTU declares 21 countries across three
+          orders of magnitude; in fiche order a 400-million halo covers a
+          200-thousand one and the map silently says that country has none. */}
+      {orderedByWeight(blobs, (blob) => blob.weight).map((blob) => {
         const { x, y } = projectLonLat(
           blob.center.lon,
           blob.center.lat,
@@ -210,9 +215,9 @@ function PeopleFieldCircles({
             r={fieldRadius(blob.weight)}
             fill={`url(#${FIELD_GRADIENT_ID})`}
             stroke="none"
-            opacity={
-              chosenCountryId && chosenCountryId !== blob.countryId ? 0.4 : 1
-            }
+            // Read from peopleField.ts, the one place the dim floor lives, so
+            // this path and the shader cannot disagree about it.
+            opacity={peopleFieldIntensity(blob.countryId, chosenCountryId)}
           />
         );
       })}
@@ -393,6 +398,19 @@ function defaultTargetFacts(target: AtlasTarget): AtlasTargetFacts {
   return { title: target.nameFr };
 }
 
+/**
+ * A target the caller said nothing about still opens, named in French rather
+ * than by its ISO code. A globe that refused to answer for a country it drew
+ * would be worse than one that answers briefly.
+ */
+function factsFor(
+  target: AtlasTarget,
+  facts: Partial<Record<CountryId, AtlasTargetFacts>> | undefined,
+  targetFacts: (target: AtlasTarget) => AtlasTargetFacts
+): AtlasTargetFacts {
+  return facts?.[target.countryId] ?? targetFacts(target);
+}
+
 const MARKER_DIAMETER_PX = 22;
 
 /**
@@ -443,7 +461,12 @@ export interface AtlasGlobeProps {
   overlay: AtlasOverlay | null;
   /** Shown by the REQ-119 missing placeholder; must name what is absent, not just say "missing". */
   missingMessage: string;
-  /** The facts the panel opens with for a chosen target. */
+  /**
+   * The facts the panel opens with, resolved per target.
+   *
+   * For callers that are already client components (ExplorerContinent builds
+   * a fiche link per country, so it has to be one).
+   */
   targetFacts?: (target: AtlasTarget) => AtlasTargetFacts;
   /**
    * Called when the reader chooses a target. The globe keeps owning its own
@@ -451,6 +474,28 @@ export interface AtlasGlobeProps {
    * outward, so a game can score it without a second globe (REQ-120).
    */
   onTargetChosen?: (target: AtlasTarget) => void;
+  /**
+   * The same facts as data, keyed by country.
+   *
+   * A fiche route is a server component and this is a client one, so it
+   * cannot hand over a resolver — a builder prop is unusable from there
+   * without wrapping the globe in a client component whose only job is to
+   * carry static facts across. Where both are given, this wins. A country in
+   * neither still opens, named in French.
+   */
+  facts?: Partial<Record<CountryId, AtlasTargetFacts>>;
+  /**
+   * What the flat map is showing, for the non-WebGL path only. AfricaBasemap
+   * is aria-hidden, so without this a reader on that path is told nothing at
+   * all about what replaced the globe.
+   */
+  fallbackNote?: string;
+  /**
+   * What returning from a chosen country is called. A family has a footprint
+   * and a people has an area — the mockups use different words because the
+   * entities are different things, not because the button is.
+   */
+  wholeAreaLabel?: string;
   className?: string;
   /**
    * How a target is offered. "markers" pins a pastille on each one, which reads
@@ -529,6 +574,9 @@ export function AtlasGlobe({
   missingMessage,
   targetFacts = defaultTargetFacts,
   onTargetChosen,
+  facts,
+  fallbackNote,
+  wholeAreaLabel = "Toute l'empreinte",
   className,
   targetPicker = "markers",
   legend,
@@ -680,7 +728,12 @@ export function AtlasGlobe({
   // on marker legibility, TTFB and Lighthouse budgets not yet measured.
   const stageIsSphere = webglSupported && overlay.kind !== "continent-field";
 
-  const facts = chosen ? targetFacts(chosen) : null;
+  // A picker with one entry offers a choice that is not one, and the button
+  // that returns from a choice has nothing to return to. 394 of the corpus's
+  // 789 people fiches declare exactly one country; the markers stand in.
+  const offersList = targetPicker === "list" && targets.length > 1;
+
+  const chosenFacts = chosen ? factsFor(chosen, facts, targetFacts) : null;
   const place = (target: AtlasTarget): StagePlacement =>
     stageIsSphere
       ? placeTargetOnSphere(target, pose)
@@ -726,19 +779,32 @@ export function AtlasGlobe({
         />
       )}
 
-      {targetPicker === "markers" &&
+      {/* AfricaBasemap is aria-hidden, so on the path without WebGL this
+          sentence is the whole of what a screen reader learns about the map
+          that replaced the globe. */}
+      {!stageIsSphere && fallbackNote && (
+        <p
+          data-atlas-fallback-note=""
+          className="pointer-events-none absolute inset-x-0 bottom-12 px-3 text-xs"
+          style={{ color: "var(--afh-night-ink-2)" }}
+        >
+          {fallbackNote}
+        </p>
+      )}
+
+      {(targetPicker === "markers" || !offersList) &&
         targets.map((target) => (
           <AtlasTargetMarker
             key={target.countryId}
             target={target}
             placement={place(target)}
             chosen={target.countryId === chosenCountryId}
-            label={targetFacts(target).title}
+            label={factsFor(target, facts, targetFacts).title}
             onChoose={() => chooseTarget(target.countryId)}
           />
         ))}
 
-      {targetPicker === "list" && targets.length > 0 && (
+      {offersList && (
         <div className="absolute left-1/2 top-3 z-[7] -translate-x-1/2">
           <AtlasTargetPicker
             targets={targets}
@@ -765,7 +831,7 @@ export function AtlasGlobe({
         data-atlas-toolbar=""
         className="absolute inset-x-0 bottom-0 hidden gap-2 p-3 min-[760px]:flex"
       >
-        {targetPicker === "list" && (
+        {offersList && (
           <button
             type="button"
             aria-pressed={chosenCountryId === null}
@@ -773,7 +839,7 @@ export function AtlasGlobe({
             className="rounded-full border px-3 py-1 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
             style={{ color: "var(--afh-night-ink-2)" }}
           >
-            Toute l&apos;empreinte
+            {wholeAreaLabel}
           </button>
         )}
         <button
@@ -795,16 +861,16 @@ export function AtlasGlobe({
         </button>
       </div>
 
-      {facts && (
+      {chosenFacts && (
         <AtlasFactsPanel
           open
           anchor={anchor}
           container={stage}
-          title={facts.title}
-          description={facts.description}
+          title={chosenFacts.title}
+          description={chosenFacts.description}
           onClose={() => setChosenCountryId(null)}
         >
-          {facts.body}
+          {chosenFacts.body}
         </AtlasFactsPanel>
       )}
     </div>

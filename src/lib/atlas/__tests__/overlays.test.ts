@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import type { CountryDistribution } from "@/types/afrik";
+import { AFRICA_ADMIN0 } from "@/lib/atlas/assets/africaAdmin0";
 
 import {
   buildContinentOverlay,
@@ -101,18 +102,80 @@ describe("buildPeopleFieldOverlay (REQ-116 AC2/AC3, REQ-119)", () => {
   it("renders the declared-missing state, not an empty field, when distributionByCountry is absent", () => {
     expect(buildPeopleFieldOverlay(undefined)).toEqual({
       kind: "people-field-missing",
+      undrawn: [],
     });
     expect(buildPeopleFieldOverlay([])).toEqual({
       kind: "people-field-missing",
+      undrawn: [],
     });
   });
 
+  // The charter (§4) says an unresolved country is treated as missing, never
+  // as a silently dropped shape. The builder used to filter it away, so 92
+  // declared presences across 63 fiches left no trace anywhere in the UI.
   // @req REQ-119
-  it("drops entries whose country has no committed admin-0 rings, and reports missing if none resolve", () => {
+  it("carries an entry it cannot draw instead of dropping it", () => {
+    const overlay = buildPeopleFieldOverlay([
+      { country: "NGA", population: 4000 },
+      { country: "USA", population: 1000 },
+    ]);
+
+    if (overlay.kind !== "people-field") throw new Error("unreachable");
+    expect(overlay.areas.map((area) => area.countryId)).toEqual(["NGA"]);
+    expect(overlay.undrawn).toEqual([{ countryId: "USA", rawWeight: 1000 }]);
+  });
+
+  // @req REQ-119
+  it("still reports missing when nothing resolves, and still names what was declared", () => {
     const overlay = buildPeopleFieldOverlay([
       { country: "XYZ", percentage: 100 },
     ]);
-    expect(overlay).toEqual({ kind: "people-field-missing" });
+
+    expect(overlay).toEqual({
+      kind: "people-field-missing",
+      undrawn: [{ countryId: "XYZ", rawWeight: 100 }],
+    });
+  });
+
+  // Halo scale is normalised over what is drawn, so a large off-map diaspora
+  // cannot shrink every halo on the continent. The share of the whole people
+  // is a separate figure, and the panel reads it from the demography.
+  // @req REQ-116
+  it("normalises the halo scale over drawn areas only", () => {
+    const overlay = buildPeopleFieldOverlay([
+      { country: "NGA", population: 1000 },
+      { country: "USA", population: 9000 },
+    ]);
+
+    if (overlay.kind !== "people-field") throw new Error("unreachable");
+    expect(overlay.areas[0].populationShare).toBe(1);
+  });
+});
+
+describe("ISO codes the admin-0 asset keys differently (REQ-116)", () => {
+  // Natural Earth keys South Sudan SDS and Western Sahara SAH; the corpus
+  // writes the ISO 3166-1 codes SSD and ESH. The geometry was committed all
+  // along — 27 South Sudan presences read as unmappable over a nomenclature
+  // disagreement, which is the single largest cause of undrawn entries.
+  // @req REQ-116
+  it("resolves an ISO code to the Natural Earth key holding its geometry", () => {
+    expect(getAdmin0Rings("SSD")).toEqual(getAdmin0Rings("SDS"));
+    expect(getAdmin0Rings("ESH")).toEqual(getAdmin0Rings("SAH"));
+    expect(getAdmin0Rings("SSD")?.length).toBeGreaterThan(0);
+  });
+
+  // @req REQ-116
+  it("draws the African island territories the asset used to omit", () => {
+    for (const countryId of ["COM", "MUS", "SYC", "CPV", "STP", "REU", "MYT"]) {
+      expect(getAdmin0Rings(countryId)?.length ?? 0).toBeGreaterThan(0);
+    }
+  });
+
+  // Somaliland is in the asset under SOL and has no ISO 3166-1 code at all.
+  // Aliasing it to SOM would make the atlas assert a sovereignty claim.
+  // @req REQ-116
+  it("does not alias Somaliland onto Somalia", () => {
+    expect(getAdmin0Rings("SOL")).not.toEqual(getAdmin0Rings("SOM"));
   });
 });
 
@@ -337,7 +400,10 @@ describe("buildContinentOverlay (REQ-116 AC1, continent scene)", () => {
   it("frames the whole continent with every committed admin-0 country", () => {
     const overlay = fieldOf({ NGA: 40 });
 
-    expect(overlay.frame).toHaveLength(51);
+    // Read from the asset rather than pinned: the count is a property of the
+    // committed geometry, and hard-coding it turns every legitimate addition
+    // into a red test that says nothing about the framing.
+    expect(overlay.frame).toHaveLength(Object.keys(AFRICA_ADMIN0).length);
     expect(overlay.frame.map((country) => country.countryId)).toContain("ZAF");
     expect(overlay.frame[0].rings[0].length).toBeGreaterThan(2);
   });

@@ -149,6 +149,22 @@ describe("buildAtlasTargets (REQ-117 AC1)", () => {
       overlay.areas[0].center
     );
   });
+
+  // The asset keys South Sudan by Natural Earth's SDS while the corpus writes
+  // the ISO SSD. Rings resolve through the alias; the name has to as well, or
+  // the 27 fiches declaring a South Sudan presence read a name off undefined.
+  // @req REQ-117
+  it("names a target whose geometry the asset files under another code", () => {
+    const overlay = buildPeopleFieldOverlay([
+      { country: "SSD", percentage: 100 },
+    ]);
+    if (overlay.kind !== "people-field") throw new Error("expected a field");
+
+    const [target] = buildAtlasTargets(overlay);
+    expect(target.countryId).toBe("SSD");
+    expect(target.nameFr).toBeTruthy();
+    expect(target.nameFr).not.toBe("SSD");
+  });
 });
 
 describe("buildAtlasTargets for the continent scene (REQ-117 AC1)", () => {

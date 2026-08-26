@@ -81,7 +81,12 @@ export const ALPHA3_TO_ALPHA2: Readonly<Record<string, string>> = {
   MRT: "MR",
   MUS: "MU",
   MWI: "MW",
+  // French overseas departments, added to the admin-0 asset alongside the six
+  // island states the corpus cites. Both hold real ISO codes, so both get a
+  // flag like every other country rather than an entry in the exception list.
+  MYT: "YT",
   NAM: "NA",
+  REU: "RE",
   NER: "NE",
   NGA: "NG",
   RWA: "RW",

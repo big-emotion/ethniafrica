@@ -140,7 +140,7 @@ describe("buildSpreadRound", () => {
         peopleFixture({
           distributionByCountry: [
             { country: "NGA", population: 40_000_000 },
-            { country: "CPV", population: 1_200_000 },
+            { country: "SHN", population: 1_200_000 },
           ],
         })
       )

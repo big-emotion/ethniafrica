@@ -36,7 +36,7 @@ function box(west: number, south: number, east: number, north: number): Ring[] {
 }
 
 const algeria = countryFixture("DZA", "Algérie");
-const capeVerde = countryFixture("CPV", "Cap-Vert");
+const undrawable = countryFixture("SHN", "Sainte-Hélène");
 
 const tinyComparison: WorldCompareEntry = {
   id: "BOX_S",
@@ -108,7 +108,7 @@ describe("buildTrueSizeRound", () => {
 
   // @req REQ-120
   it("returns null when the African country has no committed outline", () => {
-    expect(buildTrueSizeRound(capeVerde, tinyComparison)).toBeNull();
+    expect(buildTrueSizeRound(undrawable, tinyComparison)).toBeNull();
   });
 
   // @req REQ-120

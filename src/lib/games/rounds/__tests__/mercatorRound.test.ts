@@ -27,7 +27,7 @@ const kenya = countryFixture("KEN", "Kenya");
 const botswana = countryFixture("BWA", "Botswana");
 const senegal = countryFixture("SEN", "Sénégal");
 const tunisia = countryFixture("TUN", "Tunisie");
-const capeVerde = countryFixture("CPV", "Cap-Vert");
+const undrawable = countryFixture("SHN", "Sainte-Hélène");
 
 /** Total spherical area of a country's committed outline, islands included. */
 function trueAreaKm2(countryId: string): number {
@@ -87,8 +87,8 @@ describe("buildMercatorRound", () => {
 
   // @req REQ-120
   it("returns null when a country has no committed outline", () => {
-    expect(buildMercatorRound(capeVerde, chad)).toBeNull();
-    expect(buildMercatorRound(chad, capeVerde)).toBeNull();
+    expect(buildMercatorRound(undrawable, chad)).toBeNull();
+    expect(buildMercatorRound(chad, undrawable)).toBeNull();
   });
 });
 
@@ -108,6 +108,6 @@ describe("mercatorMisleads", () => {
 
   // @req REQ-120
   it("does not flag a pair one of whose outlines is missing", () => {
-    expect(mercatorMisleads(capeVerde, tunisia)).toBe(false);
+    expect(mercatorMisleads(undrawable, tunisia)).toBe(false);
   });
 });

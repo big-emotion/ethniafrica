@@ -82,3 +82,70 @@ describe("charter categorical accent tokens (ETNI-798)", () => {
     expect(offenders).toEqual([]);
   });
 });
+
+const MOTION_CSS_PATH = join(process.cwd(), "src/styles/tokens/motion.css");
+const CHARTER_PATH = join(process.cwd(), "docs/design/atlas-charter.md");
+
+describe("charter motion tokens (atlas charter §6)", () => {
+  // The charter names one spring and reserves it for things arriving on
+  // screen. While the token was missing, anything wanting it had to inline
+  // the curve, which is how a mockup and an app drift apart.
+  // @req REQ-091
+  it("defines --afh-ease-spring as the curve the charter names", () => {
+    const motionCss = readFileSync(MOTION_CSS_PATH, "utf8");
+    const spring = motionCss.match(/--afh-ease-spring:\s*([^;]+);/)?.[1];
+    // Compared as four numbers, not as a string: whether the author wrote
+    // `.22` or `0.22` is Prettier's business, and the curve is the contract.
+    const controlPoints = spring
+      ?.match(/cubic-bezier\(([^)]+)\)/)?.[1]
+      .split(",")
+      .map((point) => Number(point));
+
+    expect(controlPoints).toEqual([0.22, 1, 0.36, 1]);
+  });
+
+  // A spring is the one easing legible on its own: it travels past its
+  // destination and comes back. Collapsing the duration hides that, but only
+  // for as long as no caller pairs the curve with a duration of its own, so
+  // the curve is flattened at the source as well.
+  // @req REQ-091
+  it("flattens the spring under prefers-reduced-motion", () => {
+    const motionCss = readFileSync(MOTION_CSS_PATH, "utf8");
+    const reducedBlock =
+      motionCss.match(
+        /@media \(prefers-reduced-motion: reduce\)\s*\{([\s\S]*)\n\}/
+      )?.[1] ?? "";
+
+    expect(reducedBlock).toMatch(/--afh-ease-spring:\s*linear;/);
+  });
+});
+
+describe("the atlas charter is in the repository", () => {
+  // Nothing is "charter-compliant" while the charter lives outside the repo.
+  // A docs sweep removed it once without a single gate going red; this is
+  // the gate that would have caught it.
+  // @req REQ-091
+  it("carries the charter document and its load-bearing sections", () => {
+    const charter = readFileSync(CHARTER_PATH, "utf8");
+
+    for (const section of [
+      "## 1. Cartographic grammar",
+      "## 2. Accent scope",
+      "## 3. The three entry points",
+      "## 4. Saying what the corpus does not have",
+      "## 5. The information panel",
+      "## 6. Motion",
+    ]) {
+      expect(charter).toContain(section);
+    }
+  });
+
+  // §1's hard rule is what the people fiche is built on. If an edit softens
+  // it, every encoding test downstream loses the thing it cites.
+  // @req REQ-116
+  it("states the hard rule that a people never receives a closed line", () => {
+    const charter = readFileSync(CHARTER_PATH, "utf8");
+
+    expect(charter).toContain("A people never receives a closed line");
+  });
+});

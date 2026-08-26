@@ -1,27 +1,20 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
-import { AlertTriangle } from "lucide-react";
 import type { PeopleDetail } from "@/types/afrik-frontend";
-import { getPeople } from "@/lib/afrikLoader";
+import { transformPeopleData } from "@/lib/peopleDataTransformer";
 import {
-  transformPeopleData,
-  fetchPeopleNamesDossier,
-  transformEgoNetworkPreview,
-  type PeopleRelationPreviewItem,
-  type EgoNetworkPreviewSource,
-} from "@/lib/peopleDataTransformer";
-import {
-  PeopleHero,
   PeopleOriginBlock,
   PeopleLanguageSection,
   PeopleHistoryTimeline,
   PeopleCultureGrid,
   PeopleRelatedPeoplesSection,
   PeopleCountriesSection,
-  PeopleSourcesFooter,
 } from "@/components/people";
+// One sources footer for the three fiches. It lives under country/ for
+// historical reasons only — it takes FicheSourceEntry[] and knows nothing
+// about countries.
+import { SourcesFooter } from "@/components/country/SourcesFooter";
+import { PeopleFicheHead } from "@/components/people/PeopleFicheHead";
+import { PeopleNamingBlock } from "@/components/people/PeopleNamingBlock";
+import { PeopleFieldExplainer } from "@/components/people/PeopleFieldExplainer";
 import { AfrikBreadcrumbs } from "@/components/layout/AfrikBreadcrumbs";
 import { FragmentationView } from "@/components/colonization/FragmentationView";
 import { OralNarrativesSection } from "@/components/people/OralNarrativesSection";
@@ -29,31 +22,12 @@ import { PeopleNamesSection } from "@/components/names/PeopleNamesSection";
 import type { PeopleFragmentation } from "@/api/v2/schemas/peopleFragmentation";
 import type { PeopleNamesDossier } from "@/api/v2/schemas/names";
 
-async function fetchFragmentation(
-  peopleId: string
-): Promise<PeopleFragmentation | null> {
-  const res = await fetch(`/api/v2/peoples/${peopleId}/fragmentation`);
-  if (!res.ok) return null;
-  const json = await res.json();
-  return (json.data ?? null) as PeopleFragmentation | null;
-}
-
-// @req FR72
-async function fetchRelationsPreview(
-  peopleId: string
-): Promise<PeopleRelationPreviewItem[]> {
-  const res = await fetch(`/api/v2/peoples/${peopleId}/relations?limit=3`);
-  if (!res.ok) return [];
-  const json = await res.json();
-  const data = (json.data ?? null) as EgoNetworkPreviewSource | null;
-  if (!data) return [];
-  return transformEgoNetworkPreview(data);
-}
-
-interface PeopleDetailViewV2Props {
-  peopleId: string;
-  onBack?: () => void;
-  onFlagCtaClick?: () => void;
+export interface PeopleDetailViewV2Props {
+  people: PeopleDetail;
+  namesDossier?: PeopleNamesDossier | null;
+  fragmentation?: PeopleFragmentation | null;
+  /** An open flag on this fiche's sourcing, resolved by the route. */
+  hasSourceFlag?: boolean;
 }
 
 const SECTION_DELAY_MS = [0, 50, 100, 150, 200, 250, 300] as const;
@@ -75,6 +49,9 @@ function SectionCard({
 }) {
   return (
     <section
+      // The label, without the decorative glyph the heading prefixes it with.
+      // The parity contract reads the fiche's section order off this.
+      data-fiche-section={label}
       className="people-fade-in rounded-[var(--country-radius-xl)] md:rounded-[20px] xl:rounded-[22px] p-[18px] md:p-6 xl:p-7 relative overflow-hidden"
       style={{
         background: "var(--country-card)",
@@ -99,133 +76,35 @@ function SectionCard({
   );
 }
 
+/**
+ * The people fiche's parchment — the prose half of the page, under the globe.
+ *
+ * It is a **server component**, fed by the route. It used to be a client one
+ * that fetched its own fiche, fragmentation, names dossier and relations from
+ * the browser, which cost the page its server rendering — and with it the axe
+ * audit and the Lighthouse score, on a fiche that is measured on both. The
+ * route already awaits every one of those, so the fetching was duplicated as
+ * well as costly.
+ *
+ * Two sections open it, in the mockup's order, before any figure:
+ *   1. "Le nom porté, les noms subis" — the fiche's editorial position.
+ *   2. "Pourquoi la carte ne trace pas de frontière" — the grammar of the
+ *      globe above, in the reader's terms, plus the legend for it.
+ *
+ * The relations preview the client version fetched is gone rather than
+ * threaded through: the route already hands the same relations to
+ * FicheSequence's links panel, which is the fiche's relations surface. Two
+ * views of one list on one page is a duplication, not a feature.
+ */
 // @req REQ-091
 export function PeopleDetailViewV2({
-  peopleId,
-  onBack,
-  onFlagCtaClick,
+  people,
+  namesDossier = null,
+  fragmentation = null,
+  hasSourceFlag = false,
 }: PeopleDetailViewV2Props) {
-  const [people, setPeople] = useState<PeopleDetail | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [fragmentation, setFragmentation] =
-    useState<PeopleFragmentation | null>(null);
-  const [namesDossier, setNamesDossier] = useState<PeopleNamesDossier | null>(
-    null
-  );
-  const [relationsPreview, setRelationsPreview] = useState<
-    PeopleRelationPreviewItem[]
-  >([]);
-
-  useEffect(() => {
-    let cancelled = false;
-
-    fetchRelationsPreview(peopleId)
-      .then((items) => {
-        if (!cancelled) setRelationsPreview(items);
-      })
-      .catch(() => {
-        // Relations preview is additive — the rest of the fiche must
-        // render regardless, so a fetch failure simply leaves it absent.
-        if (!cancelled) setRelationsPreview([]);
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [peopleId]);
-
-  useEffect(() => {
-    let cancelled = false;
-
-    fetchFragmentation(peopleId)
-      .then((data) => {
-        if (!cancelled) setFragmentation(data);
-      })
-      .catch(() => {
-        // Fragmentation section is additive — the rest of the fiche must
-        // render regardless, so a fetch failure simply leaves it absent.
-        if (!cancelled) setFragmentation(null);
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [peopleId]);
-
-  useEffect(() => {
-    let cancelled = false;
-
-    fetchPeopleNamesDossier(peopleId)
-      .then((dossier) => {
-        if (!cancelled) setNamesDossier(dossier);
-      })
-      .catch(() => {
-        // Names section is additive and below the fold (UX-DR18) — the
-        // rest of the fiche must render regardless of this fetch failing.
-        if (!cancelled) setNamesDossier(null);
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [peopleId]);
-
-  useEffect(() => {
-    let cancelled = false;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setLoading(true);
-
-    setError(null);
-
-    getPeople(peopleId)
-      .then((data) => {
-        if (cancelled) return;
-        if (data) {
-          setPeople(data);
-        } else {
-          setError("Peuple non trouvé");
-        }
-      })
-      .catch(() => {
-        if (!cancelled) setError("Échec du chargement de la fiche");
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
-      });
-
-    return () => {
-      cancelled = true;
-    };
-  }, [peopleId]);
-
-  if (loading) {
-    return (
-      <div className="w-full">
-        <div className="mx-3 md:mx-4 xl:mx-5 mt-3 rounded-[20px] overflow-hidden">
-          <Skeleton className="h-[260px] w-full" />
-        </div>
-        <div className="px-3 md:px-4 xl:px-5 space-y-3 mt-3">
-          <Skeleton className="h-[140px] w-full rounded-[16px]" />
-          <Skeleton className="h-[180px] w-full rounded-[16px]" />
-          <Skeleton className="h-[220px] w-full rounded-[16px]" />
-        </div>
-      </div>
-    );
-  }
-
-  if (error || !people) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-[300px] gap-3 p-6">
-        <AlertTriangle className="h-10 w-10 text-destructive" />
-        <p className="text-destructive text-sm font-medium">
-          {error || "Peuple non trouvé"}
-        </p>
-      </div>
-    );
-  }
-
   const data = transformPeopleData(people, namesDossier);
+  const distribution = people.demography?.distributionByCountry;
 
   const breadcrumbs = [
     { label: "Familles", href: "/fr/familles" },
@@ -248,14 +127,8 @@ export function PeopleDetailViewV2({
         color: "var(--country-text)",
       }}
     >
-      {/* 1. Hero — always above fold */}
-      <PeopleHero
-        data={data.hero}
-        onBack={onBack}
-        onFlagCtaClick={onFlagCtaClick}
-      />
+      <PeopleFicheHead hero={data.hero} countries={data.countries} />
 
-      {/* 2. Breadcrumbs — below hero, small type */}
       <AfrikBreadcrumbs items={breadcrumbs} />
 
       {/* Content area — max-width 800px reading surface */}
@@ -263,7 +136,37 @@ export function PeopleDetailViewV2({
         className="px-3 md:px-4 xl:px-5 space-y-[10px] md:space-y-[14px] xl:space-y-4 mt-[10px] md:mt-[14px] xl:mt-4 mx-auto"
         style={{ maxWidth: "800px" }}
       >
-        {/* 2. Origins */}
+        {/* 1. The name borne, the names imposed — first, before any figure. */}
+        <SectionCard
+          label="Le nom porté, les noms subis"
+          icon="✎"
+          iconBg="var(--country-earth-bg)"
+          iconColor="var(--country-earth)"
+          delayIndex={0}
+        >
+          <PeopleNamingBlock
+            nameMain={data.hero.nameMain}
+            selfAppellation={people.appellations?.selfAppellation}
+            exonyms={people.appellations?.exonyms}
+            whyProblematic={people.appellations?.whyProblematic}
+            isoCode={people.languages?.isoCodes?.[0]}
+          />
+        </SectionCard>
+
+        {/* 2. Why the map draws no border — the globe's grammar, in prose. */}
+        {distribution && distribution.length > 0 && (
+          <SectionCard
+            label="Pourquoi la carte ne trace pas de frontière"
+            icon="◌"
+            iconBg="var(--country-terracotta-bg)"
+            iconColor="var(--country-terracotta)"
+            delayIndex={1}
+          >
+            <PeopleFieldExplainer distribution={distribution} />
+          </SectionCard>
+        )}
+
+        {/* 3. Origins */}
         {(data.origin.ancientOrigins ||
           data.origin.formationPeriod ||
           data.origin.migrationRoutes.length > 0 ||
@@ -274,13 +177,13 @@ export function PeopleDetailViewV2({
             icon="◎"
             iconBg="var(--country-earth-bg)"
             iconColor="var(--country-earth)"
-            delayIndex={0}
+            delayIndex={2}
           >
             <PeopleOriginBlock data={data.origin} />
           </SectionCard>
         )}
 
-        {/* 3. Language */}
+        {/* 4. Language */}
         {(data.language.mainLanguage ||
           data.language.isoCodes.length > 0 ||
           data.language.dialects.length > 0 ||
@@ -290,13 +193,12 @@ export function PeopleDetailViewV2({
             icon="🗣"
             iconBg="var(--country-green-bg)"
             iconColor="var(--country-green)"
-            delayIndex={1}
+            delayIndex={3}
           >
             <PeopleLanguageSection data={data.language} />
           </SectionCard>
         )}
 
-        {/* 4. History */}
         {(data.history.kingdomsOrChiefdoms ||
           data.history.relationsWithNeighbors ||
           data.history.conflictsOrAlliances ||
@@ -306,7 +208,7 @@ export function PeopleDetailViewV2({
             icon="↳"
             iconBg="var(--country-gold-bg)"
             iconColor="var(--country-gold)"
-            delayIndex={2}
+            delayIndex={4}
           >
             <PeopleHistoryTimeline data={data.history} />
           </SectionCard>
@@ -317,7 +219,6 @@ export function PeopleDetailViewV2({
         {/* Noms & appellations (below the fold; chips hydrate second-wave, UX-DR18) */}
         <PeopleNamesSection data={data.names} />
 
-        {/* 5. Culture */}
         {(data.culture.supremeDeity ||
           data.culture.intermediates.length > 0 ||
           data.culture.symbols.length > 0 ||
@@ -330,41 +231,38 @@ export function PeopleDetailViewV2({
             icon="◈"
             iconBg="var(--country-terracotta-bg)"
             iconColor="var(--country-terracotta)"
-            delayIndex={3}
+            delayIndex={5}
           >
             <PeopleCultureGrid data={data.culture} />
           </SectionCard>
         )}
 
-        {/* 6. Related peoples & organization */}
         {(data.relatedPeoples.ethnicities.length > 0 ||
           data.relatedPeoples.politicalSystem ||
           data.relatedPeoples.clanOrganization ||
-          data.relatedPeoples.ageClassSystems ||
-          relationsPreview.length > 0) && (
+          data.relatedPeoples.ageClassSystems) && (
           <SectionCard
             label="Peuples voisins & organisation"
             icon="◉"
             iconBg="var(--country-earth-bg)"
             iconColor="var(--country-earth)"
-            delayIndex={4}
+            delayIndex={6}
           >
             <PeopleRelatedPeoplesSection
               data={data.relatedPeoples}
               peopleId={data.hero.peopleId}
-              relationsPreview={relationsPreview}
+              relationsPreview={[]}
             />
           </SectionCard>
         )}
 
-        {/* 7. Countries & demographics */}
         {data.countries.distributions.length > 0 && (
           <SectionCard
             label="Répartition géographique"
             icon="◉"
             iconBg="var(--country-terracotta-bg)"
             iconColor="var(--country-terracotta)"
-            delayIndex={5}
+            delayIndex={6}
           >
             <PeopleCountriesSection
               data={data.countries}
@@ -374,7 +272,7 @@ export function PeopleDetailViewV2({
           </SectionCard>
         )}
 
-        {/* 8. Fragmentation coloniale (FR85) — absent below 2 countries */}
+        {/* Fragmentation coloniale (FR85) — absent below 2 countries */}
         {fragmentation && (
           <SectionCard
             label="Fragmentation coloniale"
@@ -391,13 +289,12 @@ export function PeopleDetailViewV2({
         )}
       </div>
 
-      {/* 8. Sources footer (outside content padding, max-width) */}
-      {data.sources && (
+      {data.sources.length > 0 && (
         <div
           className="px-3 md:px-4 xl:px-5 mt-[10px] md:mt-[14px] xl:mt-4 mx-auto"
           style={{ maxWidth: "800px" }}
         >
-          <PeopleSourcesFooter sources={data.sources} />
+          <SourcesFooter sources={data.sources} hasSourceFlag={hasSourceFlag} />
         </div>
       )}
     </div>

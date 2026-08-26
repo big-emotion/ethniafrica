@@ -20,7 +20,7 @@ function makeCountry(
   };
 }
 
-// Only countries present in the committed admin-0 asset can be tapped; SYC is
+// Only countries present in the committed admin-0 asset can be tapped; SHN is
 // African but absent from it, so it must never become a choice.
 const OTHER_COUNTRIES: GameCountryFixture[] = [
   makeCountry({ id: "DZA", nameFr: "Algérie" }),
@@ -71,12 +71,12 @@ describe("buildHistoricalNameRound", () => {
   // @req REQ-120
   it("never offers a country the admin-0 asset cannot draw", () => {
     const withUnmappable = [
-      makeCountry({ id: "SYC", nameFr: "Seychelles" }),
+      makeCountry({ id: "SHN", nameFr: "Sainte-Hélène" }),
       ...OTHER_COUNTRIES,
     ];
     const round = buildHistoricalNameRound(makeCountry(), withUnmappable);
 
-    expect(round.choices).not.toContain("SYC");
+    expect(round.choices).not.toContain("SHN");
   });
 
   // @req REQ-120
@@ -126,7 +126,7 @@ describe("buildHistoricalNameRound", () => {
   // @req REQ-120
   it("returns null when the answer itself cannot be drawn on the globe", () => {
     expect(
-      buildHistoricalNameRound(makeCountry({ id: "SYC" }), OTHER_COUNTRIES)
+      buildHistoricalNameRound(makeCountry({ id: "SHN" }), OTHER_COUNTRIES)
     ).toBeNull();
   });
 
