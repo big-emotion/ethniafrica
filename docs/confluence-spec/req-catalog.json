@@ -108,7 +108,9 @@
     "REQ-107",
     "REQ-108",
     "REQ-110",
+    "REQ-111",
     "REQ-112",
+    "REQ-113",
     "REQ-115",
     "REQ-119"
   ],
@@ -219,7 +221,9 @@
     "REQ-106": "Confluence REQ-106",
     "REQ-108": "Confluence REQ-108",
     "REQ-110": "Confluence REQ-110",
+    "REQ-111": "Confluence REQ-111",
     "REQ-112": "Confluence REQ-112",
+    "REQ-113": "Confluence REQ-113",
     "REQ-115": "Confluence REQ-115",
     "REQ-119": "Confluence REQ-119"
   }

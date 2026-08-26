@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { HomeHero } from "@/components/home/HomeHero";
-import { ModuleGrid } from "@/components/home/ModuleGrid";
-import { getHomeModules } from "@/lib/moduleAvailability";
+import { EntryPoints } from "@/components/home/EntryPoints";
+import { getCorpusCounts } from "@/lib/home/corpusCounts";
 import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
 
 // @req FR95
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
   },
 };
 
-// @req FR91 @req FR92 @req FR95
+// @req REQ-113
 export default async function Home() {
-  const modules = await getHomeModules("fr");
+  const counts = await getCorpusCounts();
 
   return (
     <PageLayout language="fr" hideHeader flushTop>
       <HomeHero />
       <div className="mt-8">
-        <ModuleGrid modules={modules} />
+        <EntryPoints language="fr" counts={counts} />
       </div>
     </PageLayout>
   );
