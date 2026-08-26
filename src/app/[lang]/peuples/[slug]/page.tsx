@@ -9,6 +9,8 @@ import { PeopleDetailView } from "@/components/detail/PeopleDetailView";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
 import { buildPeopleFieldOverlay } from "@/lib/atlas/overlays";
+import { buildPeoplePresenceFacts } from "@/components/people/peoplePresenceFacts";
+import { peopleFallbackNote } from "@/components/people/peopleFallbackNote";
 import { getPeopleById } from "@/api/v2/services/peopleService";
 import { getPeopleNamesDossier } from "@/api/v2/services/names";
 import { getPeopleFragmentation } from "@/api/v2/services/peopleFragmentation";
@@ -194,6 +196,9 @@ export default async function PeoplesSlugPage({
   }
 
   const peopleDetail = mapPeopleDetail(people);
+  const peopleFieldOverlay = buildPeopleFieldOverlay(
+    peopleDetail.demography?.distributionByCountry
+  );
 
   // Live version (revalidate = 3600 at segment level)
   return (
@@ -212,10 +217,17 @@ export default async function PeoplesSlugPage({
           }}
           globe={
             <AtlasGlobe
-              overlay={buildPeopleFieldOverlay(
-                peopleDetail.demography?.distributionByCountry
-              )}
+              overlay={peopleFieldOverlay}
               missingMessage={`Répartition par pays non renseignée pour ${peopleDetail.nameMain}`}
+              facts={buildPeoplePresenceFacts({
+                peopleName: peopleDetail.nameMain,
+                peopleId: parsed.slug,
+                demography: peopleDetail.demography,
+              })}
+              fallbackNote={peopleFallbackNote(
+                peopleDetail.nameMain,
+                peopleFieldOverlay
+              )}
             />
           }
           record={

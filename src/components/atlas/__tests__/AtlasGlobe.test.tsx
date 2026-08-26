@@ -262,16 +262,22 @@ describe("AtlasGlobe", () => {
       expect(markerFor("NGA")).toHaveAttribute("aria-pressed", "false");
     });
 
+    // Facts arrive as data rather than as a resolver function: the fiche
+    // routes are server components, and a function cannot cross into a client
+    // one. Passing a builder would have made this unusable from the only
+    // caller that matters.
     // @req REQ-117
     it("gives the fiche the last word on what a target's facts are", () => {
       render(
         <AtlasGlobe
           overlay={familyPeopleOverlay}
           missingMessage="n/a"
-          targetFacts={(target) => ({
-            title: `Peuple au ${target.nameFr}`,
-            body: <p>82 % de la population</p>,
-          })}
+          facts={{
+            NGA: {
+              title: "Peuple au Nigeria",
+              body: <p>82 % de la population</p>,
+            },
+          }}
         />
       );
 
@@ -280,6 +286,21 @@ describe("AtlasGlobe", () => {
       );
 
       expect(screen.getByText("82 % de la population")).toBeInTheDocument();
+    });
+
+    // @req REQ-117
+    it("falls back to the country's French name for a target the fiche said nothing about", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyPeopleOverlay}
+          missingMessage="n/a"
+          facts={{ NGA: { title: "Peuple au Nigeria" } }}
+        />
+      );
+
+      expect(
+        screen.getByRole("button", { name: "Afrique du Sud" })
+      ).toBeInTheDocument();
     });
 
     // @req REQ-117

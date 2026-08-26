@@ -251,8 +251,16 @@ export interface AtlasTargetFacts {
  * each fiche owns what goes inside. Absent a resolver, a target still names
  * itself in French rather than showing an ISO code.
  */
-function defaultTargetFacts(target: AtlasTarget): AtlasTargetFacts {
-  return { title: target.nameFr };
+/**
+ * A target the fiche said nothing about still opens, named in French rather
+ * than by its ISO code. A globe that refused to answer for a country it drew
+ * would be worse than one that answers briefly.
+ */
+function factsFor(
+  target: AtlasTarget,
+  facts: Partial<Record<CountryId, AtlasTargetFacts>> | undefined
+): AtlasTargetFacts {
+  return facts?.[target.countryId] ?? { title: target.nameFr };
 }
 
 const MARKER_DIAMETER_PX = 22;
@@ -369,8 +377,15 @@ export interface AtlasGlobeProps {
   overlay: AtlasOverlay | null;
   /** Shown by the REQ-119 missing placeholder; must name what is absent, not just say "missing". */
   missingMessage: string;
-  /** The facts the panel opens with for a chosen target. */
-  targetFacts?: (target: AtlasTarget) => AtlasTargetFacts;
+  /**
+   * What the panel opens with, per country.
+   *
+   * Data rather than a resolver function on purpose: the fiche routes are
+   * server components, and a function cannot cross into a client one — a
+   * builder would have made this unusable from the only callers that matter.
+   * A country absent from the record still opens, named in French.
+   */
+  facts?: Partial<Record<CountryId, AtlasTargetFacts>>;
   /**
    * What the flat map is showing, for the non-WebGL path only. AfricaBasemap
    * is aria-hidden, so without this a reader on that path is told nothing at
@@ -431,7 +446,7 @@ function usePanelAnchor(): PanelAnchor {
 export function AtlasGlobe({
   overlay,
   missingMessage,
-  targetFacts = defaultTargetFacts,
+  facts,
   fallbackNote,
   className,
 }: AtlasGlobeProps) {
@@ -480,7 +495,7 @@ export function AtlasGlobe({
     );
   }
 
-  const facts = chosen ? targetFacts(chosen) : null;
+  const chosenFacts = chosen ? factsFor(chosen, facts) : null;
   const place = (target: AtlasTarget): StagePlacement =>
     webglSupported
       ? placeTargetOnSphere(target, pose)
@@ -528,7 +543,7 @@ export function AtlasGlobe({
           target={target}
           placement={place(target)}
           chosen={target.countryId === chosenCountryId}
-          label={targetFacts(target).title}
+          label={factsFor(target, facts).title}
           onChoose={() => {
             // A fly-to that landed somewhere other than the country it named
             // would be lying, so the reader's own turning is cleared first.
@@ -594,16 +609,16 @@ export function AtlasGlobe({
         }}
       />
 
-      {facts && (
+      {chosenFacts && (
         <AtlasFactsPanel
           open
           anchor={anchor}
           container={stage}
-          title={facts.title}
-          description={facts.description}
+          title={chosenFacts.title}
+          description={chosenFacts.description}
           onClose={() => setChosenCountryId(null)}
         >
-          {facts.body}
+          {chosenFacts.body}
         </AtlasFactsPanel>
       )}
     </div>
