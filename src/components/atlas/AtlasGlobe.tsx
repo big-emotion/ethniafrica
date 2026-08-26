@@ -7,13 +7,20 @@ import {
   useRef,
   useState,
   type CSSProperties,
+  type KeyboardEvent as ReactKeyboardEvent,
+  type PointerEvent as ReactPointerEvent,
   type ReactNode,
   type SVGProps,
 } from "react";
 
 import { AtlasFactsPanel } from "@/components/atlas/AtlasFactsPanel";
 import { AfricaBasemap } from "@/components/system/AfricaBasemap";
-import { poseForTarget, type CameraPose } from "@/lib/atlas/camera";
+import {
+  FLAT_MORPH,
+  SPHERE_MORPH,
+  poseForTarget,
+  type CameraPose,
+} from "@/lib/atlas/camera";
 import {
   basemapTransform,
   placeTargetOnBasemap,
@@ -396,12 +403,24 @@ export interface AtlasGlobeProps {
  * per-entity accent (people ocre / country teal / family perv), which keeps
  * governing everything FicheSequence renders around it.
  */
+/** Matched to HomeGlobe, so the same drag travels the same distance on both. */
+const DRAG_RADIANS_PER_PIXEL = 0.006;
+const DRAG_PITCH_RADIANS_PER_PIXEL = 0.004;
+const KEY_STEP_RADIANS = 0.12;
+const PITCH_LIMIT_RADIANS = 1.1;
+
+function clampPitch(pitch: number): number {
+  return Math.min(PITCH_LIMIT_RADIANS, Math.max(-PITCH_LIMIT_RADIANS, pitch));
+}
+
+const GLOBE_SURFACE_LABEL =
+  "Globe de l'atlas. Glissez ou utilisez les flèches pour tourner.";
+
 const NIGHT_STAGE_STYLE: CSSProperties = {
   position: "relative",
   width: "100%",
-  aspectRatio: `${BASEMAP_VIEWBOX.width} / ${BASEMAP_VIEWBOX.height}`,
+  height: "var(--afh-globe-stage-height)",
   backgroundColor: "var(--afh-night-ground)",
-  borderRadius: "var(--afh-radius-xl)",
   overflow: "hidden",
 };
 
@@ -478,10 +497,80 @@ export function AtlasGlobe({
       cameraFocus ? poseForTarget(cameraFocus, biasForPanel(anchor)) : null,
     [cameraFocus, anchor]
   );
-  const pose = useGlobeCamera(
+  const flown = useGlobeCamera(
     destination,
     reducedMotion || !cameraFollowsChoice
   );
+
+  // What the reader has done to the camera on top of wherever it flew.
+  // Kept as a delta rather than an absolute pose so a later fly-to still
+  // lands on its target: choosing a country is not undone by having
+  // dragged the globe first.
+  const [turn, setTurn] = useState({ yaw: 0, pitch: 0 });
+  const [flat, setFlat] = useState(false);
+  const dragging = useRef(false);
+  const lastPointer = useRef({ x: 0, y: 0 });
+
+  const pose: CameraPose = {
+    ...flown,
+    yaw: flown.yaw + turn.yaw,
+    pitch: clampPitch(flown.pitch + turn.pitch),
+    morph: flat ? FLAT_MORPH : SPHERE_MORPH,
+  };
+
+  const turnBy = (dYaw: number, dPitch: number) =>
+    setTurn((current) => ({
+      yaw: current.yaw + dYaw,
+      pitch: clampPitch(current.pitch + dPitch),
+    }));
+
+  const recentre = () => {
+    setTurn({ yaw: 0, pitch: 0 });
+    setFlat(false);
+    setChosenCountryId(null);
+  };
+
+  const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    dragging.current = true;
+    lastPointer.current = { x: event.clientX, y: event.clientY };
+    event.currentTarget.setPointerCapture?.(event.pointerId);
+  };
+
+  const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!dragging.current) return;
+    const dx = event.clientX - lastPointer.current.x;
+    const dy = event.clientY - lastPointer.current.y;
+    lastPointer.current = { x: event.clientX, y: event.clientY };
+    // Under a finger the surface has to keep up with the finger, so a drag
+    // moves the globe itself rather than a target it eases toward.
+    turnBy(dx * DRAG_RADIANS_PER_PIXEL, dy * DRAG_PITCH_RADIANS_PER_PIXEL);
+  };
+
+  const stopDragging = () => {
+    dragging.current = false;
+  };
+
+  const handleKeyDown = (event: ReactKeyboardEvent<HTMLDivElement>) => {
+    switch (event.key) {
+      case "ArrowLeft":
+        turnBy(-KEY_STEP_RADIANS, 0);
+        break;
+      case "ArrowRight":
+        turnBy(KEY_STEP_RADIANS, 0);
+        break;
+      // Same convention as the drag: up sends the surface up, which is a
+      // decrease in pitch.
+      case "ArrowUp":
+        turnBy(0, -KEY_STEP_RADIANS);
+        break;
+      case "ArrowDown":
+        turnBy(0, KEY_STEP_RADIANS);
+        break;
+      default:
+        return;
+    }
+    event.preventDefault();
+  };
 
   if (!overlay || overlay.kind === "people-field-missing") {
     return (
@@ -511,6 +600,23 @@ export function AtlasGlobe({
       className={cn(className)}
       style={NIGHT_STAGE_STYLE}
     >
+      {/* The canvas below stays aria-hidden — it is paint. This element is
+          what the reader actually operates, which is why the name, the role
+          and every handler live here rather than on the canvas. */}
+      <div
+        data-atlas-surface=""
+        role="application"
+        aria-label={GLOBE_SURFACE_LABEL}
+        tabIndex={0}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={stopDragging}
+        onPointerCancel={stopDragging}
+        onPointerLeave={stopDragging}
+        onKeyDown={handleKeyDown}
+        className="absolute inset-0 cursor-grab touch-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-current active:cursor-grabbing"
+      />
+
       {stageIsSphere ? (
         <LazyAtlasGlobeCanvas overlay={overlay} pose={pose} />
       ) : (
@@ -533,6 +639,39 @@ export function AtlasGlobe({
           onChoose={() => setChosenCountryId(target.countryId)}
         />
       ))}
+
+      {/* Hidden below the panel breakpoint, as in the mockup: at that width
+          the bottom sheet already owns the space these would sit in. */}
+      <p
+        data-atlas-legend=""
+        className="pointer-events-none absolute inset-x-0 top-0 hidden p-3 text-xs min-[760px]:block"
+        style={{ color: "var(--afh-night-ink-2)" }}
+      >
+        Afrique à sa surface réelle. Glissez pour tourner.
+      </p>
+
+      <div
+        data-atlas-toolbar=""
+        className="absolute inset-x-0 bottom-0 hidden gap-2 p-3 min-[760px]:flex"
+      >
+        <button
+          type="button"
+          aria-pressed={flat}
+          onClick={() => setFlat((current) => !current)}
+          className="rounded-full border px-3 py-1 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+          style={{ color: "var(--afh-night-ink-2)" }}
+        >
+          {flat ? "Revenir au globe" : "Ce que la carte plate en fait"}
+        </button>
+        <button
+          type="button"
+          onClick={recentre}
+          className="rounded-full border px-3 py-1 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+          style={{ color: "var(--afh-night-ink-2)" }}
+        >
+          Recentrer
+        </button>
+      </div>
 
       {facts && (
         <AtlasFactsPanel

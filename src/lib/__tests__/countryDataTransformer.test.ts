@@ -642,15 +642,21 @@ describe("transformCulture", () => {
 });
 
 describe("transformSources", () => {
-  it("joins sources with separator", () => {
+  // @req REQ-092
+  it("keeps every source whole, so each can show its own standing", () => {
     const result = transformSources(bfaCountry.sources);
-    expect(result).toContain(" · ");
-    expect(result).toContain("SIL Ethnologue");
-    expect(result).toContain("CIA World Factbook");
+    const labels = result.map((source) => source.label);
+
+    expect(labels.some((label) => label.includes("SIL Ethnologue"))).toBe(true);
+    expect(labels.some((label) => label.includes("CIA World Factbook"))).toBe(
+      true
+    );
+    expect(result.every((source) => source.standing !== undefined)).toBe(true);
   });
 
-  it("returns empty string for no sources", () => {
-    expect(transformSources(undefined)).toBe("");
+  // @req REQ-092
+  it("returns nothing for no sources", () => {
+    expect(transformSources(undefined)).toEqual([]);
   });
 
   // The corpus in dataset/source/afrik/ is now structured, but the database
@@ -664,9 +670,16 @@ describe("transformSources", () => {
       "CIA World Factbook — Burkina Faso",
     ] as unknown as Parameters<typeof transformSources>[0];
 
-    expect(transformSources(legacy)).toBe(
-      "SIL Ethnologue — Mooré (mos). https://www.ethnologue.com/language/mos/ · CIA World Factbook — Burkina Faso"
-    );
+    expect(transformSources(legacy).map((source) => source.label)).toEqual([
+      "SIL Ethnologue — Mooré (mos). https://www.ethnologue.com/language/mos/",
+      "CIA World Factbook — Burkina Faso",
+    ]);
+    // A bare string asserts no standing of its own, so it reads as awaiting
+    // review rather than being declared unverified.
+    expect(transformSources(legacy).map((source) => source.standing)).toEqual([
+      "needs_review",
+      "needs_review",
+    ]);
   });
 
   // @req REQ-001
@@ -676,7 +689,9 @@ describe("transformSources", () => {
       { title: "Kept", url: null, tier: "official" },
     ] as unknown as Parameters<typeof transformSources>[0];
 
-    expect(transformSources(malformed)).toBe("Kept");
+    expect(transformSources(malformed).map((source) => source.label)).toEqual([
+      "Kept",
+    ]);
   });
 });
 

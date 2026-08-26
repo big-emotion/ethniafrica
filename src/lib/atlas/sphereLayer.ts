@@ -84,6 +84,8 @@ const FRAGMENT_SHADER = `
   }
 `;
 
+import { FICHE_LIGHTING } from "./globePalette";
+
 export interface SphereLighting {
   /** Brightness floor on the unlit half, 0–1. */
   ambient: number;
@@ -92,10 +94,11 @@ export interface SphereLighting {
 }
 
 /**
- * A fiche's atlas is always on the night surface (DEC-022), so these are
- * the values every caller but the home hero draws with.
+ * A fiche's atlas is always on the night surface (DEC-022), and always at
+ * the near framing, so it draws with FICHE_LIGHTING rather than the home
+ * hero's far-off night values.
  */
-const NIGHT_LIGHTING: SphereLighting = { ambient: 0.44, rim: 0.3 };
+const NIGHT_LIGHTING: SphereLighting = FICHE_LIGHTING;
 
 /**
  * A margin of 1 puts the unit sphere edge-to-edge in clip space, which is
@@ -188,7 +191,8 @@ export function createSphereLayer(
   textureCanvas: HTMLCanvasElement,
   margin: number = DEFAULT_FIT_MARGIN,
   showTissot = false,
-  lighting: SphereLighting = NIGHT_LIGHTING
+  lighting: SphereLighting = NIGHT_LIGHTING,
+  showBorders = false
 ): SphereLayer | null {
   const vertexShader = compile(gl, gl.VERTEX_SHADER, VERTEX_SHADER);
   const fragmentShader = compile(gl, gl.FRAGMENT_SHADER, FRAGMENT_SHADER);
@@ -253,7 +257,10 @@ export function createSphereLayer(
   const uploadTexture = (showTissot: boolean) => {
     tissotVisible = showTissot;
     if (textureContext) {
-      paintGlobeTexture(textureContext, surfacePalette, { showTissot });
+      paintGlobeTexture(textureContext, surfacePalette, {
+        showTissot,
+        showBorders,
+      });
     }
     gl.bindTexture(gl.TEXTURE_2D, texture);
     gl.texImage2D(

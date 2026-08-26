@@ -15,6 +15,7 @@ const palette: GlobePalette = {
   equator: "#7a8ce8",
   tissot: "rgba(51,163,144,0.30)",
   tissotEdge: "#33a390",
+  border: "rgba(232,185,106,0.28)",
 };
 
 /** The same roles on the other surface — see globePalette.ts. */

@@ -100,6 +100,40 @@ describe("FicheSequence — accent scope", () => {
   );
 
   // @req REQ-091
+  it("keeps the globe out of the measured column, so it can run edge to edge", () => {
+    stubPanelRuntime();
+    const { container } = render(
+      <FicheSequence
+        context={COUNTRY_CONTEXT}
+        record={RECORD}
+        globe={<div data-testid="globe-stage" />}
+      />
+    );
+
+    const globe = screen.getByTestId("globe-stage");
+    const measured = container.querySelector(".max-w-4xl");
+
+    expect(measured).not.toBeNull();
+    expect(measured!.contains(globe)).toBe(false);
+  });
+
+  // @req REQ-091
+  it("keeps the reading inside a measured column", () => {
+    stubPanelRuntime();
+    const { container } = render(
+      <FicheSequence
+        context={COUNTRY_CONTEXT}
+        record={RECORD}
+        globe={<div data-testid="globe-stage" />}
+      />
+    );
+
+    const measured = container.querySelector(".max-w-4xl");
+    expect(measured).not.toBeNull();
+    expect(measured!.querySelector("section")).not.toBeNull();
+  });
+
+  // @req REQ-091
   it("never scopes a fiche to terre, the reserved colonial-marker accent", () => {
     expect(Object.values(ACCENT_CLASS_BY_ENTITY)).not.toContain(
       "afh-accent-terre"

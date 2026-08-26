@@ -184,3 +184,31 @@ describe("AtlasFactsPanel", () => {
     expect(screen.getByRole("dialog", { name: "Yoruba" })).toBeInTheDocument();
   });
 });
+
+describe("AtlasFactsPanel — a card posed on the globe (REQ-117)", () => {
+  // @req REQ-117
+  it("gives the rising sheet a handle, and the posed card none", () => {
+    const { reanchor } = renderPanel({ anchor: "bottom" });
+    expect(document.querySelector("[data-atlas-panel-handle]")).not.toBeNull();
+
+    reanchor("side");
+
+    expect(document.querySelector("[data-atlas-panel-handle]")).toBeNull();
+  });
+
+  // @req REQ-117
+  it("insets the posed card from the stage edge, so it reads as laid on the globe", () => {
+    renderPanel({ anchor: "side" });
+
+    const panel = screen.getByRole("dialog");
+    expect(panel.className).toContain("right-[22px]");
+    expect(panel.className).toContain("rounded-afh-lg");
+  });
+
+  // @req REQ-117
+  it("keeps the sheet's own edge square where it meets the stage bottom", () => {
+    renderPanel({ anchor: "bottom" });
+
+    expect(screen.getByRole("dialog").className).toContain("rounded-t-afh-lg");
+  });
+});

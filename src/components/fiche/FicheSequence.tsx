@@ -82,17 +82,22 @@ export function FicheSequence({
       )}
     >
       {globe}
-      <ContextTriad context={context} />
-      {panelSequenceFor(context).map((kind) => {
-        const panel = resolvePanel(kind, context, record);
-        if (!panel) return null;
+      {/* The globe is the only full-bleed element: the shell went edge to edge,
+          so the reading carries its own measure rather than inheriting one from
+          a container the globe would otherwise be boxed into too. */}
+      <div className="mx-auto flex w-full max-w-4xl flex-col gap-afh-3xl px-4">
+        <ContextTriad context={context} />
+        {panelSequenceFor(context).map((kind) => {
+          const panel = resolvePanel(kind, context, record);
+          if (!panel) return null;
 
-        return (
-          <section key={kind} id={sectionIdForPanel(kind)}>
-            {panel}
-          </section>
-        );
-      })}
+          return (
+            <section key={kind} id={sectionIdForPanel(kind)}>
+              {panel}
+            </section>
+          );
+        })}
+      </div>
     </div>
   );
 }

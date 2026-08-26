@@ -645,22 +645,129 @@ describe("HistoricalFactsSection", () => {
 // ==========================================
 
 describe("SourcesFooter", () => {
-  it("returns null when sources string is empty", () => {
-    const { container } = render(<SourcesFooter sources="" />);
+  const entry = (
+    label: string,
+    standing: "official" | "referenced" | "unverified" | "needs_review"
+  ) => ({ label, url: null, standing });
+
+  // @req REQ-092
+  it("returns null when there is no source at all", () => {
+    const { container } = render(<SourcesFooter sources={[]} />);
     expect(container.firstChild).toBeNull();
   });
 
-  it("renders sources text", () => {
+  // @req REQ-092
+  it("renders every source", () => {
     render(
-      <SourcesFooter sources="UN 2025 · UNFPA 2024 · CIA World Factbook" />
+      <SourcesFooter
+        sources={[
+          entry("UN 2025", "official"),
+          entry("UNFPA 2024", "official"),
+          entry("CIA World Factbook", "referenced"),
+        ]}
+      />
     );
-    expect(
-      screen.getByText("UN 2025 · UNFPA 2024 · CIA World Factbook")
-    ).toBeTruthy();
+    expect(screen.getByText("UN 2025")).toBeTruthy();
+    expect(screen.getByText("CIA World Factbook")).toBeTruthy();
   });
 
+  // @req REQ-092
   it("renders the section header label", () => {
-    render(<SourcesFooter sources="UNESCO · SIL Ethnologue" />);
+    render(<SourcesFooter sources={[entry("UNESCO", "official")]} />);
     expect(screen.getByText("Sources & Références")).toBeTruthy();
+  });
+
+  // @req REQ-092
+  it("shows each source's own standing rather than one verdict over the list", () => {
+    render(
+      <SourcesFooter
+        sources={[entry("UN 2025", "official"), entry("Un blog", "unverified")]}
+      />
+    );
+    expect(screen.getByText("Officielle")).toBeTruthy();
+    expect(screen.getByText("Non vérifiée")).toBeTruthy();
+  });
+
+  // @req REQ-092
+  it("says a pending source is awaiting review, never that it is unverified", () => {
+    render(<SourcesFooter sources={[entry("À trancher", "needs_review")]} />);
+
+    expect(screen.getByText("En attente d'examen")).toBeTruthy();
+    expect(screen.queryByText("Non vérifiée")).toBeNull();
+  });
+
+  // @req REQ-092
+  it("never prints the retired Tier vocabulary", () => {
+    const { container } = render(
+      <SourcesFooter sources={[entry("UN 2025", "official")]} />
+    );
+    expect(container.textContent).not.toContain("Tier 1");
+  });
+});
+
+describe("PeoplesSection — what the bar admits (FR28)", () => {
+  const peoples = (percentages: number[]) => ({
+    totalPopulation: "220 M",
+    peoplesCount: percentages.length,
+    rows: percentages.map((percentage, index) => ({
+      name: `Peuple ${index}`,
+      percentage,
+      population: "1 M",
+      colorIndex: index,
+    })),
+  });
+
+  // @req REQ-092
+  it("sizes each segment as a share of the country, not of the rendered rows", () => {
+    const { container } = render(
+      <PeoplesSection data={peoples([30, 20]) as never} />
+    );
+
+    const segments = Array.from(
+      container.querySelectorAll("[data-demo-bar] > div")
+    ) as HTMLElement[];
+
+    // Stretched to fill, these would read 60% and 40%. They must read what
+    // they actually are.
+    expect(segments[0].style.width).toBe("30%");
+    expect(segments[1].style.width).toBe("20%");
+  });
+
+  // @req REQ-092
+  it("says how much of the country is accounted for when the splits fall short", () => {
+    const { container } = render(
+      <PeoplesSection data={peoples([30, 20]) as never} />
+    );
+
+    const note = container.querySelector("[data-demo-coverage-note]");
+    expect(note).not.toBeNull();
+    expect(note!.textContent).toContain("50");
+  });
+
+  // @req REQ-092
+  it("stays quiet when the splits do account for the whole country", () => {
+    const { container } = render(
+      <PeoplesSection data={peoples([60, 40]) as never} />
+    );
+
+    expect(container.querySelector("[data-demo-coverage-note]")).toBeNull();
+  });
+});
+
+/**
+ * The mockup frames four sections — Étymologie, Peuples, Royaumes,
+ * Sources — but its own note says it follows the order of the eight real
+ * ones. The four it does not draw are out of frame, not deleted, and this
+ * is what stops a later restyle from quietly dropping them.
+ */
+describe("the country fiche keeps all eight sections", () => {
+  // @req REQ-092
+  it("still exports the four sections the mockup leaves out of frame", async () => {
+    const country = await import("@/components/country");
+
+    expect(country.HistoryTimeline).toBeDefined();
+    expect(country.HistoricalFactsSection).toBeDefined();
+    expect(country.LanguagesSection).toBeDefined();
+    expect(country.CultureGrid).toBeDefined();
   });
 });
