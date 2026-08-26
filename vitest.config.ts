@@ -55,6 +55,9 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      // `server-only` throws on import by design; under vitest that would only
+      // stop suites from collecting. See the stub for why this loses nothing.
+      "server-only": path.resolve(__dirname, "./src/test/server-only-stub.ts"),
     },
   },
 });
