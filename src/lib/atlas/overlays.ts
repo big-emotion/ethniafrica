@@ -77,12 +77,32 @@ const ADMIN0_KEY_BY_ISO: Record<string, string> = {
   ESH: "SAH", // Western Sahara
 };
 
+function admin0Entry(countryId: CountryId) {
+  return (
+    AFRICA_ADMIN0[countryId] ?? AFRICA_ADMIN0[ADMIN0_KEY_BY_ISO[countryId]]
+  );
+}
+
 /** Undefined for any country absent from the committed asset — treated as missing, never as a silently dropped shape. */
 // @req REQ-116
 export function getAdmin0Rings(countryId: CountryId): Ring[] | undefined {
-  const country =
-    AFRICA_ADMIN0[countryId] ?? AFRICA_ADMIN0[ADMIN0_KEY_BY_ISO[countryId]];
+  const country = admin0Entry(countryId);
   return country ? toRings(country.rings) : undefined;
+}
+
+/**
+ * The asset's own French name for a country, through the same alias as its
+ * geometry.
+ *
+ * Reading `AFRICA_ADMIN0[countryId].nameFr` directly is what broke the moment
+ * ISO codes started resolving: rings came back for SSD while the name did not,
+ * so every fiche declaring a South Sudan presence read a property off
+ * undefined. One resolver for both is the only arrangement where they cannot
+ * disagree again.
+ */
+// @req REQ-116
+export function getAdmin0NameFr(countryId: CountryId): string | undefined {
+  return admin0Entry(countryId)?.nameFr;
 }
 
 // ─── Country: closed outline, stroked as it draws, 22% fill ────────────────

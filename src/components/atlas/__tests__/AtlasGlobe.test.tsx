@@ -460,6 +460,48 @@ describe("AtlasGlobe", () => {
     });
   });
 
+  describe("what the fallback says out loud (REQ-116)", () => {
+    // AfricaBasemap is aria-hidden, so without WebGL the map itself tells a
+    // screen reader nothing at all. The note is the whole of what that reader
+    // gets, which is why it has to name the people and the count rather than
+    // announce that a map is present.
+    // @req REQ-116
+    it("names what the flat map is showing when there is no WebGL", () => {
+      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(null);
+      render(
+        <AtlasGlobe
+          overlay={familyPeopleOverlay}
+          missingMessage="n/a"
+          fallbackNote="Les 2 pays de présence Yoruba, sans rendu 3D. Aucune limite n'est tracée : ce sont des densités, pas un territoire."
+        />
+      );
+
+      expect(screen.getByText(/2 pays de présence Yoruba/)).toBeInTheDocument();
+      expect(screen.getByText(/pas un territoire/)).toBeInTheDocument();
+    });
+
+    // @req REQ-116
+    it("says nothing extra on the WebGL path, where the globe speaks for itself", async () => {
+      vi.spyOn(HTMLCanvasElement.prototype, "getContext").mockReturnValue(
+        {} as unknown as RenderingContext
+      );
+      render(
+        <AtlasGlobe
+          overlay={familyPeopleOverlay}
+          missingMessage="n/a"
+          fallbackNote="Les 2 pays de présence Yoruba, sans rendu 3D."
+        />
+      );
+
+      await waitFor(() => {
+        expect(
+          screen.getByTestId("atlas-globe-canvas-mock")
+        ).toBeInTheDocument();
+      });
+      expect(screen.queryByText(/sans rendu 3D/)).not.toBeInTheDocument();
+    });
+  });
+
   describe("turning the globe by hand (REQ-117)", () => {
     beforeEach(() => {
       stubMatchMedia({ reducedMotion: true });

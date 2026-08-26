@@ -11,6 +11,7 @@ import {
   type SVGProps,
 } from "react";
 
+import { AtlasCountryPicker } from "@/components/atlas/AtlasCountryPicker";
 import { AtlasFactsPanel } from "@/components/atlas/AtlasFactsPanel";
 import { AfricaBasemap } from "@/components/system/AfricaBasemap";
 import { poseForTarget, type CameraPose } from "@/lib/atlas/camera";
@@ -370,6 +371,12 @@ export interface AtlasGlobeProps {
   missingMessage: string;
   /** The facts the panel opens with for a chosen target. */
   targetFacts?: (target: AtlasTarget) => AtlasTargetFacts;
+  /**
+   * What the flat map is showing, for the non-WebGL path only. AfricaBasemap
+   * is aria-hidden, so without this a reader on that path is told nothing at
+   * all about what replaced the globe.
+   */
+  fallbackNote?: string;
   className?: string;
 }
 
@@ -425,6 +432,7 @@ export function AtlasGlobe({
   overlay,
   missingMessage,
   targetFacts = defaultTargetFacts,
+  fallbackNote,
   className,
 }: AtlasGlobeProps) {
   const [webglSupported, setWebglSupported] = useState(false);
@@ -495,12 +503,23 @@ export function AtlasGlobe({
           focusedCountryId={chosenCountryId}
         />
       ) : (
-        <AtlasGlobeFallback
-          overlay={overlay}
-          reducedMotion={reducedMotion}
-          pose={pose}
-          focus={chosen}
-        />
+        <>
+          <AtlasGlobeFallback
+            overlay={overlay}
+            reducedMotion={reducedMotion}
+            pose={pose}
+            focus={chosen}
+          />
+          {fallbackNote && (
+            <p
+              data-atlas-fallback-note=""
+              className="px-afh-sm pb-afh-sm text-afh-small"
+              style={{ color: "var(--afh-night-ink-2)" }}
+            >
+              {fallbackNote}
+            </p>
+          )}
+        </>
       )}
 
       {targets.map((target) => (
@@ -518,6 +537,49 @@ export function AtlasGlobe({
           }}
         />
       ))}
+
+      {/* Above the toolbar, as in the mockup: the picker is the way in, the
+          tools are what you do once you are there. */}
+      <div
+        className="absolute left-afh-sm right-afh-sm top-afh-sm flex flex-wrap items-start gap-afh-xs"
+        data-atlas-picker-row=""
+      >
+        <AtlasCountryPicker
+          targets={targets}
+          chosenCountryId={chosenCountryId}
+          onChoose={(countryId) => {
+            resetNudge();
+            setChosenCountryId(countryId);
+          }}
+        />
+        {/* "Toute l'aire" only means something against a choice, and only on a
+            people with more than one country to return from (decision 3). */}
+        {targets.length > 1 && (
+          <button
+            type="button"
+            data-atlas-tool="whole"
+            aria-pressed={chosenCountryId === null}
+            onClick={() => {
+              resetNudge();
+              setChosenCountryId(null);
+            }}
+            className="rounded-afh-full border px-afh-sm py-afh-xs text-afh-small focus-visible:outline-none focus-visible:ring-2"
+            style={{
+              borderColor: "var(--afh-night-line)",
+              backgroundColor:
+                chosenCountryId === null
+                  ? "var(--accent)"
+                  : "var(--afh-night-surface)",
+              color:
+                chosenCountryId === null
+                  ? "var(--accent-ink)"
+                  : "var(--afh-night-ink)",
+            }}
+          >
+            Toute l&apos;aire
+          </button>
+        )}
+      </div>
 
       <AtlasGlobeTools
         flattened={flattened}
