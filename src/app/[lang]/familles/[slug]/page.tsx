@@ -7,6 +7,7 @@ import {
 } from "@/api/v2/services/revisions";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { FicheSequence } from "@/components/fiche/FicheSequence";
+import { FicheHeroBand } from "@/components/fiche/FicheHeroBand";
 import { LanguageFamilyDetailViewV2 } from "@/components/family/LanguageFamilyDetailViewV2";
 import { FamilyClassificationTreeSection } from "@/components/family/FamilyClassificationTreeSection";
 import { AtlasGlobe } from "@/components/atlas/AtlasGlobe";
@@ -195,7 +196,12 @@ export default async function FamillesSlugPage({
 
   // Live version (revalidate = 3600 at segment level)
   return (
-    <PageLayout language="fr" sectionName="Familles linguistiques">
+    <PageLayout
+      language="fr"
+      sectionName="Familles linguistiques"
+      navOnNight
+      flushTop
+    >
       <FicheSequence
         context={{
           entityType: "language-family",
@@ -203,10 +209,13 @@ export default async function FamillesSlugPage({
           branches: tongueBranches,
         }}
         globe={
-          <AtlasGlobe
-            overlay={familyOverlay}
-            missingMessage={`Empreinte géographique non disponible pour ${familyDetail.nameFr}`}
-          />
+          <FicheHeroBand>
+            <AtlasGlobe
+              overlay={familyOverlay}
+              stageVariant="band"
+              missingMessage={`Empreinte géographique non disponible pour ${familyDetail.nameFr}`}
+            />
+          </FicheHeroBand>
         }
         record={recordView}
       />

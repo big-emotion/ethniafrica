@@ -327,6 +327,50 @@ describe("AtlasGlobe", () => {
     });
   });
 
+  describe("the stage the globe stands on", () => {
+    const stageOf = () =>
+      document.querySelector<HTMLElement>("[data-atlas-stage]")!;
+
+    // @req REQ-116
+    it("keeps the rounded card for the country and people fiches, which pass no variant", () => {
+      // Those two routes must be untouched by the family band: a regression
+      // here changes pages this work was never asked to change.
+      render(<AtlasGlobe overlay={countryOverlay} missingMessage="n/a" />);
+
+      const stage = stageOf();
+      expect(stage.dataset.atlasStageVariant).toBe("card");
+      expect(stage.style.borderRadius).toBe("var(--afh-radius-xl)");
+      expect(stage.style.aspectRatio).not.toBe("");
+      expect(stage.className).not.toContain("afh-fiche-globe-stage");
+    });
+
+    // @req REQ-116
+    it("drops the radius and the aspect ratio in the band variant", () => {
+      render(
+        <AtlasGlobe
+          overlay={familyFootprintOverlay}
+          stageVariant="band"
+          missingMessage="n/a"
+        />
+      );
+
+      const stage = stageOf();
+      expect(stage.dataset.atlasStageVariant).toBe("band");
+      expect(stage.style.borderRadius).toBe("0px");
+      // A band keyed to an aspect ratio would grow taller as the viewport
+      // widens, until the parchment fell below the fold on a desktop. Its
+      // heights come from a container query instead.
+      expect(stage.style.aspectRatio).toBe("");
+      expect(stage.className).toContain("afh-fiche-globe-stage");
+    });
+
+    // @req REQ-116
+    it("stays on the night ground in both variants (DEC-022)", () => {
+      render(<AtlasGlobe overlay={countryOverlay} missingMessage="n/a" />);
+      expect(stageOf().style.backgroundColor).toBe("var(--afh-night-ground)");
+    });
+  });
+
   /**
    * atlas-charter §1: an encoding may not exist in only one rendering
    * technique. Whatever the WebGL path says about the footprint, the fallback

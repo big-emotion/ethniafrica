@@ -330,6 +330,8 @@ export interface AtlasGlobeProps {
   /** The facts the panel opens with for a chosen target. */
   targetFacts?: (target: AtlasTarget) => AtlasTargetFacts;
   className?: string;
+  /** Defaults to the rounded card the country and people fiches already use. */
+  stageVariant?: AtlasStageVariant;
 }
 
 /**
@@ -339,7 +341,19 @@ export interface AtlasGlobeProps {
  * per-entity accent (people ocre / country teal / family perv), which keeps
  * governing everything FicheSequence renders around it.
  */
-const NIGHT_STAGE_STYLE: CSSProperties = {
+/**
+ * How the globe occupies its stage.
+ *
+ * "card" is a rounded figure sitting in the page's flow, keyed to the
+ * basemap's own proportions — the country and people fiches read that way.
+ * "band" is the full-width top of the page, a fixed height with no radius and
+ * no aspect ratio, drawn edge to edge inside FicheHeroBand. A band keyed to an
+ * aspect ratio would grow taller as the viewport widens until the parchment
+ * fell below the fold on a desktop.
+ */
+export type AtlasStageVariant = "card" | "band";
+
+const CARD_STAGE_STYLE: CSSProperties = {
   position: "relative",
   width: "100%",
   aspectRatio: `${BASEMAP_VIEWBOX.width} / ${BASEMAP_VIEWBOX.height}`,
@@ -347,6 +361,21 @@ const NIGHT_STAGE_STYLE: CSSProperties = {
   borderRadius: "var(--afh-radius-xl)",
   overflow: "hidden",
 };
+
+// The two heights themselves live in a container query
+// (src/styles/fiche-band.css, .afh-fiche-globe-stage) because an inline style
+// cannot express one.
+const BAND_STAGE_STYLE: CSSProperties = {
+  position: "relative",
+  width: "100%",
+  backgroundColor: "var(--afh-night-ground)",
+  borderRadius: 0,
+  overflow: "hidden",
+};
+
+function stageStyle(variant: AtlasStageVariant): CSSProperties {
+  return variant === "band" ? BAND_STAGE_STYLE : CARD_STAGE_STYLE;
+}
 
 /**
  * Which anchoring the panel takes. It starts as the bottom sheet because the
@@ -385,6 +414,7 @@ export function AtlasGlobe({
   missingMessage,
   targetFacts = defaultTargetFacts,
   className,
+  stageVariant = "card",
 }: AtlasGlobeProps) {
   const [webglSupported, setWebglSupported] = useState(false);
   const [stage, setStage] = useState<HTMLDivElement | null>(null);
@@ -414,7 +444,13 @@ export function AtlasGlobe({
 
   if (!overlay || overlay.kind === "people-field-missing") {
     return (
-      <div className={cn(className)} style={NIGHT_STAGE_STYLE}>
+      <div
+        className={cn(
+          stageVariant === "band" && "afh-fiche-globe-stage",
+          className
+        )}
+        style={stageStyle(stageVariant)}
+      >
         <AtlasGlobeMissing message={missingMessage} />
       </div>
     );
@@ -430,11 +466,19 @@ export function AtlasGlobe({
     <div
       ref={setStage}
       data-atlas-stage=""
-      className={cn(className)}
-      style={NIGHT_STAGE_STYLE}
+      data-atlas-stage-variant={stageVariant}
+      className={cn(
+        stageVariant === "band" && "afh-fiche-globe-stage",
+        className
+      )}
+      style={stageStyle(stageVariant)}
     >
       {webglSupported ? (
-        <LazyAtlasGlobeCanvas overlay={overlay} pose={pose} />
+        <LazyAtlasGlobeCanvas
+          overlay={overlay}
+          pose={pose}
+          focusedCountryId={chosen?.countryId ?? null}
+        />
       ) : (
         <AtlasGlobeFallback
           overlay={overlay}
