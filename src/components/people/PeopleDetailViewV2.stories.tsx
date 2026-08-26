@@ -593,11 +593,19 @@ const TWENTY_ONE_COUNTRIES = sampleFiche(
   }))
 );
 
-const wholeFiche = (people: PeopleDetail) => () => (
-  <div style={{ background: "hsl(35,35%,97%)", minHeight: "100vh" }}>
-    <PeopleDetailViewV2 people={people} />
-  </div>
-);
+// Named rather than an anonymous arrow: react/display-name is an error here,
+// and a story whose component shows as "Unknown" in the Storybook panel is
+// harder to place than the extra line costs.
+function wholeFiche(people: PeopleDetail) {
+  function WholeFicheStory() {
+    return (
+      <div style={{ background: "hsl(35,35%,97%)", minHeight: "100vh" }}>
+        <PeopleDetailViewV2 people={people} />
+      </div>
+    );
+  }
+  return WholeFicheStory;
+}
 
 // @req REQ-115
 export const WholeFiche_Mono_Mobile: Story = {
