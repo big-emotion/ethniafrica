@@ -1,13 +1,17 @@
 import { AFRICA_GEO_BOUNDS, BASEMAP_VIEWBOX } from "@/lib/atlas/projection";
 import { AFRICA_LANDMASS_PATH } from "@/lib/atlas/assets/africaLandmassPath";
+import { WORLD_LANDMASS_PATH } from "@/lib/atlas/assets/worldLandmassPath";
 
 /**
  * The sphere is textured with a whole-world equirectangular image, not an
  * Africa-shaped crop: a globe you can spin has a far side, and a texture
  * that stopped at Africa's bounds would leave it blank. Africa is the only
- * landmass the corpus can vouch for, so it is the only one drawn — the
- * rest of the world reads as ocean and graticule, which is honest about
- * what this atlas covers rather than filling the gap with decoration.
+ * landmass the corpus can vouch for, so it is the only one painted as
+ * terrain — with a coast line, in the earth palette. The other continents
+ * are drawn under it as a faint silhouette in the hero title's own ink:
+ * they put Africa on a real planet, which is what a globe with one
+ * continent on it could not do, while the difference in treatment keeps
+ * saying which of them this atlas actually documents.
  */
 // @req REQ-112
 export const GLOBE_TEXTURE_SIZE = { width: 2048, height: 1024 } as const;
@@ -24,6 +28,7 @@ export interface GlobePalette {
   graticule: string;
   graticuleMajor: string;
   land: string;
+  landFar: string;
   coast: string;
   equator: string;
   tissot: string;
@@ -207,7 +212,10 @@ export interface GlobeTextureOptions {
   showTissot?: boolean;
 }
 
-/** Paints the world texture: ocean, graticule, then the African landmass. */
+/**
+ * Paints the world texture: ocean, graticule, the far continents, then the
+ * African landmass.
+ */
 // @req REQ-112
 export function paintGlobeTexture(
   ctx: CanvasRenderingContext2D,
@@ -238,6 +246,14 @@ export function paintGlobeTexture(
     ctx.lineTo(width, latToTextureY(lat));
     ctx.stroke();
   }
+
+  // The other continents first, at their own faint ink and with no coast
+  // line of their own: they are the planet Africa sits on, not a second
+  // subject. Africa goes on top, so overlapping ink can only ever read in
+  // its favour.
+  const world = new Path2D(WORLD_LANDMASS_PATH);
+  ctx.fillStyle = palette.landFar;
+  ctx.fill(world);
 
   const { translateX, translateY, scaleX, scaleY } = landmassTransform();
   ctx.save();

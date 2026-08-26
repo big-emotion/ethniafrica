@@ -65,26 +65,35 @@ export function HomeGlobeStage() {
         <HomeGlobeFallback />
       )}
       <style>{`
-        /* 380 / 460 px are the reference demo's own stage heights: the
-           globe reads as a body rather than a marble at those, and the
-           flat map still fits its full Mercator height. */
+        /* The reference demo's stage heights were 380 / 460: the globe
+           reads as a body rather than a marble at those, and the flat map
+           still fits its full Mercator height. Both are raised by the
+           height of the chrome, because the caption and the tools now take
+           rows of their own instead of being laid over the sphere — at the
+           old heights the body itself would have absorbed the difference
+           and come out a marble after all. */
         .home-globe-stage {
           position: relative;
           box-sizing: border-box;
           width: 100%;
           max-width: 960px;
           margin: 0 auto;
-          padding: 0 20px 24px;
-          min-height: 380px;
+          min-height: 460px;
         }
         @media (min-width: 720px) {
           .home-globe-stage {
-            min-height: 460px;
+            min-height: 540px;
           }
         }
+        /* From 1200 up the hero is pinned to the viewport height, so the
+           floors above would push the tools past the fold — which is the
+           one thing that height was calculated to prevent. Here the stage
+           takes whatever the band has left instead, and .home-globe-surface
+           carries the only floor the sphere still needs. */
         @media (min-width: 1200px) {
           .home-globe-stage {
             flex: 1 1 auto;
+            min-height: 0;
           }
         }
       `}</style>

@@ -10,6 +10,7 @@ const palette: GlobePalette = {
   graticule: "#3b2d1a",
   graticuleMajor: "#443521",
   land: "#6b4a22",
+  landFar: "rgba(241,231,216,0.40)",
   coast: "#e8b96a",
   equator: "#7a8ce8",
   tissot: "rgba(51,163,144,0.30)",

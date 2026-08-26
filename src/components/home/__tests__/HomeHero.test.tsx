@@ -27,8 +27,11 @@ describe("HomeHero — the night band the home opens on (REQ-115)", () => {
     expect(screen.queryAllByRole("heading", { level: 3 })).toHaveLength(0);
   });
 
+  // The accent has to survive both surfaces: the italic is set as text, so
+  // it takes the display accent that flips with the theme rather than the
+  // night gold, which would go near-invisible on parchment.
   // @req REQ-044
-  it("sets « carte vivante » in italic on the night band's own accent", () => {
+  it("sets « carte vivante » in italic on the surface's own display accent", () => {
     const { container } = render(<HomeHero />);
     const em = screen.getByRole("heading", { level: 1 }).querySelector("em");
     const styles = Array.from(container.querySelectorAll("style"))
@@ -37,7 +40,7 @@ describe("HomeHero — the night band the home opens on (REQ-115)", () => {
 
     expect(em).toHaveTextContent("carte vivante");
     expect(styles).toMatch(
-      /\.home-hero-copy h1 em\s*{[^}]*var\(--afh-night-ocre-soft\)/
+      /\.home-hero-copy h1 em\s*{[^}]*var\(--afh-display-accent\)/
     );
   });
 
@@ -74,18 +77,24 @@ describe("HomeHero — the night band the home opens on (REQ-115)", () => {
   });
 
   // DEC-022 keeps dataviz on the night surface whatever the reader chose
-  // for the rest of the site, and the globe is dataviz.
+  // for the rest of the site, and the globe is dataviz — but only the
+  // globe. The band around it reads the page theme like every other route,
+  // which is what makes the theme control answer on this page at all.
   // @req REQ-115
-  it("stays on the night surface whatever the page theme", () => {
+  it("keeps the globe panel on night while the band follows the page theme", () => {
     const { container } = render(<HomeHero />);
     const section = container.querySelector("section");
     const styles = Array.from(container.querySelectorAll("style"))
       .map((style) => style.textContent)
       .join("\n");
 
-    expect(section).toHaveClass("afh-on-night");
+    expect(section).not.toHaveClass("afh-on-night");
+    expect(container.querySelector(".home-globe-holder")).toHaveClass(
+      "afh-on-night"
+    );
+    expect(styles).toMatch(/\.home-hero\s*{[^}]*background:\s*var\(--afh-bg\)/);
     expect(styles).toMatch(
-      /\.home-hero\s*{[^}]*background:\s*var\(--afh-night-ground\)/
+      /\.home-globe-holder\s*{[^}]*background:\s*var\(--afh-night-ground\)/
     );
   });
 

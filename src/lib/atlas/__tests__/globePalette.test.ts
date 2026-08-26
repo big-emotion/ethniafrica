@@ -38,6 +38,9 @@ describe("globePalette (REQ-112)", () => {
       GLOBE_PALETTE_FALLBACK.graticuleMajor
     );
     expect(declaredValue("--afh-globe-land")).toBe(GLOBE_PALETTE_FALLBACK.land);
+    expect(declaredValue("--afh-globe-land-far")).toBe(
+      GLOBE_PALETTE_FALLBACK.landFar
+    );
   });
 
   // coast and equator are declared as var(...) aliases, so the fallback

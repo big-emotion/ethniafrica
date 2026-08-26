@@ -29,13 +29,6 @@ interface PageLayoutProps {
    * against the nav instead of behind a strip of page background.
    */
   flushTop?: boolean;
-  /**
-   * Puts the nav on the night surface so it reads as the top edge of a
-   * night hero band rather than a parchment strip above it (REQ-115).
-   * Scoping, not restyling: the bar keeps every one of its own tokens and
-   * only the values behind them change.
-   */
-  navOnNight?: boolean;
   onSearchResult?: (result: {
     type: SearchEntityType;
     id: string;
@@ -52,7 +45,6 @@ export const PageLayout = ({
   sectionName,
   hideHeader = false,
   flushTop = false,
-  navOnNight = false,
   onSearchResult,
 }: PageLayoutProps) => {
   const isMobile = useIsMobile();
@@ -105,28 +97,23 @@ export const PageLayout = ({
 
   return (
     <div className="min-h-screen gradient-earth">
-      <div
-        className={navOnNight ? "afh-on-night" : undefined}
-        data-testid={navOnNight ? "nav-on-night" : undefined}
-      >
-        {/* Desktop navigation */}
-        {!isMobile && (
-          <DesktopNavBar
-            language={language}
-            onLanguageChange={onLanguageChange}
-            onSearchClick={() => setIsSearchOpen(true)}
-          />
-        )}
+      {/* Desktop navigation */}
+      {!isMobile && (
+        <DesktopNavBar
+          language={language}
+          onLanguageChange={onLanguageChange}
+          onSearchClick={() => setIsSearchOpen(true)}
+        />
+      )}
 
-        {/* Mobile navigation */}
-        {isMobile && (
-          <MobileNavBar
-            language={language}
-            onLanguageChange={onLanguageChange}
-            onSearchClick={() => setIsSearchOpen(true)}
-          />
-        )}
-      </div>
+      {/* Mobile navigation */}
+      {isMobile && (
+        <MobileNavBar
+          language={language}
+          onLanguageChange={onLanguageChange}
+          onSearchClick={() => setIsSearchOpen(true)}
+        />
+      )}
 
       {/* Search modal */}
       <SearchModalV2
