@@ -704,3 +704,70 @@ describe("SourcesFooter", () => {
     expect(container.textContent).not.toContain("Tier 1");
   });
 });
+
+describe("PeoplesSection — what the bar admits (FR28)", () => {
+  const peoples = (percentages: number[]) => ({
+    totalPopulation: "220 M",
+    peoplesCount: percentages.length,
+    rows: percentages.map((percentage, index) => ({
+      name: `Peuple ${index}`,
+      percentage,
+      population: "1 M",
+      colorIndex: index,
+    })),
+  });
+
+  // @req REQ-092
+  it("sizes each segment as a share of the country, not of the rendered rows", () => {
+    const { container } = render(
+      <PeoplesSection data={peoples([30, 20]) as never} />
+    );
+
+    const segments = Array.from(
+      container.querySelectorAll("[data-demo-bar] > div")
+    ) as HTMLElement[];
+
+    // Stretched to fill, these would read 60% and 40%. They must read what
+    // they actually are.
+    expect(segments[0].style.width).toBe("30%");
+    expect(segments[1].style.width).toBe("20%");
+  });
+
+  // @req REQ-092
+  it("says how much of the country is accounted for when the splits fall short", () => {
+    const { container } = render(
+      <PeoplesSection data={peoples([30, 20]) as never} />
+    );
+
+    const note = container.querySelector("[data-demo-coverage-note]");
+    expect(note).not.toBeNull();
+    expect(note!.textContent).toContain("50");
+  });
+
+  // @req REQ-092
+  it("stays quiet when the splits do account for the whole country", () => {
+    const { container } = render(
+      <PeoplesSection data={peoples([60, 40]) as never} />
+    );
+
+    expect(container.querySelector("[data-demo-coverage-note]")).toBeNull();
+  });
+});
+
+/**
+ * The mockup frames four sections — Étymologie, Peuples, Royaumes,
+ * Sources — but its own note says it follows the order of the eight real
+ * ones. The four it does not draw are out of frame, not deleted, and this
+ * is what stops a later restyle from quietly dropping them.
+ */
+describe("the country fiche keeps all eight sections", () => {
+  // @req REQ-092
+  it("still exports the four sections the mockup leaves out of frame", async () => {
+    const country = await import("@/components/country");
+
+    expect(country.HistoryTimeline).toBeDefined();
+    expect(country.HistoricalFactsSection).toBeDefined();
+    expect(country.LanguagesSection).toBeDefined();
+    expect(country.CultureGrid).toBeDefined();
+  });
+});
