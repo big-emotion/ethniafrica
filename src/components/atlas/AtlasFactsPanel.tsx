@@ -1,0 +1,128 @@
+"use client";
+
+import * as DialogPrimitive from "@radix-ui/react-dialog";
+import { X } from "lucide-react";
+import type { CSSProperties, ReactElement, ReactNode } from "react";
+
+import {
+  BOTTOM_SHEET_VIEW_FRACTION,
+  SIDE_PANEL_VIEW_FRACTION,
+  type PanelAnchor,
+} from "@/lib/atlas/panelBias";
+import { cn } from "@/lib/utils";
+
+export interface AtlasFactsPanelProps {
+  open: boolean;
+  anchor: PanelAnchor;
+  title: string;
+  description?: string;
+  /** The globe stage the panel is anchored inside. Null before the stage ref resolves. */
+  container: HTMLElement | null;
+  onClose: () => void;
+  children?: ReactNode;
+}
+
+/**
+ * The panel must cover exactly the share of the stage `biasForPanel()` assumes,
+ * so the size is read off panelBias.ts rather than retyped: should the CSS and
+ * the constant drift apart, the camera parks the chosen subject underneath the
+ * panel instead of beside it.
+ */
+const ANCHOR_SIZE: Record<PanelAnchor, CSSProperties> = {
+  bottom: { height: `${BOTTOM_SHEET_VIEW_FRACTION * 100}%` },
+  side: { width: `${SIDE_PANEL_VIEW_FRACTION * 100}%` },
+};
+
+/** Anchored inside the stage, never to the viewport — the bias is stage-relative. */
+const ANCHOR_POSITION: Record<PanelAnchor, string> = {
+  bottom: "absolute inset-x-0 bottom-0 border-t",
+  side: "absolute inset-y-0 right-0 border-l",
+};
+
+/**
+ * DEC-022: the globe stage is the app's one Night surface, and the panel sits
+ * on it, so it takes the night palette rather than the fiche's own accent.
+ * (The shadcn Sheet parts are styled for the light palette — hence the bare
+ * Radix primitives here.)
+ */
+const NIGHT_PANEL_SURFACE: CSSProperties = {
+  backgroundColor: "var(--afh-night-surface)",
+  borderColor: "var(--afh-night-line)",
+  color: "var(--afh-night-ink)",
+};
+
+/**
+ * REQ-117: the facts of the target the reader chose on a fiche globe, as a
+ * bottom sheet below 760 px and a side panel above — one component, one set of
+ * facts. It is deliberately non-modal and backdrop-free: the reader is meant to
+ * keep watching the globe while reading, and picking another target must swap
+ * the facts rather than dismiss the panel.
+ */
+// @req REQ-117
+export function AtlasFactsPanel({
+  open,
+  anchor,
+  title,
+  description,
+  container,
+  onClose,
+  children,
+}: AtlasFactsPanelProps): ReactElement | null {
+  if (!container) return null;
+
+  return (
+    <DialogPrimitive.Root
+      open={open}
+      modal={false}
+      onOpenChange={(nextOpen) => {
+        if (!nextOpen) onClose();
+      }}
+    >
+      <DialogPrimitive.Portal container={container}>
+        <DialogPrimitive.Content
+          data-atlas-facts-panel=""
+          data-atlas-panel-anchor={anchor}
+          className={cn(
+            "z-10 flex flex-col gap-3 overflow-y-auto p-4",
+            ANCHOR_POSITION[anchor]
+          )}
+          style={{ ...NIGHT_PANEL_SURFACE, ...ANCHOR_SIZE[anchor] }}
+          // Without a Description, Radix would still point aria-describedby at
+          // an id that never renders; clearing it keeps the panel valid.
+          {...(description ? {} : { "aria-describedby": undefined })}
+          // Choosing another target on the globe is an outside pointerdown;
+          // letting Radix dismiss on it would close the panel on every pick.
+          onInteractOutside={(event) => event.preventDefault()}
+        >
+          <div className="flex items-start justify-between gap-3">
+            <div className="flex flex-col gap-1">
+              <DialogPrimitive.Title className="text-base font-semibold leading-tight">
+                {title}
+              </DialogPrimitive.Title>
+              {description ? (
+                <DialogPrimitive.Description
+                  className="text-sm"
+                  style={{ color: "var(--afh-night-ink-2)" }}
+                >
+                  {description}
+                </DialogPrimitive.Description>
+              ) : null}
+            </div>
+            <DialogPrimitive.Close
+              aria-label="Fermer"
+              className="rounded-full p-1 opacity-80 transition-opacity hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-current"
+              style={{ color: "var(--afh-night-ink-2)" }}
+            >
+              <X aria-hidden="true" className="h-4 w-4" />
+            </DialogPrimitive.Close>
+          </div>
+          <div className="text-sm" style={{ color: "var(--afh-night-ink-2)" }}>
+            {children}
+          </div>
+        </DialogPrimitive.Content>
+      </DialogPrimitive.Portal>
+    </DialogPrimitive.Root>
+  );
+}
+
+export default AtlasFactsPanel;

@@ -7,6 +7,13 @@ export interface AfricaBasemapProps extends Omit<
   "viewBox" | "children"
 > {
   children?: React.ReactNode;
+  /**
+   * An SVG transform, in viewBox units, applied to the landmass and the
+   * layered data as one figure. REQ-117's fallback pans and zooms the map to
+   * the chosen target; moving only the children would slide the data off the
+   * coastline it belongs to.
+   */
+  figureTransform?: string;
 }
 
 /**
@@ -21,8 +28,22 @@ export function AfricaBasemap({
   children,
   className,
   style,
+  figureTransform,
   ...rest
 }: AfricaBasemapProps) {
+  const figure = (
+    <>
+      <path
+        id="africa-landmass"
+        d={AFRICA_LANDMASS_PATH}
+        className="fill-afh-atlas-land stroke-afh-atlas-coastline"
+        strokeWidth={1}
+        vectorEffect="non-scaling-stroke"
+      />
+      {children}
+    </>
+  );
+
   return (
     <svg
       viewBox={`0 0 ${BASEMAP_VIEWBOX.width} ${BASEMAP_VIEWBOX.height}`}
@@ -34,14 +55,7 @@ export function AfricaBasemap({
         ...style,
       }}
     >
-      <path
-        id="africa-landmass"
-        d={AFRICA_LANDMASS_PATH}
-        className="fill-afh-atlas-land stroke-afh-atlas-coastline"
-        strokeWidth={1}
-        vectorEffect="non-scaling-stroke"
-      />
-      {children}
+      {figureTransform ? <g transform={figureTransform}>{figure}</g> : figure}
     </svg>
   );
 }
