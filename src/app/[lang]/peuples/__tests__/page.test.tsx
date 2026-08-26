@@ -74,22 +74,21 @@ vi.mock("@/components/layout/PageLayout", () => ({
   },
 }));
 
-// PeopleDetailView stub — records the peopleId it received
-vi.mock("@/components/detail/PeopleDetailView", () => ({
-  PeopleDetailView: ({
-    peopleId,
-    initialData,
-    initialSourceFlag,
+// The record view stub. It is fed by the route now rather than fetching its
+// own fiche, so what it records is the payload it was handed.
+vi.mock("@/components/people/PeopleDetailViewV2", () => ({
+  PeopleDetailViewV2: ({
+    people,
+    hasSourceFlag,
   }: {
-    peopleId: string;
-    initialData?: { nameMain: string };
-    initialSourceFlag?: boolean;
+    people: { id: string; nameMain: string };
+    hasSourceFlag?: boolean;
   }) => (
     <div
       data-testid="people-detail-live"
-      data-people-id={peopleId}
-      data-people-name={initialData?.nameMain}
-      data-source-flag={initialSourceFlag}
+      data-people-id={people?.id}
+      data-people-name={people?.nameMain}
+      data-source-flag={hasSourceFlag}
     />
   ),
 }));

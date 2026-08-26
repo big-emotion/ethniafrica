@@ -155,6 +155,10 @@ export default {
         "afh-xl": "var(--afh-radius-xl)",
         "afh-2xl": "var(--afh-radius-2xl)",
         "afh-3xl": "var(--afh-radius-3xl)",
+        // The pill the mockups use for every chip, badge and globe control.
+        // The token existed in radius.css from the start with no utility
+        // behind it, so callers reached for `rounded-full` and left the scale.
+        "afh-full": "var(--afh-radius-full)",
       },
       keyframes: {
         "accordion-down": {
