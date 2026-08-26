@@ -89,7 +89,8 @@ const ENTITY_INVENTORY: Record<FicheEntityType, readonly PanelKind[]> = {
 };
 
 /** True when a value (or any of its nested leaves) carries actual content. */
-function isPresent(value: unknown): boolean {
+// @req REQ-119
+export function isPresent(value: unknown): boolean {
   if (value === null || value === undefined) return false;
   if (Array.isArray(value)) return value.some(isPresent);
   if (typeof value === "string") return value.trim().length > 0;

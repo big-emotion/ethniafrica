@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageLayout } from "@/components/layout/PageLayout";
 import { HomeHero } from "@/components/home/HomeHero";
 import { ModuleGrid } from "@/components/home/ModuleGrid";
-import { getHomeModules } from "@/lib/accessModeHubs";
+import { getHomeModules } from "@/lib/moduleAvailability";
 import { OG_TITLE, OG_DESCRIPTION } from "@/lib/brand";
 
 // @req FR95
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
 };
 
 // @req FR91 @req FR92 @req FR95
-export default function Home() {
-  const modules = getHomeModules("fr");
+export default async function Home() {
+  const modules = await getHomeModules("fr");
 
   return (
     <PageLayout language="fr" hideHeader flushTop>

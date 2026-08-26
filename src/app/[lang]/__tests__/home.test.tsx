@@ -3,6 +3,26 @@ import { render, screen } from "@testing-library/react";
 import React from "react";
 
 import { OG_TITLE, OG_DESCRIPTION, PRODUCT_NAME } from "@/lib/brand";
+import { MODULE_DEFINITIONS, type HomeModule } from "@/lib/accessModeHubs";
+import { getLocalizedRoute } from "@/lib/routing";
+
+// Home renders whatever live|soon module list getHomeModules resolves to;
+// these tests exercise page layout/content, not data availability
+// (covered by src/lib/__tests__/moduleAvailability.test.ts), so the data
+// probe layer is replaced with a deterministic, route-based fixture.
+const fixtureModules: HomeModule[] = MODULE_DEFINITIONS.map((def) => ({
+  id: def.id,
+  title: def.title,
+  category: def.category,
+  accent: def.accent,
+  illustration: def.illustration,
+  state: def.page ? "live" : "soon",
+  href: def.page ? getLocalizedRoute("fr", def.page) : null,
+}));
+
+vi.mock("@/lib/moduleAvailability", () => ({
+  getHomeModules: vi.fn(async () => fixtureModules),
+}));
 
 vi.mock("@/components/layout/PageLayout", () => ({
   PageLayout: ({ children }: { children: React.ReactNode }) => (
@@ -15,8 +35,8 @@ import Home, { metadata } from "../page";
 describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
   // @req FR91 @req FR95
   // @req REQ-044
-  it("renders the parchment hero with a single verbatim H1 and zero H3", () => {
-    render(<Home />);
+  it("renders the parchment hero with a single verbatim H1 and zero H3", async () => {
+    render(await Home());
 
     const headings = screen.getAllByRole("heading", { level: 1 });
     expect(headings).toHaveLength(1);
@@ -28,16 +48,16 @@ describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
 
   // @req FR92 @req FR95
   // @req REQ-044
-  it("renders the filterable module grid below the hero with exactly 10 cards", () => {
-    render(<Home />);
+  it("renders the filterable module grid below the hero with exactly 10 cards", async () => {
+    render(await Home());
 
     expect(screen.getAllByTestId(/^module-card-/)).toHaveLength(10);
   });
 
   // @req FR95
   // @req REQ-044
-  it("sources the brand line from src/lib/brand.ts, never a literal", () => {
-    render(<Home />);
+  it("sources the brand line from src/lib/brand.ts, never a literal", async () => {
+    render(await Home());
     // The brand line was dropped from the hero (ETNI-852); brand.ts remains
     // the single source of truth for anything that does render it (e.g. OG
     // metadata), asserted below.
@@ -46,8 +66,8 @@ describe("home page — atomic light home (ETNI-820, FR91/FR92/FR95)", () => {
 
   // @req FR95
   // @req REQ-044
-  it("no longer renders the eyebrow, the PRODUCT_NAME line, the five demo pills, or the old H2-sectioned hub layout", () => {
-    render(<Home />);
+  it("no longer renders the eyebrow, the PRODUCT_NAME line, the five demo pills, or the old H2-sectioned hub layout", async () => {
+    render(await Home());
 
     expect(
       screen.queryByText("EXPLORER · COMPRENDRE · JOUER")
